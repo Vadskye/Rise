@@ -1,0 +1,41 @@
+
+%\DisableLigatures[f,i,t]{encoding = *, family = *}
+
+%Make \section headers be right-aligned
+%\titleformat{\section}{\Large\bfseries\raggedleft}{}{1em}{\lsec}
+%\titleformat{\subsection}{\bfseries\raggedright}{}{0.5em}{\lssec}
+%\titleformat{\subsubsection}{\bfseries\raggedright}{}{0.5em}{\lsssec}
+
+%Format the page margins
+\addtolength{\voffset}{-1in}
+\addtolength{\textheight}{2in}
+\addtolength{\hoffset}{-0.75in}
+\addtolength{\textwidth}{1in}
+\setlength{\oddsidemargin}{15.5pt} 
+\setlength{\evensidemargin}{15.5pt}
+%Leave little extra space between tables and the surrounding text
+\setlength{\intextsep}{1em}
+%Or between paragraphs
+\setlength{\parskip}{0pt}
+%Make sure the table of contents doesn't include every little thing
+\setcounter{tocdepth}{2}
+
+\newlength\levelcol
+\newlength\spellcol
+\newlength\spellcolpoof
+\newlength\savecol
+\newlength\savecolpoof
+\newlength\babcolgood
+\newlength\babcolavg
+\newlength\babcolbad
+\setlength\levelcol{1.75em}
+\setlength\spellcol{1.1em}
+\setlength\spellcolpoof{2em}
+\setlength\savecol{1.5em}
+\setlength\savecolpoof{2em}
+\setlength\babcolgood{6em}
+\setlength\babcolavg{4em}
+\setlength\babcolbad{4em}
+
+%Create a color for use with tables
+\definecolor{tbrown}{RGB}{255,240,200}

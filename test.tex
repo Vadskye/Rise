@@ -1,0 +1,66 @@
+\documentclass{article}
+\usepackage{wallpaper}
+\begin{document}
+\ThisCenterWallPaper{1}{leftPage.jpg}
+   \begin{center}
+      \begin{Large}     
+                      Latex Sample File 1 \\
+      \end{Large}
+      \begin{large}
+                 Basics:  Paragraphs and Environments \\
+      \end{large}
+                      Matchett, \today \\
+                    La Crosse, WI  54601
+   \end{center}
+A minimal LaTeX file can begin with a  ``documentclass'' 
+command followed immediately by a ``begin document'' command.
+Type the ``end document'' command several lines below the
+``begin document'' command, so you do not forget it.  The
+material to be typed then goes between the ``begin document'' 
+command and the ``end document'' command.  If the document you 
+are typing has few mathematical symbols then the typing is easy.  
+Use blank lines to separate paragraphs.  Avoid using blank lines 
+for other purpose (except that one or more blank lines are ok 
+right before the final ``end\{document\}'' command).  Note that 
+      indenting in the source file is ignored by LaTeX, and it 
+does not matter how long the lines  
+are or how large       the       spaces are between        words.  
+The LaTeX software will take care of all the formatting for you.  
+This document has three paragraphs.
+
+This file uses several special environments.  An environment is 
+initiated by a ``begin'' command and ended by an ``end'' command.  
+The words ``begin'' and ``end'' must each be preceeded with a 
+backslash, and the name of the environment goes in curly braces 
+after the words.  This document uses the environments, 
+\emph{center}, \emph{Large}, \emph{large}, and \emph{verbatim}.  
+In the \emph{center} environment, two backslashes indicate the 
+end of a line, except in the case of the last line in the 
+environment which never ends with two backslashes.
+
+There are several special symbols that may not be used as is 
+because they have special meaning for LaTeX.  They are the 
+following: 
+ \begin{center}      
+    ``number symbol'', dollar sign, percent symbol, ampersand, \\ 
+      tilde,   underline symbol,  exponent symbol,  backslash  \\
+      curly left bracket \\
+      curly right bracket
+ \end{center}
+Seven of these symbols can be included in a document by just 
+preceeding the symbol with a backslash.  Here they are: 
+ \begin{center}
+       \# \$ \% \& \_ \{ \}
+ \end{center}
+ \begin{verbatim} 
+The characters,  ~ ,  ^ ,  and  \  seldom need 
+to appear in the final document.
+ \end{verbatim} 
+They can be produced in the ``verbatim'' environment and in math 
+mode by special commands.  The percent character, when it is not 
+preceeded by a backslash, causes all that 
+follows it on a line to be omitted from the compiled document. 
+% This gives a useful way to include comments that the writer does
+% not want printed.  
+\ClearShipoutPicture
+\end{document}
