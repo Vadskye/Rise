@@ -1,0 +1,184 @@
+\newcommand{\lcaption}[1]{\caption{#1}\label{cap:#1}}
+\newcommand{\lsec}[1]{\MakeUppercase{#1}\label{#1}}
+\newcommand{\lssec}[1]{\MakeUppercase{#1}\label{#1}}
+\newcommand{\lsssec}[1]{#1\label{#1}}
+
+\newcommand{\ssecfake}[1]{\par \vspace{1em}{\bfseries\raggedright #1} \vspace{1em} \par}
+\newcommand{\sssecfake}[1]{\par \vspace{0.5em}{\bfseries\raggedright #1} \vspace{0.5em} \par}
+\newcommand{\pref}[1]{page \pageref{#1}}
+\newcommand{\pdref}[1]{#1 (page \pageref{#1})}
+\newcommand{\pcref}[1]{#1, page \pageref{#1}}
+\newcommand{\tref}[1]{Table \ref{cap:#1}: #1 (\pref{cap:#1})}
+\newcommand{\trefnp}[1]{Table \ref{cap:#1}: #1}
+\newcommand{\trefcp}[1]{Table \ref{cap:#1}: #1, \pref{cap:#1}}
+\newcommand{\trefnum}[1]{Table \ref{cap:#1}}
+
+\newcommand{\minus}{\texttt{-{}}}
+\newcommand{\plus}{\texttt{+}}    %Use a smaller positive marker for use directly adjacent to numbers
+\newcommand{\add}{\texttt{+}{\footnotesize{ }}}    %Use a smaller plus sign
+\newcommand{\sub}{\texttt{- }}
+\newcommand{\mult}{x}
+\newcommand{\mtimes}{x }
+\newcommand{\ki}{\emph{ki }}
+\newcommand{\Ki}{\emph{Ki }}
+%NOTED BUG: Spell names with mixed capitalization (Dispel magic) will not work properly.
+\newcommand{\spell}[1]{\emph{\mbox{\hyperlink{spell:#1}{#1}}}}    %Italicize spells
+\newcommand{\spellindirect}[2]{\emph{\hyperlink{spell:#1}{#2}}}
+\newcommand{\ritual}[1]{\emph{#1}}    %Italicize spells
+\newcommand{\cd}[1]{\par \textbf{#1}:}    %Bold class fluff description headers
+\newcommand{\cf}[2]{\par \textbf{#2:}\label{#1:#2}}    %Bold class feature headers
+\newcommand{\cfnl}[1]{\par \textbf{#1:}}
+\newcommand{\subcf}[1]{\par \emph{#1}:}    %Italicize sub-class-feature headers
+\newcommand{\subsk}[1]{\par \emph{#1}:}    %Italicize sub-skill headers
+\newcommand{\parhead}[1]{\par \textbf{#1}:}    %Bold the first word of sectional paragraphs
+\newcommand{\subparhead}[1]{\par \emph{#1}:}
+\newcommand{\itemhead}[1]{\item \textbf{#1}}
+\newcommand{\thead}[1]{\textbf{#1}}    %Bold the header of tables
+\newcommand{\x}{---}    %A null entry in a table
+\newcommand{\ccol}{\centering\arraybackslash}    %Center columns
+\newcommand{\lcol}{\raggedright\arraybackslash}
+\newcommand{\rcol}{\raggedleft\arraybackslash}
+\newcommand{\booktitle}[1]{\emph{#1}}
+%\newcommand{\footnotetemp}[1]{\tiny{[#1]}}    %I don't actually know how to make footnotes yet, so placeholder
+\newcommand{\footnotetemp}[1]{\textsuperscript{#1}}
+\newcommand{\fn}[1]{\textsuperscript{#1}}
+\newcommand{\M}{\textsuperscript{M}}
+\newcommand{\F}{\textsuperscript{F}}
+\newcommand{\mfx}[1]{\emph{#1}}    % For material components, focuses, and XP costs for spells
+\newcommand{\subspell}[1]{\emph{#1}:}    %For parts of spells
+\newcommand{\magicitem}[1]{\emph{#1}}    %For the names of items
+\newcommand{\shead}[1]{\> \textbf{#1}}    %For the headers of spells in spell lists
+\newcommand{\spellhead}[2][]{\item[#1] \textbf{\hyperlink{spell:#2}{#2}:}}    %Spell in a spell list
+\newcommand{\spellheadc}[3][]{\item[#1] \textbf{\hyperlink{spell:#3 #2}{#2, #3}:}}
+\newcommand{\spellheadrestricted}[1]{\item \textit{\textbf{\hyperlink{spell:#1}{#1}:}}}  %Restricted spell in a spell list
+\newcommand{\spellheadrestrictedc}[2]{\item \textit{\textbf{\hyperlink{spell:#2 #1}{#1, #2}:}}}  %Restricted spell in a spell list
+\newcommand{\spellsection}[1]{\lowercase{\hypertarget{spell:#1}{}}\hypertarget{spell:#1}{\subsubsection{#1}}}
+\newcommand{\spellsectioncomma}[2]{\lowercase{\hypertarget{spell:#2 #1}{}}\hypertarget{spell:#2 #1}{\subsubsection{#1, #2}}}
+\newcommand{\degree}{\ensuremath{^\circ}}    %Degree symbol
+\newcommand{\tind}{\hspace{1em}}
+
+\newcommand{\armdescription}[5]{\my{\subsubsection{#1} \parhead{Bonus} \plus #2 \parhead{Caster Level} #3 \parhead{Aura} #4 \parhead{Activation} #5 \par}}
+\newcommand{\armdescriptiondc}[6]{\armdescription{#1}{#2}{#3}{#4}{#5} \my{\textbf{Save DC:} #6 \add 1/2 character level} \par}
+\newcommand{\itemdescription}[7]{\my{\subsubsection{#1} \parhead{Price (Level)} #2 gp (#3) \parhead{Body Slot} #4 \parhead{Caster Level} #5 \parhead{Aura} #6 \parhead{Activation} #7 \par}}
+\newcommand{\itemdescriptiondc}[8]{\itemdescription{#1}{#2}{#3}{#4}{#5}{#6}{#7} \my{\textbf{Save DC:} #8 \add 1/2 character level} \par}
+\newcommand{\itemdescriptionmulti}[6]{ \subsubsection{#1} \noindent{\small
+  \rowcolors{1}{white}{tbrown} \begin{tabularx}{\columnwidth}{X *{#2}{l}} #3 \end{tabularx}} \parhead{Aura School} #4 \parhead{Body Slot} #5 \parhead{Activation} #6 \par}
+\newcommand{\itemdescriptiononek}[4]{\itemdescriptionmulti{#1}{5}{
+\thead{Bonus:} & \thead{\plus1} & \thead{\plus2} & \thead{\plus3} & \thead{\plus4} & \thead{\plus5} \\
+\thead{Price:} & 1,000 gp & 4,000 gp & 9,000 gp & 16,000 gp & 25,000 gp \\
+\thead{Level:} & 3rd & 7th & 9th & 12th & 14th \\
+\thead{Caster Level:} & 4th & 6th & 9th & 12th & 15th \\
+\thead{Aura:} & Faint & Faint & Moderate & Moderate & Strong
+}{#2}{#3}{#4}}
+\newcommand{\itemdescriptiononefivek}[4]{\itemdescriptionmulti{#1}{5}{
+\thead{Bonus:} & \thead{\plus1} & \thead{\plus2} & \thead{\plus3} & \thead{\plus4} & \thead{\plus5} \\
+\thead{Price:} & 1,500 gp & 6,000 gp & 13,500 gp & 24,000 gp & 37,500 gp \\
+\thead{Level:} & 4th & 8th & 11th & 14th & 16th \\
+\thead{Caster Level:} & 4th & 6th & 9th & 12th & 15th \\
+\thead{Aura:} & Faint & Faint & Moderate & Moderate & Strong
+}{#2}{#3}{#4}}
+\newcommand{\itemdescriptiontwok}[4]{\itemdescriptionmulti{#1}{5}{
+\thead{Bonus:} & \thead{\plus1} & \thead{\plus2} & \thead{\plus3} & \thead{\plus4} & \thead{\plus5} \\
+\thead{Price:} & 2,000 gp & 8,000 gp & 18,000 gp & 32,000 gp & 50,000 gp \\
+\thead{Level:} & 5th & 9th & 12th & 15th & 18th \\
+\thead{Caster Level:} & 4th & 6th & 9th & 12th & 15th \\
+\thead{Aura:} & Faint & Faint & Moderate & Moderate & Strong
+}{#2}{#3}{#4}}
+\newcommand{\tooldescription}[6]{\my{\subsubsection{#1} \parhead{Price (Level)} #2 gp (#3) \parhead{Caster Level} #4 \parhead{Aura} #5 \parhead{Activation} #6 \par}}
+%one shot items should not have scaling DCs
+\newcommand{\tooldescriptiondcos}[7]{\tooldescription{#1}{#2}{#3}{#4}{#5}{#6} \my{\textbf{Save DC:} #7} \par}
+\newcommand{\tooldescriptiondc}[7]{\tooldescription{#1}{#2}{#3}{#4}{#5}{#6} \my{\textbf{Save DC:} #7 \add 1/2 character level} \par}
+
+\newcommand{\prereq}[1]{\subparhead{Prerequisites:} #1}
+\newcommand{\bpl}[3]{(\plus #1) #2 gp (#3)}
+\newcommand{\bcl}[2]{(\plus #1) #2}
+
+%Monster commands for format consistency
+%Starting with \\ instead of \par yields an indent
+\newcommand{\montypes}[5]{\begin{mstatblock}\par #1 #2 #3 \hfill \textbf{CR} #4 [#5]}
+\newcommand{\montypessubtypes}[6]{\begin{mstatblock}\par #1 #2 #3 (#4) \hfill \textbf{CR} #5 [#6]}
+\newcommand{\monsenses}[2]{\par \textbf{Init} #1; Perception #2}
+\newcommand{\monsensesspellcraft}[3]{\par \textbf{Init} #1; Perception #2, Spellcraft #3}
+\newcommand{\monsensesspecial}[3]{\par \textbf{Init} #1; Perception #2; \textbf{Senses} #3}
+\newcommand{\monsensesfull}[4]{\par \textbf{Init} #1; Perception #2, Spellcraft #3; \textbf{Senses} #4}
+\newcommand{\monaura}[1]{\par \textbf{Aura} #1}
+\newcommand{\monlanguages}[1]{\par \textbf{Languages} #1}
+\newcommand{\monac}[5]{\par \textbf{AC} #1, touch #2, flat-footed #3; \textbf{CMD} #4 \\ (#5)}
+\newcommand{\monacspecial}[6]{\par \textbf{AC} #1, touch #2, flat-footed #3; \textbf{CMD} #4; #5 \\ (#6)}
+\newcommand{\monhp}[2]{\par \textbf{HP} #1 (#2 HV)}
+\newcommand{\mondr}[1]{\textbf{DR} #1}
+\newcommand{\monhpdr}[3]{\mhp{#1}{#2}; \mdr{#3}}
+\newcommand{\monimmune}[1]{\par \textbf{Immune} #1}
+\newcommand{\monresist}[1]{\par \textbf{Resist} #1}
+\newcommand{\monsr}[1]{\textbf{SR} #1}
+\newcommand{\monresistsr}[2]{\mres{#1}; \msr{#2}}
+\newcommand{\monsaves}[3]{\par \textbf{Fort} \plus #1, \textbf{Ref} \plus #2, \textbf{Will} \plus #3}
+\newcommand{\monsavesnegative}[3]{\par \textbf{Fort} #1, \textbf{Ref} #2, \textbf{Will} #3}
+\newcommand{\monspeed}[1]{\textbf{Speed} #1}
+\newcommand{\monmelee}[1]{\par \textbf{Melee} #1}
+\newcommand{\monrng}[1]{\par \textbf{Ranged} #1}
+\newcommand{\monspace}[2]{\par \textbf{Space} #1 ft.; \textbf{Reach} #2 ft.}
+\newcommand{\monspacenofeet}[2]{\par \textbf{Space} #1; \textbf{Reach} #2}
+\newcommand{\moncmb}[2]{\par \textbf{BAB} \plus #1; \textbf{CMB} \plus #2}
+\newcommand{\moncmbnegative}[2]{\par \textbf{BAB} \plus #1; \textbf{CMB} #2}
+\newcommand{\monspecialact}[1]{\par \textbf{Special Actions} #1}
+\newcommand{\monsla}[5]{\par \textbf{Spell-Like Abilities (Sp)} (CL #1, DC #2, #3/day, #4--based): \\ #5}
+\newcommand{\monpsi}[5]{\par \textbf{Psionics (Sp)} (CL #1, DC #2, #3/day, #4--based): \\ #5}
+\newcommand{\monslamore}[1]{\\ #1}
+\newcommand{\monattributes}[6]{\par \textbf{Attributes} Str #1, Dex #2, Con #3, Int #4, Wis #5, Cha #6}
+\newcommand{\monsa}[1]{\par \textbf{SA} #1}
+\newcommand{\monsq}[1]{\par \textbf{SQ} #1}
+\newcommand{\monfeats}[1]{\par \textbf{Feats} #1}
+\newcommand{\monskills}[1]{\par \textbf{Skills} #1}
+\newcommand{\monitems}[1]{\par \textbf{Items} #1}
+\newcommand{\monability}[2]{\par \textbf{#1} #2}
+\newcommand{\monlinerule}{\par \rule{0.9\columnwidth}{0.5pt}}
+\newcommand{\mondescription}[1]{\par \end{mstatblock}\sssecfake{Description}\label{#1:Description}}
+\newcommand{\mondescriptionnoblock}[1]{\par \sssecfake{Description}\label{#1:Description}}
+\newcommand{\monbehavior}[1]{\sssecfake{Combat}\label{#1:Behavior}}
+
+\newcommand{\wilditem}{\addtocounter{enumi}{1} \item}
+\newcommand{\wilditemplus}{\addtocounter{enumi}{3} \item}
+
+\newcommand{\spelllvl}[1]{\parhead{Level} #1}
+\newcommand{\spellschool}[1]{\par #1}
+\newcommand{\spellcmp}[1]{\parhead{Components} #1}
+\newcommand{\spelltime}[1]{\parhead{Time} #1}
+\newcommand{\spellrng}[1]{\parhead{Range} #1}
+\newcommand{\spellarea}[1]{\parhead{Area} #1}
+\newcommand{\spelleff}[1]{\parhead{Manifestation} #1}
+\newcommand{\spelltgt}[1]{\parhead{Target} #1}
+\newcommand{\spelltgts}[1]{\parhead{Targets} #1}
+\newcommand{\spelltgtortgts}[1]{\parhead{Target or Targets} #1}
+\newcommand{\spelltgtorarea}[1]{\parhead{Target or Area} #1}
+\newcommand{\spelltgteffarea}[1]{\parhead{Target or Area} #1}
+\newcommand{\spelldur}[1]{\parhead{Duration} #1}
+\newcommand{\spellsave}[1]{\parhead{Saving Throw} #1}
+\newcommand{\spellsr}[1]{\parhead{Spell Resistance} #1}
+
+\newcommand{\spelldesc}[1]{\par \textit{#1}}
+\newcommand{\spelldmg}[1]{\parhead{Damage} #1}
+\newcommand{\spellheal}[1]{\parhead{Healing} #1}
+\newcommand{\spellfocus}[1]{\par \textit{Focus:} #1}
+\newcommand{\spellmat}[1]{\par \textit{Material Components:} #1}
+
+\newcommand{\spellskill}[1]{\parhead{Skill} #1}
+
+\newcommand{\rngpers}{Personal}
+\newcommand{\rngtouch}{Touch}
+\newcommand{\rngclose}{Close (30 ft.)}
+\newcommand{\rngmed}{Medium (100 ft.)}
+\newcommand{\rnglong}{Far (300 ft.)}
+\newcommand{\rngfar}{Far (300 ft.)}
+\newcommand{\areasmall}{Small (10 ft.)}
+\newcommand{\areamed}{Medium (20 ft.)}
+\newcommand{\arealarge}{Large (50 ft.)}
+\newcommand{\durshort}{Short (Concentration \add 5 rounds)}
+\newcommand{\durmed}{Medium (5 minutes)}
+\newcommand{\durlong}{Long (1 hour)}
+\newcommand{\durext}{Extreme (12 hours)}
+
+\newcommand{\confusionexplanation}{Each turn, it has a random chance to take one of four actions: babble incoherently, flee from the caster as if panicked, attack the nearest creature, or act normally. A confused character who can't carry out the indicated action does nothing but babble incoherently. Any confused character who is attacked automatically attacks its attackers on its next turn, as long as it is still confused when its turn comes.}
+
+\newcommand{\bonusscalingdescription}{This bonus increases to \plus3 at 8th level, to \plus4 at 14th level, and finally to \plus5 at 20th level.}
+\newcommand{\babscalingdescription}{This bonus increases to \plus3 at base attack bonus \plus8, to \plus4 at base attack bonus \plus12, and finally to \plus5 at base attack bonus \plus16.}

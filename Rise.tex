@@ -1,0 +1,66 @@
+\documentclass[twocolumn,oneside]{book}
+\input{LaTeXPackages.tex}
+\input{LaTeXNewCommands.tex}
+\input{LaTeXNewEnvironments.tex}
+\input{LaTeXFormatting.tex}
+
+%Tables to maintain highlighting
+
+%\newenvironment{me}{\color{black}}{}
+\newcommand{\my}[1]{{\color{black}#1}}
+
+%\newenvironment{cp}{}{}
+
+%\specialcomment{cp}{}{}
+%\excludecomment{cp}
+
+%Control headers
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername \thechapter #1}{}}
+
+\pagestyle{fancy}
+\lhead{\nouppercase \leftmark}
+\chead{\bfseries \large Rise}
+\rhead{\nouppercase \rightmark}
+\lfoot{Kevin Johnson}
+\cfoot{\thepage}
+\rfoot{v. 0.4}
+
+%\includeonly{SpellDescriptionsConditionsOnly}
+
+\begin{document}
+\setcounter{chapter}{-1}
+\tableofcontents
+\include{Acknowledgements}
+\include{Introduction}
+\include{Abilities}
+\include{Races}
+\include{Classes}
+\include{Skills}
+\include{Feats}
+\include{Description}
+\include{Equipment}
+\include{Combat}
+\include{Adventuring}
+\include{Magic}
+\include{SpellLists}
+\include{SpellDescriptions}
+\include{ArcaneInvocations}
+\include{Rituals}
+\include{CoreMagicItems}
+\include{Conditions}
+\include{Wealth}
+\include{MagicItemBasicsAndCreation}
+\include{MagicItemArmorAndWeapons}
+\include{MagicItemRingsAndRods}
+\include{MagicItemScrollsStaffsWands}
+\include{MagicItemWondrousApparel}
+\include{MagicItemWondrous}
+%\include{Monsters}
+%\include{SpellDescriptionsConditionsOnly}
+
+%\include{Glossary}
+%\include{Changelog}
+%\include{Notes}
+%\include{ACFs}
+%What if you could augment spells? +X spell levels for a more powerful effect. Would remove the need for redundant and dependent spells (Acid Fog would be an augmentation of Solid Fog). But is that desirable?
+\end{document}
