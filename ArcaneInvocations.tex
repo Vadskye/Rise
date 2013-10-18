@@ -1,18 +1,59 @@
 \section{Arcane Invocation Descriptions}
 
-\spellsection{Chill of the Grave}
-\spelldesc{You your foe feel deathly sick.}
-\spellschool{Necromancy (Unlife)}
+\spellsection{Ablative Aura}
+\spelldesc{You surround your ally with a faint yellow aura that partially shields them from incoming damage.}
+\spellschool{Abjuration (Shielding)}
 \spellrng{\rngclose}
-\spelltgt{One living creature}
-\spelldur{\durshort/1 round}
-\spellsave{Fortitude partial}
-\spellsr{Yes (Fortitude)}
+\spellarea{\areamed radius limit centered on the subject; see text}
+\spelltgt{One creature}
+\spelldur{1 round}
+\spellsave{Will negates (harmless)}
+\spellsr{Yes (Will)}
 \begin{spelleffect}
-The subject is sickened. A successful Fortitude save reduces the duration to 1 round.
+The subject treats the first few points of damage it takes as nonlethal damage. The amount of damage converted is equal to 5 \add caster level.
+\end{spelleffect}
+
+\spellsection{Acid Orb}
+\spelldesc{You conjure a small orb of acid out of nothingness and propel it towards your foe.}
+\spellschool{Conjuration (Creation) [Acid]}
+\spellrng{\rngclose}
+\spelleff{One missile of acid}
+\spelldur{Instantaneous}
+\spellsave{None}
+\spellsr{No}
+\spelldmg{d4 acid damage \add 1 per caster level}
+\begin{spelleffect}
+If you hit on a ranged touch attack, the target takes damage.
+\end{spelleffect}
+
+\spellsection{Bestow Protection}
+\spellschool{Abjuration (Shielding)}
+\spellrng{\rngclose}
+\spelltgt{One creature}
+\spelldur{1 round}
+\spellsave{Will negates (harmless)}
+\spellsr{Yes (Will)}
+\begin{spelleffect}
+This spell has different effects depending on the form chosen.
+\par \subspell{Deflection:} The subject gains a \plus2 bonus to armor class. \bonusscalingdescription
+\par \subspell{Resistance:} The subject gains a \plus2 bonus on saving throws against spells or spell-like abilities. \bonusscalingdescription
+\end{spelleffect}
+
+\spellsection{Combat Telekinesis}
+\spelldesc{You telekinetically control a light weapon and use it to attack.}
+\spellschool{Evocation (Control)}
+\spellrng{\rngclose}
+\spelltgt{One unattended light weapon}
+\spelldur{Concentration}
+\spellsave{Will negates (object)}
+\spellsr{Yes (Will)}
+\begin{spelleffect}
+This spell lets you control the target weapon from a distance. This works exactly like attacking with the weapon normally, except that you use your casting attribute in place of your Strength.
+The weapon can travel up to 30 feet in a round before attacking, but if it goes out of the spell's range, you lose control of it and it falls to the ground. The weapon does not provoke attacks of opportunity for moving.
+\par You can attack with the weapon in the same round that you cast the spell, and you can continue to control it as long as you concentrate on it (a standard action).
 \end{spelleffect}
 \begin{spellnotes}
-A sickened creature takes a \minus2 penalty on attack rolls, saving throws, checks, and AC.
+Concentrating on the spell to attack with the weapon does not provoke attacks of opportunity. If the weapon is being wielded by a creature, the spell automatically fails.
 \end{spellnotes}
 
 \spellsection{Confusion, Lesser}
@@ -30,6 +71,7 @@ The subject is bewildered.
 The subject is confused. \confusionexplanation A confused character who can't carry out the indicated action does nothing but babble incoherently. Any confused character who is attacked automatically attacks its attackers on its next turn, as long as it is still confused when its turn comes.
 \end{spellblood}
 \begin{spellnotes}
+A bewildered creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
 \par Attackers are not at any special advantage when attacking a confused character. A confused character will not make attacks of opportunity against any creature that it is not already devoted to attacking (either because of its most recent action or because it has just been attacked).
 \end{spellnotes}
 
@@ -37,45 +79,32 @@ The subject is confused. \confusionexplanation A confused character who can't ca
 \spelldesc{You create arrows from thin air and magically fire them at your foe.}
 \spellschool{Conjuration (Creation)}
 \spellrng{\rngmed}
-\spelleff{One or more Tiny projectiles}
+\spelleff{Up to one Tiny projectile/level}
 \spelldur{1 round}
 \spellsave{None}
 \spellsr{No}
 \spelldmg{d6 damage \add 1 per caster level; see text}
 \begin{spelleffect}
-This spell creates one or more projectiles, such as a arrows or bolts, that you magically propel at a foe. This allows you to make a ranged attack, using your caster level in place of your base attack bonus to attack. If the attack hits, it deals damage.
+This spell creates one or more projectiles, such as a arrows or bolts, that you magically propel at a foe. This allows you to make a ranged attack, using your caster level in place of your base attack bonus to attack. If the attack hits, it deals damage. Regardless of the number of projectiles summoned, only one attack roll is made, and the damage dealt is unchanged.
 \end{spelleffect}
 \begin{spellnotes}
 \par At the end of the spell's duration, the projectiles disappear without a trace.
 \end{spellnotes}
-
-\spellsection{Acid Orb}
-\spelldesc{You conjure a small orb of acid out of nothingness and propel it towards your foe.}
-\spellschool{Conjuration (Creation) [Acid]}
-\spellrng{\rngclose}
-\spelleff{One missile of acid}
-\spelldur{Instantaneous}
-\spellsave{None}
-\spellsr{No}
-\spelldmg{d4 acid damage \add 1 per caster level}
-\begin{spelleffect}
-If you hit on a ranged touch attack, the target takes damage.
-\end{spelleffect}
 
 \spellsection{Distract}
 \spelldesc{You cloud the mind of the subject, distracting it from what it was going to do.}
 \spellschool{Enchantment (Compulsion) [Mind-affecting]}
 \spellrng{\rngmed}
 \spelltgt{One creature}
-\spelldur{1 round}
+\spelldur{\durshort/1 round}
 \spellsave{Will negates}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
 The subject is bewildered.
 \end{spellhealthy}
-\begin{spellblood}
-The subject is dazed.
-\end{spellblood}
+\begin{spellnotes}
+A bewildered creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
+\end{spellnotes}
 
 \spellsection{Draining Touch}
 \spelldesc{You drain your foe's life force with a touch, drawing it into yourself.}
@@ -89,6 +118,21 @@ The subject is dazed.
 \begin{spelleffect}
 If you succeed on a melee touch attack, the target takes damage. You gain temporary hit points equal to half the damage you deal. However, you can't gain more health than is necessary to kill the subject. The temporary hit points disappear 5 rounds later.
 \end{spelleffect}
+
+\spellsection{Exhaustion}
+\spelldesc{You momentarily cripple your foe's energy.}
+\spellschool{Necromancy (Flesh)}
+\spellrng{\rngclose}
+\spelltgt{One living creature}
+\spelldur{1 round}
+\spellsave{Fortitude negates}
+\spellsr{Yes (Fortitude)}
+\begin{spelleffect}
+The subject is exhausted.
+\end{spelleffect}
+\begin{spellnotes}
+An exhausted creature takes a \minus4 penalty on attack rolls, saving throws, checks, DCs, and AC.
+\end{spellnotes}
 
 \spellsection{False Foe}
 \spelldesc{You create an illusion of a threatening creature, tricking your foes into attacking and defending against it as if it were real.}
@@ -125,20 +169,23 @@ The next successful attack with the target weapon deals extra damage. The creatu
 \spellsr{Yes (Reflex)}
 \spelldmg{d6 force damage \add 1 per caster level}
 \begin{spelleffect}
-A creature struck by the ray takes damage. As with \spell{magic missile}, inanimate objects are not damaged by the spell.
+You must succeed on a ranged touch attack. If you hit, the target takes damage. As with \spell{magic missile}, inanimate objects are not damaged by the spell.
 \end{spelleffect}
 
-\spellsection{Phantom Shackles}
-\spelldesc{You twist your foe's perceptions, convincing it that it is bound in shackles and chains.}
-\spellschool{Illusion (Phantasm)}
+\spellsection{Phantom Injury}
+\spelldesc{You twist your foe's perceptions, convincing it that it is seriously injured.}
+\spellschool{Illusion (Phantasm) [Unreal]}
 \spellrng{\rngclose}
 \spelleff{One creature}
-\spelldur{\durshort/1 round}
-\spellsave{Will partial}
+\spelldur{1 round}
+\spellsave{Will disbelief}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-The subject is entangled. A successful Will save reduces the duration to 1 round.
+The subject is staggered. If it takes damage, it must make another Will save if it is bloodied (after taking the damage). If it fails the save, it falls unconscious until the spell ends. Otherwise, it immediately shakes off the spell's effect after being damaged.
 \end{spelleffect}
+\begin{spellnotes}
+A staggered character may take a single move action or standard action each round, but not both. She cannot take full-round actions, but she may take swift actions.
+\end{spellnotes}
 
 \spellsection{Premonition}
 \spelldesc{You grant your ally a brief glimpse of the future that shows it where to strike in combat.}
@@ -147,61 +194,32 @@ The subject is entangled. A successful Will save reduces the duration to 1 round
 \spelltgt{One creature}
 \spelldur{1 round; see text}
 \spellsave{Will negates (harmless)}
-\spellsr{Yes (Will)}
+\spellsr{Yes (Will)
 \begin{spelleffect}
-The subject gains an enhancement bonus to attack rolls equal to your casting attribute modifier, or an enhancement bonus to weapon damage rolls equal to your casting attribute value.
+The subject gains a \plus4 bonus to hit on the next single attack roll it makes, provided that its target is also within the spell's range. This bonus increases by \plus1 for every three levels above 1st level.
 \end{spelleffect}
 
-\spellsection{Protection}
-\spellschool{Abjuration (Shielding)}
+\spellsectioncomma}{Slow}{Lesser}
+\spelldesc{You decelerate your enemy's motions temporarily, causing her to move and act more slowly than normal.}
+\spellschool{Transmutation (Temporal)}
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{1 round}
-\spellsave{Will negates (harmless)}
+\spellsave{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-\par You surround the subject with a protective ward. This spell has two forms.
-\par \subspell{Ward of Deflection:} The subject gains a bonus equal to half your casting attribute modifier to its deflection modifier to armor class.
-\par \subspell{Ward of Resistance:} The subject gains a bonus equal to half your casting attribute modifier to its saving throws against spells or spell-like abilities.
+The subject is slowed. This has two effects.
+\par A slowed creature can take only a single move action or standard action each turn, but not both (nor may it take full-round actions).
+\par A slowed creature takes a \minus2 penalty to attack rolls, Strength and Dexterity-based checks, and armor class.
 \end{spelleffect}
-
-\spellsection{Retributive Shield}
-\spelldesc{You surround your ally with a faint yellow aura that shields them from incoming damage. When your foe tries to attack, it is hit by painful backlash.}
-\spellschool{Abjuration (Shielding)}
-\spellrng{\rngclose}
-\spellarea{\areamed radius limit centered on the subject; see text}
-\spelltgt{One creature}
-\spelldur{1 round}
-\spellsave{Will negates (harmless)}
-\spellsr{Yes (Will)}
-\begin{spelleffect}
-The subject gains physical damage reduction 2/magic. This damage reduction increases by 1 per two caster levels above 1st. If any creature within the the area damages the subject, they take damage equal to the damage resisted by this effect.
-\end{spelleffect}
-
-\spellsection{Telekinesis, Lesser}
-\spelldesc{You telekinetically control a light weapon and use it to attack.}
-\spellschool{Evocation (Control)}
-\spellrng{\rngclose}
-\spelltgt{One unattended light weapon}
-\spelldur{Concentration}
-\spellsave{Will negates (object)}
-\spellsr{Yes (Will)}
-\begin{spelleffect}
-This spell lets you control the target weapon from a distance. This works exactly like attacking with the weapon normally, except that you use your casting ability in place of your Strength.
-The weapon can travel up to 30 feet in a round before attacking, but if it goes out of the spell's range, you lose control of it and it falls to the ground. The weapon does not provoke attacks of opportunity for moving.
-\par You can attack with the weapon in the same round that you cast the spell, and you can continue to control it as long as you concentrate on it (a standard action).
-\end{spelleffect}
-\begin{spellnotes}
-Concentrating on the spell to attack with the weapon does not provoke attacks of opportunity. If the weapon is being wielded by a creature, the spell automatically fails.
-\end{spellnotes}
 
 \spellsection{Twist Fate}
 \spellschool{Divination (Knowledge)}
-\spellrng{\rngclose}
+\spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{1 round}
-\spellsave{None}
+\spellsave{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-You know what the subject is most likely going to do during its next turn. After learning that, you can choose to impose a \minus2 penalty to its attack rolls, skill checks, armor class, or saving throws for one round.
+You know what the subject is most likely going to do during its next turn. After learning that, you can choose to impose a \minus4 penalty to its attack rolls, saving throws, checks, DCs, or AC for one round.
 \end{spelleffect}
