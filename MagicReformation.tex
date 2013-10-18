@@ -1,122 +1,6 @@
 \chapter{Magic}
-A spell is a one-time magical effect. Spells come in two types: arcane (cast by bards, sorcerers, and wizards) and divine (cast by clerics, druids, and experienced paladins). Cutting across the categories of arcane and divine spells are the eight schools of magic. These schools represent the different foundational principles of magic. All spellcasters select their spells from a limited list of spells known, casting them spontaneously as the need arises.
 
-\section{Casting Spells}
-Whether a spell is arcane or divine, casting a spell works the same way.
-
-\subsection{Choosing a Spell}
-First, you must choose a spell that you know. If a spell has multiple versions, you choose which version to use when you cast it.
-
-To cast a spell, you must be able to speak (if the spell has a verbal component), gesture (if it has a somatic component), and manipulate the material components or focus (if any). Additionally, you must concentrate to cast a spell.
-
-\subsection{Concentration}
-To cast a spell, you must concentrate. While casting a spell, you can't take any other actions, even immediate actions. If something interrupts your concentration while you're casting, you must make a Concentration check or lose the spell. The more distracting the interruption and the higher the level of the spell you are trying to cast, the higher the DC is. If you fail the check, the spell has no effect, but you still spend the spell slot.
-
-To make a concentration check, roll d20 \add your magic level \add Constitution. If you have more than one magic level, use the level appropriate to the spell you are casting.
-
-Some actions other than spells require concentration to complete. To make a concentration check for a reason other than to cast a spell, roll d20 \add your Constitution.
-
-Any condition which grants a bonus or penalty to checks affects Concentration checks. In addition, you apply your overwhelm penalty (if any) to your Concentration checks.
-
-\begin{dtable}
-\lcaption{Concentration Examples}
-\begin{tabularx}{\columnwidth}{>{\lcol}p{6em} >{\lcol}X}
-\thead{Concentration DC\footnotetemp{1}} & \thead{Distraction} \\
-10 & Casting defensively \\
-10 \add damage dealt & Damaged during the action.\footnotetemp{2} \\
-10 \add half of continuous & Taking continuous damage during the
-damage last dealt action.\footnotetemp{3} \\
-Distracting spell's save DC & Distracted by nondamaging spell.\footnotetemp{4} \\
-5 & Vigorous motion (on a moving mount, taking a bouncy wagon ride, in a small boat
-in rough water, belowdecks in a storm-tossed ship). \\
-10 & Violent motion (on a galloping horse, taking a very rough wagon ride, in a small boat in
-rapids, on the deck of a storm-tossed ship). \\
-20 & Extraordinarily violent motion (earthquake). \\
-10 & Entangled. \\
-15 & Grappling.\fn{4} \\
-5 & Weather is a high wind carrying blinding
-rain or sleet. \\
-10 & Weather is wind-driven hail, dust, or debris. \\
-\end{tabularx}
-1 If you are trying to cast, concentrate on, or direct a spell when the distraction occurs, add double the level of the spell to the indicated DC. \\
-2 If you take damage from multiple sources at the same time, add up the damage taken and make a single Concentration check, rather than one check for each source. \\
-3 Such as from \spell{acid arrow}. \\
-4 You can cast only spells without somatic components for which you have any required material component in hand. \\
-\end{dtable}
-
-\parhead{Casting Defensively} If you cast a spell while threatened, you must make a Concentration check (DC 10 \add double the level of the spell you're casting). If you fail, you provoke attacks of opportunity.
-
-\parhead{Injury} If while trying to cast a spell you take damage, you must make a Concentration check (DC 10 \add points of damage taken \add double the level of the spell you're casting). If you fail the check, you lose the spell without effect. The interrupting event strikes during spellcasting if it comes between when you start and when you complete a spell (for a spell with a casting time of 1 full round or more) or if it comes in response to your casting the spell (such as an attack of opportunity provoked by the spell or a contingent attack, such as a readied action).
-
-If you are taking continuous damage half the damage is considered to take place while you are casting a spell. You must make a Concentration check (DC 10 \add 1/2 the damage that the continuous source last dealt \add double the level of the spell you're casting). If the last damage dealt was the last damage that the effect could deal then the damage is over, and it does not distract you.
-
-Repeated damage does not count as continuous damage.
-
-\parhead{Spell} If you are affected by a spell while attempting to cast a spell of your own, you must make a Concentration check or lose the spell you are casting. If the spell affecting you deals damage, the DC is 10 \add points of damage \add double the level of the spell you're casting.
-
-If the spell interferes with you or distracts you in some other way, the DC is the spell's saving throw DC \add double the level of the spell you're casting. For a spell with no saving throw, it's the DC that the spell's saving throw would have if a save were allowed.
-
-\parhead{Grappling or Pinned} The only spells you can cast while grappling or pinned are those without somatic components and whose material components (if any) you have in hand. Even so, you must make a Concentration check (DC 15 \add double the level of the spell you're casting) or lose the spell.
-
-\parhead{Vigorous Motion} If you are riding on a moving mount, taking a bouncy ride in a wagon, on a small boat in rough water, below-decks in a storm-tossed ship, or simply being jostled in a similar fashion, you must make a Concentration check (DC 5 \add double the level of the spell you're casting) or lose the spell.
-
-\parhead{Violent Motion} If you are on a galloping horse, taking a very rough ride in a wagon, on a small boat in rapids or in a storm, on deck in a storm-tossed ship, or being tossed roughly about in a similar fashion, you must make a Concentration check (DC 10 \add double the level of the spell you're casting) or lose the spell.
-
-\parhead{Violent Weather} You must make a Concentration check if you try to cast a spell in violent weather. If you are in a high wind carrying blinding rain or sleet, the DC is 5 \add double the level of the spell you're casting. If you are in wind-driven hail, dust, or debris, the DC is 10 \add double the level of the spell you're casting. In either case, you lose the spell if you fail the Concentration check. If the weather is caused by a spell, use the rules in the Spell subsection above.
-
-\parhead{Entangled} If you want to cast a spell while entangled in a net or by a tanglefoot bag or while you're affected by a spell with similar effects, you must make a DC 10 \add double the level of the spell you're casting Concentration check to cast the spell. You lose the spell if you fail.
-
-\subsubsection{Extended Concentration}
-Concentrating on a spell is mentally tiring. You can concentrate on a spell for up to 5 minutes without penalty. After 5 minutes, and every minute thereafter, you must make a Concentration check (DC 15 \add double the level of the spell). If you fail, you lose your concentration on the spell and become fatigued. The DC of the check increases by 2 for every additional minute.
-
-\subsection{Counterspells}
-It is possible to cast any spell as a counterspell. By doing so, you are using the spell's energy to disrupt the casting of the same spell by another character. Counterspelling works even if one spell is divine and the other arcane.
-
-\parhead{How Counterspells Work} To use a counterspell, you must select an opponent as the target of the counterspell. You do this by choosing the ready action. In doing so, you elect to wait to complete your action until your opponent tries to cast a spell. (You may still move your speed, since ready is a standard action.)
-
-If the target of your counterspell tries to cast a spell, make a Spellcraft check (DC 15 \add the spell's level). This check is a free action. If the check succeeds, you correctly identify the opponent's spell and can attempt to counter it. If the check fails, you can't do either of these things.
-
-To complete the action, you must then cast the correct spell. As a general rule, a spell can only counter itself. If you are able to cast the same spell and you have it prepared (if you prepare spells), you cast it, altering it slightly to create a counterspell effect. If the target is within range, both spells automatically negate each other with no other results.
-
-\parhead{Counterspelling Metamagic Spels} Metamagic feats are not taken into account when determining whether a spell can be countered.
-
-\parhead{Specific Exceptions} Some spells specifically counter each other, especially when they have diametrically opposed effects.
-
-\parhead{\spell{Dispel Magic} as a Counterspell} You can use \spell{dispel magic} to counterspell another spellcaster, and you don't need to identify the spell he or she is casting. However, \spell{dispel magic} doesn't always work as a counterspell (see the spell description).
-
-\subsection{Caster Level}
-A spell's power often depends on its caster level, which for most spellcasting characters is equal to your class level in the class you're using to cast the spell.
-
-You can cast a spell at a lower caster level than normal, but the caster level you choose must be high enough for you to cast the spell in question, and all level-dependent features must be based on the same caster level.
-
-Effects that increase caster level never increase the level that a character uses to determine how many spells per day and spells known she gets. Only a character's magic level affects those values.
-
-\subsection{Spell Failure}
-If you ever try to cast a spell in conditions where the characteristics of the spell cannot be made to conform, the casting fails and the spell is wasted.
-
-Spells also fail if your concentration is broken and might fail if you're wearing armor while casting a spell with somatic components.
-
-\subsection{The Spell's Effect}
-Once you know which creatures (or objects or areas) are affected, and whether those creatures have made successful saving throws (if any were allowed), you can apply whatever results a spell entails.
-
-\subsection{Special Spell Effects}
-Many special spell effects are handled according to the school or subschool of the
-spells in question. Certain other special spell features are found across spell schools.
-
-\parhead{Attacks} Some spell descriptions refer to attacking. All offensive combat actions and special abilities, even those that don't damage opponents, are considered attacks. All spells that opponents resist with saving throws, that deal damage, or that otherwise harm or hamper subjects are attacks. Spells that summon monsters or other allies are not attacks because the spells themselves don't harm anyone.
-
-\parhead{Bonus Types} All spells give enhancement bonuses unless otherwise specified in the spell description. Enhancement bonuses to the same modifier do not stack with each other.
-
-\label{Bringing Back the Dead}
-\parhead{Bringing Back the Dead} Several spells have the power to restore slain characters to life.
-
-When a living creature dies, its soul departs its body, leaves the Material Plane, travels through the Astral Plane, and goes to abide on the plane where the creature's deity resides. If the creature did not worship a deity, its soul departs to the plane corresponding to its alignment. Bringing someone back from the dead means retrieving his or her soul and returning it to his or her body.
-
-\subparhead{Negative Level} Any creature brought back to life gains a negative level. If the character was 1st level at the time of death, he or she takes 2 points of Constitution drain instead. This negative level or Constitution drain cannot be repaired by anything less than a \spell{wish} or \spell{miracle} spell, but it goes away naturally after a year has passed or after the character gains two new levels.
-
-\subparhead{Preventing Revivification} Enemies can take steps to make it more difficult for a character to be returned from the dead. Keeping the body prevents others from using  \spell{raise dead} or \spell{resurrection} to restore the slain character to life. Casting \spell{trap the soul} or \spell{soul bind} prevents any sort of revivification unless the soul is first released.
-
-\subparhead{Revivification against One's Will} A soul cannot be returned to life if it does not wish to be. A soul knows the name, alignment, and patron deity (if any) of the character attempting to revive it and may refuse to return on that basis.
+This is an abridged version of the original Magic chapter with a variety of elements relevant to the changes made in the Spell Reformation. There should be very little, if any, material here not also discussed in the general Spell Reformation thread.
 
 \section{Combining Effects}
 Spells or magical effects usually work as described, no matter how many other spells or magical effects happen to be operating in the same area or on the same recipient. Except in special cases, a spell does not affect the way another spell operates. Whenever a spell has a specific effect on other spells, the spell description explains that effect.
@@ -124,18 +8,6 @@ Spells or magical effects usually work as described, no matter how many other sp
 However, spells, feats, class features, and other effects that have very similar effects may not both help the subject. A character can only be increased so far beyond his or her normal limits; even layered with powerful magical effects, a commoner is no serious threat to a giant. The limitations on these effects are provided by the stacking rules described below.
 
 \subsection{Stacking Effects}
-Spells that provide bonuses or penalties on attack rolls, damage rolls, saving throws, and so on usually do not stack with themselves. More generally, two bonuses of the same type don't stack even if they come from different spells (or from effects other than spells; see Bonus Types, below).
-\parhead{Same Effect More than Once in Different Strengths} In cases when two or more identical spells are operating in the same area or on the same target, but at different strengths, only the best one applies. This is called overlapping.
-
-\parhead{Same Effect with Differing Results} The same spell can sometimes produce varying effects if applied to the same recipient more than once. Usually, the last spell in the series trumps the others. None of the previous spells are actually removed or dispelled, but their effects become irrelevant while the final spell in the series lasts.
-
-\parhead{One Effect Makes Another Irrelevant} Sometimes, one spell can render a later spell irrelevant. Both spells are still active, but one has rendered the other useless in some fashion.
-
-\parhead{Multiple Mental Control Effects} Sometimes magical effects that establish mental control render each other irrelevant, such as a spell that removes the subject's ability to act. Mental controls that don't remove the recipient's ability to act usually do not interfere with each other. If a creature is under the mental control of two or more creatures, it tends to obey each to the best of its ability, and to the extent of the control each effect allows. If the controlled creature receives conflicting orders simultaneously, the competing controllers must make opposed Charisma checks to determine which one the creature obeys.
-
-\parhead{Spells with Opposite Effects} Spells with opposite effects apply normally, with all bonuses, penalties, or changes accruing in the order that they apply. Some spells negate or counter each other. This is a special effect that is noted in a spell's description. If a spell negates another spell, it immediately dispels the other spell without a caster level check if cast on the same targets or in the same area, but does not itself take effect on those targets or in that area.
-
-\parhead{Instantaneous Effects} Two or more spells with instantaneous durations work cumulatively when they affect the same target.
 
 \subsection{Bonuses, Penalties, and Modifiers}
 A bonus is the most basic way that a roll or numerical statistic can be modified. All bonuses have one of four types: inherent, competence, enhancement, and circumstance. These types are described in Bonus Types, below. You use these types to determine whether different bonuses stack. Bonuses from the same source never stack.
@@ -161,7 +33,7 @@ Your AC is equal to 10 plus the sum of five modifiers, described below. Each of 
 
 Armor and natural armor are very similar, so they do not fully stack. To calculate your character's total AC, add the higher modifier plus half the lower modifier to your AC. For example, if a warhorse (\plus4 natural armor modifier) wears chainmail barding (\plus6 armor modifier), it gets a total of a \plus8 bonus to AC: the chainmail provides \plus6, and its natural armor is halved to give a \plus2 bonus.
 
-An example can help illustrate how armor class stacking works. Bob the Fighter is wearing \plus1 full plate, wielding a heavy shield, and wearing a Ring of Protection \plus1. 
+An example can help illustrate how armor class stacking works. Bob the Fighter is wearing \plus1 full plate, wielding a heavy shield, and wearing a Ring of Protection \plus1.
 \begin{itemize*}
 \item His AC modifier is \plus1 (enhancement, from the Ring of Protection).
 \item His armor modifier is 8 (inherent) \add 1 (enhancement) = 9.
@@ -169,13 +41,14 @@ An example can help illustrate how armor class stacking works. Bob the Fighter i
 \item Therefore, his total armor class is 10 \add 1 \add 9 \add 2 = 22.
 \end{itemize*}
 
-If he were to receive a \spell{barkskin} spell, his natural armor modifier would be \plus2. However, his total armor class would only increase by \plus1, since he is wearing full plate.
+If he were to receive a \spell{barkskin} spell, he would gain the full effect, since he does not currently have an enhancement bonus to AC.
 
 \subsection{Special Stacking Rules}
 Not every kind of effect uses the normal bonus stacking system. Exceptions to the normal stacking rules are described below. If a specific spell or effect says otherwise, it overrules these exceptions, as normal.
 \begin{itemize*}
 \item Magical effects that increase size do not stack.
 \item Damage reduction does not stack. Only the best value applicable to the attack applies.
+\item Spell resistance does not stack.
 \item Effects that grant extra attacks (such as the \spell{haste} spell) do not stack.
 \item Temporary hit points do not stack.
 \item If a character has two separate abilities which let him add the same attribute to a given roll or numerical attribute, the attribute is still only added once.
@@ -278,7 +151,7 @@ Many of these descriptors have no game effect by themselves, but they govern how
 \item Barrier spells cannot be used offensively. If you force the barrier against a force or creature it prohibits, you feel a discernible pressure against the barrier. If you continue to apply pressure, you end the spell.
 \item Curse spells cannot be dispelled by \spell{dispel magic} or similar effects. However, they can be removed with a \spell{break enchantment}, \spell{limited wish},\spell{miracle}, \spell{remove curse}, or \spell{wish} spell.
 \item A detection spell can penetrate barriers, but is always blocked by special materials of some kind. Unless otherwise specified in the spell description, the spell is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.
-\item Fire spells do not function underwater. Unless otherwise noted, a fire spell provides light equivalent to a torch.
+\item Fire spells do not function underwater.
 \item Fog spells do not function underwater and can be dispersed by wind or fire. Unless the spell specifies otherwise, a moderate wind (11\add mph) disperses the fog in 5 rounds, and a strong wind (21\add mph) disperses the fog in 1 round. A fire spell or other powerful fire effect burns away the fog in the area into which it dealt damage.
 \item Language-dependent spells use intelligible language as a medium for communication. If the target cannot understand or cannot hear what the caster of a language-dependant spell says, the spell fails.
 \item Mind-affecting spells work only against creatures with an Intelligence score of 1 or higher.
@@ -442,8 +315,9 @@ Usually a harmful spell allows a target to make a saving throw to avoid some or 
 \parhead{Disbelief} A successful save lets the subject ignore the effect.
 \parhead{(object)} The spell can be cast on objects, which receive saving throws only if they are magical or if they are attended (held, worn, grasped, or the like) by a creature resisting the spell, in which case the object uses the creature's saving throw bonus unless its own bonus is greater. (This notation does not mean that a spell can be cast only on objects. Some spells of this sort can be cast on creatures or objects.) A magic item's saving throw bonuses are each equal to 2 \add one-half the item's caster level.
 \parhead{(harmless)} The spell is usually beneficial, not harmful, but a targeted creature can attempt a saving throw if it desires.
+
 \subsubsection{Saving Throw Difficulty Class}
-A saving throw against your spell has a DC of 10 \add half your caster level \add your casting attribute (Intelligence for a wizard, Wisdom for a druid, and Charisma for a sorcerer, bard, paladin, and most clerics). If you have more than one caster level, use the caster level appropriate to the class that you are casting the spell from, including any modifiers specific to that spell (such as from the Spell Focus feat).
+A saving throw against your spell has a DC of 10 \add half your caster level \add your casting attribute. If you have more than one caster level, use the caster level appropriate to the class that you are casting the spell from, including any modifiers specific to that spell (such as from the Spell Focus feat).
 
 \parhead{Succeeding on a Saving Throw} A creature that successfully saves against a spell that has no obvious physical effects feels a hostile force or a tingle, but cannot deduce the exact nature of the attack without the use of the Spellcraft skill.
 
@@ -472,54 +346,6 @@ This is the effect a spell has on a healthy subject (above half hit points remai
 
 \subsubsection{Bloodied Effect}
 This is the effect a spell has on a bloodied subject (at or below half hit points remaining). If the spell has a duration, and a healthy creature becomes bloodied during the duration of the spell, it immediately suffers the bloodied effect of the spell. If the spell does not have a duration, any damage the subject takes after being affected by the spell does not change which effect the spell has.
-
-\section{Arcane And Divine Spells}
-Wizards, sorcerers, and bards cast arcane spells, which involve the direct manipulation of mystic energies. These manipulations require natural talent (in the case of sorcerers), long study (in the case of wizards), or both (in the case of bards).
-
-Clerics, druids, experienced paladins, and experienced rangers can cast divine spells. Unlike arcane spells, divine spells do not directly manipulate magical energy. Instead, they call upon divine powers to intercede on the caster's behalf, creating magical effects. Clerics gain spell power from deities or from divine forces. The divine force of nature powers druid and ranger spells. The divine forces of law and good power paladin spells.
-
-\subsection{Casting and Regaining Spells}
-An spellcaster's class level limits the number of spells he or she can cast. A spellcaster must have a casting attribute score at least equal to the spell's level to cast a spell.
-
-\parhead{Spell Slots} To cast a spell of a given level, a spellcaster must spend a spell slot of the appropriate level. If the spellcaster has no spell slots of the appropriate level, she may use a higher-level spell slot instead.
-
-\parhead{Daily Readying of Spells} Arcane casters must rest before gaining their spells for a new day, but divine casters do not. Their spells are gifts from some other power.
-
-Regardless of whether they need rest, all spellcasters must spend 15 minutes concentrating at the beginning of the day. (A bard must sing, recite, or play an instrument of some kind while concentrating.) During this period, the caster readies his mind to cast his daily allotment of spells. Without such a period to refresh himself, the character does not regain the spell slots he used up the day before.
-
-\subparhead{Rest for Arcane Casters} To regain his daily spells, an arcane caster must have a clear mind. To clear her mind she must first sleep for 8 hours. The spellcaster does not have to slumber for every minute of the time, but she must refrain from movement, combat, spellcasting, skill use, conversation, or any other fairly demanding physical or mental task during the rest period. If her rest is interrupted, each interruption adds 1 hour to the total amount of time she has to rest in order to clear her mind, and she must have at least 1 hour of uninterrupted rest immediately prior to regaining her spells. If the character does not need to sleep for some reason, she still must have 8 hours of restful calm before preparing any spells.
-
-Divine casters simply request their spells from a divine source, so they do not need rest to regain their spells.
-
-\parhead{Recent Casting Limit/Rest Interruptions} If a spellcaster has cast spells recently, the drain on her resources reduces her capacity to regain spell slots. When she regains spells for the coming day, all the spell slots she has used within the last 8 hours count against her daily limit.
-
-\parhead{Adding Spells Known} A spellcaster gains spells each time he attains a new level in his class. When your character gains a new level, consult the table for your character's class to learn how many spells from the appropriate spell list he now knows.
-
-\subsection{Magical Writings}
-To record a spell in written form, a character uses complex notation that describes the magical forces involved in the spell. The notation constitutes a universal language that spellcasters have discovered, not invented. The writer uses the same system no matter what her native language or culture. However, each character uses the system in her own way. Another person's magical writing remains incomprehensible to even the most powerful spellcaster until she takes time to study and decipher it.
-
-To decipher an magical writing (such as a single spell in written form on a scroll), a character must make a Spellcraft check (DC 20 \add the spell's level). If the skill check fails, the character cannot attempt to read that particular spell again until the next day. A \spell{read magic} spell automatically deciphers a magical writing without a skill check. If the person who created the magical writing is on hand to help the reader, success is also automatic.
-
-Once a character deciphers a particular magical writing, she does not need to decipher it again. Deciphering a magical writing allows the reader to identify the spell and gives some idea of its effects (as explained in the spell description). If the magical writing was a scroll and the reader can cast spells of the appropriate type, she can attempt to use
-the scroll.
-
-\section{Special Abilities }
-
-\parhead{Spell-Like Abilities} Usually, a spell-like ability works just like the spell of that name. A few spell-like abilities are unique; these are explained in the text where they are described.
-
-A spell-like ability has no verbal, somatic, or material component, nor does it require a focus or have an XP cost. The user activates it mentally. Armor never affects a spell-like ability's use, even if the ability resembles an arcane spell with a somatic component.
-
-A spell-like ability has the casting time of the spell it mimics unless noted otherwise in the ability description. In all other ways, a spell-like ability functions just like a spell.
-
-Spell-like abilities are subject to spell resistance and to being dispelled by \spell{dispel magic}. They do not function in areas where magic is suppressed or negated. Spell-like abilities cannot be used to counterspell, nor can they be counterspelled.
-
-Some creatures are actually sorcerers of a sort. They cast arcane spells as sorcerers do, using components when required. In fact, an individual creature could have some spell-like abilities and also cast other spells as a sorcerer.
-
-\parhead{Supernatural Abilities} These abilities cannot be disrupted in combat, as spells can, and they generally do not provoke attacks of opportunity. Supernatural abilities are not subject to spell resistance, counterspells, or to being dispelled by dispel magic, and do not function in areas where magic is suppressed or negated.
-
-\parhead{Extraordinary Abilities} These abilities cannot be disrupted in combat, as spells can, and they generally do not provoke attacks of opportunity. Effects or areas that negate or disrupt magic have no effect on extraordinary abilities. They are not subject to dispelling, and they function normally in an \spell{antimagic field}. Indeed, extraordinary abilities do not qualify as magical, though they may break the laws of physics.
-
-\parhead{Natural Abilities} This category includes abilities a creature has because of its physical nature. Natural abilities are those not otherwise designated as extraordinary, supernatural, or spell-like.
 
 \section{Arcane Invocations}
 Arcane invocations are special spell-like abilities that arcane casters can use at will. Unlike other spell-like abilities, they have verbal and somatic components and are subject to arcane spell failure. All arcane invocations take a standard action to cast unless specified otherwise in the description. Arcane invocations are considered to be 0th level for the purpose of spells and abilities which reference spell level. They are described at the end of Chapter 12.

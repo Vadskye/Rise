@@ -1,0 +1,17 @@
+#pattern on the left, replacement on the right, separated by ||
+#Regular expressions are matched in the order that they appear in the file.
+#Comments use '#'
+Strength modifier||Strength
+Dexterity modifier||Dexterity
+Constitution modifier||Constitution
+Intelligence modifier||Intelligence
+Wisdom modifier||Wisdom
+Charisma modifier||Charisma
+Str modifier||Str
+Dex modifier||Dex
+Con modifier||Con
+Int modifier||Int
+Wis modifier||Wis
+Cha modifier||Cha
+Attribute modifier||Attribute
+attribute modifier||attribute

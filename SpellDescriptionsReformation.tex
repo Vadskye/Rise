@@ -67,9 +67,9 @@ This spell functions as \spell{acid arrow}, except that the target is also sicke
 \spellarea{\areamed radius spread}
 \spelleff{Fog in the area}
 \spelldur{\durshort}
-\spellsave{Fortitude half}
+\spellsave{None/Fortitude half}
 \spellsr{No}
-\spelldmg{3d6 acid damage per round}
+\spelldmg{3d8 acid damage per round}
 \begin{spelleffect}
 This spell functions like \spell{solid fog}, except that the spell's vapors are highly acidic, dealing damage to All creatures and objects within the area on each round at the start of your turn. The fog does not do damage in the round it is cast. A successful Fortitude save halves the damage.
 \end{spelleffect}
@@ -317,7 +317,7 @@ You change the subject into a Small or smaller animal of no more than 1 HD (such
 \item The target retains its own alignment, personality, and mental attribute scores.
 \item If the target has the shapechanger subtype, it retains that subtype. 
 \item The target retains its own hit points. 
-\item The target is treated has having its normal Hit Values for purpose of adjudicating effects based on HV, though it uses the new form's base attack bonus, base save bonuses, and all other statistics derived from Hit Values. 
+\item The target is treated has having its normal Hit Dice for purpose of adjudicating effects based on HD, though it uses the new form's base attack bonus, base save bonuses, and all other statistics derived from Hit Dice. 
 \item The target also retains the ability to understand (but not to speak) the languages it understood in its original form. It can write in the languages it understands, but only the form is capable of writing in some manner (such as drawing in the dirt with a paw). 
 \end{itemize*}
 With those exceptions, the target's normal game statistics are replaced by those of the new form. The target loses all the special abilities it has in its normal form, including its class features.
@@ -328,7 +328,7 @@ If the new form would prove fatal to the creature (for example, if you polymorph
 
 If the spell succeeds, the subject must also make a Will save. If the second save fails, the transformation is permanent. Otherwise, the creature reverts to its true form after the \durshort duration.
 
-If the subject remains in the new form for 24 consecutive hours, it must attempt another Will save. If this save fails, it loses its ability to understand language, as well as all other memories of its previous form, and its Hit Values, hit points, and mental attribute scores change to match an average creature of its new form. These abilities and statistics return to normal if the effect is later ended. The subject must repeat this save every 24 hours that it remains in its new form. 
+If the subject remains in the new form for 24 consecutive hours, it must attempt another Will save. If this save fails, it loses its ability to understand language, as well as all other memories of its previous form, and its Hit Dice, hit points, and mental attribute scores change to match an average creature of its new form. These abilities and statistics return to normal if the effect is later ended. The subject must repeat this save every 24 hours that it remains in its new form. 
 \end{spellblood}
 \begin{spellnotes}
 Incorporeal or gaseous creatures are immune to \spell{baleful polymorph}, and a creature with the shapechanger subtype (such as a lycanthrope or a doppelganger) can revert to its natural form as a standard action (which ends the spell's effect). 
@@ -376,7 +376,7 @@ You can improve the spell's chance of success by presenting at least one object 
 \spellsave{Fortitude negates (harmless)}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
-The subject gains a \plus2 bonus to its natural armor modifier. \bonusscalingdescription In addition, the subject gains physical damage reduction 2/adamantine, allowing it to ignore the first 2 damage it would take each round, except damage dealt by adamantine weapons. This damage reduction increases by 1 for every two levels above 4th.
+The subject gains a \plus2 bonus to its natural armor modifier and physical damage reduction equal to your caster level. It ignores an amount of physical damage each round equal to your caster level, though an adamantine weapon bypasses the reduction. \bonusscalingdescription
 \end{spelleffect}
 \begin{spellnotes}
 If the creature takes fire damage, it loses its damage reduction for 1 round (including against the initial attack, if it also dealt physical damage).
@@ -415,7 +415,7 @@ Curses cannot be dispelled. \spell{Bestow curse} counters \spell{remove curse}.
 \spellsave{None}
 \spellsr{No}
 \begin{spelleffect}
-At the start of your turn, every creature within the area of the spell is the target of a grapple attack. This attack is also made in the round that \spell{black tentacles} is cast. Treat the tentacles attacking a particular target as a Medium creature with a base attack bonus equal to your caster level and a Strength score of 8. Thus, its grapple attack modifier is equal to your caster level \plus8. Roll only once each round for the entire spell effect, and apply the result to all creatures within the area of effect.
+Every creature within the area of the spell must make a grapple check, opposed by the grapple check of the tentacles. Treat the tentacles attacking a particular target as a Large creature with a base attack bonus equal to your caster level and a Strength score of 19. Thus, its grapple check modifier is equal to your caster level \plus8. Roll only once each round for the entire spell effect, and apply the result to all creatures within the area of effect.
 \par If the tentacles succeed in grappling a foe, that foe takes 1d8\plus4 damage. Each round that black tentacles succeeds on a grapple attack, it deals an additional 1d8\plus4 damage. The tentacles continue to crush the opponent until the spell ends or the opponent escapes.
 \par The tentacles are immune to all types of damage. The entire area of effect is considered difficult terrain while the tentacles last, and any creature that enters the area of the spell is immediately attacked by the tentacles.
 \end{spelleffect}
@@ -429,7 +429,7 @@ At the start of your turn, every creature within the area of the spell is the ta
 \spelldur{\durshort (D)}
 \spellsave{Reflex half or Reflex negates; see text}
 \spellsr{Yes (Reflex)}
-\spelldmg{6d6 force damage \add d6 per four caster levels above 12th}
+\spelldmg{6d8 force damage \add d8 per four caster levels above 12th}
 \begin{spelleffect}
 Any creature passing through the wall takes damage, with a Reflex save for half. If you create the wall so that it appears where creatures are, each creature takes damage as if passing through the wall. Each such creature can avoid the wall (ending up on the side of its choice) and thus take no damage by making a successful Reflex save.
 \par A \spell{blade barrier} provides cover (\plus4 circumstance bonus to AC, \plus2 circumstance bonus on Reflex saves) against attacks made through it.
@@ -448,10 +448,10 @@ Any creature passing through the wall takes damage, with a Reflex save for half.
 \par Each nonevil creature in the area is sickened for 5 rounds.
 \end{spellhealthy}
 \begin{spellblood}
-\par Each nonevil creature in the area suffers one or more of the following ill effects, depending on its Hit Values.
+\par Each nonevil creature in the area suffers one or more of the following ill effects, depending on its Hit Dice.
 \begin{dtable}
 \begin{tabularx}{\columnwidth}{l >{\lcol}X}
-\par \thead{HV} & \thead{Effect} \\
+\par \thead{HD} & \thead{Effect} \\
 \par Equal to caster level & Sickened \\
 \par Up to caster level \minus5 & Nauseated, sickened \\
 \par Up to caster level \minus10 & Paralyzed, nauseated, sickened \\
@@ -465,7 +465,7 @@ Any creature passing through the wall takes damage, with a Reflex save for half.
 \par \subspell{Killed} Living creatures die. Nonliving creatures are destroyed.
 \end{spellblood}
 \begin{spellnotes}
-Creatures whose Hit Values exceed your caster level are unaffected by \spell{blasphemy}.
+Creatures whose Hit Dice exceed your caster level are unaffected by \spell{blasphemy}.
 \end{spellnotes}
 
 \spellsection{Bless}
@@ -559,7 +559,7 @@ A \spell{see invisibility} spell does not counteract the blur effect, but a \spe
 \spelldur{Instantaneous}
 \spellsave{Reflex half}
 \spellsr{Yes (Reflex)}
-\spelldmg{1d6 fire damage \add 1d6 per four caster levels above 1st}
+\spelldmg{1d8 fire damage \add 1d8 per four caster levels above 1st}
 \begin{spelleffect}
 Everything in the area takes damage. Unattended flammable objects burn if the flames touch them. A character can extinguish burning items as a full-round action.
 \end{spelleffect}
@@ -675,7 +675,7 @@ Your staff turns into a creature that looks and fights just like a treant. The s
 \spelldur{Instantaneous}
 \spellsave{Will half/Will negates}
 \spellsr{Yes (Will)}
-\spelldmg{4d6 divine damage \add d6 per four caster levels above 8th}
+\spelldmg{4d8 divine damage \add d8 per four caster levels above 8th}
 \begin{spelleffect}
 Nonchaotic creatures in the area take damage and are bewildered for 5 rounds. A successful Will save reduces the damage by half and negates the bewildering.
 \end{spelleffect}
@@ -748,7 +748,7 @@ A successful Fortitude save negates the Strength damage. You can use this melee 
 The subjects immediately die.
 \end{spellblood}
 \begin{spellnotes}
-This spell can affect 2 HV worth of living creatures per caster level. Creatures with the fewest HV are affected first; among creatures with equal HV, those who are closest to the burst's point of origin are affected first. No creature of more HV than half your caster level can be affected, and Hit Values that are not sufficient to affect a creature are wasted. Healthy creatures are not affected by the spell, and do not count against the spell's HV limit.
+This spell can affect 2 HD worth of living creatures per caster level. Creatures with the fewest HD are affected first; among creatures with equal HD, those who are closest to the burst's point of origin are affected first. No creature of more HD than half your caster level can be affected, and Hit Dice that are not sufficient to affect a creature are wasted. Healthy creatures are not affected by the spell, and do not count against the spell's HD limit.
 \end{spellnotes}
 \spellmat{The powder of a crushed black pearl with a minimum value of 750 gp.}
 
@@ -829,7 +829,7 @@ Creatures who cannot see the light are not affected by this spell. Merely closin
 \spelltgt{You}
 \spelldur{\durshort (D)}
 \begin{spelleffect}
-You gain a \plus2 bonus to Strength, Dexterity, and Constitution, a \plus4 bonus to natural armor, a \plus4 bonus on Fortitude saves, and proficiency with any weapons you hold (except exotic weapons).
+You gain a \plus4 bonus to Strength, Dexterity, Constitution, natural armor, and Fortitude saves. In addition, you gain proficiency with any weapons you hold (except exotic weapons).
 \end{spelleffect}
 \begin{spellnotes}
 If you cast a spell or use a spell activation or spell completion magic item, the spell immediately ends.
@@ -896,7 +896,7 @@ This spell can be foiled by certain obscuring magic (such as the \spell{secret p
 \spelldur{Instantaneous and 1 round}
 \spellsave{Reflex half/Reflex negates}
 \spellsr{Yes (Reflex)}
-\spelldmg{2d6 cold damage \add d6 per four caster levels above 4th.}
+\spelldmg{2d8 cold damage \add d8 per four caster levels above 4th.}
 \begin{spelleffect}
 Everything in the area takes damage. Creatures damaged by the spell are fatigued for 1 round. A successful Reflex save halves the damage and negates the fatigue.
 \end{spelleffect}
@@ -905,7 +905,7 @@ Everything in the area takes damage. Creatures damaged by the spell are fatigued
 \spelldesc{You create an area of extreme cold that drains heat from creatures in the area, diminishing their ability to move and fight.}
 \spellschool{Evocation (Energy) [Cold]}
 \spelllvl{Drd 5, Sor/Wiz 5}
-\spelldmg{5d6 cold damage \add d6 per four caster levels above 10th.}
+\spelldmg{5d8 cold damage \add d8 per four caster levels above 10th.}
 \begin{spelleffect}
 This spell functions as \spell{cone of cold}, except that affected creatures are fatigued for 1 round even if they make their Reflex save, and are fatigued for 5 rounds if they fail.
 \end{spelleffect}
@@ -915,7 +915,7 @@ This spell functions as \spell{cone of cold}, except that affected creatures are
 \spellschool{Evocation (Energy) [Cold]}
 \spelllvl{Drd 8, Sor/Wiz 8}
 \spellarea{\arealarge cone-shaped burst}
-\spelldmg{8d6 cold damage \add d6 per four caster levels above 16th.}
+\spelldmg{8d8 cold damage \add d8 per four caster levels above 16th.}
 \begin{spelleffect}
 This spell functions as \spell{cone of cold}, except that it affects a larger area, and affected creatures are fatigued for 5 rounds whether or not they make their Reflex save.
 \end{spelleffect}
@@ -1025,16 +1025,6 @@ This spell allows you to create a volume of sound that rises, recedes, approache
 This spell creates one centipede swarm per two caster levels. They must all be adjacent at least one other swarm. You may summon the centipede swarms so that they share the area of other creatures. The swarms remain stationary, attacking any creatures in their area, unless you command the creeping doom to move (a standard action). As a standard action, you can command any number of the swarms to move toward any prey within \rngmed range of you. You cannot command any swarm to move more than \rngmed range away from you, and if you exceed that distance, the swarm remains stationary, attacking any creatures in its area (but it can be commanded again if you move within range).
 \end{spelleffect}
 
-\spellsection{Crippling Pain}
-\spelldesc{You inflict debilitating pain on your foe, crippling its ability to act.}
-\spellschool{Necromancy (Flesh)}
-\spelllvl{Sor/Wiz 5}
-\spellsave{None}
-\spellsr{Yes (Fortitude)}
-\begin{spelleffect}
-The subject suffers a \minus4 penalty to attack rolls, saving throws, checks, DCs, and AC.
-\end{spelleffect}
-
 \spellsection{Crush Life}
 \spelldesc{You attack the life force of a single foe directly, allowing no possibility for escape.}
 \spellschool{Necromancy (Life)}
@@ -1065,7 +1055,7 @@ This spell functions like \spell{crush life}, except that the target is also sic
 \spellrng{\rnglong}
 \spellarea{\arealarge radius limit}
 \spelltgts{Five living creatures within the area}
-\spelldmg{8d4 life damage \add d4 per four caster levels above 16th}
+\spelldmg{8d6 life damage \add d6 per four caster levels above 16th}
 \begin{spelleffect}
 This spell functions as \spell{crush life}, except that it affects many targets in a broad area.
 \end{spelleffect}
@@ -1276,7 +1266,7 @@ As the healthy effect, and the subject is also dazed for 1 round if it fails a W
 A bewildered creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
 \end{spellnotes}
 
-\spellsectioncomma{Daze}{Mass}
+\spellsection{Daze}{Mass}
 \spelldesc{You cloud the mind of your foes, preventing them from taking any actions.}
 \spellschool{Enchantment (Inhibition) [Mind-Affecting]}
 \spelllvl{Sor/Wiz 9}
@@ -1293,11 +1283,11 @@ This spell functions like \spell{daze}, except that it affects multiple creature
 \spelllvl{Death 2, Evil 2, Necro 2}
 \spellrng{\rngtouch}
 \spelltgt{Living creature touched}
-\spelldur{Instantaneous/10 minutes per HV of subject; see text}
+\spelldur{Instantaneous/10 minutes per HD of subject; see text}
 \spellsave{Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
-Upon casting this spell, you touch a living creature that is disabled or dying. If the subject fails its saving throw, it dies, and you gain 10 temporary hit points \plus1 per caster level. If the creature had more than 4 HV, you gain a \plus1 bous to your caster level. If the creature had more than 8 HV, you a \plus2 bonus to Strength, Dexterity, and Constitution. These effects last for 10 minutes per HV of the subject creature. If the creature had less than 1 HV, the bonuses last for 5 rounds.
+Upon casting this spell, you touch a living creature that is disabled or dying. If the subject fails its saving throw, it dies, and you gain 10 temporary hit points \plus1 per caster level. If the creature had more than 4 HD, you gain a \plus1 bous to your caster level. If the creature had more than 8 HD, you a \plus2 bonus to Strength, Dexterity, and Constitution. These effects last for 10 minutes per HD of the subject creature. If the creature had less than 1 HD, the bonuses last for 5 rounds.
 \end{spelleffect}
 
 \spellsection{Death Ward}
@@ -1365,7 +1355,7 @@ This spell does not cure any damage that poison may have already done.
 \spelllvl{Fire 6, Evoc 6}
 \spellarea{\areamed radius spread}
 \spelldur{5 rounds or less; see text}
-\spelldmg{6d6 fire damage \add d6 per four caster levels above 12th}
+\spelldmg{6d8 fire damage \add d8 per four caster levels above 12th}
 \begin{spelleffect}
 This spell functions like \spell{fireball}, except that it is larger and can detonate up to 5 rounds after the spell is cast. You select the amount of delay upon completing the spell, and that time cannot change once it has been set unless someone touches the bead (see below). For every round that this spell is delayed, your caster level with it increases by 2.
 
@@ -1423,7 +1413,7 @@ This spell functions like \spell{detect evil}, except that it detects chaotic au
 \spellsr{No}
 \begin{spelleffect}
 You know the direction to any evil creatures or objects in the area by seeing their auras. If you concentrate on a particular aura, you learn how powerful it is, as determined by the table below.
-\par If the HV or level of the aura's source is at least twice your caster level, the power of the aura increases by one step, with strong auras becoming overwhelming. If you are good, and you concentrate on a creature with an overwhelming aura, you must make a Will save or be stunned for 1 round (which typically breaks your concentration, ending the spell).
+\par If the HD or level of the aura's source is at least twice your caster level, the power of the aura increases by one step, with strong auras becoming overwhelming. If you are good, and you concentrate on a creature with an overwhelming aura, you must make a Will save or be stunned for 1 round (which typically breaks your concentration, ending the spell).
 \begin{dtable}
 \begin{tabularx}{\columnwidth}{l >{\lcol}X}
 \thead{Creature/Object} & \thead{Aura Power} \\
@@ -1525,12 +1515,12 @@ This spell functions as \spell{detect thoughts}, except that it does not require
 You know the direction of all undead creatures in the spell's area. If you concentrate on a particular undead creature, you learn the strength of its aura, determined by the table below.
 You can detect the aura that surrounds undead creatures. The amount of information revealed depends on how long you study a particular area.
 \par \subspell{1st Round} Presence or absence of undead auras.
-\par \subspell{2nd Round} Number of undead auras in the area and the strength of the strongest undead aura present. If you are of good alignment, and the strongest undead aura's strength is overwhelming (see below), and the creature has HV of at least twice your character level, you are stunned for 1 round and the spell ends.
+\par \subspell{2nd Round} Number of undead auras in the area and the strength of the strongest undead aura present. If you are of good alignment, and the strongest undead aura's strength is overwhelming (see below), and the creature has HD of at least twice your character level, you are stunned for 1 round and the spell ends.
 \par \subspell{3rd Round} The strength and location of each undead aura. If an aura is outside your line of sight, then you discern its direction but not its exact location.
-\par \subspell{Aura Strength} The strength of an undead aura is determined by the HV of the undead creature, as given on the following table:
+\par \subspell{Aura Strength} The strength of an undead aura is determined by the HD of the undead creature, as given on the following table:
 \begin{dtable}
 \begin{tabularx}{\columnwidth}{*{2}{>{\lcol}X}}
-\par HV & Strength \\ 
+\par HD & Strength \\ 
 \par 1 or lower & Faint \\ 
 \par 2--4 & Moderate \\ 
 \par 5--10 & Strong \\ 
@@ -1555,10 +1545,10 @@ Each round, you can turn to detect undead in a new area. A detection spell can p
 \par Each nonlawful creature in the area is deafened for 5 rounds.
 \end{spellhealthy}
 \begin{spellblood}
-\par Each nonlawful creature in the area suffers one or more of the following ill effects, depending on its Hit Values.
+\par Each nonlawful creature in the area suffers one or more of the following ill effects, depending on its Hit Dice.
 \begin{dtable}
 \begin{tabularx}{\columnwidth}{l >{\lcol}X}
-\par \thead{HV} & \thead{Effect} \\
+\par \thead{HD} & \thead{Effect} \\
 \par Equal to caster level & Staggered \\
 \par Up to caster level \minus5 & Stunned, staggered \\
 \par Up to caster level \minus10 & Paralyzed, slowed, deafened \\
@@ -1572,7 +1562,7 @@ Each round, you can turn to detect undead in a new area. A detection spell can p
 \par \subspell{Killed} Living creatures die. Nonliving creatures are destroyed.
 \end{spellblood}
 \begin{spellnotes}
-Creatures whose Hit Values exceed your caster level are unaffected by this spell.
+Creatures whose Hit Dice exceed your caster level are unaffected by this spell.
 \end{spellnotes}
 
 \spellsection{Dimension Door}
@@ -1870,7 +1860,7 @@ Any creature pinned beneath rubble takes 1d6 nonlethal damage per minute while p
 \spellsr{No}
 \begin{spelleffect}
 This spell opens a portal to an Elemental Plane and summons elementals from it. A druid can choose the plane (Air, Earth, Fire, or Water); a cleric opens a portal to the plane matching his domain.
-\par When the spell is complete, 2d4 Large elementals appear. Five minutes later, 1d4 Huge elementals appear. Five minutes after that, one greater elemental appears. Each elemental has maximum hit points per HV. Once these creatures appear, they serve you for the duration of the spell.
+\par When the spell is complete, 2d4 Large elementals appear. Five minutes later, 1d4 Huge elementals appear. Five minutes after that, one greater elemental appears. Each elemental has maximum hit points per HD. Once these creatures appear, they serve you for the duration of the spell.
 \par The elementals obey you explicitly and never attack you, even if someone else manages to gain control over them. You do not need to concentrate to maintain control over the elementals. You can dismiss them singly or in groups at any time.
 \par When you use a summoning spell to summon an air, earth, fire, or water creature, it is a spell of that type.
 \end{spelleffect}
@@ -1922,7 +1912,7 @@ This spell functions like \spell{enervation}, except that the creature struck ga
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
 You point your finger and utter the incantation, releasing a black ray of crackling negative energy that suppresses the life force of any living creature it strikes. You must make a ranged touch attack to hit. If the attack succeeds, the subject gains two negative levels. A successful Fortitude save halves the number of negative levels.
-\par If the subject has at least as many negative levels as HV, it dies. Each negative level gives a creature a \minus1 penalty on attack rolls, saving throws, checks, and effective level (for determining the power, duration, DC, and other details of spells or special abilities). Additionally, a spellcaster loses one spell or spell slot from his or her highest available level.
+\par If the subject has at least as many negative levels as HD, it dies. Each negative level gives a creature a \minus1 penalty on attack rolls, saving throws, checks, and effective level (for determining the power, duration, DC, and other details of spells or special abilities). Additionally, a spellcaster loses one spell or spell slot from his or her highest available level.
 \par An undead creature struck by the ray gains 20 temporary hit points \plus1 per caster level instead.
 \end{spelleffect}
 \begin{spellnotes}
@@ -1931,7 +1921,7 @@ This spell stacks with any effect that bestows negative levels, including itself
 
 \spellsection{Enlarge Person}
 \spellschool{Transmutation (Polymorph) [Size-Affecting]}
-\spelllvl{Strength 3, Trans 3}
+\spelllvl{Sor/Wiz 3, Strength 3}
 \spelltime{Full-round action}
 \spellrng{\rngclose}
 \spelltgt{One humanoid creature}
@@ -2150,8 +2140,8 @@ The target is instantly slain.
 \spelldur{\durlong or until used}
 \spellsave{None or Reflex half; see text}
 \spellsr{Yes (Reflex)}
-\spelldmg{6d6 fire damage \add d6 per four caster levels above 12th (acorn grenades);\par
-6d8 fire damage \add d8 per four caster levels above 12th (holly berry bombs)}
+\spelldmg{6d8 fire damage \add d8 per four caster levels above 12th (acorn grenades);\par
+6d10 fire damage \add d10 per four caster levels above 12th (holly berry bombs)}
 \begin{spelleffect}
 Depending on the version of fire seeds you choose, you turn acorns into splash weapons that you or another character can throw, or you turn holly berries into bombs that you can detonate on command.
 \par \subspell{Acorn Grenades} As many as four acorns turn into special splash weapons that can be hurled as far as 100 feet. A ranged touch attack roll is required to strike the intended target. Together, the acorns are capable of dealing 6d6 fire damage \add d6 per four caster levels above 12th, divided up among the acorns as you wish.
@@ -2187,7 +2177,7 @@ This spell wreathes you in flame and causes damage to each creature that attacks
 \spelldur{Instantaneous}
 \spellsave{Reflex half}
 \spellsr{Yes (Reflex)}
-\spelldmg{8d6 fire damage \add d6 per four caster levels above 16th}
+\spelldmg{8d8 fire damage \add d8 per four caster levels above 16th}
 \begin{spelleffect}
 The spell deals damage to all enemies in the area, leaving your allies unscathed.
 \end{spelleffect}
@@ -2201,7 +2191,7 @@ The spell deals damage to all enemies in the area, leaving your allies unscathed
 \spelldur{Instantaneous}
 \spellsave{Reflex half}
 \spellsr{Yes (Reflex)}
-\spelldmg{3d6 fire damage \add d6 per four caster levels above 6th.}
+\spelldmg{3d8 fire damage \add d8 per four caster levels above 6th.}
 \begin{spelleffect}
 Everything in the area takes damage.
 \end{spelleffect}
@@ -2218,7 +2208,7 @@ If a destructive spell deals enough damage to an interposing barrier to shatter 
 \spelldur{Instantaneous}
 \spellsave{Reflex half}
 \spellsr{Yes (Reflex)}
-\spelldmg{5d6 fire and divine damage \add d6 per four caster levels above 8th; see text}
+\spelldmg{5d8 fire and divine damage \add d8 per four caster levels above 8th; see text}
 \begin{spelleffect}
 Half the damage is fire damage, but the other half results directly from divine power and is therefore not typed. Your allies in the area take only the fire damage.
 \end{spelleffect}
@@ -2345,7 +2335,7 @@ This spell functions like \spell{freedom}, except that it affects multiple creat
 \spelldur{Instantaneous/5 rounds; see text}
 \spellsave{Reflex half; see text}
 \spellsr{Yes (Reflex)}
-\spelldmg{7d6 cold damage \add d6 per four levels after 14th}
+\spelldmg{7d8 cold damage \add d8 per four levels after 14th}
 \begin{spelleffect}
 Creatures in the area take damage. If the \spell{freezing sphere} strikes a body of water or a liquid that is principally water (not including water-based creatures), it freezes the liquid to a depth of 6 inches over an area equal to 100 square feet (a 10-foot square) per caster level (maximum 1,500 square feet). This ice lasts for 5 rounds. Creatures that were swimming on the surface of frozen water become trapped in the ice. Attempting to break free is a full-round action. A trapped creature must make a Strength check or an Escape Artist check against this spell's save DC to do so.
 \end{spelleffect}
@@ -2550,7 +2540,7 @@ If used on an undead creature, \spell{harm} acts like \spell{heal}.
 \spellsection{Haste}
 \spelldesc{You accelerate your ally's motions, causing her to move and act more quickly than normal.}
 \spellschool{Transmutation (Temporal)}
-\spelllvl{Trans 4}
+\spelllvl{Sor/Wiz 3}
 \spellrng{\rngclose}
 \spelltgts{One creature}
 \spelldur{\durshort}
@@ -2568,6 +2558,7 @@ The subject is hasted. This has two effects. When making a full attack action, a
 \spelldesc{You accelerate your allies' motions, causing them to move and act more quickly than normal.}
 \spellschool{Transmutation (Temporal)}
 \spelllvl{Sor/Wiz 8}
+\spellrng{\rngmed}
 \spellarea{\areamed radius limit}
 \spelltgts{Five creatures within the area}
 \begin{spelleffect}
@@ -2752,7 +2743,7 @@ A brilliant divine radiance surrounds the subjects, protecting them from attacks
 \spelldur{Instantaneous and 5 rounds; see text}
 \spellsave{Will half/Will negates}
 \spellsr{Yes (Will)}
-\spelldmg{4d6 divine damage \add d6 per four caster levels above 8th}
+\spelldmg{4d8 divine damage \add d8 per four caster levels above 8th}
 \begin{spelleffect}
 Nongood creatures in the area take damage and are dazzled for 5 rounds. A successful Will save reduces the damage by half and negates the dazzling.
 \end{spelleffect}
@@ -2787,10 +2778,10 @@ This spell is not cumulative with any other spell that might modify the weapon i
 \par Each nongood creature in the area is deafened for 5 rounds.
 \end{spellhealthy}
 \begin{spellblood}
-\par Each nongood creature in the area suffers one or more of the following ill effects, depending on its Hit Values.
+\par Each nongood creature in the area suffers one or more of the following ill effects, depending on its Hit Dice.
 \begin{dtable}
 \begin{tabularx}{\columnwidth}{l >{\lcol}X}
-\par \thead{HV} & \thead{Effect} \\
+\par \thead{HD} & \thead{Effect} \\
 \par Equal to caster level & Deafened \\
 \par Up to caster level \minus5 & Blinded, deafened \\
 \par Up to caster level \minus10 & Paralyzed, nauseated, deafened \\
@@ -2804,7 +2795,7 @@ This spell is not cumulative with any other spell that might modify the weapon i
 \par \subspell{Killed} Living creatures die. Nonliving creatures are destroyed.
 \end{spellblood}
 \begin{spellnotes}
-Creatures whose Hit Values exceed your caster level are unaffected by \spell{holy word}.
+Creatures whose Hit Dice exceed your caster level are unaffected by \spell{holy word}.
 \end{spellnotes}
 
 \spellsection{Hypnotic Pattern}
@@ -2839,7 +2830,7 @@ Creatures who cannot see the lights are not affected by this spell. A wizard or 
 \spelldur{Instantaneous and 1 round; see text}
 \spellsave{None}
 \spellsr{Yes (Reflex)}
-\spelldmg{4d4 cold and bludgeoning damage \add d4 per four caster levels above 8th}
+\spelldmg{4d6 cold and bludgeoning damage \add d6 per four caster levels above 8th}
 \begin{spelleffect}
 All creatures within the area take damage. The area of the ice storm's effect is difficult terrain until the spell ends.
 \end{spelleffect}
@@ -2908,7 +2899,7 @@ This effect can cause a creature to begin dying without being disabled first.
 \spellsectioncomma{Inflict Critical Wounds}{Mass}
 \spellschool{Necromancy (Vitalism) [Negative]}
 \spelllvl{Clr 8}
-\spelldmg{8d6 negative energy damage \add d6 per four caster levels above 10th}
+\spelldmg{8d8 negative energy damage \add d8 per four caster levels above 10th}
 \begin{spelleffect}
 This spell functions like \spell{mass inflict light wounds}, except that for every 10 points of damage dealt in excess of the subject's hit points, it can instead inflict 1 point of critical damage.
 \end{spelleffect}
@@ -2938,7 +2929,7 @@ The touched creature takes damage. Since undead are powered by negative energy, 
 \spelldur{Instantaneous}
 \spellsave{Will half}
 \spellsr{Yes (Will)}
-\spelldmg{5d6 negative energy damage \add d6 per four caster levels above 10th}
+\spelldmg{5d8 negative energy damage \add d8 per four caster levels above 10th}
 \begin{spellnotes}
 The targets take damage. Like other \spellindirect{inflict light wounds}{inflict} spells, \spell{mass inflict light wounds} heals undead instead of dealing damage. A cleric capable of spontaneously casting \spellindirect{inflict light wounds}{inflict} spells can also spontaneously cast \spellindirect{mass inflict light wounds}{mass inflict} spells.
 \end{spellnotes}
@@ -2957,7 +2948,7 @@ This effect can cause a creature to begin dying without being disabled first.
 \spellsectioncomma{Inflict Moderate Wounds}{Mass}
 \spellschool{Necromancy (Vitalism) [Negative]}
 \spelllvl{Clr 6}
-\spelldmg{6d6 negative energy damage \add d6 per four caster levels above 10th}
+\spelldmg{6d8 negative energy damage \add d8 per four caster levels above 10th}
 \begin{spelleffect}
 This spell functions like \spell{mass inflict light wounds}, except that for every 20 points of damage dealt in excess of the subject's hit points, it can instead inflict 1 point of critical damage.
 \end{spelleffect}
@@ -2979,7 +2970,7 @@ This effect can cause a creature to begin dying without being disabled first.
 \spellsectioncomma{Inflict Serious Wounds}{Mass}
 \spellschool{Necrkomancy (Vitalism) [Negative]}
 \spelllvl{Clr 7}
-\spelldmg{7d6 negative energy damage \add d6 per four caster levels above 10th}
+\spelldmg{7d8 negative energy damage \add d8 per four caster levels above 10th}
 \begin{spelleffect}
 This spell functions like \spell{mass inflict light wounds}, except that for every 15 points of damage dealt in excess of the subject's hit points, it can instead inflict 1 point of critical damage.
 \end{spelleffect}
@@ -3072,7 +3063,6 @@ You surround yourself with a mobile sphere of power that suppresses all forms of
 \spellsection{Invisibility Sphere}
 \spellschool{Illusion (Glamer)}
 \spelllvl{Brd 4, Sor/Wiz 5}
-\spellcmp{V, S}
 \spellarea{\areasmall radius emanation around the creature or object touched}
 \begin{spelleffect}
 This spell functions like \spell{invisibility}, except that this spell confers invisibility upon all creatures within a \areasmall radius emanation of the recipient. The center of the effect is mobile with the recipient.
@@ -3176,7 +3166,7 @@ A light spell (one with the light descriptor) counters and dispels a darkness sp
 \spelldur{Instantaneous}
 \spellsave{Reflex half}
 \spellsr{Yes (Reflex)}
-\spelldmg{3d6 electricity damage \add d6 per four caster levels above 6th}
+\spelldmg{3d8 electricity damage \add d8 per four caster levels above 6th}
 \begin{spelleffect}
 You release a powerful stroke of electrical energy that deals damage to each creature within its area. The bolt begins at your fingertips.
 \par The lightning bolt sets fire to combustibles and damages objects in its path. It can melt metals with a low melting point, such as lead, gold, copper, silver, or bronze. If the damage caused to an interposing barrier shatters or breaks through it, the bolt may continue beyond the barrier if the spell's range permits; otherwise, it stops at the barrier just as any other spell effect does.
@@ -3521,7 +3511,7 @@ To speak a message, you must mouth the words and whisper, possibly allowing obse
 \spelldur{Instantaneous}
 \spellsave{Reflex partial}
 \spellsr{Yes (Reflex)}
-\spelldmg{9d6 fire damage \add d6 per four caster levels after 18th}
+\spelldmg{9d8 fire damage \add d8 per four caster levels after 18th}
 \begin{spelleffect}
 Every creature and object in the area takes damage. Flying creatures within the area of size Huge or smaller that fail their Reflex saves are driven to the ground, taking falling damage appropriate to the distance they descended. Creatures on the ground that fail their Reflex saves are knocked prone.
 \end{spelleffect}
@@ -3714,7 +3704,7 @@ A moderate wind (11\add mph), such as from a \spell{gust of wind} spell, dispers
 \spelldur{Instantaneous}
 \spellsave{Will half/Will negates}
 \spellsr{Yes (Will)}
-\spelldmg{4d6 divine damage \add d6 per four caster levels above 8th}
+\spelldmg{4d8 divine damage \add d8 per four caster levels above 8th}
 \begin{spelleffect}
 Nonlawful creatures in the area take damage and are bewildered for 5 rounds. A successful Will save reduces the damage by half and negates the bewildering.
 \end{spelleffect}
@@ -3818,7 +3808,7 @@ This spell creates a Large, horselike creature that can only be ridden by you or
 \spellsr{No}
 \begin{spelleffect}
 This spell creates an ethereal passage through wooden, plaster, or stone walls, but not other materials. The phase door is invisible and inaccessible to all creatures except you, and only you can use the passage. It can be used a number of times equal to half your caster level before the spell ends. You disappear when you enter the phase door and appear when you exit. If you desire, you can take one other creature (Medium or smaller) through the door. This counts as two uses of the door. The door does not allow light, sound, or spell effects through it, nor can you see through it without using it. Thus, the spell can provide an escape route, though certain creatures, such as phase spiders, can follow with ease.
-\par You can allow other creatures to use the phase door by setting some triggering condition for the door. Such conditions can be as simple or elaborate as you desire. They can be based on a creature's name, identity, or alignment, but otherwise must be based on observable actions or qualities. Intangibles such as level, class, Hit Values, and hit points don't qualify.
+\par You can allow other creatures to use the phase door by setting some triggering condition for the door. Such conditions can be as simple or elaborate as you desire. They can be based on a creature's name, identity, or alignment, but otherwise must be based on observable actions or qualities. Intangibles such as level, class, Hit Dice, and hit points don't qualify.
 \end{spelleffect}
 \begin{spellnotes}
 The \spell{true seeing} spell or similar magic reveals the presence of a phase door but does not allow its use. A \spell{phase door} is subject to \spell{dispel magic}. If anyone is within the passage when it is dispelled, he is harmlessly ejected just as if he were inside a \spell{passwall} effect.
@@ -3887,7 +3877,7 @@ The target is sickened for 5 rounds.
 The target is instantly slain.
 \end{spellblood}
 \begin{spellnotes}
-The target must be bloodied when the spell is cast to suffer the bloodied effect. A creature whose HV exceeds your caster level are sickened instead of killed.
+The target must be bloodied when the spell is cast to suffer the bloodied effect. A creature whose HD exceeds your caster level are sickened instead of killed.
 \end{spellnotes}
 
 \spellsection{Power Word Confuse}
@@ -4003,7 +3993,7 @@ This spell causes seven shimmering, intertwined, multicolored beams of light to 
 \spellsave{See text}
 \spellsr{See text}
 \begin{spelleffect}
-This spell creates a vertical, opaque wall -- a shimmering, multicolored plane of light that protects you from all forms of attack. The wall flashes with seven colors, each of which has a distinct power and purpose. The wall is immobile, and you can pass through and remain near the wall without harm. However, any other creature with less than 8 HV that is within 20 feet of the wall is blinded for 1 minute by the colors if it looks at the wall.
+This spell creates a vertical, opaque wall -- a shimmering, multicolored plane of light that protects you from all forms of attack. The wall flashes with seven colors, each of which has a distinct power and purpose. The wall is immobile, and you can pass through and remain near the wall without harm. However, any other creature with less than 8 HD that is within 20 feet of the wall is blinded for 1 minute by the colors if it looks at the wall.
 \par The wall's maximum proportions are 50 feet wide and 30 feet high. A \spell{prismatic wall} spell cast to materialize in a space occupied by a creature is disrupted, and the spell is wasted.
 \par Each color in the wall has a special effect. The accompanying table shows the seven colors of the wall, the order in which they appear, their effects on creatures trying to attack you or pass through the wall, and the magic needed to negate each color.
 \par The wall can be destroyed, color by color, in consecutive order, by various magical effects; however, the first color must be brought down before the second can be affected, and so on. A rod of cancellation or a mage's disjunction spell destroys a prismatic wall, but an antimagic field fails to penetrate it. Dispel magic and greater dispel magic cannot dispel the wall or anything beyond it. Spell resistance is effective against a prismatic wall, but the caster level check must be repeated for each color present.
@@ -4222,7 +4212,7 @@ While this spell is active, attacks made against you have a 20\% miss chance. Th
 \spellsave{Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
-This spell causes instant diminution of a humanoid creature, halving its height, length, and width and dividing its weight by 8. This decrease changes the creature's size category to the next smaller one. The target gains a \plus2 bonus to Dexterity, a \minus2 penalty to Strength (to a minimum of 1), a \plus4 size bonus to Hide and Move Silently checks, and a \plus1 size bonus on attack rolls and AC due to its reduced size.
+This spell causes instant diminution of a humanoid creature, halving its height, length, and width and dividing its weight by 8. This decrease changes the creature's size category to the next smaller one. The target gains a \plus2 bonus to Dexterity, a \minus2 penalty to Strength (to a minimum of 1), a \plus4 inherent bonus to Hide checks, and a \plus1 inherent bonus on attack rolls and AC due to its reduced size.
 \par A Small humanoid creature whose size decreases to Tiny has a space of 2-1/2 feet and a natural reach of 0 feet (meaning that it must enter an opponent's square to attack). A Large humanoid creature whose size decreases to Medium has a space of 5 feet and a natural reach of 5 feet. This spell doesn't change the target's speed.
 \par All equipment worn or carried by a creature is similarly reduced by the spell.
 \par Melee and projectile weapons deal less damage. Other magical properties are not affected by this spell. Any reduced item that leaves the reduced creature's possession (including a projectile or thrown weapon) instantly returns to its normal size. This means that thrown weapons deal their normal damage (projectiles deal damage based on the size of the weapon that fired them).
@@ -4300,7 +4290,7 @@ The subject gains damage reduction 10 against whichever of the five energy types
 \par The spell can absorb a maximum amount of damage equal to 10 points per caster level. After it absorbs its maximum amount of damage, the spell ends.
 \end{spelleffect}
 \begin{spellnotes}
-Resist energy absorbs only damage. The subject could still suffer unfortunate side effects. The spell protects the recipient's equipment as well.
+Resist energy absorbs only damage. The subject could still suffer unfortunate side effects.
 \par \spellindirect{resist energy}{Resist energy} overlaps (and does not stack with) \spell{protection from energy}. If a character is shielded by both spells, the \spellindirect{protection from energy}{protection} spell absorbs damage until its power is exhausted. A character can only be affected by one \spell{resist energy} spell at once.
 \end{spellnotes}
 
@@ -4357,7 +4347,7 @@ This spell functions like \spell{retrieve}, except that if the object is attende
 \end{spelleffect}
 
 \spellsection{Revelation}
-\spellschool{Divination (Awareness, Knowledge)}
+\spellschool{Divination (Knowledge)}
 \spelllvl{Div 8, Sor/Wiz 9}
 \spellrng{\rngmed}
 \spelltgt{One creature}
@@ -4799,7 +4789,7 @@ If you hit with a touch attack, the target takes damage. When delivering the jol
 \spelldur{Instantaneous}
 \spellsave{Fortitude half/Fortitude negates}
 \spellsr{Yes (Fortitude)}
-\spelldmg{4d6 sonic damage \add d6 per four caster levels above 8th; see text}
+\spelldmg{4d8 sonic damage \add d8 per four caster levels above 8th; see text}
 \begin{spelleffect}
 Any creature in the area takes damage and is deafened for 5 rounds. A successful save negates the deafness and reduces the damage by half. Any exposed brittle or crystalline object or crystalline creature takes 4d8 points of sonic damage \add d8 per four caster levels above 8th.
 \end{spelleffect}
@@ -4809,7 +4799,7 @@ Any creature in the area takes damage and is deafened for 5 rounds. A successful
 \spelllvl{Brd 6, Destruction 7, Sor/Wiz 7, Strength 7}
 \spellarea{\arealarge cone-shaped burst}
 \spellsave{Fortitude partial or Reflex negates (object); See text}
-\spelldmg{7d6 sonic damage \add d6 per four caster levels above 14th; see text}
+\spelldmg{7d8 sonic damage \add d8 per four caster levels above 14th; see text}
 \begin{spelleffect}
 This spell functions like \spell{shout}, except that it is larger and the deafness lasts for 5 rounds. Any exposed brittle or crystalline object or crystalline creature takes 7d8 points of sonic damage \add d8 per four caster levels above 14th.
 \end{spelleffect}
@@ -4967,7 +4957,7 @@ This spell causes all creatures within the area to turn on each other rather tha
 \par Creatures forced by a \spell{song of discord} to attack their fellows employ all methods at their disposal, choosing their deadliest spells and most advantageous combat tactics. They do not, however, harm targets that have fallen unconscious.
 \end{spelleffect}
 \begin{spellnotes}
-Creatures with HV in excess of your caster level are immune to this spell.
+Creatures with HD in excess of your caster level are immune to this spell.
 \end{spellnotes}
 
 \spellsection{Sound Burst}
@@ -4979,7 +4969,7 @@ Creatures with HV in excess of your caster level are immune to this spell.
 \spelldur{Instantaneous}
 \spellsave{Fortitude half/Fortitude negates}
 \spellsr{Yes (Fortitude)}
-\spelldmg{2d6 sonic damage \add d6 per four levels above 4th}
+\spelldmg{2d8 sonic damage \add d8 per four levels above 4th}
 \begin{spelleffect}
 Creatures in the area take damage and are deafened for 5 rounds. A successful Fortitude save halves the damage and negates the deafening.
 \end{spelleffect}
@@ -5128,7 +5118,7 @@ The weapon created by this spell attacks once each round on your turn. This func
 \end{spelleffect}
 \begin{spellnotes}
 The \spell{spiritual weapon} strikes as a spell, not as a weapon, so, for example, ignores physical damage reduction. As a force effect, it can strike incorporeal creatures without the normal miss chance associated with incorporeality. If the weapon goes beyond the spell range, if it goes out of your sight, or if you are not directing it, the weapon returns to you and hovers. Even if the spiritual weapon is a ranged weapon, use the spell's range, not the weapon's normal range increment, and switching targets still is a move action.
-\par A \spell{spiritual weapon} cannot be attacked or harmed by physical attacks, but \spell{dispel magic}, \spell{disintegrate}, and similar effects can affect it. A spiritual weapon's AC against touch attacks is 12 (10 \add size bonus for Tiny object).
+\par A \spell{spiritual weapon} cannot be attacked or harmed by physical attacks, but \spell{dispel magic}, \spell{disintegrate}, and similar effects can affect it. A spiritual weapon's AC against touch attacks is 12 (10 \add \plus2 for being Tiny).
 \par The weapon that you get is usually a force replica of any weapon from your deity's weapon group. A cleric without a deity gets a weapon based on his alignment. A neutral cleric without a deity can create a spiritual weapon of any alignment, provided he is acting at least generally in accord with that alignment at the time. The weapon groups associated with each alignment are as follows.
 \par Chaos: Axes
 \par Evil: Flexible weapons
@@ -5146,7 +5136,7 @@ The \spell{spiritual weapon} strikes as a spell, not as a weapon, so, for exampl
 \spelldur{\durshort (D)}
 \spellsave{Reflex half; see text}
 \spellsr{No}
-\spelldmg{9d6 bludgeoning damage \add d6 per four levels above 18th}
+\spelldmg{9d8 bludgeoning damage \add d8 per four levels above 18th}
 \begin{spelleffect}
 This spell summons a stampede of bison to trample your foes. Creatures trampled by the herd of bison take damage from the spell.
 \par The bison are summoned in a place that you designate within the spell's area, with each creature being summoned in the closest free space to the point of origin. If there is insufficient room for all of the bison to appear while standing on stable ground, the spell will summon fewer bison than the maximum. The herd of bison always moves directly away from you, trampling anything of Large size or smaller that gets in their way. If the herd is thinned to 5 bison or fewer, they stop stampeding and scatter in random directions.
@@ -5193,8 +5183,8 @@ Unlike \spell{barkskin}, the damage reduction is not negated if the creature tak
 This spell creates an enormous black storm cloud. Lightning and crashing claps of thunder appear within the storm. Each creature beneath the cloud must succeed on a Fortitude save or be deafened for 5 minutes. Violent rain and wind gusts obscure all sight beyond 100 feet. A creature less than 100 feet away has concealment (20\% miss chance). Ranged attacks within the area of the storm take a \minus4 penalty, and spells cast within the area are disrupted unless the caster succeeds on a Concentration check against a DC equal to 20 \add double the level of the spell.
 \par If you do not maintain concentration on the spell after casting it, the spell ends. If you continue to concentrate, the spell generates new effects in each following round, as noted below. Each effect occurs during your turn.
 \par 2nd Round: Acid rains down, dealing 1d10 acid damage to everything in the area (no save).
-\par 3rd Round: You call three bolts of lightning down from the cloud. You decide where the bolts strike. No two bolts may be directed at the same target. Each bolt deals 9d6 electricity damage \add d6 per four levels after 18th. A creature struck can attempt a Reflex save for half damage. If you do not direct the lightning bolts, each bolt automatically targets the largest available target in the area.
-\par 4th Round: Hailstones rain down, dealing 5d6 bludgeoning damage to all enemies in the area.
+\par 3rd Round: You call three bolts of lightning down from the cloud. You decide where the bolts strike. No two bolts may be directed at the same target. Each bolt deals 9d8 electricity damage \add d6 per four levels after 18th. A creature struck can attempt a Reflex save for half damage. If you do not direct the lightning bolts, each bolt automatically targets the largest available target in the area.
+\par 4th Round: Hailstones rain down, dealing 5d8 bludgeoning damage to all enemies in the area.
 \par 5th through 10th Rounds: Acid rains down, dealing 1d10 damage to everything in the area (no save).
 \end{spelleffect}
 
@@ -5209,7 +5199,7 @@ This spell creates an enormous black storm cloud. Lightning and crashing claps o
 \spellsr{Yes (Fortitude)}
 \spelldmg{7d10 physical damage \add d10 per four caster levels above 14th}
 \begin{spelleffect}
-The target takes damage. In addition, if it fails a Fortitude save, for the duration of the spell all damage it takes is doubled.
+The target takes damage. In addition, if it fails a Fortitude save, for the duration of the spell all damage it takes is doubled. This effect does not double the initial damage dealt by this spell.
 \end{spelleffect}
 
 \spellsection{Suggestion}
@@ -5238,24 +5228,6 @@ A very reasonable suggestion can cause the save to be made with a \minus2 or gre
 \begin{spelleffect}
 This spell functions like \spell{suggestion}, except that it can affect multiple creatures and has a shorter duration. The same suggestion applies to all subjects.
 \end{spelleffect}
-
-\begin{comment}
-\spellsection{Summon Instrument}
-\spellschool{Conjuration (Summoning)}
-\spelllvl{Brd 0}
-\spelltime{Full-round action}
-\spellrng{0 ft.}
-\spelleff{One summoned handheld musical instrument}
-\spelldur{\durmed (D)}
-\spellsave{None}
-\spellsr{No}
-\begin{spelleffect}
-This spell summons one handheld musical instrument of your choice. This instrument appears in your hands or at your feet (your choice). Only one instrument appears per casting, and it will play only for you. 
-\end{spelleffect}
-\begin{spellnotes}
-The instrument is typical for its type. You can't summon an instrument too large to be held in two hands.
-\end{spellnotes}
-\end{comment}
 
 \spellsection{Summon Monster I}
 \spellschool{Conjuration (Summoning) [see text]}
@@ -5540,7 +5512,7 @@ This spell functions like \spellindirect{summon nature's ally i}{summon nature's
 \spelldur{Instantaneous}
 \spellsave{Reflex half/Reflex negates}
 \spellsr{Yes (Reflex)}
-\spelldmg{5d6 solar damage \add d6 per four caster levels above 10th; see text}
+\spelldmg{5d8 solar damage \add d8 per four caster levels above 10th; see text}
 \begin{spelleffect}
 Each creature in the beam takes damage and is dazzled for 1 round. Any creatures to which sunlight is harmful or unnatural instead take 5d10 points of damage \add d10 per four caster levels above 10th and are blinded for 1 round. A successful Reflex save negates the dazzling (or blindness) and reduces the damage by half.
 \end{spelleffect}
@@ -5554,7 +5526,7 @@ A dazzled creature treats everything he sees as if it has concealment (20\% miss
 \spelllvl{Drd 8}
 \spellrng{\rngmed}
 \spellarea{\areamed radius burst}
-\spelldmg{8d6 solar damage \add d6 per four caster levels above 16th; see text}
+\spelldmg{8d8 solar damage \add d8 per four caster levels above 16th; see text}
 \begin{spelleffect}
 This spell functions as \spell{sunbeam}, except that it affects a \areamed radius and deals more damage. Any creatures to which sunlight is harmful or unnatural take 8d10 points of damage \add d10 per three caster levels above 16th.
 \end{spelleffect}
@@ -5658,6 +5630,7 @@ This spell functions like \spell{telepathic bond}, except that it links multiple
 \spellsection{Temporal Stasis}
 \spellschool{Transmutation (Temporal)}
 \spelllvl{Sor/Wiz 8}
+\spellcmp{V, S, M}
 \spellrng{Touch}
 \spelltgt{Creature touched}
 \spelldur{\durshort/Permanent}
@@ -5728,7 +5701,7 @@ This spell grants the creature touched the ability to speak and understand the l
 \spellsave{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-This spell grants creatures the mental power of a totem animal. It has three forms, each of which grants a \plus2 bonus to a mental attribute score. \bonusscalingdescription Spellcasters do not gain bonus spells due to the increased attribute score.
+This spell grants creatures the mental power of a totem animal. It has three forms, each of which grants a \plus4 bonus to a mental attribute score. This bonus increases to \plus6 at 10th level. Spellcasters do not gain bonus spells due to the increased attribute score.
 \par \subspell{Eagle's Splendor} The transmuted creature becomes more persuasive and personally forceful, gaining a bonus to Charisma.
 \par \subspell{Fox's Cunning} The transmuted creature becomes smarter, gaining a bonus to Intelligence.
 \par \subspell{Owl's Wisdom} The transmuted creature becomes more perceptive, gaining a bonus to Wisdom.
@@ -5752,7 +5725,7 @@ This spell functions like \spell{totemic mind}, except that it affects multiple 
 \spellsave{Fortitude negates (harmless)}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
-This spell grants creatures the physical power of an animal. It has three forms, each of which grants a \plus2 bonus to a mental attribute score. \bonusscalingdescription
+This spell grants creatures the physical power of an animal. It has three forms, each of which grants a \plus4 bonus to a mental attribute score. This bonus increases to \plus6 at 10th level.
 \par \subspell{Bear's Endurance} The transmuted creature gains greater vitality and stamina, gaining a bonus to Constitution. Hit points gained by a temporary increase in Constitution score are not temporary hit points. They go away when the subject's Constitution drops back to normal. They are not lost first as temporary hit points are.
 \par \subspell{Bull's Strength} The transmuted creature becomes stronger, gaining a bonus to Strength.
 \par \subspell{Cat's Grace} The transmuted creature becomes more graceful, agile, and coordinated, gaining a bonus to Dexterity.
@@ -5796,7 +5769,7 @@ If the ray misses, you are do not heal any damage.
 \end{spellnotes}
 
 \spellsectioncomma{Transfer Suffering}{Lesser}
-\spelldmg{You transfer the wounds that you have taken to your foe, forcing it to suffer in your stead.}
+\spelldesc{You transfer the wounds that you have taken to your foe, forcing it to suffer in your stead.}
 \spellschool{Necromancy (Life) [Healing]}
 \spelllvl{Sor/Wiz 2}
 \spellrng{Touch}
@@ -5919,7 +5892,7 @@ A malevolent darkness surrounds the subjects, protecting them from attacks, gran
 \spelldur{Instantaneous/5 rounds}
 \spellsave{Will half/Will negates}
 \spellsr{Yes (Will)}
-\spelldmg{4d6 divine damage \add d6 per four caster levels above 8th}
+\spelldmg{4d8 divine damage \add d8 per four caster levels above 8th}
 \begin{spelleffect}
 Nonevil creatures in the area take damage and are sickened for 5 rounds. A successful Will save reduces the damage by half and negates the sickening.
 \end{spelleffect}
@@ -5993,7 +5966,7 @@ This spell affects a maximum number of creatures equal to your caster level. Cre
 \spelldur{\durshort}
 \spellsave{Reflex half or Reflex negates; see text}
 \spellsr{Yes (Reflex)}
-\spelldmg{5d6 \add d6 per four caster levels above 10th; see text}
+\spelldmg{5d8 \add d8 per four caster levels above 10th; see text}
 \begin{spelleffect}
 An immobile, blazing curtain of shimmering violet fire springs into existence. The wall deals damage to any creature passing through it. A successful Reflex save halves this damage. In addition, the wall radiates heat, dealing 2d6 points of fire damage to creatures within 10 feet and 1d6 points of fire damage to those past 10 feet but within 20 feet. No save is allowed against this damage. The wall deals this damage at the start of each of your turns to All creatures within the area.
 \par If you evoke the wall so that it appears where creatures are, each creature takes damage as if passing through the wall, except that a successful Reflex save negates the damage and allows the creature to choose which side of the wall to appear on. If any 5-foot length of wall takes 20 points of cold damage or more in 1 round, that length goes out. (Do not divide cold damage by 4, as normal for objects.)
@@ -6026,7 +5999,7 @@ The wall is unaffected by most spells, including \spell{dispel magic}. However, 
 \spelldur{\durmed}
 \spellsave{Reflex negates; see text}
 \spellsr{Yes (Reflex)}
-\spelldmg{4d6 \add d6 per four caster levels above 8th}
+\spelldmg{4d8 \add d8 per four caster levels above 8th}
 \begin{spelleffect}
 This spell creates an anchored plane of ice or a hemisphere of ice, depending on the version selected. A wall of ice cannot form in an area occupied by physical objects or creatures. Its surface must be smooth and unbroken when created. Any creature adjacent to the wall when it is created may attempt a Reflex save to disrupt the wall as it is being formed. A successful save indicates that the spell automatically fails. Fire can melt a wall of ice, and it deals full damage to the wall (instead of the normal half damage taken by objects). Suddenly melting a wall of ice creates a great cloud of steamy fog that lasts for 10 minutes.
 \par \subspell{Ice Plane} A sheet of strong, hard ice appears. The wall is 1 foot thick. It covers up to ten 10-foot square areas (so it can create a wall of ice 100 feet long and 10 feet high, a wall 50 feet long and 20 feet high, or some other combination of length and height that does not exceed 1,000 square feet). The plane can be oriented in any fashion as long as it is anchored. A vertical wall need only be anchored on the floor, while a horizontal or slanting wall must be anchored on two opposite sides.
@@ -6223,10 +6196,10 @@ Duplicated spells allow saves and spell resistance as normal.
 Each nonchaotic creature in the area is bewildered for 5 rounds.
 \end{spellhealthy}
 \begin{spellblood}
-Each nonchaotic creature in the area suffers one or more of the following ill effects, depending on its Hit Values.
+Each nonchaotic creature in the area suffers one or more of the following ill effects, depending on its Hit Dice.
 \begin{dtable}
 \begin{tabularx}{\columnwidth}{l >{\lcol}X}
-\par \thead{HV} & \thead{Effect} \\
+\par \thead{HD} & \thead{Effect} \\
 \par Equal to caster level & Bewildered \\
 \par Up to caster level \minus5 & Confused, bewildered \\
 \par Up to caster level \minus10 & Paralyzed, nauseated, sickened \\
@@ -6240,7 +6213,7 @@ Each nonchaotic creature in the area suffers one or more of the following ill ef
 \par \subspell{Killed} Living creatures die. Nonliving creatures are destroyed.
 \end{spellblood}
 \begin{spellnotes}
-A bewildered creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Values exceed your caster level are unaffected by \spell{word of chaos}.
+A bewildered creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Dice exceed your caster level are unaffected by \spell{word of chaos}.
 \end{spellnotes}
 
 \spellsection{Word of Recall}
@@ -6269,7 +6242,7 @@ The affected weapon gains an additional five feet of reach, extending the wielde
 Despite the name of the spell, it can affect melee weapons of any type, even reach weapons. The weapon's extended reach is visible, and opponents can defend themselves normally against the attacks.
 \end{spellnotes}
 
-\spellsectioncomma{Zephyr Blade}{Greater}
+\spellsection{Zephyr Blade}{Greater}
 \spelldesc{You imbue a weapon with the full might of the wind, allowing it to shred opponents with nothing but the air itself.}
 \spelllvl{Air 6, Drd 6}
 \begin{spelleffect}
