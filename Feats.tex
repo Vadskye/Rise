@@ -184,7 +184,7 @@ Armor Proficiency (light)  & \x &  No armor check penalty on attack rolls \\
 \tind \tind Armor Proficiency (heavy) & Armor Proficiency (medium) & No armor check penalty on attack rolls \\
 \tind Whirlwind Attack & Dex 3, Combat Expertise, Dodge, Mobility, Spring Attack, base attack bonus \plus4 & One melee attack against each opponent within reach \\
 Cleave & Str 3, base attack bonus \plus4 & Extra melee attack after dropping target \\
-Combat Finesse & \x & Add half Dexterity value to damage with light, possibly medium weapons \\
+%Combat Finesse & \x & Add half Dexterity to damage with light, possibly medium weapons \\
 %Combat Reflexes & Dex 3 & \plus4 bonus on attacks of opportunity \\
 Dodge & Dex 3 & \plus4 AC against some attacks of opportunity from selected target \\
 \tind Mobility & Dodge & Avoid some attacks of opportunity from selected target \\
@@ -192,7 +192,7 @@ Dodge & Dex 3 & \plus4 AC against some attacks of opportunity from selected targ
 Exotic Weapon Proficiency\footnotetemp{1} & Base attack bonus \plus1 & Don't provoke when attacking with exotic weapons \\
 Far Shot & \x & Increase range increment by 50\% or 100\% \\
 %Improved Critical\footnotetemp{1} & Proficient with weapon, base attack bonus \plus8 & Double threat range of weapon \\
-Improved Fighting Retreat & Base attack bonus \plus6 & Take full attack when making a fighting retreat \\
+%Improved Fighting Retreat & Base attack bonus \plus6 & Take full attack when making a fighting retreat \\
 Improved Initiative & \x &  \plus4 bonus on initiative checks \\
 Improved Unarmed Strike & \x &  Considered armed even when unarmed \\
 \tind Deflect Arrows & Dex 3, Improved Unarmed Strike & Deflect one ranged attack per round \\
@@ -211,6 +211,7 @@ Mounted Combat & Ride 1 rank & Negate hits on mount with Ride check \\
 \tind Ride-By Attack & Mounted Combat & Move before and after a mounted charge \\
 \tind \tind Spirited Charge & Mounted Combat, Ride-By Attack & Double damage with mounted charge \\
 \tind Trample & Mounted Combat & Target cannot avoid mounted overrun \\
+Overwhelming Force & Str 5, base attack bonus \plus8 & Apply full Strength to damage when using two hands \\
 Quick Draw & Base attack bonus \plus1 & Draw weapon as swift action \\
 Rapid Reload & Proficiency with crossbows & Reload crossbows more quickly \\
 Shield Proficiency  & \x &  No armor check penalty on attack rolls \\
@@ -260,7 +261,7 @@ Heartseeker & Base attack bonus \plus8 & Double critical threat range \\
 Intimidating Stance & Intimidate 8 ranks & Swiftly intimidate struck foes \\
 Opportunist & Dex 3 & Bonus to attack and damage on attacks of opportunity \\
 Overpowering Assault & Str 3 & Trade AC for combat maneuver bonus \\
-Precise Shot & \x & Add half Dex value to damage, no penalty for shooting into melee \\
+Precise Shot & \x & Add half Dex to damage, no penalty for shooting into melee \\
 \tind Improved Precise Shot & Dex 7, Precise Shot, base attack bonus \plus8 & Ignore less than total cover/concealment on ranged attack \\
 \tind Point Blank Shot & Precise Shot &  \plus2 bonus on ranged damage within 30 ft. \\
 %\tind Rapid Shot & Dex 3, Precise Shot, base attack bonus \plus4 & One extra ranged attack each round \\
@@ -585,14 +586,12 @@ If you fail a Survival check, you can retry after 1 hour (outdoors) or 10 minute
 \parhead{Normal} See Armor Proficiency (light).
 \parhead{Special} Fighters, barbarians, paladins, clerics, druids, and bards automatically have Armor Proficiency (medium) as a bonus feat. They need not select it.
 
-
 \subsubsection{Cleave [Combat]}
 \parhead{Prerequisites} Str 3, Power Attack.
 \parhead{Benefit} Whenever you deal a creature enough damage to make it drop (typically by dropping it to below 0 hit points or killing it), you get an immediate extra melee attack against another creature within reach. You cannot move before making this extra attack. The extra attack is with the same weapon and at the same bonus as the attack that dropped the previous creature. There is no limit to the number of times you can use this feat per round.
 
-
-\subsubsection{Combat Finesse [Combat]}
-\parhead{Benefit} You add half your Dexterity value to your damage rolls with light weapons. This is in addition to the damage provided by your Strength value. If you have a 5 Strength, you may also apply half your Dexterity value to your damage rolls with medium weapons.
+%\subsubsection{Combat Finesse [Combat]}
+%\parhead{Benefit} You add half your Dexterity value to your damage rolls with light weapons. This is in addition to the damage provided by your Strength value. If you have a 5 Strength, you may also apply half your Dexterity value to your damage rolls with medium weapons.
 
 %\subsubsection{Combat Reflexes [Combat]}
 %\parhead{Benefit} When making attacks of opportunity, you gain a \plus4 circumstance bonus to attack rolls.
@@ -630,10 +629,10 @@ You understand how to use exotic weapons in combat.
 \parhead{Prerequisites} Dex 7, Deflect Arrows, Improved Unarmed Strike, base attack bonus \plus4
 \parhead{Benefit} Each round, you can deflect a number of arrows equal to your Dexterity.%Improved Deflect Arrows
 
-\subsubsection{Improved Fighting Retreat [Combat]}
-\parhead{Prerequisites} Combat Reflexes, base attack bonus \plus6
-\parhead{Benefit} You can take a full attack when taking the fighting retreat action. You do not provoke attacks of opportunity for your movement from any foe you attack.
-\parhead{Normal} You can only make a single attack when taking the fighting retreat action.
+%\subsubsection{Improved Fighting Retreat [Combat]}
+%\parhead{Prerequisites} Combat Reflexes, base attack bonus \plus6
+%\parhead{Benefit} You can take a full attack when taking the fighting retreat action. You do not provoke attacks of opportunity for your movement from any foe you attack.
+%\parhead{Normal} You can only make a single attack when taking the fighting retreat action.
 
 \subsubsection{Improved Initiative [Combat]}
 \parhead{Benefit} You get a \plus4 competence bonus on initiative checks.
@@ -661,8 +660,10 @@ In addition, your unarmed strikes can deal lethal or nonlethal damage, and can b
 \parhead{Prerequisite} Ride 1 rank.
 \parhead{Benefit} Once per round when your mount is hit in combat, you may attempt a Ride check (as a reaction) to negate the hit. The hit is negated if your Ride check result is greater than the opponent's attack roll. (Essentially, the Ride check result becomes the mount's Armor Class if it's higher than the mount's regular AC.)%Mounted Combat
 
-
-
+\subsubsection{Overwhelming Force [Combat]}
+\parhead{Prerequisite} Str 5, base attack bonus \plus8
+\parhead{Benefit} You add your full Strength to damage when wielding a medium or large melee weapon in two hands.
+\parhead{Normal} Without this feat, you add half your Strength to damage.
 
 \subsubsection{Quick Draw [Combat]}
 \parhead{Prerequisite} Base attack bonus \plus1.
@@ -735,9 +736,10 @@ You can fight with a weapon in each hand more effectively.
 \parhead{Benefit} You gain a \plus2 circumstance bonus to attack rolls when attacking with two weapons at once.
 \parhead{Special} A 2nd-level ranger is treated as having Two-Weapon Fighting, even if he does not have the prerequisites for it, but only when he is wearing light or no armor.
 
-\subsubsection{Two-Weapon Rend [Combat]}
-\parhead{Prerequisites} Str 3, Two-Weapon Fighting, base attack bonus \plus11.
-\parhead{Benefit} When fighting with two weapons at once, you may add your full Strength value to damage with both hands, even if you are using light weapons.
+%\subsubsection{Two-Weapon Rend [Combat]}
+%\parhead{Prerequisites} Str 3, Two-Weapon Fighting, base attack bonus \plus11.
+%\parhead{Benefit} When fighting with two weapons at once, you may add half your Strength to damage with your offhand.
+%\parhead{Normal} Without this feat, you do not apply Strength to damage with your offhand.
 
 \subsubsection{Weapon Focus [Combat]}
 Choose one weapon group.
@@ -907,10 +909,11 @@ You must spend a full-round action to make a full attack while in this style. Yo
 \parhead{Benefit} When attacking with a ranged weapon, you can move both before and after each attack, provided that your total distance moved is not greater than your speed.
 \parhead{Style Requirement} Must move each round.
 
+%Can't replace Strength; archers need to be strong
 \subsubsection{Precise Shot [Combat Style]}
-\parhead{Benefit} You can add half your Dexterity value to damage with ranged weapons (in addition to Strength value, if any), except for with medium and large thrown weapons. Additionally, you can shoot or throw ranged weapons at an opponent engaged in melee without taking the standard \minus4 penalty on your attack roll.
+\parhead{Benefit} You can add half your Wisdom to damage with ranged weapons in addition to half your Strength. Additionally, you can shoot or throw ranged weapons at an opponent engaged in melee without taking the standard \minus4 penalty on your attack roll.
 
-You must spend a full-round action to make a full attack while in this style. You can make a single attack as a standard action.
+You must spend a full-round action to make a full attack while in this style. You can make a single attack as a standard action. You cannot use this style with medium or large thrown weapons.
 
 \subsection{Metamagic Feats}
 
