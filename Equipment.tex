@@ -89,17 +89,16 @@ wielded by a character of the weapon's size category, is considered a
 light weapon, a medium weapon, or a heavy weapon.
 
 \parhead{Light} A light weapon can be used with more finesse than a medium weapon. The wielder can add either his Dexterity or his Strength to attack rolls with light weapons, whichever he prefers. In addition, light weapons are easier to use in the off-hand or while grappling.
-\par Add half the wielder's Strength value (if any) to damage rolls for melee attacks with a light weapon. Using two hands to wield a light weapon gives no advantage on damage; the Strength bonus applies as though the weapon were held in one hand. Characters using the Power Attack feat gain half the normal bonus damage when wielding light weapons.
 
 An unarmed strike is considered a light weapon unless the character has the Improved Unarmed Strike feat, in which case it can be considered either a light or a medium weapon.
 
-\parhead{Medium} A medium weapon can be used in either the primary hand or the off hand. Add the wielder's Strength value to damage rolls for melee attacks with a medium weapon if it's used in the primary hand, or 1/2 his or her Strength value if it's used in the off hand. If a medium weapon is wielded with two hands during melee combat, add 1-1/2 times the character's Strength value to damage rolls.
+\parhead{Medium} A medium weapon can be used in either the primary hand or the off hand.
 
-A character must have a Strength score of at least 13 to use a medium weapon in one hand. Otherwise, the character must use it in two hands.
+A character must have a Strength score of at least 3 to use a medium weapon in one hand. Otherwise, the character must use it in two hands.
 
-\parhead{Heavy} Two hands are required to use a heavy weapon effectively. Apply 1-1/2 times the character's Strength value to damage rolls for attacks with such a weapon when it is wielded in two hands.
+\parhead{Heavy} Two hands are required to use a heavy weapon effectively.
 
-A character must have a Strength score of at least 13 to use a heavy weapon effectively. Otherwise, the character is treated as being nonproficient with the weapon.
+A character must have a Strength score of at least 3 to use a heavy weapon effectively. Otherwise, the character is treated as being nonproficient with the weapon.
 
 \subparhead{Double} Double weapons are treated as heavy weapons when only one end at a time is used. When both sides are used at once, one side is treated as being a medium weapon, and the other side is treated as being a light weapon.
 
@@ -140,27 +139,34 @@ Here is the format for weapon entries (given as column headings on Table: Weapon
 
 \parhead{Encumbrance} Describes whether the weapon is a light, medium, heavy, double, or ranged weapon.
 
-\parhead{Cost} This value is the weapon's cost in gold pieces (gp) or silver pieces (sp). The cost includes miscellaneous gear that goes with the weapon.
 \par This cost is the same for a Small or Medium version of the weapon. A Large version costs twice the listed price.
-\parhead{Damage} The Damage columns give the damage dealt by the weapon on a successful hit. The column labeled ``Dmg (S)'' is for Small weapons. The column labeled ``Dmg (M)'' is for Medium weapons. If two damage ranges are given then the weapon is a double weapon. Use the second damage figure given for the double weapon's extra attack. \trefnp{Weapon Damage and Size} gives weapon damage values for weapons of those sizes.
+\parhead{Damage} The Damage columns give the damage dealt by the weapon on a successful hit. If two damage ranges are given then the weapon is a double weapon. Use the second damage figure given for the double weapon's extra attack. The damage given is for weapons used by Medium creatures. Weapons used by Small creatures have a damage die that is one size smaller. \trefnp{Weapon Damage and Size} gives weapon damage values for weapons of many sizes.
 
 \begin{dtable}
 \lcaption{Weapon Damage and Size}
-\begin{tabularx}{\columnwidth}{*{5}{l} >{\lcol}X}
-\thead{Medium} & \thead{Tiny} & \thead{Large} & \thead{Huge} & \thead{Gargantuan} & \thead{Colossal} \\
-1d2  & \x  & 1d3  & 1d4  & 1d8  & 2d6  \\
-1d3  & 1   & 1d4  & 1d6  & 1d10 & 2d8  \\
-1d4  & 1d2 & 1d6  & 1d8  & 2d6  & 2d10 \\
-1d6  & 1d3 & 1d8  & 1d10 & 2d8  & 4d6  \\
-1d8  & 1d4 & 1d10 & 2d6  & 2d10 & 4d8  \\
-1d10 & 1d6 & 2d6  & 2d8  & 4d6  & 4d10 \\
+\begin{tabularx}{\columnwidth}{*{6}{l} >{\lcol}X}
+\thead{Medium} & \thead{Tiny} & \thead{Small} & \thead{Large} & \thead{Huge} & \thead{Gargantuan} & \thead{Colossal} \\
+1d2  & \x  & 1   & 1d3  & 1d4  & 1d8  & 2d6  \\
+1d3  & 1   & 1d2 & 1d4  & 1d6  & 1d10 & 2d8  \\
+1d4  & 1d2 & 1d3 & 1d6  & 1d8  & 2d6  & 2d10 \\
+1d6  & 1d3 & 1d4 & 1d8  & 1d10 & 2d8  & 4d6  \\
+1d8  & 1d4 & 1d6 & 1d10 & 2d6  & 2d10 & 4d8  \\
+1d10 & 1d6 & 1d8 & 2d6  & 2d8  & 4d6  & 4d10 \\
 \end{tabularx}
 \end{dtable}
 
+%''standard'' minimum damage for 
+\parhead{Minimum Damage} Some medium and heavy weapons are particularly likely to deal significant damage. If you roll the weapon's minimum damage or lower, reroll the damage. You never reroll the same roll more than once. Each roll made for a critical hit is considered separately.
+
+The minimum damage given is for weapons used by Medium creatures. Weapons used by Small creatures have a minimum damage that is one lower. In general, when a weapon increases in size category, its minimum damage increases by an amount equal to the number of dice rolled for the weapon's new damage. For example, greatsword increases its minimum damage by 2 when it grows from Medium to Large, since a Large greatsword deals 2d6 damage. Similarly, a Small greatsword has a minimum damage 1 lower than a Medium greatsword, since a Small greatsword deals 1d8 damage. Weapons that do not have a minimum damage rating gain a minimum damage rating when increasing in size, provided that the weapon deals at least 1d8 damage at its new size.
+
+\begin{comment}
+For example, a Medium greatsword increases its minimum damage by 1 when going increasing to Large, since a Medium greatsword deals \textbf{1}d10 damage. Similarly, a Large greatsword increases its minimum damage by 2 when increasing to Huge, since a Large greatsword deals \textbf{2}d10 damage. Weapons that do not have a minimum damage rating gain a minimum damage rating when increasing in size, provided that the weapon deals at least 1d6 damage at its new size.
+\end{comment}
+
 \parhead{Critical} The entry in this column notes how the weapon is used with the rules for critical hits. When your character scores a critical hit, roll the damage two, three, or four times, as indicated by its critical multiplier (using all applicable modifiers on each roll), and add all the results together.
 
-\subparhead{Exception} Bonus damage dice over and above a weapon's normal
-damage dice are not multiplied when you score a critical hit.
+\subparhead{Exception} Bonus damage dice over and above a weapon's normal damage dice are not multiplied when you score a critical hit.
 \subparhead{\mult2} The weapon deals double damage on a critical hit.
 \subparhead{\mult3} The weapon deals triple damage on a critical hit.
 \subparhead{\mult3/\mult4} One head of this double weapon deals triple damage on a critical hit. The other head deals quadruple damage on a critical hit.
@@ -169,14 +175,15 @@ damage dice are not multiplied when you score a critical hit.
 \subparhead{18-20/\mult2} The weapon scores a threat on a natural roll of 18, 19, or 20 (instead of just 20) and deals double damage on a critical hit. (The weapon has a threat range of 18-20.)
 
 \parhead{Range Increment} Any attack at less than this distance is not penalized for range. However, each full range increment imposes a cumulative \minus2 penalty on the attack roll. A thrown weapon has a maximum range of five range increments. A projectile weapon can shoot out to ten range increments.
-\parhead{Weight} This column gives the weight of a Medium version of
-the weapon. Halve this number for Small weapons, and double it for
-Large weapons.
 \parhead{Type} Weapons are classified according to the type of damage they deal: bludgeoning, piercing, or slashing. Some monsters may be resistant or immune to attacks from certain types of weapons.
 
 Some weapons deal damage of multiple types. If a weapon is of two types, the damage it deals is not half one type and half another; all of it is both types. Therefore, a creature would have to be immune to both types of damage to ignore any of the damage from such a weapon.
 
 In other cases, a weapon can deal either of two types of damage. In a situation when the damage type is significant, the wielder can choose which type of damage to deal with such a weapon.
+\parhead{Cost} This value is the weapon's cost in gold pieces (gp) or silver pieces (sp). The cost includes miscellaneous gear that goes with the weapon.
+\parhead{Weight} This column gives the weight of a Medium version of
+the weapon. Halve this number for Small weapons, and double it for
+Large weapons.
 
 \parhead{Special} Some weapons have special features. See the weapon
 descriptions for details.
@@ -184,58 +191,58 @@ descriptions for details.
 \subsubsection{Weapon Descriptions}
 \begin{dtable!*}
 \lcaption{Weapons}
-\begin{tabularx}{\textwidth}{l c c c c c >{\ccol}p{5em} c >{\lcol}X}
-\thead{Weapons} & \thead{Encumbrance} & \thead{Cost} & \thead{Dmg (S)} & \thead{Dmg (M)} & \thead{Critical} & \thead{Range Increment} & \thead{Weight\footnotetemp{1}} & \thead{Type\footnotetemp{2}} \\
+\begin{tabularx}{\textwidth}{l c c c c c >{\lcol}X c c}
+\thead{Weapons} & \thead{Encumbrance} & \thead{Dmg} & \thead{Min} & \thead{Critical} & \thead{Range Increment} & \thead{Type\footnotetemp{2}} & \thead{Cost} & \thead{Weight\footnotetemp{1}} \\
 
 Armor weapons &&&&&&&& \\
-\tind Shield, heavy & Medium & special & 1d3 & 1d4 & \mult2 & \x & special & Bludgeoning \\
-\tind Shield, light & Light & special & 1d2 & 1d3 & \mult2 & \x & special & Bludgeoning \\
-\tind Spiked armor & Light & special & 1d4 & 1d6 & \mult2 & \x & special & Piercing \\
-\tind Spiked shield, heavy & Medium & special & 1d4 & 1d6 & \mult2 & \x & special & Piercing \\
-\tind Spiked shield, light & Light & special & 1d3 & 1d4 & \mult2 & \x & special & Piercing \\
+\tind Shield, heavy & Medium & 1d4 & \x & \mult2 & \x & Bludgeoning & special & special \\
+\tind Shield, light & Light & 1d3 & \x & \mult2 & \x & Bludgeoning & special & special \\
+\tind Spiked armor & Light & 1d6 & \x & \mult2 & \x & Piercing & special & special \\
+\tind Spiked shield, heavy & Medium & \x & 1 & \mult2 & \x & Piercing & special & special \\
+\tind Spiked shield, light & Light & \x &  & \mult2 & \x & Piercing & special & special \\
 
 Axes &&&&&&&& \\
-\tind Axe, throwing & Light & 8 gp & 1d4 & 1d6 & \mult2 & 10 ft. & 2 lb. & Slashing \\
-\tind Battleaxe & Medium & 10 gp & 1d6 & 1d8 & \mult3 & \x & 6 lb. & Slashing \\
-\tind Greataxe & Heavy & 20 gp & 1d8 & 1d10 & \mult3 & \x & 12 lb. & Slashing \\
-\tind Handaxe & Light & 6 gp & 1d4 & 1d6 & \mult3 & \x & 3 lb. & Slashing \\
+\tind Axe, throwing & Light & 1d6 & \x & \mult2 & 10 ft. & Slashing & 8 gp & 2 lb. \\
+\tind Battleaxe & Medium & 1d8 & 1 & \mult3 & \x & Slashing & 10 gp & 6 lb. \\
+\tind Greataxe & Heavy & 1d10 & 2 & \mult3 & \x & Slashing & 20 gp & 12 lb. \\
+\tind Handaxe & Light & 1d6 & \x & \mult3 & \x & Slashing & 6 gp & 3 lb. \\
 
 Blunt weapons &&&&&&& \\
-\tind Club & Medium & \x & 1d4 & 1d6 & \mult2 & \x & 3 lb. & Bludgeoning \\
-\tind Greatclub & Heavy & 5 gp & 1d8 & 1d10 & \mult2 & \x & 8 lb. & Bludgeoning \\
-\tind Mace, heavy & Medium & 12 gp & 1d6 & 1d8 & \mult2 & \x & 8 lb. & Bludgeoning \\
-\tind Mace, light & Light & 5 gp & 1d4 & 1d6 & \mult2 & \x & 4 lb. & Bludgeoning \\
-\tind Morningstar & Medium & 8 gp & 1d6 & 1d8 & \mult2 & \x & 6 lb. & Bludgeoning and piercing \\
-\tind Quarterstaff\fn{5} & Double & \x & 1d4/1d4 & 1d6/1d6 & \mult2 & \x & 4 lb. & Bludgeoning \\
-\tind Sap & Light & 1 gp & 1d4\fn{3} & 1d6\fn{3} & \mult2 & \x & 2 lb. & Bludgeoning \\
+\tind Club & Medium & 1d6 & \x & \mult2 & \x & Bludgeoning & \x & 3 lb. \\
+\tind Greatclub & Heavy & 1d10 & 1 & \mult2 & \x & Bludgeoning & 5 gp & 8 lb. \\
+\tind Mace, heavy & Medium & 1d8 & 1 & \mult2 & \x & Bludgeoning & 12 gp & 8 lb. \\
+\tind Mace, light & Light & 1d6 & \x & \mult2 & \x & Bludgeoning & 5 gp & 4 lb. \\
+\tind Morningstar & Medium & 1d8 & 1 & \mult2 & \x & Bludgeoning and piercing & 8 gp & 6 lb. \\
+\tind Quarterstaff\fn{5} & Double & 1d6/1d6 &  & \mult2 & \x & Bludgeoning & \x & 4 lb. \\
+\tind Sap & Light & 1d6\fn{3} & \x & \mult2 & \x & Bludgeoning & 1 gp & 2 lb. \\
 
 Blades, heavy &&&&&&&& \\
-\tind Falchion & Heavy & 75 gp & 1d6 & 1d10 & \mult3 & \x & 8 lb. & Slashing \\
-\tind Greatsword & Heavy & 50 gp & 1d8 & 1d10 & 19-20/\mult2 & \x & 8 lb. & Slashing \\
-\tind Longsword & Medium & 15 gp & 1d6 & 1d8 & 19-20/\mult2 & \x & 4 lb. & Slashing \\
-\tind Scimitar & Medium & 15 gp & 1d6 & 1d8 & \mult3 & \x & 4 lb. & Slashing \\
+\tind Falchion & Heavy & 1d10 & 2 & \mult3 & \x & Slashing & 75 gp & 8 lb. \\
+\tind Greatsword & Heavy & 1d10 & 2 & 19-20/\mult2 & \x & Slashing & 50 gp & 8 lb. \\
+\tind Longsword & Medium & 1d8 & 1 & 19-20/\mult2 & \x & Slashing & 15 gp & 4 lb. \\
+\tind Scimitar & Medium & 1d8 & 1 & \mult3 & \x & Slashing & 15 gp & 4 lb. \\
 
 Blades, light &&&&&&&& \\
-\tind Dagger & Light & 2 gp & 1d3 & 1d4 & 19-20/\mult2 & 10 ft. & 1 lb. & Piercing or slashing \\
-\tind Dagger, punching & Light & 2 gp & 1d3 & 1d4 & \mult3 & \x & 1 lb. & Piercing \\
-\tind Rapier & Medium & 20 gp & 1d4 & 1d6 & \mult3 & \x & 2 lb. & Piercing \\
-\tind Sword, short & Light & 10 gp & 1d4 & 1d6 & 19-20/\mult2 & \x & 2 lb. & Piercing or slashing \\
+\tind Dagger & Light & 1d4 & \x & 19-20/\mult2 & 10 ft. & Piercing or slashing & 2 gp & 1 lb. \\
+\tind Dagger, punching & Light & 1d4 & \x & \mult3 & \x & Piercing & 2 gp & 1 lb. \\
+\tind Rapier & Medium & 1d6 & \x & \mult3 & \x & Piercing & 20 gp & 2 lb. \\
+\tind Sword, short & Light & 1d6 & \x & 19-20/\mult2 & \x & Piercing or slashing & 10 gp & 2 lb. \\
 
 Bows &&&&&&&& \\
-\tind Longbow & Ranged & 75 gp & 1d6 & 1d8 & \mult3 & 100 ft. & 3 lb. & Piercing \\
-\tind Longbow, composite & Ranged & 100 gp & 1d6 & 1d8 & \mult3 & 100 ft. & 3 lb. & Piercing \\
-\tind Shortbow & Ranged & 30 gp & 1d4 & 1d6 & \mult3 & 50 ft. & 2 lb. & Piercing \\
-\tind Shortbow, composite & Ranged & 75 gp & 1d4 & 1d6 & \mult3 & 50 ft. & 2 lb. & Piercing \\
-\tind Arrows (20) & \x & 1 gp & \x & \x & \x & \x & 3 lb. & \x \\
+\tind Longbow & Ranged & 1d8 & 1 & \mult3 & 100 ft. & Piercing & 75 gp & 3 lb. \\
+\tind Longbow, composite & Ranged & 1d8 & 1 & \mult3 & 100 ft. & Piercing & 100 gp & 3 lb. \\
+\tind Shortbow & Ranged & 1d6 & \x & \mult3 & 50 ft. & Piercing & 30 gp & 2 lb. \\
+\tind Shortbow, composite & Ranged & 1d6 & \x & \mult3 & 50 ft. & Piercing & 75 gp & 2 lb. \\
+\tind Arrows (20) & \x & \x & \x & \x & \x & \x & 1 gp & 3 lb. \\
 
 Crossbows &&&&&&&& \\
-\tind Crossbow, heavy & Ranged & 50 gp & 1d8 & 1d10 & 19-20/\mult2 & 100 ft. & 8 lb. & Piercing \\
-\tind Crossbow, light & Ranged & 35 gp & 1d6 & 1d8 & 19-20/\mult2 & 50 ft. & 4 lb. & Piercing \\
-\tind Bolts, crossbow (10) & \x & 1 gp & \x & \x & \x & \x & 1 lb. & \x \\
+\tind Crossbow, heavy & Ranged & 1d10 & 2 & 19-20/\mult2 & 100 ft. & Piercing & 50 gp & 8 lb. \\
+\tind Crossbow, light & Ranged & 1d8 & 1 & 19-20/\mult2 & 50 ft. & Piercing & 35 gp & 4 lb. \\
+\tind Bolts, crossbow (10) & \x & \x & \x & \x & \x & \x & 1 gp & 1 lb. \\
 
 Flexible weapons &&&&&&&& \\
-\tind Flail  & Medium & 8 gp & 1d6 & 1d8 & \mult2 & \x & 5 lb. & Bludgeoning \\
-\tind Flail, heavy & Heavy & 15 gp & 1d8 & 1d10 & \mult2 & \x & 10 lb. & Bludgeoning \\
+\tind Flail  & Medium & 1d8 & \x & \mult2 & \x & Bludgeoning & 8 gp & 5 lb. \\
+\tind Flail, heavy & Heavy & 1d10 & 1 & \mult2 & \x & Bludgeoning & 15 gp & 10 lb. \\
 
 \end{tabularx}
 \end{dtable!*}
@@ -244,59 +251,59 @@ Flexible weapons &&&&&&&& \\
 \begin{tabularx}{\textwidth}{l c c c c c >{\ccol}p{4em} c >{\lcol}X}
 \thead{Weapons} & \thead{Encumbrance} & \thead{Cost} & \thead{Dmg (S)} & \thead{Dmg (M)} & \thead{Critical} & \thead{Range Increment} & \thead{Weight\footnotetemp{1}} & \thead{Type\footnotetemp{2}} \\
 Headed weapons &&&&&&&& \\
-\tind Hammer, light & Light & 1 gp & 1d3 & 1d4 & \mult2 & 20 ft. & 2 lb. & Bludgeoning \\
-\tind Pick, heavy & Medium & 8 gp & 1d4 & 1d6 & \mult4 & \x & 6 lb. & Piercing \\
-\tind Pick, light & Light & 4 gp & 1d3 & 1d4 & \mult4 & \x & 3 lb. & Piercing \\
-\tind Scythe & Heavy & 18 gp & 1d6 & 1d8 & 19-20/\mult3 & \x & 10 lb. & Piercing or slashing \\
-\tind Sickle & Light & 6 gp & 1d4 & 1d6 & \mult3 & \x & 2 lb. & Slashing \\
-\tind Warhammer & Medium & 12 gp & 1d6 & 1d8 & \mult3 & \x & 5 lb. & Bludgeoning \\
+\tind Hammer, light & Light & 1d4 & \x & \mult2 & 20 ft. & Bludgeoning & 1 gp & 2 lb. \\
+\tind Pick, heavy & Medium & 1d6 & \x & \mult4 & \x & Piercing & 8 gp & 6 lb. \\
+\tind Pick, light & Light & 1d4 & \x & \mult4 & \x & Piercing & 4 gp & 3 lb. \\
+\tind Scythe & Heavy & 1d8 & 1 & 19-20/\mult3 & \x & Piercing or slashing & 18 gp & 10 lb. \\
+\tind Sickle & Light & 1d6 & \x & \mult3 & \x & Slashing & 6 gp & 2 lb. \\
+\tind Warhammer & Medium & 1d8 & 1 & \mult3 & \x & Bludgeoning & 12 gp & 5 lb. \\
 
 Monk weapons &&&&&&&& \\
-\tind Kama & Light & 2 gp & 1d4 & 1d6 & \mult2 & \x & 2 lb. & Slashing \\
-\tind Nunchaku & Light & 2 gp & 1d4 & 1d6 & \mult2 & \x & 2 lb. & Bludgeoning \\
-\tind Quarterstaff\fn{5} & Double & \x & 1d4/1d4 & 1d6/1d6 & \mult2 & \x & 4 lb. & Bludgeoning \\
-\tind Sai & Light & 1 gp & 1d3 & 1d4 & \mult2 & \x & 1 lb. & Piercing \\
-\tind Shuriken (5) & Ranged & 1 gp & 1 & 1d2 & \mult2 & 10 ft. & 1/2 lb. & Piercing \\
-\tind Siangham & Light & 3 gp & 1d4 & 1d6 & \mult2 & \x & 1 lb. & Piercing \\
+\tind Kama & Light & 1d6 & \x & \mult2 & \x & Slashing & 2 gp & 2 lb. \\
+\tind Nunchaku & Light & 1d6 & \x & \mult2 & \x & Bludgeoning & 2 gp & 2 lb. \\
+\tind Quarterstaff\fn{5} & Double & 1d6/1d6 & \x & \mult2 & \x & Bludgeoning & \x & 4 lb. \\
+\tind Sai & Light & 1d4 & \x & \mult2 & \x & Piercing & 1 gp & 1 lb. \\
+\tind Shuriken (5) & Ranged & 1d2 & \x & \mult2 & 10 ft. & Piercing & 1 gp & 1/2 lb. \\
+\tind Siangham & Light & 1d6 & \x & \mult2 & \x & Piercing & 3 gp & 1 lb. \\
 
 Polearms &&&&&&&& \\
-\tind Glaive\fn{4} & Heavy & 8 gp & 1d8 & 1d10 & \mult3 & \x & 10 lb. & Slashing \\
-\tind Guisarme\fn{4} & Heavy & 9 gp & 1d6 & 1d8 & \mult3 & \x & 12 lb. & Slashing \\
-\tind Halberd & Heavy & 10 gp & 1d8 & 1d10 & \mult3 & \x & 12 lb. & Piercing or slashing \\
-\tind Ranseur\fn{4} & Heavy & 10 gp & 1d6 & 1d8 & \mult3 & \x & 12 lb. & Piercing \\
+\tind Glaive\fn{4} & Heavy & 1d10 & 2 & \mult3 & \x & Slashing & 8 gp & 10 lb. \\
+\tind Guisarme\fn{4} & Heavy & 1d10 & 1 & \mult3 & \x & Slashing & 9 gp & 12 lb. \\
+\tind Halberd & Heavy & 1d10 & 2 & \mult3 & \x & Piercing or slashing & 10 gp & 12 lb. \\
+\tind Ranseur\fn{4} & Heavy & 1d10 & 1 & \mult3 & \x & Piercing & 10 gp & 12 lb. \\
 
 Simple weapons &&&&&&&& \\
-\tind Club & Medium & \x & 1d4 & 1d6 & \mult2 & 10 ft. & 3 lb. & Bludgeoning \\
-\tind Crossbow, light & Ranged & 35 gp & 1d6 & 1d8 & 19-20/\mult2 & 80 ft. & 4 lb. & Piercing \\
-\tind Dagger & Light & 2 gp & 1d3 & 1d4 & 19-20/\mult2 & 10 ft. & 1 lb. & Piercing or slashing \\
-\tind Quarterstaff\fn{5} & Double & \x & 1d4/1d4 & 1d6/1d6 & \mult2 & \x & 4 lb. & Bludgeoning \\
-\tind Unarmed strike & Light & \x & 1d2\fn{3} & 1d3\fn{3} & \mult2 & \x & \x & Bludgeoning \\
+\tind Club & Medium & 1d6 & \x & \mult2 & 10 ft. & Bludgeoning & \x & 3 lb. \\
+\tind Crossbow, light & Ranged & 1d8 & 1 & 19-20/\mult2 & 80 ft. & Piercing & 35 gp & 4 lb. \\
+\tind Dagger & Light & 1d4 & \x & 19-20/\mult2 & 10 ft. & Piercing or slashing & 2 gp & 1 lb. \\
+\tind Quarterstaff\fn{5} & Double & 1d6/1d6 & \x & \mult2 & \x & Bludgeoning & \x & 4 lb. \\
+\tind Unarmed strike & Light & 1d3\fn{3} & \x & \mult2 & \x & Bludgeoning & \x & \x \\
 
 Spears &&&&&&&& \\
-\tind Javelin & Ranged & 1 gp & 1d4 & 1d6 & \mult2 & 30 ft. & 2 lb. & Piercing \\
-\tind Lance\fn{4} & Heavy & 10 gp & 1d6 & 1d8 & \mult3 & \x & 10 lb. & Piercing \\
-\tind Longspear\fn{4} & Heavy & 5 gp & 1d6 & 1d8 & \mult3 & \x & 9 lb. & Piercing \\
-\tind Shortspear & Medium & 1 gp & 1d4 & 1d6 & \mult2 & 20 ft. & 3 lb. & Piercing \\
-\tind Spear & Heavy & 2 gp & 1d6 & 1d8 & \mult3 & 20 ft. & 6 lb. & Piercing \\
-\tind Trident & Medium & 15 gp & 1d6 & 1d8 & \mult2 & 10 ft. & 4 lb. & Piercing \\
+\tind Javelin & Ranged & 1d6 & \x & \mult2 & 30 ft. & Piercing & 1 gp & 2 lb. \\
+\tind Lance\fn{4} & Heavy & 1d8 & 2 & \mult3 & \x & Piercing & 10 gp & 10 lb. \\
+\tind Longspear\fn{4} & Heavy & 1d8 & 2 & \mult3 & \x & Piercing & 5 gp & 9 lb. \\
+\tind Shortspear & Medium & 1d6 & 1 & \mult2 & 20 ft. & Piercing & 1 gp & 3 lb. \\
+\tind Spear & Heavy & 1d8 & 2 & \mult3 & 20 ft. & Piercing & 2 gp & 6 lb. \\
+\tind Trident & Medium & 1d8 & 2 & \mult2 & 10 ft. & Piercing & 15 gp & 4 lb. \\
 
 Thrown weapons &&&&&&&& \\
-\tind Axe, throwing & Light & 8 gp & 1d4 & 1d6 & \mult2 & 10 ft. & 2 lb. & Slashing \\
-\tind Dagger & Light & 2 gp & 1d3 & 1d4 & 19-20/\mult2 & 10 ft. & 1 lb. & Piercing or slashing \\
-\tind Dart (5) & Ranged & 1 gp & 1d3 & 1d4 & \mult2 & 20 ft. & 1/2 lb. & Piercing \\
-\tind Hammer, light & Light & 1 gp & 1d3 & 1d4 & \mult2 & 20 ft. & 2 lb. & Bludgeoning \\
-\tind Javelin & Ranged & 1 gp & 1d4 & 1d6 & \mult2 & 30 ft. & 2 lb. & Piercing \\
-\tind Shuriken (5) & Ranged & 1 gp & 1 & 1d2 & \mult2 & 10 ft. & 1/2 lb. & Piercing \\
-\tind Sling & Ranged & 2 gp & 1d3 & 1d4 & \mult2 & 50 ft. & 0 lb. & Bludgeoning \\
-\tind Bullets, sling (10) & \x & 1 sp & \x & \x & \x & \x & 5 lb. & \x \\
+\tind Axe, throwing & Light & 1d6 & \x & \mult2 & 10 ft. & Slashing & 8 gp & 2 lb. \\
+\tind Dagger & Light & 1d4 & \x & 19-20/\mult2 & 10 ft. & Piercing or slashing & 2 gp & 1 lb. \\
+\tind Dart (5) & Ranged & 1d4 & \x & \mult2 & 20 ft. & Piercing & 1 gp & 1/2 lb. \\
+\tind Hammer, light & Light & 1d4 & \x & \mult2 & 20 ft. & Bludgeoning & 1 gp & 2 lb. \\
+\tind Javelin & Ranged & 1d6 & \x & \mult2 & 30 ft. & Piercing & 1 gp & 2 lb. \\
+\tind Shuriken (5) & Ranged & 1d2 & \x & \mult2 & 10 ft. & Piercing & 1 gp & 1/2 lb. \\
+\tind Sling & Ranged & 1d4 & \x & \mult2 & 50 ft. & Bludgeoning & 2 gp & 0 lb. \\
+\tind Bullets, sling (20) & \x & \x & \x & \x & \x & \x & 1 gp & 5 lb. \\
 
 Weaponlike Spells\fn{6} &&&&&&&&\\
 
 Unarmed weapons &&&&&&&&\\
-\tind Claw Sheath & \x & 50 gp & \x & \x & \x & \x & 3 lb. & \x \\
-\tind Gauntlet & Light & 2 gp & 1d2 & 1d3 & \mult2 & \x & 1 lb. & Bludgeoning \\
-\tind Gauntlet, spiked & Light & 5 gp & 1d3 & 1d4 & \mult2 & \x & 1 lb. & Piercing \\
-\tind Unarmed strike & Light & \x & 1d2\fn{3} & 1d3\fn{3} & \mult2 & \x & \x & Bludgeoning \\
+\tind Claw Sheath & \x & \x & \x & \x & \x & \x & 50 gp & 3 lb. \\
+\tind Gauntlet & Light & 1d3 & \x & \mult2 & \x & Bludgeoning & 2 gp & 1 lb. \\
+\tind Gauntlet, spiked & Light & 1d4 & \x & \mult2 & \x & Piercing & 5 gp & 1 lb. \\
+\tind Unarmed strike & Light & 1d3\fn{3} & \x & \mult2 & \x & Bludgeoning & \x & \x \\
 \end{tabularx}
 \end{dtable!*}
 
@@ -305,35 +312,35 @@ Unarmed weapons &&&&&&&&\\
 \thead{Exotic Weapons} & \thead{Encumbrance} & \thead{Cost} & \thead{Dmg (S)} & \thead{Dmg (M)} & \thead{Critical} & \thead{Range Increment} & \thead{Weight\footnotetemp{1}} & \thead{Type\footnotetemp{2}} \\
 Armor &&&&&&&& \\
 Axes &&&&&&&& \\
-\tind Axe, orc double\fn{5} & Double & 60 gp & 1d6/1d6 & 1d8/1d8 & \mult3 & \x & 15 lb. & Slashing \\
-\tind Urgrosh, dwarven\fn{5} & Double & 50 gp & 1d6/1d4 & 1d8/1d6 & \mult3 & \x & 12 lb. & Slashing or piercing \\
-\tind Waraxe, dwarven & Medium & 30 gp & 1d8 & 1d10 & \mult3 & \x & 8 lb. & Slashing \\
+\tind Axe, orc double\fn{5} & Double & 1d8/1d8 & 1/1 & \mult3/\mult3 & \x & Slashing & 60 gp & 15 lb. \\
+\tind Urgrosh, dwarven\fn{5} & Double & 1d8/1d6 & 1/1 & \mult3 & \x/\mult3 & Slashing or piercing & 50 gp & 12 lb. \\
+\tind Waraxe, dwarven & Medium & 1d10 & 1 & \mult3 & \x & Slashing & 30 gp & 8 lb. \\
 Blunt weapons &&&&&&&& \\
 Blades, heavy &&&&&&&& \\
-\tind Sword, bastard & Medium & 35 gp & 1d8 & 1d10 & 19-20/\mult2 & \x & 6 lb. & Slashing \\
-\tind Sword, two-bladed\fn{5} & Double & 100 gp & 1d6/1d6 & 1d8/1d8 & 19-20/\mult2 & \x & 10 lb. & Slashing \\
+\tind Sword, bastard & Medium & 1d10 & 2 & 19-20/\mult2 & \x & Slashing & 35 gp & 6 lb. \\
+\tind Sword, two-bladed\fn{5} & Double & 1d8/1d8 & 2/2 & 19-20/\mult2 & \x & Slashing & 100 gp & 10 lb. \\
 Blades, light &&&&&&&& \\
-\tind Kukri & Light & 8 gp & 1d3 & 1d4 & 18-20/\mult2 & \x & 2 lb. & Slashing \\
+\tind Kukri & Light & 1d4 &  & 18-20/\mult2 & \x & Slashing & 8 gp & 2 lb. \\
 Bows &&&&&&&& \\
 Crossbows &&&&&&&& \\
-\tind Crossbow, hand & Ranged & 100 gp & 1d3 & 1d4 & 19-20/\mult2 & 30 ft. & 2 lb. & Piercing \\
-\tind Crossbow, repeating heavy & Ranged & 400 gp & 1d8 & 1d10 & 19-20/\mult2 & 120 ft. & 12 lb. & Piercing \\
-\tind Crossbow, repeating light & Ranged & 250 gp & 1d6 & 1d8 & 19-20/\mult2 & 80 ft. & 6 lb. & Piercing \\
-\tind Bolts, hand (10) & \x & 1 gp & \x & \x & \x & \x & 1 lb. & \x \\
-\tind Bolts, repeating (5) & \x & 1 gp & \x & \x & \x & 1 lb. & \x &  \\
+\tind Crossbow, hand & Ranged & 1d4 & \x & 19-20/\mult2 & 30 ft. & Piercing & 100 gp & 2 lb. \\
+\tind Crossbow, repeating heavy & Ranged & 1d10 & 2 & 19-20/\mult2 & 120 ft. & Piercing & 400 gp & 12 lb. \\
+\tind Crossbow, repeating light & Ranged & 1d8 & 1 & 19-20/\mult2 & 80 ft. & Piercing & 250 gp & 6 lb. \\
+\tind Bolts, hand (10) & \x & \x & \x & \x & \x & \x & 1 gp & 1 lb. \\
+\tind Bolts, repeating (5) & \x & \x & \x & \x & \x & \x & 1 gp & 1 lb. \\
 Flexible weapons &&&&&&&& \\
-\tind Chain, spiked\fn{4} & Heavy & 25 gp & 1d6 & 2d4 & \mult2 & \x & 10 lb. & Piercing \\
-\tind Flail, dire\fn{5} & Double & 90 gp & 1d6/1d6 & 1d8/1d8 & \mult2 & \x & 10 lb. & Bludgeoning \\
-\tind Whip\fn{4} & Light & 1 gp & 1d2\fn{3} & 1d3\fn{3} & \mult2 & \x & 2 lb. & Slashing \\
+\tind Chain, spiked\fn{4} & Heavy & 1d8 & 1 & \mult2 & \x & Piercing & 25 gp & 10 lb. \\
+\tind Flail, dire\fn{5} & Double & 1d8/1d8 & 1/1 & \mult2/\mult2 & \x & Bludgeoning & 90 gp & 10 lb. \\
+\tind Whip\fn{4} & Light & 1d3\fn{3} & \x & \mult2 & \x & Slashing & 1 gp & 2 lb. \\
 Headed weapons &&&&&&&& \\
-\tind Hammer, gnome hooked\fn{5} & Double & 20 gp & 1d6/1d4 & 1d8/1d6 & \mult2/\mult2 & \x & 6 lb. & Bludgeoning and piercing \\
+\tind Hammer, gnome hooked\fn{5} & Double & 1d8/1d6 & 1/1 & \mult2/\mult2 & \x & Bludgeoning and piercing & 20 gp & 6 lb. \\
 Monk weapons &&&&&&&& \\
 Polearms &&&&&&&& \\
 Simple weapons &&&&&&&& \\
 Spear &&&&&&&& \\
 Thrown weapons &&&&&&&& \\
-\tind Bolas & Ranged & 5 gp & 1d3\fn{3} & 1d4\fn{3} & \mult2 & 10 ft. & 2 lb. & Bludgeoning \\
-\tind Net & Ranged & 20 gp & \x & \x & 10 ft. & 6 lb. & \x &  \\
+\tind Bolas & Ranged & 1d4\fn{3} & \x & \mult2 & 10 ft. & Bludgeoning & 5 gp & 2 lb. \\
+\tind Net & Ranged & \x & \x & 10 ft. & 6 lb. &  & 20 gp & \x \\
 Unarmed weapons &&&&&&&&\\
 \end{tabularx}
 1 Weight figures are for Medium weapons. A Small weapon weighs half as much, and a Large weapon weighs twice as much. \\
@@ -454,7 +461,7 @@ suit of armor doesn't stack with other effects or items that grant an
 armor bonus.
 \par Similarly, the shield bonus from a shield doesn't stack with other effects that grant a shield bonus.
 
-\parhead{Dexterity Bonus} This indicates the multiplier that your character applies to his or her Dexterity bonus. Medium and heavy armor limits mobility and agility, halving the character's Dexterity and Dexterity value. This halving is applied in addition to the armor's armor check penalty (if any). A Dexterity penalty is not halved.
+\parhead{Dexterity Bonus} This indicates the multiplier that your character applies to his or her Dexterity bonus. Medium and heavy armor limits mobility and agility, halving the character's Dexterity. This halving is applied in addition to the armor's armor check penalty (if any). A Dexterity penalty is not halved.
 
 Even if a character's Dexterity bonus to AC drops to 0 because of armor, this situation does not count as losing a Dexterity bonus to AC or becoming flat-footed.
 
@@ -500,34 +507,34 @@ Half-plate or full plate & 4 minutes\fn{2} & 4 minutes\fn{1} & 1d4\plus1 minutes
 
 \begin{dtable!*}
 \lcaption{Armor and Shields}
-\begin{tabularx}{\textwidth}{>{\lcol}X c >{\ccol}p{6em} >{\ccol}p{5em} >{\ccol}p{6em} >{\ccol}p{7em} c c c}
-  &  &  &  &  &  & \multicolumn{2}{c}{\x\x Speed \x\x} &  \\
-\thead{Armor} & \thead{Cost} & \thead{Armor/Shield Bonus} & \thead{Dex Modifier} & \thead{Armor Check Penalty} & \thead{Arcane Spell Failure Chance} & \thead{(30 ft.)} & \thead{(20 ft.)} & \thead{Weight\fn{1}} \\
+\begin{tabularx}{\textwidth}{>{\lcol}X >{\ccol}p{6em} >{\ccol}p{5em} >{\ccol}p{6em} >{\ccol}p{7em} c c c c}
+  &  &  &  &  &  \multicolumn{2}{c}{\x\x Speed \x\x} & & \\
+\thead{Armor} & \thead{Armor/Shield Bonus} & \thead{Dex Modifier} & \thead{Armor Check Penalty} & \thead{Arcane Spell Failure Chance} & \thead{(30 ft.)} & \thead{(20 ft.)} & \thead{Cost} & \thead{Weight\fn{1}} \\
 Light armor &  &  &  &  &  &  &  &  \\
-\tind Padded & 5 gp          & \plus1 & 1\mult & 0       & 5\%  & 30 ft. & 20 ft. & 10 lb. \\
-\tind Leather & 10 gp        & \plus2 & 1\mult & \minus1       & 10\% & 30 ft. & 20 ft. & 15 lb. \\
-\tind Studded leather & 25 gp& \plus3 & 1\mult & \minus2 & 15\% & 30 ft. & 20 ft. & 20 lb. \\
-Medium armor &  &  &  &  &  &  &  &  \\
-\tind Chain shirt & 100 gp   & \plus4 & 1/2\mult & \minus2 & 20\% & 30 ft. & 20 ft. & 25 lb. \\
-\tind Hide & 15 gp           & \plus4 & 1/2\mult & \minus4 & 20\% & 30 ft. & 20 ft. & 25 lb. \\
-\tind Scale mail & 50 gp     & \plus5 & 1/2\mult & \minus4 & 25\% & 30 ft. & 20 ft. & 30 lb. \\
-\tind Chainmail & 100 gp     & \plus6 & 1/2\mult & \minus5 & 30\% & 30 ft. & 20 ft. & 40 lb. \\
-\tind Breastplate & 200 gp   & \plus6 & 1/2\mult & \minus4 & 25\% & 30 ft. & 20 ft. & 30 lb. \\
-Heavy armor &  &  &  &  &  &  &  &  \\
-\tind Splint mail & 200 gp   & \plus7 & 1/2\mult & \minus7 & 40\% & 20 ft. & 15 ft. & 45 lb. \\
-\tind Half-plate & 500 gp    & \plus8 & 1/2\mult & \minus8 & 40\% & 20 ft. & 15 ft. & 50 lb. \\
-\tind Full plate & 1,000 gp  & \plus8 & 1/2\mult & \minus6 & 35\% & 20 ft. & 15 ft. & 50 lb. \\
-Shields &  &  &  &  &  &  &  &  \\
-\tind Buckler & 15 gp             & \plus1 & \x & \minus1 & 5\% & \x & \x & 5 lb. \\
-\tind Shield, light wooden & 3 gp & \plus1 & \x & \minus2 & 5\% & \x & \x & 5 lb. \\
-\tind Shield, light steel & 9 gp  & \plus1 & \x & \minus2 & 5\% & \x & \x & 6 lb. \\
-\tind Shield, heavy wooden & 7 gp & \plus2 & \x & \minus3 & 15\% & \x & \x & 10 lb. \\
-\tind Shield, heavy steel & 20 gp & \plus2 & \x & \minus3 & 15\% & \x & \x & 15 lb. \\
-\tind Shield, tower & 30 gp       & \plus4\fn{2} & 1/2\mult & \minus10 & 50\% & \x & \x & 45 lb. \\
-Extras &  &  &  &  &  &  &  &  \\
-\tind Armor spikes & \plus50 gp & \minus1\fn{3} & \x & \minus2 & \x & \x & \x & \plus10 lb. \\
-\tind Gauntlet, locked & 8 gp & \x & \x & Special & \fn{4} & \x & \x & \plus5 lb. \\
-\tind Shield spikes & \plus10 gp & \x & \x & \minus1 & \x & \x & \x & \plus5 lb. \\
+\tind Padded 				& \plus1 		& 1\mult 	& 0       & 5\%  & 30 ft. & 20 ft. & 5 gp          & 10 lb.\\
+\tind Leather 				& \plus2 		& 1\mult 	& \minus1 & 10\% & 30 ft. & 20 ft. & 10 gp        & 15 lb.\\
+\tind Studded leather 		& \plus3 		& 1\mult 	& \minus2 & 15\% & 30 ft. & 20 ft. & 25 gp & 20 lb.\\
+Medium armor 				&  &  &  &  &  &  &  & \\
+\tind Chain shirt 			& \plus4 		& 1/2\mult 	& \minus2 & 20\% & 30 ft. & 20 ft. & 100 gp   & 25 lb.\\
+\tind Hide 					& \plus4 		& 1/2\mult 	& \minus4 & 20\% & 30 ft. & 20 ft. & 15 gp           & 25 lb.\\
+\tind Scale mail 			& \plus5 		& 1/2\mult 	& \minus4 & 25\% & 30 ft. & 20 ft. & 50 gp     & 30 lb.\\
+\tind Chainmail 			& \plus6 		& 1/2\mult 	& \minus5 & 30\% & 30 ft. & 20 ft. & 100 gp     & 40 lb.\\
+\tind Breastplate 			& \plus6 		& 1/2\mult 	& \minus4 & 25\% & 30 ft. & 20 ft. & 200 gp   & 30 lb.\\
+Heavy armor 				&  &  &  &  &  &  &  & \\
+\tind Splint mail 			& \plus7 		& 1/2\mult 	& \minus7 & 40\% & 20 ft. & 15 ft. & 200 gp   & 45 lb.\\
+\tind Half-plate 			& \plus8 		& 1/2\mult 	& \minus8 & 40\% & 20 ft. & 15 ft. & 500 gp    & 50 lb.\\
+\tind Full plate 			& \plus8 		& 1/2\mult 	& \minus6 & 35\% & 20 ft. & 15 ft. & 1,000 gp  & 50 lb.\\
+Shields 					&  &  &  &  &  &  &  & \\
+\tind Buckler 				& \plus1 		& \x 		& \minus1 & 5\% & \x & \x & 15 gp             & 5 lb.\\
+\tind Shield, light wooden 	& \plus1 		& \x 		& \minus2 & 5\% & \x & \x & 3 gp & 5 lb.\\
+\tind Shield, light steel 	& \plus1 		& \x 		& \minus2 & 5\% & \x & \x & 9 gp  & 6 lb.\\
+\tind Shield, heavy wooden 	& \plus2 		& \x 		& \minus3 & 15\% & \x & \x & 7 gp & 10 lb.\\
+\tind Shield, heavy steel 	& \plus2 		& \x 		& \minus3 & 15\% & \x & \x & 20 gp & 15 lb.\\
+\tind Shield, tower 		& \plus4\fn{2} 	& 1/2\mult 	& \minus10 & 50\% & \x & \x & 30 gp       & 45 lb.\\
+Extras 						&  &  &  &  &  &  &  & \\
+\tind Armor spikes 			& \minus1\fn{3} & \x 		& \minus2 & \x & \x & \x & \plus50 gp & \plus10 lb.\\
+\tind Gauntlet, locked 		& \x 			& \x 		& Special & \fn{4} & \x & \x & 8 gp & \plus5 lb.\\
+\tind Shield spikes 		& \x 			& \x 		& \minus1 & \x & \x & \x & \plus10 gp & \plus5 lb.\\
 \end{tabularx}
 1 Weight figures are for armor sized to fit Medium characters. Armor fitted for Small characters weighs half as much, and armor fitted for Large characters weighs twice as much. \\
 2 A tower shield can instead grant you cover. See the description. \\

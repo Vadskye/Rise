@@ -15,3 +15,5 @@ Wis modifier||Wis
 Cha modifier||Cha
 Attribute modifier||Attribute
 attribute modifier||attribute
+Attribute Modifier||Attribute
+key ability||key attribute

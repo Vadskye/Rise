@@ -226,7 +226,7 @@ can cast each day. If the entry is ``\x'' for a given level of spells, the
 character may not cast any spells of that level.
 (Bonus spells for wizards are based on Intelligence, bonus spells for
 clerics, druids, and rangers are based on Wisdom, and bonus spells for sorcerers, bards, and paladins are based off Charisma. See
-\trefcp{Attribute Modifiers and Bonus Spells}.) The character may cast that many spells plus
+\trefcp{Attributes and Bonus Spells}.) The character may cast that many spells plus
 any bonus spells each day.
 \end{cp}
 
@@ -302,16 +302,16 @@ weapon and armor proficiencies he or she has gained.
 \cd{Hit Value} 7.
 
 \sssecfake{Class Skills}
-The barbarian's class skills (and the key ability for each skill) are
+The barbarian's class skills (and the key attribute for each skill) are
 Climb (Str), Jump (Str), Swim (Str), Acrobatics (Dex), Ride (Dex), Perception (Wis), Survival (Wis), Handle Animal (Cha), and Intimidate (Cha).
 \cf{Bbn}{Skill Points at 1st Level} 4
 
 \sssecfake{Class Features}
 
 All of the following are class features of the barbarian.
- \cf{Bbn}{Weapon and Armor Proficiency}  A barbarian is proficient with simple weapons,   any four other weapon groups,  light armor, medium armor, and shields (except tower shields).
+\cf{Bbn}{Weapon and Armor Proficiency}  A barbarian is proficient with simple weapons, any four other weapon groups, light armor, medium armor, and shields (except tower shields).
 
- \cf{Bbn}{Damage Reduction (Ex)} A barbarian gains the ability to shrug off some amount of injury from attacks. He ignores an amount of damage each round equal to his barbarian level. Damage in excess of this value is dealt normally. Damage reduction can reduce damage to 0 but not below 0.
+\cf{Bbn}{Damage Reduction (Ex)} A barbarian gains the ability to shrug off some amount of injury from attacks. He ignores an amount of damage each round equal to his barbarian level. Damage in excess of this value is dealt normally. Damage reduction can reduce damage to 0 but not below 0.
 
 \begin{comment}
 \cf{Bbn}{Illiteracy} Barbarians are the only characters who do not
@@ -320,22 +320,22 @@ A barbarian who gains a level in any other class automatically gains literacy. A
 character who gains a barbarian level does not lose the literacy he or she already had.
 \end{comment}
 
- \cf{Bbn}{Rage (Ex)} A barbarian can fly into a rage a certain number of times per day. While in a rage, he temporarily gains a \plus2 competence bonus to weapon damage rolls and Fortitude and Will saves. In addition, he gains 2 temporary hit points per barbarian level, but he takes a \minus2 penalty to Armor Class.
+\cf{Bbn}{Rage (Ex)} A barbarian can fly into a rage a certain number of times per day. While in a rage, he temporarily gains a \plus2 competence bonus to weapon damage rolls and Fortitude and Will saves. In addition, he gains 2 temporary hit points per barbarian level, but he takes a \minus2 penalty to Armor Class.
 \par The barbarian's rage bonus increases to \plus3 (and 3 temporary hit points per barbarian level) at 8th level, to \plus4 at 14th level, and to \plus5 at 20th level. The penalty to Armor Class remains the same.
 \par The extra hit points gained from raging are lost before any other hit points. (For more information, see \pref{Temporary Hit Points}.)
 
 While raging, a barbarian
 cannot use any Charisma-, Dexterity-, or Intelligence-based
-skills (except for Acrobatics, Escape Artist, Intimidate, and
-Ride), or any abilities that require
+skills other than Acrobatics, Escape Artist, Intimidate, and
+Ride, or any abilities that require
 patience or concentration, nor can he cast spells or activate
 magic items that require a command word, a spell trigger (such as a wand), or spell
 completion (such as a scroll) to function. He can use any feat he has except Combat Expertise, item creation feats, and metamagic feats.
 
-\par A fit of rage lasts for a number of rounds equal to   5 \add the character's Constitution value.   A barbarian may prematurely end his
+\par A fit of rage lasts for a number of rounds equal to 5 \add half the character's Constitution.   A barbarian may prematurely end his
 rage.  A barbarian's rage ends if he becomes unconscious. At the end of the rage, the barbarian takes nonlethal damage equal to the number of temporary hit points he gained by raging, loses his rage bonuses and restrictions, and becomes fatigued (\minus2 penalty to Strength, \minus2 penalty to Dexterity, can't charge or run) for the duration of the current encounter.  If the barbarian has any temporary hit points remaining at the end of his rage, the nonlethal damage is dealt to those hit points before they go away.
 
-\par A barbarian can fly into a rage once per day, plus an additional number of times per day equal to his Constitution value (minimum 0), to a maximum number of rages per day equal to his barbarian class level. He may not rage more than once per encounter. Entering a rage takes no time itself, but a barbarian can do it only during his action, not in response to someone else's action.
+\par A barbarian can fly into a rage once per day, plus an additional number of times per day equal to half his Constitution (minimum 0), to a maximum number of rages per day equal to his barbarian class level. He may not rage more than once per encounter. Entering a rage takes no time itself, but a barbarian can do it only during his action, not in response to someone else's action.
 
 \cf{Bbn}{Fast Movement (Ex)} At 2nd level, a barbarian's land speed becomes faster than the norm for his race by \plus10 feet. This benefit applies only when he is wearing no armor, light armor, or medium  armor and not carrying a heavy load. Apply this bonus before modifying the barbarian's speed because of any load carried or armor worn. This bonus is a competence bonus.
 
@@ -370,7 +370,7 @@ If a barbarian already has uncanny dodge from a different class, he stacks those
 
 \cf{Bbn}{Grit (Ex)} At 4th level, a barbarian's resilience allows him to shrug off magical effects. If he makes a successful Fortitude save against an attack that normally deals half damage on a successful save, he instead takes no damage.
 
-\cf{Bbn}{Resiliency (Ex)} At 5th level, a barbarian adds his Constitution value to his damage reduction.
+\cf{Bbn}{Resiliency (Ex)} At 5th level, a barbarian adds half his Constitution to his damage reduction.
 
 \cf{Bbn}{Improved Uncanny Dodge (Ex)} At 6th level and higher, a barbarian is always treated as being threatened by two fewer creatures than he actually is for the purpose of determining overwhelm penalties. This defense can deny a rogue the ability to sneak attack the barbarian.
 \par If a character already has uncanny dodge (see above) from a second class and gains improved uncanny dodge, the character stacks those levels to determine if he should gain greater uncanny dodge, and to determine the minimum level a rogue must be to flank the character.
@@ -427,7 +427,7 @@ the class.
 \cd{Hit Value} 5.
 
 \sssecfake{Class Skills}
-The bard's class skills (and the key ability for each skill) are Sleight of Hand (Dex), Forgery (Int), Knowledge (all skills, taken individually) (Int), Linguistics (Int), Perception (Wis), Sense Motive (Wis), Spellcraft (Wis), Bluff (Cha), Persuasion (Cha), Disguise (Cha), Perform (Cha), Use Magic Device (Cha).
+The bard's class skills (and the key attribute for each skill) are Sleight of Hand (Dex), Forgery (Int), Knowledge (all skills, taken individually) (Int), Linguistics (Int), Perception (Wis), Sense Motive (Wis), Spellcraft (Wis), Bluff (Cha), Persuasion (Cha), Disguise (Cha), Perform (Cha), Use Magic Device (Cha).
 \cf{Brd}{Skill Points at 1st Level} 8.
 
 \sssecfake{Class Features}
@@ -494,7 +494,7 @@ A successful bardic knowledge check will not reveal the powers of a magic item b
 \end{dtable}
 
  \cf{Brd}{Bardic Music}
-A number of times per day equal to half the bard's level \add the bard's Charisma value,  a bard can use his song or poetics to produce magical effects on those around him (usually including himself, if desired). While these abilities fall under the category of bardic music and the descriptions discuss singing or playing instruments, they can all be activated by reciting poetry, chanting, singing lyrical songs, singing melodies, whistling, playing an instrument, or playing an instrument in combination with some spoken performance. Each ability requires both a minimum bard level and a minimum number of ranks in the Perform skill to qualify; if a bard does not have the required number of ranks in at least one Perform skill, he does not gain the bardic music ability until he acquires the needed ranks.
+A number of times per day equal to half the bard's level \add half the bard's Charisma,  a bard can use his song or poetics to produce magical effects on those around him (usually including himself, if desired). While these abilities fall under the category of bardic music and the descriptions discuss singing or playing instruments, they can all be activated by reciting poetry, chanting, singing lyrical songs, singing melodies, whistling, playing an instrument, or playing an instrument in combination with some spoken performance. Each ability requires both a minimum bard level and a minimum number of ranks in the Perform skill to qualify; if a bard does not have the required number of ranks in at least one Perform skill, he does not gain the bardic music ability until he acquires the needed ranks.
 
 \par Starting a bardic music effect is a standard action at 1st level. At 6th level, a bard can start his music as a move action, and at 12th level, a bard can start his music as a swift action. Regardless of the action used, the bard cannot initiate more than one bardic music per round (but see the combine songs ability below).  Some bardic music abilities require concentration, which means the bard must
 take a standard action each round to maintain the ability. Even while using bardic music that doesn't require concentration, a bard cannot cast spells, activate magic items by spell completion (such as scrolls), or activate magic items by magic word (such as wands). Just as for casting a spell with a verbal component, a deaf bard has a 20\% chance to fail when attempting to use bardic music. If he fails, the attempt still counts against his daily limit.
@@ -628,7 +628,7 @@ axis, but not both). A cleric may not be neutral unless his deity's alignment is
 \cd{Hit Value} 5.
 
 \sssecfake{Class Skills}
-The cleric's class skills (and the key ability for each skill) are Knowledge (arcana) (Int), Knowledge (local) (Int), Knowledge (religion) (Int), Knowledge (the planes) (Int), Heal (Wis), Sense Motive (Wis), Spellcraft (Wis), Persuasion (Cha), and Intimidate (Cha).
+The cleric's class skills (and the key attribute for each skill) are Knowledge (arcana) (Int), Knowledge (local) (Int), Knowledge (religion) (Int), Knowledge (the planes) (Int), Heal (Wis), Sense Motive (Wis), Spellcraft (Wis), Persuasion (Cha), and Intimidate (Cha).
 
 \cf{Clr}{Domains and Class Skills}: A cleric who chooses the Plant domain adds Knowledge (nature) (Int) to the cleric class skills listed above. A cleric who chooses the Travel domain adds Survival (Wis) to the list. A cleric who chooses the Trickery domain adds Bluff (Cha) and Disguise (Cha) to the list. See Deity, Domains, and Domain Spells, below, for more information.
 \cf{Clr}{Skill Points at 1st Level} 2.
@@ -776,9 +776,9 @@ equal to 3 \add his Charisma value.
 
 \cf{Clr}{Channel Energy (Su)} At 2nd level, by channeling the power of his faith through his holy (or unholy) symbol, a cleric can act as a powerful conduit of divine energy. He cleric must choose whether to channel positive or negative energy. Once this choice is made, it cannot be reversed. This decision also determines whether the cleric casts spontaneous \spellindirect{cure light wounds}{cure} or \spellindirect{inflict light wounds}{inflict} spells (see below).
 
-When a cleric channels energy, it affects all creatures in a \areamed radius burst centered on him, including himself. The cleric may choose to exclude a number of creatures from the effect equal to 1 \add his Wisdom value. The amount of damage dealt (if negative energy is channeled) or healed (if positive energy is channeled) is equal to 1d6 damage per two cleric levels. Each affected creature can make a Will save to halve the damage. The DC of this save is equal to 10 \add half the cleric's level \add the cleric's Charisma.
+When a cleric channels energy, it affects all creatures in a \areamed radius burst centered on him, including himself. The cleric may choose to exclude a number of creatures from the effect equal to 1 \add half his Wisdom. The amount of damage dealt (if negative energy is channeled) or healed (if positive energy is channeled) is equal to 1d6 damage per two cleric levels. Each affected creature can make a Will save to halve the damage. The DC of this save is equal to 10 \add half the cleric's level \add the cleric's Charisma.
 
-Channeling energy is a standard action that does not provoke attacks of opportunity. A cleric can channel energy a number of times per day equal to 3 \add his Charisma value. A cleric must be able to present his holy symbol to use this ability. The abilities used 
+Channeling energy is a standard action that does not provoke attacks of opportunity. A cleric can channel energy a number of times per day equal to 3 \add half his Charisma. A cleric must be able to present his holy symbol to use this ability. The abilities used 
 
 \cf{Clr}{Domain Power (Su)} At 3rd level, a cleric gains a domain power from one of his domains. Using a domain power requires a standard action that does not provoke attacks of opportunity unless otherwise noted. All domain powers can be used at will unless otherwise noted. If a domain power allows a saving throw, the DC is equal to 10 \add half the cleric's level \add the cleric's Charisma.
 \par The domain powers for each domain are described below.
@@ -793,14 +793,14 @@ Channeling energy is a standard action that does not provoke attacks of opportun
 \subcf{Good -- Holy Touch} A touched creature is dazzled and treated as evil for the purpose of good spells and effects that you create. The effect lasts for 5 rounds.
 \subcf{Knowledge -- Minor Vision} A touched creature is granted a brief vision of the future, giving it a \plus2 enhancement bonus to attack rolls, weapon damage rolls, and checks for 1 round.
 \subcf{Law -- Touch of Order} A creature within \rngclose range is imbued with the leveling power of order for 5 rounds. Any attack roll, saving throw, or check it makes with a roll of 11 or higher gets a \minus2 penalty. In addition, it is treated as being chaotic for the purpose of your lawful spells and effects.
-\subcf{Life -- Touch of Healing} A touched creature is healed for 1d8 damage per cleric level. This power can be used a number of times per day equal to the cleric's Charisma value (minimum 1).
+\subcf{Life -- Touch of Healing} A touched creature is healed for 1d8 damage per cleric level. This power can be used a number of times per day equal to half the cleric's Charisma (minimum 1).
 \subcf{Magic -- Breach Defenses} The cleric fires a magical ray at a creature within \rngclose range. If he hits, the target takes d6 damage \add 1 per cleric level. In addition, it takes a \minus2 penalty to saving throws against your spells for 1 round.
 \subcf{Nature -- Wild Speech} The cleric gains wild speech, as the druid ability, with a druid level equal to half his cleric level (minimum 1). This power can be used a number of times per day equal to half the cleric's level.
 \subcf{Protection -- Martyr's Touch} For the next 5 rounds, you take half of the damage the touched creature would take, as the \spell{shield other} spell. If you get farther than \rngmed range from the touched creature during this time, the effect is broken.
-\subcf{Strength -- Surge of Strength} The cleric gains a \plus2 enchancement bonus to Strength for 1 round. \bonusscalingdescription This power can be used a number of times per day equal to 1 \add the cleric's Strength value.
-\subcf{Travel -- Free Stride} As a swift action, the cleric can gain the ability to move through difficult terrain at full speed for 1 round. This power can be used a number of times per day equal to 1 \add the cleric's Dexterity value.
-\subcf{Trickery -- Liar's Boon} As a swift action, the cleric can gain a \plus3 enhancement bonus to Bluff and Disguise checks for 5 minutes. This power can be used a number of times per day equal to 1 \add the cleric's Charisma value.
-\subcf{War -- Warrior's Boon} A creature touched creature gains a \plus2 enhancement bonus to attack rolls for 1 round. \bonusscalingdescription This power can be used a number of times per day equal to 1 \add the cleric's Charisma value.
+\subcf{Strength -- Surge of Strength} The cleric gains a \plus2 enchancement bonus to Strength for 1 round. \bonusscalingdescription This power can be used a number of times per day equal to 1 \add half the cleric's Strength.
+\subcf{Travel -- Free Stride} As a swift action, the cleric can gain the ability to move through difficult terrain at full speed for 1 round. This power can be used a number of times per day equal to 1 \add half the cleric's Dexterity.
+\subcf{Trickery -- Liar's Boon} As a swift action, the cleric can gain a \plus3 enhancement bonus to Bluff and Disguise checks for 5 minutes. This power can be used a number of times per day equal to 1 \add half the cleric's Charisma.
+\subcf{War -- Warrior's Boon} A creature touched creature gains a \plus2 enhancement bonus to attack rolls for 1 round. \bonusscalingdescription This power can be used a number of times per day equal to 1 \add half the cleric's Charisma.
 \subcf{Water -- Drowning Orb} The cleric fires an orb of water at a creature within \rngclose range. If he hits on a ranged touch attack, the orb attempts to force itself into the creature's mouth and nose to drown it, dealing d8 nonlethal damage \add d8 per four cleric levels after 1st. In addition, the creature must make a Fortitude save or be forced to hold its breath for 5 rounds.
 
 The cleric gains an additional domain power from one of his domains at 4th level.
@@ -837,13 +837,13 @@ The cleric gains an additional domain power from one of his domains at 4th level
 \subcf{Evil -- Malevolent Magic} Good creatures take a \minus2 penalty to saving throws against the cleric's spells.
 \subcf{Fire -- Flamebearer} The cleric's fire spells deal an extra point of damage per die of damage and he gains fire damage reduction 10. This damage reduction increases by 5 points per two cleric levels after 7th.
 \subcf{Good -- Purifying Magic} Evil creatures take a \minus2 penalty to saving throws against the cleric's spells.
-\subcf{Knowledge -- Knowledge Mastery} The cleric may choose a number of Knowledge skills equal to his Intelligence value (minimum 1). He may take 10 with those skills if he is not in danger or rushed.
+\subcf{Knowledge -- Knowledge Mastery} The cleric may choose a number of Knowledge skills equal half to his Intelligence (minimum 1). He may take 10 with those skills if he is not in danger or rushed.
 \subcf{Law -- Certain Success} Whenever the cleric would take 10, he may instead take 12, treating any roll lower than a 12 as if it had been a 12.
 \subcf{Life -- Limitless Healing} If the cleric would heal a creature above its maximum hit points, the creature gains any excess healing as temporary hit points for 1 round.
 \subcf{Magic -- Metamagic Feat} The cleric gains a bonus metamagic feat.
 \subcf{Nature -- Favored Terrain} The cleric gains a favored terrain, as the ranger class feature.
 \subcf{Protection -- Faithful Shield} The cleric gains a \plus2 enhancement bonus to his deflection modifier.
-\subcf{Strength -- Mighty Magic} The cleric can add his Strength value to his casting attribute score to meet the minimum attribute score requirements to cast spells.
+\subcf{Strength -- Mighty Magic} The cleric can add half his Strength to his casting attribute score to meet the minimum attribute score requirements to cast spells.
 \subcf{Travel -- Rapid Traveller} The cleric gains a \plus10 foot competence bonus to his base land speed.
 \subcf{Trickery -- }
 \subcf{War -- Weapon Specialization} The cleric gains Weapon Specialization in his deity's favored weapon group as a bonus feat. If he does not have a deity, he gains it in a weapon group related to his alignment or ideals.
@@ -869,7 +869,7 @@ The cleric gains an additional domain power from one of his domains at 4th level
 \subcf{Strength -- Surge of Strength} As a swift action, the cleric can add his cleric level as an enhancement bonus to his Strength for a single round.
 \subcf{Travel -- Uninhibited Movement} As a swift action, the cleric can gain the ability to move without provoking any attacks of opportunity for a single round.
 \subcf{Trickery -- Swift Invisibility} As a swift action, the cleric can gain the benefit of the \spell{invisibility} spell for a single round.
-\subcf{War -- Warmaster's Boon} The cleric can use this power as part of casting a spell that targets himself with a duration of \durshort or longer and a range greater than personal. If he uses the power, the spell affects all of his allies within an \areamed radius. However, the spell lasts for no longer than his Charisma value in rounds.
+\subcf{War -- Warmaster's Boon} The cleric can use this power as part of casting a spell that targets himself with a duration of \durshort or longer and a range greater than personal. If he uses the power, the spell affects all of his allies within an \areamed radius. However, the spell lasts for no longer than half his Charisma score in rounds.
 \subcf{Water -- Aquatic Globe} The cleric creates water out of thin air in an immobile \areamed radius emanation from his location for 5 rounds. Everything within the area is treated as if it were underwater. At the end of the duration, the water evaporates, leaving no trace that it was ever there.
 
 \par The cleric gains an additional greater channelled domain power at 15th level.
@@ -957,7 +957,7 @@ A cleric who grossly violates the code of conduct required by his god loses all 
 neutral, or neutral evil.
 \cd{Hit Value} 5.
  \sssecfake{Class Skills}
-The druid's class skills (and the key ability for each skill) are Climb (Str), Jump (Str), Swim (Str), Stealth (Dex), Knowledge (geography), Knowledge (nature) (Int), Heal (Wis), Perception (Wis), Survival (Wis), and Handle Animal (Cha).
+The druid's class skills (and the key attribute for each skill) are Climb (Str), Jump (Str), Swim (Str), Stealth (Dex), Knowledge (geography), Knowledge (nature) (Int), Heal (Wis), Perception (Wis), Survival (Wis), and Handle Animal (Cha).
 \cf{Drd}{Skill Points at 1st Level} 4
 
 \sssecfake{Class Features}
@@ -1030,13 +1030,13 @@ Druidic has its own alphabet.
 
 \cf{Drd}{Nature Sense (Ex)} A druid gains a \plus2 competence bonus on Knowledge (nature) and Survival checks. In addition, she can make those checks as if she were trained.
 
-\cf{Drd}{Wild Speech (Su)} One of the first lessons a druid learns is how to commune with natural creatures. A druid can speak with animals a number of times per day equal to half her druid level \add her Charisma value (minimum 1). Each time she uses this ability, she chooses a kind of animal, such as owl or wolf. She can then speak to and understand animals of that type for a number of minutes equal to her druid level.
+\cf{Drd}{Wild Speech (Su)} One of the first lessons a druid learns is how to commune with natural creatures. A druid can speak with animals a number of times per day equal to half her druid level \add half her Charisma (minimum 1). Each time she uses this ability, she chooses a kind of animal, such as owl or wolf. She can then speak to and understand animals of that type for a number of minutes equal to her druid level.
 
 This ability doesn't make the animals any more friendly or cooperative than normal. Furthermore, wary and cunning animals are likely to be terse and evasive, while the more stupid ones make inane comments. If an animal is friendly toward you, you may be able to convince it to do some favor or service for you.
 
 \cf{Drd}{Woodland Stride (Ex)} Starting at 2nd level, a druid may move through any sort of undergrowth (such as natural thorns, briars, overgrown areas, and similar terrain) at her normal speed and without taking damage or suffering any other impairment. However, thorns, briars, and overgrown areas that have been magically manipulated to impede motion still affect her.
 
- \cf{Drd}{Wild Aspect (Su)} At 3rd level, a druid gains the ability to embody an aspect of an animal. Embodying a wild aspect is a standard action and doesn't provoke an attack of opportunity. Wild aspects last for 10 minutes per druid level, or until the druid dismisses the effect, unless otherwise stated. The druid can use this ability a number of times per day equal to half her druid class level \add her Constitution value.
+ \cf{Drd}{Wild Aspect (Su)} At 3rd level, a druid gains the ability to embody an aspect of an animal. Embodying a wild aspect is a standard action and doesn't provoke an attack of opportunity. Wild aspects last for 10 minutes per druid level, or until the druid dismisses the effect, unless otherwise stated. The druid can use this ability a number of times per day equal to half her druid class level \add half her Constitution.
 \par When a druid embodies a wild aspect, she gains all abilities from an animal that she knows. For example, a druid devoted to bulls, who chose the Lope and Gore aspects, would gain both abilities with a single use of wild aspect. A druid devoted do both bulls and eagles, who chose the Lesser Flight aspect from the eagle and the Gore aspect from the bull, would have to use two uses of wild aspect to use both abilities.
 \par The descriptions below describe the effects of the aspect. With many aspects, the druid's appearance also changes to match the aspect, but this is not described. Different druids change in different ways. For example, one druid might gain unusually large eyes when embodying the low-light vision aspect, while another might change her irises into slits, like a cat, when embodying the same aspect. The changes made are up to the druid, but cannot be used to gain an additional substantive benefit beyond the effects given in the description of the aspect.
 \par When she initially chooses a wild aspect, a druid can only choose from the first aspects listed for each animal. At 5th, 7th, and 9th level, a druid learns how to take on a new wild aspect. At 5th level, she can choose from the first or seconds aspects listed. At 7th level, she can also choose from the third aspect listed, and at 9th level, she may choose any aspect listed for any animal. At higher levels, a druid may choose a greater aspect instead; see below.
@@ -1056,7 +1056,7 @@ While embodying the ape aspect, the druid gains an enhancement bonus to Strength
 \begin{wildaspect}
 \wilditem Climb: The druid gains a climb speed equal to her base land speed.
 \wilditem Claws: The druid gains two claw attacks which can be used as light natural weapons. A Medium druid deals d6 damage with each claw.
-\wilditem Rend: If the druid hits with both claw attacks, she latches on to her opponent's body and tears the flesh. This attack deals damage appropriate to a scimitar appropriate for the druid's size, including the druid's full Strength value.
+\wilditem Rend: If the druid hits with both claw attacks, she latches on to her opponent's body and tears the flesh. This attack deals damage appropriate to a scimitar appropriate for the druid's size.
 \wilditem Improved Grab: When the druid hits a foe with an unarmed strike or natural attack, she may attempt to grapple her foe as a swift action without provoking an attack of opportunity.
 \end{wildaspect}
 
@@ -1093,7 +1093,7 @@ While embodying the eagle aspect, the druid gains an enhancement bonus to Charis
 \wilditem Wings, partial: The druid gains a glide speed equal to her base land speed. While gliding, she cannot use her hands for anything except moving.
 \wilditem Talons: The druid gains talons which can be used as a heavy natural weapon. A Medium druid deals d8 damage with her talons.
 \wilditem Dive: When the druid hits a foe with an unarmed strike or natural attack on a charge while gliding or flying down, she deals double damage. If she can make multiple attacks on the charge, this effect only applies to the first attack.
-\wilditem Wings, full: The druid gains a fly speed equal to her base land speed with average maneuverability. While flying she cannot use her hands for anything except moving. She can only fly for a number of rounds equal 3 \add her Constitution value. After that, she must rest for 5 minutes to recuperate.
+\wilditem Wings, full: The druid gains a fly speed equal to her base land speed with average maneuverability. While flying she cannot use her hands for anything except moving. She can only fly for a number of rounds equal 3 \add half her Constitution. After that, she must rest for 5 minutes to recuperate.
 \end{wildaspect}
 
 \subcf{Fox}
@@ -1111,7 +1111,7 @@ For each owl ability she possesses, the druid gains a \plus1 enhancement bonus t
 \wilditem Wings, partial: The druid gains a glide speed equal to her base land speed. While gliding, she cannot use her hands for anything except moving.
 \wilditem Talons: The druid gains talons which can be used as a heavy natural weapon. A Medium druid deals d8 damage with her talons.
 \wilditem Senses: The druid gains a \plus4 enhancement bonus on Perception checks.
-\wilditem Wings, full: The druid gains a fly speed equal to her base land speed with average maneuverability. While flying, she cannot use her hands for anything except moving. She can fly for a number of rounds equal to 3 \add her Constitution value. After that, she must rest for 5 minutes to recuperate.
+\wilditem Wings, full: The druid gains a fly speed equal to her base land speed with average maneuverability. While flying, she cannot use her hands for anything except moving. She can fly for a number of rounds equal to 3 \add half her Constitution. After that, she must rest for 5 minutes to recuperate.
 \end{wildaspect}
 
 \subcf{Serpent}
@@ -1325,7 +1325,7 @@ A druid who ceases to revere nature, changes to a prohibited alignment, or teach
  \cd{Hit Value} 6.
 
 \sssecfake{Class Skills}
-The fighter's class skills (and the key ability for each skill) are Climb (Str), Jump (Str), Swim (Str), Ride (Dex), and Intimidate (Cha).
+The fighter's class skills (and the key attribute for each skill) are Climb (Str), Jump (Str), Swim (Str), Ride (Dex), and Intimidate (Cha).
 \cf{Ftr}{Skill Points at 1st Level} 2.
 
 \sssecfake{Class Features}
@@ -1353,7 +1353,7 @@ the feat as a normal feat or bonus feat.
 \par In order to gain a new adaptive style feat, it must be reasonably possible to do training related to the new feat. For example, a fighter could not gain Weapon Focus in axes without at least one axe available.
 
 \cf{Ftr}{Combat Discipline} At 5th level, a fighter can his superior training and focus to keep fighting in the face of debilitating effects. When a fighter is initially affected by one of the conditions listed below, he may mitigate or negate the condition for up to one round per fighter level. At the end of that time, if the original condition would still affect the fighter, it does so normally, though he may use combat discipline again (if he has uses remaining) to continue to fight off the effect.
-\par Using combat discipline takes no action, and can be done at any time, even when it isn't the fighter's turn. A fighter may use this ability a number of times per day equal to half his fighter class level \add his Constitution value.
+\par Using combat discipline takes no action, and can be done at any time, even when it isn't the fighter's turn. A fighter may use this ability a number of times per day equal to half his fighter class level \add half his Constitution.
 
 \begin{dtable}
 \lcaption{Combat Discipline Conditions}
@@ -1442,7 +1442,7 @@ the feat as a normal feat or bonus feat.
 \cd{Hit Value} 5
 
 \sssecfake{Class Skills}
-The monk's class skills (and the key ability for each skill) are Climb (Str), Jump (Str), Swim (Str), Acrobatics (Dex), Escape Artist (Dex), Stealth (Dex), Knowledge (religion) (Int), Perception (Wis), Sense Motive (Wis), and Persuasion (Cha).
+The monk's class skills (and the key attribute for each skill) are Climb (Str), Jump (Str), Swim (Str), Acrobatics (Dex), Escape Artist (Dex), Stealth (Dex), Knowledge (religion) (Int), Perception (Wis), Sense Motive (Wis), and Persuasion (Cha).
 \cf{Mnk}{Skill Points at 1st Level} 4
 
 \sssecfake{Class Features}
@@ -1523,9 +1523,9 @@ second class and gains improved uncanny dodge, the character stacks those levels
 
 \cf{Mnk}{Greater Uncanny Dodge (Ex)} At 10th level and higher, a monk can no longer be overwhelmed, regardless of the number of foes surrounding her.
 
-\cf{Mnk}{Improved Ki Strike (Su)} At 10th level, a monk may add half her Wisdom value to damage with unarmed attacks and monk weapons. In addition, those weapons are treated as being lawful for the purpose of dealing damage to creatures with damage reduction.
+\cf{Mnk}{Improved Ki Strike (Su)} At 10th level, a monk may add half her Wisdom to damage with unarmed attacks and monk weapons. In addition, those weapons are treated as being lawful for the purpose of dealing damage to creatures with damage reduction.
 
-\cf{Mnk}{Abundant Step (Su)} At 11th level or higher, a monk can slip magically between spaces, as if using the spell \spell{dimension slide}, a number of times per day equal to her Wisdom value. Using this ability is a move action that does not provoke attacks of opportunity. Her caster level for this effect is equal to her monk level.
+\cf{Mnk}{Abundant Step (Su)} At 11th level or higher, a monk can slip magically between spaces, as if using the spell \spell{dimension slide}, a number of times per day equal to half her Wisdom. Using this ability is a move action that does not provoke attacks of opportunity. Her caster level for this effect is equal to her monk level.
 
 \cf{Mnk}{Diamond Soul (Ex)} At 12th level, a monk gains spell resistance 10. In order to affect the monk with a spell, a spellcaster must make a spell penetration check (d20 \add half caster level \add casting attribute) that equals or exceeds the monk's spell resistance \add relevant saving throw modifier.
 
@@ -1561,7 +1561,7 @@ A monk who becomes nonlawful cannot gain new levels as a monk, but retains all m
 1st  & \plus1                        & \plus3  & \plus0 & \plus3 & Aura of good, detect evil, smite evil & \x & \x & \x & \x \\
 2nd  & \plus2                        & \plus4  & \plus1 & \plus4 & Improved smite, lay on hands & \x & \x & \x & \x \\
 3rd  & \plus3                        & \plus5  & \plus1 & \plus5 & Aura of courage, bulwark of defense, divine health & \x & \x & \x & \x \\ 
-4th  & \plus4                        & \plus6  & \plus2 & \plus6 & Divine grace, turn undead & 1 & \x & \x & \x \\
+4th  & \plus4                        & \plus6  & \plus2 & \plus6 & Divine grace & 1 & \x & \x & \x \\
 5th  & \plus5                        & \plus7  & \plus2 & \plus7 & Improved smite & 2 & \x & \x & \x \\
 6th  & \plus6/\plus1                 & \plus8  & \plus3 & \plus8 & Aura of resolve, holy ward & 3 & \x & \x & \x \\
 7th  & \plus7/\plus2                 & \plus9  & \plus3 & \plus9 & Smite chaos & 3 & \x & \x & \x \\
@@ -1585,7 +1585,7 @@ A monk who becomes nonlawful cannot gain new levels as a monk, but retains all m
 \cd{Hit Value} 6
 
 \sssecfake{Class Skills}
-The paladin's class skills (and the key ability for each skill) are Ride (Dex), Knowledge (local) (Int), Knowledge (religion) (Int), Heal (Wis), Sense Motive (Wis), and Persuasion (Cha).
+The paladin's class skills (and the key attribute for each skill) are Ride (Dex), Knowledge (local) (Int), Knowledge (religion) (Int), Heal (Wis), Sense Motive (Wis), and Persuasion (Cha).
 \cf{Pal}{Skill Points at 1st Level} 2.
 
 \sssecfake{Class Features}
@@ -1626,24 +1626,21 @@ At 14th level, the paladin adds the following improved smiting ability to the li
 At 17th level, the paladin adds the following improved smiting ability to the list of those that can be selected.
 \subcf{Brilliant} The paladin's smite cannot be turned aside by mortal defenses. The smite is made against the enemy's touch armor class.
 
-\cf{Pal}{Lay On Hands (Su)} Beginning at 2nd level, a paladin can heal wounds (her own or those of others) by touch. Each day she can heal a total number of hit points of damage equal to twice her paladin level \mtimes her Charisma value. For example, a 7th-level paladin with a 6 Charisma (a value of 3) can heal 42 points of damage per day. A paladin may choose to divide  her healing among multiple recipients, and she doesn't have to use it all at once. Using lay on hands is a standard action.
+\cf{Pal}{Lay On Hands (Su)} Beginning at 2nd level, a paladin can heal wounds (her own or those of others) by touch. Each day she can heal a total number of hit points of damage equal to her paladin level \mtimes her Charisma. For example, a 7th-level paladin with a 6 Charisma can heal 42 points of damage per day. A paladin may choose to divide her healing among multiple recipients, and she doesn't have to use it all at once. Using lay on hands is a standard action.
 
 \par Alternatively, a paladin can use any or all of this healing power to  deal damage to undead creatures. Using lay on hands in this way  requires a successful melee touch attack and doesn't provoke an attack of opportunity. The paladin decides how many of her daily allotment of points to use as damage after successfully touching an undead creature. An affected creature can make a Will save to halve the damage it takes. If it succeeds, the paladin only loses half the points of healing used.
 
-At 10th level, the paladin can heal three times her paladin level \mtimes her Charisma bonus each day.
+At 10th level, the paladin can heal twice her paladin level \mtimes her Charisma each day.
 
-At 20th level, the paladin can heal four times her paladin level \mtimes her Charisma bonus each day.
+At 20th level, the paladin can heal three times her paladin level \mtimes her Charisma each day.
 
- \cf{Pal}{Aura of Courage (Su)}   Beginning at 3rd level, a paladin is immune to fear (magical or otherwise). Each ally within 10 feet of her gains a \plus4 circumstance bonus  on saving throws against fear effects. This ability functions while the paladin is conscious, but not if she is unconscious or dead.
+ \cf{Pal}{Aura of Courage (Su)}   Beginning at 3rd level, a paladin is immune to fear (magical or otherwise). Each ally within 10 feet of her gains a \plus4 enhancement bonus on saving throws against fear effects. This ability functions while the paladin is conscious, but not if she is unconscious or dead.
 
 \cf{Pal}{Bulwark of Defense (Ex)} When he reaches 3rd level, an opponent that begins its turn in the knight-paladin's threatened area treats all squares that he threatens as difficult terrain. His strict vigilance and active defensive maneuvers force his opponents to move with care. Creatures must pay double movement cost to move through squares of difficult terrain, and cannot run or charge.
 
 \cf{Pal}{Divine Health (Ex)} At 3rd level, a paladin gains immunity to all diseases, including supernatural and magical diseases.
 
-\cf{Pal}{Turn Undead (Su)}  When a paladin reaches 4th level, she gains
-the supernatural ability to turn undead. She may use this ability a number of times per day equal to 3 \add her Charisma value. This ability functions as the cleric ability, except that the paladin's turning level is equal to his paladin level \sub 3.
-
-\cf{Pal}{Divine Grace (Su)} At 4th level, whenever a paladin makes a successful save against an attack that would normally have a partial effect on a successful save, he completely negates the attack's effect on him.
+\cf{Pal}{Divine Grace (Su)} At 4th level, whenever a paladin makes a successful save against an attack that would normally have a partial effect or deal half damage on a successful save, she instead ignores that aspect of the attack.
 
 \cf{Pal}{Spells} Beginning at 4th level, a paladin gains the ability to cast a small number of divine spells, which are drawn from the paladin spell list.
 
@@ -1698,13 +1695,13 @@ Each time the mount is called, it appears in full health, regardless of any dama
 \par Should the paladin's mount die, it immediately disappears, leaving behind any equipment it was carrying. The paladin may not summon another mount for thirty days or until she gains a paladin level, whichever comes first, even if the mount is somehow returned from the dead. During this thirty-day period, the paladin  gains a negative level that cannot be removed in any way.
 \end{comment}
 
-\cf{Pal}{Aura of Resolve (Su)} At 6th level, the paladin becomes immune to charm effects. Each ally within 10 feet of her gains a \plus4 circumstance bonus on saving throws against charm effects.
+\cf{Pal}{Aura of Resolve (Su)} At 6th level, the paladin becomes immune to charm effects. Each ally within 10 feet of her gains a \plus4 enhancement bonus on saving throws against charm effects.
 
 \cf{Pal}{Holy Ward (Sp)} A paladin is first and foremost a defender of her allies, and relies upon \spell{shield other} to defend her allies against harm from threats she cannot block with her skill at arms. A paladin of 6th level or higher who spends at least 10 points of healing from her lay on hands ability in a single round can bestow a \spell{shield other} effect on the healed ally, using her paladin level as her caster level.
 
 \cf{Pal}{Smite Chaos (Su)} At 7th level, the paladin gains the ability to smite chaotic creatures as well as evil creatures with her smite ability, but she must choose which to smite before making the attack. If the paladin attempts to smite a chaotic creature, and that creature is not chaotic, the smite attack deals no damage at all (not even normal weapon damage), but the use of the ability is still spent.
 
-\cf{Pal}{Aura of Determination (Su)} At 9th level, the paladin becomes immune to compulsion effects. Each ally within 10 feet of her gains a \plus4 circumstance bonus on saving throws against compulsion effects.
+\cf{Pal}{Aura of Determination (Su)} At 9th level, the paladin becomes immune to compulsion effects. Each ally within 10 feet of her gains a \plus4 enhancement bonus on saving throws against compulsion effects.
 
 \cf{Pal}{Improved Bulwark of Defense (Ex)} At 9th level, the paladin can take attacks of opportunity on foes who withdraw from the paladin.
 
@@ -1822,7 +1819,7 @@ ft./5 ft.; SQ empathic link, improved evasion, low-light vision, scent, share sp
 \cd{Hit Value} 6.
 
 \sssecfake{Class Skills}
-The ranger's class skills (and the key ability for each skill) are Climb (Str), Jump (Str), Swim (Str), Acrobatics (Dex), Escape Artist (Dex), Stealth (Dex), Knowledge (dungeoneering) (Int), Knowledge (geography) (Int), Knowledge (nature) (Int), Heal (Wis), Perception (Wis), Survival (Wis), and Handle Animal (Cha).
+The ranger's class skills (and the key attribute for each skill) are Climb (Str), Jump (Str), Swim (Str), Acrobatics (Dex), Escape Artist (Dex), Stealth (Dex), Knowledge (dungeoneering) (Int), Knowledge (geography) (Int), Knowledge (nature) (Int), Heal (Wis), Perception (Wis), Survival (Wis), and Handle Animal (Cha).
 \cf{Rgr}{Skill Points at 1st Level} 8.
 
 \sssecfake{Class Features}
@@ -1833,11 +1830,11 @@ All of the following are class features of the ranger.
 
 \cf{Rgr}{Quarry (Ex)} A ranger is a deadly hunter. As a swift action, a ranger may designate any foe he sees as his quarry. A ranger gains a \plus2 competence bonus to attack rolls, Perception checks, and Survival checks against his quarry. However, while a ranger is pursuing a quarry, he takes a \minus2 penalty to attack rolls against any target other than his quarry. A ranger may give up pursuing a quarry at any time. He may not have more than one quarry at once; if he designates a new quarry, the old target is no longer considered his quarry. If the ranger does not see his quarry for more than a week, it is no longer considered his quarry.
 
-\par A ranger can designate a quarry once per day, plus an additional number of times per day equal to his Wisdom value, to a maximum number of uses per day equal to his ranger class level. The ranger's quarry bonus improves to \plus3 at 8th level, to \plus4 at 14th level, and finally to \plus5 at 20th level.
+\par A ranger can designate a quarry a number of times per day equal to 1 \add half her Wisdom, to a maximum number of uses per day equal to his ranger class level. The ranger's quarry bonus improves to \plus3 at 8th level, to \plus4 at 14th level, and finally to \plus5 at 20th level.
 
 \cf{Rgr}{Track} A ranger gains Track as a bonus feat.
 
-\cf{Rgr}{Wild Speech (Su)} A ranger has the ability to communicate with animals. This ability functions like the druid ability of the same name. A ranger can use this ability a number of times per day equal to half his ranger level \add his Charisma value.
+\cf{Rgr}{Wild Speech (Su)} A ranger has the ability to communicate with animals. This ability functions like the druid ability of the same name. A ranger can use this ability a number of times per day equal to half his ranger level \add half his Charisma.
 
 \cf{Rgr}{Danger Sense (Ex)} Starting at 2nd level, a ranger has an intuitive sense that alerts him to danger, giving him a competence bonus on initiative checks equal to half his ranger level.
 \par If a character has danger sense from a multiple classes, the character stacks those levels to determine his bonus from danger sense.
@@ -1876,7 +1873,7 @@ Humanoids (civilized)  & Undead and constructs \\
 
 \subcf{Master of the Hunt} The ranger may use a standard action to share the benefits of his quarry ability with all allies who can see and hear him. The bonus his allies get is considered an enhancement bonus, and is half as large as the ranger's normal quarry bonus.
 
-\subcf{Improved Combat Style} The ranger increases his skill in the traditional ranger combat styles. He adds half his Wisdom value to damage when using ranged attacks or when attacking with two weapons at once. Natural weapons qualify for this purpose if the ranger attacks with two natural weapons at once.
+\subcf{Improved Combat Style} The ranger increases his skill in the traditional ranger combat styles. He adds half his Wisdom to damage when using ranged attacks or when attacking with two weapons at once. Natural weapons qualify for this purpose if the ranger attacks with two natural weapons at once.
 
 The ranger must have the combat style lore to select this lore. The benefits of this lore apply only when the ranger uses light or no armor.
 
@@ -1912,7 +1909,7 @@ Rangers do not require verbal components to cast spells, even if the spell would
 
 To learn or cast a spell, a ranger must have a Wisdom score at least equal to 10 \add the spell level (Wis 11 for 1st-level spells, Wis 12 for 2nd-level spells, and so forth). The Difficulty Class for a saving throw against a ranger's spell is 10 \add the spell level \add the ranger's Wisdom.
 
-Like other spellcasters, a ranger can cast only a certain number of spells of each spell level per day. His base daily spell allotment is given on \trefnp{The Ranger}. In addition, he receives bonus spells per day if he has a high Wisdom score (see \trefcp{Attribute Modifiers and Bonus Spells}).
+Like other spellcasters, a ranger can cast only a certain number of spells of each spell level per day. His base daily spell allotment is given on \trefnp{The Ranger}. In addition, he receives bonus spells per day if he has a high Wisdom score (see \trefcp{Attributes and Bonus Spells}).
 
  A ranger learns and casts spells the way a cleric does, though he does not have access to any domain spells or granted powers, as a cleric does, and cannot sacrifice a readied spell slot to cast a \spell{cure} spell in its place. A ranger may learn and cast any spell on the ranger spell list, provided that he can cast spells of that level.
 
@@ -1974,11 +1971,11 @@ The ranger must have the greater combat style lore to choose this lore. The bene
 
 \subcf{Greater Combat Style} The ranger's abilities with traditional ranger combat styles improves again. He gains the Two-Weapon Rend and Manyshot feats if he meets the prerequisites. He must have the improved combat style lore to choose this lore. The benefits of this lore only apply if the ranger is wearing light or no armor.
 
-\subcf{Hail of Arrows} A number of times per day equal to 1 \add the ranger's Constitution value, he may take a full-round action to fire a single arrow at every enemy within a \areamed radius. All enemies must be within one range increment of the ranger. This lore can be used with any ranged weapon that the ranger is capable of making a full attack with.
+\subcf{Hail of Arrows} A number of times per day equal to 1 \add half the ranger's Constitution, he may take a full-round action to fire a single arrow at every enemy within a \areamed radius. All enemies must be within one range increment of the ranger. This lore can be used with any ranged weapon that the ranger is capable of making a full attack with.
 
 \subcf{Improved Evasion} The ranger's ability to avoid damage improves. He still takes no damage on a successful Reflex saving throw against attacks, but henceforth he takes only half damage on a failed save. A helpless ranger does not gain the benefit of improved evasion.
 
-\subcf{Storm of Blades} A number of times per day equal to 1 \add the ranger's Constitution value, he may take a standard action to make a single melee attack every enemy he threatens.
+\subcf{Storm of Blades} A number of times per day equal to 1 \add half the ranger's Constitution, he may take a standard action to make a single melee attack against every enemy he threatens.
 
 \cf{Rgr}{Blindsense (Ex)} At 12th level, a ranger's perceptions are so finely honed that he can sense his enemies without seeing them. He gains the blindsense ability out to 60 feet. This ability allows him to sense the presence and location of objects and foes within 60 feet without seeing them. If he already has the blindsense ability, he increases its range by 60 feet.
 
@@ -2037,7 +2034,7 @@ The ranger must have the greater combat style lore to choose this lore. The bene
 \cd{Hit Value} 5.
 
 \sssecfake{Class Skills}
-The rogue's class skills (and the key ability for each skill) are
+The rogue's class skills (and the key attribute for each skill) are
 Climb (Str), Jump (Str), Swim (Str), Acrobatics (Dex), Escape Artist (Dex),  Sleight of Hand (Dex), Stealth (Dex), Craft (Int), Disable Device (Int), Forgery (Int), Knowledge (dungeoneering), Knowledge (local) (Int), Linguistics (Int), Perception (Wis), Sense Motive (Wis), Bluff (Cha), Persuasion (Cha), Disguise (Cha), Intimidate (Cha), Perform (Cha), and Use Magic Device (Cha).
 \cf{Rog}{Skill Points at 1st Level} 12.
 
@@ -2132,13 +2129,13 @@ If a rogue already has uncanny dodge from a different class, she stacks those le
 
 \subcf{Rogue's Luck} Three times per day, the rogue can reroll any skill check. A single roll can never be rerolled more than once.
 
-\subcf{Skill Mastery} The rogue becomes so certain in the use of certain skills that she can use them reliably even under adverse conditions. Upon gaining this trick, she selects a number of skills equal to 3 \add her Intelligence value. When making a skill check with one of these skills, she may take 10 even if stress and distractions would normally prevent her from doing so. A rogue may gain this trick multiple times, selecting additional skills for it to apply to each time.
+\subcf{Skill Mastery} The rogue becomes so certain in the use of certain skills that she can use them reliably even under adverse conditions. Upon gaining this trick, she selects a number of skills equal to 3 \add half her Intelligence. When making a skill check with one of these skills, she may take 10 even if stress and distractions would normally prevent her from doing so. A rogue may gain this trick multiple times, selecting additional skills for it to apply to each time.
 
 \cf{Rog}{Advanced Combat Trick} At 12th level, and every three levels thereafter, the rogue may choose any of the following advanced combat tricks in addition to her other options for combat tricks. All advanced combat tricks are (Ex) abilities unless otherwise noted.
 
 \subcf{Crippling Strike} A rogue with this trick can ambush attack opponents with such precision that her blows weaken and hamper them. An opponent damaged by one of her ambush attacks takes 2 points of Strength damage. Ability points lost to damage return on their own at the rate of 1 point per day for each damaged ability. If the rogue has no ambush attacks, she may use crippling strike as an ambush attack.
 
-\subcf{Defensive Roll}  The rogue can roll with a potentially lethal blow to take less damage from it than she otherwise would.  A number of times per day equal to the rogue's Wisdom value, when she would be reduced to 0 or fewer hit points by damage in combat (from a weapon or other blow, not a spell or special ability), the rogue can attempt to roll with the damage. To use this ability, the rogue must attempt a Reflex saving throw (DC = damage dealt). If the save succeeds, she takes only half damage from the blow, and the damage is nonlethal; if it fails, she takes full damage. She must be aware of the attack and able to react to it in order to execute her defensive roll -- if she is flat-footed, she can't use this ability. Since this effect would not normally allow a character to make a Reflex save for half damage, the rogue's evasion ability does not apply to the defensive roll.
+\subcf{Defensive Roll}  The rogue can roll with a potentially lethal blow to take less damage from it than she otherwise would.  A number of times per day equal to half the rogue's Wisdom, when she would be reduced to 0 or fewer hit points by damage in combat (from a weapon or other blow, not a spell or special ability), the rogue can attempt to roll with the damage. To use this ability, the rogue must attempt a Reflex saving throw (DC = damage dealt). If the save succeeds, she takes only half damage from the blow, and the damage is nonlethal; if it fails, she takes full damage. She must be aware of the attack and able to react to it in order to execute her defensive roll -- if she is flat-footed, she can't use this ability. Since this effect would not normally allow a character to make a Reflex save for half damage, the rogue's evasion ability does not apply to the defensive roll.
 
 \subcf{Distant Precision} The rogue has no range limit on her sneak attacks. A rogue must have selected the extended precision combat trick before choosing this trick.
 
@@ -2207,7 +2204,7 @@ If a rogue already has uncanny dodge from a different class, she stacks those le
 \cd{Hit Value} 4
 
 \sssecfake{Class Skills}
-The sorcerer's class skills (and the key ability for each skill) are Knowledge (arcana) (Int), Knowledge (the planes), Spellcraft (Wis), Intimidate (Cha), and Use Magic Device (Cha).
+The sorcerer's class skills (and the key attribute for each skill) are Knowledge (arcana) (Int), Knowledge (the planes), Spellcraft (Wis), Intimidate (Cha), and Use Magic Device (Cha).
 \cf{Sor}{Skill Points at 1st Level} 2.
 
 \sssecfake{Class Features}
@@ -2348,7 +2345,7 @@ If Serric were 6th level, he could use two 2nd level spell slots to use the spel
 \cd{Hit Value} 4.
 
 \sssecfake{Class Skills}
-The wizard's class skills (and the key ability for each skill) are
+The wizard's class skills (and the key attribute for each skill) are
 Knowledge (all skills, taken individually) (Int), Linguistics (Int), Spellcraft (Wis), and Use Magic Device (Cha).
 \cf{Wiz}{Skill Points at 1st Level} 4
 
@@ -2525,7 +2522,7 @@ and raise it by 1 point. It's the overall character level, not the class level, 
 adjustment.
 
 \par If your character's Constitution increases by 1 (see Table
-1-1: Attribute Modifiers and Bonus Spells, page 8), add \plus1 to his or her
+1-1: Attributes and Bonus Spells, page 8), add \plus1 to his or her
 hit point total for every character level below the one just attained.
 For example, if you raise your character's Constitution from 11 to 12
 at 4th level, he or she gets \plus3 hit points (one each for 1st, 2nd, and

@@ -58,12 +58,10 @@ When your attack succeeds, you deal damage. The type of weapon used determines t
 
 Damage reduces a target's current hit points.
 \parhead{Minimum Damage} If penalties reduce the damage result to less than 1, a hit still deals 1 point of damage.
-\parhead{Strength Bonus} When you hit with a melee or thrown weapon, including a sling, add your Strength to the damage result. A Strength penalty, but not a bonus, applies on attacks made with a bow that is not a composite bow.
-\subparhead{Wielding a Weapon Two-Handed} When you deal damage with a weapon that you are wielding two-handed, you add 1-1/2 times your Strength bonus. However, you don't get this higher Strength bonus when using a light weapon with two hands.
-\subparhead{Light Weapons} When you deal damage with a light weapon, you add only 1/2 your Strength bonus.
-\subparhead{Off-Hand Weapon} When you deal damage with a weapon in your off hand, you add only 1/2 your Strength bonus.
-\subparhead{Flurry Attacks} When you deal damage with extra attacks as part of a flurry attack, you add only 1/2 your Strength bonus to the extra attacks.
-\parhead{Multiplying Damage} Sometimes you multiply damage by some factor, such as on a critical hit. Roll the damage (with all modifiers) multiple times and total the results.  Note: When you multiply damage more than once, each multiplier works off the original, unmultiplied damage.
+\parhead{Strength Bonus} When you hit with a melee or thrown weapon, including a sling, add half your Strength to the damage result. A Strength penalty, but not a bonus, applies on attacks made with a bow that is not a composite bow.
+\subparhead{Off-Hand Weapon} When you deal damage with a weapon in your off hand, you do not add your Strength bonus.
+\subparhead{Flurry Attacks} When you deal damage with extra attacks as part of a flurry attack, you do not add your Strength bonus to the extra attacks.
+\parhead{Multiplying Damage} Sometimes you multiply damage by some factor, such as on a critical hit. Roll the damage (with all modifiers) multiple times and total the results. When you multiply damage more than once, each multiplier works off the original, unmultiplied damage.
 \subparhead{Exception} Extra damage dice over and above a weapon's normal damage are never multiplied.
 
 \subsection{Armor Class}
@@ -146,7 +144,7 @@ weapon, for example, require concentrating on something other than avoiding a fo
 
 \par Remember that even actions that normally provoke attacks of opportunity may have exceptions to this rule.
 
-\parhead{Making an Attack of Opportunity} An attack of opportunity is a single melee attack. You can make a number of attacks of opportunity each round equal to 1 \add your Dexterity value, but never more than one per opportunity. You don't have to make an attack of opportunity if you don't want to.
+\parhead{Making an Attack of Opportunity} An attack of opportunity is a single melee attack. You can make a number of attacks of opportunity each round equal to 1 \add half your Dexterity, but never more than one per opportunity. You don't have to make an attack of opportunity if you don't want to.
 
 An experienced character gets additional regular melee attacks (by using the full attack action), but at a lower attack bonus. You make your attack of opportunity, however, at your normal attack bonus -- even if you've already attacked in the round.
 
@@ -244,9 +242,9 @@ Making an attack is the most common attack action.
 \parhead{Unarmed Attacks} Striking for damage with punches, kicks, and head butts is much like attacking with a light melee weapon, except for the following:
 \subparhead{Attacks of Opportunity} If you miss with an unarmed attack, you provoke an attack of opportunity from the character you attack, provided she is armed. The attack of opportunity comes after your attack. An unarmed attack does not provoke attacks of opportunity from other foes, nor does it provoke an attack of opportunity from an unarmed foe.
 \subparhead{"Armed" Unarmed Attacks} Sometimes a character's or creature's unarmed attack counts as an armed attack. A monk, a character with the Improved Unarmed Strike feat, a spellcaster delivering a touch attack spell, and a creature with natural physical weapons all count as being armed. "Armed" unarmed attacks do not provoke attacks of opportunity when they miss, and allow you to take attacks of opportunity on unarmed opponents.
-\subparhead{Unarmed Strike Damage} An unarmed strike from a Medium character deals 1d3 points of damage (plus half your Strength value, as normal for light weapons). A Small character's unarmed strike deals 1d2 points of damage, while a Large character's unarmed strike deals 1d4 points of damage. All damage from unarmed strikes is nonlethal damage.
+\subparhead{Unarmed Strike Damage} An unarmed strike from a Medium character deals 1d3 points of damage (plus half your Strength, as normal). A Small character's unarmed strike deals 1d2 points of damage, while a Large character's unarmed strike deals 1d4 points of damage. All damage from unarmed strikes is nonlethal damage.
 
-\par Some abilities, such as the Improved Unarmed Strike feat, let you treat an unarmed strike as a medium weapon instead of a light weapon. In that case, you add your full Strength value to damage, as normal for a medium weapon.
+\par Some abilities, such as the Improved Unarmed Strike feat, let you treat an unarmed strike as a medium weapon instead of a light weapon.
 
 \subparhead{Dealing Lethal Damage} You can specify that your unarmed strike will deal lethal damage before you make your attack roll, but you take a \minus4 penalty on your attack roll. If you have the Improved Unarmed Strike feat, you can deal lethal damage with an unarmed strike without taking a penalty on the attack roll.
 
@@ -507,7 +505,7 @@ After taking damage, you can recover hit points through natural healing or throu
 
 \parhead{Healing Ability Damage} Ability damage is temporary, just as hit point damage is. Ability damage returns at the rate of 1 point per 8 hours of rest for each affected attribute score.
 
-\parhead{Healing Critical Damage} Critical damage takes much longer to heal than hit point damage. Resting for 1 week restores an amount of critical damage equal to 1 \add the character's Constitution value (minimum 1). A character can have both hit points and critical damage. As long as a character has critical damage, he is staggered, even if he is at full hit points.
+\parhead{Healing Critical Damage} Critical damage takes much longer to heal than hit point damage. Resting for 1 week restores an amount of critical damage equal to 1 \add half the character's Constitution. A character can have both hit points and critical damage. As long as a character has critical damage, he is staggered, even if he is at full hit points.
 
 \subsection{Temporary Hit Points}
 Certain effects give a character temporary hit points. When a character gains temporary hit points, note his current hit point total. When the temporary hit points go away the character's hit points drop to his current hit point total. If the character's hit points are below his current hit point total at that time, all the temporary hit points have already been lost and the character's hit point total does not drop further.
@@ -934,8 +932,9 @@ If you are able to take only a standard action or a move action on your turn, yo
 \parhead{Weapons Readied against a Charge} Spears, tridents, and certain other piercing weapons deal double damage when readied (set) and used against a charging character (see \trefcp{Weapons}, and \pcref{Ready}).
 
 \subsection{Fighting Retreat}
-If you fight and move carefully in sequence, you can avoid leaving any openings for a foe. As a full-round action, you may take a single attack and then move at half your movement speed. You do not provoke an attack of opportunity from the creature you attacked for this movement, even if you move farther away from that creature.
-\par If you have the Improved Fighting Retreat feat, you can take a full attack when making a fighting retreat.
+If you fight and move carefully in sequence, you can avoid leaving any openings for a foe. As a full-round action, you may take a full attack and then move at half your movement speed. You do not provoke attacks of opportunity for this movement from any creature you attacked.
+
+If you are unable to take a full attack as a standard action, such as if you are using the Precise Shot combat style, you may make only a single attack when making a fighting retreat.
 
 \subsection{Mounted Combat}
 \parhead{Horses in Combat} Warhorses and warponies can serve readily as combat steeds. Light horses, ponies, and heavy horses, however, are frightened by combat. If you don't dismount, you must make a DC 20 Ride check each round as a move action to control such a horse. If you succeed, you can perform a standard action after the move action. If you fail, the move action becomes a full round action and you can't do anything else until your next turn.
