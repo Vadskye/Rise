@@ -111,88 +111,82 @@ For information on how to determine your character's attribute scores, see Deter
 
 %Better placed elsewhere. But where?
 \section{Determining Attribute Scores}
-There are several options for how to determine attribute scores. Under most circumstances, point buy is the best option.
+There are several options for how to determine attribute scores.
+
+\subsubsection{Predefined Attribute Scores}
+This is the simplest method. Simply take the following set of attribute scores and distribute them as you choose among your character's abilities:
+
+4, 3, 2, 1, 0, \minus1
+
+This set of attribute scores is called the ``elite array''. For more extreme characters, you may use the ``savant array'':
+
+5, 2, 1, 0, 0, \minus2.
+
+Finally, for more well-balanced characters, you may use the ``balanced array'':
+
+3, 3, 2, 1, 1, 0
 
 \subsection{Point Buy}
-With this method, you can fully control your character's attribute scores to match what you want your character to be. All your character's attribute scores start at 0. You get 15 points to distribute among your character's attribute scores. Attribute scores can be bought according to the costs on \trefnp{Attribute Score Point Costs}.
+With this method, you can fully control your character's attribute scores to match what you want your character to be. All your character's attribute scores start at 0. You get 10 points to distribute among your character's attribute scores. Attribute scores can be bought according to the costs on \trefnp{Attribute Score Point Costs}.
 
 \begin{dtable}
 \lcaption{Attribute Score Point Costs}
 \begin{tabularx}{\columnwidth}{X X X X}
 \thead{Attribute Score} & \thead{Point Cost} & \thead{Attribute Score} & \thead{Point Cost} \\
-\minus2 & \minus2\fn{1} & 3 & 3 \\
-\minus2 & \minus1\fn{1} & 4 & 5 \\
-0 & 0 & 5 & 7 \\
-1 & 1 & 6 & 10 \\
-2 & 2 & 7 & 13 \\
+\minus2 & \minus2\fn{1} & 2 & 2 \\
+\minus2 & \minus1\fn{1} & 3 & 3 \\
+0 & 0 & 4 & 5 \\
+1 & 1 & 5 & 8 \\
 \end{tabularx}
-1 No more than two attribute scores can be reduced below 10 in this way.
+1 No more than two attribute scores can be reduced below 0 in this way.
 \end{dtable}
 
 \subsection{Other Methods}
 Point buy offers the fairest and most customizable system for determining attribute scores, ensuring that players can be almost any character they want to be. However, some groups may wish to determine attribute scores differently. Other options are provided below.
 
-\subsubsection{Predefined Attribute Scores}
-This is the simplest method. Simply take the following set of attribute scores and distribute them as you choose among your character's abilities: 5, 4, 3, 2, 0, \minus2. This set of attribute scores is called the ``elite array''. Alternately, you may use the ``savant array'': 6, 4, 2, 0, 0, \minus2.
-
 \subsubsection{Semi-Randomized Point Buy}
-With this method, you have only a small degree of control over your character's attribute scores, but all characters generated in this way are equally powerful. As with the point buy method, all your character's attribute scores start at 10, and you get 15 points to distribute among your character's attribute scores. However, you do not have full control over how to distribute those points.
+With this method, you have only a small degree of control over your character's attribute scores, but all characters generated in this way are equally powerful. As with the point buy method, all your character's attribute scores start at 0, and you get 10 points to distribute among your character's attribute scores. However, you do not have full control over how to distribute those points.
 
-Roll 4d6 for each attribute score, dropping the lowest die with each roll. First roll for the attribute scores that you care about most, and save the least important attribute scores for last. After rolling for an attribute score, sum results on the three highest dice and consult \trefnp{Semi-Randomized Point Buy Results} and spend the appropriate number of points to yield an attribute score, as indicated by \trefnp{Attribute Score Point Costs}. If you do not have enough points remaining to spend the amount indicated by the die roll, spend as many as you can and move on to the next ability.
+Roll 4d6 for each attribute score, dropping a die of your choice with each roll. First roll for the attribute scores that you care about most, and save the least important attribute scores for last. After rolling for an attribute score, sum results on the three highest dice and consult \trefnp{Semi-Randomized Point Buy Results} and spend the appropriate number of points to yield an attribute score, as indicated by \trefnp{Attribute Score Point Costs}. If you do not have enough points remaining to spend the amount indicated by the die roll, spend as many as you can and move on to the next ability.
 
-If you have points remaining after rolling all of your attribute scores, you may distribute the points freely among your abilities, using the normal point buy rules. You cannot buy any stat above 15 during this stage.
+If you have points remaining after rolling all of your attribute scores, you may distribute the points freely among your abilities, using the normal point buy rules. You cannot increase any attribute above 3 during this stage.
 
 After all of your points have been spent, you may swap any two of your attribute scores.
 
 \begin{dtable}
 \lcaption{Semi-Randomized Point Buy Results}
 \begin{tabularx}{\columnwidth}{X X X}
-\thead{Roll} & \thead{Points Spent} & \thead{Attribute Score} \\
-3-7   & (\plus2 points)\fn{1} & \minus2 \\
-8-9   & (\plus1 point)\fn{1} & \minus9 \\
-10    & 0  & 0 \\
-11    & 1  & 1 \\
-12    & 2  & 2 \\
-13    & 3  & 3 \\
-14    & 5  & 4 \\
-15    & 7  & 5 \\
-16    & 10 & 6 \\
-17    & 10 (\plus1 point)\fn{2}  & 6 \\
-18    & 13 (\plus2 points)\fn{2} & 7 \\
+\thead{Roll} & \thead{Attribute Score} & \thead{Point Cost} \\
+3-7   & \minus2 & \minus2\fn{1} \\
+8-9   & \minus1 & \minus1\fn{1} \\
+10-11 & 0  & 0 \\
+12-13 & 1  & 1 \\
+13-14 & 2  & 2 \\
+15-16 & 3  & 3 \\
+17    & 4  & 5 \\
+18    & 5  & 8 \\
 \end{tabularx}
 1 You gain extra points for having low stats. You can gain these points any number of times per character. \\
-2 You gain extra points for rolling high. You can only gain the points for any individual roll once per character.
 \end{dtable}
 
-For characters with more extreme attribute scores, roll d20 for each attribute score and consult \trefnp{Alternate Semi-Randomized Point Buy Results}.
-
-\begin{dtable}
-\lcaption{Alternate Semi-Randomized Point Buy Results}
-\begin{tabularx}{\columnwidth}{X X X}
-\thead{Roll} & \thead{Points Spent} & \thead{Attribute Score} \\
-1     & \minus2\fn{1} & \minus2 \\
-2-3   & \minus1\fn{1} & \minus2 \\
-4-5   & 0 & 0 \\
-6-7   & 1 & 1 \\
-8-10  & 2 & 2 \\
-11-13 & 3 & 3 \\
-14-16 & 5 & 4 \\
-17-18 & 7 & 5 \\
-19 & 10 & 6 \\
-20    & 13 (\plus1)\fn{2} & 7 \\
-\end{tabularx}
-1 You gain extra points for having low stats. You can gain these points any number of times per character. \\
-2 You gain extra points for rolling high. You can only gain the points for any individual roll once per character.
-\end{dtable}
+For characters with more extreme attribute scores, use the following approach for each attribute score, starting with 10 points as normal:
+\begin{itemize*}
+  \item Roll 2d8
+  \item Take the average, rounding down
+  \item Subtract 3
+  \item Spend the points as indicated on \trefnp{Attribute Score Point Costs} until you have no points left.
+\end{itemize*}
 
 \subsubsection{Random Point Buy}
 This method gives you no control over the character whatsoever, while still ensuring that all characters generated are equally powerful. It functions as the semi-randomized point buy method, except that you also randomize the order in which the attribute scores are rolled.
 
+\begin{comment}
 \subsubsection{Weighted Semi-Randomized Point Buy}
 This method gives you more control over your attribute scores, while still requiring you to deal with attribute score advantages or disadvantages that you might not have chosen. It functions like the semi-randomized point buy method, except that you do not roll 3d6 for every attribute score. You have a pool of 18 dice. You can distribute those dice as you choose between each attribute score, except the last one, which is automatically assigned your remaining points. If you roll more than three dice for an attribute score, keep only the highest 3 dice. If you assign fewer than three dice to roll for an attribute score, add 1 to the result for every die less than 3 you are rolling. You can roll as many as six dice for a single attribute score, and you cannot roll less than one die for an attribute score.
 
 For example, player hoping to play a barbarian might assign six dice to Strength, five dice to Constitution, three dice to Dexterity, and two dice to each of Intelligence and Wisdom, leaving the rest of the points to Charisma.
+\end{comment}
 
 \subsubsection{Classic Hardcore}
 
-This method is completely random and can generate very overpowered or underpowered chracters. It represents the unfairness of the world, where some people are just better or worse than others. Roll 3d6 for each attribute score and subtract 10 from each result. The result is the attribute score.
+This method is completely random and can generate very overpowered or underpowered chracters. It represents the unfairness of the world, where some people are just better or worse than others. Roll 1d8 for each attribute score and subtract 3 from each result. The result is the attribute score.
