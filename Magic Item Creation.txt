@@ -1,0 +1,22 @@
+\section{Magic Item Creation}
+Magic items can be created by imbuing nonmagical objects of good quality with magic, using the Imbue Magic feat. In addition to that feat, each magical item has certain requirements that must be met before it can be crafted. These requirements can be met in one of two ways: by casting spells into the item, or by using an appropriate Craft skill.
+
+\subsection{Requirements}
+Consider the requirements of a \{flaming} weapon.
+
+\mitemreq{Evocation}{Energy}{3}{6th}{weaponsmithing 9}
+
+This is composed of six parts: the school, the subschool, the spell level, the minimum caster level, the appropriate Craft skill, and the minimum number of ranks in that skill. Which requirements you must meet to create the item depend on how you are creating it.
+
+\subsubsection{Using Spells}
+To create an item with a spell, you must know a single spell that has the school and subschool listed in the magic item's requirements. The spell's level must be at least as high as the spell level listed in the requirements. For example, a wizard who knows the Fireball spell would be able to craft that item, because \spell{fireball} is a 3rd level spell from the Evocation school with the (Energy) subschool. The spell need not match exactly; it can have other components as well. A druid who knows \spell{fire seeds}, a 6th level Evocation/Transmutation (Energy, Imbuement) [Fire] spell, could also craft the item.
+
+Some magic items are more complex, requiring multiple schools, subschools, or descriptors. It may be impossible to craft these items without the Imbuement Admixture feat, allowing you to use multiple spells to craft an item.
+
+\subsubsection{Crafting}
+To craft an item, you must have at least as many ranks in the relevant Craft skill as the magic item requires. In addition, you must have learned how to craft items from the item's school and subschool using that Craft skill. For every 5 ranks you have in a Craft skill, you learn how to make items from an additional subschool and its associated school. You can learn more subschools with the Versatile Crafter feat.
+
+Some magic tems are more complex, requiring multiple schools and subschools or even multiple Craft skills. You must know all of those schools and subschools with each Craft skill you use for the item.
+
+\subsection{Creation Process}
+

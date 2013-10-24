@@ -47,6 +47,7 @@
 \newcommand{\mfx}[1]{\emph{#1}}    % For material components, focuses, and XP costs for spells
 \newcommand{\subspell}[1]{\emph{#1}:}    %For parts of spells
 \newcommand{\magicitem}[1]{\emph{#1}}    %For the names of items
+\newcommand{\mitem}[1]{\emph{#1}}
 \newcommand{\shead}[1]{\> \textbf{#1}}    %For the headers of spells in spell lists
 \newcommand{\spellhead}[2][]{\item[#1] \textbf{\hyperlink{spell:#2}{#2}:}}    %Spell in a spell list
 \newcommand{\spellheadc}[3][]{\item[#1] \textbf{\hyperlink{spell:#3 #2}{#2, #3}:}}
@@ -57,7 +58,15 @@
 \newcommand{\degree}{\ensuremath{^\circ}}    %Degree symbol
 \newcommand{\tind}{\hspace{1em}}
 
-\newcommand{\armdescription}[5]{\my{\subsubsection{#1} \parhead{Bonus} \plus #2 \parhead{Caster Level} #3 \parhead{Aura} #4 \parhead{Activation} #5 \par}}
+\newcommand{\appdescription}[7]{\subsubsection{#1} \parhead{Price (Level)} #2 gp (#3) \parhead{Body Location} #4 \parhead{Aura, Caster Level} #5, #6 \parhead{Activation} #7 \par}
+\newcommand{\appdescriptiondc}[8]{\appdescription{#1}{#2}{#3}{#4}{#5}{#6}{#7} \parhead{Saving Throw} #8\par}
+\newcommand{\impdescription}[6]{\subsubsection{#1} \parhead{Price (Level)} #2 gp (#3) \parhead{Aura, Caster Level} #4, #5 \parhead{Activation} #6 \par}
+\newcommand{\impdescriptiondc}[7]{\impdescription{#1}{#2}{#3}{#4}{#5}{#6} \parhead{Saving Throw} #7 \par}
+%Spell creation requirements, without descriptors
+%School, subschool, spell level, caster level, craft skill
+\newcommand{\mitemreq}[5]{\par \textit{Creation Requirements:} #1 (#2) #3; caster level #4 or #5}
+%Legacy
+\newcommand{\armdescription}[5]{\subsubsection{#1} \parhead{Bonus} \plus #2 \parhead{Caster Level} #3 \parhead{Aura} #4 \parhead{Activation} #5 \par}
 \newcommand{\armdescriptiondc}[6]{\armdescription{#1}{#2}{#3}{#4}{#5} \my{\textbf{Save DC:} #6 \add 1/2 character level} \par}
 \newcommand{\itemdescription}[7]{\my{\subsubsection{#1} \parhead{Price (Level)} #2 gp (#3) \parhead{Body Slot} #4 \parhead{Caster Level} #5 \parhead{Aura} #6 \parhead{Activation} #7 \par}}
 \newcommand{\itemdescriptiondc}[8]{\itemdescription{#1}{#2}{#3}{#4}{#5}{#6}{#7} \my{\textbf{Save DC:} #8 \add 1/2 character level} \par}
