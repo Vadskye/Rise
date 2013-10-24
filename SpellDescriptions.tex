@@ -56,8 +56,11 @@ You must succeed on a ranged touch attack to hit your target. The acid remains o
 \spellsave{None/Fortitude negates}
 \spelldmg{5d6 acid damage \add d6 per round}
 \begin{spelleffect}
-This spell functions as \spell{acid arrow}, except that the target is also sickened for the duration of the spell if it fails a Fortitude save.
+This spell functions as \spell{acid arrow}, except that the target is also vulnerable for the duration of the spell if it fails a Fortitude save.
 \end{spelleffect}
+\begin{spellnotes}
+A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
+\end{spellnotes}
 
 \spellsection{Acid Fog}
 \spelldesc{A billowing mass of acidic vapors fills the area, slowing creatures down and obscuring sight.}
@@ -71,7 +74,7 @@ This spell functions as \spell{acid arrow}, except that the target is also sicke
 \spellsr{No}
 \spelldmg{3d6 acid damage per round}
 \begin{spelleffect}
-This spell functions like \spell{solid fog}, except that the spell's vapors are highly acidic, dealing damage to All creatures and objects within the area on each round at the start of your turn. The fog does not do damage in the round it is cast. A successful Fortitude save halves the damage.
+This spell functions like \spell{solid fog}, except that the spell's vapors are highly acidic, dealing damage to all creatures and objects within the area on each round at the start of your turn. The fog does not do damage in the round it is cast. A successful Fortitude save halves the damage.
 \end{spelleffect}
 
 \spellsection{Aid}
@@ -277,8 +280,11 @@ An affected creature feels attracted to a particular person or object. The subje
 \spellsr{Yes (Will)}
 \begin{spelleffect}
 An affected creature feels an aversion to a particular person or object. If the object of the implanted aversion is an individual or a physical object, she will prefer not to approach within 30 feet of it. If it is a word, she will try not to utter it; if it is an action, she will not willingly attempt to perform it; and if it is an event, she will not willingly attend it. The subject will take reasonable steps to avoid the object of its aversion, but will not put herself in jeopardy by doing so.
-\par If the subject is forced into taking an action she has an aversion to, she is bewildered as long as she is performing the action.
+\par If the subject is forced into taking an action she has an aversion to, she is bewildered as long as she performs the action, making her vulnerable.
 \end{spelleffect}
+\begin{spellnotes}
+A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Values exceed your caster level are unaffected by \spell{word of chaos}.
+\end{spellnotes}
 
 \pdfbookmark[2]{B}{SpellDescriptionsB}
 \begin{comment}
@@ -309,7 +315,7 @@ The next time the affected weapon is used to make a melee attack, it twists arou
 \spellsave{Fortitude negates, Will partial; see text}
 \spellsr{Yes (Fortitude)}
 \begin{spellhealthy}
-The subject is sickened.
+The subject is sickened, making it vulnerable.
 \end{spellhealthy}
 \begin{spellblood}
 You change the subject into a Small or smaller animal of no more than 1 HD (such as a dog, lizard, monkey, or toad). The subject takes on all the statistics and special abilities of an average member of the new form in place of its own except as follows:
@@ -331,6 +337,7 @@ If the spell succeeds, the subject must also make a Will save. If the second sav
 If the subject remains in the new form for 24 consecutive hours, it must attempt another Will save. If this save fails, it loses its ability to understand language, as well as all other memories of its previous form, and its Hit Values, hit points, and mental attribute scores change to match an average creature of its new form. These abilities and statistics return to normal if the effect is later ended. The subject must repeat this save every 24 hours that it remains in its new form. 
 \end{spellblood}
 \begin{spellnotes}
+A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Values exceed your caster level are unaffected by \spell{word of chaos}.
 Incorporeal or gaseous creatures are immune to \spell{baleful polymorph}, and a creature with the shapechanger subtype (such as a lycanthrope or a doppelganger) can revert to its natural form as a standard action (which ends the spell's effect). 
 \end{spellnotes}
 
@@ -445,7 +452,7 @@ Any creature passing through the wall takes damage, with a Reflex save for half.
 \spellsave{None}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
-\par Each nonevil creature in the area is sickened for 5 rounds.
+\par Each nonevil creature in the area is sickened, making it vulnerable for 5 rounds.
 \end{spellhealthy}
 \begin{spellblood}
 \par Each nonevil creature in the area suffers one or more of the following ill effects, depending on its Hit Values.
@@ -459,12 +466,13 @@ Any creature passing through the wall takes damage, with a Reflex save for half.
 \end{tabularx}
 1 Living creatures die. Nonliving creatures are destroyed.
 \end{dtable}
-\par \subspell{Sickened} The creature is sickened for 5 rounds.
+\par \subspell{Sickened} The creature is sickened, making it vulnerable for 5 rounds.
 \par \subspell{Nausated} The creature is nauseated for 1 round.
 \par \subspell{Paralyzed} The creature is paralyzed and helpless for 5 rounds.
 \par \subspell{Killed} Living creatures die. Nonliving creatures are destroyed.
 \end{spellblood}
 \begin{spellnotes}
+A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Values exceed your caster level are unaffected by \spell{word of chaos}.
 Creatures whose Hit Values exceed your caster level are unaffected by \spell{blasphemy}.
 \end{spellnotes}
 
@@ -504,12 +512,13 @@ This spell functions like \spell{magic weapon}, except that the weapon also beco
 \spellsave{Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spellhealthy}
-The subject is sickened.
+The subject is sickened, making it vulnerable.
 \end{spellhealthy}
 \begin{spellblood}
 The subject is blinded, deafened, or sickened, as you choose.
 \end{spellblood}
 \begin{spellnotes}
+A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Values exceed your caster level are unaffected by \spell{word of chaos}.
 The choice of bloodied conditions is made at the time the spell is cast.
 \end{spellnotes}
 
@@ -630,11 +639,14 @@ This spell automatically suppresses (but does not dispel) any effects of spells 
 \spellsave{Will negates}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
-The subject is shaken.
+The subject is shaken, causing it to be vulnerable.
 \end{spellhealthy}
 \begin{spellblood}
 As the healthy effect, plus the subject is frightened for 1 round.
 \end{spellblood}
+\begin{spellnotes}
+A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
+\end{spellnotes}
 
 \spellsection{Chain Lightning}
 \spelldesc{You create a stroke of lightning which strikes a single foe before arcing to hit a number of other foes of your choice.}
@@ -730,8 +742,11 @@ This spell functions like \spell{charm person}, except that it affects multiple 
 \spelldmg{1 Strength damage and d6 negative energy damage \add half casting attribute}
 \begin{spelleffect}
 A successful Fortitude save negates the Strength damage. You can use this melee touch attack up to one time per level. If you can make multiple attacks, you can use this touch attack on each of those attacks.
-\par An undead creature you touch takes no damage of either sort, but it is sickened for 5 rounds. A successful Fortitude save negates the effect.
+\par An undead creature you touch takes no damage of either sort, but it is sickened, making it vulnerable for 5 rounds. A successful Fortitude save negates the effect.
 \end{spelleffect}
+\begin{spellnotes}
+A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Values exceed your caster level are unaffected by \spell{word of chaos}.
+\end{spellnotes}
 
 \spellsection{Circle of Death}
 \spelldesc{You snuff out the life force of your weakened foes by flooding them with negative energy.}
@@ -847,7 +862,7 @@ If you cast a spell or use a spell activation or spell completion magic item, th
 \spellsave{Will negates}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
-The subject is bewildered.
+The subject is bewildered, making it vulnerable.
 \end{spellhealthy}
 \begin{spellblood}
 The subject must perform one of the following actions of your choice.
@@ -858,6 +873,7 @@ The subject must perform one of the following actions of your choice.
 \par \subspell{Halt} On its turn, the subject can take no actions, but it can defend itself normally.
 \end{spellblood}
 \begin{spellnotes}
+A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Values exceed your caster level are unaffected by \spell{word of chaos}.
 If the subject can't understand or carry out your command, the spell automatically fails.
 \end{spellnotes}
 
@@ -930,13 +946,13 @@ This spell functions as \spell{cone of cold}, except that it affects a larger ar
 \spellsave{Will negates}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
-The subject is bewildered.
+The subject is bewildered, making it vulnerable.
 \end{spellhealthy}
 \begin{spellblood}
 The subject is confused. \confusionexplanation
 \end{spellblood}
 \begin{spellnotes}
-A bewildered creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
+A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
 \par Attackers are not at any special advantage when attacking a \spell{confused} character. A \spell{confused} character will not make attacks of opportunity against any creature that it is not already devoted to attacking (either because of its most recent action or because it has just been attacked).
 \end{spellnotes}
 
@@ -1267,13 +1283,13 @@ The object touched sheds light as bright as full daylight in a \arealarge radius
 \spellsave{None/Will negates}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
-The subject is bewildered.
+The subject is bewildered, making it vulnerable.
 \end{spellhealthy}
 \begin{spellblood}
 As the healthy effect, and the subject is also dazed for 1 round if it fails a Will save. A dazed creature can take no actions, though it can defend itself normally.
 \end{spellblood}
 \begin{spellnotes}
-A bewildered creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
+A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
 \end{spellnotes}
 
 \spellsectioncomma{Daze}{Mass}
@@ -1336,13 +1352,13 @@ This spell functions like \spell{death ward}, except that it affects multiple cr
 \spellsave{Will negates}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
-The subject is bewildered.
+The subject is bewildered, making it vulnerable.
 \end{spellhealthy}
 \begin{spellblood}
 The subject immediately falls asleep. If left undisturbed, it will sleep until it dies. As long as it remains bloodied, it cannot be awakened until the spell's duration expires, though it can be awakened normally after that point.
 \end{spellblood}
 \begin{spellnotes}
-A bewildered creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
+A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
 \end{spellnotes}
 
 \spellsection{Delay Poison}
@@ -1641,7 +1657,7 @@ Each round, you can turn to discern lies in a new area. A detection spell can pe
 
 \spellsection{Discern Vulnerability}
 \spellschool{Divination (Knowledge)}
-\spelllvl{Div 4}
+\spelllvl{Div 4, Sor/Wiz 5}
 \spelltime{1 swift action}
 \spellrng{\rngmed}
 \spelltgt{One creature}
@@ -2081,11 +2097,14 @@ The subject gains a \plus2 bonus to Spot checks and takes half the normal penalt
 \spellsave{Will negates}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
-Creatures in the area are shaken.
+Creatures in the area are shaken, causing them to be vulnerable.
 \end{spellhealthy}
 \begin{spellblood}
 Creatures in the area are frightened.
 \end{spellblood}
+\begin{spellnotes}
+A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
+\end{spellnotes}
 
 \spellsection{Feather Fall}
 \spellschool{Transmutation (Imbuement)}
@@ -2117,12 +2136,13 @@ You can cast this spell instantaneously, quickly enough to save yourself if you 
 \spellsave{Will negates}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
-The target is bewildered for 5 minutes.
+The target is bewildered, making it vulnerable for 5 minutes.
 \end{spellhealthy}
 \begin{spellblood}
 The target's Intelligence and Charisma scores each drop to 1, giving it roughly the intellect of a lizard. It is unable to use Intelligence- or Charisma-based skills, cast spells, understand language, or communicate coherently. Still, it knows who its friends are and can follow them and even protect them. The subject remains in this state until a \spell{heal}, \spell{limited wish}, \spell{miracle}, or \spell{wish} spell is used to cancel the effect of the \spell{feeblemind}. A creature that can cast arcane spells, such as a sorcerer or a wizard, takes a \minus4 penalty on its saving throw.
 \end{spellblood}
 \begin{spellnotes}
+A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Values exceed your caster level are unaffected by \spell{word of chaos}.
 The target must be bloodied when the spell is cast to suffer the bloodied effect.
 \end{spellnotes}
 
@@ -2378,11 +2398,14 @@ The subject and all its gear become insubstantial, misty, and translucent. Its m
 \spellsave{None/Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spellhealthy}
-The subject is sickened.
+The subject is sickened, making it vulnerable.
 \end{spellhealthy}
 \begin{spellblood}
 As the healthy effect, and the subject is paralyzed if it fails a Fortitude save. Each round that it is paralyzed, the subject can make a new saving throw. If it succeeds, it is no longer paralyzed by the spell, though it is still sickened. In addition, as long as it is paralyzed, the subject exudes a carrion stench that causes all living creatures (except you) in a \areasmall radius spread to become sickened (Fortitude negates) for 5 rounds.
 \end{spellblood}
+\begin{spellnotes}
+A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Values exceed your caster level are unaffected by \spell{word of chaos}.
+\end{spellnotes}
 
 \spellsection{Giant Vermin}
 \spellschool{Transmutation (Polymorph)}
@@ -2669,7 +2692,7 @@ This spell functions like \spell{heroism}, except the subject also gains the sam
 \spellsave{Will negates}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
-The subject is bewildered.
+The subject is bewildered, making it vulnerable.
 \end{spellhealthy}
 \begin{spellblood}
 The subject falls prone and can take no actions. It loses its Dexterity and dodge modifiers to AC. Each round on its turn, the affected creature can attempt a new saving throw. If it succeeds, the effect ends, though it can take no other actions that round.
@@ -2678,7 +2701,7 @@ The subject falls prone and can take no actions. It loses its Dexterity and dodg
 A creature with an Intelligence score of 2 or lower is not affected. A creature whose type is different from the caster's receives a \plus4 circumstance bonus on its saving throw, because humor doesn't ``translate" well.
 \end{spellnotes}
 \begin{spellnotes}
-A bewildered creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
+A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
 \end{spellnotes}
 
 \spellsection{Hold Monster}
@@ -2709,13 +2732,13 @@ This spell functions like \spell{hold monster}, except that it affects multiple 
 \spellsave{Will negates; see text}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
-The subject is bewildered.
+The subject is bewildered, making it vulnerable.
 \end{spellhealthy}
 \begin{spellblood}
 The subject is paralyzed and unable to act. Each round on its turn, the subject may attempt a new saving throw to end the effect. If it succeeds, it is no longer paralyzed, though it can take no other actions that round.
 \end{spellblood}
 \begin{spellnotes}
-A bewildered creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
+A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
 \end{spellnotes}
 
 \spellsectioncomma{Hold Person}{Mass}
@@ -2996,13 +3019,13 @@ This effect can cause a creature to begin dying without being disabled first.
 \spellsave{Will negates}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
-The creature is bewildered.
+The creature is bewildered, making it vulnerable.
 \end{spellhealthy}
 \begin{spellblood}
 \par The affected creature is confused (see the \spell{confusion} spell).
 \end{spellblood}
 \begin{spellnotes}
-A bewildered creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. \spell{Remove curse} and \spell{dispel magic} do not remove \spell{insanity}. \spell{Greater restoration}, \spell{heal}, \spell{limited wish}, \spell{miracle}, or \spell{wish} can restore the creature.
+A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. \spell{Remove curse} and \spell{dispel magic} do not remove \spell{insanity}. \spell{Greater restoration}, \spell{heal}, \spell{limited wish}, \spell{miracle}, or \spell{wish} can restore the creature.
 \end{spellnotes}
 
 \spellsection{Interposing Hand}
@@ -3719,7 +3742,7 @@ A moderate wind (11\add mph), such as from a \spell{gust of wind} spell, dispers
 Nonlawful creatures in the area take damage and are bewildered for 5 rounds. A successful Will save reduces the damage by half and negates the bewildering.
 \end{spelleffect}
 \begin{spellnotes}
-A bewildered creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
+A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
 \end{spellnotes}
 
 \spellsection{Overland Flight}
@@ -3766,11 +3789,14 @@ This spell functions like \spell{silent image}, except that the figment includes
 \spellsave{Will disbelief and Fortitude negates; see text}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
-If the subject fails its Will save, it is shaken for 5 rounds.
+If the subject fails its Will save, it is shaken, causing it to be vulnerable for 5 rounds.
 \end{spellhealthy}
 \begin{spellblood}
 As the healthy effect, and if it fails its Will save, it immediately dies unless it makes a successful Fortitude save.
 \end{spellblood}
+\begin{spellnotes}
+A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
+\end{spellnotes}
 
 \spellsection{Phantom Maze}
 \spelldesc{You manipulate the subject's perceptions, causing it to believe that it is trapped in a labyrinth.}
@@ -3861,12 +3887,13 @@ The struck target takes damage and is slowed for 5 rounds. A slowed creature can
 \spellsave{None}
 \spellsr{Yes (Fortitude)}
 \begin{spellhealthy}
-The target is sickened for 5 rounds.
+The target is sickened, making it vulnerable for 5 rounds.
 \end{spellhealthy}
 \begin{spellblood}
 The target is blinded for 5 rounds.
 \end{spellblood}
 \begin{spellnotes}
+A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Values exceed your caster level are unaffected by \spell{word of chaos}.
 The target must be bloodied when the spell is cast to suffer the bloodied effect.
 \end{spellnotes}
 
@@ -3881,13 +3908,14 @@ The target must be bloodied when the spell is cast to suffer the bloodied effect
 \spellsave{None}
 \spellsr{Yes (Fortitude)}
 \begin{spellhealthy}
-The target is sickened for 5 rounds.
+The target is sickened, making it vulnerable for 5 rounds.
 \end{spellhealthy}
 \begin{spellblood}
 The target is instantly slain.
 \end{spellblood}
 \begin{spellnotes}
-The target must be bloodied when the spell is cast to suffer the bloodied effect. A creature whose HV exceeds your caster level are sickened instead of killed.
+A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Values exceed your caster level are unaffected by \spell{word of chaos}.
+The target must be bloodied when the spell is cast to suffer the bloodied effect. A creature whose HV exceeds your caster level are sickened instead of killed, as the healthy effect.
 \end{spellnotes}
 
 \spellsection{Power Word Confuse}
@@ -3900,12 +3928,13 @@ The target must be bloodied when the spell is cast to suffer the bloodied effect
 \spellsave{None}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
-The target is bewildered for 5 rounds.
+The target is bewildered, making it vulnerable for 5 rounds.
 \end{spellhealthy}
 \begin{spellblood}
 The target is confused for 5 rounds. \confusionexplanation
 \end{spellblood}
 \begin{spellnotes}
+A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Values exceed your caster level are unaffected by \spell{word of chaos}.
 The target must be bloodied when the spell is cast to suffer the bloodied effect.
 \end{spellnotes}
 
@@ -3920,12 +3949,13 @@ The target must be bloodied when the spell is cast to suffer the bloodied effect
 \spellsave{None}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
-The target is bewildered for 5 rounds.
+The target is bewildered, making it vulnerable for 5 rounds.
 \end{spellhealthy}
 \begin{spellblood}
 The target is stunned for 5 rounds.
 \end{spellblood}
 \begin{spellnotes}
+A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Values exceed your caster level are unaffected by \spell{word of chaos}.
 The target must be bloodied when the spell is cast to suffer the bloodied effect.
 \end{spellnotes}
 
@@ -4446,7 +4476,7 @@ Any opponent attempting to strike or otherwise directly attack the shielded crea
 All enemies within the spell's area are bewildered for as long as they can see the lights, and for 5 rounds thereafter. In addition, the area is illuminated in bright light out to a 100 ft. radius, and dim light extends an additional 100 ft. beyond that.
 \end{spelleffect}
 \begin{spellnotes}
-A bewildered creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Your allies, and creatures unable to see the lights, are unaffected.
+A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Your allies, and creatures unable to see the lights, are unaffected.
 \end{spellnotes}
 
 \spellsection{Scorching Ray}
@@ -5161,10 +5191,10 @@ Under normal circumstances, the bison can travel 800 feet over the duration of t
 \spelllvl{Sor/Wiz 5}
 \spellsave{None/Fortitude negates}
 \begin{spelleffect}
-This spell functions like \spell{fog cloud}, except that creatures within the cloud are sickened. A successful Fortitude save negates the sickening. The condition lasts as long as the creature remains in the cloud and for 5 rounds after it leaves.
+This spell functions like \spell{fog cloud}, except that creatures within the cloud are sickened, making them vulnerable. A successful Fortitude save negates the sickening. The condition lasts as long as the creature remains in the cloud and for 5 rounds after it leaves.
 \end{spelleffect}
 \begin{spellnotes}
-Any creature that succeeds on its save but remains in the cloud must continue to save each round on your turn. \spellindirect{stinking cloud}{Stinking cloud} can be made permanent with a \spell{permanency} spell. A permanent \spell{stinking cloud} dispersed by wind reforms in 10 minutes.
+A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Your allies, and creatures unable to see the lights, are unaffected. Any creature that succeeds on its save but remains in the cloud must continue to save each round on your turn. \spellindirect{stinking cloud}{Stinking cloud} can be made permanent with a \spell{permanency} spell. A permanent \spell{stinking cloud} dispersed by wind reforms in 10 minutes.
 \end{spellnotes}
 
 \spellsection{Stoneskin}
@@ -5680,13 +5710,13 @@ As the healthy effect, and the subject into a state of suspended animation unles
 \spellsave{None}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
-The subject is shaken.
+The subject is shaken, causing it to be vulnerable.
 \end{spellhealthy}
 \begin{spellblood}
 The subject is frightened.
 \end{spellblood}
 \begin{spellnotes}
-A shaken character takes a \minus2 penalty on attack rolls, saving throws, checks, DCs, and AC. A frightened creature is the same, except that it also flees from the source of its fear as best it can. If unable to flee, it may fight.
+A vulnerable character takes a \minus2 penalty on attack rolls, saving throws, checks, DCs, and AC. A frightened creature is the same, except that it also flees from the source of its fear as best it can. If unable to flee, it may fight.
 \par A character shaken by multiple sources becomes frightened. A character frightened by multiple sources becomes panicked.
 \end{spellnotes}
 
@@ -5916,13 +5946,16 @@ A malevolent darkness surrounds the subjects, protecting them from attacks, gran
 \spellschool{Evocation (Channeling) [Evil]}
 \spelllvl{Evil 4}
 \spellarea{\areamed radius burst centered on you}
-\spelldur{Instantaneous/5 rounds}
+\spelldur{Instantaneous}
 \spellsave{Will half/Will negates}
 \spellsr{Yes (Will)}
 \spelldmg{4d6 divine damage \add d6 per four caster levels above 8th}
 \begin{spelleffect}
-Nonevil creatures in the area take damage and are sickened for 5 rounds. A successful Will save reduces the damage by half and negates the sickening.
+Nonevil creatures in the area take damage and are sickened, making them vulnerable for 5 rounds. A successful Will save reduces the damage by half and negates the sickening.
 \end{spelleffect}
+\begin{spellnotes}
+A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Values exceed your caster level are unaffected by \spell{word of chaos}.
+\end{spellnotes}
 
 \spellsection{Vampiric Touch}
 \spellschool{Necromancy (Life)}
@@ -5976,12 +6009,13 @@ This is considered an enhancement bonus.
 \spellsave{Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spellhealthy}
-The subjects are sickened for 5 rounds. If you concentrate for a second round, subjects still in the area are nauseated for 1 round.
+The subjects are sickened, making them vulnerable for 5 rounds. If you concentrate for a second round, subjects still in the area are nauseated for 1 round.
 \end{spellhealthy}
 \begin{spellblood}
 The subjects are nauseated for 1 round. If you concentrate for a second round, subjects still in the area immediately die.
 \end{spellblood}
 \begin{spellnotes}
+A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Values exceed your caster level are unaffected by \spell{word of chaos}.
 This spell affects a maximum number of creatures equal to your caster level. Creatures closest to you are affected first, so creatures farther away may be unaffected if there are enough intervening creatures. Each creature makes only one saving throw against the effect.
 \end{spellnotes}
 
@@ -6220,7 +6254,7 @@ Duplicated spells allow saves and spell resistance as normal.
 \spellsave{None or Will negates; see text}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
-Each nonchaotic creature in the area is bewildered for 5 rounds.
+Each nonchaotic creature in the area is bewildered, making it vulnerable for 5 rounds.
 \end{spellhealthy}
 \begin{spellblood}
 Each nonchaotic creature in the area suffers one or more of the following ill effects, depending on its Hit Values.
@@ -6234,13 +6268,13 @@ Each nonchaotic creature in the area suffers one or more of the following ill ef
 \end{tabularx}
 1 Living creatures die. Nonliving creatures are destroyed.
 \end{dtable}
-\par \subspell{Bewildered} The creature is bewildered for 5 rounds.
+\par \subspell{Bewildered} The creature is bewildered, making it vulnerable for 5 rounds.
 \par \subspell{Confused} The creature is confused for 2 rounds.
 \par \subspell{Paralyzed} The creature is paralyzed and helpless for 5 rounds.
 \par \subspell{Killed} Living creatures die. Nonliving creatures are destroyed.
 \end{spellblood}
 \begin{spellnotes}
-A bewildered creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Values exceed your caster level are unaffected by \spell{word of chaos}.
+A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Values exceed your caster level are unaffected by \spell{word of chaos}.
 \end{spellnotes}
 
 \spellsection{Word of Recall}
