@@ -334,6 +334,7 @@ With the exception of specific movement-related skills, most move actions don't 
 The simplest move action is moving your speed. Many nonstandard modes of movement are covered under this category, including climbing (up to one-quarter of your speed) and swimming (up to one-quarter of your speed).
 \parhead{Accelerated Climbing and Swimming} You can climb one-half your speed as a move action if you beat the Climb or Swim DC by 10 or more.
 \parhead{Crawling} You can crawl 5 feet as a move action. Crawling incurs attacks of opportunity from any attackers who threaten you at any point of your crawl.
+\parhead{Crouching} You can move at half speed while crouching.
 
 \subsubsection{Focus}
 Focusing allows you to avoid being distracted by insignificant opponents when dealing with a serious threat. As a move action, you can focus your attention on a specific foe you can see or otherwise observe. If you do, you are not considered overwhelmed against attacks that foe makes. However, you increase by 2 any overwhelm penalties you suffer against other foes. You remain focused until you stop focusing (a free action).
@@ -646,16 +647,15 @@ This section covers circumstances that can affect combat. Any bonuses described 
 \begin{tabularx}{\columnwidth}{>{\lcol}X >{\ccol}X >{\ccol}X}
 \thead{Attacker is...} & \thead{Melee} & \thead{Ranged} \\
 Dazzled & \minus1 & \minus1 \\
-Entangled & \minus2\fn{1} & \minus2\fn{1} \\
-Grappling & \minus0\fn{2} & \minus0\fn{2} \\
-Invisible & \plus2\fn{2} & \plus2\fn{2} \\
+Entangled & \minus2 & \minus2 \\
+Grappling & \minus0\fn{1} & \minus0\fn{1} \\
+Invisible & \plus2\fn{1} & \plus2\fn{1} \\
 On higher ground & \plus1 & \plus0 \\
-Prone & \minus4 & \x\fn{3} \\
+Prone & \minus4 & \x\fn{2} \\
 Squeezing through a space & \minus4 & \minus4 \\
 \end{tabularx}
-1 An entangled character also takes a \minus4 penalty to Dexterity, which may affect his attack roll. \\
-2 The defender loses any Dexterity and dodge modifiers to AC. This bonus doesn't apply if the target is blinded. \\
-3 Most ranged weapons can't be used while the attacker is prone, but you can use a crossbow or shuriken while prone at no penalty.
+1 The defender is flat-footed. This bonus doesn't apply if the target is blinded. \\
+2 Most ranged weapons can't be used while the attacker is prone, but you can use a crossbow or shuriken while prone at no penalty.
 \end{dtable}
 
 \begin{dtable}
@@ -666,23 +666,22 @@ Behind cover & \plus4 & \plus4 \\
 Blinded & \minus2\fn{1} & \minus2\fn{1} \\
 Concealed or invisible & \multicolumn{2}{c}{\x See Concealment \x} \\
 Cowering & \minus2\fn{1} & \minus2\fn{1} \\
-Entangled & \plus0\fn{2} & \plus0\fn{2} \\
+Crouching or kneeling & \minus2 & \plus2 \\
+Entangled & \plus0 & \plus0 \\
 Flat-footed (such as surprised, balancing, climbing) & \plus0\fn{1} & \plus0\fn{1} \\
 Grappling (but attacker is not) & \plus0\fn{1} & \plus0\fn{1}, 3 \\
-Helpless (such as paralyzed, sleeping, or bound) & \minus4\fn{4} & \plus0\fn{4} \\
-Kneeling or sitting & \minus2 & \plus2 \\
-Overwhelmed & special\fn{5} & special\fn{5} \\
-Pinned & \minus4\fn{4} & \plus0\fn{4} \\
+Helpless (such as paralyzed, sleeping, or bound) & \minus4\fn{3} & \plus0\fn{3} \\
+Overwhelmed & special\fn{4} & special\fn{4} \\
+Pinned & \minus4\fn{4} & \plus0\fn{3} \\
 Prone & \minus4 & \plus4 \\
 Shaken or frightened & \minus2 & \minus2 \\
 Squeezing through a space & \minus4 & \minus4 \\
 Stunned & \minus2\fn{1} & \minus2\fn{1} \\
 \end{tabularx}
-1 The defender loses any Dexterity and dodge modifiers to AC. \\
-2 An entangled character takes a \minus4 penalty to Dexterity. \\
-3 Roll randomly to see which grappling combatant you strike. That defender is flat-footed. \\
-4 Treat the defender's Dexterity as 0 (\minus5 modifier). Rogues can sneak attack helpless or pinned defenders.\\
-5 The creature suffers a penalty equal to the number of creatures threatening it.
+1 The defender is flat-footed. \\
+2 Roll randomly to see which grappling combatant you strike. That defender is flat-footed. \\
+3 Treat the defender's Dexterity as \minus5. Rogues can sneak attack helpless or pinned defenders.\\
+4 The creature suffers a penalty equal to the number of creatures threatening it.
 \end{dtable}
 
 \subsection{Cover}
