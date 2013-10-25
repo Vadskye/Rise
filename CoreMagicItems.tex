@@ -89,7 +89,7 @@ Prices listed are always for fully charged items. (When an item is created, it i
 \end{comment}
 
 
-\section{Magic Item Descriptions}
+\section{Magic Item Description Format}
 
 Each general type of magic item gets an overall description, followed by descriptions of specific items.
 
@@ -117,7 +117,9 @@ Items without components do not have a ``Cost'' entry. For them, the market pric
 \itemhead{Weight:} The notational entry for many wondrous items ends with a value for the item's weight. When a weight figure is not given, the item has no weight worth noting (for purposes of determining how much of a load a character can carry).
 \end{itemize*}
 
-\section{Armor}
+\section{Arms and Armor}
+
+\subsection{Armor and Shields}
 
 Magic body armor and shields protect the wearer to a greater extent than their nonmagical equivalents. They always provide a scaling enhancement bonus to a character's armor modifier or shield modifier to AC; see \pcref{Scaling Bonuses} for details. In addition to an enhancement bonus, armor may have special abilities or be made of an unusual material.
 
@@ -145,10 +147,6 @@ The prices of enhancement bonuses to armor are listed in \trefnp{Magic Armor and
 \parhead{Hardness and Hit Points} Each \plus1 of enhancement bonus adds 2 to an armor or shield's hardness and \plus10 to its hit points.
 
 \parhead{Activation} A character benefits from magic armor and shields in exactly the way a character benefits from nonmagical armor and shields - by wearing them. Special abilities on body armor are usually activated if the character is struck or damaged, while special abilities on shields are usually activated if the character avoids an attack.
-
-\subsection{Magic Armor and Shield Special Ability Descriptions}
-
-Most magic armor and shields only have enhancement bonuses. Such items can also have one or more of the special abilities detailed below. Armor or a shield with a special ability must have at least a \plus1 enhancement bonus.
 
 \begin{dtable}
 \lcaption{Armor Special Abilities}
@@ -195,7 +193,7 @@ During that time, you may always make a saving throw when a spell is cast on you
 
 \mitemreq{Abjuration}{Shielding}{5}{10th}{armorsmithing 14}
 
-\section{Weapons}
+\subsection{Weapons}
 
 Magic weapons improve a character's combat abilities. They always provide a scaling enhancement bonus to a character's attack and damage; see \pcref{Scaling Bonuses} for details. In addition to an enhancement bonus, weapons may have special abilities or be made of an unusual material.
 
@@ -206,11 +204,11 @@ The prices of enhancement bonuses to weapons are listed in \trefnp{Magic Weapons
 \caption{Magic Weapons}
 \begin{tabularx}{\columnwidth} {>{\ccol}X c c}
   \thead{Minimum Enhancement Bonus} & \thead{Base Price} & \thead{Item Level}\\
-\plus1 weapon & 2,000 gp & 5th\\
-\plus2 weapon & 8,000 gp & 8th\\
-\plus3 weapon & 18,000 gp & 12th\\
-\plus4 weapon & 32,000 gp & 15th \\
-\plus5 weapon & 50,000 gp & 18th \\
+\plus1 weapon & 1,000 gp & 4th\\
+\plus2 weapon & 4,000 gp & 6th\\
+\plus3 weapon & 9,000 gp & 9th\\
+\plus4 weapon & 16,000 gp & 12th \\
+\plus5 weapon & 25,000 gp & 14th \\
 \end{tabularx}
 \end{dtable}
 
@@ -284,54 +282,19 @@ A soulreaver weapon has no effect on objects. While wielded, it has physical for
 
 \mitemreq{Transmutation}{Augment}{9}{18th}{weaponsmithing 22}
 
-\section{Potions and Oils}
+\section{Apparel}
 
-A potion is a magic liquid that produces its effect when imbibed. Magic oils are similar to potions, except that oils are applied externally rather than imbibed. A potion or oil can be used only once. It can duplicate the effect of a spell of up to 3rd level that has a casting time of less than 1 minute.
+\subsection{Arms}
 
-Potions are like spells cast upon the imbiber. The character taking the potion doesn't get to make any decisions about the effect  - the caster who brewed the potion has already done so. The drinker of a potion is both the effective target and the caster of the effect (though the potion indicates the caster level, the drinker still controls the effect).
+\subsection{Head}
 
-The person applying an oil is the effective caster, but the object is the target.
-
-\parhead{Physical Description} A typical potion or oil consists of 1 ounce of liquid held in a ceramic or glass vial fitted with a tight stopper. The stoppered container is usually no more than 1 inch wide and 2 inches high. The vial has AC 13, 1 hit point, hardness 1, and a break DC of 12. Vials hold 1 ounce of liquid.
-
-\parhead{Identifying Potions} In addition to the standard methods of identification, PCs can sample from each container they find to attempt to determine the nature of the liquid inside. An experienced character learns to identify potions by memory - for example, the last time she tasted a liquid that reminded her of almonds, it turned out to be a potion of cure moderate wounds.
-
-\parhead{Activation} Drinking a potion or applying an oil requires no special skill. The user merely removes the stopper and swallows the potion or smears on the oil. The following rules govern potion and oil use.
-
-Drinking a potion or using an oil on an item of gear is a standard action. The potion or oil takes effect immediately. Using a potion or oil provokes attacks of opportunity. A successful attack (including grappling attacks) against the character forces a Concentration check (as for casting a spell). If the character fails this check, she cannot drink the potion. An enemy may direct an attack of opportunity against the potion or oil container rather than against the character. A successful attack of this sort can destroy the container.
-
-A creature must be able to swallow a potion or smear on an oil. Because of this, incorporeal creatures cannot use potions or oils.
-
-Any corporeal creature can imbibe a potion. The potion must be swallowed, or in some other way ingested. Any corporeal creature can use an oil.
-
-A character can carefully administer a potion to an unconscious creature as a full-round action, trickling the liquid down the creature's throat. Likewise, it takes a full-round action to apply an oil to an unconscious creature. Exceptionally large objects or creatures require a greater time expenditure.
-
-\subsubsection{Potion Descriptions}
-
-The caster level for a standard potion is the minimum caster level needed to cast the spell (unless otherwise specified).
-
-\begin{dtable}
-\lcaption{Potions and Oils}
-\begin{tabularx}{\columnwidth}{c c c}
-Potion or Oil & Market Price & Extra Price Modifier\\
-1st-level spell (common) & 50 gp  & \plus50 gp per caster level \\
-1st-level spell (uncommon) & 75 gp & \plus75 gp per caster level \\
-2nd-level spell (common) & 400 gp & \plus100 gp per caster level \\
-2nd-level spell (uncommon) & 600 gp & \plus200 gp per caster level \\
-3rd-level spell (common) & 900 gp & \plus150 gp per caster level \\
-3rd-level spell (uncommon) & 1350 gp & \plus225 gp per caster level
-\end{tabularx}
-\end{dtable}
+\subsection{Legs}
 
 \subsection{Rings}
 
-Rings bestow magical powers upon their wearers. Only a rare few have charges. Anyone can use a ring.
-
-A character can only effectively wear two magic rings. A third magic ring doesn't work if the wearer is already wearing two magic rings.
-
 \parhead{Physical Description} Rings have no appreciable weight. Although exceptions exist that are crafted from glass or bone, the vast majority of rings are forged from metal - usually precious metals such as gold, silver, and platinum. A ring has AC 13, 2 hit points, hardness 10, and a break DC of 25.
 
-\parhead{Activation} Usually, a ring's ability is activated by a command word (a standard action that does not provoke attacks of opportunity) or it works continually. Some rings have exceptional activation methods, according to their descriptions.
+\parhead{Activation} Rings have highly varied activation methods. Some are active as long as they are worn, some are triggered by specific circumstances, and some respond to a command word.
 
 \begin{comment}
 \begin{dtable}
@@ -359,7 +322,32 @@ Protection \plus5 & 50,000 gp \\
 \end{dtable}
 \end{comment}
 
-\section{Rods}
+
+
+\appdescription{Protection}{Varies}{see text}{Varied Abjuration (Shielding)}{varies}{\x}
+A ring of protection grants a scaling enhancement bonus to your saving throws while worn. See \pref{Scaling Bonuses} for details on scaling bonuses. The properties of the ring depend on its minimum enhancement bonus, as shown in the table below.
+
+\begin{dtable}
+\caption{Ring of Protection}
+\begin{tabularx}{\columnwidth} {>{\ccol}X c c}
+  \thead{Minimum Enhancement Bonus} & \thead{Base Price} & \thead{Item Level} \\
+\plus1  & 1,000 gp & 4th\\
+\plus2 & 4,000 gp & 6th\\
+\plus3 & 9,000 gp & 9th\\
+\plus4 & 16,000 gp & 12th \\
+\plus5 & 32,000 gp & 15th \\
+\end{tabularx}
+\end{dtable}
+
+The caster level is equal to three times the item's minimum enhancement bonus. To craft the item, you must have a number of ranks in Craft (jewelry) equal to the item's caster level \add 4.
+
+\mitemreq{Abjuration}{Shielding}{1}{varies}{jewelry varies}
+
+\subsection{Torso}
+
+\section{Implements}
+
+\subsection{Rods}
 
 Rods are scepterlike devices that have unique magical powers and do not usually have charges. Anyone can use a rod.
 
@@ -371,7 +359,7 @@ These sturdy items have AC 9, 10 hit points, hardness 10, and a break DC of 27.
 
 \parhead{Activation} Details relating to rod use vary from item to item. See the individual descriptions for specifics.
 
-\section{Scrolls}
+\subsection{Scrolls}
 A scroll is a spell (or collection of spells) that has been stored in written form. A spell on a scroll can be used only once. The writing vanishes from the scroll when the spell is activated. Using a scroll is basically like casting a spell.
 
 \parhead{Physical Description} A scroll is a heavy sheet of fine vellum or high-quality paper. An area about 8 1/2 inches wide and 11 inches long is sufficient to hold one spell. The sheet is reinforced at the top and bottom with strips of leather slightly longer than the sheet is wide. A scroll holding more than one spell has the same width (about 8 1/2 inches) but is an extra foot or so long for each extra spell. Scrolls that hold three or more spells are usually fitted with reinforcing rods at each end rather than simple strips of leather. A scroll has AC 9, 1 hit point, hardness 0, and a break DC of 8.
@@ -432,7 +420,7 @@ The writing for an activated spell disappears from the scroll.
 2 Scrolls of paladin and ranger spells cost twice as much to buy because of their rarity. The cost to scribe them is no different than normal, and players attempting to sell such scrolls will find it difficult to find a buyer, so such items sell for a quarter of their market price.
 \end{dtable}
 
-\section{Staffs}
+\subsection{Staffs}
 
 A staff is a long shaft of wood that stores several spells. Unlike wands, which can contain a wide variety of spells, each staff is of a certain kind and holds specific spells. A staff has 50 charges when created.
 
@@ -440,7 +428,7 @@ A staff is a long shaft of wood that stores several spells. Unlike wands, which 
 
 \parhead{Activation} Staffs use the spell trigger activation method, so casting a spell from a staff is usually a standard action that doesn't provoke attacks of opportunity. (If the spell being cast, however, has a longer casting time than 1 standard action, it takes that long to cast the spell from a staff.) To activate a staff, a character must hold it forth in at least one hand (or whatever passes for a hand, for nonhumanoid creatures).
 
-\section{Wands}
+\subsection{Wands}
 
 A wand is a thin baton that contains a single spell of 4th level or lower. Each wand has 25 charges when created, and each charge expended allows the user to use the wand's spell one time. A wand that runs out of charges is just a stick.
 
@@ -472,6 +460,43 @@ A wand is a thin baton that contains a single spell of 4th level or lower. Each 
 2 Wands of paladin and ranger spells cost twice as much to buy because of their rarity. The cost to craft them is no different than normal, and players attempting to sell such wands will find it difficult to find a buyer, so such items sell for a quarter of their market price.
 \end{dtable}
 
-\subsection{Wand Descriptions}
+\parhead{Wand Descriptions} All wands are simply storage devices for spells and thus have no special descriptions. Refer to the spell descriptions for all pertinent details.
 
-All wands are simply storage devices for spells and thus have no special descriptions. Refer to the spell descriptions for all pertinent details.
+\section{Tools}
+
+\subsection{Potions and Oils}
+
+A potion is a magic liquid that produces its effect when imbibed. Magic oils are similar to potions, except that oils are applied externally rather than imbibed. A potion or oil can be used only once. It can duplicate the effect of a spell of up to 3rd level that has a casting time of less than 1 minute.
+
+Potions are like spells cast upon the imbiber. The character taking the potion doesn't get to make any decisions about the effect  - the caster who brewed the potion has already done so. The drinker of a potion is both the effective target and the effective caster of the effect.
+
+The person applying an oil is the effective caster, but the object is the target.
+
+\parhead{Physical Description} A typical potion or oil consists of 1 ounce of liquid held in a ceramic or glass vial fitted with a tight stopper. The stoppered container is usually no more than 1 inch wide and 2 inches high. The vial has AC 13, 1 hit point, hardness 1, and a break DC of 12. Vials hold 1 ounce of liquid.
+
+\parhead{Identifying Potions} In addition to the standard methods of identification, PCs can sample from each container they find to attempt to determine the nature of the liquid inside. An experienced character learns to identify potions by memory -- for example, the last time she tasted a liquid that reminded her of almonds, it turned out to be a potion of cure moderate wounds.
+
+\parhead{Activation} Drinking a potion or applying an oil requires no special skill. The user merely removes the stopper and swallows the potion or smears on the oil. The following rules govern potion and oil use.
+
+Drinking a potion or using an oil on an item of gear is a standard action. The potion or oil takes effect immediately. Using a potion or oil provokes attacks of opportunity. A successful attack (including grapple attacks) against the character forces a Concentration check (as for casting a spell). If the character fails this check, she cannot drink the potion. An enemy may direct an attack of opportunity against the potion or oil container rather than against the character. A successful attack of this sort can destroy the container.
+
+A creature must be able to swallow a potion or smear on an oil. Because of this, incorporeal creatures cannot use potions or oils.
+
+Any corporeal creature can imbibe a potion. The potion must be swallowed, or in some other way ingested. Any corporeal creature can use an oil.
+
+A character can carefully administer a potion to an unconscious creature as a full-round action, trickling the liquid down the creature's throat. Likewise, it takes a full-round action to apply an oil to an unconscious creature. Exceptionally large objects or creatures require a greater time expenditure.
+
+\parhead{Potion Descriptions} The caster level for a standard potion is the minimum caster level needed to cast the spell (unless otherwise specified). Common potions refer to potions of spells on the cleric, druid, or unrestricted sorcerer/wizard spell lists. Any other spells, such as restricted sorcerer/wizard spells, are considered ``uncommon''.
+
+\begin{dtable}
+\lcaption{Potions and Oils}
+\begin{tabularx}{\columnwidth}{X c c c}
+  \thead{Potion or Oil} & \thead{Market Price} & \thead{Item Level} & \thead{Extra Price Modifier}\\
+1st-level spell (common) & 50 gp & 1st & \plus50 gp per caster level \\
+1st-level spell (uncommon) & 75 gp & 1st & \plus75 gp per caster level \\
+2nd-level spell (common) & 400 gp & 3rd & \plus100 gp per caster level \\
+2nd-level spell (uncommon) & 600 gp & 3rd & \plus200 gp per caster level \\
+3rd-level spell (common) & 900 gp & 4th & \plus150 gp per caster level \\
+3rd-level spell (uncommon) & 1350 gp & 4th & \plus225 gp per caster level
+\end{tabularx}
+\end{dtable}
