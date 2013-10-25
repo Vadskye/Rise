@@ -1,5 +1,6 @@
 \section{Magic Item Creation}
-Magic items can be created by imbuing nonmagical objects of good quality with magic, using the Imbue Magic feat. In addition to that feat, each magical item has certain requirements that must be met before it can be crafted. These requirements can be met in one of two ways: by casting spells into the item, or by using an appropriate Craft skill.
+
+By investing time, money, and energy, spellcasters and craftsmen of great skill can imbue items with magical power. Learning how to perform this process requires the Imbue Magic feat. In addition, each magical item has certain requirements that must be met before it can be crafted. These requirements can be met in one of two ways: by casting spells into the item, or by using an appropriate Craft skill.
 
 \subsection{Requirements}
 Consider the requirements of a \{flaming} weapon.
