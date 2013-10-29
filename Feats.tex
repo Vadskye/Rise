@@ -102,7 +102,7 @@ purpose of this calculation. The minimum caster level to craft an item is always
 %Brute Fortitude & \x & Use Str and half Con for Fortitute saves \\
 Combat Casting  & \x &  \plus2 bonus on Concentration checks to cast spells, reroll 1/day \\
 Endurance & \x &  Stay conscious longer against nonlethal damage \\
-\tind Diehard & Endurance & Remain conscious at negative hp \\
+\tind Diehard & Endurance & Remain conscious after taking critical damage \\
 %Eschew Materials  & \x &  Cast spells without material components \\
 %Force of Intellect & \x & Use Int and half Cha for Will saves \\
 Great Fortitude  & \x &  \plus2 bonus on Fortitude saves, reroll 1/day \\
@@ -116,8 +116,8 @@ Ritual Master & Spellcraft 8 ranks, ability to cast spells & Perform rituals mor
 Spell Focus\fn{1} & Caster level 4th &  \plus2 caster level with specific type of magic \\
 \tind Augment Summoning & Spell Focus (conjuration) & Summoned creatures gain \plus2 Str, \plus2 Con \\
 \tind Greater Spell Focus\fn{1} & Caster level 10th, Spell Focus &  \plus4 caster level with specific type of magic \\
-Spell Penetration  & Caster level 4th &  \plus2 bonus on caster level checks to defeat spell resistance \\
-\tind Greater Spell Penetration & Caster level 10th, Spell Penetration & \plus4 bonus to caster level checks to defeat spell resistance \\
+%Spell Penetration  & Caster level 4th &  \plus2 bonus on caster level checks to defeat spell resistance \\
+%\tind Greater Spell Penetration & Caster level 10th, Spell Penetration & \plus4 bonus to caster level checks to defeat spell resistance \\
 Swift & \x &  Run and charge faster, related bonuses \\
 Toughness & \x &  \plus3 hit points \plus1 per level above 3 \\
 \end{tabularx}
@@ -129,7 +129,7 @@ Toughness & \x &  \plus3 hit points \plus1 per level above 3 \\
 \begin{tabularx}{\textwidth}{>{\lcol}p{15em} >{\lcol}p{15em} >{\lcol}X}
 \thead{Class Feats} & \thead{Prerequisites} & \thead{Benefit} \\
 Extend Rage & Ability to rage & Can rage for 5 rounds longer \\
-Extra Channeling & Ability to turn or rebuke creatures & Can turn or rebuke 3 more times per day \\
+Extra Channeling & Ability to channel energy & Can turn or rebuke 3 more times per day \\
 Extra Invocation & Ability to use an arcane invocation & Learn a new arcane invocation \\
 Extra Music & Bardic music & Can use bardic music 3 more times per day \\
 Extra Rage & Ability to rage & Can rage 1 more time per day\\
@@ -137,6 +137,7 @@ Extra Smiting\fn{1} & Ability to smite & Can smite 3 more times per day \\
 Extra Stunning & Stunning Fist & Can use stunning fist 3 more times per day \\
 Extra Wild Aspect & Wild aspect & Can use wild aspects 3 more times per day \\
 Improved Turning & Ability to turn or rebuke creatures & \plus2 turning level \\
+Selective Channeling & Ability to channel energy & Can exclude two additional creatures \\
 \end{tabularx}
 \end{dtable!*}
 
@@ -163,6 +164,7 @@ Animal Affinity  & \x &  \plus2 bonus on Handle Animal and Ride checks, reroll 1
 Athletic  & \x &  \plus2 bonus on Climb and Swim checks, reroll 1/day \\
 Deceitful  & \x &  \plus2 bonus on Bluff and Disguise checks, reroll 1/day \\
 Diligent  & \x &  \plus2 bonus on Forgery and Linguistics checks, reroll 1/day \\
+Dilettante & Int 3 & Use some Knowledge skills despite being untrained \\
 Magical Aptitude  & \x &  \plus2 bonus on Spellcraft and Use Magic Device checks, reroll 1/day \\
 Nimble Fingers  & \x &  \plus2 bonus on Disable Device and Sleight of Hand checks, reroll 1/day \\
 Open Minded & \x & Gain two skill points. \\
@@ -330,10 +332,9 @@ Here is the format for feat descriptions.
 \parhead{Benefit} Your rage lasts for five extra rounds.
 
 \subsubsection{Extra Channeling [General]}
-\parhead{Prerequisite} Ability to turn or rebuke creatures.
-\parhead{Benefit} You turn or rebuke creatures three more times per day. If you have the ability to turn or rebuke more than one kind of creature, you choose which ability this applies to.
-\parhead{Normal} Without this feat, a character can typically turn or rebuke undead (or other creatures) a number of times per day equal to 3 \add his or her Charisma.
-\parhead{Special} You can gain Extra Turning multiple times if you have multiple turn or rebuke abilities. Its effects do not stack. Each time you take the feat, you choose a different turn or rebuke ability you have and apply the benefits to that ability.
+\parhead{Prerequisite} Ability to channel energy
+\parhead{Benefit} You can channel energy three more times per day. 
+\parhead{Normal} Without this feat, a character can channel energy a number of times per day equal to 3 \add half his or her Charisma.
 
 \subsubsection{Extra Invocation [General]}
 \parhead{Prerequisite} Ability to use an arcane invocation.
@@ -369,17 +370,17 @@ Choose a school of magic or a spell descriptor to which you already have applied
 \parhead{Benefit} You get a \plus4 competence bonus to your caster level when casting spells and using spell-like abilities from the school of magic or with the spell descriptor you select.
 \parhead{Special} You can gain this feat multiple times. Each time you take the feat, it applies to a new school of magic or spell descriptor to which you already have applied the Spell Focus feat.
 
-\subsubsection{Greater Spell Penetration [General]}
-\parhead{Prerequisites} Caster level 10th, Spell Penetration.
-\parhead{Benefit} You get a \plus4 competence bonus on caster level checks (1d20 \add caster level) made to overcome a creature's spell resistance.
+%\subsubsection{Greater Spell Penetration [General]}
+%\parhead{Prerequisites} Caster level 10th, Spell Penetration.
+%\parhead{Benefit} You get a \plus4 competence bonus on caster level checks (1d20 \add caster level) made to overcome a creature's spell resistance.
 
 \subsubsection{Improved Counterspell [General]}
 \parhead{Benefit} When counterspelling, you may use a spell of the same school that is one or more spell levels higher than the target spell.
 \parhead{Normal} Without this feat, you may counter a spell only with the same spell or with a spell specifically designated as countering the target spell.
 
-\subsubsection{Improved Turning [General]}
-\parhead{Prerequisite} Ability to turn or rebuke creatures.
-\parhead{Benefit} You gain a \plus2 competence bonus to your turning level when turning or rebuke creatures. If you have multiple abilities that let you turn or rebuke creatures, this applies to all of them.
+%\subsubsection{Improved Turning [General]}
+%\parhead{Prerequisite} Ability to turn or rebuke creatures.
+%\parhead{Benefit} You gain a \plus2 competence bonus to your turning level when turning or rebuke creatures. If you have multiple abilities that let you turn or rebuke creatures, this applies to all of them.
 
 \subsubsection{Iron Will [General]}
 \parhead{Benefit} You get a \plus2 competence bonus on all Will saving throws. Once per day, you may reroll a Will save. You must decide to use this ability before the results are revealed. You must take the second roll, even if it is worse.
@@ -400,8 +401,13 @@ Choose two magical classes you possess.
 
 \subsubsection{Ritual Master [General]}
 \parhead{Prerequisites} Spellcraft 8 ranks, ability to cast spells
-\parhead{Benefit} You can perform rituals in half the normal time. In addition, you gain a \plus4 competence bonus to ritual performance checks.
+\parhead{Benefit} You can perform rituals in half the normal time. In addition, you gain a \plus4 competence bonus to checks made to perform rituals.
 \parhead{Special} At 1st level, a wizard gets Ritual Master as a bonus feat, even if she does not have the prerequisites.
+
+\subsubsection{Selective Channeling [General]}
+\parhead{Prerequisites} Ability to channel energy
+\parhead{Benefit} You can exclude up to two additional creatures from the effect when you channel energy.
+\parhead{Normal} You can exclude a number of creatures from the effect equal to 1 \add half your Wisdom.
 
 \subsubsection{Spell Focus [General]}
 Choose a school of magic or a spell descriptor.
@@ -409,9 +415,9 @@ Choose a school of magic or a spell descriptor.
 \parhead{Benefit} You get a \plus2 competence bonus to your caster level when casting spells and using spell-like abilities from the school of magic or with the spell descriptor you select.
 \parhead{Special} You can gain this feat multiple times. Its effects do not stack. Each time you take the feat, it applies to a new school of magic.
 
-\subsubsection{Spell Penetration [General]}
-\parhead{Prerequisite} Caster level 4th
-\parhead{Benefit} You get a \plus2 competence bonus on caster level checks (1d20 \add caster level) made to overcome a creature's spell resistance.
+%\subsubsection{Spell Penetration [General]}
+%\parhead{Prerequisite} Caster level 4th
+%\parhead{Benefit} You get a \plus2 competence bonus on caster level checks (1d20 \add caster level) made to overcome a creature's spell resistance.
 
 \subsubsection{Swift [General]}
 \parhead{Benefit} When charging, you move at three times your normal speed. When running, you move five times your normal speed (if wearing medium, light, or no armor and carrying no more than a medium load) or four times your speed (if wearing heavy armor or carrying a heavy load).  If you make a jump after a running start (see the Jump skill description), you gain a \plus4 circumstance bonus on your Jump check. You only need 10 feet of movement to get a running start for a Jump check. While running, you are not flat-footed.
@@ -458,6 +464,10 @@ Choose a school of magic or a spell descriptor.
 
 \subsubsection{Deceitful [Skill]}
 \parhead{Benefit} You get a \plus2 competence bonus on all Bluff and Disguise checks. In addition, onec per day you may reroll a skill check with either skill.
+
+\subsubsection{Dilettante [Skill]}
+\parhead{Prerequisite} Int 3
+\parhead{Benefit} Choose a number of Knowledge skills equal to your Intelligence. You are treated as trained in those skills, even if you possess no ranks, allowing you to make Knowledge checks in those areas. If your Intelligence increases after taking this feat, you may choose additional Knowledge skills.
 
 \subsubsection{Diligent [Skill]}
 \parhead{Benefit} You get a \plus2 competence bonus on all Forgery and Linguistics checks. In addition, once per day you may reroll a skill check with either skill.
@@ -952,6 +962,10 @@ You must spend a full-round action to make a full attack while in this style. Yo
 \parhead{Benefit} You can imbue items with magic using your spells or crafting ability. Imbuing an item with magic takes time and material components, as described in \pcref{Magic Item Creation}.
 
 You can also mend a broken magic item if it is one that you could make. Doing so costs a tenth of the raw materials and a quarter of the time it would take to craft that item in the first place. You cannot mend a destroyed magic item.
+
+\subsubsection{Imbuement Admixture [Item Creation]}
+\parhead{Prerequisite}
+\parhead{Benefit} You can blend two spells together to create magic items. 
 
 \subsubsection{Versatile Crafter [Item Creation]}
 \parhead{Prerequisite} Craft (any) 10 ranks.
