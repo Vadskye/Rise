@@ -251,6 +251,7 @@ Improved Trip & Base attack bonus \plus4 & \plus2 bonus on trip attacks; tripped
 \begin{tabularx}{\textwidth}{>{\lcol}p{15em} >{\lcol}p{15em} >{\lcol}X}
 \thead{Combat Style Feats\fn{1}} & \thead{Prerequisites} & \thead{Benefit} \\
 Blind-Fight & \x &  Reroll miss chance for concealment in melee \\
+Cautious Attack & \x & Trade damage for CMD \\
 Combat Expertise & Int 3 & Trade attack bonus for AC \\
 \tind Improved Combat Expertise & Int 5, Combat Expertise, base attack bonus \plus8 & Trade more attack bonus for AC \\
 Covering Fire & Wis 3 & Targets struck by ranged attacks suffer attack penalties \\
@@ -263,7 +264,7 @@ Heartseeker & Base attack bonus \plus8 & Double critical threat range \\
 Intimidating Stance & Intimidate 8 ranks & Swiftly intimidate struck foes \\
 Opportunist & Dex 3 & Bonus to attack and damage on attacks of opportunity \\
 Overpowering Assault & Str 3 & Trade AC for combat maneuver bonus \\
-Precise Shot & \x & Add half Dex to damage, no penalty for shooting into melee \\
+Precise Shot & \x & Add half Wis to damage, no penalty for shooting into melee \\
 \tind Improved Precise Shot & Dex 7, Precise Shot, base attack bonus \plus8 & Ignore less than total cover/concealment on ranged attack \\
 \tind Point Blank Shot & Precise Shot &  \plus2 bonus on ranged damage within 30 ft. \\
 %\tind Rapid Shot & Dex 3, Precise Shot, base attack bonus \plus4 & One extra ranged attack each round \\
@@ -818,11 +819,15 @@ Choose one weapon group for which you have already selected the Weapon Focus fea
 \par An invisible attacker gets no advantages related to hitting you in melee. That is, you are not flat-footed, and the attacker doesn't get the usual \plus2 bonus for being invisible. The invisible attacker's bonuses do still apply for ranged attacks, however.
 \parhead{Normal} Regular attack roll modifiers for invisible attackers trying to hit you apply, and you are flat-footed against invisible attackers. Your speed is halved in darkness and poor visibility.
 
+\subsubsection{Cautious Attack [Combat Style]}
+\parhead{Benefit} You can choose to take a \minus2 penalty to damage rolls to gain a \plus2 circumstance bonus to your Combat Maneuver Defense. \bonusscalingdescription
+\parhead{Style Requirement} Must full attack each round.
+
 \subsubsection{Combat Expertise [Combat Style]}
 \parhead{Prerequisite} Int 3.
-\parhead{Benefit} You can choose to take a \minus2 penalty on melee attack rolls and combat maneuver checks to gain a \plus2 circumstance bonus to your dodge modifier. \bonusscalingdescription In addition, you increase the bonus gained from using the total defense action (see \pref{Total Defense}) by the same amount.
-\parhead{Style Requirement} Must full attack with a melee weapon or take the total defense action each round.
-\parhead{Normal} A character without the Combat Expertise feat can fight defensively while using the full attack action to take a \minus4 penalty on attack rolls and gain a \plus2 bonus to its dodge modifier.%Combat Expertise
+\parhead{Benefit} You can choose to take a \minus2 penalty on attack rolls, including combat maneuvers, to gain a \plus2 circumstance bonus to your dodge modifier. \bonusscalingdescription In addition, you increase the bonus gained from using the total defense action (see \pref{Total Defense}) by the same amount.
+\parhead{Style Requirement} Must full attack or take the total defense action each round.
+\parhead{Normal} A character without the Combat Expertise feat can fight defensively while using the full attack action to take a \minus4 penalty on attack rolls and gain a \plus2 circumstance bonus to its dodge modifier.
 
 \subsubsection{Covering Fire [Combat Style]}
 \parhead{Prerequisite} Wis 3.
@@ -916,7 +921,7 @@ You must spend a full-round action to make a full attack while in this style. Yo
 
 %Can't replace Strength; archers need to be strong
 \subsubsection{Precise Shot [Combat Style]}
-\parhead{Benefit} You can add half your Wisdom to damage with ranged weapons in addition to half your Strength. Additionally, you can shoot or throw ranged weapons at an opponent engaged in melee without taking the standard \minus4 penalty on your attack roll.
+\parhead{Benefit} You can choose to add half your Wisdom to damage with ranged weapons in addition to half your Strength. Additionally, you can shoot or throw ranged weapons at an opponent engaged in melee without taking the standard \minus4 penalty on your attack roll.
 
 You must spend a full-round action to make a full attack while in this style. You can make a single attack as a standard action. You cannot use this style with medium or large thrown weapons.
 
