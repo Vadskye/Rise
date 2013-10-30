@@ -24,6 +24,7 @@ them as a group. Others belong to particular categories. The categories are give
 \item Skill feats affect a character's mastery of his or her skills.
 \item Combat feats affect a character's prowess in combat.
 \item Combat maneuver feats are combat feats which grant a character particular talent with specific maneuvers.
+\item Combat style feats grant a character the ability fight in particular styles. A character can only fight in one style at once.
 \item Metamagic feats let spellcasters cast spells with greater effect, albeit as if the spells were a higher level than they actually are.
 \item Item creation feats allow spellcasters to create magic items of various kinds.
 \end{itemize*}
@@ -107,6 +108,7 @@ Endurance & \x &  Stay conscious longer against nonlethal damage \\
 %Force of Intellect & \x & Use Int and half Cha for Will saves \\
 Great Fortitude  & \x &  \plus2 bonus on Fortitude saves, reroll 1/day \\
 Improved Counterspell  & \x &  Counterspell with spell of same school \\
+\tind Retributive Counterspell & Improved Counterspell, ability to cast 4th level spells & Countered spells rebound on original caster \\
 %Intuitive Reflexes & \x & Use Wis and half Dex for Reflex saves \\
 Iron Will  & \x &  \plus2 bonus on Will saves, reroll 1/day \\
 Lightning Reflexes  & \x &  \plus2 bonus on Reflex saves, reroll 1/day \\
@@ -170,6 +172,7 @@ Nimble Fingers  & \x &  \plus2 bonus on Disable Device and Sleight of Hand check
 Open Minded & \x & Gain two skill points. \\
 Perceptive & \x &  \plus2 bonus on Perception and Sense Motive checks, reroll 1/day \\
 Persuasive  & \x &  \plus2 bonus on Intimidate and Persuasion checks, reroll 1/day \\
+Ranged Legerdemain & Ability to cast 2nd level spells & Use Disable Device or Sleight of Hand at range \\
 Skill Devotion\fn{1} & 13 ranks in a skill & Gain special ability based on the skill \\
 Skill Focus\fn{1} & \x &  \plus3 bonus on checks with selected skill, reroll 1/day \\
 Survivalist & \x & \plus2 bonus on Heal and Survival checks, reroll 1/day \\
@@ -257,6 +260,8 @@ Combat Expertise & Int 3 & Trade attack bonus for AC \\
 Covering Fire & Wis 3 & Targets struck by ranged attacks suffer attack penalties \\
 Deadly Aim & Dex 3 & Trade ranged attack bonus for damage \\
 \tind Improved Deadly Aim & Dex 5, Deadly Aim, base attack bonus \plus8 & Trade more ranged attack bonus for damage \\
+Defensive Stance & Base attack bonus \plus6 & Trade ability to move for CMD \\
+\tind Improved Defensive Stance & Base attack bonus \plus12 & Trade ability to move for AC \\
 Distracting Foe & Base attack bonus \plus4 & Threatened foes suffer Concentration penalties \\
 Executioner & Base attack bonus \plus12 & Gain free attacks against foes near death \\
 Eye of the Storm & Base attack bonus \plus4 & Reduce overwhelm penalties by 2 \\
@@ -282,11 +287,16 @@ Shot on the Run & Dex 5, Dodge, Mobility, base attack bonus \plus4 & Move before
 \begin{tabularx}{\textwidth}{>{\lcol}p{15em} >{\lcol}p{7.5em} >{\lcol}p{7.5em} >{\lcol}X}
 \thead{Metamagic Feats} & \thead{Prerequisites} & \thead{Spell Level Increase} & \thead{Benefit} \\
 %Empower Spell  & Caster level 4th & \plus2 & Increase spell's variable, numeric effects by 50\% \\
+Energetic Substitution & Caster level 4th & \plus1 & Change spell's energy type \\
 Enlarge Spell  & Caster level 4th & \plus1 & Double spell's range \\
 %Extend Spell  & Caster level 1st & \plus1 & Double spell's duration \\
 Heighten Spell  & Caster level 6th & Variable & Cast spell as higher level \\
+Imbued Spellstrike & Caster level 4th & \plus1 & Combine spell with weapon attack \\
+\tind Improved Imbued Spellstrike & Caster level 6th & \plus2 & Imbue weapon with spell's power up to 5 minutes \\
 %Maximize Spell  & Caster level 6th & \plus3 & Maximize spell's variable, numeric effects \\
 Quicken Spell  & Caster level 6th & \plus2 & Cast spell as swift action, but lose next action \\
+Reach Spell & Caster level 6th & \plus2 & Cast touch spell at Close range \\
+Shape Spell & Caster level 6th & \plus2 & Exclude areas within spell's area \\
 Silent Spell  & Caster level 4th & \plus1 & Cast spell without verbal components \\
 Still Spell  & Caster level 4th & \plus1 & Cast spell without somatic components \\
 Widen Spell  & Caster level 8th & \plus3 & Double spell's area
@@ -400,6 +410,10 @@ Choose two magical classes you possess.
 \parhead{Normal} Applying metamagic takes a standard action (if the spell normally requires less than a standard action), a full-round action (if the spell normally requires a standard action), or an additional full-round action (if the spell takes 1 full round or longer to cast).
 \parhead{Special} At 1st level, a sorcerer gets Rapid Metamagic as a bonus feat, even if he does not have the prerequisites.
 
+\subsubsection{Retributive Counterspell [General]}
+\parhead{Prerequisites} Improved Counterspell, ability to cast 4th level spells.
+\parhead{Benefit} As part of the action to counter a spell, you may expend an Abjuration (Negation) spell of 4th level or higher. If you do, the counterspelled spell is turned back on the caster as if it were affected by the \spell{spell turning} spell. If it cannot be affected by \spell{spell turning}, such as if it is a spell that only affects the caster, it is simply countered as normal.
+
 \subsubsection{Ritual Master [General]}
 \parhead{Prerequisites} Spellcraft 8 ranks, ability to cast spells
 \parhead{Benefit} You can perform rituals in half the normal time. In addition, you gain a \plus4 competence bonus to checks made to perform rituals.
@@ -487,6 +501,10 @@ Choose a school of magic or a spell descriptor.
 
 \subsubsection{Persuasive [Skill]}
 \parhead{Benefit} You get a \plus2 competence bonus on all Intimidate checks and Persuasion checks. In addition, once per day you may reroll a skill check with either skill.
+
+\subsubsection{Ranged Legerdemain [Skill]}
+\parhead{Prerequisite} Ability to cast 2nd level spells
+\parhead{Benefit} By expending an Evocation (Control) spell of 2nd level or higher, you can use the Disable Device or Sleight of Hand skills at \rngclose range for a number of rounds equal to half the level of the spell slot.
 
 \subsubsection{Skill Devotion [Skill]}
 Choose a skill.
@@ -819,6 +837,10 @@ Choose one weapon group for which you have already selected the Weapon Focus fea
 \par An invisible attacker gets no advantages related to hitting you in melee. That is, you are not flat-footed, and the attacker doesn't get the usual \plus2 bonus for being invisible. The invisible attacker's bonuses do still apply for ranged attacks, however.
 \parhead{Normal} Regular attack roll modifiers for invisible attackers trying to hit you apply, and you are flat-footed against invisible attackers. Your speed is halved in darkness and poor visibility.
 
+\subsubsection{Bulwark of Defense [Combat Style]}
+\parhead{Prerequisite} Base attack bonus \plus4
+\parhead{Benefit} Foes that you threaten at the start of your turn treat all squares you threaten as difficult terrain. Creatures must pay double movement cost to move through squares of difficult terrain, and cannot run or charge while in difficult terrain.
+
 \subsubsection{Cautious Attack [Combat Style]}
 \parhead{Benefit} You can choose to take a \minus2 penalty to damage rolls to gain a \plus2 circumstance bonus to your Combat Maneuver Defense. \bonusscalingdescription
 \parhead{Style Requirement} Must full attack each round.
@@ -839,6 +861,10 @@ Choose one weapon group for which you have already selected the Weapon Focus fea
 \parhead{Benefit} You take a \minus2 penalty on all ranged attack rolls and gain a \plus2 circumstance bonus on all ranged damage rolls. \bonusscalingdescription The bonus damage does not apply to touch attacks or effects that do not deal hit point damage.
 \parhead{Style Requirement} Must full attack with a ranged weapon each round.
 
+\subsubsection{Defensive Stance [Combat Style]}
+\parhead{Prerequisites} Base attack bonus \plus6
+\parhead{Benefit} You gain a \plus2 circumstance bonus to Combat Maneuver Defense. \bonusscalingdescription However, you are unable to move until you change styles (a swift action). You can only use this style if you did not move in the previous round.
+
 \subsubsection{Distracting Foe [Combat Style]}
 \parhead{Prerequisites} Base attack bonus \plus4.
 \parhead{Benefit} Foes you threaten take a \minus2 penalty to Concentration checks. This penalty increases to \minus3 at base attack bonus \plus8, to \minus4 at base attack bonus \plus12, and finally to \minus5 at base attack bonus \plus16.
@@ -857,6 +883,10 @@ Choose one weapon group for which you have already selected the Weapon Focus fea
 \parhead{Prerequisite} Base attack bonus \plus8.
 \parhead{Benefit} You double your critical threat range with any weapon you wield. This does not stack with any other effects which increase threat range.
 
+\subsubsection{Improved Bulwark of Defense [Combat Style]}
+\parhead{Prerequisites} Base attack bonus \plus10
+\parhead{Benefit} This style functions like the Bulwark of Defense style, except that you can also take attacks of opportunity on foes that 
+
 \subsubsection{Improved Combat Expertise [Combat Style]}
 \parhead{Prerequisites} Int 5, Combat Expertise, base attack bonus \plus8.
 \parhead{Benefit} This style functions like the Combat Expertise style, except that the penalty to attack rolls and AC bonus is doubled.
@@ -866,6 +896,10 @@ Choose one weapon group for which you have already selected the Weapon Focus fea
 \parhead{Prerequisites} Dex 5, Deadly Aim, base attack bonus \plus8.
 \parhead{Benefit} This style functions like the Deadly Aim style, except that the penalty to attack rolls and damage bonus is doubled.
 \parhead{Style Requirement} Must charge or full attack with a melee weapon each round.
+
+\subsubsection{Improved Defensive Stance [Combat Style]}
+\parhead{Prerequisites} Base attack bonus \plus12, Defensive Stance
+\parhead{Benefits} This style functions like Defensive Stance, except that it grants a bonus to Armor Class instead of Combat Maneuver Defense.
 
 \subsubsection{Improved Precise Shot [Combat Style]}
 \parhead{Prerequisites} Dex 7, Precise Shot, base attack bonus \plus8.
@@ -927,6 +961,7 @@ You must spend a full-round action to make a full attack while in this style. Yo
 
 \subsection{Metamagic Feats}
 
+
 \subsubsection{Enlarge Spell [Metamagic]}
 \parhead{Prerequisite} Caster level 4th.
 \parhead{Benefit} An enlarged spell has its range doubled. This metamagic can only be applied to spells with a range of \rngclose, \rngmed, or \rnglong. An enlarged spell uses up a spell slot one level higher than the spell's actual level.
@@ -937,14 +972,40 @@ You must spend a full-round action to make a full attack while in this style. Yo
 \parhead{Benefit} An extended spell has its duration increased by one duration category: from Short, to Medium, to Long, to Extreme. This metamagic can only be applied to spells with a duration of \durshort, \durmed, or \durlong. An extended spell uses up a spell slot three levels higher than the spell's actual level.
 \end{comment}
 
+\subsubsection{Energetic Substitution [Metamagic]}
+\parhead{Prerequisite} Caster level 4th.
+\parhead{Benefit} When casting a substituted spell, you can choose what kind of energy damage it deals: acid, cold, fire, or electricity. This can only be applied to spells that originally dealt energy damage. A substituted spell uses up a spell slot one level higher than the spell's actual level.
+
 \subsubsection{Heighten Spell [Metamagic]}
 \parhead{Prerequisite} Caster level 4th.
 \parhead{Benefit} When casting a heightened spell, you gain a \plus2 circumstance bonus to caster level. A heightened spell uses up a spell slot one level higher than the spell's actual level. Unlike other metamagic feats, you can apply this metamagic feat any number of times, increasing your caster level by 2 each time.
+
+\subsubsection{Imbued Spellstrike [Metamagic]}
+\parhead{Prerequisite} Caster level 4th.
+\parhead{Benefit} When casting a channeled spell, you can make a single attack with a weapon in your hand. If the attack hits, the struck creature is affected by the spell, as if it had been the target, in addition to taking damage from the weapon. The imbuement fades away without effect after 1 round (at the end of your next turn) if you have not struck a foe.
+
+Only spells which affect a single target can be channeled in this way. An imbued spellstrike uses up a spell slot one level higher than the spell's actual level.
+
+\subsubsection{Improved Imbued Spellstrike [Metamagic]}
+\parhead{Prerequisite} Caster level 6th, Imbued Strike.
+\parhead{Benefit} This metamagic functions like Imbued Strike, except that the imbuement lasts for 5 minutes if you have not struck a foe. If the weapon leaves your hands or you cast another spell, the imbuement fades away without effect.
+
+An improved imbued spellstrike uses up a spell slot two levels higher than the spell's actual level.
 
 \subsubsection{Quicken Spell [Metamagic]}
 \parhead{Prerequisite} Caster level 6th.
 \parhead{Benefit} Casting a quickened spell is a swift action. You can perform another action, even casting another spell, in the same round as you cast a quickened spell. However, casting a quickened spell is mentally exhausting. In the turn after you cast it, you lose your standard action. You may cast only one quickened spell per round. A spell whose casting time is more than 1 standard action cannot be quickened. A quickened spell uses up a spell slot two levels higher than the spell's actual level. Casting a quickened spell doesn't provoke an attack of opportunity.
 \parhead{Special} All spellcasters cast a quickened spell as a swift action, even if they would normally increase the casting time of spells with metamagic applied. This is an exception to the general rule that applying metamagic increases the casting time of a spell.
+
+\subsubsection{Reach Spell [Metamatic]}
+\parhead{Prerequisite} Caster level 6th.
+\parhead{Benefit} When casting a reach spell, you can use a spell with a range of touch on a target within \rngclose range. You must succeed on a ranged touch attack. A reach spell uses up a spell slot two levels higher than the spell's actual level.
+
+\subsubsection{Shape Spell [Metamagic]}
+\parhead{Prerequisite} Caster level 6th.
+\parhead{Benefit} When casting a shaped spell, you can exclude any number of 5-foot cubes within the spell's area. This allows you to prevent the spell from affecting your allies, while still allowing it to affect your enemies. The area affected by the spell must be contiguous.
+
+Only area spells can be shaped. A shaped spell uses a spell slot two levels higher than the spell's original level.
 
 \subsubsection{Silent Spell [Metamagic]}
 \parhead{Prerequisite} Caster level 4th.
