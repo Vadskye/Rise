@@ -876,6 +876,10 @@ Choose one weapon group for which you have already selected the Weapon Focus fea
 \parhead{Style Requirement} Must full attack or take the total defense action each round.
 \parhead{Normal} A character without the Combat Expertise feat can fight defensively while using the full attack action to take a \minus4 penalty on attack rolls and gain a \plus2 circumstance bonus to its dodge modifier.
 
+\subsubsection{Cooperative Attack [Combat Style]}
+\parhead{Prerequisite} Base attack bonus \plus4
+\parhead{Benefit} As a full-round action, you can make a full attack and make an Aid Another check to help an adjacent ally's attack bonus or armor class.
+
 \subsubsection{Covering Fire [Combat Style]}
 \parhead{Prerequisite} Wis 3.
 \parhead{Benefit} If you hit a creature with a ranged attack, it takes a \minus2 penalty to attack rolls for 1 round.
@@ -986,24 +990,67 @@ You must spend a full-round action to make a full attack while in this style. Yo
 
 \subsection{Bloodline Feats}
 
-\subsubsection{Draconic Armor [Bloodline, Dragon]}
-\parhead{Prerequisite} Draconic Heritage.
-\parhead{Benefit} You gain a \plus1 competence bonus to your natural armor modifier for every two dragon bloodline feats that you have.
+\subsubsection{Celestial Body [Bloodline, Celestial]}
+\parhead{Prerequisites} Nonevil alignment, Celestial Heritage.
+\parhead{Benefit} You gain physical damage reduction equal to the number of celestial feats you have. This damage reduction is only overcome by evil weapons. At 8th, 14th, and 20th level, this damage reduction doubles, to a maximum of four damage reduction per celestial bloodline feat you have.
+
+\subsubsection{Celestial Heritage [Bloodline, Celestial]}
+\parhead{Prerequisite} Nonevil alignment.
+\parhead{Benefit} You have the blood of a celestial creature in your veins. Once per day, you can smite evil as part of an attack, as the paladin ability. Against an evil creature, you gain a \plus2 circumstance bonus to attack and a circumstance bonus to damage equal to your character level.
+
+\subsubsection{Celestial Smiting [Bloodline, Celestial]}
+\parhead{Prerequisites} Nonevil alignment, Celestial Heritage.
+\parhead{Benefit} You can smite evil with your Celestial Heritage ability a number of times per day equal to the number of celestial bloodline feats you have. Additionally, the attack bonus granted by the smite is equal to the number of celestial bloodline feats you have, to a maximum of \plus5.
+
+\subsubsection{Celestial Spell Conduit [Bloodline, Celestial]}
+\parhead{Prerequisites} Nonevil alignment, Celestial Heritage.
+\parhead{Benefit} You gain a \plus1 competence bonus to caster level with Evocation (Channeling) spells and spells from the Good domain per celestial bloodline feat that you have, to a maximum of a \plus5 bonus.
+
+\subsubsection{Celestial Soul [Bloodline, Celestial]}
+\parhead{Prerequisites} Nonevil alignment, Celestial Heritage, any three celestial feats.
+\parhead{Benefit} You gain spell resistance against evil spells and spells cast by evil creatures.
 
 \subsubsection{Draconic Breath [Bloodline, Dragon]}
 \parhead{Prerequisites} Con 3, Draconic Heritage, any three dragon bloodline feats.
-\parhead{Benefit} You gain a breath weapon based on the type of dragon you chose for the Draconic Heritage feat. Each breath weapon deals 1d8 damage per two Hit Values you possess and allows a Reflex save for half damage. The save DC is equal to 10 \add half your Hit Dice \add your Constitution. After using your breath weapon, you must wait 1d4 rounds before you can use it again.
+\parhead{Benefit} You gain a breath weapon based on the type of dragon you chose for the Draconic Heritage feat. The shape of the breath weapon is given on the \trefnp{Dragon Types} chart: either a \arealarge, 5 ft. wide line or a \areamed cone. At 11th level, the size increases to a 100 ft. long, 10 ft. wide line or a \arealarge cone.
+
+Each breath weapon deals 1d8 damage per two Hit Values you possess and allows a Reflex save for half damage. The save DC is equal to 10 \add half your Hit Dice \add your Constitution. After using your breath weapon, you must wait 1d4 rounds before you can use it again.
 
 \subsubsection{Draconic Heritage [Bloodline, Dragon]}
-\parhead{Benefit} When you take this feat, choose a type of dragon. You gain damage resistance against the damage type that that dragon's breath weapon deals equal to 5 \mtimes the number of dragon bloodline feats that you have. A list of dragons and their associated damage type is given below.
+\parhead{Benefit} You have the blood of a dragon in your veins. When you take this feat, choose a type of dragon. You gain damage reduction against the damage type that that dragon's breath weapon deals equal to 5 \mtimes the number of dragon bloodline feats that you have. A list of dragons and their associated damage type is given below.
+
+\begin{dtable}
+  \lcaption{Dragon Types}
+  \begin{tabularx}{\columnwidth}{>{\lcol}X >{\lcol}X >{\lcol}X}
+    \thead{Dragon} & \thead{Energy Type} & \thead{Breath Weapon} \\
+    Black & Acid & Line \\
+    Blue & Electricity & Line \\
+    Brass & Fire & Line \\
+    Bronze & Electricity & Line \\
+    Copper & Acid & Line \\
+    Gold & Fire & Cone \\
+    Green & Acid & Cone \\
+    Red & Fire & Cone \\
+    Silver & Cold & Cone \\
+    White & Cold & Cone \\
+  \end{tabularx}
+\end{dtable}
+
+\subsubsection{Draconic Scales [Bloodline, Dragon]}
+\parhead{Prerequisite} Draconic Heritage.
+\parhead{Benefit} You gain a \plus1 competence bonus to your natural armor modifier for every two dragon bloodline feats that you have.
 
 \subsubsection{Draconic Senses [Bloodline, Dragon]}
 \parhead{Prerequisite} Draconic Heritage.
 \parhead{Benefit} You gain low-light vision. If you already have low-light vision, you can now see four times as well in darkness. If you have three or more dragon heritage feats, you gain darkvision with a 60 foot range, or the range of your darkvision increases by 60 feet.
 
+\subsubsection{Draconic Spellpower [Bloodline, Dragon]}
+\parhead{Prerequisite} Draconic Heritage.
+\parhead{Benefit} You gain a \plus1 competence bonus to caster level per two dragon bloodline feats that you have.
+
 \subsubsection{Draconic Voice [Bloodline, Dragon]}
 \parhead{Prerequisite} Draconic Heritage.
-\parhead{Benefit} You gain a \plus1 competence bonus to Bluff and Persuasion checks per dragon bloodline feat you possess, to a maximum of a \plus5 bonus.
+\parhead{Benefit} You gain a \plus1 competence bonus to Bluff and Persuasion checks per dragon bloodline feat that you have, to a maximum of a \plus5 bonus.
 
 \subsubsection{Draconic Weapons [Bloodline, Dragon]}
 \parhead{Prerequisite} Draconic Heritage
@@ -1014,6 +1061,23 @@ You must spend a full-round action to make a full attack while in this style. Yo
 \parhead{Benefit} You gain wings that sprout from your back. These allow you to slow your fall so you fall no more than 60 feet per round, preventing you from taking falling damage. If you have 8 Hit Values, you can use the wings to glide at a rate equal to your base land speed. While gliding, you move forward each round at a rate equal to your base land speed, and you descend at a rate of 10 feet per round.
 
 If you have 14 Hit Values, you gain a fly speed equal to your base land speed, though you can only fly for a number of rounds equal to 3 \add half your Constitution. After that limit is reached, you must rest for 5 minutes to recuperate. If you have 20 Hit Values, you can fly for any length of time without needing to rest.
+
+\subsubsection{Elemental Body [Bloodline, Elemental]}
+\featpre Elemental Heritage, any three elemental bloodline feats
+\featben You have a 25\% chance to ignore critical hits on you.
+
+\subsubsection{Elemental Heritage [Bloodline, Elemental]}
+\featben You have the essence of an elemental in your body. When you take this feat, choose a type of elemental to be your elemental ancestor: air, earth, fire, or water. You gain a competence bonus to a saving throw based equal to the number of elemental heritage feats that you have, to a maximum of a \plus5 bonus. Air and fire elemental heritage grants a bonus to Reflex saves, while earth and water elemental heritage grants a bonus to Fortitude saves.
+
+\subsubsection{Elemental Mastery [Bloodline, Elemental]}
+\featpre Elemental Heritage
+\featben In circumstances that depend on your elemental ancestor, you gain a \plus1 circumstance bonus to attack rolls per two elemental bloodline feats you possess. Air grants a bonus when you are airborne or fighting airborne creatures. Earth grants a bonus when both you and your foe are standing on natural earth or stone. Fire grants a bonus when either you or or foe is ignited, or when you are making attacks that deal fire damage. Water grants a bonus when both you and your foe are touching water.
+
+\subsubsection{Elemental Movement [Bloodline, Elemental]}
+\featpre Elemental Heritage
+\featben You gain a movement ability based on your choice of elemental ancestor. Air halves the damage you take from falling and improves the maneuverability of any flight abilities you possess by one category per two elemental bloodline feats you possess. Earth gives you a \plus1 competence bonus per elemental bloodline feat that you have to your CMD against attacks that would force you to move, such as bull rush and trip attacks. Fire gives you a \plus5 foot competence bonus to your movement speed. Water gives you a swim speed equal to your base land speed.
+
+
 
 \subsection{Metamagic Feats}
 
