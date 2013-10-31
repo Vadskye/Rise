@@ -52,7 +52,7 @@ Some style feats have style requirements. To gain the benefits of a combat style
 
 \subsection{Bloodline Feats}
 
-Some characters have traces of monstrous blood running in their veins. Most of those will never understand the full potential of their unusual heritage. Bloodline feats allow characters to explore those posibilities by gaining abilites related to their ancestry. Each bloodline feat belongs to a specific category of monster, such as dragon or giant. Some bloodline feats have stronger effects if you have more feats from that heritage.
+Some characters have traces of monstrous blood running in their veins. Most of those will never understand the full potential of their unusual heritage. Bloodline feats allow characters to explore those posibilities by gaining abilites related to their ancestry. Each bloodline feat belongs to a specific type of monster, such as ``dragon''. Some bloodline feats have stronger effects if you have more feats from that heritage.
 
 \subsection{Metamagic Feats}
 As a spellcaster's knowledge of magic grows, she can learn to cast spells in ways slightly different from the ways in which the spells were originally designed or learned. Preparing and casting a spell in such a way is harder than normal but, thanks to metamagic feats, at least it is possible. Spells modified by a metamagic feat use a spell slot higher than normal. All effects dependent on spell level (such as the ability to penetrate a \spell{lesser globe of invulnerability}) are calculated according to the spell's modified level.
@@ -189,6 +189,7 @@ Track  & \x &  Use Survival skill to track \\
 \lcaption{Combat Feats}
 \begin{tabularx}{\textwidth}{>{\lcol}p{15em} >{\lcol}p{15em} >{\lcol}X}
 \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} \\
+Acrobatic Charge & Acrobatics 8 ranks & Charge on difficult terrain \\
 Armor Proficiency (light)  & \x &  No armor check penalty on attack rolls \\
 \tind Armor Proficiency (medium) & Armor Proficiency (light) & No armor check penalty on attack rolls \\
 \tind \tind Armor Proficiency (heavy) & Armor Proficiency (medium) & No armor check penalty on attack rolls \\
@@ -285,6 +286,20 @@ Powerful Grip & Str 9 & Use larger weapons without penalty \\
 Shot on the Run & Dex 5, Dodge, Mobility, base attack bonus \plus4 & Move before and after ranged attacks \\
 \end{tabularx}
 1 Combat style feats are considered combat feats. Abilities and class features that grant combat feats may be used to select combat style feats.
+\end{dtable!*}
+
+\begin{dtable!*}
+  \lcaption{Bloodline Feats}
+\begin{tabularx}{\textwidth}{>{\lcol}p{15em} >{\lcol}p{15em} >{\lcol}X}
+\thead{Bloodline Feats\fn{1}} & \thead{Prerequisites} & \thead{Benefit} \\
+Draconic Heritage & \x & Resist damage from chosen dragon's energy type \\
+\tind Draconic Armor & Draconic Heritage & Gain natural armor \\
+\tind Draconic Breath & Con 3, Draconic Heritage, any three dragon bloodline feats & Gain dragon's breath weapon \\
+\tind Draconic Senses & Draconic Heritage & Gain low-light vision, possibly darkvision \\
+\tind Draconic Voice & Draconic Heritage & Gain bonus to Bluff and Persuasion checks \\
+\tind Draconic Weapons & Draconic Heritage & Gain bite attack, possibly claws \\
+\tind Draconic Wings & Draconic Heritage, any three dragon bloodline feats & Gain wings to slow falls, glide, eventually fly \\
+\end{tabularx}
 \end{dtable!*}
 
 \begin{dtable!*}
@@ -598,6 +613,11 @@ If you fail a Survival check, you can retry after 1 hour (outdoors) or 10 minute
 
 \subsection{Combat Feats}
 
+\subsubsection{Acrobatic Charge [Combat]}
+\parhead{Prerequisite} Acrobatics 8 ranks.
+\parhead{Benefit} Difficult terrain does not prevent you from charging.
+\parhead{Normal} You cannot charge in difficult terrain.
+
 \subsubsection{Armor Proficiency (Heavy) [Combat]}
 \parhead{Prerequisites} Armor Proficiency (light), Armor Proficiency (medium).
 \parhead{Benefit} See Armor Proficiency (light).
@@ -848,7 +868,7 @@ Choose one weapon group for which you have already selected the Weapon Focus fea
 
 \subsubsection{Cautious Attack [Combat Style]}
 \parhead{Benefit} You can choose to take a \minus2 penalty to damage rolls to gain a \plus2 circumstance bonus to your Combat Maneuver Defense. \bonusscalingdescription
-\parhead{Style Requirement} Must full attack each round.
+\parhead{Style Requirement} You must full attack each round.
 
 \subsubsection{Combat Expertise [Combat Style]}
 \parhead{Prerequisite} Int 3.
@@ -991,11 +1011,9 @@ You must spend a full-round action to make a full attack while in this style. Yo
 
 \subsubsection{Draconic Wings [Bloodline, Dragon]}
 \parhead{Prerequisite} Draconic Heritage, any three dragon bloodline feats.
-\parhead{Benefit} You gain wings that sprout from your back. These allow you to slow your fall so you fall no more than 60 feet per round, preventing you from taking falling damage. If you have 8 Hit Values, you can use the wings to glide at a rate equal to your base land speed. If you have 14 Hit Values, you gain a fly speed equal to your base land speed, though you can only fly for a number of rounds equal to 3 \add half your Constitution. After that limit is reached, you must rest for 5 minutes to recuperate. If you have 20 Hit Values, you can fly for any length of time without needing to rest.
+\parhead{Benefit} You gain wings that sprout from your back. These allow you to slow your fall so you fall no more than 60 feet per round, preventing you from taking falling damage. If you have 8 Hit Values, you can use the wings to glide at a rate equal to your base land speed. While gliding, you move forward each round at a rate equal to your base land speed, and you descend at a rate of 10 feet per round.
 
-
-
-
+If you have 14 Hit Values, you gain a fly speed equal to your base land speed, though you can only fly for a number of rounds equal to 3 \add half your Constitution. After that limit is reached, you must rest for 5 minutes to recuperate. If you have 20 Hit Values, you can fly for any length of time without needing to rest.
 
 \subsection{Metamagic Feats}
 
