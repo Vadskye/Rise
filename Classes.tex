@@ -31,7 +31,7 @@ There are eleven classes in Rise.
 
 \parhead{Base Attack Progression} Measures how good members of the class are in combat. There are three progressions: Good, Average, or Poor. A character in a class with a Good base attack bonus has a \plus1 base attack bonus. A character's base attack bonus is added to all attacks the character makes.
 
-\parhead{Base Saving Throw Progression} Measures how resistant members of the class are to unusual kinds of attacks. There are three progressions: Good, Average, or Poor. A character in a class with a Good saving throw progression has a \plus3 base saving throw bonus, while a character with an Average saving throw progression has a \plus1 base saving throw bonus. A character's base saving throw bonus is added to all saving throws the character makes of that kind.
+\parhead{Base Saving Throw Progressions} Measures how resistant members of the class are to unusual kinds of attacks. There are three progressions: Good, Average, or Poor. A character in a class with a Good saving throw progression has a \plus3 base saving throw bonus, while a character with an Average saving throw progression has a \plus1 base saving throw bonus. A character's base saving throw bonus is added to all saving throws the character makes of that kind.
 
 There are three kinds of saving throws. Fortitude saves represent your ability to resist attacks on your body, like poisons and diseases. Reflex saves represent your ability to avoid attacks, such as pit traps or explosions. Will saves represent your ability to resist mental influence, like fearsome creatures and enchantment spells.
 
@@ -40,8 +40,156 @@ There are three kinds of saving throws. Fortitude saves represent your ability t
 \subsection{Barbarian}
 
 \parhead{Hit Value} 7
+\parhead{Class Skills} Climb (Str), Jump (Str), Swim (Str), Acrobatics (Dex), Ride (Dex), Perception (Wis), Survival (Wis), Handle Animal (Cha), and Intimidate (Cha)
+\parhead{Skill Points} 4
+\parhead{Weapon and Armor Proficiencies} A barbarian is proficient with simple weapons, any four other weapon groups, light armor, medium armor, and shields (except tower shields).
+\parhead{Base Attack Progression} Good
+\parhead{Base Saving Throw Progressions} Good Fortitude, average Reflex, poor Will
+\sssecfake{Class Features} 
 
-\parhead{Class Skills} 
+\cf{Bbn}{Damage Reduction (Ex)} A barbarian gains the ability to shrug off some amount of injury from attacks. He has physical damage reduction equal to his barbarian level, allowing him to the first points of damage that would be dealt to him each round.
+
+\cf{Bbn}{Rage (Ex)} A barbarian can fly into a rage once per day as a swift action. While in a rage, he gains a \plus2 competence bonus to weapon damage rolls and Fortitude and Will saves. In addition, he gains 2 temporary hit points per barbarian level, but he takes a \minus2 penalty to Armor Class. These extra hit points are lost before any other hit points. (For more information, see \pref{Temporary Hit Points}.)
+
+While raging, a barbarian cannot use any Intelligence or Charisma-based skills other than Intimidate. Additionally, he cannot use any abilities that require patience or concentration, such as spellcasting.
+
+\par A fit of rage lasts for a number of rounds up to 5 \add half the barbarian's Constitution, though it can be ended earlier if the barbarian wishes to or goes unconscious. At the end of the rage, the barbarian takes nonlethal damage equal to the number of temporary hit points he gained by raging, loses his rage bonuses and restrictions, and becomes fatigued until he rests for a minute. A fatigued character can neither run nor charge and is vulnerable, giving it a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. If the barbarian has any temporary hit points remaining at the end of his rage, the nonlethal damage is dealt to those hit points before they go away.
+
+\subsection{Bard}
+\parhead{Hit Value} 5
+\parhead{Class Skills} Sleight of Hand (Dex), Forgery (Int), Knowledge (all skills, taken individually) (Int), Linguistics (Int), Perception (Wis), Sense Motive (Wis), Spellcraft (Wis), Bluff (Cha), Persuasion (Cha), Disguise (Cha), Perform (Cha), Use Magic Device (Cha)
+\parhead{Skill Points} 8 
+\parhead{Weapon and Armor Proficiencies} Bards are proficient with simple weapons,   any two other weapon groups,  light armor, medium armor, and shields (except tower shields).  
+\parhead{Base Attack Progression} Average
+\parhead{Base Saving Throw Progressions} Average Fortitude, average Reflex, average Will
+\sssecfake{Class Features}
+
+\cf{Brd}{Bardic Knowledge} A bard may make a special bardic knowledge check with a bonus equal to his bard level \add his Intelligence to see whether he knows some relevant information about local notable people, legendary items, or noteworthy places.
+
+A successful bardic knowledge check will not reveal the powers of a magic item but may give a hint as to its general function. A bard may not take 10 or take 20 on this check; this sort of knowledge is essentially random.
+
+\begin{dtable}
+\begin{tabularx}{\columnwidth}{l X}
+\thead{DC} & \thead{Type of Knowledge} \\
+10  & Common, known by at least a substantial minority drinking; common legends of the local population. \\
+20  & Uncommon but available, known by only a few people legends. \\
+25  & Obscure, known by few, hard to come by. \\
+30  & Extremely obscure, known by very few, possibly forgotten by most who once knew it, possibly known only by those who don't understand the significance of the knowledge.
+\end{tabularx}
+\end{dtable}
+
+ \cf{Brd}{Bardic Music} Once per day, a bard can use his song or poetics as a standard action to produce magical effects on those around him (usually including himself, if desired). While these abilities fall under the category of bardic music and the descriptions discuss singing or playing instruments, they can all be activated by any audible performance.
+ 
+Each ability requires both a minimum bard level and a minimum number of ranks in the Perform skill to qualify; if a bard does not have the required number of ranks in at least one Perform skill, he does not gain the bardic music ability until he acquires the needed ranks.
+
+A bard can typically maintain a song for up to 5 minutes before needing to rest. A deaf bard has a 20\% chance to fail when attempting to use bardic music. If he fails, the attempt still counts against his daily limit. 
+
+\subcf{Countersong (Su)} A bard with 3 or more ranks in a Perform skill can use his music or poetics to counter magical effects that depend on sound (but not spells that simply have verbal components). Each round of the countersong, he makes a Perform check. Any creature within 30 feet of the bard (including the bard himself) that is affected by a language-dependent, sound-dependent, or sonic magical attack may use the bard's Perform check result in place of its saving throw if, after the saving throw is rolled, the Perform check result proves to be higher. If a creature within range of the countersong is already under the effect of a noninstantaneous magical attack of those kinds, it gains another saving throw against the effect each round it hears the countersong, but it must use the bard's Perform check result for the save. Countersong has no effect against effects that don't allow saves.
+
+\subcf{Fascinate (Sp)} A bard with 3 or more ranks in a Perform skill can
+use his music or poetics to cause   nearby creatures  to become
+fascinated with him. Each creature to be fascinated must be within
+\rngmed range, able to see and hear the bard, and able to pay attention to
+him. The bard must also be able to see the creature. The distraction
+of a nearby combat or other dangers prevents the ability from
+working.
+
+\par To use the ability, a bard makes a Perform check. His check result
+is the DC for each affected creature's Will save against the effect. If a
+creature's saving throw succeeds, the bard cannot attempt to
+fascinate that creature again for 24 hours. If its saving throw fails,
+the creature sits quietly and listens to the song, taking no other
+actions, for as long as the bard continues to play and concentrate (up
+to a maximum of 1 round per bard level). While fascinated, a target
+takes a \minus4 penalty on skill checks made as reactions, such as Perception checks. Any potential threat requires the bard to make
+another Perform check and allows the creature a new saving throw
+against a DC equal to the new Perform check result. Any obvious
+threat, such as someone drawing a weapon, casting a spell, or aiming
+a ranged weapon at the target, automatically breaks the effect. 
+
+Fascinate is an enchantment (compulsion), mind-affecting ability.
+
+\cf{Brd}{Spells} A bard casts arcane spells, which are drawn from the bard spell list. 
+
+He can cast any spell he knows by expending a spell slot of that spell's level or higher. 
+
+Every bard spell has a verbal component (singing, reciting, or music).
+
+To learn or cast a spell, a bard must have a Charisma score at least equal to the level of the spell. The Difficulty Class for a saving throw against a bard's spell is 10 \add 1/2 the bard's caster level \add the bard's Charisma.
+
+Like other spellcasters, a bard can cast only a certain number of spells of each spell level per day. His base daily spell allotment is given on \trefnp{The Bard}.
+
+The bard's selection of spells is extremely limited. A bard begins play knowing four 0-level spells of his choice. At most new bard levels, he gains one or more new spells, as indicated on \trefnp{Bard Spells Known}.
+
+At every bard level, a bard can choose to learn a new spell in place of one he already knows. In effect, the bard ``loses'' the old spell in exchange for the new one. The new spell's level must be the same as that of the spell being exchanged, and it must be at least two levels lower than the highest-level bard spell the bard can cast. A bard may swap only a single spell at any given level, and must choose whether or not to swap the spell at the same time that he gains new spells known for the level.
+
+A bard's magic level is equal to his bard level.
+
+\subsection{Cleric}
+\parhead{Hit Value} 5.
+\parhead{Class Skills} Knowledge (arcana) (Int), Knowledge (local) (Int), Knowledge (religion) (Int), Knowledge (the planes) (Int), Heal (Wis), Sense Motive (Wis), Spellcraft (Wis), Persuasion (Cha), and Intimidate (Cha).
+\parhead{Skill Points} 2.
+\parhead{Weapon and Armor Proficiencies} Simple weapons, any two other weapon groups, light and medium armor, and shields (except tower shields).
+\parhead{Base Attack Progression} Average.
+\parhead{Base Saving Throw Progressions} Average Fortitude, poor Reflex, good Will.
+\sssecfake{Class Features}
+
+\cf{Clr}{Domains} A cleric chooses two domains that embody his particular form of devotion. If he worships a deity, he chooses from among his deity's domains. Domains provide the cleric with special abilities and affect the spells a cleric can cast. A cleric gains one granted power from those offered by his two domains. A list of domains and their associated special abilities is given below.
+\subcf{Air} The cleric takes half damage from falling damage.
+\subcf{Chaos} The cleric gains Spell Focus (Chaos) as a bonus feat.
+\subcf{Death} The cleric does not suffer partial effects if he makes his saving throw against death effects. For example, he is not sickened by \spell{finger of death} if he makes his Fortitude save.
+\subcf{Destruction} The cleric can ignore half of the hardness of any object he damages, whether with spells or weapons.
+\subcf{Earth} The cleric gains Endurance as a bonus feat.
+\subcf{Evil} The cleric gains Spell Focus (Evil) as a bonus feat.
+\subcf{Fire} The cleric gains fire damage reduction 5.
+\subcf{Good} The cleric gains Spell Focus (Good) as a bonus feat.
+\subcf{Knowledge} The cleric adds all Knowledge skills to his cleric class skill list.
+\subcf{Law} The cleric gains Spell Focus (Law) as a bonus feat.
+\subcf{Life} The cleric gains Spell Focus (Healing) as a bonus feat.
+\subcf{Magic} The cleric gains Spell Focus (any) as a bonus feat.
+\subcf{Protection} When the cleric uses the aid another ability to improve an ally's armor class, he grants a \plus4 circumstance bonus instead of a \plus2 circumstance bonus.
+\subcf{Strength} The cleric adds Climb, Jump, and Swim to his cleric class skill list.
+\subcf{Travel} The cleric adds Survival to his cleric class skill list.
+\subcf{Trickery} The cleric adds Bluff and Disguise to his cleric class skill list.
+\subcf{War} The cleric gains Weapon Focus with his deity's favored weapon group as a bonus feat, even if he doesn't meet the prerequisites. If he does not have a deity, he gains it in a weapon group related to his alignment or ideals.
+\subcf{Water} The cleric gains a swim speed equal to his base land speed.
+
+\cf{Clr}{Spells}  A cleric casts divine spells.
+
+However, his alignment may restrict him from casting certain spells opposed to his moral or ethical beliefs; see Chaotic, Evil, Good, and Lawful Spells, below. A cleric must choose and prepare his spells in advance (see below).
+
+Most clerics use Charisma to cast spells. Clerics of specific deities may use a different casting ability, which affects all aspects of the cleric's spellcasting accordingly.
+
+To learn or cast a spell, a cleric must have a Charisma score at least equal to the spell's level. The Difficulty Class for a saving throw against a cleric's spell is 10 \add the spell level \add the cleric's Charisma.
+
+Like other spellcasters, a cleric can cast only a certain number of spells of each spell level per day.
+
+\par A cleric's selection of spells is limited. A cleric begins play knowing one 1st-level spell of his choice, plus two spells chosen from the list of spells offered by his domains.
+
+At each new cleric level, he gains one or more new spells, as indicated on \trefnp{Cleric Spells Known}. Two spells at every spell level must be drawn from the cleric's domains; sometimes these spells are normal spells on the cleric's spell list, but often they are additions to the spell list. A cleric may also choose spells from his domain lists with his normal spells known.
+
+\par A cleric can cast any spell he knows at any time, assuming he
+has not yet used up his spells per day for that spell level. For
+example, at 1st level, the cleric Cadius can cast four 1st-level
+spells per day. He knows four 1st-level spells: one of his choice, two from his domains, and either \spell{cure light wounds} or \spell{inflict light wounds} depending on his alignment (see \trefnp{Cleric Spells Known}). Thus, on any given day, he can cast some combination of the five spells a total of four times.
+
+\par A cleric may use a higher-level slot to cast a lower-level spell if he so chooses. For example, if an 8th-level cleric has used up all his 3rd-level spell slots for the day but wants to cast another third level spell, he could use a 4th-level slot to do so. The spell is still treated as its actual level, not the level of the slot used to cast it.
+
+\par At each cleric level, a cleric can choose to learn a
+new spell in place of one he already knows. In effect, the cleric ``loses''
+the old spell in exchange for the new one. The new spell's
+level must be the same as that of the spell being exchanged, and the spells
+must be of the same type; regular
+spells cannot be exchanged with domain spells, and the spells a cleric knows
+from his alignment cannot be exchanged in this way at all. A cleric may swap only a single
+spell at any given level, and must choose whether or not to swap the
+spell at the same time that he gains new spells known for the level.
+
+Clerics meditate or pray for their spells. Each cleric must choose a time at which he must spend 1 hour each day in quiet contemplation or supplication to regain his daily allotment of spells. Time spent resting has no effect on whether a cleric can prepare spells. A cleric may prepare and cast any spell on the cleric spell list, provided that he can cast spells of that level, but he must choose which spells to prepare during his daily meditation.
+
+A cleric's magic level is equal to his cleric level.
+
+
 \end{comment}
 
 \begin{comment}
@@ -522,7 +670,7 @@ A bard's magic level is equal to his bard level.
 \end{tabularx}
 \end{dtable}
 
-\cf{Brd}{Bardic Knowledge} Bardic Knowledge: A bard may make a special bardic knowledge check with a bonus equal to his bard level \add his Intelligence to see whether he knows some relevant information about local notable people, legendary items, or noteworthy places.
+\cf{Brd}{Bardic Knowledge} A bard may make a special bardic knowledge check with a bonus equal to his bard level \add his Intelligence to see whether he knows some relevant information about local notable people, legendary items, or noteworthy places.
 
 A successful bardic knowledge check will not reveal the powers of a magic item but may give a hint as to its general function. A bard may not take 10 or take 20 on this check; this sort of knowledge is essentially random.
 
