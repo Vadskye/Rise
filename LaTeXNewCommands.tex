@@ -61,7 +61,9 @@
 \newcommand{\appdescription}[7]{\subsubsection{#1} \parhead{Price (Level)} #2 gp (#3) \parhead{Body Location} #4 \parhead{Aura, Caster Level} #5, #6 \parhead{Activation} #7 \par}
 \newcommand{\appdescriptiondc}[8]{\appdescription{#1}{#2}{#3}{#4}{#5}{#6}{#7} \parhead{Saving Throw} #8\par}
 \newcommand{\impdescription}[6]{\subsubsection{#1} \parhead{Price (Level)} #2 gp (#3) \parhead{Aura, Caster Level} #4, #5 \parhead{Activation} #6 \par}
+\newcommand{\impdescriptionnoact}[5]{\subsubsection{#1} \parhead{Price (Level)} #2 gp (#3) \parhead{Aura, Caster Level} #4, #5 \par}
 \newcommand{\impdescriptiondc}[7]{\impdescription{#1}{#2}{#3}{#4}{#5}{#6} \parhead{Saving Throw} #7 \par}
+\newcommand{\impdescriptiondcnoact}[6]{\impdescription{#1}{#2}{#3}{#4}{#5} \parhead{Saving Throw} #6 \par}
 %Spell creation requirements, without descriptors
 %School, subschool, spell level, caster level, craft skill
 \newcommand{\mitemreq}[5]{\par \textit{Creation Requirements:} #1 (#2) #3; caster level #4 or #5}
@@ -125,7 +127,7 @@
 \newcommand{\monsavesnegative}[3]{\par \textbf{Fort} #1, \textbf{Ref} #2, \textbf{Will} #3}
 \newcommand{\monspeed}[1]{\textbf{Speed} #1}
 \newcommand{\monmelee}[1]{\par \textbf{Melee} #1}
-\newcommand{\monrng}[1]{\par \textbf{Ranged} #1}
+\newcommand{\monrange}[1]{\par \textbf{Ranged} #1}
 \newcommand{\monspace}[2]{\par \textbf{Space} #1 ft.; \textbf{Reach} #2 ft.}
 \newcommand{\monspacenofeet}[2]{\par \textbf{Space} #1; \textbf{Reach} #2}
 \newcommand{\moncmb}[2]{\par \textbf{BAB} \plus #1; \textbf{CMB} \plus #2}
