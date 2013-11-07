@@ -180,6 +180,7 @@ Persuasive  & \x &  \plus2 bonus on Intimidate and Persuasion checks, reroll 1/d
 Ranged Legerdemain & Ability to cast 2nd level spells & Use Disable Device or Sleight of Hand at range \\
 Skill Devotion\fn{1} & 13 ranks in a skill & Gain special ability based on the skill \\
 Skill Focus\fn{1} & \x &  \plus3 bonus on checks with selected skill, reroll 1/day \\
+Skill Training\fn{1} & \x & Gain two skills as class skills \\
 Survivalist & \x & \plus2 bonus on Heal and Survival checks, reroll 1/day \\
 Track  & \x &  Use Survival skill to track \\
 \end{tabularx}
@@ -194,12 +195,15 @@ Armor Proficiency (light)  & \x &  No armor check penalty on attack rolls \\
 \tind Armor Proficiency (medium) & Armor Proficiency (light) & No armor check penalty on attack rolls \\
 \tind \tind Armor Proficiency (heavy) & Armor Proficiency (medium) & No armor check penalty on attack rolls \\
 \tind Whirlwind Attack & Dex 3, Combat Expertise, Dodge, Mobility, Spring Attack, base attack bonus \plus4 & One melee attack against each opponent within reach \\
+Chargebreaker & Base attack bonus \plus4 & Gain \plus2 to attack and damage when readying against approaching foe \\
 Cleave & Str 3, base attack bonus \plus4 & Extra melee attack after dropping target \\
+\tind Cleaving Movement & Str 3, base attack bonus \plus8, Cleave & Continue movement after dropping target \\
 %Combat Finesse & \x & Add half Dexterity to damage with light, possibly medium weapons \\
 %Combat Reflexes & Dex 3 & \plus4 bonus on attacks of opportunity \\
 Dodge & Dex 3 & \plus4 AC against some attacks of opportunity from selected target \\
 \tind Mobility & Dodge & Avoid some attacks of opportunity from selected target \\
 \tind \tind Spring Attack & Mobility, base attack bonus \plus4 & Move before and after melee attacks \\
+Expert Tactician & Wis 3, base attack bonus \plus4 & Ready two actions at once \\
 Exotic Weapon Proficiency\footnotetemp{1} & Base attack bonus \plus1 & Don't provoke when attacking with exotic weapons \\
 Far Shot & \x & Increase range increment by 50\% or 100\% \\
 %Improved Critical\footnotetemp{1} & Proficient with weapon, base attack bonus \plus8 & Double threat range of weapon \\
@@ -259,6 +263,7 @@ Improved Trip & Base attack bonus \plus4 & \plus2 bonus on trip attacks; tripped
 \lcaption{Combat Style Feats}
 \begin{tabularx}{\textwidth}{>{\lcol}p{15em} >{\lcol}p{15em} >{\lcol}X}
 \thead{Combat Style Feats\fn{1}} & \thead{Prerequisites} & \thead{Benefit} \\
+Active Defense & Base attack bonus \plus4 & Take attacks of opportunity normally while fighting defensively \\
 Blind-Fight & \x &  Reroll miss chance for concealment in melee \\
 Cautious Attack & \x & Trade damage for CMD \\
 Combat Expertise & Int 3 & Trade attack bonus for AC \\
@@ -354,6 +359,11 @@ Here is the format for feat descriptions.
 \parhead{Special} Additional facts about the feat that may be helpful when you decide whether to acquire the feat.
 
 \subsection{General Feats}
+
+\subsubsection{Agile Movement [General]}
+\parhead{Prerequisite} Acrobatics 8 ranks.
+\parhead{Benefit} While running or charging, you can make a single turn of up to 90 degrees in the middle of the movement.
+\parhead{Normal} You cannot change direction while running or charging.
 
 \subsubsection{Augment Summoning [General]}
 \parhead{Prerequisite} Spell Focus (conjuration).
@@ -496,41 +506,56 @@ Choose a school of magic or a spell descriptor.
 \subsection{Skill Feats}
 
 \subsubsection{Acrobatic [Skill]}
-\parhead{Benefit} You get a \plus2 competence bonus on all Acrobatics checks and Jump checks. In addition, once per day you may reroll a skill check with either skill.
+\parhead{Benefit} You get a \plus2 competence bonus on all Acrobatics checks and Jump checks, and you may treat those skills as class skills.
 
 \subsubsection{Agile [Skill]}
-\parhead{Benefit} You get a \plus2 competence bonus on all Escape Artist checks and Stealth checks. In addition, once per day you may reroll a skill check with either skill.
+\parhead{Benefit} You get a \plus2 competence bonus on all Escape Artist checks and Stealth checks, and you may treat those skills as class skills.
 
 \subsubsection{Animal Affinity [Skill]}
-\parhead{Benefit} You get a \plus2 competence bonus on all Handle Animal checks and Ride checks. In addition, once per day you may reroll a skill check with either skill.
+\parhead{Benefit} You get a \plus2 competence bonus on all Handle Animal checks and Ride checks, and you may treat those skills as class skills.
 
 \subsubsection{Athletic [Skill]}
-\parhead{Benefit} You get a \plus2 competence bonus on all Climb checks and Swim checks. In addition, once per day you may reroll a skill check with either skill.
+\parhead{Benefit} You get a \plus2 competence bonus on all Climb checks and Swim checks, and you may treat those skills as class skills.
 
 \subsubsection{Deceitful [Skill]}
-\parhead{Benefit} You get a \plus2 competence bonus on all Bluff and Disguise checks. In addition, onec per day you may reroll a skill check with either skill.
+\parhead{Benefit} You get a \plus2 competence bonus on all Bluff and Disguise checks, and you may treat those skills as class skills.
 
 \subsubsection{Dilettante [Skill]}
 \parhead{Prerequisite} Int 3
 \parhead{Benefit} Choose a number of Knowledge skills equal to your Intelligence. You are treated as trained in those skills, even if you possess no ranks, allowing you to make Knowledge checks in those areas. If your Intelligence increases after taking this feat, you may choose additional Knowledge skills.
 
 \subsubsection{Diligent [Skill]}
-\parhead{Benefit} You get a \plus2 competence bonus on all Forgery and Linguistics checks. In addition, once per day you may reroll a skill check with either skill.
+\parhead{Benefit} You get a \plus2 competence bonus on all Forgery and Linguistics checks, and you may treat those skills as class skills.
+
+\subsubsection{Legendary Balance [Skill]}
+\featpre Acrobatics 13 ranks
+\featben You can balance on surfaces that cannot support your weight. The DC is 30 for liquids such as water, 35 for 
+
+\subsubsection{Legendary Climber [Skill]}
+\featpre Climb 13 ranks
+\featben You gain a climb speed equal to your land speed. This grants several benefits. 
+\begin{itemize*}
+  \item You can always take 10 on Climb checks, even when rushed, endangered, or distracted. 
+  \item You gain a \plus5 inherent bonus on Climb checks.
+  \item A successful Climb check allows you to move a distance equal to your climb speed.
+\end{itemize*}
+
+In addition, you can now climb surfaces that are perfectly smooth. The DC is 30 for perfectly smooth vertical surfaces, and 40 to climb on a perfectly smooth ceiling.
 
 \subsubsection{Magical Aptitude [Skill]}
-\parhead{Benefit} You get a \plus2 competence bonus on all Spellcraft checks and Use Magic Device checks. In addition, once per day you may reroll a skill check with either skill.
+\parhead{Benefit} You get a \plus2 competence bonus on all Spellcraft checks and Use Magic Device checks, and you may treat those skills as class skills.
 
 \subsubsection{Nimble Fingers [Skill]}
-\parhead{Benefit} You get a \plus2 competence bonus on all Disable Device checks and Sleight of Hand checks. In addition, once per day you may reroll a skill check with either skill.
+\parhead{Benefit} You get a \plus2 competence bonus on all Disable Device checks and Sleight of Hand checks, and you may treat those skills as class skills.
 
 \subsubsection{Open Minded [Skill]}
 \parhead{Benefit} You gain two skill points. You may spend these skill points immediately.
 
 \subsubsection{Perceptive [Skill]}
-\parhead{Benefit} You get a \plus2 competence bonus on all Perception checks and Sense Motive checks. In addition, once per day you may reroll a skill check with either skill.
+\parhead{Benefit} You get a \plus2 competence bonus on all Perception checks and Sense Motive checks, and you may treat those skills as class skills.
 
 \subsubsection{Persuasive [Skill]}
-\parhead{Benefit} You get a \plus2 competence bonus on all Intimidate checks and Persuasion checks. In addition, once per day you may reroll a skill check with either skill.
+\parhead{Benefit} You get a \plus2 competence bonus on all Intimidate checks and Persuasion checks, and you may treat those skills as class skills.
 
 \subsubsection{Ranged Legerdemain [Skill]}
 \parhead{Prerequisite} Ability to cast 2nd level spells
@@ -570,8 +595,11 @@ Choose a skill.
 \parhead{Benefit} You get a \plus3 competence bonus on all checks involving that skill. In addition, you once per day you may reroll a skill check with this skill.
 \parhead{Special} You can gain this feat multiple times. Its effects do not stack. Each time you take the feat, it applies to a new skill.
 
+\subsubsection{Skill Training [Skill]}
+\featben Choose any two skills. You treat those skills as class skills.
+
 \subsubsection{Survivalist [Skill]}
-\parhead{Benefit} You get a \plus2 competence bonus on all Heal checks and Survival checks. In addition, once per day you may reroll a skill check with either skill.
+\parhead{Benefit} You get a \plus2 competence bonus on all Heal checks and Survival checks, and you may treat those skills as class skills.
 
 \subsubsection{Track [Skill]}
 \parhead{Benefit} To find tracks or to follow them for 1 mile requires a successful Survival check. You must make another Survival check every time the tracks become difficult to follow.
@@ -623,11 +651,6 @@ If you fail a Survival check, you can retry after 1 hour (outdoors) or 10 minute
 
 \subsection{Combat Feats}
 
-\subsubsection{Acrobatic Charge [Combat]}
-\parhead{Prerequisite} Acrobatics 8 ranks.
-\parhead{Benefit} Difficult terrain does not prevent you from charging.
-\parhead{Normal} You cannot charge in difficult terrain.
-
 \subsubsection{Armor Proficiency (Heavy) [Combat]}
 \parhead{Prerequisites} Armor Proficiency (light), Armor Proficiency (medium).
 \parhead{Benefit} See Armor Proficiency (light).
@@ -645,9 +668,17 @@ If you fail a Survival check, you can retry after 1 hour (outdoors) or 10 minute
 \parhead{Normal} See Armor Proficiency (light).
 \parhead{Special} Fighters, barbarians, paladins, clerics, druids, and bards automatically have Armor Proficiency (medium) as a bonus feat. They need not select it.
 
+\subsubsection{Chargebreaker [Combat]}
+\parhead{Prerequisite} Base attack bonus \plus4
+\parhead{Benefit} When you ready an action to attack a foe that approaches you, you gain a \plus2 circumstance bonus to attack and damage on your attacks for the readied action.
+
 \subsubsection{Cleave [Combat]}
-\parhead{Prerequisites} Str 3, Power Attack.
+\parhead{Prerequisites} Str 3, base attack bonus \plus4
 \parhead{Benefit} Whenever you deal a creature enough damage to make it drop (typically by dropping it to below 0 hit points or killing it), you get an immediate extra melee attack against another creature within reach. You cannot move before making this extra attack. The extra attack is with the same weapon and at the same bonus as the attack that dropped the previous creature. There is no limit to the number of times you can use this feat per round.
+
+\subsubsection{Cleaving Movement [Combat]}
+\parhead{Prerequisites} Str 3, base attack bonus \plus8, Cleave
+\parhead{Benefit} If you move to attack a foe, including by charging, and deal enough damage to drop it during your attack, you can continue your movement (if you have any movement remaining) to attack another foe. You may take your extra attack from the Cleave feat before or after continuing your movement.
 
 %\subsubsection{Combat Finesse [Combat]}
 %\parhead{Benefit} You add half your Dexterity value to your damage rolls with light weapons. This is in addition to the damage provided by your Strength value. If you have a 5 Strength, you may also apply half your Dexterity value to your damage rolls with medium weapons.
@@ -681,6 +712,10 @@ You understand how to use exotic weapons in combat.
 \parhead{Benefit} You don't provoke attacks of opportunity when attacking with exotic melee weapons from weapon groups that you are proficient with, and you can use exotic ranged weapons from those groups without penalty.
 \parhead{Normal} When using a melee weapon with which you are not proficient, you provoke an attack of opportunity when you miss. When using a ranged weapon with which you are not proficient, you take a \minus4 penalty to attack rolls.
 
+\subsubsection{Expert Tactician [Combat ]}
+\parhead{Prerequisites} Wis 3, base attack bonus \plus4.
+\parhead{Benefit} When you take the Ready action, you can ready two actions at once, each with separate triggers.
+
 \subsubsection{Far Shot [Combat]}
 \parhead{Benefit} When you use a projectile weapon, such as a bow, its range increment increases by one-half (multiply by 1-1/2). When you use a thrown weapon, its range increment is doubled.
 
@@ -696,6 +731,11 @@ You understand how to use exotic weapons in combat.
 \subsubsection{Improved Initiative [Combat]}
 \parhead{Benefit} You get a \plus4 competence bonus on initiative checks.
 
+\subsubsection{Improved Quick Draw [Combat]}
+\featpres Base attack bonus \plus4, Quick Draw
+\featben You can draw a weapon as an immediate action. You can draw a hidden weapon as a swift action.
+\parhead{Normal} Without this feat, you may draw a weapon as a move action, or as a swift action as part of movement, and you can draw a hidden weapon as a standard action.
+
 \subsubsection{Improved Shield Bash [Combat]}
 \parhead{Prerequisite} Shield Proficiency.
 \parhead{Benefit} When you perform a shield bash, you may still apply the shield's shield bonus to your AC.
@@ -703,8 +743,8 @@ You understand how to use exotic weapons in combat.
 
 \subsubsection{Improved Unarmed Strike [Combat]}
 \parhead{Benefit} You are considered to be armed even when unarmed -- that is, you do not provoke attacks or opportunity from armed opponents when you attack them while unarmed. However, you still get an attack of opportunity against any opponent who makes an unarmed attack on you.
-In addition, your unarmed strikes can deal lethal or nonlethal damage, and can be considered light or medium weapons, at your option.
-\parhead{Normal} Without this feat, you are considered unarmed when attacking with an unarmed strike, you can deal only nonlethal damage with such an attack, and unarmed strikes are always considered light weapons.
+In addition, your unarmed strikes can deal lethal or nonlethal damage as you choose.
+\parhead{Normal} Without this feat, you are considered unarmed when attacking with an unarmed strike, and you can deal only nonlethal damage with such an attack.
 \parhead{Special} A monk automatically gains Improved Unarmed Strike as a bonus feat at 1st level. She need not select it.
 
 \subsubsection{Mobility [Combat]}
@@ -725,10 +765,9 @@ In addition, your unarmed strikes can deal lethal or nonlethal damage, and can b
 \parhead{Normal} Without this feat, you add half your Strength to damage.
 
 \subsubsection{Quick Draw [Combat]}
-\parhead{Prerequisite} Base attack bonus \plus1.
-\parhead{Benefit} You can draw a weapon as a swift action instead of as a move action. You can draw a hidden weapon (see the Sleight of Hand skill) as a move action.
+\parhead{Benefit} You can draw a weapon as a swift action. You can draw a hidden weapon (see the Sleight of Hand skill) as a move action.
 \par A character who has selected this feat may throw weapons at his full normal rate of attacks (much like a character with a bow).
-\parhead{Normal} Without this feat, you may draw a weapon as a move action, or (if your base attack bonus is \plus1 or higher) as a swift action as part of movement. Without this feat, you can draw a hidden weapon as a standard action.%Quick Draw
+\parhead{Normal} Without this feat, you may draw a weapon as a move action, or as a swift action as part of movement, and you can draw a hidden weapon as a standard action.
 
 \subsubsection{Rapid Reload [Combat]}
 \parhead{Prerequisite} Proficiency with crossbows.
@@ -867,6 +906,11 @@ Choose one weapon group for which you have already selected the Weapon Focus fea
 
 \subsection{Combat Style Feats}
 
+\subsubsection{Active Defense [Combat Style]}
+\parhead{Prerequisite} Base attack bonus \plus4.
+\parhead{Benefit} You take no penalty on attacks of opportunity while fighting defensively, and can make attacks of opportunity at a \minus4 penalty while taking the total defense action.
+\parhead{Style Requirement} Must fight defensively or take the total defense action each round.
+
 \subsubsection{Blind-Fight [Combat Style]}
 \parhead{Benefit} In melee, every time you miss because of concealment, you can reroll your miss chance percentile roll one time to see if you actually hit.
 \par An invisible attacker gets no advantages related to hitting you in melee. That is, you are not flat-footed, and the attacker doesn't get the usual \plus2 bonus for being invisible. The invisible attacker's bonuses do still apply for ranged attacks, however.
@@ -882,7 +926,7 @@ Choose one weapon group for which you have already selected the Weapon Focus fea
 
 \subsubsection{Combat Expertise [Combat Style]}
 \parhead{Prerequisite} Int 3.
-\parhead{Benefit} You can choose to take a \minus2 penalty on attack rolls, including combat maneuvers, to gain a \plus2 circumstance bonus to your dodge modifier. \bonusscalingdescription In addition, you increase the bonus gained from using the total defense action (see \pref{Total Defense}) by the same amount.
+\parhead{Benefit} You can choose to take a \minus2 penalty on attack rolls, including combat maneuvers, to gain a \plus2 circumstance bonus to your dodge modifier. \bonusscalingdescription In addition, you increase the bonus gained from using the total defense action (see \pref{Total Defense}) by the same amount. You cannot fight defensively while using this combat style.
 \parhead{Style Requirement} Must full attack or take the total defense action each round.
 \parhead{Normal} A character without the Combat Expertise feat can fight defensively while using the full attack action to take a \minus4 penalty on attack rolls and gain a \plus2 circumstance bonus to its dodge modifier.
 
@@ -1104,7 +1148,7 @@ If you have 14 Hit Values, you gain a fly speed equal to your base land speed, t
 
 \subsubsection{Energetic Substitution [Metamagic]}
 \parhead{Prerequisite} Caster level 4th.
-\parhead{Benefit} When casting a substituted spell, you can choose what kind of energy damage it deals: acid, cold, fire, or electricity. This can only be applied to spells that originally dealt energy damage. A substituted spell uses up a spell slot one level higher than the spell's actual level.
+\parhead{Benefit} When casting a substituted spell, you can choose what kind of energy damage it deals: cold, fire, or electricity. This can only be applied to spells that originally dealt cold, fire, or electricity damage. A substituted spell uses up a spell slot one level higher than the spell's actual level.
 
 \subsubsection{Heighten Spell [Metamagic]}
 \parhead{Prerequisite} Caster level 4th.
