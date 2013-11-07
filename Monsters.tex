@@ -57,8 +57,8 @@ A typical encounter involves the same number of monsters as PCs. Each monster in
 \subsection{Example}
 \montypes{Align}{Size}{type}{CR}{Archetypes}
 %\montypessubtypes{Align}{Size}{type}{subtypes}{CR}{Archetypes}
-\msenses{Init}{\plus Perception}
-%\msensesfull{Init}{\plus Perception}{\plus Spellcraft}{Special senses}
+\monsenses{Init}{\plus Perception}
+%\monsensesfull{Init}{\plus Perception}{\plus Spellcraft}{Special senses}
 \monspace{Space}{Reach}; \monspeed{Speed ft.}%;\monaura{Aura}
 \monlanguages{Languages}
 
@@ -81,52 +81,90 @@ A typical encounter involves the same number of monsters as PCs. Each monster in
 \monattributes{}{}{}{}{}{}
 \monfeats{Feats}
 \monskills{Skills}
+%\monitems{Items}
 
 \monlinerule
 
 \monability{Name}{Effect}
 
-\mondescription{Example}
+\mondescription{Monster Name}
 
-\monbehavior{Example}
+\monbehavior{Monster Name}
 
 \end{comment}
-\subsection{Angel, Astral Deva}
-\montypessubtypes{NG}{Medium}{outsider}{angel, extraplanar, good}{CR}{Archetypes}
-%\montypessubtypes{Align}{Size}{type}{subtypes}{CR}{Archetypes}
-\monsensesspecial{Init}{\plus Perception}{Darkvision 60 ft.}
-%\msensesfull{Init}{\plus Perception}{\plus Spellcraft}{Special senses}
-\monspace{Space}{Reach}; \monspeed{Speed ft.}%;\monaura{Aura}
-\monlanguages{Languages}
+
+\subsection{Human Warrior}
+\montypes{Varies}{Medium}{humanoid}{1}{}
+\monsenses{0}{\plus0}
+%\monsensesfull{Init}{\plus Perception}{\plus Spellcraft}{Special senses}
+\monspace{5}{5}; \monspeed{30 ft.}%;\monaura{Aura}
+\monlanguages{Common}
 
 \monlinerule 
 
-\monac{Normal}{Touch}{Flat}{CMD}{modifiers}
-\monhp{HP}{HV}
+\monac{14}{12}{12}{13}{\plus2 armor, \plus2 shield}
+\monhp{5}{1}
 %\monimmune{immunities}
 %\monresist{resistances}
-\monsaves{Fort}{Ref}{Will}
+\monsaves{2}{0}{0}
 
 \monlinerule
 
-\monmelee{Melee}
-\moncmb{BAB}{CMB}
-\monsa{Spell-like abilities, stun}
-\monsq{Physical damage reduction 10/evil, 
+\monmelee{Longsword \plus1 (d8)}
+\moncmb{1}{1}
+%\monsa{}
 
 \monlinerule 
 
-\monattributes{}{}{}{}{}{}
+\monattributes{10}{10}{10}{10}{10}{10}
 \monfeats{Feats}
-\monskills{Skills}
+\monskills{}
+\monitems{Leather armor, longsword, heavy wooden shield}
 
 \monlinerule
 
-\monability{Name}{Effect}
+\mondescription{Human Warrior}
 
-\mondescription{Example}
+\monbehavior{Human Warrior}
 
-\monbehavior{Example}
+\subsection{Kobold Warrior}
+\montypessubtypes{LE}{Small}{humanoid}{reptilian}{1}{Ambush}
+\monsensesspecial{3}{\plus 1}{Low-light vision}
+%\monsensesfull{Init}{\plus Perception}{\plus Spellcraft}{Special senses}
+\monspace{5}{5}; \monspeed{30 ft.}%;\monaura{Aura}
+\monlanguages{Draconic}
+
+\monlinerule 
+
+\monacspecial{16}{14}{14}{10}{\plus4 vs attacks of opportunity from Dodge target}{\plus1 size, \plus3 Dex, \plus2 armor, \plus1 natural}
+\monhp{4}{1}
+%\monimmune{immunities}
+%\monresist{resistances}
+\monsaves{0}{3}{\minus3}
+
+\monlinerule
+
+\monmelee{Shortspear \plus4 (d4-1)}
+\monrange{Shortspear (20 ft.) \plus4 (d4-1)}
+\moncmb{1}{\minus5}
+
+\monlinerule 
+
+%Original: 0,2,0,-1,1,-2
+%Racial: -2 str, -1 con, +1 dex
+\monattributes{\minus2}{3}{\minus1}{\minus1}{1}{\minus2}
+\monfeats{Dodge}
+\monskills{Jump \plus0, Escape Artist \plus3, Craft (trapmaking) \minus1}
+\monitems{Leather, shortspear}
+
+\monlinerule
+
+\mondescription{Kobold Warrior}
+Kobolds are short, reptilian humanoids with cowardly and sadistic tendencies. A kobold's scaly skin ranges from dark rusty brown to a rusty black color. It has glowing red eyes. Its tail is nonprehensile. Kobolds wear ragged clothing, favoring red and orange. A kobold is 2 to 2-1/2 feet tall and weighs 35 to 45 pounds. Kobolds speak with a voice that sounds like that of a yapping dog.
+
+\monbehavior{Kobold Warrior}
+Kobolds like to attack with overwhelming odds -- at least two to one -- or trickery; should the odds fall below this threshold, they usually flee. However, they attack gnomes on sight if their numbers are equal.
+They begin a fight by slinging bullets, closing only when they can see that their foes have been weakened. Whenever they can, kobolds set up ambushes near trapped areas.
 
 \section{Monster Feats}
 
@@ -247,7 +285,7 @@ The creature can drop a creature it has snatched as a free action or use a stand
 
 The change of direction consumes 10 feet of flying movement.
 
-\section{Types, Subtypes, and Abilities}
+\section{Types, kkSubtypes, and Abilities}
 
 
 \subsection{Monster Types}
