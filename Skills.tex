@@ -309,13 +309,14 @@ rope affected by the \spell{rope trick} spell.  \\
 very rough wall or a ship's rigging. \\
 15 & Any surface with adequate handholds and footholds
 (natural or artificial), such as a very rough natural rock
-surface or a tree, or an unknotted rope, or pulling yourself
+surface or a tree, or a knotted rope, or pulling yourself
 up when dangling by your hands. \\
-20 & An uneven surface with some narrow handholds and
-footholds, such as a typical wall in a dungeon or ruins. \\
+20 & An uneven surface with limited handholds and
+footholds, such an unknotted rope or a typical wall in a ruins. \\
 25 & A rough surface, such as a natural rock wall or a brick wall. \\
-25 & An overhang or ceiling with handholds but no footholds. \\
-\x & A perfectly smooth, flat, vertical surface cannot be climbed. \\
+30 & An uneven overhang or ceiling with limited handholds and footholds, such as a typical ceiling in a ruins. \\
+35 & A rough overhand or ceiling, such as a natural rock ceiling \\
+\x & A perfectly smooth, flat, surface cannot be climbed. \\
 \end{tabularx}
 \end{dtable}
 
@@ -323,16 +324,18 @@ footholds, such as a typical wall in a dungeon or ruins. \\
 \lcaption{Climb Modifiers}
 \begin{tabularx}{\columnwidth}{l X}
 \thead{Climb DC Modifier\footnotetemp{1}} & \thead{Example Surface or Activity} \\
-\minus10 & Climbing a chimney (artificial or natural) or other location
+\minus5 & Inclined surface (between 45 and 60 degrees) \\
+\minus5 & Climbing a chimney (artificial or natural) or other location
 where you can brace against two opposite walls \\
-\minus5 & Climbing a corner where you can brace against
+\minus2 & Climbing a corner where you can brace against
 perpendicular walls \\
-\plus5 & Surface is slippery \\
+\plus2 & Surface is slightly slippery, such as solid ice
+\plus5 & Surface is very slippery, such as rocks covered in oil or drenched in rain \\
 \end{tabularx}
 1 These modifiers are cumulative; use any that apply.
 \end{dtable}
 
-You need both hands free to climb, but you may cling to a wall with one hand while you cast a spell or take some other action that requires only one hand. While climbing, you can't move to avoid a blow, so you lose your Dexterity bonus to AC (if any). You also can't use a shield while climbing.
+You need both hands free to climb, but you may cling to a wall with one hand while you cast a spell or take some other action that requires only one hand. While climbing, you can't move to avoid a blow, so you are flat-footed.
 
 Any time you take damage while climbing, make a Climb check against the DC of the slope or wall. Failure means you fall from your current height and sustain the appropriate falling damage.
 
