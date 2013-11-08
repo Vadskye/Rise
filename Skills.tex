@@ -203,56 +203,46 @@ The skill name line includes (in addition to the name of the skill) the followin
 \subsection{Acrobatics (Dex; Armor Check Penalty)}
 The Acrobatics skill can be used for two purposes: balancing and tumbling. These are not different skills, but merely different applications of the same skill.
 \subsubsection{Balance}
-\parhead{Check} You can walk on a precarious surface. A successful check lets you move at half your speed along the surface for 1 round. A failure by 4 or less means you can't move for 1 round. A failure by 5 or more means you fall. The difficulty varies with the surface, as follows.
-\begin{dtable}
-\lcaption{Balance DCs}
-\begin{tabularx}{\columnwidth}{X l X l}
-\thead{Narrow Surface} & \thead{Balance DC\fn{1}} & \thead{Difficult Surface} & \thead{Balance DC\fn{1}} \\
-7-12 inches wide & 10 & Uneven flagstone & 10\fn{2} \\
-2-6 inches wide & 15 & Hewn stone floor & 10\fn{2} \\
-Less than 2 inches wide & 20 & Sloped or angled floor & 10\fn{2} \\
-\end{tabularx}
-1 Add modifiers from Narrow Surface Modifiers, below, as appropriate. \\
-2 Only if running or charging. Failure by 4 or less means the character can't run or charge, but may otherwise act normally.
-\end{dtable}
+\parhead{Check} You can walk on a precarious surface. A successful check lets you move at half your speed along the surface for 1 round. A failure by 4 or less means your action is wasted, and you don't move. A failure by 5 or more means you fall. The difficulty varies with the surface, as follows.
 
-\begin{dtable}
-\lcaption{Narrow Surface Modifiers}
-\begin{tabularx}{\columnwidth}{X l}
-\thead{Surface} & \thead{DC Modifier\fn{1}} \\
-Lightly obstructed  & \plus2 \\
-Severely obstructed & \plus5 \\
-Lightly slippery& \plus2 \\
-Severely slippery & \plus5 \\
-Sloped or angled & \plus2 \\
-\end{tabularx}
-1 Add the appropriate modifier to the Balance DC of a narrow surface. These modifiers stack.
-\end{dtable}
+\begin{itemize*}
+  \item Uneven floor (flagstones, sloped floor): DC 10. This only applise when running or charging. Failure means you lose a move action (and possibly fall), but you can still take a standard action.
+  \item One foot wide (or wider): DC 5. 
+  \item Six inches wide: DC 10.
+  \item Two inches wide: DC 15.
+  \item One inch wide: DC 20. Halving the width of the surface further increases the DC by 5 each time.
+\end{itemize*}
 
 \subsk{Being Attacked while Balancing} You are considered flat-footed while balancing, since you can't move to avoid a blow. If you take damage or are forced to move while balancing, you must make another Acrobatics check against the same DC to remain standing.
 
+\subsk{Accelerated Movement} If you beat the DC for the surface by 10, you can move at full speed instead of at half speed.
+
 \subsubsection{Tumble}
 You can only attempt to tumble if you are trained in Acrobatics.
-\parhead{Check} You can land softly when you fall or tumble past opponents. You can also tumble to entertain an audience (as though using the Perform skill). The DCs for various tasks involving tumbling are given on the table below.
-\par You can tumble past opponents in combat to reduce your odds of getting hit. You can tumble at one-half your normal speed as part of normal movement. If you do, make an Acrobatics check. If the result is higher than your armor class, you may use it against attacks of opportunity provoked by the movement.
-\par You can also try to tumble through an area occupied by an enemy. However, the enemy whose area you are trying to tumble through gets a \plus10 bonus to hit you on its attack of opportunity, and if you are hit, you must stop your movement before entering the enemy-occupied area. Trying to go through an enemy's space is difficult. If the tumble check you make as part of the movement does not exceed 25, you must stop before entering the enemy-occupied area and provoke an attack of opportunity.
-\par Obstructed or otherwise treacherous surfaces, such as natural cavern floors or undergrowth, are tough to tumble through. The DC for any Acrobatics check made to tumble into such a square is modified as indicated below.
+\parhead{Check} You can tumble past opponents in combat to reduce your odds of getting hit. You can tumble at one-half your normal speed as part of normal movement. If you do, make an Acrobatics check. You may treat your check result as your Armor Class against attacks of opportunity provoked by the movement.
+
+You can also try to tumble to reduce falling damage as an immediate action. A DC 10 check allows you to treat a fall as if it were 10 feet shorter. For every 5 by which you beat that DC, you double the length of the fall that you can mitigate.
+
+\subsubsection{Acrobatics Modifiers}
+Obstructed or otherwise treacherous surfaces, such as natural cavern floors or undergrowth, are tough to balance or tumble through. The DC for any Acrobatics check in such a square (except checks to mitigate falling damage) is modified as indicated below.
 \begin{dtable}
-\lcaption{Tumble Modifiers}
+\lcaption{Acrobatics Modifiers}
 \begin{tabularx}{\columnwidth}{>{\lcol}X c}
 \thead{Surface Is} & \thead{DC Modifier} \\
-Lightly obstructed (scree, light rubble, shallow bog\footnotetemp{1}, undergrowth)  & \plus2 \\
-Severely obstructed (natural cavern floor, dense rubble, dense undergrowth)  & \plus5 \\
+Lightly obstructed (scree, light rubble, shallow bog, light undergrowth)  & \plus2 \\
+Severely obstructed (dense rubble, dense undergrowth)  & \plus5 \\
 Lightly slippery (wet floor)  & \plus2 \\
-Severely slippery (ice sheet)  & \plus5 \\
-Sloped or angled  & \plus2
+Severely slippery (ice sheet, oiled floor)  & \plus5 \\
+Sloped or angled  & \plus2 \\
+Slightly mobile (rope bridge) & \plus2 \\
+Very mobile (slack rope) & \plus5 \\
 \end{tabularx}
-1 Tumbling is impossible in a deep bog.
 \end{dtable}
 
-\subsk{Accelerated Movement} If you beat the Acrobatics DC by 10, you can move at full speed when balancing or tumbling. Moving twice your speed in a round does not require two Acrobatics checks. Instead, the first result is also used for the second movement, if any.) You may also accept this penalty in order to charge or tumble across a precarious surface; doing so requires one Acrobatics check for each multiple of your speed (or fraction thereof) that you charge.
-\parhead{Action} Not applicable. Balancing and tumbling are a part of movement, so an Acrobatics check is made as part of a move action.
-\parhead{Try Again} Varies. You can continue trying to balance on a precarious surface as long as you remain on the surface. You can try to reduce damage from a fall as an instant reaction only once per fall.
+\subsk{Accelerated Movement} If you take a \minus10 penalty on your Acrobatics check to tumble, you move at full speed instead of at half speed.
+
+\parhead{Action} Balancing and tumbling are a part of movement, so an Acrobatics check is made as part of a move action. Reducing damage from a fall is an immediate action.
+\parhead{Try Again} Varies. You can continue trying to balance on a precarious surface as long as you remain on the surface. You can try to reduce damage from a fall only once per fall.
 
 \subsection{Bluff (Cha)}
 \parhead{Check} A Bluff check is opposed by the target's Sense Motive check. See the accompanying table for examples of different kinds of bluffs and the modifier to the target's Sense Motive check for each one.
@@ -329,8 +319,8 @@ footholds, such an unknotted rope or a typical wall in a ruins. \\
 where you can brace against two opposite walls \\
 \minus2 & Climbing a corner where you can brace against
 perpendicular walls \\
-\plus2 & Surface is slightly slippery, such as solid ice
-\plus5 & Surface is very slippery, such as rocks covered in oil or drenched in rain \\
+\plus2 & Surface is slightly slippery, such as damp stone \\
+\plus5 & Surface is very slippery, such as ice or oil-covered stone 
 \end{tabularx}
 1 These modifiers are cumulative; use any that apply.
 \end{dtable}
@@ -369,6 +359,7 @@ Like Knowledge, Perform, and Profession, Craft is actually a number of separate 
   \item Metalsmithing
   \item Stonemasonry
   \item Textiles (Cloth, fabric)
+  \item Trapmaking
   \item Woodworking
 \end{itemize*}
 
@@ -383,7 +374,7 @@ To determine how much time and money it takes to make an item, follow these step
 \item Find the item's price. Put the price in silver pieces (1 gp = 10 sp).
 \item Determine the item's DC (see the table below).
 \item Pay one-third of the item's price for the cost of raw materials.
-\item Make an appropriate Craft check representing one day's work. If the check succeeds, multiply your check result by your ranks in the relevant Craft skill. For every 5 points by which you exceed the DC, double your check result for the purpose of determining how quickly you craft the item. If this result equals the price of the item in sp, then you have completed the item. (If the result \mtimes the DC equals double or triple the price of the item in silver pieces, then you've completed the task in one-half or one-third of the time. Other multiples of the DC reduce the time in the same manner.) If the result \mtimes the DC doesn't equal the price, then it represents the progress you've made that day. Record the result and make a new Craft check for the next week. Each day, you make more progress until your total reaches the price of the item in silver pieces.
+\item Make an appropriate Craft check representing one day's work. If the check succeeds, multiply your check result by your ranks in the relevant Craft skill. For every 5 points by which you exceed the DC, double your check result for the purpose of determining how quickly you craft the item. If this result equals the price of the item in sp, then you have completed the item. (If the result \mtimes your ranks equals double or triple the price of the item in silver pieces, then you've completed the task in one-half or one-third of the time. Other multiples of the DC reduce the time in the same manner.) If the result \mtimes the DC doesn't equal the price, then it represents the progress you've made that day. Record the result and make a new Craft check for the next day. Each day, you make more progress until your total reaches the price of the item in silver pieces.
 \end{enumerate*}
 
 If you fail a check by 4 or less, you make no progress that day. If you fail by 5 or more, you ruin the raw materials and have to pay the cost again.
@@ -398,29 +389,28 @@ Note that raw materials for some items, particularly alchemical items, may be ha
 \begin{tabularx}{\columnwidth}{>{\lcol}X l >{\lcol}p{4em}}
 \thead{Item} & \thead{Craft Skill} & \thead{Craft DC} \\
 Acid & Alchemy\footnotetemp{1} & 15 \\
-Alchemist's fire, smokestick, or tindertwig & Alchemy\footnotetemp{1} & 20 \\
-Antitoxin, sunrod, tanglefoot bag, or thunderstone & Alchemy\footnotetemp{1} & 25 \\
-Armor or shield & Armorsmithing & 10 \add AC bonus \\
-Longbow or shortbow & Bowmaking & 12 \\
-Composite longbow or composite shortbow & Bowmaking & 15 \\
-Composite longbow or composite shortbow with high strength rating & Bowmaking & 15 \add  (2 \mtimes rating) \\
+Alchemist's fire, smokestick, or tindertwig & Alchemy & 20 \\
+Antitoxin, sunrod, tanglefoot bag, or thunderstone & Alchemy & 25 \\
+Armor or shield & Metalsmithing or woodworking & 10 \add AC bonus \\
+Longbow or shortbow & Woodworking & 12 \\
+Composite longbow or composite shortbow & Woodworking & 15 \\
+Composite longbow or composite shortbow with high strength rating & Woodworking & 15 \add  (2 \mtimes rating) \\
 Crossbow & Weaponsmithing & 15 \\
-Simple melee or thrown weapon & Weaponsmithing & 12 \\
-Martial melee or thrown weapon & Weaponsmithing & 15 \\
-Exotic melee or thrown weapon & Weaponsmithing & 18 \\
-Mechanical trap & Trapmaking & Varies\footnotetemp{2} \\
+Simple melee or thrown weapon & Metalsmithing or woodworking & 12 \\
+Martial melee or thrown weapon & Metalsmithing or woodworking & 15 \\
+Exotic melee or thrown weapon & Metalsmithing or woodworking & 18 \\
+Mechanical trap & Trapmaking & Varies\footnotetemp{1} \\
 Very simple item (wooden spoon) & Varies & 5 \\
 Typical item (iron pot) & Varies & 10 \\
 High-quality item (bell) & Varies & 15 \\
-Complex or superior item & (lock) & Varies 20 \\
+Complex or superior item (lock)  & Varies & 20 \\
 \end{tabularx}
-1 You must be a spellcaster to craft any of these items.
-2 Traps have their own rules for construction.
+1 Traps have their own rules for construction.
 \end{dtable}
 
 \subsk{Magic Items} For every 5 ranks that you have in each Craft skill, choose a subschool of magic, as described in Chapter 10: Magic. If you have the Imbue Magic feat, you can craft items from that subschool of magic using that Craft skill. The Versatile Crafter feat increases the number of subschools you learn in each Craft skill to one per two ranks.
 
-\parhead{Action} Does not apply. Craft checks are made by the day or week (see above).
+\parhead{Action} Does not apply. Craft checks are made by the day (see above).
 
 \parhead{Try Again} Yes, but each time you miss by 5 or more, you ruin half the raw materials and have to pay half the original raw material cost again.
 
