@@ -46,7 +46,7 @@ Combat feats always affect a character's combat abilities. Fighters gain bonus f
 Combat maneuver feats are combat feats which specifically deal with combat maneuvers -- pushing opponents around, grappling them, tripping them, or other unusual attacks. Any feat designated as a combat maneuver feat is also considered a combat feat and can be selected as a fighter's bonus feat.
 
 \subsection{Combat Style Feats}
-Combat style feats grant a character the ability to fight in a particular style, granting them bonuses while fighting in that style. A character can only fight in one style at once. Initiating a style or changing to a different style is a swift action, but a style can be stopped as a free action.
+Combat style feats grant a character the ability to fight in a particular style, granting them bonuses while fighting in that style. A character can only fight in one style at once. Initiating a style or changing to a different style is a swift action, but a style can be stopped as a free action. Any feat designated as a combat maneuver feat is also considered a combat feat and can be selected as a fighter's bonus feat.
 
 Some style feats have style requirements. To gain the benefits of a combat style with a style requirement, a character must take some action or fulfill some condition during his turn. If the condition is not met, the character automatically stops fighting in that style at the end of his turn. For example, a character using the Power Attack style must charge or full attack with a melee weapon each round. If the character takes the total defense action instead, he stops using the Power Attack style at the end of his turn.
 
@@ -172,6 +172,14 @@ Athletic  & \x &  \plus2 bonus on Climb and Swim checks, reroll 1/day \\
 Deceitful  & \x &  \plus2 bonus on Bluff and Disguise checks, reroll 1/day \\
 Diligent  & \x &  \plus2 bonus on Forgery and Linguistics checks, reroll 1/day \\
 Dilettante & Int 3 & Use some Knowledge skills despite being untrained \\
+Legendary Balance & Acrobatics 13 ranks & Balance on impossible surfaces \\
+Legendary Climber & Climb 13 ranks & Gain climb speed, climb on impossible surfaces \\
+Legendary Craftsman & Craft 13 ranks & Craft items with fewer material components \\
+Legendary Devicesmith & Devices 13 ranks & Disable active spell effects \\
+Legendary Disguise & Disguise 13 ranks & Alter magical auras with disguise \\
+Legendary Escapist & Escape Artist 13 ranks & Escape from magical effects \\
+Legendary Liar & Bluff 13 ranks & Lies become undetectable by magic \\
+Legendary Tumbler & Tumble 13 ranks & \\
 Magical Aptitude  & \x &  \plus2 bonus on Spellcraft and Use Magic Device checks, reroll 1/day \\
 Nimble Fingers  & \x &  \plus2 bonus on Disable Device and Sleight of Hand checks, reroll 1/day \\
 Open Minded & \x & Gain two skill points. \\
@@ -532,7 +540,7 @@ Choose a school of magic or a spell descriptor.
 \featben You can balance on surfaces that cannot support your weight. The DC is 30 for liquids such as water, 35 for dense gases and raw energy, and 40 for ordinary air. While balancing in this way, you must take a move action each round to continue moving; you cannot remain in the same place in consecutive rounds, or you will fall. The DC increases by 2 for each consecutive round that you spend balancing in this way.
 
 \subsubsection{Legendary Climber [Skill]}
-\featpre Climb 13 ranks
+\featpre Climb 13 ranks.
 \featben You gain a climb speed equal to your land speed. This grants several benefits. 
 \begin{itemize*}
   \item You can always take 10 on Climb checks, even when rushed, endangered, or distracted. 
@@ -543,15 +551,35 @@ Choose a school of magic or a spell descriptor.
 In addition, you can now climb surfaces that are perfectly smooth. The DC is 30 for perfectly smooth vertical surfaces, and 40 to climb on a perfectly smooth ceiling.
 
 \subsubsection{Legendary Craftsman [Skill]}
-\featpre Craft (any) 13 ranks
-\featben You can craft items with whatever materials you have on hand. When making an item, if your Craft check exceeds 30, you use half the normal material components to make the item. For every 10 points by which the check exceeds 30, you halve the required material components again. This only applies once per item; use the highest result achieved while making that item.
+\featpre Craft (any) 13 ranks.
+\featben You can craft items with whatever materials you have on hand. When making an item, if your Craft check exceeds 30, you use half the costly material components to make the item, replacing them with other, less expensive components. For every 10 points by which the check exceeds 30, you halve the required material components again. This only applies once per item; use the highest result achieved while making that item.
+
+This feat does not affect the material components required to craft magical items.
+
+\subsubsection{Legendary Devicesmith [Skill]}
+\featpre Devices 13 ranks.
+\featben You can disable spell effects on objects or areas as if they were merely complex devices. You can make a Devices check against a spell effect within 5 feet of you. If your check result exceeds 30, it may dispel the effect. The DC to dispel the effect is equal to 20 \add the spell's caster level. Failure indicates that the spell is not dispelled. 
+
+You must be aware of a spell to disable it, either through the Spellcraft skill or because the effect is noticeable. You cannot disable spell effects on creatures.
+
+\subsubsection{Legendary Disguise [Skill]}
+\featpre Disguise 13 ranks.
+\featben Your disguises can change the magic on a creature. When you make a Disguise check, if the result exceeds 30, you can decide how that creature and any items on the creature appear when examined by divination spells. For example, you could cause all of its equipment to appear nonmagical, or you could cause it to have a strong aura of good when examined with \spell{detect good}. You cannot create an aura of overwhelming strength with this skill.
+
+Anyone using divination magic on the creature must make a caster level check with a DC equal to your Disguise check in order to perceive the truth. If that check fails, the caster is unaware that any deception exists. Whether or not the check succeeds, you are not aware whether the disguise was penetrated in this way.
+
+\subsubsection{Legendary Escapist [Skill]}
+\featpre Escape Artist 13 ranks.
+\featben You can attempt to escape from magic itself, slipping hostile spells off of your body so they dissipate harmlessly. As a full-round action, you can make an Escape Artist check to throw off magical effects on you. If the result exceeds 30, it may dispel the effect. The DC to dispel the effect is equal to 11 \add the effect's caster level. Failure indicates that the spell is not dispelled.
+
+You must be aware of a spell to disable it, either through the Spellcraft skill or because the effect is noticeable. You can only dispel spell effects which target you directly, not area effects which include you. If a spell targets multiple creatures, you can only remove its effects on you.
 
 \subsubsection{Legendary Liar [Skill]}
-\featpre Bluff 13 ranks
-\featben Your lies can fool even magic. When you make a Bluff check, if the result exceeds 30, anyone using divination magic must make a caster level check with a DC equal to your Bluff check in order to perceive anything contrary to your lie. If it fails, the caster is unaware that any deception exists. Whether or not the check succeeds, you are not aware whether your lie was revealed in this way.
+\featpre Bluff 13 ranks.
+\featben Your lies can fool even magic. When you make a Bluff check, if the result exceeds 30, anyone using divination magic must make a caster level check with a DC equal to your Bluff check in order to perceive anything contrary to your lie. If that check fails, the caster is unaware that any deception exists. Whether or not the check succeeds, you are not aware whether your lie was revealed in this way.
 
 \subsubsection{Legendary Tumbler [Skill]}
-\featpre Acrobatics 13 ranks
+\featpre Acrobatics 13 ranks.
 \featben When tumbling, if your check result exceeds 30, you gain two benefits. First, you do not provoke attacks of opportunity for that movement. Second, you can tumble through areas occupied by enemies as if they were unoccupied.
 
 \subsubsection{Magical Aptitude [Skill]}
@@ -660,6 +688,10 @@ Tracked party hides trail (and moves at half speed)  & \plus5
 If you fail a Survival check, you can retry after 1 hour (outdoors) or 10 minutes (indoors) of searching.
 \parhead{Normal} Without this feat, you can use the Survival skill to find tracks, but you can follow them only if the DC for the task is 10 or lower. Alternatively, you can use the Search skill to find a footprint or similar sign of a creature's passage using the DCs given above, but you can't use Search to follow tracks, even if someone else has already found them.
 \parhead{Special} A ranger automatically has Track as a bonus feat. He need not select it.
+
+\subsubsection{Trap Device [Skill]}
+\featpre Devices 8 ranks.
+\featben 
 
 \subsection{Combat Feats}
 
@@ -844,7 +876,6 @@ In addition, your unarmed strikes can deal lethal or nonlethal damage as you cho
 You can fight with a weapon in each hand more effectively.
 \parhead{Prerequisite} Dex 5.
 \parhead{Benefit} You gain a \plus2 circumstance bonus to attack rolls when attacking with two weapons at once.
-\parhead{Special} A 2nd-level ranger is treated as having Two-Weapon Fighting, even if he does not have the prerequisites for it, but only when he is wearing light or no armor.
 
 %\subsubsection{Two-Weapon Rend [Combat]}
 %\parhead{Prerequisites} Str 3, Two-Weapon Fighting, base attack bonus \plus11.
