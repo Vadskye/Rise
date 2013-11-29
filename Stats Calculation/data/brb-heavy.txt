@@ -1,0 +1,11 @@
+name=Barbarian
+bab=good
+armor_class=10
+attack_bonus=5
+attack_damage=8
+strength=4
+dexterity=2
+constitution=2
+intelligence=-1
+wisdom=0
+charisma=1
