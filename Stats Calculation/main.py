@@ -25,6 +25,8 @@ class character:
     weapon = dict()
     saves = dict()
     ac = dict()
+    cmd = 10
+    hp = 0
 
     def __init__(self, character_file_name):
         raw_stats = parse_stats_from_file(character_file_name)
@@ -42,12 +44,14 @@ class character:
         self.base_attack_bonus=self.class_calculator.calculate_base_attack_bonus()
         for title in save_titles:
             self.saves[title] = self.class_calculator.calc_save(title) 
+        self.hp = self.calculate_hp()
 
         #Calculate derived statistics
         self.attack_bonus = self.calculate_attack_bonus()
         self.attack_damage = self.calculate_attack_damage()
         for title in ac_titles:
             self.ac[title] = self.calculate_armor_class(title) 
+        self.cmd = self.calculate_cmd()
 
     def calculate_attack_bonus(self):
         return self.base_attack_bonus+ self.calculate_attack_attribute_bonus()
@@ -73,7 +77,13 @@ class character:
         elif ac_title == ac_titles[2]: #flat-footed AC
             #apply all except shield, dodge
             return ac-self.ac_modifiers['shield']-self.ac_modifiers['dodge']
-        
+
+    def calculate_cmd(self):
+        return 10 + self.attributes['strength'] + self.ac['touch']
+
+    def calculate_hp(self):
+        return (self.attributes['constitution'] + self.class_calculator.hit_value) * self.level
+
     def calculate_attack_attribute_bonus(self):
         if self.weapon['encumbrance']=='light':
             return max(self.attributes['strength'],self.attributes['dexterity'])
