@@ -21,6 +21,7 @@ class character:
     for title in ac_modifier_titles:
         ac_modifiers[title] = 0
     armor = dict()
+    shield = dict()
     weapon = dict()
     saves = dict()
     ac = dict()
@@ -28,14 +29,22 @@ class character:
     hp = 0
 
     def __init__(self, character_file_name):
-        raw_stats = parse_stats_from_file(character_file_name)
         #Take statistics from the given character input file
+        raw_stats = parse_stats_from_file(character_file_name)
         self.class_name = raw_stats['class']
         self.level = int(raw_stats['level'])
         self.attributes = dict_slice(raw_stats, attribute_titles, conditional_int)
         self.weapon = dict_slice(dict_match_prefix(raw_stats, 'weapon '), weapon_titles, conditional_int)
         self.armor = dict_slice(dict_match_prefix(raw_stats, 'armor '), armor_titles, conditional_int)
-        self.ac_modifiers['armor']=self.armor['ac bonus']
+        self.shield = dict_slice(dict_match_prefix(raw_stats, 'shield '), armor_titles, conditional_int)
+        if self.armor.has_key('ac bonus'):
+            self.ac_modifiers['armor']=self.armor['ac bonus']
+        else:
+            self.ac_modifiers['armor']=0
+        if self.shield.has_key('ac bonus'):
+            self.ac_modifiers['shield']=self.shield['ac bonus']
+        else:
+            self.ac_modifiers['shield']=0
 
         #Calculate statistics based on the given class
         #note that we are hardcoding the call to barbarian
@@ -129,7 +138,7 @@ def dict_slice(input_dict, key_list, f=lambda x:x):
             output[key] = f(input_dict[key])
         else:
             print 'warning: key', key, 'not found'
-            output[key] = None
+            output[key] = 0
     return output
 
 def conditional_int(text):
