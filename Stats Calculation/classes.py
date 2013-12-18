@@ -4,7 +4,7 @@ POOR = 'poor'
 
 class barbarian:
     base_attack_bonus_progression = GOOD
-    save_progressions = {'Fortitude':GOOD, 'Reflex':AVERAGE, 'Will':POOR}
+    save_progressions = {'fortitude':GOOD, 'reflex':AVERAGE, 'will':POOR}
     level = 0
 
     def __init__(self, level):
