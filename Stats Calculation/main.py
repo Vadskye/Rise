@@ -19,8 +19,8 @@ class character:
     armor_class=10
     attributes = dict()
     ac_modifiers = dict()
-    for stat in ac_modifier_titles:
-        ac_modifiers[stat] = 0
+    for title in ac_modifier_titles:
+        ac_modifiers[title] = 0
     armor = dict()
     weapon = dict()
     saves = dict()
@@ -40,12 +40,14 @@ class character:
         #This needs to be made automatic later
         self.class_calculator = classes.barbarian(self.level)
         self.base_attack_bonus=self.class_calculator.calculate_base_attack_bonus()
-        for save_name in save_titles:
-            self.saves[save_name] = self.class_calculator.calc_save(save_name) 
+        for title in save_titles:
+            self.saves[title] = self.class_calculator.calc_save(title) 
 
         #Calculate derived statistics
         self.attack_bonus = self.calculate_attack_bonus()
         self.attack_damage = self.calculate_attack_damage()
+        for title in ac_titles:
+            self.ac[title] = self.calculate_armor_class(title) 
 
     def calculate_attack_bonus(self):
         return self.base_attack_bonus+ self.calculate_attack_attribute_bonus()
@@ -53,14 +55,24 @@ class character:
     def calculate_attack_damage(self):
         return math.floor(self.attributes['strength']/2) + die_average(self.weapon['damage'])
 
-    def calculate_armor_class(self):
-        if self.armor_encumbrance=='medium' or self.armor_encumbrance=='heavy':
+    def calculate_armor_class(self, ac_title):
+        if self.armor['encumbrance']=='medium' or self.armor['encumbrance']=='heavy':
             dexterity_bonus=math.floor(self.attributes['dexterity']/2)
         else:
             dexterity_bonus=self.attributes['dexterity']
-        return 10 + dexterity_bonus + self.armor_modifier + \
-                self.shield_modifier + self.natural_armor_modifier + \
-                self.dodge_modifier
+        
+        ac = 10
+        for modifier in self.ac_modifiers.values():
+            ac+=modifier
+        if ac_title == ac_titles[0]: #normal AC
+            #apply all modifiers
+            return ac
+        elif ac_title == ac_titles[1]: #touch AC
+            #apply all except armor, natural armor
+            return ac-self.ac_modifiers['armor']-self.ac_modifiers['natural armor']
+        elif ac_title == ac_titles[2]: #flat-footed AC
+            #apply all except shield, dodge
+            return ac-self.ac_modifiers['shield']-self.ac_modifiers['dodge']
         
     def calculate_attack_attribute_bonus(self):
         if self.weapon['encumbrance']=='light':
