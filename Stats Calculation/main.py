@@ -1,12 +1,13 @@
 import argparse
 import math
 import re
+import classes
 
-attribute_stats = ['strength', 'dexterity', 'constitution', 'intelligence', 
+attribute_titles = ['strength', 'dexterity', 'constitution', 'intelligence', 
         'wisdom', 'charisma']
-ac_modifier_stats = ['armor', 'shield', 'dodge', 'natural armor', 'misc']
-weapon_stats = ['damage', 'encumbrance']
-armor_stats = ['ac bonus', 'encumbrance', 'check penalty', 'arcane spell failure']
+ac_modifier_titles = ['armor', 'shield', 'dodge', 'natural armor', 'misc']
+weapon_titles = ['damage', 'encumbrance']
+armor_titles = ['ac bonus', 'encumbrance', 'check penalty', 'arcane spell failure']
 
 def parse_stats_from_file(input_file_name):
     input_file = open(input_file_name,'r')
@@ -37,34 +38,28 @@ class character:
     armor_class=10
     attributes = dict()
     ac_modifiers = dict()
-    for stat in ac_modifier_stats:
+    for stat in ac_modifier_titles:
         ac_modifiers[stat] = 0
     armor = dict()
     weapon = dict()
 
     def __init__(self, character_file_name):
         raw_stats = parse_stats_from_file(character_file_name)
-        class_file_name = 'data/classes/'+raw_stats['class']+'.txt'
-        class_stats = parse_stats_from_file(class_file_name)
-        self.base_attack_bonus_progression=class_stats['bab']
-
-        self.attributes = dict_slice(raw_stats, attribute_stats, conditional_int)
-        self.weapon = dict_slice(dict_match_prefix(raw_stats, 'weapon '), weapon_stats, conditional_int)
-        self.armor = dict_slice(dict_match_prefix(raw_stats, 'armor '), armor_stats, conditional_int)
+        self.class_name = raw_stats['class']
         self.level = int(raw_stats['level'])
+        #note that we are hardcoding the call to barbarian
+        #This needs to be made automatic later
+        self.class_calculator = classes.barbarian(self.level)
 
-        self.base_attack_bonus=self.calculate_base_attack_bonus()
+
+        self.attributes = dict_slice(raw_stats, attribute_titles, conditional_int)
+        self.weapon = dict_slice(dict_match_prefix(raw_stats, 'weapon '), weapon_titles, conditional_int)
+        self.armor = dict_slice(dict_match_prefix(raw_titles, 'armor '), armor_titles, conditional_int)
+
+        self.base_attack_bonus=self.class_calculator.calculate_base_attack_bonus()
         self.attack_bonus = self.calculate_attack_bonus()
         self.attack_damage = self.calculate_attack_damage()
 
-    def calculate_base_attack_bonus(self):
-        if self.base_attack_bonus_progression=='good':
-            return self.level
-        elif self.base_attack_bonus_progression=='average':
-            return (self.level*3)/4
-        else:
-            return self.level/2
-    
     def calculate_attack_bonus(self):
         return self.base_attack_bonus+ self.calculate_attack_attribute_bonus()
 
@@ -87,7 +82,12 @@ class character:
             return self.attributes['strength']
 
     def __str__(self):
-        return 'this is a character'
+        return ' AC '+self.ac['normal']+', touch '+self.ac['touch']+\
+                ', flat-footed '+self.ac['flat-footed']+'; CMD '+self.cmd+'\n'+ \
+                'HP '+self.hp+'\n'+ \
+                'Fort '+self.saves['Fortitude']+', Ref '+self.saves['Reflex']+ \
+                'Will '+self.saves['Will']+'\n'
+
 
 #Return a new dict that contains a selection of items from
 #the original dict
@@ -144,8 +144,8 @@ def die_average(die):
 
 if __name__ == "__main__":
     args = initialize_argument_parser()
-    class_file = 'data/'+args["character_class"]+'.txt'
-    barbarian = character(class_file)
+    file_input = 'data/'+args["character_class"]+'.txt'
+    barbarian = character(file_input)
     print barbarian.attack_bonus, barbarian.attack_damage
     #print barbarian.base_attack_bonus
     #print barbarian
