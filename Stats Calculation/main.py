@@ -16,7 +16,6 @@ class character:
     level=0
     attack_bonus=0
     attack_damage=0
-    armor_class=10
     attributes = dict()
     ac_modifiers = dict()
     for title in ac_modifier_titles:
@@ -91,11 +90,12 @@ class character:
             return self.attributes['strength']
 
     def __str__(self):
-        return ' AC '+self.ac['normal']+', touch '+self.ac['touch']+\
-                ', flat-footed '+self.ac['flat-footed']+'; CMD '+self.cmd+'\n'+ \
-                'HP '+self.hp+'\n'+ \
-                'Fort '+self.saves['Fortitude']+', Ref '+self.saves['Reflex']+ \
-                'Will '+self.saves['Will']+'\n'
+        return ' AC '+str(self.ac['normal'])+', touch '+str(self.ac['touch'])+ \
+                ', flat-footed '+str(self.ac['flat-footed'])+'; CMD '+str(self.cmd)+'\n'+ \
+                'HP '+str(self.hp)+'\n'+ \
+                'Fort '+str(self.saves['fortitude'])+', Ref '+str(self.saves['reflex'])+ \
+                ', Will '+str(self.saves['will'])+'\n'
+    pass
 
 def parse_stats_from_file(input_file_name):
     input_file = open(input_file_name,'r')
@@ -177,4 +177,4 @@ if __name__ == "__main__":
     barbarian = character(file_input)
     print barbarian.attack_bonus, barbarian.attack_damage
     #print barbarian.base_attack_bonus
-    #print barbarian
+    print barbarian
