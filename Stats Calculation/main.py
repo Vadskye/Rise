@@ -90,11 +90,11 @@ class character:
             return self.attributes['strength']
 
     def __str__(self):
-        return ' AC '+str(self.ac['normal'])+', touch '+str(self.ac['touch'])+ \
+        return 'AC '+str(self.ac['normal'])+', touch '+str(self.ac['touch'])+ \
                 ', flat-footed '+str(self.ac['flat-footed'])+'; CMD '+str(self.cmd)+'\n'+ \
                 'HP '+str(self.hp)+'\n'+ \
-                'Fort '+str(self.saves['fortitude'])+', Ref '+str(self.saves['reflex'])+ \
-                ', Will '+str(self.saves['will'])+'\n'
+                'Fort '+mstr(self.saves['fortitude'])+', Ref '+mstr(self.saves['reflex'])+ \
+                ', Will '+mstr(self.saves['will'])+'\n'
     pass
 
 def parse_stats_from_file(input_file_name):
@@ -170,6 +170,19 @@ def die_average(die):
         die_count=1
     die_size=int(die[1])
     return die_count*(die_size+1.0)/2.0
+
+#Convert a modifier to a string with + or - in front, as appropriate
+def mstr(text):
+    if is_number(text):
+        modifier=int(text)
+        if modifier<0:
+            return '-'+str(modifier)
+        else:
+            return '+'+str(modifier)
+    else:
+        print 'not a modifier:', text
+        return str(text)
+
 
 if __name__ == "__main__":
     args = initialize_argument_parser()
