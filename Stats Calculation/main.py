@@ -35,6 +35,7 @@ class character:
         self.attributes = dict_slice(raw_stats, attribute_titles, conditional_int)
         self.weapon = dict_slice(dict_match_prefix(raw_stats, 'weapon '), weapon_titles, conditional_int)
         self.armor = dict_slice(dict_match_prefix(raw_stats, 'armor '), armor_titles, conditional_int)
+        self.ac_modifiers['armor']=self.armor['ac bonus']
 
         #Calculate statistics based on the given class
         #note that we are hardcoding the call to barbarian
@@ -127,6 +128,7 @@ def dict_slice(input_dict, key_list, f=lambda x:x):
         if input_dict.has_key(key):
             output[key] = f(input_dict[key])
         else:
+            print 'warning: key', key, 'not found'
             output[key] = None
     return output
 
@@ -188,6 +190,4 @@ if __name__ == "__main__":
     args = initialize_argument_parser()
     file_input = 'data/'+args["character_class"]+'.txt'
     barbarian = character(file_input)
-    print barbarian.attack_bonus, barbarian.attack_damage
-    #print barbarian.base_attack_bonus
     print barbarian
