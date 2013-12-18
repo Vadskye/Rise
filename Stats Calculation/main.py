@@ -60,11 +60,11 @@ class character:
 
     def calculate_armor_class(self, ac_title):
         if self.armor['encumbrance']=='medium' or self.armor['encumbrance']=='heavy':
-            dexterity_bonus=math.floor(self.attributes['dexterity']/2)
+            dexterity_bonus=self.attributes['dexterity']/2
         else:
             dexterity_bonus=self.attributes['dexterity']
         
-        ac = 10
+        ac = 10 + dexterity_bonus
         for modifier in self.ac_modifiers.values():
             ac+=modifier
         if ac_title == ac_titles[0]: #normal AC
@@ -75,10 +75,10 @@ class character:
             return ac-self.ac_modifiers['armor']-self.ac_modifiers['natural armor']
         elif ac_title == ac_titles[2]: #flat-footed AC
             #apply all except shield, dodge
-            return ac-self.ac_modifiers['shield']-self.ac_modifiers['dodge']
+            return ac-self.ac_modifiers['shield']-self.ac_modifiers['dodge']-dexterity_bonus
 
     def calculate_cmd(self):
-        return 10 + self.attributes['strength'] + self.ac['touch']
+        return self.ac['touch'] + self.attributes['strength']
 
     def calculate_hp(self):
         return (self.attributes['constitution'] + self.class_calculator.hit_value) * self.level
