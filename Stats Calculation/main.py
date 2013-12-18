@@ -9,6 +9,7 @@ ac_modifier_titles = ['armor', 'shield', 'dodge', 'natural armor', 'misc']
 weapon_titles = ['damage', 'encumbrance']
 armor_titles = ['ac bonus', 'encumbrance', 'check penalty', 'arcane spell failure']
 save_titles = ['fortitude', 'reflex', 'will']
+ac_titles = ['normal', 'touch', 'flat-footed']
 
 class character:
     base_attack_bonus=0
@@ -23,22 +24,26 @@ class character:
     armor = dict()
     weapon = dict()
     saves = dict()
+    ac = dict()
 
     def __init__(self, character_file_name):
         raw_stats = parse_stats_from_file(character_file_name)
+        #Take statistics from the given character input file
         self.class_name = raw_stats['class']
         self.level = int(raw_stats['level'])
-        #note that we are hardcoding the call to barbarian
-        #This needs to be made automatic later
-        self.class_calculator = classes.barbarian(self.level)
-        for save_name in save_titles:
-            self.saves[save_name] = self.class_calculator.calc_save(save_name) 
-
         self.attributes = dict_slice(raw_stats, attribute_titles, conditional_int)
         self.weapon = dict_slice(dict_match_prefix(raw_stats, 'weapon '), weapon_titles, conditional_int)
         self.armor = dict_slice(dict_match_prefix(raw_stats, 'armor '), armor_titles, conditional_int)
 
+        #Calculate statistics based on the given class
+        #note that we are hardcoding the call to barbarian
+        #This needs to be made automatic later
+        self.class_calculator = classes.barbarian(self.level)
         self.base_attack_bonus=self.class_calculator.calculate_base_attack_bonus()
+        for save_name in save_titles:
+            self.saves[save_name] = self.class_calculator.calc_save(save_name) 
+
+        #Calculate derived statistics
         self.attack_bonus = self.calculate_attack_bonus()
         self.attack_damage = self.calculate_attack_damage()
 
