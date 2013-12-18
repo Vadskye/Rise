@@ -23,10 +23,10 @@ class barbarian:
     def calc_save(self, save_type):
         save_progression = self.save_progressions[save_type]
         if save_progression == GOOD:
-            return level+2;
+            return self.level+2;
         elif save_progression == AVERAGE:
-            return level*3/4+1;
+            return self.level*3/4+1;
         elif save_progression == POOR:
-            return level/2;
+            return self.level/2;
         else:
             return False
