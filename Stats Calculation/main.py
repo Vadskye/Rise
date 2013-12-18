@@ -8,27 +8,7 @@ attribute_titles = ['strength', 'dexterity', 'constitution', 'intelligence',
 ac_modifier_titles = ['armor', 'shield', 'dodge', 'natural armor', 'misc']
 weapon_titles = ['damage', 'encumbrance']
 armor_titles = ['ac bonus', 'encumbrance', 'check penalty', 'arcane spell failure']
-
-def parse_stats_from_file(input_file_name):
-    input_file = open(input_file_name,'r')
-    stats=dict()
-    for line in input_file:
-        #ignore comments
-        line = line.strip()
-        line = line.split('#',1)[0]
-        #Separate data from data label
-        line = line.split('=',1)
-        #add the key, avoiding key overlap
-        key = line[0]
-        val = line[1]
-        i=1
-        #The first item with the same name is "key".
-        #The second is "key1". The third is "key2". etc...
-        while stats.has_key(key):
-            key=line[0]+str(i)
-            i+=1
-        stats[key]=val
-    return stats
+save_titles = ['fortitude', 'reflex', 'will']
 
 class character:
     base_attack_bonus=0
@@ -42,6 +22,7 @@ class character:
         ac_modifiers[stat] = 0
     armor = dict()
     weapon = dict()
+    saves = dict()
 
     def __init__(self, character_file_name):
         raw_stats = parse_stats_from_file(character_file_name)
@@ -50,7 +31,6 @@ class character:
         #note that we are hardcoding the call to barbarian
         #This needs to be made automatic later
         self.class_calculator = classes.barbarian(self.level)
-
 
         self.attributes = dict_slice(raw_stats, attribute_titles, conditional_int)
         self.weapon = dict_slice(dict_match_prefix(raw_stats, 'weapon '), weapon_titles, conditional_int)
@@ -88,6 +68,26 @@ class character:
                 'Fort '+self.saves['Fortitude']+', Ref '+self.saves['Reflex']+ \
                 'Will '+self.saves['Will']+'\n'
 
+def parse_stats_from_file(input_file_name):
+    input_file = open(input_file_name,'r')
+    stats=dict()
+    for line in input_file:
+        #ignore comments
+        line = line.strip()
+        line = line.split('#',1)[0]
+        #Separate data from data label
+        line = line.split('=',1)
+        #add the key, avoiding key overlap
+        key = line[0]
+        val = line[1]
+        i=1
+        #The first item with the same name is "key".
+        #The second is "key1". The third is "key2". etc...
+        while stats.has_key(key):
+            key=line[0]+str(i)
+            i+=1
+        stats[key]=val
+    return stats
 
 #Return a new dict that contains a selection of items from
 #the original dict
