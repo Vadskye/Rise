@@ -31,10 +31,12 @@ class character:
         #note that we are hardcoding the call to barbarian
         #This needs to be made automatic later
         self.class_calculator = classes.barbarian(self.level)
+        for save_name in save_titles:
+            self.saves[save_name] = self.class_calculator.calc_save(save_name) 
 
         self.attributes = dict_slice(raw_stats, attribute_titles, conditional_int)
         self.weapon = dict_slice(dict_match_prefix(raw_stats, 'weapon '), weapon_titles, conditional_int)
-        self.armor = dict_slice(dict_match_prefix(raw_titles, 'armor '), armor_titles, conditional_int)
+        self.armor = dict_slice(dict_match_prefix(raw_stats, 'armor '), armor_titles, conditional_int)
 
         self.base_attack_bonus=self.class_calculator.calculate_base_attack_bonus()
         self.attack_bonus = self.calculate_attack_bonus()
