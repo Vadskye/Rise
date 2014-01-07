@@ -984,13 +984,13 @@ Channeling energy is a standard action that does not provoke attacks of opportun
 \subcf{Good -- Holy Touch} A touched creature is dazzled and treated as evil for the purpose of good spells and effects that the cleric creates. The effect lasts for 5 rounds.
 \subcf{Knowledge -- Minor Vision} A touched creature is granted a brief vision of the future, giving it a \plus2 enhancement bonus to attack rolls, weapon damage rolls, and checks for 1 round.
 \subcf{Law -- Touch of Order} A creature within \rngclose range is imbued with the leveling power of order for 5 rounds. Any attack roll, saving throw, or check it makes with a roll of 11 or higher gets a \minus2 penalty. In addition, it is treated as being chaotic for the purpose of the cleric's lawful spells and effects.
-\subcf{Life -- Touch of Healing} A touched creature is healed for 1d8 damage per cleric level. This power can be used a number of times per day equal to half the cleric's Charisma (minimum 1).
 \subcf{Magic -- Breach Defenses} The cleric fires a magical ray at a creature within \rngclose range. If he hits, the target takes d6 damage \add 1 per cleric level. In addition, it takes a \minus2 penalty to saving throws against  the cleric's spells for 1 round.
 \subcf{Nature -- Wild Speech} The cleric gains wild speech, as the druid ability, with a druid level equal to half his cleric level (minimum 1). This power can be used a number of times per day equal to half the cleric's level.
 \subcf{Protection -- Martyr's Touch} For the next 5 rounds, the cleric takes half of the damage the touched creature would take, as the \spell{shield other} spell. If the cleric get farther than \rngmed range from the touched creature during this time, the effect is broken.
 \subcf{Strength -- Surge of Strength} The cleric gains a \plus2 enchancement bonus to Strength for 1 round. \bonusscalingdescription This power can be used a number of times per day equal to 1 \add half the cleric's Strength.
 \subcf{Travel -- Free Stride} As a swift action, the cleric can gain the ability to move through difficult terrain at full speed for 1 round. This power can be used a number of times per day equal to 1 \add half the cleric's Dexterity.
 \subcf{Trickery -- Liar's Boon} As a swift action, the cleric can gain a \plus3 enhancement bonus to Bluff and Disguise checks for 5 minutes. This power can be used a number of times per day equal to 1 \add half the cleric's Charisma.
+\subcf{Vitality -- Vital Reach} As a swift action, the cleric can cause a dying creature within \rngmed range to stabilize or take 1 critical damage, as he desires.
 \subcf{War -- Warrior's Boon} A creature touched creature gains a \plus2 enhancement bonus to attack rolls for 1 round. \bonusscalingdescription This power can be used a number of times per day equal to 1 \add half the cleric's Charisma.
 \subcf{Water -- Drowning Orb} The cleric fires an orb of water at a creature within \rngclose range. If he hits on a ranged touch attack, the orb attempts to force itself into the creature's mouth and nose to drown it, dealing d8 nonlethal damage \add d8 per four cleric levels after 1st. In addition, the creature must make a Fortitude save or be forced to hold its breath for 5 rounds.
 
@@ -1001,20 +1001,20 @@ The cleric gains an additional domain power from one of his domains at 4th level
 \subcf{Chaos} The cleric channels anarchic energy. Roll randomly each time this power is used to determine whether it functions as channeling negative energy or channeling positive energy, except that it always heals chaotic creatures and harms lawful creatures.
 \subcf{Death} The cleric channels negative energy, except that any creatures dealt critical damage by this power are instantly killed, with no saving throw allowed. This is a death effect.
 \subcf{Destruction} The cleric channels destructive energy. This deals untyped damage and allows a Fortitude save for half damage.
-\subcf{Earth} The cleric channels seismic energy. This deals physical bludgeoning damage to all creatures on the ground and knocks them prone. A Reflex save negates both effects, and creatures with the earth subtype are immune.
+\subcf{Earth} The cleric channels seismic energy. This deals physical bludgeoning damage to all creatures on the ground. A Reflex save halves the damage.
 \subcf{Evil} The cleric channels negative energy, except that it has no effect on evil creatures.
 \subcf{Fire} The cleric channels fiery energy. This deals fire damage and heals creatures with the fire subtype. A Reflex save halves the damage.
 \subcf{Good} The cleric channels positive energy, except that it has no effect on evil creatures.
-\subcf{Knowledge} The cleric channels knowledge itself. This functions like channeling positive energy, except that each affected creature gains a bonus equal to half the cleric's level on the next attack roll, damage roll, saving throw, or check that it makes. If not used within 5 rounds, this bonus is wasted.
+\subcf{Knowledge} The cleric channels knowledge itself. This functions like channeling positive energy, except that each affected creature gains a bonus equal to half the cleric's level on the next attack roll, damage roll, saving throw, or check that it makes instead of being healed. If this bonus is not used within 5 rounds, it is wasted.
 \subcf{Law} The cleric channels axiomatic energy. This deals 4 damage per two cleric levels to all creatures within a 40 ft. cube centered on the cleric. A Will save halves the damage, and it has no effect on lawful creatures.
-\subcf{Life} The cleric channels positive energy, except that for every 10 points of healing granted to a creature, it can instead heal one critical damage.
 \subcf{Magic} The cleric channels magical energy. This heals creatures who can cast spells and deals damage to creatures who cannot.
 \subcf{Nature} The cleric channels positive energy, except that the cleric can decide whether it acts as positive or negative energy to animals and plants.
 \subcf{Protection} The cleric grants each affected creature temporary hit points equal to half the amount that channelling positive energy would have healed. Undead gain temporary hit points as well. The temporary hit points last for 5 rounds.
 \subcf{Strength} The cleric channels positive energy. Creatures at their maximum hit points after being healed gain a \plus1 enhancement bonus to Strength. This bonus increases to \plus2 at 11th level.
 \subcf{Travel} The cleric channels positive energy. All healed creatures can ignore difficult terrain for 1 round.
 \subcf{Trickery} The cleric channels negative energy. It deals half damage, but all damaged creatures who fail their Will saves are bewildered for 5 rounds. This is a mind-affecting effect.
-\subcf{War} The cleric can choose to channel positive or negative energy.
+\subcf{Vitality} The cleric channels energy as normal, except that he gains a \plus2 circumstance bonus to his cleric level.
+\subcf{War} The cleric channels energy as normal, except that he can exclude two additional creatures from the effect.
 
 \par The cleric gains an additional channelled domain power at 9th level.
 
@@ -1030,13 +1030,13 @@ The cleric gains an additional domain power from one of his domains at 4th level
 \subcf{Good -- Purifying Magic} Evil creatures take a \minus2 penalty to saving throws against the cleric's spells.
 \subcf{Knowledge -- Knowledge Mastery} The cleric may choose a number of Knowledge skills equal half to his Intelligence (minimum 1). He may take 10 with those skills if he is not in danger or rushed.
 \subcf{Law -- Certain Success} Whenever the cleric would take 10, he may instead take 12, treating any roll lower than a 12 as if it had been a 12.
-\subcf{Life -- Limitless Healing} If the cleric would heal a creature above its maximum hit points, the creature gains any excess healing as temporary hit points for 1 round.
 \subcf{Magic -- Metamagic Feat} The cleric gains a bonus metamagic feat.
 \subcf{Nature -- Favored Terrain} The cleric gains a favored terrain, as the ranger class feature.
 \subcf{Protection -- Faithful Shield} The cleric gains a \plus2 enhancement bonus to his deflection modifier.
 \subcf{Strength -- Mighty Magic} The cleric can add half his Strength to his casting attribute score to meet the minimum attribute score requirements to cast spells.
 \subcf{Travel -- Rapid Traveller} The cleric gains a \plus10 foot competence bonus to his base land speed.
 \subcf{Trickery -- }
+\subcf{Vitality -- }
 \subcf{War -- Weapon Specialization} The cleric gains Weapon Specialization in his deity's favored weapon group as a bonus feat. If he does not have a deity, he gains it in a weapon group related to his alignment or ideals.
 \subcf{Water -- Water Breathing} The cleric may breathe and speak normally while underwater, as the \spell{water breathing} ritual. He may also pass through boggy or wet areas with no penalty to his movement speed.
 
@@ -2795,7 +2795,6 @@ These are some examples of how to use these guidelines.
 \begin{itemize*}
 \item Both a druid and a ranger gain woodland stride. A druid/ranger who has woodland stride from both classes has the same woodland stride ability as a druid or ranger would.
 \item Both a barbarian and a rogue get danger sense. A barbarian/rogue adds his barbarian and rogue levels together to determine his bonus from danger sense.
-\item Both a cleric and an experienced paladin can turn undead. A cleric/paladin adds the paladin's effective turning level (if any) to the cleric's turning level to determine the level at which the character turns undead. The character can still only turn undead 3 \add Cha times per day.
 \item Both a barbarian and a rogue get uncanny dodge. If a barbarian/rogue would gain uncanny dodge from both classes, she instead gains improved uncanny dodge, because uncanny dodge explicitly states how it stacks.
 \end{itemize*}
 
