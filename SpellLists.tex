@@ -7,7 +7,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
 \parhead{Hit Values} The term ``Hit Values'' is used synonymously with ``character levels'' for effects that affect a number of Hit Values of creatures. Creatures with Hit Values only from their race, not from classes, have character levels equal to their Hit Values.
 
-\parhead{Caster Level} A spell's power often depends on caster level. Every spellcaster has a caster level which is primarily determined by its class level. A creature with no classes who uses spells has a caster level equal to its Hit Values unless otherwise specified. The word ``level'' in the spell lists that follow always refers to casting power.
+\parhead{Caster Level} A spell's power often depends on caster level. Every spellcaster has a caster level which is primarily determined by its class level. A creature who uses spells without class levels has a caster level equal to its Hit Values unless otherwise specified. The word ``level'' in the spell lists that follow always refers to caster level.
 
 \parhead{Enhancement Bonuses} If a spell or magical effect provides a numerical bonus, it is an enhancement bonus unless otherwise stated. Enhancement bonuses do not stack with each other; only the highest bonus applies.
 
@@ -69,7 +69,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead{Detect Thoughts} Allows ``listening'' to surface thoughts.
   \spellhead{Dispel Magic} Cancels magical spells and effects.
   \spellhead{Glibness} You gain \plus30 bonus on Bluff checks, and your lies can escape magical discernment.
-  \spellhead{Good Hope} Subjects gain \plus2 on attack and damage, 10 \plus1/level temporary hp.
+  \spellhead{Good Hope} Subjects gain \plus2 to attack, 10 \plus1/level temporary hp.
   \spellhead{Heroism} Gives \plus2 on attacks and saves.
   \spellhead{Invisibility} Subject is invisible until it attacks.
   \spellhead{Minor Image} As silent image, plus some sound.
@@ -145,7 +145,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead{Magic Vestment} Armor or shield becomes \plus2.
   \spellhead{Inflict Light Wounds} Touch deals 2d8 damage.
   \spellhead{Light} Object shines like a torch.
-  \spellhead{Obscuring Mist} A Fog surrounds you.
+  \spellhead{Obscuring Mist} Fog surrounds you.
   \spellhead{Protection from Chaos/Evil/Good/Law} \plus2 to saves and counter opposing mind control.
   \spellhead{Sanctuary}Opponents can't attack subject until it attacks.
   \spellhead{Shield of Faith} Aura grants \plus2 or higher deflection bonus.
@@ -226,7 +226,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead{Circle of Death}\M Kills 2/level HV of creatures.
   \spellheadc{Cure Moderate Wounds}{Mass} Cures 6d6 damage for many creatures.
   \spellheadc{Dispel Magic}{Greater} As dispel magic, but up to \plus20 on check.
-  \spellhead{Harm} Deals 12d8 damage to touched target.
+  \spellhead{Harm} Touch deals 12d8 damage.
   \spellhead{Heal} Cures 12d8 damage, all diseases and mental conditions.
   \spellheadc{Inflict Moderate Wounds}{Mass} Deals 6d6 damage to many creatures.
   \spellheadc{Protection from Energy}{Greater}
@@ -272,7 +272,8 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
 \subsection{9th-level Cleric Spells}
 \begin{spelllist}
-  \spellheadc{Heal}{Mass} As heal, but heals 9d8 for many subjects.
+  \spellheadc{Harm}{Mass} As \spell{harm}, but inflicts 9d6 to many subjects.
+  \spellheadc{Heal}{Mass} As heal, but heals 9d6 for many subjects.
   \spellhead{Implosion} Kills one creature/round.
   \spellhead{Miracle}\M Requests a deity's intercession.
   \spellhead{Storm of Vengeance} Storm rains acid, lightning, and hail.
@@ -473,7 +474,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead[4]{Unholy Blight} Sickens and deals 3d8 damage to good creatures.
   \spellhead[5]{}
   \spellhead[5]{Magic Circle against Good} Protect allies in a \areamed radius and hedge out opposing outsiders.
-  \spellhead[6]{Harm} Deals 12d10 damage to touched target.
+  \spellhead[6]{Harm} Touch deals 12d8 damage.
   \spellhead[6]{Summon Monster VI*} Calls extraplanar creature to fight for you.
   \spellhead[7]{Blasphemy} Kills, paralyzes, nauseatees, or sickens nonevil subjects in large radius.
   \spellhead[7]{}
@@ -493,7 +494,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead[2]{Flame Weapon} Flaming weapon deals 1d8 \add casting attribute value damage.
   \spellhead[2]{Scorching Ray} Ray (or rays) deal 4d6 fire damage.
   \spellhead[3]{}
-  \spellhead[3]{Fireball} small radius of fire deals 3d6 damage.
+  \spellhead[3]{Fireball} Small radius of fire deals 3d6 damage.
   \spellhead[4]{Fire Shield} Creatures attacking you take damage; you're protected from heat or cold.
   \spellhead[4]{Summon Monster V*} Calls extraplanar creature to fight for you.
   \spellhead[5]{Flame Strike} Smite foes in small radius with divine fire (1d6/level damage).
@@ -527,7 +528,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead[7]{}
   \spellheadc[8]{Death Ward}{Mass} As \spell{death ward}, but affects multiple creatures.
   \spellhead[8]{Holy Aura} Protect multiple creatures against evil foes. 
-  \spellheadc[9]{Heal}{Mass} As heal, but heals 9d8 for many subjects.
+  \spellheadc[9]{Heal}{Mass} As heal, but heals 9d6 for many subjects.
   \spellhead[9]{Summon Monster IX*} Calls extraplanar creature to fight for you.
 \end{spelllist}
 *Summons good creatures only.
@@ -694,7 +695,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead[6]{Sunbeam} Multiple beams blind and deal 5d6 damage in large line.
   \spellhead[7]{Prismatic Spray} Rays hit subjects with variety of effects.
   \spellhead[7]{Sunburst} Blinds all within large radius, deals 10d6 damage.
-  \spellhead[8]{Fire Storm} Deals 1d6/level fire damage in shapeable burst.
+  \spellhead[8]{Fire Storm} Deals 8d6 fire damage to enemies in large spread.
   \spellhead[8]{Prismatic Wall} Wall's colors have array of effects.
   \spellhead[9]{Meteor Swarm} Four exploding spheres each deal 6d6 fire damage.
   \spellhead[9]{Prismatic Sphere} As prismatic wall, but surrounds on all sides.
@@ -762,8 +763,8 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead[4]{Inflict Critical Wounds} Touch deals 8d8 damage.
   \spellheadc[5]{Cure Light Wounds}{Mass} Cures 5d6 damage for many creatures.
   \spellheadc[5]{Inflict Light Wounds}{Mass} Inflicts 5d6 damage to many creatures.
-  \spellhead[6]{Heal} Cures 10 damage/level, all diseases and mental conditions.  
-  \spellhead[6]{Harm}
+  \spellhead[6]{Heal} Cures 12d8 damage, all diseases and mental conditions.
+  \spellhead[6]{Harm} Touch deals 12d8 damage.
   \spellheadc[7]{Cure Serious Wounds}{Mass} Cures 7d6 damage for many creatures.
   \spellheadc[7]{Inflict Serious Wounds}{Mass} Inflicts 7d6 damage to many creatures.
   \spellheadc[8]{Cure Critical Wounds}{Mass} Cures 8d6 damage for many creatures.
@@ -798,11 +799,11 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \subsection{Water Domain}
 \subsubsection{Water Domain Spells}
 \begin{spelllist}
-  \spellhead[1]{Obscuring Mist} A Fog surrounds you.
+  \spellhead[1]{Obscuring Mist} Fog surrounds you.
   \spellhead[1]{Ray of Frost} Icy ray deals 2d8 cold damage and hinders movement.
-  \spellhead[2]{Fog Cloud} Fog obscures vision.
   \spellhead[2]{}
-  \spellhead[3]{Control Water} Raises or lowers bodies of water.
+  \spellhead[2]{Control Water} Raises or lowers bodies of water.
+  \spellhead[3]{Fog Cloud} Medium cylinder of fog obscures vision.
   \spellhead[3]{Water Walk} Subject treads on water as if solid.
   \spellhead[4]{}
   \spellhead[4]{Summon Nature's Ally IV*} Calls creature to fight.
@@ -836,7 +837,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead{Light} Object shines like a torch.
   \spellhead{Longstrider} Your speed increases by 10 ft.
   \spellhead{Magic Fang} One natural weapon of subject creature becomes \plus2 weapon.
-  \spellhead{Obscuring Mist} A Fog surrounds you.
+  \spellhead{Obscuring Mist} Fog surrounds you.
   \spellhead{Shillelagh} Cudgel or quarterstaff becomes \plus2 weapon.
   \spellhead{Spike Growth} Creatures in area take 1d6 damage per 5 ft. moved, may be slowed.
   \spellhead{Summon Nature's Ally I} Calls creature to fight.
@@ -847,6 +848,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \begin{spelllist}
   \spellhead{Barkskin} Grants \plus2 bonus to AC and DR 2/adamantine.
   \spellheadc{Cone of Cold}{Lesser} 2d6 cold damage and brief fatigue in medium cone.
+  \spellhead{Control Water} Raises or lowers bodies of water.
   \spellhead{Cure Moderate Wounds} Cures 4d8 damage.
   \spellheadc{Dispel Magic}{Lesser} Cancels magical spells and effects on a single target.
   \spellhead{Faerie Fire} Outlines subjects in small radius with light, canceling concealment, invisibility, and the like.
@@ -870,9 +872,8 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \begin{spelllist}
   \spellhead{Call Lightning} Calls down lightning bolts (3d6 per bolt) from sky.
   \spellhead{Contagion} Infects subject with chosen disease.
-  \spellhead{Control Water} Raises or lowers bodies of water.
   \spellhead{Cure Serious Wounds} Cures 6d8 damage.
-  \spellhead{Fog Cloud} Small cylinder of fog obscures vision.
+  \spellhead{Fog Cloud} Medium cylinder of fog obscures vision.
   \spellhead{Lightning Bolt} Large line of electricity deals 3d6 damage.
   \spellheadc{Magic Fang}{Greater} All subject's natural weapons get \plus2 bonus.
   \spellhead{Meld into Stone} You and your gear merge with stone.
@@ -1021,7 +1022,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellheadrestricted{Sanctuary} Opponents can't attack subject until it attacks.
 
   \spellhead[Conj]{Grease} Makes 10 ft. square or one object slippery.
-  \spellhead{Obscuring Mist} A Fog surrounds you.
+  \spellhead{Obscuring Mist} Fog surrounds you.
   \spellhead{Summon Monster I} Calls extraplanar creature to fight for you.
   \spellheadrestricted{Retrieve} Teleport an unattended item you can see to your hand.
   \spellheadrestricted{Summon Monster II} Calls extraplanar creature to fight for you.
@@ -1129,7 +1130,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellheadrestricted{Redirection} Redirect attacks on you to other targets.
 
   \spellhead[Conj]{Dimensional Anchor} Bars extradimensional movement.
-  \spellhead{Fog Cloud} Small cylinder of fog obscures vision.
+  \spellhead{Fog Cloud} Medium cylinder of fog obscures vision.
   \spellhead{Summon Monster III} Calls extraplanar creature to fight for you.
   \spellhead{Web} Fills medium radius spread with sticky spiderwebs.
   \spellheadrestricted{Dimension Slide} Teleports you very short distance.
@@ -1218,6 +1219,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead[Trans]{Fly} Subject flies at speed of 60 ft.
   \spellhead{Invest Magic} All of subject's equipment is magical.
   \spellheadrestricted{Haste} Subject moves faster, gets extra attack.
+  \spellheadrestricted{}
 \end{swspelllist}
 
 \subsection{5th-level Sorcerer/wizard Spells} 
