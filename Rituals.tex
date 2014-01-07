@@ -318,6 +318,25 @@ You instantly gain knowledge of as many as three facts from among the following 
 \par In outdoor settings, the ritual operates in a 10 mile radius. In natural underground settings -- caves, caverns, and the like -- the radius is limited to 1,000 feet. The ritual does not function where nature has been replaced by construction or settlement, such as in dungeons and towns.
 \end{spelleffect}
 
+\spellsection{Comprehend Languages}
+\spelldesc{You can understand any language.}
+\spellschool{Divination (Communication)}
+\spellskill{Linguistics}
+\spelllvl{Arcane 2, Divine 2}
+\spelltime{1 minute}
+\spellrng{\rngpers}
+\spelltgt{You}
+\spelldur{\durlong}
+\begin{spelleffect}
+  You can understand the spoken words of creatures or read otherwise incomprehensible written messages. The ability to read does not necessarily impart insight into the material, merely its literal meaning. The spell enables you to understand or read an unknown language, not speak or write it.
+  \par Written material can be read at the rate of one page (250 words) per minute. Magical writing cannot be read, though the spell reveals that it is magical. 
+\end{spelleffect}
+\begin{spellnotes}
+  This ritual can be foiled by certain obscuring magic (such as the \spell{secret page} and \spell{illusory script} spells). It does not decipher codes or reveal messages concealed in otherwise normal text. You may be unable to understand dead or extremely obscure languages.
+
+  \spell[comprehend languages]{Comprehend languages} can be made permanent with a \spell{permanency} ritual.
+\end{spellnotes}
+
 \spellsection{Consecrate}
 \spellschool{Evocation (Channeling) [Good]}
 \spellskill{Religion}
@@ -1840,7 +1859,7 @@ This ritual does not restore negative levels or Constitution drain acquired due 
 \spellsave{Will negates (harmless)}
 \spellsr{Yes (harmless)}
 \begin{spelleffect}
-This ritual dispels any magical effects reducing one of the subject's attribute scores or cures 1d4 points of temporary ability damage to one of the subject's attribute scores. It also eliminates any fatigue suffered by the character, and improves an exhausted condition to fatigued
+This ritual dispels any magical effects reducing one of the subject's attribute scores or cures up to 5 points of temporary ability damage to one of the subject's attribute scores. It also eliminates any fatigue or exhaustion suffered by the character.
 \end{spelleffect}
 \begin{spellnotes}
 This ritual does not restore permanent ability drain.
@@ -2110,7 +2129,7 @@ This ritual enables you to make a snare that functions as a magic trap. The snar
 \spellsave{None}
 \spellsr{No}
 \begin{spelleffect}
-You draw the soul from a newly dead body and imprison it in a black sapphire gem. The subject must have been dead for no longer than 5 rounds before the ritual is started. The soul, once trapped in the gem, cannot be returned through \spell{clone}, \spell{raise dead}, \spell{reincarnation}, \spell{resurrection}, \spell{true resurrection}, or even a \spell{miracle} or a \spell{wish}. Only by destroying the gem or dispelling the spell on the gem can one free the soul (which is then still dead).
+You draw the soul from a newly dead body and imprison it in a black sapphire gem. The subject must have been dead for no longer than 5 rounds before the ritual is started. The soul, once trapped in the gem, cannot be returned through \spell{clone}, \spell{raise dead}, \spell{reincarnate}, \spell{resurrection}, \spell{true resurrection}, or even a \spell{miracle} or a \spell{wish}. Only by destroying the gem or dispelling the spell on the gem can one free the soul (which is then still dead).
 \spellfocus{A black sapphire of at least 1,000 gp value for every Hit Value possessed by the creature whose soul is to be bound. If the gem is not valuable enough, it shatters when the binding is attempted. (While creatures have no concept of level or Hit Values as such, the value of the gem needed to trap an individual can be researched. Remember that this value can change over time as creatures gain more Hit Values.)}
 \end{spelleffect}
 
@@ -2365,6 +2384,22 @@ You create an unmoving, opaque sphere of any color you desire around your locati
 \par The temperature inside the hut is 70\degree F if the exterior temperature is between 0\degree and 100\degree F. An exterior temperature below 0\degree or above 100\degree lowers or raises the interior temperature on a 1-degree-for-1 basis. The hut also provides protection against the elements, such as rain, dust, and sandstorms. The hut withstands any wind of less than hurricane force, but a hurricane (75\add mph wind speed) or greater force destroys it.
 \par The interior of the hut is a hemisphere. Although the force field is opaque from the outside, it is transparent from within. Missiles, weapons, and most spell effects can pass through the hut without affecting it, although the occupants cannot be seen from outside the hut (they have total concealment).
 \end{spelleffect}
+
+\spellsection{Tongues}
+\spellschool{Divination (Communication)}
+\spellskill{Linguistics}
+\spelllvl{Arcane 4, Divine 4}
+\spellrng{Touch}
+\spelltgt{Creature touched}
+\spelldur{\durlong}
+\spellsave{Will negates (harmless)}
+\spellsr{Yes (Will)}
+\begin{spelleffect}
+  This spell grants the creature touched the ability to speak and understand the language of any intelligent creature, whether it is a racial tongue or a regional dialect. The subject can speak only one language at a time, although it may be able to understand several languages. \spell{Tongues} does not enable the subject to speak with creatures who don't speak.
+\end{spelleffect}
+\begin{spellnotes}
+  \spell{Tongues} may be unable to translate dead or extremely obscure languages. It does not predispose any creature addressed toward the subject in any way. \spell{Tongues} can be made permanent with a \spell{permanency} spell.
+\end{spellnotes}
 
 \spellsection{Transport via Plants}
 \spellschool{Conjuration (Translocation) [Teleportation]}
