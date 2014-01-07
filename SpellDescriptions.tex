@@ -105,14 +105,14 @@
 \spellsection{Aid}
 \spelldesc{You fill the target with confidence, improving its resilience and stamina in combat.}
 \spellschool{Enchantment (Emotion) [Mind-Affecting, Morale]}
-\spelllvl{Clr 3, Good 3, Pal 3, War 3}
+\spelllvl{Clr 2, Good 2, Pal 2, War 2}
 \spellrng{\rngtouch}
 \spelltgt{Creature touched}
 \spelldur{\durshort}
 \spellsave{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The subject gains temporary hit points equal to 10 \add 1 per caster level and a \plus2 bonus to attack rolls. \bonusscalingdescription
+  The subject gains a \plus2 bonus to attack rolls and temporary hit points equal to 10 \add twice your caster level. \bonusscalingdescription
 \end{spelleffect}
 
 \spellsection{Air Walk}
@@ -369,7 +369,7 @@
 \spellsection{Bane}
 \spelldesc{You fill your enemies with dismay, impairing their ability to fight.}
 \spellschool{Enchantment (Emotion) [Mind-Affecting, Morale]}
-\spelllvl{Clr 1, Evil 1, War 1}
+\spelllvl{Clr 1, Evil 1}
 \spellarea{\areamed radius burst}
 \spelldur{Instantaneous}
 \spellsave{None}
@@ -1791,7 +1791,7 @@
 \spellsection{Divine Favor}
 \spelldesc{You imbue yourself with skill in combat by calling upon the divine power of your patron.}
 \spellschool{Transmutation (Augment)}
-\spelllvl{Clr 2, Pal 2, War 2}
+\spelllvl{Clr 1, Pal 1, War 1}
 \spellrng{\rngpers}
 \spelltgt{You}
 \spelldur{\durshort}
@@ -2143,10 +2143,11 @@
   The target is bewildered, making it vulnerable for 5 minutes.
 \end{spellhealthy}
 \begin{spellblood}
-  The target's Intelligence and Charisma scores each drop to 1, giving it roughly the intellect of a lizard. It is unable to use Intelligence- or Charisma-based skills, cast spells, understand language, or communicate coherently. Still, it knows who its friends are and can follow them and even protect them. The subject remains in this state until a \spell{heal}, \spell{limited wish}, \spell{miracle}, or \spell{wish} spell is used to cancel the effect of the \spell{feeblemind}. A creature that can cast arcane spells, such as a sorcerer or a wizard, takes a \minus4 penalty on its saving throw.
+  The target's Intelligence score drops to \minus9, giving it roughly the intellect of a lizard. It is unable to use Intelligence-based skills, cast spells, understand language, or communicate coherently. Still, it knows who its friends are and can follow them and even protect them. The subject remains in this state until a \spell{heal}, \spell{limited wish}, \spell{miracle}, or \spell{wish} spell is used to cancel the effect of the \spell{feeblemind}. A creature that can cast arcane spells, such as a sorcerer or a wizard, takes a \minus4 penalty on its saving throw.
 \end{spellblood}
 \begin{spellnotes}
   A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Values exceed your caster level are unaffected by \spell{word of chaos}.
+
   The target must be bloodied when the spell is cast to suffer the bloodied effect.
 \end{spellnotes}
 
@@ -2369,7 +2370,7 @@
 \spelldur{Instantaneous/5 rounds; see text}
 \spellsave{Reflex half; see text}
 \spellsr{Yes (Reflex)}
-\spelldmg{7d6 cold damage \add d6 per four levels after 14th}
+\spelldmg{7d6 cold damage \add d6 per four levels above 14th}
 \begin{spelleffect}
   Creatures in the area take damage. If the \spell{freezing sphere} strikes a body of water or a liquid that is principally water (not including water-based creatures), it freezes the liquid to a depth of 6 inches over an area equal to 100 square feet (a 10-foot square) per caster level (maximum 1,500 square feet). This ice lasts for 5 rounds. Creatures that were swimming on the surface of frozen water become trapped in the ice. Attempting to break free is a full-round action. A trapped creature must make a Strength check or an Escape Artist check against this spell's save DC to do so.
 \end{spelleffect}
@@ -2683,20 +2684,20 @@
 \spelldesc{You imbue your ally with great bravery and morale in battle.}
 \spellschool{Enchantment (Emotion) [Mind-Affecting, Morale]}
 \spelllvl{Brd 3, Ench 3}
-\spellrng{\rngtouch}
-\spelltgt{Creature touched}
+\spellrng{Touch}
+\spelltgt{Touched creature}
 \spelldur{\durshort (D)}
 \spellsave{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The subject gains a \plus2 bonus on attack rolls and saving throws. \bonusscalingdescription
+  The subject gains a \plus2 bonus on attack rolls, checks, and saving throws. \bonusscalingdescription
 \end{spelleffect}
 
 \spellsectioncomma{Heroism}{Greater}
 \spellschool{Enchantment (Emotion) [Mind-Affecting, Morale]}
 \spelllvl{Brd 5, Ench 6}
 \begin{spelleffect}
-  This spell functions like \spell{heroism}, except the subject also gains the same bonus to checks. In addition, it is immune to fear effects.
+  This spell functions like \spell{heroism}, except the subject also gains temporary hit points equal to 30 \add twice your caster level. In addition, it is immune to fear and harmful morale effects.
 \end{spelleffect}
 
 \spellsection{Hideous Laughter}
@@ -3352,7 +3353,7 @@
 
 \spellsection{Mage Armor}
 \spelldesc{You create an invisible but tangible field of force that surrounds you, protecting you from attacks.}
-\spellschool{Abjuration/Evocation (Control, Shielding) [Force]}
+\spellschool{Abjuration (Shielding) [Force]}
 \spelllvl{Sor/Wiz 1}
 \spellrng{Personal}
 \spelltgt{You}
@@ -3360,9 +3361,12 @@
 \begin{spelleffect}
   You gain a \plus2 armor modifier to AC. \bonusscalingdescription
   \par Unlike mundane armor, \spell{mage armor} entails no armor check penalty, arcane spell failure chance, or speed reduction. It is considered light armor for the purpose of class features and abilities, though you do not need to be proficient with it to use it. Since \spell{mage armor} is made of force, incorporeal creatures can't bypass it the way they do normal armor.
+
 \end{spelleffect}
 \begin{spellnotes}
   This armor is treated as a separate piece or armor from any other armor the creature is wearing, so it does not stack with any existing armor modifier.
+  
+  If you become subject to the \spell{shield} spell during the duration of this spell, the \spell{shield} spell lasts until this spell's duration ends.
 \end{spellnotes}
 
 \spellsection{Mage Hand}
@@ -3417,7 +3421,7 @@
 \spellschool{Abjuration (Interdiction) [Barrier, Lawful]}
 \spelllvl{Clr 5, Chaos 5, Pal 4, Sor/Wiz 5}
 \begin{spelleffect}
-  This spell functions like \spell{magic circle against evil}, except that it is similar to \spell{protection from chaos} instead of \spell{protection from evil}, and it hedges out nonchaotic summoned creatures.
+  This spell functions like \spell{magic circle against evil}, except that it is similar to \spell{protection from chaos} instead of \spell{protection from evil}, and it hedges out nonlawful summoned creatures.
 \end{spelleffect}
 
 \spellsection{Magic Circle against Evil}
@@ -3443,19 +3447,19 @@
 \spellschool{Abjuration (Interdiction) [Barrier, Chaotic]}
 \spelllvl{Clr 5, Chaos 5, Sor/Wiz 5}
 \begin{spelleffect}
-  This spell functions like \spell{magic circle against evil}, except that it is similar to \spell{protection from law} instead of \spell{protection from evil}, and it hedges out nonlawful summoned creatures.
+  This spell functions like \spell{magic circle against evil}, except that it is similar to \spell{protection from law} instead of \spell{protection from evil}, and it hedges out nonchaotic summoned creatures.
 \end{spelleffect}
 
 \spellsection{Magic Fang}
 \spellschool{Transmutation (Augment)}
-\spelllvl{Drd 1}
+\spelllvl{Drd 2}
 \spellrng{Touch}
 \spelltgt{Living creature touched}
 \spelldur{\durshort}
 \spellsave{Fortitude negates (harmless)}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
-  This spell makes one of the subject's natural weapons a \plus2 magic weapon, granting a \plus2 bonus to attack rolls. \bonusscalingdescription
+  This spell makes one of the subject's natural weapons a \plus2 magic weapon, granting a \plus2 bonus to attack and damage rolls. \bonusscalingdescription
 \end{spelleffect}
 \begin{spellnotes}
   The spell does not change an unarmed strike's damage from nonlethal damage to lethal damage. \spell{Magic fang} can be made permanent with a \spell{permanency} spell.
@@ -3463,7 +3467,7 @@
 
 \spellsectioncomma{Magic Fang}{Greater}
 \spellschool{Transmutation (Augment)}
-\spelllvl{Drd 3}
+\spelllvl{Drd 4}
 \spelltgt{One living creature}
 \begin{spelleffect}
   This spell functions like \spell{magic fang}, except that it affects one of the creature's natural weapons per four caster levels.
@@ -3489,14 +3493,14 @@
 
 \spellsection{Magic Vestment}
 \spellschool{Transmutation (Augment)}
-\spelllvl{Clr 1, Sor/Wiz 1, War 1}
+\spelllvl{Clr 2, Sor/Wiz 2}
 \spellrng{Touch}
-\spelltgt{Armor or shield touched}
+\spelltgt{One creature}
 \spelldur{\durshort}
 \spellsave{Will negates (harmless, object)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  You imbue a suit of armor or a shield with a \plus2 enhancement bonus. \bonusscalingdescription
+  You imbue the subject with magic, granting its armor and shield (if any) a \plus2 enhancement bonus, giving its bearer a \plus2 bonus to AC. \bonusscalingdescription
 \end{spelleffect}
 \begin{spellnotes}
   An outfit of regular clothing counts as armor that grants no AC bonus for the purpose of this spell.
@@ -3504,14 +3508,14 @@
 
 \spellsection{Magic Weapon}
 \spellschool{Transmutation (Augment)}
-\spelllvl{Clr 1, Magic 1, Sor/Wiz 1}
+\spelllvl{Clr 2, Sor/Wiz 2}
 \spellrng{Touch}
 \spelltgt{One weapon or fifty projectiles (all of which must be in contact with each other at the time of casting)}
 \spelldur{\durshort}
 \spellsave{Will negates (harmless, object)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  You imbue a weapon or stack of projectiles with a \plus2 enhancement bonus. \bonusscalingdescription
+  You imbue a weapon or stack of projectiles with a \plus2 enhancement bonus, giving its wielder a \plus2 bonus to attack and damage. \bonusscalingdescription
 \end{spelleffect}
 \begin{spellnotes}
   You can't cast this spell on a natural weapon, such as an unarmed strike (instead, see \spell{magic fang}). A monk's unarmed strike is considered a weapon, and thus it can be enhanced by this spell.
@@ -4174,11 +4178,11 @@
 \spelllvl{Abjur 1, Clr 1, Good 1, Pal 1}
 \spellrng{Touch}
 \spelltgt{Creature touched}
-\spelldur{\durmed (D)}
+\spelldur{\durshort (D)}
 \spellsave{Will negates (harmless)}
 \spellsr{No; See text}
 \begin{spelleffect}
-  The subject gains a \plus2 bonus on saving throws against attacks made by or effects created by evil creatures. \bonusscalingdescription
+  The subject gains a \plus2 bonus on saving throws. \bonusscalingdescription
 
   In addition, the spell blocks any evil attempt to possess or exercise mental control over the creature (such as any domination effect). The protection does not prevent such effects from targeting the protected creature, but it suppresses the effect for the duration of the \spell{protection from evil} spell. If the \spell{protection from evil} spell ends before the effect granting mental control does, the would-be controller would then be able to mentally command the controlled creature. Likewise, the barrier keeps out a possessing life force but does not expel one if it is in place before the spell is cast. This effect works only against attacks by evil creatures or from evil effects.
 \end{spelleffect}
@@ -4767,19 +4771,21 @@
 \end{spelleffect}
 
 \spellsection{Shield}
-\spelldesc{You create an invisible, heavy shield-sized mobile disk of force that hovers in front of you. It automatically moves to protect you from enemy blows.}
+\spelldesc{You create an invisible, heavy shield-sized mobile disk of force. It hovers in front of your ally, automatically moving to ward off enemy blows.}
 \spellschool{Abjuration (Shielding) [Force]}
 \spelllvl{Sor/Wiz 1}
 \spellrng{Touch}
-\spelltgt{Creature touched}
-\spelldur{\durshort (D)}
+\spelltgt{One creature}
+\spelldur{\durshort (D); see text}
 \spellsave{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The subject gains a \plus2 shield modifier to AC. \bonusscalingdescription The subject is not encumbered or hindered in any way by the shield. The bonus provided by he shield applies against incorporeal touch attacks, since it is a force effect.
+  The subject gains a \plus2 shield modifier to AC. \bonusscalingdescription The subject is not encumbered or hindered in any way by the shield. The bonus provided by the shield applies against incorporeal touch attacks, since it is a force effect.
 \end{spelleffect}
 \begin{spellnotes}
   This shield is considered to be separate from any other shields the creature is using, so it never stacks with existing shield modifiers.
+  
+  If you cast this spell on a creature subject to the \spell{mage armor} spell, its duration lasts until the \spell{mage armor} spell expires. 
 \end{spellnotes}
 
 \spellsection{Shield of Faith}
@@ -4787,7 +4793,7 @@
 \spellschool{Abjuration (Shielding)}
 \spelllvl{Clr 1, Protection 1}
 \begin{spelleffect}
-  This spell functions like \spell{shield}, except that it is not a force effect, so it does not protect against incorporeal touch attacks.
+  This spell functions like \spell{shield}, except that it is not a force effect, so it does not protect against incorporeal touch attacks. It has no special effect when cast on a creature with \spell{mage armor} 
 \end{spelleffect}
 
 \spellsection{Shield of Law}
