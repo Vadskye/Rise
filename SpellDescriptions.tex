@@ -22,7 +22,7 @@
 \spellsection{Ablative Fortress}
 \spelldesc{You instantly create a simmering field of magical energy, protecting you and your allies from hostile magic.}
 \spellschool{Abjuration (Negation) [Magic]}
-\spelllvl{Sor/Wiz 4}
+\spelllvl{Abjur 4}
 \spellarea{\areamed radius limit centered on you}
 \spelltgts{All allies within the area}
 \spellsave{Will negates (harmless)}
@@ -34,14 +34,14 @@
 \spellsection{Ablative Shield}
 \spelldesc{You instantly encase yourself a shimmering field of magical energy, protecting you from hostile magic.}
 \spellschool{Abjuration (Negation) [Magic]}
-\spelllvl{Sor/Wiz 1}
+\spelllvl{Abjur 1}
 \spellcmp{V}
 \spelltime{1 immediate action}
 \spellrng{\rngpers}
 \spelltgt{You}
 \spelldur{1 round}
 \begin{spelleffect}
-  You gain magical damage reduction 5, causing you to ignore the first 5 damage dealt to you in the round if the damage is dealt by spells or spell-like abilities. This damage reduction increases by 1 per two caster levels above 1st.
+  You gain magical damage reduction 5, causing you to ignore the first 5 damage dealt to you in the round if the damage is dealt by spells or spell-like abilities. This damage reduction increases by 1 per two caster levels above 2nd.
 \end{spelleffect}
 \begin{spellnotes}
   Spells that are not subject to spell resistance are not affected by \spell{ablative shield}.
@@ -91,10 +91,21 @@
   This spell functions like \spell{solid fog}, except that the spell's vapors are highly acidic, dealing damage to all creatures and objects within the area on each round at the start of your turn. The fog does not do damage in the round it is cast. A successful Fortitude save halves the damage.
 \end{spelleffect}
 
+\spellsection{Agony}
+\spelldesc{You inflict debilitating pain on your foe, crippling its ability to act.}
+\spellschool{Necromancy (Flesh)}
+\spelllvl{Sor/Wiz 5}
+\spellrng{\rngclose}
+\spellsave{None}
+\spellsr{Yes (Fortitude)}
+\begin{spelleffect}
+  The subject suffers a \minus4 penalty to attack rolls, saving throws, checks, DCs, and AC.
+\end{spelleffect}
+
 \spellsection{Aid}
 \spelldesc{You fill the target with confidence, improving its resilience and stamina in combat.}
 \spellschool{Enchantment (Emotion) [Mind-Affecting, Morale]}
-\spelllvl{Clr 3, Good 3, Pal 3}
+\spelllvl{Clr 3, Good 3, Pal 3, War 3}
 \spellrng{\rngtouch}
 \spelltgt{Creature touched}
 \spelldur{\durshort}
@@ -136,11 +147,11 @@
 \spellsection{Analyze Dweomer}
 \spelldesc{You discern all spells and magical properties present in a number of creatures or objects.}
 \spellschool{Divination (Awareness, Knowledge) [Magic]}
-\spelllvl{Brd 6, Div 6}
+\spelllvl{Brd 6, Div 6, Knowledge 6, Magic 6}
 \spellcmp{V, S, F}
 \spellrng{\rngclose}
 \spelltgt{One object or creature per round}
-\spelldur{1 round/level (D)}
+\spelldur{\durmed (D)}
 \spellsave{None or Will negates; see text}
 \spellsr{No}
 \begin{spelleffect}
@@ -196,7 +207,7 @@
 \spellsection{Antilife Shell}
 \spelldesc{You create an immobile, spherical energy field that hedges out living creatures.}
 \spellschool{Abjuration (Interdiction) [Barrier]}
-\spelllvl{Clr 7, Drd 6, Nature 6}
+\spelllvl{Clr 7, Drd 6, Nature 7}
 \spellarea{\areasmall radius emanation, centered on your location}
 \spelldur{\durlong (D)}
 \spellsave{None}
@@ -211,7 +222,7 @@
 \spellsection{Antimagic Field}
 \spelldesc{You create a mobile, spherical energy field that suppresses magic.}
 \spellschool{Abjuration (Negation) [Magic]}
-\spelllvl{Clr 8, Magic 7, Sor/Wiz 7, Abjur 6}
+\spelllvl{Clr 8, Magic 7, Sor/Wiz 7}
 \spellarea{\areasmall radius emanation, centered on you}
 \spelldur{\durlong (D)}
 \spellsave{None}
@@ -237,7 +248,7 @@
 \spelldur{\durlong (D)}
 \begin{spelleffect}
   You know the location and power of all magical auras that you can see within \rngmed range of you. An aura's power depends on a spell's functioning level or an item's caster level, as noted in the description of the Spellcraft skill. If the items or creatures bearing the auras are in line of sight, you can make Spellcraft skill checks to determine the school of magic involved in each. (Make one check per aura; DC 15 \add spell level, or 15 \add one-half caster level for a nonspell effect.)
-  \par If you concentrate on a specific creature within Medium range of you as a standard action, you can determine whether it has any spellcasting or spell-like abilities, whether these are arcane or divine (spell-like abilities register as arcane), and the strength of the most powerful spell or spell-like ability the creature currently has available for use.
+  \par If you concentrate on a specific creature within \rngmed range of you as a standard action, you can determine whether it has any spellcasting or spell-like abilities, whether these are arcane or divine (spell-like abilities register as arcane), and the strength of the most powerful spell or spell-like ability the creature currently has available for use.
 \end{spelleffect}
 \begin{spellnotes}
   \spell{Arcane sight} can be made permanent with a \spell{permanency} spell.
@@ -247,12 +258,12 @@
 \spelldesc{Your eyes glow an intense blue as you gain the ability to discern all nearby magical auras at a glance.}
 \spellschool{Divination (Awareness) [Magic]}
 \spelllvl{Sor/Wiz 7}
+\spelldur{\durext (D)}
 \begin{spelleffect}
-  This spell functions like \spell{arcane sight}, except that you automatically know which spells or magical effects are active upon any individual or object you see.
-  \par \spell{Greater arcane sight} doesn't let you identify magic items.
+  This spell functions like \spell{arcane sight}, except that you automatically know which spells or magical effects are active upon any individual or object you see, and you can concentrate on specific creatures to learn about their spellcasting abilities as a swift action. In addition, you automatically recognize any spells being cast within the area.
 \end{spelleffect}
 \begin{spellnotes}
-  Unlike \spell{arcane sight}, this spell cannot be made permanent with a permanency spell.
+  \par \spell{Greater arcane sight} doesn't let you identify magic items. Unlike \spell{arcane sight}, this spell cannot be made permanent with a permanency spell.
 \end{spellnotes}
 
 \spellsection{Assimilate}
@@ -272,7 +283,7 @@
 \spellsection{Attraction}
 \spelldesc{You cause the subject to feel attracted to something.}
 \spellschool{Enchantment (Emotion) [Mind-Affecting]}
-\spelllvl{Bard 1, Sor/Wiz 1}
+\spelllvl{Brd 1, Ench 1}
 \spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{\durext}
@@ -286,7 +297,7 @@
 \spellsection{Aversion}
 \spelldesc{You make the subject want to avoid something.}
 \spellschool{Enchantment (Emotion) [Mind-Affecting]}
-\spelllvl{Bard 2, Sor/Wiz 2}
+\spelllvl{Brd 2, Ench 2}
 \spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{\durext}
@@ -358,7 +369,7 @@
 \spellsection{Bane}
 \spelldesc{You fill your enemies with dismay, impairing their ability to fight.}
 \spellschool{Enchantment (Emotion) [Mind-Affecting, Morale]}
-\spelllvl{Clr 1, Evil 1}
+\spelllvl{Clr 1, Evil 1, War 1}
 \spellarea{\areamed radius burst}
 \spelldur{Instantaneous}
 \spellsave{None}
@@ -390,7 +401,7 @@
 \spellsection{Barkskin}
 \spelldesc{You toughen a creature's skin, giving it the appearance of tree bark.}
 \spellschool{Transmutation (Augment)}
-\spelllvl{Drd 2}
+\spelllvl{Drd 2, Nature 2}
 \spellrng{\rngtouch}
 \spelltgt{Living creature touched}
 \spelldur{\durshort}
@@ -415,8 +426,8 @@
 \begin{spelleffect}
   The subject suffers one of the following three effects, chosen by you:
   \begin{itemize*}
-    \item \minus6 decrease to an attribute score (minimum 1).
-    \item \minus4 penalty on attack rolls, saves, checks, and armor class.
+    \item \minus6 penalty to an attribute.
+    \item \minus4 penalty on attack rolls, saving throws, checks, DCs, and AC.
     \item Each turn, the target has a 25\% chance to act normally; otherwise, it takes no action.
   \end{itemize*}
   \par You may also invent your own curse, but it should be no more powerful than those described above.
@@ -430,7 +441,7 @@
 \spellschool{Conjuration/Transmutation (Animation, Creation)}
 \spelllvl{Sor/Wiz 6}
 \spellrng{\rngclose}
-\spellarea{\areamed radius spread}
+\spellarea{\areasmall radius spread}
 \spelleff{Black tentacles in the area}
 \spelldur{\durshort (D)}
 \spellsave{None}
@@ -459,7 +470,7 @@
 \spellsection{Blasphemy}
 \spelldesc{You speak an unholy utterance of great power, afflicting all those nearby who do not share your allegiance to evil.}
 \spellschool{Evocation (Channeling) [Evil]}
-\spelllvl{Evil 7}
+\spelllvl{Cleric 7, Evil 7}
 \spellcmp{V}
 \spellarea{\arealarge radius spread centered on you}
 \spelldur{Instantaneous}
@@ -539,7 +550,7 @@
 \spellsection{Blink}
 \spelldesc{You rapidly blink in and out of reality, confounding your foes and protecting you from their attacks.}
 \spellschool{Conjuration (Translocation) [Planar]}
-\spelllvl{Sor/Wiz 3}
+\spelllvl{Sor/Wiz 4}
 \spellrng{\rngpers}
 \spelltgt{You}
 \spelldur{\durshort (D)}
@@ -567,7 +578,7 @@
 \spellsave{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The subject gains concealment (20\% miss chance) and a \plus2 bonus to Hide checks. This concealment is not sufficient by itself to make a Hide check.
+  The subject gains concealment (20\% miss chance) and a \plus2 bonus to Hide checks. \bonusscalingdescription This concealment is not sufficient by itself to make a Hide check.
 \end{spelleffect}
 \begin{spellnotes}
   A \spell{see invisibility} spell does not counteract the blur effect, but a \spell{true seeing} spell does.
@@ -577,12 +588,12 @@
 \spellsection{Burning Hands}
 \spelldesc{You expel a cone of searing flame shoots from your fingertips, searing creatures in front of you.}
 \spellschool{Evocation (Energy) [Fire]}
-\spelllvl{Destruction 1, Fire 1, Evoc 1}
+\spelllvl{Destruction 1, Fire 1, Sor/Wiz 1}
 \spellarea{\areamed cone-shaped burst}
 \spelldur{Instantaneous}
 \spellsave{Reflex half}
 \spellsr{Yes (Reflex)}
-\spelldmg{1d6 fire damage \add 1d6 per four caster levels above 1st}
+\spelldmg{1d6 fire damage \add 1d6 per four caster levels above 2nd}
 \begin{spelleffect}
   Everything in the area takes damage. Unattended flammable objects burn if the flames touch them. A character can extinguish burning items as a full-round action.
 \end{spelleffect}
@@ -619,7 +630,7 @@
 \spellsave{Reflex half/Reflex negates}
 \spelldmg{5d6 electricity damage \add d6 per four caster levels above 10th}
 \begin{spellblood}
-  A creature struck by a bolt is also staggered for 1 round. A successful Reflex save to halves the damage and negates the staggering.
+  A creature struck by a bolt is also staggered for 1 round. It can take a move action or a standard action each round, but not both. A successful Reflex save to halves the damage and negates the staggering.
 \end{spellblood}
 \begin{spelleffect}
   This spell functions like \spell{call lightning}, except as noted above. If you are outdoors in a stormy area, each bolt deals 5d8 electricity damage \add d8 per four caster levels above 10th instead.
@@ -646,7 +657,7 @@
 \spellsection{Cause Fear}
 \spelldesc{You fill your enemy with fear.}
 \spellschool{Enchantment (Emotion) [Fear, Mind-Affecting]}
-\spelllvl{Brd 1, Clr 1, Sor/Wiz 1}
+\spelllvl{Brd 1, Clr 1, Ench 1}
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{\durshort/1 round (D)}
@@ -682,7 +693,7 @@
 \spellschool{Transmutation (Alteration, Animation)}
 \spelllvl{Drd 7, Nature 8}
 \spellcmp{V, S, F}
-\spelltime{1 round}
+\spelltime{Full-round action}
 \spellrng{\rngtouch}
 \spelltgt{Your touched staff}
 \spelldur{\durmed (D)}
@@ -744,28 +755,10 @@
   This spell functions like \spell{charm person}, except that it affects multiple creatures at a longer range.
 \end{spelleffect}
 
-\spellsection{Chill Touch}
-\spelldesc{Your hand glows with dark energy as you strike your foes, channeling negative energy into their bodies to disrupt their life force.}
-\spellschool{Necromancy (Vitalism) [Negative]}
-\spelllvl{Sor/Wiz 1}
-\spellrng{\rngtouch}
-\spelltgts{Creature or creatures touched (up to one/level)}
-\spelldur{Instantaneous/5 rounds}
-\spellsave{Fortitude half/Fortude negates; see text}
-\spellsr{Yes (Fortitude)}
-\spelldmg{1 Strength damage and d6 negative energy damage \add half casting attribute}
-\begin{spelleffect}
-  A successful Fortitude save negates the Strength damage. You can use this melee touch attack up to one time per level. If you can make multiple attacks, you can use this touch attack on each of those attacks.
-  \par An undead creature you touch takes no damage of either sort, but it is sickened, making it vulnerable for 5 rounds. A successful Fortitude save negates the effect.
-\end{spelleffect}
-\begin{spellnotes}
-  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Values exceed your caster level are unaffected by \spell{word of chaos}.
-\end{spellnotes}
-
 \spellsection{Circle of Death}
 \spelldesc{You snuff out the life force of your weakened foes by flooding them with negative energy.}
 \spellschool{Necromancy (Vitalism) [Death, Negative]}
-\spelllvl{Death 6, Sor/Wiz 6}
+\spelllvl{Clr 6, Death 6}
 \spellcmp{V, S, M}
 \spellrng{\rngmed}
 \spellarea{\areamed radius limit}
@@ -784,7 +777,7 @@
 \spellsection{Clenched Fist}
 \spelldesc{You create a floating, disembodied hand made of magical force that strikes your foe.}
 \spellschool{Evocation (Control) [Force]}
-\spelllvl{Sor/Wiz 9, Strength 9}
+\spelllvl{Evoc 9, Strength 9}
 \spellsave{None/Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \spelldmg{2d10 force damage \add half casting attribute}
@@ -802,7 +795,7 @@
 \spellsection{Cloak of Chaos}
 \spelldesc{You shield your allies with an an powerful aura that resembles a random pattern of color -- an affront to your lawful foes.}
 \spellschool{Abjuration (Shielding) [Chaotic]}
-\spelllvl{Chaos 8}
+\spelllvl{Chaos 8, Clr 8}
 \spellcmp{V, S, F}
 \spellarea{\areamed radius burst centered on you}
 \spelltgts{Five creatures within the area}
@@ -812,7 +805,7 @@
 \begin{spelleffect}
   This spell has four effects.
   \par First, each shielded creature gains a \plus5 bonus to its saving throws.
-  \par Second, each shielded creature gains spell resistance 10 against lawful spells and spells cast by lawful creatures.
+  \par Second, each shielded creature gains spell resistance against lawful spells and spells cast by lawful creatures.
   \par Third, the abjuration blocks possession and mental influence, just as \spell{protection from law} does.
   \par Finally, if a lawful creature within \rngmed range of the shielded creature successfully attacks it in any way, the offending attacker takes 4d6 damage. Any single creature can take this damage only once per round.
 \end{spelleffect}
@@ -894,29 +887,12 @@
 \spellsectioncomma{Command}{Mass}
 \spelldesc{You compel many foes to obey your command.}
 \spellschool{Enchantment (Compulsion) [Language-Dependent, Mind-Affecting, Sound-Dependent]}
-\spelllvl{Clr 5}
+\spelllvl{Clr 5, Law 5}
 \spellarea{\areamed radius limit}
 \spelltgts{Five creatures within the area}
 \begin{spelleffect}
   This spell functions like \spell{command}, except that it affects multiple creatures.
 \end{spelleffect}
-
-\spellsection{Comprehend Languages}
-\spelldesc{You can understand any language.}
-\spellschool{Divination (Communication)}
-\spelllvl{Brd 1, Clr 2, Knowledge 1, Sor/Wiz 2}
-\spellrng{\rngpers}
-\spelltgt{You}
-\spelldur{\durlong}
-\begin{spelleffect}
-  You can understand the spoken words of creatures or read otherwise incomprehensible written messages. The ability to read does not necessarily impart insight into the material, merely its literal meaning. The spell enables you to understand or read an unknown language, not speak or write it.
-  \par Written material can be read at the rate of one page (250 words) per minute. Magical writing cannot be read, though the spell reveals that it is magical. 
-\end{spelleffect}
-\begin{spellnotes}
-  This spell can be foiled by certain obscuring magic (such as the \spell{secret page} and \spell{illusory script} spells). It does not decipher codes or reveal messages concealed in otherwise normal text. You may be unable to understand dead or extremely obscure languages.
-
-  \par \spell{Comprehend languages} can be made permanent with a \spell{permanency} spell.
-\end{spellnotes}
 
 \spellsectioncomma{Cone of Cold}{Lesser}
 \spelldesc{You create an area of extreme cold that drains heat from creatures in the area.}
@@ -934,7 +910,7 @@
 \spellsection{Cone of Cold}
 \spelldesc{You create an area of extreme cold that drains heat from creatures in the area, diminishing their ability to move and fight.}
 \spellschool{Evocation (Energy) [Cold]}
-\spelllvl{Drd 5, Sor/Wiz 5}
+\spelllvl{Drd 5, Sor/Wiz 5, Water 6}
 \spelldmg{5d6 cold damage \add d6 per four caster levels above 10th.}
 \begin{spelleffect}
   This spell functions as \spell{cone of cold}, except that affected creatures are fatigued for 1 round even if they make their Reflex save, and are fatigued for 5 rounds if they fail.
@@ -973,7 +949,7 @@
 \spellsectioncomma{Confusion}{Mass}
 \spelldesc{You compel a group of creatures to act randomly, sowing confusion in your foes' ranks.}
 \spellschool{Enchantment (Compulsion) [Mind-Affecting]}
-\spelllvl{Brd 6, Sor/Wiz 8, Trickery 8}
+\spelllvl{Sor/Wiz 8, Trickery 8}
 \spellrng{\rngmed}
 \spellarea{\areamed radius limit}
 \spelltgts{All creatures within the area, to a maximum of five creatures}
@@ -982,7 +958,7 @@
 \end{spelleffect}
 
 \spellsection{Contagion}
-\spelldesc{You infect your foe with a contagious disease, knowing he will inadvertently spread it to his allies when he escapes.}
+\spelldesc{You infect your foe with a contagious disease.}
 \spellschool{Necromancy (Flesh) [Disease]}
 \spelllvl{Clr 3, Death 3, Destruction 3, Drd 3, Sor/Wiz 3}
 \spellrng{\rngtouch}
@@ -1010,7 +986,7 @@
 \spellsection{Control Water}
 \spelldesc{You manipulate elemental forces to control water around you.}
 \spellschool{Evocation (Control) [Water]}
-\spelllvl{Drd 3, Sor/Wiz 4, Water 3}
+\spelllvl{Drd 3, Water 3}
 \spellrng{\rnglong}
 \spellarea{Water in a volume of 10 ft./level by 10 ft./level by 2 ft./level (S)}
 \spelldur{\durlong (D)}
@@ -1027,7 +1003,7 @@
 
 \spellsection{Create Sound}
 \spellschool{Illusion (Figment) [Unreal]}
-\spelllvl{Brd 1, Sor/Wiz 1, Trickery 1}
+\spelllvl{Brd 1, Illus 1}
 \spellrng{\rngclose}
 \spelleff{Illusory sounds}
 \spelldur{\durshort (D)}
@@ -1055,15 +1031,21 @@
   This spell creates one centipede swarm per two caster levels. They must all be adjacent at least one other swarm. You may summon the centipede swarms so that they share the area of other creatures. The swarms remain stationary, attacking any creatures in their area, unless you command the creeping doom to move (a standard action). As a standard action, you can command any number of the swarms to move toward any prey within \rngmed range of you. You cannot command any swarm to move more than \rngmed range away from you, and if you exceed that distance, the swarm remains stationary, attacking any creatures in its area (but it can be commanded again if you move within range).
 \end{spelleffect}
 
-\spellsection{Crippling Pain}
-\spelldesc{You inflict debilitating pain on your foe, crippling its ability to act.}
+\spellsection{Cripple}
+\spelldesc{You render your foe's limbs useless.}
 \spellschool{Necromancy (Flesh)}
-\spelllvl{Sor/Wiz 5}
-\spellsave{None}
+\spelllvl{Sor/Wiz 6}
+\spellrng{\rngclose}
+\spelltgt{One creature}
+\spelldur{\durshort}
+\spellsave{Fortitude negates}
 \spellsr{Yes (Fortitude)}
-\begin{spelleffect}
-  The subject suffers a \minus4 penalty to attack rolls, saving throws, checks, DCs, and AC.
-\end{spelleffect}
+\begin{spellhealthy}
+  The subject is staggered. It can take a move action or a standard action each round, but not both. 
+\end{spellhealthy}
+\begin{spellblood}
+  The subject cannot move its limbs. Generally, that means it is paralyzed, except that it can move its head and mouth.
+\end{spellblood}
 
 \spellsection{Crush Life}
 \spelldesc{You attack the life force of a single foe directly, allowing no possibility for escape.}
@@ -1086,18 +1068,6 @@
 \spelldmg{5d10 life damage \add d10 per four caster levels above 10th}
 \begin{spelleffect}
   This spell functions like \spell{crush life}, except that the target is also sickened for 5 rounds.
-\end{spelleffect}
-
-\spellsectioncomma{Crush Life}{Mass}
-\spelldesc{You obliterate the life force of all of your foes directly, allowing no possibility for escape.}
-\spellschool{Necromancy (Unlife)}
-\spelllvl{Necro 8}
-\spellrng{\rnglong}
-\spellarea{\arealarge radius limit}
-\spelltgts{Five living creatures within the area}
-\spelldmg{8d4 life damage \add d4 per four caster levels above 16th}
-\begin{spelleffect}
-  This spell functions as \spell{crush life}, except that it affects many targets in a broad area.
 \end{spelleffect}
 
 \spellsection{Crushing Despair}
@@ -1131,7 +1101,7 @@
 
 \spellsection{Cure Critical Wounds}
 \spelldesc{You lay your hand on a creature and channel positive energy into it, healing even the most grievous injuries.}
-\spellschool{Necromancy (Life) [Healing, Positive]}
+\spellschool{Necromancy (Vitalism) [Healing, Positive]}
 \spelllvl{Brd 4, Clr 4, Drd 4, Life 4, Pal 4}
 \spellheal{8d8 damage \add d8 per two caster levels above 8th}
 \begin{spelleffect}
@@ -1140,7 +1110,7 @@
 
 \spellsectioncomma{Cure Critical Wounds}{Mass}
 \spelldesc{You stretch out your hand and channel positive energy into all of your allies, healing even their most grievous injuries.}
-\spellschool{Necromancy (Life) [Healing, Positive]}
+\spellschool{Necromancy (Vitalism) [Healing, Positive]}
 \spelllvl{Clr 8, Drd 8, Life 8}
 \spellheal{8d6 damage \add d6 per four caster levels above 16th}
 \begin{spelleffect}
@@ -1149,21 +1119,21 @@
 
 \spellsection{Cure Light Wounds}
 \spelldesc{You lay your hand on a creature and channel positive energy into it, healing some of its wounds.}
-\spellschool{Necromancy (Life) [Healing, Positive]}
+\spellschool{Necromancy (Vitalism) [Healing, Positive]}
 \spelllvl{Brd 1, Clr 1, Drd 1, Pal 1}
 \spellrng{\rngtouch}
 \spelltgt{Creature touched}
 \spelldur{Instantaneous}
 \spellsave{Will half (harmless) or Will half; see text}
 \spellsr{Yes (Will)}
-\spellheal{2d8 damage \add d8 per two caster levels above 1st}
+\spellheal{2d8 damage \add d8 per two caster levels above 2nd}
 \begin{spelleffect}
   You heal the touched creature. Since undead are powered by negative energy, this spell deals damage to them instead of curing their wounds. You must succeed on a melee touch attack to hit a target that does not allow you to touch it.
 \end{spelleffect}
 
 \spellsectioncomma{Cure Light Wounds}{Mass}
 \spelldesc{You stretch out your hand and channel positive energy into all of your allies, healing some of their wounds.}
-\spellschool{Necromancy (Life) [Healing, Positive]}
+\spellschool{Necromancy (Vitalism) [Healing, Positive]}
 \spelllvl{Brd 5, Clr 5, Drd 5, Life 5}
 \spellrng{\rngmed}
 \spellarea{\areamed radius limit}
@@ -1187,7 +1157,7 @@
 
 \spellsectioncomma{Cure Moderate Wounds}{Mass}
 \spelldesc{You stretch out your hand and channel positive energy into all of your allies, healing their wounds.}
-\spellschool{Necromancy (Life) [Healing, Positive]}
+\spellschool{Necromancy (Vitalism) [Healing, Positive]}
 \spelllvl{Brd 6, Clr 6, Drd 6, Life 6}
 \spellheal{6d6 damage \add d6 per four caster levels above 12th}
 \begin{spelleffect}
@@ -1196,7 +1166,7 @@
 
 \spellsection{Cure Serious Wounds}
 \spelldesc{You lay your hand on a creature and channel positive energy into it, healing even serious injuries.}
-\spellschool{Necromancy (Life) [Healing, Positive]}
+\spellschool{Necromancy (Vitalism) [Healing, Positive]}
 \spelllvl{Brd 3, Clr 3, Drd 3, Life 3, Pal 3}
 \spellheal{6d8 damage \add d8 per two caster levels above 6th}
 \begin{spelleffect}
@@ -1205,7 +1175,7 @@
 
 \spellsectioncomma{Cure Serious Wounds}{Mass}
 \spelldesc{You stretch out your hand and channel positive energy into all of your allies, healing even serious injuries.}
-\spellschool{Necromancy (Life) [Healing, Positive]}
+\spellschool{Necromancy (Vitalism) [Healing, Positive]}
 \spelllvl{Clr 7, Drd 7, Life 7}
 \spellheal{7d6 damage \add d6 per four caster levels above 14th}
 \begin{spelleffect}
@@ -1319,20 +1289,20 @@
 
 \spellsection{Death Knell}
 \spelldesc{You draw forth the ebbing life force of a creature and use it to fuel your own power.}
-\spellschool{Necromancy (Unlife) [Death]}
-\spelllvl{Death 2, Evil 2, Necro 2}
+\spellschool{Necromancy (Life) [Death]}
+\spelllvl{Death 2, Evil 2, Sor/Wiz 2}
 \spellrng{\rngtouch}
 \spelltgt{Living creature touched}
 \spelldur{Instantaneous/10 minutes per HV of subject; see text}
 \spellsave{Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
-  Upon casting this spell, you touch a living creature that is disabled or dying. If the subject fails its saving throw, it dies, and you gain 10 temporary hit points \plus1 per caster level. If the creature had more than 4 HV, you gain a \plus1 bous to your caster level. If the creature had more than 8 HV, you a \plus2 bonus to Strength, Dexterity, and Constitution. These effects last for 10 minutes per HV of the subject creature. If the creature had less than 1 HV, the bonuses last for 5 rounds.
+  Upon casting this spell, you touch a living creature that has no hit points remaining. If the subject fails its saving throw, it dies, and you gain 10 temporary hit points \plus1 per caster level. If the creature had more than 4 HV, you gain a \plus1 bous to your caster level. If the creature had more than 8 HV, you a \plus2 bonus to Strength, Dexterity, and Constitution. These effects last for 10 minutes per HV of the subject creature. If the creature had less than 1 HV, the bonuses last for 5 rounds.
 \end{spelleffect}
 
 \spellsection{Death Ward}
-\spellschool{Abjuration/Necromancy (Life, Shielding) [Positive]}
-\spelllvl{Clr 4, Death 4, Good 4, Life 4, Necro 4, Pal 4, Protection 4}
+\spellschool{Abjuration/Necromancy (Shielding, Vitalism) [Positive]}
+\spelllvl{Clr 4, Death 4, Good 4, Pal 4, Protection 4}
 \spellrng{\rngtouch}
 \spelltgt{Living creature touched}
 \spelldur{\durshort}
@@ -1347,8 +1317,8 @@
 \end{spellnotes}
 
 \spellsectioncomma{Death Ward}{Mass}
-\spellschool{Abjuration/Necromancy (Life, Shielding) [Positive]}
-\spelllvl{Clr 8, Good 8, Life 8, Protection 8}
+\spellschool{Abjuration/Necromancy (Shielding, Vitalism) [Positive]}
+\spelllvl{Clr 8, Death 8, Good 8, Protection 8}
 \spellrng{\rngclose}
 \spellarea{\areamed radius limit}
 \spelltgts{Five living creatures within the area}
@@ -1378,13 +1348,14 @@
 \spellsection{Delay Poison}
 \spellschool{Necromancy (Flesh)}
 \spelllvl{Clr 1, Drd 1, Pal 1}
-\spellrng{\rngtouch}
+\spelltime{1 swift action}
+\spellrng{\rngclose}
 \spelltgt{Creature touched}
-\spelldur{\durlong}
+\spelldur{\durshort}
 \spellsave{Fortitude negates (harmless)}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
-  The subject becomes temporarily immune to poison. Any poison in its system or any poison to which it is exposed during the spell's duration does not affect the subject until the spell's duration has expired.
+  The subject becomes temporarily immune to the effects of poison. It does not make any saving throws against poison during this spell's duration. This effect does not prevent the subject from becoming poisoned, and any poisons in the subject's system when the spell ends will continue their effects normally. 
 \end{spelleffect}
 \begin{spellnotes}
   This spell does not cure any damage that poison may have already done.
@@ -1392,7 +1363,7 @@
 
 \spellsection{Delayed Blast Fireball}
 \spellschool{Evocation (Energy) [Fire]}
-\spelllvl{Fire 6, Evoc 6}
+\spelllvl{Fire 6, Sor/Wiz 6}
 \spellarea{\areamed radius spread}
 \spelldur{5 rounds or less; see text}
 \spelldmg{6d6 fire damage \add d6 per four caster levels above 12th}
@@ -1412,7 +1383,7 @@
 \spellsave{Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spellhealthy}
-  The target is staggered for 5 rounds.
+  The target is staggered for 5 rounds. It can take a move action or a standard action each round, but not both.
 \end{spellhealthy}
 \begin{spellblood}
   The target is instantly slain.
@@ -1575,7 +1546,7 @@
 
 \spellsection{Dictum}
 \spellschool{Evocation (Channeling) [Lawful]}
-\spelllvl{Law 7}
+\spelllvl{Clr 7, Law 7}
 \spellcmp{V}
 \spellarea{40 foot cube-shaped spread centered on you}
 \spelldur{Instantaneous/5 rounds}
@@ -1591,12 +1562,12 @@
       \par \thead{HV} & \thead{Effect} \\
       \par Equal to caster level & Staggered \\
       \par Up to caster level \minus5 & Stunned, staggered \\
-      \par Up to caster level \minus10 & Paralyzed, slowed, deafened \\
+      \par Up to caster level \minus10 & Paralyzed, stunned, staggered \\
       \par Up to caster level \minus15 & Killed\fn{1}
     \end{tabularx}
     1 Living creatures die. Nonliving creatures are destroyed.
   \end{dtable}
-  \par \subspell{Staggered} The creature is staggered for 5 rounds.
+  \par \subspell{Staggered} The creature is staggered for 5 rounds. It can take a move action or a standard action each round, but not both.
   \par \subspell{Stunned} The creature is stunned for 1 round.
   \par \subspell{Paralyzed} The creature is paralyzed and helpless for 5 rounds.
   \par \subspell{Killed} Living creatures die. Nonliving creatures are destroyed.
@@ -1608,14 +1579,16 @@
 \spellsection{Dimension Door}
 \spellschool{Conjuration (Translocation) [Teleportation]}
 \spelllvl{Travel 5, Sor/Wiz 4}
-\spellrng{\rnglong}
+\spellrng{1,000 feet}
 \spelltgt{You}
 \spelldur{Instantaneous}
 \begin{spelleffect}
   You instantly transfer yourself from your current location to any other spot within range. You always arrive at exactly the spot desired -- whether by simply visualizing the area or by stating direction. After using this spell, you are dazed until the start of your next turn. You can bring along objects as long as their weight doesn't exceed your maximum load.
-  \par If you arrive in a place that is already occupied by a solid body, you take 1d6 damage and are shunted to a random open space on a suitable surface within 100 feet of the intended location.
-  \par If there is no free space within 100 feet, you take an additional 2d6 damage and are shunted to a free space within 1,000 feet. If there is no free space within 1,000 feet, you take an additional 4d6 damage and the spell simply fails.
 \end{spelleffect}
+\begin{spellnotes}
+  \par If you arrive in a place that is already occupied by a solid body, you take 2d6 damage and are shunted to a random open space on a suitable surface within 100 feet of the intended location that is within the range of the spell.
+  \par  If there is no free space within 100 feet, you take an additional 4d6 damage and the spell simply fails.
+\end{spellnotes}
 
 \spellsectioncomma{Dimension Door}{Mass}
 \spellschool{Conjuration (Translocation) [Teleportation]}
@@ -1641,7 +1614,7 @@
 
 \spellsection{Dimensional Anchor}
 \spellschool{Abjuration (Negation)}
-\spelllvl{Clr 3, Sor/Wiz 3}
+\spelllvl{Clr 3, Magic 3, Sor/Wiz 3}
 \spellrng{\rngmed}
 \spelleff{Ray}
 \spelldur{\durmed}
@@ -1959,16 +1932,17 @@
 \end{spelleffect}
 
 \spellsection{Enervation}
-\spellschool{Necromancy (Vitalism) [Negative]}
+\spelldesc{You point your finger and release a black ray that drains your foe's life force away.}
+\spellschool{Necromancy (Life)}
 \spelllvl{Death 4, Evil 4, Sor/Wiz 4}
 \spellrng{\rngclose}
 \spelleff{Ray of negative energy}
 \spelldur{\durlong}
-\spellsave{Fortitude half}
+\spellsave{None}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
-  You point your finger and utter the incantation, releasing a black ray of crackling negative energy that suppresses the life force of any living creature it strikes. You must make a ranged touch attack to hit. If the attack succeeds, the subject gains two negative levels. A successful Fortitude save halves the number of negative levels.
-  \par If the subject has at least as many negative levels as HV, it dies. Each negative level gives a creature a \minus1 penalty on attack rolls, saving throws, checks, and effective level (for determining the power, duration, DC, and other details of spells or special abilities). Additionally, a spellcaster loses one spell or spell slot from his or her highest available level.
+  You must make a ranged touch attack to hit. If the attack succeeds, the target gains two negative levels. 
+  \par Each negative level gives a creature a \minus1 penalty on attack rolls, saving throws, checks, and effective level (for determining the power, duration, DC, and other details of spells or special abilities). Additionally, a spellcaster loses one spell or spell slot from his or her highest available level.If the subject has at least as many negative levels as HV, it dies.
   \par An undead creature struck by the ray gains 20 temporary hit points \plus1 per caster level instead.
 \end{spelleffect}
 \begin{spellnotes}
@@ -2031,7 +2005,7 @@
 \spellsection{Entropic Shield}
 \spelldesc{You surround your ally with a magical field that glows with a chaotic blast of multicolored hues. This field deflects incoming ranged attacks, causing them to chaotically swerve away from their intended target.}
 \spellschool{Abjuration (Shielding)}
-\spelllvl{Chaos 1,  Clr 1}
+\spelllvl{Chaos 1, Clr 1}
 \spellrng{\rngtouch}
 \spelltgt{Touched creature}
 \spelldur{\durshort (D)}
@@ -2068,7 +2042,7 @@
 
 \spellsection{Expeditious Retreat}
 \spellschool{Transmutation (Temporal)}
-\spelllvl{Brd 1, Sor/Wiz 1}
+\spelllvl{Brd 1, Trans 1}
 \spellrng{\rngpers}
 \spelltgt{You}
 \spelldur{\durshort (D)}
@@ -2115,7 +2089,7 @@
 \spellsave{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The subject gains a \plus2 bonus to Spot checks and takes half the normal penalty for range increments and for Spot checks made at a distance.
+  The subject gains a \plus2 bonus to Spot checks and takes half the normal penalty for range increments and for Spot checks made at a distance. \bonusscalingdescription
 \end{spelleffect}
 
 \spellsection{Fear}
@@ -2185,7 +2159,7 @@
 \spellsave{Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spellhealthy}
-  The target is staggered for 5 rounds.
+  The target is staggered for 5 rounds. It can take a move action or a standard action each round, but not both.
 \end{spellhealthy}
 \begin{spellblood}
   The target is instantly slain.
@@ -2600,6 +2574,17 @@
   If used on an undead creature, \spell{harm} acts like \spell{heal}.
 \end{spellnotes}
 
+\spellsectioncomma{Harm}{Mass}
+\spelldesc{You fill your foes with a massive influx of negative energy.}
+\spellschool{Necromancy (Vitalism) [Healing, Positive]}
+\spelllvl{Clr 9, Good 9, Healing 9}
+\spellrng{\rngclose}
+\spelltgts{One or more creatures in a \areamed radius}
+\spelldmg{9d6 negative energy \add d6 per four caster levels above 18th}
+\begin{spelleffect}
+  This spell functions like \spell{harm}, except that it affects multiple creatures.
+\end{spelleffect}
+
 \spellsection{Haste}
 \spelldesc{You accelerate your ally's motions, causing her to move and act more quickly than normal.}
 \spellschool{Transmutation (Temporal)}
@@ -2860,6 +2845,20 @@
   Creatures whose Hit Values exceed your caster level are unaffected by \spell{holy word}.
 \end{spellnotes}
 
+\spellsection{Horrid Wilting}
+\spelldesc{You dessicate your foes from a great distance, shriveling their bodies.}
+\spellschool{Necromancy (Flesh)}
+\spelllvl{Necro 8}
+\spellrng{\rnglong}
+\spellarea{\arealarge radius limit}
+\spelltgts{Ten living creatures within the area}
+\spellsave{Fortitude half}
+\spellsr{Yes (Fortitude)}
+\spelldmg{8d6 physical damage \add d6 per four caster levels above 16th}
+\begin{spelleffect}
+  Each target takes damage.
+\end{spelleffect}
+
 \spellsection{Hypnotic Pattern}
 \spelldesc{You create a twisting pattern of subtle, shifting colors that weaves through the air, fascinating creatures within it.}
 \spellschool{Enchantment/Illusion (Compulsion, Figment) [Light, Mind-Affecting]}
@@ -2900,14 +2899,14 @@
 \spellsection{Implosion}
 \spelldesc{You create a destructive responance in your foe's body that destroys it from the inside out.}
 \spellschool{Evocation (Control)}
-\spelllvl{Clr 9, Destruction 9, Evoc 9}
+\spelllvl{Clr 9, Destruction 9}
 \spellrng{\rngclose}
 \spelltgts{One corporeal creature/round}
 \spelldur{Instantaneous and concentration (up to 5 rounds); see text}
 \spellsave{None/Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spellhealthy}
-  The target is staggered for 5 rounds.
+  The target is staggered for 5 rounds. It can take a move action or a standard action each round, but not both.
 \end{spellhealthy}
 \begin{spellblood}
   The target is instantly slain.
@@ -2980,7 +2979,7 @@
 \spelldur{Instantaneous}
 \spellsave{Will half}
 \spellsr{Yes (Will)}
-\spelldmg{2d8 negative energy damage \add d8 per two caster levels above 1st}
+\spelldmg{2d8 negative energy damage \add d8 per two caster levels above 2nd}
 \begin{spelleffect}
   The touched creature takes damage. Since undead are powered by negative energy, this spell heals them instead of dealing damage. You must succeed on a melee touch attack to hit a target that does not allow you to touch it. 
 \end{spelleffect}
@@ -3064,7 +3063,7 @@
 \spellsection{Interposing Hand}
 \spelldesc{You create a floating, disembodied hand made of magical force that shields you from your foe's blows.}
 \spellschool{Evocation (Control) [Force]}
-\spelllvl{Sor/Wiz 4}
+\spelllvl{Evoc 2}
 \spellrng{\rngmed}
 \spelleff{Large hand made of force}
 \spelldur{\durshort (D)}
@@ -3072,11 +3071,11 @@
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
   The hand created by this spell stays between you and one opponent, providing you with cover (\plus4 AC) from that creature. In addition, if the creature is Large size or smaller, it moves at half speed while moving towards you. 
-  \par Once it has a target, nothing can fool the hand -- it sticks with the selected opponent in spite of darkness, invisibility, or any other attempt at hiding or disguise. However, you must be able to see a target to direct the hand to protect you from it. The hand does not pursue opponents.
-  \par An interposing hand is 10 feet long and about that wide with its fingers outstretched. It has half as many hit points as you do when you're undamaged, and its AC is 20 (\minus1 size, \plus11 natural). It takes damage as a normal creature, but most magical effects that don't cause damage do not affect it.
-  \par The hand never provokes attacks of opportunity from opponents. It cannot push through a \spell{wall of force} or enter an \spell{antimagic field}, but it suffers the full effect of a \spell{prismatic wall} or \spell{prismatic sphere}. The hand makes saving throws as its caster.
+  \par If you cannot see the hand's target, it will stop moving until it is directed to a visible target. The hand does not pursue opponents.
+  \par An interposing hand is 10 feet long and about that wide with its fingers outstretched. It has half as many hit points as you do when you're undamaged, and its AC is 15 (\minus1 size, \plus6 natural). It takes damage as a normal creature, but most magical effects that don't cause damage do not affect it.
 \end{spelleffect}
 \begin{spellnotes}
+  \par The hand never provokes attacks of opportunity from opponents. It cannot push through a \spell{wall of force} or enter an \spell{antimagic field}, but it suffers the full effect of a \spell{prismatic wall} or \spell{prismatic sphere}. The hand makes saving throws as its caster.
   \spell{Disintegrate} or a successful \spell{dispel magic} destroys the hand without a saving throw. Directing the hand to a new target is a swift action.
 \end{spellnotes}
 
@@ -3095,15 +3094,15 @@
 \spellsection{Invisibility}
 \spellschool{Illusion (Glamer)}
 \spelllvl{Brd 3, Sor/Wiz 3, Trickery 3}
-\spellrng{Personal or touch}
-\spelltgt{You or a creature or object weighing no more than 100 lb./level}
+\spellrng{Touch}
+\spelltgt{A creature or object weighing no more than 100 lb./level}
 \spelldur{\durshort (D)}
 \spellsave{Will negates (harmless) or Will negates (harmless, object)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The creature or object touched becomes invisible, vanishing from sight, even from darkvision. If the recipient is a creature carrying gear, that vanishes, too. If you cast the spell on someone else, neither you nor your allies can see the subject, unless you can normally see invisible things or you employ magic to do so.
-  \par Items dropped or put down by an invisible creature become visible; items picked up disappear if tucked into the clothing or pouches worn by the creature. Light, however, never becomes invisible, although a source of light can become so (thus, the effect is that of a light with no visible source). Any part of an item that the subject carries but that extends more than 10 feet from it becomes visible.
-  \par Of course, the subject is not magically \spellindirect{silence}{silenced}, and certain other conditions can render the recipient detectable (such as stepping in a puddle). The spell ends if the subject attacks any creature. For purposes of this spell, an attack includes any spell targeting a foe or whose area or effect includes a foe. (Exactly who is a foe depends on the invisible character's perceptions.) Actions directed at unattended objects do not break the spell. Causing harm indirectly is not an attack. Thus, an invisible being can open doors, talk, eat, climb stairs, summon monsters and have them attack, cut the ropes holding a rope bridge while enemies are on the bridge, remotely trigger traps, open a portcullis to release attack dogs, and so forth. If the subject attacks directly, however, it immediately becomes visible along with all its gear. Spells such as \spell{bless} that specifically affect allies but not foes are not attacks for this purpose, even when they include foes in their area.
+  The creature or object touched becomes invisible, vanishing from sight, even from darkvision. If the recipient is a creature carrying gear, that vanishes, too.
+  \par Items dropped or put down by an invisible creature become visible; items picked up disappear if tucked into the clothing or pouches worn by the creature. Light, however, never becomes invisible, although a source of light can become so (thus, the effect is that of a light with no visible source). Any part of an item that the subject carries but that extends more than 5 feet from it becomes visible.
+  \par Of course, the subject is not magically silenced, and certain other conditions can render the recipient detectable (such as stepping in a puddle). The spell ends if the subject attacks any creature. For purposes of this spell, an attack includes any spell targeting a foe or whose area or effect includes a foe. (Exactly who is a foe depends on the invisible character's perceptions.) Actions directed at unattended objects do not break the spell. Causing harm indirectly is not an attack. Thus, an invisible being can open doors, talk, eat, climb stairs, summon monsters and have them attack, cut the ropes holding a rope bridge while enemies are on the bridge, remotely trigger traps, open a portcullis to release attack dogs, and so forth. If the subject attacks directly, however, it immediately becomes visible along with all its gear. Spells such as \spell{bless} that specifically affect allies but not foes are not attacks for this purpose, even when they include foes in their area.
 \end{spelleffect}
 \begin{spellnotes}
   Invisibility can be made permanent (on objects only) with a \spell{permanency} ritual.
@@ -3180,16 +3179,16 @@
 \end{spelleffect}
 
 \spellsection{Knock}
-\spellschool{Transmutation (Control)}
-\spelllvl{Sor/Wiz 2}
+\spellschool{Evocation (Control)}
+\spelllvl{Evoc 2}
 \spellcmp{V}
 \spellrng{\rngclose}
-\spelltgt{One Medium or smaller door, box, or chest}
+\spelltgt{One Medium or smaller object}
 \spelldur{Instantaneous; see text}
 \spellsave{None}
 \spellsr{No}
 \begin{spelleffect}
-  The knock spell telekinetically opens stuck, barred, locked, held, or arcane locked doors. If the object is stuck or held, you can immediately make an Strength check to break down the door, using your caster level instead of your Strength. Others can aid you on this check as normal. In addition, if the object is locked, you can immediately make a Disable Device check to open the lock as if you had rolled a 20 on the check. You get a bonus on the Disable Device check equal to half your caster level.
+  The knock spell telekinetically opens stuck, barred, locked, held, or arcane locked objects. If the object is stuck or held, you can immediately make an Strength check to break it open, using your caster level instead of your Strength. Others can aid you on this check as normal. In addition, if the object is locked, you can immediately make a Disable Device check to open the lock as if you had rolled a 20 on the check. You get a bonus on the Disable Device check equal to half your caster level.
 \end{spelleffect}
 \begin{spellnotes}
   If knock is cast on an \spellindirect{arcane lock}{arcane locked} door, make a caster level check against a DC of 11 \add the caster level of the \spell{arcane lock}. If you succeed, the \spell{arcane lock} is suppressed for 10 minutes. If you fail, you may still bypass the door with the checks above, if possible.
@@ -3200,7 +3199,7 @@
 
 \spellsection{Levitate}
 \spellschool{Evocation (Control)}
-\spelllvl{Sor/Wiz 3}
+\spelllvl{Evoc 3}
 \spellrng{\rngclose}
 \spelltgt{You or one willing creature or one object (total weight up to 100 lb./level)}
 \spelldur{\durshort (D)}
@@ -3208,6 +3207,19 @@
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   This spell allows you to telekinetically move the subject up and down as you wish. A creature must be willing to be levitated, and an object must be unattended or possessed by a willing creature. You can mentally direct the recipient to move up or down as much as 20 feet each round; doing so is a swift action. You cannot move the recipient horizontally, but the recipient could clamber along the face of a cliff, for example, or push against a ceiling to move laterally (generally at half its base land speed).
+\end{spelleffect}
+
+\spellsection{Lifelink}
+\spelldesc{You bind your foe's life force to yours, leaving them vulnerable to your magic.}
+\spellschool{Necromancy (Life)}
+\spelllvl{Necro 1}
+\spellrng{\rnglong}
+\spelltgt{One living creature}
+\spelldur{\durshort (D)}
+\spellsave{Will negates}
+\spellsr{Yes (Will)}
+\begin{spelleffect}
+  The subject is considered to be within \rngclose range of you for determining the range of your spells. 
 \end{spelleffect}
 
 \spellsection{Light}
@@ -3463,15 +3475,14 @@
 \spelllvl{Sor/Wiz 1}
 \spellrng{\rngmed}
 \spellarea{\rngmed limit}
-\spelltgts{Up to five creatures in the area}
+\spelltgts{Creatures in the area}
 \spelldur{Instantaneous}
 \spellsave{None}
 \spellsr{Yes (Fortitude)}
-\spelldmg{d10 force damage \add d10 per four levels after 1st; see text}
+\spelldmg{2d4 force damage \add d4 per two levels above 2nd; see text}
 \begin{spelleffect}
-  A missile of magical energy darts forth from your fingertip and strikes its target. The missile strikes unerringly, even if the target is in melee combat or has less than total cover or total concealment. Specific parts of a creature can't be singled out. Inanimate objects are not damaged by the spell.
-
-  For every four caster levels beyond 1st, you gain an additional missile. If you shoot multiple missiles, you can have them strike a single creature or several creatures. A single missile can strike only one creature. You must designate targets before you check for spell resistance or roll damage.
+  Two missiles of magical energy dart forth from your fingertip and strike creatures you designate in the area. A single missile can strike only one creature. For every two caster levels above 2nd, you gain an additional missile.
+  The missiles strike unerringly, even if the target is in melee combat or has less than total cover or total concealment. Specific parts of a creature can't be singled out. Inanimate objects are not damaged by the spell. You must designate targets before you check for spell resistance or roll damage.
 \end{spelleffect}
 
 \spellsection{Magic Vestment}
@@ -4233,7 +4244,7 @@
 
 \spellsection{Ray of Enfeeblement}
 \spelldesc{You fire a coruscating ray from your hand. When it strikes your foe, he becomes weaker.}
-\spellschool{Necromancy (Unlife)}
+\spellschool{Necromancy (Flesh)}
 \spelllvl{Sor/Wiz 1}
 \spellrng{\rngclose}
 \spelleff{Ray}
@@ -4244,7 +4255,7 @@
   You must succeed on a ranged touch attack. The subject takes a \minus4 penalty to Strength.
 \end{spelleffect}
 \begin{spellnotes}
-  The subject's Strength score cannot drop below 1.
+  The subject's Strength cannot drop below \minus9.
 \end{spellnotes}
 
 \spellsection{Ray of Exhaustion}
@@ -4272,7 +4283,7 @@
 \spelldur{Instantaneous}
 \spellsave{None}
 \spellsr{Yes (Fortitude)}
-\spelldmg{2d6 cold damage \add d6 per two caster levels above 1st}
+\spelldmg{2d6 cold damage \add d6 per two caster levels above 2nd}
 \begin{spelleffect}
   If you succeed on a ranged touch attack with the ray, the target takes damage.
 \end{spelleffect}
@@ -4284,8 +4295,8 @@
 \spelltgt{You}
 \spelldur{\durshort (D)}
 \begin{spelleffect}
-  While this spell is active, attacks made against you have a 20\% miss chance. This miss chance stacks with and is rolled before any other miss chance, such as from concealment. Any attack that misses you because of this miss chance is instead made against a new creature of your choice, other than the attacker.
-  \par The new target must be a creature adjacent to you that the attacker threatens (if using a melee weapon) or can target (if using a ranged weapon). The new target must also be a creature that you can see and target. If there is no such creature, the attack strikes you normally.
+  Attacks made against you have a 20\% miss chance. This miss chance stacks with and is rolled before any other miss chance, such as from concealment. Any attack that misses you because of this miss chance is instead made against a new creature of your choice, other than the attacker.
+  \par The new target must be a creature adjacent to you that the attacker threatens (if using a melee weapon) or can target (if using a ranged weapon). The new target must also be a creature that you can see and target. If there is no such creature, the attack simply misses.
 \end{spelleffect}
 
 \spellsection{Reduce Person}
@@ -4819,7 +4830,7 @@
 \spelldur{Instantaneous}
 \spellsave{None}
 \spellsr{Yes (Fortitude)}
-\spelldmg{2d6 electricity damage \add d6 per two caster levels above 1st}
+\spelldmg{2d6 electricity damage \add d6 per two caster levels above 2nd}
 \begin{spelleffect}
   If you hit with a touch attack, the target takes damage. When delivering the jolt, you gain a \plus2 circumstance bonus on attack rolls if the opponent is wearing metal armor (or made out of metal, carrying a lot of metal, or the like).
 \end{spelleffect}
@@ -4902,7 +4913,7 @@
 \spellsave{Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spellhealthy}
-  The target is staggered for 5 rounds.
+  The target is staggered for 5 rounds. It can take a move action or a standard action each round, but not both.
 \end{spellhealthy}
 \begin{spellblood}
   The target is instantly slain.
@@ -5002,6 +5013,22 @@
 \end{spelleffect}
 \begin{spellnotes}
   Creatures with HV in excess of your caster level are immune to this spell.
+\end{spellnotes}
+
+\spellsection{Soulrend}
+\spelldesc{You attack your foe's soul directly.}
+\spellschool{Necromancy (Soul)}
+\spelllvl{Necro 6}
+\spellrng{\rnglong}
+\spelltgt{One living creature}
+\spelldur{Instantaneous}
+\spellsave{Will partial}
+\spellsr{Yes (Will)}
+\begin{spelleffect}
+  The target takes 1 Charisma damage per two caster levels. A successful save means the target takes only 2 Charisma damage. 
+\end{spelleffect}
+\begin{spellnotes}
+  A creature with a Charisma of \minus10 is unable to act.
 \end{spellnotes}
 
 \spellsection{Sound Burst}
@@ -5737,22 +5764,6 @@
   Most spellcasters use the additional time to improve their defenses or flee from combat. You are undetectable while \spell{time stop} lasts. You cannot enter an area protected by an \spell{antimagic field} while under the effect of \spell{time stop}.
 \end{spellnotes}
 
-\spellsection{Tongues}
-\spellschool{Divination (Communication)}
-\spelllvl{Brd 3, Clr 4, Div 3, Knowledge 3, Sor/Wiz 4}
-\spellcmp{V}
-\spellrng{Touch}
-\spelltgt{Creature touched}
-\spelldur{\durlong}
-\spellsave{Will negates (harmless)}
-\spellsr{Yes (Will)}
-\begin{spelleffect}
-  This spell grants the creature touched the ability to speak and understand the language of any intelligent creature, whether it is a racial tongue or a regional dialect. The subject can speak only one language at a time, although it may be able to understand several languages. \spell{Tongues} does not enable the subject to speak with creatures who don't speak.
-\end{spelleffect}
-\begin{spellnotes}
-  \spell{Tongues} may be unable to translate dead or extremely obscure languages. It does not predispose any creature addressed toward the subject in any way. \spell{Tongues} can be made permanent with a \spell{permanency} spell.
-\end{spellnotes}
-
 \spellsection{Totemic Mind}
 \spellschool{Transmutation (Imbuement)}
 \spelllvl{Brd 2, Clr 2, Drd 2, Sor/Wiz 2}
@@ -5802,7 +5813,7 @@
 \end{spelleffect}
 
 \spellsection{Touch of Idiocy}
-\spellschool{Enchantment/Necromancy (Unlife) [Mind-Affecting]}
+\spellschool{Enchantment (Inhibition) [Mind-Affecting]}
 \spelllvl{Sor/Wiz 2}
 \spellrng{Touch}
 \spelltgt{Living creature touched}
@@ -5818,7 +5829,7 @@
 
 \spellsection{Transfer Suffering}
 \spellschool{Necromancy (Life) [Healing]}
-\spelllvl{Sor/Wiz 4}
+\spelllvl{Necro 4}
 \spellrng{Close}
 \spelleff{Ray}
 \spelldmg{8d8 life damage \add d8 per two caster levels above 8th}
@@ -5832,7 +5843,7 @@
 \spellsectioncomma{Transfer Suffering}{Lesser}
 \spelldmg{You transfer the wounds that you have taken to your foe, forcing it to suffer in your stead.}
 \spellschool{Necromancy (Life) [Healing]}
-\spelllvl{Sor/Wiz 2}
+\spelllvl{Necro 2}
 \spellrng{Touch}
 \spelltgt{Living creature touched}
 \spelldur{Instantaneous}
@@ -5932,7 +5943,7 @@
 
 \spellsection{Undeath to Death}
 \spellschool{Necromancy (Vitalism) [Positive]}
-\spelllvl{Clr 6, Sor/Wiz 6}
+\spelllvl{Clr 6}
 \spellarea{\areamed radius limit}
 \spelltgts{Several undead creatures within the area}
 \spellsave{Will negates}
