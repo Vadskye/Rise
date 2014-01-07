@@ -143,7 +143,7 @@ Extra Rage & Ability to rage & Can rage 1 more time per day\\
 Extra Smiting\fn{1} & Ability to smite & Can smite 3 more times per day \\
 Extra Stunning & Stunning Fist & Can use stunning fist 3 more times per day \\
 Extra Wild Aspect & Wild aspect & Can use wild aspects 3 more times per day \\
-Improved Turning & Ability to turn or rebuke creatures & \plus2 turning level \\
+Improved Channeling & Ability to channel energy & \plus2 level when channeling energy \\
 Selective Channeling & Ability to channel energy & Can exclude two additional creatures \\
 \end{tabularx}
 \end{dtable!*}
@@ -155,8 +155,8 @@ Selective Channeling & Ability to channel energy & Can exclude two additional cr
 Focused Mind & Elf & Use Intelligence to concentrate instead of Constitution \\
 Giantfighter & Dwarf, gnome, or halfling & \plus2 to dodge against Large or larger creatures \\
 Gnomish Tricks & Gnome, Cha 0 & Gain minor spell-like abilities \\
-Keen Senses & Elf & Automatically notice secret doors, reroll Listen or Spot 1/day \\
-Light-Footed & Elf or halfling & \plus3 to Move Silently and become harder to track \\
+Keen Senses & Elf & \plus3 to Perception, automatically notice secret doors \\
+Light-Footed & Elf or halfling & \plus3 to Stealth and become harder to track \\
 Stonecunning & Dwarf & Gain a sixth sense about stonework \\
 \end{tabularx}
 \end{dtable!*}
@@ -241,7 +241,7 @@ Shield Proficiency  & \x &  No armor check penalty on attack rolls \\
 \tind Improved Shield Bash & Shield Proficiency & Retain shield bonus to AC when shield bashing \\
 \tind Tower Shield Proficiency & Shield Proficiency & No armor check penalty on attack rolls \\
 Short Haft & Proficiency with a reach weapon, base attack bonus \plus4 & Short haft reach weapons faster, without penalty \\
-Two-Weapon Fighting & Dex 5 & Gain \plus2 attack bonus when fighting with two weapons \\
+Two-Weapon Fighting & Dex 3 & Gain \plus2 attack bonus when fighting with two weapons \\
 %\tind Ambidexterity & Str 3, Two-Weapon Fighting, base attack bonus \plus12 & Add full Strength value to damage with both hands \\
 \tind Two-Weapon Defense & Two-Weapon Fighting & Off-hand weapon grants \plus1 shield bonus to AC, later \plus3 \\
 Weapon Focus\fn{1} & Proficiency with weapon group, base attack bonus \plus1 & \plus1 to attack with selected weapon group \\
@@ -434,12 +434,12 @@ Choose a school of magic or a spell descriptor to which you already have applied
 %\parhead{Benefit} You get a \plus4 competence bonus on caster level checks (1d20 \add caster level) made to overcome a creature's spell resistance.
 
 \subsubsection{Improved Counterspell [General]}
-\parhead{Benefit} When counterspelling, you may use a spell of the same school that is one or more spell levels higher than the target spell.
+\parhead{Benefit} When counterspelling, you may use any spell of the same school with a spell level at least as high as the target spell.
 \parhead{Normal} Without this feat, you may counter a spell only with the same spell or with a spell specifically designated as countering the target spell.
 
-%\subsubsection{Improved Turning [General]}
-%\parhead{Prerequisite} Ability to turn or rebuke creatures.
-%\parhead{Benefit} You gain a \plus2 competence bonus to your turning level when turning or rebuke creatures. If you have multiple abilities that let you turn or rebuke creatures, this applies to all of them.
+\subsubsection{Improved Channeling [General]}
+\parhead{Prerequisite} Ability to channel energy.
+\parhead{Benefit} You gain a \plus2 competence bonus to your effective cleric level when channeling energy.
 
 \subsubsection{Iron Will [General]}
 \parhead{Benefit} You get a \plus2 competence bonus on all Will saving throws. Once per day, you may reroll a Will save. You must decide to use this ability before the results are revealed. You must take the second roll, even if it is worse.
@@ -455,7 +455,7 @@ Choose two magical classes you possess.
 \subsubsection{Rapid Metamagic [General]}
 \parhead{Prerequisites} Spellcraft 8 ranks, ability to cast spells, one metamagic feat
 \parhead{Benefit} When you apply a metamagic feat to a spell, the spell only takes its normal casting time.
-\parhead{Normal} Applying metamagic takes a standard action (if the spell normally requires less than a standard action), a full-round action (if the spell normally requires a standard action), or an additional full-round action (if the spell takes 1 full round or longer to cast).
+\parhead{Normal} Without this feat, applying metamagic takes a standard action (if the spell normally requires less than a standard action), a full-round action (if the spell normally requires a standard action), or an additional full-round action (if the spell takes 1 full round or longer to cast).
 \parhead{Special} At 1st level, a sorcerer gets Rapid Metamagic as a bonus feat, even if he does not have the prerequisites.
 
 \subsubsection{Retributive Counterspell [General]}
@@ -470,7 +470,7 @@ Choose two magical classes you possess.
 \subsubsection{Selective Channeling [General]}
 \parhead{Prerequisites} Ability to channel energy
 \parhead{Benefit} You can exclude up to two additional creatures from the effect when you channel energy.
-\parhead{Normal} You can exclude a number of creatures from the effect equal to 1 \add half your Wisdom.
+\parhead{Normal} Without this feat, you can exclude a number of creatures from the effect equal to 1 \add half your Wisdom.
 
 \subsubsection{Spell Focus [General]}
 Choose a school of magic or a spell descriptor.
@@ -484,7 +484,7 @@ Choose a school of magic or a spell descriptor.
 
 \subsubsection{Swift [General]}
 \parhead{Benefit} When charging, you move at three times your normal speed. When running, you move five times your normal speed (if wearing medium, light, or no armor and carrying no more than a medium load) or four times your speed (if wearing heavy armor or carrying a heavy load).  If you make a jump after a running start (see the Jump skill description), you gain a \plus4 circumstance bonus on your Jump check. You only need 10 feet of movement to get a running start for a Jump check. While running, you are not flat-footed.
-\parhead{Normal} You move four times your speed while running (if wearing medium, light, or no armor and carrying no more than a medium load) or three times your speed (if wearing heavy armor or carrying a heavy load), you move at twice your speed when charging, and you become flat-footed while running.
+\parhead{Normal} Without this feat, you move four times your speed while running (if wearing medium, light, or no armor and carrying no more than a medium load) or three times your speed (if wearing heavy armor or carrying a heavy load), you move at twice your speed when charging, and you become flat-footed while running.
 
 \subsubsection{Toughness [General]}
 \parhead{Benefit} You gain \plus3 hit points, \plus1 per level above 3.
@@ -501,11 +501,11 @@ Choose a school of magic or a spell descriptor.
 
 \subsubsection{Keen Senses [Racial]}
 \parhead{Prerequisite} Elf
-\parhead{Benefit} If you come within 10 feet of a secret or concealed door, you can make a Spot check to notice it as if you were actively searching. In addition, once per day you may reroll a skill check with either Listen or Spot.
+\parhead{Benefit} You gain a \plus3 competence bonus to Perception checks. In addition, if you come within 10 feet of a secret or concealed door, you can make a Spot check to notice it as if you were actively searching.
 
 \subsubsection{Light-Footed [Racial]}
 \parhead{Prerequisite} Elf or halfling
-\parhead{Benefit} You gain a \plus3 competence bonus to Move Silently checks. In addition, the DC to follow tracks you leave increases by 5.
+\parhead{Benefit} You gain a \plus3 competence bonus to Stealth checks. In addition, the DC to follow tracks you leave increases by 5.
 
 \subsubsection{Stonecunning [Racial]}
 \parhead{Prerequisite} Dwarf
@@ -702,7 +702,7 @@ If you fail a Survival check, you can retry after 1 hour (outdoors) or 10 minute
 \parhead{Special} Fighters, paladins, and clerics automatically have Armor Proficiency (heavy) as a bonus feat. They need not select it.
 
 \subsubsection{Armor Proficiency (Light) [Combat]}
-\parhead{Benefit} When you wear a type of armor with which you are proficient, the armor check penalty for that armor applies only to Balance, Climb, Escape Artist, Hide, Jump, Move Silently, Sleight of Hand, and Tumble checks. You suffer the armor's normal arcane spell failure.
+\parhead{Benefit} When you wear a type of armor with which you are proficient, the armor check penalty for that armor applies only to Acrobatics, Climb, Escape Artist, Jump, and Sleight of Hand, and Swim checks. You suffer the armor's normal arcane spell failure.
 \parhead{Normal} A character who is wearing armor with which she is not proficient applies its armor check penalty to attack rolls and to all skill checks that involve moving, including Ride. The character also suffers double the normal arcane spell failure chance for wearing the armor.
 \parhead{Special} All characters except wizards, sorcerers, and monks automatically have Armor Proficiency (light) as a bonus feat. They need not select it.
 
@@ -867,14 +867,14 @@ In addition, your unarmed strikes can deal lethal or nonlethal damage as you cho
 \parhead{Benefit} When you attempt to overrun an opponent while mounted, your target may not choose to avoid you. Your mount may make one attack with an appropriate natural weapon (hoof, claw, or other leg-based attack) against any target you knock down, gaining the standard \plus4 circumstance bonus on attack rolls against prone targets.
 
 \subsubsection{Two-Weapon Defense [Combat]}
-\parhead{Prerequisites} Dex 5, Two-Weapon Fighting.
+\parhead{Prerequisites} Dex 3, Two-Weapon Fighting.
 \parhead{Benefit} When wielding a double weapon or two weapons (not including natural weapons or unarmed strikes), you gain a \plus1 shield bonus to your AC. This bonus increases by 1 once your base attack bonus reaches \plus8, and increases by 1 again once your base attack bonus reaches \plus16.
 %\par Additionally, if you are proficient with bucklers, you may keep your buckler's shield bonus to AC while you attack with a weapon in your off-hand.
 %\parhead{Normal} Without this feat, a character wielding a buckler loses the buckler's shield bonus to AC when using an off-hand weapon to attack.
 
 \subsubsection{Two-Weapon Fighting [Combat]}
 You can fight with a weapon in each hand more effectively.
-\parhead{Prerequisite} Dex 5.
+\parhead{Prerequisite} Dex 3.
 \parhead{Benefit} You gain a \plus2 circumstance bonus to attack rolls when attacking with two weapons at once.
 
 %\subsubsection{Two-Weapon Rend [Combat]}
@@ -1135,7 +1135,7 @@ Each breath weapon deals 1d8 damage per two Hit Values you possess and allows a 
 
 \subsubsection{Draconic Scales [Bloodline, Dragon]}
 \parhead{Prerequisite} Draconic Heritage.
-\parhead{Benefit} You gain a \plus1 competence bonus to your natural armor modifier for every two dragon bloodline feats that you have.
+\parhead{Benefit} You gain a \plus1 competence bonus to your natural armor modifier for every dragon bloodline feat that you have, to a maximum bonus of \plus5.
 
 \subsubsection{Draconic Senses [Bloodline, Dragon]}
 \parhead{Prerequisite} Draconic Heritage.
