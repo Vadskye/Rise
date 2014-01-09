@@ -308,7 +308,7 @@
   \par If the subject is forced into taking an action she has an aversion to, she is bewildered as long as she performs the action, making her vulnerable.
 \end{spelleffect}
 \begin{spellnotes}
-  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Values exceed your caster level are unaffected by \spell{word of chaos}.
+  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
 \end{spellnotes}
 
 \pdfbookmark[2]{B}{SpellDescriptionsB}
@@ -362,7 +362,7 @@
   If the subject remains in the new form for 24 consecutive hours, it must attempt another Will save. If this save fails, it loses its ability to understand language, as well as all other memories of its previous form, and its Hit Values, hit points, and mental attribute scores change to match an average creature of its new form. These abilities and statistics return to normal if the effect is later ended. The subject must repeat this save every 24 hours that it remains in its new form. 
 \end{spellblood}
 \begin{spellnotes}
-  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Values exceed your caster level are unaffected by \spell{word of chaos}.
+  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
   Incorporeal or gaseous creatures are immune to \spell{baleful polymorph}, and a creature with the shapechanger subtype (such as a lycanthrope or a doppelganger) can revert to its natural form as a standard action (which ends the spell's effect). 
 \end{spellnotes}
 
@@ -497,7 +497,7 @@
   \par \subspell{Killed} Living creatures die. Nonliving creatures are destroyed.
 \end{spellblood}
 \begin{spellnotes}
-  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Values exceed your caster level are unaffected by \spell{word of chaos}.
+  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
   Creatures whose Hit Values exceed your caster level are unaffected by \spell{blasphemy}.
 \end{spellnotes}
 
@@ -529,7 +529,7 @@
 \spellsection{Blindness/Deafness}
 \spelldesc{You afflict one of the subject's senses.}
 \spellschool{Necromancy (Flesh)}
-\spelllvl{Clr 3, Sor/Wiz 3}
+\spelllvl{Clr 3, Sor/Wiz 2}
 \spellcmp{V}
 \spellrng{Touch}
 \spelltgt{Living creature touched}
@@ -543,7 +543,8 @@
   The subject is blinded, deafened, or sickened, as you choose.
 \end{spellblood}
 \begin{spellnotes}
-  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Values exceed your caster level are unaffected by \spell{word of chaos}.
+  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
+  
   The choice of bloodied conditions is made at the time the spell is cast.
 \end{spellnotes}
 
@@ -801,7 +802,7 @@
 \spelltgts{Five creatures within the area}
 \spelldur{\durshort (D)}
 \spellsave{Will negates (harmless)}
-\spellsr{Yes (harmless)}
+\spellsr{Yes (Will)}
 \begin{spelleffect}
   This spell has four effects.
   \par First, each shielded creature gains a \plus5 bonus to its saving throws.
@@ -880,7 +881,7 @@
   \par \subspell{Halt} On its turn, the subject can take no actions, but it can defend itself normally.
 \end{spellblood}
 \begin{spellnotes}
-  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Values exceed your caster level are unaffected by \spell{word of chaos}.
+  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
   If the subject can't understand or carry out your command, the spell automatically fails.
 \end{spellnotes}
 
@@ -1124,8 +1125,8 @@
 \spellrng{\rngtouch}
 \spelltgt{Creature touched}
 \spelldur{Instantaneous}
-\spellsave{Will half (harmless) or Will half; see text}
-\spellsr{Yes (Will)}
+\spellsave{Fortitude half (harmless) or Fortitude half; see text}
+\spellsr{Yes (Fortitude)}
 \spellheal{2d8 damage \add d8 per two caster levels above 2nd}
 \begin{spelleffect}
   You heal the touched creature. Since undead are powered by negative energy, this spell deals damage to them instead of curing their wounds. You must succeed on a melee touch attack to hit a target that does not allow you to touch it.
@@ -1139,8 +1140,8 @@
 \spellarea{\areamed radius limit}
 \spelltgts{Five creatures within the area}
 \spelldur{Instantaneous}
-\spellsave{Will half (harmless) or Will half; see text}
-\spellsr{Yes (Will)}
+\spellsave{Fortitude half (harmless) or Fortitude half; see text}
+\spellsr{Yes (Fortitude)}
 \spellheal{5d6 damage \add d6 per four caster levels above 10th}
 \begin{spelleffect}
   You heal the targets. Like other \spellindirect{cure light wounds}{cure} spells, this spell deals damage to affected undead rather than curing them.
@@ -1777,15 +1778,17 @@
 \end{spelleffect}
 
 \spellsection{Dissipating Touch}
+\spelldesc{Your mere touch can disperse the surface material of your foe, sending a tiny portion of it far away.}
 \spellschool{Conjuration (Translocation) [Teleportation]}
 \spelllvl{Conj 2}
 \spellrng{\rngtouch}
 \spelltgt{Creature or object touched}
 \spelldur{Instantaneous}
-\spellsave{Will negates (object)}
+\spellsave{Will half (object)}
 \spellsr{Yes (Will)}
+\spelldmg{4d8 physical damage \add d8 per two caster levels above 4th}
 \begin{spelleffect}
-  Your mere touch can disperse the surface material of a foe or object, sending a tiny portion of it far away. This effect is disruptive; thus, your successful melee touch attack deals damage. This damage ignores the hardness of objects.
+  The touched target takes damage. This damage ignores the hardness of objects.
 \end{spelleffect}
 
 \spellsection{Divine Favor}
@@ -2043,12 +2046,17 @@
 \spellsection{Expeditious Retreat}
 \spellschool{Transmutation (Temporal)}
 \spelllvl{Brd 1, Trans 1}
-\spellrng{\rngpers}
-\spelltgt{You}
+\spellrng{Touch}
+\spelltgt{Touched creature}
 \spelldur{\durshort (D)}
+\spellsave{Will negates (harmless)}
+\spellsr{Yes (Will)}
 \begin{spelleffect}
-  This spell doubles your base land speed, to a maximum of a \plus30 foot increase. (This adjustment is treated as an enhancement bonus.) There is no effect on other modes of movement, such as burrow, climb, fly, or swim. As with any effect that increases your speed, this spell affects your jumping distance.
+  Your base land speed doubles, to a maximum of a \plus30 foot increase. (This adjustment is treated as an enhancement bonus.) There is no effect on other modes of movement.
 \end{spelleffect}
+\begin{spellnotes}
+ As with any effect that increases your speed, this spell affects your jumping distance.
+ \end{spellnotes}
 
 \pdfbookmark[2]{F}{SpellDescriptionsF}
 \begin{comment}
@@ -2137,16 +2145,16 @@
 \spellrng{\rngtouch}
 \spelltgt{Touched creature}
 \spelldur{Instantaneous}
-\spellsave{Will negates}
+\spellsave{None/Will negates}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
   The target is bewildered, making it vulnerable for 5 minutes.
 \end{spellhealthy}
 \begin{spellblood}
-  The target's Intelligence score drops to \minus9, giving it roughly the intellect of a lizard. It is unable to use Intelligence-based skills, cast spells, understand language, or communicate coherently. Still, it knows who its friends are and can follow them and even protect them. The subject remains in this state until a \spell{heal}, \spell{limited wish}, \spell{miracle}, or \spell{wish} spell is used to cancel the effect of the \spell{feeblemind}. A creature that can cast arcane spells, such as a sorcerer or a wizard, takes a \minus4 penalty on its saving throw.
+  As the healthy effect, and if the target fails a Will save, its Intelligence score drops to \minus9, giving it roughly the intellect of a lizard. It is unable to use Intelligence-based skills, cast spells, understand language, or communicate coherently. Still, it knows who its friends are and can follow them and even protect them. The subject remains in this state until a \spell{heal}, \spell{limited wish}, \spell{miracle}, or \spell{wish} spell is used to cancel the effect of the \spell{feeblemind}. A creature that can cast arcane spells, such as a sorcerer or a wizard, takes a \minus4 penalty on its saving throw.
 \end{spellblood}
 \begin{spellnotes}
-  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Values exceed your caster level are unaffected by \spell{word of chaos}.
+  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
 
   The target must be bloodied when the spell is cast to suffer the bloodied effect.
 \end{spellnotes}
@@ -2409,7 +2417,7 @@
   As the healthy effect, and the subject is paralyzed if it fails a Fortitude save. Each round that it is paralyzed, the subject can make a new saving throw. If it succeeds, it is no longer paralyzed by the spell, though it is still sickened. In addition, as long as it is paralyzed, the subject exudes a carrion stench that causes all living creatures (except you) in a \areasmall radius spread to become sickened (Fortitude negates) for 5 rounds.
 \end{spellblood}
 \begin{spellnotes}
-  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Values exceed your caster level are unaffected by \spell{word of chaos}.
+  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
 \end{spellnotes}
 
 \spellsection{Giant Vermin}
@@ -2450,7 +2458,7 @@
 \spellsave{None}
 \spellsr{No}
 \begin{spelleffect}
-  A cloud of golden particles covers everyone and everything in the area, visibly outlining invisible things for the duration of the spell. It likewise negates the effects of blur and displacement, and reveals figments, mirror images, and projected images for what they are. All within the area are covered by the dust, which cannot be removed and continues to sparkle until it fades.
+  A cloud of golden particles covers everyone and everything in the area, visibly outlining invisible things for the duration of the spell. It likewise negates the effects of blur and displacement, and reveals figments, mirror images, and projected images for what they are. All within the area at the time that the spell is cast are covered by the dust, which cannot be removed and continues to sparkle until it fades.
   \par Any creature covered by the dust takes a \minus40 penalty on Hide checks.
 \end{spelleffect}
 
@@ -2461,6 +2469,9 @@
 \begin{spelleffect}
   This spell functions like \spell{glitterdust}, except that creatures in the area must also make Will saves or be dazzled for the duration of the spell.
 \end{spelleffect}
+\begin{spellnotes}
+  A dazzled creature treats everything he sees as if it had concealment (20\% miss chance), and takes a \minus4 penalty to Spot checks. He is also unable to see with darkvision.
+\end{spellnotes}
 
 \spellsection{Globe of Invulnerability}
 \spellschool{Abjuration (Negation) [Magic]}
@@ -2490,11 +2501,11 @@
 \spelllvl{Brd 3}
 \spellarea{\areasmall radius limit centered on you}
 \spelltgt{Five creatures within the area}
-\spelldur{\durshort}
+\spelldur{Instantaneous}
 \spellsave{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The subjects gain 10 temporary hit points \add 1 per caster level and a \plus2 bonus on attack rolls. \bonusscalingdescription
+  The subjects gain a \plus2 bonus on attack rolls and temporary hit points equal to 10 \add 1 per caster level for 5 rounds. \bonusscalingdescription
 \end{spelleffect}
 \begin{spellnotes}
   \spell{Good hope} counters and dispels \spell{crushing despair}.
@@ -2505,7 +2516,7 @@
 \spelllvl{Evoc 7, Strength 7}
 \begin{spelleffect}
   This spell functions like \spell{interposing hand}, except the hand can also grapple one opponent that you select. The grasping hand gets one grapple attack per round.
-  \par Its combat maneuver bonus to grapple equals your caster level \add your casting ability modifier, \plus4 for being Large. The hand holds but does not harm creatures it grapples. Its CMD is equal to 10 \add its CMA.
+  \par Its combat maneuver attack to grapple equals your caster level \add your casting attribute, \plus4 for being Large. The hand holds but does not harm creatures it grapples. Its CMD is equal to 10 \add its CMA.
 \end{spelleffect}
 \begin{spellnotes}
   Directing the spell to a new target is a swift action.
@@ -2559,13 +2570,13 @@
 \spellsection{Harm}
 \spelldesc{You fill your foe with a massive influx of negative energy, crippling its life force.}
 \spellschool{Necromancy (Vitalism) [Negative]}
-\spelllvl{Clr 6, Death 6, Evil 6, Vitality 6}
+\spelllvl{Clr 6, Evil 6, Vitality 6}
 \spellrng{\rngtouch}
 \spelltgt{Creature touched}
 \spelldur{Instantaneous}
-\spellsave{Will half/Will negates}
+\spellsave{Fortitude half/Fortitude negates}
 \spellsr{Yes (Will)}
-\spelldmg{12d8 negative energy \add d8 per two caster levels above 12th}
+\spelldmg{12d8 negative energy damage \add d8 per two caster levels above 12th}
 \begin{spelleffect}
   The touched creature takes damage. In addition, it takes two points of Strength, Dexterity, and Constitution damage. A successful Will save negates the ability damage and halves the negative energy damage.
   
@@ -2584,7 +2595,7 @@
 \spelllvl{Clr 9, Vitality 9}
 \spellrng{\rngclose}
 \spelltgts{One or more creatures in a \areamed radius}
-\spelldmg{9d6 negative energy \add d6 per four caster levels above 18th}
+\spelldmg{9d6 negative energy damage \add d6 per four caster levels above 18th}
 \begin{spelleffect}
   This spell functions like \spell{harm}, except that it affects multiple creatures.
 \end{spelleffect}
@@ -2593,14 +2604,14 @@
 \spelldesc{You accelerate your ally's motions, causing her to move and act more quickly than normal.}
 \spellschool{Transmutation (Temporal)}
 \spelllvl{Trans 4}
-\spellrng{\rngclose}
+\spellrng{Touch}
 \spelltgts{One creature}
 \spelldur{\durshort}
-\spellsave{Fortitude negates (harmless)}
-\spellsr{Yes (Fortitude)}
+\spellsave{Will negates (harmless)}
+\spellsr{Yes (Will)}
 \begin{spelleffect}
-  The subject is hasted. This has two effects. When making a full attack action, a hasted creature may make one extra attack with any weapon he is holding. The attack is made using the creature's full base attack bonus, plus any modifiers appropriate to the situation.
-  \par All of the hasted creature's modes of movement (including land movement, burrow, climb, fly, and swim) double in speed, to a maximum of an additional 30 ft. of movement. This increase counts as an enhancement bonus, and it affects the creature's jumping distance as normal for increased speed.
+  The subject is hasted. This has two effects. First, when making a full attack action, a hasted creature may make one extra attack at a \minus5 penalty.
+  \par Second, all of the hasted creature's modes of movement (including land movement, burrow, climb, fly, and swim) double in speed, to a maximum of an additional 30 ft. of movement. This increase counts as an enhancement bonus, and it affects the creature's jumping distance as normal for increased speed.
 \end{spelleffect}
 \begin{spellnotes}
   \spell{Haste} dispels and counters \spell{slow}. The extra attack granted is not cumulative with similar effects, such as that provided by a weapon of speed, nor does it actually grant an extra action, so you can't use it to cast a second spell or otherwise take an extra action in the round.
@@ -2623,8 +2634,8 @@
 \spellrng{\rngtouch}
 \spelltgt{Creature touched}
 \spelldur{Instantaneous}
-\spellsave{Will negates (harmless)}
-\spellsr{Yes (harmless)}
+\spellsave{Fortitude negates (harmless) or Fortitude negates; see text}
+\spellsr{Yes (Fortitude)}
 \spellheal{12d8 \add d8 per two caster levels above 12th}
 \begin{spelleffect}
   This spell heals the subject and immediately ends any and all of the following adverse conditions affecting the target: ability damage, blinded, confused, dazed, dazzled, deafened, diseased, exhausted, fatigued, feebleminded, insanity, nauseated, sickened, stunned, and poisoned.
@@ -2655,8 +2666,8 @@
 \spellrng{\rngtouch}
 \spelltgt{Your mount touched}
 \spelldur{Instantaneous}
-\spellsave{Will negates (harmless)}
-\spellsr{Yes (harmless)}
+\spellsave{Fortitude negates (harmless)}
+\spellsr{Yes (Fortitude)}
 \spellheal{6d8 \add d8 per two caster levels above 6th}
 \begin{spelleffect}
   This spell functions like \spell{heal}, but it affects only the paladin's special mount.
@@ -2684,8 +2695,8 @@
 \spelldesc{You imbue your ally with great bravery and morale in battle.}
 \spellschool{Enchantment (Emotion) [Mind-Affecting, Morale]}
 \spelllvl{Brd 3, Ench 3}
-\spellrng{Touch}
-\spelltgt{Touched creature}
+\spellrng{\rngclose}
+\spelltgt{One creature}
 \spelldur{\durshort (D)}
 \spellsave{Will negates (harmless)}
 \spellsr{Yes (Will)}
@@ -2713,10 +2724,10 @@
   The subject is bewildered, making it vulnerable.
 \end{spellhealthy}
 \begin{spellblood}
-  The subject falls prone and can take no actions. It loses its Dexterity and dodge modifiers to AC. Each round on its turn, the affected creature can attempt a new saving throw. If it succeeds, the effect ends, though it can take no other actions that round.
+  As the healthy effect, and the subject is flat-footed and must spend a standard action each round to do nothing but laugh uncontrollably. After each time it laughs, the affected creature can attempt a new saving throw. If it succeeds, it can stop laughing, though it is still bewildered.
 \end{spellblood}
 \begin{spellnotes}
-  A creature with an Intelligence score of 2 or lower is not affected. A creature whose type is different from the caster's receives a \plus4 circumstance bonus on its saving throw, because humor doesn't ``translate" well.
+  A creature with an Intelligence score of \minus8 or lower is not affected. A creature whose type is different from the caster's receives a \plus4 circumstance bonus on its saving throw, because humor doesn't ``translate'' well.
 \end{spellnotes}
 \begin{spellnotes}
   A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
@@ -2753,15 +2764,17 @@
   The subject is bewildered, making it vulnerable.
 \end{spellhealthy}
 \begin{spellblood}
-  The subject is paralyzed and unable to act. Each round on its turn, the subject may attempt a new saving throw to end the effect. If it succeeds, it is no longer paralyzed, though it can take no other actions that round.
+  As the healthy effect, and the subject is paralyzed and unable to act. Each round on its turn, the subject may attempt a new saving throw to end the paralysis. If it succeeds, it is no longer paralyzed, though it is still bewildered and can take no other actions that round.
 \end{spellblood}
 \begin{spellnotes}
   A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
 \end{spellnotes}
 
+%Note: doesn't follow existing formula. Need to change formula.
 \spellsectioncomma{Hold Person}{Mass}
 \spellschool{Enchantment (Inhibition) [Mind-Affecting]}
 \spelllvl{Brd 6, Clr 7, Sor/Wiz 7}
+\spellrng{\rngmed}
 \spellarea{\areamed radius limit}
 \spelltgts{Five creatures within the area}
 \begin{spelleffect}
@@ -2776,7 +2789,7 @@
 \spelltgts{Five creatures within the area}
 \spelldur{\durshort (D)}
 \spellsave{See text}
-\spellsr{Yes (harmless)}
+\spellsr{Yes (Will)}
 \begin{spelleffect}
   A brilliant divine radiance surrounds the subjects, protecting them from attacks, granting them resistance to spells cast by evil creatures, and damaging evil creatures when they strike the subjects. This abjuration has four effects.
   \par First, each shielded creature gains a \plus5 bonus to its saving throws.
@@ -2814,11 +2827,12 @@
 \end{spelleffect}
 \begin{spellnotes}
   This spell is not cumulative with any other spell that might modify the weapon in any way. It does not work on artifacts.
+  %What is a holy weapon?
 \end{spellnotes}
 
 \spellsection{Holy Word}
 \spellschool{Evocation (Channeling) [Good]}
-\spelllvl{Good 7}
+\spelllvl{Clr 7, Good 7}
 \spellcmp{V}
 \spellarea{\arealarge radius spread centered on you}
 \spelldur{Instantaneous}
@@ -2834,7 +2848,7 @@
       \par \thead{HV} & \thead{Effect} \\
       \par Equal to caster level & Deafened \\
       \par Up to caster level \minus5 & Blinded, deafened \\
-      \par Up to caster level \minus10 & Paralyzed, nauseated, deafened \\
+      \par Up to caster level \minus10 & Paralyzed, blinded, deafened \\
       \par Up to caster level \minus15 & Killed\fn{1}
     \end{tabularx}
     1 Living creatures die. Nonliving creatures are destroyed.
@@ -2851,7 +2865,7 @@
 \spellsection{Horrid Wilting}
 \spelldesc{You dessicate your foes from a great distance, shriveling their bodies.}
 \spellschool{Necromancy (Flesh)}
-\spelllvl{Necro 8}
+\spelllvl{Necro 8, Water 8}
 \spellrng{\rnglong}
 \spellarea{\arealarge radius limit}
 \spelltgts{Ten living creatures within the area}
@@ -2859,7 +2873,7 @@
 \spellsr{Yes (Fortitude)}
 \spelldmg{8d6 physical damage \add d6 per four caster levels above 16th}
 \begin{spelleffect}
-  Each target takes damage.
+  Each target takes damage. Plants and creature with the water subtype take a \minus5 penalty on their saving throw. 
 \end{spelleffect}
 
 \spellsection{Hypnotic Pattern}
@@ -2888,7 +2902,7 @@
 \spellsection{Ice Storm}
 \spelldesc{You conjure magical hailstones that pound down, smashing and chilling creatures in their path.}
 \spellschool{Conjuration/Evocation (Creation, Energy) [Cold]}
-\spelllvl{Drd 4, Sor/Wiz 4, Water 5}
+\spelllvl{Drd 4, Sor/Wiz 4, Water 4}
 \spellrng{\rngmed}
 \spellarea{\areasmall radius cylinder, 20 ft. high}
 \spelldur{Instantaneous and 1 round; see text}
@@ -2909,7 +2923,7 @@
 \spellsave{None/Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spellhealthy}
-  The target is staggered for 5 rounds. It can take a move action or a standard action each round, but not both.
+  The target creature you concentrate on is staggered for 5 rounds. It can take a move action or a standard action each round, but not both.
 \end{spellhealthy}
 \begin{spellblood}
   The target is instantly slain.
@@ -2922,19 +2936,22 @@
 \spellsection{Imprisonment}
 \spellschool{Conjuration/Transmutation (Time, Translocation) [Teleportation]}
 \spelllvl{Earth 9, Law 9, Sor/Wiz 9}
-\spellrng{\rngmed}
+\spellrng{\rngclose}
 \spelltgt{One creature}
-\spelldur{Instantaneous and Permanent}
+\spelldur{See text}
 \spellsave{Will negates}
 \spellsr{Yes (Will)}
+\spelldmg{18d8 physical damage \add d8 per two caster levels above 18th}
 \begin{spellhealthy}
-  The subject is slowed for 5 rounds.
+  The target takes damage as its body is partially teleported away, and it is slowed for 5 rounds.
 \end{spellhealthy}
 \begin{spellblood}
-  The subject is entombed in a state of suspended animation (as the \spell{temporal stasis} spell) in a small sphere far beneath the surface of the earth. It remains there unless an \spell{emancipation} spell is cast at the locale where the imprisonment took place.
+  If the creature is touching the ground, it becomes permanently entombed in a state of suspended animation (as the \spell{temporal stasis} spell) in a small sphere far beneath the surface of the earth. It remains there unless an \spell{emancipation} spell is cast at the locale where the imprisonment took place.
+
+  If the creature is not touching the ground, it instead suffers the healthy spell effect.
 \end{spellblood}
 \begin{spellnotes}
-  A slowed creature can take only a single move action or standard action each turn, but not both. Additionally, it takes a -2 penalty to attack rolls, Strength and Dexterity-based skill checks, and armor class.
+  A slowed creature can take only a single move action or standard action each turn, but not both. Additionally, it takes a \minus2 penalty to attack rolls, Strength and Dexterity-based skill checks, and armor class.
 
   The subject must be bloodied at the time that the spell is cast to be imprisoned. Magical search by a crystal ball, a \spell{locate creature} spell, or some other similar divination does not reveal the fact that a creature is imprisoned, but \spell{discern location} does. A \spell{wish} or \spell{miracle} spell will not free the recipient, but will reveal where it is entombed.
 \end{spellnotes}
@@ -2943,13 +2960,13 @@
 \spelldesc{You create a barrier around your ally that resists physical intrusion.}
 \spellschool{Abjuration (Shielding)}
 \spelllvl{Sor/Wiz 2}
-\spellrng{Touch}
-\spelltgt{Touched creature}
+\spellrng{\rngclose}
+\spelltgt{One creature}
 \spelldur{\durshort}
 \spellsave{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The subject gains physical damage reduction 4/magic, allowing you to ignore the first 4 physical damage you take each round, except from magical attacks. This damage reduction increases by 1 per two caster levels above 4th.
+  The subject gains physical damage reduction 4/magic, allowing the subject to ignore the first 4 physical damage it takes each round, except from magical attacks such as magic weapons. This damage reduction increases by 1 per two caster levels above 4th.
 \end{spelleffect}
 
 \spellsection{Inflict Critical Wounds}
@@ -2980,8 +2997,8 @@
 \spellrng{\rngtouch}
 \spelltgt{Creature touched}
 \spelldur{Instantaneous}
-\spellsave{Will half}
-\spellsr{Yes (Will)}
+\spellsave{Fortitude half}
+\spellsr{Yes (Fortitude)}
 \spelldmg{2d8 negative energy damage \add d8 per two caster levels above 2nd}
 \begin{spelleffect}
   The touched creature takes damage. Since undead are powered by negative energy, this spell heals them instead of dealing damage. You must succeed on a melee touch attack to hit a target that does not allow you to touch it. 
@@ -2994,8 +3011,8 @@
 \spellarea{\areamed radius limit}
 \spelltgts{Five creatures within the area}
 \spelldur{Instantaneous}
-\spellsave{Will half}
-\spellsr{Yes (Will)}
+\spellsave{Fortitude half}
+\spellsr{Yes (Fortitude)}
 \spelldmg{5d6 negative energy damage \add d6 per four caster levels above 10th}
 \begin{spellnotes}
   The targets take damage. Like other \spellindirect{inflict light wounds}{inflict} spells, \spell{mass inflict light wounds} heals undead instead of dealing damage. A cleric capable of spontaneously casting \spellindirect{inflict light wounds}{inflict} spells can also spontaneously cast \spellindirect{mass inflict light wounds}{mass inflict} spells.
@@ -3085,8 +3102,8 @@
 \spellsection{Invest Magic}
 \spellschool{Transmutation (Augment)}
 \spelllvl{Clr 4, Sor/Wiz 4, War 4}
-\spellrng{Touch}
-\spelltgt{Creature touched}
+\spellrng{\rngclose}
+\spelltgt{One creature}
 \spelldur{\durshort}
 \spellsave{Will negates (harmless)}
 \spellsr{Yes (Will)}
@@ -3108,7 +3125,7 @@
   \par Of course, the subject is not magically silenced, and certain other conditions can render the recipient detectable (such as stepping in a puddle). The spell ends if the subject attacks any creature. For purposes of this spell, an attack includes any spell targeting a foe or whose area or effect includes a foe. (Exactly who is a foe depends on the invisible character's perceptions.) Actions directed at unattended objects do not break the spell. Causing harm indirectly is not an attack. Thus, an invisible being can open doors, talk, eat, climb stairs, summon monsters and have them attack, cut the ropes holding a rope bridge while enemies are on the bridge, remotely trigger traps, open a portcullis to release attack dogs, and so forth. If the subject attacks directly, however, it immediately becomes visible along with all its gear. Spells such as \spell{bless} that specifically affect allies but not foes are not attacks for this purpose, even when they include foes in their area.
 \end{spelleffect}
 \begin{spellnotes}
-  Invisibility can be made permanent (on objects only) with a \spell{permanency} ritual.
+  \spell{Invisibility} can be made permanent (on objects only) with a \spell{permanency} ritual.
 \end{spellnotes}
 
 \spellsectioncomma{Invisibility}{Greater}
@@ -3118,9 +3135,19 @@
   This spell functions like \spell{invisibility}, except that the subject becomes invisible again at the start of each of its turns, even if it attacked a creature during its previous turn.
 \end{spelleffect}
 
+\spellsectioncomma{Invisibility}{Mass}
+\spellschool{Illusion (Glamer)}
+\spelllvl{Sor/Wiz 7, Trickery 7}
+\spellrng{\rngmed}
+\spellarea{\areamed radius limit}
+\spelltgts{Five creatures or objects weighing no more than 100 lb./level in the area}
+\begin{spelleffect}
+  This spell functions like \spell{invisibility}, except that it affects multiple creatures. If the effct is broken for one creature, the other subjects remain invisible.
+\end{spelleffect}
+
 \spellsection{Invisibility Purge}
 \spellschool{Abjuration (Negation)}
-\spelllvl{Abjur 3, Clr 3}
+\spelllvl{Clr 3, Sor/Wiz 3}
 \spellarea{\arealarge radius emanation, centered on you}
 \spelldur{\durlong (D)}
 \begin{spelleffect}
@@ -3129,8 +3156,7 @@
 
 \spellsection{Invisibility Sphere}
 \spellschool{Illusion (Glamer)}
-\spelllvl{Brd 4, Sor/Wiz 5}
-\spellcmp{V, S}
+\spelllvl{Brd 5, Sor/Wiz 5}
 \spellarea{\areasmall radius emanation around the creature or object touched}
 \begin{spelleffect}
   This spell functions like \spell{invisibility}, except that this spell confers invisibility upon all creatures within a \areasmall radius emanation of the recipient. The center of the effect is mobile with the recipient.
@@ -3146,8 +3172,8 @@
 \begin{spelleffect}
   This spell transforms your body into living iron, which grants you several powerful resistances and abilities.
   \par You gain physical damage reduction 15/adamantine. You are immune to blindness, critical hits, attribute score damage, deafness, disease, drowning, electricity, poison, stunning, and all spells or attacks that affect your physiology or respiration, because you have no physiology or respiration while this spell is in effect. You take only half damage from acid and fire of all kinds.
-  \par You gain a \plus6 bonus to your Strength score, but you take a \minus6 penalty to Dexterity as well (to a minimum Dexterity score of 1), and your speed is reduced to half normal. You have an arcane spell failure chance of 50\% and a \minus8 armor check penalty. You cannot drink (and thus can't use potions) or play wind instruments.
-  \par Your unarmed attacks deal damage equal to a club sized for you (1d4 for Small characters or 1d6 for Medium characters), and you are considered armed when making unarmed attacks.
+  \par You gain a \plus6 bonus to your Strength score, but you take a \minus6 penalty to Dexterity as well, and your speed is reduced to half normal. You have an arcane spell failure chance of 50\% and a \minus8 armor check penalty. You cannot drink (and thus can't use potions) or play wind instruments.
+  \par Your unarmed attacks deal damage equal to a warhammer sized for you (1d6 for Small characters or 1d8 for Medium characters), and you are considered armed when making unarmed attacks.
   \par Your weight increases by a factor of ten, causing you to sink in water like a stone. However, you could survive the crushing pressure and lack of air at the bottom of the ocean -- at least until the spell duration expires.
 \end{spelleffect}
 
@@ -3222,7 +3248,7 @@
 \spellsave{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The subject is considered to be within \rngclose range of you for determining the range of your spells. 
+  The subject is considered to be within \rngclose range of you for determining the range of your spells and spell-like abilities.
 \end{spelleffect}
 
 \spellsection{Light}
@@ -3279,7 +3305,7 @@
 
 \spellsection{Link Vitality}
 \spellschool{Necromancy (Life)}
-\spelllvl{Life 3, Necro 3}
+\spelllvl{Necro 3}
 \spellarea{\areamed radius limit centered on you}
 \spelltgts{Any two living creatures within the area}
 \spelldur{\durshort}
@@ -3360,11 +3386,10 @@
 \spelldur{\durlong (D)}
 \begin{spelleffect}
   You gain a \plus2 armor modifier to AC. \bonusscalingdescription
-  \par Unlike mundane armor, \spell{mage armor} entails no armor check penalty, arcane spell failure chance, or speed reduction. It is considered light armor for the purpose of class features and abilities, though you do not need to be proficient with it to use it. Since \spell{mage armor} is made of force, incorporeal creatures can't bypass it the way they do normal armor.
-
+  \par Unlike mundane armor, \spell{mage armor} entails no armor check penalty, arcane spell failure chance, or speed reduction.
 \end{spelleffect}
 \begin{spellnotes}
-  This armor is treated as a separate piece or armor from any other armor the creature is wearing, so it does not stack with any existing armor modifier.
+  This armor is treated as a separate piece or armor from any other armor the creature is wearing, so it does not stack with any existing armor modifier. Since \spell{mage armor} is made of force, incorporeal creatures can't bypass it the way they do normal armor.
   
   If you become subject to the \spell{shield} spell during the duration of this spell, the \spell{shield} spell lasts until this spell's duration ends.
 \end{spellnotes}
@@ -3453,11 +3478,11 @@
 \spellsection{Magic Fang}
 \spellschool{Transmutation (Augment)}
 \spelllvl{Drd 2}
-\spellrng{Touch}
-\spelltgt{Living creature touched}
+\spellrng{\rngclose}
+\spelltgt{One creature}
 \spelldur{\durshort}
-\spellsave{Fortitude negates (harmless)}
-\spellsr{Yes (Fortitude)}
+\spellsave{Will negates (harmless)}
+\spellsr{Yes (Will)}
 \begin{spelleffect}
   This spell makes one of the subject's natural weapons a \plus2 magic weapon, granting a \plus2 bonus to attack and damage rolls. \bonusscalingdescription
 \end{spelleffect}
@@ -3468,7 +3493,6 @@
 \spellsectioncomma{Magic Fang}{Greater}
 \spellschool{Transmutation (Augment)}
 \spelllvl{Drd 4}
-\spelltgt{One living creature}
 \begin{spelleffect}
   This spell functions like \spell{magic fang}, except that it affects one of the creature's natural weapons per four caster levels.
 \end{spelleffect}
@@ -3493,14 +3517,14 @@
 
 \spellsection{Magic Vestment}
 \spellschool{Transmutation (Augment)}
-\spelllvl{Clr 2, Sor/Wiz 2}
-\spellrng{Touch}
-\spelltgt{One creature}
-\spelldur{\durshort}
+\spelllvl{Clr 1, Sor/Wiz 1}
+\spellrng{\rngclose}
+\spelltgt{One suit of armor or shield}
+\spelldur{\durmed}
 \spellsave{Will negates (harmless, object)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  You imbue the subject with magic, granting its armor and shield (if any) a \plus2 enhancement bonus, giving its bearer a \plus2 bonus to AC. \bonusscalingdescription
+  You imbue body armor or a shield with a \plus2 enhancement bonus, giving its bearer a \plus2 bonus to AC. \bonusscalingdescription
 \end{spelleffect}
 \begin{spellnotes}
   An outfit of regular clothing counts as armor that grants no AC bonus for the purpose of this spell.
@@ -3509,7 +3533,7 @@
 \spellsection{Magic Weapon}
 \spellschool{Transmutation (Augment)}
 \spelllvl{Clr 2, Sor/Wiz 2}
-\spellrng{Touch}
+\spellrng{\rngclose}
 \spelltgt{One weapon or fifty projectiles (all of which must be in contact with each other at the time of casting)}
 \spelldur{\durshort}
 \spellsave{Will negates (harmless, object)}
@@ -3956,7 +3980,7 @@
   The target is blinded for 5 rounds.
 \end{spellblood}
 \begin{spellnotes}
-  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Values exceed your caster level are unaffected by \spell{word of chaos}.
+  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
   The target must be bloodied when the spell is cast to suffer the bloodied effect.
 \end{spellnotes}
 
@@ -3977,7 +4001,7 @@
   The target is instantly slain.
 \end{spellblood}
 \begin{spellnotes}
-  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Values exceed your caster level are unaffected by \spell{word of chaos}.
+  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
   The target must be bloodied when the spell is cast to suffer the bloodied effect. A creature whose HV exceeds your caster level are sickened instead of killed, as the healthy effect.
 \end{spellnotes}
 
@@ -3997,7 +4021,7 @@
   The target is confused for 5 rounds. \confusionexplanation
 \end{spellblood}
 \begin{spellnotes}
-  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Values exceed your caster level are unaffected by \spell{word of chaos}.
+  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
   The target must be bloodied when the spell is cast to suffer the bloodied effect.
 \end{spellnotes}
 
@@ -4018,7 +4042,7 @@
   The target is stunned for 5 rounds.
 \end{spellblood}
 \begin{spellnotes}
-  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Values exceed your caster level are unaffected by \spell{word of chaos}.
+  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
   The target must be bloodied when the spell is cast to suffer the bloodied effect.
 \end{spellnotes}
 
@@ -4780,10 +4804,10 @@
 \spellsave{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The subject gains a \plus2 shield modifier to AC. \bonusscalingdescription The subject is not encumbered or hindered in any way by the shield. The bonus provided by the shield applies against incorporeal touch attacks, since it is a force effect.
+  The subject gains a \plus2 shield modifier to AC. \bonusscalingdescription The subject is not encumbered or hindered in any way by the shield.
 \end{spelleffect}
 \begin{spellnotes}
-  This shield is considered to be separate from any other shields the creature is using, so it never stacks with existing shield modifiers.
+  This shield is considered to be separate from any other shields the creature is using, so it never stacks with existing shield modifiers. Since the \spell{shield} is made of force, incorporeal creatures can't bypass it the way they do normal shields.
   
   If you cast this spell on a creature subject to the \spell{mage armor} spell, its duration lasts until the \spell{mage armor} spell expires. 
 \end{spellnotes}
@@ -4914,7 +4938,7 @@
 \spellsection{Slay Living}
 \spelldesc{Your hand seethes with an eerie dark fire as you reach out to touch your foe, instantly snuffing out his life.}
 \spellschool{Necromancy (Life) [Death]}
-\spelllvl{Clr 5, Death 5}
+\spelllvl{Clr 6, Death 6}
 \spellrng{Touch}
 \spelltgt{Living creature touched}
 \spelldur{Instantaneous}
@@ -5030,13 +5054,16 @@
 \spellrng{\rnglong}
 \spelltgt{One living creature}
 \spelldur{Instantaneous}
-\spellsave{Will partial}
+\spellsave{Will half}
 \spellsr{Yes (Will)}
-\begin{spelleffect}
-  The target takes 1 Charisma damage per two caster levels. A successful save means the target takes only 2 Charisma damage. 
-\end{spelleffect}
+\begin{spellhealthy}
+  The target takes 1 Charisma damage per three caster levels.
+\end{spellhealthy}
+\begin{spellblood}
+  The target takes 1 Charisma damage per two caster levels.
+\end{spellblood}
 \begin{spellnotes}
-  A creature with a Charisma of \minus10 is unable to act.
+  A creature with a Charisma of \minus10 is unable to act. Undead can take Charisma damage from this spell despite being immune to ability damage. 
 \end{spellnotes}
 
 \spellsection{Sound Burst}
@@ -5954,7 +5981,6 @@
 \spelllvl{Clr 6}
 \spellarea{\areamed radius limit}
 \spelltgts{Several undead creatures within the area}
-\spellsave{Will negates}
 \begin{spelleffect}
   This spell functions like \spell{circle of death}, except that it destroys undead creatures.
 \end{spelleffect}
@@ -5990,7 +6016,7 @@
   Nonevil creatures in the area take damage and are sickened, making them vulnerable for 5 rounds. A successful Will save reduces the damage by half and negates the sickening.
 \end{spelleffect}
 \begin{spellnotes}
-  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Values exceed your caster level are unaffected by \spell{word of chaos}.
+  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
 \end{spellnotes}
 
 \spellsection{Unliving Eyes}
@@ -6037,6 +6063,7 @@
   You can make your voice (or any sound that you can normally make vocally) seem to issue from someplace else. You can speak in any language you know. With respect to such voices and sounds, anyone who hears the sound and rolls a successful save recognizes it as illusory (but still hears it).
 \end{spelleffect}
 
+\begin{comment}
 \spellsection{Vestments of the Mage}
 \spelldesc{You imbue a set of armor with magical power, preventing it from interfering with your spellcasting.}
 \spellschool{Transmutation (Imbuement)}
@@ -6052,6 +6079,7 @@
 \begin{spellnotes}
   This is considered an enhancement bonus.
 \end{spellnotes}
+\end{comment}
 
 \spellsection{Wail of the Banshee}
 \spelldesc{You emit a terrible scream that kills anyone that hears it.}
@@ -6069,7 +6097,7 @@
   The subjects are nauseated for 1 round. If you concentrate for a second round, subjects still in the area immediately die.
 \end{spellblood}
 \begin{spellnotes}
-  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Values exceed your caster level are unaffected by \spell{word of chaos}.
+  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
   This spell affects a maximum number of creatures equal to your caster level. Creatures closest to you are affected first, so creatures farther away may be unaffected if there are enough intervening creatures. Each creature makes only one saving throw against the effect.
 \end{spellnotes}
 
