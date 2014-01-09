@@ -543,7 +543,7 @@
   The subject is blinded, deafened, or sickened, as you choose.
 \end{spellblood}
 \begin{spellnotes}
-  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
+  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. A blinded character cannot see. She takes a \minus2 penalty to attack rolls, Armor Class, and any checks which involve sight. In addition, she is flat-footed and moves at half speed. All checks and activities that rely on vision (such as reading and Spot checks) automatically fail. All opponents are considered to have total concealment (50\% miss chance) relative to the blinded character. A deafened character cannot hear. She automatically fails Listen checks, takes a \minus2 penalty to any checks which involve hearing, and has a 20\% chance of spell failure when casting spells with verbal components.
   
   The choice of bloodied conditions is made at the time the spell is cast.
 \end{spellnotes}
@@ -3424,6 +3424,7 @@
   \par \subspell{Note} Destroying artifacts is a dangerous business, and it is 95\% likely to attract the attention of some powerful being who has an interest in or connection with the device.
 \end{spelleffect}
 
+%need to run expected damage analysis
 \spellsection{Mage's Sword}
 \spellschool{Evocation (Control) [Force]}
 \spelllvl{Sor/Wiz 7}
@@ -3668,9 +3669,9 @@
 
 \spellsection{Miracle}
 \spellschool{Evocation (Channeling)}
-\spelllvl{Clr 9, Healing 9; see text}
+\spelllvl{Clr 9}
 \spellrng{See text}
-\par Target, Effect, or \spellarea{See text}
+\spelltgteffarea{See text}
 \spelldur{See text}
 \spellsave{See text}
 \spellsr{Yes (varies; see text)}
@@ -3697,16 +3698,16 @@
 \end{spellnotes}
 
 \spellsection{Mirror Image}
-\spelldesc{You create several illusory duplicates of yourself that make it difficult for enemies to know which image to attack.}
+\spelldesc{You create illusory duplicates of yourself that make it difficult for enemies to know which image to attack.}
 \spellschool{Illusion (Figment)}
 \spelllvl{Illus 2}
 \spellrng{Personal; see text}
 \spelltgt{You}
 \spelldur{\durshort (D)}
 \begin{spelleffect}
-  This spell creates two illusory duplicates of yourself that mimic your movements perfectly. Enemies attempting to attack you or cast spells at you must select which to attack. Generally, roll randomly to see whether the selected target is real or a figment. An image's AC is 10 \add your size modifier.
-  \par If an image is hit, it is destroyed. If you are hit, your attacker knows the attack was successful, and can ignore the images. On your turn, you can create new images (to a maximum of two images at any time), preventing your foes from knowing which image to attack.
-  \par You can move into and through a mirror image on your turn. When you and the mirror image separate, observers can't use vision or hearing to tell which one is you and which the image. The figments may also move through each other. The figments mimic your actions, pretending to cast spells when you cast a spell, drink potions when you drink a potion, levitate when you levitate, and so on.
+  This spell creates an illusory duplicate of yourself that mimics your movements perfectly. Enemies attempting to attack you or cast spells at you must select which to attack. Generally, roll randomly to see whether the selected target is real or a figment. An image's AC is 10 \add your size modifier. You gain an additional image at 8th, 14th, and 20th level. 
+  \par If an image is hit, it is destroyed. If you are hit, your attacker knows the attack was successful, and can ignore the image. You can create new images to replace destroyed images as a swift action, preventing your foes from knowing which image to attack.
+  \par You can move into and through your duplicates on your turn. When you and the image separate, observers can't use vision or hearing to tell which one is you and which the image. The duplicates may also move through each other. The figments mimic your actions, pretending to cast spells when you cast a spell, drink potions when you drink a potion, levitate when you levitate, and so on.
   \par Mirror images can be attacked like any other creature. They count as separate creatures, and can be targeted separately by spells like \spell{magic missile} or feats like Whirlwind Attack, though they are not destroyed by area spells. Destroying an image counts as dropping a creature for the purpose of the Cleave feat and similar abilities.
 \end{spelleffect}
 \begin{spellnotes}
@@ -3715,7 +3716,7 @@
 
 \spellsection{Mislead}
 \spellschool{Illusion (Figment, Glamer) [Unreal]}
-\spelllvl{Brd 5, Illus 6, Trickery 6}
+\spelllvl{Brd 5, Sor/Wiz 6, Trickery 6}
 \spellrng{Personal/\rngmed}
 \spelltgt{You}
 \spelleff{One illusory double}
@@ -3834,7 +3835,7 @@
 
 \spellsection{Overland Flight}
 \spellschool{Transmutation (Imbuement)}
-\spelllvl{Trans 7}
+\spelllvl{Sor/Wiz 7}
 \spellrng{Personal}
 \spelltgt{You}
 \spelldur{\durext}
@@ -3844,7 +3845,7 @@
 
 \spellsection{Passwall}
 \spellschool{Transmutation (Alteration)}
-\spelllvl{Trans 5, Travel 5}
+\spelllvl{Sor/Wiz 5, Travel 5}
 \spellrng{Touch}
 \spelleff{5 ft. by 8 ft. opening, 10 ft. deep plus 5 ft. deep per three additional levels}
 \spelldur{\durext (D)}
@@ -3869,7 +3870,7 @@
 \spellsection{Phantasmal Killer}
 \spelldesc{You create a phantasmal image of the most fearsome creature imaginable to the subject simply by forming the fears of the subject's subconscious mind into something that its conscious mind can visualize: this most horrible beast.}
 \spellschool{Enchantment/Illusion (Emotion, Phantasm) [Death, Fear, Mind-Affecting, Unreal]}
-\spelllvl{Sor/Wiz 4}
+\spelllvl{Sor/Wiz 4, Trickery 4}
 \spellrng{\rngclose}
 \spelltgt{One living creature}
 \spelldur{Instantaneous}
@@ -3888,7 +3889,7 @@
 \spellsection{Phantom Maze}
 \spelldesc{You manipulate the subject's perceptions, causing it to believe that it is trapped in a labyrinth.}
 \spellschool{Illusion (Phantasm) [Unreal]}
-\spelllvl{Illus 6}
+\spelllvl{Sor/Wiz 5, Trickery 5}
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{\durmed}
@@ -3947,7 +3948,7 @@
 \spellsave{Fortitude negates; see text}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
-  Calling upon the venomous powers of natural predators, you infect the subject with a horrible poison that drains its life force by making a successful melee touch attack. The poison deals 1d6 points of Constitution damage immediately. A Fortitude save negates this damage. The spell continues dealing another 1d6 points of Constitution damage every 5 rounds until the subject makes two successful Fortitude saves to resist the poison.
+  Calling upon the venomous powers of natural predators, you infect the subject with a horrible poison that drains its life force by making a successful melee touch attack. The poison deals 1d6 points of Constitution damage immediately. A Fortitude save negates this damage. The spell continues dealing another 1d6 points of Constitution damage every two rounds until the subject makes two successful Fortitude saves to resist the poison.
 \end{spelleffect}
 
 \spellsection{Polar Ray}
@@ -3956,13 +3957,16 @@
 \spelllvl{Sor/Wiz 8, Water 8}
 \spellrng{\rngclose}
 \spelleff{Ray}
-\spelldur{Instantaneous}
+\spelldur{Instantaneous/5 rounds}
 \spellsave{None}
 \spellsr{Yes (Fortitude)}
 \spelldmg{16d6 cold damage \add d6 per three caster levels above 16th}
 \begin{spelleffect}
-  The struck target takes damage and is slowed for 5 rounds. A slowed creature can take only a single move action or standard action each turn, but not both. Additionally, it takes a \minus2 penalty to attack rolls, Strength and Dexterity-based skill checks, and armor class.
+  The struck target takes damage and is slowed for 5 rounds.
 \end{spelleffect}
+\begin{spellnotes}
+   A slowed creature can take only a single move action or standard action each turn, but not both. Additionally, it takes a \minus2 penalty to attack rolls, Strength and Dexterity-based skill checks, and armor class.
+ \end{spellnotes}
 
 \spellsection{Power Word Blind}
 \spellschool{Necromancy (Flesh)}
@@ -4001,7 +4005,8 @@
   The target is instantly slain.
 \end{spellblood}
 \begin{spellnotes}
-  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
+  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. A blinded character cannot see. She takes a \minus2 penalty to attack rolls, Armor Class, and any checks which involve sight. In addition, she is flat-footed and moves at half speed. All checks and activities that rely on vision (such as reading and Spot checks) automatically fail. All opponents are considered to have total concealment (50\% miss chance) relative to the blinded character.
+
   The target must be bloodied when the spell is cast to suffer the bloodied effect. A creature whose HV exceeds your caster level are sickened instead of killed, as the healthy effect.
 \end{spellnotes}
 
@@ -4047,30 +4052,30 @@
 \end{spellnotes}
 
 \spellsectioncomma{Precognition}{Lesser}
-\spelldesc{You extend your awareness a fraction of a second into the future, allowing you to strike at your foes more accurately.}
+\spelldesc{You extend your mind a fraction of a second into the future, allowing you to strike at your foes more effectively.}
 \spellschool{Divination (Knowledge)}
 \spelllvl{Div 1}
 \spellrng{Personal}
 \spelltgt{You}
 \spelldur{\durshort (D)}
 \begin{spelleffect}
-  You gain a \plus2 bonus to your attack rolls. \bonusscalingdescription
+  You gain a \plus2 bonus to your attack and weapon damage rolls. \bonusscalingdescription
 \end{spelleffect}
 
 \spellsection{Precognition}
-\spelldesc{You extend your awareness a fraction of a second into the future, allowing you to strike at your foes more accurately and avoid hostile effects more easily.}
-\spellschool{Divination (Knowledge)}
-\spelllvl{Div 2}
-\begin{spelleffect}
-  This spell functions like \spell{lesser precognition}, but it also affects your saving throws.
-\end{spelleffect}
-
-\spellsectioncomma{Precognition}{Greater}
-\spelldesc{You extend your awareness a fraction of a second into the future, allowing you to strike at your foes more accurately and avoid hostile attacks and effects more effectively.}
+\spelldesc{You extend your mind a fraction of a second into the future, allowing you to strike at your foes more effectively and avoid hostile attacks more easily.}
 \spellschool{Divination (Knowledge)}
 \spelllvl{Div 4}
 \begin{spelleffect}
-  This spell functions like \spell{lesser precognition}, but it also affects your saving throws and dodge modifier.
+  This spell functions like \spell{lesser precognition}, except that it also affects your saving throws and dodge modifier to AC.
+\end{spelleffect}
+
+\spellsectioncomma{Precognition}{Greater}
+\spelldesc{You extend your mind a short time into the future, allowing you to strike at your foes more effectively and avoid hostile attacks more easily.}
+\spellschool{Divination (Knowledge)}
+\spelllvl{Div 7}
+\begin{spelleffect}
+  This spell functions like \spell{lesser precognition}, except that it also affects your saving throws and dodge modifier to AC. In addition, when making a full attack, you may make an additional attack at a \minus5 penalty.
 \end{spelleffect}
 
 \spellsection{Prismatic Sphere}
@@ -4169,7 +4174,7 @@
 
 \spellsection{Protection from Chaos}
 \spellschool{Abjuration (Interdiction) [Lawful]}
-\spelllvl{Abjur 1, Clr 1, Law 1, Pal 1}
+\spelllvl{Clr 1, Law 1, Pal 1, Sor/Wiz 1}
 \begin{spelleffect}
   This spell functions like \spell{protection from evil}, except that it protects against lawful effects.
 \end{spelleffect}
@@ -4191,7 +4196,7 @@
 
 \spellsectioncomma{Protection from Energy}{Greater}
 \spellschool{Abjuration (Shielding)}
-\spelllvl{Clr 6, Drd 6, Sor/Wiz 6}
+\spelllvl{Clr 6, Drd 6, Protection 6, Sor/Wiz 6}
 \begin{spelleffect}
   This spell functions like \spell{protection from energy}, except that it protects from all five types of energy. When the spell absorbs 10 points per caster level of damage of any type, it is discharged.
 \end{spelleffect}
@@ -4199,7 +4204,7 @@
 \spellsection{Protection from Evil}
 \spelldesc{You guard your ally with a faint pure white aura, shielding him from evil influence.}
 \spellschool{Abjuration (Interdiction) [Good]}
-\spelllvl{Abjur 1, Clr 1, Good 1, Pal 1}
+\spelllvl{Clr 1, Good 1, Pal 1, Sor/Wiz 1}
 \spellrng{Touch}
 \spelltgt{Creature touched}
 \spelldur{\durshort (D)}
@@ -4213,14 +4218,14 @@
 
 \spellsection{Protection from Good}
 \spellschool{Abjuration (Interdiction) [Evil]}
-\spelllvl{Abjur 1, Clr 1, Evil 1}
+\spelllvl{Clr 1, Evil 1, Sor/Wiz 1}
 \begin{spelleffect}
   This spell functions like\spell{protection from evil}, except that it protects against good effects.
 \end{spelleffect}
 
 \spellsection{Protection from Law}
 \spellschool{Abjuration (Interdiction) [Chaotic]}
-\spelllvl{Abjur 1, Chaos 1, Clr 1}
+\spelllvl{Chaos 1, Clr 1, Sor/Wiz 1}
 \begin{spelleffect}
   This spell functions like \spell{protection from evil}, except that it protects against chaotic effects.
 \end{spelleffect}
@@ -5124,7 +5129,7 @@
 
 \spellsection{Spelltheft}
 \spellschool{Abjuration (Negation) [Magic]}
-\spelllvl{Abjur 5}
+\spelllvl{Abjur 5, Magic 5}
 \spellrng{Touch}
 \spelltgt{One spellcaster, creature, or object}
 \begin{spelleffect}
@@ -5142,7 +5147,7 @@
 
 \spellsectioncomma{Spelltheft}{Lesser}
 \spellschool{Abjuration (Negation) [Magic]}
-\spelllvl{Abjur 2}
+\spelllvl{Abjur 2, Magic 2}
 \spellrng{Touch}
 \spelltgt{One spellcaster, creature, or object}
 \begin{spelleffect}
