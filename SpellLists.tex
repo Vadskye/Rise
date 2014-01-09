@@ -144,6 +144,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead{Entropic Shield} Ranged attacks against you have 20\% miss chance.
   \spellhead{Inflict Light Wounds} Touch deals 2d8 damage.
   \spellhead{Light} Object shines like a torch.
+  \spellhead{Magic Vestment} Armor or shield becomes \plus2.
   \spellhead{Obscuring Mist} Fog surrounds you.
   \spellhead{Protection from Chaos/Evil/Good/Law} \plus2 to saves and counter opposing mind control.
   \spellhead{Sanctuary} Opponents can't attack subject until it attacks.
@@ -160,7 +161,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead{Hold Person} Paralyzes one humanoid for short duration.
   \spellhead{Inflict Moderate Wounds} Touch deals 4d8 damage.
   \spellhead{Locate Object} Senses direction toward object (specific or type).
-  \spellhead{Magic Vestment} Armor or shield becomes \plus2.
   \spellhead{Magic Weapon} Weapon becomes \plus2.
   \spellhead{Resist Energy} Ignores 10 (or more) points of damage/attack from specified energy type.
   \spellhead{Share Pain}  Split damage with willing subject.
@@ -175,7 +175,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \subsection{3rd-level Cleric Spells}
 \begin{spelllist}
   \spellhead{Bestow Curse} \minus6 to an attribute score; \minus4 on attack rolls, saves, and checks; or 25\% chance of losing each action.
-  \spellhead{Blindness/Deafness} Makes subject blinded or deafened.
+  \spellhead{Blindness/Deafness} Touched creature is blinded or deafened.
   \spellhead{Contagion} Infects subject with chosen disease.
   \spellhead{Cure Serious Wounds} Cures 6d8 damage.
   \spellhead{Dimensional Anchor} Bars extradimensional movement.
@@ -215,7 +215,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead{Magic Circle against Chaos/Evil/Good/Law} Protect allies in a \areamed radius and hedge out opposing outsiders.
   \spellhead{Righteous Might} Your size increases, and you gain combat bonuses.
   \spellhead{Revivify} Restores recently dead body to life.
-  \spellhead{Slay Living} Touch attack kills subject.
   \spellhead{Summon Monster V} Calls extraplanar creature to fight for you.
 \end{spelllist}
 
@@ -230,6 +229,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead{Heal} Cures 12d8 damage, all diseases and mental conditions.
   \spellheadc{Inflict Moderate Wounds}{Mass} Deals 6d6 damage to many creatures.
   \spellheadc{Protection from Energy}{Greater}
+  \spellhead{Slay Living} Touch attack kills subject.
   \spellhead{Summon Monster VI} Calls extraplanar creature to fight for you.
   \spellheadc{Totemic Mind}{Mass} As \spell{Totemic mind}, but affects multiple creatures.
   \spellheadc{Totemic Power}{Mass} As \spell{Totemic power}, but affects multiple creatures.
@@ -348,7 +348,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead[4]{Chaos Hammer} Bewilders, deals 4d6 damage to nonchaotic creatures.
   \spellhead[5]{Animate Objects} Objects attack your foes.
   \spellhead[5]{Magic Circle against Law} Protect allies in a \areamed radius.
-  \spellhead[6]{Insanity} Subject acts randomly indefinitely.
+  \spellhead[6]{Insanity} Subject indefinitely acts randomly.
   \spellhead[6]{Summon Monster VI*} Calls extraplanar creature to fight for you.
   \spellhead[7]{Prismatic Spray} Rays hit subjects with a variety of effects.
   \spellhead[7]{Word of Chaos} Kills, confuses, stuns, or deafens nonchaotic subjects in large radius.
@@ -371,9 +371,9 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead[4]{Death Ward} Grants immunity to death spells and negative energy effects.
   \spellhead[4]{Enervation} Subject gains two negative levels.
   \spellheadc[5]{Crush Life}{Greater} Target takes 10d6 damage unavoidably and gains a negative level.
-  \spellhead[5]{Slay Living} Touch attack kills subject.
+  \spellhead[5]{}
+  \spellhead[6]{Slay Living} Touch attack kills subject.
   \spellhead[6]{Circle of Death}\M Kills 2/level HV of creatures.
-  \spellhead[6]{Harm} Deals 12d8 damage to touched target.
   \spellhead[7]{Finger of Death} Kills one subject.
   \spellhead[7]{} 
   \spellheadc[8]{Death Ward}{Mass} As \spell{death ward}, but affects multiple creatures.
@@ -519,7 +519,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead[3]{}
   \spellhead[3]{Summon Monster III*} Calls extraplanar creature to fight for you.
   \spellhead[4]{Death Ward} Grants immunity to death spells and negative energy effects.
-  \spellhead[4]{Holy Smite} Blinds and deals 4d6 damage to evil creatures.
+  \spellhead[4]{Holy Smite} Blinds and deals 4d6 damage to nongood creatures.
   \spellhead[5]{Magic Circle against Evil} Protect allies in a \areamed radius and hedge out opposing outsiders.
   \spellhead[5]{Righteous Might} Your size increases, and you gain combat bonuses.
   \spellhead[6]{Heal} Cures 12d8 damage, all diseases and mental conditions.
@@ -538,14 +538,14 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \begin{spelllist}
   \spellhead[1]{}
   \spellhead[1]{}
-  \spellhead[2]{Locate Object}
+  \spellhead[2]{Locate Object} Senses direction toward object (specific or type).
   \spellhead[2]{}
   \spellhead[3]{Detect Thoughts} Allows ``listening'' to surface thoughts.
-  \spellhead[4]{Locate Creature}
+  \spellhead[4]{Locate Creature} Indicates direction to familiar creature.
   \spellheadc[4]{Moment of Prescience}{Lesser}
   \spellhead[5]{True Seeing}
   \spellhead[6]{Analyze Dweomer}  Reveals all magical aspects of subjects.
-  \spellhead[6]{Locate Entity}
+  \spellhead[6]{Locate Entity} Locates creatures or objects within 1 mile.
   \spellheadc[7]{Arcane Sight}{Greater}You perceive spells and magical auras effortlessly.
   \spellhead[7]{Moment of Prescience}
   \spellheadc[8]{Detect Thoughts}{Greater} Allow ``listening'' to surface thoughts without concentration.
@@ -742,7 +742,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead[5]{Phantom Maze} Subject acts as if affected by \spell{maze}.
   \spellhead[6]{Mislead} Turns you invisible and creates illusory double.
   \spellhead[6]{Seeming} Changes appearance of group of creatures.
-  \spellheadc[7]{Invisibility}{Greater} As \spell{invisibility}, but affects any within 100 ft.
+  \spellheadc[7]{Invisibility}{Mass} As \spell{invisibility}, but affects multiple creatures.
   \spellhead[7]{}
   \spellheadc[8]{Confusion}{Mass} Multiple subjects act randomly.
   \spellhead[8]{Reverse Gravity} Objects and creatures fall upward.
@@ -805,9 +805,9 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead[2]{Control Water} Raises or lowers bodies of water.
   \spellhead[3]{Fog Cloud} Medium cylinder of fog obscures vision.
   \spellhead[3]{Water Walk} Subject treads on water as if solid.
-  \spellhead[4]{}
+  \spellhead[4]{Ice Storm} Hail deals 4d4 damage in small cylinder.
   \spellhead[4]{Summon Nature's Ally IV*} Calls creature to fight.
-  \spellhead[5]{Ice Storm} Hail deals 4d4 damage in small cylinder.
+  \spellhead[5]{}
   \spellhead[5]{Wall of Ice} Create plane of ice or hemisphere can trap creatures inside.
   \spellhead[6]{Cone of Cold} 5d6 cold damage and fatigue in medium cone.
   \spellhead[6]{Solid Fog} Fog blocks vision and slows movement.
@@ -978,6 +978,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead{Delay Poison} Stops poison from harming subject for extended duration.
   \spellhead{Detect Chaos} Reveals creatures, spells, or objects of chaotic alignment.
   \spellhead{Divine Favor} You gain \plus2 on attack and damage rolls.
+  \spellhead{Magic Vestment} Armor or shield becomes \plus2.
   \spellhead{Protection from Chaos/Evil} \plus2 to saves and counter opposing mind control.
 \end{spelllist}
 
@@ -986,7 +987,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead{Aid} Ally gains \plus2 attack bonus, 10 \plus1/level temporary hp.
   \spellhead{Cure Moderate Wounds} Cures 4d8 damage.
   \spellhead{Daylight} Large radius of bright light.
-  \spellhead{Magic Vestment} Subject's armor becomes \plus2.
   \spellhead{Resist Energy} Ignores 10 (or more) points of damage/attack from specified energy type.
   \spellhead{Share Pain} Split damage with willing subject.
   \spellhead{Zone of Truth} Subjects within small emanation cannot lie.
@@ -1060,6 +1060,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellheadrestricted{False Life} Gain 10 temporary hp \plus1/level.
 
   \spellhead[Trans]{Jump} Subject gets bonus on Jump checks.
+  \spellhead{Magic Vestment} Armor or shield becomes \plus2.
   \spellheadrestricted{Backbiter} Weapon attacks its wielder when used.
   \spellheadrestricted{Expeditious Retreat} Your speed doubles.
 \end{swspelllist}
@@ -1103,18 +1104,17 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellheadrestricted{Mirror Image} Creates decoy duplicates of you (1d4 \plus1 per three levels, max 8).
   \spellheadrestricted{Silent Image} Creates minor illusion of your design.
 
-  \spellhead[Necro]{Death Knell} Kill dying creature and gain temporary hp, more for killing powerful creatures.
+  \spellhead[Necro]{Blindness/Deafness} Touched creature is blinded or deafened.
+  \spellhead{Death Knell} Kill dying creature and gain temporary hp, more for killing powerful creatures.
   \spellhead{Ghoul Touch} Paralyze one subject, which exudes stench that makes those nearby sickened.
   \spellhead{Share Pain} Split damage with willing subject.
   \spellheadrestricted{Crush Life} Target takes 2d10 unavoidably.
   \spellheadrestrictedc{Transfer Suffering}{Lesser} Give 4d6 of your damage to touched subject.
 
-  \spellhead[Trans]{Magic Vestment} Subject's armor becomes \plus2.
-  \spellhead{Magic Weapon} Weapon becomes \plus2.
+  \spellhead[Trans]{Magic Weapon} Weapon becomes \plus2.
   \spellhead{Spider Climb} Grants ability to walk on walls and ceilings.
   \spellhead{Totemic Mind} Subject gains \plus2 to Int, Wis, or Cha for medium duration.
   \spellhead{Totemic Power} Subject gains \plus2 to Str, Dex, or Con for medium duration.
-  \spellhead{Vestments of the Mage} Reduce spell failure on armor or shield by 10\%.
   \spellheadrestricted{Reduce Person} Humanoid creature halves in size.
   \spellheadrestricted{Slow} Subject takes only one action/round.
 \end{swspelllist}
@@ -1123,9 +1123,10 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \begin{swspelllist}
   \spellhead[Abjur]{Dimensional Anchor} Bars extradimensional movement.
   \spellhead{Dispel Magic} Cancels magical spells and effects.
+  \spellhead{Invisibility Purge} Suppresses invisibility within large radius.
   \spellhead{Protection from Energy} Absorb 10 points/level of damage from one kind of energy.
   \spellhead{Share Pain, Forced} Split damage with unwilling subject.
-  \spellheadrestricted{Invisibility Purge} Suppresses invisibility within large radius.
+  \spellheadrestricted{}
   \spellheadrestricted{Redirection} Redirect attacks on you to other targets.
 
   \spellhead[Conj]{Dimensional Anchor} Bars extradimensional movement.
@@ -1155,7 +1156,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellheadrestricted{Phantom Steed} Shadow horse appears for extended duration.
 
   \spellhead[Necro]{Bestow Curse} \minus6 to an attribute; \minus4 on attack rolls, saves, checks, and AC; or 25\% chance of losing each action.
-  \spellhead{Blindness/Deafness} Makes subject blinded or deafened.
   \spellhead{Contagion} Infects subject with chosen disease.
   \spellhead{Ray of Exhaustion} Ray makes subject exhausted.
   \spellhead{Share Pain, Forced} Split damage with unwilling subject.
@@ -1294,8 +1294,8 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellheadrestricted{Analyze Dweomer}\F  Reveals all magical aspects of subjects.
   \spellheadrestricted{Moment of Prescience} As lesser moment of prescience, with \plus1/2 levels circumstance bonus.
 
-  \spellhead[Ench]{Insanity} Subject acts randomly indefinitely.
-  \spellhead{Power Word Confuse} Suject unavoidably acts randomly.
+  \spellhead[Ench]{Insanity} Subject indefinitely acts randomly.
+  \spellhead{Power Word Confuse} Bloodied subject acts randomly.
   \spellheadrestricted{Dominate Person} Controls humanoid telepathically.
   \spellheadrestrictedc{Heroism}{Greater} Gives combat bonuses, temporary hit points.
 
@@ -1304,10 +1304,9 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellheadrestricted{Forceful Hand} Hand pushes creatures away.
   \spellheadrestricted{Telekinesis} Moves object, attacks creature, or hurls object or creature.
 
-  \spellheadc[Illus]{Invisibility}{Greater} As \spell{invisibility}, but subject can attack and stay invisible.
-  \spellhead{Mislead} Turns you invisible and creates illusory double.
+  \spellhead[Illus]{Mislead} Turns you invisible and creates illusory double.
+  \spellheadrestrictedc{Invisibility}{Greater} As \spell{invisibility}, but subject can attack and stay invisible.
   \spellheadrestricted{Persistent Image} As \spell{major image}, but no concentration required.
-  \spellheadrestricted{}
 
   \spellhead[Necro]{Cripple} Subject cannot use its limbs. 
   \spellheadrestricted{Soulrend} Target takes Charisma damage.
@@ -1352,7 +1351,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellheadrestricted{Forcecage}\M Cube or cage of force imprisons all inside.
   \spellheadrestricted{Grasping Hand} Hand provides cover, pushes, or grapples.
 
-  \spellheadc[Illus]{Invisibility}{Mass} As \spell{invisibility}, but affects any within 100 ft.
+  \spellheadc[Illus]{Invisibility}{Mass} As \spell{invisibility}, but affects multiple creatures.
   \spellheadrestricted{Project Image} Illusory double can talk and cast spells.
   \spellheadrestrictedc{Shadow Conjuration}{Greater} As shadow conjuration, but up to 6th level.
 
@@ -1444,7 +1443,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead[Trans]{Alter Any Object} Transforms objects into new forms.
   \spellhead{Assimilate} Incorporate creature into your own body.
   \spellhead{Imprisonment} Entombs subject beneath the earth.
-  \spellheadrestricted{Time Stop} You act freely for 1d4\plus1 rounds.
+  \spellheadrestricted{Time Stop} You act freely for 1d3\plus1 rounds.
 
   \spellhead[Univ]{Wish}\M As \spell{limited wish}, but with fewer limits.
 \end{swspelllist}
