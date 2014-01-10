@@ -13,9 +13,11 @@
 \spelltgt{You}
 \spelldur{1 round}
 \begin{spelleffect}
-  You gain physical damage reduction 10/magic, causing you to ignore the first 5 damage dealt to you in the round by physical attacks. This damage reduction increases by 1 per two caster levels above 4th.
+  You gain physical damage reduction 10/force. This damage reduction increases by 1 per caster level above 4th.
 \end{spelleffect}
 \begin{spellnotes}
+  This damage reduction allows the subject to ignore the first 10 physical damage it takes each round. If it is hit by a attack that deals force damage, such as \spell{magic missile}, it cannot use its damage reduction for 1 round.
+
   You can cast this spell instantaneously, quickly enough react to an opponent attacking you (but before the attack is rolled).
 \end{spellnotes}
 
@@ -41,11 +43,12 @@
 \spelltgt{You}
 \spelldur{1 round}
 \begin{spelleffect}
-  You gain magical damage reduction 5, causing you to ignore the first 5 damage dealt to you in the round if the damage is dealt by spells or spell-like abilities. This damage reduction increases by 1 per two caster levels above 2nd.
+  You gain spell damage reduction 5/force. This damage reduction increases by 1 per caster level above 2nd.
 \end{spelleffect}
 \begin{spellnotes}
-  Spells that are not subject to spell resistance are not affected by \spell{ablative shield}.
-  \par You can cast this spell instantly - quickly enough to gain its benefits in an emergency. Casting the spell is an immediate action, so you can use this spell even when it's not your turn.
+  This damage reduction allows the subject to ignore the first 5 spell damage it takes each round, such as from spells and spell-like abilities. If it is hit by a attack that deals force damage, such as \spell{magic missile}, it cannot use its damage reduction for 1 round.
+  
+  Spells that are not subject to spell resistance are not affected by \spell{ablative shield}. You can cast this spell instantly - quickly enough to gain its benefits in an emergency. Casting the spell is an immediate action, so you can use this spell even when it's not your turn.
 \end{spellnotes}
 
 \spellsection{Acid Arrow}
@@ -408,10 +411,10 @@
 \spellsave{Fortitude negates (harmless)}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
-  The subject gains a \plus2 bonus to its natural armor modifier. \bonusscalingdescription In addition, the subject gains physical damage reduction 2/adamantine, allowing it to ignore the first 2 damage it would take each round, except damage dealt by adamantine weapons. This damage reduction increases by 1 for every two levels above 4th.
+  The subject gains a \plus2 bonus to its natural armor modifier. \bonusscalingdescription In addition, the subject gains physical damage reduction 2/adamantine or fire. This damage reduction increases by 1 for every four levels above 4th.
 \end{spelleffect}
 \begin{spellnotes}
-  If the creature takes fire damage, it loses its damage reduction for 1 round (including against the initial attack, if it also dealt physical damage).
+  This damage reduction allows the subject to ignore the first 2 physical damage it takes each round. If it is hit by a adamantine weapon or an attack that deals fire damage, it cannot use its damage reduction for 1 round.
 \end{spellnotes}
 
 \spellsection{Bestow Curse}
@@ -573,8 +576,8 @@
 \spellschool{Illusion (Glamer)}
 \spelllvl{Brd 2, Sor/Wiz 2}
 \spellcmp{V}
-\spellrng{\rngtouch}
-\spelltgt{Creature touched}
+\spellrng{\rngclose}
+\spelltgt{One creature}
 \spelldur{\durshort (D)}
 \spellsave{Will negates (harmless)}
 \spellsr{Yes (Will)}
@@ -1788,7 +1791,7 @@
 \spellsr{Yes (Will)}
 \spelldmg{4d8 physical damage \add d8 per two caster levels above 4th}
 \begin{spelleffect}
-  The touched target takes damage. This damage ignores the hardness of objects.
+  The touched target takes damage. This damage ignores the hardness and damage reduction.
 \end{spelleffect}
 
 \spellsection{Divine Favor}
@@ -2398,9 +2401,12 @@
 \spellsave{None}
 \spellsr{No}
 \begin{spelleffect}
-  The subject and all its gear become insubstantial, misty, and translucent. Its material armor (including natural armor) becomes worthless, though other modifiers continue to apply normally. The subject gains physical damage reduction 10/magic and becomes immune to poison and critical hits. It can't attack or cast spells with verbal, somatic, material, or focus components while in gaseous form. (This does not rule out the use of certain spells that the subject may have prepared using the feats Silent Spell or Still Spell.) If it has a touch spell ready to use, that spell is discharged harmlessly when the gaseous form spell takes effect.
+  The subject and all its gear become insubstantial, misty, and translucent. Its material armor (including natural armor) becomes worthless, though other modifiers continue to apply normally. The subject gains physical damage reduction 10/magic and becomes immune to critical hits. It can't attack or cast spells with verbal, somatic, material, or focus components while in gaseous form. (This does not rule out the use of certain spells that the subject may have prepared using the feats Silent Spell or Still Spell.) If it has a touch spell ready to use, that spell is discharged harmlessly when the gaseous form spell takes effect.
   \par A gaseous creature can't run, but it can fly at a speed of 10 feet (maneuverability perfect). It can pass through small holes or narrow openings, even mere cracks, with all it was wearing or holding in its hands, as long as the spell persists. The creature is subject to the effects of wind, and it can't enter water or other liquid. It also can't manipulate objects or activate items, even those carried along with its gaseous form. Continuously active items remain active, though in some cases their effects may be moot.
 \end{spelleffect}
+\begin{spellnotes}
+  This damage reduction allows the subject to ignore the first 10 physical damage it takes each round. If it is hit by a magical attack, such as a damaging spell or magic weapon, it cannot use its damage reduction for 1 round.
+\end{spellnotes}
 
 \spellsection{Ghoul Touch}
 \spellschool{Necromancy (Flesh)}
@@ -2943,7 +2949,7 @@
 \spellsr{Yes (Will)}
 \spelldmg{18d8 physical damage \add d8 per two caster levels above 18th}
 \begin{spellhealthy}
-  The target takes damage as its body is partially teleported away, and it is slowed for 5 rounds.
+  The target takes damage as its body is partially teleported away, and it is slowed for 5 rounds. This damage ignores hardness and damage reduction.
 \end{spellhealthy}
 \begin{spellblood}
   If the creature is touching the ground, it becomes permanently entombed in a state of suspended animation (as the \spell{temporal stasis} spell) in a small sphere far beneath the surface of the earth. It remains there unless an \spell{emancipation} spell is cast at the locale where the imprisonment took place.
@@ -2966,8 +2972,11 @@
 \spellsave{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The subject gains physical damage reduction 4/magic, allowing the subject to ignore the first 4 physical damage it takes each round, except from magical attacks such as magic weapons. This damage reduction increases by 1 per two caster levels above 4th.
+  The subject gains physical damage reduction 4/force. This damage reduction increases by 1 per two caster levels above 4th.
 \end{spelleffect}
+\begin{spellnotes}
+  This damage reduction allows the subject to ignore the first 4 physical damage it takes each round. If it is hit by a attack that deals force damage, such as \spell{magic missile}, it cannot use its damage reduction for 1 round.
+\end{spellnotes}
 
 \spellsection{Inflict Critical Wounds}
 \spellschool{Necromancy (Vitalism) [Negative]}
@@ -3176,6 +3185,9 @@
   \par Your unarmed attacks deal damage equal to a warhammer sized for you (1d6 for Small characters or 1d8 for Medium characters), and you are considered armed when making unarmed attacks.
   \par Your weight increases by a factor of ten, causing you to sink in water like a stone. However, you could survive the crushing pressure and lack of air at the bottom of the ocean -- at least until the spell duration expires.
 \end{spelleffect}
+\begin{spellnotes}
+  This damage reduction allows the subject to ignore the first 15 physical damage it takes each round. If it is hit by an adamantine weapon, it cannot use its damage reduction for 1 round.
+\end{spellnotes}
 
 \spellsection{Irresistible Dance}
 \spelldesc{You fill your enemy with an overpowering urge to dance and caper in place. Against its will, it begins doing so, complete with foot shuffling and tapping.}
@@ -3795,11 +3807,14 @@
 \spelldur{\durshort (D)}
 \begin{spelleffect}
   This power transforms your body into living oak, which grants you several advantages.
-  \par You gain physical damage reduction 10/slashing and a \plus5 bonus to natural armor. You are immune to ability damage, blindness, deafness, disease, drowning, poison, stunning, and all spells or attacks that affect your physiology or respiration, because you have no physiology or respiration while this power is in effect.
+  \par You gain physical damage reduction 15/fire or adamantine and a \plus5 bonus to natural armor. You are immune to ability damage, blindness, deafness, disease, drowning, poison, stunning, and all spells or attacks that affect your physiology or respiration, because you have no physiology or respiration while this power is in effect.
   \par You take only half damage from cold effects of all kinds. However, you become susceptible to all special attacks that affect wood, and you gain vulnerability to fire.
   \par You gain a \plus4 bonus to Strength and Constitution, but you take a \minus2 penalty to Dexterity (to a minimum Dexterity score of 1), and your speed is reduced to half normal. You can speak but cannot drink (and thus can't use potions). You have an armor check penalty of \minus4 and an arcane spell failure chance of 25%.
   \par Your unarmed attacks deal damage equal to a club sized for you (1d4 for Small characters, 1d6 for Medium characters), and you are considered armed when making unarmed attacks. When you make a full attack against an object or structure using your unarmed strike, you deal double damage.
 \end{spelleffect}
+\begin{spellnotes}
+  This damage reduction allows the subject to ignore the first 15 physical damage it takes each round. If it is hit by a adamantine weapon or fire attack, it cannot use its damage reduction for 1 round.
+\end{spellnotes}
 
 \spellsection{Obscuring Mist}
 \spelldesc{You conjure a bank of fog that arises around you, concealing you and your allies.}
@@ -4309,20 +4324,6 @@
   A creature that is already fatigued instead becomes exhausted. A creature that is already exhausted suffers no further penalties. Unlike normal exhaustion or fatigue, the effect ends as soon as the spell's duration expires.
 \end{spellnotes}
 
-\spellsection{Ray of Frost}
-\spelldesc{You fire a ray of freezing air and ice at your foe, painfully chilling him.}
-\spellschool{Evocation (Energy) [Cold]}
-\spelllvl{Sor/Wiz 1, Water 1}
-\spellrng{\rngclose}
-\spelleff{Ray}
-\spelldur{Instantaneous}
-\spellsave{None}
-\spellsr{Yes (Fortitude)}
-\spelldmg{2d6 cold damage \add d6 per two caster levels above 2nd}
-\begin{spelleffect}
-  If you succeed on a ranged touch attack with the ray, the target takes damage.
-\end{spelleffect}
-
 \spellsection{Redirection}
 \spellschool{Abjuration (Shielding)}
 \spelllvl{Protection 3, Abjur 3}
@@ -4367,7 +4368,7 @@
 
 \spellsection{Regenerate}
 \spellschool{Necromancy (Flesh) [Healing]}
-\spelllvl{Clr 8, Drd 8, Life 7}
+\spelllvl{Clr 8, Drd 8}
 \spellrng{Touch}
 \spelltgt{Living creature touched}
 \spelldur{\durshort}
@@ -4395,7 +4396,7 @@
 
 \spellsection{Resilient Sphere}
 \spellschool{Evocation (Control) [Force]}
-\spelllvl{Sor/Wiz 4}
+\spelllvl{Evoc 4}
 \spellrng{\rngclose}
 \spelleff{5 ft. radius sphere, centered around creatures or objects}
 \spelldur{\durshort (D)}
@@ -4411,17 +4412,19 @@
 
 \spellsection{Resist Energy}
 \spellschool{Abjuration (Shielding)}
-\spelllvl{Abjur 1, Clr 2, Drd 2, Pal 2, Protection 2, Sor/Wiz 2}
+\spelllvl{Clr 2, Drd 2, Pal 2, Protection 2, Sor/Wiz 2}
 \spellrng{Touch}
 \spelltgt{Creature touched}
 \spelldur{\durlong or until discharged}
 \spellsave{Fortitude negates (harmless)}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
-  The subject gains damage reduction 10 against whichever of the five energy types that you select: acid, cold, electricity, fire, or sonic. Each round, the subject ignores the first 10 damage of that energy type that would be dealt to it. This damage reduction increases by 5 for every two caster levels above 4th.
+  The subject gains energy damage reduction 10 against whichever of the five energy types that you select: acid, cold, electricity, fire, or sonic. This damage reduction increases by 5 for every two caster levels above 4th.
   \par The spell can absorb a maximum amount of damage equal to 10 points per caster level. After it absorbs its maximum amount of damage, the spell ends.
 \end{spelleffect}
 \begin{spellnotes}
+  This damage reduction allows the subject to ignore the first 10 energy damage it takes each round of the appropriate type.
+
   Resist energy absorbs only damage. The subject could still suffer unfortunate side effects. The spell protects the recipient's equipment as well.
   \par \spellindirect{resist energy}{Resist energy} overlaps (and does not stack with) \spell{protection from energy}. If a character is shielded by both spells, the \spellindirect{protection from energy}{protection} spell absorbs damage until its power is exhausted. A character can only be affected by one \spell{resist energy} spell at once.
 \end{spellnotes}
@@ -4437,11 +4440,19 @@
 \end{spellnotes}
 
 \spellsection{Retributive Shield}
-\spellschool{Abjuration (Shielding)}
+\spellschool{Abjuration/Necromancy (Life, Shielding)}
 \spelllvl{Sor/Wiz 5}
+\spellrng{\rngmed}
+\spelltgt{One creature}
+\spelldur{\durshort}
+\spellsave{Will negates (harmless)}
+\spellsr{Yes (Will)}
 \begin{spelleffect}
-  This spell functions like \spell{inertial shield}, except that it reflects the damage back at your attackers. Any creature striking you with its body or a natural weapon takes damage equal to the amount of damage resisted by this spell.
+  The subject gains physical damage reduction 10/life. This damage reduction increases by 1 per two caster levels above 10th. In addition, the spell reflects the damage back at the creature's attackers. Any creature within \rngmed range of the subject that attacks it takes life damage equal to the amount of damage resisted by this spell.
 \end{spelleffect}
+\begin{spellnotes}
+  This damage reduction allows the subject to ignore the first 10 physical damage it takes each round. If it is hit by an attack that deals life damage, such as \spell{crush life}, it cannot use its damage reduction for 1 round.
+\end{spellnotes}
 
 \spellsection{Retrieve}
 \spellschool{Conjuration (Translocation) [Teleportation]}
@@ -4466,7 +4477,7 @@
 
 \spellsection{Revelation}
 \spellschool{Divination (Awareness, Knowledge)}
-\spelllvl{Div 8, Sor/Wiz 9}
+\spelllvl{Div 8, Knowledge 9, Sor/Wiz 9}
 \spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{\durshort/1 round}
@@ -4518,15 +4529,16 @@
 \spellrng{Personal}
 \spelltgt{You}
 \begin{spelleffect}
-  This spell functions like \spell{enlarge person}, except that it affects only you, regardless of your creature type. In addition, you gain a \plus4 bonus to Strength (which replaces the bonus to Strength from \spell{enlarge person}) and physical damage reduction equal to 10 \add 1 per two caster levels above 10th. This damage reduction is only overcome by the alignment most opposed to your own. If you are neutral, choose the most appropriate alignment.
+  This spell functions like \spell{enlarge person}, except that it affects only you, regardless of your creature type. In addition, you gain a \plus4 bonus to Strength (which replaces the bonus to Strength from \spell{enlarge person}) and physical damage reduction equal to 10 \add 1 per two caster levels above 10th. This damage reduction is overcome evil attacks if you are good or neutral, and by good attacks if you are evil.
 \end{spelleffect}
 \begin{spellnotes}
+  This damage reduction allows the subject to ignore the first 10 physical damage it takes each round. If it is hit by an attack that deals appropriately aligned damage, such as a weapon affected by \spell{align weapon} or a spell with the appropriate descriptor, it cannot use its damage reduction for 1 round.
   Multiple magical effects that increase size do not stack.
 \end{spellnotes}
 
 \spellsection{Sanctuary}
 \spellschool{Abjuration/Enchantment (Compulsion, Shielding)}
-\spelllvl{Clr 1, Protection 1}
+\spelllvl{Abjur 1, Clr 1, Protection 1}
 \spellrng{Touch}
 \spelltgt{Creature touched}
 \spelldur{\durshort}
@@ -4629,7 +4641,7 @@
 
 \spellsection{Seeming}
 \spellschool{Illusion (Glamer) [Unreal]}
-\spelllvl{Brd 5, Sor/Wiz 5, Trickery 6}
+\spelllvl{Brd 5, Illus 5, Trickery 6}
 \spellrng{\rngclose}
 \spellarea{\areamed radius limit}
 \spelltgts{One creature per level within the area}
@@ -4650,10 +4662,13 @@
   Your body and all your equipment are subsumed by your shadow. As a living shadow, you blend perfectly into any other shadow and vanish in darkness. You appear as an unattached shadow in areas of full light.
   \par You can move at your normal speed, on any surface, including walls and ceilings, as well as across the surfaces of liquids -- even up the face of a waterfall.
   \par Your space does not change, so you cannot move into locations you would not normally be able to move into.
-  \par While in your shadow body, you gain damage reduction 10/magic and darkvision out to 60 feet. You are immune to ability damage, disease, drowning, and poison. You take only half damage from acid, electricity, and fire of all kinds.
+  \par While in your shadow body, you gain damage reduction 15/solar and darkvision out to 60 feet. You are immune to ability damage, disease, drowning, and poison. You take only half damage from acid, electricity, and fire of all kinds.
   \par While affected by this spell, you can be detected by spells that read thoughts, life, or presences (including true seeing), or if you make suspicious movements in lighted areas.
   \par You cannot harm anyone physically or manipulate any objects, but you can use your spells normally. Doing so may attract notice, but if you remain in a shadowed area, you get a \plus15 bonus on your Hide check to remain unnoticed.
 \end{spelleffect}
+\begin{spellnotes}
+  This damage reduction allows the subject to ignore the first 15 physical damage it takes each round. If it is hit by an attack that deals solar damage, such as \spell{sunbeam}, it cannot use its damage reduction for 1 round.
+\end{spellnotes}
 
 \spellsection{Shadow Conjuration}
 \spelldesc{You use material from the Plane of Shadow to shape quasi-real illusions of one or more creatures, objects, or forces.}
@@ -5156,7 +5171,7 @@
 
 \spellsection{Spell Turning}
 \spellschool{Abjuration (Shielding) [Magic]}
-\spelllvl{Magic 7, Protection 7, Sor/Wiz 7}
+\spelllvl{Magic 7, Protection 7, Abjur 7}
 \spellrng{Personal}
 \spelltgt{You}
 \spelldur{\durlong or until expended}
@@ -5192,8 +5207,8 @@
 \end{spelleffect}
 
 \spellsection{Spike Growth}
-\spellschool{Transmutation (Alteration)}
-\spelllvl{Drd 1}
+\spellschool{Transmutation (Alteration) [Earth]}
+\spelllvl{Drd 2}
 \spellrng{\rngmed}
 \spellarea{\areasmall radius}
 \spelldur{\durshort (D)}
@@ -5212,6 +5227,7 @@
   This spell functions like \spell{spike growth}, except that it deals d8 physical piercing damage to creatures moving through it and it can also be cast on rocky ground, stone floors, and similar surfaces.
 \end{spelleffect}
 
+%need to run expected damage calculation
 \spellsection{Spiritual Weapon}
 \spelldesc{You bring into being a weapon made of pure force which attacks your foes of its own volition.}
 \spellschool{Evocation (Energy) [Force]}
@@ -5273,10 +5289,10 @@
 \spellschool{Transmutation (Alteration) [Earth]}
 \spelllvl{Drd 5, Earth 5, Protection 5, Strength 5, Trans 5}
 \begin{spelleffect}
-  This spell functions like \spell{barkskin}, except that it grants physical damage reduction 10/adamantine. The subject ignores the first 10 points of damage it would take each round, though an adamantine weapon bypasses the reduction. This damage reduction increases by 1 per two caster levels above 10th.
+  This spell functions like \spell{barkskin}, except that it grants physical damage reduction 10/adamantine. This damage reduction increases by 1 per two caster levels above 10th.
 \end{spelleffect}
 \begin{spellnotes}
-  Unlike \spell{barkskin}, the damage reduction is not negated if the creature takes fire damage.
+  This damage reduction allows the subject to ignore the first 10 physical damage it takes each round. If it is hit by an adamantine weapon, it cannot use its damage reduction for 1 round.
 \end{spellnotes}
 
 \spellsection{Storm of Vengeance}
@@ -5305,13 +5321,16 @@
 \spelllvl{Sor/Wiz 7}
 \spellrng{\rngclose}
 \spelltgt{One creature}
-\spelldur{Instantaneous/\durshort}
+\spelldur{Instantaneous/5 rounds}
 \spellsave{None/Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \spelldmg{7d10 physical damage \add d10 per four caster levels above 14th}
 \begin{spelleffect}
-  The target takes damage. In addition, if it fails a Fortitude save, for the duration of the spell all damage it takes is doubled.
+  The target takes damage. In addition, if it fails a Fortitude save, for 5 rounds all damage it takes is doubled. This does not double the initial damage dealt by this spell.
 \end{spelleffect}
+\begin{spellnotes}
+  A successful Heal check with a DC equal to this spell's save DC negates the doubling of damage. 
+\end{spellnotes}
 
 \spellsection{Suggestion}
 \spellschool{Enchantment (Compulsion) [Language-Dependent, Mind-Affecting, Sound-Dependent]}
@@ -5527,7 +5546,7 @@
 
 \spellsection{Summon Nature's Ally III}
 \spellschool{Conjuration (Summoning) [see text]}
-\spelllvl{Drd 3}
+\spelllvl{Drd 3, Nature 3}
 \spellarea{\areamed radius limit}
 \spelleff{One or more summoned creatures within the area}
 \begin{spelleffect}
@@ -5536,7 +5555,7 @@
 
 \spellsection{Summon Nature's Ally IV}
 \spellschool{Conjuration (Summoning) [see text]}
-\spelllvl{Drd 4, Nature 4}
+\spelllvl{Drd 4}
 \spellarea{\areamed radius limit}
 \spelleff{One or more summoned creatures within the area}
 \begin{spelleffect}
@@ -5554,7 +5573,7 @@
 
 \spellsection{Summon Nature's Ally VI}
 \spellschool{Conjuration (Summoning) [see text]}
-\spelllvl{Drd 6}
+\spelllvl{Drd 6, Nature 6}
 \spellarea{\areamed radius limit}
 \spelleff{One or more summoned creatures within the area}
 \begin{spelleffect}
@@ -5563,7 +5582,7 @@
 
 \spellsection{Summon Nature's Ally VII}
 \spellschool{Conjuration (Summoning) [see text]}
-\spelllvl{Drd 7, Nature 7}
+\spelllvl{Drd 7}
 \spellarea{\areamed radius limit}
 \spelleff{One or more summoned creatures within the area}
 \begin{spelleffect}
@@ -5671,7 +5690,7 @@
 \spellsection{Telekinesis}
 \spelldesc{You move objects or creatures by concentrating on them.}
 \spellschool{Evocation (Control)}
-\spelllvl{Evoc 5}
+\spelllvl{Evoc 6}
 \spellrng{\rngmed}
 \spelltgtortgts{See text}
 \spelldur{Concentration, up to \durmed/Instantaneous; see text}
@@ -5688,7 +5707,7 @@
 
 \spellsection{Telekinetic Force}
 \spellschool{Evocation (Control)}
-\spelllvl{Sor/Wiz 3}
+\spelllvl{Evoc 3}
 \spellrng{\rngmed}
 \spelltgt{One object at a time}
 \spelldur{Concentration, up to \durmed}
@@ -5703,7 +5722,7 @@
 
 \spellsection{Telekinetic Maneuver}
 \spellschool{Evocation (Control)}
-\spelllvl{Sor/Wiz 3}
+\spelllvl{Evoc 4}
 \spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{Concentration, up to \durmed}
@@ -5730,7 +5749,7 @@
 
 \spellsection{Telepathic Bond}
 \spelldesc{You forge a mental link binding two allies together.}
-\spellschool{Divination/Transmutation (Communciation, Imbuement)}
+\spellschool{Divination/Transmutation (Communication, Imbuement)}
 \spelllvl{Sor/Wiz 3}
 \spellrng{\rngclose}
 \spelltgts{You and one willing creature, or two willing creatures}
@@ -5748,7 +5767,6 @@
 \spellschool{Divination/Transmutation (Communication, Imbuement)}
 \spelllvl{Sor/Wiz 6}
 \spelltgts{You plus one willing creature per three levels in a \areamed radius }
-\spelldur{\durext (D)}
 \begin{spelleffect}
   This spell functions like \spell{telepathic bond}, except that it links multiple creatures together into the same bond. Each affected creature can communicate with all other creatures, either privately or to the group as a whole. If desired, you may leave yourself out of the bond forged. This decision must be made at the time of casting.
 \end{spelleffect}
@@ -5822,7 +5840,8 @@
 \spellsectioncomma{Totemic Mind}{Mass}
 \spellschool{Transmutation (Imbuement)}
 \spelllvl{Clr 6, Drd 6, Sor/Wiz 6}
-\spellarea{\areamed radius limit centered on you}
+\spellrng{\rngmed}
+\spellarea{\areamed radius limit}
 \spelltgts{Five creatures within the area}
 \begin{spelleffect}
   This spell functions like \spell{totemic mind}, except that it affects multiple creatures. All affected creatures must gain a bonus to the same attribute score.
@@ -5846,7 +5865,8 @@
 \spellsectioncomma{Totemic Power}{Mass}
 \spellschool{Transmutation (Imbuement)}
 \spelllvl{Clr 6, Drd 6, Sor/Wiz 6}
-\spellarea{\areamed radius limit centered on you}
+\spellrng{\rngmed}
+\spellarea{\areamed radius limit}
 \spelltgts{Five creatures within the area}
 \begin{spelleffect}
   This spell functions like \spell{totemic power}, except that it affects multiple creatures.
@@ -5861,7 +5881,7 @@
 \spellsave{Will half}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  With a touch, you reduce the target's mental faculties. Your successful melee touch attack applies a \minus4 penalty to the target's Intelligence, Wisdom, and Charisma scores. This penalty can't reduce any of these scores below 1.
+  With a touch, you reduce the target's mental faculties. Your successful melee touch attack applies a \minus4 penalty to the target's Intelligence, Wisdom, and Charisma scores. This penalty can't reduce any of these scores below \minus9.
 \end{spelleffect}
 \begin{spellnotes}
   This spell's effect may make it impossible for the target to cast some or all of its spells, if the requisite attribute score drops below the minimum required to cast spells of that level.
@@ -5908,7 +5928,7 @@
 
 \spellsection{Transmute Flesh and Stone}
 \spellschool{Transmutation (Polymorph)}
-\spelllvl{Sor/Wiz 6}
+\spelllvl{Earth 6, Trans 6}
 \spellrng{\rngmed}
 \spelltgt{One creature or a cylinder of stone from 1 ft. to 3 ft. in diameter and up to 10 ft. long}
 \spelldur{\durshort/Instantaneous}
@@ -5949,7 +5969,7 @@
 
 \spellsection{True Seeing}
 \spellschool{Divination (Awareness)}
-\spelllvl{Clr 6, Div 5, Knowledge 5, Sor/Wiz 6}
+\spelllvl{Clr 6, Div 5, Knowledge 5, Law 6, Sor/Wiz 6}
 \spellcmp{V, S, M}
 \spellrng{Touch}
 \spelltgt{Creature touched}
