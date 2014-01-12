@@ -105,7 +105,6 @@ class character:
                 'HP '+str(self.hp)+'\n'+ \
                 'Fort '+mstr(self.saves['fortitude'])+', Ref '+mstr(self.saves['reflex'])+ \
                 ', Will '+mstr(self.saves['will'])+'\n'
-    pass
 
 def parse_stats_from_file(input_file_name):
     input_file = open(input_file_name,'r')
