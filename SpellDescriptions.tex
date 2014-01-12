@@ -24,7 +24,7 @@
 \spellsection{Ablative Fortress}
 \spelldesc{You instantly create a simmering field of magical energy, protecting you and your allies from hostile magic.}
 \spellschool{Abjuration (Negation) [Magic]}
-\spelllvl{Abjur 4}
+\spelllvl{Abjur 4, Magic 4}
 \spellarea{\areamed radius limit centered on you}
 \spelltgts{All allies within the area}
 \spellsave{Will negates (harmless)}
@@ -36,7 +36,7 @@
 \spellsection{Ablative Shield}
 \spelldesc{You instantly encase yourself a shimmering field of magical energy, protecting you from hostile magic.}
 \spellschool{Abjuration (Negation) [Magic]}
-\spelllvl{Abjur 1}
+\spelllvl{Abjur 1, Magic 1}
 \spellcmp{V}
 \spelltime{1 immediate action}
 \spellrng{\rngpers}
@@ -69,7 +69,7 @@
 \spelldesc{You fire a magical arrow of acid from your hand that speeds to its target.}
 \spellschool{Conjuration (Creation) [Acid]}
 \spelllvl{Sor/Wiz 5}
-\spellrng{\rnglong}
+\spellrng{\rngfar}
 \spellsave{None/Fortitude negates}
 \spelldmg{5d6 acid damage \add d6 per round}
 \begin{spelleffect}
@@ -89,7 +89,7 @@
 \spelldur{\durshort}
 \spellsave{Fortitude half}
 \spellsr{No}
-\spelldmg{3d6 acid damage per round}
+\spelldmg{4d6 acid damage per round}
 \begin{spelleffect}
   This spell functions like \spell{solid fog}, except that the spell's vapors are highly acidic, dealing damage to all creatures and objects within the area on each round at the start of your turn. The fog does not do damage in the round it is cast. A successful Fortitude save halves the damage.
 \end{spelleffect}
@@ -630,7 +630,7 @@
 \spelldesc{You repeatedly call intense bolts of lightning that flash down from thin air to smite your foes.}
 \spellschool{Evocation (Energy) [Electricity]}
 \spelllvl{Air 5, Drd 5}
-\spellrng{\rnglong}
+\spellrng{\rngfar}
 \spellsave{Reflex half/Reflex negates}
 \spelldmg{5d6 electricity damage \add d6 per four caster levels above 10th}
 \begin{spellblood}
@@ -752,7 +752,7 @@
 \spelldesc{You manipulate the minds of many people so they think of you as a trusted friend and ally.}
 \spellschool{Enchantment (Emotion) [Charm, Mind-Affecting]}
 \spelllvl{Brd 6, Ench 7}
-\spellrng{\rnglong}
+\spellrng{\rngfar}
 \spellarea{\areamed radius}
 \spelltgts{Five humanoid creatures within the area}
 \begin{spelleffect}
@@ -991,7 +991,7 @@
 \spelldesc{You manipulate elemental forces to control water around you.}
 \spellschool{Evocation (Control) [Water]}
 \spelllvl{Drd 2, Water 2}
-\spellrng{\rnglong}
+\spellrng{\rngfar}
 \spellarea{Water in one volume/level of 10 ft. by 10 ft. by 2 ft. (S)}
 \spelldur{\durmed (D)}
 \spellsave{None; see text}
@@ -1868,7 +1868,7 @@
 \spellsection{Earthquake}
 \spellschool{Evocation (Control) [Earth]}
 \spelllvl{Destruction 8, Drd 8, Clr 8, Earth 7}
-\spellrng{\rnglong}
+\spellrng{\rngfar}
 \spellarea{\arealarge radius spread (S)}
 \spelldur{1 round}
 \spellsave{See text}
@@ -1940,7 +1940,7 @@
 \spellsection{Enervation}
 \spelldesc{You point your finger and release a black ray that drains your foe's life force away.}
 \spellschool{Necromancy (Life)}
-\spelllvl{Death 4, Evil 4, Sor/Wiz 4}
+\spelllvl{Death 4, Sor/Wiz 4}
 \spellrng{\rngclose}
 \spelleff{Ray of negative energy}
 \spelldur{\durlong}
@@ -2069,7 +2069,7 @@
 \spellsection{Faerie Fire}
 \spellschool{Illusion (Figment) [Light, Unreal]}
 \spelllvl{Drd 2}
-\spellrng{\rnglong}
+\spellrng{\rngfar}
 \spellarea{\areasmall radius limit}
 \spelleff{Dim lights in the area}
 \spelldur{\durshort (D)}
@@ -2087,7 +2087,7 @@
 \spelltgt{You}
 \spelldur{\durshort}
 \begin{spelleffect}
-  You gain 10 temporary hit points \add 1 per caster level.
+  You gain 5 temporary hit points \add 2 per caster level.
 \end{spelleffect}
 
 \spellsection{Farsight}
@@ -2232,7 +2232,7 @@
 \spelldesc{You create an explosion of flame that detonates with a low roar, damaging nearby creatures and objects.}
 \spellschool{Evocation (Energy) [Destructive, Fire]}
 \spelllvl{Fire 3, Sor/Wiz 3}
-\spellrng{\rnglong}
+\spellrng{\rngfar}
 \spellarea{\areasmall radius spread}
 \spelldur{Instantaneous}
 \spellsave{Reflex half}
@@ -2872,7 +2872,7 @@
 \spelldesc{You dessicate your foes from a great distance, shriveling their bodies.}
 \spellschool{Necromancy (Flesh)}
 \spelllvl{Necro 8, Water 8}
-\spellrng{\rnglong}
+\spellrng{\rngfar}
 \spellarea{\arealarge radius limit}
 \spelltgts{Ten living creatures within the area}
 \spellsave{Fortitude half}
@@ -3254,7 +3254,7 @@
 \spelldesc{You bind your foe's life force to yours, leaving them vulnerable to your magic.}
 \spellschool{Necromancy (Life)}
 \spelllvl{Necro 1}
-\spellrng{\rnglong}
+\spellrng{\rngfar}
 \spelltgt{One living creature}
 \spelldur{\durshort (D)}
 \spellsave{Will negates}
@@ -3562,7 +3562,7 @@
 \spellsection{Major Image}
 \spellschool{Illusion (Figment) [Unreal]}
 \spelllvl{Brd 4, Illus 4}
-\spellrng{\rnglong}
+\spellrng{\rngfar}
 \spelldur{\durshort}
 \begin{spelleffect}
   This spell functions like \spell{silent image}, except that sound, smell, and thermal illusions are included in the spell effect. By concentrating on the spell, you can move the image within the range.
@@ -3639,7 +3639,7 @@
 \spelldesc{You call a swarm of meteors that streak down from the heavens, leaving a fiery trail behind them. The meteors crash into your foes, driving flying creatures to the ground and knocking your foes off their feet.}
 \spellschool{Evocation (Energy) [Fire]}
 \spelllvl{Destruction 9, Fire 9, Evoc 9}
-\spellrng{\rnglong}
+\spellrng{\rngfar}
 \spellarea{A \arealarge radius cylinder, 100 ft. high}
 \spelldur{Instantaneous}
 \spellsave{Reflex partial}
@@ -3876,7 +3876,7 @@
 \spellsection{Persistent Image}
 \spellschool{Illusion (Figment)}
 \spelllvl{Brd 5, Illus 6}
-\spellrng{\rnglong}
+\spellrng{\rngfar}
 \spelldur{\durmed (D)}
 \begin{spelleffect}
   This spell functions like \spell{silent image}, except that the figment includes visual, auditory, olfactory, and thermal components, and the figment follows a script determined by you. The figment follows that script without your having to concentrate on it. The illusion can include intelligible speech if you wish.
@@ -4171,7 +4171,7 @@
 
 \spellsection{Project Image}
 \spellschool{Illusion (Shadow)}
-\spelllvl{Brd 6, Illus 7}
+\spelllvl{Brd 6, Sor/Wiz 7}
 \spellrng{\rngmed}
 \spelleff{One shadow duplicate}
 \spelldur{\durshort (D)}
@@ -4292,20 +4292,20 @@
   The subject's Dexterity score cannot drop below 1.
 \end{spellnotes}
 
-\spellsection{Ray of Enfeeblement}
-\spelldesc{You fire a coruscating ray from your hand. When it strikes your foe, he becomes weaker.}
+\spellsection{Enfeeblement}
+%\spelldesc{You fire a coruscating ray from your hand. When it strikes your foe, he becomes weaker.}
 \spellschool{Necromancy (Flesh)}
 \spelllvl{Sor/Wiz 1}
 \spellrng{\rngclose}
-\spelleff{Ray}
+\spelltgt{One creature}
 \spelldur{\durshort}
-\spellsave{Fortitude half}
+\spellsave{Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
-  You must succeed on a ranged touch attack. The subject takes a \minus4 penalty to Strength.
+  The subject takes a \minus4 penalty to your choice of Strength, Dexterity, or Constitution.
 \end{spelleffect}
 \begin{spellnotes}
-  The subject's Strength cannot drop below \minus9.
+  This spell cannot reduce the subject's attributes below \minus9.
 \end{spellnotes}
 
 \spellsection{Ray of Exhaustion}
@@ -4680,7 +4680,7 @@
 \spellsave{Will disbelief (if interacted with); varies, see text}
 \spellsr{Yes (Will); See text}
 \begin{spelleffect}
-  Shadow conjuration can mimic any general sorcerer or wizard conjuration (summoning) or conjuration (creation) spell of 3rd level or lower. If you summon a creature, as with the \spell{summon monster} spells, you may only summon a creature that you know how to summon with such a spell.
+  Shadow conjuration can mimic any non-restricted sorcerer or wizard conjuration (summoning) or conjuration (creation) spell of 3rd level or lower. If you summon a creature, as with the \spell{summon monster} spells, you may only summon a creature that you know how to summon with such a spell.
   \par Shadow conjurations are actually half as strong as the real things, though creatures who believe the shadow conjurations to be real are affected by them at full strength.
   \par Any creature that interacts with the conjured object, force, or creature can make a Will save to recognize its true nature.
   \par Spells that deal damage have normal effects unless an affected creature succeeds on a Will save. Each disbelieving creature takes only half damage from the attack. If the disbelieved attack has a special effect other than damage, that effect is half as strong (if applicable) or only half as likely to occur. Regardless of the result of the save to disbelieve, an affected creature is also allowed any save (or spell resistance) that the spell being simulated allows.
@@ -4696,7 +4696,7 @@
 \spellschool{Illusion (Shadow)}
 \spelllvl{Illus 7}
 \begin{spelleffect}
-  This spell functions like \spell{shadow conjuration}, except that it can duplicate any sorcerer or wizard conjuration (summoning) or conjuration (creation) spell of 6th level or lower.
+  This spell functions like \spell{shadow conjuration}, except that it can duplicate any non-restricted sorcerer or wizard conjuration (summoning) or conjuration (creation) spell of 6th level or lower.
 \end{spelleffect}
 \begin{spellnotes}
   When you learn this spell, you choose six creatures from the 6th-level or lower lists on the Summon Monster table, one at each level. You can summon those creatures with this or any summon monster spell.
@@ -4711,8 +4711,8 @@
 \spellsave{Will disbelief (if interacted with); varies, see text}
 \spellsr{Yes (Will); see text}
 \begin{spelleffect}
-  You tap energy from the Plane of Shadow to cast a quasi-real, illusory version of a general sorcerer or wizard evocation spell of 4th level or lower. (For a spell with more than one level, use the best one applicable to you.)
-  \par Spells that deal damage have normal effects unless an affected creature succeeds on a Will save. Each disbelieving creature takes only half damage from the attack. If the disbelieved attack has a special effect other than damage, that effect is half as strong (if applicable) or only halfas likely to occur. Regardless of the result of the save to disbelieve, an affected creature is also allowed any save (or spell resistance) that the spell being simulated allows.
+  You tap energy from the Plane of Shadow to cast a quasi-real, illusory version of a non-restricted sorcerer or wizard evocation spell of 4th level or lower. (For a spell with more than one level, use the best one applicable to you.)
+  \par Spells that deal damage have normal effects unless an affected creature succeeds on a Will save. Each disbelieving creature takes only half damage from the attack. If the disbelieved attack has a special effect other than damage, that effect is half as strong (if applicable) or only half as likely to occur. Regardless of the result of the save to disbelieve, an affected creature is also allowed any save (or spell resistance) that the spell being simulated allows.
 \end{spelleffect}
 \begin{spellnotes}
   Objects automatically succeed on their Will saves against this spell.
@@ -4722,13 +4722,13 @@
 \spellschool{Illusion (Shadow)}
 \spelllvl{Illus 8}
 \begin{spelleffect}
-  This spell functions like \spell{shadow evocation}, except that it enables you to create partially real, illusory versions of sorcerer or wizard evocation spells of 7th level or lower.
+  This spell functions like \spell{shadow evocation}, except that it enables you to create partially real, illusory versions of non-restricted sorcerer or wizard evocation spells of 7th level or lower.
 \end{spelleffect}
 
 \spellsection{Shadow Puppet}
 \spellschool{Conjuration/Illusion (Shadow, Translocation) [Planar, Unreal]}
-\spelllvl{Sor/Wiz 9}
-\spellrng{Personal/\rnglong; see text}
+\spelllvl{Illus 9}
+\spellrng{Personal/\rngfar; see text}
 \spelltgt{You}
 \spelleff{One shadow duplicate}
 \spelldur{\durmed}
@@ -4738,7 +4738,7 @@
   You step into the Plane of Shadow (as \spell{shadow walk}, a planar translocation effect), and at the same time, you create a quasi-real, illusory version of yourself (as \spell{project image}, an unreal shadow effect). The double appears superimposed over your body so that observers don't notice an image appearing and you disappearing. You can then control the image and cast spells through it even though you are on a different plane.
 \end{spelleffect}
 \begin{spellnotes}
-  If the image moves farther than \rnglong range away from where it was originally created, or if you leave the Plane of Shadow, the image ceases to exist.
+  If the image moves farther than \rngfar range away from where it was originally created, or if you leave the Plane of Shadow, the image ceases to exist.
 \end{spellnotes}
 
 \spellsection{Shape Stone}
@@ -4795,7 +4795,7 @@
 \spelllvl{Abjur 6}
 \spelldur{\durshort (D)}
 \begin{spelleffect}
-  This spell functions like \spell{share pain}, except that it redirects all damage that one creature would take instead of half of the damage.
+  This spell functions like \spell{share pain}, except that it redirects all damage that one creature would take instead of redirecting half of the damage.
 \end{spelleffect}
 
 \spellsection{Shatter}
@@ -5071,7 +5071,7 @@
 \spelldesc{You attack your foe's soul directly.}
 \spellschool{Necromancy (Soul)}
 \spelllvl{Necro 6}
-\spellrng{\rnglong}
+\spellrng{\rngfar}
 \spelltgt{One living creature}
 \spelldur{Instantaneous}
 \spellsave{Will half}
@@ -5299,7 +5299,7 @@
 \spellschool{Conjuration/Evocation (Energy, Control, Creation)}
 \spelllvl{Air 9, Drd 9, Clr 9, War 9, Water 9}
 \spelltime{Full-round action}
-\spellrng{\rnglong}
+\spellrng{\rngfar}
 \spellarea{360 ft. radius cylinder, 200 ft. high}
 \spelleff{Supernatural weather in the area}
 \spelldur{Concentration (maximum 10 rounds)}
