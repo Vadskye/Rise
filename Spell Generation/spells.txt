@@ -1,0 +1,216 @@
+Animal Growth
+{'area': 'medium_radius', 'choose_targets': True, 'limit_types': [2], 'max_targets': True, 'save_name': ['Animal', 'Growth'], 'buff': [4, 3]}
+Spell Level: 7.4
+
+Baleful Polymorph
+{'touch_attack': True, 'range': 'touch', 'save_name': ['Baleful', 'Polymorph'], 'duration': ['short'], 'save': ['negates'], 'condition': [1.0, 3.0]}
+Spell Level: 5.176
+
+Bane
+{'range': 'touch', 'limit_types': [1], 'condition': [3.5], 'save_name': ['Bane'], 'area': 'medium_radius'}
+Spell Level: 1.25
+
+Barkskin
+{'range': 'touch', 'save_name': ['Barkskin'], 'buff': [2, 2]}
+Spell Level: 1.6
+
+Bestow Curse
+{'alternate': [True], 'range': 'touch', 'save_name': ['Bestow', 'Curse'], 'dispellable': ['0'], 'duration': ['permanent'], 'save': ['negates'], 'condition': [2.0]}
+Spell Level: 3.4
+
+Black Tentacles
+{'area': 'normal', 'range': 'close', 'save_name': ['Black', 'Tentacles'], 'save': ['negates'], 'escapable': 1, 'condition': [1.5]}
+Spell Level: 6.7
+
+Blade Barrier
+{'duration': ['short'], 'damage': [True], 'save_name': ['Blade', 'Barrier'], 'area': 'normal'}
+Spell Level: 6
+
+Blasphemy
+{'bloodied': [True, False], 'area': 'medium_radius', 'range': 'touch', 'limit_types': [2], 'save_name': ['Blasphemy'], 'duration': ['round', 'short'], 'condition': [1.0, 3.0]}
+Spell Level: 6.5
+
+Bless
+{'area': 'medium_radius', 'instantaneous': [True], 'range': 'touch', 'limit_types': [1], 'save_name': ['Bless'], 'buff': [2]}
+Spell Level: 1.8
+
+Blindness/Deafness
+{'touch_attack': ['1'], 'bloodied': [True, False], 'healthy': [False, True], 'alternate': [True, False], 'range': 'touch', 'condition': [1.5, 3.0], 'duration': ['long'], 'save': ['negates'], 'save_name': ['Blindness/Deafness']}
+Spell Level: 2.0944
+
+Burning Hands
+{'range': 'touch', 'energy': True, 'damage': [True], 'save_name': ['Burning', 'Hands'], 'area': 'normal'}
+Spell Level: 1
+
+Call Lightning
+{'energy': True, 'damage': [True], 'save_name': ['Call', 'Lightning'], 'duration': ['medium'], 'concentration': [True], 'dot': [True]}
+Spell Level: 2.8
+
+Greater Call Lightning
+{'dot': [True], 'energy': True, 'damage': [True, False], 'condition': [0.0, 2.0], 'duration': ['medium', 'round'], 'concentration': [True, False], 'save': ['negates'], 'save_name': ['Greater', 'Call', 'Lightning']}
+Spell Level: 5.2
+
+Greater Call Lightning
+{'dot': [True], 'energy': True, 'damage': [True, False], 'range': 'far', 'condition': [0.0, 2.0], 'duration': ['medium', 'round'], 'concentration': [True, False], 'save': ['negates'], 'save_name': ['Greater', 'Call', 'Lightning']}
+Spell Level: 6.2
+
+Cause Fear
+{'bloodied': [True, False], 'limit_types': [1], 'save_name': ['Cause', 'Fear'], 'duration': ['round', 'short'], 'save': ['negates'], 'condition': [1.5, 3.0]}
+Spell Level: 0.888
+
+Chain Lightning
+{'energy': True, 'damage': [True], 'save_name': ['Chain', 'Lightning'], 'area': 'medium_radius'}
+Spell Level: 5
+
+Chaos Hammer
+{'condition': [0.0, 3.0], 'limit_types': [1], 'damage': [True, False], 'save_name': ['Chaos', 'Hammer']}
+Spell Level: 4.38
+
+Charm Person
+{'noncombat': [True], 'limit_types': [1], 'save_name': ['Charm', 'Person'], 'duration': ['long'], 'save': ['negates'], 'condition': [2.0]}
+Spell Level: 1.32
+
+Color Spray
+{'range': 'touch', 'save': ['negates'], 'condition': [3.0, 3.0], 'save_name': ['Color', 'Spray'], 'area': 'normal'}
+Spell Level: 2.4
+
+Combat_Transformation
+{'range': 'personal', 'save_name': ['Combat_Transformation'], 'buff': [3, 3, 3, 2, 1]}
+Spell Level: 7.2
+
+Mass Command
+{'bloodied': [True, False], 'area': 'medium_radius', 'healthy': [False, True], 'condition': [1.0, 2.0], 'choose_targets': True, 'limit_types': [2], 'save_name': ['Mass', 'Command'], 'duration': ['round'], 'save': ['negates'], 'max_targets': True}
+Spell Level: 5.1875
+
+Cone of Cold, Lesser
+{'area': 'normal', 'energy': True, 'damage': [True, False], 'range': 'touch', 'condition': [0.0, 3.0], 'duration': ['round'], 'save': ['negates'], 'save_name': ['Cone', 'of', 'Cold,', 'Lesser']}
+Spell Level: 1.6
+
+Haste, Mass
+{'buff': [4, 3], 'save_name': ['Haste,', 'Mass'], 'max_targets': True, 'area': 'medium_radius'}
+Spell Level: 8.45
+
+Cone of Cold
+{'area': 'normal', 'energy': True, 'damage': [False, True], 'range': 'touch', 'save_name': ['Cone', 'of', 'Cold'], 'condition': [3.0, 0.0]}
+Spell Level: 5.2
+
+Cone of Cold, Greater
+{'area': 'large_cone', 'energy': True, 'damage': [False, True], 'range': 'touch', 'save_name': ['Cone', 'of', 'Cold,', 'Greater'], 'condition': [3.0, 0.0]}
+Spell Level: 8.2
+
+Confusion, Mass
+{'bloodied': [True, False], 'area': 'medium_radius', 'healthy': [False, True], 'condition': [1.5, 3.0], 'choose_targets': True, 'limit_types': [1], 'max_targets': True, 'save': ['negates'], 'save_name': ['Confusion,', 'Mass']}
+Spell Level: 8.1575
+
+Contagion
+{'save': ['negates'], 'alternate': [True], 'condition': [2.5], 'save_name': ['Contagion'], 'area': 'tiny'}
+Spell Level: 3.2
+
+Cripple
+{'healthy': [False, True], 'save': ['negates'], 'condition': [1.0, 2.0], 'save_name': ['Cripple'], 'bloodied': [True, False]}
+Spell Level: 6.36
+
+Crush Life, Greater
+{'condition': [0.0, 3.0], 'damage': [True, False], 'save_name': ['Crush', 'Life,', 'Greater']}
+Spell Level: 5.2
+
+Daze
+{'bloodied': [True, False], 'limit_types': [1], 'save_name': ['Daze'], 'duration': ['round', 'short'], 'save': ['none', 'negates'], 'condition': [1.0, 3.0]}
+Spell Level: 3.48
+
+Daze
+{'bloodied': [True, False], 'area': 'medium_radius', 'condition': [1.0, 3.0], 'choose_targets': True, 'limit_types': [1], 'save_name': ['Daze'], 'duration': ['round', 'short'], 'save': ['none', 'negates'], 'max_targets': True}
+Spell Level: 8.9
+
+Daze, Mass
+{'bloodied': [True, False], 'area': 'medium_radius', 'condition': [1.0, 3.0], 'choose_targets': True, 'limit_types': [1], 'save_name': ['Daze,', 'Mass'], 'duration': ['round', 'short'], 'save': ['none', 'negates'], 'max_targets': True}
+Spell Level: 8.9
+
+Deep Slumber
+{'bloodied': [True, False], 'healthy': [False, True], 'limit_types': [1], 'save_name': ['Deep', 'Slumber'], 'duration': ['long'], 'save': ['negates'], 'condition': [1.0, 3.0]}
+Spell Level: 6.936
+
+Delayed Blast Fireball
+{'energy': True, 'damage': [True], 'save_name': ['Delayed', 'Blast', 'Fireball'], 'area': 'medium_radius'}
+Spell Level: 5
+
+Destruction
+{'bloodied': [True, False], 'healthy': [False, True], 'instantaneous': [True], 'range': 'close', 'save_name': ['Destruction'], 'duration': ['long', 'short'], 'save': ['negates'], 'condition': [1.0, 2.0]}
+Spell Level: 6.56
+
+Destruction
+{'bloodied': [True, False], 'area': 'medium_radius', 'healthy': [False, True], 'instantaneous': [True], 'range': 'close', 'condition': [1.0, 2.0], 'duration': ['long', 'short'], 'save': ['negates'], 'save_name': ['Destruction']}
+Spell Level: 13.2
+
+Destruction
+{'bloodied': [True, False], 'healthy': [False, True], 'instantaneous': [True], 'range': 'close', 'save_name': ['Destruction'], 'duration': ['long', 'short'], 'save': ['negates'], 'condition': [1.0, 2.0]}
+Spell Level: 6.56
+
+Dismissal
+{'instantaneous': [True], 'range': 'close', 'limit_types': [3], 'save_name': ['Dismissal'], 'duration': ['long'], 'save': ['negates'], 'condition': [1.0]}
+Spell Level: 3.92
+
+Divine_Power
+{'range': 'personal', 'save_name': ['Divine_Power'], 'buff': [3, 2, 2, 1]}
+Spell Level: 4.4
+
+Earth's Pull
+{'limit_types': [1], 'condition': [3.0], 'save_name': ["Earth's", 'Pull']}
+Spell Level: 0.6
+
+Enlarge Person
+{'range': 'touch', 'limit_types': [1], 'save_name': ['Enlarge', 'Person'], 'buff': [4, 3]}
+Spell Level: 3.8
+
+Enlarge Person
+{'range': 'touch', 'limit_types': [1], 'save_name': ['Enlarge', 'Person'], 'buff': [4, 3]}
+Spell Level: 3.8
+
+Enlarge Person
+{'range': 'close', 'limit_types': [1], 'save_name': ['Enlarge', 'Person'], 'buff': [4, 3]}
+Spell Level: 4.3
+
+Missile Storm
+{'range': 'touch', 'save_name': ['Missile', 'Storm'], 'damage': [True], 'choose_targets': True, 'area': 'large_radius'}
+Spell Level: 7
+
+Enlarge Person, Mass
+{'buff': [3, 3], 'limit_types': [1], 'save_name': ['Enlarge', 'Person,', 'Mass'], 'max_targets': True, 'area': 'medium_radius'}
+Spell Level: 6.85
+
+Death Ward, Mass
+{'buff': [3, 2], 'save_name': ['Death', 'Ward,', 'Mass'], 'max_targets': True, 'area': 'medium_radius'}
+Spell Level: 6.35
+
+Entangle
+{'area': 'normal', 'limit_types': [2], 'save_name': ['Entangle'], 'save': ['partial'], 'escapable': 1, 'condition': [3.0]}
+Spell Level: 1.4
+
+Entangling Growth
+{'save': ['partial'], 'condition': [3.0], 'escapable': 1, 'save_name': ['Entangling', 'Growth'], 'area': 'medium_radius'}
+Spell Level: 4.2
+
+Fear
+{'bloodied': [True, False], 'area': 'normal', 'healthy': [False, True], 'range': 'touch', 'save_name': ['Fear'], 'save': ['negates'], 'condition': [1.5, 3.0]}
+Spell Level: 5.175
+
+Feeblemind
+{'touch_attack': ['1'], 'bloodied': [True, False], 'instantaneous': [True], 'range': 'touch', 'condition': [1.0, 3.0], 'duration': ['permanent', 'short'], 'save': ['negates'], 'save_name': ['Feeblemind']}
+Spell Level: 5.368
+
+Finger of Death
+{'bloodied': [True, False], 'healthy': [False, True], 'instantaneous': [True], 'range': 'close', 'save_name': ['Finger', 'of', 'Death'], 'duration': ['long', 'short'], 'save': ['negates'], 'condition': [1.0, 2.0]}
+Spell Level: 6.56
+
+Flame Strike
+{'range': 'close', 'damage': [True], 'save_name': ['Flame', 'Strike'], 'area': 'medium_radius'}
+Spell Level: 5
+
+Fire Storm
+{'energy': True, 'save_name': ['Fire', 'Storm'], 'damage': [True], 'choose_targets': True, 'area': 'large_radius'}
+Spell Level: 8
+
+Fireball
+{'energy': True, 'damage': [True], 'save_name': ['Fireball'], 'area': 'normal'}
+Spell Level: 3
+
