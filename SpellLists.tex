@@ -67,6 +67,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead{Cure Serious Wounds} Cures 6d8 damage.
   \spellhead{Daze} Subject is bewildered and may lose an action.
   \spellhead{Detect Thoughts} Allows ``listening'' to surface thoughts.
+  \spellheadc{Disguise Self}{Greater} Change your appearance at will.
   \spellhead{Dispel Magic} Cancels magical spells and effects.
   \spellhead{Glibness} You gain \plus30 bonus on Bluff checks, and your lies can escape magical discernment.
   \spellhead{Good Hope} Subjects gain \plus2 to attack, 10 \plus1/level temporary hp.
@@ -131,7 +132,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \subsection{1st-level Cleric Spells}
 \begin{spelllist}
   \spellhead{Bane} Nearby enemies take \minus2 to attack.
-  \spellhead{Bless} Nearby allies gain \plus2 to attack.
   \spellhead{Cause Fear} One creature is shaken, may flee.
   \spellhead{Command} One subject obeys selected command for 1 round.
   \spellhead{Cure Light Wounds} Cures 2d8 damage.
@@ -141,7 +141,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead{Detect Undead} Reveals undead within large cone.
   \spellheadc{Dispel Magic}{Lesser} Cancels magical spells and effects on a single target.
   \spellhead{Divine Favor} You gain \plus2 on attack and damage rolls.
-  \spellhead{Entropic Shield} Ranged attacks against you have 20\% miss chance.
   \spellhead{Inflict Light Wounds} Touch deals 2d8 damage.
   \spellhead{Light} Object shines like a torch.
   \spellhead{Magic Vestment} Armor or shield becomes \plus2.
@@ -155,9 +154,10 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \subsection{2nd-level Cleric Spells}
 \begin{spelllist}
   \spellhead{Aid} Ally gains \plus2 attack bonus, 10 \plus1/level temporary hp.
-  \spellhead{Align Weapon} Weapon becomes \plus2 and good, evil, lawful, or chaotic.
+  \spellhead{Bless} Nearby allies gain \plus2 to attack.
   \spellhead{Cure Moderate Wounds} Cures 4d8 damage.
   \spellhead{Daylight} Large radius of bright light.
+  \spellhead{Entropic Shield} Ranged attacks against you have 50\% miss chance.
   \spellhead{Hold Person} Paralyzes one humanoid for short duration.
   \spellhead{Inflict Moderate Wounds} Touch deals 4d8 damage.
   \spellhead{Locate Object} Senses direction toward object (specific or type).
@@ -178,6 +178,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead{Blindness/Deafness} Touched creature is blinded or deafened.
   \spellhead{Contagion} Infects subject with chosen disease.
   \spellhead{Cure Serious Wounds} Cures 6d8 damage.
+  \spellhead{Death Ward} Grants immunity to death spells and negative energy effects.
   \spellhead{Dimensional Anchor} Bars extradimensional movement.
   \spellhead{Discern Lies} Reveals deliberate falsehoods.
   \spellhead{Dispel Magic} Cancels spells and magical effects.
@@ -193,8 +194,8 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \begin{spelllist}
   \spellhead{Air Walk} Subject treads on air as if solid (climb at 45-degree angle).
   \spellhead{Cure Critical Wounds} Cures 8d8 damage.
-  \spellhead{Death Ward} Grants immunity to death spells and negative energy effects.
   \spellhead{Dismissal} Forces a creature to return to native plane.
+  \spellhead{Disrupting Weapon} Melee weapon destroys undead.
   \spellhead{Divine Power} You gain attack and damage bonus, \plus4 Str, and 2 hp/level.
   \spellhead{Freedom} Subject moves normally despite impediments.
   \spellhead{Inflict Critical Wounds} Touch deals 8d8 damage.
@@ -209,7 +210,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \begin{spelllist}
   \spellheadc{Command}{Mass} As \spell{command}, but affects multiple creatures.
   \spellheadc{Cure Light Wounds}{Mass} Cures 5d8 damage for many creatures.
-  \spellhead{Disrupting Weapon} Melee weapon destroys undead.
   \spellhead{Flame Strike} Smite foes in small radius with divine fire (8d8 damage).
   \spellheadc{Inflict Light Wounds}{Mass} Deals 5d8 damage to many creatures.
   \spellhead{Magic Circle against Chaos/Evil/Good/Law} Protect allies in a \areamed radius and hedge out opposing outsiders.
@@ -224,6 +224,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead{Blade Barrier} Wall of blades deals 6d6 damage.
   \spellhead{Circle of Death}\M Kills 2/level HV of creatures.
   \spellheadc{Cure Moderate Wounds}{Mass} Cures 6d6 damage for many creatures.
+  \spellheadc{Death Ward}{Mass} As \spell{death ward}, but affects multiple creatures.
   \spellheadc{Dispel Magic}{Greater} As dispel magic, but up to \plus20 on check.
   \spellhead{Harm} Touch deals 12d8 damage.
   \spellhead{Heal} Cures 12d8 damage, all diseases and mental conditions.
@@ -257,7 +258,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead{Antimagic Field} Negates magic in small emanation from you.
   \spellhead{Cloak of Chaos}\F Protect multiple creatures against lawful foes. 
   \spellheadc{Cure Critical Wounds}{Mass} Cures 8d6 damage for many creatures.
-  \spellheadc{Death Ward}{Mass} As \spell{death ward}, but affects multiple creatures.
   \spellhead{Earthquake} Intense tremor shakes large radius.
   \spellhead{Energy Drain} Subject gains 2d4 negative levels.
   \spellheadc{Freedom}{Mass} As \spell{freedom}, but affects multiple creatures.
@@ -339,10 +339,10 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
 \subsubsection{Chaos Domain Spells}
 \begin{spelllist}
-  \spellhead[1]{Entropic Shield} 
+  \spellhead[1]{}
   \spellhead[1]{Protection from Law} \plus2 to saves and counter opposing mind control.
   \spellhead[2]{Align Weapon} Weapon becomes \plus2 and chaotic.
-  \spellhead[2]{Hideous Laughter} Subject loses actions for short duration.
+  \spellhead[2]{Entropic Shield} Ranged attacks against you have 50\% miss chance.
   \spellhead[3]{Confusion} Subject acts randomly.
   \spellhead[3]{Summon Monster III*} Calls extraplanar creature to fight for you.
   \spellhead[4]{Chaos Hammer} Bewilders, deals 4d6 damage to nonchaotic creatures.
@@ -366,18 +366,19 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead[1]{Ray of Clumsiness} Ray inflicts 1d6 \plus1 per two levels Dex penalty.
   \spellhead[2]{Crush Life} Target takes 4d6 unavoidably.
   \spellhead[2]{Death Knell} Kill dying creature and gain temporary hp, more for killing powerful creatures.
-  \spellhead[3]{Contagion} Infects subject with chosen disease.
+  \spellhead[3]{Death Ward} Grants immunity to death spells and negative energy effects.
   \spellhead[3]{Vampiric Touch} Touch deals 6d8 damage; caster gains half damage as temporary hp.
-  \spellhead[4]{Death Ward} Grants immunity to death spells and negative energy effects.
+  \spellhead[4]{}
   \spellhead[4]{Enervation} Subject gains two negative levels.
   \spellheadc[5]{Crush Life}{Greater} Target takes 10d6 damage unavoidably and gains a negative level.
   \spellhead[5]{}
-  \spellhead[6]{Slay Living} Touch attack kills subject.
+  %\spellhead[6]{Slay Living} Touch attack kills subject.
   \spellhead[6]{Circle of Death}\M Kills 2/level HV of creatures.
+  \spellheadc[6]{Death Ward}{Mass} As \spell{death ward}, but affects multiple creatures.
   \spellhead[7]{Finger of Death} Kills one subject.
   \spellhead[7]{} 
-  \spellheadc[8]{Death Ward}{Mass} As \spell{death ward}, but affects multiple creatures.
   \spellhead[8]{Energy Drain} Subject gains 2d4 negative levels.
+  \spellhead[8]{}
   \spellhead[9]{Power Word Kill} Kills bloodied creature.
   \spellhead[9]{Wail of the Banshee} Kills one creature/level.
 \end{spelllist}
@@ -511,13 +512,13 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \subsection{Good Domain}
 \subsubsection{Good Domain Spells}
 \begin{spelllist}
-  \spellhead[1]{Bless} Nearby allies gain \plus2 to attack.
+  \spellhead[1]{}
   \spellhead[1]{Protection from Evil} \plus2 to saves and counter opposing mind control.
   \spellhead[2]{Align Weapon} Weapon becomes \plus2 and good.
-  \spellhead[2]{Aid} Ally gains \plus2 attack bonus, 10 \plus1/level temporary hp.
-  \spellhead[3]{}
+  \spellhead[2]{Bless} Nearby allies gain \plus2 to attack.
+  \spellhead[3]{Death Ward} Grants immunity to death spells and negative energy effects.
   \spellhead[3]{Summon Monster III*} Calls extraplanar creature to fight for you.
-  \spellhead[4]{Death Ward} Grants immunity to death spells and negative energy effects.
+  \spellhead[4]{}
   \spellhead[4]{Holy Smite} Blinds and deals 4d6 damage to nongood creatures.
   \spellhead[5]{Magic Circle against Evil} Protect allies in a \areamed radius and hedge out opposing outsiders.
   \spellhead[5]{Righteous Might} Your size increases, and you gain combat bonuses.
@@ -525,7 +526,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead[6]{Summon Monster VI*} Calls extraplanar creature to fight for you.
   \spellhead[7]{Holy Word}\F Kills, paralyzes, slows, or deafens nongood subjects in large radius.
   \spellhead[7]{}
-  \spellheadc[8]{Death Ward}{Mass} As \spell{death ward}, but affects multiple creatures.
+  \spellhead[8]{}
   \spellhead[8]{Holy Aura} Protect multiple creatures against evil foes. 
   \spellheadc[9]{Heal}{Mass} As heal, but heals 9d6 for many subjects.
   \spellhead[9]{Summon Monster IX*} Calls extraplanar creature to fight for you.
@@ -615,10 +616,10 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead[4]{Entangling Growth} New plants grow and entangle everyone in medium spread.
   \spellhead[5]{Animate Plants} Plants animate and fight for you.
   \spellhead[5]{Wall of Thorns} Thorns damage anyone who tries to pass.
-  \spellhead[6]{Animal Growth} Enlarges multiple animals.
+  \spellhead[6]{Fire Seeds} Acorns and berries become grenades and bombs.
   \spellhead[6]{Summon Nature's Ally VI} Calls creature to fight.
   \spellhead[7]{Antilife Shell} Small stationary emanation hedges out living creatures.
-  \spellhead[7]{Fire Seeds} Acorns and berries become grenades and bombs.
+  \spellhead[7]{Animal Growth} Enlarges multiple animals.
   \spellhead[8]{Changestaff} Your staff becomes a treant on command.
   \spellhead[8]{Summon Nature's Army} Calls one creature/level to fight.
   \spellhead[9]{Stampede} Summon bison to stampede foes.
@@ -632,9 +633,9 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead[1]{Shield of Faith} Aura grants \plus2 or higher deflection bonus.
   \spellhead[2]{Resist Energy} Ignores 10 (or more) points of damage/attack from specified energy type.
   \spellhead[2]{}
-  \spellhead[3]{Redirection} Redirect attacks on you to other targets.
+  \spellhead[3]{Death Ward} Grants immunity to death spells and negative energy effects.
   \spellhead[3]{Protection from Energy} Absorb 10 points/level of damage from one kind of energy.
-  \spellhead[4]{Death Ward} Grants immunity to death spells and negative energy effects.
+  \spellhead[4]{}
   \spellhead[4]{Spell Immunity} Subject is immune to one spell per four levels.
   \spellhead[5]{Spell Resistance} Subject gains SR 10.
   \spellhead[5]{Stoneskin} \plus5 AC, ignore 10 damage per round.
@@ -642,7 +643,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead[6]{Repulsion} Creatures can't approach you.
   \spellhead[7]{Energy Conversion} As \spell{greater resist energy}, plus you can fire rays of absorbed energy.
   \spellhead[7]{Spell Turning} Reflect 1d4\plus6 spell levels back at caster.
-  \spellheadc[8]{Death Ward}{Mass} As \spell{death ward}, but affects multiple creatures.
+  \spellheadc[8]{}
   \spellheadc[8]{Spell Immunity}{Greater} As spell immunity, but up to 8th-level spells.
   \spellhead[9]{Foresight} ``Sixth sense'' warns of impending danger.
   \spellhead[9]{}
@@ -775,9 +776,9 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \subsection{War Domain}
 \subsubsection{War Domain Spells}
 \begin{spelllist}
-  \spellhead[1]{Bless} Nearby allies gain \plus2 to attack.
+  \spellhead[1]{}
   \spellhead[1]{Divine Favor} You gain \plus2 on attack and damage rolls.
-  \spellhead[2]{Aid} Ally gains \plus2 attack bonus, 10 \plus1/level temporary hp.
+  \spellhead[2]{Bless} Nearby allies gain \plus2 to attack.
   \spellhead[2]{Spiritual Weapon} Magical weapon attacks on its own.
   \spellhead[3]{}
   \spellhead[3]{}
@@ -831,6 +832,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead{Detect Snares and Pits} Reveals natural or primitive traps in large cone.
   \spellhead{Earth's Pull} Subject feels gravity more strongly.
   \spellhead{Entangle} Plants entangle everyone in small spread.
+  \spellhead{Faerie Fire} Outlines subjects in small radius with light, canceling concealment, invisibility, and the like.
   \spellhead{Gust of Wind} Blows away or knocks down smaller creatures in large line.
   \spellhead{Jump} Subject gets bonus on Jump checks.
   \spellhead{Light} Object shines like a torch.
@@ -848,7 +850,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead{Control Water} Raises or lowers bodies of water.
   \spellhead{Cure Moderate Wounds} Cures 4d8 damage.
   \spellheadc{Dispel Magic}{Lesser} Cancels magical spells and effects on a single target.
-  \spellhead{Faerie Fire} Outlines subjects in small radius with light, canceling concealment, invisibility, and the like.
   \spellhead{Flame Weapon} Flaming weapon deals 1d8 \add casting attribute value damage.
   \spellhead{Heat Metal} Make metal so hot it damages those who touch it.
   \spellhead{Magic Fang} One natural weapon of subject creature becomes \plus2 weapon.
@@ -894,6 +895,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead{Ice Storm} Hail deals 4d4 damage in small cylinder.
   \spellheadc{Magic Fang}{Greater} All subject's natural weapons get \plus2 bonus.
   \spellheadc{Resist Energy}{Greater} As \spell{resist energy}, but all energy types.
+  \spellhead{Skysmite} Unerring lightning deals 6d6 damage.
   \spellhead{Spike Stones} Creatures in area take 1d8 damage per 5 feet moved, may be slowed.
   \spellhead{Summon Nature's Ally IV} Calls creature to fight.
   \spellhead{Wall of Ice} Create plane of ice or hemisphere can trap creatures inside.
@@ -904,7 +906,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead{Adapt Body} Your body automatically adapts to hostile environments.
   \spellheadc{Animal Affinity}{Mass} As \spell{animal affinity}, but affects multiple creatures.
   \spellhead{Animate Plants} Plants animate and fight for you.
-  \spellhead{Baleful Polymorph} Transforms subject into harmless animal.
   \spellheadc{Call Lightning}{Greater} As call lightning, but 5d6 damage per bolt.
   \spellhead{Cone of Cold} 5d6 cold damage and fatigue in medium cone.
   \spellheadc{Cure Light Wounds}{Mass} Cures 5d6 damage for many creatures.
@@ -919,8 +920,8 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
 \subsection{6th-level Druid Spells}
 \begin{spelllist}
-  \spellhead{Animal Growth} Enlarges multiple animals.
   \spellhead{Antilife Shell} Small radius emanation hedges out living creatures.
+  \spellhead{Baleful Polymorph} Transforms subject into harmless animal.
   \spellheadc{Cure Moderate Wounds}{Mass} Cures 5d6 damage for many creatures.
   \spellheadc{Dispel Magic}{Greater} As dispel magic, but up to \plus20 on check.
   \spellhead{Fire Seeds} Acorns and berries become grenades and bombs.
@@ -935,6 +936,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
 \subsection{7th-level Druid Spells}
 \begin{spelllist}
+  \spellhead{Animal Growth} Enlarges multiple animals.
   \spellhead{Changestaff} Your staff becomes a treant on command.
   \spellhead{Creeping Doom} Swarms of centipedes attack at your command.
   \spellheadc{Cure Serious Wounds}{Mass} Cures 7d6 damage for many creatures.
@@ -971,8 +973,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
 \subsection{1st-level Paladin Spells}
 \begin{spelllist}
-  \spellhead{Bless} Nearby allies gain \plus2 to attack.
-  \spellhead{Bless Weapon} Weapon becomes \plus2 and good.
   \spellhead{Cure Light Wounds} Cures 2d8 damage.
   \spellhead{Delay Poison} Stops poison from harming subject for extended duration.
   \spellhead{Detect Chaos} Reveals creatures, spells, or objects of chaotic alignment.
@@ -984,6 +984,8 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \subsection{2nd-level Paladin Spells}
 \begin{spelllist}
   \spellhead{Aid} Ally gains \plus2 attack bonus, 10 \plus1/level temporary hp.
+  \spellhead{Bless} Nearby allies gain \plus2 to attack.
+  \spellhead{Bless Weapon} Weapon becomes \plus2 and good.
   \spellhead{Cure Moderate Wounds} Cures 4d8 damage.
   \spellhead{Daylight} Large radius of bright light.
   \spellhead{Resist Energy} Ignores 10 (or more) points of damage/attack from specified energy type.
@@ -994,6 +996,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \subsection{3rd-level Paladin Spells}
 \begin{spelllist} 
   \spellhead{Cure Serious Wounds} Cures 6d8 damage.
+  \spellhead{Death Ward} Grants immunity to death spells and negative energy effects.
   \spellhead{Discern Lies} Reveals deliberate falsehoods.
   \spellhead{Heal Mount} As \spell{heal} on warhorse or other special mount.
   \spellhead{Protection from Energy} Absorb 10 points/level of damage from one kind of energy.
@@ -1002,7 +1005,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \subsection{4th-level Paladin Spells}
 \begin{spelllist}
   \spellhead{Cure Critical Wounds} Cures 8d8 damage.
-  \spellhead{Death Ward} Grants immunity to death spells and negative energy effects.
   \spellhead{Divine Power} You gain attack and damage bonus, \plus4 Str, and 2 hp/level.
   \spellhead{Holy Sword} Weapon becomes \plus5 and holy.
   \spellhead{Magic Circle against Chaos/Evil} Protect allies in a \areamed radius and hedge out opposing outsiders.
@@ -1041,7 +1043,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
   \spellhead[Evoc]{Burning Hands} 1d6 fire damage in medium cone.
   \spellhead{Mage Hand} 5-pound telekinesis.
-  \spellhead{Magic Missile} Missile unerringly deals d10 damage.
+  \spellhead{Magic Missile} Force missiles unerringly deal 2d4 damage.
   \spellhead{Shocking Grasp} Touch deals 2d6 electricity damage.
   \spellheadrestricted{Feather Fall} Objects or creatures fall slowly.
   \spellheadrestricted{Gust of Wind} Blows away or knocks down smaller creatures in large line.
@@ -1059,6 +1061,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
   \spellhead[Trans]{Jump} Subject gets bonus on Jump checks.
   \spellhead{Magic Vestment} Armor or shield becomes \plus2.
+  \spellhead{Quiet Mind} Briefly gain bonus to Concentation checks.
   \spellheadrestricted{Backbiter} Weapon attacks its wielder when used.
   \spellheadrestricted{Expeditious Retreat} Your speed doubles.
 \end{swspelllist}
@@ -1099,6 +1102,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead[Illus]{Blur} Attacks miss subject 20\% of the time.
   \spellhead{Darkness} Object sheds supernatural shadow in medium radius.
   \spellhead{Hypnotic Pattern} Fascinates creatures in small radius.
+  \spellhead{Veil} Conceal creature's actions. 
   \spellheadrestricted{Mirror Image} Creates decoy duplicates of you.
   \spellheadrestricted{Silent Image} Creates minor illusion of your design.
 
@@ -1145,6 +1149,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellheadrestricted{Heroism} Gives \plus2 on attacks, checks, and saves.
 
   \spellhead[Evoc]{Fireball} Small radius of fire deals 3d6 damage.
+  \spellhead{Lifeseeking Missile} Homing missiles unerringly deal 3d10 damage.
   \spellhead{Lightning Bolt} Large line of electricity deals 3d6 damage.
   \spellheadrestricted{Levitate} Subject moves up and down at your direction.
   \spellheadrestricted{Telekinetic Force} Move an object with the sustained force of your mind.
@@ -1152,11 +1157,12 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead[Illus]{Invisibility} Subject is invisible until it attacks.
   \spellhead{Phantom Steed} Shadow horse appears for extended duration.
   \spellhead{Rainbow Pattern} Lights fascinate 24 HV of creatures.
+  \spellheadrestrictedc{Disguise Self}{Greater} Change your appearance at will.
   \spellheadrestricted{Minor Image} As \spell{silent image}, plus some sound.
-  \spellheadrestricted{}
 
   \spellhead[Necro]{Bestow Curse} \minus6 to an attribute; \minus4 on attack rolls, saves, checks, and AC; or 25\% chance of losing each action.
   \spellhead{Contagion} Infects subject with chosen disease.
+  \spellhead{Lifeseeking Missile} Homing missiles deal 3d10 damage.
   \spellhead{Ray of Exhaustion} Ray makes subject exhausted.
   \spellhead{Share Pain, Forced} Split damage with unwilling subject.
   \spellheadrestricted{Link Vitality} Two targets share each others' damage and healing.
@@ -1201,7 +1207,9 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
   \spellhead[Evoc]{Fire Shield} Creatures attacking you take damage; you're protected from heat or cold.
   \spellhead{Ice Storm} Hail deals 4d4 damage in small cylinder.
+  \spellheadc{Magic Missile}{Greater} Force missiles unerringly deal 4d10 damage. 
   \spellhead{Shout} Deafens all within medium cone and deals 4d6 sonic damage.
+  \spellhead{Skysmite} Unerring lightning deals 6d6 damage.
   \spellhead{Wall of Ice} Create plane of ice or hemisphere that can trap creatures inside.
   \spellheadrestricted{Resilient Sphere} Force globe protects but traps one creature or object.
   \spellheadrestricted{Telekinetic Maneuver} Telekinetically bull rush, disarm, grapple, or trip your target.
@@ -1211,7 +1219,8 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellheadrestricted{Major Image} As silent image, plus sound, smell and thermal effects.
   \spellheadrestricted{Shadow Conjuration} Mimics conjuration below 4th level, but only half real.
 
-  \spellhead[Necro]{Enervation} Subject gains two negative levels.
+  \spellhead[Necro]{Agony} Creature suffers penalties due to debilitating pain.
+  \spellhead{Enervation} Subject gains two negative levels.
   \spellheadrestricted{Transfer Suffering} Give 8d8 points of your damage to touched subject.
   \spellheadrestricted{}
 
@@ -1258,8 +1267,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellheadrestricted{Seeming} Changes appearance of group of creatures.
   \spellheadrestricted{Shadow Evocation} Mimics evocation below 5th level, but only half real.
 
-  \spellhead[Necro]{Agony} Creature suffers penalties due to debilitating pain.
-  \spellhead{Retributive Shield} Grant DR 10 that reflects damage at foes.
+  \spellhead[Agony]{Retributive Shield} Grant DR 10 that reflects damage at foes.
   \spellhead{Waves of Fatigue} Creatures in large cone become fatigued.
   \spellheadrestrictedc{Crush Life}{Greater} Target takes 5d10 damage unavoidably and is sickened.
   \spellheadrestricted{}
@@ -1346,6 +1354,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
   \spellhead[Evoc]{Energy Conversion} As \spell{greater resist energy}, plus you can fire rays of absorbed energy.
   \spellhead{Freezing Sphere} Freezes water or deals 7d6 cold damage in medium radius.
+  \spellhead{Missile Storm} Swarm of missiles strike many creatures.
   \spellhead{Prismatic Spray} Rays hit subjects with variety of effects.
   \spellheadc{Shout}{Greater} Yell deals 7d6 sonic damage in large cone; stuns creatures, damages objects.
   \spellheadrestricted{Forcecage}\M Cube or cage of force imprisons all inside.
@@ -1412,7 +1421,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
 \subsection{9th-level Sorcerer/wizard Spells} 
 \begin{swspelllist}
-  \spellhead[Abjur]{Emancipation} Releases creature from imprisonment, many other impediments.
+  \spellhead[Abjur]{}
   \spellheadrestricted{Mage's Disjunction} Dispels all magic.
 
   \spellhead[Conj]{Etherealness} Travel to Ethereal Plane with companions.
@@ -1624,9 +1633,10 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
 \subsection{9th-level Arcane Rituals}
 \begin{rituallist}
-  \spellhead[Abjur]{Mind Blank} Subject is immune to mental/emotional magic and scrying.
-  \spellhead[Conj]{Teleportation Circle} Circle teleports any creature inside to designated spot.
-  \spellhead[Necro]{Soul Bind}\F Traps newly dead soul to prevent resurrection.
+  \spellhead[Arcana]{Emancipation} Releases creature from imprisonment, many other impediments.
+  \spellhead{Mind Blank} Subject is immune to mental/emotional magic and scrying.
+  \spellhead{Teleportation Circle} Circle teleports any creature inside to designated spot.
+  \spellhead[Religion]{Soul Bind}\F Traps newly dead soul to prevent resurrection.
 \end{rituallist}
 
 \section{Divine Ritual List}
