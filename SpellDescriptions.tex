@@ -97,7 +97,7 @@
 \spellsection{Agony}
 \spelldesc{You inflict debilitating pain on your foe, crippling its ability to act.}
 \spellschool{Necromancy (Flesh)}
-\spelllvl{Sor/Wiz 5}
+\spelllvl{Sor/Wiz 4}
 \spellrng{\rngclose}
 \spellsave{None}
 \spellsr{Yes (Fortitude)}
@@ -108,14 +108,14 @@
 \spellsection{Aid}
 \spelldesc{You fill the target with confidence, improving its resilience and stamina in combat.}
 \spellschool{Enchantment (Emotion) [Mind-Affecting, Morale]}
-\spelllvl{Clr 2, Good 2, Pal 2, War 2}
-\spellrng{\rngtouch}
-\spelltgt{Creature touched}
+\spelllvl{Clr 2, Pal 2}
+\spellrng{\rngclose}
+\spelltgt{One creature}
 \spelldur{\durshort}
 \spellsave{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The subject gains a \plus2 bonus to attack rolls and temporary hit points equal to 10 \add twice your caster level. \bonusscalingdescription
+  The subject gains a \plus2 bonus to attack rolls and temporary hit points equal 10 \add 1 per caster level above 4th. \bonusscalingdescription  If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
 \end{spelleffect}
 
 \spellsection{Air Walk}
@@ -139,7 +139,8 @@
 \spellsection{Align Weapon}
 \spelldesc{You enhance a weapon while bringing it closer to your ideals.}
 \spellschool{Evocation/Transmutation (Augment, Channeling) [see text]}
-\spelllvl{Chaos 2, Clr 2, Evil 2, Good 2, Law 2}
+\spelllvl{Chaos 2, Evil 2, Good 2, Law 2}
+\spellrng{Touch}
 \begin{spelleffect}
   This spell functions like \spell{magic weapon}, except that it also makes a weapon good, evil, lawful, or chaotic, as you choose, allowing it to overcome damage reduction of the appropriate type. When cast on a weapon that already has an alignment, this spell overrides the alignment of the weapon unless the weapon makes a Will save.
 \end{spelleffect}
@@ -169,7 +170,8 @@
 \spellsection{Animal Growth}
 \spelldesc{You cause a number of animals grow to twice their normal size and eight times their normal weight.}
 \spellschool{Transmutation (Polymorph) [Size-Affecting]}
-\spelllvl{Drd 6, Nature 6}
+\spelllvl{Drd 7, Nature 7}
+\spellrng{\rngmed}
 \spellarea{\areamed radius limit}
 \spelltgts{Five animals (Gargantuan or smaller) within the area}
 \begin{spelleffect}
@@ -283,6 +285,8 @@
 \par If the creature has at least 1 hit point following your use of this power, you gain temporary hit points equal to half the damage you dealt for 1 hour.
 \par If the creature is completely assimilated, you gain a number of temporary hit points equal to the damage you dealt and a \plus4 bonus to each of your attributes for 1 hour. In addition, you gain the appearance of the creature for 1 hour, granting you a \plus10 bonus on Disguise checks made to appear as that creature during that time.
 
+If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
+
 \spellsection{Attraction}
 \spelldesc{You cause the subject to feel attracted to something.}
 \spellschool{Enchantment (Emotion) [Mind-Affecting]}
@@ -336,7 +340,7 @@
 \spellsection{Baleful Polymorph}
 \spelldesc{You transmute your foe into a small, insignificant animal.}
 \spellschool{Transmutation (Polymorph)}
-\spelllvl{Drd 5, Trans 5}
+\spelllvl{Drd 6, Trans 5}
 \spellrng{Touch}
 \spelltgt{Creature touched}
 \spelldur{\durshort or Permanent (D); see text}
@@ -431,7 +435,7 @@
   \begin{itemize*}
     \item \minus6 penalty to an attribute.
     \item \minus4 penalty on attack rolls, saving throws, checks, DCs, and AC.
-    \item Each turn, the target has a 25\% chance to act normally; otherwise, it takes no action.
+    \item Each turn, the target has a 25\% chance to take no action; otherwise, it acts normally.
   \end{itemize*}
   \par You may also invent your own curse, but it should be no more powerful than those described above.
 \end{spelleffect}
@@ -507,7 +511,7 @@
 \spellsection{Bless}
 \spelldesc{You fill your allies with confidence, improving their prowess in combat.}
 \spellschool{Enchantment (Emotion) [Mind-Affecting, Morale]}
-\spelllvl{Clr 1, Good 1, Pal 1, War 1}
+\spelllvl{Clr 2, Good 2, Pal 2, War 2}
 \spellarea{\areamed radius burst}
 \spelldur{Instantaneous}
 \spellsave{None}
@@ -522,7 +526,7 @@
 \spellsection{Bless Weapon}
 \spelldesc{You imbue a weapon with divine power, causing it to strike true against evil foes.}
 \spellschool{Evocation/Transmutation (Channeling, Imbuement) [Good]}
-\spelllvl{Pal 1}
+\spelllvl{Pal 2}
 \spellcmp{V}
 \spelldur{\durmed}
 \begin{spelleffect}
@@ -533,9 +537,8 @@
 \spelldesc{You afflict one of the subject's senses.}
 \spellschool{Necromancy (Flesh)}
 \spelllvl{Clr 3, Sor/Wiz 2}
-\spellcmp{V}
 \spellrng{Touch}
-\spelltgt{Living creature touched}
+\spelltgt{Creature touched}
 \spelldur{\durlong (D)}
 \spellsave{Fortitude negates}
 \spellsr{Yes (Fortitude)}
@@ -575,17 +578,16 @@
 \spelldesc{You distort the subject's outline so it appears blurred, shifting, and wavering.}
 \spellschool{Illusion (Glamer)}
 \spelllvl{Brd 2, Sor/Wiz 2}
-\spellcmp{V}
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{\durshort (D)}
 \spellsave{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The subject gains concealment (20\% miss chance) and a \plus2 bonus to Hide checks. \bonusscalingdescription This concealment is not sufficient by itself to make a Hide check.
+  The subject gains concealment, so all attacks against it have a 20\% miss chance. This concealment allows the subject to use Stealth without other cover or concealment, though other restrictions apply as normal.
 \end{spelleffect}
 \begin{spellnotes}
-  A \spell{see invisibility} spell does not counteract the blur effect, but a \spell{true seeing} spell does.
+  A \spell{see invisibility} spell does not counteract the blurring effect, but a \spell{true seeing} spell does.
   \par Opponents that cannot see the subject ignore the spell's effect (though fighting an unseen opponent carries penalties of its own).
 \end{spellnotes}
 
@@ -630,7 +632,6 @@
 \spelldesc{You repeatedly call intense bolts of lightning that flash down from thin air to smite your foes.}
 \spellschool{Evocation (Energy) [Electricity]}
 \spelllvl{Air 5, Drd 5}
-\spellrng{\rngfar}
 \spellsave{Reflex half/Reflex negates}
 \spelldmg{5d6 electricity damage \add d6 per four caster levels above 10th}
 \begin{spellblood}
@@ -712,21 +713,21 @@
 \spelldesc{You unleash a multicolored explosion of leaping, ricocheting energy to smite your foes.}
 \spellschool{Evocation (Channeling) [Chaotic]}
 \spelllvl{Chaos 4}
-\spellarea{\areamed radius burst centered on you}
-\spelldur{Instantaneous}
-\spellsave{Will half/Will negates}
+\spellrng{\rngmed}
+\spelltgt{One creature}
+\spelldur{Instantaneous/5 rounds}
+\spellsave{Will half}
 \spellsr{Yes (Will)}
-\spelldmg{4d6 divine damage \add d6 per four caster levels above 8th}
+\spelldmg{8d6 divine damage \add d6 per two caster levels above 8th}
 \begin{spelleffect}
-  Nonchaotic creatures in the area take damage and are bewildered for 5 rounds. A successful Will save reduces the damage by half and negates the bewildering.
+  If the target is not chaotic, it takes damage and is bewildered for 5 rounds. A successful Will save halves the damage.
 \end{spelleffect}
 
 \spellsection{Charm Monster}
 \spelldesc{You manipulate a creature's mind so it thinks of you as a trusted friend and ally.}
 \spellschool{Enchantment (Emotion) [Charm, Mind-Affecting]}
 \spelllvl{Brd 4, Ench 5}
-\spelldur{\durlong}
-\spelltgt{One living creature}
+\spelltgt{One creature}
 \begin{spelleffect}
   This spell functions like \spell{charm person}, except that the effect is not restricted by creature type and has a shorter duration.
 \end{spelleffect}
@@ -752,7 +753,6 @@
 \spelldesc{You manipulate the minds of many people so they think of you as a trusted friend and ally.}
 \spellschool{Enchantment (Emotion) [Charm, Mind-Affecting]}
 \spelllvl{Brd 6, Ench 7}
-\spellrng{\rngfar}
 \spellarea{\areamed radius}
 \spelltgts{Five humanoid creatures within the area}
 \begin{spelleffect}
@@ -801,7 +801,7 @@
 \spellschool{Abjuration (Shielding) [Chaotic]}
 \spelllvl{Chaos 8, Clr 8}
 \spellcmp{V, S, F}
-\spellarea{\areamed radius burst centered on you}
+\spellarea{\areamed radius limit centered on you}
 \spelltgts{Five creatures within the area}
 \spelldur{\durshort (D)}
 \spellsave{Will negates (harmless)}
@@ -834,14 +834,14 @@
 \spellschool{Illusion (Figment) [Light]}
 \spelllvl{Sor/Wiz 1}
 \spellarea{\areamed cone-shaped burst}
-\spelldur{2d4 rounds/1 round}
-\spellsave{Will partial}
+\spelldur{1d4 rounds}
+\spellsave{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  Creatures in the area are dazzled. A successful Will save reduces the duration to 1 round.
+  Creatures in the area are dazzled and bewildered.
 \end{spelleffect}
 \begin{spellnotes}
-  A dazzled creature treats everything it sees as if it had concealment (20\% miss chance), and takes a \minus4 penalty to Spot checks. It is unable to use darkvision.
+  A dazzled creature treats everything it sees as if it had concealment (20\% miss chance), and takes a \minus4 penalty to Spot checks. It is unable to use darkvision.  A bewildered creature is mentally affected in a way that detracts from its ability to act, causing it to be vulnerable. It takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
 
   Creatures who cannot see the light are not affected by this spell. Merely closing one's eyes is insufficient protection.
 \end{spellnotes}
@@ -855,7 +855,7 @@
 \spelltgt{You}
 \spelldur{\durshort (D)}
 \begin{spelleffect}
-  You gain a \plus2 bonus to Strength, Dexterity, and Constitution, a \plus4 bonus to natural armor, a \plus4 bonus on Fortitude saves, and proficiency with any weapons you hold (except exotic weapons).
+  You gain a \plus3 bonus to Strength, Dexterity, Constitution, natural armor, and Fortitude saves. This bonus increases to \plus4 at 14th level and to \plus5 at 20th level. In addition, you gain proficiency with any weapons you hold (except exotic weapons).
 \end{spelleffect}
 \begin{spellnotes}
   If you cast a spell or use a spell activation or spell completion magic item, the spell immediately ends.
@@ -868,7 +868,7 @@
 \spelllvl{Clr 1, Law 1, Sor/Wiz 1}
 \spellcmp{V}
 \spellrng{\rngmed}
-\spelltgt{One living creature}
+\spelltgt{One creature}
 \spelldur{1 round}
 \spellsave{Will negates}
 \spellsr{Yes (Will)}
@@ -915,9 +915,10 @@
 \spelldesc{You create an area of extreme cold that drains heat from creatures in the area, diminishing their ability to move and fight.}
 \spellschool{Evocation (Energy) [Cold]}
 \spelllvl{Drd 5, Sor/Wiz 5, Water 6}
+\spellsave{Reflex half/None}
 \spelldmg{5d6 cold damage \add d6 per four caster levels above 10th.}
 \begin{spelleffect}
-  This spell functions as \spell{cone of cold}, except that affected creatures are fatigued for 1 round even if they make their Reflex save, and are fatigued for 5 rounds if they fail.
+  This spell functions as \spell{lesser cone of cold}, except that affected creatures are fatigued for 5 rounds whether or not they fail their Reflex save.
 \end{spelleffect}
 
 \spellsectioncomma{Cone of Cold}{Greater}
@@ -927,14 +928,14 @@
 \spellarea{\arealarge cone-shaped burst}
 \spelldmg{8d6 cold damage \add d6 per four caster levels above 16th.}
 \begin{spelleffect}
-  This spell functions as \spell{cone of cold}, except that it affects a larger area, and affected creatures are fatigued for 5 rounds whether or not they make their Reflex save.
+  This spell functions as \spell{cone of cold}, except that it affects a larger area.
 \end{spelleffect}
 
 \spellsection{Confusion}
 \spelldesc{You compel a creature to act randomly, sowing confusion in your foes' ranks.}
 \spellschool{Enchantment (Compulsion) [Mind-Affecting]}
 \spelllvl{Brd 3, Chaos 3, Sor/Wiz 3, Trickery 3}
-\spellrng{\rngclose}
+\spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{\durshort}
 \spellsave{Will negates}
@@ -954,9 +955,8 @@
 \spelldesc{You compel a group of creatures to act randomly, sowing confusion in your foes' ranks.}
 \spellschool{Enchantment (Compulsion) [Mind-Affecting]}
 \spelllvl{Sor/Wiz 8, Trickery 8}
-\spellrng{\rngmed}
 \spellarea{\areamed radius limit}
-\spelltgts{All creatures within the area, to a maximum of five creatures}
+\spelltgts{Five creatures within the area}
 \begin{spelleffect}
   This spell functions like \spell{confusion}, except that it affects multiple creatures. If there are more creatures in the area than you can affect, randomly determine which creatures are affected.
 \end{spelleffect}
@@ -964,26 +964,26 @@
 \spellsection{Contagion}
 \spelldesc{You infect your foe with a contagious disease.}
 \spellschool{Necromancy (Flesh) [Disease]}
-\spelllvl{Clr 3, Death 3, Destruction 3, Drd 3, Sor/Wiz 3}
-\spellrng{\rngtouch}
-\spelltgt{Living creature touched}
+\spelllvl{Clr 3, Destruction 3, Drd 3, Sor/Wiz 3}
+\spellrng{\rngmed}
+\spelltgt{One living creature}
 \spelldur{Instantaneous}
 \spellsave{Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
-  The subject contracts a disease selected from the table below, which strikes immediately (no incubation period). The DC for both the initial and subsequent saving throws is equal to this spell's save DC.
+  The subject contracts a disease selected from the table below, which strikes immediately (no incubation period). The DC for both the initial and subsequent saving throws is equal to this spell's save DC.  
   \begin{dtable}
     \begin{tabularx}{\columnwidth}{l X}
       \thead{Disease} & \thead{Damage} \\
       Blinding sickness & 1d4 Str\footnotetemp{1} \\
       Cackle fever & 1d6 Wis \\
       Filth fever & 1d3 Dex and 1d3 Con \\
-      Mindfire & 1d4 Int \\
+      Mindfire & 1d6 Int \\
       Red ache & 1d6 Str \\
-      Shakes & 1d8 Dex \\
-      Slimy doom & 1d4 Con
+      Shakes & 1d6 Dex \\
+      Slimy doom & 1d6 Con
     \end{tabularx}
-    1 Each time a victim takes 2 or more Strength damage from blinding sickness, he or she must make another Fortitude save or be permanently blinded.	 
+    1 Each time a victim takes 3 or more Strength damage from blinding sickness, he or she must make another Fortitude save or be permanently blinded.	 
   \end{dtable}
 \end{spelleffect}
 
@@ -1039,7 +1039,7 @@
 \spelldesc{You render your foe's limbs useless.}
 \spellschool{Necromancy (Flesh)}
 \spelllvl{Sor/Wiz 6}
-\spellrng{\rngclose}
+\spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{\durshort}
 \spellsave{Fortitude negates}
@@ -1055,7 +1055,7 @@
 \spelldesc{You attack the life force of a single foe directly, allowing no possibility for escape.}
 \spellschool{Necromancy (Life)}
 \spelllvl{Necro 2}
-\spellrng{\rngclose}
+\spellrng{\rngmed}
 \spelltgt{One living creature}
 \spelldur{Instantaneous}
 \spellsave{None}
@@ -1086,7 +1086,7 @@
   Each creature in the area is demoralized.
 \end{spelleffect}
 \begin{spellnotes}
-  A demoralized creature takes a \minus2 penalty on attack rolls, saving throws, checks, and armor class. \spellindirect{crushing despair}{Crushing despair} counters and dispels \spell{good hope}.
+  A demoralized creature is vulnerable, causing it to take a \minus2 penalty on attack rolls, saving throws, checks, DCs, and AC. \spellindirect{crushing despair}{Crushing despair} counters and dispels \spell{good hope}.
 \end{spellnotes}
 
 \spellsection{Crushing Hand}
@@ -1132,7 +1132,7 @@
 \spellsr{Yes (Fortitude)}
 \spellheal{2d8 damage \add d8 per two caster levels above 2nd}
 \begin{spelleffect}
-  You heal the touched creature. Since undead are powered by negative energy, this spell deals damage to them instead of curing their wounds. You must succeed on a melee touch attack to hit a target that does not allow you to touch it.
+  You heal the touched creature. Since undead are powered by negative energy, this spell deals positive damage to them instead of curing their wounds. You must succeed on a melee touch attack to hit a target that does not allow you to touch it.
 \end{spelleffect}
 
 \spellsectioncomma{Cure Light Wounds}{Mass}
@@ -1147,7 +1147,7 @@
 \spellsr{Yes (Fortitude)}
 \spellheal{5d6 damage \add d6 per four caster levels above 10th}
 \begin{spelleffect}
-  You heal the targets. Like other \spellindirect{cure light wounds}{cure} spells, this spell deals damage to affected undead rather than curing them.
+  You heal the targets. Like other \spellindirect{cure light wounds}{cure} spells, this spell deals positive damage to affected undead rather than curing them.
 \end{spelleffect}
 
 \spellsection{Cure Moderate Wounds}
@@ -1265,7 +1265,7 @@
 \spelldesc{You cloud the mind of your foe, preventing it from taking any actions.}
 \spellschool{Enchantment (Inhibition) [Mind-Affecting]}
 \spelllvl{Brd 3, Sor/Wiz 3}
-\spellrng{\rngclose}
+\spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{\durshort}
 \spellsave{None/Will negates}
@@ -1295,20 +1295,22 @@
 \spelldesc{You draw forth the ebbing life force of a creature and use it to fuel your own power.}
 \spellschool{Necromancy (Life) [Death]}
 \spelllvl{Death 2, Evil 2, Sor/Wiz 2}
-\spellrng{\rngtouch}
-\spelltgt{Living creature touched}
+\spellrng{\rngmed}
+\spelltgt{Living creature}
 \spelldur{Instantaneous/10 minutes per HV of subject; see text}
 \spellsave{Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
-  Upon casting this spell, you touch a living creature that has no hit points remaining. If the subject fails its saving throw, it dies, and you gain 10 temporary hit points \plus1 per caster level. If the creature had more than 4 HV, you gain a \plus1 bous to your caster level. If the creature had more than 8 HV, you a \plus2 bonus to Strength, Dexterity, and Constitution. These effects last for 10 minutes per HV of the subject creature. If the creature had less than 1 HV, the bonuses last for 5 rounds.
+  This spell targets a living creature that has no hit points remaining. If the target fails its saving throw, it dies, and you gain 10 temporary hit points \plus2 per caster level. In addition, if the subject had at least 4 HV, you gain a \plus2 bonus to one attribute per 4 HV the target had. \bonusscalingdescription These effects last for 10 minutes per HV of the subject creature. If the creature had less than 1 HV, the temporary hit points last for 5 rounds.
+
+ If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
 \end{spelleffect}
 
 \spellsection{Death Ward}
 \spellschool{Abjuration/Necromancy (Shielding, Vitalism) [Positive]}
-\spelllvl{Clr 4, Death 4, Good 4, Pal 4, Protection 4}
-\spellrng{\rngtouch}
-\spelltgt{Living creature touched}
+\spelllvl{Clr 3, Death 3, Good 3, Pal 3, Protection 3}
+\spellrng{\rngclose}
+\spelltgt{One living creature}
 \spelldur{\durshort}
 \spellsave{Fortitude negates (harmless)}
 \spellsr{Yes (Fortitude)}
@@ -1322,8 +1324,8 @@
 
 \spellsectioncomma{Death Ward}{Mass}
 \spellschool{Abjuration/Necromancy (Shielding, Vitalism) [Positive]}
-\spelllvl{Clr 8, Death 8, Good 8, Protection 8}
-\spellrng{\rngclose}
+\spelllvl{Clr 6, Death 6}
+\spellrng{\rngmed}
 \spellarea{\areamed radius limit}
 \spelltgts{Five living creatures within the area}
 \begin{spelleffect}
@@ -1334,7 +1336,7 @@
 \spelldesc{You fill your foe with an overpowering urge to sleep, inevitably rendering him comatose.}
 \spellschool{Enchantment (Compulsion) [Mind-Affecting]}
 \spelllvl{Sor/Wiz 7}
-\spellrng{\rngclose}
+\spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{\durlong}
 \spellsave{Will negates}
@@ -1583,7 +1585,7 @@
 \spellsection{Dimension Door}
 \spellschool{Conjuration (Translocation) [Teleportation]}
 \spelllvl{Travel 5, Sor/Wiz 4}
-\spellrng{1,000 feet}
+\spellrng{\rngext}
 \spelltgt{You}
 \spelldur{Instantaneous}
 \begin{spelleffect}
@@ -1617,18 +1619,19 @@
 \end{spelleffect}
 
 \spellsection{Dimensional Anchor}
+\spelldesc{You surround your foe in a shimmering emerald field that completely blocks extradimensional travel, preventing it from escaping you.}
 \spellschool{Abjuration (Negation)}
 \spelllvl{Clr 3, Magic 3, Sor/Wiz 3}
 \spellrng{\rngmed}
-\spelleff{Ray}
-\spelldur{\durmed}
-\spellsave{None}
+\spelltgt{One creature}
+\spelldur{\durlong/5 rounds}
+\spellsave{Will partial}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  A green ray springs from your outstretched hand. You must make a ranged touch attack to hit the target. Any creature or object struck by the ray is covered with a shimmering emerald field that completely blocks extradimensional travel. Forms of movement barred by a dimensional anchor include \spell{astral projection}, \spell{blink}, \spell{dimension door}, \spell{dimension slide}, \spell{ethereal jaunt}, \spell{etherealness}, \spell{gate}, \spell{maze}, \spell{plane shift}, \spell{shadow walk}, \spell{teleport}, and similar spell-like or psionic abilities. The spell also prevents the use of a \spell{gate} or \spell{teleportation circle} for the duration of the spell.
+  The subject cannot travel extradimensionally for an hour. A successful Will save reduces the duration to 5 rounds. Effects barred by a \spell{dimensional anchor} include \spell{astral projection}, \spell{blink}, \spell{dimension door}, \spell{dissipating touch}, \spell{ethereal jaunt}, \spell{gate}, \spell{maze}, \spell{plane shift}, \spell{shadow walk}, \spell{teleport}, and similar spell-like, psionic, or supernatural abilities.
 \end{spelleffect}
 \begin{spellnotes}
-  A dimensional anchor does not interfere with the movement of creatures already in ethereal or astral form when the spell is cast, nor does it block extradimensional perception or attack forms. Also, dimensional anchor does not prevent summoned creatures from disappearing at the end of a summoning spell.
+  A dimensional anchor does not interfere with the movement of creatures already in ethereal or astral form when the spell is cast, nor does it block extradimensional perception or attack forms, such as summoning monsters. Also, dimensional anchor does not prevent summoned creatures from disappearing at the end of a summoning spell. 
 \end{spellnotes}
 
 \spellsection{Discern Lies}
@@ -1672,15 +1675,23 @@
 \spelllvl{Brd 1, Illus 1, Trickery 1}
 \spellrng{\rngpers}
 \spelltgt{You}
-\spelldur{\durext (D)}
+\spelldur{\durlong (D)}
 \begin{spelleffect}
   You make yourself -- including clothing, armor, weapons, and equipment -- look different. You can seem 20\% (about 1 foot for an average human) shorter or taller, thin, fat, or in between. You cannot change your body type. Otherwise, the extent of the apparent change is up to you. You could add or obscure a minor feature or look like an entirely different person.
   \par The spell does not provide the abilities or mannerisms of the chosen form, nor does it alter the perceived tactile (touch) or audible (sound) properties or  you or your equipment. 
   \par If you use this spell to create a disguise, you get a \plus10 bonus on the Disguise check.
 \end{spelleffect}
 \begin{spellnotes}
-  A creature that interacts with the effect gets a Will save to recognize it as an illusion. In order to interact with the illusion with a Spot check, the creature must make a Spot check that beats your saving throw DC with this spell or your Disguise check (if used as part of a disguise), whichever is higher.
+  A creature that interacts with the effect gets a Will save to recognize it as an illusion. In order to interact with the illusion with a Perception check, the creature must make a Perception check that beats your saving throw DC with this spell or your Disguise check (if used as part of a disguise), whichever is higher. You cannot change your disguise once the spell is cast. 
 \end{spellnotes}
+
+\spellsectioncomma{Disguise Self}{Greater}
+\spellschool{Illusion (Glamer) [Unreal]}
+\spelllvl{Brd 3, Illus 3}
+\spelldur{\durext (D)}
+\begin{spelleffect}
+  This spell functions like \spell{disguise self}, except that it lasts longer and you can change the disguise at will. By concentrating on the spell as a standard action, you can take on an entirely new appearance, just as if you has cast \spell{disguise self}. 
+\end{spelleffect}
 
 \spellsection{Disintegrate}
 \spelldesc{You shoot a thin, green ray from your pointing finger that completely destroys whatever it hits.}
@@ -1756,8 +1767,8 @@
 \spellsection{Displacement}
 \spellschool{Illusion (Glamer)}
 \spelllvl{Brd 4, Sor/Wiz 4}
-\spellrng{\rngtouch}
-\spelltgt{Creature touched}
+\spellrng{\rngclose}
+\spelltgt{One creature}
 \spelldur{\durshort (D)}
 \spellsave{Will negates (harmless)}
 \spellsr{Yes (Will)}
@@ -1770,14 +1781,14 @@
 
 \spellsection{Disrupting Weapon}
 \spellschool{Necromancy/Transmutation (Imbuement, Positive)}
-\spelllvl{Clr 5}
-\spellrng{\rngtouch}
+\spelllvl{Clr 4}
+\spellrng{\rngclose}
 \spelltgt{One melee weapon}
 \spelldur{\durshort}
-\spellsave{Will negates (object); see text}
-\spellsr{Yes (Will)}
+\spellsave{Will negates (object)/Fortitude negates}
+\spellsr{Yes (Will)/Yes (Fortitude)}
 \begin{spelleffect}
-  This spell infuses a melee weapon with positive energy, making it deadly to undead. Once per round, the first bloodied undead creature struck in combat with this weapon must succeed on a Will save or be destroyed utterly. Healthy undead creatures suffer no ill effect. Spell resistance does not apply against the destruction effect.
+  This spell infuses a melee weapon with positive energy, making it deadly to undead. Each round, the first bloodied undead creature struck by this weapon must succeed on a Fortitude save or be destroyed utterly. Healthy undead creatures suffer no ill effect.
 \end{spelleffect}
 
 \spellsection{Dissipating Touch}
@@ -1786,12 +1797,12 @@
 \spelllvl{Conj 2}
 \spellrng{\rngtouch}
 \spelltgt{Creature or object touched}
-\spelldur{Instantaneous}
+\spelldur{Instantaneous/1 round}
 \spellsave{Will half (object)}
 \spellsr{Yes (Will)}
 \spelldmg{4d8 physical damage \add d8 per two caster levels above 4th}
 \begin{spelleffect}
-  The touched target takes damage. This damage ignores the hardness and damage reduction.
+  The touched target takes damage and is sickened for 1 round. This damage ignores the hardness and damage reduction.
 \end{spelleffect}
 
 \spellsection{Divine Favor}
@@ -1810,7 +1821,9 @@
 \spellschool{Transmutation (Augment)}
 \spelllvl{Clr 4, Pal 4, Strength 4, War 4}
 \begin{spelleffect}
-  This spell functions like \spell{divine favor}, except that you also gain a \plus4 bonus to Strength and 10 \add caster level temporary hit points.
+  This spell functions like \spell{divine favor}, except that you also gain temporary hit points equal to 20 \add 1 per caster level above 8th, and a \plus3 bonus to Strength. This bonus increases to \plus4 at 14th level and to \plus5 at 20th level.
+
+  If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
 \end{spelleffect}
 
 \spellsection{Dominate Monster}
@@ -1859,10 +1872,10 @@
 \spellsave{No}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The subject moves at half speed, and takes a \minus2 penalty to attack rolls and armor class. If it is flying, it falls to the ground.
+  The subject moves at half speed and takes a \minus2 penalty to armor class. If it is flying within 10 feet of the ground, the subject falls to the ground.
 \end{spelleffect}
 \begin{spellnotes}
-  If the subject gets farther than ten feet from the ground, the spell's effect is broken. As a result, it cannot affect creatures flying high above the ground.
+  If the subject gets farther than 10 feet from the ground, the spell's effect is broken. As a result, the spell cannot affect creatures flying high above the ground.
 \end{spellnotes}
 
 \spellsection{Earthquake}
@@ -1900,18 +1913,6 @@
   \par When you use a summoning spell to summon an air, earth, fire, or water creature, it is a spell of that type.
 \end{spelleffect}
 
-\spellsection{Emancipation}
-\spellschool{Abjuration (Negation)}
-\spelllvl{Sor/Wiz 9}
-\spellrng{\rngmed or see text}
-\spelltgt{One creature}
-\spelldur{Instantaneous}
-\spellsave{Will negates (harmless)}
-\spellsr{Yes (Will)}
-\begin{spelleffect}
-  The subject is freed from all spells and effects that restrict its actions, including binding, charms, entangle, daze, domination, grappling, imprisonment, \spell{maze}, nausea, paralysis, petrification, pinning, sleep, slow, stun, \spell{temporal stasis}, and \spell{web}. To free a creature from imprisonment or maze, you must know its name and background, and you must cast this spell at the spot where it was entombed or banished into the maze.
-\end{spelleffect}
-
 \spellsection{Energy Conversion}
 \spellschool{Abjuration/Evocation (Energy, Shielding) [see text]}
 \spelllvl{Protection 7, Sor/Wiz 7}
@@ -1924,35 +1925,54 @@
   This spell functions like \spell{greater resist energy}, except that you store up the energy you absorb and can later discharge it as a ray. To discharge a ray requires a standard action. You can choose to fire any number of rays during the spell's duration. The ray you fire must be of one of the energy types you have stored (if you have stored more than one type, you can choose what kind of energy to use for each ray). If a ray successfully strikes its target (requiring a ranged touch attack), the target takes damage equal to the amount of energy damage of that type you have stored, up to a maximum of three times your caster level. As long as this power remains in effect, you can continue to absorb energy damage and fire additional rays using the stored damage.
 \end{spelleffect}
 \begin{spellnotes}
-  This spell's subtype is the same as the type of energy you discharge in a ray; thus, its subtype can change during the course of the spell's duration.
+  This spell's descriptor is the same as the type of energy you discharge in a ray; thus, its subtype can change during the course of the spell's duration.
 \end{spellnotes}
 
 \spellsection{Energy Drain}
 \spellschool{Necromancy (Life)}
 \spelllvl{Clr 8, Death 8, Evil 8, Sor/Wiz 8}
-\spelldur{\durext}
-\spellsave{Fortitude half; see text}
 \begin{spelleffect}
-  This spell functions like \spell{enervation}, except that the creature struck gains four negative levels, and the negative levels last longer.
-  \par An undead creature struck by the ray gains 40 temporary hit points \plus1 per caster level instead.
+  This spell functions like \spell{enervation}, except that the target gains six negative levels.
+  \par An undead creature struck by the ray instead gains temporary hit points equal to 40 \add twice your caster level and physical damage reduction 16/positive. 
 \end{spelleffect}
+\begin{spellnotes}
+  The damage reduction allows an undead subject to ignore the first 16 physical damage it takes each round. If it is hit by an attack that deals positive damage, such as \spell{cure light wounds}, it cannot use its damage reduction for 1 round.
+\end{spellnotes}
 
 \spellsection{Enervation}
-\spelldesc{You point your finger and release a black ray that drains your foe's life force away.}
+\spelldesc{Your foe's body loses its color momentarily as you drain its life force away.}
 \spellschool{Necromancy (Life)}
 \spelllvl{Death 4, Sor/Wiz 4}
 \spellrng{\rngclose}
-\spelleff{Ray of negative energy}
+\spelltgt{One creature} 
 \spelldur{\durlong}
-\spellsave{None}
+\spellsave{Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
-  You must make a ranged touch attack to hit. If the attack succeeds, the target gains two negative levels. 
-  \par Each negative level gives a creature a \minus1 penalty on attack rolls, saving throws, checks, and effective level (for determining the power, duration, DC, and other details of spells or special abilities). Additionally, a spellcaster loses one spell or spell slot from his or her highest available level.If the subject has at least as many negative levels as HV, it dies.
-  \par An undead creature struck by the ray gains 20 temporary hit points \plus1 per caster level instead.
+  The target gains three negative levels.
+  \par Each negative level gives a creature a \minus1 penalty on attack rolls, saving throws, checks, and effective level (for determining the power, DC, and other details of spells or special abilities). Additionally, a spellcaster loses one spell or spell slot from his or her highest available level. If the subject has at least as many negative levels as HV, it dies.
+  \par An undead creature struck by the ray gains physical damage reduction 8/positive instead. This damage reduction increases by 1 per two caster levels above 8th.
 \end{spelleffect}
 \begin{spellnotes}
   This spell stacks with any effect that bestows negative levels, including itself.
+
+  The damage reduction allows an undead subject to ignore the first 8 physical damage it takes each round. If it is hit by an attack that deals positive damage, such as \spell{cure light wounds}, it cannot use its damage reduction for 1 round.
+\end{spellnotes}
+
+\spellsection{Enfeeblement}
+%\spelldesc{You fire a coruscating ray from your hand. When it strikes your foe, he becomes weaker.}
+\spellschool{Necromancy (Flesh)}
+\spelllvl{Sor/Wiz 1}
+\spellrng{\rngmed}
+\spelltgt{One creature}
+\spelldur{\durshort}
+\spellsave{Fortitude negates}
+\spellsr{Yes (Fortitude)}
+\begin{spelleffect}
+  The subject takes a \minus4 penalty to your choice of Strength, Dexterity, or Constitution.
+\end{spelleffect}
+\begin{spellnotes}
+  This spell cannot reduce the subject's attributes below \minus9.
 \end{spellnotes}
 
 \spellsection{Enlarge Person}
@@ -1965,8 +1985,14 @@
 \spellsave{Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
-  This spell causes instant growth of a humanoid creature, doubling its height and multiplying its weight by 8. This increase changes the creature's size category to the next larger one. The target gains a \plus2 bonus to Strength and a \minus1 penalty on attack rolls and AC due to its increased size. In addition, it gains a \plus10 ft. inherent bonus to movement speed.
-  \par A humanoid creature whose size increases to Large has a space of 10 feet and a natural reach of 10 feet. This spell does not change the target's speed.
+  This spell causes instant growth of a humanoid creature, doubling its height and multiplying its weight by 8. This increase changes the creature's size category to the next larger one. This has several effects.
+  \begin{itemize*} 
+    \item \plus10 ft. inherent bonus to movement speed.
+    \item \minus1 penalty on attack rolls and AC due to its increased size.
+  \item \minus2 penalty to Dexterity.
+  \item \plus2 bonus to Strength. \bonusscalingdescription
+  \end{itemize*}
+  \par A humanoid creature whose size increases to Large has a space of 10 feet and a natural reach of 10 feet.
   \par If insufficient room is available for the desired growth, the creature attains the kmaximum possible size and may make a Strength check (using its increased Strength) to burst any enclosures in the process. If it fails, it is constrained without harm by the materials enclosing it -- the spell cannot be used to crush a creature by increasing its size.
   \par All equipment worn or carried by a creature is similarly enlarged by the spell. Melee and projectile weapons affected by this spell deal more damage. Other magical properties are not affected by this spell. Any enlarged item that leaves an enlarged creature's possession (including a projectile or thrown weapon) instantly returns to its normal size. This means that thrown weapons deal their normal damage, and projectiles deal damage based on the size of the weapon that fired them. Magical properties of enlarged items are not increased by this spell.
 \end{spelleffect}
@@ -1979,6 +2005,7 @@
 \spellsectioncomma{Enlarge Person}{Mass}
 \spellschool{Transmutation (Polymorph) [Size-Affecting]}
 \spelllvl{Trans 7}
+\spellrng{\rngmed}
 \spellarea{\areamed radius limit}
 \spelltgts{Five humanoid creatures within the area}
 \begin{spelleffect}
@@ -2009,14 +2036,14 @@
 \end{spelleffect}
 
 \spellsection{Entropic Shield}
-\spelldesc{You surround your ally with a magical field that glows with a chaotic blast of multicolored hues. This field deflects incoming ranged attacks, causing them to chaotically swerve away from their intended target.}
+\spelldesc{You surround your ally with a magical field that glows with a chaotic blast of multicolored hues. This field deflects incoming ranged attacks, causing them to randomly swerve away from their intended target.}
 \spellschool{Abjuration (Shielding)}
-\spelllvl{Chaos 1, Clr 1}
-\spellrng{\rngtouch}
+\spelllvl{Chaos 2, Clr 2}
+\spellrng{\rngclose}
 \spelltgt{Touched creature}
 \spelldur{\durshort (D)}
 \begin{spelleffect}
-  Each ranged attack directed at the subject for which the attacker must make an attack roll has a 20\% miss chance (similar to the effects of concealment). Other attacks that simply work at a distance are not affected.
+  Each ranged attack directed at the subject for which the attacker must make an attack roll has a 50\% miss chance (similar to the effects of concealment). Other attacks that simply work at a distance are not affected.
 \end{spelleffect}
 
 \spellsection{Ethereal Jaunt}
@@ -2049,8 +2076,8 @@
 \spellsection{Expeditious Retreat}
 \spellschool{Transmutation (Temporal)}
 \spelllvl{Brd 1, Trans 1}
-\spellrng{Touch}
-\spelltgt{Touched creature}
+\spellrng{\rngclose}
+\spelltgt{One creature}
 \spelldur{\durshort (D)}
 \spellsave{Will negates (harmless)}
 \spellsr{Yes (Will)}
@@ -2068,8 +2095,8 @@
 
 \spellsection{Faerie Fire}
 \spellschool{Illusion (Figment) [Light, Unreal]}
-\spelllvl{Drd 2}
-\spellrng{\rngfar}
+\spelllvl{Drd 1}
+\spellrng{\rngmed}
 \spellarea{\areasmall radius limit}
 \spelleff{Dim lights in the area}
 \spelldur{\durshort (D)}
@@ -2087,7 +2114,7 @@
 \spelltgt{You}
 \spelldur{\durshort}
 \begin{spelleffect}
-  You gain 5 temporary hit points \add 2 per caster level.
+  You gain 10 temporary hit points \add 2 per caster level above 2nd. If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
 \end{spelleffect}
 
 \spellsection{Farsight}
@@ -2106,7 +2133,7 @@
 \spellsection{Fear}
 \spelldesc{You project an invisible cone that drives creatures away from you in abject fear.}
 \spellschool{Enchantment (Emotion) [Fear, Mind-Affecting]}
-\spelllvl{Brd 4, Sor/Wiz 5}
+\spelllvl{Brd 4, Ench 5}
 \spellarea{\areamed cone-shaped burst}
 \spelldur{\durshort (D)}
 \spellsave{Will negates}
@@ -2122,11 +2149,11 @@
 \end{spellnotes}
 
 \spellsection{Feather Fall}
-\spellschool{Transmutation (Imbuement)}
-\spelllvl{Air 1, Sor/Wiz 1, Travel 1}
+\spellschool{Evocation (Control)}
+\spelllvl{Air 1, Evoc 1, Travel 1}
 \spellcmp{V}
 \spelltime{1 immediate action}
-\spellrng{\rngclose}
+\spellrng{\rngmed}
 \spellarea{\areamed radius limit}
 \spelltgts{Five Medium or smaller freefalling object or creatures within the area}
 \spelldur{\durshort or until landing}
@@ -2148,13 +2175,13 @@
 \spellrng{\rngtouch}
 \spelltgt{Touched creature}
 \spelldur{Instantaneous}
-\spellsave{None/Will negates}
+\spellsave{Will negates}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
-  The target is bewildered, making it vulnerable for 5 minutes.
+  The target is bewildered, making it vulnerable for 5 rounds.
 \end{spellhealthy}
 \begin{spellblood}
-  As the healthy effect, and if the target fails a Will save, its Intelligence score drops to \minus9, giving it roughly the intellect of a lizard. It is unable to use Intelligence-based skills, cast spells, understand language, or communicate coherently. Still, it knows who its friends are and can follow them and even protect them. The subject remains in this state until a \spell{heal}, \spell{limited wish}, \spell{miracle}, or \spell{wish} spell is used to cancel the effect of the \spell{feeblemind}. A creature that can cast arcane spells, such as a sorcerer or a wizard, takes a \minus4 penalty on its saving throw.
+  The target's Intelligence drops to \minus9, giving it roughly the intellect of a lizard. It is unable to use Intelligence-based skills, cast spells, understand language, or communicate coherently. Still, it knows who its friends are and can follow them and even protect them. The subject remains in this state until a \spell{heal}, \spell{limited wish}, \spell{miracle}, or \spell{wish} spell is used to cancel the effect of the \spell{feeblemind}. A creature that can cast arcane spells, such as a sorcerer or a wizard, takes a \minus4 penalty on its saving throw.
 \end{spellblood}
 \begin{spellnotes}
   A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
@@ -2179,7 +2206,7 @@
 
 \spellsection{Fire Seeds}
 \spellschool{Evocation/Transmutation (Energy, Imbuement) [Fire]}
-\spelllvl{Drd 6, Fire 6, Nature 7}
+\spelllvl{Drd 6, Fire 6, Nature 6}
 \spellrng{\rngtouch}
 \spellarea{\areasmall or \areamed radius burst from the touched objects; see text}
 \spelltgts{Up to four touched acorns or up to eight touched holly berries}
@@ -2190,9 +2217,9 @@
 6d8 fire damage \add d8 per four caster levels above 12th (holly berry bombs)}
 \begin{spelleffect}
   Depending on the version of fire seeds you choose, you turn acorns into splash weapons that you or another character can throw, or you turn holly berries into bombs that you can detonate on command.
-  \par \subspell{Acorn Grenades} As many as four acorns turn into special splash weapons that can be hurled as far as 100 feet. A ranged touch attack roll is required to strike the intended target. Together, the acorns are capable of dealing 6d6 fire damage \add d6 per four caster levels above 12th, divided up among the acorns as you wish.
+  \par \subspell{Acorn Grenades} As many as four acorns turn into special splash weapons that can be hurled as far as 100 feet. A ranged touch attack roll is required to strike the intended target. If you miss, the acorn detonates in a random corner of the intended target square. Together, the acorns are capable of dealing 6d6 fire damage \add d6 per four caster levels above 12th, divided up among the acorns as you wish.
   \par Each acorn explodes upon striking any hard surface, damaging all creatures in a \areasmall radius burst. A creature within this area that makes a successful Reflex saving throw takes only half damage; a creature struck directly is not allowed a saving throw.
-  \par \subspell{Holly Berry Bombs} You turn as many as eight holly berries into special bombs. The holly berries are usually placed by hand, since they are too light to make effective thrown weapons (they can be tossed only 5 feet). Together, the holly berries are capable of dealing 6d8 fire damage \add d8 per four caster levels above 12th, divided up among the berries as you wish.
+  \par \subspell{Holly Berry Bombs} You turn as many as eight holly berries into special bombs. The holly berries are usually placed by hand, since they are too light to make effective thrown weapons (they can be tossed only 5 feet). Together, the holly berries are capable of dealing 6d6 fire damage \add d6 per four caster levels above 12th, divided up among the berries as you wish.
   \par If you are within \rngmed range and speak a word of command (as a standard action), each berry instantly bursts into flame, striking every creature in a \areamed radius burst. A creature in the area that makes a successful Reflex saving throw takes only half damage.
 \end{spelleffect}
 \begin{spellnotes}
@@ -2201,25 +2228,33 @@
 \par \mfx{Material Component} The acorns or holly berries.
 
 \spellsection{Fire Shield}
+\spelldesc{You appear to immolate yourself in a wreath of flame that lashes out at anyone who tries to harm you.}
 \spellschool{Abjuration/Evocation (Energy, Shielding) [Fire or Cold]}
 \spelllvl{Fire 4, Sor/Wiz 4}
 \spellrng{\rngpers}
 \spelltgt{You}
 \spelldur{\durshort (D)}
-\spelldmg{2d6 fire or cold damage}
+\spellsave{None/Reflex half}
+\spellsr{No/Yes (Reflex)}
+\spelldmg{4d6 fire or cold damage}
 \begin{spelleffect}
-  This spell wreathes you in flame and causes damage to each creature that attacks you in melee. The flames also protect you from either cold-based or fire-based attacks (your choice).
-  \par Any creature striking you with its body or a handheld weapon deals normal damage. Its first attack each round causes the attacker to take damage. This damage is either cold damage (if the shield protects against cold-based attacks) or fire damage (if the shield protects against fire-based attacks). If the attacker has spell resistance, it applies to this effect (this spell is a Reflex effect). Creatures wielding weapons with exceptional reach are not subject to this damage if they attack you.
-  \par When casting this spell, you appear to immolate yourself, but the flames are thin and wispy, giving off light equal to only half the illumination of a normal torch (10 feet). The color of the flames is determined randomly (50\% chance of either color) -- blue or green if the chill shield is cast, violet or blue if the warm shield is employed. The special powers of each version are as follows.
+  Any creature that hits you with its body or a melee weapon takes damage. Each individual creature can take this damage only once per round. The damage is cold damage if the shield protects you from fire-based attacks, or fire damage if the shield protects you from cold-based attacks. This decision must be made at the time the spell is cast.
+
   \par \subspell{Warm Shield} The flames are warm to the touch. You take only half damage from fire-based attacks. If such an attack allows a Reflex save for half damage, you take no damage on a successful save.
   \par \subspell{Chill Shield} The flames are cool to the touch. You take only half damage from cold-based attacks. If such an attack allows a Reflex save for half damage, you take no damage on a successful save.
+
+  Regardless of the version, the flames are thin and wispy, giving off light equal to only half the illumination of a normal torch (10 feet).
 \end{spelleffect}
+\begin{spellnotes}
+Creatures wielding weapons with exceptional reach are not subject to this spell's damage if they attack you.
+\end{spellnotes}
 
 \spellsection{Fire Storm}
 \spelldesc{You fill a massive area with sheets of roaring flame, burning everyone who opposes you.}
 \spellschool{Evocation (Energy) [Fire]}
 \spelllvl{Destruction 8, Drd 8, Fire 8, War 8}
-\spellarea{\arealarge spread centered on you}
+\spellrng{\rngmed}
+\spellarea{\arealarge spread}
 \spelldur{Instantaneous}
 \spellsave{Reflex half}
 \spellsr{Yes (Reflex)}
@@ -2232,7 +2267,7 @@
 \spelldesc{You create an explosion of flame that detonates with a low roar, damaging nearby creatures and objects.}
 \spellschool{Evocation (Energy) [Destructive, Fire]}
 \spelllvl{Fire 3, Sor/Wiz 3}
-\spellrng{\rngfar}
+\spellrng{\rngmed}
 \spellarea{\areasmall radius spread}
 \spelldur{Instantaneous}
 \spellsave{Reflex half}
@@ -2249,14 +2284,14 @@
 \spelldesc{You call a vertical column of divine fire that roars downward, consuming your unworthy foes.}
 \spellschool{Evocation (Channeling, Energy) [Fire]}
 \spelllvl{Clr 5, Destruction 5, Fire 5, War 5}
-\spellrng{\rngmed}
+\spellrng{\rngclose}
 \spellarea{\areamed radius cylinder, 40 ft. high}
 \spelldur{Instantaneous}
 \spellsave{Reflex half}
 \spellsr{Yes (Reflex)}
 \spelldmg{5d6 fire and divine damage \add d6 per four caster levels above 8th; see text}
 \begin{spelleffect}
-  Half the damage is fire damage, but the other half results directly from divine power and is therefore not typed. Your allies in the area take only the fire damage.
+  Half the damage is fire damage, but the other half results directly from divine power. Your allies in the area take half damage.
 \end{spelleffect}
 
 \spellsection{Flame Weapon}
@@ -2511,7 +2546,9 @@
 \spellsave{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The subjects gain a \plus2 bonus on attack rolls and temporary hit points equal to 10 \add 1 per caster level for 5 rounds. \bonusscalingdescription
+  The subjects gain a \plus2 bonus on attack rolls and temporary hit points equal to 15 \add 1 per caster level above 6th for 5 rounds. \bonusscalingdescription
+
+   If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
 \end{spelleffect}
 \begin{spellnotes}
   \spell{Good hope} counters and dispels \spell{crushing despair}.
@@ -2714,13 +2751,13 @@
 \spellschool{Enchantment (Emotion) [Mind-Affecting, Morale]}
 \spelllvl{Brd 5, Ench 6}
 \begin{spelleffect}
-  This spell functions like \spell{heroism}, except the subject also gains temporary hit points equal to 30 \add twice your caster level. In addition, it is immune to fear and harmful morale effects.
+  This spell functions like \spell{heroism}, except the subject also gains temporary hit points equal to 60 \add 2 per caster level above 12th. In addition, it is immune to fear and harmful morale effects.
 \end{spelleffect}
 
 \spellsection{Hideous Laughter}
 \spelldesc{You force the subject to collapse into gales of manic laughter with an unnaturally amusing joke.}
 \spellschool{Enchantment (Compulsion) [Mind-Affecting]}
-\spelllvl{Brd 2, Chaos 2}
+\spelllvl{Brd 2}
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{\durshort}
@@ -3263,6 +3300,17 @@
   The subject is considered to be within \rngclose range of you for determining the range of your spells and spell-like abilities.
 \end{spelleffect}
 
+\spellsection{Lifeseeking Missile}
+\spellschool{Evocation/Necromancy (Control, Life) [Force]}
+\spelllvl{Sor/Wiz 3}
+\spellrng{\rngmed}
+\spelldmg{3d10 force damage \add d10 per four caster levels above 6th}
+\begin{spelleffect}
+  This spell functions like \spell{magic missile}, except that the spell creates three missiles that automatically seek out living creatures in the area. Each missile deals 1d10 force damage. If you specify a target for a missile, it will strike the target. Otherwise, it will strike a living creature within the area.
+  
+  \spell{Invisibility}, \spell{displacement}, and any other forms of concealment does not fool the missiles. You can form one additional missile per four caster levels above 6th.
+\end{spelleffect}
+
 \spellsection{Light}
 \spellschool{Illusion (Figment) [Light]}
 \spelllvl{Brd 1, Clr 1, Drd 1, Sor/Wiz 1}
@@ -3516,16 +3564,25 @@
 \spellsection{Magic Missile}
 \spellschool{Evocation (Control) [Force]}
 \spelllvl{Sor/Wiz 1}
-\spellrng{\rngmed}
-\spellarea{\rngmed limit}
+\spellrng{\rngclose}
+\spellarea{\areamed radius limit}
 \spelltgts{Creatures in the area}
 \spelldur{Instantaneous}
 \spellsave{None}
 \spellsr{Yes (Fortitude)}
 \spelldmg{2d4 force damage \add d4 per two levels above 2nd; see text}
 \begin{spelleffect}
-  Two missiles of magical energy dart forth from your fingertip and strike creatures you designate in the area. A single missile can strike only one creature. For every two caster levels above 2nd, you gain an additional missile.
+  Two missiles of magical energy dart forth from your fingertip and strike creatures you designate in the area, dealing 1d4 damage each. A single missile can strike only one creature. For every two caster levels above 2nd, you gain an additional missile.
   The missiles strike unerringly, even if the target is in melee combat or has less than total cover or total concealment. Specific parts of a creature can't be singled out. Inanimate objects are not damaged by the spell. You must designate targets before you check for spell resistance or roll damage.
+\end{spelleffect}
+
+\spellsectioncomma{Magic Missile}{Greater}
+\spellschool{Evocation (Control) [Force]}
+\spelllvl{Sor/Wiz 4}
+\spellrng{\rngfar}
+\spelldmg{4d10 force damage \add d10 per four levels above 8th}
+\begin{spelleffect}
+  This spell functions like \spell{magic missile}, except that its range is much longer and you create four missiles, each of which deals 1d10 damage. 
 \end{spelleffect}
 
 \spellsection{Magic Vestment}
@@ -3738,6 +3795,20 @@
 \begin{spelleffect}
   You become invisible (as \spell{invisibility}, a glamer), and at the same time, an illusory double of you (as \spell{major image}, an unreal figment) appears. You are then free to go elsewhere while your double moves away. The double appears within range but thereafter moves as you direct it (which requires concentration beginning on the first round after the casting). You can make the figment appear superimposed perfectly over your own body so that observers don't notice an image appearing and you turning invisible. You and the figment can then move in different directions. The double moves at your speed and can talk and gesture as if it were real, but it cannot attack or cast spells, though it can pretend to do so.
   \par The illusory double lasts as long as you concentrate upon it, plus 5 additional rounds. After you cease concentration, the illusory double continues to carry out the same activity until the duration expires. The invisibility lasts for 5 minutes, regardless of concentration.
+\end{spelleffect}
+
+\spellsection{Missile Storm}
+\spelldesc{You unleash an immense swarm of missiles which seek out and destroy all of your foes.}
+\spellschool{Evocation (Control) [Force]}
+\spelllvl{Sor/Wiz 7}
+\spellarea{\arealarge radius limit centered on you}
+\spelltgts{Any number of creatures in the area}
+\spelldur{Instantaneous}
+\spellsave{None}
+\spellsr{Yes (Fortitude)}
+\spelldmg{7d4 force damage \add d4 per four levels above 14th}
+\begin{spelleffect}
+  Each target is struck by seven missiles like those created by the \spell{magic missile} spell. Each missile deals 1d10 damage. You can create one additional missile to strike each target per four levels above 14th.
 \end{spelleffect}
 
 \spellsection{Modify Memory}
@@ -4252,9 +4323,20 @@
   This spell functions like \spell{spell resistance}, except that the subject also gains a \plus5 bonus on saving throws against spells and spell-like abilities (but not against supernatural and extraordinary abilities).
 \end{spelleffect}
 
-\pdfbookmark[2]{R}{SpellDescriptionsR}
+\spellsection{Quiet Mind}
+\spellschool{Transmutation (Augment)}
+\spelllvl{Sor/Wiz 1}
+\spelltime{1 swift action}
+\spellrng{Personal}
+\spelltgt{You}
+\spelldur{1 round or until discharged}
+\begin{spelleffect}
+  You gain a \plus10 bonus to Concentration checks. After you cast a spell, this spell ends.
+\end{spelleffect}
+
+\pdfbookmark[2]{Q-R}{SpellDescriptionsQR}
 \begin{comment}
-\subsubsection{R}
+\subsubsection{Q-R}
 \end{comment}
 
 \spellsection{Rainbow Pattern}
@@ -4292,22 +4374,6 @@
   The subject's Dexterity score cannot drop below 1.
 \end{spellnotes}
 
-\spellsection{Enfeeblement}
-%\spelldesc{You fire a coruscating ray from your hand. When it strikes your foe, he becomes weaker.}
-\spellschool{Necromancy (Flesh)}
-\spelllvl{Sor/Wiz 1}
-\spellrng{\rngclose}
-\spelltgt{One creature}
-\spelldur{\durshort}
-\spellsave{Fortitude negates}
-\spellsr{Yes (Fortitude)}
-\begin{spelleffect}
-  The subject takes a \minus4 penalty to your choice of Strength, Dexterity, or Constitution.
-\end{spelleffect}
-\begin{spellnotes}
-  This spell cannot reduce the subject's attributes below \minus9.
-\end{spellnotes}
-
 \spellsection{Ray of Exhaustion}
 \spelldesc{You fire a black ray at your foe, depleting his stamina.}
 \spellschool{Necromancy (Flesh)}
@@ -4326,7 +4392,7 @@
 
 \spellsection{Redirection}
 \spellschool{Abjuration (Shielding)}
-\spelllvl{Protection 3, Abjur 3}
+\spelllvl{Abjur 3}
 \spellrng{Personal}
 \spelltgt{You}
 \spelldur{\durshort (D)}
@@ -4954,6 +5020,23 @@
 \begin{spelleffect}
   This spell creates the visual illusion of an object, creature, or force, as visualized by you. The illusion does not create sound, smell, texture, or temperature. You can move the image within the limits of the size of the effect.
 \end{spelleffect}
+
+\spellsection{Skysmite}
+\spelldesc{You call down lightning from the heavens, unerringly striking your foes, even if you cannot see them.}
+\spellschool{Evocation (Energy) [Electricity]}
+\spelllvl{Drd 4, Sor/Wiz 4}
+\spellrng{\rngext}
+\spellarea{\arealarge vertical line of lightning, 5 ft. wide, and \areamed radius limit}
+\spelldur{Instantaneous}
+\spellsave{Reflex half}
+\spellsr{Yes (Reflex)}
+\spelldmg{6d6 electricity damage \add d6 per two caster levels above 6th}
+\begin{spelleffect}
+  Lightning strikes where you direct, dealing damage to all creatures and objects in its path. If no creatures or objects lie in its path, the lightning will instead strike the closest occupied square within a \areamed radius limit.
+\end{spelleffect}
+\begin{spellnotes}
+ \spell{Invisibility} and other forms of concealment do not protect creatures from the lightning, but it does not differentiate between friend, foe, and inanimate object.
+\end{spellnotes}
 
 \spellsection{Slay Living}
 \spelldesc{Your hand seethes with an eerie dark fire as you reach out to touch your foe, instantly snuffing out his life.}
@@ -6073,7 +6156,24 @@
 \spelldmg{6d8 life damage \add d8 per two caster levels above 6th}
 \begin{spelleffect}
   The touched creature takes damage. You gain temporary hit points equal to half the damage you deal. However, you can't gain more hit points than the damage required to kill the subject. The temporary hit points disappear 1 hour later.
+
+  If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
 \end{spelleffect}
+
+\spellsection{Veil}
+\spellschool{Illusion (Glamer) [Unreal]}
+\spelllvl{Sor/Wiz 2}
+\spellrng{\rngclose}
+\spelltgt{One humanoid creature}
+\spelldur{\durshort}
+\spellsave{Will negates}
+\spellsr{Yes (Will)}
+\begin{spelleffect}
+  The subject's arms and torso are masked in illusion, causing onlookers to perceive whatever movements you project instead of the creature's true actions. For example, the subject might draw a dagger and attack another creature, but anyone watching would only see the subject folding its arms, even as the dagger strikes true.
+\end{spelleffect}
+\begin{spellnotes}
+  A creature that interacts with the effect gets a Will save to recognize it as an illusion. In order to interact with the illusion with a Perception check, the creature must make a Perception check that beats your saving throw DC with this spell. Anyone witnessing the subject perform an impossible action, such as attacking or climbing without the use of its hands, receives a Will save with a \plus10 bonus.
+\end{spellnotes}
 
 \spellsection{Ventriloquism}
 \spellschool{Illusion (Figment)}
