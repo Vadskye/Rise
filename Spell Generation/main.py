@@ -6,13 +6,15 @@ HALF=0.6
 duration_choices = ['round','short','medium','long','extreme', 'permanent']
 area_choices = ['none', 'tiny', 'normal','large_line', 'medium_radius','large_cone','large_radius']
 range_choices = ['personal', 'touch', 'close', 'medium', 'far', 'extreme']
+condition_choices = [0,1,1.5,2,2.5,3,3.5]
+touch_attack_choices =['none','poor','1','average','2', 'ray']
 storage_file_name = 'spells.txt'
 condition_debug=False
 general_debug=True
 damage_debug=False
-buff_debug=False
+buff_debug=True
 
-default_args = {'energy': False, 'choose_targets': False, 'duration': 'short', 'max_targets': 0, 'touch': False, 'concentration': False, 'load_name': '', 'bloodied': False, 'area': 'none', 'noncombat': False, 'alternate': False, 'damage': False, 'instantaneous': False, 'trigger': 'none', 'save': 'none', 'save_name': '', 'buff': 0, 'save_ends': False, 'casting_time': 'standard', 'limit_types': 0, 'dispellable': True, 'escapable': 0, 'condition': 0, 'healthy': False, 'sr': True, 'range': 'medium'}
+default_args = {'energy': False, 'choose_targets': False, 'duration': 'short', 'max_targets': 0, 'touch_attack': 'none', 'concentration': False, 'load_name': '', 'bloodied': False, 'area': 'none', 'noncombat': False, 'alternate': False, 'damage': False, 'instantaneous': False, 'trigger': 'none', 'save': 'none', 'save_name': '', 'buff': 0, 'save_ends': False, 'casting_time': 'standard', 'limit_types': 0, 'dispellable': True, 'escapable': 0, 'condition': 0, 'healthy': False, 'sr': True, 'range': 'medium', 'dot': False}
 
 def bool_parser(value):
     if value=='0' or value=='False' or value=='false' or value=='none':
@@ -25,7 +27,7 @@ def initialize_argument_parser():
     parser.add_argument('--damage', dest = 'damage', type=bool_parser,
             help='Damage level', nargs='*', default=0)
     parser.add_argument('--condition', nargs='*', dest='condition', type=float,
-            help='Condition tier', default=0, choices=[0,1,1.5,2,2.5,3])
+            help='Condition tier', default=0, choices=condition_choices)
     parser.add_argument('--buff', nargs='*', dest = 'buff', type=int,
             help='Buff level', default=0)
     parser.add_argument('--bloodied', dest = 'bloodied', type=bool_parser,
@@ -34,18 +36,23 @@ def initialize_argument_parser():
             nargs='*', default=False)
     parser.add_argument('--duration', dest = 'duration', type=str,
             default='short', nargs='*',
-            choices=['round','short','medium','long','extreme', 'permanent'])
-    parser.add_argument('--dispellable', dest = 'dispellable', help='Subject to dispelling?', nargs='*', default=True)
-    parser.add_argument('--concentration', dest = 'concentration', type=bool_parser,
-            help='Requires concentration?', nargs='*', default=False)
-    parser.add_argument('--save_ends', dest='save_ends', type=bool_parser,
-            help='Save each round to end?', nargs='*', default=False)
-    parser.add_argument('--instantaneous', dest='instantaneous', type=bool_parser,
-            help='Bloodied is checked only when spell is cast?', nargs='*', default=False) 
+            choices=duration_choices)
+    parser.add_argument('--dispellable', dest = 'dispellable',
+            help='Subject to dispelling?', nargs='*', default=True)
+    parser.add_argument('--concentration', dest = 'concentration', 
+            type=bool_parser, help='Requires concentration?',
+            nargs='*', default=False)
+    parser.add_argument('--save_ends', dest='save_ends', 
+            type=bool_parser, help='Save each round to end?',
+            nargs='*', default=False)
+    parser.add_argument('--instantaneous', dest='instantaneous',
+            help='Bloodied is checked only when spell is cast?',
+            type=bool_parser, nargs='*', default=False) 
     parser.add_argument('--area', dest='area', type=str,
             default='none', choices=area_choices)
-    parser.add_argument('--choose_targets', dest='choose_targets', type=bool_parser,
-            help='Choose targets of area spell?', default=False)
+    parser.add_argument('--choose_targets', dest='choose_targets',
+            type=bool_parser, default=False,
+            help='Choose targets of area (not buff) spell?')
     parser.add_argument('--max_targets', dest='max_targets', type=bool_parser,
             help='Max target limit', default=False)
     parser.add_argument('--save', dest='save', type=str,
@@ -59,10 +66,13 @@ def initialize_argument_parser():
             help='Is the spell escapable?', default=0, choices=[0,1,2])
     parser.add_argument('--energy', dest='energy', type=bool_parser,
             help='Deals energy damage?', default=False)
-    parser.add_argument('--noncombat', dest='noncombat', type=bool_parser,
-            help='Irrelevant in combat?', nargs='*', default=False)
-    parser.add_argument('--touch', dest='touch', type=bool_parser,
-            help='Touch attack required?', default=False)
+    parser.add_argument('--noncombat', dest='noncombat', 
+            type=bool_parser, help='Irrelevant in combat?',
+            nargs='*', default=False)
+    parser.add_argument('--touch_attack', dest='touch_attack',
+            type=str, help='Touch attack and bab',
+            nargs='*', default='none',
+            choices = touch_attack_choices)
     parser.add_argument('--healthy', dest='healthy', type=bool_parser,
             help='Only affects healthy creatures?', nargs='*', default=False)
     parser.add_argument('--trigger', dest='trigger', type=str,
@@ -76,6 +86,8 @@ def initialize_argument_parser():
             nargs='*', default='')
     parser.add_argument('--load_name', dest='load_name', type=str, 
             nargs='*', default='')
+    parser.add_argument('--dot', dest='dot', type=bool_parser,
+            help='damage over time?', nargs='*', default=False)
     return vars(parser.parse_args())
 
 def calculate_spell_level(args):
@@ -91,24 +103,34 @@ def calculate_spell_level(args):
 
     split_args = generate_split_args(args)
     combined_condition_strength_levels = 0
-    aspect_count=0
+    all_aspects = set()
+    buff_count=0
     for args in split_args:
         if general_debug: print find_unique_args(args)
         if args['damage']:
-            combined_condition_strength_levels+=calculate_damage(args)
+            added_level = calculate_damage(args)
+            all_aspects.add('damage')
         if args['condition']:
-            combined_condition_strength_levels+= calculate_condition(args, 
-                    aspect_count)
+            added_level = calculate_condition(args)
+            all_aspects.add('condition')
         if args['buff']:
-            combined_condition_strength_levels += calculate_buff(args,
-                    aspect_count)
+            added_level = calculate_buff(args)
+            if buff_count>1:
+                added_level*=PART
+            buff_count+=1
+            all_aspects.add('buff')
+
+        #if there are multiple unique aspects
+        if len(all_aspects)>1:
+            added_level*=PART
+
+        combined_condition_strength_levels += added_level
         if general_debug:
             print 'current combined:', combined_condition_strength_levels
-        aspect_count+=1
 
     area_level = convert_area(args['area'])
-    if args['choose_targets']: area_level+=2
-    if args['max_targets']: area_level*=HALF
+    if args['choose_targets']: area_level+=1
+    if args['max_targets']: area_level*=PART
     if general_debug: print 'area_level', area_level
 
     total_level = combined_condition_strength_levels+area_level
@@ -152,13 +174,23 @@ def is_list(value):
 
 def calculate_damage(args):
     if damage_debug: print 'Calculating damage aspect' 
-    strength_level = 5
-    if args['energy']: strength_level-=1
+    effect_level = 5
+    if args['energy']: effect_level-=1
+
+    if args['dot']:
+        duration_level = convert_duration_damage(
+            args['duration'])
+        if args['concentration']: duration_level*=HALF
+        strength_level = effect_level + duration_level
+    else:
+        strength_level = effect_level
+
     if args['limit_types']: 
         strength_level = calculate_limit_types(args['limit_types'], strength_level)
+
     return strength_level
     
-def calculate_buff(args, aspect_count):
+def calculate_buff(args):
     if buff_debug: print 'Calculating buff aspect'
     effect_level = args['buff']
     if args['alternate']: effect_level+=1
@@ -166,17 +198,20 @@ def calculate_buff(args, aspect_count):
     #may not want to use same duration conversions as condition spells
     duration_level = convert_duration(args['duration'])
     if args['concentration']: duration_level*=HALF
+    if buff_debug: print 'duration_level', duration_level
     
     strength_level = effect_level + duration_level
     if args['limit_types']: 
         strength_level = calculate_limit_types(args['limit_types'], strength_level)
     if args['noncombat']: strength_level*=PART
     if args['instantaneous']: strength_level*=PART
+    if not (args['area']=='none' or args['area']=='tiny'):
+        strength_level*=1.25
+    if buff_debug: print 'strength_level', strength_level
 
-    if aspect_count>=1: strength_level*=PART
     return strength_level
 
-def calculate_condition(args, aspect_count):
+def calculate_condition(args):
     if condition_debug: print 'Calculating condition aspect'
     effect_level = convert_condition_tier(args['condition'])
     
@@ -199,7 +234,15 @@ def calculate_condition(args, aspect_count):
     if args['limit_types']: 
         strength_level = calculate_limit_types(args['limit_types'], strength_level)
     if args['noncombat']: strength_level*=PART
-    if args['touch']: strength_level*=PART
+    #touch attack
+    if args['touch_attack']=='poor' or args['touch_attack']=='1':
+        strength_level*=PART
+    elif args['touch_attack']=='average' or args['touch_attack']=='2':
+        strength_level*=0.9
+    elif args['touch_attack']=='ray':
+        #If you miss with a ray, you can't try again
+        strength_level*=HALF
+    #saving throw
     if not args['save']=='none':
         save = args['save']
         if save=='half' or save=='partial':
@@ -208,7 +251,6 @@ def calculate_condition(args, aspect_count):
             strength_level*=HALF
     #area
     if not (args['area']=='none' or args['area']=='tiny'):
-        print 'derp'
         strength_level*=1.25
     if args['escapable']==1:
         strength_level*=PART
@@ -217,8 +259,6 @@ def calculate_condition(args, aspect_count):
     if args['healthy']: strength_level*=HALF
     if condition_debug: print 'raw strength_level', strength_level
 
-    if aspect_count==1: strength_level*=PART
-    if aspect_count>1: strength_level*=HALF
     return strength_level
 
 def calculate_limit_types(limit_types, strength_level):
@@ -241,9 +281,14 @@ def convert_duration(duration):
     #duration_choices = ['round','short','medium','long','extreme', 'permanent']
     return switch(duration, duration_choices, [-3, 0, 1, 2, 3, 5])
 
+#convert duration for damage spells
+def convert_duration_damage(duration):
+    return switch(duration, duration_choices, [0.5,2, 3, 4, 5, 7])
+
 def convert_area(area):
+    print 'derp'
     #area_choices = ['none', 'tiny', 'normal','large_line', 'medium_radius','large_cone','large_radius']
-    return switch(area, area_choices, [0,0,0,1,2,3,5])
+    return switch(area, area_choices, [0,0,0,1,2,3,4])
 
 def convert_range(spell_range):
     #range_choices = ['personal', 'touch', 'close', 'medium', 'far', 'extreme']
@@ -255,7 +300,7 @@ def convert_range_aoe(spell_range):
 
 def convert_range_buff(spell_range):
     #range_choices = ['personal', 'touch', 'close', 'medium', 'far', 'extreme']
-    return switch(spell_range, range_choices, [0,1,1.5,2,2.5])
+    return switch(spell_range, range_choices, [0,0.5,1,1.5,2])
 
 def switch(data, choices, outputs):
     for i in xrange(len(choices)):
@@ -274,7 +319,8 @@ def find_unique_args(args):
 if __name__ == "__main__":
     args = initialize_argument_parser()
     if args['load_name']:
-        name_pattern = re.compile(args['load_name'])
+        load_name = ' '.join(args['load_name'])
+        name_pattern = re.compile(load_name)
         storage = open(storage_file_name, 'r')
         #Find the spell in the storage file and print three lines
         #The lines are (name), (args), (level)
