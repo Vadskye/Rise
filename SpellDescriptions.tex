@@ -1092,7 +1092,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsection{Crushing Hand}
 \spelldesc{You create a floating, disembodied hand made of magical force that crushes your foe in its grasp.}
 \spellschool{Evocation (Control) [Force]}
-\spelllvl{Sor/Wiz 8, Strength 8}
+\spelllvl{Evoc 8}
 \spellsave{Fortitude partial}
 \spellsr{Yes (Fortitude)}
 \spelldmg{2d6 \add half casting attribute}
@@ -1324,7 +1324,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 
 \spellsectioncomma{Death Ward}{Mass}
 \spellschool{Abjuration/Necromancy (Shielding, Vitalism) [Positive]}
-\spelllvl{Clr 6, Death 6}
+\spelllvl{Clr 7, Death 7}
 \spellrng{\rngmed}
 \spellarea{\areamed radius limit}
 \spelltgts{Five living creatures within the area}
@@ -2004,7 +2004,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 
 \spellsectioncomma{Enlarge Person}{Mass}
 \spellschool{Transmutation (Polymorph) [Size-Affecting]}
-\spelllvl{Trans 7}
+\spelllvl{Strength 7, Trans 7}
 \spellrng{\rngmed}
 \spellarea{\areamed radius limit}
 \spelltgts{Five humanoid creatures within the area}
@@ -2238,15 +2238,15 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsr{No/Yes (Reflex)}
 \spelldmg{4d6 fire or cold damage}
 \begin{spelleffect}
-  Any creature that hits you with its body or a melee weapon takes damage. Each individual creature can take this damage only once per round. The damage is cold damage if the shield protects you from fire-based attacks, or fire damage if the shield protects you from cold-based attacks. This decision must be made at the time the spell is cast.
+  Any creature that hits you with its body or a melee weapon takes damage. Each individual creature can take this damage only once per round. The damage type and other effects depend on which kind of \spell{fire shield} is used. This decision must be made at the time the spell is cast.
 
-  \par \subspell{Warm Shield} The flames are warm to the touch. You take only half damage from fire-based attacks. If such an attack allows a Reflex save for half damage, you take no damage on a successful save.
-  \par \subspell{Chill Shield} The flames are cool to the touch. You take only half damage from cold-based attacks. If such an attack allows a Reflex save for half damage, you take no damage on a successful save.
+  \par \subspell{Warm Shield} The flames are warm to the touch and deal fire damage. You gain cold damage reduction 20 \add 1 per caster level above 8th.
+  \par \subspell{Chill Shield} The flames are cool to the touch and deal cold damage. You gain fire damage reduction 20 \add 1 per caster level above 8th.
 
   Regardless of the version, the flames are thin and wispy, giving off light equal to only half the illumination of a normal torch (10 feet).
 \end{spelleffect}
 \begin{spellnotes}
-Creatures wielding weapons with exceptional reach are not subject to this spell's damage if they attack you.
+  The damage reduction allows the subject to ignore the first 20 energy damage it takes each round of the appropriate type. Creatures wielding weapons with exceptional reach are not subject to this spell's damage if they attack you.
 \end{spellnotes}
 
 \spellsection{Fire Storm}
@@ -2303,7 +2303,7 @@ Creatures wielding weapons with exceptional reach are not subject to this spell'
 \spellsave{None}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
-  A 3 foot long beam of red-hot fire springs forth from your hand. In addition to providing illumination like a torch, you can wield this bladelike beam as if it were a scimitar. Attacks with the flame weapon are touch attacks, and deal 1d8 fire damage \add half your key attribute. Since the blade is immaterial, it is treated as a light weapon, and your Strength does not apply to the damage. A flame weapon can ignite combustible materials such as parchment, straw, dry sticks, and cloth. Alternately, you can hurl flames from the weapon up to \rngmed range as if it were a thrown weapon.
+  A 3 foot long beam of red-hot fire springs forth from your hand. In addition to providing illumination like a torch, you can wield this bladelike beam as if it were a scimitar. Attacks with the flame weapon are touch attacks, and deal 1d8 fire damage \add half your casting attribute. Since the blade is immaterial, your Strength does not apply to the damage. However, it is treated as a light weapon, so you can use Dexterity to attack with it. A \spell{flame weapon} can ignite combustible materials such as parchment, straw, dry sticks, and cloth. Alternately, you can hurl flames from the weapon up to \rngmed range as if it were a thrown weapon.
 \end{spelleffect}
 \begin{spellnotes}
   The spell does not function underwater.
@@ -2320,33 +2320,30 @@ Creatures wielding weapons with exceptional reach are not subject to this spell'
 \begin{spelleffect}
   The subject can fly at a speed of 60 feet (or 40 feet if it wears medium or heavy armor, or if it carries a medium or heavy load). It can ascend at half speed and descend at double speed, and its maneuverability is good. Using a \spell{fly} spell requires only as much concentration as walking, so the subject can attack or cast spells normally. The subject of a \spell{fly} spell can charge but not run, and it cannot carry aloft more weight than its maximum load.
 \end{spelleffect}
-\begin{spellnotes}
-  Should the spell duration expire while the subject is still aloft, the magic fails slowly. The subject floats downward 60 feet per round for 1d6 rounds. If it reaches the ground in that amount of time, it lands safely. If not, it falls the rest of the distance, taking 1d6 damage per 10 feet of fall. Since dispelling a spell effectively ends it, the subject also descends in this way if the fly spell is dispelled, but not if it is negated by an antimagic field.
-\end{spellnotes}
 
 \spellsection{Fog Cloud}
 \spelldesc{You conjure a bank of fog from a location you choose, concealing those inside.}
 \spellschool{Conjuration (Creation) [Fog]}
 \spelllvl{Drd 3, Sor/Wiz 3, Water 3}
 \spellrng{\rngmed}
+\spellarea{\areamed radius cylinder-shaped spread}
 \spelleff{Fog in the area}
 \spelldur{\durshort}
 \spellsave{None}
 \spellsr{No}
 \begin{spelleffect}
-  This spell functions like \spell{obscuring mist}, except that you can create the cloud at any point within the spell's range.
+  Creatures within the spell's area have concealment (20\% miss chance). The cloud is stationary once created.
 \end{spelleffect}
 \begin{spellnotes}
-  Fog spells do not function underwater and can be dispersed by wind. A moderate wind (11\add mph) disperses the fog in 5 rounds; a strong wind (21\add mph) disperses the fog in 1 round.
+  Fog spells do not function underwater and can be dispersed by wind. A moderate wind (11\add mph) disperses the fog in 5 rounds; a strong wind (21\add mph) disperses the fog in 1 round. A fire spell burns away the fog in the area into which it deals damage.
 \end{spellnotes}
 
 \spellsection{Forcecage}
 \spellschool{Evocation (Control) [Force]}
 \spelllvl{Evoc 7}
-\spellcmp{V, S, M}
-\spellrng{\rngclose}
+\spellrng{\rngmed}
 \spelleff{Barred cage (20 ft. cube) or windowless cell (10 ft. cube)}
-\spelldur{\durmed (D)}
+\spelldur{\durlong (D)}
 \spellsave{Reflex negates; see text}
 \spellsr{No}
 \begin{spelleffect}
@@ -2357,32 +2354,34 @@ Creatures wielding weapons with exceptional reach are not subject to this spell'
   \par \subspell{Barred Cage} This version of the spell produces a 20-foot cube made of bands of force (similar to a wall of force spell) for bars. The bands are a half-inch wide, with half-inch gaps between them. Any creature capable of passing through such a small space can escape; others are confined. You can't attack a creature in a barred cage with a weapon unless the weapon can fit between the gaps. Even against such weapons (including arrows and similar ranged attacks), a creature in the barred cage has cover. All spells and breath weapons can pass through the gaps in the bars.
   \par \subspell{Windowless Cell} This version of the spell produces a 10-foot cube with no way in and no way out. Solid walls of force form its six sides.
 \end{spelleffect}
-\spellmat{Ruby dust worth 1000 gp, which is tossed into the air and disappears when you cast the spell.}
 
 \spellsection{Forceful Hand}
 \spellschool{Evocation (Control) [Force]}
-\spelllvl{Evoc 6, Strength 6}
+\spelllvl{Evoc 4}
 \begin{spelleffect}
-  This spell functions like \spell{interposing hand}, except that it can also pursue and bull rush one opponent you select. The \spell{forceful hand} gets one bull rush attack per round. This attack does not provoke an attack of opportunity. Its CMA for bull rush checks uses your caster level for its base attack bonus \add your casting attribute for its strength score, with a \plus4 bonus for being Large.
+  This spell functions like \spell{interposing hand}, except that it can also pursue and bull rush one opponent you select. You must direct the hand to bull rush an opponent as a swift action. If you do, the \spell{forceful hand} may make a bull rush attack that does not provoke an attack of opportunity. Its CMA to bull rush equals your caster level \add your casting attribute, \plus4 for being Large. Its CMD is equal to 10 \add its CMA. 
   \par The hand always moves with the opponent to push them back as far as possible. It has no movement limit for this purpose, but it cannot exceed the spell's range.
+  \par If you do not direct the hand to bull rush, it simply provides cover as \spell{interposing hand}.
 \end{spelleffect}
 \begin{spellnotes}
   A very strong creature could not push the hand out of its way because the latter would instantly reposition itself between the creature and you, but an opponent could push the hand up against you by successfully bull rushing it.
-  \par Directing the spell to a new target is a move action.
 \end{spellnotes}
 
 \spellsection{Foresight}
+\spelldesc{You bestow a powerful sixth sense to your ally, giving them clear visions of any imminent danger.}
 \spellschool{Divination (Knowledge)}
-\spelllvl{Protection 9, Div 9}
-\spellrng{Personal or touch}
-\spelltgt{See text}
-\spelldur{\durlong}
+\spelllvl{Knowledge 9, Protection 9, Div 9}
+\spellrng{Touch}
+\spelltgt{Touched creature}
+\spelldur{\durlong (D)}
 \spellsave{None or Will negates (harmless)}
 \spellsr{No or Yes (Will)}
 \begin{spelleffect}
-  This spell grants you a powerful sixth sense in relation to yourself or another. Once foresight is cast, you receive instantaneous warnings of impending danger or harm to the subject of the spell. You are never surprised or flat-footed, and you gain a bonus on initiative checks equal to your caster level. In addition, the spell gives you a general idea of what action you might take to best protect yourself and gives you a \plus5 bonus to Reflex saves and dodge modifier. This bonus is lost whenever you would lose a Dexterity to AC.
-  \par When another creature is the subject of the spell, you receive warnings about that creature. You must communicate what you learn to the other creature for the warning to be useful, and the creature can be caught unprepared in the absence of such a warning. Shouting a warning, yanking a person back, and even telepathically communicating (via an appropriate spell) can all be accomplished before some danger befalls the subject, provided you act on the warning without delay. The subject, however, does not gain the bonus to AC and Reflex saves.
+  The subject receives instantaneous warnings of impending danger or harm that would befall them. She is never surprised or flat-footed, and gains a \plus20 bonus on initiative checks. In addition, the spell gives the subject a general idea of what action she might take to best protect herself and bestows a \plus5 bonus to Reflex saves and dodge modifier.
 \end{spelleffect}
+\begin{spellnotes}
+  \spell{Foresight} is a difficult spell to cast, since it requires maintaining a constant channel into the future. You may only have one \spell{foresight} spell active at once. If you cast the spell again before the duration wears off, the old spell is dismissed and only the new casting is active. 
+\end{spellnotes}
 
 \spellsection{Freedom}
 \spellschool{Transmutation (Imbuement)}
@@ -2556,10 +2555,11 @@ Creatures wielding weapons with exceptional reach are not subject to this spell'
 
 \spellsection{Grasping Hand}
 \spellschool{Evocation (Control) [Force]}
-\spelllvl{Evoc 7, Strength 7}
+\spelllvl{Evoc 6}
 \begin{spelleffect}
-  This spell functions like \spell{interposing hand}, except the hand can also grapple one opponent that you select. The grasping hand gets one grapple attack per round.
-  \par Its combat maneuver attack to grapple equals your caster level \add your casting attribute, \plus4 for being Large. The hand holds but does not harm creatures it grapples. Its CMD is equal to 10 \add its CMA.
+  This spell functions like \spell{interposing hand}, except the hand can also grapple one opponent that you select. You must direct the hand to grapple an opponent as a swift action. If you do, the \spell{grasping hand} may make a grapple attack as a swift action. Its CMA to grapple equals your caster level \add your casting attribute, \plus4 for being Large. Its CMD is equal to 10 \add its CMA.
+  \par The hand holds but does not harm creatures it grapples. While the hand is grappling a foe, you must spend a swift action each round to sustain the hand's grapple; otherwise, the grappled creature escapes automatically.
+  \par If you do not direct the hand to bull rush, it simply provides cover as \spell{interposing hand}.
 \end{spelleffect}
 \begin{spellnotes}
   Directing the spell to a new target is a swift action.
@@ -3160,7 +3160,7 @@ Creatures wielding weapons with exceptional reach are not subject to this spell'
 \spellsection{Invisibility}
 \spellschool{Illusion (Glamer)}
 \spelllvl{Brd 3, Sor/Wiz 3, Trickery 3}
-\spellrng{Touch}
+\spellrng{\rngclose}
 \spelltgt{A creature or object weighing no more than 100 lb./level}
 \spelldur{\durshort (D)}
 \spellsave{Will negates (harmless) or Will negates (harmless, object)}
@@ -3892,17 +3892,9 @@ Creatures wielding weapons with exceptional reach are not subject to this spell'
 \spellschool{Conjuration (Creation) [Fog]}
 \spelllvl{Clr 1, Drd 1, Sor/Wiz 1, Water 1}
 \spellarea{\areamed radius cylinder-shaped spread centered on you}
-\spelleff{Fog in the area}
-\spelldur{\durmed}
-\spellsave{None}
-\spellsr{No}
 \begin{spelleffect}
-  Creatures within the spell's area have concealment (20\% miss chance). The cloud is stationary once created.
+  This spell functions like \spell{fog cloud}, except that the fog created is centered on you.
 \end{spelleffect}
-\begin{spellnotes}
-  A moderate wind (11\add mph), such as from a \spell{gust of wind} spell, disperses the fog in 5 rounds. A strong wind (21\add mph) disperses the fog in 1 round. A fire spell burns away the fog in the area into which it deals damage.
-  \par This spell does not function underwater.
-\end{spellnotes}
 
 \spellsection{Order's Wrath}
 \spellschool{Evocation (Channeling) [Lawful]}
@@ -4462,8 +4454,8 @@ Creatures wielding weapons with exceptional reach are not subject to this spell'
 
 \spellsection{Resilient Sphere}
 \spellschool{Evocation (Control) [Force]}
-\spelllvl{Evoc 4}
-\spellrng{\rngclose}
+\spelllvl{Evoc 5}
+\spellrng{\rngmed}
 \spelleff{5 ft. radius sphere, centered around creatures or objects}
 \spelldur{\durshort (D)}
 \spellsave{Reflex negates}
@@ -4485,7 +4477,7 @@ Creatures wielding weapons with exceptional reach are not subject to this spell'
 \spellsave{Fortitude negates (harmless)}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
-  The subject gains energy damage reduction 10 against whichever of the five energy types that you select: acid, cold, electricity, fire, or sonic. This damage reduction increases by 5 for every two caster levels above 4th.
+  The subject gains energy damage reduction 10 against whichever of the five energy types that you select: acid, cold, electricity, fire, or sonic. This damage reduction increases by 1 per caster level above 4th.
   \par The spell can absorb a maximum amount of damage equal to 10 points per caster level. After it absorbs its maximum amount of damage, the spell ends.
 \end{spelleffect}
 \begin{spellnotes}
@@ -5030,7 +5022,7 @@ Creatures wielding weapons with exceptional reach are not subject to this spell'
 \spelldur{Instantaneous}
 \spellsave{Reflex half}
 \spellsr{Yes (Reflex)}
-\spelldmg{6d6 electricity damage \add d6 per two caster levels above 6th}
+\spelldmg{8d6 electricity damage \add d6 per two caster levels above 8th}
 \begin{spelleffect}
   Lightning strikes where you direct, dealing damage to all creatures and objects in its path. If no creatures or objects lie in its path, the lightning will instead strike the closest occupied square within a \areamed radius limit.
 \end{spelleffect}
@@ -5370,7 +5362,7 @@ Creatures wielding weapons with exceptional reach are not subject to this spell'
 \spellsection{Stoneskin}
 \spelldesc{You dramatically toughen a creature's skin, giving it the appearance of stone.}
 \spellschool{Transmutation (Alteration) [Earth]}
-\spelllvl{Drd 5, Earth 5, Protection 5, Strength 5, Trans 5}
+\spelllvl{Drd 5, Earth 5, Protection 5, Trans 5}
 \begin{spelleffect}
   This spell functions like \spell{barkskin}, except that it grants physical damage reduction 10/adamantine. This damage reduction increases by 1 per two caster levels above 10th.
 \end{spelleffect}
@@ -6244,9 +6236,9 @@ Creatures wielding weapons with exceptional reach are not subject to this spell'
 \end{spellnotes}
 
 \spellsection{Wall of Force}
-\spellschool{Evocation (Energy) [Force, Wall]}
+\spellschool{Evocation (Control) [Force, Wall]}
 \spelllvl{Sor/Wiz 5}
-\spellrng{\rngclose}
+\spellrng{\rngmed}
 \spelleff{Wall whose area is up to ten 10 ft. squares}
 \spelldur{\durshort (D)}
 \spellsave{None}
