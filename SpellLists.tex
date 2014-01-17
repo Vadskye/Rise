@@ -224,7 +224,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead{Blade Barrier} Wall of blades deals 6d6 damage.
   \spellhead{Circle of Death}\M Kills 2/level HV of creatures.
   \spellheadc{Cure Moderate Wounds}{Mass} Cures 6d6 damage for many creatures.
-  \spellheadc{Death Ward}{Mass} As \spell{death ward}, but affects multiple creatures.
   \spellheadc{Dispel Magic}{Greater} As dispel magic, but up to \plus20 on check.
   \spellhead{Harm} Touch deals 12d8 damage.
   \spellhead{Heal} Cures 12d8 damage, all diseases and mental conditions.
@@ -244,6 +243,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead{Antilife Shell} Small, immobile emanation hedges out living creatures.
   \spellhead{Blasphemy} Kills, paralyzes, nauseatees, or sickens nonevil subjects in large radius.
   \spellheadc{Cure Serious Wounds}{Mass} Cures 7d6 damage for many creatures.
+  \spellheadc{Death Ward}{Mass} As \spell{death ward}, but affects multiple creatures.
   \spellhead{Destruction}\F Kills subject and destroys remains.
   \spellhead{Dictum} Kills, paralyzes, stuns, or staggers nonlawful subjects in 40 ft. cube.
   \spellheadc{Hold Person}{Mass} As \spell{hold person}, but affects multiple creatures.
@@ -374,9 +374,9 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead[5]{}
   %\spellhead[6]{Slay Living} Touch attack kills subject.
   \spellhead[6]{Circle of Death}\M Kills 2/level HV of creatures.
-  \spellheadc[6]{Death Ward}{Mass} As \spell{death ward}, but affects multiple creatures.
+  \spellhead[6]{} 
+  \spellheadc[7]{Death Ward}{Mass} As \spell{death ward}, but affects multiple creatures.
   \spellhead[7]{Finger of Death} Kills one subject.
-  \spellhead[7]{} 
   \spellhead[8]{Energy Drain} Subject gains 2d4 negative levels.
   \spellhead[8]{}
   \spellhead[9]{Power Word Kill} Kills bloodied creature.
@@ -550,7 +550,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead[7]{Moment of Prescience} Roll twice with bonus for single attack, save, or opposed check.
   \spellheadc[8]{Detect Thoughts}{Greater} Allow ``listening'' to surface thoughts without concentration.
   \spellhead[8]{}
-  \spellhead[9]{Foresight}
+  \spellhead[9]{Foresight} ``Sixth sense'' warns of impending danger.
   \spellhead[9]{Revelation}
 \end{spelllist}
 
@@ -658,17 +658,18 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead[2]{Totemic Power} Subject gains \plus2 to Str, Dex, or Con for medium duration.
   \spellhead[2]{}
   \spellhead[3]{Enlarge Person} Humanoid creature doubles in size.
+  \spellhead[3]{}
   \spellhead[4]{Divine Power} You gain attack and damage bonus, \plus6 Str, and 2 hp/level.
   \spellhead[4]{Shout} Deafens all within medium cone and deals 1d6/level sonic damage.
-  \spellhead[5]{Stoneskin} \plus5 AC, ignore 10 damage per round.
   \spellhead[5]{Righteous Might} Your size increases, and you gain combat bonuses.
-  \spellhead[6]{Forceful Hand} Hand pushes creatures away.
-  \spellheadc[6]{Enlarge Person}{Mass} Enlarges several creatures.
-  \spellhead[7]{Grasping Hand} Large hand provides cover, pushes, or grapples.
+  \spellhead[5]{}
+  \spellhead[6]{}
+  \spellhead[6]{}
+  \spellheadc[7]{Enlarge Person}{Mass} Enlarges several creatures.
   \spellheadc[7]{Shout}{Greater} Yell deals 1d6/level sonic damage in large cone; stuns creatures, damages objects.
   \spellhead[8]{Iron Body} Your body becomes living iron.
-  \spellhead[8]{Crushing Hand} Large hand provides cover, pushes, or crushes your foes.
-  \spellhead[9]{Clenched Fist} Large hand provides cover, pushes, or attacks your foes.
+  \spellhead[8]{}
+  \spellhead[9]{}
   \spellhead[9]{} 
 \end{spelllist}
 
@@ -1214,7 +1215,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead{Shout} Deafens all within medium cone and deals 4d6 sonic damage.
   \spellhead{Skysmite} Unerring lightning deals 6d6 damage.
   \spellhead{Wall of Ice} Create plane of ice or hemisphere that can trap creatures inside.
-  \spellheadrestricted{Resilient Sphere} Force globe protects but traps one creature or object.
+  \spellheadrestricted{Forceful Hand} Hand pushes creatures away.
   \spellheadrestricted{Telekinetic Maneuver} Telekinetically bull rush, disarm, grapple, or trip your target.
 
   \spellhead[Illus]{Displacement} Attacks miss subject 50\% of the time.
@@ -1263,8 +1264,9 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead[Evoc]{Chain Lightning} 5d10 damage; secondary targets take half damage.
   \spellhead{Cone of Cold} 5d6 cold damage and fatigue in medium cone.
   \spellhead{Wall of Fire} Passing through wall deals 5d6 damage.
+  \spellhead{Wall of Force} Wall is immune to damage.
+  \spellheadrestricted{Resilient Sphere} Force globe protects but traps one creature or object.
   \spellheadrestricted{Telekinetic Thrust} Hurl objects with the force of your mind.
-  \spellheadrestricted{Wall of Force} Wall is immune to damage.
 
   \spellhead[Illus]{Invisibility Sphere} Makes everyone within small radius invisible.
   \spellhead{Phantom Maze} Subject acts as if affected by \spell{maze}.
@@ -1315,7 +1317,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
   \spellhead[Evoc]{Delayed Blast Fireball} 6d6 fire damage in medium radius; you can postpone blast for 5 rounds.
   \spellhead{Mage's Sword}\F Floating magic blade strikes opponents.
-  \spellheadrestricted{Forceful Hand} Hand pushes creatures away.
+  \spellheadrestricted{Grasping Hand} Hand provides cover, pushes, or grapples.
   \spellheadrestricted{Telekinesis} Moves object, attacks creature, or hurls object or creature.
 
   \spellhead[Illus]{Mislead} Turns you invisible and creates illusory double.
@@ -1366,7 +1368,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead{Prismatic Spray} Rays hit subjects with variety of effects.
   \spellheadc{Shout}{Greater} Yell deals 7d6 sonic damage in large cone; stuns creatures, damages objects.
   \spellheadrestricted{Forcecage}\M Cube or cage of force imprisons all inside.
-  \spellheadrestricted{Grasping Hand} Hand provides cover, pushes, or grapples.
 
   \spellheadc[Illus]{Invisibility}{Mass} As \spell{invisibility}, but affects multiple creatures.
   \spellheadrestricted{Project Image} Illusory double can talk and cast spells.
