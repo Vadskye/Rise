@@ -9,10 +9,10 @@ range_choices = ['personal', 'touch', 'close', 'medium', 'far', 'extreme']
 condition_choices = [0,1,1.5,2,2.5,3,3.5]
 touch_attack_choices =['none','poor','1','average','2', 'ray']
 storage_file_name = 'spells.txt'
-condition_debug=False
+condition_debug=True
 general_debug=True
 damage_debug=False
-buff_debug=True
+buff_debug=False
 
 default_args = {'energy': False, 'choose_targets': False, 'duration': 'short', 'max_targets': 0, 'touch_attack': 'none', 'concentration': False, 'load_name': '', 'bloodied': False, 'area': 'none', 'noncombat': False, 'alternate': False, 'damage': False, 'instantaneous': False, 'trigger': 'none', 'save': 'none', 'save_name': '', 'buff': 0, 'save_ends': False, 'casting_time': 'standard', 'limit_types': 0, 'dispellable': True, 'escapable': 0, 'condition': 0, 'healthy': False, 'sr': True, 'range': 'medium', 'dot': False}
 
@@ -38,7 +38,8 @@ def initialize_argument_parser():
             default='short', nargs='*',
             choices=duration_choices)
     parser.add_argument('--dispellable', dest = 'dispellable',
-            help='Subject to dispelling?', nargs='*', default=True)
+            help='Subject to dispelling?', nargs='*', default=True,
+            type=bool_parser)
     parser.add_argument('--concentration', dest = 'concentration', 
             type=bool_parser, help='Requires concentration?',
             nargs='*', default=False)
@@ -52,7 +53,7 @@ def initialize_argument_parser():
             default='none', choices=area_choices)
     parser.add_argument('--choose_targets', dest='choose_targets',
             type=bool_parser, default=False,
-            help='Choose targets of area (not buff) spell?')
+            help='Choose targets of area spell?')
     parser.add_argument('--max_targets', dest='max_targets', type=bool_parser,
             help='Max target limit', default=False)
     parser.add_argument('--save', dest='save', type=str,
@@ -129,8 +130,8 @@ def calculate_spell_level(args):
             print 'current combined:', combined_condition_strength_levels
 
     area_level = convert_area(args['area'])
-    if args['choose_targets']: area_level+=1
-    if args['max_targets']: area_level*=PART
+    if args['choose_targets']: area_level+=2
+    if args['max_targets']: area_level*=HALF
     if general_debug: print 'area_level', area_level
 
     total_level = combined_condition_strength_levels+area_level
