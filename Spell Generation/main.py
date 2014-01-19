@@ -4,17 +4,17 @@ import re
 PART=0.8
 HALF=0.6
 duration_choices = ['round','short','medium','long','extreme', 'permanent']
-area_choices = ['none', 'tiny', 'normal','large_line', 'medium_radius','large_cone','large_radius']
+area_choices = ['none', 'tiny', 'normal','large_line', 'mr', 'medium_radius','large_cone','large_radius']
 range_choices = ['personal', 'touch', 'close', 'medium', 'far', 'extreme']
 condition_choices = [0,1,1.5,2,2.5,3,3.5]
 touch_attack_choices =['none','poor','1','average','2', 'ray']
 storage_file_name = 'spells.txt'
-condition_debug=True
+condition_debug=False
 general_debug=True
 damage_debug=False
 buff_debug=False
 
-default_args = {'energy': False, 'choose_targets': False, 'duration': 'short', 'max_targets': 0, 'touch_attack': 'none', 'concentration': False, 'load_name': '', 'bloodied': False, 'area': 'none', 'noncombat': False, 'alternate': False, 'damage': False, 'instantaneous': False, 'trigger': 'none', 'save': 'none', 'save_name': '', 'buff': 0, 'save_ends': False, 'casting_time': 'standard', 'limit_types': 0, 'dispellable': True, 'escapable': 0, 'condition': 0, 'healthy': False, 'sr': True, 'range': 'medium', 'dot': False}
+default_args = {'choose_targets': False, 'duration': 'short', 'max_targets': 0, 'touch_attack': 'none', 'concentration': False, 'load_name': '', 'bloodied': False, 'area': 'none', 'noncombat': False, 'alternate': False, 'damage': False, 'instantaneous': False, 'trigger': 'none', 'save': 'none', 'save_name': '', 'buff': 0, 'save_ends': False, 'casting_time': 'standard', 'limit_types': 0, 'dispellable': True, 'escapable': 0, 'condition': 0, 'healthy': False, 'sr': True, 'range': 'medium', 'dot': False}
 
 def bool_parser(value):
     if value=='0' or value=='False' or value=='false' or value=='none':
@@ -24,17 +24,17 @@ def bool_parser(value):
 #Return the arguments
 def initialize_argument_parser():
     parser = argparse.ArgumentParser(description='Spell information')
-    parser.add_argument('--damage', dest = 'damage', type=bool_parser,
+    parser.add_argument('-d', '--damage', dest = 'damage', type=bool_parser,
             help='Damage level', nargs='*', default=0)
-    parser.add_argument('--condition', nargs='*', dest='condition', type=float,
+    parser.add_argument('-c', '--condition', nargs='*', dest='condition', type=float,
             help='Condition tier', default=0, choices=condition_choices)
-    parser.add_argument('--buff', nargs='*', dest = 'buff', type=int,
+    parser.add_argument('-b', '--buff', nargs='*', dest = 'buff', type=int,
             help='Buff level', default=0)
-    parser.add_argument('--bloodied', dest = 'bloodied', type=bool_parser,
+    parser.add_argument('-o', '--bloodied', dest = 'bloodied', type=bool_parser,
             nargs='*', default=False)
     parser.add_argument('--alternate', dest = 'alternate', type=bool_parser,
             nargs='*', default=False)
-    parser.add_argument('--duration', dest = 'duration', type=str,
+    parser.add_argument('-u', '--duration', dest = 'duration', type=str,
             default='short', nargs='*',
             choices=duration_choices)
     parser.add_argument('--dispellable', dest = 'dispellable',
@@ -49,24 +49,22 @@ def initialize_argument_parser():
     parser.add_argument('--instantaneous', dest='instantaneous',
             help='Bloodied is checked only when spell is cast?',
             type=bool_parser, nargs='*', default=False) 
-    parser.add_argument('--area', dest='area', type=str,
+    parser.add_argument('-a', '--area', dest='area', type=str,
             default='none', choices=area_choices)
-    parser.add_argument('--choose_targets', dest='choose_targets',
+    parser.add_argument('-t', '--choose_targets', dest='choose_targets',
             type=bool_parser, default=False,
             help='Choose targets of area spell?')
-    parser.add_argument('--max_targets', dest='max_targets', type=bool_parser,
+    parser.add_argument('-m', '--max_targets', dest='max_targets', type=bool_parser,
             help='Max target limit', default=False)
-    parser.add_argument('--save', dest='save', type=str,
+    parser.add_argument('-s', '--save', dest='save', type=str,
             help='Saving throw type', nargs='*', default='none',
             choices=['none','half','partial','negates'])
     parser.add_argument('--sr', dest='sr', type=bool_parser,
             help='Spell resistance allowed?', default=True)
-    parser.add_argument('--limit_types', dest='limit_types', type=int,
+    parser.add_argument('-l', '--limit_types', dest='limit_types', type=int,
             help='Limit affected types?', default=0, nargs='*', choices=[0,1,2,3])
     parser.add_argument('--escapable', dest='escapable', type=int,
             help='Is the spell escapable?', default=0, choices=[0,1,2])
-    parser.add_argument('--energy', dest='energy', type=bool_parser,
-            help='Deals energy damage?', default=False)
     parser.add_argument('--noncombat', dest='noncombat', 
             type=bool_parser, help='Irrelevant in combat?',
             nargs='*', default=False)
@@ -74,14 +72,14 @@ def initialize_argument_parser():
             type=str, help='Touch attack and bab',
             nargs='*', default='none',
             choices = touch_attack_choices)
-    parser.add_argument('--healthy', dest='healthy', type=bool_parser,
+    parser.add_argument('-e', '--healthy', dest='healthy', type=bool_parser,
             help='Only affects healthy creatures?', nargs='*', default=False)
     parser.add_argument('--trigger', dest='trigger', type=str,
             help='Triggered by specific event?', default='none',
             choices=['false','immediate','no_action'])
     parser.add_argument('--casting_time', dest='casting_time', type=str,
             default='standard', choices=['standard', 'full', 'swift'])
-    parser.add_argument('--range', dest='range', type=str,
+    parser.add_argument('-r', '--range', dest='range', type=str,
             default='medium', choices=range_choices)
     parser.add_argument('--save_name', dest='save_name', type=str, 
             nargs='*', default='')
@@ -125,13 +123,23 @@ def calculate_spell_level(args):
         if len(all_aspects)>1:
             added_level*=PART
 
-        combined_condition_strength_levels += added_level
+        combined_condition_strength_levels += max(1,added_level)
         if general_debug:
             print 'current combined:', combined_condition_strength_levels
 
-    area_level = convert_area(args['area'])
-    if args['choose_targets']: area_level+=2
-    if args['max_targets']: area_level*=HALF
+    #Use different calculations if it is a buff-only spell
+    if 'damage' in all_aspects or 'condition' in all_aspects:
+        area_level = convert_area(args['area'])
+        #adding max targets shouldn't affect small areas.
+        if args['max_targets'] and area_level>=2:
+            area_level= max (area_level*HALF,2)
+        if args['choose_targets']: area_level+=1
+    else:
+        area_level = convert_area_buff(args['area'])
+        #adding max targets shouldn't affect small areas.
+        if args['max_targets'] and area_level>=2:
+            area_level= max (area_level*HALF,2)
+        #all buffs are assumed to choose targets - not added separately 
     if general_debug: print 'area_level', area_level
 
     total_level = combined_condition_strength_levels+area_level
@@ -141,8 +149,8 @@ def calculate_spell_level(args):
         if args['trigger']: total_level*=1.5
     if args['buff']:
         total_level+= convert_range_buff(args['range'])
-    elif args['area']!='none':
-        total_level+=convert_range_aoe(args['range'])
+    #elif args['area']!='none':
+    #    total_level+=convert_range_aoe(args['range'])
     else:
         total_level += convert_range(args['range'])
     if general_debug: print 'total_level', total_level
@@ -175,8 +183,7 @@ def is_list(value):
 
 def calculate_damage(args):
     if damage_debug: print 'Calculating damage aspect' 
-    effect_level = 5
-    if args['energy']: effect_level-=1
+    effect_level = 4
 
     if args['dot']:
         duration_level = convert_duration_damage(
@@ -227,7 +234,7 @@ def calculate_condition(args):
     if args['condition']==1: duration_level*=2
     elif args['condition']==1.5: duration_level*=1.5
     if args['concentration']: duration_level*=HALF
-    if args['save_ends']: duration_level*=HALF
+    if args['save_ends']: duration_level*=PART
     if args['bloodied'] and args['instantaneous']: duration_level*=PART
     if condition_debug: print 'duration_level', duration_level
 
@@ -252,6 +259,8 @@ def calculate_condition(args):
             strength_level*=HALF
     #area
     if not (args['area']=='none' or args['area']=='tiny'):
+        #damage spells decrease in damage when they become AOE
+        #condition spells also need similar mitigation in addition to area cost.
         strength_level*=1.25
     if args['escapable']==1:
         strength_level*=PART
@@ -287,17 +296,21 @@ def convert_duration_damage(duration):
     return switch(duration, duration_choices, [0.5,2, 3, 4, 5, 7])
 
 def convert_area(area):
-    print 'derp'
-    #area_choices = ['none', 'tiny', 'normal','large_line', 'medium_radius','large_cone','large_radius']
-    return switch(area, area_choices, [0,0,0,1,2,3,4])
+    #area_choices = ['none', 'tiny', 'normal','large_line', 'mr', 'medium_radius','large_cone','large_radius']
+    return switch(area, area_choices, [0,1,2,3,4,4,5,6])
+
+def convert_area_buff(area):
+    return switch(area, area_choices, [0,2,2,2.5,3,3,3.5,4])
 
 def convert_range(spell_range):
     #range_choices = ['personal', 'touch', 'close', 'medium', 'far', 'extreme']
     return switch(spell_range, range_choices, [-2,-2,-1,0,1,2])
 
+"""
 def convert_range_aoe(spell_range):
     #range_choices = ['personal', 'touch', 'close', 'medium', 'far', 'extreme']
     return switch(spell_range, range_choices, [0,0,1,2,3,4])
+"""
 
 def convert_range_buff(spell_range):
     #range_choices = ['personal', 'touch', 'close', 'medium', 'far', 'extreme']
