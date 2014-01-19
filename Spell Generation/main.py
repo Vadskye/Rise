@@ -147,10 +147,8 @@ def calculate_spell_level(args):
     if not args['trigger']=='none':
         if args['trigger']=='no_action': total_level+=1
         if args['trigger']: total_level*=1.5
-    if args['buff']:
+    if 'buff' in all_aspects:
         total_level+= convert_range_buff(args['range'])
-    #elif args['area']!='none':
-    #    total_level+=convert_range_aoe(args['range'])
     else:
         total_level += convert_range(args['range'])
     if general_debug: print 'total_level', total_level
