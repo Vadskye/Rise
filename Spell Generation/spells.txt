@@ -214,3 +214,127 @@ Fireball
 {'energy': True, 'damage': [True], 'save_name': ['Fireball'], 'area': 'normal'}
 Spell Level: 3
 
+Fog Cloud
+{'condition': [3.5], 'escapable': 2, 'save_name': ['Fog', 'Cloud'], 'area': 'medium_radius'}
+Spell Level: 2.5
+
+Forcecage
+{'limit_types': [1], 'save_name': ['Forcecage'], 'dispellable': [False], 'duration': ['long'], 'save': ['negates'], 'condition': [1.5]}
+Spell Level: 7.26
+
+Resilient Sphere
+{'condition': [1.5], 'save': ['negates'], 'limit_types': [2], 'dispellable': [False], 'save_name': ['Resilient', 'Sphere']}
+Spell Level: 4.2
+
+Resilient Sphere
+{'condition': [1.5], 'save': ['negates'], 'limit_types': [1], 'dispellable': [False], 'save_name': ['Resilient', 'Sphere']}
+Spell Level: 5.64
+
+Foresight
+{'duration': ['long', 'short', 'short', 'short'], 'range': 'touch', 'save_name': ['Foresight'], 'buff': [6, 2, 1, 1]}
+Spell Level: 9.1
+
+Freedom
+{'range': 'close', 'save_name': ['Freedom'], 'buff': [6]}
+Spell Level: 4
+
+Harm
+{'touch_attack': ['2'], 'damage': [True, False], 'range': 'touch', 'save_name': ['Harm'], 'dispellable': [False], 'duration': ['long'], 'condition': [0.0, 2.5]}
+Spell Level: 6.48
+
+Heroism,Greater
+{'range': 'close', 'save_name': ['Heroism,Greater'], 'buff': [4, 2, 2, 1]}
+Spell Level: 6.4
+
+Hideous Laughter
+{'bloodied': [True, False], 'save_ends': [True, False], 'range': 'close', 'limit_types': [2], 'save_name': ['Hideous', 'Laughter'], 'save': ['negates'], 'condition': [1.0, 3.0]}
+Spell Level: 1.58
+
+Hold Person
+{'bloodied': [True, False], 'save_ends': [True, False], 'range': 'close', 'limit_types': [2], 'save_name': ['Hold', 'Person'], 'save': ['negates'], 'condition': [1.0, 3.0]}
+Spell Level: 2.12
+
+Hold Monster
+{'bloodied': [True, False], 'save_ends': [True, False], 'limit_types': [1], 'save_name': ['Hold', 'Monster'], 'save': ['negates'], 'condition': [1.0, 3.0]}
+Spell Level: 4.344
+
+Enlarge Person, Mass
+{'area': 'medium_radius', 'choose_targets': True, 'limit_types': [1], 'max_targets': True, 'save_name': ['Enlarge', 'Person,', 'Mass'], 'buff': [3, 3]}
+Spell Level: 7.05
+
+Command
+{'bloodied': [True, False], 'healthy': [False, True], 'limit_types': [1], 'save_name': ['Command'], 'duration': ['round', 'short'], 'save': ['negates'], 'condition': [1.0, 3.0]}
+Spell Level: 0.888
+
+Command, Mass
+{'bloodied': [True, False], 'area': 'mr', 'healthy': [False, True], 'condition': [1.0, 3.0], 'choose_targets': True, 'limit_types': [1], 'save_name': ['Command,', 'Mass'], 'duration': ['round', 'short'], 'save': ['negates'], 'max_targets': True}
+Spell Level: 4.86
+
+Good Hope
+{'area': 'normal', 'instantaneous': [True], 'range': 'touch', 'max_targets': True, 'save_name': ['Good', 'Hope'], 'buff': [2, 2]}
+Spell Level: 2.7
+
+Imprisonment
+{'bloodied': [True, False, False], 'damage': [False, False, True], 'instantaneous': [True], 'range': 'close', 'condition': [1.0, 2.0, 0.0], 'duration': ['short', 'short', 'long'], 'save': ['negates'], 'save_name': ['Imprisonment']}
+Spell Level: 9.76
+
+Insanity
+{'touch_attack': ['2'], 'bloodied': [True, False], 'healthy': [False, True], 'range': 'touch', 'limit_types': [1], 'condition': [1.5, 3.0], 'dispellable': [False], 'duration': ['permanent'], 'save': ['negates'], 'save_name': ['Insanity']}
+Spell Level: 6.421
+
+Invisibility Sphere
+{'range': 'touch', 'buff': [5], 'save_name': ['Invisibility', 'Sphere'], 'area': 'normal'}
+Spell Level: 5.75
+
+Mage Armor
+{'duration': ['long'], 'range': 'personal', 'save_name': ['Mage', 'Armor'], 'buff': [2]}
+Spell Level: 1
+
+Magic Circle against Evil
+{'range': 'touch', 'buff': [2, 2, 1], 'save_name': ['Magic', 'Circle', 'against', 'Evil'], 'area': 'normal'}
+Spell Level: 5.5
+
+Magic Vestment
+{'duration': ['medium'], 'range': 'close', 'save_name': ['Magic', 'Vestment'], 'buff': [2]}
+Spell Level: 1
+
+Maze
+{'range': 'close', 'save': ['partial'], 'condition': [1.5], 'save_name': ['Maze']}
+Spell Level: 7.6
+
+Phantom Maze
+{'range': 'close', 'save': ['negates'], 'limit_types': [1], 'condition': [1.5, 3.0], 'save_name': ['Phantom', 'Maze']}
+Spell Level: 5.99
+
+Polar_Ray
+{'touch_attack': ['ray'], 'bloodied': [True, False, False], 'healthy': [False, True, False], 'damage': [False, False, True], 'range': 'close', 'condition': [1.0, 2.0, 0.0], 'save_name': ['Polar_Ray']}
+Spell Level: 8.56
+
+Power Word blind
+{'healthy': [False, True], 'range': 'close', 'condition': [1.5, 3.0], 'save_name': ['Power', 'Word', 'blind'], 'bloodied': [True, False]}
+Spell Level: 6.9
+
+Power Word Kill
+{'bloodied': [True, False], 'healthy': [False, True], 'instantaneous': [True], 'range': 'close', 'limit_types': [1], 'save_name': ['Power', 'Word', 'Kill'], 'duration': ['long', 'short'], 'condition': [1.0, 3.0]}
+Spell Level: 9.68
+
+Power Word Confuse
+{'bloodied': [True, False], 'healthy': [False, True], 'instantaneous': [True], 'range': 'close', 'limit_types': [1], 'save_name': ['Power', 'Word', 'Confuse'], 'condition': [1.5, 3.0]}
+Spell Level: 5.0
+
+Power Word Stun
+{'bloodied': [True, False], 'healthy': [False, True], 'instantaneous': [True], 'range': 'close', 'limit_types': [1], 'save_name': ['Power', 'Word', 'Stun'], 'condition': [1.0, 3.0]}
+Spell Level: 6.8
+
+Spider Climb
+{'duration': ['medium'], 'range': 'touch', 'save_name': ['Spider', 'Climb'], 'buff': [3]}
+Spell Level: 1.5
+
+Sunbeam
+{'area': 'large_line', 'damage': [True, False], 'range': 'touch', 'save_name': ['Sunbeam'], 'save': ['negates'], 'condition': [0.0, 3.0]}
+Spell Level: 4.4
+
+Sunburst
+{'save': ['negates'], 'condition': [0.0, 3.0], 'damage': [True, False], 'save_name': ['Sunburst'], 'area': 'mr'}
+Spell Level: 7.4
+
