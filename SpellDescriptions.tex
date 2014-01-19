@@ -4013,6 +4013,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \end{spellhealthy}
 \begin{spellblood}
   The struck target takes damage and is frozen solid, causing it to be paralyzed for 5 rounds.
+\end{spellblood}
 \begin{spellnotes}
    A slowed creature can take only a single move action or standard action each turn, but not both. Additionally, it takes a \minus2 penalty to attack rolls, Strength and Dexterity-based skill checks, and armor class.
 
@@ -5837,13 +5838,13 @@ If you take life damage, you lose all temporary hit points provided by this spel
   If you succeed on a melee touch attack, the subject is slowed for a \durshort duration.
 \end{spelleffect}
 \begin{spellblood}
-  As the healthy effect, and the subject into a state of suspended animation unless it makes a successful Will save. For the creature, time ceases to flow and its condition becomes fixed. The creature does not grow older. Its body functions virtually cease, and no force or effect can harm it. This state persists until the magic is removed (such as by a successful \spell{dispel magic} spell or an \spell{emancipation} spell).
+  In addition, the subject is placed into a state of suspended animation unless it makes a successful Will save. For the creature, time ceases to flow and its condition becomes fixed. The creature does not grow older. Its body functions virtually cease, and no force or effect can harm it. This state persists until the magic is removed (such as by a successful \spell{dispel magic} spell or an \spell{emancipation} spell).
 \end{spellblood}
 
-\spellsection{Terror}
+\spellsection{Power Word Fear}
 \spell{You fill your foe with an inescapable fear, forcing it to flee from your presence.}
 \spellschool{Enchantment (Emotion) [Fear, Mind-Affecting]}
-\spelllvl{Ench 7}
+\spelllvl{Sor/Wiz 6}
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{\durshort}
@@ -5876,13 +5877,13 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsection{Totemic Mind}
 \spellschool{Transmutation (Imbuement)}
 \spelllvl{Brd 2, Clr 2, Drd 2, Sor/Wiz 2}
-\spellrng{Touch}
-\spelltgt{Creature touched}
+\spellrng{\rngclose}
+\spelltgt{One creature}
 \spelldur{\durshort}
 \spellsave{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  This spell grants creatures the mental power of a totem animal. It has three forms, each of which grants a \plus2 bonus to a mental attribute score. \bonusscalingdescription Spellcasters do not gain bonus spells due to the increased attribute score.
+  This spell grants creatures the mental power of a totem animal. It has three forms, each of which grants a \plus2 bonus to a mental attribute score. \bonusscalingdescription
   \par \subspell{Eagle's Splendor} The transmuted creature becomes more persuasive and personally forceful, gaining a bonus to Charisma.
   \par \subspell{Fox's Cunning} The transmuted creature becomes smarter, gaining a bonus to Intelligence.
   \par \subspell{Owl's Wisdom} The transmuted creature becomes more perceptive, gaining a bonus to Wisdom.
@@ -5901,8 +5902,8 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsection{Totemic Power}
 \spellschool{Transmutation (Imbuement)}
 \spelllvl{Clr 2, Drd 2, Sor/Wiz 2, Strength 2}
-\spellrng{Touch}
-\spelltgt{Creature touched}
+\spellrng{\rngclose}
+\spelltgt{One creature}
 \spelldur{\durshort}
 \spellsave{Fortitude negates (harmless)}
 \spellsr{Yes (Fortitude)}
@@ -5926,9 +5927,9 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsection{Touch of Idiocy}
 \spellschool{Enchantment (Inhibition) [Mind-Affecting]}
 \spelllvl{Sor/Wiz 2}
-\spellrng{Touch}
-\spelltgt{Living creature touched}
-\spelldur{\durlong}
+\spellrng{\rngclose}
+\spelltgt{One creature}
+\spelldur{\durshort}
 \spellsave{Will half}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
@@ -5941,26 +5942,9 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsection{Transfer Suffering}
 \spellschool{Necromancy (Life) [Healing]}
 \spelllvl{Necro 4}
-\spellrng{Close}
-\spelleff{Ray}
-\spelldmg{8d8 life damage \add d8 per two caster levels above 8th}
-\begin{spelleffect}
-  This spell functions like \spell{lesser transfer suffering}, except that it deals more damage and affects a target struck by a ray.
-\end{spelleffect}
-\begin{spellnotes}
-  If the ray misses, you are do not heal any damage.
-\end{spellnotes}
-
-\spellsectioncomma{Transfer Suffering}{Lesser}
-\spelldmg{You transfer the wounds that you have taken to your foe, forcing it to suffer in your stead.}
-\spellschool{Necromancy (Life) [Healing]}
-\spelllvl{Necro 2}
 \spellrng{Touch}
-\spelltgt{Living creature touched}
-\spelldur{Instantaneous}
-\spellsave{Will half}
-\spellsr{Yes (Will)}
-\spelldmg{4d6 life damage \add d6 per two caster levels above 4th}
+\spelltgt{One creature}
+\spelldmg{8d6 life damage \add d8 per two caster levels above 8th}
 \begin{spelleffect}
   The touched creature takes damage, and you immediately regain hit points equal the amount of damage you transfer. You cannot transfer more damage than you have taken, and you cannot use this spell to gain hit points in excess of your full normal total.
 \end{spelleffect}
@@ -5985,9 +5969,10 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelldur{\durshort/Instantaneous}
 \spellsave{Fortitude negates (object); see text}
 \spellsr{Yes (Fortitude)}
+\spelldmg{3d8 damage per round; see text}
 \begin{spelleffect}
   This spell has different effects depending on the version chosen.
-  \par \subspell{Flesh to Stone} The subject is slowed for the duration of the spell, and takes 2d6 physical damage each round as its body gradually turns to stone. A Fortitude save negates this effect. If the subject reaches 0 hit points before the spell ends, it becomes a mindless, inert statue, along with all its carried gear. If the statue resulting from this effect is broken or damaged, the subject (if ever returned to its original state) has similar damage or deformities. The creature is not dead, but it is not considered alive either.
+  \par \subspell{Flesh to Stone} The subject is slowed for the duration of the spell, and takes 3d8 physical damage each round as its body gradually turns to stone. A Fortitude save negates this effect. If the subject reaches 0 hit points before the spell ends, it becomes a mindless, inert statue, along with all its carried gear. If the statue resulting from this effect is broken or damaged, the subject (if ever returned to its original state) has similar damage or deformities. The creature is not dead, but it is not considered alive either.
   \par Only creatures made of flesh are affected by this effect.
   \par \subspell{Stone to Flesh} This effect restores a petrified creature to its normal state, restoring life and goods. The creature must make a DC 15 Fortitude save to survive the process. Any petrified creature, regardless of size, can be restored. A restored creature has as many hit points as it had when it was petrified. Stone which was not originally a petrified creature is unaffected.
 \end{spelleffect}
@@ -6012,7 +5997,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelltgt{You}
 \spelldur{Concentration}
 \begin{spelleffect}
-  You gain tremorsense. If you are touching a surface, you can automatically pinpoint the location of anything within the area of the spell that is in contact with the surface, including inanimate objects.
+  You gain the tremorsense ability. If you are touching a surface, you can automatically pinpoint the location of anything within the area of the spell that is in contact with the surface, including inanimate objects.
 \end{spelleffect}
 \begin{spellnotes}
   Tremorsense functions on surfaces of any kind, regardless of lighting conditions.
@@ -6083,13 +6068,14 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsection{Unholy Blight}
 \spellschool{Evocation (Channeling) [Evil]}
 \spelllvl{Evil 4}
-\spellarea{\areamed radius burst centered on you}
-\spelldur{Instantaneous}
+\spellrng{\rngmed}
+\spelltgt{One creature}
+\spelldur{Instantaneous/5 rounds}
 \spellsave{Will half/Will negates}
 \spellsr{Yes (Will)}
-\spelldmg{4d6 divine damage \add d6 per four caster levels above 8th}
+\spelldmg{8d6 divine damage \add d6 per two caster levels above 8th}
 \begin{spelleffect}
-  Nonevil creatures in the area take damage and are sickened, making them vulnerable for 5 rounds. A successful Will save reduces the damage by half and negates the sickening.
+  If the target is not evil, it takes damage and is sickened for 5 rounds, making it vulnerable. A successful Will save halves the damage.
 \end{spelleffect}
 \begin{spellnotes}
   A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
@@ -6107,18 +6093,13 @@ If you take life damage, you lose all temporary hit points provided by this spel
   The subject gains the ability to ``see'' any living creatures within 60 feet perfectly, regardless of lighting conditions, physical barriers, invisibility, or any other means of concealment.
 \end{spelleffect}
 
-\spellsection{Unliving Heart}
-\begin{spelleffect}
-  The subject 
-\end{spelleffect}
-
-
+%gaining full temp HP would be level 5
 \spellsection{Vampiric Touch}
 \spellschool{Necromancy (Life)}
-\spelllvl{Death 3, Necro 3}
+\spelllvl{Necro 3}
 \spellrng{Touch}
 \spelltgt{Living creature touched}
-\spelldur{Instantaneous/1 hour; see text}
+\spelldur{Instantaneous/\durmed}
 \spellsave{Will half}
 \spellsr{Yes (Will)}
 \spelldmg{6d8 life damage \add d8 per two caster levels above 6th}
@@ -6174,6 +6155,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \end{spellnotes}
 \end{comment}
 
+%complicated
 \spellsection{Wail of the Banshee}
 \spelldesc{You emit a terrible scream that kills anyone that hears it.}
 \spellschool{Necromancy (Life) [Death, Sound-Dependent]}
@@ -6205,7 +6187,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelldmg{5d6 \add d6 per four caster levels above 10th; see text}
 \begin{spelleffect}
   An immobile, blazing curtain of shimmering violet fire springs into existence. The wall deals damage to any creature passing through it. A successful Reflex save halves this damage. In addition, the wall radiates heat, dealing 2d6 points of fire damage to creatures within 10 feet and 1d6 points of fire damage to those past 10 feet but within 20 feet. No save is allowed against this damage. The wall deals this damage at the start of each of your turns to All creatures within the area.
-  \par If you evoke the wall so that it appears where creatures are, each creature takes damage as if passing through the wall, except that a successful Reflex save negates the damage and allows the creature to choose which side of the wall to appear on. If any 5-foot length of wall takes 20 points of cold damage or more in 1 round, that length goes out. (Do not divide cold damage by 4, as normal for objects.)
+  \par If you evoke the wall so that it appears where creatures are, each creature takes damage as if passing through the wall. If any 5-foot length of wall takes 20 points of cold damage or more in 1 round, that length goes out.
 \end{spelleffect}
 \begin{spellnotes}
   \spellindirect{wall of fire}{Wall of fire} can be made permanent with a \spell{permanency} ritual. A permanent \spell{wall of fire} that is extinguished by cold damage becomes inactive for 10 minutes, then reforms at normal strength.
@@ -6289,7 +6271,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsave{Will negates (object)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  You cause wood to bend and warp, permanently destroying its straightness, form, and strength. A warped door springs open (or becomes stuck, requiring a Strength check to open, at your option). A boat or ship springs a leak. Warped ranged weapons are useless. A warped melee weapon causes a \minus4 penalty on attack rolls.
+  You cause wood to bend and warp, permanently destroying its straightness, form, and strength. A warped door springs open (or becomes stuck, requiring a Strength check to open, at your option). A boat or ship springs a leak. Warped ranged weapons are useless. A warped melee weapon imposes a \minus4 penalty on attack rolls.
   \par You may warp one Small or smaller object or its equivalent per caster level. A Medium object counts as two Small objects, a Large object as four, a Huge object as eight, a Gargantuan object as sixteen, and a Colossal object as thirty-two.
   \par Alternatively, you can unwarp wood (effectively warping it back to normal) with this spell, straightening wood that has been warped by this spell or by other means. \spellindirect{make whole}{Make whole}, on the other hand, does no good in repairing a warped item.
 \end{spelleffect}
@@ -6299,7 +6281,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 
 \spellsection{Water Walk}
 \spellschool{Transmutation (Imbuement) [Water]}
-\spelllvl{Druid 3, Water 2}
+\spelllvl{Druid 3, Water 3}
 \spellrng{Touch}
 \spelltgts{Creature touched/level}
 \spelldur{\durlong (D)}
@@ -6313,12 +6295,12 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsection{Waves of Exhaustion}
 \spellschool{Necromancy (Flesh)}
 \spelllvl{Sor/Wiz 8, War 8}
-\spellarea{\areamed cone-shaped burst}
+\spellarea{\arealarge cone-shaped burst}
 \spelldur{\durshort}
-\spellsave{No}
+\spellsave{Fortitude partial}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
-  Living creatures in the area are exhausted. This spell has no effect on a creature that is already exhausted.
+  Living creatures in the area are exhausted. A successful Fortitude save causes a creature to be fatigued instead. This spell has no effect on a creature that is already exhausted.
 \end{spelleffect}
 
 \spellsection{Waves of Fatigue}
@@ -6362,27 +6344,28 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \end{spelleffect}
 
 \spellsection{Windstrike}
-\spelldesc{You command the air to bludgeon the target with tremendous force.}
+\spelldesc{You command the air to bludgeon the target, sending it flying.}
 \spellschool{Evocation (Control) [Air]}
 \spelllvl{Air 2, Drd 2}
-\spellrng{\rngclose}
+\spellrng{\rngmed}
 \spelltgt{One creature or object}
 \spelldur{Instantaneous}
 \spellsave{Fortitude half}
 \spellsr{Yes (Fortitude)}
 \spelldmg{4d6 bludgeoning damage \add d6 per two levels after 4th}
 \begin{spelleffect}
-  The target takes damage from the powerful winds. A Fortitude save halves the damage.
+  The target takes damage from the powerful winds. A successful Fortitude save halves the damage. In addition, you may make a bull rush attack with a bonus equal to your caster level \add your casting attribute. If you succeed, you may have the wind bull rush the target in any direction -- even vertically. Moving the target up takes twice as much movement as moving the target horizontally.
 \end{spelleffect}
 
 \spellsection{Windstrike, Greater}
 \spelldesc{You command the air to bludgeon the target with tremendous force, sending it flying.}
 \spellschool{Evocation (Control) [Air]}
 \spelllvl{Air 5, Drd 5}
-\spellrng{\rngmed}
 \spelldmg{10d6 bludgeoning damage \add d6 per two levels after 10th}
 \begin{spelleffect}
-  This spell functions like \spell{windstrike}, except that it deals more damage from farther away, and the target may be sent flying. You make a bull rush attack with a bonus equal to your caster level \add your casting attribute \add 4 (the wind is treated as a Large creature). If you succeed, you may have the wind bull rush the target in any direction -- even vertically. Moving the target up takes twice as much movement as moving the target horizontally.
+  This spell functions like \spell{windstrike}, except that the bull rush is much more powerful. You make a bull rush attack with a bonus equal to your caster level \add your casting attribute \add 12, treating the wind as a Gargantuan creature.
+  
+  If you succeed, you knock the target prone and may have the wind bull rush the target in any direction -- even vertically. Moving the target up does not require more movement than moving the target horizontally.
 \end{spelleffect}
 
 \spellsection{Wish}
@@ -6412,8 +6395,8 @@ If you take life damage, you lose all temporary hit points provided by this spel
     \item Transport travelers. A wish can lift one creature per caster level from anywhere on any plane and place those creatures anywhere else on any plane regardless of local conditions. An unwilling target gets a Will save to negate the effect, and spell resistance (if any) applies.
     \item Undo misfortune. A wish can undo a single recent event. The wish forces a reroll of any roll made within the last round (including your last turn). Reality reshapes itself to accommodate the new result. For example, a wish could undo an opponent's successful save, a foe's successful critical hit (either the attack roll or the critical roll), a friend's failed save, and so on. The reroll, however, may be as bad as or worse than the original roll. An unwilling target gets a Will save to negate the effect, and spell resistance (if any) applies.
   \end{itemize*}
-  \par When casting a wish, you do not specify the exact spell or effect you wish to duplicate. Instead, you make a wish, describing what you want to have happen, and make a DC 15 Wisdom check. If the check fails, your intent is redirected or perverted in some way. For example, a wish to turn a foe to stone would normally mimic the flesh to stone effect of the transmute flesh and stone spell. However, if the Wisdom check failed, your foe might gain the benefit of a stoneskin spell instead.
-  \par You may try to use a wish to produce greater effects than these, but doing so is dangerous. The DC of the Wisdom check increases to 20, and the negative consequences for failing the check increase in proportion to the potency of the effect you try to create.
+  \par When casting a wish, you do not specify the exact spell or effect you wish to duplicate. Instead, you make a wish, describing what you want to have happen, and make a DC 20 Wisdom check. If the check fails, your intent is redirected or perverted in some way. For example, a wish to turn a foe to stone would normally mimic the flesh to stone effect of the transmute flesh and stone spell. However, if the Wisdom check failed, your foe might gain the benefit of a stoneskin spell instead.
+  \par You may try to use a wish to produce greater effects than these, but doing so is dangerous. The DC of the Wisdom check increases to 25, and the negative consequences for failing the check increase in proportion to the potency of the effect you try to create.
 \end{spelleffect}
 \begin{spellnotes}
   Duplicated spells allow saves and spell resistance as normal.
@@ -6459,20 +6442,20 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellrng{Unlimited}
 \spelltgt{You}
 \begin{spelleffect}
-  This spell teleports you instantly back to your sanctuary when the word is uttered. You must designate the sanctuary when you ready the spell for the day, and it must be a very familiar place. The actual point of arrival is a designated area no larger than 10 feet by 10 feet. You can be transported any distance within a plane but cannot travel between planes. You can transport, in addition to yourself, any objects you carry, as long as their weight doesn't exceed your maximum load. Exceeding this limit causes the spell to fail.
+  This spell teleports you instantly back to your sanctuary. You must designate the sanctuary when you ready the spell for the day, and it must be a very familiar place. The actual point of arrival is a designated area no larger than 10 feet by 10 feet. You can be transported any distance within a plane but cannot travel between planes. You can transport, in addition to yourself, any objects you carry, as long as their weight doesn't exceed your maximum load. Exceeding this limit causes the spell to fail.
 \end{spelleffect}
 
 \spellsection{Zephyr Blade}
 \spelldesc{You imbue a weapon with the power of the wind, allowing it to manipulate air currents as it strikes.}
 \spellschool{Evocation/Transmutation (Control, Imbuement)}
-\spelllvl{Air 2, Drd 2}
+\spelllvl{Air 3, Drd 3}
 \spellrng{Touch}
 \spelltgt{Touched melee weapon}
-\spelldur{\durmed}
+\spelldur{\durshort}
 \spellsave{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The affected weapon gains an additional five feet of reach, extending the wielder's threatened area. Attacks outside the weapon's normal range deal half damage, but are otherwise treated exactly as if the wielder was attacking with the weapon normally.
+  This spell functions as \spell{magic weapon}, except that the affected weapon also gains an additional five feet of reach, extending the wielder's threatened area. Attacks outside the weapon's normal range deal half damage, but are otherwise treated exactly as if the wielder was attacking with the weapon normally.
 \end{spelleffect}
 \begin{spellnotes}
   Despite the name of the spell, it can affect melee weapons of any type, even reach weapons. The weapon's extended reach is visible, and opponents can defend themselves normally against the attacks.
@@ -6501,7 +6484,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsection{Zone of Truth}
 \spellschool{Enchantment (Inhibition) [Mind-Affecting]}
 \spelllvl{Clr 2, Law 2, Pal 2}
-\spellrng{\rngclose}
+\spellrng{\rngmed}
 \spellarea{\areamed radius emanation}
 \spelldur{\durmed}
 \spellsave{Will negates}
