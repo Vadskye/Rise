@@ -370,3 +370,15 @@ Windstrike, Greater
 {'duration': ['round'], 'condition': [0.0, 2.0], 'damage': [True, False], 'save_name': ['Windstrike,', 'Greater']}
 Spell Level: 5.0
 
+Phantasmal Killer
+{'bloodied': [True, False], 'limit_types': [3, 1], 'save_name': ['Phantasmal', 'Killer'], 'duration': ['long', 'short'], 'save': ['negates'], 'condition': [1.0, 3.0]}
+Spell Level: 4.488
+
+Weird
+{'bloodied': [True, False], 'area': 'mr', 'condition': [1.0, 3.0], 'choose_targets': True, 'limit_types': [3, 1], 'save_name': ['Weird'], 'duration': ['long', 'short'], 'save': ['negates'], 'max_targets': True}
+Spell Level: 9.76
+
+Bestow Curse
+{'alternate': [True], 'range': 'close', 'save_name': ['Bestow', 'Curse'], 'dispellable': [False], 'duration': ['permanent'], 'save': ['negates'], 'condition': [2.0]}
+Spell Level: 5.0
+
