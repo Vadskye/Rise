@@ -338,3 +338,35 @@ Sunburst
 {'save': ['negates'], 'condition': [0.0, 3.0], 'damage': [True, False], 'save_name': ['Sunburst'], 'area': 'mr'}
 Spell Level: 7.4
 
+Temporal Stasis
+{'touch_attack': ['1'], 'bloodied': [True, False], 'range': 'touch', 'save_name': ['Temporal', 'Stasis'], 'duration': ['long', 'short'], 'save': ['negates', 'none'], 'condition': [1.0, 2.0]}
+Spell Level: 8.504
+
+Vampiric Touch
+{'duration': ['medium'], 'range': 'touch', 'damage': [True, False], 'save_name': ['Vampiric', 'Touch'], 'buff': [0, 2]}
+Spell Level: 3.9
+
+Vampiric Touch
+{'damage': [True, False], 'range': 'touch', 'limit_types': [0, 2], 'duration': ['medium'], 'save_name': ['Vampiric', 'Touch'], 'buff': [0, 2]}
+Spell Level: 3.3
+
+Waves of Exhaustion
+{'range': 'touch', 'save': ['partial'], 'condition': [2.0], 'save_name': ['Waves', 'of', 'Exhaustion'], 'area': 'large_cone'}
+Spell Level: 8.0
+
+Windstrike
+{'duration': ['round'], 'save': ['partial'], 'condition': [0.0, 3.0], 'damage': [True, False], 'save_name': ['Windstrike']}
+Spell Level: 2
+
+Windstrike
+{'duration': ['round'], 'save': ['partial'], 'condition': [0.0, 2.0], 'damage': [True, False], 'save_name': ['Windstrike']}
+Spell Level: 4.2
+
+Windstrike
+{'duration': ['round'], 'condition': [0.0, 2.0], 'damage': [True, False], 'save_name': ['Windstrike']}
+Spell Level: 5.0
+
+Windstrike, Greater
+{'duration': ['round'], 'condition': [0.0, 2.0], 'damage': [True, False], 'save_name': ['Windstrike,', 'Greater']}
+Spell Level: 5.0
+
