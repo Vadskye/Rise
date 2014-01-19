@@ -716,7 +716,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{Instantaneous/5 rounds}
-\spellsave{Will half}
+\spellsave{None/Will half}
 \spellsr{Yes (Will)}
 \spelldmg{8d6 divine damage \add d6 per two caster levels above 8th}
 \begin{spelleffect}
@@ -752,7 +752,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsectioncomma{Charm Person}{Mass}
 \spelldesc{You manipulate the minds of many people so they think of you as a trusted friend and ally.}
 \spellschool{Enchantment (Emotion) [Charm, Mind-Affecting]}
-\spelllvl{Brd 6, Ench 7}
+\spelllvl{Brd 5, Ench 6}
 \spellarea{\areamed radius}
 \spelltgts{Five humanoid creatures within the area}
 \begin{spelleffect}
@@ -904,21 +904,21 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelllvl{Drd 2, Sor/Wiz 2}
 \spellarea{\areamed cone-shaped burst}
 \spelldur{Instantaneous and 1 round}
-\spellsave{Reflex half/Reflex negates}
+\spellsave{None/Reflex half}
 \spellsr{Yes (Reflex)}
 \spelldmg{2d6 cold damage \add d6 per four caster levels above 4th.}
 \begin{spelleffect}
-  Everything in the area takes damage. Creatures damaged by the spell are fatigued for 1 round. A successful Reflex save halves the damage and negates the fatigue.
+  Everything in the area takes damage. Creatures damaged by the spell are fatigued for 1 round.
 \end{spelleffect}
 
 \spellsection{Cone of Cold}
 \spelldesc{You create an area of extreme cold that drains heat from creatures in the area, diminishing their ability to move and fight.}
 \spellschool{Evocation (Energy) [Cold]}
-\spelllvl{Drd 5, Sor/Wiz 5, Water 6}
+\spelllvl{Drd 5, Sor/Wiz 5}
 \spellsave{Reflex half/None}
 \spelldmg{5d6 cold damage \add d6 per four caster levels above 10th.}
 \begin{spelleffect}
-  This spell functions as \spell{lesser cone of cold}, except that affected creatures are fatigued for 5 rounds whether or not they fail their Reflex save.
+  This spell functions as \spell{lesser cone of cold}, except that affected creatures are fatigued for 5 rounds.
 \end{spelleffect}
 
 \spellsectioncomma{Cone of Cold}{Greater}
@@ -954,7 +954,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsectioncomma{Confusion}{Mass}
 \spelldesc{You compel a group of creatures to act randomly, sowing confusion in your foes' ranks.}
 \spellschool{Enchantment (Compulsion) [Mind-Affecting]}
-\spelllvl{Sor/Wiz 8, Trickery 8}
+\spelllvl{Sor/Wiz 7, Trickery 7}
 \spellarea{\areamed radius limit}
 \spelltgts{Five creatures within the area}
 \begin{spelleffect}
@@ -1054,13 +1054,13 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsection{Crush Life}
 \spelldesc{You attack the life force of a single foe directly, allowing no possibility for escape.}
 \spellschool{Necromancy (Life)}
-\spelllvl{Necro 2}
+\spelllvl{Necro 1}
 \spellrng{\rngmed}
 \spelltgt{One living creature}
 \spelldur{Instantaneous}
 \spellsave{None}
 \spellsr{Yes (Fort)}
-\spelldmg{2d10 life damage \add d10 per four caster levels above 4th}
+\spelldmg{1d10 life damage \add d10 per four caster levels above 2nd}
 \begin{spelleffect}
   The target takes damage.
 \end{spelleffect}
@@ -1068,8 +1068,8 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsectioncomma{Crush Life}{Greater}
 \spelldesc{You obliterate the life force of a single foe directly, allowing no possibility for escape.}
 \spellschool{Necromancy (Life)}
-\spelllvl{Necro 5}
-\spelldmg{5d10 life damage \add d10 per four caster levels above 10th}
+\spelllvl{Necro 4}
+\spelldmg{4d10 life damage \add d10 per four caster levels above 8th}
 \begin{spelleffect}
   This spell functions like \spell{crush life}, except that the target is also sickened for 5 rounds.
 \end{spelleffect}
@@ -1283,7 +1283,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsectioncomma{Daze}{Mass}
 \spelldesc{You cloud the mind of your foes, preventing them from taking any actions.}
 \spellschool{Enchantment (Inhibition) [Mind-Affecting]}
-\spelllvl{Sor/Wiz 9}
+\spelllvl{Sor/Wiz 8}
 \spellrng{\rngmed}
 \spellarea{\areamed limit}
 \spelltgts{Five creatures within the area}
@@ -2048,7 +2048,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 
 \spellsection{Ethereal Jaunt}
 \spellschool{Conjuration (Translocation) [Planar]}
-\spelllvl{Sor/Wiz 7, Travel 7}
+\spelllvl{Sor/Wiz 5, Travel 5}
 \spellrng{\rngpers}
 \spelltgt{You}
 \spelldur{\durshort (D)}
@@ -2064,7 +2064,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelllvl{Sor/Wiz 9, Travel 9}
 \spellrng{Touch; see text}
 \spelltgts{You and one other touched creature per three levels}
-\spelldur{\durmed (D)}
+\spellsave{None}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   This spell functions like \spell{ethereal jaunt}, except that you and other willing creatures joined by linked hands (along with their equipment) become ethereal. Besides yourself, you can bring one creature per three caster levels to the Ethereal Plane. Once ethereal, the subjects need not stay together.
@@ -2103,7 +2103,9 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsave{None}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  A pale glow surrounds and outlines all creatures and objects in the area. Outlined subjects shed light as candles. Outlined creatures do not benefit from the concealment normally provided by darkness (though a 3rd-level or higher magical darkness effect functions normally), \spell{blur}, \spell{displacement}, \spell{invisibility}, or similar effects. The light is too dim to have any special effect on undead or dark-dwelling creatures vulnerable to light. The faerie fire can be blue, green, or violet, according to your choice at the time of casting. This spell does not cause any harm to the objects or creatures thus outlined.
+  A pale glow surrounds and outlines all creatures and objects in the area. Outlined subjects shed light as candles. Outlined creatures do not benefit from the concealment normally provided by darkness (though a 3rd-level or higher magical darkness effect functions normally), \spell{blur}, \spell{displacement}, \spell{invisibility}, or similar effects. Illusionary figments such as \spell{silent image} are not outlined, which may reveal them for what they are.
+  
+  The light is too dim to have any special effect on undead or dark-dwelling creatures vulnerable to light. The \spell{faerie fire} can be blue, green, or violet, according to your choice at the time of casting. This spell does not cause any harm to the objects or creatures thus outlined.
 \end{spelleffect}
 
 \spellsection{False Life}
@@ -2399,7 +2401,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsectioncomma{Freedom}{Mass}
 \spellschool{Transmutation (Imbuement)}
 \spelllvl{Clr 8, Drd 8, Travel 8}
-\spellrng{\rngclose}
+\spellrng{\rngmed}
 \spellarea{\areamed radius limit}
 \spelltgts{Five creatures within the area}
 \begin{spelleffect}
@@ -2409,15 +2411,17 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsection{Freezing Sphere}
 \spelldesc{You create a frigid globe of cold energy that streaks from your fingertips to a location you select and explodes.}
 \spellschool{Evocation (Energy) [Cold]}
-\spelllvl{Sor/Wiz 7, Water 7}
+\spelllvl{Sor/Wiz 6, Water 6}
 \spellrng{\rngmed}
 \spellarea{\areamed radius burst}
 \spelldur{Instantaneous/5 rounds; see text}
 \spellsave{Reflex half; see text}
 \spellsr{Yes (Reflex)}
-\spelldmg{7d6 cold damage \add d6 per four levels above 14th}
+\spelldmg{6d6 cold damage \add d6 per four levels above 12th}
 \begin{spelleffect}
-  Creatures in the area take damage. If the \spell{freezing sphere} strikes a body of water or a liquid that is principally water (not including water-based creatures), it freezes the liquid to a depth of 6 inches over an area equal to 100 square feet (a 10-foot square) per caster level (maximum 1,500 square feet). This ice lasts for 5 rounds. Creatures that were swimming on the surface of frozen water become trapped in the ice. Attempting to break free is a full-round action. A trapped creature must make a Strength check or an Escape Artist check against this spell's save DC to do so.
+  Creatures in the area take damage. 
+  
+  If the \spell{freezing sphere} strikes a body of water or a liquid that is principally water (not including water-based creatures), it freezes the liquid to a depth of 6 inches over an area equal to 100 square feet (a 10-foot square) per caster level (maximum 1,500 square feet). This ice lasts for 5 rounds. Creatures that were swimming on the surface of frozen water become trapped in the ice. Attempting to break free is a full-round action. A trapped creature must make a Strength check or an Escape Artist check against this spell's save DC to do so.
 \end{spelleffect}
 
 \pdfbookmark[2]{G}{SpellDescriptionsG}
@@ -2444,17 +2448,17 @@ If you take life damage, you lose all temporary hit points provided by this spel
 
 \spellsection{Ghoul Touch}
 \spellschool{Necromancy (Flesh)}
-\spelllvl{Sor/Wiz 2}
+\spelllvl{Sor/Wiz 3}
 \spellrng{\rngtouch}
-\spelltgt{Living humanoid touched}
+\spelltgt{Living creature touched}
 \spelldur{\durshort}
 \spellsave{None/Fortitude negates}
 \spellsr{Yes (Fortitude)}
-\begin{spellhealthy}
+\begin{spelleffect}
   The subject is sickened, making it vulnerable.
-\end{spellhealthy}
+\end{spelleffect}
 \begin{spellblood}
-  As the healthy effect, and the subject is paralyzed if it fails a Fortitude save. Each round that it is paralyzed, the subject can make a new saving throw. If it succeeds, it is no longer paralyzed by the spell, though it is still sickened. In addition, as long as it is paralyzed, the subject exudes a carrion stench that causes all living creatures (except you) in a \areasmall radius spread to become sickened (Fortitude negates) for 5 rounds.
+  In addition, the subject is paralyzed if it fails a Fortitude save. Each round that it is paralyzed, the subject can make a new saving throw. If it succeeds, it is no longer paralyzed by the spell, though it is still sickened. In addition, as long as it is paralyzed, the subject exudes a carrion stench that causes all living creatures (except you) in a \areasmall radius spread to become sickened (Fortitude negates) for 5 rounds.
 \end{spellblood}
 \begin{spellnotes}
   A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
@@ -2498,16 +2502,19 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsave{None}
 \spellsr{No}
 \begin{spelleffect}
-  A cloud of golden particles covers everyone and everything in the area, visibly outlining invisible things for the duration of the spell. It likewise negates the effects of blur and displacement, and reveals figments, mirror images, and projected images for what they are. All within the area at the time that the spell is cast are covered by the dust, which cannot be removed and continues to sparkle until it fades.
+  A cloud of golden particles covers everyone and everything in the area, visibly outlining invisible things for the duration of the spell. It likewise negates the effects of \spell{blur} and \spell{displacement}, and reveals illusionary figments such as \spell{silent image} for what they are. All within the area at the time that the spell is cast are covered by the dust, which continues to sparkle until it fades.
   \par Any creature covered by the dust takes a \minus40 penalty on Hide checks.
+\end{spelleffect}
+\begin{spelleffect}
+  Water and similar substances can remove the dust.
 \end{spelleffect}
 
 \spellsectioncomma{Glitterdust}{Greater}
 \spellschool{Conjuration (Creation)}
 \spelllvl{Sor/Wiz 5}
-\spellsave{None/Will negates}
+\spellsave{None}
 \begin{spelleffect}
-  This spell functions like \spell{glitterdust}, except that creatures in the area must also make Will saves or be dazzled for the duration of the spell.
+  This spell functions like \spell{glitterdust}, except that creatures in the area are also dazzled for the duration of the spell.
 \end{spelleffect}
 \begin{spellnotes}
   A dazzled creature treats everything he sees as if it had concealment (20\% miss chance), and takes a \minus4 penalty to Spot checks. He is also unable to see with darkvision.
@@ -2536,7 +2543,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \end{spellnotes}
 
 \spellsection{Good Hope}
-\spelldesc{You instill powerful hope and confidence in your ally.}
+\spelldesc{You instill powerful hope and confidence in nearby allies.}
 \spellschool{Enchantment (Compulsion) [Mind-Affecting, Morale]}
 \spelllvl{Brd 3}
 \spellarea{\areasmall radius limit centered on you}
@@ -2611,19 +2618,17 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \end{comment}
 
 \spellsection{Harm}
-\spelldesc{You fill your foe with a massive influx of negative energy, crippling its life force.}
+\spelldesc{You fill your foe with a massive influx of negative energy, crippling its body.}
 \spellschool{Necromancy (Vitalism) [Negative]}
 \spelllvl{Clr 6, Evil 6, Vitality 6, Sor/Wiz 6}
 \spellrng{\rngtouch}
 \spelltgt{Creature touched}
 \spelldur{Instantaneous}
-\spellsave{Fortitude half/Fortitude negates}
-\spellsr{Yes (Will)}
+\spellsave{Fortitude half/None}
+\spellsr{Yes (Fortitude)}
 \spelldmg{12d8 negative energy damage \add d8 per two caster levels above 12th}
 \begin{spelleffect}
-  The touched creature takes damage. In addition, it takes two points of Strength, Dexterity, and Constitution damage. A successful Will save negates the ability damage and halves the negative energy damage.
-  
-  For every 10 points of damage dealt in excess of the subject's hit points, this spell can instead inflict 1 point of critical damage.
+  The touched creature takes damage. In addition, it takes four points of Constitution damage. A successful Fortitude save halves the negative energy damage but does not mitigate the Constitution damage.
 \end{spelleffect}
 \begin{spellnotes}
   This effect can cause a creature to begin dying without being disabled first.
@@ -2631,17 +2636,6 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \begin{spellnotes}
   If used on an undead creature, \spell{harm} acts like \spell{heal}.
 \end{spellnotes}
-
-\spellsectioncomma{Harm}{Mass}
-\spelldesc{You fill your foes with a massive influx of negative energy.}
-\spellschool{Necromancy (Vitalism) [Healing, Positive]}
-\spelllvl{Clr 9, Vitality 9, Sor/Wiz 9}
-\spellrng{\rngmed}
-\spelltgts{One or more creatures in a \areamed radius}
-\spelldmg{9d6 negative energy damage \add d6 per four caster levels above 18th}
-\begin{spelleffect}
-  This spell functions like \spell{harm}, except that it affects multiple creatures.
-\end{spelleffect}
 
 \spellsection{Haste}
 \spelldesc{You accelerate your ally's motions, causing her to move and act more quickly than normal.}
@@ -2671,7 +2665,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \end{spelleffect}
 
 \spellsection{Heal}
-\spelldesc{You fill the subject with a massive influx of positive energy, restoring its life force to its fullest.}
+\spelldesc{You fill the subject with a massive influx of positive energy, restoring its body to its fullest.}
 \spellschool{Necromancy (Vitalism) [Healing, Positive]}
 \spelllvl{Clr 6, Drd 7, Good 6, Vitality 6}
 \spellrng{\rngtouch}
@@ -2690,19 +2684,8 @@ If you take life damage, you lose all temporary hit points provided by this spel
   \par If used against an undead creature, \spell{heal} instead acts like \spell{harm}.
 \end{spellnotes}
 
-\spellsectioncomma{Heal}{Mass}
-\spelldesc{You fill your allies with a massive influx of positive energy, restoring their life force to its fullest.}
-\spellschool{Necromancy (Vitalism) [Healing, Positive]}
-\spelllvl{Clr 9, Good 9, Vitality 9}
-\spellrng{\rngclose}
-\spelltgts{One or more creatures in a \areamed radius}
-\spellheal{9d6 \add d6 per four caster levels above 18th}
-\begin{spelleffect}
-  This spell functions like \spell{heal}, except that it affects multiple creatures.
-\end{spelleffect}
-
 \spellsection{Heal Mount}
-\spelldesc{You fill your mount with a massive influx of positive energy, restoring its life force to its fullest.}
+\spelldesc{You fill your mount with a massive influx of positive energy, restoring its body to its fullest.}
 \spellschool{Necromancy (Vitalism) [Healing, Positive]}
 \spelllvl{Pal 3}
 \spellcmp{V}
@@ -2749,9 +2732,9 @@ If you take life damage, you lose all temporary hit points provided by this spel
 
 \spellsectioncomma{Heroism}{Greater}
 \spellschool{Enchantment (Emotion) [Mind-Affecting, Morale]}
-\spelllvl{Brd 5, Ench 6}
+\spelllvl{Brd 6, Ench 7}
 \begin{spelleffect}
-  This spell functions like \spell{heroism}, except the subject also gains temporary hit points equal to 60 \add 2 per caster level above 12th. In addition, it is immune to fear and harmful morale effects.
+  This spell functions like \spell{heroism}, except the subject also gains temporary hit points equal to 60 \add 2 per caster level above 12th. In addition, the subject is immune to fear and hostile morale effects.
 \end{spelleffect}
 
 \spellsection{Hideous Laughter}
@@ -2763,11 +2746,11 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelldur{\durshort}
 \spellsave{Will negates}
 \spellsr{Yes (Will)}
-\begin{spellhealthy}
+\begin{spelleffect}
   The subject is bewildered, making it vulnerable.
-\end{spellhealthy}
+\end{spelleffect}
 \begin{spellblood}
-  As the healthy effect, and the subject is flat-footed and must spend a standard action each round to do nothing but laugh uncontrollably. After each time it laughs, the affected creature can attempt a new saving throw. If it succeeds, it can stop laughing, though it is still bewildered.
+  In addition, the subject is flat-footed and must spend a standard action each round to do nothing but laugh uncontrollably. After each time it laughs, the affected creature can attempt a new saving throw. If it succeeds, it can stop laughing, though it is still bewildered.
 \end{spellblood}
 \begin{spellnotes}
   A creature with an Intelligence score of \minus8 or lower is not affected. A creature whose type is different from the caster's receives a \plus4 circumstance bonus on its saving throw, because humor doesn't ``translate'' well.
@@ -2788,7 +2771,6 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsectioncomma{Hold Monster}{Mass}
 \spellschool{Enchantment (Inhibition) [Mind-Affecting]}
 \spelllvl{Sor/Wiz 9}
-\spellrng{\rngmed}
 \spellarea{\areamed radius limit}
 \spelltgts{Five creatures within the area}
 \begin{spelleffect}
@@ -2813,7 +2795,6 @@ If you take life damage, you lose all temporary hit points provided by this spel
   A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
 \end{spellnotes}
 
-%Note: doesn't follow existing formula. Need to change formula.
 \spellsectioncomma{Hold Person}{Mass}
 \spellschool{Enchantment (Inhibition) [Mind-Affecting]}
 \spelllvl{Brd 6, Clr 7, Sor/Wiz 7}
@@ -2845,13 +2826,14 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsection{Holy Smite}
 \spellschool{Evocation (Channeling) [Good]}
 \spelllvl{Good 4}
-\spellarea{\areamed radius burst centered on you}
-\spelldur{Instantaneous and 5 rounds; see text}
-\spellsave{Will half/Will negates}
+\spellrng{\rngmed}
+\spelltgt{One creature}
+\spelldur{Instantaneous/5 rounds}
+\spellsave{None/Will half}
 \spellsr{Yes (Will)}
-\spelldmg{4d6 divine damage \add d6 per four caster levels above 8th}
+\spelldmg{8d6 divine damage \add d6 per two caster levels above 8th}
 \begin{spelleffect}
-  Nongood creatures in the area take damage and are dazzled for 5 rounds. A successful Will save reduces the damage by half and negates the dazzling.
+  If the target is not good, it takes damage and is bewildered for 5 rounds. A successful Will save halves the damage.
 \end{spelleffect}
 
 \spellsection{Holy Sword}
@@ -2922,16 +2904,16 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsection{Hypnotic Pattern}
 \spelldesc{You create a twisting pattern of subtle, shifting colors that weaves through the air, fascinating creatures within it.}
 \spellschool{Enchantment/Illusion (Compulsion, Figment) [Light, Mind-Affecting]}
-\spelllvl{Brd 2, Sor/Wiz 2}
+\spelllvl{Brd 3, Sor/Wiz 3}
 \spellcmp{V (Brd only), S; see text}
 \spellrng{\rngmed}
 \spellarea{\areasmall radius spread}
 \spelleff{Colorful lights in the area}
-\spelldur{Concentration \add 2 rounds}
+\spelldur{\durshort}
 \spellsave{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  Creatures within the spell's area are fascinated.
+  Creatures within the spell's area are fascinated. Each fascinated creature stands or sits quietly, taking no actions other than to pay attention to the fascinating effect for the duration of the spell. It takes a \minus4 penalty on skill checks made as reactions, such as Listen and Spot checks. Any potential threat, such as a hostile creature approaching, allows the fascinated creature a new saving throw. Any obvious threat, such as noticing someone draw a weapon, cast a spell, or aim a ranged weapon at the fascinated creature automatically breaks the effect. A fascinated creature's ally may shake it free of the spell as a standard action.
 \end{spelleffect}
 \begin{spellnotes}
   Creatures who cannot see the lights are not affected by this spell. A wizard or sorcerer need not utter a sound to cast this spell, but a bard must perform a verbal component.
@@ -2948,12 +2930,12 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelllvl{Drd 4, Sor/Wiz 4, Water 4}
 \spellrng{\rngmed}
 \spellarea{\areasmall radius cylinder, 20 ft. high}
-\spelldur{Instantaneous and 1 round; see text}
+\spelldur{Instantaneous/1 round}
 \spellsave{None}
 \spellsr{Yes (Reflex)}
 \spelldmg{4d4 cold and bludgeoning damage \add d4 per four caster levels above 8th}
 \begin{spelleffect}
-  All creatures within the area take damage. The area of the ice storm's effect is difficult terrain until the spell ends.
+  All creatures within the area take damage. The area is difficult terrain for 1 round.
 \end{spelleffect}
 
 \spellsection{Implosion}
@@ -2985,13 +2967,11 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsave{Will negates}
 \spellsr{Yes (Will)}
 \spelldmg{18d8 physical damage \add d8 per two caster levels above 18th}
-\begin{spellhealthy}
+\begin{spelleffect}
   The target takes damage as its body is partially teleported away, and it is slowed for 5 rounds. This damage ignores hardness and damage reduction.
-\end{spellhealthy}
+\end{spelleffect}
 \begin{spellblood}
   If the creature is touching the ground, it becomes permanently entombed in a state of suspended animation (as the \spell{temporal stasis} spell) in a small sphere far beneath the surface of the earth. It remains there unless an \spell{emancipation} spell is cast at the locale where the imprisonment took place.
-
-  If the creature is not touching the ground, it instead suffers the healthy spell effect.
 \end{spellblood}
 \begin{spellnotes}
   A slowed creature can take only a single move action or standard action each turn, but not both. Additionally, it takes a \minus2 penalty to attack rolls, Strength and Dexterity-based skill checks, and armor class.
@@ -3193,7 +3173,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 
 \spellsection{Invisibility Purge}
 \spellschool{Abjuration (Negation)}
-\spelllvl{Clr 3, Sor/Wiz 3}
+\spelllvl{Clr 2, Sor/Wiz 2}
 \spellarea{\arealarge radius emanation, centered on you}
 \spelldur{\durlong (D)}
 \begin{spelleffect}
@@ -3231,8 +3211,8 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellschool{Enchantment (Compulsion) [Mind-Affecting]}
 \spelllvl{Brd 6, Ench 9}
 \spellrng{\rngclose}
-\spelltgt{One living creature}
-\spelldur{1d4\plus1 rounds}
+\spelltgt{One creature}
+\spelldur{1d4 rounds}
 \spellsave{None}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
@@ -3243,18 +3223,6 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \begin{comment}
 \subsubsection{J-L}
 \end{comment}
-
-\spellsection{Jump}
-\spellschool{Transmutation (Augment)}
-\spelllvl{Drd 1, Sor/Wiz 1, Strength 1}
-\spellrng{\rngtouch}
-\spelltgt{Creature touched}
-\spelldur{\durlong (D)}
-\spellsave{Fortitude negates (harmless)}
-\spellsr{Yes (Fortitude)}
-\begin{spelleffect}
-  The subject gains a \plus10 bonus on Jump checks.
-\end{spelleffect}
 
 \spellsection{Knock}
 \spellschool{Evocation (Control)}
@@ -3358,7 +3326,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
     \item Undo the harmful effects of many spells, such as geas/quest or insanity.
     \item Produce any other effect whose power level is in line with the above effects, such as a single creature automatically hitting on its next attack or taking a \minus5 penalty on its next saving throw.
   \end{itemize*}
-  \par When casting a limited wish, you do not specify the exact spell or effect you wish to duplicate. Instead, you make a wish, describing what you want to have happen, and make a DC 15 Wisdom check. If the check fails, your intent is redirected or perverted in some way. For example, a \spell{limited wish} to turn a foe to stone would normally mimic the flesh to stone effect of the \spell{transmute flesh and stone} spell. However, if the Wisdom check failed, your foe might gain the benefit of a \spell{stoneskin} spell instead.
+  \par When casting a limited wish, you do not specify the exact spell or effect you wish to duplicate. Instead, you make a wish, describing what you want to have happen, and make a DC 15 Wisdom check. If the check fails, your intent is redirected or perverted in some way. For example, a \spell{limited wish} to turn a foe to stone would normally mimic the \spell{flesh to stone} effect of the \spell{transmute flesh and stone} spell. However, if the Wisdom check failed, your foe might gain the benefit of a \spell{stoneskin} spell instead.
   \par A duplicated spell allows saving throws and spell resistance as normal for the spell. When a limited wish spell duplicates a spell with a material component that costs more than 1,000 gp, you must provide that component (in addition to the 1,500 gp cost for this spell).
 \end{spelleffect}
 \spellmat{A diamond worth no less than 1,500 gp (see above).}
@@ -3389,7 +3357,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsection{Locate Entity}
 \spellschool{Divination (Awareness) [Detection]}
 \spelllvl{Knowledge 6, Sor/Wiz 6}
-\spellarea{Circle, centered on you, with a 1 mile radius}
+\spellrng{\rngext}
 \spelldur{\durlong (D)}
 \begin{spelleffect}
   This spell functions as \spell{locate object}, except that it can also detect creatures, as \spell{locate creature}. When you cast this spell, you choose to locate an object or creature, following the restrictions stated in the respective location spells.
@@ -3411,7 +3379,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsection{Locate Object}
 \spellschool{Divination (Awareness) [Detection]}
 \spelllvl{Clr 2, Knowledge 2, Sor/Wiz 2}
-\spellarea{Circle, centered on you, with a 500 ft. radius}
+\spellrng{\rngfar}
 \spelldur{\durmed (D)}
 \spellsave{None}
 \spellsr{No}
@@ -3459,11 +3427,11 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelllvl{Brd 1, Sor/Wiz 1}
 \spellrng{\rngclose}
 \spelltgt{One nonmagical, unattended object weighing up to 5 lb.}
-\spelldur{Concentration}
+\spelldur{\durshort}
 \spellsave{None}
 \spellsr{No}
 \begin{spelleffect}
-  You point your finger at an object and can lift it and move it in any direction from a distance. While concentrating on the spell, you can propel the object as far as 15 feet in any direction each round, though the spell ends if the distance between you and the object ever exceeds the spell's range.
+  You point your finger at an object and can lift it and move it in any direction from a distance. By directing the spell as a swift action, you can propel the object as far as 15 feet in any direction each round, though the spell ends if the distance between you and the object ever exceeds the spell's range.
 \end{spelleffect}
 \begin{spellnotes}
   Fine manipulation, including any motion other than simply moving the object in a particular direction, is not possible with this spell.
@@ -3478,7 +3446,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsave{Will negates (object)}
 \spellsr{No}
 \begin{spelleffect}
-  All magical effects within the radius of the spell, except for those on you, are disjoined. That is, spells and spell-like effects are separated into their individual components (ending the effect as a dispel magic spell does).
+  All magical effects within the radius of the spell, except for those on you, are disjoined. That is, spells and spell-like effects are separated into their individual components (ending the effect as a \spell{dispel magic} spell does).
   \par You also have a 2\% chance per caster level of destroying an \spell{antimagic field}.
   \par You can also use this spell to target a single item. The item gets a Will save at a \minus5 penalty to avoid being permanently rendered nonmagical. Even artifacts are subject to this use of disjunction, though there is only a 1\% chance per caster level of actually affecting such powerful items. Additionally, if an artifact is destroyed, you permanently lose the ability to cast \spell{mage's disjunction}. (This ability cannot be recovered by mortal magic, not even \spell{miracle} or \spell{wish}.)
   \par \subspell{Note} Destroying artifacts is a dangerous business, and it is 95\% likely to attract the attention of some powerful being who has an interest in or connection with the device.
@@ -3515,7 +3483,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelllvl{Clr 5, Good 5, Pal 4, Sor/Wiz 5}
 \spellrng{Touch}
 \spellarea{\areasmall emanation from touched creature}
-\spelldur{\durlong (D)}
+\spelldur{\durshort (D)}
 \spellsave{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
@@ -3578,11 +3546,11 @@ If you take life damage, you lose all temporary hit points provided by this spel
 
 \spellsectioncomma{Magic Missile}{Greater}
 \spellschool{Evocation (Control) [Force]}
-\spelllvl{Sor/Wiz 4}
+\spelllvl{Sor/Wiz 3}
 \spellrng{\rngfar}
-\spelldmg{4d10 force damage \add d10 per four levels above 8th}
+\spelldmg{3d10 force damage \add d10 per four levels above 6th}
 \begin{spelleffect}
-  This spell functions like \spell{magic missile}, except that its range is much longer and you create four missiles, each of which deals 1d10 damage. 
+  This spell functions like \spell{magic missile}, except that its range is much longer and you create three missiles, each of which deals 1d10 damage. 
 \end{spelleffect}
 
 \spellsection{Magic Vestment}
@@ -3652,12 +3620,12 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelllvl{Sor/Wiz 1}
 \spellrng{\rngclose}
 \spelltgt{One creature; see text}
-\spellarea{\rngmed radius limit; see text}
+\spellarea{\rngmed radius limit centered on the subject; see text}
 \spelldur{\durshort or until discharged/5 rounds}
-\spellsave{Will negates (harmless)/Will negates}
+\spellsave{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The subject gains a faintly shimmering aura. The first time it is damaged by a creature within the area, the spell is discharged, and the attacking creature is bewildered for 5 rounds.
+  The subject gains a faintly shimmering aura. The first time it is attacked by a creature within the area, the spell is discharged, and the attacking creature is bewildered for 5 rounds. A successful Will save can prevent the subject from gaining the aura, but there is no saving throw against the bewildering effect.
 \end{spelleffect}
 
 \spellsection{Meld into Stone}
@@ -3699,7 +3667,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellrng{\rngfar}
 \spellarea{A \arealarge radius cylinder, 100 ft. high}
 \spelldur{Instantaneous}
-\spellsave{Reflex partial}
+\spellsave{Reflex half/Reflex negates}
 \spellsr{Yes (Reflex)}
 \spelldmg{9d6 fire damage \add d6 per four caster levels after 18th}
 \begin{spelleffect}
@@ -3808,7 +3776,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsr{Yes (Fortitude)}
 \spelldmg{7d4 force damage \add d4 per four levels above 14th}
 \begin{spelleffect}
-  Each target is struck by seven missiles like those created by the \spell{magic missile} spell. Each missile deals 1d10 damage. You can create one additional missile to strike each target per four levels above 14th.
+  Each target is struck by seven missiles like those created by the \spell{magic missile} spell. Each missile deals 1d4 damage. You can create one additional missile to strike each target per four levels above 14th.
 \end{spelleffect}
 
 \spellsection{Modify Memory}
@@ -3880,7 +3848,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
   This power transforms your body into living oak, which grants you several advantages.
   \par You gain physical damage reduction 15/fire or adamantine and a \plus5 bonus to natural armor. You are immune to ability damage, blindness, deafness, disease, drowning, poison, stunning, and all spells or attacks that affect your physiology or respiration, because you have no physiology or respiration while this power is in effect.
   \par You take only half damage from cold effects of all kinds. However, you become susceptible to all special attacks that affect wood, and you gain vulnerability to fire.
-  \par You gain a \plus4 bonus to Strength and Constitution, but you take a \minus2 penalty to Dexterity (to a minimum Dexterity score of 1), and your speed is reduced to half normal. You can speak but cannot drink (and thus can't use potions). You have an armor check penalty of \minus4 and an arcane spell failure chance of 25%.
+  \par You gain a \plus4 bonus to Strength and Constitution, but you take a \minus2 penalty to Dexterity (to a minimum Dexterity score of \minus9), and your speed is reduced to half normal. You can speak but cannot drink (and thus can't use potions). You have an armor check penalty of \minus4 and an arcane spell failure chance of 25%.
   \par Your unarmed attacks deal damage equal to a club sized for you (1d4 for Small characters, 1d6 for Medium characters), and you are considered armed when making unarmed attacks. When you make a full attack against an object or structure using your unarmed strike, you deal double damage.
 \end{spelleffect}
 \begin{spellnotes}
@@ -3899,13 +3867,14 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsection{Order's Wrath}
 \spellschool{Evocation (Channeling) [Lawful]}
 \spelllvl{Law 4}
-\spellarea{30 ft. cube-shaped burst centered on you}
-\spelldur{Instantaneous}
-\spellsave{Will half/Will negates}
+\spellrng{\rngmed}
+\spelltgt{One creature}
+\spelldur{Instantaneous/5 rounds}
+\spellsave{None/Will half}
 \spellsr{Yes (Will)}
-\spelldmg{4d6 divine damage \add d6 per four caster levels above 8th}
+\spelldmg{8d6 divine damage \add d6 per two caster levels above 8th}
 \begin{spelleffect}
-  Nonlawful creatures in the area take damage and are bewildered for 5 rounds. A successful Will save reduces the damage by half and negates the bewildering.
+  If the target is not lawful, it takes damage and is bewildered for 5 rounds. A successful Will save halves the damage.
 \end{spelleffect}
 \begin{spellnotes}
   A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
@@ -3913,7 +3882,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 
 \spellsection{Overland Flight}
 \spellschool{Transmutation (Imbuement)}
-\spelllvl{Sor/Wiz 7}
+\spelllvl{Sor/Wiz 6}
 \spellrng{Personal}
 \spelltgt{You}
 \spelldur{\durext}
@@ -3974,7 +3943,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsave{Will disbelief}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The subject is blinded and deafened, and acts as if it has been affected by a \spell{maze} spell. Typically, this means it moves in a random direction each round. If it encounters any physical resistance in its movements or takes any damage, it may immediately make a Will save to disbelieve the effect.
+  The subject perceives itself to be banished to an extradimensional labyrinth of force planes, as the \spell{maze} spell. It cannot see or hear anything to the contrary, causing it to be treated as if blinded and deafened for most purposes. Typically, this means the subject moves in a random direction each round to escape the maze. If it encounters any physical resistance in its movements or takes any damage, it may immediately make a Will save to disbelieve the effect.
 \end{spelleffect}
 
 \spellsection{Phantom Steed}
@@ -4039,20 +4008,24 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsave{None}
 \spellsr{Yes (Fortitude)}
 \spelldmg{16d6 cold damage \add d6 per three caster levels above 16th}
-\begin{spelleffect}
+\begin{spellhealthy}
   The struck target takes damage and is slowed for 5 rounds.
-\end{spelleffect}
+\end{spellhealthy}
+\begin{spellblood}
+  The struck target takes damage and is frozen solid, causing it to be paralyzed for 5 rounds.
 \begin{spellnotes}
    A slowed creature can take only a single move action or standard action each turn, but not both. Additionally, it takes a \minus2 penalty to attack rolls, Strength and Dexterity-based skill checks, and armor class.
+
+   A paralyzed creature cannot take any action that requires motion. It has effective Dexterity and Strength scores of \minus10 and is helpless, but can take purely mental actions. A winged creature flying in the air at the time that it becomes paralyzed cannot flap its wings and falls. A paralyzed swimmer can't swim and may drown. A creature can move through a space occupied by a paralyzed creature -- ally or otherwise. Each square occupied by a paralyzed creature, however, counts as 2 squares.
  \end{spellnotes}
 
 \spellsection{Power Word Blind}
 \spellschool{Necromancy (Flesh)}
-\spelllvl{Sor/Wiz 7}
+\spelllvl{Sor/Wiz 6}
 \spellcmp{V}
 \spellrng{\rngclose}
 \spelltgt{One creature}
-\spelldur{Instantaneous}
+\spelldur{Instantaneous/5 rounds}
 \spellsave{None}
 \spellsr{Yes (Fortitude)}
 \begin{spellhealthy}
@@ -4077,20 +4050,20 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsave{None}
 \spellsr{Yes (Fortitude)}
 \begin{spellhealthy}
-  The target is sickened, making it vulnerable for 5 rounds.
+  The target is sickened for 5 rounds, making it vulnerable.
 \end{spellhealthy}
 \begin{spellblood}
-  The target is instantly slain.
+  If the target's HV does not exceed your caster level, it is instantly slain. Otherwise, it is sickened for 5 rounds.
 \end{spellblood}
 \begin{spellnotes}
-  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. A blinded character cannot see. She takes a \minus2 penalty to attack rolls, Armor Class, and any checks which involve sight. In addition, she is flat-footed and moves at half speed. All checks and activities that rely on vision (such as reading and Spot checks) automatically fail. All opponents are considered to have total concealment (50\% miss chance) relative to the blinded character.
+  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
 
-  The target must be bloodied when the spell is cast to suffer the bloodied effect. A creature whose HV exceeds your caster level are sickened instead of killed, as the healthy effect.
+  The target must be bloodied when the spell is cast to suffer the bloodied effect.
 \end{spellnotes}
 
 \spellsection{Power Word Confuse}
 \spellschool{Enchantment (Compulsion) [Mind-Affecting]}
-\spelllvl{Sor/Wiz 6}
+\spelllvl{Sor/Wiz 5}
 \spellcmp{V}
 \spellrng{\rngclose}
 \spelltgt{One creature}
@@ -4111,7 +4084,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsection{Power Word Stun}
 \spelldesc{You utter a single word of power that instantly causes your foe to become stunned, whether the creature can hear the word or not.}
 \spellschool{Enchantment (Inhibition) [Mind-Affecting]}
-\spelllvl{Sor/Wiz 8}
+\spelllvl{Sor/Wiz 7}
 \spellcmp{V}
 \spellrng{\rngclose}
 \spelltgt{One creature}
@@ -4234,7 +4207,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 
 \spellsection{Project Image}
 \spellschool{Illusion (Shadow)}
-\spelllvl{Brd 6, Sor/Wiz 7}
+\spelllvl{Brd 6, Illus 6}
 \spellrng{\rngmed}
 \spelleff{One shadow duplicate}
 \spelldur{\durshort (D)}
@@ -4276,15 +4249,15 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellschool{Abjuration (Shielding)}
 \spelllvl{Clr 6, Drd 6, Protection 6, Sor/Wiz 6}
 \begin{spelleffect}
-  This spell functions like \spell{protection from energy}, except that it protects from all five types of energy. When the spell absorbs 10 points per caster level of damage of any type, it is discharged.
+  This spell functions like \spell{protection from energy}, except that it protects from all five types of energy. When the spell absorbs 10 points per caster level of damage in total, regardless of its type, it is discharged.
 \end{spelleffect}
 
 \spellsection{Protection from Evil}
 \spelldesc{You guard your ally with a faint pure white aura, shielding him from evil influence.}
 \spellschool{Abjuration (Interdiction) [Good]}
 \spelllvl{Clr 1, Good 1, Pal 1, Sor/Wiz 1}
-\spellrng{Touch}
-\spelltgt{Creature touched}
+\spellrng{\rngclose}
+\spelltgt{One creature}
 \spelldur{\durshort (D)}
 \spellsave{Will negates (harmless)}
 \spellsr{No; See text}
@@ -5177,18 +5150,17 @@ If you take life damage, you lose all temporary hit points provided by this spel
 
 \spellsection{Spell Immunity}
 \spellschool{Abjuration (Shielding) [Magic]}
-\spelllvl{Clr 4, Magic 4, Protection 4, Sor/Wiz 4}
-\spellrng{Touch}
-\spelltgt{Creature touched}
+\spelllvl{Clr 3, Magic 3, Protection 3, Sor/Wiz 3}
+\spellrng{\rngclose}
+\spelltgt{One creature}
 \spelldur{\durshort}
 \spellsave{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The shielded creature is immune to the effects of one specified spell for every four levels you have. The spells must be of 4th level or lower.
+  The subject is immune to the effects of one school of magic. Any spell from the chosen school which allows spell resistance simply fails to affect the subject. This applies to spells of 4th level or lower. At 8th level, and every four levels thereafter, the maximum spell level affected increases by one.
 \end{spelleffect}
 \begin{spellnotes}
-  The shielded creature effectively has unbeatable spell resistance regarding the specified spell or spells. Naturally, that immunity doesn't protect a creature from spells for which spell resistance doesn't apply. Spell immunity protects against spells, spell-like effects of magic items, and innate spell-like abilities of creatures. It does not protect against supernatural or extraordinary abilities, such as breath weapons or gaze attacks.
-  \par Only a particular spell can be protected against, not a certain domain or school of spells or a group of spells that are similar in effect. 
+   This spell protects against spells, spell-like effects of magic items, and innate spell-like abilities of creatures. It does not protect against supernatural or extraordinary abilities, such as breath weapons or gaze attacks, nor against spells which do not allows spell resistance.
   \par A creature can have only one \spell{spell immunity} effect on it at a time.
 \end{spellnotes}
 
@@ -5196,7 +5168,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellschool{Abjuration (Shielding) [Magic]}
 \spelllvl{Clr 8, Magic 8, Protection 8, Sor/Wiz 8}
 \begin{spelleffect}
-  This spell functions like \spell{spell immunity}, except the immunity applies to spells of 8th level or lower.
+  This spell functions like \spell{spell immunity}, except that it protects the subject from two schools, and the immunity applies to spells of any level.
 \end{spelleffect}
 \begin{spellnotes}
   A creature can have only one \spell{spell immunity} effect on it at a time.
@@ -5204,7 +5176,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 
 \spellsection{Spell Resistance}
 \spellschool{Abjuration (Shielding) [Magic]}
-\spelllvl{Clr 5, Magic 5, Protection 5}
+\spelllvl{Clr 4, Magic 4, Protection 4, Sor/Wiz 4}
 \spellrng{Touch}
 \spelltgt{Creature touched}
 \spelldur{\durshort}
@@ -5220,25 +5192,22 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsection{Spelltheft}
 \spellschool{Abjuration (Negation) [Magic]}
 \spelllvl{Abjur 5, Magic 5}
-\spellrng{Touch}
 \spelltgt{One spellcaster, creature, or object}
 \begin{spelleffect}
-  This spell functions like \spell{dispel magic}, except that you can choose to gain the effects of any spells you dispel as if they had been originally cast on you. The effects last for the remainder of their original durations or for 5 rounds, whichever is shorter. Spells that cannot be cast on you, such as spells which have a range of personal, are simply dispelled.
+  This spell functions like a targeted \spell{dispel magic}, except that you can choose to gain the effects of any spells you dispel as if they had been originally cast on you. The effects last for the remainder of their original durations or for 5 rounds, whichever is shorter. Spells that cannot be cast on you, such as spells which have a range of personal, are simply dispelled.
 \end{spelleffect}
 
 \spellsectioncomma{Spelltheft}{Greater}
 \spellschool{Abjuration (Negation) [Magic]}
 \spelllvl{Abjur 8}
-\spellrng{Touch}
 \spelltgt{One spellcaster, creature, or object}
 \begin{spelleffect}
-  This spell functions like \spell{greater dispel magic}, except that you can choose to gain the effects of any spells you dispel as if they had been originally cast on you. The effects last for the remainder of their original durations or for 5 rounds, whichever is shorter. Spells that cannot be cast on you, such as spells which have a range of personal, are simply dispelled.
+  This spell functions like \spell{greater dispel magic}, except that you can choose to gain the effects of any spells you dispel or counterspell as if they had been originally cast on you. The effects last for the remainder of their original durations or for 5 rounds, whichever is shorter. Spells that cannot be cast on you, such as spells which have a range of personal, are simply dispelled.
 \end{spelleffect}
 
 \spellsectioncomma{Spelltheft}{Lesser}
 \spellschool{Abjuration (Negation) [Magic]}
 \spelllvl{Abjur 2, Magic 2}
-\spellrng{Touch}
 \spelltgt{One spellcaster, creature, or object}
 \begin{spelleffect}
   This spell functions like \spell{lesser dispel magic}, except that you can choose to gain the effects of any spells you dispel as if they had been originally cast on you. The effects last for the remainder of their original durations or for 5 rounds, whichever is shorter. Spells that cannot be cast on you, such as spells which have a range of personal, are simply dispelled.
@@ -5274,7 +5243,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelllvl{Drd 2, Sor/Wiz 2, Travel 2}
 \spellrng{Touch}
 \spelltgt{Creature touched}
-\spelldur{\durlong}
+\spelldur{\durmed}
 \spellsave{Fortitude negates (harmless)}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
@@ -5283,7 +5252,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 
 \spellsection{Spike Growth}
 \spellschool{Transmutation (Alteration) [Earth]}
-\spelllvl{Drd 2}
+\spelllvl{Drd 2, Earth 2}
 \spellrng{\rngmed}
 \spellarea{\areasmall radius}
 \spelldur{\durshort (D)}
@@ -5299,7 +5268,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelllvl{Drd 4, Earth 4}
 \spellarea{\areamed radius}
 \begin{spelleffect}
-  This spell functions like \spell{spike growth}, except that it deals d8 physical piercing damage to creatures moving through it and it can also be cast on rocky ground, stone floors, and similar surfaces.
+  This spell functions like \spell{spike growth}, except that it deals 1d8 physical piercing damage to creatures moving through it and it can also be cast on rocky ground, stone floors, and similar surfaces.
 \end{spelleffect}
 
 %need to run expected damage calculation
@@ -5332,16 +5301,16 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellschool{Conjuration (Summoning)}
 \spelllvl{Drd 9, Nature 9}
 \spelltime{Full-round action}
-\spellrng{\rngmed}
+\spellrng{\rngfar}
 \spellarea{\arealarge radius limit}
-\spelleff{One Large summoned creature/level within the area}
+\spelleff{Nine or more Large summoned creatures within the area}
 \spelldur{\durshort (D)}
 \spellsave{Reflex half; see text}
 \spellsr{No}
 \spelldmg{9d6 bludgeoning damage \add d6 per four levels above 18th}
 \begin{spelleffect}
-  This spell summons a stampede of bison to trample your foes. Creatures trampled by the herd of bison take damage from the spell.
-  \par The bison are summoned in a place that you designate within the spell's area, with each creature being summoned in the closest free space to the point of origin. If there is insufficient room for all of the bison to appear while standing on stable ground, the spell will summon fewer bison than the maximum. The herd of bison always moves directly away from you, trampling anything of Large size or smaller that gets in their way. If the herd is thinned to 5 bison or fewer, they stop stampeding and scatter in random directions.
+  This spell summons a stampede of nine bison to trample your foes. Creatures trampled by the herd of bison take 1d6 damage per bison in the herd. You can summon one additional bison per four levels above 18th.
+  \par The bison are summoned in a place that you designate within the spell's area, with each creature being summoned in the closest free space to the point of origin. If there is insufficient room for all of the bison to appear while standing on stable ground, the spell will summon fewer bison than the maximum. The herd of bison always moves directly away from you, trampling anything of Large size or smaller that gets in their way. If the herd is thinned to fewer than 5 bison, they stop stampeding and scatter in random directions.
   \par The bison do not attack, even if cornered; they will only stampede. At the end of the spell's duration, the bison disappear.
 \end{spelleffect}
 \begin{spellnotes}
@@ -5349,20 +5318,23 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \end{spellnotes}
 
 \spellsection{Stinking Cloud}
-\spellschool{Conjuration (Creation)}
+\spellschool{Conjuration/Necromancy (Creation, Flesh)}
 \spelllvl{Sor/Wiz 5}
 \spellsave{None/Fortitude negates}
+\spellsr{None/Yes (Fortitude)}
 \begin{spelleffect}
-  This spell functions like \spell{fog cloud}, except that creatures within the cloud are sickened, making them vulnerable. A successful Fortitude save negates the sickening. The condition lasts as long as the creature remains in the cloud and for 5 rounds after it leaves.
+  This spell functions like \spell{fog cloud}, except that creatures within the cloud are sickened, making them vulnerable. A successful Fortitude save negates the sickening. The condition lasts as long as the creature remains in the cloud and for 5 rounds after it leaves. Any creature that succeeds on its save but remains in the cloud must continue to save each round on your turn.
 \end{spelleffect}
 \begin{spellnotes}
-  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Your allies, and creatures unable to see the lights, are unaffected. Any creature that succeeds on its save but remains in the cloud must continue to save each round on your turn. \spellindirect{stinking cloud}{Stinking cloud} can be made permanent with a \spell{permanency} spell. A permanent \spell{stinking cloud} dispersed by wind reforms in 10 minutes.
+  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
+  
+  \spellindirect{stinking cloud}{Stinking cloud} can be made permanent with a \spell{permanency} spell. A permanent \spell{stinking cloud} dispersed by wind reforms in 10 minutes.
 \end{spellnotes}
 
 \spellsection{Stoneskin}
 \spelldesc{You dramatically toughen a creature's skin, giving it the appearance of stone.}
 \spellschool{Transmutation (Alteration) [Earth]}
-\spelllvl{Drd 5, Earth 5, Protection 5, Trans 5}
+\spelllvl{Drd 4, Protection 4, Trans 4}
 \begin{spelleffect}
   This spell functions like \spell{barkskin}, except that it grants physical damage reduction 10/adamantine. This damage reduction increases by 1 per two caster levels above 10th.
 \end{spelleffect}
@@ -5732,15 +5704,17 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellschool{Evocation (Control) [Light]}
 \spelllvl{Drd 5}
 \spellarea{\arealarge line}
-\spelldur{Instantaneous}
+\spelldur{Instantaneous/5 rounds}
 \spellsave{Reflex half/Reflex negates}
 \spellsr{Yes (Reflex)}
 \spelldmg{5d6 solar damage \add d6 per four caster levels above 10th; see text}
 \begin{spelleffect}
-  Each creature in the beam takes damage and is dazzled for 1 round. Any creatures to which sunlight is harmful or unnatural instead take 5d10 points of damage \add d10 per four caster levels above 10th and are blinded for 1 round. A successful Reflex save negates the dazzling (or blindness) and reduces the damage by half.
+  Each creature in the beam takes damage and is dazzled for 5 rounds. Any creatures to which sunlight is harmful or unnatural instead take 5d10 points of damage \add d10 per four caster levels above 10th and are blinded for 5 rounds. A successful Reflex save negates the dazzling (or blindness) and reduces the damage by half.
 \end{spelleffect}
 \begin{spellnotes}
-  A dazzled creature treats everything he sees as if it has concealment (20\% miss chance), and takes a \minus4 penalty to Spot checks. He is also unable to use darkvision. \spell{Sunbeam} dispels any darkness spells of 5th level or lower within its area.
+  A dazzled creature treats everything he sees as if it has concealment (20\% miss chance), and takes a \minus4 penalty to Spot checks. He is also unable to use darkvision.
+  
+  \spell{Sunbeam} dispels any darkness spells of 5th level or lower within its area.
 \end{spellnotes}
 
 \spellsection{Sunburst}
@@ -5782,29 +5756,31 @@ If you take life damage, you lose all temporary hit points provided by this spel
 
 \spellsection{Telekinetic Force}
 \spellschool{Evocation (Control)}
-\spelllvl{Evoc 3}
+\spelllvl{Evoc 4}
 \spellrng{\rngmed}
 \spelltgt{One object at a time}
-\spelldur{Concentration, up to \durmed}
+\spelldur{Concentration, up to 5 minutes}
 \spellsave{Will negates (object); see text}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  You move an object by concentrating your mind upon its current location and then the location you desire, creating a sustained force. You can move an object weighing no more than 25 pounds per caster level up to 20 feet per round. A creature can negate the effect on an object it possesses with a successful Will save or with spell resistance. The weight can be moved vertically, horizontally, or in both directions. An object cannot be moved beyond your range. The spell ends if the object is forced beyond the range. If you cease concentration for any reason, the object falls or stops. Each round, the subject can attempt a new saving throw to negate the effect.
-  \par An object can be telekinetically manipulated as if with one hand. For example, a lever or rope can be pulled, a key can be turned, an object rotated, and so on, if the force required is within the weight limitation. You might even be able to untie simple knots, though delicate activities such as these require Intelligence checks.
-  \par You can drop a weight and pick up another during the spell's duration, as long as you don't stop concentrating on maintaining the power. An object can be telekinetically manipulated as if you were moving it with one hand.
-  \par If you spend at least 5 rounds concentrating on an unattended object, you can attempt to break or burst it as if making a Strength check, except that you apply your casting attribute to the check instead of your Strength.
+  You may manipulate objects or creatures at a distance as if you were holding the object in your hands. When doing so, your effective Strength is equal to half your casting attribute, and your effective Dexterity is equal to half your Intelligence. (Do not halve negative attributes.) You can move objects at a speed of up to 20 feet per round in any direction.
+
+   A creature can negate the effect on itself or an object it possesses with a successful Will save. Each round, the subject can attempt a new saving throw to negate the effect. If you are prevented from affecting a target in this way, it and any of its possessions are immune to your attempts for the duration of the spell, though you can still attempt to affect other creatures or objects. 
 \end{spelleffect}
+\begin{spellnotes}
+  This spell generally moves objects too slowly for them to be used as weapons. However, some indirect weapons, such as crossbows, may be used to attack with this spell. 
+\end{spellnotes}
 
 \spellsection{Telekinetic Maneuver}
 \spellschool{Evocation (Control)}
-\spelllvl{Evoc 4}
+\spelllvl{Evoc 3}
 \spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{Concentration, up to \durmed}
 \spellsave{None}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  You can affect a foe by concentrating your mind upon its current status and the status you desire, once per round. You can perform a bull rush, a disarm, a dirty trick, a grapple (including a pin), or a trip. Resolve these attempts as normal, except that they don't provoke attacks of opportunity, you use your caster level in place of your base attack bonus, and you use your casting attribute in place of your Strength. No save is allowed against these attempts, but spell resistance is applied normally.
+  Once per round, you can telekinetically attack a foe of your choice. You can perform a bull rush, a disarm, a dirty trick, a grapple (including a pin, if you have already grappled a foe), or a trip. Resolve these attempts as normal, except that they don't provoke attacks of opportunity, you use your caster level in place of your base attack bonus, and you use your casting attribute in place of your Strength. In addition, you get a \plus2 bonus to combat maneuvers with this spell. \bonusscalingdescription
 \end{spelleffect}
 
 \spellsection{Telekinetic Thrust}
@@ -5819,7 +5795,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
   You can throw the affected objects or creatures anywhere within the spell's range. All subjects of this spell must be thrown to the same place. You can hurl up to a total weight of 25 pounds per caster level.
   \par You must succeed on ranged attack rolls (one per creature or object thrown) to hit the target of the hurled items with the items, applying your caster level and casting attribute to the attack roll instead of your base attack bonus and Dexterity. Hurled weapons deal their normal damage. Other objects deal damage ranging from 1 point per 25 pounds of weight (for less dangerous objects such as an empty barrel) to 1d6 points per 25 pounds of weight (for hard, dense objects such as a boulder).
   \par Creatures are allowed Will saves (and spell resistance) to avoid being hurled or having their held possessions be targeted by this power.
-  \par If you use this power to hurl a creature against a solid surface, it takes damage as if it had fallen 50 feet (5d6 points).
+  \par If you use this power to hurl a creature against a solid surface, it takes damage as if it had fallen 50 feet (5d6 damage).
 \end{spelleffect}
 
 \spellsection{Telepathic Bond}
@@ -5841,12 +5817,12 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsection{Telepathic Bond, Mass}
 \spellschool{Divination/Transmutation (Communication, Imbuement)}
 \spelllvl{Sor/Wiz 6}
-\spelltgts{You plus one willing creature per three levels in a \areamed radius }
+\spelltgts{You plus up to five willing creatures in a \areamed radius }
 \begin{spelleffect}
   This spell functions like \spell{telepathic bond}, except that it links multiple creatures together into the same bond. Each affected creature can communicate with all other creatures, either privately or to the group as a whole. If desired, you may leave yourself out of the bond forged. This decision must be made at the time of casting.
 \end{spelleffect}
 \begin{spellnotes}
-  \spellindirect{telepathic bond}{Telepathic bond} can be made permanent with a \spell{permanency} ritual.
+  \spellindirect{telepathic bond}{Telepathic bond} can be made permanent with a \spell{permanency} ritual. If you cast this spell multiple times, you may link each casting of the spell together such that all subjects may telepathically communicate with each other. 
 \end{spellnotes}
 
 \spellsection{Temporal Stasis}
