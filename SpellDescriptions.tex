@@ -423,10 +423,10 @@ If you take life damage, you lose all temporary hit points provided by this spel
 
 \spellsection{Bestow Curse}
 \spelldesc{You place a curse on your foe, crippling its ability to act.}
-\spellschool{Necromancy [Curse]}
-\spelllvl{Clr 3, Evil 3, Sor/Wiz 3}
-\spellrng{\rngtouch}
-\spelltgt{Creature touched}
+\spellschool{Necromancy (Life) [Curse]}
+\spelllvl{Clr 5, Evil 5, Sor/Wiz 5}
+\spellrng{\rngclose}
+\spelltgt{One creature}
 \spelldur{Permanent}
 \spellsave{Will negates}
 \spellsr{Yes (Will)}
@@ -446,8 +446,8 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsection{Black Tentacles}
 \spelldesc{You conjure a field of rubbery black tentacles, each 5 feet long. These waving members seem to spring forth from the earth, floor, or whatever surface is underfoot -- including water. They grasp and entwine around creatures that enter the area, holding them fast and crushing them with great strength.}
 \spellschool{Conjuration/Transmutation (Animation, Creation)}
-\spelllvl{Sor/Wiz 6}
-\spellrng{\rngclose}
+\spelllvl{Sor/Wiz 7}
+\spellrng{\rngmed}
 \spellarea{\areasmall radius spread}
 \spelleff{Black tentacles in the area}
 \spelldur{\durshort (D)}
@@ -1294,14 +1294,14 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsection{Death Knell}
 \spelldesc{You draw forth the ebbing life force of a creature and use it to fuel your own power.}
 \spellschool{Necromancy (Life) [Death]}
-\spelllvl{Death 2, Evil 2, Sor/Wiz 2}
+\spelllvl{Death 2, Evil 2, Necro 2}
 \spellrng{\rngmed}
 \spelltgt{Living creature}
-\spelldur{Instantaneous/10 minutes per HV of subject; see text}
+\spelldur{\durshort; see text}
 \spellsave{Fortitude negates}
 \spellsr{Yes (Fortitude)}
-\begin{spelleffect}
-  This spell targets a living creature that has no hit points remaining. If the target fails its saving throw, it dies, and you gain 10 temporary hit points \plus2 per caster level. In addition, if the subject had at least 4 HV, you gain a \plus2 bonus to one attribute per 4 HV the target had. \bonusscalingdescription These effects last for 10 minutes per HV of the subject creature. If the creature had less than 1 HV, the temporary hit points last for 5 rounds.
+\begin{spellblood}
+  The subject becomes vulnerable. If it drops to 0 hit points, it dies immediately, and you gain 20 temporary hit points \add 2 per caster level above 4th. These temporary hit points last for 1 round per HV the subject had.
 
  If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
 \end{spelleffect}
@@ -2446,6 +2446,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
   This damage reduction allows the subject to ignore the first 10 physical damage it takes each round. If it is hit by a magical attack, such as a damaging spell or magic weapon, it cannot use its damage reduction for 1 round.
 \end{spellnotes}
 
+\begin{comment}
 \spellsection{Ghoul Touch}
 \spellschool{Necromancy (Flesh)}
 \spelllvl{Sor/Wiz 3}
@@ -2463,6 +2464,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \begin{spellnotes}
   A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
 \end{spellnotes}
+\end{comment}
 
 \spellsection{Giant Vermin}
 \spellschool{Transmutation (Polymorph)}
@@ -3453,21 +3455,26 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \end{spelleffect}
 
 %need to run expected damage analysis
+%basic math: attack is like save half, so ``should'' deal 49 damage
+%assume 32 AC, 8 attr
+%assume 4 rounds of attacking at 50% chance to hit = 36 damage.
+%benefits strongly from +CL.
+%At 20 CL: 85 damage vs 64 damage
 \spellsection{Mage's Sword}
 \spellschool{Evocation (Control) [Force]}
-\spelllvl{Sor/Wiz 7}
-\spellrng{\rngclose}
+\spelllvl{Evoc 7}
+\spellrng{\rngmed}
 \spelleff{One sword}
 \spelldur{\durshort (D)}
 \spellsave{None}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  This spell brings into being a shimmering, swordlike plane of force. The sword strikes at any opponent within its range, as you desire, starting in the round that you cast the spell. The sword attacks its designated target once each round on your turn. Its attack bonus is equal to your caster level \add your casting attribute with an additional \plus3 enhancement bonus. As a force effect, it can strike ethereal and incorporeal creatures. It deals 4d6\plus3 points of force damage, with a threat range of 19--20 and a critical multiplier of \mtimes2.
+  This spell brings into being a shimmering, swordlike plane of force. The sword strikes at any opponent within its range, as you desire, starting in the round that you cast the spell. The sword attacks its designated target once each round on your turn. Its attack bonus is equal to your caster level \add your casting attribute. It deals 4d6 points of force damage \add half your casting attribute \add 1d6 per four caster levels above 14th, with a threat range of 19--20 and a critical multiplier of \mtimes2.
   \par The sword always strikes from your direction. It does not contribute to overwhelm penalties, but it benefits from any that exist. If the sword goes beyond the spell range from you, if it goes out of your sight, or if you are not directing it, the sword returns to you and hovers.
 \end{spelleffect}
 \begin{spellnotes}
   Each round after the first, you can redirect the sword to a new target as a swift action. If you do not, the sword continues to attack the previous round's target.
-  \par The sword cannot be attacked or harmed by physical attacks, but \spell{dispel magic}, \spell{disintegrate}, a sphere of annihilation, or a rod of cancellation affects it. The sword's AC is 10 (10, \plus0 size bonus for being a Medium object)
+  \par As a force effect, the sword can strike ethereal and incorporeal creatures. It cannot be attacked or harmed by physical attacks, but \spell{dispel magic}, \spell{disintegrate}, a sphere of annihilation, or a rod of cancellation affects it. The sword's AC is 10 (10, \plus0 size bonus for being a Medium object)
   \par If an attacked creature has spell resistance, the resistance is checked the first time \spell{mage's sword} strikes it. If the sword is successfully resisted, the spell is dispelled. If not, the sword has its full effect on that creature for the duration of the spell.
 \end{spellnotes}
 
@@ -3542,15 +3549,6 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \begin{spelleffect}
   Two missiles of magical energy dart forth from your fingertip and strike creatures you designate in the area, dealing 1d4 damage each. A single missile can strike only one creature. For every two caster levels above 2nd, you gain an additional missile.
   The missiles strike unerringly, even if the target is in melee combat or has less than total cover or total concealment. Specific parts of a creature can't be singled out. Inanimate objects are not damaged by the spell. You must designate targets before you check for spell resistance or roll damage.
-\end{spelleffect}
-
-\spellsectioncomma{Magic Missile}{Greater}
-\spellschool{Evocation (Control) [Force]}
-\spelllvl{Sor/Wiz 3}
-\spellrng{\rngfar}
-\spelldmg{3d10 force damage \add d10 per four levels above 6th}
-\begin{spelleffect}
-  This spell functions like \spell{magic missile}, except that its range is much longer and you create three missiles, each of which deals 1d10 damage. 
 \end{spelleffect}
 
 \spellsection{Magic Vestment}
@@ -3918,16 +3916,16 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelldesc{You create a phantasmal image of the most fearsome creature imaginable to the subject simply by forming the fears of the subject's subconscious mind into something that its conscious mind can visualize: this most horrible beast.}
 \spellschool{Enchantment/Illusion (Emotion, Phantasm) [Death, Fear, Mind-Affecting, Unreal]}
 \spelllvl{Sor/Wiz 4, Trickery 4}
-\spellrng{\rngclose}
-\spelltgt{One living creature}
+\spellrng{\rngmed}
+\spelltgt{One creature}
 \spelldur{Instantaneous}
 \spellsave{Will disbelief and Fortitude negates; see text}
 \spellsr{Yes (Will)}
-\begin{spellhealthy}
-  If the subject fails its Will save, it is shaken, causing it to be vulnerable for 5 rounds.
-\end{spellhealthy}
+\begin{spelleffect}
+  The subject is shaken, causing it to be vulnerable for 5 rounds.
+\end{spelleffect}
 \begin{spellblood}
-  As the healthy effect, and if it fails its Will save, it immediately dies unless it makes a successful Fortitude save.
+  The subject must also make a Fortitude save. If it fails, it immediately dies.
 \end{spellblood}
 \begin{spellnotes}
   A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
@@ -4340,6 +4338,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
   The subject's Dexterity score cannot drop below 1.
 \end{spellnotes}
 
+\begin{comment}
 \spellsection{Ray of Exhaustion}
 \spelldesc{You fire a black ray at your foe, depleting his stamina.}
 \spellschool{Necromancy (Flesh)}
@@ -4355,7 +4354,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \begin{spellnotes}
   A creature that is already fatigued instead becomes exhausted. A creature that is already exhausted suffers no further penalties. Unlike normal exhaustion or fatigue, the effect ends as soon as the spell's duration expires.
 \end{spellnotes}
-
+\end{comment}
 \spellsection{Redirection}
 \spellschool{Abjuration (Shielding)}
 \spelllvl{Abjur 3}
@@ -4814,7 +4813,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
   When this spell ends, subsequent damage is no longer divided between the subject and you, but damage already shared is not reassigned.
 \end{spellnotes}
 
-\spellsection{Share Pain, Forced}
+\spellsectioncomma{Share Pain}{Forced}
 \spellschool{Abjuration/Necromancy (Life, Shielding)}
 \spelllvl{Clr 3, Sor/Wiz 3}
 \spellsave{Will negates}
@@ -4990,13 +4989,13 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsection{Skysmite}
 \spelldesc{You call down lightning from the heavens, unerringly striking your foes, even if you cannot see them.}
 \spellschool{Evocation (Energy) [Electricity]}
-\spelllvl{Drd 4, Sor/Wiz 4}
+\spelllvl{Drd 6, Sor/Wiz 6}
 \spellrng{\rngext}
 \spellarea{\arealarge vertical line of lightning, 5 ft. wide, and \areamed radius limit}
 \spelldur{Instantaneous}
 \spellsave{Reflex half}
 \spellsr{Yes (Reflex)}
-\spelldmg{8d6 electricity damage \add d6 per two caster levels above 8th}
+\spelldmg{12d6 electricity damage \add d6 per two caster levels above 12th}
 \begin{spelleffect}
   Lightning strikes where you direct, dealing damage to all creatures and objects in its path. If no creatures or objects lie in its path, the lightning will instead strike the closest occupied square within a \areamed radius limit.
 \end{spelleffect}
@@ -6081,6 +6080,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
   A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
 \end{spellnotes}
 
+\begin{comment}
 \spellsection{Unliving Eyes}
 \spellschool{Divination/Necromancy (Awareness, Life)}
 \spelllvl{Sor/Wiz 3}
@@ -6092,6 +6092,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \begin{spelleffect}
   The subject gains the ability to ``see'' any living creatures within 60 feet perfectly, regardless of lighting conditions, physical barriers, invisibility, or any other means of concealment.
 \end{spelleffect}
+\end{comment}
 
 %gaining full temp HP would be level 5
 \spellsection{Vampiric Touch}
