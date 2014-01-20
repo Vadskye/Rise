@@ -277,12 +277,13 @@ Cautious Attack & \x & Trade damage for CMD \\
 Combat Expertise & Int 3 & Trade attack bonus for AC \\
 \tind Improved Combat Expertise & Int 5, Combat Expertise, base attack bonus \plus8 & Trade more attack bonus for AC \\
 Cooperative Attack & Base attack bonus \plus4 & Aid ally while attacing \\
-Covering Fire & Wis 3 & Targets struck by ranged attacks suffer attack penalties \\
+Covering Fire & \x & Targets struck by ranged attacks suffer attack penalties \\
 Deadly Aim & Dex 3 & Trade ranged attack bonus for damage \\
 \tind Improved Deadly Aim & Dex 5, Deadly Aim, base attack bonus \plus8 & Trade more ranged attack bonus for damage \\
 Defensive Stance & Base attack bonus \plus6 & Trade ability to move for CMD \\
 \tind Improved Defensive Stance & Base attack bonus \plus12 & Trade ability to move for AC \\
 Distracting Foe & Base attack bonus \plus4 & Threatened foes suffer Concentration penalties \\
+Guardian & \x & Adjacent allies suffer reduced overwhelm penalties. \\
 Executioner & Base attack bonus \plus12 & Gain free attacks against foes near death \\
 Eye of the Storm & Base attack bonus \plus4 & Reduce overwhelm penalties by 2 \\
 Heartseeker & Base attack bonus \plus8 & Double critical threat range \\
@@ -968,12 +969,12 @@ Choose one weapon group for which you have already selected the Weapon Focus fea
 \parhead{Benefit} Foes that you threaten at the start of your turn treat all squares you threaten as difficult terrain. Creatures must pay double movement cost to move through squares of difficult terrain, and cannot run or charge while in difficult terrain.
 
 \subsubsection{Cautious Attack [Combat Style]}
-\parhead{Benefit} You can choose to take a \minus2 penalty to damage rolls to gain a \plus2 circumstance bonus to your Combat Maneuver Defense. \bonusscalingdescription
+\parhead{Benefit} You can choose to take a \minus2 penalty to damage rolls to gain a \plus2 circumstance bonus to your Combat Maneuver Defense. \babscalingdescription
 \parhead{Style Requirement} You must full attack each round.
 
 \subsubsection{Combat Expertise [Combat Style]}
 \parhead{Prerequisite} Int 3.
-\parhead{Benefit} You can choose to take a \minus2 penalty on attack rolls, including combat maneuvers, to gain a \plus2 circumstance bonus to your dodge modifier. \bonusscalingdescription In addition, you increase the bonus gained from using the total defense action (see \pref{Total Defense}) by the same amount. You cannot fight defensively while using this combat style.
+\parhead{Benefit} You can choose to take a \minus2 penalty on attack rolls, including combat maneuvers, to gain a \plus2 circumstance bonus to your dodge modifier. \babscalingdescription In addition, you increase the bonus gained from using the total defense action (see \pref{Total Defense}) by the same amount. You cannot fight defensively while using this combat style.
 \parhead{Style Requirement} Must full attack or take the total defense action each round.
 \parhead{Normal} A character without the Combat Expertise feat can fight defensively while using the full attack action to take a \minus4 penalty on attack rolls and gain a \plus2 circumstance bonus to its dodge modifier.
 
@@ -982,22 +983,24 @@ Choose one weapon group for which you have already selected the Weapon Focus fea
 \parhead{Benefit} As a full-round action, you can make a full attack and make an Aid Another check to help an adjacent ally's attack bonus or armor class.
 
 \subsubsection{Covering Fire [Combat Style]}
-\parhead{Prerequisite} Wis 3.
 \parhead{Benefit} If you hit a creature with a ranged attack, it takes a \minus2 penalty to attack rolls for 1 round.
-\parhead{Style Requirement} Must full attack with a ranged weapon.
 
 \subsubsection{Deadly Aim [Combat Style]}
 \parhead{Prerequisites} Dex 3.
-\parhead{Benefit} You take a \minus2 penalty on all ranged attack rolls and gain a \plus2 circumstance bonus on all ranged damage rolls. \bonusscalingdescription The bonus damage does not apply to touch attacks or effects that do not deal hit point damage.
+\parhead{Benefit} You take a \minus2 penalty on all ranged attack rolls and gain a \plus2 circumstance bonus on all ranged damage rolls. \babscalingdescription The bonus damage does not apply to touch attacks or effects that do not deal hit point damage.
 \parhead{Style Requirement} Must full attack with a ranged weapon each round.
 
 \subsubsection{Defensive Stance [Combat Style]}
 \parhead{Prerequisites} Base attack bonus \plus6
-\parhead{Benefit} You gain a \plus2 circumstance bonus to Combat Maneuver Defense. \bonusscalingdescription However, you are unable to move until you change styles (a swift action). You can only use this style if you did not move in the previous round.
+\parhead{Benefit} You gain a \plus2 circumstance bonus to Combat Maneuver Defense. \babscalingdescription However, you are unable to move until you change styles (a swift action). You can only use this style if you did not move in the previous round.
 
 \subsubsection{Distracting Foe [Combat Style]}
 \parhead{Prerequisites} Base attack bonus \plus4.
 \parhead{Benefit} Foes you threaten take a \minus2 penalty to Concentration checks. This penalty increases to \minus3 at base attack bonus \plus8, to \minus4 at base attack bonus \plus12, and finally to \minus5 at base attack bonus \plus16.
+\parhead{Style Requirement} Must wield a melee weapon.
+
+\subsubsection{Guardian [Combat Style]}
+\parhead{Benefit} Allies within your threatened area reduce their overwhelm penalties by 1. This reduction increases to 2 at base attack bonus \plus8, to 3 at base attack bonus \plus12, and finally to 4 at base attack bonus \plus16. This can reduce penalties to 0, but those allies are still considered overwhelmed for the purpose of abilities such as sneak attack.
 \parhead{Style Requirement} Must wield a melee weapon.
 
 \subsubsection{Executioner [Combat Style]}
@@ -1065,12 +1068,12 @@ You must spend a full-round action to make a full attack while in this style. Yo
 
 \subsubsection{Point Blank Shot [Combat Style]}
 \parhead{Prerequisite} Precise Shot.
-\parhead{Benefit} You get a \plus2 circumstance bonus on damage rolls with ranged weapons at ranges of up to 30 feet. \bonusscalingdescription
+\parhead{Benefit} You get a \plus2 circumstance bonus on damage rolls with ranged weapons at ranges of up to 30 feet. \babscalingdescription
 \parhead{Style Requirement} None.
 
 \subsubsection{Power Attack [Combat Style]}
 \parhead{Prerequisite} Str 3.
-\parhead{Benefit} You can choose to take a \minus2 penalty on all melee attack rolls and combat maneuver checks to gain a \plus2 bonus on all melee damage rolls. \bonusscalingdescription You must choose to use this feat before making an attack roll, and its effects last until your next turn. The bonus damage does not apply to touch attacks or effects that do not deal hit point damage.
+\parhead{Benefit} You can choose to take a \minus2 penalty on all melee attack rolls and combat maneuver checks to gain a \plus2 bonus on all melee damage rolls. \babscalingdescription You must choose to use this feat before making an attack roll, and its effects last until your next turn. The bonus damage does not apply to touch attacks or effects that do not deal hit point damage.
 \par This bonus to damage is halved if you are making an attack with an off-hand weapon or light weapon.
 \parhead{Style Requirement} Must charge or full attack with a melee weapon each round.
 
