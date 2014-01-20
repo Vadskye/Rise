@@ -33,9 +33,7 @@ If you hit on a ranged touch attack, the target takes damage.
 \spellsave{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-This spell has different effects depending on the form chosen.
-\par \subspell{Deflection} The subject gains a \plus2 bonus to armor class. \bonusscalingdescription
-\par \subspell{Resistance} The subject gains a \plus2 bonus on saving throws against spells or spell-like abilities. \bonusscalingdescription
+  The subject gains a \plus2 bonus to armor class and saving throws. \bonusscalingdescription These benefits apply only against against spells and spell-like abilities.
 \end{spelleffect}
 
 \spellsection{Combat Telekinesis}
@@ -93,10 +91,10 @@ At the end of the spell's duration, the projectiles disappear without a trace.
 \spellsection{Distract}
 \spelldesc{You cloud the mind of the subject, distracting it from what it was going to do.}
 \spellschool{Enchantment (Compulsion) [Mind-affecting]}
-\spellrng{\rngmed}
+\spellrng{\rngclose}
 \spelltgt{One creature}
-\spelldur{\durshort/1 round}
-\spellsave{Will negates}
+\spelldur{\durshort}
+\spellsave{None}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
 The subject is bewildered.
@@ -107,7 +105,7 @@ A bewildered creature takes a \minus2 penalty to attack rolls, saving throws, ch
 
 \spellsection{Draining Touch}
 \spelldesc{You drain your foe's life force with a touch, drawing it into yourself.}
-\spellschool{Necromancy (Unlife) [Negative]}
+\spellschool{Necromancy (Life)}
 \spellrng{Touch}
 \spelltgt{Living creature touched}
 \spelldur{Instantaneous/5 rounds; see text}
@@ -119,9 +117,9 @@ If you succeed on a melee touch attack, the target takes damage. You gain tempor
 \end{spelleffect}
 
 \spellsection{Exhaustion}
-\spelldesc{You momentarily cripple your foe's energy.}
+\spelldesc{You momentarily weaken your foe's body.}
 \spellschool{Necromancy (Flesh)}
-\spellrng{\rngclose}
+\spellrng{\rngmed}
 \spelltgt{One living creature}
 \spelldur{1 round}
 \spellsave{Fortitude negates}
@@ -171,19 +169,19 @@ The next successful attack with the target weapon deals extra damage. The creatu
 You must succeed on a ranged touch attack. If you hit, the target takes damage. As with \spell{magic missile}, inanimate objects are not damaged by the spell.
 \end{spelleffect}
 
-\spellsection{Phantom Injury}
-\spelldesc{You twist your foe's perceptions, convincing it that it is seriously injured.}
+\spellsection{Phantom Darkness}
+\spelldesc{You twist your foe's perceptions, convincing it that the world has suddenly become dark.}
 \spellschool{Illusion (Phantasm) [Unreal]}
-\spellrng{\rngclose}
-\spelleff{One creature}
+\spellrng{Touch}
+\spelltgt{Touched creature}
 \spelldur{1 round}
 \spellsave{Will disbelief}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-The subject is staggered. If it takes damage, it must make another Will save if it is bloodied (after taking the damage). If it fails the save, it falls unconscious until the spell ends. Otherwise, it immediately shakes off the spell's effect after being damaged.
+  The touched subject can only see darkness surrounding it, causing it to be blinded. Creatures with extrasensory perception abilities, such as tremorsense, may use those abilities normally.
 \end{spelleffect}
 \begin{spellnotes}
-A staggered character may take a single move action or standard action each round, but not both. She cannot take full-round actions, but she may take swift actions.
+   A blinded character cannot see. She takes a \minus2 penalty to attack rolls, Armor Class, and any checks which involve sight. In addition, she is flat-footed and moves at half speed. All checks and activities that rely on vision (such as reading and Spot checks) automatically fail. All opponents are considered to have total concealment (50\% miss chance) relative to the blinded character.
 \end{spellnotes}
 
 \spellsection{Premonition}
@@ -201,16 +199,17 @@ The subject gains a \plus4 bonus to hit on the next single attack roll it makes,
 \spellsectioncomma}{Slow}{Lesser}
 \spelldesc{You decelerate your enemy's motions temporarily, causing her to move and act more slowly than normal.}
 \spellschool{Transmutation (Temporal)}
-\spellrng{\rngclose}
+\spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{1 round}
 \spellsave{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-The subject is slowed. This has two effects.
-\par A slowed creature can take only a single move action or standard action each turn, but not both (nor may it take full-round actions).
-\par A slowed creature takes a \minus2 penalty to attack rolls, Strength and Dexterity-based checks, and armor class.
+The subject is slowed.
 \end{spelleffect}
+\begin{spellnotes}
+ A slowed creature can take only a single move action or standard action each turn, but not both. It cannot take full-round actions, but it may take swift actions. Additionally, it takes a \minus2 penalty to attack rolls, Strength and Dexterity-based checks, and armor class.
+\end{spellnotes}
 
 \spellsection{Twist Fate}
 \spellschool{Divination (Knowledge)}
