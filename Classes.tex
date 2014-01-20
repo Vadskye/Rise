@@ -145,12 +145,12 @@ A bard's magic level is equal to his bard level.
 \subcf{Good} The cleric gains Spell Focus (Good) as a bonus feat.
 \subcf{Knowledge} The cleric adds all Knowledge skills to his cleric class skill list.
 \subcf{Law} The cleric gains Spell Focus (Law) as a bonus feat.
-\subcf{Life} The cleric gains Spell Focus (Healing) as a bonus feat.
 \subcf{Magic} The cleric gains Spell Focus (any) as a bonus feat.
 \subcf{Protection} When the cleric uses the aid another ability to improve an ally's armor class, he grants a \plus4 circumstance bonus instead of a \plus2 circumstance bonus.
 \subcf{Strength} The cleric adds Climb, Jump, and Swim to his cleric class skill list.
 \subcf{Travel} The cleric adds Survival to his cleric class skill list.
 \subcf{Trickery} The cleric adds Bluff and Disguise to his cleric class skill list.
+\subcf{Vitality} The cleric gains Spell Focus (Vitalism) as a bonus feat.
 \subcf{War} The cleric gains Weapon Focus with his deity's favored weapon group as a bonus feat, even if he doesn't meet the prerequisites. If he does not have a deity, he gains it in a weapon group related to his alignment or ideals.
 \subcf{Water} The cleric gains a swim speed equal to his base land speed.
 
@@ -530,7 +530,7 @@ rage.  A barbarian's rage ends if he becomes unconscious. At the end of the rage
 
 \cf{Bbn}{Fast Movement (Ex)} At 2nd level, a barbarian's land speed becomes faster than the norm for his race by \plus10 feet. This benefit applies only when he is wearing no armor, light armor, or medium  armor and not carrying a heavy load. Apply this bonus before modifying the barbarian's speed because of any load carried or armor worn. This bonus is a competence bonus.
 
-\cf{Bbn}{Uncanny Dodge (Ex)} Starting at 2nd level, a barbarian can react to danger before his senses would normally allow him to do so. He cannot be caught flat-footed. This defense denies a rogue the ability to sneak attack unless the attacker has at least four more rogue levels than the target has barbarian levels.
+\cf{Bbn}{Uncanny Dodge (Ex)} Starting at 2nd level, a barbarian can react to danger before his senses would normally allow him to do so. He may apply his Dexterity and dodge modifier to his armor class while flat-footed.
 
 If a barbarian already has uncanny dodge from a different class, he stacks those levels to determine whether he gains improved uncanny dodge (see below) instead.
 
@@ -929,7 +929,7 @@ The Good domain gives him access to \spell{bless} and \spell{protection from evi
 \cf{Clr}{Lesser Domain Aspect (Su)} A cleric's abilities are shaped by his domains. Each domain is associated with a lesser domain aspect. Lesser domain aspects are not activated. Options for domain aspects are listed below.
 \subcf{Air} The cleric takes half damage from falling damage.
 \subcf{Chaos} The cleric gains Spell Focus (Chaos) as a bonus feat.
-\subcf{Death} The cleric does not suffer partial effects if he makes his saving throw against death effects. For example, he is not sickened by \spell{finger of death} if he makes his Fortitude save.
+\subcf{Death} The cleric does not suffer partial effects if he makes his saving throw against death effects. For example, he is not staggered by \spell{finger of death} if he makes his Fortitude save.
 \subcf{Destruction} The cleric can ignore half of the hardness of any object he damages, whether with spells or weapons.
 \subcf{Earth} The cleric gains Endurance as a bonus feat.
 \subcf{Evil} The cleric gains Spell Focus (Evil) as a bonus feat.
@@ -1148,7 +1148,7 @@ A cleric who grossly violates the code of conduct required by his god loses all 
 neutral, or neutral evil.
 \cd{Hit Value} 5.
  \sssecfake{Class Skills}
-The druid's class skills (and the key attribute for each skill) are Climb (Str), Jump (Str), Swim (Str), Stealth (Dex), Knowledge (geography), Knowledge (nature) (Int), Heal (Wis), Perception (Wis), Survival (Wis), and Handle Animal (Cha).
+The druid's class skills (and the key attribute for each skill) are Climb (Str), Jump (Str), Swim (Str), Ride (Dex), Stealth (Dex), Knowledge (geography), Knowledge (nature) (Int), Heal (Wis), Perception (Wis), Survival (Wis), and Handle Animal (Cha).
 \cf{Drd}{Skill Points at 1st Level} 4
 
 \sssecfake{Class Features}
@@ -1211,7 +1211,7 @@ A druid's magic level is equal to her druid level.
 
 \cf{Drd}{Natural Casting (Ex)} A druid's spells channel of nature itself. Though her energy is a necessary component to bring natural power to bear, she need not be the focus of its might. Whenever she casts a druid area spell that would emanate from her, such as a cone or line spell, she may cause the spell to originate from any position within 10 feet of her. All other aspects of the spell are unchanged.
 
-For example, a druid casting \spell{gust of wind} could create a line of wind originating from 30 feet to her right. The line would extend 50 feet out from that point, as normal. If the druid cause the line of wind to blow to the left, she could potentially be affected by the wind.
+For example, a druid casting \spell{gust of wind} could create a line of wind originating from 10 feet to her right. The line would extend 50 feet out from that point, as normal. If the druid cause the line of wind to blow to the left, she could potentially be affected by the wind.
 
 \cf{Drd}{Bonus Languages} A druid's bonus language options include Sylvan, the language of magical woodland creatures. This choice is in addition to the bonus languages available to the character because of her race.
 
@@ -1686,7 +1686,7 @@ Monks can use gauntlets, including enchanted gauntlets, but they must use the da
 
 \cf{Mnk}{Ki Strike (Su)} At 2nd level, a monk can guide her strikes with \ki. She may add half her Wisdom to her attack rolls with unarmed strikes, special monk weapons, and combat maneuvers. This is in addition to the normal Strength or Dexterity, as appropriate.
 
-\cf{Mnk}{Uncanny Dodge (Ex)} Starting at 2nd level, a monk can react to danger before her senses would normally allow her to do so. She cannot be flat-footed. This defense denies a rogue the ability to sneak attack unless the attacker has at least four more rogue levels than the target has monk levels.
+\cf{Mnk}{Uncanny Dodge (Ex)} Starting at 2nd level, a monk can react to danger before her senses would normally allow her to do so. She may apply her Dexterity and dodge modifier to her armor class while flat-footed.
 
 If a monk already has uncanny dodge from a different class, she stacks those levels to determine whether she gains improved uncanny dodge (see below) instead.
 
@@ -2271,7 +2271,7 @@ A rogue can sneak attack only living creatures with discernible anatomies -- ooz
 
 \subcf{Trap Sense} Whenever the rogue comes within 10 feet of a trap, she receives an immediate Spot check to notice the trap. This check should be made secretly, so the rogue does not know whether she failed to notice a trap.
 
-\cf{Rog}{Uncanny Dodge (Ex)} Starting at 2nd level, a rogue can react to danger before her senses would normally allow her to do so. She cannot be caught flat-footed. This defense denies a rogue the ability to sneak attack unless the attacker has at least four more rogue levels than the target has rogue levels.
+\cf{Rog}{Uncanny Dodge (Ex)} Starting at 2nd level, a rogue can react to danger before her senses would normally allow her to do so. She may apply her Dexterity and dodge modifier to her armor class while flat-footed.
 
 If a rogue already has uncanny dodge from a different class, she stacks those levels to determine whether she gains improved uncanny dodge (see below) instead.
 
@@ -2302,6 +2302,7 @@ If a rogue already has uncanny dodge from a different class, she stacks those le
 \subcf{Tricky Maneuver} When performing combat maneuvers against foes she would be able to sneak attack, the rogue gains a circumstance bonus to attack equal to the number of sneak attack dice she would normally roll. The benefits of this trick apply even against foes immune to critical hits.
 
 \cf{Rog}{Improved Uncanny Dodge (Ex)} At 6th level and higher, a rogue can no longer be overwhelmed as easily; she can react to multiple opponents as easily as she can react to a single attacker. The rogue is always treated as being threatened by two fewer creatures than she actually is for the purpose of determining overwhelm penalties. 
+
 \par If a character already has uncanny dodge (see above) from a second class and gains improved uncanny dodge, the character stacks those levels to determine if she should gain greater uncanny dodge, and to determine the minimum level a rogue must be to sneak attack the character.
 
 \cf{Rog}{Greater Uncanny Dodge (Ex)} At 10th level and higher, a rogue can no longer be overwhelmed, regardless of the number of foes surrounding her.
