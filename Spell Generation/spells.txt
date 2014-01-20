@@ -382,3 +382,27 @@ Bestow Curse
 {'alternate': [True], 'range': 'close', 'save_name': ['Bestow', 'Curse'], 'dispellable': [False], 'duration': ['permanent'], 'save': ['negates'], 'condition': [2.0]}
 Spell Level: 5.0
 
+Confusion, Lesser
+{'touch_attack': ['1'], 'range': 'touch', 'limit_types': [1], 'save_name': ['Confusion,', 'Lesser'], 'duration': ['round'], 'save': ['negates'], 'condition': [1.5, 3.0]}
+Spell Level: 0.32
+
+Bestow Protection
+{'duration': ['round'], 'range': 'close', 'save_name': ['Bestow', 'Protection'], 'buff': [2, 2]}
+Spell Level: 0
+
+Bestow Protection
+{'duration': ['round'], 'range': 'close', 'limit_types': [1], 'save_name': ['Bestow', 'Protection'], 'buff': [2, 2]}
+Spell Level: 0
+
+Bestow Protection
+{'duration': ['round'], 'range': 'close', 'limit_types': [2], 'save_name': ['Bestow', 'Protection'], 'buff': [2, 2]}
+Spell Level: 0
+
+Exhaustion
+{'duration': ['round'], 'save': ['negates'], 'condition': [2.0], 'save_name': ['Exhaustion']}
+Spell Level: 0.0
+
+Phantom Darkness
+{'touch_attack': ['1'], 'range': 'touch', 'save_name': ['Phantom', 'Darkness'], 'duration': ['round'], 'save': ['negates'], 'condition': [1.5]}
+Spell Level: -0.2
+
