@@ -159,17 +159,17 @@ An attack of opportunity ``interrupts'' the normal flow of actions in the round.
 \begin{dtable!*}
 \lcaption{Actions in Combat}
 \begin{tabularx}{\textwidth}{>{\ccol}X c >{\ccol}X c >{\ccol}X c}
-\thead{Standard Action} & \thead{Provokes} & & & \thead{Free Action} & \thead{Provokes} \\
+\thead{Standard Action} & \thead{Provokes} & & & \thead{Swift Action} & \thead{Provokes} \\
 Activate most magic items& No & Pick up an item & Yes & Cast a quickened spell & No \\
-Aid another & Maybe\fn{1} & Ready a tower shield& No& Dismiss a spell & No \\
-Bull rush & Maybe\fn{2} & Sheathe a weapon & No & Draw a weapon& No \\
-Cast most spells& Yes\fn{3} & Stand up from prone & No & Lower spell resistance & No \\
-Cast a spell from a scroll & Yes\fn{3} & Retrieve a stored item & Yes & Ready a shield& No \\
-Concentrate to maintain an active spell & No &&&&  \\
-Draw a hidden weapon (see Sleight of Hand skill) & No & \thead{Full-Round Action} & \thead{Provokes} & \thead{Immediate Action} & \thead{Provokes} \\
-Drink a potion or apply an oil & Yes & Charge\fn{4} & No & Cast an immediate spell & No \\
-Escape a grapple& No & Deliver coup de grace & Yes & Drop prone & No \\
-Full attack & No & Extinguish flames & Yes& Focus on a foe & No \\
+Aid another & Maybe\fn{1} & Ready a tower shield& No & Change focus & No \\
+Bull rush & Maybe\fn{2} & Sheathe a weapon & No & Dismiss a spell & No \\
+Cast most spells& Yes\fn{3} & Stand up from prone & No & Draw a weapon& No \\
+Cast a spell from a scroll & Yes\fn{3} & Retrieve a stored item & Yes & Lower spell resistance & No \\
+Concentrate to maintain an active spell & No && Ready a shield& No \\
+Draw a hidden weapon (see Sleight of Hand skill) & No & \thead{Full-Round Action} & \thead{Provokes} &&&  \\
+Drink a potion or apply an oil & Yes & Charge\fn{4} & No & \thead{Immediate Action} & \thead{Provokes} \\
+Escape a grapple& No & Deliver coup de grace & Yes & Cast an immediate spell & No \\
+Full attack & No & Extinguish flames & Yes& Drop prone & No \\
 Grapple & Maybe\fn{2} & Fighting retreat & Maybe\fn{5} &&  \\
 Ready (triggers a standard action) & No & Load a heavy or repeating crossbow & Yes & \thead{Attack Action} & \thead{Provokes} \\
 Total defense & No & Overrun & Maybe\fn{2,5} & Attack (melee) & No \\
@@ -336,9 +336,6 @@ The simplest move action is moving your speed. Many nonstandard modes of movemen
 \parhead{Crawling} You can crawl 5 feet as a move action. Crawling incurs attacks of opportunity from any attackers who threaten you at any point of your crawl.
 \parhead{Crouching} You can move at half speed while crouching.
 
-\subsubsection{Focus}
-Focusing allows you to avoid being distracted by insignificant opponents when dealing with a serious threat. As a move action, you can focus your attention on a specific foe you can see or otherwise observe. If you do, you are not considered overwhelmed against attacks that foe makes. However, you increase by 2 any overwhelm penalties you suffer against other foes. You remain focused until you stop focusing (a free action).
-
 \subsubsection{Draw a Weapon}
 Drawing a weapon so that you can use it in combat, or putting it away so that you have a free hand, requires a move action. This action also applies to weapon-like objects carried in easy reach, such as wands. If your weapon or weapon-like object is stored in a pack or otherwise out of easy reach, treat this action as retrieving a stored item.
 
@@ -419,6 +416,9 @@ You can stop concentrating on an active spell as a free action.
 
 \sssecfake{Cast a Spell}
 You can cast a quickened spell (see the Quicken Spell feat) or any spell with a swift action casting time as a swift action. Only one such spell can be cast in any round, and such spells don't count toward your normal limit of one spell per round. Casting a spell with a casting time of a swift action doesn't incur an attack of opportunity.
+
+\subsubsection{Change Focus}
+Focusing allows you to avoid being distracted by insignificant opponents. When you focus, you designate any number of foes threatening you. For the purpose of their attacks, they are the only ones threatening you, which can reduce your overwhelm penalty or cause you to not be treated as being overwhelmed at all. However, you are flat-footed against all other attacks, and you take an extra \minus1 overwhelm penalty for each creature you focus on.
 
 \subsubsection{Direct or Redirect a Spell}
 Some spells allow you to redirect the effect to new targets or areas after you cast the spell. Redirecting a spell requires a swift action and does not provoke attacks of opportunity or require concentration.
