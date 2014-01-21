@@ -93,32 +93,65 @@ A typical encounter involves the same number of monsters as PCs. Each monster in
 
 \end{comment}
 
-\subsection{Human Warrior}
+\subsection{Human Bandit}
+\montypes{Usually evil}{Medium}{humanoid}{2}{Archetypes}
+%\montypessubtypes{Align}{Size}{type}{subtypes}{CR}{Archetypes}
+\monsenses{\plus1}{\plus1}
+%\monsensesfull{Init}{\plus Perception}{\plus Spellcraft}{Special senses}
+\monspace{5 ft.}{5 ft.}; \monspeed{30 ft.}%;\monaura{Aura}
+\monlanguages{Common}
+
+\monlinerule 
+
+\monac{17}{14}{13}{17}{\plus3 studded leather, \plus1 Dexterity, \plus1 dodge, \plus2 heavy wooden shield}
+\monhp{10}{2}
+%\monimmune{immunities}
+%\monresist{resistances}
+\monsaves{6}{1}{1}
+
+\monlinerule
+
+\monmelee{Longsword \plus4 (d8+1)}
+\moncmb{\plus2}{\plus4}
+%\monsa{}
+
+\monlinerule 
+
+\monattributes{2}{1}{2}{0}{-1}{0}
+%\monfeats{Feats}
+\monskills{Perception \plus1}
+%\monitems{Items}
+
+\monlinerule
+
+\mondescription{Human Bandit}
+
+\monbehavior{Human Bandit}
+
+
+\subsection{Human Militia}
 \montypes{Varies}{Medium}{humanoid}{1}{}
 \monsenses{0}{\plus0}
-%\monsensesfull{Init}{\plus Perception}{\plus Spellcraft}{Special senses}
 \monspace{5}{5}; \monspeed{30 ft.}%;\monaura{Aura}
 \monlanguages{Common}
 
 \monlinerule 
 
-\monac{14}{12}{12}{13}{\plus2 armor, \plus2 shield}
+\monac{15}{13}{12}{14}{\plus2 armor, \plus2 shield, \plus1 Dexterity}
 \monhp{5}{1}
-%\monimmune{immunities}
-%\monresist{resistances}
-\monsaves{2}{0}{0}
+\monsaves{3}{1}{0}
 
 \monlinerule
 
-\monmelee{Longsword \plus1 (d8)}
+\monmelee{Longsword \plus2 (d8)}
 \moncmb{1}{1}
 %\monsa{}
 
 \monlinerule 
 
-\monattributes{10}{10}{10}{10}{10}{10}
-\monfeats{Feats}
-\monskills{}
+\monattributes{1}{1}{1}{0}{0}{0}
+%\monfeats{}
+%\monskills{}
 \monitems{Leather armor, longsword, heavy wooden shield}
 
 \monlinerule
@@ -167,32 +200,31 @@ Kobolds like to attack with overwhelming odds -- at least two to one -- or trick
 They begin a fight by slinging bullets, closing only when they can see that their foes have been weakened. Whenever they can, kobolds set up ambushes near trapped areas.
 
 \subsection{Bear, Black}
-\montypes{TN}{Medium}{animal}{CR}{Brute}
+\montypes{TN}{Medium}{animal}{4}{Brute}
 %\montypessubtypes{Align}{Size}{type}{subtypes}{CR}{Archetypes}
-\monsenses{Init}{\plus Perception}
+\monsenses{\plus1}{\plus Perception; scent}
 %\monsensesfull{Init}{\plus Perception}{\plus Spellcraft}{Special senses}
-\monspace{Space}{Reach}; \monspeed{Speed ft.}%;\monaura{Aura}
-\monlanguages{Languages}
+\monspace{5 ft.}{5 ft.}; \monspeed{30 ft.}%;\monaura{Aura}
 
 \monlinerule 
 
 \monac{Normal}{Touch}{Flat}{CMD}{modifiers}
-\monhp{HP}{5}
+\monhp{32}{4} %HV is 6
 %\monimmune{immunities}
 %\monresist{resistances}
 \monsaves{Fort}{Ref}{Will}
 
 \monlinerule
 
-\monmelee{Melee}
-\moncmb{BAB}{CMB}
+\monmelee{Claws \plus7 (d10+2/d10)}
+\moncmb{\plus3}{\plus7}
 %\monsa{}
 
 \monlinerule 
 
-\monattributes{4}{1}{3}{\minus5}{}{}
+\monattributes{4}{1}{4}{\minus5}{0}{0}
 \monfeats{Feats}
-\monskills{Skills}
+\monskills{Climb \plus16, Stealth \plus5, Perception \plus8}
 
 \monlinerule
 
