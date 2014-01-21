@@ -528,7 +528,6 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellschool{Evocation/Transmutation (Channeling, Imbuement) [Good]}
 \spelllvl{Pal 2}
 \spellcmp{V}
-\spelldur{\durmed}
 \begin{spelleffect}
   This spell functions like \spell{magic weapon}, except that the weapon also becomes good, which means it can bypass the damage reduction of certain creatures. (This effect overrides and suppresses any other alignment the weapon might have.)
 \end{spelleffect}
@@ -536,7 +535,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsection{Blindness/Deafness}
 \spelldesc{You afflict one of the subject's senses.}
 \spellschool{Necromancy (Flesh)}
-\spelllvl{Clr 3, Sor/Wiz 2}
+\spelllvl{Clr 3, Pal 3, Sor/Wiz 2}
 \spellrng{Touch}
 \spelltgt{Creature touched}
 \spelldur{\durlong (D)}
@@ -868,7 +867,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsection{Command}
 \spelldesc{You compel a foe to obey a single command of your choice.}
 \spellschool{Enchantment (Compulsion) [Language-Dependent, Mind-Affecting, Sound-Dependent]}
-\spelllvl{Clr 1, Law 1, Sor/Wiz 1}
+\spelllvl{Clr 1, Law 1, Pal 1, Sor/Wiz 1}
 \spellcmp{V}
 \spellrng{\rngmed}
 \spelltgt{One creature}
@@ -894,7 +893,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsectioncomma{Command}{Mass}
 \spelldesc{You compel many foes to obey your command.}
 \spellschool{Enchantment (Compulsion) [Language-Dependent, Mind-Affecting, Sound-Dependent]}
-\spelllvl{Clr 5, Law 5}
+\spelllvl{Clr 5, Law 5, Pal 4}
 \spellarea{\areamed radius limit}
 \spelltgts{Five creatures within the area}
 \begin{spelleffect}
@@ -1429,7 +1428,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsection{Detect Evil}
 \spelldesc{You sense the presence of evil.}
 \spellschool{Divination (Awareness) [Detection]}
-\spelllvl{Clr 1}
+\spelllvl{Clr 1, Pal 1}
 \spellarea{\arealarge cone-shaped emanation from you}
 \spelldur{Concentration}
 \spellsave{None}
@@ -1473,20 +1472,6 @@ If you take life damage, you lose all temporary hit points provided by this spel
   This spell functions like \spell{detect evil}, except that it detects lawful auras, and you are vulnerable to an overwhelming lawful aura if you are chaotic.
 \end{spelleffect}
 
-\spellsection{Detect Poison}
-\spellschool{Divination (Awareness) [Detection]}
-\spelllvl{Clr 1, Drd 1, Sor/Wiz 1}
-\spellarea{\arealarge cone-shaped emanation from you}
-\spelldur{Concentration}
-\spellsave{None}
-\spellsr{No}
-\begin{spelleffect}
-  You know the direction to any poisons in the area by seeing their auras. If you concentrate on a particular aura, you learn its location.
-\end{spelleffect}
-\begin{spellnotes}
-  A detection spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.
-\end{spellnotes}
-
 \spellsection{Detect Secret Doors}
 \spelldesc{You can detect secret doors, compartments, caches, and so forth.}
 \spellschool{Divination (Awareness) [Detection]}
@@ -1529,7 +1514,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 
 \spellsection{Detect Undead}
 \spellschool{Divination (Awareness) [Detection]}
-\spelllvl{Clr 1, Sor/Wiz 1}
+\spelllvl{Clr 1, Pal 1, Sor/Wiz 1}
 \spellarea{\arealarge cone-shaped emanation from you}
 \spelldur{Concentration}
 \spellsave{None}
@@ -1787,7 +1772,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 
 \spellsection{Disrupting Weapon}
 \spellschool{Necromancy/Transmutation (Imbuement, Positive)}
-\spelllvl{Clr 4}
+\spelllvl{Clr 4, Pal 3}
 \spellrng{\rngclose}
 \spelltgt{One melee weapon}
 \spelldur{\durshort}
@@ -2787,7 +2772,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 
 \spellsection{Hold Person}
 \spellschool{Enchantment (Inhibition) [Mind-Affecting]}
-\spelllvl{Brd 2, Clr 2, Sor/Wiz 2, War 2}
+\spelllvl{Brd 2, Clr 2, Pal 2, Sor/Wiz 2, War 2}
 \spellrng{\rngclose}
 \spelltgt{One humanoid creature}
 \spelldur{\durshort (D); see text}
@@ -3135,7 +3120,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 
 \spellsection{Invest Magic}
 \spellschool{Transmutation (Augment)}
-\spelllvl{Clr 4, Sor/Wiz 4, War 4}
+\spelllvl{Clr 4, Pal 4, Sor/Wiz 4, War 4}
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{\durshort}
@@ -3289,7 +3274,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 
 \spellsection{Light}
 \spellschool{Illusion (Figment) [Light]}
-\spelllvl{Brd 1, Clr 1, Drd 1, Sor/Wiz 1}
+\spelllvl{Brd 1, Clr 1, Drd 1, Pal 1, Sor/Wiz 1}
 \spellrng{\rngtouch}
 \spelltgt{Object touched}
 \spelldur{\durlong (D)}
@@ -4562,7 +4547,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 
 \spellsection{Righteous Might}
 \spellschool{Transmutation (Imbuement, Polymorph) [Size-Affecting]}
-\spelllvl{Clr 5, Good 5, Strength 5}
+\spelllvl{Clr 5, Good 5, Pal 4, Strength 5}
 \spellrng{Personal}
 \spelltgt{You}
 \begin{spelleffect}
@@ -4575,7 +4560,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 
 \spellsection{Sanctuary}
 \spellschool{Abjuration/Enchantment (Compulsion, Shielding)}
-\spelllvl{Abjur 1, Clr 1, Protection 1}
+\spelllvl{Abjur 1, Clr 1, Pal 1, Protection 1}
 \spellrng{Touch}
 \spelltgt{Creature touched}
 \spelldur{\durshort}
@@ -4651,7 +4636,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsection{Searing Light}
 \spelldesc{You channel divine power into a searing blast of light that erupts your palm, striking your unworthy foe.}
 \spellschool{Evocation (Channeling) [Light]}
-\spelllvl{Clr 3}
+\spelllvl{Clr 3, Pal 3}
 \spellrng{\rngclose}
 \spelleff{Ray}
 \spelldur{Instantaneous and see text}
@@ -4872,7 +4857,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsection{Shield of Faith}
 \spelldesc{You create a shimmmering, magical shield that protects your ally.}
 \spellschool{Abjuration (Shielding)}
-\spelllvl{Clr 1, Protection 1}
+\spelllvl{Clr 1, Pal 1, Protection 1}
 \begin{spelleffect}
   This spell functions like \spell{shield}, except that it is not a force effect, so it does not protect against incorporeal touch attacks. It has no special effect when cast on a creature with \spell{mage armor} 
 \end{spelleffect}
@@ -5287,7 +5272,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsection{Spiritual Weapon}
 \spelldesc{You bring into being a weapon made of pure force which attacks your foes of its own volition.}
 \spellschool{Evocation (Energy) [Force]}
-\spelllvl{Clr 2, War 2}
+\spelllvl{Clr 2, Pal 2, War 2}
 \spellrng{\rngmed}
 \spelleff{Magic weapon of force}
 \spelldur{\durshort (D)}

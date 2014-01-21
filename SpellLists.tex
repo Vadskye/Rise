@@ -137,7 +137,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead{Cure Light Wounds} Cures 2d8 damage.
   \spellhead{Delay Poison} Quickly stops poison from harming subject.
   \spellhead{Detect Chaos/Evil/Good/Law} Reveals creatures, spells, or objects of selected alignment.
-  \spellhead{Detect Poison} Detects poison in large cone.
   \spellhead{Detect Undead} Reveals undead within large cone.
   \spellheadc{Dispel Magic}{Lesser} Cancels magical spells and effects on a single target.
   \spellhead{Divine Favor} You gain \plus2 on attack and damage rolls.
@@ -972,12 +971,17 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
 \subsection{1st-level Paladin Spells}
 \begin{spelllist}
+  \spellhead{Command} One subject obeys selected command for 1 round.
   \spellhead{Cure Light Wounds} Cures 2d8 damage.
   \spellhead{Delay Poison} Quickly stops poison from harming subject.
-  \spellhead{Detect Chaos} Reveals creatures, spells, or objects of chaotic alignment.
+  \spellhead{Detect Chaos/Evil} Reveals creatures, spells, or objects of selected alignment.
+  \spellhead{Detect Undead} Reveals undead within large cone.
   \spellhead{Divine Favor} You gain \plus2 on attack and damage rolls.
+  \spellhead{Light} Object shines like a torch.
   \spellhead{Magic Vestment} Armor or shield becomes \plus2.
   \spellhead{Protection from Chaos/Evil} \plus2 to saves and counter opposing mind control.
+  \spellhead{Sanctuary} Opponents can't attack subject until it attacks.
+  \spellhead{Shield of Faith} Grants \plus2 or higher shield bonus.
 \end{spelllist}
 
 \subsection{2nd-level Paladin Spells}
@@ -987,27 +991,35 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead{Bless Weapon} Weapon becomes \plus2 and good.
   \spellhead{Cure Moderate Wounds} Cures 4d8 damage.
   \spellhead{Daylight} Large radius of bright light.
+  \spellhead{Hold Person} Paralyzes one humanoid for short duration.
   \spellhead{Resist Energy} Ignores 10 (or more) points of damage/attack from specified energy type.
+  \spellhead{Spiritual Weapon} Magic weapon attacks on its own.
   \spellhead{Share Pain} Split damage with willing subject.
   \spellhead{Zone of Truth} Subjects within small emanation cannot lie.
 \end{spelllist}
 
 \subsection{3rd-level Paladin Spells}
 \begin{spelllist} 
+  \spellhead{Blindness/Deafness} Touched creature is blinded or deafened.
   \spellhead{Cure Serious Wounds} Cures 6d8 damage.
   \spellhead{Death Ward} Grants immunity to death spells and negative energy effects.
   \spellhead{Discern Lies} Reveals deliberate falsehoods.
+  \spellhead{Disrupting Weapon} Melee weapon destroys undead.
   \spellhead{Heal Mount} As \spell{heal} on warhorse or other special mount.
   \spellhead{Protection from Energy} Absorb 10 points/level of damage from one kind of energy.
+  \spellhead{Searing Light} Ray deals 6d6 damage and blinds, more against undead.
 \end{spelllist}
 
 \subsection{4th-level Paladin Spells}
 \begin{spelllist}
+  \spellheadc{Command}{Mass} As \spell{command}, but affects multiple creatures.
   \spellhead{Cure Critical Wounds} Cures 8d8 damage.
   \spellhead{Divine Power} You gain attack and damage bonus, \plus4 Str, and 2 hp/level.
   \spellhead{Holy Sword} Weapon becomes \plus5 and holy.
+  \spellhead{Invest Magic} All of subject's equipment is magical.
   \spellhead{Magic Circle against Chaos/Evil} Protect allies in a \areamed radius and hedge out opposing outsiders.
   \spellheadc{Resist Energy}{Greater} As \spell{resist energy}, but all energy types. 
+  \spellhead{Righteous Might} Your size increases, and you gain combat bonuses.
 \end{spelllist}
 
 \section{Sorcerer/Wizard Spells}
@@ -1095,7 +1107,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellheadrestricted{Charm Person} Makes one person your friend.
 
   \spellheadc[Evoc]{Cone of Cold}{Lesser} 2d6 cold damage and brief fatigue in medium cone.
-  \spellhead{Scorching Ray} Ray (or rays) deal 6d6 fire damage.
+  \spellhead{Scorching Ray} Ray (or rays) deal 4d6 fire damage.
   \spellhead{Shatter} Sonic vibration damages objects or crystalline creatures.
   \spellheadrestricted{Interposing Hand} Hand provides cover against one opponent at a time.
   \spellheadrestricted{Knock} Opens locked or magically sealed door.
