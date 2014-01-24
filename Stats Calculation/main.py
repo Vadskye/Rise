@@ -106,6 +106,44 @@ class character:
                 'Fort '+mstr(self.saves['fortitude'])+', Ref '+mstr(self.saves['reflex'])+ \
                 ', Will '+mstr(self.saves['will'])+'\n'
 
+    def to_monster(self):
+        monster_string=''
+        header =  '\\subsection{{0}}\n\\begin{mstatblock}\n'.format(self.name)
+        monster_string+=header
+
+        types = '\\par {0} {1} {2}'.format(
+                self.alignment, self.size, self.creature_type)
+        if self.subtypes:
+            types +=' {0}'.format(self.subtypes)
+        types+=' \\textbf{CR} {0}'
+        if self.archetypes:
+            types+=' {0}'.format(self.archetypes)
+        types+='\n'
+        monster_string+=types
+
+        senses = '\\par \textbf{Init} {0}; Perception {1}'.format(
+                self.initiative, self.skills['Perception'])
+        if self.skills['Sense Motive'] is not None:
+            senses += ', Sense Motive {0}'.format(
+                    self.skills['Sense Motive'])
+        if self.skills['Spellcraft'] is not None:
+            senses += ', Spellcraft {0}'.format(self.skills['Spellcraft'])
+        if self.abilities['senses']:
+            senses += '; \\textbf{Senses} {0}'.format(
+                    self.abilities['senses'])
+        senses+='\n'
+        monster_string+=senses
+
+        if self.abilities['aura']:
+            monster_string+='\\par \\textbf{Aura} {0}\n'.format(
+                    self.abilities['aura'])
+
+        if self.languages:
+            monster_string+='\\par \\textbf{Languages} {0}\n'.format(
+                    self.languages)
+
+        return monster_string
+                
 def parse_stats_from_file(input_file_name):
     input_file = open(input_file_name,'r')
     stats=dict()
