@@ -64,6 +64,10 @@
 \begin{spelleffect}
   You must succeed on a ranged touch attack to hit your target. The acid remains on the target after the initial impact, dealing damage each round on your turn.
 \end{spelleffect}
+\begin{spellnotes}
+  If the target becomes submerged in water or takes at least ten points of cold or fire damage, this spell's effect ends.
+\end{spellnotes}
+
 
 \spellsectioncomma{Acid Arrow}{Greater}
 \spelldesc{You fire a magical arrow of acid from your hand that speeds to its target.}
@@ -71,12 +75,12 @@
 \spelllvl{Sor/Wiz 5}
 \spellrng{\rngfar}
 \spellsave{None/Fortitude negates}
-\spelldmg{5d6 acid damage \add d6 per round}
+\spelldmg{5d6 acid damage \add 2d6 per round}
 \begin{spelleffect}
   This spell functions as \spell{acid arrow}, except that the target is also vulnerable for the duration of the spell if it fails a Fortitude save.
 \end{spelleffect}
 \begin{spellnotes}
-  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
+  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. If the target becomes submerged in liquid or takes at least twenty points of fire or cold damage, this spell's effect ends.
 \end{spellnotes}
 
 \spellsection{Acid Fog}
@@ -2292,14 +2296,14 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelllvl{Drd 2, Fire 2}
 \spellrng{0 ft.}
 \spelleff{Sword-like beam}
-\spelldur{\durshort (D)}
+\spelldur{\durlong (D)}
 \spellsave{None}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
-  A 3 foot long beam of red-hot fire springs forth from your hand. In addition to providing illumination like a torch, you can wield this bladelike beam as if it were a scimitar. Attacks with the flame weapon are touch attacks, and deal 1d8 fire damage \add half your casting attribute. Since the blade is immaterial, your Strength does not apply to the damage. However, it is treated as a light weapon, so you can use Dexterity to attack with it. A \spell{flame weapon} can ignite combustible materials such as parchment, straw, dry sticks, and cloth. Alternately, you can hurl flames from the weapon up to \rngmed range as if it were a thrown weapon.
+  A 3 foot long beam of red-hot fire springs forth from your hand. In addition to providing illumination like a torch, you can wield this bladelike beam as a weapon. It is treated like a scimitar, except that all damage dealt with it is fire damage, you add half your casting attribute to damage in place of half your Strength, and it is treated as a light weapon, so you can use Dexterity to attack with it. Alternately, you can hurl flames from the weapon up to \rngmed range as if it were a thrown weapon.
 \end{spelleffect}
 \begin{spellnotes}
-  The spell does not function underwater.
+  Fire spells do not function underwater. A \spell{flame weapon} can ignite combustible materials such as parchment, straw, dry sticks, and cloth.
 \end{spellnotes}
 
 \spellsection{Fly}
