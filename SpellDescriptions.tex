@@ -2172,7 +2172,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \end{spellnotes}
 
 \spellsection{Feather Fall}
-\spellschool{Evocation (Control)}
+\spellschool{Evocation (Control) [Air]}
 \spelllvl{Air 1, Evoc 1, Travel 1}
 \spellcmp{V}
 \spelltime{1 immediate action}
@@ -2465,6 +2465,22 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \end{spelleffect}
 \begin{spellnotes}
   This damage reduction allows the subject to ignore the first 10 physical damage it takes each round. If it is hit by a magical attack, such as a damaging spell or magic weapon, it cannot use its damage reduction for 1 round.
+\end{spellnotes}
+
+\spellsection{Gentle Descent}
+\spelldesc{You grant your ally ephemeral wings which allow him to glide.}
+\spellschool{Transmutation (Imbuement) [Air]}
+\spelllvl{Air 2, Drd 2}
+\spellrng{\rngmed}
+\spelltgt{One creature}
+\spelldur{\durlong}
+\spellsave{Will negates (harmless)}
+\spellsr{Yes (Will)}
+\begin{spelleffect}
+  The subject gains a 30 foot glide speed. It must spend a move action each round to glide.
+\end{spelleffect}
+\begin{spellnotes}
+  A creature with a glide speed can glide while in the air. Each round, a gliding creature moves forward at a rate equal to its glide speed and moves five feet down. It may choose to move slower, to a minimum of half its normal glide speed. It may alternately choose to dive, allowing it to move forward at a rate equal to twice its glide speed but also moving twenty feet down. A gliding creature cannot run.
 \end{spellnotes}
 
 \begin{comment}
@@ -3311,10 +3327,12 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsave{None}
 \spellsr{No}
 \begin{spelleffect}
-  This spell causes an object to glow like a torch, shedding bright light in a \areamed radius (and dim light for an additional 20 feet) from the point you touch. The effect is immobile, but it can be cast on a movable object. \spell{Light} taken into an area of magical darkness does not function.
+  This spell causes an object to glow like a torch, shedding bright light in a \areamed radius (and dim light for an additional 20 feet) from the point you touch. The effect is immobile, but it can be cast on a movable object.
+  
+  As a swift action, you can suppress or intensify the light, preventing the object from shedding light or causing it to shed light in up to a \arealarge radius (and dim light for an additional 50 feet). Either effect lasts for 1 round.
 \end{spelleffect}
 \begin{spellnotes}
-  A light spell (one with the light descriptor) counters and dispels a darkness spell (one with the darkness descriptor) of an equal or lower level.
+  A light spell (one with the light descriptor) counters and dispels a darkness spell (one with the darkness descriptor) of an equal or lower level.\spell{Light} taken into an area of magical darkness does not function.
 \end{spellnotes}
 
 \spellsection{Lightning Bolt}
@@ -5281,8 +5299,8 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \end{spelleffect}
 
 \spellsection{Spike Growth}
-\spellschool{Transmutation (Alteration) [Earth]}
-\spelllvl{Drd 2, Earth 2}
+\spellschool{Transmutation (Alteration)}
+\spelllvl{Drd 2}
 \spellrng{\rngmed}
 \spellarea{\areasmall radius}
 \spelldur{\durshort (D)}
@@ -5294,8 +5312,8 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \end{spelleffect}
 
 \spellsection{Spike Stones}
-\spellschool{Transmutation (Alteration) [Earth]}
-\spelllvl{Drd 4, Earth 4}
+\spellschool{Transmutation (Alteration)}
+\spelllvl{Drd 4}
 \spellarea{\areamed radius}
 \begin{spelleffect}
   This spell functions like \spell{spike growth}, except that it deals 1d8 physical piercing damage to creatures moving through it and it can also be cast on rocky ground, stone floors, and similar surfaces.
@@ -5364,7 +5382,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsection{Stoneskin}
 \spelldesc{You dramatically toughen a creature's skin, giving it the appearance of stone.}
 \spellschool{Transmutation (Alteration) [Earth]}
-\spelllvl{Drd 4, Protection 4, Trans 4}
+\spelllvl{Drd 4, Earth 4, Protection 4, Trans 4}
 \begin{spelleffect}
   This spell functions like \spell{barkskin}, except that it grants physical damage reduction 10/adamantine. This damage reduction increases by 1 per two caster levels above 10th.
 \end{spelleffect}
@@ -6312,7 +6330,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellschool{Transmutation (Imbuement) [Water]}
 \spelllvl{Druid 3, Water 3}
 \spellrng{Touch}
-\spelltgts{Creature touched/level}
+\spelltgts{Five touched creatures}
 \spelldur{\durlong (D)}
 \spellsave{Fortitude negates (harmless)}
 \spellsr{Yes (Fortitude)}
