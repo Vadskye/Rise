@@ -136,11 +136,8 @@ Sometimes a combatant in a melee lets her guard down. In this case, combatants n
 \subparhead{Reach Weapons} Most creatures of Medium or smaller size have a reach of only 5 feet. This means that they can make melee attacks only against creatures up to 5 feet (1 square) away. However, Small and Medium creatures wielding reach weapons threaten more squares than a typical creature. In addition, most creatures larger than Medium have a natural reach of 10 feet or more.
 
 \parhead{Provoking an Attack of Opportunity} All attacks of opportunity come from focusing on something other than the battle at hand. This can come in two forms: moving away from an opponent, and performing certain actions within a threatened area.
-\subparhead{Leaving the Battle} Moving farther away from an opponent who threatens you usually provokes an attack of opportunity, as you turn your attention away from your opponent. The withdraw action can be used to avoid such an attack.
-\subparhead{Ignoring the Battle} Some actions, when performed in a
-threatened square, provoke attacks of opportunity as you divert your
-attention from the battle. Casting a spell and attacking with a ranged
-weapon, for example, require concentrating on something other than avoiding a foe's blows. \tref{Actions in Combat} notes many of the actions that provoke attacks of opportunity.
+\subparhead{Leaving the Battle} Moving farther away from an opponent who threatens you provokes an attack of opportunity. The withdraw action can be used to avoid such an attack. In addition, if you move at no more than half your speed, you do not provoke for moving away from any opponent that you attacked during your turn.
+\subparhead{Ignoring the Battle} Any action which requires you to concentrate on something other than defending yourself provokes an attack of opportunity. Casting a spell and attacking with a ranged weapon, for example, require concentrating on something other than avoiding a foe's blows. \tref{Actions in Combat} notes many of the actions that provoke attacks of opportunity.
 
 \par Remember that even actions that normally provoke attacks of opportunity may have exceptions to this rule.
 
@@ -150,8 +147,6 @@ An experienced character gets additional regular melee attacks (by using the ful
 
 An attack of opportunity ``interrupts'' the normal flow of actions in the round. If an attack of opportunity is provoked, immediately resolve the attack of opportunity, then continue with the next character's turn (or complete the current turn, if the attack of opportunity was provoked in the midst of a character's turn).
 
-\subparhead{Creatures without Intelligence} Taking an attack of opportunity requires the ability to perceive openings. Creatures who lack an Intelligence score, such as mindless zombies, may not make attacks of opportunity.
-
 \subparhead{Nonproficient Weapons} You can't make an attack of opportunity with a weapon that you aren't proficient with.
 
 \section{Actions in Combat}
@@ -159,38 +154,39 @@ An attack of opportunity ``interrupts'' the normal flow of actions in the round.
 \begin{dtable!*}
 \lcaption{Actions in Combat}
 \begin{tabularx}{\textwidth}{>{\ccol}X c >{\ccol}X c >{\ccol}X c}
-\thead{Standard Action} & \thead{Provokes} & & & \thead{Swift Action} & \thead{Provokes} \\
-Activate most magic items& No & Pick up an item & Yes & Cast a quickened spell & No \\
-Aid another & Maybe\fn{1} & Ready a tower shield& No & Change focus & No \\
-Bull rush & Maybe\fn{2} & Sheathe a weapon & No & Dismiss a spell & No \\
-Cast most spells& Yes\fn{3} & Stand up from prone & No & Draw a weapon& No \\
-Cast a spell from a scroll & Yes\fn{3} & Retrieve a stored item & Yes & Lower spell resistance & No \\
-Concentrate to maintain an active spell & No & Ready a shield& No && \\
-Draw a hidden weapon (see Sleight of Hand skill) & No & \thead{Full-Round Action} & \thead{Provokes} &&  \\
-Drink a potion or apply an oil & Yes & Charge\fn{4} & No & \thead{Immediate Action} & \thead{Provokes} \\
-Escape a grapple& No & Deliver coup de grace & Yes & Cast an immediate spell & No \\
-Full attack & No & Extinguish flames & Yes& Drop prone & No \\
-Grapple & Maybe\fn{2} & Fighting retreat & Maybe\fn{5} &&  \\
-Ready (triggers a standard action) & No & Load a heavy or repeating crossbow & Yes & \thead{Attack Action} & \thead{Provokes} \\
-Total defense & No & Overrun & Maybe\fn{2,5} & Attack (melee) & No \\
-Use extraordinary ability & No & Run & Yes & Attack (ranged) & Yes \\
-Use spell-like ability & Yes & Use touch spell on up to six allies & Yes & Attack (unarmed or improvised weapon) & Maybe\fn{7} \\
-Use supernatural ability & No & Withdraw\fn{4} & Maybe\fn{5} & Disarm & Maybe\fn{2} \\
-&&&& Feint & Maybe\fn{2} \\
-\thead{Move Action} & \thead{Provokes} &\thead{Free Action}&\thead{Provokes}& & \\
-Control a frightened mount & Yes  & Cease concentration on a spell & No & Trip an opponent & Maybe\fn{2} \\
- Direct or redirect an active spell & No & Drop an item\fn{6} & No &  &  \\
- Load a hand crossbow or light crossbow & Yes & Prepare spell components to cast a spell & No & \thead{No Action} & \thead{Provokes} \\
- Move & Yes & Speak\fn{6} & No & Delay& No \\
- Open or close a door & No &&&&
+\thead{Standard Action}     & \thead{Provokes} &                    &       & \thead{Swift Action}      & \thead{Provokes} \\
+Activate most magic items   & No            & Pick up an item       & Yes   & Cast a quickened spell    & No \\
+Aid another                 & Maybe\fn{1}   & Strap in or loose a shield&Yes& Change focus              & No \\
+Bull rush                   & Maybe\fn{2}   & Sheathe a weapon      & Yes   & Direct or redirect an active spell & No\\
+Cast most spells            & Yes\fn{3}     & Stand up from prone   & No    & Dismiss a spell           & No \\
+Cast a spell from a scroll  & Yes\fn{3}     & Retrieve a stored item& Yes   & Draw a light weapon       & No \\
+Concentrate on a spell      & No            &                       &       & Lower spell resistance    & No  \\
+Draw a hidden weapon        & Yes           & \thead{Full-Round Action}     & \thead{Provokes} &        &  \\
+Drink a potion or apply an oil & Yes        & Charge\fn{6}          & Yes   & \thead{Immediate Action}  & \thead{Provokes} \\
+Escape a grapple            & No            & Deliver coup de grace & Yes   & Cast an immediate spell   & No \\
+Full attack                 & No            & Extinguish flames     & Yes   & Drop prone                & No \\
+Grapple                     & Maybe\fn{2}   &                       &       &                           &  \\
+Ready                       & No            & Load a heavy or repeating crossbow & Yes & \thead{Attack Action} & \thead{Provokes} \\
+Total defense               & No            & Overrun               & Maybe\fn{2,6} & Attack (melee)    & No \\
+Use extraordinary ability   & No            & Run                   & Yes   & Attack (ranged)           & Yes \\
+Use spell-like ability      & Yes           & Use touch spell on up to six allies & Yes & Attack (unarmed or improvised weapon) & Maybe\fn{8} \\
+Use supernatural ability    & No            & Withdraw\fn{6}        & Yes   & Disarm                    & Maybe\fn{2} \\
+                            &               &                       &       & Feint                     & Maybe\fn{2} \\
+\thead{Move Action} & \thead{Provokes}      &\thead{Free Action}    &\thead{Provokes}&                  & \\
+Control a frightened mount  & Yes            & Cease concentration on a spell & No & Trip an opponent     & Maybe\fn{2} \\
+Draw a medium or heavy weapon& Yes          & Drop an item          & No    &                           &  \\
+Load a hand crossbow or light crossbow & Yes& Prepare spell components to cast a spell & No & \thead{No Action} & \thead{Provokes} \\
+Move                        & Maybe\fn{4}   & Speak\fn{7}           & No    & Delay                     & No \\
+Open or close a door        & Maybe\fn{5}   &&&&
 \end{tabularx}
 1 If you aid someone performing an action that would normally provoke an attack of opportunity, then the act of aiding another provokes an attack of opportunity as well. \\
 2 Combat maneuvers provoke attacks of opportunity if they fail by 10 or more. \\
 3 The attack of opportunity may be avoided by casting defensively. \\
-4 May be taken as a standard action if you are limited to taking only a single action in a round. \\
-5 The movement does not provoke from the target, but provokes from other foes normally. \\
-6 You may take this action at any time, even when it is not your turn. \\
-7 Attacking while unarmed or while armed with only an improvised weapon provokes an attack of opportunity if the attack misses.
+4 Does not provoke from anyone you attacked during your turn if you move at no more than half speed. \\
+5 Provokes if the door cannot simply be pushed open or closed. \\
+6 May be taken as a standard action if you are limited to taking only a single action in a round. \\
+7 You may take this action at any time, even when it is not your turn. \\
+8 Attacking while unarmed or while armed with only an improvised weapon provokes an attack of opportunity if the attack misses.
 \end{dtable!*}
 
 \subsection{The Combat Round}
@@ -676,7 +672,7 @@ Stunned & \minus2\fn{1} & \minus2\fn{1} \\
 Vulnerable & \minus2 & \minus2 \\
 \end{tabularx}
 1 The defender is flat-footed. \\
-2 Treat the defender's Dexterity as \minus10. Rogues can sneak attack helpless or pinned defenders.\\
+2 The defender is flat-footed, and treat the defender's Dexterity as \minus10. \\
 3 The creature suffers a penalty equal to the number of creatures threatening it.
 \end{dtable}
 
@@ -933,11 +929,6 @@ If you are able to take only a standard action or a move action on your turn, yo
 \parhead{Multiple Attacks} Even if you get multiple attacks on a charge, bonuses that apply while charging (such as the double damage dealt by lances) only apply on the first attack of the charge.
 
 \parhead{Weapons Readied against a Charge} Spears, tridents, and certain other piercing weapons deal double damage when readied (set) and used against a charging character (see \trefcp{Weapons}, and \pcref{Ready}).
-
-\subsection{Fighting Retreat}
-If you fight and move carefully in sequence, you can avoid leaving any openings for a foe. As a full-round action, you may take a full attack and then move at half your movement speed. You do not provoke attacks of opportunity for this movement from any creature you attacked.
-
-If you are unable to take a full attack as a standard action, such as if you are using the Precise Shot combat style, you may make only a single attack when making a fighting retreat.
 
 \subsection{Mounted Combat}
 \parhead{Horses in Combat} Warhorses and warponies can serve readily as combat steeds. Light horses, ponies, and heavy horses, however, are frightened by combat. If you don't dismount, you must make a DC 20 Ride check each round as a move action to control such a horse. If you succeed, you can perform a standard action after the move action. If you fail, the move action becomes a full round action and you can't do anything else until your next turn.
