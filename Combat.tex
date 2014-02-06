@@ -644,12 +644,12 @@ This section covers circumstances that can affect combat. Any bonuses described 
 Dazzled & \minus1 & \minus1 \\
 Entangled & \minus2 & \minus2 \\
 Grappling & \minus0\fn{1} & \minus0\fn{1} \\
-Invisible & \plus2\fn{1} & \plus2\fn{1} \\
+Invisible & \x\fn{1} & \x\fn{1} \\
 On higher ground & \plus1 & \plus0 \\
 Prone & \minus4 & \x\fn{2} \\
 Squeezing through a space & \minus4 & \minus4 \\
 \end{tabularx}
-1 The defender is flat-footed. This bonus doesn't apply if the target is blinded. \\
+1 The defender is flat-footed. \\
 2 Most ranged weapons can't be used while the attacker is prone, but you can use a crossbow or shuriken while prone at no penalty.
 \end{dtable}
 
@@ -658,20 +658,22 @@ Squeezing through a space & \minus4 & \minus4 \\
 \begin{tabularx}{\columnwidth}{>{\lcol}X >{\ccol}X >{\ccol}X}
 \thead{Defender is...} & \thead{Melee} & \thead{Ranged} \\
 Behind cover & \plus4 & \plus4 \\
-Blinded & \minus2\fn{1} & \minus2\fn{1} \\
-Concealed or invisible & \multicolumn{2}{c}{\x See Concealment \x} \\
+Blinded & \x\fn{1} & \x\fn{1} \\
+Concealed & \plus4 & \plus4 \\
 Cowering & \minus2\fn{1} & \minus2\fn{1} \\
 Crouching or kneeling & \minus2 & \plus2 \\
 Entangled & \plus0 & \plus0 \\
 Flat-footed (such as surprised, balancing, climbing) & \plus0\fn{1} & \plus0\fn{1} \\
 Grappling (but attacker is not) & \plus0\fn{1} & \plus0\fn{1}, 3 \\
 Helpless (such as paralyzed, sleeping, or bound) & \minus4\fn{3} & \plus0\fn{3} \\
+Invisible &  \multicolumn{2}{c}{\x See Concealment \x} \\
 Overwhelmed & special\fn{4} & special\fn{4} \\
-Pinned & \minus4\fn{4} & \plus0\fn{3} \\
+Pinned & \minus4\fn{3} & \plus0\fn{3} \\
 Prone & \minus4 & \plus4 \\
 Shaken or frightened & \minus2 & \minus2 \\
 Squeezing through a space & \minus4 & \minus4 \\
 Stunned & \minus2\fn{1} & \minus2\fn{1} \\
+Vulnerable & \minus2 & \minus2 \\
 \end{tabularx}
 1 The defender is flat-footed. \\
 2 Roll randomly to see which grappling combatant you strike. That defender is flat-footed. \\
@@ -681,40 +683,49 @@ Stunned & \minus2\fn{1} & \minus2\fn{1} \\
 
 \subsection{Cover}
 
-To determine whether your target has cover from your ranged attack, choose a corner of your square. If the creature you are attacking has a space larger than 5 feet (1 square), also choose a single target square that the creature occupies. If any line from this corner to any corner of the target's square (or the target square) passes through a square or border that blocks line of effect or provides cover, or through a square occupied by a creature, the target has cover (\plus4 circumstance bonus to AC).
+Cover represents any obstacle that physically prevents you from striking your target, such as a tree or intervening creature. A creature with cover is more difficult to attack.
 
-When making a melee attack against an adjacent target, your target has cover if any line from your square to the target's square goes through a wall (including a low wall) or other similar solid obstacles. When making a melee attack against a target that isn't adjacent to you (such as with a reach weapon), use the rules for determining cover from ranged attacks.
+\parhead{Determining Cover} When making a melee attack against an adjacent target, your target has cover if any line from your square to the target's square goes through a wall (including a low wall) or other similar solid obstacle. If you occupy multiple squares, choose one square you occupy for this purpose.
 
-\parhead{Low Obstacles and Cover} A low obstacle (such as a wall no higher than half your height) provides cover, but only to creatures within 30 feet (6 squares) of it. The attacker can ignore the cover if he's closer to the obstacle than his target. If two creatures are equally distant from the wall, it grants cover to both of them.
-\parhead{Cover and Attacks of Opportunity} You can't execute an attack of opportunity against an opponent with cover relative to you.
-\parhead{Cover and Reflex Saves} Cover grants you a \plus2 bonus on Reflex saves against attacks that originate or burst out from a point on the other side of the cover from you. Note that spread effects can extend around corners and thus negate this cover bonus.
-\parhead{Cover and Hide Checks} You can use cover to make a Hide check. Without cover, you usually need concealment (see below) to make a Hide check.
+When making an attack against a target that is not adjacent to you, choose a corner of any square you occupy. In addition, choose a square the target occupies. If any line from this corner to any corner of the target square passes through a square or border that blocks line of effect or provides cover, or through a square occupied by a creature, the target has cover.
 
-\parhead{Soft Cover} Creatures, even your enemies, can provide you with cover against ranged attacks, giving you a \plus4 circumstance bonus to AC. However, such soft cover provides no bonus on Reflex saves, nor  does soft cover allow you to make a Hide check.
-\parhead{Big Creatures and Cover} Any creature with a space larger than 5 feet (1 square) determines cover against melee attacks slightly differently than smaller creatures do. Such a creature can choose any square that it occupies to determine if an opponent has cover against its melee attacks. Similarly, when making a melee or ranged attack against such a creature, you can pick any of the squares it occupies to determine if it has cover against you.
+There are two types of cover: active cover and passive cover.
 
+\subsubsection{Active Cover}
+
+If the obstacle is active and mobile, such as a creature or tree branches blowing in the wind, the defender has active cover. Any attacks against a creature with active cover relative to you have a 20\% miss chance. After rolling the attack, the attacker must make a miss chance percentile roll to see if the attack misses due to active cover. If an attack misses due to active cover, the attack is made against the intervening obstacle instead. If the attack is successful, the obstacle takes any damage from the attack normally. 
+
+\subsubsection{Passive Cover}
+
+If the obstacle is stationary, such as a tree trunk or wall, the defender has passive cover. A creature with passive cover relative to you has a \plus4 circumstance bonus to armor class.
+
+\parhead{Reflex Saves} A creature with passive cover gains a \plus2 bonus on Reflex saves against attacks that originate or burst out from a point on the other side of the cover from it. Note that spread effects can extend around corners and thus negate this cover bonus.
+\parhead{Low Obstacles} A low obstacle (such as a wall no higher than half your height) provides passive cover, but only to creatures within 30 feet (6 squares) of it. The attacker can ignore the cover if he's closer to the obstacle than his target. If two creatures are equally distant from the wall, it grants cover to both of them.
+\parhead{Attacks of Opportunity} You can't execute an attack of opportunity against an opponent with passive cover relative to you.
+\parhead{Hide Checks} You can use passive cover to make a Hide check, but not active cover. Without cover, you usually need concealment (see below) to make a Hide check.
 \parhead{Total Cover} If you don't have line of effect to your target, he is considered to have total cover from you. You can't make an attack against a target that has total cover.
 
-\parhead{Varying Degrees of Cover} In some cases, cover may provide a greater bonus to AC and Reflex saves. In such situations the normal cover bonuses to AC and Reflex saves can be doubled (to \plus8 and \plus4, respectively). A creature with this improved cover effectively gains improved evasion against any attack to which the Reflex save bonus applies. Furthermore, improved cover provides a \plus10 bonus on Hide checks. Additional restrictions may apply when attacking creatures who have improved cover.
+\subsubsection{Improved Cover}
+
+A creature can benefit from both passive and active cover. However, cover of the same type generally doesn't stack; a creature behind two trees is not substantially more protected than a creature behind a single tree. In some cases, cover may stack. In that case, each additional obstacle increases the miss chance by 10\% or grants an additional \plus2 circumstance bonus to AC, as appropritae.
+
+Exceptionally well covered opponents, such as a creature behind an arrow slit in a castle, may receive additional benefits. For example, it might gain improved evasion, and there may be limitations on what kind of attacks are possible.
 
 \subsection{Concealment}
-Deterining concealment for ranged attacks works exactly like determining cover for ranged attacks.
+Concealment represents anything which makes it more difficult to see your target, such as dim lighting. A creature with concealment from you gains a \plus4 circumstance bonus to Armor Class.
 
-When making a melee attack against an adjacent target, your target has concealment if his space is entirely within an effect that grants concealment. When making a melee attack against a target that isn't adjacent to you, use the rules for determining concealment from ranged attacks.
+\parhead{Determining Concealment} When making a melee attack against an adjacent target, your target has concealment if his space is entirely within an effect that grants concealment.
+
+Deterining concealment for making an attack against a target that is not adjacent to you works exactly like determining cover for ranged attacks.
 
 In addition, some magical effects provide concealment against all attacks, regardless of whether any intervening concealment exists.
 
-\parhead{Concealment Miss Chance} Concealment gives the subject of a successful attack a 20\% chance that the attacker missed because of the concealment. Before rolling the attack, the attacker must make a miss chance percentile roll to see if the attack misses due to concealment. Multiple concealment conditions do not stack.
-
 \parhead{Concealment and Hide Checks} You can use concealment to make a Hide check. Without concealment, you usually need cover to make a Hide check.
 
-\parhead{Total Concealment} If you have line of effect to a target but not line of sight he is considered to have total concealment from you. You can't attack an opponent that has total concealment, though you can attack into a square that you think he occupies. An attack into a square occupied by an enemy with total concealment has a 50\% miss chance (instead of the normal 20\% miss chance for an opponent with concealment).
+\subsection{Invisibility}
+If it is impossible to see your target, you can't attack him normally. However, you can attack a square that you think he occupies. An attack into a square occupied by an invisible enemy has a 50\% miss chance. If an adjacent invisible creature strikes you, you can automatically identify the square he occupied when he struck you.
 
-You can't execute an attack of opportunity against an opponent with total concealment, even if you know what square or squares the opponent occupies.
-
-\parhead{Ignoring Concealment} Concealment isn't always effective. A shadowy area or darkness doesn't provide any concealment against an opponent with darkvision. Characters with low-light vision can see clearly for a greater distance with the same light source than other characters. Although invisibility provides total concealment, sighted opponents may still make Spot checks to notice the location of an invisible character. An invisible character gains a \plus20 bonus on Hide checks (even though opponents can't see you, they might be able to figure out where you are from other visual clues).
-
-\parhead{Varying Degrees of Concealment} Certain situations may provide more or less than typical concealment, and modify the miss chance accordingly.
+You can't execute an attack of opportunity against an invisible opponent, even if you know what square or squares the opponent occupies.
 
 \subsection{Overwhelm}
 When a creature is being attacked by multiple foes at once, it is less able to defend itself. A creature is considered overwhelmed if it is being threatened by more than one creature. Multiple creatures occupying the same square count as a single creature when determining overwhelm penalties. If a creature is overwhelmed, it takes a penalty to armor class equal to the number of creatures threatening it.

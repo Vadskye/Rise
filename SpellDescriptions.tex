@@ -565,7 +565,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
   The subject is blinded, deafened, or sickened, as you choose.
 \end{spellblood}
 \begin{spellnotes}
-  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. A blinded character cannot see. She takes a \minus2 penalty to attack rolls, Armor Class, and any checks which involve sight. In addition, she is flat-footed and moves at half speed. All checks and activities that rely on vision (such as reading and Spot checks) automatically fail. All opponents are considered to have total concealment (50\% miss chance) relative to the blinded character. A deafened character cannot hear. She automatically fails Listen checks, takes a \minus2 penalty to any checks which involve hearing, and has a 20\% chance of spell failure when casting spells with verbal components.
+  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. A blinded character cannot see. She takes a \minus2 penalty to attack rolls, Armor Class, and any checks which involve sight. In addition, she is flat-footed and moves at half speed. All checks and activities that rely on vision (such as reading and Spot checks) automatically fail. A blinded character has a 50\% miss chance on all attacks. A deafened character cannot hear. She automatically fails Listen checks, takes a \minus2 penalty to any checks which involve hearing, and has a 20\% chance of spell failure when casting spells with verbal components.
   
   The choice of bloodied conditions is made at the time the spell is cast.
 \end{spellnotes}
@@ -600,7 +600,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsave{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The subject gains concealment, so all attacks against it have a 20\% miss chance. This concealment allows the subject to use Stealth without other cover or concealment, though other restrictions apply as normal.
+  The subject gains concealment, granting it a \plus4 circumstance bonus to AC. This concealment allows the subject to use Stealth without other cover or concealment, though other restrictions apply as normal.
 \end{spelleffect}
 \begin{spellnotes}
   A \spell{see invisibility} spell does not counteract the blurring effect, but a \spell{true seeing} spell does.
@@ -860,7 +860,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
   Creatures in the area are dazzled and bewildered.
 \end{spelleffect}
 \begin{spellnotes}
-  A dazzled creature treats everything it sees as if it had concealment (20\% miss chance), and takes a \minus4 penalty to Spot checks. It is unable to use darkvision.  A bewildered creature is mentally affected in a way that detracts from its ability to act, causing it to be vulnerable. It takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
+  A dazzled creature has a 20\% miss chance on all attack rolls and takes a \minus4 penalty to Spot checks. He is also unable to see with darkvision. A bewildered creature is mentally affected in a way that detracts from its ability to act, causing it to be vulnerable. It takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
 
   Creatures who cannot see the light are not affected by this spell. Merely closing one's eyes is insufficient protection.
 \end{spellnotes}
@@ -1781,7 +1781,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsave{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The subject of this spell appears to be about 2 feet away from its true location. The creature benefits from a 50\% miss chance as if it had total concealment. However, unlike actual total concealment, displacement does not prevent enemies from targeting the creature normally, and it does not allow the creature to hide.
+  The subject of this spell appears to be about 2 feet away from its true location. Attacks against the subject have a 50\% miss chance as if it were invisible. However, unlike invisibility, this spell does not prevent enemies from targeting the creature normally, and it does not allow the creature to hide.
 \end{spelleffect}
 \begin{spellnotes}
   True seeing reveals the subject's true location.
@@ -2078,7 +2078,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelltgt{Touched creature}
 \spelldur{\durshort (D)}
 \begin{spelleffect}
-  Each ranged attack directed at the subject for which the attacker must make an attack roll has a 50\% miss chance (similar to the effects of concealment). Other attacks that simply work at a distance are not affected.
+  Each ranged attack directed at the subject for which the attacker must make an attack roll has a 50\% miss chance (similar to the effects of active cover). Other attacks that simply work at a distance are not affected.
 \end{spelleffect}
 
 \spellsection{Ethereal Jaunt}
@@ -2369,7 +2369,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsave{None}
 \spellsr{No}
 \begin{spelleffect}
-  Creatures within the spell's area have concealment (20\% miss chance). The cloud is stationary once created.
+  Everything within the spell's area has concealment (\plus4 AC). The cloud is stationary once created.
 \end{spelleffect}
 \begin{spellnotes}
   Fog spells do not function underwater and can be dispersed by wind. A moderate wind (11\add mph) disperses the fog in 5 rounds; a strong wind (21\add mph) disperses the fog in 1 round. A fire spell burns away the fog in the area into which it deals damage.
@@ -2570,7 +2570,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
   This spell functions like \spell{glitterdust}, except that creatures in the area are also dazzled for the duration of the spell.
 \end{spelleffect}
 \begin{spellnotes}
-  A dazzled creature treats everything he sees as if it had concealment (20\% miss chance), and takes a \minus4 penalty to Spot checks. He is also unable to see with darkvision.
+  A dazzled creature has a 20\% miss chance on all attack rolls, and takes a \minus4 penalty to Spot checks. He is also unable to see with darkvision.
 \end{spellnotes}
 
 \spellsection{Globe of Invulnerability}
@@ -3329,7 +3329,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \begin{spelleffect}
   This spell functions like \spell{magic missile}, except that the spell creates three missiles that automatically seek out living creatures in the area. Each missile deals 1d10 force damage. If you specify a target for a missile, it will strike the target. Otherwise, it will strike a living creature within the area.
   
-  \spell{Invisibility}, \spell{displacement}, and any other forms of concealment does not fool the missiles. You can form one additional missile per four caster levels above 6th.
+  \spell{Invisibility}, \spell{displacement}, and any other forms of cover or concealment do not fool the missiles. You can form one additional missile per four caster levels above 6th.
 \end{spelleffect}
 
 \spellsection{Light}
@@ -3601,7 +3601,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelldmg{2d4 force damage \add d4 per two levels above 2nd; see text}
 \begin{spelleffect}
   Two missiles of magical energy dart forth from your fingertip and strike creatures you designate in the area, dealing 1d4 damage each. A single missile can strike only one creature. For every two caster levels above 2nd, you gain an additional missile.
-  The missiles strike unerringly, even if the target is in melee combat or has less than total cover or total concealment. Specific parts of a creature can't be singled out. Inanimate objects are not damaged by the spell. You must designate targets before you check for spell resistance or roll damage.
+  The missiles strike unerringly, even if the target has cover or concealment. Specific parts of a creature can't be singled out. Inanimate objects are not damaged by the spell. You must designate targets before you check for spell resistance or roll damage.
 \end{spelleffect}
 
 \spellsection{Magic Vestment}
@@ -4416,7 +4416,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelltgt{You}
 \spelldur{\durshort (D)}
 \begin{spelleffect}
-  Attacks made against you have a 20\% miss chance. This miss chance stacks with and is rolled before any other miss chance, such as from concealment. Any attack that misses you because of this miss chance is instead made against a new creature of your choice, other than the attacker.
+  Attacks made against you have a 20\% miss chance. This miss chance stacks with and is rolled before any other miss chance, such as from active cover. Any attack that misses you because of this miss chance is instead made against a new creature of your choice, other than the attacker.
   \par The new target must be a creature adjacent to you that the attacker threatens (if using a melee weapon) or can target (if using a ranged weapon). The new target must also be a creature that you can see and target. If there is no such creature, the attack simply misses.
 \end{spelleffect}
 
@@ -4727,6 +4727,9 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \begin{spelleffect}
   If you succeed on a ranged touch attack to hit with the ray, the target takes damage and is dazzled for 1 round. An undead creature takes 6d8 points of damage \add d8 per two caster levels above 6th, and an undead creature particularly vulnerable to bright light takes 6d10 points of damage \add d10 per two caster levels above 6th and is blinded for 1 round instead.
 \end{spelleffect}
+\begin{spellnotes}
+  A dazzled creature has a 20\% miss chance on all attack rolls and takes a \minus4 penalty to Spot checks. He is also unable to see with darkvision.
+\end{spellnotes}
 
 \spellsection{See Invisibility}
 \spellschool{Divination (Revelation)}
@@ -5435,7 +5438,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsr{Yes (varies)}
 \spelldmg{Varies}
 \begin{spelleffect}
-  This spell creates an enormous black storm cloud. Lightning and crashing claps of thunder appear within the storm. Each creature beneath the cloud must succeed on a Fortitude save or be deafened for 5 minutes. Violent rain and wind gusts obscure all sight beyond 100 feet. A creature less than 100 feet away has concealment (20\% miss chance). Ranged attacks within the area of the storm take a \minus4 penalty, and spells cast within the area are disrupted unless the caster succeeds on a Concentration check against a DC equal to 20 \add double the level of the spell.
+  This spell creates an enormous black storm cloud. Lightning and crashing claps of thunder appear within the storm. Each creature beneath the cloud must succeed on a Fortitude save or be deafened for 5 minutes. Violent rain and wind gusts obscure all sight beyond 100 feet. A creature less than 100 feet away has concealment (\plus4 AC). Ranged attacks within the area of the storm take a \minus4 penalty, and spells cast within the area are disrupted unless the caster succeeds on a Concentration check against a DC equal to 20 \add double the level of the spell.
   \par If you do not maintain concentration on the spell after casting it, the spell ends. If you continue to concentrate, the spell generates new effects in each following round, as noted below. Each effect occurs during your turn.
   \par 2nd Round: Acid rains down, dealing 1d10 acid damage to everything in the area (no save).
   \par 3rd Round: You call three bolts of lightning down from the cloud. You decide where the bolts strike. No two bolts may strike the same target. Each bolt deals 9d6 electricity damage \add d6 per four levels after 18th. A creature struck can attempt a Reflex save for half damage. If you do not direct the lightning bolts, each bolt automatically targets the largest available target in the area.
@@ -5810,7 +5813,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
   Each creature in the beam takes damage and is dazzled for 5 rounds. Any creatures to which sunlight is harmful or unnatural instead take 5d10 points of damage \add d10 per four caster levels above 10th and are blinded for 5 rounds. A successful Reflex save negates the dazzling (or blindness) and reduces the damage by half.
 \end{spelleffect}
 \begin{spellnotes}
-  A dazzled creature treats everything he sees as if it has concealment (20\% miss chance), and takes a \minus4 penalty to Spot checks. He is also unable to use darkvision.
+  A dazzled creature has a 20\% miss chance on all attack rolls and takes a \minus4 penalty to Spot checks. He is also unable to see with darkvision.
   
   \spell{Sunbeam} dispels any darkness spells of 5th level or lower within its area.
 \end{spellnotes}
