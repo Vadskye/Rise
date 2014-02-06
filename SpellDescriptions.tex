@@ -248,6 +248,19 @@
   \par Artifacts and deities are unaffected by mortal magic such as this. 
 \end{spellnotes}
 
+\spellsection{Aqueous Blade}
+\spelldesc{You transform the active part of your ally's weapon into water, weakening its blows but allowing it penetrate your foe's defenses more easily.}
+\spellschool{Transmutation (Alteration) [Water]}
+\spelllvl{Drd 2, Water 2}
+\spellrng{\rngclose}
+\spelltgt{One weapon}
+\spelldur{\durshort (D)}
+\spellsave{Will negates}
+\spellsr{Yes (Will)}
+\begin{spelleffect}
+  Attacks with the affected weapon are made as touch attacks. However, damage with the weapon is halved, including any bonuses to weapon damage.
+\end{spelleffect}
+
 \spellsection{Arcane Sight}
 \spelldesc{Your eyes glow blue with power. All nearby magical auras become apparent to you.}
 \spellschool{Divination (Awareness) [Magic]}
@@ -1873,6 +1886,19 @@ If you take life damage, you lose all temporary hit points provided by this spel
   If the subject gets farther than 10 feet from the ground, the spell's effect is broken. As a result, the spell cannot affect creatures flying high above the ground.
 \end{spellnotes}
 
+\spellsection{Earthen Blade}
+\spellschool{Transmutation (Alteration, Augment) [Earth]}
+\spelllvl{Drd 2, Earth 2}
+\spellrng{0 ft.}
+\spelleff{Earthen weapon}
+\spelldur{\durlong (D)}
+\spellsave{None}
+\spellsr{Yes (Fortitude)}
+\begin{spelleffect}
+    This spell creates a weapon from the ground. The weapon can be of any type you are proficient with. In addition, the weapon is magical, as the \spell{magic weapon} spell.
+\end{spelleffect}
+
+
 \spellsection{Earthquake}
 \spellschool{Evocation (Control) [Earth]}
 \spelllvl{Destruction 8, Drd 8, Clr 8, Earth 7}
@@ -2277,6 +2303,21 @@ If you take life damage, you lose all temporary hit points provided by this spel
   If a destructive spell deals enough damage to an interposing barrier to shatter or breaks through it, its effects may continue beyond the barrier if the area permits; otherwise, it stops at the barrier just as any other spell effect does.
 \end{spellnotes}
 
+\spellsection{Flame Blade}
+\spellschool{Evocation (Energy) [Fire]}
+\spelllvl{Drd 2, Fire 2}
+\spellrng{0 ft.}
+\spelleff{Sword-like beam}
+\spelldur{\durlong (D)}
+\spellsave{None}
+\spellsr{Yes (Fortitude)}
+\begin{spelleffect}
+  A 3 foot long beam of red-hot fire springs forth from your hand. In addition to providing illumination like a torch, you can wield this bladelike beam as a weapon. It is treated like a scimitar, except that all damage dealt with it is fire damage, you add half your casting attribute to damage in place of half your Strength, and it is treated as a light weapon, so you can use Dexterity to attack with it. Alternately, you can hurl flames from the weapon up to \rngmed range as if it were a thrown weapon.
+\end{spelleffect}
+\begin{spellnotes}
+  Fire spells do not function underwater. A \spell{flame weapon} can ignite combustible materials such as parchment, straw, dry sticks, and cloth. Spell resistance applies when a foe is struck by the weapon, but not when the blade is created.
+\end{spellnotes}
+
 \spellsection{Flame Strike}
 \spelldesc{You call a vertical column of divine fire that roars downward, consuming your unworthy foes.}
 \spellschool{Evocation (Channeling, Energy) [Fire]}
@@ -2290,21 +2331,6 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \begin{spelleffect}
   Half the damage is fire damage, but the other half results directly from divine power. Your allies in the area take half damage.
 \end{spelleffect}
-
-\spellsection{Flame Weapon}
-\spellschool{Evocation (Energy) [Fire]}
-\spelllvl{Drd 2, Fire 2}
-\spellrng{0 ft.}
-\spelleff{Sword-like beam}
-\spelldur{\durlong (D)}
-\spellsave{None}
-\spellsr{Yes (Fortitude)}
-\begin{spelleffect}
-  A 3 foot long beam of red-hot fire springs forth from your hand. In addition to providing illumination like a torch, you can wield this bladelike beam as a weapon. It is treated like a scimitar, except that all damage dealt with it is fire damage, you add half your casting attribute to damage in place of half your Strength, and it is treated as a light weapon, so you can use Dexterity to attack with it. Alternately, you can hurl flames from the weapon up to \rngmed range as if it were a thrown weapon.
-\end{spelleffect}
-\begin{spellnotes}
-  Fire spells do not function underwater. A \spell{flame weapon} can ignite combustible materials such as parchment, straw, dry sticks, and cloth.
-\end{spellnotes}
 
 \spellsection{Fly}
 \spellschool{Transmutation (Imbuement)}
@@ -6450,7 +6476,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 
 \spellsection{Zephyr Blade}
 \spelldesc{You imbue a weapon with the power of the wind, allowing it to manipulate air currents as it strikes.}
-\spellschool{Evocation/Transmutation (Control, Imbuement)}
+\spellschool{Evocation/Transmutation (Augment, Control) [Air]}
 \spelllvl{Air 3, Drd 3}
 \spellrng{Touch}
 \spelltgt{Touched melee weapon}
@@ -6466,6 +6492,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 
 \spellsectioncomma{Zephyr Blade}{Greater}
 \spelldesc{You imbue a weapon with the full might of the wind, allowing it to shred opponents with nothing but the air itself.}
+\spellschool{Evocation/Transmutation (Augment, Control) [Air]}
 \spelllvl{Air 6, Drd 6}
 \begin{spelleffect}
   This spell functions like \spell{zephyr blade}, except that it extends the weapon's reach by ten feet, and attacks outside the weapon's normal range deal full damage.
