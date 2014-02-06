@@ -657,28 +657,27 @@ Squeezing through a space & \minus4 & \minus4 \\
 \lcaption{Armor Class Bonuses and Penalties}
 \begin{tabularx}{\columnwidth}{>{\lcol}X >{\ccol}X >{\ccol}X}
 \thead{Defender is...} & \thead{Melee} & \thead{Ranged} \\
-Behind cover & \plus4 & \plus4 \\
+Behind active cover & 20\% miss & 20\% miss \\
+Behind passive cover & \plus4 & \plus4 \\
 Blinded & \x\fn{1} & \x\fn{1} \\
 Concealed & \plus4 & \plus4 \\
 Cowering & \minus2\fn{1} & \minus2\fn{1} \\
 Crouching or kneeling & \minus2 & \plus2 \\
-Entangled & \plus0 & \plus0 \\
+Entangled & \minus2 & \minus2 \\
 Flat-footed (such as surprised, balancing, climbing) & \plus0\fn{1} & \plus0\fn{1} \\
-Grappling (but attacker is not) & \plus0\fn{1} & \plus0\fn{1}, 3 \\
-Helpless (such as paralyzed, sleeping, or bound) & \minus4\fn{3} & \plus0\fn{3} \\
-Invisible &  \multicolumn{2}{c}{\x See Concealment \x} \\
-Overwhelmed & special\fn{4} & special\fn{4} \\
-Pinned & \minus4\fn{3} & \plus0\fn{3} \\
+Grappling (but attacker is not) & \plus0\fn{1} & 20\% miss\fn{1} \\
+Helpless (such as paralyzed, sleeping, or bound) & \plus0\fn{2} & \plus0\fn{2} \\
+Invisible &  \multicolumn{2}{c}{\x See Invisibility \x} \\
+Overwhelmed & special\fn{3} & special\fn{3} \\
+Pinned & \minus4\fn{2} & \plus0\fn{2} \\
 Prone & \minus4 & \plus4 \\
-Shaken or frightened & \minus2 & \minus2 \\
 Squeezing through a space & \minus4 & \minus4 \\
 Stunned & \minus2\fn{1} & \minus2\fn{1} \\
 Vulnerable & \minus2 & \minus2 \\
 \end{tabularx}
 1 The defender is flat-footed. \\
-2 Roll randomly to see which grappling combatant you strike. That defender is flat-footed. \\
-3 Treat the defender's Dexterity as \minus5. Rogues can sneak attack helpless or pinned defenders.\\
-4 The creature suffers a penalty equal to the number of creatures threatening it.
+2 Treat the defender's Dexterity as \minus10. Rogues can sneak attack helpless or pinned defenders.\\
+3 The creature suffers a penalty equal to the number of creatures threatening it.
 \end{dtable}
 
 \subsection{Cover}
@@ -845,11 +844,10 @@ As a standard action, you can attempt to grapple a foe, hindering his combat opt
 While grappled, you suffer certain penalties and restrictions, as described below.
 \begin{itemize*}
 \item You must use one of your hands (or equivalent limbs) to grapple, preventing you from taking any actions which would require having two free hands. For example, you cannot attack with a two-handed weapon while grappling. You cannot use a hand holding a shield (except a buckler) to grapple.
-\item You lose your Dexterity and dodge modifiers to AC to all opponents except the one you are grappling.
-\item Anyone making a ranged attack at you has a 50\% chance to strike the other participant in the grapple instead. This does not apply if you are larger than the other participant.
+\item You are flat-footed against all opponents except the one you are grappling.
+\item You have active cover from the other participant in the grapple against ranged attacks. Any attacks that miss because of this miss chance are made against that creature. This does not apply if you are larger than the other participant.
 \item You do not threaten any opponents except for the creature you are grappling with.
-\item You take a \minus2 penalty to all attack rolls except those made to grapple.
-\item You take an additional \minus4 penalty to attack rolls made with one-handed weapons, since they are too large and cumbersome to be used effectively in a grapple.
+\item You take a \minus4 penalty to attack rolls made with weapons that are not small, since they are too large and cumbersome to be used effectively in a grapple.
 \item You cannot cast spells with somatic components.
 \item Casting a spell without somatic components requires a DC 20 \add double spell level Concentration check.
 \item You cannot move normally (but see Move the Grapple, below).
