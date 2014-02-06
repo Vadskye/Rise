@@ -208,7 +208,6 @@ Cleave & Str 3, base attack bonus \plus4 & Extra melee attack after dropping tar
 %Combat Reflexes & Dex 3 & \plus4 bonus on attacks of opportunity \\
 Dodge & Dex 3 & \plus4 AC against some attacks of opportunity from selected target \\
 \tind Mobility & Dodge & Avoid some attacks of opportunity from selected target \\
-\tind \tind Spring Attack & Mobility, base attack bonus \plus4 & Move before and after melee attacks \\
 Expert Tactician & Wis 3, base attack bonus \plus4 & Ready two actions at once \\
 Exotic Weapon Proficiency\footnotetemp{1} & Base attack bonus \plus1 & Don't provoke when attacking with exotic weapons \\
 Far Shot & \x & Increase range increment by 50\% or 100\% \\
@@ -296,7 +295,8 @@ Precise Shot & \x & Add half Wis to damage, reduce cover penalties \\
 Power Attack & Str 3 & Trade melee attack bonus for damage \\
 \tind Improved Power Attack & Str 5, Power Attack, base attack bonus \plus8 & Trade more melee attack bonus for damage \\
 Powerful Grip & Str 9 & Use larger weapons without penalty \\
-Shot on the Run & Dex 5, Dodge, Mobility, base attack bonus \plus4 & Move before and after ranged attacks \\
+Shot on the Run & Dex 3, Dodge, Mobility, base attack bonus \plus4 & Move before and after ranged attacks \\
+Spring Attack & Dex 3, Dodge, Mobility, base attack bonus \plus4 & Move before and after melee attacks \\
 Whirlwind Attack & Dex 5, base attack bonus \plus12 & One melee attack against each opponent within reach \\
 \end{tabularx}
 1 Combat style feats are considered combat feats. Abilities and class features that grant combat feats may be used to select combat style feats.
@@ -821,11 +821,6 @@ In addition, your unarmed strikes can deal lethal or nonlethal damage as you cho
 \parhead{Prerequisites} Ride 1 rank, Mounted Combat, Ride-By Attack.
 \parhead{Benefit} When mounted and using the charge action, you deal double damage with a melee weapon (or triple damage with a lance) on your attack at the end of the charge.%Spirited Charge
 
-\subsubsection{Spring Attack [Combat]}
-\parhead{Prerequisites} Dex 3, Dodge, Mobility, base attack bonus \plus4.
-\parhead{Benefit} When attacking with a melee weapon, you can move both before and after each attack, provided that your total distance moved is not greater than your speed. Moving in this way does not provoke an attack of opportunity from your Dodge target, though it might provoke attacks of opportunity from other creatures, if appropriate. You can't use this feat if you are wearing heavy armor.
-\par You must move at least 5 feet both before and after you make your attacks in order to utilize the benefits of Spring Attack.%Spring Attack
-
 \subsubsection{Stunning Fist [Combat]}
 \parhead{Prerequisites} Dex 3, Wis 3, Improved Unarmed Strike, base attack bonus \plus4.
 \parhead{Benefit} You must declare that you are using this feat before you make your attack roll (thus, a failed attack roll ruins the attempt). Stunning Fist forces a foe damaged by your unarmed attack to make a Fortitude saving throw (DC 10 \add 1/2 your character level \add your Constitution), in addition to dealing damage normally. A bloodied defender who fails this saving throw is stunned for 1 round (until just before your next action). A stunned character can't act, is flat-footed, and takes a \minus2 penalty to AC. A healthy defender is staggered instead, and can only take a standard action each round. You may attempt a stunning attack a number of times per day equal to 1 \add half your Constitution, but no more than once per round. Constructs, oozes, plants, undead, incorporeal creatures, and creatures immune to critical hits cannot be stunned.
@@ -925,9 +920,8 @@ Choose one weapon group for which you have already selected the Weapon Focus fea
 \parhead{Style Requirement} Must fight defensively or take the total defense action each round.
 
 \subsubsection{Blind-Fight [Combat Style]}
-\parhead{Benefit} In melee, every time you miss because of concealment, you can reroll your miss chance percentile roll one time to see if you actually hit.
-\par An invisible attacker gets no advantages related to hitting you in melee. That is, you are not flat-footed, and the attacker doesn't get the usual \plus2 bonus for being invisible. The invisible attacker's bonuses do still apply for ranged attacks, however.
-\parhead{Normal} Regular attack roll modifiers for invisible attackers trying to hit you apply, and you are flat-footed against invisible attackers. Your speed is halved in darkness and poor visibility.
+\parhead{Benefit} In melee, every time you miss because of being unable to see your opponent, you can reroll your miss chance one time to see if you actually hit. In addition, you are not flat-footed against invisible attackers adjacent to you.
+\parhead{Normal} You have a 50\% chance to miss opponents you can't see, and you are flat-footed against them.
 
 \subsubsection{Bulwark of Defense [Combat Style]}
 \parhead{Prerequisite} Base attack bonus \plus4
@@ -1033,7 +1027,7 @@ You must spend a full-round action to make a full attack while in this style. Yo
 
 \subsubsection{Point Blank Shot [Combat Style]}
 \parhead{Prerequisite} Precise Shot.
-\parhead{Benefit} You get a \plus2 circumstance bonus on damage rolls with ranged weapons when attacking targets within one range increment. \babscalingdescription
+\parhead{Benefit} You get a \plus2 circumstance bonus on damage rolls with ranged weapons when attacking targets within half of your range increment. \babscalingdescription
 \parhead{Style Requirement} None.
 
 \subsubsection{Power Attack [Combat Style]}
@@ -1047,9 +1041,14 @@ You must spend a full-round action to make a full attack while in this style. Yo
 \parhead{Benefit} You can use weapons as if they were one category less encumbering than they actually are. The weapon encumbrance categories are light, medium, and heavy. For example, you can use a greatsword as a medium weapon in one hand without suffering any penalties.
 
 \subsubsection{Shot On The Run [Combat Style]}
-\parhead{Prerequisites} Dex 5, Dodge, Mobility, base attack bonus \plus4.
+\parhead{Prerequisites} Dex 3, Dodge, Mobility, base attack bonus \plus4.
 \parhead{Benefit} When attacking with a ranged weapon, you can move both before and after each attack, provided that your total distance moved is not greater than your speed.
-\parhead{Style Requirement} Must move each round.
+\parhead{Style Requirement} Must move each round, and must not be wearing heavy armor.
+
+\subsubsection{Spring Attack [Combat Style]}
+\parhead{Prerequisites} Dex 3, Dodge, Mobility, base attack bonus \plus4.
+\parhead{Benefit} When attacking with a melee weapon, you can move both before and after each attack, provided that your total distance moved is not greater than your speed. Moving in this way does not provoke an attack of opportunity from your Dodge target, though it might provoke attacks of opportunity from other creatures, if appropriate.
+\parhead{Style Requirement} Must move each round, and must not be wearing heavy armor.
 
 %Can't replace Strength; archers need to be strong
 \subsubsection{Precise Shot [Combat Style]}
