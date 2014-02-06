@@ -552,7 +552,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsection{Blindness/Deafness}
 \spelldesc{You afflict one of the subject's senses.}
 \spellschool{Necromancy (Flesh)}
-\spelllvl{Clr 3, Pal 3, Sor/Wiz 2}
+\spelllvl{Clr 3, Death 3, Pal 3, Sor/Wiz 2}
 \spellrng{Touch}
 \spelltgt{Creature touched}
 \spelldur{\durlong (D)}
@@ -1076,7 +1076,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsection{Crush Life}
 \spelldesc{You attack the life force of a single foe directly, allowing no possibility for escape.}
 \spellschool{Necromancy (Life)}
-\spelllvl{Necro 1}
+\spelllvl{Death 1, Necro 1}
 \spellrng{\rngmed}
 \spelltgt{One living creature}
 \spelldur{Instantaneous}
@@ -4394,6 +4394,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
   A creature that is already fatigued instead becomes exhausted. A creature that is already exhausted suffers no further penalties. Unlike normal exhaustion or fatigue, the effect ends as soon as the spell's duration expires.
 \end{spellnotes}
 \end{comment}
+
 \spellsection{Redirection}
 \spellschool{Abjuration (Shielding)}
 \spelllvl{Abjur 3}
@@ -4545,17 +4546,35 @@ If you take life damage, you lose all temporary hit points provided by this spel
   This spell functions like \spell{retrieve}, except that if the object is attended, it comes to your hand if the creature holding the item fails a Will save.
 \end{spelleffect}
 
+\spellsection{Reveal Death}
+\spelldesc{You grant a creature a vision of its death - whether immediate or far in the future.}
+\spellschool{Divination (Knowledge)}
+\spelllvl{Death 2, Div 2}
+\spellrng{\rngmed}
+\spelltgt{One creature}
+\spelldur{\durshort}
+\spellsave{None}
+\spellsr{Yes (Will)}
+\begin{spelleffect}
+    This spell has different effects depending on the version chosen.
+    \par \subspell{Distant Demise} The subject gains a \plus2 bonus to saving throws. In addition, it is not staggered while at 0 hit points. Further damage is still critical damage and can cause the creature to begin dying as normal. 
+    \par \subspell{Imminent Demise} The subject becomes vulnerable.
+\end{spelleffect}
+\begin{spellnotes}
+  \vulnerableexplanation
+\end{spellnotes}
+
 \spellsection{Revelation}
 \spellschool{Divination (Awareness, Knowledge)}
 \spelllvl{Div 8, Knowledge 9, Sor/Wiz 9}
 \spellrng{\rngmed}
 \spelltgt{One creature}
-\spelldur{\durshort/1 round}
+\spelldur{\durshort}
 \spellsave{None}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  You grant the target a powerful revelatory vision of a possible future. This spell has different effects depending on the version chosen. Creatures without an Intelligence score are not affected by this spell. A successful Will save reduces the duration to 1 round.
-  \par \subspell{Revelation of Destruction} You inflict a vision of a terrible future upon the target. It takes a \minus4 penalty to attack rolls, checks, saving throws, and AC as it struggles to avoid the certainty of its own doom.
+  You grant the target a powerful revelatory vision of a possible future. This spell has different effects depending on the version chosen. Creatures without an Intelligence score are not affected by this spell.
+  \par \subspell{Revelation of Destruction} You inflict a vision of a terrible future upon the target. It takes a \minus4 penalty to attack rolls, checks, saving throws, DCs, and AC as it struggles to avoid the certainty of its own doom.
   \par \subspell{Revelation of Prowess} You show the target a vision of its success in the combat to come. It gains the benefits of a \spell{greater precognition} spell.
   \par \subspell{Revelation of Truth} You show the target the truth of the world around it. It gains the benefits of a \spell{true seeing} spell.
 \end{spelleffect}
