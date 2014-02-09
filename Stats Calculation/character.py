@@ -1,11 +1,12 @@
 import math
 import classes
+import equipment
 import util
 import combat
 
 class Character:
 
-    def __init__(self, raw_stats, equipment, attributes, level):
+    def __init__(self, raw_stats, attributes, level):
         #Core variable initializations
         #http://stackoverflow.com/questions/9946736/python-not-creating-a-new-clean-instance
 
@@ -17,10 +18,6 @@ class Character:
         for title in util.attribute_titles:
             self.attributes[title] = util.Modifier()
         self.armor_class = util.ArmorClass()
-        self.has_armor = False
-        self.has_shield = False
-        self.has_weapon = False
-        self.encumbrance = {'armor':None, 'weapon':None}
         self.saves = dict()
         for title in util.save_titles:
             self.saves[title] = util.Modifier()
@@ -28,7 +25,6 @@ class Character:
         self.hp = 0
 
         self._interpret_raw_stats(raw_stats)
-        self._interpret_equipment(equipment)
         self._interpret_attributes(attributes)
         
         self._set_class_calculator()
@@ -42,7 +38,7 @@ class Character:
         self._add_save_attributes()
         self._add_level_scaling()
 
-        if self.encumbrance['armor']=='medium' or self.encumbrance['armor']=='heavy':
+        if self.armor.encumbrance=='medium' or self.armor.encumbrance=='heavy':
             self.armor_class.dodge.add_inherent(util.ifloor(
                 self.attributes['dexterity'].total()/2))
         else:
@@ -57,31 +53,21 @@ class Character:
     @classmethod
     def from_filename(cls, filename, level):
         raw_stats = util.parse_stats_from_file(filename)
-        equipment = util.parse_equipment_file(raw_stats)
         attributes = util.parse_attribute_file(raw_stats)
-        return cls(raw_stats, equipment, attributes, level)
+        return cls(raw_stats, attributes, level)
 
     def _interpret_raw_stats(self, raw_stats):
         self.class_name = raw_stats['class']
+        equipment_set = equipment.EquipmentSet.from_raw_stats(raw_stats)
+        self.weapon = equipment_set.weapon
+        self.armor = equipment_set.armor
+        self.shield = equipment_set.shield
 
-    def _interpret_equipment(self, equipment):
-
-        weapon = util.dict_slice(util.dict_match_prefix(equipment, 'weapon '), util.equipment_weapon_titles, util.conditional_int)
-        armor = util.dict_slice(util.dict_match_prefix(equipment, 'armor '), util.equipment_armor_titles, util.conditional_int)
-        shield = util.dict_slice(util.dict_match_prefix(equipment, 'shield '), util.equipment_armor_titles, util.conditional_int)
-
-        self.has_armor = bool(armor)
-        self.has_shield = bool(shield)
-        self.has_weapon = bool(weapon)
-
-        self.encumbrance['weapon'] = weapon['encumbrance']
-        self.encumbrance['armor'] = armor['encumbrance']
-
-        self.attack_damage.add_die(weapon['damage'])
-        if armor.has_key('ac bonus'):
-            self.armor_class.armor.add_inherent(armor['ac bonus'])
-        if shield.has_key('ac bonus'):
-            self.armor_class.shield.add_inherent(shield['ac bonus'])
+        self.attack_damage.add_die(self.weapon.damage_die)
+        if self.armor:
+            self.armor_class.armor.add_inherent(self.armor.ac_bonus)
+        if self.shield:
+            self.armor_class.shield.add_inherent(self.shield.ac_bonus)
 
     def _interpret_attributes(self, attributes):
         raw_attributes = dict()
@@ -145,11 +131,11 @@ class Character:
 
     def _add_level_scaling(self):
         scale_factor = self.level/4
-        if self.has_armor:
+        if self.armor:
             self.armor_class.armor.add_enhancement(scale_factor)
-        if self.has_shield:
+        if self.shield:
             self.armor_class.shield.add_enhancement(scale_factor)
-        if self.has_weapon:
+        if self.weapon:
             self.attack_bonus.add_enhancement(scale_factor)
             self.attack_damage.add_enhancement(scale_factor)
         for save_title in self.saves.keys():
@@ -166,7 +152,7 @@ class Character:
             self.attributes[second_attribute].add_inherent(second_increases)
 
     def _calculate_attack_attribute_bonus(self):
-        if self.encumbrance['weapon']=='light':
+        if self.weapon.encumbrance =='light':
             return max(self.attributes['strength'].total(),
                     self.attributes['dexterity'].total())
         else:

@@ -14,22 +14,45 @@ class Armor:
         self.armor_type = armor_type
 
 class EquipmentSet:
-    def __init__(self, armor_name, shield_name, weapon_name):
-        self.armor = {
-                'heavy': Armor(8, 'heavy', 'body')
-                'medium': Armor(6, 'medium', 'body')
-                'light': Armor(3, 'light', 'body')
-                'none': None
-                }[self.armor_name]
-        self.shield = {
-                'tower': Armor(4, 'medium', 'shield')
-                'heavy': Armor(2, 'none', 'shield')
-                'light': Armor(1, 'none', 'shield')
-                'none': None
-                }[self.shield_name]
+    def __init__(self, weapon_name, armor_name, shield_name):
         self.weapon = {
-                'heavy_melee': Weapon('heavy', 'melee', 'd10', 2)
-                'medium_melee': Weapon('medium', 'melee', 'd8', 1)
-                'light_melee': Weapon('light', 'melee', 'd6', 0)
-                'projectile': Weapon('heavy', 'projectile', 'd8', 1)
-                }[self.weapon_name]
+                'heavy_melee': Weapon('heavy', 'melee', 'd10', 2),
+                'medium_melee': Weapon('medium', 'melee', 'd8', 1),
+                'light_melee': Weapon('light', 'melee', 'd6', 0),
+                'projectile': Weapon('heavy', 'projectile', 'd8', 1),
+                'none': None
+                }[weapon_name]
+        self.armor = {
+                'heavy': Armor(8, 'heavy', 'body'),
+                'medium': Armor(6, 'medium', 'body'),
+                'light': Armor(3, 'light', 'body'),
+                'none': None,
+                }[armor_name]
+        self.shield = {
+                'tower': Armor(4, 'medium', 'shield'),
+                'heavy': Armor(2, 'none', 'shield'),
+                'light': Armor(1, 'none', 'shield'),
+                'none': None
+                }[shield_name]
+
+    @classmethod
+    def from_raw_stats(cls, raw_stats):
+        keys = raw_stats.keys()
+        if 'weapon' in keys:
+            weapon = raw_stats['weapon']
+        else:
+            weapon = 'none'
+        if 'armor' in keys:
+            armor = raw_stats['armor']
+        else:
+            armor = 'none'
+        if 'shield' in keys:
+            shield = raw_stats['shield']
+        else:
+            shield = 'none'
+        return cls(weapon, armor, shield)
+
+
+
+        
+
