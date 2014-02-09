@@ -10,31 +10,6 @@ armor_titles = ['ac bonus', 'encumbrance', 'check penalty', 'arcane spell failur
 save_titles = ['fortitude', 'reflex', 'will']
 ac_titles = ['normal', 'touch', 'flat-footed']
 
-class Bonuses:
-
-    def __init__(self):
-        self.inherent=0
-        self.enhancement=0
-        self.competence=0
-        self.circumstance=0
-        self.die=None
-
-    def add_inherent(self, bonus):
-        self.inherent+=bonus
-
-    def add_enhancement(self, bonus):
-        self.enhancement = max(self.enhancement, bonus)
-
-    def add_competence(self, bonus):
-        self.competence = max(self.competence, bonus)
-
-    def add_circumstance(self, bonus):
-        self.circumstance+=bonus
-
-    def get_total(self):
-        return sum([self.inherent, self.enhancement, self.competence, 
-                self.circumstance])
-
 class Character:
 
     def __init__(self, raw_stats, level):
@@ -43,8 +18,8 @@ class Character:
 
         self.base_attack_bonus=0
         self.level=0
-        self.attack_bonus=Bonuses()
-        self.attack_damage=Bonuses()
+        self.attack_bonus=util.Bonuses()
+        self.attack_damage=util.Bonuses()
         self.attributes = dict()
         self.ac_modifiers = dict()
         for title in ac_modifier_titles:
