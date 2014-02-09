@@ -1,6 +1,7 @@
 import math
 import classes
 import util
+import combat
 
 class Character:
 
@@ -35,7 +36,7 @@ class Character:
 
         #Calculate derived statistics
         self.attack_bonus.add_inherent(self.base_attack_bonus)
-        self.attack_bonus.add_inherent(self.calculate_attack_attribute_bonus())
+        self.attack_bonus.add_inherent(self._calculate_attack_attribute_bonus())
         self.attack_damage.add_inherent(util.ifloor(
             self.attributes['strength'].total()/2))
         self._add_save_attributes()
@@ -90,7 +91,7 @@ class Character:
             self.attributes[attribute].add_inherent(raw_attributes[attribute])
 
         #Apply level-based scaling
-        self.scale_attributes(attributes)
+        self._scale_attributes(attributes)
         
     #http://stackoverflow.com/questions/60208/replacements-for-switch-statement-in-python
     def _set_class_calculator(self):
@@ -153,7 +154,7 @@ class Character:
         for save_title in self.saves.keys():
             self.saves[save_title].add_enhancement(scale_factor)
 
-    def scale_attributes(self, attributes):
+    def _scale_attributes(self, attributes):
         if 'bonus attribute 1' in attributes.keys():
             main_attribute = attributes['bonus attribute 1']
             main_increases = (2 + self.level)/4
@@ -163,7 +164,7 @@ class Character:
             second_increases = (self.level)/4
             self.attributes[second_attribute].add_inherent(second_increases)
 
-    def calculate_attack_attribute_bonus(self):
+    def _calculate_attack_attribute_bonus(self):
         if self.encumbrance['weapon']=='light':
             return max(self.attributes['strength'].total(),
                     self.attributes['dexterity'].total())
@@ -234,6 +235,9 @@ class Character:
                     self.languages)
 
         return monster_string
+
+    def dpr(self, ac):
+        
                 
 def calculate_hp(constitution, hit_value, level):
     return (constitution + hit_value) * level
