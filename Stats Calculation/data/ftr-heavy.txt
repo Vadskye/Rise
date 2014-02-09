@@ -1,0 +1,17 @@
+name=Ftr-heavy
+race=human
+class=fighter
+level=1
+strength=4
+dexterity=2
+constitution=2
+intelligence=-1
+wisdom=0
+charisma=1
+weapon encumbrance=heavy
+armor encumbrance=heavy
+armor ac bonus=8
+armor check penalty=3
+weapon damage=d10
+bonus attribute 1=strength
+bonus attribute 2=constitution
