@@ -1,0 +1,5 @@
+name=Cleric-warrior
+race=human
+class=cleric
+equipment=medium_sobo
+attributes=warrior
