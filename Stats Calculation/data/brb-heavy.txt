@@ -1,5 +1,5 @@
 name=Brb-heavy
 race=human
 class=barbarian
-equipment=heavy
+equipment=medium_heavy
 attributes=warrior

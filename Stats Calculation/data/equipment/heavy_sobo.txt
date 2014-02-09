@@ -1,0 +1,6 @@
+weapon encumbrance=medium
+armor encumbrance=heavy
+armor ac bonus=8
+armor check penalty=6
+weapon damage=d8
+shield ac bonus=2

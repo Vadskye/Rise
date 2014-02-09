@@ -1,5 +1,5 @@
 name=Ftr-heavy
 race=human
 class=fighter
-equipment=heavy
+equipment=heavy_sobo
 attributes=warrior
