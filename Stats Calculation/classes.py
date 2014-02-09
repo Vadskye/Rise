@@ -32,4 +32,3 @@ class Barbarian(GenericClass):
     base_attack_bonus_progression = GOOD
     save_progressions = {'fortitude':GOOD, 'reflex':AVERAGE, 'will':POOR}
     hit_value = 7
-    level = 0
