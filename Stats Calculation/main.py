@@ -21,6 +21,6 @@ if __name__ == "__main__":
         print barbarian
     #Otherwise, show all levels
     else:
-        for i in xrange(1,5):
+        for i in xrange(1,11):
             barbarian = Character(raw_stats, i)
             print barbarian
