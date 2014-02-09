@@ -22,6 +22,17 @@ class Modifier:
     def add_circumstance(self, bonus):
         self.circumstance+=bonus
 
+    def add_all(self, bonus_dict):
+        keys = bonus_dict.keys()
+        if 'inherent' in keys:
+            self.add_inherent(bonus_dict['inherent'])
+        if 'enhancement' in keys:
+            self.add_enhancement(bonus_dict['enhancement'])
+        if 'competence' in keys:
+            self.add_competence(bonus_dict['competence'])
+        if 'circumstance' in keys:
+            self.add_circumstance(bonus_dict['circumstance'])
+
     def add_die(self, die):
         if die_average(die)>die_average(self.die):
             self.die=die
