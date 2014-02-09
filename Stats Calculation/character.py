@@ -54,36 +54,15 @@ class character:
         self.hp = self.calculate_hp()
 
         #Calculate derived statistics
-        self.attack_bonus = self.base_attack_bonus + self.calculate_attack_attribute_bonus()
-        self.attack_damage = self.calculate_attack_damage()
+        self.attack_bonus = calculate_attack_bonus(self.base_attack_bonus,
+                self.calculate_attack_attribute_bonus)
+        self.attack_damage = calculate_attack_damage(self.attributes['strength'],
+                self.weapon['damage'])
         for title in ac_titles:
-            self.ac[title] = self.calculate_armor_class(title) 
+            self.ac[title] = calculate_armor_class(self.armor['encumbrance'],
+                    self.attributes['dexterity'], self.base_attack_bonus, 
+                    self.ac_modifiers, title) 
         self.cmd = self.calculate_cmd()
-
-    def calculate_attack_bonus(self):
-        return
-
-    def calculate_attack_damage(self):
-        return math.floor(self.attributes['strength']/2) + util.die_average(self.weapon['damage'])
-
-    def calculate_armor_class(self, ac_title):
-        if self.armor['encumbrance']=='medium' or self.armor['encumbrance']=='heavy':
-            dexterity_bonus=self.attributes['dexterity']/2
-        else:
-            dexterity_bonus=self.attributes['dexterity']
-        
-        ac = 10 + dexterity_bonus + self.base_attack_bonus/2
-        for modifier in self.ac_modifiers.values():
-            ac+=modifier
-        if ac_title == ac_titles[0]: #normal AC
-            #apply all modifiers
-            return ac
-        elif ac_title == ac_titles[1]: #touch AC
-            #apply all except armor, natural armor
-            return ac-self.ac_modifiers['armor']-self.ac_modifiers['natural armor']
-        elif ac_title == ac_titles[2]: #flat-footed AC
-            #apply all except shield, dodge, bab
-            return ac-self.ac_modifiers['shield'] - self.ac_modifiers['dodge']-dexterity_bonus - self.base_attack_bonus/2
 
     def calculate_cmd(self):
         return self.ac['touch'] + self.attributes['strength']
@@ -162,3 +141,29 @@ class character:
 
         return monster_string
                 
+
+def calculate_attack_bonus(base_attack_bonus, attack_attribute_bonus):
+    return base_attack_bonus + attack_attribute_bonus()
+
+def calculate_attack_damage(strength, weapon_damage_die):
+    return math.floor(strength/2) + util.die_average(weapon_damage_die)
+
+def calculate_armor_class(armor_encumbrance, dexterity, base_attack_bonus,
+        ac_modifiers, ac_title):
+    if armor_encumbrance=='medium' or armor_encumbrance=='heavy':
+        dexterity_bonus=dexterity/2
+    else:
+        dexterity_bonus=dexterity
+    
+    ac = 10 + dexterity_bonus + base_attack_bonus/2
+    for modifier in ac_modifiers.values():
+        ac+=modifier
+    if ac_title == ac_titles[0]: #normal AC
+        #apply all modifiers
+        return ac
+    elif ac_title == ac_titles[1]: #touch AC
+        #apply all except armor, natural armor
+        return ac-ac_modifiers['armor']-ac_modifiers['natural armor']
+    elif ac_title == ac_titles[2]: #flat-footed AC
+        #apply all except shield, dodge, bab
+        return ac-ac_modifiers['shield'] - ac_modifiers['dodge']-dexterity_bonus - base_attack_bonus/2
