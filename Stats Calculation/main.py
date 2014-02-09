@@ -1,5 +1,5 @@
 import argparse
-from character import character
+from character import Character
 import util
 
 def initialize_argument_parser():
@@ -17,12 +17,10 @@ if __name__ == "__main__":
     #If a specific level is given, show that level
     raw_stats = util.parse_stats_from_file(character_file_name)
     if args['level']:
-        barbarian = character(raw_stats, int(level))
+        barbarian = Character(raw_stats, int(level))
         print barbarian
     #Otherwise, show all levels
     else:
         for i in xrange(1,5):
-            barbarian = character(raw_stats, i)
+            barbarian = Character(raw_stats, i)
             print barbarian
-            
-        

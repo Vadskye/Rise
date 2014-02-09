@@ -35,7 +35,7 @@ class Bonuses:
         return sum([self.inherent, self.enhancement, self.competence, 
                 self.circumstance])
 
-class character:
+class Character:
     base_attack_bonus=0
     level=0
     attack_bonus=Bonuses()
