@@ -1,7 +1,7 @@
 import re
 import math
 
-class Bonuses:
+class Modifier:
 
     def __init__(self):
         self.inherent=0
@@ -37,11 +37,11 @@ class Bonuses:
 
 class ArmorClass:
     def __init__(self):
-        self.misc = Bonuses()
-        self.armor = Bonuses()
-        self.shield = Bonuses()
-        self.dodge = Bonuses()
-        self.natural_armor = Bonuses()
+        self.misc = Modifier()
+        self.armor = Modifier()
+        self.shield = Modifier()
+        self.dodge = Modifier()
+        self.natural_armor = Modifier()
         self.misc.add_inherent(10)
 
     def get_normal(self):
