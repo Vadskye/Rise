@@ -26,6 +26,8 @@ class Character:
         self.shield = dict()
         self.weapon = dict()
         self.saves = dict()
+        for title in save_titles:
+            self.saves[title] = util.Bonuses()
         self.cmd = util.Bonuses()
         self.hp = 0
 
@@ -48,10 +50,13 @@ class Character:
         #Calculate statistics based on the given class
         #note that we are hardcoding the call to barbarian
         #This needs to be made automatic later
+
         self.class_calculator = classes.Barbarian(self.level)
         self.base_attack_bonus=self.class_calculator.calculate_base_attack_bonus()
+
         for title in save_titles:
-            self.saves[title] = self.class_calculator.calc_save(title) 
+            self.saves[title].add_inherent(self.class_calculator.calc_save(title))
+
         self.hp = calculate_hp(self.attributes['constitution'], 
                 self.class_calculator.hit_value, self.level)
 
@@ -94,9 +99,9 @@ class Character:
         defenses = str(self.armor_class)
         defenses += '; CMD '+str(self.cmd.total())
         defenses += '\nHP '+str(self.hp)
-        defenses += '; Fort '+util.mstr(self.saves['fortitude'])
-        defenses += ', Ref '+util.mstr(self.saves['reflex'])
-        defenses += ', Will '+util.mstr(self.saves['will'])
+        defenses += '; Fort '+util.mstr(self.saves['fortitude'].total())
+        defenses += ', Ref '+util.mstr(self.saves['reflex'].total())
+        defenses += ', Will '+util.mstr(self.saves['will'].total())
         return defenses
 
     def to_string_attacks(self):
@@ -147,35 +152,5 @@ class Character:
 
         return monster_string
                 
-
-def calculate_attack_bonus(base_attack_bonus, attribute_bonus):
-    return base_attack_bonus + attribute_bonus()
-
-def calculate_attack_damage(strength, weapon_damage_die):
-    return  + util.die_average(weapon_damage_die)
-
-def calculate_armor_class(armor_encumbrance, dexterity, base_attack_bonus,
-        ac_modifiers, ac_title):
-    if armor_encumbrance=='medium' or armor_encumbrance=='heavy':
-        dexterity_bonus=dexterity/2
-    else:
-        dexterity_bonus=dexterity
-
-    ac = 10 + dexterity_bonus + base_attack_bonus/2
-    for modifier in ac_modifiers.values():
-        ac+=modifier
-    if ac_title == ac_titles[0]: #normal AC
-        #apply all modifiers
-        return ac
-    elif ac_title == ac_titles[1]: #touch AC
-        #apply all except armor, natural armor
-        return ac-ac_modifiers['armor']-ac_modifiers['natural armor']
-    elif ac_title == ac_titles[2]: #flat-footed AC
-        #apply all except shield, dodge, bab
-        return ac-ac_modifiers['shield'] - ac_modifiers['dodge']-dexterity_bonus - base_attack_bonus/2
-
-def calculate_cmd(touch_ac, strength):
-    return touch_ac + strength
-
 def calculate_hp(constitution, hit_value, level):
     return (constitution + hit_value) * level
