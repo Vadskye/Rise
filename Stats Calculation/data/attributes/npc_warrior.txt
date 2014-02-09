@@ -4,4 +4,4 @@ constitution=2
 intelligence=0
 wisdom=0
 charisma=0
-bonus attribute 2=strength
+bonus attribute 1=strength
