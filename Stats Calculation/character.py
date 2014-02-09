@@ -90,8 +90,7 @@ class Character:
             self.attributes[attribute].add_inherent(raw_attributes[attribute])
 
         #Apply level-based scaling
-        self.scale_attributes(attributes['bonus attribute 1'],
-                attributes['bonus attribute 2'])
+        self.scale_attributes(attributes)
         
     #http://stackoverflow.com/questions/60208/replacements-for-switch-statement-in-python
     def _set_class_calculator(self):
@@ -154,13 +153,15 @@ class Character:
         for save_title in self.saves.keys():
             self.saves[save_title].add_enhancement(scale_factor)
 
-    def scale_attributes(self, main_attribute, second_attribute):
-        main_increases = (2 + self.level)/4
-        second_increases = (self.level)/4
-        if main_increases<0 or second_increases<0:
-            print 'ERROR: character level lower than raw level'
-        self.attributes[main_attribute].add_inherent(main_increases)
-        self.attributes[second_attribute].add_inherent(second_increases)
+    def scale_attributes(self, attributes):
+        if 'bonus attribute 1' in attributes.keys():
+            main_attribute = attributes['bonus attribute 1']
+            main_increases = (2 + self.level)/4
+            self.attributes[main_attribute].add_inherent(main_increases)
+        if 'bonus attribute 2' in attributes.keys():
+            second_attribute = attributes['bonus attribute 2']
+            second_increases = (self.level)/4
+            self.attributes[second_attribute].add_inherent(second_increases)
 
     def calculate_attack_attribute_bonus(self):
         if self.encumbrance['weapon']=='light':
