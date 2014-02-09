@@ -129,6 +129,11 @@ class Wizard(GenericClass):
     save_progressions = {'fortitude':POOR, 'reflex':POOR, 'will':GOOD}
     hit_value = 4
 
+class Warrior(GenericClass):
+    base_attack_bonus_progression = AVERAGE
+    save_progressions = {'fortitude':GOOD, 'reflex':POOR, 'will':POOR}
+    hit_value = 6
+
 #+2, +3 at 8th, +4 at 14th, +5 at 20th
 def std_scale(level):
     return (level+10)/6
