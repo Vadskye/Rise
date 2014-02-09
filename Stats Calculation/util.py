@@ -30,7 +30,7 @@ def dict_slice(input_dict, key_list, f=lambda x:x):
         if input_dict.has_key(key):
             output[key] = f(input_dict[key])
         else:
-            print 'warning: key', key, 'not found'
+            #print 'warning: key', key, 'not found'
             output[key] = 0
     return output
 
