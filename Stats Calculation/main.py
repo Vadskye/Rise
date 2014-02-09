@@ -16,11 +16,14 @@ if __name__ == "__main__":
     character_file_name = 'data/'+args['character']+'.txt'
     #If a specific level is given, show that level
     raw_stats = util.parse_stats_from_file(character_file_name)
+    print raw_stats
+    equipment = util.parse_equipment_file(raw_stats)
+    attributes = util.parse_attribute_file(raw_stats)
     if args['level']:
-        barbarian = Character(raw_stats, int(level))
-        print barbarian
+        character = Character(raw_stats, equipment, attributes, int(level))
+        print character
     #Otherwise, show all levels
     else:
-        for i in xrange(1,11):
-            barbarian = Character(raw_stats, i)
-            print barbarian
+        for i in xrange(20,21):
+            character = Character(raw_stats, equipment, attributes, i)
+            print character

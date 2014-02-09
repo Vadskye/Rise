@@ -4,7 +4,7 @@ import util
 
 class Character:
 
-    def __init__(self, raw_stats, level):
+    def __init__(self, raw_stats, equipment, attributes, level):
         #Core variable initializations
         #http://stackoverflow.com/questions/9946736/python-not-creating-a-new-clean-instance
 
@@ -27,6 +27,8 @@ class Character:
         self.hp = 0
 
         self._interpret_raw_stats(raw_stats)
+        self._interpret_equipment(equipment)
+        self._interpret_attributes(attributes)
         
         self._set_class_calculator()
         self._calculate_class_stats()
@@ -51,18 +53,13 @@ class Character:
         self.cmd.add_inherent(self.attributes['strength'].total())
 
     def _interpret_raw_stats(self, raw_stats):
-        #Take statistics from the given character input file
         self.class_name = raw_stats['class']
-        raw_attributes = dict()
-        raw_attributes = util.dict_slice(raw_stats, util.attribute_titles, 
-                util.conditional_int)
-        for attribute in raw_attributes.keys():
-            self.attributes[attribute].add_inherent(raw_attributes[attribute])
 
-        #interpret items
-        weapon = util.dict_slice(util.dict_match_prefix(raw_stats, 'weapon '), util.equipment_weapon_titles, util.conditional_int)
-        armor = util.dict_slice(util.dict_match_prefix(raw_stats, 'armor '), util.equipment_armor_titles, util.conditional_int)
-        shield = util.dict_slice(util.dict_match_prefix(raw_stats, 'shield '), util.equipment_armor_titles, util.conditional_int)
+    def _interpret_equipment(self, equipment):
+
+        weapon = util.dict_slice(util.dict_match_prefix(equipment, 'weapon '), util.equipment_weapon_titles, util.conditional_int)
+        armor = util.dict_slice(util.dict_match_prefix(equipment, 'armor '), util.equipment_armor_titles, util.conditional_int)
+        shield = util.dict_slice(util.dict_match_prefix(equipment, 'shield '), util.equipment_armor_titles, util.conditional_int)
 
         self.has_armor = bool(armor)
         self.has_shield = bool(shield)
@@ -77,9 +74,16 @@ class Character:
         if shield.has_key('ac bonus'):
             self.armor_class.shield.add_inherent(shield['ac bonus'])
 
+    def _interpret_attributes(self, attributes):
+        raw_attributes = dict()
+        raw_attributes = util.dict_slice(attributes, util.attribute_titles, 
+                util.conditional_int)
+        for attribute in raw_attributes.keys():
+            self.attributes[attribute].add_inherent(raw_attributes[attribute])
+
         #Apply level-based scaling
-        self.scale_attributes(raw_stats['bonus attribute 1'],
-                raw_stats['bonus attribute 2'], int(raw_stats['level']))
+        self.scale_attributes(attributes['bonus attribute 1'],
+                attributes['bonus attribute 2'])
         
     def _set_class_calculator(self):
         if self.class_name=='barbarian':
@@ -134,9 +138,9 @@ class Character:
         for save_title in self.saves.keys():
             self.saves[save_title].add_enhancement(scale_factor)
 
-    def scale_attributes(self, main_attribute, second_attribute, raw_level):
-        main_increases = (3 + self.level - raw_level)/4
-        second_increases = (1 + self.level - raw_level)/4
+    def scale_attributes(self, main_attribute, second_attribute):
+        main_increases = (2 + self.level)/4
+        second_increases = (self.level)/4
         if main_increases<0 or second_increases<0:
             print 'ERROR: character level lower than raw level'
         self.attributes[main_attribute].add_inherent(main_increases)

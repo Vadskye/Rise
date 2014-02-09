@@ -126,6 +126,15 @@ def parse_stats_from_file(input_file_name):
         stats[key]=val
     return stats
 
+def parse_equipment_file(raw_stats):
+    equipment_file_name = 'data/equipment/'+raw_stats['equipment']+'.txt'
+    return parse_stats_from_file(equipment_file_name)
+
+def parse_attribute_file(raw_stats):
+    attribute_file_name = 'data/attributes/'+raw_stats['attributes']+'.txt'
+    return parse_stats_from_file(attribute_file_name)
+
+
 #Return a new dict that contains a selection of items from
 #the original dict
 #Perform the function f on all elements
