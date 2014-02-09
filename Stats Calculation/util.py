@@ -1,5 +1,30 @@
 import re
 
+class Bonuses:
+
+    def __init__(self):
+        self.inherent=0
+        self.enhancement=0
+        self.competence=0
+        self.circumstance=0
+        self.die=None
+
+    def add_inherent(self, bonus):
+        self.inherent+=bonus
+
+    def add_enhancement(self, bonus):
+        self.enhancement = max(self.enhancement, bonus)
+
+    def add_competence(self, bonus):
+        self.competence = max(self.competence, bonus)
+
+    def add_circumstance(self, bonus):
+        self.circumstance+=bonus
+
+    def get_total(self):
+        return sum([self.inherent, self.enhancement, self.competence, 
+                self.circumstance])
+
 def parse_stats_from_file(input_file_name):
     input_file = open(input_file_name,'r')
     stats=dict()
