@@ -9,14 +9,15 @@ weapon_titles = ['damage', 'encumbrance']
 armor_titles = ['ac bonus', 'encumbrance', 'check penalty', 'arcane spell failure']
 save_titles = ['fortitude', 'reflex', 'will']
 ac_titles = ['normal', 'touch', 'flat-footed']
-generic_bonuses = {'inherent':0, 'enhancement':0, 'competence': 0,
-    'circumstance': 0}
 
 class Bonuses:
     inherent=0
     enhancement=0
     competence=0
     circumstance=0
+
+    def __init__(self):
+        self.inherent=0
 
     def add_inherent(self, bonus):
         self.inherent+=bonus
@@ -31,13 +32,13 @@ class Bonuses:
         self.circumstance+=bonus
 
     def get_total(self):
-        return sum(self.inherent, self.enhancement, self.competence, 
-                self.circumstance)
+        return sum([self.inherent, self.enhancement, self.competence, 
+                self.circumstance])
 
 class character:
     base_attack_bonus=0
     level=0
-    attack_bonus=0
+    attack_bonus=Bonuses()
     attack_damage=0
     attributes = dict()
     ac_modifiers = dict()
@@ -83,8 +84,8 @@ class character:
                 self.class_calculator.hit_value, self.level)
 
         #Calculate derived statistics
-        self.attack_bonus = calculate_attack_bonus(self.base_attack_bonus,
-                self.calculate_attack_attribute_bonus)
+        self.attack_bonus.add_inherent(self.base_attack_bonus)
+        self.attack_bonus.add_inherent(self.calculate_attack_attribute_bonus())
         self.attack_damage = calculate_attack_damage(self.attributes['strength'],
                 self.weapon['damage'])
         for title in ac_titles:
@@ -125,7 +126,7 @@ class character:
         return defenses
 
     def to_string_attacks(self):
-        attacks = 'Atk ' + util.mstr(self.attack_bonus)
+        attacks = 'Atk ' + util.mstr(self.attack_bonus.get_total())
         attacks += ' ('+ str(self.attack_damage) + ')'
         return attacks
 
