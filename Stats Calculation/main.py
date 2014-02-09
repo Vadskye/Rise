@@ -23,4 +23,4 @@ if __name__ == "__main__":
     else:
         for i in xrange(1,21):
             character = Character.from_filename(character_filename, i)
-            print character
+            print i, util.mstr(character.attack_bonus.total()), character.avg_hit_probability(20)
