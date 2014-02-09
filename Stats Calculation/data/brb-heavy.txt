@@ -1,7 +1,7 @@
 name=Brb-heavy
 race=human
 class=barbarian
-level=3
+level=1
 strength=4
 dexterity=2
 constitution=2
@@ -13,3 +13,5 @@ armor encumbrance=medium
 armor ac bonus=6
 armor check penalty=3
 weapon damage=d10
+bonus attribute 1=strength
+bonus attribute 2=constitution
