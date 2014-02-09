@@ -85,7 +85,7 @@ class Character:
         #note that we are hardcoding the call to barbarian
         #This needs to be made automatic later
 
-        self.class_calculator = classes.Barbarian(self)
+        self.class_calculator = classes.Barbarian(self.level)
         self.base_attack_bonus=self.class_calculator.calculate_base_attack_bonus()
 
         for title in util.save_titles:
@@ -93,6 +93,12 @@ class Character:
 
         self.hp = calculate_hp(self.attributes['constitution'].total(), 
                 self.class_calculator.hit_value, self.level)
+
+        self.attack_bonus.add_all(self.class_calculator.attack_bonus)
+        self.attack_damage.add_all(self.class_calculator.attack_damage)
+        self.armor_class.add_all(self.class_calculator.armor_class)
+        for key in self.class_calculator.saves.keys():
+            self.saves[key].add_all(self.class_calculator.saves[key])
 
     def _add_save_attributes(self):
         self.saves['fortitude'].add_inherent(
