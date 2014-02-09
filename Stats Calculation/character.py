@@ -47,21 +47,21 @@ class character:
         #Calculate statistics based on the given class
         #note that we are hardcoding the call to barbarian
         #This needs to be made automatic later
-        self.class_calculator = classes.barbarian(self.level)
+        self.class_calculator = classes.Barbarian(self.level)
         self.base_attack_bonus=self.class_calculator.calculate_base_attack_bonus()
         for title in save_titles:
             self.saves[title] = self.class_calculator.calc_save(title) 
         self.hp = self.calculate_hp()
 
         #Calculate derived statistics
-        self.attack_bonus = self.calculate_attack_bonus()
+        self.attack_bonus = self.base_attack_bonus + self.calculate_attack_attribute_bonus()
         self.attack_damage = self.calculate_attack_damage()
         for title in ac_titles:
             self.ac[title] = self.calculate_armor_class(title) 
         self.cmd = self.calculate_cmd()
 
     def calculate_attack_bonus(self):
-        return self.base_attack_bonus+ self.calculate_attack_attribute_bonus()
+        return
 
     def calculate_attack_damage(self):
         return math.floor(self.attributes['strength']/2) + util.die_average(self.weapon['damage'])
