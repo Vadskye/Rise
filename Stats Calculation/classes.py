@@ -1,3 +1,5 @@
+import util
+
 GOOD = 'good'
 AVERAGE = 'average'
 POOR = 'poor'
@@ -9,14 +11,18 @@ class GenericClass:
         self.attack_bonus=dict()
         self.attack_damage=dict()
         self.armor_class=dict()
+        for title in util.ac_modifier_titles:
+            self.armor_class[title]=dict()
         self.saves=dict()
+        for title in util.save_titles:
+            self.saves[title]=dict()
 
         self.set_attack_bonus()
         self.set_attack_damage()
         self.set_armor_class()
         self.set_saves()
 
-        self._adjust_offense(character)
+        self._adjust_stats(character)
 
     def calculate_base_attack_bonus(self):
         if self.base_attack_bonus_progression == GOOD:
@@ -49,9 +55,12 @@ class GenericClass:
     def set_saves(self):
         pass
 
-    def _adjust_offense(self, character):
+    def _adjust_stats(self, character):
         character.attack_bonus.add_all(self.attack_bonus)
         character.attack_damage.add_all(self.attack_damage)
+        character.armor_class.add_all(self.armor_class)
+        for key in self.saves.keys():
+            character.saves[key].add_all(self.saves[key])
 
 class Barbarian(GenericClass):
 
@@ -61,3 +70,11 @@ class Barbarian(GenericClass):
 
     def set_attack_damage(self):
         self.attack_damage['competence']=2
+
+    def set_armor_class(self):
+        self.armor_class['misc']['inherent']=-2
+
+    def set_saves(self):
+        self.saves['fortitude']['competence']=2
+        self.saves['will']['competence']=2
+
