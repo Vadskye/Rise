@@ -9,6 +9,30 @@ weapon_titles = ['damage', 'encumbrance']
 armor_titles = ['ac bonus', 'encumbrance', 'check penalty', 'arcane spell failure']
 save_titles = ['fortitude', 'reflex', 'will']
 ac_titles = ['normal', 'touch', 'flat-footed']
+generic_bonuses = {'inherent':0, 'enhancement':0, 'competence': 0,
+    'circumstance': 0}
+
+class Bonuses:
+    inherent=0
+    enhancement=0
+    competence=0
+    circumstance=0
+
+    def add_inherent(self, bonus):
+        self.inherent+=bonus
+
+    def add_enhancement(self, bonus):
+        self.enhancement = max(self.enhancement, bonus)
+
+    def add_competence(self, bonus):
+        self.competence = max(self.competence, bonus)
+
+    def add_circumstance(self, bonus):
+        self.circumstance+=bonus
+
+    def get_total(self):
+        return sum(self.inherent, self.enhancement, self.competence, 
+                self.circumstance)
 
 class character:
     base_attack_bonus=0
@@ -44,6 +68,10 @@ class character:
         else:
             self.ac_modifiers['shield']=0
 
+        #Apply level-based scaling
+        self.scale_attributes(raw_stats['bonus attribute 1'],
+                raw_stats['bonus attribute 2'], int(raw_stats['level']))
+
         #Calculate statistics based on the given class
         #note that we are hardcoding the call to barbarian
         #This needs to be made automatic later
@@ -64,6 +92,14 @@ class character:
                     self.attributes['dexterity'], self.base_attack_bonus, 
                     self.ac_modifiers, title) 
         self.cmd = calculate_cmd(self.ac['touch'], self.attributes['strength'])
+
+    def scale_attributes(self, main_attribute, second_attribute, raw_level):
+        main_increases = (3 + self.level - raw_level)/4
+        second_increases = (1 + self.level - raw_level)/4
+        if main_increases<0 or second_increases<0:
+            print 'ERROR: character level lower than raw level'
+        self.attributes[main_attribute]+=main_increases
+        self.attributes[second_attribute]+=second_increases
 
     def calculate_attack_attribute_bonus(self):
         if self.weapon['encumbrance']=='light':
@@ -137,8 +173,8 @@ class character:
         return monster_string
                 
 
-def calculate_attack_bonus(base_attack_bonus, attack_attribute_bonus):
-    return base_attack_bonus + attack_attribute_bonus()
+def calculate_attack_bonus(base_attack_bonus, attribute_bonus):
+    return base_attack_bonus + attribute_bonus()
 
 def calculate_attack_damage(strength, weapon_damage_die):
     return math.floor(strength/2) + util.die_average(weapon_damage_die)
