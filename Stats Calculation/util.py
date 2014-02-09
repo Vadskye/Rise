@@ -1,6 +1,14 @@
 import re
 import math
 
+attribute_titles = ['strength', 'dexterity', 'constitution', 'intelligence', 
+        'wisdom', 'charisma']
+ac_modifier_titles = ['armor', 'shield', 'dodge', 'natural armor', 'misc']
+equipment_weapon_titles = ['damage', 'encumbrance']
+equipment_armor_titles = ['ac bonus', 'encumbrance', 'check penalty', 'arcane spell failure']
+save_titles = ['fortitude', 'reflex', 'will']
+ac_titles = ['normal', 'touch', 'flat-footed']
+
 class Modifier:
 
     def __init__(self):
@@ -67,6 +75,20 @@ class ArmorClass:
         flatfooted = self.misc.total()
         flatfooted += sum_armor(self.armor.total(), self.natural_armor.total())
         return flatfooted
+
+    def add_all(self, ac_modifiers):
+        keys = ac_modifiers.keys()
+        if 'misc' in keys:
+            self.misc.add_all(ac_modifiers['misc'])
+        if 'armor' in keys:
+            self.armor.add_all(ac_modifiers['armor'])
+        if 'shield' in keys:
+            self.shield.add_all(ac_modifiers['shield'])
+        if 'dodge' in keys:
+            self.dodge.add_all(ac_modifiers['dodge'])
+        if 'natural_armor' in keys:
+            self.natural_armor.add_all(ac_modifiers['natural_armor'])
+
 
     def __str__(self):
         ac = 'AC ' + str(self.get_normal())

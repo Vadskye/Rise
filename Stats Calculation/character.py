@@ -2,14 +2,6 @@ import math
 import classes
 import util
 
-attribute_titles = ['strength', 'dexterity', 'constitution', 'intelligence', 
-        'wisdom', 'charisma']
-ac_modifier_titles = ['armor', 'shield', 'dodge', 'natural armor', 'misc']
-weapon_titles = ['damage', 'encumbrance']
-armor_titles = ['ac bonus', 'encumbrance', 'check penalty', 'arcane spell failure']
-save_titles = ['fortitude', 'reflex', 'will']
-ac_titles = ['normal', 'touch', 'flat-footed']
-
 class Character:
 
     def __init__(self, raw_stats, level):
@@ -21,7 +13,7 @@ class Character:
         self.attack_bonus=util.Modifier()
         self.attack_damage=util.Modifier()
         self.attributes = dict()
-        for title in attribute_titles:
+        for title in util.attribute_titles:
             self.attributes[title] = util.Modifier()
         self.armor_class = util.ArmorClass()
         self.has_armor = False
@@ -29,7 +21,7 @@ class Character:
         self.has_weapon = False
         self.encumbrance = {'armor':None, 'weapon':None}
         self.saves = dict()
-        for title in save_titles:
+        for title in util.save_titles:
             self.saves[title] = util.Modifier()
         self.cmd = util.Modifier()
         self.hp = 0
@@ -61,15 +53,15 @@ class Character:
         #Take statistics from the given character input file
         self.class_name = raw_stats['class']
         raw_attributes = dict()
-        raw_attributes = util.dict_slice(raw_stats, attribute_titles, 
+        raw_attributes = util.dict_slice(raw_stats, util.attribute_titles, 
                 util.conditional_int)
         for attribute in raw_attributes.keys():
             self.attributes[attribute].add_inherent(raw_attributes[attribute])
 
         #interpret items
-        weapon = util.dict_slice(util.dict_match_prefix(raw_stats, 'weapon '), weapon_titles, util.conditional_int)
-        armor = util.dict_slice(util.dict_match_prefix(raw_stats, 'armor '), armor_titles, util.conditional_int)
-        shield = util.dict_slice(util.dict_match_prefix(raw_stats, 'shield '), armor_titles, util.conditional_int)
+        weapon = util.dict_slice(util.dict_match_prefix(raw_stats, 'weapon '), util.equipment_weapon_titles, util.conditional_int)
+        armor = util.dict_slice(util.dict_match_prefix(raw_stats, 'armor '), util.equipment_armor_titles, util.conditional_int)
+        shield = util.dict_slice(util.dict_match_prefix(raw_stats, 'shield '), util.equipment_armor_titles, util.conditional_int)
 
         self.has_armor = bool(armor)
         self.has_shield = bool(shield)
@@ -96,7 +88,7 @@ class Character:
         self.class_calculator = classes.Barbarian(self)
         self.base_attack_bonus=self.class_calculator.calculate_base_attack_bonus()
 
-        for title in save_titles:
+        for title in util.save_titles:
             self.saves[title].add_inherent(self.class_calculator.calc_save(title))
 
         self.hp = calculate_hp(self.attributes['constitution'].total(), 
