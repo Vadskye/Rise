@@ -69,12 +69,15 @@ class Barbarian(GenericClass):
     hit_value = 7
 
     def set_attack_damage(self):
-        self.attack_damage['competence']=2
+        self.attack_damage['competence']=std_scale(self.level)
 
     def set_armor_class(self):
         self.armor_class['misc']['inherent']=-2
 
     def set_saves(self):
-        self.saves['fortitude']['competence']=2
-        self.saves['will']['competence']=2
+        self.saves['fortitude']['competence']=std_scale(self.level)
+        self.saves['will']['competence']=std_scale(self.level)
 
+#+2, +3 at 8th, +4 at 14th, +5 at 20th
+def std_scale(level):
+    return (level+10)/6
