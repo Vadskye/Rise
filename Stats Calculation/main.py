@@ -15,16 +15,12 @@ if __name__ == "__main__":
     print 'character:', args['character']
     character_filename = 'data/'+args['character']+'.txt'
     #If a specific level is given, show that level
-    #raw_stats = util.parse_stats_from_file(character_filename)
-    #equipment = util.parse_equipment_file(raw_stats)
-    #attributes = util.parse_attribute_file(raw_stats)
     if args['level']:
-        character = Character.from_filename(character_filename, int(level))
-        #(raw_stats, equipment, attributes, int(level))
+        character = Character.from_filename(character_filename,
+                int(args['level']))
         print character
     #Otherwise, show all levels
     else:
-        for i in xrange(20,21):
-            #character = Character(raw_stats, equipment, attributes, i)
+        for i in xrange(1,21):
             character = Character.from_filename(character_filename, i)
             print character
