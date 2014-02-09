@@ -2,12 +2,8 @@ GOOD = 'good'
 AVERAGE = 'average'
 POOR = 'poor'
 
-class barbarian:
-    base_attack_bonus_progression = GOOD
-    save_progressions = {'fortitude':GOOD, 'reflex':AVERAGE, 'will':POOR}
-    hit_value = 7
-    level = 0
-
+class GenericClass:
+    
     def __init__(self, level):
         self.level = level
 
@@ -30,7 +26,10 @@ class barbarian:
         elif save_progression == POOR:
             return self.level/2;
         else:
-            return False
+            return False 
 
-    def calculate_hp(self):
-        return 
+class Barbarian(GenericClass):
+    base_attack_bonus_progression = GOOD
+    save_progressions = {'fortitude':GOOD, 'reflex':AVERAGE, 'will':POOR}
+    hit_value = 7
+    level = 0
