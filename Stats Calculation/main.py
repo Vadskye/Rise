@@ -5,7 +5,7 @@ import util
 def initialize_argument_parser():
     parser = argparse.ArgumentParser(description='Calculate combat statistics for Rise characters')
     parser.add_argument('-c', '--character', dest='character', 
-            help='the character file to load', default='brb-heavy')
+            help='the character file to load', default=None)
     parser.add_argument('-l', '--level', dest='level',
             help='the level of the character', default=None)
     return vars(parser.parse_args())
@@ -26,9 +26,14 @@ if __name__ == "__main__":
                 int(args['level']))
         print character
     #Otherwise, show all levels
-    else:
+    elif args['character']:
         for i in xrange(20):
             character = Character.from_character_name(args['character'], i+1)
+            print character
             #print i+1, util.mstr(character.attack_bonus.total()), 'vs', generic_ac_calc[i], ':', character.avg_hit_probability(generic_ac_calc[i])
             #print i+1, character.armor_class.get_normal(), 'vs', generic_ac_real[i], ':', util.mstr(character.armor_class.get_normal()-generic_ac_real[i])
-            print i+1, character.dpr(generic_ac_calc[i])
+    else:
+        for i in xrange(20):
+            barbarian = Character.from_character_name('brb-heavy', i+1)
+            fighter = Character.from_character_name('ftr-heavy', i+1)
+            print i+1, barbarian.dpr(generic_ac_calc[i]), 'vs', fighter.dpr(generic_ac_calc[i])
