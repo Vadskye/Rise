@@ -11,13 +11,13 @@ save_titles = ['fortitude', 'reflex', 'will']
 ac_titles = ['normal', 'touch', 'flat-footed']
 
 class Bonuses:
-    inherent=0
-    enhancement=0
-    competence=0
-    circumstance=0
 
     def __init__(self):
         self.inherent=0
+        self.enhancement=0
+        self.competence=0
+        self.circumstance=0
+        self.die=None
 
     def add_inherent(self, bonus):
         self.inherent+=bonus
@@ -36,23 +36,27 @@ class Bonuses:
                 self.circumstance])
 
 class Character:
-    base_attack_bonus=0
-    level=0
-    attack_bonus=Bonuses()
-    attack_damage=0
-    attributes = dict()
-    ac_modifiers = dict()
-    for title in ac_modifier_titles:
-        ac_modifiers[title] = 0
-    armor = dict()
-    shield = dict()
-    weapon = dict()
-    saves = dict()
-    ac = dict()
-    cmd = 10
-    hp = 0
 
     def __init__(self, raw_stats, level):
+        #Core variable initializations
+        #http://stackoverflow.com/questions/9946736/python-not-creating-a-new-clean-instance
+
+        self.base_attack_bonus=0
+        self.level=0
+        self.attack_bonus=Bonuses()
+        self.attack_damage=Bonuses()
+        self.attributes = dict()
+        self.ac_modifiers = dict()
+        for title in ac_modifier_titles:
+            self.ac_modifiers[title] = 0
+        self.armor = dict()
+        self.shield = dict()
+        self.weapon = dict()
+        self.saves = dict()
+        self.ac = dict()
+        self.cmd = 10
+        self.hp = 0
+
         #Take statistics from the given character input file
         self.class_name = raw_stats['class']
         self.level = level
