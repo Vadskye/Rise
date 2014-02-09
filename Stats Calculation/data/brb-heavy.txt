@@ -1,5 +1,6 @@
 name=Brb-heavy
 race=human
 class=barbarian
-equipment=medium_heavy
+weapon=heavy_melee
+armor=heavy
 attributes=warrior
