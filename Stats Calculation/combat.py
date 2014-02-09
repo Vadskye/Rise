@@ -5,7 +5,7 @@ def attack_hits(attack_bonus, ac):
 
 #return number of attacks this base attack bonus grants
 def attack_count(base_attack_bonus):
-    return 1 + (base_attack_bonus-1)/5
+    return 1 + max(0,(base_attack_bonus-1)/5)
 
 #return estimated number of hits
 def full_attack_hits(primary_attack_bonus, ac, base_attack_bonus):
