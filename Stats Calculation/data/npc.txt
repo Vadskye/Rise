@@ -1,0 +1,5 @@
+name=NPC
+race=human
+class=warrior
+equipment=standard_warrior
+attributes=npc_warrior

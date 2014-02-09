@@ -1,0 +1,7 @@
+strength=2
+dexterity=1
+constitution=2
+intelligence=0
+wisdom=0
+charisma=0
+bonus attribute 2=strength
