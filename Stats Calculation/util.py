@@ -178,7 +178,7 @@ def mstr(text):
     if is_number(text):
         modifier=int(text)
         if modifier<0:
-            return '-'+str(modifier)
+            return str(modifier)
         else:
             return '+'+str(modifier)
     else:
