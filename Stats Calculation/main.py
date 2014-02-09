@@ -15,12 +15,15 @@ if __name__ == "__main__":
     print 'character:', args['character']
     character_filename = 'data/'+args['character']+'.txt'
     #If a specific level is given, show that level
+
+    generic_ac=range(15,35)
+
     if args['level']:
         character = Character.from_filename(character_filename,
                 int(args['level']))
         print character
     #Otherwise, show all levels
     else:
-        for i in xrange(1,21):
-            character = Character.from_filename(character_filename, i)
-            print i, util.mstr(character.attack_bonus.total()), character.avg_hit_probability(20)
+        for i in xrange(20):
+            character = Character.from_filename(character_filename, i+1)
+            print i+1, util.mstr(character.attack_bonus.total()), 'vs', generic_ac[i], ':', character.avg_hit_probability(generic_ac[i])
