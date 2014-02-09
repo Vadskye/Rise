@@ -1,5 +1,7 @@
 name=NPC
 race=human
 class=warrior
-equipment=medium_sobo
+weapon=medium_melee
+armor=medium
+shield=heavy
 attributes=npc_warrior
