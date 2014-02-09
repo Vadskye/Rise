@@ -28,6 +28,7 @@ class Character:
 
         self._interpret_raw_stats(raw_stats)
         
+        self._set_class_calculator()
         self._calculate_class_stats()
 
         #Calculate derived statistics
@@ -79,13 +80,20 @@ class Character:
         #Apply level-based scaling
         self.scale_attributes(raw_stats['bonus attribute 1'],
                 raw_stats['bonus attribute 2'], int(raw_stats['level']))
+        
+    def _set_class_calculator(self):
+        if self.class_name=='barbarian':
+            self.class_calculator = classes.Barbarian(self.level)
+        elif self.class_name=='fighter':
+            self.class_calculator = classes.Fighter(self.level)
+        else:
+            print 'ERROR: class name', self.class_name, 'not recognized'
 
     def _calculate_class_stats(self):
         #Calculate statistics based on the given class
         #note that we are hardcoding the call to barbarian
         #This needs to be made automatic later
 
-        self.class_calculator = classes.Barbarian(self.level)
         self.base_attack_bonus=self.class_calculator.calculate_base_attack_bonus()
 
         for title in util.save_titles:

@@ -69,6 +69,21 @@ class Barbarian(GenericClass):
         self.saves['fortitude']['competence']=std_scale(self.level)
         self.saves['will']['competence']=std_scale(self.level)
 
+class Fighter(GenericClass):
+    base_attack_bonus_progression = GOOD
+    save_progressions = {'fortitude':GOOD, 'reflex':POOR, 'will':AVERAGE}
+    hit_value = 6
+
+    def set_armor_class(self):
+        self.armor_class['dodge']['competence']=(self.level+5)/6
+
+    def set_attack_bonus(self):
+        #weapon focus + weapon disciplines
+        ab=1+(self.level+3)/6
+        if self.level>=8:
+            ab+=1
+        self.attack_bonus['competence']=ab
+
 #+2, +3 at 8th, +4 at 14th, +5 at 20th
 def std_scale(level):
     return (level+10)/6
