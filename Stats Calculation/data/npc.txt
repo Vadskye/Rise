@@ -1,5 +1,5 @@
 name=NPC
 race=human
 class=warrior
-equipment=standard_warrior
+equipment=medium_sobo
 attributes=npc_warrior
