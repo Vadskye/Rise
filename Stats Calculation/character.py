@@ -98,6 +98,7 @@ class Character:
         self.class_calculator = {
                 'barbarian': classes.Barbarian,
                 'bard': classes.Bard,
+                'cleric': classes.Cleric,
                 'druid': classes.Druid,
                 'fighter': classes.Fighter,
                 'monk': classes.Monk,
