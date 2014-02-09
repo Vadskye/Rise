@@ -21,15 +21,12 @@ class Character:
         self.attack_bonus=util.Bonuses()
         self.attack_damage=util.Bonuses()
         self.attributes = dict()
-        self.ac_modifiers = dict()
-        for title in ac_modifier_titles:
-            self.ac_modifiers[title] = 0
+        self.armor_class = util.ArmorClass()
         self.armor = dict()
         self.shield = dict()
         self.weapon = dict()
         self.saves = dict()
-        self.ac = dict()
-        self.cmd = 10
+        self.cmd = util.Bonuses()
         self.hp = 0
 
         #Take statistics from the given character input file
@@ -40,13 +37,9 @@ class Character:
         self.armor = util.dict_slice(util.dict_match_prefix(raw_stats, 'armor '), armor_titles, util.conditional_int)
         self.shield = util.dict_slice(util.dict_match_prefix(raw_stats, 'shield '), armor_titles, util.conditional_int)
         if self.armor.has_key('ac bonus'):
-            self.ac_modifiers['armor']=self.armor['ac bonus']
-        else:
-            self.ac_modifiers['armor']=0
+            self.armor_class.armor.add_inherent(self.armor['ac bonus'])
         if self.shield.has_key('ac bonus'):
-            self.ac_modifiers['shield']=self.shield['ac bonus']
-        else:
-            self.ac_modifiers['shield']=0
+            self.armor_class.shield.add_inherent(self.shield['ac bonus'])
 
         #Apply level-based scaling
         self.scale_attributes(raw_stats['bonus attribute 1'],
@@ -67,11 +60,15 @@ class Character:
         self.attack_bonus.add_inherent(self.calculate_attack_attribute_bonus())
         self.attack_damage.add_inherent(math.floor(self.attributes['strength']/2))
         self.attack_damage.add_die(self.weapon['damage'])
-        for title in ac_titles:
-            self.ac[title] = calculate_armor_class(self.armor['encumbrance'],
-                    self.attributes['dexterity'], self.base_attack_bonus, 
-                    self.ac_modifiers, title) 
-        self.cmd = calculate_cmd(self.ac['touch'], self.attributes['strength'])
+
+        if self.armor['encumbrance']=='medium' or self.armor['encumbrance']=='heavy':
+            self.armor_class.dodge.add_inherent(math.floor(self.attributes['dexterity']/2))
+        else:
+            self.armor_class.dodge.add_inherent(self.attributes['dexterity'])
+        self.armor_class.dodge.add_inherent(math.floor(self.base_attack_bonus/2))
+
+        self.cmd.add_inherent(self.armor_class.get_touch())
+        self.cmd.add_inherent(self.attributes['strength'])
 
     def scale_attributes(self, main_attribute, second_attribute, raw_level):
         main_increases = (3 + self.level - raw_level)/4
@@ -94,10 +91,8 @@ class Character:
         return full_string
 
     def to_string_defenses(self):
-        defenses = 'AC ' + str(self.ac['normal'])
-        defenses += ', touch ' + str(self.ac['touch'])
-        defenses += ', flat-footed ' + str(self.ac['flat-footed'])
-        defenses += '; CMD '+str(self.cmd)
+        defenses = str(self.armor_class)
+        defenses += '; CMD '+str(self.cmd.total())
         defenses += '\nHP '+str(self.hp)
         defenses += '; Fort '+util.mstr(self.saves['fortitude'])
         defenses += ', Ref '+util.mstr(self.saves['reflex'])
@@ -165,7 +160,7 @@ def calculate_armor_class(armor_encumbrance, dexterity, base_attack_bonus,
         dexterity_bonus=dexterity/2
     else:
         dexterity_bonus=dexterity
-    
+
     ac = 10 + dexterity_bonus + base_attack_bonus/2
     for modifier in ac_modifiers.values():
         ac+=modifier

@@ -1,4 +1,5 @@
 import re
+import math
 
 class Bonuses:
 
@@ -26,8 +27,14 @@ class Bonuses:
             self.die=die
 
     def total(self):
-        return sum([die_average(self.die), self.inherent, self.enhancement,
-            self.competence, self.circumstance])
+        total = sum([self.inherent, self.enhancement, self.competence,
+            self.circumstance])
+        print type(total)
+        #return int if there are no dice
+        if self.die:
+            return die_average(self.die) + total
+        else:
+            return total
 
 class ArmorClass:
     def __init__(self):
@@ -36,9 +43,10 @@ class ArmorClass:
         self.shield = Bonuses()
         self.dodge = Bonuses()
         self.natural_armor = Bonuses()
+        self.misc.add_inherent(10)
 
     def get_normal(self):
-        normal = sum([self.misc.total(), self.shield.total(), self.dodge.total(), self.misc])
+        normal = sum([self.misc.total(), self.shield.total(), self.dodge.total()])
         normal += sum_armor(self.armor.total(), self.natural_armor.total())
         return normal
 
@@ -48,12 +56,19 @@ class ArmorClass:
     def get_flatfooted(self):
         flatfooted = self.misc.total()
         flatfooted += sum_armor(self.armor.total(), self.natural_armor.total())
+        return flatfooted
+
+    def __str__(self):
+        ac = 'AC ' + str(self.get_normal())
+        ac += ', touch ' + str(self.get_touch())
+        ac += ', flat-footed ' + str(self.get_flatfooted())
+        return ac
 
 def sum_armor(armor, natural_armor):
-    if armor.total() >= natural_armor.total():
-        return armor.total() + math.floor(natural_armor.total()/2)
+    if armor >= natural_armor:
+        return armor + math.floor(natural_armor/2)
     else:
-        return natural_armor.total() + math.floor(armor.total()/2)
+        return natural_armor + math.floor(armor/2)
 
 def parse_stats_from_file(input_file_name):
     input_file = open(input_file_name,'r')
