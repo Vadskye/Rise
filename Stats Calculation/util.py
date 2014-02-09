@@ -21,9 +21,39 @@ class Bonuses:
     def add_circumstance(self, bonus):
         self.circumstance+=bonus
 
-    def get_total(self):
-        return sum([self.inherent, self.enhancement, self.competence, 
-                self.circumstance])
+    def add_die(self, die):
+        if die_average(die)>die_average(self.die):
+            self.die=die
+
+    def total(self):
+        return sum([die_average(self.die), self.inherent, self.enhancement,
+            self.competence, self.circumstance])
+
+class ArmorClass:
+    def __init__(self):
+        self.misc = Bonuses()
+        self.armor = Bonuses()
+        self.shield = Bonuses()
+        self.dodge = Bonuses()
+        self.natural_armor = Bonuses()
+
+    def get_normal(self):
+        normal = sum([self.misc.total(), self.shield.total(), self.dodge.total(), self.misc])
+        normal += sum_armor(self.armor.total(), self.natural_armor.total())
+        return normal
+
+    def get_touch(self):
+        return sum([self.misc.total(), self.shield.total(), self.dodge.total()])
+
+    def get_flatfooted(self):
+        flatfooted = self.misc.total()
+        flatfooted += sum_armor(self.armor.total(), self.natural_armor.total())
+
+def sum_armor(armor, natural_armor):
+    if armor.total() >= natural_armor.total():
+        return armor.total() + math.floor(natural_armor.total()/2)
+    else:
+        return natural_armor.total() + math.floor(armor.total()/2)
 
 def parse_stats_from_file(input_file_name):
     input_file = open(input_file_name,'r')
@@ -74,6 +104,8 @@ def is_number(text):
 
 #Input: string representing die, such as 'd10' or '2d6'
 def die_average(die):
+    if not die:
+        return 0
     die=die.split('d')
     if die[0]!='':
         die_count=int(die[0])

@@ -65,8 +65,8 @@ class Character:
         #Calculate derived statistics
         self.attack_bonus.add_inherent(self.base_attack_bonus)
         self.attack_bonus.add_inherent(self.calculate_attack_attribute_bonus())
-        self.attack_damage = calculate_attack_damage(self.attributes['strength'],
-                self.weapon['damage'])
+        self.attack_damage.add_inherent(math.floor(self.attributes['strength']/2))
+        self.attack_damage.add_die(self.weapon['damage'])
         for title in ac_titles:
             self.ac[title] = calculate_armor_class(self.armor['encumbrance'],
                     self.attributes['dexterity'], self.base_attack_bonus, 
@@ -105,8 +105,8 @@ class Character:
         return defenses
 
     def to_string_attacks(self):
-        attacks = 'Atk ' + util.mstr(self.attack_bonus.get_total())
-        attacks += ' ('+ str(self.attack_damage) + ')'
+        attacks = 'Atk ' + util.mstr(self.attack_bonus.total())
+        attacks += ' ('+ str(self.attack_damage.total()) + ')'
         return attacks
 
     def to_string_attributes(self):
@@ -157,7 +157,7 @@ def calculate_attack_bonus(base_attack_bonus, attribute_bonus):
     return base_attack_bonus + attribute_bonus()
 
 def calculate_attack_damage(strength, weapon_damage_die):
-    return math.floor(strength/2) + util.die_average(weapon_damage_die)
+    return  + util.die_average(weapon_damage_die)
 
 def calculate_armor_class(armor_encumbrance, dexterity, base_attack_bonus,
         ac_modifiers, ac_title):
