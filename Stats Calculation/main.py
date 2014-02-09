@@ -10,6 +10,13 @@ def initialize_argument_parser():
             help='the level of the character', default=None)
     return vars(parser.parse_args())
 
+def compare_ac_to_reflex(character):
+    return 'AC {0}, Reflex {1}, {2}'.format(
+                    character.armor_class.get_normal(),
+                    character.saves['reflex'].total(),
+                    util.mstr(character.armor_class.get_normal() - (10 + character.saves['reflex'].total())))
+    
+
 if __name__ == "__main__":
     args = initialize_argument_parser()
     print 'character:', args['character']
@@ -35,5 +42,9 @@ if __name__ == "__main__":
     else:
         for i in xrange(20):
             barbarian = Character.from_character_name('brb-heavy', i+1)
+            cleric = Character.from_character_name('cleric-warrior', i+1)
             fighter = Character.from_character_name('ftr-heavy', i+1)
-            print i+1, barbarian.dpr(generic_ac_calc[i]), 'vs', fighter.dpr(generic_ac_calc[i])
+            npc = Character.from_character_name('npc', i+1)
+            rogue = Character.from_character_name('rogue-single', i+1)
+            #print i+1, cleric.dpr(generic_ac_calc[i]), 'vs', npc.dpr(generic_ac_calc[i])
+            print i+1, compare_ac_to_reflex(barbarian)
