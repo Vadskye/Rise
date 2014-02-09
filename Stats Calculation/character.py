@@ -93,13 +93,21 @@ class Character:
         self.scale_attributes(attributes['bonus attribute 1'],
                 attributes['bonus attribute 2'])
         
+    #http://stackoverflow.com/questions/60208/replacements-for-switch-statement-in-python
     def _set_class_calculator(self):
-        if self.class_name=='barbarian':
-            self.class_calculator = classes.Barbarian(self.level)
-        elif self.class_name=='fighter':
-            self.class_calculator = classes.Fighter(self.level)
-        else:
-            print 'ERROR: class name', self.class_name, 'not recognized'
+        self.class_calculator = {
+                'barbarian': classes.Barbarian,
+                'bard': classes.Bard,
+                'druid': classes.Druid,
+                'fighter': classes.Fighter,
+                'monk': classes.Monk,
+                'paladin': classes.Paladin,
+                'ranger': classes.Ranger,
+                'rogue': classes.Rogue,
+                'sorcerer': classes.Sorcerer,
+                'wizard': classes.Wizard,
+                'warrior': classes.Warrior
+                }[self.class_name](self.level)
 
     def _calculate_class_stats(self):
         #Calculate statistics based on the given class
