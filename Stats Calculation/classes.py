@@ -6,8 +6,8 @@ POOR = 'poor'
 
 class GenericClass:
     
-    def __init__(self, character):
-        self.level = character.level
+    def __init__(self, level):
+        self.level = level
         self.attack_bonus=dict()
         self.attack_damage=dict()
         self.armor_class=dict()
@@ -21,8 +21,6 @@ class GenericClass:
         self.set_attack_damage()
         self.set_armor_class()
         self.set_saves()
-
-        self._adjust_stats(character)
 
     def calculate_base_attack_bonus(self):
         if self.base_attack_bonus_progression == GOOD:
@@ -54,13 +52,6 @@ class GenericClass:
         pass
     def set_saves(self):
         pass
-
-    def _adjust_stats(self, character):
-        character.attack_bonus.add_all(self.attack_bonus)
-        character.attack_damage.add_all(self.attack_damage)
-        character.armor_class.add_all(self.armor_class)
-        for key in self.saves.keys():
-            character.saves[key].add_all(self.saves[key])
 
 class Barbarian(GenericClass):
 
