@@ -24,9 +24,10 @@ class Character:
         for title in attribute_titles:
             self.attributes[title] = util.Modifier()
         self.armor_class = util.ArmorClass()
-        self.armor = dict()
-        self.shield = dict()
-        self.weapon = dict()
+        self.has_armor = False
+        self.has_shield = False
+        self.has_weapon = False
+        self.encumbrance = {'armor':None, 'weapon':None}
         self.saves = dict()
         for title in save_titles:
             self.saves[title] = util.Modifier()
@@ -42,9 +43,10 @@ class Character:
         self.attack_bonus.add_inherent(self.calculate_attack_attribute_bonus())
         self.attack_damage.add_inherent(util.ifloor(
             self.attributes['strength'].total()/2))
-        self.attack_damage.add_die(self.weapon['damage'])
+        self._add_save_attributes()
+        self._add_level_scaling()
 
-        if self.armor['encumbrance']=='medium' or self.armor['encumbrance']=='heavy':
+        if self.encumbrance['armor']=='medium' or self.encumbrance['armor']=='heavy':
             self.armor_class.dodge.add_inherent(util.ifloor(
                 self.attributes['dexterity'].total()/2))
         else:
@@ -63,13 +65,24 @@ class Character:
                 util.conditional_int)
         for attribute in raw_attributes.keys():
             self.attributes[attribute].add_inherent(raw_attributes[attribute])
-        self.weapon = util.dict_slice(util.dict_match_prefix(raw_stats, 'weapon '), weapon_titles, util.conditional_int)
-        self.armor = util.dict_slice(util.dict_match_prefix(raw_stats, 'armor '), armor_titles, util.conditional_int)
-        self.shield = util.dict_slice(util.dict_match_prefix(raw_stats, 'shield '), armor_titles, util.conditional_int)
-        if self.armor.has_key('ac bonus'):
-            self.armor_class.armor.add_inherent(self.armor['ac bonus'])
-        if self.shield.has_key('ac bonus'):
-            self.armor_class.shield.add_inherent(self.shield['ac bonus'])
+
+        #interpret items
+        weapon = util.dict_slice(util.dict_match_prefix(raw_stats, 'weapon '), weapon_titles, util.conditional_int)
+        armor = util.dict_slice(util.dict_match_prefix(raw_stats, 'armor '), armor_titles, util.conditional_int)
+        shield = util.dict_slice(util.dict_match_prefix(raw_stats, 'shield '), armor_titles, util.conditional_int)
+
+        self.has_armor = bool(armor)
+        self.has_shield = bool(shield)
+        self.has_weapon = bool(weapon)
+
+        self.encumbrance['weapon'] = weapon['encumbrance']
+        self.encumbrance['armor'] = armor['encumbrance']
+
+        self.attack_damage.add_die(weapon['damage'])
+        if armor.has_key('ac bonus'):
+            self.armor_class.armor.add_inherent(armor['ac bonus'])
+        if shield.has_key('ac bonus'):
+            self.armor_class.shield.add_inherent(shield['ac bonus'])
 
         #Apply level-based scaling
         self.scale_attributes(raw_stats['bonus attribute 1'],
@@ -89,6 +102,32 @@ class Character:
         self.hp = calculate_hp(self.attributes['constitution'].total(), 
                 self.class_calculator.hit_value, self.level)
 
+    def _add_save_attributes(self):
+        self.saves['fortitude'].add_inherent(
+                self.attributes['constitution'].total())
+        self.saves['fortitude'].add_inherent(util.ifloor(
+            self.attributes['strength'].total()/2))
+        self.saves['reflex'].add_inherent(
+                self.attributes['dexterity'].total())
+        self.saves['reflex'].add_inherent(util.ifloor(
+            self.attributes['wisdom'].total()/2))
+        self.saves['will'].add_inherent(
+                self.attributes['charisma'].total())
+        self.saves['will'].add_inherent(util.ifloor(
+            self.attributes['intelligence'].total()/2))
+
+    def _add_level_scaling(self):
+        scale_factor = self.level/4
+        if self.has_armor:
+            self.armor_class.armor.add_enhancement(scale_factor)
+        if self.has_shield:
+            self.armor_class.shield.add_enhancement(scale_factor)
+        if self.has_weapon:
+            self.attack_bonus.add_enhancement(scale_factor)
+            self.attack_damage.add_enhancement(scale_factor)
+        for save_title in self.saves.keys():
+            self.saves[save_title].add_enhancement(scale_factor)
+
     def scale_attributes(self, main_attribute, second_attribute, raw_level):
         main_increases = (3 + self.level - raw_level)/4
         second_increases = (1 + self.level - raw_level)/4
@@ -98,19 +137,19 @@ class Character:
         self.attributes[second_attribute].add_inherent(second_increases)
 
     def calculate_attack_attribute_bonus(self):
-        if self.weapon['encumbrance']=='light':
+        if self.encumbrance['weapon']=='light':
             return max(self.attributes['strength'].total(),
                     self.attributes['dexterity'].total())
         else:
             return self.attributes['strength'].total()
 
     def __str__(self):
-        full_string = self.to_string_defenses() 
-        full_string += '\n' + self.to_string_attacks() 
-        full_string += '\n' + self.to_string_attributes()
+        full_string = self._to_string_defenses() 
+        full_string += '\n' + self._to_string_attacks() 
+        full_string += '\n' + self._to_string_attributes()
         return full_string
 
-    def to_string_defenses(self):
+    def _to_string_defenses(self):
         defenses = str(self.armor_class)
         defenses += '; CMD '+str(self.cmd.total())
         defenses += '\nHP '+str(self.hp)
@@ -119,15 +158,14 @@ class Character:
         defenses += ', Will '+util.mstr(self.saves['will'].total())
         return defenses
 
-    def to_string_attacks(self):
+    def _to_string_attacks(self):
         attacks = 'Atk ' + util.mstr(self.attack_bonus.total())
         attacks += ' ('+ str(self.attack_damage.total()) + ')'
         return attacks
 
-    def to_string_attributes(self):
+    def _to_string_attributes(self):
         attributes = ''
         return attributes
-
 
     def to_monster(self):
         monster_string=''
