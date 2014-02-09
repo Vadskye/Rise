@@ -58,14 +58,14 @@ class Character:
         #Calculate derived statistics
         self.attack_bonus.add_inherent(self.base_attack_bonus)
         self.attack_bonus.add_inherent(self.calculate_attack_attribute_bonus())
-        self.attack_damage.add_inherent(math.floor(self.attributes['strength']/2))
+        self.attack_damage.add_inherent(util.ifloor(self.attributes['strength']/2))
         self.attack_damage.add_die(self.weapon['damage'])
 
         if self.armor['encumbrance']=='medium' or self.armor['encumbrance']=='heavy':
-            self.armor_class.dodge.add_inherent(math.floor(self.attributes['dexterity']/2))
+            self.armor_class.dodge.add_inherent(util.ifloor(self.attributes['dexterity']/2))
         else:
             self.armor_class.dodge.add_inherent(self.attributes['dexterity'])
-        self.armor_class.dodge.add_inherent(math.floor(self.base_attack_bonus/2))
+        self.armor_class.dodge.add_inherent(util.ifloor(self.base_attack_bonus/2))
 
         self.cmd.add_inherent(self.armor_class.get_touch())
         self.cmd.add_inherent(self.attributes['strength'])

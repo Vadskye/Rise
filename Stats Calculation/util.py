@@ -29,7 +29,6 @@ class Bonuses:
     def total(self):
         total = sum([self.inherent, self.enhancement, self.competence,
             self.circumstance])
-        print type(total)
         #return int if there are no dice
         if self.die:
             return die_average(self.die) + total
@@ -64,11 +63,14 @@ class ArmorClass:
         ac += ', flat-footed ' + str(self.get_flatfooted())
         return ac
 
+def ifloor(num):
+    return int(math.floor(num))
+
 def sum_armor(armor, natural_armor):
     if armor >= natural_armor:
-        return armor + math.floor(natural_armor/2)
+        return armor + ifloor(natural_armor/2)
     else:
-        return natural_armor + math.floor(armor/2)
+        return natural_armor + ifloor(armor/2)
 
 def parse_stats_from_file(input_file_name):
     input_file = open(input_file_name,'r')
