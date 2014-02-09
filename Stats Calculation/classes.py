@@ -69,6 +69,21 @@ class Barbarian(GenericClass):
         self.saves['fortitude']['competence']=std_scale(self.level)
         self.saves['will']['competence']=std_scale(self.level)
 
+class Bard(GenericClass):
+    base_attack_bonus_progression = AVERAGE
+    save_progressions = {'fortitude':AVERAGE, 'reflex':AVERAGE, 'will':AVERAGE}
+    hit_value = 6
+
+class Cleric(GenericClass):
+    base_attack_bonus_progression = AVERAGE
+    save_progressions = {'fortitude':AVERAGE, 'reflex':POOR, 'will':GOOD}
+    hit_value = 5
+
+class Druid(GenericClass):
+    base_attack_bonus_progression = AVERAGE
+    save_progressions = {'fortitude':GOOD, 'reflex':POOR, 'will':AVERAGE}
+    hit_value = 5
+
 class Fighter(GenericClass):
     base_attack_bonus_progression = GOOD
     save_progressions = {'fortitude':GOOD, 'reflex':POOR, 'will':AVERAGE}
@@ -83,6 +98,36 @@ class Fighter(GenericClass):
         if self.level>=8:
             ab+=1
         self.attack_bonus['competence']=ab
+
+class Monk(GenericClass):
+    base_attack_bonus_progression = AVERAGE
+    save_progressions = {'fortitude':AVERAGE, 'reflex':GOOD, 'will':GOOD}
+    hit_value = 5
+
+class Paladin(GenericClass):
+    base_attack_bonus_progression = GOOD
+    save_progressions = {'fortitude':GOOD, 'reflex':POOR, 'will':GOOD}
+    hit_value = 6
+
+class Ranger(GenericClass):
+    base_attack_bonus_progression = GOOD
+    save_progressions = {'fortitude':GOOD, 'reflex':AVERAGE, 'will':AVERAGE}
+    hit_value = 6
+
+class Rogue(GenericClass):
+    base_attack_bonus_progression = AVERAGE
+    save_progressions = {'fortitude':POOR, 'reflex':GOOD, 'will':POOR}
+    hit_value = 5
+
+class Sorcerer(GenericClass):
+    base_attack_bonus_progression = POOR
+    save_progressions = {'fortitude':POOR, 'reflex':POOR, 'will':GOOD}
+    hit_value = 4
+
+class Wizard(GenericClass):
+    base_attack_bonus_progression = POOR
+    save_progressions = {'fortitude':POOR, 'reflex':POOR, 'will':GOOD}
+    hit_value = 4
 
 #+2, +3 at 8th, +4 at 14th, +5 at 20th
 def std_scale(level):
