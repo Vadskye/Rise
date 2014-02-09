@@ -17,10 +17,12 @@ class Character:
         #http://stackoverflow.com/questions/9946736/python-not-creating-a-new-clean-instance
 
         self.base_attack_bonus=0
-        self.level=0
+        self.level = level
         self.attack_bonus=util.Bonuses()
         self.attack_damage=util.Bonuses()
         self.attributes = dict()
+        for title in attribute_titles:
+            self.attributes[title] = util.Bonuses()
         self.armor_class = util.ArmorClass()
         self.armor = dict()
         self.shield = dict()
@@ -31,10 +33,36 @@ class Character:
         self.cmd = util.Bonuses()
         self.hp = 0
 
+        self._interpret_raw_stats(raw_stats)
+        
+        self._calculate_class_stats()
+
+        #Calculate derived statistics
+        self.attack_bonus.add_inherent(self.base_attack_bonus)
+        self.attack_bonus.add_inherent(self.calculate_attack_attribute_bonus())
+        self.attack_damage.add_inherent(util.ifloor(
+            self.attributes['strength'].total()/2))
+        self.attack_damage.add_die(self.weapon['damage'])
+
+        if self.armor['encumbrance']=='medium' or self.armor['encumbrance']=='heavy':
+            self.armor_class.dodge.add_inherent(util.ifloor(
+                self.attributes['dexterity'].total()/2))
+        else:
+            self.armor_class.dodge.add_inherent(
+                    self.attributes['dexterity'].total())
+        self.armor_class.dodge.add_inherent(util.ifloor(self.base_attack_bonus/2))
+
+        self.cmd.add_inherent(self.armor_class.get_touch())
+        self.cmd.add_inherent(self.attributes['strength'].total())
+
+    def _interpret_raw_stats(self, raw_stats):
         #Take statistics from the given character input file
         self.class_name = raw_stats['class']
-        self.level = level
-        self.attributes = util.dict_slice(raw_stats, attribute_titles, util.conditional_int)
+        raw_attributes = dict()
+        raw_attributes = util.dict_slice(raw_stats, attribute_titles, 
+                util.conditional_int)
+        for attribute in raw_attributes.keys():
+            self.attributes[attribute].add_inherent(raw_attributes[attribute])
         self.weapon = util.dict_slice(util.dict_match_prefix(raw_stats, 'weapon '), weapon_titles, util.conditional_int)
         self.armor = util.dict_slice(util.dict_match_prefix(raw_stats, 'armor '), armor_titles, util.conditional_int)
         self.shield = util.dict_slice(util.dict_match_prefix(raw_stats, 'shield '), armor_titles, util.conditional_int)
@@ -47,6 +75,7 @@ class Character:
         self.scale_attributes(raw_stats['bonus attribute 1'],
                 raw_stats['bonus attribute 2'], int(raw_stats['level']))
 
+    def _calculate_class_stats(self):
         #Calculate statistics based on the given class
         #note that we are hardcoding the call to barbarian
         #This needs to be made automatic later
@@ -57,37 +86,23 @@ class Character:
         for title in save_titles:
             self.saves[title].add_inherent(self.class_calculator.calc_save(title))
 
-        self.hp = calculate_hp(self.attributes['constitution'], 
+        self.hp = calculate_hp(self.attributes['constitution'].total(), 
                 self.class_calculator.hit_value, self.level)
-
-        #Calculate derived statistics
-        self.attack_bonus.add_inherent(self.base_attack_bonus)
-        self.attack_bonus.add_inherent(self.calculate_attack_attribute_bonus())
-        self.attack_damage.add_inherent(util.ifloor(self.attributes['strength']/2))
-        self.attack_damage.add_die(self.weapon['damage'])
-
-        if self.armor['encumbrance']=='medium' or self.armor['encumbrance']=='heavy':
-            self.armor_class.dodge.add_inherent(util.ifloor(self.attributes['dexterity']/2))
-        else:
-            self.armor_class.dodge.add_inherent(self.attributes['dexterity'])
-        self.armor_class.dodge.add_inherent(util.ifloor(self.base_attack_bonus/2))
-
-        self.cmd.add_inherent(self.armor_class.get_touch())
-        self.cmd.add_inherent(self.attributes['strength'])
 
     def scale_attributes(self, main_attribute, second_attribute, raw_level):
         main_increases = (3 + self.level - raw_level)/4
         second_increases = (1 + self.level - raw_level)/4
         if main_increases<0 or second_increases<0:
             print 'ERROR: character level lower than raw level'
-        self.attributes[main_attribute]+=main_increases
-        self.attributes[second_attribute]+=second_increases
+        self.attributes[main_attribute].add_inherent(main_increases)
+        self.attributes[second_attribute].add_inherent(second_increases)
 
     def calculate_attack_attribute_bonus(self):
         if self.weapon['encumbrance']=='light':
-            return max(self.attributes['strength'],self.attributes['dexterity'])
+            return max(self.attributes['strength'].total(),
+                    self.attributes['dexterity'].total())
         else:
-            return self.attributes['strength']
+            return self.attributes['strength'].total()
 
     def __str__(self):
         full_string = self.to_string_defenses() 
