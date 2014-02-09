@@ -184,6 +184,7 @@ def mstr(text):
     else:
         print 'not a modifier:', text
         return str(text)
+
 #Given a dict and a prefix, return a new dict with the key/value pairs 
 #from the original dict where each key matches the prefix
 #The prefix is stripped from the key names in the resulting dict 
