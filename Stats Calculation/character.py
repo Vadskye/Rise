@@ -52,6 +52,14 @@ class Character:
         self.cmd.add_inherent(self.armor_class.get_touch())
         self.cmd.add_inherent(self.attributes['strength'].total())
 
+    #http://stackoverflow.com/questions/141545/overloading-init-in-python
+    @classmethod
+    def from_filename(cls, filename, level):
+        raw_stats = util.parse_stats_from_file(filename)
+        equipment = util.parse_equipment_file(raw_stats)
+        attributes = util.parse_attribute_file(raw_stats)
+        return cls(raw_stats, equipment, attributes, level)
+
     def _interpret_raw_stats(self, raw_stats):
         self.class_name = raw_stats['class']
 
