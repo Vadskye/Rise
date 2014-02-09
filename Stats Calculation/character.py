@@ -18,19 +18,19 @@ class Character:
 
         self.base_attack_bonus=0
         self.level = level
-        self.attack_bonus=util.Bonuses()
-        self.attack_damage=util.Bonuses()
+        self.attack_bonus=util.Modifier()
+        self.attack_damage=util.Modifier()
         self.attributes = dict()
         for title in attribute_titles:
-            self.attributes[title] = util.Bonuses()
+            self.attributes[title] = util.Modifier()
         self.armor_class = util.ArmorClass()
         self.armor = dict()
         self.shield = dict()
         self.weapon = dict()
         self.saves = dict()
         for title in save_titles:
-            self.saves[title] = util.Bonuses()
-        self.cmd = util.Bonuses()
+            self.saves[title] = util.Modifier()
+        self.cmd = util.Modifier()
         self.hp = 0
 
         self._interpret_raw_stats(raw_stats)
