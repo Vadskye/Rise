@@ -13,7 +13,6 @@ def initialize_argument_parser():
 if __name__ == "__main__":
     args = initialize_argument_parser()
     print 'character:', args['character']
-    character_filename = 'data/'+args['character']+'.txt'
     #If a specific level is given, show that level
 
     #this is the generic AC we assume for attack calculations
@@ -23,12 +22,13 @@ if __name__ == "__main__":
     generic_ac_real = range(17,37)
 
     if args['level']:
-        character = Character.from_filename(character_filename,
+        character = Character.from_character_name(args['character'],
                 int(args['level']))
         print character
     #Otherwise, show all levels
     else:
         for i in xrange(20):
-            character = Character.from_filename(character_filename, i+1)
+            character = Character.from_character_name(args['character'], i+1)
             #print i+1, util.mstr(character.attack_bonus.total()), 'vs', generic_ac_calc[i], ':', character.avg_hit_probability(generic_ac_calc[i])
-            print i+1, character.armor_class.get_normal(), 'vs', generic_ac_real[i], ':', util.mstr(character.armor_class.get_normal()-generic_ac_real[i])
+            #print i+1, character.armor_class.get_normal(), 'vs', generic_ac_real[i], ':', util.mstr(character.armor_class.get_normal()-generic_ac_real[i])
+            print i+1, character.dpr(generic_ac_calc[i])

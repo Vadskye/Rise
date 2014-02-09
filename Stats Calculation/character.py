@@ -51,8 +51,9 @@ class Character:
 
     #http://stackoverflow.com/questions/141545/overloading-init-in-python
     @classmethod
-    def from_filename(cls, filename, level):
-        raw_stats = util.parse_stats_from_file(filename)
+    def from_character_name(cls, character_name, level):
+        character_filename = 'data/'+character_name+'.txt'
+        raw_stats = util.parse_stats_from_file(character_filename)
         attributes = util.parse_attribute_file(raw_stats)
         return cls(raw_stats, attributes, level)
 
