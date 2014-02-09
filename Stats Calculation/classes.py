@@ -130,7 +130,7 @@ class Wizard(GenericClass):
     hit_value = 4
 
 class Warrior(GenericClass):
-    base_attack_bonus_progression = AVERAGE
+    base_attack_bonus_progression = GOOD
     save_progressions = {'fortitude':GOOD, 'reflex':POOR, 'will':POOR}
     hit_value = 6
 
