@@ -51,7 +51,8 @@ class character:
         self.base_attack_bonus=self.class_calculator.calculate_base_attack_bonus()
         for title in save_titles:
             self.saves[title] = self.class_calculator.calc_save(title) 
-        self.hp = self.calculate_hp()
+        self.hp = calculate_hp(self.attributes['constitution'], 
+                self.class_calculator.hit_value, self.level)
 
         #Calculate derived statistics
         self.attack_bonus = calculate_attack_bonus(self.base_attack_bonus,
@@ -62,13 +63,7 @@ class character:
             self.ac[title] = calculate_armor_class(self.armor['encumbrance'],
                     self.attributes['dexterity'], self.base_attack_bonus, 
                     self.ac_modifiers, title) 
-        self.cmd = self.calculate_cmd()
-
-    def calculate_cmd(self):
-        return self.ac['touch'] + self.attributes['strength']
-
-    def calculate_hp(self):
-        return (self.attributes['constitution'] + self.class_calculator.hit_value) * self.level
+        self.cmd = calculate_cmd(self.ac['touch'], self.attributes['strength'])
 
     def calculate_attack_attribute_bonus(self):
         if self.weapon['encumbrance']=='light':
@@ -167,3 +162,9 @@ def calculate_armor_class(armor_encumbrance, dexterity, base_attack_bonus,
     elif ac_title == ac_titles[2]: #flat-footed AC
         #apply all except shield, dodge, bab
         return ac-ac_modifiers['shield'] - ac_modifiers['dodge']-dexterity_bonus - base_attack_bonus/2
+
+def calculate_cmd(touch_ac, strength):
+    return touch_ac + strength
+
+def calculate_hp(constitution, hit_value, level):
+    return (constitution + hit_value) * level
