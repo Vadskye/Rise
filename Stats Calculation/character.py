@@ -136,7 +136,8 @@ class Character:
             return self.attributes['strength'].total()
 
     def __str__(self):
-        full_string = self._to_string_defenses() 
+        full_string = self.class_name + ' ' + str(self.level)
+        full_string += '\n'+ self._to_string_defenses() 
         full_string += '\n' + self._to_string_attacks() 
         full_string += '\n' + self._to_string_attributes()
         return full_string
@@ -156,7 +157,9 @@ class Character:
         return attacks
 
     def _to_string_attributes(self):
-        attributes = ''
+        attributes = 'Attr'
+        for title in util.attribute_titles:
+            attributes += ' ' + str(self.attributes[title].total())
         return attributes
 
     def to_monster(self):
