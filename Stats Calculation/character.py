@@ -93,7 +93,7 @@ class Character:
         #note that we are hardcoding the call to barbarian
         #This needs to be made automatic later
 
-        self.class_calculator = classes.Barbarian(self.level)
+        self.class_calculator = classes.Barbarian(self)
         self.base_attack_bonus=self.class_calculator.calculate_base_attack_bonus()
 
         for title in save_titles:
