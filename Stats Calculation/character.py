@@ -27,11 +27,10 @@ class character:
     cmd = 10
     hp = 0
 
-    def __init__(self, character_file_name):
+    def __init__(self, raw_stats, level):
         #Take statistics from the given character input file
-        raw_stats = util.parse_stats_from_file(character_file_name)
         self.class_name = raw_stats['class']
-        self.level = int(raw_stats['level'])
+        self.level = level
         self.attributes = util.dict_slice(raw_stats, attribute_titles, util.conditional_int)
         self.weapon = util.dict_slice(util.dict_match_prefix(raw_stats, 'weapon '), weapon_titles, util.conditional_int)
         self.armor = util.dict_slice(util.dict_match_prefix(raw_stats, 'armor '), armor_titles, util.conditional_int)
@@ -73,7 +72,7 @@ class character:
         else:
             dexterity_bonus=self.attributes['dexterity']
         
-        ac = 10 + dexterity_bonus
+        ac = 10 + dexterity_bonus + self.base_attack_bonus/2
         for modifier in self.ac_modifiers.values():
             ac+=modifier
         if ac_title == ac_titles[0]: #normal AC
@@ -83,8 +82,8 @@ class character:
             #apply all except armor, natural armor
             return ac-self.ac_modifiers['armor']-self.ac_modifiers['natural armor']
         elif ac_title == ac_titles[2]: #flat-footed AC
-            #apply all except shield, dodge
-            return ac-self.ac_modifiers['shield']-self.ac_modifiers['dodge']-dexterity_bonus
+            #apply all except shield, dodge, bab
+            return ac-self.ac_modifiers['shield'] - self.ac_modifiers['dodge']-dexterity_bonus - self.base_attack_bonus/2
 
     def calculate_cmd(self):
         return self.ac['touch'] + self.attributes['strength']
@@ -99,11 +98,31 @@ class character:
             return self.attributes['strength']
 
     def __str__(self):
-        return 'AC '+str(self.ac['normal'])+', touch '+str(self.ac['touch'])+ \
-                ', flat-footed '+str(self.ac['flat-footed'])+'; CMD '+str(self.cmd)+'\n'+ \
-                'HP '+str(self.hp)+'\n'+ \
-                'Fort '+util.mstr(self.saves['fortitude'])+', Ref '+util.mstr(self.saves['reflex'])+ \
-                ', Will '+util.mstr(self.saves['will'])+'\n'
+        full_string = self.to_string_defenses() 
+        full_string += '\n' + self.to_string_attacks() 
+        full_string += '\n' + self.to_string_attributes()
+        return full_string
+
+    def to_string_defenses(self):
+        defenses = 'AC ' + str(self.ac['normal'])
+        defenses += ', touch ' + str(self.ac['touch'])
+        defenses += ', flat-footed ' + str(self.ac['flat-footed'])
+        defenses += '; CMD '+str(self.cmd)
+        defenses += '\nHP '+str(self.hp)
+        defenses += '; Fort '+util.mstr(self.saves['fortitude'])
+        defenses += ', Ref '+util.mstr(self.saves['reflex'])
+        defenses += ', Will '+util.mstr(self.saves['will'])
+        return defenses
+
+    def to_string_attacks(self):
+        attacks = 'Atk ' + util.mstr(self.attack_bonus)
+        attacks += ' ('+ str(self.attack_damage) + ')'
+        return attacks
+
+    def to_string_attributes(self):
+        attributes = ''
+        return attributes
+
 
     def to_monster(self):
         monster_string=''
