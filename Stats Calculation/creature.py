@@ -21,6 +21,7 @@ class Creature:
         self._calculate_class_stats()
 
         self._calculate_derived_statistics()
+        self._add_level_scaling()
 
     def _init_core_statistics(self):
         self.attack_bonus=util.Modifier()
@@ -38,6 +39,12 @@ class Creature:
         self.attack_damage.add_die(self.weapon.damage_die)
         if self.armor:
             self.armor_class.armor.add_inherent(self.armor.ac_bonus)
+            if self.armor.encumbrance=='medium' or self.armor.encumbrance=='heavy':
+                self.armor_class.dodge.add_inherent(util.ifloor(
+                    self.attributes['dexterity'].total()/2))
+        else:
+            self.armor_class.dodge.add_inherent(
+                    self.attributes['dexterity'].total())
         if self.shield:
             self.armor_class.shield.add_inherent(self.shield.ac_bonus)
 
@@ -46,14 +53,7 @@ class Creature:
         self.attack_damage.add_inherent(util.ifloor(
             self.attributes['strength'].total()/2))
         self._add_save_attributes()
-        self._add_level_scaling()
 
-        if self.armor.encumbrance=='medium' or self.armor.encumbrance=='heavy':
-            self.armor_class.dodge.add_inherent(util.ifloor(
-                self.attributes['dexterity'].total()/2))
-        else:
-            self.armor_class.dodge.add_inherent(
-                    self.attributes['dexterity'].total())
         self.armor_class.dodge.add_inherent(util.ifloor(self.base_attack_bonus/2))
 
         self.cmd.add_inherent(self.armor_class.get_touch())
@@ -69,7 +69,8 @@ class Creature:
 
     def _interpret_raw_stats(self, raw_stats):
         self.name = raw_stats['name']
-        self.class_name = raw_stats['class']
+        if 'class' in raw_stats.keys():
+            self.class_name = raw_stats['class']
         equipment_set = equipment.EquipmentSet.from_raw_stats(raw_stats)
         self.weapon = equipment_set.weapon
         self.armor = equipment_set.armor
