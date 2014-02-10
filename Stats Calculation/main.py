@@ -15,7 +15,6 @@ def compare_ac_to_reflex(character):
                     character.armor_class.get_normal(),
                     character.saves['reflex'].total(),
                     util.mstr(character.armor_class.get_normal() - (10 + character.saves['reflex'].total())))
-    
 
 if __name__ == "__main__":
     args = initialize_argument_parser()
