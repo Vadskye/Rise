@@ -20,6 +20,7 @@ class EquipmentSet:
                 'medium_melee': Weapon('medium', 'melee', 'd8', 1),
                 'light_melee': Weapon('light', 'melee', 'd6', 0),
                 'projectile': Weapon('heavy', 'projectile', 'd8', 1),
+                'claws': Weapon('medium', 'melee', 'd8', 0),
                 'none': None
                 }[weapon_name]
         self.armor = {
