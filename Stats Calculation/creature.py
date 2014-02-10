@@ -35,6 +35,12 @@ class Creature:
         self.cmd = util.Modifier()
 
     def _calculate_derived_statistics(self):
+        self.attack_damage.add_die(self.weapon.damage_die)
+        if self.armor:
+            self.armor_class.armor.add_inherent(self.armor.ac_bonus)
+        if self.shield:
+            self.armor_class.shield.add_inherent(self.shield.ac_bonus)
+
         self.attack_bonus.add_inherent(self.base_attack_bonus)
         self.attack_bonus.add_inherent(self._calculate_attack_attribute_bonus())
         self.attack_damage.add_inherent(util.ifloor(
@@ -55,24 +61,21 @@ class Creature:
 
     #http://stackoverflow.com/questions/141545/overloading-init-in-python
     @classmethod
-    def from_character_name(cls, character_name, level):
-        character_filename = 'data/'+character_name+'.txt'
-        raw_stats = util.parse_stats_from_file(character_filename)
+    def from_creature_name(cls, creature_name, level):
+        creature_filename = 'data/'+creature_name+'.txt'
+        raw_stats = util.parse_stats_from_file(creature_filename)
         attributes = util.parse_attribute_file(raw_stats)
         return cls(raw_stats, attributes, level)
 
     def _interpret_raw_stats(self, raw_stats):
-        self.name = raw_stats['class']
+        self.name = raw_stats['name']
+        self.class_name = raw_stats['class']
         equipment_set = equipment.EquipmentSet.from_raw_stats(raw_stats)
         self.weapon = equipment_set.weapon
         self.armor = equipment_set.armor
         self.shield = equipment_set.shield
-
-        self.attack_damage.add_die(self.weapon.damage_die)
-        if self.armor:
-            self.armor_class.armor.add_inherent(self.armor.ac_bonus)
-        if self.shield:
-            self.armor_class.shield.add_inherent(self.shield.ac_bonus)
+        if 'size' in raw_stats.keys():
+            self.size = raw_stats['size']
 
     def _interpret_attributes(self, attributes):
         raw_attributes = dict()
@@ -99,7 +102,7 @@ class Creature:
                 'sorcerer': classes.Sorcerer,
                 'wizard': classes.Wizard,
                 'warrior': classes.Warrior
-                }[self.name](self.level)
+                }[self.class_name](self.level)
 
     def _calculate_class_stats(self):
         #Calculate statistics based on the given class

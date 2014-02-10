@@ -4,21 +4,20 @@ import util
 
 def initialize_argument_parser():
     parser = argparse.ArgumentParser(description='Calculate combat statistics for Rise characters')
-    parser.add_argument('-c', '--character', dest='character', 
-            help='the character file to load', default=None)
+    parser.add_argument('-c', '--creature', dest='creature', 
+            help='the creature file to load', default=None)
     parser.add_argument('-l', '--level', dest='level',
-            help='the level of the character', default=None)
+            help='the level of the creature', default=None)
     return vars(parser.parse_args())
 
-def compare_ac_to_reflex(character):
+def compare_ac_to_reflex(creature):
     return 'AC {0}, Reflex {1}, {2}'.format(
-                    character.armor_class.get_normal(),
-                    character.saves['reflex'].total(),
-                    util.mstr(character.armor_class.get_normal() - (10 + character.saves['reflex'].total())))
+                    creature.armor_class.get_normal(),
+                    creature.saves['reflex'].total(),
+                    util.mstr(creature.armor_class.get_normal() - (10 + creature.saves['reflex'].total())))
 
 if __name__ == "__main__":
     args = initialize_argument_parser()
-    print 'character:', args['character']
     #If a specific level is given, show that level
 
     #this is the generic AC we assume for attack calculations
@@ -28,22 +27,22 @@ if __name__ == "__main__":
     generic_ac_real = range(17,37)
 
     if args['level']:
-        character = Creature.from_character_name(args['character'],
+        creature = Creature.from_creature_name(args['creature'],
                 int(args['level']))
-        print character
+        print creature
     #Otherwise, show all levels
-    elif args['character']:
+    elif args['creature']:
         for i in xrange(20):
-            character = Creature.from_character_name(args['character'], i+1)
-            print character
-            #print i+1, util.mstr(character.attack_bonus.total()), 'vs', generic_ac_calc[i], ':', character.avg_hit_probability(generic_ac_calc[i])
-            #print i+1, character.armor_class.get_normal(), 'vs', generic_ac_real[i], ':', util.mstr(character.armor_class.get_normal()-generic_ac_real[i])
+            creature = Creature.from_creature_name(args['creature'], i+1)
+            print creature
+            #print i+1, util.mstr(creature.attack_bonus.total()), 'vs', generic_ac_calc[i], ':', creature.avg_hit_probability(generic_ac_calc[i])
+            #print i+1, creature.armor_class.get_normal(), 'vs', generic_ac_real[i], ':', util.mstr(creature.armor_class.get_normal()-generic_ac_real[i])
     else:
         for i in xrange(20):
-            barbarian = Creature.from_character_name('brb-heavy', i+1)
-            cleric = Creature.from_character_name('cleric-warrior', i+1)
-            fighter = Creature.from_character_name('ftr-heavy', i+1)
-            npc = Creature.from_character_name('npc', i+1)
-            rogue = Creature.from_character_name('rogue-single', i+1)
+            barbarian = Creature.from_creature_name('brb-heavy', i+1)
+            cleric = Creature.from_creature_name('cleric-warrior', i+1)
+            fighter = Creature.from_creature_name('ftr-heavy', i+1)
+            npc = Creature.from_creature_name('npc', i+1)
+            rogue = Creature.from_creature_name('rogue-single', i+1)
             #print i+1, cleric.dpr(generic_ac_calc[i]), 'vs', npc.dpr(generic_ac_calc[i])
             print i+1, compare_ac_to_reflex(barbarian)
