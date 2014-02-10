@@ -10,7 +10,6 @@ class Character:
         #Core variable initializations
         #http://stackoverflow.com/questions/9946736/python-not-creating-a-new-clean-instance
 
-        self.base_attack_bonus=0
         self.level = level
         self.attack_bonus=util.Modifier()
         self.attack_damage=util.Modifier()
@@ -22,7 +21,6 @@ class Character:
         for title in util.save_titles:
             self.saves[title] = util.Modifier()
         self.cmd = util.Modifier()
-        self.hp = 0
 
         self._interpret_raw_stats(raw_stats)
         self._interpret_attributes(attributes)
