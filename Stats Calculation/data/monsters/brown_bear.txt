@@ -1,0 +1,5 @@
+name=Brown bear
+creature type=animal
+archetype=brute
+weapon=claws
+size=medium
