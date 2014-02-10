@@ -1,5 +1,5 @@
 import argparse
-from character import Character
+from creature import Creature
 import util
 
 def initialize_argument_parser():
@@ -28,22 +28,22 @@ if __name__ == "__main__":
     generic_ac_real = range(17,37)
 
     if args['level']:
-        character = Character.from_character_name(args['character'],
+        character = Creature.from_character_name(args['character'],
                 int(args['level']))
         print character
     #Otherwise, show all levels
     elif args['character']:
         for i in xrange(20):
-            character = Character.from_character_name(args['character'], i+1)
+            character = Creature.from_character_name(args['character'], i+1)
             print character
             #print i+1, util.mstr(character.attack_bonus.total()), 'vs', generic_ac_calc[i], ':', character.avg_hit_probability(generic_ac_calc[i])
             #print i+1, character.armor_class.get_normal(), 'vs', generic_ac_real[i], ':', util.mstr(character.armor_class.get_normal()-generic_ac_real[i])
     else:
         for i in xrange(20):
-            barbarian = Character.from_character_name('brb-heavy', i+1)
-            cleric = Character.from_character_name('cleric-warrior', i+1)
-            fighter = Character.from_character_name('ftr-heavy', i+1)
-            npc = Character.from_character_name('npc', i+1)
-            rogue = Character.from_character_name('rogue-single', i+1)
+            barbarian = Creature.from_character_name('brb-heavy', i+1)
+            cleric = Creature.from_character_name('cleric-warrior', i+1)
+            fighter = Creature.from_character_name('ftr-heavy', i+1)
+            npc = Creature.from_character_name('npc', i+1)
+            rogue = Creature.from_character_name('rogue-single', i+1)
             #print i+1, cleric.dpr(generic_ac_calc[i]), 'vs', npc.dpr(generic_ac_calc[i])
             print i+1, compare_ac_to_reflex(barbarian)

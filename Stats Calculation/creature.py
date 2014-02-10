@@ -4,13 +4,25 @@ import equipment
 import util
 import combat
 
-class Character:
+class Creature:
 
     def __init__(self, raw_stats, attributes, level):
         #Core variable initializations
         #http://stackoverflow.com/questions/9946736/python-not-creating-a-new-clean-instance
 
         self.level = level
+
+        self._init_core_statistics()
+
+        self._interpret_raw_stats(raw_stats)
+        self._interpret_attributes(attributes)
+        
+        self._set_class_calculator()
+        self._calculate_class_stats()
+
+        self._calculate_derived_statistics()
+
+    def _init_core_statistics(self):
         self.attack_bonus=util.Modifier()
         self.attack_damage=util.Modifier()
         self.attributes = dict()
@@ -22,13 +34,7 @@ class Character:
             self.saves[title] = util.Modifier()
         self.cmd = util.Modifier()
 
-        self._interpret_raw_stats(raw_stats)
-        self._interpret_attributes(attributes)
-        
-        self._set_class_calculator()
-        self._calculate_class_stats()
-
-        #Calculate derived statistics
+    def _calculate_derived_statistics(self):
         self.attack_bonus.add_inherent(self.base_attack_bonus)
         self.attack_bonus.add_inherent(self._calculate_attack_attribute_bonus())
         self.attack_damage.add_inherent(util.ifloor(
@@ -56,7 +62,7 @@ class Character:
         return cls(raw_stats, attributes, level)
 
     def _interpret_raw_stats(self, raw_stats):
-        self.class_name = raw_stats['class']
+        self.name = raw_stats['class']
         equipment_set = equipment.EquipmentSet.from_raw_stats(raw_stats)
         self.weapon = equipment_set.weapon
         self.armor = equipment_set.armor
@@ -93,7 +99,7 @@ class Character:
                 'sorcerer': classes.Sorcerer,
                 'wizard': classes.Wizard,
                 'warrior': classes.Warrior
-                }[self.class_name](self.level)
+                }[self.name](self.level)
 
     def _calculate_class_stats(self):
         #Calculate statistics based on the given class
@@ -158,7 +164,7 @@ class Character:
             return self.attributes['strength'].total()
 
     def __str__(self):
-        full_string = self.class_name + ' ' + str(self.level)
+        full_string = self.name + ' ' + str(self.level)
         full_string += '\n'+ self._to_string_defenses() 
         full_string += '\n' + self._to_string_attacks() 
         full_string += '\n' + self._to_string_attributes()
