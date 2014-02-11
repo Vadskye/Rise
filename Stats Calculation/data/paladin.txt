@@ -1,0 +1,6 @@
+name=Paladin
+race=human
+class=paladin
+weapon=medium_melee
+armor=heavy
+attributes=cleric_warrior
