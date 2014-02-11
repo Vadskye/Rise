@@ -198,17 +198,18 @@ Track  & \x &  Use Survival skill to track \\
 \begin{tabularx}{\textwidth}{>{\lcol}p{15em} >{\lcol}p{15em} >{\lcol}X}
 \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} \\
 Acrobatic Charge & Acrobatics 8 ranks & Charge on difficult terrain \\
+Armor Familiarity & Proficiency with armor & Reduce penalties from wearing armor \\
 Armor Proficiency (light)  & \x &  No armor check penalty on attack rolls \\
 \tind Armor Proficiency (medium) & Armor Proficiency (light) & No armor check penalty on attack rolls \\
 \tind \tind Armor Proficiency (heavy) & Armor Proficiency (medium) & No armor check penalty on attack rolls \\
 Chargebreaker & Base attack bonus \plus4 & Gain \plus2 to attack and damage when readying against approaching foe \\
 Cleave & Str 3, base attack bonus \plus4 & Extra melee attack after dropping target \\
 \tind Cleaving Stride & Str 3, base attack bonus \plus8, Cleave & Continue movement after dropping target \\
+Combat Analysis & Base attack bonus \plus4 & Identify enemy strengths and weaknesses \\
 %Combat Finesse & \x & Add half Dexterity to damage with light, possibly medium weapons \\
 %Combat Reflexes & Dex 3 & \plus4 bonus on attacks of opportunity \\
 Dodge & Dex 3 & \plus4 AC against some attacks of opportunity from selected target \\
 \tind Mobility & Dodge & Avoid some attacks of opportunity from selected target \\
-Expert Tactician & Wis 3, base attack bonus \plus4 & Ready two actions at once \\
 Exotic Weapon Proficiency\footnotetemp{1} & Base attack bonus \plus1 & Don't provoke when attacking with exotic weapons \\
 Far Shot & \x & Increase range increment by 50\% or 100\% \\
 %Improved Critical\footnotetemp{1} & Proficient with weapon, base attack bonus \plus8 & Double threat range of weapon \\
@@ -230,6 +231,9 @@ Mounted Combat & Ride 1 rank & Negate hits on mount with Ride check \\
 \tind Mounted Archery & Mounted Combat & Reduced penalty for ranged attacks while mounted by 4\\
 \tind Ride-By Attack & Mounted Combat & Move before and after a mounted charge \\
 \tind \tind Spirited Charge & Mounted Combat, Ride-By Attack & Double damage with mounted charge \\
+Tactical Analysis & Base attack bonus \plus4 & Identify foe's strengths and weaknesses \\
+Tactical Prediction & Base attack bonus \plus8, Tactical Analysis & Predict foe's next action \\
+Tactical Readiness & Wis 3, base attack bonus \plus4 & Ready two actions at once \\
 \tind Trample & Mounted Combat & Target cannot avoid mounted overrun \\
 Overwhelming Force & Str 5, base attack bonus \plus8 & Apply full Strength to damage when using two hands \\
 Quick Draw & Base attack bonus \plus1 & Draw weapon as swift action \\
@@ -671,6 +675,11 @@ If you fail a Survival check, you can retry after 1 hour (outdoors) or 10 minute
 
 \subsection{Combat Feats}
 
+\subsubsection{Armor Familiarity [Combat]}
+Choose one category of armor: light, medium, heavy, or shields.
+\parhead{Prerequisite} Proficiency with the chosen armor category.
+\parhead{Benefit} You reduce your armor check penalty by 2 and your arcane spell failure by 5\% when using your chosen armor. This effect cannot reduce those penalties below 0.
+
 \subsubsection{Armor Proficiency (Heavy) [Combat]}
 \parhead{Prerequisites} Armor Proficiency (light), Armor Proficiency (medium).
 \parhead{Benefit} See Armor Proficiency (light).
@@ -731,10 +740,6 @@ You understand how to use exotic weapons in combat.
 \parhead{Prerequisite} Base attack bonus \plus1
 \parhead{Benefit} You don't provoke attacks of opportunity when attacking with exotic melee weapons from weapon groups that you are proficient with, and you can use exotic ranged weapons from those groups without penalty.
 \parhead{Normal} When using a melee weapon with which you are not proficient, you provoke an attack of opportunity when you miss. When using a ranged weapon with which you are not proficient, you take a \minus4 penalty to attack rolls.
-
-\subsubsection{Expert Tactician [Combat ]}
-\parhead{Prerequisites} Wis 3, base attack bonus \plus4.
-\parhead{Benefit} When you take the Ready action, you can ready two actions at once, each with separate triggers.
 
 \subsubsection{Far Shot [Combat]}
 \parhead{Benefit} When you use a projectile weapon, such as a bow, its range increment increases by one-half (multiply by 1-1/2). When you use a thrown weapon, its range increment is doubled.
@@ -826,6 +831,18 @@ In addition, your unarmed strikes can deal lethal or nonlethal damage as you cho
 \parhead{Prerequisites} Dex 3, Wis 3, Improved Unarmed Strike, base attack bonus \plus4.
 \parhead{Benefit} You must declare that you are using this feat before you make your attack roll (thus, a failed attack roll ruins the attempt). Stunning Fist forces a foe damaged by your unarmed attack to make a Fortitude saving throw (DC 10 \add 1/2 your character level \add your Constitution), in addition to dealing damage normally. A bloodied defender who fails this saving throw is stunned for 1 round (until just before your next action). A stunned character can't act, is flat-footed, and takes a \minus2 penalty to AC. A healthy defender is staggered instead, and can only take a standard action each round. You may attempt a stunning attack a number of times per day equal to 1 \add half your Constitution, but no more than once per round. Constructs, oozes, plants, undead, incorporeal creatures, and creatures immune to critical hits cannot be stunned.
 \parhead{Special} A monk may select Stunning Fist as a bonus feat at 2nd level, even if she does not meet the prerequisites. A monk who selects this feat may choose for the uses per day and saving throw DC to be based on Wisdom instead of Constitution.
+
+\subsubsection{Tactical Analysis [Combat]}
+\parhead{Prerequisite} Base attack bonus \plus4.
+\parhead{Benefit} You can attempt to identify the strengths and weaknesses of creatures based on your combat experience. As a swift action, you can make a special check with a bonus equal to your base attack bonus \add your Wisdom \add 2 per round you have seen the creature fight. The DC is equal to 10 \add the creature's CR. If you succeed, you learn about the monster's combat abilities as if you had made a successful Knowledge check.
+
+\subsubsection{Tactical Prediction [Combat]}
+\parhead{Prerequisites} Base attack bonus \plus8, Tactical Analysis
+\parhead{Benefit} You can attempt to predict what your opponent will do. As a swift action, you can make a special check with a bonus equal to your base attack bonus \add your Wisdom \add 2 per round you have seen the creature fight. The DC is equal to 15 \add the creature's CR. If you succeed, you learn what the creature is planning to do during its next turn. Of course, it can change what it is going to do, particularly if it hears you tell your allies what it will do.
+
+\subsubsection{Tactical Readiness [Combat]}
+\parhead{Prerequisites} Wis 3 or base attack bonus \plus4.
+\parhead{Benefit} When you take the Ready action, you can ready two actions at once, each with separate triggers.
 
 \subsubsection{Tower Shield Proficiency [Combat]}
 \parhead{Prerequisite} Shield Proficiency.
