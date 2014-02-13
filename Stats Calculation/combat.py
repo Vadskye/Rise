@@ -26,5 +26,10 @@ def full_attack_damage_dealt(primary_attack_bonus, ac, base_attack_bonus,
     return avg_damage * full_attack_hits(primary_attack_bonus, ac,
             base_attack_bonus)
 
-if __name__ == "__main__":
-    print full_attack_damage_dealt(10, 21, 6, 4.5)
+def rounds_survived(primary_attack_bonus, ac, base_attack_bonus, avg_damage, hp):
+    total_damage=0
+    round_count=0
+    while total_damage<=hp:
+        total_damage+=full_attack_damage_dealt(primary_attack_bonus, ac, base_attack_bonus, avg_damage)
+        round_count+=1
+    return round_count
