@@ -193,118 +193,102 @@ Track  & \x &  Use Survival skill to track \\
 \end{tabularx}
 1 You can gain this feat multiple times. Its effects do not stack. Each time you take the feat, it has a different effect. \\
 \end{dtable!*}
+
 \begin{dtable!*}
 \lcaption{Combat Feats}
-\begin{tabularx}{\textwidth}{>{\lcol}p{15em} >{\lcol}p{15em} >{\lcol}X}
-\thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} \\
-Acrobatic Charge & Acrobatics 8 ranks & Charge on difficult terrain \\
-Armor Familiarity & Proficiency with armor & Reduce penalties from wearing armor \\
-Armor Proficiency (light)  & \x &  No armor check penalty on attack rolls \\
-\tind Armor Proficiency (medium) & Armor Proficiency (light) & No armor check penalty on attack rolls \\
-\tind \tind Armor Proficiency (heavy) & Armor Proficiency (medium) & No armor check penalty on attack rolls \\
-Chargebreaker & Base attack bonus \plus4 & Gain \plus2 to attack and damage when readying against approaching foe \\
-Cleave & Str 3, base attack bonus \plus4 & Extra melee attack after dropping target \\
-\tind Cleaving Stride & Str 3, base attack bonus \plus8, Cleave & Continue movement after dropping target \\
-Combat Analysis & Base attack bonus \plus4 & Identify enemy strengths and weaknesses \\
-%Combat Finesse & \x & Add half Dexterity to damage with light, possibly medium weapons \\
-%Combat Reflexes & Dex 3 & \plus4 bonus on attacks of opportunity \\
-Dodge & Dex 3 & \plus4 AC against some attacks of opportunity from selected target \\
-\tind Mobility & Dodge & Avoid some attacks of opportunity from selected target \\
-Exotic Weapon Proficiency\footnotetemp{1} & Base attack bonus \plus1 & Don't provoke when attacking with exotic weapons \\
-Far Shot & \x & Increase range increment by 50\% or 100\% \\
-%Improved Critical\footnotetemp{1} & Proficient with weapon, base attack bonus \plus8 & Double threat range of weapon \\
-%Improved Fighting Retreat & Base attack bonus \plus6 & Take full attack when making a fighting retreat \\
-Improved Initiative & \x &  \plus4 bonus on initiative checks \\
-Improved Unarmed Strike & \x &  Considered armed even when unarmed \\
-\tind Deflect Arrows & Dex 3, Improved Unarmed Strike & Deflect one ranged attack per round \\
-\tind \tind Improved Deflect Arrows & Dex 7, Deflect Arrows, Improved Unarmed Strike, base attack bonus \plus4 & Deflect ranged attacks per round equal to Dexterity \\
-\tind \tind Snatch Arrows & Dex 5, Deflect Arrows, Improved Unarmed Strike & Catch a deflected ranged attack \\
-\tind Stunning Fist & Dex 3, Wis 3, Improved Unarmed Strike, base attack bonus \plus4 & Stun opponent with unarmed strike \\
+\begin{tabularx}{\textwidth}{>{\lcol}p{10em} >{\lcol}p{10em} >{\lcol}X >{\lcol}p{10em}}
+    \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Type} \\
+Acrobatic Charge & Acrobatics 8 ranks & Charge on difficult terrain & Mobility \\
+Active Defense & Base attack bonus \plus4 & Take attacks of opportunity normally while fighting defensively & Awareness, Style \\
+Armor Familiarity & Proficiency with armor & Reduce penalties from wearing armor & Defense, Equipment \\
+Armor Proficiency (light) & \x &  No armor check penalty on attack rolls & Defense, Equipment \\
+\tind Armor Proficiency (medium) & Armor Proficiency (light) & No armor check penalty on attack rolls & Defense, Equipment \\
+\tind \tind Armor Proficiency (heavy) & Armor Proficiency (medium) & No armor check penalty on attack rolls & Defense, Equipment \\
+Blind-Fight & \x &  Reroll miss chance for concealment in melee & Awareness, Style \\
+Cautious Attack & \x & Trade damage for CMD & Defense, Style \\
+Chargebreaker & Base attack bonus \plus4 & Gain \plus2 to attack and damage when readying against approaching foe & Reaction \\
+Cleave & Str 3, base attack bonus \plus4 & Extra melee attack after dropping target & Power \\
+\tind Cleaving Stride & Str 3, base attack bonus \plus8, Cleave & Continue movement after dropping target & Power \\
+Combat Expertise & Int 3 & Trade attack bonus for AC & Defense, Style \\
+\tind Improved Combat Expertise & Int 5, Combat Expertise, base attack bonus \plus8 & Trade more attack bonus for AC & Defense, Style \\
+Covering Fire & \x & Targets struck by ranged attacks suffer attack penalties & Precision, Style \\
+Deadly Aim & Dex 3 & Trade ranged attack bonus for damage & Power, Style \\
+\tind Improved Deadly Aim & Dex 5, Deadly Aim, base attack bonus \plus8 & Trade more ranged attack bonus for damage & Power, Style \\
+Defensive Stance & Base attack bonus \plus6 & Trade ability to move for CMD & Defense, Style \\
+\tind Improved Defensive Stance & Base attack bonus \plus12 & Trade ability to move for AC & Defense, Style \\
+Distracting Foe & Base attack bonus \plus4 & Threatened foes suffer Concentration penalties & Style \\
+Dodge & Dex 3 & \plus4 AC against some attacks of opportunity from selected target & Defense, Mobility \\
+\tind Mobility & Dodge & Avoid some attacks of opportunity from selected target & Defense, Mobility \\
+\tind \tind Shot on the Run & Dex 3, Dodge, Mobility, base attack bonus \plus4 & Move before and after ranged attacks & Mobility, Style \\
+\tind \tind Spring Attack & Dex 3, Dodge, Mobility, base attack bonus \plus4 & Move before and after melee attacks & Mobility, Style \\
 \end{tabularx}
 \end{dtable!*}
 
 \begin{dtable!*}
 \lcaption{Combat Feats (cont.)}
-\begin{tabularx}{\textwidth}{>{\lcol}p{15em} >{\lcol}p{15em} >{\lcol}X}
-\thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} \\
-Mounted Combat & Ride 1 rank & Negate hits on mount with Ride check \\
-\tind Mounted Archery & Mounted Combat & Reduced penalty for ranged attacks while mounted by 4\\
-\tind Ride-By Attack & Mounted Combat & Move before and after a mounted charge \\
-\tind \tind Spirited Charge & Mounted Combat, Ride-By Attack & Double damage with mounted charge \\
-Tactical Analysis & Base attack bonus \plus4 & Identify foe's strengths and weaknesses \\
-Tactical Prediction & Base attack bonus \plus8, Tactical Analysis & Predict foe's next action \\
-Tactical Readiness & Wis 3, base attack bonus \plus4 & Ready two actions at once \\
-\tind Trample & Mounted Combat & Target cannot avoid mounted overrun \\
-Overwhelming Force & Str 5, base attack bonus \plus8 & Apply full Strength to damage when using two hands \\
-Quick Draw & Base attack bonus \plus1 & Draw weapon as swift action \\
-Rapid Reload & Proficiency with crossbows & Reload crossbows more quickly \\
-Shield Proficiency  & \x &  No armor check penalty on attack rolls \\
-\tind Improved Shield Bash & Shield Proficiency & Retain shield bonus to AC when shield bashing \\
-\tind Tower Shield Proficiency & Shield Proficiency & No armor check penalty on attack rolls \\
-Short Haft & Proficiency with a reach weapon, base attack bonus \plus4 & Short haft reach weapons faster, without penalty \\
-Two-Weapon Fighting & Dex 3 & Gain \plus2 attack bonus when fighting with two weapons \\
-%\tind Ambidexterity & Str 3, Two-Weapon Fighting, base attack bonus \plus12 & Add full Strength value to damage with both hands \\
-\tind Two-Weapon Defense & Two-Weapon Fighting & Off-hand weapon grants \plus1 shield bonus to AC, later \plus3 \\
-Weapon Focus\fn{1} & Proficiency with weapon group, base attack bonus \plus1 & \plus1 to attack with selected weapon group \\
-\tind Weapon Specialization\footnotetemp{1} & Base attack bonus \plus8, proficiency with weapon group, Weapon Focus with weapon group & \plus2 to attack, double threat range with selected weapon group\\
-Weapon Proficiency\fn{1} & \x &  Don't provoke when attacking with weapon group \\
+\begin{tabularx}{\textwidth}{>{\lcol}p{10em} >{\lcol}p{10em} >{\lcol}X >{\lcol}p{10em}}
+    \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Type} \\
+Executioner & Base attack bonus \plus12 & Gain free attacks against foes near death & Style \\
+Exotic Weapon Proficiency\footnotetemp{1} & Base attack bonus \plus1 & Don't provoke when attacking with exotic weapons & Equipment \\
+Eye of the Storm & Base attack bonus \plus4 & Reduce overwhelm penalties by 2 & Defense, Style \\
+Far Shot & \x & Increase range increment by 50\% or 100\% & Precision \\
+Guardian & \x & Adjacent allies suffer reduced overwhelm penalties. & Defense, Style \\
+Heartseeker & Base attack bonus \plus8 & Double critical threat range & Style \\
+Improved Bull Rush & Base attack bonus \plus4 & \plus2 bonus on bull rush attacks; push target back without moving & Maneuver, Power \\
+Improved Dirty Trick & Base attack bonus \plus4 & \plus2 bonus on dirty trick attacks; dirty tricks last longer & Finesse, Maneuver \\
+Improved Disarm & Base attack bonus \plus4 & \plus2 bonus on disarm attacks; knock foe's weapon away after disarming & Finesse, Maneuver \\
+Improved Feint & Base attack bonus \plus4 & \plus2 bonus on feint attacks; feint as move action & Finesse, Maneuver \\
+Improved Grapple & Base attack bonus \plus4 & \plus2 bonus on grapple attacks; attack faster in grapple & Maneuver, Power \\
+Improved Initiative & \x &  \plus4 bonus on initiative checks & Reaction \\
+Improved Overrun & Base attack bonus \plus4 & \plus2 bonus on overrun attacks; target can't avoid & Maneuver, Power \\
+Improved Trip & Base attack bonus \plus4 & \plus2 bonus on trip attacks; tripped foe provokes attacks of opportunity & Finesse, Maneuver \\
+Improved Unarmed Strike & \x &  Considered armed even when unarmed & \x \\
+\tind Deflect Arrows & Dex 3, Improved Unarmed Strike & Deflect one ranged attack per round & Defense, Reaction \\
+\tind \tind Improved Deflect Arrows & Dex 7, Deflect Arrows, Improved Unarmed Strike, base attack bonus \plus4 & Deflect ranged attacks per round equal to Dexterity & Defense, Reaction \\
+\tind \tind Snatch Arrows & Dex 5, Deflect Arrows, Improved Unarmed Strike & Catch a deflected ranged attack & Defense, Reaction \\
+\tind Stunning Fist & Dex 3, Wis 3, Improved Unarmed Strike, base attack bonus \plus4 & Stun opponent with unarmed strike & Power \\
+Intimidating Stance & Skill, Style & Intimidate 8 ranks & Swiftly intimidate struck foes \\
+\end{tabularx}
+\end{dtable!*}
+
+\begin{dtable!*}
+\lcaption{Combat Feats (cont.)}
+\begin{tabularx}{\textwidth}{>{\lcol}p{10em} >{\lcol}p{10em} >{\lcol}X >{\lcol}p{10em}}
+    \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Type} \\
+Mounted Combat & Ride 1 rank & Negate hits on mount with Ride check & Defense \\
+\tind Mounted Archery & Mounted Combat & Reduced penalty for ranged attacks while mounted by 4& Precision \\
+\tind Ride-By Attack & Mounted Combat & Move before and after a mounted charge & Mobility \\
+\tind \tind Spirited Charge & Mounted Combat, Ride-By Attack & Double damage with mounted charge & Mobility, Power \\
+\tind Trample & Mounted Combat & Target cannot avoid mounted overrun & Mobility, Power \\
+Opportunist & Dex 3 & Bonus to attack and damage on attacks of opportunity & Finesse, Style \\
+Overpowering Assault & Str 3 & Trade AC for combat maneuver bonus & Power, Style \\
+Overwhelming Force & Str 5, base attack bonus \plus8 & Apply full Strength to damage when using two hands & Power \\
+Precise Shot & \x & Add half Wis to damage, reduce cover penalties & Precision, Style \\
+\tind Improved Precise Shot & Dex 7, Precise Shot, base attack bonus \plus8 & Ignore less than total cover/concealment on ranged attack & Precision, Style \\
+\tind Point Blank Shot & Precise Shot &  \plus2 bonus on ranged damage within 30 ft. & Precision, Style \\
+\tind Manyshot & Dex 9, Precise Shot, base attack bonus \plus11 & Shoot two projectiles simultaneously & Precision, Style \\
+Power Attack & Str 3 & Trade melee attack bonus for damage & Power, Style \\
+\tind Improved Power Attack & Str 5, Power Attack, base attack bonus \plus8 & Trade more melee attack bonus for damage & Power, Style \\
+Powerful Grip & Str 9 & Use larger weapons without penalty & Power, Style \\
+Quick Draw & Base attack bonus \plus1 & Draw weapon as swift action & Finesse, Reaction \\
+Rapid Reload & Proficiency with crossbows & Reload crossbows more quickly & Finesse \\
+Shield Proficiency  & \x &  No armor check penalty on attack rolls & Defense, Equipment \\
+\tind Improved Shield Bash & Shield Proficiency & Retain shield bonus to AC when shield bashing & Equipment \\
+\tind Tower Shield Proficiency & Shield Proficiency & No armor check penalty on attack rolls & Defense, Equipment \\
+Short Haft & Proficiency with a reach weapon, base attack bonus \plus4 & Short haft reach weapons faster, without penalty & Equipment, Finesse \\
+Tactical Analysis & Base attack bonus \plus4 & Identify foe's strengths and weaknesses & Awareness \\
+Tactical Prediction & Base attack bonus \plus8, Tactical Analysis & Predict foe's next action & Awareness \\
+Tactical Readiness & Wis 3, base attack bonus \plus4 & Ready two actions at once & Awareness \\
+Threatening Fire & Base attack bonus \plus4 & Help overwhelm foes with ranged weapons & Precision, Style \\
+Two-Weapon Fighting & Dex 3 & Gain \plus2 attack bonus when fighting with two weapons & Finesse \\
+%\tind Ambidexterity & Add full Strength value to damage with both hands & Str 3, Two-Weapon Fighting, base attack bonus \plus12 \\
+\tind Two-Weapon Defense & Two-Weapon Fighting & Off-hand weapon grants \plus1 shield bonus to AC, later \plus3 & Defense, Finesse \\
+Weapon Focus\fn{1} & Proficiency with weapon group, base attack bonus \plus1 & \plus1 to attack with selected weapon group & Equipment \\
+\tind Weapon Specialization\footnotetemp{1} & Base attack bonus \plus8, proficiency with weapon group, Weapon Focus with weapon group & \plus2 to attack, double threat range with selected weapon group& Equipment \\
+Weapon Proficiency\fn{1} & \x &  Don't provoke when attacking with weapon group & Equipment \\
+Whirlwind Attack & Dex 5, base attack bonus \plus12 & One melee attack against each opponent within reach & Style \\
 \end{tabularx}
 1 You can gain this feat multiple times. Its effects do not stack. Each time you take the feat, it has a different effect. \\
-\end{dtable!*}
-
-\begin{dtable!*}
-\lcaption{Combat Maneuver Feats}
-\begin{tabularx}{\textwidth}{>{\lcol}p{15em} >{\lcol}p{15em} >{\lcol}X}
-\thead{Combat Maneuver Feats\fn{1}} & \thead{Prerequisites} & \thead{Benefit} \\
-Improved Bull Rush & Base attack bonus \plus4 & \plus2 bonus on bull rush attacks; push target back without moving \\
-Improved Dirty Trick & Base attack bonus \plus4 & \plus2 bonus on dirty trick attacks; dirty tricks last longer \\
-Improved Disarm & Base attack bonus \plus4 & \plus2 bonus on disarm attacks; knock foe's weapon away after disarming \\
-Improved Feint & Base attack bonus \plus4 & \plus2 bonus on feint attacks; feint as move action \\
-Improved Grapple & Base attack bonus \plus4 & \plus2 bonus on grapple attacks; attack faster in grapple \\
-Improved Overrun & Base attack bonus \plus4 & \plus2 bonus on overrun attacks; target can't avoid \\
-%Improved Sunder & Base attack bonus \plus4 & \plus2 bonus on sunder attacks; ignore half hardness of sundered item \\
-Improved Trip & Base attack bonus \plus4 & \plus2 bonus on trip attacks; tripped foe provokes attacks of opportunity \\
-\end{tabularx}
-1 Combat maneuver feats are considered combat feats. Abilities and class features that grant combat feats may be used to select combat maneuver feats.
-\end{dtable!*}
-
-\begin{dtable!*}
-\lcaption{Combat Style Feats}
-\begin{tabularx}{\textwidth}{>{\lcol}p{15em} >{\lcol}p{15em} >{\lcol}X}
-\thead{Combat Style Feats\fn{1}} & \thead{Prerequisites} & \thead{Benefit} \\
-Active Defense & Base attack bonus \plus4 & Take attacks of opportunity normally while fighting defensively \\
-Blind-Fight & \x &  Reroll miss chance for concealment in melee \\
-Cautious Attack & \x & Trade damage for CMD \\
-Combat Expertise & Int 3 & Trade attack bonus for AC \\
-\tind Improved Combat Expertise & Int 5, Combat Expertise, base attack bonus \plus8 & Trade more attack bonus for AC \\
-Cooperative Attack & Base attack bonus \plus4 & Aid ally while attacing \\
-Covering Fire & \x & Targets struck by ranged attacks suffer attack penalties \\
-Deadly Aim & Dex 3 & Trade ranged attack bonus for damage \\
-\tind Improved Deadly Aim & Dex 5, Deadly Aim, base attack bonus \plus8 & Trade more ranged attack bonus for damage \\
-Defensive Stance & Base attack bonus \plus6 & Trade ability to move for CMD \\
-\tind Improved Defensive Stance & Base attack bonus \plus12 & Trade ability to move for AC \\
-Distracting Foe & Base attack bonus \plus4 & Threatened foes suffer Concentration penalties \\
-Guardian & \x & Adjacent allies suffer reduced overwhelm penalties. \\
-Executioner & Base attack bonus \plus12 & Gain free attacks against foes near death \\
-Eye of the Storm & Base attack bonus \plus4 & Reduce overwhelm penalties by 2 \\
-Heartseeker & Base attack bonus \plus8 & Double critical threat range \\
-Intimidating Stance & Intimidate 8 ranks & Swiftly intimidate struck foes \\
-Opportunist & Dex 3 & Bonus to attack and damage on attacks of opportunity \\
-Overpowering Assault & Str 3 & Trade AC for combat maneuver bonus \\
-Precise Shot & \x & Add half Wis to damage, reduce cover penalties \\
-\tind Improved Precise Shot & Dex 7, Precise Shot, base attack bonus \plus8 & Ignore less than total cover/concealment on ranged attack \\
-\tind Point Blank Shot & Precise Shot &  \plus2 bonus on ranged damage within 30 ft. \\
-%\tind Rapid Shot & Dex 3, Precise Shot, base attack bonus \plus4 & One extra ranged attack each round \\
-\tind \tind Manyshot & Dex 9, Precise Shot, base attack bonus \plus11 & Shoot two projectiles simultaneously \\
-Power Attack & Str 3 & Trade melee attack bonus for damage \\
-\tind Improved Power Attack & Str 5, Power Attack, base attack bonus \plus8 & Trade more melee attack bonus for damage \\
-Powerful Grip & Str 9 & Use larger weapons without penalty \\
-Shot on the Run & Dex 3, Dodge, Mobility, base attack bonus \plus4 & Move before and after ranged attacks \\
-Spring Attack & Dex 3, Dodge, Mobility, base attack bonus \plus4 & Move before and after melee attacks \\
-Threatening Fire & Base attack bonus \plus4 & Help overwhelm foes with ranged weapons \\
-Whirlwind Attack & Dex 5, base attack bonus \plus12 & One melee attack against each opponent within reach \\
-\end{tabularx}
-1 Combat style feats are considered combat feats. Abilities and class features that grant combat feats may be used to select combat style feats.
 \end{dtable!*}
 
 \begin{dtable!*}
@@ -713,17 +697,6 @@ Choose one category of armor: light, medium, heavy, or shields.
 \parhead{Prerequisites} Str 3, base attack bonus \plus8, Cleave
 \parhead{Benefit} If you move to attack a foe, including by charging, and deal enough damage to drop it during your attack, you can continue your movement (if you have any movement remaining) to attack another foe. You may take your extra attack from the Cleave feat before or after continuing your movement.
 
-%\subsubsection{Combat Finesse [Combat]}
-%\parhead{Benefit} You add half your Dexterity value to your damage rolls with light weapons. This is in addition to the damage provided by your Strength value. If you have a 5 Strength, you may also apply half your Dexterity value to your damage rolls with medium weapons.
-
-%\subsubsection{Combat Reflexes [Combat]}
-%\parhead{Benefit} When making attacks of opportunity, you gain a \plus4 circumstance bonus to attack rolls.
-
-With this feat, you may also make attacks of opportunity while flat-footed.
-\parhead{Normal} A character without this feat can't make attacks of opportunity while flat-footed.
-\parhead{Special} A monk may select Combat Reflexes as a bonus feat at 2nd level.
-
-
 \subsubsection{Deflect Arrows [Combat]}
 \parhead{Prerequisites} Dex 3, Improved Unarmed Strike.
 \parhead{Benefit} You must have at least one hand free (holding nothing) to use this feat. Once per round when you would normally be hit with a ranged weapon, you may deflect it so that you take no damage from it. You must be aware of the attack and not flatfooted.
@@ -958,10 +931,6 @@ Choose one weapon group for which you have already selected the Weapon Focus fea
 \parhead{Benefit} You can choose to take a \minus2 penalty on attack rolls, including combat maneuvers, to gain a \plus2 circumstance bonus to your dodge modifier. \babscalingdescription In addition, you increase the bonus gained from using the total defense action (see \pref{Total Defense}) by the same amount. You cannot fight defensively while using this combat style.
 \parhead{Style Requirement} Must full attack or take the total defense action each round.
 \parhead{Normal} A character without the Combat Expertise feat can fight defensively while using the full attack action to take a \minus4 penalty on attack rolls and gain a \plus2 circumstance bonus to its dodge modifier.
-
-\subsubsection{Cooperative Attack [Combat Style]}
-\parhead{Prerequisite} Base attack bonus \plus4
-\parhead{Benefit} As a full-round action, you can make a full attack and make an Aid Another check to help an adjacent ally's attack bonus or armor class.
 
 \subsubsection{Covering Fire [Combat Style]}
 \parhead{Benefit} If you hit a creature with a ranged attack, it takes a \minus2 penalty to attack rolls for 1 round.
