@@ -243,6 +243,99 @@ Very mobile (slack rope) & \plus5 \\
 
 \parhead{Try Again} Varies. You can continue trying to balance on a precarious surface as long as you remain on the surface. You can try to reduce damage from a fall only once per fall.
 
+
+\subsection{Athletics (Str; Armor Check Penalty)}
+Athletics includes running, jumping, and general athleticism.
+
+\subsubsection{Jump}
+
+A Jump check allows you to jump. The DC depends on the type of jump you are attempting (see below).
+
+Your Jump check is modified by your speed. If your speed is 30 feet then no modifier based on speed applies to the check. If your speed is less than 30 feet, you take a \minus6 penalty for every 10 feet of speed less than 30 feet. If your speed is greater than 30 feet, you gain a \plus4 bonus for every 10 feet beyond 30 feet.
+
+All Jump DCs given here assume that you get a running start, which requires that you move at least 20 feet in a straight line before attempting the jump. If you do not get a running start, the DC for the jump is doubled.
+
+Distance moved by jumping is counted against your normal maximum movement in a round.
+
+If you have ranks in Jump and you succeed on a Jump check, you land on your feet (when appropriate). If you attempt a Jump check untrained, you land prone unless you beat the DC by 5 or more.
+
+\subsk{Long Jump} A long jump is a horizontal jump, made across a gap like a chasm or stream. At the midpoint of the jump, you attain a vertical height equal to one-quarter of the horizontal distance. The DC for the jump is equal to the distance jumped (in feet).
+
+If your check succeeds, you land on your feet at the far end. If you fail the check by less than 5, you don't clear the distance, but you can make a DC 15 Reflex save to grab the far edge of the gap. You end your movement grasping the far edge. If that leaves you dangling over a chasm or gap, getting up requires a move action and a DC 15 Climb check.
+
+\begin{dtable}
+\begin{tabularx}{\columnwidth}{>{\lcol}X >{\lcol}X}
+\thead{Long Jump Distance} & \thead{Jump DC\footnotetemp{1}} \\
+5 feet & 5 \\
+10 feet & 10 \\
+15 feet & 15 \\
+20 feet & 20 \\
+25 feet & 25 \\
+30 feet & 30 \\
+\end{tabularx}
+1 Requires a 20-foot running start. Without a running start, double the DC.
+\end{dtable}
+
+\subsk{High Jump} A high jump is a vertical leap made to reach a ledge high above or to grasp something overhead. The DC is equal to 4 times the distance to be cleared.
+
+If you jumped up to grab something, a successful check indicates that you reached the desired height. If you wish to pull yourself up, you can do so with a move action and a DC 15 Climb check. If you fail the Jump check, you do not reach the height, and you land on your feet in the same spot from which you jumped. As with a long jump, the DC is doubled if you do not get a running start of at least 20 feet.
+
+\begin{dtable}
+\begin{tabularx}{\columnwidth}{>{\lcol}X >{\lcol}X}
+\thead{High Jump Distance\footnotetemp{1}}  & \thead{Jump DC\footnotetemp{2}} \\
+1 foot  & 4 \\
+2 feet  & 8 \\
+3 feet  & 12 \\
+4 feet  & 16 \\
+5 feet  & 20 \\
+6 feet  & 24 \\
+7 feet  & 28 \\
+8 feet  & 32 \\
+\end{tabularx}
+1 Not including vertical reach; see below.
+2 Requires a 20-foot running start. Without a running start, double the DC.
+\end{dtable}
+
+Obviously, the difficulty of reaching a given height varies according to the size of the character or creature. The maximum vertical reach (height the creature can reach without jumping) for an average creature of a given size is shown on the table below. (As a Medium creature, a typical human can reach 8 feet without jumping.) The maximum vertical reach for an individual creature is usually given by the 1 and 1/2 times the creature's height.
+
+Quadrupedal creatures don't have the same vertical reach as a bipedal creature; treat them as being one size category smaller.
+
+\begin{dtable}
+\begin{tabularx}{\columnwidth}{>{\lcol}X >{\lcol}X}
+    \thead{Creature Size}  & \thead{Vertical Reach} \\
+Colossal  & 128 ft. \\
+Gargantuan  & 64 ft. \\
+Huge  & 32 ft. \\
+Large  & 16 ft. \\
+Medium  & 8 ft. \\
+Small  & 4 ft. \\
+Tiny  & 2 ft. \\
+Diminutive  & 1 ft. \\
+Fine  & 1/2 ft.
+\end{tabularx}
+\end{dtable}
+
+\subsk{Hop Up} You can jump up onto an object as tall as your waist, such as a table or small boulder, with a DC 10 Jump check. Doing so counts as 10 feet of movement, so if your speed is 30 feet, you could move 20 feet, then hop up onto a counter. You do not need to get a running start to hop up, so the DC is not doubled if you do not get a running start.
+
+\subsk{Jumping Down} If you intentionally jump from a height, you take less damage than you would if you just fell. The DC to jump down from a height is 15. You do not have to get a running start to jump down, so the DC is not doubled if you do not get a running start.
+
+If you succeed on the check, you take falling damage as if you had dropped 10 fewer feet than you actually did.
+
+\parhead{Action} None. A Jump check is included in your movement, so it is part of a move action. If you run out of movement mid-jump, your next action (either on this turn or, if necessary, on your next turn) must be a move action to complete the jump.
+
+\parhead{Special} Effects that increase your movement also increase your jumping distance, since your check is modified by your speed.
+
+\subsubsection{Sprint}
+
+%If your Sprint check exceeds your Fortitude defense, you are fatigued?
+A Sprint check allows you to move faster temporarily. A DC 15 Sprint check allows you to treat your speed as if it were 5 feet faster for 1 round. For every 5 points by which you beat that DC, you increase your speed by an additional 5 feet. After sprinting, you are fatigued for 1 round, making you vulnerable. You take a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
+
+You can sprint in any movement mode that you can use.
+
+\parhead{Action} None. A Sprint check is included in your movement, so it is part of a move action.
+
+
+
 \subsection{Bluff (Cha)}
 You can use Bluff to convince people that you are telling the truth. It is usually used when you are lying.
 
@@ -652,98 +745,6 @@ A creature wounded by a spike growth or spike stones spell must succeed on a Ref
 \parhead{Special} You gain a \plus4 bonus on your Intimidate check for every size category that you are larger than your target. Conversely, you take a \minus4 penalty on your Intimidate check for every size category that you are smaller than your target.
 
 \par A character immune to fear (such as a paladin of 3rd level or higher) can't be intimidated, nor can nonintelligent creatures.
-
-\subsection{Athletics (Str; Armor Check Penalty)}
-Athletics includes running, jumping, and general athleticism.
-
-\subsubsection{Jump}
-
-A Jump check allows you to jump. The DC depends on the type of jump you are attempting (see below).
-
-Your Jump check is modified by your speed. If your speed is 30 feet then no modifier based on speed applies to the check. If your speed is less than 30 feet, you take a \minus6 penalty for every 10 feet of speed less than 30 feet. If your speed is greater than 30 feet, you gain a \plus4 bonus for every 10 feet beyond 30 feet.
-
-All Jump DCs given here assume that you get a running start, which requires that you move at least 20 feet in a straight line before attempting the jump. If you do not get a running start, the DC for the jump is doubled.
-
-Distance moved by jumping is counted against your normal maximum movement in a round.
-
-If you have ranks in Jump and you succeed on a Jump check, you land on your feet (when appropriate). If you attempt a Jump check untrained, you land prone unless you beat the DC by 5 or more.
-
-\subsk{Long Jump} A long jump is a horizontal jump, made across a gap like a chasm or stream. At the midpoint of the jump, you attain a vertical height equal to one-quarter of the horizontal distance. The DC for the jump is equal to the distance jumped (in feet).
-
-If your check succeeds, you land on your feet at the far end. If you fail the check by less than 5, you don't clear the distance, but you can make a DC 15 Reflex save to grab the far edge of the gap. You end your movement grasping the far edge. If that leaves you dangling over a chasm or gap, getting up requires a move action and a DC 15 Climb check.
-
-\begin{dtable}
-\begin{tabularx}{\columnwidth}{>{\lcol}X >{\lcol}X}
-\thead{Long Jump Distance} & \thead{Jump DC\footnotetemp{1}} \\
-5 feet & 5 \\
-10 feet & 10 \\
-15 feet & 15 \\
-20 feet & 20 \\
-25 feet & 25 \\
-30 feet & 30 \\
-\end{tabularx}
-1 Requires a 20-foot running start. Without a running start, double the DC.
-\end{dtable}
-
-\subsk{High Jump} A high jump is a vertical leap made to reach a ledge high above or to grasp something overhead. The DC is equal to 4 times the distance to be cleared.
-
-If you jumped up to grab something, a successful check indicates that you reached the desired height. If you wish to pull yourself up, you can do so with a move action and a DC 15 Climb check. If you fail the Jump check, you do not reach the height, and you land on your feet in the same spot from which you jumped. As with a long jump, the DC is doubled if you do not get a running start of at least 20 feet.
-
-\begin{dtable}
-\begin{tabularx}{\columnwidth}{>{\lcol}X >{\lcol}X}
-\thead{High Jump Distance\footnotetemp{1}}  & \thead{Jump DC\footnotetemp{2}} \\
-1 foot  & 4 \\
-2 feet  & 8 \\
-3 feet  & 12 \\
-4 feet  & 16 \\
-5 feet  & 20 \\
-6 feet  & 24 \\
-7 feet  & 28 \\
-8 feet  & 32 \\
-\end{tabularx}
-1 Not including vertical reach; see below.
-2 Requires a 20-foot running start. Without a running start, double the DC.
-\end{dtable}
-
-Obviously, the difficulty of reaching a given height varies according to the size of the character or creature. The maximum vertical reach (height the creature can reach without jumping) for an average creature of a given size is shown on the table below. (As a Medium creature, a typical human can reach 8 feet without jumping.) The maximum vertical reach for an individual creature is usually given by the 1 and 1/2 times the creature's height.
-
-Quadrupedal creatures don't have the same vertical reach as a bipedal creature; treat them as being one size category smaller.
-
-\begin{dtable}
-\begin{tabularx}{\columnwidth}{>{\lcol}X >{\lcol}X}
-    \thead{Creature Size}  & \thead{Vertical Reach} \\
-Colossal  & 128 ft. \\
-Gargantuan  & 64 ft. \\
-Huge  & 32 ft. \\
-Large  & 16 ft. \\
-Medium  & 8 ft. \\
-Small  & 4 ft. \\
-Tiny  & 2 ft. \\
-Diminutive  & 1 ft. \\
-Fine  & 1/2 ft.
-\end{tabularx}
-\end{dtable}
-
-\subsk{Hop Up} You can jump up onto an object as tall as your waist, such as a table or small boulder, with a DC 10 Jump check. Doing so counts as 10 feet of movement, so if your speed is 30 feet, you could move 20 feet, then hop up onto a counter. You do not need to get a running start to hop up, so the DC is not doubled if you do not get a running start.
-
-\subsk{Jumping Down} If you intentionally jump from a height, you take less damage than you would if you just fell. The DC to jump down from a height is 15. You do not have to get a running start to jump down, so the DC is not doubled if you do not get a running start.
-
-If you succeed on the check, you take falling damage as if you had dropped 10 fewer feet than you actually did.
-
-\parhead{Action} None. A Jump check is included in your movement, so it is part of a move action. If you run out of movement mid-jump, your next action (either on this turn or, if necessary, on your next turn) must be a move action to complete the jump.
-
-\parhead{Special} Effects that increase your movement also increase your jumping distance, since your check is modified by your speed.
-
-\subsubsection{Sprint}
-
-%If your Sprint check exceeds your Fortitude defense, you are fatigued?
-A Sprint check allows you to move faster temporarily. A DC 15 Sprint check allows you to treat your speed as if it were 5 feet faster for 1 round. For every 5 points by which you beat that DC, you increase your speed by an additional 5 feet. After sprinting, you are fatigued for 1 round, making you vulnerable. You take a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
-
-You can sprint in any movement mode that you can use.
-
-\parhead{Action} None. A Sprint check is included in your movement, so it is part of a move action.
-
-
 
 \subsection{Knowledge (Int; Trained Only)}
 Like the Craft, Profession, and Perform skills, Knowledge actually encompasses a number of unrelated skills. Knowledge represents a study of some body of lore, possibly an academic or even scientific discipline. Below are listed typical fields of study.
