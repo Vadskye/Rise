@@ -62,4 +62,5 @@ if __name__ == "__main__":
             #print i+1, compare_ac_to_reflex(barbarian)
             #print rounds_survived(npc, fighter)
             #print i+1, fighter.hp, (i+1)*5.5/2, fighter.hp/((i+1)*5.5/2)
-            print rounds_survived_generic(npc, i)
+            #print rounds_survived_generic(npc, i)
+            print i+1, fighter.cmd.total(), fighter.armor_class.get_normal()
