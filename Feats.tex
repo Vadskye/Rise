@@ -255,6 +255,7 @@ Intimidating Stance & Skill, Style & Intimidate 8 ranks & Swiftly intimidate str
 \lcaption{Combat Feats (cont.)}
 \begin{tabularx}{\textwidth}{>{\lcol}p{10em} >{\lcol}p{10em} >{\lcol}X >{\lcol}p{10em}}
     \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Type} \\
+Master Tactician & Int 3, base attack bonus \plus12 & Ready full-round actions with allies & Reaction \\
 Mounted Combat & Ride 1 rank & Negate hits on mount with Ride check & Defense \\
 \tind Mounted Archery & Mounted Combat & Reduced penalty for ranged attacks while mounted by 4& Precision \\
 \tind Ride-By Attack & Mounted Combat & Move before and after a mounted charge & Mobility \\
@@ -264,9 +265,9 @@ Opportunist & Dex 3 & Bonus to attack and damage on attacks of opportunity & Fin
 Overpowering Assault & Str 3 & Trade AC for combat maneuver bonus & Power, Style \\
 Overwhelming Force & Str 5, base attack bonus \plus8 & Apply full Strength to damage when using two hands & Power \\
 Precise Shot & \x & Add half Wis to damage, reduce cover penalties & Precision, Style \\
-\tind Improved Precise Shot & Dex 7, Precise Shot, base attack bonus \plus8 & Ignore less than total cover/concealment on ranged attack & Precision, Style \\
+\tind Improved Precise Shot & Dex 5, Precise Shot, base attack bonus \plus8 & Ignore less than total cover/concealment on ranged attack & Precision, Style \\
 \tind Point Blank Shot & Precise Shot &  \plus2 bonus on ranged damage within 30 ft. & Precision, Style \\
-\tind Manyshot & Dex 9, Precise Shot, base attack bonus \plus11 & Shoot two projectiles simultaneously & Precision, Style \\
+\tind Manyshot & Dex 7, Precise Shot, base attack bonus \plus11 & Shoot two projectiles simultaneously & Precision, Style \\
 Power Attack & Str 3 & Trade melee attack bonus for damage & Power, Style \\
 \tind Improved Power Attack & Str 5, Power Attack, base attack bonus \plus8 & Trade more melee attack bonus for damage & Power, Style \\
 Powerful Grip & Str 9 & Use larger weapons without penalty & Power, Style \\
@@ -276,9 +277,9 @@ Shield Proficiency  & \x &  No armor check penalty on attack rolls & Equipment \
 \tind Improved Shield Bash & Shield Proficiency & Retain shield bonus to AC when shield bashing & Equipment \\
 \tind Tower Shield Proficiency & Shield Proficiency & No armor check penalty on attack rolls & Equipment \\
 Short Haft & Proficiency with a reach weapon, base attack bonus \plus4 & Short haft reach weapons faster, without penalty & Equipment, Finesse \\
-Tactical Analysis & Base attack bonus \plus4 & Identify foe's strengths and weaknesses & Awareness \\
-Tactical Prediction & Base attack bonus \plus8, Tactical Analysis & Predict foe's next action & Awareness \\
-Tactical Readiness & Wis 3, base attack bonus \plus4 & Ready two actions at once & Awareness \\
+Tactical Analysis & Int 3, Base attack bonus \plus4 & Identify foe's strengths and weaknesses & Awareness \\
+Tactical Prediction & Int 3, Base attack bonus \plus8 & Predict foe's next action & Awareness \\
+Tactical Readiness & Int 3 & Ready two actions at once & Reaction \\
 Threatening Fire & Base attack bonus \plus4 & Help overwhelm foes with ranged weapons & Precision, Style \\
 Two-Weapon Fighting & Dex 3 & Gain \plus2 attack bonus when fighting with two weapons & Finesse \\
 %\tind Ambidexterity & Add full Strength value to damage with both hands & Str 3, Two-Weapon Fighting, base attack bonus \plus12 \\
@@ -340,8 +341,8 @@ Widen Spell  & Caster level 8th & \plus3 & Double spell's area
 \begin{tabularx}{\textwidth}{>{\lcol}p{15em} >{\lcol}p{15em} >{\lcol}X}
 \thead{Item Creation Feats} & \thead{Prerequisites} & \thead{Benefit} \\
 Imbue Magic	          & Caster level 2nd or Craft (any) 5 ranks & Create magic items \\
-\tind Imbuement Admixture & Caster level 6th & Combine multiple spells to create items \\
-\tind Versatile Crafter & Craft (any) 8 ranks & Learn to craft more varieties of magic \\
+Imbuement Admixture & Caster level 6th & Combine multiple spells to create items \\
+Versatile Crafter & Craft (any) 8 ranks & Learn to craft more varieties of magic \\
 \end{tabularx}
 \end{dtable!*}
 
@@ -749,6 +750,10 @@ In addition, your unarmed strikes can deal lethal or nonlethal damage as you cho
 \parhead{Normal} Without this feat, you are considered unarmed when attacking with an unarmed strike, and you can deal only nonlethal damage with such an attack.
 \parhead{Special} A monk automatically gains Improved Unarmed Strike as a bonus feat at 1st level. She need not select it.
 
+\subsubsection{Master Tactician [Combat]}
+\featpre Intelligence 3, base attack bonus \plus12.
+\featben As a full-round action, you can ready a full-round action or a move action and a standard action. In addition, when you ready a full-round action, allies within 30 feet of you can also ready the same full-round action on their next turn, provided that you have not taken the action yet.
+
 \subsubsection{Mobility [Combat]}
 \parhead{Prerequisites} Dex 3, Dodge.
 \parhead{Benefit} When you move, it does not provoke attacks of opportunity from your Dodge target.
@@ -810,15 +815,15 @@ In addition, your unarmed strikes can deal lethal or nonlethal damage as you cho
 \parhead{Special} A monk may select Stunning Fist as a bonus feat at 2nd level, even if she does not meet the prerequisites. A monk who selects this feat may choose for the uses per day and saving throw DC to be based on Wisdom instead of Constitution.
 
 \subsubsection{Tactical Analysis [Combat]}
-\parhead{Prerequisite} Base attack bonus \plus4.
-\parhead{Benefit} You can attempt to identify the strengths and weaknesses of creatures based on your combat experience. As a swift action, you can make a special check with a bonus equal to your base attack bonus \add your Wisdom \add 2 per round you have seen the creature fight. The DC is equal to 10 \add the creature's CR. If you succeed, you learn about the monster's combat abilities as if you had made a successful Knowledge check.
+\parhead{Prerequisite} Intelligence 3, Base attack bonus \plus4.
+\parhead{Benefit} You can attempt to identify the strengths and weaknesses of creatures based on your combat experience. As a swift action, you can make a special check with a bonus equal to your base attack bonus \add your Intelligence \add 2 per round you have seen the creature fight. The DC is equal to 10 \add the creature's CR. If you succeed, you learn about the monster's combat abilities as if you had made a successful Knowledge check.
 
 \subsubsection{Tactical Prediction [Combat]}
-\parhead{Prerequisites} Base attack bonus \plus8, Tactical Analysis
-\parhead{Benefit} You can attempt to predict what your opponent will do. As a swift action, you can make a special check with a bonus equal to your base attack bonus \add your Wisdom \add 2 per round you have seen the creature fight. The DC is equal to 15 \add the creature's CR. If you succeed, you learn what the creature is planning to do during its next turn. Of course, it can change what it is going to do, particularly if it hears you tell your allies what it will do.
+\parhead{Prerequisites} Intelligence 3, Base attack bonus \plus8
+\parhead{Benefit} You can attempt to predict what your opponent will do. As a swift action, you can make a special check with a bonus equal to your base attack bonus \add your Intelligence \add 2 per round you have seen the creature fight. The DC is equal to 15 \add the creature's CR. If you succeed, you learn what the creature is planning to do during its next turn. Of course, it can change its plans, particularly if it hears you tell your allies what it will do.
 
 \subsubsection{Tactical Readiness [Combat]}
-\parhead{Prerequisites} Wis 3 or base attack bonus \plus4.
+\parhead{Prerequisites} Intelligence 3
 \parhead{Benefit} When you take the Ready action, you can ready two actions at once, each with separate triggers.
 
 \subsubsection{Tower Shield Proficiency [Combat]}
