@@ -20,8 +20,8 @@ class Creature:
         self._set_class_calculator()
         self._calculate_class_stats()
 
-        self._calculate_derived_statistics()
         self._add_level_scaling()
+        self._calculate_derived_statistics()
 
     def _init_core_statistics(self):
         self.attack_bonus=util.Modifier()
@@ -57,6 +57,7 @@ class Creature:
         self.armor_class.dodge.add_inherent(util.ifloor(self.base_attack_bonus/2))
 
         self.cmd.add_inherent(self.armor_class.get_touch())
+        self.cmd.add_inherent((self.base_attack_bonus+1)/2)
         self.cmd.add_inherent(self.attributes['strength'].total())
 
     #http://stackoverflow.com/questions/141545/overloading-init-in-python
