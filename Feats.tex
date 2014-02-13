@@ -108,7 +108,7 @@ purpose of this calculation. The minimum caster level to craft an item is always
 %Brute Fortitude & \x & Use Str and half Con for Fortitute saves \\
 Combat Casting  & \x &  \plus2 bonus on Concentration checks to cast spells, reroll 1/day \\
 Endurance & \x &  Stay conscious longer against nonlethal damage \\
-\tind Diehard & Endurance & Remain conscious after taking critical damage \\
+Diehard & Con 3 & Remain conscious after taking critical damage \\
 %Eschew Materials  & \x &  Cast spells without material components \\
 %Force of Intellect & \x & Use Int and half Cha for Will saves \\
 Great Fortitude  & \x &  \plus2 bonus on Fortitude saves, reroll 1/day \\
@@ -116,13 +116,13 @@ Improved Counterspell  & \x &  Counterspell with spell of same school \\
 %Intuitive Reflexes & \x & Use Wis and half Dex for Reflex saves \\
 Iron Will  & \x &  \plus2 bonus on Will saves, reroll 1/day \\
 Lightning Reflexes  & \x &  \plus2 bonus on Reflex saves, reroll 1/day \\
-Magical Synthesis & Levels in two magical classes. & Gain magic levels in two magical classes at once. \\
+Magical Synthesis & Levels in two magical classes & Gain magic levels in two magical classes at once \\
 Rapid Metamagic & Spellcraft 8 ranks, ability to cast spells, one metamagic feat & Apply metamagic effects more quickly \\
 Retributive Counterspell & Ability to cast 4th level spells & Countered spells rebound on original caster \\
-Ritual Master & Spellcraft 8 ranks, ability to cast spells & Perform rituals more quickly, \plus4 to ritual checks \\
-Spell Focus\fn{1} & Caster level 4th &  \plus2 caster level with specific type of magic \\
+Ritual Master & Spellcraft 8 ranks, ability to cast spells & Perform rituals more quickly, \plus3 to ritual checks \\
+Spell Focus\fn{1} & Magic level 4th &  \plus2 caster level with specific type of magic \\
 \tind Augment Summoning & Spell Focus (conjuration) & Summoned creatures gain \plus2 Str, \plus2 Con \\
-\tind Greater Spell Focus\fn{1} & Caster level 10th, Spell Focus &  \plus4 caster level with specific type of magic \\
+\tind Spell Specialization\fn{1} & Magic level 8th, Spell Focus &  \plus4 caster level with specific type of magic, \minus2 penalty with other types. \\
 %Spell Penetration  & Caster level 4th &  \plus2 bonus on caster level checks to defeat spell resistance \\
 %\tind Greater Spell Penetration & Caster level 10th, Spell Penetration & \plus4 bonus to caster level checks to defeat spell resistance \\
 Swift & \x &  Run and charge faster, related bonuses \\
@@ -165,12 +165,6 @@ Stonecunning & Dwarf & Gain a sixth sense about stonework \\
 \lcaption{Skill Feats}
 \begin{tabularx}{\textwidth}{>{\lcol}p{15em} >{\lcol}p{15em} >{\lcol}X}
 \thead{Skill Feats} & \thead{Prerequisites} & \thead{Benefit} \\
-Acrobatic  & \x &  \plus2 bonus on Acrobatics and Jump checks, reroll 1/day \\
-Agile  & \x &  \plus2 bonus on Escape Artist and Stealth checks, reroll 1/day \\
-Animal Affinity  & \x &  \plus2 bonus on Handle Animal and Ride checks, reroll 1/day \\
-Athletic  & \x &  \plus2 bonus on Climb and Swim checks, reroll 1/day \\
-Deceitful  & \x &  \plus2 bonus on Bluff and Disguise checks, reroll 1/day \\
-Diligent  & \x &  \plus2 bonus on Forgery and Linguistics checks, reroll 1/day \\
 Dilettante & Int 3 & Use some Knowledge skills despite being untrained \\
 Legendary Balance & Acrobatics 13 ranks & Balance on impossible surfaces \\
 Legendary Climber & Climb 13 ranks & Gain climb speed, climb on impossible surfaces \\
@@ -180,15 +174,10 @@ Legendary Disguise & Disguise 13 ranks & Alter magical auras with disguise \\
 Legendary Escapist & Escape Artist 13 ranks & Escape from magical effects \\
 Legendary Liar & Bluff 13 ranks & Lies become undetectable by magic \\
 Legendary Tumbler & Acrobatics 13 ranks & Tumble through enemies without provoking \\
-Magical Aptitude  & \x &  \plus2 bonus on Spellcraft and Use Magic Device checks, reroll 1/day \\
-Nimble Fingers  & \x &  \plus2 bonus on Disable Device and Sleight of Hand checks, reroll 1/day \\
 Open Minded & \x & Gain two skill points. \\
-Perceptive & \x &  \plus2 bonus on Perception and Sense Motive checks, reroll 1/day \\
-Persuasive  & \x &  \plus2 bonus on Intimidate and Persuasion checks, reroll 1/day \\
 Ranged Legerdemain & Ability to cast 2nd level spells & Use Disable Device or Sleight of Hand at range \\
 Skill Focus\fn{1} & \x &  \plus3 bonus on checks with selected skill, reroll 1/day \\
 Skill Training\fn{1} & \x & Gain two skills as class skills \\
-Survivalist & \x & \plus2 bonus on Heal and Survival checks, reroll 1/day \\
 Track  & \x &  Use Survival skill to track \\
 \end{tabularx}
 1 You can gain this feat multiple times. Its effects do not stack. Each time you take the feat, it has a different effect. \\
@@ -211,6 +200,7 @@ Cleave & Str 3, base attack bonus \plus4 & Extra melee attack after dropping tar
 \tind Cleaving Stride & Str 3, base attack bonus \plus8, Cleave & Continue movement after dropping target & Power \\
 Combat Expertise & Int 3 & Trade attack bonus for AC & Defense, Style \\
 \tind Improved Combat Expertise & Int 5, Combat Expertise, base attack bonus \plus8 & Trade more attack bonus for AC & Defense, Style \\
+Combat Prowess & Base attack bonus \plus8 & \plus1 to attack and damage \\
 Covering Fire & \x & Targets struck by ranged attacks suffer attack penalties & Precision, Style \\
 Deadly Aim & Dex 3 & Trade ranged attack bonus for damage & Precision, Style \\
 \tind Improved Deadly Aim & Dex 5, Deadly Aim, base attack bonus \plus8 & Trade more ranged attack bonus for damage & Precision, Style \\
@@ -285,8 +275,8 @@ Threatening Fire & Base attack bonus \plus4 & Help overwhelm foes with ranged we
 Two-Weapon Fighting & Dex 3 & Gain \plus2 attack bonus when fighting with two weapons & Finesse \\
 %\tind Ambidexterity & Add full Strength value to damage with both hands & Str 3, Two-Weapon Fighting, base attack bonus \plus12 \\
 \tind Two-Weapon Defense & Two-Weapon Fighting & Off-hand weapon grants \plus1 shield bonus to AC, later \plus3 & Defense, Finesse \\
-Weapon Focus\fn{1} & Proficiency with weapon group, base attack bonus \plus1 & \plus1 to attack with selected weapon group & Equipment \\
-\tind Weapon Specialization\footnotetemp{1} & Base attack bonus \plus8, proficiency with weapon group, Weapon Focus with weapon group & \plus2 to attack, double threat range with selected weapon group& Equipment \\
+Weapon Focus\fn{1} & Proficiency with weapon group, base attack bonus \plus1 & \plus1 to attack and damage & Equipment \\
+\tind Weapon Specialization\footnotetemp{1} & Base attack bonus \plus8, proficiency with weapon group, Weapon Focus with weapon group & \plus2 to attack and damage, \minus2 with other weapons & Equipment \\
 Weapon Proficiency\fn{1} & \x &  Don't provoke when attacking with weapon group & Equipment \\
 Whirlwind Attack & Dex 5, base attack bonus \plus12 & One melee attack against each opponent within reach & Style \\
 \end{tabularx}
@@ -372,7 +362,7 @@ Here is the format for feat descriptions.
 \parhead{Benefit} You get a \plus2 competence bonus on Concentration checks made to cast a spell or use a spell-like ability. In addition, once per day you may reroll a Concentration check made to cast a spell.
 
 \subsubsection{Diehard [General]}
-\parhead{Prerequisite} Endurance.
+\parhead{Prerequisite} Constitution 3.
 \parhead{Benefit} When you take critical damage, you automatically become stable. You may choose to act as if you were disabled, rather than dying. You must make this decision as soon as you take critical damage (even if it isn't your turn). If you do not choose to act as if you were disabled, you immediately fall unconscious.
 \par When using this feat, you can take either a single move or standard action each turn, but not both, and you cannot take a full round action. You can take a move action without further injuring yourself, but if you perform any standard action (or any other action deemed as strenuous, including some swift actions, such as casting a quickened spell) you take 1 point of critical damage. You die normally if your critical damage exceeds your Constitution score \add your level.
 \parhead{Normal} A character without this feat who takes critical damage is unconscious and dying.
@@ -414,12 +404,6 @@ Here is the format for feat descriptions.
 \subsubsection{Great Fortitude [General]}
 \parhead{Benefit} You get a \plus2 competence bonus on all Fortitude saving throws. Once per day, you may reroll a Fortitude save. You must decide to use this ability before the results are revealed. You must take the second roll, even if it is worse.
 
-\subsubsection{Greater Spell Focus [General]}
-Choose a school of magic or a spell descriptor to which you already have applied the Spell Focus feat.
-\parhead{Prerequisites} Caster level 10th with the school or descriptor, Spell Focus.
-\parhead{Benefit} You get a \plus4 competence bonus to your caster level when casting spells and using spell-like abilities from the school of magic or with the spell descriptor you select.
-\parhead{Special} You can gain this feat multiple times. Each time you take the feat, it applies to a new school of magic or spell descriptor to which you already have applied the Spell Focus feat.
-
 %\subsubsection{Greater Spell Penetration [General]}
 %\parhead{Prerequisites} Caster level 10th, Spell Penetration.
 %\parhead{Benefit} You get a \plus4 competence bonus on caster level checks (1d20 \add caster level) made to overcome a creature's spell resistance.
@@ -455,19 +439,25 @@ Choose two magical classes you possess.
 
 \subsubsection{Ritual Master [General]}
 \parhead{Prerequisites} Spellcraft 8 ranks, ability to cast spells
-\parhead{Benefit} You can perform rituals in half the normal time. In addition, you gain a \plus4 competence bonus to checks made to perform rituals.
+\parhead{Benefit} You can perform rituals in half the normal time. In addition, you gain a \plus3 competence bonus to checks made to perform rituals.
 \parhead{Special} At 1st level, a wizard gets Ritual Master as a bonus feat, even if she does not have the prerequisites.
 
 \subsubsection{Selective Channeling [General]}
-\parhead{Prerequisites} Ability to channel energy
+\parhead{Prerequisites} Ability to channel energy.
 \parhead{Benefit} You can exclude up to two additional creatures from the effect when you channel energy.
 \parhead{Normal} Without this feat, you can exclude a number of creatures from the effect equal to 1 \add half your Wisdom.
 
 \subsubsection{Spell Focus [General]}
 Choose a school of magic or a spell descriptor.
-\parhead{Prerequisite} Caster level 4th
+\parhead{Prerequisite} Magic level 4th.
 \parhead{Benefit} You get a \plus2 competence bonus to your caster level when casting spells and using spell-like abilities from the school of magic or with the spell descriptor you select.
 \parhead{Special} You can gain this feat multiple times. Its effects do not stack. Each time you take the feat, it applies to a new school of magic.
+
+\subsubsection{Spell Specialization [General]}
+Choose a school of magic or a spell descriptor to which you already have applied the Spell Focus feat.
+\featpre Magic level 8th, Spell Focus.
+\featben You gain a \plus4 competence bonus to your caster level when casting spells and using spell-like abilities from the school of magic or with the spell descriptor you select. In exchange, you take a \minus2 penalty to caster level with all spells and spell-like abilities to which you have not applied any Spell Focus feat.
+\parhead{Special} You can gain this feat multiple times. Each time you take the feat, it applies to a new school of magic or spell descriptor to which you already have applied the Spell Focus feat.
 
 %\subsubsection{Spell Penetration [General]}
 %\parhead{Prerequisite} Caster level 4th
@@ -508,27 +498,9 @@ Choose a school of magic or a spell descriptor.
 
 \subsection{Skill Feats}
 
-\subsubsection{Acrobatic [Skill]}
-\parhead{Benefit} You get a \plus2 competence bonus on all Acrobatics checks and Jump checks, and you may treat those skills as class skills.
-
-\subsubsection{Agile [Skill]}
-\parhead{Benefit} You get a \plus2 competence bonus on all Escape Artist checks and Stealth checks, and you may treat those skills as class skills.
-
-\subsubsection{Animal Affinity [Skill]}
-\parhead{Benefit} You get a \plus2 competence bonus on all Handle Animal checks and Ride checks, and you may treat those skills as class skills.
-
-\subsubsection{Athletic [Skill]}
-\parhead{Benefit} You get a \plus2 competence bonus on all Climb checks and Swim checks, and you may treat those skills as class skills.
-
-\subsubsection{Deceitful [Skill]}
-\parhead{Benefit} You get a \plus2 competence bonus on all Bluff and Disguise checks, and you may treat those skills as class skills.
-
 \subsubsection{Dilettante [Skill]}
 \parhead{Prerequisite} Int 3
 \parhead{Benefit} Choose a number of Knowledge skills equal to your Intelligence. You are treated as trained in those skills, even if you possess no ranks, allowing you to make Knowledge checks in those areas. If your Intelligence increases after taking this feat, you may choose additional Knowledge skills.
-
-\subsubsection{Diligent [Skill]}
-\parhead{Benefit} You get a \plus2 competence bonus on all Forgery and Linguistics checks, and you may treat those skills as class skills.
 
 \subsubsection{Legendary Balance [Skill]}
 \featpre Acrobatics 13 ranks
@@ -581,20 +553,8 @@ You must be aware of a spell to disable it, either through the Spellcraft skill 
 \featpre Acrobatics 13 ranks.
 \featben When tumbling, if your check result exceeds 30, you gain two benefits. First, you do not provoke attacks of opportunity for that movement. Second, you can tumble through areas occupied by enemies as if they were unoccupied.
 
-\subsubsection{Magical Aptitude [Skill]}
-\parhead{Benefit} You get a \plus2 competence bonus on all Spellcraft checks and Use Magic Device checks, and you may treat those skills as class skills.
-
-\subsubsection{Nimble Fingers [Skill]}
-\parhead{Benefit} You get a \plus2 competence bonus on all Disable Device checks and Sleight of Hand checks, and you may treat those skills as class skills.
-
 \subsubsection{Open Minded [Skill]}
 \parhead{Benefit} You gain two skill points. You may spend these skill points immediately.
-
-\subsubsection{Perceptive [Skill]}
-\parhead{Benefit} You get a \plus2 competence bonus on all Perception checks and Sense Motive checks, and you may treat those skills as class skills.
-
-\subsubsection{Persuasive [Skill]}
-\parhead{Benefit} You get a \plus2 competence bonus on all Intimidate checks and Persuasion checks, and you may treat those skills as class skills.
 
 \subsubsection{Ranged Legerdemain [Skill]}
 \parhead{Prerequisite} Ability to cast 2nd level spells
@@ -606,10 +566,7 @@ Choose a skill.
 \parhead{Special} You can gain this feat multiple times. Its effects do not stack. Each time you take the feat, it applies to a new skill.
 
 \subsubsection{Skill Training [Skill]}
-\featben Choose any two skills. You treat those skills as class skills.
-
-\subsubsection{Survivalist [Skill]}
-\parhead{Benefit} You get a \plus2 competence bonus on all Heal checks and Survival checks, and you may treat those skills as class skills.
+\featben Choose any two skills. You treat those skills as class skills, and you gain a \plus1 competence bonus with those skills.
 
 \subsubsection{Track [Skill]}
 \parhead{Benefit} To find tracks or to follow them for 1 mile requires a successful Survival check. You must make another Survival check every time the tracks become difficult to follow.
@@ -659,10 +616,6 @@ If you fail a Survival check, you can retry after 1 hour (outdoors) or 10 minute
 \parhead{Normal} Without this feat, you can use the Survival skill to find tracks, but you can follow them only if the DC for the task is 10 or lower. Alternatively, you can use the Search skill to find a footprint or similar sign of a creature's passage using the DCs given above, but you can't use Search to follow tracks, even if someone else has already found them.
 \parhead{Special} A ranger automatically has Track as a bonus feat. He need not select it.
 
-\subsubsection{Trap Device [Skill]}
-\featpre Devices 8 ranks.
-\featben 
-
 \subsection{Combat Feats}
 
 \subsubsection{Armor Familiarity [Combat]}
@@ -698,6 +651,10 @@ Choose one category of armor: light, medium, heavy, or shields.
 \subsubsection{Cleaving Stride [Combat]}
 \parhead{Prerequisites} Str 3, base attack bonus \plus8, Cleave
 \parhead{Benefit} If you move to attack a foe, including by charging, and deal enough damage to drop it during your attack, you can continue your movement (if you have any movement remaining) to attack another foe. You may take your extra attack from the Cleave feat before or after continuing your movement.
+
+\subsubsection{Combat Prowess [Combat]}
+\featpre Base attack bonus \plus8.
+\featben You gain a \plus1 competence bonus to attack and damage.
 
 \subsubsection{Deflect Arrows [Combat]}
 \parhead{Prerequisites} Dex 3, Improved Unarmed Strike.
@@ -839,7 +796,7 @@ In addition, your unarmed strikes can deal lethal or nonlethal damage as you cho
 
 \subsubsection{Two-Weapon Defense [Combat]}
 \parhead{Prerequisites} Dex 3, Two-Weapon Fighting.
-\parhead{Benefit} When wielding a double weapon or two weapons (not including natural weapons or unarmed strikes), you gain a \plus1 shield bonus to your AC. This bonus increases by 1 once your base attack bonus reaches \plus8, and increases by 1 again once your base attack bonus reaches \plus16.
+\parhead{Benefit} When wielding a double weapon or two weapons (not including natural weapons or unarmed strikes), you gain a \plus1 shield bonus to your AC. This bonus increases to \plus2 once your base attack bonus reaches \plus8, and to \plus3 at base attack bonus \plus16.
 %\par Additionally, if you are proficient with bucklers, you may keep your buckler's shield bonus to AC while you attack with a weapon in your off-hand.
 %\parhead{Normal} Without this feat, a character wielding a buckler loses the buckler's shield bonus to AC when using an off-hand weapon to attack.
 
@@ -856,21 +813,22 @@ You can fight with a weapon in each hand more effectively.
 \subsubsection{Weapon Focus [Combat]}
 Choose one weapon group.
 \parhead{Prerequisites} Proficiency with selected weapon group, base attack bonus \plus1.
-\parhead{Benefit} You gain a \plus1 competence bonus on all attack rolls you make using weapons from the selected weapon group.
+\parhead{Benefit} You gain a \plus1 competence bonus to attack and damage with weapons from the selected weapon group. At base attack bonus \plus10, your critical threat range is also doubled with those weapons. This increase doesn't stack with other effects that expand the threat range of a weapon.
 \parhead{Special} You can gain this feat multiple times. Its effects do not stack. Each time you take the feat, it applies to a new type of weapon.
 \par You cannot choose simple weapons when you take this feat.
 
 \subsubsection{Weapon Proficiency [Combat]}
-Choose a weapon group. You understand how to use weapons from that weapon group in combat.
+Choose one weapon group.
 \parhead{Benefit} You don't provoke attacks of opportunity when attacking with melee weapons from that group, and you can use ranged weapons from that group without penalty.
 \parhead{Normal} When using a melee weapon with which you are not proficient, you provoke an attack of opportunity when you miss. When using a ranged weapon with which you are not proficient, you take a \minus4 penalty to attack rolls.
 \parhead{Special} You can gain Weapon Proficiency multiple times. Each time you take the feat, it applies to a new weapon group. You cannot choose simple weapons.
 \par Clerics who choose the War domain and paladins automatically gain the Weapon Proficiency feat related to their deity's favored weapon group as a bonus feat. They need not select it.
 
 \subsubsection{Weapon Specialization [Combat]}
-Choose one weapon group for which you have already selected the Weapon Focus feat. You deal extra damage when using weapons from this weapon group.
+Choose one weapon group for which you have already selected the Weapon Focus feat.
 \parhead{Prerequisites} Base attack bonus \plus8, proficiency with selected weapon group, Weapon Focus with selected weapon group.
-\parhead{Benefit} You gain a \plus2 competence bonus on all attack rolls you make using weapons from the selected weapon group. In addition, when using weapons from the selected weapon group, your threat range is doubled. This effect doesn't stack with any other effect that expands the threat range of a weapon.
+\featben You gain a \plus2 competence bonus to attack and damage with weapons from the selected weapon group. In exchange, you take a \minus2 penalty to attack and damage with with all weapons to which you have not applied any Weapon Focus feat. This penalty does not affect non-weapon attacks, such as many combat maneuvers.
+
 \parhead{Special} You can gain this feat multiple times. Its effects do not stack. Each time you take the feat, it applies to a new type of weapon group. You cannot choose simple weapons.
 
 \subsection{Combat Maneuver Feats}
