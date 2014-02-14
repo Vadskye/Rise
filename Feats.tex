@@ -227,10 +227,11 @@ Heartseeker & Base attack bonus \plus8 & Double critical threat range & Style \\
 Improved Bull Rush & Base attack bonus \plus4 & \plus2 bonus on bull rush attacks; push target back without moving & Maneuver, Power \\
 Improved Dirty Trick & Base attack bonus \plus4 & \plus2 bonus on dirty trick attacks; dirty tricks last longer & Finesse, Maneuver \\
 Improved Disarm & Base attack bonus \plus4 & \plus2 bonus on disarm attacks; knock foe's weapon away after disarming & Finesse, Maneuver \\
-Improved Feint & Base attack bonus \plus4 & \plus2 bonus on feint attacks; feint as move action & Finesse, Maneuver \/
+Improved Feint & Base attack bonus \plus4 & \plus2 bonus on feint attacks; feint as move action & Finesse, Maneuver \\
 Improved Grapple & Base attack bonus \plus4 & \plus2 bonus on grapple attacks; attack faster in grapple & Maneuver, Power \\
 Improved Initiative & \x &  \plus4 bonus on initiative checks & Reaction \\
 Improved Overrun & Base attack bonus \plus4 & \plus2 bonus on overrun attacks; target can't avoid & Maneuver, Power \\
+Improved Shield Bash & Shield proficiency & Retain shield bonus to AC when shield bashing & Equipment \\
 Improved Trip & Base attack bonus \plus4 & \plus2 bonus on trip attacks; tripped foe provokes attacks of opportunity & Finesse, Maneuver \\
 Improved Unarmed Strike & \x &  Considered armed even when unarmed & \x \\
 \tind Deflect Arrows & Dex 3, Improved Unarmed Strike & Deflect one ranged attack per round & Defense, Reaction \\
@@ -246,6 +247,7 @@ Intimidating Stance & Skill, Style & Intimidate 8 ranks & Swiftly intimidate str
 \lcaption{Combat Feats (cont.)}
 \begin{tabularx}{\textwidth}{>{\lcol}p{10em} >{\lcol}p{10em} >{\lcol}X >{\lcol}p{10em}}
     \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Type} \\
+Manyshot & Dex 7, base attack bonus \plus11 & Shoot two projectiles simultaneously & Precision, Style \\
 Master Tactician & Int 3, base attack bonus \plus12 & Ready full-round actions with allies & Reaction \\
 Mounted Combat & Ride 1 rank & Negate hits on mount with Ride check & Defense \\
 \tind Mounted Archery & Mounted Combat & Reduced penalty for ranged attacks while mounted by 4& Precision \\
@@ -255,10 +257,9 @@ Mounted Combat & Ride 1 rank & Negate hits on mount with Ride check & Defense \\
 Opportunist & Dex 3 & Bonus to attack and damage on attacks of opportunity & Finesse, Style \\
 Overpowering Assault & Str 3 & Trade AC for combat maneuver bonus & Power, Style \\
 Overwhelming Force & Str 5, base attack bonus \plus8 & Apply full Strength to damage when using two hands & Power \\
-Precise Shot & \x & Add half Wis to damage, reduce cover penalties & Precision, Style \\
-\tind Improved Precise Shot & Dex 5, Precise Shot, base attack bonus \plus8 & Ignore less than total cover/concealment on ranged attack & Precision, Style \\
-\tind Point Blank Shot & Precise Shot &  \plus2 bonus on ranged damage within 30 ft. & Precision, Style \\
-\tind Manyshot & Dex 7, Precise Shot, base attack bonus \plus11 & Shoot two projectiles simultaneously & Precision, Style \\
+Perfect Shot & Dex 5, base attack bonus \plus8 & Ignore less than total cover/concealment on ranged attacks & Precision, Style \\
+Point Blank Shot & \x &  \plus2 bonus on ranged damage within 30 ft. & Precision, Style \\
+Precise Shot & \x & Add half Wis to damage & Precision, Style \\
 Power Attack & Str 3 & Trade melee attack bonus for damage & Power, Style \\
 \tind Improved Power Attack & Str 5, Power Attack, base attack bonus \plus8 & Trade more melee attack bonus for damage & Power, Style \\
 Powerful Grip & Str 9 & Use larger weapons without penalty & Power, Style \\
@@ -266,7 +267,6 @@ Quick Draw & Base attack bonus \plus1 & Draw weapon as swift action & Finesse, R
 Rapid Reload & Proficiency with crossbows & Reload crossbows more quickly & Finesse \\
 Reveal the Weak Point & Base attack bonus \plus4 & Sacrifice attack and damage to penalize foe's AC & Style \\
 Shield Proficiency  & \x &  No armor check penalty on attack rolls & Equipment \\
-\tind Improved Shield Bash & Shield Proficiency & Retain shield bonus to AC when shield bashing & Equipment \\
 \tind Tower Shield Proficiency & Shield Proficiency & No armor check penalty on attack rolls & Equipment \\
 Short Haft & Proficiency with a reach weapon, base attack bonus \plus4 & Short haft reach weapons faster, without penalty & Equipment, Finesse \\
 Tactical Analysis & Int 3, Base attack bonus \plus4 & Identify foe's strengths and weaknesses & Awareness \\
@@ -311,11 +311,10 @@ Elemental Heritage & \x & Gain saving throw bonus based on elemental ancestor \\
 \lcaption{Metamagic Feats}
 \begin{tabularx}{\textwidth}{>{\lcol}p{15em} >{\lcol}p{7.5em} >{\lcol}p{7.5em} >{\lcol}X}
 \thead{Metamagic Feats} & \thead{Prerequisites} & \thead{Spell Level Increase} & \thead{Benefit} \\
-%Empower Spell  & Caster level 4th & \plus2 & Increase spell's variable, numeric effects by 50\% \\
+Empower Spell  & Caster level 4th & Variable & Cast spell as higher level \\
 Energetic Substitution & Caster level 4th & \plus1 & Change spell's energy type \\
 Enlarge Spell  & Caster level 4th & \plus1 & Double spell's range \\
 %Extend Spell  & Caster level 1st & \plus1 & Double spell's duration \\
-Heighten Spell  & Caster level 6th & Variable & Cast spell as higher level \\
 Imbued Spellstrike & Caster level 4th & \plus1 & Combine spell with weapon attack \\
 \tind Improved Imbued Spellstrike & Caster level 6th & \plus2 & Imbue weapon with spell's power up to 5 minutes \\
 %Maximize Spell  & Caster level 6th & \plus3 & Maximize spell's variable, numeric effects \\
@@ -324,6 +323,7 @@ Reach Spell & Caster level 6th & \plus2 & Cast touch spell at Close range \\
 Shape Spell & Caster level 6th & \plus2 & Exclude areas within spell's area \\
 Silent Spell  & Caster level 4th & \plus1 & Cast spell without verbal components \\
 Still Spell  & Caster level 4th & \plus1 & Cast spell without somatic components \\
+Sustained Spell & Caster level 4th & \plus1 & Maintain concentration as swift action \\
 Widen Spell  & Caster level 8th & \plus3 & Double spell's area
 \end{tabularx}
 \end{dtable!*}
@@ -699,7 +699,7 @@ You understand how to use exotic weapons in combat.
 \parhead{Normal} Without this feat, you may draw light weapons as a swift action, medium and heavy weapons as a move action, and hidden weapons as a standard action.
 
 \subsubsection{Improved Shield Bash [Combat]}
-\parhead{Prerequisite} Shield Proficiency.
+\parhead{Prerequisite} Proficiency with a shield.
 \parhead{Benefit} When you perform a shield bash, you may still apply the shield's shield bonus to your AC.
 \parhead{Normal} Without this feat, a character who performs a shield bash loses the shield's shield bonus to AC until his or her next turn.%Improved Shield Bash
 
@@ -945,13 +945,6 @@ Choose one weapon group for which you have already selected the Weapon Focus fea
 \parhead{Prerequisites} Base attack bonus \plus12, Defensive Stance
 \parhead{Benefits} This style functions like Defensive Stance, except that it grants a bonus to Armor Class instead of Combat Maneuver Defense.
 
-\subsubsection{Improved Precise Shot [Combat Style]}
-\parhead{Prerequisites} Dex 7, Precise Shot, base attack bonus \plus8.
-\parhead{Benefit} This style functions like the Precise Shot style, except that your ranged attacks ignore the AC bonus from cover granted to targets by anything less than total cover, and the miss chance from concealment granted to targets by anything less than total concealment. Total cover and total concealment provide their normal benefits against your ranged attacks. In addition, when you shoot or throw ranged weapons at a grappling opponent, you automatically strike at the opponent you have chosen.
-
-You must spend a full-round action to make a full attack while in this style. You can make a single attack as a standard action.
-\parhead{Normal} See the normal rules on the effects of cover and concealment. Without this feat, a character who shoots or throws a ranged weapon at a target involved in a grapple must roll randomly to see which grappling combatant the attack strikes.%Improved Precise Shot
-
 \subsubsection{Improved Power Attack [Combat Style]}
 \parhead{Prerequisites} Str 5, Power Attack, base attack bonus \plus8.
 \parhead{Benefit} This style functions like the Power Attack style, except that the penalty to attack rolls and damage bonus is doubled.
@@ -966,7 +959,7 @@ You must spend a full-round action to make a full attack while in this style. Yo
 \parhead{Benefit} As a swift action each round, you can make an intimidate check against a single foe you threaten and dealt damage to during the round.
 
 \subsubsection{Manyshot [Combat Style]}
-\parhead{Prerequisites} Dex 9, Precise Shot, base attack bonus \plus12.
+\parhead{Prerequisites} Dex 7, base attack bonus \plus12.
 \parhead{Benefit} When you attack with a projectile weapon (except crossbows), you may make a flurry attack with two projectiles or weapons at once. If the attack hits, the first projectile hits. If the attack hits by 5 or more, both projectiles hit. As normal for flurry attacks, apply precision-based damage (such as sneak attack) and critical hit damage only once for this attack. Damage reduction and resistances apply once to the total damage dealt.
 \parhead{Style Requirement} Must full attack with a non-crossbow projectile weapon each round.
 
@@ -980,8 +973,13 @@ You must spend a full-round action to make a full attack while in this style. Yo
 \parhead{Benefit} You take a \minus2 penalty to AC and gain a \plus2 circumstance bonus to combat maneuver attacks. \babscalingdescription The penalty to AC lasts until the start of the next turn after you end the style.
 \parhead{Style Requirement} Must perform a combat maneuver each round.
 
+\subsubsection{Perfect Shot [Combat Style]}
+\parhead{Prerequisites} Dex 5, Precise Shot, base attack bonus \plus8.
+\parhead{Benefit} Your ranged attacks ignore cover and concealment, except total cover and total concealment. In addition, when you shoot or throw ranged weapons at a grappling opponent, you automatically strike at the opponent you have chosen.
+
+You must spend a full-round action to make a full attack while in this style. You can make a single attack as a standard action.
+
 \subsubsection{Point Blank Shot [Combat Style]}
-\parhead{Prerequisite} Precise Shot.
 \parhead{Benefit} You get a \plus2 circumstance bonus on damage rolls with ranged weapons when attacking targets within half of your range increment. \babscalingdescription
 \parhead{Style Requirement} None.
 
@@ -997,9 +995,7 @@ You must spend a full-round action to make a full attack while in this style. Yo
 
 %Can't replace Strength; archers need to be strong
 \subsubsection{Precise Shot [Combat Style]}
-\parhead{Benefit} You can choose to add half your Wisdom to damage with ranged weapons in addition to half your Strength. Additionally, you only take half the normal penalty for firing at enemies with cover.
-
-You must spend a full-round action to make a full attack while in this style. You can make a single attack as a standard action. You cannot use this style with medium or large thrown weapons.
+\parhead{Benefit} You can add half your Wisdom to damage with ranged attacks in addition to half your strength.
 
 \subsubsection{Shot On The Run [Combat Style]}
 \parhead{Prerequisites} Dex 3, Dodge, Mobility, base attack bonus \plus4.
@@ -1050,7 +1046,7 @@ You must spend a full-round action to make a full attack while in this style. Yo
 \parhead{Prerequisites} Con 3, Draconic Heritage, any three dragon bloodline feats.
 \parhead{Benefit} You gain a breath weapon based on the type of dragon you chose for the Draconic Heritage feat. The shape of the breath weapon is given on the \trefnp{Dragon Types} chart: either a \arealarge, 5 ft. wide line or a \areamed cone. At 11th level, the size increases to a 100 ft. long, 10 ft. wide line or a \arealarge cone.
 
-Each breath weapon deals 1d8 damage per two Hit Values you possess and allows a Reflex save for half damage. The save DC is equal to 10 \add half your Hit Dice \add your Constitution. After using your breath weapon, you must wait 1d4 rounds before you can use it again.
+A breath weapon deals 1d6 damage per two Hit Values you possess and allows a Reflex save for half damage. The save DC is equal to 10 \add half your Hit Dice \add your Constitution. After using your breath weapon, you must wait 1d4 rounds before you can use it again.
 
 \subsubsection{Draconic Heritage [Bloodline, Dragon]}
 \parhead{Benefit} You have the blood of a dragon in your veins. When you take this feat, choose a type of dragon. You gain damage reduction against the damage type that that dragon's breath weapon deals equal to 5 \mtimes the number of dragon bloodline feats that you have. A list of dragons and their associated damage type is given below.
@@ -1128,23 +1124,23 @@ If you have 14 Hit Values, you gain a fly speed equal to your base land speed, t
 \parhead{Benefit} An extended spell has its duration increased by one duration category: from Short, to Medium, to Long, to Extreme. This metamagic can only be applied to spells with a duration of \durshort, \durmed, or \durlong. An extended spell uses up a spell slot three levels higher than the spell's actual level.
 \end{comment}
 
+\subsubsection{Empower Spell [Metamagic]}
+\parhead{Prerequisite} Caster level 4th.
+\parhead{Benefit} When casting a heightened spell, you gain a \plus2 circumstance bonus to caster level. A heightened spell uses up a spell slot one level higher than the spell's actual level. Unlike other metamagic feats, you can apply this metamagic feat any number of times, increasing your caster level by 2 each time.
+
 \subsubsection{Energetic Substitution [Metamagic]}
 \parhead{Prerequisite} Caster level 4th.
 \parhead{Benefit} When casting a substituted spell, you can choose what kind of energy damage it deals: cold, fire, or electricity. This can only be applied to spells that originally dealt cold, fire, or electricity damage. A substituted spell uses up a spell slot one level higher than the spell's actual level.
 
-\subsubsection{Heighten Spell [Metamagic]}
-\parhead{Prerequisite} Caster level 4th.
-\parhead{Benefit} When casting a heightened spell, you gain a \plus2 circumstance bonus to caster level. A heightened spell uses up a spell slot one level higher than the spell's actual level. Unlike other metamagic feats, you can apply this metamagic feat any number of times, increasing your caster level by 2 each time.
-
 \subsubsection{Imbued Spellstrike [Metamagic]}
 \parhead{Prerequisite} Caster level 4th.
-\parhead{Benefit} When casting a channeled spell, you can make a single attack with a weapon in your hand. If the attack hits, the struck creature is affected by the spell, as if it had been the target, in addition to taking damage from the weapon. The imbuement fades away without effect after 1 round (at the end of your next turn) if you have not struck a foe.
+\parhead{Benefit} As part of casting an imbued spellstrike spell, you can make a single attack with a weapon in your hand. If the attack hits, the struck creature is affected by the spell, as if it had been the target, in addition to taking damage from the weapon. The imbuement fades away without effect after 1 round (at the end of your next turn) if you have not struck a foe.
 
 Only spells which affect a single target can be channeled in this way. An imbued spellstrike uses up a spell slot one level higher than the spell's actual level.
 
 \subsubsection{Improved Imbued Spellstrike [Metamagic]}
 \parhead{Prerequisite} Caster level 6th, Imbued Strike.
-\parhead{Benefit} This metamagic functions like Imbued Strike, except that the imbuement lasts for 5 minutes if you have not struck a foe. If the weapon leaves your hands or you cast another spell, the imbuement fades away without effect.
+\parhead{Benefit} This metamagic functions like Imbued Strike, except that the imbuement lasts for 5 minutes if you have not struck a foe. If the weapon leaves your hands or if you cast another spell, the imbuement fades away without effect.
 
 An improved imbued spellstrike uses up a spell slot two levels higher than the spell's actual level.
 
