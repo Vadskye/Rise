@@ -249,12 +249,12 @@ Intimidating Stance & Skill, Style & Intimidate 8 ranks & Swiftly intimidate str
     \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Type} \\
 Manyshot & Dex 7, base attack bonus \plus11 & Shoot two projectiles simultaneously & Precision, Style \\
 Master Tactician & Int 3, base attack bonus \plus12 & Ready full-round actions with allies & Reaction \\
-Mounted Combat & Ride 1 rank & Negate hits on mount with Ride check & Defense \\
-\tind Mounted Archery & Mounted Combat & Reduced penalty for ranged attacks while mounted by 4& Precision \\
-\tind Ride-By Attack & Mounted Combat & Move before and after a mounted charge & Mobility \\
-\tind \tind Spirited Charge & Mounted Combat, Ride-By Attack & Double damage with mounted charge & Mobility, Power \\
-\tind Trample & Mounted Combat & Target cannot avoid mounted overrun & Mobility, Power \\
-Opportunist & Dex 3 & Bonus to attack and damage on attacks of opportunity & Finesse, Style \\
+Mounted Archery & Ride 1 rank & Reduced penalty for ranged attacks while mounted by 4 & Mounted, Precision \\
+Mounted Combat & Ride 1 rank & Negate hits on mount with Ride check & Defense, Mounted \\
+\tind Ride-By Attack & Mounted Combat & Move before and after a mounted charge & Mobility, Mounted \\
+\tind \tind Spirited Charge & Mounted Combat, Ride-By Attack & Double damage with mounted charge & Mounted, Power \\
+\tind Trample & Mounted Combat & Target cannot avoid mounted overrun & Mobility, Mounted \\
+Opportunist & Dex 3 & \plus2 to attack and damage on attacks of opportunity & Finesse, Style \\
 Overpowering Assault & Str 3 & Trade AC for combat maneuver bonus & Power, Style \\
 Overwhelming Force & Str 5, base attack bonus \plus8 & Apply full Strength to damage when using two hands & Power \\
 Perfect Shot & Dex 5, base attack bonus \plus8 & Ignore less than total cover/concealment on ranged attacks & Precision, Style \\
@@ -718,7 +718,7 @@ In addition, your unarmed strikes can deal lethal or nonlethal damage as you cho
 \parhead{Benefit} When you move, it does not provoke attacks of opportunity from your Dodge target.
 
 \subsubsection{Mounted Archery [Combat]}
-\parhead{Prerequisites} Ride 1 rank, Mounted Combat.
+\featpre Ride 1 rank.
 \parhead{Benefit} The penalty you take when using a ranged weapon while mounted is decreased by 4: \minus0 instead of \minus4 if your mount is taking a double move, and \minus4 instead of \minus8 if your mount is running.
 
 \subsubsection{Mounted Combat [Combat]}
@@ -894,7 +894,7 @@ Choose one weapon group for which you have already selected the Weapon Focus fea
 
 \subsubsection{Combat Expertise [Combat Style]}
 \parhead{Prerequisite} Int 3.
-\parhead{Benefit} You can choose to take a \minus2 penalty on attack rolls, including combat maneuvers, to gain a \plus2 circumstance bonus to your dodge modifier. \babscalingdescription In addition, you increase the bonus gained from using the total defense action (see \pref{Total Defense}) by the same amount. You cannot fight defensively while using this combat style.
+\parhead{Benefit} You take a \minus2 penalty on attack rolls to gain a \plus2 circumstance bonus to your dodge modifier. \babscalingdescription In addition, you increase the bonus gained from using the total defense action (see \pref{Total Defense}) by the same amount. You cannot fight defensively while using this combat style.
 \parhead{Style Requirement} Must full attack or take the total defense action each round.
 \parhead{Normal} A character without the Combat Expertise feat can fight defensively while using the full attack action to take a \minus4 penalty on attack rolls and gain a \plus2 circumstance bonus to its dodge modifier.
 
@@ -985,8 +985,8 @@ You must spend a full-round action to make a full attack while in this style. Yo
 
 \subsubsection{Power Attack [Combat Style]}
 \parhead{Prerequisite} Str 3.
-\parhead{Benefit} You can choose to take a \minus2 penalty on all melee attack rolls and combat maneuver checks to gain a \plus2 bonus on all melee damage rolls. \babscalingdescription You must choose to use this feat before making an attack roll, and its effects last until your next turn. The bonus damage does not apply to touch attacks or effects that do not deal hit point damage.
-\par This bonus to damage is halved if you are making an attack with an off-hand weapon or light weapon.
+\parhead{Benefit} You take a \minus2 penalty on melee attack rolls to gain a \plus2 bonus on all melee damage rolls. \babscalingdescription 
+\par The bonus damage does not apply to touch attacks. It is halved if you are making an attack with an off-hand weapon or light weapon.
 \parhead{Style Requirement} Must charge or full attack with a melee weapon each round.
 
 \subsubsection{Powerful Grip [Combat Style]}
