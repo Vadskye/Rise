@@ -1,0 +1,87 @@
+#Greedy text-wrapping commands
+\\spellfocus{(.*)}|[i]Focus:[/i] \1
+\\spellmat{(.*)}|[i]Material Components:[/i] \1
+\\spelldmg{(.*)}|[b]Damage:[/b] \1
+\\spellheal{(.*)}|[i]Healing:[/i] \1
+
+#Lazy text-wrapping commands
+
+\\parhead{*}|[b]\1:[/b]
+\\textbf{*}|[b]\1[/b]
+\\thead{*}|[b]\1[/b]
+\\textit{*}|[i]\1[/i]
+\\section{*}|[size=4][b]\1[/b][/size]
+\\pdfbookmark.*}|
+\\spellsection{*}|\n[size=3][b]\1[/b][/size]
+\\spellsectioncomma{*}{*}|\n[size=3][b]\1, \2[/b][/size]
+\\spellschool{*}|\1
+\\spelllvl{*}|[b]Level:[/b] \1
+\\spelltime{*}|[b]Casting Time:[/b] \1
+\\spellrng{*}|[b]Range:[/b] \1
+\\spelltgt{*}|[b]Target:[/b] \1
+\\spelldur{*}|[b]Duration:[/b] \1
+\\spelldesc{*}|[i]\1[/i]
+\\spellarea{*}|[b]Area:[/b] \1
+\\spelltgts{*}|[b]Targets[/b] \1
+\\spelltgtorarea{*}|[b]Target or Area:[/b] \1
+\\spelltgtortgts{*}|[b]Target or Targets:[/b] \1
+\\spelltgteffarea{*}|[b]Target, Manifestation, or Area:[/b] \1
+\\spellsave{*}|[b]Saving Throw:[/b] \1
+\\spellsr{*}|[b]Spell Resistance:[/b] \1
+\\spellcmp{*}|[b]Components:[/b] \1
+\\spelleff{*}|[b]Manifestation:[/b] \1
+\\spell{*}|[i]\1[/i]
+\\spellindirect{*}{*}|[i]\2[/i]
+\\subspell{*}|[i]\1:[/i]
+\\fn{*}|[sup]\1[/sup]
+\\footnotetemp{*}|[sup]\1[/sup]
+\\mfx{*}|[i]\1:[/i]
+\\magicitem{*}|[i]\1[/i]
+\\lcaption{*}|
+
+#environments
+\\begin{spelleffect}\n*|[b]Effect:[/b] 
+\\end{spelleffect}\n*|
+\\begin{spellnotes}\n*|[b]Notes:[/b] 
+\\end{spellnotes}\n*|
+\\begin{spellhealthy}\n*|[b]Healthy Effect:[/b] 
+\\end{spellhealthy}\n*|
+\\begin{spellblood}\n*|[b]Bloodied Effect:[/b] 
+\\end{spellblood}\n*|
+\\begin{itemize\*}|[list]
+\\item|[*]
+\\end{itemize\*}|[/list]
+
+#simple replacements
+\\areasmall|Small (10 ft.)
+\\areamed|Medium (20 ft.)
+\\arealarge|Large (50 ft.)
+\\rngpers|Personal
+\\rngtouch|Touch
+\\rngclose|Close (30 ft.)
+\\rngmed|Medium (100 ft.)
+\\rngfar|Far (300 ft.)
+\\rngext|Extreme (1,000 ft.)
+\\durshort|Short (Concentration + 5 rounds)
+\\durmed|Medium (5 minutes)
+\\durlong|Long (1 hour)
+\\durext|Extreme (12 hours)
+\\add|+
+\\plus|+
+\\minus|-
+\\mult|*
+\\mtimes|*
+\\bonusscalingdescription|This bonus increases to +3 at 8th level, to +4 at 14th level, and finally to +5 at 20th level.
+\\confusionexplanation|Each turn, it has a random chance to take one of four actions: babble incoherently, flee from the caster as if panicked, attack the nearest creature, or act normally. A confused creature who can't carry out the indicated action does nothing but battle incoherently. Any confused creature who is attacked automatically attacks its attackers on its next turn, as long as it is still confused when its turn comes.
+\\vulnerableexplanation|A vulnerable creature takes a -2 penalty to attack rolls, saving throws, checks, DCs, and AC.
+\\par|\n
+\\%|%
+%.*|
+
+#tables
+\\begin{dtable.*?}|{table="class: grid"}
+\\end{dtable.*?}|{/table}
+\\begin{tabularx}.*|{tr}\n{td}
+\\end{tabularx}.*|{/td}\n{/tr}
+ \& |{/td} {td}
+\\\\|{/td}\n{/tr}
