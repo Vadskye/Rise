@@ -5,17 +5,20 @@ import re
 def initialize_argument_parser():
     parser = argparse.ArgumentParser(description='Convert LaTeX into BBcode')
     parser.add_argument('-i', '--inputfile', dest='inputfile', 
-            help='the LaTeX file to load', default='latex.txt')
+            help='The LaTeX file to load', default='latex.txt')
+    parser.add_argument('-s', '--subfile', dest='subfile',
+            help='The file containing the substitutions made',
+            default = 'substitutions.txt')
     parser.add_argument('-o', '--outputfile', dest='outputfile',
-            help='Where to store the outout', default='bbcode.txt') 
+            help='Where to store the output', default='bbcode.txt') 
     return vars(parser.parse_args())
 
 def create_sub(pattern, replacement):
     return lambda x: re.sub(pattern, replacement, x)
 
-def generate_subs():
+def generate_subs(subfile):
     all_subs = list()
-    sub_file = open('substitutions.txt', 'r')
+    sub_file = open(subfile, 'r')
     group_pattern = re.compile(r'{\*}')
     eol_pattern = re.compile(r'\n')
     for line in sub_file:
@@ -36,7 +39,7 @@ if __name__=="__main__":
     args = initialize_argument_parser()
     inputfile = open(args['inputfile'], 'r')
     outputfile = open(args['outputfile'], 'w')
-    substitutions = generate_subs()
+    substitutions = generate_subs(args['subfile'])
     begin_comment_pattern = re.compile(r'\\begin{comment}')
     end_comment_pattern = re.compile(r'\\end{comment}')
     is_comment = False
