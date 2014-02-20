@@ -10,37 +10,6 @@ def initialize_argument_parser():
             help='Where to store the outout', default='bbcode.txt') 
     return vars(parser.parse_args())
 
-def find_recursive_parens(text):
-    paren_pattern = re.compile(r'(\\\w+\{.*\})')
-    paren_search =  paren_pattern.search(text)
-    all_parens = list()
-    while paren_search:
-        paren_section = paren_search.group(1)
-        all_parens.append(identify_components(paren_section))
-        paren_search =  paren_pattern.search(all_parens[-1]['content'])
-    return all_parens
-        
-        
-def identify_components(paren_section):
-    #the name of the LaTeX tag
-    label = re.match(r'(.*?){', paren_section).group(1)
-    content = re.search('{(.+)}', paren_section).group(1)
-    return {'label': label, 'content': content}
-
-def generate_tags(tag_name):
-    return ['[{0}]'.format(tag_name), '[/{0}]'.format(tag_name)]
-
-def combine_tags(tag_name, content):
-    tags = generate_tags(tag_name)
-    return ''.join([tags[0], content, tags[1]])
-
-def translate_label(label, content):
-    return {
-            '\\parhead': combine_tags('b', content+':'),
-            '\\textbf': combine_tags('b', content),
-            '\\textit': combine_tags('i', content)
-            }[label]
-            
 def create_sub(pattern, replacement):
     return lambda x: re.sub(pattern, replacement, x)
 
@@ -87,9 +56,3 @@ if __name__=="__main__":
                 print "Uncaught LaTeX",  line
                 break
             outputfile.write(line)
-        #m = re.findall(r'(\{.*\})', line)
-        #all_parens = find_recursive_parens(line)
-        
-        #print all_parens
-        #for element in all_parens:
-        #    print translate_label(element['label'], element['content'])
