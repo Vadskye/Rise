@@ -58,9 +58,19 @@ if __name__ == "__main__":
             fighter = Creature.from_creature_name('ftr-heavy', i+1)
             npc = Creature.from_creature_name('npc', i+1)
             rogue = Creature.from_creature_name('rogue-single', i+1)
+
+            current_char = fighter
+            print i+1, current_char.dpr(generic_ac_calc[i]), current_char.dpr(
+                    generic_ac_calc[i])*1.075,
+            #current_char.attack_bonus.add_circumstance(-2-(i+1)/4)
+            current_char.attack_bonus.add_circumstance(1)
+            #current_char.attack_damage.add_circumstance(2+((i+1)/4)*2)
+            #current_char.attack_damage.add_circumstance(2)
+            #print i+1, current_char.hits_per_round(generic_ac_calc[i])
+            print current_char.dpr(generic_ac_calc[i])
             #print i+1, cleric.dpr(generic_ac_calc[i]), 'vs', npc.dpr(generic_ac_calc[i])
             #print i+1, compare_ac_to_reflex(barbarian)
-            #print rounds_survived(npc, fighter)
-            #print i+1, fighter.hp, (i+1)*5.5/2, fighter.hp/((i+1)*5.5/2)
+            #print rounds_survived(npc, current_char)
+            #print i+1, current_char.hp, (i+1)*5.5/2, current_char.hp/((i+1)*5.5/2)
             #print rounds_survived_generic(npc, i)
-            print i+1, fighter.cmd.total(), fighter.armor_class.get_normal()
+            #print i+1, current_char.cmd.total(), current_char.armor_class.get_normal()
