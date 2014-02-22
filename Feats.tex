@@ -107,7 +107,7 @@ purpose of this calculation. The minimum caster level to craft an item is always
 \thead{General Feats} & \thead{Prerequisites} & \thead{Benefit} \\
 %Brute Fortitude & \x & Use Str and half Con for Fortitute saves \\
 Combat Casting  & \x &  \plus2 bonus on Concentration checks to cast spells, reroll 1/day \\
-Endurance & \x &  Stay conscious longer against nonlethal damage \\
+Endurance & Con 3 & Convert damage to nonlethal damage \\
 Deathless & Con 5 or base Fortitude save \plus10 & Immune to death effects \\
 Diehard & Con 3 & Remain conscious after taking critical damage \\
 %Eschew Materials  & \x &  Cast spells without material components \\
@@ -206,7 +206,8 @@ Chargebreaker & Base attack bonus \plus4 & Gain \plus2 to attack and damage when
 Cleave & Str 3, base attack bonus \plus4 & Extra melee attack after dropping target & Power \\
 \tind Cleaving Stride & Str 3, base attack bonus \plus8, Cleave & Continue movement after dropping target & Power \\
 Combat Expertise & Int 3 & Trade attack bonus for AC & Defense, Style \\
-Contingent Attack & Int 5, base attack bonus \plus12 & Always have attack readied \\
+Contingent Attack & Int 5, base attack bonus \plus12 & Prepare to attack as immediate action & Reaction \\
+Counterstorm & Base attack bonus \plus16 & Foes that miss you provoke \\
 Covering Fire & \x & Targets struck by ranged attacks suffer attack penalties & Precision, Style \\
 Deadly Aim & Dex 3 & Trade ranged attack bonus for damage & Precision, Style \\
 Defensive Stance & Base attack bonus \plus4 & Trade ability to move for CMD & Defense, Style \\
@@ -378,7 +379,7 @@ Here is the format for feat descriptions.
 \parhead{Benefit} You get a \plus2 competence bonus on Concentration checks made to cast a spell or use a spell-like ability. In addition, once per day you may reroll a Concentration check made to cast a spell.
 
 \subsubsection{Deathless [General]}
-\featpre Constitution 5.
+\featpre Constitution 5 or base Fortitude save \plus10.
 \featben You become immune to death effects.
 
 \subsubsection{Diehard [General]}
@@ -703,7 +704,19 @@ Choose one category of armor: light, medium, heavy, or shields.
 
 \subsubsection{Contingent Attack [Combat, Reaction]}
 \featpre Int 5, base attack bonus \plus12
-\featben As a full-round action, you may concentrate to prepare a single attack as a contingent action. When you prepare a contingent action, you can choose any trigger, just as if you were readying an action. If the trigger occurs, you may take your contingent action as an immediate action.
+\featben As a full-round action, you may concentrate to prepare a single attack as a contingent action. You may choose any trigger for the contingent action.
+
+Contingent actions depend on a trigger condition. If the trigger condition occurs and you have a contingent action prepared, you may take the contingent action as an immediate action. A contingent action remains prepared until you rest.
+
+\subsubseection{Contingent Counter [Combat, Reaction]}
+\featpre Int 3, base attack bonus \plus8
+\featben As a full-round action, you may concentrate to prepare a single attack as a contingent action. The action triggers when an opponent misses you.
+
+Contingent actions depend on a trigger condition. If the trigger condition occurs and you have a contingent action prepared, you may take the contingent action as an immediate action. A contingent action remains prepared until you rest.
+
+\subsubsection{Counterstorm [Combat, Reaction, Style]}
+\featpre Base attack bonus \plus16
+\featben Whenever an opponent misses you with a melee attack, they provoke an attack of opportunity from you.
 
 \subsubsection{Deflect Arrows [Combat]}
 \parhead{Prerequisites} Dex 3, Improved Unarmed Strike.
@@ -716,7 +729,10 @@ Choose one category of armor: light, medium, heavy, or shields.
 \parhead{Benefit} You may designate an opponent as a free action. You receive a \plus4 circumstance bonus to your dodge modifier against attacks of opportunity from that opponent that were provoked by movement. In addition, you gain a \plus4 circumstance bonus to Acrobatics checks made to tumble against that opponent.
 
 \subsubsection{Endurance [General]}
-\parhead{Benefit} You do not become unconscious when your nonlethal damage exceeds your hit points. Your nonlethal damage must exceed double your current hit points before you suffer any ill effect. Also, you may sleep in light or medium armor without becoming fatigued.
+\featpre Con 3
+\parhead{Benefit} You convert the first two points of damage you take each round into nonlethal damage. You resist 1 additional point of damage per two levels. In addition, you may sleep in light or medium armor without becoming fatigued.
+
+This resistance is considered damage reduction for the purpose of abilities which overcome damage reduction. However, it is a separate ability, so it stacks with damage reduction.
 \parhead{Normal} A character without this feat who sleeps in medium or heavier armor is automatically fatigued the next day.
 \parhead{Special} A barbarian automatically gains Endurance as a bonus feat at 3rd level. He need not select it.
 
