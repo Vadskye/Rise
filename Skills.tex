@@ -300,7 +300,7 @@ A Sprint check allows you to move faster temporarily. A DC 15 Sprint check allow
 If you take a \minus10 penalty to your Sprint check, you are not fatigued after sprinting. You can sprint in any movement mode that you can use.
 
 \subsection{Bluff (Cha)}
-You can use Bluff to convince people that you are telling the truth. It is usually used when you are lying. Using a Bluff check is part of ordinary conversation, so it takes no action in itself.
+You can use Bluff to convince people that you are telling the truth. It is usually used when you are lying. Using a Bluff check is part of conversation, so it takes no action in itself.
 
 \subsubsection{False Impression}
 You can make a DC 15 Bluff check give others an incorrect impression of your attitude and thoughts. If you succeed, anyone who makes a DC 10 Sense Motive check receives whatever impression you wish to portray. If the creature's Sense Motive check exceeds your Bluff check, they recognize both the impression you intended to portray and your true attitude, and they can tell the difference.
@@ -322,30 +322,6 @@ Anyone witnessing the exchange must make a Sense Motive check against the same D
 \parhead{Check} A Bluff check is opposed by the target's Sense Motive check. See the accompanying tables for examples of different kinds of bluffs and the modifier to the target's Sense Motive check for each one. A successful Bluff check indicates that the target believes that you are telling the truth. A failed Bluff check usually indicates that the target is unconvinced. Failure by 5 or more means that they realize that you were intentionally lying.
 
 A bluff requires interaction between you and the target. Creatures unaware of you cannot be bluffed.
-
-\begin{dtable}
-  \lcaption{Believability Modifiers}
-  \begin{tabularx}{\columnwidth}{X l}
-    \thead{Description} & \thead{Sense Motive Modifier}  \\
-    Lie would normally be true (``Nothing interesting happened while I was on patrol'') & \minus5 \\
-    Plausible lie (``The mayor is too busy to see you now.'') & \plus0 \\
-    Unlikely lie (``The north gate is under attack!'') & \plus5 \\
-    Extremely unlikely lie (``The mayor is secretly a vampire.'') & \plus10 \\
-    Virtually impossible lie (``You are secretly a vampire.'') & \plus20 \\
-    Demonstratably untrue lie (``You are a frog.'') & \x\fn{1} \\
-  \end{tabularx}
-  1 A lie that is proven false can't work.
-\end{dtable}
-
-\begin{dtable}
-  \lcaption{Motivation Modifiers}
-  \begin{tabularx}{\columnwidth}{X l}
-    \thead{Description} & \thead{Sense Motive Modifier} \\
-    Target wants to believe the lie (``That dress looks lovely on you.'') & \minus5 \\
-    Target does not have strong feelings about the lie (``I'm busy.'') & \plus0 \\
-    Target doesn't want the lie to be true (``Your son is dead.'') & \plus5 \\
-  \end{tabularx}
-\end{dtable}
   
 \subsk{Creating a Diversion to Hide} You can use the Bluff skill to help you hide. A successful Bluff check gives you the momentary diversion you need to attempt a Hide check while people are aware of you. This usage does not provoke an attack of opportunity.
 
@@ -908,15 +884,48 @@ Each of the nine categories of the Perform skill includes a variety of methods, 
 \parhead{Try Again} Yes. Retries are allowed, but they don't negate previous failures, and an audience that has been unimpressed in the past is likely to be prejudiced against future performances. (Increase the DC by 2 for each previous failure.)
 
 \subsection{Persuasion (Cha)}
-Use this skill to persuade the chamberlain to let you see the king, to negotiate peace between feuding barbarian tribes, or to convince the ogre mages that have captured you that they should ransom you back to your friends instead of twisting your limbs off one by one.
+You can use Persuasion to convince people to do or think what you want. Depending on how it is used, it represents a combination of verbal acuity, tact, argumentative ability, grace, etiquette, and personal magnetism. Using a Persuasion check usually takes at least a minute of sustained conversation.
 
-Persuasion includes negotiation, etiquette, social grace, tact, subtlety, and a way with words. A skilled character knows the formal and informal rules of conduct, social expectations, proper forms of address, and so on. This skill represents the ability to give others the right impression of oneself, to negotiate effectively, and to influence others.
+Persuasion checks are usually made against a group. For the purposes of a Persuasion check, a ``group'' consists of creatures who consider themselves to be allies. For example, in a king's court, you cannot simply influence the king alone; his trusted advisors are also part of the same group. It is possible to influence one group without influencing another. For example, the king and his advisors may be unpersuaded, but the prince may find your arguments compelling. Groups can also consist of a single creature. The DM decides what the groups are.
 
-\parhead{Check} You can propose a trade or agreement to another creature with your words; a Persuasion check can then persuade them that accepting it is a good idea. Either side of the deal may involve physical goods, money, services, promises, or abstract concepts like ``satisfaction.'' The DC for the Persuasion check is based on three factors: who the target is, the relationship between the target and the character making the check, and the risk vs. reward factor of the deal proposed.
+The base DC for a Persuasion check against a group is equal to 10 \add the highest level of any character in the group \add the highest Wisdom of any character in the group.
 
-\par The base DC for any Persuasion check is equal to 10 \add the level of the highest-level character in the group that you are trying to influence \add the Wisdom of the character in the group with the highest Wisdom. If your offer has no risk and no possible downside to the target (such when as asking for directions, in most situations), the base DC is simply 10 instead.
+\subsubsection{Compel Belief}
+You can make a Persuasion check to cause creatures to believe something you say. If you are lying, you must also make a Bluff check to lie. Success indicates that group believes what you are saying is true. What they choose to do with that information is up to them, however. Failure by less than 10 indicates that they do not believe you, but they do not react poorly; perhaps they simply want more verification. You may be able to try again, depending on their patientce. Failure by 10 or more indicates that the group reacts poorly, and you may have permanently damaged your credibility with them.
 
-\par If you are going to lie about the offer, make a Bluff check in addition to the Persuasion check. If the Bluff check fails, the Persuasion check automatically fails, as the target recognizes your offer is not genuine.
+Your check is modified by how believable your argument is, as well as whether the group has has strong feelings about the truth of your story.
+
+\begin{dtable}
+  \lcaption{Believability Modifiers}
+  \begin{tabularx}{\columnwidth}{X l}
+    \thead{Description} & \thead{DC Modifier}  \\
+    Expected to be true & (``Nothing interesting happened while I was on patrol'') & \minus5 \\
+    Plausible (``The mayor is too busy to see you now.'') & \plus0 \\
+    Unlikely (``The north gate is under attack!'') & \plus5 \\
+    Extremely unlikely (``The mayor is secretly a vampire.'') & \plus10 \\
+    Virtually impossible (``You are secretly a vampire.'') & \plus20 \\
+    Demonstratably untrue (``You are a frog.'') & \x\fn{1} \\
+  \end{tabularx}
+  1 You cannot convince someone of something that is proven to be false.
+\end{dtable}
+
+\begin{dtable}
+  \lcaption{Motivation Modifiers}
+  \begin{tabularx}{\columnwidth}{X l}
+    \thead{Description} & \thead{DC Modifier} \\
+    Target wants to believe (``That dress looks lovely on you.'') & \minus5 \\
+    Target does not have strong feelings (``I'm busy.'') & \plus0 \\
+    Target doesn't want the story to be true (``Your brother is a murderer.'') & \plus5 \\
+  \end{tabularx}
+\end{dtable}
+
+\subsubsection{Form Agreement}
+You can make a Persuasion check to convince a group to accept a deal you offer. This can be used to persuade the chamberlain to let you see the king, to negotiate peace between feuding barbarian tribes, or to convince the ogre mages that have captured you that they should ransom you back to your friends instead of twisting your limbs off one by one.
+
+Success indicates that the group will fulfill their end of the deal. Of course, if you don't fulfill your part, they are likely to react poorly. Failure by less than 10 indicates that they did not accept the deal, but they may propose an alternate arrangement, or you can propose another deal without penalty. Failure by 10 or more means that there is virtually no chance to reach an agreement, and the group may become hostile or take other steps to end the conversation. They may have been insulted by how unfair the deal was, or you may have made a critical verbal misstep.
+
+Your check is modified by your relationship with the group and how favorable the deal is.
+
 \begin{dtable}
 \begin{tabularx}{\columnwidth}{>{\lcol}X r}
 \thead{Relationship} & \thead{Modifier} \\
@@ -949,15 +958,11 @@ Bad: The reward is poor and the risk is high. The subject is very likely to get 
 Horrible: There is no conceivable way that the proposed plan could end up with the subject ahead or the worst-case scenario is guaranteed to occur. Example: An offer to trade a rusty kitchen knife for a shiny new longsword. & \plus15 \\
 \end{tabularx}
 \end{dtable*}
-\parhead{Success or Failure} If the Persuasion check beats the DC, the subject accepts the proposal, with no changes or with minor (mostly idiosyncratic) changes. If the check fails by 5 or less, the subject does not accept the deal but may, at the DM's option, present a counter-offer that would push the deal up one place on the risk-vs.-reward list. For example, a counter-offer might make an Even deal Favorable for the subject. The character who made the Persuasion check can simply accept the counter-offer, if they choose; no further check will be required. If the check fails by 10 or more, the Persuasion is over; the subject will entertain no further deals, and may become hostile or take other steps to end the conversation.
 
-\subsk{Gather Information} An evening's time, a few gold pieces for buying drinks and making friends, and a DC 10 Persuasion check get you a general idea of a city's major news items, assuming there are no obvious reasons why the information would be withheld. The higher your check result, the better the information.
+\subsubsection{Gather Information}
+An evening's time, a few gold pieces for buying drinks and making friends, and a DC 10 Persuasion check get you a general idea of a city's major news items, assuming there are no obvious reasons why the information would be withheld. The higher your check result, the better the information.
 
 If you want to find out about a specific rumor, or a specific item, or obtain a map, or do something else along those lines, the DC for the check is 15 to 25, or even higher.
-
-\parhead{Action} Influencing others with Persuasion generally takes at least 1 full minute. In many situations, this time requirement may greatly increase. A rushed Persuasion check (such as an attempt to head off a fight between two angry warriors) can be made as a full-round action, but you take a \minus10 penalty on the check. Gathering information generally takes d4 hours.
-
-\parhead{Try Again} If you alter the parameters of the deal you are proposing, you may try to convince the subject that this new deal is even better than the last one. This is essentially how people haggle. As long as you never fail the Persuasion check by 10 or more, you can continue to offer deals.
 
 \subsection{Profession (Wis; Trained Only)}
 Like Craft, Knowledge, and Perform, Profession is actually a number of separate skills. You could have several Profession skills, each with its own ranks, each purchased as a separate skill. While a Craft skill represents ability in creating or making an item, a Profession skill represents an aptitude in a vocation requiring a broader range of less specific knowledge.
