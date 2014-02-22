@@ -108,17 +108,19 @@ purpose of this calculation. The minimum caster level to craft an item is always
 %Brute Fortitude & \x & Use Str and half Con for Fortitute saves \\
 Combat Casting  & \x &  \plus2 bonus on Concentration checks to cast spells, reroll 1/day \\
 Endurance & \x &  Stay conscious longer against nonlethal damage \\
-Deathless & Con 5 & Immune to death effects \\
+Deathless & Con 5 or base Fortitude save \plus10 & Immune to death effects \\
 Diehard & Con 3 & Remain conscious after taking critical damage \\
 %Eschew Materials  & \x &  Cast spells without material components \\
 %Force of Intellect & \x & Use Int and half Cha for Will saves \\
-Fearless & Cha 3 or base Will save \plus6 & Immune to fear and hostile morale effects \\
+Fearless & Cha 5 or base Will save \plus10 & Immune to fear and hostile morale effects \\
 Great Fortitude  & \x &  \plus2 bonus on Fortitude saves, reroll 1/day \\
 Improved Counterspell  & \x &  Counterspell with spell of same school \\
 %Intuitive Reflexes & \x & Use Wis and half Dex for Reflex saves \\
 Iron Will  & \x &  \plus2 bonus on Will saves, reroll 1/day \\
 Lightning Reflexes  & \x &  \plus2 bonus on Reflex saves, reroll 1/day \\
 Magical Synthesis & Levels in two magical classes & Gain magic levels in two magical classes at once \\
+Mental Fortress & Cha 9 or base Will save \plus18 & Immune to hostile mind-affecting effects \\
+Perfect Health & Con 3 or base Fortitude save \plus6 & Immune to disease, later poison \\
 Rapid Metamagic & Spellcraft 8 ranks, ability to cast spells, one metamagic feat & Apply metamagic effects more quickly \\
 Retributive Counterspell & Ability to cast 4th level spells & Countered spells rebound on original caster \\
 Ritual Caster & Int 3 & Gain ability to perform rituals \\
@@ -203,6 +205,7 @@ Chargebreaker & Base attack bonus \plus4 & Gain \plus2 to attack and damage when
 Cleave & Str 3, base attack bonus \plus4 & Extra melee attack after dropping target & Power \\
 \tind Cleaving Stride & Str 3, base attack bonus \plus8, Cleave & Continue movement after dropping target & Power \\
 Combat Expertise & Int 3 & Trade attack bonus for AC & Defense, Style \\
+Combat Prowess & Base attack bonus \plus8 & Gain \plus1 bonus with all attacks \\
 Covering Fire & \x & Targets struck by ranged attacks suffer attack penalties & Precision, Style \\
 Deadly Aim & Dex 3 & Trade ranged attack bonus for damage & Precision, Style \\
 Defensive Stance & Base attack bonus \plus4 & Trade ability to move for CMD & Defense, Style \\
@@ -411,7 +414,7 @@ Here is the format for feat descriptions.
 \parhead{Benefit} You gain three extra uses of your wild aspect ability.
 
 \subsubsection{Fearless [General]}
-\featpre Charisma 3 or base Will save \plus6.
+\featpre Charisma 5 or base Will save \plus10.
 \featben You are immune to fear effects and hostile morale effects.
 
 \subsubsection{Great Fortitude [General]}
@@ -439,6 +442,14 @@ Here is the format for feat descriptions.
 Choose two magical classes you possess.
 \parhead{Prerequisites} Levels in two magical classes.
 \parhead{Benefit} When gaining levels in either of your chosen classes, you gain magic levels in the other class as if the class you are gaining levels in did not progress your magic level. See \pcref{Magic Level and Multiclassing}.
+
+\subsubsection{Mental Fortress [General]}
+\featpre Charisma 9 or base Will save \plus18.
+\featben You become immune to hostile mind-affecting effects.
+
+\subsubsection{Perfect Health [General]}
+\featpre Constitution 3 or base Fortitude save \plus6.
+\featben You become immune to disease. If you have a Constitution of 7 or a base Fortitude save of \plus14, you also become immune to poison.
 
 \subsubsection{Rapid Metamagic [General]}
 \parhead{Prerequisites} Spellcraft 8 ranks, ability to cast spells, one metamagic feat
@@ -681,7 +692,7 @@ Choose one category of armor: light, medium, heavy, or shields.
 
 \subsubsection{Combat Prowess [Combat]}
 \featpre Base attack bonus \plus8.
-\featben You gain a \plus1 competence bonus to attack and damage.
+\featben You gain a \plus1 competence bonus to attack.
 
 \subsubsection{Deflect Arrows [Combat]}
 \parhead{Prerequisites} Dex 3, Improved Unarmed Strike.
