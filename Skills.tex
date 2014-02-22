@@ -201,9 +201,14 @@ The skill name line includes (in addition to the name of the skill) the followin
 \parhead{Untrained} This entry indicates what a character without at least 1 skill point in the skill can do with it. If this entry doesn't appear, it means that the skill functions normally for untrained characters (if it can be used untrained) or that an untrained character can't attempt checks with this skill (for skills that are designated as ``Trained Only'').
 
 \subsection{Acrobatics (Dex; Armor Check Penalty)}
-The Acrobatics skill can be used for two purposes: balancing and tumbling. These are not different skills, but merely different applications of the same skill.
+Acrobatics represents your agility and coordination. All Acrobatics checks are made as part of movement, so they require no special action to perform.
+
 \subsubsection{Balance}
-\parhead{Check} You can walk on a precarious surface. A successful check lets you move at half your speed along the surface for 1 round. A failure by 4 or less means your action is wasted, and you don't move. A failure by 5 or more means you fall. The difficulty varies with the surface, as follows.
+You can make a Acrobatics check to move safely on a precarious surface. Success means you move along the surface at half speed. Failure by less than 5 means your action is wasted, and you do not move. Failure by 5 or more means you fall.
+
+You are flat-footed while balancing, since you can't move to avoid a blow. If you take damage while balancing, you must make another Balance check against the same DC to remain standing. If you take a \minus5 penalty, you can defend yourself normally while balancing. Accepting a \minus5 penalty can also allow you to move at full speed while balancing.
+
+The DC varies with the surface, as follows.
 
 \begin{itemize*}
   \item Uneven floor (flagstones, sloped floor): DC 10. This only applise when running or charging. Failure means you lose a move action (and possibly fall), but you can still take a standard action.
@@ -213,13 +218,13 @@ The Acrobatics skill can be used for two purposes: balancing and tumbling. These
   \item One inch wide: DC 20. Halving the width of the surface further increases the DC by 5 each time.
 \end{itemize*}
 
-\subsk{Being Attacked while Balancing} You are considered flat-footed while balancing, since you can't move to avoid a blow. If you take damage or are forced to move while balancing, you must make another Acrobatics check against the same DC to remain standing.
-
 \subsubsection{Tumble}
-You can only attempt to tumble if you are trained in Acrobatics.
-\parhead{Check} You can tumble past opponents in combat to reduce your odds of getting hit. You can tumble at one-half your normal speed as part of normal movement. If you do, make an Acrobatics check. You may treat your check result as your Armor Class against attacks of opportunity provoked by the movement.
+If you are trained in Acrobatics, you can tumble past opponents in combat to reduce your odds of being hit. You can tumble as part of normal movement. If you do, you move at half speed and make an Acrobatics check. You may treat your check result as your Armor Class against attacks of opportunity provoked by the movement.
 
-You can also try to tumble to reduce falling damage as an immediate action. A DC 10 check allows you to treat a fall as if it were 10 feet shorter. For every 5 by which you beat that DC, you double the length of the fall that you can mitigate.
+If you accept a \minus10 penalty, you can move at full speed while tumbling. If you accept a \minus20 penalty, you can tumble while running or charging.
+
+\subsubsection{Mitigate Fall}
+As you hit the ground after a fall, you can make an Acrobatics check to reduce falling damage. A DC 15 check allows you to treat a fall as if it were 10 feet shorter. For every 10 by which you beat that DC, you can reduce the falling damage by 10 additional feet.
 
 \subsubsection{Acrobatics Modifiers}
 Obstructed or otherwise treacherous surfaces, such as natural cavern floors or undergrowth, are tough to balance or tumble through. The DC for any Acrobatics check in such a square (except checks to mitigate falling damage) is modified as indicated below.
@@ -237,15 +242,8 @@ Very mobile (slack rope) & \plus5 \\
 \end{tabularx}
 \end{dtable}
 
-\subsk{Accelerated Movement} You can try to move more quickly than normal. You take a \minus5 penalty on the Acrobatics check, and failure by any amount on a balance check means you fall. If you succeed, you move at full speed instead of at half speed.
-
-\parhead{Action} Balancing and tumbling are a part of movement, so an Acrobatics check is made as part of a move action. Reducing damage from a fall is an immediate action.
-
-\parhead{Try Again} Varies. You can continue trying to balance on a precarious surface as long as you remain on the surface. You can try to reduce damage from a fall only once per fall.
-
-
 \subsection{Athletics (Str; Armor Check Penalty)}
-Athletics includes running, jumping, and general athleticism. All Athletics checks are made as part of movement, so they take no action in themselves.
+Athletics includes running, jumping, and general athleticism. All Athletics checks are made as part of movement, so they take no special action to perform.
 
 \subsubsection{Long Jump}
 When you make a long jump, choose a DC. You jump forward by a number of feet equal to your check result, to a maximum of the DC you chose. At the midpoint of the jump, you achieve a height equal to a quarter of that distance. If you fail by 5 or more, you fall prone after making the jump. If a failed jump would cause you to fall into a gap, you can make a DC 20 Climb check to catch the edge of the gap, provided you can reach it. 
@@ -265,7 +263,7 @@ Distance moved by jumping is counted against your normal maximum movement in a r
 
 \subsk{High Jump} A high jump is a vertical leap made to reach a ledge high above or to grasp something overhead. The DC is equal to 4 times the distance to be cleared.
 
-If you jumped up to grab something, a successful check indicates that you reached the desired height. If you wish to pull yourself up, you can do so with a move action and a DC 15 Climb check. If you fail the Jump check, you do not reach the height, and you land on your feet in the same spot from which you jumped. As with a long jump, the DC is doubled if you do not get a running start of at least 20 feet.
+If you jumped up to grab something, a successful check means you reached the desired height. If you wish to pull yourself up, you can do so with a move action and a DC 15 Climb check. If you fail the Jump check, you do not reach the height, and you land on your feet in the same spot from which you jumped. As with a long jump, the DC is doubled if you do not get a running start of at least 20 feet.
 
 Obviously, the difficulty of reaching a given height varies according to the size of the character or creature. The maximum vertical reach (height the creature can reach without jumping) for an average creature of a given size is shown on the table below. (As a Medium creature, a typical human can reach 8 feet without jumping.) The maximum vertical reach for an individual creature is usually given by the 1 and 1/2 times the creature's height.
 
@@ -300,7 +298,7 @@ A Sprint check allows you to move faster temporarily. A DC 15 Sprint check allow
 If you take a \minus10 penalty to your Sprint check, you are not fatigued after sprinting. You can sprint in any movement mode that you can use.
 
 \subsection{Bluff (Cha)}
-You can use Bluff to convince people that you are telling the truth. It is usually used when you are lying. Using a Bluff check is part of conversation, so it takes no action in itself. You cannot normally take 10 on Bluff checks.
+You can use Bluff to convince people that you are telling the truth. It is usually used when you are lying. Using a Bluff check is part of conversation, so it requires no special action to perform. You cannot normally take 10 on Bluff checks.
 
 \subsubsection{False Impression}
 You can make a DC 15 Bluff check give others an incorrect impression of your attitude and thoughts. If you succeed, anyone who makes a DC 10 Sense Motive check receives whatever impression you wish to portray. If the creature's Sense Motive check exceeds your Bluff check, they recognize both the impression you intended to portray and your true attitude, and they can tell the difference.
@@ -319,7 +317,7 @@ You can make a Bluff check to attempt to convey a hidden message to another char
 Anyone witnessing the exchange must make a Sense Motive check against the same DC to identify the hidden message. Creatures who know how the message will be conveyed -- normally, the intended recipient -- receive a \plus10 bonus on this check. Exceptionally conplex hidden message systems may grant a bonus greater than \plus10.
 
 \begin{comment}
-\parhead{Check} A Bluff check is opposed by the target's Sense Motive check. See the accompanying tables for examples of different kinds of bluffs and the modifier to the target's Sense Motive check for each one. A successful Bluff check indicates that the target believes that you are telling the truth. A failed Bluff check usually indicates that the target is unconvinced. Failure by 5 or more means that they realize that you were intentionally lying.
+\parhead{Check} A Bluff check is opposed by the target's Sense Motive check. See the accompanying tables for examples of different kinds of bluffs and the modifier to the target's Sense Motive check for each one. A successful Bluff check means the target believes that you are telling the truth. A failed Bluff check usually means the target is unconvinced. Failure by 5 or more means that they realize that you were intentionally lying.
 
 A bluff requires interaction between you and the target. Creatures unaware of you cannot be bluffed.
   
@@ -396,7 +394,7 @@ Any time you take damage while climbing, make a Climb check against the DC of th
 
 \subsk{Catching Yourself When Falling} It's practically impossible to catch yourself on a wall while falling. Make a Climb check (DC = wall's DC \add 20) to do so. It's much easier to catch yourself on a slope (DC = slope's DC \add 10).
 
-\subsk{Catching a Falling Character While Climbing} If someone climbing above you or adjacent to you falls, you can attempt to catch the falling character if he or she is within your reach. Doing so requires a successful melee touch attack against the falling character (though he or she can voluntarily act flat-footed if desired). If you hit, you must immediately attempt a Climb check (DC = wall's DC \add 10). Success indicates that you catch the falling character, but his or her total weight, including equipment, cannot exceed your heavy load limit or you automatically fall. If you fail your Climb check by 4 or less, you fail to stop the character's fall but don't lose your grip on the wall. If you fail by 5 or more, you fail to stop the character's fall and begin falling as well.
+\subsk{Catching a Falling Character While Climbing} If someone climbing above you or adjacent to you falls, you can attempt to catch the falling character if he or she is within your reach. Doing so requires a successful melee touch attack against the falling character (though he or she can voluntarily act flat-footed if desired). If you hit, you must immediately attempt a Climb check (DC = wall's DC \add 10). Success means you catch the falling character, but his or her total weight, including equipment, cannot exceed your heavy load limit or you automatically fall. If you fail your Climb check by 4 or less, you fail to stop the character's fall but don't lose your grip on the wall. If you fail by 5 or more, you fail to stop the character's fall and begin falling as well.
 
 \parhead{Action} Climbing is a kind of movement, so it's generally a move action. Each move action that includes any climbing requires a separate Climb check. Catching yourself or another falling character doesn't take an action.
 
@@ -891,7 +889,7 @@ Persuasion checks are usually made against a group. For the purposes of a Persua
 The base DC for a Persuasion check against a group is equal to 10 \add the highest level of any character in the group \add the highest Wisdom of any character in the group.
 
 \subsubsection{Compel Belief}
-You can make a Persuasion check to cause creatures to believe something you say. If you are lying, you must also make a Bluff check to lie. Success indicates that group believes what you are saying is true. What they choose to do with that information is up to them, however. Failure by less than 10 indicates that they do not believe you, but they do not react poorly; perhaps they simply want more verification. You may be able to try again, depending on their patientce. Failure by 10 or more indicates that the group reacts poorly, and you may have permanently damaged your credibility with them.
+You can make a Persuasion check to cause creatures to believe something you say. If you are lying, you must also make a Bluff check to lie. Success means the group believes what you are saying is true. What they choose to do with that information is up to them, however. Failure by less than 10 means they do not believe you, but they do not react poorly; perhaps they simply want more verification. You may be able to try again, depending on their patientce. Failure by 10 or more means the group reacts poorly, and you may have permanently damaged your credibility with them.
 
 Your check is modified by how believable your argument is, as well as whether the group has has strong feelings about the truth of your story.
 
@@ -922,7 +920,7 @@ Your check is modified by how believable your argument is, as well as whether th
 \subsubsection{Form Agreement}
 You can make a Persuasion check to convince a group to accept a deal you offer. This can be used to persuade the chamberlain to let you see the king, to negotiate peace between feuding barbarian tribes, or to convince the ogre mages that have captured you that they should ransom you back to your friends instead of twisting your limbs off one by one.
 
-Success indicates that the group will fulfill their end of the deal. Of course, if you don't fulfill your part, they are likely to react poorly. Failure by less than 10 indicates that they did not accept the deal, but they may propose an alternate arrangement, or you can propose another deal without penalty. Failure by 10 or more means that there is virtually no chance to reach an agreement, and the group may become hostile or take other steps to end the conversation. They may have been insulted by how unfair the deal was, or you may have made a critical verbal misstep.
+Success means the group will fulfill their end of the deal. Of course, if you don't fulfill your part, they are likely to react poorly. Failure by less than 10 means they did not accept the deal, but they may propose an alternate arrangement, or you can propose another deal without penalty. Failure by 10 or more means that there is virtually no chance to reach an agreement, and the group may become hostile or take other steps to end the conversation. They may have been insulted by how unfair the deal was, or you may have made a critical verbal misstep.
 
 Your check is modified by your relationship with the group and how favorable the deal is.
 
@@ -1213,9 +1211,9 @@ Varies & Bind a character
 
 \subsk{Secure a Grappling Hook} Securing a grappling hook requires a Use
 Rope check (DC 10, \plus2 for every 10 feet of distance the grappling
-hook is thrown, to a maximum DC of 20 at 50 feet). Failure by 4 or less indicates that the grappling hook
+hook is thrown, to a maximum DC of 20 at 50 feet). Failure by 4 or less means the grappling hook
 initially holds, but comes loose after 1d4 rounds of supporting
-weight. Failure by 5 or more indicates that the hook fails to catch and falls, allowing you to
+weight. Failure by 5 or more means the hook fails to catch and falls, allowing you to
 try again.  Your DM should make this check secretly, so that you don't
 know whether the rope will hold your weight.
 \subsk{Bind a Character} When you bind another character with a rope,
