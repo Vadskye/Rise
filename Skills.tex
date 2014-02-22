@@ -245,56 +245,27 @@ Very mobile (slack rope) & \plus5 \\
 
 
 \subsection{Athletics (Str; Armor Check Penalty)}
-Athletics includes running, jumping, and general athleticism.
+Athletics includes running, jumping, and general athleticism. All Athletics checks are made as part of movement, so they take no action in themselves.
 
-\subsubsection{Jump}
+\subsubsection{Long Jump}
+When you make a long jump, choose a DC. You jump forward by a number of feet equal to your check result, to a maximum of the DC you chose. At the midpoint of the jump, you achieve a height equal to a quarter of that distance. If you fail by 5 or more, you fall prone after making the jump. If a failed jump would cause you to fall into a gap, you can make a DC 20 Climb check to catch the edge of the gap, provided you can reach it. 
 
-A Jump check allows you to jump. The DC depends on the type of jump you are attempting (see below).
+A long jump assumes you have a running start, which requires that you move at least 20 feet in a straight line before attempting the jump. If you do not get a running start, your check result is halved.
 
-Your Jump check is modified by your speed. If your speed is 30 feet then no modifier based on speed applies to the check. If your speed is less than 30 feet, you take a \minus6 penalty for every 10 feet of speed less than 30 feet. If your speed is greater than 30 feet, you gain a \plus4 bonus for every 10 feet beyond 30 feet.
-
-All Jump DCs given here assume that you get a running start, which requires that you move at least 20 feet in a straight line before attempting the jump. If you do not get a running start, the DC for the jump is doubled.
+A long jump is modified by your speed. You gain a \plus2 bonus per 5 feet faster than 30 feet, or a \minus3 penalty per 5 feet slower than 30 feet.
 
 Distance moved by jumping is counted against your normal maximum movement in a round.
 
-If you have ranks in Jump and you succeed on a Jump check, you land on your feet (when appropriate). If you attempt a Jump check untrained, you land prone unless you beat the DC by 5 or more.
+\subsubsection{High Jump}
+When you make a high jump, choose a DC. You move forward by an amount to a quarter of to your check result, to a maximum of a quarter of the DC. At the midpoint of the jump, you gain a height equal to that distance. If you fail by 5 or more, you land prone after making the jump.
 
-\subsk{Long Jump} A long jump is a horizontal jump, made across a gap like a chasm or stream. At the midpoint of the jump, you attain a vertical height equal to one-quarter of the horizontal distance. The DC for the jump is equal to the distance jumped (in feet).
+A high jump assumes you have a running start, which requires that you move at least 20 feet in a straight line before attempting the jump. If you do not get a running start, your check result is halved, and you do not move forward.
 
-If your check succeeds, you land on your feet at the far end. If you fail the check by less than 5, you don't clear the distance, but you can make a DC 15 Reflex save to grab the far edge of the gap. You end your movement grasping the far edge. If that leaves you dangling over a chasm or gap, getting up requires a move action and a DC 15 Climb check.
-
-\begin{dtable}
-\begin{tabularx}{\columnwidth}{>{\lcol}X >{\lcol}X}
-\thead{Long Jump Distance} & \thead{Jump DC\footnotetemp{1}} \\
-5 feet & 5 \\
-10 feet & 10 \\
-15 feet & 15 \\
-20 feet & 20 \\
-25 feet & 25 \\
-30 feet & 30 \\
-\end{tabularx}
-1 Requires a 20-foot running start. Without a running start, double the DC.
-\end{dtable}
+Distance moved by jumping is counted against your normal maximum movement in a round.
 
 \subsk{High Jump} A high jump is a vertical leap made to reach a ledge high above or to grasp something overhead. The DC is equal to 4 times the distance to be cleared.
 
 If you jumped up to grab something, a successful check indicates that you reached the desired height. If you wish to pull yourself up, you can do so with a move action and a DC 15 Climb check. If you fail the Jump check, you do not reach the height, and you land on your feet in the same spot from which you jumped. As with a long jump, the DC is doubled if you do not get a running start of at least 20 feet.
-
-\begin{dtable}
-\begin{tabularx}{\columnwidth}{>{\lcol}X >{\lcol}X}
-\thead{High Jump Distance\footnotetemp{1}}  & \thead{Jump DC\footnotetemp{2}} \\
-1 foot  & 4 \\
-2 feet  & 8 \\
-3 feet  & 12 \\
-4 feet  & 16 \\
-5 feet  & 20 \\
-6 feet  & 24 \\
-7 feet  & 28 \\
-8 feet  & 32 \\
-\end{tabularx}
-1 Not including vertical reach; see below.
-2 Requires a 20-foot running start. Without a running start, double the DC.
-\end{dtable}
 
 Obviously, the difficulty of reaching a given height varies according to the size of the character or creature. The maximum vertical reach (height the creature can reach without jumping) for an average creature of a given size is shown on the table below. (As a Medium creature, a typical human can reach 8 feet without jumping.) The maximum vertical reach for an individual creature is usually given by the 1 and 1/2 times the creature's height.
 
@@ -315,29 +286,21 @@ Fine  & 1/2 ft.
 \end{tabularx}
 \end{dtable}
 
-\subsk{Hop Up} You can jump up onto an object as tall as your waist, such as a table or small boulder, with a DC 10 Jump check. Doing so counts as 10 feet of movement, so if your speed is 30 feet, you could move 20 feet, then hop up onto a counter. You do not need to get a running start to hop up, so the DC is not doubled if you do not get a running start.
+\subsubsection{Hop Up}
+You can jump up onto an object as tall as your waist, such as a table or small boulder, with a DC 10 Athletics check. Doing so counts as 5 feet of movement, so if your speed is 30 feet, you could move 25 feet, then hop up onto a counter. You do not need to get a running start to hop up.
 
-\subsk{Jumping Down} If you intentionally jump from a height, you take less damage than you would if you just fell. The DC to jump down from a height is 15. You do not have to get a running start to jump down, so the DC is not doubled if you do not get a running start.
-
-If you succeed on the check, you take falling damage as if you had dropped 10 fewer feet than you actually did.
-
-\parhead{Action} None. A Jump check is included in your movement, so it is part of a move action. If you run out of movement mid-jump, your next action (either on this turn or, if necessary, on your next turn) must be a move action to complete the jump.
-
-\parhead{Special} Effects that increase your movement also increase your jumping distance, since your check is modified by your speed.
+\subsubsection{Jump Down}
+If you make a DC 15 Athletics check to intentionally jump down from a height, you take falling damage as if you had dropped 10 fewer feet than you actually did.
 
 \subsubsection{Sprint}
 
 %If your Sprint check exceeds your Fortitude defense, you are fatigued?
-A Sprint check allows you to move faster temporarily. A DC 15 Sprint check allows you to treat your speed as if it were 5 feet faster for 1 round. For every 5 points by which you beat that DC, you increase your speed by an additional 5 feet. After sprinting, you are fatigued for 1 round (until the end of your next turn), making you vulnerable. While vulnerable, you take a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
+A Sprint check allows you to move faster temporarily. A DC 15 Sprint check allows you to treat your speed as if it were 5 feet faster for 1 round. For every 5 points by which you beat that DC, you can increase your speed by an additional 5 feet. After sprinting, you are fatigued for 1 round (until the end of your next turn), making you vulnerable. While vulnerable, you take a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
 
-If you take a \minus10 penalty to your Sprint check, you are not fatigued after sprinting.
-
-You can sprint in any movement mode that you can use.
-
-\parhead{Action} None. A Sprint check is included in your movement, so it is part of a move action.
+If you take a \minus10 penalty to your Sprint check, you are not fatigued after sprinting. You can sprint in any movement mode that you can use.
 
 \subsection{Bluff (Cha)}
-You can use Bluff to convince people that you are telling the truth. It is usually used when you are lying.
+You can use Bluff to convince people that you are telling the truth. It is usually used when you are lying. Using a Bluff check is part of ordinary conversation, so it takes no action in itself.
 
 \parhead{Check} A Bluff check is opposed by the target's Sense Motive check. See the accompanying tables for examples of different kinds of bluffs and the modifier to the target's Sense Motive check for each one. A successful Bluff check indicates that the target believes that you are telling the truth. A failed Bluff check usually indicates that the target is unconvinced. Failure by 5 or more means that they realize that you were intentionally lying.
 
