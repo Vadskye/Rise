@@ -394,9 +394,12 @@ Like Knowledge, Perform, and Profession, Craft is actually a number of separate 
 
 A Craft skill is specifically focused on physical objects. If nothing can be created by an endeavor, it probably falls under the heading of a Profession skill. Complex structures, such as buildings or siege engines, may require Knowledge (engineering) in addition to an appropriate Craft skill.
 
-\parhead{Check} Craft can be used for several purposes. The most important check is to make an item of the appropriate type. The DC depends on the complexity of the item to be created. Your check result and the price of the item determine how long it takes to make a particular item. The item's finished price also determines the cost of raw materials.
+\subsubsection{Create Item}
+You can use the Craft skill to create an item by expending time and material components. Creating an item often requires multiple consecutive Craft checks. Success on a check means you make progress on completing the item. If you make enough progress, you complete the item. Failure by less than 5 means you failed to make progress, but can try again without penalty. Failure by 5 or more means you botched the item, and negating all progress and ruining half of the material components. You can start again from scratch with your remaining components.
 
-All crafts require artisan's tools to give the best chance of success. If improvised tools are used, the check may be made with a penalty, or may be impossible, depending on the tools available and the item to be crafted. For example, crafting a bow with improvised woodworking tools would impose a \minus2 penalty, but cutting a diamond without specialized tools is impossible.
+Each item takes a certain amount of working time to craft, as shown on \tref{Crafting Time}, and the expenditure of one quarter of the item's price in raw materials. In order to craft an item, you must make a Craft check against the item's Craft DC, as shown on \trefnp{Craft DCs}. If you succeed, you make progress on the item based on how long you spend crafting. For every 5 points by which you beat the Craft check, you accomplish twice as much work in the same amount of time. Once your total effective working time exceeds the time required to craft the item, you have finished the item.
+
+All crafts require artisan's tools to give the best chance of success. If improvised tools are used, the check may be made with a penalty, or may be impossible, depending on the tools available and the item to be crafted. For example, crafting a bow with improvised woodworking tools would impose a \minus2 penalty, but cutting a diamond without specialized tools is impossible. Note that raw materials for some items, particularly alchemical items, may be hard to come by in some areas. A typical day's work consists of 8 hours of work.
 
 \begin{comment}
 To determine the time required to craft an item, consult the table below.
@@ -404,27 +407,17 @@ To determine the time required to craft an item, consult the table below.
   \lcaption{Crafting Time}
   \begin{tabularx}{\columnwidth}{l X}
     \thead{Item Price} & \thead{Crafting Time} \\
-    1gp or less & 1 hour per sp (minimum 1 hour) \\
-    10gp or less & 1 day per 2 gp (minimum 1 day) \\
-    100gp or less & 5 days \add 1 day per 4 gp \\
-    1000gp or less & 30 days \add 1 day per 100 gp \\
+    1gp or less & One hour \\
+    10gp or less & Eight hours \\
+    100gp or less & One week\fn{1} \\
+    500gp or less & One month\fn{1} \\
+    1000gp or less & Two months\fn{1} \\
   \end{tabularx}
+  1 Assuming 8 hours of work each day.
 \end{dtable*}
-\end{comment}
-
-Each item takes a certain amount of working time to craft, as shown on \tref{Crafting Time}, and the expenditure of one quarter of the item's price in raw materials. In order to craft an item, you must make a Craft check against the item's Craft DC. If you succeed, you make progress on the item based on how long you spend crafting. For every 5 points by which you beat the Craft check, you accomplish twice as much work in the same amount of time. Once your total effective working time exceeds the time required to craft the item, you have finished the item.
-
-If you fail a check by 4 or less, you make no progress that day. If you fail by 5 or more, you ruin the raw materials and have to pay the cost again.
-
-Note that raw materials for some items, particularly alchemical items, may be hard to come by in some areas. A typical day's work consists of 8 hours of work.
-
-\subsk{Repairing Items} Generally, you can repair an item by making checks against the same DC that it took to make the item in the first place. The cost of repairing an item is one-tenth of the item's price.
-
-\subsk{Other Tasks} You can also use the Craft skill for other tasks related to the object of your craft. For example, you could use Craft (woodworking) to sabotage a wagon so it will break at a later time, or Craft (alchemy) to purify spoiled food or ingredients. The DCs of such tasks, and what can be accomplished, can vary widely. In general, the more difficult the task, and the more loosely it is related to the skill, the higher the DC. 
-
-\subsk{Craft DCs} When you use the Craft skill to make a particular sort of item, the DC for checks involving the creation of that item are typically as given on the following table.
 
 \begin{dtable}
+    \lcaption{Craft DCs}
 \begin{tabularx}{\columnwidth}{>{\lcol}X l >{\lcol}p{4em}}
 \thead{Item} & \thead{Craft Skill} & \thead{Craft DC} \\
 Acid & Alchemy\footnotetemp{1} & 15 \\
@@ -446,16 +439,21 @@ Complex or superior item (fine china, document with official seal)  & Varies & 2
 \end{tabularx}
 1 Traps have their own rules for construction.
 \end{dtable}
+\end{comment}
 
-\subsk{Forgeries} You can use the Craft skill to make false or defective versions of objects. For example, you may wish to forge official-looking documents with Craft (manuscripts), or you may need to make items in a rush to satisfy an employer. 
+\subsubsection{Create Forgery}
+You can use the Craft skill to create false or defective versions of objects. For example, you may wish to forge official-looking documents with Craft (manuscripts), or you may need to make items in a rush to satisfy an employer. This functions like crafting the item from scratch, except that the Craft DC is 5 lower than normal, and you use one-half the item's price to determine the price of raw materials and the crafting time.
 
-Forged items have a Craft DC 5 lower than the real thing, and require only half as many costly material components (allowing you to craft them twice as quickly). However, functional items are always defective in some way. A forgery can be detected by examining the item and making a Craft check, or by making a Perception check with a \minus10 penalty. The DC to identify a forgery is equal to the Craft check used to make the item.
+Forgeries which have a function, such as a weapon, are always defective in some way which makes them unsuitable for use. A forgery can be detected with the Identify Forgery uses of the Craft and Perception skills.
 
-\subsk{Magic Items} For every 5 ranks that you have in each Craft skill, choose a subschool of magic, as described in Chapter 10: Magic. If you have the Imbue Magic feat, you can craft items from that subschool of magic using that Craft skill. The Versatile Crafter feat increases the number of subschools you learn in each Craft skill to one per two ranks.
+\subsubsection{Identify Forgery}
+You can make a Craft check as a full-round action to evaluate whether an item is a forgery. The DC to identify a forgery is equal to the Craft check used to make the item.
 
-\parhead{Action} Does not apply. Craft checks are made by the day (see above).
+\subsubsection{Repair Item}
+You can make a Craft check to repair a broken item. This functions like crafting the item from scratch, except that you use one-tenth of the item's price to determine the price of raw materials and the crafting time.
 
-\parhead{Try Again} Yes, but each time you miss by 5 or more, you ruin half the raw materials and have to pay half the original raw material cost again.
+\subsubsection{Other Tasks}
+You can use the Craft skill for various tasks related to the object of your craft. For example, you could use Craft (woodworking) to sabotage a wagon so it will break at a later time, or Craft (alchemy) to purify spoiled food or ingredients. The DCs of such tasks, and what can be accomplished, can vary widely. In general, the more difficult the task, and the more loosely it is related to the skill, the higher the DC.
 
 \subsection{Creature Handling (Cha; Trained Only)}
 You can handle creatures, teaching them tricks and training them to follow instructions. This skill can only be used with creatures with an Intelligence of \minus5 or lower.
