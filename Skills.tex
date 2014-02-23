@@ -206,7 +206,7 @@ Acrobatics represents your agility and coordination. All Acrobatics checks are m
 \subsubsection{Balance}
 You can make a Acrobatics check to move safely on a precarious surface. Success means you move along the surface at half speed. Failure by less than 5 means your action is wasted, and you do not move. Failure by 5 or more means you fall.
 
-You are flat-footed while balancing, since you can't move to avoid a blow. If you take damage while balancing, you must make another Balance check against the same DC to remain standing. If you take a \minus5 penalty, you can defend yourself normally while balancing. Accepting a \minus5 penalty can also allow you to move at full speed while balancing.
+You are flat-footed while balancing, since you can't move to avoid a blow. If you take damage while balancing, you must make another Balance check against the same DC to avoid falling. If you take a \minus5 penalty, you can defend yourself normally while balancing. Accepting a \minus5 penalty can also allow you to move at full speed while balancing.
 
 The DC varies with the surface, as follows.
 
@@ -316,23 +316,12 @@ You can make a Bluff check to attempt to convey a hidden message to another char
 
 Anyone witnessing the exchange must make a Sense Motive check against the same DC to identify the hidden message. Creatures who know how the message will be conveyed -- normally, the intended recipient -- receive a \plus10 bonus on this check. Exceptionally conplex hidden message systems may grant a bonus greater than \plus10.
 
-\begin{comment}
-\parhead{Check} A Bluff check is opposed by the target's Sense Motive check. See the accompanying tables for examples of different kinds of bluffs and the modifier to the target's Sense Motive check for each one. A successful Bluff check means the target believes that you are telling the truth. A failed Bluff check usually means the target is unconvinced. Failure by 5 or more means that they realize that you were intentionally lying.
-
-A bluff requires interaction between you and the target. Creatures unaware of you cannot be bluffed.
-  
-\subsk{Creating a Diversion to Hide} You can use the Bluff skill to help you hide. A successful Bluff check gives you the momentary diversion you need to attempt a Hide check while people are aware of you. This usage does not provoke an attack of opportunity.
-
-\subsk{Delivering a Secret Message} You can use Bluff to get a message across to another character without others understanding it. The DC is 15 for simple messages, or 20 for complex messages, especially those that rely on getting across new information. Failure by 4 or less means you can't get the message across. Failure by 5 or more means that some false information has been implied or inferred. Anyone listening to the exchange can make a Sense Motive check opposed by the Bluff check you made to transmit in order to intercept your message (see \pcref{Sense Motive [Wis]}).
-
-\parhead{Action} Varies. A Bluff check made as part of general interaction always takes at least 1 round (and is at least a full-round action), but it can take much longer if you try something elaborate. A Bluff check made to create a diversion to hide is a standard action. A Bluff check made to deliver a secret message doesn't take an action; it is part of normal communication.
-
-\parhead{Try Again} Varies. Generally, a failed Bluff check in social interaction makes the target too suspicious for you to try again in the same circumstances. Retries are also allowed when you are trying to send a message, but you may attempt such a retry only once per round.
-\end{comment}
-
 \subsection{Climb (Str; Armor Check Penalty)}
 
-\parhead{Check} With a successful Climb check, you can advance up, down, or across a slope, a wall, or some other steep incline (or even a ceiling with handholds). The distance that you move is equal to the size of your space, as described on the table below.
+\subsubsection{Climb}
+You can make a Climb check as a move action to move up, down, or across a slope, a wall, or some other steep incline (or even a ceiling with handholds). Success means you move a number of feet equal to the size of your space, as described on \trefnp{Climb Speeds}. Failure by less than 5 means your action is wasted and you do not move. Failure by 5 or more means you fall.
+
+You need both hands free to climb, but you may cling to a wall with one hand while you cast a spell or take some other action that requires only one hand. You are flat-footed while climbing, since you can't move to avoid a blow. If you take damage while climbing, you must make another Climb check against the same DC to avoid falling. If you take a \minus5 penalty, you can defend yourself normally while climbing. Accepting a \minus5 penalty can also allow you to move at double speed while climbing. 
 
 \begin{dtable}
 \lcaption{Climb Speeds}
@@ -346,61 +335,46 @@ A bluff requires interaction between you and the target. Creatures unaware of yo
 \end{tabularx}
 \end{dtable}
 
-The DC of the check depends on the difficulty of the task and the conditions of the climbing surface. Consult the following tables to determine an appropriate DC.
+The DC of the check depends on the difficulty of the task and the conditions of the climbing surface, as shown on \trefnp{Climb DCs} and \trefnp{Climb Modifiers}.
 
 \begin{dtable}
-\lcaption{Climb DC Examples}
-\begin{tabularx}{\columnwidth}{l X}
-\thead{Climb DC} & \thead{Example Surface or Activity} \\
-0 & A slope too steep to walk up, or a knotted rope with a wall
-to brace against. \\
-5 & A rope with a wall to brace against, or a knotted rope, or a
-rope affected by the \spell{rope trick} spell.  \\
-10 & A surface with ledges to hold on to and stand on, such as a
-very rough wall or a ship's rigging. \\
-15 & Any surface with adequate handholds and footholds
-(natural or artificial), such as a very rough natural rock
-surface or a tree, or a knotted rope, or pulling yourself
-up when dangling by your hands. \\
-20 & An uneven surface with limited handholds and
-footholds, such an unknotted rope or a typical wall in a ruins. \\
-25 & A rough surface, such as a natural rock wall or a brick wall. \\
-30 & An uneven overhang or ceiling with limited handholds and footholds, such as a typical ceiling in a ruins. \\
-35 & A rough overhand or ceiling, such as a natural rock ceiling \\
-\x & A perfectly smooth, flat, surface cannot be climbed. \\
+\lcaption{Climb DCs}
+\begin{tabularx}{\columnwidth}{l X l}
+    \thead{Climb DC} & \thead{Surface or Activity} & \thead{Example}
+    10 & Surface with large hand and holds to stand on & Very rough rocks, ship's rigging \\
+    15 & Surface with some hand and foot holds & Knotted rope, surface with pitons or carved holes, rough wall \\
+    15 & Surface with only large hand holds & Pulling yourself up by your hands while dangling \\
+    20 & Uneven surface with narrow hand and foot holds & Unknotted rope, unweathered natural rock, typical ruin wall, brick wall \\
+    20 & Overhang or ceiling with only handholds & Tree limbs (without using feet), butcher's ceiling with meat hooks \\
+    25 & Rough surface with no holds & Weathered natural rock, well-made stone wall \\
+    \x\fn{1} & Smooth surface & Glass window, \spell{wall of force} \\
+    30 & Smooth surface with chimney setup & \x \\
+    35 & Smooth surface corner & \x \\
 \end{tabularx}
+    1 A perfectly smooth, flat, surface cannot be climbed on its own.\\
 \end{dtable}
 
 \begin{dtable}
 \lcaption{Climb Modifiers}
 \begin{tabularx}{\columnwidth}{l X}
 \thead{Climb DC Modifier\footnotetemp{1}} & \thead{Example Surface or Activity} \\
+\minus10 & Climbing a chimney (artificial or natural) or other location where you can brace against two opposite walls \\
 \minus5 & Inclined surface (between 45 and 60 degrees) \\
-\minus5 & Climbing a chimney (artificial or natural) or other location
-where you can brace against two opposite walls \\
-\minus2 & Climbing a corner where you can brace against
-perpendicular walls \\
+\minus5 & Climbing a corner where you can brace against perpendicular walls \\
 \plus2 & Surface is slightly slippery, such as damp stone \\
 \plus5 & Surface is very slippery, such as ice or oil-covered stone 
 \end{tabularx}
 1 These modifiers are cumulative; use any that apply.
 \end{dtable}
 
-A Climb check that fails by 4 or less means that you make no progress, and one that fails by 5 or more means that you fall from whatever height you have already attained. You need both hands free to climb, but you may cling to a wall with one hand while you cast a spell or take some other action that requires only one hand. While climbing, you can't move to avoid a blow, so you are flat-footed.
+\subsubsection{Catch Falling Character}
+While climbing, you can attempt to catch another character who is falling near you. To do so, you must make a successful grapple attack against the falling character. Most falling characters will choose to be flat-footed against this attack. If you succeed, you must make a Climb check against a DC equal to the wall's DC \add 10. Success means you catch the falling character, but his or her total weight, including equipment, cannot exceed your heavy load limit or you automatically fall. If you fail your Climb check by 4 or less, you fail to stop the character's fall but don't lose your grip on the wall. If you fail by 5 or more, you fail to stop the character's fall and begin falling as well.
 
-Any time you take damage while climbing, make a Climb check against the DC of the slope or wall. Failure means you fall from your current height and sustain the appropriate falling damage.
+\subsubsection{Stop Fall}
+It is possible, but very difficult, to make a Climb check to stop yourself from falling when near a wall. To catch yourself while falling, make a Climb check against a DC equal to the wall's DC \add 20.
 
-\subsk{Accelerated Climbing} You can try to climb more quickly than normal. You take a \minus5 penalty on the Climb check, and failure by any amount means you fall. If you succeed, you move twice as far as normal.
-
-\subsk{Catching Yourself When Falling} It's practically impossible to catch yourself on a wall while falling. Make a Climb check (DC = wall's DC \add 20) to do so. It's much easier to catch yourself on a slope (DC = slope's DC \add 10).
-
-\subsk{Catching a Falling Character While Climbing} If someone climbing above you or adjacent to you falls, you can attempt to catch the falling character if he or she is within your reach. Doing so requires a successful melee touch attack against the falling character (though he or she can voluntarily act flat-footed if desired). If you hit, you must immediately attempt a Climb check (DC = wall's DC \add 10). Success means you catch the falling character, but his or her total weight, including equipment, cannot exceed your heavy load limit or you automatically fall. If you fail your Climb check by 4 or less, you fail to stop the character's fall but don't lose your grip on the wall. If you fail by 5 or more, you fail to stop the character's fall and begin falling as well.
-
-\parhead{Action} Climbing is a kind of movement, so it's generally a move action. Each move action that includes any climbing requires a separate Climb check. Catching yourself or another falling character doesn't take an action.
-
-\parhead{Special} You can use a rope to haul a character upward (or lower a character) through sheer strength. You can lift double your maximum load in this manner.
-
-\par A creature with a climb speed has a \plus5 inherent bonus on all Climb checks. It can always choose to take 10 on Climb checks, even if rushed or threatened, and is not flat-footed while climbing. It cannot make an accelerated climb or use the run action while climbing.
+\subsubsection{Climb Speeds}
+A creature with a climb speed moves by a distance equal to its climb speed when climbing. It has a \plus5 inherent bonus on all Climb checks. It can always choose to take 10 on Climb checks, even if rushed or threatened, and is not flat-footed while climbing. It cannot make an accelerated climb or use the run action while climbing.
 
 \subsection{Craft (Int)}
 Like Knowledge, Perform, and Profession, Craft is actually a number of separate skills. You could have several Craft skills, each with its own ranks, each purchased as a separate skill. Common Craft skills are listed below, with additional description for some skills.
