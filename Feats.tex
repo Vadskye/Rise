@@ -239,7 +239,6 @@ Improved Feint & Base attack bonus \plus4 & \plus2 bonus on feint attacks; feint
 Improved Grapple & Base attack bonus \plus4 & \plus2 bonus on grapple attacks; attack faster in grapple & Maneuver, Power \\
 Improved Initiative & \x &  \plus4 bonus on initiative checks & Reaction \\
 Improved Overrun & Base attack bonus \plus4 & \plus2 bonus on overrun attacks; target can't avoid & Maneuver, Power \\
-Improved Shield Bash & Shield proficiency & Retain shield bonus to AC when shield bashing & Equipment \\
 Improved Trip & Base attack bonus \plus4 & \plus2 bonus on trip attacks; tripped foe provokes attacks of opportunity & Finesse, Maneuver \\
 Improved Unarmed Strike & \x &  Considered armed even when unarmed & \x \\
 \tind Deflect Arrows & Dex 3, Improved Unarmed Strike & Deflect one ranged attack per round & Defense, Reaction \\
@@ -275,13 +274,11 @@ Point Blank Shot & \x &  \plus2 bonus on ranged damage within 30 ft. & Precision
 Precise Shot & \x & Add half Wis to damage & Precision, Style \\
 Power Attack & Str 3 & Trade melee attack bonus for damage & Power, Style \\
 Quick Draw & \x & Draw weapon as swift action & Reaction \\
-Rapid Reload & Proficiency with crossbows & Reload crossbows more quickly & Finesse \\
 Reveal the Weak Point & Base attack bonus \plus4 & Sacrifice attack and damage to penalize foe's AC & Style \\
 Ride-By Attack & Mounted Combat & Move before and after a mounted charge & Mobility, Mounted \\
 \tind Spirited Charge & Ride-By Attack & Double damage with mounted charge & Mounted, Power \\
 Shield Proficiency  & \x &  No armor check penalty on attack rolls & Equipment \\
 \tind Tower Shield Proficiency & Shield Proficiency & No armor check penalty on attack rolls & Equipment \\
-Short Haft & Proficiency with a reach weapon, base attack bonus \plus4 & Short haft reach weapons faster, without penalty & Equipment, Finesse \\
 Tactical Analysis & Int 3, Base attack bonus \plus4 & Identify foe's strengths and weaknesses & Awareness \\
 Tactical Prediction & Int 3, Base attack bonus \plus8 & Predict foe's next action & Awareness \\
 Tactical Readiness & Int 3 & Ready two actions at once & Reaction \\
@@ -291,8 +288,8 @@ Two-Weapon Fighting & Dex 3 & Gain \plus2 attack bonus when fighting with two we
 %\tind Ambidexterity & Add full Strength value to damage with both hands & Str 3, Two-Weapon Fighting, base attack bonus \plus12 \\
 \tind Two-Weapon Defense & Two-Weapon Fighting & Off-hand weapon grants \plus1 shield bonus to AC, later \plus3 & Defense, Finesse \\
 Wall Slam & Str 5, base attack bonus \plus8 & Slam opponent into wall to deal bonus damage & Maneuver, Power \\
-Weapon Focus\fn{1} & Proficiency with weapon group, base attack bonus \plus1 & \plus1 to attack with chosen weapons & Equipment \\
-\tind Weapon Specialization & Base attack bonus \plus8, proficiency with weapon group, Weapon Focus with weapon group & \plus2 to attack with chosen weapons, \minus2 with other weapons & Equipment \\
+Weapon Focus\fn{1} & Proficiency with weapon group, base attack bonus \plus1 & Special ability with weapon group & Equipment \\
+\tind Weapon Specialization & Base attack bonus \plus8, proficiency with weapon group, Weapon Focus with weapon group & Special ability with weapon group & Equipment \\
 Weapon Proficiency\fn{1} & \x &  Don't provoke when attacking with weapon group & Equipment \\
 Whirlwind Attack & Dex 5, base attack bonus \plus12 & One melee attack against each opponent within reach & Style \\
 \end{tabularx}
@@ -758,11 +755,6 @@ You understand how to use exotic weapons in combat.
 \subsubsection{Improved Initiative [Combat]}
 \parhead{Benefit} You get a \plus4 competence bonus on initiative checks.
 
-\subsubsection{Improved Shield Bash [Combat]}
-\parhead{Prerequisite} Proficiency with a shield.
-\parhead{Benefit} When you perform a shield bash, you may still apply the shield's shield bonus to your AC.
-\parhead{Normal} Without this feat, a character who performs a shield bash loses the shield's shield bonus to AC until his or her next turn.%Improved Shield Bash
-
 \subsubsection{Improved Unarmed Strike [Combat]}
 \parhead{Benefit} You are considered to be armed even when unarmed -- that is, you do not provoke attacks or opportunity from armed opponents when you attack them while unarmed. However, you still get an attack of opportunity against any opponent who makes an unarmed attack on you.
 In addition, your unarmed strikes can deal lethal or nonlethal damage as you choose.
@@ -833,12 +825,6 @@ In addition, your unarmed strikes can deal lethal or nonlethal damage as you cho
 If you have three or more Reaction feats, you can draw light and medium weapons as an immediate action, and heavy and hidden weapons as a swift action.
 \parhead{Normal} Without this feat, you may draw light weapons as a swift action, medium and heavy weapons as a move action, and hidden weapons as a standard action.
 
-\subsubsection{Rapid Reload [Combat]}
-\parhead{Prerequisite} Proficiency with crossbows.
-\parhead{Benefit} The time required for you to reload crossbows is reduced to a free action (for a hand or light crossbow) or a move action (for a heavy crossbow). Reloading a heavy crossbow still provokes an attack of opportunity, but reloading hand and light crossbows does not.
-\par With thiis feat, you may fire light and hand crossbows as many times in a full attack action as you could attack if you were using a bow.
-\parhead{Normal} A character without this feat needs a move action to reload a hand or light crossbow, or a full-round action to reload a heavy crossbow.
-
 %\subsubsection{Rapid Shot [Combat]}
 %\parhead{Prerequisites} Dex 3, Precise Shot, base attack bonus \plus4.
 %\parhead{Benefit} You can get one extra attack per round with a projectile weapon. The attack is at your highest base attack bonus, but each attack you make in that round (the extra one and the normal ones) takes a \minus2 penalty. You must use the full attack action to use this feat. This does not stack with any other abilities that grant extra attacks.
@@ -851,11 +837,6 @@ If you have three or more Reaction feats, you can draw light and medium weapons 
 \parhead{Benefit} You can use a shield and take only the standard penalties.
 \parhead{Normal} When you are using a shield with which you are not proficient, you take the shield's armor check penalty on attack rolls and on all skill checks that involve moving, including Ride checks.
 \parhead{Special} Barbarians, bards, clerics, druids, fighters, paladins, and rangers automatically have Shield Proficiency as a bonus feat. They need not select it.
-
-\subsubsection{Short Haft [Combat]}
-\parhead{Prerequisites} Proficiency with a reach weapon, base attack bonus \plus4.
-\parhead{Benefit} You can switch grips to short haft a reach weapon (see \pref{Reach Weapons}) as a swift action, and you take no penalty while short hafting it.
-\parhead{Normal} Switching grips with a reach weapon takes a move action, and you take a \minus4 penalty while short hafting the weapon.
 
 \subsubsection{Snatch Arrows [Combat]}
 \parhead{Prerequisites} Dex 5, Deflect Arrows, Improved Unarmed Strike.
@@ -916,7 +897,22 @@ You can fight with a weapon in each hand more effectively.
 \subsubsection{Weapon Focus [Combat]}
 Choose one weapon group.
 \parhead{Prerequisites} Proficiency with selected weapon group, base attack bonus \plus1.
-\parhead{Benefit} You gain a \plus1 competence bonus to attack with weapons from the selected weapon group.
+\parhead{Benefit} You gain a special ability based on the weapon group chosen. These special abilities only function when you are making attacks with weapons from your chosen weapon group.
+\begin{itemize*}
+    \item Armor weapons: When you perform a shield bash, you still benefit from the shield's AC bonus.
+    \item Axes: You increase your critical threat range by 1 when attacking foes without an armor bonus to AC. This is applied after any effects that multiply your threat range.
+    \item Blades, heavy: You increase your critical multiplier by 1 when attacking foes without an armor bonus to AC.
+    \item Blades, light: You increase your critical multiplier by 1 when attacking flat-footed or overwhelmed foes.
+    \item Blunt weapons: When you deal damage to a creature, it takes a \minus2 penalty to Will saves for 1 round. This penalty is not cumulative.
+    \item Bows: You suffer half the normal range increment penalty for firing at long range.
+    \item Crossbows: The time required for you to reload crossbows is reduced to a free action (for a hand or light crossbow) or a move action (for a heavy crossbow). Reloading a heavy crossbow still provokes an attack of opportunity, but reloading hand and light crossbows does not.
+    \item Flexible weapons: You gain a \plus2 circumstance bonus to attack foes with a shield bonus to AC.
+    \item Headed weapons: When you get a critical hit, your foe is staggered for 1 round.
+    \item Monk weapons: ??
+    \item Polearms: You can switch grips to short haft or stop short hafting a polearm as a swift action, and you take no penalty while short hafting it.
+    \item Spears: You gain a \plus2 circumstance bonus to attack on attacks of opportunity.
+    \item Thrown weapons: You can throw weapons at targets adjacent to you without provoking attacks of opportunity.
+\end{itemize*}
 \parhead{Special} You can gain this feat multiple times. Its effects do not stack. Each time you take the feat, it applies to a new type of weapon.
 \par You cannot choose simple weapons when you take this feat.
 
@@ -930,7 +926,23 @@ Choose one weapon group.
 \subsubsection{Weapon Specialization [Combat]}
 Choose one weapon group for which you have already selected the Weapon Focus feat.
 \parhead{Prerequisites} Base attack bonus \plus8, proficiency with selected weapon group, Weapon Focus with selected weapon group.
-\featben You gain a \plus2 competence bonus to attack with weapons from the selected weapon group. In exchange, you take a \minus2 penalty to attack with weapons from any other weapon group. This penalty does not affect non-weapon attacks, such as many combat maneuvers.
+\featben You gain a special ability based on the weapon group chosen. These special abilities only function when you are making attacks with weapons from your chosen weapon group.
+
+\begin{itemize*}
+    \item Armor weapons: If you attack with armor weapons during your turn, you gain a \plus2 circumstance bonus to AC against melee attacks for 1 round.
+    \item Axes: You gain a \plus2 circumstance bonus to attack against foes with an armor bonus to AC.
+    \item Blades, heavy: You gain a \plus2 circumstance bonus to attack foes without an armor bonus to AC.
+    \item Blades, light: You gain a \plus2 circumstance bonus to attack flat-footed or overwhelmed foes.
+    \item Blunt weapons: When you deal damage to a creature, it takes a \minus2 penalty to all saving throws for 1 round. This penalty replaces the penalty from Weapon Focus, and it is not cumulative with itself.
+    \item Bows: You can ignore cover (but not total cover) provided by creatures and objects that are at least ten feet away from both you and your target.
+    \item Crossbows: You can fire crossbows at targets adjacent to you without provoking attacks of opportunity.
+    \item Flexible weapons: The first time you perform a combat maneuver with a flexible weapon in an encounter, your opponent is flat-footed against your attack.
+    \item Headed weapons: You increase your critical threat range by 1. This is applied after any effects that multiply your threat range.
+    \item Monk weapons: ??
+    \item Polearms: When making melee attacks, you can ignore cover provided by creatures.
+    \item Spears: If an opponent charges you, he provokes an attack of opportunity from you.
+    \item Thrown weapons: When you attack, you can take a \minus4 penalty to attack in order to strike two adjacent targets with the same thrown weapon. You make one attack roll and apply the result to the AC of both targets. If you get a critical hit, only the primary target is suffers the critical hit. 
+\end{itemize*}
 
 \subsection{Combat Maneuver Feats}
 
@@ -1040,7 +1052,7 @@ Choose one weapon group for which you have already selected the Weapon Focus fea
 
 \subsubsection{Manyshot [Combat Style]}
 \parhead{Prerequisites} Dex 7, base attack bonus \plus12.
-\parhead{Benefit} When you attack with a projectile weapon (except crossbows), you may make a flurry attack with two projectiles or weapons at once. If the attack hits, the first projectile hits. If the attack hits by 5 or more, both projectiles hit. As normal for flurry attacks, apply precision-based damage (such as sneak attack) and critical hit damage only once for this attack. Damage reduction and resistances apply once to the total damage dealt.
+\parhead{Benefit} When you attack with a light thrown weapon or projectile weapon (except crossbows), you may make a flurry attack with two projectiles or weapons at once. If the attack hits, the first projectile hits. If the attack hits by 5 or more, both projectiles hit. As normal for flurry attacks, apply precision-based damage (such as sneak attack) and critical hit damage only once for this attack. Damage reduction and resistances apply once to the total damage dealt.
 \parhead{Style Requirement} Must full attack with a non-crossbow projectile weapon each round.
 
 \subsubsection{Opportunist [Combat Style]}
