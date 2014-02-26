@@ -1,16 +1,40 @@
-
 \section{Monsters}
 
-\subsection{Monster Abilities}
+\subsection{Dire Animals}
+\subsubsection{Dire Bear}
+\parhead{HV} 12
+\parhead{Archetypes} Brute 6, Disabler 1, Tank 5
+\parhead{Attributes} 
+\parhead{Traits} (2+12+6) Natural Weapon I x2, Natural Weapon II x2, Natural Armor I, Natural Armor II x2, 
+
+\subsection{Animals}
+
+\subsubsection{Bear, Black}
+\parhead{HV} 3
+\parhead{Archetypes} Brute 1, Disabler 1, Tank 1
+\parhead{Attributes} 4/0/5/\minus8/2/0
+\parhead{Traits} (2+5) Natural Weapon I x2, Natural Armor I, Attr (Str), Attribute (Con x2), Improved Grab
+
+\subsubsection{Bear, Brown}
+\parhead{HV} 6
+\parhead{Archetypes} Brute 2, Disabler 1, Tank 3
+\parhead{Attributes} 6/0/6/\minus8/3/0
+\parhead{Traits} (2+9) Natural Weapon I x2, Natural Armor I, NA II, Attr (Str), Attribute (Con x3), Attr (Wis), Improved Grab, Size Increase (Large)
+
+\section{Monster Abilities}
+
+\subsection{Monster Traits}
+Some traits can be taken multiple times. Unless it says otherwise, no trait can be taken more times than half your HD (min 1).
 
 \subsubsection{Attribute}
 Choose an attribute.
-\featben You gain a \plus1 bonus to the appropriate attribute.
+\featben You gain a \plus1 inherent bonus to the appropriate attribute.
+\parhead{Special} This feat can be taken multiple times. Its effects stack. You can choose a different attribute or the same attribute each time. You can apply the Attribute trait to a single attribute no more times than half your HD (min 1).
 
 \subsubsection{Combat Feat}
 Choose a combat feat.
-\featben You gain that combat feat. If this  
-\parhead{Special} You cannot have more total feats than half your HD (rounded up).
+\featben You gain that combat feat.
+\parhead{Special} You can take this trait multiple times. Each time, you choose a different feat.
 
 \subsubsection{Improved Grab}
 \featben You gain the improved grab special ability. 
@@ -21,7 +45,7 @@ Choose a combat feat.
 \subsubsection{Natural Armor II}
 \featpre Natural Armor I
 \featben You increase your natural armor by 1.
-\parhead{Special} You can take this ability multiple times. Its effects stack. Your natural armor cannot exceed your Constitution.
+\parhead{Special} You can take this trait multiple times. Its effects stack.
 
 \subsubsection{Natural Weapon I}
 \featben You gain a natural weapon that deals damage appropriate for your size from the following list. The damage listed is for Medium creatures.
@@ -34,7 +58,7 @@ Choose a combat feat.
 \subsubsection{Natural Weapon II}
 \featpre Natural Weapon I
 \featben You increase the damage die of one of your natural weapons by one category.
-\parhead{Special} You can take this ability multiple times. Each time, you can apply it to a different natural weapon or to the same natural weapon. You cannot apply this ability to the same weapon more times than 1/2 your Strength. 
+\parhead{Special} You can take this trait multiple times. Each time, you can apply it to a different natural weapon or to the same natural weapon. You cannot apply this trait to the same weapon more times than 1/2 your Strength. 
 
 \subsubsection{Poison I}
 Choose one of your attacks.
@@ -79,7 +103,7 @@ Choose one of your attacks.
 \subsubsection{Size Increase}
 \featpre Medium size or smaller.
 \featben Your size increases by one category. You gain a \plus2 bonus to Strength.
-\parhead{Special} You can take this ability multiple times. You must have 4 HD to become Large, 8 HD to become Huge, 12 HD to become Gargantuan, and 16 HD to become Colossal.
+\parhead{Special} You can take this trait multiple times. You must have 4 HD to become Large, 8 HD to become Huge, 12 HD to become Gargantuan, and 16 HD to become Colossal.
 
 \subsubsection{Trample I}
 \featpre Large size or larger.
@@ -91,24 +115,24 @@ Choose one of your attacks.
 \thv 5
 \tbab Average
 \tsaves Average Fort, Will
-\parhead{Attributes} 5 points
+\parhead{Attributes} 10 points
 \parhead{Initial Abilities} Natural Weapon I, Natural Armor I
-\parhead{Special Ability Pool} Attribute (Strength, Constitution, Charisma)
+\parhead{Trait Pool} Attribute (Strength, Constitution, Charisma)
 
 \subsubsection{Animal}
 \thv 5
 \tbab Average
 \tsaves Average Fort, Ref
-\parhead{Attributes} 5 points, -8 Intelligence (max -5)
+\parhead{Attributes} 10 points, -8 Intelligence (max -5)
 
 \parhead{Initial Abilities} Natural Weapon I, Natural Armor I, Senses I (Low-light vision, Scent)
 
-\parhead{Special Ability Pool} Attribute (Strength, Dexterity, Constitution, Wisdom), Natural Armor II, Natural Weapon II
+\parhead{Trait Pool} Attribute (Strength, Dexterity, Constitution, Wisdom), Natural Armor II, Natural Weapon II
 
 \subsection{Archetypes}
 
 \subsubsection{Brute}
-\parhead{Special Ability Pool}
+\parhead{Trait Pool}
 \begin{itemize*}
     \item Attribute (Str, Con)
     \item Combat Feat (Power)
@@ -119,7 +143,12 @@ Choose one of your attacks.
 \end{itemize*}
 
 \subsubsection{Disabler}
-\parhead{Special Ability Pool}
+\parhead{Trait Pool}
 \begin{itemize*}
     \item Improved Grab
 \end{itemize*}
+
+\subsection{Templates}
+\subsubsection{Dire}
+\featpre Animal type
+\featben Base attack bonus progression improves by 1 step. HV improves by 1.
