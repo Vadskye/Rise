@@ -79,6 +79,12 @@ class SavingThrow(ModifierProgression):
             }[progression]
         self.add_inherent(self.base_bonus)
 
+class SavingThrows():
+    def __init__():
+        self.fortitude = SavingThrow()
+        self.reflex = SavingThrow()
+        self.will = SavingThrow()
+
 class AttackBonus(ModifierProgression):
     def _apply_progression(self, progression, level):
         self.base_bonus = {
