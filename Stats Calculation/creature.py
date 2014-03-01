@@ -31,6 +31,45 @@ class Creature:
         self.saves = util.SavingThrows()
         self.cmd = util.Modifier()
 
+    def _interpret_raw_stats(self, raw_stats):
+        self.name = raw_stats['name']
+        if 'class' in raw_stats.keys():
+            self.class_name = raw_stats['class']
+        equipment_set = equipment.EquipmentSet.from_raw_stats(raw_stats)
+        self.weapon = equipment_set.weapon
+        self.armor = equipment_set.armor
+        self.shield = equipment_set.shield
+        if 'size' in raw_stats.keys():
+            self.size = raw_stats['size']
+
+    def _interpret_attributes(self, attributes):
+        raw_attributes = dict()
+        raw_attributes = util.dict_slice(attributes, util.attribute_titles, 
+                util.conditional_int)
+        for attribute_name in raw_attributes.keys():
+            getattr(self.attributes, attribute_name).add_inherent(
+                    raw_attributes[attribute_name])
+
+        #Apply level-based scaling
+        self._scale_attributes(attributes)
+        
+    #http://stackoverflow.com/questions/60208/replacements-for-switch-statement-in-python
+    def _set_class_calculator(self):
+        self.class_calculator = {
+                'barbarian': classes.Barbarian,
+                'bard': classes.Bard,
+                'cleric': classes.Cleric,
+                'druid': classes.Druid,
+                'fighter': classes.Fighter,
+                'monk': classes.Monk,
+                'paladin': classes.Paladin,
+                'ranger': classes.Ranger,
+                'rogue': classes.Rogue,
+                'sorcerer': classes.Sorcerer,
+                'wizard': classes.Wizard,
+                'warrior': classes.Warrior
+                }[self.class_name](self.level)
+
     def _calculate_derived_statistics(self):
         self.attack_damage.add_die(self.weapon.damage_die)
         if self.armor:
@@ -63,44 +102,6 @@ class Creature:
         raw_stats = util.parse_stats_from_file(creature_filename)
         attributes = util.parse_attribute_file(raw_stats)
         return cls(raw_stats, attributes, level)
-
-    def _interpret_raw_stats(self, raw_stats):
-        self.name = raw_stats['name']
-        if 'class' in raw_stats.keys():
-            self.class_name = raw_stats['class']
-        equipment_set = equipment.EquipmentSet.from_raw_stats(raw_stats)
-        self.weapon = equipment_set.weapon
-        self.armor = equipment_set.armor
-        self.shield = equipment_set.shield
-        if 'size' in raw_stats.keys():
-            self.size = raw_stats['size']
-
-    def _interpret_attributes(self, attributes):
-        raw_attributes = dict()
-        raw_attributes = util.dict_slice(attributes, util.attribute_titles, 
-                util.conditional_int)
-        for attribute in raw_attributes.keys():
-            self.attributes[attribute].add_inherent(raw_attributes[attribute])
-
-        #Apply level-based scaling
-        self._scale_attributes(attributes)
-        
-    #http://stackoverflow.com/questions/60208/replacements-for-switch-statement-in-python
-    def _set_class_calculator(self):
-        self.class_calculator = {
-                'barbarian': classes.Barbarian,
-                'bard': classes.Bard,
-                'cleric': classes.Cleric,
-                'druid': classes.Druid,
-                'fighter': classes.Fighter,
-                'monk': classes.Monk,
-                'paladin': classes.Paladin,
-                'ranger': classes.Ranger,
-                'rogue': classes.Rogue,
-                'sorcerer': classes.Sorcerer,
-                'wizard': classes.Wizard,
-                'warrior': classes.Warrior
-                }[self.class_name](self.level)
 
     def _calculate_class_stats(self):
         #Calculate statistics based on the given class
