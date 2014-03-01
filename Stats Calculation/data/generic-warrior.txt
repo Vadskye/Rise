@@ -1,0 +1,7 @@
+name=GenericWarrior
+race=human
+class=warrior
+weapon=medium_melee
+armor=medium
+shield=heavy
+attributes=warrior
