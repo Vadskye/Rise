@@ -24,15 +24,11 @@ class Creature:
         self._calculate_derived_statistics()
 
     def _init_core_statistics(self):
-        self.attack_bonus=util.Modifier()
-        self.attack_damage=util.Modifier()
-        self.attributes = dict()
-        for title in util.attribute_titles:
-            self.attributes[title] = util.Modifier()
+        self.attack_bonus = util.AttackBonus()
+        self.attack_damage = util.Modifier()
+        self.attributes = util.Attributes()
         self.armor_class = util.ArmorClass()
-        self.saves = dict()
-        for title in util.save_titles:
-            self.saves[title] = util.Modifier()
+        self.saves = util.SavingThrows()
         self.cmd = util.Modifier()
 
     def _calculate_derived_statistics(self):
