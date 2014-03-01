@@ -1,57 +1,6 @@
-import creature
 import dice
 
 d20 = dice.dx(20)
-
-class CombatCreature(creature.Creature):
-
-    #http://stackoverflow.com/questions/7629556/python-super-and-init-vs-init-self
-    def __init__(self, raw_stats, raw_attributes, level, verbose=False):
-        super(CombatCreature, self).__init__(raw_stats, raw_attributes,
-                level, verbose)
-        self.current_hit_points = self.max_hit_points
-        self.critical_damage = 0
-        self.is_alive = True
-
-    def take_damage(self, damage_dealt):
-        if self.current_hit_points>0:
-            self.current_hit_points = max(0, self.current_hit_points-damage_dealt)
-        else:
-            self.critical_damage+=damage_dealt
-            self.is_alive = self._check_if_alive()
-    
-    def _check_if_alive(self):
-        if self.critical_damage > self.attributes.constitution:
-            return False
-        return True
-
-    def full_attack(self, enemy):
-        for i in xrange(self.get_attack_count()):
-            if attack_hits(self.attack_bonus.total() - 5*i, enemy.armor_class.normal()):
-                self._deal_damage(enemy)
-
-    def single_attack(self, enemy):
-        if attack_hits(self.attack_bonus - 5*i, enemy.armor_class.normal()):
-            self._deal_damage(enemy)
-
-    def _deal_damage(self, enemy):
-        damage = self.attack_damage.total(roll=True)
-        enemy.take_damage(damage)
-
-    def get_attack_count(self):
-        return attack_count(self.attack_bonus.base_bonus)
-
-    def damage_per_round(self, ac):
-        return full_attack_damage_dealt(self.attack_bonus.total(),
-                ac, self.attack_bonus.base_bonus, self.attack_damage.total())
-
-    def hits_per_round(self, ac):
-        return combat.full_attack_hits(self.attack_bonus.total(),
-                ac, self.attack_bonus.base_bonus)
-
-    def avg_hit_probability(self, ac):
-        return combat.avg_hit_probability(self.attack_bonus.total(),
-                ac, self.attack_bonus.base_bonus)
 
 class Battle(object):
     #At first, assume two creatures
