@@ -1,10 +1,11 @@
+import dice
 
 class Weapon:
 
-    def __init__(self, encumbrance, weapon_type, damage_die, min_damage):
+    def __init__(self, encumbrance, weapon_type, damage_die_name, min_damage):
         self.encumbrance = encumbrance
         self.weapon_type = weapon_type
-        self.damage_die = damage_die
+        self.damage_die = dice.Dice.from_string(damage_die_name)
         self.min_damage = min_damage
 
 class Armor:
