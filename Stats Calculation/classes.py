@@ -1,7 +1,7 @@
 import util
 from util import GOOD, AVERAGE, POOR
 
-class GenericClass:
+class CharacterClass:
     
     def __init__(self, level):
         self.level = level
@@ -29,7 +29,7 @@ class GenericClass:
     def set_saves(self):
         pass
 
-class Barbarian(GenericClass):
+class Barbarian(CharacterClass):
 
     base_attack_bonus_progression = GOOD
     save_progressions = {'fortitude':GOOD, 'reflex':AVERAGE, 'will':POOR}
@@ -45,22 +45,22 @@ class Barbarian(GenericClass):
         self.saves['fortitude']['competence']=std_scale(self.level)
         self.saves['will']['competence']=std_scale(self.level)
 
-class Bard(GenericClass):
+class Bard(CharacterClass):
     base_attack_bonus_progression = AVERAGE
     save_progressions = {'fortitude':AVERAGE, 'reflex':AVERAGE, 'will':AVERAGE}
     hit_value = 6
 
-class Cleric(GenericClass):
+class Cleric(CharacterClass):
     base_attack_bonus_progression = AVERAGE
     save_progressions = {'fortitude':AVERAGE, 'reflex':POOR, 'will':GOOD}
     hit_value = 5
 
-class Druid(GenericClass):
+class Druid(CharacterClass):
     base_attack_bonus_progression = AVERAGE
     save_progressions = {'fortitude':GOOD, 'reflex':POOR, 'will':AVERAGE}
     hit_value = 5
 
-class Fighter(GenericClass):
+class Fighter(CharacterClass):
     base_attack_bonus_progression = GOOD
     save_progressions = {'fortitude':GOOD, 'reflex':POOR, 'will':AVERAGE}
     hit_value = 6
@@ -75,37 +75,37 @@ class Fighter(GenericClass):
             ab+=1
         self.attack_bonus['competence']=ab
 
-class Monk(GenericClass):
+class Monk(CharacterClass):
     base_attack_bonus_progression = AVERAGE
     save_progressions = {'fortitude':AVERAGE, 'reflex':GOOD, 'will':GOOD}
     hit_value = 5
 
-class Paladin(GenericClass):
+class Paladin(CharacterClass):
     base_attack_bonus_progression = GOOD
     save_progressions = {'fortitude':GOOD, 'reflex':POOR, 'will':GOOD}
     hit_value = 6
 
-class Ranger(GenericClass):
+class Ranger(CharacterClass):
     base_attack_bonus_progression = GOOD
     save_progressions = {'fortitude':GOOD, 'reflex':AVERAGE, 'will':AVERAGE}
     hit_value = 6
 
-class Rogue(GenericClass):
+class Rogue(CharacterClass):
     base_attack_bonus_progression = AVERAGE
     save_progressions = {'fortitude':POOR, 'reflex':GOOD, 'will':POOR}
     hit_value = 5
 
-class Sorcerer(GenericClass):
+class Sorcerer(CharacterClass):
     base_attack_bonus_progression = POOR
     save_progressions = {'fortitude':POOR, 'reflex':POOR, 'will':GOOD}
     hit_value = 4
 
-class Wizard(GenericClass):
+class Wizard(CharacterClass):
     base_attack_bonus_progression = POOR
     save_progressions = {'fortitude':POOR, 'reflex':POOR, 'will':GOOD}
     hit_value = 4
 
-class Warrior(GenericClass):
+class Warrior(CharacterClass):
     base_attack_bonus_progression = GOOD
     save_progressions = {'fortitude':GOOD, 'reflex':POOR, 'will':POOR}
     hit_value = 6
