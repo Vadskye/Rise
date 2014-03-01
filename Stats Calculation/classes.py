@@ -29,6 +29,11 @@ class CharacterClass:
     def set_saves(self):
         pass
 
+class Average(CharacterClass):
+    base_attack_bonus_progression = AVERAGE
+    save_progressions = {'fortitude': AVERAGE, 'reflex': AVERAGE, 'will': AVERAGE}
+    hit_value = 5
+
 class Barbarian(CharacterClass):
 
     base_attack_bonus_progression = GOOD
