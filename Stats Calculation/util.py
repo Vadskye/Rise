@@ -61,6 +61,11 @@ class Modifier:
 class ModifierProgression(Modifier):
     def __init__(self, progression = None, level = None):
         self.base_bonus = 0
+        self.inherent=0
+        self.enhancement=0
+        self.competence=0
+        self.circumstance=0
+        self.die=None
         if progression and level:
             self._apply_progression(progression, level)
 
