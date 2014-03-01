@@ -234,15 +234,15 @@ class Creature:
 
     def dpr(self, ac):
         return combat.full_attack_damage_dealt(self.attack_bonus.total(),
-                ac, self.base_attack_bonus, self.attack_damage.total())
+                ac, self.attack_bonus.base_bonus, self.attack_damage.total())
 
     def hits_per_round(self, ac):
         return combat.full_attack_hits(self.attack_bonus.total(),
-                ac, self.base_attack_bonus)
+                ac, self.attack_bonus.base_bonus)
 
     def avg_hit_probability(self, ac):
         return combat.avg_hit_probability(self.attack_bonus.total(),
-                ac, self.base_attack_bonus)
+                ac, self.attack_bonus.base_bonus)
 
                 
 def calculate_hp(constitution, hit_value, level):
