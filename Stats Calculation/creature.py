@@ -2,9 +2,8 @@ import math
 import classes
 import equipment
 import util
-import combat
 
-class Creature:
+class Creature(object):
 
     def __init__(self, raw_stats, raw_attributes, level, verbose=False):
         #Core variable initializations
@@ -127,11 +126,11 @@ class Creature:
 
     #http://stackoverflow.com/questions/141545/overloading-init-in-python
     @classmethod
-    def from_creature_name(cls, creature_name, level):
+    def from_creature_name(cls, creature_name, level, verbose=False):
         creature_filename = 'data/'+creature_name+'.txt'
         raw_stats = util.parse_stats_from_file(creature_filename)
         raw_attributes = util.parse_attribute_file(raw_stats)
-        return cls(raw_stats, raw_attributes, level)
+        return cls(raw_stats, raw_attributes, level, verbose)
 
     def _add_save_attributes(self):
         self.saves.fortitude.add_inherent(
@@ -230,19 +229,10 @@ class Creature:
                     self.languages)
 
         return monster_string
-
-    def dpr(self, ac):
-        return combat.full_attack_damage_dealt(self.attack_bonus.total(),
-                ac, self.attack_bonus.base_bonus, self.attack_damage.total())
-
-    def hits_per_round(self, ac):
-        return combat.full_attack_hits(self.attack_bonus.total(),
-                ac, self.attack_bonus.base_bonus)
-
-    def avg_hit_probability(self, ac):
-        return combat.avg_hit_probability(self.attack_bonus.total(),
-                ac, self.attack_bonus.base_bonus)
-
                 
 def calculate_hp(constitution, hit_value, level):
     return (constitution + hit_value) * level
+
+#A creature with "typical" attributes for its level.
+def get_generic_creature(level):
+    return Creature.from_creature_name('generic-warrior', level)

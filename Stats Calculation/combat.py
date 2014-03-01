@@ -1,3 +1,24 @@
+import creature
+
+class CombatCreature(creature.Creature):
+
+    #http://stackoverflow.com/questions/7629556/python-super-and-init-vs-init-self
+    def __init__(self, raw_stats, raw_attributes, level, verbose=False):
+        super(CombatCreature, self).__init__(raw_stats, raw_attributes,
+                level, verbose)
+
+    def dpr(self, ac):
+        return full_attack_damage_dealt(self.attack_bonus.total(),
+                ac, self.attack_bonus.base_bonus, self.attack_damage.total())
+
+    def hits_per_round(self, ac):
+        return combat.full_attack_hits(self.attack_bonus.total(),
+                ac, self.attack_bonus.base_bonus)
+
+    def avg_hit_probability(self, ac):
+        return combat.avg_hit_probability(self.attack_bonus.total(),
+                ac, self.attack_bonus.base_bonus)
+
 #return estimated number of hits (effectively probability)
 def attack_hits(attack_bonus, ac):
     probability = (21+attack_bonus-ac)/20.0
