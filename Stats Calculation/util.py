@@ -9,6 +9,10 @@ equipment_armor_titles = ['ac bonus', 'encumbrance', 'check penalty', 'arcane sp
 save_titles = ['fortitude', 'reflex', 'will']
 ac_titles = ['normal', 'touch', 'flat-footed']
 
+GOOD = 'good'
+AVERAGE = 'average'
+POOR = 'poor'
+
 class Modifier:
 
     def __init__(self):
@@ -54,7 +58,7 @@ class Modifier:
         else:
             return total
 
-class ModifierProgression(Modifier)
+class ModifierProgression(Modifier):
     def __init__(self, progression = None, level = None):
         self.base_bonus = 0
         if progression and level:
@@ -80,10 +84,14 @@ class SavingThrow(ModifierProgression):
         self.add_inherent(self.base_bonus)
 
 class SavingThrows():
-    def __init__():
-        self.fortitude = SavingThrow()
-        self.reflex = SavingThrow()
-        self.will = SavingThrow()
+    def __init__(self, level = None):
+        self.fortitude = SavingThrow(level)
+        self.reflex = SavingThrow(level)
+        self.will = SavingThrow(level)
+
+    def set_progressions_dict(self, progressions):
+        for save in save_titles:
+            getattr(self, save).set_progression(progressions[save])
 
 class AttackBonus(ModifierProgression):
     def _apply_progression(self, progression, level):
