@@ -54,6 +54,49 @@ class Modifier:
         else:
             return total
 
+class ModifierProgression(Modifier)
+    def __init__(self, progression = None, level = None):
+        self.base_bonus = 0
+        if progression and level:
+            self._apply_progression(progression, level)
+
+    #To be overridden
+    def _apply_progression(progression, level):
+        pass
+
+    def set_progression(self, progression):
+        __init__(progression=progression)
+
+    def set_level(self, level):
+        __init__(level=level)
+
+class SavingThrow(ModifierProgression):
+    def _apply_progression(self, progression, level):
+        self.base_bonus = {
+            'poor': level/2,
+            'average': (level*3)/4+1,
+            'good': level+2,
+            }[progression]
+        self.add_inherent(self.base_bonus)
+
+class AttackBonus(ModifierProgression):
+    def _apply_progression(self, progression, level):
+        self.base_bonus = {
+            'poor': level/2,
+            'average': (level*3)/4+1,
+            'good': level+2,
+            }[progression]
+        self.add_inherent(self.base_bonus)
+
+class Attributes:
+    def __init__(self):
+        self.strength = Modifier()
+        self.dexterity = Modifier()
+        self.constitution = Modifier()
+        self.intelligence = Modifier()
+        self.wisdom = Modifier()
+        self.charisma = Modifier()
+
 class ArmorClass:
     def __init__(self):
         self.misc = Modifier()
@@ -88,7 +131,6 @@ class ArmorClass:
             self.dodge.add_all(ac_modifiers['dodge'])
         if 'natural_armor' in keys:
             self.natural_armor.add_all(ac_modifiers['natural_armor'])
-
 
     def __str__(self):
         ac = 'AC ' + str(self.get_normal())
