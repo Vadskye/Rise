@@ -6,16 +6,17 @@ import combat
 
 class Creature:
 
-    def __init__(self, raw_stats, attributes, level):
+    def __init__(self, raw_stats, raw_attributes, level):
         #Core variable initializations
         #http://stackoverflow.com/questions/9946736/python-not-creating-a-new-clean-instance
+        print raw_attributes
 
         self.level = level
 
         self._init_core_statistics()
 
         self._interpret_raw_stats(raw_stats)
-        self._interpret_attributes(attributes)
+        self._interpret_raw_attributes(raw_attributes)
         
         self._set_class_calculator()
         self._calculate_class_stats()
@@ -42,16 +43,29 @@ class Creature:
         if 'size' in raw_stats.keys():
             self.size = raw_stats['size']
 
-    def _interpret_attributes(self, attributes):
-        raw_attributes = dict()
-        raw_attributes = util.dict_slice(attributes, util.attribute_titles, 
-                util.conditional_int)
-        for attribute_name in raw_attributes.keys():
-            getattr(self.attributes, attribute_name).add_inherent(
-                    raw_attributes[attribute_name])
+    def _interpret_raw_attributes(self, raw_attributes):
+        self.attributes.set_all_dict(raw_attributes)
 
         #Apply level-based scaling
-        self._scale_attributes(attributes)
+        self._scale_attributes(raw_attributes)
+
+    def _scale_attributes(self, raw_attributes):
+        try:
+            main_attribute = raw_attributes['bonus attribute 1']
+            main_increases = (2 + self.level)/4
+            getattr(self.attributes, main_attribute).add_inherent(
+                    main_increases)
+        except:
+            print 'Missing bonus attribute 1'
+            pass
+        try:
+            second_attribute = raw_attributes['bonus attribute 2']
+            second_increases = (self.level)/4
+            getattr(self.attributes, second_attribute).add_inherent(
+                    second_increases)
+        except:
+            print 'Missing bonus attribute 2'
+            pass
         
     #http://stackoverflow.com/questions/60208/replacements-for-switch-statement-in-python
     def _set_class_calculator(self):
@@ -119,8 +133,8 @@ class Creature:
     def from_creature_name(cls, creature_name, level):
         creature_filename = 'data/'+creature_name+'.txt'
         raw_stats = util.parse_stats_from_file(creature_filename)
-        attributes = util.parse_attribute_file(raw_stats)
-        return cls(raw_stats, attributes, level)
+        raw_attributes = util.parse_attribute_file(raw_stats)
+        return cls(raw_stats, raw_attributes, level)
 
     def _add_save_attributes(self):
         self.saves['fortitude'].add_inherent(
@@ -147,16 +161,6 @@ class Creature:
             self.attack_damage.add_enhancement(scale_factor)
         for save_title in self.saves.keys():
             self.saves[save_title].add_enhancement(scale_factor)
-
-    def _scale_attributes(self, attributes):
-        if 'bonus attribute 1' in attributes.keys():
-            main_attribute = attributes['bonus attribute 1']
-            main_increases = (2 + self.level)/4
-            self.attributes[main_attribute].add_inherent(main_increases)
-        if 'bonus attribute 2' in attributes.keys():
-            second_attribute = attributes['bonus attribute 2']
-            second_increases = (self.level)/4
-            self.attributes[second_attribute].add_inherent(second_increases)
 
     def _calculate_attack_attribute_bonus(self):
         if self.weapon.encumbrance =='light':
