@@ -69,10 +69,10 @@ class ModifierProgression(Modifier):
         pass
 
     def set_progression(self, progression):
-        __init__(progression=progression)
+        self.__init__(progression=progression)
 
     def set_level(self, level):
-        __init__(level=level)
+        self.__init__(level=level)
 
 class SavingThrow(ModifierProgression):
     def _apply_progression(self, progression, level):
