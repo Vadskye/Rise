@@ -111,6 +111,15 @@ class Attributes:
         self.wisdom = Modifier()
         self.charisma = Modifier()
 
+    def set_all_dict(self, raw_attributes):
+        for attribute_name in attribute_titles:
+            #use try/except to allow missing attributes
+            try:
+                getattr(self, attribute_name).add_inherent(
+                    conditional_int(raw_attributes[attribute_name]))
+            except:
+                pass
+
 class ArmorClass:
     def __init__(self):
         self.misc = Modifier()
