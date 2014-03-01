@@ -94,14 +94,12 @@ class Creature:
         self.saves.set_progressions_dict(
                 self.class_calculator.save_progressions)
 
-        self.hp = calculate_hp(self.attributes['constitution'].total(), 
+        self.hp = calculate_hp(self.attributes.constitution.total(), 
                 self.class_calculator.hit_value, self.level)
 
         self.attack_bonus.add_all(self.class_calculator.attack_bonus)
         self.attack_damage.add_all(self.class_calculator.attack_damage)
         self.armor_class.add_all(self.class_calculator.armor_class)
-        for key in self.class_calculator.saves.keys():
-            self.saves[key].add_all(self.class_calculator.saves[key])
 
     def _calculate_derived_statistics(self):
         self.attack_damage.add_die(self.weapon.damage_die)
@@ -109,16 +107,16 @@ class Creature:
             self.armor_class.armor.add_inherent(self.armor.ac_bonus)
             if self.armor.encumbrance=='medium' or self.armor.encumbrance=='heavy':
                 self.armor_class.dodge.add_inherent(util.ifloor(
-                    self.attributes['dexterity'].total()/2))
+                    self.attributes.dexterity.total()/2))
         else:
             self.armor_class.dodge.add_inherent(
-                    self.attributes['dexterity'].total())
+                    self.attributes.dexterity.total())
         if self.shield:
             self.armor_class.shield.add_inherent(self.shield.ac_bonus)
 
         self.attack_bonus.add_inherent(self._calculate_attack_attribute_bonus())
         self.attack_damage.add_inherent(util.ifloor(
-            self.attributes['strength'].total()/2))
+            self.attributes.strength.total()/2))
         self._add_save_attributes()
 
         self.armor_class.dodge.add_inherent(
@@ -126,7 +124,7 @@ class Creature:
 
         self.cmd.add_inherent(self.armor_class.get_touch())
         self.cmd.add_inherent((self.attack_bonus.base_bonus+1)/2)
-        self.cmd.add_inherent(self.attributes['strength'].total())
+        self.cmd.add_inherent(self.attributes.strength.total())
 
     #http://stackoverflow.com/questions/141545/overloading-init-in-python
     @classmethod
@@ -137,18 +135,18 @@ class Creature:
         return cls(raw_stats, raw_attributes, level)
 
     def _add_save_attributes(self):
-        self.saves['fortitude'].add_inherent(
-                self.attributes['constitution'].total())
-        self.saves['fortitude'].add_inherent(util.ifloor(
-            self.attributes['strength'].total()/2))
-        self.saves['reflex'].add_inherent(
-                self.attributes['dexterity'].total())
-        self.saves['reflex'].add_inherent(util.ifloor(
-            self.attributes['wisdom'].total()/2))
-        self.saves['will'].add_inherent(
-                self.attributes['charisma'].total())
-        self.saves['will'].add_inherent(util.ifloor(
-            self.attributes['intelligence'].total()/2))
+        self.saves.fortitude.add_inherent(
+                self.attributes.constitution.total())
+        self.saves.fortitude.add_inherent(util.ifloor(
+            self.attributes.strength.total()/2))
+        self.saves.reflex.add_inherent(
+                self.attributes.dexterity.total())
+        self.saves.reflex.add_inherent(util.ifloor(
+            self.attributes.wisdom.total()/2))
+        self.saves.will.add_inherent(
+                self.attributes.charisma.total())
+        self.saves.will.add_inherent(util.ifloor(
+            self.attributes.intelligence.total()/2))
 
     def _add_level_scaling(self):
         scale_factor = self.level/4
@@ -159,15 +157,15 @@ class Creature:
         if self.weapon:
             self.attack_bonus.add_enhancement(scale_factor)
             self.attack_damage.add_enhancement(scale_factor)
-        for save_title in self.saves.keys():
-            self.saves[save_title].add_enhancement(scale_factor)
+        for save_title in util.save_titles:
+            getattr(self.saves,save_title).add_enhancement(scale_factor)
 
     def _calculate_attack_attribute_bonus(self):
         if self.weapon.encumbrance =='light':
-            return max(self.attributes['strength'].total(),
-                    self.attributes['dexterity'].total())
+            return max(self.attributes.strength.total(),
+                    self.attributes.dexterity.total())
         else:
-            return self.attributes['strength'].total()
+            return self.attributes.strength.total()
 
     def __str__(self):
         full_string = self.name + ' ' + str(self.level)
@@ -180,9 +178,9 @@ class Creature:
         defenses = str(self.armor_class)
         defenses += '; CMD '+str(self.cmd.total())
         defenses += '\nHP '+str(self.hp)
-        defenses += '; Fort '+util.mstr(self.saves['fortitude'].total())
-        defenses += ', Ref '+util.mstr(self.saves['reflex'].total())
-        defenses += ', Will '+util.mstr(self.saves['will'].total())
+        defenses += '; Fort '+util.mstr(self.saves.fortitude.total())
+        defenses += ', Ref '+util.mstr(self.saves.reflex.total())
+        defenses += ', Will '+util.mstr(self.saves.will.total())
         return defenses
 
     def _to_string_attacks(self):
