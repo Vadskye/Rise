@@ -24,11 +24,11 @@ class Creature:
         self._calculate_derived_statistics()
 
     def _init_core_statistics(self):
-        self.attack_bonus = util.AttackBonus()
+        self.attack_bonus = util.AttackBonus(level=self.level)
         self.attack_damage = util.Modifier()
         self.attributes = util.Attributes()
         self.armor_class = util.ArmorClass()
-        self.saves = util.SavingThrows()
+        self.saves = util.SavingThrows(level=self.level)
         self.cmd = util.Modifier()
 
     def _interpret_raw_stats(self, raw_stats):
@@ -75,10 +75,10 @@ class Creature:
         #note that we are hardcoding the call to barbarian
         #This needs to be made automatic later
 
-        self.base_attack_bonus=self.class_calculator.calculate_base_attack_bonus()
-
-        for title in util.save_titles:
-            self.saves[title].add_inherent(self.class_calculator.calc_save(title))
+        self.attack_bonus.set_progression(
+                self.class_calculator.base_attack_bonus_progression)
+        self.saves.set_progressions_dict(
+                self.class_calculator.save_progressions)
 
         self.hp = calculate_hp(self.attributes['constitution'].total(), 
                 self.class_calculator.hit_value, self.level)
@@ -102,16 +102,16 @@ class Creature:
         if self.shield:
             self.armor_class.shield.add_inherent(self.shield.ac_bonus)
 
-        self.attack_bonus.add_inherent(self.base_attack_bonus)
         self.attack_bonus.add_inherent(self._calculate_attack_attribute_bonus())
         self.attack_damage.add_inherent(util.ifloor(
             self.attributes['strength'].total()/2))
         self._add_save_attributes()
 
-        self.armor_class.dodge.add_inherent(util.ifloor(self.base_attack_bonus/2))
+        self.armor_class.dodge.add_inherent(
+                util.ifloor(self.attack_bonus.base_bonus/2))
 
         self.cmd.add_inherent(self.armor_class.get_touch())
-        self.cmd.add_inherent((self.base_attack_bonus+1)/2)
+        self.cmd.add_inherent((self.attack_bonus.base_bonus+1)/2)
         self.cmd.add_inherent(self.attributes['strength'].total())
 
     #http://stackoverflow.com/questions/141545/overloading-init-in-python
