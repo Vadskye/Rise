@@ -120,7 +120,7 @@ class Creature(object):
         self.armor_class.dodge.add_inherent(
                 util.ifloor(self.attack_bonus.base_bonus/2))
 
-        self.cmd.add_inherent(self.armor_class.get_touch())
+        self.cmd.add_inherent(self.armor_class.touch())
         self.cmd.add_inherent((self.attack_bonus.base_bonus+1)/2)
         self.cmd.add_inherent(self.attributes.strength.total())
 
@@ -189,7 +189,7 @@ class Creature(object):
     def _to_string_attributes(self):
         attributes = 'Attr'
         for title in util.attribute_titles:
-            attributes += ' ' + str(self.attributes[title].total())
+            attributes += ' ' + str(getattr(self.attributes, title).total())
         return attributes
 
     def to_monster(self):
