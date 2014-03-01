@@ -6,12 +6,11 @@ import combat
 
 class Creature:
 
-    def __init__(self, raw_stats, raw_attributes, level):
+    def __init__(self, raw_stats, raw_attributes, level, verbose=False):
         #Core variable initializations
         #http://stackoverflow.com/questions/9946736/python-not-creating-a-new-clean-instance
-        print raw_attributes
-
         self.level = level
+        self.verbose = verbose
 
         self._init_core_statistics()
 
@@ -56,7 +55,7 @@ class Creature:
             getattr(self.attributes, main_attribute).add_inherent(
                     main_increases)
         except:
-            print 'Missing bonus attribute 1'
+            if self.verbose: print 'Missing bonus attribute 1'
             pass
         try:
             second_attribute = raw_attributes['bonus attribute 2']
@@ -64,7 +63,7 @@ class Creature:
             getattr(self.attributes, second_attribute).add_inherent(
                     second_increases)
         except:
-            print 'Missing bonus attribute 2'
+            if self.verbose: print self.name, 'Missing bonus attribute 2'
             pass
         
     #http://stackoverflow.com/questions/60208/replacements-for-switch-statement-in-python
