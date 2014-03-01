@@ -92,7 +92,7 @@ class Creature(object):
         self.saves.set_progressions_dict(
                 self.class_calculator.save_progressions)
 
-        self.hp = calculate_hp(self.attributes.constitution.total(), 
+        self.max_hit_points = calculate_hit_points(self.attributes.constitution.total(), 
                 self.class_calculator.hit_value, self.level)
 
         self.attack_bonus.add_all(self.class_calculator.attack_bonus)
@@ -175,7 +175,7 @@ class Creature(object):
     def _to_string_defenses(self):
         defenses = str(self.armor_class)
         defenses += '; CMD '+str(self.cmd.total())
-        defenses += '\nHP '+str(self.hp)
+        defenses += '\nHP '+str(self.max_hit_points)
         defenses += '; Fort '+util.mstr(self.saves.fortitude.total())
         defenses += ', Ref '+util.mstr(self.saves.reflex.total())
         defenses += ', Will '+util.mstr(self.saves.will.total())
@@ -230,7 +230,7 @@ class Creature(object):
 
         return monster_string
                 
-def calculate_hp(constitution, hit_value, level):
+def calculate_hit_points(constitution, hit_value, level):
     return (constitution + hit_value) * level
 
 #A creature with "typical" attributes for its level.
