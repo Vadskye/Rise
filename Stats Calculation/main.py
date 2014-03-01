@@ -13,20 +13,30 @@ def initialize_argument_parser():
 
 def compare_ac_to_reflex(creature):
     return 'AC {0}, Reflex {1}, {2}'.format(
-                    creature.armor_class.get_normal(),
-                    creature.saves['reflex'].total(),
-                    util.mstr(creature.armor_class.get_normal() - (10 + creature.saves['reflex'].total())))
+            creature.armor_class.get_normal(),
+            creature.saves['reflex'].total(),
+            util.mstr(creature.armor_class.get_normal() - (10 + creature.saves['reflex'].total())))
 
 def rounds_survived(attacker, defender):
     return combat.rounds_survived(attacker.attack_bonus.total(),
-                    defender.armor_class.get_normal(), attacker.base_attack_bonus,
-                    attacker.attack_damage.total(), defender.hp)
+            defender.armor_class.get_normal(), attacker.base_attack_bonus,
+            attacker.attack_damage.total(), defender.hp)
 
 def rounds_survived_generic(creature, i):
     return combat.rounds_survived(creature.attack_bonus.total(),
-                    generic_ac_calc[i], creature.base_attack_bonus,
-                    creature.attack_damage.total(), generic_hp[i])
-    
+            generic_ac_calc[i], creature.base_attack_bonus,
+            creature.attack_damage.total(), generic_hp[i])
+
+def identify_effect_of_bonuses(creature):
+    print i+1, current_char.damage_per_round(generic_ac_calc[i]), current_char.damage_per_round(
+            generic_ac_calc[i])*1.075,
+    #current_char.attack_bonus.add_circumstance(-2-(i+1)/4)
+    current_char.attack_bonus.add_circumstance(1)
+    #current_char.attack_damage.add_circumstance(2+((i+1)/4)*2)
+    #current_char.attack_damage.add_circumstance(2)
+    #print i+1, current_char.hits_per_round(generic_ac_calc[i])
+    print current_char.damage_per_round(generic_ac_calc[i])
+
 
 if __name__ == "__main__":
     args = initialize_argument_parser()
@@ -53,22 +63,18 @@ if __name__ == "__main__":
             #print i+1, creature.armor_class.get_normal(), 'vs', generic_ac_real[i], ':', util.mstr(creature.armor_class.get_normal()-generic_ac_real[i])
     else:
         for i in xrange(20):
-            barbarian = Creature.from_creature_name('brb-heavy', i+1)
-            cleric = Creature.from_creature_name('cleric-warrior', i+1)
-            fighter = Creature.from_creature_name('ftr-heavy', i+1)
-            npc = Creature.from_creature_name('npc', i+1)
-            rogue = Creature.from_creature_name('rogue-single', i+1)
+            barbarian = combat.CombatCreature.from_creature_name('brb-heavy', i+1)
+            cleric = combat.CombatCreature.from_creature_name('cleric-warrior', i+1)
+            fighter = combat.CombatCreature.from_creature_name('ftr-heavy', i+1)
+            npc = combat.CombatCreature.from_creature_name('npc', i+1)
+            rogue = combat.CombatCreature.from_creature_name('rogue-single', i+1)
 
             current_char = fighter
-            print i+1, current_char.dpr(generic_ac_calc[i]), current_char.dpr(
-                    generic_ac_calc[i])*1.075,
-            #current_char.attack_bonus.add_circumstance(-2-(i+1)/4)
-            current_char.attack_bonus.add_circumstance(1)
-            #current_char.attack_damage.add_circumstance(2+((i+1)/4)*2)
-            #current_char.attack_damage.add_circumstance(2)
-            #print i+1, current_char.hits_per_round(generic_ac_calc[i])
-            print current_char.dpr(generic_ac_calc[i])
-            #print i+1, cleric.dpr(generic_ac_calc[i]), 'vs', npc.dpr(generic_ac_calc[i])
+            battle = combat.Battle(fighter, barbarian)
+
+            victor, round_count = battle.determine_victor()
+            print victor.name, victor.current_hit_points, victor.max_hit_points, round_count
+            #print i+1, cleric.damage_per_round(generic_ac_calc[i]), 'vs', npc.dpr(generic_ac_calc[i])
             #print i+1, compare_ac_to_reflex(barbarian)
             #print rounds_survived(npc, current_char)
             #print i+1, current_char.hp, (i+1)*5.5/2, current_char.hp/((i+1)*5.5/2)
