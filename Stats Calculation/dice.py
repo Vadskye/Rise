@@ -10,14 +10,15 @@ class Dice(object):
         die_name = die_name.split('d')
         #Assume multiple dice (2d6)
         die_sizes = list()
-        try:
+        if die_name[0]:
+            #Multiple dice
             for i in range(int(die_name[0])):
                 die_sizes.append(int(die_name[1]))
             return cls(die_sizes)
-        except:
+        else:
             #Single die
             die_sizes = list()
-            die_sizes.append(int(die_name[0]))
+            die_sizes.append(int(die_name[1]))
             return cls(die_sizes)
         
     def roll(self):
