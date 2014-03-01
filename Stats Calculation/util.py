@@ -1,5 +1,6 @@
 import re
 import math
+import dice
 
 attribute_titles = ['strength', 'dexterity', 'constitution', 'intelligence', 
         'wisdom', 'charisma']
@@ -46,17 +47,24 @@ class Modifier:
             self.add_circumstance(bonus_dict['circumstance'])
 
     def add_die(self, die):
-        if die_average(die)>die_average(self.die):
-            self.die=die
+        try:
+            if die.average > self.die.average:
+                self.die=die
+        except:
+            self.die = die
 
-    def total(self):
+    def total(self, roll=False):
         total = sum([self.inherent, self.enhancement, self.competence,
             self.circumstance])
         #return int if there are no dice
-        if self.die:
-            return die_average(self.die) + total
+        if roll:
+            return total + self.die.roll()
         else:
-            return total
+            #If there is a die, add the average
+            try:
+                return total + self.die.average()
+            except:
+                return total
 
 class ModifierProgression(Modifier):
     def __init__(self, progression = None, level = None):
@@ -134,15 +142,15 @@ class ArmorClass:
         self.natural_armor = Modifier()
         self.misc.add_inherent(10)
 
-    def get_normal(self):
+    def normal(self):
         normal = sum([self.misc.total(), self.shield.total(), self.dodge.total()])
         normal += sum_armor(self.armor.total(), self.natural_armor.total())
         return normal
 
-    def get_touch(self):
+    def touch(self):
         return sum([self.misc.total(), self.shield.total(), self.dodge.total()])
 
-    def get_flatfooted(self):
+    def flatfooted(self):
         flatfooted = self.misc.total()
         flatfooted += sum_armor(self.armor.total(), self.natural_armor.total())
         return flatfooted
@@ -161,9 +169,9 @@ class ArmorClass:
             self.natural_armor.add_all(ac_modifiers['natural_armor'])
 
     def __str__(self):
-        ac = 'AC ' + str(self.get_normal())
-        ac += ', touch ' + str(self.get_touch())
-        ac += ', flat-footed ' + str(self.get_flatfooted())
+        ac = 'AC ' + str(self.normal())
+        ac += ', touch ' + str(self.touch())
+        ac += ', flat-footed ' + str(self.flatfooted())
         return ac
 
 def ifloor(num):
