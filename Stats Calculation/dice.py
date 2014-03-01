@@ -3,6 +3,7 @@ import random
 class Dice(object):
     def __init__(self, die_sizes):
         self.die_sizes = die_sizes
+        self.average = self._get_average()
 
     @classmethod
     def from_string(cls, die_name):
@@ -25,7 +26,7 @@ class Dice(object):
             total += random.randrange(1, die_size+1)
         return total
 
-    def average(self):
+    def _get_average(self):
         total = 0
         for die_size in self.die_sizes:
             total += (1 + die_size)/2.0
