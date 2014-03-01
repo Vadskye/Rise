@@ -1,5 +1,5 @@
 import argparse
-from creature import Creature
+from creature import Creature, Character
 import util
 import combat
 
@@ -63,11 +63,11 @@ if __name__ == "__main__":
             #print i+1, creature.armor_class.get_normal(), 'vs', generic_ac_real[i], ':', util.mstr(creature.armor_class.get_normal()-generic_ac_real[i])
     else:
         for i in xrange(20):
-            barbarian = combat.CombatCreature.from_creature_name('brb-heavy', i+1)
-            cleric = combat.CombatCreature.from_creature_name('cleric-warrior', i+1)
-            fighter = combat.CombatCreature.from_creature_name('ftr-heavy', i+1)
-            npc = combat.CombatCreature.from_creature_name('npc', i+1)
-            rogue = combat.CombatCreature.from_creature_name('rogue-single', i+1)
+            barbarian = Character.from_creature_name('brb-heavy', i+1)
+            cleric = Character.from_creature_name('cleric-warrior', i+1)
+            fighter = Character.from_creature_name('ftr-heavy', i+1)
+            npc = Character.from_creature_name('npc', i+1)
+            rogue = Character.from_creature_name('rogue-single', i+1)
 
             current_char = fighter
             battle = combat.Battle(fighter, barbarian)
