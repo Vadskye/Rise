@@ -275,7 +275,10 @@ class Creature(object):
                 ac, self.attack_bonus.base_bonus)
 
 class Character(Creature):
-    pass
+    #http://stackoverflow.com/questions/7629556/python-super-and-init-vs-init-self
+    def __init__(self, raw_stats, raw_attributes, level, verbose=False):
+        super(Character, self).__init__(raw_stats, raw_attributes, level,
+                verbose)
 
 def calculate_hit_points(constitution, hit_value, level):
     return (constitution + hit_value) * level
