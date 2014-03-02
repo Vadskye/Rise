@@ -62,7 +62,7 @@ class Fighter(CharacterClass):
         #armor discipline
         armor_discipline_count = (self.level+5)/6
         base_creature.armor_class.dodge.add_competence(armor_discipline_count)
-        for i in xrange(armor_discipline_count):
+        for i in xrange(1,armor_discipline_count):
             base_creature.armor.encumbrance = self._lower_armor_encumbrance(
                     base_creature.armor.encumbrance)
 
