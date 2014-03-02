@@ -11,6 +11,7 @@ class Dice(object):
     @classmethod
     def from_string(cls, die_name):
         #First check the number of dice 
+        #http://stackoverflow.com/questions/3845423/remove-empty-strings-from-a-list-of-strings
         die_split = filter(bool, re.split('d', die_name))
         if len(die_split)>1:
             die_count = int(die_split[0])
