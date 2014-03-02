@@ -42,6 +42,7 @@ class Dice(object):
             if increase_min: self.die_minimum+=self.dice_count
         else:
             return False
+        self.average = self._get_average()
 
     def roll(self):
         total = self._get_raw_roll()
@@ -67,6 +68,13 @@ class Dice(object):
                 self.dice_count**2*self.die_size) 
         total += total*chance_to_hit_min
         return total
+
+    def __str__(self):
+        text = ''
+        if self.dice_count: text+='{0}'.format(self.dice_count)
+        text +='d{0}'.format(self.die_size)
+        if self.die_minimum: text+='m{0}'.format(self.die_minimum)
+        return text
 
 def dx(x):
     return Dice(x)
