@@ -38,6 +38,12 @@ class Barbarian(CharacterClass):
         base_creature.damage_reduction = util.DamageReduction(dr_value,
                 'physical')
 
+        #Larger than Life/Belief
+        if self.level>=7:
+            base_creature.attack_damage.die.increase_size(increase_min=True)
+            if self.level>=17:
+                base_creature.attack_damage.die.increase_size(increase_min=True)
+
 class Bard(CharacterClass):
     bab_progression = AVERAGE
     save_progressions = {'fortitude':AVERAGE, 'reflex':AVERAGE, 'will':AVERAGE}
@@ -69,10 +75,8 @@ class Fighter(CharacterClass):
         #weapon discipline
         if self.level>=3:
             ab=1
-            base_creature.attack_damage.die.increase_size(increase_min=True)
             if self.level>=9:
                 ab+=1
-                base_creature.attack_damage.die.increase_size(increase_min=True)
             base_creature.attack_bonus.add_competence(ab)
             if self.level>=15:
                 pass
