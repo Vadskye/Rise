@@ -2,9 +2,10 @@ import random
 import re
 
 class Dice(object):
-    def __init__(self, die_sizes, die_minimums):
-        self.die_sizes = die_sizes
-        self.die_minimums = die_minimums
+    def __init__(self, die_size, dice_count = 1, die_minimum=0):
+        self.die_size = die_size
+        self.dice_count = dice_count
+        self.die_minimum = die_minimum
         self.average = self._get_average()
 
     #read a single collection of dice: '2d6' or '2d8m1'
@@ -14,37 +15,53 @@ class Dice(object):
         #http://stackoverflow.com/questions/3845423/remove-empty-strings-from-a-list-of-strings
         die_split = filter(bool, re.split('d', die_name))
         if len(die_split)>1:
-            die_count = int(die_split[0])
-            die_split = re.split('m', die_split[1])
+            dice_count = int(die_split[0])
+            die_split = die_split[1]
         else:
-            die_count = 1
-            die_split = re.split('m', die_split[0])
-        #Then create the appropriate number of dice 
-        die_sizes = [int(die_split[0]) for i in range(die_count)]
-        #Check for die minimums
+            dice_count = 1
+            die_split = die_split[0]
+        die_split = filter(bool, re.split('m', die_split))
+        #Extract the die size 
+        die_size = int(die_split[0])
+        #Check for a die minimum
         if len(die_split)==2:
-            die_minimums = [int(die_split[1]) for i in range(die_count)]
+            die_minimum = int(die_split[1])
         else:
-            die_minimums = [0 for i in range(die_count)]
-        return cls(die_sizes, die_minimums)
-        
+            die_minimum = 0
+        return cls(die_size, dice_count, die_minimum)
+
+    def increase_size(self):
+        if self.die_size <4:
+            self.die_size+=1
+        elif self.die_size < 10:
+            self.die_size+=2
+        elif self.die_size == 10:
+            self.die_size = 6
+            self.dice_count*=2
+        else:
+            return False
+
     def roll(self):
+        total = self._get_raw_roll()
+        if total<self.die_minimum:
+            total = self._get_raw_roll()
+        return total
+
+    def _get_raw_roll(self):
         total = 0
-        for i, die_size in enumerate(self.die_sizes):
-            die_roll = random.randrange(1, die_size+1)
+        for i in xrange(self.dice_count):
+            die_roll = random.randrange(1, self.die_size+1)
             #reroll once if at or below minimum
-            if self.die_minimums[i] and die_roll <= self.die_minimums[i]:
-                die_roll = random.randrange(1, die_size+1)
             total += die_roll
         return total
 
     def _get_average(self):
         total = 0
-        for die_size in self.die_sizes:
-            total += (1 + die_size)/2.0
+        for i in xrange(self.dice_count):
+            total += (1 + self.die_size)/2.0
         return total
 
 def dx(x):
-    return Dice([x], [None])
+    return Dice(x)
 
 die = Dice.from_string("1d2m1") 
