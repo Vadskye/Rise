@@ -67,13 +67,16 @@ class Fighter(CharacterClass):
                     base_creature.armor.encumbrance)
 
         #weapon discipline
-        ab=1
-        if self.level>=7:
-            ab+=1
-        base_creature.attack_bonus.add_competence(ab)
-        if self.level>=15:
-            pass
-            #add critical changes
+        if self.level>=3:
+            ab=1
+            base_creature.attack_damage.die.increase_size(increase_min=True)
+            if self.level>=9:
+                ab+=1
+                base_creature.attack_damage.die.increase_size(increase_min=True)
+            base_creature.attack_bonus.add_competence(ab)
+            if self.level>=15:
+                pass
+                #add critical changes
 
     def _lower_armor_encumbrance(self, encumbrance):
         return {
