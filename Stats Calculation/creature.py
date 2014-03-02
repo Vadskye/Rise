@@ -103,11 +103,11 @@ class Creature(object):
 
     def _calculate_derived_statistics(self):
         self.attack_damage.add_die(self.weapon.damage_die)
-        if self.armor:
-            self.armor_class.armor.add_inherent(self.armor.ac_bonus)
-            if self.armor.encumbrance=='medium' or self.armor.encumbrance=='heavy':
-                self.armor_class.dodge.add_inherent(util.ifloor(
-                    self.attributes.dexterity.total()/2))
+        print self.armor.encumbrance
+        self.armor_class.armor.add_inherent(self.armor.ac_bonus)
+        if self.armor.encumbrance=='medium' or self.armor.encumbrance=='heavy':
+            self.armor_class.dodge.add_inherent(util.ifloor(
+                self.attributes.dexterity.total()/2))
         else:
             self.armor_class.dodge.add_inherent(
                     self.attributes.dexterity.total())
