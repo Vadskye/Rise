@@ -57,14 +57,12 @@ class Modifier:
         total = sum([self.inherent, self.enhancement, self.competence,
             self.circumstance])
         #return int if there are no dice
-        if roll:
-            return total + self.die.roll()
-        else:
-            #If there is a die, add the average
-            try:
+        if self.die:
+            if roll:
+                return total + self.die.roll()
+            else:
                 return total + self.die.average
-            except:
-                return total
+        return total
 
 class ModifierProgression(Modifier):
     def __init__(self, progression = None, level = None):
@@ -209,6 +207,10 @@ def ifloor(num):
     return int(math.floor(num))
 
 def sum_armor(armor, natural_armor):
+    if not natural_armor:
+        return armor
+    if not armor:
+        return natural_armor
     if armor >= natural_armor:
         return armor + ifloor(natural_armor/2)
     else:
