@@ -116,7 +116,7 @@ class Creature(object):
         self.attack_bonus.add_inherent(self._calculate_attack_attribute_bonus())
 
         #Apply benefit of Overwhelming Force feat 
-        if self.attributes.strength>=5 and self.attack_bonus.base_bonus >=8 and self.weapon.encumbrance == 'heavy':
+        if self.attributes.strength.total() >=5 and self.attack_bonus.base_bonus >=8 and self.weapon.encumbrance == 'heavy':
             strength_bonus_to_damage = self.attributes.strength.total()
         else:
             strength_bonus_to_damage = util.ifloor(
