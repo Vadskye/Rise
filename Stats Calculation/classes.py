@@ -31,6 +31,7 @@ class Barbarian(CharacterClass):
         base_creature.armor_class.misc.add_inherent(-2)
         base_creature.saves.fortitude.add_competence(std_scale(self.level))
         base_creature.saves.will.add_competence(std_scale(self.level))
+        base_creature.damage_reduction = self.level
 
 class Bard(CharacterClass):
     bab_progression = AVERAGE
