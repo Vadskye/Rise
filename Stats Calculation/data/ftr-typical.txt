@@ -1,0 +1,7 @@
+name=Ftr-typical
+race=human
+class=fighter
+weapon=medium_melee
+armor=heavy
+shield=heavy
+attributes=warrior
