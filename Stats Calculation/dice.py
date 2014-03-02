@@ -43,7 +43,7 @@ class Dice(object):
 
     def roll(self):
         total = self._get_raw_roll()
-        if total<self.die_minimum:
+        if total<=self.die_minimum:
             total = self._get_raw_roll()
         return total
 
@@ -59,9 +59,16 @@ class Dice(object):
         total = 0
         for i in xrange(self.dice_count):
             total += (1 + self.die_size)/2.0
+        #this formula only works for die count = 1 
+        #it is inflated for larger dice counts
+        chance_to_hit_min = (self.die_minimum+1-self.dice_count)/float(
+                self.dice_count**2*self.die_size) 
+        total += total*chance_to_hit_min
         return total
 
 def dx(x):
     return Dice(x)
 
-die = Dice.from_string("1d2m1") 
+if __name__=="__main__":
+    die = Dice.from_string('2d6m2')
+    print die._get_average()
