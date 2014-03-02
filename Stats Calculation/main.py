@@ -2,6 +2,7 @@ import argparse
 from creature import Creature, Character
 import util
 import combat
+import cProfile
 
 def initialize_argument_parser():
     parser = argparse.ArgumentParser(description='Calculate combat statistics for Rise characters')
@@ -27,6 +28,14 @@ def rounds_survived_generic(creature, i):
             generic_ac_calc[i], creature.base_attack_bonus,
             creature.attack_damage.total(), generic_hp[i])
 
+def single_battle(battle):
+    victor, round_count = battle.determine_victor()
+    print victor.name, victor.current_hit_points, victor.max_hit_points, round_count
+
+def run_repeated_battles(battle, repeat_count):
+    win_prob1, win_prob2, avg_rounds = battle.iterated_battles(repeat_count)
+    print i+1, win_prob1, win_prob2, avg_rounds
+
 def identify_effect_of_bonuses(creature):
     print i+1, current_char.damage_per_round(generic_ac_calc[i]), current_char.damage_per_round(
             generic_ac_calc[i])*1.075,
@@ -37,18 +46,18 @@ def identify_effect_of_bonuses(creature):
     #print i+1, current_char.hits_per_round(generic_ac_calc[i])
     print current_char.damage_per_round(generic_ac_calc[i])
 
+#this is the generic AC we assume for attack calculations
+#note that we assume overwhelm 2 since overwhelm penalties are so common 
+    #so actual character AC should be two higher
+def get_generic_ac_calc():
+    return [i+14 for i in range(1,21)]
+def get_generic_ac_real():
+    return [i+16 for i in range(1,21)]
+def get_generic_hp():
+    return [i*7 for i in range(1,21)]
 
 if __name__ == "__main__":
     args = initialize_argument_parser()
-    #If a specific level is given, show that level
-
-    #this is the generic AC we assume for attack calculations
-    #note that we assume overwhelm 2 since overwhelm penalties are so common 
-    generic_ac_calc = [i+14 for i in range(1,21)]
-    #so actual character AC should be two higher
-    generic_ac_real = [i+16 for i in range(1,21)]
-
-    generic_hp = [i*7 for i in range(1,21)]
 
     if args['level']:
         creature = Creature.from_creature_name(args['creature'],
@@ -59,21 +68,28 @@ if __name__ == "__main__":
         for i in xrange(20):
             creature = Creature.from_creature_name(args['creature'], i+1)
             print creature
-            #print i+1, util.mstr(creature.attack_bonus.total()), 'vs', generic_ac_calc[i], ':', creature.avg_hit_probability(generic_ac_calc[i])
-            #print i+1, creature.armor_class.get_normal(), 'vs', generic_ac_real[i], ':', util.mstr(creature.armor_class.get_normal()-generic_ac_real[i])
     else:
-        for i in xrange(20):
+        for i in xrange(1,20):
+            """
             barbarian = Character.from_creature_name('brb-heavy', i+1)
+            other_barbarian = Character.from_creature_name('brb-heavy', i+1)
             cleric = Character.from_creature_name('cleric-warrior', i+1)
-            fighter = Character.from_creature_name('ftr-heavy', i+1)
+            fighter_heavy = Character.from_creature_name('ftr-heavy', i+1)
             npc = Character.from_creature_name('npc', i+1)
+            npc2 = Character.from_creature_name('npc', i+1)
             rogue = Character.from_creature_name('rogue-single', i+1)
+            """
+            fighter_typical = Character.from_creature_name('ftr-typical', i+1)
+            fighter_dex = Character.from_creature_name('ftr-dex', i+1)
 
-            current_char = fighter
-            battle = combat.Battle(fighter, barbarian)
+            battle = combat.Battle(fighter_dex, fighter_typical)
 
-            victor, round_count = battle.determine_victor()
-            print victor.name, victor.current_hit_points, victor.max_hit_points, round_count
+            repeat_count = 500
+            run_repeated_battles(battle, repeat_count)
+
+            #print npc.armor_class.normal() - generic_ac_real[i]
+
+
             #print i+1, cleric.damage_per_round(generic_ac_calc[i]), 'vs', npc.dpr(generic_ac_calc[i])
             #print i+1, compare_ac_to_reflex(barbarian)
             #print rounds_survived(npc, current_char)
