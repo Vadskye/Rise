@@ -62,7 +62,7 @@ class Modifier:
         else:
             #If there is a die, add the average
             try:
-                return total + self.die.average()
+                return total + self.die.average
             except:
                 return total
 
