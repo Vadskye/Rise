@@ -74,7 +74,9 @@ class ModifierProgression(Modifier):
         self.competence=0
         self.circumstance=0
         self.die=None
-        if progression and level:
+        self.progression = progression
+        self.level = level
+        if self.progression and self.level:
             self._apply_progression(progression, level)
 
     #To be overridden
@@ -82,10 +84,14 @@ class ModifierProgression(Modifier):
         pass
 
     def set_progression(self, progression):
-        self.__init__(progression=progression)
+        self.progression = progression
+        if self.progression and self.level:
+            self._apply_progression(self.progression, self.level)
 
     def set_level(self, level):
-        self.__init__(level=level)
+        self.level = level
+        if self.progression and self.level:
+            self._apply_progression(self.progression, self.level)
 
 class SavingThrow(ModifierProgression):
     def _apply_progression(self, progression, level):
@@ -94,7 +100,7 @@ class SavingThrow(ModifierProgression):
             'average': (level*3)/4+1,
             'good': level+2,
             }[progression]
-        self.add_inherent(self.base_bonus)
+        self.inherent = self.base_bonus
 
 class SavingThrows():
     def __init__(self, level = None):
@@ -113,7 +119,7 @@ class AttackBonus(ModifierProgression):
             'average': (level*3)/4+1,
             'good': level+2,
             }[progression]
-        self.add_inherent(self.base_bonus)
+        self.inherent = self.base_bonus
 
 class Attributes:
     def __init__(self):
@@ -131,6 +137,7 @@ class Attributes:
                 getattr(self, attribute_name).add_inherent(
                     conditional_int(raw_attributes[attribute_name]))
             except:
+                print 'missing attribute'
                 pass
 
 class ArmorClass:
