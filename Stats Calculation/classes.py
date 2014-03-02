@@ -59,13 +59,28 @@ class Fighter(CharacterClass):
     hit_value = 6
 
     def apply_modifications(self, base_creature):
-        base_creature.armor_class.dodge.add_competence((self.level+5)/6)
+        #armor discipline
+        armor_discipline_count = (self.level+5)/6
+        base_creature.armor_class.dodge.add_competence(armor_discipline_count)
+        for i in xrange(armor_discipline_count):
+            base_creature.armor.encumbrance = self._lower_armor_encumbrance(
+                    base_creature.armor.encumbrance)
 
-        #weapon focus + weapon disciplines
-        ab=1+(self.level+3)/6
-        if self.level>=8:
+        #weapon discipline
+        ab=1
+        if self.level>=7:
             ab+=1
         base_creature.attack_bonus.add_competence(ab)
+        if self.level>=15:
+            pass
+            #add critical changes
+
+    def _lower_armor_encumbrance(self, encumbrance):
+        return {
+                'heavy': 'medium',
+                'medium': 'light',
+                'light': 'none',
+                'none': 'none'}[encumbrance]
 
 class Monk(CharacterClass):
     bab_progression = AVERAGE
