@@ -44,6 +44,7 @@ class Creature(object):
             self.class_name = raw_stats['class']
         equipment_set = equipment.EquipmentSet.from_raw_stats(raw_stats)
         self.weapon = equipment_set.weapon
+        self.attack_damage.add_die(self.weapon.damage_die)
         self.armor = equipment_set.armor
         self.shield = equipment_set.shield
         if 'size' in raw_stats.keys():
@@ -102,7 +103,6 @@ class Creature(object):
                 self.class_calculator.hit_value, self.level)
 
     def _calculate_derived_statistics(self):
-        self.attack_damage.add_die(self.weapon.damage_die)
         self.armor_class.armor.add_inherent(self.armor.ac_bonus)
         if self.armor.encumbrance=='medium' or self.armor.encumbrance=='heavy':
             self.armor_class.dodge.add_inherent(util.ifloor(
