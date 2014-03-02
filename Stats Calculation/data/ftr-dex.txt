@@ -1,0 +1,7 @@
+name=Ftr-dex
+race=human
+class=fighter
+weapon=medium_melee
+armor=medium
+shield=heavy
+attributes=warrior
