@@ -13,11 +13,15 @@ class Battle(object):
         first_creature = self.first_creature
         second_creature = self.second_creature
         while first_creature.is_alive and second_creature.is_alive:
+            first_creature.new_round()
+            second_creature.new_round()
             damage = full_attack_damage(first_creature, second_creature)
-            second_creature.take_damage(damage)
+            second_creature.take_damage(damage,
+                    first_creature.attack_damage_types)
             if second_creature.is_alive:
                 damage = full_attack_damage(second_creature, first_creature)
-                first_creature.take_damage(damage)
+                first_creature.take_damage(damage,
+                        second_creature.attack_damage_types)
             round_count+=1
         if first_creature.is_alive:
             return first_creature, round_count
