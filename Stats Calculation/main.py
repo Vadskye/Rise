@@ -34,7 +34,7 @@ def single_battle(battle):
 
 def run_repeated_battles(battle, repeat_count):
     win_prob1, win_prob2, avg_rounds = battle.iterated_battles(repeat_count)
-    print i+1, win_prob1, win_prob2, avg_rounds
+    return win_prob1, win_prob2, avg_rounds
 
 def identify_effect_of_bonuses(creature):
     print i+1, current_char.damage_per_round(generic_ac_calc[i]), current_char.damage_per_round(
@@ -69,7 +69,7 @@ if __name__ == "__main__":
             creature = Creature.from_creature_name(args['creature'], i+1)
             print creature
     else:
-        for i in xrange(1,20):
+        for i in xrange(20):
             """
             barbarian = Character.from_creature_name('brb-heavy', i+1)
             other_barbarian = Character.from_creature_name('brb-heavy', i+1)
@@ -90,7 +90,8 @@ if __name__ == "__main__":
             #print fighter_heavy
 
             repeat_count = 500
-            run_repeated_battles(battle, repeat_count)
+            results = run_repeated_battles(battle, repeat_count)
+            print i+1, results[0], results[2]
 
             #print npc.armor_class.normal() - generic_ac_real[i]
 
