@@ -29,13 +29,14 @@ class Creature(object):
     def _init_core_statistics(self):
         self.attack_bonus = util.AttackBonus(level=self.level)
         self.attack_damage = util.Modifier()
+        self.attack_damage_types = ['physical']
         self.attributes = util.Attributes()
         self.armor_class = util.ArmorClass()
         self.saves = util.SavingThrows(level=self.level)
         self.cmd = util.Modifier()
         self.hit_value = None
         self.max_hit_points = 0
-        self.damage_reduction = 0
+        self.damage_reduction = util.DamageReduction()
 
     def _interpret_raw_stats(self, raw_stats):
         self.name = raw_stats['name']
@@ -231,11 +232,15 @@ class Creature(object):
 
         return monster_string
 
-    def take_damage(self, damage_dealt):
+    def new_round(self):
+        self.damage_reduction.refresh()
+
+    def take_damage(self, damage, damage_types):
+        damage = self.damage_reduction.reduce_damage(damage, damage_types)
         if self.current_hit_points>0:
-            self.current_hit_points = max(0, self.current_hit_points-damage_dealt)
+            self.current_hit_points = max(0, self.current_hit_points-damage)
         else:
-            self.critical_damage+=damage_dealt
+            self.critical_damage+=damage
             self.is_alive = self._check_if_alive()
     
     def _check_if_alive(self):
