@@ -23,30 +23,6 @@ class Battle(object):
             return first_creature, round_count
         return second_creature, round_count
 
-class DamageReduction(object):
-    def __init__(self, value, type_resisted, type_vulnerable=None):
-        self.base_reduction = value
-        self.remaining_reduction = base_reduction
-        self.type_resisted = type_resisted
-        self.type_vulnerable = type_vulnerable
-
-    def reduce_damage(self, damage, damage_types):
-        #vulnerable typing shuts off DR
-        if type_vulnerable in damage_types:
-            remaining_reduction = 0
-            return damage
-        #apply DR if it is relevent
-        if type_resisted in damage_types:
-            damage_resisted = min(damage, remaining_reduction)
-            remaining_reduction -= damage_resisted
-            return damage - damage_resisted
-        #Just return the damage
-        return damage
-
-    #Damage reduction refreshes at the beginning of each round
-    def refresh(self):
-        self.remaining_reduction = base_reduction
-
 def full_attack_damage(attacker, defender):
     damage_dealt = 0
     for i in xrange(attack_count(attacker.attack_bonus.base_bonus)):
