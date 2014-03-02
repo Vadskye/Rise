@@ -13,13 +13,26 @@ class Battle(object):
         first_creature = self.first_creature
         second_creature = self.second_creature
         while first_creature.is_alive and second_creature.is_alive:
-            first_creature.full_attack(second_creature)
+            damage = full_attack_damage(first_creature, second_creature)
+            second_creature.take_damage(damage)
             if second_creature.is_alive:
-                second_creature.full_attack(first_creature)
+                damage = full_attack_damage(second_creature, first_creature)
+                first_creature.take_damage(damage)
             round_count+=1
         if first_creature.is_alive:
             return first_creature, round_count
         return second_creature, round_count
+
+def full_attack_damage(attacker, defender):
+    damage_dealt = 0
+    for i in xrange(attack_count(attacker.attack_bonus.base_bonus)):
+        if attack_hits(attacker.attack_bonus.total() - 5*i, defender.armor_class.normal()):
+            damage_dealt += attacker.attack_damage.total(roll=True)
+    return damage_dealt
+
+def single_attack_damage(attacker, defender):
+    if attack_hits(self.attack_bonus - 5*i, defender.armor_class.normal()):
+        return attacker.attack_damage.total(roll=True)
 
 def attack_hits(attack_bonus, ac):
     if d20.roll() + attack_bonus >= ac:
