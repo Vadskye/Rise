@@ -33,6 +33,8 @@ class Creature(object):
         self.armor_class = util.ArmorClass()
         self.saves = util.SavingThrows(level=self.level)
         self.cmd = util.Modifier()
+        self.hit_value = None
+        self.max_hit_points = 0
 
     def _interpret_raw_stats(self, raw_stats):
         self.name = raw_stats['name']
@@ -91,17 +93,11 @@ class Creature(object):
         #note that we are hardcoding the call to barbarian
         #This needs to be made automatic later
 
-        self.attack_bonus.set_progression(
-                self.class_calculator.base_attack_bonus_progression)
-        self.saves.set_progressions_dict(
-                self.class_calculator.save_progressions)
-
-        self.max_hit_points = calculate_hit_points(self.attributes.constitution.total(), 
+        self.class_calculator.apply_progressions(self)
+        self.class_calculator.apply_modifications(self)
+        self.max_hit_points = calculate_hit_points(
+                self.attributes.constitution.total(), 
                 self.class_calculator.hit_value, self.level)
-
-        self.attack_bonus.add_all(self.class_calculator.attack_bonus)
-        self.attack_damage.add_all(self.class_calculator.attack_damage)
-        self.armor_class.add_all(self.class_calculator.armor_class)
 
     def _calculate_derived_statistics(self):
         self.attack_damage.add_die(self.weapon.damage_die)
