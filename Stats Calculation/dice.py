@@ -30,14 +30,16 @@ class Dice(object):
             die_minimum = 0
         return cls(die_size, dice_count, die_minimum)
 
-    def increase_size(self):
+    def increase_size(self, increase_min=False):
         if self.die_size <4:
             self.die_size+=1
         elif self.die_size < 10:
             self.die_size+=2
+            if increase_min: self.die_minimum+=self.dice_count
         elif self.die_size == 10:
             self.die_size = 6
             self.dice_count*=2
+            if increase_min: self.die_minimum+=self.dice_count
         else:
             return False
 
