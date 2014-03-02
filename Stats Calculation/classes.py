@@ -31,7 +31,12 @@ class Barbarian(CharacterClass):
         base_creature.armor_class.misc.add_inherent(-2)
         base_creature.saves.fortitude.add_competence(std_scale(self.level))
         base_creature.saves.will.add_competence(std_scale(self.level))
-        base_creature.damage_reduction = self.level
+        
+        dr_value = self.level
+        if self.level>=5:
+            dr_value += base_creature.attributes.constitution.total()
+        base_creature.damage_reduction = util.DamageReduction(dr_value,
+                'physical')
 
 class Bard(CharacterClass):
     bab_progression = AVERAGE
