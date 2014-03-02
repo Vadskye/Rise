@@ -33,7 +33,7 @@ class Barbarian(CharacterClass):
         base_creature.saves.will.add_competence(std_scale(self.level))
         
         dr_value = self.level
-        if self.level>=5:
+        if self.level>=21:
             dr_value += base_creature.attributes.constitution.total()
         base_creature.damage_reduction = util.DamageReduction(dr_value,
                 'physical')
