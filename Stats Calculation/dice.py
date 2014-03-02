@@ -33,7 +33,7 @@ class Dice(object):
         for i, die_size in enumerate(self.die_sizes):
             die_roll = random.randrange(1, die_size+1)
             #reroll once if at or below minimum
-            if die_roll <= self.die_minimums[i]:
+            if self.die_minimums[i] and die_roll <= self.die_minimums[i]:
                 die_roll = random.randrange(1, die_size+1)
             total += die_roll
         return total
