@@ -6,7 +6,6 @@ class Weapon:
         self.encumbrance = encumbrance
         self.weapon_type = weapon_type
         self.damage_die = dice.Dice.from_string(damage_die_name)
-        self.min_damage = min_damage
 
 class Armor:
     def __init__(self, ac_bonus, encumbrance, armor_type):
@@ -17,11 +16,11 @@ class Armor:
 class EquipmentSet:
     def __init__(self, weapon_name, armor_name, shield_name):
         self.weapon = {
-                'heavy_melee': Weapon('heavy', 'melee', 'd10', 2),
-                'medium_melee': Weapon('medium', 'melee', 'd8', 1),
+                'heavy_melee': Weapon('heavy', 'melee', 'd10m2', 2),
+                'medium_melee': Weapon('medium', 'melee', 'd8m1', 1),
                 'light_melee': Weapon('light', 'melee', 'd6', 0),
-                'projectile': Weapon('heavy', 'projectile', 'd8', 1),
-                'claws': Weapon('medium', 'melee', 'd8', 0),
+                'projectile': Weapon('heavy', 'projectile', 'd8m1', 1),
+                'claws': Weapon('medium', 'melee', 'd8m1', 0),
                 'none': None
                 }[weapon_name]
         self.armor = {
