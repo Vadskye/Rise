@@ -35,6 +35,7 @@ class Creature(object):
         self.cmd = util.Modifier()
         self.hit_value = None
         self.max_hit_points = 0
+        self.damage_reduction = 0
 
     def _interpret_raw_stats(self, raw_stats):
         self.name = raw_stats['name']
@@ -241,22 +242,6 @@ class Creature(object):
         if self.critical_damage > self.attributes.constitution:
             return False
         return True
-
-    def full_attack(self, enemy):
-        for i in xrange(self.get_attack_count()):
-            if combat.attack_hits(self.attack_bonus.total() - 5*i, enemy.armor_class.normal()):
-                self._deal_damage(enemy)
-
-    def single_attack(self, enemy):
-        if attack_hits(self.attack_bonus - 5*i, enemy.armor_class.normal()):
-            self._deal_damage(enemy)
-
-    def _deal_damage(self, enemy):
-        damage = self.attack_damage.total(roll=True)
-        enemy.take_damage(damage)
-
-    def get_attack_count(self):
-        return combat.attack_count(self.attack_bonus.base_bonus)
 
     def damage_per_round(self, ac):
         return full_attack_damage_dealt(self.attack_bonus.total(),
