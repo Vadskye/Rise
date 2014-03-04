@@ -38,7 +38,6 @@ class Barbarian(CharacterClass):
             if self.level>=17:
                 abilities.larger_than_belief(base_creature)
 
-        abilities.danger_sense(self.level, base_creature)
 
 class Bard(CharacterClass):
     bab_progression = AVERAGE
@@ -107,6 +106,9 @@ class Rogue(CharacterClass):
     bab_progression = AVERAGE
     save_progressions = {'fortitude':POOR, 'reflex':GOOD, 'will':POOR}
     hit_value = 5
+
+    def apply_modifications(self, base_creature):
+        abilities.danger_sense(self.level, base_creature)
 
 class Sorcerer(CharacterClass):
     bab_progression = POOR
