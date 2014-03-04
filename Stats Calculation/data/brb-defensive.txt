@@ -1,6 +1,7 @@
-name=Brb-heavy
+name=Brb-defensive
 race=human
 class=barbarian
 weapon=heavy_melee
-armor=medium
+armor=heavy
+shield=heavy
 attributes=warrior
