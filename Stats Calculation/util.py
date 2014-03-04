@@ -14,6 +14,8 @@ GOOD = 'good'
 AVERAGE = 'average'
 POOR = 'poor'
 
+d20 = dice.dx(20)
+
 class Modifier:
 
     def __init__(self):
@@ -304,3 +306,12 @@ def dict_match_prefix(input_dict, prefix):
             key_without_prefix = pattern.sub('', key, count=1)
             output_dict[key_without_prefix] = input_dict[key]
     return output_dict
+
+def attack_hits(attack_bonus, ac):
+    if d20.roll() + attack_bonus >= ac:
+        return True
+    return False
+
+#return number of attacks this base attack bonus grants
+def attack_count(base_attack_bonus):
+    return 1 + max(0,(base_attack_bonus-1)/5)
