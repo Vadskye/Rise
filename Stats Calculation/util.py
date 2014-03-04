@@ -74,6 +74,11 @@ class Modifier:
                 return self.raw_total + self.die.average
         return self.raw_total
 
+    def __str__(self):
+        return 'Modifier({0} = inh {1}, comp {2}, enh {3}, circ {4}, die {5})'.format(
+                self.get_total(), self.inherent, self.competence,
+                self.enhancement, self.circumstance, self.die)
+
 class ModifierProgression(Modifier):
     def __init__(self, progression = None, level = None):
         self.base_bonus = 0
