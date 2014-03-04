@@ -19,5 +19,6 @@ def rage(level, creature):
     creature.armor_class.misc.add_circumstance(-2)
     creature.saves.fortitude.add_competence(util.std_scale(level))
     creature.saves.will.add_competence(util.std_scale(level))
+    creature.current_hit_points += level*util.std_scale(level)
 
 
