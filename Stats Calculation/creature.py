@@ -3,6 +3,7 @@ import classes
 import equipment
 import util
 import combat
+import dice
 
 class Creature(object):
     def __init__(self, raw_stats, raw_attributes, level, verbose=False):
@@ -250,23 +251,19 @@ class Creature(object):
         else:
             self.critical_damage+=damage
             self.is_alive = self._check_if_alive()
-    
+
     def _check_if_alive(self):
         if self.critical_damage > self.attributes.constitution:
             return False
         return True
 
     def default_attack(self, enemy):
-        try:
-            return {
-                    'full attack': self.full_attack(enemy),
-                    'damage spell': self.damage_spell(enemy),
-                    'special attack': self.special_attack(enemy),
-                    }[self.attack_mode]
-        except:
-            if self.verbose: print 'invalid attack_mode', attack_mode
-            return False
-        
+        return {
+                'full attack': self.full_attack(enemy),
+                'damage spell': self.damage_spell(enemy),
+                'special attack': self.special_attack(enemy),
+                }[self.attack_mode]
+
     def full_attack(self, enemy):
         damage_dealt = 0
         for i in xrange(util.attack_count(self.attack_bonus.base_bonus)):
@@ -275,18 +272,18 @@ class Creature(object):
         enemy.take_damage(damage_dealt, self.attack_damage_types)
         return damage_dealt
 
-    def damage_spell(self, enemy):
-        #Use highest-level, no optimization, no save spell
-        damage_die = dice.Dice('{0}d10'.format(self.level/2))
-        damage_dealt = damage_die.roll()
-        enemy.take_damage(damage_dealt)
-        return damage_dealt
-
     def single_attack(self, enemy):
         if util.attack_hits(self.attack_bonus, enemy.armor_class.normal()):
             damage_dealt = self.attack_damage.get_total(roll=True)
             enemy.take_damage(damage_dealt)
             return damage_dealt
+
+    def damage_spell(self, enemy):
+        #Use highest-level, no optimization, no save spell
+        damage_die = dice.Dice.from_string('{0}d10'.format(max(1,self.level/2)))
+        damage_dealt = damage_die.roll()
+        enemy.take_damage(damage_dealt, ['spell'])
+        return damage_dealt
 
     def special_attack(self, enemy):
         pass
