@@ -254,6 +254,27 @@ class Creature(object):
             return False
         return True
 
+    #default to full attack for now
+    def default_attack(self, enemy):
+        self.full_attack(enemy)
+        
+    def full_attack(self, enemy):
+        damage_dealt = 0
+        for i in xrange(util.attack_count(self.attack_bonus.base_bonus)):
+            if util.attack_hits(self.attack_bonus.total() - 5*i, enemy.armor_class.normal()):
+                damage_dealt += self.attack_damage.total(roll=True)
+        enemy.take_damage(damage_dealt, self.attack_damage_types)
+        return damage_dealt
+
+    def single_attack(self, enemy):
+        if util.attack_hits(self.attack_bonus, enemy.armor_class.normal()):
+            damage_dealt = self.attack_damage.total(roll=True)
+            enemy.take_damage(damage_dealt)
+            return damage_dealt
+
+    def special_attack(self, enemy):
+        pass
+
     def damage_per_round(self, ac):
         return full_attack_damage_dealt(self.attack_bonus.total(),
                 ac, self.attack_bonus.base_bonus, self.attack_damage.total())
