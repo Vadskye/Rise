@@ -130,7 +130,7 @@ class Creature(object):
         self.attack_bonus.add_inherent(self._calculate_attack_attribute_bonus())
 
         #Apply benefit of Overwhelming Force feat 
-        if self.attributes.strength.get_total() >=5 and self.attack_bonus.base_bonus >=8 and self.weapon.encumbrance == 'heavy':
+        if self.attributes.strength.get_total() >=5 and self.attack_bonus.base_attack_bonus >=8 and self.weapon.encumbrance == 'heavy':
             strength_bonus_to_damage = self.attributes.strength.get_total()
         else:
             strength_bonus_to_damage = util.ifloor(
@@ -147,10 +147,10 @@ class Creature(object):
         self._add_save_attributes()
 
         self.armor_class.dodge.add_inherent(
-                util.ifloor(self.attack_bonus.base_bonus/2))
+                util.ifloor(self.attack_bonus.base_attack_bonus/2))
 
         self.cmd.add_inherent(self.armor_class.touch())
-        self.cmd.add_inherent((self.attack_bonus.base_bonus+1)/2)
+        self.cmd.add_inherent(self.attack_bonus.base_attack_bonus/2)
         self.cmd.add_inherent(self.attributes.strength.get_total())
 
         self.initiative.add_inherent(self.attributes.dexterity.get_total())
@@ -292,7 +292,7 @@ class Creature(object):
 
     def full_attack(self, enemy, deal_damage = True):
         damage_dealt = 0
-        for i in xrange(util.attack_count(self.attack_bonus.base_bonus)):
+        for i in xrange(util.attack_count(self.attack_bonus.base_attack_bonus)):
             damage_dealt += self.single_attack(enemy, self.attack_bonus.get_total() - 5*i, deal_damage)
         return damage_dealt
 
@@ -323,15 +323,15 @@ class Creature(object):
 
     def damage_per_round(self, ac):
         return full_weapon_damage_dealt(self.attack_bonus.get_total(),
-                ac, self.attack_bonus.base_bonus, self.weapon_damage.get_total())
+                ac, self.attack_bonus.base_attack_bonus, self.weapon_damage.get_total())
 
     def hits_per_round(self, ac):
         return combat.full_attack_hits(self.attack_bonus.get_total(),
-                ac, self.attack_bonus.base_bonus)
+                ac, self.attack_bonus.base_attack_bonus)
 
     def avg_hit_probability(self, ac):
         return combat.avg_hit_probability(self.attack_bonus.get_total(),
-                ac, self.attack_bonus.base_bonus)
+                ac, self.attack_bonus.base_attack_bonus)
 
     def roll_initiative(self):
         return util.d20.roll()+self.initiative.get_total()
