@@ -55,7 +55,7 @@ class Cleric(CharacterClass):
     hit_value = 5
 
     def apply_modifications(self, base_creature):
-        base_creature.attack_mode='spell damage'
+        base_creature.attack_mode='damage spell'
 
 class Druid(CharacterClass):
     bab_progression = AVERAGE
@@ -123,7 +123,7 @@ class Wizard(CharacterClass):
     hit_value = 4
 
     def apply_modifications(self, base_creature):
-        base_creature.attack_mode='spell damage'
+        base_creature.attack_mode='damage spell'
 
 class Warrior(CharacterClass):
     bab_progression = GOOD
