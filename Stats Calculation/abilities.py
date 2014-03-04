@@ -37,5 +37,23 @@ class OverwhelmingForce(Feat):
         return creature.attributes.strength.get_total() >=5 and creature.attack_bonus.base_attack_bonus >=8 and creature.weapon.encumbrance == 'heavy'
 
     def apply_benefit(self, creature):
-        creature.weapon_damage.add_inherent(
-                (creature.attributes.strength.get_total()+1)/2)
+        if creature.weapon.encumbrance == 'heavy':
+            creature.weapon_damage.add_inherent(
+                    (creature.attributes.strength.get_total()+1)/2)
+
+class TwoWeaponFighting(Feat):
+    def meets_prerequisites(self, creature):
+        return creature.attributes.dexterity.get_total() >= 3
+
+    def apply_benefit(self, creature):
+        if creature.offhand_weapon:
+            creature.attack_bonus.add_competence(2)
+
+class TwoWeaponDefense(Feat):
+    def meets_prerequisites(self, creature):
+        #can't currently implement feat prerequisites
+        return creature.attributes.dexterity.get_total() >= 3
+
+    def apply_benefit(self, creature):
+        if creature.offhand_weapon:
+            creature.armor_class.shield.add_competence(2)
