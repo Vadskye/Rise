@@ -1,0 +1,7 @@
+name=Ftr-2wf
+race=human
+class=fighter
+weapon=light_melee
+offhand weapon=light_melee
+armor=medium
+attributes=warrior_dex
