@@ -4,6 +4,7 @@ import equipment
 import util
 import combat
 import dice
+import abilities
 
 class Creature(object):
     def __init__(self, raw_stats, raw_attributes, level, verbose=False):
@@ -46,6 +47,7 @@ class Creature(object):
         self.max_hit_points = 0
         self.damage_reduction = util.DamageReduction()
         self.initiative = util.Modifier()
+        self.feats = list()
 
     def _interpret_raw_stats(self, raw_stats):
         self.name = raw_stats['name']
@@ -128,13 +130,7 @@ class Creature(object):
 
         self.attack_bonus.add_inherent(self._calculate_attack_attribute_bonus())
 
-        #Apply benefit of Overwhelming Force feat 
-        if self.attributes.strength.get_total() >=5 and self.attack_bonus.base_attack_bonus >=8 and self.weapon.encumbrance == 'heavy':
-            strength_bonus_to_damage = self.attributes.strength.get_total()
-        else:
-            strength_bonus_to_damage = util.ifloor(
-                    self.attributes.strength.get_total()/2)
-        self.weapon_damage.add_inherent(strength_bonus_to_damage)
+        self.weapon_damage.add_inherent(self.attributes.strength.get_total()/2)
 
         #Two weapon fighting
         if self.offhand_weapon:
@@ -154,6 +150,11 @@ class Creature(object):
 
         self.initiative.add_inherent(self.attributes.dexterity.get_total())
         self.initiative.add_inherent(self.attributes.wisdom.get_total()/2)
+
+        #Assume user has Overwhelming Force
+        self.feats.append(abilities.OverwhelmingForce())
+        for feat in self.feats:
+            feat.apply_benefit(self)
 
     #http://stackoverflow.com/questions/141545/overloading-init-in-python
     @classmethod
