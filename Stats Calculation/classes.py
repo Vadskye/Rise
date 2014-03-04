@@ -54,6 +54,9 @@ class Cleric(CharacterClass):
     save_progressions = {'fortitude':AVERAGE, 'reflex':POOR, 'will':GOOD}
     hit_value = 5
 
+    def apply_modifications(self, base_creature):
+        base_creature.attack_mode='spell damage'
+
 class Druid(CharacterClass):
     bab_progression = AVERAGE
     save_progressions = {'fortitude':GOOD, 'reflex':POOR, 'will':AVERAGE}
@@ -118,6 +121,9 @@ class Wizard(CharacterClass):
     bab_progression = POOR
     save_progressions = {'fortitude':POOR, 'reflex':POOR, 'will':GOOD}
     hit_value = 4
+
+    def apply_modifications(self, base_creature):
+        base_creature.attack_mode='spell damage'
 
 class Warrior(CharacterClass):
     bab_progression = GOOD
