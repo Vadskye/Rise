@@ -1,5 +1,6 @@
 import util
 from util import GOOD, AVERAGE, POOR
+import abilities
 
 class CharacterClass:
     
@@ -27,22 +28,17 @@ class Barbarian(CharacterClass):
     hit_value = 7
 
     def apply_modifications(self, base_creature):
-        base_creature.attack_damage.add_competence(std_scale(self.level))
-        base_creature.armor_class.misc.add_inherent(-2)
-        base_creature.saves.fortitude.add_competence(std_scale(self.level))
-        base_creature.saves.will.add_competence(std_scale(self.level))
-        
-        dr_value = self.level
-        if self.level>=21:
-            dr_value += base_creature.attributes.constitution.total()
-        base_creature.damage_reduction = util.DamageReduction(dr_value,
-                'physical')
+        abilities.danger_sense(self.level, base_creature)
+        abilities.rage(self.level, base_creature)
+        abilities.barbarian_dr(self.level, base_creature)
 
         #Larger than Life/Belief
         if self.level>=7:
-            base_creature.attack_damage.die.increase_size(increase_min=True)
+            abilities.larger_than_life(base_creature)
             if self.level>=17:
-                base_creature.attack_damage.die.increase_size(increase_min=True)
+                abilities.larger_than_belief(base_creature)
+
+        abilities.danger_sense(self.level, base_creature)
 
 class Bard(CharacterClass):
     bab_progression = AVERAGE
@@ -129,7 +125,3 @@ class Warrior(CharacterClass):
     bab_progression = GOOD
     save_progressions = {'fortitude':GOOD, 'reflex':POOR, 'will':POOR}
     hit_value = 6
-
-#+2, +3 at 8th, +4 at 14th, +5 at 20th
-def std_scale(level):
-    return (level+10)/6
