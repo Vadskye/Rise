@@ -24,18 +24,23 @@ class Modifier:
         self.competence=0
         self.circumstance=0
         self.die=None
+        self.raw_total = 0
 
     def add_inherent(self, bonus):
         self.inherent+=bonus
+        self._update()
 
     def add_enhancement(self, bonus):
         self.enhancement = max(self.enhancement, bonus)
+        self._update()
 
     def add_competence(self, bonus):
         self.competence = max(self.competence, bonus)
+        self._update()
 
     def add_circumstance(self, bonus):
         self.circumstance+=bonus
+        self._update()
 
     def add_all(self, bonus_dict):
         keys = bonus_dict.keys()
@@ -47,6 +52,11 @@ class Modifier:
             self.add_competence(bonus_dict['competence'])
         if 'circumstance' in keys:
             self.add_circumstance(bonus_dict['circumstance'])
+        self._update()
+
+    def _update(self):
+        self.raw_total = sum([self.inherent, self.enhancement, self.competence,
+            self.circumstance])
 
     def add_die(self, die):
         try:
@@ -55,16 +65,14 @@ class Modifier:
         except:
             self.die = die
 
-    def total(self, roll=False):
-        total = sum([self.inherent, self.enhancement, self.competence,
-            self.circumstance])
+    def get_total(self, roll=False):
         #return int if there are no dice
         if self.die:
             if roll:
-                return total + self.die.roll()
+                return self.raw_total + self.die.roll()
             else:
-                return total + self.die.average
-        return total
+                return self.raw_total + self.die.average
+        return self.raw_total
 
 class ModifierProgression(Modifier):
     def __init__(self, progression = None, level = None):
@@ -87,6 +95,7 @@ class ModifierProgression(Modifier):
         self.progression = progression
         if self.progression and self.level:
             self._apply_progression(self.progression, self.level)
+        self._update()
 
     def set_level(self, level):
         self.level = level
@@ -150,16 +159,16 @@ class ArmorClass:
         self.misc.add_inherent(10)
 
     def normal(self):
-        normal = sum([self.misc.total(), self.shield.total(), self.dodge.total()])
-        normal += sum_armor(self.armor.total(), self.natural_armor.total())
+        normal = sum([self.misc.get_total(), self.shield.get_total(), self.dodge.get_total()])
+        normal += sum_armor(self.armor.get_total(), self.natural_armor.get_total())
         return normal
 
     def touch(self):
-        return sum([self.misc.total(), self.shield.total(), self.dodge.total()])
+        return sum([self.misc.get_total(), self.shield.get_total(), self.dodge.get_total()])
 
     def flatfooted(self):
-        flatfooted = self.misc.total()
-        flatfooted += sum_armor(self.armor.total(), self.natural_armor.total())
+        flatfooted = self.misc.get_total()
+        flatfooted += sum_armor(self.armor.get_total(), self.natural_armor.get_total())
         return flatfooted
 
     def add_all(self, ac_modifiers):

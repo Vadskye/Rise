@@ -101,28 +101,28 @@ class Creature(object):
         self.class_calculator.apply_progressions(self)
         self.class_calculator.apply_modifications(self)
         self.max_hit_points = calculate_hit_points(
-                self.attributes.constitution.total(), 
+                self.attributes.constitution.get_total(), 
                 self.class_calculator.hit_value, self.level)
 
     def _calculate_derived_statistics(self):
         self.armor_class.armor.add_inherent(self.armor.ac_bonus)
         if self.armor.encumbrance=='medium' or self.armor.encumbrance=='heavy':
             self.armor_class.dodge.add_inherent(util.ifloor(
-                self.attributes.dexterity.total()/2))
+                self.attributes.dexterity.get_total()/2))
         else:
             self.armor_class.dodge.add_inherent(
-                    self.attributes.dexterity.total())
+                    self.attributes.dexterity.get_total())
         if self.shield:
             self.armor_class.shield.add_inherent(self.shield.ac_bonus)
 
         self.attack_bonus.add_inherent(self._calculate_attack_attribute_bonus())
 
         #Apply benefit of Overwhelming Force feat 
-        if self.attributes.strength.total() >=5 and self.attack_bonus.base_bonus >=8 and self.weapon.encumbrance == 'heavy':
-            strength_bonus_to_damage = self.attributes.strength.total()
+        if self.attributes.strength.get_total() >=5 and self.attack_bonus.base_bonus >=8 and self.weapon.encumbrance == 'heavy':
+            strength_bonus_to_damage = self.attributes.strength.get_total()
         else:
             strength_bonus_to_damage = util.ifloor(
-                    self.attributes.strength.total()/2)
+                    self.attributes.strength.get_total()/2)
         self.attack_damage.add_inherent(strength_bonus_to_damage)
 
         self._add_save_attributes()
@@ -132,7 +132,7 @@ class Creature(object):
 
         self.cmd.add_inherent(self.armor_class.touch())
         self.cmd.add_inherent((self.attack_bonus.base_bonus+1)/2)
-        self.cmd.add_inherent(self.attributes.strength.total())
+        self.cmd.add_inherent(self.attributes.strength.get_total())
 
     #http://stackoverflow.com/questions/141545/overloading-init-in-python
     @classmethod
@@ -144,17 +144,17 @@ class Creature(object):
 
     def _add_save_attributes(self):
         self.saves.fortitude.add_inherent(
-                self.attributes.constitution.total())
+                self.attributes.constitution.get_total())
         self.saves.fortitude.add_inherent(util.ifloor(
-            self.attributes.strength.total()/2))
+            self.attributes.strength.get_total()/2))
         self.saves.reflex.add_inherent(
-                self.attributes.dexterity.total())
+                self.attributes.dexterity.get_total())
         self.saves.reflex.add_inherent(util.ifloor(
-            self.attributes.wisdom.total()/2))
+            self.attributes.wisdom.get_total()/2))
         self.saves.will.add_inherent(
-                self.attributes.charisma.total())
+                self.attributes.charisma.get_total())
         self.saves.will.add_inherent(util.ifloor(
-            self.attributes.intelligence.total()/2))
+            self.attributes.intelligence.get_total()/2))
 
     def _add_level_scaling(self):
         scale_factor = self.level/4
@@ -170,10 +170,10 @@ class Creature(object):
 
     def _calculate_attack_attribute_bonus(self):
         if self.weapon.encumbrance =='light':
-            return max(self.attributes.strength.total(),
-                    self.attributes.dexterity.total())
+            return max(self.attributes.strength.get_total(),
+                    self.attributes.dexterity.get_total())
         else:
-            return self.attributes.strength.total()
+            return self.attributes.strength.get_total()
 
     def __str__(self):
         full_string = self.name + ' ' + str(self.level)
@@ -184,22 +184,22 @@ class Creature(object):
 
     def _to_string_defenses(self):
         defenses = str(self.armor_class)
-        defenses += '; CMD '+str(self.cmd.total())
+        defenses += '; CMD '+str(self.cmd.get_total())
         defenses += '\nHP '+str(self.max_hit_points)
-        defenses += '; Fort '+util.mstr(self.saves.fortitude.total())
-        defenses += ', Ref '+util.mstr(self.saves.reflex.total())
-        defenses += ', Will '+util.mstr(self.saves.will.total())
+        defenses += '; Fort '+util.mstr(self.saves.fortitude.get_total())
+        defenses += ', Ref '+util.mstr(self.saves.reflex.get_total())
+        defenses += ', Will '+util.mstr(self.saves.will.get_total())
         return defenses
 
     def _to_string_attacks(self):
-        attacks = 'Atk ' + util.mstr(self.attack_bonus.total())
-        attacks += ' ('+ str(self.attack_damage.total()) + ')'
+        attacks = 'Atk ' + util.mstr(self.attack_bonus.get_total())
+        attacks += ' ('+ str(self.attack_damage.get_total()) + ')'
         return attacks
 
     def _to_string_attributes(self):
         attributes = 'Attr'
         for title in util.attribute_titles:
-            attributes += ' ' + str(getattr(self.attributes, title).total())
+            attributes += ' ' + str(getattr(self.attributes, title).get_total())
         return attributes
 
     def to_monster(self):
@@ -268,14 +268,14 @@ class Creature(object):
     def full_attack(self, enemy):
         damage_dealt = 0
         for i in xrange(util.attack_count(self.attack_bonus.base_bonus)):
-            if util.attack_hits(self.attack_bonus.total() - 5*i, enemy.armor_class.normal()):
-                damage_dealt += self.attack_damage.total(roll=True)
+            if util.attack_hits(self.attack_bonus.get_total() - 5*i, enemy.armor_class.normal()):
+                damage_dealt += self.attack_damage.get_total(roll=True)
         enemy.take_damage(damage_dealt, self.attack_damage_types)
         return damage_dealt
 
     def single_attack(self, enemy):
         if util.attack_hits(self.attack_bonus, enemy.armor_class.normal()):
-            damage_dealt = self.attack_damage.total(roll=True)
+            damage_dealt = self.attack_damage.get_total(roll=True)
             enemy.take_damage(damage_dealt)
             return damage_dealt
 
@@ -283,15 +283,15 @@ class Creature(object):
         pass
 
     def damage_per_round(self, ac):
-        return full_attack_damage_dealt(self.attack_bonus.total(),
-                ac, self.attack_bonus.base_bonus, self.attack_damage.total())
+        return full_attack_damage_dealt(self.attack_bonus.get_total(),
+                ac, self.attack_bonus.base_bonus, self.attack_damage.get_total())
 
     def hits_per_round(self, ac):
-        return combat.full_attack_hits(self.attack_bonus.total(),
+        return combat.full_attack_hits(self.attack_bonus.get_total(),
                 ac, self.attack_bonus.base_bonus)
 
     def avg_hit_probability(self, ac):
-        return combat.avg_hit_probability(self.attack_bonus.total(),
+        return combat.avg_hit_probability(self.attack_bonus.get_total(),
                 ac, self.attack_bonus.base_bonus)
 
 class Character(Creature):
