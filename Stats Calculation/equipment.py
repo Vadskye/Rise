@@ -43,8 +43,9 @@ class Armor:
                 }[shield_name]
 
 class EquipmentSet:
-    def __init__(self, weapon_name, armor_name, shield_name):
+    def __init__(self, weapon_name, offhand_weapon_name, armor_name, shield_name):
         self.weapon = Weapon.from_weapon_name(weapon_name)
+        self.offhand_weapon = Weapon.from_weapon_name(offhand_weapon_name)
         self.armor = Armor.from_armor_name(armor_name)
         self.shield = Armor.from_shield_name(shield_name)
 
@@ -55,6 +56,10 @@ class EquipmentSet:
             weapon = raw_stats['weapon']
         else:
             weapon = 'none'
+        if 'offhand weapon' in keys:
+            offhand_weapon = raw_stats['offhand weapon']
+        else:
+            offhand_weapon = 'none'
         if 'armor' in keys:
             armor = raw_stats['armor']
         else:
@@ -63,7 +68,7 @@ class EquipmentSet:
             shield = raw_stats['shield']
         else:
             shield = 'none'
-        return cls(weapon, armor, shield)
+        return cls(weapon, offhand_weapon, armor, shield)
 
 
 

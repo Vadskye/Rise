@@ -31,8 +31,8 @@ class Creature(object):
 
     def _init_core_statistics(self):
         self.attack_bonus = util.AttackBonus(level=self.level)
-        self.attack_damage = util.Modifier()
-        self.attack_damage_types = ['physical']
+        self.weapon_damage = util.Modifier()
+        self.weapon_damage_types = ['physical']
         self.attributes = util.Attributes()
         self.armor_class = util.ArmorClass()
         self.saves = util.SavingThrows(level=self.level)
@@ -48,7 +48,8 @@ class Creature(object):
             self.class_name = raw_stats['class']
         equipment_set = equipment.EquipmentSet.from_raw_stats(raw_stats)
         self.weapon = equipment_set.weapon
-        self.attack_damage.add_die(self.weapon.damage_die)
+        self.offhand_weapon = equipment_set.offhand_weapon
+        self.weapon_damage.add_die(self.weapon.damage_die)
         self.armor = equipment_set.armor
         self.shield = equipment_set.shield
         if 'size' in raw_stats.keys():
@@ -125,7 +126,7 @@ class Creature(object):
         else:
             strength_bonus_to_damage = util.ifloor(
                     self.attributes.strength.get_total()/2)
-        self.attack_damage.add_inherent(strength_bonus_to_damage)
+        self.weapon_damage.add_inherent(strength_bonus_to_damage)
 
         self._add_save_attributes()
 
@@ -169,7 +170,7 @@ class Creature(object):
             self.armor_class.shield.add_enhancement(scale_factor)
         if self.weapon:
             self.attack_bonus.add_enhancement(scale_factor)
-            self.attack_damage.add_enhancement(scale_factor)
+            self.weapon_damage.add_enhancement(scale_factor)
         for save_title in util.save_titles:
             getattr(self.saves,save_title).add_enhancement(scale_factor)
 
@@ -198,7 +199,7 @@ class Creature(object):
 
     def _to_string_attacks(self):
         attacks = 'Atk ' + util.mstr(self.attack_bonus.get_total())
-        attacks += ' ('+ str(self.attack_damage.get_total()) + ')'
+        attacks += ' ('+ str(self.weapon_damage.get_total()) + ')'
         return attacks
 
     def _to_string_attributes(self):
@@ -279,9 +280,9 @@ class Creature(object):
         damage_dealt = 0
         if attack_bonus is None: attack_bonus = self.attack_bonus.get_total()
         if util.attack_hits(attack_bonus, enemy.armor_class.normal()):
-            damage_dealt = self.attack_damage.get_total(roll=True)
+            damage_dealt = self.weapon_damage.get_total(roll=True)
             if deal_damage:
-                enemy.take_damage(damage_dealt, self.attack_damage_types)
+                enemy.take_damage(damage_dealt, self.weapon_damage_types)
         return damage_dealt
 
     def damage_spell(self, enemy):
@@ -295,8 +296,8 @@ class Creature(object):
         pass
 
     def damage_per_round(self, ac):
-        return full_attack_damage_dealt(self.attack_bonus.get_total(),
-                ac, self.attack_bonus.base_bonus, self.attack_damage.get_total())
+        return full_weapon_damage_dealt(self.attack_bonus.get_total(),
+                ac, self.attack_bonus.base_bonus, self.weapon_damage.get_total())
 
     def hits_per_round(self, ac):
         return combat.full_attack_hits(self.attack_bonus.get_total(),
