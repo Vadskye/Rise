@@ -14,7 +14,6 @@ def larger_than_life(creature):
 def larger_than_belief(creature):
     creature.attack_damage.die.increase_size(increase_min=True)
     
-
 def rage(level, creature):
     creature.attack_damage.add_competence(util.std_scale(level))
     creature.armor_class.misc.add_circumstance(-2)
