@@ -132,13 +132,6 @@ class Creature(object):
 
         self.weapon_damage.add_inherent(self.attributes.strength.get_total()/2)
 
-        #Two weapon fighting
-        if self.offhand_weapon:
-            #should actually come from 2WF feat, which we assume
-            self.attack_bonus.add_competence(2)
-            #should actually come from 2WDefense feat, which we assume
-            self.armor_class.shield.add_competence(self.level/8+1)
-
         self._add_save_attributes()
 
         self.armor_class.dodge.add_inherent(
@@ -151,10 +144,13 @@ class Creature(object):
         self.initiative.add_inherent(self.attributes.dexterity.get_total())
         self.initiative.add_inherent(self.attributes.wisdom.get_total()/2)
 
-        #Assume user has Overwhelming Force
+        #Assume user has basic feats
         self.feats.append(abilities.OverwhelmingForce())
+        self.feats.append(abilities.TwoWeaponFighting())
+        self.feats.append(abilities.TwoWeaponDefense())
         for feat in self.feats:
-            feat.apply_benefit(self)
+            if feat.meets_prerequisites(self):
+                feat.apply_benefit(self)
 
     #http://stackoverflow.com/questions/141545/overloading-init-in-python
     @classmethod
