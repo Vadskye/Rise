@@ -35,7 +35,7 @@ class Modifier:
         self._update()
 
     def add_competence(self, bonus):
-        self.competence = max(self.competence, bonus)
+        self.competence += bonus
         self._update()
 
     def add_circumstance(self, bonus):
