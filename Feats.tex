@@ -242,7 +242,6 @@ Improved Overrun & Base attack bonus \plus4 & \plus2 bonus on overrun attacks; t
 Improved Trip & Base attack bonus \plus4 & \plus2 bonus on trip attacks; tripped foe provokes attacks of opportunity & Finesse, Maneuver \\
 Improved Unarmed Strike & \x &  Considered armed even when unarmed & \x \\
 \tind Deflect Arrows & Dex 3, Improved Unarmed Strike & Deflect one ranged attack per round & Defense, Reaction \\
-\tind \tind Improved Deflect Arrows & Dex 7, Deflect Arrows, Improved Unarmed Strike, base attack bonus \plus4 & Deflect ranged attacks per round equal to Dexterity & Defense, Reaction \\
 \tind \tind Snatch Arrows & Dex 5, Deflect Arrows, Improved Unarmed Strike & Catch a deflected ranged attack & Defense, Reaction \\
 \tind Stunning Fist & Dex 3, Wis 3, Improved Unarmed Strike, base attack bonus \plus4 & Stun opponent with unarmed strike & Power \\
 Inescapable Bulwark of Defense & Base attack bonus \plus8, Bulwark of Defense & Enemies cannot avoid provoking attacks of opportunity & Reaction, Style \\
@@ -275,7 +274,7 @@ Precise Shot & \x & Add half Wis to damage & Precision, Style \\
 Power Attack & Str 3 & Trade melee attack bonus for damage & Power, Style \\
 Quick Draw & \x & Draw weapon as swift action & Reaction \\
 Reveal the Weak Point & Base attack bonus \plus4 & Sacrifice attack and damage to penalize foe's AC & Style \\
-Ride-By Attack & Mounted Combat & Move before and after a mounted charge & Mobility, Mounted \\
+Ride-By Attack & Ride 8 ranks & Move before and after a mounted charge & Mobility, Mounted \\
 \tind Spirited Charge & Ride-By Attack & Double damage with mounted charge & Mounted, Power \\
 Shield Proficiency  & \x &  No armor check penalty on attack rolls & Equipment \\
 \tind Tower Shield Proficiency & Shield Proficiency & No armor check penalty on attack rolls & Equipment \\
@@ -697,28 +696,32 @@ Choose one category of armor: light, medium, heavy, or shields.
 \parhead{Benefit} Whenever you deal a creature enough damage to make it drop (typically by dropping it to below 0 hit points or killing it), you get an immediate extra melee attack against another creature within reach. You cannot move before making this extra attack. The extra attack is with the same weapon and at the same bonus as the attack that dropped the previous creature. There is no limit to the number of times you can use this feat per round.
 
 \subsubsection{Cleaving Stride [Combat]}
-\parhead{Prerequisites} Str 3, base attack bonus \plus8, Cleave
+\parhead{Prerequisites} Str 3, base attack bonus \plus8, Cleave.
 \parhead{Benefit} If you move to attack a foe, including by charging, and deal enough damage to drop it during your attack, you can continue your movement (if you have any movement remaining) to attack another foe. You may take your extra attack from the Cleave feat before or after continuing your movement.
 
+\subsubsection{Combat Prowess [Combat]}
+\featpre Base attack bonus \plus8.
+\featben You gain a \plus1 competence bonus to attack rolls.
+
 \subsubsection{Contingent Attack [Combat, Reaction]}
-\featpre Int 5, base attack bonus \plus12
+\featpre Int 5, base attack bonus \plus12.
 \featben As a full-round action, you may concentrate to prepare a single attack as a contingent action. You may choose any trigger for the contingent action.
 
 Contingent actions depend on a trigger condition. If the trigger condition occurs and you have a contingent action prepared, you may take the contingent action as an immediate action. A contingent action remains prepared until you rest.
 
 \subsubseection{Contingent Counter [Combat, Reaction]}
-\featpre Int 3, base attack bonus \plus8
+\featpre Int 3, base attack bonus \plus8.
 \featben As a full-round action, you may concentrate to prepare a single attack as a contingent action. The action triggers when an opponent misses you with a melee attack.
 
 Contingent actions depend on a trigger condition. If the trigger condition occurs and you have a contingent action prepared, you may take the contingent action as an immediate action. A contingent action remains prepared until you rest.
 
 \subsubsection{Counterstorm [Combat, Reaction, Style]}
-\featpre Base attack bonus \plus16
+\featpre Base attack bonus \plus16.
 \featben Whenever an opponent misses you with a melee attack, they provoke an attack of opportunity from you.
 
 \subsubsection{Deflect Arrows [Combat]}
 \parhead{Prerequisites} Dex 3, Improved Unarmed Strike.
-\parhead{Benefit} You must have at least one hand free (holding nothing) to use this feat. Once per round when you would normally be hit with a ranged weapon, you may deflect it so that you take no damage from it. You must be aware of the attack and not flatfooted.
+\parhead{Benefit} You must have at least one hand free (holding nothing) to use this feat. Once per round when you would normally be hit with a ranged weapon, you may deflect it so that you take no damage from it. You must be aware of the attack and not flatfooted. You can deflect one additional attack at base attack bonus \plus5, \plus10, \plus15, and \plus20, to a maximum number of arrows equal to your Dexterity.
 \par Attempting to deflect a ranged weapon doesn't count as an action. Unusually massive ranged weapons and ranged attacks generated by spell effects can't be deflected.
 \parhead{Special} A monk may select Deflect Arrows as a bonus feat at 2nd level, even if she does not meet the prerequisites.
 
@@ -736,16 +739,12 @@ This resistance is considered damage reduction for the purpose of abilities whic
 
 \subsubsection{Exotic Weapon Proficiency [Combat]}
 You understand how to use exotic weapons in combat.
-\parhead{Prerequisite} Base attack bonus \plus1
+\parhead{Prerequisite} Base attack bonus \plus1.
 \parhead{Benefit} You don't provoke attacks of opportunity when attacking with exotic melee weapons from weapon groups that you are proficient with, and you can use exotic ranged weapons from those groups without penalty.
 \parhead{Normal} When using a melee weapon with which you are not proficient, you provoke an attack of opportunity when you miss. When using a ranged weapon with which you are not proficient, you take a \minus4 penalty to attack rolls.
 
 \subsubsection{Far Shot [Combat]}
 \parhead{Benefit} When you use a projectile weapon, such as a bow, its range increment increases by one-half (multiply by 1-1/2). When you use a thrown weapon, its range increment is doubled.
-
-\subsubsection{Improved Deflect Arrows [Combat]}
-\parhead{Prerequisites} Dex 7, Deflect Arrows, Improved Unarmed Strike, base attack bonus \plus4
-\parhead{Benefit} Each round, you can deflect a number of arrows equal to your Dexterity.%Improved Deflect Arrows
 
 %\subsubsection{Improved Fighting Retreat [Combat]}
 %\parhead{Prerequisites} Combat Reflexes, base attack bonus \plus6
@@ -844,7 +843,7 @@ If you have three or more Reaction feats, you can draw light and medium weapons 
 \par You must have at least one hand free (holding nothing) to use this feat.%Snatch Arrows
 
 \subsubsection{Spirited Charge [Combat]}
-\parhead{Prerequisites} Ride 1 rank, Mounted Combat, Ride-By Attack.
+\parhead{Prerequisites} Ride 1 rank, Ride-By Attack.
 \parhead{Benefit} When mounted and using the charge action, you deal double damage with a melee weapon (or triple damage with a lance) on your attack at the end of the charge.%Spirited Charge
 
 \subsubsection{Stunning Fist [Combat]}
