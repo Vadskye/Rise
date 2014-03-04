@@ -329,3 +329,7 @@ def attack_hits(attack_bonus, ac):
 #return number of attacks this base attack bonus grants
 def attack_count(base_attack_bonus):
     return 1 + max(0,(base_attack_bonus-1)/5)
+
+#+2, +3 at 8th, +4 at 14th, +5 at 20th
+def std_scale(level):
+    return (level+10)/6
