@@ -62,7 +62,7 @@ class TwoWeaponDefense(Feat):
             creature.armor_class.shield.add_competence(2)
 
 class CombatExpertise(Feat):
-    tags = ['Combat', 'Defense']
+    tags = ['Combat', 'Defense', 'Style']
     def meets_prerequisites(self, creature):
         return creature.attributes.intelligence.get_total() >= 3
     def apply_benefit(self, creature):
@@ -70,10 +70,17 @@ class CombatExpertise(Feat):
         creature.armor_class.dodge.add_circumstance(util.std_scale(creature.level))
 
 class PowerAttack (Feat):
-    tags = ['Combat', 'Power']
+    tags = ['Combat', 'Power', 'Style']
     def meets_prerequisites(self, creature):
         return creature.attributes.strength.get_total() >= 3
     def apply_benefit(self, creature):
         creature.attack_bonus.add_circumstance(-util.std_scale(creature.level))
         creature.weapon_damage.add_circumstance(util.std_scale(creature.level))
-        creature.offhand_damage.add_circumstnace(util.std_scale(creature.level)/2)
+        if creature.offhand_weapon:
+            creature.offhand_weapon_damage.add_circumstance(util.std_scale(creature.level)/2)
+
+class DeadlyAim (PowerAttack):
+    tags = ['Combat', 'Precision', 'Style']
+    def meets_prerequisites(self, creature):
+        return creature.attributes.dexterity.get_total() >= 3
+        
