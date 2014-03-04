@@ -40,6 +40,7 @@ class Creature(object):
         self.hit_value = None
         self.max_hit_points = 0
         self.damage_reduction = util.DamageReduction()
+        self.initiative = util.Modifier()
 
     def _interpret_raw_stats(self, raw_stats):
         self.name = raw_stats['name']
@@ -134,6 +135,9 @@ class Creature(object):
         self.cmd.add_inherent(self.armor_class.touch())
         self.cmd.add_inherent((self.attack_bonus.base_bonus+1)/2)
         self.cmd.add_inherent(self.attributes.strength.get_total())
+
+        self.initiative.add_inherent(self.attributes.dexterity.get_total())
+        self.initiative.add_inherent(self.attributes.wisdom.get_total()/2)
 
     #http://stackoverflow.com/questions/141545/overloading-init-in-python
     @classmethod
@@ -299,6 +303,10 @@ class Creature(object):
     def avg_hit_probability(self, ac):
         return combat.avg_hit_probability(self.attack_bonus.get_total(),
                 ac, self.attack_bonus.base_bonus)
+
+    def roll_initiative(self):
+        return util.d20.roll()+self.initiative.get_total()
+
 
 class Character(Creature):
     #http://stackoverflow.com/questions/7629556/python-super-and-init-vs-init-self
