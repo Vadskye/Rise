@@ -10,6 +10,8 @@ class Creature(object):
         #http://stackoverflow.com/questions/9946736/python-not-creating-a-new-clean-instance
         self.level = level
         self.verbose = verbose
+        #default to full attack for now
+        self.attack_mode = 'full attack'
 
         self._init_core_statistics()
 
@@ -254,9 +256,14 @@ class Creature(object):
             return False
         return True
 
-    #default to full attack for now
     def default_attack(self, enemy):
-        self.full_attack(enemy)
+        if self.attack_mode == 'full attack':
+            return self.full_attack(enemy)
+        elif self.attack_mode == 'special':
+            return self.special_attack(enemy)
+        else:
+            if self.verbose: print 'invalid attack_mode', attack_mode
+            return False
         
     def full_attack(self, enemy):
         damage_dealt = 0
