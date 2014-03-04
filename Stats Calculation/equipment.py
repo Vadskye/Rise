@@ -24,21 +24,29 @@ class Armor:
         self.encumbrance = encumbrance
         self.armor_type = armor_type
 
-class EquipmentSet:
-    def __init__(self, weapon_name, armor_name, shield_name):
-        self.weapon = Weapon.from_weapon_name(weapon_name)
-        self.armor = {
-                'heavy': Armor(8, 'heavy', 'body'),
-                'medium': Armor(6, 'medium', 'body'),
-                'light': Armor(3, 'light', 'body'),
+    @classmethod
+    def from_armor_name(cls, armor_name):
+        return {
+                'heavy': cls(8, 'heavy', 'body'),
+                'medium': cls(6, 'medium', 'body'),
+                'light': cls(3, 'light', 'body'),
                 'none': None,
                 }[armor_name]
-        self.shield = {
+
+    @classmethod
+    def from_shield_name(cls, shield_name):
+        return {
                 'tower': Armor(4, 'medium', 'shield'),
                 'heavy': Armor(2, 'none', 'shield'),
                 'light': Armor(1, 'none', 'shield'),
                 'none': None
                 }[shield_name]
+
+class EquipmentSet:
+    def __init__(self, weapon_name, armor_name, shield_name):
+        self.weapon = Weapon.from_weapon_name(weapon_name)
+        self.armor = Armor.from_armor_name(armor_name)
+        self.shield = Armor.from_shield_name(shield_name)
 
     @classmethod
     def from_raw_stats(cls, raw_stats):
