@@ -23,8 +23,8 @@ def rage(level, creature):
 
 class Feat(object):
 
-    def __init__(self):
-        pass
+    def has_tag(self, tag):
+        return tag in self.tags
 
     def meets_prerequisites(self, creature):
         return True
@@ -33,6 +33,7 @@ class Feat(object):
         pass
 
 class OverwhelmingForce(Feat):
+    tags = ['Combat', 'Power']
     def meets_prerequisites(self, creature):
         return creature.attributes.strength.get_total() >=5 and creature.attack_bonus.base_attack_bonus >=8 and creature.weapon.encumbrance == 'heavy'
 
@@ -42,6 +43,7 @@ class OverwhelmingForce(Feat):
                     (creature.attributes.strength.get_total()+1)/2)
 
 class TwoWeaponFighting(Feat):
+    tags = ['Combat', 'Finesse']
     def meets_prerequisites(self, creature):
         return creature.attributes.dexterity.get_total() >= 3
 
@@ -50,6 +52,7 @@ class TwoWeaponFighting(Feat):
             creature.attack_bonus.add_competence(2)
 
 class TwoWeaponDefense(Feat):
+    tags = ['Combat', 'Defense', 'Finesse']
     def meets_prerequisites(self, creature):
         #can't currently implement feat prerequisites
         return creature.attributes.dexterity.get_total() >= 3
