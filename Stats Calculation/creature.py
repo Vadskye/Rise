@@ -137,6 +137,13 @@ class Creature(object):
                     self.attributes.strength.get_total()/2)
         self.weapon_damage.add_inherent(strength_bonus_to_damage)
 
+        #Two weapon fighting
+        if self.offhand_weapon:
+            #should actually come from 2WF feat, which we assume
+            self.attack_bonus.add_competence(2)
+            #should actually come from 2WDefense feat, which we assume
+            self.armor_class.shield.add_competence(self.level/8+1)
+
         self._add_save_attributes()
 
         self.armor_class.dodge.add_inherent(
@@ -181,8 +188,6 @@ class Creature(object):
             self.attack_bonus.add_enhancement(scale_factor)
             self.weapon_damage.add_enhancement(scale_factor)
         if self.offhand_weapon:
-            #should actually come from 2WF feat, which we are assuming
-            self.attack_bonus.add_competence(2)
             #needed when tracking main, offhand attack bonus separately
             #self.attack_bonus.add_enhancement(scale_factor)
             self.offhand_weapon_damage.add_enhancement(scale_factor)
