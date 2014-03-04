@@ -32,7 +32,9 @@ class Creature(object):
     def _init_core_statistics(self):
         self.attack_bonus = util.AttackBonus(level=self.level)
         self.weapon_damage = util.Modifier()
+        self.offhand_weapon_damage = util.Modifier()
         self.weapon_damage_types = ['physical']
+        self.offhand_weapon_damage_types = ['physical']
         self.attributes = util.Attributes()
         self.armor_class = util.ArmorClass()
         self.saves = util.SavingThrows(level=self.level)
@@ -49,7 +51,10 @@ class Creature(object):
         equipment_set = equipment.EquipmentSet.from_raw_stats(raw_stats)
         self.weapon = equipment_set.weapon
         self.offhand_weapon = equipment_set.offhand_weapon
-        self.weapon_damage.add_die(self.weapon.damage_die)
+        if self.weapon:
+            self.weapon_damage.add_die(self.weapon.damage_die)
+        if self.offhand_weapon:
+            self.offhand_weapon_damage.add_die(self.offhand_weapon.damage_die)
         self.armor = equipment_set.armor
         self.shield = equipment_set.shield
         if 'size' in raw_stats.keys():
@@ -171,10 +176,14 @@ class Creature(object):
         if self.weapon:
             self.attack_bonus.add_enhancement(scale_factor)
             self.weapon_damage.add_enhancement(scale_factor)
+        if self.offhand_weapon:
+            self.attack_bonus.add_enhancement(scale_factor)
+            self.weapon_damage.add_enhancement(scale_factor)
         for save_title in util.save_titles:
             getattr(self.saves,save_title).add_enhancement(scale_factor)
 
     def _calculate_attack_attribute_bonus(self):
+        #we are assuming offhand weapon is no heavier than main weapon
         if self.weapon.encumbrance =='light':
             return max(self.attributes.strength.get_total(),
                     self.attributes.dexterity.get_total())
