@@ -73,4 +73,7 @@ def rounds_survived(primary_attack_bonus, ac, base_attack_bonus, avg_damage, hp)
     return round_count
 
 def get_initiative_order(creatures):
-    return sorted(creatures, key = lambda creature: creature.roll_initiative())
+    order = sorted(creatures, key = lambda creature: creature.roll_initiative())
+    #order is normally from lowest to highest
+    order.reverse()
+    return order
