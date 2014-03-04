@@ -60,3 +60,20 @@ class TwoWeaponDefense(Feat):
     def apply_benefit(self, creature):
         if creature.offhand_weapon:
             creature.armor_class.shield.add_competence(2)
+
+class CombatExpertise(Feat):
+    tags = ['Combat', 'Defense']
+    def meets_prerequisites(self, creature):
+        return creature.attributes.intelligence.get_total() >= 3
+    def apply_benefit(self, creature):
+        creature.attack_bonus.add_circumstance(-util.std_scale(creature.level))
+        creature.armor_class.dodge.add_circumstance(util.std_scale(creature.level))
+
+class PowerAttack (Feat):
+    tags = ['Combat', 'Power']
+    def meets_prerequisites(self, creature):
+        return creature.attributes.strength.get_total() >= 3
+    def apply_benefit(self, creature):
+        creature.attack_bonus.add_circumstance(-util.std_scale(creature.level))
+        creature.weapon_damage.add_circumstance(util.std_scale(creature.level))
+        creature.offhand_damage.add_circumstnace(util.std_scale(creature.level)/2)
