@@ -21,4 +21,21 @@ def rage(level, creature):
     creature.saves.will.add_competence(util.std_scale(level))
     creature.current_hit_points += level*util.std_scale(level)
 
+class Feat(object):
 
+    def __init__(self):
+        pass
+
+    def meets_prerequisites(self, creature):
+        return True
+
+    def apply_benefit(self, creature):
+        pass
+
+class OverwhelmingForce(Feat):
+    def meets_prerequisites(self, creature):
+        return creature.attributes.strength.get_total() >=5 and creature.attack_bonus.base_attack_bonus >=8 and creature.weapon.encumbrance == 'heavy'
+
+    def apply_benefit(self, creature):
+        creature.weapon_damage.add_inherent(
+                (creature.attributes.strength.get_total()+1)/2)
