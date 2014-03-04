@@ -79,15 +79,19 @@ if __name__ == "__main__":
             npc2 = Character.from_creature_name('npc', i+1)
             rogue = Character.from_creature_name('rogue-single', i+1)
             """
-            first_name = 'ftr-heavy'
-            second_name = 'brb-heavy'
+            first_name = 'brb-heavy'
+            second_name = 'ftr-typical'
             first = Character.from_creature_name(first_name, i+1)
             second = Character.from_creature_name(second_name, i+1)
+            #print first
+            #print second
+            second.name='second_char'
+            #first.weapon_damage.add_competence(2)
+            #second.weapon_damage.add_competence(2)
+            #second.offhand_weapon_damage.add_competence(2)
             #fighter_heavy.armor_class.misc.add_circumstance((i+1)/5)
 
             battle = combat.Battle(first, second)
-            #print fighter_typical
-            #print fighter_heavy
 
             repeat_count = 500
             results = run_repeated_battles(battle, repeat_count)
