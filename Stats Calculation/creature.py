@@ -257,11 +257,13 @@ class Creature(object):
         return True
 
     def default_attack(self, enemy):
-        if self.attack_mode == 'full attack':
-            return self.full_attack(enemy)
-        elif self.attack_mode == 'special':
-            return self.special_attack(enemy)
-        else:
+        try:
+            return {
+                    'full attack': self.full_attack(enemy),
+                    'damage spell': self.damage_spell(enemy),
+                    'special attack': self.special_attack(enemy),
+                    }[self.attack_mode]
+        except:
             if self.verbose: print 'invalid attack_mode', attack_mode
             return False
         
@@ -271,6 +273,13 @@ class Creature(object):
             if util.attack_hits(self.attack_bonus.get_total() - 5*i, enemy.armor_class.normal()):
                 damage_dealt += self.attack_damage.get_total(roll=True)
         enemy.take_damage(damage_dealt, self.attack_damage_types)
+        return damage_dealt
+
+    def damage_spell(self, enemy):
+        #Use highest-level, no optimization, no save spell
+        damage_die = dice.Dice('{0}d10'.format(self.level/2))
+        damage_dealt = damage_die.roll()
+        enemy.take_damage(damage_dealt)
         return damage_dealt
 
     def single_attack(self, enemy):
