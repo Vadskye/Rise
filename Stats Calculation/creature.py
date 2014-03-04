@@ -279,7 +279,7 @@ class Creature(object):
             self.is_alive = self._check_if_alive()
 
     def _check_if_alive(self):
-        if self.critical_damage > self.attributes.constitution:
+        if self.critical_damage > self.attributes.constitution.get_total():
             return False
         return True
 
