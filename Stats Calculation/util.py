@@ -16,7 +16,7 @@ POOR = 'poor'
 
 d20 = dice.dx(20)
 
-class Modifier:
+class Modifier(object):
 
     def __init__(self):
         self.inherent=0
@@ -81,7 +81,6 @@ class Modifier:
 
 class ModifierProgression(Modifier):
     def __init__(self, progression = None, level = None):
-        self.base_bonus = 0
         self.inherent=0
         self.enhancement=0
         self.competence=0
@@ -109,7 +108,7 @@ class ModifierProgression(Modifier):
 
 class SavingThrow(ModifierProgression):
     def _apply_progression(self, progression, level):
-        self.base_bonus = {
+        base_save_bonus = {
             'poor': level/2,
             'average': (level*3)/4+1,
             'good': level+2,
@@ -127,13 +126,23 @@ class SavingThrows():
             getattr(self, save).set_progression(progressions[save])
 
 class AttackBonus(ModifierProgression):
+    def __init__(self, progression = None, level = None):
+        super(AttackBonus, self).__init__(progression, level)
+        self.base_attack_bonus = 0
+
+    def set_base_attack_bonus(self, base_attack_bonus):
+        difference = base_attack_bonus - self.base_attack_bonus
+        self.base_attack_bonus = base_attack_bonus
+        self.add_inherent(difference)
+        self._update()
+
     def _apply_progression(self, progression, level):
-        self.base_bonus = {
+        base_attack_bonus = {
             'poor': level/2,
-            'average': (level*3)/4+1,
-            'good': level+2,
+            'average': (level*3)/4,
+            'good': level,
             }[progression]
-        self.inherent = self.base_bonus
+        self.set_base_attack_bonus(base_attack_bonus)
 
 class Attributes:
     def __init__(self):
