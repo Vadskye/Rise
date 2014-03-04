@@ -1,7 +1,7 @@
 name=Cleric-warrior
 race=human
 class=cleric
-armor=medium
+armor=heavy
 shield=heavy
 weapon=medium_melee
 attributes=warrior
