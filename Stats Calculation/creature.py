@@ -268,19 +268,21 @@ class Creature(object):
                 'special attack': self.special_attack(enemy),
                 }[self.attack_mode]
 
-    def full_attack(self, enemy):
+    def full_attack(self, enemy, deal_damage = True):
         damage_dealt = 0
         for i in xrange(util.attack_count(self.attack_bonus.base_bonus)):
-            if util.attack_hits(self.attack_bonus.get_total() - 5*i, enemy.armor_class.normal()):
-                damage_dealt += self.attack_damage.get_total(roll=True)
-        enemy.take_damage(damage_dealt, self.attack_damage_types)
+            damage_dealt += self.single_attack(enemy, self.attack_bonus.get_total() - 5*i, deal_damage)
         return damage_dealt
 
-    def single_attack(self, enemy):
-        if util.attack_hits(self.attack_bonus, enemy.armor_class.normal()):
+    def single_attack(self, enemy, attack_bonus = None,
+            deal_damage = True):
+        damage_dealt = 0
+        if attack_bonus is None: attack_bonus = self.attack_bonus.get_total()
+        if util.attack_hits(attack_bonus, enemy.armor_class.normal()):
             damage_dealt = self.attack_damage.get_total(roll=True)
-            enemy.take_damage(damage_dealt)
-            return damage_dealt
+            if deal_damage:
+                enemy.take_damage(damage_dealt, self.attack_damage_types)
+        return damage_dealt
 
     def damage_spell(self, enemy):
         #Use highest-level, no optimization, no save spell
@@ -306,7 +308,6 @@ class Creature(object):
 
     def roll_initiative(self):
         return util.d20.roll()+self.initiative.get_total()
-
 
 class Character(Creature):
     #http://stackoverflow.com/questions/7629556/python-super-and-init-vs-init-self
