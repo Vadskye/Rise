@@ -12,7 +12,12 @@ class Battle(object):
         second_creature_wins = 0
         round_count_total = 0
         for i in xrange(battle_count):
-            victor, round_count = self.determine_victor()
+            order = get_initiative_order([self.first_creature,
+                    self.second_creature])
+            battle_creature_1 = copy.copy(order[0])
+            battle_creature_2 = copy.copy(order[1])
+            victor, round_count = determine_victor(battle_creature_1,
+                    battle_creature_2)
             if victor.name == self.first_creature.name:
                 first_creature_wins+=1
             elif victor.name == self.second_creature.name:
@@ -22,20 +27,18 @@ class Battle(object):
             round_count_total+=round_count
         return first_creature_wins/float(battle_count), second_creature_wins/float(battle_count), round_count_total/float(battle_count)
 
-    def determine_victor(self):
-        round_count = 0
-        first_creature = copy.copy(self.first_creature)
-        second_creature = copy.copy(self.second_creature)
-        while first_creature.is_alive and second_creature.is_alive:
-            first_creature.new_round()
-            second_creature.new_round()
-            first_creature.default_attack(second_creature)
-            if second_creature.is_alive:
-                second_creature.default_attack(first_creature)
-            round_count+=1
-        if first_creature.is_alive:
-            return first_creature, round_count
-        return second_creature, round_count
+def determine_victor(first_creature, second_creature):
+    round_count = 0
+    while first_creature.is_alive and second_creature.is_alive:
+        first_creature.new_round()
+        second_creature.new_round()
+        first_creature.default_attack(second_creature)
+        if second_creature.is_alive:
+            second_creature.default_attack(first_creature)
+        round_count+=1
+    if first_creature.is_alive:
+        return first_creature, round_count
+    return second_creature, round_count
 
 #return probability that attack hits
 def hit_probability(attack_bonus, ac):
@@ -68,3 +71,6 @@ def rounds_survived(primary_attack_bonus, ac, base_attack_bonus, avg_damage, hp)
         total_damage+=full_attack_damage_dealt(primary_attack_bonus, ac, base_attack_bonus, avg_damage)
         round_count+=1
     return round_count
+
+def get_initiative_order(creatures):
+    return sorted(creatures, key = lambda creature: creature.roll_initiative())
