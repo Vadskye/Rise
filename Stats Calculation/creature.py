@@ -29,7 +29,6 @@ class Creature(object):
         self._add_level_scaling()
         self._calculate_derived_statistics()
 
-        self.current_hit_points = self.max_hit_points
         self.critical_damage = 0
         self.is_alive = True
 
@@ -107,14 +106,14 @@ class Creature(object):
 
     def _calculate_class_stats(self):
         #Calculate statistics based on the given class
-        #note that we are hardcoding the call to barbarian
-        #This needs to be made automatic later
-
         self.class_calculator.apply_progressions(self)
-        self.class_calculator.apply_modifications(self)
+
         self.max_hit_points = calculate_hit_points(
                 self.attributes.constitution.get_total(), 
                 self.class_calculator.hit_value, self.level)
+        self.current_hit_points = self.max_hit_points
+
+        self.class_calculator.apply_modifications(self)
 
     def _calculate_derived_statistics(self):
         self.armor_class.armor.add_inherent(self.armor.ac_bonus)
