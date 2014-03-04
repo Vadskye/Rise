@@ -181,8 +181,11 @@ class Creature(object):
             self.attack_bonus.add_enhancement(scale_factor)
             self.weapon_damage.add_enhancement(scale_factor)
         if self.offhand_weapon:
-            self.attack_bonus.add_enhancement(scale_factor)
-            self.weapon_damage.add_enhancement(scale_factor)
+            #should actually come from 2WF feat, which we are assuming
+            self.attack_bonus.add_competence(2)
+            #needed when tracking main, offhand attack bonus separately
+            #self.attack_bonus.add_enhancement(scale_factor)
+            self.offhand_weapon_damage.add_enhancement(scale_factor)
         for save_title in util.save_titles:
             getattr(self.saves,save_title).add_enhancement(scale_factor)
 
