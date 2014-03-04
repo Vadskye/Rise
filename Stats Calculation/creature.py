@@ -13,6 +13,10 @@ class Creature(object):
         self.verbose = verbose
         #default to full attack for now
         self.attack_mode = 'full attack'
+        #amount creature must hit by to hit with offhand attack
+        #Currently assuming that offhand weapon has same attack bonus
+        #as main hand weapon, and that offhand weapon is light
+        self.offhand_threshold = 5
 
         self._init_core_statistics()
 
@@ -287,11 +291,16 @@ class Creature(object):
     def single_attack(self, enemy, attack_bonus = None,
             deal_damage = True):
         damage_dealt = 0
-        if attack_bonus is None: attack_bonus = self.attack_bonus.get_total()
-        if util.attack_hits(attack_bonus, enemy.armor_class.normal()):
-            damage_dealt = self.weapon_damage.get_total(roll=True)
-            if deal_damage:
-                enemy.take_damage(damage_dealt, self.weapon_damage_types)
+        if attack_bonus is None:
+            attack_bonus = self.attack_bonus.get_total()
+        is_hit, is_threshold_hit = util.attack_hits(attack_bonus, 
+                enemy.armor_class.normal(), threshold=5)
+        if is_hit:
+            damage_dealt += self.weapon_damage.get_total(roll=True)
+        if is_threshold_hit:
+            damage_dealt += self.offhand_weapon_damage.get_total(roll=True)
+        if deal_damage:
+            enemy.take_damage(damage_dealt, self.weapon_damage_types)
         return damage_dealt
 
     def damage_spell(self, enemy):
