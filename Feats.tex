@@ -216,9 +216,9 @@ Defensive Stance & Base attack bonus \plus4 & Trade ability to move for CMD & De
 \tind Improved Defensive Stance & Base attack bonus \plus12 & Trade ability to move for AC & Defense, Style \\
 Distracting Foe & Base attack bonus \plus4 & Threatened foes suffer Concentration penalties & Style \\
 Dodge & Dex 3 & \plus4 AC against some attacks of opportunity from selected target & Defense, Mobility \\
-\tind Mobility & Dodge & Avoid some attacks of opportunity from selected target & Defense, Mobility \\
-\tind \tind Shot on the Run & Dex 3, Dodge, Mobility, base attack bonus \plus4 & Move before and after ranged attacks & Mobility, Style \\
-\tind \tind Spring Attack & Dex 3, Dodge, Mobility, base attack bonus \plus4 & Move before and after melee attacks & Mobility, Style \\
+\tind Combat Mobility & Dex 3, base attack bonus \plus4, Dodge & Avoid some attacks of opportunity from selected target & Defense, Mobility \\
+\tind \tind Shot on the Run & Dex 3, base attack bonus \plus4, Dodge, Combat Mobility & Move before and after ranged attacks & Mobility, Style \\
+\tind \tind Spring Attack & Dex 3, base attack bonus \plus4, Dodge, Combat Mobility & Move before and after melee attacks & Mobility, Style \\
 \end{tabularx}
 \end{dtable!*}
 
@@ -831,8 +831,8 @@ In addition, your unarmed strikes can deal lethal or nonlethal damage as you cho
 \featpre Intelligence 3, base attack bonus \plus12.
 \featben As a full-round action, you can ready a full-round action or a move action and a standard action. In addition, when you ready a full-round action, allies within 30 feet of you can also ready the same full-round action on their next turn, provided that you have not taken the action yet.
 
-\subsubsection{Mobility [Combat]}
-\parhead{Prerequisites} Dex 3, Dodge.
+\subsubsection{Combat Mobility [Combat]}
+\parhead{Prerequisites} Dex 3, Dodge, base attack bonus \plus4.
 \parhead{Benefit} When you move, it does not provoke attacks of opportunity from your Dodge target.
 
 \subsubsection{Mounted Archery [Combat]}
@@ -1130,15 +1130,10 @@ You must spend a full-round action to make a full attack while in this style. Yo
 \subsubsection{Precise Shot [Combat Style]}
 \parhead{Benefit} You can add half your Wisdom to damage with ranged attacks in addition to half your strength.
 
-\subsubsection{Shot On The Run [Combat Style]}
-\parhead{Prerequisites} Dex 3, Dodge, Mobility, base attack bonus \plus4.
-\parhead{Benefit} When attacking with a ranged weapon, you can move both before and after each attack, provided that your total distance moved is not greater than your speed.
-\parhead{Style Requirement} Must move each round, and must not be wearing heavy armor.
-
 \subsubsection{Spring Attack [Combat Style]}
 \parhead{Prerequisites} Dex 3, Dodge, Mobility, base attack bonus \plus4.
-\parhead{Benefit} When attacking with a melee weapon, you can move both before and after each attack, provided that your total distance moved is not greater than your speed. Moving in this way does not provoke an attack of opportunity from your Dodge target, though it might provoke attacks of opportunity from other creatures, if appropriate.
-\parhead{Style Requirement} Must move each round, and must not be wearing heavy armor.
+\parhead{Benefit} When attacking with a weapon, you can move both before and after each attack, provided that your total distance moved is not greater than your speed.
+\parhead{Style Requirement} Must not be wearing heavy armor.
 
 \subsubsection{Reveal the Weak Point [Combat Style]}
 \featpre Base attack bonus \plus4.
