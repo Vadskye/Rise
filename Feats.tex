@@ -268,6 +268,9 @@ Mounted Combat & Ride 1 rank & Negate hits on mount with Ride check & Defense, M
 Opportunist & Dex 3 & \plus2 to attack and damage on attacks of opportunity & Finesse, Style \\
 Overpowering Assault & Str 3 & Trade AC for combat maneuver bonus & Power, Style \\
 Overwhelming Force & Str 5, base attack bonus \plus8 & Apply full Strength to damage when using two hands & Power \\
+Parry & Dex 3 & Ready yourself to parry incoming blows & Defense, Reaction \\
+\tind Shielded Parry & Dex 3, shield proficiency, Parry & Add shield modifier to parry attempts & Defense, Reaction \\
+\tind Riposte & Dex 3, base attack bonus \plus4, Parry & Foes provoke if you parry very well & Reaction \\ 
 Perfect Shot & Dex 5, base attack bonus \plus8 & Ignore less than total cover/concealment on ranged attacks & Precision, Style \\
 Point Blank Shot & \x &  \plus2 bonus on ranged damage within 30 ft. & Precision, Style \\
 Precise Shot & \x & Add half Wis to damage & Precision, Style \\
@@ -781,7 +784,7 @@ In addition, your unarmed strikes can deal lethal or nonlethal damage as you cho
 \featben When you take damage, you may choose to have your mount suffer half the damage instead of you (rounded down). Likewise, when your mount takes damage, you may choose to suffer half of that damage instead of your mount (rounded down).
 
 \subsubsection{Legendary Power [Combat, Power]}
-\featpre Base attack bonus \plus12, any three Power feats.
+\featpres Base attack bonus \plus12, any three Power feats.
 \featben You can use weapons as if they were one category less encumbering than they actually are. The weapon encumbrance categories are light, medium, and heavy. For example, you can use a greatsword as a medium weapon in one hand without suffering any penalties.
 
 \subsubsection{Legendary Precision [Combat, Precison]}
@@ -817,6 +820,10 @@ In addition, your unarmed strikes can deal lethal or nonlethal damage as you cho
 \parhead{Benefit} You add your full Strength to damage when wielding a medium or large melee weapon in two hands.
 \parhead{Normal} Without this feat, you add half your Strength to damage.
 
+\subsubsection{Parry [Combat, Defense, Reaction]}
+\featpre Dexterity 3.
+\featben As a standard action, you may ready yourself to parry incoming blows. Until the start of your next turn, if you are you are attacked and are not flat-footed against the attack, you may make an attack roll. You may treat the result of your attack roll as your armor class against that attack if it would be higher. If your base attack bonus is high enough to grant you multiple attacks, you may also make multiple parry attempts. Each parry attempt after the first takes a cumulative \minus5 penalty, just like your attack rolls do.
+
 \subsubsection{Quick Draw [Combat]}
 \parhead{Benefit} You can draw light weapons as a free action and medium weapons as a swift action. You can draw heavy and hidden weapons (see the Sleight of Hand skill) as a move action that provokes attacks of opportunity.
 \par A character who has selected this feat may throw light weapons at his full normal rate of attacks (much like a character with a bow).
@@ -832,11 +839,18 @@ If you have three or more Reaction feats, you can draw light and medium weapons 
 \featpre Ride 8 ranks.
 \parhead{Benefit} When you are mounted and use the charge action, you may move and attack as if with a standard charge and then move again (continuing the straight line of the charge). You do not need to attack from the closest possible space when making a ride-by attack. Your total movement for the round can't exceed the distance you could normally move on a mounted charge. You and your mount do not provoke an attack of opportunity from the opponent that you attack.
 
+\subsubsection{Riposte [Combat, Reaction]}
+\featpre Dexterity 3, base attack bonus \plus4, Parry
+\featben When readying yourself to parry incoming blows, if your parry attempt exceeds your opponent's attack roll by 10 or more, your foe provokes an attack of opportunity from you.
+
 \subsubsection{Shield Proficiency [Combat]}
 \parhead{Benefit} You can use a shield and take only the standard penalties.
 \parhead{Normal} When you are using a shield with which you are not proficient, you take the shield's armor check penalty on attack rolls and on all skill checks that involve moving, including Ride checks.
 \parhead{Special} Barbarians, bards, clerics, druids, fighters, paladins, and rangers automatically have Shield Proficiency as a bonus feat. They need not select it.
 
+\subsubsection{Shielded Parry [Combat, Defense, Reaction]}
+\featpres Dexterity 3, shield proficiency, Parry
+\featben When readying yourself to parry incoming blows and using a shield, you may add your shield modifier to your attack roll made to parry.
 \subsubsection{Snatch Arrows [Combat]}
 \parhead{Prerequisites} Dex 5, Deflect Arrows, Improved Unarmed Strike.
 \parhead{Benefit} When using the Deflect Arrows feat, you may catch the weapon instead of just deflecting it. Thrown weapons can immediately be thrown back at the original attacker (even though it isn't your turn) or kept for later use.
