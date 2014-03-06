@@ -218,6 +218,7 @@ Distracting Foe & Base attack bonus \plus4 & Threatened foes suffer Concentratio
 Dodge & Dex 3 & \plus4 AC against some attacks of opportunity from selected target & Defense, Mobility \\
 \tind Combat Mobility & Dex 3, base attack bonus \plus4, Dodge & Avoid some attacks of opportunity from selected target & Defense, Mobility \\
 \tind \tind Spring Attack & Dex 3, base attack bonus \plus4, Dodge, Combat Mobility & Move before and after attacks & Mobility, Style \\
+Driving Assault & Str 5, base attack bonus \plus8 & Bull rushed foe provokes attack from you \\
 \end{tabularx}
 \end{dtable!*}
 
@@ -246,6 +247,7 @@ Improved Unarmed Strike & \x &  Considered armed even when unarmed & \x \\
 \tind Stunning Fist & Dex 3, Wis 3, Improved Unarmed Strike, base attack bonus \plus4 & Stun opponent with unarmed strike & Power \\
 Inescapable Bulwark of Defense & Base attack bonus \plus8, Bulwark of Defense & Enemies cannot avoid provoking attacks of opportunity & Reaction, Style \\
 Intimidating Stance & Intimidate 8 ranks & Swiftly intimidate struck foe & Skill, Style\\
+Knockdown & Str 3, base attack bonus \plus4 & Bull rushed foe can be knocked prone \\
 Legendary Awareness & Base attack bonus \plus12, any three Awareness feats & Immune to overwhelm & Awareness \\
 Legendary Finesse & Base attack bonus \plus12, any three Finesse feats & Add half Dexterity to damage & Finesse \\
 Legendary Maneuver Master & Base attack bonus \plus12, any three Maneuver feats & Never provoke, deal damage with very successful maneuvers & Maneuver \\ 
@@ -732,6 +734,11 @@ Choose one category of armor: light, medium, heavy, or shields.
 %battletrance, you gain a \plus2 competence bonus to Will saves. You can enter a
 %battletrance a number of times per day equal to 1 \add your Charisma.
 
+\subsubsection{Blind-Fight [Combat]}
+\parhead{Benefit} In melee, every time you miss because of being unable to see your opponent, you can reroll your miss chance one time to see if you actually hit. In addition, you are not flat-footed against invisible attackers adjacent to you.
+\par If you have 10 ranks in Perception, you can automatically pinpoint the location of any invisible creature adjacent to you. 
+\parhead{Normal} You have a 50\% chance to miss opponents you can't see, and you are flat-footed against them.
+
 \subsubsection{Chargebreaker [Combat]}
 \parhead{Prerequisite} Base attack bonus \plus4
 \parhead{Benefit} When you ready an action to attack a foe that approaches you, you gain a \plus2 circumstance bonus to attack and damage on your attacks for the readied action.
@@ -770,6 +777,10 @@ Contingent actions depend on a trigger condition. If the trigger condition occur
 \parhead{Prerequisite} Dex 3.
 \parhead{Benefit} You may designate an opponent as a free action. You receive a \plus4 circumstance bonus to your dodge modifier against attacks of opportunity from that opponent that were provoked by movement. In addition, you gain a \plus4 circumstance bonus to Acrobatics checks made to tumble against that opponent.
 
+\subsubsection{Driving Assault [Combat, Maneuver, Power]}
+\featpre Str 5, base attack bonus \plus8.
+\featben When you make a bull rush attack, if you succeed, your opponent provokes an attack of opportunity from you.
+
 \subsubsection{Endurance [General]}
 \featpre Con 3
 \parhead{Benefit} You convert the first two points of damage you take each round into nonlethal damage. You resist 1 additional point of damage per two levels. In addition, you may sleep in light or medium armor without becoming fatigued.
@@ -800,6 +811,48 @@ You understand how to use exotic weapons in combat.
 In addition, your unarmed strikes can deal lethal or nonlethal damage as you choose.
 \parhead{Normal} Without this feat, you are considered unarmed when attacking with an unarmed strike, and you can deal only nonlethal damage with such an attack.
 \parhead{Special} A monk automatically gains Improved Unarmed Strike as a bonus feat at 1st level. She need not select it.
+
+\subsubsection{Knockdown [Combat, Maneuver, Power]}
+\featpres Strength 3, base attack bonus \plus4
+\featben When you successfully bull rush an opponent, you can choose to reduce the distance they travel by 5 feet to leave them prone after they are moved.
+
+\subsubsection{Improved Bull Rush [Combat, Maneuver]}
+\parhead{Prerequisites} Base attack bonus \plus4
+\parhead{Benefit} When you perform a bull rush, you do not need to move with the target to move them back. You also gain a \plus2 competence bonus on bull rush attacks.
+
+\subsubsection{Improved Dirty Trick [Combat, Maneuver]}
+\parhead{Prerequisites} Base attack bonus \plus4
+\parhead{Benefit} The conditions imposed by your dirty tricks last for 1d4 rounds. You also gain a \plus2 competence bonus on dirty trick attacks.
+
+\subsubsection{Improved Disarm [Combat, Maneuver]}
+\parhead{Prerequisites} Base attack bonus \plus4
+\parhead{Benefit} When you disarm an opponent, the weapon can land up to 15 feet away in a random direction. You also gain a \plus2 competence bonus on disarm attacks.
+
+\subsubsection{Improved Feint [Combat, Maneuver]}
+\parhead{Prerequisites} Base attack bonus \plus4
+\parhead{Benefit} You can feint in combat as a move action, and you gain a \plus2 competence bonus to feint attacks.
+\parhead{Normal} Feinting in combat is an attack action.
+
+\subsubsection{Improved Grapple [Combat, Maneuver]}
+\parhead{Prerequisites} Base attack bonus \plus4
+\parhead{Benefit} While in a grapple, you may make grapple checks as an attack action. You also gain a \plus2 competence bonus on grapple attacks and to your CMD against grapple attacks.
+\parhead{Normal} While in a grapple, you make grapple attacks as a standard action.
+\par A monk may select Improved Grapple as a bonus feat at 1st level, even if she does not meet the prerequisites.
+
+\subsubsection{Improved Overrun [Combat, Maneuver]}
+\parhead{Prerequisites} Base attack bonus \plus4
+\parhead{Benefit} When you attempt to overrun an opponent, the target may not choose to avoid you unless you let them. You also gain a \plus2 competence bonus on overrun attacks.
+\parhead{Normal} Without this feat, the target of an overrun can choose to avoid you or to block you.
+
+\begin{comment}
+\subsubsection{Improved Sunder [Combat, Maneuver]}
+\parhead{Prerequisites} Base attack bonus \plus4
+\parhead{Benefit} When you strike at an object held or carried by an opponent (such as a weapon or shield), you ignore half the hardness of the sundered item. You also gain a \plus2 competence bonus on sunder attacks.
+\end{comment}
+
+\subsubsection{Improved Trip [Combat, Maneuver]}
+\parhead{Prerequisites} Base attack bonus \plus4
+\parhead{Benefit} When you successfully trip a foe, it immediately provokes an attack of opportunity from everyone threatening it, including you. These attacks are made as the creature is being tripped, so it does not have penalties for being prone. You also gain a \plus2 competence bonus on trip attacks.
 
 \subsubsection{Legendary Awareness [Awareness, Combat]}
 \featpre Base attack bonus \plus12, any three Awareness feats.
@@ -999,52 +1052,7 @@ Choose one weapon group for which you have already selected the Weapon Focus fea
     \item Thrown weapons: When you attack, you can take a \minus4 penalty to attack in order to strike two adjacent targets with the same thrown weapon. You make one attack roll and apply the result to the AC of both targets. If you get a critical hit, only the primary target is suffers the critical hit. 
 \end{itemize*}
 
-\subsection{Combat Maneuver Feats}
-
-\subsubsection{Improved Bull Rush [Combat Maneuver]}
-\parhead{Prerequisites} Base attack bonus \plus4
-\parhead{Benefit} When you perform a bull rush, you do not need to move with the target to move them back. You also gain a \plus2 competence bonus on bull rush attacks.
-
-\subsubsection{Improved Dirty Trick [Combat Maneuver]}
-\parhead{Prerequisites} Base attack bonus \plus4
-\parhead{Benefit} The conditions imposed by your dirty tricks last for 1d4 rounds. You also gain a \plus2 competence bonus on dirty trick attacks.
-
-\subsubsection{Improved Disarm [Combat Maneuver]}
-\parhead{Prerequisites} Base attack bonus \plus4
-\parhead{Benefit} When you disarm an opponent, the weapon can land up to 15 feet away in a random direction. You also gain a \plus2 competence bonus on disarm attacks.
-
-\subsubsection{Improved Feint [Combat Maneuver]}
-\parhead{Prerequisites} Base attack bonus \plus4
-\parhead{Benefit} You can feint in combat as a move action, and you gain a \plus2 competence bonus to feint attacks.
-\parhead{Normal} Feinting in combat is an attack action.
-
-\subsubsection{Improved Grapple [Combat Maneuver]}
-\parhead{Prerequisites} Base attack bonus \plus4
-\parhead{Benefit} While in a grapple, you may make grapple checks as an attack action. You also gain a \plus2 competence bonus on grapple attacks and to your CMD against grapple attacks.
-\parhead{Normal} While in a grapple, you make grapple attacks as a standard action.
-\par A monk may select Improved Grapple as a bonus feat at 1st level, even if she does not meet the prerequisites.
-
-\subsubsection{Improved Overrun [Combat Maneuver]}
-\parhead{Prerequisites} Base attack bonus \plus4
-\parhead{Benefit} When you attempt to overrun an opponent, the target may not choose to avoid you unless you let them. You also gain a \plus2 competence bonus on overrun attacks.
-\parhead{Normal} Without this feat, the target of an overrun can choose to avoid you or to block you.
-
-\begin{comment}
-\subsubsection{Improved Sunder [Combat Maneuver]}
-\parhead{Prerequisites} Base attack bonus \plus4
-\parhead{Benefit} When you strike at an object held or carried by an opponent (such as a weapon or shield), you ignore half the hardness of the sundered item. You also gain a \plus2 competence bonus on sunder attacks.
-\end{comment}
-
-\subsubsection{Improved Trip [Combat Maneuver]}
-\parhead{Prerequisites} Base attack bonus \plus4
-\parhead{Benefit} When you successfully trip a foe, it immediately provokes an attack of opportunity from everyone threatening it, including you. These attacks are made as the creature is being tripped, so it does not have penalties for being prone. You also gain a \plus2 competence bonus on trip attacks.
-
 \subsection{Combat Style Feats}
-
-\subsubsection{Blind-Fight [Combat Style]}
-\parhead{Benefit} In melee, every time you miss because of being unable to see your opponent, you can reroll your miss chance one time to see if you actually hit. In addition, you are not flat-footed against invisible attackers adjacent to you.
-\par If you have 10 ranks in Perception, you can automatically pinpoint the location of any invisible creature adjacent to you. 
-\parhead{Normal} You have a 50\% chance to miss opponents you can't see, and you are flat-footed against them.
 
 \subsubsection{Bulwark of Defense [Combat Style]}
 \parhead{Prerequisite} Base attack bonus \plus4
