@@ -228,7 +228,7 @@ Driving Assault & Str 5, base attack bonus \plus8 & Bull rushed foe provokes att
     \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Type} \\
 Executioner & Base attack bonus \plus16, any five Reaction feats & Gain free attacks against foes near death & Reaction \\
 Exotic Weapon Proficiency\footnotetemp{1} & Base attack bonus \plus1 & Don't provoke when attacking with exotic weapons & Equipment \\
-Eye of the Storm & Base attack bonus \plus4 & You are more difficult to overwhelm & Awareness, Defense, Style \\
+Eye of the Storm & Base attack bonus \plus4 & You are more difficult to overwhelm & Awareness, Defense \\
 Far Shot & \x & Increase range increment by 50\% or 100\% & Precision \\
 Feign Weakness & Base attack bonus \plus4 & Provoke attack to render foe flat-footed \\
 Guardian & \x & Adjacent allies suffer reduced overwhelm penalties. & Defense \\
@@ -244,7 +244,7 @@ Improved Trip & Base attack bonus \plus4 & \plus2 bonus on trip attacks; tripped
 Improved Unarmed Strike & \x &  Considered armed even when unarmed & \x \\
 \tind Deflect Arrows & Dex 3, Improved Unarmed Strike & Deflect one ranged attack per round & Defense, Reaction \\
 \tind \tind Snatch Arrows & Dex 5, Deflect Arrows, Improved Unarmed Strike & Catch a deflected ranged attack & Defense, Reaction \\
-\tind Stunning Fist & Dex 3, Wis 3, Improved Unarmed Strike, base attack bonus \plus4 & Stun opponent with unarmed strike & Power \\
+\tind Stunning Fist & Dex 3, Wis 3, Improved Unarmed Strike, base attack bonus \plus4 & Stun opponent with unarmed strike & Precision, Strike \\
 Inescapable Bulwark of Defense & Base attack bonus \plus8, Bulwark of Defense & Enemies cannot avoid provoking attacks of opportunity & Reaction, Style \\
 Intimidating Stance & Intimidate 8 ranks & Swiftly intimidate struck foe & Skill, Style\\
 Knockdown & Str 3, base attack bonus \plus4 & Bull rushed foe can be knocked prone \\
@@ -274,7 +274,7 @@ Parry & Dex 3 & Ready yourself to parry incoming blows & Defense, Reaction \\
 \tind Shielded Parry & Dex 3, shield proficiency, Parry & Add shield modifier to parry attempts & Defense, Reaction \\
 \tind Riposte & Dex 3, base attack bonus \plus4, Parry & Foes provoke if you parry very well & Reaction \\
 Perfect Shot & Dex 5, base attack bonus \plus8 & Ignore less than total cover/concealment on ranged attacks & Precision, Style \\
-Pierce Wings & Base attack bonus \plus8 & Temporarily remove foe's ability to fly \\ 
+Pierce Wings & Base attack bonus \plus8 & Temporarily remove foe's ability to fly & Precision, Strike \\ 
 Point Blank Shot & \x &  \plus2 bonus on ranged damage within 30 ft. & Precision, Style \\
 Precise Shot & \x & Add half Wis to damage & Precision, Style \\
 Power Attack & Str 3 & Trade melee attack bonus for damage & Power, Style \\
@@ -793,6 +793,10 @@ This resistance is considered damage reduction for the purpose of abilities whic
 \parhead{Normal} A character without this feat who sleeps in medium or heavier armor is automatically fatigued the next day.
 \parhead{Special} A barbarian automatically gains Endurance as a bonus feat at 3rd level. He need not select it.
 
+\subsubsection{Eye of the Storm [Awareness, Combat, Defense]}
+\parhead{Prerequisite} Base attack bonus \plus8.
+\parhead{Benefit} You are considered to be threatened by one fewer creature than you actually are for the purpose of determining overwhelm penalties.
+
 \subsubsection{Executioner [Combat, Reaction]}
 \parhead{Prerequisites} Base attack bonus \plus16, any five Reaction feats.
 \parhead{Benefit} Whenever a foe you threaten becomes staggered by dropping to 0 hit points, it provokes an attack of opportunity from you.
@@ -926,10 +930,6 @@ In addition, your unarmed strikes can deal lethal or nonlethal damage as you cho
 \featpre Dexterity 3.
 \featben As a standard action, you may ready yourself to parry incoming blows. Until the start of your next turn, if you are you are attacked and are not flat-footed against the attack, you may make an attack roll. You may treat the result of your attack roll as your armor class against that attack if it would be higher. If your base attack bonus is high enough to grant you multiple attacks, you may also make multiple parry attempts. Each parry attempt after the first takes a cumulative \minus5 penalty, just like your attack rolls do.
 
-\subsubsection{Pierce Wings [Combat, Maneuver]}
-\featpre Base attack bonus \plus8.
-\featben As a standard action, you may make a special combat maneuver attack with a ranged weapon against any foe within range. If you beat your foe's combat maneuver defense, it takes normal damage from the weapon and loses its ability to fly for 1 round. This only affects creatures who use wings or other physical means to fly, and has no effect on creatures with magical or supernatural flight.
-
 \subsubsection{Quick Draw [Combat]}
 \parhead{Benefit} You can draw light weapons as a free action and medium weapons as a swift action. You can draw heavy and hidden weapons (see the Sleight of Hand skill) as a move action that provokes attacks of opportunity.
 \par A character who has selected this feat may throw light weapons at his full normal rate of attacks (much like a character with a bow).
@@ -966,9 +966,9 @@ If you have three or more Reaction feats, you can draw light and medium weapons 
 \parhead{Prerequisites} Ride 1 rank, Ride-By Attack.
 \parhead{Benefit} When mounted and using the charge action, you deal double damage with a melee weapon (or triple damage with a lance) on your attack at the end of the charge.%Spirited Charge
 
-\subsubsection{Stunning Fist [Combat]}
+\subsubsection{Stunning Fist [Combat, Strike]}
 \parhead{Prerequisites} Dex 3, Wis 3, Improved Unarmed Strike, base attack bonus \plus4.
-\parhead{Benefit} You must declare that you are using this feat before you make your attack roll (thus, a failed attack roll ruins the attempt). Stunning Fist forces a foe damaged by your unarmed attack to make a Fortitude saving throw (DC 10 \add 1/2 your character level \add your Constitution), in addition to dealing damage normally. A bloodied defender who fails this saving throw is stunned for 1 round (until just before your next action). A stunned character can't act, is flat-footed, and takes a \minus2 penalty to AC. A healthy defender is staggered instead, and can only take a standard action each round. You may attempt a stunning attack a number of times per day equal to 1 \add half your Constitution, but no more than once per round. Constructs, oozes, plants, undead, incorporeal creatures, and creatures immune to critical hits cannot be stunned.
+\parhead{Benefit} You must declare that you are using this feat before you make your attack roll (thus, a failed attack roll ruins the attempt). Stunning Fist forces a foe damaged by your unarmed attack to make a Fortitude saving throw (DC 10 \add 1/2 your character level \add your Constitution), in addition to dealing damage normally. A bloodied defender who fails this saving throw is stunned for 1 round (until just before your next action). A stunned character can't act, is flat-footed, and takes a \minus2 penalty to AC. A healthy defender is staggered instead, and can only take a standard action each round. You may attempt a stunning attack a number of times per day equal to 1 \add half your Constitution, but no more than once per round. Constructs, oozes, plants, undead, incorporeal creatures, and creatures immune to critical hits cannot be stunned. You cannot use more than one Strike feat each round.
 \parhead{Special} A monk may select Stunning Fist as a bonus feat at 2nd level, even if she does not meet the prerequisites. A monk who selects this feat may choose for the uses per day and saving throw DC to be based on Wisdom instead of Constitution.
 
 \subsubsection{Tactical Analysis [Combat]}
@@ -1097,21 +1097,13 @@ You can only use this style if you have not moved since your last turn.
 \featpre Base attack bonus \plus4.
 \featben As part of a full attack, you may provoke an attack of opportunity from one opponent threatening you. You gain a \plus4 circumstance bonus to armor class against this attack. If the opponent takes the attack of opportunity, they are flat-footed against your next attack.
 
-\subsubsection{Eye of the Storm [Combat Style]}
-\parhead{Prerequisite} Base attack bonus \plus4.
-\parhead{Benefit} You are considered to be threatened by one fewer creature than you actually are for the purpose of determining overwhelm penalties.
-
 \subsubsection{Heartseeker [Combat Style]}
 \parhead{Prerequisite} Base attack bonus \plus8.
-\parhead{Benefit} You double your critical threat range with any weapon you wield. This does not stack with any other effects which increase threat range.
+\parhead{Benefit} You double your critical threat range with any weapon you wield. In exchange, you take a \minus2 penalty to attack rolls which are not critical threats or threat confirmations. This does not stack with any other effects which increase threat range.
 
 \subsubsection{Inescapable [Combat Style]}
-\featpre Base attack bonus \plus8
+\featpre Base attack bonus \plus8.
 \featben Foes that attack you or take a withdraw action away from you still provoke attacks of opportunity when they move away from you. In exchange, you take a \minus2 penalty to AC.
-
-\subsubsection{Intimidating Stance [Combat Style]}
-\parhead{Prerequisite} Intimidate 8 ranks.
-\parhead{Benefit} As a swift action each round, you can make an intimidate check against a single foe you threaten and dealt damage to during the round.
 
 \subsubsection{Manyshot [Combat Style]}
 \parhead{Prerequisites} Dex 7, base attack bonus \plus12.
@@ -1163,6 +1155,38 @@ You must spend a full-round action to make a full attack while in this style. Yo
 \subsubsection{Whirlwind Attack [Combat Style]}
 \parhead{Prerequisites} Dex 5, base attack bonus \plus12
 \parhead{Benefit} As a full-round action, you can make one melee attack at your full base attack bonus against each opponent you threaten. This is considered a full attack, and replaces any other attacks you would normally make, whether from base attack bonus or spells such as \spell{haste}.
+
+\subsection{Strike Feats}
+
+\subsubsection{Bewildering Strike [Combat, Precision, Strike]}
+\featpre Base attack bonus \plus8.
+\featben When you attack, you may take a \minus4 penalty to hit. If you deal damage, the foe struck must make a Will save to avoid being bewildered for 5 rounds. The DC is equal to 10 \add your base attack bonus \add your attack attribute (Strength or Dexterity). You cannot use more than one Strike feat each round.
+
+\subsubsection{Confusing Strike [Combat, Precision, Strike]}
+\featpre Base attack bonus \plus16.
+\featben When you attack, you may take a \minus8 penalty to hit. If you deal damage, the foe struck must make a Will save to avoid being confused for 1 round. The DC is equal to 10 \add your base attack bonus \add your attack attribute (Strength or Dexterity). You cannot use more than one Strike feat each round.
+
+\confusionexplanation  A foe confused by this effect does not automatically attack you on its next turn, even though you attacked it.
+
+\subsubsection{Intimidating Strike [Combat, Strike]}
+\featpres Base attack bonus \plus4, Intimidate 8 ranks.
+\featben When you attack, you may take a \minus2 penalty to hit. If you deal damage, you may make an Intimidate check as an immediate action to demoralize the foe you struck. You cannot use more than one Strike feat each round.
+
+\subsubsection{Penetrating Strike [Combat, Power, Strike]}
+\featpre Base attack bonus \plus12.
+\featben When you attack, you may take a \minus6 penalty to hit. If you deal damage, the foe struck must make a Fortitude save or lose its damage reduction for 5 rounds. The DC is equal to 10 \add your base attack bonus \add your Strength. You cannot use more than one Strike feat each round.
+
+\subsubsection{Pierce Wings [Combat, Precision, Strike]}
+\featpre Base attack bonus \plus8.
+\featben When you attack with a ranged weapon, you may take a \minus4 penalty to hit. If you deal damage, the foe struck must make a Fortitude save or lose its ability to fly for 1 round. The DC is equal to 10 \add your base attack bonus \add your Wisdom. This only affects creatures who use wings or other physical means to fly, and has no effect on creatures with magical or supernatural flight. You cannot use more than one Strike feat each round.
+
+\subsubsection{Reaping Strike [Combat, Strike]}
+\featpre Base attack bonus \plus16.
+\featben When you attack, you may take a \minus8 penalty to hit. If you deal damage, and your foe is bloodied after your damage is dealt, it must make a Fortitude save or die. This is a death effect. The DC is equal to 10 \add your base attack bonus \add your attack attribute (Strength or Dexterity). You cannot use more than one Strike feat each round.
+
+\subsubsection{Sickening Strike [Combat, Power, Strike]}
+\featpre Base attack bonus \plus8.
+\featben When you attack, you may take a \minus4 penalty to hit. If you deal damage, the foe struck must make a Fortitude save to avoid being sickened for 5 rounds. The DC is equal to 10 \add your base attack bonus \add your attack attribute (Strength or Dexterity). You cannot use more than one Strike feat each round.
 
 \subsection{Bloodline Feats}
 
