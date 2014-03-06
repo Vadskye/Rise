@@ -226,12 +226,12 @@ Driving Assault & Str 5, base attack bonus \plus8 & Bull rushed foe provokes att
 \lcaption{Combat Feats (cont.)}
 \begin{tabularx}{\textwidth}{>{\lcol}p{10em} >{\lcol}p{10em} >{\lcol}X >{\lcol}p{10em}}
     \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Type} \\
-Executioner & Base attack bonus \plus12 & Gain free attacks against foes near death & Style \\
+Executioner & Base attack bonus \plus16, any five Reaction feats & Gain free attacks against foes near death & Reaction \\
 Exotic Weapon Proficiency\footnotetemp{1} & Base attack bonus \plus1 & Don't provoke when attacking with exotic weapons & Equipment \\
 Eye of the Storm & Base attack bonus \plus4 & You are more difficult to overwhelm & Awareness, Defense, Style \\
 Far Shot & \x & Increase range increment by 50\% or 100\% & Precision \\
 Feign Weakness & Base attack bonus \plus4 & Provoke attack to render foe flat-footed \\
-Guardian & \x & Adjacent allies suffer reduced overwhelm penalties. & Defense, Style \\
+Guardian & \x & Adjacent allies suffer reduced overwhelm penalties. & Defense \\
 Heartseeker & Base attack bonus \plus8 & Double critical threat range & Style \\
 Improved Bull Rush & Base attack bonus \plus4 & \plus2 bonus on bull rush attacks; push target back without moving & Maneuver, Power \\
 Improved Dirty Trick & Base attack bonus \plus4 & \plus2 bonus on dirty trick attacks; dirty tricks last longer & Finesse, Maneuver \\
@@ -793,6 +793,10 @@ This resistance is considered damage reduction for the purpose of abilities whic
 \parhead{Normal} A character without this feat who sleeps in medium or heavier armor is automatically fatigued the next day.
 \parhead{Special} A barbarian automatically gains Endurance as a bonus feat at 3rd level. He need not select it.
 
+\subsubsection{Executioner [Combat, Reaction]}
+\parhead{Prerequisites} Base attack bonus \plus16, any five Reaction feats.
+\parhead{Benefit} Whenever a foe you threaten becomes staggered by dropping to 0 hit points, it provokes an attack of opportunity from you.
+
 \subsubsection{Exotic Weapon Proficiency [Combat]}
 You understand how to use exotic weapons in combat.
 \parhead{Prerequisite} Base attack bonus \plus1.
@@ -806,6 +810,9 @@ You understand how to use exotic weapons in combat.
 %\parhead{Prerequisites} Combat Reflexes, base attack bonus \plus6
 %\parhead{Benefit} You can take a full attack when taking the fighting retreat action. You do not provoke attacks of opportunity for your movement from any foe you attack.
 %\parhead{Normal} You can only make a single attack when taking the fighting retreat action.
+
+\subsubsection{Guardian [Combat]}
+\parhead{Benefit} Allies adjacent to you are considered to be threatened by one fewer creature than they actually are for the purpose of determining overwhelm penalties. You must be wielding a melee weapon and able to attack to gain the benefits of this feat.
 
 \subsubsection{Improved Initiative [Combat]}
 \parhead{Benefit} You get a \plus4 competence bonus on initiative checks.
@@ -1073,28 +1080,22 @@ Choose one weapon group for which you have already selected the Weapon Focus fea
 
 \subsubsection{Deadly Aim [Combat Style]}
 \parhead{Prerequisites} Dex 3.
-\parhead{Benefit} You gain a \plus2 circumstance bonus on all ranged damage rolls. In exchange, you take a \minus2 penalty on all ranged attack rolls. At base attack bonus \plus4, and every 4 base attack bonus thereafter, the penalty increases by 1 and the bonus increases by 2.
+\parhead{Benefit} You gain a \plus2 circumstance bonus on ranged damage rolls. In exchange, you take a \minus2 penalty on all ranged attack rolls. At base attack bonus \plus4, and every 4 base attack bonus thereafter, the penalty increases by 1 and the bonus increases by 2.
 
 \subsubsection{Defensive Stance [Combat Style]}
-\parhead{Prerequisites} Base attack bonus \plus6
-\parhead{Benefit} You gain a \plus2 circumstance bonus to Combat Maneuver Defense. \babscalingdescription However, you are unable to move until you change styles (a swift action). You can only use this style if you did not move in the previous round.
+\parhead{Prerequisites} Base attack bonus \plus4
+\parhead{Benefit} You gain a \plus3 circumstance bonus to Combat Maneuver Defense. In exchange, you are unable to move. At base attack bonus \plus8, and every 4 base attack bonus thereafter, you increase the bonus by 1.
+
+You can only use this style if you have not moved since your last turn.
 
 \subsubsection{Distracting Foe [Combat Style]}
 \parhead{Prerequisites} Base attack bonus \plus4.
-\parhead{Benefit} Foes you threaten take a \minus2 penalty to Concentration checks. This penalty increases to \minus3 at base attack bonus \plus8, to \minus4 at base attack bonus \plus12, and finally to \minus5 at base attack bonus \plus16.
+\parhead{Benefit} Foes you threaten take a \minus2 penalty to Concentration checks. In exchange, you take a \minus2 penalty to armor class against melee attacks. At base attack bonus \plus4, and every 4 base attack bonus thereafter, you increase both penalties by 1.
 \parhead{Style Requirement} Must wield a melee weapon.
 
-\subsubsection{Feign Weakness[Combat Style]}
+\subsubsection{Feign Weakness [Combat Style]}
 \featpre Base attack bonus \plus4.
 \featben As part of a full attack, you may provoke an attack of opportunity from one opponent threatening you. You gain a \plus4 circumstance bonus to armor class against this attack. If the opponent takes the attack of opportunity, they are flat-footed against your next attack.
-
-\subsubsection{Guardian [Combat Style]}
-\parhead{Benefit} Allies adjacent to you are considered to be threatened by one fewer creature than they actually are for the purpose of determining overwhelm penalties.
-\parhead{Style Requirement} Must wield a melee weapon.
-
-\subsubsection{Executioner [Combat Style]}
-\parhead{Prerequisites} Base attack bonus \plus12.
-\parhead{Benefit} Whenever a foe you threaten becomes staggered by dropping to 0 hit points, you can immediately make an attack of opportunity against it.
 
 \subsubsection{Eye of the Storm [Combat Style]}
 \parhead{Prerequisite} Base attack bonus \plus4.
