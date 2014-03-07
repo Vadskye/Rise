@@ -344,3 +344,7 @@ def attack_count(base_attack_bonus):
 #+2, +3 at 8th, +4 at 14th, +5 at 20th
 def std_scale(level):
     return (level+10)/6
+
+#+2, +3 at 5th, +4 at 10th, +5 at 15th, +6 at 20th
+def bab_scale(base_attack_bonus):
+    return 2+base_attack_bonus/5
