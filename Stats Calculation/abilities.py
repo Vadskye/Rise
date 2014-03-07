@@ -66,21 +66,29 @@ class CombatExpertise(Feat):
     def meets_prerequisites(self, creature):
         return creature.attributes.intelligence.get_total() >= 3
     def apply_benefit(self, creature):
-        creature.attack_bonus.add_circumstance(-util.std_scale(creature.level))
-        creature.armor_class.dodge.add_circumstance(util.std_scale(creature.level))
+        creature.attack_bonus.add_circumstance(-util.bab_scale(creature.level))
+        creature.armor_class.dodge.add_circumstance(util.bab_scale(creature.level))
 
 class PowerAttack (Feat):
     tags = ['Combat', 'Power', 'Style']
     def meets_prerequisites(self, creature):
         return creature.attributes.strength.get_total() >= 3
     def apply_benefit(self, creature):
-        creature.attack_bonus.add_circumstance(-util.std_scale(creature.level))
-        creature.weapon_damage.add_circumstance(util.std_scale(creature.level))
+        creature.attack_bonus.add_circumstance(-util.bab_scale(creature.level))
+        damage_bonus = 2+(creature.attack_bonus.base_attack_bonus/5)*2
+        if creature.weapon.encumbrance == 'medium' or creature.weapon.encumbrance == 'heavy':
+            creature.weapon_damage.add_circumstance(damage_bonus)
+        else:
+            creature.weapon_damage.add_circumstance(damage_bonus/2)
         if creature.offhand_weapon:
-            creature.offhand_weapon_damage.add_circumstance(util.std_scale(creature.level)/2)
+            creature.offhand_weapon_damage.add_circumstance(damage_bonus/2)
 
-class DeadlyAim (PowerAttack):
+#Doesn't check to make sure creature uses ranged weapon
+class DeadlyAim (Feat):
     tags = ['Combat', 'Precision', 'Style']
     def meets_prerequisites(self, creature):
         return creature.attributes.dexterity.get_total() >= 3
-        
+    def apply_benefit(self, creature):
+        creature.attack_bonus.add_circumstance(-util.bab_scale(creature.level))
+        damage_bonus = 2+(creature.attack_bonus.base_attack_bonus/5)*2
+        creature.weapon_damage.add_circumstance(damage_bonus)
