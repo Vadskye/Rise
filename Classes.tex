@@ -2255,23 +2255,23 @@ The world is full of magic. It can be wielded by lucky commoners, pompous nobles
     \lcaption{The Spellwarped}
     \begin{tabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Good Save}\fn{1} & \thead{Normal Saves}\fn{1} & \thead{Special} \\
-        1st & \plus0 & \plus2 & \plus1 & \\
-        2nd & \plus1 & \plus3 & \plus2 & \\
-        3rd & \plus2 & \plus4 & \plus3 & \\
-        4th & \plus3 & \plus5 & \plus4 & \\
-        5th & \plus3 & \plus6 & \plus4 & \\
-        6th & \plus4 & \plus7 & \plus5 & \\
-        7th & \plus5 & \plus8 & \plus6 & \\
+        1st & \plus0 & \plus2 & \plus1 & Spellwarped body, totem magic \\
+        2nd & \plus1 & \plus3 & \plus2 & Spellwarp pool, spellwarp surge\\
+        3rd & \plus2 & \plus4 & \plus3 & Invoke power, spellwarped aspect \\
+        4th & \plus3 & \plus5 & \plus4 & Attuned senses, manipulate magic \\
+        5th & \plus3 & \plus6 & \plus4 & Spellwarped aspect \\
+        6th & \plus4 & \plus7 & \plus5 & Mighty surge \\
+        7th & \plus5 & \plus8 & \plus6 & Surge feat\\
         8th & \plus6/\plus1 & \plus9 & \plus7 & \\
-        9th & \plus6/\plus1 & \plus10 & \plus7 & \\
-        10th & \plus7/\plus2 & \plus11 & \plus8 & \\
+        9th & \plus6/\plus1 & \plus10 & \plus7 & Spellwarped aspect \\
+        10th & \plus7/\plus2 & \plus11 & \plus8 & Improved manipulate magic \\
         11th & \plus8/\plus3 & \plus12 & \plus9 & \\
         12th & \plus9/\plus4 & \plus13& \plus10 & \\
-        13th & \plus9/\plus4 & \plus14& \plus10 & \\
+        13th & \plus9/\plus4 & \plus14& \plus10 & Spellwarped aspect \\
         14th & \plus10/\plus5 & \plus15& \plus11 & \\
         15th & \plus11/\plus6/\plus1 & \plus16& \plus12 & \\
         16th & \plus12/\plus7/\plus2 & \plus17& \plus13 & \\
-        17th & \plus12/\plus7/\plus2 & \plus19& \plus13 & \\
+        17th & \plus12/\plus7/\plus2 & \plus19& \plus13 & Spellwarped aspect \\
         18th & \plus13/\plus8/\plus3 & \plus20& \plus14 & \\
         19th & \plus14/\plus9/\plus4 & \plus21& \plus15 & \\
         20th & \plus15/\plus10/\plus5 & \plus22 & \plus16 & \\
@@ -2312,9 +2312,9 @@ Spellwarped are proficient with simple weapons, any two weapon groups, light and
 \subcf{Temporal -- Time Awareness} The spellwarped always knows exactly what time it is, and can track precise increments of time without effort.
 
 \cf{Spl}{Spellwarp Surge (Su)} At 2nd level, the spellwarped can use a spellwarp point as a swift action to enhance his abilities using his chosen form of magic. The effect lasts for 5 rounds.
-\subcf{Alteration -- Alter Body} The spellwarped gains a \plus2 competence bonus to a physical attribute of his choice. This bonus increases by 1 at 8th level and every 6 spellwarped levels thereafter.
-\subcf{Enchantment -- Enhance Mind} The spellwarped gains a \plus2 competence bonus to a mental attribute of his choice. This bonus increases by 1 at 8th level and every 6 spellwarped levels thereafter.
-\subcf{Temporal -- Rapid Movement} The spellwarped gains a \plus2 competence bonus to his dodge modifier and a \plus5 foot competence bonus to his movement speed. At 8th level, and every 6 levels thereafter, the dodge bonus increases by 1 and the speed bonus increases by 5 feet.
+\subcf{Alteration -- Alter Body} The spellwarped gains a \plus2 enhancement bonus to a physical attribute of his choice. This bonus increases by 1 at 8th level and every 6 spellwarped levels thereafter.
+\subcf{Enchantment -- Enhance Mind} The spellwarped gains a \plus2 enhancement bonus to a mental attribute of his choice. This bonus increases by 1 at 8th level and every 6 spellwarped levels thereafter.
+\subcf{Temporal -- Rapid Movement} The spellwarped gains a \plus2 enhancement bonus to his dodge modifier and a \plus10 foot enhancement bonus to his movement speed. At 8th level, and every 6 levels thereafter, the dodge bonus increases by 1 and the speed bonus increases by 10 feet.
 
 \cf{Spl}{Invoke Power (Su)} At 3rd level, the spellwarped can spend a spellwarp point to attack a foe within \rngclose range as a standard action. If a saving throw is allowed, the DC is equal to 10 \add the spellwarped's class level \add his key attribute.
 \subcf{Alteration -- Reduce Foe} The subject becomes smaller for 5 rounds unless it makes a Fortitude save. It takes a \minus2 penalty to Strength, decreases its weapon damage dice by one size, and takes a \minus4 penalty to CMA and CMD. However, it gains a \plus2 bonus to Stealth checks and a \plus1 bonus to attack rolls and armor class. This is a size-affecting effect.
@@ -2322,36 +2322,41 @@ Spellwarped are proficient with simple weapons, any two weapon groups, light and
 \par \vulnerableexplanation \confusionexplanation This is a mind-affecting effect.
 \subcf{Temporal -- Slow} The subject is slowed for 5 rounds unless it makes a Will save. A slowed creature can take a standard action or a move action each round, but not both. It cannot take full-round actions, but it may take swift actions. Additionally, it takes a \minus2 penalty to attack rolls, Strength and Dexterity-based checks, and armor class.
 
-\cf{Spl}{Magic Manipulation (Su)} At 4th level, the spellwarped can manipulate existing magic that matches her choice of totem magic. Using this ability costs a spellwarp point, and it only affects spells or spell-like abilites affecting the spellwarped.
-\subcf{Alteration -- ??}
-\subcf{Enchantment -- Control Enchantment} As a swift action, the spellwarped can attempt to take control of any mind-affecting spell or spell-like ability affecting him. To do so, he makes a check with a bonus equal to his spellwarped level \add his Charisma against a DC equal to 11 \add the caster level of the effect. If he succeeds, he may dispel or gain control of the spell. If he gains control, he no longer suffers its effects, but the caster of the spell does not know that the effect no longer functions.
-\subcf{Temporal -- Accelerate Magic} As a swift action, the spellwarped can increase or decrease the duration of any spell affecting him by two rounds. This can end the effect immediately if it has no time remaining.
-
-\cf{Spl}{Spellwarped Aspect (Ex)} At 5th level, the spellwarped gains a new ability based on his continued exposure to magical energy. The spellwarped gains an additional aspect at 9th level and every four levels thereafter.
-\subcf{Alteration -- Damage Reduction} The spellwarped gains physical damage reduction equal to half his class level, allowing him to ignore the first points of damage he takes each round.
-\subcf{Alteration -- }
+\cf{Spl}{Spellwarped Aspect (Ex)} At 3rd level, the spellwarped gains a new ability based on his continued exposure to magical energy. The spellwarped gains an additional aspect at 7th level and every four levels thereafter.
+\subcf{Alteration -- Damage Reduction} The spellwarped gains physical damage reduction against his choice of piercing, slashing, or bludgeoning damage. The amount of damage resisted is equal to half his class level, allowing him to ignore the first points of damage he takes each round.
+\subcf{Alteration -- Improved Damage Reduction} The spellwarped's damage reduction applies against all forms of physical damage. The spellwarped must have the damage reduction aspect to gain this aspect.
 \subcf{Enchantment -- Enchanting Voice} The spellwarped gains a \plus2 competence bonus on Bluff, Intimidate, and Persuasion checks. This bonus increases by 1 at 8th level and every 6 levels thereafter.
 \subcf{Temporal -- Evasion} If the spellwarped makes a successful Reflex save against an attack that normally deals half damage on a successful save, he instead tes no damage. Evasion can only be used if the spellwarped is wearing light armor or no armor. A helpless spellwarped does not gain the benefit of evasion.
 \subcf{Temporal -- Prescient Reaction} By reacting to brief visions of the future, the spellwarped may add his Wisdom to attack on attacks of opportunity.
 \subcf{Temporal -- Prescient Defense} By reacting to brief visions of the future, the spellwarped may add half his Wisdom (if positive) to his armor class. This bonus applies even against touch attacks, but not if the timewarped is flat-footed. If he has the uncanny dodge ability, this bonus also applies if he is flat-footed. He loses this bonus when he is helpless. 
 \subcf{Temporal -- Uncanny Dodge} The spellwarped may apply his Dexterity and dodge modifier to his armor class while flat-footed.
 
-\cf{Spl}{Attuned Senses (Su)} At 6th level, the spellwarped learns to recognize the telltale signs of his chosen magic. He must concentrate as a standard action to use this ability, and he may do so any number of times per day.
+\cf{Spl}{Manipulate Magic (Su)} At 4th level, the spellwarped can manipulate existing magic that matches her choice of totem magic. Using this ability costs a spellwarp point, and it only affects spells or spell-like abilites affecting the spellwarped.
+\subcf{Alteration -- Purge} 
+\subcf{Enchantment -- Control Mental Influence} As a standard action, the spellwarped can attempt to take control of any mind-affecting spell or spell-like ability affecting him. To do so, he makes a check with a bonus equal to his spellwarped level \add his Charisma against a DC equal to 11 \add the caster level of the effect. If he succeeds, he may dispel or gain control of the spell. If he gains control, he no longer suffers its effects, but the caster of the spell does not know that the effect no longer functions.
+\subcf{Temporal -- Accelerate Magic} As a swift action, the spellwarped can increase or decrease the duration of any spell or spell-like ability affecting him by two rounds. This can end the effect immediately if it has no time remaining.
+
+\cf{Spl}{Attuned Senses (Su)} At 4th level, the spellwarped learns to recognize the telltale signs of his chosen magic. He must concentrate as a standard action to use this ability, and he may do so any number of times per day.
 \subcf{Alteration} The spellwarped can discern the true form of a creature he sees, ignoring any effects which magically alter its shape. This also grants him a \plus5 competence bonus to Perception checks to see through mundane disguises.
 \subcf{Enchantment} The spellwarped can detect thoughts, as the \spell{detect thoughts} spell. The saving throw DC is equal to 10 \add his spellwarped level \add his Charisma. If a creature makes its saving throw against this effect, the spellwarped cannot read its thoughts for 24 hours. 
 \subcf{Temporal} The spellwarped can accelerate his mind to immediately search everything within a 10 foot radius of him.
 
-%\cf{Spl}{Surge Feat} At 7th level, the spellwarped learns how to use other kinds of magic to supplement his own. He gains a bonus surge feat for which he meets the prerequisites.
+\cf{Spl}{Mighty Surge (Su)} At 6th level, the spellwarped can spend a spellwarp point to call upon his totem magic to generate a powerful but brief effect.
+\subcf{Alteration -- Amorphous Body} As a standard action, the spellwarped can transform his body into an amorphous form for 1 round, until the end of his next turn. In this form, he gains several benefits. He is immune to critical hits, takes no penalties for squeezing, and can move through spaces that are no more than two inches in width, though doing so forces him to move at half speed.
+\subcf{Enchantment -- Control Attention} As a standard action, the spellwarped can force his enemies to pay attention to him or ignore him for 1 round, as he chooses. All enemies within a \arealarge radius of the spellwarped must make a Will save with a DC equal to 10 \add spellwarped level \add Charisma. If the spellwarped tries to attract attention, anyone who fails their save must include the spellwarped in any attacks they make. If the spellwarped tries to deflect attention, anyone who fails their save must not target the spellwarped directly in any attacks they make. This is a mind-affecting effect.
+\subcf{Temporal -- Brief Acceleration} As a swift action, the spellwarped can accelerate himself so much that he can seem to pause time for everyone but himself. This allows him to take a single move action. He does not provoke attacks of opportunity for any movement he makes during this time.
 
-\cf{Spl}{Improved Magic Manipulation (Su)} At 8th level, the spellwarped can use his magic manipulation ability to affect any ally within \rngclose range of him.
+\cf{Spl}{Surge Feat} At 8th level, the spellwarped learns how to use other kinds of magic to supplement his own. He gains a bonus surge feat for which he meets the prerequisites.
 
 \cf{Spl}{Improved Spellwarped Surge (Su)} At 9th level, the spellwarped's ability to manifest his chosen form of magic improves. When he uses his spellwarped surge ability, he also gains the appropriate benefit described below.
 
-\subcf{Alteration} The spellwarped can increase or decrease by a size category, as he chooses.
+\subcf{Alteration -- Alter Size} The spellwarped can increase or decrease by a size category, as he chooses. This is a size-affecting effect. 
 
-\subcf{Enchantment} The spellwarped becomes immune to hostile mind-affecting effects.
+\subcf{Enchantment -- Mental Fortress} The spellwarped becomes immune to hostile mind-affecting effects.
 
-\subcf{Temporal} The spellwarped gains the benefits of the \spell{haste} spell.
+\subcf{Temporal -- Haste} When making a full attack, the spellwarped can make an additional attack at his full attack bonus.
+
+\cf{Spl}{Improved Manipulate Magic (Su)} At 10th level, the spellwarped can use his magic manipulation ability to affect any ally within \rngclose range of him.
 
 \subsection{Wizards}
 \begin{dtable*}
