@@ -1416,9 +1416,9 @@ The monk's class skills (and the key attribute for each skill) are Climb (Str), 
 All of the following are class features of the monk.
  \cf{Mnk}{Weapon and Armor Proficiency}
 Monks are proficient with simple weapons, monk weapons,  and any one other weapon group.  Monks are not proficient with any armor or shields. When wearing armor, using a shield, or carrying a medium or heavy load, a monk loses the benefit of her  enlightened defense,  fast movement, and flurry of blows abilities.
- \cf{Mnk}{Enlightened Defense (Ex)}  When unarmored and unencumbered, the monk adds her Wisdom (if positive) to her AC.
+ \cf{Mnk}{Enlightened Defense (Ex)}  When unarmored and unencumbered, the monk may add her Wisdom to her AC.
 
-\par This bonus to AC applies even against touch attacks or when the monk is flat-footed. She loses this bonus when she is immobilized or helpless, when she wears any armor, when she carries a shield, or when she carries a medium or heavy load.
+\par This bonus to AC applies even against touch attacks or when the monk is flat-footed. She loses this bonus when she is helpless, when she wears any armor, when she carries a shield, or when she carries a medium or heavy load.
 
 \begin{comment}    %Made AC too high
  \cfnl{\Ki Ward (Ex)}\label{Mnk:Ki Ward (Ex)} When unarmored and unencumbered, a monk gains a \plus1 armor bonus to AC at 2nd level. This bonus increases by 1 for every two monk levels thereafter (\plus2 at 4th, \plus3 at 6th, etc.).
@@ -2307,26 +2307,33 @@ Spellwarped are proficient with simple weapons, any two weapon groups, light and
 \subcf{Temporal} The spellwarped gains a \plus1 competence bonus to initiative checks. This bonus increases by 1 at 2nd level and every 2 levels thereafter.
 
 \cf{Spl}{Spellwarp Pool (Ex)} At 2nd level, the spellwarped gains the ability to tap into the latent magic within his body to generate magical effects. He has a number of spellwarp points equal to half his spellwarped level \add his Constitution. As long he has at least one spellwarp point remaining, he gains a minor ability based on his choice of magic.
-\subcf{Alteration} The spellwarped can change minor aspects of his appearance at will -- removing a mole or lengthening his beard slightly. This can grant him a \plus2 competence bonus to Disguise checks. Major changes are not possible.
-\subcf{Enchantment} The spellwarped 
-\subcf{Temporal} The spellwarped always knows exactly what time it is, and can track precise increments of time without effort.
+\subcf{Alteration -- Lesser Alter Self} The spellwarped can change minor aspects of his appearance at will -- removing a mole or lengthening his beard slightly. This can grant him a \plus2 competence bonus to Disguise checks. Major changes are not possible.
+\subcf{Enchantment -- ??} The spellwarped 
+\subcf{Temporal -- Time Awareness} The spellwarped always knows exactly what time it is, and can track precise increments of time without effort.
 
 \cf{Spl}{Spellwarp Surge (Su)} At 2nd level, the spellwarped can use a spellwarp point as a swift action to enhance his abilities using his chosen form of magic. The effect lasts for 5 rounds.
-\subcf{Alteration} The spellwarped gains a \plus2 competence bonus to a physical attribute of his choice. This bonus increases by 1 at 8th level and every 6 spellwarped levels thereafter.
-\subcf{Enchantment} The spellwarped gains a \plus2 competence bonus to a mental attribute of his choice. This bonus increases by 1 at 8th level and every 6 spellwarped levels thereafter.
-\subcf{Temporal} The spellwarped gains a \plus2 competence bonus to his dodge modifier and a \plus5 foot competence bonus to his movement speed. At 8th level, and every 6 levels thereafter, the dodge bonus increases by 1 and the speed bonus increases by 5 feet.
+\subcf{Alteration -- Alter Body} The spellwarped gains a \plus2 competence bonus to a physical attribute of his choice. This bonus increases by 1 at 8th level and every 6 spellwarped levels thereafter.
+\subcf{Enchantment -- Enhance Mind} The spellwarped gains a \plus2 competence bonus to a mental attribute of his choice. This bonus increases by 1 at 8th level and every 6 spellwarped levels thereafter.
+\subcf{Temporal -- Rapid Movement} The spellwarped gains a \plus2 competence bonus to his dodge modifier and a \plus5 foot competence bonus to his movement speed. At 8th level, and every 6 levels thereafter, the dodge bonus increases by 1 and the speed bonus increases by 5 feet.
 
-\cf{Spl}{Invoke Power (Su)} At 3rd level, the spellwarped spend a spellwarp point to attack a foe within \rngclose range as a standard action. If a saving throw is allowed, the DC is equal to 10 \add the spellwarped's class level \add his key attribute.
-\subcf{Alteration} The subject becomes smaller for 5 rounds unless it makes a Fortitude save. It takes a \minus2 penalty to Strength, decreases its weapon damage dice by one size, and takes a \minus4 penalty to CMA and CMD. However, it gains a \plus2 bonus to Stealth checks and a \plus1 bonus to attack rolls and armor class. This is a size-affecting effect.
-\subcf{Enchantment} The subject is bewildered for 5 rounds, making it vulnerable. If it becomes bloodied, it is instead confused. A Will save negates the effect.
+\cf{Spl}{Invoke Power (Su)} At 3rd level, the spellwarped can spend a spellwarp point to attack a foe within \rngclose range as a standard action. If a saving throw is allowed, the DC is equal to 10 \add the spellwarped's class level \add his key attribute.
+\subcf{Alteration -- Reduce Foe} The subject becomes smaller for 5 rounds unless it makes a Fortitude save. It takes a \minus2 penalty to Strength, decreases its weapon damage dice by one size, and takes a \minus4 penalty to CMA and CMD. However, it gains a \plus2 bonus to Stealth checks and a \plus1 bonus to attack rolls and armor class. This is a size-affecting effect.
+\subcf{Enchantment -- Confusion} The subject is bewildered for 5 rounds, making it vulnerable. If it becomes bloodied, it is instead confused. A Will save negates the effect.
 \par \vulnerableexplanation \confusionexplanation This is a mind-affecting effect.
-\subcf{Temporal} The subject is slowed for 5 rounds unless it makes a Will save. A slowed creature can take a standard action or a move action each round, but not both. It cannot take full-round actions, but it may take swift actions. Additionally, it takes a \minus2 penalty to attack rolls, Strength and Dexterity-based checks, and armor class.
+\subcf{Temporal -- Slow} The subject is slowed for 5 rounds unless it makes a Will save. A slowed creature can take a standard action or a move action each round, but not both. It cannot take full-round actions, but it may take swift actions. Additionally, it takes a \minus2 penalty to attack rolls, Strength and Dexterity-based checks, and armor class.
 
-\cf{Spl}{Spellwarped Aspect (Ex)} At 5th level, the spellwarped gains a new ability based on his continued exposure to magical energy. These are constantly active abilities that depend on his choice of magic. The spellwarped gains an additional aspect at 9th level and every four levels thereafter.
+\cf{Spl}{Magic Manipulation (Su)} At 4th level, the spellwarped can manipulate existing magic that matches her choice of totem magic. Using this ability costs a spellwarp point, and it only affects spells or spell-like abilites affecting the spellwarped.
+\subcf{Alteration -- ??}
+\subcf{Enchantment -- Control Enchantment} As a swift action, the spellwarped can attempt to take control of any mind-affecting spell or spell-like ability affecting him. To do so, he makes a check with a bonus equal to his spellwarped level \add his Charisma against a DC equal to 11 \add the caster level of the effect. If he succeeds, he may dispel or gain control of the spell. If he gains control, he no longer suffers its effects, but the caster of the spell does not know that the effect no longer functions.
+\subcf{Temporal -- Accelerate Magic} As a swift action, the spellwarped can increase or decrease the duration of any spell affecting him by two rounds. This can end the effect immediately if it has no time remaining.
+
+\cf{Spl}{Spellwarped Aspect (Ex)} At 5th level, the spellwarped gains a new ability based on his continued exposure to magical energy. The spellwarped gains an additional aspect at 9th level and every four levels thereafter.
 \subcf{Alteration -- Damage Reduction} The spellwarped gains physical damage reduction equal to half his class level, allowing him to ignore the first points of damage he takes each round.
-\subcf{Alteration -- 
+\subcf{Alteration -- }
 \subcf{Enchantment -- Enchanting Voice} The spellwarped gains a \plus2 competence bonus on Bluff, Intimidate, and Persuasion checks. This bonus increases by 1 at 8th level and every 6 levels thereafter.
 \subcf{Temporal -- Evasion} If the spellwarped makes a successful Reflex save against an attack that normally deals half damage on a successful save, he instead tes no damage. Evasion can only be used if the spellwarped is wearing light armor or no armor. A helpless spellwarped does not gain the benefit of evasion.
+\subcf{Temporal -- Prescient Reaction} By reacting to brief visions of the future, the spellwarped may add his Wisdom to attack on attacks of opportunity.
+\subcf{Temporal -- Prescient Defense} By reacting to brief visions of the future, the spellwarped may add half his Wisdom (if positive) to his armor class. This bonus applies even against touch attacks, but not if the timewarped is flat-footed. If he has the uncanny dodge ability, this bonus also applies if he is flat-footed. He loses this bonus when he is helpless. 
 \subcf{Temporal -- Uncanny Dodge} The spellwarped may apply his Dexterity and dodge modifier to his armor class while flat-footed.
 
 \cf{Spl}{Attuned Senses (Su)} At 6th level, the spellwarped learns to recognize the telltale signs of his chosen magic. He must concentrate as a standard action to use this ability, and he may do so any number of times per day.
@@ -2334,18 +2341,11 @@ Spellwarped are proficient with simple weapons, any two weapon groups, light and
 \subcf{Enchantment} The spellwarped can detect thoughts, as the \spell{detect thoughts} spell. The saving throw DC is equal to 10 \add his spellwarped level \add his Charisma. If a creature makes its saving throw against this effect, the spellwarped cannot read its thoughts for 24 hours. 
 \subcf{Temporal} The spellwarped can accelerate his mind to immediately search everything within a 10 foot radius of him.
 
-\cf{Spl}{Spellwarped <Constant Buff> (Ex)}
-\subcf{Alteration}
-\subcf{Enchantment}
-\subcf{Temporal}
+%\cf{Spl}{Surge Feat} At 7th level, the spellwarped learns how to use other kinds of magic to supplement his own. He gains a bonus surge feat for which he meets the prerequisites.
 
-\cf{Spl}{Channel Power} At 5th level, the spellwarped can spend a spellwarp point as a swift action 
+\cf{Spl}{Improved Magic Manipulation (Su)} At 8th level, the spellwarped can use his magic manipulation ability to affect any ally within \rngclose range of him.
 
-\cf{Spl}{Surge Feat} At 6th level, the spellwarped learns how to use other kinds of magic to supplement his own. He gains a bonus surge feat for which he meets the prerequisites.
-
-\cf{Spl}{Invoke Retribution (Su)} At 7th level, the spellwarped can use his invoke power ability as an immediate action after he takes damage.
-
-\cf{Spl}{Improved Spellwarped Surge (Su)} At 8th level, the spellwarped's ability to manifest his chosen form of magic improves. When he uses his spellwarped surge ability, he also gains the appropriate benefit described below.
+\cf{Spl}{Improved Spellwarped Surge (Su)} At 9th level, the spellwarped's ability to manifest his chosen form of magic improves. When he uses his spellwarped surge ability, he also gains the appropriate benefit described below.
 
 \subcf{Alteration} The spellwarped can increase or decrease by a size category, as he chooses.
 
