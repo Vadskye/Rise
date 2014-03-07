@@ -264,12 +264,12 @@ class Creature(object):
         return monster_string
 
     def add_feat(self, feat, check_prerequisites = True):
-        if check_prerequsites:
-            if not feat.meets_prequisites(self):
+        if check_prerequisites:
+            if not feat.meets_prerequisites(self):
                 if self.verbose: print 'Feat prerequisites not met'
                 return False
         self.feats.append(feat)
-        feat.apply_benefits(self)
+        feat.apply_benefit(self)
 
     def new_round(self):
         self.damage_reduction.refresh()
