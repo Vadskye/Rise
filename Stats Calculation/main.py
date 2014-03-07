@@ -3,6 +3,7 @@ from creature import Creature, Character
 import util
 import combat
 import cProfile
+import abilities
 
 def initialize_argument_parser():
     parser = argparse.ArgumentParser(description='Calculate combat statistics for Rise characters')
@@ -80,22 +81,21 @@ if __name__ == "__main__":
             rogue = Character.from_creature_name('rogue-single', i+1)
             """
             first_name = 'brb-heavy'
-            second_name = 'ftr-typical'
+            second_name = 'brb-heavy'
             first = Character.from_creature_name(first_name, i+1)
             second = Character.from_creature_name(second_name, i+1)
             #print first
             #print second
             second.name='second_char'
-            #first.weapon_damage.add_competence(2)
-            #second.weapon_damage.add_competence(2)
-            #second.offhand_weapon_damage.add_competence(2)
-            #fighter_heavy.armor_class.misc.add_circumstance((i+1)/5)
+            first.add_feat(abilities.CombatExpertise(), False)
 
             battle = combat.Battle(first, second)
 
             repeat_count = 500
             results = run_repeated_battles(battle, repeat_count)
             print i+1, results[0], results[2]
+            print first
+            print second
 
             #print npc.armor_class.normal() - generic_ac_real[i]
 
