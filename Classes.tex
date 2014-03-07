@@ -1002,7 +1002,7 @@ A cleric who grossly violates the code of conduct required by his god loses all 
 & 6 & 6 & 6 & 6 & 6 & 6 & 5 & 3 & \x \\
 17th & \plus12/\plus7/\plus2 & \plus19 & \plus8 & \plus13 & Greater wild aspect
 & 6 & 6 & 6 & 6 & 6 & 6 & 6 & 4 & \x \\
-18th & \plus13/\plus8/\plus3 & \plus20 & \plus9 & \plus14 & Totem aspect
+18th & \plus13/\plus8/\plus3 & \plus20 & \plus9 & \plus14 & Totemic aspect
 & 6 & 6 & 6 & 6 & 6 & 6 & 6 & 5 & 3 \\
 19th & \plus14/\plus9/\plus4 & \plus21 & \plus9 & \plus15 & Greater wild aspect
 & 6 & 6 & 6 & 6 & 6 & 6 & 6 & 6 & 4 \\
@@ -1251,7 +1251,7 @@ her appearance at will, as if using the \spell{disguise self} spell. This affect
 
 \cf{Drd}{Greater Wild Speech (Ex)} At 16th level, the druid can use her wild speech ability to control creatures' actions. If the druid converses with a creature using her wild speech ability, she may spend a standard action and an additional wild speech use to dominate one creature she is speaking with, as the \spell{dominate person} spell. A successful Will save negates this effect. This ability is not mind-affecting, and can affect creatures of any kind that the druid can converse with.
 
-\cf{Drd}{Totem Aspect (Su)} At 18th level, the druid can choose any one wild aspect (but not greater aspect). She permanently gains the abilities of that aspect, as if she was constantly manifesting it. She may suppress or resume this effect as a swift action. If the druid has multiple abilites from that aspect, she may suppress or resume them each individually.
+\cf{Drd}{Totemic Aspect (Su)} At 18th level, the druid can choose any one wild aspect (but not greater aspect). She permanently gains the abilities of that aspect, as if she was constantly manifesting it. She may suppress or resume this effect as a swift action. If the druid has multiple abilites from that aspect, she may suppress or resume them each individually.
 
 \cf{Drd}{Greater Natural Casting (Ex)} At 20th level, a druid may cause area spells to originate from any point within \rngmed range of her, as the natural casting ability.
 \subsubsection{Ex-Druids}
@@ -1780,7 +1780,7 @@ The ranger's class skills (and the key attribute for each skill) are Climb (Str)
 
 All of the following are class features of the ranger.
 
-\cf{Rgr}{Weapon and Armor Proficiency}  A ranger is proficient with simple weapons, any two weapon groups, light and medium armor, and shields (except tower shields).   He is also proficient with his choice of bows, crossbows, or thrown weapons.
+\cf{Rgr}{Weapon and Armor Proficiency}  A ranger is proficient with simple weapons, any two weapon groups, light and medium armor, and shields (except tower shields). He is also proficient with his choice of bows, crossbows, or thrown weapons.
 
 \cf{Rgr}{Quarry (Ex)} A ranger is a deadly hunter. As a swift action, a ranger may designate any foe he sees as his quarry. A ranger gains a \plus2 competence bonus to attack rolls, Perception checks, and Survival checks against his quarry. However, while a ranger is pursuing a quarry, he takes a \minus2 penalty on the same rolls against any target other than his quarry. A ranger may give up pursuing a quarry at any time. He may not have more than one quarry at once; if he designates a new quarry, the old target is no longer considered his quarry. If the ranger does not see his quarry for more than a week, it is no longer considered his quarry.
 
@@ -2254,29 +2254,85 @@ The world is full of magic. It can be wielded by lucky commoners, pompous nobles
 \begin{dtable}
     \lcaption{The Spellwarped}
     \begin{tabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} \\
-        1st & \plus0 & \plus1 & \plus1 & \plus1 & \\
-        2nd & \plus1 & \plus2 & \plus2 & \plus2 & \\
-        3rd & \plus2 & \plus3 & \plus3 & \plus3 & \\
-        4th & \plus3 & \plus4 & \plus4 & \plus4 & \\
-        5th & \plus3 & \plus4 & \plus4 & \plus4 & \\
-        6th & \plus4 & \plus5 & \plus5 & \plus5 & \\
-        7th & \plus5 & \plus6 & \plus6 & \plus6 & \\
-        8th & \plus6/\plus1 & \plus7 & \plus7 & \plus7 & \\
-        9th & \plus6/\plus1 & \plus7 & \plus7 & \plus7 & \\
-        10th & \plus7/\plus2 & \plus8 & \plus8 & \plus8 & \\
-        11th & \plus8/\plus3 & \plus9 & \plus9 & \plus9 & \\
-        12th & \plus9/\plus4 & \plus10& \plus10 & \plus10& \\
-        13th & \plus9/\plus4 & \plus10& \plus10 & \plus10& \\
-        14th & \plus10/\plus5 & \plus11& \plus11 & \plus11& \\
-        15th & \plus11/\plus6/\plus1 & \plus12& \plus12 & \plus12& \\
-        16th & \plus12/\plus7/\plus2 & \plus13& \plus13 & \plus13& \\
-        17th & \plus12/\plus7/\plus2 & \plus13& \plus13 & \plus13& \\
-        18th & \plus13/\plus8/\plus3 & \plus14& \plus14 & \plus14& \\
-        19th & \plus14/\plus9/\plus4 & \plus15& \plus15 & \plus15& \\
-        20th & \plus15/\plus10/\plus5 & \plus16 & \plus16 & \plus16 & \\
+        \thead{Level} & \thead{Base Attack Bonus} & \thead{Good Save}\fn{1} & \thead{Normal Saves}\fn{1} & \thead{Special} \\
+        1st & \plus0 & \plus2 & \plus1 & \\
+        2nd & \plus1 & \plus3 & \plus2 & \\
+        3rd & \plus2 & \plus4 & \plus3 & \\
+        4th & \plus3 & \plus5 & \plus4 & \\
+        5th & \plus3 & \plus6 & \plus4 & \\
+        6th & \plus4 & \plus7 & \plus5 & \\
+        7th & \plus5 & \plus8 & \plus6 & \\
+        8th & \plus6/\plus1 & \plus9 & \plus7 & \\
+        9th & \plus6/\plus1 & \plus10 & \plus7 & \\
+        10th & \plus7/\plus2 & \plus11 & \plus8 & \\
+        11th & \plus8/\plus3 & \plus12 & \plus9 & \\
+        12th & \plus9/\plus4 & \plus13& \plus10 & \\
+        13th & \plus9/\plus4 & \plus14& \plus10 & \\
+        14th & \plus10/\plus5 & \plus15& \plus11 & \\
+        15th & \plus11/\plus6/\plus1 & \plus16& \plus12 & \\
+        16th & \plus12/\plus7/\plus2 & \plus17& \plus13 & \\
+        17th & \plus12/\plus7/\plus2 & \plus19& \plus13 & \\
+        18th & \plus13/\plus8/\plus3 & \plus20& \plus14 & \\
+        19th & \plus14/\plus9/\plus4 & \plus21& \plus15 & \\
+        20th & \plus15/\plus10/\plus5 & \plus22 & \plus16 & \\
     \end{tabularx}
+    1 Each spellwarped has a good save determined by his choice of totem magic.
 \end{dtable}
+
+\cd{Alignment} Any.
+
+\cd{Hit Value} 5.
+
+\ssecfake{Class Skills}
+The spellwarped's class skills (and the key attribute for each skill) are Swim (Str), Ride (Dex), Knowledge (arcana) (Int), Spellcraft (Wis), and Intimidate (Cha). He gains additional class skills based on his choice of totem magic.
+\cf{Spl}{Skill Points at 1st Level} 4.
+
+\sssecfake{Class Features}
+All of the following are class features of the spellwarped.
+
+\cf{Spl}{Weapon and Armor Proficiency}
+Spellwarped are proficient with simple weapons, any two weapon groups, light and medium armor, and shields (except tower shields).
+
+\cf{Spl}{Totem Magic (Ex)} Each spellwarped draws his power from a particular kind of magic. This is a choice made when the first level of the class is taken, and it cannot thereafter be changed. The choices are listed below.
+
+\subcf{Alteration} The spellwarped can manipulate the physical state of objects and creatures. His good save is Fortitude, his key attribute is Intelligence, and he treats Athletics, Escape Artist, and Disguise as class skills.
+
+\subcf{Mental} The spellwarped can manipulate the minds of other creatures and protect his own mind from intrusion. His good save is Will, his key attribute is Charisma, and he treats Sense Motive, Bluff, and Persuasion as class skills. 
+
+\subcf{Temporal} The spellwarped can manipulate time. His good save is Reflex, his key attribute is Wisdom, and he treats Acrobatics, Perception, and Sleight of Hand as class skills.
+
+\cf{Spl}{Spellwarped Surge (Su)} Magical power runs through the spellwarped's body. The spellwarped can tap into that power as a swift action a number of times per day equal to 1 \add his key attribute, to a maximum of his class level. The effects last for a number of rounds equal to 5 \add his Constitution.
+\subcf{Alteration} The spellwarped gains a \plus2 competence bonus to a physical attribute of his choice. \bonusscalingdescription
+\subcf{Mental} The spellwarped gains a \plus2 competence bonus to a mental attribute of his choice. \bonusscalingdescription
+\subcf{Temporal} The spellwarped gains a \plus2 competence bonus to his dodge modifier and a \plus10 foot competence bonus to his movement speed. At 8th level, these bonuses increase to \plus3 and \plus20 feet. At 14th level, these bonuses increase to \plus4 and \plus30 feet. Finally, at 20th level, these bonuses increase to \plus5 and \plus40 feet.
+
+\cf{Spl}{Spellwarped Appearance (Su)} A spellwarped always shows signs of the magic coursing through his body: strangely or inconsistently colored hair, natural skin markings which often resemble runes, and so on. Anyone observing the spellwarped can make a Perception or Spellcraft check with a DC equal to 20 \sub the spellwarped's class level to recognize that the character is a spellwarped.
+
+\cf{Spl}{Spellwarped Body (Ex)} At 2nd level, the spellwarped's body is fundamentally altered by exposure to magic. He gains a constantly active ability based on his choice of magic.
+\subcf{Alteration} The spellwarped gains a \plus1 competence bonus to his natural armor modifier. This bonus increases by 1 at 
+\subcf{Mental} The spellwarped gains a \plus1 competence bonus to saving throws against mind-affecting spells and effects.
+\subcf{Temporal} The spellwarped gains a competence bonus to initiative checks equal to half his spellwarped levels.
+
+\cf{Spl}{Attuned Senses (Su)} At 5nd level, the spellwarped learns to recognize the telltale signs of his chosen magic. He must concentrate as a standard action to use this ability, and he may do so any number of times per day.
+\subcf{Alteration} The spellwarped can discern the true form of a creature he sees, ignoring any effects which magically alter its shape. This does not see through mundane disguises.
+\subcf{Mental} The spellwarped can detect thoughts, as the \spell{detect thoughts} spell. The saving throw DC is equal to 10 \add his spellwarped level \add his Charisma. If a creature makes its saving throw against this effect, the spellwarped cannot read its thoughts for 24 hours. 
+\subcf{Temporal} The spellwarped can accelerate his mind to immediately search everything within a 10 foot radius of him.
+
+\cf{Spl}{Spellwarped Retribution (Su)} At 2nd level, the spellwarped learns to channel his magical power to punish his attackers. This can be used an an immediate action after the spellwarped takes damage. The target must be within \rngclose range. %Uses/day
+
+\subcf{Alteration} The attacker must make a Fortitude save or shrink in size, as \spell{reduce person}, for 5 rounds. This is a size-affecting effect.
+
+\subcf{Mental} The attacker is bewildered for 5 rounds. This is a mind-affecting effect.
+
+\subcf{Temporal} The attacker must make a Will save or be slowed for 5 rounds.
+
+\cf{Spl}{Improved Spellwarped Surge (Su)} At 8th level, the spellwarped's ability to manifest his chosen form of magic improves. When he uses his spellwarped surge ability, he also gains the appropriate benefit described below.
+
+\subcf{Alteration} The spellwarped can increase or decrease by a size category, as he chooses.
+
+\subcf{Mental} The spellwarped becomes immune to hostile mind-affecting effects.
+
+\subcf{Temporal} The spellwarped gains an additional attack per round at his full base attack bonus when making a full attack.
 
 
 \subsection{Wizards}
