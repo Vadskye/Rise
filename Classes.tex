@@ -408,7 +408,7 @@ If a barbarian already has uncanny dodge from a different class, he stacks those
 
 \subcf{Savage Rage} The barbarian's unarmed strikes deal damage as if he were two size categories larger (1d6 for a Medium barbarian). His damage with unarmed strikes increases by an additional size category at 6th, 12th, and 18th level.
 
-\subcf{Spellbreaker Rage (Su)} The barbarian gains spell resistance while raging.
+\subcf{Spellbreaker Rage (Su)} The barbarian gains spell resistance while raging. A creature with spell resistance may always make a saving throw when a spell is cast on it. The saving throw type is indicated by the spell. If it succeeds, the spell has no effect on it.
 
 \textit{Prerequisites:} Barbarian level 9th.
 
@@ -944,7 +944,7 @@ The cleric gains an additional domain power from one of his domains at 4th level
 \subcf{Knowledge -- Combat Insight} The cleric gains a \plus2 circumstance bonus to attack rolls, checks, and saving throws against creatures he has identified with a successful Knowledge check.
 \subcf{Law -- Avatar of Order} Once per round, the cleric can take 5 on an attack roll or check, even while stressed or distracted. He may declare the use of this ability after rolling below a 5, but before any additional effects are resolved, potentially causing it to succeed where it would have failed.
 \subcf{Life -- Fountain of Life} The cleric gains fast healing 1. All of the cleric's healing spells and abilities restore critical damage as easily as if it were hit point damage.
-\subcf{Magic -- Spellbreaker} The cleric gains spell resistance 10.
+\subcf{Magic -- Spellbreaker} The cleric gains spell resistance. A creature with spell resistance may always make a saving throw when a spell is cast on it. The saving throw type is indicated by the spell. If it succeeds, the spell has no effect on it.
 \subcf{Nature -- Natural Power} Whenever the cleric is in natural terrain, he gains a \plus2 enhancement bonus to caster level and the improved natural casting ability, as the druid class feature.
 \subcf{Protection -- Martyr's Gift} The cleric constantly radiates a \areamed radius emanation of protective energy. Whenever a creature within the area takes damage, the cleric can choose to take half of that damage instead, as the \spell{shield other} spell.
 \subcf{Strength -- Might of the Gods} The cleric gains the larger than life ability, as the barbarian class feature. In addition, he may use his Strength as his casting attribute, and to determine the saving throw DC of his channel energy abilities.
@@ -1492,7 +1492,7 @@ second class and gains improved uncanny dodge, the character stacks those levels
 
 \cf{Mnk}{Abundant Step (Su)} At 11th level or higher, a monk can slip magically between spaces, as if using the spell \spell{dimension slide}, a number of times per day equal to half her Wisdom. Using this ability is a move action that does not provoke attacks of opportunity. Her caster level for this effect is equal to her monk level.
 
-\cf{Mnk}{Diamond Soul (Ex)} At 12th level, a monk gains spell resistance. In order to affect the monk with a spell, a spellcaster must make a spell penetration check (d20 \add half caster level \add casting attribute) that equals or exceeds the monk's spell resistance \add relevant saving throw modifier.
+\cf{Mnk}{Diamond Soul (Ex)} At 12th level, a monk gains spell resistance. A creature with spell resistance may always make a saving throw when a spell is cast on it. The saving throw type is indicated by the spell. If it succeeds, the spell has no effect on it.
 
 \cf{Mnk}{Quivering Palm (Su)} Starting at 13th level, a monk can set up vibrations within the body of another creature that can thereafter be fatal if the monk so desires. She can use this quivering palm attack a number of times per day equal to her Wisdom, but no more than once per round, and she must announce her intent before making her attack roll. Constructs, oozes, plants, undead, incorporeal creatures, and creatures immune to critical hits cannot be affected. Otherwise, if the monk strikes successfully and the target takes damage from the blow, the quivering palm attack succeeds. Thereafter the monk can try to slay the victim at any later time, as long as the attempt is made within a number of days equal to her monk level. To make such an attempt, the monk merely wills the target to die (a free action), and unless the target makes a Fortitude saving throw (DC 10 \add 1/2 the monk's level \add the monk's Wis), it dies. If the saving throw is successful, the target is no longer in danger from that particular quivering palm attack, but it may still be affected by another one at a later time.
 
@@ -2259,15 +2259,15 @@ The world is full of magic. It can be wielded by lucky commoners, pompous nobles
         2nd & \plus1 & \plus3 & \plus2 & Spellwarp pool, spellwarp surge\\
         3rd & \plus2 & \plus4 & \plus3 & Attuned senses, spellwarped aspect \\
         4th & \plus3 & \plus5 & \plus4 & Manifest attack, resist magic \\
-        5th & \plus3 & \plus6 & \plus4 & \\
+        5th & \plus3 & \plus6 & \plus4 & Mighty surge \\
         6th & \plus4 & \plus7 & \plus5 & Manifest power \\
-        7th & \plus5 & \plus8 & \plus6 & Spellwarped aspect \\
-        8th & \plus6/\plus1 & \plus9 & \plus7 & Manipulate magic \\
-        9th & \plus6/\plus1 & \plus10 & \plus7 & \\
-        10th & \plus7/\plus2 & \plus11 & \plus8 & Improved manipulate magic \\
+        7th & \plus5 & \plus8 & \plus6 & Manipulate magic, spellwarped aspect \\
+        8th & \plus6/\plus1 & \plus9 & \plus7 & Manifest awesome attack \\
+        9th & \plus6/\plus1 & \plus10 & \plus7 & Improved spellwarped surge \\
+        10th & \plus7/\plus2 & \plus11 & \plus8 & Spell resistance \\
         11th & \plus8/\plus3 & \plus12 & \plus9 & Spellwarped aspect \\
         12th & \plus9/\plus4 & \plus13& \plus10 & \\
-        13th & \plus9/\plus4 & \plus14& \plus10 & \\
+        13th & \plus9/\plus4 & \plus14& \plus10 & Improved manipulate magic \\
         14th & \plus10/\plus5 & \plus15& \plus11 & \\
         15th & \plus11/\plus6/\plus1 & \plus16& \plus12 & Spellwarped aspect \\
         16th & \plus12/\plus7/\plus2 & \plus17& \plus13 & \\
@@ -2309,14 +2309,14 @@ Spellwarped are proficient with simple weapons, any two weapon groups, light and
 \subcf{Temporal -- Slow} The subject is slowed for 2 rounds unless it makes a Will save. A slowed creature can take a standard action or a move action each round, but not both. It cannot take full-round actions, but it may take swift actions. Additionally, it takes a \minus2 penalty to attack rolls, Strength and Dexterity-based checks, and armor class.
 
 \cf{Spl}{Spellwarped Body (Ex)} At 2nd level, a spellwarped's body is fundamentally altered by exposure to magic. He shows signs of the magic coursing through his body: strangely or inconsistently colored hair, natural skin markings which often resemble runes, and so on. Anyone observing the spellwarped can make a Perception or Spellcraft check with a DC equal to 20 \sub the spellwarped's class level to recognize that the character is a spellwarped. In addition, the spellwarped gains an ability based on his innate magic.
-\subcf{Alteration} The spellwarped gains a \plus1 competence bonus to his natural armor modifier. This bonus increases by 1 at 5th level and every 5 levels thereafter.
-\subcf{Pyromancy} The spellwarped gains cold and fire damage reduction equal to twice his spellwarped level, allowing him to ignore the first points of cold or fire damage he takes each round.
-\subcf{Temporal} The spellwarped gains a \plus1 competence bonus to initiative checks. This bonus increases by 1 at 2nd level and every 2 levels thereafter.
+\subcf{Alteration -- Augment Skin} The spellwarped gains a \plus1 competence bonus to his natural armor modifier. This bonus increases by 1 at 5th level and every 5 levels thereafter.
+\subcf{Pyromancy -- Resistance} The spellwarped gains cold and fire damage reduction equal to twice his spellwarped level, allowing him to ignore the first points of cold or fire damage he takes each round.
+\subcf{Temporal -- Accelerate Reaction} The spellwarped gains a competence bonus to initiative checks equal to half his spellwarped level.
 
 \cf{Spl}{Spellwarp Surge (Su)} At 2nd level, the spellwarped can use a spellwarp point as a swift action to enhance his abilities using his chosen form of magic. The effect lasts for 5 rounds.
 \subcf{Alteration -- Alter Body} The spellwarped gains a \plus2 enhancement bonus to a physical attribute of his choice. This bonus increases by 1 at 8th level and every 6 spellwarped levels thereafter.
 \subcf{Pyromancy -- Flame Aura} Each round, at the start of his turn, enemies adjacent to the spellwarped take one point of fire damage per spellwarped level.
-\subcf{Temporal -- Rapid Movement} The spellwarped gains a \plus2 enhancement bonus to his dodge modifier and a \plus10 foot enhancement bonus to his movement speed. At 8th level, and every 6 levels thereafter, the dodge bonus increases by 1 and the speed bonus increases by 10 feet.
+\subcf{Temporal -- Accelerate Movement} The spellwarped gains a \plus2 enhancement bonus to his dodge modifier and a \plus10 foot enhancement bonus to his movement speed. At 8th level, and every 6 levels thereafter, the dodge bonus increases by 1 and the speed bonus increases by 10 feet.
 
 \cf{Spl}{Attuned Senses (Su)} At 3rd level, the spellwarped learns to recognize the telltale signs of his chosen magic. He must concentrate as a standard action to use this ability, and he may do so any number of times per day.
 \subcf{Alteration -- Perceive Alteration} The spellwarped can discern the true form of all creatures within 50 feet of him for 1 round, ignoring any effects which magically alter their shapes. This also grants him a \plus5 competence bonus to Perception checks to see through mundane disguises.
@@ -2328,8 +2328,8 @@ Spellwarped are proficient with simple weapons, any two weapon groups, light and
 \subcf{Alteration -- Improved Damage Reduction} The spellwarped's damage reduction applies against all forms of physical damage. The spellwarped must have the damage reduction aspect to gain this aspect.
 \subcf{Pyromancy -- } 
 \subcf{Temporal -- Evasion} If the spellwarped makes a successful Reflex save against an attack that normally deals half damage on a successful save, he instead tes no damage. Evasion can only be used if the spellwarped is wearing light armor or no armor. A helpless spellwarped does not gain the benefit of evasion.
+\subcf{Temporal -- Fast Movement} The spellwarped gains a \plus10 foot competence bonus to movement speed.
 \subcf{Temporal -- Prescient Reaction} By reacting to brief visions of the future, the spellwarped may add his Wisdom to attack on attacks of opportunity.
-\subcf{Temporal -- }
 \subcf{Temporal -- Uncanny Dodge} The spellwarped may apply his Dexterity and dodge modifier to his armor class while flat-footed.
 
 \cf{Spl}{Improved Manifest Attack (Su)} At 4th level, the spellwarped's attack improves.
@@ -2339,25 +2339,30 @@ Spellwarped are proficient with simple weapons, any two weapon groups, light and
 
 \cf{Spl}{Resist Magic (Ex)} At 4th level, the spellwarped gains a \plus1 competence bonus to saving throws against spells and spell-like abilities. This bonus increases by \plus1 at 8th level and every 4 levels thereafter.
 
-\cf{Spl}{Manifest Power (Su)} At 6th level, the spellwarped can spend a spellwarp point to call upon his innate magic to generate a powerful but brief effect.
+\cf{Spl}{Mighty Surge (Su)} At 5th level, the spellwarped can spend a spellwarp point to call upon his innate magic to generate a powerful but brief effect.
 \subcf{Alteration -- Amorphous Body} As a standard action, the spellwarped can transform his body into an amorphous form for 1 round, until the end of his next turn. In this form, he gains several benefits. He is immune to critical hits, takes no penalties for squeezing, and can move through spaces that are no more than two inches in width, though doing so forces him to move at half speed.
-\subcf{Pyromancy -- Combustion} As a standard action, the spellwarped can release a powerful explosion of flame. All creatures within a \areamed radius spread of him take 3d8 fire damage. A successful Reflex save against a DC of 10 \add spellwarped level \add Charisma halves the damage. This damage increases by 1d8 per two spellwarped levels above 6th.
+\subcf{Pyromancy -- }
 \subcf{Temporal -- Brief Acceleration} As a swift action, the spellwarped can accelerate himself so much that he can seem to pause time for everyone but himself. This allows him to take a single move action. He does not provoke attacks of opportunity for any movement he makes during this time.
 
-\cf{Spl}{Manipulate Magic (Su)} At 8th level, the spellwarped can channel his innate magic to manipulate other forms of magic. Using this ability costs a spellwarp point. 
+\cf{Spl}{Manipulate Magic (Su)} At 7th level, the spellwarped can channel his innate magic to manipulate other forms of magic. Using this ability costs a spellwarp point. 
 \subcf{Alteration -- Purge} As a standard action, the spellwarped can make a Fortitude save to end any spells or spell-like abilities affecting him which allow Fortitude spell resistance. If he can make a Spellcraft check to identify the effects on him, he may freely choose which ones to end, allowing him to keep the effects of beneficial spells.
 \subcf{Pyromancy -- Fuel the Flame} As an immediate action, when the spellwarped is affected by a spell or spell-like ability, he may channel its energy into a burst of flame around him. Creatures adjacent to the spellwarped take fire damage equal to twice the level of the spell or spell-like ability. The spell still has its normal effect on the spellwarped.
 \subcf{Temporal -- Accelerate Magic} As a swift action, the spellwarped can increase or decrease the duration of any spell or spell-like ability affecting him by two rounds. This can end the effect immediately if it has no time remaining.
 
+\cf{Spl}{Manifest Awesome Attack (Su)} At 8th level, the spellwarped can spend a spellwarp point as a standard action to channel his innate magic into a powerful attack.
+\subcf{Alteration -- } 
+\subcf{Pyromancy -- Combustion} As a standard action, the spellwarped can release a powerful explosion of flame. All creatures within a \areamed radius spread of him take 1d8 fire damage per two spellwarped levels. A successful Reflex save against a DC of 10 \add spellwarped level \add Charisma halves the damage.
+\subcf{Temporal -- Stop Time} As a standard action, the spellwarped can completely stop time for a single creature for 5 rounds. A successful Will save negates the effect. The affected creature can take no actions and cannot be moved or even affected in any way until the effect ends.
+
 \cf{Spl}{Improved Spellwarped Surge (Su)} At 9th level, the spellwarped's ability to manifest his chosen form of magic improves. When he uses his spellwarped surge ability, he also gains the appropriate benefit described below.
 
 \subcf{Alteration -- Alter Size} The spellwarped can increase or decrease by a size category, as he chooses. This is a size-affecting effect. 
-
-\subcf{Pyromancy -- } 
-
+\subcf{Pyromancy -- Fire Shield} Any creature that hits the spellwarped with its body or a melee weapon takes 1d6 fire damage per two spellwarped levels. Each individual creature can take this damage only once per round.
 \subcf{Temporal -- Haste} When making a full attack, the spellwarped can make an additional attack at his full attack bonus.
 
-\cf{Spl}{Improved Manipulate Magic (Su)} At 10th level, the spellwarped can use his magic manipulation ability to affect any ally within \rngclose range of him.
+\cf{Spl}{Spell Resistance (Ex)} At 10th level, the spellwarped gains spell resistance. A creature with spell resistance may always make a saving throw when a spell is cast on it. The saving throw type is indicated by the spell. If it succeeds, the spell has no effect on it.
+
+\cf{Spl}{Improved Manipulate Magic (Su)} At 13th level, the spellwarped can use his manipulate magic ability to affect any ally within \rngclose range of him.
 
 \subsection{Wizards}
 \begin{dtable*}
