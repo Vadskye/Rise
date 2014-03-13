@@ -2200,11 +2200,11 @@ The world is full of magic. It can be wielded by lucky commoners, pompous nobles
         2nd & \plus1 & \plus3 & \plus2 & Spellwarped body, manifest surge \\
         3rd & \plus2 & \plus4 & \plus3 & Attuned senses, spellwarped aspect \\
         4th & \plus3 & \plus5 & \plus4 & Manifest attack, resist magic \\
-        5th & \plus3 & \plus6 & \plus4 & \\
+        5th & \plus3 & \plus6 & \plus4 & Manipulate magic \\
         6th & \plus4 & \plus7 & \plus5 & Manifest power \\
-        7th & \plus5 & \plus8 & \plus6 & Manipulate magic, spellwarped aspect \\
+        7th & \plus5 & \plus8 & \plus6 & Spellwarped aspect \\
         8th & \plus6/\plus1 & \plus9 & \plus7 & Manifest attack \\
-        9th & \plus6/\plus1 & \plus10 & \plus7 & \\
+        9th & \plus6/\plus1 & \plus10 & \plus7 & Spell resistance\\
         10th & \plus7/\plus2 & \plus11 & \plus8 & Manifest power \\
         11th & \plus8/\plus3 & \plus12 & \plus9 & Spellwarped aspect \\
         12th & \plus9/\plus4 & \plus13& \plus10 & Manifest attack \\
@@ -2244,7 +2244,7 @@ Spellwarped are proficient with simple weapons, any two weapon groups, light and
 \subcf{Pyromancy -- Ember} The spellwarped can snap his fingers as a swift action to create a small ember of flame in his hand. This ember casts light as a torch, and can deal 1 point of fire damage with a successful touch attack. The ember can be dismissed as a swift action or extinguished as a move action.
 \subcf{Temporal -- Time Awareness} The spellwarped always knows exactly what time it is, and can track the passage of time precisely without effort.
 
-\cf{Spl}{Manifest Attack (Su)} A spellwarped can channel his innate magic to smite his foes. As a standard action, he can spend a spellwarp point to manifest an attack. If a saving throw is allowed, the DC is equal to 10 \add the spellwarped's class level \add his key attribute. The spellwarped gains one manifest attack at 1st level, then another at 4th level and every 4 levels thereafter.
+\cf{Spl}{Manifest Attack (Su)} A spellwarped can channel his innate magic to smite his foes. As a standard action, he can spend a spellwarp point to use a manifest attack. If a saving throw is allowed, the DC is equal to 10 \add the spellwarped's class level \add his key attribute. The spellwarped gains an additional manifest attack at 4th level and every 4 levels thereafter. The manifest attacks a spellwarped gains depend on his choice of innate magic, as described below.
 \parhead{Alteration}
 \subcf{1st -- Lesser Reduce Foe} A foe within \rngclose range becomes one size category smaller for 2 rounds unless it makes a Fortitude save. It takes a \minus2 penalty to Strength, decreases its weapon damage dice by one size, and takes a \minus4 penalty to CMA and CMD. However, it gains a \plus2 bonus to Stealth checks and a \plus1 bonus to attack rolls and armor class. This is a size-affecting effect.
 \subcf{4th -- Reduce Foe} This attack functions like the lesser reduce foe attack, except that the foe is reduced for 5 rounds.
@@ -2282,40 +2282,47 @@ Spellwarped are proficient with simple weapons, any two weapon groups, light and
 \subcf{Pyromancy -- Flame of Life} The spellwarped can see the life-fire that lies within all living creatures, allowing him to clearly see all living creatures within 50 feet of him for 1 round. This ability can reveal creatures hiding in concealment and defeat figments and glamers such as \spell{invisibility}, but does not reveal creatures hiding behind cover.
 \subcf{Temporal -- Accelerated Search} The spellwarped can accelerate his mind to immediately search everything within a 10 foot radius of him. Alternately, he may use this ability to read a book ten times as fast as normal.
 
-\cf{Spl}{Spellwarped Aspect (Ex)} At 3rd level, the spellwarped gains a new ability based on his continued exposure to magical energy. The spellwarped gains an additional aspect at 7th level and every four levels thereafter.
-\subcf{Alteration -- Alter Size} When the spellwarped uses his manifest surge ability, he can increase or decrease by a size category, as he chooses. This is a size-affecting effect, and does not stack with other size-affecting effects.
-\subcf{Alteration -- Damage Reduction} The spellwarped gains physical damage reduction against his choice of piercing, slashing, or bludgeoning damage. The amount of damage resisted is equal to half his class level, allowing him to ignore the first points of damage he takes each round.
-\subcf{Alteration -- Improved Damage Reduction} The spellwarped's damage reduction applies against all forms of physical damage. The spellwarped must have the damage reduction aspect to gain this aspect.
-\subcf{Pyromancy -- Fire Shield} While his manifest surge ability is active, any creature that hits the spellwarped with its body or a melee weapon takes 1d6 fire damage per two spellwarped levels. Each individual creature can take this damage only once per round.
-\subcf{Pyromancy -- Flame Weapon} While his manifest surge ability is active, the spellwarped adds half his Charisma to damage in addition to half his Strength. This bonus damage is fire damage.
-\subcf{Temporal -- Accelerate Attack} While his manifest surge ability is active, the spellwarped can make an additional attack at his full attack bonus when making a full attack. \textit{Prerequisite:} 7th level spellwarped.
-\subcf{Temporal -- Evasion} If the spellwarped makes a successful Reflex save against an attack that normally deals half damage on a successful save, he instead tes no damage. Evasion can only be used if the spellwarped is wearing light armor or no armor. A helpless spellwarped does not gain the benefit of evasion.
-\subcf{Temporal -- Fast Movement} The spellwarped gains a \plus10 foot competence bonus to movement speed.
-\subcf{Temporal -- Uncanny Dodge} The spellwarped may apply his Dexterity and dodge modifier to his armor class while flat-footed.
+\cf{Spl}{Spellwarped Aspect (Ex)} At 3rd level, the spellwarped gains a new ability based on his continued exposure to magical energy. The spellwarped gains an additional aspect at 7th level and every four levels thereafter. Some aspects have spellwarped level requirements, as indicated below.
+\parhead{Alteration}
+\subcf{Damage Reduction} The spellwarped gains physical damage reduction against his choice of piercing, slashing, or bludgeoning damage. The amount of damage resisted is equal to half his class level, allowing him to ignore the first points of damage he takes each round.
+\subcf{Improved Damage Reduction} The spellwarped's damage reduction applies against all forms of physical damage. The spellwarped must have the damage reduction aspect to gain this aspect.
+\subcf{7th -- Alter Size} When the spellwarped uses his manifest surge ability, he can increase or decrease by a size category, as he chooses. This is a size-affecting effect, and does not stack with other size-affecting effects.
+
+\parhead{Pyromancy}
+\subcf{Flame Weapon} While his manifest surge ability is active, the spellwarped adds half his Charisma to damage in addition to half his Strength. This bonus damage is fire damage.
+\subcf{7th -- Fire Shield} While his manifest surge ability is active, any creature that hits the spellwarped with its body or a melee weapon takes 1d6 fire damage per two spellwarped levels. Each individual creature can take this damage only once per round.
+
+\parhead{Temporal}
+\subcf{Evasion} If the spellwarped makes a successful Reflex save against an attack that normally deals half damage on a successful save, he instead tes no damage. Evasion can only be used if the spellwarped is wearing light armor or no armor. A helpless spellwarped does not gain the benefit of evasion.
+\subcf{Fast Movement} The spellwarped gains a \plus10 foot competence bonus to movement speed.
+\subcf{Timetheft} If the spellwarped uses his manifest attack ability and affects at least opponent that did not make a saving throw, the spellwarped gains the benefits of his manifest surge ability for 1 round, or extends its duration by 1 round if it was already active.
+\subcf{Uncanny Dodge} The spellwarped may apply his Dexterity and dodge modifier to his armor class while flat-footed.
+\subcf{7th -- Accelerate Attack} While his manifest surge ability is active, the spellwarped can make an additional attack at his full attack bonus when making a full attack.
 
 \cf{Spl}{Resist Magic (Ex)} At 4th level, the spellwarped gains a \plus1 competence bonus to saving throws against spells and spell-like abilities. This bonus increases by \plus1 at 8th level and every 4 levels thereafter.
 
-\cf{Spl}{Manifest Power (Su)} At 6th level, the spellwarped can spend a spellwarp point to call upon his innate magic to generate a powerful effect.
-\subcf{Alteration -- Amorphous Body} As a standard action, the spellwarped can transform his body into an amorphous form for 1 round, until the end of his next turn. In this form, he gains several benefits. He is immune to critical hits, takes no penalties for squeezing, and can move through spaces that are no more than two inches in width, though doing so forces him to move at half speed.
-\subcf{Pyromancy -- Flameheart} As a standard action, the spellwarped can become a being of pure fire for 1 round, until the end of his next turn. In this form, he is immune to physical damage, but cannot attack normally or use any of his items, as they meld into his body. In this form, he can make a touch attack as a standard action to deal 1d6 points of fire damage per spellwarped level.
-\subcf{Temporal -- Brief Acceleration} As a standard action, the spellwarped can accelerate himself so much that he can seem to pause time for everyone but himself. This allows him to take a single move action. He does not provoke attacks of opportunity for any movement he makes during this time.
-
-\cf{Spl}{Manipulate Magic (Su)} At 7th level, the spellwarped can channel his innate magic to manipulate other forms of magic. Using this ability costs a spellwarp point. 
+\cf{Spl}{Manipulate Magic (Su)} At 5th level, the spellwarped can channel his innate magic to manipulate other forms of magic. Using this ability costs a spellwarp point. 
 \subcf{Alteration -- Purge} As a standard action, the spellwarped can make a Fortitude save to end any spells or spell-like abilities affecting him which allow Fortitude spell resistance. If he can make a Spellcraft check to identify the effects on him, he may freely choose which ones to end, allowing him to keep the effects of beneficial spells.
 \subcf{Pyromancy -- Fuel the Flame} As an immediate action, when the spellwarped is affected by a spell or spell-like ability, he may channel its energy into a burst of flame around him. Creatures adjacent to the spellwarped take fire damage equal to twice the level of the spell or spell-like ability. The spell still has its normal effect on the spellwarped.
 \subcf{Temporal -- Accelerate Magic} As a swift action, the spellwarped can increase or decrease the duration of any spell or spell-like ability affecting him by two rounds. This can end the effect immediately if it has no time remaining.
 
-\cf{Spl}{Spell Resistance (Ex)} At 10th level, the spellwarped gains spell resistance. A creature with spell resistance may always make a saving throw when a spell is cast on it. The saving throw type is indicated by the spell. If it succeeds, the spell has no effect on it.
+\cf{Spl}{Manifest Power (Su)} At 6th level, the spellwarped can spend a spellwarp point to call upon his innate magic to generate a powerful effect. The spellwarped may end any of his powers with a duration by spending a swift action to dismiss the effect. If a saving throw is allowed, the DC is equal to 10 \add the spellwarped's class level \add his key attribute. The spellwarped gains an additional manifest power at 10th level and every 4 levels thereafter. The manifest powers a spellwarped gains depend on his choice of innate magic, as described below.
+\parhead{Alteration}
+\subcf{6th -- Lesser Amorphous Body} As a standard action, the spellwarped can transform his body into an amorphous form for 1 round, until the end of his next turn. In this form, he gains several benefits. He is immune to critical hits, takes no penalties for squeezing, and can move through spaces that are no more than two inches in width, though doing so forces him to move at half speed.
+\subcf{14th -- Amorphous Body} This power functions like the amorphous body power, except that it lasts for 5 rounds.
 
-\cf{Spl}{Manifest Power (Su)} At 10th level, the spellwarped can gains the ability to manifest his innate magic more powerfully.
-\subcf{Pyromancy -- Become the Flame} As a standard action, the spellwarped can become a being of pure fire for 5 rounds. 
-\subcf{Temporal -- Time Reversal} As a swift action, the spellwarped can spend a spellwarp point to create a ``time lock.'' The time lock persists for one round. As a standard action, he can bring a creature backwards through time to the point at which the time lock was created. A Will save negates this effect. An affected creature is perfectly restored to the point immediately after the time lock was created. Thee effects of any actions that the creature took in the intervening time are undone, any damage it dealt or took is removed, it is restored to its original location, and the creature is restored in all other ways, just as if the intervening time had never occured. The spellwarped cannot reverse time for himself in this way.
+\parhead{Pyromancy}
+\subcf{6th -- Lesser Flameheart} As a standard action, the spellwarped can become a being of pure fire for 1 round, until the end of his next turn. In this form, he is immune to physical damage, but cannot attack normally or use any of his items, as they meld into his body. In this form, he can make a touch attack as a standard action to deal 1d6 points of fire damage per spellwarped level.
+\subcf{14th -- Flameheart} This power functions like the flameheart power, except that it lasts for 5 rounds.
+
+\parhead{Temporal}
+\subcf{6th -- Brief Acceleration} As a standard action, the spellwarped can accelerate himself so much that he can seem to pause time for everyone but himself. This allows him to take a single move action. He does not provoke attacks of opportunity for any movement he makes during this time.
+\subcf{10th -- Time Reversal} As a swift action, the spellwarped can spend a spellwarp point to create a ``time lock.'' The time lock persists for one round. As a standard action, he can bring a creature backwards through time to the point at which the time lock was created. A Will save negates this effect. An affected creature is perfectly restored to the point immediately after the time lock was created. Thee effects of any actions that the creature took in the intervening time are undone, any damage it dealt or took is removed, it is restored to its original location, and the creature is restored in all other ways, just as if the intervening time had never occured. The spellwarped cannot reverse time for himself in this way.
+\subcf{18th -- Time Stop} As a standard action, the spellwarped can spend three spellwarp points to step into an alternate timestream, causing him to speed up so greatly that all other creatures seem frozen. He can take a single round of actions in this alternate timestream. All creatures he attacks are treated as having a Dexterity of \minus10, but he cannot perform a coup de grace; such an act requires more care and precision than is possible with such immense speed. After using this ability, he must wait 5 rounds before he can use it again.
+
+\cf{Spl}{Spell Resistance (Ex)} At 9th level, the spellwarped gains spell resistance. A creature with spell resistance may always make a saving throw when a spell is cast on it. The saving throw type is indicated by the spell. If it succeeds, the spell has no effect on it.
 
 \cf{Spl}{Improved Manipulate Magic (Su)} At 13th level, the spellwarped can use his manipulate magic ability to affect any ally within \rngmed range of him.
-
-\cf{Spl}{Manifest Ultimate Power (Su)} At 18th level, the spellwarped gains the ability to manifest his innate magic to its fullest extent.
-\subcf{Pyromancy -- }
-\subcf{Temporal -- Time Stop} As a standard action, the spellwarped can spend three spellwarp points to step into an alternate timestream, causing him to speed up so greatly that all other creatures seem frozen. He can take a single round of actions in this alternate timestream. All creatures he attacks are treated as having a Dexterity of \minus10, but he cannot perform a coup de grace; such an act requires more care and precision than is possible with such immense speed. After using this ability, he must wait 5 rounds before he can use it again.
 
 \subsection{Wizards}
 \begin{dtable*}
