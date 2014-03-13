@@ -8,6 +8,7 @@
 
 \\parhead{*}|[b]\1:[/b]
 \\subparhead{*}|[i]\1:[/i]
+\\subcf{*}|[i]\1:[/i]
 \\textbf{*}|[b]\1[/b]
 \\thead{*}|[b]\1[/b]
 \\textit{*}|[i]\1[/i]
@@ -15,7 +16,9 @@
 \\chapter{*}|\n[size=5][b]\1[/b][/size]
 \\section{*}[ \n]*|[/indent]\n[size=4][b]\1[/b][/size][indent]
 \\subsection{*}[ \n]*|[/indent]\n[size=3][b]\1[/b][/size][indent]
+\\ssecfake{*}[ \n]*|[/indent]\n[size=3][b]\1[/b][/size][indent]
 \\subsubsection{*}[ \n]*|[/indent]\n[b]\1[/b][indent]
+\\sssecfake{*}[ \n]*|[/indent]\n[b]\1[/b][indent]
 \\pdfbookmark.*}|
 \\spellsection{*}|\n[size=3][b]\1[/b][/size]
 \\spellsectioncomma{*}{*}|\n[size=3][b]\1, \2[/b][/size]
@@ -50,6 +53,8 @@
 \\spellhead\[(.*?)\]{*}|[/indent]\1[indent][b]\2:[/b]
 \\spellheadc\[(.*?)\]{*}{*}|[/indent]\1[indent][b]\2, \3:[/b]
 \\spellheadc{*}{*}|[b]\1, \2:[/b]
+\\cd{*}|[b]\1:[/b]
+\\cf{\w+\}{*}|[b]\1:[/b]
 
 #environments
 \\begin{spelllist}[ \n]*|
@@ -87,6 +92,7 @@
 \\add|+
 \\plus|+
 \\minus|-
+\\sub|-
 \\mult|*
 \\mtimes|*
 \\bonusscalingdescription|This bonus increases to +3 at 8th level, to +4 at 14th level, and finally to +5 at 20th level.
