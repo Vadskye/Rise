@@ -15,6 +15,14 @@
   \setlength{\parskip}{0pt}
   \setlength{\parsep}{0pt}}
 {\end{enumerate}}
+\newenvironment{itemblank}
+{\begin{itemize}[label={}]
+  \setlength{\leftmargin}{0em}
+  \setlength{\topsep}{1pt}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}}
+{\end{itemize}}
 
 %Define a custom table that uses that coloring
 \newenvironment{dtable}
