@@ -486,55 +486,42 @@ If you are trained in Creature Handling, you can use it to train a creature. Suc
 
 \parhead{Rear a Wild Creature} To rear a creature means to raise a wild creature from infancy so that it becomes domesticated. The time required depends on the creature in question. The DC for this check is equal to 15 \add the Hit Values of the creature. You can rear as many as three creatures of the same kind at once without penalty. You can rear additional creatures, but you take a cumulative \minus2 penalty to checks you make to rear all of the animals. A successfully domesticated creature can be taught tricks at the same time it's being raised, or it can be taught as a domesticated creature later.
 \subsection{Devices (Int; Trained Only)}
-\parhead{Check} You can attempt to sabotage or manipulate mechanical devices. The DC depends on how complex the device is, and how difficult your intended action is.
+You can use this skill to manipulate mechanical devices such as locks, traps, and other contraptions. With enough skill, you can even manipulate magical devices.
+
+The DC of a Devices check depends on the device being manipulated. In addition, some actions are easier than others, and modify the DC accordingly. DCs are listed on \trefnp{Devices DCs}.
 
 \begin{dtable}
 \lcaption{Device DCs}
 \begin{tabularx}{\columnwidth}{>{\lcol}X c}
 \thead{Device Type} & \thead{Base DC} \\
 Simple device (wagon wheel) & 10 \\
-Average device (typical lock, door hinge) & 15 \\
-Challenging device (typical trap, good lock) & 20 \\
-Extraordinary device (magical trap, masterwork lock) & 30\plus \\
+Average device (door hinge) & 15 \\
+Challenging device (typical lock or trap) & 20 \\
+Difficult device (good lock) & 25 \\
+Magic trap & 25 \add double spell level \\
+Extraordinary device (masterwork lock, complex trap) & 30 \\
 \end{tabularx}
 \end{dtable}
 
-\begin{dtable}
-\lcaption{Action DC Modifiers}
-\begin{tabularx}{\columnwidth}{>{\lcol}X c}
-\thead{Action Type} & \thead{DC Modifier} \\
-Identify device (find traps or hidden mechanisms) & \minus5 \\
-Break device (jam a lock or hinge, disable trap while triggering it) & \minus5 \\
-Normal usage (lock a lock, reset a trap) & \plus0 \\
-Manipulate device (open lock, disable trap without triggering it, set device to break when used) & \plus5 \\
-Extraordinary manipulation (recover trap) & \plus10 \\
-Leave no trace of tampering & \plus5 \\
-\end{tabularx}
-\end{dtable}
+\subsubsection{Activate Device}
+As a standard action, you can make a Devices check to make a device perform a function it was designed to do, even if you lack the normal requirements. For example, you could lock or unlock a lock without its key, or activate a trap directly without using its triggering mechanism (hopefully without being in its line of fire).
 
-If the check succeeds, your action succeeds. If it fails by 4 or less, you think you have succeeded, but your attempt actually had no effect. If you fail by 5 or more, something goes wrong. If the device is a trap, you spring it. If you were attempting to sabotage a device, it triggers, breaks, or otherwise does something contrary to your intentions.
+\subsubsection{Create Bindings}
+As a standard action, you can make a Devices check to tie a knot or create a binding. You can also take a full-round action to bind a helpless foe in rope or similar material. Your check result is equal to the DC to escape the binding.
 
-You can take 10 on most Devices checks, but when dealing with traps, you are always considered to be ``threatened'' by the trap. You may not take 20 when disabling a trap.
+\subsubsection{Break Device}
+As a standard action, you can make a Devices check to break a device. The DC is 5 lower than normal. This is generally not subtle, such as jamming a lock or breaking a trap while triggering it in the process. It cannot change the state of a device, but you can prevent it from being used normally; a locked door will remain locked, but you can prevent it from being unlocked with its key. Failure indicates that the device continues to function. Failure by 5 or more may cause you to think that you successfully broke the device, while in fact it functions normally.
 
-\par You can attempt to disable magic traps in addition to mundane traps. A magic trap generally has a DC of 25 \add double the spell level of the magic used to create it.
+\subsubsection{Subvert Device}
+As a standard action, you can make a Devices check to subvert the normal functionality of a device. The DC is 5 higher than normal. This could allow you to sabotage a hinge or lock so it breaks once it is used, disable a trap without triggering it, or disable a lock so it is perpetually closed or open. Failure by less than 5 means you were unsuccessful, and your action was wasted. Failure by 5 or more means you break the device immediately, think you sabotaged the device when you did not, or activate the trap, depending on the circumstances.
 
-\subsk{Bindings and Knots} You can use the Devices skill to bind an opponent in rope if the opponent is not struggling. You can also use it to create bindings and tie knots in general.
+Once you have disabled a device, you can attempt to recover it for later use if you can carry it. This requires a separate Devices check to subvert the device. The DC is 5 higher than normal, as usual for a check to subvert a device.
 
-\parhead{Action} The amount of time needed to make a Disable Device check depends on the task. A task of DC 10 or lower takes a full-round action. A task of DC 20 or lower takes 1d4 rounds, a task of DC 30 or lower takes 2d4 rounds, and so on. For every 5 points by which you beat the DC, you reduce the time required by 1 round, to a minimum of a standard action.
+\subsubsection{Special Circumstances}
 
-\parhead{Try Again} Varies. You can retry if you have missed the check by 4 or less, though you must be aware that you have failed in order to try again. Retrying after failing by 5 or more is not always possible. if it is possible, it is harder, and the DC increases by at least 5.
+You can attempt to leave no trace of your tampering while making a Devices check to activate or subvert a device. This increases the Devices DC by 5, but increases the Perception DC to notice the tampering by 10.
 
-\begin{figure*}[hbt!]
-\subsection{Other Ways to Beat a Trap}
-It's possible to ruin many traps without making a Disable Device check.
-\parhead{Ranged Attack Traps} Once a trap's location is known, the obvious way to ruin it is to smash the mechanism -- assuming the mechanism can be accessed. Failing that, it's possible to plug up the holes from which the projectiles emerge. Doing this prevents the trap from firing unless its ammunition does enough damage to break through the plugs.
-
-\parhead{Melee Attack Traps} These devices can be thwarted by smashing the mechanism or blocking the weapons, as noted above. Alternatively, if a character studies the trap as it triggers, he might be able to time his dodges just right to avoid damage.
-
-\parhead{Pits} Disabling a pit trap generally ruins only the trapdoor, making it an uncovered pit. Filling in the pit or building a makeshift bridge across it is an application of manual labor, not the Disable Device skill. Characters could neutralize any spikes at the bottom of a pit by attacking them -- they break just as daggers do.
-
-\parhead{Magic Traps} \spell{Dispel magic} and similar spells help here. Someone who succeeds on a caster level check against the level of the trap's creator suppresses the trap for 1d4 rounds. This works only with a targeted \spell{dispel magic}, not the area version (see the spell description).
-\end{figure*}
+When dealing with traps, you are always considered to be ``threatened'' by the trap, preventing you from taking 10.
 
 \subsection{Disguise (Int)}
 \parhead{Check} A Disguise check allows you to change the appearance of a creature using makeup, costumes, and so forth. It is opposed by the Perception skill; a Spot check higher than your Disguise check will reveal the disguise. The effectiveness of a disguise depends in part on how much you're attempting to change the creature's appearance, as shown on the table below. The modifiers are cumulative; use any that apply.
