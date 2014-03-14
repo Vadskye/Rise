@@ -42,7 +42,7 @@ Skill feats always affect a character's ability to use skills. Rogues can gain s
 \subsection{Performance Feats}
 Performance feats allow a character to use the Perform skill to create magical effects. All Performance feats are also Skill feats.
 
-Each performance has an effect when it is used. Some performances can also be sustained. While you are sustaining a performance, you cannot cast spells, activate magic items by spell completion (such as scrolls), or activate magic items by magic word (such as wands). You can sustain a performance for a number of minutes equal to 5 \add your Constitution before you must stop performing. 
+Each performance has an effect when it is used. Some performances can also be sustained. While you are sustaining a performance, you take a \minus5 penlaty to other Perform checks you make. You also cannot cast spells, activate magic items by spell completion (such as scrolls), or activate magic items by magic word (such as wands) while sustaining a performance. You can sustain a performance for a number of minutes equal to 5 \add your Constitution before you must stop performing.
 
 To be affected by a performance feat, a creature must be able to either see or hear the creature giving the performance, depending on whether the performance is visual or auditory. The Perform skill being used determines whether the performance is visual or auditory. 
 
@@ -197,6 +197,25 @@ Track  & \x &  Use Survival skill to track \\
 Veteran's Knowledge & Base attack bonus \plus8 & Identify monsters without Knowledge \\
 \end{tabularx}
 1 You can gain this feat multiple times. Its effects do not stack. Each time you take the feat, it has a different effect. \\
+\end{dtable!*}
+
+\begin{dtable!*}
+\lcaption{Performance Feats}
+\begin{tabularx}{\textwidth}{>{\lcol}p{15em} >{\lcol}p{15em} >{\lcol}X}
+\thead{Performance Feats} & \thead{Prerequisites} & \thead{Benefit} \\
+Dual Performance & Perform 14 ranks, any three Performance feats & Sustain two performances at once \\
+Fascinating Performance & Perform 4 ranks & Fascinate group of creatures \\
+\tind Suggestive Performance & Perform 10 ranks, Fascinating Performance & Suggest action to fascinated creatures \\
+Freeing Performance & Perform 12 ranks  & Dispel magical effects on ally \\
+Inspire Competence & Perform 4 ranks  & Grant allies bonuses to skill checks \\
+Inspire Courage & Perform 6 ranks  & Grant allies bonuses to attack rolls and saves against fear \\
+Inspire Greatness & Perform 12 ranks  & Grant allies bonuses to saving throws and AC \\
+Inspire Heroics & Perform 18 ranks  & Grant allies temporary hit points and extra attack \\
+Inspire Spellpower & Perform 8 ranks  & Grant allies bonus to caster level \\
+Rapid Performance & Perform 14 ranks, any three Performance feats & Perform as a swift action \\
+Recover Performance & Perform 8 ranks, any other Performance feat & Reroll failed performance attempt \\
+Spellwoven Performance & Perform 8 ranks, any other Performance feat & Cast some spells while performing \\
+\end{tabularx}
 \end{dtable!*}
 
 \begin{dtable!*}
@@ -721,11 +740,15 @@ If you fail a Survival check, you can retry after 1 hour (outdoors) or 10 minute
 
 \subsection{Performance Feats}
 
+\subsubsection{Dual Performance [Performance, Skill]}
+\featpres Perform 14 ranks, any three Performance feats.
+\featben You can sustain two performances as part of the same swift action. You take a \minus10 penalty to other Perform checks while sustaining two performances at once.
+
 \subsubsection{Fascinating Performance [Performance, Skill]}
 \featpre Perform 4 ranks.
-\featben As a standard action, you can make a DC 8 Perform check to fascinate a creature within \rngmed range of you. It can make a Will save against your Perform check to resist the effect. You can sustain the performance as a standard action.
+\featben As a standard action, you can make a DC 8 Perform check to fascinate creatures within \rngmed range of you. You can affect one creature per Perform rank you have. An affected creature can make a Will save against your Perform check to resist the effect. You can sustain the performance as a standard action.
 
-An affected creature is sits quietly and observes your performance, taking no other actions, for as long as you play. While fascinated, it takes a \minus4 penalty on checks made as reactions, such as Perception checks and initiative checks. Any potential threat allows the creature a new saving throw.Any obvious threat, such as someone drawing a weapon, casting a spell, or aiming a ranged weapon at the target, automatically breaks the effect. You can affect an additional creature at 8 Perform ranks and every 4 perform ranks thereafter.
+A fascinated creature is sits quietly and observes your performance, taking no other actions, for as long as you play. While fascinated, it takes a \minus4 penalty on checks made as reactions, such as Perception checks and initiative checks. Any potential threat allows the creature a new saving throw.Any obvious threat, such as someone drawing a weapon, casting a spell, or aiming a ranged weapon at the target, automatically breaks the effect.
 
 You can use any combination of performance feats you possess a number of times per day equal to the number of performance feats you have \add half your Charisma. If you fail the Perform check, the use of the ability is wasted. This is an enchantment (compulsion), mind-affecting ability.
 
@@ -737,43 +760,49 @@ You can use any combination of performance feats you possess a number of times p
 
 \subsubsection{Inspire Competence [Performance, Skill]}
 \featpre Perform 4 ranks.
-\featben As a standard action, you can make a DC 8 Perform check to inspire competence in any ally within \rngmed range of you, including yourself. The affected creature gains a \plus2 enhancement bonus on skill checks made with a particular skill. This bonus increases by 1 at 8 Perform ranks and every 5 Perform ranks thereafter. You can sustain the performance as a swift action.
+\featben As a standard action, you can make a DC 8 Perform check to inspire competence in allies within \rngmed range of you. You can affect one creature per two Perform ranks you have. You cannot affect yourself with this performance. An affected creature gains a \plus2 enhancement bonus on skill checks made with a particular skill. This bonus increases by 1 at 8 Perform ranks and every 6 Perform ranks thereafter. You can sustain the performance as a swift action.
 
 You can use any combination of performance feats you possess a number of times per day equal to the number of performance feats you have \add half your Charisma. If you fail the Perform check, the use of the ability is wasted. This is a mind-affecting ability.
 
 \subsubsection{Inspire Courage [Performance, Skill]}
 \featpre Perform 6 ranks.
-\featben As a standard action, you can make a DC 12 Perform check to inspire courage in up to five allies within \rngmed range of you, including yourself. All affected creatures gain a \plus2 enhancement bonus on attack rolls and saving throws against fear. This bonus increases by 1 at 10 Perform ranks and every 4 Perform ranks thereafter. You can sustain the performance as a swift action. 
+\featben As a standard action, you can make a DC 12 Perform check to inspire courage in allies within \rngmed range of you, including yourself. You can affect one creature per two Perform ranks you have. An affected creatures gains a \plus2 enhancement bonus on attack rolls and saving throws against fear. This bonus increases by 1 at 8 Perform ranks and every 6 Perform ranks thereafter. You can sustain the performance as a swift action. 
 
 You can use any combination of performance feats you possess a number of times per day equal to the number of performance feats you have \add half your Charisma. If you fail the Perform check, the use of the ability is wasted. This is a mind-affecting ability.
 
 \subsubsection{Inspire Greatness [Performance, Skill]}
-\featpre Perform 14 ranks.
-\featben As a standard action, you can make a DC 24 Perform check to inspire greatness in up to five allies within \rngmed range of you, including yourself. All affected creatures gain a \plus3 enhancement bonus to saving throws and dodge modifier. This bonus increases by 1 at 16 Perform ranks and every 4 Perform ranks thereafter. 
+\featpre Perform 12 ranks.
+\featben As a standard action, you can make a DC 24 Perform check to inspire greatness in allies within \rngmed range of you, including yourself. You can affect one creature per two Perform ranks you have. The affected creatures gain a \plus4 enhancement bonus to saving throws and dodge modifier. This bonus increases to \plus5 at 20 Perform ranks.
 
 You can use any combination of performance feats you possess a number of times per day equal to the number of performance feats you have \add half your Charisma. If you fail the Perform check, the use of the ability is wasted. This is a mind-affecting ability.
 
 \subsubsection{Inspire Heroics [Performance, Skill]}
 \featpre Perform 18 ranks.
-\featben As a standard action, you can make a DC 32 Perform check to inspire heroics in up to five allies within \rngmed range of you, including yourself. All affected creatures gain temporary hit points equal to your check result and can take an extra attack at a \minus5 penalty when making a full attack. This extra attack is not cumulative with similar effects. You can sustain the performance as a swift action.
+\featben As a standard action, you can make a DC 32 Perform check to inspire heroics in allies within \rngmed range of you, including yourself. You can affect one creature per two Perform ranks you have. All affected creatures gain temporary hit points equal to your check result and can take an extra attack at a \minus5 penalty when making a full attack. This extra attack is not cumulative with similar effects. You can sustain the performance as a swift action.
 
 \subsubsection{Inspire Spellpower [Performance, Skill]}
 \featpre Perform 8 ranks.
-\featben As a standard action, you can make a DC 16 Perform check to inspire spellpower in up to five allies within \rngmed range of you, including yourself. All affected creatures gain a \plus1 enhancement bonus to their caster level with spells and spell-like abilities. This bonus increases by 1 at 12 Perform ranks and every 4 Perform ranks thereafter. You can sustain the performance as a swift action.
+\featben As a standard action, you can make a DC 16 Perform check to inspire spellpower in allies within \rngmed range of you, including yourself. You can affect one creature per two Perform ranks you have. All affected creatures gain a \plus3 enhancement bonus to their caster level with spells and spell-like abilities. This bonus increases by 1 at 14 Perform ranks and every 6 Perform ranks thereafter. You can sustain the performance as a swift action.
 
 You can use any combination of performance feats you possess a number of times per day equal to the number of performance feats you have \add half your Charisma. If you fail the Perform check, the use of the ability is wasted.
 
 \subsubsection{Rapid Performance [Performance, Skill]}
-\featpre Perform 12 ranks, any three Performance feats.
-\featben You can use performance feats as a swift action by taking a \minus5 penalty on the Perform check to activate the ability.
+\featpre Perform 14 ranks, any three Performance feats.
+\featben You can use performance feats as a swift action by taking a \minus5 penalty on the Perform check to activate the feat.
 
 \subsubsection{Recover Performance [Performance, Skill]}
 \featpre Perform 8 ranks, any other Performance feat
 \featben If you fail the Perform check to use a Performance feat, you can take a move action to reroll the Perform check. If the initial performance was done with the Rapid Performance feat, you take the same \minus5 penalty on the reroll.
 
+\subsubsection{Spellwoven Performance [Performance, Skill]}
+\featpre Ability to cast spells, Perform 8 ranks, any other Performance feat.
+\featben You can cast enchantment and illusion spells while sustaining a performance. The Spellcraft DC to identify those spells as they are cast increases by 10, as the performance disguises the magic.
+
 \subsubsection{Suggestive Performance [Performance, Skill]}
 \featpre Perform 10 ranks, Fascinating Performance.
-\featben As a swift action, you can make a DC 20 Perform check to suggest an action to a single creature you are currently fascinating with the Fascinating Performance feat. This functions as the \spell{suggestion} spell, with a saving throw DC equal to your Perform check.
+\featben As a swift action, you can make a DC 20 Perform check to suggest an action to a single creature you are currently fascinating with the Fascinating Performance feat. This functions as the \spell{suggestion} spell, with a saving throw DC equal to your Perform check. You can affect an additional creature at 12 Perform ranks and every 2 Perform ranks thereafter.
+
+You can use any combination of performance feats you possess a number of times per day equal to the number of performance feats you have \add half your Charisma. If you fail the Perform check, the use of the ability is wasted.
 
 \subsection{Combat Feats}
 
