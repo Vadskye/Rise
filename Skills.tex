@@ -456,70 +456,35 @@ You can make a Craft check to repair a broken item. This functions like crafting
 You can use the Craft skill for various tasks related to the object of your craft. For example, you could use Craft (woodworking) to sabotage a wagon so it will break at a later time, or Craft (alchemy) to purify spoiled food or ingredients. The DCs of such tasks, and what can be accomplished, can vary widely. In general, the more difficult the task, and the more loosely it is related to the skill, the higher the DC.
 
 \subsection{Creature Handling (Cha; Trained Only)}
-You can handle creatures, teaching them tricks and training them to follow instructions. This skill can only be used with creatures with an Intelligence of \minus5 or lower.
-\parhead{Check} The DC depends on what you are trying to do.
-\begin{dtable}
-\begin{tabularx}{\columnwidth}{>{\lcol}X r}
-\thead{Task}  & \thead{Creature Handling DC} \\
-Handle a creature  & 10 \\
-``Push'' a creature  & 25 \\
-Teach a creature a trick  & 15 or 20\footnotetemp{1} \\
-Train a creature for a general purpose  & 15 or 20\footnotetemp{1} \\
-Rear a wild creature & 15 \add HD of creature \\
-\end{tabularx}
-1 See the specific trick or purpose below.
-\end{dtable}
-\begin{dtable}
-\begin{tabularx}{\columnwidth}{>{\lcol}X c >{\lcol}X c}
-\thead{General Purpose}  & \thead{DC}  & \thead{General Purpose}  & \thead{DC} \\
-Combat riding  & 20  & Hunting  & 20 \\
-Fighting  & 20  & Performance  & 15 \\
-Guarding  & 20  & Riding  & 15 \\
-Heavy labor & 15 & &
-\end{tabularx}
-\end{dtable}
+You can handle creatures without being able to speak with them, convincing them to do what you want or training them to follow commands. This skill can only be used with creatures with an Intelligence of \minus5 or lower.
 
-\subsk{Handle a Creature} This task involves commanding a creature to perform a task or trick that it knows. If your check succeeds, the creature performs the task or trick on its next action.
+Animals are easier to handle than other kinds of creatures. The DCs listed are for animals; the DC to handle other kinds of creatures are 5 higher.
 
-\subsk{''Push'' a Creature} To push a creature means to get it to perform a task or trick that it doesn't know but is physically capable of performing. This category also covers making a creature perform a forced march or forcing it to hustle for more than 1 hour between sleep cycles. If your check succeeds, the creature performs the task or trick on its next action.
+\subsubsection{Handling Creatures}
+You can use Creature Handling to control a creature's actions. Success indicates it does what you want on its next action. Failure indicates that your action is wasted, and the creature does not listen to you. Exceptional failure may make the creature hostile, depending on the circumstances.
+\parhead{Pacify} As a standard action, you can make a check to pacify a creature. If the creature fails a Will save with a DC equal to your Creature Handling check, it will do nothing for 5 rounds. If it is threatened or damaged, this effect is automatically broken. Actively hostile creatures gain a \plus10 circumstance bonus on this saving throw. If you interfere with an action the creature is trained to perform while it is pacified, such as entering a room it is trained to guard, it receives a new saving throw each round with a \plus10 circumstance bonus.
+\parhead{Perform Trained Action} As a swift action, you can make a DC 10 check convince a creature to perform an action it is trained to perform. Generally, wild animals are not trained in any actions, so this is not effective on them.
+\parhead{Push} As a standard action, you can make a DC 25 check to convince a creature to perform an action it is not trained to perform, but which it is physically capable of performing. This also covers making a creature perform a forced march and similar activities.
 
-\subsk{Teach a Creature a Trick} You can teach a creature a specific trick with one week of work and a successful Creature Handling check against the indicated DC. A creature with an Intelligence score of 1 can learn a maximum of three tricks, while a creature with an Intelligence score of 2 can learn a maximum of six tricks. Possible tricks (and their associated DCs) include, but are not necessarily limited to, the following.
+\subsubsection{Training Creatures}
+If you are trained in Creature Handling, you can use it to train a creature. Success indicates that the creature learns a trick or becomes domesticated. Failure means your time is wasted, and you must try again. Exceptional failure may indicate that the animal becomes unable to learn the trick, becomes hostile, or other consequences depending on the situation. Training a creature takes a week or more; this requires spending at least four hours each day with the creature. It is not generally possible to accelerate the process by spending more time each day; the creature must take time to learn the new behavior. If the training is interrupted for a week or more, the attempt automatically fails.
 
-\par Attack (DC 20): The creature attacks apparent enemies. You may point to a particular creature that you wish the creature to attack, and it will comply if able. Normally, a creature will attack only humanoids, monstrous humanoids, giants, or other creatures. Teaching a creature to attack all creatures (including such unnatural creatures as undead and aberrations) counts as two tricks.
-\par Come (DC 15): The creature comes to you, even if it normally would not do so.
-\par Defend (DC 20): The creature defends you (or is ready to defend you if no threat is present), even without any command being given. Alternatively, you can command the creature to defend a specific other character.
-\par Down (DC 15): The creature breaks off from combat or otherwise backs down. A creature that doesn't know this trick continues to fight until it must flee (due to injury, a fear effect, or the like) or its opponent is defeated.
-\par Fetch (DC 15): The creature goes and gets something. If you do not point out a specific item, the creature fetches some random object.
-\par Guard (DC 20): The creature stays in place and prevents others from approaching.
-\par Heel (DC 15): The creature follows you closely, even to places where it normally wouldn't go.
-\par Perform (DC 15): The creature performs a variety of simple tricks, such as sitting up, rolling over, roaring or barking, and so on.
-\par Seek (DC 15): The creature moves into an area and looks around for anything that is obviously alive or animate.
-\par Stay (DC 15): The creature stays in place, waiting for you to return. It does not challenge other creatures that come by,
-though it still defends itself if it needs to.
-\par Track (DC 20): The creature tracks the scent presented to it. (This requires the creature to have the scent ability)
-\par Work (DC 15): The creature pulls or pushes a medium or heavy load.
+\parhead{Teach a Trick} You can teach a creature a specific trick with one week of work and a successful Creature Handling check against the indicated DC. A creature can learn a number of tricks equal to its Intelligence \add 10. Thus, a creature with an Intelligence of \minus9 can learn a single trick, while a creature with an Intelligence of \minus5 can learn five tricks. Possible tricks (and their associated DCs) include, but are not necessarily limited to, the following.
 
-\subsk{Train a Creature for a Purpose} Rather than teaching a creature individual tricks, you can simply train it for a general purpose. Essentially, a creature's purpose represents a preselected set of known tricks that fit into a common scheme, such as guarding or heavy labor. The creature must meet all the normal prerequisites for all tricks included in the training package. If the package includes more than three tricks, the creature must have an Intelligence score of \minus5.
+\subsk{Attack (DC 20)}: The creature attacks apparent enemies. You may point to a particular creature that you wish the creature to attack, and it will comply if able. Normally, a creature will attack only humanoids, monstrous humanoids, giants, or other creatures. Teaching a creature to attack all creatures (including such unnatural creatures as undead and aberrations) counts as two tricks.
+\subsk{Come (DC 15)}: The creature comes to you, even if it normally would not do so.
+\subsk{Defend (DC 20)}: The creature defends you (or is ready to defend you if no threat is present), even without any command being given. Alternatively, you can command the creature to defend a specific other character.
+\subsk{Down (DC 15)}: The creature breaks off from combat or otherwise backs down. A creature that doesn't know this trick continues to fight until it must flee (due to injury, a fear effect, or the like) or its opponent is defeated.
+\subsk{Fetch (DC 15)}: The creature goes and gets something. If you do not point out a specific item, the creature fetches some random object.
+\subsk{Guard (DC 20)}: The creature stays in place and prevents others from approaching.
+\subsk{Heel (DC 15)}: The creature follows you closely, even to places where it normally wouldn't go.
+\subsk{Perform (DC 15)}: The creature performs a variety of simple tricks, such as sitting up, rolling over, roaring or barking, and so on.
+\subsk{Seek (DC 15)}: The creature moves into an area and looks around for anything that is obviously alive or animate.
+\subsk{Stay (DC 15)}: The creature stays in place, waiting for you to return. It does not challenge other creatures that come by, though it still defends itself if it needs to.
+\subsk{Track (DC 20)}: The creature tracks the scent presented to it. (This requires the creature to have the scent ability)
+\subsk{Work (DC 15)}: The creature pulls or pushes a medium or heavy load.
 
-A creature can be trained for only one general purpose, though if the creature is capable of learning additional tricks (above and beyond those included in its general purpose), it may do so. Training a creature for a purpose requires fewer checks than teaching individual tricks does, but no less time.
-
-\par Combat Riding (DC 20): A creature trained to bear a rider into combat knows the tricks attack, come, defend, down, guard, and heel. Training a creature for combat riding takes six weeks. You may also ``upgrade'' a creature trained for riding to one trained for combat riding by spending three weeks and making a successful DC 20 Creature Handling check. The new general purpose and tricks completely replace the creature's previous purpose and any tricks it once knew. Warhorses and riding dogs are already trained to bear riders into combat, and they don't require any additional training for this purpose.
-\par Fighting (DC 20): A creature trained to engage in combat knows the tricks attack, down, and stay. Training a creature for fighting takes three weeks.
-\par Guarding (DC 20): A creature trained to guard knows the tricks attack, defend, down, and guard. Training a creature for guarding takes four weeks.
-\par Heavy Labor (DC 15): A creature trained for heavy labor knows the tricks come and work. Training a creature for heavy labor takes two weeks.
-\par Hunting (DC 20): A creature trained for hunting knows the tricks attack, down, fetch, heel, seek, and track. Training a creature for hunting takes six weeks.
-\par Performance (DC 15): A creature trained for performance knows the tricks come, fetch, heel, perform, and stay. Training a creature for performance takes five weeks.
-\par Riding (DC 15): A creature trained to bear a rider knows the tricks come, heel, and stay. Training a creature for riding takes three weeks.
-
-\subsk{Rear a Wild creature} To rear a creature means to raise a wild creature from infancy so that it becomes domesticated. A handler can rear as many as three creatures of the same kind at once. A successfully domesticated creature can be taught tricks at the same time it's being raised, or it can be taught as a domesticated creature later.
-
-\parhead{Action} Varies. Handling a creature is a move action, while pushing a creature is a full-round action. For tasks with specific time frames noted above, you must spend half this time (at the rate of 3 hours per day per creature being handled) working toward completion of the task before you attempt the Creature Handling check. If the check fails, your attempt to teach, rear, or train the creature fails and you need not complete the teaching, rearing, or training time. If the check succeeds, you must invest the remainder of the time to complete the teaching, rearing, or training. If the time is interrupted or the task is not followed through to completion, the attempt to teach, rear, or train the creature automatically fails.
-
-\parhead{Try Again} Yes, except for rearing a creature.
-\parhead{Special} Animals are easier to handle than other kinds of creatures. The DCs listed are for animals; the DC to handle other kinds of creatures are 5 higher.
-
-\parhead{Untrained} If you have no ranks in Creature Handling, you can use a Charisma check to handle and push domestic creatures, but you can't teach, rear, or train creatures.
-
+\parhead{Rear a Wild Creature} To rear a creature means to raise a wild creature from infancy so that it becomes domesticated. The time required depends on the creature in question. The DC for this check is equal to 15 \add the Hit Values of the creature. You can rear as many as three creatures of the same kind at once without penalty. You can rear additional creatures, but you take a cumulative \minus2 penalty to checks you make to rear all of the animals. A successfully domesticated creature can be taught tricks at the same time it's being raised, or it can be taught as a domesticated creature later.
 \subsection{Devices (Int; Trained Only)}
 \parhead{Check} You can attempt to sabotage or manipulate mechanical devices. The DC depends on how complex the device is, and how difficult your intended action is.
 
