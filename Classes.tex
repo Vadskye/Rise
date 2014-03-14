@@ -5,7 +5,6 @@ Your character's class represents the things your character has chosen to train 
 There are eleven classes in Rise.
 \begin{itemize*}
   \item Barbarians are mighty warriors who can enter a deadly battlerage.
-  \item Bards are inspiring jacks-of-all-trades who can cast spells or fight while using their bardic music to help their allies.
   \item Clerics are divine spellcasters who draw power from their veneration of a deity or ideal.
   \item Druids are divine spellcasters who draw power from their veneration of nature.
   \item Fighters are highly disciplined warriors who excel in physical combat of any variety.
@@ -202,22 +201,8 @@ world terms, be attracted to the class that most suits his or her
 talents or for which he or she is best qualified).
 \end{cp}
 \parhead{Alignment} A few classes restrict a character's possible alignments.
-\begin{cp}%
-For example, a bard must have a nonlawful alignment.
-\end{cp}
 An entry of ``Any'' means that characters of this class are not restricted in alignment.
  \parhead{Hit Value} The number of hit points the class gets at each level.
-
-\begin{dtable}
-\lcaption{Hit Values By Class}
-    \begin{tabularx}{\columnwidth}{l >{\lcol}X}
-        \thead{HV} & \thead{Class}                             \\
-        4      & Sorcerer, wizard                  \\
-        5      & Bard, cleric, druid, monk, rogue \\
-        6     & Fighter, paladin, ranger          \\
-        7     & Barbarian                        
-    \end{tabularx}
-\end{dtable}
 
 A character gets a number of hit points based on his class at
 each level, adds any Constitution to that number,
@@ -264,7 +249,7 @@ character's Constitution also applies.
 can cast each day. If the entry is ``\x'' for a given level of spells, the
 character may not cast any spells of that level.
 (Bonus spells for wizards are based on Intelligence, bonus spells for
-clerics, druids, and rangers are based on Wisdom, and bonus spells for sorcerers, bards, and paladins are based off Charisma. See
+clerics, druids, and rangers are based on Wisdom, and bonus spells for sorcerers and paladins are based off Charisma. See
 \trefcp{Attributes and Bonus Spells}.) The character may cast that many spells plus
 any bonus spells each day.
 \end{cp}
@@ -288,7 +273,7 @@ Proficiency,   Tower Shield Proficiency, Weapon Proficiency, or Exotic Weapon Pr
 
 \subparhead{Magic Level} Each level that a character gains in a class that provides spells increases that character's magic level. A character's magic level in a particular class is what determines how many spells per day and spells known the character has. Multiclass characters gain a special benefit to their magic level (see \pref{Multiclass Characters}).
 
-\subparhead{Spells} Wizards, sorcerers, clerics, druids, and bards use spells.
+\subparhead{Spells} Wizards, sorcerers, clerics, and druids use spells.
 Fighters, barbarians, rogues, and monks do not. Paladins and rangers
 gain the ability to use spells at 4th level; at that point, their magic level becomes equal to their class level.
 
@@ -449,178 +434,6 @@ If a barbarian already has uncanny dodge from a different class, he stacks those
 A barbarian who becomes lawful loses the ability to rage and cannot
 gain more levels as a barbarian. He retains all the other benefits of
 the class.
-
- \subsection{Bard}
-\begin{dtable*}
-\lcaption{The Bard}
-\begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecolpoof}} >{\lcol}X *{6}{>{\ccol}p{\spellcol}}}
-& & & & & & \multicolumn{6}{c}{\thead{---{}---{}---Spells per Day---{}---{}---}} \\
-\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} & \thead{5th} & \thead{6th} \\
-1st & \plus0 & \plus1 & \plus1 & \plus1 & Bardic music (standard), bardic knowledge, countersong, fascinate & \x & \x & \x & \x & \x & \x \\
-2nd & \plus1 & \plus2 & \plus2 & \plus2 & Inspire courage 1/round \plus1d6        & 2 & \x & \x & \x & \x & \x \\
-3rd & \plus2 & \plus3 & \plus3 & \plus3 & Inspire competence            & 3 & \x & \x & \x & \x & \x \\
-4th & \plus3 & \plus4 & \plus4 & \plus4 & \x                    & 3 & \x & \x & \x & \x & \x \\
-5th & \plus3 & \plus4 & \plus4 & \plus4 & Inspire spellpower & 4 & 2 & \x & \x & \x & \x \\
-6th & \plus4 & \plus5 & \plus5 & \plus5 & Bardic music (move), inspire courage 2/round         & 4 & 3 & \x & \x & \x & \x \\
-7th & \plus5 & \plus6 & \plus6 & \plus6 & Suggestion      & 4 & 3 & 1 & \x & \x & \x \\
-8th & \plus6/\plus1 & \plus7 & \plus7 & \plus7 & Inspire courage \plus1d8, lyrical freedom   & 4 & 4 & 2 & \x & \x & \x \\
-9th & \plus6/\plus1 & \plus7 & \plus7 & \plus7 & Inspire greatness        & 4 & 4 & 3 & \x & \x & \x \\
-10th & \plus7/\plus2 & \plus8 & \plus8 & \plus8 & Combine songs & 4 & 4 & 3 & 1 & \x & \x \\
-11th & \plus8/\plus3 & \plus9 & \plus9 & \plus9 & Inspire courage 3/round, song of freedom  & 4 & 4 & 4 & 2 & \x & \x \\
-12th & \plus9/\plus4 & \plus10& \plus10 & \plus10& Bardic music (swift)  & 4 & 4 & 4 & 3 & \x & \x \\
-13th & \plus9/\plus4 & \plus10& \plus10 & \plus10& Inspire heroics       & 4 & 4 & 4 & 3 & 1 & \x \\
-14th & \plus10/\plus5 & \plus11& \plus11 & \plus11& Inspire courage \plus1d10 & 4 & 4 & 4 & 4 & 2 & \x \\
-15th & \plus11/\plus6/\plus1 & \plus12& \plus12 & \plus12& Improved countersong    & 5 & 4 & 4 & 4 & 3 & \x \\
-16th & \plus12/\plus7/\plus2 & \plus13& \plus13 & \plus13& Inspire courage 4/round            & 5 & 5 & 4 & 4 & 3 & 1 \\
-17th & \plus12/\plus7/\plus2 & \plus13& \plus13 & \plus13& Mass suggestion & 5 & 5 & 5 & 4 & 4 & 2 \\
-18th & \plus13/\plus8/\plus3 & \plus14& \plus14 & \plus14& Song of life & 5 & 5 & 5 & 5 & 4 & 3 \\
-19th & \plus14/\plus9/\plus4 & \plus15& \plus15 & \plus15& Song of death  & 5 & 5 & 5 & 5 & 5 & 4 \\
-20th & \plus15/\plus10/\plus5 & \plus16 & \plus16 & \plus16 & Inspire courage \plus2d6 & 5 & 5 & 5 & 5 & 5 & 5
-\end{tabularx}
-\end{dtable*}
-\cd{Alignment} Any nonlawful.
-
-\cd{Hit Value} 5.
-
-\sssecfake{Class Skills}
-The bard's class skills (and the key attribute for each skill) are Sleight of Hand (Dex), Forgery (Int), Knowledge (all skills, taken individually) (Int), Linguistics (Int), Perception (Wis), Sense Motive (Wis), Spellcraft (Wis), Bluff (Cha), Persuasion (Cha), Disguise (Cha), and Perform (Cha).
-\cf{Brd}{Skill Points at 1st Level} 8.
-
-\sssecfake{Class Features}
-
-All of the following are class features of the bard.
-
- \cf{Brd}{Weapon and Armor Proficiency}  Bards are proficient with simple weapons,   any two other weapon groups,  light armor, medium armor, and shields (except tower shields).  They are also proficient with rapiers.
-
-\par A bard can cast bard spells while wearing light or medium armor without incurring the normal arcane spell failure chance. However, like any other arcane spellcaster, a bard wearing heavy armor or using a shield incurs a chance of arcane spell failure if the spell in question has a somatic component (most do). A multiclass bard still incurs the normal arcane spell failure chance for arcane spells received from other classes.
-
-\cf{Brd}{Spells} A bard casts arcane spells, which are drawn from the bard spell list. He can cast any spell he knows without preparing it ahead of time. Every bard spell has a verbal component (singing, reciting, or music). To learn or cast a spell, a bard must have a Charisma score at least equal to the level of the spell. The Difficulty Class for a saving throw against a bard's spell is 10 \add 1/2 the bard's caster level \add the bard's Charisma.
-
-Like other spellcasters, a bard can cast only a certain number of spells of each spell level per day. His base daily spell allotment is given on \trefnp{The Bard}.
-
-The bard's selection of spells is extremely limited. A bard begins play knowing four 0-level spells of his choice. At most new bard levels, he gains one or more new spells, as indicated on \trefnp{Bard Spells Known}.
-
-At every bard level, a bard can choose to learn a new spell in place of one he already knows. In effect, the bard ``loses'' the old spell in exchange for the new one. The new spell's level must be the same as that of the spell being exchanged, and it must be at least two levels lower than the highest-level bard spell the bard can cast. A bard may swap only a single spell at any given level, and must choose whether or not to swap the spell at the same time that he gains new spells known for the level.
-
-As noted above, a bard need not prepare his spells in advance. He can cast any spell he knows at any time, assuming he has not yet used up his allotment of spells per day for the spell's level.
-
- \par A bard may use a higher-level slot to cast a lower-level spell if he so chooses. For example, if an 8th-level bard has used up all his 2nd-level spell slots for the day but wanted to cast another one, he could use a 3rd-level slot to do so. The spell is still treated as its actual level, not the level of the slot used to cast it.
-
-A bard's magic level is equal to his bard level.
-\begin{dtable}
-\lcaption{Bard Spells Known}
-\begin{tabularx}{\columnwidth}{>{\centering}X *{6}{>{\ccol}p{\spellcolpoof}}}
-& \multicolumn{6}{c}{\thead{---{}---{}---{}---{}---Spells Known---{}---{}---{}---{}---}} \\
-\thead{Level} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} & \thead{5th} & \thead{6th} \\
-1st  & \x & \x & \x & \x & \x & \x \\
-2nd  & 1 & \x & \x & \x & \x & \x \\
-3rd  & 2 & \x & \x & \x & \x & \x \\
-4th  & 3 & \x & \x & \x & \x & \x \\
-5th  & 3 & 1 & \x & \x & \x & \x \\
-6th  & 3 & 2 & \x & \x & \x & \x \\
-7th  & 4 & 3 & \x & \x & \x & \x \\
-8th  & 4 & 3 & 1 & \x & \x & \x \\
-9th  & 4 & 3 & 2 & \x & \x & \x \\
-10th & 4 & 3 & 3 & \x & \x & \x \\
-11th & 4 & 3 & 3 & 1 & \x & \x \\
-12th & 4 & 3 & 3 & 2 & \x & \x \\
-13th & 4 & 3 & 3 & 3 & \x & \x \\
-14th & 4 & 3 & 3 & 3 & 1 & \x \\
-15th & 4 & 3 & 3 & 3 & 2 & \x \\
-16th & 4 & 3 & 3 & 3 & 3 & \x \\
-17th & 4 & 3 & 3 & 3 & 3 & 1 \\
-18th & 4 & 3 & 3 & 3 & 3 & 2 \\
-19th & 4 & 3 & 3 & 3 & 3 & 3 \\
-20th & 4 & 3 & 3 & 3 & 3 & 3 \\
-\end{tabularx}
-\end{dtable}
-
-\cf{Brd}{Bardic Knowledge} A bard may make a special bardic knowledge check with a bonus equal to his bard level \add his Intelligence to see whether he knows some relevant information about local notable people, legendary items, or noteworthy places.
-
-A successful bardic knowledge check will not reveal the powers of a magic item but may give a hint as to its general function. A bard may not take 10 or take 20 on this check; this sort of knowledge is essentially random.
-
-\begin{dtable}
-\begin{tabularx}{\columnwidth}{l X}
-\thead{DC} & \thead{Type of Knowledge} \\
-10  & Common, known by at least a substantial minority drinking; common legends of the local population. \\
-20  & Uncommon but available, known by only a few people legends. \\
-25  & Obscure, known by few, hard to come by. \\
-30  & Extremely obscure, known by very few, possibly forgotten by most who once knew it, possibly known only by those who don't understand the significance of the knowledge.
-\end{tabularx}
-\end{dtable}
-
- \cf{Brd}{Bardic Music}
-%Don't like ``half+half'' formulas
-A number of times per day equal to half the bard's level \add half the bard's Charisma,  a bard can use his song or poetics to produce magical effects on those around him (usually including himself, if desired). While these abilities fall under the category of bardic music and the descriptions discuss singing or playing instruments, they can all be activated by reciting poetry, chanting, singing lyrical songs, singing melodies, whistling, playing an instrument, or playing an instrument in combination with some spoken performance. Each ability requires both a minimum bard level and a minimum number of ranks in the Perform skill to qualify; if a bard does not have the required number of ranks in at least one Perform skill, he does not gain the bardic music ability until he acquires the needed ranks.
-
-\par Starting a bardic music effect is a standard action at 1st level. At 6th level, a bard can start his music as a move action, and at 12th level, a bard can start his music as a swift action. Regardless of the action used, the bard cannot initiate more than one bardic music per round (but see the combine songs ability below).  Some bardic music abilities require concentration, which means the bard must
-take a standard action each round to maintain the ability. Even while using bardic music that doesn't require concentration, a bard cannot cast spells, activate magic items by spell completion (such as scrolls), or activate magic items by magic word (such as wands). Just as for casting a spell with a verbal component, a deaf bard has a 20\% chance to fail when attempting to use bardic music. If he fails, the attempt still counts against his daily limit.
-
-\subcf{Countersong (Su)} A bard with 3 or more ranks in a Perform skill can use his music or poetics to counter magical effects that depend on sound (but not spells that simply have verbal components). Each round of the countersong, he makes a Perform check. Any creature within 30 feet of the bard (including the bard himself) that is affected by a sonic or language-dependent magical attack may use the bard's Perform check result in place of its saving throw if, after the saving throw is rolled, the Perform check result proves to be higher. If a creature within range of the countersong is already under the effect of a noninstantaneous sonic or language-dependent magical attack, it gains another saving throw against the effect each round it hears the countersong, but it must use the bard's Perform check result for the save. Countersong has no effect against effects that don't allow saves. The bard may keep up the countersong for 5 rounds.
-
-\subcf{Fascinate (Sp)} A bard with 3 or more ranks in a Perform skill can
-use his music or poetics to cause nearby creatures to become
-fascinated with him. Each creature to be fascinated must be within
-90 feet, able to see and hear the bard, and able to pay attention to
-him. The bard must also be able to see the creature. The distraction
-of a nearby combat or other dangers prevents the ability from
-working.
-
-\par To use the ability, a bard makes a Perform check. His check result
-is the DC for each affected creature's Will save against the effect. If a
-creature's saving throw succeeds, the bard cannot attempt to
-fascinate that creature again for 24 hours. If its saving throw fails,
-the creature sits quietly and listens to the song, taking no other
-actions, for as long as the bard continues to play and concentrate (up
-to a maximum of 1 round per bard level). While fascinated, a target
-takes a \minus4 penalty on skill checks made as reactions, such as Perception checks. Any potential threat requires the bard to make
-another Perform check and allows the creature a new saving throw
-against a DC equal to the new Perform check result. Any obvious threat, such as someone drawing a weapon, casting a spell, or aiming a ranged weapon at the target, automatically breaks the effect. \spell{Fascinate} is an enchantment (compulsion), mind-affecting ability.  
-\subcf{Inspire Courage (Su)}  A bard of 2nd level or higher with 4 or more ranks in a Perform skill can use song or poetics to inspire courage in his allies (including himself ), bolstering them against fear and improving their combat abilities. To be affected, an ally must be able to hear the bard sing. The effect lasts for as long as the ally hears the bard sing and for 5 rounds thereafter. An affected ally receives a \plus1d6 enhancement bonus on a single attack roll per round. The bard grants the bonus again each round at the beginning of his turn. Each ally may choose which of their attacks receives the bonus, but the choice must be made before the attack is rolled. At 6th, 11th, and 16th level the ally may add gain the bonus on an additional attack in that round. The bonus granted increases to 1d8 at 8th level, 1d10 at 14th level, and 2d6 at 20th level. In addition, this song counters the influence of fear effects just as \emph{countersong} counters the influence of sonic effects. Inspire courage is a mind-affecting ability.
-
- \subcf{Inspire Competence (Su)}  A bard of 3rd level or higher with 6 or more ranks in a Perform skill can use his music or poetics to help an ally succeed at a task. The ally must be within 30 feet and able to see and hear the bard. The bard must also be able to see the ally.
-
-The ally gets a \plus1d6 enhancement bonus on skill checks with a particular skill as long as he or she continues to hear the bard's music. The bonus granted by this ability increases at the same rate as the bonus granted by the inspire courage ability. Certain uses of this ability are infeasible. The effect lasts as long as the bard concentrates, up to a maximum of 2 minutes. A bard can't inspire competence in himself. Inspire competence is a mind-affecting ability.
-
- \subcf{Inspire Spellpower (Su)} A bard of 5th level or higher with 8 or more ranks in
-a Perform skill can use his music or poetics to help his allies (including himself) channel their magical
-energy. All allies who can hear the bard play gain a \plus1 enhancement bonus to their caster level. This bonus increases by \plus1 at 10th, 15th, and 20th level. This bonus lasts as long as the ally hears the bard sing and for 5 rounds afterwards. Inspire spellpower is a mind-affecting ability.
-
- \subcf{Suggestion (Sp)} A bard of 7th level or higher with 10 or more ranks in a Perform skill can make a \spell{suggestion} (as the spell) to a creature
-that he has already fascinated (see above). Using this ability does not
-break the bard's concentration on the \spell{fascinate} effect, nor does it
-allow a second saving throw against the \spell{fascinate} effect. A Will saving throw (DC 10 \add 1/2 bard level \add bard's Cha) negates the effect. This ability affects only a single creature (but see \spell{mass suggestion}, below). \spell{Suggestion} is an enchantment (compulsion), mind-affecting, language dependent ability.
-
- \subcf{Inspire Greatness (Su)} A bard of 9th level or higher with 12 or more ranks
-in a Perform skill can use music or poetics to inspire greatness
-in his allies (including himself), granting them extra fighting capability. To be affected, an ally must be able to hear the bard sing. The effect lasts for as
-long as the ally hears the bard sing and for 5 rounds thereafter. A
-creature inspired with greatness gains twice the bard's level in temporary hit points and can take an extra attack when making a full attack. The attack is made using the creature's full base attack bonus, plus any modifiers appropriate to the situation. This effect is not cumulative with similar effects. Inspire greatness is a mind-affecting ability.
-
-\subcf{Song of Freedom (Sp)} A bard of 11th level or higher with 14 or more ranks in a Perform skill can use music or poetics to create an
-effect equivalent to the \spell{break enchantment} spell (caster level equals
-the character's bard level). Using this ability requires 1 minute of
-uninterrupted concentration and music, and it functions on a single
-target within 30 feet. A bard can't use \spell{song of freedom} on himself.
-
- \subcf{Inspire Heroics (Su)} A bard of 13th level or higher with 16 or more ranks in a Perform skill can use music or poetics to inspire tremendous heroism in himself and all allies who can hear him, allowing them to fight bravely even against overwhelming odds. To inspire heroics, a bard must sing and the allies must hear the bard sing for a full round. A creature so inspired gains a \plus4 enhancement bonus on saving throws and dodge modifier. This bonus increases to \plus5 at 17th level. The effect lasts for as long as the ally hears the bard sing and for up to 5 rounds thereafter. Inspire heroics is a mind-affecting ability.
-
- \subcf{Improved Countersong (Su)} A bard of 15th level or higher with 18 or more ranks in a Perform skill can use music or poetics to free allies from all forms of mental influence.This ability functions as \emph{countersong}, except it protects against all mind-affecting effects.
-
-\subcf{Mass Suggestion (Sp)} This ability functions like \spell{suggestion}, above,
-except that a bard of   17th level or higher with 20 or more ranks in a Perform skill  can make the suggestion simultaneously to any number
-of creatures that he has already fascinated (see above). Mass suggestion
-is an enchantment (compulsion), mind-affecting, language-dependent ability.
-
- \subcf{Song of Life (Su)} A bard of 18th level or higher with 21 or more ranks in a Perform skill can use music or poetics to restore life to a recently fallen ally. A creature to be restored must be within 30 feet of the bard, and sound must be able to travel from the bard to the creature. To use this ability, the bard makes a Perform check as a full-round action against a base DC of 30. The DC increases by 2 for every round that the creature has been dead. If the bard succeeds, the creature is returned to life as if a \spell{raise dead} spell had been cast on them, except that the creature suffers no penalty for having died.
-
-\subcf{Song of Death (Su)} A bard of 19th level with rank 22 or higher in a Perform skill can use music or poetics to cause one enemy to suffer greatly from an overwhelming outburst of joy or sorrow. To be affected, the target must be able to see and hear the bard perform for 1 full round and be within 30 feet. The bard must spend a full-round action performing. The target receives a Will save (DC 10 \add 1/2 the bard's level \add the bard's Cha) to negate the effect. If the creature's saving throw succeeds, it is bewildered for 5 rounds, and the bard cannot use song of death on that creature again for 24 hours. If a creature's saving throw fails, it dies if it is bloodied; otherwise, it is staggered for 5 rounds. Song of death is a mind-affecting death effect.
-
-\cf{Brd}{Lyrical Freedom (Ex)} A bard of 8th level or higher can cast bard spells with verbal components and activate magic items by magic word while maintaining his bardic music ability. He still cannot activate magic items by spell completion.
-
-\cf{Brd}{Combine Songs (Ex)} A bard of 10th level or higher can combine two types of bardic music to provide the benefits of both. The bard chooses two music abilities and activates both using the same action. If either or both require concentration, the bard can maintain concentration on both by using one standard action each round to concentrate. The normal stacking rules apply to music abilities combined with this ability.
-\subsubsection{Ex-Bards}
-A bard who becomes lawful in alignment cannot progress in levels as a bard, though he retains all his bard abilities.
 
 \subsection{Cleric}
 \begin{dtable*}
@@ -1340,7 +1153,7 @@ the feat as a normal feat or bonus feat.
 
 \cf{Ftr}{Improved Armor Discipline} At 7th level, a fighter's training in his chosen armor category (or with all armor categories) improves. He reduces the armor check penalty by 4 and decreases the arcane spell failure by 10\%. In addition, he treats his chosen armor (or armors) as if it were one encumbrance category lighter than it is. This does not stack with the effects of armor discipline.
 \par This ability means heavy armor is treated as medium, medium armor is treated as light armor, and light armor is treated as being unarmored. Likewise, tower shields are treated as heavy shields (and no longer impose a \minus2 penalty to attack rolls), heavy shields are treated as light shields, and both light shields and bucklers are treated as being unarmored. This can remove the halving of the fighter's Dexterity bonus, if appropriate for the new encumbrance of the fighter's armor.
-\par This allows the fighter to qualify for class features using the reduced armor encumbrance category. For example, a fighter 9 / bard 2 who reduces his encumbrance in medium armor could cast without any arcane spell failure in medium armor.
+\par This allows the fighter to qualify for class features using the reduced armor encumbrance category. For example, a fighter 9 / wizard 2 who reduces his encumbrance in light armor could cast without any arcane spell failure in light armor.
 \par A fighter who chose a specific armor category gains a \plus2 competence bonus to his dodge modifier while using armor of that category.
 
 \cf{Ftr}{Improved Weapon Discipline} At 9th level, a fighter's training in his chosen weapons improves. He gains a \plus4 competence bonus to resist disarm and sunder attempts when using his chosen weapons. If he chose a specific weapon group, he gains a \plus2 competence bonus to attack rolls with weapons from that group. If he did not, he can apply all weapon group-specific feats he has to any weapon group that he trains with for 8 hours. He retains this benefit for one week after the training.
@@ -2507,8 +2320,6 @@ Wizards and sorcerers do not know how to wear armor effectively.
 If desired, they can wear armor anyway (though they'll be clumsy in it), or they can gain training in the proper use of armor (with the various Armor Proficiency feats -- light, medium, and heavy -- and the Shield Proficiency feat), or they can multiclass to add a class that grants them armor proficiency. Even if a wizard or sorcerer is wearing armor with which he or she is proficient, however, it might still interfere with spellcasting.
 
 Armor restricts the complicated gestures that a wizards or sorcerer must make while casting any spell that has a somatic component (most do). The armor and shield descriptions list the arcane spell failure chance for different armors and shields.
-
-By contrast, bards not only know how to wear light and medium armor effectively, but they can also ignore the arcane spell failure chance for such armor. A bard wearing armor heavier than light or using any type of shield incurs the normal arcane spell failure chance, even if he becomes proficient with that armor.
 
 If a spell doesn't have a somatic component, an arcane spellcaster can cast it with no problem while wearing armor. Such spells can also be cast even if the caster's hands are bound or if he or she is grappling (although Concentration checks still apply normally). Also, the metamagic feat Still Spell allows a spellcaster to cast a spell at one spell level higher than normal without the somatic component. This also provides a way to cast a spell while wearing armor without risking arcane spell failure.
 
