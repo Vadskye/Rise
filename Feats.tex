@@ -121,12 +121,9 @@ Combat Casting  & \x &  \plus2 bonus on Concentration checks to cast spells, rer
 Endurance & Con 3 & Convert damage to nonlethal damage \\
 Deathless & Con 5 or base Fortitude save \plus10 & Immune to death effects \\
 Diehard & Con 3 & Remain conscious after taking critical damage \\
-%Eschew Materials  & \x &  Cast spells without material components \\
-%Force of Intellect & \x & Use Int and half Cha for Will saves \\
 Fearless & Cha 5 or base Will save \plus10 & Immune to fear and hostile morale effects \\
 Great Fortitude  & \x &  \plus2 bonus on Fortitude saves, reroll 1/day \\
 Improved Counterspell  & \x &  Counterspell with spell of same school \\
-%Intuitive Reflexes & \x & Use Wis and half Dex for Reflex saves \\
 Iron Will  & \x &  \plus2 bonus on Will saves, reroll 1/day \\
 Lightning Reflexes  & \x &  \plus2 bonus on Reflex saves, reroll 1/day \\
 Magical Synthesis & Levels in two magical classes & Gain magic levels in two magical classes at once \\
@@ -156,9 +153,9 @@ Extra Channeling & Ability to channel energy & Can turn or rebuke 3 more times p
 Extra Invocation & Ability to use an arcane invocation & Learn a new arcane invocation \\
 Extra Rage & Ability to rage & Can rage 1 more time per day\\
 Extra Smiting\fn{1} & Ability to smite & Can smite 3 more times per day \\
-Extra Stunning & Stunning Fist & Can use stunning fist 3 more times per day \\
 Extra Wild Aspect & Wild aspect & Can use wild aspects 3 more times per day \\
 Improved Channeling & Channel energy 3d6 & \plus2 level when channeling energy \\
+Mental Discipline & Ability to use combat discipline & Use Charisma for combat discipline \\
 Selective Channeling & Ability to channel energy & Can exclude two additional creatures \\
 \end{tabularx}
 \end{dtable!*}
@@ -277,6 +274,7 @@ Improved Unarmed Strike & \x &  Considered armed even when unarmed & \x \\
 \tind Deflect Arrows & Dex 3, Improved Unarmed Strike & Deflect one ranged attacks with your bare hands & Defense, Reaction \\
 \tind \tind Snatch Arrows & Dex 5, Deflect Arrows, Improved Unarmed Strike & Catch a deflected ranged attack & Defense, Reaction \\
 \tind Stunning Fist & Dex 3, Wis 3, Improved Unarmed Strike, base attack bonus \plus4 & Stun opponent with unarmed strike & Precision, Strike \\
+\tind \tind Extra Stunning & Stunning Fist & Can use stunning fist 3 more times per day & \x \\
 Inescapable Bulwark of Defense & Base attack bonus \plus8, Bulwark of Defense & Enemies cannot avoid provoking attacks of opportunity & Reaction, Style \\
 Intimidating Strike & Base attack bonus \plus4, Intimidate 8 ranks & Attack lets you intimidate struck foe & Strike \\
 Killing Blow & Base attack bonus \plus16 & Attack kills bloodied foe & Strike \\
@@ -428,12 +426,17 @@ Here is the format for feat descriptions.
 \featpre Proficiency with light armor
 \featben You reduce your chance of arcane spell failure from wearing armor by 10\%. 
 
-\subsubsection{Bardic Spellpower [General]}
-\featpre Ability to cast arcane spells
-\featben You can treat your fighter and rogue levels as magical classes when determining your caster level with enchantment and illusion arcane spells.
 
 \subsubsection{Combat Casting [General]}
 \parhead{Benefit} You get a \plus2 competence bonus on Concentration checks made to cast a spell or use a spell-like ability. In addition, once per day you may reroll a Concentration check made to cast a spell.
+
+\subsubsection{Endurance [General]}
+\featpre Con 3
+\parhead{Benefit} You convert the first two points of damage you take each round into nonlethal damage. You resist 1 additional point of damage per two levels. In addition, you may sleep in light or medium armor without becoming fatigued.
+
+This resistance is considered damage reduction for the purpose of abilities which overcome damage reduction. However, it is a separate ability, so it stacks with damage reduction.
+\parhead{Normal} A character without this feat who sleeps in medium or heavier armor is automatically fatigued the next day.
+\parhead{Special} A barbarian automatically gains Endurance as a bonus feat at 3rd level. He need not select it.
 
 \subsubsection{Deathless [General]}
 \featpre Constitution 5 or base Fortitude save \plus10.
@@ -449,32 +452,6 @@ Here is the format for feat descriptions.
 \parhead{Prerequisite} Ability to rage.
 \parhead{Benefit} Your rage lasts for five extra rounds.
 
-\subsubsection{Extra Channeling [General]}
-\parhead{Prerequisite} Ability to channel energy
-\parhead{Benefit} You can channel energy three more times per day. 
-\parhead{Normal} Without this feat, a character can channel energy a number of times per day equal to 3 \add half his or her Charisma.
-
-\subsubsection{Extra Invocation [General]}
-\parhead{Prerequisite} Ability to use an arcane invocation.
-\parhead{Benefit} You learn a new arcane invocation. You cannot learn invocations from your prohibited schools, if any, with this feat.
-
-\subsubsection{Extra Rage [General]}
-\parhead{Prerequisite} Ability to rage.
-\parhead{Benefit} You can rage one more time per day.
-
-\subsubsection{Extra Smiting [General]}
-\parhead{Prerequisite} Smite ability.
-\parhead{Benefit} You can smite three more times per day. If you have more than one smite ability, you choose which ability this applies to.
-\parhead{Special} You can take more this once if you have more than one smite ability. Its effects do not stack. Each time you take the feat, you choose a different smite ability you have and apply the effects to that ability.
-
-\subsubsection{Extra Stunning [General]}
-\parhead{Prerequisite} Stunning Fist
-\parhead{Benefit} You gain three extra uses of your Stunning Fist ability.
-
-\subsubsection{Extra Wild Aspect [General]}
-\parhead{Prerequisite} Wild aspect ability.
-\parhead{Benefit} You gain three extra uses of your wild aspect ability.
-
 \subsubsection{Fearless [General]}
 \featpre Charisma 5 or base Will save \plus10.
 \featben You are immune to fear effects and hostile morale effects.
@@ -489,10 +466,6 @@ Here is the format for feat descriptions.
 \subsubsection{Improved Counterspell [General]}
 \parhead{Benefit} When counterspelling, you may use any spell of the same school with a spell level at least as high as the target spell.
 \parhead{Normal} Without this feat, you may counter a spell only with the same spell or with a spell specifically designated as countering the target spell.
-
-\subsubsection{Improved Channeling [General]}
-\parhead{Prerequisite} Channel energy 3d6.
-\parhead{Benefit} You gain a \plus2 competence bonus to your effective cleric level when channeling energy.
 
 \subsubsection{Iron Will [General]}
 \parhead{Benefit} You get a \plus2 competence bonus on all Will saving throws. Once per day, you may reroll a Will save. You must decide to use this ability before the results are revealed. You must take the second roll, even if it is worse.
@@ -515,11 +488,6 @@ Here is the format for feat descriptions.
 
 \subsubsection{Lightning Reflexes [General]}
 \parhead{Benefit} You get a \plus2 competence bonus on all Reflex saving throws. Once per day, you may reroll a Reflex save. You must decide to use this ability before the results are revealed. You must take the second roll, even if it is worse.
-
-\subsubsection{Magical Synthesis [General]}
-Choose two magical classes you possess.
-\parhead{Prerequisites} Levels in two magical classes.
-\parhead{Benefit} When gaining levels in either of your chosen classes, you gain magic levels in the other class as if the class you are gaining levels in did not progress your magic level. See \pcref{Magic Level and Multiclassing}.
 
 \subsubsection{Mental Fortress [General]}
 \featpre Charisma 9 or base Will save \plus18.
@@ -547,11 +515,6 @@ Choose two magical classes you possess.
 \parhead{Prerequisites} Spellcraft 8 ranks, ability to cast spells
 \parhead{Benefit} You can perform rituals in half the normal time. In addition, you gain a \plus3 competence bonus to checks made to perform rituals.
 \parhead{Special} At 1st level, a wizard gets Ritual Master as a bonus feat, even if she does not have the prerequisites.
-
-\subsubsection{Selective Channeling [General]}
-\parhead{Prerequisites} Ability to channel energy.
-\parhead{Benefit} You can exclude up to two additional creatures from the effect when you channel energy.
-\parhead{Normal} Without this feat, you can exclude a number of creatures from the effect equal to 1 \add half your Wisdom.
 
 \subsubsection{Spell Focus [General]}
 Choose a school of magic or a spell descriptor.
@@ -599,6 +562,51 @@ Choose a school of magic or a spell descriptor to which you already have applied
 \subsubsection{Stonecunning [Racial]}
 \parhead{Prerequisite} Dwarf
 \parhead{Benefit} You gain a \plus2 competence bonus to Craft and Perception checks related to stone or metal. In addition, if you come within 10 feet of unusual stonework, you can make a Perception check to notice it as if you were actively searching. Finally, you can also intuit depth, sensing your approximate depth underground as naturally as a human can sense which way is up.
+
+\subsection{Class Feats}
+\subsubsection{Bardic Spellpower [Class]}
+\featpre Ability to cast arcane spells
+\featben You can treat your fighter and rogue levels as magical classes when determining your caster level with enchantment and illusion arcane spells.
+
+\subsubsection{Extra Channeling [Class]}
+\parhead{Prerequisite} Ability to channel energy
+\parhead{Benefit} You can channel energy three more times per day. 
+\parhead{Normal} Without this feat, a character can channel energy a number of times per day equal to 3 \add half his or her Charisma.
+
+\subsubsection{Extra Invocation [Class]}
+\parhead{Prerequisite} Ability to use an arcane invocation.
+\parhead{Benefit} You learn a new arcane invocation. You cannot learn invocations from your prohibited schools, if any, with this feat.
+
+\subsubsection{Extra Rage [Class]}
+\parhead{Prerequisite} Ability to rage.
+\parhead{Benefit} You can rage one more time per day.
+
+\subsubsection{Extra Smiting [Class]}
+\parhead{Prerequisite} Smite ability.
+\parhead{Benefit} You can smite three more times per day. If you have more than one smite ability, you choose which ability this applies to.
+\parhead{Special} You can take more this once if you have more than one smite ability. Its effects do not stack. Each time you take the feat, you choose a different smite ability you have and apply the effects to that ability.
+
+\subsubsection{Extra Wild Aspect [Class]}
+\parhead{Prerequisite} Wild aspect ability.
+\parhead{Benefit} You gain three extra uses of your wild aspect ability.
+
+\subsubsection{Improved Channeling [Class]}
+\parhead{Prerequisite} Channel energy 3d6.
+\parhead{Benefit} You gain a \plus2 competence bonus to your effective cleric level when channeling energy.
+
+\subsubsection{Magical Synthesis [Class]}
+Choose two magical classes you possess.
+\parhead{Prerequisites} Levels in two magical classes.
+\parhead{Benefit} When gaining levels in either of your chosen classes, you gain magic levels in the other class as if the class you are gaining levels in did not progress your magic level. See \pcref{Magic Level and Multiclassing}.
+
+\subsubsection{Mental Discipline [Class]}
+\featpre Combat discipline class feature.
+\featben You may use your Charisma in place of your Constitution to determine the number of times per day you can use your combat discipline ability. 
+
+\subsubsection{Selective Channeling [Class]}
+\parhead{Prerequisites} Ability to channel energy.
+\parhead{Benefit} You can exclude up to two additional creatures from the effect when you channel energy.
+\parhead{Normal} Without this feat, you can exclude a number of creatures from the effect equal to 1 \add half your Wisdom.
 
 \subsection{Skill Feats}
 
@@ -914,14 +922,6 @@ Contingent actions depend on a trigger condition. If the trigger condition occur
 \featpre Str 5, base attack bonus \plus8.
 \featben When you make a bull rush attack, if you succeed, your opponent provokes an attack of opportunity from you.
 
-\subsubsection{Endurance [General]}
-\featpre Con 3
-\parhead{Benefit} You convert the first two points of damage you take each round into nonlethal damage. You resist 1 additional point of damage per two levels. In addition, you may sleep in light or medium armor without becoming fatigued.
-
-This resistance is considered damage reduction for the purpose of abilities which overcome damage reduction. However, it is a separate ability, so it stacks with damage reduction.
-\parhead{Normal} A character without this feat who sleeps in medium or heavier armor is automatically fatigued the next day.
-\parhead{Special} A barbarian automatically gains Endurance as a bonus feat at 3rd level. He need not select it.
-
 \subsubsection{Eye of the Storm [Awareness, Combat, Defense]}
 \parhead{Prerequisite} Base attack bonus \plus8.
 \parhead{Benefit} You are considered to be threatened by one fewer creature than you actually are for the purpose of determining overwhelm penalties.
@@ -935,6 +935,10 @@ You understand how to use exotic weapons in combat.
 \parhead{Prerequisite} Base attack bonus \plus1.
 \parhead{Benefit} You don't provoke attacks of opportunity when attacking with exotic melee weapons from weapon groups that you are proficient with, and you can use exotic ranged weapons from those groups without penalty.
 \parhead{Normal} When using a melee weapon with which you are not proficient, you provoke an attack of opportunity when you miss. When using a ranged weapon with which you are not proficient, you take a \minus4 penalty to attack rolls.
+
+\subsubsection{Extra Stunning [Combat]}
+\parhead{Prerequisite} Stunning Fist
+\parhead{Benefit} You gain three extra uses of your Stunning Fist ability.
 
 \subsubsection{Far Shot [Combat]}
 \parhead{Benefit} When you use a projectile weapon, such as a bow, its range increment increases by one-half (multiply by 1-1/2). When you use a thrown weapon, its range increment is doubled.
