@@ -159,12 +159,12 @@ purpose of this calculation. The minimum caster level to craft an item is always
 \featref{Combat Casting} & \x &  \plus2 bonus on Concentration checks to cast spells, reroll 1/day \\
 \featref{Improved Counterspell} & \x &  Counterspell with spell of same school \\
 \featref{Magical Synthesis} & Levels in two magical classes & Gain magic levels in two magical classes at once & \x \\
+\featref{Mighty Summons} & Ability to cast a 2nd level summoning spell & Summoned creatures gain \plus2 Str, \plus2 Con \\
 \featref{Retributive Counterspell} & Ability to cast 4th level spells & Countered spells rebound on original caster \\
 \featref{Rapid Metamagic} & Spellcraft 8 ranks, ability to cast spells, one metamagic feat & Apply metamagic effects more quickly \\
 \featref{Ritual Caster} & Int 3 & Gain ability to perform rituals \\
 \featref{Ritual Master} & Spellcraft 8 ranks, ability to perform rituals & Perform rituals more quickly, \plus3 to ritual checks \\
 \featref{Spell Focus}\fn{1} & Magic level 4th &  \plus2 caster level with specific type of magic \\
-\tind \featref{Augment Summoning} & Spell Focus (conjuration) & Summoned creatures gain \plus2 Str, \plus2 Con \\
 \tind \featref{Spell Specialization} & Magic level 8th, Spell Focus &  \plus4 caster level with specific type of magic, \minus2 penalty with other types. \\
 \end{tabularx}
 \end{dtable!*}
@@ -436,10 +436,6 @@ Here is the format for feat descriptions.
 
 \subsection{General Feats}
 
-\feat{Augment Summoning}{General}
-\parhead{Prerequisite} Spell Focus (conjuration).
-\parhead{Benefit} Each creature you conjure with a summoning spell gains a \plus2 enhancement bonus to Strength and Constitution for the duration of the spell that summoned it.
-
 \feat{Endurance}{General}
 \featpre Con 3
 \parhead{Benefit} You convert the first two points of damage you take each round into nonlethal damage. You resist 1 additional point of damage per two levels. In addition, you may sleep in light or medium armor without becoming fatigued.
@@ -590,15 +586,27 @@ Choose a school of magic or a spell descriptor to which you already have applied
 \subsubsection{Magic Feats}
 
 \feat{Bardic Spellpower}{Magic}
-\featpre Ability to cast arcane spells
+\featpre Ability to cast arcane spells.
 \featben You can treat your fighter and rogue levels as magical classes when determining your caster level with enchantment and illusion arcane spells.
 
 \feat{Battlecaster}{Magic}
-\featpre Proficiency with light armor
+\featpre Proficiency with light armor.
 \featben You reduce your chance of arcane spell failure from wearing armor by 10\%. 
 
 \feat{Combat Casting}{Magic}
 \parhead{Benefit} You get a \plus2 competence bonus on Concentration checks made to cast a spell or use a spell-like ability. In addition, once per day you may reroll a Concentration check made to cast a spell.
+
+\feat{Craftcaster}{Magic}
+\featpres Craft (any) 8 ranks, ability to cast 2nd level spells.
+\featben When casting spells which create or transform a physical substance that you are trained to craft, you gain a \plus1 competence bonus to your caster level per 5 ranks you have in the appropriate Craft skill.
+
+\feat{Deceptive Casting}{Magic, Style}
+\featpre Ability to cast spells.
+\featben While using this style, you increase the DC to identify your spells with the Spellcraft skill by 5. In exchange, you take a \minus5 penalty to Concentration checks made to cast spells. If you are trained in the Bluff skill, you may instead add your Bluff ranks to the DC to identify your spells.
+
+\feat{Empathic Casting}{Magic, Style}
+\featpre Ability to cast an Enchantment (Emotion) spell of at least 3rd level.
+\featben While using this style, you gain a \plus2 competence bonus to caster level with mind-affecting spells. In exchange, you take a \minus2 penalty to Will saves. At magic level 10th, and every 5 magic levels after that, you increase the bonus and penalty by 1.
 
 \feat{Improved Counterspell}{Magic}
 \parhead{Benefit} When counterspelling, you may use any spell of the same school with a spell level at least as high as the target spell.
@@ -609,11 +617,35 @@ Choose two magical classes you possess.
 \parhead{Prerequisites} Levels in two magical classes.
 \parhead{Benefit} When gaining levels in either of your chosen classes, you gain magic levels in the other class as if the class you are gaining levels in did not progress your magic level. See \pcref{Magic Level and Multiclassing}.
 
+\feat{Mass Transporter}{Magic}
+\featpre Ability to cast a Conjuration (Translocation) spell of 5th level or higher.
+\featben When casting Conjuration (Translocation) spells which affect multiple creatures, you can affect a number of creatures equal to your caster level.
+
+\feat{Mighty Summons}{General}
+\parhead{Prerequisite} Ability to cast a Conjuration (Summoning) spell of at least 2nd level.
+\parhead{Benefit} Each creature you conjure with a summoning spell gains a \plus2 enhancement bonus to Strength and Constitution for the duration of the spell that summoned it.
+
 \feat{Rapid Metamagic}{Magic}
 \parhead{Prerequisites} Spellcraft 8 ranks, ability to cast spells, one metamagic feat
 \parhead{Benefit} When you apply a metamagic feat to a spell, the spell only takes its normal casting time.
 \parhead{Normal} Without this feat, applying metamagic takes a standard action (if the spell normally requires less than a standard action), a full-round action (if the spell normally requires a standard action), or an additional full-round action (if the spell takes 1 full round or longer to cast).
 \parhead{Special} At 1st level, a sorcerer gets Rapid Metamagic as a bonus feat, even if he does not have the prerequisites.
+
+\feat{Residual Awareness}{Magic}
+\featpre Ability to cast a Divination (Awareness) spell of at least 2nd level.
+\featben Whenever you cast a Divination (Awareness) spell, you gain an enhancement bonus to Perception checks equal to the level of the spell for 5 rounds.
+
+\feat{Residual Beguilement}{Magic}
+\featpre Ability to cast an Enchantment (Beguilement) spell of at least 3rd level.
+\featben Whenever you cast a Enchantment (Beguilement) spell, you gain an enhancement bonus to Persuasion checks equal to the level of the spell for 5 minutes.
+
+\feat{Residual Knowledge}{Magic}
+\featpre Ability to cast a Divination (Knowledge) spell of at least 2nd level.
+\featben Whenever you cast a Divination (Knowledge) spell, you gain an enhancement bonus to Knowledge checks equal to the level of the spell for 5 rounds.
+
+\feat{Resilient Magic}{Magic}
+\featpre Ability to cast an Abjuration (Negation) spell of at least 2nd level.
+\featben Your spells persist for 1 round after being dispelled if they still have time remaining in their duration.
 
 \feat{Retributive Counterspell}{Magic}
 \parhead{Prerequisites} Ability to cast 4th level spells.
@@ -627,6 +659,10 @@ Choose two magical classes you possess.
 \parhead{Prerequisites} Spellcraft 8 ranks, ability to perform rituals
 \parhead{Benefit} You can perform rituals in half the normal time. In addition, you gain a \plus3 competence bonus to checks made to perform rituals.
 \parhead{Special} At 1st level, a wizard gets Ritual Master as a bonus feat, even if she does not have the prerequisites.
+
+\feat{Wardwalker}{Magic}
+\featpre Ability to cast an Abjuration (Warding) spell of at least 2nd level.
+\featben When you trigger an Abjuration (Warding) spell, it does not take effect until one round after you triggered it, giving you time to escape.
 
 \subsection{Skill Feats}
 
