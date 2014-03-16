@@ -2,21 +2,33 @@
 
 \subsection{Dire Animals}
 \subsubsection{Dire Bear}
-\parhead{HV} 12
+\parhead{Level} 12
 \parhead{Archetypes} Brute 6, Disabler 1, Tank 5
 \parhead{Attributes} 
-\parhead{Traits} (2+12+6) Natural Weapon I x2, Natural Weapon II x2, Natural Armor I, Natural Armor II x2, 
+\parhead{Traits} (4+12+6) Natural Weapon I x2, Natural Weapon II x2, Natural Armor I, Natural Armor II x2, Senses I x2, 
+
+\subsubsection{Dire Lion}
+\parhead{Level} 10
+\parhead{Archetypes} Brute 7, Disabler 2, Tank 1
+\parhead{Attributes} 5, 6, 4, \minus8, 1, 0
+\parhead{Traits} (4+10+5) Natural Weapon I x2, Natural Weapon II x2, Natural Armor I, Senses I x2, Pounce, Area Debuff (shaken), Widen Area Debuff x2, Attribute (Dex) x3, HV Increase, Attribute (Str) x2, Attribute (Con), Size Increase
+
+\subsubsection{Dire Wolf}
+\parhead{Level} 8
+\parhead{Archetypes} Brute 6, Disabler 1, Tank 1
+\parhead{Attributes} 7, 2, 4, \minus8, 1, 0
+\parhead{Traits} (4+8+4) Natural Weapon I, Natural Weapon II x2, Natural Armor I, Natural Armor II x2, Improved Trip, Size Increase, Senses I x2, Attribute (Strength) x4, Attribute (Con) x1, HV Increase
 
 \subsection{Animals}
 
 \subsubsection{Bear, Black}
-\parhead{HV} 3
+\parhead{Level} 3
 \parhead{Archetypes} Brute 1, Disabler 1, Tank 1
 \parhead{Attributes} 4/0/5/\minus8/2/0
 \parhead{Traits} (2+5) Natural Weapon I x2, Natural Armor I, Attr (Str), Attribute (Con x2), Improved Grab
 
 \subsubsection{Bear, Brown}
-\parhead{HV} 6
+\parhead{Level} 6
 \parhead{Archetypes} Brute 2, Disabler 1, Tank 3
 \parhead{Attributes} 6/0/6/\minus8/3/0
 \parhead{Traits} (2+9) Natural Weapon I x2, Natural Armor I, NA II, Attr (Str), Attribute (Con x3), Attr (Wis), Improved Grab, Size Increase (Large)
@@ -31,11 +43,20 @@ Choose an attribute.
 \featben You gain a \plus1 inherent bonus to the appropriate attribute.
 \parhead{Special} This feat can be taken multiple times. Its effects stack. You can choose a different attribute or the same attribute each time. You can apply the Attribute trait to a single attribute no more times than half your HD (min 1).
 
+\subsubsection{Area Debuff}
+\featben A number of times per day equal to 1 \add half your Constitution or Charisma, you can cause enemies in a \areasmall radius burst around you, or in a \areamed line or cone from you, to suffer a tier 3 condition unless they make a saving throw. The DC is equal to 10 \add your level \add your Constitution or Charisma.
+
+\subsubsection{Area Debuff, Widen}
+\featpre Area Debuff
+\featben The area affected by your area debuff increases by one tier (\areasmall, to \areamed, to \arealarge, to 100 feet).
+
 \subsubsection{Combat Feat}
 Choose a combat feat.
 \featben You gain that combat feat.
 \parhead{Special} You can take this trait multiple times. Each time, you choose a different feat.
 
+\subsubsection{HV Increase}
+\featben You increase your hit value by 1, to a max of 7.
 \subsubsection{Improved Grab}
 \featben You gain the improved grab special ability. 
 
@@ -58,7 +79,7 @@ Choose a combat feat.
 \subsubsection{Natural Weapon II}
 \featpre Natural Weapon I
 \featben You increase the damage die of one of your natural weapons by one category.
-\parhead{Special} You can take this trait multiple times. Each time, you can apply it to a different natural weapon or to the same natural weapon. You cannot apply this trait to the same weapon more times than 1/2 your Strength. 
+\parhead{Special} You can take this trait multiple times. Each time, you can apply it to a different natural weapon or to the same natural weapon. You cannot apply this trait to the same weapon more times than 1/2 your Constitution. 
 
 \subsubsection{Poison I}
 Choose one of your attacks.
@@ -101,9 +122,9 @@ Choose one of your attacks.
 \end{itemize*}
 
 \subsubsection{Size Increase}
-\featpre Medium size or smaller.
-\featben Your size increases by one category. You gain a \plus2 bonus to Strength.
-\parhead{Special} You can take this trait multiple times. You must have 4 HD to become Large, 8 HD to become Huge, 12 HD to become Gargantuan, and 16 HD to become Colossal.
+\featpre Medium size or smaller, Attribute (Strength) x2.
+\featben Your size increases by one category.
+\parhead{Special} You can take this trait multiple times. You must have Attribute (Strength) x2 to become Large, x4 to become Huge, x6 to become Gargantuan, and x8 to become Colossal.
 
 \subsubsection{Trample I}
 \featpre Large size or larger.
