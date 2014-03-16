@@ -154,18 +154,27 @@ purpose of this calculation. The minimum caster level to craft an item is always
 \lcaption{Magic Feats}
 \begin{tabularx}{\textwidth}{>{\lcol}p{10em} >{\lcol}p{10em} >{\lcol}X >{\lcol}p{10em}}
 \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Type} \\
-\featref{Bardic Spellpower} & Ability to cast arcane spells & Fighter and rogue levels improve some spells \\ 
-\featref{Battlecaster} & Proficiency with light armor & Reduce arcane spell failure by 10\% \\
-\featref{Combat Casting} & \x &  \plus2 bonus on Concentration checks to cast spells, reroll 1/day \\
-\featref{Improved Counterspell} & \x &  Counterspell with spell of same school \\
+\featref{Bardic Spellpower} & Arcane spellcasting ability & Fighter and rogue levels improve some spells & \x \\ 
+\featref{Battlecaster} & Proficiency with light armor & Reduce arcane spell failure by 10\% & \x \\
+\featref{Combat Casting} & \x &  \plus2 bonus on Concentration checks to cast spells, reroll 1/day & \x \\
+\featref{Craftcaster} & Craft (any) 8 ranks, 2nd level spells & Increase caster level when creating, transforming objects & \x \\
+\featref{Deceptive Casting} & Spellcasting ability & Trade concentration to make spells difficult to identify & Style \\
+\featref{Empathic Casting} & 3rd level Enchantment (Emotion) spell & Trade Will saves for caster level with mind-affecting spells & Style \\
+\featref{Improved Counterspell} & \x &  Counterspell with spell of same school & \x \\
 \featref{Magical Synthesis} & Levels in two magical classes & Gain magic levels in two magical classes at once & \x \\
-\featref{Mighty Summons} & Ability to cast a 2nd level summoning spell & Summoned creatures gain \plus2 Str, \plus2 Con \\
-\featref{Retributive Counterspell} & Ability to cast 4th level spells & Countered spells rebound on original caster \\
-\featref{Rapid Metamagic} & Spellcraft 8 ranks, ability to cast spells, one metamagic feat & Apply metamagic effects more quickly \\
+\featref{Mass Transporter} & 5th level Conjuration (Translocation) spell & Transport many creatures at once & \x \\ 
+\featref{Mighty Summons} & 2nd level summoning spell & Summoned creatures gain \plus2 Str, \plus2 Con & \x \\
+\featref{Rapid Metamagic} & Spellcraft 8 ranks, spellcasting ability, one metamagic feat & Apply metamagic effects more quickly & \x \\
+\featref{Residual Awareness} & Divination (Awareness) spell & Gain brief Perception bonus after casting a spell & \x \\
+\featref{Residual Beguilement} & 3rd level Enchantment (Beguilement) spell & Gain Persuasion bonus after casting a spell & \x \\
+\featref{Residual Knowledge} & Divination (Knowledge) spell & Gain brief Knowledge bonus after casting a spell & \x \\
+\featref{Resilient Magic} & 2nd level Abjuration (Negation) spell & Spells persist for 1 round after being dispelled & \x \\
+\featref{Retributive Counterspell} &  4th level spells & Countered spells rebound on original caster & \x \\
 \featref{Ritual Caster} & Int 3 & Gain ability to perform rituals \\
 \featref{Ritual Master} & Spellcraft 8 ranks, ability to perform rituals & Perform rituals more quickly, \plus3 to ritual checks \\
 \featref{Spell Focus}\fn{1} & Magic level 4th &  \plus2 caster level with specific type of magic \\
 \tind \featref{Spell Specialization} & Magic level 8th, Spell Focus &  \plus4 caster level with specific type of magic, \minus2 penalty with other types. \\
+\featref{Wardwalker} & 3rd level Abjuration (Warding) spell & Wards you encounter trigger one round late \\
 \end{tabularx}
 \end{dtable!*}
 
@@ -196,7 +205,7 @@ purpose of this calculation. The minimum caster level to craft an item is always
 \featref{Legendary Liar} & Bluff 13 ranks & Lies become undetectable by magic \\
 \featref{Legendary Tumbler} & Acrobatics 13 ranks & Tumble through enemies without provoking \\
 \featref{Open Minded} & \x & Gain two skill points. \\
-\featref{Ranged Legerdemain} & Ability to cast 2nd level spells & Use Disable Device or Sleight of Hand at range \\
+\featref{Ranged Legerdemain} &  2nd level spells & Use Disable Device or Sleight of Hand at range \\
 \featref{Scale the Beast} & Climb 8 ranks & Climb on massive creatures \\
 \featref{Skill Focus}\fn{1} & \x &  \plus3 bonus on checks with selected skill, reroll 1/day \\
 \featref{Skill Training}\fn{1} & \x & Gain two skills as class skills \\
@@ -499,17 +508,6 @@ This resistance is considered damage reduction for the purpose of abilities whic
 \featpre Constitution 3 or base Fortitude save \plus6.
 \featben You become immune to disease, except supernatural diseases such as mummy rot. If you have a Constitution of 7 or a base Fortitude save of \plus14, you also become immune to poison and supernatural diseases.
 
-\feat{Spell Focus}{General}
-Choose a school of magic or a spell descriptor.
-\parhead{Prerequisite} Magic level 4th.
-\parhead{Benefit} You get a \plus2 competence bonus to your caster level when casting spells and using spell-like abilities from the school of magic or with the spell descriptor you select.
-\parhead{Special} You can gain this feat multiple times. Its effects do not stack. Each time you take the feat, it applies to a new school of magic.
-
-\feat{Spell Specialization}{General}
-Choose a school of magic or a spell descriptor to which you already have applied the Spell Focus feat.
-\featpre Magic level 8th, Spell Focus.
-\featben You gain a \plus4 competence bonus to your caster level when casting spells and using spell-like abilities from the school of magic or with the spell descriptor you select. In exchange, you take a \minus2 penalty to caster level with all other spells and spell-like abilities.
-
 %\feat{Spell Penetration}{General}
 %\parhead{Prerequisite} Caster level 4th
 %\parhead{Benefit} You get a \plus2 competence bonus on caster level checks (1d20 \add caster level) made to overcome a creature's spell resistance.
@@ -583,7 +581,7 @@ Choose a school of magic or a spell descriptor to which you already have applied
 \parhead{Benefit} You can exclude up to two additional creatures from the effect when you channel energy.
 \parhead{Normal} Without this feat, you can exclude a number of creatures from the effect equal to 1 \add half your Wisdom.
 
-\subsubsection{Magic Feats}
+\subsection{Magic Feats}
 
 \feat{Bardic Spellpower}{Magic}
 \featpre Ability to cast arcane spells.
@@ -618,7 +616,7 @@ Choose two magical classes you possess.
 \parhead{Benefit} When gaining levels in either of your chosen classes, you gain magic levels in the other class as if the class you are gaining levels in did not progress your magic level. See \pcref{Magic Level and Multiclassing}.
 
 \feat{Mass Transporter}{Magic}
-\featpre Ability to cast a Conjuration (Translocation) spell of 5th level or higher.
+\featpre Ability to cast a Conjuration (Translocation) spell of at least 5th level.
 \featben When casting Conjuration (Translocation) spells which affect multiple creatures, you can affect a number of creatures equal to your caster level.
 
 \feat{Mighty Summons}{General}
@@ -632,7 +630,7 @@ Choose two magical classes you possess.
 \parhead{Special} At 1st level, a sorcerer gets Rapid Metamagic as a bonus feat, even if he does not have the prerequisites.
 
 \feat{Residual Awareness}{Magic}
-\featpre Ability to cast a Divination (Awareness) spell of at least 2nd level.
+\featpre Ability to cast a Divination (Awareness) spell.
 \featben Whenever you cast a Divination (Awareness) spell, you gain an enhancement bonus to Perception checks equal to the level of the spell for 5 rounds.
 
 \feat{Residual Beguilement}{Magic}
@@ -640,7 +638,7 @@ Choose two magical classes you possess.
 \featben Whenever you cast a Enchantment (Beguilement) spell, you gain an enhancement bonus to Persuasion checks equal to the level of the spell for 5 minutes.
 
 \feat{Residual Knowledge}{Magic}
-\featpre Ability to cast a Divination (Knowledge) spell of at least 2nd level.
+\featpre Ability to cast a Divination (Knowledge) spell.
 \featben Whenever you cast a Divination (Knowledge) spell, you gain an enhancement bonus to Knowledge checks equal to the level of the spell for 5 rounds.
 
 \feat{Resilient Magic}{Magic}
@@ -660,8 +658,19 @@ Choose two magical classes you possess.
 \parhead{Benefit} You can perform rituals in half the normal time. In addition, you gain a \plus3 competence bonus to checks made to perform rituals.
 \parhead{Special} At 1st level, a wizard gets Ritual Master as a bonus feat, even if she does not have the prerequisites.
 
+\feat{Spell Focus}{Magic}
+Choose a school of magic or a spell descriptor.
+\parhead{Prerequisite} Magic level 4th.
+\parhead{Benefit} You get a \plus2 competence bonus to your caster level when casting spells and using spell-like abilities from the school of magic or with the spell descriptor you select.
+\parhead{Special} You can gain this feat multiple times. Its effects do not stack. Each time you take the feat, it applies to a new school of magic.
+
+\feat{Spell Specialization}{Magic}
+Choose a school of magic or a spell descriptor to which you already have applied the Spell Focus feat.
+\featpre Magic level 8th, Spell Focus.
+\featben You gain a \plus4 competence bonus to your caster level when casting spells and using spell-like abilities from the school of magic or with the spell descriptor you select. In exchange, you take a \minus2 penalty to caster level with all other spells and spell-like abilities.
+
 \feat{Wardwalker}{Magic}
-\featpre Ability to cast an Abjuration (Warding) spell of at least 2nd level.
+\featpre Ability to cast an Abjuration (Warding) spell of at least 3rd level.
 \featben When you trigger an Abjuration (Warding) spell, it does not take effect until one round after you triggered it, giving you time to escape.
 
 \subsection{Skill Feats}
