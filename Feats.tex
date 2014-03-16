@@ -21,13 +21,17 @@ A character can't use a feat if he or she has lost a prerequisite.
 Some feats are general, meaning that no special rules govern
 them as a group. Others belong to particular categories. The categories are given below:
 \begin{itemize*}
-\item Skill feats affect a character's mastery of his or her skills.
+\item Bloodline feats allow a character to tap into latent magical abilities in their blood.
 \item Combat feats affect a character's prowess in combat.
 \item Combat maneuver feats are combat feats which grant a character particular talent with specific maneuvers.
-\item Combat style feats grant a character the ability fight in particular styles. A character can only fight in one style at once.
-\item Bloodline feats allow a character to tap into latent magical abilities in their blood.
-\item Metamagic feats let spellcasters cast spells with greater effect, albeit as if the spells were a higher level than they actually are.
 \item Item creation feats allow spellcasters to create magic items of various kinds.
+\item Magic feats affect the way a character casts spells or uses magic.
+\item Metamagic feats let spellcasters cast spells with greater effect, albeit as if the spells were a higher level than they actually are.
+\item Performance feats allow a character to create magical effects through skilled performances.
+\item Skill feats affect a character's mastery of his or her skills.
+\item Style feats change the way a character fights or casts spells. A character can only use one style at a time.
+\item Strike feats allow a character to impose special effects when they hit in combat.
+\item Surge feats allow a character to temporarily gain quasi-magical abilities.
 \end{itemize*}
 
 \subsection{Class Feats}
@@ -115,27 +119,15 @@ purpose of this calculation. The minimum caster level to craft an item is always
 \begin{tabularx}{\textwidth}{>{\lcol}p{15em} >{\lcol}p{15em} >{\lcol}X}
 \thead{General Feats} & \thead{Prerequisites} & \thead{Benefit} \\
 %Brute Fortitude & \x & Use Str and half Con for Fortitute saves \\
-\featref{Battlecaster} & Proficiency with light armor & Reduce arcane spell failure by 10\% \\
-\featref{Bardic Spellpower} & Ability to cast arcane spells & Fighter and rogue levels improve some spells \\ 
-\featref{Combat Casting} & \x &  \plus2 bonus on Concentration checks to cast spells, reroll 1/day \\
 \featref{Endurance} & Con 3 & Convert damage to nonlethal damage \\
 \featref{Deathless} & Con 5 or base Fortitude save \plus10 & Immune to death effects \\
 \featref{Diehard} & Con 3 & Remain conscious after taking critical damage \\
 \featref{Fearless} & Cha 5 or base Will save \plus10 & Immune to fear and hostile morale effects \\
 \featref{Great Fortitude} & \x &  \plus2 bonus on Fortitude saves, reroll 1/day \\
-\featref{Improved Counterspell} & \x &  Counterspell with spell of same school \\
 \featref{Iron Will} & \x &  \plus2 bonus on Will saves, reroll 1/day \\
 \featref{Lightning Reflexes} & \x &  \plus2 bonus on Reflex saves, reroll 1/day \\
-\featref{Magical Synthesis} & Levels in two magical classes & Gain magic levels in two magical classes at once \\
 \featref{Mental Fortress} & Cha 9 or base Will save \plus18 & Immune to hostile mind-affecting effects \\
 \featref{Perfect Health} & Con 3 or base Fortitude save \plus6 & Immune to disease, later poison \\
-\featref{Rapid Metamagic} & Spellcraft 8 ranks, ability to cast spells, one metamagic feat & Apply metamagic effects more quickly \\
-\featref{Retributive Counterspell} & Ability to cast 4th level spells & Countered spells rebound on original caster \\
-\featref{Ritual Caster} & Int 3 & Gain ability to perform rituals \\
-\featref{Ritual Master} & Spellcraft 8 ranks, ability to cast spells & Perform rituals more quickly, \plus3 to ritual checks \\
-\featref{Spell Focus}\fn{1} & Magic level 4th &  \plus2 caster level with specific type of magic \\
-\tind \featref{Augment Summoning} & Spell Focus (conjuration) & Summoned creatures gain \plus2 Str, \plus2 Con \\
-\tind \featref{Spell Specialization} & Magic level 8th, Spell Focus &  \plus4 caster level with specific type of magic, \minus2 penalty with other types. \\
 \featref{Swift} & \x & Increase speed by 5 feet \\
 \featref{Toughness} & \x &  \plus3 hit points \plus1 per level above 3 \\
 \end{tabularx}
@@ -155,6 +147,25 @@ purpose of this calculation. The minimum caster level to craft an item is always
 \featref{Improved Channeling} & Channel energy 3d6 & \plus2 level when channeling energy \\
 \featref{Mental Discipline} & Ability to use combat discipline & Use Charisma for combat discipline \\
 \featref{Selective Channeling} & Ability to channel energy & Can exclude two additional creatures \\
+\end{tabularx}
+\end{dtable!*}
+
+\begin{dtable!*}
+\lcaption{Magic Feats}
+\begin{tabularx}{\textwidth}{>{\lcol}p{10em} >{\lcol}p{10em} >{\lcol}X >{\lcol}p{10em}}
+\thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Type} \\
+\featref{Bardic Spellpower} & Ability to cast arcane spells & Fighter and rogue levels improve some spells \\ 
+\featref{Battlecaster} & Proficiency with light armor & Reduce arcane spell failure by 10\% \\
+\featref{Combat Casting} & \x &  \plus2 bonus on Concentration checks to cast spells, reroll 1/day \\
+\featref{Improved Counterspell} & \x &  Counterspell with spell of same school \\
+\featref{Magical Synthesis} & Levels in two magical classes & Gain magic levels in two magical classes at once & \x \\
+\featref{Retributive Counterspell} & Ability to cast 4th level spells & Countered spells rebound on original caster \\
+\featref{Rapid Metamagic} & Spellcraft 8 ranks, ability to cast spells, one metamagic feat & Apply metamagic effects more quickly \\
+\featref{Ritual Caster} & Int 3 & Gain ability to perform rituals \\
+\featref{Ritual Master} & Spellcraft 8 ranks, ability to perform rituals & Perform rituals more quickly, \plus3 to ritual checks \\
+\featref{Spell Focus}\fn{1} & Magic level 4th &  \plus2 caster level with specific type of magic \\
+\tind \featref{Augment Summoning} & Spell Focus (conjuration) & Summoned creatures gain \plus2 Str, \plus2 Con \\
+\tind \featref{Spell Specialization} & Magic level 8th, Spell Focus &  \plus4 caster level with specific type of magic, \minus2 penalty with other types. \\
 \end{tabularx}
 \end{dtable!*}
 
@@ -429,14 +440,6 @@ Here is the format for feat descriptions.
 \parhead{Prerequisite} Spell Focus (conjuration).
 \parhead{Benefit} Each creature you conjure with a summoning spell gains a \plus2 enhancement bonus to Strength and Constitution for the duration of the spell that summoned it.
 
-\feat{Battlecaster}{General}
-\featpre Proficiency with light armor
-\featben You reduce your chance of arcane spell failure from wearing armor by 10\%. 
-
-
-\feat{Combat Casting}{General}
-\parhead{Benefit} You get a \plus2 competence bonus on Concentration checks made to cast a spell or use a spell-like ability. In addition, once per day you may reroll a Concentration check made to cast a spell.
-
 \feat{Endurance}{General}
 \featpre Con 3
 \parhead{Benefit} You convert the first two points of damage you take each round into nonlethal damage. You resist 1 additional point of damage per two levels. In addition, you may sleep in light or medium armor without becoming fatigued.
@@ -470,10 +473,6 @@ This resistance is considered damage reduction for the purpose of abilities whic
 %\parhead{Prerequisites} Caster level 10th, Spell Penetration.
 %\parhead{Benefit} You get a \plus4 competence bonus on caster level checks (1d20 \add caster level) made to overcome a creature's spell resistance.
 
-\feat{Improved Counterspell}{General}
-\parhead{Benefit} When counterspelling, you may use any spell of the same school with a spell level at least as high as the target spell.
-\parhead{Normal} Without this feat, you may counter a spell only with the same spell or with a spell specifically designated as countering the target spell.
-
 \feat{Iron Will}{General}
 \parhead{Benefit} You get a \plus2 competence bonus on all Will saving throws. Once per day, you may reroll a Will save. You must decide to use this ability before the results are revealed. You must take the second roll, even if it is worse.
 
@@ -503,25 +502,6 @@ This resistance is considered damage reduction for the purpose of abilities whic
 \feat{Perfect Health}{General}
 \featpre Constitution 3 or base Fortitude save \plus6.
 \featben You become immune to disease, except supernatural diseases such as mummy rot. If you have a Constitution of 7 or a base Fortitude save of \plus14, you also become immune to poison and supernatural diseases.
-
-\feat{Rapid Metamagic}{General}
-\parhead{Prerequisites} Spellcraft 8 ranks, ability to cast spells, one metamagic feat
-\parhead{Benefit} When you apply a metamagic feat to a spell, the spell only takes its normal casting time.
-\parhead{Normal} Without this feat, applying metamagic takes a standard action (if the spell normally requires less than a standard action), a full-round action (if the spell normally requires a standard action), or an additional full-round action (if the spell takes 1 full round or longer to cast).
-\parhead{Special} At 1st level, a sorcerer gets Rapid Metamagic as a bonus feat, even if he does not have the prerequisites.
-
-\feat{Retributive Counterspell}{General}
-\parhead{Prerequisites} Ability to cast 4th level spells.
-\parhead{Benefit} As part of the action to counter a spell, you may expend an Abjuration (Negation) spell of 4th level or higher. If you do, the counterspelled spell is turned back on the caster as if it were affected by the \spell{spell turning} spell. If it cannot be affected by \spell{spell turning}, such as if it is a spell that only affects the caster, it is simply countered as normal.
-
-\feat{Ritual Caster}{General}
-\featpre Intelligence 3.
-\featben You can learn and perform rituals as if you were an arcane caster with a magic level was equal to your character level.
-
-\feat{Ritual Master}{General}
-\parhead{Prerequisites} Spellcraft 8 ranks, ability to cast spells
-\parhead{Benefit} You can perform rituals in half the normal time. In addition, you gain a \plus3 competence bonus to checks made to perform rituals.
-\parhead{Special} At 1st level, a wizard gets Ritual Master as a bonus feat, even if she does not have the prerequisites.
 
 \feat{Spell Focus}{General}
 Choose a school of magic or a spell descriptor.
@@ -571,9 +551,6 @@ Choose a school of magic or a spell descriptor to which you already have applied
 \parhead{Benefit} You gain a \plus2 competence bonus to Craft and Perception checks related to stone or metal. In addition, if you come within 10 feet of unusual stonework, you can make a Perception check to notice it as if you were actively searching. Finally, you can also intuit depth, sensing your approximate depth underground as naturally as a human can sense which way is up.
 
 \subsection{Class Feats}
-\feat{Bardic Spellpower}{Class}
-\featpre Ability to cast arcane spells
-\featben You can treat your fighter and rogue levels as magical classes when determining your caster level with enchantment and illusion arcane spells.
 
 \feat{Extra Channeling}{Class}
 \parhead{Prerequisite} Ability to channel energy
@@ -601,11 +578,6 @@ Choose a school of magic or a spell descriptor to which you already have applied
 \parhead{Prerequisite} Channel energy 3d6.
 \parhead{Benefit} You gain a \plus2 competence bonus to your effective cleric level when channeling energy.
 
-\feat{Magical Synthesis}{Class}
-Choose two magical classes you possess.
-\parhead{Prerequisites} Levels in two magical classes.
-\parhead{Benefit} When gaining levels in either of your chosen classes, you gain magic levels in the other class as if the class you are gaining levels in did not progress your magic level. See \pcref{Magic Level and Multiclassing}.
-
 \feat{Mental Discipline}{Class}
 \featpre Combat discipline class feature.
 \featben You may use your Charisma in place of your Constitution to determine the number of times per day you can use your combat discipline ability. 
@@ -614,6 +586,47 @@ Choose two magical classes you possess.
 \parhead{Prerequisites} Ability to channel energy.
 \parhead{Benefit} You can exclude up to two additional creatures from the effect when you channel energy.
 \parhead{Normal} Without this feat, you can exclude a number of creatures from the effect equal to 1 \add half your Wisdom.
+
+\subsubsection{Magic Feats}
+
+\feat{Bardic Spellpower}{Magic}
+\featpre Ability to cast arcane spells
+\featben You can treat your fighter and rogue levels as magical classes when determining your caster level with enchantment and illusion arcane spells.
+
+\feat{Battlecaster}{Magic}
+\featpre Proficiency with light armor
+\featben You reduce your chance of arcane spell failure from wearing armor by 10\%. 
+
+\feat{Combat Casting}{Magic}
+\parhead{Benefit} You get a \plus2 competence bonus on Concentration checks made to cast a spell or use a spell-like ability. In addition, once per day you may reroll a Concentration check made to cast a spell.
+
+\feat{Improved Counterspell}{Magic}
+\parhead{Benefit} When counterspelling, you may use any spell of the same school with a spell level at least as high as the target spell.
+\parhead{Normal} Without this feat, you may counter a spell only with the same spell or with a spell specifically designated as countering the target spell.
+
+\feat{Magical Synthesis}{Magic}
+Choose two magical classes you possess.
+\parhead{Prerequisites} Levels in two magical classes.
+\parhead{Benefit} When gaining levels in either of your chosen classes, you gain magic levels in the other class as if the class you are gaining levels in did not progress your magic level. See \pcref{Magic Level and Multiclassing}.
+
+\feat{Rapid Metamagic}{Magic}
+\parhead{Prerequisites} Spellcraft 8 ranks, ability to cast spells, one metamagic feat
+\parhead{Benefit} When you apply a metamagic feat to a spell, the spell only takes its normal casting time.
+\parhead{Normal} Without this feat, applying metamagic takes a standard action (if the spell normally requires less than a standard action), a full-round action (if the spell normally requires a standard action), or an additional full-round action (if the spell takes 1 full round or longer to cast).
+\parhead{Special} At 1st level, a sorcerer gets Rapid Metamagic as a bonus feat, even if he does not have the prerequisites.
+
+\feat{Retributive Counterspell}{Magic}
+\parhead{Prerequisites} Ability to cast 4th level spells.
+\parhead{Benefit} As part of the action to counter a spell, you may expend an Abjuration (Negation) spell of 4th level or higher. If you do, the counterspelled spell is turned back on the caster as if it were affected by the \spell{spell turning} spell. If it cannot be affected by \spell{spell turning}, such as if it is a spell that only affects the caster, it is simply countered as normal.
+
+\feat{Ritual Caster}{Magic}
+\featpre Intelligence 3.
+\featben You can learn and perform rituals as if you were an arcane caster with a magic level was equal to your character level.
+
+\feat{Ritual Master}{Magic}
+\parhead{Prerequisites} Spellcraft 8 ranks, ability to perform rituals
+\parhead{Benefit} You can perform rituals in half the normal time. In addition, you gain a \plus3 competence bonus to checks made to perform rituals.
+\parhead{Special} At 1st level, a wizard gets Ritual Master as a bonus feat, even if she does not have the prerequisites.
 
 \subsection{Skill Feats}
 
