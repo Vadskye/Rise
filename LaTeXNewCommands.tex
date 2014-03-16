@@ -4,7 +4,8 @@
 \newcommand{\lsssec}[1]{#1\label{#1}}
 
 \newcommand{\ssecfake}[1]{\par \vspace{1em}{\bfseries\raggedright #1} \vspace{1em} \par}
-\newcommand{\sssecfake}[1]{\par \vspace{0.5em}{\bfseries\raggedright #1} \vspace{0.5em} \par}
+\newcommand{\sssecfake}[1]{\par \vspace{0.5em}{}{\bfseries\raggedright #1} \vspace{0.5em} \par}
+\newcommand{\sssecfakehref}[2]{\par \vspace{0.5em}{}{\bfseries\raggedright \hyperlink{#1}{#2}} \vspace{0.5em} \par}
 \newcommand{\pref}[1]{page \pageref{#1}}
 \newcommand{\pdref}[1]{#1 (page \pageref{#1})}
 \newcommand{\pcref}[1]{#1, page \pageref{#1}}
@@ -195,11 +196,11 @@
 \newcommand{\bonusscalingdescription}{This bonus increases to \plus3 at 8th level, to \plus4 at 14th level, and finally to \plus5 at 20th level. }
 \newcommand{\babscalingdescription}{This bonus increases to \plus3 at base attack bonus \plus8, to \plus4 at base attack bonus \plus12, and finally to \plus5 at base attack bonus \plus16. }
 
-\newcommand{\feat}[2]{\hypertarget{feat:#1}{\subsubsection{#1 [#2]}}}
+\newcommand{\feat}[2]{\hypertarget{feat:#1}{\sssecfakehref{ft:#1}{#1 [#2]}}}
 \newcommand{\featpre}{\parhead{Prerequisite} }
 \newcommand{\featpres}{\parhead{Prerequisites} }
 \newcommand{\featben}{\parhead{Benefit} }
-\newcommand{\featref}[1]{\hyperlink{feat:#1}{#1}}
+\newcommand{\featref}[1]{\hyperlink{feat:#1}{\hypertarget{ft:#1}{#1}}}
 %\newcommand{\featref}[1]{}
 
 \newcommand{\vulnerableexplanation}{A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.}
