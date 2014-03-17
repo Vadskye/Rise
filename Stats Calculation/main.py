@@ -57,6 +57,11 @@ def get_generic_ac_real():
 def get_generic_hp():
     return [i*7 for i in range(1,21)]
 
+#set a creature's AC to match generic AC
+def normalize_ac(creature):
+    creature.armor_class.misc.add_circumstance(
+            get_generic_ac_calc()[creature.level-1] - creature.armor_class.normal())
+
 if __name__ == "__main__":
     args = initialize_argument_parser()
 
@@ -84,18 +89,21 @@ if __name__ == "__main__":
             second_name = 'brb-heavy'
             first = Character.from_creature_name(first_name, i+1)
             second = Character.from_creature_name(second_name, i+1)
+
+            normalize_ac(first)
+            normalize_ac(second)
             #print first
             #print second
             second.name='second_char'
-            first.add_feat(abilities.CombatExpertise(), False)
+
+            #first.add_feat(abilities.CombatExpertise(), False)
+            first.add_feat(abilities.PowerAttack(), False)
 
             battle = combat.Battle(first, second)
 
             repeat_count = 500
             results = run_repeated_battles(battle, repeat_count)
             print i+1, results[0], results[2]
-            print first
-            print second
 
             #print npc.armor_class.normal() - generic_ac_real[i]
 
