@@ -867,7 +867,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 
 \spellsection{Combat Transformation}
 \spelldesc{You become a virtual fighting machine -- stronger, tougher, faster, and more skilled in combat. Your mind-set changes so that you relish combat instead of casting spells, even from magic items.}
-\spellschool{Transmutation (Imbuement)}
+\spellschool{Transmutation (Augment)}
 \spelllvl{Sor/Wiz 5}
 \spellcmp{V, S, M}
 \spellrng{\rngpers}
@@ -2023,7 +2023,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
   This spell causes instant growth of a humanoid creature, doubling its height and multiplying its weight by 8. This increase changes the creature's size category to the next larger one. This has several effects.
   \begin{itemize*} 
     \item \plus10 ft. inherent bonus to movement speed.
-    \item \minus1 penalty on attack rolls and AC due to its increased size.
+    \item \minus1 penalty to attack rolls and AC due to its increased size.
   \item \minus2 penalty to Dexterity.
   \item \plus2 bonus to Strength. \bonusscalingdescription
   \end{itemize*}
@@ -4427,10 +4427,15 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \spellsave{Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
-  This spell causes instant diminution of a humanoid creature, halving its height, length, and width and dividing its weight by 8. This decrease changes the creature's size category to the next smaller one. The target gains a \plus2 bonus to Dexterity, a \minus2 penalty to Strength (to a minimum of 1), a \plus2 size bonus to Stealth checks, and a \plus1 size bonus on attack rolls and AC due to its reduced size. In addition, it takes a \minus10 ft. penalty to movement speed.
-  \par A Small humanoid creature whose size decreases to Tiny has a space of 2-1/2 feet and a natural reach of 0 feet (meaning that it must enter an opponent's square to attack). A Large humanoid creature whose size decreases to Medium has a space of 5 feet and a natural reach of 5 feet. This spell doesn't change the target's speed.
-  \par All equipment worn or carried by a creature is similarly reduced by the spell.
-  \par Melee and projectile weapons deal less damage. Other magical properties are not affected by this spell. Any reduced item that leaves the reduced creature's possession (including a projectile or thrown weapon) instantly returns to its normal size. This means that thrown weapons deal their normal damage (projectiles deal damage based on the size of the weapon that fired them).
+  This spell causes instant diminution of a humanoid creature, halving its height, length, and width and dividing its weight by 8. This decrease changes the creature's size category to the next smaller one. This has several effects.
+  \begin{itemize*} 
+    \item \minus10 ft. inherent bonus to movement speed.
+    \item \plus1 inherent bonus to attack rolls and AC due to its decreased size.
+  \item \minus2 penalty to Strength.
+  \item \plus2 bonus to Dexterity. \bonusscalingdescription
+  \end{itemize*}
+  \par A Small humanoid creature whose size decreases to Tiny has a space of 2-1/2 feet and a natural reach of 0 feet (meaning that it must enter an opponent's square to attack). A Large humanoid creature whose size decreases to Medium has a space of 5 feet and a natural reach of 5 feet.
+  \par All equipment worn or carried by a creature is similarly reduced by the spell. Melee and projectile weapons deal less damage. Other magical properties are not affected by this spell. Any reduced item that leaves the reduced creature's possession (including a projectile or thrown weapon) instantly returns to its normal size. This means that thrown weapons deal their normal damage (projectiles deal damage based on the size of the weapon that fired them).
 \end{spelleffect}
 \begin{spellnotes}
   Multiple magical effects that reduce size do not stack.
@@ -4624,7 +4629,7 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \spellmat{Diamonds worth at least 1,000 gp.}
 
 \spellsection{Righteous Might}
-\spellschool{Transmutation (Imbuement, Polymorph) [Size-Affecting]}
+\spellschool{Transmutation (Augment, Polymorph) [Size-Affecting]}
 \spelllvl{Clr 5, Good 5, Pal 4, Strength 5}
 \spellrng{Personal}
 \spelltgt{You}
@@ -5954,7 +5959,7 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \end{spellnotes}
 
 \spellsection{Totemic Mind}
-\spellschool{Transmutation (Imbuement)}
+\spellschool{Transmutation (Augment)}
 \spelllvl{Clr 2, Drd 2, Sor/Wiz 2}
 \spellrng{\rngclose}
 \spelltgt{One creature}
@@ -5969,7 +5974,7 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \end{spelleffect}
 
 \spellsectioncomma{Totemic Mind}{Mass}
-\spellschool{Transmutation (Imbuement)}
+\spellschool{Transmutation (Augment)}
 \spelllvl{Clr 6, Drd 6, Sor/Wiz 6}
 \spellrng{\rngmed}
 \spellarea{\areamed radius limit}
@@ -5979,7 +5984,7 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \end{spelleffect}
 
 \spellsection{Totemic Power}
-\spellschool{Transmutation (Imbuement)}
+\spellschool{Transmutation (Augment)}
 \spelllvl{Clr 2, Drd 2, Sor/Wiz 2, Strength 2}
 \spellrng{\rngclose}
 \spelltgt{One creature}
@@ -5994,7 +5999,7 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \end{spelleffect}
 
 \spellsectioncomma{Totemic Power}{Mass}
-\spellschool{Transmutation (Imbuement)}
+\spellschool{Transmutation (Augment)}
 \spelllvl{Clr 6, Drd 6, Sor/Wiz 6}
 \spellrng{\rngmed}
 \spellarea{\areamed radius limit}
