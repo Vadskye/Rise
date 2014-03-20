@@ -85,13 +85,11 @@ if __name__ == "__main__":
             npc2 = Character.from_creature_name('npc', i+1)
             rogue = Character.from_creature_name('rogue-single', i+1)
             """
-            first_name = 'brb-heavy'
-            second_name = 'brb-heavy'
+            first_name = 'monk-unarmed'
+            second_name = 'ftr-heavy'
             first = Character.from_creature_name(first_name, i+1)
             second = Character.from_creature_name(second_name, i+1)
 
-            normalize_ac(first)
-            normalize_ac(second)
             #print first
             #print second
             second.name='second_char'
