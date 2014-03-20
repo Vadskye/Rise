@@ -15,6 +15,7 @@ class Weapon:
                 'light_melee': cls('light', 'melee', 'd6', 0),
                 'projectile': cls('heavy', 'projectile', 'd8m1', 1),
                 'claws': cls('medium', 'melee', 'd8m1', 0),
+                'unarmed': cls('light', 'melee', 'd3', 0),
                 'none': None
                 }[weapon_name]
 
