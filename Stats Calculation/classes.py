@@ -1,6 +1,7 @@
 import util
 from util import GOOD, AVERAGE, POOR
 import abilities
+import equipment
 
 class CharacterClass:
     
@@ -37,7 +38,6 @@ class Barbarian(CharacterClass):
             abilities.larger_than_life(base_creature)
             if self.level>=17:
                 abilities.larger_than_belief(base_creature)
-
 
 class Bard(CharacterClass):
     bab_progression = AVERAGE
@@ -91,6 +91,47 @@ class Monk(CharacterClass):
     bab_progression = AVERAGE
     save_progressions = {'fortitude':AVERAGE, 'reflex':GOOD, 'will':GOOD}
     hit_value = 5
+
+    def apply_modifications(self, base_creature):
+        #wisdom is used often, so make it quick to access
+        wisdom = base_creature.attributes.wisdom.get_total()
+
+        #enlightened defense
+        if base_creature.armor is None:
+            base_creature.armor_class.misc.add_inherent(wisdom)
+        else:
+            print 'Monk is wearing armor?', base_creature.armor
+
+        #flurry of blows missing
+
+        #unarmed strike
+        if base_creature.weapon is None:
+            unarmed_weapon = equipment.Weapon.from_weapon_name('unarmed')
+            #make the weapon deal monk damage
+            for i in xrange(self.level/4+2):
+                unarmed_weapon.damage_die.increase_size(increase_min=True)
+            base_creature.weapon = unarmed_weapon
+            base_creature.weapon_damage.add_die(base_creature.weapon.damage_die)
+
+        #ki strike
+        if self.level>=2:
+            base_creature.attack_bonus.add_inherent(wisdom/2)
+        
+        #still mind
+        if self.level>=3 and base_creature.attributes:
+            #replace Int
+            base_creature.saves.will.add_inherent(
+                    -base_creature.attributes.intelligence.get_total()/2)
+            base_creature.saves.will.add_inherent(wisdom)
+
+        #wholeness of body
+        if self.level>=4:
+            base_creature.current_hit_points+= self.level*wisdom
+
+        #improved ki strike
+        if self.level>=10:
+            base_creature.weapon_damage.add_inherent(wisdom/2)
+        
 
 class Paladin(CharacterClass):
     bab_progression = GOOD
