@@ -118,13 +118,13 @@ class Creature(object):
         self.class_calculator.apply_modifications(self)
 
     def _calculate_derived_statistics(self):
-        self.armor_class.armor.add_inherent(self.armor.ac_bonus)
-        if self.armor.encumbrance=='medium' or self.armor.encumbrance=='heavy':
-            self.armor_class.dodge.add_inherent(util.ifloor(
-                self.attributes.dexterity.get_total()/2))
-        else:
-            self.armor_class.dodge.add_inherent(
-                    self.attributes.dexterity.get_total())
+        dexterity_to_ac = self.attributes.dexterity.get_total()
+        if self.armor:
+            self.armor_class.armor.add_inherent(self.armor.ac_bonus)
+            if self.armor.encumbrance=='medium' or self.armor.encumbrance=='heavy':
+                dexterity_to_ac /=2
+        self.armor_class.dodge.add_inherent(dexterity_to_ac)
+
         if self.shield:
             self.armor_class.shield.add_inherent(self.shield.ac_bonus)
 
@@ -176,8 +176,9 @@ class Creature(object):
 
     def _add_level_scaling(self):
         scale_factor = self.level/4
-        if self.armor:
-            self.armor_class.armor.add_enhancement(scale_factor)
+        #if self.armor:
+        #even classes without armor can get armor bonuses from magic robes
+        self.armor_class.armor.add_enhancement(scale_factor)
         if self.shield:
             self.armor_class.shield.add_enhancement(scale_factor)
         if self.weapon:
