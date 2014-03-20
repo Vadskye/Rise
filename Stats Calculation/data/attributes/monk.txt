@@ -1,0 +1,8 @@
+strength=2
+dexterity=3
+constitution=2
+intelligence=0
+wisdom=4
+charisma=-2
+bonus attribute 1=wisdom
+bonus attribute 2=dexterity
