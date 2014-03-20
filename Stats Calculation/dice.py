@@ -35,7 +35,9 @@ class Dice(object):
             self.die_size+=1
         elif self.die_size < 10:
             self.die_size+=2
-            if increase_min: self.die_minimum+=self.dice_count
+            if increase_min:
+                if not (self.dice_count==1 and self.die_size == 6):
+                    self.die_minimum+=self.dice_count
         elif self.die_size == 10:
             self.die_size = 6
             self.dice_count*=2
