@@ -954,6 +954,7 @@ A ranger's selection of spells is limited. He knows as many spells at each level
 3rd  & \plus2                & \plus1 & \plus5  & \plus1 & Ambush attack \plus1d6 \\
 4th  & \plus3                & \plus2 & \plus6  & \plus2 & Evasion, combat trick \\
 5th  & \plus3                & \plus2 & \plus7  & \plus2 & Skill trick, sneak attack \plus2d6 \\
+6th  & \plus4                & \plus3 & \plus8  & \plus3 & Improved uncanny dodge \\
 \end{tabularx}
 \end{dtable*}
 
@@ -1044,6 +1045,10 @@ If a rogue already has uncanny dodge from a different class, she stacks those le
 
 \subcf{Tricky Maneuver} When performing combat maneuvers against foes she would be able to sneak attack, the rogue gains a circumstance bonus to attack equal to the number of sneak attack dice she would normally roll. The benefits of this trick apply even against foes immune to critical hits.
 
+\cf{Rog}{Improved Uncanny Dodge (Ex)} At 6th level and higher, a rogue can no longer be overwhelmed as easily; she can react to multiple opponents as easily as she can react to a single attacker. The rogue is always treated as being threatened by two fewer creatures than she actually is for the purpose of determining overwhelm penalties. 
+
+\par If a character already has uncanny dodge (see above) from a second class and gains improved uncanny dodge, the character stacks those levels to determine if she should gain greater uncanny dodge, and to determine the minimum level a rogue must be to sneak attack the character.
+
 \subsection{Sorcerer}
 \begin{dtable*}
 \lcaption{The Sorcerer}
@@ -1060,6 +1065,8 @@ If a rogue already has uncanny dodge from a different class, she stacks those le
 & 6 & 3 & \x & \x & \x & \x & \x & \x & \x \\
 5th & \plus2 & \plus2 & \plus2 & \plus7     & Expanded spell knowledge
 & 6 & 4 & \x & \x & \x & \x & \x & \x & \x \\
+6th & \plus3 & \plus3 & \plus3 & \plus8     & \x
+& 6 & 5 & 3 & \x & \x & \x & \x & \x & \x \\
 \end{tabularx}
 \end{dtable*}
 
@@ -1086,6 +1093,7 @@ All of the following are class features of the sorcerer.
 3rd  & 3 & \x & \x & \x & \x & \x & \x & \x & \x \\
 4th  & 3 & 1 & \x & \x & \x & \x & \x & \x & \x \\
 5th  & 4 & 2 & \x & \x & \x & \x & \x & \x & \x \\
+6th  & 4 & 2 & 1 & \x & \x & \x & \x & \x & \x \\
 \end{tabularx}
 \end{dtable}
 \cf{Sor}{Spells}  A sorcerer casts arcane spells, which are drawn primarily from the sorcerer/wizard spell list \pref{Sorcerer/Wizard Spells}. To learn or cast a spell, a sorcerer must have a Charisma score at least equal to the spell's level. The Difficulty Class for a saving throw against a sorcerer's spell is 10 \add the spell level \add the sorcerer's Charisma.
@@ -1139,6 +1147,7 @@ The world is full of magic. People of all varieties can learn to perform the nec
         3rd & \plus2                    & \plus4  & \plus3  & Attuned senses, spellwarped aspect \\
         4th & \plus3                    & \plus5  & \plus4  & Invoke power, resist magic \\
         5th & \plus3                    & \plus6  & \plus4  & Manipulate magic \\
+        6th & \plus4                    & \plus7  & \plus5  & Invoke power \\
     \end{tabularx}
     1 Each spellwarped has a good save determined by his choice of innate magic.
 \end{dtable}
@@ -1169,7 +1178,7 @@ A spellwarped is proficient with simple weapons, any two weapon groups, light an
 \subcf{Telekinesis -- Minor Object Manipulation} The spellwarped can concentrate as a standard action to move objects within five feet of him telekinetically. He can slowly lift or manipulate one object by up to one foot per round. The object can weigh up to five pounds. This level of control is insufficient to make skill checks or wield a weapon or shield effectively.
 \subcf{Temporal -- Time Awareness} The spellwarped always knows exactly what time it is, and can track the passage of time precisely without effort.
 
-\cf{Spl}{Invoke Power (Su)} A spellwarped can invoke his innate magic to generate powerful effects by spending a spellwarp point. If a saving throw is allowed, the DC is equal to 10 \add the spellwarped's class level \add his key attribute. The spellwarped gains an additional power at 4th level and every 2 levels thereafter. The powers a spellwarped gains depend on his choice of innate magic, as described in \pcref{Spellwarped Powers}.
+\cf{Spl}{Invoke Power (Su)} A spellwarped can invoke his innate magic to generate powerful effects by spending a spellwarp point. If a saving throw is allowed, the DC is equal to 10 \add the spellwarped's class level \add his key attribute. The spellwarped gains an additional power at 4th level and every even level thereafter. The powers a spellwarped gains depend on his choice of innate magic, as described in \pcref{Spellwarped Powers}.
 
 \cf{Spl}{Surge of Power (Su)} At 2nd level, a spellwarped can invoke a surge of magical power that allows him to embody his innate magic more fully for 5 rounds. To invoke a surge of power, he must spend a spellwarp point as a a swift action. The effect of his surge depends on his choice of innate magic, as described below.
 \subcf{Alteration -- Alter Body} The spellwarped enhances his physical ability. He gains a \plus2 enhancement bonus to a physical attribute of his choice. This bonus increases by 1 at 8th level and every 6 spellwarped levels thereafter.
@@ -1224,18 +1233,23 @@ Unless otherwise noted, invoking a spellwarped power requires standard action an
 \subsubsection{Alteration Powers}
 \parhead{1st -- Lesser Reduction} A creature within \rngclose range becomes one size category smaller for 2 rounds unless it makes a Fortitude save. It takes a \minus2 penalty to Strength, decreases its weapon damage dice by one size, and takes a \minus4 penalty to CMA and CMD. However, it gains a \plus2 bonus to Stealth checks and a \plus1 bonus to attack rolls and armor class. This is a size-affecting effect.
 \parhead{4th -- Reduction} This power functions like the lesser reduction power, except that the foe is reduced for 5 rounds.
+\parhead{6th -- Amorphous Body} The spellwarped transforms his body into an amorphous form for 1 round, until the end of his next turn. In this form, he gains several benefits. He is immune to critical hits, takes no penalties for squeezing, and can move through spaces that are no more than two inches in width, though doing so forces him to move at half speed.
+\parhead{6th -- Purge} The spellwarped can make a Fortitude save to end any effects or conditions on him which allow a Fortitude save to resist. If he can make a Spellcraft check to identify the effects on him, he may freely choose which effects not to end, allowing him to retain beneficial effects.
 
 \subsubsection{Pyromancy Powers}
 \parhead{1st -- Lesser Ignite} The spellwarped ignites a foe within \rngclose range, dealing 1d6 points of fire damage \add 1 per spellwarped level. A successful Reflex save halves the damage.
 \parhead{4th -- Ignite} This attack functions like the lesser ignite attack, except that it deals 1d6 points of fire damage per spellwarped level, and a target that fails its Reflex save is also ignited for 5 rounds. An ignited creature has been set on fire. It is vulnerable, causing it to take a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. In addition, it takes d6 damage per round from the fire. If the creature takes a move action, it can attempt a DC 15 Reflex save to put out the flames. This action provokes attacks of opportunity. Dropping prone as part of the action gives a \plus4 circumstance bonus on this save.
+\parhead{6th -- Flame Weapon} As a swift action, the spellwarped create a weapon made of flame that lasts for 5 rounds. The weapon may take the form of any weapon he is proficient with. He can attack with the weapon as if it were a normal weapon of its type, except that he adds half his Charisma to damage in place of half his Strength, and all damage dealt with the weapon is fire damage. The flame weapon gains a \plus1 enhancement bonus to attack and damage at 4th level. This bonus increases by 1 at 8th level and every 4 levels thereafter.
 
 \subsubsection{Telekinesis Powers}
 \parhead{1st -- Lesser Crush} The spellwarped can crush a creature or object within \rngclose range with telekinetic force, dealing 1d6 points of physical damage \add 1 per spellwarped level. A successful Fortitude save halves the damage.
 \parhead{4th -- Crush} This attack functions like the lesser crush attack, except that it deals 1d6 points of physical damage per spellwarped level, and a creature that fails its Fortitude save is also sickened. A sickened creature is vulnerable, causing it to take a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
+\parhead{6th -- Distant Manipulation} As a standard action, the spellwarped can mentally exert influence at up to \rngclose range. This allows him to take any standard action which he could normally take with his hands, using his Intelligence in place of his Strength or Dexterity, as appropriate. He may take actions that require more than a standard action to complete by spending the same amount of time concentrating, spending one spellwarp point per two rounds that he spends concentrating.
 
 \subsubsection{Temporal Powers}
 \parhead{1st -- Lesser Slow} The spellwarped slows a foe within \rngclose range for 2 rounds unless it makes a Will save. A slowed creature can take a standard action or a move action each round, but not both. It cannot take full-round actions, but it may take swift actions. Additionally, it takes a \minus2 penalty to attack rolls, Strength and Dexterity-based checks, and armor class.
 \parhead{4th -- Slow} This attack functions like the lesser slow attack, except that the foe is slowed for 5 rounds.
+\parhead{6th -- Brief Acceleration} As a move action, the spellwarped can accelerate himself so much that he can seem to pause time for everyone but himself. This allows him to take a single move action. He does not provoke attacks of opportunity for any movement he makes during this time.
 
 \subsection{Wizard}
 \begin{dtable*}
