@@ -1129,7 +1129,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelldesc{You lay your hand on a creature and channel positive energy into it, healing even the most grievous injuries.}
 \spellschool{Necromancy (Vitalism) [Healing, Positive]}
 \spelllvl{Clr 4, Drd 4, Life 4, Pal 4}
-\spellheal{8d8 damage \add d8 per two caster levels above 8th}
+\spellheal{8d6 damage \add d6 per two caster levels above 8th}
 \begin{spelleffect}
   This spell functions like \spell{cure light wounds}, except that for every 10 points of healing granted by the spell, it can instead cure 1 point of critical damage.
 \end{spelleffect}
@@ -1147,14 +1147,14 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelldesc{You lay your hand on a creature and channel positive energy into it, healing some of its wounds.}
 \spellschool{Necromancy (Vitalism) [Healing, Positive]}
 \spelllvl{Clr 1, Drd 1, Pal 1}
-\spellrng{\rngtouch}
-\spelltgt{Creature touched}
+\spellrng{\rngclose}
+\spelltgt{One creature}
 \spelldur{Instantaneous}
 \spellsave{Fortitude half (harmless) or Fortitude half; see text}
 \spellsr{Yes (Fortitude)}
-\spellheal{2d8 damage \add d8 per two caster levels above 2nd}
+\spellheal{2d6 damage \add d6 per two caster levels above 2nd}
 \begin{spelleffect}
-  You heal the touched creature. Since undead are powered by negative energy, this spell deals positive damage to them instead of curing their wounds. You must succeed on a melee touch attack to hit a target that does not allow you to touch it.
+  You heal the target. Since undead are powered by negative energy, this spell deals positive damage to them instead of curing their wounds.
 \end{spelleffect}
 
 \spellsectioncomma{Cure Light Wounds}{Mass}
@@ -1176,7 +1176,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelldesc{You lay your hand on a creature and channel positive energy into it, healing its wounds.}
 \spellschool{Necromancy (Life) [Healing, Positive]}
 \spelllvl{Clr 2, Drd 2, Life 2, Pal 2}
-\spellheal{4d8 damage \add d8 per two caster levels above 4th}
+\spellheal{4d6 damage \add d6 per two caster levels above 4th}
 \begin{spelleffect}
   This spell functions like \spell{cure light wounds}, except that for every 20 points of healing granted by the spell, it can instead cure 1 point of critical damage.
 \end{spelleffect}
@@ -1194,7 +1194,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelldesc{You lay your hand on a creature and channel positive energy into it, healing even serious injuries.}
 \spellschool{Necromancy (Vitalism) [Healing, Positive]}
 \spelllvl{Clr 3, Drd 3, Life 3, Pal 3}
-\spellheal{6d8 damage \add d8 per two caster levels above 6th}
+\spellheal{6d6 damage \add d6 per two caster levels above 6th}
 \begin{spelleffect}
   This spell functions like \spell{cure light wounds}, except that for every 15 points of healing granted by the spell, it can instead cure 1 point of critical damage.
 \end{spelleffect}
@@ -3050,7 +3050,7 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \spellsection{Inflict Critical Wounds}
 \spellschool{Necromancy (Vitalism) [Negative]}
 \spelllvl{Clr 4, Sor/Wiz 4}
-\spelldmg{8d8 negative energy damage \add d8 per two caster levels above 8th}
+\spelldmg{8d6 negative energy damage \add d6 per two caster levels above 8th}
 \begin{spelleffect}
   This spell functions like \spell{inflict light wounds}, except that for every 10 points of damage dealt in excess of the subject's hit points, it can instead inflict 1 point of critical damage.
 \end{spelleffect}
@@ -3077,7 +3077,7 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \spelldur{Instantaneous}
 \spellsave{Fortitude half}
 \spellsr{Yes (Fortitude)}
-\spelldmg{2d8 negative energy damage \add d8 per two caster levels above 2nd}
+\spelldmg{2d6 negative energy damage \add d6 per two caster levels above 2nd}
 \begin{spelleffect}
   The touched creature takes damage. Since undead are powered by negative energy, this spell heals them instead of dealing damage. You must succeed on a melee touch attack to hit a target that does not allow you to touch it. 
 \end{spelleffect}
@@ -3099,7 +3099,7 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \spellsection{Inflict Moderate Wounds}
 \spellschool{Necromancy (Vitalism) [Negative]}
 \spelllvl{Clr 2, Sor/Wiz 2}
-\spelldmg{4d8 negative energy damage \add d8 per two caster levels above 4th}
+\spelldmg{4d6 negative energy damage \add d6 per two caster levels above 4th}
 \begin{spelleffect}
   This spell functions like \spell{inflict light wounds}, except that for every 20 points of damage dealt in excess of the subject's hit points, it can instead inflict 1 point of critical damage.
 \end{spelleffect}
@@ -3121,7 +3121,7 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \spellsection{Inflict Serious Wounds}
 \spellschool{Necromancy (Vitalism) [Negative]}
 \spelllvl{Clr 3, Sor/Wiz 3}
-\spelldmg{6d8 negative energy damage \add d8 per four caster levels above 6th}
+\spelldmg{6d6 negative energy damage \add d6 per four caster levels above 6th}
 \begin{spelleffect}
   This spell functions like \spell{inflict light wounds}, except that for every 15 points of damage dealt in excess of the subject's hit points, it can instead inflict 1 point of critical damage.
 \end{spelleffect}
@@ -4528,17 +4528,17 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 
 \spellsection{Retributive Shield}
 \spellschool{Abjuration/Necromancy (Life, Shielding)}
-\spelllvl{Sor/Wiz 5}
-\spellrng{\rngmed}
+\spelllvl{Sor/Wiz 4}
+\spellrng{\rngclose/\rngmed}
 \spelltgt{One creature}
 \spelldur{\durshort}
 \spellsave{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The subject gains physical damage reduction 10/life. This damage reduction increases by 1 per two caster levels above 10th. In addition, the spell reflects the damage back at the creature's attackers. Any creature within \rngmed range of the subject that attacks it takes life damage equal to the amount of damage resisted by this spell.
+  A subject within \rngclose range gains physical damage reduction 8/life. This damage reduction increases by 1 per two caster levels above 8th. In addition, the spell reflects the damage back at the creature's attackers. Any creature within \rngmed range of the subject that attacks it takes life damage equal to the amount of damage resisted by this spell.
 \end{spelleffect}
 \begin{spellnotes}
-  This spell's damage reduction allows the subject to ignore the first 10 physical damage it takes each round. If it is hit by an attack that deals life damage, such as \spell{crush life}, it cannot use its damage reduction for 1 round.
+  This spell's damage reduction allows the subject to ignore the first 8 physical damage it takes each round. If it is hit by an attack that deals life damage, such as \spell{crush life}, it cannot use its damage reduction for 1 round.
 \end{spellnotes}
 
 \spellsection{Retrieve}
