@@ -702,3 +702,83 @@ No saving throw is allowed against this effect, and it cannot be dispelled, but 
 \cf{Pal}{Martyr's Retribution (Su)} At 19th level, if the paladin dies while fighting evil or protecting her allies, she can choose to make the explosion of positive energy from her glory of the martyr ability painful to her foes. If she does, her body is almost completely consumed by holy power, preventing her from being raised with \spell{raise dead} and similar effects that require a body. This has two effects. First, a \spell{sunburst} spell immediately takes effect over the area where the paladin fell. Second, a \spell{storm of vengeance} spell begins to take effect, centered on the same area. The spell lasts for 10 rounds, and the lightning strikes focus on the paladin's enemies. Both of these effects harm only the paladin's foes, and do no damage to her allies. However, her allies' vision is still impeded by the \spell{storm of vengeance}.
 
 \cf{Pal}{Greater Smite (Su)} At 20th level, the paladin can apply two improved smiting abilities to every smite attack she makes.
+
+\subsection{Ranger}
+
+\begin{dtable}
+\lcaption{The Ranger}
+\begin{tabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
+\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} \\
+1st  & \plus1                        & \plus3  & \plus1  & \plus1 & Quarry \plus2, Track, wild speech \\
+2nd  & \plus2                        & \plus4  & \plus2  & \plus2 & Danger sense, favored terrain \\
+3rd  & \plus3                        & \plus5  & \plus3  & \plus3 & Ranger lore \\
+4th  & \plus4                        & \plus6  & \plus4  & \plus4 & Low-light vision, tracking expert \\
+5th  & \plus5                        & \plus7  & \plus4  & \plus4 & Free stride, tenacious hunter \\
+6th  & \plus6/\plus1                 & \plus8  & \plus5  & \plus5 & Favored terrain, ranger lore \\
+7th  & \plus7/\plus2                 & \plus9  & \plus6  & \plus6 & Guide \\
+8th  & \plus8/\plus3                 & \plus10 & \plus7  & \plus7 & Darkvision, quarry \plus3  \\
+9th  & \plus9/\plus4                 & \plus11 & \plus7  & \plus7 & Ranger lore \\
+10th & \plus10/\plus5                & \plus12 & \plus8  & \plus8 & Favored terrain (planar) \\
+11th & \plus11/\plus6/\plus1         & \plus13 & \plus9  & \plus9 & Hidden hunter\\
+12th & \plus12/\plus7/\plus2         & \plus14 & \plus10 & \plus10& Blindsense, advanced lore  \\
+13th & \plus13/\plus8/\plus3         & \plus15 & \plus10 & \plus10& Terrain mastery  \\
+14th & \plus14/\plus9/\plus4         & \plus16 & \plus11 & \plus11& Favored terrain (planar), quarry \plus4 \\
+15th & \plus15/\plus10/\plus5        & \plus17 & \plus12 & \plus12& Advanced ranger lore \\
+16th & \plus16/\plus11/\plus6/\plus1 & \plus18 & \plus13 & \plus13& Blindsight  \\
+17th & \plus17/\plus12/\plus7/\plus2 & \plus19 & \plus13 & \plus14& Terrain mastery, unerring hunter \\
+18th & \plus18/\plus13/\plus8/\plus3 & \plus20 & \plus14 & \plus14& Advanced ranger lore, favored terrain (planar)  \\
+19th & \plus19/\plus14/\plus9/\plus4 & \plus21 & \plus15 & \plus15& Perfect stride  \\
+20th & \plus20/\plus15/\plus10/\plus5& \plus22 & \plus16 & \plus16& Quarry \plus5, truesight
+\end{tabularx}
+\end{dtable}
+
+\cf{Rgr}{Guide (Ex)} At 7th level, whenever the ranger is are in his favored terrain, all allies that can see and hear the ranger gain his favored terrain bonuses in that terrain as well.
+
+\cf{Rgr}{Darkvision (Ex)} At 8th level, a ranger's sight improves again, and he gains the ability to see even when there is no light at all. He gains darkvision out to 60 feet, as the dwarf ability. If he already has darkvision, he increases its range by 60 feet.
+
+\cf{Rgr}{Greater Combat Style (Ex)} At 10th level, a ranger's aptitude in combat improves again. He is treated as having the Ambidexterity feat (\pref{Ambidexterity [Combat]}) and the Manyshot feat (\pref{Manyshot [Combat]}), even if he does not have the normal prerequisites for those feats.
+\par As before, the benefits of the ranger's chosen style apply only when he wears light or no armor. He loses all benefits of his combat style when wearing medium or heavy armor.
+
+\cf{Rgr}{Favored Terrain (Planar) (Ex)} After 10th level, a ranger may choose any plane as a favored terrain in addition to his normal options whenever he gains a new favored terrain. He is immune to any hostile planar effects from any plane he has chosen as favored terrain. In addition, he gains a \plus2 competence bonus to Knowledge checks relating to the plane and is always treated as trained in Knowledge (planar) for the purpose of such checks.
+
+\cf{Rgr}{Hidden Hunter (Su)} At 11th level, the ranger becomes even more difficult for his quarry to detect. He adds his quarry bonus to his Stealth checks against his quarry. In addition, he continuously benefits from the effect of the \spell{nondectection} spell against all attempts that his quarry makes to detect him magically. The effect uses a caster level equal to his ranger level.
+
+\cf{Rgr}{Advanced Ranger Lore} After 12th level, the ranger can choose an advanced ranger lore in place of a regular ranger lore. All advanced lore abilities are extraordinary abilities unless otherwise indicated. His options for advanced ranger lores are listed below.
+
+\subcf{Camouflage} The ranger can use the Hide skill in any of his favored terrains, even if the terrain does not grant cover or concealment.
+
+\subcf{Combat Style Mastery} The ranger's abilities with traditional ranger combat styles reach their peak. When using a ranged weapon, he can take a move action to study the weak points of a foe within one range increment. If he does, the next attack he makes against that foe, if it is made in the same turn, is made as a ranged touch attack. When wielding two weapons at once, he gains the pounce ability, allowing him to take a full attack action at the end of a charge.
+
+The ranger must have the greater combat style lore to choose this lore. The benefits apply only if the ranger is wearing light or no armor.
+
+\subcf{Greater Combat Style} The ranger's abilities with traditional ranger combat styles improves again. He gains the Two-Weapon Rend and Manyshot feats if he meets the prerequisites. He must have the improved combat style lore to choose this lore. The benefits of this lore only apply if the ranger is wearing light or no armor.
+
+\subcf{Hail of Arrows} A number of times per day equal to 1 \add half the ranger's Constitution, he may take a full-round action to fire a single arrow at every enemy within a \areamed radius. All enemies must be within one range increment of the ranger. This lore can be used with any ranged weapon that the ranger is capable of making a full attack with.
+
+\subcf{Improved Evasion} The ranger's ability to avoid damage improves. He still takes no damage on a successful Reflex saving throw against attacks, but henceforth he takes only half damage on a failed save. A helpless ranger does not gain the benefit of improved evasion.
+
+\subcf{Storm of Blades} A number of times per day equal to 1 \add half the ranger's Constitution, he may take a standard action to make a single melee attack against every enemy he threatens.
+
+\cf{Rgr}{Blindsense (Ex)} At 12th level, a ranger's perceptions are so finely honed that he can sense his enemies without seeing them. He gains the blindsense ability out to 60 feet. This ability allows him to sense the presence and location of objects and foes within 60 feet without seeing them. If he already has the blindsense ability, he increases its range by 60 feet.
+
+\cf{Rgr}{Terrain Mastery (Ex)} At 13th level, a ranger gains a greater degree of mastery over some of his favored terrains. He chooses a single kind of terrain that he has already chosen as a favored terrain. At 17th level, he chooses an additional kind of terrain to master.
+\par While in that terrain, his competence bonuses on Perception, Stealth, and Survival checks increase to \plus4. In addition, he gains another ability based on that terrain that is constantly active, whether or not he is currently in the terrain. The options for terrain masteries are given below.
+\subcf{Aquatic} The ranger does not suffer penalties for fighting and moving underwater.
+\subcf{Cold} The ranger gains cold damage reduction 30.
+\subcf{Desert} The ranger becomes immune to fatigue.
+\subcf{Forest} The ranger may use his wild speech ability to communicate with plants, as the druid ability.
+\subcf{Mountains} The ranger is always treated as if he had a running start when making Jump checks. In addition, he takes only half damage from falling damage.
+\subcf{Plains} The ranger gains a \plus10 competence bonus to his land speed.
+\subcf{Swamp} The ranger becomes immune to nausea.
+\subcf{Underground} The ranger increases the range of his darkvision and blindsense by 60 feet.
+\subcf{Urban} The ranger can treat cities as being natural terrain for the purpose of his camouflage and hide in plain sight abilities.
+
+\cf{Rgr}{Blindsight (Ex)} At 16th level, a ranger gains the ability to ``see'' perfectly without his eyes in a 60 foot radius around him. With this ability, he can fight just as well with his eyes closed as with them open. If he already has the blindsight ability, he increases its range by 60 feet.
+
+\cf{Rgr}{Unerring Hunter (Su)} At 17th level, a ranger's ability to hunt down his quarry improves to supernatural levels. Once per day, the ranger may concentrate for a full round to duplicate the effects of the \spell{discern location} spell targeted at his quarry.
+
+\cf{Rgr}{Hide in Plain Sight (Ex)} While in any sort of natural terrain, a ranger of 17th level or higher can use the Hide skill even while being observed. He still needs cover or concealment to hide.
+
+\cf{Rgr}{Perfect Stride (Su)} At 19th level, a ranger's ability to surpass obstacles becomes unparalleled. He constantly acts as if he were under the effect of a \spell{freedom} spell, except that it does not allow him to act normally underwater.
+
+\cf{Rgr}{Truesight (Su)} At 20th level, a ranger's perceptions are accurate enough to defeat even powerful magic. He gains the ability to see all things as they actually are, as the \spell{true seeing} spell, out to a range of 60 feet.
