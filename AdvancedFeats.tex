@@ -67,6 +67,7 @@
 \featref{Bewildering Strike} & Base attack bonus \plus8 & Attack bewilders foe & Strike \\
 \featref{Contingent Counter} & Int 3, base attack bonus \plus8 & Prepare to attack when attack misses you & Reaction \\
 \featref{Driving Assault} & Str 5, base attack bonus \plus8 & Bull rushed foe provokes attack from you & Power, Maneuver \\
+\featref{Eye of the Storm} & Base attack bonus \plus8 & You are more difficult to overwhelm & Awareness, Defense \\
 \featref{Heartseeker} & Base attack bonus \plus8 & Trade attack bonus to double critical threat range & Style \\
 \featref{Immobilizing Strike} & Base attack bonus \plus8 & Melee attack prevents foe from moving & Strike \\
 \featref{Inescapable Bulwark of Defense} & Base attack bonus \plus8, Bulwark of Defense & Enemies cannot avoid provoking attacks of opportunity & Reaction, Style \\
@@ -287,6 +288,114 @@ You can use any combination of performance feats you possess a number of times p
 \featben As a swift action, you can make a DC 20 Perform check to suggest an action to a single creature you are currently fascinating with the Fascinating Performance feat. This functions as the \spell{suggestion} spell, with a saving throw DC equal to your Perform check. You can affect an additional creature at 12 Perform ranks and every 2 Perform ranks thereafter.
 
 You can use any combination of performance feats you possess a number of times per day equal to the number of performance feats you have \add half your Charisma. If you fail the Perform check, the use of the ability is wasted.
+
+\subsection{Combat Feats}
+
+\feat{Cleaving Stride}{Combat}
+\parhead{Prerequisites} Str 3, base attack bonus \plus8, Cleave.
+\parhead{Benefit} If you move to attack a foe, including by charging, and deal enough damage to drop it during your attack, you can continue your movement (if you have any movement remaining) to attack another foe. You may take your extra attack from the Cleave feat before or after continuing your movement.
+
+\feat{Contingent Attack}{Combat, Reaction}
+\featpre Int 5, base attack bonus \plus12.
+\featben As a full-round action, you may concentrate to prepare a single attack as a contingent action. You may choose any trigger for the contingent action.
+
+Contingent actions depend on a trigger condition. If the trigger condition occurs and you have a contingent action prepared, you may take the contingent action as an immediate action. A contingent action remains prepared until you rest.
+
+\feat{Contingent Counter}{Combat, Reaction}
+\featpre Int 3, base attack bonus \plus8.
+\featben As a full-round action, you may concentrate to prepare a single attack as a contingent action. The action triggers when an opponent misses you with a melee attack.
+
+Contingent actions depend on a trigger condition. If the trigger condition occurs and you have a contingent action prepared, you may take the contingent action as an immediate action. A contingent action remains prepared until you rest.
+
+\feat{Counterstorm}{Combat, Reaction, Style}
+\featpre Base attack bonus \plus16.
+\featben Whenever an opponent misses you with a melee attack, it provokes an attack of opportunity from you.
+
+\feat{Driving Assault}{Combat, Maneuver, Power}
+\featpre Str 5, base attack bonus \plus8.
+\featben When you make a bull rush attack, if you succeed, your opponent provokes an attack of opportunity from you.
+
+\feat{Eye of the Storm}{Awareness, Combat, Defense}
+\parhead{Prerequisite} Base attack bonus \plus8.
+\parhead{Benefit} You are considered to be threatened by one fewer creature than you actually are for the purpose of determining overwhelm penalties.
+
+\feat{Executioner}{Combat, Reaction}
+\parhead{Prerequisites} Base attack bonus \plus16, any five Reaction feats.
+\parhead{Benefit} Whenever a foe you threaten becomes staggered by dropping to 0 hit points, it provokes an attack of opportunity from you.
+
+\feat{Legendary Awareness}{Awareness, Combat}
+\featpre Base attack bonus \plus12, any three Awareness feats.
+\featben You cannot be overwhelmed, and never suffer overwhelm penalties. This ability can prevent rogues from sneak attacking you.
+
+\feat{Legendary Finesse}{Combat, Finesse}
+\featpre Base attack bonus \plus12, any three Finesse feats.
+\featben You can add half your Dexterity to damage with ranged and melee attacks. This is added in addition to half your Strength (if applicable).
+
+\feat{Legendary Maneuver Master}{Combat}
+\featpre Base attack bonus \plus12, any three Maneuver feats.
+\featben You never provoke an attack of opportunity for failing a combat maneuver. In addition, if you succeed at a combat maneuver attack by 10 or more, you deal normal damage with the weapon used to perform the maneuver in addition to gaining the successful effects of the maneuver. If the maneuver was performed without a weapon, you deal damage equivalent to an unarmed attack.
+
+\feat{Legendary Mobility}{Combat, Mobility}
+\featpre Base attack bonus \plus12, any three Mobility feats.
+\featben You do not provoke attacks of opportunity when you move.
+
+\feat{Legendary Mounted Warrior}{Combat, Mounted}
+\featpre Base attack bonus \plus12, any three Mounted feats, Ride 10 ranks.
+\featben When you take damage, you may choose to have your mount suffer half the damage instead of you (rounded down). Likewise, when your mount takes damage, you may choose to suffer half of that damage instead of your mount (rounded down).
+
+\feat{Legendary Power}{Combat, Power}
+\featpres Base attack bonus \plus12, any three Power feats.
+\featben You can use weapons as if they were one category less encumbering than they actually are. The weapon encumbrance categories are light, medium, and heavy. For example, you can use a greatsword as a medium weapon in one hand without suffering any penalties.
+
+\feat{Legendary Precision}{Combat, Precison}
+\featpre Base attack bonus \plus12, any three Precision feats.
+\featben When attacking, if you hit your opponent by 10 or more, you deal maximum damage with your weapon. If the attack is a critical threat, you automatically confirm the threat.
+
+\feat{Legendary Reaction}{Combat, Reaction}
+\featpre Base attack bonus \plus12, any three Reaction feats.
+\featben You cannot caught be flat-footed, and always retain your Dexterity, dodge, and shield modifiers to armor class. This ability can prevent rogues from sneak attacking you.
+
+\feat{Legendary Style}{Combat}
+\featpre Base attack bonus \plus12, any three Style feats.
+\featben You may have two styles active at once. Both styles can be changed as part of the same swift action.
+
+\feat{Master Tactician}{Combat}
+\featpre Intelligence 3, base attack bonus \plus12.
+\featben As a full-round action, you can ready a full-round action or a move action and a standard action. In addition, when you ready a full-round action, allies within 30 feet of you can also ready the same full-round action on their next turn, provided that you have not taken the action yet.
+
+\feat{Overwhelming Force}{Combat}
+\parhead{Prerequisite} Str 5, base attack bonus \plus8
+\parhead{Benefit} You add your full Strength to damage when wielding a medium or large melee weapon in two hands.
+\parhead{Normal} Without this feat, you add half your Strength to damage.
+
+\feat{Tactical Prediction}{Combat}
+\parhead{Prerequisites} Intelligence 3, Base attack bonus \plus8
+\parhead{Benefit} You can attempt to predict what your opponent will do. As a swift action, you can make a special check with a bonus equal to your base attack bonus \add your Intelligence \add 2 per round you have seen the creature fight. The DC is equal to 15 \add the creature's CR. If you succeed, you learn what the creature is planning to do during its next turn. Of course, it can change its plans, particularly if it hears you tell your allies what it will do.
+
+\feat{Wall Slam}{Combat, Maneuver, Power}
+\featpre Str 5, base attack bonus \plus8
+\featben If you bull rush an opponent into a wall or other solid object, he takes d6 damage \add half your Strength and provokes attacks of opportunity from all threatening creatures, including you.
+
+\feat{Weapon Specialization}{Combat}
+Choose one weapon group for which you have already selected the Weapon Focus feat.
+\parhead{Prerequisites} Base attack bonus \plus8, proficiency with selected weapon group, Weapon Focus with selected weapon group.
+\featben You gain a special ability based on the weapon group chosen. These special abilities only function when you are making attacks with weapons from your chosen weapon group.
+
+\begin{itemize*}
+    \item Armor weapons: If you attack with armor weapons during your turn, you gain a \plus2 circumstance bonus to AC against melee attacks for 1 round.
+    \item Axes: You gain a \plus2 circumstance bonus to attack against foes with an armor bonus to AC.
+    \item Blades, heavy: You gain a \plus2 circumstance bonus to attack foes without an armor bonus to AC.
+    \item Blades, light: You gain a \plus2 circumstance bonus to attack flat-footed or overwhelmed foes.
+    \item Blunt weapons: When you deal damage to a creature, it takes a \minus2 penalty to all saving throws for 1 round. This penalty replaces the penalty from Weapon Focus, and it is not cumulative with itself.
+    \item Bows: You can ignore cover (but not total cover) provided by creatures and objects that are at least ten feet away from both you and your target.
+    \item Crossbows: You can fire crossbows at targets adjacent to you without provoking attacks of opportunity.
+    \item Flexible weapons: The first time you perform a combat maneuver with a flexible weapon in an encounter, your opponent is flat-footed against your attack.
+    \item Headed weapons: You increase your critical threat range by 1. This is applied after any effects that multiply your threat range.
+    \item Monk weapons: ??
+    \item Polearms: When making melee attacks, you can ignore cover provided by creatures.
+    \item Spears: If an opponent charges you, he provokes an attack of opportunity from you.
+    \item Thrown weapons: When you attack, you can take a \minus4 penalty to attack in order to strike two adjacent targets with the same thrown weapon. You make one attack roll and apply the result to the AC of both targets. If you get a critical hit, only the primary target is suffers the critical hit. 
+\end{itemize*}
 
 \subsection{Surge Feats}
 %Design guidelines: effective CL = 1/2 HD, min ability score = effective CL-1
