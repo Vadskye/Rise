@@ -134,19 +134,13 @@ the class.
 \subsection{Cleric}
 \begin{dtable*}
 \lcaption{The Cleric}
-\begin{tabularx}{\textwidth}{>{\ccol}p{2em} >{\ccol}p{7em} *{3}{>{\ccol}p{\savecol}} >{\lcol}X *{9}{>{\ccol}p{1.2em}}}
-& & & & & & \multicolumn{9}{c}{\thead{---{}---{}---{}---{}---{}---{}---Spells per Day---{}---{}---{}---{}---{}---}} \\
-\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} & \thead{5th} & \thead{6th} & \thead{7th} & \thead{8th} & \thead{9th} \\
-1st & \plus0 & \plus1 & \plus0 & \plus3 & Matters of faith, lesser domain aspect, spontaneous casting
-& 3 & \x & \x & \x & \x & \x & \x & \x & \x \\
-2nd & \plus1 & \plus2 & \plus1 & \plus4         & Channel energy, lesser domain aspect
-& 4 & \x & \x & \x & \x & \x & \x & \x & \x \\
-3rd & \plus2 & \plus3 & \plus1 & \plus5         & Domain power
-& 5 & \x & \x & \x & \x & \x & \x & \x & \x \\
-4th & \plus3 & \plus4 & \plus2 & \plus6         & Domain power
-& 6 & 3 & \x & \x & \x & \x & \x & \x & \x \\
-5th & \plus3 & \plus4 & \plus2 & \plus7         & Channelled domain power
-& 6 & 4 & \x & \x & \x & \x & \x & \x & \x \\
+\begin{tabularx}{\textwidth}{>{\ccol}p{2em} >{\ccol}p{7em} *{3}{>{\ccol}p{\savecol}}}
+\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} \\
+1st & \plus0 & \plus1 & \plus0 & \plus3 & Matters of faith, lesser domain aspect, spontaneous casting \\
+2nd & \plus1 & \plus2 & \plus1 & \plus4         & Channel energy, lesser domain aspect \\
+3rd & \plus2 & \plus3 & \plus1 & \plus5         & Domain power \\
+4th & \plus3 & \plus4 & \plus2 & \plus6         & Domain power \\
+5th & \plus3 & \plus4 & \plus2 & \plus7         & Channelled domain power \\
 \end{tabularx}
 \end{dtable*}
 
@@ -199,6 +193,19 @@ spell at the same time that he gains new spells known for the level.
 Clerics meditate or pray for their spells. Each cleric must choose a time at which he must spend 1 hour each day in quiet contemplation or supplication to regain his daily allotment of spells. Time spent resting has no effect on whether a cleric can prepare spells. A cleric may prepare and cast any spell on the cleric spell list, provided that he can cast spells of that level, but he must choose which spells to prepare during his daily meditation.
 
 A cleric's magic level is equal to his cleric level.
+
+\begin{dtable}
+    \lcaption{Spells per Day} 
+    \centering
+    \begin{tabularx}{\columnwidth}{>{\ccol}X *{10}{>{\ccol}p{\spellcol}}}
+        \thead{Level} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} & \thead{5th} & \thead{6th} & \thead{7th} & \thead{8th} & \thead{9th} \\
+        1st & 3 & \x & \x & \x & \x & \x & \x & \x & \x \\
+        2nd & 4 & \x & \x & \x & \x & \x & \x & \x & \x \\
+        3rd & 5 & \x & \x & \x & \x & \x & \x & \x & \x \\
+        4th & 6 & 3 & \x & \x & \x & \x & \x & \x & \x \\
+        5th & 6 & 4 & \x & \x & \x & \x & \x & \x & \x \\
+    \end{tabularx}
+\end{dtable}
 
 \begin{dtable}
 \lcaption{Cleric Spells Known}
@@ -349,19 +356,13 @@ A cleric who grossly violates the code of conduct required by his god loses all 
 \subsection{Druid}
 \begin{dtable*}
 \lcaption{The Druid}
-\begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\centering}p{\babcolavg} *{3}{>{\ccol}p{\savecol}} >{\ccol}X *{9}{>{\ccol}p{\spellcol}}}
-& & & & & & \multicolumn{9}{c}{\thead{---{}---{}---{}---{}---{}---{}---Spells per Day---{}---{}---{}---{}---{}---}} \\
-\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} & \thead{5th} & \thead{6th} & \thead{7th} & \thead{8th} & \thead{9th} \\
-1st & \plus0 & \plus3 & \plus0 & \plus1 & Nature sense, natural casting, wild speech
-& 3 & \x & \x & \x & \x & \x & \x & \x & \x \\
-2nd & \plus1 & \plus4 & \plus1 & \plus2 & Woodland stride
-& 4 & \x & \x & \x & \x & \x & \x & \x & \x \\
-3rd & \plus2 & \plus5 & \plus1 & \plus3 & Wild aspect
-& 5 & \x & \x & \x & \x & \x & \x & \x & \x \\
-4th & \plus3 & \plus6 & \plus2 & \plus4 & Venom immunity
-& 6 & 3 & \x & \x & \x & \x & \x & \x & \x \\
-5th & \plus3 & \plus7 & \plus2 & \plus4 & Wild aspect
-& 6 & 4 & \x & \x & \x & \x & \x & \x & \x \\
+\begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\centering}p{\babcolavg} *{3}{>{\ccol}p{\savecol}} >{\ccol}X}
+\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} \\
+1st & \plus0 & \plus3 & \plus0 & \plus1 & Nature sense, natural casting, wild speech \\
+2nd & \plus1 & \plus4 & \plus1 & \plus2 & Woodland stride \\
+3rd & \plus2 & \plus5 & \plus1 & \plus3 & Wild aspect \\
+4th & \plus3 & \plus6 & \plus2 & \plus4 & Venom immunity \\
+5th & \plus3 & \plus7 & \plus2 & \plus4 & Wild aspect \\
 \end{tabularx}
 \end{dtable*}
 
@@ -399,6 +400,19 @@ does not have any domains (but see Spontaneous Casting, below). A druid may cast
 on the druid spell list (\pref{Druid Spells}).
 
 A druid's magic level is equal to her druid level.
+
+\begin{dtable}
+    \lcaption{Spells per Day} 
+    \centering
+    \begin{tabularx}{\columnwidth}{>{\ccol}X *{10}{>{\ccol}p{\spellcol}}}
+        \thead{Level} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} & \thead{5th} & \thead{6th} & \thead{7th} & \thead{8th} & \thead{9th} \\
+        1st & 3 & \x & \x & \x & \x & \x & \x & \x & \x \\
+        2nd & 4 & \x & \x & \x & \x & \x & \x & \x & \x \\
+        3rd & 5 & \x & \x & \x & \x & \x & \x & \x & \x \\
+        4th & 6 & 3 & \x & \x & \x & \x & \x & \x & \x \\
+        5th & 6 & 4 & \x & \x & \x & \x & \x & \x & \x \\
+    \end{tabularx}
+\end{dtable}
 
 \begin{dtable}
 \lcaption{Druid Spells Known}
@@ -1019,19 +1033,13 @@ If a rogue already has uncanny dodge from a different class, she stacks those le
 \subsection{Sorcerer}
 \begin{dtable*}
 \lcaption{The Sorcerer}
-\begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{7em} *{3}{>{\ccol}p{\savecol}} >{\lcol}X *{9}{>{\ccol}p{\spellcol}}}
-& & & & & & \multicolumn{9}{c}{\thead{---{}---{}---{}---{}---{}---{}---Spells per Day---{}---{}---{}---{}---{}---}} \\
-\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} & \thead{5th} & \thead{6th} & \thead{7th} & \thead{8th} & \thead{9th} \\
-1st & \plus0 & \plus0 & \plus0 & \plus3 & Arcane invocation, Rapid Metamagic, versatile spellcaster
-& 3 & \x & \x & \x & \x & \x & \x & \x & \x \\
-2nd & \plus1 & \plus1 & \plus1 & \plus4     & Arcane invocation
-& 4 & \x & \x & \x & \x & \x & \x & \x & \x \\
-3rd & \plus1 & \plus1 & \plus1 & \plus5     & Expanded spell knowledge
-& 5 & \x & \x & \x & \x & \x & \x & \x & \x \\
-4th & \plus2 & \plus2 & \plus2 & \plus6     & Spellblend
-& 6 & 3 & \x & \x & \x & \x & \x & \x & \x \\
-5th & \plus2 & \plus2 & \plus2 & \plus7     & Expanded spell knowledge
-& 6 & 4 & \x & \x & \x & \x & \x & \x & \x \\
+\begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{7em} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
+\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} \\
+1st & \plus0 & \plus0 & \plus0 & \plus3 & Arcane invocation, Rapid Metamagic, versatile spellcaster \\
+2nd & \plus1 & \plus1 & \plus1 & \plus4     & Arcane invocation \\
+3rd & \plus1 & \plus1 & \plus1 & \plus5     & Expanded spell knowledge \\
+4th & \plus2 & \plus2 & \plus2 & \plus6     & Spellblend \\
+5th & \plus2 & \plus2 & \plus2 & \plus7     & Expanded spell knowledge \\
 \end{tabularx}
 \end{dtable*}
 
@@ -1048,18 +1056,6 @@ All of the following are class features of the sorcerer.
 
  \cf{Sor}{Weapon and Armor Proficiency}  Sorcerers are proficient with simple weapons  and one other weapon group.  They are not proficient with any type of armor or shield. Armor of any type interferes with a sorcerer's arcane gestures, which can cause his spells with somatic components to fail.
 
-\begin{dtable}
-\lcaption{Sorcerer Spells Known}
-\begin{tabularx}{\columnwidth}{>{\ccol}X *{10}{>{\ccol}p{\spellcol}}}
-& \multicolumn{10}{c}{\thead{---{}---{}---{}---{}---{}---{}---{}---Spells Known---{}---{}---{}---{}---{}---{}---{}---}} \\
-\thead{Level} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} & \thead{5th} & \thead{6th} & \thead{7th} & \thead{8th} & \thead{9th} \\
-1st  & 1 & \x & \x & \x & \x & \x & \x & \x & \x \\
-2nd  & 2 & \x & \x & \x & \x & \x & \x & \x & \x \\
-3rd  & 3 & \x & \x & \x & \x & \x & \x & \x & \x \\
-4th  & 3 & 1 & \x & \x & \x & \x & \x & \x & \x \\
-5th  & 4 & 2 & \x & \x & \x & \x & \x & \x & \x \\
-\end{tabularx}
-\end{dtable}
 \cf{Sor}{Spells}  A sorcerer casts arcane spells, which are drawn primarily from the sorcerer/wizard spell list \pref{Sorcerer/Wizard Spells}. To learn or cast a spell, a sorcerer must have a Charisma score at least equal to the spell's level. The Difficulty Class for a saving throw against a sorcerer's spell is 10 \add the spell level \add the sorcerer's Charisma.
 
 \par Like other spellcasters, a sorcerer can cast only a certain number
@@ -1085,6 +1081,33 @@ spell at the same time that he gains new spells known for the level.
 \par A sorcerer may use a higher-level slot to cast a lower-level spell if he so chooses. For example, if an 8th-level sorcerer has used up all his 3rd-level spell slots for the day but wants to cast another 3rd-level spell, he could use a 4th-level slot to do so. The spell is still treated as its actual level, not the level of the slot used to cast it.
 
 A sorcerer's magic level is equal to his sorcerer level.
+
+\begin{dtable}
+    \lcaption{Spells per Day} 
+    \centering
+    \begin{tabularx}{\columnwidth}{>{\ccol}X *{10}{>{\ccol}p{\spellcol}}}
+        \thead{Level} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} & \thead{5th} & \thead{6th} & \thead{7th} & \thead{8th} & \thead{9th} \\
+        1st & 3 & \x & \x & \x & \x & \x & \x & \x & \x \\
+        2nd & 4 & \x & \x & \x & \x & \x & \x & \x & \x \\
+        3rd & 5 & \x & \x & \x & \x & \x & \x & \x & \x \\
+        4th & 6 & 3 & \x & \x & \x & \x & \x & \x & \x \\
+        5th & 6 & 4 & \x & \x & \x & \x & \x & \x & \x \\
+    \end{tabularx}
+\end{dtable}
+
+\begin{dtable}
+\lcaption{Sorcerer Spells Known}
+\begin{tabularx}{\columnwidth}{>{\ccol}X *{10}{>{\ccol}p{\spellcol}}}
+& \multicolumn{10}{c}{\thead{---{}---{}---{}---{}---{}---{}---{}---Spells Known---{}---{}---{}---{}---{}---{}---{}---}} \\
+\thead{Level} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} & \thead{5th} & \thead{6th} & \thead{7th} & \thead{8th} & \thead{9th} \\
+1st  & 1 & \x & \x & \x & \x & \x & \x & \x & \x \\
+2nd  & 2 & \x & \x & \x & \x & \x & \x & \x & \x \\
+3rd  & 3 & \x & \x & \x & \x & \x & \x & \x & \x \\
+4th  & 3 & 1 & \x & \x & \x & \x & \x & \x & \x \\
+5th  & 4 & 2 & \x & \x & \x & \x & \x & \x & \x \\
+\end{tabularx}
+\end{dtable}
+
 \cf{Sor}{Arcane Invocation} All sorcerers master at least one arcane invocation. An arcane invocation allows a sorcerer to exert magical influence without expending the effort required to cast a spell. The sorcerer may choose to learn one invocation of her choice from the list of arcane invocations described in Chapter 11: Spells. At 2nd level, the sorcerer learns a second arcane invocation of his choice.
 
 In order to cast an arcane invocation, a sorcerer must wield an arcane implement, a special item with a small amount of magical energy that is attuned to the wizard. Almost any item of Tiny size or larger can function as an arcane implement. A sorcerer begins play with an arcane implement attuned to him.
@@ -1210,19 +1233,13 @@ Unless otherwise noted, invoking a spellwarped power requires standard action an
 \subsection{Wizard}
 \begin{dtable*}
 \lcaption{The Wizard}
-\begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{7em} *{3}{>{\ccol}p{\savecol}} >{\lcol}X *{9}{>{\ccol}p{\spellcol}}}
-& & & & & & \multicolumn{9}{c}{\thead{---{}---{}---{}---{}---{}---{}---Spells per Day---{}---{}---{}---{}---{}---}} \\
-\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} & \thead{5th} & \thead{6th} & \thead{7th} & \thead{8th} & \thead{9th} \\
-1st & \plus0 & \plus0 & \plus0 & \plus3 & Arcane invocation, ritual master
-& 3 & \x & \x & \x & \x & \x & \x & \x & \x \\
-2nd & \plus1 & \plus1 & \plus1 & \plus4     & Arcane invocation, Scribe Scroll
-& 4 & \x & \x & \x & \x & \x & \x & \x & \x \\
-3rd & \plus1 & \plus1 & \plus1 & \plus5     & Arcane insight
-& 5 & \x & \x & \x & \x & \x & \x & \x & \x \\
-4th & \plus2 & \plus2 & \plus2 & \plus6     & Spell sequencer
-& 6 & 3 & \x & \x & \x & \x & \x & \x & \x \\
-5th & \plus2 & \plus2 & \plus2 & \plus7     & Arcane attunement (1 item), arcane insight
-& 6 & 4 & \x & \x & \x & \x & \x & \x & \x \\
+\begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{7em} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
+\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} \\
+1st & \plus0 & \plus0 & \plus0 & \plus3 & Arcane invocation, ritual master \\
+2nd & \plus1 & \plus1 & \plus1 & \plus4     & Arcane invocation, Scribe Scroll \\
+3rd & \plus1 & \plus1 & \plus1 & \plus5     & Arcane insight \\
+4th & \plus2 & \plus2 & \plus2 & \plus6     & Spell sequencer \\
+5th & \plus2 & \plus2 & \plus2 & \plus7     & Arcane attunement (1 item), arcane insight \\
 \end{tabularx}
 \end{dtable*}
 \cd{Alignment} Any.
@@ -1259,6 +1276,20 @@ one or more new spells, as indicated on \trefnp{Wizard Spells Known}.
 \par A wizard learns and casts spells the way a sorcerer does. A wizard may cast any spell she knows.
 
 A wizard's magic level is equal to his wizard level.
+
+\begin{dtable}
+    \lcaption{Spells per Day} 
+    \centering
+    \begin{tabularx}{\columnwidth}{>{\ccol}X *{10}{>{\ccol}p{\spellcol}}}
+        \thead{Level} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} & \thead{5th} & \thead{6th} & \thead{7th} & \thead{8th} & \thead{9th} \\
+        1st & 3 & \x & \x & \x & \x & \x & \x & \x & \x \\
+        2nd & 4 & \x & \x & \x & \x & \x & \x & \x & \x \\
+        3rd & 5 & \x & \x & \x & \x & \x & \x & \x & \x \\
+        4th & 6 & 3 & \x & \x & \x & \x & \x & \x & \x \\
+        5th & 6 & 4 & \x & \x & \x & \x & \x & \x & \x \\
+    \end{tabularx}
+\end{dtable}
+
 \begin{dtable}
 \lcaption{Wizard Spells Known}
 \begin{tabularx}{\columnwidth}{>{\ccol}X *{10}{>{\ccol}p{\spellcol}}}
