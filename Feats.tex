@@ -288,7 +288,6 @@ purpose of this calculation. The minimum caster level to craft an item is always
 \featref{Improved Grapple} & Base attack bonus \plus4 & \plus2 bonus on grapple attacks; attack faster in grapple & Maneuver, Power \\
 \featref{Improved Overrun} & Base attack bonus \plus4 & \plus2 bonus on overrun attacks; target can't avoid & Maneuver, Power \\
 \featref{Improved Trip} & Base attack bonus \plus4 & \plus2 bonus on trip attacks; tripped foe provokes attacks of opportunity & Finesse, Maneuver \\
-\featref{Intimidating Strike} & Base attack bonus \plus4, Intimidate 8 ranks & Attack lets you intimidate struck foe & Strike \\
 \featref{Intuitive Reaction} & Wis 3, base attack bonus \plus4 & Add half Wisdom to attacks of opportunity each round & Reaction \\
 \featref{Knockdown} & Str 3, base attack bonus \plus4 & Bull rushed foe can be knocked prone & Maneuver, Power \\
 \featref{Reveal the Weak Point} & Base attack bonus \plus4 & Sacrifice attack and damage to penalize foe's AC & Style \\
@@ -965,19 +964,6 @@ You can only use this style if you have not moved since your last turn.
 \featpre Base attack bonus \plus4.
 \featben As part of a full attack, you may provoke an attack of opportunity from one opponent threatening you. You gain a \plus4 circumstance bonus to armor class against this attack. If the opponent takes the attack of opportunity, they are flat-footed against your next attack. This effect lasts for 1 round.
 
-\feat{Heartseeker}{Combat, Style}
-\parhead{Prerequisite} Base attack bonus \plus8.
-\parhead{Benefit} You double your critical threat range with any weapon you wield. In exchange, you take a \minus2 penalty to attack rolls which are not critical threats or threat confirmations. This does not stack with any other effects which increase threat range.
-
-\feat{Inescapable}{Combat, Style}
-\featpre Base attack bonus \plus8.
-\featben Foes that attack you or take a withdraw action away from you still provoke attacks of opportunity when they move away from you. In exchange, you take a \minus2 penalty to AC.
-
-\feat{Manyshot}{Combat, Style}
-\parhead{Prerequisites} Dex 7, base attack bonus \plus12.
-\parhead{Benefit} When you attack with a light thrown weapon or projectile weapon (except crossbows), you may make a flurry attack with two projectiles or weapons at once. If the attack hits, the first projectile hits. If the attack hits by 5 or more, both projectiles hit. As normal for flurry attacks, apply precision-based damage (such as sneak attack) and critical hit damage only once for this attack. Damage reduction and resistances apply once to the total damage dealt.
-\parhead{Style Requirement} Must full attack with a non-crossbow projectile weapon each round.
-
 \feat{Opportunist}{Combat, Style}
 \parhead{Prerequisite} Dex 3.
 \parhead{Benefit} You gain a \plus2 circumstance bonus to attack and damage on attacks of opportunity. \babscalingdescription
@@ -987,12 +973,6 @@ You can only use this style if you have not moved since your last turn.
 \parhead{Prerequisite} Str 3.
 \parhead{Benefit} You take a \minus2 penalty to AC and gain a \plus2 circumstance bonus to combat maneuver attacks. \babscalingdescription The penalty to AC lasts until the start of the next turn after you end the style.
 \parhead{Style Requirement} Must perform a combat maneuver each round.
-
-\feat{Perfect Shot}{Combat, Style}
-\parhead{Prerequisites} Dex 5, Precise Shot, base attack bonus \plus8.
-\parhead{Benefit} Your ranged attacks ignore cover and concealment, except total cover and total concealment. In addition, when you shoot or throw ranged weapons at a grappling opponent, you automatically strike at the opponent you have chosen.
-
-You must spend a full-round action to make a full attack while in this style. You can make a single attack as a standard action.
 
 \feat{Point Blank Shot}{Combat, Style}
 \parhead{Benefit} You get a \plus2 circumstance bonus on damage rolls with ranged weapons when attacking targets within half of your range increment. \babscalingdescription
@@ -1019,54 +999,6 @@ You must spend a full-round action to make a full attack while in this style. Yo
 \parhead{Prerequisites} Base attack bonus \plus4.
 \parhead{Benefit} When attacking with a ranged weapon, you are considered to be threatening your target for the purpose of determining overwhelm penalties.
 \parhead{Style Requirement} Must direct all attacks against the same target when making a full attack.
-
-\feat{Whirlwind Attack}{Combat, Style}
-\parhead{Prerequisites} Dex 5, base attack bonus \plus12
-\parhead{Benefit} As a full-round action, you can make one melee attack at your full base attack bonus against each opponent you threaten. This is considered a full attack, and replaces any other attacks you would normally make, whether from base attack bonus or spells such as \spell{haste}.
-
-\subsection{Strike Feats}
-
-\feat{Bewildering Strike}{Combat, Strike}
-\featpre Base attack bonus \plus8.
-\featben When you attack, you may take a \minus4 penalty to hit. If you deal damage, the foe struck must make a Will save to avoid being bewildered for 5 rounds. The DC is equal to 10 \add your base attack bonus \add your attack attribute (Strength or Dexterity). You cannot make more than one Strike each round.
-
-\feat{Confusing Strike}{Combat, Strike}
-\featpre Base attack bonus \plus12.
-\featben When you attack, you may take a \minus6 penalty to hit. If you deal damage, and your foe is bloodied after your damage is dealt, it must make a Will save to avoid being confused for 1 round. The DC is equal to 10 \add your base attack bonus \add your attack attribute (Strength or Dexterity). You cannot make more than one Strike each round.
-
-\confusionexplanation A foe confused by this effect does not automatically attack you on its next turn, even though you attacked it.
-
-\feat{Demolishing Strike}{Combat, Strike}
-\featpre Base attack bonus \plus16.
-\featben When you attack, you may take a \minus8 penalty to hit. If you hit, you deal double damage. You cannot make more than one Strike each round.
-
-\feat{Intimidating Strike}{Combat, Strike}
-\featpres Base attack bonus \plus4, Intimidate 8 ranks.
-\featben When you attack, you may take a \minus2 penalty to hit. If you deal damage, you may make an Intimidate check as an immediate action to demoralize the foe you struck if it is within 30 feet of you. You cannot make more than one Strike each round.
-
-\feat{Immobilizing Strike}{Combat, Strike}
-\featpre Base attack bonus \plus8.
-\featben When you attack with a melee weapon, you may take a \minus4 penalty to hit. If you deal damage, the foe struck must make a Fortitude save or lose its ability to move for 1 round. It can defend itself and act normally, but it cannot move from its current location. Flying creatures must immediately land, but do not crash. The DC is equal to 10 \add your base attack bonus \add your attack attribute (Strength or Dexterity). You cannot make more than one Strike each round.
-
-\feat{Killing Blow}{Combat, Strike}
-\featpre Base attack bonus \plus16.
-\featben When you attack, you may take a \minus8 penalty to hit. If you deal damage, and your foe is bloodied after your damage is dealt, it must make a Fortitude save or die. This is a death effect. The DC is equal to 10 \add your base attack bonus \add your attack attribute (Strength or Dexterity). You cannot make more than one Strike each round.
-
-\feat{Nauseating Strike}{Combat, Strike}
-\featpre Base attack bonus \plus12.
-\featben When you attack, you may take a \minus6 penalty to hit. If you deal damage, and your foe is bloodied after your damage is dealt, it must make a Fortitude save to avoid being nauseated for 1 round. The DC is equal to 10 \add your base attack bonus \add your attack attribute (Strength or Dexterity). You cannot make more than one Strike each round.
-
-\feat{Penetrating Strike}{Combat, Strike}
-\featpre Base attack bonus \plus12.
-\featben When you attack, you may take a \minus6 penalty to hit. If you deal damage, the foe struck must make a Fortitude save or lose its damage reduction for 5 rounds. The DC is equal to 10 \add your base attack bonus \add your Strength. You cannot make more than one Strike each round.
-
-\feat{Pierce Wings}{Combat, Strike}
-\featpre Base attack bonus \plus8.
-\featben When you attack with a ranged weapon, you may take a \minus4 penalty to hit. If you deal damage, the foe struck must make a Fortitude save or lose its ability to fly for 1 round. The DC is equal to 10 \add your base attack bonus \add your attack attribute (Strength or Dexterity). This only affects creatures who use wings or other physical means to fly, and has no effect on creatures with magical or supernatural flight. You cannot make more than one Strike each round.
-
-\feat{Sickening Strike}{Combat, Strike}
-\featpre Base attack bonus \plus8.
-\featben When you attack, you may take a \minus4 penalty to hit. If you deal damage, the foe struck must make a Fortitude save to avoid being sickened for 5 rounds. The DC is equal to 10 \add your base attack bonus \add your attack attribute (Strength or Dexterity). You cannot make more than one Strike each round.
 
 \subsection{Bloodline Feats}
 
