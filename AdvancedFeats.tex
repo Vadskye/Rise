@@ -120,7 +120,8 @@
 \lcaption{Item Creation Feats}
 \begin{tabularx}{\textwidth}{>{\lcol}p{15em} >{\lcol}p{15em} >{\lcol}X}
 \thead{Item Creation Feats} & \thead{Prerequisites} & \thead{Benefit} \\
-\featref{Imbuement Admixture} & Caster level 6th & Combine multiple spells to create items \\
+\featref{Imbuement Admixture} & Magic level 6th & Combine multiple spells to create items \\
+\featref{Versatile Crafter} & Craft (any) 10 ranks & Craft items from many subschools \\
 \end{tabularx}
 \end{dtable!*}
 
@@ -466,6 +467,45 @@ You must spend a full-round action to make a full attack while in this style. Yo
 \feat{Sickening Strike}{Combat, Strike}
 \featpre Base attack bonus \plus8.
 \featben When you attack, you may take a \minus4 penalty to hit. If you deal damage, the foe struck must make a Fortitude save to avoid being sickened for 5 rounds. The DC is equal to 10 \add your base attack bonus \add your attack attribute (Strength or Dexterity). You cannot make more than one Strike each round.
+
+\subsection{Metamagic Feats}
+
+\feat{Improved Imbued Spellstrike}{Metamagic}
+\parhead{Prerequisite} Ability to cast 2nd level spells, Imbued Strike.
+\parhead{Benefit} This metamagic functions like Imbued Strike, except that the imbuement lasts for 5 minutes if you have not struck a foe. If the weapon leaves your hands or if you cast another spell, the imbuement fades away without effect.
+
+An improved imbued spellstrike uses up a spell slot two levels higher than the spell's actual level.
+
+\feat{Quicken Spell}{Metamagic}
+\parhead{Prerequisite} Ability to cast 3rd level spells.
+\parhead{Benefit} Casting a quickened spell is a swift action. You can perform another action, even casting another spell, in the same round as you cast a quickened spell. However, casting a quickened spell is mentally exhausting. In the turn after you cast it, you lose your standard action. You may cast only one quickened spell per round. A spell whose casting time is more than 1 standard action cannot be quickened. A quickened spell uses up a spell slot two levels higher than the spell's actual level. Casting a quickened spell doesn't provoke an attack of opportunity.
+\parhead{Special} All spellcasters cast a quickened spell as a swift action, even if they would normally increase the casting time of spells with metamagic applied. This is an exception to the general rule that applying metamagic increases the casting time of a spell.
+
+\feat{Reach Spell}{Metamatic}
+\parhead{Prerequisite} Ability to cast 3rd level spells.
+\parhead{Benefit} When casting a reach spell, you can use a spell with a range of touch on a target within \rngclose range. You must succeed on a ranged touch attack. A reach spell uses up a spell slot two levels higher than the spell's actual level.
+
+\feat{Shape Spell}{Metamagic}
+\parhead{Prerequisite} Ability to cast 3rd level spells.
+\parhead{Benefit} When casting a shaped spell, you can exclude any number of 5-foot cubes within the spell's area. This allows you to prevent the spell from affecting your allies, while still allowing it to affect your enemies. The area affected by the spell must be contiguous.
+
+Only area spells can be shaped. A shaped spell uses a spell slot two levels higher than the spell's original level.
+
+\feat{Widen Spell}{Metamagic}
+\parhead{Prerequisite} Ability to cast 4th level spells.
+\parhead{Benefit} You can alter a burst, emanation, line, or spread shaped spell to increase its area. Any numeric measurements of the spell's area increase by 100\%. A widened spell uses up a spell slot three levels higher than the spell's actual level.
+\par Spells that do not have an area of one of these four sorts are not affected by this feat.
+
+\subsection{Item Creation Feats}
+
+\feat{Imbuement Admixture}{Item Creation}
+\parhead{Prerequisite} Magic level 6th
+\parhead{Benefit} You can blend two spells together to create magic items. 
+
+\feat{Versatile Crafter}{Item Creation}
+\parhead{Prerequisite} Craft (any) 10 ranks.
+\parhead{Benefit} You learn how to make items from one subschool for every two ranks you have in each Craft skill. See the Craft skill description for details.
+\parhead{Normal} You learn how to make items from one subschool for every five ranks you have in each Craft skill.
 
 \subsection{Surge Feats}
 %Design guidelines: effective CL = 1/2 HD, min ability score = effective CL-1
