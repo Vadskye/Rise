@@ -266,7 +266,7 @@ Distance moved by jumping is counted against your normal maximum movement in a r
 
 \subsk{High Jump} A high jump is a vertical leap made to reach a ledge high above or to grasp something overhead. The DC is equal to 4 times the distance to be cleared.
 
-If you jumped up to grab something, a successful check means you reached the desired height. If you wish to pull yourself up, you can do so with a move action and a DC 15 Climb check. If you fail the Jump check, you do not reach the height, and you land on your feet in the same spot from which you jumped. As with a long jump, the DC is doubled if you do not get a running start of at least 20 feet.
+If you jumped up to grab something, success means you reached the desired height. If you wish to pull yourself up, you can do so with a move action and a DC 15 Climb check. If you fail the Jump check, you do not reach the height, and you land on your feet in the same spot from which you jumped. As with a long jump, the DC is doubled if you do not get a running start of at least 20 feet.
 
 Obviously, the difficulty of reaching a given height varies according to the size of the character or creature. The maximum vertical reach (height the creature can reach without jumping) for an average creature of a given size is shown on the table below. (As a Medium creature, a typical human can reach 8 feet without jumping.) The maximum vertical reach for an individual creature is usually given by the 1 and 1/2 times the creature's height.
 
@@ -450,7 +450,7 @@ You can use the Craft skill to create false or defective versions of objects. Fo
 Forgeries which have a function, such as a weapon, are always defective in some way which makes them unsuitable for use. A forgery can be detected with the Identify Forgery uses of the Craft and Perception skills.
 
 \subsubsection{Identify Forgery}
-You can make a Craft check as a full-round action to evaluate whether an item is a forgery. The DC to identify a forgery is equal to the Craft check used to make the item.
+You can make a Craft check as a full-round action to evaluate whether an item is a forgery. The DC to identify a forgery is equal to the Craft check used to make the item. Success indicates that you correctly identify whether the item is a forgery or not. Failure indicates that you are unsure. Failure by more than 10 indicates that you incorrectly identify the item. The check is made secretly, so you can't be sure how good the result is.
 
 \subsubsection{Repair Item}
 You can make a Craft check to repair a broken item. This functions like crafting the item from scratch, except that you use one-tenth of the item's price to determine the price of raw materials and the crafting time.
@@ -561,7 +561,7 @@ adulthood), adulthood, middle age, old, and venerable. \\
 You can make a Disguise check to make a creature look like another creature you have previously observed. This functions like a disguise creature check, but the result of your Disguise check can't exceed the result of a Perception check you have made to observe the creature. People viewing the disguise who know what that person looks like get a \plus5 circumstance bonus on their Spot checks to identify the disguise.
 
 \subsubsection{Identify Disguise}
-You can make a Disguise check to identify a disguise on another creature. A successful check allows you know that the creature is disguised. If you succeed by 10 or more, you can also discern the creature's true appearance beneath the disguise. You can make an identify disguise check against any individual creature once per hour.
+You can make a Disguise check to identify a disguise on another creature. The DC is equal to the Disguise check used to create the disguise. Success means you know that the creature is disguised. If you succeed by 10 or more, Success means you know that the creature is disguised. If you succeed by 10 or more, you can also discern the creature's true appearance beneath the disguise. You can make an identify disguise check against any individual creature once per hour.
 
 \subsection{Escape Artist (Dex; Armor Check Penalty)}
 Escape Artist represents your ability to escape bindings and move through small areas by contorting your body.
@@ -590,7 +590,7 @@ If you take a \minus10 penalty to your Escape Artist check, you can squeeze as a
 Heal allows you to tend the wounds of others. In order to heal a creature, you must be able to see and touch it.
 
 \subsubsection{Accelerate Recovery}
-You can make a DC 15 Heal check to treat wounded people, allowing them to recover more quickly. A successful check causes the patient to recover hit points or attribute damage at twice the normal rate: half the patient's hit points and one point of ability damage for 4 hours of rest, or all of the patient's hit points and two points of ability damage with 8 hours of rest. For every 5 points by which you beat the DC, you half the patient's recovery time again.
+You can make a DC 15 Heal check to treat wounded people, allowing them to recover more quickly. Success means the patient recovers hit points or attribute damage at twice the normal rate: half the patient's hit points and one point of ability damage for 4 hours of rest, or all of the patient's hit points and two points of ability damage with 8 hours of rest. For every 5 points by which you beat the DC, you half the patient's recovery time again.
 
 You can tend as many as six patients at a time. You need a few items and supplies (bandages, salves, and so on) that are easy to come by in settled lands. Accelerating a creature's recovery counts as light activity. %What does light activity mean?
 
@@ -682,14 +682,24 @@ Undercommon  & Drow & Elven
 \end{dtable}
 
 \subsection{Perception (Wis)}
-The Perception skill is used to observe things which you might otherwise fail to notice. It can be used to spot concealed things, or to listen to sounds accurately. These are not different skills, but merely different applications of the same skill.
+Perception represents your ability to observe things which you might otherwise fail to notice. It can be used to spot concealed things, to correctly identify sounds, or to smell the distinctive rotting flesh smell that accompanies undead.
 
-It is possible to have bonuses or penalties to only the Spot part of a Perception check, or to only the Listen part. For example, it is extremely difficult to see when there is no light, but that has no effect on how difficult it is for you to hear sounds. In such a case, roll the Perception check once and add the Spot modifier separately from the Listen modifier. These are referred to as separate checks -- a Spot check and a Listen check -- though you only roll one die. If you succeed on a Listen check without succeeding on a Spot check, you have heard a sound but can't see what it is coming from, or vice versa.
+Each creature has a variety of senses. The Perception skill governs the use of every sense. It is most commonly used with sight, hearing, and smell, though other uses are possible. Often, bonuses or penalites will apply only to certain senses. For example, it is extremely difficult to see when there is no light, but that has no effect on how difficult it is for you to hear sounds. In such cases, you only roll one Perception check, and you apply the modifiers separately for each sense. 
+
+\subsubsection{Notice Event}
+You automatically notice events around you. The DC depends on the sense used and the obviousness of the event, as described on tables below. If your modifier exceeds the event's DC, you notice something, but you don't know any details -- only its general direction. If your modifier exceeds the DC by 5 or more, you can clearly identify what the event was. If your modifier is less than the DC, you don't notice anything.
 
-Some creatures have additional senses, such as scent. These senses are also used with the Perception skill.
+\subsubsection{Active Attention}
+As a full-round action, you can make a conscious effort to pay attention to events around you. You may make a Perception check to notice events, rather than simply using your modifier. Most creatures can't maintain this level of attention for longer than 5 rounds \add their Constitution before they have to relax for 5 rounds. %Poorly worded limitation
 
-\subsubsection{Listen}
-\parhead{Check} Your Listen check is either made against a DC that reflects how quiet the noise is that you might hear, or it is opposed by your target's Move Silently check (a form of Stealth check).
+\subsubsection{Identify Disguise}
+You can make a Perception check as a move action to identify a disguise on another creature. The DC is equal to the Disguise check used to create the disguise. Success means you know that the creature is disguised. If you succeed by 10 or more, you can also discern the creature's true appearance beneath the disguise. You can make an identify disguise check against any individual creature once per hour.
+
+\subsubsection{Identify Forgery}
+You can make a Perception check as a full-round action to evaluate whether an item is a forgery. The DC to identify a forgery is equal to the Craft check used to make the item. Success indicates that you correctly identify whether the item is a forgery or not. Failure indicates that you are unsure. Failure by more than 10 indicates that you incorrectly identify the item. The check is made secretly, so you can't be sure how good the result is.
+
+\subsubsection{Hearing}
+You can make a Perception check to hear sounds. The DC is based on the intensity of the sound and its distance from you. Your Listen check is either made against a DC that reflects how quiet the noise is that you might hear, or it is opposed by your target's Move Silently check (a form of Stealth check).
 \begin{dtable}
 \begin{tabularx}{\columnwidth}{l >{\lcol}X}
 \thead{Listen DC}   &  \thead{Sound}  \\
