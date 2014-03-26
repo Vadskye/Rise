@@ -564,63 +564,46 @@ You can make a Disguise check to make a creature look like another creature you 
 You can make a Disguise check to identify a disguise on another creature. A successful check allows you know that the creature is disguised. If you succeed by 10 or more, you can also discern the creature's true appearance beneath the disguise. You can make an identify disguise check against any individual creature once per hour.
 
 \subsection{Escape Artist (Dex; Armor Check Penalty)}
+Escape Artist represents your ability to escape bindings and move through small areas by contorting your body.
 
-\parhead{Check} You can escape from bindings and restrictions, or move through very small areas. The table below gives the DCs to escape various forms of restraints.
+\subsubsection{Escape Bindings}
+You can make an Escape Artist check as a full-round action to escape bindings and restraints. The DCs of various restraints are given on the table below.
 
 \begin{dtable}
 \begin{tabularx}{\columnwidth}{>{\lcol}X l}
 \thead{Restraint}  & \thead{Escape Artist DC} \\
-Ropes & Binder's grapple attack \plus10 \\
+Ropes & Binder's grapple or Devices check \\
 Net & 20 \\
-\spell{Snare} spell  & 23 \\
 Manacles  & 30 \\
-Tight space  & 30 \\
 Masterwork manacles  & 35 \\
 Grappler & Grappler's grapple attack result	 \\
-\spell{Animate rope} spell, \spell{entangle} spell, or \spell{web} spell & Spell's save DC \\
+\spell{Entangle}, \spell{web}, or similar spells & Spell's save DC \\
 \end{tabularx}
 \end{dtable}
 
-\subsk{Ropes} Your Escape Artist check is opposed by the binder's grapple attack to bind you. Since it's easier to tie someone up than to escape from being tied up, the binder gets a \plus10 circumstance bonus on his or her check.
-\subsk{Manacles and Masterwork Manacles} The DC for manacles is set by their construction.
-\subsk{Tight Space} The DC noted on the table is for getting through a space where your head fits but your shoulders don't. If the space is long you may need to make multiple checks. You can't get through a space that your head does not fit through.
+\subsubsection{Squeeze}
+You can make an Escape Artist check as a full-round action to move one foot forward in a space too small to normally fit you. A DC 15 check allows you to fit into a space that can fit your head and shoulders, but which is too tight to allow crawling. A DC 30 check allows you fit into a space that can fit your head, but not your shoulders. Success indicates that you make progress through the space, while failure indicates that your action is wasted.
 
-\subsk{Grappler} You can make an Escape Artist check opposed by your enemy's grapple check to get out of a grapple or out of a pinned condition (so that you're only grappling).
-
-\parhead{Action} Making an Escape Artist check to escape restraints of any kind is a full-round action. Squeezing through a tight space takes at least 1 minute, and possibly longer, depending on how long the space is.
-
-\parhead{Try Again} Varies. You can make another check after a failed check if you're squeezing your way through a tight space, making multiple checks. If the situation permits, you can make additional checks, or even take 20, as long as you're not being actively opposed.
+If you take a \minus10 penalty to your Escape Artist check, you can squeeze as a move action.
 
 \subsection{Heal (Wis)}
-\parhead{Check} The DC and effect depend on the task you attempt.
-\begin{dtable}
-\begin{tabularx}{\columnwidth}{>{\lcol}X r}
-\thead{Task} & \thead{Heal DC} \\
-First aid & 15 \\
-Long-term care  & 15 \\
-Accelerate healing & 25 \\
-Treat wound from caltrop, \spell{spike growth}, or \spell{spike stones} & 15 \\
-Treat poison  & Poison's save DC \\
-Treat disease  & Disease's save DC
-\end{tabularx}
-\end{dtable}
-\subsk{First Aid} You usually use first aid to save a dying character. If a character has negative hit points and is losing hit points (at the rate of 1 per round, 1 per hour, or 1 per day), you can make him or her stable. A stable character regains no hit points but stops losing them.
-\subsk{Long-Term Care} Providing long-term care means treating a wounded person for a day or more. If your Heal check is successful, the patient recovers hit points or attribute score points (lost to ability damage) at twice the normal rate: half the patient's hit points and one point of ability damage for 4 hours of rest, or all of the patient's hit points and two points of ability damage with 8 hours of rest.
+Heal allows you to tend the wounds of others. In order to heal a creature, you must be able to see and touch it.
 
-You can tend as many as six patients at a time. You need a few items and supplies (bandages, salves, and so on) that are easy to come by in settled lands. Giving long-term care counts as light activity for the healer. You cannot give long-term care to yourself.
-\par For every 5 points by which you beat the DC, time your patients need to recover is halved. For example, a Heal check result of 25 would mean that the patients need only 2 hours of rest to fully heal.
+\subsubsection{Accelerate Recovery}
+You can make a DC 15 Heal check to treat wounded people, allowing them to recover more quickly. A successful check causes the patient to recover hit points or attribute damage at twice the normal rate: half the patient's hit points and one point of ability damage for 4 hours of rest, or all of the patient's hit points and two points of ability damage with 8 hours of rest. For every 5 points by which you beat the DC, you half the patient's recovery time again.
 
-\subsk{Treat Wound from Caltrop, Spike Growth, or Spike Stones}A creature wounded by stepping on a caltrop moves at one-half normal speed. A successful Heal check removes this movement penalty.
+You can tend as many as six patients at a time. You need a few items and supplies (bandages, salves, and so on) that are easy to come by in settled lands. Accelerating a creature's recovery counts as light activity. %What does light activity mean?
 
-A creature wounded by a spike growth or spike stones spell must succeed on a Reflex save or take injuries that reduce his speed by one-third. Another character can remove this penalty by taking 10 minutes to dress the victim's injuries and succeeding on a Heal check against the spell's save DC. For every 5 by which you beat the DC, the time required to dress the injuries is halved.
+\subsubsection{First Aid}
+You can make a DC 15 Heal check as a standard action to stabilize a dying character. Success indicates that the patient becomes stable, and no longer needs to make Fortitude saves each round to stave off death. 
 
-\subsk{Treat Poison} To treat poison means to tend a single character who has been poisoned and who is going to take more damage from the poison (or suffer some other effect). Every time the poisoned character makes a saving throw against the poison, you make a Heal check. The poisoned character uses your check result or his or her saving throw, whichever is higher.
+\subsubsection{Treat Poison or Disease}
+You can make a Heal check to treat poison or disease in a character. The next time the character would make a saving throw against the poison or disease, it can use its saving throw result or your Heal check result, whichever is higher. A creature can only benefit from one such attempt to treat a poison on each saving throw.
 
-\subsk{Treat Disease} To treat a disease means to tend a single diseased character. Every time he or she makes a saving throw against disease effects, you make a Heal check. The diseased character uses your check result or his or her saving throw, whichever is higher.
+Treating a poison takes a standard action. Treating a disease takes ten minutes of work.
 
-\parhead{Action} Providing first aid, treating a wound, or treating poison is a standard action. Treating a disease or tending a creature wounded by a spike growth or spike stones spell takes 10 minutes of work. Providing long-term care requires 8 hours of light activity.
-
-\parhead{Try Again} Varies. Generally speaking, you can't try a Heal check again without proof of the original check's failure. You can always retry a check to provide first aid, assuming the target of the previous attempt is still alive.
+\subsubsection{Treat Wound}
+You can make a DC 15 Heal check as a standard action to treat some specific wounds, such as from a caltrop or \spell{spike growth} spell. Success usually indicates that the wound is gone, as indicated by the effect's description.
 
 \subsection{Intimidate (Cha)}
 You can use Intimidate to intimidate people.
