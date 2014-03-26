@@ -526,8 +526,19 @@ You can attempt to leave no trace of your tampering while making a Devices check
 
 When dealing with traps, you are always considered to be ``threatened'' by the trap, preventing you from taking 10.
 
+
 \subsection{Disguise (Int)}
-\parhead{Check} A Disguise check allows you to change the appearance of a creature using makeup, costumes, and so forth. It is opposed by the Perception skill; a Spot check higher than your Disguise check will reveal the disguise. The effectiveness of a disguise depends in part on how much you're attempting to change the creature's appearance, as shown on the table below. The modifiers are cumulative; use any that apply.
+Disguise represents your ability to create disguises to conceal the appearance of creatures or objects. This skill does not help you act appropriately while disguised; see Perform (acting) and Bluff.
+
+\subsubsection{Conceal Object}
+You can make a Disguise check as a full-round action to conceal an item on your person. The object must be at least two size categories smaller than you are. Your Disguise check is opposed by the Perception check of anyone observing you. If your Disguise check exceeds their Perception check, they fail to notice the item. A creature directly interacting you to search for the object, such as by frisking you, gains a \plus5 circumstance bonus to its Perception check.
+
+\subsubsection{Disguise Creature}
+You can make a Disguise check to change the appearance of a creature using makeup, costumes, and so forth. An observer can perceive the presence of a disguise with a Disguise or Perception check to identify a disguise that is higher than your Disguise check. The effectiveness of a disguise depends in part on how much you're attempting to change the creature's appearance, as shown on the table below. The modifiers are cumulative; use any that apply.
+
+Creating a disguise takes 1d4 \mtimes 10 minutes. You can take a \minus10 penalty to reduce the time to 1d4 minutes, or a \minus20 penalty to reduce the time to 1d4 rounds.
+
+The Disguise check is made secretly, so that you can't be sure how good the result is. However, you can attempt to judge its effectiveness with an identify disguise check using either Disguise or Perception. 
 
 \begin{dtable}
 \begin{tabularx}{\columnwidth}{l >{\ccol}X}
@@ -536,25 +547,21 @@ Different gender & \minus2 \\
 Different race or subtype & \minus2 \\
 Different age category & \minus2\footnotetemp{1} \\
 Different creature type & \minus5 \\
+Additional limb & \minus5\fn{2} \\
 Larger size category & \plus20\footnotetemp{2}
 \end{tabularx}
 1 Per step of difference between your actual age category and your
 disguised age category. The steps are: young (younger than
-adulthood), adulthood, middle age, old, and venerable.
-2 Per step of difference between the original size category and the new size category.
+adulthood), adulthood, middle age, old, and venerable. \\
+2 Per limb. \\
+3 Per step of difference between the original size category and the new size category.
 \end{dtable}
 
-You make the Disguise check when you apply the disguise. The Disguise check is made secretly, so that you can't be sure how good the result is. However, you can attempt to judge its effectiveness with Perception.
+\subsubsection{Emulate Creature}
+You can make a Disguise check to make a creature look like another creature you have previously observed. This functions like a disguise creature check, but the result of your Disguise check can't exceed the result of a Perception check you have made to observe the creature. People viewing the disguise who know what that person looks like get a \plus5 circumstance bonus on their Spot checks to identify the disguise.
 
-If make a disguise to emulate a particular individual, you must know what that individual looks like. The result of your Disguise check to emulate that person cannot exceed the result of a Spot check to see that person, which must be made by you or someone helping you. People viewing the disguise who know what that person looks like get a \plus5 circumstance bonus on their Spot checks to identify the disguise.
-
-\par Anyone seeing the disguise may recognize it with their normal ``take 0'' check. Usually, an individual makes an active Spot check to see through your disguise only if they are suspicious of you. A creature that remains suspicious of you may make a new check once per hour.
-
-\parhead{Action} Creating a disguise requires 1d4\mtimes10 minutes of work. You can take a \minus10 penalty to reduce the time to 1d4 minutes, or a \minus20 penalty to reduce the time to 1d4 rounds.
-\parhead{Try Again} Yes. You may try to redo a failed disguise, but if others know that a disguise was attempted, they'll be more suspicious.
-\parhead{Special} Magic that alters a creature's form, such as \spell{disguise self}, grants a \plus10 enhancement bonus to Disguise checks made to disguise the creature (see the individual spell descriptions). Divination magic that allows people to see through illusions (such as true seeing) does not penetrate a mundane disguise, but it can negate the magical component of a magically enhanced one.
-
-This skill does not help you act appropriately while disguised. See Perform (acting) and Bluff.
+\subsubsection{Identify Disguise}
+You can make a Disguise check to identify a disguise on another creature. A successful check allows you know that the creature is disguised. If you succeed by 10 or more, you can also discern the creature's true appearance beneath the disguise. You can make an identify disguise check against any individual creature once per hour.
 
 \subsection{Escape Artist (Dex; Armor Check Penalty)}
 
