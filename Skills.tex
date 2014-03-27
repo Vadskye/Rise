@@ -348,7 +348,7 @@ The DC of the check depends on the difficulty of the task and the conditions of 
     15 & Surface with some hand and foot holds & Knotted rope, surface with pitons or carved holes, rough wall \\
     15 & Surface with only large hand holds & Pulling yourself up by your hands while dangling \\
     20 & Uneven surface with narrow hand and foot holds & Unknotted rope, unweathered natural rock, typical ruin wall, brick wall \\
-    20 & Overhang or ceiling with only handholds & Tree limbs (without using feet), butcher's ceiling with meat hooks \\
+    20 & Overhang or ceiling with only handholds & Tree limbs, butcher's ceiling with meat hooks \\
     25 & Rough surface with no holds & Weathered natural rock, well-made stone wall \\
     \x\fn{1} & Smooth surface & Glass window, \spell{wall of force} \\
     30 & Smooth surface with chimney setup & \x \\
@@ -685,12 +685,19 @@ Undercommon  & Drow & Elven
 Perception represents your ability to observe things which you might otherwise fail to notice. It can be used to spot concealed things, to correctly identify sounds, or to smell the distinctive rotting flesh smell that accompanies undead.
 
 Each creature has a variety of senses. The Perception skill governs the use of every sense. It is most commonly used with sight, hearing, and smell, though other uses are possible. Often, bonuses or penalites will apply only to certain senses. For example, it is extremely difficult to see when there is no light, but that has no effect on how difficult it is for you to hear sounds. In such cases, you only roll one Perception check, and you apply the modifiers separately for each sense. 
-
+
+While sleeping, you take a \minus10 penalty to Perception.
+
 \subsubsection{Notice Event}
 You automatically notice events around you. The DC depends on the sense used and the obviousness of the event, as described on tables below. If your modifier exceeds the event's DC, you notice something, but you don't know any details -- only its general direction. If your modifier exceeds the DC by 5 or more, you can clearly identify what the event was. If your modifier is less than the DC, you don't notice anything.
 
+\subsubsection{Discern Illusion}
+You automatically notice inconsistencies in illusion spells. The DC is equal to the save DC of the spell. Success means that you get a Will save to disbelieve the illusion as if you interacted with the illusion.
+
+If the illusion is completely missing a sense that should logically be present, such as a \spell{silent image} of people in armor, the DC to identify the illusion with that sense is lowered by 10. 
+
 \subsubsection{Active Attention}
-As a full-round action, you can make a conscious effort to pay attention to events around you. You may make a Perception check to notice events, rather than simply using your modifier. Most creatures can't maintain this level of attention for longer than 5 rounds \add their Constitution before they have to relax for 5 rounds. %Poorly worded limitation
+As a move action, you can make a conscious effort to pay attention to events around you. You may make a Perception check to notice events, rather than simply using your modifier. Most creatures can't maintain this level of attention for longer than 5 rounds \add their Constitution before they have to relax for 5 rounds. %Poorly worded limitation
 
 \subsubsection{Identify Disguise}
 You can make a Perception check as a move action to identify a disguise on another creature. The DC is equal to the Disguise check used to create the disguise. Success means you know that the creature is disguised. If you succeed by 10 or more, you can also discern the creature's true appearance beneath the disguise. You can make an identify disguise check against any individual creature once per hour.
@@ -698,88 +705,89 @@ You can make a Perception check as a move action to identify a disguise on anoth
 \subsubsection{Identify Forgery}
 You can make a Perception check as a full-round action to evaluate whether an item is a forgery. The DC to identify a forgery is equal to the Craft check used to make the item. Success indicates that you correctly identify whether the item is a forgery or not. Failure indicates that you are unsure. Failure by more than 10 indicates that you incorrectly identify the item. The check is made secretly, so you can't be sure how good the result is.
 
-\subsubsection{Hearing}
-You can make a Perception check to hear sounds. The DC is based on the intensity of the sound and its distance from you. Your Listen check is either made against a DC that reflects how quiet the noise is that you might hear, or it is opposed by your target's Move Silently check (a form of Stealth check).
-\begin{dtable}
-\begin{tabularx}{\columnwidth}{l >{\lcol}X}
-\thead{Listen DC}   &  \thead{Sound}  \\
-\minus10   &  A battle  \\
-0   &  People talking\footnotetemp{1}  \\
-5   &  A person in medium armor walking at a slow pace (10 ft./round) trying not to make any noise.  \\
-10   &  An unarmored person walking at a slow pace (15 ft./round) trying not to make any noise  \\
-15   &  A 1st-level rogue using Move Silently to sneak past the listener  \\
-15   &  People whispering\footnotetemp{1}  \\
-19   &  A cat stalking  \\
-30   &  An owl gliding in for a kill  \\
-\end{tabularx}
-1 If you beat the DC by 10 or more, you can make out what's being said, assuming that you understand the language.
-\end{dtable}
-\begin{dtable}
-\begin{tabularx}{\columnwidth}{l >{\lcol}X}
-\thead{Listen DC Modifier}  &  \thead{Condition} \\
-\plus5  &  Through a door  \\
-\plus15  &  Through a stone wall  \\
-\plus1  &  Per 10 feet of distance  \\
-\plus5  &  Listener distracted
-\end{tabularx}
-\end{dtable}
-In the case of people trying to be quiet, the DCs given on the table could be replaced by Move Silently checks, in which case the indicated DC would be their average check result.
+\subsubsection{Read Lips}
+You can make a DC 15 sight-based Perception check to read a creature's lips. You must be able to understand the language spoken. Success means you can understand the general content of the message, but not the exact words. Success by 5 or more means you understand the exact words. spoken if you understand the language. Failure means you don't understand the message. Failure by 6 or more means you draw an incorrect conclusion about the message.
 
-\subsk{Discern Illusion} If you are near an illusion spell which allows a Will save to disbelieve, you can attempt a Listen check against the save DC of the spell (including other modifiers as normal). If you succeed, you are considered to have interacted with it, and can make a Will save to disbelieve it accordingly. This can only be used if the illusion in question is or should be producing sound. For example, a silent illusion of a ghost should not produce sound, and therefore cannot be interacted with by a Listen check.
+\subsubsection{Search}
+You can spend a full-round action to make a Perception check to notice things in a single 5-ft. square within 10 feet of you. While doing so, you ignore size penalties that would affect the DC to notice anything within the square.
 
-\parhead{Action} Varies. Every time you have a chance to hear something in a reactive manner (such as when someone makes a noise or you move into a new area), you can make a Listen check without using an action. Trying to hear something you failed to hear previously is a move action.
-\parhead{Try Again} Yes. You can try to hear something that you failed to hear previously with no penalty.
-\parhead{Special} When several characters are listening to the same thing, a single 1d20 roll can be used for all the individuals' Listen checks.
-\par A fascinated creature takes a  \minus4 penalty on Listen checks made as reactions.
-\par A sleeping character may make Listen checks at a \minus10 penalty. A successful check awakens the sleeper.
+\subsubsection{Senses}
 
-\subsubsection{Spot (Wis)}
-\parhead{Check} The Spot skill is used to notice hidden creature or objects which are not readily apparent. Typically, your Spot check is opposed by the Hide check (a form of Stealth check) of the creature trying not to be seen or the DC to find a concealed object or trap. Sometimes a creature or object isn't intentionally hidden but is still difficult to see, so a successful Spot check is necessary to notice it.
+\parhead{Hearing} The DC to hear a sound depends on the intensity of the sound, as shown on \trefnp{Hearing Base DCs}, and other modifiers given at \trefnp{Perception DC Modifiers}.
 
-A Spot check result higher than 20 generally lets you become aware of an invisible creature near you, though you can't actually see it.
-
-Spot is also used to detect someone in disguise (see the Disguise skill), and to read lips when you can't hear or understand what someone is saying.
-
-Spot checks may be called for to determine the distance at which an encounter begins. A penalty applies on such checks, depending on the distance between the two individuals or groups, and an additional penalty may apply if the character making the Spot check is distracted (not concentrating on being observant).
+Background noise can make it more difficult to notice sounds. If there is significant background noise of a similar intensity to the sound to be detected, the DC increases by 5. If there is significant background noise of a much greater intensity than the sound to be detected, the DC increases by 10.
 
 \begin{dtable}
-\begin{tabularx}{\columnwidth}{>{\lcol}X >{\lcol}X}
-\thead{Condition} & \thead{Penalty} \\
-Per 10 feet of distance & \minus1 \\
-Spotter distracted & \minus5 \\
-\end{tabularx}
+    \lcaption{Hearing Base DCs}
+    \begin{tabularx}{\columnwidth}{X l}
+        \thead{Situation} & \thead{DC} \\
+        Creature shouting & \minus5\fn{1} \\
+        Creature talking normally or fighting & 0\fn{1} \\ 
+        Creature whispering & 10\fn{1} \\
+        Creature standing still & 15\fn{1} \\
+        Creature trying to be quiet & Stealth check result \\ 
+    \end{tabularx}
+    1 Add the creature or object's special size modifier \\
 \end{dtable}
 
-\subsk{Read Lips} To understand what someone is saying by reading lips, you must be within 30 feet of the speaker, be able to see him or her speak, and understand the speaker's language. (This use of the skill is language-dependent.) The base DC is 15, but it increases for complex speech or an inarticulate speaker. You must maintain a line of sight to the lips being read.
+\parhead{Sight} The DC to see something depends on the obviousness of the sight, as shown on \trefnp{Sight Base DCs}, and other modifiers given at \trefnp{Perception DC Modifiers}.
 
-If your Spot check succeeds, you can understand the general content of a minute's worth of speaking, but you usually still miss certain details. If the check fails by 4 or less, you can't read the speaker's lips. If the check fails by 6 or more, you draw some incorrect conclusion about the speech. The check is rolled secretly in this case, so that you don't know whether you succeeded or missed by 5.
-
-\subsk{Discern Illusion} If you are near an illusion spell which allows a Will save to disbelieve, you can reflexively make a Spot check against the save DC of the spell (including other modifiers as normal). If you succeed, you are considered to have interacted with it, and can make a Will save to disbelieve it accordingly. This can only be used if the illusion in question has a visual component. For example, an illusion of a wave of heat has no visual component, and therefore cannot be interacted with by a Spot check.
-
-\subsk{Search} Noticing some things, such as hidden traps and secret doors, requires close examination and attention to detail. You generally must be within 10 feet of the object or surface to be searched. The table below gives DCs for typical searching tasks involving the Spot skill.
+The DC to notice an invisible creature with sight is 20 higher than normal. Noticing an invisible creature makes you aware of its presence, but doesn't let you see it perfectly.
 
 \begin{dtable}
-\lcaption{Active Searching DCs}
-\begin{tabularx}{\columnwidth}{>{\lcol}p{15em} >{\rcol}X}
-\thead{Task} & \thead{Spot DC} \\
-Ransack a chest full of junk to find a certain item & 10 \\
-Notice a typical secret door or a simple trap  & 20 \\
-Find a difficult nonmagical trap & 21 or higher \\
-Find a magic trap & 25 \add double level of spell used to create trap \\
-Notice a well-hidden secret door  & 30 \\
-Find a footprint  & Varies\footnotetemp{1} \\
-\end{tabularx}
-1 A successful Spot check can find a footprint or similar sign of a creature's passage, but it won't let you find or follow a trail. See the Track feat for the appropriate DC.
+    \lcaption{Sight Base DCs}
+    \begin{tabularx}{\columnwidth}{X l}
+        \thead{Situation} & \thead{DC} \\
+        Creature or object moving & \minus5\fn{1} \\
+        Creature or object standing still & 0\fn{1} \\
+        Creature trying to hide & Stealth check result \\ 
+        Hidden trap or secret door & Craft or Devices check result \add 10 \\
+        Magic trap & 25 \add double level of spell used to create trap \\
+    \end{tabularx}
+    1 Add the creature or object's special size modifier \\
 \end{dtable}
 
-\parhead{Action} Varies. Every time you have a chance to spot something in a reactive manner you can make a Spot check without using an action. Trying to spot something you failed to see previously is a move action. To read lips, you must concentrate for a full minute before making a Spot check, and you can't perform any other actions (other than moving at up to half speed) during this minute. It takes a full-round action to actively search a 5-foot-by-5-foot area or a volume of goods 5 feet on a side.
-\parhead{Try Again} Yes. You can try to spot something that you failed to see previously at no penalty. You can attempt to read lips once per minute.
-\parhead{Special} A fascinated creature takes a \minus4 penalty on Spot checks
-made as reactions.
+\parhead{Scent} The DC to smell something depends on the intensity of the scent, as shown on \trefnp{Scent Base DCs}, and other modifiers given at \trefnp{Perception DC Modifiers}.
 
-\par The rituals \spell{explosive runes},  \spell{fire trap},  \spell{glyph of warding},  \spell{symbol of X}, and \spell{teleportation circle} create magic traps  that can be found by making a successful Search check. \spell{Spike growth} and \spell{spike stones} create magic traps that can be found using Spot, but against which Disable Device checks do not succeed. See the individual spell descriptions for details.
+The DCs given are for a creature with an ordinary sense of smell, like a human. A creature with an unusually keen sense of smell, like most animals, gains a \plus5 competence bonus to scent-based Perception checks. A creature with the scent ability, such as a dog, gains a \plus10 competence bonus to scent-based Perception checks.
 
-\par Active abjuration spells within 10 feet of each other for 24 hours or more create barely visible energy fluctuations. These fluctuations reduce the DC to locate such abjuration spells by 4.
+Smell intensity can vary widely depending on the circumstances. In general, an unusually strong smell, such as a creature wearing perfume, has a DC which is 5 lower. An unusually weak smell, such as a creature who has just taken an unscented bath, has a DC which is 5 higher.
+
+\begin{dtable}
+    \lcaption{Scent Base DCs}
+    \begin{tabularx}{\columnwidth}{X l}
+        \thead{Situation} & \thead{DC} \\
+        Strong scent (rotting flesh, pungent spices) & 0 \\
+        Moderate scent (fresh food) & 5 \\
+        Living creature\fn{1} & 10 \\
+    \end{tabularx}
+    1 Add the creature's special size modifier \\
+\end{dtable}
+
+\parhead{Other Senses} Other senses can exist, and creatures can make Perception checks to use those other senses appropriately.
+
+\subsubsection{Modifiers}
+All Perception checks share the same set of modifiers, in addition to certain modifiers which depend on the sense. These are noted on \trefnp{Perception DC modifiers}.
+
+\begin{dtable}
+    \lcaption{Perception DC Modifiers}
+    \begin{tabularx}{\columnwidth}{X l}
+        \thead{Number} & \thead{DC Modifier} \\
+        One creature or object & \plus0 \\
+        Two creatures or objects & \plus2 \\
+        Five creatures or objects & \plus5 \\
+        Twenty creatures or objects & \plus10 \\
+        A hundred creatures or objects & \plus15 \\
+        Five hundred creatures or objects & \plus20 \\
+        \thead{Distance} & \thead{DC Modifier} \\
+        Less than five feet away & \plus0 \\
+        Five feet away & \plus2 \\
+        Twenty feet away & \plus5 \\
+        A hundred feet away & \plus10 \\
+        Five hundred feet away & \plus15 \\
+        Half a mile away & \plus20 \\
+    \end{tabularx}
+\end{dtable}
 
 \subsection{Perform (Cha)}
 \par Like Craft, Knowledge, and Profession, Perform is actually a number of separate skills. You could have several Perform skills, each with its own ranks, each purchased as a separate skill.
