@@ -685,12 +685,12 @@ While sleeping, you take a \minus10 penalty to Perception.
 As a move action, you can make a conscious effort to pay attention to events around you. You may make a Perception check to notice events, rather than simply using your modifier. Most creatures can't maintain this level of attention for longer than 5 rounds \add their Constitution before they have to relax for 5 rounds. %Poorly worded limitation
 
 \subsubsection{Discern Illusion}
-You automatically notice inconsistencies in illusion spells. The DC is equal to the save DC of the spell. Success means that you get a Will save to disbelieve the illusion as if you interacted with the illusion.
+You can automatically notice inconsistencies in illusion spells. The DC is equal to the save DC of the spell. Success means that you get a Will save to disbelieve the illusion as if you interacted with the illusion.
 
 If the illusion is completely missing a sense that should logically be present, such as a \spell{silent image} of people in armor, the DC to identify the illusion with that sense is lowered by 10. 
 
 \subsubsection{Notice Event}
-You automatically notice events around you. The DC depends on the sense used and the obviousness of the event, as described on tables below. If your modifier exceeds the event's DC, you notice something, but you don't know any details -- only its general direction. If your modifier exceeds the DC by 5 or more, you can clearly identify what the event was. If your modifier is less than the DC, you don't notice anything.
+You can automatically notice events around you. The DC depends on the sense used and the obviousness of the event, as described on tables below. If your modifier exceeds the event's DC, you notice something, but you don't know any details -- only its general direction. If your modifier exceeds the DC by 5 or more, you can clearly identify what the event was. If your modifier is less than the DC, you don't notice anything.
 
 \subsubsection{Identify Disguise}
 You can make a Perception check as a move action to identify a disguise on another creature. The DC is equal to the Disguise check used to create the disguise. Success means you know that the creature is disguised. If you succeed by 10 or more, you can also discern the creature's true appearance beneath the disguise. You can make an identify disguise check against any individual creature once per hour.
@@ -924,29 +924,28 @@ If you take damage or your mount rears or bolts unexpectedly, you must make a DC
 You can make a DC 15 Ride check as a move action to drop low and take cover behind your mount. This requires the use of both your hands. Success means you gain the benefits of active cover. Failure means you can't get low enough and gain no benefit from the action. Failure by 6 or more means you fall. You can leave this cover and resume your normal position as a move action that does not require a Ride check.
 
 \subsection{Sense Motive (Wis)}
-\parhead{Check} A successful check lets you avoid being bluffed (see the Bluff skill). You can also use this skill to determine when ``something is up'' (that is, something odd is going on) or to assess someone's trustworthiness.
+Sense Motive represents to read body language and emotion.
 
-\begin{dtable}
-\begin{tabularx}{\columnwidth}{>{\lcol}X >{\lcol}X}
-Task Sense Motive & DC \\
-Hunch & 20 \\
-Sense enchantment & 25 or 15 \\
-Discern secret message & Varies \\
-\end{tabularx}
-\end{dtable}
+\subsubsection{Discern Enchantment}
+You can automatically notice when a creature is affected by mind-controlling magic -- including yourself. The DC is normally equal to the save DC of the spell. Domination effects have a DC that is 10 lower than normal.
 
-\subsk{Hunch} This use of the skill involves making a gut assessment of the social situation. You can get the feeling from another's behavior that something is wrong, such as when you're talking to an impostor. Alternatively, you can get the feeling that someone is trustworthy.
+This can only be used if the effect in question is actually affecting the creature's behavior at the time. For example, a person who has been given an unnatural aversion to cheese by the \spell{aversion} spell would generally not be affected by the enchantment unless it was presented with cheese. Therefore, you could not discern the enchantment on the creature simply by talking to it about the weather. 
 
-\subsk{Discern Mental Influence} If you or a creature you are interacting with is affected by beguilement, compulsion, or domination effect that alters their behavior, you can attempt a Sense Motive check against the save DC of the spell (including other modifiers as normal). If you succeed, you recognize the existence of unnatural mental influence. If you recognize such an effect on yourself, you can make a Will save to fight off the effect once each round.
+Identifying mind-controlling magic affecting you gives you no special ability to resist the magic, but it may help you mitigate its effects.
 
-This can only be used if the effect in question is actually affecting the creature's behavior at the time. For example, a person who has been given an unnatural aversion to cheese, as the \spell{aversion} spell, would generally not show signs of the enchantment unless presented with cheese. Therefore, you could not generally make a Sense Motive check to detect the effect if the creature was simply talking with you about the weather.
+\subsubsection{Discern Lies}
+You can automatically notice when people lie to you. The DC is equal to the lying creature's Bluff check. If your modifier exceeds the DC, you notice that the creature was lying. Otherwise, you do not.
 
-\subsk{Discern Secret Message} You may use Sense Motive to detect that a hidden message is being transmitted via the Bluff skill. In this case, your Sense Motive check is opposed by the Bluff check of the character transmitting the message. For each piece of information relating to the message that you are missing, you take a \minus2 penalty on your Sense Motive check. If you succeed by 4 or less, you know that something hidden is being communicated, but you can't learn anything specific about its content. If you beat the DC by 6 or more, you intercept and understand the message. If you fail by 4 or less, you don't detect any hidden communication. If you fail by 6 or more, you infer some false information.
+\subsubsection{Discern Secret Message}
+You can automatically identify hidden messages conveyed with the Bluff skill. The DC is equal to DC of the secret message. If your modifier exceeds the DC, you recognize that a hidden message is present, but not its contents. If it is greater by 5 or more, you can understand the message. Otherwise, you don't notice the hidden message.
 
-\parhead{Action} Trying to gain information with Sense Motive generally takes at least 1 minute, and you could spend a whole evening trying to get a sense of the people around you.
-\parhead{Try Again} No, though you may make a Sense Motive check for each Bluff check made against you.
-\par If you have the Negotiator feat, you get a \plus2 competence bonus on Sense
-Motive checks.
+\subsubsection{Focus Attention}
+You can make a Sense Motive check as a move action to focus on a particular creature. If you do, you can use your check result to discern enchantments, lies, and hidden messages from that creature. This applies to any actions it took or things it said during the last round, and to actions it takes or things it says for the next 5 rounds. If you focus on a different creature, you lose your focus on the first creature.
+
+\subsubsection{Social Assessment}
+You can make a DC 15 Sense Motive check to get a general assessment of a social situation. This does not take an action by itself, but you must observe the group for at least a minute. Success means you have an idea of behaviors that are expected or inappropriate, who outranks whom, or other another piece of useful information. For every 5 points by which you beat the DC, you gain an additional insight into the social environment.
+
+You can make a social assessment after only a single round of observation, but you take a \minus10 penalty on the check. If you don't understand the language the group is using, you take a \minus10 penalty on the check. The information gained at a given DC may vary in usefulness depending on how obvious or subtle the group is.
 
 \subsection{Sleight Of Hand (Dex; Trained Only; Armor Check Penalty)}
 \parhead{Check} A DC 10 Sleight of Hand check lets you palm a coin-sized, unattended object. Performing a minor feat of legerdemain, such as making a coin disappear, also has a DC of 10 unless an observer is determined to note where the item went.
