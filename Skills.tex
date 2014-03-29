@@ -497,8 +497,8 @@ The DC of a Devices check depends on the device being manipulated. In addition, 
 \lcaption{Device DCs}
 \begin{tabularx}{\columnwidth}{>{\lcol}X c}
 \thead{Device Type} & \thead{Base DC} \\
-Simple device (wagon wheel) & 10 \\
-Average device (door hinge) & 15 \\
+Simple device (wagon wheel, typical knot) & 10 \\
+Average device (door hinge, complex knot) & 15 \\
 Challenging device (typical lock or trap) & 20 \\
 Difficult device (good lock) & 25 \\
 Magic trap & 25 \add double spell level \\
@@ -507,7 +507,7 @@ Extraordinary device (masterwork lock, complex trap) & 30 \\
 \end{dtable}
 
 \subsubsection{Activate Device}
-As a standard action, you can make a Devices check to make a device perform a function it was designed to do, even if you lack the normal requirements. For example, you could lock or unlock a lock without its key, or activate a trap directly without using its triggering mechanism (hopefully without being in its line of fire).
+As a standard action, you can make a Devices check to make a device perform a function it was designed to do, even if you lack the normal requirements. For example, you could tie a knot, lock or unlock a lock without its key, or activate a trap directly without using its triggering mechanism (hopefully without being in its line of fire).
 
 \subsubsection{Create Bindings}
 As a standard action, you can make a Devices check to tie a knot or create a binding. You can also take a full-round action to bind a helpless foe in rope or similar material. Your check result is equal to the DC to escape the binding.
@@ -1047,27 +1047,42 @@ If you move at up to half your speed during your turn, you take a \minus5 penalt
 A creature larger or smaller than Medium gains an inherent bonus or penalty on Stealth checks to hide depending on its size category: Fine \plus16, Diminutive \plus12, Tiny \plus8, Small \plus4, Large \minus4, Huge \minus8, Gargantuan \minus12, Colossal \minus16.
 
 \subsection{Survival (Wis)}
-\parhead{Check} You can keep yourself and others safe and fed in the wild. The table below gives the DCs for various tasks that require Survival checks.
+Survival represents your ability to take care of yourself and others in the wilderness, as well as your mastery of various survival-related tasks. 
 
-Survival does not allow you to follow difficult tracks unless you are a ranger or have the Track feat (see the Restriction section below).
+\subsubsection{Navigate Wilderness}
+You can make a Survival check while moving overland to avoid natural hazards and getting lost. The DC depends on the terrain, as shown on \trefnp{Terrain DCs}. Success means that you and any group you lead can move without any trouble. Failure means you may encounter a natural hazard, depending on the terrain. Failure by 6 or more means you become lost.
+
+You can notice that you are lost the next time that you succeed on a check to navigate in the wilderness. Rediscovering your location requires backtracking for 1d6 hours and another Survival check against the same DC.
+
+This check is made once every 8 hours you spend travelling overland. You can't take 10 or take 20 on checks to navigate a wilderness. If you move at half speed, you gain a \plus5 circumstance bonus on the check.
+
+\subsubsection{Sustinence}
+You can make a Survival check to move overland at half speed while hunting and foraging. The DC depends on the terrain, as shown on \trefnp{Terrain DCs}. Success means that you can feed yourself, and require no additional food or water. For every 2 points by which you succeed, you can provide food and water to an additional person.
+
+This check is made once every 8 hours you spend travelling overland. You can't take 10 or take 20 on checks to find sustinence in the wilderness. If you move at one-quarter speed, you gain a \plus5 circumstance bonus on the check.
 
 \begin{dtable}
-\begin{tabularx}{\columnwidth}{c >{\lcol}X}
-\thead{Survival DC}  & \thead{Task} \\
-10  & Get along in the wild. Move up to one-half your overland speed while hunting and foraging (no food or water supplies needed). You can provide food and water for one other person for every 2 points by which your check result exceeds 10. \\
-15  & Keep from getting lost or avoid natural hazards, such as quicksand. \\
-15  & Predict the weather up to 24 hours in advance. For every 5 points by which your Survival check result exceeds 15, you can predict the weather for one additional day in advance. \\
-Varies  & Follow tracks (see the Track feat).
-\end{tabularx}
+    \lcaption{Terrain DCs}
+    \begin{tabularx}{\columnwidth}{X l}
+        \thead{Terrain} & \thead{Navigation DC} & \thead{Sustinence DC} \\
+        Desert & 20 & 30 \\
+        Forest & 15 & 15 \\
+        Jungle & 15 & 10 \\
+        Mountains & 15 & 20 \\
+        Hills & 10 & 20 \\
+        Plains & 10 & 20 \\
+        Swamp & 20 & 25 \\
+    \end{tabularx}
 \end{dtable}
 
-\parhead{Action} Varies. A single Survival check may represent activity over the course of hours or a full day. A Survival check made to find tracks is at least a full-round action, and it may take even longer.
+\subsubsection{Predict Weather}
+You can make a DC 15 Survival check to predict the weather. This requires a minute of observation. Success means you know what the weather will be like up to 24 hours in advance. For every 5 points by which you succeed, you can predict the weather one additional day in advance.
 
-\parhead{Try Again} Varies. For getting along in the wild or for gaining the Fortitude save bonus noted in the table above, you make a Survival check once every 24 hours. The result of that check applies until the next check is made. To avoid getting lost or avoid natural hazards, you make a Survival check whenever the situation calls for one. Retries to avoid getting lost in a specific situation or to avoid a specific natural hazard are not allowed. For finding tracks, you can retry a failed check after 10 minutes of searching, plus 10 more minutes for every 5 that you failed the check by.
+\subsubsection{Track}
+If you have the Track feat, you can use Survival to follow tracks.
 
-\parhead{Restriction} While anyone can use Survival to find tracks (regardless of the DC), or to follow tracks when the DC for the task is 10 or lower, only a character with the Track feat can use Survival to follow tracks when the task has a higher DC.
-
-\parhead{Special} If you have 5 or more ranks in Survival, you can automatically determine where true north lies in relation to yourself.
+\subsubsection{Use Rope}
+You can make a Survival check as a standard action to tie knots. Success means you tie the knot successfully. Failure means your action is wasted, but you can try again. Tying a typical knot is DC 10. Tying a special knot, such as one that slips, slides slowly, or loosens with a tug is DC 15. Knots can also be tied with the Devices skill.
 
 \subsection{Swim (Str; Armor Check Penalty)}
 \parhead{Check} Make a Swim check once per round while you are in the water. Success means you may swim at up to one-half your speed (as a full-round action) or at one-quarter your speed (as a move action). If you fail by 4 or less, you make no progress through the water. If you fail by 6 or more, you go underwater.
