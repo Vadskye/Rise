@@ -376,7 +376,7 @@ While climbing, you can attempt to catch another character who is falling near y
 \subsubsection{Stop Fall}
 It is possible, but very difficult, to make a Climb check to stop yourself from falling when near a wall. To catch yourself while falling, make a Climb check against a DC equal to the wall's DC \add 20.
 
-\subsubsection{Climb Speeds}
+\subsubsection{Climbing with a Climb Speed}
 A creature with a climb speed moves by a distance equal to its climb speed when climbing. It has a \plus5 inherent bonus on all Climb checks. It can always choose to take 10 on Climb checks, even if rushed or threatened, and is not flat-footed while climbing. It cannot make an accelerated climb or use the run action while climbing.
 
 \subsection{Craft (Int)}
@@ -1084,14 +1084,16 @@ If you have the Track feat, you can use Survival to follow tracks.
 \subsubsection{Use Rope}
 You can make a Survival check as a standard action to tie knots. Success means you tie the knot successfully. Failure means your action is wasted, but you can try again. Tying a typical knot is DC 10. Tying a special knot, such as one that slips, slides slowly, or loosens with a tug is DC 15. Knots can also be tied with the Devices skill.
 
+You can also make a Survival check in place of a ranged attack to set a grappling hook. You take a \minus2 penalty per 10 feet.
+
 \subsection{Swim (Str; Armor Check Penalty)}
-\parhead{Check} Make a Swim check once per round while you are in the water. Success means you may swim at up to one-half your speed (as a full-round action) or at one-quarter your speed (as a move action). If you fail by 4 or less, you make no progress through the water. If you fail by 6 or more, you go underwater.
+Swim represents your ability to swim. Swim checks are subject to double the normal armor check penalty and encumbrance penalty.
 
-If you are underwater, either because you failed a Swim check or because you are swimming underwater intentionally, you must hold your breath. You can hold your breath for a number of rounds equal to your Constitution score, but only if you do nothing other than take move actions or free actions. If you take a standard action or a full-round action (such as making an attack), the remainder of the duration for which you can hold your breath is reduced by 1 round. (Effectively, a character in combat can hold his or her breath only half as long as normal.) After that period of time, you must make a DC 10 Constitution check every round to continue holding your breath. Each round, the DC for that check increases by 1. If you fail the Constitution check, you begin to drown.
-
-The DC for the Swim check depends on the water, as given on the table below.
+\subsubsection{Swim}
+You can make a Swim check to move through water. The DC depends on the turbulence of the water, as shown on \trefnp{Swim DCs}. Success means you move forward by up to one-half your speed (as a full-round action) or at one-quarter your speed (as a move action). Success by 10 or more means you move twice as fast. Failure means you make no progress through the water. Failure by 6 or more means you make no progress and sink five feet underwater.
 
 \begin{dtable}
+    \lcaption{Swim DCs}
 \begin{tabularx}{\columnwidth}{>{\lcol}X >{\lcol}X}
 \thead{Water} & \thead{Swim DC} \\
 Calm water & 10 \\
@@ -1102,13 +1104,10 @@ Stormy water & 20\footnotetemp{1}
 otherwise being threatened or distracted.
 \end{dtable}
 
-Each hour that you swim, you must make a DC 20 Swim check or take 1d6 points of nonlethal damage from fatigue.
+\subsubsection{Swimming Underwater}
+You can swim underwater just like you can above water. If you are underwater, either because you failed a Swim check or because you are swimming underwater intentionally, you must hold your breath. You can hold your breath for a number of rounds equal to your Constitution score, but only if you do nothing other than take move actions or free actions. If you take a standard action or a full-round action (such as making an attack), the remainder of the duration for which you can hold your breath is reduced by 1 round. (Effectively, a character in combat can hold his or her breath only half as long as normal.) After that period of time, you must make a DC 10 Constitution check every round to continue holding your breath. Each round, the DC for that check increases by 1. If you fail the Constitution check, you begin to drown.
 
-\subsk{Accelerated Swimming} If you beat the Swim DC by 10 or more, you can move half your speed (instead of one-quarter your speed).
-
-\parhead{Action} Swimming is a kind of movement, so it's generally a move action. Each move action that includes any swimming requires a separate Swim check.
-\parhead{Special} Swim checks are subject to double the normal armor check penalty and encumbrance penalty.
-
+\subsubsection{Swimming with a Swim Speed}
 A creature with a swim speed can move through water at its indicated speed without making Swim checks. It gains a \plus5 inherent bonus on any Swim check to perform a special action or avoid a hazard. The creature always can choose to take 10 on a Swim check, even if distracted or endangered when swimming. Such a creature can use the run action while swimming, provided that it swims in a straight line.
 
 \begin{comment}
