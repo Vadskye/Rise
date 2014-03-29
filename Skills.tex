@@ -991,30 +991,12 @@ You can make a Sleight of Hand check as a standard action to steal an object fro
 \subsection{Spellcraft (Wis; Trained Only)}
 Spellcraft represents your ability to notice and understand spells and magical effects.
 
-\begin{dtable}
-\lcaption{Spellcraft DCs}
-\begin{tabularx}{\columnwidth}{l >{\lcol}X l l}
-\thead{Spellcraft DC}  & \thead{Task} & \thead{Action} & \thead{Retry} \\
-10 & Notice the presence of any magical auras within 100 feet\fn{1} & Reflexive\fn{2} & Yes \\
-10 \add spell level & When using \spell{read magic}, identify a \spell{glyph} or \spell{symbol} spell. & Reflexive & Yes \\
-15 & Identify the number of magical auras within 100 feet & Move & Yes \\
-15 & Identify the strength and location of an aura you have identified\fn{3} & Move & Yes \\
-15 \add spell level\fn{4} & Identify the school of an aura you have identified & Move\fn{5} & Yes \\
-15 \add spell level  & Identify a spell being cast. (You must see or hear the spell's verbal or somatic components.) & Reflexive & No  \\
-15 \add spell level  & Determine the school of magic involved in the aura of a single item or creature you can see. (If the aura is not a spell effect, the DC is 15 \add one-half caster level.) & Move & Yes \\
-20 \add spell level  & Identify a spell that's already in place and in effect. You must be able to see or detect the effects of the spell. & Reflexive & Yes \\
-20 \add spell level  & Identify materials created or shaped by magic, such as noting that an iron wall is the result of a \spell{wall of iron} spell. & Reflexive & Yes \\
-20 \add spell level  & Decipher a written spell (such as a scroll) without using \spell{read magic}. & Full-round & 1/day \\
-25 \add spell level  & After being affected by against a spell targeted on you, determine what that spell was. & Reflexive & No \\
-25  & Identify a potion. & 1 minute & No \\
-30 or higher  & Understand a strange or unique magical effect, such as the effects of a magic stream. & Varies & No \\
-\end{tabularx}
-1 You cannot differentiate individual auras. However, you can ignore auras you are familiar with (such as magic items you or your companions wear). \\
-2 You can make a check reflexively to perceive new information without taking an action. Actively paying attention to notice something requires a move action. \\
-3 See \trefnp{Aura Strengths} for information on how strong auras are.
-4 Or half caster level for effects which are not spells.
-5 Can be done as part of the same action as identifying the strength and location of the aura.
-\end{dtable}
+\subsubsection{Notice Magic Auras}
+You can automatically notice the presence of magic within 100 feet of you. Use your Spellcraft modifier as your check result. The DC is 10. Success means you notice that magic exists. Success by 5 or more means you know the number of magical auras, and the strength and direction to the strongest aura. Success by 10 or more means you notice the strength and direction to each aura. Failure means you don't notice any magic.
+
+Aura strengths are described in \trefnp{Aura Strengths}. With practice, you can ignore auras that you are commonly surrounded by, such as magic items on you and your companions. In general, it takes a day of frequent exposure to become accustomed to an aura. Once you are accustomed to an aura, you can freely choose to notice or ignore it.
+
+The act of casting a spell creates a magic aura that can be detected with this ability. A magical aura can linger after its original source dissipates (in the case of a spell) or is destroyed (in the case of a magic item). If you use Spellcraft in such a location, you can an aura strength of ``dim'' (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power. Most auras only linger for a few rounds, but strong or overwhelming auras can linger for days.
 
 \begin{dtable*}
 \lcaption{Aura Strengths}
@@ -1022,17 +1004,26 @@ Spellcraft represents your ability to notice and understand spells and magical e
 & \multicolumn{4}{c}{\thead{---{}---{}---Aura Power---{}---{}---}} \\
 \thead{Spell or Object} & \thead{Faint} & \thead{Moderate} & \thead{Strong} & \thead{Overwhelming} \\
 Functioning spell (spell level) & 3rd or lower & 4th--6th & 7th--9th & 10th\add (deity-level) \\
-Magic item (caster level) & 6th or lower & 7th--12th & 13th--20th & 21st\add (artifact)
+Magic item (caster level) & 6th or lower & 7th--12th & 13th--20th & 21st\add (artifact) \\
 \end{tabularx}
 \end{dtable*}
 
-\parhead{Lingering Auras}A magical aura can linger after its original source dissipates (in the case of a spell) or is destroyed (in the case of a magic item). If you use Spellcraft in such a location, you can an aura strength of ``dim'' (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power. Most auras only linger for a few rounds, but strong or overwhelming auras can linger for days.
-\par Outsiders and elementals are not magical in themselves, but if they are summoned, the conjuration spell registers.
+\subsubsection{Analyze Magic Aura}
+You can make a Spellcraft check as a move action to analyze a particular source of magic you have noticed. You must know the approximate location of a source to analyze it. The DC for spells is equal to 15 \add the spell level of the spell, and the DC for other sources of magic is equal to 15 \add half caster level. Success means you identify the strength and school of all auras produced by the source of magic. Success by 5 or more also allows you to identify subschools and descriptors. Failure means you learn nothing about the source.
 
-\parhead{Check} You can identify spells and magic effects. The DCs for Spellcraft checks relating to various tasks are summarized on the table above.
-\parhead{Action} Varies, as noted above.
-\parhead{Try Again} See above.
-\parhead{Special} If you are a specialist wizard, you get a \plus2 competence bonus on Spellcraft checks when dealing with a spell or effect from your specialty school. You take a \minus5 penalty when dealing with a spell or effect from a prohibited school (and some tasks, such as learning a prohibited spell, are just impossible).
+\subsubsection{Identify Active Spell}
+You can make a Spellcraft check as a move action to identify an active spell within 100 feet of you. The DC for a spell with obvious visual or other cues is equal to 15 \add the spell level of the spell. The DC for a spell without such cues, or with misleading cues (such as many illusions), is 10 higher. Success means you know what the spell is.
+
+If a spell emulates another spell, such as \spell{shadow evocation}, the DC to identify the spell being emulated is 15 \add the spell level of that spell. The DC to identify that the spell is being emulated, and to identify the spell used to do the emulation, is 10 higher.
+
+\subsubsection{Identify Spellcasting}
+You can automatically identify spells being cast within 100 feet of you. Use your Spellcraft modifier as your check result. The DC is equal to 15 \add the spell level of the spell. Success means you know what spell is being cast.
+
+\subsubsection{Identify Potion}
+You can make a DC 25 Spellcraft check to identify a potion. This takes a minute of careful evaluation. Success means you know what spell the potion contains.
+
+\subsubsection{Identify Written Spell}
+You can make a Spellcraft check as a standard action to identify a scroll or similar piece of magical writing. The DC is equal to 20 \add the spell level of the spell. Success means you know what spell is written.
 
 \subsection{Stealth (Dex; Armor Check Penalty)}
 The Stealth skill is used to escape detection while moving or hiding. There are two components required to remain undetected: you must hide from sight, and you must be able to move silently so you cannot be overheard. These are not different skills, but merely different applications of the same skill.
