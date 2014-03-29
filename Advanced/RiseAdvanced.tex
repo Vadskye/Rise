@@ -1,0 +1,37 @@
+\documentclass[twocolumn,oneside]{book}
+\input{../LaTeXPackages.tex}
+\input{../LaTeXNewCommands.tex}
+\input{../LaTeXNewEnvironments.tex}
+\input{../LaTeXFormatting.tex}
+
+%Tables to maintain highlighting
+\newcommand{\my}[1]{{\color{black}#1}}
+
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername \thechapter #1}{}}
+
+\pagestyle{fancy}
+\lhead{\nouppercase \leftmark}
+\chead{\bfseries \large Rise}
+\rhead{\nouppercase \rightmark}
+\lfoot{Kevin Johnson}
+\cfoot{\thepage}
+\rfoot{v. 0.4}
+
+\begin{document}
+\include{Acknowledgements}
+\include{Wealth}
+
+\include{AdvancedClasses}
+\include{AdvancedFeats}
+
+\include{CoreMagicItems}
+\include{MagicItemCreation}
+\include{Monsters}
+
+%\include{MagicItemBasicsAndCreation}
+%\include{MagicItemArmorAndWeapons}
+%\include{MagicItemRingsAndRods}
+%\include{MagicItemScrollsStaffsWands}
+%\include{MagicItemWondrousApparel}
+%\include{MagicItemWondrous}
+\end{document}
