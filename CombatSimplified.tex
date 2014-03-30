@@ -6,43 +6,72 @@ Combat takes place in a series of ``rounds'', which represents about six seconds
 When it's your turn, you can take one standard action, one move action, and one swift action. If you want, you can take a full-round action instead of your standard and move actions. You can always ``downgrade'' an action to a lesser action: turning a standard action into a move action, or a move action into a swift action.
 
 \section{Attacks}
-As a standard action, you can make an attack roll with a weapon you are wielding, adding your attack modifier to the roll. If your result exceeds your target's Armor Class, your attack hits, and you deal damage.
 
-\subsection{Attack Modifier}
+\subsection{Standard Attack}
+As a standard action, you can try to strike a foe with a weapon you are wielding. To do so, make an attack roll with a weapon you are wielding, adding your attack modifier to the roll. If your result exceeds your foe's Armor Class, your attack hits, and your foe takes damage.
+
+\subsubsection{Attack Modifier}
 Your attack modifier is equal to the following:
 
 \begin{figure}[h]
 \centering Base attack bonus \add attack attribute \add size modifier \add competence bonuses \add enhancement bonus
 \end{figure}
 
-Your base attack bonus is determined by your class levels. With medium or heavy weapons, your attack attribute is your Strength. With light weapons and projectile weapons, your attack attribute is your Dexterity. Your size modifier is described on \tref{Size Modifiers}.
+With medium or heavy weapons, your attack attribute is your Strength. With projectile weapons, your attack attribute is your Dexterity. With light weapons, you can choose between your Strength and Dexterity. 
 
-\subsection{Reach}
-When you wield a normal melee weapon, you can attack anyone within your reach. This is called your ``threatened area''. Typically, that means anyone adjacent to you. Reach for larger and smaller creatures is determined by size, as shown on \trefnp{Size in Combat}.
+Your size modifier is described in \tref{Size in Combat}.
 
-\subsection{Damage}
+\subsubsection{Damage}
 If your attack succeeds, you deal damage equal to your weapon's damage die \add half your Strength.
 
-\subsubsection{Nonlethal Damage}
-If you take a \minus4 penalty to your attack roll, you can deal nonlethal damage instead of lethal damage when you hit.
+\parhead{Dealing Nonlethal Damage} If you take a \minus4 penalty to your attack roll, you can deal nonlethal damage instead of lethal damage when you hit. See \pcref{Nonlethal Damage}.
+
+\subsection{Combat Maneuvers}
+As a standard action, you can try to hinder your foe by performing a combat maneuver, such as by disarming or tripping him. To do so, make an attack roll, adding your maneuver modifier to the roll instead of your attack modifier. If your result exceeds your foe's Maneuver Class, your attack hits, and your foe suffers the effects of the maneuver.
+
+\subsubsection{Maneuver Modifier}
+Your maneuver modifier is equal to the following:
+
+\begin{figure}[h]
+\centering Base attack bonus \add attack attribute \add special size modifier \add competence bonuses \add enhancement bonus
+\end{figure}
+
+Your attack attribute depends on the maneuver you are using, as described in \pcref{Combat Maneuvers}.
+
+Your special size modifier is described in \tref{Size in Combat}.
+
+\subsection{Reach}
+Normally, you can attack anyone within five feet of you. That is called your ``reach''. The area that you can attack into is called your ``threatened area''. Reach for larger and smaller creatures is determined by size, as shown on \trefnp{Size in Combat}.
+
 
 \section{Defenses}
 
 \subsection{Armor Class}
-Your Armor Class (AC) represents how hard it is for opponents to land a solid, damaging blow on you. It's the attack roll result that an opponent needs to achieve to hit you. Unlike every other combat statistic, your AC is made up of the sum of other modifiers, each of which can have competence and enhancement bonuses applied separately. Your AC is equal to the following:
+Your Armor Class (AC) represents how hard it is for opponents to land a solid, damaging blow on you. It's the attack roll result that an opponent needs to achieve to hit you. Unlike most combat statistic, your AC is made up of the sum of other modifiers, each of which can have competence and enhancement bonuses applied separately. You can also apply competence and enhancement bonuses directly. Your AC is equal to the following:
 
-{\centering \textbf{10 \add half base attack bonus \add armor modifier \add shield modifier \add Dexterity \add natural armor modifier \add deflection modifier \add dodge modifier \add size modifier}}
+\begin{figure}[h]
+    \centering 10 \add half base attack bonus \add Dexterity \add armor modifier \add shield modifier \add natural armor modifier \add dodge modifier \add size modifier \add competence bonuses \add enhancement bonus
+\end{figure}
 
 \parhead{Base Attack Bonus} Your experience and aptitude in combat affects your ability to defend yourself; experienced warriors know how to recognize and avoid or parry blows that would easily fell novices. As a result, you add half your base attack bonus to your dodge modifier to armor class. This is an inherent bonus, and stacks with all other bonuses to your dodge modifier.
 \parhead{Natural Armor Modifier} Natural armor, such as from having unusually tough skin or thick hide, improves your AC. Armor and natural armor do not fully stack; add the higher modifier plus half the lower modifier to your AC. For example, if a warhorse (\plus4 natural armor modifier) wears chainmail barding (\plus6 armor modifier), it gets a total of a \plus8 bonus to AC: the chainmail provides \plus6, and its natural armor is halved to give a \plus2 bonus.
 \parhead{Dodge Modifier} Your dodge modifier represents your ability to actively avoid blows. Any situation that denies you your Dexterity bonus also denies you your dodge modifier.
-\parhead{Size Modifier} Your size modifier is described on \tref{Size Modifiers}.
+\parhead{Size Modifier} Your size modifier is described on \tref{Size in Combat}.
 
 \subsubsection{Flat-Footed Armor Class}
-Sometimes you can't use your agility to avoid an attack. Your flat-footed armor class is equal to your armor class, ignoring your Dexterity bonus, dodge modifier, and shield modifier. If your Dexterity is negative, you always apply the penalty, even while flat-footed.
+Sometimes you can't use your agility to avoid an attack. Your flat-footed armor class is equal to your armor class, ignoring your Dexterity, dodge modifier, and shield modifier. If your Dexterity is negative, you always apply the penalty, even while flat-footed.
 
 \subsubsection{Touch Armor Class}
 Sometimes your armor doesn't help you avoid an attack. Your touch armor class is equal to your armor class, ignoring your armor modifier and natural armor modifier. Most touch attacks come from spells.
+
+\subsection{Maneuver Class}
+Your Maneuver Class (MC) represents how good you are at defending against combat maneuvers. It's the attack roll result that an opponent needs to achieve to affect you with a maneuver. Like your Armor Class, your MC is made up of the sum of other modifiers, each of which can have competence and enhancement bonuses applied separately. You can also apply competence and enhancement bonuses directly. Your MC is equal to the following:
+
+\begin{figure}[h]
+    \centering 10 \add base attack bonus \add Strength \add Dexterity \add shield modifier \add dodge modifier \add special size modifier \add competence bonuses \add enhancement bonus
+\end{figure}
+
+Your special size modifier is described in \tref{Size in Combat}.
 
 \subsection{Hit Points}
 Your hit points is a defense that represents how much more punishment you can take. When you run out hit points, you can't act anymore, and you might die, as described in \pcref{Injury and Death}.
@@ -53,8 +82,6 @@ Generally, when you are subject to an unusual or magical attack, you get a savin
 \begin{figure}[h]
 \centering Base save bonus \add primary attribute \add 1/2 secondary attribute \add competence bonuses \add enhancement bonus
 \end{figure}
-
-Your base save bonus is determined by your class levels.
 
 \subsubsection{Saving Throw Types}
 The three different kinds of saving throws are Fortitude, Reflex, and Will.
@@ -340,23 +367,25 @@ Size affects your space and reach in combat. In addition, your attack modifier a
 
 \begin{dtable*}
     \lcaption{Size in Combat}
-    \begin{tabularx}{\textwidth}{l l l l X}
-        \thead{Size} & \thead{Size Modifier} & \thead{Space\fn{1}} & thead{Reach\fn{1}} & \thead{Example Creature} \\
-        Fine & \plus8 & 1/2 ft. & 0 & Fly\\
-        Diminutive & \plus4 & 1 ft. 0 & Toad \\
-        Tiny & \plus2 & 2-1/2 ft. & 0 \\
-        Small & \plus1 & 5 ft. & 5 ft. & Halfling \\
-        Medium & \plus0 & 5 ft. & 5 ft. & Human \\
-        Large (tall) & \minus1 & 10 ft. & 10 ft. & Ogre \\
-        Large (tall) & \minus1 & 10 ft. & 5 ft. & Horse \\
-        Huge (tall) & \minus2 & 15 ft. & 15 ft. & Cloud giant \\
-        Huge (long) & \minus2 & 15 ft. & 10 ft. & Bulette \\
-        Gargantuan (tall) & \minus4 & 20 ft. & 20 ft. & 50-ft. animated statue \\
-        Gargantuan (long) & \minus4 & 20 ft. & 15 ft. & Kraken \\
-        Colossal (tall) & \minus8 & 30 ft.\plus & 30 ft.\plus & Colossal animated object \\
-        Colossal (long) & \minus8 & 30 ft.\plus & 20 ft.\plus & Great wyrm red dragon \\
+    \begin{tabularx}{\textwidth}{l l l l l X}
+        \thead{Size} & \thead{Size Modifier} & \thead{Space\fn{1}} & thead{Reach\fn{1}} & \thead{Size Modifier\fn{2}} & \thead{Special Size Modifier\fn{3}} & \thead{Example Creature} \\
+        Fine & 1/2 ft. & 0 & \plus8 & \minus16 & Fly\\
+        Diminutive & 1 ft. & 0 & \plus4 & \minus12 & Toad \\
+        Tiny & 2-1/2 ft. & 0 & \plus2 & \minus8 & Cat \\
+        Small & 5 ft. & 5 ft. & \plus1 & \minus4 & Halfling \\
+        Medium & 5 ft. & 5 ft. & \plus0 & \plus0 & Human \\
+        Large (tall) & 10 ft. & 10 ft. & \minus1 & \plus4 & Ogre \\
+        Large (tall) & 10 ft. & 5 ft. & \minus1 & \plus4 & Horse \\
+        Huge (tall) & 15 ft. & 15 ft. & \minus2 & \plus8 & Cloud giant \\
+        Huge (long) & 15 ft. & 10 ft. & \minus2 & \plus8 & Bulette \\
+        Gargantuan (tall) & 20 ft. & 20 ft. & \minus4 & \plus12 & 50-ft. animated statue \\
+        Gargantuan (long) & 20 ft. & 15 ft. & \minus4 & \plus12 & Kraken \\
+        Colossal (tall) & 30 ft.\plus & 30 ft.\plus & \minus8 & \plus16 & Colossal animated object \\
+        Colossal (long) & 30 ft.\plus & 20 ft.\plus & \minus8 & \plus16 & Great wyrm red dragon \\
     \end{tabularx}
-    1 Creatures can vary in space and reach. These are simply typical values.
+    1 Creatures can vary in space and reach. These are simply typical values. \\
+    2 Added to your attack modifier and Armor Class \\
+    3 Added to your maneuver modifier and Maneuver Class \\
 \end{dtable*}
 
 Unusually large or small creatures also have other special rules apply to them. 
