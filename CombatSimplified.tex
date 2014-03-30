@@ -21,7 +21,10 @@ Your base attack bonus is determined by your class levels. With medium or heavy 
 When you wield a normal melee weapon, you can attack anyone within your reach. This is called your ``threatened area''. Typically, that means anyone adjacent to you. Reach for larger and smaller creatures is determined by size, as shown on \trefnp{Size in Combat}.
 
 \subsection{Damage}
-When your attack succeeds, you deal damage equal to your weapon's damage die \add half your Strength.
+If your attack succeeds, you deal damage equal to your weapon's damage die \add half your Strength.
+
+\subsubsection{Nonlethal Damage}
+If you take a \minus4 penalty to your attack roll, you can deal nonlethal damage instead of lethal damage when you hit.
 
 \section{Defenses}
 
@@ -63,9 +66,11 @@ The three different kinds of saving throws are Fortitude, Reflex, and Will.
 Sometimes a combatant in a melee lets her guard down. In this case, combatants near her can take advantage of her lapse in defense to attack her for free. These free attacks are called attacks of opportunity.
 
 \subsection{Provoking Attacks of Opportunity}
+You can provoke attacks of opportunity in two ways.
+
 \parhead{Leaving an Opening} To defend yourself, you must be actively wielding a weapon or shield you are proficient with. You provoke an attack of opportunity if at any point during your turn you are not wielding a weapon or shield, or you use your hand wielding the weapon or shield for some task other than engaging in combat (such as sheathing your weapon).
 
-\parhead{Leaving the Battle} You provoke an attack of opportunity whenever you move farther away from an opponent who threatens you. This can be mitigated with the withdraw and backpedal movement actions.
+\parhead{Leaving the Battle} You provoke an attack of opportunity if you move farther away from an opponent who threatens you. This can be mitigated with the withdraw and backpedal movement actions.
 
 \subsection{Taking Attacks of Opportunity}
 If a creature within your threatened area provokes an attack of opportunity, you can immediately make a single melee attack against that creature. The attack of opportunity ``interrupts'' anything else the creature was been doing. The creature can continue its turn after your attack of opportunity is resolved.
@@ -100,7 +105,67 @@ Sometimes, some creatures are not aware of the combat when it starts. This most 
 
 Sometimes, everyone is surprised, such as if a guard walks around a corner to unexpectedly find a group of muggers. In that case, initiative is rolled normally, but all creatures are flat-footed and can't take attacks of opportunity until they take their first action.
 
+\section{Injury, Death, and Healing}
+Your hit points measure how hard you are to kill. No matter how many hit points you lose, your character isn't hindered in any way until your hit points drop to 0 or lower.
+
+\subsection{Losing Hit Points}
+When you take lethal damage, you subtract that damage from your hit points.
+\parhead{What Hit Points Represent} Hit points represent a combination of durability, luck, divine providence, and sheer determination, depending on the nature of your character. When you take 10 damage from an orc with a greataxe, the axe did not literally carve into your skin without affecting your ability to fight. Instead, you avoided the worst of the blow, but it bruised you through your armor, the effort to dodge the blow fatigued your character, or it barely nicked you through sheer luck -- and everyone's luck runs out eventually.
+
+\subsection{Stages of Injury}
+
+\subsubsection{Healthy} 
+When you are above half hit points, you suffer no significant effects from losing hit points. If you take damage, you can become bloodied.
+
+\subsubsection{Bloodied}
+When you drop to half your hit points or below, you are bloodied. This makes you more vulnerable to certain spells and effects, but you suffer no direct penalties. If you take additional damage, you can become staggered. Some special attacks can cause you to immediately begin dying.
+
+\subsubsection{Staggered}
+When you take damage that would reduce your hit points to 0, you become staggered.  While staggered, you may take a single move action or standard action each round, but not both. You cannot take full-round actions, but you may take swift actions. In addition, you are vulnerable, causing you to take a \minus2 penalty on attack rolls, saving throws, checks, DCs, and AC.
+
+Normally, any excess damage from the attack that brought you to 0 hit points is wasted. However, if you take additional damage, you begin dying.
+
+\subsubsection{Dying}
+When you take damage while you have no hit points remaining, that damage represents serious physical injury to your body. This is called critical damage. When you take critical damage, you immediately fall unconscious and begin dying. While you have critical damage, magical healing which would normally restore hit points cannot restore your hit points, though it can prevent you from dying.
+
+While dying, you must make a DC 15 Fortitude save every round. The DC is equal to 15 \add the critical damage you have taken. If you fail three times, you die. If you succeed three times, or receive healing that would normally hit points, you become stable. Another character can give first aid to help you stabilize (see \pcref{Heal}).
+
+If you take additional damage, you can die. 
+
+\subsubsection{Dead}
+If you critical damage exceeds 10 \add your Constitution, you die. You can also die from taking ability damage or suffering ability damage or drain that reduces your Constitution to 0.
+
+\subsubsection{Stable}
+If you have taken critical damage but managed to stave off death, you become stable. You remain unconscious until your hit points exceed your critical damage.
+
+Unless your hit points go above 0, you remain unconscious. As long as you have critical damage, magical healing that restores hit points has no effect on your hit points.
+
+\subsection{Healing}
+After taking damage, you can recover hit points through natural healing or through magical healing. In any case, you can't regain hit points past your full normal hit point total.
+
+\parhead{Natural Healing} With 8 hours of rest, you recover half your hit points. Any significant interruption (such as combat or the like) during your rest prevents you from healing. If you rest for an entire day (16 hours), you recover all your hit points.
+
+\parhead{Magical Healing} Various abilities and spells can restore hit points. However, only certain spells can heal critical damage, as specified in the spell description. Unless a spell says it can cure critical damage, it cannot -- though it can still stabilize dying characters. Magical healing has no effect on the hit points of creatures with critical damage.
+
+\parhead{Healing Ability Damage} Ability damage is temporary, just as hit point damage is. Ability damage returns at the rate of 1 point per 8 hours of rest for each affected attribute score.
+
+\parhead{Healing Critical Damage} Critical damage takes much longer to heal than hit point damage. Resting for 1 week restores an amount of critical damage equal to 1 \add half the character's Constitution. A character can have both hit points and critical damage. As long as a character has critical damage, he is staggered, even if he is at full hit points.
+
+\subsection{Nonlethal Damage}
+Some attacks and environmental effects deal nonlethal damage. Nonlethal damage is not subtracted from your hit points. Instead, it is tracked separately. If your nonlethal damage exceeds your hit points, you become staggered, just as if you were at 0 hit points. If you take additional damage while staggered, you fall unconscious. However, you do not begin dying unless your hit points are actually below 0. 
+
+\subsubsection{Healing Nonlethal Damage}
+You heal half your hit points in nonlethal damage with 1 hour of rest. When a spell or a magical ability cures hit point damage, it also removes an equal amount of nonlethal damage.
+
 \section{Circumstances, Bonuses, and Penalties}
+
+\subsection{Critical Success and Failure}
+A natural 1 (the d20 comes up 1) on an attack roll or saving throw is treated as rolling a \minus10. A natural 20 (the d20 comes up 20) is treated as rolling a 30. Under normal circumstances, a natural 1 automatically misses, and a natural 20 automatically hits.
+
+\subsubsection{Critical Hits}
+When you roll a natural 20 on an attack roll and hit, you have scored a critical threat. Roll another attack roll at the same attack bonus. If that attack also hits, you deal double damage.
+
+Many weapons can also score critical threats on lower numbers, or deal additional damage on a critical hit.
 
 \subsection{Size in Combat}
 Size affects your space and reach in combat. In addition, your attack modifier and armor class is affected by your size modifier. These effects are shown on \trefnp{Size in Combat}. 
