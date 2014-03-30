@@ -7,12 +7,16 @@ Whether a spell is arcane or divine, casting a spell works the same way.
 \subsection{Choosing a Spell}
 First, you must choose a spell that you know. If a spell has multiple versions, you choose which version to use when you cast it.
 
-To cast a spell, you must be able to speak (if the spell has a verbal component), gesture (if it has a somatic component), and manipulate the material components or focus (if any). Additionally, you must concentrate to cast a spell.
+To cast a spell, you must be able to speak (if the spell has a verbal component), gesture with a free hand (if it has a somatic component), and manipulate the material components or focus (if any). Additionally, you must concentrate to cast a spell.
 
 \subsection{Concentration}
-To cast a spell, you must concentrate. While casting a spell, you can't take any other actions, even immediate actions. If something interrupts your concentration while you're casting, you must make a Concentration check or lose the spell. The more distracting the interruption and the higher the level of the spell you are trying to cast, the higher the DC is. If you fail the check, the spell has no effect, but you still spend the spell slot.
+To cast a spell, you must concentrate. While casting a spell, you can't focus on anything else: you become flat-footed, and you provoke attacks of opportunity, because you can't defend yourself. You can't take any other actions, even immediate actions.
 
-To make a concentration check, roll d20 \add your magic level \add Constitution. If you have more than one magic level, use the level appropriate to the spell you are casting.
+If something interrupts your concentration while you're casting, you must make a Concentration check or lose the spell. The more distracting the interruption and the higher the level of the spell you are trying to cast, the higher the DC is. If you fail the check, the spell has no effect, but you still spend the spell slot.
+
+\subsubsection{Making Concentration Checks}
+
+To make a concentration check, roll d20 \add your magic level \add Constitution. If you have more than one magic level, use the sum of your magic levels.
 
 Some actions other than spells require concentration to complete. To make a concentration check for a reason other than to cast a spell, roll d20 \add your Constitution.
 
@@ -26,7 +30,6 @@ Any condition which grants a bonus or penalty to checks affects Concentration ch
 10 \add damage dealt & Damaged during the action.\footnotetemp{2} \\
 10 \add half of continuous & Taking continuous damage during the
 damage last dealt action.\footnotetemp{3} \\
-Distracting spell's save DC & Distracted by nondamaging spell.\footnotetemp{4} \\
 5 & Vigorous motion (on a moving mount, taking a bouncy wagon ride, in a small boat
 in rough water, belowdecks in a storm-tossed ship). \\
 10 & Violent motion (on a galloping horse, taking a very rough wagon ride, in a small boat in
@@ -44,27 +47,30 @@ rain or sleet. \\
 4 You can cast only spells without somatic components for which you have any required material component in hand. \\
 \end{dtable}
 
-\parhead{Casting Defensively} If you cast a spell while threatened, you must make a Concentration check (DC 10 \add double the level of the spell you're casting). If you fail, you provoke attacks of opportunity.
+\subsubsection{Casting Defensively}
+You can make a Concentration check while casting a spell to concentrating on other things, like defending yourself. The DC is equal to 10 \add double the level of the spell you're casting. Success means you can defend yourself normally, but you take a \minus5 penalty to Concentration checks until you finish casting the spell. Failure means you are unable to maintain concentration on both things at once, and you must choose which one to concentrate on.
 
-\parhead{Injury} If while trying to cast a spell you take damage, you must make a Concentration check (DC 10 \add points of damage taken \add double the level of the spell you're casting). If you fail the check, you lose the spell without effect. The interrupting event strikes during spellcasting if it comes between when you start and when you complete a spell (for a spell with a casting time of 1 full round or more) or if it comes in response to your casting the spell (such as an attack of opportunity provoked by the spell or a contingent attack, such as a readied action).
+\subsubsection{Taking Damage}
+If you take damage while casting a spell, you must make a Concentration check to maintain the spell. The DC is equal to 10 \add damage taken while casting the spell \add double the level of the spell you're casting. Success means you can continue casting the spell. Failure means you lose the spell without effect. If you take damage multiple times while casting a spell, roll once per source of damage, but add the total damage taken together to determine the DC of each successive check.
 
-If you are taking continuous damage half the damage is considered to take place while you are casting a spell. You must make a Concentration check (DC 10 \add 1/2 the damage that the continuous source last dealt \add double the level of the spell you're casting). If the last damage dealt was the last damage that the effect could deal then the damage is over, and it does not distract you.
+If you are taking continuous damage each round, half the damage is considered to take place while you are casting a spell. You must make a Concentration check (DC 10 \add 1/2 the damage that the continuous source last dealt \add double the level of the spell you're casting). If the last damage dealt was the last damage that the effect could deal, then the damage is over, and it does not distract you.
 
 Repeated damage does not count as continuous damage.
 
-\parhead{Spell} If you are affected by a spell while attempting to cast a spell of your own, you must make a Concentration check or lose the spell you are casting. If the spell affecting you deals damage, the DC is 10 \add points of damage \add double the level of the spell you're casting.
+\subsubsection{Grappling or Pinned}
 
-If the spell interferes with you or distracts you in some other way, the DC is the spell's saving throw DC \add double the level of the spell you're casting. For a spell with no saving throw, it's the DC that the spell's saving throw would have if a save were allowed.
+The only spells you can cast while grappling or pinned are those without somatic components and whose material components (if any) you have in hand. Even so, you must make a Concentration check (DC 15 \add double the level of the spell you're casting) or lose the spell.
 
-\parhead{Grappling or Pinned} The only spells you can cast while grappling or pinned are those without somatic components and whose material components (if any) you have in hand. Even so, you must make a Concentration check (DC 15 \add double the level of the spell you're casting) or lose the spell.
+\subsubsection{Entangled}
+If you want to cast a spell while entangled in a net or by a tanglefoot bag or while you're affected by a spell with similar effects, you must make a DC 10 \add double the level of the spell you're casting Concentration check to cast the spell. You lose the spell if you fail.
+
+\subsubsection{Environmental Distractions}
 
 \parhead{Vigorous Motion} If you are riding on a moving mount, taking a bouncy ride in a wagon, on a small boat in rough water, below-decks in a storm-tossed ship, or simply being jostled in a similar fashion, you must make a Concentration check (DC 5 \add double the level of the spell you're casting) or lose the spell.
 
 \parhead{Violent Motion} If you are on a galloping horse, taking a very rough ride in a wagon, on a small boat in rapids or in a storm, on deck in a storm-tossed ship, or being tossed roughly about in a similar fashion, you must make a Concentration check (DC 10 \add double the level of the spell you're casting) or lose the spell.
 
 \parhead{Violent Weather} You must make a Concentration check if you try to cast a spell in violent weather. If you are in a high wind carrying blinding rain or sleet, the DC is 5 \add double the level of the spell you're casting. If you are in wind-driven hail, dust, or debris, the DC is 10 \add double the level of the spell you're casting. In either case, you lose the spell if you fail the Concentration check. If the weather is caused by a spell, use the rules in the Spell subsection above.
-
-\parhead{Entangled} If you want to cast a spell while entangled in a net or by a tanglefoot bag or while you're affected by a spell with similar effects, you must make a DC 10 \add double the level of the spell you're casting Concentration check to cast the spell. You lose the spell if you fail.
 
 \subsubsection{Extended Concentration}
 Concentrating on a spell is mentally tiring. You can concentrate on a spell for up to 5 minutes without penalty. After 5 minutes, and every minute thereafter, you must make a Concentration check (DC 15 \add double the level of the spell). If you fail, you lose your concentration on the spell and become fatigued. The DC of the check increases by 2 for every additional minute.
