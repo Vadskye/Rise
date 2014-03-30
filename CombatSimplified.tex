@@ -1,0 +1,76 @@
+\chapter{Combat}\label{Combat}
+
+\section{How Combat Works}
+In combat, each creature takes a turn one at a time. The order in which creatures take turns is determined by their initiative (see \pcref{Initiative}). 
+
+When it's your turn, you can take one standard action, one move action, and one swift action. If you want, you can take a full-round action instead of your standard and move actions. You can always ``downgrade'' an action to a lesser action: turning a standard action into a move action, or a move action into a swift action.
+
+\section{Attacks}
+As a standard or attack action, you can make an attack roll with a weapon you are wielding, adding your attack modifier to the roll. If your result exceeds your target's Armor Class, your attack hits, and you deal damage.
+
+\subsection{Attack Modifier}
+Your attack modifier is equal to the following:
+
+\begin{figure}[h]
+\centering Base attack bonus \add attack attribute \add size modifier \add competence bonuses \add enhancement bonus
+\end{figure}
+
+Your base attack bonus is determined by your class levels. With medium or heavy weapons, your attack attribute is your Strength. With light weapons and projectile weapons, your attack attribute is your Dexterity. Your size modifier is described on \tref{Size Modifiers}.
+
+\subsection{Damage}
+When your attack succeeds, you deal damage equal to your weapon's damage die \add half your Strength.
+
+\section{Defenses}
+
+\subsection{Armor Class}
+Your Armor Class (AC) represents how hard it is for opponents to land a solid, damaging blow on you. It's the attack roll result that an opponent needs to achieve to hit you. Unlike every other combat statistic, your AC is made up of the sum of other modifiers, each of which can have competence and enhancement bonuses applied separately. Your AC is equal to the following:
+
+{\centering \textbf{10 \add half base attack bonus \add armor modifier \add shield modifier \add Dexterity \add natural armor modifier \add deflection modifier \add dodge modifier \add size modifier}}
+
+\parhead{Base Attack Bonus} Your experience and aptitude in combat affects your ability to defend yourself; experienced warriors know how to recognize and avoid or parry blows that would easily fell novices. As a result, you add half your base attack bonus to your dodge modifier to armor class. This is an inherent bonus, and stacks with all other bonuses to your dodge modifier.
+\parhead{Natural Armor Modifier} Natural armor, such as from having unusually tough skin or thick hide, improves your AC. Armor and natural armor do not fully stack; add the higher modifier plus half the lower modifier to your AC. For example, if a warhorse (\plus4 natural armor modifier) wears chainmail barding (\plus6 armor modifier), it gets a total of a \plus8 bonus to AC: the chainmail provides \plus6, and its natural armor is halved to give a \plus2 bonus.
+\parhead{Dodge Modifier} Your dodge modifier represents your ability to actively avoid blows. Any situation that denies you your Dexterity bonus also denies you your dodge modifier.
+\parhead{Size Modifier} Your size modifier is described on \tref{Size Modifiers}.
+
+\subsubsection{Flat-Footed Armor Class}
+Sometimes you can't use your agility to avoid an attack. Your flat-footed armor class is equal to your armor class, ignoring your Dexterity bonus, dodge modifier, and shield modifier. If your Dexterity is negative, you always apply the penalty, even while flat-footed.
+
+\subsubsection{Touch Armor Class}
+Sometimes your armor doesn't help you avoid an attack. Your touch armor class is equal to your armor class, ignoring your armor modifier and natural armor modifier. Most touch attacks come from spells.
+
+\subsection{Hit Points}
+Your hit points is a defense that represents how much more punishment you can take. When you run out hit points, you can't act anymore, and you might die, as described in \pcref{Injury and Death}.
+
+\subsection{Saving Throws}
+Generally, when you are subject to an unusual or magical attack, you get a saving throw to avoid or reduce the effect. You make a saving throw by rolling a d20 and adding your saving throw modifier. If it is greater than the save DC of the attack, you resist the attack (though it may still have partial effects on you). Your saving throw modifier is calculated as follows:
+
+\begin{figure}[h]
+\centering Base save bonus \add primary attribute \add 1/2 secondary attribute \add competence bonuses \add enhancement bonus
+\end{figure}
+
+Your base save bonus is determined by your class levels.
+
+\subsubsection{Saving Throw Types}
+The three different kinds of saving throws are Fortitude, Reflex, and Will.
+\parhead{Fortitude} These saves measure your ability to stand up to physical punishment or attacks against your vitality and health. Apply your Constitution and half your Strength to your Fortitude saving throws.
+\parhead{Reflex} These saves test your ability to dodge area attacks. Apply your Dexterity and half your Wisdom to your Reflex saving throws.
+\parhead{Will} These saves reflect your resistance to mental influence as well as many magical effects. Apply your Charisma and half your Intelligence to your Will saving throws.
+
+\section{Circumstances, Bonuses, and Penalties}
+\subsection{Size Modifier}
+Your attack modifier and armor class is affected by your size, as shown on \trefnp{Size Modifiers}. 
+
+\begin{dtable}
+\lcaption{Size Modifiers}
+\begin{tabularx}{\columnwidth}{ >{\lcol}X c >{\lcol}X c}
+\thead{Size} & \thead{Size Modifier} & \thead{Size} & \thead{Size Modifier} \\
+Colossal & \minus8 & Small & \plus1 \\
+Gargantuan & \minus4 & Tiny & \plus2 \\
+Huge & \minus2 & Diminutive & \plus4 \\
+Large & \minus1 & Fine & \plus8 \\
+Medium & \plus0 & &
+\end{tabularx}
+\end{dtable}
+
+\subsection{Range Increments}
+When using a ranged weapon, you take a \minus2 penalty per range increment between you and your target. For example, when using a longbow with a range increment of 100 feet against a target 170 feet away, you take a \minus2 penalty to attack rolls.
