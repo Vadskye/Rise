@@ -8,7 +8,9 @@ When it's your turn, you can take one standard action, one move action, and one 
 \section{Attacks}
 
 \subsection{Standard Attack}
-As a standard action, you can try to strike a foe with a weapon you are wielding. To do so, make an attack roll with a weapon you are wielding, adding your attack modifier to the roll. If your result exceeds your foe's Armor Class, your attack hits, and your foe takes damage.
+As a standard action, you can try to strike a foe with a weapon you are wielding. To do so, make an attack roll with a weapon you are wielding, adding your attack modifier to the roll. If your result equals or exceeds your foe's Armor Class, your attack hits, and your foe takes damage.
+
+You can also make an attack as an attack of opportunity. See \pcref{Attacks of Opportunity}. 
 
 \subsubsection{Attack Modifier}
 Your attack modifier is equal to the following:
@@ -26,8 +28,10 @@ If your attack succeeds, you deal damage equal to your weapon's damage die \add 
 
 \parhead{Dealing Nonlethal Damage} If you take a \minus4 penalty to your attack roll, you can deal nonlethal damage instead of lethal damage when you hit. See \pcref{Nonlethal Damage}.
 
-\subsection{Combat Maneuvers}
-As a standard action, you can try to hinder your foe by performing a combat maneuver, such as by disarming or tripping him. To do so, make an attack roll, adding your maneuver modifier to the roll instead of your attack modifier. If your result exceeds your foe's Maneuver Class, your attack hits, and your foe suffers the effects of the maneuver.
+\subsection{Combat Maneuver}\label{Combat Maneuver}
+As a standard action, you can try to hinder your foe by performing a combat maneuver, such as by disarming or tripping him. To do so, make an attack roll, adding your maneuver modifier to the roll instead of your attack modifier. If your result equals or exceeds your foe's Maneuver Class, your attack hits, and your foe suffers the effects of the maneuver.
+
+You can also perform some maneuvers as an attack of opportunity. See \pcref{Attacks of Opportunity}.
 
 \subsubsection{Maneuver Modifier}
 Your maneuver modifier is equal to the following:
@@ -105,6 +109,8 @@ You can provoke attacks of opportunity in two ways.
 \end{itemize*}
 
 \parhead{Leaving the Battle} You provoke an attack of opportunity if you move farther away from an opponent who threatens you. This can be mitigated with the withdraw and backpedal movement actions.
+
+\subsubsection{Forced Movement} You never provoke attacks of opportunity for movement you didn't take intentionally, such as from a bull rush (see \pcref{Bull Rush}).
 
 \subsection{Taking Attacks of Opportunity}
 If a creature within your threatened area provokes an attack of opportunity, you can immediately make a single melee attack against that creature. The attack of opportunity ``interrupts'' anything else the creature was been doing. The creature can continue its turn after your attack of opportunity is resolved.
@@ -347,6 +353,107 @@ You can't deliver a coup de grace against a creature that is immune to critical 
 \subsection{Range Increments}
 When using a ranged weapon, you take a \minus2 penalty per range increment between you and your target. For example, when using a longbow with a range increment of 100 feet against a target 170 feet away, you take a \minus2 penalty to attack rolls.
 
+\section{Combat Maneuvers}\label{Combat Maneuvers}
+A maneuver is a special attack that imposes some effect on an opponent using your skill in combat. Possible maneuvers are described below.
+
+\begin{dtable*}
+\lcaption{Combat Maneuvers}
+\begin{tabularx}{\textwidth}{l l l X}
+    \thead{Combat Maneuver}  & \thead{Action} & \thead{Key Attribute} & \thead{Weapon?} & \thead{Brief Description} \\
+Bull rush & Standard & Strength & No &  Push an opponent back 5 feet or more \\
+Dirty Trick & Attack\fn{1} & Strength or Dexterity & No & Impose penalty by using environment or fighting dirty \\
+Disarm & Attack\fn{1} & Strength or Dexterity & Any & Strike an object away from your foe \\
+Feint & Attack\fn{1} & Strength or Dexterity & Any & Trick your foe into being flat-footed \\
+Grapple & Standard & Strength & No & Wrestle with an opponent \\
+Overrun & Full-round & Strength & No & Plow past or over an opponent as you move \\
+Trip & Attack\fn{1} & Strength or Dexterity & Some & Trip an opponent \\
+\end{tabularx}
+1 Can be used in place of an attack, even an attack of opportunity. \\
+\end{dtable*}
+
+\subsection{Performing a Maneuver}
+To perform a maneuver, make an attack roll and add your maneuver modifier, as described on \pref{Combat Maneuver}. If your result equals or exceeds your target's Maneuver Class, the maneuver succeeds.
+
+Unless otherwise noted, you can only perform a maneuver on a creature no more than one size category larger than you, and you must have a free hand.
+
+\subsection{Bull Rush}
+A bull rush is an attempt to push your opponent away from you. You can bull rush as a standard action or as part of a charge, in place of the melee attack. Bull rushing is Strength-based. You can bull rush a creature of any size.
+
+If your bull rush succeeds, your target is pushed back 5 feet. For every 5 points by which you succeed, you can push the target back an additional 5 feet. You must move with the target to push it back. If you don't have the movement remaining to move with the target, you must stop pushing it.
+
+If a creature you are pushing back encounters a solid object, you can't push it any farther. If it encounters another creature, you can try to push them both. If you do, apply your original attack roll to the second creature's Maneuver Class, taking a \minus5 penalty. If you are successful, you can continue to push both of the creatures a distance equal to the lowest result.
+
+For example, if a fighter bull rushes a goblin for a total of 15 feet, but there is another goblin 5 feet behind the first, he can push both goblins 15 feet away from his starting location. If, however, the second goblin was instead a mighty dragon, he could only push the first goblin 5 feet before it would stop.
+
+\subsection{Dirty Trick}
+A dirty trick is any sort of situational attack that imposes a penalty on a foe for a short period of time. Examples include knocking an opponent's head to bewilder him, pulling down an enemy's pants to entangle him, or hitting a foe in a sensitive spot to make him sickened. You can perform a dirty trick in place of an attack. Performing a dirty trick can be Strength-based or Dexterity-based, as you choose.
+
+If your dirty trick succeeds, your target becomes vulnerable for 1 round. \vulnerableexplanation For every 5 points by which you succeed, your target is vulnerable for an additional round. The penalty can be removed if the target spends a standard action.
+
+\subsection{Disarm}
+A disarm is an attempt to take an object from a foe. You can disarm in place of an attack. If you are wielding a weapon, you can disarm with the weapon, using your attack modifier with the weapon in place of your maneuver modifier. Otherwise, disarming can be Strength-based or Dexterity-based, as you choose.
+
+When you disarm an opponent, you choose one object it is holding or wearing. If the item is well secured, such as a ring or suit of armor, the disarm attempt automatically fails. If your disarm succeeds, the object falls to the ground in your target's square. If you are not using a weapon to disarm, you can grab the item in your hands instead.
+
+\subsection{Feint}
+A feint is an attempt to leave your foe off-balance. You can feint in place of an attack. If you are wielding a weapon, you can disarm with the weapon, using your attack modifier with the weapon in place of your maneuver modifier. Otherwise, a feinting can be Strength-based or Dexterity-based, as you choose. You can feint a creature of any size.
+
+If your feint succeeds, your foe is flat-footed against the next melee attack you make against it. This attack must be made before the creature's next turn.
+
+\subsection{Grapple}
+A grapple is an attempt to physically grab and restrain your foe. You can grapple as a standard action. Grappling is Strength-based. 
+
+If your grapple succeeds, you and your target become ``grappled'', which limits your options. If your target is not adjacent to you, it moves into the closest open space adjacent to you. If no space is available, your grapple fails.
+
+\subsubsection{Being Grappled}
+While grappled, you suffer certain penalties and restrictions, as described below.
+\begin{itemize*}
+\item You must use one of your hands (or equivalent limbs) to grapple, preventing you from taking any actions which would require having two free hands. For example, you cannot attack with a two-handed weapon while grappling. You cannot use a hand holding a shield (except a buckler) to grapple.
+\item You are flat-footed against all opponents except the one you are grappling.
+\item You have active cover from the other participant in the grapple against attacks from creatures not adjacent to you. Any attacks that miss because of this miss chance are made against that creature. This does not apply if you are larger than the other participant.
+\item You do not threaten any opponents except for the creature you are grappling with.
+\item You take a \minus4 penalty to attack rolls made with weapons that are not small, since they are too large and cumbersome to be used effectively in a grapple.
+\item You cannot cast spells with somatic components.
+\item Casting a spell without somatic components requires a DC 20 \add double spell level Concentration check.
+\item You cannot move normally (but see Move the Grapple, below).
+\end{itemize*}
+
+Other than the restrictions listed above, you can act normally. You also gain the ability to use three special actions, each of which can be used as a standard action. Against these attacks, your foe uses 10 \add his maneuver modifier in place of his Maneuver Class.
+
+\parhead{Escape the Grapple} You can make a grapple attack or Escape Artist check to attempt to escape the grapple. You apply your result against every creature grappling you. If you succeed against a creature, you are no longer grappling that creature.
+\par You cannot make an Escape Artist check as an attack action, even if you have Improved Grapple.
+\parhead{Move the Grapple} You can make a grapple attack to attempt to move the grapple. You apply your result against every creature grappling you. If you succeed against every creature, you can move both yourself and all of the other creatures up to half your speed. At the end of your movement, you can choose which spaces creatures grappling you are in, as long as they stay adjacent to you. This can be used to place creatures in dangerous positions, such as over a pit.
+\par You can only move the grapple once per round, regardless of how many grapple attacks you can make.
+\parhead{Pin} You can make a grapple attack to attempt to pin a single opponent. If you succeed, that opponent becomes pinned, while you remain grappled.
+
+\subsubsection{Being Pinned}
+A pinned creature is helpless, but it cannot be the target of a coup de grace. The only action it can take that requires movement is to free itself through a grapple attack or Escape Artist check (using its normal Dexterity, not treating its Dexterity as 0). A pinned creature can take mental actions, but cannot cast any spells that require a somatic or material component or focus. At the opponent's option, a pinned creature may be unable to speak, in which case it is incapable of casting spells which require a verbal component. A pinned character who attempts to cast a spell or use a spell-like ability must make a concentration check (DC 10 \add grappler's maneuver modifier \add double spell level) or lose the spell. Being pinned is a more severe version of being grappled, and their effects do not stack.
+
+\subsubsection{Multiple Grapplers}
+Multiple creatures can attempt to grapple one target. Each of them acts independently.
+
+\subsubsection{Grappling a Mounted Opponent}
+You may make a grapple attempt against a mounted opponent. The defender may make a Ride check and use that result instead of his Maneuver Class if it is higher. If you succeed, you pull the rider from his mount, and he lands prone in a square adjacent to both you and his horse. However, neither of you are considered grappled, and you must succeed on a second grapple attack to grapple him.
+
+\subsubsection{Binding an Opponent}
+Once you have pinned an opponent, you may attempt to bind them with ropes or other forms of restraint. You must have the restraint on hand. To do so, make a grapple attack against the pinned opponent. The opponent can resist with a grapple attack. If you succeed, your opponent is bound and helpless. To escape the bindings, the opponent must exceed your check result with an Escape Artist check.
+
+Once your opponent is bound and helpless, you can take 20 on your grapple attack to bind him or her more securely. You can also use the Devices skill to bind an opponent who is not struggling.
+
+\subsection{Overrun}
+An overrun is an attempt to move directly through anyone in your way. You can overrun as a full-round action. Overrunning is Strength-based.
+
+When you overrun, you move up to your speed. Any creature in your way can choose to avoid you. If it does not, you must make an overrun attack against it. Success means you move through its space, treating the area as difficult terrain. Success by 5 or more means the creature is also knocked prone, and the area is not considered difficult terrain for you.
+
+Unusually stable creatures, such as creatures with multiple legs, gain a \plus4 inherent bonus to Maneuver Class against overrun attempts. Some creatures, such as oozes, cannot be overrun.
+
+\subsection{Trip}
+A trip is an attempt to knock your foe off his feet. You can trip in place of an attack. If you are wielding a weapon that can be used to trip, you can trip with the weapon, using your attack modifier with the weapon in place of your maneuver modifier. Otherwise, tripping can be Strength-based or Dexterity-based, as you choose.
+
+If your trip succeeds, the target is knocked prone.
+
+Unusually stable creatures, such as creatures with multiple legs, gain a \plus4 inherent bonus to Maneuver Class against trip attempts. Some creatures, such as oozes, cannot be tripped.
+
 \section{Special Rules}
 
 \subsection{Critical Success and Failure}
@@ -403,3 +510,64 @@ If a creature without a natural reach uses a reach weapon, it gains no benefits 
 \parhead{Reach} Creatures that take up more than 1 square typically have a natural reach of 10 feet or more, meaning that they can reach targets even if they aren't in adjacent squares. Creatures with a large natural reach can attack anyone within their reach, including adjacent foes.
 
 Creatures with a large natural reach using reach weapons can strike at up to double their natural reach but can't strike at their natural reach or less, just like Medium sized creatures.
+
+\subsection{Mounted Combat}
+\parhead{Horses in Combat} Warhorses and warponies can serve readily as combat steeds. Light horses, ponies, and heavy horses, however, are frightened by combat. If you don't dismount, you must make a DC 20 Ride check each round as a move action to control such a horse. If you succeed, you can perform a standard action after the move action. If you fail, you can't do anything else until your next turn.
+
+Your mount acts on your initiative count as you direct it. You move at its speed, but the mount uses its action to move.
+
+\parhead{Space} A horse (not a pony) is a Large creature, and thus takes up a space 10 feet (2 squares) across. While mounted, you share your mount's space completely. Anyone threatening your mount can attack either you or your mount. However, your reach is still that of a creature of your normal size. Thus, a Medium paladin would threaten all squares adjacent to his Large horse with a longsword, and all squares 10 feet away from his mount with a lance.
+
+In the case of abnormally large mounts (two or more size categories larger than you), you may not completely share space. Such situations should be handled on a case-by-case basis, depending on the nature of the mount.
+
+\parhead{Combat while Mounted} With a DC 5 Ride check, you can guide your mount with your knees so as to use both hands to attack or defend yourself. This is a free action.
+
+If your mount moves more than its normal speed when charging, you also take the AC penalty associated with a charge. If you make an attack at the end of such a charge, you receive the bonus gained from the charge. When charging on horse-back, you deal double damage with a lance (see \pcref{Charge}).
+
+You can use ranged weapons while your mount is taking a double move, but at a \minus4 penalty on the attack roll. You can use ranged weapons while your mount is running (quadruple speed), at a \minus8 penalty. In either case, you make the attack roll when your mount has completed half its movement. You can make a full attack with a ranged weapon while your mount is moving. Likewise, you can take move actions normally.
+
+\parhead{Casting Spells while Mounted} You can cast a spell normally if your mount moves up to a normal move (its speed) either before or after you cast. If you have your mount move both before and after you cast a spell, then you're casting the spell while the mount is moving, and you have to make a Concentration check due to the vigorous motion (DC 10 \add double spell level) or lose the spell. If the mount is running (quadruple speed), you can cast a spell when your mount has moved up to twice its speed, but your Concentration check is more difficult due to the violent motion (DC 15 \add double spell level).
+
+\parhead{If Your Mount Falls in Battle} If your mount falls, you have to succeed on a DC 15 Ride check to make a soft fall and take no damage. If the check fails, you take 1d6 points of damage.
+
+\parhead{If You Are Dropped} If you are knocked unconscious, you have a 50\% chance to stay in the saddle (or 75\% if you're in a military saddle). Otherwise you fall and take 1d6 points of damage. Without you to guide it, most mounts avoid combat.
+
+\subsection{Two-Weapon Fighting}
+If you wield a second weapon in your off hand, you can attack with both weapons at once whenever you attack. Roll a single attack roll for both weapons. Apply your attack bonuses with each of your weapons separately, taking a \minus5 penalty with your off-hand attack. If you hit with your main hand, you deal damage with your main weapon. If you hit with your off-hand (after taking into account the \minus5 penalty), you also deal damage with your off-hand weapon. You only apply your Strength with the weapon in your main hand. 
+
+\par Precision-based damage, such as sneak attack damage, is only dealt once. It is possible to critical with both weapons. Use each weapon's critical threat range separately, but roll only once to confirm a critical threat, using the same attack bonus as with the original attack. Damage reduction only applies once against the damage dealt by both weapons.
+
+\par Fighting in this way is difficult, and you suffer a \minus2 penalty to your attack roll. You can mitigate this penalty if your off-hand weapon is light. (An unarmed strike is always considered light.) The Two-Weapon Fighting feat grants a \plus2 competence bonus to attack rolls when fighting with two weapons at once.
+
+You take no penalties for alternating attacks between two (or more) weapons, as long as you do not attack with both weapons at once.
+
+\par For example, Felix the 1st-level fighter is wielding a longsword and a short sword against an evil goblin. The goblin has an AC of 15. Felix has a Strength of 3 and a base attack bonus of \plus1. This means his attack bonus with either weapon individually is \plus4. If he attacks with both weapons at once, he takes no penalty to his attack roll (because his off-hand weapon is light), but his attack with his off-hand weapon takes a \minus5 penalty. So his attack bonus would be \plus4 (with his longsword) and \minus1 (with his short sword). If he rolls a 15, he will hit the goblin with his longsword, but not with his short sword.
+
+\par If Felix had the Two-Weapon Fighting feat, his attack bonus would be \plus6 with his longsword and \plus1 with his short sword. Assuming he rolls a 15 again, he would hit the goblin with both weapons, dealing damage with both of them.
+
+\subsection{Delay}
+By choosing to delay, you take no action and then act normally on whatever initiative count you decide to act. When you delay, you voluntarily reduce your own initiative result for the rest of the combat. When your new, lower initiative count comes up later in the same round, you can act normally. You can specify this new initiative result or just wait until some time later in the round and act then, thus fixing your new initiative count at that point.
+
+You never get back the time you spend waiting to see what's going to happen. Additionally, you can't interrupt anyone else's action (as you can with a readied action).
+
+\parhead{Initiative Consequences of Delaying} Your initiative result becomes the count on which you took the delayed action. If you come to your next action and have not yet performed an action, you don't get to take a delayed action (though you can delay again).
+
+If you take a delayed action in the next round, before your regular turn comes up, your initiative count rises to that new point in the order of battle, and you do not get your regular action that round.
+
+\subsection{Ready}
+The ready action lets you prepare to take an action later, after your turn is over but before your next one has begun. Readying is a standard action. It does not provoke an attack of opportunity (though the action that you ready might do so).
+
+\parhead{Readying an Action} You can ready a standard action or a move action. To do so, specify the action you will take and the conditions under which you will take it. You cannot ready in response to an action that you take -- the action must be outside of your control. Then, any time before your next action, you may take the readied action in response to that condition. The action occurs just before the action that triggers it. If the triggered action is part of another character's activities, you interrupt the other character. Assuming he is still capable of doing so, he continues his actions once you complete your readied action. Your initiative result changes. For the rest of the encounter, your initiative result is the count on which you took the readied action, and you act immediately ahead of the character whose action triggered your readied action.
+
+You can take some free actions as part of your readied action, but in general you can take no actions other than the action you readied.
+
+\parhead{Initiative Consequences of Readying} Your initiative result becomes the count on which you took the readied action. If you come to your next action and have not yet performed your readied action, you don't get to take the readied action (though you can ready the same action again). If you take your readied action in the next round, before your regular turn comes up, your initiative count rises to that new point in the order of battle, and you do not get your regular action that round.
+
+\parhead{Distracting Spellcasters} You can ready a full attack against a spellcaster with the trigger ``if she starts casting a spell." If you damage
+the spellcaster, she may lose the spell she was trying to cast (as determined by her Concentration check result).
+
+\parhead{Readying to Counterspell} You may ready a counterspell against a spellcaster (often with the trigger ``if she starts casting a spell"). In this case, when the spellcaster starts a spell, you get a chance to identify it with a Spellcraft check (DC 15 \add spell level). If you do, and if you can cast that same spell (are able to cast it and have it prepared, if you prepare spells), you can cast the spell as a counterspell and automatically ruin the other spellcaster's spell. Counterspelling works even if one spell is divine and the other arcane.
+
+A spellcaster can use \spell{dispel magic} to counterspell another spellcaster, but it doesn't always work.
+
+\parhead{Readying a Weapon against a Charge} You can ready certain piercing weapons, setting them to receive charges (see \trefcp{Weapons}). A readied weapon of this type deals double damage on your first attack with it against a charging character.
