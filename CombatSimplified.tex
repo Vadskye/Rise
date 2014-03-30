@@ -1,12 +1,12 @@
 \chapter{Combat}\label{Combat}
 
 \section{How Combat Works}
-In combat, each creature takes a turn one at a time. The order in which creatures take turns is determined by their initiative (see \pcref{Initiative}). 
+Combat takes place in a series of ``rounds'', which represents about six seconds of action. Each round, every character gets a turn to act. The order in which creatures take turns is determined by their initiative (see \pcref{Initiative}). 
 
 When it's your turn, you can take one standard action, one move action, and one swift action. If you want, you can take a full-round action instead of your standard and move actions. You can always ``downgrade'' an action to a lesser action: turning a standard action into a move action, or a move action into a swift action.
 
 \section{Attacks}
-As a standard or attack action, you can make an attack roll with a weapon you are wielding, adding your attack modifier to the roll. If your result exceeds your target's Armor Class, your attack hits, and you deal damage.
+As a standard action, you can make an attack roll with a weapon you are wielding, adding your attack modifier to the roll. If your result exceeds your target's Armor Class, your attack hits, and you deal damage.
 
 \subsection{Attack Modifier}
 Your attack modifier is equal to the following:
@@ -16,6 +16,12 @@ Your attack modifier is equal to the following:
 \end{figure}
 
 Your base attack bonus is determined by your class levels. With medium or heavy weapons, your attack attribute is your Strength. With light weapons and projectile weapons, your attack attribute is your Dexterity. Your size modifier is described on \tref{Size Modifiers}.
+
+\subsection{Reach}
+When you wield a normal melee weapon, you can attack anyone within your reach. Typically, that means anyone adjacent to you. Reach for larger and smaller creatures is determined by size, as shown on \trefnp{Size in Combat}.
+
+\subsection{Nonproficiency}
+If you attack with a weapon you aren't proficient with, you provoke an attack of opportunity if you miss.
 
 \subsection{Damage}
 When your attack succeeds, you deal damage equal to your weapon's damage die \add half your Strength.
@@ -71,7 +77,10 @@ Sometimes a combatant in a melee lets her guard down. In this case, combatants n
 
 An attack of opportunity ``interrupts'' the normal flow of actions in the round. If an attack of opportunity is provoked, immediately resolve the attack of opportunity, then continue with the next character's turn (or complete the current turn, if the attack of opportunity was provoked in the midst of a character's turn).
 
-\section{Starting a Combat}
+\section{Movement}
+
+\section{Initiative}
+
 At the start of a battle, each creature that is aware of the combat makes an initiative check. Your initiative check is calculated as follows:
 
 \begin{figure}[h]
@@ -80,26 +89,36 @@ At the start of a battle, each creature that is aware of the combat makes an ini
 
 Creatures act in order of their initiative, highest to lowest. After the creature with the lowest initiative acts, a new round begins and the creature with the highest initiative acts again. You usually keep your initiative for the whole encounter, even if you can't act. However, some special actions can change your initiative count.
 
-\subsection{Surprise Attacks}
+\subsubsection{Surprise Attacks}
 Sometimes, some creatures are not aware of the combat when it starts. This most commonly happens with ambushes. Any creature that is not aware of the combat doesn't get to make an initiative check during the first round of combat. Until it takes its first action, it is flat-footed and can't take attacks of opportunity.
 
 Sometimes, everyone is surprised, such as if a guard walks around a corner to unexpectedly find a group of muggers. In that case, initiative is rolled normally, but all creatures are flat-footed and can't take attacks of opportunity until they take their first action.
 
 \section{Circumstances, Bonuses, and Penalties}
-\subsection{Size Modifier}
-Your attack modifier and armor class is affected by your size, as shown on \trefnp{Size Modifiers}. 
 
-\begin{dtable}
-\lcaption{Size Modifiers}
-\begin{tabularx}{\columnwidth}{ >{\lcol}X c >{\lcol}X c}
-\thead{Size} & \thead{Size Modifier} & \thead{Size} & \thead{Size Modifier} \\
-Colossal & \minus8 & Small & \plus1 \\
-Gargantuan & \minus4 & Tiny & \plus2 \\
-Huge & \minus2 & Diminutive & \plus4 \\
-Large & \minus1 & Fine & \plus8 \\
-Medium & \plus0 & &
-\end{tabularx}
-\end{dtable}
+\subsection{Size in Combat}
+Size affects your space and reach in combat. In addition, your attack modifier and armor class is affected by your size modifier. These effects are shown on \trefnp{Size in Combat}. 
+
+\begin{dtable*}
+    \lcaption{Size in Combat}
+    \begin{tabularx}{\textwidth}{l l l l X}
+        \thead{Size} & \thead{Size Modifier} & \thead{Space\fn{1}} & thead{Reach\fn{1}} & \thead{Example Creature} \\
+        Fine & \plus8 & 1/2 ft. & 0 & Fly\\
+        Diminutive & \plus4 & 1 ft. 0 & Toad \\
+        Tiny & \plus2 & 2-1/2 ft. & 0 \\
+        Small & \plus1 & 5 ft. & 5 ft. & Halfling \\
+        Medium & \plus0 & 5 ft. & 5 ft. & Human \\
+        Large (tall) & \minus1 & 10 ft. & 10 ft. & Ogre \\
+        Large (tall) & \minus1 & 10 ft. & 5 ft. & Horse \\
+        Huge (tall) & \minus2 & 15 ft. & 15 ft. & Cloud giant \\
+        Huge (long) & \minus2 & 15 ft. & 10 ft. & Bulette \\
+        Gargantuan (tall) & \minus4 & 20 ft. & 20 ft. & 50-ft. animated statue \\
+        Gargantuan (long) & \minus4 & 20 ft. & 15 ft. & Kraken \\
+        Colossal (tall) & \minus8 & 30 ft.\plus & 30 ft.\plus & Colossal animated object \\
+        Colossal (long) & \minus8 & 30 ft.\plus & 20 ft.\plus & Great wyrm red dragon \\
+    \end{tabularx}
+    1 Creatures can vary in space and reach. These are simply typical values.
+\end{dtable*}
 
 \subsection{Range Increments}
 When using a ranged weapon, you take a \minus2 penalty per range increment between you and your target. For example, when using a longbow with a range increment of 100 feet against a target 170 feet away, you take a \minus2 penalty to attack rolls.
