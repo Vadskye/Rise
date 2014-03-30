@@ -207,6 +207,114 @@ You heal half your hit points in nonlethal damage with 1 hour of rest. When a sp
 
 \section{Circumstances, Bonuses, and Penalties}
 
+\begin{dtable}
+\lcaption{Attack Roll Bonuses and Penalties}
+\begin{tabularx}{\columnwidth}{l X}
+\thead{Attacker's Condition} & \thead{Effect} \\
+Entangled & \minus2 \\
+Invisible & \x\fn{1} \\
+Prone & \minus4\fn{2} & \\
+Squeezing through a space & \minus4 \\
+Vulnerable & \minus2 \\
+\end{tabularx}
+1 The defender is flat-footed. \\
+2 Most ranged weapons can't be used while the attacker is prone, but you can use a crossbow or shuriken while prone at no penalty.
+\end{dtable}
+
+\begin{dtable}
+\lcaption{Armor Class Bonuses and Penalties}
+\begin{tabularx}{\columnwidth}{>{\lcol}X >{\ccol}X >{\ccol}X}
+\thead{Defender's Condition} & \thead{Effect} & \thead{Ranged} \\
+Behind active cover & 20\% miss \\
+Behind passive cover & \plus4 \\
+Blinded & \x\fn{1} \\
+Concealed & \plus4 \\
+Cowering & \minus2\fn{1} \\
+Crouching or kneeling & \minus2\fn{2} \\
+Entangled & \minus2 \\
+Grappling (but attacker is not) & \plus0\fn{1} \\
+Helpless (such as paralyzed, sleeping, or bound) & \plus0\fn{3} \\
+Invisible & see Invisibility \\
+Overwhelmed & special\fn{4} \\
+Pinned & \minus4\fn{3} \\
+Prone & \minus4\fn{2} \\
+Squeezing through a space & \minus4 \\
+Stunned & \minus2\fn{1} \\
+Vulnerable & \minus2 \\
+\end{tabularx}
+1 The defender is flat-footed. \\
+2 Treat as a bonus against ranged attacks, instead of a penalty \\
+2 The defender is flat-footed, and treat the defender's Dexterity as \minus10. \\
+3 The creature suffers a penalty equal to the number of creatures threatening it.
+\end{dtable}
+
+\subsection{Cover}
+
+Cover represents any obstacle that physically prevents you from striking your target, such as a tree or intervening creature. A creature with cover is more difficult to attack.
+
+\parhead{Determining Cover} When making a melee attack against an adjacent target, your target has cover if any line from your square to the target's square goes through a wall (including a low wall) or other similar solid obstacle. If you occupy multiple squares, choose one square you occupy for this purpose.
+
+When making an attack against a target that is not adjacent to you, choose a corner of any square you occupy. In addition, choose a square the target occupies. If any line from this corner to any corner of the target square passes through a square or border that blocks line of effect or provides cover, or through a square occupied by a creature, the target has cover.
+
+There are two types of cover: active cover and passive cover.
+
+\subsubsection{Active Cover}
+
+If the obstacle is active and mobile, such as a creature or tree branches blowing in the wind, the defender has active cover. Any attacks against a creature with active cover relative to you have a 20\% miss chance. After rolling the attack, the attacker must make a miss chance percentile roll to see if the attack misses due to active cover. If an attack misses due to active cover, the attack is made against the intervening obstacle instead. If the attack is successful, the obstacle takes any damage from the attack normally. 
+
+\subsubsection{Passive Cover}
+
+If the obstacle is stationary, such as a tree trunk or wall, the defender has passive cover. A creature with passive cover relative to you has a \plus4 circumstance bonus to armor class.
+
+\parhead{Reflex Saves} A creature with passive cover gains a \plus2 bonus on Reflex saves against attacks that originate or burst out from a point on the other side of the cover from it. Note that spread effects can extend around corners and thus negate this cover bonus.
+\parhead{Low Obstacles} A low obstacle (such as a wall no higher than half your height) provides passive cover, but only to creatures within 30 feet (6 squares) of it. The attacker can ignore the cover if he's closer to the obstacle than his target. If two creatures are equally distant from the wall, it grants cover to both of them.
+\parhead{Attacks of Opportunity} You can't execute an attack of opportunity against an opponent with passive cover relative to you.
+\parhead{Hide Checks} You can use passive cover to make a Hide check, but not active cover. Without cover, you usually need concealment (see below) to make a Hide check.
+\parhead{Total Cover} If you don't have line of effect to your target, he is considered to have total cover from you. You can't make an attack against a target that has total cover.
+
+\subsubsection{Improved Cover}
+
+A creature can benefit from both passive and active cover. However, cover of the same type generally doesn't stack; a creature behind two trees is not substantially more protected than a creature behind a single tree. In some cases, cover may stack. In that case, each additional obstacle increases the miss chance by 10\% or grants an additional \plus2 circumstance bonus to AC, as appropritae.
+
+Exceptionally well covered opponents, such as a creature behind an arrow slit in a castle, may receive additional benefits. For example, it might gain improved evasion, and there may be limitations on what kind of attacks are possible.
+
+\subsection{Concealment}
+Concealment represents anything which makes it more difficult to see your target, such as dim lighting. A creature with concealment from you gains a \plus4 circumstance bonus to Armor Class. Concealment bonuses do not apply if you can't see your opponent (such as if you close your eyes).
+
+\parhead{Determining Concealment} When making a melee attack against an adjacent target, your target has concealment if his space is entirely within an effect that grants concealment.
+
+Deterining concealment for making an attack against a target that is not adjacent to you works exactly like determining cover for ranged attacks.
+
+In addition, some magical effects provide concealment against all attacks, regardless of whether any intervening concealment exists.
+
+\parhead{Concealment and Hide Checks} You can use concealment to make a Hide check. Without concealment, you usually need cover to make a Hide check.
+
+\subsection{Invisibility}
+If it is impossible to see your target, you can't attack him normally. However, you can attack a square that you think he occupies. An attack into a square occupied by an invisible enemy has a 50\% miss chance. If an adjacent invisible creature strikes you, you can automatically identify the square he occupied when he struck you.
+
+You can't execute an attack of opportunity against an invisible opponent, even if you know what square or squares the opponent occupies.
+
+\subsection{Overwhelm}
+When a creature is being attacked by multiple foes at once, it is less able to defend itself. A creature is considered overwhelmed if it is being threatened by more than one creature. Multiple creatures occupying the same square count as a single creature when determining overwhelm penalties. If a creature is overwhelmed, it takes a penalty to armor class equal to the number of creatures threatening it.
+
+\subsection{Helpless Defenders}
+A helpless opponent is someone who is bound, sleeping, paralyzed, unconscious, or otherwise at your mercy.
+
+\parhead{Regular Attack} A helpless character takes a \minus4 penalty to AC against melee attacks, but no penalty to AC against ranged attacks. A helpless defender is flat-footed. In fact, his Dexterity score is treated as if it were \minus10, giving him a \minus10 penalty to AC.
+
+\parhead{Coup de Grace} As a full-round action, you can use a melee weapon to deliver a coup de grace to a helpless opponent. You can also use a bow or crossbow, provided you are adjacent to the target. You automatically hit and score a critical hit. If the defender survives the damage, he must make a Fortitude save (DC 10 \add damage dealt) or die. A rogue also gets her extra sneak attack damage against a helpless opponent when delivering a coup de grace.
+
+Delivering a coup de grace provokes attacks of opportunity from
+threatening opponents because it involves focused concentration
+and methodical action on the part of the attacker. If any attacks of opportunity hit, you must make a Concentration check (DC 10 \add total damage dealt from all attacks of opportunity) or else the coup de grace fails.
+
+You can't deliver a coup de grace against a creature that is immune to critical hits. You can deliver a coup de grace against a creature with total concealment, but doing this requires two consecutive full-round actions (one to ``find" the creature once you've determined what square it's in, and one to deliver the coup de grace).
+
+\subsection{Range Increments}
+When using a ranged weapon, you take a \minus2 penalty per range increment between you and your target. For example, when using a longbow with a range increment of 100 feet against a target 170 feet away, you take a \minus2 penalty to attack rolls.
+
+\section{Special Rules}
+
 \subsection{Critical Success and Failure}
 A natural 1 (the d20 comes up 1) on an attack roll or saving throw is treated as rolling a \minus10. A natural 20 (the d20 comes up 20) is treated as rolling a 30. Under normal circumstances, a natural 1 automatically misses, and a natural 20 automatically hits.
 
@@ -259,8 +367,3 @@ If a creature without a natural reach uses a reach weapon, it gains no benefits 
 \parhead{Reach} Creatures that take up more than 1 square typically have a natural reach of 10 feet or more, meaning that they can reach targets even if they aren't in adjacent squares. Creatures with a large natural reach can attack anyone within their reach, including adjacent foes.
 
 Creatures with a large natural reach using reach weapons can strike at up to double their natural reach but can't strike at their natural reach or less, just like Medium sized creatures.
-
-\subsection{Range Increments}
-When using a ranged weapon, you take a \minus2 penalty per range increment between you and your target. For example, when using a longbow with a range increment of 100 feet against a target 170 feet away, you take a \minus2 penalty to attack rolls.
-
-\subsection{Large and Small Creatures}
