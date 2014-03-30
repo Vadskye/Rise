@@ -77,7 +77,12 @@ If a creature within your threatened area provokes an attack of opportunity, you
 
 You can make a number of attacks of opportunity each round equal to 1 \add half your Dexterity, but never more than one per opportunity. You don't have to make an attack of opportunity if you don't want to.
 
-\section{Movement}
+\section{Movement and Positioning}
+
+\subsection{Taking up Space}
+A typical human takes up a 5-ft. by 5-ft. space in combat. For convenience, this is often called a ``square''. Differently sized creatures can take up more or less space, as indicated on \tref{Size in Combat}. Normally, other creatures can't be in any squares you occupy.
+
+Sometimes, movement and distance are represented in squares. A 30-ft. movement is the same thing as moving six squares.
 
 \subsection{Ways to Move}
 
@@ -89,14 +94,14 @@ You can make a number of attacks of opportunity each round equal to 1 \add half 
 \parhead{Hustle} As a full-round action, you can move up to twice your speed.
 \parhead{Run} As a full-round action, you can run at full speed. This allows you to move up to quadruple your speed. You move at only triple speed if you are wearing medium or heavy armor. While running, and until the start of your next turn, you are flat-footed against all attacks. 
 \parhead{Withdraw} As a full-round action, you can move up to your speed. Before you do so, you can designate one creature who threatens you. This movement does not provoke attacks of opportunity from that creature.
+\parhead{Struggle} As a full-round action, you can move five feet, regardless of movement penalties. You can use this to move even if your speed is decreased below five feet by penalties. 
 
-\subsection{Measuring Distance}
+\subsection{Measuring Movement}
 \parhead{Diagonals} When measuring distance, the first diagonal counts
-as 1 square, the second counts as 2 squares, the third counts as 1, the
-fourth as 2, and so on.
+as five feet of movement, and the second counds as ten feet of movement. The third costs five feet, the fourth costs ten feet, and so on.
 
 You can't move diagonally past a corner. You can move diagonally past a creature, even an opponent. You can also move diagonally past other impassable obstacles, such as pits.
-\parhead{Closest Creature} When it's important to determine the closest square or creature to a location, if two squares or creatures are equally close, randomly determine which one counts as closest by rolling a die.
+\parhead{Closest Creature} When it's important to determine the closest square or creature to a location, if two squares or creatures are equally close, pick one randomly.
 
 \subsection{Movement Impediments}
 
@@ -127,15 +132,11 @@ When a Large creature (which normally takes up four squares) squeezes into a spa
 
 A creature can squeeze past an opponent while moving but it can't end its movement in an occupied square.  To squeeze through or into a space less than half your space's width, you must use the Escape Artist skill.
 
-\subsection{Special Movement Rules}
-These rules cover special movement situations.
-\parhead{Accidentally Ending Movement in an Illegal Space} Sometimes a character ends its movement while moving through a space where it's not allowed to stop. When that happens, put your miniature in the last legal position you occupied, or the closest legal position, if there's a legal position that's closer.
+\parhead{Accidentally Squeezing} Sometimes a character ends its movement while moving through a space where it's not normally allowed to stop. When that happens, the character is squeezing in the space until it can move. If squeezing is impossible, it immediately moves to the closest available space where it can be. Try not to do this.
 
 \parhead{Double Movement Cost} When your movement is hampered in some way, your movement usually costs double. For example, each square of movement through difficult terrain counts as 2 squares, and each diagonal move through such terrain counts as 3 squares (just as two diagonal moves normally do).
 
-If movement cost is doubled twice, then each square counts as 4 squares (or as 6 squares if moving diagonally). If movement cost is doubled three times, then each square counts as 8 squares (12 if diagonal) and so on. This is an exception to the general rule that two doublings are equivalent to a tripling.
-
-\parhead{Minimum Movement} Despite penalties to movement, you can take a full-round action to move 5 feet (1 square) in any direction, even diagonally. (This rule doesn't allow you to move through impassable terrain or to move when all movement is prohibited.) Such movement provokes attacks of opportunity as normal.
+If movement cost is doubled twice, then each square counts as 4 squares (or as 6 squares if moving diagonally). If movement cost is doubled three times, then each square counts as 8 squares (12 if diagonal), and so on. This is an exception to the general rule that two doublings are equivalent to a tripling.
 
 \section{Initiative}
 
@@ -214,6 +215,11 @@ When you roll a natural 20 on an attack roll and hit, you have scored a critical
 
 Many weapons can also score critical threats on lower numbers, or deal additional damage on a critical hit.
 
+\subsection{Doubling}
+If you double any in-game value twice, it becomes three times as large. An additional doubling would make it four times as large, and so on. For example, if you make an attack that deals double damage and you get a critical hit, you deal triple damage.
+
+\parhead{Real-World Values} Values that are ``real'', such as movement and distance, are an exception. If you double a real-world value twice, it becomes four times as large. 
+
 \subsection{Size in Combat}
 Size affects your space and reach in combat. In addition, your attack modifier and armor class is affected by your size modifier. These effects are shown on \trefnp{Size in Combat}. 
 
@@ -238,5 +244,23 @@ Size affects your space and reach in combat. In addition, your attack modifier a
     1 Creatures can vary in space and reach. These are simply typical values.
 \end{dtable*}
 
+Unusually large or small creatures also have other special rules apply to them. 
+
+\subsubsection{Very Small Creatures}
+\parhead{Space} If a creature takes up less than a single square of space, you can fit multiple creatures in that square. You can fit four Tiny creatures in a square, twenty-five Diminuitive creatures, or 100 Fine creatures.
+
+\parhead{Reach} Creatures that take up less than 1 square of space typically have a natural reach of 0 feet, meaning they can't reach into adjacent squares. They must enter an opponent's square to attack in melee. This provokes an attack of opportunity from the opponent. You can attack into your own square if you need to, so you can attack such creatures normally. Since they have no natural reach, they do not threaten the squares around them, allowing you to move past them without provoking attacks of opportunity.
+
+If a creature without a natural reach uses a reach weapon, it gains no benefits or penalties.
+
+\subsubsection{Very Large Creatures}
+\parhead{Space} Very large creatures take up multiple squares. Anything which affects a single square the creature occupies affects the creature. 
+
+\parhead{Reach} Creatures that take up more than 1 square typically have a natural reach of 10 feet or more, meaning that they can reach targets even if they aren't in adjacent squares. Creatures with a large natural reach can attack anyone within their reach, including adjacent foes.
+
+Creatures with a large natural reach using reach weapons can strike at up to double their natural reach but can't strike at their natural reach or less, just like Medium sized creatures.
+
 \subsection{Range Increments}
 When using a ranged weapon, you take a \minus2 penalty per range increment between you and your target. For example, when using a longbow with a range increment of 100 feet against a target 170 feet away, you take a \minus2 penalty to attack rolls.
+
+\subsection{Large and Small Creatures}
