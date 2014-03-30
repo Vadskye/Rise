@@ -56,7 +56,7 @@ You can use any combination of performance feats you possess a number of times p
 Combat feats always affect a character's combat abilities. Fighters gain bonus feats selected from a subset of the feat list presented in \tref{Combat Feats}. Any feat designated as a combat feat can be selected as a fighter's bonus feat.
 
 \subsection{Combat Maneuver Feats}
-Combat maneuver feats are combat feats which specifically deal with combat maneuvers -- pushing opponents around, grappling them, tripping them, or other unusual attacks. Any feat designated as a combat maneuver feat is also considered a combat feat and can be selected as a fighter's bonus feat.
+Combat maneuver feats are combat feats which specifically deal with maneuvers -- pushing opponents around, grappling them, tripping them, or other unusual attacks. Any feat designated as a combat maneuver feat is also considered a combat feat and can be selected as a fighter's bonus feat.
 
 \subsection{Combat Style Feats}
 Combat style feats grant a character the ability to fight in a particular style, granting them bonuses while fighting in that style. A character can only fight in one style at once. Initiating a style or changing to a different style is a swift action, but a style can be stopped as a free action. Any feat designated as a combat maneuver feat is also considered a combat feat and can be selected as a fighter's bonus feat.
@@ -220,7 +220,7 @@ purpose of this calculation. The minimum caster level to craft an item is always
 \tind \featref{Armor Proficiency (medium)} & Armor Proficiency (light) & No armor check penalty on attack rolls & Equipment \\
 \tind \tind \featref{Armor Proficiency (heavy)} & Armor Proficiency (medium) & No armor check penalty on attack rolls & Equipment \\
 \featref{Blind-Fight} & \x &  Reroll miss chance for concealment in melee & Awareness \\
-\featref{Cautious Attack} & \x & Trade damage for CMD & Defense, Style \\
+\featref{Cautious Attack} & \x & Trade damage for MC & Defense, Style \\
 \featref{Combat Expertise} & Int 3 & Trade attack bonus for AC & Defense, Style \\
 \featref{Covering Fire} & \x & Trade ranged attack bonus to penalize struck foes & Precision, Style \\
 \featref{Deadly Aim} & Dex 3 & Trade ranged attack bonus for damage & Precision, Style \\
@@ -239,7 +239,7 @@ purpose of this calculation. The minimum caster level to craft an item is always
 \featref{Mounted Archery} & Ride 1 rank & Reduced penalty for ranged attacks while mounted by 4 & Mounted, Precision \\
 \featref{Mounted Combat} & Ride 1 rank & Negate hits on mount with Ride check & Defense, Mounted \\
 \featref{Opportunist} & Dex 3 & \plus2 to attack and damage on attacks of opportunity & Finesse, Style \\
-\featref{Overpowering Assault} & Str 3 & Trade AC for combat maneuver bonus & Power, Style \\
+\featref{Overpowering Assault} & Str 3 & Trade AC for maneuver bonus & Power, Style \\
 \end{tabularx}
 \end{dtable!*}
 
@@ -278,7 +278,7 @@ purpose of this calculation. The minimum caster level to craft an item is always
 \featref{Chargebreaker} & Base attack bonus \plus4 & Gain \plus2 to attack and damage when readying against approaching foe & Reaction \\
 \featref{Cleave} & Str 3, base attack bonus \plus4 & Extra melee attack after dropping target & Power \\
 \tind \featref{Cleaving Stride} & Str 3, base attack bonus \plus8, Cleave & Continue movement after dropping target & Power \\
-\featref{Defensive Stance} & Base attack bonus \plus4 & Trade ability to move for CMD & Defense, Style \\
+\featref{Defensive Stance} & Base attack bonus \plus4 & Trade ability to move for MC & Defense, Style \\
 \featref{Distracting Foe} & Base attack bonus \plus4 & Threatened foes suffer Concentration penalties & Style \\
 \featref{Feign Weakness} & Base attack bonus \plus4 & Provoke attack to render foe flat-footed & Style \\
 \featref{Improved Bull Rush} & Base attack bonus \plus4 & \plus2 bonus on bull rush attacks; push target back without moving & Maneuver, Power \\
@@ -579,7 +579,7 @@ Choose a school of magic or a spell descriptor.
 
 \feat{Scale the Beast}{Skill}
 \featpre Climb 8 ranks. 
-\featben As a standard action, you can make a Climb check against the combat maneuver defense of a creature adjacent to you. The creature must be three or more size categories larger than you. You gain a \plus4 circumstance bonus on the check for every size category by which it exceeds your own. If you succeed, you can climb the creature as if it were a solid object with a Climb DC equal to its combat maneuver defense. The creature takes a \minus4 penalty to attack rolls against you, but is not otherwise encumbered by your presence unless it cannot support your weight. It can attempt to remove you by attacking you, or with an appropriate combat maneuver, such as grapple or bull rush.
+\featben As a standard action, you can make a Climb check against the Maneuver Class of a creature adjacent to you. The creature must be three or more size categories larger than you. You gain a \plus4 circumstance bonus on the check for every size category by which it exceeds your own. If you succeed, you can climb the creature as if it were a solid object with a Climb DC equal to its Maneuver Class. The creature takes a \minus4 penalty to attack rolls against you, but is not otherwise encumbered by your presence unless it cannot support your weight. It can attempt to remove you by attacking you, or with an appropriate maneuver, such as grapple or bull rush.
 
 \feat{Skill Focus}{Skill}
 Choose a skill.
@@ -786,7 +786,7 @@ In addition, your unarmed strikes can deal lethal or nonlethal damage as you cho
 
 \feat{Improved Grapple}{Combat, Maneuver}
 \parhead{Prerequisites} Base attack bonus \plus4
-\parhead{Benefit} While in a grapple, you may make grapple checks as an attack action. You also gain a \plus2 competence bonus on grapple attacks and to your CMD against grapple attacks.
+\parhead{Benefit} While in a grapple, you may make grapple checks as an attack action. You also gain a \plus2 competence bonus on grapple attacks and to your Maneuver Class against grapple attacks.
 \parhead{Normal} While in a grapple, you make grapple attacks as a standard action.
 \par A monk may select Improved Grapple as a bonus feat at 1st level, even if she does not meet the prerequisites.
 
@@ -933,7 +933,7 @@ Choose one weapon group.
 \subsection{Combat Style Feats}
 
 \feat{Cautious Attack}{Combat, Style}
-\parhead{Benefit} You gain a \plus2 circumstance bonus to your Combat Maneuver Defense. In exchange, you take a \minus2 penalty to damage rolls. At base attack bonus \plus5, and every 5 base attack bonus thereafter, you increase the bonus and penalty by 1.
+\parhead{Benefit} You gain a \plus2 circumstance bonus to your Maneuver Class. In exchange, you take a \minus2 penalty to damage rolls. At base attack bonus \plus5, and every 5 base attack bonus thereafter, you increase the bonus and penalty by 1.
 \parhead{Style Requirement} You must attack each round.
 
 \feat{Combat Expertise}{Combat, Style}
@@ -951,7 +951,7 @@ Choose one weapon group.
 
 \feat{Defensive Stance}{Combat, Style}
 \parhead{Prerequisites} Base attack bonus \plus4
-\parhead{Benefit} You gain a \plus3 circumstance bonus to Combat Maneuver Defense. In exchange, you are unable to move. At base attack bonus \plus8, and every 4 base attack bonus thereafter, you increase the bonus by 1.
+\parhead{Benefit} You gain a \plus3 circumstance bonus to Maneuver Class. In exchange, you are unable to move. At base attack bonus \plus8, and every 4 base attack bonus thereafter, you increase the bonus by 1.
 
 You can only use this style if you have not moved since your last turn.
 
@@ -971,8 +971,7 @@ You can only use this style if you have not moved since your last turn.
 
 \feat{Overpowering Assault}{Combat, Style}
 \parhead{Prerequisite} Str 3.
-\parhead{Benefit} You take a \minus2 penalty to AC and gain a \plus2 circumstance bonus to combat maneuver attacks. \babscalingdescription The penalty to AC lasts until the start of the next turn after you end the style.
-\parhead{Style Requirement} Must perform a combat maneuver each round.
+\parhead{Benefit} You take a \minus2 penalty to AC and gain a \plus2 circumstance bonus to maneuvers. \babscalingdescription The penalty to AC lasts until the start of the next turn after you end the style.
 
 \feat{Point Blank Shot}{Combat, Style}
 \parhead{Benefit} You get a \plus2 circumstance bonus on damage rolls with ranged weapons when attacking targets within half of your range increment. \babscalingdescription
@@ -980,7 +979,7 @@ You can only use this style if you have not moved since your last turn.
 \feat{Power Attack}{Combat, Style}
 \parhead{Prerequisite} Str 3.
 \parhead{Benefit} You take a \minus2 penalty on melee attack rolls to gain a \plus2 bonus on all melee damage rolls. At base attack bonus \plus5, and every 5 base attack bonus thereafter, the penalty increases by 1 and the bonus increases by 2.
-\par The bonus and penalty damage do not apply to combat maneuvers or touch attacks. The bonus damage is halved if you are making an attack with an off-hand weapon or light weapon.
+\par The bonus and penalty damage do not apply to maneuvers or touch attacks. The bonus damage is halved if you are making an attack with an off-hand weapon or light weapon.
 
 %Can't replace Strength; archers need to be strong
 \feat{Precise Shot}{Combat, Style}
@@ -1101,7 +1100,7 @@ If you have 14 Hit Values, you gain a fly speed equal to your base land speed, t
 
 \feat{Elemental Movement}{Bloodline, Elemental}
 \featpre Elemental Heritage
-\featben You gain a movement ability based on you choice of elemental ancestor. Air halves the damage you take from falling and improves the maneuverability of any flight abilities you possess by one category. Earth gives you a \plus2 competence bonus to CMD against attacks that would force you to move, such as bull rush and trip attacks. Fire gives you a \plus5 foot competence bonus to your movement speed. Water gives you a swim speed equal to your base land speed.
+\featben You gain a movement ability based on you choice of elemental ancestor. Air halves the damage you take from falling and improves the maneuverability of any flight abilities you possess by one category. Earth gives you a \plus2 competence bonus to Maneuver Class against attacks that would force you to move, such as bull rush and trip attacks. Fire gives you a \plus5 foot competence bonus to your movement speed. Water gives you a swim speed equal to your base land speed.
 
 \subsection{Metamagic Feats}
 
