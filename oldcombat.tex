@@ -1,0 +1,989 @@
+\chapter{Combat}
+
+\section{How Combat Works}
+Combat is cyclical; everybody acts in turn in a regular cycle of rounds. Combat follows this sequence:
+\begin{enumerate*}
+\item Determine which characters are aware of their opponents at the start of the battle. If some but not all of the combatants are aware of their opponents, a surprise round happens before regular rounds of combat begin. The combatants who are aware of the opponents can act in the surprise round, so they roll for initiative. In initiative order (highest to lowest), combatants who started the battle aware of their opponents each take one action (either a standard action or a move action) during the surprise round. Combatants who were unaware do not get to act in the surprise round. If no one or everyone starts the battle aware, there is no surprise round.
+\item Combatants who have not yet rolled initiative do so. All combatants are now ready to begin their first regular round of combat.
+\item Combatants act in initiative order (highest to lowest).
+\item When everyone has had a turn, the combatant with the highest initiative acts again, and steps 3 and 4 repeat until combat ends.
+\end{enumerate*}
+
+\section{Combat Statistics}
+This section summarizes the statistics that determine success in combat, and then details how to use them.
+
+\subsection{Attack Roll}
+An attack roll represents your attempt to strike your opponent on your turn in a round. When you make an attack roll, you roll a d20 and add your attack bonus. (Other modifiers may also apply to this roll.) If your result equals or beats the target's Armor Class, you hit and deal damage.
+
+\parhead{Overwhelming Misses and Hits} A natural 1 (the d20 comes up 1) on an attack roll is treated as if a \minus10 had been rolled --  in all but the most extreme situations (such as hitting a wall), it is an automatic miss. A natural 20 (the d20 comes up 20) is treated as if a 30 had been rolled, which is usually an automatic hit. A natural 20 is also a threat -- a possible critical hit.
+
+\subsubsection{Critical Hits}
+When you make an attack roll and get a natural 20 (the d20 shows 20), you get an overwhelming hit, as if you had rolled a 30. If the attack hits, The hit might be a critical hit (or ``crit''). To find out if it's a critical hit, you immediately make a critical roll -- another attack roll with all the same modifiers as the attack roll you just made. If the critical roll also results in a hit against the target's AC, your original hit is a critical hit. (The critical roll just needs to hit to give you a crit. It doesn't need to come up 20 again.) If the critical roll is a miss, then your hit is just a regular hit.
+
+A critical hit means that you roll your damage more than once, with all your usual bonuses, and add the rolls together. Unless otherwise specified, the threat range for a critical hit on an attack roll is 20, and the multiplier is \mult2.
+
+\parhead{Exception} Extra damage dice over and above a weapon's normal damage are not multiplied when you score a critical hit.
+
+\parhead{Increased Threat Range} Sometimes your threat range is greater than 20. That is, you can score a threat on a lower number. In such cases, a roll of lower than 20 is not an overwhelming hit. Any attack roll that doesn't result in a hit is not a threat.
+
+\parhead{Increased Critical Multiplier} Some weapons deal better than double damage on a critical hit.
+
+\parhead{Spells and Critical Hits} A spell that requires an attack roll can score a critical hit. A spell attack that requires no attack roll cannot score a critical hit.
+
+\subsection{Attack Bonus}
+Your attack bonus with a medium or heavy weapon is:
+\begin{figure}[h]
+\centering Base attack bonus \add Strength \add size modifier
+\end{figure}
+
+With a light or ranged weapon (except with medium or heavy thrown weapons), your attack bonus is:
+\begin{figure}[h]
+\centering Base attack bonus \add Dexterity \add size modifier \add range penalty
+\end{figure}
+
+\begin{dtable}
+\lcaption{Size Modifiers}
+\begin{tabularx}{\columnwidth}{ >{\lcol}X c >{\lcol}X c}
+\thead{Size} \thead{Size Modifier}  \thead{Size} \thead{Size Modifier}
+Colossal & \minus8 & Small & \plus1 \\
+Gargantuan & \minus4 & Tiny & \plus2 \\
+Huge & \minus2 & Diminutive & \plus4 \\
+Large & \minus1 & Fine & \plus8 \\
+Medium & \plus0 & &
+\end{tabularx}
+\end{dtable}
+
+\subsection{Damage}
+When your attack succeeds, you deal damage. The type of weapon used determines the amount of damage you deal. Effects that modify weapon damage apply to unarmed strikes and the natural physical attack forms of creatures.
+
+Damage reduces a target's current hit points.
+\parhead{Minimum Damage} If penalties reduce the damage result to less than 1, a hit still deals 1 point of damage.
+\parhead{Strength Bonus} When you hit with a melee or thrown weapon, including a sling, add half your Strength to the damage result. A Strength penalty, but not a bonus, applies on attacks made with a bow that is not a composite bow.
+\subparhead{Off-Hand Weapon} When you deal damage with a weapon in your off hand, you do not add your Strength bonus.
+\subparhead{Flurry Attacks} When you deal damage with extra attacks as part of a flurry attack, you do not add your Strength bonus to the extra attacks.
+\parhead{Multiplying Damage} Sometimes you multiply damage by some factor, such as on a critical hit. Roll the damage (with all modifiers) multiple times and total the results. When you multiply damage more than once, each multiplier works off the original, unmultiplied damage.
+\subparhead{Exception} Extra damage dice over and above a weapon's normal damage are never multiplied.
+
+\subsection{Armor Class}
+Your Armor Class (AC) represents how hard it is for opponents to land a solid, damaging blow on you. It's the attack roll result that an opponent needs to achieve to hit you. Your AC is equal to the following:
+
+{\centering \textbf{10 \add armor modifier \add shield modifier \add Dexterity \add natural armor modifier \add deflection modifier \add dodge modifier \add size modifier}}
+
+Sometimes you can't use your agility to avoid a blow. If you are flat-footed, you can't apply your Dexterity bonus, dodge modifier, or shield modifier to your AC. If your Dexterity is negative, you always apply the penalty, even if the condition or effect says you lose your Dexterity.
+
+\parhead{Base Attack Bonus} Your experience and aptitude in combat affects your ability to defend yourself; experienced warriors know how to recognize and avoid or parry blows that would easily fell novices. As a result, you add half your base attack bonus to your dodge modifier to armor class. This is an inherent bonus, and stacks with all other bonuses to your dodge modifier.
+
+\parhead{Other Modifiers} Many other factors can modify your AC.
+\subparhead{Natural Armor Modifier} Natural armor, such as from having unusually tough skin or thick hide, improves your AC. Armor and natural armor do not fully stack; add the higher modifier plus half the lower modifier to your AC. For example, if a warhorse (\plus4 natural armor modifier) wears chainmail barding (\plus6 armor modifier), it gets a total of a \plus8 bonus to AC: the chainmail provides \plus6, and its natural armor is halved to give a \plus2 bonus.
+\subparhead{Dodge Modifier} Your dodge modifier represents your ability to actively avoid blows. Any situation that denies you your Dexterity bonus also denies you your dodge modifier. (Wearing armor, however, does not limit these bonuses the way it limits a Dexterity bonus to AC.)
+\subparhead{Deflection Bonus} Certain rare magical effects can deflect attacks, improving your AC.
+
+\parhead{Touch Attacks} Some attacks disregard armor (but not shields) and natural armor. In these cases, the attacker makes a touch attack roll (either ranged or melee). When you are the target of a touch attack, your AC doesn't include any armor bonus or natural armor bonus. All other modifiers apply normally.
+
+\subsection{Hit Points}
+When your hit point total reaches 0, you're disabled. If you take any further damage, you have taken significant physical damage to your body, and you are dying. Damage dealt to you after you have reached 0 hit points is considered critical damage. If you have more critical damage than your Constitution score \add your level, you're dead.
+
+\subsection{Speed}
+Your speed tells you how far you can move in a round and still do something, such as attack or cast a spell. Your speed depends mostly on your race and what armor you're wearing.
+
+Dwarves, gnomes, and halflings have a speed of 20 feet (4 squares), or 15 feet (3 squares) when wearing heavy armor (except for dwarves, who move 20 feet in any armor).
+
+Humans, elves, half-elves, and half-orcs have a speed of 30 feet (6 squares), or 20 feet (4 squares) in heavy armor.
+
+If you use two move actions in a round (sometimes called a ``double move'' action), you can move up to double your speed. If you spend the entire round to run all out, you can move up to quadruple your speed (or triple if you are in medium or heavy armor).
+
+\subsection{Saving Throws}
+Generally, when you are subject to an unusual or magical attack, you get a saving throw to avoid or reduce the effect. Like an attack roll, a saving throw is a d20 roll plus a bonus based on your class, level, and an attribute score. Your saving throw modifier is:
+\begin{figure}[h]
+\centering Base save bonus \add primary attribute \add 1/2 secondary attribute
+\end{figure}
+
+\parhead{Saving Throw Types} The three different kinds of saving throws are Fortitude, Reflex, and Will:
+\subparhead{Fortitude} These saves measure your ability to stand up to physical punishment or attacks against your vitality and health. Apply your Constitution and half your Strength to your Fortitude saving throws.
+\subparhead{Reflex} These saves test your ability to dodge area attacks. Apply your Dexterity and half your Wisdom to your Reflex saving throws.
+\subparhead{Will} These saves reflect your resistance to mental influence as well as many magical effects. Apply your Charisma and half your Intelligence to your Will saving throws.
+\parhead{Saving Throw Difficulty Class} The DC for a save is determined by the attack itself.
+
+\parhead{Overwhelming Failures and Successes} A natural 1 (the d20 comes up 1) on a saving throw is treated as rolling a \minus10, and a natural 20 (the d20 comes up 20) is treated as rolling a 30. Under normal circumstances, a 1 is an automatic failure, and a 20 is an automatic success.
+
+\section{Initiative}
+\parhead{Initiative Checks} At the start of a battle, each combatant makes an initiative check. Each character applies his or her Dexterity and half his or her Wisdom to the roll. Characters act in order, counting down from highest result to lowest. In every round that follows, the characters act in the same order (unless a character takes an action that results in his or her initiative changing; see Special Initiative Actions).
+
+If two or more combatants have the same initiative check result, the combatants who are tied act in order of total initiative modifier (highest first). If there is still a tie, the tied characters should roll again to determine which one of them goes before the other.
+
+\parhead{Inaction} Even if you can't take actions, you retain your initiative score for the duration of the encounter.
+
+\parhead{Unaware} At the start of an encounter, before you have had a chance to act (specifically, before your first regular turn in the initiative order), you are unaware. You are flat-footed and cannot take attacks of opportunity or immediate actions. Barbarians, monks, and rogues have the uncanny dodge extraordinary ability, which prevents them from being flat-footed even when unaware.
+
+If you were aware of the impending combat and your foes before initiative was rolled, you are not unaware, even if you have not yet taken an action.
+
+\subsection{Surprise}
+When a combat starts, if you are not aware of your opponents and they are aware of you, you're surprised.
+
+\subsubsection{Determining Awareness}
+Sometimes all the combatants on a side are aware of their opponents, sometimes none are, and sometimes only some of them are. Sometimes a few combatants on each side are aware and the other combatants on each side are unaware.
+
+Determining awareness may call for Listen checks, Spot checks, or other checks.
+\parhead{The Surprise Round} If some but not all of the combatants are aware of their opponents, a surprise round happens before regular rounds begin. Any combatants aware of the opponents can act in the surprise round, so they roll for initiative. In initiative order (highest to lowest), combatants who started the battle aware of their opponents each take a standard action during the surprise round. You can also take free actions during the surprise round. If no one or everyone is surprised, no surprise round occurs.
+
+\parhead{Unaware Combatants} Combatants who are unaware at the start of battle don't get to act in the surprise round.
+
+\section{Attacks of Opportunity}
+Sometimes a combatant in a melee lets her guard down. In this case, combatants near her can take advantage of her lapse in defense to attack her for free. These free attacks are called attacks of opportunity.
+
+\parhead{Threatened Squares} You threaten all squares into which you can make a melee attack, even when it is not your action. Generally, that means everything in all squares adjacent to your space (including diagonally). Creatures with reach weapons or very large creatures may threaten more squares. An enemy that takes certain actions while in a threatened square provokes an attack of opportunity from you. If you're unarmed, you don't normally threaten any squares and thus can't make attacks of opportunity.
+
+\parhead{Provoking an Attack of Opportunity} All attacks of opportunity come from focusing on something other than the battle at hand. This can come in two forms: moving away from an opponent, and performing certain actions within a threatened area.
+\subparhead{Leaving the Battle} Moving farther away from an opponent who threatens you provokes an attack of opportunity. The withdraw action can be used to avoid such an attack. In addition, if you move at no more than half your speed, you do not provoke for moving away from any opponent that you attacked during your turn.
+\subparhead{Ignoring the Battle} Any action which requires you to concentrate on something other than defending yourself provokes an attack of opportunity. Casting a spell and attacking with a ranged weapon, for example, require concentrating on something other than avoiding a foe's blows. \tref{Actions in Combat} notes many of the actions that provoke attacks of opportunity.
+
+\par Remember that even actions that normally provoke attacks of opportunity may have exceptions to this rule.
+
+\parhead{Making an Attack of Opportunity} An attack of opportunity is a single melee attack. You can make a number of attacks of opportunity each round equal to 1 \add half your Dexterity, but never more than one per opportunity. You don't have to make an attack of opportunity if you don't want to.
+
+An experienced character gets additional regular melee attacks (by using the full attack action), but at a lower attack bonus. You make your attack of opportunity, however, at your normal attack bonus -- even if you've already attacked in the round.
+
+An attack of opportunity ``interrupts'' the normal flow of actions in the round. If an attack of opportunity is provoked, immediately resolve the attack of opportunity, then continue with the next character's turn (or complete the current turn, if the attack of opportunity was provoked in the midst of a character's turn).
+
+\subparhead{Nonproficient Weapons} You can't make an attack of opportunity with a weapon that you aren't proficient with.
+
+\section{Actions in Combat}
+
+\begin{dtable!*}
+\lcaption{Actions in Combat}
+\begin{tabularx}{\textwidth}{>{\ccol}X c >{\ccol}X c >{\ccol}X c}
+\thead{Standard Action}     & \thead{Provokes} &                    &       & \thead{Swift Action}      & \thead{Provokes} \\
+Activate most magic items   & No            & Pick up an item       & Yes   & Cast a quickened spell    & No \\
+                            &               & Strap in or loose a shield&Yes& Change focus              & No \\
+Bull rush                   & Maybe\fn{2}   & Sheathe a weapon      & Yes   & Direct or redirect an active spell & No\\
+Cast most spells            & Yes\fn{3}     & Stand up from prone   & No    & Dismiss a spell           & No \\
+Cast a spell from a scroll  & Yes           & Retrieve a stored item& Yes   & Draw a light weapon       & No \\
+Concentrate on a spell      & No            &                       &       & Lower spell resistance    & No  \\
+Draw a hidden weapon        & Yes           & \thead{Full-Round Action} & \thead{Provokes} &            &  \\
+Drink a potion or apply an oil & Yes        & Charge\fn{6}          & Yes   & \thead{Immediate Action}  & \thead{Provokes} \\
+Escape a grapple            & No            & Deliver coup de grace & Yes   & Cast an immediate spell   & No \\
+Full attack                 & No            & Extinguish flames     & Yes   & Drop prone                & No \\
+Grapple                     & Maybe\fn{2}   &                       &       &                           &  \\
+Ready                       & No            & Load a heavy or repeating crossbow & Yes & \thead{Attack Action} & \thead{Provokes} \\
+Total defense               & No            & Overrun               & Maybe\fn{2,6} & Attack (melee)    & No \\
+Use extraordinary ability   & No            & Run                   & Yes   & Attack (ranged)           & Yes \\
+Use spell-like ability      & Yes           & Use touch spell on up to six allies & Yes & Attack (unarmed or improvised weapon) & Maybe\fn{8} \\
+Use supernatural ability    & No            & Withdraw\fn{6}        & Yes   & Disarm                    & Maybe\fn{2} \\
+                            &               &                       &       & Feint                     & Maybe\fn{2} \\
+\thead{Move Action} & \thead{Provokes}      &\thead{Free Action}    &\thead{Provokes}&                  & \\
+Control a frightened mount  & Yes           & Cease concentration on a spell & No & Trip an opponent    & Maybe\fn{2} \\
+Draw any weapon             & Yes          & Drop an item          & No    &                           &  \\
+Load a hand crossbow or light crossbow & Yes& Prepare spell components to cast a spell & No & \thead{No Action} & \thead{Provokes} \\
+Move                        & Maybe\fn{4}   & Speak\fn{7}           & No    & Delay                     & No \\
+Open or close a door        & Maybe\fn{5}   &&&&
+\end{tabularx}
+1 If you aid someone performing an action that would normally provoke an attack of opportunity, then the act of aiding another provokes an attack of opportunity as well. \\
+2 Combat maneuvers provoke attacks of opportunity if they fail by 10 or more. \\
+3 A successful Concentration check can prevent you from provoking an attack of opportunity. \\ 
+4 You do not provoke from anyone you attacked during your turn if you move at no more than half your speed. \\
+5 Provokes if the door cannot simply be pushed open or closed. \\
+6 May be taken as a standard action if you are limited to taking only a single action in a round. \\
+7 You may take this action at any time, even when it is not your turn. \\
+8 Attacking while unarmed or while armed with only an improvised weapon provokes an attack of opportunity if the attack misses.
+\end{dtable!*}
+
+\subsection{The Combat Round}
+Each round represents 6 seconds in the game world. A round presents an opportunity for each character involved in a combat situation to take an action.
+
+Each round's activity begins with the character with the highest initiative result and then proceeds, in order, from there. Each round of a combat uses the same initiative order. When a character's turn comes up in the initiative sequence, that character performs his entire round's worth of actions. (For exceptions, see \pcref{Attacks of Opportunity} and \pcref{Special Initiative Actions}.)
+
+For almost all purposes, there is no relevance to the end of a round or the beginning of a round. A round can be a segment of game time starting with the first character to act and ending with the last, but it usually means a span of time from one round to the same initiative count in the next round. Effects that last a certain number of rounds end just before the same initiative count that they began on.
+
+\subsection{Action Types}
+An action's type essentially tells you how long the action takes to perform (within the framework of the 6-second combat round) and how movement is treated. There are four types of actions: standard actions, move actions, full-round actions, and free actions.
+
+In a normal round, you can perform a standard action and a move action, or you can perform a full-round action. You can also perform one or more free actions. You can always take a move action in place of a standard action.
+
+In some situations (such as in a surprise round), you may be limited to taking only a single move action or standard action.
+
+\parhead{Attack Action} An attack action is a special kind of action that can only be used for attacking. It usually comes from the full attack action (see Standard Action, below) or from attacks of opportunity. Only one attack can be made on an attack action, even if abilities would normally grant a character extra attacks. Single attacks that effectively result in two hits, such as from two-weapon fighting, can be used on attack actions.
+
+\parhead{Standard Action} A standard action allows you to do something. Most commonly, this is used to make a full attack, which allows a character to make her normal sequence of melee or ranged attacks, or to cast a spell.
+
+\parhead{Move Action} A move action allows you to move your speed or perform an action that takes a similar amount of time.
+
+You can take a move action in place of a standard action. If you move no actual distance in a round (commonly because you have swapped your move for one or more equivalent actions), you can take one 5-foot step either before, during, or after the action.
+
+\parhead{Full-Round Action} A full-round action consumes almost all your effort during a round. You can also perform a single swift or immediate action, as well as free actions.
+
+Some full-round actions can be taken as standard actions, but only in situations when you are limited to performing only a standard action during your round. The descriptions of specific actions, below, detail which actions allow this option.
+
+\parhead{Free Action} Free actions consume a very small amount of time and effort. You can perform one or more free actions while taking another action normally. However, there are reasonable limits on what you can really do for free.
+
+\parhead{Swift Action} A swift action consumes a very small amount of time, but represents a larger expenditure of effort and energy than a free action. You can perform one swift action per turn without affecting your ability to perform other actions. In that sense, a swift action is like a free action. However, you can only perform a single swift action each turn, regardless of what other actions you take.
+
+For example, casting a quickened spell is a swift action.
+
+\parhead{Immediate Action} Much like a swift action, an immediate action consumes a very small amount of time, but represents a larger expenditure of effort and energy than a free action. Unlike a swift action, an immediate action can be performed at any time -- even if it's not your turn.
+
+Using an immediate action on your turn is the same as using a swift action, and counts as your swift action for that turn. If you use an immediate action when it is not your turn, you cannot use another immediate action or swift action until after your next turn. Effectively, using an immediate action before your turn is equivalent to using your swift action for the coming turn. You cannot use an immediate action if you are currently flat-footed.
+
+\parhead{Not an Action} Some activities are so minor that they are not even considered free actions. They literally don't take any time at all to do and are considered an inherent part of doing something else.
+
+\parhead{Restricted Activity} In some situations, you may be unable to take a full round's worth of actions. In such cases, you are restricted to taking only a single standard action or a single move action (plus free actions as normal). You can't take a full-round action (though you can start or complete a full-round action by using a standard action; see below).
+
+\subsection{Attack Actions}
+Whenever you get an attack, whether from the full attack action or from attacks of opportunity, you get an attack action. You can use an attack action to perform any of the actions below.
+
+\subsubsection{Make an Attack}
+Making an attack is the most common attack action.
+\parhead{Melee Attacks} With a normal melee weapon, you can strike any opponent within 5 feet. (Opponents within 5 feet are considered adjacent to you.) Some melee weapons have reach, as indicated in their descriptions. With a typical reach weapon, you can strike opponents 10 feet away, but you can't strike adjacent foes (those within 5 feet) unless you short haft the weapon (see \pref{Reach Weapons}).
+\parhead{Unarmed Attacks} Striking for damage with punches, kicks, and head butts is much like attacking with a light melee weapon, except for the following:
+\subparhead{Attacks of Opportunity} If you miss with an unarmed attack, you provoke an attack of opportunity from the character you attack, provided she is armed. The attack of opportunity comes after your attack. An unarmed attack does not provoke attacks of opportunity from other foes, nor does it provoke an attack of opportunity from an unarmed foe.
+\subparhead{"Armed" Unarmed Attacks} Sometimes a character's or creature's unarmed attack counts as an armed attack. A monk, a character with the Improved Unarmed Strike feat, a spellcaster delivering a touch attack spell, and a creature with natural physical weapons all count as being armed. "Armed" unarmed attacks do not provoke attacks of opportunity when they miss, and allow you to take attacks of opportunity on unarmed opponents.
+\subparhead{Unarmed Strike Damage} An unarmed strike from a Medium character deals 1d3 points of damage (plus half your Strength, as normal). A Small character's unarmed strike deals 1d2 points of damage, while a Large character's unarmed strike deals 1d4 points of damage. All damage from unarmed strikes is nonlethal damage.
+
+\par Some abilities, such as the Improved Unarmed Strike feat, let you treat an unarmed strike as a medium weapon instead of a light weapon.
+
+\subparhead{Dealing Lethal Damage} You can specify that your unarmed strike will deal lethal damage before you make your attack roll, but you take a \minus4 penalty on your attack roll. If you have the Improved Unarmed Strike feat, you can deal lethal damage with an unarmed strike without taking a penalty on the attack roll.
+
+\parhead{Improvised Weapons} Attacking with an improvised weapon, such as a broken bottle or a chair, is similar to attacking unarmed. You provoke attacks of opportunity in the same way, provided your opponent is armed. If you are wielding an improvised weapon, you are not considered armed for the purpose of taking attacks of opportunity on opponents attacking unarmed or with improvised weapons.
+
+\parhead{Ranged Attacks} With a ranged weapon, you can shoot or throw at any target that is within the weapon's maximum range and in line of sight. The maximum range for a thrown weapon is five range increments. For projectile weapons, it is ten range increments. Some ranged weapons have shorter maximum ranges, as specified in their descriptions.
+
+\parhead{Attack Rolls} An attack roll represents your attempts to strike your opponent.
+Your attack roll is 1d20 \add your attack bonus with the weapon you're using. If the result is at least as high as the target's AC, you hit and deal damage.
+
+\parhead{Overwhelming Misses and Hits} A natural 1 (the d20 comes up 1) on the attack roll is treated as rolling a \minus10. A natural 20 (the d20 comes up 20) is treated as rolling a 30. Under normal circumstances, a natural 1 automatically misses, and a natural 20 automatically hits. A natural 20 is also a threat -- a possible critical hit.
+
+\parhead{Damage Rolls} If the attack roll result equals or exceeds the target's AC, the attack hits and you deal damage. Roll the appropriate damage for your weapon. Damage is deducted from the target's current hit points.
+
+\parhead{Multiple Attacks} A character who can make more than one attack per round must use the full attack action (see Standard Actions, below) in order to get more than one attack.
+
+\subsubsection{Perform Combat Maneuver}
+The dirty trick, disarm, feint, and trip combat maneuvers can be performed as an attack action. They are described in the Combat Maneuvers section below.
+
+\subsection{Standard Actions}
+
+\subsubsection{Full Attack}
+If you get more than one attack per round because your base attack bonus is high enough, or for some special reason (such as being \spell{hasted}), you must use a full attack action to get your additional attacks. You do not need to specify the targets of your attacks ahead of time. You can see how the earlier attacks turn out before assigning the later ones.
+\par When you take a full attack action, you get a number of attack actions equal to the number of attacks you can make.
+\par If you get multiple attacks because your base attack bonus is high enough, you must make the attacks in order from highest bonus to lowest.
+\parhead{Fighting Defensively} You can choose to fight defensively when taking a full attack action. If you do so, you take a \minus4 penalty on all attacks in a round to gain a \plus2 circumstance bonus to your dodge modifier for the same round. You cannot gain the benefits of the Combat Expertise feat while fighting defensively. You must choose one mode to attack with.
+
+\subsubsection{Perform Combat Maneuver}
+The bull rush and grapple combat maneuvers can be performed as a standard action. They are described in the Combat Maneuvers section below.
+
+\subsubsection{Cast a Spell}
+Most spells require 1 standard action to cast. You can cast such a spell either before or after you take a move action.
+\parhead{Spell Components} To cast a spell with a verbal (V) component,
+your character must speak in a firm voice about as loudly as you would while having a normal conversation. If you're gagged, you can't cast such a spell. If you are deafened, you have a 20\% chance to spoil any spell you to cast if that spell has a verbal component.
+
+To cast a spell with a somatic (S) component, you must gesture freely with at least one hand. You can't cast a spell of this type while bound, grappling, or with both your hands full or occupied.
+
+To cast a spell with a material (M) or focus (F) component, you have to have the proper materials, as described by the spell. Unless these materials are elaborate, preparing these materials is a free action.
+
+\parhead{Concentration} You must concentrate to cast a spell. If you can't concentrate, you can't cast a spell. If you start casting a spell but something interferes with your concentration, you must make a Concentration check or lose the spell. The check's DC depends on what is threatening your concentration. If you fail, the spell fizzles with no effect. It counts against your daily limit of spells even though you did not cast it successfully.
+
+\parhead{Concentrating to Maintain a Spell} Some spells require continued concentration to keep them going. Concentrating to maintain a spell is a standard action that doesn't provoke an attack of opportunity. Anything that could break your concentration when casting a spell can keep you from concentrating to maintain a spell, though you don't add any modifier to your Concentration check for the spell's level. If your concentration breaks, the spell ends. You can speak briefly while concentrating, but sustained conversation can break your concentration.
+
+\parhead{Casting Time} Most spells have a casting time of 1 standard action. A spell cast in this manner immediately takes effect.
+
+\parhead{Attacks of Opportunity} Generally, if you cast a spell, you provoke attacks of opportunity from threatening enemies. If you take damage from an attack of opportunity, you must make a Concentration check (DC 10 \add points of damage taken \add double spell level) or lose the spell. Spells that require only a swift or immediate action to cast don't provoke attacks of opportunity.
+
+\parhead{Casting on the Defensive} Casting a spell while on the defensive does not provoke an attack of opportunity. It does, however, require a Concentration check (DC 10 \add double spell level) to pull off. Failure means that you lose the spell.
+
+\parhead{Touch Spells in Combat} Many spells have a range of touch. To use these spells, you cast the spell and then touch the subject, either in the same round or any time later. In the same round that you cast the spell, you may also touch (or attempt to touch) the target. You may take your move before casting the spell or after touching the target. You can automatically touch one ally unless circumstances make the ally hard to hit or use the spell on yourself, but to touch an opponent, you must succeed on an attack roll. If your ally would be difficult to hit, such as if the ally is invisible, you must make an attack roll, though the ally is treated as being flat-footed if she chooses not to avoid the attack. The ally can take a move action on his or her turn to be available for your touch so you do not have to make an attack to hit.
+
+\subparhead{Touch Attacks} Touching an opponent with a touch spell is considered to be an armed attack and therefore does not provoke attacks of opportunity. However, the act of casting a spell does provoke an attack of opportunity. Touch attacks come in two types: melee touch attacks and ranged touch attacks. Melee touch attacks are like light weapons, and use Dexterity to hit. You can score critical hits with either type of attack. Your opponent's AC against a touch attack does not include any armor bonus or natural armor bonus. His other bonuses all apply normally.
+
+\subparhead{Holding the Charge} If you don't discharge the spell in the round when you cast the spell, you can hold the discharge of the spell (hold the charge) indefinitely. You can continue to make touch attacks round after round. You can touch one ally as a standard action or up to six allies as a full-round action. If you touch anything or anyone while holding a charge, even unintentionally, the spell discharges. If you cast another spell, the touch spell dissipates. Alternatively, you may make a normal unarmed attack (or an attack with a natural weapon) while holding a charge. In this case, you aren't considered armed and you provoke attacks of opportunity as normal for the attack. (If your unarmed attack or natural weapon attack doesn't provoke attacks of opportunity, neither does this attack.) If the attack hits, you deal normal damage for your unarmed attack or natural weapon and the spell discharges. If the attack misses, you are still holding the charge.
+
+\parhead{Dismiss a Spell} Dismissing an active spell is a swift action that doesn't provoke attacks of opportunity.
+
+\subsubsection{Activate Magic Item}
+Many magic items don't need to be activated. However, certain magic items need to be activated, especially potions, scrolls, wands, rods, and staffs. Activating a magic item is a standard action (unless the item description indicates otherwise).
+\parhead{Spell Completion Items} Activating a spell completion item is the equivalent of casting a spell. It requires concentration and provokes attacks of opportunity. You lose the spell if your concentration is broken, and you can attempt to activate the item while on the defensive, as with casting a spell.
+\parhead{Spell Trigger, Command Word, or Use-Activated Items} Activating any of these kinds of items does not require concentration and does not provoke attacks of opportunity.
+
+\subsubsection{Use Special Ability}
+Using a special ability is usually a standard action, but the type of action required for any individual special ability is defined by the ability.
+\parhead{Spell-Like Abilities} Using a spell-like ability works like casting a spell in that it requires concentration and provokes attacks of opportunity. Spell-like abilities can be disrupted. If your concentration is broken, the attempt to use the ability fails, but the attempt counts as if you had used the ability. The casting time of a spell-like ability is equal to the casting time of the spell it mimics unless the ability description notes otherwise
+\subparhead{Using a Spell-Like Ability on the Defensive} You may attempt to use a spell-like ability on the defensive, just as with casting a spell. If the Concentration check (DC 15 \add double spell level) fails, you can't use the ability, but the attempt counts as if you had used the ability.
+\parhead{Supernatural Abilities} Using a supernatural ability is usually a standard action (unless defined otherwise by the ability's description). Its use cannot be disrupted, does not require concentration, and does not provoke attacks of opportunity.
+\parhead{Extraordinary Abilities} Using an extraordinary ability is usually not an action because most extraordinary abilities automatically happen in a reactive fashion. Those extraordinary abilities that are actions are usually standard actions that cannot be disrupted, do not require concentration, and do not provoke attacks of opportunity.
+
+\subsubsection{Total Defense}
+You can defend yourself as a standard action. You get a \plus4 circumstance bonus to your dodge modifier for 1 round. Your AC improves at the start of this action. You can't combine total defense with fighting defensively (since that requires you to attack). \par While using the total defense action, you can't make attacks of opportunity, but you still threaten squares normally for the purpose of overwhelm penalties and similar effects.
+
+You can use the total defense action while disabled (at 0 hit points) without going unconscious.
+
+\subsubsection{Start/Complete Full-Round Action}
+The ``start full-round action'' standard action lets you start undertaking a full-round action, which you can complete in the following round by using another standard action. You can't use this action to start or complete a full attack, charge, run, or withdraw.
+
+\subsection{Move Actions}
+With the exception of specific movement-related skills, most move actions don't require a check.
+
+\subsubsection{Move}
+The simplest move action is moving your speed. Many nonstandard modes of movement are covered under this category, including climbing (up to one-quarter of your speed) and swimming (up to one-quarter of your speed).
+\parhead{Accelerated Climbing and Swimming} You can climb one-half your speed as a move action if you beat the Climb or Swim DC by 10 or more.
+\parhead{Crawling} You can crawl 5 feet as a move action. Crawling incurs attacks of opportunity from any attackers who threaten you at any point of your crawl.
+\parhead{Crouching} You can move at half speed while crouching.
+
+\subsubsection{Draw a Weapon}
+Drawing a weapon so that you can use it in combat, or putting it away so that you have a free hand, requires a move action. This action also applies to weapon-like objects carried in easy reach, such as wands. If your weapon or weapon-like object is stored in a pack or otherwise out of easy reach, treat this action as retrieving a stored item.
+
+You may draw or sheathe a weapon and move your speed as part of the same move action. If you have the Two-Weapon Fighting feat, you can draw or sheathe two light or one-handed weapons in the time it would normally take you to draw one.
+
+Drawing ammunition for use with a ranged weapon (such as arrows, bolts, darts, sling bullets, or shuriken) is a free action.
+
+\subsubsection{Ready or Loose a Shield}
+Strapping a shield to your arm to gain its shield bonus to your AC, or unstrapping and dropping a shield so you can use your shield hand for another purpose, requires a move action. You can ready or loose a shield and move your speed as part of the same move action.
+
+Dropping a carried (but not worn) shield is a free action.
+
+\subsubsection{Manipulate an Item}
+In most cases, moving or manipulating an item is a move action. This includes retrieving or putting away a stored item, picking up an item, moving a heavy object, and opening a door. Examples of this kind of action, along with whether they incur an attack of opportunity, are given in \trefnp{Actions in Combat}.
+
+\subsubsection{Stand Up}
+Standing up from a prone position requires a move action. It does not provoke attacks of opportunity.
+
+\subsubsection{Mount/Dismount a Steed}
+Mounting or dismounting from a steed requires a move action.
+\parhead{Fast Mount or Dismount} You can mount or dismount as a swift action with a DC 20 Ride check (your armor check penalty, if any, applies to this check). If you fail the check, mounting or dismounting is a move action instead. (You can't attempt a fast mount or fast dismount unless you can perform the mount or dismount as a move action in the current round.)
+
+\subsection{Full-Round Actions}
+A full-round action requires an entire round to complete. Thus, it can't be coupled with a standard or a move action.
+
+\sssecfake{Cast a Spell}
+Casting a spell that takes 1 round to cast is a full-round action. It comes into effect just before the beginning of your turn in the round after you began casting the spell. You then act normally after the spell is completed.
+
+A spell that takes 1 minute to cast comes into effect just before your turn 1 minute later (and for each of those 10 rounds, you are casting a spell as a full-round action). These actions must be consecutive and uninterrupted, or the spell automatically fails.
+
+When you begin a spell that takes 1 round or longer to cast, you must continue the invocations, gestures, and concentration from one round to just before your turn in the next round (at least). If you lose concentration after starting the spell and before it is complete, you lose the spell.
+
+Each round that you continue to cast a spell, you provoke attacks of opportunity on your turn. These attacks of opportunity can be negated by casting defensively, as normal. While casting a spell, you don't threaten any squares around you.
+
+This action is otherwise identical to the cast a spell action described under Standard Actions.
+
+\parhead{Casting a Metamagic Spell} All casters except sorcerers must take more time to cast a metamagic spell (one enhanced by a metamagic feat) than a regular spell. If a spell's normal casting time is 1 standard action, casting a metamagic version of the spell is a full-round action. Note that this isn't the same as a spell with a 1-round casting time -- the spell takes effect in the same round that you begin casting, and you aren't required to continue the invocations, gestures, and concentration until your next turn. For spells with a longer casting time, it takes an extra full-round action to cast the metamagic spell.
+
+\sssecfake{Use Special Ability}
+Using a special ability is usually a standard action, but some may be full-round actions, as defined by the ability.
+
+\subsubsection{Withdraw}
+As a full-round action, you can move up to your speed without provoking attacks of opportunity from one opponent of your choice. At base attack bonus \plus6, \plus11, and \plus16, you may avoid provoking attacks of opportunity from an additional opponent of your choice.
+
+You may not withdraw using a form of movement for which you don't have a listed speed. Note that despite the name of this action, you don't actually have to leave combat entirely.
+
+\parhead{Restricted Withdraw} If you are limited to taking only a standard action each round, you can withdraw as a standard action. In this case, you may move up to half your speed.
+
+\subsubsection{Run}
+You can run as a full-round action. When you run, you can move up to four times your speed in a straight line (or three times your speed if you're in medium or heavy armor). If you run, you are flat-footed until your next turn and cannot take attacks of opportunity.
+
+You can run for a number of rounds equal to 5 \add your Constitution, but after that you must make a DC 10 Constitution check to continue running. You must check again each round in which you continue to run, and the DC of this check increases by 1 for each check you have made. When you fail this check, you must stop running. A character who has run to his limit must rest for 1 minute (10 rounds) before running again. During a rest period, a character can move no faster than a normal move action.
+
+You can't run across difficult terrain or if you can't see where you're going.
+
+A run represents a speed of about 12 miles per hour for an unencumbered human.
+
+\subsubsection{Move 5 Feet through Difficult Terrain}
+In some situations, your movement may be so hampered that you don't have sufficient speed even to move 5 feet (a single square). In such a case, you may spend a full-round action to move 5 feet (1 square) in any direction, even diagonally. You can't take advantage of this rule to move through impassable terrain or to move when all movement is prohibited to you, such as while paralyzed. This movement provokes attacks of opportunity normally.
+
+\subsection{Free Actions}
+Free actions don't take any time at all, though there may be limits to the number of free actions you can perform in a turn. Free actions almost never incur attacks of opportunity. Some common free actions are described below.
+
+\subsubsection{Drop an Item}
+Dropping an item in your space or into an adjacent square is a free action.
+
+\subsubsection{Speak}
+In general, speaking is a free action that you can perform even when it isn't your turn. Speaking more than few sentences is generally beyond the limit of a free action.
+
+\subsubsection{Cease Concentration on Spell}
+You can stop concentrating on an active spell as a free action.
+
+\subsection{Swift Actions}
+
+\sssecfake{Cast a Spell}
+You can cast a quickened spell (see the Quicken Spell feat) or any spell with a swift action casting time as a swift action. Only one such spell can be cast in any round, and such spells don't count toward your normal limit of one spell per round. Casting a spell with a casting time of a swift action doesn't incur an attack of opportunity.
+
+\subsubsection{Change Focus}
+Focusing allows you to avoid being distracted by insignificant opponents. When you focus, you designate any number of foes threatening you. For the purpose of their attacks, they are the only ones threatening you, which can reduce your overwhelm penalty or cause you to not be treated as being overwhelmed at all. However, you are flat-footed against all other attacks, and you take an extra \minus1 overwhelm penalty for each creature you focus on.
+
+\subsubsection{Direct or Redirect a Spell}
+Some spells allow you to redirect the effect to new targets or areas after you cast the spell. Redirecting a spell requires a swift action and does not provoke attacks of opportunity or require concentration.
+
+\sssecfake{Use Special Ability}
+Using a special ability is usually a standard action, but some may be swift actions, as defined by the ability.
+
+\subsection{Immediate Actions}
+\sssecfake{Cast a Spell}
+You can cast a spell with an immediate action casting time (such as the \spell{feather fall} spell) as an immediate action action. Only one such spell can be cast in any round. Casting a spell with a casting time of an immediate action doesn't incur an attack of opportunity.
+
+\subsubsection{Drop Prone}
+Dropping to a prone position in your space is a swift action.
+
+\sssecfake{Use Special Ability}
+Using a special ability is usually a standard action, but some may be immediate actions, as defined by the ability.
+
+\subsection{Miscellaneous Actions}
+
+\subsubsection{Use Feat}
+Certain feats let you take special actions in combat. Other feats do not require actions themselves, but they give you a bonus when attempting something you can already do. Some feats are not meant to be used within the framework of combat. The individual feat descriptions tell you what you need to know about them.
+
+\subsubsection{Use Skill}
+Most skill uses are standard actions, but some might be move actions, full-round actions, free actions, or something else entirely. The individual skill descriptions tell you what sorts of actions are required to perform skills.
+
+\subsubsection{Be Creative}
+Your character is not limited to the actions described in these rules. If you can imagine your character doing something, he or she can almost certainly attempt it. Don't be afraid of trying to do unusual things. It's the DM's job to come up with appropriate rules for how to handle that. For example, there are no rules for what happens if a rogue tries to climb up onto a dragon's head to ride on it and attack its eyes. A reasonable idea might be to have the rogue make a Climb check against the dragon's CMD to get on the dragon, and then to let the dragon make grapple attacks against the rogue's CMD or Climb check to try to throw the rogue off -- but the DM should decide what's right for the situation.
+
+\section{Injury And Death}
+Your hit points measure how hard you are to kill. No matter how many hit points you lose, your character isn't hindered in any way until your hit points drop to 0 or lower.
+
+\subsection{Loss of Hit Points}
+The most common way that your character gets hurt is to take lethal damage and lose hit points.
+\parhead{What Hit Points Represent} Hit points represent a combination of durability, luck, divine providence, and sheer determination, depending on the nature of your character. When you take 10 damage from an orc with a greataxe, the axe did not literally carve into your skin without affecting your ability to fight. Instead, you avoided the worst of the blow, but the effort to dodge the blow fatigued your character, or you avoided it through sheer luck -- and everyone's luck runs out eventually.
+\parhead{Effects Hit Point Damage} Damage doesn't slow you down until you run out of hit points. If you take damage that would reduce your hit points to 0, you become staggered. Hit points can't go negative -- if you take damage that would your hit points to below 0, it reduced your hit points to 0.
+\parhead{Effects of Critical Damage} If you take damage while you are at 0 hit points, it is considered critical damage. You immediately begin dying. If you have more critical damage than your Constitution score \add your Hit Values, you're dead.
+
+\subsection{Staggered (0 Hit Points)}
+When your current hit points drop to 0, you're staggered. You may take a single move action or standard action each round, but not both. You cannot take full-round actions, but you may take swift actions.
+
+Normally, any excess damage from the attack that brought you to 0 hit points is wasted. If you have already taken critical damage, however, the excess damage is dealt to you directly as critical damage and you immediately become unconscious.
+
+As long as you haven't taken critical damage, healing that raises your hit points above 0 makes you fully functional again, just as if you'd never been reduced to 0 hit points. If you have taken critical damage, you remain staggered no matter how many hit points you have.
+
+You can also become staggered when recovering from dying. In this case, it's a step toward recovery, and you can have critical damage (see Stable Characters and Recovery, below).
+
+\subsection{Dying (Critical Damage)}
+When your character takes damage while at 0 hit points, he the damage is critical damage and he is dying. Critical damage is more difficult to heal; see \pdref{Healing}.
+
+A dying character immediately falls unconscious and can take no actions.
+
+A dying character must make a DC 15 Fortitude save every round. This continues until the character dies or becomes stable (see below).
+
+\subsection{Dead}
+When your character's current critical damage exceeds his Constitution score \add his Hit Values, he's dead. A character can also die from taking ability damage or suffering an ability drain that reduces his Constitution to 0.
+
+\subsection{Stable Characters and Recovery}
+A dying character must make a DC 15 Fortitude save every round to stave off death. If he fails three such saving throws, he dies. If he succeeds at three saving throws, he stabilizes and no longer needs to make saving throws every round. (A character who's unconscious or dying can't use any special action that changes the initiative count on which his action occurs.)
+
+\par Another character can make a Heal check to help the dying character stabilize. In that case, use the result of the Heal check or the character's saving throw, whichever is higher.
+
+\par If a dying character receives any magical healing, even if it does not cure any critical damage, he immediately stabilizes.
+
+\par Healing that removes all critical damage raises the dying character's hit points to 0 makes him conscious and disabled. Healing that raises his hit points to 1 or more makes him fully functional again, just as if he'd never taken critical damage. A spellcaster retains the spellcasting capability she had before taking critical damage.
+
+A stable character who has been tended by a healer or who has been magically healed eventually regains consciousness and recovers hit points naturally. If the character has no one to tend him, however, his life is still in danger, and he may yet slip away.
+
+\parhead{Recovering with Help} One hour after a tended, dying character
+becomes stable, he must make another DC 15 Fortitude save. If he succeeds, he becomes conscious, at which point he is staggered (as if he had 0 hit points). If he remains unconscious, he has the same chance to revive and become staggered every hour. Even if unconscious, he recovers hit points naturally. He is back to normal when his hit points rise to 1 or higher.
+
+\parhead{Recovering without Help} A character who becomes stable on his own (by making the Fortitude save) and who has no one to tend to him still takes damage, just at a slower rate. He makes a DC 20 Fortitude save every five minutes to become conscious. Each time he fails, he takes 1 point of critical damage. He also does not recover hit points through natural healing.
+
+Even once he becomes conscious and is staggered, an unaided character still does not recover hit points naturally. Instead, each day must make a DC 15 Fortitude save to start recovering hit points naturally (starting with that day); otherwise, he takes 1 point of critical damage.
+
+Once an unaided character starts recovering hit points naturally, he is no longer in danger of naturally losing hit points (even if he still has critical damage).
+
+\subsection{Healing}
+After taking damage, you can recover hit points through natural healing or through magical healing. In any case, you can't regain hit points past your full normal hit point total.
+
+\parhead{Natural Healing} With 8 hours of rest, you recover half your hit points. Any significant interruption (such as combat or the like) during your rest prevents you from healing. If you rest for an entire day (16 hours), you recover all your hit points.
+
+\parhead{Magical Healing} Various abilities and spells can restore hit points. However, only certain spells can heal critical damage, as specified in the spell description. Unless a spell says it can cure critical damage, it cannot -- though it can still stabilize dying characters.
+
+\parhead{Healing Limits} You can never recover more hit points than you lost. Magical healing won't raise your current hit points higher than your full normal hit point total.
+
+\parhead{Healing Ability Damage} Ability damage is temporary, just as hit point damage is. Ability damage returns at the rate of 1 point per 8 hours of rest for each affected attribute score.
+
+\parhead{Healing Critical Damage} Critical damage takes much longer to heal than hit point damage. Resting for 1 week restores an amount of critical damage equal to 1 \add half the character's Constitution. A character can have both hit points and critical damage. As long as a character has critical damage, he is staggered, even if he is at full hit points.
+
+\subsection{Temporary Hit Points}
+Certain effects give a character temporary hit points. When a character gains temporary hit points, note his current hit point total. When the temporary hit points go away the character's hit points drop to his current hit point total. If the character's hit points are below his current hit point total at that time, all the temporary hit points have already been lost and the character's hit point total does not drop further.
+
+When temporary hit points are lost, they cannot be restored as real hit points can be, even by magic.
+
+\parhead{Increases in Constitution Score and Current Hit Points} An increase in a character's Constitution score, even a temporary one, can give her more hit points (an effective hit point increase), but these are not temporary hit points. They can be restored and they are not lost first as temporary hit points are.
+
+\subsection{Nonlethal Damage}
+\parhead{Dealing Nonlethal Damage} Certain attacks deal nonlethal damage. Other effects, such as heat or being exhausted, also deal nonlethal damage. When you take nonlethal damage, keep a running total of how much you've accumulated. Do not deduct the nonlethal damage number from your current hit points. It is not ``real'' damage. Instead, if your nonlethal damage equals or exceeds your current hit points, you're staggered. If you take any damage or nonlethal damage while staggered in this way, you fall unconscious.
+
+\subparhead{Nonlethal Damage with a Weapon that Deals Lethal Damage} You can use a melee weapon that deals lethal damage to deal nonlethal damage instead, but you take a \minus4 penalty on your attack roll.
+
+\subparhead{Lethal Damage with a Weapon that Deals Nonlethal Damage} You can use a weapon that deals nonlethal damage, including an unarmed strike, to deal lethal damage instead, but you take a \minus4 penalty on your attack roll.
+
+\parhead{Staggered, Unconscious, and Dead} When your nonlethal damage equals or exceeds your current hit points, you're staggered. You can only take a standard action or a move action in each round. You cease being staggered when your current hit points once again exceed your nonlethal damage.
+
+If you take any damage or nonlethal damage while staggered as a result of nonlethal damage, you fall unconscious. While unconscious, you are helpless. Spellcasters who fall unconscious retain any spellcasting ability they had before going unconscious.
+
+It is possible, but unusual, to die from nonlethal damage. When your nonlethal damage equals twice your maximum hit points, you begin dying, as if you had taken critical damage. Any further nonlethal damage is considered critical damage, and can kill you.
+
+\parhead{Healing Nonlethal Damage} You heal your bloodied value in nonlethal damage with 1 hour of rest. When a spell or a magical power cures hit point damage, it also removes an equal amount of nonlethal damage.
+
+\section{Movement, Position, And Distance}
+
+Miniatures are on the 30mm scale -- a miniature figure of a six-foot-tall human is approximately 30mm tall. A square on the battle grid is 1 inch across, representing a 5-foot-by-5-foot area.
+
+\subsection{Tactical Movement}
+
+\subsubsection{How Far Can Your Character Move?}
+Your speed is determined by your race and your armor (see \trefnp{Tactical Speed}). Your speed while unencumbered is your base land speed.
+\parhead{Encumbrance} A character encumbered by carrying a large amount of gear, treasure, or fallen comrades may move slower than normal.
+\parhead{Hampered Movement} Difficult terrain, obstacles, or poor visibility can hamper movement.
+\parhead{Movement in Combat} Generally, you can move your speed in a round and still do something (take a move action and a standard action). If you do nothing but move (that is, if you use both of your actions in a round to move your speed), you can move double your speed. If you spend the entire round running, you can move quadruple your speed.
+\parhead{Bonuses to Speed} A barbarian has a \plus10 foot competence bonus to his speed
+(unless he's wearing heavy armor). Experienced monks also have higher speed (unless they're wearing armor of any sort). In addition, many spells and magic items can affect a character's speed. In addition, many spells and magic items can affect a character's speed. Always apply any modifiers to a character's speed before adjusting the character's speed based on armor or encumbrance, and remember that multiple bonuses of the same type to a character's speed don't stack.
+
+\begin{dtable}
+\lcaption{Tactical Speed}
+\begin{tabularx}{\columnwidth}{l >{\lcol}X >{\lcol}X}
+\thead{Race} & \thead{No Armor or Light Armor} & \thead{Medium or Heavy Armor} \\
+Human, elf, half-elf, half-orc & 30 ft. (6 squares) & 20 ft. (4 squares) \\
+Dwarf & 20 ft. (4 squares) & 20 ft. (4 squares) \\
+Halfling, gnome & 20 ft. (4 squares) & 15 ft. (3 squares)
+\end{tabularx}
+\end{dtable}
+
+\subsubsection{Measuring Distance}
+\parhead{Diagonals} When measuring distance, the first diagonal counts
+as 1 square, the second counts as 2 squares, the third counts as 1, the
+fourth as 2, and so on.
+
+You can't move diagonally past a corner. You can move diagonally past a creature, even an opponent. You can also move diagonally past other impassable obstacles, such as pits.
+\parhead{Closest Creature} When it's important to determine the closest square or creature to a location, if two squares or creatures are equally close, randomly determine which one counts as closest by rolling a die.
+
+\subsubsection{Moving through a Square}
+\parhead{Ally} You can move through a square occupied by an ally. When you move through a square occupied by an ally, that character doesn't provide you with cover.
+\parhead{Opponent} You can't move through a square occupied by an opponent, unless the opponent is helpless. You can move through a square occupied by a helpless opponent without penalty.
+\parhead{Ending Your Movement} You can't end your movement in the same square as another creature unless it is helpless.
+\parhead{Overrun} During your movement, you can attempt to move through a square occupied by an opponent.
+\parhead{Tumbling} A trained character can attempt to tumble through a square occupied by an opponent.
+\parhead{Very Small Creature} A Fine, Diminutive, or Tiny creature can move into or through an occupied square.
+\parhead{Square Occupied by Creature Three Sizes Larger or Smaller} Any creature can move through a square occupied by a creature  three size categories larger than it is.
+
+A big creature can move through a square occupied by a creature three size categories smaller than it is.
+\parhead{Designated Exceptions} Some creatures break the above rules. A creature that completely fills the squares it
+occupies cannot be moved past, even with the Tumble skill or similar special abilities.
+
+\subsubsection{Terrain and Obstacles}
+\parhead{Difficult Terrain} Difficult terrain hampers movement. Each square of difficult terrain counts as 2 squares of movement. (Each diagonal move into a difficult terrain square counts as 3 squares.) You can't run or charge across difficult terrain.
+
+If you occupy squares with different kinds of terrain, you can move only as fast as the most difficult terrain you occupy will allow.
+
+Flying and incorporeal creatures are not hampered by difficult terrain.
+
+\parhead{Obstacles} Like difficult terrain, obstacles can hamper movement. If an obstacle hampers movement but doesn't completely block it each obstructed square or obstacle between squares counts as 2 squares of movement. You must pay this cost to cross the barrier, in addition to the cost to move into the square on the other side. If you don't have sufficient movement to cross the barrier and move into the square on the other side, you can't cross the barrier. Some obstacles may also require a skill check to cross. On the other hand, some obstacles block movement entirely. A character can't move through a blocking obstacle.
+
+Flying and incorporeal creatures can avoid most obstacles.
+
+\parhead{Squeezing} In some cases, you may have to squeeze into or through an area that isn't as wide as the space you take up. You can squeeze through or into a space that is at least half as wide as your normal space. Each move into or through a narrow space counts as if it were 2 squares, and while squeezed in a narrow space you take a \minus4 penalty on attack rolls and a \minus4 penalty to AC.
+
+When a Large creature (which normally takes up four squares) squeezes into a space that's one square wide, the creature's miniature figure occupies two squares, centered on the line between the two squares. For a bigger creature, center the creature likewise in the area it squeezes into.
+
+A creature can squeeze past an opponent while moving but it can't end its movement in an occupied square.
+To squeeze through or into a space less than half your space's width, you must use the Escape Artist skill. You can't attack while using Escape Artist to squeeze through or into a narrow space, you take a \minus4 penalty to AC, and you are flat-footed.
+
+\subsubsection{Special Movement Rules}
+These rules cover special movement situations.
+\parhead{Accidentally Ending Movement in an Illegal Space} Sometimes a character ends its movement while moving through a space where it's not allowed to stop. When that happens, put your miniature in the last legal position you occupied, or the closest legal position, if there's a legal position that's closer.
+
+\parhead{Double Movement Cost} When your movement is hampered in some way, your movement usually costs double. For example, each square of movement through difficult terrain counts as 2 squares, and each diagonal move through such terrain counts as 3 squares (just as two diagonal moves normally do).
+
+If movement cost is doubled twice, then each square counts as 4 squares (or as 6 squares if moving diagonally). If movement cost is doubled three times, then each square counts as 8 squares (12 if diagonal) and so on. This is an exception to the general rule that two doublings are equivalent to a tripling.
+
+\parhead{Minimum Movement} Despite penalties to movement, you can take a full-round action to move 5 feet (1 square) in any direction, even diagonally. (This rule doesn't allow you to move through impassable terrain or to move when all movement is prohibited.) Such movement provokes attacks of opportunity as normal.
+
+\subsection{Big and Little Creatures in Combat}
+
+\begin{dtable}
+\lcaption{Creature Size and Scale}
+\begin{tabularx}{\columnwidth}{l >{\lcol}X >{\ccol}p{5em} >{\ccol}p{5em}}
+\thead{Creature Size} & \thead{Example Creature} & \thead{Space\fn{1}} & \thead{Natural Reach\fn{1}} \\
+Fine & Fly & 1/2 ft. & 0 \\
+Diminutive & Toad & 1 ft. & 0 \\
+Tiny & Cat & 2-1/2 ft. & 0 \\
+Small & Halfling & 5 ft. & 5 ft. \\
+Medium & Human & 5 ft. & 5 ft. \\
+Large (tall) & Ogre & 10 ft. & 10 ft. \\
+Large (long) & Horse & 10 ft. & 5 ft. \\
+Huge (tall) & Cloud giant & 15 ft. & 15 ft. \\
+Huge (long) & Bulette & 15 ft. & 10 ft. \\
+Gargantuan (tall) & 50-ft. animated statue & 20 ft. & 20 ft. \\
+Gargantuan (long) & Kraken & 20 ft. & 15 ft. \\
+Colossal (tall) & Colossal animated object & 30 ft. or more & 30 ft. or more\\
+Colossal (long) & Great wyrm red dragon& 30 ft. or more & 20 ft. or more \\
+\end{tabularx}
+1 These values are typical for creatures of the indicated size. Some
+exceptions exist.
+\end{dtable}
+
+Creatures smaller than Small or larger than Medium have special rules relating to position.
+
+\parhead{Tiny, Diminutive, and Fine Creatures} Very small creatures take up less than 1 square of space. This means that more than one such creature can fit into a single square. A Tiny creature typically occupies a space only 2-1/2 feet across, so four can fit into a single square. Twenty-five Diminutive creatures or 100 Fine creatures can fit into a single square. Creatures that take up less than 1 square of space typically have a natural reach of 0 feet, meaning they can't reach into adjacent squares. They must enter an opponent's square to attack in melee. This provokes an attack of opportunity from the opponent. You can attack into your own square if you need to, so you can attack such creatures normally. Since they have no natural reach, they do not threaten the squares around them. You can move past them without provoking attacks of opportunity. They also can't overwhelm an enemy.
+
+\parhead{Large, Huge, Gargantuan, and Colossal Creatures} Very large creatures take up more than 1 square.
+Creatures that take up more than 1 square typically have a natural reach of 10 feet or more, meaning that they can reach targets even if they aren't in adjacent squares.
+
+Unlike when someone uses a reach weapon, a creature with greater than normal natural reach (more than 5 feet) still threatens squares adjacent to it. A creature with greater than normal natural reach usually gets an attack of opportunity against you if you approach it, because you must enter and move within the range of its reach before you can attack it. (This attack of opportunity is not provoked if you take a 5-foot step.)
+
+Large or larger creatures using reach weapons can strike up to double their natural reach but can't strike at their natural reach or less.
+
+\section{Combat Modifiers}
+
+This section covers circumstances that can affect combat. Any bonuses described here are circumstance bonuses unless stated otherwise.
+
+\begin{dtable}
+\lcaption{Attack Roll Bonuses and Penalties}
+\begin{tabularx}{\columnwidth}{>{\lcol}X >{\ccol}X >{\ccol}X}
+\thead{Attacker is...} & \thead{Melee} & \thead{Ranged} \\
+Dazzled & \minus1 & \minus1 \\
+Entangled & \minus2 & \minus2 \\
+Grappling & \minus0\fn{1} & \minus0\fn{1} \\
+Invisible & \x\fn{1} & \x\fn{1} \\
+On higher ground & \plus1 & \plus0 \\
+Prone & \minus4 & \x\fn{2} \\
+Squeezing through a space & \minus4 & \minus4 \\
+\end{tabularx}
+1 The defender is flat-footed. \\
+2 Most ranged weapons can't be used while the attacker is prone, but you can use a crossbow or shuriken while prone at no penalty.
+\end{dtable}
+
+\begin{dtable}
+\lcaption{Armor Class Bonuses and Penalties}
+\begin{tabularx}{\columnwidth}{>{\lcol}X >{\ccol}X >{\ccol}X}
+\thead{Defender is...} & \thead{Melee} & \thead{Ranged} \\
+Behind active cover & 20\% miss & 20\% miss \\
+Behind passive cover & \plus4 & \plus4 \\
+Blinded & \x\fn{1} & \x\fn{1} \\
+Concealed & \plus4 & \plus4 \\
+Cowering & \minus2\fn{1} & \minus2\fn{1} \\
+Crouching or kneeling & \minus2 & \plus2 \\
+Entangled & \minus2 & \minus2 \\
+Flat-footed (such as surprised, balancing, climbing) & \plus0\fn{1} & \plus0\fn{1} \\
+Grappling (but attacker is not) & \plus0\fn{1} & 20\% miss\fn{1} \\
+Helpless (such as paralyzed, sleeping, or bound) & \plus0\fn{2} & \plus0\fn{2} \\
+Invisible &  \multicolumn{2}{c}{\x See Invisibility \x} \\
+Overwhelmed & special\fn{3} & special\fn{3} \\
+Pinned & \minus4\fn{2} & \plus0\fn{2} \\
+Prone & \minus4 & \plus4 \\
+Squeezing through a space & \minus4 & \minus4 \\
+Stunned & \minus2\fn{1} & \minus2\fn{1} \\
+Vulnerable & \minus2 & \minus2 \\
+\end{tabularx}
+1 The defender is flat-footed. \\
+2 The defender is flat-footed, and treat the defender's Dexterity as \minus10. \\
+3 The creature suffers a penalty equal to the number of creatures threatening it.
+\end{dtable}
+
+\subsection{Cover}
+
+Cover represents any obstacle that physically prevents you from striking your target, such as a tree or intervening creature. A creature with cover is more difficult to attack.
+
+\parhead{Determining Cover} When making a melee attack against an adjacent target, your target has cover if any line from your square to the target's square goes through a wall (including a low wall) or other similar solid obstacle. If you occupy multiple squares, choose one square you occupy for this purpose.
+
+When making an attack against a target that is not adjacent to you, choose a corner of any square you occupy. In addition, choose a square the target occupies. If any line from this corner to any corner of the target square passes through a square or border that blocks line of effect or provides cover, or through a square occupied by a creature, the target has cover.
+
+There are two types of cover: active cover and passive cover.
+
+\subsubsection{Active Cover}
+
+If the obstacle is active and mobile, such as a creature or tree branches blowing in the wind, the defender has active cover. Any attacks against a creature with active cover relative to you have a 20\% miss chance. After rolling the attack, the attacker must make a miss chance percentile roll to see if the attack misses due to active cover. If an attack misses due to active cover, the attack is made against the intervening obstacle instead. If the attack is successful, the obstacle takes any damage from the attack normally. 
+
+\subsubsection{Passive Cover}
+
+If the obstacle is stationary, such as a tree trunk or wall, the defender has passive cover. A creature with passive cover relative to you has a \plus4 circumstance bonus to armor class.
+
+\parhead{Reflex Saves} A creature with passive cover gains a \plus2 bonus on Reflex saves against attacks that originate or burst out from a point on the other side of the cover from it. Note that spread effects can extend around corners and thus negate this cover bonus.
+\parhead{Low Obstacles} A low obstacle (such as a wall no higher than half your height) provides passive cover, but only to creatures within 30 feet (6 squares) of it. The attacker can ignore the cover if he's closer to the obstacle than his target. If two creatures are equally distant from the wall, it grants cover to both of them.
+\parhead{Attacks of Opportunity} You can't execute an attack of opportunity against an opponent with passive cover relative to you.
+\parhead{Hide Checks} You can use passive cover to make a Hide check, but not active cover. Without cover, you usually need concealment (see below) to make a Hide check.
+\parhead{Total Cover} If you don't have line of effect to your target, he is considered to have total cover from you. You can't make an attack against a target that has total cover.
+
+\subsubsection{Improved Cover}
+
+A creature can benefit from both passive and active cover. However, cover of the same type generally doesn't stack; a creature behind two trees is not substantially more protected than a creature behind a single tree. In some cases, cover may stack. In that case, each additional obstacle increases the miss chance by 10\% or grants an additional \plus2 circumstance bonus to AC, as appropritae.
+
+Exceptionally well covered opponents, such as a creature behind an arrow slit in a castle, may receive additional benefits. For example, it might gain improved evasion, and there may be limitations on what kind of attacks are possible.
+
+\subsection{Concealment}
+Concealment represents anything which makes it more difficult to see your target, such as dim lighting. A creature with concealment from you gains a \plus4 circumstance bonus to Armor Class. Concealment bonuses do not apply if you can't see your opponent (such as if you close your eyes).
+
+\parhead{Determining Concealment} When making a melee attack against an adjacent target, your target has concealment if his space is entirely within an effect that grants concealment.
+
+Deterining concealment for making an attack against a target that is not adjacent to you works exactly like determining cover for ranged attacks.
+
+In addition, some magical effects provide concealment against all attacks, regardless of whether any intervening concealment exists.
+
+\parhead{Concealment and Hide Checks} You can use concealment to make a Hide check. Without concealment, you usually need cover to make a Hide check.
+
+\subsection{Invisibility}
+If it is impossible to see your target, you can't attack him normally. However, you can attack a square that you think he occupies. An attack into a square occupied by an invisible enemy has a 50\% miss chance. If an adjacent invisible creature strikes you, you can automatically identify the square he occupied when he struck you.
+
+You can't execute an attack of opportunity against an invisible opponent, even if you know what square or squares the opponent occupies.
+
+\subsection{Overwhelm}
+When a creature is being attacked by multiple foes at once, it is less able to defend itself. A creature is considered overwhelmed if it is being threatened by more than one creature. Multiple creatures occupying the same square count as a single creature when determining overwhelm penalties. If a creature is overwhelmed, it takes a penalty to armor class equal to the number of creatures threatening it.
+
+\subsection{Helpless Defenders}
+A helpless opponent is someone who is bound, sleeping, paralyzed, unconscious, or otherwise at your mercy.
+
+\parhead{Regular Attack} A helpless character takes a \minus4 penalty to AC against melee attacks, but no penalty to AC against ranged attacks. A helpless defender is flat-footed. In fact, his Dexterity score is treated as if it were \minus10, giving him a \minus10 penalty to AC.
+
+\parhead{Coup de Grace} As a full-round action, you can use a melee weapon to deliver a coup de grace to a helpless opponent. You can also use a bow or crossbow, provided you are adjacent to the target. You automatically hit and score a critical hit. If the defender survives the damage, he must make a Fortitude save (DC 10 \add damage dealt) or die. A rogue also gets her extra sneak attack damage against a helpless opponent when delivering a coup de grace.
+
+Delivering a coup de grace provokes attacks of opportunity from
+threatening opponents because it involves focused concentration
+and methodical action on the part of the attacker. If any attacks of opportunity hit, you must make a Concentration check (DC 10 \add total damage dealt from all attacks of opportunity) or else the coup de grace fails.
+
+You can't deliver a coup de grace against a creature that is immune to critical hits. You can deliver a coup de grace against a creature with total concealment, but doing this requires two consecutive full-round actions (one to ``find" the creature once you've determined what square it's in, and one to deliver the coup de grace).
+
+\section{Combat Maneuvers}
+During combat, you can attempt to perform a number of maneuvers that can hinder or even cripple your foe, including bull rush, dirty trick, disarm, grapple, overrun, and trip. Although these maneuvers have vastly different results, they all use a similar mechanic to determine success.
+
+\begin{dtable}
+\lcaption{Combat Maneuvers}
+\begin{tabularx}{\columnwidth}{l >{\lcol}X}
+\thead{Combat Maneuver}  & \thead{Brief Description} \\
+Bull rush  & Push an opponent back 5 feet or more \\
+Disarm  & Strike an object away from your foe \\
+Feint  & Trick your foe into being flat-footed \\
+Grapple  & Wrestle with an opponent \\
+Overrun  & Plow past or over an opponent as you move \\
+Trip  & Trip an opponent \\
+\end{tabularx}
+\end{dtable}
+
+\parhead{Combat Maneuver Attack} Each creature has a Combat Maneuver Attack (or CMA) that represents its skill at performing combat maneuvers. A creature's CMA is determined using the following formula:
+
+\textbf{\centering CMA = Base attack bonus \add Strength \add attack modifiers \add special size modifier}
+
+Any bonuses or penalties that the creature has to attack, such as from being shaken or from being Small, affect the creature's CMA.
+
+Some feats, such as Improved Grapple, give bonuses to CMA for specific maneuvers. These bonuses stack separately from other attack bonuses.
+
+The special size modifier for a creature's Combat Maneuver Attack is as follows: Fine \minus16, Diminutive \minus12, Tiny \minus8, Small \minus4, Medium \plus0, Large \plus4, Huge \plus8, Gargantuan \plus12, Colossal \plus16. Some feats and abilities grant a bonus to your CMA when performing specific maneuvers.
+
+\parhead{Performing a Combat Maneuver} When performing a combat maneuver, you must use an action appropriate to the maneuver you are attempting to perform. While many combat maneuvers can be performed as part of an attack action, full-attack action, or attack of opportunity (in place of a melee attack), others require a specific action. If your target is immobilized, unconscious, or otherwise incapacitated, your maneuver automatically succeeds.
+
+When you attempt to perform a combat maneuver, make an attack roll and add your CMA in place of your normal attack bonus. Add any bonuses you currently have on attack rolls due to spells, feats, and other effects. These bonuses must be applicable to the weapon or attack used to perform the maneuver. The DC of this maneuver is your target's Combat Maneuver Defense. Combat maneuvers are attack rolls, so you must take any penalties that would normally apply to an attack roll.
+
+\parhead{Combat Maneuver Defense} Each character and creature has a Combat Maneuver Defense (or CMD) that represents its ability to resist combat maneuvers. A creature's CMD is determined using the following formula:
+
+\textbf{\centering CMD = 10 \add Dexterity \add dodge modifier \add shield modifier \add base attack bonus \add Strength \add special size modifier}
+
+The special size modifier for a creature's Combat Maneuver Defense is the same as for a creature's Combat Maneuver Attack. Some feats and abilities grant a bonus to your CMD when resisting specific maneuvers. A creature can also add any deflection or dodge bonuses to AC to its CMD. Any penalties to a creature's AC also apply to its CMD. A flat-footed creature does not add its Dexterity or dodge modifiers to its CMD.
+
+\parhead{Determine Success} If your attack roll equals or exceeds the CMD of the target, your maneuver is a success and has the listed effect. Some maneuvers, such as bull rush, have varying levels of success depending on how much your attack roll exceeds the target's CMD.
+
+If you fail a combat maneuver attack by 10 or more, you provoke an attack of opportunity from the defender.
+
+\subsection{Bull Rush}
+You can make a bull rush as a standard action or as part of a charge, in place of the melee attack. Weapons cannot be used to bull rush. You can only bull rush an opponent who is no more than on size category larger than you. A bull rush attempts to push an opponent straight back without doing any harm. Any one-handed or two-handed bludgeoning or slashing weapon - including a shield - can be used to perform a bull rush attack. If you do not use a weapon, you must have a free hand to perform a bull rush.
+
+If your attack is successful, your target is pushed back 5 feet. For every 5 by which your attack exceeds your opponent's CMD you can push the target back an additional 5 feet. If you do not have the Improved Bull Rush feat or a similar ability, you can must move with the target to push them back, and you must have the available movement to do so. If your attack fails, your movement ends in front of the target.
+
+An enemy being moved by a bull rush does not provoke attacks of opportunity because of the movement. You cannot bull rush a creature into a square that is occupied by a solid object or obstacle. If there is another creature in the way of your bull rush, you may try to bull rush the second creature as well. If you do, apply your original attack roll to the second creature's CMD, taking a \minus5 penalty. If you are successful, you can continue to push both of the creatures a distance equal to the lowest result. For example, if a fighter bull rushes a goblin for a total of 15 feet, but there is another goblin 5 feet behind the first, he can push both goblins 15 feet away from his starting location. If, however, the second goblin was instead a mighty dragon, he could only push the first goblin 5 feet before it would stop.
+
+\subsection{Dirty Trick}
+This maneuver covers any sort of situational attack that imposes a penalty on a foe for a short period of time. Examples include knocking an opponent's head to bewilder him, pulling down an enemy's pants to entangle him, or hitting a foe in a sensitive spot to make him sickened.
+
+\par You can attempt to perform a dirty trick on your opponent as an attack action. Most weapons cannot be used to perform dirty tricks. If you attempt to perform a dirty trick on an opponent without an appropriate weapon, you must have a free hand. If you do not have the Improved Dirty Trick feat or a similar ability, attempting a dirty trick provokes an attack of opportunity from the target of your maneuver.
+
+\par If your attack is successful, the target suffers a negative condition. The penalty is limited to one of the following conditions: bewildered, dazzled, deafened, entangled, or sickened. This condition normally lasts for 1 round. If you have the Improved Dirty Trick feat or a similar ability, the condition instead lasts for 1d4 rounds. For every 5 points by which your attack exceeds your opponent's CMD, the penalty lasts 1 additional round. The penalty can be removed if the target spends a standard action.
+
+\subsection{Disarm}
+You can attempt to disarm your opponent as an attack action. Any weapon can be used to disarm.
+
+When you disarm an opponent, you choose one object the target is carrying or wearing. If your attack is successful, the object takes damage from your attack. Damage that exceeds the object's hardness is subtracted from its hit points. If an object loses all its hit points, it becomes broken and useless. Regardless of the damage dealt, if the item is not well secured, such as a ring or suit of armor, it falls to the ground in the target's square.
+
+If you have the Improved Disarm feat or a similar ability, you may choose to knock the item any distance up to 15 feet away from your foe in a random direction. If you successfully disarm your opponent without using a weapon, you may automatically pick up any item dropped.
+
+\begin{dtable}
+\lcaption{Common Armor, Weapon, and Shield Hardness and Hit Points}
+\begin{tabularx}{\columnwidth}{>{\lcol}X c c}
+\thead{Weapon or Shield} & \thead{Hardness} &\thead{HP\fn{1}} \\
+Light blade  & 10 & 2 \\
+One-handed blade & 10 & 5 \\
+Two-handed blade & 10 & 10 \\
+Light metal-hafted weapon & 10 & 10 \\
+One-handed metal-hafted weapon & 10 & 20 \\
+Light hafted weapon  & 5 & 2 \\
+One-handed hafted weapon & 5 & 5 \\
+Two-handed hafted weapon & 5 & 10 \\
+Projectile weapon & 5 & 5 \\
+\thead{Armor} & \thead{special\fn{2}} & \thead{armor bonus \mtimes 5} \\
+Buckler & 10 & 5 \\
+Light wooden shield & 5 & 7 \\
+Heavy wooden shield & 5 & 15 \\
+Light steel shield & 10 & 10 \\
+Heavy steel shield & 10 & 20 \\
+Tower shield & 5 & 20 \\
+\end{tabularx}
+1 The hp value given is for Medium armor, weapons, and shields. Divide by 2 for each size category of the item smaller than Medium, or multiply it by 2 for each size category larger than Medium.	\\
+2 Varies by material.
+\end{dtable}
+
+\subsection{Feint}
+You can attempt to feint your opponent in place of a melee attack. Any weapon can be used to feint. If you have the Improved Feint feat, you may attempt to feint as a move action.
+
+If your attack is successful, your foe is flat-footed against the next melee attack you make against it. This attack must be made before the creature's next turn.
+
+\subsection{Grapple}
+As a standard action, you can attempt to grapple a foe, hindering his combat options. Weapons may not be used to grapple, and you must have a free hand to attempt a grapple.
+
+\par If your attack is successful, both you and the target become grappled. Some creatures have special abilities related to grappling, such as improved grab. Those creatures do not become grappled when they grapple their opponents, and instead use the limb used to perform the grapple to grapple their foe. If you successfully grapple a creature that is not adjacent to you, move that creature to an adjacent open space. If no space is available, your grapple fails.
+
+\subsubsection{Being Grappled}
+While grappled, you suffer certain penalties and restrictions, as described below.
+\begin{itemize*}
+\item You must use one of your hands (or equivalent limbs) to grapple, preventing you from taking any actions which would require having two free hands. For example, you cannot attack with a two-handed weapon while grappling. You cannot use a hand holding a shield (except a buckler) to grapple.
+\item You are flat-footed against all opponents except the one you are grappling.
+\item You have active cover from the other participant in the grapple against ranged attacks. Any attacks that miss because of this miss chance are made against that creature. This does not apply if you are larger than the other participant.
+\item You do not threaten any opponents except for the creature you are grappling with.
+\item You take a \minus4 penalty to attack rolls made with weapons that are not small, since they are too large and cumbersome to be used effectively in a grapple.
+\item You cannot cast spells with somatic components.
+\item Casting a spell without somatic components requires a DC 20 \add double spell level Concentration check.
+\item You cannot move normally (but see Move the Grapple, below).
+\end{itemize*}
+
+%Should the DC be 10 + CMA or should it be opposed grapple attacks?
+Other than the restrictions listed above, you can act normally. You also gain the ability to use three special actions. Each of these is resolved by making opposed grapple attacks, rather than beating CMD. If your grapple attack exceeds your opponent's, you succeed.
+\par These special actions normally require a standard action. If you have Improved Grapple, you can take these actions as attack actions. Regardless of how many attacks you make, your foe applies its full bonus to the grapple attacks it makes to defend itself from these maneuvers.
+\parhead{Escape the Grapple} You can make a grapple attack or Escape Artist check to attempt to escape the grapple. If you succeed, you break the grapple and can act normally.
+\par You cannot make an Escape Artist check as an attack action, even if you have Improved Grapple.
+\parhead{Move the Grapple} You can make a grapple attack to attempt to move the grapple. If you succeed, you can move both yourself and your opponent up to half your speed. At the end of your movement, you can place your target in any square adjacent to you. This can be used to place the target in dangerous positions, such as near a \spell{wall of fire} or over a pit.
+\par You can only move the grapple once per round, regardless of how many grapple attacks you can make.
+\parhead{Pin} You can make a grapple attack to attempt to pin your opponent. If you succeed, your opponent becomes pinned, while you remain grappled.
+
+\subsubsection{Being Pinned}
+A pinned creature is helpless, but it cannot be the target of a coup de grace. The only action it can take that requires movement is to free itself through a grapple attack or Escape Artist check (using its normal Dexterity, not treating its Dexterity as 0). A pinned creature can take mental actions, but cannot cast any spells that require a somatic or material component or focus. At the opponent's option, a pinned creature may be unable to speak, in which case it is incapable of casting spells which require a verbal component. A pinned character who attempts to cast a spell or use a spell-like ability must make a concentration check (DC 10 \add grappler's CMA \add double spell level) or lose the spell. Being pinned is a more severe version of being grappled, and their effects do not stack.
+
+\subsubsection{Multiple Grapplers}
+Multiple creatures can attempt to grapple one target. The creature that first initiates the grapple is the only one that makes a check, with a \plus2 bonus to its CMA and CMD for each creature that assists in the grapple. Multiple creatures can also assist another creature in breaking free from a grapple, with each creature that assists granting a \plus2 bonus on the grappled creature's grapple attack.
+
+\subsubsection{Grappling a Mounted Opponent}
+You may make a grapple attempt against a mounted opponent. The defender may make a Ride check and use it instead of his CMD if it is higher. If you succeed, you pull the rider from his mount, and he lands prone in a square adjacent to both you and his horse. However, neither of you are considered grappled, and you must succeed on a second grapple attack to grapple him.
+
+\subsubsection{Binding an Opponent}
+Once you have pinned an opponent, you may attempt to bind them with ropes or other forms of restraint. You must have the restraint on hand. To do so, make a grapple attack against the pinned opponent. The opponent can resist with a grapple attack. If you succeed, your opponent is bound and helpless. To escape the bindings, the opponent must exceed your check result with an Escape Artist check.
+
+Once your opponent is bound and helpless, you can take 20 on your grapple attack to bind him or her more securely. You can also use the Devices skill to bind an opponent who is not struggling.
+
+\subsection{Overrun}
+As a full round action, you move your speed while overruning targets in your path, moving through their squares. Weapons cannot be used to overrun. You can only overrun opponents who are no more than one size category larger than you. When you attempt to overrun a target, it can choose to avoid you, allowing you to pass through its square without requiring an attack. If your target does not avoid you, make a combat maneuver check as normal.
+
+If your overrun attempt fails, you stop in the space directly in front of the opponent, or the nearest open space in front of the creature if there are other creatures occupying that space. If your overrun attempt is successful, you move through the target's space. If your attack exceeds your opponent's CMD by 5 or more, you move through the target's space and the target is knocked prone.
+
+If the target is unusually stable, such as for being a dwarf or for having more than two legs, it gets a \plus4 circumstance bonus to its CMD. Some creatures, such as oozes that completely fill their squares, cannot be overrun.
+
+You can overrun multiple opponents as part of a single overrun action. You make a single overrun check which applies against each opponent. For every opponent you successfully overrun, you take a \minus4 penalty to any additional overrun checks you make in the same action. If your attack exceeds an opponent's CMD by 10 or more, you do not take a penalty after overrunning that opponent.
+
+\subsection{Trip}
+You can attempt to trip your opponent as an attack action. Only tripping weapons, as indicated in their description, may be used to trip. If you attempt to trip an opponent without a tripping weapon, you must have a free hand. You can only trip an opponent who is no more than one size category larger than you.
+
+If your attack exceeds the target's CMD, the target is knocked prone. If you have the Improved Trip feat or a similar ability, the target provokes an attack of opportunity immediately after being knocked prone. If the target is unusually stable, such as for being a dwarf or for having more than two legs, it gets a \plus4 circumstance bonus to its CMD. Some creatures, such as oozes, creatures without legs, and flying creatures, cannot be tripped.
+
+\section{Special Actions}
+This section covers grappling, throwing splash weapons (such as
+acid or holy water), attacking objects (such as trying to hack apart a
+locked chest), turning or rebuking undead (for clerics and paladins),
+and an assortment of other special attacks.
+
+\begin{dtable}
+\lcaption{Special Attacks}
+\begin{tabularx}{\columnwidth}{l >{\lcol}X}
+\thead{Special Attack} & \thead{Brief Description} \\
+Charge  & Move up to twice your speed and attack with \plus2 bonus \\
+Mounted combat & Fight while mounted \\
+Throw splash weapon  & Throw container of dangerous liquid at target \\
+Two-weapon fighting  & Fight with a weapon in each hand
+\end{tabularx}
+\end{dtable}
+
+\subsection{Charge}
+As a full-round action, you may move up to twice your speed and make a single attack. When charging, you take a \minus2 penalty to armor class, and you gain a \plus2 circumstance bonus to hit on the attack at the end of the charge. At base attack bonus \plus6, this attack deals double damage if you hit by 5 or more. At base attack bonus \plus 11, the attack deals triple damage if you hit by 10 or more. At base attack bonus \plus16, the attack deals quadruple damage if you hit by 15 or more. However, there are tight restrictions on how you can move during a charge.
+
+\parhead{Movement During a Charge} You must move before your attack, not after. You must move at least 30 feet, and may move up to double your speed directly toward the designated opponent. Your path must follow a completely straight line. Finally, you must have a clear path toward the opponent; if anything in your path hinders your movement (such as difficult terrain or obstacles) or contains a creature (even an ally), you cannot charge.
+
+If you don't have line of sight to the opponent at the start of your turn, you can't charge that opponent. If your charge is interrupted partway through, it becomes a move action if you have not exceeded your base movement, or a hustle action if you have exceeded your base movement.
+
+If you are able to take only a standard action or a move action on your turn, you can still charge, but you are only allowed to move up to your speed (instead of up to double your speed), and you do not deal bonus damage for having a high base attack bonus. You can't use this option unless you are restricted to taking only a standard action or move action on your turn (such as during a surprise round).
+
+\parhead{Attacking on a Charge} After moving, you may attack. How you attack depends on how far you moved. If you moved no more than your speed, you may take a full attack. If you moved more than your speed, you can only make a single attack. However, if you moved more than your speed, you can use the momentum of the charge in your favor, giving you a \plus2 circumstance bonus on the attack roll. Since such a charge is a bit reckless, you also take a \minus2 penalty to your AC until the start of your next turn.
+
+\parhead{Lances and Charge Attacks} A lance deals double damage if employed by a mounted character in a charge.
+
+\parhead{Multiple Attacks} Even if you get multiple attacks on a charge, bonuses that apply while charging (such as the double damage dealt by lances) only apply on the first attack of the charge.
+
+\parhead{Weapons Readied against a Charge} Spears, tridents, and certain other piercing weapons deal double damage when readied (set) and used against a charging character (see \trefcp{Weapons}, and \pcref{Ready}).
+
+\subsection{Mounted Combat}
+\parhead{Horses in Combat} Warhorses and warponies can serve readily as combat steeds. Light horses, ponies, and heavy horses, however, are frightened by combat. If you don't dismount, you must make a DC 20 Ride check each round as a move action to control such a horse. If you succeed, you can perform a standard action after the move action. If you fail, the move action becomes a full round action and you can't do anything else until your next turn.
+
+Your mount acts on your initiative count as you direct it. You move at its speed, but the mount uses its action to move.
+
+\parhead{Space} A horse (not a pony) is a Large creature, and thus takes up a space 10 feet (2 squares) across. While mounted, you share your mount's space completely. Anyone threatening your mount can attack either you or your mount. However, your reach is still that of a creature of your normal size. Thus, a Medium paladin would threaten all squares adjacent to his Large horse with a longsword, and all squares 10 feet away from his mount with a lance.
+
+In the case of abnormally large mounts (two or more size categories larger than you), you may not completely share space. Such situations should be handled on a case-by-case basis, depending on the nature of the mount.
+
+\parhead{Combat while Mounted} With a DC 5 Ride check, you can guide your mount with your knees so as to use both hands to attack or defend yourself. This is a free action.
+
+If your mount moves more than its normal speed when charging, you also take the AC penalty associated with a charge. If you make an attack at the end of such a charge, you receive the bonus gained from the charge. When charging on horse-back, you deal double damage with a lance (see \pcref{Charge}).
+
+You can use ranged weapons while your mount is taking a double move, but at a \minus4 penalty on the attack roll. You can use ranged weapons while your mount is running (quadruple speed), at a \minus8 penalty. In either case, you make the attack roll when your mount has completed half its movement. You can make a full attack with a ranged weapon while your mount is moving. Likewise, you can take move actions normally.
+
+\parhead{Casting Spells while Mounted} You can cast a spell normally if your mount moves up to a normal move (its speed) either before or after you cast. If you have your mount move both before and after you cast a spell, then you're casting the spell while the mount is moving, and you have to make a Concentration check due to the vigorous motion (DC 10 \add double spell level) or lose the spell. If the mount is running (quadruple speed), you can cast a spell when your mount has moved up to twice its speed, but your Concentration check is more difficult due to the violent motion (DC 15 \add double spell level).
+
+\parhead{If Your Mount Falls in Battle} If your mount falls, you have to succeed on a DC 15 Ride check to make a soft fall and take no damage. If the check fails, you take 1d6 points of damage.
+
+\parhead{If You Are Dropped} If you are knocked unconscious, you have a 50\% chance to stay in the saddle (or 75\% if you're in a military saddle). Otherwise you fall and take 1d6 points of damage. Without you to guide it, most mounts avoid combat.
+
+\subsection{Throw Splash Weapon}
+A splash weapon is a ranged weapon that breaks on impact, splashing or scattering its contents over its target and nearby creatures or objects. To attack with a splash weapon, make a ranged touch attack against the target. Splash weapons require no weapon proficiency. A hit deals direct hit damage to the target, and splash damage to all creatures within 5 feet of the target.
+
+You can instead target a specific grid intersection. Treat this as a ranged attack against AC 5. However, if you target a grid intersection, creatures in all adjacent squares are dealt the splash damage, and the direct hit damage is not dealt to any creature. (You can't target a grid intersection occupied by a creature, such as a Large or larger creature; in this case, you're aiming at the creature.)
+
+If you miss the target (whether aiming at a creature or a grid intersection), it lands in a random adjacent square.
+
+After you determine where the weapon landed, it deals splash damage to all creatures in adjacent squares.
+
+\subsection{Two-Weapon Fighting}
+If you wield a second weapon in your off hand, you can attack with both weapons at once whenever you attack. Roll a single attack roll for both weapons. Apply your attack bonuses with each of your weapons separately, taking a \minus5 penalty with your off-hand attack. If you hit with your main hand, you deal damage with your main weapon. If you hit with your off-hand (after taking into account the \minus5 penalty), you also deal damage with your off-hand weapon.
+
+\par Precision-based damage, such as sneak attack damage, is only dealt once. It is possible to critical with both weapons. Use each weapon's critical threat range separately, but roll only once to confirm a critical threat, using the same attack bonus as with the original attack. Damage reduction only applies once against the damage dealt by both weapons.
+
+\par Fighting in this way is difficult, and you suffer a \minus2 penalty to your attack roll. You can mitigate this penalty if your off-hand weapon is light. (An unarmed strike is always considered light.) The Two-Weapon Fighting feat grants a \plus2 circumstance bonus to attack rolls when fighting with two weapons at once.
+
+You take no penalties for alternating attacks between two (or more) weapons, as long as you do not attack with both weapons at once.
+
+\par For example, Felix the 1st-level fighter is wielding a longsword and a short sword against an evil goblin. The goblin has an AC of 15. Felix's longsword is masterwork, but his short sword is not, and he has a Strength of 15. This means his attack bonus with his longsword is \plus4, and his attack bonus with his short sword is \plus3. If he attacks with both weapons at once, he takes no penalty to his attacks (because his off-hand weapon is light), but his attack with his off-hand weapon takes a \minus5 penalty. So his attack bonus would be \plus4 (with his longsword) and \minus2 (with his short sword). If he rolls a 15, he will hit the goblin with his longsword, but not with his short sword.
+
+\par If Felix had the Two-Weapon Fighting feat, his attack bonus would be \plus6 with his longsword and \plus0 with his short sword. Assuming he rolls a 15 again, he would hit the goblin with both weapons, dealing damage with both of them.
+
+\parhead{Double Weapons} You can use a double weapon to make an extra attack with the off-hand end of the weapon as if you were fighting with two weapons. The penalties apply as if the off-hand end of the weapon were a light weapon.
+\parhead{Thrown Weapons} The same rules apply when you throw a weapon from each hand. Treat a dart or shuriken as a light weapon when used in this manner, and treat a set of bolas, javelin, net, or sling as a one-handed weapon.
+
+\section{Special Initiative Actions}
+Here are ways to change when you act during combat by altering your place in the initiative order.
+
+\subsection{Delay}
+By choosing to delay, you take no action and then act normally on whatever initiative count you decide to act. When you delay, you voluntarily reduce your own initiative result for the rest of the combat. When your new, lower initiative count comes up later in the same round, you can act normally. You can specify this new initiative result or just wait until some time later in the round and act then, thus fixing your new initiative count at that point.
+
+You never get back the time you spend waiting to see what's going to happen. Additionally, you can't interrupt anyone else's action (as you can with a readied action).
+
+\parhead{Initiative Consequences of Delaying} Your initiative result becomes the count on which you took the delayed action. If you come to your next action and have not yet performed an action, you don't get to take a delayed action (though you can delay again).
+
+If you take a delayed action in the next round, before your regular turn comes up, your initiative count rises to that new point in the order of battle, and you do not get your regular action that round.
+
+\subsection{Ready}
+The ready action lets you prepare to take an action later, after your turn is over but before your next one has begun. Readying is a standard action. It does not provoke an attack of opportunity (though the action that you ready might do so).
+
+\parhead{Readying an Action} You can ready a standard action or a move action. To do so, specify the action you will take and the conditions under which you will take it. You cannot ready in response to an action that you take -- the action must be outside of your control. Then, any time before your next action, you may take the readied action in response to that condition. The action occurs just before the action that triggers it. If the triggered action is part of another character's activities, you interrupt the other character. Assuming he is still capable of doing so, he continues his actions once you complete your readied action. Your initiative result changes. For the rest of the encounter, your initiative result is the count on which you took the readied action, and you act immediately ahead of the character whose action triggered your readied action.
+
+You can take some free actions as part of your readied action, but in general you can take no actions other than the action you readied.
+
+\parhead{Initiative Consequences of Readying} Your initiative result becomes the count on which you took the readied action. If you come to your next action and have not yet performed your readied action, you don't get to take the readied action (though you can ready the same action again). If you take your readied action in the next round, before your regular turn comes up, your initiative count rises to that new point in the order of battle, and you do not get your regular action that round.
+
+\parhead{Distracting Spellcasters} You can ready a full attack against a spellcaster with the trigger ``if she starts casting a spell." If you damage
+the spellcaster, she may lose the spell she was trying to cast (as determined by her Concentration check result).
+
+\parhead{Readying to Counterspell} You may ready a counterspell against a spellcaster (often with the trigger ``if she starts casting a spell"). In this case, when the spellcaster starts a spell, you get a chance to identify it with a Spellcraft check (DC 15 \add spell level). If you do, and if you can cast that same spell (are able to cast it and have it prepared, if you prepare spells), you can cast the spell as a counterspell and automatically ruin the other spellcaster's spell. Counterspelling works even if one spell is divine and the other arcane.
+
+A spellcaster can use \spell{dispel magic} to counterspell another spellcaster, but it doesn't always work.
+
+\parhead{Readying a Weapon against a Charge} You can ready certain piercing weapons, setting them to receive charges (see \trefcp{Weapons}). A readied weapon of this type deals double damage if you score a hit with it against a charging character. If you take multiple attacks, the damage is doubled only for the first attack.
