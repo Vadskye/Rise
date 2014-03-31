@@ -72,8 +72,10 @@ Sometimes your armor doesn't help you avoid an attack. Your touch armor class is
 Your Maneuver Class (MC) represents how good you are at defending against combat maneuvers. It's the attack roll result that an opponent needs to achieve to affect you with a maneuver. Like your Armor Class, your MC is made up of the sum of other modifiers, each of which can have competence and enhancement bonuses applied separately. You can also apply competence and enhancement bonuses directly. Your MC is equal to the following:
 
 \begin{figure}[h]
-    \centering 10 \add base attack bonus \add Strength \add Dexterity \add shield modifier \add dodge modifier \add special size modifier \add competence bonuses \add enhancement bonus
+    \centering 10 \add base attack bonus \add Strength \add Dexterity \add shield modifier \add dodge modifier \add special size modifier \add competence bonuses \add enhancement bonus \add AC bonuses and penalties
 \end{figure}
+
+Any effect which gives a bonus or a penalty to your AC directly is also applied to your MC. For example, while prone, you take a \minus4 penalty to your MC, just like you do to your AC. 
 
 Your special size modifier is described in \tref{Size in Combat}.
 
@@ -137,6 +139,8 @@ Sometimes, movement and distance are represented in squares. A 30-ft. movement i
 \parhead{Struggle} As a full-round action, you can move five feet, regardless of movement penalties. You can use this to move even if your speed is decreased below five feet by penalties. 
 
 \subsection{Measuring Movement}
+For simplicity, all movement is measured in five-foot increments. While it is possible to be more precise than that, it's generally not worth the complexity.
+
 \parhead{Diagonals} When measuring distance, the first diagonal counts
 as five feet of movement, and the second counds as ten feet of movement. The third costs five feet, the fourth costs ten feet, and so on.
 
@@ -145,38 +149,21 @@ You can't move diagonally past a corner. You can move diagonally past a creature
 
 \subsection{Movement Impediments}
 
-\subsubsection{Moving Through Occupied Squares}
-
-\parhead{Ally} You can move through a square occupied by an ally. When you move through a square occupied by an ally, that character doesn't provide you with cover.
-\parhead{Opponent} You can't move through a square occupied by an opponent, unless the opponent is helpless. You can move through a square occupied by a helpless opponent without penalty.
-\parhead{Ending Your Movement} You can't end your movement in the same square as another creature unless it is helpless.
-%Need actual limits
-%\parhead{Very Small Creatures} Creatures that take up less than a square of space, as shown on \tref{Size in Combat}, can occupy squares occupied by other creatures of the same size.  
-\parhead{Large and Small Creatures} Any creature can move through a square occupied by a creature three size categories larger than it is.
-
 \subsubsection{Difficult Terrain}
-
-Difficult terrain hampers movement. Each square of difficult terrain counts as 2 squares of movement. (Each diagonal move into a difficult terrain square counts as 3 squares.) You can't run or charge across difficult terrain.
-
-If you occupy squares with different kinds of terrain, you can move only as fast as the most difficult terrain you occupy will allow.
+Some terrain is hard to move through, like thick bushes or a swamp. If a square is difficult terrain, it doubles the movement cost required to move through the square. That generally means it takes ten feet of movement, or fifteen feet if you are moving diagonally. If a square is considered difficult terrain for multiple reasons, the cost increases stack. For example, a square in a swamp that also has thick bushes blocking your passage would take twenty feet of movement, or thirty feet to move diagonally!
 
 \subsubsection{Obstacles}
+An obstacle is anything that gets in your way. Enemies and large solid objects like walls are blocking obstacles: they completely block your movement. If you can get past an obstacle, like a low wall, that square is treated as difficult terrain. Some obstacles require a skill check to bypass.
 
-If an obstacle hampers movement but doesn't completely block it, treat it as taking up an extra five feet of movement to bypass. Some obstacles may also require a skill check to cross.
+Enemies three size categories larger than you, and all allies, are not considered obstacles, and do not hinder your movement.
 
 \subsubsection{Squeezing}
 
-In some cases, you may have to squeeze into or through an area that isn't as wide as the space you take up. You can squeeze through or into a space that is at least half as wide as your normal space. Each move into or through a narrow space counts as if it were 2 squares, and while squeezed in a narrow space you take a \minus4 penalty on attack rolls and a \minus4 penalty to AC.
+In some cases, you may have to squeeze into or through an area that isn't as wide as the space you take up. You can squeeze through or into a space that is at least half as wide as your normal space. While squeezing, you move half as fast, and you take a \minus4 penalty on attack rolls and AC. You can squeeze into tighter spaces with the Escape Artist skill.
 
-When a Large creature (which normally takes up four squares) squeezes into a space that's one square wide, the creature's miniature figure occupies two squares, centered on the line between the two squares. For a bigger creature, center the creature likewise in the area it squeezes into.
-
-A creature can squeeze past an opponent while moving but it can't end its movement in an occupied square.  To squeeze through or into a space less than half your space's width, you must use the Escape Artist skill.
+Creatures that take up multiple squares take up half their normal number of squares while squeezing. For example, a Large creature who normally takes up four spaces takes up two spaces while squeezing.
 
 \parhead{Accidentally Squeezing} Sometimes a character ends its movement while moving through a space where it's not normally allowed to stop. When that happens, the character is squeezing in the space until it can move. If squeezing is impossible, it immediately moves to the closest available space where it can be. Try not to do this.
-
-\parhead{Double Movement Cost} When your movement is hampered in some way, your movement usually costs double. For example, each square of movement through difficult terrain counts as 2 squares, and each diagonal move through such terrain counts as 3 squares (just as two diagonal moves normally do).
-
-If movement cost is doubled twice, then each square counts as 4 squares (or as 6 squares if moving diagonally). If movement cost is doubled three times, then each square counts as 8 squares (12 if diagonal), and so on. This is an exception to the general rule that two doublings are equivalent to a tripling.
 
 \section{Initiative}
 
