@@ -50,7 +50,7 @@ Characters above 6th level can increase substantially in power and versatility. 
 \textit{Prerequisites:} Barbarian level 6th.
 
 \cf{Bbn}{Improved Uncanny Dodge (Ex)} At 6th level and higher, a barbarian is always treated as being threatened by two fewer creatures than he actually is for the purpose of determining overwhelm penalties. This defense can deny a rogue the ability to sneak attack the barbarian.
-\par If a character already has uncanny dodge (see above) from a second class and gains improved uncanny dodge, the character stacks those levels to determine if he should gain greater uncanny dodge, and to determine the minimum level a rogue must be to flank the character.
+\par If a character already has improved uncanny dodge from a second class and gains improved uncanny dodge, the character stacks those levels to determine if he should gain greater uncanny dodge.
 
 \cf{Bbn}{Larger than Life (Ex)} A barbarian of 7th level or higher holds the strength of a giant in the body of a man (or woman). The barbarian is treated as being one size category larger than he actually is for the purpose of maneuvers he performs or is the target of, checks that are affected by size (such as Strength checks to break down doors), and whether a creature's special attacks based on size can affect him if doing so is advantageous to him. In addition, though he uses weapons of the same size, his weapons deal damage as if they were one size category larger, including natural weapons and unarmed strikes. The barbarian's space and reach remain those of a creature of his actual size. The benefits of this class feature stack with the effects of spells and abilities that increase the barbarian's size category.
 
@@ -544,13 +544,13 @@ her appearance at will, as if using the \spell{disguise self} spell. This affect
 \begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolavg} *{3}{>{\ccol}p{\savecol}} >{\lcol}X >{\ccol}p{4.5em} >{\ccol}p{6em}}
 \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} & \thead{Unarmed Damage} & \thead{Unarmored Speed Bonus} \\
 1st & \plus1                    & \plus1 & \plus3 & \plus3    & Unarmed strike, unfettered defense \\
-2nd & \plus2                    & \plus2 & \plus4 & \plus4    & Unarmed style, uncanny dodge \\
+2nd & \plus2                    & \plus2 & \plus4 & \plus4    & \Ki power, uncanny dodge \\
 3rd & \plus3                    & \plus3 & \plus5 & \plus5    & Fast movement, still mind \\
-4th & \plus4                    & \plus4 & \plus6 & \plus6    & Evasion, wholeness of body \\
-5th & \plus5                    & \plus4 & \plus7 & \plus7    & \Ki power \\
-6th & \plus6/\plus1                    & \plus5 & \plus8 & \plus8    & Bonus feat, improved uncanny dodge \\
-7th & \plus7/\plus2                    & \plus6 & \plus9 & \plus9    & Diamond body \\
-8th & \plus8/\plus3             & \plus7 & \plus10& \plus10   & Tongue of the sun and moon \\
+4th & \plus4                    & \plus4 & \plus6 & \plus6    & Evasion, Perfect Health \\
+5th & \plus5                    & \plus4 & \plus7 & \plus7    & \Ki power, \ki strike \\
+6th & \plus6/\plus1                    & \plus5 & \plus8 & \plus8    & Improved uncanny dodge \\
+7th & \plus7/\plus2                    & \plus6 & \plus9 & \plus9    & Tongue of the sun and moon \\
+8th & \plus8/\plus3             & \plus7 & \plus10& \plus10   & \\
 9th & \plus9/\plus4             & \plus7 & \plus11& \plus11   & Improved evasion \\
 10th & \plus10/\plus5            & \plus8 & \plus12& \plus12   & Greater uncanny dodge, \ki strike (lawful) \\
 11th & \plus11/\plus6/\plus1            & \plus9  & \plus13 & \plus13 & Abundant step \\
@@ -566,30 +566,10 @@ her appearance at will, as if using the \spell{disguise self} spell. This affect
 \end{tabularx}
 \end{dtable*}
 
-\cf{Mnk}{Unarmed Strike} The monk's unarmed damage continues to increase as she gains levels.
-
-\begin{dtable}
-\lcaption{Small or Large Monk Unarmed Damage}
-\begin{tabularx}{\columnwidth}{>{\lcol}p{5em} >{\lcol}X >{\lcol}X}
-\thead{Level} & \thead{Damage (Small Monk)} & \thead{Damage (Large Monk)} \\
-1st-3rd  & 1d4 & 1d8 \\
-4th-7th  & 1d6 & 1d10 \\
-8th-11th & 1d8 & 2d6 \\
-12th-15th & 1d10 & 2d8 \\
-16th-19th & 2d6 & 2d10 \\
-20th   & 2d8 & 4d6 \\
-\end{tabularx}
-\end{dtable}
-
-\cf{Mnk}{Bonus Feat} At 6th level, the monk may select any combat maneuver feat that she qualifies for.
-
 \cf{Mnk}{Improved Uncanny Dodge (Ex)} At 6th level and higher, a monk can no longer be overwhelmed as easily; she can react to multiple opponents as easily as she can react to a single attacker. The monk is always treated as being threatened by two fewer creatures than she actually is for the purpose of determining overwhelm penalties.
-\par If a character already has uncanny dodge (see above) from a
-second class and gains improved uncanny dodge, the character stacks those levels to determine if she should gain greater uncanny dodge, and to determine the minimum level a rogue must be to flank the character.
+\par If a character already has uncanny dodge (see above) from a second class and gains improved uncanny dodge, the character stacks those levels to determine if she should gain greater uncanny dodge.
 
-\cf{Mnk}{Diamond Body (Su)} At 7th level, a monk gains immunity to poisons and diseases of all kinds, including supernatural and magical diseases (such as mummy rot and lycanthropy).
-
-\cf{Mnk}{Tongue of the Sun and Moon (Ex)} A monk of 8th level or higher can speak to and understand the speech of any living creature. This grants her no special ability to speak to or understand creatures that do not speak, such as animals.
+\cf{Mnk}{Tongue of the Sun and Moon (Ex)} At 7th level, the monk gains the ability to speak with and understand the speech of any living creature. This grants her no special ability to speak to or understand creatures that do not speak, such as animals.
 
 \cf{Mnk}{Improved Evasion (Ex)} At 9th level, a monk's evasion ability improves. She still takes no damage on a successful Reflex saving throw against attacks, but henceforth she takes only half damage on a failed save. A helpless monk does not gain the benefit of improved evasion.
 
@@ -840,7 +820,7 @@ The ranger must have the greater combat style lore to choose this lore. The bene
 
 \cf{Rog}{Improved Uncanny Dodge (Ex)} At 6th level and higher, a rogue can no longer be overwhelmed as easily; she can react to multiple opponents as easily as she can react to a single attacker. The rogue is always treated as being threatened by two fewer creatures than she actually is for the purpose of determining overwhelm penalties. 
 
-\par If a character already has uncanny dodge (see above) from a second class and gains improved uncanny dodge, the character stacks those levels to determine if she should gain greater uncanny dodge, and to determine the minimum level a rogue must be to sneak attack the character.
+\par If a character already has improved uncanny dodge from a second class and gains improved uncanny dodge, the character stacks those levels to determine if she should gain greater uncanny dodge.
 
 \cf{Rog}{Combat Tricks} The rogue gains an additional combat trick at 7th level and every three levels thereafter.
 
