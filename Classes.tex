@@ -154,6 +154,8 @@ All of the following are class features of the cleric.
 
  \cf{Clr}{Weapon and Armor Proficiency}  Clerics are proficient with simple weapons, any two other weapon groups, light and medium armor, and shields (except tower shields).
 
+\cf{Clr}{Bonus Languages} A cleric's bonus language options include Celestial, Abyssal, and Infernal (the languages of good, chaotic evil, and lawful evil outsiders, respectively). These choices are in addition to the bonus languages available to the character because of his race.
+
 \cf{Clr}{Spells}  A cleric casts divine spells, which are drawn from the cleric spell list. However, his alignment may restrict him from casting certain spells opposed to his moral or ethical beliefs; see Chaotic, Evil, Good, and Lawful Spells, below. A cleric must choose and prepare his spells in advance (see below).
 
 Most clerics use Charisma to cast spells. Clerics of specific deities may use a different casting ability, which affects all aspects of the cleric's spellcasting accordingly.
@@ -227,7 +229,6 @@ Brushtwig, pixie god of creativity & Chaotic good & Chaos, Good, Trickery \\
 Chavi, bard god of stories & Chaotic good & Chaos, Knowledge, Leadership, Trickery \\
 Ivan Ivanovitch, bear god of strength & Chaotic good & Animal, Chaos, Strength, War \\
 Raphael, monk god of retribution & Lawful neutral & Death, Law, Protection, Travel \\
-%Fizzlewhim Alamuare Liet'us-Alaras Stark Eivonor
 Declan, god of fire & True neutral & Destruction, Fire, Knowledge, Magic \\
 %Kalten, half-orc god of smiths
 Kurai, shaman god of nature & True neutral & Air, Earth, Fire, Water \\
@@ -250,7 +251,26 @@ The Good domain gives him access to \spell{bless} and \spell{protection from evi
 
 \cf{Clr}{Chaotic, Evil, Good, and Lawful Spells} A cleric can't cast spells of an alignment opposed to his own or his deity's (if he has one). Spells associated with particular alignments are indicated by the chaos, evil, good, and law descriptors in their spell descriptions.
 
-\cf{Clr}{Lesser Domain Aspect (Su)} A cleric's abilities are shaped by his domains. Each domain is associated with a lesser domain aspect. Lesser domain aspects are not activated. Options for domain aspects are listed below.
+\cf{Clr}{Lesser Domain Aspect (Su)} A cleric's abilities are shaped by his domains. Each domain is associated with a lesser domain aspect. Lesser domain aspects are not activated. Options for domain aspects are listed at \pcref{Lesser Domain Aspects}. A cleric gains an additional lesser domain aspect at 2nd level.
+
+\cf{Clr}{Matters of Faith (Ex)} A cleric gains a \plus10 competence bonus to Knowledge (religion) checks made concerning his faith, such as questions about his deity or philosophy, religious rites, holy sites, and so on. Further, he is treated as being trained in Knowledge (religion) when making such checks, whether or not he actually is.
+
+\cf{Clr}{Channel Energy (Su)} At 2nd level, by channeling the power of his faith through his holy (or unholy) symbol, a cleric can act as a powerful conduit of divine energy. He cleric must choose whether to channel positive or negative energy. Once this choice is made, it cannot be reversed. This decision also determines whether the cleric casts spontaneous \spellindirect{cure light wounds}{cure} or \spellindirect{inflict light wounds}{inflict} spells (see below).
+
+When a cleric channels energy, it affects all creatures in a \areamed radius burst centered on him, including himself. The cleric may choose to exclude a number of creatures from the effect equal to 1 \add half his Wisdom. The amount of damage dealt (if negative energy is channeled) or healed (if positive energy is channeled) is equal to 1d6 damage per two cleric levels. Each affected creature can make a Fortitude save to halve the damage. The DC of this save is equal to 10 \add the cleric's level \add the cleric's Charisma.
+
+Channeling energy is a standard action that does not provoke attacks of opportunity. A cleric can channel energy a number of times per day equal to 3 \add half his Charisma. A cleric must be able to present his holy symbol to use this ability. The abilities used 
+
+\cf{Clr}{Domain Power (Su)} At 3rd level, a cleric gains a domain power from one of his domains. Using a domain power requires a standard action that does not provoke attacks of opportunity unless otherwise noted. All domain powers can be used at will unless otherwise noted. If a domain power allows a saving throw, the DC is equal to 10 \add the cleric's level \add the cleric's Charisma.
+
+The domain powers for each domain are described at \pcref{Domain Powers}. The cleric gains an additional domain power from one of his domains at 4th level.
+
+\cf{Clr}{Channeled Domain Power (Su)} At 5th level, a cleric gains a channeled domain power from one of his domains. Unless otherwise stated, using a channelled domain power is identical to using channel energy and consumes a use of the cleric's channel energy ability. Instead of channeling positive or negative energy, the cleric instead gains the effect of the channelled domain power. If a channeled domain power deals damage, it functions like channeling negative energy unless otherwise noted. If a channeled domain power heals damage, it functions like channeling postive energy unless otherwise noted. The channeled domain powers are described at \pcref{Channeled Domain Powers}.
+
+\subsection{Cleric Domain Powers}
+
+\subsubsection{Lesser Domain Aspects}\label{Lesser Domain Aspects}
+
 \subcf{Air} The cleric adds Athletics to his cleric class skill list and gains electricity damage reduction equal to his cleric level.
 \subcf{Chaos} Whenever the cleric rolls a 2 on a d20 roll, he immediately rerolls.
 \subcf{Death} The cleric does not suffer partial effects if he makes his saving throw against death effects. For example, he is not staggered by \spell{finger of death} if he makes his Fortitude save.
@@ -270,33 +290,7 @@ The Good domain gives him access to \spell{bless} and \spell{protection from evi
 \subcf{War} The cleric gains Weapon Focus with his deity's favored weapon group as a bonus feat, even if he doesn't meet the prerequisites. If he does not have a deity, he gains it in a weapon group related to his alignment or ideals.
 \subcf{Water} The cleric adds Swim to his cleric class skill list and gains a swim speed equal to his base land speed.
 
-A cleric gains an additional lesser domain aspect at 2nd level.
-
-\begin{comment}
-\cf{Clr}{Turn or Rebuke Undead (Su)} Any cleric, regardless of alignment, has the power to affect undead creatures by channeling the power of his faith through his holy (or unholy) symbol.
-
-Turning or rebuking undead requires a standard action and affects all undead within a large (50 foot) radius of the cleric to flee, as if panicked. Undead receive a Will save to negate the effect. The DC for this Will save is equal to 10 \add 1/2 the cleric's turning level \add the cleric's Cha. A cleric's turning level is normally equal to his class level. Intelligent undead receive a new saving throw each round to end the effect.
-
-A cleric that turns undead causes the affected creatures to flee for 1 minute as if panicked. If the cleric's turning level is at least twice the HD of an affected undead, it is instead destroyed utterly.
-
-A cleric that rebukes undead causes the affected creatures to cower for 1 minute. If the cleric's turning level is at least twice the HD of an affected undead, it instead falls under the control of the cleric for one day per turning level. (Since intelligent undead receive a new saving throw each round, only unintelligent undead can be consistently controlled in this fashion.)
-
-A good cleric (or a neutral cleric who worships a good deity) can turn or destroy undead creatures. An evil cleric (or a neutral cleric who worships an evil deity) instead rebukes or commands such creatures. A neutral cleric of a neutral deity must choose whether his turning ability functions as that of a good cleric or an evil cleric. Once this choice is made, it cannot be reversed.
-
-A cleric may attempt to turn or rebuke undead a number of times per day
-equal to 3 \add his Charisma value.
-\end{comment}
-
- \cf{Clr}{Matters of Faith (Ex)} A cleric gains a \plus10 competence bonus to Knowledge (religion) checks made concerning his faith, such as questions about his deity or philosophy, religious rites, holy sites, and so on. Further, he is treated as being trained in Knowledge (religion) when making such checks, whether or not he actually is.
-
-\cf{Clr}{Channel Energy (Su)} At 2nd level, by channeling the power of his faith through his holy (or unholy) symbol, a cleric can act as a powerful conduit of divine energy. He cleric must choose whether to channel positive or negative energy. Once this choice is made, it cannot be reversed. This decision also determines whether the cleric casts spontaneous \spellindirect{cure light wounds}{cure} or \spellindirect{inflict light wounds}{inflict} spells (see below).
-
-When a cleric channels energy, it affects all creatures in a \areamed radius burst centered on him, including himself. The cleric may choose to exclude a number of creatures from the effect equal to 1 \add half his Wisdom. The amount of damage dealt (if negative energy is channeled) or healed (if positive energy is channeled) is equal to 1d6 damage per two cleric levels. Each affected creature can make a Fortitude save to halve the damage. The DC of this save is equal to 10 \add the cleric's level \add the cleric's Charisma.
-
-Channeling energy is a standard action that does not provoke attacks of opportunity. A cleric can channel energy a number of times per day equal to 3 \add half his Charisma. A cleric must be able to present his holy symbol to use this ability. The abilities used 
-
-\cf{Clr}{Domain Power (Su)} At 3rd level, a cleric gains a domain power from one of his domains. Using a domain power requires a standard action that does not provoke attacks of opportunity unless otherwise noted. All domain powers can be used at will unless otherwise noted. If a domain power allows a saving throw, the DC is equal to 10 \add the cleric's level \add the cleric's Charisma.
-\par The domain powers for each domain are described below.
+\subsubsection{Domain Powers}\label{Domain Powers}
 
 \subcf{Air -- Lightning Arc} The cleric fires an arc of lightning at a creature within \rngmed range. If he hits on a ranged touch attack, the creature takes d8 electricity damage \add d8 per four cleric levels after 1st.
 \subcf{Chaos -- Touch of Chaos} A creature within \rngclose range is imbued with the power of chaos for 5 rounds. Any attack roll, saving throw, or check it makes where it rolls an odd number gets a \minus2 penalty. Creatures affected by this power are treated as lawful for the purpose of the cleric's chaotic spells and effects.
@@ -318,9 +312,8 @@ Channeling energy is a standard action that does not provoke attacks of opportun
 \subcf{War -- Warrior's Boon} A creature touched creature gains a \plus2 enhancement bonus to attack rolls for 1 round. \bonusscalingdescription This power can be used a number of times per day equal to 1 \add half the cleric's Charisma.
 \subcf{Water -- Drowning Orb} The cleric fires an orb of water at a creature within \rngclose range. If he hits on a ranged touch attack, the orb attempts to force itself into the creature's mouth and nose to drown it, dealing d8 nonlethal damage \add d8 per four cleric levels after 1st. In addition, the creature must make a Fortitude save or be forced to hold its breath for 5 rounds.
 
-The cleric gains an additional domain power from one of his domains at 4th level.
+\subsubsection{Channeled Domain Powers}\label{Channeled Domain Powers}
 
-\cf{Clr}{Channelled Domain Power (Su)} At 5th level, a cleric gains a channeled domain power from one of his domains. Unless otherwise stated, using a channelled domain power is identical to using channel energy and consumes a use of the cleric's channel energy ability. Instead of channeling positive or negative energy, the cleric instead gains the effect of the channelled domain power. If a channeled domain power deals damage, it functions like channeling negative energy unless otherwise noted. If a channeled domain power heals damage, it functions like channeling postive energy unless otherwise noted. The channeled domain powers are described below.
 \subcf{Air} The cleric channels electrical energy. This deals electricity damage and heals creatures with the air subtype. A Reflex save halves the damage.
 \subcf{Chaos} The cleric channels anarchic energy. Roll randomly each time this power is used to determine whether it functions as channeling negative energy or channeling positive energy, except that it always heals chaotic creatures and harms lawful creatures.
 \subcf{Death} The cleric channels negative energy, except that any creatures dealt critical damage by this power are instantly killed, with no saving throw allowed. This is a death effect.
@@ -339,10 +332,6 @@ The cleric gains an additional domain power from one of his domains at 4th level
 \subcf{Trickery} The cleric channels negative energy. It deals half damage, but all damaged creatures who fail their Will saves are bewildered for 5 rounds. This is a mind-affecting effect.
 \subcf{Vitality} The cleric channels energy as normal, except that he gains a \plus2 circumstance bonus to his cleric level.
 \subcf{War} The cleric channels energy as normal, except that he can exclude two additional creatures from the effect.
-
-\cf{Clr}{Bonus Languages} A cleric's bonus language options include
-Celestial, Abyssal, and Infernal (the languages of good, chaotic evil,
-and lawful evil outsiders, respectively). These choices are in addition to the bonus languages available to the character because of his race.
 
 \subsubsection{Ex-Clerics}
 A cleric who grossly violates the code of conduct required by his god loses all spells and class features, except for armor and shield proficiencies and proficiency with simple weapons. He cannot thereafter gain levels as a cleric of that god until he atones (see the \spell{atonement} spell description).
