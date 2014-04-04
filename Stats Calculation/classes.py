@@ -88,9 +88,9 @@ class Fighter(CharacterClass):
                 'none': 'none'}[encumbrance]
 
 class Monk(CharacterClass):
-    bab_progression = AVERAGE
+    bab_progression = GOOD
     save_progressions = {'fortitude':AVERAGE, 'reflex':GOOD, 'will':GOOD}
-    hit_value = 5
+    hit_value = 6
 
     def apply_modifications(self, base_creature):
         #wisdom is used often, so make it quick to access
@@ -102,27 +102,14 @@ class Monk(CharacterClass):
         else:
             print 'Monk is wearing armor?', base_creature.armor
 
-        #flurry of blows missing
-
         #unarmed strike
         if base_creature.weapon is None:
             unarmed_weapon = equipment.Weapon.from_weapon_name('unarmed')
             #make the weapon deal monk damage
-            for i in xrange(self.level/4+2):
+            for i in xrange(2):
                 unarmed_weapon.damage_die.increase_size(increase_min=True)
             base_creature.weapon = unarmed_weapon
             base_creature.weapon_damage.add_die(base_creature.weapon.damage_die)
-
-        #ki strike
-        if self.level>=2:
-            base_creature.attack_bonus.add_inherent(wisdom/2)
-        
-        #still mind
-        if self.level>=3 and base_creature.attributes:
-            #replace Int
-            base_creature.saves.will.add_inherent(
-                    -base_creature.attributes.intelligence.get_total()/2)
-            base_creature.saves.will.add_inherent(wisdom)
 
         #wholeness of body
         if self.level>=4:
