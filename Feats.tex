@@ -163,6 +163,7 @@ purpose of this calculation. The minimum caster level to craft an item is always
 \featref{Rapid Metamagic} & Spellcraft 8 ranks, spellcasting ability, one metamagic feat & Apply metamagic effects more quickly & \x \\
 \featref{Residual Awareness} & Divination (Awareness) spell & Gain brief Perception bonus after casting a spell & \x \\
 \featref{Residual Knowledge} & Divination (Knowledge) spell & Gain brief Knowledge bonus after casting a spell & \x \\
+\featref{Residual Shield} & Abjuration (Shielding) spell & Gain benefits of spell briefly after casting on another creature & \x \\
 \featref{Resilient Magic} & 2nd level Abjuration (Negation) spell & Spells persist for 1 round after being dispelled & \x \\
 \featref{Ritual Caster} & Int 3 & Gain ability to perform rituals \\
 \featref{Ritual Master} & Spellcraft 8 ranks, ability to perform rituals & Perform rituals more quickly, \plus3 to ritual checks \\
@@ -275,7 +276,6 @@ purpose of this calculation. The minimum caster level to craft an item is always
 \featref{Bulwark of Defense} & Base attack bonus \plus4 & Your threatened area is difficult terrain & \x \\
 \featref{Chargebreaker} & Base attack bonus \plus4 & Gain \plus2 to attack and damage when readying against approaching foe & Reaction \\
 \featref{Cleave} & Str 3, base attack bonus \plus4 & Extra melee attack after dropping target & Power \\
-\tind \featref{Cleaving Stride} & Str 3, base attack bonus \plus8, Cleave & Continue movement after dropping target & Power \\
 \featref{Defensive Stance} & Base attack bonus \plus4 & Trade ability to move for MC & Defense, Style \\
 \featref{Distracting Foe} & Base attack bonus \plus4 & Threatened foes suffer Concentration penalties & Style \\
 \featref{Feign Weakness} & Base attack bonus \plus4 & Provoke attack to render foe flat-footed & Style \\
@@ -323,14 +323,13 @@ purpose of this calculation. The minimum caster level to craft an item is always
 \lcaption{Metamagic Feats}
 \begin{tabularx}{\textwidth}{>{\lcol}p{15em} >{\lcol}p{7.5em} >{\lcol}p{7.5em} >{\lcol}X}
 \thead{Metamagic Feats} & \thead{Prerequisites} & \thead{Spell Level Increase} & \thead{Benefit} \\
-\featref{Empower Spell} & Caster level 4th & Variable & Cast spell as higher level \\
-\featref{Energetic Substitution} & Caster level 4th & \plus1 & Change spell's energy type \\
-\featref{Enlarge Spell} & Caster level 4th & \plus1 & Double spell's range \\
-\featref{Imbued Spellstrike} & Caster level 4th & \plus1 & Combine spell with weapon attack \\
-\tind \featref{Improved Imbued Spellstrike} & Caster level 6th & \plus2 & Imbue weapon with spell's power up to 5 minutes \\
-\featref{Silent Spell} & Caster level 4th & \plus1 & Cast spell without verbal components \\
-\featref{Still Spell} & Caster level 4th & \plus1 & Cast spell without somatic components \\
-\featref{Sustained Spell} & Caster level 4th & \plus1 & Maintain concentration as swift action \\
+\featref{Empower Spell} & 2nd level spells & Variable & Cast spell as higher level \\
+\featref{Energetic Substitution} & 2nd level spells & \plus1 & Change spell's energy type \\
+\featref{Enlarge Spell} & 2nd level spells & \plus1 & Double spell's range \\
+\featref{Imbued Spellstrike} & 2nd level spells & \plus1 & Combine spell with weapon attack \\
+\featref{Silent Spell} & 2nd level spells & \plus1 & Cast spell without verbal components \\
+\featref{Still Spell} & 2nd level spells & \plus1 & Cast spell without somatic components \\
+\featref{Sustained Spell} & 2nd level spells & \plus1 & Maintain concentration as swift action \\
 \end{tabularx}
 \end{dtable!*}
 
@@ -538,6 +537,10 @@ Choose two magical classes you possess.
 \feat{Residual Knowledge}{Magic}
 \featpre Ability to cast a Divination (Knowledge) spell.
 \featben Whenever you cast a Divination (Knowledge) spell, you gain an enhancement bonus to Knowledge checks equal to the level of the spell for 5 rounds.
+
+\feat{Residual Shield}{Magic}
+\featpre Ability to cast an Abjuration (Shielding) spell.
+\featben Whenever you cast an Abjuration (Shielding) spell with a duration of \durshort or longer on another creature, you gain the benefits on yourself for 1 round.
 
 \feat{Resilient Magic}{Magic}
 \featpre Ability to cast an Abjuration (Negation) spell of at least 2nd level.
