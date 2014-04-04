@@ -156,7 +156,7 @@ All of the following are class features of the cleric.
 
 \cf{Clr}{Bonus Languages} A cleric's bonus language options include Celestial, Abyssal, and Infernal (the languages of good, chaotic evil, and lawful evil outsiders, respectively). These choices are in addition to the bonus languages available to the character because of his race.
 
-\cf{Clr}{Spells}  A cleric casts divine spells granted to him by his deity or by the power of his beliefs. Most clerics rely on Charisma, but unlike other spellcasters, a cleric's casting attribute can change depending on his choices. To learn or cast a spell, a cleric must have a casting attribute at least equal to the spell's level.
+\cf{Clr}{Spells}  A cleric casts divine spells granted to him by his deity or by the power of his beliefs. All clerics share access to some general cleric spells. The cleric uses Charisma as his casting attribute for these spells. To learn or cast a spell, a cleric must have a casting attribute at least equal to the spell's level. 
 
 A cleric's selection of spells is limited, as indicated on \trefnp{Cleric Spells Known}. Two spells at every spell level must be drawn from the cleric's domains; sometimes these spells are normal spells on the cleric's spell list, but often they are only accessible by the domain. A cleric may also choose spells from his domain lists with his normal spells known.
 
@@ -216,23 +216,38 @@ Daeghul, god of slaughter & Chaotic evil & Destruction, Evil, Magic, War \\
 %Ribo, halfling god of trickery & Chaotic neutral & Chaos, Trickery, Water
 \end{tabularx}
 \end{dtable!*}
-\cf{Clr}{Deity, Domains, and Domain Spells} A cleric's deity influences his alignment, what magic he can perform, his values, and how others see him. A cleric chooses two domains from among those belonging to his deity.
+\cf{Clr}{Deity, Domains, and Domain Spells} A cleric's deity influences his alignment, what magic he can perform, his values, and how others see him. A cleric chooses two domains from among those belonging to his deity. If a cleric is not devoted to a particular deity, he still selects two domains to represent his spiritual inclinations and abilities.
 
-If a cleric is not devoted to a particular deity, he still selects two domains to represent his spiritual inclinations and abilities. The restriction on alignment domains still applies.
+\par Each domain grants a cleric access to two spells at each spell level, from 1st on up. He treats all four spells as if they were on his spell list, though he does not necessarily know how to cast all of them. Each domain also grants several abilities as the cleric increases in level.
 
-\par Each domain grants a cleric access to two spells at each spell level, from 1st on up. A cleric adds all four domain spells to his spell list (if they were not already on his spell list). Each domain also has several associated powers. At 1st level, a cleric can choose one domain power from one of his two domains. Clerics gain access to more domain granted powers as they increase in level.
+Each domain also has an associated domain attribute which is used for the domain's spells and abilities. The cleric may choose to use Charisma or his domain attribute to learn and cast spells granted by a domain. The domain attributes for each domain are listed below.
 
-\par For example, Cadius is a 1st-level cleric. He chooses Good
-and Law as his two domains. He gets the granted powers of one of his selected domains.
-The Good domain gives him access to \spell{bless} and \spell{protection from evil} as domain spells which he can learn, and could allow him to cast all spells with the good descriptor at \plus1 caster level (as if he were one level higher as a cleric) as a granted power. The Law domain gives him access to \spell{command} and \spell{protection from chaos} as domain spells, and could allow him to cast all law spells at \plus1 caster level as a granted power. Cadius can choose either the granted power from the Good domain or the granted power from the Law domain. He can learn any two of those four spells for his domain spells known, plus any one additional spell, which he can choose from either the cleric spell list or from the remaining two spells offered by his domains. When Cadius readies his spells for the day, he gets two 1st-level spell slots for being a 1st-level cleric and one bonus 1st-level spell slot for having a high Charisma score (15).
+\subcf{Air} Dexterity
+\subcf{Chaos} Charisma
+\subcf{Death} Constitution
+\subcf{Destruction} Strength
+\subcf{Earth} Constitution
+\subcf{Evil} Charisma
+\subcf{Fire} Wisdom
+\subcf{Good} Wisdom
+\subcf{Knowledge} Intelligence
+\subcf{Law} Wisdom
+\subcf{Magic} Intelligence
+\subcf{Protection} Wisdom
+\subcf{Strength} Strength
+\subcf{Travel} Dexterity
+\subcf{Trickery} Charisma
+\subcf{Vitality} Constitution
+\subcf{War} Strength
+\subcf{Water} Dexterity
 
 \cf{Clr}{Chaotic, Evil, Good, and Lawful Spells} A cleric can't cast spells of an alignment opposed to his own or his deity's (if he has one). Spells associated with particular alignments are indicated by the chaos, evil, good, and law descriptors in their spell descriptions.
 
-\cf{Clr}{Lesser Domain Aspect (Su)} A cleric's abilities are shaped by his domains. Each domain is associated with a lesser domain aspect. Lesser domain aspects are not activated. Options for domain aspects are listed at \pcref{Lesser Domain Aspects}. A cleric gains an additional lesser domain aspect at 2nd level.
+\cf{Clr}{Lesser Domain Aspect (Su)} A cleric's abilities are shaped by his domains. Each domain grants a lesser domain aspect. Lesser domain aspects are not activated. Options for domain aspects are listed at \pcref{Lesser Domain Aspects}. A cleric gains an additional lesser domain aspect at 2nd level.
 
 \cf{Clr}{Matters of Faith (Ex)} A cleric gains a \plus10 competence bonus to Knowledge (religion) checks made concerning his faith, such as questions about his deity or philosophy, religious rites, holy sites, and so on. Further, he is treated as being trained in Knowledge (religion) when making such checks, whether or not he actually is.
 
-\cf{Clr}{Channel Energy (Su)} At 2nd level, by channeling the power of his faith through his holy (or unholy) symbol, a cleric can act as a powerful conduit of divine energy. He cleric must choose whether to channel positive or negative energy. Once this choice is made, it cannot be reversed. This decision also determines whether the cleric casts spontaneous \spellindirect{cure light wounds}{cure} or \spellindirect{inflict light wounds}{inflict} spells (see below).
+\cf{Clr}{Channel Energy (Su)} At 2nd level, by channeling the power of his faith through his holy (or unholy) symbol, a cleric can act as a powerful conduit of divine energy. He must choose whether to channel positive or negative energy. Once this choice is made, it cannot be reversed. This decision also determines whether the cleric casts spontaneous \spellindirect{cure light wounds}{cure} or \spellindirect{inflict light wounds}{inflict} spells (see below).
 
 When a cleric channels energy, it affects all creatures in a \areamed radius burst centered on him, including himself. The cleric may choose to exclude a number of creatures from the effect equal to 1 \add half his Wisdom. The amount of damage dealt (if negative energy is channeled) or healed (if positive energy is channeled) is equal to 1d6 damage per two cleric levels. Each affected creature can make a Fortitude save to halve the damage. The DC of this save is equal to 10 \add the cleric's level \add the cleric's Charisma.
 
