@@ -155,7 +155,26 @@ All of the following are class features of the cleric.
 
 \cf{Clr}{Bonus Languages} A cleric's bonus language options include Celestial, Abyssal, and Infernal (the languages of good, chaotic evil, and lawful evil outsiders, respectively). These choices are in addition to the bonus languages available to the character because of his race.
 
-\cf{Clr}{Domains} A cleric chooses two domains, which represent his personal spiritual inclinations. If he has a deity, he must choose his domains from among those his deity offers. A cleric's choice of domains has broad effects on the cleric's spellcasting and supernatural abilities.
+\cf{Clr}{Domains} A cleric chooses two domains, which represent his personal spiritual inclinations. If he has a deity, he must choose his domains from among those his deity offers. A cleric's choice of domains has broad effects on the cleric's spellcasting and supernatural abilities. Each domain has an associated domain attribute which is used for the domain's abilities. The domains and their attributes are listed below. If a domain offers a choice of multiple attributes, the cleric must choose which attribute to use when he gains the domain, and that choice cannot normally be changed.
+
+\subcf{Air} Dexterity or Wisdom
+\subcf{Chaos} Charisma
+\subcf{Death} Constitution
+\subcf{Destruction} Strength or Charisma
+\subcf{Earth} Constitution or Wisdom
+\subcf{Evil} Charisma
+\subcf{Fire} Dexterity or Wisdom
+\subcf{Good} Wisdom or Charisma
+\subcf{Knowledge} Intelligence
+\subcf{Law} Wisdom
+\subcf{Magic} Intelligence
+\subcf{Protection} Constitution or Wisdom
+\subcf{Strength} Strength
+\subcf{Travel} Any physical attribute
+\subcf{Trickery} Dexterity or Charisma
+\subcf{Vitality} Constitution
+\subcf{War} Any 
+\subcf{Water} Dexterity or Wisdom
 
 \cf{Clr}{Spells} A cleric casts divine spells using his Charisma. To learn or cast a spell, a cleric must have a Charisma at least equal to half the spell's level. The Difficulty Class for a saving throw against a cleric's spell is 10 \add half the cleric's caster level \add the cleric's Charisma.
 
@@ -216,10 +235,6 @@ Daeghul, god of slaughter & Chaotic evil & Destruction, Evil, Magic, War \\
 \end{tabularx}
 \end{dtable!*}
 
-Each domain also has an associated domain attribute which is used for the domain's spells and abilities. The cleric may choose to use Charisma or his domain attribute to learn and cast spells granted by a domain. The domain attributes for each domain are listed below.
-
-\cf{Clr}{Chaotic, Evil, Good, and Lawful Spells} 
-
 \cf{Clr}{Lesser Domain Aspect (Su)} A cleric's abilities are shaped by his domains. Each domain grants a lesser domain aspect. Lesser domain aspects are not activated. Options for domain aspects are listed at \pcref{Lesser Domain Aspects}. A cleric gains an additional lesser domain aspect at 2nd level.
 
 \cf{Clr}{Matters of Faith (Ex)} A cleric gains a \plus10 competence bonus to Knowledge (religion) checks made concerning his faith, such as questions about his deity or philosophy, religious rites, holy sites, and so on. Further, he is treated as being trained in Knowledge (religion) when making such checks, whether or not he actually is.
@@ -236,7 +251,7 @@ The domain powers for each domain are described at \pcref{Domain Powers}. The cl
 
 \cf{Clr}{Channeled Domain Power (Su)} At 5th level, a cleric gains a channeled domain power from one of his domains. Unless otherwise stated, using a channelled domain power is identical to using channel energy and consumes a use of the cleric's channel energy ability. Instead of channeling positive or negative energy, the cleric instead gains the effect of the channelled domain power. If a channeled domain power deals damage, it functions like channeling negative energy unless otherwise noted. If a channeled domain power heals damage, it functions like channeling postive energy unless otherwise noted. The save DC of a cleric's channeled domain power is equal to 10 \add cleric level \add domain attribute. The channeled domain powers are described at \pcref{Channeled Domain Powers}.
 
-\subsection{Cleric Domain Powers}
+\ssecfake{Cleric Domain Powers}
 
 \subsubsection{Lesser Domain Aspects}\label{Lesser Domain Aspects}
 
@@ -291,7 +306,7 @@ The domain powers for each domain are described at \pcref{Domain Powers}. The cl
 \subcf{Evil} The cleric channels negative energy, except that it has no effect on evil creatures.
 \subcf{Fire} The cleric channels fiery energy. This deals fire damage and heals creatures with the fire subtype. A Reflex save halves the damage.
 \subcf{Good} The cleric channels positive energy, except that it has no effect on evil creatures.
-\subcf{Knowledge} The cleric channels knowledge itself. This functions like channeling positive energy, except that each affected creature gains a bonus equal to half the cleric's level on the next attack roll, damage roll, saving throw, or check that it makes instead of being healed. If this bonus is not used within 5 rounds, it is wasted.
+\subcf{Knowledge} The cleric channels insight from knowledge. This functions like channeling positive energy, except that each affected creature gains an enhancement bonus equal to half the cleric's level on the next attack roll, damage roll, saving throw, or check that it makes instead of being healed. If this bonus is not used within 5 rounds, it is wasted.
 \subcf{Law} The cleric channels axiomatic energy. This deals 4 damage per two cleric levels to all creatures within a 40 ft. cube centered on the cleric. A Will save halves the damage, and it has no effect on lawful creatures.
 \subcf{Magic} The cleric channels magical energy. This heals creatures who can cast spells and deals damage to creatures who cannot.
 \subcf{Nature} The cleric channels positive energy, except that the cleric can decide whether it acts as positive or negative energy to animals and plants.
