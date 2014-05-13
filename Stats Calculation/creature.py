@@ -136,9 +136,9 @@ class Creature(object):
         self.initiative.add_inherent(self.attributes.wisdom.get_total()/2)
 
         #Assume user has basic feats
-        self.feats.append(abilities.OverwhelmingForce())
-        self.feats.append(abilities.TwoWeaponFighting())
-        self.feats.append(abilities.TwoWeaponDefense())
+        self.feats.append(abilities.overwhelming_force)
+        self.feats.append(abilities.two_weapon_fighting)
+        self.feats.append(abilities.two_weapon_defense)
         for feat in self.feats:
             if feat.meets_prerequisites(self):
                 feat.apply_benefit(self)

@@ -23,45 +23,44 @@ def rage(level, creature):
 
 class Ability(object):
     tags = set()
+    def __init__(self, apply_benefit, meets_prerequisites = None, tags = None):
+        self.tags = tags
+        self.apply_benefit = apply_benefit
+        if meets_prerequisites is None:
+            self.meets_prerequisites = lambda x: True
+        else:
+            self.meets_prerequisites = meets_prerequisites
 
     def has_tag(self, tag):
+        if self.tags is None:
+            return False
         return tag.lower() in self.tags
 
-    def meets_prerequisites(self, creature):
-        return True
-
-    def apply_benefit(self, creature):
-        pass
-
-
-class OverwhelmingForce(Ability):
-    tags = set(('feat', 'combat', 'power'))
-    def meets_prerequisites(self, creature):
+def overwhelming_force_prerequisites(creature):
         return creature.attributes.strength.get_total() >=5 and creature.attack_bonus.base_attack_bonus >=8 and creature.weapon.encumbrance == 'heavy'
+def overwhelming_force_benefit(creature):
+    if creature.weapon.encumbrance == 'heavy':
+        creature.weapon_damage.add_inherent(
+                (creature.attributes.strength.get_total()+1)/2)
+overwhelming_force = Ability(overwhelming_force_prerequisites,
+        overwhelming_force_benefit, set(('feat', 'combat', 'power')))
 
-    def apply_benefit(self, creature):
-        if creature.weapon.encumbrance == 'heavy':
-            creature.weapon_damage.add_inherent(
-                    (creature.attributes.strength.get_total()+1)/2)
+def two_weapon_fighting_benefit(creature):
+    if creature.offhand_weapon:
+        creature.attack_bonus.add_competence(2)
 
-class TwoWeaponFighting(Ability):
-    tags = set(('feat', 'combat', 'finesse'))
-    def meets_prerequisites(self, creature):
-        return creature.attributes.dexterity.get_total() >= 3
+two_weapon_fighting = Ability(lambda creature: 
+        creature.attributes.dexterity.get_total() >=3, 
+        two_weapon_fighting_benefit, set(('feat', 'combat', 'finesse')))
 
-    def apply_benefit(self, creature):
-        if creature.offhand_weapon:
-            creature.attack_bonus.add_competence(2)
+def two_weapon_defense_benefit(creature):
+    if creature.offhand_weapon:
+        creature.armor_class.shield.add_competence(2)
 
-class TwoWeaponDefense(Ability):
-    tags = set(('feat', 'combat', 'defense', 'finesse'))
-    def meets_prerequisites(self, creature):
-        #can't currently implement feat prerequisites
-        return creature.attributes.dexterity.get_total() >= 3
-
-    def apply_benefit(self, creature):
-        if creature.offhand_weapon:
-            creature.armor_class.shield.add_competence(2)
+two_weapon_defense = Ability(lambda creature: 
+        creature.attributes.dexterity.get_total() >= 3,
+        two_weapon_defense_benefit, 
+        set(('feat', 'combat', 'defensje', 'finesse')))
 
 class CombatExpertise(Ability):
     tags = set(('feat', 'combat', 'defense', 'style'))
