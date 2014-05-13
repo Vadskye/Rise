@@ -4,8 +4,10 @@ from classes import CreatureProgression, GOOD, AVERAGE, POOR
 
 class Monster(creature.Creature):
     
-    def __init__(self, raw_stats, level):
+    def __init__(self, raw_stats, level, verbose = False):
         self.level = level
+        self.verbose = verbose
+
         self._init_core_statistics()
         self._interpret_raw_stats(raw_stats)
 
@@ -36,6 +38,9 @@ class Aberration(CreatureProgression):
     bab_progression = AVERAGE
     save_progressions = {'fortitude': AVERAGE, 'reflex':POOR, 'will':AVERAGE}
     hit_value = 5
+
+    def apply_modifications(self, base_creature):
+        pass
 
 class Animal(CreatureProgression):
     bab_progression = AVERAGE
