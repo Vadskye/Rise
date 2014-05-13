@@ -1,7 +1,6 @@
 import util
 
 class Ability(object):
-    tags = set()
     def __init__(self, apply_benefit, meets_prerequisites = None, tags = None):
         self.tags = tags
         self.apply_benefit = apply_benefit
@@ -101,3 +100,19 @@ deadly_aim = Ability(deadly_aim_benefit, lambda creature:
 #MONSTER TRAITS
 ####################
 
+attribute_strength = Ability(lambda c: c.attribute.strength.add_inherent(1))
+attribute_dexterity = Ability(lambda c: c.attribute.dexterity.add_inherent(1))
+attribute_constitution = Ability(lambda c:
+        c.attribute.constitution.add_inherent(1))
+attribute_intelligence = Ability(lambda c:
+        c.attribute.intelligence.add_inherent(1))
+attribute_wisdom = Ability(lambda c: c.attribute.wisdom.add_inherent(1))
+attribute_charisma = Ability(lambda c: c.attribute.charisma.add_inherent(1))
+
+def natural_armor_benefit(creature):
+    #Give 2 AC the first time, 1 every additional time
+    if creature.has_ability(natural_armor):
+        creature.armor_class.natural_armor.add_inherent(1)
+    else:
+        creature.armor_class.natural_armor.add_inherent(2)
+natural_armor = Ability(natural_armor_benefit)
