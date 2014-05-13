@@ -12,12 +12,6 @@ class Creature(object):
         #http://stackoverflow.com/questions/9946736/python-not-creating-a-new-clean-instance
         self.level = level
         self.verbose = verbose
-        #default to full attack for now
-        self.attack_mode = 'full attack'
-        #amount creature must hit by to hit with offhand attack
-        #Currently assuming that offhand weapon has same attack bonus
-        #as main hand weapon, and that offhand weapon is light
-        self.offhand_threshold = 5
 
         self._init_core_statistics()
 
@@ -29,9 +23,6 @@ class Creature(object):
 
         self._add_level_scaling()
         self._calculate_derived_statistics()
-
-        self.critical_damage = 0
-        self.is_alive = True
 
     def _init_core_statistics(self):
         self.attack_bonus = util.AttackBonus(level=self.level)
@@ -272,6 +263,20 @@ class Creature(object):
         self.feats.append(feat)
         feat.apply_benefit(self)
 
+class CombatCreature(Creature):
+    def __init__(self, raw_stats, raw_attributes, level, verbose = False):
+        super(CombatCreature, self).__init__(raw_stats, raw_attributes, level,
+                verbose)
+        #default to full attack for now
+        self.attack_mode = 'full attack'
+        #amount creature must hit by to hit with offhand attack
+        #Currently assuming that offhand weapon has same attack bonus
+        #as main hand weapon, and that offhand weapon is light
+        self.offhand_threshold = 5
+
+        self.critical_damage = 0
+        self.is_alive = True
+
     def new_round(self):
         self.damage_reduction.refresh()
 
@@ -323,9 +328,6 @@ class Creature(object):
         enemy.take_damage(damage_dealt, ['spell'])
         return damage_dealt
 
-    def special_attack(self, enemy):
-        pass
-
     def damage_per_round(self, ac):
         return full_weapon_damage_dealt(self.attack_bonus.get_total(),
                 ac, self.attack_bonus.base_attack_bonus, self.weapon_damage.get_total())
@@ -340,6 +342,9 @@ class Creature(object):
 
     def roll_initiative(self):
         return util.d20.roll()+self.initiative.get_total()
+
+    def special_attack(self, enemy):
+        pass
 
 class Character(Creature):
     #http://stackoverflow.com/questions/7629556/python-super-and-init-vs-init-self
