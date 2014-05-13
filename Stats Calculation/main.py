@@ -101,8 +101,8 @@ if __name__ == "__main__":
             #print second
             second.name='second_char'
 
-            #first.add_ability(abilities.CombatExpertise(), False)
-            first.add_ability(abilities.PowerAttack(), False)
+            #first.add_ability(abilities.combat_expertise, False)
+            first.add_ability(abilities.power_attack, False)
 
             battle = combat.Battle(first, second)
 
