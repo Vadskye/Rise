@@ -1,5 +1,20 @@
 import util
 
+class Ability(object):
+    tags = set()
+    def __init__(self, apply_benefit, meets_prerequisites = None, tags = None):
+        self.tags = tags
+        self.apply_benefit = apply_benefit
+        if meets_prerequisites is None:
+            self.meets_prerequisites = lambda x: True
+        else:
+            self.meets_prerequisites = meets_prerequisites
+
+    def has_tag(self, tag):
+        if self.tags is None:
+            return False
+        return tag.lower() in self.tags
+
 def barbarian_dr(level, creature):
     dr_value = level
     creature.damage_reduction = util.DamageReduction(dr_value,
@@ -20,21 +35,6 @@ def rage(level, creature):
     creature.saves.fortitude.add_competence(util.std_scale(level))
     creature.saves.will.add_competence(util.std_scale(level))
     creature.current_hit_points += level*util.std_scale(level)
-
-class Ability(object):
-    tags = set()
-    def __init__(self, apply_benefit, meets_prerequisites = None, tags = None):
-        self.tags = tags
-        self.apply_benefit = apply_benefit
-        if meets_prerequisites is None:
-            self.meets_prerequisites = lambda x: True
-        else:
-            self.meets_prerequisites = meets_prerequisites
-
-    def has_tag(self, tag):
-        if self.tags is None:
-            return False
-        return tag.lower() in self.tags
 
 def overwhelming_force_prerequisites(creature):
         return creature.attributes.strength.get_total() >=5 and creature.attack_bonus.base_attack_bonus >=8 and creature.weapon.encumbrance == 'heavy'
