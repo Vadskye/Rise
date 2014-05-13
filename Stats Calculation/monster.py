@@ -10,6 +10,7 @@ class Monster(creature.Creature):
 
         self._init_core_statistics()
         self._interpret_raw_stats(raw_stats)
+        self.creature_type = raw_stats['creature type']
 
         self._interpret_types(raw_stats)
         self._calculate_class_stats()
