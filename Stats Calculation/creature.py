@@ -215,23 +215,23 @@ class Creature(object):
             attributes += ' ' + str(getattr(self.attributes, title).get_total())
         return attributes
 
-    def to_monster(self):
+    def to_latex(self):
         monster_string=''
-        header =  '\\subsection{{0}}\n\\begin{mstatblock}\n'.format(self.name)
+        header =  '\\subsection{%s}\n\\begin{mstatblock}\n' % self.name
         monster_string+=header
 
         types = '\\par {0} {1} {2}'.format(
-                self.alignment, self.size, self.creature_type)
-        if self.subtypes:
-            types +=' {0}'.format(self.subtypes)
+                'alignment', self.size, self.creature_type)
+        #if self.subtypes:
+        #    types +=' {0}'.format()
         types+=' \\textbf{CR} {0}'
-        if self.archetypes:
-            types+=' {0}'.format(self.archetypes)
+        if self.archetype:
+            types+=' {0}'.format(self.archetype)
         types+='\n'
         monster_string+=types
 
-        senses = '\\par \textbf{Init} {0}; Perception {1}'.format(
-                self.initiative, self.skills['Perception'])
+        senses = '\\par \textbf{Init} %s; Perception %s' % (self.initiative, '+0')
+        """
         if self.skills['Sense Motive'] is not None:
             senses += ', Sense Motive {0}'.format(
                     self.skills['Sense Motive'])
@@ -250,6 +250,7 @@ class Creature(object):
         if self.languages:
             monster_string+='\\par \\textbf{Languages} {0}\n'.format(
                     self.languages)
+        """
 
         return monster_string
 
