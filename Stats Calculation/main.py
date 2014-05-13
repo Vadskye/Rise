@@ -19,6 +19,8 @@ def initialize_argument_parser():
             help='the creature file to load', default=None)
     parser.add_argument('-l', '--level', dest='level', type=int,
             help='the level of the creature', default=None)
+    parser.add_argument('-o', '--output', dest='output', default=None,
+            help='A file name to store any output in')
     return vars(parser.parse_args())
 
 def compare_ac_to_reflex(creature):
@@ -77,10 +79,18 @@ if __name__ == "__main__":
         creature = Creature.from_creature_name(args['creature_input'],
                 args['level'])
         print creature
+        if args['output'] is not None:
+            latex_string = creature.to_latex()
+            output_file = open(args['output'], 'w')
+            output_file.write(latex_string)
     elif args['function'] == MONSTER:
         creature = Monster.from_monster_name(args['creature_input'],
                 args['level'])
         print creature
+        if args['output'] is not None:
+            latex_string = creature.to_latex()
+            output_file = open(args['output'], 'w')
+            output_file.write(latex_string)
     elif args['function'] == COMBAT:
         for i in xrange(20):
             """
