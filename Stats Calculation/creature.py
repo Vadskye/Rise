@@ -38,7 +38,8 @@ class Creature(object):
         self.max_hit_points = 0
         self.damage_reduction = util.DamageReduction()
         self.initiative = util.Modifier()
-        self.feats = list()
+        self.feats = set()
+        self.abilities = set()
 
     def _interpret_raw_stats(self, raw_stats):
         self.name = raw_stats['name']
@@ -259,9 +260,15 @@ class Creature(object):
                 return False
         ability.apply_benefit(self)
         if ability.has_tag('feat'):
-            self.feats.append(ability)
+            self.feats.add(ability)
         else:
-            self.abilities.append(ability)
+            self.abilities.add(ability)
+
+    def has_ability(self, ability):
+        return ability in self.abilities
+
+    def has_feat(self, feat):
+        return feat in self.feats
 
 class CombatCreature(Creature):
     def __init__(self, raw_stats, raw_attributes, level, verbose = False):
