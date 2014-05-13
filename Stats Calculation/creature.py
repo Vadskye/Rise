@@ -255,13 +255,16 @@ class Creature(object):
 
         return monster_string
 
-    def add_feat(self, feat, check_prerequisites = True):
+    def add_ability(self, ability, check_prerequisites = True):
         if check_prerequisites:
-            if not feat.meets_prerequisites(self):
-                if self.verbose: print 'Feat prerequisites not met'
+            if not ability.meets_prerequisites(self):
+                if self.verbose: print 'Ability prerequisites not met'
                 return False
-        self.feats.append(feat)
-        feat.apply_benefit(self)
+        ability.apply_benefit(self)
+        if ability.has_tag('feat'):
+            self.feats.append(ability)
+        else:
+            self.abilities.append(ability)
 
 class CombatCreature(Creature):
     def __init__(self, raw_stats, raw_attributes, level, verbose = False):
