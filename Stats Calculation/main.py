@@ -74,7 +74,7 @@ if __name__ == "__main__":
     args = initialize_argument_parser()
     #If no level is specified, show all levels
     if args['function'] == CHARACTER:
-        creature = Character.from_creature_name(args['creature'],
+        creature = Creature.from_creature_name(args['creature_input'],
                 args['level'])
         print creature
     elif args['function'] == MONSTER:
