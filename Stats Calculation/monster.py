@@ -1,6 +1,6 @@
 import creature
 import util
-from classes import GenericClass, GOOD, AVERAGE, POOR
+from classes import CharacterClass, GOOD, AVERAGE, POOR
 
 class Monster(creature.Creature):
     
@@ -12,7 +12,7 @@ class Monster(creature.Creature):
         self._interpret_types(raw_stats)
         self._calculate_class_stats()
 
-        self._interpret_attributes(util.parse_stats_from_file('data/attributes/warrior.txt'))
+        self._interpret_raw_attributes(util.parse_stats_from_file('data/attributes/warrior.txt'))
 
         self._calculate_derived_statistics()
 
@@ -32,26 +32,26 @@ class Monster(creature.Creature):
                 'scout': Scout
                 }[raw_stats['archetype']](self.class_calculator)
 
-class Aberration(GenericClass):
-    base_attack_bonus_progression = AVERAGE
+class Aberration(CharacterClass):
+    bab_progression = AVERAGE
     save_progressions = {'fortitude': AVERAGE, 'reflex':POOR, 'will':AVERAGE}
     hit_value = 5
 
-class Animal(GenericClass):
-    base_attack_bonus_progression = AVERAGE
+class Animal(CharacterClass):
+    bab_progression = AVERAGE
     save_progressions = {'fortitude': AVERAGE, 'reflex':AVERAGE, 'will':POOR}
     hit_value = 6
 
-class Archetype():
+class Archetype(object):
     def __init__(self, creature_type):
         self.creature_type = creature_type
         self.perform_improvements()
 
     def improve_bab(self):
-        if self.creature_type.base_attack_bonus_progression == POOR:
-            self.creature_type.base_attack_bonus_progression = AVERAGE
+        if self.creature_type.bab_progression == POOR:
+            self.creature_type.bab_progression = AVERAGE
         else:
-            self.creature_type.base_attack_bonus_progression = GOOD
+            self.creature_type.bab_progression = GOOD
 
     def improve_save(self, save_name):
         if self.creature_type.save_progressions[save_name] == POOR:
