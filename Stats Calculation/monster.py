@@ -1,6 +1,6 @@
 import creature
 import util
-from classes import CharacterClass, GOOD, AVERAGE, POOR
+from classes import CreatureProgression, GOOD, AVERAGE, POOR
 
 class Monster(creature.Creature):
     
@@ -32,12 +32,12 @@ class Monster(creature.Creature):
                 'scout': Scout
                 }[raw_stats['archetype']](self.class_calculator)
 
-class Aberration(CharacterClass):
+class Aberration(CreatureProgression):
     bab_progression = AVERAGE
     save_progressions = {'fortitude': AVERAGE, 'reflex':POOR, 'will':AVERAGE}
     hit_value = 5
 
-class Animal(CharacterClass):
+class Animal(CreatureProgression):
     bab_progression = AVERAGE
     save_progressions = {'fortitude': AVERAGE, 'reflex':AVERAGE, 'will':POOR}
     hit_value = 6
