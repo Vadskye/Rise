@@ -29,15 +29,14 @@ class Barbarian(CreatureProgression):
     hit_value = 7
 
     def apply_modifications(self, base_creature):
-        abilities.danger_sense(self.level, base_creature)
-        abilities.rage(self.level, base_creature)
-        abilities.barbarian_dr(self.level, base_creature)
-
-        #Larger than Life/Belief
+        base_creature.add_ability(abilities.rage)
+        base_creature.add_ability(abilities.barbarian_damage_reduction)
+        if self.level>=2:
+            base_creature.add_ability(abilities.danger_sense)
         if self.level>=7:
             abilities.larger_than_life(base_creature)
-            if self.level>=17:
-                abilities.larger_than_belief(base_creature)
+        if self.level>=17:
+            abilities.larger_than_belief(base_creature)
 
 class Bard(CreatureProgression):
     bab_progression = AVERAGE
