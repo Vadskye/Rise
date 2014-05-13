@@ -1,15 +1,23 @@
 import argparse
-from creature import Creature, Character
+from creature import Creature, CombatCreature
+from monster import Monster
 import util
 import combat
 import cProfile
 import abilities
 
+CHARACTER = 'character'
+MONSTER = 'monster'
+COMBAT = 'combat'
+
 def initialize_argument_parser():
     parser = argparse.ArgumentParser(description='Calculate combat statistics for Rise characters')
-    parser.add_argument('-c', '--creature', dest='creature', 
+    parser.add_argument('-f', '--function', dest='function',
+            help='function to perform', default=COMBAT,
+            choices=[COMBAT, CHARACTER, MONSTER])
+    parser.add_argument('-c', '--creature-input', dest='creature_input', 
             help='the creature file to load', default=None)
-    parser.add_argument('-l', '--level', dest='level',
+    parser.add_argument('-l', '--level', dest='level', type=int,
             help='the level of the creature', default=None)
     return vars(parser.parse_args())
 
@@ -64,17 +72,16 @@ def normalize_ac(creature):
 
 if __name__ == "__main__":
     args = initialize_argument_parser()
-
-    if args['level']:
-        creature = Creature.from_creature_name(args['creature'],
-                int(args['level']))
+    #If no level is specified, show all levels
+    if args['function'] == CHARACTER:
+        creature = Character.from_creature_name(args['creature'],
+                args['level'])
         print creature
-    #Otherwise, show all levels
-    elif args['creature']:
-        for i in xrange(20):
-            creature = Creature.from_creature_name(args['creature'], i+1)
-            print creature
-    else:
+    elif args['function'] == MONSTER:
+        creature = Monster.from_monster_name(args['creature_input'],
+                args['level'])
+        print creature
+    elif args['function'] == COMBAT:
         for i in xrange(20):
             """
             barbarian = Character.from_creature_name('brb-heavy', i+1)
@@ -87,8 +94,8 @@ if __name__ == "__main__":
             """
             first_name = 'monk-unarmed'
             second_name = 'ftr-heavy'
-            first = Character.from_creature_name(first_name, i+1)
-            second = Character.from_creature_name(second_name, i+1)
+            first = CombatCreature.from_creature_name(first_name, i+1)
+            second = CombatCreature.from_creature_name(second_name, i+1)
 
             #print first
             #print second
