@@ -62,34 +62,30 @@ two_weapon_defense = Ability(lambda creature:
         two_weapon_defense_benefit, 
         set(('feat', 'combat', 'defensje', 'finesse')))
 
-class CombatExpertise(Ability):
-    tags = set(('feat', 'combat', 'defense', 'style'))
-    def meets_prerequisites(self, creature):
-        return creature.attributes.intelligence.get_total() >= 3
-    def apply_benefit(self, creature):
-        creature.attack_bonus.add_circumstance(-util.bab_scale(creature.level))
-        creature.armor_class.dodge.add_circumstance(util.bab_scale(creature.level))
+def combat_expertise_benefit(creature):
+    creature.attack_bonus.add_circumstance(-util.bab_scale(creature.level))
+    creature.armor_class.dodge.add_circumstance(util.bab_scale(creature.level))
+combat_expertise = Ability(lambda creature:
+        creature.attributes.intelligence.get_total() >= 3,
+        combat_expertise_benefit, set(('feat', 'combat', 'defense', 'style')))
 
-class PowerAttack (Ability):
-    tags = set(('feat', 'combat', 'power', 'style'))
-    def meets_prerequisites(self, creature):
-        return creature.attributes.strength.get_total() >= 3
-    def apply_benefit(self, creature):
-        creature.attack_bonus.add_circumstance(-util.bab_scale(creature.level))
-        damage_bonus = 2+(creature.attack_bonus.base_attack_bonus/5)*2
-        if creature.weapon.encumbrance == 'medium' or creature.weapon.encumbrance == 'heavy':
-            creature.weapon_damage.add_circumstance(damage_bonus)
-        else:
-            creature.weapon_damage.add_circumstance(damage_bonus/2)
-        if creature.offhand_weapon:
-            creature.offhand_weapon_damage.add_circumstance(damage_bonus/2)
-
-#Doesn't check to make sure creature uses ranged weapon
-class DeadlyAim (Ability):
-    tags = set(('feat', 'combat', 'precision', 'style'))
-    def meets_prerequisites(self, creature):
-        return creature.attributes.dexterity.get_total() >= 3
-    def apply_benefit(self, creature):
-        creature.attack_bonus.add_circumstance(-util.bab_scale(creature.level))
-        damage_bonus = 2+(creature.attack_bonus.base_attack_bonus/5)*2
+def power_attack_benefit(creature):
+    creature.attack_bonus.add_circumstance(-util.bab_scale(creature.level))
+    damage_bonus = 2+(creature.attack_bonus.base_attack_bonus/5)*2
+    if creature.weapon.encumbrance == 'medium' or creature.weapon.encumbrance == 'heavy':
         creature.weapon_damage.add_circumstance(damage_bonus)
+    else:
+        creature.weapon_damage.add_circumstance(damage_bonus/2)
+    if creature.offhand_weapon:
+        creature.offhand_weapon_damage.add_circumstance(damage_bonus/2)
+power_attack = Ability(lambda creature:
+        creature.attributes.strength.get_total() >= 3,
+        power_attack_benefit, set(('feat', 'combat', 'power', 'style')))
+
+def deadly_aim_benefit(creature):
+    creature.attack_bonus.add_circumstance(-util.bab_scale(creature.level))
+    damage_bonus = 2+(creature.attack_bonus.base_attack_bonus/5)*2
+    creature.weapon_damage.add_circumstance(damage_bonus)
+deadly_aim = Ability(lambda creature:
+        creature.attributes.dexterity.get_total() >= 3,
+        deadly_aim_benefit, set(('feat', 'combat', 'precision', 'style')))
