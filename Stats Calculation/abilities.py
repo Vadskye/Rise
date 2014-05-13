@@ -15,6 +15,10 @@ class Ability(object):
             return False
         return tag.lower() in self.tags
 
+####################
+#CLASS FEATURES
+####################
+
 def barbarian_damage_reduction_benefit(creature):
     creature.damage_reduction = util.DamageReduction(creature.level,
         'physical')
@@ -36,6 +40,10 @@ def rage_benefit(level, creature):
     creature.saves.will.add_competence(util.std_scale(level))
     creature.current_hit_points += level*util.std_scale(level)
 rage = Ability(rage_benefit)
+
+####################
+#FEATS
+####################
 
 def overwhelming_force_benefit(creature):
     if creature.weapon.encumbrance == 'heavy':
@@ -88,3 +96,7 @@ def deadly_aim_benefit(creature):
 deadly_aim = Ability(deadly_aim_benefit, lambda creature:
         creature.attributes.dexterity.get_total() >= 3,
         set(('feat', 'combat', 'precision', 'style')))
+
+####################
+#MONSTER TRAITS
+####################
