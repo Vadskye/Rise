@@ -26,7 +26,7 @@ barbarian_damage_reduction = Ability(barbarian_damage_reduction_benefit)
     
 def danger_sense_benefit(creature):
     creature.initiative.add_competence(level/2)
-danger_sense
+danger_sense = Ability(danger_sense_benefit)
 
 def larger_than_life_benefit(creature):
     creature.weapon_damage.die.increase_size(increase_min=True)
@@ -100,3 +100,4 @@ deadly_aim = Ability(deadly_aim_benefit, lambda creature:
 ####################
 #MONSTER TRAITS
 ####################
+
