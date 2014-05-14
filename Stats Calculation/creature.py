@@ -4,7 +4,7 @@ import equipment
 import util
 import combat
 import dice
-import abilities
+from abilities import abilities
 
 class Creature(object):
     def __init__(self, raw_stats, raw_attributes, level, verbose=False):
@@ -147,9 +147,9 @@ class Creature(object):
         self.initiative.add_inherent(self.attributes.wisdom.get_total()/2)
 
         #Assume user has basic feats
-        self.add_ability(abilities.overwhelming_force)
-        self.add_ability(abilities.two_weapon_fighting)
-        self.add_ability(abilities.two_weapon_defense)
+        self.add_ability(abilities['overwhelming force'])
+        self.add_ability(abilities['two weapon fighting'])
+        self.add_ability(abilities['two weapon defense'])
 
     #http://stackoverflow.com/questions/141545/overloading-init-in-python
     @classmethod

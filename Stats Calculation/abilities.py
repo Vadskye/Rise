@@ -21,6 +21,8 @@ class Ability(object):
             return False
         return tag.lower() in self.tags
 
+abilities = dict()
+
 ####################
 #CLASS FEATURES
 ####################
@@ -28,17 +30,17 @@ class Ability(object):
 def barbarian_damage_reduction_benefit(creature):
     creature.damage_reduction = util.DamageReduction(creature.level,
         'physical')
-barbarian_damage_reduction = Ability('damage reduction',
+abilities['barbarian damage reduction'] = Ability('damage reduction',
         barbarian_damage_reduction_benefit)
     
 def danger_sense_benefit(creature):
     creature.initiative.add_competence(level/2)
-danger_sense = Ability('danger sense', danger_sense_benefit)
+abilities['danger sense'] = Ability('danger sense', danger_sense_benefit)
 
 def larger_than_life_benefit(creature):
     creature.weapon_damage.die.increase_size(increase_min=True)
-larger_than_life = Ability('larger than life', larger_than_life_benefit)
-larger_than_belief = Ability('larger than belief', larger_than_life_benefit)
+abilities['larger than life'] = Ability('larger than life', larger_than_life_benefit)
+abilities['larger than belief'] = Ability('larger than belief', larger_than_life_benefit)
 
 def rage_benefit(level, creature):
     creature.weapon_damage.add_competence(util.std_scale(level))
@@ -46,7 +48,7 @@ def rage_benefit(level, creature):
     creature.saves.fortitude.add_competence(util.std_scale(level))
     creature.saves.will.add_competence(util.std_scale(level))
     creature.current_hit_points += level*util.std_scale(level)
-rage = Ability('rage', rage_benefit)
+abilities['rage'] = Ability('rage', rage_benefit)
 
 ####################
 #FEATS
@@ -58,28 +60,28 @@ def overwhelming_force_benefit(creature):
                 (creature.attributes.strength.get_total()+1)/2)
 def overwhelming_force_prerequisites(creature):
         return creature.attributes.strength.get_total() >=5 and creature.attack_bonus.base_attack_bonus >=8 and creature.weapon.encumbrance == 'heavy'
-overwhelming_force = Ability('overwhelming force', overwhelming_force_benefit,
+abilities['overwhelming force'] = Ability('overwhelming force', overwhelming_force_benefit,
         overwhelming_force_prerequisites, set(('feat', 'combat', 'power')))
 
 def two_weapon_fighting_benefit(creature):
     if creature.offhand_weapon:
         creature.attack_bonus.add_competence(2)
 
-two_weapon_fighting = Ability('two-weapon fighting', two_weapon_fighting_benefit,
+abilities['two weapon fighting'] = Ability('two-weapon fighting', two_weapon_fighting_benefit,
         lambda creature: creature.attributes.dexterity.get_total() >=3, 
         set(('feat', 'combat', 'finesse')))
 
 def two_weapon_defense_benefit(creature):
     if creature.offhand_weapon:
         creature.armor_class.shield.add_competence(2)
-two_weapon_defense = Ability('two-weapon defense', two_weapon_defense_benefit,
+abilities['two weapon defense'] = Ability('two-weapon defense', two_weapon_defense_benefit,
         lambda creature: creature.attributes.dexterity.get_total() >= 3,
         set(('feat', 'combat', 'defensje', 'finesse')))
 
 def combat_expertise_benefit(creature):
     creature.attack_bonus.add_circumstance(-util.bab_scale(creature.level))
     creature.armor_class.dodge.add_circumstance(util.bab_scale(creature.level))
-combat_expertise = Ability('combat expertise', combat_expertise_benefit, 
+abilities['combat expertise'] = Ability('combat expertise', combat_expertise_benefit, 
         lambda creature: creature.attributes.intelligence.get_total() >= 3,
         set(('feat', 'combat', 'defense', 'style')))
 
@@ -92,7 +94,7 @@ def power_attack_benefit(creature):
         creature.weapon_damage.add_circumstance(damage_bonus/2)
     if creature.offhand_weapon:
         creature.offhand_weapon_damage.add_circumstance(damage_bonus/2)
-power_attack = Ability('power attack', power_attack_benefit, lambda creature:
+abilities['power attack'] = Ability('power attack', power_attack_benefit, lambda creature:
         creature.attributes.strength.get_total() >= 3,
         set(('feat', 'combat', 'power', 'style')))
 
@@ -100,7 +102,7 @@ def deadly_aim_benefit(creature):
     creature.attack_bonus.add_circumstance(-util.bab_scale(creature.level))
     damage_bonus = 2+(creature.attack_bonus.base_attack_bonus/5)*2
     creature.weapon_damage.add_circumstance(damage_bonus)
-deadly_aim = Ability('deadly aim', deadly_aim_benefit, lambda creature:
+abilities['deadly aim'] = Ability('deadly aim', deadly_aim_benefit, lambda creature:
         creature.attributes.dexterity.get_total() >= 3,
         set(('feat', 'combat', 'precision', 'style')))
 
@@ -108,17 +110,17 @@ deadly_aim = Ability('deadly aim', deadly_aim_benefit, lambda creature:
 #MONSTER TRAITS
 ####################
 
-attribute_strength = Ability('attribute: strength', lambda c:
+abilities['attribute strength'] = Ability('attribute: strength', lambda c:
         c.attribute.strength.add_inherent(1))
-attribute_dexterity = Ability('attribute: dexterity', lambda c:
+abilities['attribute dexterity'] = Ability('attribute: dexterity', lambda c:
         c.attribute.dexterity.add_inherent(1))
-attribute_constitution = Ability('attribute: constitution', lambda c:
+abilities['attribute constitution'] = Ability('attribute: constitution', lambda c:
         c.attribute.constitution.add_inherent(1))
-attribute_intelligence = Ability('attribute: intelligence', lambda c:
+abilities['attribute intelligence'] = Ability('attribute: intelligence', lambda c:
         c.attribute.intelligence.add_inherent(1))
-attribute_wisdom = Ability('attribute: wisdom', lambda c: 
+abilities['attribute wisdom'] = Ability('attribute: wisdom', lambda c: 
         c.attribute.wisdom.add_inherent(1))
-attribute_charisma = Ability('attribute: charisma', lambda c:
+abilities['attribute charisma'] = Ability('attribute: charisma', lambda c:
         c.attribute.charisma.add_inherent(1))
 
 def natural_armor_benefit(creature):
@@ -127,8 +129,8 @@ def natural_armor_benefit(creature):
         creature.armor_class.natural_armor.add_inherent(1)
     else:
         creature.armor_class.natural_armor.add_inherent(2)
-natural_armor = Ability('natural armor', natural_armor_benefit)
+abilities['natural armor'] = Ability('natural armor', natural_armor_benefit)
 
-darkvision = Ability('darkvision', None, tags = set('sense'), value = 60)
-lowlight_vision = Ability('low-light vision', None, tags = set('sense'))
-scent = Ability('scent', None, tags = set('sense'), value = 30)
+abilities['darkvision'] = Ability('darkvision', None, tags = set('sense'), value = 60)
+abilities['lowlight vision'] = Ability('low-light vision', None, tags = set('sense'))
+abilities['scent'] = Ability('scent', None, tags = set('sense'), value = 30)
