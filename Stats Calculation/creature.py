@@ -187,7 +187,7 @@ class Creature(object):
             #needed when tracking main, offhand attack bonus separately
             #self.attack_bonus.add_enhancement(scale_factor)
             self.offhand_weapon_damage.add_enhancement(scale_factor)
-        for save_title in util.save_titles:
+        for save_title in util.SAVE_NAMES:
             getattr(self.saves,save_title).add_enhancement(scale_factor)
 
     def _calculate_attack_attribute_bonus(self):
@@ -221,7 +221,7 @@ class Creature(object):
 
     def _to_string_attributes(self):
         attributes = 'Attr'
-        for title in util.attribute_titles:
+        for title in util.ATTRIBUTE_NAMES:
             attributes += ' ' + str(getattr(self.attributes, title).get_total())
         return attributes
 
