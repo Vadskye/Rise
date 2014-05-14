@@ -86,7 +86,7 @@ if __name__ == "__main__":
     elif args['function'] == MONSTER:
         creature = Monster.from_monster_name(args['creature_input'],
                 args['level'])
-        print creature
+        print creature.to_latex()
         if args['output'] is not None:
             latex_string = creature.to_latex()
             output_file = open(args['output'], 'w')
