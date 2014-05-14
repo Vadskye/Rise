@@ -2,13 +2,41 @@ import re
 import math
 import dice
 
-attribute_titles = ['strength', 'dexterity', 'constitution', 'intelligence', 
-        'wisdom', 'charisma']
-ac_modifier_titles = ['armor', 'shield', 'dodge', 'natural armor', 'misc']
-equipment_weapon_titles = ['damage', 'encumbrance']
-equipment_armor_titles = ['ac bonus', 'encumbrance', 'check penalty', 'arcane spell failure']
-save_titles = ['fortitude', 'reflex', 'will']
-ac_titles = ['normal', 'touch', 'flat-footed']
+STRENGTH = 'strength'
+DEXTERITY = 'dexterity' 
+CONSTITUTION = 'constitution'
+INTELLIGENCE = 'intelligence'
+WISDOM = 'wisdom'
+CHARISMA = 'charisma'
+ATTRIBUTE_NAMES = [STRENGTH, DEXTERITY, CONSTITUTION, INTELLIGENCE, WISDOM,
+        CHARISMA]
+
+ARMOR = 'armor'
+SHIELD = 'shield'
+DODGE = 'dodge'
+NATURAL = 'natural armor'
+MISC = 'misc'
+AC_MODIFIERS = [ARMOR, SHIELD, DODGE, NATURAL, MISC]
+
+AC_NORMAL = 'normal'
+AC_TOUCH = 'touch'
+AC_FLAT = 'flat-footed'
+AC_TYPES = [AC_NORMAL, AC_TOUCH, AC_FLAT]
+
+FORTITUDE = 'fortitude'
+REFLEX = 'reflex'
+WILL = 'will'
+SAVE_NAMES = [FORTITUDE, REFLEX, WILL]
+
+WEAPON_DAMAGE = 'damage'
+WEAPON_ENCUMBRANCE = 'encumbrance'
+WEAPON_FEATURES = [WEAPON_DAMAGE, WEAPON_ENCUMBRANCE]
+
+ARMOR_BONUS = 'ac bonus'
+ARMOR_ENCUMBRANCE = 'encumbrance'
+ARMOR_CHECK = 'check penalty'
+ARMOR_ASF = 'arcane spell failure'
+ARMOR_FEATURES = [ARMOR_BONUS, ARMOR_ENCUMBRANCE, ARMOR_CHECK, ARMOR_ASF]
 
 GOOD = 'good'
 AVERAGE = 'average'
@@ -122,7 +150,7 @@ class SavingThrows():
         self.will = SavingThrow(level)
 
     def set_progressions_dict(self, progressions):
-        for save in save_titles:
+        for save in SAVE_NAMES:
             getattr(self, save).set_progression(progressions[save])
 
 class AttackBonus(ModifierProgression):
@@ -154,7 +182,7 @@ class Attributes:
         self.charisma = Modifier()
 
     def set_all_dict(self, raw_attributes):
-        for attribute_name in attribute_titles:
+        for attribute_name in ATTRIBUTE_NAMES:
             #use try/except to allow missing attributes
             try:
                 getattr(self, attribute_name).add_inherent(
