@@ -128,7 +128,7 @@ abilities['attribute charisma'] = Ability('attribute: charisma', lambda c:
 
 def natural_armor_benefit(creature):
     #Give 2 AC the first time, 1 every additional time
-    if creature.has_ability(natural_armor):
+    if creature.has_ability(abilities['natural armor']):
         creature.armor_class.natural_armor.add_inherent(1)
     else:
         creature.armor_class.natural_armor.add_inherent(2)
