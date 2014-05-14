@@ -40,6 +40,14 @@ class Creature(object):
         self.initiative = util.Modifier()
         self.feats = set()
         self.abilities = set()
+        self.alignment = None
+        self.name = None
+        self.class_name = None
+        self.size = 'medium'
+        self.weapon = None
+        self.offhand_weapon = None
+        self.armor = None
+        self.shield = None
 
     def _interpret_raw_stats(self, raw_stats):
         self.name = raw_stats['name']
@@ -56,6 +64,8 @@ class Creature(object):
         self.shield = equipment_set.shield
         if 'size' in raw_stats.keys():
             self.size = raw_stats['size']
+        if 'alignment' in raw_stats.keys():
+            self.alignment = raw_stats['alignment']
 
     def _interpret_raw_attributes(self, raw_attributes):
         self.attributes.set_all_dict(raw_attributes)
@@ -217,11 +227,11 @@ class Creature(object):
 
     def to_latex(self):
         monster_string=''
-        header =  '\\subsection{%s}\n\\begin{mstatblock}\n' % self.name
+        header =  '\\subsection{%s}\n\\begin{mstatblock}\n' % self.name.title()
         monster_string+=header
 
         types = '\\par {0} {1} {2}'.format(
-                'alignment', self.size, self.creature_type)
+                self.alignment.title(), self.size, self.creature_type)
         #if self.subtypes:
         #    types +=' {0}'.format()
         types+=' \\textbf{CR} {0}'
@@ -230,7 +240,14 @@ class Creature(object):
         types+='\n'
         monster_string+=types
 
-        senses = '\\par \textbf{Init} %s; Perception %s' % (self.initiative, '+0')
+        senses = self.get_abilities_with_tag('sense')
+        senses_string = '\\par \\textbf{Init} %s; Perception %s' % (
+                self.initiative, '+0')
+        for sense in senses:
+            senses_string += ', Derp'
+        senses_string+='\n'
+        monster_string += senses_string
+        
         """
         if self.skills['Sense Motive'] is not None:
             senses += ', Sense Motive {0}'.format(
@@ -267,6 +284,9 @@ class Creature(object):
 
     def has_ability(self, ability):
         return ability in self.abilities
+
+    def get_abilities_with_tag(self, tag):
+        return filter(lambda a: a.has_tag(tag), self.abilities)
 
     def has_feat(self, feat):
         return feat in self.feats
