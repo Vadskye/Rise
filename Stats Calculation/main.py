@@ -4,7 +4,7 @@ from monster import Monster
 import util
 import combat
 import cProfile
-import abilities
+from abilities import abilities
 
 CHARACTER = 'character'
 MONSTER = 'monster'
@@ -111,8 +111,8 @@ if __name__ == "__main__":
             #print second
             second.name='second_char'
 
-            #first.add_ability(abilities.combat_expertise, False)
-            first.add_ability(abilities.power_attack, False)
+            #first.add_ability(abilities['combat expertise'], False)
+            first.add_ability(abilities['power attack'], False)
 
             battle = combat.Battle(first, second)
 
