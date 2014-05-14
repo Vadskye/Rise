@@ -5,11 +5,14 @@ class Ability(object):
     #to a creature, a function that tests whether the creature qualifies
     #for the ability, and a value associated with the ability, if appropriate
     #(such as the range of darkvision)
-    def __init__(self, name, apply_benefit, meets_prerequisites = None, 
+    def __init__(self, name, apply_benefit = None, meets_prerequisites = None, 
             tags = None, value = None):
         self.name = name
         self.tags = tags
-        self.apply_benefit = apply_benefit
+        if apply_benefit is None:
+            self.apply_benefit = lambda x: True
+        else:
+            self.apply_benefit = apply_benefit
         if meets_prerequisites is None:
             self.meets_prerequisites = lambda x: True
         else:
@@ -131,6 +134,6 @@ def natural_armor_benefit(creature):
         creature.armor_class.natural_armor.add_inherent(2)
 abilities['natural armor'] = Ability('natural armor', natural_armor_benefit)
 
-abilities['darkvision'] = Ability('darkvision', None, tags = set('sense'), value = 60)
-abilities['lowlight vision'] = Ability('low-light vision', None, tags = set('sense'))
-abilities['scent'] = Ability('scent', None, tags = set('sense'), value = 30)
+abilities['darkvision'] = Ability('darkvision', tags = set('sense'), value = 60)
+abilities['low-light vision'] = Ability('low-light vision', tags = set('sense'))
+abilities['scent'] = Ability('scent', tags = set('sense'), value = 30)
