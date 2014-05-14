@@ -282,12 +282,19 @@ def parse_stats_from_file(input_file_name):
         key = line[0]
         val = line[1]
         i=1
-        #The first item with the same name is "key".
-        #The second is "key1". The third is "key2". etc...
-        while stats.has_key(key):
-            key=line[0]+str(i)
-            i+=1
-        stats[key]=val
+        #abilities can appear multiple times and are always stored as a list
+        if key == 'ability':
+            try:
+                stats[key].append(val)
+            except:
+                stats[key] = list()
+                stats[key].append(val)
+        #Normal values are stored singularly, and should error on duplicates
+        else:
+            if stats.has_key(key):
+                raise Exception('Multiple keys: '+key)
+            else:
+                stats[key] = val
     return stats
 
 def parse_attribute_file(raw_stats):
