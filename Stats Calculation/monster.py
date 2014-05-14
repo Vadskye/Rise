@@ -45,8 +45,12 @@ class Aberration(CreatureProgression):
 
 class Animal(CreatureProgression):
     bab_progression = AVERAGE
-    save_progressions = {'fortitude': AVERAGE, 'reflex':AVERAGE, 'will':POOR}
+    save_progressions = {'fortitude': AVERAGE, 'reflex': AVERAGE, 'will': POOR}
     hit_value = 6
+
+    def apply_modifications(self, base_creature):
+        if base_creature.alignment is None:
+            base_creature.alignment = 'neutral'
 
 class Archetype(object):
     def __init__(self, creature_type):
