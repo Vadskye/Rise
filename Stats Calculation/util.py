@@ -203,6 +203,15 @@ class Attributes:
                 print 'missing attribute'
                 pass
 
+    def to_latex(self):
+        return 'Str %s, Dex %s, Con %s, Int %s, Wis %s, Cha %s' % (
+                self.strength.get_total(),
+                self.dexterity.get_total(),
+                self.constitution.get_total(),
+                self.intelligence.get_total(),
+                self.wisdom.get_total(),
+                self.charisma.get_total())
+
 class ArmorClass:
     def __init__(self):
         self.misc = Modifier()
