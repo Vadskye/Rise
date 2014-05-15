@@ -8,6 +8,8 @@ class Ability(object):
     def __init__(self, name, apply_benefit = None, meets_prerequisites = None, 
             tags = None, value = None):
         self.name = name
+        if tags is not None:
+            tags = set(tags)
         self.tags = tags
         if apply_benefit is None:
             self.apply_benefit = lambda x: True
@@ -23,6 +25,9 @@ class Ability(object):
         if self.tags is None:
             return False
         return tag.lower() in self.tags
+
+    def __repr__(self):
+        return 'Ability({0})'.format(self.name)
 
 abilities = dict()
 
@@ -134,6 +139,6 @@ def natural_armor_benefit(creature):
         creature.armor_class.natural_armor.add_inherent(2)
 abilities['natural armor'] = Ability('natural armor', natural_armor_benefit)
 
-abilities['darkvision'] = Ability('darkvision', tags = set('sense'), value = 60)
-abilities['low-light vision'] = Ability('low-light vision', tags = set('sense'))
-abilities['scent'] = Ability('scent', tags = set('sense'), value = 30)
+abilities['darkvision'] = Ability('darkvision', tags = ['sense'], value = 60)
+abilities['low-light vision'] = Ability('low-light vision', tags = ['sense'])
+abilities['scent'] = Ability('scent', tags = ['sense'], value = 30)
