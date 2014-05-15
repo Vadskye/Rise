@@ -78,6 +78,9 @@ class Archetype(object):
     def perform_improvements(self):
         pass
 
+    def __repr__(self):
+        return self.__class__.__name__
+
 class Brute(Archetype):
     def perform_improvements(self):
         self.improve_bab()
