@@ -4,10 +4,10 @@ import equipment
 import util
 import combat
 import dice
+from strings import *
 from abilities import abilities
 
 ENDLINE = '\\par\n'
-
 
 class Creature(object):
     def __init__(self, raw_stats, raw_attributes, level, verbose=False):
@@ -194,7 +194,7 @@ class Creature(object):
             #needed when tracking main, offhand attack bonus separately
             #self.attack_bonus.add_enhancement(scale_factor)
             self.offhand_weapon_damage.add_enhancement(scale_factor)
-        for save_name in util.SAVE_NAMES:
+        for save_name in SAVE_NAMES:
             getattr(self.saves,save_name).add_enhancement(scale_factor)
 
     def _calculate_attack_attribute_bonus(self):
@@ -228,7 +228,7 @@ class Creature(object):
 
     def _to_string_attributes(self):
         attributes = 'Attr'
-        for attribute_name in util.ATTRIBUTE_NAMES:
+        for attribute_name in ATTRIBUTE_NAMES:
             attributes += ' ' + str(getattr(self.attributes, 
                 attribute_name).get_total())
         return attributes
@@ -245,6 +245,9 @@ class Creature(object):
         monster_string += horizontal_rule
         
         monster_string += self._latex_defenses()
+        monster_string += horizontal_rule
+
+        monster_string += self._latex_attacks()
         monster_string += horizontal_rule
 
         """
@@ -344,7 +347,10 @@ class Creature(object):
         defenses += ENDLINE
 
         return defenses
-        
+
+    def _latex_attacks(self):
+        attacks = ''
+        return attacks
 
     def add_ability(self, ability, check_prerequisites = True):
         if check_prerequisites:
