@@ -144,7 +144,8 @@
 \newcommand{\monskills}[1]{\par \textbf{Skills} #1}
 \newcommand{\monitems}[1]{\par \textbf{Items} #1}
 \newcommand{\monability}[2]{\par \textbf{#1} #2}
-\newcommand{\monlinerule}{\par \rule[0.5em]{0.9\columnwidth}{0.5pt}}
+%http://tex.stackexchange.com/questions/128636/center-hrule-in-the-middle-of-the-page
+\newcommand{\monlinerule}{\par\noindent\hfil\rule[0.5em]{0.9\columnwidth}{0.5pt}\hfil\par}
 \newcommand{\mondescription}[1]{\par \end{mstatblock}\sssecfake{Description}\label{#1:Description}}
 \newcommand{\mondescriptionnoblock}[1]{\par \sssecfake{Description}\label{#1:Description}}
 \newcommand{\monbehavior}[1]{\sssecfake{Combat}\label{#1:Behavior}}
