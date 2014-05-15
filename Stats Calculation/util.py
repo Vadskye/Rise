@@ -414,6 +414,31 @@ def get_size_statistics(size, in_feet = False):
         movement = value_in_feet(movement)
     return space, reach, movement
 
+def get_size_modifier(size, is_special_size_modifier = False):
+    if is_special_size_modifier:
+        return {
+                SIZE_FINE: -16,
+                SIZE_DIMINUITIVE: -12,
+                SIZE_TINY: -8,
+                SIZE_SMALL: -4,
+                SIZE_MEDIUM: 0,
+                SIZE_LARGE: 4,
+                SIZE_HUGE: 8,
+                SIZE_GARGANTUAN: 12,
+                SIZE_COLOSSAL: 16,
+                }[size]
+    return {
+            SIZE_FINE: 8,
+            SIZE_DIMINUITIVE: 4,
+            SIZE_TINY: 2,
+            SIZE_SMALL: 1,
+            SIZE_MEDIUM: 0,
+            SIZE_LARGE: -1,
+            SIZE_HUGE: -2,
+            SIZE_GARGANTUAN: -4,
+            SIZE_COLOSSAL: -8,
+            }[size]
+
 def value_in_feet(value):
     if value == 0.5:
         value = '1/2'
