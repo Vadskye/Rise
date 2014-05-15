@@ -31,8 +31,6 @@ class Creature(object):
         self.attack_bonus = util.AttackBonus(level=self.level)
         self.weapon_damage = util.Modifier()
         self.offhand_weapon_damage = util.Modifier()
-        self.weapon_damage_types = [DAMAGE_PHYSICAL]
-        self.offhand_weapon_damage_types = [DAMAGE_PHYSICAL]
         self.attributes = util.Attributes()
         self.armor_class = util.ArmorClass()
         self.saves = util.SavingThrows(level=self.level)
@@ -350,6 +348,11 @@ class Creature(object):
 
     def _latex_attacks(self):
         attacks = ''
+        if self.weapon:
+            attacks += r'\textbf{%s}: %s (%s %s damage)' % (
+                    self.weapon.attack_type, self.attack_bonus.mstr(),
+                    self.weapon.damage_die, self.weapon.damage_types)
+
         return attacks
 
     def add_ability(self, ability, check_prerequisites = True):
@@ -427,7 +430,7 @@ class CombatCreature(Creature):
         if is_threshold_hit:
             damage_dealt += self.offhand_weapon_damage.get_total(roll=True)
         if deal_damage:
-            enemy.take_damage(damage_dealt, self.weapon_damage_types)
+            enemy.take_damage(damage_dealt, self.weapon.damage_types)
         return damage_dealt
 
     def damage_spell(self, enemy):
