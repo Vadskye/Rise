@@ -1,4 +1,5 @@
 import dice
+from names import *
 
 class Weapon:
 
@@ -10,12 +11,18 @@ class Weapon:
     @classmethod
     def from_weapon_name(cls, weapon_name):
         return {
-                'heavy_melee': cls('heavy', 'melee', 'd10m2', 2),
-                'medium_melee': cls('medium', 'melee', 'd8m1', 1),
-                'light_melee': cls('light', 'melee', 'd6', 0),
-                'projectile': cls('heavy', 'projectile', 'd8m1', 1),
-                'claws': cls('medium', 'melee', 'd8m1', 0),
-                'unarmed': cls('light', 'melee', 'd3', 0),
+                'heavy_melee': cls(ENCUMBRANCE_HEAVY, ATTACK_TYPE_MELEE,
+                    'd10m2', 2),
+                'medium_melee': cls(ENCUMBRANCE_MEDIUM, ATTACK_TYPE_MELEE,
+                    'd8m1', 1),
+                'light_melee': cls(ENCUMBRANCE_LIGHT, ATTACK_TYPE_MELEE,
+                    'd6', 0),
+                'projectile': cls(ENCUMBRANCE_HEAVY, ATTACK_TYPE_PROJECTILE,
+                    'd8m1', 1),
+                'claws': cls(ENCUMBRANCE_MEDIUM, ATTACK_TYPE_MELEE,
+                    'd8m1', 0),
+                'unarmed': cls(ENCUMBRANCE_LIGHT, ATTACK_TYPE_MELEE,
+                    'd3', 0),
                 'none': None
                 }[weapon_name]
 
@@ -28,18 +35,18 @@ class Armor:
     @classmethod
     def from_armor_name(cls, armor_name):
         return {
-                'heavy': cls(8, 'heavy', 'body'),
-                'medium': cls(6, 'medium', 'body'),
-                'light': cls(3, 'light', 'body'),
+                'heavy': cls(8, ENCUMBRANCE_HEAVY, ARMOR_TYPE_BODY),
+                'medium': cls(6, ENCUMBRANCE_MEDIUM, ARMOR_TYPE_BODY),
+                'light': cls(3, ENCUMBRANCE_LIGHT, ARMOR_TYPE_BODY),
                 'none': None,
                 }[armor_name]
 
     @classmethod
     def from_shield_name(cls, shield_name):
         return {
-                'tower': Armor(4, 'medium', 'shield'),
-                'heavy': Armor(2, 'none', 'shield'),
-                'light': Armor(1, 'none', 'shield'),
+                'tower': Armor(4, ENCUMBRANCE_MEDIUM, ARMOR_TYPE_SHIELD),
+                'heavy': Armor(2, ENCUMBRANCE_NONE, ARMOR_TYPE_SHIELD),
+                'light': Armor(1, ENCUMBRANCE_NONE, ARMOR_TYPE_SHIELD),
                 'none': None
                 }[shield_name]
 
