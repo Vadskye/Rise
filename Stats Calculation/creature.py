@@ -354,8 +354,21 @@ class Creature(object):
             if self.offhand_weapon is not None:
                 attacks += r' and %s' % self.offhand_weapon.to_latex(
                         self.attack_bonus.mstr_offhand())
-                
+            attacks += ENDLINE
 
+        base_maneuver_bonus = self.attack_bonus.base_attack_bonus + util.get_size_modifier(self.size)
+        attacks+= r'\textbf{BAB} %s; \textbf{Maneuvers} %s (Str), %s (Dex)' % (
+                self.attack_bonus.base_attack_bonus,
+                util.mstr(base_maneuver_bonus + self.attributes.strength.get_total()),
+                util.mstr(base_maneuver_bonus + self.attributes.dexterity.get_total()))
+        attacks += ENDLINE
+
+        special_attack_abilities = self.get_abilities_with_tag('special attack')
+        if special_attack_abilities:
+            attacks += r'\textbf{Special} '
+            attacks += ', '.join([ability.name for ability
+                in special_attack_abilities])
+            attacks += ENDLINE
         return attacks
 
     def add_ability(self, ability, check_prerequisites = True):
