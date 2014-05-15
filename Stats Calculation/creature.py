@@ -31,8 +31,8 @@ class Creature(object):
         self.attack_bonus = util.AttackBonus(level=self.level)
         self.weapon_damage = util.Modifier()
         self.offhand_weapon_damage = util.Modifier()
-        self.weapon_damage_types = ['physical']
-        self.offhand_weapon_damage_types = ['physical']
+        self.weapon_damage_types = [DAMAGE_PHYSICAL]
+        self.offhand_weapon_damage_types = [DAMAGE_PHYSICAL]
         self.attributes = util.Attributes()
         self.armor_class = util.ArmorClass()
         self.saves = util.SavingThrows(level=self.level)
