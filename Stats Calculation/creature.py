@@ -6,6 +6,9 @@ import combat
 import dice
 from abilities import abilities
 
+ENDLINE = '\\par\n'
+
+
 class Creature(object):
     def __init__(self, raw_stats, raw_attributes, level, verbose=False):
         #Core variable initializations
@@ -229,13 +232,12 @@ class Creature(object):
             attributes += ' ' + str(getattr(self.attributes, 
                 attribute_name).get_total())
         return attributes
-
+    
     def to_latex(self):
         monster_string=''
         #The string is constructed from a series of function calls
         #Each call constructs one or more thematically related lines
         #Each call should end with a \n, so we always start on a new line 
-        #The + '\n' is put in the return statement to clarify the convention
         horizontal_rule = '\\monlinerule\n'
         monster_string += self._latex_headers()
         monster_string += self._latex_senses()
@@ -260,44 +262,74 @@ class Creature(object):
             monster_string+='\\par \\textbf{Languages} {0}\n'.format(
                     self.languages)
         """
-        monster_string+='\\end{mstatblock}\n'
+        monster_string += '\\end{mstatblock}\n'
 
         return monster_string
 
     def _latex_headers(self):
+        #Don't use ENDLINE here because LaTeX doesn't like \\ with just \begin
         header =  '\\subsection{%s}\n\\begin{mstatblock}\n' % self.name.title()
 
-        subheader = '\\par %s %s %s \\hfill \\textbf{CR} %s' % (
+        subheader = r'%s %s %s \hfill \textbf{CR} %s' % (
                 self.alignment.title(), self.size.title(), self.creature_type,
                 self.level)
+        subheader += ENDLINE
         #if self.subtypes:
         #    types +=' {0}'.format()
         #if self.archetype:
         #    types+=' {0}'.format(self.archetype)
-        return header + subheader + '\n'
+        return header + subheader
 
     def _latex_senses(self):
         #TODO: add Perception. Requires skills.
-        senses = '\\par \\textbf{Init} %s; Perception %s' % (
+        senses = r'\textbf{Init} %s; Perception %s' % (
                 self.initiative.mstr(), util.mstr(0))
         sense_abilities = self.get_abilities_with_tag('sense')
         if sense_abilities:
             senses += ', '
             senses += ', '.join([ability.name for ability in sense_abilities])
-        return senses + '\n'
+        senses += ENDLINE
+        return senses
 
     def _latex_defenses(self):
-        defenses = '\par \\textbf{AC} %s, touch %s, flat-footed %s' % (
+        defenses = r'\textbf{AC} %s, touch %s, flat-footed %s' % (
                 self.armor_class.normal(), self.armor_class.touch(),
                 self.armor_class.flatfooted())
-        defenses += '; \\textbf{MC} %s' % self.cmd.get_total()
-        defense_abilities = self.get_abilities_with_tag('special defense')
-        if defense_abilities:
+        defenses += r'; \textbf{MC} %s' % self.cmd.get_total()
+        protection_abilities = self.get_abilities_with_tag('protection')
+        if protection_abilities:
             defenses += '('
             defenses += ', '.join([ability.name for ability
-                in defense_abilities])
+                in protection_abilities])
             defenses += ')'
-        return defenses + '\n'
+        defenses += ENDLINE
+        #Should provide detailed explanation of AC sources here
+        #defenses += '\par (%s)' % self.armor_class
+
+        #Add HP and damage reduction
+        defenses += r'\textbf{HP} %s (%s HV)' % (self.max_hit_points,
+                self.level)
+        dr_abilities = self.get_abilities_with_tag('damage reduction')
+        if dr_abilities:
+            defenses += ', '.join([ability.name for ability
+                in dr_abilities])
+        defenses += ENDLINE
+
+        #Add any immunities
+        immunity_abilities = self.get_abilities_with_tag('immunity')
+        if immunity_abilities:
+            defenses += r'\textbf{Immune} '
+            defenses += ', '.join([ability.name for ability 
+                    in immunity_abilities])
+            defenses += ENDLINE
+
+        #Add saving throws
+        defenses+=r'\textbf{Fort} %s, \textbf{Ref} %s, \textbf{Will} %s' % (
+                self.saves.fortitude.mstr(), self.saves.reflex.mstr(),
+                self.saves.will.mstr())
+        defenses += ENDLINE
+
+        return defenses
         
 
     def add_ability(self, ability, check_prerequisites = True):
