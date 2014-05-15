@@ -1,5 +1,10 @@
-name=Brown bear
+name=brown bear
 creature type=animal
 archetype=brute
 weapon=claws
 size=medium
+alignment=always neutral
+ability=scent
+ability=low-light vision
+ability=natural armor
+ability=natural armor
