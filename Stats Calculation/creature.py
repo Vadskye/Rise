@@ -348,11 +348,13 @@ class Creature(object):
 
     def _latex_attacks(self):
         attacks = ''
-        if self.weapon:
-            attacks += r'\textbf{%s}: %s (%s %s damage)' % (
-                    self.weapon.attack_type.title(), self.attack_bonus.mstr(),
-                    self.weapon.damage_die, 
-                    ' '.join(self.weapon.damage_types))
+        if self.weapon is not None:
+            attacks += r'\textbf{%s} %s' % (self.weapon.attack_type.title(),
+                    self.weapon.to_latex(self.attack_bonus.mstr()))
+            if self.offhand_weapon is not None:
+                attacks += r' and %s' % self.offhand_weapon.to_latex(
+                        self.attack_bonus.mstr_offhand())
+                
 
         return attacks
 
