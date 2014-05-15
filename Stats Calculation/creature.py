@@ -241,7 +241,7 @@ class Creature(object):
         horizontal_rule = '\\monlinerule\n'
         monster_string += self._latex_headers()
         monster_string += self._latex_senses()
-        #monster_string += self._latex_movement()
+        monster_string += self._latex_movement()
         monster_string += horizontal_rule
         
         monster_string += self._latex_defenses()
@@ -290,6 +290,20 @@ class Creature(object):
             senses += ', '.join([ability.name for ability in sense_abilities])
         senses += ENDLINE
         return senses
+
+    #This will be commonly overwritten on a per-monster basis
+    #For now, just use the "normal" values for each size
+    def _latex_movement(self):
+        space, reach, speed = util.get_size_statistics(self.size, in_feet=True)
+        movement = r'\textbf{Space} %s; \textbf{Reach} %s' % (
+                space, reach)
+        movement += r'; \textbf{Speed} %s' % speed
+        movement_abilities = self.get_abilities_with_tag('movement')
+        if movement_abilities:
+            movement += ', '
+            movement += ', '.join([abil.name for abil in movement_abilities])
+        movement += ENDLINE
+        return movement
 
     def _latex_defenses(self):
         defenses = r'\textbf{AC} %s, touch %s, flat-footed %s' % (
