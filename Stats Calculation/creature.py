@@ -235,21 +235,21 @@ class Creature(object):
         header =  '\\subsection{%s}\n\\begin{mstatblock}\n' % self.name.title()
         monster_string+=header
 
-        types = '\\par {0} {1} {2}'.format(
-                self.alignment.title(), self.size, self.creature_type)
+        subheader = '\\par %s %s %s \\hfill \\textbf{CR} %s' % (
+                self.alignment.title(), self.size.title(), self.creature_type,
+                self.level)
         #if self.subtypes:
         #    types +=' {0}'.format()
-        types+=' \\textbf{CR} {0}'
-        if self.archetype:
-            types+=' {0}'.format(self.archetype)
-        types+='\n'
-        monster_string+=types
+        #if self.archetype:
+        #    types+=' {0}'.format(self.archetype)
+        subheader +='\n'
+        monster_string += subheader
 
-        senses = self.get_abilities_with_tag('sense')
         senses_string = '\\par \\textbf{Init} %s; Perception %s' % (
-                self.initiative, '+0')
+                self.initiative.mstr(), util.mstr(0))
+        senses = self.get_abilities_with_tag('sense')
         for sense in senses:
-            senses_string += ', Derp'
+            senses_string += ', '+sense.name
         senses_string+='\n'
         monster_string += senses_string
         
@@ -273,6 +273,7 @@ class Creature(object):
             monster_string+='\\par \\textbf{Languages} {0}\n'.format(
                     self.languages)
         """
+        monster_string+='\\end{mstatblock}'
 
         return monster_string
 
