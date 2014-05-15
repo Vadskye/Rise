@@ -1,28 +1,29 @@
 import dice
-from names import *
+from strings import *
 
 class Weapon:
 
-    def __init__(self, encumbrance, weapon_type, damage_die_name, min_damage):
+    def __init__(self, encumbrance, attack_type, damage_types, damage_die_name):
         self.encumbrance = encumbrance
-        self.weapon_type = weapon_type
+        self.attack_type = attack_type
+        self.damage_types = damage_types
         self.damage_die = dice.Dice.from_string(damage_die_name)
 
     @classmethod
     def from_weapon_name(cls, weapon_name):
         return {
                 'heavy_melee': cls(ENCUMBRANCE_HEAVY, ATTACK_TYPE_MELEE,
-                    'd10m2', 2),
+                    [DAMAGE_PHYSICAL], 'd10m2'),
                 'medium_melee': cls(ENCUMBRANCE_MEDIUM, ATTACK_TYPE_MELEE,
-                    'd8m1', 1),
+                    [DAMAGE_PHYSICAL], 'd8m1'),
                 'light_melee': cls(ENCUMBRANCE_LIGHT, ATTACK_TYPE_MELEE,
-                    'd6', 0),
+                    [DAMAGE_PHYSICAL], 'd6'),
                 'projectile': cls(ENCUMBRANCE_HEAVY, ATTACK_TYPE_PROJECTILE,
-                    'd8m1', 1),
+                    [DAMAGE_PHYSICAL], 'd8m1'),
                 'claws': cls(ENCUMBRANCE_MEDIUM, ATTACK_TYPE_MELEE,
-                    'd8m1', 0),
+                    [DAMAGE_PHYSICAL], 'd8m1'),
                 'unarmed': cls(ENCUMBRANCE_LIGHT, ATTACK_TYPE_MELEE,
-                    'd3', 0),
+                    [DAMAGE_PHYSICAL], 'd3'),
                 'none': None
                 }[weapon_name]
 
@@ -77,8 +78,3 @@ class EquipmentSet:
         else:
             shield = 'none'
         return cls(weapon, offhand_weapon, armor, shield)
-
-
-
-        
-
