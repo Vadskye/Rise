@@ -232,38 +232,19 @@ class Creature(object):
 
     def to_latex(self):
         monster_string=''
-        header =  '\\subsection{%s}\n\\begin{mstatblock}\n' % self.name.title()
-        monster_string+=header
+        #The string is constructed from a series of function calls
+        #Each call constructs one or more thematically related lines
+        #Each call should end with a \n, so we always start on a new line 
+        #The + '\n' is put in the return statement to clarify the convention
+        monster_string += self._latex_headers()
+        monster_string += self._latex_senses()
 
-        subheader = '\\par %s %s %s \\hfill \\textbf{CR} %s' % (
-                self.alignment.title(), self.size.title(), self.creature_type,
-                self.level)
-        #if self.subtypes:
-        #    types +=' {0}'.format()
-        #if self.archetype:
-        #    types+=' {0}'.format(self.archetype)
-        subheader +='\n'
-        monster_string += subheader
-
-        senses_string = '\\par \\textbf{Init} %s; Perception %s' % (
-                self.initiative.mstr(), util.mstr(0))
-        senses = self.get_abilities_with_tag('sense')
-        for sense in senses:
-            senses_string += ', '+sense.name
-        senses_string+='\n'
-        monster_string += senses_string
-        
         """
         if self.skills['Sense Motive'] is not None:
             senses += ', Sense Motive {0}'.format(
                     self.skills['Sense Motive'])
         if self.skills['Spellcraft'] is not None:
             senses += ', Spellcraft {0}'.format(self.skills['Spellcraft'])
-        if self.abilities['senses']:
-            senses += '; \\textbf{Senses} {0}'.format(
-                    self.abilities['senses'])
-        senses+='\n'
-        monster_string+=senses
 
         if self.abilities['aura']:
             monster_string+='\\par \\textbf{Aura} {0}\n'.format(
@@ -276,6 +257,27 @@ class Creature(object):
         monster_string+='\\end{mstatblock}'
 
         return monster_string
+
+    def _latex_headers(self):
+        header =  '\\subsection{%s}\n\\begin{mstatblock}\n' % self.name.title()
+
+        subheader = '\\par %s %s %s \\hfill \\textbf{CR} %s' % (
+                self.alignment.title(), self.size.title(), self.creature_type,
+                self.level)
+        #if self.subtypes:
+        #    types +=' {0}'.format()
+        #if self.archetype:
+        #    types+=' {0}'.format(self.archetype)
+        return header + subheader + '\n'
+
+    def _latex_senses(self):
+        #TODO: add Perception. Requires skills.
+        senses_string = '\\par \\textbf{Init} %s; Perception %s' % (
+                self.initiative.mstr(), util.mstr(0))
+        senses = self.get_abilities_with_tag('sense')
+        for sense in senses:
+            senses_string += ', '+sense.name
+        return senses_string + '\n'
 
     def add_ability(self, ability, check_prerequisites = True):
         if check_prerequisites:
