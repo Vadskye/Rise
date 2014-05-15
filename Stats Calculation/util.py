@@ -107,6 +107,9 @@ class Modifier(object):
                 self.get_total(), self.inherent, self.competence,
                 self.enhancement, self.circumstance, self.die)
 
+    def mstr(self):
+        return mstr(self.get_total())
+
 class ModifierProgression(Modifier):
     def __init__(self, progression = None, level = None):
         self.inherent=0
