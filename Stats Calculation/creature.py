@@ -248,6 +248,11 @@ class Creature(object):
         monster_string += self._latex_attacks()
         monster_string += horizontal_rule
 
+        monster_string += self._latex_attributes()
+        monster_string += self._latex_feats()
+        monster_string += self._latex_skills()
+        monster_string += horizontal_rule
+
         """
         if self.skills['Sense Motive'] is not None:
             senses += ', Sense Motive {0}'.format(
@@ -366,10 +371,28 @@ class Creature(object):
         special_attack_abilities = self.get_abilities_with_tag('special attack')
         if special_attack_abilities:
             attacks += r'\textbf{Special} '
-            attacks += ', '.join([ability.name for ability
-                in special_attack_abilities])
+            attacks += ', '.join([abil.name for abil in special_attack_abilities])
             attacks += ENDLINE
         return attacks
+
+    def _latex_attributes(self):
+        attributes = r'\textbf{Attributes} '
+        attributes += self.attributes.to_latex()
+        attributes += ENDLINE
+        return attributes
+
+    def _latex_feats(self):
+        feats_string = ''
+        feats = self.get_abilities_with_tag('feats')
+        if feats:
+            feats_string += r'\textbf{Feats}'
+            feats_string += ', '.join([ability.name for ability in feats])
+            feats_string += ENDLINE
+        return feats_string
+
+    #TODO
+    def _latex_skills(self):
+        return ''
 
     def add_ability(self, ability, check_prerequisites = True):
         if check_prerequisites:
