@@ -236,8 +236,14 @@ class Creature(object):
         #Each call constructs one or more thematically related lines
         #Each call should end with a \n, so we always start on a new line 
         #The + '\n' is put in the return statement to clarify the convention
+        horizontal_rule = '\\monlinerule\n'
         monster_string += self._latex_headers()
         monster_string += self._latex_senses()
+        #monster_string += self._latex_movement()
+        monster_string += horizontal_rule
+        
+        monster_string += self._latex_defenses()
+        monster_string += horizontal_rule
 
         """
         if self.skills['Sense Motive'] is not None:
@@ -272,12 +278,27 @@ class Creature(object):
 
     def _latex_senses(self):
         #TODO: add Perception. Requires skills.
-        senses_string = '\\par \\textbf{Init} %s; Perception %s' % (
+        senses = '\\par \\textbf{Init} %s; Perception %s' % (
                 self.initiative.mstr(), util.mstr(0))
-        senses = self.get_abilities_with_tag('sense')
-        for sense in senses:
-            senses_string += ', '+sense.name
-        return senses_string + '\n'
+        sense_abilities = self.get_abilities_with_tag('sense')
+        if sense_abilities:
+            senses += ', '
+            senses += ', '.join([ability.name for ability in sense_abilities])
+        return senses + '\n'
+
+    def _latex_defenses(self):
+        defenses = '\par \\textbf{AC} %s, touch %s, flat-footed %s' % (
+                self.armor_class.normal(), self.armor_class.touch(),
+                self.armor_class.flatfooted())
+        defenses += '; \\textbf{MC} %s' % self.cmd.get_total()
+        defense_abilities = self.get_abilities_with_tag('special defense')
+        if defense_abilities:
+            defenses += '('
+            defenses += ', '.join([ability.name for ability
+                in defense_abilities])
+            defenses += ')'
+        return defenses + '\n'
+        
 
     def add_ability(self, ability, check_prerequisites = True):
         if check_prerequisites:
