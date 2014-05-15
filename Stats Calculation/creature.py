@@ -344,9 +344,14 @@ class Creature(object):
             defenses += ENDLINE
 
         #Add saving throws
-        defenses+=r'\textbf{Fort} %s, \textbf{Ref} %s, \textbf{Will} %s' % (
+        defenses+=r'\textbf{Saves} Fort %s, Ref %s, Will %s' % (
                 self.saves.fortitude.mstr(), self.saves.reflex.mstr(),
                 self.saves.will.mstr())
+        save_abilities = self.get_abilities_with_tag('saving throw')
+        if save_abilities:
+            defenses += '; '
+            defenses += ', '.join([ability.name for ability 
+                    in save_abilities])
         defenses += ENDLINE
 
         return defenses
