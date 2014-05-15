@@ -350,8 +350,9 @@ class Creature(object):
         attacks = ''
         if self.weapon:
             attacks += r'\textbf{%s}: %s (%s %s damage)' % (
-                    self.weapon.attack_type, self.attack_bonus.mstr(),
-                    self.weapon.damage_die, self.weapon.damage_types)
+                    self.weapon.attack_type.title(), self.attack_bonus.mstr(),
+                    self.weapon.damage_die, 
+                    ' '.join(self.weapon.damage_types))
 
         return attacks
 
