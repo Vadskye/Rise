@@ -121,6 +121,8 @@ class AttackBonus(ModifierProgression):
     def __init__(self, progression = None, level = None):
         super(AttackBonus, self).__init__(progression, level)
         self.base_attack_bonus = 0
+        self.offhand_penalty = 5
+        self.enhancement_offhand = 0
 
     def set_base_attack_bonus(self, base_attack_bonus):
         difference = base_attack_bonus - self.base_attack_bonus
@@ -135,6 +137,52 @@ class AttackBonus(ModifierProgression):
             'good': level,
             }[progression]
         self.set_base_attack_bonus(base_attack_bonus)
+
+    def _adjust_offhand_penalty(self, bonus, for_main_hand, for_offhand):
+        if not for_offhand:
+            self.offhand_penalty += bonus
+        if not for_main_hand:
+            self.offhand_penalty -= bonus
+
+    def add_inherent(self, bonus, for_main_hand = True, for_offhand = True):
+        super(AttackBonus, self).add_inherent(bonus)
+        self._adjust_offhand_penalty(bonus, for_main_hand, for_offhand)
+
+    def add_enhancement(self, bonus, for_main_hand = True, for_offhand = True):
+        #First, adjust the penalties if necessary
+        if not for_main_hand:
+            bonus_relative_to_offhand = max(0, bonus - self.enhancement_offhand)
+            self.offhand_penalty -= bonus_relative_to_offhand
+        if not for_offhand:
+            bonus_relative_to_main_hand = max(0, bonus - self.enhancement)
+            self.offhand_penalty += bonus_relative_to_main_hand
+        #Then apply the bonus
+        if for_main_hand:
+            self.enhancement = max(self.enhancement, bonus)
+        if for_offhand:
+            self.enhancement_offhand = max(self.enhancement_offhand, bonus)
+        self._update()
+
+    def add_competence(self, bonus, for_main_hand = True, for_offhand = True):
+        super(AttackBonus, self).add_competence(bonus)
+        self._adjust_offhand_penalty(bonus, for_main_hand, for_offhand)
+
+    def add_circumstance(self, bonus, for_main_hand = True, for_offhand = True):
+        super(AttackBonus, self).add_circumstance(bonus)
+        self._adjust_offhand_penalty(bonus, for_main_hand, for_offhand)
+
+    def get_total_offhand(self, roll=False):
+        #return int if there are no dice
+        if self.die:
+            if roll:
+                return self.raw_total - self.offhand_penalty + self.die.roll()
+            else:
+                return self.raw_total - self.offhand_penalty + self.die.average
+        return self.raw_total - self.offhand_penalty
+
+    def mstr_offhand(self):
+        return mstr(self.get_total_offhand())
+        
 
 class Attributes:
     def __init__(self):
