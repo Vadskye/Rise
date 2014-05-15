@@ -260,7 +260,7 @@ class Creature(object):
             monster_string+='\\par \\textbf{Languages} {0}\n'.format(
                     self.languages)
         """
-        monster_string+='\\end{mstatblock}'
+        monster_string+='\\end{mstatblock}\n'
 
         return monster_string
 
