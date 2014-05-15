@@ -42,6 +42,16 @@ GOOD = 'good'
 AVERAGE = 'average'
 POOR = 'poor'
 
+SIZE_FINE = 'fine'
+SIZE_DIMINUITIVE = 'diminuitive'
+SIZE_TINY = 'tiny'
+SIZE_SMALL = 'small'
+SIZE_MEDIUM = 'medium'
+SIZE_LARGE = 'large'
+SIZE_HUGE = 'huge'
+SIZE_GARGANTUAN = 'gargantuan'
+SIZE_COLOSSAL = 'colossal'
+
 d20 = dice.dx(20)
 
 class Modifier(object):
@@ -386,3 +396,28 @@ def std_scale(level):
 #+2, +3 at 5th, +4 at 10th, +5 at 15th, +6 at 20th
 def bab_scale(base_attack_bonus):
     return 2+base_attack_bonus/5
+
+def get_size_statistics(size, in_feet = False):
+    space, reach, movement = {
+                SIZE_FINE: (0.5, 0, 5),
+                SIZE_DIMINUITIVE: (1, 0, 10),
+                SIZE_TINY: (2.5, 0, 15),
+                SIZE_SMALL: (5, 5, 20),
+                SIZE_MEDIUM: (5, 5, 30),
+                SIZE_LARGE: (10, 10, 40),
+                SIZE_HUGE: (15, 15, 50),
+                SIZE_GARGANTUAN: (20, 20, 60),
+                SIZE_COLOSSAL: (30, 30, 70),
+                }[size]
+    if in_feet:
+        space = value_in_feet(space)
+        reach = value_in_feet(reach)
+        movement = value_in_feet(movement)
+    return space, reach, movement
+
+def value_in_feet(value):
+    if value == 0.5:
+        value = '1/2'
+    elif value == 2.5:
+        value = '2-1/2'
+    return '%s ft.' % value
