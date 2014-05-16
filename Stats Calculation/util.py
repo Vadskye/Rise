@@ -88,15 +88,17 @@ class ModifierProgression(Modifier):
         pass
 
     def set_progression(self, progression):
+        print 'merp', progression, self.level
         self.progression = progression
         if self.progression and self.level:
             self._apply_progression(self.progression, self.level)
-        self._update()
+            self._update()
 
     def set_level(self, level):
         self.level = level
         if self.progression and self.level:
             self._apply_progression(self.progression, self.level)
+            self._update()
 
 class SavingThrow(ModifierProgression):
     def _apply_progression(self, progression, level):
@@ -105,7 +107,7 @@ class SavingThrow(ModifierProgression):
             'average': (level*3)/4+1,
             'good': level+2,
             }[progression]
-        self.inherent = self.base_bonus
+        self.inherent = base_save_bonus
 
 class SavingThrows():
     def __init__(self, level = None):
@@ -113,9 +115,16 @@ class SavingThrows():
         self.reflex = SavingThrow(level)
         self.will = SavingThrow(level)
 
+    def get_saves(self):
+        return [getattr(self, save) for save in SAVE_NAMES]
+
     def set_progressions_dict(self, progressions):
-        for save in SAVE_NAMES:
-            getattr(self, save).set_progression(progressions[save])
+        for save_name in SAVE_NAMES:
+            getattr(self, save_name).set_progression(progressions[save_name])
+
+    def set_level(self, level):
+        for save in self.get_saves():
+            save.set_level(level)
 
 class AttackBonus(ModifierProgression):
     def __init__(self, progression = None, level = None):
@@ -131,6 +140,7 @@ class AttackBonus(ModifierProgression):
         self._update()
 
     def _apply_progression(self, progression, level):
+        print 'derp', progression, level
         base_attack_bonus = {
             'poor': level/2,
             'average': (level*3)/4,
