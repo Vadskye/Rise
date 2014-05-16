@@ -335,7 +335,7 @@ def parse_stats_from_file(input_file_name):
         val = line[1]
         i=1
         #abilities can appear multiple times and are always stored as a list
-        if key in ABILITY_NAMES:
+        if key in ABILITY_TYPES:
             if re.search(r'\*\d', val):
                 #If the ability ends with *3 or some other number, it should
                 #be stored multiple times
