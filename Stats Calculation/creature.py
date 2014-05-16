@@ -308,7 +308,8 @@ class Creature(object):
         sense_abilities = self.get_abilities_with_tag('sense')
         if sense_abilities:
             senses += ', '
-            senses += ', '.join([ability.name for ability in sense_abilities])
+            senses += ', '.join([ability.get_text()
+                for ability in sense_abilities])
         senses += ENDLINE
         return senses
 
@@ -322,7 +323,8 @@ class Creature(object):
         movement_abilities = self.get_abilities_with_tag('movement')
         if movement_abilities:
             movement += ', '
-            movement += ', '.join([abil.name for abil in movement_abilities])
+            movement += ', '.join([ability.get_text()
+                for ability in movement_abilities])
         movement += ENDLINE
         return movement
 
@@ -334,8 +336,8 @@ class Creature(object):
         protection_abilities = self.get_abilities_with_tag('protection')
         if protection_abilities:
             defenses += '('
-            defenses += ', '.join([ability.name for ability
-                in protection_abilities])
+            defenses += ', '.join([ability.get_text()
+                for ability in protection_abilities])
             defenses += ')'
         defenses += ENDLINE
         #Should provide detailed explanation of AC sources here
@@ -346,16 +348,16 @@ class Creature(object):
                 self.level)
         dr_abilities = self.get_abilities_with_tag('damage reduction')
         if dr_abilities:
-            defenses += ', '.join([ability.name for ability
-                in dr_abilities])
+            defenses += ', '.join([ability.get_text()
+                for ability in dr_abilities])
         defenses += ENDLINE
 
         #Add any immunities
         immunity_abilities = self.get_abilities_with_tag('immunity')
         if immunity_abilities:
             defenses += r'\textbf{Immune} '
-            defenses += ', '.join([ability.name for ability 
-                    in immunity_abilities])
+            defenses += ', '.join([ability.get_text()
+                for ability in immunity_abilities])
             defenses += ENDLINE
 
         #Add saving throws
@@ -365,8 +367,8 @@ class Creature(object):
         save_abilities = self.get_abilities_with_tag('saving throw')
         if save_abilities:
             defenses += '; '
-            defenses += ', '.join([ability.name for ability 
-                    in save_abilities])
+            defenses += ', '.join([ability.get_text()
+                for ability in save_abilities])
         defenses += ENDLINE
 
         return defenses
@@ -402,7 +404,8 @@ class Creature(object):
         special_attack_abilities = self.get_abilities_with_tag('special attack')
         if special_attack_abilities:
             attacks += r'\textbf{Special} '
-            attacks += ', '.join([abil.name for abil in special_attack_abilities])
+            attacks += ', '.join([ability.get_text()
+                for ability in special_attack_abilities])
             attacks += ENDLINE
         return attacks
 
@@ -417,7 +420,8 @@ class Creature(object):
         feats = self.get_abilities_with_tag('feat')
         if feats:
             feats_string += r'\textbf{Feats} '
-            feats_string += ', '.join([feat.name.title() for feat in feats])
+            feats_string += ', '.join([feat.get_text().title()
+                for feat in feats])
             feats_string += ENDLINE
         return feats_string
 
