@@ -88,7 +88,6 @@ class ModifierProgression(Modifier):
         pass
 
     def set_progression(self, progression):
-        print 'merp', progression, self.level
         self.progression = progression
         if self.progression and self.level:
             self._apply_progression(self.progression, self.level)
@@ -140,7 +139,6 @@ class AttackBonus(ModifierProgression):
         self._update()
 
     def _apply_progression(self, progression, level):
-        print 'derp', progression, level
         base_attack_bonus = {
             'poor': level/2,
             'average': (level*3)/4,
@@ -192,7 +190,27 @@ class AttackBonus(ModifierProgression):
 
     def mstr_offhand(self):
         return mstr(self.get_total_offhand())
-        
+    
+class ManeuverBonus(ModifierProgression):
+
+    def _apply_progression(self, progression, level):
+        base_attack_bonus = {
+            'poor': level/2,
+            'average': (level*3)/4,
+            'good': level,
+            }[progression]
+        self.set_base_attack_bonus(base_attack_bonus)
+
+    def set_attributes(self, strength, dexterity):
+        self.strength = strength
+        self.dexterity = dexterity
+
+    def get_total(self, use_strength=True, roll=False, ignore_die = False):
+        total = super(ModifierBonus, self).get_total(roll, ignore_die)
+        if use_strength:
+            return total + self.strength.get_total()
+        else:
+            return total + self.dexterity.get_total()
 
 class Attributes:
     def __init__(self):
