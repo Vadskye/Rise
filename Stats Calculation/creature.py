@@ -54,6 +54,12 @@ class Creature(object):
         self.name = raw_stats['name']
         if 'class' in raw_stats.keys():
             self.class_name = raw_stats['class']
+        #If no level was supplied, use the level in the file
+        if self.level is None:
+            try:
+                self.level = int(raw_stats['level'])
+            except KeyError:
+                raise Exception('No level provided')
         equipment_set = equipment.EquipmentSet.from_raw_stats(raw_stats)
         self.weapon = equipment_set.weapon
         self.offhand_weapon = equipment_set.offhand_weapon
@@ -359,11 +365,22 @@ class Creature(object):
     def _latex_attacks(self):
         attacks = ''
         if self.weapon is not None:
-            attacks += r'\textbf{%s} %s' % (self.weapon.attack_type.title(),
-                    self.weapon.to_latex(self.attack_bonus.mstr()))
+            attack_title = r'\textbf{%s}' % self.weapon.attack_type.title()
+            attack_name = self.weapon.name.title()
+            attack_bonus = self.attack_bonus.mstr()
+            attack_damage = util.attack_damage_to_latex(
+                    self.weapon, self.weapon_damage)
+
             if self.offhand_weapon is not None:
-                attacks += r' and %s' % self.offhand_weapon.to_latex(
-                        self.attack_bonus.mstr_offhand())
+                attack_name += '/%s' % self.offhand_weapon.name
+                attack_bonus += '/%s' % (
+                        self.attack_bonus.get_total_offhand())
+                attack_damage += '/%s' % util.attack_damage_to_latex(
+                        self.offhand_weapon, self.offhand_weapon_damage)
+
+            attacks += '%s %s %s (%s)' % (attack_title, attack_name, attack_bonus,
+                    attack_damage)
+
             attacks += ENDLINE
 
         base_maneuver_bonus = self.attack_bonus.base_attack_bonus + util.get_size_modifier(self.size)
