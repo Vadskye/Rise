@@ -45,7 +45,10 @@ class Creature(object):
         self.alignment = None
         self.name = None
         self.class_name = None
-        self.size = 'medium'
+        self.size = None
+        self.space = None
+        self.reach = None
+        self.speed = None
         self.weapon = None
         self.offhand_weapon = None
         self.armor = None
@@ -73,6 +76,9 @@ class Creature(object):
         self.shield = equipment_set.shield
         if 'size' in raw_stats.keys():
             self.size = raw_stats['size']
+        else:
+            self.size = SIZE_MEDIUM
+        self.space, self.reach, self.speed = util.get_size_statistics(self.size)
         if 'alignment' in raw_stats.keys():
             self.alignment = raw_stats['alignment']
         #Add all the abilities to the character
@@ -317,10 +323,9 @@ class Creature(object):
     #This will be commonly overwritten on a per-monster basis
     #For now, just use the "normal" values for each size
     def _latex_movement(self):
-        space, reach, speed = util.get_size_statistics(self.size, in_feet=True)
         movement = r'\textbf{Space} %s; \textbf{Reach} %s' % (
-                space, reach)
-        movement += r'; \textbf{Speed} %s' % speed
+                util.value_in_feet(self.space), util.value_in_feet(self.reach))
+        movement += r'; \textbf{Speed} %s' % util.value_in_feet(self.speed)
         movement_abilities = self.get_abilities_with_tag('movement')
         if movement_abilities:
             movement += ', '
