@@ -29,17 +29,18 @@ class Creature(object):
 
     def _init_core_statistics(self):
         self.attack_bonus = util.AttackBonus()
+        self.maneuver_bonus = util.ManeuverBonus()
         self.weapon_damage = util.Modifier()
         self.offhand_weapon_damage = util.Modifier()
         self.attributes = util.Attributes()
         self.armor_class = util.ArmorClass()
         self.saves = util.SavingThrows()
-        self.cmd = util.Modifier()
+        self.maneuver_bonus = util.ManeuverBonus()
+        self.maneuver_class = util.Modifier()
         self.hit_value = None
         self.max_hit_points = 0
         self.damage_reduction = util.DamageReduction()
         self.initiative = util.Modifier()
-        self.feats = set()
         self.abilities = set()
         self.alignment = None
         self.name = None
@@ -132,6 +133,7 @@ class Creature(object):
 
     def _calculate_derived_statistics(self):
         self.attack_bonus.set_level(self.level)
+        self.maneuver_bonus.set_level(self.level)
         self.saves.set_level(self.level)
         dexterity_to_ac = self.attributes.dexterity.get_total()
         if self.armor:
@@ -144,6 +146,11 @@ class Creature(object):
             self.armor_class.shield.add_inherent(self.shield.ac_bonus)
 
         self.attack_bonus.add_inherent(self._calculate_attack_attribute_bonus())
+        self.attack_bonus.add_inherent(util.get_size_modifier(self.size))
+        self.maneuver_bonus.set_attributes(self.attributes.strength,
+                self.attributes.dexterity)
+        self.maneuver_bonus.add_inherent(util.get_size_modifier(self.size,
+            is_special_size_modifier=True))
 
         self.weapon_damage.add_inherent(self.attributes.strength.get_total()/2)
 
@@ -152,9 +159,9 @@ class Creature(object):
         self.armor_class.dodge.add_inherent(
                 util.ifloor(self.attack_bonus.base_attack_bonus/2))
 
-        self.cmd.add_inherent(self.armor_class.touch())
-        self.cmd.add_inherent(self.attack_bonus.base_attack_bonus/2)
-        self.cmd.add_inherent(self.attributes.strength.get_total())
+        self.maneuver_class.add_inherent(self.armor_class.touch())
+        self.maneuver_class.add_inherent(self.attack_bonus.base_attack_bonus/2)
+        self.maneuver_class.add_inherent(self.attributes.strength.get_total())
 
         self.initiative.add_inherent(self.attributes.dexterity.get_total())
         self.initiative.add_inherent(self.attributes.wisdom.get_total()/2)
@@ -220,7 +227,7 @@ class Creature(object):
 
     def _to_string_defenses(self):
         defenses = str(self.armor_class)
-        defenses += '; CMD '+str(self.cmd.get_total())
+        defenses += '; maneuver_class '+str(self.maneuver_class.get_total())
         defenses += '\nHP '+str(self.max_hit_points)
         defenses += '; Fort '+util.mstr(self.saves.fortitude.get_total())
         defenses += ', Ref '+util.mstr(self.saves.reflex.get_total())
@@ -323,7 +330,7 @@ class Creature(object):
         defenses = r'\textbf{AC} %s, touch %s, flat-footed %s' % (
                 self.armor_class.normal(), self.armor_class.touch(),
                 self.armor_class.flatfooted())
-        defenses += r'; \textbf{MC} %s' % self.cmd.get_total()
+        defenses += r'; \textbf{MC} %s' % self.maneuver_class.get_total()
         protection_abilities = self.get_abilities_with_tag('protection')
         if protection_abilities:
             defenses += '('
@@ -407,10 +414,10 @@ class Creature(object):
 
     def _latex_feats(self):
         feats_string = ''
-        feats = self.get_abilities_with_tag('feats')
+        feats = self.get_abilities_with_tag('feat')
         if feats:
-            feats_string += r'\textbf{Feats}'
-            feats_string += ', '.join([ability.name for ability in feats])
+            feats_string += r'\textbf{Feats} '
+            feats_string += ', '.join([feat.name.title() for feat in feats])
             feats_string += ENDLINE
         return feats_string
 
@@ -424,10 +431,7 @@ class Creature(object):
                 if self.verbose: print 'Ability prerequisites not met'
                 return False
         ability.apply_benefit(self)
-        if ability.has_tag('feat'):
-            self.feats.add(ability)
-        else:
-            self.abilities.add(ability)
+        self.abilities.add(ability)
 
     def has_ability(self, ability):
         return ability in self.abilities
