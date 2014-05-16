@@ -31,11 +31,11 @@ class Monster(creature.Creature):
                 'aberration': Aberration,
                 'animal': Animal
                 }[raw_stats['creature type']](self.level)
-        self.archetype = {
-                'brute': Brute,
-                'scout': Scout,
-                'warrior': Warrior,
-                }[raw_stats['archetype']](self.level_progression)
+        #Now that we have a level progression, apply templates
+        templates = self.get_abilities_by_tag('template')
+        if templates is not None:
+            for template in templates:
+                template.apply_benefit(self)
 
 class Aberration(LevelProgression):
     bab_progression = AVERAGE
