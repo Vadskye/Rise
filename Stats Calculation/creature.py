@@ -21,7 +21,7 @@ class Creature(object):
         self._interpret_raw_stats(raw_stats)
         self._interpret_raw_attributes(raw_attributes)
         
-        self._set_class_calculator()
+        self._set_level_progression()()
         self._calculate_class_stats()
 
         self._add_level_scaling()
@@ -50,6 +50,7 @@ class Creature(object):
         self.offhand_weapon = None
         self.armor = None
         self.shield = None
+        self.level_progression = None
 
     def _interpret_raw_stats(self, raw_stats):
         self.name = raw_stats['name']
@@ -104,8 +105,8 @@ class Creature(object):
             pass
         
     #http://stackoverflow.com/questions/60208/replacements-for-switch-statement-in-python
-    def _set_class_calculator(self):
-        self.class_calculator = {
+    def _set_level_progression()(self):
+        self.level_progression = {
                 'barbarian': classes.Barbarian,
                 'bard': classes.Bard,
                 'cleric': classes.Cleric,
@@ -122,14 +123,14 @@ class Creature(object):
 
     def _calculate_class_stats(self):
         #Calculate statistics based on the given class
-        self.class_calculator.apply_progressions(self)
+        self.level_progression.apply_progressions(self)
 
         self.max_hit_points = calculate_hit_points(
                 self.attributes.constitution.get_total(), 
-                self.class_calculator.hit_value, self.level)
+                self.level_progression.hit_value, self.level)
         self.current_hit_points = self.max_hit_points
 
-        self.class_calculator.apply_modifications(self)
+        self.level_progression.apply_modifications(self)
 
     def _calculate_derived_statistics(self):
         self.attack_bonus.set_level(self.level)
