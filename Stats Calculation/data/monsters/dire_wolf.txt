@@ -1,0 +1,19 @@
+name=dire wolf
+level=8
+creature type=animal
+weapon=bite
+size=large
+
+#attributes
+strength=2
+dexterity=2
+constitution=2
+intelligence=-8
+wisdom=2
+charisma=0
+
+#abilities
+trait=strength *4
+trait=constitution *1
+trait=natural grab
+template=scout
