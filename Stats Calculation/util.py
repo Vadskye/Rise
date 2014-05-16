@@ -212,6 +212,9 @@ class ManeuverBonus(ModifierProgression):
         else:
             return total + self.dexterity.get_total()
 
+    def mstr(self, use_strength = True):
+        return mstr(self.get_total(use_strength = use_strength))
+
 class Attributes:
     def __init__(self):
         self.strength = Modifier()
@@ -497,7 +500,7 @@ def value_in_feet(value):
         value = '2-1/2'
     return '%s ft.' % value
 
-def change_size(size, size_difference) 
+def change_size(size, size_difference):
     new_index = SIZES.index(size) + size_difference
     new_index = max(new_index, 0)
     new_index = min(new_index, len(SIZES)-1)
