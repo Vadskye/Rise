@@ -28,12 +28,12 @@ class Creature(object):
         self._calculate_derived_statistics()
 
     def _init_core_statistics(self):
-        self.attack_bonus = util.AttackBonus(level=self.level)
+        self.attack_bonus = util.AttackBonus()
         self.weapon_damage = util.Modifier()
         self.offhand_weapon_damage = util.Modifier()
         self.attributes = util.Attributes()
         self.armor_class = util.ArmorClass()
-        self.saves = util.SavingThrows(level=self.level)
+        self.saves = util.SavingThrows()
         self.cmd = util.Modifier()
         self.hit_value = None
         self.max_hit_points = 0
@@ -131,6 +131,8 @@ class Creature(object):
         self.class_calculator.apply_modifications(self)
 
     def _calculate_derived_statistics(self):
+        self.attack_bonus.set_level(self.level)
+        self.saves.set_level(self.level)
         dexterity_to_ac = self.attributes.dexterity.get_total()
         if self.armor:
             self.armor_class.armor.add_inherent(self.armor.ac_bonus)
