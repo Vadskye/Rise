@@ -15,5 +15,5 @@ charisma=0
 #abilities
 trait=strength *4
 trait=constitution *1
-trait=natural grab
+trait=natural trip
 template=scout
