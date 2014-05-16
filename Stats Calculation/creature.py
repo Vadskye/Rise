@@ -82,9 +82,10 @@ class Creature(object):
         if 'alignment' in raw_stats.keys():
             self.alignment = raw_stats['alignment']
         #Add all the abilities to the character
-        if 'ability' in raw_stats.keys():
-            for ability_name in raw_stats['ability']:
-                self.add_ability(abilities[ability_name])
+        for ability_type in ABILITY_TYPES:
+            if ability_type in raw_stats.keys():
+                for ability_name in raw_stats[ability_type]:
+                    self.add_ability(abilities[ability_name])
 
     def _interpret_raw_attributes(self, raw_attributes):
         self.attributes.set_all_dict(raw_attributes)
