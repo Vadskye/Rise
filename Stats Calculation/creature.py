@@ -126,6 +126,11 @@ class Creature(object):
                 'wizard': classes.Wizard,
                 'warrior': classes.Warrior
                 }[self.class_name](self.level)
+        #Now that we have a level progression, apply templates
+        templates = self.get_abilities_by_tag('template')
+        if templates is not None:
+            for template in templates:
+                template.apply_benefit(self)
 
     def _calculate_class_stats(self):
         #Calculate statistics based on the given class
@@ -312,7 +317,7 @@ class Creature(object):
         #TODO: add Perception. Requires skills.
         senses = r'\textbf{Init} %s; Perception %s' % (
                 self.initiative.mstr(), util.mstr(0))
-        sense_abilities = self.get_abilities_with_tag('sense')
+        sense_abilities = self.get_abilities_by_tag('sense')
         if sense_abilities:
             senses += ', '
             senses += ', '.join([ability.get_text()
@@ -326,7 +331,7 @@ class Creature(object):
         movement = r'\textbf{Space} %s; \textbf{Reach} %s' % (
                 util.value_in_feet(self.space), util.value_in_feet(self.reach))
         movement += r'; \textbf{Speed} %s' % util.value_in_feet(self.speed)
-        movement_abilities = self.get_abilities_with_tag('movement')
+        movement_abilities = self.get_abilities_by_tag('movement')
         if movement_abilities:
             movement += ', '
             movement += ', '.join([ability.get_text()
@@ -339,7 +344,7 @@ class Creature(object):
                 self.armor_class.normal(), self.armor_class.touch(),
                 self.armor_class.flatfooted())
         defenses += r'; \textbf{MC} %s' % self.maneuver_class.get_total()
-        protection_abilities = self.get_abilities_with_tag('protection')
+        protection_abilities = self.get_abilities_by_tag('protection')
         if protection_abilities:
             defenses += '('
             defenses += ', '.join([ability.get_text()
@@ -352,14 +357,14 @@ class Creature(object):
         #Add HP and damage reduction
         defenses += r'\textbf{HP} %s (%s HV)' % (self.max_hit_points,
                 self.level)
-        dr_abilities = self.get_abilities_with_tag('damage reduction')
+        dr_abilities = self.get_abilities_by_tag('damage reduction')
         if dr_abilities:
             defenses += ', '.join([ability.get_text()
                 for ability in dr_abilities])
         defenses += ENDLINE
 
         #Add any immunities
-        immunity_abilities = self.get_abilities_with_tag('immunity')
+        immunity_abilities = self.get_abilities_by_tag('immunity')
         if immunity_abilities:
             defenses += r'\textbf{Immune} '
             defenses += ', '.join([ability.get_text()
@@ -370,7 +375,7 @@ class Creature(object):
         defenses+=r'\textbf{Saves} Fort %s, Ref %s, Will %s' % (
                 self.saves.fortitude.mstr(), self.saves.reflex.mstr(),
                 self.saves.will.mstr())
-        save_abilities = self.get_abilities_with_tag('saving throw')
+        save_abilities = self.get_abilities_by_tag('saving throw')
         if save_abilities:
             defenses += '; '
             defenses += ', '.join([ability.get_text()
@@ -407,7 +412,7 @@ class Creature(object):
                 util.mstr(base_maneuver_bonus + self.attributes.dexterity.get_total()))
         attacks += ENDLINE
 
-        special_attack_abilities = self.get_abilities_with_tag('special attack')
+        special_attack_abilities = self.get_abilities_by_tag('special attack')
         if special_attack_abilities:
             attacks += r'\textbf{Special} '
             attacks += ', '.join([ability.get_text()
@@ -423,7 +428,7 @@ class Creature(object):
 
     def _latex_feats(self):
         feats_string = ''
-        feats = self.get_abilities_with_tag('feat')
+        feats = self.get_abilities_by_tag('feat')
         if feats:
             feats_string += r'\textbf{Feats} '
             feats_string += ', '.join([feat.get_text().title()
@@ -440,14 +445,21 @@ class Creature(object):
             if not ability.meets_prerequisites(self):
                 if self.verbose: print 'Ability prerequisites not met'
                 return False
-        ability.apply_benefit(self)
+        #Templates must be applied later
+        if not ability.has_tag('template'):
+            ability.apply_benefit(self)
         self.abilities.add(ability)
 
     def has_ability(self, ability):
         return ability in self.abilities
 
-    def get_abilities_with_tag(self, tag):
-        return filter(lambda a: a.has_tag(tag), self.abilities)
+    #Get abilities either with or without a given tag
+    def get_abilities_by_tag(self, tag, with_tag = True):
+        if with_tag:
+            return filter(lambda a: a.has_tag(tag), self.abilities)
+        else:
+            return filter(lambda a: not a.has_tag(tag), self.abilities)
+
 
     def has_feat(self, feat):
         return feat in self.feats
