@@ -325,6 +325,9 @@ def parse_stats_from_file(input_file_name):
         #ignore comments
         line = line.strip()
         line = line.split('#',1)[0]
+        #ignore blank lines
+        if line == '':
+            continue
         #Separate data from data label
         line = line.split('=',1)
         #add the key, avoiding key overlap
