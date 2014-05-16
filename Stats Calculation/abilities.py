@@ -32,11 +32,11 @@ class Ability(object):
             return False
         return tag.lower() in self.tags
 
-    def get_text(self):
+    def get_text(self, creature = None):
         if self.text is not None:
             #self.text can be either a string or a function
             try:
-                return self.text(self)
+                return self.text(creature)
             except TypeError:
                 return self.text
         if self.value is not None:
