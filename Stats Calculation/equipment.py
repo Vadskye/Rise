@@ -23,6 +23,8 @@ class Weapon(object):
                 'projectile': cls('projectile', ENCUMBRANCE_HEAVY,
                     ATTACK_TYPE_PROJECTILE, [DAMAGE_PHYSICAL], 'd8m1'),
                 'claws': cls('claws', ENCUMBRANCE_MEDIUM, ATTACK_TYPE_MELEE,
+                    [DAMAGE_PHYSICAL, DAMAGE_PIERCING, DAMAGE_SLASHING], 'd6'),
+                'bite': cls('bite', ENCUMBRANCE_MEDIUM, ATTACK_TYPE_MELEE,
                     [DAMAGE_PHYSICAL, DAMAGE_PIERCING, DAMAGE_SLASHING], 'd8'),
                 'unarmed': cls('unarmed', ENCUMBRANCE_LIGHT, ATTACK_TYPE_MELEE,
                     [DAMAGE_PHYSICAL], 'd3'),
