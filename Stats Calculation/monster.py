@@ -33,7 +33,7 @@ class Monster(creature.Creature):
                 }[raw_stats['creature type']](self.level)
         self.archetype = {
                 'brute': Brute,
-                'scout': Scout
+                'scout': Scout,
                 'warrior': Warrior,
                 }[raw_stats['archetype']](self.level_progression)
 
