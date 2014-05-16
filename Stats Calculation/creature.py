@@ -261,12 +261,23 @@ class Creature(object):
             attributes += ' ' + str(getattr(self.attributes, 
                 attribute_name).get_total())
         return attributes
-    
+
+    def get_text_of_abilities_by_tag(self, tag, prefix = None, joiner = ', ',
+            suffix = None):
+        text = ''
+        abilities_with_tag = self.get_abilities_by_tag(tag)
+        if abilities_with_tag:
+            if prefix is not None: text += prefix
+            text += joiner.join([ability.get_text(self)
+                for ability in abilities_with_tag])
+            if suffix is not None: text += suffix
+        return text
+
     def to_latex(self):
         monster_string=''
         #The string is constructed from a series of function calls
         #Each call constructs one or more thematically related lines
-        #Each call should end with a \n, so we always start on a new line 
+        #Each call should end with ENDLINE, so we always start on a new line 
         horizontal_rule = '\\monlinerule\n'
         monster_string += self._latex_headers()
         monster_string += self._latex_senses()
@@ -321,11 +332,7 @@ class Creature(object):
         #TODO: add Perception. Requires skills.
         senses = r'\textbf{Init} %s; Perception %s' % (
                 self.initiative.mstr(), util.mstr(0))
-        sense_abilities = self.get_abilities_by_tag('sense')
-        if sense_abilities:
-            senses += ', '
-            senses += ', '.join([ability.get_text()
-                for ability in sense_abilities])
+        senses += self.get_text_of_abilities_by_tag('sense', prefix=', ')
         senses += ENDLINE
         return senses
 
@@ -335,11 +342,8 @@ class Creature(object):
         movement = r'\textbf{Space} %s; \textbf{Reach} %s' % (
                 util.value_in_feet(self.space), util.value_in_feet(self.reach))
         movement += r'; \textbf{Speed} %s' % util.value_in_feet(self.speed)
-        movement_abilities = self.get_abilities_by_tag('movement')
-        if movement_abilities:
-            movement += ', '
-            movement += ', '.join([ability.get_text()
-                for ability in movement_abilities])
+        movement += self.get_text_of_abilities_by_tag('movement', 
+                prefix = ', ')
         movement += ENDLINE
         return movement
 
@@ -348,12 +352,8 @@ class Creature(object):
                 self.armor_class.normal(), self.armor_class.touch(),
                 self.armor_class.flatfooted())
         defenses += r'; \textbf{MC} %s' % self.maneuver_class.get_total()
-        protection_abilities = self.get_abilities_by_tag('protection')
-        if protection_abilities:
-            defenses += '('
-            defenses += ', '.join([ability.get_text()
-                for ability in protection_abilities])
-            defenses += ')'
+        defenses += self.get_text_of_abilities_by_tag('protection',
+                prefix = '(', suffix = ')')
         defenses += ENDLINE
         #Should provide detailed explanation of AC sources here
         #defenses += '\par (%s)' % self.armor_class
@@ -361,29 +361,19 @@ class Creature(object):
         #Add HP and damage reduction
         defenses += r'\textbf{HP} %s (%s HV)' % (self.max_hit_points,
                 self.level)
-        dr_abilities = self.get_abilities_by_tag('damage reduction')
-        if dr_abilities:
-            defenses += ', '.join([ability.get_text()
-                for ability in dr_abilities])
+        defenses += self.get_text_of_abilities_by_tag('damage reduction', ', ')
         defenses += ENDLINE
 
         #Add any immunities
-        immunity_abilities = self.get_abilities_by_tag('immunity')
-        if immunity_abilities:
-            defenses += r'\textbf{Immune} '
-            defenses += ', '.join([ability.get_text()
-                for ability in immunity_abilities])
-            defenses += ENDLINE
+        defenses += self.get_text_of_abilities_by_tag('immunity',
+                prefix = r'\textbf{Immune} ', suffix = ENDLINE)
 
         #Add saving throws
         defenses+=r'\textbf{Saves} Fort %s, Ref %s, Will %s' % (
                 self.saves.fortitude.mstr(), self.saves.reflex.mstr(),
                 self.saves.will.mstr())
-        save_abilities = self.get_abilities_by_tag('saving throw')
-        if save_abilities:
-            defenses += '; '
-            defenses += ', '.join([ability.get_text()
-                for ability in save_abilities])
+        defenses += self.get_text_of_abilities_by_tag('saving throw',
+                prefix = '; ')
         defenses += ENDLINE
 
         return defenses
@@ -416,12 +406,8 @@ class Creature(object):
                 util.mstr(base_maneuver_bonus + self.attributes.dexterity.get_total()))
         attacks += ENDLINE
 
-        special_attack_abilities = self.get_abilities_by_tag('special attack')
-        if special_attack_abilities:
-            attacks += r'\textbf{Special} '
-            attacks += ', '.join([ability.get_text()
-                for ability in special_attack_abilities])
-            attacks += ENDLINE
+        attacks += self.get_text_of_abilities_by_tag('special attack',
+                prefix=r'\textbf{Special} ', suffix=ENDLINE)
         return attacks
 
     def _latex_attributes(self):
