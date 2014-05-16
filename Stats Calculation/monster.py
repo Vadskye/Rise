@@ -10,12 +10,13 @@ class Monster(creature.Creature):
 
         self._init_core_statistics()
         self._interpret_raw_stats(raw_stats)
+        self._interpret_raw_attributes(raw_stats)
         self.creature_type = raw_stats['creature type']
 
-        self._interpret_types(raw_stats)
+        self._set_creature_type(raw_stats)
         self._calculate_class_stats()
 
-        self._interpret_raw_attributes(util.parse_stats_from_file('data/attributes/warrior.txt'))
+        #self._interpret_raw_attributes(util.parse_stats_from_file('data/attributes/warrior.txt'))
 
         self._calculate_derived_statistics()
 
@@ -25,15 +26,15 @@ class Monster(creature.Creature):
         raw_stats = util.parse_stats_from_file(monster_filename)
         return cls(raw_stats, level)
 
-    def _interpret_types(self, raw_stats):
-        self.class_calculator = {
+    def _set_creature_type(self, raw_stats):
+        self.level_progression = {
                 'aberration': Aberration,
                 'animal': Animal
                 }[raw_stats['creature type']](self.level)
         self.archetype = {
                 'brute': Brute,
                 'scout': Scout
-                }[raw_stats['archetype']](self.class_calculator)
+                }[raw_stats['archetype']](self.level_progression)
 
 class Aberration(CreatureProgression):
     bab_progression = AVERAGE
@@ -83,13 +84,18 @@ class Archetype(object):
 
 class Brute(Archetype):
     def perform_improvements(self):
-        self.improve_bab()
-        self.improve_hv(2)
+        self.improve_hv()
         self.improve_save('fortitude')
 
 class Scout(Archetype):
     def perform_improvements(self):
         self.improve_save('reflex')
+
+class Warrior(Archetype):
+    def perform_improvements(self):
+        self.improve_bab()
+        self.improve_hv()
+        
 
 if __name__=="__main__":
     monster = Monster.from_monster_name('brown_bear', 4)
