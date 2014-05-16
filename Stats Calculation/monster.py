@@ -55,49 +55,6 @@ class Animal(LevelProgression):
         base_creature.add_ability(abilities['low-light vision'])
         base_creature.add_ability(abilities['natural armor'])
 
-class Archetype(object):
-    def __init__(self, creature_type):
-        self.creature_type = creature_type
-        self.perform_improvements()
-
-    def improve_bab(self):
-        if self.creature_type.bab_progression == POOR:
-            self.creature_type.bab_progression = AVERAGE
-        else:
-            self.creature_type.bab_progression = GOOD
-
-    def improve_save(self, save_name):
-        if self.creature_type.save_progressions[save_name] == POOR:
-            self.creature_type.save_progressions[save_name] = AVERAGE
-        else:
-            self.creature_type.save_progressions[save_name] = GOOD
-
-    def improve_hv(self, times_to_improve=1):
-        for i in xrange(times_to_improve):
-            self.creature_type.hit_value+=1
-        self.creature_type.hit_value = max(7, self.creature_type.hit_value)
-
-    #Override with specific archetypes
-    def perform_improvements(self):
-        pass
-
-    def __repr__(self):
-        return self.__class__.__name__
-
-class Brute(Archetype):
-    def perform_improvements(self):
-        self.improve_hv()
-        self.improve_save('fortitude')
-
-class Scout(Archetype):
-    def perform_improvements(self):
-        self.improve_save('reflex')
-
-class Warrior(Archetype):
-    def perform_improvements(self):
-        self.improve_bab()
-        self.improve_hv()
-
 if __name__=="__main__":
     monster = Monster.from_monster_name('brown_bear', 4)
     print monster
