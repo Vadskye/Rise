@@ -104,7 +104,7 @@ def power_attack_benefit(creature):
         creature.offhand_weapon_damage.add_circumstance(damage_bonus/2)
 abilities['power attack'] = Ability('power attack', power_attack_benefit, lambda creature:
         creature.attributes.strength.get_total() >= 3,
-        set(('feat', 'combat', 'power', 'style')))
+        ['feat', 'combat', 'power', 'style'])
 
 def deadly_aim_benefit(creature):
     creature.attack_bonus.add_circumstance(-util.bab_scale(creature.level))
@@ -113,6 +113,9 @@ def deadly_aim_benefit(creature):
 abilities['deadly aim'] = Ability('deadly aim', deadly_aim_benefit, lambda creature:
         creature.attributes.dexterity.get_total() >= 3,
         set(('feat', 'combat', 'precision', 'style')))
+
+abilities['endurance'] = Ability('endurance', tags=['feat'])
+abilities['run'] = Ability('run', tags=['feat'])
 
 ####################
 #MONSTER TRAITS
