@@ -325,8 +325,8 @@ def parse_stats_from_file(input_file_name):
     input_file = open(input_file_name,'r')
     stats=dict()
     for line in input_file:
+        line = line.strip().lower()
         #ignore comments
-        line = line.strip()
         line = line.split('#',1)[0]
         #ignore blank lines
         if line == '':
@@ -334,8 +334,8 @@ def parse_stats_from_file(input_file_name):
         #Separate data from data label
         line = line.split('=',1)
         #add the key, avoiding key overlap
-        key = line[0]
-        val = line[1]
+        key = line[0].strip()
+        val = line[1].strip()
         i=1
         #abilities can appear multiple times and are always stored as a list
         if key in ABILITY_TYPES:
