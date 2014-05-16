@@ -336,11 +336,20 @@ def parse_stats_from_file(input_file_name):
         i=1
         #abilities can appear multiple times and are always stored as a list
         if key == 'ability':
-            try:
-                stats[key].append(val)
-            except:
-                stats[key] = list()
-                stats[key].append(val)
+            if re.search(r'\*\d', val):
+                #If the ability ends with *3 or some other number, it should
+                #be stored multiple times
+                    val = val.split('*', 1)
+                    times_to_add_ability = int(val[1])
+                    val = val[0].strip()
+            else:
+                times_to_add_ability = 1
+            for i in xrange(times_to_add_ability):
+                try:
+                    stats[key].append(val)
+                except:
+                    stats[key] = list()
+                    stats[key].append(val)
         #Normal values are stored singularly, and should error on duplicates
         else:
             if stats.has_key(key):
