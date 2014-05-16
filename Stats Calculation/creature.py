@@ -130,7 +130,7 @@ class Creature(object):
         self._apply_templates()
 
     def _apply_templates(self):
-        templates = self.get_abilities_by_tag('template')
+        templates = self.get_abilities_by_tag(ABILITY_TEMPLATE)
         if templates is not None:
             for template in templates:
                 template.apply_benefit(self)
@@ -449,7 +449,7 @@ class Creature(object):
                 if self.verbose: print 'Ability prerequisites not met'
                 return False
         #Templates must be applied later
-        if not ability.has_tag('template'):
+        if not ability.has_tag(ABILITY_TEMPLATE):
             ability.apply_benefit(self)
         self.abilities.add(ability)
 
