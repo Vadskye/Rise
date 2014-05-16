@@ -172,3 +172,14 @@ abilities['darkvision'] = Ability('darkvision', tags = ['sense'], value = 60,
         text=lambda x: '%s %s ft.' % (x.name, x.value))
 abilities['low-light vision'] = Ability('low-light vision', tags = ['sense'])
 abilities['scent'] = Ability('scent', tags = ['sense'])
+
+
+####################
+#MONSTER TEMPLATES
+####################
+
+def warrior_benefit(creature):
+    util.improve_bab(creature.level_progression)
+    util.improve_hv(creature.level_progression)
+abilities['warrior'] = Ability('warrior', apply_benefit = warrior_benefit,
+        tags=['template'])
