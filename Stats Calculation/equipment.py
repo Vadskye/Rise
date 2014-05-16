@@ -11,14 +11,6 @@ class Weapon(object):
         self.damage_types = damage_types
         self.damage_die = dice.Dice.from_string(damage_die_name)
 
-    def to_latex(self, attack_bonus_modified):
-        #"physical" is implied if no other type is specified, so skip it
-        damage_types_without_physical = [x for x in self.damage_types
-                if not x==DAMAGE_PHYSICAL]
-        return '%s %s (%s %s damage)' % (
-                self.name, attack_bonus_modified,
-                self.damage_die, ' '.join(damage_types_without_physical))
-
     @classmethod
     def from_weapon_name(cls, weapon_name):
         return {
@@ -31,7 +23,7 @@ class Weapon(object):
                 'projectile': cls('projectile', ENCUMBRANCE_HEAVY,
                     ATTACK_TYPE_PROJECTILE, [DAMAGE_PHYSICAL], 'd8m1'),
                 'claws': cls('claws', ENCUMBRANCE_MEDIUM, ATTACK_TYPE_MELEE,
-                    [DAMAGE_PHYSICAL], 'd8m1'),
+                    [DAMAGE_PHYSICAL], 'd8'),
                 'unarmed': cls('unarmed', ENCUMBRANCE_LIGHT, ATTACK_TYPE_MELEE,
                     [DAMAGE_PHYSICAL], 'd3'),
                 'none': None
