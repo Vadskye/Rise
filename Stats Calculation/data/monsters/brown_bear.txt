@@ -16,6 +16,7 @@ charisma=0
 trait=natural armor
 trait=strength *2
 trait=constitution *3
+trait=natural grab
 feat=endurance
 feat=diehard
 template=brute
