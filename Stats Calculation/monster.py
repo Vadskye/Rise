@@ -1,5 +1,6 @@
 import creature
 import util
+from abilities import abilities
 from classes import LevelProgression, GOOD, AVERAGE, POOR
 
 class Monster(creature.Creature):
@@ -50,6 +51,9 @@ class Animal(LevelProgression):
     def apply_modifications(self, base_creature):
         if base_creature.alignment is None:
             base_creature.alignment = 'neutral'
+        base_creature.add_ability(abilities['scent'])
+        base_creature.add_ability(abilities['low-light vision'])
+        base_creature.add_ability(abilities['natural armor'])
 
 class Archetype(object):
     def __init__(self, creature_type):
