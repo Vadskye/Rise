@@ -1,8 +1,7 @@
-name=brown bear
-level=6
+name=black bear
+level=3
 creature type=animal
 weapon=claws
-size=large
 
 #attributes
 strength=3
@@ -13,9 +12,8 @@ wisdom=2
 charisma=0
 
 #abilities
-trait=natural armor
-trait=attribute: strength *2
-trait=attribute: constitution *3
+trait=attribute: strength
+trait=attribute: constitution *2
 feat=endurance
 feat=diehard
 template=brute
