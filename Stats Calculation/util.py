@@ -206,7 +206,7 @@ class ManeuverBonus(ModifierProgression):
         self.dexterity = dexterity
 
     def get_total(self, use_strength=True, roll=False, ignore_die = False):
-        total = super(ModifierBonus, self).get_total(roll, ignore_die)
+        total = super(ManeuverBonus, self).get_total(roll, ignore_die)
         if use_strength:
             return total + self.strength.get_total()
         else:
