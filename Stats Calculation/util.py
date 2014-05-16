@@ -54,9 +54,9 @@ class Modifier(object):
         except:
             self.die = die
 
-    def get_total(self, roll=False):
+    def get_total(self, roll=False, ignore_die = False):
         #return int if there are no dice
-        if self.die:
+        if self.die is not None and not ignore_die:
             if roll:
                 return self.raw_total + self.die.roll()
             else:
@@ -362,9 +362,11 @@ def die_average(die):
     return die_count*(die_size+1.0)/2.0
 
 #Convert a modifier to a string with + or - in front, as appropriate
-def mstr(text):
+def mstr(text, ignore_zero = False):
     if is_number(text):
         modifier=int(text)
+        if ignore_zero and modifier==0:
+            return ''
         if modifier<0:
             return str(modifier)
         else:
@@ -454,3 +456,12 @@ def value_in_feet(value):
     elif value == 2.5:
         value = '2-1/2'
     return '%s ft.' % value
+
+def attack_damage_to_latex(weapon, weapon_damage):
+    #"physical" is implied if no other type is specified, so skip it
+    damage_types_without_physical = [t for t in weapon.damage_types
+            if not t==DAMAGE_PHYSICAL]
+    return '%s%s %s damage' % (weapon_damage.die,
+            mstr(weapon_damage.get_total(ignore_die = True), ignore_zero = True),
+            ' '.join(damage_types_without_physical))
+
