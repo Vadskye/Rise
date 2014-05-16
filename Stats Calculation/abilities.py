@@ -176,13 +176,13 @@ abilities['low-light vision'] = Ability('low-light vision', tags = ['sense'])
 abilities['scent'] = Ability('scent', tags = ['sense'])
 
 def natural_grab_text(creature):
-    return 'Natural grab (%s) %s' % (util.decrease_size(creature.size),
+    return 'Natural grab (%s) %s' % (util.decrease_size(creature.size).title(),
             creature.maneuver_bonus.mstr())
 abilities['natural grab'] = Ability('improved grab', text = natural_grab_text,
         tags=['special attack'])
 
 def natural_trip_text(creature):
-    return 'Natural trip (%s) %s' % (util.increase_size(creature.size),
+    return 'Natural trip (%s) %s' % (util.increase_size(creature.size).title(),
             creature.maneuver_bonus.mstr())
 abilities['natural trip'] = Ability('natural trip', text = natural_trip_text,
         tags=['special attack'])
