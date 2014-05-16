@@ -458,9 +458,11 @@ def value_in_feet(value):
     return '%s ft.' % value
 
 def attack_damage_to_latex(weapon, weapon_damage):
-    #"physical" is implied if no other type is specified, so skip it
+    #These damage types are too common and verbose to include
+    ignored_damage_types = [DAMAGE_PHYSICAL, DAMAGE_SLASHING, DAMAGE_PIERCING,
+            DAMAGE_BLUDGEONING]
     damage_types_without_physical = [t for t in weapon.damage_types
-            if not t==DAMAGE_PHYSICAL]
+            if not t in ignored_damage_types]
     return '%s%s %s damage' % (weapon_damage.die,
             mstr(weapon_damage.get_total(ignore_die = True), ignore_zero = True),
             ' '.join(damage_types_without_physical))
