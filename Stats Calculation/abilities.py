@@ -1,4 +1,5 @@
 import util
+from strings import * 
 
 class Ability(object):
     #Name of the ability, a function that applies the benefits of the ability
@@ -182,4 +183,16 @@ def warrior_benefit(creature):
     util.improve_bab(creature.level_progression)
     util.improve_hv(creature.level_progression)
 abilities['warrior'] = Ability('warrior', apply_benefit = warrior_benefit,
+        tags=['template'])
+
+def brute_benefit(creature):
+    util.improve_hv(creature.level_progression)
+    util.improve_save(creature.level_progression, FORTITUDE)
+abilities['brute'] = Ability('brute', apply_benefit = brute_benefit,
+        tags=['template'])
+
+def scout_benefit(creature):
+    util.improve_save(creature.level_progression, REFLEX)
+    creature.speed += min(10, creature.speed)
+abilities['scout'] = Ability('scout', apply_benefit = scout_benefit,
         tags=['template'])
