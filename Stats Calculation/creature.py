@@ -140,9 +140,8 @@ class Creature(object):
         #Calculate statistics based on the given class
         self.level_progression.apply_progressions(self)
 
-        self.max_hit_points = calculate_hit_points(
-                self.attributes.constitution.get_total(), 
-                self.level_progression.hit_value, self.level)
+        self.max_hit_points = (self.attributes.constitution.get_total() +
+                self.level_progression.hit_value) * self.level
         self.current_hit_points = self.max_hit_points
 
         self.level_progression.apply_modifications(self)
@@ -460,10 +459,6 @@ class CombatCreature(Creature):
                 verbose)
         #default to full attack for now
         self.attack_mode = 'full attack'
-        #amount creature must hit by to hit with offhand attack
-        #Currently assuming that offhand weapon has same attack bonus
-        #as main hand weapon, and that offhand weapon is light
-        self.offhand_threshold = 5
 
         self.critical_damage = 0
         self.is_alive = True
@@ -536,12 +531,6 @@ class CombatCreature(Creature):
 
     def special_attack(self, enemy):
         pass
-
-class Character(Creature):
-    #http://stackoverflow.com/questions/7629556/python-super-and-init-vs-init-self
-    def __init__(self, raw_stats, raw_attributes, level, verbose=False):
-        super(Character, self).__init__(raw_stats, raw_attributes, level,
-                verbose)
 
 def calculate_hit_points(constitution, hit_value, level):
     return (constitution + hit_value) * level
