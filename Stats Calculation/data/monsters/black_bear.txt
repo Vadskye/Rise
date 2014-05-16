@@ -12,8 +12,8 @@ wisdom=2
 charisma=0
 
 #abilities
-trait=attribute: strength
-trait=attribute: constitution *2
+trait=strength
+trait=constitution *2
 feat=endurance
 feat=diehard
 template=brute

@@ -149,17 +149,17 @@ abilities['diehard'] = new_feat('diehard')
 #MONSTER TRAITS
 ####################
 
-abilities['attribute: strength'] = Ability('attribute: strength', lambda c:
+abilities['strength'] = Ability('strength', lambda c:
         c.attributes.strength.add_inherent(1))
-abilities['attribute: dexterity'] = Ability('attribute: dexterity', lambda c:
+abilities['dexterity'] = Ability('dexterity', lambda c:
         c.attributes.dexterity.add_inherent(1))
-abilities['attribute: constitution'] = Ability('attribute: constitution', lambda c:
+abilities['constitution'] = Ability('constitution', lambda c:
         c.attributes.constitution.add_inherent(1))
-abilities['attribute: intelligence'] = Ability('attribute: intelligence', lambda c:
+abilities['intelligence'] = Ability('intelligence', lambda c:
         c.attributes.intelligence.add_inherent(1))
-abilities['attribute: wisdom'] = Ability('attribute: wisdom', lambda c: 
+abilities['wisdom'] = Ability('wisdom', lambda c: 
         c.attributes.wisdom.add_inherent(1))
-abilities['attribute: charisma'] = Ability('attribute: charisma', lambda c:
+abilities['charisma'] = Ability('charisma', lambda c:
         c.attributes.charisma.add_inherent(1))
 
 def natural_armor_benefit(creature):

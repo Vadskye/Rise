@@ -14,8 +14,8 @@ charisma=0
 
 #abilities
 trait=natural armor
-trait=attribute: strength *2
-trait=attribute: constitution *3
+trait=strength *2
+trait=constitution *3
 feat=endurance
 feat=diehard
 template=brute
