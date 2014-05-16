@@ -143,6 +143,7 @@ abilities['deadly aim'] = Ability('deadly aim', deadly_aim_benefit, lambda creat
 
 abilities['endurance'] = new_feat('endurance')
 abilities['run'] = new_feat('run')
+abilities['diehard'] = new_feat('diehard')
 
 ####################
 #MONSTER TRAITS
