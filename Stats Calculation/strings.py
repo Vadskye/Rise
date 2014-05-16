@@ -70,3 +70,5 @@ DAMAGE_ACID = 'acid'
 DAMAGE_COLD = 'cold'
 DAMAGE_ELECTRICITY = 'electricity'
 DAMAGE_FIRE = 'fire'
+
+ABILITY_TEMPLATE = 'template'
