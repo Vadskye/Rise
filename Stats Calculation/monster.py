@@ -1,6 +1,6 @@
 import creature
 import util
-from classes import CreatureProgression, GOOD, AVERAGE, POOR
+from classes import LevelProgression, GOOD, AVERAGE, POOR
 
 class Monster(creature.Creature):
     
@@ -34,9 +34,10 @@ class Monster(creature.Creature):
         self.archetype = {
                 'brute': Brute,
                 'scout': Scout
+                'warrior': Warrior,
                 }[raw_stats['archetype']](self.level_progression)
 
-class Aberration(CreatureProgression):
+class Aberration(LevelProgression):
     bab_progression = AVERAGE
     save_progressions = {'fortitude': AVERAGE, 'reflex':POOR, 'will':AVERAGE}
     hit_value = 5
@@ -44,7 +45,7 @@ class Aberration(CreatureProgression):
     def apply_modifications(self, base_creature):
         pass
 
-class Animal(CreatureProgression):
+class Animal(LevelProgression):
     bab_progression = AVERAGE
     save_progressions = {'fortitude': AVERAGE, 'reflex': AVERAGE, 'will': POOR}
     hit_value = 6
@@ -95,7 +96,6 @@ class Warrior(Archetype):
     def perform_improvements(self):
         self.improve_bab()
         self.improve_hv()
-        
 
 if __name__=="__main__":
     monster = Monster.from_monster_name('brown_bear', 4)
