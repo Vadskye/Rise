@@ -497,6 +497,18 @@ def value_in_feet(value):
         value = '2-1/2'
     return '%s ft.' % value
 
+def change_size(size, size_difference) 
+    new_index = SIZES.index(size) + size_difference
+    new_index = max(new_index, 0)
+    new_index = min(new_index, len(SIZES)-1)
+    return SIZES[new_index]
+
+def increase_size(size):
+    return change_size(size, 1)
+
+def decrease_size(size):
+    return change_size(size, -1)
+
 def attack_damage_to_latex(weapon, weapon_damage):
     #These damage types are too common and verbose to include
     ignored_damage_types = [DAMAGE_PHYSICAL, DAMAGE_SLASHING, DAMAGE_PIERCING,
