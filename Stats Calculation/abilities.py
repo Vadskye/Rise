@@ -182,7 +182,7 @@ abilities['natural grab'] = Ability('improved grab', text = natural_grab_text,
         tags=['special attack'])
 
 def natural_trip_text(creature):
-    return 'Natural trip (%s) %s' % (creature.size,
+    return 'Natural trip (%s) %s' % (util.increase_size(creature.size),
             creature.maneuver_bonus.mstr())
 abilities['natural trip'] = Ability('natural trip', text = natural_trip_text,
         tags=['special attack'])
