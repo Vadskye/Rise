@@ -175,6 +175,12 @@ abilities['darkvision'] = Ability('darkvision', tags = ['sense'], value = 60,
 abilities['low-light vision'] = Ability('low-light vision', tags = ['sense'])
 abilities['scent'] = Ability('scent', tags = ['sense'])
 
+def improved_grab_text(creature):
+    return 'Improved Grab (%s) %s' % (util.decrease_size(creature.size),
+            creature.maneuver_bonus.mstr())
+abilities['improved grab'] = Ability('improved grab', text = improved_grab_text,
+        tags=['special attack'])
+
 
 ####################
 #MONSTER TEMPLATES
