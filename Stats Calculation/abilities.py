@@ -118,18 +118,18 @@ abilities['deadly aim'] = Ability('deadly aim', deadly_aim_benefit, lambda creat
 #MONSTER TRAITS
 ####################
 
-abilities['attribute strength'] = Ability('attribute: strength', lambda c:
-        c.attribute.strength.add_inherent(1))
-abilities['attribute dexterity'] = Ability('attribute: dexterity', lambda c:
-        c.attribute.dexterity.add_inherent(1))
-abilities['attribute constitution'] = Ability('attribute: constitution', lambda c:
-        c.attribute.constitution.add_inherent(1))
-abilities['attribute intelligence'] = Ability('attribute: intelligence', lambda c:
-        c.attribute.intelligence.add_inherent(1))
-abilities['attribute wisdom'] = Ability('attribute: wisdom', lambda c: 
-        c.attribute.wisdom.add_inherent(1))
-abilities['attribute charisma'] = Ability('attribute: charisma', lambda c:
-        c.attribute.charisma.add_inherent(1))
+abilities['attribute: strength'] = Ability('attribute: strength', lambda c:
+        c.attributes.strength.add_inherent(1))
+abilities['attribute: dexterity'] = Ability('attribute: dexterity', lambda c:
+        c.attributes.dexterity.add_inherent(1))
+abilities['attribute: constitution'] = Ability('attribute: constitution', lambda c:
+        c.attributes.constitution.add_inherent(1))
+abilities['attribute: intelligence'] = Ability('attribute: intelligence', lambda c:
+        c.attributes.intelligence.add_inherent(1))
+abilities['attribute: wisdom'] = Ability('attribute: wisdom', lambda c: 
+        c.attributes.wisdom.add_inherent(1))
+abilities['attribute: charisma'] = Ability('attribute: charisma', lambda c:
+        c.attributes.charisma.add_inherent(1))
 
 def natural_armor_benefit(creature):
     #Give 2 AC the first time, 1 every additional time
