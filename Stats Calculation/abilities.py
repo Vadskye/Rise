@@ -168,6 +168,7 @@ def natural_armor_benefit(creature):
         creature.armor_class.natural_armor.add_inherent(2)
 abilities['natural armor'] = Ability('natural armor', natural_armor_benefit)
 
-abilities['darkvision'] = Ability('darkvision', tags = ['sense'], value = 60)
+abilities['darkvision'] = Ability('darkvision', tags = ['sense'], value = 60,
+        text=lambda x: '%s %s ft.' % (x.name, x.value))
 abilities['low-light vision'] = Ability('low-light vision', tags = ['sense'])
 abilities['scent'] = Ability('scent', tags = ['sense'])
