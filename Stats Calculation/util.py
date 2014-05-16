@@ -495,3 +495,27 @@ def attack_damage_to_latex(weapon, weapon_damage):
             mstr(weapon_damage.get_total(ignore_die = True), ignore_zero = True),
             ' '.join(damage_types_without_physical))
 
+def improved_progression(progression):
+    if progression == POOR:
+        return AVERAGE
+    elif progression == AVERAGE:
+        return GOOD
+    elif progression == GOOD:
+        return GOOD
+    else:
+        raise Exception('Unknown progression: ' + str(progression))
+
+def improve_bab(level_progression):
+    level_progression.bab_progression = improved_progression(
+            level_progression.bab_progression)
+
+def improve_save(level_progression, save_name):
+    level_progression.save_progressions[save_name] = improved_progression(
+        level_progression.save_progressions[save_name])
+
+#Normally, HV maxes at 7
+def improve_hv(level_progression, times_to_improve=1, enforce_cap = True):
+    for i in xrange(times_to_improve):
+        level_progression.hit_value+=1
+    if enforce_cap:
+        level_progression.hit_value = max(7, level_progression.hit_value)
