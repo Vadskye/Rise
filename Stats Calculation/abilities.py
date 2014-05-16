@@ -3,14 +3,18 @@ import util
 class Ability(object):
     #Name of the ability, a function that applies the benefits of the ability
     #to a creature, a function that tests whether the creature qualifies
-    #for the ability, and a value associated with the ability, if appropriate
-    #(such as the range of darkvision)
+    #for the ability, a value associated with the ability, if appropriate
+    #(such as the range of darkvision), and special text for the ability if
+    #the name (and value, if present) are not what should be printed when
+    #the ability is referenced (primarily with to_latex()) 
+    #text can be either a string or a function
     def __init__(self, name, apply_benefit = None, meets_prerequisites = None, 
-            tags = None, value = None):
+            tags = None, value = None, text = None):
         self.name = name
+        self.tags = set()
         if tags is not None:
-            tags = set(tags)
-        self.tags = tags
+            for tag in tags:
+                self.tags.add(tag)
         if apply_benefit is None:
             self.apply_benefit = lambda x: True
         else:
@@ -19,15 +23,37 @@ class Ability(object):
             self.meets_prerequisites = lambda x: True
         else:
             self.meets_prerequisites = meets_prerequisites
-        self.value = None
+        self.value = value
+        self.text = text
 
     def has_tag(self, tag):
         if self.tags is None:
             return False
         return tag.lower() in self.tags
 
+    def get_text(self):
+        if self.text is not None:
+            #self.text can be either a string or a function
+            try:
+                return self.text(self)
+            except TypeError:
+                return self.text
+        if self.value is not None:
+            return '%s %s' % (self.name, self.value)
+        return self.name
+
     def __repr__(self):
         return 'Ability({0})'.format(self.name)
+
+def new_feat(name, apply_benefit = None, meets_prerequisites = None, tags = None,
+        value = None, text = None):
+    feat_tags = set()
+    feat_tags.add('feat')
+    if tags is not None:
+        for tag in tags:
+            feat_tags.add(tag)
+    return Ability(name, apply_benefit, meets_prerequisites, feat_tags, value,
+            text)
 
 abilities = dict()
 
@@ -114,8 +140,8 @@ abilities['deadly aim'] = Ability('deadly aim', deadly_aim_benefit, lambda creat
         creature.attributes.dexterity.get_total() >= 3,
         set(('feat', 'combat', 'precision', 'style')))
 
-abilities['endurance'] = Ability('endurance', tags=['feat'])
-abilities['run'] = Ability('run', tags=['feat'])
+abilities['endurance'] = new_feat('endurance')
+abilities['run'] = new_feat('run')
 
 ####################
 #MONSTER TRAITS
@@ -144,4 +170,4 @@ abilities['natural armor'] = Ability('natural armor', natural_armor_benefit)
 
 abilities['darkvision'] = Ability('darkvision', tags = ['sense'], value = 60)
 abilities['low-light vision'] = Ability('low-light vision', tags = ['sense'])
-abilities['scent'] = Ability('scent', tags = ['sense'], value = 30)
+abilities['scent'] = Ability('scent', tags = ['sense'])
