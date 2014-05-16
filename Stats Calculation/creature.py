@@ -127,6 +127,9 @@ class Creature(object):
                 'warrior': classes.Warrior
                 }[self.class_name](self.level)
         #Now that we have a level progression, apply templates
+        self._apply_templates()
+
+    def _apply_templates(self):
         templates = self.get_abilities_by_tag('template')
         if templates is not None:
             for template in templates:

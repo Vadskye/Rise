@@ -32,10 +32,7 @@ class Monster(creature.Creature):
                 'animal': Animal
                 }[raw_stats['creature type']](self.level)
         #Now that we have a level progression, apply templates
-        templates = self.get_abilities_by_tag('template')
-        if templates is not None:
-            for template in templates:
-                template.apply_benefit(self)
+        self._apply_templates()
 
 class Aberration(LevelProgression):
     bab_progression = AVERAGE
