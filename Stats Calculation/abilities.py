@@ -188,6 +188,12 @@ def natural_trip_text(creature):
 abilities['natural trip'] = Ability('natural trip', text = natural_trip_text,
         tags=['special attack'])
 
+def natural_weapon_benefit(creature):
+    creature.weapon_damage.die.increase_size()
+abilities['improved natural weapon'] = Ability('improved natural weapon',
+        apply_benefit = natural_weapon_benefit)
+
+
 
 ####################
 #MONSTER TEMPLATES
