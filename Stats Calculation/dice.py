@@ -2,7 +2,7 @@ import random
 import re
 
 class Dice(object):
-    def __init__(self, die_size, dice_count = 1, die_minimum=0):
+    def __init__(self, die_size, dice_count = 1, die_minimum=None):
         self.die_size = die_size
         self.dice_count = dice_count
         self.die_minimum = die_minimum
@@ -27,21 +27,22 @@ class Dice(object):
         if len(die_split)==2:
             die_minimum = int(die_split[1])
         else:
-            die_minimum = 0
+            die_minimum = None
         return cls(die_size, dice_count, die_minimum)
 
-    def increase_size(self, increase_min=False):
+    def increase_size(self):
         if self.die_size <4:
             self.die_size+=1
         elif self.die_size < 10:
             self.die_size+=2
-            if increase_min:
+            if self.die_minimum is not None:
                 if not (self.dice_count==1 and self.die_size == 6):
                     self.die_minimum+=self.dice_count
         elif self.die_size == 10:
             self.die_size = 6
             self.dice_count*=2
-            if increase_min: self.die_minimum+=self.dice_count
+            if self.die_minimum is not None:
+                self.die_minimum+=self.dice_count
         else:
             return False
         self.average = self._get_average()
@@ -52,12 +53,12 @@ class Dice(object):
         if self.die_size<6:
             self.die_size -=1
         elif self.die_size == 6 and self.dice_count >1:
-            self.die_minimum -= self.dice_count
+            if self.die_minimum is not None: self.die_minimum -= self.dice_count
             self.die_size = 10
             self.dice_count /= 2
         else:
             self.die_size -= 2
-            self.die_minimum -= self.dice_count
+            if self.die_minimum is not None: self.die_minimum -= self.dice_count
         print 'derp', self.dice_count, self.die_size
         self.average = self._get_average()
 
@@ -81,9 +82,10 @@ class Dice(object):
             total += (1 + self.die_size)/2.0
         #this formula only works for die count = 1 
         #it is inflated for larger dice counts
-        chance_to_hit_min = (self.die_minimum+1-self.dice_count)/float(
-                self.dice_count**2*self.die_size) 
-        total += total*chance_to_hit_min
+        if self.die_minimum is not None:
+            chance_to_hit_min = (self.die_minimum+1-self.dice_count)/float(
+                    self.dice_count**2*self.die_size) 
+            total += total*chance_to_hit_min
         return total
 
     def __str__(self):
