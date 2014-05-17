@@ -111,8 +111,10 @@ if __name__ == "__main__":
             """
             first_name = 'monk-unarmed'
             second_name = 'ftr-heavy'
-            first = combat.CombatCreature.from_creature_name(first_name, i+1)
-            second = combat.CombatCreature.from_creature_name(second_name, i+1)
+            first = Creature.from_creature_name(first_name, i+1)
+            first = combat.CombatCreature.from_creature(first)
+            second = Creature.from_creature_name(second_name, i+1)
+            second = combat.CombatCreature.from_creature(second)
 
             #print first
             #print second
