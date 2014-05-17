@@ -1,5 +1,5 @@
 import argparse
-from creature import Creature, CombatCreature
+from creature import Creature
 from monster import Monster
 import util
 import combat
@@ -111,8 +111,8 @@ if __name__ == "__main__":
             """
             first_name = 'monk-unarmed'
             second_name = 'ftr-heavy'
-            first = CombatCreature.from_creature_name(first_name, i+1)
-            second = CombatCreature.from_creature_name(second_name, i+1)
+            first = combat.CombatCreature.from_creature_name(first_name, i+1)
+            second = combat.CombatCreature.from_creature_name(second_name, i+1)
 
             #print first
             #print second
