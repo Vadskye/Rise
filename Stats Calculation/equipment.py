@@ -19,7 +19,7 @@ class Weapon(object):
                 'medium_melee': cls('medium melee', ENCUMBRANCE_MEDIUM,
                     ATTACK_TYPE_MELEE, [DAMAGE_PHYSICAL], 'd8m1'),
                 'light_melee': cls('light melee', ENCUMBRANCE_LIGHT,
-                    ATTACK_TYPE_MELEE, [DAMAGE_PHYSICAL], 'd6'),
+                    ATTACK_TYPE_MELEE, [DAMAGE_PHYSICAL], 'd6m0'),
                 'projectile': cls('projectile', ENCUMBRANCE_HEAVY,
                     ATTACK_TYPE_PROJECTILE, [DAMAGE_PHYSICAL], 'd8m1'),
                 'claws': cls('claws', ENCUMBRANCE_MEDIUM, ATTACK_TYPE_MELEE,
