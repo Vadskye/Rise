@@ -1,4 +1,17 @@
 \chapter{Combat}\label{Combat}
 
 \section{Attacks}
-If your base attack bonus is \plus6 or higher, you can make an additional attack on your turn. If y
+\subsection{Multiple Attacks}
+If your base attack bonus is \plus6 or higher, you can make multiple attacks as part of a standard attack. Each attack after the first takes a cumulative \minus5 penalty to hit. This progression is shown on \trefnp{Attacks per Round}.
+\begin{dtable}
+    \lcaption{Attacks per Round}
+    \begin{tabularx}{\columnwidth}{*{3}{>{\lcol}X}}
+        \thead{Base Attack Bonus} & \thead{Attacks per Round} & \thead{Attack Penalties} \\
+        1-5 & 1 & \plus0\\
+        6-10 & 2 & \plus0, \minus5 \\
+        11-15 & 3 & \plus0, \minus5, \minus10 \\
+        16-20 & 4 & \plus0, \minus5, \minus10, \minus15\\
+    \end{tabularx}
+\end{dtable}
+
+Some special abilities, such as the \spell{haste} spell, also grant you the ability to make multiple attacks. In all cases, making multiple attacks requires using a standard action to make a standard attack. You cannot take multiple attacks on an attack of opportunity. Additionally, any penalties imposed while taking multiple attacks do not affect any other attacks you make, such as attacks of opportunity.
