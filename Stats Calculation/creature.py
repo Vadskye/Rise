@@ -193,6 +193,11 @@ class Creature(object):
         raw_attributes = util.parse_attribute_file(raw_stats)
         return cls(raw_stats, raw_attributes, level, verbose)
 
+    #A creature with "typical" attributes for its level.
+    @classmethod
+    def from_generic_creature(cls, level, verbose = False):
+        return Creature.from_creature_name('generic-warrior', level)
+
     def _add_save_attributes(self):
         self.saves.fortitude.add_inherent(
                 self.attributes.constitution.get_total())
@@ -454,7 +459,3 @@ class Creature(object):
 
 def calculate_hit_points(constitution, hit_value, level):
     return (constitution + hit_value) * level
-
-#A creature with "typical" attributes for its level.
-def get_generic_creature(level):
-    return Creature.from_creature_name('generic-warrior', level)
