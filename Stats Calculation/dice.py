@@ -46,6 +46,21 @@ class Dice(object):
             return False
         self.average = self._get_average()
 
+    #always decrease min when decreasing size
+    def decrease_size(self):
+        print 'herp', self.dice_count, self.die_size,
+        if self.die_size<6:
+            self.die_size -=1
+        elif self.die_size == 6 and self.dice_count >1:
+            self.die_minimum -= self.dice_count
+            self.die_size = 10
+            self.dice_count /= 2
+        else:
+            self.die_size -= 2
+            self.die_minimum -= self.dice_count
+        print 'derp', self.dice_count, self.die_size
+        self.average = self._get_average()
+
     def roll(self):
         total = self._get_raw_roll()
         if total<=self.die_minimum:
