@@ -95,6 +95,9 @@ class Battle(object):
     def __init__(self, first_creature, second_creature):
         self.first_creature = first_creature
         self.second_creature = second_creature
+        #If two creatures with the same name battle, we can't tell who wins
+        if self.first_creature.name == self.second_creature.name:
+            self.second_creature.name += '_2'
 
     def iterated_battles(self, battle_count):
         first_creature_wins = 0
