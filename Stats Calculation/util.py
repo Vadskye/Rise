@@ -512,6 +512,14 @@ def increase_size(size):
 def decrease_size(size):
     return change_size(size, -1)
 
+def resize_weapon_die(weapon, creature_size):
+    difference_from_medium = SIZES.index(creature_size) - SIZES.index(SIZE_MEDIUM)
+    for i in xrange(abs(difference_from_medium)):
+        if difference_from_medium>0:
+            weapon.damage_die.increase_size()
+        else:
+            weapon.damage_die.decrease_size()
+
 def attack_damage_to_latex(weapon, weapon_damage):
     #These damage types are too common and verbose to include
     ignored_damage_types = [DAMAGE_PHYSICAL, DAMAGE_SLASHING, DAMAGE_PIERCING,
