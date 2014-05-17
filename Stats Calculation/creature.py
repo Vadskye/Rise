@@ -2,7 +2,6 @@ import math
 import classes
 import equipment
 import util
-import combat
 import dice
 from strings import *
 from abilities import abilities
@@ -452,85 +451,6 @@ class Creature(object):
 
     def has_feat(self, feat):
         return feat in self.feats
-
-class CombatCreature(Creature):
-    def __init__(self, raw_stats, raw_attributes, level, verbose = False):
-        super(CombatCreature, self).__init__(raw_stats, raw_attributes, level,
-                verbose)
-        #default to full attack for now
-        self.attack_mode = 'full attack'
-
-        self.critical_damage = 0
-        self.is_alive = True
-
-    def new_round(self):
-        self.damage_reduction.refresh()
-
-    def take_damage(self, damage, damage_types):
-        damage = self.damage_reduction.reduce_damage(damage, damage_types)
-        if self.current_hit_points>0:
-            self.current_hit_points = max(0, self.current_hit_points-damage)
-        else:
-            self.critical_damage+=damage
-            self.is_alive = self._check_if_alive()
-
-    def _check_if_alive(self):
-        if self.critical_damage > self.attributes.constitution.get_total():
-            return False
-        return True
-
-    def default_attack(self, enemy):
-        return {
-                'full attack': self.full_attack(enemy),
-                'damage spell': self.damage_spell(enemy),
-                'special attack': self.special_attack(enemy),
-                }[self.attack_mode]
-
-    def full_attack(self, enemy, deal_damage = True):
-        damage_dealt = 0
-        for i in xrange(util.attack_count(self.attack_bonus.base_attack_bonus)):
-            damage_dealt += self.single_attack(enemy, self.attack_bonus.get_total() - 5*i, deal_damage)
-        return damage_dealt
-
-    def single_attack(self, enemy, attack_bonus = None,
-            deal_damage = True):
-        damage_dealt = 0
-        if attack_bonus is None:
-            attack_bonus = self.attack_bonus.get_total()
-        is_hit, is_threshold_hit = util.attack_hits(attack_bonus, 
-                enemy.armor_class.normal(), threshold=5)
-        if is_hit:
-            damage_dealt += self.weapon_damage.get_total(roll=True)
-        if is_threshold_hit:
-            damage_dealt += self.offhand_weapon_damage.get_total(roll=True)
-        if deal_damage:
-            enemy.take_damage(damage_dealt, self.weapon.damage_types)
-        return damage_dealt
-
-    def damage_spell(self, enemy):
-        #Use highest-level, no optimization, no save spell
-        damage_die = dice.Dice.from_string('{0}d10'.format(max(1,self.level/2)))
-        damage_dealt = damage_die.roll()
-        enemy.take_damage(damage_dealt, ['spell'])
-        return damage_dealt
-
-    def damage_per_round(self, ac):
-        return full_weapon_damage_dealt(self.attack_bonus.get_total(),
-                ac, self.attack_bonus.base_attack_bonus, self.weapon_damage.get_total())
-
-    def hits_per_round(self, ac):
-        return combat.full_attack_hits(self.attack_bonus.get_total(),
-                ac, self.attack_bonus.base_attack_bonus)
-
-    def avg_hit_probability(self, ac):
-        return combat.avg_hit_probability(self.attack_bonus.get_total(),
-                ac, self.attack_bonus.base_attack_bonus)
-
-    def roll_initiative(self):
-        return util.d20.roll()+self.initiative.get_total()
-
-    def special_attack(self, enemy):
-        pass
 
 def calculate_hit_points(constitution, hit_value, level):
     return (constitution + hit_value) * level
