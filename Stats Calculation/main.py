@@ -90,7 +90,12 @@ if __name__ == "__main__":
         if args['creature_input_2']:
             creature2 = Monster.from_monster_name(args['creature_input'],
                 args['level'])
-            
+            creature = combat.CombatCreature.from_creature(creature)
+            creature2 = combat.CombatCreature.from_creature(creature2)
+            battle = combat.Battle(creature, creature2)
+            repeat_count = 500
+            results = run_repeated_battles(battle, repeat_count)
+            print results[0], results[2]
         else:
             print creature.to_latex()
             if args['output'] is not None:
@@ -118,7 +123,6 @@ if __name__ == "__main__":
 
             #print first
             #print second
-            second.name='second_char'
 
             #first.add_ability(abilities['combat expertise'], False)
             first.add_ability(abilities['power attack'], False)
