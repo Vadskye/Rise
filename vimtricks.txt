@@ -3,3 +3,6 @@ vim command to remove high-level spells:
 Need the following in 2nd and 1st most recent searches:
 \(spelllvl.\{-}\)\(3\|4\|5\|6\|7\|8\|9\)
 \\spellsection
+
+vim substitution to add labels to sections:
+:.,$s:section{\(.\{-}\)}:\0\\label{\1}:cg
