@@ -118,6 +118,21 @@ Choose a combat feat.
 \featben You gain that combat feat.
 \parhead{Special} You can take this trait multiple times. Each time, you choose a different feat.
 
+\subsubsection{Damage Reduction}
+\featben You gain damage reduction equal to your HV \add Constitution against any of the damage types listed below. This damage reduction can overcome by your choice of a different one of these types.
+\begin{itemize*}
+    \item Aligned damage, single (chaotic, good, evil, lawful)
+    \item Energy damage, single (acid, cold, electricity, or fire)
+    \item Physical damage, single (bludgeoning, slashing, piercing, nonmagical)
+\end{itemize*}
+%How to resist life, solar damage? How to have multiple ``overcome by''?
+\parhead{Advanced} For an additioanl trait point, your damage reduction can instead resist any of the following damage types.
+\begin{itemize*}
+    \item Energy damage, all
+    \item Physical damage, all
+    \item Spell damage
+\end{itemize*}
+
 \subsubsection{Natural Armor}
 \featben You gain a \plus2 inherent bonus to your natural armor modifier.
 \parhead{Special} You can take this trait multiple times. Each time, you gain an additional \plus1 inherent bonus to your natural armor.
@@ -125,7 +140,7 @@ Choose a combat feat.
 \subsubsection{Natural Grab}
 Choose one of your natural weapons.
 \featpre Natural Weapon
-\featben If you hit a creature with your chosen natural weapon, you may make a grapple attempt as an immediate action. The creature must be at least one size category smaller than you.
+\featben When you hit a creature with your chosen natural weapon, you may make a grapple attempt as an immediate action. The creature must be at least one size category smaller than you.
 
 \subsubsection{Natural Grab, Improved}
 \featpre Natural Grab, Natural Weapon.
@@ -145,54 +160,51 @@ Choose a natural weapon.
 \featben You increase the damage die of one of your natural weapons by one category.
 \parhead{Special} You can take this trait multiple times. Each time, you can apply it to a different natural weapon or to the same natural weapon. You cannot apply this trait to the same weapon more times than half your Constitution. 
 
-\subsubsection{Poison I}
-Choose one of your attacks.
-\featben When you deal damage with the chosen attack, the struck creature must make a Fortitude save or be afflicted with poison. The DC for the save is equal to 10 \add 1/2 your HD \add Constitution.
+\subsubsection{Natural Poison}
+Choose one of your natural weapons.
+\featpre Natural Weapon.
+\featben When you deal damage with your chosen natural weapon, the struck creature must make a Fortitude save or be afflicted with poison. The DC for the save is equal to 10 \add 1/2 your HD \add Constitution.
 \par The poison deals 1 damage each round to an attribute of your choice (other than Constitution). It continues until the subject makes two successful Fortitude saves against the poison.
 
-\subsubsection{Poison II}
-\featpre Poison I
-\featben Your poison deals 1d4 damage per round to an attribute other than Constitution, or 1 damage per round to Constitution.
-
-\subsubsection{Poison, Extended}
-\featpre Poison I
+\subsubsection{Natural Poison, Extended}
+\featpre Natural Poison, Natural Weapon
 \featben Your poison lasts until the subject makes three successful Fortitude saves.
 
-\subsubsection{Resistance I}
-\featben You gain damage reduction equal to your HV \add Constitution against any of the damage types listed below. The damage reduction must be overcome by another of these types.
-\begin{itemize*}
-    \item Aligned damage, single (chaotic, good, evil, lawful)
-    \item Energy damage, single (acid, cold, electricity, or fire)
-    \item Life damage
-    \item Physical damage, single (bludgeoning, slashing, piercing, nonmagical)
-    \item Solar damage
-\end{itemize*}
+\subsubsection{Natural Poison, Improved}
+\featpre Natural Poison, Natural Weapon.
+\featben Your poison deals 1d4 damage per round to an attribute other than Constitution, or 1 damage per round to Constitution.
 
-\subsubsection{Resistance, Expanded}
-\featpre Resistance I
-\featben Your damage reduction changes to resist any of the damage types listed below.
-\begin{itemize*}
-    \item Energy damage, all
-    \item Physical damage, all
-    \item Spell damage
-\end{itemize*}
-
-\subsubsection{Senses I}
+\subsubsection{Sense}
 \featben You gain one of the following senses.
 \begin{itemize*}
-    \item Darkvision 60'
+    \item Blindsense 60 ft.
+    \item Darkvision 60 ft.
     \item Low-light vision
     \item Scent
+    \item Tremorsense 60 ft.
 \end{itemize*}
+
+\parhead{Special} This trait can be taken multiple times. Each time, you may select a different sense.
+\parhead{Advanced} For an additional trait point, you can instead gain one of the following senses.
+\begin{itemize*}
+    \item Blindsight 30 ft.
+\end{itemize*}
+
+\subsubsection{Sense, Improved}
+Choose one of your senses from the Sense trait with a range.
+\featpre Sense
+\featben You double the range of your chosen sense.
 
 \subsubsection{Size Increase}
 \featpre Medium size or smaller, Attribute (Strength) x2.
 \featben Your size increases by one category.
 \parhead{Special} You can take this trait multiple times. You must have Attribute (Strength) x2 to become Large, x4 to become Huge, x6 to become Gargantuan, and x8 to become Colossal.
 
-\subsubsection{Trample I}
+\subsubsection{Trample}
 \featpre Large size or larger.
-\featben You gain the trample special ability. It deals 1d10 damage \add Strength for a Large creature, and the save DC is equal to 10 \add 1/2 your HD \add Strength.
+\featben As a full-round action, you can move up to twice your speed in a straight line and literally run over any creature at least one size category smaller than you without being impeded. Any creature whose space is completely covered by your own at any point during this movement takes damage. You are subject to attacks of opportunity as normal for this movement.
+
+This attack deals 1d10 damage \add your Strength for a Large creature, and the save DC is equal to 10 \add your level \add Strength.
 
 \subsection{Templates}
 \subsubsection{Dire}
