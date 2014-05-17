@@ -2,6 +2,7 @@ name=black bear
 level=3
 creature type=animal
 weapon=claws
+offhand weapon=claws
 
 #attributes
 strength=3
