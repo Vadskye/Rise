@@ -67,10 +67,6 @@ class Creature(object):
         equipment_set = equipment.EquipmentSet.from_raw_stats(raw_stats)
         self.weapon = equipment_set.weapon
         self.offhand_weapon = equipment_set.offhand_weapon
-        if self.weapon:
-            self.weapon_damage.add_die(self.weapon.damage_die)
-        if self.offhand_weapon:
-            self.offhand_weapon_damage.add_die(self.offhand_weapon.damage_die)
         self.armor = equipment_set.armor
         self.shield = equipment_set.shield
         if 'size' in raw_stats.keys():
@@ -78,6 +74,12 @@ class Creature(object):
         else:
             self.size = SIZE_MEDIUM
         self.space, self.reach, self.speed = util.get_size_statistics(self.size)
+        util.resize_weapon_die(self.weapon, self.size)
+
+        if self.weapon:
+            self.weapon_damage.add_die(self.weapon.damage_die)
+        if self.offhand_weapon:
+            self.offhand_weapon_damage.add_die(self.offhand_weapon.damage_die)
         if 'alignment' in raw_stats.keys():
             self.alignment = raw_stats['alignment']
         #Add all the abilities to the character
@@ -139,7 +141,7 @@ class Creature(object):
         #Calculate statistics based on the given class
         self.level_progression.apply_progressions(self)
 
-        self.max_hit_points = (self.attributes.constitution.get_total() +
+        self.max_hit_points = (self.attributes.constitution.get_total()/2 +
                 self.level_progression.hit_value) * self.level
         self.current_hit_points = self.max_hit_points
 
