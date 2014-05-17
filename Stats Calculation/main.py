@@ -6,15 +6,14 @@ import combat
 import cProfile
 from abilities import abilities
 
-CHARACTER = 'character'
-MONSTER = 'monster'
+CREATURE = 'creature'
 COMBAT = 'combat'
 
 def initialize_argument_parser():
     parser = argparse.ArgumentParser(description='Calculate combat statistics for Rise characters')
     parser.add_argument('-f', '--function', dest='function',
             help='function to perform', default=COMBAT,
-            choices=[COMBAT, CHARACTER, MONSTER])
+            choices=[COMBAT, CREATURE])
     parser.add_argument('-c', '--creature-input', dest='creature_input', 
             help='the creature file to load', default=None)
     parser.add_argument('-c2', '--creature-input-2', dest='creature_input_2',
@@ -74,31 +73,30 @@ def normalize_ac(creature):
     creature.armor_class.misc.add_circumstance(
             get_generic_ac_calc()[creature.level-1] - creature.armor_class.normal())
 
+def get_character_or_monster(creature_name, level):
+    try:
+        return Creature.from_creature_name(creature_name, level)
+    except IOError:
+        return Monster.from_monster_name(creature_name, level)
+
 if __name__ == "__main__":
     args = initialize_argument_parser()
-    if args['function'] == CHARACTER:
-        creature = Creature.from_creature_name(args['creature_input'],
+    if args['function'] == CREATURE:
+        creature = get_character_or_monster(args['creature_input'],
                 args['level'])
         print creature
         if args['output'] is not None:
             latex_string = creature.to_latex()
             output_file = open(args['output'], 'w')
             output_file.write(latex_string)
-    elif args['function'] == MONSTER:
-        creature = Monster.from_monster_name(args['creature_input'],
-                args['level'])
-        print creature.to_latex()
-        if args['output'] is not None:
-            latex_string = creature.to_latex()
-            output_file = open(args['output'], 'w')
-            output_file.write(latex_string)
         else:
             if args['creature_input_2']:
-                creature2 = Monster.from_monster_name(args['creature_input'],
-                    args['level'])
+                creature = get_character_or_monster(args['creature_input_2'],
+                        args['level'])
             else:
                 creature2 = Creature.from_creature_name('ftr-typical',
                         creature.level)
+            print creature2
             creature = combat.CombatCreature.from_creature(creature)
             creature2 = combat.CombatCreature.from_creature(creature2)
             battle = combat.Battle(creature, creature2)
