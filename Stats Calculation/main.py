@@ -17,6 +17,8 @@ def initialize_argument_parser():
             choices=[COMBAT, CHARACTER, MONSTER])
     parser.add_argument('-c', '--creature-input', dest='creature_input', 
             help='the creature file to load', default=None)
+    parser.add_argument('-c2', '--creature-input-2', dest='creature_input_2',
+            help='the creature file to load', default=None)
     parser.add_argument('-l', '--level', dest='level', type=int,
             help='the level of the creature', default=None)
     parser.add_argument('-o', '--output', dest='output', default=None,
@@ -85,11 +87,17 @@ if __name__ == "__main__":
     elif args['function'] == MONSTER:
         creature = Monster.from_monster_name(args['creature_input'],
                 args['level'])
-        print creature.to_latex()
-        if args['output'] is not None:
-            latex_string = creature.to_latex()
-            output_file = open(args['output'], 'w')
-            output_file.write(latex_string)
+        if args['creature_input_2']:
+            creature2 = Monster.from_monster_name(args['creature_input'],
+                args['level'])
+            
+        else:
+            print creature.to_latex()
+            if args['output'] is not None:
+                latex_string = creature.to_latex()
+                output_file = open(args['output'], 'w')
+                output_file.write(latex_string)
+
     elif args['function'] == COMBAT:
         for i in xrange(20):
             """
