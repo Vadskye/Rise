@@ -2,6 +2,7 @@ name=brown bear
 level=6
 creature type=animal
 weapon=claws
+offhand weapon=claws
 size=large
 
 #attributes
@@ -14,7 +15,9 @@ charisma=0
 
 #abilities
 trait=natural armor
+trait=improved natural weapon
 trait=strength *2
+trait=dexterity
 trait=constitution *3
 trait=natural grab
 feat=endurance
