@@ -87,21 +87,24 @@ if __name__ == "__main__":
     elif args['function'] == MONSTER:
         creature = Monster.from_monster_name(args['creature_input'],
                 args['level'])
-        if args['creature_input_2']:
-            creature2 = Monster.from_monster_name(args['creature_input'],
-                args['level'])
+        print creature.to_latex()
+        if args['output'] is not None:
+            latex_string = creature.to_latex()
+            output_file = open(args['output'], 'w')
+            output_file.write(latex_string)
+        else:
+            if args['creature_input_2']:
+                creature2 = Monster.from_monster_name(args['creature_input'],
+                    args['level'])
+            else:
+                creature2 = Creature.from_creature_name('ftr-typical',
+                        creature.level)
             creature = combat.CombatCreature.from_creature(creature)
             creature2 = combat.CombatCreature.from_creature(creature2)
             battle = combat.Battle(creature, creature2)
             repeat_count = 500
             results = run_repeated_battles(battle, repeat_count)
-            print results[0], results[2]
-        else:
-            print creature.to_latex()
-            if args['output'] is not None:
-                latex_string = creature.to_latex()
-                output_file = open(args['output'], 'w')
-                output_file.write(latex_string)
+            print 'Monster win %:', results[0], results[2]
 
     elif args['function'] == COMBAT:
         for i in xrange(20):
