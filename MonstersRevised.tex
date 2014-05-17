@@ -106,10 +106,9 @@ For example, a 5th level monster with the Scout and Warrior archetypes has nine 
 
 Some traits can be taken multiple times. Unless otherwise stated, no trait can be taken more times than half your level (minimum 1).
 
-\subsubsection{Attribute}
-Choose an attribute.
-\featben You gain a \plus1 inherent bonus to the appropriate attribute.
-\parhead{Special} This feat can be taken multiple times. Its effects stack. You can choose a different attribute or the same attribute each time. You can apply the Attribute trait to a single attribute no more times than half your HD (min 1).
+Traits come in two main groups: active traits, which grant new attacks or special powers the monster can use, and passive traits, which improve the monster's statistics.
+
+\subsection{Active Traits}
 
 \subsubsection{Area Debuff}
 \featben A number of times per day equal to 1 \add half your Constitution or Charisma, you can cause enemies in a \areasmall radius burst around you, or in a \areamed line or cone from you, to suffer a tier 3 condition unless they make a saving throw. The DC is equal to 10 \add your level \add your Constitution or Charisma.
@@ -118,10 +117,41 @@ Choose an attribute.
 \featpre Area Debuff
 \featben The area affected by your area debuff increases by one tier (\areasmall, to \areamed, to \arealarge, to 100 feet).
 
-\subsubsection{Combat Feat}
-Choose a combat feat.
-\featben You gain that combat feat.
-\parhead{Special} You can take this trait multiple times. Each time, you choose a different feat.
+\subsubsection{Natural Grab}
+Choose one of your natural weapons.
+\featpre Natural Weapon
+\featben When you hit a creature with your chosen natural weapon, you may make a grapple attempt as an immediate action. The creature must be at least one size category smaller than you.
+
+\subsubsection{Natural Grab, Improved}
+\featpre Natural Grab, Natural Weapon.
+\featben You can use your natural grab ability on creatures of your size category or smaller.
+
+\subsubsection{Natural Poison}
+Choose one of your natural weapons.
+\featpre Natural Weapon.
+\featben As a swift action, you can ready your chosen natural weapon to inflict poison. The next time you deal damage with it, the struck creature must make a Fortitude save or be afflicted with poison. The DC for the save is equal to 10 \add 1/2 your level \add Constitution.
+\par The poison deals 1 damage each round to an attribute of your choice (other than Constitution). It continues until the subject makes two successful Fortitude saves against the poison.
+
+\subsubsection{Natural Poison, Extended}
+\featpre Natural Poison, Natural Weapon
+\featben Your poison lasts until the subject makes three successful Fortitude saves.
+
+\subsubsection{Natural Poison, Improved}
+\featpre Natural Poison, Natural Weapon.
+\featben Your poison deals 1d4 damage per round to an attribute other than Constitution, or 1 damage per round to Constitution.
+
+\subsubsection{Trample}
+\featpre Large size or larger.
+\featben As a full-round action, you can move up to twice your speed in a straight line and literally run over any creature at least one size category smaller than you without being impeded. Any creature whose space is completely covered by your own at any point during this movement takes damage. You are subject to attacks of opportunity as normal for this movement.
+
+This attack deals 1d10 damage \add your Strength for a Large creature, and the save DC is equal to 10 \add your level \add Strength.
+
+\subsection{Passive Traits}
+
+\subsubsection{Attribute}
+Choose an attribute.
+\featben You gain a \plus1 inherent bonus to the appropriate attribute.
+\parhead{Special} This feat can be taken multiple times. Its effects stack. You can choose a different attribute or the same attribute each time. You can apply the Attribute trait to a single attribute no more times than half your HD (min 1).
 
 \subsubsection{Damage Reduction}
 \featben You gain damage reduction equal to your HV \add Constitution against any of the damage types listed below. This damage reduction can overcome by your choice of a different one of these types.
@@ -142,15 +172,6 @@ Choose a combat feat.
 \featben You gain a \plus2 inherent bonus to your natural armor modifier.
 \parhead{Special} You can take this trait multiple times. Each time, you gain an additional \plus1 inherent bonus to your natural armor.
 
-\subsubsection{Natural Grab}
-Choose one of your natural weapons.
-\featpre Natural Weapon
-\featben When you hit a creature with your chosen natural weapon, you may make a grapple attempt as an immediate action. The creature must be at least one size category smaller than you.
-
-\subsubsection{Natural Grab, Improved}
-\featpre Natural Grab, Natural Weapon.
-\featben You can use your natural grab ability on creatures of your size category or smaller.
-
 \subsubsection{Natural Weapon}
 \featben You gain a natural weapon from the following list. The natural weapon deals damage appropriate for your size. The damage listed is for Medium creatures.
 \begin{itemize*}
@@ -164,20 +185,6 @@ Choose a natural weapon.
 \featpre Natural Weapon.
 \featben You increase the damage die of one of your natural weapons by one category.
 \parhead{Special} You can take this trait multiple times. Each time, you can apply it to a different natural weapon or to the same natural weapon. You cannot apply this trait to the same weapon more times than half your Constitution. 
-
-\subsubsection{Natural Poison}
-Choose one of your natural weapons.
-\featpre Natural Weapon.
-\featben When you deal damage with your chosen natural weapon, the struck creature must make a Fortitude save or be afflicted with poison. The DC for the save is equal to 10 \add 1/2 your HD \add Constitution.
-\par The poison deals 1 damage each round to an attribute of your choice (other than Constitution). It continues until the subject makes two successful Fortitude saves against the poison.
-
-\subsubsection{Natural Poison, Extended}
-\featpre Natural Poison, Natural Weapon
-\featben Your poison lasts until the subject makes three successful Fortitude saves.
-
-\subsubsection{Natural Poison, Improved}
-\featpre Natural Poison, Natural Weapon.
-\featben Your poison deals 1d4 damage per round to an attribute other than Constitution, or 1 damage per round to Constitution.
 
 \subsubsection{Sense}
 \featben You gain one of the following senses.
@@ -197,19 +204,13 @@ Choose one of your natural weapons.
 
 \subsubsection{Sense, Improved}
 Choose one of your senses from the Sense trait with a range.
-\featpre Sense
+\featpre Sense.
 \featben You double the range of your chosen sense.
 
 \subsubsection{Size Increase}
 \featpre Medium size or smaller, Attribute (Strength) x2.
 \featben Your size increases by one category.
 \parhead{Special} You can take this trait multiple times. You must have Attribute (Strength) x2 to become Large, x4 to become Huge, x6 to become Gargantuan, and x8 to become Colossal.
-
-\subsubsection{Trample}
-\featpre Large size or larger.
-\featben As a full-round action, you can move up to twice your speed in a straight line and literally run over any creature at least one size category smaller than you without being impeded. Any creature whose space is completely covered by your own at any point during this movement takes damage. You are subject to attacks of opportunity as normal for this movement.
-
-This attack deals 1d10 damage \add your Strength for a Large creature, and the save DC is equal to 10 \add your level \add Strength.
 
 \subsection{Templates}
 \subsubsection{Dire}
