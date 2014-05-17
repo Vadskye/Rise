@@ -1,15 +1,11 @@
 import dice
 import util
 import copy
-from creature import Creature
 
-class CombatCreature(Creature):
-    def __init__(self, raw_stats, raw_attributes, level, verbose = False):
-        super(CombatCreature, self).__init__(raw_stats, raw_attributes, level,
-                verbose)
+class CombatCreature(object):
+    def __init__(self):
         #default to full attack for now
         self.attack_mode = 'full attack'
-
         self.critical_damage = 0
         self.is_alive = True
 
@@ -81,6 +77,18 @@ class CombatCreature(Creature):
 
     def special_attack(self, enemy):
         pass
+
+    @classmethod
+    def from_creature(cls, creature):
+        combat_creature = cls()
+        for attribute in dir(creature):
+            try:
+                if not hasattr(combat_creature, attribute):
+                    setattr(combat_creature, attribute, getattr(creature,
+                        attribute))
+            except AttributeError:
+                pass
+        return combat_creature
 
 class Battle(object):
     #At first, assume two creatures
