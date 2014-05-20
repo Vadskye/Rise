@@ -406,3 +406,7 @@ Phantom Darkness
 {'touch_attack': ['1'], 'range': 'touch', 'save_name': ['Phantom', 'Darkness'], 'duration': ['round'], 'save': ['negates'], 'condition': [1.5]}
 Spell Level: -0.2
 
+Song of Discord
+{'area': 'medium_radius', 'range': 'touch', 'limit_types': [1], 'condition': [1.5], 'duration': ['short'], 'save': ['negates'], 'escapable': 1, 'save_name': ['Song of Discord']}
+Spell Level: 6.83
+
