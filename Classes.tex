@@ -529,28 +529,28 @@ fighter no longer needs to use it as a prerequisite, such as might happen if the
 the feat as a normal feat or bonus feat.
 \par In order to gain a new adaptive style feat, it must be reasonably possible to do training related to the new feat. For example, a fighter could not gain Weapon Focus in axes without at least one axe available.
 
-\cf{Ftr}{Combat Discipline} At 5th level, a fighter can his superior training and focus to keep fighting in the face of debilitating effects. When a fighter is initially affected by one of the conditions listed below, he may mitigate or negate the condition for up to one round per two fighter levels. At the end of that time, if the original condition would still affect the fighter, it does so normally, though he may use combat discipline again (if he has uses remaining) to continue to fight off the effect.
-\par Using combat discipline takes no action, and can be done at any time, even when it isn't the fighter's turn. A fighter may use this ability a number of times per day equal to 3 \add his Constitution
+\cf{Ftr}{Combat Discipline} At 5th level, a fighter can use his superior training and focus to keep fighting in the face of debilitating effects. When a fighter is initially affected by one of the conditions listed on \trefnp{Combat Discipline Conditions}, he may use his combat discipline ability to instead suffer the mitigated condition one column to the right. This lasts until the end of the original condition or for one round per two fighter levels, at which point the he suffers the effects of the original condition unless he uses his combat discipline ability again.
+\par Using combat discipline takes no action, and can be done at any time, even when it isn't the fighter's turn. A fighter may use this ability a number of times per day equal to 3 \add his Constitution.
 
 \begin{dtable}
 \lcaption{Combat Discipline Conditions}
 \begin{tabularx}{\columnwidth}{*{4}{>{\lcol}X}}
-\thead{Condition} & \thead{Condition} & \thead{Condition} & \thead{Condition} \\
-   Panicked & Frightened & Shaken & None  \\
-   Petrified  & Paralyzed & Slowed & None \\
-   Stunned       & Dazed & Staggered & None \\
-&  Blinded & Dazzled & None \\
-&  Confused & Bewildered & None \\
-&  Exhausted & Fatigued & None\\
-&  Nauseated & Sickened & None \\
-&& Ability damage\fn{1} & None \\
-&& Ability penalty\fn{1} & None \\
-&& Entangled & None \\
-&& Deafened & None \\
-&& Fascinated & None \\
-&& Ignited\fn{2} & None \\
-&& Immobilized & None \\
-&& Negative level\fn{3} & None \\
+\thead{Original Condition} & \thead{Mitigated Condition} & \thead{Mitigated Condition} & \thead{Mitigated Condition} \\
+Panicked & Frightened & Shaken & None  \\
+Petrified  & Paralyzed & Slowed & None \\
+Stunned       & Dazed & Staggered & None \\
+Blinded & Dazzled & None  & \x \\
+Confused & Bewildered & None & \x \\
+Exhausted & Fatigued & None & \x \\
+Nauseated & Sickened & None & \x \\
+Ability damage\fn{1} & None & \x & \x \\
+Ability penalty\fn{1} & None & \x & \x \\
+Entangled & None & \x & \x \\
+Deafened & None & \x & \x \\
+Fascinated & None & \x & \x \\
+Ignited\fn{2} & None & \x & \x \\
+Immobilized & None & \x & \x \\
+Negative level\fn{3} & None & \x & \x \\
 \end{tabularx}
 1. Allows the fighter to mitigate up to half his fighter level in ability damage or penalties per use of combat discipline. \\
 2. Mitigates the penalties, but does not prevent the fighter from taking d6 fire damage per round until the fire is put out. \\
