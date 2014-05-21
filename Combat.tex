@@ -178,7 +178,7 @@ Sometimes, some creatures are not aware of the combat when it starts. This most 
 Sometimes, everyone is surprised, such as if a guard walks around a corner to unexpectedly find a group of muggers. In that case, initiative is rolled normally, but all creatures are flat-footed and can't take attacks of opportunity until they take their first action.
 
 \section{Injury, Death, and Healing}\label{Injury, Death, and Healing}
-Your hit points measure how hard you are to kill. No matter how many hit points you lose, your character isn't hindered in any way until your hit points drop to 0 or lower.
+Your hit points measure how hard you are to kill. No matter how many hit points you lose, your character isn't hindered in any way until your hit points drop to 0.
 
 \subsection{Losing Hit Points}
 When you take lethal damage, you subtract that damage from your hit points.
@@ -195,7 +195,7 @@ When you drop to half your hit points or below, you are bloodied. This makes you
 \subsubsection{Staggered}
 When you take damage that would reduce your hit points to 0, you become staggered.  While staggered, you may take a single move action or standard action each round, but not both. You cannot take full-round actions, but you may take swift actions. In addition, you are vulnerable, causing you to take a \minus2 penalty on attack rolls, saving throws, checks, DCs, and AC.
 
-Normally, any excess damage from the attack that brought you to 0 hit points is wasted. However, if you take additional damage, you begin dying.
+If you take additional damage while at 0 hit points, you begin dying.
 
 \subsubsection{Dying}
 When you take damage while you have no hit points remaining, that damage represents serious physical injury to your body. This is called critical damage. When you take critical damage, you immediately fall unconscious and begin dying. While you have critical damage, magical healing which would normally restore hit points cannot restore your hit points, though it can prevent you from dying.
@@ -211,6 +211,9 @@ If you critical damage exceeds 10 \add your Constitution, you die. You can also 
 If you have taken critical damage but managed to stave off death, you become stable. You remain unconscious until your hit points exceed your critical damage.
 
 Unless your hit points go above 0, you remain unconscious. As long as you have critical damage, magical healing that restores hit points has no effect on your hit points.
+
+\subsubsection{Overkill Damage}
+Normally, when you take damage that would reduce your hit points to 0, any excess damage from the attack is wasted. However, some attacks deal such massive damage that you begin dying immediately, rather than just becoming staggered. If the damage dealt by an attack exceeds your maximum hit points (not current hit points), any damage past what would reduce your hit points to 0 is dealt as critical damage rather than being wasted.
 
 \subsection{Healing}
 After taking damage, you can recover hit points through natural healing or through magical healing. In any case, you can't regain hit points past your full normal hit point total.
