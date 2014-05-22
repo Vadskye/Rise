@@ -60,19 +60,19 @@
 \newcommand{\tind}{\hspace{1em}}
 
 \newcommand{\appdescription}[7]{\subsubsection{#1} \parhead{Price (Level)} #2 gp (#3) \parhead{Body Location} #4 \parhead{Aura, Caster Level} #5, #6 \parhead{Activation} #7 \par}
-\newcommand{\appdescriptiondc}[8]{\appdescription{#1}{#2}{#3}{#4}{#5}{#6}{#7} \parhead{Saving Throw} #8 \add half character level\par}
+\newcommand{\appdescriptiondc}[8]{\appdescription{#1}{#2}{#3}{#4}{#5}{#6}{#7} \parhead{Saving Throw} #8 \add character level\par}
 \newcommand{\impdescription}[6]{\subsubsection{#1} \parhead{Price (Level)} #2 gp (#3) \parhead{Aura, Caster Level} #4, #5 \parhead{Activation} #6 \par}
 \newcommand{\impdescriptionnoact}[5]{\subsubsection{#1} \parhead{Price (Level)} #2 gp (#3) \parhead{Aura, Caster Level} #4, #5 \par}
-\newcommand{\impdescriptiondc}[7]{\impdescription{#1}{#2}{#3}{#4}{#5}{#6} \parhead{Saving Throw} #7 \add half character level\par}
-\newcommand{\impdescriptiondcnoact}[6]{\impdescription{#1}{#2}{#3}{#4}{#5} \parhead{Saving Throw} #6 \add half character level\par}
+\newcommand{\impdescriptiondc}[7]{\impdescription{#1}{#2}{#3}{#4}{#5}{#6} \parhead{Saving Throw} #7 \add character level\par}
+\newcommand{\impdescriptiondcnoact}[6]{\impdescription{#1}{#2}{#3}{#4}{#5} \parhead{Saving Throw} #6 \add character level\par}
 %Spell creation requirements, without descriptors
 %School, subschool, spell level, caster level, craft skill
 \newcommand{\mitemreq}[5]{\par \textit{Creation Requirements:} #1 (#2) #3; caster level #4 or #5}
 %Legacy
 \newcommand{\armdescription}[5]{\subsubsection{#1} \parhead{Bonus} \plus #2 \parhead{Caster Level} #3 \parhead{Aura} #4 \parhead{Activation} #5 \par}
-\newcommand{\armdescriptiondc}[6]{\armdescription{#1}{#2}{#3}{#4}{#5} \my{\textbf{Save DC:} #6 \add half character level} \par}
+\newcommand{\armdescriptiondc}[6]{\armdescription{#1}{#2}{#3}{#4}{#5} \my{\textbf{Save DC:} #6 \add character level} \par}
 \newcommand{\itemdescription}[7]{\my{\subsubsection{#1} \parhead{Price (Level)} #2 gp (#3) \parhead{Body Slot} #4 \parhead{Caster Level} #5 \parhead{Aura} #6 \parhead{Activation} #7 \par}}
-\newcommand{\itemdescriptiondc}[8]{\itemdescription{#1}{#2}{#3}{#4}{#5}{#6}{#7} \my{\textbf{Save DC:} #8 \add half character level} \par}
+\newcommand{\itemdescriptiondc}[8]{\itemdescription{#1}{#2}{#3}{#4}{#5}{#6}{#7} \my{\textbf{Save DC:} #8 \add character level} \par}
 \newcommand{\itemdescriptionmulti}[6]{ \subsubsection{#1} \noindent{\small
   \rowcolors{1}{white}{tbrown} \begin{tabularx}{\columnwidth}{X *{#2}{l}} #3 \end{tabularx}} \parhead{Aura School} #4 \parhead{Body Slot} #5 \parhead{Activation} #6 \par}
 \newcommand{\itemdescriptiononek}[4]{\itemdescriptionmulti{#1}{5}{
@@ -99,7 +99,7 @@
 \newcommand{\tooldescription}[6]{\my{\subsubsection{#1} \parhead{Price (Level)} #2 gp (#3) \parhead{Caster Level} #4 \parhead{Aura} #5 \parhead{Activation} #6 \par}}
 %one shot items should not have scaling DCs
 \newcommand{\tooldescriptiondcos}[7]{\tooldescription{#1}{#2}{#3}{#4}{#5}{#6} \my{\textbf{Save DC:} #7} \par}
-\newcommand{\tooldescriptiondc}[7]{\tooldescription{#1}{#2}{#3}{#4}{#5}{#6} \my{\textbf{Save DC:} #7 \add half character level} \par}
+\newcommand{\tooldescriptiondc}[7]{\tooldescription{#1}{#2}{#3}{#4}{#5}{#6} \my{\textbf{Save DC:} #7 \add character level} \par}
 
 \newcommand{\prereq}[1]{\subparhead{Prerequisites:} #1}
 \newcommand{\bpl}[3]{(\plus #1) #2 gp (#3)}
