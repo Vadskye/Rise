@@ -2,7 +2,7 @@
 Magic items are objects that have been imbued with magical energy. They can take almost any form, and their potential uses are only as limited as the magic that created them.
 
 \section{Magic Item Types}
-Magic items are divided into two broad categories:
+Magic items are divided into three broad categories:
 \begin{itemize*}
   \item Apparel items provide access to their powers while worn. A \mitem{flaming burst full plate} and a \mitem{ring of protection} are apparel items.
   \item Implements provide access to their powers when wielded. A \mitem{flaming longsword} and a \mitem{wand of fire} are implements.
@@ -71,7 +71,7 @@ In order to activate a spell completion item, a character must be able to cast s
 \section{Magic Item Effects}
 Most magic items either provide numerical bonuses or emulate the effect of a spell in some way.
 
-\subsection{Scaling Bonuses}
+\subsection{Scaling Bonuses}\label{Scaling Bonuses}
 A number of magic items provide direct numerical bonuses to a particular aspect of a character. For some items, the bonus inherently provided by the item is the minimum bonus it grants. For example, a \mitem{\plus2 longsword} grants a \plus2 bonus to attack and damage to any character, even a 1st level character. However, a character of legendary might can draw more power from the same item. Any scaling item provides at \plus1 bonus when worn by a character of at least 4th level. This bonus increases to \plus2 at 8th level, to \plus3 at 12th level, to \plus4 at 16th level, and finally to \plus5 at 20th level. If an item scales, it is noted in its description.
 
 Only class levels are considered when determining the scaling bonus of an item. Hit Values of any other type are not included.
@@ -117,7 +117,7 @@ Items without components do not have a ``Cost'' entry. For them, the market pric
 \itemhead{Weight:} The notational entry for many wondrous items ends with a value for the item's weight. When a weight figure is not given, the item has no weight worth noting (for purposes of determining how much of a load a character can carry).
 \end{itemize*}
 
-\section{Arms and Armor}
+\section{Apparel}
 
 \subsection{Armor and Shields}
 
@@ -129,7 +129,7 @@ Body armor is always created so that even if the type of armor comes with boots 
 The prices of enhancement bonuses to armor are listed in \trefnp{Magic Armor and Shields}. If armor has a special ability, the price of the special ability is added to the price of the armor. The number of special abilities on the armor cannot exceed the enhancement bonus of the armor. Additionally, the price of all special abilities cannot exceed twice the price of the enhancement bonus on the armor.
 
 \begin{dtable}
-\caption{Magic Armor and Shields}
+\lcaption{Magic Armor and Shields}
 \begin{tabularx}{\columnwidth} {>{\ccol}X c c}
   \thead{Minimum Enhancement Bonus} & \thead{Base Price} & \thead{Item Level}\\
 \plus1 armor/shield & 1,000 gp & 4th \\
@@ -192,6 +192,69 @@ If you activate the item, your foe takes 1d10 electricity damage per two charact
 During that time, you may always make a saving throw when a spell is cast on you. If you succeed, the spell has no effect on you. The type of saving throw made is indicated by the spell. If the spell also allows a saving throw of the same type, only one roll is made.
 
 \mitemreq{Abjuration}{Shielding}{4}{8th}{(as armor) 12}
+
+\subsection{Arms}
+
+\subsection{Head}
+
+\subsection{Legs}
+
+\subsection{Rings}
+
+\parhead{Physical Description} Rings have no appreciable weight. Although exceptions exist that are crafted from glass or bone, the vast majority of rings are forged from metal - usually precious metals such as gold, silver, and platinum. A ring has AC 13, 2 hit points, hardness 10, and a break DC of 25.
+
+\parhead{Activation} Rings have highly varied activation methods. Some are active as long as they are worn, some are triggered by specific circumstances, and some respond to a command word.
+
+\begin{comment}
+\begin{dtable}
+\lcaption{Rings}
+\begin{tabularx}{\columnwidth}{>{\lcol}X l}
+Ring & Market Price \\
+Protection \plus1 & 2,000 gp \\
+Feather falling & 2,200 gp \\
+Climbing & 2,500 gp \\
+Jumping & 2,500 gp \\
+Sustenance & 2,500 gp \\
+Swimming & 2,500 gp \\
+Mind shielding & 8,000 gp \\
+Protection \plus2 & 8,000 gp \\
+Climbing, improved & 10,000 gp \\
+Jumping, improved & 10,000 gp \\
+Swimming, improved & 10,000 gp \\
+Energy resistance, minor & 12,000 gp \\
+Protection \plus3 & 18,000 gp \\
+Energy resistance, major & 28,000 gp \\
+Protection \plus4 & 32,000 gp \\
+Energy resistance, greater & 44,000 gp \\
+Protection \plus5 & 50,000 gp \\
+\end{tabularx}
+\end{dtable}
+\end{comment}
+
+
+
+\appdescription{Protection}{Varies}{see text}{Varied Abjuration (Shielding)}{varies}{\x}
+A ring of protection grants a scaling enhancement bonus to your saving throws while worn. See \pref{Scaling Bonuses} for details on scaling bonuses. The properties of the ring depend on its minimum enhancement bonus, as shown in the table below.
+
+\begin{dtable}
+\caption{Ring of Protection}
+\begin{tabularx}{\columnwidth} {>{\ccol}X c c}
+  \thead{Minimum Enhancement Bonus} & \thead{Base Price} & \thead{Item Level} \\
+\plus1  & 1,000 gp & 4th\\
+\plus2 & 4,000 gp & 6th\\
+\plus3 & 9,000 gp & 9th\\
+\plus4 & 16,000 gp & 12th \\
+\plus5 & 32,000 gp & 15th \\
+\end{tabularx}
+\end{dtable}
+
+The caster level is equal to three times the item's minimum enhancement bonus. To craft the item, you must have a number of ranks in Craft (jewelry) equal to the item's caster level \add 4.
+
+\mitemreq{Abjuration}{Shielding}{1}{varies}{jewelry varies}
+
+\subsection{Torso}
+
+\section{Implements}
 
 \subsection{Weapons}
 
@@ -288,71 +351,6 @@ A soulreaver weapon has no effect on objects. While wielded, it has physical for
 \impdescription{Vorpal}{40,500}{18th}{Strong Transmutation (Augment)}{18th}{Immediate (triggered) 1/day} When you roll a 20 with this weapon and confirm the critical hit, you can instantly decapitate your foe. If you do, it dies immediately, with no saving throw allowed. This has no effect on creatures without a discernable head, creatures unaffected by the loss of a single head, or creatures whose head you cannot reach.
 
 \mitemreq{Transmutation}{Augment}{9}{18th}{(as weapon) 22}
-
-\section{Apparel}
-
-\subsection{Arms}
-
-\subsection{Head}
-
-\subsection{Legs}
-
-\subsection{Rings}
-
-\parhead{Physical Description} Rings have no appreciable weight. Although exceptions exist that are crafted from glass or bone, the vast majority of rings are forged from metal - usually precious metals such as gold, silver, and platinum. A ring has AC 13, 2 hit points, hardness 10, and a break DC of 25.
-
-\parhead{Activation} Rings have highly varied activation methods. Some are active as long as they are worn, some are triggered by specific circumstances, and some respond to a command word.
-
-\begin{comment}
-\begin{dtable}
-\lcaption{Rings}
-\begin{tabularx}{\columnwidth}{>{\lcol}X l}
-Ring & Market Price \\
-Protection \plus1 & 2,000 gp \\
-Feather falling & 2,200 gp \\
-Climbing & 2,500 gp \\
-Jumping & 2,500 gp \\
-Sustenance & 2,500 gp \\
-Swimming & 2,500 gp \\
-Mind shielding & 8,000 gp \\
-Protection \plus2 & 8,000 gp \\
-Climbing, improved & 10,000 gp \\
-Jumping, improved & 10,000 gp \\
-Swimming, improved & 10,000 gp \\
-Energy resistance, minor & 12,000 gp \\
-Protection \plus3 & 18,000 gp \\
-Energy resistance, major & 28,000 gp \\
-Protection \plus4 & 32,000 gp \\
-Energy resistance, greater & 44,000 gp \\
-Protection \plus5 & 50,000 gp \\
-\end{tabularx}
-\end{dtable}
-\end{comment}
-
-
-
-\appdescription{Protection}{Varies}{see text}{Varied Abjuration (Shielding)}{varies}{\x}
-A ring of protection grants a scaling enhancement bonus to your saving throws while worn. See \pref{Scaling Bonuses} for details on scaling bonuses. The properties of the ring depend on its minimum enhancement bonus, as shown in the table below.
-
-\begin{dtable}
-\caption{Ring of Protection}
-\begin{tabularx}{\columnwidth} {>{\ccol}X c c}
-  \thead{Minimum Enhancement Bonus} & \thead{Base Price} & \thead{Item Level} \\
-\plus1  & 1,000 gp & 4th\\
-\plus2 & 4,000 gp & 6th\\
-\plus3 & 9,000 gp & 9th\\
-\plus4 & 16,000 gp & 12th \\
-\plus5 & 32,000 gp & 15th \\
-\end{tabularx}
-\end{dtable}
-
-The caster level is equal to three times the item's minimum enhancement bonus. To craft the item, you must have a number of ranks in Craft (jewelry) equal to the item's caster level \add 4.
-
-\mitemreq{Abjuration}{Shielding}{1}{varies}{jewelry varies}
-
-\subsection{Torso}
-
-\section{Implements}
 
 \begin{comment}
 \subsection{Rods}
