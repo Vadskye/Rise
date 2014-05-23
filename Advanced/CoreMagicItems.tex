@@ -313,11 +313,14 @@ Magic ammunition loses its magic after being fired, whether it hits or misses.
 \lcaption{Weapon Special Abilities}
 \begin{tabularx}{\columnwidth}{>{\lcol}X l l}
   \thead{Special Ability} & \thead{Cost} & \thead{Item Level} \\
+  Bane & Special & Special \\
   Surestrike, Lesser & 500 gp & 3rd \\
-  Flaming & 1,000 gp & 5th \\
-  Freezing & 1,000 gp & 5th \\
+  Flaming & 1,000 gp & 4th \\
+  Freezing & 1,000 gp & 4th \\
+  Forceful & 2,000 gp & 5th \\
   Shocking & 4,000 gp & 6th \\
   Surestrike & 8,000 gp & 9th \\
+  Thieving & 8,000 gp & 9th \\
   Lifedrinker & 8,000 gp & 9th \\
   Heartseeker & 12,500 gp & 11th \\
   Soulreaver & 32,000 gp & 15th \\
@@ -359,17 +362,21 @@ Vermin & \\
 
 %As 5th level spell because it feels right. Based losely on Discern
 %Vulnerability, although this feels like Awareness, so True Seeing?
-\impdescription{Heartseeker}{12,500}{11th}{Moderate Divination (Awareness)}{10th}{Immediate (triggered) 1/day} When you strike the same foe with this weapon for multiple rounds in a row, you can suddenly perceive a critical weakness in your foe's defenses. You must strike the foe for a number of consecutive rounds equal to the critical multiplier of the weapon you are using. If you activate the item, the final hit automatically becomes a confirmed critical hit. This has no effect on creatures immune to critical hits.
+\impdescription{Heartseeking}{12,500}{11th}{Moderate Divination (Awareness)}{10th}{Immediate (triggered) 1/day} When you strike the same foe with this weapon for multiple rounds in a row, you can suddenly perceive a critical weakness in your foe's defenses. You must strike the foe for a number of consecutive rounds equal to the critical multiplier of the weapon you are using. If you activate the item, the final hit automatically becomes a confirmed critical hit. This has no effect on creatures immune to critical hits.
 
 \mitemreq{Divination}{Awareness}{5}{10th}{(as weapon) 14}
 
-\impdescription{Lifedrinker}{8,000}{9th}{Faint Necromancy (Life) [Healing]}{4th}{Immediate (triggered) 3/day} When you damage a foe with this weapon, you can absorb your foe's life energy. If you do, you gain life equal to the damage dealt by the blow. You cannot gain more hit points than your foe has.
+\impdescription{Forceful}{2,000}{5th}{Faint Evocation (Control)}{4th}{Immediate (triggered) 3/day} When you damage a foe with this weapon, you can activate weapon to immediately make a bull rush attempt with a circumstance bonus equal to the damage you dealt with the attack. You do not provoke an attack of opportunity for the bull rush, even if you fail, and you do not have to move with your foe to knock it back.
+
+\mitemreq{Evocation}{Control}{2}{4th}{(as weapon) 8}
+
+\impdescription{Lifedrinking}{8,000}{9th}{Faint Necromancy (Life) [Healing]}{4th}{Immediate (triggered) 3/day} When you damage a foe with this weapon, you can absorb your foe's life energy. If you do, you gain life equal to the damage dealt by the blow. You cannot gain more hit points than your foe has.
 
 \mitemreq{Necromancy}{Life}{2}{4th}{(as weapon) 8}
 
 %As 8th level spell? I have no idea. There aren't actually any spells this can
 %be based on.
-\impdescription{Soulreaver}{32,000}{15th}{Strong Necromancy (Soul)}{16th}{\x and standard (specific action)} This ghostly, translucent weapon strikes directly at the target's soul. It ignores all damage reduction, but it does not deal hit point damage. In fact, a creature struck by the weapon only feels the weapon pass through it harmlessly. Damage that would be dealt by the weapon is delayed for up to 24 hours. While the damage is delayed, it cannot be cured.
+\impdescription{Soulreaving}{32,000}{15th}{Strong Necromancy (Soul)}{16th}{\x and standard (specific action)} This ghostly, translucent weapon strikes directly at the target's soul. It ignores all damage reduction, but it does not deal hit point damage. In fact, a creature struck by the weapon only feels the weapon pass through it harmlessly. Damage that would be dealt by the weapon is delayed for up to 24 hours. While the damage is delayed, it cannot be cured.
 
 In order to convert the delayed damage into real damage, the wielder must stab himself through the heart with the weapon as a standard action. This deals no damage to the wielder, but any creatures that have been dealt damage by the weapon immediately take lethal damage equal to the delayed damage the weapon has stored up for them. Any such damage dealt in excess of the creature's hit points is converted directly into critical damage.
 
@@ -388,6 +395,12 @@ A soulreaver weapon has no effect on objects. While wielded, it has physical for
 \impdescription{Surestrike}{8,000}{9th}{Faint Divination (Knowledge)}{6th}{Immediate (triggered) 3/day} When you miss an attack with this weapon, you can activate it to reroll the attack roll. You must take the second result.
 
 \mitemreq{Divination}{Knowledge}{2}{4th}{(as weapon) 8}
+
+\impdescription{Thieving}{8,000}{9th}{Faint Transmutation (Alteration)}{4th}{Immediate (trigger) 3/day and standard (specific action)} When you strike an object with this weapon, if the object is at least one size category smaller than the weapon, you may activate the weapon. If you do, the object is absorbed into the weapon, leaving no trace that it ever existed. Striking an attended object requires a successful disarm or sunder attempt.
+
+You can retrieve objects from the weapon by running your hand along the length of the striking surface of the weapon (a standard action). If you do, the last item absorbed by the weapon appears in your hand. You may retrieve objects from within the weapon any number of times per day, but you may only absorb objects three times per day.
+
+The weapon can hold no more than three objects at once. If you attempt to absorb an object while the weapon is full, the attempt fails. 
 
 \impdescription{Thundering}{16,000}{2nd}{Faint Evocation (Energy) [Sonic]}{2nd}{Immediate (triggered) 1/day} When you strike a foe with this weapon, you can detonate a deafening roll of thunder, deafening the struck foe and all other creatures within a \areasmall radius of you. You are immune to the deafening effect.
 
