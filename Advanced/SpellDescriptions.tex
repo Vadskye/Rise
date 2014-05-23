@@ -5916,10 +5916,17 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \spellsave{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  This spell grants creatures the mental power of a totem animal. It has three forms, each of which grants a \plus2 bonus to a mental attribute. \bonusscalingdescription
+  This spell grants the subject the mental power of a totem animal. It has three forms, each of which grants a \plus2 bonus to a mental attribute. \bonusscalingdescription
   \par \subspell{Eagle's Splendor} The transmuted creature becomes more persuasive and personally forceful, gaining a bonus to Charisma.
   \par \subspell{Fox's Cunning} The transmuted creature becomes smarter, gaining a bonus to Intelligence.
   \par \subspell{Owl's Wisdom} The transmuted creature becomes more perceptive, gaining a bonus to Wisdom.
+\end{spelleffect}
+
+\spellsectioncomma{Totemic Mind}{Greater}
+\spellschool{Transmutation (Augment)}
+\spelllvl{Clr 4, Drd 4, Sor/Wiz 4}
+\begin{spelleffect}
+    This spell functions like \spell{totemic mind}, except that it grants a \plus4 bonus to the chosen attribute instead. Alternately, you can grant the subject a \plus2 bonus to all mental attributes.
 \end{spelleffect}
 
 \spellsectioncomma{Totemic Mind}{Mass}
@@ -5932,6 +5939,13 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
   This spell functions like \spell{totemic mind}, except that it affects multiple creatures. All affected creatures must gain a bonus to the same attribute.
 \end{spelleffect}
 
+\spellsectioncomma{Totemic Mind}{Mass Greater}
+\spellschool{Transmutation (Augment)}
+\spelllvl{Clr 8, Drd 8, Sor/Wiz 8}
+\begin{spelleffect}
+    This spell functions like \spell{greater totemic mind}, except that it affects multiple creatures. Each affected creature must have the same attribute or attributes increased.
+\end{spelleffect}
+
 \spellsection{Totemic Power}
 \spellschool{Transmutation (Augment)}
 \spelllvl{Clr 2, Drd 2, Sor/Wiz 2, Strength 2}
@@ -5941,20 +5955,34 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \spellsave{Fortitude negates (harmless)}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
-  This spell grants creatures the physical power of an animal. It has three forms, each of which grants a \plus2 bonus to a mental attribute. \bonusscalingdescription
+  This spell grants the subject the physical power of an animal. It has three forms, each of which grants a \plus2 bonus to a physical attribute.
   \par \subspell{Bear's Endurance} The transmuted creature gains greater vitality and stamina, gaining a bonus to Constitution. Hit points gained by a temporary increase in Constitution score are not temporary hit points. They go away when the subject's Constitution drops back to normal. They are not lost first as temporary hit points are.
   \par \subspell{Bull's Strength} The transmuted creature becomes stronger, gaining a bonus to Strength.
   \par \subspell{Cat's Grace} The transmuted creature becomes more graceful, agile, and coordinated, gaining a bonus to Dexterity.
 \end{spelleffect}
 
+\spellsectioncomma{Totemic Power}{Greater}
+\spellschool{Transmutation (Augment)}
+\spelllvl{Clr 4, Drd 4, Sor/Wiz 4, Strength 4}
+\begin{spelleffect}
+    This spell functions like \spell{totemic power}, except that it grants a \plus4 bonus to the chosen attribute instead. Alternately, you can grant the subject a \plus2 bonus to all physical attributes.
+\end{spelleffect}
+
 \spellsectioncomma{Totemic Power}{Mass}
 \spellschool{Transmutation (Augment)}
-\spelllvl{Clr 6, Drd 6, Sor/Wiz 6}
+\spelllvl{Clr 5, Drd 5, Sor/Wiz 5}
 \spellrng{\rngmed}
 \spellarea{\areamed radius limit}
 \spelltgts{Five creatures within the area}
 \begin{spelleffect}
-  This spell functions like \spell{totemic power}, except that it affects multiple creatures.
+  This spell functions like \spell{totemic power}, except that it affects multiple creatures. Each affected creature must have the same attribute increased. 
+\end{spelleffect}
+
+\spellsectioncomma{Totemic Power}{Mass Greater}
+\spellschool{Transmutation (Augment)}
+\spelllvl{Clr 8, Drd 8, Sor/Wiz 8, Strength 8}
+\begin{spelleffect}
+    This spell functions like \spell{greater totemic power}, except that it affects multiple creatures. Each affected creature must have the same attribute or attributes increased.
 \end{spelleffect}
 
 \spellsection{Touch of Idiocy}
