@@ -753,9 +753,63 @@ A druid who ceases to revere nature, changes to a prohibited alignment, or teach
 \end{tabularx}
 \end{dtable}
 
-\cf{Ftr}{Bonus Feats} The fighter gains an additional bonus feat at 6th level and every four fighter levels thereafter (6th, 10th, 14th, and 18th).
+\sssecfake{Class Skills}
+The fighter's class skills (and the key attribute for each skill) are Athletics (Str), Climb (Str), Swim (Str), Ride (Dex), and Intimidate (Cha).
+\cf{Ftr}{Skill Points at 1st Level} 2.
 
-\cf{Ftr}{Adaptive Style Feats} The fighter gains an additional adaptive style feat at 8th level and every four fighter levels thereafter (8th, 12th, 16th, and 20th).
+\sssecfake{Class Features}
+All of the following are class features of the fighter.
+ \cf{Ftr}{Weapon and Armor Proficiency}  A fighter is proficient with simple weapons,  any four other weapon groups,  all armor (heavy, medium, and light) and shields (including tower shields).
+
+\cf{Ftr}{Armor Discipline} At 1st level, a fighter's training grants him additional capability when using his armor. He may choose an armor category (light, medium, heavy, or shields), or he may choose to train equally with all kinds of armor and shields. Whether or not he chooses a specific armor category, he reduces his armor check penalty by 2 and reduces his arcane spell failure by 5\% when using his chosen armor. These benefits apply separately to armor and shields, if the fighter uses both and chose not to focus in a particular armor category. This effect cannot reduce those penalties below 0.
+\par If the fighter chose a particular armor category, he gains a \plus1 competence bonus to his dodge modifier while using armor of that category.
+
+\cf{Ftr}{Bonus Feat} At 2nd level, a fighter gets a bonus combat-oriented feat. This bonus feat must be drawn from the feats noted as combat feats on \tref{Combat Feats}. A fighter must still meet all prerequisites for a bonus feat, including attribute score and base attack bonus minimums. The fighter gains an additional bonus feat at 6th level and every four fighter levels thereafter (6th, 10th, 14th, and 18th).
+
+These bonus feats are in addition to the feats that a character of any class gets from advancing levels. A fighter is not limited to the list of combat feats when choosing those feats.
+
+\cf{Ftr}{Weapon Discipline} At 3rd level, a fighter's training grants him additional capability when using his weapons. He may choose a weapon group, or he may choose to train equally with all weapons. If he chooses a weapon group, he gains a \plus1 competence bonus to attack rolls with weapons from that group.
+\par If he chooses not to focus on a specific group of weapons, he gains the ability to become proficient with any weapon group if he spends 8 hours training with a weapon from that group. He may only keep this proficiency with one weapon group at a time; if he trains with a new weapon group, he loses his proficiency in the previous group.
+
+\cf{Ftr}{Adaptive Style Feats} At 4th level, a fighter gets a flexible bonus feat
+which must be drawn from the list of combat feats. A fighter must still
+meet all prerequisites for any bonus feat chosen. At the start of each day, the fighter may train for an hour. If he does so, he may choose to change his adaptive style feats to any other feats for which he meets the prerequisites.  The fighter gains an additional adaptive style feat at 8th level and every four fighter levels thereafter (8th, 12th, 16th, and 20th).
+
+\par An adaptive style feat may be used normally as prerequisites for other feats or abilities.
+However, if an adaptive style feat is used as a prerequisite, it cannot be changed until the fighter no longer needs to use it as a prerequisite, such as might happen if the fighter takes the feat as a normal feat or bonus feat.
+\par In order to gain a new adaptive style feat, it must be reasonably possible to do training related to the new feat. For example, a fighter could not gain Weapon Focus in axes without at least one axe available to train with.
+
+\cf{Ftr}{Combat Discipline} At 5th level, a fighter can use his superior training and focus to keep fighting in the face of debilitating effects. When a fighter is initially affected by one of the conditions listed on \trefnp{Combat Discipline Conditions}, he may use his combat discipline ability to instead suffer the mitigated condition one column to the right. This lasts until the end of the original condition or for one round per two fighter levels, at which point the he suffers the effects of the original condition unless he uses his combat discipline ability again.
+\par Using combat discipline takes no action, and can be done at any time, even when it isn't the fighter's turn. A fighter may use this ability a number of times per day equal to 3 \add his Constitution.
+
+\begin{dtable}
+\lcaption{Combat Discipline Conditions}
+\begin{tabularx}{\columnwidth}{*{4}{>{\lcol}X}}
+\thead{Original Condition} & \thead{Mitigated Condition} & \thead{Mitigated Condition} & \thead{Mitigated Condition} \\
+Panicked & Frightened & Shaken & None  \\
+Petrified  & Paralyzed & Slowed & None \\
+Stunned       & Dazed & Staggered & None \\
+Blinded & Dazzled & None  & \x \\
+Confused & Bewildered & None & \x \\
+Exhausted & Fatigued & None & \x \\
+Nauseated & Sickened & None & \x \\
+Ability damage\fn{1} & None & \x & \x \\
+Ability penalty\fn{1} & None & \x & \x \\
+Entangled & None & \x & \x \\
+Deafened & None & \x & \x \\
+Fascinated & None & \x & \x \\
+Ignited\fn{2} & None & \x & \x \\
+Immobilized & None & \x & \x \\
+Negative level\fn{3} & None & \x & \x \\
+\end{tabularx}
+1. Allows the fighter to mitigate up to half his fighter level in ability damage or penalties per use of combat discipline. \\
+2. Mitigates the penalties, but does not prevent the fighter from taking d6 fire damage per round until the fire is put out. \\
+3. Allows the fighter to ignore a single negative level per use of combat discipline.
+\end{dtable}
+
+\par A fighter cannot use this ability more than once against a single source. For example, if a fighter is exhausted by a \spell{ray of exhaustion} spell, he can use this ability to downgrade the exhaustion to fatigue, but he can't then expend a second use to negate the fatigue. The lesser condition that this ability imposes may be cured or removed normally, but doing so does not affect the resurgence of the condition the fighter was originally afflicted with. If a fighter uses this ability to mitigate or negate a condition which he must suffer as a sacrifice or cost to gain some benefit, he automatically forfeits the benefit he would have gained.
+
+\cf{Ftr}{Bonus Feats} 
 
 \cf{Ftr}{Improved Armor Discipline} At 7th level, a fighter's training in his chosen armor category (or with all armor categories) improves. He reduces the armor check penalty by 4 and decreases the arcane spell failure by 15\%. In addition, he treats his chosen armor (or armors) as if it were one encumbrance category lighter than it is. This does not stack with the effects of armor discipline.
 \par This ability means heavy armor is treated as medium, medium armor is treated as light armor, and light armor is treated as being unarmored. Likewise, tower shields are treated as heavy shields (and no longer impose a \minus2 penalty to attack rolls), heavy shields are treated as light shields, and both light shields and bucklers are treated as being unarmored. This can remove the halving of the fighter's Dexterity bonus, if appropriate for the new encumbrance of the fighter's armor.
