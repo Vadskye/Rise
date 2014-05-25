@@ -204,7 +204,7 @@ A cleric can't cast spells of an alignment opposed to his own or his deity's (if
 A cleric's magic level is equal to his cleric level.
 
 \begin{dtable}
-    \lcaption{Spells per Day} 
+    \lcaption{Cleric Spells per Day} 
     \centering
     \begin{tabularx}{\columnwidth}{>{\ccol}X *{9}{>{\ccol}p{\spellcol}}}
         & \multicolumn{9}{c}{\thead{---{}---{}---{}---{}---{}---{}---{}---Spell Level---{}---{}---{}---{}---{}---{}---{}---}} \\
@@ -467,10 +467,34 @@ A cleric who grossly violates the code of conduct required by his god loses all 
 \end{tabularx}
 \end{dtable*}
 
-\cf{Drd}{Spells} A druid gains additional spells per day and spells known as she increases in level.
+\cd{Alignment} Neutral good, lawful neutral, neutral, chaotic
+neutral, or neutral evil.
+\cd{Hit Value} 5.
+ \sssecfake{Class Skills}
+The druid's class skills (and the key attribute for each skill) are Athletics (Str), Climb (Str), Swim (Str), Ride (Dex), Stealth (Dex), Knowledge (geography), Knowledge (nature) (Int), Heal (Wis), Perception (Wis), Survival (Wis), and Creature Handling (Cha).
+\cf{Drd}{Skill Points at 1st Level} 4
+
+\sssecfake{Class Features}
+All of the following are class features of the druid.
+
+\cf{Drd}{Weapon and Armor Proficiency} Druids are proficient with simple weapons, any one other weapon group, scimitars, sickles, and slings.
+\par Druids are proficient with light and medium armor, but are prohibited from wearing metal armor; thus, they may wear only padded, leather, or hide armor. (A druid may also wear wooden armor that has been altered by the \spell{ironwood} spell so that it functions as though it were steel. See the \spell{ironwood} spell description.) Druids are proficient with shields (except tower shields) but must use only wooden ones.
+\par A druid who wears prohibited armor or carries a prohibited shield is unable to cast druid spells or use any of her supernatural class abilities while doing so and for 24 hours thereafter.
+
+\cf{Drd}{Bonus Languages} A druid's bonus language options include Sylvan, the language of magical woodland creatures. This choice is in addition to the bonus languages available to the character because of her race.
+
+A druid also knows Druidic, a secret language known only to druids, which she learns upon becoming a 1st-level druid. Druidic is a free language for a druid; that is, she knows it in addition to her regular allotment of languages and it doesn't take up a language slot. Druids are forbidden to teach this language to nondruids. Druidic has its own alphabet.
+
+\cf{Drd}{Spells} A druid casts divine spells using her Wisdom. To learn or cast a spell, a druid must have a Wisdom at least equal to half the spell's level. The Difficulty Class for a saving throw against a druid's spell is 10 \add half the druid's caster level \add the druid's Wisdom .
+
+Like other spellcasters, the number of spells a druid knows and can cast each day is limited. These limitations are given below on \trefnp{Druid Spells per Day} and \trefnp{Druid Spells Known}. A druid's spells are drawn from the druid spell list (see \pcref{Druid Spells}).
+
+Druids meditate or pray for their spells. Each druid must choose a time at which she must spend 1 hour each day performing a ritual, worshipping, or quietly contemplating to regain her daily allotment of spells. They do not need to rest to regain spells.
+
+A druid's magic level is equal to her druid level.
 
 \begin{dtable}
-    \lcaption{Spells per Day} 
+    \lcaption{Druid Spells per Day} 
     \centering
     \begin{tabularx}{\columnwidth}{>{\ccol}X *{9}{>{\ccol}p{\spellcol}}}
         & \multicolumn{9}{c}{\thead{---{}---{}---{}---{}---{}---{}---{}---Spell Level---{}---{}---{}---{}---{}---{}---{}---}} \\
@@ -499,35 +523,50 @@ A cleric who grossly violates the code of conduct required by his god loses all 
 \end{dtable}
 
 \begin{dtable}
-\lcaption{Druid Spells Known}
-\centering
-\begin{tabularx}{\columnwidth}{X *{9}{p{1.1em}}}
-& \multicolumn{9}{c}{\thead{---{}---{}---{}---{}---{}---{}---Spell Level---{}---{}---{}---{}---{}---{}---}} \\
-\thead{Level} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} & \thead{5th} & \thead{6th} & \thead{7th} & \thead{8th} & \thead{9th} \\
-1st  & 1 & \x & \x & \x & \x & \x & \x & \x & \x \\
-2nd  & 2 & \x & \x & \x & \x & \x & \x & \x & \x \\
-3rd  & 3 & \x & \x & \x & \x & \x & \x & \x & \x \\
-4th  & 3 & 1 & \x & \x & \x & \x & \x & \x & \x \\
-5th  & 4 & 2 & \x & \x & \x & \x & \x & \x & \x \\
-6th  & 4 & 2 & 1 & \x & \x & \x & \x & \x & \x \\
-7th  & 4 & 3 & 2 & \x & \x & \x & \x & \x & \x \\
-8th  & 4 & 3 & 2 & 1 & \x & \x & \x & \x & \x \\
-9th  & 4 & 3 & 3 & 2 & \x & \x & \x & \x & \x \\
-10th & 4 & 3 & 3 & 2 & 1 & \x & \x & \x & \x \\
-11th & 4 & 3 & 3 & 3 & 2 & \x & \x & \x & \x \\
-12th & 4 & 3 & 3 & 3 & 2 & 1 & \x & \x & \x \\
-13th & 4 & 3 & 3 & 3 & 3 & 2 & \x & \x & \x \\
-14th & 4 & 3 & 3 & 3 & 3 & 2 & 1 & \x & \x \\
-15th & 4 & 3 & 3 & 3 & 3 & 3 & 2 & \x & \x \\
-16th & 4 & 3 & 3 & 3 & 3 & 3 & 2 & 1 & \x \\
-17th & 4 & 3 & 3 & 3 & 3 & 3 & 2 & 2 & \x \\
-18th & 4 & 3 & 3 & 3 & 3 & 3 & 2 & 2 & 1 \\
-19th & 4 & 3 & 3 & 3 & 3 & 3 & 2 & 2 & 2 \\
-20th & 4 & 3 & 3 & 3 & 3 & 3 & 2 & 2 & 2
-\end{tabularx}
+    \lcaption{Druid Spells Known}
+    \centering
+    \begin{tabularx}{\columnwidth}{X *{9}{p{1.1em}}}
+        & \multicolumn{9}{c}{\thead{---{}---{}---{}---{}---{}---{}---Spell Level---{}---{}---{}---{}---{}---{}---}} \\
+        \thead{Level} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} & \thead{5th} & \thead{6th} & \thead{7th} & \thead{8th} & \thead{9th} \\
+        1st  & 1 & \x & \x & \x & \x & \x & \x & \x & \x \\
+        2nd  & 2 & \x & \x & \x & \x & \x & \x & \x & \x \\
+        3rd  & 3 & \x & \x & \x & \x & \x & \x & \x & \x \\
+        4th  & 3 & 1 & \x & \x & \x & \x & \x & \x & \x \\
+        5th  & 4 & 2 & \x & \x & \x & \x & \x & \x & \x \\
+        6th  & 4 & 2 & 1 & \x & \x & \x & \x & \x & \x \\
+        7th  & 4 & 3 & 2 & \x & \x & \x & \x & \x & \x \\
+        8th  & 4 & 3 & 2 & 1 & \x & \x & \x & \x & \x \\
+        9th  & 4 & 3 & 3 & 2 & \x & \x & \x & \x & \x \\
+        10th & 4 & 3 & 3 & 2 & 1 & \x & \x & \x & \x \\
+        11th & 4 & 3 & 3 & 3 & 2 & \x & \x & \x & \x \\
+        12th & 4 & 3 & 3 & 3 & 2 & 1 & \x & \x & \x \\
+        13th & 4 & 3 & 3 & 3 & 3 & 2 & \x & \x & \x \\
+        14th & 4 & 3 & 3 & 3 & 3 & 2 & 1 & \x & \x \\
+        15th & 4 & 3 & 3 & 3 & 3 & 3 & 2 & \x & \x \\
+        16th & 4 & 3 & 3 & 3 & 3 & 3 & 2 & 1 & \x \\
+        17th & 4 & 3 & 3 & 3 & 3 & 3 & 2 & 2 & \x \\
+        18th & 4 & 3 & 3 & 3 & 3 & 3 & 2 & 2 & 1 \\
+        19th & 4 & 3 & 3 & 3 & 3 & 3 & 2 & 2 & 2 \\
+        20th & 4 & 3 & 3 & 3 & 3 & 3 & 2 & 2 & 2
+    \end{tabularx}
 \end{dtable}
 
-\cf{Drd}{Wild Aspect} At 7th and 9th level, a druid learns how to take on a new wild aspect. She may choose from the full list of wild aspects, given below. 
+\cf{Drd}{Natural Casting (Ex)} A druid's spells channel of nature itself. Though her energy is a necessary component to bring natural power to bear, she need not be the focus of its might. Whenever she casts a druid area spell that would emanate from her, such as a cone or line spell, she may cause the spell to originate from any position within 10 feet of her. All other aspects of the spell are unchanged.
+
+For example, a druid casting \spell{gust of wind} could create a line of wind originating from 10 feet to her right. The line would extend 50 feet out from that point, as normal. If the druid cause the line of wind to blow to the left, she could potentially be affected by the wind.
+
+\cf{Drd}{Nature Sense (Ex)} A druid gains a \plus2 competence bonus on Knowledge (nature) and Survival checks. In addition, she can make those checks as if she were trained.
+
+\cf{Drd}{Wild Speech (Su)} One of the first lessons a druid learns is how to commune with natural creatures. A druid can speak with animals a number of times per day equal to half her druid level \add her Charisma (minimum 1). Each time she uses this ability, she chooses a kind of animal, such as owl or wolf. She can then speak to and understand animals of that type for a number of minutes equal to her druid level.
+
+This ability doesn't make the animals any more friendly or cooperative than normal. Furthermore, wary and cunning animals are likely to be terse and evasive, while the more stupid ones make inane comments. If an animal is friendly toward the druid, she may be able to convince it to do some favor or service.
+
+\cf{Drd}{Woodland Stride (Ex)} Starting at 2nd level, a druid may move through any sort of undergrowth (such as natural thorns, briars, overgrown areas, and similar terrain) at her normal speed and without taking damage or suffering any other impairment. However, thorns, briars, and overgrown areas that have been magically manipulated to impede motion still affect her.
+
+ \cf{Drd}{Wild Aspect (Su)} At 3rd level, a druid gains the ability to embody an aspect of an animal. Embodying a wild aspect is a standard action and doesn't provoke an attack of opportunity. Wild aspects last for 10 minutes per druid level, or until the druid dismisses the effect, unless otherwise stated. The druid can use this ability a number of times per day equal to half her druid class level \add her Constitution.
+\par When a druid embodies a wild aspect, she gains all abilities from an animal that she knows. For example, a druid devoted to bulls, who chose the Lope and Gore aspects, would gain both abilities with a single use of wild aspect. A druid devoted do both bulls and eagles, who chose the Lesser Flight aspect from the eagle and the Gore aspect from the bull, would have to use two uses of wild aspect to use both abilities.
+\par The descriptions below describe the effects of the aspect. With many aspects, the druid's appearance also changes to match the aspect, but this is not described. Different druids change in different ways. For example, one druid might gain unusually large eyes when embodying the low-light vision aspect, while another might change her irises into slits, like a cat, when embodying the same aspect. The changes made are up to the druid, but cannot be used to gain an additional substantive benefit beyond the effects given in the description of the aspect.
+\par The druid may choose any wild aspect, provided that she has the minimum druid level indicated by the aspect. At 5th level, she learns how to take on a new wild aspect. Each wild aspect also grants an ability based on the number of abilities the druid has from that aspect. These bonuses are only granted when the druid has taken on that wild aspect.
 
 \subcf{Animal}
 While embodying the animal aspect, the druid gains an enhancement bonus to any attribute score of her choice equal to the number of animal abilities she possesses.
@@ -544,7 +583,7 @@ While embodying the ape aspect, the druid gains an enhancement bonus to Strength
 \wilditem Climb: The druid gains a climb speed equal to her base land speed.
 \wilditem Claws: The druid gains two claw attacks which can be used as light natural weapons. A Medium druid deals d6 damage with each claw.
 \wilditem Rend: If the druid hits with both claw attacks, she latches on to her opponent's body and tears the flesh. This attack deals damage appropriate to a scimitar appropriate for the druid's size.
-\wilditem Improved Grab: When the druid hits a foe with an unarmed strike or natural attack, she may attempt to grapple her foe as a swift action without provoking an attack of opportunity.
+\wilditem Improved Grab: When the druid hits a foe with an unarmed strike or natural attack, she may attempt to grapple her foe as an immediate action without provoking an attack of opportunity.
 \end{wildaspect}
 
 \subcf{Bear}
@@ -553,7 +592,7 @@ While embodying the bear aspect, the druid gains an enhancement bonus to Constit
 \wilditem Bite: The druid gains a bite attack which can be used as a heavy natural weapon. A Medium druid deals d8 damage with the bite.
 \wilditem Claws: The druid gains two claw attacks which can be used as light natural weapons. A Medium druid deals d6 damage with each claw.
 \wilditem
-\wilditem Improved Grab: When the druid hits a foe with an unarmed strike or natural attack, she may attempt to grapple her foe as a swift action without provoking an attack of opportunity.
+\wilditem Improved Grab: When the druid hits a foe with an unarmed strike or natural attack, she may attempt to grapple her foe as an immediate action without provoking an attack of opportunity.
 \end{wildaspect}
 
 \subcf{Bull}
@@ -561,7 +600,7 @@ While embodying the bull aspect, the druid gains an enhancement bonus to Strengt
 \begin{wildaspect}
 \wilditem Lope: The druid gains the ability to move on all four legs. When doing so, she gains a \plus20 foot competence bonus to her speed, but she cannot use her hands for anything except moving. When not moving on four legs, her ability to use her hands is unchanged.
 \wilditem Gore: The druid gains a gore attack which can be used as a heavy natural weapon. A Medium druid deals d8 damage with a gore.
-\wilditem Rush: When the druid hits a foe with an unarmed strike or natural attack on a charge, she may attempt to bull rush her foe as a swift action without provoking an attack of opportunity.
+\wilditem Rush: When the druid hits a foe with an unarmed strike or natural attack on a charge, she may attempt to bull rush her foe as an immediate action without provoking an attack of opportunity.
 \wilditem
 \end{wildaspect}
 
@@ -606,7 +645,7 @@ While embodying the serpent aspect, the druid gains an enhancement bonus to grap
 \begin{wildaspect}
 \wilditem Slither: The druid gains a climb speed equal to half her base land speed. She does not need to use her hands to climb in this way.
 \wilditem Bite: The druid gains a bite attack which can be used as a heavy natural weapon. A Medium druid deals d8 damage with a bite.
-\wilditem Constrict: After making a successful grapple attack to grapple or damage her foe, the druid may constrict her foe as a swift action. A Medium druid deals d8 \add 1-1/2 her Strength when constricting.
+\wilditem Constrict: After making a successful grapple attack to grapple or damage her foe, the druid may constrict her foe as an immediate action. A Medium druid deals d8 \add 1-1/2 her Strength when constricting.
 \wilditem Venom: The druid's natural attacks, and any weapons she wields, become coated in poison. The poison deals initial and secondary damage of 1d4 Constitution damage. A Fortitude save (DC 10 \add 1/2 the druid's level \add the druid's Con) negates the damage as normal for poison. This ability lasts for one round per druid level.
 \end{wildaspect}
 
@@ -615,9 +654,11 @@ While embodying the wolf aspect, the druid gains an circumstance bonus to weapon
 \begin{wildaspect}
 \wilditem Lope: The druid gains the ability to move on all four legs. When doing so, she gains a \plus20 foot competence bonus to her speed, but she cannot use her hands for anything except moving. When not moving on four legs, her ability to use her hands is unchanged.
 \wilditem Bite: The druid gains a bite attack which can be used as a heavy natural weapon. A Medium druid deals d8 damage with a bite.
-\wilditem Trip: When the druid hits a foe with an unarmed strike or natural attack, she may attempt to trip her foe as a swift action without provoking an attack of opportunity.
+\wilditem Trip: When the druid hits a foe with an unarmed strike or natural attack, she may attempt to trip her foe as an immediate action without provoking an attack of opportunity.
 \wilditem Wolfpack: Foes overwhelmed by the druid increase their overwhelm penalties by 1.
 \end{wildaspect}
+
+\cf{Drd}{Venom Immunity (Ex)} At 4th level, a druid gains immunity to all poisons.
 
 \cd{Drd}{Wild Speech (Plants) (Ex)} At 6th level, a druid can also converse with plants and plant creatures using her wild speech ability. A regular plant's sense of its surroundings is limited, so it won't be able to give (or recognize) detailed descriptions of creatures or answer questions about events outside its immediate vicinity.
 
@@ -680,6 +721,9 @@ her appearance at will, as if using the \spell{disguise self} spell. This affect
 \cf{Drd}{Totemic Aspect (Su)} At 18th level, the druid can choose any one wild aspect (but not greater aspect). She permanently gains the abilities of that aspect, as if she was constantly manifesting it. She may suppress or resume this effect as a swift action. If the druid has multiple abilites from that aspect, she may suppress or resume them each individually.
 
 \cf{Drd}{Greater Natural Casting (Ex)} At 20th level, a druid may cause area spells to originate from any point within \rngmed range of her, as the natural casting ability.
+
+\subsubsection{Ex-Druids}
+A druid who ceases to revere nature, changes to a prohibited alignment, or teaches the Druidic language to a nondruid loses all spells and druid abilities (not including weapon, armor, and shield proficiencies). She cannot thereafter gain levels as a druid until she atones (see the \spell{atonement} spell description).
 
 \subsection{Fighter}
 \begin{dtable}
