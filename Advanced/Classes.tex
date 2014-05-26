@@ -1489,7 +1489,7 @@ All of the following are class features of the sorcerer.
 
 \cf{Sor}{Spells} A sorcerer casts arcane spells using his Charisma.  To learn or cast a spell, a sorcerer must have a Charisma at least equal to the spell's level. The Difficulty Class for a saving throw against a sorcerer's spell is 10 \add half the sorcerer's caster level \add the sorcerer's Charisma.
 
-Like other spellcasters, the number of spells a sorcerer knows and can cast each day is limited. These limitations are given below on \trefnp{Sorcerer Spells per Day} and \trefnp{Sorcerer Spells Known}. A sorcerer's spells are drawn from the common spells on the sorcerer/wizard spell list (\pcref{Sorcerer/Wizard Spells}). Sorcerers need to rest for eight hours in order to regain spells.
+Like other spellcasters, the number of spells a sorcerer knows and can cast each day is limited. These limitations are given below on \trefnp{Sorcerer Spells per Day} and \trefnp{Sorcerer Spells Known}. A sorcerer's spells are drawn from the common spells on the sorcerer/wizard spell list (see \pcref{Sorcerer/Wizard Spells}). Sorcerers need to rest for eight hours in order to regain spells.
 
 A sorcerer's magic level is equal to his sorcerer level.
 
@@ -1776,12 +1776,33 @@ As the spellwarped increases in level, he may choose more advanced spellwarped p
 20th & \plus10/\plus5 & \plus10& \plus10& \plus22 & Arcane attunement (4 items), chain contingency \\
 \end{tabularx}
 \end{dtable*}
-\cd{Alignment} Any.
 
-\cf{Wiz}{Spells} A wizard gains additional spells per day and spells known as she increases in level.
+\cd{Alignment} Any.
+\cd{Hit Value} 4.
+
+\sssecfake{Class Skills}
+The wizard's class skills (and the key attribute for each skill) are
+Knowledge (all skills, taken individually) (Int), Linguistics (Int), and Spellcraft (Wis).
+\cf{Wiz}{Skill Points at 1st Level} 4
+
+\sssecfake{Class Features}
+
+All of the following are class features of the wizard.
+
+\cf{Wiz}{Weapon and Armor Proficiency} Wizards are proficient with simple weapons, but not with any type of armor or shield. Armor of any type interferes with a wizard's movements, which can cause her spells with somatic components to fail.
+
+\cf{Wiz}{Bonus Languages} A wizard may learn Draconic in addition to the bonus languages available to the character because of her race (see Chapter 2: Races). Many ancient tomes of magic are written in Draconic, and apprentice wizards often learn it as part of their studies.
+
+\cf{Wiz}{Ritual Master} Wizards are thoroughly trained in study and memorization, and can perform difficult rituals with more ease than others. A wizard gains the Ritual Master feat as a bonus feat at 1st level, even if she does not have the prerequisites.
+
+\cf{Wiz}{Spells} A wizard casts arcane spells using her Intelligence. To learn or cast a spell, a wizard must have an Intelligence at least equal to the spell's level. The Difficulty Class for a saving throw against a wizard's spell is 10 \add half the wizard's caster level \add the wizard's Intelligence.
+
+Like other spellcasters, the number of spells a wizard knows and can cast each day is limited. These limitations are given below on \trefnp{Wizard Spells per Day} and \trefnp{Wizard Spells Known}. A wizard's spells are drawn from the common spells on the sorcerer/wizard spell list (see \pcref{Sorcerer/Wizard Spells}). Wizards need to rest for eight hours in order to regain spells. 
+
+A wizard's magic level is equal to her wizard level.
 
 \begin{dtable}
-    \lcaption{Spells per Day} 
+    \lcaption{Wizard Spells per Day} 
     \centering
     \begin{tabularx}{\columnwidth}{>{\ccol}X *{9}{>{\ccol}p{\spellcol}}}
         & \multicolumn{9}{c}{\thead{---{}---{}---{}---{}---{}---{}---{}---Spell Level---{}---{}---{}---{}---{}---{}---{}---}} \\
@@ -1837,10 +1858,21 @@ As the spellwarped increases in level, he may choose more advanced spellwarped p
 \end{tabularx}
 \end{dtable}
 
+\cf{Wiz}{Arcane Invocation} All wizards master at least one arcane invocation. An arcane invocation allows the wizard to exert magical influence without expending the effort required to cast a spell. The wizard may choose to learn one invocation of her choice from the list of arcane invocations described in Chapter 11: Spells. Specialist wizards must choose one of the invocations granted by their specialist school. At 2nd level, the wizard gains a second arcane invocation, which can be chosen from any non-prohibited school.
+
+\cf{Wiz}{Arcane Insight (Ex)} At 3rd level, and every odd level afterwards, a wizard gains a greater understanding of magic. Generalist wizards gain expanded spell knowledge, as the sorcerer class feature. Specialist wizards may choose a spell of their chosen school from the sorcerer/wizard spell list, including restricted spells, and add it to their spells known. The spell's level must not be higher than half the wizard's class level -- normally, the highest level of spells that the wizard can cast.
+
+\cf{Wiz}{Spell Sequencer (Ex)} At 4th level, a wizard gains the ability to create a sequence of a spell and invocation which she can cast rapidly later. To create a spell sequencer, the wizard must cast a spell which affects only herself and an arcane invocation, which may affect any target. Neither has any effect immediately. The wizard may later use a full-round action to cast both the spell and the invocation at once, choosing the target of the invocation at that time.
+\par The wizard may have only one spell sequencer active at any time. If she creates a new spell sequencer, it replaces her existing spell sequencer.
+
+\cf{Wiz}{Arcane Attunement (Su)} At 5th level, a wizard gains the ability to use arcane items like scrolls and wands with particular skill. At the beginning of each day, the wizard may attune himself to a single item with a spell trigger or spell completion activation method. If he does, he gains one of several benefits, depending on the type of magic item he attunes himself to. At 10th level, and every five levels thereafter, the wizard gains the ability to attune herself to an additional item.
+\subparhead{Scroll} The wizard casts the spell from the scroll at his full caster level if it is higher than the scroll's caster level, and using his full attribute.
+\subparhead{Wand} The wizard casts the spell from the wand at his full caster level if it is higher than the wand's caster level. In addition, once per day, the wizard may cast a spell from the wand using a spell slot of the appropriate level instead of a charge.
+\subparhead{Staff} The wizard may cast spells from the staff using spell slots of the appropriate level instead charges. If the spell would require multiple charges when cast from the staff, the spell slot consumed must be one level higher than the spell's normal level for each charge beyond the first.
+\par If other items exist that can produce similar effects, the wizard may gain appropriate bonuses for attuning himself to them, using the above examples as a guide.
+
 \cf{Wiz}{Improved Spell Sequencer (Ex)} At 8th level, a wizard gains the ability to create a sequence of two spells which she can cast rapidly later. To create an improved spell sequencer, the wizard must cast two spells, one of which affects only herself. The spells must be at least three levels apart. Neither has any effect immediately. the wizard may later use a full-round action to cast both spells at once.
 \par The wizard may have only one spell sequencer or improved spell sequencer active at any time.
-
-\cf{Wiz}{Arcane Attunement (Su)} At 10th level, and every five levels thereafter, the wizard gains the ability to attune herself to an additional item.
 
 \section{Character Advancement}
 
