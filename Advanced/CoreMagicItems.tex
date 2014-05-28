@@ -398,29 +398,29 @@ Magic ammunition loses its magic after being fired, whether it hits or misses.
 
 \parhead{Magic Weapons and Critical Hits} Some weapon qualities and some specific weapons have an extra effect on a critical hit. These special effects function against creatures not subject to critical hits. When fighting against such creatures, roll for critical hits as you would against any other creature subject to critical hits. On a successful critical roll, apply the special effect, but do not multiply the weapon's regular damage.
 
-\begin{dtable}
+\begin{dtable*}
 \lcaption{Weapon Special Abilities}
-\begin{tabularx}{\columnwidth}{>{\lcol}X l l}
-  \thead{Special Ability} & \thead{Cost} & \thead{Item Level} \\
-  Bane & Special & Special \\
-  Surestrike, Lesser & 1,000 gp & 4th \\
-  Flaming & 2,000 gp & 5th \\
-  Freezing & 2,000 gp & 5th \\
-  Forceful & 2,000 gp & 5th \\
-  Returning & 2,000 gp & 5th \\
-  Entangling & 3,000 gp & 6th \\
-  Morphing & 4,000 gp & 6th \\
-  Shocking & 4,000 gp & 6th \\
-  Vampiric & 4,000 gp & 6th \\
-  Returning, Greater & 4,500 gp & 7th \\
-  Poisoning & 8,000 gp & 9th \\
-  Surestrike & 8,000 gp & 9th \\
-  Thieving & 8,000 gp & 9th \\
-  Heartseeking & 12,500 gp & 11th \\
-  Soulreaving & 32,000 gp & 15th \\
-  Vorpal & 40,500 gp & 18th \\
+\begin{tabularx}{\textwidth}{l >{\lcol}X l l}
+    \thead{Special Ability} & \thead{Description} & \thead{Cost} & \thead{Item Level} \\
+  Bane & Add special ability that only functions against certain creatures & Special & Special \\
+  Surestrike, Lesser & 1/day roll critical confirmation twice & 1,000 gp & 4th \\
+  Flaming & 1/day ignite struck foe &  2,000 gp & 5th \\
+  Freezing & 1/day fatigue struck foe &  2,000 gp & 5th \\
+  Forceful & 3/day knock back struck foe &  2,000 gp & 5th \\
+  Returning & Weapon returns after being thrown &  2,000 gp & 5th \\
+  Entangling & 5/day entangle struck foe &  3,000 gp & 6th \\
+  Morphing & 3/day weapon transforms into similar weapon &  4,000 gp & 6th \\
+  Shocking & 1/day stagger struck foe &  4,000 gp & 6th \\
+  Vampiric & 3/day lick weapon to regain hit points &  4,000 gp & 6th \\
+  Returning, Greater & Weapon returns immediately after being thrown &  4,500 gp & 7th \\
+  Poisoning & 3/day coat weapon in poison &  8,000 gp & 9th \\
+  Surestrike & 1/day reroll missed attack &  8,000 gp & 9th \\
+  Thieving & 3/day absorb struck object into weapon &  8,000 gp & 9th \\
+  Heartseeking & 1/day automatically score critical hit after striking target repeatedly &  12,500 gp & 11th \\
+  Soulreaving & Weapon strikes the soul for delayed damage instead of normal damage &  32,000 gp & 15th \\
+  Vorpal & 1/day sever foe's head in a single blow &  40,500 gp & 18th \\
 \end{tabularx}
-\end{dtable}
+\end{dtable*}
 
 \subsubsection{Bane} \parhead{Price (Level)} Special \parhead{Aura, Caster Level} Special \par
 A bane weapon excels at attacking a specific type of creature. Any weapon special ability can be designated as a ``bane'' ability, causing it to only function against a specific kind of creature. In exchange, the ability costs half the normal price in raw materials to add to the weapon. A list of possible foes is described on the following table.
@@ -460,15 +460,15 @@ An entangled creature moves at half speed, cannot run or charge, and takes a \mi
 
 \mitemreq{Evocation}{Energy}{1}{2nd}{Craft (as weapon) 6}
 
+\impdescription{Forceful}{2,000}{5th}{Faint Evocation (Control)}{4th}{Immediate (triggered) 3/day} When you strike a foe with this weapon, you can activate the weapon to immediately make a bull rush attempt with a circumstance bonus equal to the damage you dealt with the attack. You do not provoke an attack of opportunity for the bull rush, even if you fail, and you do not have to move with your foe to knock it back the full distance.
+
+\mitemreq{Evocation}{Control}{2}{4th}{Craft (as weapon) 8}
+
 %As 5th level spell because it feels right. Based losely on Discern
 %Vulnerability, although this feels like Awareness, so True Seeing?
 \impdescription{Heartseeking}{12,500}{11th}{Moderate Divination (Awareness)}{10th}{Immediate (triggered) 1/day} When you strike the same foe with this weapon for multiple rounds in a row, you can suddenly perceive a critical weakness in your foe's defenses. You must strike the foe for a number of consecutive rounds equal to the critical multiplier of the weapon you are using. If you activate the item, the final hit automatically becomes a confirmed critical hit. This has no effect on creatures immune to critical hits.
 
 \mitemreq{Divination}{Awareness}{5}{10th}{Craft (as weapon) 14}
-
-\impdescription{Forceful}{2,000}{5th}{Faint Evocation (Control)}{4th}{Immediate (triggered) 3/day} When you strike a foe with this weapon, you can activate the weapon to immediately make a bull rush attempt with a circumstance bonus equal to the damage you dealt with the attack. You do not provoke an attack of opportunity for the bull rush, even if you fail, and you do not have to move with your foe to knock it back the full distance.
-
-\mitemreq{Evocation}{Control}{2}{4th}{Craft (as weapon) 8}
 
 \impdescription{Morphing}{4,000}{6th}{Faint Transmutation (Alteration)}{4th}{Standard (specific action) 3/day} A morphing weapon can transform into any other weapon from its weapon group. To transform a morphing weapon, you must grab it with both hands and strike it against your knee, as if breaking it, while visualizing its new form. It remains transformed until you command it to transform again.
 
