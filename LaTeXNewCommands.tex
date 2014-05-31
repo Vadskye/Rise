@@ -68,6 +68,7 @@
 %Spell creation requirements, without descriptors
 %School, subschool, spell level, caster level, craft skill
 \newcommand{\mitemreq}[5]{\par \textit{Creation Requirements:} #1 (#2) #3; caster level #4 or #5}
+\newcommand{\mitemreqdesc}[6]{\par \textit{Creation Requirements:} #1 (#2) [#3] #4; caster level #5 or #6}
 %Legacy
 \newcommand{\armdescription}[5]{\subsubsection{#1} \parhead{Bonus} \plus #2 \parhead{Caster Level} #3 \parhead{Aura} #4 \parhead{Activation} #5 \par}
 \newcommand{\armdescriptiondc}[6]{\armdescription{#1}{#2}{#3}{#4}{#5} \my{\textbf{Save DC:} #6 \add character level} \par}
@@ -96,7 +97,7 @@
 \thead{Caster Level:} & 4th & 6th & 9th & 12th & 15th \\
 \thead{Aura:} & Faint & Faint & Moderate & Moderate & Strong
 }{#2}{#3}{#4}}
-\newcommand{\tooldescription}[6]{\my{\subsubsection{#1} \parhead{Price (Level)} #2 gp (#3) \parhead{Caster Level} #4 \parhead{Aura} #5 \parhead{Activation} #6 \par}}
+\newcommand{\tooldescription}[6]{\subsubsection{#1} \parhead{Price (Level)} #2 gp (#3) \parhead{Caster Level} #4 \parhead{Aura} #5 \parhead{Activation} #6 \par}
 %one shot items should not have scaling DCs
 \newcommand{\tooldescriptiondcos}[7]{\tooldescription{#1}{#2}{#3}{#4}{#5}{#6} \my{\textbf{Save DC:} #7} \par}
 \newcommand{\tooldescriptiondc}[7]{\tooldescription{#1}{#2}{#3}{#4}{#5}{#6} \my{\textbf{Save DC:} #7 \add character level} \par}
