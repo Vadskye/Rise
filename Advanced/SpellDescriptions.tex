@@ -3622,15 +3622,17 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \spellsection{Mental Retribution}
 \spellschool{Abjuration/Enchantment (Inhibition, Shielding) [Mind-Affecting]}
 \spelllvl{Sor/Wiz 1}
-\spellrng{\rngclose}
+\spellrng{\rngclose; see text}
 \spelltgt{One creature; see text}
-\spellarea{\rngmed radius limit centered on the subject; see text}
 \spelldur{\durshort or until discharged/5 rounds}
 \spellsave{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The subject gains a faintly shimmering aura. The first time it is attacked by a creature within the area, the spell is discharged, and the attacking creature is bewildered for 5 rounds. A successful Will save can prevent the subject from gaining the aura, but there is no saving throw against the bewildering effect.
+    When the subject is attacked by a creature within \rngclose range of it, the subject can mentally command this spell to activate (an immediate action). If it does, the spell is discharged, and the attacking creature is bewildered for 5 rounds.
 \end{spelleffect}
+\begin{spellnotes}
+    A successful Will save can prevent the subject from gaining the benefits of the spell, but there is no saving throw against the bewildering effect.
+\end{spellnotes}
 
 \spellsection{Meld into Stone}
 \spellschool{Transmutation (Polymorph) [Earth]}
@@ -4456,6 +4458,21 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \end{spelleffect}
 \begin{spellnotes}
   A character can only be affected by one \spell{resist energy} spell at once.
+\end{spellnotes}
+
+\spellsection{Retributive Brilliance}
+\spellschool{Abjuration/Illusion (Figment, Shielding)}
+\spelllvl{Sor/Wiz 5}
+\spellrng{\rngclose; see text}
+\spelltgt{One creature; see text}
+\spelldur{\durshort or until discharged/5 rounds}
+\spellsave{Will negates (harmless), Fortitude negates}
+\spellsr{Yes (Will)}
+\begin{spelleffect}
+    When the subject is attacked by a creature within \rngclose range of it, the subject can mentally command this spell to activate (an immediate action). If it does, spell is discharged, and the attacking creature is dazzled for 5 rounds. If the attacking creature is bloodied, it must make a Fortitude save to avoid being blinded as well.
+\end{spelleffect}
+\begin{spellnotes}
+    A successful Will save can prevent the subject from gaining the benefits of the spell, but there is no saving throw against the dazzling effect.
 \end{spellnotes}
 
 \spellsection{Retributive Shield}
