@@ -410,3 +410,11 @@ Song of Discord
 {'area': 'medium_radius', 'range': 'touch', 'limit_types': [1], 'condition': [1.5], 'duration': ['short'], 'save': ['negates'], 'escapable': 1, 'save_name': ['Song of Discord']}
 Spell Level: 6.83
 
+Hold Person
+{'bloodied': [True, False], 'healthy': [False, True], 'save_ends': [True, False], 'range': 'close', 'limit_types': [2], 'save_name': ['Hold', 'Person'], 'save': ['negates'], 'condition': [1.0, 3.0]}
+Spell Level: 2.12
+
+Hold Person, Mass
+{'bloodied': [True, False], 'area': 'medium_radius', 'healthy': [False, True], 'save_ends': [True, False], 'condition': [1.0, 3.0], 'choose_targets': True, 'limit_types': [2], 'max_targets': True, 'save': ['negates'], 'save_name': ['Hold', 'Person,', 'Mass']}
+Spell Level: 8.05
+
