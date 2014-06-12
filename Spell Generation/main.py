@@ -281,7 +281,12 @@ def calculate_limit_types(limit_types, strength_level):
 
 #Return the level adjustment associated with the condition tier
 def convert_condition_tier(condition_tier):
-    return (4-condition_tier)*4
+    return {
+            3: 4,
+            2: 8,
+            1.5: 12,
+            1: 16}[condition_tier]
+    #return (4-condition_tier)*4
 
 def convert_duration(duration):
     if not duration:
