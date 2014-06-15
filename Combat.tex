@@ -28,6 +28,21 @@ If your attack succeeds, you deal damage equal to your weapon's damage die \add 
 
 \parhead{Dealing Nonlethal Damage} If you take a \minus4 penalty to your attack roll, you can deal nonlethal damage instead of lethal damage when you hit. See \pcref{Nonlethal Damage}.
 
+\subsubsection{Multiple Attacks}
+If your base attack bonus is \plus6 or higher, you can make multiple attacks as part of a standard attack. Each attack after the first takes a cumulative \minus5 penalty to hit. This progression is shown on \trefnp{Attacks per Round}.
+\begin{dtable}
+    \lcaption{Attacks per Round}
+    \begin{tabularx}{\columnwidth}{*{3}{>{\lcol}X}}
+        \thead{Base Attack Bonus} & \thead{Attacks per Round} & \thead{Attack Penalties} \\
+        1-5 & 1 & \plus0\\
+        6-10 & 2 & \plus0, \minus5 \\
+        11-15 & 3 & \plus0, \minus5, \minus10 \\
+        16-20 & 4 & \plus0, \minus5, \minus10, \minus15\\
+    \end{tabularx}
+\end{dtable}
+
+Some special abilities, such as the \spell{haste} spell, also grant you the ability to make multiple attacks. In all cases, making multiple attacks requires using a standard action to make a standard attack. You cannot take multiple attacks on an attack of opportunity. Additionally, any penalties imposed while taking multiple attacks do not affect any other attacks you make, such as attacks of opportunity.
+
 \subsection{Combat Maneuver}\label{Combat Maneuver}
 As a standard action, you can try to hinder your foe by performing a combat maneuver, such as by disarming or tripping him. To do so, make an attack roll, adding your maneuver modifier to the roll instead of your attack modifier. If your result equals or exceeds your foe's Maneuver Class, your attack hits, and your foe suffers the effects of the maneuver.
 
@@ -129,9 +144,10 @@ Sometimes, movement and distance are represented in squares. A 30-ft. movement i
 
 \parhead{Move} As a move action, you can move up to your speed.
 \parhead{Stand Up} As a move action, you can stand up from being prone. For most creatures, this requires using a hand to help get up.
-\parhead{Withdraw}\label{Withdraw} As a standard action, you can move up to your speed. Before you do so, you can designate one creature who threatens you. This movement does not provoke attacks of opportunity from that creature.
+\parhead{Withdraw}\label{Withdraw} As a standard action, you can move up to your speed. Before you do so, you can designate one creature who threatens you. This movement does not provoke attacks of opportunity from that creature. At base attack bonus \plus6, \plus11, and \plus16, you may avoid provoking attacks of opportunity from an additional opponent of your choice.
 \parhead{Charge}\label{Charge} As a full-round action, you can move up to twice your speed and make a single attack with a \plus2 circumstance bonus to hit at the end of your charge. While charging, and until the start of your next turn, you take a \minus2 penalty to armor class.
 \par You must move at least 30 feet to gain the benefit of a charge, and all movement must be in a single straight line. If there are any obstacles in your path which hinder your movement, you cannot charge. A charge that fails or becomes invalid partway through becomes a hustle action.
+\par  At base attack bonus \plus6, the attack you make at the end of a charge deals double damage if you hit by 5 or more. At base attack bonus \plus 11, the attack deals triple damage if you hit by 10 or more. At base attack bonus \plus16, the attack deals quadruple damage if you hit by 15 or more.
 \parhead{Run} As a full-round action, you can run as fast as you can. This allows you to move up to quadruple your speed. You move at only triple speed if you are wearing medium or heavy armor. While running, and until the start of your next turn, you are flat-footed against all attacks.
 \parhead{Struggle} As a full-round action, you can move five feet, regardless of movement penalties. You can use this to move even if your speed is decreased below five feet by penalties.
 
