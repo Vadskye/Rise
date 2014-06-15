@@ -1,0 +1,115 @@
+\section{Magic Item Creation}
+
+By investing time, money, and energy, spellcasters and craftsmen of great skill can imbue items with magical power. Learning how to perform this process requires the Imbue Magic feat. In addition, each magical item has certain requirements that must be met before it can be crafted. These requirements can be met in one of two ways: by casting spells into the item, or by using an appropriate Craft skill.
+
+\subsection{Requirements}
+Consider the requirements of a \mitem{flaming} weapon.
+
+\mitemreq{Evocation}{Energy}{3}{6th}{weaponsmithing 9}
+
+This is composed of six parts: the school, the subschool, the spell level, the minimum caster level, the appropriate Craft skill, and the minimum number of ranks in that skill. Which requirements you must meet to create the item depend on how you are creating it.
+
+\subsubsection{Using Spells}
+To create an item with a spell, you must know a single spell that has the school and subschool listed in the magic item's requirements. The spell's level must be at least as high as the spell level listed in the requirements. For example, a wizard who knows the Fireball spell would be able to craft that item, because \spell{fireball} is a 3rd level spell from the Evocation school with the (Energy) subschool. The spell need not match exactly; it can have other components as well. A druid who knows \spell{fire seeds}, a 6th level Evocation/Transmutation (Energy, Imbuement) [Fire] spell, could also craft the item.
+
+Some magic items are more complex, requiring multiple schools, subschools, or descriptors. It may be impossible to craft these items without the Imbuement Admixture feat, allowing you to use multiple spells to craft an item.
+
+\subsubsection{Crafting}
+To craft an item, you must have at least as many ranks in the relevant Craft skill as the magic item requires. In addition, you must have learned how to craft items from the item's school and subschool using that Craft skill. For every 5 ranks you have in a Craft skill, you learn how to make items from an additional subschool and its associated school. You can learn more subschools with the Versatile Crafter feat.
+
+Some magic tems are more complex, requiring multiple schools and subschools or even multiple Craft skills. You must know all of those schools and subschools with each Craft skill you use for the item.
+
+\subsection{Creation Process}
+Regardless of the type of item being created, item creation always has certain features in common.
+
+\parhead{Raw Materials Cost} The cost of creating a magic item equals one-half the sale cost of the item.
+
+Using an item creation feat also requires access to a laboratory or magical workshop, special tools, and so on. A character generally has access to what he or she needs unless unusual circumstances apply.
+
+\parhead{Negative Levels} Power and energy that a spellcaster would normally have is expended when making a magic item. While crafting a magic item, a spellcaster gains a negative level that cannot be removed. After the magic item is complete, the spellcaster still suffers the negative level for two days per day required to make the item. Scrolls and potions are less draining, and only bestow negative levels for one day per day required to make the item. These negative levels cannot be removed by any means.
+
+\parhead{Time} Creating an item requires one day per 1000 gp in the item's raw materials cost, to a minimum of one day.
+
+\parhead{Item Cost} Potions and scrolls directly reproduce spell effects, and the power of these items depends on their caster level -- that is, a spell from such an item has the power it would have if cast by a spellcaster of that level. The price of these items (and thus the cost of the raw materials) also depends on the caster level. The caster level must be high enough that the spellcaster creating the item can cast the spell at that level. To find the final price in each case, multiply the caster level by the spell level, then multiply the result by a constant, as shown below:
+
+\subparhead{Scrolls} Base price = spell level \mtimes caster level \mtimes 25 gp.
+\subparhead{Potions} Base price = spell level \mtimes  caster level \mtimes 50 gp.
+
+\parhead{Extra Costs} Any potion or scroll that stores a spell with a costly material component also carries a commensurate cost. The creator must expend the material component when creating the item.
+
+\par Some magic items similarly incur extra costs in material components, as noted in their descriptions.
+
+\section{Determining Item Prices}
+
+\subsection{Scaling Bonuses}
+Items which give simple scaling bonuses are easy to price. Each bonus has a fixed price that depends on the statistic being enhanced, as shown on \trefnp{Scaling Item Costs}.
+\begin{dtable*}
+    \lcaption{Scaling Item Costs}
+    \begin{tabularx}{\textwidth}{X l l l l l}
+        \thead{Item Effect} & \thead{\plus1 Bonus} & \thead{\plus2 Bonus} & \thead{\plus3 Bonus} & \thead{\plus4 Bonus} & \thead{\plus5 Bonus} \\
+        Attack and damage & 2,000 gp & 8,000 gp & 18,000 gp & 32,000 gp & 50,000 gp \\
+        Armor class & 1,000 gp & 4,000 gp & 9,000 gp & 16,000 gp & 25,000 gp \\
+        Caster level (single school) & 500 gp & 2,000 gp & 4,500 gp & 8,000 gp & 12,500 gp \\
+        Caster level (all schools) & 1,500 gp & 6,000 gp & 13,500 gp & 24,000 gp & 37,500 gp \\
+        Saving throw (single) & 500 gp & 2,000 gp & 4,500 gp & 8,000 gp & 12,500 gp \\
+        Saving throws (all) & 1,000 gp & 4,000 gp & 9,000 gp & 16,000 gp & 25,000 gp \\
+    \end{tabularx}
+\end{dtable*}
+
+A bonus to a specific skill costs (skill bonus squared) * 200 gp.
+%Math behind this:
+%A rank 4 buff, permanent, personal is 6th level, or 18,000 gp. That suggests
+%that +10 to a skill is about a rank 4 buff. That seems fitting. In addition, a
+%close range rank 4 buff with short duration is 2nd level, which is a
+%plausible level for a spell that gives +10 to a skill. 
+ 
+
+\subsection{Special Abilities}
+
+Abilities more complicated than a simple bonus are more difficult to price. However, there are still consistent principles which can be followed. To assign a price to a special ability, follow the steps below.
+\begin{enumerate*}
+    \item Assign an effective spell level to the ability based on its power.
+    \item Decide how the ability will be activated.
+    \item Determine the price for an item which can be used once per day, using \tref{Item Prices by Activation Method}.
+    \item Increase the price if the item can be used multiple times per day, using \tref{Multiple Use Item Prices}.
+\end{enumerate*}
+
+%Patterns: Easy trigger is almost an item of 4 levels higher than when the
+%spell could first be acquired (5th level spell is 14th level item, 4 levels
+%higher than 10th level, when 5th level spells are acquired)
+%Difficult trigger is gained around when the spell could normally first be
+%cast. 
+\begin{dtable*}
+    \lcaption{Item Prices by Activation Method}
+    \begin{tabularx}{\textwidth}{l X X X}
+        \thead{Spell Level} & \thead{Easy Trigger\fn{1} (Item Level)} & \thead{Difficult Trigger\fn{2} (Item Level)} & \thead{Specific Action\fn{3} (Item Level)} \\
+        Invocation\fn{4} & 1,000 gp (4th) & 500 gp (3rd) & 500 gp (3rd) \\
+        1st & 2,000 gp (5th) & 1,000 gp (4th) & 1,000 gp (4th) \\
+        2nd & 4,000 gp (6th) & 2,000 gp (5th) & 2,000 gp (5th) \\
+        3rd & 9,000 gp (9th) & 4,500 gp (7th) & 4,500 gp (7th) \\
+        4th & 16,000 gp (12th) & 8,000 gp (9th) & 8,000 gp (9th) \\
+        5th & 25,000 gp (14th) & 12,500 gp (11th) & 12,500 gp (11th) \\
+        6th & 36,000 gp (16th) & 18,000 gp (12th) & 18,000 gp (12th) \\
+        7th & 49,000 gp (18th) & 24,500 gp (14th) & 24,500 gp (14th) \\
+        8th & 64,000 gp (20th) & 32,000 gp (15th) & 32,000 gp (15th) \\
+        9th & 81,000 gp (\x) & 40,500 gp (17th) & 40,500 gp (17th) \\
+    \end{tabularx}
+    1 Triggered by a common cicumstance, such as a successful attack, or activated by a trivial action, such as snapping your fingers. \\
+    2 Triggered by an unusual circumstance, such as getting a critical hit, or an action beyond your control, such as an enemy's attack. \\
+    3 Actiated with a time-consuming action, such as making a gesture or drinking a potion. \\
+    4 Or other effects weaker than a 1st level spell.
+\end{dtable*}
+
+\begin{dtable}
+    \lcaption{Multiple Use Item Prices}
+    \begin{tabularx}{\columnwidth}{X l l}
+        \thead{Uses/Day} & \thead{Price Multiplier} \\
+        1/day & \mult1 \\
+        2/day & \mult1.5 \\
+        3/day & \mult2 \\
+        5/day & \mult2.5 \\
+    \end{tabularx}
+\end{dtable}
+
+\subsection{Continuous Effects} 
+To price an item that grants a continuous effect, use the spell level of spell with a duration of Permanent and a specific action trigger. In most cases, the item only grants its bonus to the wielder, so use a range of \rngpers.
