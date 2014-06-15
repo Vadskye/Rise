@@ -525,7 +525,6 @@ You can attempt to leave no trace of your tampering while making a Devices check
 
 When dealing with traps, you are always considered to be ``threatened'' by the trap, preventing you from taking 10.
 
-
 \subsection{Disguise (Int)}
 Disguise represents your ability to create disguises to conceal the appearance of creatures or objects. This skill does not help you act appropriately while disguised; see Perform (acting) and Bluff.
 
@@ -687,27 +686,27 @@ Each creature has a variety of senses. The Perception skill governs the use of e
 
 While sleeping, you take a \minus10 penalty to Perception.
 
-\subsubsection{Active Attention}
-As a move action, you can make a conscious effort to pay attention to events around you. You may make a Perception check to notice events, rather than simply using your modifier.
+\subsubsection{Passive and Active Attention}\label{Passive and Active Attention}
+You automatically notice some things about your environment, even when you're distracted or focusing on other tasks (such as combat). At all times, you are considered to be ``taking 0'' on a Perception check, allowing you to notice anything with a DC up to your Perception modifier, including all applicable bonuses and penalties.
 
-You are automatically paying active attention to any creature you are currently fighting in melee. No special action is required to maintain this attention.
+As a swift action, you can make a conscious effort to pay attention to events around you. This allows you to make Perception checks to notice events, rather than simply using your modifier. This is tiring to do over long periods of time: for every hour you spend being actively attentive, you must make a DC 10 Fortitude save to avoid being fatigued. The DC increases by 2 for every hour after the first.
 
 \subsubsection{Discern Illusion}
-You can automatically notice inconsistencies in illusion spells. Treat your Perception modifier as your check result. The DC is equal to the save DC of the spell. Success means you get a Will save to disbelieve the illusion as if you interacted with the illusion. Failure means you don't notice anything amiss.
+You can notice inconsistencies in illusion spells. The DC is equal to the save DC of the spell. Success means you get a Will save to disbelieve the illusion as if you interacted with the illusion. Failure means you don't notice anything amiss.
 
-If the illusion is completely missing a sense that should logically be present, such as a \spell{silent image} of people in armor, the DC to identify the illusion with that sense is lowered by 10. 
+If the illusion is completely missing a sense that should logically be present, such as a \spell{silent image} of people in armor, the DC to identify the illusion with that sense is lowered by 10.
 
 \subsubsection{Notice Event}
-You can automatically notice events around you. Treat your Perception modifier as your check result. The DC depends on the sense used and the obviousness of the event, as described on tables below. Success means you notice something, but you don't know any details -- only its general direction. Success by 5 or more means you can clearly identify what the event was. Failure means you don't notice anything.
+You can notice events around you. The DC depends on the sense used and the obviousness of the event, as described on tables below. Success means you notice something, but you don't know any details -- only its general direction. For every 5 points by which you beat the DC, you learn an additional piece of information about the event, such as what caused it or its precise location. Failure means you don't notice anything.
 
 \subsubsection{Identify Disguise}
-You can make a Perception check as a move action to identify a disguise on another creature. The DC is equal to the Disguise check used to create the disguise. Success means you know that the creature is disguised. If you succeed by 10 or more, you can also discern the creature's true appearance beneath the disguise. You can make an identify disguise check against any individual creature once per hour.
+You can identify disguises on other creatures. The DC is equal to the Disguise check result used to create the disguise. Success means you know that the creature is disguised. If you succeed by 10 or more, you can also discern the creature's true appearance beneath the disguise. After making a check to identify a disguise on a particular creature, you cannot make another check to identify the same disguise on that creature for one hour.
 
 \subsubsection{Identify Forgery}
-You can make a Perception check as a full-round action to evaluate whether an item is a forgery. The DC to identify a forgery is equal to the Craft check used to make the item. Success indicates that you correctly identify whether the item is a forgery or not. Failure indicates that you are unsure. Failure by more than 10 indicates that you incorrectly identify the item. The check is made secretly, so you can't be sure how good the result is.
+You can identify forgeries. The DC to identify a forgery is equal to the Craft check result used to make the item. Success indicates that you correctly identify whether the item is a forgery or not. Failure indicates that you are unsure. Failure by more than 10 indicates that you incorrectly identify the item, concluding that a forgery is genuine or a genuine item is a forgery. The check is made secretly, so you can't be sure how good the result is.
 
 \subsubsection{Read Lips}
-You can make a DC 15 sight-based Perception check to read a creature's lips. You must be able to understand the language spoken. Success means you can understand the general content of the message, but not the exact words. Success by 5 or more means you understand the exact words. spoken if you understand the language. Failure means you don't understand the message. Failure by 10 or more means you draw an incorrect conclusion about the message.
+You can make a DC 15 sight-based Perception check to read a creature's lips. You must be able to understand the language spoken. Success means you can understand the general content of the message, but not the exact words. Success by 5 or more means you understand the exact words. Failure means you don't understand the message. Failure by 10 or more means you draw an incorrect conclusion about the message.
 
 \subsubsection{Search}
 You can spend a full-round action to make a Perception check to notice things in a single 5-ft. square within 10 feet of you. While doing so, you ignore size penalties that would affect the DC to notice anything within the square.
@@ -787,6 +786,16 @@ All Perception checks share the same set of modifiers, in addition to certain mo
         A hundred feet away & \plus10 \\
         Five hundred feet away & \plus15 \\
         Half a mile away & \plus20 \\
+        \thead{Size} & \thead{DC Modifier} \\
+        Fine & \plus16 \\
+        Diminuitive & \plus12 \\
+        Tiny & \plus8 \\
+        Small & \plus4 \\
+        Medium & \plus \\
+        Large & \minus4 \\
+        Huge & \minus8 \\
+        Gargantuan & \minus12 \\
+        Colossal & \minus16 \\
     \end{tabularx}
 \end{dtable}
 
