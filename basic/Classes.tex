@@ -1,0 +1,1367 @@
+\chapter{Classes and Backgrounds}
+Your character's class represents the things your character has chosen to train in. This choice determines a great deal about your character's abilities.
+
+\section{Class Introductions}
+There are eleven classes in Rise.
+\begin{itemize*}
+  \item Barbarians are mighty warriors who can enter a deadly battlerage.
+  \item Clerics are divine spellcasters who draw power from their veneration of a deity or ideal.
+  \item Druids are divine spellcasters who draw power from their veneration of nature.
+  \item Fighters are highly disciplined warriors who excel in physical combat of any variety.
+  \item Monks are agile masters of ``\ki'' who hone their personal abilities to strike down foes and perform supernatural feats.
+  \item Paladins are holy warriors whose devotion to their deity grants them the ability to discern and smite evil.
+  \item Rangers are skilled hunters who bridge the divide between nature and civilization.
+  \item Rogues are exceptionally skillful characters known for their ability to strike at their foe's weak points in combat.
+  \item Sorcerers are arcane spellcasters with an intuitive and flexible understanding of magic.
+  \item Wizards are arcane spellcasters with a highly studied and deep understanding of magic.
+\end{itemize*}
+
+\subsection{Class Description Format}
+
+\parhead{Alignment} Some classes have alignment restrictions. See Chapter 6: Description for a description of what alignments are.
+
+\parhead{Hit Value} At each level, you gain hit points equal to your class's Hit Value \add half your Constitution.
+
+\parhead{Class Skills} These are skills that members of this class are typically good at.
+
+\parhead{Skill Points} This is the number of skill points that members of this class get.
+
+\parhead{Weapon and Armor Proficiencies} These are the types of equipment that members of this class are trained in using.
+
+\parhead{Base Attack Progression} This measures how skilled a character is in combat. A character adds his base attack bonus to all attacks he makes, and half his base attack bonus to his armor class, which represents how hard he is to hit. There are three progressions: Good, Average, or Poor. The effects of each progression are described on \trefnp{Base Progressions}.
+
+A high base attack bonus can grant additional attacks, as described in \pcref{Combat}.
+
+\parhead{Base Saving Throw Progressions} This measures how resistant members of the class are to unusual kinds of attacks. There are three kinds of saving throws. Fortitude saves represent your ability to resist attacks on your body, like poisons and diseases. Reflex saves represent your ability to avoid attacks, such as pit traps or explosions. Will saves represent your ability to resist mental influence, like fearsome creatures and enchantment spells. You add your base saving throw bonus to all saving throws you make of that type. There are three progressions: Good, Average, or Poor. The effects of each progression are described on \trefnp{Base Progressions}.
+
+\begin{dtable}
+    \lcaption{Base Progressions}
+    \begin{tabularx}{\columnwidth}{l l X}
+        \thead{Progression} & \thead{Attack Bonus} & \thead{Saving Throw Bonus} \\
+        Good & Class level & Class level \add 2 \\
+        Average & Three-quarters class level & Three-quarters class level \add 1 \\
+        Poor & One-half class level & One-half class level \\
+    \end{tabularx}
+\end{dtable}
+
+\parhead{Class Features} The class features that a character gets for being a member of the class.
+
+\section{Class Descriptions}
+
+\subsection{Barbarian}
+\begin{dtable}
+\lcaption{The Barbarian}
+\begin{tabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolpoor} *{3}{>{\ccol}p{\savecol}} X}
+\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} \\
+1st & \plus1         & \plus3 & \plus1 & \plus0 & Damage reduction, rage \plus2 \\
+2nd & \plus2         & \plus4 & \plus2 & \plus1 & Fast movement, uncanny dodge \\
+3rd & \plus3         & \plus5 & \plus3 & \plus1 & Endurance, channeled rage \\
+4th & \plus4         & \plus6 & \plus4 & \plus2 & Grit \\
+5th & \plus5         & \plus7 & \plus4 & \plus2 & \\
+\end{tabularx}
+\end{dtable}
+
+\cd{Alignment} Any nonlawful.
+
+\cd{Hit Value} 7.
+
+\sssecfake{Class Skills}
+The barbarian's class skills (and the key attribute for each skill) are
+Athletics (Str), Climb (Str), Swim (Str), Acrobatics (Dex), Ride (Dex), Perception (Wis), Survival (Wis), Creature Handling (Cha), and Intimidate (Cha).
+\cf{Bbn}{Skill Points at 1st Level} 4
+
+\sssecfake{Class Features}
+
+All of the following are class features of the barbarian.
+\cf{Bbn}{Weapon and Armor Proficiency}  A barbarian is proficient with simple weapons, any four other weapon groups, light armor, medium armor, and shields (except tower shields).
+
+\cf{Bbn}{Damage Reduction (Ex)} A barbarian has the ability to shrug off some amount of injury from attacks. He has physical damage reduction equal to his barbarian level. This damage reduction allows the barbarian to ignore the first points of physical damage he takes each round.
+
+\cf{Bbn}{Rage (Ex)} A barbarian can fly into a rage a certain number of times per day. While in a rage, he temporarily gains a \plus2 competence bonus to weapon damage rolls and Fortitude and Will saves. In addition, he gains 2 temporary hit points per barbarian level, but he takes a \minus2 penalty to Armor Class.
+\par The extra hit points gained from raging are lost before any other hit points. (For more information, see \pref{Temporary Hit Points}.)
+
+While raging, a barbarian cannot use any Charisma-, Dexterity-, or Intelligence-based skills other than Acrobatics, Escape Artist, Intimidate, and Ride, or any abilities that require patience or concentration, nor can he cast spells or activate magic items that require a command word, a spell trigger (such as a wand), or spell completion (such as a scroll) to function. He can use any feat he has except Combat Expertise, item creation feats, and metamagic feats.
+
+\par A barbarian's ability to maintain his rage depends on his willpower. A fit of rage lasts for a number of rounds equal to 5 \add the barbarian's Charisma. He may prematurely end his rage, and it ends automatically if he becomes unconscious. At the end of the rage, the barbarian takes nonlethal damage equal to the number of temporary hit points he gained by raging, loses his rage bonuses and restrictions, and becomes fatigued until he has a chance to rest for at least 5 rounds. If the barbarian has any temporary hit points remaining at the end of his rage, the nonlethal damage is dealt to those hit points before they go away. A fatigued character can neither run nor charge and is vulnerable, giving it a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. 
+
+\par A barbarian can fly into a rage once per day, plus an additional number of times per day equal to half his Constitution (minimum 0), to a maximum number of rages per day equal to his barbarian class level. He may not rage more than once per encounter. Entering a rage takes no time itself, but a barbarian can do it only during his action, not in response to someone else's action.
+
+\cf{Bbn}{Fast Movement (Ex)} At 2nd level, a barbarian's land speed becomes faster than the norm for his race by \plus10 feet. This benefit applies only when he is wearing no armor, light armor, or medium  armor and not carrying a heavy load. Apply this bonus before modifying the barbarian's speed because of any load carried or armor worn. This bonus is a competence bonus.
+
+\cf{Bbn}{Uncanny Dodge (Ex)} Starting at 2nd level, a barbarian can react to danger before his senses would normally allow him to do so. He may apply his Dexterity and dodge modifier to his armor class while flat-footed.
+
+\cf{Bbn}{Endurance} A barbarian gains Endurance (see \hyperlink{feat:Endurance}{Endurance}) as a bonus feat at 3rd level. If he already has Endurance, he may gain any other feat for which he qualifies as a bonus feat.
+
+\cf{Bbn}{Channeled Rage} At 3rd level, a barbarian gains the ability to enter a channeled rage whenever he rages. Each channeled rage grants the barbarian additional abilities while in that rage or changes the nature of his rage.
+\par A barbarian can only be in one channeled rage at a time. By spending an additional use of his rage ability, he can change which channeled rage he is in without exiting the rage, but this does not extend the duration of the rage.
+\par Channeled rage abilities are (Ex) abilities unless otherwise noted. All bonuses granted by channeled rages apply only while the barbarian is in that channeled rage.
+
+\subcf{Athletic Rage} The barbarian adds his rage bonus as a competence bonus to his Athletics, Climb, and Swim checks. Additionally, he is always treated as having a running start when jumping.
+
+\subcf{Agile Rage} The barbarian adds his rage bonus as a competence bonus to his Reflex saves and Dexterity-based skill checks.
+
+\subcf{Endless Rage} The barbarian's rage lasts for an additional 5 rounds.
+
+%Needs to be stronger
+\subcf{Fearless Rage} The barbarian becomes immune to fear and harmful morale effects.
+
+\subcf{Intimidating Rage} The barbarian adds his rage bonus as a competence bonus to his Intimidate checks. Any foe he intimidates remains shaken until the barbarian ends his rage.
+
+\subcf{Mighty Rage} The barbarian adds his rage bonus as a competence bonus to his Strength. This replaces his competence bonuses to weapon damage rolls and Fortitude saves.
+
+\subcf{Overpowering Rage} The barbarian adds his rage bonus as a competence bonus to his maneuver modifier. This replaces his competence bonus to weapon damage rolls.
+
+\subcf{Savage Rage} The barbarian gains the unarmed warrior ability (see Unarmed Warrior, page \pref{Mnk:Unarmed Warrior}), increasing his power with unarmed attacks (1d6 damage for a Medium barbarian).
+
+\subcf{Wary Rage} The barbarian does not suffer the normal \minus2 penalty to AC for raging.
+
+\cf{Bbn}{Grit (Ex)} At 4th level, a barbarian's resilience allows him to shrug off magical effects. If he makes a successful Fortitude save against an attack that normally deals half damage on a successful save, he instead takes no damage.
+
+\subsubsection{Ex-Barbarians}
+A barbarian who becomes lawful loses the ability to rage and cannot
+gain more levels as a barbarian. He retains all the other benefits of
+the class.
+
+\subsection{Cleric}
+Clerics are granted divine power based on their beliefs. Most clerics receive their powers from a patron deity. However, some dedicate themselves to pure ideals or philosphies, and have power bestowed on them by otherworldly entities who wish to encourage those goals.
+
+\begin{dtable*}
+\lcaption{The Cleric}
+\begin{tabularx}{\textwidth}{>{\ccol}p{2em} >{\ccol}p{7em} *{3}{>{\ccol}p{\savecol}} X}
+\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} \\
+1st & \plus0 & \plus1 & \plus0 & \plus3         & Matters of faith, lesser domain aspect \\
+2nd & \plus1 & \plus2 & \plus1 & \plus4         & Channel energy, lesser domain aspect \\
+3rd & \plus2 & \plus3 & \plus1 & \plus5         & Domain power \\
+4th & \plus3 & \plus4 & \plus2 & \plus6         & Domain power \\
+5th & \plus3 & \plus4 & \plus2 & \plus7         & Channelled domain power \\
+\end{tabularx}
+\end{dtable*}
+
+\cd{Alignment} A cleric's alignment must be within one step of his deity's (that is, it may be one step away on either the lawful-chaotic axis or the good-evil axis, but not both). A cleric may not be neutral unless his deity's alignment is also neutral.
+
+\cd{Hit Value} 5.
+
+\sssecfake{Class Skills}
+The cleric's class skills (and the key attribute for each skill) are Knowledge (arcana) (Int), Knowledge (local) (Int), Knowledge (religion) (Int), Knowledge (the planes) (Int), Heal (Wis), Sense Motive (Wis), Spellcraft (Wis), Persuasion (Cha), and Intimidate (Cha).
+
+\cf{Clr}{Skill Points at 1st Level} 2.
+
+ \sssecfake{Class Features}
+All of the following are class features of the cleric.
+
+ \cf{Clr}{Weapon and Armor Proficiency}  Clerics are proficient with simple weapons, any two other weapon groups, light and medium armor, and shields (except tower shields).
+
+\cf{Clr}{Bonus Languages} A cleric's bonus language options include Celestial, Abyssal, and Infernal (the languages of good, chaotic evil, and lawful evil outsiders, respectively). These choices are in addition to the bonus languages available to the character because of his race.
+
+\cf{Clr}{Domains} A cleric chooses two domains, which represent his personal spiritual inclinations. If he has a deity, he must choose his domains from among those his deity offers. A cleric's choice of domains has broad effects on the cleric's spellcasting and supernatural abilities. Each domain has an associated domain attribute which is used for the domain's abilities. The domains and their attributes are listed below. If a domain offers a choice of multiple attributes, the cleric must choose which attribute to use when he gains the domain, and that choice cannot normally be changed.
+
+\subcf{Air} Dexterity or Wisdom
+\subcf{Chaos} Charisma
+\subcf{Death} Constitution
+\subcf{Destruction} Strength or Charisma
+\subcf{Earth} Constitution or Wisdom
+\subcf{Evil} Charisma
+\subcf{Fire} Dexterity or Wisdom
+\subcf{Good} Wisdom or Charisma
+\subcf{Knowledge} Intelligence
+\subcf{Law} Wisdom
+\subcf{Magic} Intelligence
+\subcf{Protection} Constitution or Wisdom
+\subcf{Strength} Strength
+\subcf{Travel} Any physical attribute
+\subcf{Trickery} Dexterity or Charisma
+\subcf{Vitality} Constitution
+\subcf{War} Any 
+\subcf{Water} Dexterity or Wisdom
+
+\cf{Clr}{Spells} A cleric casts divine spells using his Charisma. To learn or cast a spell, a cleric must have a Charisma at least equal to half the spell's level. The Difficulty Class for a saving throw against a cleric's spell is 10 \add half the cleric's caster level \add the cleric's Charisma.
+
+Like other spellcasters, the number of spells a cleric knows and can cast each day is limited. These limitations are given below on \trefnp{Cleric Spells per Day} and \trefnp{Cleric Spells Known}. A cleric's spells are drawn from the cleric spell list (\pcref{Cleric Spells}), as well as from his domains (\pcref{Cleric Domains}). Two spells at every spell level must be drawn from the cleric's domains; sometimes these spells are normal spells on the cleric's spell list, but often they are only accessible by the domain. A cleric may also choose spells from his domain lists with his normal spells known.
+
+Clerics meditate or pray for their spells. Each cleric must choose a time at which he must spend 1 hour each day performing a ritual, worshipping, or quietly contemplating to regain his daily allotment of spells. They do not need to rest to regain spells.
+
+A cleric can't cast spells of an alignment opposed to his own or his deity's (if he has one). Spells associated with particular alignments are indicated by the chaos, evil, good, and law descriptors in their spell descriptions.
+
+A cleric's magic level is equal to his cleric level.
+
+\begin{dtable}
+    \lcaption{Cleric Spells per Day}
+    \centering
+    \begin{tabularx}{\columnwidth}{>{\ccol}X *{9}{>{\ccol}p{\spellcol}}}
+        & \multicolumn{9}{c}{\thead{---{}---{}---{}---{}---{}---{}---{}---Spell Level---{}---{}---{}---{}---{}---{}---{}---}} \\
+        \thead{Level} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} & \thead{5th} & \thead{6th} & \thead{7th} & \thead{8th} & \thead{9th} \\
+        1st & 3 & \x & \x & \x & \x & \x & \x & \x & \x \\
+        2nd & 4 & \x & \x & \x & \x & \x & \x & \x & \x \\
+        3rd & 5 & \x & \x & \x & \x & \x & \x & \x & \x \\
+        4th & 6 & 3 & \x & \x & \x & \x & \x & \x & \x \\
+        5th & 6 & 4 & \x & \x & \x & \x & \x & \x & \x \\
+    \end{tabularx}
+\end{dtable}
+
+\begin{dtable}
+\lcaption{Cleric Spells Known}
+\centering
+\begin{tabularx}{\columnwidth}{>{\ccol}X *{9}{>{\ccol}p{\spellcol}}}
+& \multicolumn{9}{c}{\thead{---{}---{}---{}---{}---{}---{}---{}---Spell Level---{}---{}---{}---{}---{}---{}---{}---}} \\
+\thead{Level} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} & \thead{5th} & \thead{6th} & \thead{7th} & \thead{8th} & \thead{9th} \\
+1st  & 0\plus 2 & \x & \x & \x & \x & \x & \x & \x & \x \\
+2nd  & 1\plus 2 & \x & \x & \x & \x & \x & \x & \x & \x \\
+3rd  & 2\plus 2 & \x & \x & \x & \x & \x & \x & \x & \x \\
+4th  & 2\plus 2 & 0\plus 2 & \x & \x & \x & \x & \x & \x & \x \\
+5th  & 3\plus 2 & 1\plus 2 & \x & \x & \x & \x & \x & \x & \x \\
+\end{tabularx}
+\end{dtable}
+
+\begin{dtable!*}
+\lcaption{Deities}
+\begin{tabularx}{\textwidth}{X l X}
+\thead{Deity} & \thead{Alignment} & \thead{Domains} \\
+Guftas, horse god of justice & Lawful good & Animal, Law, Strength, Travel \\
+Lucied, paladin god of justice & Lawful good & Destruction, Good, Leadership, War \\
+Simor, fighter god of protection & Lawful good & Good, Law, Life, Protection \\
+Vanya, centaur god of nature & Neutral good & Good, Plant, Strength, War \\
+Brushtwig, pixie god of creativity & Chaotic good & Chaos, Good, Trickery \\
+Chavi, bard god of stories & Chaotic good & Chaos, Knowledge, Leadership, Trickery \\
+Ivan Ivanovitch, bear god of strength & Chaotic good & Animal, Chaos, Strength, War \\
+Raphael, monk god of retribution & Lawful neutral & Death, Law, Protection, Travel \\
+Declan, god of fire & True neutral & Destruction, Fire, Knowledge, Magic \\
+%Kalten, half-orc god of smiths
+Kurai, shaman god of nature & True neutral & Air, Earth, Fire, Water \\
+Murdoc, bard god of mercenaries & Chaotic neutral & Destruction, Knowledge, Leadership, War\\
+Daeghul, god of slaughter & Chaotic evil & Destruction, Evil, Magic, War \\
+%Ribo, halfling god of trickery & Chaotic neutral & Chaos, Trickery, Water
+\end{tabularx}
+\end{dtable!*}
+
+\cf{Clr}{Rituals} Clerics, like other spellcasters, can perform rituals to create unique magical effects. A cleric begins play with a ritual book containing one divine ritual of his choice. See \pcref{Rituals}.
+
+\cf{Clr}{Lesser Domain Aspect (Su)} A cleric's abilities are shaped by his domains. Each domain grants a lesser domain aspect. Lesser domain aspects are not activated. Options for domain aspects are listed at \pcref{Lesser Domain Aspects}. A cleric gains an additional lesser domain aspect at 2nd level.
+
+\cf{Clr}{Matters of Faith (Ex)} A cleric gains a \plus10 competence bonus to Knowledge (religion) checks made concerning his faith, such as questions about his deity or philosophy, religious rites, holy sites, and so on. Further, he is treated as being trained in Knowledge (religion) when making such checks, whether or not he actually is.
+
+\cf{Clr}{Channel Energy (Su)} At 2nd level, by channeling the power of his faith through his holy (or unholy) symbol, a cleric can act as a powerful conduit of divine energy. He must choose whether to channel positive or negative energy. Once this choice is made, it cannot be reversed. This decision also determines whether the cleric casts spontaneous \spellindirect{cure light wounds}{cure} or \spellindirect{inflict light wounds}{inflict} spells (see below).
+
+When a cleric channels energy, it affects all creatures in a \areamed radius burst centered on him, including himself. The cleric may choose to exclude a number of creatures from the effect equal to 1 \add half his Wisdom. The amount of damage dealt (if negative energy is channeled) or healed (if positive energy is channeled) is equal to 1d6 damage per two cleric levels. Each affected creature can make a Fortitude save to halve the damage. The DC of this save is equal to 10 \add the cleric's level \add the cleric's Charisma.
+
+Channeling energy is a standard action that does not provoke attacks of opportunity. A cleric can channel energy a number of times per day equal to 3 \add half his Charisma. A cleric must be able to present his holy symbol to use this ability. The abilities used 
+
+\cf{Clr}{Domain Power (Su)} At 3rd level, a cleric gains a domain power from one of his domains. Using a domain power requires a standard action that does not provoke attacks of opportunity unless otherwise noted. All domain powers can be used at will unless otherwise noted. If a domain power allows a saving throw, the DC is equal to 10 \add the cleric's level \add the cleric's domain attribute.
+
+The domain powers for each domain are described at \pcref{Domain Powers}. The cleric gains an additional domain power from one of his domains at 4th level.
+
+\cf{Clr}{Channeled Domain Power (Su)} At 5th level, a cleric gains a channeled domain power from one of his domains. Unless otherwise stated, using a channelled domain power is identical to using channel energy and consumes a use of the cleric's channel energy ability. Instead of channeling positive or negative energy, the cleric instead gains the effect of the channelled domain power. If a channeled domain power deals damage, it functions like channeling negative energy unless otherwise noted. If a channeled domain power heals damage, it functions like channeling postive energy unless otherwise noted. The save DC of a cleric's channeled domain power is equal to 10 \add cleric level \add domain attribute. The channeled domain powers are described at \pcref{Channeled Domain Powers}.
+
+\ssecfake{Cleric Domain Abilities}
+
+\subsubsection{Lesser Domain Aspects}\label{Lesser Domain Aspects}
+
+\subcf{Air} The cleric adds Athletics to his cleric class skill list and may treat it as a Dexterity-based skill whenever doing so would be beneficial to him.
+\subcf{Chaos} Whenever the cleric rolls a 2 on a d20 roll, he immediately rerolls.
+\subcf{Death} The cleric adds half his cleric level to the maximum amount of critical damage he can take without dying.
+\subcf{Destruction} The cleric can ignore half of the hardness of any object he damages, whether with spells or weapons.
+\subcf{Earth} The cleric gains Endurance as a bonus feat.
+\subcf{Evil} The cleric gains Skill Focus (Intimidate) as a bonus feat.
+\subcf{Fire} The cleric gains fire damage reduction equal to twice his cleric level. This damage reduction allows him to ignore the first points of fire damage he would take each round.
+\subcf{Good} The cleric gains Skill Focus (Persuasion) as a bonus feat.
+\subcf{Knowledge} The cleric adds all Knowledge skills to his cleric class skill list.
+\subcf{Law} Whenever the cleric rolls a 2 on a d20 roll, he treats it as if he had rolled a 10.
+\subcf{Magic} The cleric gains an additional spell slot at his highest level of spells.
+\subcf{Protection} The cleric gains his choice of Covering Fire or Guardian as a bonus feat.
+\subcf{Strength} The cleric adds Athletics, Climb, and Swim to his cleric class skill list.
+\subcf{Travel} The cleric adds Knowledge (geography) and Survival to his cleric class skill list.
+\subcf{Trickery} The cleric adds Bluff and Disguise to his cleric class skill list.
+\subcf{Vitality} The cleric gains a \plus2 competence bonus to attack rolls with Vitalism spells.
+\subcf{War} The cleric gains Weapon Focus with his deity's favored weapon group as a bonus feat. If he does not have a deity, he gains it in a weapon group related to his alignment or ideals.
+\subcf{Water} The cleric adds Swim to his cleric class skill list and halves the penalties he takes for fighting underwater.
+
+\subsubsection{Domain Powers}\label{Domain Powers}
+
+\subcf{Air -- Lightning Arc} The cleric fires an arc of lightning at a creature within \rngmed range. If he hits on a ranged touch attack, the creature takes d8 electricity damage \add d8 per four cleric levels after 1st.
+\subcf{Chaos -- Touch of Chaos} A creature within \rngclose range is imbued with the power of chaos for 5 rounds. Any attack roll, saving throw, or check it makes where it rolls an odd number gets a \minus2 penalty. Creatures affected by this power are treated as lawful for the purpose of the cleric's chaotic spells and effects.
+\subcf{Death -- Death's Door} If the cleric succeeds on a melee touch attack, he rolls d6 per cleric level. If the total at least equals the touched creature's current hit points, it loses all of its hit points and is disabled. If the total at least equals the creature's critical damage, it is instantly slain. This is a death effect.
+\subcf{Destruction -- Destructive Resonance} A touched creature or object takes d10 sonic damage \add d10 per four cleric levels after 1st.
+\subcf{Earth -- Raise Earth} As a swift action, the cleric can command the earth to raise up any creature within \rngclose range, allowing it to stand from prone without taking an action. This ability only works on natural earth or stone.
+\subcf{Evil -- Touch of Evil} A touched creature is sickened and is treated as good for the purpose of the cleric's evil spells and effects. This effect lasts for 5 rounds.
+\subcf{Fire -- Firebolt} The cleric fires a bolt of fire at a creature within \rngclose range. If he hits on a ranged touch attack, the creature takes d8 fire damage \add d8 per four cleric levels after 1st.
+\subcf{Good -- Holy Touch} A touched creature is dazzled and treated as evil for the purpose of good spells and effects that the cleric creates. The effect lasts for 5 rounds.
+\subcf{Knowledge -- Minor Vision} A touched creature is granted a brief vision of the future, giving it a \plus2 enhancement bonus to attack rolls, weapon damage rolls, and checks for 1 round.
+\subcf{Law -- Touch of Order} A creature within \rngclose range is imbued with the leveling power of order for 5 rounds. Any attack roll, saving throw, or check it makes with a roll of 11 or higher gets a \minus2 penalty. In addition, it is treated as being chaotic for the purpose of the cleric's lawful spells and effects.
+\subcf{Magic -- Breach Defenses} The cleric fires a magical ray at a creature within \rngclose range. If he hits, the target takes d6 damage \add 1 per cleric level. In addition, it takes a \minus2 penalty to saving throws against  the cleric's spells for 1 round.
+\subcf{Nature -- Wild Speech} The cleric gains wild speech, as the druid ability, with a druid level equal to half his cleric level (minimum 1). This power can be used a number of times per day equal to half the cleric's level.
+\subcf{Protection -- Martyr's Touch} For the next 5 rounds, the cleric takes half of the damage the touched creature would take, as the \spell{shield other} spell. If the cleric get farther than \rngmed range from the touched creature during this time, the effect is broken.
+\subcf{Strength -- Surge of Strength} The cleric gains a \plus2 enchancement bonus to Strength for 1 round. \bonusscalingdescription This power can be used a number of times per day equal to 1 \add half the cleric's Strength.
+\subcf{Travel -- Free Stride} As a swift action, the cleric can gain the ability to move through difficult terrain at full speed for 1 round. This power can be used a number of times per day equal to 1 \add half the cleric's Dexterity.
+\subcf{Trickery -- Liar's Boon} As a swift action, the cleric can gain a \plus3 enhancement bonus to Bluff and Disguise checks for 5 minutes. This power can be used a number of times per day equal to 1 \add half the cleric's Charisma.
+\subcf{Vitality -- Vital Reach} As a swift action, the cleric can cause a dying creature within \rngmed range to stabilize or take 1 critical damage, as he desires.
+\subcf{War -- Warrior's Boon} A creature touched creature gains a \plus2 enhancement bonus to attack rolls for 1 round. \bonusscalingdescription This power can be used a number of times per day equal to 1 \add half the cleric's Charisma.
+\subcf{Water -- Drowning Orb} The cleric fires an orb of water at a creature within \rngclose range. If he hits on a ranged touch attack, the orb attempts to force itself into the creature's mouth and nose to drown it, dealing d8 nonlethal damage \add 1 per cleric level. In addition, the creature must make a Fortitude save or be forced to hold its breath for 5 rounds.
+
+\subsubsection{Channeled Domain Powers}\label{Channeled Domain Powers}
+
+\subcf{Air} The cleric channels electrical energy. This deals electricity damage and heals creatures with the air subtype. A Reflex save halves the damage.
+\subcf{Chaos} The cleric channels anarchic energy. Roll randomly each time this power is used to determine whether it functions as channeling negative energy or channeling positive energy, except that it always heals chaotic creatures and harms lawful creatures.
+\subcf{Death} The cleric channels negative energy, except that any creatures dealt critical damage by this power are instantly killed, with no saving throw allowed. This is a death effect.
+\subcf{Destruction} The cleric channels destructive energy. This deals untyped damage and allows a Fortitude save for half damage.
+\subcf{Earth} The cleric channels seismic energy. This deals physical bludgeoning damage to all creatures on the ground. A Reflex save halves the damage.
+\subcf{Evil} The cleric channels negative energy, except that it has no effect on evil creatures.
+\subcf{Fire} The cleric channels fiery energy. This deals fire damage and heals creatures with the fire subtype. A Reflex save halves the damage.
+\subcf{Good} The cleric channels positive energy, except that it has no effect on evil creatures.
+\subcf{Knowledge} The cleric channels insight from knowledge. This functions like channeling positive energy, except that each affected creature gains an enhancement bonus equal to half the cleric's level on the next attack roll, damage roll, saving throw, or check that it makes instead of being healed. If this bonus is not used within 5 rounds, it is wasted.
+\subcf{Law} The cleric channels axiomatic energy. This deals 4 damage per two cleric levels to all creatures within a 40 ft. cube centered on the cleric. A Will save halves the damage, and it has no effect on lawful creatures.
+\subcf{Magic} The cleric channels magical energy. This heals creatures who can cast spells and deals damage to creatures who cannot.
+\subcf{Nature} The cleric channels positive energy, except that the cleric can decide whether it acts as positive or negative energy to animals and plants.
+\subcf{Protection} The cleric grants each affected creature temporary hit points equal to half the amount that channelling positive energy would have healed. Undead gain temporary hit points as well. The temporary hit points last for 5 rounds.
+\subcf{Strength} The cleric channels positive energy. Creatures at their maximum hit points after being healed gain a \plus1 enhancement bonus to Strength. This bonus increases to \plus2 at 11th level.
+\subcf{Travel} The cleric channels positive energy. All healed creatures can ignore difficult terrain for 1 round.
+\subcf{Trickery} The cleric channels negative energy. It deals half damage, but all damaged creatures who fail their Will saves are bewildered for 5 rounds. This is a mind-affecting effect.
+\subcf{Vitality} The cleric channels energy as normal, except that he gains a \plus2 circumstance bonus to his cleric level.
+\subcf{War} The cleric channels energy as normal, except that he can exclude two additional creatures from the effect.
+
+\subsubsection{Ex-Clerics}
+A cleric who grossly violates the code of conduct required by his god loses all spells and class features, except for armor and shield proficiencies and proficiency with simple weapons. He cannot thereafter gain levels as a cleric of that god until he atones (see the \spell{atonement} spell description).
+
+\subsection{Druid}
+\begin{dtable*}
+\lcaption{The Druid}
+\begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\centering}p{\babcolavg} *{3}{>{\ccol}p{\savecol}} >{\ccol}X}
+\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} \\
+1st & \plus0 & \plus3 & \plus0 & \plus1 & Nature sense, natural casting, wild speech \\
+2nd & \plus1 & \plus4 & \plus1 & \plus2 & Woodland stride \\
+3rd & \plus2 & \plus5 & \plus1 & \plus3 & Wild aspect \\
+4th & \plus3 & \plus6 & \plus2 & \plus4 & Venom immunity \\
+5th & \plus3 & \plus7 & \plus2 & \plus4 & Wild aspect \\
+\end{tabularx}
+\end{dtable*}
+
+\cd{Alignment} Neutral good, lawful neutral, neutral, chaotic
+neutral, or neutral evil.
+\cd{Hit Value} 5.
+ \sssecfake{Class Skills}
+The druid's class skills (and the key attribute for each skill) are Athletics (Str), Climb (Str), Swim (Str), Ride (Dex), Stealth (Dex), Knowledge (geography), Knowledge (nature) (Int), Heal (Wis), Perception (Wis), Survival (Wis), and Creature Handling (Cha).
+\cf{Drd}{Skill Points at 1st Level} 4
+
+\sssecfake{Class Features}
+All of the following are class features of the druid.
+
+\cf{Drd}{Weapon and Armor Proficiency} Druids are proficient with simple weapons, any one other weapon group, scimitars, sickles, and slings.
+\par Druids are proficient with light and medium armor, but are prohibited from wearing
+metal armor; thus, they may wear only padded, leather, or hide armor. (A druid may also
+wear wooden armor that has been altered by the \spell{ironwood} spell so that it
+functions as though it were steel. See the \spell{ironwood} spell description) Druids are proficient with shields (except tower shields) but must use only wooden ones.
+\par A druid who wears prohibited armor or carries a prohibited shield is unable to cast druid spells or use any of her supernatural class abilities while doing so and for 24 hours thereafter.
+
+\cf{Drd}{Bonus Languages} A druid's bonus language options include Sylvan, the language of magical woodland creatures. This choice is in addition to the bonus languages available to the character because of her race.
+
+A druid also knows Druidic, a secret language known only to druids, which she learns upon becoming a 1st-level druid. Druidic is a free language for a druid; that is, she knows it in addition to her regular allotment of languages and it doesn't take up a language slot. Druids are forbidden to teach this language to nondruids. Druidic has its own alphabet.
+
+\cf{Drd}{Spells} A druid casts divine spells using her Wisdom. To learn or cast a spell, a druid must have a Wisdom at least equal to half the spell's level. The Difficulty Class for a saving throw against a druid's spell is 10 \add half the druid's caster level \add the druid's Wisdom .
+
+Like other spellcasters, the number of spells a druid knows and can cast each day is limited. These limitations are given below on \trefnp{Druid Spells per Day} and \trefnp{Druid Spells Known}. A druid's spells are drawn from the druid spell list (\pcref{Druid Spells}).
+
+Druids meditate or pray for their spells. Each druid must choose a time at which she must spend 1 hour each day performing a ritual, worshipping, or quietly contemplating to regain her daily allotment of spells. They do not need to rest to regain spells.
+
+A druid's magic level is equal to her druid level.
+
+\begin{dtable}
+    \lcaption{Druid Spells per Day} 
+    \centering
+    \begin{tabularx}{\columnwidth}{>{\ccol}X *{9}{>{\ccol}p{\spellcol}}}
+        & \multicolumn{9}{c}{\thead{---{}---{}---{}---{}---{}---{}---{}---Spell Level---{}---{}---{}---{}---{}---{}---{}---}} \\
+        \thead{Level} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} & \thead{5th} & \thead{6th} & \thead{7th} & \thead{8th} & \thead{9th} \\
+        1st & 3 & \x & \x & \x & \x & \x & \x & \x & \x \\
+        2nd & 4 & \x & \x & \x & \x & \x & \x & \x & \x \\
+        3rd & 5 & \x & \x & \x & \x & \x & \x & \x & \x \\
+        4th & 6 & 3 & \x & \x & \x & \x & \x & \x & \x \\
+        5th & 6 & 4 & \x & \x & \x & \x & \x & \x & \x \\
+    \end{tabularx}
+\end{dtable}
+
+\begin{dtable}
+\lcaption{Druid Spells Known}
+\centering
+\begin{tabularx}{\columnwidth}{X *{9}{p{1.1em}}}
+& \multicolumn{9}{c}{\thead{---{}---{}---{}---{}---{}---{}---Spell Level---{}---{}---{}---{}---{}---{}---}} \\
+\thead{Level} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} & \thead{5th} & \thead{6th} & \thead{7th} & \thead{8th} & \thead{9th} \\
+1st  & 1 & \x & \x & \x & \x & \x & \x & \x & \x \\
+2nd  & 2 & \x & \x & \x & \x & \x & \x & \x & \x \\
+3rd  & 3 & \x & \x & \x & \x & \x & \x & \x & \x \\
+4th  & 3 & 1 & \x & \x & \x & \x & \x & \x & \x \\
+5th  & 4 & 2 & \x & \x & \x & \x & \x & \x & \x \\
+\end{tabularx}
+\end{dtable}
+
+\cf{Drd}{Rituals} Druids, like other spellcasters, can perform rituals to create unique magical effects. A druid begins play with a ritual book containing one divine ritual of her choice. See \pcref{Rituals}.
+
+\cf{Drd}{Natural Casting (Ex)} A druid's spells channel the power of nature itself. Though her energy is a necessary component to bring natural power to bear, she need not be the focus of its might. Whenever she casts a druid area spell that would emanate from her, such as a cone or line spell, she may cause the spell to originate from any position within 10 feet of her. All other aspects of the spell are unchanged.
+
+For example, a druid casting \spell{gust of wind} could create a line of wind originating from 10 feet to her right. The line would extend 50 feet out from that point, as normal. If the druid cause the line of wind to blow to the left, she could potentially be affected by the wind.
+
+\cf{Drd}{Nature Sense (Ex)} A druid gains a \plus2 competence bonus on Knowledge (nature) and Survival checks. In addition, she can make those checks as if she were trained.
+
+\cf{Drd}{Wild Speech (Su)} One of the first lessons a druid learns is how to commune with natural creatures. A druid can speak with animals a number of times per day equal to half her druid level \add her Charisma (minimum 1). Each time she uses this ability, she chooses a kind of animal, such as owl or wolf. She can then speak to and understand animals of that type for a number of minutes equal to her druid level.
+
+This ability doesn't make the animals any more friendly or cooperative than normal. Furthermore, wary and cunning animals are likely to be terse and evasive, while the more stupid ones make inane comments. If an animal is friendly toward the druid, she may be able to convince it to do some favor or service.
+
+\cf{Drd}{Woodland Stride (Ex)} Starting at 2nd level, a druid may move through any sort of undergrowth (such as natural thorns, briars, overgrown areas, and similar terrain) at her normal speed and without taking damage or suffering any other impairment. However, thorns, briars, and overgrown areas that have been magically manipulated to impede motion still affect her.
+
+ \cf{Drd}{Wild Aspect (Su)} At 3rd level, a druid gains the ability to embody an aspect of an animal. Embodying a wild aspect is a standard action and doesn't provoke an attack of opportunity. Wild aspects last for 10 minutes per druid level, or until the druid dismisses the effect, unless otherwise stated. The druid can use this ability a number of times per day equal to half her druid class level \add her Constitution.
+\par When a druid embodies a wild aspect, she gains all abilities from an animal that she knows. For example, a druid devoted to bulls, who chose the Lope and Gore aspects, would gain both abilities with a single use of wild aspect. A druid devoted do both bulls and eagles, who chose the Lesser Flight aspect from the eagle and the Gore aspect from the bull, would have to use two uses of wild aspect to use both abilities.
+\par The descriptions below describe the effects of the aspect. With many aspects, the druid's appearance also changes to match the aspect, but this is not described. Different druids change in different ways. For example, one druid might gain unusually large eyes when embodying the low-light vision aspect, while another might change her irises into slits, like a cat, when embodying the same aspect. The changes made are up to the druid, but cannot be used to gain an additional substantive benefit beyond the effects given in the description of the aspect.
+\par The druid may choose any wild aspect, provided that she has the minimum druid level indicated by the aspect. At 5th level, she learns how to take on a new wild aspect. Each wild aspect also grants an ability based on the number of abilities the druid has from that aspect. These bonuses are only granted when the druid has taken on that wild aspect.
+
+\subcf{Animal}
+While embodying the animal aspect, the druid gains an enhancement bonus to any attribute score of her choice equal to the number of animal abilities she possesses.
+\begin{wildaspect}
+\wilditem Low-Light Vision: The druid gains low-light vision.
+\wilditem Scent: The druid gains the scent ability.
+\end{wildaspect}
+
+\subcf{Ape}
+While embodying the ape aspect, the druid gains an enhancement bonus to Strength equal to the number of ape abilities she possesses.
+\begin{wildaspect}
+\wilditem Climb: The druid gains a climb speed equal to her base land speed.
+\wilditem Improved Grab: When the druid hits a foe with an unarmed strike or natural attack, she may attempt to grapple her foe as a swift action without provoking an attack of opportunity.
+\end{wildaspect}
+
+\subcf{Bear}
+While embodying the bear aspect, the druid gains an enhancement bonus to Constitution equal to the number of bear abilities she possesses.
+\begin{wildaspect}
+\wilditem Bite: The druid gains a bite attack which can be used as a heavy natural weapon. A Medium druid deals d8 damage with the bite.
+\wilditem Claws: The druid gains two claw attacks which can be used as light natural weapons. A Medium druid deals d6 damage with each claw.
+\end{wildaspect}
+
+\subcf{Bull}
+While embodying the bull aspect, the druid gains an enhancement bonus to Strength equal to the number of bull abilities she possesses.
+\begin{wildaspect}
+\wilditem Lope: The druid gains the ability to move on all four legs. While doing so, she gains a \plus20 foot competence bonus to her speed, but she cannot use her hands for anything except moving. She can switch between standing normally and standing on four legs as a free action.
+\wilditem Gore: The druid gains a gore attack which can be used as a heavy natural weapon. A Medium druid deals d8 damage with a gore.
+\end{wildaspect}
+
+\subcf{Cat}
+While embodying the cat aspect, the druid gains an enhancement bonus to Dexterity equal to the number of cat abilities she possesses.
+\begin{wildaspect}
+\wilditem Lope: The druid gains the ability to move on all four legs. While doing so, she gains a \plus20 foot competence bonus to her speed, but she cannot use her hands for anything except moving. She can switch between standing normally and standing on four legs as a free action.
+\wilditem Bite: The druid gains a bite attack which can be used as a heavy natural weapon. A Medium druid deals d8 damage with a bite.
+\end{wildaspect}
+
+\subcf{Eagle}
+While embodying the eagle aspect, the druid gains an enhancement bonus to Charisma equal to the number of eagle abilities she possesses.
+\begin{wildaspect}
+\wilditem Wings, partial: The druid gains a glide speed equal to her base land speed. While gliding, she cannot use her hands for anything except moving.
+\wilditem Talons: The druid gains talons which can be used as a heavy natural weapon. A Medium druid deals d8 damage with her talons.
+\end{wildaspect}
+
+\subcf{Fox}
+While embodying the fox aspect, the druid gains an enhancement bonus to Intelligence equal to the number of fox abilities she possesses.
+\begin{wildaspect}
+\wilditem Lope: The druid gains the ability to move on all four legs. While doing so, she gains a \plus20 foot competence bonus to her speed, but she cannot use her hands for anything except moving. She can switch between standing normally and standing on four legs as a free action.
+\wilditem Bite: The druid gains a bite attack which can be used as a primary natural weapon. A Medium druid deals d8 damage with a bite.
+\end{wildaspect}
+
+\subcf{Owl}
+For each owl ability she possesses, the druid gains a \plus1 enhancement bonus to Wisdom  while embodying the owl aspect.
+\begin{wildaspect}
+\wilditem Wings, partial: The druid gains a glide speed equal to her base land speed. While gliding, she cannot use her hands for anything except moving.
+\wilditem Talons: The druid gains talons which can be used as a heavy natural weapon. A Medium druid deals d8 damage with her talons.
+\end{wildaspect}
+
+\subcf{Serpent}
+While embodying the serpent aspect, the druid gains an enhancement bonus to grapple attacks and saving throw DCs with any poison-based ability she uses equal to the number of serpent abilities she possesses.
+\begin{wildaspect}
+\wilditem Slither: The druid gains a climb speed equal to half her base land speed. She does not need to use her hands to climb in this way.
+\wilditem Bite: The druid gains a bite attack which can be used as a heavy natural weapon. A Medium druid deals d8 damage with a bite.
+\end{wildaspect}
+
+\subcf{Wolf}
+While embodying the wolf aspect, the druid gains an circumstance bonus to weapon damage against overwhelmed foes and an enhancement bonus to trip attacks equal to the number of wolf abilities she possesses.
+\begin{wildaspect}
+\wilditem Lope: The druid gains the ability to move on all four legs. While doing so, she gains a \plus20 foot competence bonus to her speed, but she cannot use her hands for anything except moving. She can switch between standing normally and standing on four legs as a free action.
+\wilditem Bite: The druid gains a bite attack which can be used as a heavy natural weapon. A Medium druid deals d8 damage with a bite.
+\end{wildaspect}
+
+%\cf{Drd}{Animal Affinity (Ex)} At 4th level, a druid may choose to be treated as an animal for the purpose of spells or abilities which only affect animals, such as \spell{reduce animal}. This does not prevent her from being affected by spells or abilities which would normally affect her.
+
+\cf{Drd}{Venom Immunity (Ex)} At 4th level, a druid gains immunity to all poisons.
+
+\subsubsection{Ex-Druids}
+A druid who ceases to revere nature, changes to a prohibited alignment, or teaches the Druidic language to a nondruid loses all spells and druid abilities (not including weapon, armor, and shield proficiencies). She cannot thereafter gain levels as a druid until she atones (see the \spell{atonement} spell description).
+
+\subsection{Fighter}
+\begin{dtable}
+\lcaption{The Fighter}
+\begin{tabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
+\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} \\
+1st & \plus1                         & \plus3 & \plus0 & \plus1 & Armor discipline \\
+2nd & \plus2                         & \plus4 & \plus1 & \plus2 & Bonus feat \\
+3rd & \plus3                         & \plus5 & \plus1 & \plus3 & Weapon discipline \\
+4th & \plus4                         & \plus6 & \plus2 & \plus4 & Adaptive style feat \\
+5th & \plus5                         & \plus7 & \plus2 & \plus4 & Combat discipline \\
+\end{tabularx}
+\end{dtable}
+\cd{Alignment} Any.
+\cd{Hit Value} 6.
+
+\sssecfake{Class Skills}
+The fighter's class skills (and the key attribute for each skill) are Athletics (Str), Climb (Str), Swim (Str), Ride (Dex), and Intimidate (Cha).
+\cf{Ftr}{Skill Points at 1st Level} 2.
+
+\sssecfake{Class Features}
+All of the following are class features of the fighter.
+ \cf{Ftr}{Weapon and Armor Proficiency}  A fighter is proficient with simple weapons,  any four other weapon groups,  all armor (heavy, medium, and light) and shields (including tower shields).
+
+\cf{Ftr}{Armor Discipline} At 1st level, a fighter's training grants him additional capability when using his armor. He may choose an armor category (light, medium, heavy, or shields), or he may choose to train equally with all kinds of armor and shields. Whether or not he chooses a specific armor category, he reduces his armor check penalty by 2 and reduces his arcane spell failure by 5\% when using his chosen armor. These benefits apply separately to armor and shields, if the fighter uses both and chose not to focus in a particular armor category. This effect cannot reduce those penalties below 0.
+\par If the fighter chose a particular armor category, he gains a \plus1 competence bonus to his dodge modifier while using armor of that category.
+
+\cf{Ftr}{Bonus Feat} At 2nd level, a fighter gets a bonus combat-oriented feat. This bonus feat must be drawn from the feats noted as combat feats on \tref{Combat Feats}. A fighter must still meet all prerequisites for a bonus feat, including attribute score and base attack bonus minimums.
+
+This bonus feat is in addition to the feats that a character of any class gets from advancing levels. A fighter is not limited to the list of combat feats when choosing those feats.
+
+\cf{Ftr}{Weapon Discipline} At 3rd level, a fighter's training grants him additional capability when using his weapons. He may choose a weapon group, or he may choose to train equally with all weapons. If he chooses a weapon group, he gains a \plus1 competence bonus to attack rolls with weapons from that group.
+\par If he chooses not to focus on a specific group of weapons, he gains the ability to become proficient with any weapon group if he spends 8 hours training with a weapon from that group. He may only keep this proficiency with one weapon group at a time; if he trains with a new weapon group, he loses his proficiency in the previous group.
+
+\cf{Ftr}{Adaptive Style Feat} At 4th level, a fighter gets a flexible bonus feat
+which must be drawn from the list of combat feats. A fighter must still
+meet all prerequisites for any bonus feat chosen. At the start of each day, the fighter may train for an hour. If he does so, he may choose to change his adaptive style feat to any other feats for which he meets the prerequisites.
+
+\par An adaptive style feat may be used normally as prerequisites for other feats or abilities.  However, if an adaptive style feat is used as a prerequisite, it cannot be changed until the fighter no longer needs to use it as a prerequisite, such as might happen if the fighter takes the feat as a normal feat or bonus feat.
+\par In order to gain a new adaptive style feat, it must be reasonably possible to do training related to the new feat. For example, a fighter could not gain Weapon Focus in axes without at least one axe available to train with.
+
+\cf{Ftr}{Combat Discipline} At 5th level, a fighter can use his superior training and focus to keep fighting in the face of debilitating effects. When a fighter is initially affected by one of the conditions listed on \trefnp{Combat Discipline Conditions}, he may use his combat discipline ability to instead suffer the mitigated condition one column to the right. This lasts until the end of the original condition or for one round per two fighter levels, at which point the he suffers the effects of the original condition unless he uses his combat discipline ability again.
+\par Using combat discipline takes no action, and can be done at any time, even when it isn't the fighter's turn. A fighter may use this ability a number of times per day equal to 3 \add his Constitution.
+
+\begin{dtable}
+\lcaption{Combat Discipline Conditions}
+\begin{tabularx}{\columnwidth}{*{4}{>{\lcol}X}}
+\thead{Original Condition} & \thead{Mitigated Condition} & \thead{Mitigated Condition} & \thead{Mitigated Condition} \\
+Panicked & Frightened & Shaken & None  \\
+Petrified  & Paralyzed & Slowed & None \\
+Stunned       & Dazed & Staggered & None \\
+Blinded & Dazzled & None  & \x \\
+Confused & Bewildered & None & \x \\
+Exhausted & Fatigued & None & \x \\
+Nauseated & Sickened & None & \x \\
+Ability damage\fn{1} & None & \x & \x \\
+Ability penalty\fn{1} & None & \x & \x \\
+Entangled & None & \x & \x \\
+Deafened & None & \x & \x \\
+Fascinated & None & \x & \x \\
+Ignited\fn{2} & None & \x & \x \\
+Immobilized & None & \x & \x \\
+Negative level\fn{3} & None & \x & \x \\
+\end{tabularx}
+1. Allows the fighter to mitigate up to half his fighter level in ability damage or penalties per use of combat discipline. \\
+2. Mitigates the penalties, but does not prevent the fighter from taking d6 fire damage per round until the fire is put out. \\
+3. Allows the fighter to ignore a single negative level per use of combat discipline.
+\end{dtable}
+
+\par A fighter cannot use this ability more than once against a single source. For example, if a fighter is exhausted by a \spell{ray of exhaustion} spell, he can use this ability to downgrade the exhaustion to fatigue, but he can't then expend a second use to negate the fatigue. The lesser condition that this ability imposes may be cured or removed normally, but doing so does not affect the resurgence of the condition the fighter was originally afflicted with. If a fighter uses this ability to mitigate or negate a condition which he must suffer as a sacrifice or cost to gain some benefit, he automatically forfeits the benefit he would have gained.
+
+\subsection{Monk}
+
+\begin{dtable}
+\lcaption{The Monk}
+\begin{tabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolavg} *{3}{>{\ccol}p{\savecol}} >{\lcol}X >{\ccol}p{4.5em} >{\ccol}p{6em}}
+\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} \\
+1st & \plus1                    & \plus1 & \plus3 & \plus3    & Unarmed warrior, unfettered defense \\
+2nd & \plus2                    & \plus2 & \plus4 & \plus4    & \Ki power, uncanny dodge \\
+3rd & \plus3                    & \plus3 & \plus5 & \plus5    & Fast movement, evasion \\
+4th & \plus4                    & \plus4 & \plus6 & \plus6    & \Ki strike, Perfect Health \\
+5th & \plus5                    & \plus4 & \plus7 & \plus7    & \Ki power, still mind \\
+\end{tabularx}
+\end{dtable}
+
+\cd{Alignment} Any nonchaotic.
+
+\cd{Hit Value} 6
+
+\sssecfake{Class Skills}
+The monk's class skills (and the key attribute for each skill) are Athletics (Str), Climb (Str), Swim (Str), Acrobatics (Dex), Escape Artist (Dex), Stealth (Dex), Heal (Wis), Perception (Wis), Survival (Wis), and Perform (Cha).
+\cf{Mnk}{Skill Points at 1st Level} 4
+
+\sssecfake{Class Features}
+All of the following are class features of the monk.
+\cf{Mnk}{Weapon and Armor Proficiency}
+Monks are proficient with simple weapons, monk weapons, and any one other weapon group. Monks are not proficient with any armor or shields. When wearing armor, using a shield, or carrying a medium or heavy load, a monk loses the benefit of her unfettered defense, fast movement, and \ki abilities.
+
+\cf{Mnk}{Unfettered Defense (Ex)} A monk knows how to react intuitively to avoid blows. When unarmored and unencumbered, the monk may add her Wisdom to her AC.
+
+\par This bonus to AC applies even against touch attacks or when the monk is flat-footed. She loses this bonus when she is helpless, when she wears any armor, when she carries a shield, or when she carries a medium or heavy load.
+
+\begin{comment}  %Made AC too high
+ \cfnl{\Ki Ward (Ex)}\label{Mnk:Ki Ward (Ex)} When unarmored and unencumbered, a monk gains a \plus1 armor bonus to AC at 2nd level. This bonus increases by 1 for every two monk levels thereafter (\plus2 at 4th, \plus3 at 6th, etc.).
+
+\par The monk loses this bonus when she is
+immobilized or helpless, when she wears any armor, when she carries a shield, or when she carries a medium or heavy load.
+\end{comment}
+
+\cf{Mnk}{Unarmed Warrior (Ex)} At 1st level, a monk gains Improved Unarmed Strike as a bonus feat, and her unarmed strikes can deal lethal damage if she desires. In addition, she deals damage with her unarmed strikes as if she were two size categories larger (1d6 for a Medium creature, or 1d4 for a small creature).
+
+A monk's attacks may be with either fist interchangeably or even from elbows, knees, and feet. This means that a monk may even make unarmed strikes with her hands full. A monk's unarmed strike can be treated as a manufactured weapon, natural weapon, or both for the purpose of spells and effects, whichever is more beneficial for the monk. This allows monks to make unarmed strikes as if they were fighting with two weapons at once (see \pcref{Two-Weapon Fighting}). Monks can also use gauntlets, including enchanted gauntlets. The damage dealt by gauntlets is the same as the damage dealt by the monk's normal unarmed strike.
+
+\cf{Mnk}{Ki Power (Su)} At 2nd level, the monk gains the ability to use channel her \ki energy to enhance her abilities temporarily. She may use this ability a number of times per day equal to half her monk level \add her Wisdom, but no more than once per round. If a \ki power allows a saving throw, the DC is equal to 10 \add the monk's level \add her Wisdom. She may choose one of the abilities listed below.
+
+\subcf{Flurry of Blows} When the monk makes a standard attack, she can make an additional attack at a \minus5 penalty.
+
+\subcf{Stunning Fist} As part of an unarmed attack, the monk can strike a weak point to interfere with her foe's \ki. If the attack deals damage, the creature must make a Fortitude save to avoid being staggered for 1 round. If the foe is bloodied, it is stunned for 1 round instead.
+
+\subcf{Surpass Limits} As a swift action, the monk can surpass the physical limitations of her body. Until the start of her next turn, she adds her Wisdom to checks based on Strength and Dexterity. This does not affect checks based on multiple attributes, such as initiative checks.
+
+\cf{Mnk}{Uncanny Dodge (Ex)} Starting at 2nd level, a monk can react to danger before her senses would normally allow her to do so. She may apply her Dexterity and dodge modifier to her armor class while flat-footed.
+
+\cf{Mnk}{Evasion (Ex)} At 3rd level or higher, if a monk makes a successful Reflex saving throw against an attack that normally deals half damage on a successful save, she instead takes no damage. Evasion can be used only if a monk is wearing light armor or no armor. A helpless monk does not gain the benefit of evasion.
+
+\cf{Mnk}{Fast Movement (Ex)} At 3rd level, a monk gains a \plus10 foot competence bonus to her land speed while unencumbered.
+
+\cf{Mnk}{Ki Strike (Su)} At 4th level, a monk's attacks are empowered with \ki. While unarmored and unencumbered, she treats all weapons she wields, including her unarmed strike, as if they were \plus1 weapons, gaining a \plus1 enhancement bonus to attack and damage. This also grants her a \plus1 enhancement bonus with maneuvers. 
+
+\cf{Mnk}{Perfect Health} At 4th level, the monk gains the Perfect Health feat as a bonus feat, making her immune to diseases of all kinds. If she already has the feat, she gains another feat of her choice for which she qualifies.
+
+\cfnl{Mnk}{Ki Power (Su)} At 5th level, the monk gains an additional \ki power ability. She adds the abilities below to the list of abilities she can choose.
+
+\subcf{Speed Boost} As a swift action, the monk can force her muscles to strain beyond their normal limits. For 1 round, she gains a \plus20 foot competence bonus to her land speed, and a \plus2 competence bonus to her dodge modifier.
+
+\subcf{Wholeness of Body} As a standard action, the monk can correct the flow of energy within her body. She heals 1d6 points of damage per two monk levels.
+
+\cf{Mnk}{Still Mind (Ex)} A monk of 5th level or higher may add half her Wisdom to Will saves in place of half her Intelligence.
+
+\subsubsection{Ex-Monks}
+A monk who becomes nonlawful cannot gain new levels as a monk, but retains all monk abilities.
+
+\subsection{Paladin}
+\begin{dtable*}
+\lcaption{The Paladin}
+\begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecolpoof}} X *{4}{>{\ccol}p{\spellcolpoof}}}
+& & & & & & \multicolumn{4}{c}{\thead{---{}---Spells per Day---{}---}} \\
+\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} \\
+1st  & \plus1                        & \plus3  & \plus0 & \plus3 & Aura of good, discernment (evil), smite evil & \x & \x & \x & \x \\
+2nd  & \plus2                        & \plus4  & \plus1 & \plus4 & Improved smite, lay on hands & \x & \x & \x & \x \\
+3rd  & \plus3                        & \plus5  & \plus1 & \plus5 & Aura of courage, bulwark of defense, divine health & \x & \x & \x & \x \\ 
+4th  & \plus4                        & \plus6  & \plus2 & \plus6 & Divine grace & 1 & \x & \x & \x \\
+5th  & \plus5                        & \plus7  & \plus2 & \plus7 & Discernment (chaos), improved smite & 2 & \x & \x & \x \\
+\end{tabularx}
+\end{dtable*}
+
+\cd{Alignment} Lawful good.
+\cd{Hit Value} 6
+
+\sssecfake{Class Skills}
+The paladin's class skills (and the key attribute for each skill) are Ride (Dex), Knowledge (local) (Int), Knowledge (religion) (Int), Heal (Wis), Sense Motive (Wis), Intimidate (Cha), and Persuasion (Cha).
+\cf{Pal}{Skill Points at 1st Level} 2.
+
+\sssecfake{Class Features}
+All of the following are class features of the paladin.
+ \cf{Pal}{Weapon and Armor Proficiency}  Paladins are proficient with
+simple weapons,  any two other weapon groups,  all types of armor (heavy, medium, and light), and with  shields (including tower shields). A paladin is also proficient with the favored weapon group of her deity. If she does not follow a deity, she is proficient with any other weapon group of her choice.
+\cf{Pal}{Aura of Good (Ex)} The power of a paladin's aura of good (see the \spell{detect good} spell) is equal to her paladin level.
+
+\cf{Pal}{Discernment (Su)} A paladin can discern truths about creatures he sees as a standard action. This functions as the \spell{detect evil} spell. The paladin may use this ability a number of times per day equal to half the paladin's level \add the paladin's Wisdom (minimum 1).
+
+At 5th level, she may simultaneously detect chaotic alignments, as the \spell{detect chaos} spell.
+
+\cf{Pal}{Smite (Su)} As part of an attack action, a paladin may attempt to smite evil with one normal melee attack. She adds her Charisma (if positive) as a circumstance bonus to attack. If she hits, the paladin deals gains a circumstance bonus to damage equal to her paladin level and gains a special effect.  A paladin can smite evil a number of times per day equal to half the paladin's class level \add the paladin's Charisma, but may only do so once per round.
+
+If the paladin smites a creature that is not evil, the smite attack deals no damage at all (not even normal weapon damage), but the use of the ability is still spent.
+
+\cf{Pal}{Improved Smite (Su)} At 2nd level, the paladin can select one improved smiting ability. Each improved smiting ability adds an effect to the paladin's smite ability. Whenever the paladin smites, she may choose one improved smiting ability she has and adds its effect to her smite. The save DC for a paladin's improved smiting abilities is 10 \add the paladin's level \add the paladin's Charisma. She may select one of the following improved smiting effects.
+\subcf{Blinding} The paladin's smite manifests as a bright light. A creature struck by the smite must make a Will save to avoid being blinded for one round per four paladin levels (minimum 1). Creatures vulnerable to light (such as vampires) take extra damage equal to twice the paladin's level.
+\subcf{Resounding} The paladin's smite knocks his foes off their feet. A creature struck by the smite must make a Reflex save to avoid being pushed back five feet per four paladin levels and being knocked prone.
+\subcf{Staggering} The paladin's smite hits with incredible force. A creature struck by the smite must make a Fortitude save to avoid being staggered for one round per four paladin levels (minimum 1).
+
+\cf{Pal}{Lay On Hands (Su)} Beginning at 2nd level, a paladin can heal wounds (her own or those of others) with a touch. Each use heals 1d8 hit points per paladin level as a standard action. The paladin can lay on hands a number of times per day equal to 1 \add half her Charisma (minimum 1). Against undead creatures, this ability instead deals positive energy damage. A touch attack is required to hit unwilling targets, and a successful Will save halves the damage or healing received.
+
+ \cf{Pal}{Aura of Courage (Su)} Beginning at 3rd level, a paladin is immune to fear (magical or otherwise). Each ally within 10 feet of her gains a \plus4 enhancement bonus on saving throws against fear effects. This ability functions while the paladin is conscious, but not if she is unconscious or dead.
+
+\cf{Pal}{Divine Health (Ex)} At 3rd level, a paladin gains immunity to all diseases, including supernatural and magical diseases.
+
+\cf{Pal}{Divine Grace (Su)} At 4th level, whenever a paladin makes a successful save against an attack that would normally have a partial effect or deal half damage on a successful save, she instead ignores that aspect of the attack.
+
+\cf{Pal}{Spells} Beginning at 4th level, a paladin gains the ability to cast a small number of divine spells, which are drawn from the paladin spell list.
+
+Paladins do not require somatic components to cast spells, even if the spell would normally require a somatic component. A paladin need only request the favor of her deity to invoke divine magic.
+
+\par To learn or cast a spell, a paladin must have a Charisma score at least equal to half the spell's level. The Difficulty Class for a saving throw against a paladin's spell is 10 \add half the paladin's caster level \add the paladin's Charisma.
+
+\par Like other spellcasters, a paladin can cast only a certain number of spells of each spell level per day. Her base daily spell allotment is given on \trefnp{The Paladin}.
+
+A paladin learns and casts spells the way a cleric does, though she does not have access to any domain spells or granted powers, as a cleric does. A paladin may learn and cast any spell on the paladin spell list, provided that she can cast spells of that level.
+
+A paladin's selection of spells is limited. A paladin begins play knowing no spells, but gains one or more new spells at certain levels, as indicated on \trefnum{Paladin Spells Known}.
+
+\par At 5th level, and at each level after that, a paladin can choose to learn one new spell in place of one she already knows. In effect, the paladin ``loses'' the old spell in exchange for the new one. The new spell's level must be the same as that of the spell being exchanged. A paladin may swap only a single spell at any given level, and must choose whether or not to swap the spell at the same time that she gains new spells known for the level.
+
+\par Through 3rd level, a paladin has no caster level or magic level. At 4th level and higher, her caster level is equal to her paladin level / 2, and her magic level is equal to her paladin level.
+
+\begin{dtable}
+\lcaption{Paladin Spells Known}
+\begin{tabularx}{\columnwidth}{X *{4}{>{\ccol}X}}
+& \multicolumn{4}{c}{\thead{---{}---{}---{}---{}---Spell Level---{}---{}---{}---{}---}} \\
+\thead{Level} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} \\
+1st  & \x & \x & \x & \x \\
+2nd  & \x & \x & \x & \x \\
+3rd  & \x & \x & \x & \x \\
+4th  & 1 & \x & \x & \x \\
+5th  & 2 & \x & \x & \x \\
+\end{tabularx}
+\end{dtable}
+
+\cf{Pal}{Rituals} Experienced paladins, like other spellcasters, can perform rituals to create unique magical effects. A paladin may acquire a ritual book and scribe rituals into it. See \pcref{Rituals}.
+
+\cfnl{Pal}{Improved Smiting (Su)} At 5th level, the paladin gains an additional improved smiting ability, and adds the following improved smiting ability to the list of those that can be selected.
+\subcf{Holy} The paladin's smite is filled with exceptional divine energy. The attack ignores all damage reduction of evil creatures. Undead and evil outsiders take extra damage equal to twice the paladin's level.
+\subcf{Penetrating} The paladin's smite punches through her enemies' defenses. The attack ignores a number of points of damage reduction equal to the paladin's level, regardless of the type of damage reduction.
+\subcf{Seeking} The paladin's smite is uncannily guided to its target. The attack ignores any miss chance, though the weapon must still be able to strike the target.
+
+\cf{Pal}{Code of Conduct} A paladin must be of lawful good alignment and loses all class abilities if she ever willingly commits an evil act. Additionally, a paladin's code requires that she respect legitimate authority, act with honor (not lying, not cheating, not using poison, and so forth), help those in need (provided they do not use the help for evil or chaotic ends), and punish those who harm or threaten innocents.
+
+\cf{Pal}{Associates} While she may adventure with characters of any good or neutral alignment, a paladin will never knowingly associate with evil characters, nor will she continue an association with someone who consistently offends her moral code. A paladin may accept only henchmen, followers, or cohorts who are lawful good.
+
+\subsubsection{Ex-Paladins}
+A paladin who ceases to be lawful good, who willfully commits an evil act, or who grossly violates the code of conduct loses all paladin spells and abilities (including the service of the paladin's mount, but not weapon, armor, and shield proficiencies). She may not progress any farther in levels as a paladin. She regains her abilities and advancement potential if she atones for her violations (see the \spell{atonement} spell description), as appropriate.
+
+Like a member of any other class, a paladin may be a multiclass character, but multiclass paladins face a special restriction. A paladin who gains a level in any class other than paladin may never again raise her paladin level, though she retains all her paladin abilities.
+
+\subsection{Ranger}
+
+\begin{dtable}
+\lcaption{The Ranger}
+\begin{tabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
+\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} \\
+1st  & \plus1                        & \plus3  & \plus1  & \plus1 & Quarry \plus2, Track, wild speech \\
+2nd  & \plus2                        & \plus4  & \plus2  & \plus2 & Danger sense, favored terrain \\
+3rd  & \plus3                        & \plus5  & \plus3  & \plus3 & Ranger lore \\
+4th  & \plus4                        & \plus6  & \plus4  & \plus4 & Low-light vision, tracking expert \\
+5th  & \plus5                        & \plus7  & \plus4  & \plus4 & Free stride, tenacious hunter \\
+\end{tabularx}
+\end{dtable}
+
+\cd{Alignment} Any.
+
+\cd{Hit Value} 6.
+
+\sssecfake{Class Skills}
+The ranger's class skills (and the key attribute for each skill) are Athletics (Str), Climb (Str), Swim (Str), Acrobatics (Dex), Escape Artist (Dex), Ride (Dex), Stealth (Dex), Knowledge (dungeoneering) (Int), Knowledge (geography) (Int), Knowledge (nature) (Int), Heal (Wis), Perception (Wis), Survival (Wis), and Creature Handling (Cha).
+\cf{Rgr}{Skill Points at 1st Level} 8.
+
+\sssecfake{Class Features}
+
+All of the following are class features of the ranger.
+
+\cf{Rgr}{Weapon and Armor Proficiency}  A ranger is proficient with simple weapons, any two weapon groups, light and medium armor, and shields (except tower shields). He is also proficient with his choice of bows, crossbows, or thrown weapons.
+
+\cf{Rgr}{Quarry (Ex)} A ranger is a deadly hunter. As a swift action, a ranger may designate any foe he sees as his quarry. A ranger gains a \plus2 competence bonus to attack rolls, Perception checks, and Survival checks against his quarry. However, while a ranger is pursuing a quarry, he takes a \minus2 penalty on the same rolls against any target other than his quarry. A ranger may give up pursuing a quarry at any time. He may not have more than one quarry at once; if he designates a new quarry, the old target is no longer considered his quarry. If the ranger does not see his quarry for more than a week, it is no longer considered his quarry.
+
+\par A ranger can designate a quarry a number of times per day equal to 1 \add half his Wisdom, to a maximum number of uses per day equal to his ranger class level. The ranger's quarry bonus improves to \plus3 at 8th level, to \plus4 at 14th level, and finally to \plus5 at 20th level.
+
+\cf{Rgr}{Track} A ranger gains Track as a bonus feat.
+
+\cf{Rgr}{Wild Speech (Su)} A ranger has the ability to communicate with animals. This ability functions like the druid ability of the same name. A ranger can use this ability a number of times per day equal to half his ranger level \add his Charisma.
+
+\cf{Rgr}{Danger Sense (Ex)} Starting at 2nd level, a ranger has an intuitive sense that alerts him to danger, giving him a \plus2 competence bonus to initiative checks. This bonus increases by 1 at 5th level and every 3 levels thereafter.
+\par If a character has danger sense from a multiple classes, the character stacks those levels to determine his bonus from danger sense.
+
+\cf{Rgr}{Favored Terrain (Ex)} At 2nd level, a ranger becomes particularly attuned to certain kinds of terrain. He chooses one kind of terrain to select as a favored terrain from the list below. Usually, rangers favor their home terrain, but a ranger may choose any kind of terrain that he has personally experienced at least once.
+\par While in a favored terrain, a ranger gains a \plus2 competence bonus to Perception, Stealth, and Survival checks. If he desires, he may leave no trace of his passage, causing attempts to track him to take a \minus20 penalty. In addition, his experience with his favored terrain grants the ranger a single ability, regardless of whether he is currently in that terrain or not. The options for favored terrains are listed below.
+\subcf{Aquatic} The ranger gains a swim speed equal to his base land speed. If he already has a swim speed, he gains a \plus10 competence bonus to his swim speed.
+\subcf{Cold} The ranger gains cold damage reduction 5.
+\subcf{Desert} The ranger becomes immune to heat effects and exhaustion. Anything that would make him exhausted makes him fatigued instead.
+\subcf{Forest} The ranger gains Skill Focus (Stealth) as a bonus feat.
+\subcf{Mountains} The ranger gains a climb speed equal to his base land speed. If he already has a climb speed, he gains a \plus10 competence bonus to his climb speed.
+\subcf{Plains} The ranger gains Skill Focus (Perception) as a bonus feat.
+\subcf{Swamp} 
+\subcf{Underground} The ranger gains Blind-Fight as a bonus feat.
+\subcf{Urban} The ranger gains Skill Focus (Persuasion) as a bonus feat.
+
+\cf{Rgr}{Ranger Lore} At 3rd level, a ranger can gain an ability drawn from ancient ranger lore. All ranger lore abilities are extraordinary abilities unless otherwise specified. He may choose from any of the following options.
+
+\subcf{Combat Style} The ranger is skilled with the traditional ranger combat styles. He gains the Precise Shot and Two-Weapon Fighting feats if he meets the prerequisites. However, the benefits of this lore apply only when the ranger uses light or no armor.
+
+\subcf{Evasion} If the ranger makes a successful Reflex saving throw against an attack that normally deals half damage on a successful save, he instead takes no damage. A helpless ranger does not gain the benefit of evasion.
+
+\subcf{Fast Movement} The ranger gains a \plus10 foot competence bonus to movement speed.
+
+\subcf{Favored Enemy} The ranger increases his quarry bonus by \plus2 against creatures of a particular kind. The possible creature options are listed below.
+
+\begin{dtable}
+\begin{tabularx}{\columnwidth}{X X}
+Animals and vermin & Humanoids (uncivilized) \\
+Dragons & Oozes and plants \\
+Fey & Outsiders (inner planes) \\
+Giants and monstrous humanoids & Outsiders (outer planes) \\
+Humanoids (civilized)  & Undead and constructs \\
+\end{tabularx}
+\end{dtable}
+
+\subcf{Master of the Hunt} The ranger may use a standard action to share the benefits of his quarry ability with all allies who can see and hear him. The bonus his allies get is considered an enhancement bonus.
+
+\subcf{Improved Combat Style} The ranger increases his skill in the traditional ranger combat styles. He adds half his Wisdom to damage when using ranged attacks or when attacking with two weapons at once. Natural weapons qualify for this purpose if the ranger attacks with two natural weapons at once.
+
+The ranger must have the combat style lore to select this lore. The benefits of this lore apply only when the ranger uses light or no armor.
+
+\subcf{Scent} The ranger gains scent, as the monster ability.
+
+\subcf{Trapfinding} The ranger gains trapfinding, as the rogue skill trick.
+
+\cf{Rgr}{Low-light Vision (Ex)} At 4th level, a ranger's sight improves, allowing him to see in conditions of dim light more easily. He gains low-light vision, as the elf racial ability. If he already has low-light vision, he doubles its benefit, allowing him to see four times as far as a human in poor illumination.
+
+\cf{Rgr}{Tracking Expert (Ex)} At 4th level, a ranger's ability to track his foes improves. He may always take 10 on Survival checks made to track, even if conditions would otherwise prevent this. Additionally, he can move at his normal speed while following tracks without taking the normal \minus5 penalty. He takes only a \minus10 penalty (instead of the normal \minus20) when moving at up to twice normal speed while tracking.
+
+\cf{Rgr}{Free Stride (Ex)} At 5th level, a ranger can move through any sort of natural terrain that slows or impedes movement at his normal speed without suffering any sort of impairment. If a skill check, such as Climb or Swim, would normally be required to move through the terrain, this ability does not help.
+
+\cf{Rgr}{Tenacious Hunter (Ex)} At 5th level, a ranger's ability to pursue his quarry improves. He adds his quarry bonus as a competence bonus to his dodge modifier and saving throws against attacks that his quarry makes.
+
+\subsection{Rogue}
+\begin{dtable*}
+\lcaption{The Rogue}
+\begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\babcolgood}} X}
+\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} \\
+1st  & \plus0                & \plus0 & \plus3  & \plus0 & Sneak attack \plus1d6 \\
+2nd  & \plus1                & \plus1 & \plus4  & \plus1 & Uncanny dodge, skill trick, danger sense \\
+3rd  & \plus2                & \plus1 & \plus5  & \plus1 & Ambush attack \plus1d6 \\
+4th  & \plus3                & \plus2 & \plus6  & \plus2 & Evasion, combat trick \\
+5th  & \plus3                & \plus2 & \plus7  & \plus2 & Skill trick, sneak attack \plus2d6 \\
+\end{tabularx}
+\end{dtable*}
+
+\cd{Alignment} Any.
+
+\cd{Hit Value} 5.
+
+\sssecfake{Class Skills}
+The rogue's class skills (and the key attribute for each skill) are
+Athletics (Str), Climb (Str), Swim (Str), Acrobatics (Dex), Escape Artist (Dex),  Sleight of Hand (Dex), Stealth (Dex), Craft (Int), Devices (Int), Forgery (Int), Knowledge (dungeoneering), Knowledge (local) (Int), Linguistics (Int), Perception (Wis), Sense Motive (Wis), Bluff (Cha), Persuasion (Cha), Disguise (Cha), Intimidate (Cha), and Perform (Cha).
+\cf{Rog}{Skill Points at 1st Level} 12.
+
+\sssecfake{Class Features}
+All of the following are class features of the rogue.
+
+\cf{Rog}{Weapon and Armor Proficiency} Rogues are proficient with simple weapons,  any two weapon groups,  light armor,  and bucklers. A rogue is also proficient with saps.
+
+\cf{Rog}{Sneak Attack}  If a rogue can catch an opponent when he is unable to defend himself effectively from her attack, she can strike a vital spot for extra damage. The rogue's attack deals extra damage if the target is flat-footed or is suffering overwhelm penalties.  This extra damage is 1d6 at 1st level, and it increases by 1d6 every four rogue levels thereafter. Should the rogue score a critical hit with a sneak attack, this extra damage is not multiplied. This damage bonus is treated as a circumstance bonus.
+
+\par Ranged attacks can count as sneak attacks only if the target is within 30 feet. A rogue can't strike with deadly accuracy from beyond that range.
+
+With a sap (blackjack) or an unarmed strike, a rogue can make a sneak attack that deals nonlethal damage instead of lethal damage. She cannot use a weapon that deals lethal damage to deal nonlethal damage in a sneak attack, not even with the usual \minus4 penalty.
+
+A rogue can sneak attack only living creatures with discernible anatomies -- oozes, plants, and incorporeal creatures lack vital areas to attack. Any creature that is immune to critical hits is not vulnerable to sneak attacks. The rogue must be able to see the target well enough to pick out a vital spot and must be able to reach such a spot. A rogue cannot sneak attack while striking a creature with concealment or striking the limbs of a creature whose vitals are beyond reach.
+
+\cf{Rog}{Danger Sense (Ex)} Starting at 2nd level, a rogue has an intuitive sense that alerts her to danger, giving her a \plus2 competence bonus to initiative checks. This bonus increases by 1 at 5th level and every 3 levels thereafter.
+\par If a character has danger sense from a multiple classes, the character stacks those levels to determine her bonus from danger sense.
+
+\cf{Rog}{Skill Tricks} As a rogue gains experience, she gains additional insight into how to perfect her skills. At 2nd level, a rogue gains one skill trick. She gains an additional skill trick at 5th level. A rogue cannot select an individual skill trick more than once unless otherwise stated. All skill tricks are (Ex) abilities unless otherwise noted.
+
+\subcf{Fast Acrobatics} The rogue reduces her penalties for moving quickly with the Acrobatics skill by 5.
+
+\subcf{Fast Stealth} The rogue reduces her penalties for moving quickly with the Stealth skill by 5.
+
+\subcf{Kip Up} The rogue can stand up from a prone position as a swift action. The rogue must be in light or no armor to perform this trick.
+
+\subcf{Knowledgeable Strike} The rogue may sneak attack almost any foe she identifies with a successful Knowledge check (see the Knowledge skill, \pref{Knowledge (Int; Trained Only)}). She still may not sneak attack incorporeal foes, even if she successfully identifies them.
+
+\subcf{Ledge Walker} The rogue may move along narrow surfaces at full speed using the Acrobatics skill without penalty. In addition, she is not flat-footed when using Acrobatics to move along narrow surfaces.
+
+\subcf{Lingering Poison} When the rogue applies poison to a weapon, it lasts for twice as many doses as it normally would.
+
+\subcf{Quick Disable} It takes the rogue half the normal amount of time to disable a trap or open a lock using the Devices skill (minimum 1 round).
+
+\subcf{Quick Search} The rogue can search an area (with the Perception skill) as a move action rather than as a full-round action.
+
+\subcf{Poison Expert} The rogue can gain Poison Expert as a bonus feat without meeting its prerequisites.
+
+\subcf{Rogue Crawl} While prone, the rogue can move at half speed. This movement provokes attacks of opportunity as normal.
+
+\subcf{Skill Feat} The rogue gains a bonus skill feat (see Feats). A rogue can select this trick multiple times.
+
+\subcf{Standing Leap} The rogue is always treated as if she had a running start when making Athletics checks.
+
+\subcf{Swift Poisoner} The rogue can apply poison to a weapon as a move action instead of a standard action.
+
+\subcf{Trapfinding} As a full-round action, a rogue may move up 10 feet while searching every square within 10 feet of her for traps. If a rogue detects a trap partway through her movement, she may immediately stop moving.
+
+\subcf{Trap Sense} Whenever the rogue comes within 10 feet of a trap, she receives an immediate Perception check to notice the trap. This check should be made secretly, so the rogue does not know whether she failed to notice a trap.
+
+\cf{Rog}{Uncanny Dodge (Ex)} Starting at 2nd level, a rogue can react to danger before her senses would normally allow her to do so. She may apply her Dexterity and dodge modifier to her armor class while flat-footed.
+
+\cf{Rog}{Ambush Attack (Ex)} At 3rd level, a rogue learns how to deal extra damage when she ambushes her foe. The first time that a rogue successfully sneak attacks a particular foe in an encounter, the attack is considered an ambush attack. The sneak attack damage on an ambush attack increases by 1d6. After she has delivered an ambush attack against that foe, she cannot make any more ambush attacks against that same foe for the rest of the encounter. A rogue can deliver no more than one ambush attack per round. This damage is treated as being sneak attack damage.
+
+\cf{Rog}{Combat Tricks} As a rogue gains experience, she learns a small number of talents that aid her and confound her foes. At 4th level, a rogue gains one combat trick. A rogue cannot select an individual combat trick more than once unless otherwise stated. All combat tricks are (Ex) abilities unless otherwise noted.
+
+\par Tricks marked with an asterisk are called ambush tricks. Ambush tricks add additional effects to the rogue's ambush attacks. If an ambush trick allows a saving throw, the DC is 10 \add the rogue's level \add the rogue's Intelligence. The rogue chooses from the list of combat tricks below.
+
+\subcf{Brutal Ambush*} The rogue rolls d8s instead of d6s for her sneak attack dice on this attack.
+
+\subcf{Combat Feat} The rogue gains a combat feat (see \pcref{cap:Combat Feats}).
+
+\subcf{Distracting Attack} A foe damaged by the rogue's sneak attack takes a penalty on its Concentration checks equal to the rogue's Intelligence for 5 rounds.
+
+\subcf{Extended Precision} The rogue can make sneak attacks from up to 60 feet away.
+
+\subcf{Hamstring*} A foe damaged by this attack has its speed with a single movement mode halved for 5 rounds. Despite the name, this can be used on foes who do not have hamstrings, though it only affects ground movement. Some forms of movement, such as magical flight, cannot be impeded by this attack.
+
+\subcf{Merciful Blows} The rogue suffers no penalty to attack rolls when making attacking for nonlethal damage, and can deal her full sneak attack damage.
+
+\subcf{Swift Poisoner} The rogue can apply poison to a weapon she is holding as a swift action.
+
+\subcf{Tricky Maneuver} When performing maneuvers against foes she would be able to sneak attack, the rogue gains a circumstance bonus to attack equal to the number of sneak attack dice she would normally roll. The benefits of this trick apply even against foes immune to critical hits.
+
+\subsection{Sorcerer}
+\begin{dtable*}
+\lcaption{The Sorcerer}
+\begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{7em} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
+\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} \\
+1st & \plus0 & \plus0 & \plus0 & \plus3 & Arcane invocation, Rapid Metamagic, versatile spellcaster \\
+2nd & \plus1 & \plus1 & \plus1 & \plus4     & Arcane invocation \\
+3rd & \plus1 & \plus1 & \plus1 & \plus5     & Expanded spell knowledge \\
+4th & \plus2 & \plus2 & \plus2 & \plus6     & Spellblend \\
+5th & \plus2 & \plus2 & \plus2 & \plus7     & Expanded spell knowledge \\
+\end{tabularx}
+\end{dtable*}
+
+\cd{Alignment} Any.
+
+\cd{Hit Value} 4
+
+\sssecfake{Class Skills}
+The sorcerer's class skills (and the key attribute for each skill) are Knowledge (arcana) (Int), Knowledge (the planes), Spellcraft (Wis), and Intimidate (Cha).
+\cf{Sor}{Skill Points at 1st Level} 2.
+
+\sssecfake{Class Features}
+All of the following are class features of the sorcerer.
+
+ \cf{Sor}{Weapon and Armor Proficiency}  Sorcerers are proficient with simple weapons  and one other weapon group.  They are not proficient with any type of armor or shield. Armor of any type interferes with a sorcerer's arcane gestures, which can cause his spells with somatic components to fail.
+
+\cf{Sor}{Spells} A sorcerer casts arcane spells using his Charisma.  To learn or cast a spell, a sorcerer must have a Charisma at least equal to the spell's level. The Difficulty Class for a saving throw against a sorcerer's spell is 10 \add half the sorcerer's caster level \add the sorcerer's Charisma.
+
+Like other spellcasters, the number of spells a sorcerer knows and can cast each day is limited. These limitations are given below on \trefnp{Sorcerer Spells per Day} and \trefnp{Sorcerer Spells Known}. A sorcerer's spells are drawn from the common spells on the sorcerer/wizard spell list (\pcref{Sorcerer/Wizard Spells}). Sorcerers need to rest for eight hours in order to regain spells.
+
+A sorcerer's magic level is equal to his sorcerer level.
+
+\begin{dtable}
+    \lcaption{Sorcerer Spells per Day} 
+    \centering
+    \begin{tabularx}{\columnwidth}{>{\ccol}X *{9}{>{\ccol}p{\spellcol}}}
+        & \multicolumn{9}{c}{\thead{---{}---{}---{}---{}---{}---{}---{}---Spell Level---{}---{}---{}---{}---{}---{}---{}---}} \\
+        \thead{Level} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} & \thead{5th} & \thead{6th} & \thead{7th} & \thead{8th} & \thead{9th} \\
+        1st & 3 & \x & \x & \x & \x & \x & \x & \x & \x \\
+        2nd & 4 & \x & \x & \x & \x & \x & \x & \x & \x \\
+        3rd & 5 & \x & \x & \x & \x & \x & \x & \x & \x \\
+        4th & 6 & 3 & \x & \x & \x & \x & \x & \x & \x \\
+        5th & 6 & 4 & \x & \x & \x & \x & \x & \x & \x \\
+    \end{tabularx}
+\end{dtable}
+
+\begin{dtable}
+\lcaption{Sorcerer Spells Known}
+\begin{tabularx}{\columnwidth}{>{\ccol}X *{9}{>{\ccol}p{\spellcol}}}
+& \multicolumn{9}{c}{\thead{---{}---{}---{}---{}---{}---{}---{}---Spell Level---{}---{}---{}---{}---{}---{}---{}---}} \\
+\thead{Level} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} & \thead{5th} & \thead{6th} & \thead{7th} & \thead{8th} & \thead{9th} \\
+1st  & 1 & \x & \x & \x & \x & \x & \x & \x & \x \\
+2nd  & 2 & \x & \x & \x & \x & \x & \x & \x & \x \\
+3rd  & 3 & \x & \x & \x & \x & \x & \x & \x & \x \\
+4th  & 3 & 1 & \x & \x & \x & \x & \x & \x & \x \\
+5th  & 4 & 2 & \x & \x & \x & \x & \x & \x & \x \\
+\end{tabularx}
+\end{dtable}
+
+\cf{Sor}{Rituals} Sorcerers, like other spellcasters, can perform rituals to create unique magical effects. A sorcerer begins play with a ritual book containing one arcane ritual of his choice. See \pcref{Rituals}.
+
+\cf{Sor}{Arcane Invocation} All sorcerers master at least one arcane invocation. An arcane invocation allows a sorcerer to exert magical influence without expending the effort required to cast a spell. The sorcerer may choose to learn one invocation of her choice from the list of arcane invocations described in Chapter 11: Spells. At 2nd level, the sorcerer learns a second arcane invocation of his choice.
+
+\cf{Sor}{Rapid Metamagic} A sorcerer gains Rapid Metamagic as a bonus feat at 1st level, even if he does not meet the prerequisites.
+
+\cf{Sorc}{Versatile Spellcaster (Ex)} A sorcerer's intuitive grasp of magic allows him to be flexible in his use of arcane energy. A sorcerer can use two sorcerer spell slots of the same level to use an ability requiring a sorcerer spell slot of one level higher. For example, Serric the sorcerer can use two 0th-level spell slots to cast a single 1st-level spell he knows.
+
+\cf{Sor}{Expanded Spell Knowledge (Ex)} At 3rd level, and every odd level afterwards, a sorcerer can learn how to cast a particularly esoteric spell. He may choose a restricted spell from the sorcerer/wizard spell list with a level of no more than half his sorcerer level (normally, the highest level spell he can cast) and add it to his spell list. He must still use a spell known to learn it, as normal.
+
+\cf{Sor}{Spellblend (Ex)} At 4th level, a sorcerer may combine his arcane invocations with his spells. As a full-round action, the sorcerer may cast a spell that affects only himself using a spell slot one level higher than what the spell would normally require. If he does, he may also use an arcane invocation as part of the same action. The arcane invocation need not target the sorcerer.
+
+\subsection{Spellwarped}
+The world is full of magic. People of all varieties can learn to perform the necessary rituals and incantations to magically bend the world to their will -- lucky commoners, pompous nobles, devoted worshippers, and powerful monsters alike. Those who wield spells are set apart by their power. Yet there are some who transcend the divide between the magical and the mundane. They wield no spells, but they need none, for they are a living embodiment of magical power. It runs through their body as easily and naturally as the blood in their veins, ready to be called upon at a moment's notice. Those who embrace this power are the spellwarped. Many do not perceive their abilities as magical, but merely as a fact of life -- and a way to end the lives of their foes.
+
+\begin{dtable}
+    \lcaption{The Spellwarped}
+    \begin{tabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolavg} *{2}{>{\ccol}p{\savecolpoof}} >{\lcol}X}
+        \thead{Level} & \thead{Base Attack Bonus} & \thead{Good Save}\fn{1} & \thead{Normal Saves}\fn{1} & \thead{Special} \\
+        1st & \plus0                    & \plus2  & \plus1  & Innate magic, invoke power, spellwarp pool\\
+        2nd & \plus1                    & \plus3  & \plus2  & Spellwarped body, surge of power \\
+        3rd & \plus2                    & \plus4  & \plus3  & Attuned senses, spellwarped aspect \\
+        4th & \plus3                    & \plus5  & \plus4  & Invoke power, resist magic \\
+        5th & \plus3                    & \plus6  & \plus4  & Manipulate magic \\
+    \end{tabularx}
+    1 Each spellwarped has a good save determined by his choice of innate magic.
+\end{dtable}
+
+\cd{Alignment} Any.
+
+\cd{Hit Value} 5.
+
+\ssecfake{Class Skills}
+The spellwarped's class skills (and the key attribute for each skill) are Swim (Str), Ride (Dex), Knowledge (arcana) (Int), Spellcraft (Wis), and Intimidate (Cha). He gains additional class skills based on his choice of innate magic.
+\cf{Spl}{Skill Points at 1st Level} 4.
+
+\sssecfake{Class Features}
+All of the following are class features of the spellwarped.
+
+\cf{Spl}{Weapon and Armor Proficiency}
+A spellwarped is proficient with simple weapons, any two weapon groups, light and medium armor, and shields (except tower shields).
+
+\cf{Spl}{Innate Magic (Ex)} Each spellwarped draws his power from a particular kind of magic. This is a choice made when the first level of the class is taken, and it cannot thereafter be changed. The choices are listed below.
+\subcf{Alteration} The spellwarped can manipulate the physical forms of creatures. His good save is Fortitude, his key attribute is Intelligence, and he treats Athletics, Escape Artist, and Disguise as class skills. An alteration spellwarped may be called an alterer, bodywarper, or shifter.
+\subcf{Pyromancy} The spellwarped can manipulate fire and heat. His good save is Will, his key attribute is Charisma, and he treats Acrobatics, Athletics, and Perform as class skills. A pyromancy spellwarped may be called a pyromancer.
+\subcf{Telekinesis} The spellwarped can manipulate objects and creatures with his mind. His good save is Will, his key attribute is Intelligence, and he treats Craft, Devices, and Sleight of Hand as class skills. A telekinesis spellwarped may be called a telekine.
+\subcf{Temporal} The spellwarped can manipulate time. His good save is Reflex, his key attribute is Wisdom, and he treats Acrobatics, Perception, and Sleight of Hand as class skills. A temporal spellwarped may be called a temporalist or timewarper.
+
+\cf{Spl}{Spellwarp Pool (Su)} A spellwarped has the ability to tap into the latent magic within his body to generate magical effects. He has a maximum number of spellwarp points equal to half his spellwarped level \add his Constitution (minimum 1 point). Each hour, he regains a number of spellwarp points equal to his key attribute. As long as he has at least one spellwarp point remaining, he gains a minor ability based on his choice of magic.
+\subcf{Alteration -- Alter Appearance} The spellwarped can change minor aspects of his appearance at will -- removing a mole or lengthening his beard slightly. This can grant him a \plus2 competence bonus to Disguise checks. Major changes are not possible.
+\subcf{Pyromancy -- Ember} The spellwarped can snap his fingers as a swift action to create a small ember of flame in his hand for 5 minutes. This ember casts light as a torch, and can deal 1 point of fire damage with a successful touch attack. The ember can be dismissed as a swift action or extinguished as a move action.
+\subcf{Telekinesis -- Object Manipulation} The spellwarped can concentrate as a standard action to move objects within five feet of him telekinetically. He can slowly lift or manipulate one object by up to one foot per round. The object can weigh up to five pounds. This level of control is insufficient to make skill checks or wield a weapon or shield effectively.
+\subcf{Temporal -- Time Awareness} The spellwarped always knows exactly what time it is, and can track the passage of time precisely without effort.
+
+\cf{Spl}{Invoke Power (Su)} A spellwarped can invoke his innate magic to generate powerful effects by spending a spellwarp point. If a saving throw is allowed, the DC is equal to 10 \add the spellwarped's class level \add his key attribute. He chooses a single power at 1st level from those available based on his choice of innate magic. At 4th level, he gains an additional power. Some powers require a minimum spellwarped level before they can be selected, as indicated in their description. The list of powers is given at \pcref{Spellwarped Powers}.
+
+\cf{Spl}{Surge of Power (Su)} At 2nd level, a spellwarped can invoke a surge of magical power that allows him to embody his innate magic more fully for 5 rounds. To invoke a surge of power, he must spend a spellwarp point as a a swift action. The effect of his surge depends on his choice of innate magic, as described below.
+\subcf{Alteration -- Alter Body} The spellwarped enhances his physical ability. He gains a \plus2 enhancement bonus to a physical attribute of his choice.
+\subcf{Pyromancy -- Flame Aura} The spellwarped emanates an aura of fire for 5 rounds. At the start of each of his turns, creatures adjacent to him take one point of fire damage per spellwarped level.
+\subcf{Telekinesis -- Kinetic Deflection} The spellwarped reflexibly deflects attacks away with his mind. He gains a \plus2 competence bonus to his shield modifier to AC. This stacks with the bonus from using a shield.
+\subcf{Temporal -- Accelerate Movement} The spellwarped accelerates his movement and reactions. He gains a \plus2 enhancement bonus to his dodge modifier and a \plus10 foot enhancement bonus to his movement speed.
+
+\cf{Spl}{Spellwarped Body (Ex)} At 2nd level, a spellwarped's body is fundamentally altered by exposure to magic. He shows signs of the magic coursing through his body: strangely or inconsistently colored hair, natural skin markings which often resemble runes, and so on. Anyone observing the spellwarped can make a Perception or Spellcraft check with a DC equal to 20 \sub the spellwarped's class level to recognize that the character is a spellwarped. In addition, the spellwarped gains an ability based on his innate magic.
+\subcf{Alteration -- Augment Skin} The spellwarped gains a \plus1 competence bonus to his natural armor modifier. This bonus increases by 1 at 5th level.
+\subcf{Pyromancy -- Energy Resistance} The spellwarped gains cold and fire damage reduction equal to twice his spellwarped level, allowing him to ignore the first points of cold or fire damage he takes each round.
+\subcf{Telekinesis -- Tactile Telekinesis} The spellwarped gains a \plus1 competence bonus to Strength and Dexterity-based skill checks. This bonus increases by 1 at 5th level.
+\subcf{Temporal -- Accelerate Reaction} The spellwarped gains a \plus2 competence bonus to initiative checks. This bonus increases by 1 at 5th level.
+
+\cf{Spl}{Attuned Senses (Su)} At 3rd level, the spellwarped learns to recognize the telltale signs of his chosen magic. He must concentrate as a standard action to use this ability, and he may do so any number of times per day.
+\subcf{Alteration -- Perceive Alteration} The spellwarped can discern the true form of all creatures within 50 feet of him for 1 round, ignoring any effects which magically alter their shapes. This also grants him a \plus5 competence bonus to Perception checks to see through mundane disguises.
+\subcf{Pyromancy -- Flame of Life} The spellwarped can see the life-fire that lies within all living creatures, allowing him to clearly see all living creatures within 50 feet of him for 1 round. This ability can reveal creatures hiding in concealment and defeat figments and glamers such as \spell{invisibility}, but does not reveal creatures hiding behind cover.
+\subcf{Telekinesis -- Spatial Awareness} The spellwarped can feel the forms of all objects and creatures around him, granting blindsense out to a 50 foot range for 1 round.
+\subcf{Temporal -- Accelerated Search} The spellwarped can accelerate his mind to immediately search everything within a 10 foot radius of him with the Perception skill. Alternately, he may use this ability to read a book ten times as fast as normal.
+
+\cf{Spl}{Spellwarped Aspect (Su)} At 3rd level, the spellwarped gains a new ability based on his continued exposure to magical energy. Most aspects are specific to particular kinds of innate magic, but some aspects can be taken by any spellwarped. These aspects are listed under the General heading.
+\parhead{General}
+\subcf{Spellwarped Soul} The spellwarped may use his character level in place of his spellwarped level to determine the effects of his spellwarped abilities, including damage dealt and saving throw DCs. This does not affect the number of spellwarp points he has available.
+
+\parhead{Alteration}
+\subcf{Damage Reduction} The spellwarped gains physical damage reduction against his choice of piercing, slashing, or bludgeoning damage. The amount of damage resisted is equal to half his class level, allowing him to ignore the first points of damage he takes each round. If he is hit by an adamantine weapon, he cannot use his damage reduction for 1 round.
+
+\parhead{Pyromancy}
+\subcf{Friendly Fire} The spellwarped's attacks deal half damage to any creature he designates as an ally.
+\subcf{Improved Ember} When the spellwarped uses his ember ability, he can strengthen the fire so that it illuminates up to a 40 foot radius with bright illumination. He can also throw the ember up to 100 feet. It burns for up to 5 rounds on its own before becoming extinguished.
+\subcf{Intense Flames} The spellwarped's attacks can ignore an amount of fire damage reduction equal to his spellwarped level \add his Charisma.
+
+\parhead{Telekinesis}
+\subcf{Improved Object Manipulation} When the spellwarped uses his object manipulation ability, he can affect objects within 30 feet, with a weight limit of up to two pounds per spellwarped level. He has enough control to make skill checks with a DC of up to 10, using his Intelligence in place of his Strength or Dexterity, as appropriate.
+
+\parhead{Temporal}
+\subcf{Evasion} If the spellwarped makes a successful Reflex save against an attack that normally deals half damage on a successful save, he instead takes no damage. Evasion can only be used if the spellwarped is wearing light armor or no armor. A helpless spellwarped does not gain the benefit of evasion.
+\subcf{Fast Movement} The spellwarped gains a \plus10 foot competence bonus to movement speed.
+\subcf{Uncanny Dodge} The spellwarped may apply his Dexterity and dodge modifier to his armor class while flat-footed.
+
+\cf{Spl}{Resist Magic (Ex)} At 4th level, the power of the magic with the spellwarped offers him some measure of protection against hostile magical effects. He gains a \plus1 competence bonus to saving throws against spells and spell-like abilities.
+
+\cf{Spl}{Manipulate Magic (Su)} At 5th level, the spellwarped can channel his innate magic to manipulate other forms of magic. Using this ability costs a spellwarp point. 
+\subcf{Alteration -- Absorption} As an immediate action, when the spellwarped makes a successful Fortitude save against a spell or spell-like ability, he may absorb its energy harmlessly into his body. The spell has no effect on him, even if the spell would normally have an effect on a successful saving throw.
+\subcf{Pyromancy -- Fuel the Flame} As an immediate action, when the spellwarped is affected by a spell or spell-like ability, he may channel its energy into a burst of flame around him. Creatures within a \areasmall radius of the spellwarped take fire damage equal to his spellwarped level. The spell still has its normal effect on the spellwarped.
+\subcf{Telekinesis -- Mind over Matter} As an immediate action, when the spellwarped is affected by a spell or spell-like ability which allows a Fortitude save, he may make a Will save instead.
+\subcf{Temporal -- Accelerate Magic} As a swift action, the spellwarped can increase or decrease the duration of any spell or spell-like ability affecting him by two rounds. This can end the effect immediately if it has no time remaining. The spellwarped can't increase the duration beyond twice the effects's original duration.
+
+\ssecfake{Spellwarped Powers}\label{Spellwarped Powers}
+Unless otherwise noted, invoking a spellwarped power requires standard action and the expenditure of a spellwarp point. Each power has a minimum spellwarped level required to select the power, as indicated below.
+
+\subsubsection{Alteration Powers}
+\parhead{1st -- Lesser Reduction} A creature within \rngclose range becomes one size category smaller for 2 rounds unless it makes a Fortitude save. It takes a \minus2 penalty to Strength, decreases its weapon damage dice by one size, and takes a \minus4 penalty to maneuvers and Maneuver Class. However, it gains a \plus2 bonus to Stealth checks and a \plus1 bonus to attack rolls and armor class. This is a size-affecting effect.
+\parhead{4th -- Reduction} This power functions like the lesser reduction power, except that the foe is reduced for 5 rounds.
+
+\subsubsection{Pyromancy Powers}
+\parhead{1st -- Lesser Ignite} As a standard action, the spellwarped can ignite a foe within \rngclose range, dealing 1d6 points of fire damage \add 1 per spellwarped level. A successful Reflex save halves the damage.
+\parhead{1st -- Weapon of Flame} As a swift action, the spellwarped can create a weapon made of flame that lasts for 5 rounds. The weapon is sized appropriately for him, and may take the form of any weapon he is proficient with. He can attack with the weapon as if it were a normal weapon of its type, except that he adds half his Charisma to damage in place of half his Strength, and all damage dealt with the weapon is fire damage. The flame weapon gains a \plus1 enhancement bonus to attack and damage at 4th level. If it leaves his hand, it is extinguished 1 round later.
+\parhead{4th -- Ignite} This power functions like the lesser ignite power, except that it deals 1d6 points of fire damage per spellwarped level, and a target that fails its Reflex save is also ignited for 5 rounds. An ignited creature has been set on fire. It is vulnerable, causing it to take a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. In addition, it takes d6 damage per round from the fire. If the creature takes a move action, it can attempt a DC 15 Reflex save to put out the flames. This action provokes attacks of opportunity. Dropping prone as part of the action gives a \plus4 circumstance bonus on this save.
+
+\subsubsection{Telekinesis Powers}
+\parhead{1st -- Lesser Crush} As a standard action, the spellwarped can crush a creature or object within \rngclose range with telekinetic force, dealing 1d6 points of physical damage \add 1 per spellwarped level. A successful Fortitude save halves the damage.
+\parhead{1st -- Mind Blade} As a swift action, the spellwarped can telekinetically wield an unattended weapon within \rngclose range. The weapon must be a light or medium weapon appropriate for his size. This allows him to attack with the weapon just as if he were holding it in one hand, except that he uses his Intelligence in place of his Strength. In all other respects, this functions as if he were wielding the weapon normally, including contributing to overwhelm penalties and taking attacks of opportunity. The weapon floats in midair and threatens all squares adjacent to it, and he may make attacks of opportunity with the weapon or with a weapon he wields in his hands, but not both.
+\parhead{4th -- Crush} This attack functions like the lesser crush attack, except that it deals 1d6 points of physical damage per spellwarped level, and a creature that fails its Fortitude save is also sickened. A sickened creature is vulnerable, causing it to take a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
+\parhead{4th -- Mighty Mind Blade} This power functions like the mind blade power, except that the spellwarped may also use a heavy weapon appropriate for his size, allowing him to attack with it just as if he were holding it in two hands. The spellwarped must have the mind blade power to select this power.
+
+\subsubsection{Temporal Powers}
+\parhead{1st -- Lesser Timetheft} As a standard action, the spellwarped can attempt to steal time from an adjacent creature. If the target fails a Will save, it skips its next movement phase. A bloodied target skips its next action phase instead.
+\parhead{4th -- Slow} As a standard action, the spellwarped slows a foe within \rngclose range for 5 rounds unless it makes a Will save. A slowed creature can only act during the action phase. Additionally, it takes a \minus10 penalty to initiative checks.
+\parhead{4th -- Timetheft} This power functions like lesser timetheft, except that the spellwarped regains a spellwarp point if the target fails its Will save.
+
+\subsection{Wizard}
+\begin{dtable*}
+\lcaption{The Wizard}
+\begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{7em} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
+\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} \\
+1st & \plus0 & \plus0 & \plus0 & \plus3 & Arcane invocation, ritual master \\
+2nd & \plus1 & \plus1 & \plus1 & \plus4     & Arcane invocation \\
+3rd & \plus1 & \plus1 & \plus1 & \plus5     & Arcane insight \\
+4th & \plus2 & \plus2 & \plus2 & \plus6     & Spell sequencer \\
+5th & \plus2 & \plus2 & \plus2 & \plus7     & Arcane attunement (1 item), arcane insight \\
+\end{tabularx}
+\end{dtable*}
+
+\cd{Alignment} Any.
+
+\cd{Hit Value} 4.
+
+\sssecfake{Class Skills}
+The wizard's class skills (and the key attribute for each skill) are
+Knowledge (all skills, taken individually) (Int), Linguistics (Int), and Spellcraft (Wis).
+\cf{Wiz}{Skill Points at 1st Level} 4
+
+\sssecfake{Class Features}
+
+All of the following are class features of the wizard.
+
+\cf{Wiz}{Weapon and Armor Proficiency} Wizards are proficient with simple weapons, but not with any type of armor or shield. Armor of any type interferes with a wizard's movements, which can cause her spells with somatic components to fail.
+
+\cf{Wiz}{Bonus Languages} A wizard may learn Draconic in addition to the bonus languages available to the character because of her race (see Chapter 2: Races). Many ancient tomes of magic are written in Draconic, and apprentice wizards often learn it as part of their studies.
+
+\cf{Wiz}{Ritual Master} Wizards are thoroughly trained in study and memorization, and can perform difficult rituals with more ease than others. A wizard gains the Ritual Master feat as a bonus feat at 1st level, even if she does not have the prerequisites.
+
+\cf{Wiz}{Spells} A wizard casts arcane spells using her Intelligence. To learn or cast a spell, a wizard must have an Intelligence at least equal to half the spell's level. The Difficulty Class for a saving throw against a wizard's spell is 10 \add half the wizard's caster level \add the wizard's Intelligence.
+
+Like other spellcasters, the number of spells a wizard knows and can cast each day is limited. These limitations are given below on \trefnp{Wizard Spells per Day} and \trefnp{Wizard Spells Known}. A wizard's spells are drawn from the common spells on the sorcerer/wizard spell list (\pcref{Sorcerer/Wizard Spells}).
+
+Wizards need to rest for eight hours in order to regain spells. 
+
+A wizard's magic level is equal to her wizard level.
+
+\begin{dtable}
+    \lcaption{Wizard Spells per Day} 
+    \centering
+    \begin{tabularx}{\columnwidth}{>{\ccol}X *{9}{>{\ccol}p{\spellcol}}}
+        & \multicolumn{9}{c}{\thead{---{}---{}---{}---{}---{}---{}---{}---Spell Level---{}---{}---{}---{}---{}---{}---{}---}} \\
+        \thead{Level} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} & \thead{5th} & \thead{6th} & \thead{7th} & \thead{8th} & \thead{9th} \\
+        1st & 3 & \x & \x & \x & \x & \x & \x & \x & \x \\
+        2nd & 4 & \x & \x & \x & \x & \x & \x & \x & \x \\
+        3rd & 5 & \x & \x & \x & \x & \x & \x & \x & \x \\
+        4th & 6 & 3 & \x & \x & \x & \x & \x & \x & \x \\
+        5th & 6 & 4 & \x & \x & \x & \x & \x & \x & \x \\
+    \end{tabularx}
+\end{dtable}
+
+\begin{dtable}
+\lcaption{Wizard Spells Known}
+\begin{tabularx}{\columnwidth}{>{\ccol}X *{9}{>{\ccol}p{\spellcol}}}
+& \multicolumn{9}{c}{\thead{---{}---{}---{}---{}---{}---{}---{}---Spell Level---{}---{}---{}---{}---{}---{}---{}---}} \\
+\thead{Level} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} & \thead{5th} & \thead{6th} & \thead{7th} & \thead{8th} & \thead{9th} \\
+1st  & 1 & \x & \x & \x & \x & \x & \x & \x & \x \\
+2nd  & 2 & \x & \x & \x & \x & \x & \x & \x & \x \\
+3rd  & 3 & \x & \x & \x & \x & \x & \x & \x & \x \\
+4th  & 3 & 1 & \x & \x & \x & \x & \x & \x & \x \\
+5th  & 4 & 2 & \x & \x & \x & \x & \x & \x & \x \\
+\end{tabularx}
+\end{dtable}
+
+\cf{Wiz}{Rituals} Wizards, like other spellcasters, can perform rituals to create unique magical effects. A wizard begins play with a ritual book containing two arcane rituals of her choice. See \pcref{Rituals}.
+
+\cf{Wiz}{Arcane Invocation} All wizards master at least one arcane invocation. An arcane invocation allows the wizard to exert magical influence without expending the effort required to cast a spell. The wizard may choose to learn one invocation of her choice from the list of arcane invocations described in Chapter 11: Spells. Specialist wizards must choose one of the invocations granted by their specialist school. At 2nd level, the wizard gains a second arcane invocation, which can be chosen from any non-prohibited school.
+
+\cf{Wiz}{Arcane Insight (Ex)} At 3rd level, and every odd level afterwards, a wizard gains a greater understanding of magic. Generalist wizards gain expanded spell knowledge, as the sorcerer class feature. Specialist wizards may choose a spell of their chosen school from the sorcerer/wizard spell list, including restricted spells, and add it to their spells known. The spell's level must not be higher than half the wizard's class level -- normally, the highest level of spells that the wizard can cast.
+
+\cf{Wiz}{Spell Sequencer (Ex)} At 4th level, a wizard gains the ability to create a sequence of a spell and invocation which she can cast rapidly later. To create a spell sequencer, the wizard must cast a spell which affects only herself and an arcane invocation, which may affect any target. Neither has any effect immediately. The wizard may later use a full-round action to cast both the spell and the invocation at once, choosing the target of the invocation at that time.
+\par The wizard may have only one spell sequencer active at any time. If she creates a new spell sequencer, it replaces her existing spell sequencer.
+
+\cf{Wiz}{Arcane Attunement (Su)} At 5th level, a wizard gains the ability to use arcane items like scrolls and wands with particular skill. At the beginning of each day, the wizard may attune himself to a single item with a spell trigger or spell completion activation method. If he does, he gains one of several benefits, depending on the type of magic item he attunes himself to.
+\subparhead{Scroll} The wizard casts the spell from the scroll at his full caster level if it is higher than the scroll's caster level, and using his full attribute.
+\subparhead{Wand} The wizard casts the spell from the wand at his full caster level if it is higher than the wand's caster level. In addition, once per day, the wizard may cast a spell from the wand using a spell slot of the appropriate level instead of a charge.
+\subparhead{Staff} The wizard may cast spells from the staff using spell slots of the appropriate level instead charges. If the spell would require multiple charges when cast from the staff, the spell slot consumed must be one level higher than the spell's normal level for each charge beyond the first.
+\par If other items exist that can produce similar effects, the wizard may gain appropriate bonuses for attuning himself to them, using the above examples as a guide.
+
+\subsubsection{School Specialization}
+A school is one of eight groupings of spells, each defined by a common theme. If desired, a wizard may specialize in one school of magic (see below). Specialization allows a wizard to gain access to extra spells from her chosen school, but she then never learns to cast spells from some other schools.
+
+\par A specialist wizard adds all restricted sorcerer/wizard spells of her school to her personal spell list.  The wizard must choose whether to specialize and, if she does so, choose her specialty at 1st level. At this time, she must also give up two other schools of magic (unless she chooses to specialize in divination; see below), which become her prohibited schools. A wizard can never give up divination to fulfill this requirement.
+
+Spells of the prohibited school or schools are not available to the wizard, and she
+can't even cast such spells from scrolls or fire them from wands. She
+may not change either her specialization or her prohibited schools later.
+\par The eight schools of arcane magic are abjuration, conjuration,
+divination, enchantment, evocation, illusion, necromancy, and transmutation. Spells that do not fall into any of these schools are called universal spells.
+\subcf{Abjuration} Spells that protect, block, banish, or deal with magic itself. An abjuration specialist is called an abjurer.
+\subcf{Conjuration} Spells that bring creatures or materials to the caster. A
+conjuration specialist is called a conjurer.
+\subcf{Divination} Spells that reveal information. A divination specialist is
+called a diviner. Unlike the other specialists, a diviner must give up only
+one other school.
+\subcf{Enchantment} Spells that affect the mind or grant the caster power over another being. An enchantment specialist is called an enchanter.
+\subcf{Evocation} Spells that manipulate energy or other powers to produce effects. An evocation specialist is called an evoker.
+\subcf{Illusion} Spells that alter perception or create false images. An illusion
+specialist is called an illusionist.
+\subcf{Necromancy} Spells that manipulate, create, or destroy life or life force.
+A necromancy specialist is called a necromancer.
+\subcf{Transmutation} Spells that transform the recipient physically or change
+its properties in a more subtle way. A transmutation specialist is called a
+transmuter.
+\subcf{Universal} Not a school, but a category for spells that all wizards can
+learn. A wizard cannot select universal as a specialty school or as a
+prohibited school. Only a limited number of spells fall into this category.
+
+\subsubsection{Arcane Spells And Armor}
+Wizards and sorcerers do not know how to wear armor effectively.
+
+If desired, they can wear armor anyway (though they'll be clumsy in it), or they can gain training in the proper use of armor (with the various Armor Proficiency feats -- light, medium, and heavy -- and the Shield Proficiency feat), or they can multiclass to add a class that grants them armor proficiency. Even if a wizard or sorcerer is wearing armor with which he or she is proficient, however, it might still interfere with spellcasting.
+
+Armor restricts the complicated gestures that a wizards or sorcerer must make while casting any spell that has a somatic component (most do). The armor and shield descriptions list the arcane spell failure chance for different armors and shields.
+
+If a spell doesn't have a somatic component, an arcane spellcaster can cast it with no problem while wearing armor. Such spells can also be cast even if the caster's hands are bound or if he or she is grappling (although Concentration checks still apply normally). Also, the metamagic feat Still Spell allows a spellcaster to cast a spell at one spell level higher than normal without the somatic component. This provides a way to cast a spell while wearing armor without risking arcane spell failure.
+
+\section{Character Advancement}
+
+As your character accomplishes challenges and defeats foes, he gains experience. If your character has enough experience, he gains a level. When you gain a level, you can increase your character's level in your current class or in any other class, and gain the benefits described for each class. Rules for taking levels in multiple classes are described in \pref{Multiclass Characters}, below.
+
+A character that increases in level gains additional benefits. Every odd level, including 1st level, he gains a feat (see \pcref{Feats}). Every even level, he increases one of his attributes by one. He cannot increase the same attribute twice in a row. If a character has multiple classes, these benefits are gained based on the total character level, not based on class level. The experience required to reach a level, and the benefits gained at each level, are shown on \trefnp{Character Advancement}.
+
+\begin{dtable}
+\lcaption{Character Advancement}
+\begin{tabularx}{\columnwidth}{*{5}{>{\ccol}X}}
+  \thead{Character level} & \thead{XP} & \thead{Feats} & \thead{Attribute Increases\fn{1}} \\
+1st & 0 & 1st & \x & \x \\
+2nd & 2,000 & \x & 1st \\
+3rd & 5,000 & 2nd & \x \\
+4th & 9,000 & \x & 2nd \\
+5th & 15,000 & 3rd & \x \\
+\end{tabularx}
+1. The same attribute cannot be increased twice in a row.
+\end{dtable}
+
+\section{Multiclass Characters}\label{Multiclass Characters}
+A character may add new classes as he or she progresses in level, thus becoming a multiclass character. The class abilities from a character's different classes combine to determine a multiclass character's overall abilities. Multiclassing improves a character's versatility at the expense of focus.
+
+\subsection{Class And Level Features}
+As a general rule, the abilities of a multiclass character are the sum
+of the abilities of each of the character's classes.
+
+\parhead{Level} ``Character level'' is a character's total number of levels. It is used to determine when feats and attribute score boosts are gained, as noted on \tref{Character Advancement}
+
+\par ``Class level'' is a character's level in a particular class. For a character whose levels are all in the same class, character level and class level are the same.
+
+\parhead{Hit Points} A character gains hit points from each class as his or her class level increases, adding the new hit points to the previous total.
+
+\parhead{Base Attack Bonus} Add your character's levels in classes that grant the same base attack bonus progressions together, then sum those base attack bonuses to find your total base attack bonus. If a character would have a higher base attack bonus by treating a level with an average base attack bonus progression as a level with a poor base attack bonus progression, he or she may do so. For example, a rogue 1 / wizard 1 would have a base attack bonus of 1.
+
+\par For example, a 2nd-level rogue/2nd-level wizard would have a \plus2 base attack bonus. She would get a \plus1 base attack bonus from two levels in a class with average base attack bonus progression (rogue) and a \plus1 base attack bonus from two levels in a class with poor base attack bonus progression (wizard). That gives a total base attack bonus of 1 \add 1, or \plus2. In contrast, a 2nd-level rogue/2nd-level cleric would have a \plus3 base attack bonus, because she would have four levels in classes with average base attack bonus progression.
+
+\parhead{Saving Throws} Add your character's levels in classes that grant the same base save bonus progressions together, then sum those base save bonuses to find your total base save bonus.
+
+\par For example, a 3rd-level rogue/2nd-level ranger has a \plus5 base save bonus on Fortitude saving throws (\plus1 from 3 levels in a class with a poor Fortitude save and \plus4 from two levels in a class with a good Fortitude save), a \plus7 base save bonus on Reflex saving throws (from five levels in classes with good Reflex saves), and a \plus2 base save bonus on Will saving throws (from five levels in classes with poor Will saves).
+
+\parhead{Skills} When taking the first level in a class, if that class gives more skill points than the most skill points the character already received from a class, the character immediately gets skill points equal to the difference. For example, if a fighter took a level in rogue, he would immediately get the difference between the rogue's 12 skill points at 1st level and the fighter's 2 skill points at first level, for a total of 10 skill points.
+
+\par In addition, if the new class grants the character class skills associated with an ability that the character previously had no class skills from, the character gains skill points for the ability as normal.
+
+\parhead{Class Features} A multiclass character gets all the class features
+of all his or her classes but must also suffer the consequences of the
+special restrictions of all his or her classes.
+
+\par In some cases, two classes can have virtually identical abilities.
+Use the following guidelines to determine how abilities stack.
+\begin{itemize*}
+\item If two identical class features are not based on level and are not gained following a specific pattern, they do not stack.
+\item If two identical class features are not explicitly based on level, but both classes gain them in a predictable pattern, the levels of the two classes stack for determining when the next improvement to the class feature will be gained.
+\item If two identical class features are explicitly based on level, the levels of the two classes stack for determining the power of the ability.
+\item If two identical class features say how they stack, those rules trump any other rules.
+\end{itemize*}
+These are some examples of how to use these guidelines.
+\begin{itemize*}
+\item Both a druid and a ranger gain woodland stride. A druid/ranger who has woodland stride from both classes has the same woodland stride ability as a druid or ranger would.
+\item Both a barbarian and a rogue get danger sense. A barbarian/rogue adds his barbarian and rogue levels together to determine his bonus from danger sense.
+\item Both a barbarian and a rogue get uncanny dodge. If a barbarian/rogue would gain uncanny dodge from both classes, she instead gains improved uncanny dodge, because uncanny dodge explicitly states how it stacks.
+\end{itemize*}
+
+\parhead{Weapon and Armor Proficiency} A character uses only the highest number of weapon proficiencies granted by her classes. If a class grants proficiency with specific weapon groups, that is counted as a chosen weapon group for the purpose of the number of weapon proficiencies the character may choose. For example, a fighter/paladin would have three weapon groups of her choice, plus the weapon group of her favored deity.
+
+However, if a class grants proficiency with a specific weapon, it is not counted against the number of weapon groups the character gains from that class. For example, a rogue/fighter gains proficiency with four weapon groups of his choice, and is additionally proficient with saps.
+
+\subsection{Magic Level and Multiclassing}\label{Magic Level and Multiclassing}
+The character gains spells from all of his or her spellcasting classes separately and tracks his magic level and caster level separately with each class.
+
+Characters with magical ability gain a special benefit when multiclassing. For every two levels that a character has in nonmagical classes, the character increases his magic level as if he had gained a level in one of his magical classes. The same applies to caster level. If the character has multiple magical classes, he chooses a single class to receive this benefit each time it is gained. However, the character can only count a number of levels in nonmagical classes equal to the number of levels he has in his chosen magical class for the purpose of this benefit.
+
+For example, Gish, a 2nd level fighter / 2th level wizard, would have a wizard magic level of 3. If he gained two more fighter levels, his wizard magic level would not increase.
+
+\section{Backgrounds}
+Your class describes who you are and what you have trained in. But your character's background also forms an important part of who he or she is. The backgrounds listed here provide possible ideas for who your character was before becoming an adventurer. A character may choose up to two backgrounds.
+
+Each background is associated with one or more skills. Characters gain the skills associated with their backgrounds as class skills, no matter what classes they take. A character with only a single background gains a free skill point which can only be spent on a skill from that background.
+
+The backgrounds listed here are merely suggestions. You may choose to create a new background. A new background created in this way may be associated with any two skills of your choice, provided that they make sense together, as determined by the DM.
+
+%The backgrounds do not all need to have an equal number of associated skills. Backgrounds which are unlikely to become adventurers can have fewer skills. Max of 3 skills from a single background. NPCs have one background.
+
+\subsection{Society Backgrounds}
+
+\subsubsection{City Watch}
+\parhead{Skills} Knowledge (local), Perception
+
+\subsubsection{Merchant}
+\parhead{Skills} Persuasion, Knowledge (local)
+
+\subsubsection{Linguist}
+\parhead{Skills} Linguistics
+\parhead{Special} You know up to two additional languages. These must be chosen from your list of racial bonus languages.
+
+\subsubsection{Priest}
+\parhead{Skill} Heal, Knowledge (religion), Perform (oratory).
+
+\subsubsection{Scholar}
+\parhead{Skill} Knowledge (any two), Linguistics.
+
+\subsubsection{Scribe}
+\parhead{Skill} Forgery, Knowledge (any one), Linguistics.
+
+\subsubsection{Spy}
+\parhead{Skills} Bluff, Disguise, Forgery.
+
+\subsection{Military Backgrounds}
+
+\subsubsection{Border Guard}
+\parhead{Skill} Knowledge (geography, nature), Survival.
+
+\subsubsection{Cavalry}
+\parhead{Skill} Creature Handling, Ride.
+
+\subsubsection{Diplomat}
+\parhead{Skills} Bluff, Persuasion, Sense Motive.
+
+\subsubsection{Engineer}
+\parhead{Skill} Craft (any one), Knowledge (engineering).
+
+\subsubsection{Infiltrator}
+\parhead{Skills} Disguise, Stealth
+
+\subsubsection{Saboteur}
+\parhead{Skills} Devices, Stealth
+
+\subsubsection{Scout}
+\parhead{Skills} Acrobatics, Perception
+
+\subsection{Other Backgrounds}
+
+\subsubsection{Bandit}
+\parhead{Skills} Intimidate, Stealth
+
+\subsubsection{Commoner}
+\parhead{Skill} Profession (any one).
+
+\subsubsection{Explorer}
+\parhead{Skills} Knowledge (geography), Survival.
+
+\subsubsection{Hermit}
+\parhead{Skill} Knowledge (nature), Survival.
+
+\subsubsection{Minstrel}
+\parhead{Skill} Perform (any one).
+
+\subsubsection{Primitive}
+\parhead{Skill} Survival.
+
+\subsubsection{Smith}
+\parhead{Skill} Craft (all)
+
+\subsubsection{Thief}
+\parhead{Skills} Devices, Stealth
+
+\subsubsection{Virtuoso}
+\parhead{Skills} Perform (all)
