@@ -3,14 +3,16 @@
 \section{How Combat Works}
 Combat takes place in a series of ``rounds'', which represents about six seconds of action. Each round, every character gets a turn to act. The order in which creatures take turns is determined by their initiative (see \pcref{Initiative}). 
 
+Once in combat, creatures attack each other (see \pcref{Attacks}) and defend themselves (see \pcref{Defenses}), while moving around the battlefield (see \pcref{Movement and Positioning}). When your defenses fail, you can get hurt (see \pcref{Injury, Death, and Healing}). In unusual situations, you might become more or less likely to succeed at your actions (see \pcref{Circumstances, Bonuses, and Penalties}).
+
 When it's your turn, you can take one standard action, one move action, and one swift action. If you want, you can take a full-round action instead of your standard and move actions. You can always ``downgrade'' an action to a lesser action: turning a standard action into a move action, or a move action into a swift action.
 
-\section{Attacks}
+\section{Attacks}\label{Attacks}
 
 \subsection{Standard Attack}
 As a standard action, you can try to strike a foe with a weapon you are wielding. To do so, make an attack roll with a weapon you are wielding, adding your attack modifier to the roll. If your result equals or exceeds your foe's Armor Class, your attack hits, and your foe takes damage.
 
-You can also make an attack as an attack of opportunity. See \pcref{Attacks of Opportunity}. 
+You can also make a single attack as an attack of opportunity. See \pcref{Attacks of Opportunity}. 
 
 \subsubsection{Attack Modifier}
 Your attack modifier is equal to the following:
@@ -62,8 +64,30 @@ Your special size modifier is described in \tref{Size in Combat}.
 \subsection{Reach}\label{Reach}
 Normally, you can attack anyone within five feet of you. The range at which you can attack is called your ``reach'', and the area that you can attack into is called your ``threatened area''. Reach for larger and smaller creatures is determined by size, as shown on \trefnp{Size in Combat}.
 
+\subsection{Attacks of Opportunity}\label{Attacks of Opportunity}
+Sometimes a combatant in a melee lets her guard down. In this case, combatants near her can take advantage of her lapse in defense to attack her for free. These free attacks are called attacks of opportunity.
 
-\section{Defenses}
+\subsubsection{Provoking Attacks of Opportunity}
+You can provoke attacks of opportunity in two ways.
+
+\parhead{Being Defenseless} Whenever you take an action, if you are unable to defend yourself at any point during the action, you provoke an attack of opportunity. You can be defenseless for several reasons. Some examples are given below.
+
+\begin{itemize*}
+    \item If you are not wielding a melee weapon or shield, you are defenseless.
+    \item If you can't use a weapon or shield to defend yourself, you are defenseless. This can happen if you are trying to wield a heavy weapon in one hand, or if you aren't proficient with your only weapon.
+    \item If you are busy doing something else that requires your full attention (such as casting a spell), you are defenseless.
+\end{itemize*}
+
+\parhead{Leaving the Battle} You provoke an attack of opportunity if you move farther away from an opponent who threatens you. This can be mitigated with the withdraw action, which allows you to avoid provoking from specific opponents (see \pcref{Withdraw}).
+
+\parhead{Forced Movement} You never provoke attacks of opportunity for movement you didn't take intentionally, such as from a bull rush (see \pcref{Bull Rush}).
+
+\subsubsection{Taking Attacks of Opportunity}
+If a creature within your threatened area provokes an attack of opportunity, you can immediately make a single melee attack against that creature. The attack of opportunity ``interrupts'' anything else the creature was been doing. The creature can continue its turn after your attack of opportunity is resolved.
+
+You can make a number of attacks of opportunity each round equal to 1 \add half your Dexterity, but never more than one per round against a particular creature. You don't have to make an attack of opportunity if you don't want to.
+
+\section{Defenses}\label{Defenses}
 
 \subsection{Armor Class}
 Your Armor Class (AC) represents how hard it is for opponents to land a solid, damaging blow on you. It's the attack roll result that an opponent needs to achieve to hit you. Unlike most combat statistics, your AC is made up of the sum of other modifiers, each of which can have competence and enhancement bonuses applied separately. You can also apply competence and enhancement bonuses directly. Your AC is equal to the following:
@@ -110,30 +134,7 @@ The three different kinds of saving throws are Fortitude, Reflex, and Will.
 \parhead{Reflex} These saves test your ability to dodge area attacks. Apply your Dexterity and half your Wisdom to your Reflex saving throws.
 \parhead{Will} These saves reflect your resistance to mental influence as well as many magical effects. Apply your Charisma and half your Intelligence to your Will saving throws.
 
-\section{Attacks of Opportunity}\label{Attacks of Opportunity}
-Sometimes a combatant in a melee lets her guard down. In this case, combatants near her can take advantage of her lapse in defense to attack her for free. These free attacks are called attacks of opportunity.
-
-\subsection{Provoking Attacks of Opportunity}
-You can provoke attacks of opportunity in two ways.
-
-\parhead{Being Defenseless} Whenever you take an action, if you are unable to defend yourself at any point during the action, you provoke an attack of opportunity. You can be defenseless for several reasons. Some examples are given below.
-
-\begin{itemize*}
-    \item If you are not wielding a melee weapon or shield, you are defenseless.
-    \item If you can't use a weapon or shield to defend yourself, you are defenseless. This can happen if you are trying to wield a heavy weapon in one hand, or if you aren't proficient with your only weapon.
-    \item If you are busy doing something else that requires your full attention (such as casting a spell), you are defenseless.
-\end{itemize*}
-
-\parhead{Leaving the Battle} You provoke an attack of opportunity if you move farther away from an opponent who threatens you. This can be mitigated with the withdraw action (see \pcref{Withdraw}).
-
-\subsubsection{Forced Movement} You never provoke attacks of opportunity for movement you didn't take intentionally, such as from a bull rush (see \pcref{Bull Rush}).
-
-\subsection{Taking Attacks of Opportunity}
-If a creature within your threatened area provokes an attack of opportunity, you can immediately make a single melee attack against that creature. The attack of opportunity ``interrupts'' anything else the creature was been doing. The creature can continue its turn after your attack of opportunity is resolved.
-
-You can make a number of attacks of opportunity each round equal to 1 \add half your Dexterity, but never more than one per round against a particular creature. You don't have to make an attack of opportunity if you don't want to.
-
-\section{Movement and Positioning}
+\section{Movement and Positioning}\label{Movement and Positioning}
 
 \subsection{Taking up Space}
 A typical human takes up a 5-ft. by 5-ft. space in combat. For convenience, this is often called a ``square''. Differently sized creatures can take up more or less space, as indicated on \tref{Size in Combat}. Normally, other creatures can't be in any squares you occupy.
@@ -285,6 +286,7 @@ Certain effects give a character temporary hit points which act as a protection 
         Prone & \minus4\fn{2} \\
         Squeezing through a space & \minus4 \\
         Stunned & \minus2\fn{1} \\
+        Total defense & \plus4 \\
         Vulnerable & \minus2 \\
     \end{tabularx}
     1 The defender is flat-footed. \\
@@ -341,6 +343,9 @@ You can't execute an attack of opportunity against an invisible opponent, even i
 
 \subsection{Overwhelm}
 When a creature is being attacked by multiple foes at once, it is less able to defend itself. A creature is considered overwhelmed if it is being threatened by more than one creature. Multiple creatures occupying the same square count as a single creature when determining overwhelm penalties. If a creature is overwhelmed, it takes a penalty to armor class equal to the number of creatures threatening it.
+
+\subsection{Total Defense}\label{Total Defense}
+As a standard action, you can focus entirely on defense, granting you a \plus4 bonus to AC for 1 round. While using the total defense action, you can't make attacks of opportunity, but you still threaten squares normally for the purpose of overwhelm penalties and similar effects. This bonus is considered a circumstance bonus to your dodge modifier, so does not help if you are flat-footed.
 
 \subsection{Helpless Defenders}
 A helpless creature is someone who is bound, sleeping, paralyzed, unconscious, or otherwise at your mercy. It is flat-footed and is treated as having a Dexterity of \minus10.
@@ -457,11 +462,9 @@ Unusually stable creatures, such as creatures with multiple legs, gain a \plus4 
 
 \section{Special Actions}
 
-\subsection{Cast a Spell}\label{Cast a Spell}
-As a standard action, you can cast a spell. See \pcref{Casting Spells} for more information. 
+\subsection{Partial Actions}
 
-\subsection{Partial Full-Round Action}\label{Partial Full-Round Action}
-If you are restricted to only taking a move or standard action, but not both, you can spend a standard action to perform a partial version of that action. For most actions, you spend the first round starting the action, and use a second standard action to complete it. Some full-round actions have specific partial versions described below which you take instead. You can only take these partial actions when you cannot take full-round actions. 
+If you are restricted to only taking a move or standard action, but not both, you can spend a standard action to perform a partial version of a full-round action. For most actions, you spend the first round starting the action, and use a second standard action to complete it. Some full-round actions have specific partial versions described below which you take instead. You can only take these partial actions when you cannot take full-round actions. 
 
 \subsubsection{Partial Charge}
 As a standard action, you can move up to your speed and make a single attack against a foe. You must move in a straight line, and your movement must not be impeded in any way. In addition, you take a \minus2 penalty to AC until the start of your next turn. An interrupted partial charge becomes a move action.
