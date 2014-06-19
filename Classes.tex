@@ -170,9 +170,9 @@ If a barbarian already has uncanny dodge from a different class, he stacks those
 \begin{tabularx}{\textwidth}{>{\ccol}p{2em} >{\ccol}p{7em} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
 \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} \\
 1st & \plus0 & \plus1 & \plus0 & \plus3 & Matters of faith, lesser domain aspect, spontaneous casting \\
-2nd & \plus1 & \plus2 & \plus1 & \plus4         & Channel energy, lesser domain aspect \\
-3rd & \plus2 & \plus3 & \plus1 & \plus5         & Domain power \\
-4th & \plus3 & \plus4 & \plus2 & \plus6         & Domain power \\
+2nd & \plus1 & \plus2 & \plus1 & \plus4         & Channel energy \\
+3rd & \plus2 & \plus3 & \plus1 & \plus5         & Lesser domain aspect \\
+4th & \plus3 & \plus4 & \plus2 & \plus6         & \x \\
 5th & \plus3 & \plus4 & \plus2 & \plus7         & Channelled domain power \\
 6th & \plus4 & \plus5 & \plus3 & \plus8         & \x  \\
 7th & \plus5 & \plus6 & \plus3 & \plus9         & Domain aspect  \\
@@ -330,10 +330,6 @@ When a cleric channels energy, it affects all creatures in a \areamed radius bur
 
 Channeling energy is a standard action that does not provoke attacks of opportunity. A cleric can channel energy a number of times per day equal to 3 \add half his Charisma. A cleric must be able to present his holy symbol to use this ability. The abilities used 
 
-\cf{Clr}{Domain Power (Su)} At 3rd level, a cleric gains a domain power from one of his domains. Using a domain power requires a standard action that does not provoke attacks of opportunity unless otherwise noted. All domain powers can be used at will unless otherwise noted. If a domain power allows a saving throw, the DC is equal to 10 \add the cleric's level \add the cleric's domain attribute.
-
-The domain powers for each domain are described at \pcref{Domain Powers}. The cleric gains an additional domain power from one of his domains at 4th level.
-
 \cf{Clr}{Channeled Domain Power (Su)} At 5th level, a cleric gains a channeled domain power from one of his domains. Unless otherwise stated, using a channelled domain power is identical to using channel energy and consumes a use of the cleric's channel energy ability. Instead of channeling positive or negative energy, the cleric instead gains the effect of the channelled domain power. If a channeled domain power deals damage, it functions like channeling negative energy unless otherwise noted. If a channeled domain power heals damage, it functions like channeling postive energy unless otherwise noted. The save DC of a cleric's channeled domain power is equal to 10 \add cleric level \add domain attribute. The channeled domain powers are described at \pcref{Channeled Domain Powers}. The cleric gains an additional channeled domain power at 9th level.
 
 \cf{Clr}{Domain Aspect (Su)} At 7th level, a cleric gains a domain aspect from one of his domains. Domain aspects do not require an action to activate. Options for domain aspects are listed at \pcref{Domain Aspects}.  The cleric gains an additional domain aspect from one of his domains at 11th level.
@@ -365,28 +361,6 @@ The domain powers for each domain are described at \pcref{Domain Powers}. The cl
 \subcf{Vitality} The cleric gains a competence bonus equal to half his cleric level on Heal checks.
 \subcf{War} The cleric gains Weapon Focus with his deity's favored weapon group as a bonus feat. If he does not have a deity, he gains it in a weapon group related to his alignment or ideals.
 \subcf{Water} The cleric adds Swim to his cleric class skill list and halves the penalties he takes for fighting underwater.
-
-\subsubsection{Domain Powers}\label{Domain Powers}
-
-\subcf{Air -- Lightning Arc} The cleric fires an arc of lightning at a creature within \rngmed range. If he hits on a ranged touch attack, the creature takes d8 electricity damage \add d8 per four cleric levels after 1st.
-\subcf{Chaos -- Touch of Chaos} A creature within \rngclose range is imbued with the power of chaos for 5 rounds. Any attack roll, saving throw, or check it makes where it rolls an odd number gets a \minus2 penalty. Creatures affected by this power are treated as lawful for the purpose of the cleric's chaotic spells and effects.
-\subcf{Death -- Death's Door} If the cleric succeeds on a melee touch attack, he rolls d6 per cleric level. If the total at least equals the touched creature's current hit points, it loses all of its hit points and is disabled. If the total at least equals the creature's critical damage, it is instantly slain. This is a death effect.
-\subcf{Destruction -- Destructive Resonance} A touched creature or object takes d10 sonic damage \add d10 per four cleric levels after 1st.
-\subcf{Earth -- Raise Earth} As a swift action, the cleric can command the earth to raise up any creature within \rngclose range, allowing it to stand from prone without taking an action. This ability only works on natural earth or stone.
-\subcf{Evil -- Touch of Evil} A touched creature is sickened and is treated as good for the purpose of the cleric's evil spells and effects. This effect lasts for 5 rounds.
-\subcf{Fire -- Firebolt} The cleric fires a bolt of fire at a creature within \rngclose range. If he hits on a ranged touch attack, the creature takes d8 fire damage \add d8 per four cleric levels after 1st.
-\subcf{Good -- Holy Touch} A touched creature is dazzled and treated as evil for the purpose of good spells and effects that the cleric creates. The effect lasts for 5 rounds.
-\subcf{Knowledge -- Minor Vision} A touched creature is granted a brief vision of the future, giving it a \plus2 enhancement bonus to attack rolls, weapon damage rolls, and checks for 1 round.
-\subcf{Law -- Touch of Order} A creature within \rngclose range is imbued with the leveling power of order for 5 rounds. Any attack roll, saving throw, or check it makes with a roll of 11 or higher gets a \minus2 penalty. In addition, it is treated as being chaotic for the purpose of the cleric's lawful spells and effects.
-\subcf{Magic -- Breach Defenses} The cleric fires a magical ray at a creature within \rngclose range. If he hits, the target takes d6 damage \add 1 per cleric level. In addition, it takes a \minus2 penalty to saving throws against  the cleric's spells for 1 round.
-\subcf{Nature -- Wild Speech} The cleric gains wild speech, as the druid ability, with a druid level equal to half his cleric level (minimum 1). This power can be used a number of times per day equal to half the cleric's level.
-\subcf{Protection -- Martyr's Touch} For the next 5 rounds, the cleric takes half of the damage the touched creature would take, as the \spell{shield other} spell. If the cleric get farther than \rngmed range from the touched creature during this time, the effect is broken.
-\subcf{Strength -- Surge of Strength} The cleric gains a \plus2 enchancement bonus to Strength for 1 round. \bonusscalingdescription This power can be used a number of times per day equal to 1 \add half the cleric's Strength.
-\subcf{Travel -- Free Stride} As a swift action, the cleric can gain the ability to move through difficult terrain at full speed for 1 round. This power can be used a number of times per day equal to 1 \add half the cleric's Dexterity.
-\subcf{Trickery -- Liar's Boon} As a swift action, the cleric can gain a \plus3 enhancement bonus to Bluff and Disguise checks for 5 minutes. This power can be used a number of times per day equal to 1 \add half the cleric's Charisma.
-\subcf{Vitality -- Vital Reach} As a swift action, the cleric can cause a dying creature within \rngmed range to stabilize or take 1 critical damage, as he desires.
-\subcf{War -- Warrior's Boon} A creature touched creature gains a \plus2 enhancement bonus to attack rolls for 1 round. \bonusscalingdescription This power can be used a number of times per day equal to 1 \add half the cleric's Charisma.
-\subcf{Water -- Drowning Orb} The cleric fires an orb of water at a creature within \rngclose range. If he hits on a ranged touch attack, the orb attempts to force itself into the creature's mouth and nose to drown it, dealing d8 nonlethal damage \add 1 per cleric level. In addition, the creature must make a Fortitude save or be forced to hold its breath for 5 rounds.
 
 \subsubsection{Channeled Domain Powers}\label{Channeled Domain Powers}
 
