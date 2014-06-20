@@ -216,17 +216,15 @@ If you take additional damage while at 0 hit points, you begin dying (see Dying,
 \subsubsection{Dying}\label{Dying}
 When you take damage while you have no hit points remaining, that damage represents serious physical injury to your body. This is called critical damage. When you take critical damage, you immediately fall unconscious and begin dying. While you have critical damage, magical healing which would normally restore hit points cannot restore your hit points, though it can stabilize you, preventing you from dying.
 
-While dying, you must make a DC 15 Fortitude save every round. The DC is equal to 15 \add the critical damage you have taken. If you fail three times, you die. If you succeed three times, or receive healing that would normally restore hit points, you become stable (see Stable, below). Another character can give first aid to help you stabilize (see \pcref{Heal}).
+While dying, you must make a Fortitude save every round. The DC is equal to 15 \add the critical damage you have taken. If you fail three times, you die. If you succeed three times, or receive healing that would normally restore hit points, you become stable (see Stable, below). Another character can give first aid to help you stabilize (see \pcref{Heal}).
 
 If you take additional damage, you can die (see Dead, below).
 
 \subsubsection{Dead}
 If your critical damage exceeds 10 \add your Constitution, you die. You can also die from taking ability damage or suffering ability damage or drain that reduces your Constitution to \minus 10.
 
-\subsubsection{Stable}
-If you have taken critical damage but managed to stave off death, you become stable. You remain unconscious until your hit points exceed your critical damage.
-
-Unless your hit points go above 0, you remain unconscious. As long as you have critical damage, magical healing that restores hit points has no effect on your hit points.
+\subsubsection{Stable}\label{Stable}
+If you have taken critical damage but managed to stave off death, you become stable. You remain unconscious until your hit points exceed 0. As long as you have critical damage, magical healing that restores hit points has no effect on your hit points.
 
 \subsubsection{Overkill Damage}
 Normally, when you take damage that would reduce your hit points to 0, any excess damage from the attack is wasted. However, some attacks deal such massive damage that you begin dying immediately, rather than just becoming staggered. If the damage dealt by an attack exceeds your maximum hit points (not current hit points), any damage past what would reduce your hit points to 0 is dealt as critical damage rather than being wasted.
@@ -240,7 +238,7 @@ After taking damage, you can recover hit points through natural healing or throu
 
 \parhead{Healing Ability Damage} Ability damage is temporary, just as hit point damage is. Ability damage returns at the rate of 1 point per 8 hours of rest for each affected attribute score.
 
-\parhead{Healing Critical Damage} Critical damage takes much longer to heal than hit point damage. Resting for 1 week restores an amount of critical damage equal to 1 \add half the character's Constitution. A character can have both hit points and critical damage. As long as a character has critical damage, he is staggered, even if he is at full hit points.
+\parhead{Healing Critical Damage} Critical damage takes much longer to heal than hit point damage. Resting for 1 week restores an amount of critical damage equal to 1 \add half the character's Constitution (minimum 1). A character can have both hit points and critical damage. As long as a character has critical damage, he is staggered, even if he is at full hit points.
 
 \subsection{Nonlethal Damage}\label{Nonlethal Damage}
 Some attacks and environmental effects deal nonlethal damage. Nonlethal damage is not subtracted from your hit points. Instead, it is tracked separately. If your nonlethal damage exceeds your hit points, you become staggered, just as if you were at 0 hit points. If you take additional damage while staggered, you fall unconscious. However, you do not begin dying unless your hit points are actually below 0. 
@@ -295,7 +293,7 @@ Certain effects give a character temporary hit points which act as a protection 
     3 The creature suffers a penalty equal to the number of creatures threatening it.
 \end{dtable}
 
-\subsection{Cover}
+\subsection{Cover}\label{Cover}
 
 Cover represents any obstacle that physically prevents you from striking your target, such as a tree or intervening creature. A creature with cover is more difficult to attack.
 
@@ -309,14 +307,16 @@ There are two types of cover: active cover and passive cover.
 
 If the obstacle is active and mobile, such as a creature or tree branches blowing in the wind, the defender has active cover. Any attacks against a creature with active cover relative to you have a 20\% miss chance. After rolling the attack, the attacker must make a miss chance percentile roll to see if the attack misses due to active cover. If an attack misses due to active cover, the attack is made against the intervening obstacle instead. If the attack is successful, the obstacle takes any damage from the attack normally. 
 
+\parhead{Small Obstacles} Generally, an obstacle smaller than you are does not provide active cover (so a halfling does not provide active cover to a human). 
+
 \subsubsection{Passive Cover}
 
 If the obstacle is stationary, such as a tree trunk or wall, the defender has passive cover. A creature with passive cover relative to you has a \plus4 circumstance bonus to armor class.
 
 \parhead{Reflex Saves} A creature with passive cover gains a \plus2 bonus on Reflex saves against attacks that originate or burst out from a point on the other side of the cover from it. Note that spread effects can extend around corners and thus negate this cover bonus.
-\parhead{Low Obstacles} A low obstacle (such as a wall no higher than half your height) provides passive cover, but only to creatures within 30 feet (6 squares) of it. The attacker can ignore the cover if he's closer to the obstacle than his target. If two creatures are equally distant from the wall, it grants cover to both of them.
+\parhead{Small Obstacles} A low obstacle (such as a wall no higher than half your height) provides passive cover, but only to creatures within 30 feet (6 squares) of it. The attacker can ignore the cover if he's closer to the obstacle than his target. If two creatures are equally distant from the wall, it grants cover to both of them.
 \parhead{Attacks of Opportunity} You can't execute an attack of opportunity against an opponent with passive cover relative to you.
-\parhead{Hide Checks} You can use passive cover to make a Hide check, but not active cover. Without cover, you usually need concealment (see below) to make a Hide check.
+\parhead{Stealth Checks} You can use passive cover to make a Stealth check to hide, but not active cover.
 \parhead{Total Cover} If you don't have line of effect to your target, he is considered to have total cover from you. You can't make an attack against a target that has total cover.
 
 \subsubsection{Improved Cover}
@@ -325,7 +325,7 @@ A creature can benefit from both passive and active cover. However, cover of the
 
 Exceptionally well covered opponents, such as a creature behind an arrow slit in a castle, may receive additional benefits. For example, it might gain improved evasion, and there may be limitations on what kind of attacks are possible.
 
-\subsection{Concealment}
+\subsection{Concealment}\label{Concealment}
 Concealment represents anything which makes it more difficult to see your target, such as dim lighting. A creature with concealment from you gains a \plus4 circumstance bonus to Armor Class. Concealment bonuses do not apply if you can't see your opponent (such as if you close your eyes).
 
 \parhead{Determining Concealment} When making a melee attack against an adjacent target, your target has concealment if his space is entirely within an effect that grants concealment.
@@ -334,14 +334,14 @@ Deterining concealment for making an attack against a target that is not adjacen
 
 In addition, some magical effects provide concealment against all attacks, regardless of whether any intervening concealment exists.
 
-\parhead{Concealment and Hide Checks} You can use concealment to make a Hide check. Without concealment, you usually need cover to make a Hide check.
+\parhead{Concealment and Stealth Checks} You can use concealment to make a Stealth check to hide.
 
 \subsection{Invisibility}
 If it is impossible to see your target, you can't attack him normally. However, you can attack a square that you think he occupies. An attack into a square occupied by an invisible enemy has a 50\% miss chance. If an adjacent invisible creature strikes you, you can automatically identify the square he occupied when he struck you.
 
 You can't execute an attack of opportunity against an invisible opponent, even if you know what square or squares the opponent occupies.
 
-\subsection{Overwhelm}
+\subsection{Overwhelm}\label{Overwhelm}
 When a creature is being attacked by multiple foes at once, it is less able to defend itself. A creature is considered overwhelmed if it is being threatened by more than one creature. Multiple creatures occupying the same square count as a single creature when determining overwhelm penalties. If a creature is overwhelmed, it takes a penalty to armor class equal to the number of creatures threatening it.
 
 \subsection{Total Defense}\label{Total Defense}
