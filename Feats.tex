@@ -333,6 +333,7 @@ An item creation feat lets a spellcaster create magic items. Item creation is de
 \featref{Manyshot} & Dex 7, base attack bonus \plus12 & Shoot two projectiles simultaneously & Precision, Style \\
 \featref{Master Tactician} & Int 3, base attack bonus \plus12 & Ready full-round actions with allies & Reaction \\
 \featref{Penetrating Strike} & Base attack bonus \plus12 & Attack removes foe's damage reduction \\
+\featref{Two-Weapon Rend} & Str 5, base attack bonus \plus12, Two-Weapon Fighting & Deal Strength damage with both weapons & Power \\
 \featref{Whirlwind Attack} & Dex 5, base attack bonus \plus12 & One melee attack against each opponent within reach & Style \\
 \end{tabularx}
 \end{dtable!*}
@@ -1167,10 +1168,10 @@ You can fight with a weapon in each hand more effectively.
 \parhead{Prerequisite} Dex 3.
 \parhead{Benefit} You gain a \plus2 competence bonus to attack rolls when attacking with two weapons at once.
 
-%\feat{Two-Weapon Rend}{Combat}
-%\parhead{Prerequisites} Str 3, Two-Weapon Fighting, base attack bonus \plus11.
-%\parhead{Benefit} When fighting with two weapons at once, you may add half your Strength to damage with your offhand.
-%\parhead{Normal} Without this feat, you do not apply Strength to damage with your offhand.
+\feat{Two-Weapon Rend}{Combat, Power}\label{Two-Weapon Rend}
+\parhead{Prerequisites} Str 5, Two-Weapon Fighting, base attack bonus \plus12.
+\parhead{Benefit} When fighting with two weapons at once, you may add half your Strength to damage with your secondary weapon.
+\parhead{Normal} Without this feat, you do not apply Strength to damage with your secondary weapon.
 
 \feat{Wall Slam}{Combat, Maneuver, Power}
 \featpre Str 5, base attack bonus \plus8
@@ -1268,7 +1269,7 @@ You can only use this style if you have not moved since your last turn.
 \featpre Base attack bonus \plus8.
 \featben Foes take a withdraw action to move away from you still provoke attacks of opportunity from you. In exchange, you take a \minus2 penalty to AC.
 
-\feat{Manyshot}{Combat, Style}
+\feat{Manyshot}{Combat, Style}\label{feat:Manyshot}
 \parhead{Prerequisites} Dex 7, base attack bonus \plus12.
 \parhead{Benefit} When you attack with a light thrown weapon or projectile weapon (except crossbows), you may make a flurry attack with two projectiles or weapons at once. If the attack hits, the first projectile hits. If the attack hits by 5 or more, both projectiles hit. As normal for flurry attacks, apply precision-based damage (such as sneak attack) and critical hit damage only once for this attack. Damage reduction and resistances apply once to the total damage dealt.
 \parhead{Style Requirement} Must full attack with a non-crossbow projectile weapon each round.
