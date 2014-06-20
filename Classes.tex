@@ -13,6 +13,7 @@ There are eleven classes in Rise.
   \item Rangers are skilled hunters who bridge the divide between nature and civilization.
   \item Rogues are exceptionally skillful characters known for their ability to strike at their foe's weak points in combat.
   \item Sorcerers are arcane spellcasters with an intuitive and flexible understanding of magic.
+  \item Spellwarped uniquely  
   \item Wizards are arcane spellcasters with a highly studied and deep understanding of magic.
 \end{itemize*}
 
@@ -451,7 +452,7 @@ Channeling energy is a standard action that does not provoke attacks of opportun
 \par If the water is split, he may reform from anywhere the water has reached, to as little as a single ounce of water. If not even an ounce of water exists contiguously, his body reforms from the largest available parts of water, cut into pieces of appropriate size. This usually causes the cleric to die.
 
 \subsubsection{Ex-Clerics}
-A cleric who grossly violates the code of conduct required by his god loses all spells and class features, except for armor and shield proficiencies and proficiency with simple weapons. He cannot thereafter gain levels as a cleric of that god until he atones (see the \spell{atonement} spell description).
+A cleric who grossly violates the code of conduct required by his god loses all spells and supernatural cleric class features. He cannot thereafter gain levels as a cleric of that god until he atones (see the \spell{atonement} spell description).
 
 \subsection{Druid}
 \begin{dtable*}
@@ -739,7 +740,7 @@ her appearance at will, as if using the \spell{disguise self} spell. This affect
 \cf{Drd}{Greater Natural Casting (Ex)} At 20th level, a druid may cause area spells to originate from any point within \rngmed range of her, as the natural casting ability.
 
 \subsubsection{Ex-Druids}
-A druid who ceases to revere nature, changes to a prohibited alignment, or teaches the Druidic language to a nondruid loses all spells and druid abilities (not including weapon, armor, and shield proficiencies). She cannot thereafter gain levels as a druid until she atones (see the \spell{atonement} spell description).
+A druid who ceases to revere nature, changes to a prohibited alignment, or teaches the Druidic language to a nondruid loses all spells and supernatural druid class features. She cannot thereafter gain levels as a druid until she atones (see the \spell{atonement} ritual).
 
 \subsection{Fighter}
 \begin{dtable}
@@ -782,8 +783,6 @@ All of the following are class features of the fighter.
 
 \cf{Ftr}{Bonus Feat} At 2nd level, a fighter gets a bonus combat-oriented feat. This bonus feat must be drawn from the feats noted as combat feats on \tref{Combat Feats}. A fighter must still meet all prerequisites for a bonus feat, including attribute score and base attack bonus minimums. The fighter gains an additional bonus feat at 6th level and every four fighter levels thereafter (6th, 10th, 14th, and 18th).
 
-These bonus feats are in addition to the feats that a character of any class gets from advancing levels. A fighter is not limited to the list of combat feats when choosing those feats.
-
 \cf{Ftr}{Weapon Discipline} At 3rd level, a fighter's training grants him additional capability when using his weapons. He may choose a weapon group, or he may choose to train equally with all weapons. If he chooses a weapon group, he gains a \plus1 competence bonus to attack rolls with weapons from that group.
 \par If he chooses not to focus on a specific group of weapons, he gains the ability to become proficient with any weapon group if he spends 8 hours training with a weapon from that group. He may only keep this proficiency with one weapon group at a time; if he trains with a new weapon group, he loses his proficiency in the previous group.
 
@@ -795,7 +794,7 @@ meet all prerequisites for any bonus feat chosen. At the start of each day, the 
 However, if an adaptive style feat is used as a prerequisite, it cannot be changed until the fighter no longer needs to use it as a prerequisite, such as might happen if the fighter takes the feat as a normal feat or bonus feat.
 \par In order to gain a new adaptive style feat, it must be reasonably possible to do training related to the new feat. For example, a fighter could not gain Weapon Focus in axes without at least one axe available to train with.
 
-\cf{Ftr}{Combat Discipline} At 5th level, a fighter can use his superior training and focus to keep fighting in the face of debilitating effects. When a fighter is initially affected by one of the conditions listed on \trefnp{Combat Discipline Conditions}, he may use his combat discipline ability to instead suffer the mitigated condition one column to the right. This lasts until the end of the original condition or for one round per two fighter levels, at which point the he suffers the effects of the original condition unless he uses his combat discipline ability again.
+\cf{Ftr}{Combat Discipline} At 5th level, a fighter can use his superior training and focus to keep fighting in the face of debilitating effects. When a fighter is initially affected by one of the conditions listed on \trefnp{Combat Discipline Conditions}, he may use his combat discipline ability to instead suffer the mitigated condition one column to the right. This lasts until the end of the original condition or for one round per two fighter levels, at which point he suffers the effects of the original condition unless he uses his combat discipline ability again.
 \par Using combat discipline takes no action, and can be done at any time, even when it isn't the fighter's turn. A fighter may use this ability a number of times per day equal to 3 \add his Constitution.
 
 \begin{dtable}
@@ -834,7 +833,7 @@ Negative level\fn{3} & None & \x & \x \\
 
 \cf{Ftr}{Improved Weapon Discipline} At 9th level, a fighter's training in his chosen weapons improves. He gains a \plus4 competence bonus to resist disarm and sunder attempts when using his chosen weapons. If he chose a specific weapon group, he gains a \plus2 competence bonus to attack rolls with weapons from that group. If he did not, he can apply all weapon group-specific feats he has to any weapon group that he trains with for 8 hours. He retains this benefit for one week after the training.
 
-\cf{Ftr}{Battlemaster} At 10th level, a fighter can improve his allies' combat abilities. As a standard action, he may grant the use one of his combat feats to allies within 30 feet of him who can see and hear him. He can affect a number of allies equal to 1 \add his Intelligence (minimum 1). Affected allies must meet all prerequisites for the granted feat, except that they can ignore any feat prerequisites. The effect lasts for 5 rounds. The fighter can use this ability a number of times per day equal to 3 \add his Charisma.
+\cf{Ftr}{Battlemaster} At 10th level, a fighter can improve his allies' combat abilities. As a standard action, he may grant the use of one of his combat feats to allies within \rngclose range of him who can see and hear him. He can affect a number of allies equal to 1 \add his Intelligence (minimum 1). Affected allies must meet all prerequisites for the granted feat, except that they can ignore any feat prerequisites. The effect lasts for 5 rounds. The fighter can use this ability a number of times per day equal to 3 \add his Charisma.
 
 \cf{Ftr}{Improved Combat Discipline} At 11th level, a fighter's ability to keep fighting despite negative influence improves. He can reduce conditions by two steps instead of one when using combat discipline. For example, a stunned fighter who used combat discipline would instead be staggered.
 \par In addition, a fighter may use combat discipline to reduce any penalties he suffers to attribute scores, attack rolls, weapon damage rolls, skill checks, or ability checks that come from negative effects not listed on the combat discipline chart by 2. This cannot be used to reduce the effects of ability damage or drain.
@@ -936,7 +935,7 @@ If a monk already has uncanny dodge from a different class, she stacks those lev
 
 \cf{Mnk}{Perfect Health} At 4th level, the monk gains the Perfect Health feat as a bonus feat, making her immune to diseases of all kinds. If she already has the feat, she gains another feat of her choice for which she qualifies.
 
-\cfnl{Mnk}{Ki Power (Su)} At 5th level, the monk gains an additional \ki power ability. She adds the abilities below to the list of abilities she can choose.
+\cfnl{Ki Power (Su)} At 5th level, the monk gains an additional \ki power ability. She may choose any of the abilities below in addition to any \ki power ability she could have chosen earlier.
 
 \subcf{Speed Boost} As a swift action, the monk can force her muscles to strain beyond their normal limits. For 1 round, she gains a \plus20 foot competence bonus to her land speed, and a \plus2 competence bonus to her dodge modifier.
 
@@ -951,7 +950,7 @@ If a monk already has uncanny dodge from a different class, she stacks those lev
 
 \cf{Mnk}{Perfect Speech (Ex)} At 8th level, the monk gains the ability to speak with and understand the speech of any living creature. This grants her no special ability to speak to or understand creatures that do not speak, such as animals.
 
-\cf{Mnk}{Ki Power (Su)} At 8th level, the monk gains an additional \ki power ability. She adds the abilities below to the list of abilities she can choose.
+\cfnl{Ki Power (Su)} At 8th level, the monk gains an additional \ki power ability. She may choose any of the abilities below in addition to any \ki power ability she could have chosen earlier.
 
 \subcf{Rapid Step} As a move action, the monk can move up to her speed without provoking attacks of opportunity.
 
@@ -961,9 +960,9 @@ If a monk already has uncanny dodge from a different class, she stacks those lev
 
 \cf{Mnk}{Greater Uncanny Dodge (Ex)} At 10th level and higher, a monk can no longer be overwhelmed, regardless of the number of foes surrounding her.
 
-\cf{Mnk}{Ki Power (Su)} At 11th level, the monk gains an additional \ki power ability. She adds the abilities below to the list of abilities she can choose.
+\cfnl{Ki Power (Su)} At 11th level, the monk gains an additional \ki power ability. She may choose any of the abilities below in addition to any \ki power ability she could have chosen earlier.
 
-\subcf{Diamond Fists} As a swift action, the monk can empower her unarmed strike with incredible force. Until the start of her next turn, she treats her unarmed strike as if it was an adamantine weapons for the purpose of overcoming damage reduction.
+\subcf{Diamond Fists} As a swift action, the monk can empower her unarmed strike with incredible force. Until the start of her next turn, she treats her unarmed strike as if they it were an adamantine weapon for the purpose of overcoming damage reduction.
 
 \subcf{Flash Step} As a move action, the monk can slip between spaces, allowing her to teleport to anywhere she can see within 30 feet. If her line of effect is blocked, even by an invisible barrier, or if this would somehow place her inside a solid object, the ability fails. 
 
@@ -971,7 +970,7 @@ If a monk already has uncanny dodge from a different class, she stacks those lev
 
 \cf{Mnk}{Improved Bodily Perfection} At 13th level, the bonus granted by the monk's bodily perfection ability increases to \plus2.
 
-\cf{Mnk}{Ki Power (Su)} At 14th level, the monk gains an additional \ki power ability. She adds the abilities below to the list of abilities she can choose.
+\cfnl{Ki Power (Su)} At 14th level, the monk gains an additional \ki power ability. She may choose any of the abilities below in addition to any \ki power ability she could have chosen earlier.
 
 \subcf{Empty Step} As a swift action, the monk can step into the Ethereal Plane for 1 round, as the \spell{ethereal jaunt} spell.
 
@@ -981,7 +980,7 @@ If a monk already has uncanny dodge from a different class, she stacks those lev
 
 \cf{Mnk}{Perfect Mind (Ex)} At 16th level, the monk becomes immune to hostile mind-affecting effects.
 
-\cf{Mnk}{Ki Power (Su)} At 17th level, the monk gains an additional \ki power ability. She adds the abilities below to the list of abilities she can choose.
+\cfnl{Ki Power (Su)} At 17th level, the monk gains an additional \ki power ability. She may choose any of the abilities below in addition to any \ki power ability she could have chosen earlier.
 
 \subcf{Moment of Perfection} As an immediate action, the monk can align herself with the universe to achieve a single moment of perfection. She can add her monk level as an enhancement bonus to any one attack roll, opposed skill or ability check, or saving throw, or to her AC against any one attack, as if calling upon the effect of a \spell{moment of prescience} spell with a caster level equal to her monk level. After using this ability, she must wait five minutes before she can use it again.
 
@@ -994,7 +993,7 @@ If a monk already has uncanny dodge from a different class, she stacks those lev
 \cf{Mnk}{True Perfection} At 20th level, a monk becomes inhumanly perfect. If she rolls less than a 5 on any d20 roll, it is treated as a 5. In addition, she is treated as an outsider rather than as a humanoid for the purpose of spells and magical effects whenever doing so is advantageous to her.
 
 \subsubsection{Ex-Monks}
-A monk who becomes nonlawful cannot gain new levels as a monk, but retains all monk abilities.
+A monk who becomes chaotic cannot gain new levels as a monk, but retains all monk abilities.
 
 \subsection{Paladin}
 \begin{dtable*}
@@ -1042,7 +1041,7 @@ simple weapons,  any two other weapon groups,  all types of armor (heavy, medium
 
 At 5th level, she may simultaneously detect chaotic alignments, as the \spell{detect chaos} spell.
 
-\cf{Pal}{Smite (Su)} As part of an attack action, a paladin may attempt to smite evil with one normal melee attack. She adds her Charisma (if positive) as a circumstance bonus to attack. If she hits, the paladin deals gains a circumstance bonus to damage equal to her paladin level and gains a special effect.  A paladin can smite evil a number of times per day equal to half the paladin's class level \add the paladin's Charisma, but may only do so once per round.
+\cf{Pal}{Smite (Su)} As part of an attack action, a paladin may attempt to smite evil with one normal melee attack. She adds her Charisma (if positive) as a circumstance bonus to attack. If she hits, the paladin gains a circumstance bonus to damage on the attack equal to her paladin level. A paladin can smite evil a number of times per day equal to half the paladin's class level \add the paladin's Charisma, but may only do so once per round.
 
 If the paladin smites a creature that is not evil, the smite attack deals no damage at all (not even normal weapon damage), but the use of the ability is still spent.
 
@@ -1112,11 +1111,11 @@ A paladin's selection of spells is limited. A paladin begins play knowing no spe
 
 \cf{Pal}{Aura of Resolve (Su)} At 6th level, the paladin becomes immune to charm effects. Each ally within 10 feet of her gains a \plus4 enhancement bonus on saving throws against charm effects.
 
-\cf{Pal}{Holy Ward (Sp)} A paladin is first and foremost a defender of her allies, and relies upon \spell{shield other} to defend her allies against harm from threats she cannot block with her skill at arms. A paladin of 6th level or higher who spends at least 10 points of healing from her lay on hands ability in a single round can bestow a \spell{shield other} effect on the healed ally, using her paladin level as her caster level.
+\cf{Pal}{Holy Ward (Sp)} At 6th level, the paladin gains the ability to take damage for her allies. If she spends at least 10 points of healing from her lay on hands ability at once, she can bestow a \spell{shield other} effect on the subject in addition to the healing, using her paladin level as her caster level.
 
 \cf{Pal}{Smite Chaos (Su)} At 7th level, the paladin gains the ability to smite chaotic creatures as well as evil creatures with her smite ability, but she must choose which to smite before making the attack. If the paladin attempts to smite a chaotic creature, and that creature is not chaotic, the smite attack deals no damage at all (not even normal weapon damage), but the use of the ability is still spent.
 
-\cfnl{Pal}{Improved Smiting (Su)} At 8th level, the paladin gains an additional improved smiting ability, and adds the following improved smiting abilities to the list of those that can be selected.
+\cfnl{Improved Smiting (Su)} At 8th level, the paladin gains an additional improved smiting ability, and adds the following improved smiting abilities to the list of those that can be selected.
 \subcf{Dazing} The paladin's smite shatters her foe's ability to concentrate. A creature struck by the smite must make a Fortitude save to avoid being dazed for one round.
 \subcf{Impeding} The paladin's smite traps her foe in place, unable to escape her wrath. A creature struck by the smite must make a Reflex save to avoid having all its movement speeds reduced to 5 feet for one round.
 \subcf{Coercing} The paladin's smite forces her foe to join the cause of righteousness, if only for a moment. A creature struck by the smite must make a Will save or else be affected by a \spell{suggestion}, as the spell, of the paladin's choice. The effect lasts for one round.
@@ -1129,7 +1128,7 @@ A paladin's selection of spells is limited. A paladin begins play knowing no spe
 
 No saving throw is allowed against this effect, and it cannot be dispelled, but a \spell{remove curse}, \spell{miracle}, or \spell{wish} spell can remove it. The paladin can use this ability an additional time per day at 13th level and every odd level thereafter. A paladin should be careful when using this ability, as persecution of the innocent can lead overzealous paladins to fall.
 
-\cfnl{Pal}{Improved Smiting (Su)} At 11th level, the paladin gains an additional improved smiting ability, and adds the following improved smiting ability to the list of those that can be selected.
+\cfnl{Improved Smiting (Su)} At 11th level, the paladin gains an additional improved smiting ability, and adds the following improved smiting ability to the list of those that can be selected.
 \subcf{Axiomatic} The paladin's smite is filled with exceptionally lawful divine energy. The attack ignores all damage reduction of chaotic creatures. Aberrations and chaotic outsiders take extra damage equal to twice the paladin's level.
 
 \cf{Pal}{Aura of Protection (Su)} At 12th level, the paladin continuously radiates a \spell{magic circle against evil}, as the spell.
@@ -1138,14 +1137,14 @@ No saving throw is allowed against this effect, and it cannot be dispelled, but 
 
 \cf{Pal}{Glory of the Martyr (Su)} At 14th level, if the paladin dies while fighting evil or protecting her allies, her fallen body erupts in a burst of positive energy, granting all her allies within 100 feet the benefit of a \spell{heal} spell.
 
-\cfnl{Pal}{Improved Smiting (Su)} At 14th level, the paladin gains an additional improved smiting ability, and adds the following improved smiting ability to the list of those that can be selected.
+\cfnl{Improved Smiting (Su)} At 14th level, the paladin gains an additional improved smiting ability, and adds the following improved smiting ability to the list of those that can be selected.
 \subcf{Dispelling} The paladin's smite strips away her foe's magical protections. A creature struck by the smite is subject to a targeted \spell{dispel magic} with a bonus equal to the paladin's level \add Charisma.
 
 \cf{Pal}{Aura of Warding (Su)} At 15th level, the paladin continuously radiates a \spell{lesser globe of invulnerability}, as the spell. The effect travels with the paladin.
 
-\cf{Pal}{Mighty Aura (Su)} At 16th level, the radius of a paladin's auras expands to 20 feet.
+\cf{Pal}{Mighty Aura (Su)} At 16th level, the radius of a paladin's aura abilities expands to 20 feet. Any paladin ability with ``aura'' in the name is considered an aura ability.
 
-\cfnl{Pal}{Improved Smiting (Su)} At 17th level, the paladin gains an additional improved smiting ability, and adds the following improved smiting ability to the list of those that can be selected.
+\cfnl{Improved Smiting (Su)} At 17th level, the paladin gains an additional improved smiting ability, and adds the following improved smiting ability to the list of those that can be selected.
 \subcf{Brilliant} The paladin's smite cannot be turned aside by mortal defenses. The smite is made against the enemy's touch armor class.
 
 \cf{Pal}{Greater Aura of Warding (Su)} At 18th level, the paladin radiates a \spell{globe of invulnerability}, as the spell, instead of a \spell{lesser globe of invulnerability}. The effect continues to travel with the paladin.
@@ -1153,6 +1152,9 @@ No saving throw is allowed against this effect, and it cannot be dispelled, but 
 \cf{Pal}{Martyr's Retribution (Su)} At 19th level, if the paladin dies while fighting evil or protecting her allies, she can choose to make the explosion of positive energy from her glory of the martyr ability painful to her foes. If she does, her body is almost completely consumed by holy power, preventing her from being raised with \spell{raise dead} and similar effects that require a body. This has two effects. First, a \spell{sunburst} spell immediately takes effect over the area where the paladin fell. Second, a \spell{storm of vengeance} spell begins to take effect, centered on the same area. The spell lasts for 10 rounds, and the lightning strikes focus on the paladin's enemies. Both of these effects harm only the paladin's foes, and do no damage to her allies. However, her allies' vision is still impeded by the \spell{storm of vengeance}.
 
 \cf{Pal}{Greater Smite (Su)} At 20th level, the paladin can apply two improved smiting abilities to every smite attack she makes.
+
+\subsubsection{Ex-Paladins}
+A paladin who ceases to be lawful good, who willfully commits an evil act, or who grossly violates the code of conduct loses all paladin spells and supernatural paladin class features. She may not progress any farther in levels as a paladin. She regains her abilities and advancement potential if she atones for her violations (see the \spell{atonement} ritual), as appropriate.
 
 \subsection{Ranger}
 
@@ -1197,7 +1199,7 @@ All of the following are class features of the ranger.
 
 \cf{Rgr}{Weapon and Armor Proficiency}  A ranger is proficient with simple weapons, any two weapon groups, light and medium armor, and shields (except tower shields). He is also proficient with his choice of bows, crossbows, or thrown weapons.
 
-\cf{Rgr}{Quarry (Ex)} A ranger is a deadly hunter. As a swift action, a ranger may designate any foe he sees as his quarry. A ranger gains a \plus2 competence bonus to attack rolls, Perception checks, and Survival checks against his quarry. However, while a ranger is pursuing a quarry, he takes a \minus2 penalty on the same rolls against any target other than his quarry. A ranger may give up pursuing a quarry at any time. He may not have more than one quarry at once; if he designates a new quarry, the old target is no longer considered his quarry. If the ranger does not see his quarry for more than a week, it is no longer considered his quarry.
+\cf{Rgr}{Quarry (Ex)} A ranger is a deadly hunter. As a swift action, a ranger may designate any foe he sees as his quarry. A ranger gains a \plus2 competence bonus to attack rolls, Perception checks, and Survival checks against his quarry. However, while a ranger is pursuing a quarry, he takes a \minus2 penalty on the same rolls against any target other than his quarry. A ranger may give up pursuing a quarry as a free action. He may not have more than one quarry at once; if he designates a new quarry, the old target is no longer considered his quarry. If the ranger does not see his quarry for more than a week, it is no longer considered his quarry.
 
 \par A ranger can designate a quarry a number of times per day equal to 1 \add half his Wisdom, to a maximum number of uses per day equal to his ranger class level. The ranger's quarry bonus improves to \plus3 at 8th level, to \plus4 at 14th level, and finally to \plus5 at 20th level.
 
@@ -1211,12 +1213,12 @@ All of the following are class features of the ranger.
 \cf{Rgr}{Favored Terrain (Ex)} At 2nd level, a ranger becomes particularly attuned to certain kinds of terrain. He chooses one kind of terrain to select as a favored terrain from the list below. Usually, rangers favor their home terrain, but a ranger may choose any kind of terrain that he has personally experienced at least once. At 6th level, and every four levels thereafter, the ranger gains an additional favored terrain.
 \par While in a favored terrain, a ranger gains a \plus2 competence bonus to Perception, Stealth, and Survival checks. If he desires, he may leave no trace of his passage, causing attempts to track him to take a \minus20 penalty. In addition, his experience with his favored terrain grants the ranger a single ability, regardless of whether he is currently in that terrain or not. The options for favored terrains are listed below.
 \subcf{Aquatic} The ranger gains a swim speed equal to his base land speed. If he already has a swim speed, he gains a \plus10 competence bonus to his swim speed.
-\subcf{Cold} The ranger gains cold damage reduction 5.
+\subcf{Cold} The ranger gains cold damage reduction equal to his ranger level. This allows him to ignore the first points of cold damage he would take each round.
 \subcf{Desert} The ranger becomes immune to heat effects and exhaustion. Anything that would make him exhausted makes him fatigued instead.
 \subcf{Forest} The ranger gains Skill Focus (Stealth) as a bonus feat.
-\subcf{Mountains} The ranger gains a climb speed equal to his base land speed. If he already has a climb speed, he gains a \plus10 competence bonus to his climb speed.
+\subcf{Mountains} The ranger gains Skill Focus (Climb) as a bonus feat, and takes half damage from falling damage.
 \subcf{Plains} The ranger gains Skill Focus (Perception) as a bonus feat.
-\subcf{Swamp} 
+\subcf{Swamp} The ranger can move at full speed in water-related difficult terrain.
 \subcf{Underground} The ranger gains Blind-Fight as a bonus feat.
 \subcf{Urban} The ranger gains Skill Focus (Persuasion) as a bonus feat.
 
@@ -1228,9 +1230,10 @@ All of the following are class features of the ranger.
 
 \subcf{Fast Movement} The ranger gains a \plus10 foot competence bonus to movement speed.
 
-\subcf{Favored Enemy} The ranger increases his quarry bonus by \plus2 against creatures of a particular kind. The possible creature options are listed below.
+\subcf{Favored Enemy} The ranger increases his quarry bonus by \plus2 against creatures of a particular kind. The possible creature options are listed on \trefnp{Favored Enemy Options}. The ranger may select this lore multiple times, choosing a different favored enemy each time.
 
 \begin{dtable}
+    \lcaption{Favored Enemy Options}
 \begin{tabularx}{\columnwidth}{X X}
 Animals and vermin & Humanoids (uncivilized) \\
 Dragons & Oozes and plants \\
@@ -1258,12 +1261,9 @@ The ranger must have the combat style lore to select this lore. The benefits of 
 
 \cf{Rgr}{Tenacious Hunter (Ex)} At 5th level, a ranger's ability to pursue his quarry improves. He adds his quarry bonus as a competence bonus to his dodge modifier and saving throws against attacks that his quarry makes.
 
-\cf{Rgr}{Guide (Ex)} At 7th level, whenever the ranger is are in his favored terrain, all allies that can see and hear the ranger gain his favored terrain bonuses in that terrain as well.
+\cf{Rgr}{Guide (Ex)} At 7th level, whenever the ranger is in his favored terrain, all allies that can see and hear the ranger gain his favored terrain bonuses in that terrain as well.
 
 \cf{Rgr}{Darkvision (Ex)} At 8th level, a ranger's sight improves again, and he gains the ability to see even when there is no light at all. He gains darkvision out to 60 feet, as the dwarf ability. If he already has darkvision, he increases its range by 60 feet.
-
-\cf{Rgr}{Greater Combat Style (Ex)} At 10th level, a ranger's aptitude in combat improves again. He is treated as having the Ambidexterity feat (\pref{Ambidexterity [Combat]}) and the Manyshot feat (\pref{Manyshot [Combat]}), even if he does not have the normal prerequisites for those feats.
-\par As before, the benefits of the ranger's chosen style apply only when he wears light or no armor. He loses all benefits of his combat style when wearing medium or heavy armor.
 
 \cf{Rgr}{Favored Terrain (Planar) (Ex)} After 10th level, a ranger may choose any plane as a favored terrain in addition to his normal options whenever he gains a new favored terrain. He is immune to any hostile planar effects from any plane he has chosen as favored terrain. In addition, he gains a \plus2 competence bonus to Knowledge checks relating to the plane and is always treated as trained in Knowledge (planar) for the purpose of such checks.
 
@@ -1271,17 +1271,17 @@ The ranger must have the combat style lore to select this lore. The benefits of 
 
 \cf{Rgr}{Advanced Ranger Lore} After 12th level, the ranger can choose an advanced ranger lore in place of a regular ranger lore. All advanced lore abilities are extraordinary abilities unless otherwise indicated. His options for advanced ranger lores are listed below.
 
-\subcf{Camouflage} The ranger can use the Hide skill in any of his favored terrains, even if the terrain does not grant cover or concealment.
+\subcf{Camouflage}\label{Camouflage} The ranger can use the Stealth skill to hide in any of his favored terrains, even if the terrain does not grant cover or concealment.
 
 \subcf{Combat Style Mastery} The ranger's abilities with traditional ranger combat styles reach their peak. When using a ranged weapon, he can take a move action to study the weak points of a foe within one range increment. If he does, the next attack he makes against that foe, if it is made in the same turn, is made as a ranged touch attack. When wielding two weapons at once, he gains the pounce ability, allowing him to take a full attack action at the end of a charge.
 
 The ranger must have the greater combat style lore to choose this lore. The benefits apply only if the ranger is wearing light or no armor.
 
-\subcf{Greater Combat Style} The ranger's abilities with traditional ranger combat styles improves again. He gains the Two-Weapon Rend and Manyshot feats if he meets the prerequisites. He must have the improved combat style lore to choose this lore. The benefits of this lore only apply if the ranger is wearing light or no armor.
+\subcf{Greater Combat Style} The ranger's abilities with traditional ranger combat styles improves again. He gains the Two-Weapon Rend and Manyshot feats if he meets the prerequisites (see \pcref{Two-Weapon Rend} and \pcref{Manyshot}). He must have the improved combat style lore to choose this lore. The benefits of this lore only apply if the ranger is wearing light or no armor.
 
-\subcf{Hail of Arrows} A number of times per day equal to 1 \add half the ranger's Constitution, he may take a full-round action to fire a single arrow at every enemy within a \areamed radius. All enemies must be within one range increment of the ranger. This lore can be used with any ranged weapon that the ranger is capable of making a full attack with.
+\subcf{Hail of Arrows} A number of times per day equal to 1 \add half the ranger's Constitution, he may take a full-round action to fire a single projectile at every enemy within a \areamed radius. All enemies must be within one range increment of the ranger. This lore can be used with any projectile weapon that the ranger can reload as a free action.
 
-\subcf{Improved Evasion} The ranger's ability to avoid damage improves. He still takes no damage on a successful Reflex saving throw against attacks, but henceforth he takes only half damage on a failed save. A helpless ranger does not gain the benefit of improved evasion.
+\subcf{Improved Evasion} The ranger's ability to avoid damage improves. He still takes no damage on a successful Reflex saving throw against attacks, but henceforth he takes only half damage on a failed save. A helpless ranger does not gain the benefit of improved evasion. He must have the evasion lore to choose this lore. 
 
 \subcf{Storm of Blades} A number of times per day equal to 1 \add half the ranger's Constitution, he may take a standard action to make a single melee attack against every enemy he threatens.
 
@@ -1293,17 +1293,19 @@ The ranger must have the greater combat style lore to choose this lore. The bene
 \subcf{Cold} The ranger gains cold damage reduction 30.
 \subcf{Desert} The ranger becomes immune to fatigue.
 \subcf{Forest} The ranger may use his wild speech ability to communicate with plants, as the druid ability.
-\subcf{Mountains} The ranger is always treated as if he had a running start when jumping. In addition, he takes only half damage from falling damage.
+\subcf{Mountains} The ranger gains a climb speed equal to his land speed. If he already has a climb speed, he gains a \plus10 foot competence bonus to his climb speed.
 \subcf{Plains} The ranger gains a \plus10 competence bonus to his land speed.
 \subcf{Swamp} The ranger becomes immune to nausea.
 \subcf{Underground} The ranger increases the range of his darkvision and blindsense by 60 feet.
-\subcf{Urban} The ranger can treat cities as being natural terrain for the purpose of his camouflage and hide in plain sight abilities.
+\subcf{Urban} The ranger can use the Stealth skill to hide behind creatures granting him active cover, just like he can hide behind passive cover. 
 
 \cf{Rgr}{Blindsight (Ex)} At 16th level, a ranger gains the ability to ``see'' perfectly without his eyes in a 60 foot radius around him. With this ability, he can fight just as well with his eyes closed as with them open. If he already has the blindsight ability, he increases its range by 60 feet.
 
 \cf{Rgr}{Unerring Hunter (Su)} At 17th level, a ranger's ability to hunt down his quarry improves to supernatural levels. Once per day, the ranger may concentrate for a full round to duplicate the effects of the \spell{discern location} spell targeted at his quarry.
 
-\cf{Rgr}{Hide in Plain Sight (Ex)} While in any sort of natural terrain, a ranger of 17th level or higher can use the Hide skill even while being observed. He still needs cover or concealment to hide.
+\cf{Rgr}{Hide in Plain Sight (Ex)} While in any of his favored terrains, a ranger of 17th level or higher can use the Stealth skill to hide even while being observed, taking a \minus5 penalty to the Stealth check. He still needs cover or concealment to hide.
+
+If the ranger has the Camouflage ranger lore (see \pcref{Camouflage}), this allows the ranger to attempt to hide in almost any situation, as long as he is in one of his favored terrains.
 
 \cf{Rgr}{Perfect Stride (Su)} At 19th level, a ranger's ability to surpass obstacles becomes unparalleled. He constantly acts as if he were under the effect of a \spell{freedom} spell, except that it does not allow him to act normally underwater.
 
@@ -1370,8 +1372,6 @@ A rogue can sneak attack only living creatures with discernible anatomies -- ooz
 
 \subcf{Kip Up} The rogue can stand up from a prone position as a swift action. The rogue must be in light or no armor to perform this trick.
 
-\subcf{Knowledgeable Strike} The rogue may sneak attack almost any foe she identifies with a successful Knowledge check (see the Knowledge skill, \pref{Knowledge (Int; Trained Only)}). She still may not sneak attack incorporeal foes, even if she successfully identifies them.
-
 \subcf{Ledge Walker} The rogue may move along narrow surfaces at full speed using the Acrobatics skill without penalty. In addition, she is not flat-footed when using Acrobatics to move along narrow surfaces.
 
 \subcf{Lingering Poison} When the rogue applies poison to a weapon, it lasts for twice as many doses as it normally would.
@@ -1382,13 +1382,13 @@ A rogue can sneak attack only living creatures with discernible anatomies -- ooz
 
 \subcf{Rogue Crawl} While prone, the rogue can move at half speed. This movement provokes attacks of opportunity as normal.
 
-\subcf{Skill Feat} The rogue gains a bonus skill feat (see Feats). A rogue can select this trick multiple times.
+\subcf{Skill Feat} The rogue gains a skill feat she meets the prerequisites for (see Feats). This trick can be selected multiple times.
 
 \subcf{Standing Leap} The rogue is always treated as if she had a running start when making Athletics checks.
 
 \subcf{Swift Poisoner} The rogue can apply poison to a weapon as a move action instead of a standard action.
 
-\subcf{Trapfinding} As a full-round action, a rogue may move up to 10 feet while searching every square within 10 feet of her for traps. If she detects a trap partway through her movement, she may immediately stop moving.
+\subcf{Trapfinding} As a full-round action, a rogue may move up to 10 feet while searching every square within 10 feet of her for traps with the Perception skill (see \pcref{Search}). If she detects a trap partway through her movement, she may immediately stop moving.
 
 \subcf{Trap Sense} Whenever the rogue comes within 10 feet of a trap, she receives an immediate Perception check to notice the trap. This check should be made secretly, so the rogue does not know whether she failed to notice a trap.
 
@@ -1402,23 +1402,23 @@ If a rogue already has uncanny dodge from a different class, she stacks those le
 
 \par Tricks marked with an asterisk are called ambush tricks. Ambush tricks add additional effects to the rogue's ambush attacks. If an ambush trick allows a saving throw, the DC is 10 \add the rogue's level \add the rogue's Intelligence. The rogue chooses from the list of combat tricks below.
 
-\subcf{Brutal Ambush*} The rogue rolls d8s instead of d6s for her sneak attack dice on this attack.
+\subcf{Brutal Ambush*} The rogue rolls d8s instead of d6s for her sneak attack dice on this ambush attack.
 
-\subcf{Combat Feat} The rogue gains a combat feat (see Feats).
+\subcf{Combat Feat} The rogue gains a combat feat for which she qualifies (see Feats). This trick can be selected multiple times.
 
 \subcf{Distracting Attack} A foe damaged by the rogue's sneak attack takes a penalty on its Concentration checks equal to the rogue's Intelligence for 5 rounds.
 
 \subcf{Extended Precision} The rogue can make sneak attacks from up to 60 feet away.
 
-\subcf{Hamstring*} A foe damaged by this attack has its speed with a single movement mode halved for 5 rounds. Despite the name, this can be used on foes who do not have hamstrings, though it only affects ground movement. Some forms of movement, such as magical flight, cannot be impeded by this attack.
+\subcf{Hamstring*} A foe damaged by this ambush attack has its land speed halved for 5 rounds. Despite the name, this can be used on foes who do not have hamstrings.
 
-\subcf{Merciful Blows} The rogue suffers no penalty to attack rolls when making attacking for nonlethal damage, and can deal her full sneak attack damage.
+\subcf{Merciful Blows} The rogue suffers no penalty to attack rolls when attacking for nonlethal damage, and can deal her full sneak attack damage.
 
 \subcf{Poison Use} The rogue cannot accidentally poison herself when applying poison to an object.
 
 \subcf{Swift Poisoner} The rogue can apply poison to a weapon she is holding as a swift action.
 
-\subcf{Tricky Maneuver} When performing maneuvers against foes she would be able to sneak attack, the rogue gains a circumstance bonus to attack equal to the number of sneak attack dice she would normally roll. The benefits of this trick apply even against foes immune to critical hits.
+\subcf{Tricky Maneuver} When performing a maneuver against a foe she would be able to sneak attack, the rogue gains a circumstance bonus to attack equal to the number of sneak attack dice she would roll. Ambush attack dice are not included, and performing a tricky maneuver does not prevent the rogue from executing an ambush attack against the foe. The benefits of this trick apply even against foes immune to critical hits.
 
 \cf{Rog}{Improved Uncanny Dodge (Ex)} At 6th level and higher, a rogue can no longer be overwhelmed as easily; she can react to multiple opponents as easily as she can react to a single attacker. The rogue is always treated as being threatened by two fewer creatures than she actually is for the purpose of determining overwhelm penalties. 
 
@@ -1426,13 +1426,13 @@ If a rogue already has uncanny dodge from a different class, she stacks those le
 
 \cf{Rog}{Greater Uncanny Dodge (Ex)} At 10th level and higher, a rogue can no longer be overwhelmed, regardless of the number of foes surrounding her.
 
-\cf{Rog}{Advanced Skill Trick} At 11th level, and every three levels thereafter, the rogue may choose any of the following advanced skill tricks in addition to her other options for skill tricks. All advanced skill tricks are (Ex) abilities unless otherwise noted.
+\cf{Rog}{Advanced Skill Trick} At 11th level, and every three levels thereafter, the rogue adds the options below to the list of skill tricks she can choose from. All advanced skill tricks are (Ex) abilities unless otherwise noted.
 
 \subcf{Disable Spell (Su)} The rogue can use Devices to dispel any currently active spell as if it were a magical trap. Doing so requires a full-round action that provokes attacks of opportunity. The DC to disable the spell is equal to 10 \add the caster level of the spell \add the level of the spell. If the spell is not subject to \spell{dispel magic}, it cannot be dispelled using this ability.
 
 \subcf{Exemplar} The rogue must choose one skill that she already has Skill Focus in. The skill must be on the rogue class skill list. She gains a \plus6 competence bonus with the skill.
 
-\subcf{Hide in Plain Sight} The rogue can use the Hide even while being observed. She still needs cover or concealment to hide.
+\subcf{Hide in Plain Sight} The rogue can use the Stealth skill to hide even while being observed. She still needs cover or concealment to hide.
 
 \subcf{Rogue's Luck} Three times per day, the rogue can reroll any skill check. A single roll can never be rerolled more than once.
 
@@ -1440,17 +1440,17 @@ If a rogue already has uncanny dodge from a different class, she stacks those le
 
 \cf{Rog}{Jack of All Trades (Ex)} At 12th level, a rogue treats all skills as class skills.
 
-\cf{Rog}{Advanced Combat Trick} At 13th level, and every three levels thereafter, the rogue may choose any of the following advanced combat tricks in addition to her other options for combat tricks. All advanced combat tricks are (Ex) abilities unless otherwise noted.
+\cf{Rog}{Advanced Combat Trick} At 13th level, and every three levels thereafter, the rogue may adds the options below to the list of combat tricks she can choose from. All advanced combat tricks are (Ex) abilities unless otherwise noted.
 
-\subcf{Ambush Strike} When the rogue uses a Strike feat (see \pcref{Strike Feats}) on an ambush attack, she may add her Intelligence to the saving throw DC against the strike.
+\subcf{Ambush Strike*} If the rogue uses a Strike feat (see \pcref{Strike Feats}) on this ambush attack, she may add her Intelligence to the saving throw DC against the strike.
 
-\subcf{Assassination} To use this ability, the rogue must spend a full round studying a foe has not noticed her and who is not in combat. If she make a melee ambush attack on her next turn against that target, her attack deals maximum damage. If the target becomes aware of her presence before she attacks, this ability has no benefit.
+\subcf{Assassination} To use this ability, the rogue must spend a full round studying a foe that has not noticed her and who is not in combat. If she make a melee ambush attack on her next turn against that target, her attack deals maximum damage. If the target becomes aware of her presence before she attacks, this ability has no benefit.
 
-\subcf{Crippling Ambush} A rogue with this trick can ambush attack opponents with such precision that her blows weaken and hamper them. An opponent damaged by one of her ambush attacks takes 2 points of Strength damage. Ability points lost to damage return on their own at the rate of 1 point per day for each damaged ability. If the rogue has no ambush attacks, she may use crippling strike as an ambush attack.
+\subcf{Crippling Ambush*} A foe damaged by this ambush attack takes 2 points of Strength damage.
 
-\subcf{Defensive Roll}  The rogue can roll with a potentially lethal blow to take less damage from it than she otherwise would.  A number of times per day equal to half the rogue's Wisdom, when she would be reduced to 0 or fewer hit points by damage in combat (from a weapon or other blow, not a spell or special ability), the rogue can attempt to roll with the damage. To use this ability, the rogue must attempt a Reflex saving throw (DC = damage dealt). If the save succeeds, she takes only half damage from the blow, and the damage is nonlethal; if it fails, she takes full damage. She must be aware of the attack and able to react to it in order to execute her defensive roll -- if she is flat-footed, she can't use this ability. Since this effect would not normally allow a character to make a Reflex save for half damage, the rogue's evasion ability does not apply to the defensive roll.
+\subcf{Defensive Roll} When the rogue would be reduced to 0 hit points by physical damage, she can attempt to roll the blow to reduce the damage. To use this ability, the rogue must attempt a Reflex saving throw (DC = damage dealt). If the save succeeds, she takes only half damage from the blow, and the damage is nonlethal; if it fails, she takes full damage. This ability cannot be used while flat-footed, and the evasion and improved evasion abilities do not help in any way. This ability can be used number of times per day equal to 1 \add half the rogue's Wisdom (minimum 1).
 
-\subcf{Dispelling Ambush (Su)*} A foe damaged by this attack is affected by a targeted \spell{dispel magic}. The caster level for this ability is equal to the rogue's level \add Intelligence.
+\subcf{Dispelling Ambush (Su)*} A foe damaged by this ambush attack is affected by a targeted \spell{dispel magic}. The caster level for this ability is equal to the rogue's level \add Intelligence.
 
 \subcf{Distant Precision} The rogue has no range limit on her sneak attacks. A rogue must have selected the extended precision combat trick before choosing this trick.
 
@@ -1712,7 +1712,7 @@ A spellwarped is proficient with simple weapons, any two weapon groups, light an
 
 \cf{Spl}{Permanent Surge of Power (Su)} At 19th level, the spellwarped can maintain the full power of his innate magic without limit. He can gain the effects of his surge of power indefinitely. He may toggle the ability on or off as a swift action at will, without expending spellwarp points. This does not allow him to activate his mass surge of power ability at will, and his allies only gain the benefits for 5 rounds.
 
-\ssecfake{Spellwarped Powers}
+\ssecfake{Spellwarped Powers}\label{Spellwarped Powers}
 As the spellwarped increases in level, he may choose more advanced spellwarped powers, listed below.
 
 \subsubsection{Alteration Powers}
