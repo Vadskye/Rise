@@ -85,8 +85,6 @@ This is a measure of how much effort it takes to wield a weapon in combat. A wea
 
 \parhead{Light} A light weapon can be used with more finesse than a medium weapon. The wielder can add either his Dexterity or his Strength to attack rolls with light weapons, whichever he prefers. In addition, light weapons are easier to use in the off-hand or while grappling.
 
-An unarmed strike is considered to be a light weapon.
-
 \parhead{Medium} A medium weapon can be used in one hand. It is difficult, but possible, to wield a medium weapon in your off-hand. You can also hold a medium weapon in two hands. Changing grips to hold it in one hand or two hands is a swift action. 
 
 \parhead{Heavy} Two hands are required to wield a heavy weapon. You can hold it in one hand, but while doing so you cannot defend yourself with it. This usually causes you provoke an attack of opportunity (see \pcref{Attacks of Opportunity}). Changing grips to hold it in one hand or two hands is a swift action.
@@ -146,6 +144,11 @@ Ranged weapons are used to make attacks against distant foes within the range of
 
 \subsection{Drawing and Sheathing Weapons}\label{Drawing and Sheathing Weapons}
 Sheathing any weapon is a move action. The time it takes to draw a weapon depends on how encumbering the weapon is. Drawing a light weapon is a swift action, while drawing a medium or heavy weapon is a move action. Drawing a hidden weapon of any type is a standard action. 
+
+\subsection{Natural Weapons}\label{Natural Weapons}
+Every creature can attack with its body using an unarmed strike. Many monsters can attack more effectively with specific parts of their body, such as teeth and claws. These are called natural weapons. You are automatically proficient with any natural weapons you possess. Most humanoids possess no natural weapons other than an unarmed strike. Natural weapons are described on \tref{Natural Weapons}.
+
+A creature with multiple natural weapons of the same type can designate one as a primary attack and one as a secondary attack, allowing it to fight with both at once (see \pcref{Two-Weapon Fighting}). You are only considered to have one unarmed strike, so you cannot dual-wield with an unarmed strike (but see the unarmed warrior monk ability, \pref{Mnk:Unarmed Warrior}).
 
 \subsection{Weapon Qualities}
 Here is the format for weapon entries (given as column headings on \trefnp{Weapons}, below).
@@ -288,8 +291,6 @@ Thrown weapons &&&&&&& \\
 \tind Sling & Light (Ranged) & 1d4 & \mult2 & 50 ft. & Bludgeoning & 2 gp & 0 lb. \\
 \tind Bullets, sling (20) & \x & \x & \x & \x & \x & 1 gp & 5 lb. \\
 
-Weaponlike Spells\fn{6} &&&&&&&\\
-
 Unarmed weapons &&&&&&&\\
 \tind Claw Sheath & \x & \x & \x & \x & \x & 50 gp & 3 lb. \\
 \tind Gauntlet & Light & 1d3 & \mult2 & \x & Bludgeoning & 2 gp & 1 lb. \\
@@ -335,12 +336,25 @@ Thrown weapons &&&&&&& \\
 Unarmed weapons &&&&&&&\\
 \end{tabularx}
 1 Weight figures are for Medium weapons. A Small weapon weighs half as much, and a Large weapon weighs twice as much. \\
-2 When two types are given, the weapon is both types if the entry specifies ``and," or either type (player's choice at time of attack) if the entry specifies ``or." \\
+2 When two types are given, the weapon is both types if the entry specifies ``and," or either type (attacker's choice) if the entry specifies ``or." \\
 3 The weapon deals nonlethal damage rather than lethal damage. \\
 4 Reach weapon. \\
 5 Double weapon. \\
 6 Not actually a weapon group, but can be treated as one for the purpose of feats and abilities (like Weapon Focus).
 \end{dtable!*}
+
+\begin{dtable!*}
+    \lcaption{Natural Weapons}
+    \begin{tabularx}{\textwidth}{l c c c c >{\lcol}X}
+        \thead{Natural Weapons} & \thead{Encumbrance} & \thead{Dmg} & \thead{Critical} & \thead{Range Increment} & \thead{Type\footnotetemp{2}} \\
+        Bite & Medium & 1d8 & \mult2 & \x & Piercing and bludgeoning \\
+        Claw & Light & 1d6 & \mult2 & \x & Slashing and piercing \\
+        Slam & Medium & 1d8 & \mult2 & \x & Bludgeoning \\
+        Unarmed Strike & Light & 1d3\fn{1} & \mult2 & \x & Bludgeoning \\
+    \end{tabularx}
+    1 This attack deals nonlethal damage.
+\end{dtable!*}
+
 
 \subsection{Weapon Descriptions}
 Weapons found on \trefnp{Weapons} that have special options for the wielder ("you") are described below. Splash weapons are described under Special Substances and Items.
