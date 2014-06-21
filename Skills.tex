@@ -696,14 +696,16 @@ You can notice inconsistencies in illusion spells. The DC is equal to the save D
 
 If the illusion is completely missing a sense that should logically be present, such as a \spell{silent image} of people in armor, the DC to identify the illusion with that sense is lowered by 10.
 
-\subsubsection{Notice Event}
-You can notice events around you. The DC depends on the sense used and the obviousness of the event, as described on tables below. Success means you notice something, but you don't know any details -- only its general direction. For every 5 points by which you beat the DC, you learn an additional piece of information about the event, such as what caused it or its precise location. Failure means you don't notice anything.
-
 \subsubsection{Identify Disguise}
 You can identify disguises on other creatures. The DC is equal to the Disguise check result used to create the disguise. Success means you know that the creature is disguised. If you succeed by 10 or more, you can also discern the creature's true appearance beneath the disguise. After making a check to identify a disguise on a particular creature, you cannot make another check to identify the same disguise on that creature for one hour.
 
 \subsubsection{Identify Forgery}
 You can identify forgeries. The DC to identify a forgery is equal to the Craft check result used to make the item. Success indicates that you correctly identify whether the item is a forgery or not. Failure indicates that you are unsure. Failure by more than 10 indicates that you incorrectly identify the item, concluding that a forgery is genuine or a genuine item is a forgery. The check is made secretly, so you can't be sure how good the result is.
+
+\subsubsection{Notice Creatures and Events}
+You can notice creatures and events around you. The DC depends on the sense used and the obviousness of the event, as described on tables below. Success means you notice something, but you don't know any details -- only its general direction. For every 5 points by which you beat the DC, you learn an additional piece of information, such as what caused the event or the location of the creature. Failure means you don't notice anything.
+
+This can be used to determine the precise location of a creature or object, even if you can't see it. The DC to identify the location is equal to the DC to notice the creature or object using the appropriate sense \add 5 (since you need to learn an additional piece of information).
 
 \subsubsection{Read Lips}
 You can make a DC 15 sight-based Perception check to read a creature's lips. You must be able to understand the language spoken. Success means you can understand the general content of the message, but not the exact words. Success by 5 or more means you understand the exact words. Failure means you don't understand the message. Failure by 10 or more means you draw an incorrect conclusion about the message.
@@ -720,14 +722,14 @@ The DC to notice an invisible creature with sight is 20 higher than normal. Noti
 \begin{dtable}
     \lcaption{Sight-based DCs}
     \begin{tabularx}{\columnwidth}{X l}
-        \thead{Situation} & \thead{DC} \\
-        Creature or object moving & \minus5\fn{1} \\
-        Creature or object standing still & 0\fn{1} \\
-        Creature trying to hide & Stealth check result \\ 
-        Hidden trap or secret door & Craft or Devices check result \add 10 \\
-        Magic trap & 25 \add double level of spell used to create trap \\
+        \thead{Situation} & \thead{Base DC\fn{1}} \\
+        Creature or object & 0 \\
+        Creature trying to hide & Stealth check result\fn{2} \\ 
+        Hidden trap, secret door, or mechanism & Craft or Devices check result \\
+        Magic trap & 25 \add double level of spell used to create trap\fn{2} \\
     \end{tabularx}
-    1 Add the creature or object's special size modifier \\
+    1 Always add any appropriate modifiers from \tref{Perception DC Modifiers} \\
+    2 Don't add size-based DC modifiers.
 \end{dtable}
 
 \parhead{Sound} The DC to hear a sound depends on the intensity of the sound, as shown on \trefnp{Sound-based DCs}, and other modifiers given at \trefnp{Perception DC Modifiers}.
@@ -737,31 +739,34 @@ Background noise can make it more difficult to notice sounds. If there is signif
 \begin{dtable}
     \lcaption{Sound-based DCs}
     \begin{tabularx}{\columnwidth}{X l}
-        \thead{Situation} & \thead{DC} \\
+        \thead{Situation} & \thead{Base DC\fn{1}} \\
         Creature shouting & \minus5\fn{1} \\
-        Creature talking normally or fighting & 0\fn{1} \\ 
-        Creature whispering & 10\fn{1} \\
-        Creature standing still & 15\fn{1} \\
-        Creature trying to be quiet & Stealth check result \\ 
+        Creature talking normally or fighting & 0 \\ 
+        Creature whispering & 10 \\
+        Creature standing still & 15 \\
+        Creature trying to be quiet & Stealth check result\fn{2} \\ 
     \end{tabularx}
-    1 Add the creature or object's special size modifier \\
+    1 Always add any appropriate modifiers from \tref{Perception DC Modifiers} \\
+    2 Don't add size-based DC modifiers.
 \end{dtable}
 
 \parhead{Scent} The DC to smell something depends on the intensity of the scent, as shown on \trefnp{Scent-based DCs}, and other modifiers given at \trefnp{Perception DC Modifiers}.
 
-The DCs given are for a creature with an ordinary sense of smell, like a human. A creature with an unusually keen sense of smell, like most animals, gains a \plus5 competence bonus to scent-based Perception checks. A creature with the scent ability, such as a dog, gains a \plus10 competence bonus to scent-based Perception checks.
+The DCs given are for a creature with an ordinary sense of smell, like a human. A creature with the scent ability, like most animals, gains a \plus10 competence bonus to scent-based Perception checks. Some creatures with extraordinary smelling abilities, such as dogs, gain a \plus20 competence bonus to scent-based Perception checks.
 
 Smell intensity can vary widely depending on the circumstances. In general, an unusually strong smell, such as a creature wearing perfume, has a DC which is 5 lower. An unusually weak smell, such as a creature who has just taken an unscented bath, has a DC which is 5 higher.
+
+Smells dissipate quickly with distance. Double the normal distance modifiers for scent-based perception checks.
 
 \begin{dtable}
     \lcaption{Scent-based DCs}
     \begin{tabularx}{\columnwidth}{X l}
-        \thead{Situation} & \thead{DC} \\
+        \thead{Situation} & \thead{Base DC\fn{1}} \\
         Strong scent (rotting flesh, pungent spices) & 0 \\
         Moderate scent (fresh food) & 5 \\
-        Living creature\fn{1} & 10 \\
+        Living creature & 10 \\
     \end{tabularx}
-    1 Add the creature's special size modifier \\
+    1 Always add any appropriate modifiers from \tref{Perception DC Modifiers} \\
 \end{dtable}
 
 \parhead{Other Senses} Other senses can exist, and creatures can make Perception checks to use those other senses appropriately.
@@ -772,6 +777,13 @@ All Perception checks share the same set of modifiers, in addition to certain mo
 \begin{dtable}
     \lcaption{Perception DC Modifiers}
     \begin{tabularx}{\columnwidth}{X l}
+        \thead{Distance} & \thead{DC Modifier\fn{1}} \\
+        Less than five feet away & \plus0 \\
+        Five feet away & \plus2 \\
+        Twenty feet away & \plus5 \\
+        A hundred feet away & \plus10 \\
+        Five hundred feet away & \plus15 \\
+        Half a mile away & \plus20 \\
         \thead{Number} & \thead{DC Modifier} \\
         One creature or object & \plus0 \\
         Two creatures or objects & \plus2 \\
@@ -779,13 +791,6 @@ All Perception checks share the same set of modifiers, in addition to certain mo
         Twenty creatures or objects & \plus10 \\
         A hundred creatures or objects & \plus15 \\
         Five hundred creatures or objects & \plus20 \\
-        \thead{Distance} & \thead{DC Modifier} \\
-        Less than five feet away & \plus0 \\
-        Five feet away & \plus2 \\
-        Twenty feet away & \plus5 \\
-        A hundred feet away & \plus10 \\
-        Five hundred feet away & \plus15 \\
-        Half a mile away & \plus20 \\
         \thead{Size} & \thead{DC Modifier} \\
         Fine & \plus16 \\
         Diminuitive & \plus12 \\
@@ -797,6 +802,7 @@ All Perception checks share the same set of modifiers, in addition to certain mo
         Gargantuan & \minus12 \\
         Colossal & \minus16 \\
     \end{tabularx}
+    1 Doubled for scent-based Perception checks.
 \end{dtable}
 
 \subsection{Perform (Cha)}
