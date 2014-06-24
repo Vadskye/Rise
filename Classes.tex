@@ -1389,25 +1389,25 @@ If a rogue already has uncanny dodge from a different class, she stacks those le
 \begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{7em} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
 \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} \\
 1st & \plus0 & \plus0 & \plus0 & \plus3 & Arcane invocation, Rapid Metamagic, versatile spellcaster \\
-2nd & \plus1 & \plus1 & \plus1 & \plus4     & Arcane invocation \\
+2nd & \plus1 & \plus1 & \plus1 & \plus4     & Arcane invocation, spellsurge \plus2 \\
 3rd & \plus1 & \plus1 & \plus1 & \plus5     & Expanded spell knowledge \\
-4th & \plus2 & \plus2 & \plus2 & \plus6     & Spellblend \\
+4th & \plus2 & \plus2 & \plus2 & \plus6     & Spellblend invocation \\
 5th & \plus2 & \plus2 & \plus2 & \plus7     & Expanded spell knowledge \\
-6th & \plus3 & \plus3 & \plus3 & \plus8     & \x \\
+6th & \plus3 & \plus3 & \plus3 & \plus8     & Spellsurge \\
 7th & \plus3 & \plus3 & \plus3 & \plus9     & Expanded spell knowledge \\
-8th & \plus4 & \plus4 & \plus4 & \plus10    & Improved spellblend \\
+8th & \plus4 & \plus4 & \plus4 & \plus10    & Defensive spellblend, spellsurge \plus3 \\
 9th & \plus4 & \plus4 & \plus4 & \plus11    & Expanded spell knowledge \\
-10th & \plus5 & \plus5 & \plus5 & \plus12    & \x  \\
+10th & \plus5 & \plus5 & \plus5 & \plus12    & Spellsurge \\
 11th & \plus5 & \plus5 & \plus5 & \plus13    & Expanded spell knowledge \\
-12th & \plus6/\plus1 & \plus6 & \plus6 & \plus14& Versatile spellblend \\
+12th & \plus6/\plus1 & \plus6 & \plus6 & \plus14& Offensive spellblend \\
 13th & \plus6/\plus1 & \plus6 & \plus6 & \plus15& Expanded spell knowledge \\
-14th & \plus7/\plus2 & \plus7 & \plus7 & \plus16& \x \\
+14th & \plus7/\plus2 & \plus7 & \plus7 & \plus16& Spellsurge, spellsurge \plus4 \\
 15th & \plus7/\plus2 & \plus7 & \plus7 & \plus17& Expanded spell knowledge \\
-16th & \plus8/\plus3 & \plus8 & \plus8 & \plus18 & Spellsurge \\
+16th & \plus8/\plus3 & \plus8 & \plus8 & \plus18 & Rapid spellblend \\
 17th & \plus8/\plus3 & \plus8 & \plus8 & \plus19 & Expanded spell knowledge \\
-18th & \plus9/\plus4 & \plus9 & \plus9 & \plus20 & \x \\
+18th & \plus9/\plus4 & \plus9 & \plus9 & \plus20 & Spellsurge \\
 19th & \plus9/\plus4 & \plus9 & \plus9 & \plus21 & Expanded spell knowledge \\
-20th & \plus10/\plus5 & \plus10& \plus10& \plus22 & Improved spellsurge \\
+20th & \plus10/\plus5 & \plus10& \plus10& \plus22 & Spellsurge \plus5 \\
 \end{tabularx}
 \end{dtable*}
 
@@ -1491,23 +1491,36 @@ A sorcerer's magic level is equal to his sorcerer level.
 
 \cf{Sor}{Arcane Invocation} All sorcerers master at least one arcane invocation. An arcane invocation allows a sorcerer to exert magical influence without expending the effort required to cast a spell. The sorcerer may choose to learn one invocation of her choice from the list of arcane invocations described in Chapter 11: Spells. At 2nd level, the sorcerer learns a second arcane invocation of his choice.
 
-\cf{Sor}{Rapid Metamagic} A sorcerer gains Rapid Metamagic as a bonus feat at 1st level, even if he does not meet the prerequisites.
+%\cf{Sorc}{Versatile Spellcaster (Ex)} A sorcerer's intuitive grasp of magic allows him to be flexible in his use of arcane energy. A sorcerer can use two sorcerer spell slots of the same level to use an ability requiring a sorcerer spell slot of one level higher. For example, Serric the sorcerer can use two 0th-level spell slots to cast a single 1st-level spell he knows.
 
-\cf{Sorc}{Versatile Spellcaster (Ex)} A sorcerer's intuitive grasp of magic allows him to be flexible in his use of arcane energy. A sorcerer can use two sorcerer spell slots of the same level to use an ability requiring a sorcerer spell slot of one level higher. For example, Serric the sorcerer can use two 0th-level spell slots to cast a single 1st-level spell he knows.
+\cf{Sor}{Spellsurge (Ex)} At 2nd level, a sorcerer learns how to alter how he casts spells by initiating a spellsurge. While in a spellsurge, he gains bonuses with some types of magic or aspects of spellcasting, but takes penalties to others. A spellsurge lasts for 5 rounds. A sorcerer can attempt to end a spellsurge as a swift action by making a Will save against a DC equal to 10 \add his caster level (including any bonuses or penalties from the spellsurge that affect all spells). Success means he ends the spellsurge, and failure means he is unable to return to normal.
+
+A sorcerer can initiate a spellsurge a number of times per day equal to his spellsurge bonus. In addition, any the value of numerical bonuses or penalties granted by a spellsurge are equal to the sorcerer's spellsurge bonus. Initially, his spellsurge bonus is \plus2. This allows him to use his spellsurge ability twice per day, granting a \plus2 bonuses and \minus2 penalties. At 8th, 14th, and 20th level, his spellsurge bonus increases by 1.
+
+At 6th level, and every 4 levels thereafter, the sorcerer learns an additional spellsurge. Some spellsurges have minimum sorcerer levels, as indicated before the name of the ability. The list of spellsurges is given below.
+
+\subcf{Brilliant Surge} The sorcerer gains a competence bonus to his caster level with light spells, but takes a penalty to his caster level with Illusion spells.
+\subcf{Empathic Surge} The sorcerer gains a competence bonus to caster level with mind-affecting spells, but takes a penalty to Will saves and to caster level with spells that deal damage.
+\subcf{Energetic Surge} The sorcerer gains a competence bonus to caster level with acid, cold, electricity, and fire spells, but takes a penalty to his caster level with other spells.
+\subcf{6th -- Focused Surge} The sorcerer gains a competence bonus to his concentration checks, but takes a penalty to his caster level with all spells.
+\subcf{6th -- Patient Surge} The sorcerer gains a competence bonus to his caster level with all spells, but all spells he casts require at least a full-round action to cast. This does not increase the casting time of spells with a casting time of a full-round action or longer.
+\subcf{10th -- Extending Surge} The sorcerer doubles the range on all his spells, but takes a penalty to his caster level with all spells.
+\subcf{10th -- Silent Surge} The sorcerer can cast spells as if they did not have verbal components, but takes a penalty to his caster level with all spells.
+\subcf{10th -- Stilled Surge} The sorcerer can cast spells as if they did not have somatic components, but takes a penalty to his caster level with all spells. 
+\subcf{14th -- Lifebound Surge} The sorcerer gains a competence bonus to his caster level with all spells, but takes 1 point of Constitution damage each time he casts a spell.
+\subcf{14th -- Lingering Surge} The sorcerer gains a competence bonus to his caster level with spells that have a non-instantaneous duration, but takes a penalty to caster level with spells that are instantaneous.
+\subcf{14th -- Resistant Surge} Whenever the sorcerer casts a spell, he gains spell resistance for 1 round. However, he takes a penalty to his caster level with all spells. A creature with spell resistance may always make a saving throw when a spell is cast on it. The saving throw type is indicated by the spell. If it succeeds, the spell has no effect on it.
+\subcf{18th -- Widening Surge} The sorcerer doubles the area affected by his spells that affect an area, but takes a penalty to his caster level with all spells.
 
 \cf{Sor}{Expanded Spell Knowledge (Ex)} At 3rd level, and every odd level afterwards, a sorcerer can learn how to cast a particularly esoteric spell. He may choose a restricted spell from the sorcerer/wizard spell list with a level of no more than half his sorcerer level (normally, the highest level spell he can cast) and add it to his spell list. He must still use a spell known to learn it, as normal.
 
-\cf{Sor}{Spellblend (Ex)} At 4th level, a sorcerer may combine his arcane invocations with his spells. As a full-round action, the sorcerer may cast a spell that affects only himself using a spell slot one level higher than what the spell would normally require. If he does, he may also use an arcane invocation as part of the same action. The arcane invocation need not target the sorcerer.
+\cf{Sor}{Spellblend Invocation (Ex)} At 4th level, a sorcerer may combine his arcane invocations with his spells. As a full-round action, the sorcerer may cast a spell that affects only himself using a spell slot one level higher than what the spell would normally require. The spell must have a casting time of 1 standard action or less. If he does, he may also use an arcane invocation as part of the same action. The arcane invocation need not target the sorcerer.
 
-\cf{Sor}{Improved Spellblend (Ex)} At 8th level, a sorcerer may combine two spells together. As a full-round action, the sorcerer may cast two spells at once, resolving each spell's effects separately. The spells cast in this way must be at least three spell levels apart, such as a 1st-level spell and a 4th-level spell. In addition, one of the two spells must affect only the sorcerer. Using improved spellblend costs a spell slot of one level higher than the highest level spell being cast.
+\cf{Sor}{Defensive Spellblend (Ex)} At 8th level, a sorcerer may combine two spells together. As a full-round action, the sorcerer may cast two spells at once, resolving each spell's effects separately. The spells cast in this way must have a casting time of 1 standard action or less, and must be at least three spell levels apart, such as a 1st-level spell and a 4th-level spell. In addition, one of the two spells must affect only the sorcerer. Using improved spellblend costs a spell slot of one level higher than the highest level spell being cast.
 
-\cf{Sor}{Versatile Spellblend (Ex)} At 12th level, a sorcerer may combine any two spells together. When using spellblend or improved spellblend, the sorcerer may cast any spells, regardless of whether they affect only the sorcerer. However, using versatile spellblend costs a spell slot of two levels higher than the highest level spell being cast.
+\cf{Sor}{Offensive Spellblend (Ex)} At 12th level, a sorcerer may combine a damaging spell and a nondamaging spell together. As a full-round action, the sorcerer may cast two spells at once, resolving each spell's effects separately. The spells cast in this way must have a casting time of 1 standard action or less, and must at least three spell levels apart, such as a 1st-level spell and a 4th-level spell. One spell must be a damaging spell, and the other must not. Using offensive spellblend costs a spell slot of two levels higher than the highest level spell being cast.
 
-\cf{Sor}{Spellsurge (Ex)} At 16th level, a sorcerer may enter a trance-like state once per day in which he can surpass his normal limits. A spellsurge trance lasts for one minute. During the trance, the sorcerer may use his versatile spellblend ability by expending a spell slot of one level lower than the highest level spell being cast. However, the sorcerer is forced to expel the arcane energy welling up inside him, and is forced to use his versatile spellblend ability with all of his actions. The sorcerer can suppress this effect for a round with a DC 30 Will save, but he takes nonlethal damage equal to his caster level if he does so. %what happens if the sorcerer can't act? Does he take damage?
-
-\par At 19th level, a sorcerer can enter a spellsurge trance an additional time per day.
-
-\cf{Sor}{Improved Spellsurge (Ex)} At 20th level, a sorcerer in a spellsurge trance can use his spellblend ability as a standard action instead of as a full-round action.
+\cf{Sor}{Rapid Spellblend (Ex)} At 16th level, a sorcerer may use any of his spellblend abilities as a standard action instead of as a full-round action.
 
 \subsection{Spellwarped}
 \begin{dtable}
