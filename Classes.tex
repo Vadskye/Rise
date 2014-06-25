@@ -1518,7 +1518,9 @@ At 6th level, and every 4 levels thereafter, the sorcerer learns an additional s
 
 \cf{Sor}{Offensive Spellblend (Ex)} At 12th level, a sorcerer may combine a damaging spell and a nondamaging spell together. As a full-round action, the sorcerer may cast two spells at once, resolving each spell's effects separately. The spells cast in this way must have a casting time of 1 standard action or less, and must at least three spell levels apart, such as a 1st-level spell and a 4th-level spell. One spell must be a damaging spell, and the other must not. Using offensive spellblend costs a spell slot of two levels higher than the highest level spell being cast.
 
-\cf{Sor}{Rapid Spellblend (Ex)} At 16th level, a sorcerer may use any of his spellblend abilities as a standard action instead of as a full-round action.
+\cf{Sor}{Endless Surge (Ex)} At 16th level, there is no limit to the duration of a sorcerer's spellsurge ability. If a spellsurge lasts longer than 5 rounds, he automatically succeeds on any Will save he makes to end the surge.
+
+\cf{Sor}{Dual Surge (Ex)} At 20th level, a sorcerer may enter two spellsurges at once. He gains the benefits and suffers the consequences of both surges. However, while using two surges at once, he takes a \minus5 penalty to Will saves to end a spellsurge.
 
 \subsection{Spellwarped}
 \begin{dtable}
@@ -1716,25 +1718,25 @@ As a move action, he may move the weapon up to 30 feet in any direction, even ve
 \begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{7em} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
 \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} \\
 1st & \plus0 & \plus0 & \plus0 & \plus3 & Arcane invocation, ritual master \\
-2nd & \plus1 & \plus1 & \plus1 & \plus4     & Arcane invocation, Scribe Scroll \\
+2nd & \plus1 & \plus1 & \plus1 & \plus4     & Arcane invocation, magic feat \\
 3rd & \plus1 & \plus1 & \plus1 & \plus5     & Arcane insight \\
-4th & \plus2 & \plus2 & \plus2 & \plus6     & Spell sequencer \\
-5th & \plus2 & \plus2 & \plus2 & \plus7     & Arcane attunement (1 item), arcane insight \\
-6th & \plus3 & \plus3 & \plus3 & \plus8     & \x \\
+4th & \plus2 & \plus2 & \plus2 & \plus6     & Invocation sequencer \\
+5th & \plus2 & \plus2 & \plus2 & \plus7     & Arcane insight \\
+6th & \plus3 & \plus3 & \plus3 & \plus8     & Magic feat \\
 7th & \plus3 & \plus3 & \plus3 & \plus9     & Arcane insight \\
-8th & \plus4 & \plus4 & \plus4 & \plus10    & Improved spell sequencer \\
+8th & \plus4 & \plus4 & \plus4 & \plus10    & Defensive sequencer \\
 9th & \plus4 & \plus4 & \plus4 & \plus11    & Arcane insight \\
-10th & \plus5 & \plus5 & \plus5 & \plus12    & Arcane attunement (2 items) \\
+10th & \plus5 & \plus5 & \plus5 & \plus12    & Magic feat \\
 11th & \plus5 & \plus5 & \plus5 & \plus13    & Arcane insight \\
 12th & \plus6/\plus1 & \plus6 & \plus6 & \plus14& Contingency \\
 13th & \plus6/\plus1 & \plus6 & \plus6 & \plus15& Arcane insight \\
-14th & \plus7/\plus2 & \plus7 & \plus7 & \plus16& \x \\
-15th & \plus7/\plus2 & \plus7 & \plus7 & \plus17& Arcane attunement (3 items), arcane insight \\
-16th & \plus8/\plus3 & \plus8 & \plus8 & \plus18 & Versatile spell sequencer \\
+14th & \plus7/\plus2 & \plus7 & \plus7 & \plus16& Magic feat \\
+15th & \plus7/\plus2 & \plus7 & \plus7 & \plus17& Arcane insight \\
+16th & \plus8/\plus3 & \plus8 & \plus8 & \plus18 & Offensive sequencer \\
 17th & \plus8/\plus3 & \plus8 & \plus8 & \plus19 & Arcane insight \\
-18th & \plus9/\plus4 & \plus9 & \plus9 & \plus20& \x \\
+18th & \plus9/\plus4 & \plus9 & \plus9 & \plus20& Magic feat \\
 19th & \plus9/\plus4 & \plus9 & \plus9 & \plus21 & Arcane insight \\
-20th & \plus10/\plus5 & \plus10& \plus10& \plus22 & Arcane attunement (4 items), chain contingency \\
+20th & \plus10/\plus5 & \plus10& \plus10& \plus22 & Chain contingency \\
 \end{tabularx}
 \end{dtable*}
 
@@ -1753,8 +1755,6 @@ All of the following are class features of the wizard.
 \cf{Wiz}{Weapon and Armor Proficiency} Wizards are proficient with simple weapons, but not with any type of armor or shield. Armor of any type interferes with a wizard's movements, which can cause her spells with somatic components to fail.
 
 \cf{Wiz}{Bonus Languages} A wizard may learn Draconic in addition to the bonus languages available to the character because of her race (see Chapter 2: Races). Many ancient tomes of magic are written in Draconic, and apprentice wizards often learn it as part of their studies.
-
-\cf{Wiz}{Ritual Master} Wizards are thoroughly trained in study and memorization, and can perform difficult rituals with more ease than others. A wizard gains the Ritual Master feat as a bonus feat at 1st level, even if she does not have the prerequisites.
 
 \cf{Wiz}{Spells} A wizard casts arcane spells using her Intelligence. To learn or cast a spell, a wizard must have an Intelligence at least equal to the spell's level. The Difficulty Class for a saving throw against a wizard's spell is 10 \add half the wizard's caster level \add her Intelligence.
 
@@ -1823,19 +1823,26 @@ A wizard's magic level is equal to her wizard level.
 
 \cf{Wiz}{Arcane Invocation} All wizards master at least one arcane invocation. An arcane invocation allows the wizard to exert magical influence without expending the effort required to cast a spell. The wizard may choose to learn one invocation of her choice from the list of arcane invocations described in Chapter 11: Spells. Specialist wizards must choose one of the invocations granted by their specialist school. At 2nd level, the wizard gains a second arcane invocation, which can be chosen from any non-prohibited school.
 
+\cf{Wiz}{Magic Feat} At 2nd level, a wizard gains a bonus magic feat or metamagic feat of his choice. He must meet the prerequisites for the feat as normal. At 6th level, and every 4 levels thereafter, he gains an additional magic feat or metamagic feat.
+
 \cf{Wiz}{Arcane Insight (Ex)} At 3rd level, and every odd level afterwards, a wizard gains a greater understanding of magic. Generalist wizards gain expanded spell knowledge, as the sorcerer class feature. Specialist wizards may choose a spell of their chosen school from the sorcerer/wizard spell list, including restricted spells, and add it to their spells known. The spell's level must not be higher than half the wizard's class level -- normally, the highest level of spells that the wizard can cast.
 
-\cf{Wiz}{Spell Sequencer (Ex)} At 4th level, a wizard gains the ability to create a sequence of a spell and invocation which she can cast rapidly later. To create a spell sequencer, the wizard must cast a spell which affects only herself and an arcane invocation, which may affect any target. Neither has any effect immediately. The wizard may later use a full-round action to cast both the spell and the invocation at once, choosing the target of the invocation at that time.
-\par The wizard may have only one spell sequencer active at any time. If she creates a new spell sequencer, it replaces her existing spell sequencer.
+\cf{Wiz}{Invocation Sequencer (Ex)} At 4th level, a wizard gains the ability to create a sequence of a spell and invocation which she can cast together later. To create an invocation sequencer, the wizard must cast a spell which affects only herself and an arcane invocation, which may affect any target. The spell must have a casting time of 1 standard action or less. Neither has any effect immediately. The wizard may later use a full-round action to cast both the spell and the invocation at once, choosing the target of the invocation at that time.
+\par The wizard may initially have only one sequencer active at any time. At 8th level, and every 4 levels thereafter, she may keep an additional sequencer active at once. If she creates a new sequencer, it replaces one of her previous sequencers. She may choose which old sequencer is replaced.
 
-\cf{Wiz}{Arcane Attunement (Su)} At 5th level, a wizard gains the ability to use arcane items like scrolls and wands with particular skill. At the beginning of each day, the wizard may attune himself to a single item with a spell trigger or spell completion activation method. If he does, he gains one of several benefits, depending on the type of magic item he attunes himself to. At 10th level, and every five levels thereafter, the wizard gains the ability to attune herself to an additional item.
-\subparhead{Scroll} The wizard casts the spell from the scroll at his full caster level if it is higher than the scroll's caster level, and using his full attribute.
-\subparhead{Wand} The wizard casts the spell from the wand at his full caster level if it is higher than the wand's caster level. In addition, once per day, the wizard may cast a spell from the wand using a spell slot of the appropriate level instead of a charge.
-\subparhead{Staff} The wizard may cast spells from the staff using spell slots of the appropriate level instead charges. If the spell would require multiple charges when cast from the staff, the spell slot consumed must be one level higher than the spell's normal level for each charge beyond the first.
-\par If other items exist that can produce similar effects, the wizard may gain appropriate bonuses for attuning himself to them, using the above examples as a guide.
+\cf{Wiz}{Defensive Sequencer (Ex)} At 8th level, a wizard gains the ability to create a sequence of two spells which she can cast rapidly later. To create a defensive sequencer, the wizard must cast two spells, one of which affects only herself. The spells must be at least three levels apart, and both must have a casting time of 1 standard action or less. Neither has any effect immediately. The wizard may later use a full-round action to cast both spells at once, resolving their effects separately. The number of sequencers a wizard may have active at once is limited, as described in the defensive sequencer ability.
 
-\cf{Wiz}{Improved Spell Sequencer (Ex)} At 8th level, a wizard gains the ability to create a sequence of two spells which she can cast rapidly later. To create an improved spell sequencer, the wizard must cast two spells, one of which affects only herself. The spells must be at least three levels apart. Neither has any effect immediately. the wizard may later use a full-round action to cast both spells at once.
-\par The wizard may have only one spell sequencer or improved spell sequencer active at any time.
+\cf{Wiz}{Contingency (Ex)} At 12th level, a wizard gains the ability to prepare a spell so it takes effect automatically if specific circumstances arise. To prepare a contingency, the wizard must spend 1 minute preparing the spell, which consumes the a spell slot two levels higher than the spell's level. During this casting time, the wizard specifies what circumstances cause the spell to take effect.
+
+The contingency can be set to trigger in response to any circumstances that a typical human observing you and your situation could detect. For example, you could specify ``when I fall at least 50 feet'' or ``when I become bloodied,'' but not ``when there is an invisible creature within 50 feet of me'' or ``when I am at 17 hit points or fewer.'' The more specific the required circumstances, the better -- vague requirements, such as ``when I am in danger,'' may cause the contingency to trigger unexpectedly or fail to trigger at all. If you attempt to specify multiple separate triggering conditions, such as ``when I take damage or when an enemy is adjacent to me,'' the contingency will randomly ignore all but one of the conditions.
+
+The spell must have a casting time of 1 standard action or less, and it must target the wizard or have its area centered on the wizard. Any spells which require decisions, such as \spell{dimension door}, must have those decisions made at the time the contingency is created. The wizard cannot change those decisions when the contingency takes effect.
+
+A wizard can have only one contingency active at a time. If he creates another contingency, it replaces his old contingency.
+
+\cf{Wiz}{Offensive Sequencer (Ex)} At 16th level, a wizard gains the ability to create a sequence of two spells which she can cast rapidly later. To create an offensive sequencer, the wizard must cast two spells. The spells must be at least three levels apart, and both must have a casting time of 1 standard action or less. One spell must be a damaging spell, and the other must not. Finally, both spells must be of the same school. Neither has any effect immediately. The wizard may later use a full-round action to cast both spells at once, resolving their effects separately. The number of sequencers a wizard may have active at once is limited, as described in the defensive sequencer ability.
+
+\cf{Wiz}{Chain Contingency (Ex)} At 20th level, a wizard may ready a sequencer in his contingency instead of a single spell. This sequencer counts against his limit of available sequencers.
 
 \section{Character Advancement}
 
