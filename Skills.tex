@@ -204,17 +204,17 @@ The skill name line includes (in addition to the name of the skill) the followin
 Acrobatics represents your agility and coordination. All Acrobatics checks are made as part of movement, so they require no special action to perform.
 
 \subsubsection{Agile Movement}
-You can make a DC 20 Acrobatics check while running or charging to make a single turn of up to 90 degrees in the middle of the moveent. Failure indicates that you can't change direction, though you can continue your movement or stop. Failure by 10 or more indicates that you stop where you tried to change direction and fall prone.
+You can make a DC 20 Acrobatics check while charging to make a single turn of up to 90 degrees in the middle of the moveent. Failure indicates that you can't change direction, though you can continue your movement or stop. Failure by 10 or more indicates that you stop where you tried to change direction and fall prone.
 
 \subsubsection{Balance}
 You can make a Acrobatics check to move safely on a precarious surface. Success means you move along the surface at half speed. Failure means your action is wasted, and you do not move. Failure by 10 or more means you fall prone.
 
-You are flat-footed while balancing, since you can't move to avoid a blow. If you take damage while balancing, you must make another Balance check against the same DC to avoid falling. If you take a \minus5 penalty, you can defend yourself normally while balancing. Accepting a \minus5 penalty can also allow you to move at full speed while balancing.
+You are flat-footed while balancing, since you can't move to avoid a blow. If you take damage while balancing, you must make another Acrobatics check against the same DC to avoid falling. If you take a \minus5 penalty, you are not flat-footed while balancing. If you take a \minus5 penalty, you can move at full speed while balancing.
 
 The DC varies with the surface, as follows.
 
 \begin{itemize*}
-  \item Uneven floor (flagstones, sloped floor): DC 10. This only applise when running or charging. Failure means you lose a move action (and possibly fall), but you can still take a standard action.
+  \item Uneven floor (flagstones, sloped floor): DC 10. This only applise when sprinting or charging. Failure means you lose a move action (and possibly fall), but you can still take a standard action.
   \item One foot wide (or wider): DC 5. 
   \item Six inches wide: DC 10.
   \item Two inches wide: DC 15.
@@ -224,7 +224,7 @@ The DC varies with the surface, as follows.
 \subsubsection{Tumble}
 If you are trained in Acrobatics, you can tumble past opponents in combat to reduce your odds of being hit. You can tumble as part of normal movement. If you do, you move at half speed and make an Acrobatics check. You may treat your check result as your Armor Class against attacks of opportunity provoked by the movement.
 
-If you accept a \minus10 penalty, you can move at full speed while tumbling. If you accept a \minus20 penalty, you can tumble while running or charging.
+If you accept a \minus10 penalty, you can move at full speed while tumbling. If you accept a \minus20 penalty, you can tumble while sprinting or charging.
 
 \subsubsection{Mitigate Fall}
 As you hit the ground after a fall, you can make an Acrobatics check to reduce falling damage. A DC 15 check allows you to treat a fall as if it were 10 feet shorter. For every 10 by which you beat that DC, you can reduce the falling damage by 10 additional feet.
@@ -246,7 +246,7 @@ Very mobile (slack rope) & \plus5 \\
 \end{dtable}
 
 \subsection{Athletics (Str; Armor Check Penalty)}
-Athletics includes running, jumping, and general athleticism. All Athletics checks are made as part of movement, so they take no special action to perform. Distance moved with Athletics checks, such as checks to jump, is counted against your normal maximum movement in a round. 
+Athletics includes jumping, sprinting, and general athleticism. All Athletics checks are made as part of movement, so they take no special action to perform. Distance moved with Athletics checks, such as checks to jump, is counted against your normal maximum movement in a round. 
 
 \subsubsection{Long Jump}
 You can make an Athletics check while moving to jump forward. When you make a long jump, choose a DC. You jump forward by a number of feet equal to your check result, to a maximum of the DC you chose. At the midpoint of the jump, you achieve a height equal to a quarter of that distance. If you fail by 10 or more, you fall prone after making the jump. If a failed jump would cause you to fall into a gap, you can make a DC 20 Climb check to catch the edge of the gap, provided you can reach it.
@@ -377,7 +377,7 @@ While climbing, you can attempt to catch another character who is falling near y
 It is possible, but very difficult, to make a Climb check to stop yourself from falling when near a wall. To catch yourself while falling, make a Climb check against a DC equal to the wall's DC \add 20.
 
 \subsubsection{Climbing with a Climb Speed}
-A creature with a climb speed moves by a distance equal to its climb speed when climbing. It has a \plus5 competence bonus on all Climb checks. It can always choose to take 10 on Climb checks, even if rushed or threatened, and is not flat-footed while climbing. It cannot make an accelerated climb or use the run action while climbing.
+A creature with a climb speed moves by a distance equal to its climb speed when climbing. It has a \plus5 competence bonus on all Climb checks. It can always choose to take 10 on Climb checks, even if rushed or threatened, and is not flat-footed while climbing. It cannot make an accelerated climb.
 
 \subsection{Craft (Int)}
 Like Knowledge, Perform, and Profession, Craft is actually a number of separate skills. You could have several Craft skills, each with its own ranks, each purchased as a separate skill. Common Craft skills are listed below, with additional description for some skills.
@@ -1063,7 +1063,7 @@ You can make a Stealth check to hide so people can't see you. Your Stealth check
 
 If you do not have passive cover or concealment from a creature (see \pcref{Cover} and \pcref{Concealment}), your Stealth check is automatically reated as a 0 against sight-based Perception checks that creature makes, regardless of your modifiers. For this purpose, do not consider any cover that would be hidden as a result of a successful check.
 
-If you move at up to half your speed during your turn, you take a \minus5 penalty to Stealth checks. If you move at up to your full speed during your turn, you take a \minus10 penalty to Stealth checks. It's practically impossible (\minus20 penalty) to remain unobserved while attacking, running or charging.
+If you move at up to half your speed during your turn, you take a \minus5 penalty to Stealth checks. If you move at up to your full speed during your turn, you take a \minus10 penalty to Stealth checks. It's practically impossible (\minus20 penalty) to remain unobserved while attacking, sprinting, or charging.
 
 A creature larger or smaller than Medium gains an inherent bonus or penalty on Stealth checks to hide depending on its size category: Fine \plus16, Diminutive \plus12, Tiny \plus8, Small \plus4, Large \minus4, Huge \minus8, Gargantuan \minus12, Colossal \minus16.
 
@@ -1131,4 +1131,4 @@ otherwise being threatened or distracted.
 You can swim underwater just like you can above water. If you are underwater, either because you failed a Swim check or because you are swimming underwater intentionally, you must hold your breath. You can hold your breath for a number of rounds equal to 5 \add your Constitution. After that period of time, you must make a DC 10 Fortitude save every round to continue holding your breath. Each round, the DC for the save increases by 5. If you fail the Fortitude save, you begin to drown.
 
 \subsubsection{Swimming with a Swim Speed}
-A creature with a swim speed can move through water at its indicated speed without making Swim checks. It gains a \plus5 inherent bonus on any Swim check to perform a special action or avoid a hazard. The creature always can choose to take 10 on a Swim check, even if distracted or endangered when swimming. Such a creature can use the run action while swimming, provided that it swims in a straight line.
+A creature with a swim speed can move through water at its indicated speed without making Swim checks. It gains a \plus5 inherent bonus on any Swim check to perform a special action or avoid a hazard. The creature always can choose to take 10 on a Swim check, even if distracted or endangered when swimming.
