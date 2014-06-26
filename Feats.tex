@@ -300,7 +300,6 @@ An item creation feat lets a spellcaster create magic items. Item creation is de
 \featref{Trample} & Ride 8 ranks & Target cannot avoid mounted overrun & Mobility, Mounted \\
 \featref{Two-Weapon Fighting} & Dex 3 & Gain \plus2 attack bonus when fighting with two weapons & Finesse \\
 \tind \featref{Two-Weapon Defense} & Two-Weapon Fighting & Off-hand weapon grants \plus1 shield bonus to AC, later \plus3 & Defense, Finesse \\
-\featref{Weapon Focus}\fn{1} & Proficiency with weapon group & Special ability with weapon group & Equipment \\
 \featref{Weapon Proficiency}\fn{1} & \x &  Don't provoke when attacking with weapon group & Equipment \\
 
 \midrule
@@ -323,6 +322,7 @@ An item creation feat lets a spellcaster create magic items. Item creation is de
 \featref{Reveal the Weak Point} & Base attack bonus \plus4 & Sacrifice attack and damage to penalize foe's AC & Style \\
 \featref{Tactical Analysis} & Int 3, Base attack bonus \plus4 & Identify foe's strengths and weaknesses & Awareness \\
 \featref{Threatening Fire} & Base attack bonus \plus4 & Help overwhelm foes with ranged weapons & Precision, Style \\
+\featref{Weapon Focus} & Base attack bonus \plus4 & Special ability with weapon group & Equipment \\
 
 \midrule
 \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Type} \\
@@ -341,7 +341,6 @@ An item creation feat lets a spellcaster create magic items. Item creation is de
 \featref{Sickening Strike} & Base attack bonus \plus8 & Attack sickens foe & Strike \\
 \featref{Tactical Prediction} & Int 3, Base attack bonus \plus8 & Predict foe's next action & Awareness \\
 \featref{Wall Slam} & Str 5, base attack bonus \plus8 & Slam opponent into wall to deal bonus damage & Maneuver, Power \\
-\featref{Weapon Specialization} & Base attack bonus \plus8, proficiency with weapon group, Weapon Focus with weapon group & Special ability with weapon group & Equipment \\
 
 \midrule
 \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Type} \\
@@ -1136,25 +1135,24 @@ You can fight with a weapon in each hand more effectively.
 
 \feat{Weapon Focus}{Combat}
 Choose one weapon group.
-\parhead{Prerequisites} Proficiency with selected weapon group.
+\parhead{Prerequisites} Base attack bonus \plus4, proficiency with selected weapon group.
 \parhead{Benefit} You gain a special ability based on the weapon group chosen. These special abilities only function when you are making attacks with weapons from your chosen weapon group.
 \begin{itemize*}
-    \item Armor weapons: When you perform a shield bash, you still benefit from the shield's AC bonus.
-    \item Axes: You increase your critical threat range by 1 when attacking foes without an armor bonus to AC. This is applied after any effects that multiply your threat range.
-    \item Blades, heavy: You increase your critical multiplier by 1 when attacking foes without an armor bonus to AC.
-    \item Blades, light: You increase your critical multiplier by 1 when attacking flat-footed or overwhelmed foes.
-    \item Blunt weapons: When you deal damage to a creature, it takes a \minus2 penalty to Will saves for 1 round. This penalty is not cumulative.
-    \item Bows: You suffer half the normal range increment penalty for firing at long range.
+    \item Armor weapons: When you perform a shield bash, you still benefit from the shield's AC bonus. In addition, armor spikes no longer impose a penalty to your AC.
+    \item Axes: You gain a \plus2 circumstance bonus to attack against unarmored creatures (creatures without an armor modifier to AC). 
+    \item Blades, heavy: You gain a \plus2 circumstance bonus to attack against unarmored creatures (creatures without an armor modifier to AC).
+    \item Blades, light: If you draw a light blade and attack with it in the same round, your foe is flat-footed against the attack. After the attack, the creature is unaffected by this ability for the rest of the encounter.
+    \item Blunt weapons: When you deal damage to a creature, it takes a \minus2 penalty to Will saves for 1 round. This penalty is not cumulative with itself.
+    \item Bows: You can ignore cover (but not total cover) provided by creatures and objects that are at least ten feet away from both you and your target.
     \item Crossbows: The time required for you to reload crossbows is reduced to a free action (for a hand or light crossbow) or a move action (for a heavy crossbow). Reloading a heavy crossbow still provokes an attack of opportunity, but reloading hand and light crossbows does not.
-    \item Flexible weapons: You gain a \plus2 circumstance bonus to attack foes with a shield bonus to AC.
-    \item Headed weapons: When you get a critical hit, your foe is staggered for 1 round.
+    \item Flexible weapons: You gain a \plus2 circumstance bonus to attack creatures with a shield modifier to AC.
+    \item Headed weapons: You gain a \plus2 circumstance bonus to attack against armored creatures (creatures with an armor modifier to AC).
     \item Monk weapons: ??
     \item Polearms: You can switch grips to short haft or stop short hafting a polearm as a swift action, and you take no penalty while short hafting it.
-    \item Spears: You gain a \plus2 circumstance bonus to attack on attacks of opportunity.
-    \item Thrown weapons: You can throw weapons at targets adjacent to you without provoking attacks of opportunity.
+    \item Spears: If a creature charges you, it provokes an attack of opportunity from you when it enters your threatened area.
+    \item Thrown weapons: You can defend yourself with a thrown weapon as you throw it, which can prevent you from taking attacks of opportunity for throwing weapons in melee (see \pcref{Thrown Weapons in Melee}). 
 \end{itemize*}
-\parhead{Special} You can gain this feat multiple times. Its effects do not stack. Each time you take the feat, it applies to a new type of weapon.
-\par You cannot choose simple weapons when you take this feat.
+\parhead{Special} You cannot choose simple weapons when you take this feat.
 
 \feat{Weapon Proficiency}{Combat}
 Choose one weapon group.
@@ -1162,27 +1160,6 @@ Choose one weapon group.
 \parhead{Normal} When using a melee weapon with which you are not proficient, you provoke an attack of opportunity when you miss. When using a ranged weapon with which you are not proficient, you take a \minus4 penalty to attack rolls.
 \parhead{Special} You can gain Weapon Proficiency multiple times. Each time you take the feat, it applies to a new weapon group. You cannot choose simple weapons.
 \par Clerics who choose the War domain and paladins automatically gain the Weapon Proficiency feat related to their deity's favored weapon group as a bonus feat. They need not select it.
-
-\feat{Weapon Specialization}{Combat}
-Choose one weapon group for which you have already selected the Weapon Focus feat.
-\parhead{Prerequisites} Base attack bonus \plus8, proficiency with selected weapon group, Weapon Focus with selected weapon group.
-\featben You gain a special ability based on the weapon group chosen. These special abilities only function when you are making attacks with weapons from your chosen weapon group.
-
-\begin{itemize*}
-    \item Armor weapons: If you attack with armor weapons during your turn, you gain a \plus2 circumstance bonus to AC against melee attacks for 1 round.
-    \item Axes: You gain a \plus2 circumstance bonus to attack against foes with an armor bonus to AC.
-    \item Blades, heavy: You gain a \plus2 circumstance bonus to attack foes without an armor bonus to AC.
-    \item Blades, light: You gain a \plus2 circumstance bonus to attack flat-footed or overwhelmed foes.
-    \item Blunt weapons: When you deal damage to a creature, it takes a \minus2 penalty to all saving throws for 1 round. This penalty replaces the penalty from Weapon Focus, and it is not cumulative with itself.
-    \item Bows: You can ignore cover (but not total cover) provided by creatures and objects that are at least ten feet away from both you and your target.
-    \item Crossbows: You can fire crossbows at targets adjacent to you without provoking attacks of opportunity.
-    \item Flexible weapons: The first time you perform a combat maneuver with a flexible weapon in an encounter, your opponent is flat-footed against your attack.
-    \item Headed weapons: You increase your critical threat range by 1. This is applied after any effects that multiply your threat range.
-    \item Monk weapons: ??
-    \item Polearms: When making melee attacks, you can ignore cover provided by creatures.
-    \item Spears: If an opponent charges you, he provokes an attack of opportunity from you.
-    \item Thrown weapons: When you attack, you can take a \minus4 penalty to attack in order to strike two adjacent targets with the same thrown weapon. You make one attack roll and apply the result to the AC of both targets. If you get a critical hit, only the primary target is suffers the critical hit. 
-\end{itemize*}
 
 \subsection{Combat Style Feats}
 
