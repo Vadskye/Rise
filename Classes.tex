@@ -1235,23 +1235,23 @@ If the ranger has the Camouflage ranger lore (see \pcref{Camouflage}), this allo
 \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} \\
 1st  & \plus0                & \plus0 & \plus3  & \plus0 & Sneak attack \plus1d6 \\
 2nd  & \plus1                & \plus1 & \plus4  & \plus1 & Uncanny dodge, skill trick, danger sense \\
-3rd  & \plus2                & \plus1 & \plus5  & \plus1 & Ambush attack \plus1d6 \\
+3rd  & \plus2                & \plus1 & \plus5  & \plus1 & Sneak attack \plus2d6 \\
 4th  & \plus3                & \plus2 & \plus6  & \plus2 & Evasion, combat trick \\
-5th  & \plus3                & \plus2 & \plus7  & \plus2 & Skill trick, sneak attack \plus2d6 \\
+5th  & \plus3                & \plus2 & \plus7  & \plus2 & Skill trick, sneak attack \plus3d6 \\
 6th  & \plus4                & \plus3 & \plus8  & \plus3 & Improved uncanny dodge \\
-7th  & \plus5                & \plus3 & \plus9  & \plus3 & Ambush attack \plus2d6, combat trick\\
+7th  & \plus5                & \plus3 & \plus9  & \plus3 & Sneak attack \plus4d6, combat trick\\
 8th  & \plus6/\plus1         & \plus4 & \plus10 & \plus4 & Skill trick \\
-9th  & \plus6/\plus1         & \plus4 & \plus11 & \plus4 & Sneak attack \plus3d6 \\
+9th  & \plus6/\plus1         & \plus4 & \plus11 & \plus4 & Sneak attack \plus5d6 \\
 10th & \plus7/\plus2         & \plus5 & \plus12 & \plus5 & Greater uncanny dodge, combat trick \\
-11th & \plus8/\plus3         & \plus5 & \plus13 & \plus5 & Advanced skill trick, ambush attack \plus3d6 \\
+11th & \plus8/\plus3         & \plus5 & \plus13 & \plus5 & Advanced skill trick, sneak attack \plus6d6 \\
 12th & \plus9/\plus4         & \plus6 & \plus14 & \plus6 & Jack of all trades \\
-13th & \plus9/\plus4         & \plus6 & \plus15 & \plus6 & Sneak attack \plus4d6, advanced combat trick \\
+13th & \plus9/\plus4         & \plus6 & \plus15 & \plus6 & Sneak attack \plus7d6, advanced combat trick \\
 14th & \plus10/\plus5        & \plus7 & \plus16 & \plus7 & Advanced skill trick \\
-15th & \plus11/\plus6/\plus1 & \plus7 & \plus17 & \plus7 & Ambush attack \plus4d6 \\
+15th & \plus11/\plus6/\plus1 & \plus7 & \plus17 & \plus7 & Sneak attack \plus8d6 \\
 16th & \plus12/\plus7/\plus2 & \plus8 & \plus18 & \plus8 & Advanced combat trick \\
-17th & \plus12/\plus7/\plus2 & \plus8 & \plus19 & \plus8 & Advanced skill trick, sneak attack \plus5d6 \\
+17th & \plus12/\plus7/\plus2 & \plus8 & \plus19 & \plus8 & Advanced skill trick, sneak attack \plus9d6 \\
 18th & \plus13/\plus8/\plus3 & \plus9 & \plus20 & \plus9 & Master of all trades \\
-19th & \plus14/\plus9/\plus4 & \plus9 & \plus21 & \plus9 & Advanced combat trick, ambush attack \plus5d6 \\
+19th & \plus14/\plus9/\plus4 & \plus9 & \plus21 & \plus9 & Advanced combat trick, sneak attack \plus10d6 \\
 20th & \plus15/\plus10/\plus5& \plus10& \plus22 & \plus10& Ambush master, advanced skill trick
 \end{tabularx}
 \end{dtable*}
@@ -1270,13 +1270,15 @@ All of the following are class features of the rogue.
 
 \cf{Rog}{Weapon and Armor Proficiency} Rogues are proficient with simple weapons, any two weapon groups, light armor, and bucklers. They are also proficient with saps.
 
-\cf{Rog}{Sneak Attack}  If a rogue can catch an opponent when he is unable to defend himself effectively from her attack, she can strike a vital spot for extra damage. The rogue's attack deals extra damage if the target is flat-footed or is suffering overwhelm penalties.  This extra damage is 1d6 at 1st level, and it increases by 1d6 every four rogue levels thereafter. Should the rogue score a critical hit with a sneak attack, this extra damage is not multiplied. This damage bonus is treated as a circumstance bonus.
+\cf{Rog}{Sneak Attack} If a rogue can catch an opponent when he is unable to defend himself effectively from her attack, she can strike a vital spot for extra damage. She deals 1d6 points of extra damage if the target is flat-footed or is suffering overwhelm penalties from being surrounded by enemies (see \pcref{Overwhelm}). This extra damage is only dealt the first time that the rogue strikes that particular creature in the encounter. Additional sneak attacks against the same creature deal no additional damage.
+
+The extra damage increases by 1d6 at 3rd level and every two levels thereafter. It is considered a circumstance bonus to damage. Unlike most damage bonuses, this extra damage is not multiplied if the rogue scores a critical hit.
 
 \par Ranged attacks can count as sneak attacks only if the target is within 30 feet. A rogue can't strike with deadly accuracy from beyond that range.
 
 With a sap (blackjack) or an unarmed strike, a rogue can make a sneak attack that deals nonlethal damage instead of lethal damage. She cannot use a weapon that deals lethal damage to deal nonlethal damage in a sneak attack, not even with the usual \minus4 penalty.
 
-A rogue can sneak attack only living creatures with discernible anatomies -- oozes, plants, and incorporeal creatures lack vital areas to attack. Any creature that is immune to critical hits is not vulnerable to sneak attacks. The rogue must be able to see the target well enough to pick out a vital spot and must be able to reach such a spot. A rogue cannot sneak attack while striking a creature with concealment or striking the limbs of a creature whose vitals are beyond reach.
+A rogue can only sneak attack creatures with a discernible body structure -- oozes, incorporeal creatures, and some plants lack vital areas to attack. Any creature that is immune to critical hits is not vulnerable to sneak attacks. The rogue must be able to see the target well enough to pick out a vital spot and must be able to reach such a spot. A rogue cannot sneak attack while striking the limbs of a creature whose vitals are beyond reach.
 
 \cf{Rog}{Danger Sense (Ex)} Starting at 2nd level, a rogue has an intuitive sense that alerts her to danger, giving her a \plus2 competence bonus to initiative checks. This bonus increases by 1 at 5th level and every 3 levels thereafter.
 \par If a character has danger sense from a multiple classes, the character stacks those levels to determine her bonus from danger sense.
@@ -1311,13 +1313,11 @@ A rogue can sneak attack only living creatures with discernible anatomies -- ooz
 
 If a rogue already has uncanny dodge from a different class, she stacks those levels to determine whether she gains improved uncanny dodge (see below) instead.
 
-\cf{Rog}{Ambush Attack (Ex)} At 3rd level, a rogue learns how to deal extra damage when she ambushes her foe. The first time that a rogue successfully sneak attacks a particular foe in an encounter, the attack is considered an ambush attack. The sneak attack damage on an ambush attack increases by 1d6. After she has delivered an ambush attack against that foe, she cannot make any more ambush attacks against that same foe for the rest of the encounter. A rogue can deliver no more than one ambush attack per round. The extra damage dealt by an ambush attack increases by 1d6 at 7th level and four rogue levels thereafter.
-
 \cf{Rog}{Combat Tricks} As a rogue gains experience, she learns a small number of talents that aid her and confound her foes. At 4th level, a rogue gains one combat trick. A rogue cannot select an individual combat trick more than once unless otherwise stated. All combat tricks are (Ex) abilities unless otherwise noted. The rogue gains an additional combat trick at 7th level and every three levels thereafter.
 
-\par Tricks marked with an asterisk are called ambush tricks. Ambush tricks add additional effects to the rogue's ambush attacks. If an ambush trick allows a saving throw, the DC is 10 \add the rogue's level \add the rogue's Intelligence. The rogue chooses from the list of combat tricks below.
+\par Tricks marked with an asterisk are called ambush tricks. Ambush tricks only function on the first sneak attack the rogue makes a particular foe in an encounter. If an ambush trick allows a saving throw, the DC is 10 \add the rogue's level \add the rogue's Intelligence. The rogue chooses from the list of combat tricks below.
 
-\subcf{Brutal Ambush*} The rogue rolls d8s instead of d6s for her sneak attack dice on this ambush attack.
+\subcf{Brutal Ambush*} The rogue rolls d8s instead of d6s for her sneak attack dice.
 
 \subcf{Combat Feat} The rogue gains a combat feat for which she qualifies (see Feats). This trick can be selected multiple times.
 
@@ -1325,7 +1325,7 @@ If a rogue already has uncanny dodge from a different class, she stacks those le
 
 \subcf{Extended Precision} The rogue can make sneak attacks from up to 60 feet away.
 
-\subcf{Hamstring*} A foe damaged by this ambush attack has its land speed halved for 5 rounds. Despite the name, this can be used on foes who do not have hamstrings.
+\subcf{Hamstring*} A foe damaged by this sneak attack has its land speed halved for 5 rounds. Despite the name, this can be used on foes who do not have hamstrings.
 
 \subcf{Merciful Blows} The rogue suffers no penalty to attack rolls when attacking for nonlethal damage, and can deal her full sneak attack damage.
 
@@ -1333,7 +1333,9 @@ If a rogue already has uncanny dodge from a different class, she stacks those le
 
 \subcf{Swift Poisoner} The rogue can apply poison to a weapon she is holding as a swift action.
 
-\subcf{Tricky Maneuver} When performing a maneuver against a foe she would be able to sneak attack, the rogue gains a circumstance bonus to attack equal to the number of sneak attack dice she would roll. Ambush attack dice are not included, and performing a tricky maneuver does not prevent the rogue from executing an ambush attack against the foe. The benefits of this trick apply even against foes immune to critical hits.
+\subcf{Tricky Maneuver} When performing a maneuver against a foe she would be able to sneak attack, the rogue gains a circumstance bonus to attack equal to the number of sneak attack dice she would roll. The benefits of this trick apply even against foes immune to critical hits.
+
+\cf{Rog}{Persistent Sneak Attack (Ex)} At 4th level, the rogue learns how to strike vital spots more consistently. If she makes additional sneak attacks against a creature that she has already dealt extra sneak attack damage to, she gains extra damage dice equal to half her number of sneak attack dice (rounded down). For example, a 5th level rogue would deal 3d6 points of extra damage on her first sneak attack against a creature, and 1d6 points of damage on every subsequent sneak attack against the same creature. 
 
 \cf{Rog}{Improved Uncanny Dodge (Ex)} At 6th level and higher, a rogue can no longer be overwhelmed as easily; she can react to multiple opponents as easily as she can react to a single attacker. The rogue is always treated as being threatened by two fewer creatures than she actually is for the purpose of determining overwhelm penalties. 
 
