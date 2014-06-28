@@ -223,8 +223,7 @@ An item creation feat lets a spellcaster create magic items. Item creation is de
 \midrule
 \thead{Skill Feats} & \thead{Prerequisites} & \thead{Benefit} \\
 \featref{Dilettante} & Int 3 & Use some Knowledge skills despite being untrained \\
-\featref{Open Minded} & \x & Gain two skill points. \\
-\featref{Poison Expert} & Int 3 & Apply poisons more effectively \\
+\featref{Ledgewalker} & Acrobatics 5 ranks & Balance easily on narrow surfaces \\
 \featref{Legendary Balance} & Acrobatics 13 ranks & Balance on impossible surfaces \\
 \featref{Legendary Climber} & Climb 13 ranks & Gain climb speed, climb on impossible surfaces \\
 \featref{Legendary Craftsman} & Craft 13 ranks & Craft items with fewer material components \\
@@ -233,6 +232,8 @@ An item creation feat lets a spellcaster create magic items. Item creation is de
 \featref{Legendary Escapist} & Escape Artist 13 ranks & Escape from magical effects \\
 \featref{Legendary Liar} & Bluff 13 ranks & Lies become undetectable by magic \\
 \featref{Legendary Tumbler} & Acrobatics 13 ranks & Tumble through enemies without provoking \\
+\featref{Open Minded} & \x & Gain two skill points. \\
+\featref{Poison Expert} & Int 3 & Apply poisons more effectively \\
 \featref{Ranged Legerdemain} &  2nd level spells & Use Disable Device or Sleight of Hand at range \\
 \featref{Scale the Beast} & Climb 8 ranks & Climb on massive creatures \\
 \featref{Skill Focus}\fn{1} & \x &  \plus3 bonus on checks with selected skill, reroll 1/day \\
@@ -613,11 +614,16 @@ Choose a school of magic or a spell descriptor to which you already have applied
 \featben You can treat your Intelligence as your key attribute for the purpose of the Perform skill in place of your Charisma. This allows you to apply your Intelligence to Perform checks in place of your Charisma, and lets you spend Intelligence skill points to gain training in the Perform skill.
 
 \feat{Dilettante}{Skill}
-\parhead{Prerequisite} Int 3
+\parhead{Prerequisite} Int 3.
 \parhead{Benefit} Choose a number of Knowledge skills equal to your Intelligence. You are treated as trained in those skills, even if you possess no ranks, allowing you to make Knowledge checks in those areas. If your Intelligence increases after taking this feat, you may choose additional Knowledge skills.
 
+\feat{Ledgewalker}{Skill}
+\featpre Acrobatics 5 ranks.
+\featben Using Acrobatics to move along narrow surfaces does not reduce your speed. If you have 10 ranks in Acrobatics, you are not flat-footed while doing so.
+\parhead{Normal} You move at half speed while balancing on precarious surfaces, and you are flat-footed while doing so.
+
 \feat{Legendary Balance}{Skill}
-\featpre Acrobatics 13 ranks
+\featpre Acrobatics 13 ranks.
 \featben You can balance on surfaces that cannot support your weight. The DC is 30 for liquids such as water, 35 for dense gases and raw energy, and 40 for ordinary air. While balancing in this way, you must take a move action each round to continue moving; you cannot remain in the same place in consecutive rounds, or you will fall. The DC increases by 2 for each consecutive round that you spend balancing in this way.
 
 \feat{Legendary Climber}{Skill}
