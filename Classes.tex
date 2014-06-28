@@ -1291,27 +1291,45 @@ If a rogue already has uncanny dodge from a different class, she stacks those le
 
 \cf{Rog}{Combat Tricks} As a rogue gains experience, she learns a small number of tricks that aid her and confound her foes. At 4th level, a rogue gains a combat trick. All combat tricks are (Ex) abilities unless otherwise noted.
 
-Tricks marked with an asterisk are called ambush tricks. Ambush tricks only function on the first sneak attack the rogue makes a particular foe in an encounter. If an ambush trick allows a saving throw, the DC is 10 \add the rogue's level \add the rogue's Intelligence.
+Tricks marked with an asterisk are called ambush tricks. Ambush tricks only function on the first sneak attack the rogue makes against a particular creature in an encounter. If an ambush trick allows a saving throw, the DC is 10 \add the rogue's level \add the rogue's Intelligence.
 
 At 8th level, and every four levels thereafter, the rogue gains an additional combat trick. Some combat tricks have minimum rogue levels, as indicated in the name of the ability. The list of combat tricks are given below.
 
-\subcf{Brutal Ambush*} The rogue rolls d8s instead of d6s for her sneak attack dice.
+\subcf{Brutal Ambush*} The rogue rolls d8s instead of d6s for her sneak attack dice. This is an ambush attack, and only functions once per creature.
 
 \subcf{Combat Feat} The rogue gains a combat feat for which she qualifies (see Feats). This trick can be selected multiple times.
 
-\subcf{Distracting Attack} A foe damaged by the rogue's sneak attack takes a penalty on its Concentration checks equal to number of sneak attack dice the rogue would roll. This penalty lasts for 5 rounds.
+\subcf{Distracting Attack} A creature damaged by the rogue's sneak attack takes a penalty on its Concentration checks equal to number of sneak attack dice the rogue would roll. This penalty lasts for 5 rounds.
 
 \subcf{Evasion} If the rogue makes a successful Reflex saving throw against an attack that normally deals half damage on a successful save, she instead takes no damage. A helpless ranger does not gain the benefit of evasion.
 
-\subcf{Extended Precision} The rogue can make sneak attacks from up to 100 feet away.
+\subcf{Distant Precision} The rogue can make sneak attacks from up to 100 feet away.
 
 \subcf{Merciful Blows} The rogue suffers no penalty to attack rolls when attacking for nonlethal damage, and can deal her full sneak attack damage when attacking nonlethally.
 
 \subcf{Swift Poisoner} The rogue can apply poison to a weapon she is holding as a swift action.
 
-\subcf{Tricky Maneuver} When performing a maneuver against a foe she would be able to sneak attack, the rogue gains a circumstance bonus to attack equal to the number of sneak attack dice she would roll. The benefits of this trick apply even against foes immune to critical hits.
+\subcf{Tricky Maneuver} When performing a maneuver against a creature she would be able to sneak attack, the rogue gains a circumstance bonus to attack equal to the number of sneak attack dice she would roll. The benefits of this trick apply even against creatures immune to critical hits.
 
-\subcf{8th -- Hamstring*} A foe damaged by this sneak attack has its land speed halved for 5 rounds. Despite the name, this can be used on foes who do not have hamstrings.
+\subcf{8th -- Defensive Roll} When the rogue would take physical damage that reduces her to 0 hit points, she can attempt to roll with the blow to reduce the damage. As an immediate action, she can make a Reflex save with a DC equal to the damage dealt. Success means she takes half damage, and the damage is nonlethal. Failure means she takes full damage. She must be aware of the attack to use this ability. The evasion and improved evasion abilities do not help in any way. This ability can be used number of times per day equal to 1 \add half the rogue's Constitution (minimum 1).
+
+\subcf{8th -- Hamstring*} A creature damaged by this sneak attack has its land speed halved for 5 rounds. Despite the name, this can be used on creatures who do not have hamstrings. This is an ambush attack, and only works once per creature.
+
+\subcf{8th -- Slippery Mind} If the rogue fails a saving throw against a mind-affecting spell or effect, she can make another saving throw 1 round later against the same DC. Success means she is treated as having succeeded against the spell's saving throw, allowing her to end any ongoing effects from the spell. This does not help against instantaneous effects, and does not affect spell resistance.
+
+\subcf{12th -- Ambush Strike*} If the rogue uses a Strike feat (see \pcref{Strike Feats}) on this sneak attack, she may add her Intelligence to the saving throw DC against the strike. This is an ambush attack, and only works once per creature.
+
+\subcf{12th -- Assassination} To use this ability, the rogue must spend a full round studying a creature within 30 feet of her that has not noticed her and who is not in combat. If she make a melee sneak attack on her next turn against that target, her attack deals maximum damage. If the target becomes aware of her presence before she attacks, this ability has no benefit.
+
+\subcf{12th -- Dispelling Ambush (Su)*} A creature damaged by this sneak attack is affected by a targeted \spell{dispel magic}. The caster level for this ability is equal to the rogue's level \add her Intelligence. This is an ambush attack, and only works once per creature.
+
+\subcf{12th -- Improved Evasion} This combat trick functions like evasion, except that she also only takes half damage on a failed save. A helpless rogue does not gain the benefit of improved evasion. 
+
+\subcf{12th -- Perfect Precision} The rogue has no range limit on her sneak attacks. She must the distant precision combat trick to gain this trick.
+
+\subcf{16th -- Crippling Ambush*} A creature damaged by this sneak attack takes Strength damage equal to the rogue's Intelligence. This is an ambush attack, and only works once per creature.
+
+\subcf{16th -- Opportunist} Once per round, the rogue can make an attack of opportunity against a creature that has just taken physical damage from another creature's attack. This attack counts as one of the rogue's attacks of opportunity for that round.
 
 \cf{Rog}{Persistent Sneak Attack (Ex)} At 5th level, the rogue learns how to strike vital spots more consistently. If she makes additional sneak attacks against a creature that she has already dealt extra sneak attack damage to, she gains extra damage dice equal to half her number of sneak attack dice (rounded down). For example, a 5th level rogue would deal 3d6 points of extra damage on her first sneak attack against a creature, and 1d6 points of damage on every subsequent sneak attack against the same creature.
 
@@ -1334,26 +1352,6 @@ At 8th level, and every four levels thereafter, the rogue gains an additional co
 \subcf{Skill Mastery} The rogue gains the Skill Mastery feat in a number of skills equal to 1 \add half her Intelligence (minimum 1). Each skill must be on the rogue class skill list.
 
 \cf{Rog}{Jack of All Trades (Ex)} At 12th level, a rogue treats all skills as class skills.
-
-\cf{Rog}{Advanced Combat Trick} At 13th level, and every three levels thereafter, the rogue may adds the options below to the list of combat tricks she can choose from. All advanced combat tricks are (Ex) abilities unless otherwise noted.
-
-\subcf{Ambush Strike*} If the rogue uses a Strike feat (see \pcref{Strike Feats}) on this ambush attack, she may add her Intelligence to the saving throw DC against the strike.
-
-\subcf{Assassination} To use this ability, the rogue must spend a full round studying a foe that has not noticed her and who is not in combat. If she make a melee ambush attack on her next turn against that target, her attack deals maximum damage. If the target becomes aware of her presence before she attacks, this ability has no benefit.
-
-\subcf{Crippling Ambush*} A foe damaged by this ambush attack takes 2 points of Strength damage.
-
-\subcf{Defensive Roll} When the rogue would be reduced to 0 hit points by physical damage, she can attempt to roll the blow to reduce the damage. To use this ability, the rogue must attempt a Reflex saving throw (DC = damage dealt). If the save succeeds, she takes only half damage from the blow, and the damage is nonlethal; if it fails, she takes full damage. This ability cannot be used while flat-footed, and the evasion and improved evasion abilities do not help in any way. This ability can be used number of times per day equal to 1 \add half the rogue's Wisdom (minimum 1).
-
-\subcf{Dispelling Ambush (Su)*} A foe damaged by this ambush attack is affected by a targeted \spell{dispel magic}. The caster level for this ability is equal to the rogue's level \add her Intelligence.
-
-\subcf{Distant Precision} The rogue has no range limit on her sneak attacks. A rogue must have selected the extended precision combat trick before choosing this trick.
-
-\subcf{Improved Evasion} This talent works like evasion, except that the rogue also takes only half damage on a failed save. A helpless rogue does not gain the benefit of improved evasion.
-
-\subcf{Opportunist}  Once per round, the rogue can make an attack of opportunity against an opponent who has just been struck for damage in melee by another character. This attack counts as one of the rogue's attacks of opportunity for that round.
-
-\subcf{Slippery Mind}  This ability represents the rogue's ability to wriggle free from magical effects that would otherwise control or compel her. If a rogue with slippery mind is affected by a mind-affecting spell or effect and fails her saving throw, she can attempt it again 1 round later at the same DC. She gets only this one extra chance to succeed on her saving throw.
 
 \cf{Rog}{Master of All Trades (Ex)} At 18th level, a rogue is treated as having as having at least one skill point in all skills, except for trained-only skills. These ``phantom'' skill points give her ranks in the skills normally, but do not otherwise count as skill points.
 
