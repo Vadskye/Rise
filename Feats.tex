@@ -151,6 +151,7 @@ An item creation feat lets a spellcaster create magic items. Item creation is de
 \featref{Intense Channeling} & Channel energy 3d6 & \plus2 level when channeling energy \\
 \featref{Mental Discipline} & Ability to use combat discipline & Use Charisma for combat discipline \\
 \featref{Selective Channeling} & Ability to channel energy & Can exclude two additional creatures \\
+\featref{Trap Sense} & Danger sense class feature & Automatically detect traps \\
 
 \midrule
 \thead{Item Creation Feats} & \thead{Prerequisites} & \thead{Benefit} \\
@@ -230,6 +231,7 @@ An item creation feat lets a spellcaster create magic items. Item creation is de
 \featref{Legendary Devicesmith} & Devices 13 ranks & Disable active spell effects \\
 \featref{Legendary Disguise} & Disguise 13 ranks & Alter magical auras with disguise \\
 \featref{Legendary Escapist} & Escape Artist 13 ranks & Escape from magical effects \\
+\featref{Legendary Leaper} & Athletics 13 ranks & Make standing jumps without penalty, rebound off objects easily \\
 \featref{Legendary Liar} & Bluff 13 ranks & Lies become undetectable by magic \\
 \featref{Legendary Tumbler} & Acrobatics 13 ranks & Tumble through enemies without provoking \\
 \featref{Open Minded} & \x & Gain two skill points. \\
@@ -239,6 +241,7 @@ An item creation feat lets a spellcaster create magic items. Item creation is de
 \featref{Skill Focus}\fn{1} & \x &  \plus3 bonus on checks with selected skill, reroll 1/day \\
 \featref{Skill Mastery}\fn{1} & Any skill 10 ranks & Always take 10 on skill checks \\
 \featref{Skill Training}\fn{1} & \x & Gain two skills as class skills \\
+\featref{Trapfinder} & Perception 5 ranks & Find traps faster \\
 \featref{Track} & \x &  Use Survival skill to track \\
 \featref{Veteran's Experience} & Base attack bonus \plus8 & Identify monsters without Knowledge \\
 
@@ -519,6 +522,10 @@ In addition, you may sleep in light or medium armor without becoming fatigued.
 \parhead{Benefit} You can exclude up to two additional creatures from the effect when you channel energy.
 \parhead{Normal} Without this feat, you can exclude a number of creatures from the effect equal to 1 \add half your Wisdom.
 
+\feat{Trap Sense}{Class}
+\featpre Danger sense class feature.
+\featben Whenever you come within 10 feet of a trap, you receive an immediate Perception check to notice the trap. This check should be made secretly, so you rogue do not know whether you failed to notice a trap.
+
 \subsection{Magic Feats}
 
 \feat{Bardic Spellpower}{Magic}
@@ -624,7 +631,7 @@ Choose a school of magic or a spell descriptor to which you already have applied
 
 \feat{Legendary Balance}{Skill}
 \featpre Acrobatics 13 ranks.
-\featben You can balance on surfaces that cannot support your weight. The DC is 30 for liquids such as water, 35 for dense gases and raw energy, and 40 for ordinary air. While balancing in this way, you must take a move action each round to continue moving; you cannot remain in the same place in consecutive rounds, or you will fall. The DC increases by 2 for each consecutive round that you spend balancing in this way.
+\featben You can balance on surfaces that cannot support your weight. The DC is 30 for liquids such as water, 40 for dense gases and raw energy, and 50 for ordinary air. While balancing in this way, you must take a move action each round to continue moving; you cannot remain in the same place in consecutive rounds, or you will fall. The DC increases by 2 for each consecutive round that you spend balancing in this way.
 
 \feat{Legendary Climber}{Skill}
 \featpre Climb 13 ranks.
@@ -677,7 +684,7 @@ In addition, when training a creature, if your check result is 30 or higher, you
 
 \feat{Legendary Leaper}{Skill}
 \featpre Athletics 13 ranks.
-\featben You are always treated as having a running start when jumping. When jumping, if your check result is 30 or higher, you can take a standard action at the midpoint of the jump.
+\featben You are always treated as having a running start when jumping. When jumping, if your check result is 30 or higher, you take no penalties for making a rebounding jump off of another object while jumping (see \pcref{Rebounding Jump)}. 
 
 \feat{Legendary Liar}{Skill}
 \featpre Bluff 13 ranks.
@@ -726,6 +733,10 @@ Choose a skill.
 
 \feat{Skill Training}{Skill}
 \featben Choose any two skills. You treat those skills as class skills.
+
+\feat{Trapfinder}{Skill}
+\featpre Perception 5 ranks.
+\featben As a full-round action, you can move up to 10 feet while searching every square within 10 feet of you for traps with the Perception skill (see \pcref{Search}). If you detect a trap partway through your movement, you may immediately stop moving.
 
 \feat{Track}{Skill}\label{Track}
 \parhead{Benefit} To find tracks or to follow them for 1 mile requires a successful Survival check. You must make another Survival check every time the tracks become difficult to follow.
