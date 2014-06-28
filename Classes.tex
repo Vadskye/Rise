@@ -55,8 +55,8 @@ A high base attack bonus can grant additional attacks, as described in \pcref{Co
 \begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\babcolgood}} X}
 \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} \\
 1st & \plus1         & \plus3 & \plus1 & \plus0 & Damage reduction, rage \plus2 \\
-2nd & \plus2         & \plus4 & \plus2 & \plus1 & Fast movement, uncanny dodge \\
-3rd & \plus3         & \plus5 & \plus3 & \plus1 & Endurance, channeled rage \\
+2nd & \plus2         & \plus4 & \plus2 & \plus1 & Endurance, Fast movement \\
+3rd & \plus3         & \plus5 & \plus3 & \plus1 & Channeled rage, uncanny dodge \\
 4th & \plus4         & \plus6 & \plus4 & \plus2 & Grit \\
 5th & \plus5         & \plus7 & \plus4 & \plus2 & \\
 6th & \plus6/\plus1  & \plus8 & \plus5 & \plus3 & Improved uncanny dodge, channeled rage \\
@@ -99,13 +99,13 @@ A barbarian's ability to maintain his rage depends on his willpower. A fit of ra
 
 The amount by which the barbarian's attributes increase, and the number of temporary hit points gained per barbarian level, is called the barbarian's rage bonus. A barbarian can fly into a rage a number of times per day equal to his rage bonus. The barbarian's rage bonus improves to \plus3 at 8th level, to \plus4 at 14th level, and finally to \plus5 at 20th level. His penalty to Armor Class while raging remains the same.
 
-\cf{Bbn}{Fast Movement (Ex)} At 2nd level, a barbarian's land speed becomes faster than the norm for his race by \plus10 feet. This benefit applies only when he is wearing no armor, light armor, or medium  armor and not carrying a heavy load. Apply this bonus before modifying the barbarian's speed because of any load carried or armor worn. This bonus is a competence bonus.
+\cf{Bbn}{Endurance} A barbarian gains Endurance (see \hyperlink{feat:Endurance}{Endurance}) as a bonus feat at 2nd level. If he already has Endurance, he may gain any other feat for which he qualifies as a bonus feat.
 
-\cf{Bbn}{Uncanny Dodge (Ex)} Starting at 2nd level, a barbarian can react to danger before his senses would normally allow him to do so. He may apply his Dexterity and dodge modifier to his armor class while flat-footed.
+\cf{Bbn}{Fast Movement (Ex)} At 2nd level, a barbarian gains a \plus10 foot competence bonus to his land speed while unencumbered.
+
+\cf{Bbn}{Uncanny Dodge (Ex)} Starting at 3rd level, a barbarian can react to danger before his senses would normally allow him to do so. He may apply his Dexterity and dodge modifier to his armor class while flat-footed.
 
 If a barbarian already has uncanny dodge from a different class, he stacks those levels to determine whether he gains improved uncanny dodge (see below) instead.
-
-\cf{Bbn}{Endurance} A barbarian gains Endurance (see \hyperlink{feat:Endurance}{Endurance}) as a bonus feat at 3rd level. If he already has Endurance, he may gain any other feat for which he qualifies as a bonus feat.
 
 \cf{Bbn}{Channeled Rage} At 3rd level, a barbarian gains the ability to enter a channeled rage whenever he rages. Each channeled rage grants the barbarian additional abilities while in that rage or changes the nature of his rage.
 \par A barbarian can only be in one channeled rage at a time. By spending an additional use of his rage ability, he can change which channeled rage he is in without exiting the rage, but this does not extend the duration of the rage. A barbarian chooses one channeled rage that he may enter at 3rd level, plus one every three levels thereafter. Some channeled rages require a minimum barbarian level to acquire, as indicated before the name of the ability. 
@@ -832,6 +832,8 @@ immobilized or helpless, when she wears any armor, when she carries a shield, or
 
 A monk's attacks may be with either fist interchangeably or even from elbows, knees, and feet. This means that a monk may even make unarmed strikes with her hands full. A monk's unarmed strike can be treated as a manufactured weapon, natural weapon, or both for the purpose of spells and effects, whichever is more beneficial for the monk. This allows monks to make unarmed strikes as if they were fighting with two weapons at once (see \pcref{Two-Weapon Fighting}). Monks can also use gauntlets, including enchanted gauntlets. The damage dealt by gauntlets is the same as the damage dealt by the monk's normal unarmed strike.
 
+\cf{Mnk}{Fast Movement (Ex)} At 2nd level, a monk gains a \plus10 foot competence bonus to her land speed while unarmored and unencumbered.
+
 \cf{Mnk}{Ki Power (Su)} At 2nd level, the monk gains the ability to use channel her \ki energy to enhance her abilities temporarily. She may use this ability a number of times per day equal to half her monk level \add her Wisdom, but no more than once per round. If a \ki power allows a saving throw, the DC is equal to 10 \add the monk's level \add her Wisdom. She may choose one of the abilities listed below.
 
 \subcf{Flurry of Blows} When the monk makes a standard attack, she can make an additional attack at a \minus5 penalty.
@@ -840,13 +842,11 @@ A monk's attacks may be with either fist interchangeably or even from elbows, kn
 
 \subcf{Surpass Limits} As a swift action, the monk can surpass the physical limitations of her body. Until the start of her next turn, she adds her Wisdom to checks based on Strength and Dexterity. This does not affect checks based on multiple attributes, such as initiative checks.
 
-\cf{Mnk}{Uncanny Dodge (Ex)} Starting at 2nd level, a monk can react to danger before her senses would normally allow her to do so. She may apply her Dexterity and dodge modifier to her armor class while flat-footed.
-
-If a monk already has uncanny dodge from a different class, she stacks those levels to determine whether she gains improved uncanny dodge (see below) instead.
-
 \cf{Mnk}{Evasion (Ex)} At 3rd level or higher, if a monk makes a successful Reflex saving throw against an attack that normally deals half damage on a successful save, she instead takes no damage. Evasion can be used only if a monk is wearing light armor or no armor. A helpless monk does not gain the benefit of evasion.
 
-\cf{Mnk}{Fast Movement (Ex)} At 3rd level, a monk gains a \plus10 foot competence bonus to her land speed while unencumbered.
+\cf{Mnk}{Uncanny Dodge (Ex)} Starting at 3rd level, a monk can react to danger before her senses would normally allow her to do so. She may apply her Dexterity and dodge modifier to her armor class while flat-footed.
+
+If a monk already has uncanny dodge from a different class, she stacks those levels to determine whether she gains improved uncanny dodge (see below) instead.
 
 \cf{Mnk}{Ki Strike (Su)} At 4th level, a monk's attacks are empowered with \ki. While unarmored and unencumbered, she treats all weapons she wields, including her unarmed strike, as if they were \plus1 weapons, gaining a \plus1 enhancement bonus to attack and damage. This also grants her a \plus1 enhancement bonus with maneuvers. At 7th level, and every three levels thereafter, the bonus granted by the monk's \ki strike ability improves by 1. 
 
@@ -1285,7 +1285,7 @@ A rogue can only sneak attack creatures with a discernible body structure -- ooz
 
 \cf{Rog}{Skill Talent (Ex)} At 2nd level, the rogue's skills improve. She gains an additional skill point, which she can place in any skill, and a bonus skill feat for which she qualifies. At 6th level, and every 4 levels thereafter, she gains an additional skill point and skill feat.
 
-\cf{Rog}{Uncanny Dodge (Ex)} Starting at 2nd level, a rogue can react to danger before her senses would normally allow her to do so. She may apply her Dexterity and dodge modifier to her armor class while flat-footed.
+\cf{Rog}{Uncanny Dodge (Ex)} Starting at 3rd level, a rogue can react to danger before her senses would normally allow her to do so. She may apply her Dexterity and dodge modifier to her armor class while flat-footed.
 
 If a rogue already has uncanny dodge from a different class, she stacks those levels to determine whether she gains improved uncanny dodge (see below) instead.
 
