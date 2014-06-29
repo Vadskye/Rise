@@ -339,9 +339,11 @@ An item creation feat lets a spellcaster create magic items. Item creation is de
 \featref{Immobilizing Strike} & Base attack bonus \plus8 & Melee attack prevents foe from moving & Strike \\
 \featref{Inescapable Bulwark of Defense} & Dex 3, Base attack bonus \plus8 & Withdrawing enemies cannot avoid provoking attacks of opportunity & Reaction, Style \\
 \featref{Intimidating Strike} & Base attack bonus \plus8, Intimidate 8 ranks & Attack lets you intimidate struck foe & Strike \\
+\featref{Intuitive Defense} & Wis 3, base attack bonus \plus8 & Add half Wis to AC & Defense, Style \\
 \featref{Overwhelming Force} & Str 5, base attack bonus \plus8 & Apply full Strength to damage when using two hands & Power \\
 \featref{Perfect Shot} & Dex 5, base attack bonus \plus8 & Ignore less than total cover/concealment on ranged attacks & Precision, Style \\
 \featref{Pierce Wings} & Base attack bonus \plus8 & Ranged attack removes foe's ability to fly & Strike \\ 
+\featref{Predictive Defense} & Int 3, base attack bonus \plus8 & Add half Int to AC & Defense, Style \\
 \featref{Sickening Strike} & Base attack bonus \plus8 & Attack sickens foe & Strike \\
 \featref{Tactical Prediction} & Int 3, Base attack bonus \plus8 & Predict foe's next action & Awareness \\
 \featref{Wall Slam} & Str 5, base attack bonus \plus8 & Slam opponent into wall to deal bonus damage & Maneuver, Power \\
@@ -1221,6 +1223,10 @@ You can only use this style if you have not moved since your last turn.
 \featpre Base attack bonus \plus8.
 \featben Foes take a withdraw action to move away from you still provoke attacks of opportunity from you. In exchange, you take a \minus2 penalty to AC.
 
+\feat{Intuitive Defense}{Combat, Defense, Style}
+\featpre Wis 3, base attack bonus \plus8.
+\featben You can add half your Wisdom to your AC in place of your Dexterity. This bonus does not apply if you would be denied your Dexterity to your AC, such as when you are flat-footed.
+
 \feat{Manyshot}{Combat, Style}\label{feat:Manyshot}
 \parhead{Prerequisites} Dex 7, base attack bonus \plus12.
 \parhead{Benefit} When you attack with a light thrown weapon or projectile weapon (except crossbows), you may make a flurry attack with two projectiles or weapons at once. If the attack hits, the first projectile hits. If the attack hits by 5 or more, both projectiles hit. As normal for flurry attacks, apply precision-based damage (such as sneak attack) and critical hit damage only once for this attack. Damage reduction and resistances apply once to the total damage dealt.
@@ -1252,6 +1258,10 @@ You must spend a full-round action to make a full attack while in this style. Yo
 %Can't replace Strength; archers need to be strong
 \feat{Precise Shot}{Combat, Style}
 \parhead{Benefit} You can add half your Wisdom to damage with ranged attacks in addition to half your strength.
+
+\feat{Predictive Defense}{Combat, Defense, Style}
+\featpre Intelligence 3, base attack bonus \plus8.
+\featben You can add half your Intelligence to your AC in place of your Dexterity. This bonus does not apply if you would be denied your Dexterity to your AC, such as when you are flat-footed.
 
 \feat{Spring Attack}{Combat, Style}
 \parhead{Prerequisites} Dex 3, Dodge, Mobility, base attack bonus \plus4.
