@@ -244,6 +244,13 @@ An item creation feat lets a spellcaster create magic items. Item creation is de
 \featref{Veteran's Experience} & Base attack bonus \plus8 & Identify monsters without Knowledge \\
 
 \midrule
+\thead{Spellgift Feats} & \thead{Prerequisites} & \thead{Benefit} \\
+Arcane Spellgift & 2nd level, Cha 1 & Gain arcane spell as spell-like ability \\
+Deeper Spellgift & \x & \plus2 Cha for spellgift feats \\
+Divine Spellgift & 2nd level, Cha 1 & Gain cleric or druid spell as spell-like ability \\
+Potent Spellgift & Any spellgift feat & \plus2 caster level with spellgifts \\
+
+\midrule
 \thead{Surge Feats} & \thead{Prerequisites} & \thead{Benefit} \\
 \featref{Alacritous Surge} & 16th level, Dex 7 & Briefly gain effects of \spell{haste} \\
 \featref{Deathless Surge} & 12th level, Cha 5 & Briefly gain effects of \spell{death ward} \\
@@ -546,7 +553,7 @@ In addition, wearing medium armor does not make you encumbered. This allows you 
 
 \feat{Improved Counterspell}{Magic}
 \parhead{Benefit} When counterspelling, you may use any spell of the same school with a spell level at least as high as the target spell.
-\parhead{Normal} Without this feat, you may counter a spell only with the same spell or with a spell specifically designated as countering the target spell.
+\parhead{Normal} Without this feat, you may counter a spell only with the same spell or with a spell specifically designated as countering the target spell. 
 
 \feat{Magical Synthesis}{Magic}
 Choose two magical classes you possess.
@@ -1497,6 +1504,29 @@ You can also mend a broken magic item if it is one that you could make. Doing so
 \parhead{Benefit} You learn how to make items from one subschool for every two ranks you have in each Craft skill. See the Craft skill description for details.
 \parhead{Normal} You learn how to make items from one subschool for every five ranks you have in each Craft skill.
 
+\subsection{Spellgift Feats}
+
+\feat{Arcane Spellgift}{Spellgift}
+\featpre 2nd level, Cha 1.
+\featben You gain the ability to use a non-restricted sorcerer/wizard spell as a spell-like ability once per day. You choose which spell when you gain this feat, and that choice cannot thereafter be changed. Your effective caster level is equal to your level.
+
+The spell's level must be no greater than half of your total levels in non-casting classes. In addition, its level cannot exceed your Charisma.
+\parhead{Special} You may take this feat multiple times. Each time, you choose a new spell to gain as a spell-like ability. You may use any combination of the spells a number of times per day equal to the number of spellgift feats you have. The number of spellgift feats you have cannot exceed your Charisma.
+
+\feat{Deeper Spellgift}{Spellgift}
+\featben You treat your Charisma as if it were 2 higher for the purpose of spellgift feats.
+
+\feat{Divine Spellgift}{Spellgift}
+\featpre 2nd level, Cha 1.
+\featben You gain the ability to use a cleric or druid spell as a spell-like ability once per day. You choose which spell when you gain this feat, and that choice cannot thereafter be changed. Your effective caster level is equal to your level.
+
+The spell's level must be no greater than half of your total levels in non-casting classes. In addition, its level cannot exceed your Charisma.
+\parhead{Special} You may take this feat multiple times. Each time, you choose a new spell to gain as a spell-like ability. You may use any combination of the spells a number of times per day equal to the number of spellgift feats you have. The number of spellgift feats you have cannot exceed your Charisma.
+
+\feat{Potent Spellgift}{Spellgift}
+\featpre Any spellgift feat.
+\featben You gain a \plus2 competence bonus to your caster level with spell-like abilities from spellgift feats.
+
 \subsection{Surge Feats}
 %Design guidelines: effective CL = 1/2 HD, min ability score = effective CL-1
 %Uses/day: 3/day for single use abilities, normal duration for buffs (splitting
@@ -1518,7 +1548,7 @@ You can also mend a broken magic item if it is one that you could make. Doing so
 
 \feat{Healing Surge}{Surge}
 \featpre 8th level, Con 3
-\featben Three times per day, you may heal 4d6 points of damage as a standard action. This healing increases by 1d6 at 10th level and at every 2 levels thereafter.
+\featben Three times per day, you may heal 4d6 points of damage as a swift action. This healing increases by 1d6 at 12th level and every 4 levels thereafter. After using this ability, you cannot use it again for 5 rounds.
 
 \feat{Prescient Surge}{Awareness, Surge}
 \featpre 12th level, Wis 5
@@ -1526,7 +1556,7 @@ You can also mend a broken magic item if it is one that you could make. Doing so
 
 \feat{Restorative Surge}{Surge}
 \featpre 8th level, Con 3
-\featben Three times per day, you may heal two points of ability damage as a swift action. This healing increases by 1 at 12th level and every 4 levels thereafter.
+\featben Three times per day, you may heal two points of ability damage as a swift action. This healing increases by 1 at 12th level and every 4 levels thereafter. After using this ability, you cannot use it again for 5 rounds.
 
 \feat{Shattering Surge}{Power, Surge}
 \featpre 8th level, Str 3
