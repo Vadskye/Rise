@@ -109,285 +109,283 @@ Combat style feats grant a character the ability to fight in a particular style,
 
 {\small
 \taburowcolors [2] 2{tbrown .. white}
-\begin{longtabu}{>{\lcol}p{15em} >{\lcol}p{15em} >{\lcol}X}
+\begin{longtabu}{>{\lcol}p{15em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{3em}}
 %    \taburowcolors{1}{white}{tbrown}
-\thead{General Feats} & \thead{Prerequisites} & \thead{Benefit} \\
+    \thead{General Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
 %Brute Fortitude & \x & Use Str and half Con for Fortitute saves \\
-\featref{Endurance} & Con 3 & Resist nonlethal damage \\
-\featref{Deathless} & Con 5 or base Fortitude save \plus10 & Immune to death effects \\
-\featref{Diehard} & Con 3 & Remain conscious after taking critical damage \\
-\featref{Fearless} & Cha 5 or base Will save \plus10 & Immune to fear and hostile morale effects \\
-\featref{Great Fortitude} & \x &  \plus2 bonus on Fortitude saves, reroll 1/day \\
-\featref{Iron Will} & \x &  \plus2 bonus on Will saves, reroll 1/day \\
-\featref{Legendary Charisma} & Cha 10 & \plus5 to Charisma for some purposes \\
-\featref{Legendary Constitution} & Con 10 & \plus5 to Constitution for some purposes \\
-\featref{Legendary Dexterity} & Dex 10 & \plus5 to Dexterity for some purposes \\
-\featref{Legendary Intelligence} & Int 10 & \plus5 to Intelligence for some purposes \\
-\featref{Legendary Strength} & Str 10 & \plus5 to Strength for some purposes \\
-\featref{Legendary Wisdom} & Wis 10 & \plus5 to Wisdom for some purposes \\
-\featref{Lightning Reflexes} & \x &  \plus2 bonus on Reflex saves, reroll 1/day \\
-\featref{Mental Fortress} & Cha 9 or base Will save \plus18 & Immune to hostile mind-affecting effects \\
-\featref{Perfect Health} & Con 3 or base Fortitude save \plus6 & Immune to disease, later poison \\
-\featref{Swift} & \x & Increase speed by 5 feet \\
-\featref{Toughness} & \x &  \plus3 hit points \plus1 per level above 3 \\
+\featref{Endurance} & Con 3 & Resist nonlethal damage & \featpref{Endurance} \\
+\featref{Deathless} & Con 5 or base Fortitude save \plus10 & Immune to death effects & \featpref{Deathless} \\
+\featref{Diehard} & Con 3 & Remain conscious after taking critical damage & \featpref{Diehard} \\
+\featref{Fearless} & Cha 5 or base Will save \plus10 & Immune to fear and hostile morale effects & \featpref{Fearless} \\
+\featref{Great Fortitude} & \x &  \plus2 bonus on Fortitude saves, reroll 1/day & \featpref{Great Fortitude} \\
+\featref{Iron Will} & \x &  \plus2 bonus on Will saves, reroll 1/day & \featpref{Iron Will} \\
+\featref{Legendary Charisma} & Cha 10 & \plus5 to Charisma for some purposes & \featpref{Legendary Charisma} \\
+\featref{Legendary Constitution} & Con 10 & \plus5 to Constitution for some purposes & \featpref{Legendary Constitution} \\
+\featref{Legendary Dexterity} & Dex 10 & \plus5 to Dexterity for some purposes & \featpref{Legendary Dexterity} \\
+\featref{Legendary Intelligence} & Int 10 & \plus5 to Intelligence for some purposes & \featpref{Legendary Intelligence} \\
+\featref{Legendary Strength} & Str 10 & \plus5 to Strength for some purposes & \featpref{Legendary Strength} \\
+\featref{Legendary Wisdom} & Wis 10 & \plus5 to Wisdom for some purposes & \featpref{Legendary Wisdom} \\
+\featref{Lightning Reflexes} & \x &  \plus2 bonus on Reflex saves, reroll 1/day & \featpref{Lightning Reflexes} \\
+\featref{Mental Fortress} & Cha 9 or base Will save \plus18 & Immune to hostile mind-affecting effects & \featpref{Mental Fortress} \\
+\featref{Perfect Health} & Con 3 or base Fortitude save \plus6 & Immune to disease, later poison & \featpref{Perfect Health} \\
+\featref{Swift} & \x & Increase speed by 5 feet & \featpref{Swift} \\
+\featref{Toughness} & \x &  \plus3 hit points \plus1 per level above 3 & \featpref{Toughness} \\
 
 \midrule
-\thead{Bloodline Feats} & \thead{Prerequisites} & \thead{Benefit} \\
-\featref{Celestial Heritage} & Nonevil alignment & Smite evil 1/day \\
-\tind \featref{Celestial Body} & Nonevil alignment, Celestial Heritage & Gain physical damage reduction \\
-\tind \featref{Celestial Smiting} & Nonevil alignment, Celestial Heritage & Smite evil more often, more accurately \\
-\tind \featref{Celestial Soul} & Nonevil alignment, any three celestial feats & Gain spell resistance against evil \\
-\featref{Draconic Heritage} & \x & Resist damage from chosen dragon's energy type \\
-\tind \featref{Draconic Breath} & Con 3, any three dragon bloodline feats & Gain dragon's breath weapon \\
-\tind \featref{Draconic Might} & Any three dragon bloodline feats & Gain \plus1 to physical attribute \\
-\tind \featref{Draconic Mind} & Any three dragon bloodline feats & Gain \plus1 to mental attribute \\
-\tind \featref{Draconic Scales} & Draconic Heritage & Gain natural armor \\
-\tind \featref{Draconic Senses} & Draconic Heritage & Gain low-light vision, possibly darkvision \\
-\tind \featref{Draconic Spellpower} & Draconic Heritage & Gain bonus to caster level \\
-\tind \featref{Draconic Voice} & Draconic Heritage & Gain bonus to Intimidate and Persuasion checks \\
-\tind \featref{Draconic Weapons} & Draconic Heritage & Gain bite attack, possibly claws \\
-\tind \featref{Draconic Wings} & Any three dragon bloodline feats & Gain wings to slow falls, glide, eventually fly \\
-\featref{Elemental Heritage} & \x & Gain saving throw bonus based on elemental ancestor \\
-\tind \featref{Elemental Force} & Elemental heritage & Unleash element to attack \\
-\tind \featref{Elemental Mastery} & Elemental Heritage & Gain attack bonus in circumstances based on elemental ancestor \\
-\tind \featref{Elemental Movement} & Elemental Heritage & Gain movement ability based on elemental ancestor \\
+\thead{Bloodline Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
+\featref{Celestial Heritage} & Nonevil alignment & Smite evil 1/day & \featpref{Celestial Heritage} \\
+\tind \featref{Celestial Body} & Nonevil alignment, Celestial Heritage & Gain physical damage reduction & \featpref{Celestial Body} \\
+\tind \featref{Celestial Smiting} & Nonevil alignment, Celestial Heritage & Smite evil more often, more accurately & \featpref{Celestial Smiting} \\
+\tind \featref{Celestial Soul} & Nonevil alignment, any three celestial feats & Gain spell resistance against evil & \featpref{Celestial Soul} \\
+\featref{Draconic Heritage} & \x & Resist damage from chosen dragon's energy type & \featpref{Draconic Heritage} \\
+\tind \featref{Draconic Breath} & Con 3, any three dragon bloodline feats & Gain dragon's breath weapon & \featpref{Draconic Breath} \\
+\tind \featref{Draconic Might} & Any three dragon bloodline feats & Gain \plus1 to physical attribute & \featpref{Draconic Might} \\
+\tind \featref{Draconic Mind} & Any three dragon bloodline feats & Gain \plus1 to mental attribute & \featpref{Draconic Mind} \\
+\tind \featref{Draconic Scales} & Draconic Heritage & Gain natural armor & \featpref{Draconic Scales} \\
+\tind \featref{Draconic Senses} & Draconic Heritage & Gain low-light vision, possibly darkvision & \featpref{Draconic Senses} \\
+\tind \featref{Draconic Spellpower} & Draconic Heritage & Gain bonus to caster level & \featpref{Draconic Spellpower} \\
+\tind \featref{Draconic Voice} & Draconic Heritage & Gain bonus to Intimidate and Persuasion checks & \featpref{Draconic Voice} \\
+\tind \featref{Draconic Weapons} & Draconic Heritage & Gain bite attack, possibly claws & \featpref{Draconic Weapons} \\
+\tind \featref{Draconic Wings} & Any three dragon bloodline feats & Gain wings to slow falls, glide, eventually fly & \featpref{Draconic Wings} \\
+\featref{Elemental Heritage} & \x & Gain saving throw bonus based on elemental ancestor & \featpref{Elemental Heritage} \\
+\tind \featref{Elemental Force} & Elemental heritage & Unleash element to attack & \featpref{Elemental Force} \\
+\tind \featref{Elemental Mastery} & Elemental Heritage & Gain attack bonus in circumstances based on elemental ancestor & \featpref{Elemental Mastery} \\
+\tind \featref{Elemental Movement} & Elemental Heritage & Gain movement ability based on elemental ancestor & \featpref{Elemental Movement} \\
 
 \midrule
-\thead{Class Feats} & \thead{Prerequisites} & \thead{Benefit} \\
-\featref{Extra Channeling} & Ability to channel energy & Can turn or rebuke 3 more times per day \\
-\featref{Extra Invocation} & Ability to use an arcane invocation & Learn a new arcane invocation \\
-\featref{Extra Rage} & Ability to rage & Can rage 1 more time per day\\
-\featref{Extra Smiting}\fn{1} & Ability to smite & Can smite 3 more times per day \\
-\featref{Extra Wild Aspect} & Wild aspect & Can use wild aspects 3 more times per day \\
-\featref{Intense Channeling} & Channel energy 3d6 & \plus2 level when channeling energy \\
-\featref{Mental Discipline} & Ability to use combat discipline & Use Charisma for combat discipline \\
-\featref{Selective Channeling} & Ability to channel energy & Can exclude two additional creatures \\
-\featref{Trap Sense} & Danger sense class feature & Automatically detect traps \\
+\thead{Class Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
+\featref{Extra Channeling} & Ability to channel energy & Can turn or rebuke 3 more times per day & \featpref{Extra Channeling} \\
+\featref{Extra Invocation} & Ability to use an arcane invocation & Learn a new arcane invocation & \featpref{Extra Invocation} \\
+\featref{Extra Rage} & Ability to rage & Can rage 1 more time per day& \featpref{Extra Rage} \\
+\featref{Extra Smiting}\fn{1} & Ability to smite & Can smite 3 more times per day & \featpref{Extra Smiting} \\
+\featref{Extra Wild Aspect} & Wild aspect & Can use wild aspects 3 more times per day & \featpref{Extra Wild Aspect} \\
+\featref{Intense Channeling} & Channel energy 3d6 & \plus2 level when channeling energy & \featpref{Intense Channeling} \\
+\featref{Mental Discipline} & Ability to use combat discipline & Use Charisma for combat discipline & \featpref{Mental Discipline} \\
+\featref{Selective Channeling} & Ability to channel energy & Can exclude two additional creatures & \featpref{Selective Channeling} \\
+\featref{Trap Sense} & Danger sense class feature & Automatically detect traps & \featpref{Trap Sense} \\
 
 \midrule
-\thead{Item Creation Feats} & \thead{Prerequisites} & \thead{Benefit} \\
-\featref{Imbue Magic} & Caster level 2nd or Craft (any) 5 ranks & Create magic items \\
-\featref{Imbuement Admixture} & Magic level 6th & Combine multiple spells to create items \\
-\featref{Versatile Crafter} & Craft (any) 8 ranks & Craft items from many subschools of magic \\
+\thead{Item Creation Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
+\featref{Imbue Magic} & Caster level 2nd or Craft (any) 5 ranks & Create magic items & \featpref{Imbue Magic} \\
+\featref{Imbuement Admixture} & Magic level 6th & Combine multiple spells to create items & \featpref{Imbuement Admixture} \\
+\featref{Versatile Crafter} & Craft (any) 8 ranks & Craft items from many subschools of magic & \featpref{Versatile Crafter} \\
 
 \midrule
-\thead{Magic Feats} & \thead{Prerequisites} & \thead{Benefit} \\
-\featref{Bardic Spellpower} & Arcane spellcasting ability & Fighter and rogue levels improve some spells \\ 
-\featref{Battlecaster} & Proficiency with light armor & Reduce arcane spell failure by 10\% \\
-\featref{Combat Casting} & \x &  \plus2 bonus on Concentration checks to cast spells, reroll 1/day \\
-\featref{Craftcaster} & Craft (any) 8 ranks, 2nd level spells & Increase caster level when creating, transforming objects \\
-\featref{Deceptive Casting} & Spellcasting ability & Trade concentration to make spells difficult to identify \\
-\featref{Empathic Casting} & 3rd level Enchantment (Emotion) spell & Trade Will saves for caster level with mind-affecting spells \\
-\featref{Improved Counterspell} & \x &  Counterspell with spell of same school \\
-\featref{Magical Synthesis} & Levels in two magical classes & Gain magic levels in two magical classes at once \\
-\featref{Mass Transporter} & 5th level Conjuration (Translocation) spell & Transport many creatures at once \\ 
-\featref{Mighty Summons} & 2nd level summoning spell & Summoned creatures gain \plus2 Str, \plus2 Con \\
-\featref{Rapid Metamagic} & Spellcraft 8 ranks, spellcasting ability, one metamagic feat & Apply metamagic effects more quickly \\
-\featref{Residual Awareness} & Divination (Awareness) spell & Gain brief Perception bonus after casting a spell \\
-\featref{Residual Knowledge} & Divination (Knowledge) spell & Gain brief Knowledge bonus after casting a spell \\
-\featref{Residual Beguilement} & 3rd level Enchantment (Beguilement) spell & Gain Persuasion bonus after casting a spell \\
-\featref{Residual Shield} & Abjuration (Shielding) spell & Gain benefits of spell briefly after casting on another creature \\
-\featref{Resilient Magic} & 2nd level Abjuration (Negation) spell & Spells persist for 1 round after being dispelled \\
-\featref{Retributive Counterspell} &  4th level spells & Countered spells rebound on original caster \\
-\featref{Ritual Caster} & Int 3 & Gain ability to perform rituals \\
-\featref{Ritual Master} & Spellcraft 8 ranks, ability to perform rituals & Perform rituals more quickly, \plus3 to ritual checks \\
-\featref{Spell Focus}\fn{1} & Magic level 4th &  \plus2 caster level with specific type of magic \\
-\tind \featref{Spell Specialization} & Magic level 8th, Spell Focus &  \plus2 caster level with specific type of magic, \minus2 penalty with other types. \\
-\featref{Wardwalker} & 3rd level Abjuration (Warding) spell & Wards you encounter trigger one round late \\
+\thead{Magic Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
+\featref{Bardic Spellpower} & Arcane spellcasting ability & Fighter and rogue levels improve some spells & \featpref{Bardic Spellpower} \\ 
+\featref{Battlecaster} & Proficiency with light armor & Reduce arcane spell failure by 10\% & \featpref{Battlecaster} \\
+\featref{Combat Casting} & \x &  \plus2 bonus on Concentration checks to cast spells, reroll 1/day & \featpref{Combat Casting} \\
+\featref{Craftcaster} & Craft (any) 8 ranks, 2nd level spells & Increase caster level when creating, transforming objects & \featpref{Craftcaster} \\
+\featref{Improved Counterspell} & \x &  Counterspell with spell of same school & \featpref{Improved Counterspell} \\
+\featref{Magical Synthesis} & Levels in two magical classes & Gain magic levels in two magical classes at once & \featpref{Magical Synthesis} \\
+\featref{Mass Transporter} & 5th level Conjuration (Translocation) spell & Transport many creatures at once & \featpref{Mass Transporter} \\ 
+\featref{Mighty Summons} & 2nd level summoning spell & Summoned creatures gain \plus2 Str, \plus2 Con & \featpref{Mighty Summons} \\
+\featref{Rapid Metamagic} & Spellcraft 8 ranks, spellcasting ability, one metamagic feat & Apply metamagic effects more quickly & \featpref{Rapid Metamagic} \\
+\featref{Residual Awareness} & Divination (Awareness) spell & Gain brief Perception bonus after casting a spell & \featpref{Residual Awareness} \\
+\featref{Residual Knowledge} & Divination (Knowledge) spell & Gain brief Knowledge bonus after casting a spell & \featpref{Residual Knowledge} \\
+\featref{Residual Beguilement} & 3rd level Enchantment (Beguilement) spell & Gain Persuasion bonus after casting a spell & \featpref{Residual Beguilement} \\
+\featref{Residual Shield} & Abjuration (Shielding) spell & Gain benefits of spell briefly after casting on another creature & \featpref{Residual Shield} \\
+\featref{Resilient Magic} & 2nd level Abjuration (Negation) spell & Spells persist for 1 round after being dispelled & \featpref{Resilient Magic} \\
+\featref{Retributive Counterspell} &  4th level spells & Countered spells rebound on original caster & \featpref{Retributive Counterspell} \\
+\featref{Ritual Caster} & Int 3 & Gain ability to perform rituals & \featpref{Ritual Caster} \\
+\featref{Ritual Master} & Spellcraft 8 ranks, ability to perform rituals & Perform rituals more quickly, \plus3 to ritual checks & \featpref{Ritual Master} \\
+\featref{Spell Focus}\fn{1} & Magic level 4th &  \plus2 caster level with specific type of magic & \featpref{Spell Focus} \\
+\tind \featref{Spell Specialization} & Magic level 8th, Spell Focus &  \plus2 caster level with specific type of magic, \minus2 penalty with other types. & \featpref{Spell Specialization} \\
+\featref{Wardwalker} & 3rd level Abjuration (Warding) spell & Wards you encounter trigger one round late & \featpref{Wardwalker} \\
 
 \midrule
-\thead{Metamagic Feats} & \thead{Prerequisites} & \thead{Benefit} \\
-\featref{Empower Spell} & 2nd level spells & Cast spell as higher level \\
-\featref{Energetic Substitution} & 2nd level spells & (\plus1) Change spell's energy type \\
-\featref{Enlarge Spell} & 2nd level spells & (\plus1) Double spell's range \\
-\featref{Imbued Spellstrike} & 2nd level spells & (\plus1) Combine spell with weapon attack \\
-\tind \featref{Improved Imbued Spellstrike} & 3rd level spells, Imbued Spellstrike & (\plus2) Imbue weapon with spell's power up to 5 minutes \\
-\featref{Quicken Spell} & 3rd level spells & (\plus2) Cast spell as swift action, but lose next action \\
-\featref{Reach Spell} & 3rd level spells & (\plus2) Cast touch spell at Close range \\
-\featref{Shape Spell} & 3rd level spells & (\plus2) Exclude areas within spell's area \\
-\featref{Silent Spell} & 2nd level spells & (\plus1) Cast spell without verbal components \\
-\featref{Still Spell} & 2nd level spells & (\plus1) Cast spell without somatic components \\
-\featref{Sustained Spell} & 2nd level spells & (\plus1) Maintain concentration as swift action \\
-\featref{Widen Spell} & Caster level 8th & (\plus3) Double spell's area \\
+\thead{Metamagic Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
+\featref{Empower Spell} & 2nd level spells & Cast spell as higher level & \featpref{Empower Spell} \\
+\featref{Energetic Substitution} & 2nd level spells & (\plus1) Change spell's energy type & \featpref{Energetic Substitution} \\
+\featref{Enlarge Spell} & 2nd level spells & (\plus1) Double spell's range & \featpref{Enlarge Spell} \\
+\featref{Imbued Spellstrike} & 2nd level spells & (\plus1) Combine spell with weapon attack & \featpref{Imbued Spellstrike} \\
+\tind \featref{Improved Imbued Spellstrike} & 3rd level spells, Imbued Spellstrike & (\plus2) Imbue weapon with spell's power up to 5 minutes & \featpref{Improved Imbued Spellstrike} \\
+\featref{Quicken Spell} & 3rd level spells & (\plus2) Cast spell as swift action, but lose next action & \featpref{Quicken Spell} \\
+\featref{Reach Spell} & 3rd level spells & (\plus2) Cast touch spell at Close range & \featpref{Reach Spell} \\
+\featref{Shape Spell} & 3rd level spells & (\plus2) Exclude areas within spell's area & \featpref{Shape Spell} \\
+\featref{Silent Spell} & 2nd level spells & (\plus1) Cast spell without verbal components & \featpref{Silent Spell} \\
+\featref{Still Spell} & 2nd level spells & (\plus1) Cast spell without somatic components & \featpref{Still Spell} \\
+\featref{Sustained Spell} & 2nd level spells & (\plus1) Maintain concentration as swift action & \featpref{Sustained Spell} \\
+\featref{Widen Spell} & Caster level 8th & (\plus3) Double spell's area & \featpref{Widen Spell} \\
 
 \midrule
-\thead{Performance Feats} & \thead{Prerequisites} & \thead{Benefit} \\
-\featref{Dual Performance} & Perform 14 ranks, any three Performance feats & Sustain two performances at once \\
-\featref{Fascinating Performance} & Perform 4 ranks & Fascinate group of creatures \\
-\featref{Freeing Performance} & Perform 12 ranks  & Dispel magical effects on ally \\
-\featref{Inspire Competence} & Perform 4 ranks  & Grant allies bonuses to skill checks \\
-\featref{Inspire Courage} & Perform 6 ranks  & Grant allies bonuses to attack rolls and saves against fear \\
-\featref{Inspire Greatness} & Perform 12 ranks  & Grant allies bonuses to saving throws and AC \\
-\featref{Inspire Heroics} & Perform 18 ranks  & Grant allies temporary hit points and extra attack \\
-\featref{Inspire Spellpower} & Perform 8 ranks  & Grant allies bonus to caster level \\
-\featref{Rapid Performance} & Perform 14 ranks, any three Performance feats & Perform as a swift action \\
-\featref{Recover Performance} & Perform 8 ranks, any other Performance feat & Reroll failed performance attempt \\
-\featref{Spellwoven Performance} & Perform 8 ranks, any other Performance feat & Cast some spells while performing \\
-\tind \featref{Suggestive Performance} & Perform 10 ranks, Fascinating Performance & Suggest action to fascinated creatures \\
+\thead{Performance Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
+\featref{Dual Performance} & Perform 14 ranks, any three Performance feats & Sustain two performances at once & \featpref{Dual Performance} \\
+\featref{Fascinating Performance} & Perform 4 ranks & Fascinate group of creatures & \featpref{Fascinating Performance} \\
+\featref{Freeing Performance} & Perform 12 ranks  & Dispel magical effects on ally & \featpref{Freeing Performance} \\
+\featref{Inspire Competence} & Perform 4 ranks  & Grant allies bonuses to skill checks & \featpref{Inspire Competence} \\
+\featref{Inspire Courage} & Perform 6 ranks  & Grant allies bonuses to attack rolls and saves against fear & \featpref{Inspire Courage} \\
+\featref{Inspire Greatness} & Perform 12 ranks  & Grant allies bonuses to saving throws and AC & \featpref{Inspire Greatness} \\
+\featref{Inspire Heroics} & Perform 18 ranks  & Grant allies temporary hit points and extra attack & \featpref{Inspire Heroics} \\
+\featref{Inspire Spellpower} & Perform 8 ranks  & Grant allies bonus to caster level & \featpref{Inspire Spellpower} \\
+\featref{Rapid Performance} & Perform 14 ranks, any three Performance feats & Perform as a swift action & \featpref{Rapid Performance} \\
+\featref{Recover Performance} & Perform 8 ranks, any other Performance feat & Reroll failed performance attempt & \featpref{Recover Performance} \\
+\featref{Spellwoven Performance} & Perform 8 ranks, any other Performance feat & Cast some spells while performing & \featpref{Spellwoven Performance} \\
+\tind \featref{Suggestive Performance} & Perform 10 ranks, Fascinating Performance & Suggest action to fascinated creatures & \featpref{Suggestive Performance} \\
 
 \midrule
-\thead{Racial Feats} & \thead{Prerequisites} & \thead{Benefit} \\
-\featref{Dwarven Resilience} & Dwarf & \plus2 to saves against spells \\
-\featref{Focused Mind} & Elf & Use Intelligence to concentrate instead of Constitution \\
-\featref{Giantfighter} & Dwarf, gnome, or halfling & \plus2 to dodge against Large or larger creatures \\
-\featref{Stonecunning} & Dwarf & Gain a sixth sense about stonework \\
+\thead{Racial Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
+\featref{Dwarven Resilience} & Dwarf & \plus2 to saves against spells & \featpref{Dwarven Resilience} \\
+\featref{Focused Mind} & Elf & Use Intelligence to concentrate instead of Constitution & \featpref{Focused Mind} \\
+\featref{Giantfighter} & Dwarf, gnome, or halfling & \plus2 to dodge against Large or larger creatures & \featpref{Giantfighter} \\
+\featref{Stonecunning} & Dwarf & Gain a sixth sense about stonework & \featpref{Stonecunning} \\
 
 \midrule
-\thead{Skill Feats} & \thead{Prerequisites} & \thead{Benefit} \\
-\featref{Dilettante} & Int 3 & Use some Knowledge skills despite being untrained \\
-\featref{Ledgewalker} & Acrobatics 5 ranks & Balance easily on narrow surfaces \\
-\featref{Legendary Balance} & Acrobatics 13 ranks & Balance on impossible surfaces \\
-\featref{Legendary Climber} & Climb 13 ranks & Gain climb speed, climb on impossible surfaces \\
-\featref{Legendary Craftsman} & Craft 13 ranks & Craft items with fewer material components \\
-\featref{Legendary Devicesmith} & Devices 13 ranks & Disable active spell effects \\
-\featref{Legendary Disguise} & Disguise 13 ranks & Alter magical auras with disguise \\
-\featref{Legendary Escapist} & Escape Artist 13 ranks & Escape from magical effects \\
-\featref{Legendary Leaper} & Athletics 13 ranks & Make standing jumps without penalty, rebound off objects easily \\
-\featref{Legendary Liar} & Bluff 13 ranks & Lies become undetectable by magic \\
-\featref{Legendary Tumbler} & Acrobatics 13 ranks & Tumble through enemies without provoking \\
-\featref{Open Minded} & \x & Gain two skill points. \\
-\featref{Poison Expert} & Int 3 & Apply poisons more effectively \\
-\featref{Ranged Legerdemain} &  2nd level spells & Use Disable Device or Sleight of Hand at range \\
-\featref{Scale the Beast} & Climb 8 ranks & Climb on massive creatures \\
-\featref{Skill Focus}\fn{1} & \x &  \plus3 bonus on checks with selected skill, reroll 1/day \\
-\featref{Skill Mastery}\fn{1} & Any skill 10 ranks & Always take 10 on skill checks \\
-\featref{Skill Training}\fn{1} & \x & Gain two skills as class skills \\
-\featref{Trapfinder} & Perception 5 ranks & Find traps faster \\
-\featref{Track} & \x &  Use Survival skill to track \\
-\featref{Veteran's Experience} & Base attack bonus \plus8 & Identify monsters without Knowledge \\
+\thead{Skill Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
+\featref{Dilettante} & Int 3 & Use some Knowledge skills despite being untrained & \featpref{Dilettante} \\
+\featref{Ledgewalker} & Acrobatics 5 ranks & Balance easily on narrow surfaces & \featpref{Ledgewalker} \\
+\featref{Legendary Balance} & Acrobatics 13 ranks & Balance on impossible surfaces & \featpref{Legendary Balance} \\
+\featref{Legendary Climber} & Climb 13 ranks & Gain climb speed, climb on impossible surfaces & \featpref{Legendary Climber} \\
+\featref{Legendary Craftsman} & Craft 13 ranks & Craft items with fewer material components & \featpref{Legendary Craftsman} \\
+\featref{Legendary Devicesmith} & Devices 13 ranks & Disable active spell effects & \featpref{Legendary Devicesmith} \\
+\featref{Legendary Disguise} & Disguise 13 ranks & Alter magical auras with disguise & \featpref{Legendary Disguise} \\
+\featref{Legendary Escapist} & Escape Artist 13 ranks & Escape from magical effects & \featpref{Legendary Escapist} \\
+\featref{Legendary Leaper} & Athletics 13 ranks & Make standing jumps without penalty, rebound off objects easily & \featpref{Legendary Leaper} \\
+\featref{Legendary Liar} & Bluff 13 ranks & Lies become undetectable by magic & \featpref{Legendary Liar} \\
+\featref{Legendary Tumbler} & Acrobatics 13 ranks & Tumble through enemies without provoking & \featpref{Legendary Tumbler} \\
+\featref{Open Minded} & \x & Gain two skill points. & \featpref{Open Minded} \\
+\featref{Poison Expert} & Int 3 & Apply poisons more effectively & \featpref{Poison Expert} \\
+\featref{Ranged Legerdemain} &  2nd level spells & Use Disable Device or Sleight of Hand at range & \featpref{Ranged Legerdemain} \\
+\featref{Scale the Beast} & Climb 8 ranks & Climb on massive creatures & \featpref{Scale the Beast} \\
+\featref{Skill Focus}\fn{1} & \x &  \plus3 bonus on checks with selected skill, reroll 1/day & \featpref{Skill Focus} \\
+\featref{Skill Mastery}\fn{1} & Any skill 10 ranks & Always take 10 on skill checks & \featpref{Skill Mastery} \\
+\featref{Skill Training}\fn{1} & \x & Gain two skills as class skills & \featpref{Skill Training} \\
+\featref{Trapfinder} & Perception 5 ranks & Find traps faster & \featpref{Trapfinder} \\
+\featref{Track} & \x &  Use Survival skill to track & \featpref{Track} \\
+\featref{Veteran's Experience} & Base attack bonus \plus8 & Identify monsters without Knowledge & \featpref{Veteran's Experience} \\
 
 \midrule
-\thead{Spellgift Feats} & \thead{Prerequisites} & \thead{Benefit} \\
-Arcane Spellgift & 2nd level, Cha 1 & Gain arcane spell as spell-like ability \\
-Divine Spellgift & 2nd level, Cha 1 & Gain cleric or druid spell as spell-like ability \\
-Potent Spellgift & Any spellgift feat & \plus2 caster level with spellgifts \\
+\thead{Spellgift Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
+\featref{Arcane Spellgift} & 2nd level, Cha 1 & Gain arcane spell as spell-like ability & \featpref{Arcane Spellgift} \\
+\featref{Divine Spellgift} & 2nd level, Cha 1 & Gain cleric or druid spell as spell-like ability & \featpref{Divine Spellgift} \\
+\featref{Potent Spellgift} & Any spellgift feat & \plus2 caster level with spellgifts & \featpref{Potent Spellgift} \\
 
 \midrule
-\thead{Surge Feats} & \thead{Prerequisites} & \thead{Benefit} \\
-\featref{Alacritous Surge} & 16th level, Dex 7 & Briefly gain effects of \spell{haste} \\
-\featref{Deathless Surge} & 12th level, Cha 5 & Briefly gain effects of \spell{death ward} \\
-\featref{Freeing Surge} & 16th level, Dex 7 & Briefly gain effects of \spell{freedom} \\
-\featref{Healing Surge} & 8th level, Con 3 & Heal damage three times per day \\
-\featref{Prescient Surge} & 12th level, Wis 5 & Roll twice three times per day \\
-\featref{Restorative Surge} & 8th level, Con 3 & Heal ability damage three times per day \\
-\featref{Shattering Surge} & 8th level, Str 3 & \spell{Shatter} struck object three times per day \\
-\featref{Surge of Speed} & 8th level, Dex 3 & Briefly gain effects of \spell{expeditious retreat} \\
+\thead{Surge Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
+\featref{Alacritous Surge} & 16th level, Dex 7 & Briefly gain effects of \spell{haste} & \featpref{Alacritous Surge} \\
+\featref{Deathless Surge} & 12th level, Cha 5 & Briefly gain effects of \spell{death ward} & \featpref{Deathless Surge} \\
+\featref{Freeing Surge} & 16th level, Dex 7 & Briefly gain effects of \spell{freedom} & \featpref{Freeing Surge} \\
+\featref{Healing Surge} & 8th level, Con 3 & Heal damage three times per day & \featpref{Healing Surge} \\
+\featref{Prescient Surge} & 12th level, Wis 5 & Roll twice three times per day & \featpref{Prescient Surge} \\
+\featref{Restorative Surge} & 8th level, Con 3 & Heal ability damage three times per day & \featpref{Restorative Surge} \\
+\featref{Shattering Surge} & 8th level, Str 3 & \spell{Shatter} struck object three times per day & \featpref{Shattering Surge} \\
+\featref{Surge of Speed} & 8th level, Dex 3 & Briefly gain effects of \spell{expeditious retreat} & \featpref{Surge of Speed} \\
 \end{longtabu}}
 
 \subsection{Combat Feat Table}
 
 {\small
 \taburowcolors [2] 2{tbrown .. white}
-\begin{longtabu}{>{\lcol}p{15em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{10em}}
-\thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Type} \\
-\featref{Armor Familiarity} & Proficiency with armor & Reduce penalties from wearing armor & Equipment \\
-\featref{Armor Proficiency (light)} & \x &  No armor check penalty on attack rolls & Equipment \\
-\tind \featref{Armor Proficiency (medium)} & Armor Proficiency (light) & No armor check penalty on attack rolls & Equipment \\
-\tind \tind \featref{Armor Proficiency (heavy)} & Armor Proficiency (medium) & No armor check penalty on attack rolls & Equipment \\
-\featref{Blind-Fight} & \x &  Reroll miss chance for concealment in melee & Awareness \\
-\featref{Cautious Attack} & \x & Trade damage for MC & Defense, Style \\
-\featref{Combat Expertise} & Int 3 & Trade attack bonus for AC & Defense, Style \\
-\featref{Covering Fire} & \x & Trade ranged attack bonus to penalize struck foes & Precision, Style \\
-\featref{Deadly Aim} & Dex 3 & Trade ranged attack bonus for damage & Precision, Style \\
-\featref{Dodge} & Dex 3 & \plus4 AC against some attacks of opportunity from selected target & Defense, Mobility \\
-\tind \featref{Combat Mobility} & Dex 3, base attack bonus \plus4, Dodge & Avoid some attacks of opportunity from selected target & Defense, Mobility \\
-\tind \tind \featref{Spring Attack} & Dex 3, base attack bonus \plus4, Dodge, Combat Mobility & Move before and after attacks & Mobility, Style \\
-\featref{Exotic Weapon Proficiency}\fn{1} & \x & Don't provoke when attacking with exotic weapons & Equipment \\
-\featref{Far Shot} & \x & Increase range increment by 50\% or 100\% & Precision \\
-\featref{Guardian} & \x & Adjacent allies suffer reduced overwhelm penalties. & Defense \\
-\featref{Improved Initiative} & \x &  \plus4 bonus on initiative checks & Reaction \\
-\featref{Improved Unarmed Strike} & \x &  Considered armed even when unarmed & \x \\
-\tind \featref{Deflect Arrows} & Dex 3, Improved Unarmed Strike & Deflect one ranged attacks with your bare hands & Defense, Reaction \\
-\tind \tind \featref{Snatch Arrows} & Dex 5, Deflect Arrows, Improved Unarmed Strike & Catch a deflected ranged attack & Defense, Reaction \\
-\featref{Mounted Archery} & Ride 1 rank & Reduced penalty for ranged attacks while mounted by 4 & Mounted, Precision \\
-\featref{Mounted Combat} & Ride 1 rank & Negate hits on mount with Ride check & Defense, Mounted \\
-\featref{Opportunist} & Dex 3 & \plus2 to attack and damage on attacks of opportunity & Finesse, Style \\
-\featref{Overpowering Assault} & Str 3 & Trade AC for maneuver bonus & Power, Style \\
+\begin{longtabu}{>{\lcol}p{15em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{10em} >{\lcol}p{3em}}
+    \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Type} & \thead{Page} \\
+\featref{Armor Familiarity} & Proficiency with armor & Reduce penalties from wearing armor & Equipment & \featpref{Armor Familiarity} \\
+\featref{Armor Proficiency (Light)} & \x &  No armor check penalty on attack rolls & Equipment & \featpref{Armor Proficiency (light)} \\
+\tind \featref{Armor Proficiency (Medium)} & Armor Proficiency (light) & No armor check penalty on attack rolls & Equipment & \featpref{Armor Proficiency (medium)} \\
+\tind \tind \featref{Armor Proficiency (Heavy)} & Armor Proficiency (medium) & No armor check penalty on attack rolls & Equipment & \featpref{Armor Proficiency (heavy)} \\
+\featref{Blind-Fight} & \x &  Reroll miss chance for concealment in melee & Awareness & \featpref{Blind-Fight} \\
+\featref{Cautious Attack} & \x & Trade damage for MC & Defense, Style & \featpref{Cautious Attack} \\
+\featref{Combat Expertise} & Int 3 & Trade attack bonus for AC & Defense, Style & \featpref{Combat Expertise} \\
+\featref{Covering Fire} & \x & Trade ranged attack bonus to penalize struck foes & Precision, Style & \featpref{Covering Fire} \\
+\featref{Deadly Aim} & Dex 3 & Trade ranged attack bonus for damage & Precision, Style & \featpref{Deadly Aim} \\
+\featref{Dodge} & Dex 3 & \plus4 AC against some attacks of opportunity from selected target & Defense, Mobility & \featpref{Dodge} \\
+\tind \featref{Combat Mobility} & Dex 3, base attack bonus \plus4, Dodge & Avoid some attacks of opportunity from selected target & Defense, Mobility & \featpref{Combat Mobility} \\
+\tind \tind \featref{Spring Attack} & Dex 3, base attack bonus \plus4, Dodge, Combat Mobility & Move before and after attacks & Mobility, Style & \featpref{Spring Attack} \\
+\featref{Exotic Weapon Proficiency}\fn{1} & \x & Don't provoke when attacking with exotic weapons & Equipment & \featpref{Exotic Weapon Proficiency} \\
+\featref{Far Shot} & \x & Increase range increment by 50\% or 100\% & Precision & \featpref{Far Shot} \\
+\featref{Guardian} & \x & Adjacent allies suffer reduced overwhelm penalties. & Defense & \featpref{Guardian} \\
+\featref{Improved Initiative} & \x &  \plus4 bonus on initiative checks & Reaction & \featpref{Improved Initiative} \\
+\featref{Improved Unarmed Strike} & \x &  Considered armed even when unarmed & \x & \featpref{Improved Unarmed Strike} \\
+\tind \featref{Deflect Arrows} & Dex 3, Improved Unarmed Strike & Deflect one ranged attacks with your bare hands & Defense, Reaction & \featpref{Deflect Arrows} \\
+\tind \tind \featref{Snatch Arrows} & Dex 5, Deflect Arrows, Improved Unarmed Strike & Catch a deflected ranged attack & Defense, Reaction & \featpref{Snatch Arrows} \\
+\featref{Mounted Archery} & Ride 1 rank & Reduced penalty for ranged attacks while mounted by 4 & Mounted, Precision & \featpref{Mounted Archery} \\
+\featref{Mounted Combat} & Ride 1 rank & Negate hits on mount with Ride check & Defense, Mounted & \featpref{Mounted Combat} \\
+\featref{Opportunist} & Dex 3 & \plus2 to attack and damage on attacks of opportunity & Finesse, Style & \featpref{Opportunist} \\
+\featref{Overpowering Assault} & Str 3 & Trade AC for maneuver bonus & Power, Style & \featpref{Overpowering Assault} \\
 
 \midrule
-\thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Type} \\
-\featref{Parry} & Dex 3 & Ready yourself to parry incoming blows & Defense, Reaction \\
-\tind \featref{Shielded Parry} & Dex 3, shield proficiency, Parry & Add shield modifier to parry attempts & Defense, Reaction \\
-\tind \featref{Riposte} & Dex 3, base attack bonus \plus4, Parry & Foes provoke if you parry very well & Reaction \\
-\featref{Point Blank Shot} & \x &  \plus2 bonus on ranged damage within 30 ft. & Precision, Style \\
-\featref{Precise Shot} & \x & Add half Wis to damage & Precision, Style \\
-\featref{Power Attack} & Str 3 & Trade melee attack bonus for damage & Power, Style \\
-\featref{Quick Draw} & \x & Draw weapon as swift action & Reaction \\
-\featref{Ride-By Attack} & Ride 8 ranks & Move before and after a mounted charge & Mobility, Mounted \\
-\tind \featref{Spirited Charge} & Ride-By Attack & Double damage with mounted charge & Mounted, Power \\
-\featref{Shield Proficiency} & \x &  No armor check penalty on attack rolls & Equipment \\
-\tind \featref{Tower Shield Proficiency} & Shield Proficiency & No armor check penalty on attack rolls & Equipment \\
-\featref{Tactical Readiness} & Int 3 & Ready two actions at once & Reaction \\
-\featref{Trample} & Ride 8 ranks & Target cannot avoid mounted overrun & Mobility, Mounted \\
-\featref{Two-Weapon Fighting} & Dex 3 & Gain \plus2 attack bonus when fighting with two weapons & Finesse \\
-\tind \featref{Two-Weapon Defense} & Two-Weapon Fighting & Off-hand weapon grants \plus1 shield bonus to AC, later \plus3 & Defense, Finesse \\
-\featref{Weapon Proficiency}\fn{1} & \x &  Don't provoke when attacking with weapon group & Equipment \\
+\thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Type} & \thead{Page} \\
+\featref{Parry} & Dex 3 & Ready yourself to parry incoming blows & Defense, Reaction & \featpref{Parry} \\
+\tind \featref{Shielded Parry} & Dex 3, shield proficiency, Parry & Add shield modifier to parry attempts & Defense, Reaction & \featpref{Shielded Parry} \\
+\tind \featref{Riposte} & Dex 3, base attack bonus \plus4, Parry & Foes provoke if you parry very well & Reaction & \featpref{Riposte} \\
+\featref{Point Blank Shot} & \x &  \plus2 bonus on ranged damage within 30 ft. & Precision, Style & \featpref{Point Blank Shot} \\
+\featref{Precise Shot} & \x & Add half Wis to damage & Precision, Style & \featpref{Precise Shot} \\
+\featref{Power Attack} & Str 3 & Trade melee attack bonus for damage & Power, Style & \featpref{Power Attack} \\
+\featref{Quick Draw} & \x & Draw weapon as swift action & Reaction & \featpref{Quick Draw} \\
+\featref{Ride-By Attack} & Ride 8 ranks & Move before and after a mounted charge & Mobility, Mounted & \featpref{Ride-By Attack} \\
+\tind \featref{Spirited Charge} & Ride-By Attack & Double damage with mounted charge & Mounted, Power & \featpref{Spirited Charge} \\
+\featref{Shield Proficiency} & \x &  No armor check penalty on attack rolls & Equipment & \featpref{Shield Proficiency} \\
+\tind \featref{Tower Shield Proficiency} & Shield Proficiency & No armor check penalty on attack rolls & Equipment & \featpref{Tower Shield Proficiency} \\
+\featref{Tactical Readiness} & Int 3 & Ready two actions at once & Reaction & \featpref{Tactical Readiness} \\
+\featref{Trample} & Ride 8 ranks & Target cannot avoid mounted overrun & Mobility, Mounted & \featpref{Trample} \\
+\featref{Two-Weapon Fighting} & Dex 3 & Gain \plus2 attack bonus when fighting with two weapons & Finesse & \featpref{Two-Weapon Fighting} \\
+\tind \featref{Two-Weapon Defense} & Two-Weapon Fighting & Off-hand weapon grants \plus1 shield bonus to AC, later \plus3 & Defense, Finesse & \featpref{Two-Weapon Defense} \\
+\featref{Weapon Proficiency}\fn{1} & \x &  Don't provoke when attacking with weapon group & Equipment & \featpref{Weapon Proficiency} \\
 
 \midrule
-\thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Type} \\
-\featref{Active Defense} & Base attack bonus \plus4 & Take attacks of opportunity normally while fighting defensively & Reaction \\
-\featref{Chargebreaker} & Base attack bonus \plus4 & Gain \plus2 to attack and damage when readying against approaching foe & Reaction \\
-\featref{Cleave} & Str 3, base attack bonus \plus4 & Extra melee attack after dropping target & Power \\
-\featref{Defensive Stance} & Base attack bonus \plus4 & Trade ability to move for MC & Defense, Style \\
-\featref{Distracting Foe} & Base attack bonus \plus4 & Threatened foes suffer Concentration penalties & Style \\
-\featref{Feign Weakness} & Base attack bonus \plus4 & Provoke attack to render foe flat-footed & Style \\
-\featref{Improved Bull Rush} & Base attack bonus \plus4 & \plus2 bonus on bull rush attacks; push target back without moving & Maneuver, Power \\
-\featref{Improved Dirty Trick} & Base attack bonus \plus4 & \plus2 bonus on dirty trick attacks; dirty tricks last longer & Finesse, Maneuver \\
-\featref{Improved Disarm} & Base attack bonus \plus4 & \plus2 bonus on disarm attacks; knock foe's weapon away after disarming & Finesse, Maneuver \\
-\featref{Improved Feint} & Base attack bonus \plus4 & \plus2 bonus on feint attacks; feint as move action & Finesse, Maneuver \\
-\featref{Improved Grapple} & Base attack bonus \plus4 & \plus2 bonus on grapple attacks; attack faster in grapple & Maneuver, Power \\
-\featref{Improved Overrun} & Base attack bonus \plus4 & \plus2 bonus on overrun attacks; target can't avoid & Maneuver, Power \\
-\featref{Improved Trip} & Base attack bonus \plus4 & \plus2 bonus on trip attacks; tripped foe provokes attacks of opportunity & Finesse, Maneuver \\
-\featref{Intuitive Reaction} & Wis 3, base attack bonus \plus4 & Add half Wisdom to attacks of opportunity each round & Reaction \\
-\featref{Knockdown} & Str 3, base attack bonus \plus4 & Bull rushed foe can be knocked prone & Maneuver, Power \\
-\featref{Reveal the Weak Point} & Base attack bonus \plus4 & Sacrifice attack and damage to penalize foe's AC & Style \\
-\featref{Tactical Analysis} & Int 3, Base attack bonus \plus4 & Identify foe's strengths and weaknesses & Awareness \\
-\featref{Threatening Fire} & Base attack bonus \plus4 & Help overwhelm foes with ranged weapons & Precision, Style \\
-\featref{Weapon Focus} & Base attack bonus \plus4 & Special ability with weapon group & Equipment \\
+\thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Type} & \thead{Page} \\
+\featref{Active Defense} & Base attack bonus \plus4 & Take attacks of opportunity normally while fighting defensively & Reaction & \featpref{Active Defense} \\
+\featref{Chargebreaker} & Base attack bonus \plus4 & Gain \plus2 to attack and damage when readying against approaching foe & Reaction & \featpref{Chargebreaker} \\
+\featref{Cleave} & Str 3, base attack bonus \plus4 & Extra melee attack after dropping target & Power & \featpref{Cleave} \\
+\featref{Defensive Stance} & Base attack bonus \plus4 & Trade ability to move for MC & Defense, Style & \featpref{Defensive Stance} \\
+\featref{Distracting Foe} & Base attack bonus \plus4 & Threatened foes suffer Concentration penalties & Style & \featpref{Distracting Foe} \\
+\featref{Feign Weakness} & Base attack bonus \plus4 & Provoke attack to render foe flat-footed & Style & \featpref{Feign Weakness} \\
+\featref{Improved Bull Rush} & Base attack bonus \plus4 & \plus2 bonus on bull rush attacks; push target back without moving & Maneuver, Power & \featpref{Improved Bull Rush} \\
+\featref{Improved Dirty Trick} & Base attack bonus \plus4 & \plus2 bonus on dirty trick attacks; dirty tricks last longer & Finesse, Maneuver & \featpref{Improved Dirty Trick} \\
+\featref{Improved Disarm} & Base attack bonus \plus4 & \plus2 bonus on disarm attacks; knock foe's weapon away after disarming & Finesse, Maneuver & \featpref{Improved Disarm} \\
+\featref{Improved Feint} & Base attack bonus \plus4 & \plus2 bonus on feint attacks; feint as move action & Finesse, Maneuver & \featpref{Improved Feint} \\
+\featref{Improved Grapple} & Base attack bonus \plus4 & \plus2 bonus on grapple attacks; attack faster in grapple & Maneuver, Power & \featpref{Improved Grapple} \\
+\featref{Improved Overrun} & Base attack bonus \plus4 & \plus2 bonus on overrun attacks; target can't avoid & Maneuver, Power & \featpref{Improved Overrun} \\
+\featref{Improved Trip} & Base attack bonus \plus4 & \plus2 bonus on trip attacks; tripped foe provokes attacks of opportunity & Finesse, Maneuver & \featpref{Improved Trip} \\
+\featref{Intuitive Reaction} & Wis 3, base attack bonus \plus4 & Add half Wisdom to attacks of opportunity each round & Reaction & \featpref{Intuitive Reaction} \\
+\featref{Knockdown} & Str 3, base attack bonus \plus4 & Bull rushed foe can be knocked prone & Maneuver, Power & \featpref{Knockdown} \\
+\featref{Reveal the Weak Point} & Base attack bonus \plus4 & Sacrifice attack and damage to penalize foe's AC & Style & \featpref{Reveal the Weak Point} \\
+\featref{Tactical Analysis} & Int 3, Base attack bonus \plus4 & Identify foe's strengths and weaknesses & Awareness & \featpref{Tactical Analysis} \\
+\featref{Threatening Fire} & Base attack bonus \plus4 & Help overwhelm foes with ranged weapons & Precision, Style & \featpref{Threatening Fire} \\
+\featref{Weapon Focus} & Base attack bonus \plus4 & Special ability with weapon group & Equipment & \featpref{Weapon Focus} \\
 
 \midrule
-\thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Type} \\
-\featref{Bewildering Strike} & Base attack bonus \plus8 & Attack bewilders foe & Strike \\
-\featref{Cleaving Stride} & Str 3, base attack bonus \plus8, Cleave & Continue movement after dropping target & Power \\
-\featref{Contingent Counter} & Int 3, base attack bonus \plus8 & Prepare to attack when attack misses you & Reaction \\
-\featref{Driving Assault} & Str 5, base attack bonus \plus8 & Bull rushed foe provokes attack from you & Power, Maneuver \\
-\featref{Eye of the Storm} & Base attack bonus \plus8 & You are more difficult to overwhelm & Awareness, Defense \\
-\featref{Heartseeker} & Base attack bonus \plus8 & Trade attack bonus to double critical threat range & Style \\
-\featref{Immobilizing Strike} & Base attack bonus \plus8 & Melee attack prevents foe from moving & Strike \\
-\featref{Inescapable Bulwark of Defense} & Dex 3, Base attack bonus \plus8 & Withdrawing enemies cannot avoid provoking attacks of opportunity & Reaction, Style \\
-\featref{Intimidating Strike} & Base attack bonus \plus8, Intimidate 8 ranks & Attack lets you intimidate struck foe & Strike \\
-\featref{Intuitive Defense} & Wis 3, base attack bonus \plus8 & Add half Wis to AC & Defense, Style \\
-\featref{Overwhelming Force} & Str 5, base attack bonus \plus8 & Apply full Strength to damage when using two hands & Power \\
-\featref{Perfect Shot} & Dex 5, base attack bonus \plus8 & Ignore less than total cover/concealment on ranged attacks & Precision, Style \\
-\featref{Pierce Wings} & Base attack bonus \plus8 & Ranged attack removes foe's ability to fly & Strike \\ 
-\featref{Predictive Defense} & Int 3, base attack bonus \plus8 & Add half Int to AC & Defense, Style \\
-\featref{Sickening Strike} & Base attack bonus \plus8 & Attack sickens foe & Strike \\
-\featref{Tactical Prediction} & Int 3, Base attack bonus \plus8 & Predict foe's next action & Awareness \\
-\featref{Wall Slam} & Str 5, base attack bonus \plus8 & Slam opponent into wall to deal bonus damage & Maneuver, Power \\
-\featref{Whirlwind Attack} & Dex 5, base attack bonus \plus8 & One melee attack against each opponent within reach & Style \\
+\thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Type} & \thead{Page} \\
+\featref{Bewildering Strike} & Base attack bonus \plus8 & Attack bewilders foe & Strike & \featpref{Bewildering Strike} \\
+\featref{Cleaving Stride} & Str 3, base attack bonus \plus8, Cleave & Continue movement after dropping target & Power & \featpref{Cleaving Stride} \\
+\featref{Contingent Counter} & Int 3, base attack bonus \plus8 & Prepare to attack when attack misses you & Reaction & \featpref{Contingent Counter} \\
+\featref{Driving Assault} & Str 5, base attack bonus \plus8 & Bull rushed foe provokes attack from you & Power, Maneuver & \featpref{Driving Assault} \\
+\featref{Eye of the Storm} & Base attack bonus \plus8 & You are more difficult to overwhelm & Awareness, Defense & \featpref{Eye of the Storm} \\
+\featref{Heartseeker} & Base attack bonus \plus8 & Trade attack bonus to double critical threat range & Style & \featpref{Heartseeker} \\
+\featref{Immobilizing Strike} & Base attack bonus \plus8 & Melee attack prevents foe from moving & Strike & \featpref{Immobilizing Strike} \\
+\featref{Inescapable Bulwark of Defense} & Dex 3, Base attack bonus \plus8 & Withdrawing enemies cannot avoid provoking attacks of opportunity & Reaction, Style & \featpref{Inescapable Bulwark of Defense} \\
+\featref{Intimidating Strike} & Base attack bonus \plus8, Intimidate 8 ranks & Attack lets you intimidate struck foe & Strike & \featpref{Intimidating Strike} \\
+\featref{Intuitive Defense} & Wis 3, base attack bonus \plus8 & Add half Wis to AC & Defense, Style & \featpref{Intuitive Defense} \\
+\featref{Overwhelming Force} & Str 5, base attack bonus \plus8 & Apply full Strength to damage when using two hands & Power & \featpref{Overwhelming Force} \\
+\featref{Perfect Shot} & Dex 5, base attack bonus \plus8 & Ignore less than total cover/concealment on ranged attacks & Precision, Style & \featpref{Perfect Shot} \\
+\featref{Pierce Wings} & Base attack bonus \plus8 & Ranged attack removes foe's ability to fly & Strike & \featpref{Pierce Wings} \\ 
+\featref{Predictive Defense} & Int 3, base attack bonus \plus8 & Add half Int to AC & Defense, Style & \featpref{Predictive Defense} \\
+\featref{Sickening Strike} & Base attack bonus \plus8 & Attack sickens foe & Strike & \featpref{Sickening Strike} \\
+\featref{Tactical Prediction} & Int 3, Base attack bonus \plus8 & Predict foe's next action & Awareness & \featpref{Tactical Prediction} \\
+\featref{Wall Slam} & Str 5, base attack bonus \plus8 & Slam opponent into wall to deal bonus damage & Maneuver, Power & \featpref{Wall Slam} \\
+\featref{Whirlwind Attack} & Dex 5, base attack bonus \plus8 & One melee attack against each opponent within reach & Style & \featpref{Whirlwind Attack} \\
 
 \midrule
-\thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Type} \\
-\featref{Confusing Strike} & Base attack bonus \plus12 & Attack confuses bloodied foe & Strike \\
-\featref{Contingent Attack} & Int 5, base attack bonus \plus12 & Prepare to attack as immediate action & Reaction \\
-\featref{Legendary Awareness} & Base attack bonus \plus12, any three Awareness feats & Immune to overwhelm & Awareness \\
-\featref{Legendary Finesse} & Base attack bonus \plus12, any three Finesse feats & Add half Dexterity to damage & Finesse \\
-\featref{Legendary Maneuver Master} & Base attack bonus \plus12, any three Maneuver feats & Never provoke, deal damage with very successful maneuvers & Maneuver \\ 
-\featref{Legendary Mobility} & Base attack bonus \plus12, any three Mobility feats & Movement does not provoke & Mobility\\
-\featref{Legendary Mounted Warrior} & Base attack bonus \plus12, any three Mounted feats & Share damage with mount & Mounted\\
-\featref{Legendary Power} & Base attack bonus \plus12, any three Power feats & Wield weapons as if they were less encumbering & Power\\ 
-\featref{Legendary Precision} & Base attack bonus \plus12, any three Precision feats & Very accurate hits deal maximum damage & Precision\\ 
-\featref{Legendary Style} & Base attack bonus \plus12, any three Style feats & Use two styles at once & \x \\
-\featref{Manyshot} & Dex 7, base attack bonus \plus12 & Shoot two projectiles simultaneously & Precision, Style \\
-\featref{Master Tactician} & Int 3, base attack bonus \plus12 & Ready full-round actions with allies & Reaction \\
-\featref{Penetrating Strike} & Base attack bonus \plus12 & Attack removes foe's damage reduction & Strike \\
-\featref{Two-Weapon Rend} & Str 5, base attack bonus \plus12, Two-Weapon Fighting & Deal Strength damage with both weapons & Power \\
+\thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Type} & \thead{Page} \\
+\featref{Confusing Strike} & Base attack bonus \plus12 & Attack confuses bloodied foe & Strike & \featpref{Confusing Strike} \\
+\featref{Contingent Attack} & Int 5, base attack bonus \plus12 & Prepare to attack as immediate action & Reaction & \featpref{Contingent Attack} \\
+\featref{Legendary Awareness} & Base attack bonus \plus12, any three Awareness feats & Immune to overwhelm & Awareness & \featpref{Legendary Awareness} \\
+\featref{Legendary Finesse} & Base attack bonus \plus12, any three Finesse feats & Add half Dexterity to damage & Finesse & \featpref{Legendary Finesse} \\
+\featref{Legendary Maneuver Master} & Base attack bonus \plus12, any three Maneuver feats & Never provoke, deal damage with very successful maneuvers & Maneuver & \featpref{Legendary Maneuver Master} \\ 
+\featref{Legendary Mobility} & Base attack bonus \plus12, any three Mobility feats & Movement does not provoke & Mobility& \featpref{Legendary Mobility} \\
+\featref{Legendary Mounted Warrior} & Base attack bonus \plus12, any three Mounted feats & Share damage with mount & Mounted& \featpref{Legendary Mounted Warrior} \\
+\featref{Legendary Power} & Base attack bonus \plus12, any three Power feats & Wield weapons as if they were less encumbering & Power& \featpref{Legendary Power} \\ 
+\featref{Legendary Precision} & Base attack bonus \plus12, any three Precision feats & Very accurate hits deal maximum damage & Precision& \featpref{Legendary Precision} \\ 
+\featref{Legendary Style} & Base attack bonus \plus12, any three Style feats & Use two styles at once & \x & \featpref{Legendary Style} \\
+\featref{Manyshot} & Dex 7, base attack bonus \plus12 & Shoot two projectiles simultaneously & Precision, Style & \featpref{Manyshot} \\
+\featref{Master Tactician} & Int 3, base attack bonus \plus12 & Ready full-round actions with allies & Reaction & \featpref{Master Tactician} \\
+\featref{Penetrating Strike} & Base attack bonus \plus12 & Attack removes foe's damage reduction & Strike & \featpref{Penetrating Strike} \\
+\featref{Two-Weapon Rend} & Str 5, base attack bonus \plus12, Two-Weapon Fighting & Deal Strength damage with both weapons & Power & \featpref{Two-Weapon Rend} \\
 
 \midrule
-\thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Type} \\
-\featref{Counterstorm} & Base attack bonus \plus16 & Foes that miss you provoke & Reaction, Style\\
-\featref{Demolishing Strike} & Base attack bonus \plus16 & Attack deals double damage & Strike \\
-\featref{Executioner} & Base attack bonus \plus16, any five Reaction feats & Gain free attacks against foes near death & Reaction \\
+\thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Type} & \thead{Page} \\
+\featref{Counterstorm} & Base attack bonus \plus16 & Foes that miss you provoke & Reaction, Style& \featpref{Counterstorm} \\
+\featref{Demolishing Strike} & Base attack bonus \plus16 & Attack deals double damage & Strike & \featpref{Demolishing Strike} \\
+\featref{Executioner} & Base attack bonus \plus16, any five Reaction feats & Gain free attacks against foes near death & Reaction & \featpref{Executioner} \\
 \end{longtabu}
 \begin{enumerate*}
     \item You can gain this feat multiple times. Each time you do, it has a different effect. 
@@ -1238,7 +1236,7 @@ If you have three or more Reaction feats, you can draw light and medium weapons 
 \featpre Base attack bonus \plus4.
 \parhead{Benefit} While in this style, any creature you deal damage to takes a \minus3 penalty to AC for 1 round. In exchange, you take a \minus3 penalty to attack and damage. At base attack bonus \plus8, and every 4 base attack bonus thereafter, you increase the bonus and penalty by 1. As normal, penalties from the same source do not stack.
 
-\feat{Ride-by Attack}{Combat}
+\feat{Ride-By Attack}{Combat}
 \featpre Ride 8 ranks.
 \parhead{Benefit} When you are mounted and use the charge action, you may move and attack as if with a standard charge and then move again (continuing the straight line of the charge). You do not need to attack from the closest possible space when making a ride-by attack. Your total movement for the round can't exceed the distance you could normally move on a mounted charge. You and your mount do not provoke an attack of opportunity from the opponent that you attack.
 
