@@ -1457,29 +1457,33 @@ If you take life damage, you lose all temporary hit points provided by this spel
   Each round, you can turn to detect objects in a new area. A detection spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.
 \end{spellnotes}
 
-\spellsection{Detect Thoughts}
-\spellschool{Divination (Awareness) [Detection] [Mind-Affecting]}
+\spellsection{Read Mind}
+\spellschool{Divination (Awareness) [Mind-Affecting]}
 \spelllvl{Knowledge 3, Sor/Wiz 3}
-\spellarea{\arealarge cone-shaped emanation from you}
+\spellrng{\rngmed}
+\spelltgt{One creature}
 \spelldur{Concentration}
-\spellsave{Will negates; see text}
+\spellsave{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  You detect surface thoughts. The amount of information revealed depends on how long you study a particular area or subject.
-  \par \subspell{1st Round} Presence or absence of thoughts (from conscious creatures with Intelligence scores of 1 or higher).
-  \par \subspell{2nd Round} Number of thinking minds and the Intelligence score of each. If the highest Intelligence is 20 or higher and at least 10 points higher than your own Intelligence score, you are stunned for 1 round and the spell ends. This spell does not let you determine the location of the thinking minds if you can't see the creatures whose thoughts you are detecting.
-  \par \subspell{3rd Round} Surface thoughts of any mind in the area. A target's Will save prevents you from reading its thoughts, and you must cast detect thoughts again to have another chance. Creatures of animal intelligence (Int 1 or 2) have simple, instinctual thoughts that you can pick up. You need not be able to see a creature to detect thoughts from it. You gain a \plus4 circumstance bonus to Bluff, Diplomacy, and Intimidate checks against creatures whose mind you are reading.
+  You read the subject's surface thoughts. A Will save prevents you from reading its thoughts. You gain a \plus4 circumstance bonus to Bluff, Diplomacy, and Intimidate checks against creatures whose mind you are reading.
 \end{spelleffect}
-\begin{spellnotes}
-  Each round, you can turn to detect thoughts in a new area. A detection spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.
-\end{spellnotes}
 
-\spellsectioncomma{Detect Thoughts}{Greater}
-\spellschool{Divination (Awareness) [Detection] [Mind-Affecting]}
-\spelllvl{Knowledge 8, Sor/Wiz 8}
-\spelldur{\durlong (D)}
+\spellsectioncomma{Read Mind}{Greater}
+\spellschool{Divination (Awareness) [Mind-Affecting]}
+\spelllvl{Knowledge 7, Sor/Wiz 7}
+\spellsave{None}
 \begin{spelleffect}
-  This spell functions as \spell{detect thoughts}, except that it does not require concentration to maintain. You automatically detect the presence or absence of thoughts, the number of thinking minds, and the Intelligence score of each. You must concentrate to detect surface thoughts, but it only takes you a single round. 
+    This spell functions like \spell{read mind}, except that no saving throw is allowed.
+\end{spelleffect}
+
+\spellsectioncomma{Read Mind}{Mass}
+\spellschool{Divination (Awareness) [Mind-Affecting]}
+\spelllvl{Knowledge 8, Sor/Wiz 8}
+\spellarea{\areamed radius limit}
+\spelltgt{Five creatures within the area}
+\begin{spelleffect}
+    This spell functions like \spell{read mind}, except that you can read the minds of multiple creatures at once. 
 \end{spelleffect}
 
 \spellsection{Dictum}
