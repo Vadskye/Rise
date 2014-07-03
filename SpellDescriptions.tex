@@ -348,9 +348,8 @@ If you take life damage, you lose all temporary hit points provided by this spel
   You change the subject into a Small or smaller animal of no more than 1 HD (such as a dog, lizard, monkey, or toad). The subject takes on all the statistics and special abilities of an average member of the new form in place of its own except as follows:
   \begin{itemize*} 
     \item The target retains its own alignment, personality, and mental attributes.
-    \item If the target has the shapechanger subtype, it retains that subtype. 
     \item The target retains its own hit points. 
-    \item The target is treated has having its normal Hit Values for purpose of adjudicating effects based on HV, though it uses the new form's base attack bonus, base save bonuses, and all other statistics derived from Hit Values. 
+    \item The target is treated has having its normal level for purpose of adjudicating effects based on level, though it uses the new form's base attack bonus, base save bonuses, and all other statistics derived from level. 
     \item The target also retains the ability to understand (but not to speak) the languages it understood in its original form. It can write in the languages it understands, but only the form is capable of writing in some manner (such as drawing in the dirt with a paw). 
   \end{itemize*}
   With those exceptions, the target's normal game statistics are replaced by those of the new form. The target loses all the special abilities it has in its normal form, including its class features.
@@ -361,7 +360,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 
   If the spell succeeds, the subject must also make a Will save. If the second save fails, the transformation is permanent. Otherwise, the creature reverts to its true form after the \durshort duration.
 
-  If the subject remains in the new form for 24 consecutive hours, it must attempt another Will save. If this save fails, it loses its ability to understand language, as well as all other memories of its previous form, and its Hit Values, hit points, and mental attributes change to match an average creature of its new form. These abilities and statistics return to normal if the effect is later ended. The subject must repeat this save every 24 hours that it remains in its new form. 
+  If the subject remains in the new form for 24 consecutive hours, it must attempt another Will save. If this save fails, it loses its ability to understand language, as well as all other memories of its previous form, and its level, hit points, and mental attributes change to match an average creature of its new form. These abilities and statistics return to normal if the effect is later ended. The subject must repeat this save every 24 hours that it remains in its new form. 
 \end{spellblood}
 \begin{spellnotes}
   A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
@@ -482,10 +481,10 @@ If you take life damage, you lose all temporary hit points provided by this spel
   \par Each nonevil creature in the area is sickened, making it vulnerable for 5 rounds.
 \end{spellhealthy}
 \begin{spellblood}
-  \par Each nonevil creature in the area suffers one or more of the following ill effects, depending on its Hit Values.
+  \par Each nonevil creature in the area suffers one or more of the following ill effects, depending on its level.
   \begin{dtable}
     \begin{tabularx}{\columnwidth}{l >{\lcol}X}
-      \par \thead{HV} & \thead{Effect} \\
+      \par \thead{Level} & \thead{Effect} \\
       \par Equal to caster level & Sickened \\
       \par Up to caster level \minus5 & Nauseated, sickened \\
       \par Up to caster level \minus10 & Paralyzed, nauseated, sickened \\
@@ -500,7 +499,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \end{spellblood}
 \begin{spellnotes}
   A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
-  Creatures whose Hit Values exceed your caster level are unaffected by \spell{blasphemy}.
+  Creatures whose level exceeds your caster level are unaffected by \spell{blasphemy}.
 \end{spellnotes}
 
 \spellsection{Bless}
@@ -773,7 +772,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
   The subjects are reduced to 0 hit points and take 9 critical damage, causing them to begin dying.
 \end{spellblood}
 \begin{spellnotes}
-  This spell can affect 2 HV worth of living creatures per caster level. Creatures with the fewest HV are affected first; among creatures with equal HV, those who are closest to the burst's point of origin are affected first. No creature of more HV than half your caster level can be affected, and Hit Values that are not sufficient to affect a creature are wasted. Healthy creatures are not affected by the spell, and do not count against the spell's HV limit.
+  This spell can affect 2 levels worth of living creatures per caster level. Creatures with the lowest level are affected first; among creatures with equal levels, those who are closest to the burst's point of origin are affected first. No creature whose level is greater than half your caster level can be affected, and levels that are not sufficient to affect a creature are wasted. Healthy creatures are not affected by the spell, and do not count against the spell's level limit.
 \end{spellnotes}
 \spellmat{The powder of a crushed black pearl with a minimum value of 750 gp.}
 
@@ -1476,10 +1475,10 @@ If you take life damage, you lose all temporary hit points provided by this spel
   \par Each nonlawful creature in the area is deafened for 5 rounds.
 \end{spellhealthy}
 \begin{spellblood}
-  \par Each nonlawful creature in the area suffers one or more of the following ill effects, depending on its Hit Values.
+  \par Each nonlawful creature in the area suffers one or more of the following ill effects, depending on its level.
   \begin{dtable}
     \begin{tabularx}{\columnwidth}{l >{\lcol}X}
-      \par \thead{HV} & \thead{Effect} \\
+      \par \thead{Level} & \thead{Effect} \\
       \par Equal to caster level & Staggered \\
       \par Up to caster level \minus5 & Stunned, staggered \\
       \par Up to caster level \minus10 & Paralyzed, stunned, staggered \\
@@ -1493,7 +1492,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
   \par \subspell{Killed} Living creatures die. Nonliving creatures are destroyed.
 \end{spellblood}
 \begin{spellnotes}
-  Creatures whose Hit Values exceed your caster level are unaffected by this spell.
+  Creatures whose level exceeds your caster level are unaffected by this spell.
 \end{spellnotes}
 
 \spellsection{Dimension Door}
@@ -1845,7 +1844,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsr{No}
 \begin{spelleffect}
   This spell opens a portal to an Elemental Plane and summons elementals from it. A druid can choose the plane (Air, Earth, Fire, or Water); a cleric opens a portal to the plane matching his domain.
-  \par When the spell is complete, 2d4 Large elementals appear. Five minutes later, 1d4 Huge elementals appear. Five minutes after that, one greater elemental appears. Each elemental has maximum hit points per HV. Once these creatures appear, they serve you for the duration of the spell.
+  \par When the spell is complete, 2d4 Large elementals appear. Five minutes later, 1d4 Huge elementals appear. Five minutes after that, one greater elemental appears. Once these creatures appear, they serve you for the duration of the spell.
   \par The elementals obey you explicitly and never attack you, even if someone else manages to gain control over them. You do not need to concentrate to maintain control over the elementals. You can dismiss them singly or in groups at any time.
   \par When you use a summoning spell to summon an air, earth, fire, or water creature, it is a spell of that type.
 \end{spelleffect}
@@ -1887,7 +1886,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
   The target gains three negative levels.
-  \par Each negative level gives a creature a \minus1 penalty on attack rolls, saving throws, checks, and effective level (for determining the power, DC, and other details of spells or special abilities). Additionally, a spellcaster loses one spell slot from his or her highest available level. If the subject has at least as many negative levels as HV, it dies.
+  \par Each negative level gives a creature a \minus1 penalty on attack rolls, saving throws, checks, and effective level (for determining the power, DC, and other details of spells or special abilities). Additionally, a spellcaster loses one spell slot from his or her highest available level. If the subject has at least as many negative levels as levels, it dies.
   \par An undead creature struck by the ray gains physical damage reduction 8/positive instead. This damage reduction increases by 1 per two caster levels above 8th.
 \end{spelleffect}
 \begin{spellnotes}
@@ -2767,10 +2766,10 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
   \par Each nongood creature in the area is deafened for 5 rounds.
 \end{spellhealthy}
 \begin{spellblood}
-  \par Each nongood creature in the area suffers one or more of the following ill effects, depending on its Hit Values.
+  \par Each nongood creature in the area suffers one or more of the following ill effects, depending on its level.
   \begin{dtable}
     \begin{tabularx}{\columnwidth}{l >{\lcol}X}
-      \par \thead{HV} & \thead{Effect} \\
+      \par \thead{Level} & \thead{Effect} \\
       \par Equal to caster level & Deafened \\
       \par Up to caster level \minus5 & Blinded, deafened \\
       \par Up to caster level \minus10 & Paralyzed, blinded, deafened \\
@@ -2784,7 +2783,7 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
   \par \subspell{Killed} Living creatures die. Nonliving creatures are destroyed.
 \end{spellblood}
 \begin{spellnotes}
-  Creatures whose Hit Values exceed your caster level are unaffected by \spell{holy word}.
+  Creatures whose level exceeds your caster level are unaffected by \spell{holy word}.
 \end{spellnotes}
 
 \spellsection{Horrid Wilting}
@@ -3874,7 +3873,7 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \spellsr{No}
 \begin{spelleffect}
   This spell creates an ethereal passage through wooden, plaster, or stone walls, but not other materials. The phase door is invisible and inaccessible to all creatures except you, and only you can use the passage. It can be used a number of times equal to half your caster level before the spell ends. You disappear when you enter the phase door and appear when you exit. If you desire, you can take one other creature (Medium or smaller) through the door. This counts as two uses of the door. The door does not allow light, sound, or spell effects through it, nor can you see through it without using it. Thus, the spell can provide an escape route, though certain creatures, such as phase spiders, can follow with ease.
-  \par You can allow other creatures to use the phase door by setting some triggering condition for the door. Such conditions can be as simple or elaborate as you desire. They can be based on a creature's name, identity, or alignment, but otherwise must be based on observable actions or qualities. Intangibles such as level, class, Hit Values, and hit points don't qualify.
+  \par You can allow other creatures to use the phase door by setting some triggering condition for the door. Such conditions can be as simple or elaborate as you desire. They can be based on a creature's name, identity, or alignment, but otherwise must be based on observable actions or qualities. Intangibles such as level, class, and hit points don't qualify.
 \end{spelleffect}
 \begin{spellnotes}
   The \spell{true seeing} spell or similar magic reveals the presence of a phase door but does not allow its use. A \spell{phase door} is subject to \spell{dispel magic}. If anyone is within the passage when it is dispelled, he is harmlessly ejected just as if he were inside a \spell{passwall} effect.
@@ -3949,7 +3948,7 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
   The target is sickened for 5 rounds, making it vulnerable.
 \end{spellhealthy}
 \begin{spellblood}
-  If the target's HV does not exceed your caster level, it loses all its hit points and takes 9 critical damage, causing it to begin dying. Otherwise, it is sickened for 5 rounds.
+  If the target's level does not exceed your caster level, it loses all its hit points and takes 9 critical damage, causing it to begin dying. Otherwise, it is sickened for 5 rounds.
 \end{spellblood}
 \begin{spellnotes}
   A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
@@ -4072,7 +4071,7 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \spellsave{See text}
 \spellsr{See text}
 \begin{spelleffect}
-  This spell creates a vertical, opaque wall -- a shimmering, multicolored plane of light that protects you from all forms of attack. The wall flashes with seven colors, each of which has a distinct power and purpose. The wall is immobile, and you can pass through and remain near the wall without harm. However, any other creature with less than 8 HV that is within 20 feet of the wall is blinded for 1 minute by the colors if it looks at the wall.
+  This spell creates a vertical, opaque wall -- a shimmering, multicolored plane of light that protects you from all forms of attack. The wall flashes with seven colors, each of which has a distinct power and purpose. The wall is immobile, and you can pass through and remain near the wall without harm. However, any other creature with less than 8 levels that is within 20 feet of the wall is blinded for 1 minute by the colors if it looks at the wall.
   \par The wall's maximum proportions are 50 feet wide and 30 feet high. A \spell{prismatic wall} spell cast to materialize in a space occupied by a creature is disrupted, and the spell is wasted.
   \par Each color in the wall has a special effect. The accompanying table shows the seven colors of the wall, the order in which they appear, their effects on creatures trying to attack you or pass through the wall, and the magic needed to negate each color.
   \par The wall can be destroyed, color by color, in consecutive order, by various magical effects; however, the first color must be brought down before the second can be affected, and so on. A rod of cancellation or a mage's disjunction spell destroys a prismatic wall, but an antimagic field fails to penetrate it. Dispel magic and greater dispel magic cannot dispel the wall or anything beyond it. Spell resistance is effective against a prismatic wall, but the caster level check must be repeated for each color present.
@@ -5041,7 +5040,7 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
   \par Creatures forced to attack their fellows employ all methods at their disposal, choosing their deadliest spells and most advantageous combat tactics. They do not, however, harm targets that have fallen unconscious.
 \end{spelleffect}
 \begin{spellnotes}
-  Creatures with HV in excess of your caster level are immune to this spell.
+    Creatures whose level exceeds your caster level are immune to this spell.
 \end{spellnotes}
 
 \spellsection{Soulrend}
@@ -6368,10 +6367,10 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
   Each nonchaotic creature in the area is bewildered, making it vulnerable for 5 rounds.
 \end{spellhealthy}
 \begin{spellblood}
-  Each nonchaotic creature in the area suffers one or more of the following ill effects, depending on its Hit Values.
+  Each nonchaotic creature in the area suffers one or more of the following ill effects, depending on its level.
   \begin{dtable}
     \begin{tabularx}{\columnwidth}{l >{\lcol}X}
-      \par \thead{HV} & \thead{Effect} \\
+      \par \thead{Level} & \thead{Effect} \\
       \par Equal to caster level & Bewildered \\
       \par Up to caster level \minus5 & Confused, bewildered \\
       \par Up to caster level \minus10 & Paralyzed, nauseated, sickened \\
@@ -6385,7 +6384,7 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
   \par \subspell{Killed} Living creatures die. Nonliving creatures are destroyed.
 \end{spellblood}
 \begin{spellnotes}
-  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose Hit Values exceed your caster level are unaffected by \spell{word of chaos}.
+  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. Creatures whose level exceeds your caster level are unaffected by \spell{word of chaos}.
 \end{spellnotes}
 
 \spellsection{Word of Recall}
