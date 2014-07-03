@@ -119,6 +119,7 @@ class Creature(object):
                 'bard': classes.Bard,
                 'cleric': classes.Cleric,
                 'druid': classes.Druid,
+                'generic': classes.Generic,
                 'fighter': classes.Fighter,
                 'monk': classes.Monk,
                 'paladin': classes.Paladin,

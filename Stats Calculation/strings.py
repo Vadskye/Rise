@@ -21,7 +21,9 @@ AC_FLAT = 'flat-footed'
 AC_TYPES = [AC_NORMAL, AC_TOUCH, AC_FLAT]
 
 FORTITUDE = 'fortitude'
+FORT = FORTITUDE
 REFLEX = 'reflex'
+REF = REFLEX
 WILL = 'will'
 SAVE_NAMES = [FORTITUDE, REFLEX, WILL]
 
