@@ -1,5 +1,5 @@
 import util
-from util import GOOD, AVERAGE, POOR
+from strings import GOOD, AVERAGE, POOR, FORTITUDE, REFLEX, WILL
 import abilities
 import equipment
 
@@ -19,13 +19,13 @@ class LevelProgression:
 
 class Average(LevelProgression):
         bab_progression = AVERAGE
-        save_progressions = {'fortitude': AVERAGE, 'reflex': AVERAGE, 'will': AVERAGE}
+        save_progressions = {FORT: AVERAGE, REF: AVERAGE, WILL: AVERAGE}
         hit_value = 5
     
 class Barbarian(LevelProgression):
 
     bab_progression = GOOD
-    save_progressions = {'fortitude':GOOD, 'reflex':AVERAGE, 'will':POOR}
+    save_progressions = {FORT:GOOD, REF:AVERAGE, WILL:POOR}
     hit_value = 7
 
     def apply_modifications(self, base_creature):
@@ -40,12 +40,12 @@ class Barbarian(LevelProgression):
 
 class Bard(LevelProgression):
     bab_progression = AVERAGE
-    save_progressions = {'fortitude':AVERAGE, 'reflex':AVERAGE, 'will':AVERAGE}
+    save_progressions = {FORT:AVERAGE, REF:AVERAGE, WILL:AVERAGE}
     hit_value = 6
 
 class Cleric(LevelProgression):
     bab_progression = AVERAGE
-    save_progressions = {'fortitude':AVERAGE, 'reflex':POOR, 'will':GOOD}
+    save_progressions = {FORT:AVERAGE, REF:POOR, WILL:GOOD}
     hit_value = 5
 
     def apply_modifications(self, base_creature):
@@ -53,12 +53,17 @@ class Cleric(LevelProgression):
 
 class Druid(LevelProgression):
     bab_progression = AVERAGE
-    save_progressions = {'fortitude':GOOD, 'reflex':POOR, 'will':AVERAGE}
+    save_progressions = {FORT:GOOD, REF:POOR, WILL:AVERAGE}
+    hit_value = 5
+
+class Generic(LevelProgression):
+    bab_progression = AVERAGE
+    save_progressions = {FORT:AVERAGE, REF: AVERAGE, WILL: AVERAGE}
     hit_value = 5
 
 class Fighter(LevelProgression):
     bab_progression = GOOD
-    save_progressions = {'fortitude':GOOD, 'reflex':POOR, 'will':AVERAGE}
+    save_progressions = {FORT:GOOD, REF:POOR, WILL:AVERAGE}
     hit_value = 6
 
     def apply_modifications(self, base_creature):
@@ -88,7 +93,7 @@ class Fighter(LevelProgression):
 
 class Monk(LevelProgression):
     bab_progression = GOOD
-    save_progressions = {'fortitude':AVERAGE, 'reflex':GOOD, 'will':GOOD}
+    save_progressions = {FORT:AVERAGE, REF:GOOD, WILL:GOOD}
     hit_value = 6
 
     def apply_modifications(self, base_creature):
@@ -118,20 +123,19 @@ class Monk(LevelProgression):
         if self.level>=10:
             base_creature.weapon_damage.add_inherent(wisdom/2)
         
-
 class Paladin(LevelProgression):
     bab_progression = GOOD
-    save_progressions = {'fortitude':GOOD, 'reflex':POOR, 'will':GOOD}
+    save_progressions = {FORT:GOOD, REF:POOR, WILL:GOOD}
     hit_value = 6
 
 class Ranger(LevelProgression):
     bab_progression = GOOD
-    save_progressions = {'fortitude':GOOD, 'reflex':AVERAGE, 'will':AVERAGE}
+    save_progressions = {FORT:GOOD, REF:AVERAGE, WILL:AVERAGE}
     hit_value = 6
 
 class Rogue(LevelProgression):
     bab_progression = AVERAGE
-    save_progressions = {'fortitude':POOR, 'reflex':GOOD, 'will':POOR}
+    save_progressions = {FORT:POOR, REF:GOOD, WILL:POOR}
     hit_value = 5
 
     def apply_modifications(self, base_creature):
@@ -139,12 +143,12 @@ class Rogue(LevelProgression):
 
 class Sorcerer(LevelProgression):
     bab_progression = POOR
-    save_progressions = {'fortitude':POOR, 'reflex':POOR, 'will':GOOD}
+    save_progressions = {FORT:POOR, REF:POOR, WILL:GOOD}
     hit_value = 4
 
 class Wizard(LevelProgression):
     bab_progression = POOR
-    save_progressions = {'fortitude':POOR, 'reflex':POOR, 'will':GOOD}
+    save_progressions = {FORT:POOR, REF:POOR, WILL:GOOD}
     hit_value = 4
 
     def apply_modifications(self, base_creature):
@@ -152,5 +156,5 @@ class Wizard(LevelProgression):
 
 class Warrior(LevelProgression):
     bab_progression = GOOD
-    save_progressions = {'fortitude':GOOD, 'reflex':POOR, 'will':POOR}
+    save_progressions = {FORT:GOOD, REF:POOR, WILL:POOR}
     hit_value = 6

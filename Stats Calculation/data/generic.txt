@@ -1,6 +1,6 @@
-name=Cleric-warrior
+name=Generic
 race=human
-class=cleric
+class=generic
 armor=medium
 shield=heavy
 weapon=medium_melee
