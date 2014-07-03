@@ -151,6 +151,18 @@
   When you make a weapon good, evil, lawful, or chaotic, \spell{align weapon} is a good, evil, lawful, or chaotic spell, respectively.
 \end{spellnotes}
 
+\spellsection{Alter Appearance}
+\spellschool{Transmutation (Polymorph)}
+\spelllvl{Trans 1}
+\spellrng{Touch}
+\spelltgt{Touched creature}
+\spelldur{\durlong}
+\spellsave{Fortitude negates}
+\spellsr{Yes (Fortitude)}
+\begin{spelleffect}
+    As part of casting this spell, you can make a Disguise check with a \plus10 enhancement bonus to alter the subject's appearance. You can only alter its physical body, not its clothes or items.
+\end{spelleffect}
+
 \spellsection{Animal Growth}
 \spelldesc{You cause a number of animals grow to twice their normal size and eight times their normal weight.}
 \spellschool{Transmutation (Polymorph) [Size-Affecting]}
@@ -249,7 +261,7 @@
 \spelltgt{You}
 \spelldur{\durlong (D)}
 \begin{spelleffect}
-  You know the location and power of all magical auras that you can see within \rngmed range of you. An aura's power depends on a spell's functioning level or an item's caster level, as noted in the description of the Spellcraft skill. If the items or creatures bearing the auras are in line of sight, you can make Spellcraft skill checks to determine the school of magic involved in each. (Make one check per aura; DC 15 \add spell level, or 15 \add one-half caster level for a nonspell effect.)
+  You can see the location and power of all magical auras within \rngmed range of you. An aura's power depends on a spell's functioning level or an item's caster level, as noted in the description of the Spellcraft skill. You can make Spellcraft skill checks to determine the school of magic involved in each. (Make one check per aura; DC 15 \add spell level, or 15 \add one-half caster level for a nonspell effect.)
   \par If you concentrate on a specific creature within \rngmed range of you as a standard action, you can determine whether it has any spellcasting or spell-like abilities, whether these are arcane or divine (spell-like abilities register as arcane), and the strength of the most powerful spell or spell-like ability the creature currently has available for use.
 \end{spelleffect}
 \begin{spellnotes}
@@ -262,7 +274,7 @@
 \spelllvl{Sor/Wiz 7}
 \spelldur{\durext (D)}
 \begin{spelleffect}
-  This spell functions like \spell{arcane sight}, except that you automatically know which spells or magical effects are active upon any individual or object you see, and you can concentrate on specific creatures to learn about their spellcasting abilities as a swift action. In addition, you automatically recognize any spells being cast within the area.
+  This spell functions like \spell{arcane sight}, except that you automatically know which spells or magical effects are active upon any individual or object you see, and you can concentrate on specific creatures to learn about their spellcasting abilities as a swift action. In addition, you automatically recognize any spells being cast within the spell's range.
 \end{spelleffect}
 \begin{spellnotes}
   \par \spell{Greater arcane sight} doesn't let you identify magic items. Unlike \spell{arcane sight}, this spell cannot be made permanent with a permanency spell.
@@ -294,7 +306,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsave{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  An affected creature feels attracted to a particular person or object. The subject will take reasonable steps to meet, get close to, attend, or find the object of its implanted attraction. For the purpose of this spell, ``reasonable'' means that, while attracted, the subject doesn't suffer from blind obsession. He will act on this attraction only when not engaged in combat. The subject won't perform obviously suicidal actions. He can still recognize danger but will not flee unless the threat is immediate. If you make the subject feel an attraction to yourself, you can't command him indiscriminately, although he will be willing to listen to you (even if he disagrees).
+  An affected creature feels attracted to a particular person or object. The subject will take reasonable steps to meet, get close to, attend, or find the object of its implanted attraction. It is not blindly obsessed, and will only act on this attraction when not engaged in combat or other critical matters. The subject won't perform obviously suicidal actions. He can still recognize danger but will not flee unless the threat is immediate. If you make the subject feel an attraction to yourself, you can't command him indiscriminately, although he will be willing to listen to you (even if he disagrees).
   \par This spell grants you a \plus4 circumstance bonus on any social interaction checks you make involving the subject (such as Bluff, Diplomacy, Intimidate, and Sense Motive).
 \end{spelleffect}
 
@@ -319,20 +331,6 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \begin{comment}
 \subsubsection{B}
 \end{comment}
-
-\spellsection{Backbiter}
-\spelldesc{You subtly animate a weapon so that it strikes its wielder instead of its intended target.}
-\spellschool{Transmutation (Animation)}
-\spelllvl{Trans 1}
-\spellrng{\rngmed}
-\spelltgt{One weapon}
-\spelldur{\durshort or until discharged}
-\spellsave{Will negates (object)}
-\spellsr{Yes (Will)}
-\begin{spelleffect}
-  The next time the affected weapon is used to make a melee attack, it twists around so that the weapon automatically strikes the wielder instead. The wielder gets no warning or knowledge of the spell's effect on his weapon, and though he makes the attack, the self-dealt damage can't be consciously reduced (though damage reduction applies) or changed to nonlethal damage.
-  \par Once the weapon attacks its wielder (whether successfully or not), the spell is discharged.
-\end{spelleffect}
 
 \spellsection{Baleful Polymorph}
 \spelldesc{You transmute your foe into a small, insignificant animal.}
@@ -1593,12 +1591,10 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelltgt{You}
 \spelldur{\durlong (D)}
 \begin{spelleffect}
-  You make yourself -- including clothing, armor, weapons, and equipment -- look different. You can seem 20\% (about 1 foot for an average human) shorter or taller, thin, fat, or in between. You cannot change your body type. Otherwise, the extent of the apparent change is up to you. You could add or obscure a minor feature or look like an entirely different person.
-  \par The spell does not provide the abilities or mannerisms of the chosen form, nor does it alter the perceived tactile (touch) or audible (sound) properties or  you or your equipment. 
-  \par If you use this spell to create a disguise, you get a \plus10 bonus on the Disguise check.
+    As part of casting this spell, you can make a Disguise check with a \plus10 enhancement bonus to alter your appearance, including your clothes and equipment.
 \end{spelleffect}
 \begin{spellnotes}
-  A creature that interacts with the effect gets a Will save to recognize it as an illusion. In order to interact with the illusion with a Perception check, the creature must make a Perception check that beats your saving throw DC with this spell or your Disguise check (if used as part of a disguise), whichever is higher. You cannot change your disguise once the spell is cast. 
+  A creature that interacts with the effect gets a Will save to recognize it as an illusion. A creature that recognizes the effect as an illusion automatically sees through the disguise unless you are also disguised nonmagically, in which case it must beat that Disguise check as normal.
 \end{spellnotes}
 
 \spellsectioncomma{Disguise Self}{Greater}
