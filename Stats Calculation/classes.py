@@ -1,5 +1,5 @@
 import util
-from strings import GOOD, AVERAGE, POOR, FORTITUDE, REFLEX, WILL
+from strings import GOOD, AVERAGE, POOR, FORT, REF, WILL
 import abilities
 import equipment
 

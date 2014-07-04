@@ -33,25 +33,33 @@ class CombatCreature(object):
                 }[self.attack_mode]
 
     def full_attack(self, enemy, deal_damage = True):
-        damage_dealt = 0
+        damage_dealt_total = 0
+        hit_count = 0
         for i in xrange(util.attack_count(self.attack_bonus.base_attack_bonus)):
-            damage_dealt += self.single_attack(enemy, self.attack_bonus.get_total() - 5*i, deal_damage)
-        return damage_dealt
+            is_hit, damage_dealt = self.single_attack(enemy, self.attack_bonus.get_total() - 5*i, deal_damage)
+            damage_dealt_total += damage_dealt
+            hit_count += 1 if is_hit else 0
+        return hit_count, damage_dealt
 
     def single_attack(self, enemy, attack_bonus = None,
             deal_damage = True):
         damage_dealt = 0
         if attack_bonus is None:
             attack_bonus = self.attack_bonus.get_total()
-        is_hit, is_threshold_hit = util.attack_hits(attack_bonus, 
-                enemy.armor_class.normal(), threshold=5)
+        try:
+            is_hit, is_threshold_hit = util.attack_hits(
+                    attack_bonus, enemy.armor_class.normal(),
+                    threshold=5)
+        except:
+            is_hit, is_threshold_hit = util.attack_hits(
+                    attack_bonus, enemy, threshold=5)
         if is_hit:
             damage_dealt += self.weapon_damage.get_total(roll=True)
         if is_threshold_hit:
             damage_dealt += self.offhand_weapon_damage.get_total(roll=True)
         if deal_damage:
             enemy.take_damage(damage_dealt, self.weapon.damage_types)
-        return damage_dealt
+        return is_hit, damage_dealt
 
     def damage_spell(self, enemy):
         #Use highest-level, no optimization, no save spell
@@ -64,13 +72,14 @@ class CombatCreature(object):
         return full_weapon_damage_dealt(self.attack_bonus.get_total(),
                 ac, self.attack_bonus.base_attack_bonus, self.weapon_damage.get_total())
 
-    def hits_per_round(self, ac):
-        return combat.full_attack_hits(self.attack_bonus.get_total(),
-                ac, self.attack_bonus.base_attack_bonus)
-
     def avg_hit_probability(self, ac):
-        return combat.avg_hit_probability(self.attack_bonus.get_total(),
-                ac, self.attack_bonus.base_attack_bonus)
+        attack_count = util.attack_count(
+                self.attack_bonus.base_attack_bonus)
+        hit_chance_total = 0 
+        for i in xrange(attack_count):
+            hit_chance_total += hit_probability(
+                    self.attack_bonus.get_total(), ac)
+        return hit_chance_total/attack_count
 
     def roll_initiative(self):
         return util.d20.roll()+self.initiative.get_total()
@@ -137,16 +146,14 @@ def hit_probability(attack_bonus, ac):
     probability = (21+attack_bonus-ac)/20.0
     return min(0.95, max(0.05, probability))
 
+"""
 #return estimated number of hits
 def full_hit_probability(primary_attack_bonus, ac, base_attack_bonus):
     total_hits=0
     for i in xrange(attack_count(base_attack_bonus)):
         total_hits+=hit_probability(primary_attack_bonus-i*5, ac)
     return total_hits
-
-#return average probability that each attack will hit 
-def avg_hit_probability(primary_attack_bonus, ac, base_attack_bonus):
-    return full_attack_hits(primary_attack_bonus, ac, base_attack_bonus)/attack_count(base_attack_bonus)
+"""
 
 def attack_damage_dealt(attack_bonus, ac, avg_damage):
     return hit_probability(attack_bonus, ac)*avg_damage
