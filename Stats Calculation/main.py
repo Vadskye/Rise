@@ -13,7 +13,7 @@ def initialize_argument_parser():
     parser = argparse.ArgumentParser(description='Calculate combat statistics for Rise characters')
     parser.add_argument('-f', '--function', dest='function',
             help='function to perform', default=COMBAT,
-            choices=[COMBAT, CREATURE])
+            choices=['ac-calc', COMBAT, CREATURE])
     parser.add_argument('-c', '--creature-input', dest='creature_input', 
             help='the creature file to load', default=None)
     parser.add_argument('-c2', '--creature-input-2', dest='creature_input_2',
@@ -79,8 +79,31 @@ def get_character_or_monster(creature_name, level):
     except IOError:
         return Monster.from_monster_name(creature_name, level)
 
+#We want to find a pattern of generic ACs which maps to a roughly
+#50% chance of hitting for a generic character
+def calc_generic_ac(creature_name):
+    generic_ac = list()
+    chance_ideal = 0.5
+    for i in xrange(1,21):
+        creature = get_character_or_monster(creature_name, i)
+        creature = combat.CombatCreature.from_creature(creature)
+        chance_diff_best = 999
+        #This should break before reaching 100
+        for ac_test in xrange(10,100):
+            chance_current = creature.avg_hit_probability(ac_test)
+            chance_diff = chance_current - chance_ideal
+            if chance_diff < chance_diff_best:
+                ac_best = ac_test
+            if chance_diff < 0:
+                break
+        generic_ac.append(ac_best)
+    return generic_ac
+
+
 if __name__ == "__main__":
     args = initialize_argument_parser()
+    if args['function'] == 'ac-calc':
+        print calc_generic_ac(args['creature_input'])
     if args['function'] == CREATURE:
         creature = get_character_or_monster(args['creature_input'],
                 args['level'])
