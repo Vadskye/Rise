@@ -45,22 +45,6 @@ If your base attack bonus is \plus6 or higher, you can make multiple attacks as 
 
 Some special abilities, such as the \spell{haste} spell, also grant you the ability to make multiple attacks. In all cases, making multiple attacks requires using a standard action to make a standard attack. You cannot take multiple attacks on an attack of opportunity. Additionally, any penalties imposed while taking multiple attacks do not affect any other attacks you make, such as attacks of opportunity.
 
-\subsection{Combat Maneuver}\label{Combat Maneuver}
-As a standard action, you can try to hinder your foe by performing a combat maneuver, such as by disarming or tripping him. To do so, make an attack roll, adding your maneuver modifier to the roll instead of your attack modifier. If your result equals or exceeds your foe's Maneuver Class, your attack hits, and your foe suffers the effects of the maneuver.
-
-You can also perform some maneuvers as an attack of opportunity. See \pcref{Attacks of Opportunity}.
-
-\subsubsection{Maneuver Modifier}
-Your maneuver modifier is equal to the following:
-
-\begin{figure}[h]
-\centering Base attack bonus \add attack attribute \add special size modifier \add competence bonuses \add enhancement bonus
-\end{figure}
-
-Your attack attribute depends on the maneuver you are using, as described in \pcref{Combat Maneuvers}.
-
-Your special size modifier is described in \tref{Size in Combat}.
-
 \subsection{Reach}\label{Reach}
 Normally, you can attack anyone within five feet of you. The range at which you can attack is called your ``reach'', and the area that you can attack into is called your ``threatened area''. Reach for larger and smaller creatures is determined by size, as shown on \trefnp{Size in Combat}.
 
@@ -90,7 +74,46 @@ You can make a number of attacks of opportunity each round equal to 1 \add half 
 \subsection{Special Attacks}
 
 \subsubsection{Feint}\label{Feint}
-Instead of striking to deal damage, you can feint to leave your foe off-balance. You make a melee attack as normal, except that you target your foe's touch AC instead of its normal AC. If you hit, you deal no damage, but it is flat-footed against the next attack made against it. The attack must be made before the creature's next action, or else the feint is wasted.
+Instead of striking to deal damage, you can feint to leave your foe off-balance. You make a melee attack with your weapon as normal, except that you target the creature's touch AC instead of its normal AC. If you hit, you deal no damage, but it is flat-footed against the next attack made against it. The attack must be made before the creature's next action, or else the feint is wasted.
+
+\subsubsection{Disarm}\label{Disarm}
+Instead of striking a foe directly, you can strike an item it is wearing or holding. You make an attack with your weapon as normal, except that you target the creature's touch AC instead of its normal AC. If you hit, you deal damage to the object rather than to your foe. If you hit by 10 or more, and the item is not well-secured (such as a ring or suit of armor), it falls to the ground in the creature's square.
+
+\subsection{Combat Maneuvers}\label{Combat Maneuvers}
+A combat maneuver is an attempt to physically hinder your foe with your body, such as by shoving or tripping it. Unless otherwise noted, using a combat maneuver requires a free hand and takes a standard action. You make an attack against a creature within your reach, adding your maneuver modifier to the roll instead of your attack modifier. If your result equals or exceeds your foe's Maneuver Class, your attack hits, and your foe is affected by the maneuver.
+
+\begin{dtable*}
+    \lcaption{Combat Maneuvers}
+    \begin{tabularx}{\textwidth}{l l l l X}
+        \thead{Combat Maneuver}  & \thead{Action} & \thead{Key Attribute} & \thead{Brief Description} \\
+        Dirty Trick & Standard & Strength or Dexterity & Impose penalty on an opponent \\
+        Grapple & Standard & Strength & Wrestle with an opponent \\
+        Overrun & Full-round & Strength & Move through an opponent \\
+        Shove & Standard & Strength &  Move an opponent \\
+        Trip & Standard & Strength or Dexterity & Trip an opponent \\
+    \end{tabularx}
+\end{dtable*}
+
+\subsubsection{Maneuver Modifier}
+Your maneuver modifier is equal to the following:
+
+\begin{figure}[h]
+\centering Base attack bonus \add attack attribute \add special size modifier \add competence bonuses \add enhancement bonus
+\end{figure}
+
+Your attack attribute depends on the maneuver you are using, as described in \pcref{Combat Maneuvers}. Your special size modifier is described in \tref{Size in Combat}.
+
+\subsubsection{Maneuver Descriptions}
+
+\parhead{Dirty Trick}\label{Dirty Trick} You strike your foe in a sensitive spot, pull its pants down, or creatively use your environment to attack. Success means the creature is vulnerable for 1 round, causing giving it a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. For every 5 points by which you succeed, the creature is vulnerable for an additional round. You can perform a dirty trick with either Strength or Dexterity.
+
+\parhead{Grapple}\label{Grapple} You physically grab and restrain your foe. Success means you and the creature become grappled, which limits your ability to act. See \pcref{Grappling} for more details.
+
+\parhead{Overrun}\label{Overrun} You move directly through your foe. This maneuver requires a full-round action. When you overrun, you move up to your speed. Each creature in your way can choose to avoid you, allowing you to pass through its square unhindered. Each time you encounter a creature in your way that didn't avoid you, you make an overrun attack. Success means you can move through the creature's space, though it is considered difficult terrain. Success by 10 or more means the creature is knocked prone, and the area is not considered difficult terrain. You can only overrun a creature with Strength.
+
+\parhead{Shove}\label{Shove} You shove your foe where you want it to go. Success means you move the creature 5 feet in a direction of your choice. For every 5 points by which you succeed, you can move it an additional 5 feet. You cannot move the creature outside of your reach, but you can take a move action to move with the creature as you shove it to move it farther. If the creature encounters a solid object or creature, you must stop shoving it. You can only shove a creature with Strength.
+
+\parhead{Trip}\label{Trip} You try to trip your foe. Success means the creature falls prone, causing it to take a \minus4 penalty to attack rolls and AC. You can trip a creature with Strength or Dexterity.
 
 \section{Defenses}\label{Defenses}
 
@@ -369,6 +392,28 @@ In addition, some magical effects provide concealment against all attacks, regar
 
 \parhead{Concealment and Stealth Checks} You can use concealment to make a Stealth check to hide.
 
+\subsection{Grappling}
+Grappling creatures are physically struggling with each other. While grappled, you suffer certain penalties and restrictions, as described below. 
+
+\subsubsection{Being Grappled}
+While grappled, you suffer certain penalties and restrictions, as described below. Other than these restrictions, you can act normally. You can also take certain actions in a grapple, as described in \pcref{Grapple Actions} 
+\begin{itemize*}
+    \item You must use a free hand (or equivalent limbs) to grapple, preventing you from taking any actions which would require having two free hands. If you cannot free a hand, you suffer a \minus10 penalty to all attack rolls, including grapple attacks, until you have a free hand.
+    \item You are flat-footed against all creatures except the ones you are grappling, and you do not threaten any other creatures.
+    \item You have active cover against all creatures except the ones you are grappling. Any attacks that miss because of this miss chance are made against a random creature grappling with you. You do not gain this cover if you are larger than all other grapple participants.
+    \item You take a \minus4 penalty to attack rolls made with weapons that are not light, since they are too large and cumbersome to be used effectively in a grapple.
+    \item Spellcasting is extremely difficult. You cannot cast spells with somatic components, and casting a spell without somatic components or using a spell-like ability requires a DC 20 \add double spell level Concentration check.
+    \item You cannot move normally (but see Move the Grapple, below).
+\end{itemize*}
+
+\subsubsection{Grapple Actions}
+While grappled, you can take four special actions to try to affect the grapple.
+
+\parhead{Bind Foe} As a standard action, you can make a grapple attack to bind your foe with ropes or other restraints. You must have the restraints in hand (in addition to the free hand required to grapple). Apply the result against the MC of a creature grappling you. Success means the creature is bound, rendering it helpless and effectively paralyzed. The only physical action a bound creature can take is to escape the bindings with an Escape Artist check, though it can take mental actions. If you have the time, you can take 20 on your grapple attack to secure bindings on a helpless foe, including a foe rendered helpless through this attack.
+\parhead{Escape the Grapple} As a standard action, you can make a grapple attack or Escape Artist check to escape from the grapple. Apply the result against the MC of each creature grappling you Success against an individual creature means you are no longer grappling that creature.
+\parhead{Move the Grapple} As a move action, you can make a grapple attack to move the grapple. Apply the result against the MC of each creature grappling you. If you beat every creature's MC, you can move yourself and all other creatures in the grapple up to half your speed. At the end of your movement, you choose which spaces creatures grappling you are in, as long as they stay adjacent to you.
+\parhead{Pin} As a standard action, you can make a grapple attack to pin a foe. If you succeed, that creature becomes pinned (in addition to being grappled), while you remain only grappled. The only physical action a pinned creature can take is to escape the grapple, though it can take mental actions. At your discretion, you can cover the mouth of a pinned creature to prevent it from speaking. 
+
 \subsection{Invisibility}
 If it is impossible to see your target, you can't attack him normally. However, you can attack a square that you think he occupies. An attack into a square occupied by an invisible enemy has a 50\% miss chance. If an adjacent invisible creature strikes you, you can automatically identify the square he occupied when he struck you.
 
@@ -391,101 +436,6 @@ You can't deliver a coup de grace against a creature that is immune to critical 
 
 \subsection{Range Increments}
 When using a ranged weapon, you take a \minus2 penalty per range increment between you and your target. For example, when using a longbow with a range increment of 100 feet against a target 170 feet away, you take a \minus2 penalty to attack rolls.
-
-\section{Combat Maneuvers}\label{Combat Maneuvers}
-A maneuver is a special attack that imposes some effect on an opponent using your skill in combat. Possible maneuvers are described below.
-
-\begin{dtable*}
-    \lcaption{Combat Maneuvers}
-    \begin{tabularx}{\textwidth}{l l l l X}
-        \thead{Combat Maneuver}  & \thead{Action} & \thead{Key Attribute} & \thead{Weapon?} & \thead{Brief Description} \\
-        Bull rush & Standard & Strength & No &  Push an opponent back 5 feet or more \\
-        Dirty Trick & Attack\fn{1} & Strength or Dexterity & No & Impose penalty by using environment or fighting dirty \\
-        Disarm & Attack\fn{1} & Strength or Dexterity & Any & Strike an object away from your foe \\
-        Grapple & Standard & Strength & No & Wrestle with an opponent \\
-        Overrun & Full-round & Strength & No & Plow past or over an opponent as you move \\
-        Trip & Attack\fn{1} & Strength or Dexterity & Some & Trip an opponent \\
-    \end{tabularx}
-    1 Can be used in place of an attack, even an attack of opportunity. \\
-\end{dtable*}
-
-\subsection{Performing a Maneuver}
-To perform a maneuver, make an attack roll and add your maneuver modifier, as described on \pref{Combat Maneuver}. If your result equals or exceeds your target's Maneuver Class, the maneuver succeeds.
-
-Unless otherwise noted, you can only perform a maneuver on a creature no more than one size category larger than you, and you must have a free hand.
-
-\subsection{Bull Rush}\label{Bull Rush}
-A bull rush is an attempt to push your opponent away from you. You can bull rush as a standard action or as part of a charge, in place of the melee attack. Bull rushing is Strength-based. You can bull rush a creature of any size.
-
-If your bull rush succeeds, your target is pushed back 5 feet. For every 5 points by which you succeed, you can push the target back an additional 5 feet. You must move with the target to push it back. If you don't have the movement remaining to move with the target, you must stop pushing it.
-
-If a creature you are pushing back encounters a solid object, you can't push it any farther. If it encounters another creature, you can try to push them both. If you do, apply your original attack roll to the second creature's Maneuver Class, taking a \minus5 penalty. If you are successful, you can continue to push both of the creatures a distance equal to the lowest result.
-
-For example, if a fighter bull rushes a goblin for a total of 15 feet, but there is another goblin 5 feet behind the first, he can push both goblins 15 feet away from his starting location. If, however, the second goblin was instead a mighty dragon, he could only push the first goblin 5 feet before it would stop.
-
-\subsection{Dirty Trick}\label{Dirty Trick}
-A dirty trick is any sort of situational attack that imposes a penalty on a foe for a short period of time. Examples include knocking an opponent's head to bewilder him, pulling down an enemy's pants to entangle him, or hitting a foe in a sensitive spot to make him sickened. You can perform a dirty trick in place of an attack. Performing a dirty trick can be Strength-based or Dexterity-based, as you choose.
-
-If your dirty trick succeeds, your target becomes vulnerable for 1 round. \vulnerableexplanation For every 5 points by which you succeed, your target is vulnerable for an additional round. The penalty can be removed if the target spends a standard action.
-
-\subsection{Disarm}\label{Disarm}
-A disarm is an attempt to take an object from a foe. You can disarm in place of an attack. If you are wielding a weapon, you can disarm with the weapon, using your attack modifier with the weapon in place of your maneuver modifier. Otherwise, disarming can be Strength-based or Dexterity-based, as you choose.
-
-When you disarm an opponent, you choose one object it is holding or wearing. If the item is well secured, such as a ring or suit of armor, the disarm attempt automatically fails. If your disarm succeeds, the object falls to the ground in your target's square. If you are not using a weapon to disarm, you can grab the item in your hands instead.
-
-\subsection{Grapple}\label{Grapple}
-A grapple is an attempt to physically grab and restrain your foe. You can grapple as a standard action. Grappling is Strength-based. 
-
-If your grapple succeeds, you and your target become ``grappled'', which limits your options. If your target is not adjacent to you, it moves into the closest open space adjacent to you. If no space is available, your grapple fails.
-
-\subsubsection{Being Grappled}
-While grappled, you suffer certain penalties and restrictions, as described below.
-\begin{itemize*}
-    \item You must use one of your hands (or equivalent limbs) to grapple, preventing you from taking any actions which would require having two free hands. For example, you cannot attack with a two-handed weapon while grappling. You cannot use a hand holding a shield (except a buckler) to grapple.
-    \item You are flat-footed against all opponents except the one you are grappling.
-    \item You have active cover from the other participant in the grapple against attacks from creatures not adjacent to you. Any attacks that miss because of this miss chance are made against that creature. This does not apply if you are larger than the other participant.
-    \item You do not threaten any opponents except for the creature you are grappling with.
-    \item You take a \minus4 penalty to attack rolls made with weapons that are not small, since they are too large and cumbersome to be used effectively in a grapple.
-    \item You cannot cast spells with somatic components.
-    \item Casting a spell without somatic components requires a DC 20 \add double spell level Concentration check.
-    \item You cannot move normally (but see Move the Grapple, below).
-\end{itemize*}
-
-Other than the restrictions listed above, you can act normally. You also gain the ability to use three special actions, each of which can be used as a standard action. Against these attacks, your foe uses 10 \add his maneuver modifier in place of his Maneuver Class.
-
-\parhead{Escape the Grapple} You can make a grapple attack or Escape Artist check to attempt to escape the grapple. You apply your result against every creature grappling you. If you succeed against a creature, you are no longer grappling that creature.
-\par You cannot make an Escape Artist check as an attack action, even if you have Improved Grapple.
-\parhead{Move the Grapple} You can make a grapple attack to attempt to move the grapple. You apply your result against every creature grappling you. If you succeed against every creature, you can move both yourself and all of the other creatures up to half your speed. At the end of your movement, you can choose which spaces creatures grappling you are in, as long as they stay adjacent to you. This can be used to place creatures in dangerous positions, such as over a pit.
-\par You can only move the grapple once per round, regardless of how many grapple attacks you can make.
-\parhead{Pin} You can make a grapple attack to attempt to pin a single opponent. If you succeed, that opponent becomes pinned, while you remain grappled.
-
-\subsubsection{Being Pinned}
-A pinned creature is helpless, but it cannot be the target of a coup de grace. The only action it can take that requires movement is to free itself through a grapple attack or Escape Artist check (using its normal Dexterity, not treating its Dexterity as 0). A pinned creature can take mental actions, but cannot cast any spells that require a somatic or material component or focus. At the opponent's option, a pinned creature may be unable to speak, in which case it is incapable of casting spells which require a verbal component. A pinned character who attempts to cast a spell or use a spell-like ability must make a concentration check (DC 10 \add grappler's maneuver modifier \add double spell level) or lose the spell. Being pinned is a more severe version of being grappled, and their effects do not stack.
-
-\subsubsection{Multiple Grapplers}
-Multiple creatures can attempt to grapple one target. Each of them acts independently.
-
-\subsubsection{Grappling a Mounted Opponent}
-You may make a grapple attempt against a mounted opponent. The defender may make a Ride check and use that result instead of his Maneuver Class if it is higher. If you succeed, you pull the rider from his mount, and he lands prone in a square adjacent to both you and his horse. However, neither of you are considered grappled, and you must succeed on a second grapple attack to grapple him.
-
-\subsubsection{Binding an Opponent}
-Once you have pinned an opponent, you may attempt to bind them with ropes or other forms of restraint. You must have the restraint on hand. To do so, make a grapple attack against the pinned opponent. The opponent can resist with a grapple attack. If you succeed, your opponent is bound and helpless. To escape the bindings, the opponent must exceed your check result with an Escape Artist check.
-
-Once your opponent is bound and helpless, you can take 20 on your grapple attack to bind him or her more securely. You can also use the Devices skill to bind an opponent who is not struggling.
-
-\subsection{Overrun}\label{Overrun}
-An overrun is an attempt to move directly through anyone in your way. You can overrun as a full-round action. Overrunning is Strength-based.
-
-When you overrun, you move up to your speed. Any creature in your way can choose to avoid you. If it does not, you must make an overrun attack against it. Success means you move through its space, treating the area as difficult terrain. Success by 5 or more means the creature is also knocked prone, and the area is not considered difficult terrain for you.
-
-Unusually stable creatures, such as creatures with multiple legs, gain a \plus4 inherent bonus to Maneuver Class against overrun attempts. Some creatures, such as oozes, cannot be overrun.
-
-\subsection{Trip}\label{Trip}
-A trip is an attempt to knock your foe off his feet. You can trip in place of an attack. If you are wielding a weapon that can be used to trip, you can trip with the weapon, using your attack modifier with the weapon in place of your maneuver modifier. Otherwise, tripping can be Strength-based or Dexterity-based, as you choose.
-
-If your trip succeeds, the target is knocked prone.
-
-Unusually stable creatures, such as creatures with multiple legs, gain a \plus4 inherent bonus to Maneuver Class against trip attempts. Some creatures, such as oozes, cannot be tripped.
 
 \section{Special Actions}
 
