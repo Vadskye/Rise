@@ -167,7 +167,7 @@ Combat style feats grant a character the ability to fight in a particular style,
 \midrule
 \thead{Item Creation Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
 \featref{Imbue Magic} & Caster level 2nd or Craft (any) 5 ranks & Create magic items & \featpref{Imbue Magic} \\
-\featref{Imbuement Admixture} & Magic level 6th & Combine multiple spells to create items & \featpref{Imbuement Admixture} \\
+\featref{Imbuement Admixture} & 2nd level spells, 6th & Combine multiple spells to create items & \featpref{Imbuement Admixture} \\
 \featref{Versatile Crafter} & Craft (any) 8 ranks & Craft items from many subschools of magic & \featpref{Versatile Crafter} \\
 
 \midrule
@@ -177,7 +177,7 @@ Combat style feats grant a character the ability to fight in a particular style,
 \featref{Combat Casting} & \x &  \plus2 bonus on Concentration checks to cast spells, reroll 1/day & \featpref{Combat Casting} \\
 \featref{Craftcaster} & Craft (any) 8 ranks, 2nd level spells & Increase caster level when creating, transforming objects & \featpref{Craftcaster} \\
 \featref{Improved Counterspell} & \x &  Counterspell with spell of same school & \featpref{Improved Counterspell} \\
-\featref{Magical Synthesis} & Levels in two magical classes & Gain magic levels in two magical classes at once & \featpref{Magical Synthesis} \\
+\featref{Magical Synthesis} & Levels in two magical classes & Increase spellcasting ability in two magical classes at once & \featpref{Magical Synthesis} \\
 \featref{Mass Transporter} & 5th level Conjuration (Translocation) spell & Transport many creatures at once & \featpref{Mass Transporter} \\ 
 \featref{Mighty Summons} & 2nd level summoning spell & Summoned creatures gain \plus2 Str, \plus2 Con & \featpref{Mighty Summons} \\
 \featref{Rapid Metamagic} & Spellcraft 8 ranks, spellcasting ability, one metamagic feat & Apply metamagic effects more quickly & \featpref{Rapid Metamagic} \\
@@ -189,8 +189,8 @@ Combat style feats grant a character the ability to fight in a particular style,
 \featref{Retributive Counterspell} &  4th level spells & Countered spells rebound on original caster & \featpref{Retributive Counterspell} \\
 \featref{Ritual Caster} & Int 3 & Gain ability to perform rituals & \featpref{Ritual Caster} \\
 \featref{Ritual Master} & Spellcraft 8 ranks, ability to perform rituals & Perform rituals more quickly, \plus3 to ritual checks & \featpref{Ritual Master} \\
-\featref{Spell Focus}\fn{1} & Magic level 4th &  \plus2 caster level with specific type of magic & \featpref{Spell Focus} \\
-\tind \featref{Spell Specialization} & Magic level 8th, Spell Focus &  \plus2 caster level with specific type of magic, \minus2 penalty with other types. & \featpref{Spell Specialization} \\
+\featref{Spell Focus}\fn{1} & 2nd level spells 4th &  \plus2 caster level with specific type of magic & \featpref{Spell Focus} \\
+\tind \featref{Spell Specialization} & 4th level spells, Spell Focus &  \plus2 caster level with specific type of magic, \minus2 penalty with other types. & \featpref{Spell Specialization} \\
 \featref{Wardwalker} & 3rd level Abjuration (Warding) spell & Wards you encounter trigger one round late & \featpref{Wardwalker} \\
 
 \midrule
@@ -796,8 +796,8 @@ You can also mend a broken magic item if it is one that you could make. Doing so
 Only spells which affect a single target can be channeled in this way. An imbued spellstrike uses up a spell slot one level higher than the spell's actual level.
 
 \feat{Imbuement Admixture}{Item Creation}
-\parhead{Prerequisite} Magic level 6th
-\parhead{Benefit} You can blend two spells together to create magic items. 
+\parhead{Prerequisite} 3rd level spells.
+\parhead{Benefit} You can blend two spells together to create magic items. This allows you to meet item crafting prerequisites that you could not meet with a single spell.
 
 \feat{Immobilizing Strike}{Combat, Strike}
 \featpre Base attack bonus \plus8.
@@ -1067,7 +1067,7 @@ When swimming, if your check result is 30 or higher, you do not suffer any penal
 \feat{Magical Synthesis}{Magic}
 Choose two magical classes you possess.
 \parhead{Prerequisites} Levels in two magical classes.
-\parhead{Benefit} When gaining levels in either of your chosen classes, you gain magic levels in the other class as if the class you are gaining levels in did not progress your magic level. See \pcref{Magic Level and Multiclassing}.
+\parhead{Benefit} When gaining levels in either of your chosen classes, you increase your spellcasting ability with the other class as if your class was nonmagical. See \pcref{Spellcasters and Multiclassing}.
 
 \feat{Manyshot}{Combat, Style}\label{feat:Manyshot}
 \parhead{Prerequisites} Dex 7, base attack bonus \plus12.
@@ -1240,7 +1240,7 @@ If you have three or more Reaction feats, you can draw light and medium weapons 
 
 \feat{Ritual Caster}{Magic}
 \featpre Intelligence 3.
-\featben You can learn and perform rituals as if you were an arcane caster with a magic level was equal to your character level.
+\featben You can learn and perform rituals as if you were an arcane caster with a caster level equal to your character level. The maximum level of ritual that you can learn or perform is equal to half your character level. 
 
 \feat{Ritual Master}{Magic}
 \parhead{Prerequisites} Spellcraft 8 ranks, ability to perform rituals
@@ -1304,13 +1304,13 @@ Choose a skill.
 
 \feat{Spell Focus}{Magic}
 Choose a school of magic or a spell descriptor.
-\parhead{Prerequisite} Magic level 4th.
+\parhead{Prerequisite} 2nd level spells.
 \parhead{Benefit} You get a \plus2 competence bonus to your caster level when casting spells and using spell-like abilities from the school of magic or with the spell descriptor you select.
 \parhead{Special} You can gain this feat multiple times. Its effects do not stack. Each time you take the feat, it applies to a new school of magic.
 
 \feat{Spell Specialization}{Magic}
 Choose a school of magic or a spell descriptor to which you already have applied the Spell Focus feat.
-\featpre Magic level 8th, Spell Focus.
+\featpre 4th level spells, Spell Focus.
 \featben You gain a \plus2 competence bonus to your caster level when casting spells and using spell-like abilities from the school of magic or with the spell descriptor you select. In exchange, you take a \minus2 penalty to caster level with all other spells and spell-like abilities.
 
 \feat{Spellwoven Performance}{Performance, Skill}
