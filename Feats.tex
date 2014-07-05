@@ -328,12 +328,12 @@ Combat style feats grant a character the ability to fight in a particular style,
 \featref{Defensive Stance} & Base attack bonus \plus4 & Trade ability to move for MC & Defense, Style & \featpref{Defensive Stance} \\
 \featref{Distracting Foe} & Base attack bonus \plus4 & Threatened foes suffer Concentration penalties & Style & \featpref{Distracting Foe} \\
 \featref{Feign Weakness} & Base attack bonus \plus4 & Provoke attack to render foe flat-footed & Style & \featpref{Feign Weakness} \\
-\featref{Improved Bull Rush} & Base attack bonus \plus4 & \plus2 bonus on bull rush attacks; push target back without moving & Maneuver, Power & \featpref{Improved Bull Rush} \\
 \featref{Improved Dirty Trick} & Base attack bonus \plus4 & \plus2 bonus on dirty trick attacks; dirty tricks last longer & Finesse, Maneuver & \featpref{Improved Dirty Trick} \\
 \featref{Improved Disarm} & Base attack bonus \plus4 & \plus2 bonus on disarm attacks; knock foe's weapon away after disarming & Finesse, Maneuver & \featpref{Improved Disarm} \\
-\featref{Improved Feint} & Base attack bonus \plus4 & \plus2 bonus on feint attacks; feint as move action & Finesse, Maneuver & \featpref{Improved Feint} \\
-\featref{Improved Grapple} & Base attack bonus \plus4 & \plus2 bonus on grapple attacks; attack faster in grapple & Maneuver, Power & \featpref{Improved Grapple} \\
+\featref{Improved Feint} & Base attack bonus \plus4 & \plus2 bonus on feint attacks; feint lasts longer & Finesse, Maneuver & \featpref{Improved Feint} \\
+\featref{Improved Grapple} & Base attack bonus \plus4 & \plus2 bonus on grapple attacks; not flat-footed while grappling & Maneuver, Power & \featpref{Improved Grapple} \\
 \featref{Improved Overrun} & Base attack bonus \plus4 & \plus2 bonus on overrun attacks; target can't avoid & Maneuver, Power & \featpref{Improved Overrun} \\
+\featref{Improved Shove} & Base attack bonus \plus4 & \plus2 bonus on shove attacks; move target without moving & Maneuver, Power & \featpref{Improved Bull Rush} \\
 \featref{Improved Trip} & Base attack bonus \plus4 & \plus2 bonus on trip attacks; tripped foe provokes attacks of opportunity & Finesse, Maneuver & \featpref{Improved Trip} \\
 \featref{Intuitive Reaction} & Wis 3, base attack bonus \plus4 & Add half Wisdom to attacks of opportunity each round & Reaction & \featpref{Intuitive Reaction} \\
 \featref{Knockdown} & Str 3, base attack bonus \plus4 & Bull rushed foe can be knocked prone & Maneuver, Power & \featpref{Knockdown} \\
@@ -803,9 +803,9 @@ Only spells which affect a single target can be channeled in this way. An imbued
 \featpre Base attack bonus \plus8.
 \featben When you attack with a melee weapon, you may take a \minus4 penalty to hit. If you deal damage, the foe struck must make a Fortitude save or lose its ability to move for 1 round. It can defend itself and act normally, but it cannot move from its current location. Flying creatures must immediately land, but do not crash. The DC is equal to 10 \add your base attack bonus \add your attack attribute (Strength or Dexterity). You cannot make more than one Strike each round.
 
-\feat{Improved Bull Rush}{Combat, Maneuver}
+\feat{Improved Shove}{Combat, Maneuver}
 \parhead{Prerequisites} Base attack bonus \plus4
-\parhead{Benefit} When you perform a bull rush, you do not need to move with the target to move them back. You also gain a \plus2 competence bonus on bull rush attacks.
+\parhead{Benefit} When you shove a creature, you do not need to move with it to move it beyond your reach. You also gain a \plus2 competence bonus on shove attacks.
 
 \feat{Improved Counterspell}{Magic}
 \parhead{Benefit} When counterspelling, you may use any spell of the same school with a spell level at least as high as the target spell.
@@ -813,16 +813,16 @@ Only spells which affect a single target can be channeled in this way. An imbued
 
 \feat{Improved Dirty Trick}{Combat, Maneuver}
 \parhead{Prerequisites} Base attack bonus \plus4
-\parhead{Benefit} The conditions imposed by your dirty tricks last for 1d4 rounds. You also gain a \plus2 competence bonus on dirty trick attacks.
+\parhead{Benefit} When you perform a dirty trick on a cretaure successfully, the creature is vulnerable for 1d4 rounds. You also gain a \plus2 competence bonus on dirty trick attacks.
 
-\feat{Improved Disarm}{Combat, Maneuver}
+\feat{Improved Disarm}{Combat, Finesse}
 \parhead{Prerequisites} Base attack bonus \plus4
-\parhead{Benefit} When you disarm an opponent, the weapon can land up to 15 feet away in a random direction. You also gain a \plus2 competence bonus on disarm attacks.
+\parhead{Benefit} When you knock an item away from a creature, you can make it land up to 15 feet away in a random direction. You also gain a \plus2 competence bonus on disarm attacks.
 
-\feat{Improved Feint}{Combat, Maneuver}
+\feat{Improved Feint}{Combat, Finesse}
 \parhead{Prerequisites} Base attack bonus \plus4
-\parhead{Benefit} You can feint in combat as a move action, and you gain a \plus2 competence bonus to feint attacks.
-\parhead{Normal} Feinting in combat is an attack action.
+\parhead{Benefit} When you feint against a creature, it remains flat-footed until it is struck by an attack. You also gain a \plus2 competence bonus to feint attacks.
+\parhead{Normal} A feinted creature is flat-footed until the next attack is made against it. 
 
 \feat{Improved Imbued Spellstrike}{Metamagic}
 \parhead{Prerequisite} Ability to cast 3rd level spells, Imbued Spellstrike.
@@ -832,23 +832,16 @@ An improved imbued spellstrike uses up a spell slot two levels higher than the s
 
 \feat{Improved Grapple}{Combat, Maneuver}
 \parhead{Prerequisites} Base attack bonus \plus4
-\parhead{Benefit} While in a grapple, you may make grapple checks as an attack action. You also gain a \plus2 competence bonus on grapple attacks and to your Maneuver Class against grapple attacks.
-\parhead{Normal} While in a grapple, you make grapple attacks as a standard action.
-\par A monk may select Improved Grapple as a bonus feat at 1st level, even if she does not meet the prerequisites.
+\parhead{Benefit} Grappling does not make you flat-footed against other creatures. You also gain a \plus2 competence bonus on grapple attacks.
+\parhead{Normal} While grappling, you are flat-footed against all creatures except the ones you are grappling.
 
 \feat{Improved Initiative}{Combat}
 \parhead{Benefit} You get a \plus4 competence bonus on initiative checks.
 
 \feat{Improved Overrun}{Combat, Maneuver}
 \parhead{Prerequisites} Base attack bonus \plus4
-\parhead{Benefit} When you attempt to overrun an opponent, the target may not choose to avoid you unless you let them. You also gain a \plus2 competence bonus on overrun attacks.
+\parhead{Benefit} When you attempt to overrun a foe, the creature may not choose to avoid you unless you let it. You also gain a \plus2 competence bonus on overrun attacks.
 \parhead{Normal} Without this feat, the target of an overrun can choose to avoid you or to block you.
-
-\begin{comment}
-\feat{Improved Sunder}{Combat, Maneuver}
-\parhead{Prerequisites} Base attack bonus \plus4
-\parhead{Benefit} When you strike at an object held or carried by an opponent (such as a weapon or shield), you ignore half the hardness of the sundered item. You also gain a \plus2 competence bonus on sunder attacks.
-\end{comment}
 
 \feat{Improved Trip}{Combat, Maneuver}
 \parhead{Prerequisites} Base attack bonus \plus4
