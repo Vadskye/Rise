@@ -62,9 +62,9 @@ def identify_effect_of_bonuses(creature):
 #note that we assume overwhelm 2 since overwhelm penalties are so common 
     #so actual character AC should be two higher
 def get_generic_ac_calc():
-    return [i+14 for i in range(1,21)]
+    return [i+13 for i in range(1,21)]
 def get_generic_ac_real():
-    return [i+16 for i in range(1,21)]
+    return [i+15 for i in range(1,21)]
 def get_generic_hp():
     return [i*7 for i in range(1,21)]
 
