@@ -78,7 +78,7 @@ class CombatCreature(object):
         hit_chance_total = 0 
         for i in xrange(attack_count):
             hit_chance_total += hit_probability(
-                    self.attack_bonus.get_total(), ac)
+                    self.attack_bonus.get_total() - i*5, ac)
         return hit_chance_total/attack_count
 
     def roll_initiative(self):
