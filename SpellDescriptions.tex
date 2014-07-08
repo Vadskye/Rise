@@ -186,7 +186,7 @@
 \spellsr{No}
 \begin{spelleffect}
   Each animated object immediately attacks whomever or whatever you initially designate. Your control of the objects is limited to simple commands (``Attack,'' ``Defend,'' ``Stop,'' and so forth).
-  \par An animated object can be of any nonmagical material. You may animate one Small or smaller object or an equivalent number of larger objects per caster level. A Medium object counts as two Small or smaller objects, a Large object as four, a Huge object as eight, a Gargantuan object as sixteen, and a Colossal object as thirty-two. You can change the designated target or targets as a move action, as if directing an active spell.
+  \par An animated object can be of any nonmagical material. You may animate one Small or smaller object or an equivalent number of larger objects per caster level. A Medium object counts as two Small or smaller objects, a Large object as four, a Huge object as eight, a Gargantuan object as sixteen, and a Colossal object as thirty-two. You can give the objects new commands as a move action, as normal for directing an active spell.
 \end{spelleffect}
 \begin{spellnotes}
   This spell cannot animate objects carried or worn by a creature. This spell can be made permanent with a \spell{permanency} ritual.
@@ -208,7 +208,7 @@
 \spelldesc{You create an immobile, spherical energy field that hedges out living creatures.}
 \spellschool{Abjuration (Interdiction) [Barrier]}
 \spelllvl{Clr 7, Drd 6, Nature 7}
-\spellarea{\areasmall radius emanation, centered on your location}
+\spellarea{\areasmall radius immobile emanation from you}
 \spelldur{\durlong (D)}
 \spellsave{None}
 \spellsr{Yes (Will)}
@@ -223,7 +223,7 @@
 \spelldesc{You create a mobile, spherical energy field that suppresses magic.}
 \spellschool{Abjuration (Negation) [Magic]}
 \spelllvl{Clr 8, Magic 7, Sor/Wiz 7}
-\spellarea{\areasmall radius emanation, centered on you}
+\spellarea{\areasmall radius mobile emanation from you}
 \spelldur{\durlong (D)}
 \spellsave{None}
 \spellsr{No}
@@ -1406,7 +1406,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldesc{You sense the presence of creatures with a particular alignment.}
 \spellschool{Divination (Awareness) [Detection]}
 \spelllvl{Clr 3, Pal 2}
-\spellarea{\arealarge cone-shaped emanation from you}
+\spellarea{\arealarge cone-shaped mobile emanation from you}
 \spelldur{Concentration}
 \spellsave{None}
 \spellsr{No}
@@ -1536,7 +1536,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldesc{You can discern subtle magical disturbances caused by lying.}
 \spellschool{Divination (Awareness) [Detection]}
 \spelllvl{Clr 3, Law 3, Pal 3}
-\spellarea{\arealarge cone-shaped emanation from you}
+\spellarea{\arealarge cone-shaped mobile emanation from you}
 \spelldur{Concentration}
 \spellsave{None}
 \spellsr{No}
@@ -2480,7 +2480,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsection{Gust of Wind}
 \spellschool{Evocation (Control) [Air]}
 \spelllvl{Air 1, Drd 1, Evoc 1}
-\spellarea{\arealarge line-shaped emanation from you}
+\spellarea{\arealarge line-shaped immobile emanation from you}
 \spelleff{Wind within the area}
 \spelldur{1 round}
 \spellsave{Fortitude partial; see text.}
@@ -3056,7 +3056,7 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
 \spellsection{Invisibility Purge}
 \spellschool{Abjuration (Negation)}
 \spelllvl{Clr 2, Sor/Wiz 2}
-\spellarea{\arealarge radius emanation, centered on you}
+\spellarea{\arealarge radius mobile emanation from you}
 \spelldur{\durlong (D)}
 \begin{spelleffect}
   You surround yourself with a mobile sphere of power that suppresses all forms of invisibility. Anything invisible becomes visible while in the area.
@@ -3065,7 +3065,7 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
 \spellsection{Invisibility Sphere}
 \spellschool{Illusion (Glamer)}
 \spelllvl{Sor/Wiz 5}
-\spellarea{\areasmall radius emanation around the creature or object touched}
+\spellarea{\areasmall radius mobile emanation from the creature or object touched}
 \begin{spelleffect}
   This spell functions like \spell{invisibility}, except that this spell confers invisibility upon all creatures within a \areasmall radius emanation of the recipient. The center of the effect is mobile with the recipient.
   \par Those affected by this spell can see each other and themselves as if unaffected by the spell. Any affected creature moving out of the area becomes visible, but creatures moving into the area after the spell is cast do not become invisible. Affected creatures (other than the recipient) who attack negate the invisibility only for themselves. If the spell recipient attacks, the \spell{invisibility sphere} ends.
@@ -3385,7 +3385,7 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
 \par Abjuration (Interdiction) [Barrier, Good]
 \spelllvl{Clr 5, Good 5, Pal 4, Sor/Wiz 5}
 \spellrng{Touch}
-\spellarea{\areasmall emanation from touched creature}
+\spellarea{\areasmall mobile emanation from touched creature}
 \spelldur{\durshort (D)}
 \spellsave{Will negates (harmless)}
 \spellsr{Yes (Will)}
@@ -4273,7 +4273,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsection{Repulsion}
 \spellschool{Abjuration (Shielding) [Barrier]}
 \spelllvl{Abjur 6, Protection 6, Travel 6}
-\spellarea{Up to a \arealarge radius emanation centered on you}
+\spellarea{Up to a \arealarge radius mobile emanation centered on you}
 \spelldur{\durshort (D)}
 \spellsave{Will negates}
 \spellsr{Yes (Will)}
@@ -4866,7 +4866,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellschool{Illusion (Glamer)}
 \spelllvl{Clr 2, Trickery 2}
 \spellrng{\rngmed}
-\spellarea{\areamed radius emanation centered on a creature, object, or point in space}
+\spellarea{\areamed radius mobile emanation centered on a creature, object, or point in space}
 \spelldur{\durshort (D)}
 \spellsave{Will negates; see text or none (object)}
 \spellsr{Yes (Will); see text}
@@ -6386,10 +6386,10 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellschool{Enchantment (Inhibition) [Mind-Affecting]}
 \spelllvl{Clr 2, Law 2, Pal 2}
 \spellrng{\rngmed}
-\spellarea{\areamed radius emanation}
+\spellarea{\areamed radius immobile emanation from a point in space}
 \spelldur{\durmed}
 \spellsave{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  Creatures within the emanation area (or those who enter it) can't speak any deliberate and intentional lies. Each potentially affected creature is allowed a save to avoid the effects when the spell is cast or when the creature first enters the emanation area. Affected creatures are aware of this enchantment. Therefore, they may avoid answering questions to which they would normally respond with a lie, or they may be evasive as long as they remain within the boundaries of the truth. Creatures who leave the area are free to speak as they choose.
+  Creatures within the area (or those who enter it) can't speak any deliberate and intentional lies. Each potentially affected creature is allowed a save to avoid the effects when the spell is cast or when the creature first enters the area. Affected creatures are aware of this enchantment. Therefore, they may avoid answering questions to which they would normally respond with a lie, or they may be evasive as long as they remain within the boundaries of the truth. Creatures who leave the area are free to speak as they choose.
 \end{spelleffect}
