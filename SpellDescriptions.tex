@@ -342,7 +342,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsave{Fortitude negates, Will partial; see text}
 \spellsr{Yes (Fortitude)}
 \begin{spellhealthy}
-  The subject is sickened, making it vulnerable.
+  The subject is sickened, making it vulnerable. A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
 \end{spellhealthy}
 \begin{spellblood}
   You change the subject into a Small or smaller animal of no more than 1 HD (such as a dog, lizard, monkey, or toad). The subject takes on all the statistics and special abilities of an average member of the new form in place of its own, except as follows:
@@ -361,8 +361,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
   If the subject remains in the new form for 24 consecutive hours, it must attempt another Will save. If this save fails, it loses all remnants of its original form, and its statistics fully match that of its new form. These abilities and statistics return to normal if the effect is later ended. The subject must repeat this save every 24 hours that it remains in its new form.
 \end{spellblood}
 \begin{spellnotes}
-  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
-  Incorporeal or gaseous creatures are immune to \spell{baleful polymorph}, and a creature with the shapechanger subtype (such as a lycanthrope or a doppelganger) can revert to its natural form as a standard action (which ends the spell's effect). 
+    Incorporeal or gaseous creatures are immune to \spell{baleful polymorph}, and a creature with the shapechanger subtype (such as a lycanthrope or a doppelganger) can revert to its natural form as a standard action (which ends the spell's effect). 
 \end{spellnotes}
 
 \spellsection{Bane}
@@ -376,9 +375,6 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \begin{spelleffect}
   All enemies within the area take a \minus2 penalty to attack rolls for 5 rounds.
 \end{spelleffect}
-\begin{spellnotes}
-  \spell{Bane} counters and dispels \spell{bless}.
-\end{spellnotes}
 
 \spellsection{Banishment}
 \spelldesc{You force extraplanar creatures back to their home plane.}
@@ -432,7 +428,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
   \par You may also invent your own curse, but it should be no more powerful than those described above.
 \end{spelleffect}
 \begin{spellnotes}
-  Curses cannot be dispelled. \spell{Bestow curse} counters \spell{remove curse}.
+  Curses cannot be dispelled.
 \end{spellnotes}
 
 \spellsection{Black Tentacles}
@@ -511,9 +507,6 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \begin{spelleffect}
   All allies within the area gain a \plus2 bonus to attack rolls for 5 rounds. \bonusscalingdescription
 \end{spelleffect}
-\begin{spellnotes}
-  \spell{Bless} counters and dispels \spell{bane}.
-\end{spellnotes}
 
 \spellsection{Bless Weapon}
 \spelldesc{You imbue a weapon with divine power, causing it to strike true against evil foes.}
@@ -1088,7 +1081,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
   Each creature in the area is demoralized.
 \end{spelleffect}
 \begin{spellnotes}
-  A demoralized creature is vulnerable, causing it to take a \minus2 penalty on attack rolls, saving throws, checks, DCs, and AC. \spellindirect{crushing despair}{Crushing despair} counters and dispels \spell{good hope}.
+  A demoralized creature is vulnerable, causing it to take a \minus2 penalty on attack rolls, saving throws, checks, DCs, and AC.
 \end{spellnotes}
 
 \spellsection{Crushing Hand}
@@ -1226,8 +1219,6 @@ If you take life damage, you lose all temporary hit points provided by this spel
   If \spell{darkness} is cast on a small object that is then placed inside or under a lightproof covering, the spell's effect is blocked until the covering is removed.
 
   Normal lights (torches, candles, lanterns, and so forth) are incapable of brightening the area or shining through it, as are light spells of lower level. Such effects are also suppressed if they originate from within the area of the darkness, preventing them from shining light elsewhere. Higher level light spells are not affected by darkness.
-
-  \par \spell{Darkness} counters or dispels any light spell of equal or lower spell level.
 \end{spellnotes}
 
 \spellsection{Darkvision}
@@ -1261,7 +1252,6 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \end{spelleffect}
 \begin{spellnotes}
   \spell{Daylight} brought into an area of magical darkness (or vice versa) is temporarily negated, so that the otherwise prevailing light conditions exist in the overlapping areas of effect.
-  \par \spell{Daylight} counters or dispels any darkness spell of equal or lower level, such as darkness.
 \end{spellnotes}
 
 \spellsection{Daze}
@@ -1931,8 +1921,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
   \par All equipment worn or carried by a creature is similarly enlarged by the spell. Melee and projectile weapons affected by this spell deal more damage. Other magical properties are not affected by this spell. Any enlarged item that leaves an enlarged creature's possession (including a projectile or thrown weapon) instantly returns to its normal size. This means that thrown weapons deal their normal damage, and projectiles deal damage based on the size of the weapon that fired them. Magical properties of enlarged items are not increased by this spell.
 \end{spelleffect}
 \begin{spellnotes}
-  Multiple magical effects that increase size do not stack.
-  \par \spellindirect{enlarge person}{Enlarge person} counters and dispels \spell{reduce person}. It can be made permanent with a \spell{permanency} spell.
+  Multiple magical effects that increase size do not stack. This spell can be made permanent with a \spell{permanency} spell.
 \end{spellnotes}
 
 \spellsectioncomma{Enlarge Person}{Mass}
@@ -2549,7 +2538,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
   The subject is hasted. It doubles all of its movement speeds (to a maximum of an additional 30 feet of movement), and can take an additional attack at a \minus5 penalty when it makes a standard attack. The increase to movement speed is considered an enhancement bonus.
 \end{spelleffect}
 \begin{spellnotes}
-  \spell{Haste} dispels and counters \spell{slow}. The extra attack granted is not cumulative with similar effects, such as that provided by a weapon of speed, nor does it actually grant an extra action, so you can't use it to cast a second spell or otherwise take an extra action in the round.
+    The extra attack granted is not cumulative with similar effects, such as that provided by a weapon of speed, nor does it actually grant an extra action, so you can't use it to cast a second spell or otherwise take an extra action in the round.
 \end{spellnotes}
 
 \spellsectioncomma{Haste}{Mass}
@@ -3188,9 +3177,6 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
   
   As a swift action, you can suppress or intensify the light, preventing the object from shedding light or causing it to shed light in up to a \arealarge radius (and dim light for an additional 50 feet). Either effect lasts for 1 round.
 \end{spelleffect}
-\begin{spellnotes}
-  A light spell (one with the light descriptor) counters and dispels a darkness spell (one with the darkness descriptor) of an equal or lower level. \spell{Light} taken into an area of magical darkness does not function.
-\end{spellnotes}
 
 \spellsection{Lightning Bolt}
 \spellschool{Evocation (Energy) [Electricity]}
@@ -4262,8 +4248,7 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
   \par All equipment worn or carried by a creature is similarly reduced by the spell. Melee and projectile weapons deal less damage. Other magical properties are not affected by this spell. Any reduced item that leaves the reduced creature's possession (including a projectile or thrown weapon) instantly returns to its normal size. This means that thrown weapons deal their normal damage (projectiles deal damage based on the size of the weapon that fired them).
 \end{spelleffect}
 \begin{spellnotes}
-  Multiple magical effects that reduce size do not stack.
-  \par \spellindirect{reduce person}{Reduce person} counters and dispels \spell{enlarge person}. It can be made permanent with a \spell{permanency} spell.
+  Multiple magical effects that reduce size do not stack. This spell can be made permanent with a \spell{permanency} spell.
 \end{spellnotes}
 
 \spellsectioncomma{Reduce Person}{Mass}
@@ -4981,9 +4966,6 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \begin{spelleffect}
  A slowed creature can only act during the action phase, and it takes a \minus10 penalty to initiative checks.
 \end{spelleffect}
-\begin{spellnotes}
-  \spell{Slow} counters and dispels \spell{haste}.
-\end{spellnotes}
 
 \spellsectioncomma{Slow}{Mass}
 \spelldesc{You decelerate your enemies' motions, causing them to move and act more slowly than normal.}
@@ -5639,9 +5621,7 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
   Each creature in the beam takes damage and is dazzled for 5 rounds. Any creatures to which sunlight is harmful or unnatural instead take 5d10 points of damage \add d10 per four caster levels above 10th and are blinded for 5 rounds. A successful Reflex save negates the dazzling (or blindness) and reduces the damage by half.
 \end{spelleffect}
 \begin{spellnotes}
-  A dazzled creature has a 20\% miss chance on all attack rolls and takes a \minus4 penalty to Spot checks. He is also unable to see with darkvision.
-  
-  \spell{Sunbeam} dispels any darkness spells of 5th level or lower within its area.
+  A dazzled creature has a 20\% miss chance on all attack rolls and takes a \minus4 penalty to Spot checks. He is also unable to see with darkvision. 
 \end{spellnotes}
 
 \spellsection{Sunburst}
@@ -5654,9 +5634,6 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \begin{spelleffect}
   This spell functions as \spell{sunbeam}, except that it affects a \areamed radius and deals more damage. Any creatures to which sunlight is harmful or unnatural take 8d10 points of damage \add d10 per three caster levels above 16th.
 \end{spelleffect}
-\begin{spellnotes}
-  \spell{Sunburst} dispels any darkness spells of 8th level or lower within its area.
-\end{spellnotes}
 
 \pdfbookmark[2]{T}{SpellDescriptionsT}
 \begin{comment}
