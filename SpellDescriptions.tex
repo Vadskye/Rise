@@ -2908,7 +2908,7 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \spellsr{Yes (Fortitude)}
 \spelldmg{2d6 negative energy damage \add d6 per two caster levels above 2nd}
 \begin{spelleffect}
-  The target takes damage. Since undead are powered by negative energy, this spell heals them instead of dealing damage. You must succeed on a melee touch attack to hit a target that does not allow you to touch it. 
+  The target takes damage. Since undead are powered by negative energy, this spell heals them instead of dealing damage.
 \end{spelleffect}
 
 \spellsectioncomma{Inflict Light Wounds}{Mass}
@@ -3135,19 +3135,6 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
   This spell allows you to telekinetically move the subject up and down as you wish. A creature must be willing to be levitated, and an object must be unattended or possessed by a willing creature. You can mentally direct the recipient to move up or down as much as 20 feet each round; doing so is a swift action. You cannot move the recipient horizontally, but the recipient could clamber along the face of a cliff, for example, or push against a ceiling to move laterally (generally at half its base land speed).
 \end{spelleffect}
 
-\spellsection{Lifelink}
-\spelldesc{You bind your foe's life force to yours, leaving them vulnerable to your magic.}
-\spellschool{Necromancy (Life)}
-\spelllvl{Necro 1}
-\spellrng{\rngfar}
-\spelltgt{One living creature}
-\spelldur{\durshort (D)}
-\spellsave{Will negates}
-\spellsr{Yes (Will)}
-\begin{spelleffect}
-  The subject is considered to be within \rngclose range of you for determining the range of your spells and spell-like abilities.
-\end{spelleffect}
-
 \spellsection{Lifeseeking Missile}
 \spellschool{Evocation/Necromancy (Control, Life) [Force]}
 \spelllvl{Sor/Wiz 3}
@@ -3157,33 +3144,6 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
   This spell functions like \spell{magic missile}, except that the spell creates three missiles that automatically seek out living creatures in the area. Each missile deals 1d10 force damage. If you specify a target for a missile, it will strike the target. Otherwise, it will strike a living creature within the area.
   
   \spell{Invisibility}, \spell{displacement}, and any other forms of cover or concealment do not fool the missiles. You can form one additional missile per four caster levels above 6th.
-\end{spelleffect}
-
-\spellsection{Light}
-\spellschool{Illusion (Figment) [Light]}
-\spelllvl{Clr 1, Drd 1, Pal 1, Sor/Wiz 1}
-\spellrng{\rngtouch}
-\spelltgt{Object touched}
-\spelldur{\durlong (D)}
-\spellsave{None}
-\spellsr{No}
-\begin{spelleffect}
-  This spell causes an object to glow like a torch, shedding bright light in a \areamed radius (and dim light for an additional 20 feet) from the point you touch. The effect is immobile, but it can be cast on a movable object.
-  
-  As a swift action, you can suppress or intensify the light, preventing the object from shedding light or causing it to shed light in up to a \arealarge radius (and dim light for an additional 50 feet). Either effect lasts for 1 round.
-\end{spelleffect}
-
-\spellsection{Lightning Bolt}
-\spellschool{Evocation (Energy) [Electricity]}
-\spelllvl{Destruction 3, Drd 3, Sor/Wiz 3}
-\spellarea{100 ft. line}
-\spelldur{Instantaneous}
-\spellsave{Reflex half}
-\spellsr{Yes (Reflex)}
-\spelldmg{3d6 electricity damage \add d6 per four caster levels above 6th}
-\begin{spelleffect}
-  You release a powerful stroke of electrical energy that deals damage to each creature within its area. The bolt begins at your fingertips.
-  \par The lightning bolt sets fire to combustibles and damages objects in its path. It can melt metals with a low melting point, such as lead, gold, copper, silver, or bronze. If the damage caused to an interposing barrier shatters or breaks through it, the bolt may continue beyond the barrier if the spell's range permits; otherwise, it stops at the barrier just as any other spell effect does.
 \end{spelleffect}
 
 \spellsection{Limited Wish}
@@ -5835,15 +5795,16 @@ This spell can be made permanent with a \spell{permanency} ritual. If you cast t
 \end{spelleffect}
 
 \spellsection{Touch of Idiocy}
+\spelldesc{With a touch, you reduce the target's mental faculties.}
 \spellschool{Enchantment (Inhibition) [Mind-Affecting]}
 \spelllvl{Sor/Wiz 2}
-\spellrng{\rngclose}
-\spelltgt{One creature}
+\spellrng{Touched}
+\spelltgt{Touched creature}
 \spelldur{\durshort}
 \spellsave{Will half}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  With a touch, you reduce the target's mental faculties. Your successful melee touch attack applies a \minus4 penalty to the target's Intelligence, Wisdom, and Charisma scores. This penalty can't reduce any of these scores below \minus9.
+   Your successful melee touch attack applies a \minus4 penalty to the target's Intelligence, Wisdom, and Charisma scores. This penalty can't reduce any of these scores below \minus9.
 \end{spelleffect}
 \begin{spellnotes}
   This spell's effect may make it impossible for the target to cast some or all of its spells, if the requisite attribute drops below the minimum required to cast spells of that level.
