@@ -1,10 +1,16 @@
 
 STRENGTH = 'strength'
+STR = STRENGTH
 DEXTERITY = 'dexterity' 
+DEX = DEXTERITY
 CONSTITUTION = 'constitution'
+CON = CONSTITUTION
 INTELLIGENCE = 'intelligence'
+INT = INTELLIGENCE
 WISDOM = 'wisdom'
+WIS = WISDOM
 CHARISMA = 'charisma'
+CHA = CHARISMA
 ATTRIBUTE_NAMES = [STRENGTH, DEXTERITY, CONSTITUTION, INTELLIGENCE,
         WISDOM, CHARISMA]
 
@@ -80,3 +86,25 @@ ABILITY_TEMPLATE = 'template'
 ABILITY_FEAT = 'feat'
 ABILITY_TRAIT = 'trait'
 ABILITY_TYPES = set((ABILITY, ABILITY_TEMPLATE, ABILITY_FEAT, ABILITY_TRAIT))
+
+WEAPON_PRIMARY = 'primary weapon'
+WEAPON_SECONDARY = 'secondary weapon'
+AC = 'armor class'
+MC = 'maneuver class'
+NAME = 'name'
+CLASS_NAME = 'class name'
+ATTACK_BONUS = 'attack bonus'
+MANEUVER_BONUS = 'maneuver bonus'
+LEVEL = 'level'
+LEVEL_PROGRESSION = 'level progression'
+ALIGNMENT = 'alignment'
+ABILITIES = 'abilities'
+ATTRIBUTES = 'attributes'
+HIT_POINTS = 'hit points'
+HIT_VALUE = 'hit value'
+INITIATIVE = 'initiative'
+REACH = 'reach'
+SPACE = 'space'
+SPEED = 'speed'
+SIZE = 'size'
+VERBOSE = 'verbose'
