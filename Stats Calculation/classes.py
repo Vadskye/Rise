@@ -3,6 +3,24 @@ from strings import GOOD, AVERAGE, POOR, FORT, REF, WILL
 import abilities
 import equipment
 
+def get_level_progression_by_name(class_name):
+    return {
+            'barbarian': classes.Barbarian,
+            'bard': classes.Bard,
+            'cleric': classes.Cleric,
+            'druid': classes.Druid,
+            'generic': classes.Generic,
+            'fighter': classes.Fighter,
+            'monk': classes.Monk,
+            'paladin': classes.Paladin,
+            'ranger': classes.Ranger,
+            'rogue': classes.Rogue,
+            'sorcerer': classes.Sorcerer,
+            'wizard': classes.Wizard,
+            'warrior': classes.Warrior
+            }[class_name]
+
+
 class LevelProgression:
     
     def __init__(self, level):

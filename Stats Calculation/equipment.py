@@ -10,6 +10,16 @@ class Weapon(object):
         self.attack_type = attack_type
         self.damage_types = damage_types
         self.damage_die = dice.Dice.from_string(damage_die_name)
+        self.size = MEDIUM
+
+    def set_size(self, size):
+        difference_from_current_size = SIZES.index(size) - SIZES.index(self.size)
+        for i in xrange(abs(difference_from_current_size)):
+            if difference_from_current_size>0:
+                self.damage_die.increase_size()
+            else:
+                self.damage_die.decrease_size()
+        self.size = size
 
     @classmethod
     def from_weapon_name(cls, weapon_name):

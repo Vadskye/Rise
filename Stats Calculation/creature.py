@@ -19,7 +19,7 @@ class Creature(object):
 
         self._interpret_raw_stats(raw_stats)
         self._interpret_raw_attributes(raw_attributes)
-        
+
         self._set_level_progression()
         self._calculate_class_stats()
 
@@ -111,7 +111,7 @@ class Creature(object):
         except:
             if self.verbose: print self.name, 'Missing bonus attribute 2'
             pass
-        
+
     #http://stackoverflow.com/questions/60208/replacements-for-switch-statement-in-python
     def _set_level_progression(self):
         self.level_progression = {
