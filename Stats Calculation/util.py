@@ -51,7 +51,7 @@ class Modifier(object):
         try:
             if die.average > self.die.average:
                 self.die=die
-        except:
+        except ValueError:
             self.die = die
 
     def get_total(self, roll=False, ignore_die = False):
@@ -107,23 +107,6 @@ class SavingThrow(ModifierProgression):
             'good': level+2,
             }[progression]
         self.inherent = base_save_bonus
-
-class SavingThrows():
-    def __init__(self, level = None):
-        self.fortitude = SavingThrow(level)
-        self.reflex = SavingThrow(level)
-        self.will = SavingThrow(level)
-
-    def get_saves(self):
-        return [getattr(self, save) for save in SAVE_NAMES]
-
-    def set_progressions_dict(self, progressions):
-        for save_name in SAVE_NAMES:
-            getattr(self, save_name).set_progression(progressions[save_name])
-
-    def set_level(self, level):
-        for save in self.get_saves():
-            save.set_level(level)
 
 class AttackBonus(ModifierProgression):
     def __init__(self, progression = None, level = None):
@@ -214,34 +197,6 @@ class ManeuverBonus(ModifierProgression):
 
     def mstr(self, use_strength = True):
         return mstr(self.get_total(use_strength = use_strength))
-
-class Attributes:
-    def __init__(self):
-        self.strength = Modifier()
-        self.dexterity = Modifier()
-        self.constitution = Modifier()
-        self.intelligence = Modifier()
-        self.wisdom = Modifier()
-        self.charisma = Modifier()
-
-    def set_all_dict(self, raw_attributes):
-        for attribute_name in ATTRIBUTE_NAMES:
-            #use try/except to allow missing attributes
-            try:
-                getattr(self, attribute_name).add_inherent(
-                    conditional_int(raw_attributes[attribute_name]))
-            except:
-                print 'missing attribute'
-                pass
-
-    def to_latex(self):
-        return 'Str %s, Dex %s, Con %s, Int %s, Wis %s, Cha %s' % (
-                self.strength.get_total(),
-                self.dexterity.get_total(),
-                self.constitution.get_total(),
-                self.intelligence.get_total(),
-                self.wisdom.get_total(),
-                self.charisma.get_total())
 
 class ArmorClass:
     def __init__(self):
