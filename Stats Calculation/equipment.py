@@ -10,7 +10,7 @@ class Weapon(object):
         self.attack_type = attack_type
         self.damage_types = damage_types
         self.damage_die = dice.Dice.from_string(damage_die_name)
-        self.size = MEDIUM
+        self.size = SIZE_MEDIUM
 
     def set_size(self, size):
         difference_from_current_size = SIZES.index(size) - SIZES.index(self.size)
