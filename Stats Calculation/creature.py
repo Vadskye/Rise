@@ -74,12 +74,13 @@ class Creature(object):
         else:
             self.size = SIZE_MEDIUM
         self.space, self.reach, self.speed = util.get_size_statistics(self.size)
-        util.resize_weapon_die(self.weapon, self.size)
 
         if self.weapon:
             self.weapon_damage.add_die(self.weapon.damage_die)
+            self.weapon.set_size(self.size)
         if self.offhand_weapon:
             self.offhand_weapon_damage.add_die(self.offhand_weapon.damage_die)
+            self.offhand_weapon.set_size(self.size)
         if 'alignment' in raw_stats.keys():
             self.alignment = raw_stats['alignment']
         #Add all the abilities to the character

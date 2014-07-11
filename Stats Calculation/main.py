@@ -1,5 +1,5 @@
 import argparse
-from creature import Creature
+from creature2 import Creature
 from monster import Monster
 import util
 import combat
@@ -95,7 +95,7 @@ if __name__ == "__main__":
                         args['level'])
             else:
                 creature2 = Creature.from_creature_name('ftr-typical',
-                        creature.level)
+                        creature.meta['level'])
             print creature2
             creature = combat.CombatCreature.from_creature(creature)
             creature2 = combat.CombatCreature.from_creature(creature2)
