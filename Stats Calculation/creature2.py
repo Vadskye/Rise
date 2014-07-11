@@ -119,9 +119,9 @@ class Creature(object):
         for attribute_name in ATTRIBUTE_NAMES:
             #use try/except to allow missing attributes
             try:
-                getattr(self, attribute_name).add_inherent(
-                    conditional_int(raw_attributes[attribute_name]))
-            except:
+                self.attributes[attribute_name].add_inherent(
+                    util.conditional_int(raw_attributes[attribute_name]))
+            except ValueError:
                 self.print_verb('missing attribute')
 
         #Apply level-based scaling
@@ -130,17 +130,17 @@ class Creature(object):
     def _scale_attributes_by_level(self, raw_attributes):
         try:
             main_attribute = raw_attributes['bonus attribute 1']
-            main_increases = (2 + self.level)/4
+            main_increases = (2 + self.meta[LEVEL])/4
             self.attributes[main_attribute].add_inherent(
                     main_increases)
-        except:
+        except ValueError:
             self.print_verb('Missing bonus attribute 1')
         try:
             second_attribute = raw_attributes['bonus attribute 2']
-            second_increases = (self.level)/4
+            second_increases = (self.meta[LEVEL])/4
             self.attributes[second_attribute].add_inherent(
                     second_increases)
-        except:
+        except ValueError:
             self.print_verb('%s missing bonus attribute 2' % 
                     self.meta[NAME])
 
