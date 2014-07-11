@@ -79,7 +79,7 @@ abilities['larger than belief'] = Ability('larger than belief', larger_than_life
 
 def rage_benefit(level, creature):
     creature.weapon_damage.add_competence(util.std_scale(level))
-    creature.armor_class.misc.add_circumstance(-2)
+    creature.defenses[AC].misc.add_circumstance(-2)
     creature.saves.fortitude.add_competence(util.std_scale(level))
     creature.saves.will.add_competence(util.std_scale(level))
     creature.current_hit_points += level*util.std_scale(level)
@@ -92,9 +92,9 @@ abilities['rage'] = Ability('rage', rage_benefit)
 def overwhelming_force_benefit(creature):
     if creature.weapon.encumbrance == 'heavy':
         creature.weapon_damage.add_inherent(
-                (creature.attributes.strength.get_total()+1)/2)
+                (creature.attributes[STR].get_total()+1)/2)
 def overwhelming_force_prerequisites(creature):
-        return creature.attributes.strength.get_total() >=5 and creature.attack_bonus.base_attack_bonus >=8 and creature.weapon.encumbrance == 'heavy'
+        return creature.attributes[STR].get_total() >=5 and creature.attack_bonus.base_attack_bonus >=8 and creature.weapon.encumbrance == 'heavy'
 abilities['overwhelming force'] = Ability('overwhelming force', overwhelming_force_benefit,
         overwhelming_force_prerequisites, set(('feat', 'combat', 'power')))
 
@@ -103,19 +103,19 @@ def two_weapon_fighting_benefit(creature):
         creature.attack_bonus.add_competence(2)
 
 abilities['two weapon fighting'] = Ability('two-weapon fighting', two_weapon_fighting_benefit,
-        lambda creature: creature.attributes.dexterity.get_total() >=3, 
+        lambda creature: creature.attributes[DEX].get_total() >=3, 
         set(('feat', 'combat', 'finesse')))
 
 def two_weapon_defense_benefit(creature):
     if creature.offhand_weapon:
-        creature.armor_class.shield.add_competence(2)
+        creature.defenses[AC].shield.add_competence(2)
 abilities['two weapon defense'] = Ability('two-weapon defense', two_weapon_defense_benefit,
-        lambda creature: creature.attributes.dexterity.get_total() >= 3,
+        lambda creature: creature.attributes[DEX].get_total() >= 3,
         set(('feat', 'combat', 'defensje', 'finesse')))
 
 def combat_expertise_benefit(creature):
     creature.attack_bonus.add_circumstance(-util.bab_scale(creature.level))
-    creature.armor_class.dodge.add_circumstance(util.bab_scale(creature.level))
+    creature.defenses[AC].dodge.add_circumstance(util.bab_scale(creature.level))
 abilities['combat expertise'] = Ability('combat expertise', combat_expertise_benefit, 
         lambda creature: creature.attributes.intelligence.get_total() >= 3,
         set(('feat', 'combat', 'defense', 'style')))
@@ -130,7 +130,7 @@ def power_attack_benefit(creature):
     if creature.offhand_weapon:
         creature.offhand_weapon_damage.add_circumstance(damage_bonus/2)
 abilities['power attack'] = Ability('power attack', power_attack_benefit, lambda creature:
-        creature.attributes.strength.get_total() >= 3,
+        creature.attributes[STR].get_total() >= 3,
         ['feat', 'combat', 'power', 'style'])
 
 def deadly_aim_benefit(creature):
@@ -138,7 +138,7 @@ def deadly_aim_benefit(creature):
     damage_bonus = 2+(creature.attack_bonus.base_attack_bonus/5)*2
     creature.weapon_damage.add_circumstance(damage_bonus)
 abilities['deadly aim'] = Ability('deadly aim', deadly_aim_benefit, lambda creature:
-        creature.attributes.dexterity.get_total() >= 3,
+        creature.attributes[DEX].get_total() >= 3,
         set(('feat', 'combat', 'precision', 'style')))
 
 abilities['endurance'] = new_feat('endurance')
@@ -151,24 +151,24 @@ abilities['track'] = new_feat('track')
 ####################
 
 abilities['strength'] = Ability('strength', lambda c:
-        c.attributes.strength.add_inherent(1))
+        c.attributes[STR].add_inherent(1))
 abilities['dexterity'] = Ability('dexterity', lambda c:
-        c.attributes.dexterity.add_inherent(1))
+        c.attributes[DEX].add_inherent(1))
 abilities['constitution'] = Ability('constitution', lambda c:
-        c.attributes.constitution.add_inherent(1))
+        c.attributes[CON].add_inherent(1))
 abilities['intelligence'] = Ability('intelligence', lambda c:
-        c.attributes.intelligence.add_inherent(1))
+        c.attributes[INT].add_inherent(1))
 abilities['wisdom'] = Ability('wisdom', lambda c: 
-        c.attributes.wisdom.add_inherent(1))
+        c.attributes[WIS].add_inherent(1))
 abilities['charisma'] = Ability('charisma', lambda c:
-        c.attributes.charisma.add_inherent(1))
+        c.attributes[CHA].add_inherent(1))
 
 def natural_armor_benefit(creature):
     #Give 2 AC the first time, 1 every additional time
     if creature.has_ability(abilities['natural armor']):
-        creature.armor_class.natural_armor.add_inherent(1)
+        creature.defenses[AC].natural_armor.add_inherent(1)
     else:
-        creature.armor_class.natural_armor.add_inherent(2)
+        creature.defenses[AC].natural_armor.add_inherent(2)
 abilities['natural armor'] = Ability('natural armor', natural_armor_benefit)
 
 abilities['darkvision'] = Ability('darkvision', tags = ['sense'], value = 60,

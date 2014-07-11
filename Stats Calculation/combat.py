@@ -1,6 +1,7 @@
 import dice
 import util
 import copy
+from strings import *
 
 class CombatCreature(object):
     def __init__(self):
@@ -8,12 +9,13 @@ class CombatCreature(object):
         self.attack_mode = 'full attack'
         self.critical_damage = 0
         self.is_alive = True
+        self.current_hit_points = 0
 
     def new_round(self):
-        self.damage_reduction.refresh()
+        self.defenses[DR].refresh()
 
     def take_damage(self, damage, damage_types):
-        damage = self.damage_reduction.reduce_damage(damage, damage_types)
+        damage = self.defenses[DR].reduce_damage(damage, damage_types)
         if self.current_hit_points>0:
             self.current_hit_points = max(0, self.current_hit_points-damage)
         else:
@@ -21,7 +23,7 @@ class CombatCreature(object):
             self.is_alive = self._check_if_alive()
 
     def _check_if_alive(self):
-        if self.critical_damage > self.attributes.constitution.get_total():
+        if self.critical_damage > self.attributes[CON].get_total():
             return False
         return True
 
@@ -35,8 +37,8 @@ class CombatCreature(object):
     def full_attack(self, enemy, deal_damage = True):
         damage_dealt_total = 0
         hit_count = 0
-        for i in xrange(util.attack_count(self.attack_bonus.base_attack_bonus)):
-            is_hit, damage_dealt = self.single_attack(enemy, self.attack_bonus.get_total() - 5*i, deal_damage)
+        for i in xrange(util.attack_count(self.attacks[ATTACK_BONUS].base_attack_bonus)):
+            is_hit, damage_dealt = self.single_attack(enemy, self.attacks[ATTACK_BONUS].get_total() - 5*i, deal_damage)
             damage_dealt_total += damage_dealt
             hit_count += 1 if is_hit else 0
         return hit_count, damage_dealt
@@ -45,7 +47,7 @@ class CombatCreature(object):
             deal_damage = True):
         damage_dealt = 0
         if attack_bonus is None:
-            attack_bonus = self.attack_bonus.get_total()
+            attack_bonus = self.attacks[ATTACK_BONUS].get_total()
         try:
             is_hit, is_threshold_hit = util.attack_hits(
                     attack_bonus, enemy.armor_class.normal(),
@@ -54,35 +56,35 @@ class CombatCreature(object):
             is_hit, is_threshold_hit = util.attack_hits(
                     attack_bonus, enemy, threshold=5)
         if is_hit:
-            damage_dealt += self.weapon_damage.get_total(roll=True)
+            damage_dealt += self.attacks[WEAPON_DAMAGE_PRIMARY].get_total(roll=True)
         if is_threshold_hit:
             damage_dealt += self.offhand_weapon_damage.get_total(roll=True)
         if deal_damage:
-            enemy.take_damage(damage_dealt, self.weapon.damage_types)
+            enemy.take_damage(damage_dealt, self.items[WEAPON_PRIMARY].damage_types)
         return is_hit, damage_dealt
 
     def damage_spell(self, enemy):
         #Use highest-level, no optimization, no save spell
-        damage_die = dice.Dice.from_string('{0}d10'.format(max(1,self.level/2)))
+        damage_die = dice.Dice.from_string('{0}d10'.format(max(1,self.meta[LEVEL]/2)))
         damage_dealt = damage_die.roll()
         enemy.take_damage(damage_dealt, ['spell'])
         return damage_dealt
 
     def damage_per_round(self, ac):
-        return full_weapon_damage_dealt(self.attack_bonus.get_total(),
-                ac, self.attack_bonus.base_attack_bonus, self.weapon_damage.get_total())
+        return full_weapon_damage_dealt(self.attacks[ATTACK_BONUS].get_total(),
+                ac, self.attacks[ATTACK_BONUS].base_attack_bonus, self.attacks[WEAPON_DAMAGE_PRIMARY].get_total())
 
     def avg_hit_probability(self, ac):
         attack_count = util.attack_count(
-                self.attack_bonus.base_attack_bonus)
+                self.attacks[ATTACK_BONUS].base_attack_bonus)
         hit_chance_total = 0 
         for i in xrange(attack_count):
             hit_chance_total += hit_probability(
-                    self.attack_bonus.get_total() - i*5, ac)
+                    self.attacks[ATTACK_BONUS].get_total() - i*5, ac)
         return hit_chance_total/attack_count
 
     def roll_initiative(self):
-        return util.d20.roll()+self.initiative.get_total()
+        return util.d20.roll()+self.core[INITIATIVE].get_total()
 
     def special_attack(self, enemy):
         pass
@@ -97,6 +99,7 @@ class CombatCreature(object):
                         attribute))
             except AttributeError:
                 pass
+        combat_creature.current_hit_points = combat_creature.core[HIT_POINTS]
         return combat_creature
 
 class Battle(object):
@@ -105,8 +108,8 @@ class Battle(object):
         self.first_creature = first_creature
         self.second_creature = second_creature
         #If two creatures with the same name battle, we can't tell who wins
-        if self.first_creature.name == self.second_creature.name:
-            self.second_creature.name += '_2'
+        if self.first_creature.meta[NAME] == self.second_creature.meta[NAME]:
+            self.second_creature.meta[NAME] += '_2'
 
     def iterated_battles(self, battle_count):
         first_creature_wins = 0
@@ -119,9 +122,9 @@ class Battle(object):
             battle_creature_2 = copy.copy(order[1])
             victor, round_count = determine_victor(battle_creature_1,
                     battle_creature_2)
-            if victor.name == self.first_creature.name:
+            if victor.meta[NAME] == self.first_creature.meta[NAME]:
                 first_creature_wins+=1
-            elif victor.name == self.second_creature.name:
+            elif victor.meta[NAME] == self.second_creature.meta[NAME]:
                 second_creature_wins+=1
             else:
                 return False
