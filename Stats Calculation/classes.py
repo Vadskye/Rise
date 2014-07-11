@@ -1,25 +1,24 @@
 import util
-from strings import GOOD, AVERAGE, POOR, FORT, REF, WILL
+from strings import *
 import abilities
 import equipment
 
 def get_level_progression_by_name(class_name):
     return {
-            'barbarian': classes.Barbarian,
-            'bard': classes.Bard,
-            'cleric': classes.Cleric,
-            'druid': classes.Druid,
-            'generic': classes.Generic,
-            'fighter': classes.Fighter,
-            'monk': classes.Monk,
-            'paladin': classes.Paladin,
-            'ranger': classes.Ranger,
-            'rogue': classes.Rogue,
-            'sorcerer': classes.Sorcerer,
-            'wizard': classes.Wizard,
-            'warrior': classes.Warrior
+            'barbarian': Barbarian,
+            'bard': Bard,
+            'cleric': Cleric,
+            'druid': Druid,
+            'generic': Generic,
+            'fighter': Fighter,
+            'monk': Monk,
+            'paladin': Paladin,
+            'ranger': Ranger,
+            'rogue': Rogue,
+            'sorcerer': Sorcerer,
+            'wizard': Wizard,
+            'warrior': Warrior
             }[class_name]
-
 
 class LevelProgression:
     
@@ -27,9 +26,13 @@ class LevelProgression:
         self.level = level
 
     def apply_progressions(self, base_creature):
-        base_creature.attack_bonus.set_progression(self.bab_progression)
-        base_creature.saves.set_progressions_dict(self.save_progressions)
-        base_creature.hit_value = self.hit_value
+        base_creature.set_bab_progression(self.bab_progression, update=False)
+        base_creature.set_save_progressions(self.save_progressions, update=False)
+        base_creature.set_hit_value(self.hit_value, update=False)
+        
+        #base_creature.attack_bonus.set_progression(self.bab_progression)
+        #base_creature.saves.set_progressions_dict(self.save_progressions)
+        #base_creature.hit_value = self.hit_value
 
     #Inherited classes overwrite
     def apply_modifications(self, base_creature):
@@ -87,7 +90,7 @@ class Fighter(LevelProgression):
     def apply_modifications(self, base_creature):
         #armor discipline
         armor_discipline_count = (self.level+5)/6
-        base_creature.armor_class.dodge.add_competence(armor_discipline_count)
+        base_creature.defenses[AC].dodge.add_competence(armor_discipline_count)
         for i in xrange(1,armor_discipline_count):
             base_creature.armor.encumbrance = self._lower_armor_encumbrance(
                     base_creature.armor.encumbrance)
@@ -120,7 +123,7 @@ class Monk(LevelProgression):
 
         #enlightened defense
         if base_creature.armor is None:
-            base_creature.armor_class.misc.add_inherent(wisdom)
+            base_creature.defenses[AC].misc.add_inherent(wisdom)
         else:
             print 'Monk is wearing armor?', base_creature.armor
 
