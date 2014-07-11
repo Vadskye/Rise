@@ -11,8 +11,9 @@ WISDOM = 'wisdom'
 WIS = WISDOM
 CHARISMA = 'charisma'
 CHA = CHARISMA
-ATTRIBUTE_NAMES = [STRENGTH, DEXTERITY, CONSTITUTION, INTELLIGENCE,
-        WISDOM, CHARISMA]
+ATTRIBUTE_NAMES = (STRENGTH, DEXTERITY, CONSTITUTION, INTELLIGENCE,
+        WISDOM, CHARISMA)
+ATTRIBUTES = ATTRIBUTE_NAMES
 
 ARMOR = 'armor'
 SHIELD = 'shield'
@@ -32,6 +33,7 @@ REFLEX = 'reflex'
 REF = REFLEX
 WILL = 'will'
 SAVE_NAMES = [FORTITUDE, REFLEX, WILL]
+SAVES = SAVE_NAMES
 
 WEAPON_DAMAGE = 'damage'
 WEAPON_ENCUMBRANCE = 'encumbrance'
@@ -87,8 +89,12 @@ ABILITY_FEAT = 'feat'
 ABILITY_TRAIT = 'trait'
 ABILITY_TYPES = set((ABILITY, ABILITY_TEMPLATE, ABILITY_FEAT, ABILITY_TRAIT))
 
+WEAPON_DAMAGE_PRIMARY = 'primary weapon damage'
+WEAPON_DAMAGE_SECONDARY = 'secondary weapon damage'
+WEAPON_DAMAGES = (WEAPON_DAMAGE_PRIMARY, WEAPON_DAMAGE_SECONDARY)
 WEAPON_PRIMARY = 'primary weapon'
 WEAPON_SECONDARY = 'secondary weapon'
+WEAPONS = (WEAPON_PRIMARY, WEAPON_SECONDARY)
 AC = 'armor class'
 MC = 'maneuver class'
 NAME = 'name'
@@ -99,7 +105,6 @@ LEVEL = 'level'
 LEVEL_PROGRESSION = 'level progression'
 ALIGNMENT = 'alignment'
 ABILITIES = 'abilities'
-ATTRIBUTES = 'attributes'
 HIT_POINTS = 'hit points'
 HIT_VALUE = 'hit value'
 INITIATIVE = 'initiative'
@@ -108,3 +113,5 @@ SPACE = 'space'
 SPEED = 'speed'
 SIZE = 'size'
 VERBOSE = 'verbose'
+DAMAGE_REDUCTION = 'damage reduction'
+DR = DAMAGE_REDUCTION
