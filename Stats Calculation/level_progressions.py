@@ -29,20 +29,11 @@ class LevelProgression:
         base_creature.set_bab_progression(self.bab_progression, update=False)
         base_creature.set_save_progressions(self.save_progressions, update=False)
         base_creature.set_hit_value(self.hit_value, update=False)
-        
-        #base_creature.attack_bonus.set_progression(self.bab_progression)
-        #base_creature.saves.set_progressions_dict(self.save_progressions)
-        #base_creature.hit_value = self.hit_value
 
     #Inherited classes overwrite
     def apply_modifications(self, base_creature):
         pass
 
-class Average(LevelProgression):
-        bab_progression = AVERAGE
-        save_progressions = {FORT: AVERAGE, REF: AVERAGE, WILL: AVERAGE}
-        hit_value = 5
-    
 class Barbarian(LevelProgression):
 
     bab_progression = GOOD
