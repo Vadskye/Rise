@@ -1,5 +1,5 @@
 from strings import *
-import classes, equipment, util
+import equipment, level_progressions, util
 from abilities import abilities
 
 class Creature(object):
@@ -87,7 +87,7 @@ class Creature(object):
         self.meta[NAME] = raw_stats['name']
         if 'class' in raw_stats.keys():
             self.meta[LEVEL_PROGRESSION] = \
-                    classes.get_level_progression_by_name(
+                    level_progressions.get_level_progression_by_name(
                             raw_stats['class'])(self.meta[LEVEL]) 
 
         #set core
