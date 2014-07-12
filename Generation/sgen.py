@@ -1,5 +1,6 @@
 import argparse
 import re
+import util
 
 PART=0.8
 HALF=0.6
@@ -100,7 +101,7 @@ def calculate_spell_level(args):
     Thus, the args after this splitting will always have one value per argument
     """
 
-    split_args = generate_split_args(args)
+    split_args = util.generate_split_args(args)
     combined_condition_strength_levels = 0
     all_aspects = set()
     buff_count=0
@@ -154,30 +155,6 @@ def calculate_spell_level(args):
     if general_debug: print 'total_level', total_level
 
     return total_level-3
-
-def generate_split_args(args):
-    #Count the number of significant aspects
-    aspect_count=0
-    if args['damage']: aspect_count+=1
-    if args['condition']: aspect_count+=len([x for x in args['condition'] if x!=0])
-    if args['buff']: aspect_count+=len([x for x in args['buff'] if x!=0])
-    new_args_list = list()
-    keys = args.keys()
-    for i in xrange(aspect_count):
-        new_args = dict()
-        for key in keys:
-            if is_list(args[key]):
-                if len(args[key])>1:
-                    new_args[key]=args[key][i]
-                else:
-                    new_args[key]=args[key][0]
-            else:
-                new_args[key]=args[key]
-        new_args_list.append(new_args)
-    return new_args_list
-
-def is_list(value):
-    return type(value)==type(list())
 
 def calculate_damage(args):
     if damage_debug: print 'Calculating damage aspect' 
