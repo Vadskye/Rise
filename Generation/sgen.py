@@ -17,63 +17,58 @@ buff_debug=False
 
 default_args = {'choose_targets': False, 'duration': 'short', 'max_targets': 0, 'touch_attack': 'none', 'concentration': False, 'load_name': '', 'bloodied': False, 'area': 'none', 'noncombat': False, 'alternate': False, 'damage': False, 'instantaneous': False, 'trigger': 'none', 'save': 'none', 'save_name': '', 'buff': 0, 'save_ends': False, 'casting_time': 'standard', 'limit_types': 0, 'dispellable': True, 'escapable': 0, 'condition': 0, 'healthy': False, 'sr': True, 'range': 'medium', 'dot': False}
 
-def bool_parser(value):
-    if value=='0' or value=='False' or value=='false' or value=='none':
-        return False
-    return True
-
 #Return the arguments
 def initialize_argument_parser():
     parser = argparse.ArgumentParser(description='Spell information')
-    parser.add_argument('-d', '--damage', dest = 'damage', type=bool_parser,
+    parser.add_argument('-d', '--damage', dest = 'damage', type=util.bool_parser,
             help='Damage level', nargs='*', default=0)
     parser.add_argument('-c', '--condition', nargs='*', dest='condition', type=float,
             help='Condition tier', default=0, choices=condition_choices)
     parser.add_argument('-b', '--buff', nargs='*', dest = 'buff', type=int,
             help='Buff level', default=0)
-    parser.add_argument('-o', '--bloodied', dest = 'bloodied', type=bool_parser,
+    parser.add_argument('-o', '--bloodied', dest = 'bloodied', type=util.bool_parser,
             nargs='*', default=False)
-    parser.add_argument('--alternate', dest = 'alternate', type=bool_parser,
+    parser.add_argument('--alternate', dest = 'alternate', type=util.bool_parser,
             nargs='*', default=False)
     parser.add_argument('-u', '--duration', dest = 'duration', type=str,
             default='short', nargs='*',
             choices=duration_choices)
     parser.add_argument('--dispellable', dest = 'dispellable',
             help='Subject to dispelling?', nargs='*', default=True,
-            type=bool_parser)
+            type=util.bool_parser)
     parser.add_argument('--concentration', dest = 'concentration', 
-            type=bool_parser, help='Requires concentration?',
+            type=util.bool_parser, help='Requires concentration?',
             nargs='*', default=False)
     parser.add_argument('--save_ends', dest='save_ends', 
-            type=bool_parser, help='Save each round to end?',
+            type=util.bool_parser, help='Save each round to end?',
             nargs='*', default=False)
     parser.add_argument('--instantaneous', dest='instantaneous',
             help='Bloodied is checked only when spell is cast?',
-            type=bool_parser, nargs='*', default=False) 
+            type=util.bool_parser, nargs='*', default=False) 
     parser.add_argument('-a', '--area', dest='area', type=str,
             default='none', choices=area_choices)
     parser.add_argument('-t', '--choose_targets', dest='choose_targets',
-            type=bool_parser, default=False,
+            type=util.bool_parser, default=False,
             help='Choose targets of area spell?')
-    parser.add_argument('-m', '--max_targets', dest='max_targets', type=bool_parser,
+    parser.add_argument('-m', '--max_targets', dest='max_targets', type=util.bool_parser,
             help='Max target limit', default=False)
     parser.add_argument('-s', '--save', dest='save', type=str,
             help='Saving throw type', nargs='*', default='none',
             choices=['none','half','partial','negates'])
-    parser.add_argument('--sr', dest='sr', type=bool_parser,
+    parser.add_argument('--sr', dest='sr', type=util.bool_parser,
             help='Spell resistance allowed?', default=True)
     parser.add_argument('-l', '--limit_types', dest='limit_types', type=int,
             help='Limit affected types?', default=0, nargs='*', choices=[0,1,2,3])
     parser.add_argument('--escapable', dest='escapable', type=int,
             help='Is the spell escapable?', default=0, choices=[0,1,2])
     parser.add_argument('--noncombat', dest='noncombat', 
-            type=bool_parser, help='Irrelevant in combat?',
+            type=util.bool_parser, help='Irrelevant in combat?',
             nargs='*', default=False)
     parser.add_argument('--touch_attack', dest='touch_attack',
             type=str, help='Touch attack and bab',
             nargs='*', default='none',
             choices = touch_attack_choices)
-    parser.add_argument('-e', '--healthy', dest='healthy', type=bool_parser,
+    parser.add_argument('-e', '--healthy', dest='healthy', type=util.bool_parser,
             help='Only affects healthy creatures?', nargs='*', default=False)
     parser.add_argument('--trigger', dest='trigger', type=str,
             help='Triggered by specific event?', default='none',
@@ -86,13 +81,13 @@ def initialize_argument_parser():
             nargs='*', default='')
     parser.add_argument('--load_name', dest='load_name', type=str, 
             nargs='*', default='')
-    parser.add_argument('--dot', dest='dot', type=bool_parser,
+    parser.add_argument('--dot', dest='dot', type=util.bool_parser,
             help='damage over time?', nargs='*', default=False)
     return vars(parser.parse_args())
 
 def calculate_spell_level(args):
     """
-    Need compatability to use different attributes for different aspects
+    Need compatibility to use different attributes for different aspects
     of the spell. 
     Solution: Copy args such that we have one args per separate condition
     (or other aspect)
