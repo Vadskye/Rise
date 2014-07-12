@@ -21,3 +21,8 @@ def generate_split_args(args):
 
 def is_list(value):
     return type(value)==type(list())
+
+def bool_parser(value):
+    if value=='0' or value=='False' or value=='false' or value=='none':
+        return False
+    return True
