@@ -60,6 +60,7 @@ ATTACK_TYPE_SPECIAL = 'special'
 
 GOOD = 'good'
 AVERAGE = 'average'
+AVG = AVERAGE
 POOR = 'poor'
 
 SIZE_FINE = 'fine'
@@ -130,3 +131,16 @@ WIZARD = 'wizard'
 PC_CLASSES = (BARBARIAN, CLERIC, DRUID, FIGHTER, MONK, PALADIN, RANGER, ROGUE, SPELLWARPED, SORCERER, WIZARD)
 GENERIC = 'generic'
 WARRIOR = 'warrior'
+
+ANIMAL = 'animal'
+ABERRATION = 'aberration'
+CONSTRUCT = 'construct'
+DRAGON = 'dragon'
+FEY = 'fey'
+HUMANOID = 'humanoid'
+MAGICAL_BEAST = 'magical beast'
+MONSTROUS_HUMANOID = 'monstrous humanoid'
+OOZE = 'ooze'
+OUTSIDER = 'outsider'
+PLANT = 'plant'
+UNDEAD = 'undead'
