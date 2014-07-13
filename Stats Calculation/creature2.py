@@ -1,6 +1,7 @@
 from strings import *
-import equipment, level_progressions, util
+import equipment, util
 from abilities import abilities
+from level_progressions import classes
 
 class Creature(object):
     def __init__(self, raw_stats, raw_attributes, level=None,
@@ -55,8 +56,7 @@ class Creature(object):
         self._init_objects()
         self._interpret_raw_stats()
         self._interpret_raw_attributes()
-        self.meta[LEVEL_PROGRESSION].apply_progressions(self)
-        self.meta[LEVEL_PROGRESSION].apply_modifications(self)
+        self._apply_level_progression()
 
         self._calculate_derived_statistics()
         self.core[HIT_POINTS] = (self.attributes[CON].get_total()/2 +
@@ -86,9 +86,8 @@ class Creature(object):
             self.meta[ALIGNMENT] = raw_stats['alignment']
         self.meta[NAME] = raw_stats['name']
         if 'class' in raw_stats.keys():
-            self.meta[LEVEL_PROGRESSION] = \
-                    level_progressions.get_level_progression_by_name(
-                            raw_stats['class'])(self.meta[LEVEL]) 
+            self.meta[LEVEL_PROGRESSION] = classes[
+                    raw_stats['class']]
 
         #set core
         if 'size' in raw_stats.keys():
@@ -155,6 +154,15 @@ class Creature(object):
                 self.attacks[weapon_damage].add_enhancement(scale_factor)
         for save in SAVES:
             self.defenses[save].add_enhancement(scale_factor)
+
+    def _apply_level_progression(self):
+        self.attacks[ATTACK_BONUS].set_progression(
+                self.meta[LEVEL_PROGRESSION].bab_progression)
+        for save in SAVES:
+            self.defenses[save].set_progression(
+                    self.meta[LEVEL_PROGRESSION].save_progressions[save])
+        self.core[HIT_VALUE] = self.meta[LEVEL_PROGRESSION].hit_value
+        self.meta[LEVEL_PROGRESSION].apply_modifications(self)
 
     def add_ability(self, ability, check_prerequisites = True):
         if check_prerequisites:
@@ -244,19 +252,6 @@ class Creature(object):
     def print_verb(self, message):
         if self.meta[VERBOSE]:
             print message
-
-    def set_bab_progression(self, bab_progression, update=True):
-        self.attacks[ATTACK_BONUS].set_progression(bab_progression)
-        if update: self._update()
-
-    def set_save_progressions(self, save_progressions, update=True):
-        for save in SAVES:
-            self.defenses[save].set_progression(save_progressions[save])
-        if update: self._update()
-
-    def set_hit_value(self, hit_value, update=True):
-        self.core[HIT_VALUE] = hit_value
-        if update: self._update()
 
     def __str__(self):
         full_string = '%s %s' % (self.meta[NAME],

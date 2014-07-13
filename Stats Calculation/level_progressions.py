@@ -1,172 +1,122 @@
 import util
 from strings import *
-import abilities
+from abilities import abilities
 import equipment
 
-def get_level_progression_by_name(class_name):
-    return {
-            'barbarian': Barbarian,
-            'bard': Bard,
-            'cleric': Cleric,
-            'druid': Druid,
-            'generic': Generic,
-            'fighter': Fighter,
-            'monk': Monk,
-            'paladin': Paladin,
-            'ranger': Ranger,
-            'rogue': Rogue,
-            'sorcerer': Sorcerer,
-            'wizard': Wizard,
-            'warrior': Warrior
-            }[class_name]
-
-class LevelProgression:
+class LevelProgression(object):
     
-    def __init__(self, level):
-        self.level = level
+    def __init__(self, name, bab, fortitude, reflex, will, 
+            hit_value, apply_modifications = lambda x: None):
+        self.name = name
+        self.bab_progression = bab
+        self.save_progressions = {
+            FORT: fortitude,
+            REF: reflex,
+            WILL: will,
+            }
+        self.hit_value = hit_value
+        self.apply_modifications = apply_modifications
 
-    def apply_progressions(self, base_creature):
-        base_creature.set_bab_progression(self.bab_progression, update=False)
-        base_creature.set_save_progressions(self.save_progressions, update=False)
-        base_creature.set_hit_value(self.hit_value, update=False)
+classes = dict()
 
-    #Inherited classes overwrite
-    def apply_modifications(self, base_creature):
+def barbarian_modifications(base_creature):
+    base_creature.add_ability(abilities.rage)
+    base_creature.add_ability(abilities.barbarian_damage_reduction)
+    if base_creature.meta[LEVEL]>=2:
+        base_creature.add_ability(abilities['danger sense'])
+    if base_creature.meta[LEVEL]>=7:
+        abilities.larger_than_life(base_creature)
+    if base_creature.meta[LEVEL]>=17:
+        abilities.larger_than_belief(base_creature)
+
+classes[BARBARIAN] = LevelProgression(BARBARIAN, GOOD, GOOD,
+        AVERAGE, POOR, 7, barbarian_modifications)
+
+def cleric_modifications(base_creature):
+    base_creature.attack_mode='damage spell'
+
+classes[CLERIC] = LevelProgression(CLERIC, AVERAGE, AVERAGE, POOR, GOOD,
+        5, cleric_modifications)
+
+
+classes[DRUID] = LevelProgression(DRUID, AVERAGE, GOOD, POOR, AVERAGE,
+        5)
+
+
+def fighter_modifications(base_creature):
+    #armor discipline
+    armor_discipline_count = (base_creature.meta[LEVEL]+5)/6
+    base_creature.defenses[AC].dodge.add_competence(
+            armor_discipline_count)
+    for i in xrange(1, armor_discipline_count):
+        base_creature.items[ARMOR].encumbrance = util.lower_encumbrance(
+                base_creature.items[ARMOR].encumbrance)
+
+    #weapon discipline
+    ab = 0
+    ab += 1 if base_creature.meta[LEVEL]>=3 else 0
+    ab += 1 if base_creature.meta[LEVEL]>=9 else 0
+    base_creature.attacks[ATTACK_BONUS].add_competence(ab)
+
+    if base_creature.meta[LEVEL]>=15:
         pass
+        #add critical changes
 
-class Barbarian(LevelProgression):
+classes[FIGHTER] = LevelProgression(FIGHTER, GOOD, GOOD, POOR, AVERAGE,
+        6, fighter_modifications)
 
-    bab_progression = GOOD
-    save_progressions = {FORT:GOOD, REF:AVERAGE, WILL:POOR}
-    hit_value = 7
 
-    def apply_modifications(self, base_creature):
-        base_creature.add_ability(abilities.rage)
-        base_creature.add_ability(abilities.barbarian_damage_reduction)
-        if self.level>=2:
-            base_creature.add_ability(abilities.danger_sense)
-        if self.level>=7:
-            abilities.larger_than_life(base_creature)
-        if self.level>=17:
-            abilities.larger_than_belief(base_creature)
+classes[GENERIC] = LevelProgression(GENERIC, AVERAGE, AVERAGE, AVERAGE,
+        AVERAGE, 5)
 
-class Bard(LevelProgression):
-    bab_progression = AVERAGE
-    save_progressions = {FORT:AVERAGE, REF:AVERAGE, WILL:AVERAGE}
-    hit_value = 6
+def monk_modifications(base_creature):
+    #wisdom is used often, so make it quick to access
+    wisdom = base_creature.attributes[WIS].get_total()
 
-class Cleric(LevelProgression):
-    bab_progression = AVERAGE
-    save_progressions = {FORT:AVERAGE, REF:POOR, WILL:GOOD}
-    hit_value = 5
+    #enlightened defense
+    if base_creature.items[ARMOR] is None:
+        base_creature.defenses[AC].misc.add_inherent(wisdom)
+    else:
+        base_creature.printverb('Monk is wearing armor? %s' %
+                base_creature.items[ARMOR])
 
-    def apply_modifications(self, base_creature):
-        base_creature.attack_mode='damage spell'
+    #unarmed strike
+    if base_creature.items[WEAPON_PRIMARY] is None:
+        unarmed_weapon = equipment.Weapon.from_weapon_name('unarmed')
+        #make the weapon deal monk damage
+        for i in xrange(2):
+            unarmed_weapon.damage_die.increase_size(increase_min=True)
+        base_creature.items[WEAPON_PRIMARY] = unarmed_weapon
+        base_creature.attacks[WEAPON_DAMAGE_PRIMARY].add_die(
+                unarmed_weapon)
 
-class Druid(LevelProgression):
-    bab_progression = AVERAGE
-    save_progressions = {FORT:GOOD, REF:POOR, WILL:AVERAGE}
-    hit_value = 5
+    #wholeness of body
 
-class Generic(LevelProgression):
-    bab_progression = AVERAGE
-    save_progressions = {FORT:AVERAGE, REF: AVERAGE, WILL: AVERAGE}
-    hit_value = 5
+    #improved ki strike
+    if base_creature.meta[LEVEL]>=10:
+        base_creature.weapon_damage.add_inherent(wisdom/2)
 
-class Fighter(LevelProgression):
-    bab_progression = GOOD
-    save_progressions = {FORT:GOOD, REF:POOR, WILL:AVERAGE}
-    hit_value = 6
+classes[MONK] = LevelProgression(MONK, GOOD, AVERAGE, AVERAGE, AVERAGE,
+        5)
 
-    def apply_modifications(self, base_creature):
-        #armor discipline
-        armor_discipline_count = (self.level+5)/6
-        base_creature.defenses[AC].dodge.add_competence(armor_discipline_count)
-        for i in xrange(1,armor_discipline_count):
-            base_creature.armor.encumbrance = self._lower_armor_encumbrance(
-                    base_creature.armor.encumbrance)
 
-        #weapon discipline
-        if self.level>=3:
-            ab=1
-            if self.level>=9:
-                ab+=1
-            base_creature.attack_bonus.add_competence(ab)
-            if self.level>=15:
-                pass
-                #add critical changes
+classes[PALADIN] = LevelProgression(PALADIN, GOOD, GOOD, POOR, GOOD,
+        6)
 
-    def _lower_armor_encumbrance(self, encumbrance):
-        return {
-                'heavy': 'medium',
-                'medium': 'light',
-                'light': 'none',
-                'none': 'none'}[encumbrance]
 
-class Monk(LevelProgression):
-    bab_progression = GOOD
-    save_progressions = {FORT:AVERAGE, REF:GOOD, WILL:GOOD}
-    hit_value = 6
+def rogue_modifications(base_creature):
+    base_creature.add_ability('danger sense')
 
-    def apply_modifications(self, base_creature):
-        #wisdom is used often, so make it quick to access
-        wisdom = base_creature.attributes.wisdom.get_total()
+classes[ROGUE] = LevelProgression(ROGUE, AVERAGE, POOR, GOOD, AVERAGE,
+        5, rogue_modifications)
 
-        #enlightened defense
-        if base_creature.armor is None:
-            base_creature.defenses[AC].misc.add_inherent(wisdom)
-        else:
-            print 'Monk is wearing armor?', base_creature.armor
 
-        #unarmed strike
-        if base_creature.weapon is None:
-            unarmed_weapon = equipment.Weapon.from_weapon_name('unarmed')
-            #make the weapon deal monk damage
-            for i in xrange(2):
-                unarmed_weapon.damage_die.increase_size(increase_min=True)
-            base_creature.weapon = unarmed_weapon
-            base_creature.weapon_damage.add_die(base_creature.weapon.damage_die)
+classes[SPELLWARPED] = LevelProgression(SPELLWARPED, AVERAGE, AVERAGE,
+        AVERAGE, AVERAGE, 5)
 
-        #wholeness of body
-        if self.level>=4:
-            base_creature.current_hit_points+= self.level*wisdom
 
-        #improved ki strike
-        if self.level>=10:
-            base_creature.weapon_damage.add_inherent(wisdom/2)
-        
-class Paladin(LevelProgression):
-    bab_progression = GOOD
-    save_progressions = {FORT:GOOD, REF:POOR, WILL:GOOD}
-    hit_value = 6
+classes[SORCERER] = LevelProgression(SORCERER, POOR, POOR, POOR, GOOD, 4)
 
-class Ranger(LevelProgression):
-    bab_progression = GOOD
-    save_progressions = {FORT:GOOD, REF:AVERAGE, WILL:AVERAGE}
-    hit_value = 6
+classes[WARRIOR] = LevelProgression(WARRIOR, GOOD, GOOD, POOR, POOR, 6)
 
-class Rogue(LevelProgression):
-    bab_progression = AVERAGE
-    save_progressions = {FORT:POOR, REF:GOOD, WILL:POOR}
-    hit_value = 5
-
-    def apply_modifications(self, base_creature):
-        abilities.danger_sense(self.level, base_creature)
-
-class Sorcerer(LevelProgression):
-    bab_progression = POOR
-    save_progressions = {FORT:POOR, REF:POOR, WILL:GOOD}
-    hit_value = 4
-
-class Wizard(LevelProgression):
-    bab_progression = POOR
-    save_progressions = {FORT:POOR, REF:POOR, WILL:GOOD}
-    hit_value = 4
-
-    def apply_modifications(self, base_creature):
-        base_creature.attack_mode='damage spell'
-
-class Warrior(LevelProgression):
-    bab_progression = GOOD
-    save_progressions = {FORT:GOOD, REF:POOR, WILL:POOR}
-    hit_value = 6
+classes[WIZARD] = LevelProgression(WIZARD, POOR, POOR, POOR, GOOD, 4)
