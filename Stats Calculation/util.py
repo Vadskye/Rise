@@ -276,8 +276,7 @@ def sum_armor(armor, natural_armor):
     else:
         return natural_armor + ifloor(armor/2)
 
-def parse_stats_from_file(input_file_name):
-    input_file = open(input_file_name,'r')
+def parse_stats_from_file(input_file):
     stats=dict()
     for line in input_file:
         line = line.strip().lower()
@@ -314,12 +313,18 @@ def parse_stats_from_file(input_file_name):
                 raise Exception('Multiple keys: '+key)
             else:
                 stats[key] = val
+
+    #If the attributes are referenced in an external file, add them
+    #to the raw stats referenced here.
+    #Otherwise, assume the attributes are present in the original file
+    if 'attributes' in stats.keys():
+        attribute_filename = 'data/attributes/'+stats['attributes']+'.txt'
+        attribute_file = open(attribute_filename, 'r')
+        attribute_stats = parse_stats_from_file(attribute_file)
+        #Add the attributes to the stats to be returned
+        for key in attribute_stats:
+            stats[key] = attribute_stats[key]
     return stats
-
-def parse_attribute_file(raw_stats):
-    attribute_file_name = 'data/attributes/'+raw_stats['attributes']+'.txt'
-    return parse_stats_from_file(attribute_file_name)
-
 
 #Return a new dict that contains a selection of items from
 #the original dict
