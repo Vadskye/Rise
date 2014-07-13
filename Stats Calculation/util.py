@@ -51,7 +51,7 @@ class Modifier(object):
         try:
             if die.average > self.die.average:
                 self.die=die
-        except ValueError:
+        except AttributeError:
             self.die = die
 
     def get_total(self, roll=False, ignore_die = False):
