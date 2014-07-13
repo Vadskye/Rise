@@ -120,3 +120,25 @@ classes[SORCERER] = LevelProgression(SORCERER, POOR, POOR, POOR, GOOD, 4)
 classes[WARRIOR] = LevelProgression(WARRIOR, GOOD, GOOD, POOR, POOR, 6)
 
 classes[WIZARD] = LevelProgression(WIZARD, POOR, POOR, POOR, GOOD, 4)
+
+monster_types = dict()
+
+monster_types[ANIMAL] = LevelProgression(ANIMAL, AVG, AVG, 
+        AVG, POOR, 6)
+monster_types[ABERRATION] = LevelProgression(ABERRATION, AVG,
+        AVG, POOR, AVG, 5)
+monster_types[CONSTRUCT] = LevelProgression(CONSTRUCT, AVG, AVG, POOR, POOR, 5)
+monster_types[DRAGON] = LevelProgression(DRAGON, AVG, AVG, 
+        AVG, AVG, 6)
+monster_types[FEY] = LevelProgression(FEY, POOR, POOR, AVG, AVG, 5)
+monster_types[HUMANOID] = LevelProgression(HUMANOID, POOR, POOR, POOR,
+        POOR, 4)
+monster_types[MAGICAL_BEAST] = LevelProgression(MAGICAL_BEAST, AVG,
+        AVG, AVG, POOR, 6)
+monster_types[MONSTROUS_HUMANOID] = LevelProgression(MONSTROUS_HUMANOID,
+        AVG, AVG, POOR, AVG, 5)
+monster_types[OOZE] = LevelProgression(OOZE, POOR, AVG, POOR, POOR, 6)
+monster_types[OUTSIDER] = LevelProgression(OUTSIDER, AVG, AVG, AVG, AVG,
+        5)
+monster_types[PLANT] = LevelProgression(PLANT, POOR, AVG, POOR, POOR, 5)
+monster_types[UNDEAD] = LevelProgression(UNDEAD, AVG, AVG, POOR, AVG, 5)
