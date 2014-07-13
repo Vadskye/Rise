@@ -1360,7 +1360,7 @@ At 8th level, and every four levels thereafter, the rogue gains an additional co
 \lcaption{The Sorcerer}
 \begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{7em} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
 \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} \\
-1st & \plus0 & \plus0 & \plus0 & \plus3 & Arcane invocation, Rapid Metamagic, versatile spellcaster \\
+1st & \plus0 & \plus0 & \plus0 & \plus3 & Arcane invocation \\
 2nd & \plus1 & \plus1 & \plus1 & \plus4     & Arcane invocation, spellsurge \plus2 \\
 3rd & \plus1 & \plus1 & \plus1 & \plus5     & Expanded spell knowledge \\
 4th & \plus2 & \plus2 & \plus2 & \plus6     & Spellblend invocation \\
@@ -1369,7 +1369,7 @@ At 8th level, and every four levels thereafter, the rogue gains an additional co
 7th & \plus3 & \plus3 & \plus3 & \plus9     & Expanded spell knowledge \\
 8th & \plus4 & \plus4 & \plus4 & \plus10    & Defensive spellblend, spellsurge \plus3 \\
 9th & \plus4 & \plus4 & \plus4 & \plus11    & Expanded spell knowledge \\
-10th & \plus5 & \plus5 & \plus5 & \plus12    & Spellsurge \\
+10th & \plus5 & \plus5 & \plus5 & \plus12    & Spellsurge, versatile spellcaster \\
 11th & \plus5 & \plus5 & \plus5 & \plus13    & Expanded spell knowledge \\
 12th & \plus6/\plus1 & \plus6 & \plus6 & \plus14& Offensive spellblend \\
 13th & \plus6/\plus1 & \plus6 & \plus6 & \plus15& Expanded spell knowledge \\
@@ -1461,8 +1461,6 @@ Like other spellcasters, the number of spells a sorcerer knows and can cast each
 
 \cf{Sor}{Arcane Invocation} All sorcerers master at least one arcane invocation. An arcane invocation allows a sorcerer to exert magical influence without expending the effort required to cast a spell. The sorcerer may choose to learn one invocation of her choice from the list of arcane invocations described in Chapter 11: Spells. At 2nd level, the sorcerer learns a second arcane invocation of his choice.
 
-%\cf{Sorc}{Versatile Spellcaster (Ex)} A sorcerer's intuitive grasp of magic allows him to be flexible in his use of arcane energy. A sorcerer can use two sorcerer spell slots of the same level to use an ability requiring a sorcerer spell slot of one level higher. For example, Serric the sorcerer can use two 0th-level spell slots to cast a single 1st-level spell he knows.
-
 \cf{Sor}{Spellsurge (Ex)} At 2nd level, a sorcerer learns how to alter how he casts spells by initiating a spellsurge. He can initiate a spellsurge as a swift action. While in a spellsurge, he gains bonuses with some types of magic or aspects of spellcasting, but takes penalties to others. A spellsurge lasts for 5 rounds. A sorcerer can attempt to end a spellsurge as a swift action by making a Will save against a DC equal to 10 \add his caster level (including any bonuses or penalties from the spellsurge that affect all spells). Success means he ends the spellsurge, and failure means he is unable to return to normal.
 
 The value of the numerical bonuses and penalties granted by a spellsurge is called a sorcerer's spellsurge bonus. Initially, his spellsurge bonus is \plus2, granting him \plus2 bonuses and inflicting \minus2 penalties. A sorcerer can initiate a spellsurge a number of times per day equal to his spellsurge bonus. His spellsurge bonus improves to \plus3 at 8th level, to \plus4 at 14th level, and finally to \plus5 at 20th level.
@@ -1487,6 +1485,8 @@ At 6th level, and every four levels thereafter, the sorcerer learns an additiona
 \cf{Sor}{Spellblend Invocation (Ex)} At 4th level, a sorcerer may combine his arcane invocations with his spells. As a full-round action, the sorcerer may cast a spell that affects only himself using a spell slot one level higher than what the spell would normally require. The spell must have a casting time of 1 standard action or less. If he does, he may also use an arcane invocation as part of the same action. The arcane invocation need not target the sorcerer.
 
 \cf{Sor}{Defensive Spellblend (Ex)} At 8th level, a sorcerer may combine two spells together. As a full-round action, the sorcerer may cast two spells at once, resolving each spell's effects separately. The spells cast in this way must have a casting time of 1 standard action or less, and must be at least three spell levels apart, such as a 1st-level spell and a 4th-level spell. In addition, one of the two spells must affect only the sorcerer. Using improved spellblend costs a spell slot of one level higher than the highest level spell being cast.
+
+\cf{Sorc}{Versatile Spellcaster (Ex)} At 10th level, a sorcerer's intuitive grasp of magic allows him to be flexible in his use of arcane energy. He can use two sorcerer spell slots of the same level to cast a spell or use an ability requiring a sorcerer spell slot of one level higher.
 
 \cf{Sor}{Offensive Spellblend (Ex)} At 12th level, a sorcerer may combine a damaging spell and a nondamaging spell together. As a full-round action, the sorcerer may cast two spells at once, resolving each spell's effects separately. The spells cast in this way must have a casting time of 1 standard action or less, and must at least three spell levels apart, such as a 1st-level spell and a 4th-level spell. One spell must be a damaging spell, and the other must not. Using offensive spellblend costs a spell slot of two levels higher than the highest level spell being cast.
 
@@ -1689,7 +1689,7 @@ As a move action, he may move the weapon up to 30 feet in any direction, even ve
 \lcaption{The Wizard}
 \begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{7em} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
 \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} \\
-1st & \plus0 & \plus0 & \plus0 & \plus3 & Arcane invocation, ritual master \\
+1st & \plus0 & \plus0 & \plus0 & \plus3 & Arcane invocation \\
 2nd & \plus1 & \plus1 & \plus1 & \plus4     & Arcane invocation, magic feat \\
 3rd & \plus1 & \plus1 & \plus1 & \plus5     & Arcane insight \\
 4th & \plus2 & \plus2 & \plus2 & \plus6     & Invocation sequencer \\
