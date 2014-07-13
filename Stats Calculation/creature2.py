@@ -1,10 +1,10 @@
 from strings import *
 import equipment, util
 from abilities import abilities
-from level_progressions import classes
+from level_progressions import classes, monster_types
 
 class Creature(object):
-    def __init__(self, raw_stats, raw_attributes, level=None,
+    def __init__(self, raw_stats, level=None,
             verbose=False):
         self.attacks = {
                 ATTACK_BONUS: None,
@@ -48,14 +48,12 @@ class Creature(object):
 
         self.abilities = set()
         self.raw_stats = raw_stats
-        self.raw_attributes = raw_attributes
 
         self._update()
 
     def _update(self):
         self._init_objects()
         self._interpret_raw_stats()
-        self._interpret_raw_attributes()
         self._apply_level_progression()
 
         self._calculate_derived_statistics()
@@ -88,6 +86,9 @@ class Creature(object):
         if 'class' in raw_stats.keys():
             self.meta[LEVEL_PROGRESSION] = classes[
                     raw_stats['class']]
+        elif 'monster' in raw_stats.keys():
+            self.meta[LEVEL_PROGRESSION] = monster_types[
+                    raw_stats['monster']]
 
         #set core
         if 'size' in raw_stats.keys():
@@ -113,29 +114,28 @@ class Creature(object):
                 for ability_name in raw_stats[ability_type]:
                     self.add_ability(abilities[ability_name])
 
-    def _interpret_raw_attributes(self):
-        raw_attributes = self.raw_attributes
+        #Add attributes
         for attribute_name in ATTRIBUTE_NAMES:
             #use try/except to allow missing attributes
             try:
                 self.attributes[attribute_name].add_inherent(
-                    util.conditional_int(raw_attributes[attribute_name]))
+                    util.conditional_int(raw_stats[attribute_name]))
             except ValueError:
                 self.print_verb('missing attribute')
 
         #Apply level-based scaling
-        self._scale_attributes_by_level(raw_attributes)
+        self._scale_attributes_by_level(raw_stats)
 
-    def _scale_attributes_by_level(self, raw_attributes):
+    def _scale_attributes_by_level(self, raw_stats):
         try:
-            main_attribute = raw_attributes['bonus attribute 1']
+            main_attribute = raw_stats['bonus attribute 1']
             main_increases = (2 + self.meta[LEVEL])/4
             self.attributes[main_attribute].add_inherent(
                     main_increases)
         except ValueError:
             self.print_verb('Missing bonus attribute 1')
         try:
-            second_attribute = raw_attributes['bonus attribute 2']
+            second_attribute = raw_stats['bonus attribute 2']
             second_increases = (self.meta[LEVEL])/4
             self.attributes[second_attribute].add_inherent(
                     second_increases)
@@ -244,10 +244,15 @@ class Creature(object):
         
     @classmethod
     def from_creature_name(cls, creature_name, level, verbose=False):
-        creature_filename = 'data/'+creature_name+'.txt'
-        raw_stats = util.parse_stats_from_file(creature_filename)
-        raw_attributes = util.parse_attribute_file(raw_stats)
-        return cls(raw_stats, raw_attributes, level, verbose)
+        try:
+            creature_filename = 'data/'+creature_name+'.txt'
+            creature_file = open(creature_filename, 'r')
+        except IOError:
+            creature_filename = 'data/monsters/'+creature_name+'.txt'
+            creature_file = open(creature_filename, 'r')
+
+        raw_stats = util.parse_stats_from_file(creature_file)
+        return cls(raw_stats, level, verbose)
 
     def print_verb(self, message):
         if self.meta[VERBOSE]:
@@ -281,3 +286,6 @@ class Creature(object):
         for attribute_name in ATTRIBUTE_NAMES:
             attributes += ' ' + str(self.attributes[attribute_name].get_total())
         return attributes
+
+    def has_ability(self, ability):
+        return ability in self.abilities
