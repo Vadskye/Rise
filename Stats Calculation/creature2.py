@@ -19,7 +19,7 @@ class Creature(object):
                 HIT_VALUE: None,
                 INITIATIVE: None,
                 REACH: None,
-                SIZE: None,
+                SIZE: SIZE_MEDIUM,
                 SPACE: None,
                 SPEED: None,
                 }
@@ -32,7 +32,7 @@ class Creature(object):
                 DR: None,
                 }
         self.meta = {
-                ALIGNMENT: None,
+                ALIGNMENT: 'Neutral',
                 LEVEL: level,
                 LEVEL_PROGRESSION: None,
                 NAME: None,
@@ -292,6 +292,188 @@ class Creature(object):
         for attribute_name in ATTRIBUTE_NAMES:
             attributes += ' ' + str(self.attributes[attribute_name].get_total())
         return attributes
+
+    def get_text_of_abilities_by_tag(self, tag, prefix = None, joiner = ', ',
+            suffix = None):
+        text = ''
+        abilities_with_tag = self.get_abilities_by_tag(tag)
+        if abilities_with_tag:
+            if prefix is not None: text += prefix
+            text += joiner.join([ability.get_text(self)
+                for ability in abilities_with_tag])
+            if suffix is not None: text += suffix
+        return text
+
+    #Get abilities either with or without a given tag
+    def get_abilities_by_tag(self, tag, with_tag = True):
+        if with_tag:
+            return filter(lambda a: a.has_tag(tag), self.abilities)
+        else:
+            return filter(lambda a: not a.has_tag(tag), self.abilities)
+
+    def to_latex(self):
+        monster_string=''
+        #The string is constructed from a series of function calls
+        #Each call constructs one or more thematically related lines
+        #Each call should end with ENDLINE, so we always start on a new line 
+        horizontal_rule = '\\monlinerule\n'
+        monster_string += self._latex_headers()
+        monster_string += self._latex_senses()
+        monster_string += self._latex_movement()
+        monster_string += horizontal_rule
+        
+        monster_string += self._latex_defenses()
+        monster_string += horizontal_rule
+
+        monster_string += self._latex_attacks()
+        monster_string += horizontal_rule
+
+        monster_string += self._latex_attributes()
+        monster_string += self._latex_feats()
+        monster_string += self._latex_skills()
+        monster_string += horizontal_rule
+
+        """
+        if self.skills['Sense Motive'] is not None:
+            senses += ', Sense Motive {0}'.format(
+                    self.skills['Sense Motive'])
+        if self.skills['Spellcraft'] is not None:
+            senses += ', Spellcraft {0}'.format(self.skills['Spellcraft'])
+
+        if self.abilities['aura']:
+            monster_string+='\\par \\textbf{Aura} {0}\n'.format(
+                    self.abilities['aura'])
+
+        if self.languages:
+            monster_string+='\\par \\textbf{Languages} {0}\n'.format(
+                    self.languages)
+        """
+        monster_string += '\\end{mstatblock}\n'
+
+        return monster_string
+
+    def _latex_headers(self):
+        #Don't use ENDLINE here because LaTeX doesn't like \\ with just \begin
+        header =  '\\subsection{%s}\n\\begin{mstatblock}\n' % self.meta[NAME].title()
+
+        subheader = r'%s %s %s \hfill \textbf{CR} %s' % (
+                self.meta[ALIGNMENT].title(), self.core[SIZE].title(),
+                self.meta[LEVEL_PROGRESSION].name, self.meta[LEVEL])
+        subheader += ENDLINE
+        #if self.subtypes:
+        #    types +=' {0}'.format()
+        #if self.archetype:
+        #    types+=' {0}'.format(self.archetype)
+        return header + subheader
+
+    def _latex_senses(self):
+        #TODO: add Perception. Requires skills.
+        senses = r'\textbf{Init} %s; Perception %s' % (
+                self.core[INITIATIVE].mstr(), util.mstr(0))
+        senses += self.get_text_of_abilities_by_tag('sense', prefix=', ')
+        senses += ENDLINE
+        return senses
+
+    #This will be commonly overwritten on a per-monster basis
+    #For now, just use the "normal" values for each size
+    def _latex_movement(self):
+        movement = r'\textbf{Space} %s; \textbf{Reach} %s' % (
+                util.value_in_feet(self.core[SPACE]), 
+                util.value_in_feet(self.core[REACH]))
+        movement += r'; \textbf{Speed} %s' % util.value_in_feet(self.core[SPEED])
+        movement += self.get_text_of_abilities_by_tag('movement', prefix = ', ')
+        movement += ENDLINE
+        return movement
+
+    def _latex_defenses(self):
+        defenses = r'\textbf{AC} %s, touch %s, flat-footed %s' % (
+                self.defenses[AC].normal(), self.defenses[AC].touch(),
+                self.defenses[AC].flatfooted())
+        defenses += r'; \textbf{MC} %s' % self.defenses[MC].get_total()
+        defenses += self.get_text_of_abilities_by_tag('protection',
+                prefix = '(', suffix = ')')
+        defenses += ENDLINE
+        #Should provide detailed explanation of AC sources here
+        #defenses += '\par (%s)' % self.armor_class
+
+        #Add HP and damage reduction
+        defenses += r'\textbf{HP} %s (%s HV)' % (self.core[HIT_POINTS],
+                self.meta[LEVEL])
+        defenses += self.get_text_of_abilities_by_tag('damage reduction', ', ')
+        defenses += ENDLINE
+
+        #Add any immunities
+        defenses += self.get_text_of_abilities_by_tag('immunity',
+                prefix = r'\textbf{Immune} ', suffix = ENDLINE)
+
+        #Add saving throws
+        defenses+=r'\textbf{Saves} Fort %s, Ref %s, Will %s' % (
+                self.defenses[FORT].mstr(), self.defenses[REF].mstr(),
+                self.defenses[WILL].mstr())
+        defenses += self.get_text_of_abilities_by_tag('saving throw',
+                prefix = '; ')
+        defenses += ENDLINE
+
+        return defenses
+
+    def _latex_attacks(self):
+        attacks = ''
+        if self.items[WEAPON_PRIMARY] is not None:
+            attack_title = r'\textbf{%s}' % self.items[WEAPON_PRIMARY].attack_type.title()
+            attack_name = self.items[WEAPON_PRIMARY].name.title()
+            attack_bonus = self.attacks[ATTACK_BONUS].mstr()
+            attack_damage = util.attack_damage_to_latex(
+                    self.items[WEAPON_PRIMARY], self.attacks[DAMAGE][WEAPON_PRIMARY])
+
+            if self.items[WEAPON_SECONDARY] is not None:
+                attack_name += '/%s' % self.items[WEAPON_SECONDARY].name
+                attack_bonus += '/%s' % (
+                        self.attacks[ATTACK_BONUS].get_total_offhand())
+                attack_damage += '/%s' % util.attack_damage_to_latex(
+                        self.items[WEAPON_SECONDARY], 
+                        self.attacks[DAMAGE][WEAPON_SECONDARY])
+
+            attacks += '%s %s %s (%s)' % (attack_title, attack_name, attack_bonus,
+                    attack_damage)
+
+            attacks += ENDLINE
+
+        base_maneuver_bonus = self.attacks[ATTACK_BONUS].base_attack_bonus + util.get_size_modifier(self.core[SIZE])
+        attacks+= r'\textbf{BAB} %s; \textbf{Maneuvers} %s (Str), %s (Dex)' % (
+                self.attacks[ATTACK_BONUS].base_attack_bonus,
+                util.mstr(base_maneuver_bonus + self.attributes[STR].get_total()),
+                util.mstr(base_maneuver_bonus + self.attributes[DEX].get_total()))
+        attacks += ENDLINE
+
+        attacks += self.get_text_of_abilities_by_tag('special attack',
+                prefix=r'\textbf{Special} ', suffix=ENDLINE)
+        return attacks
+
+    def _latex_attributes(self):
+        attributes = r'\textbf{Attributes} '
+        attributes += 'Str %s, Dex %s, Con %s, Int %s, Wis %s, Cha %s' % (
+                self.attributes[STR].get_total(),
+                self.attributes[DEX].get_total(),
+                self.attributes[CON].get_total(),
+                self.attributes[INT].get_total(),
+                self.attributes[WIS].get_total(),
+                self.attributes[CHA].get_total())
+        attributes += ENDLINE
+        return attributes
+
+    def _latex_feats(self):
+        feats_string = ''
+        feats = self.get_abilities_by_tag('feat')
+        if feats:
+            feats_string += r'\textbf{Feats} '
+            feats_string += ', '.join([feat.get_text().title()
+                for feat in feats])
+            feats_string += ENDLINE
+        return feats_string
+
+    #TODO
+    def _latex_skills(self):
+        return ''
 
     def has_ability(self, ability):
         return ability in self.abilities
