@@ -1,6 +1,5 @@
 import argparse
 from creature2 import Creature
-from monster import Monster
 import util
 import combat
 import cProfile
@@ -73,16 +72,10 @@ def normalize_ac(creature):
     creature.armor_class.misc.add_circumstance(
             get_generic_ac_calc()[creature.level-1] - creature.armor_class.normal())
 
-def get_character_or_monster(creature_name, level):
-    try:
-        return Creature.from_creature_name(creature_name, level)
-    except IOError:
-        return Monster.from_monster_name(creature_name, level)
-
 if __name__ == "__main__":
     args = initialize_argument_parser()
     if args['function'] == CREATURE:
-        creature = get_character_or_monster(args['creature_input'],
+        creature = Creature.from_creature_name(args['creature_input'],
                 args['level'])
         print creature
         if args['output'] is not None:
