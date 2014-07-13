@@ -9,8 +9,7 @@ class Creature(object):
         self.attacks = {
                 ATTACK_BONUS: None,
                 MANEUVER_BONUS: None,
-                WEAPON_DAMAGE_PRIMARY: None,
-                WEAPON_DAMAGE_SECONDARY: None,
+                DAMAGE: None,
                 }
         self.attributes = {}
         for attribute_name in ATTRIBUTE_NAMES:
@@ -64,8 +63,10 @@ class Creature(object):
     def _init_objects(self):
         self.attacks[ATTACK_BONUS] = util.AttackBonus()
         self.attacks[MANEUVER_BONUS] = util.ManeuverBonus()
-        self.attacks[WEAPON_DAMAGE_PRIMARY] = util.Modifier()
-        self.attacks[WEAPON_DAMAGE_SECONDARY] = util.Modifier()
+        self.attacks[DAMAGE] = {
+                WEAPON_PRIMARY: util.Modifier(),
+                WEAPON_SECONDARY: util.Modifier()
+                }
         for attribute in ATTRIBUTES:
             self.attributes[attribute] = util.Modifier()
         self.defenses[AC] = util.ArmorClass()
@@ -150,8 +151,8 @@ class Creature(object):
             self.defenses[AC].shield.add_enhancement(scale_factor)
         if self.items[WEAPON_PRIMARY]:
             self.attacks[ATTACK_BONUS].add_enhancement(scale_factor)
-            for weapon_damage in WEAPON_DAMAGES:
-                self.attacks[weapon_damage].add_enhancement(scale_factor)
+            for weapon in WEAPONS:
+                self.attacks[DAMAGE][weapon].add_enhancement(scale_factor)
         for save in SAVES:
             self.defenses[save].add_enhancement(scale_factor)
 
@@ -199,7 +200,12 @@ class Creature(object):
         self.attacks[MANEUVER_BONUS].add_inherent(util.get_size_modifier(
             self.core[SIZE], is_special_size_modifier=True))
 
-        self.attacks[WEAPON_DAMAGE_PRIMARY].add_inherent(
+        #set damage for each weapon
+        for weapon in WEAPONS:
+            if self.items[weapon] is not None:
+                self.attacks[DAMAGE][weapon].add_die(
+                        self.items[weapon].damage_die)
+        self.attacks[DAMAGE][WEAPON_PRIMARY].add_inherent(
                 self.attributes[STR].get_total()/2)
 
         self._add_save_attributes()
@@ -278,7 +284,7 @@ class Creature(object):
 
     def _to_string_attacks(self):
         attacks = 'Atk ' + util.mstr(self.attacks[ATTACK_BONUS].get_total())
-        attacks += ' ('+ str(self.attacks[WEAPON_DAMAGE_PRIMARY].get_total()) + ')'
+        attacks += ' ('+ str(self.attacks[DAMAGE][WEAPON_PRIMARY].get_total()) + ')'
         return attacks
 
     def _to_string_attributes(self):
