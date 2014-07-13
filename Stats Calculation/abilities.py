@@ -94,7 +94,7 @@ def overwhelming_force_benefit(creature):
         creature.weapon_damage.add_inherent(
                 (creature.attributes[STR].get_total()+1)/2)
 def overwhelming_force_prerequisites(creature):
-        return creature.attributes[STR].get_total() >=5 and creature.attack_bonus.base_attack_bonus >=8 and creature.weapon.encumbrance == 'heavy'
+        return creature.attributes[STR].get_total() >=5 and creature.attacks[ATTACK_BONUS].base_attack_bonus >=8 and creature.weapon.encumbrance == 'heavy'
 abilities['overwhelming force'] = Ability('overwhelming force', overwhelming_force_benefit,
         overwhelming_force_prerequisites, set(('feat', 'combat', 'power')))
 
@@ -189,7 +189,7 @@ abilities['natural trip'] = Ability('natural trip', text = natural_trip_text,
         tags=['special attack'])
 
 def natural_weapon_benefit(creature):
-    creature.weapon_damage.die.increase_size()
+    creature.items[WEAPON_PRIMARY].increase_size()
 abilities['improved natural weapon'] = Ability('improved natural weapon',
         apply_benefit = natural_weapon_benefit)
 
