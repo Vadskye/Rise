@@ -72,5 +72,5 @@ def dx(x):
     return Dice(x)
 
 if __name__=="__main__":
-    die = Dice.from_string('2d6m2')
+    die = Dice.from_string('2d6')
     print die._get_average()
