@@ -119,31 +119,31 @@ Your attack attribute depends on the maneuver you are using, as described in \pc
 \section{Defenses}\label{Defenses}
 
 \subsection{Armor Class}
-Your Armor Class (AC) represents how hard it is for opponents to land a solid, damaging blow on you. It's the attack roll result that an opponent needs to achieve to hit you. Unlike most combat statistics, your AC is made up of the sum of other modifiers, each of which can have competence and enhancement bonuses applied separately. You can also apply competence and enhancement bonuses directly. Your AC is equal to the following:
+Your Armor Class (AC) represents how hard it is for opponents to land a solid, damaging blow on you. It's the attack roll result that an opponent needs to achieve to hit you. Unlike most combat statistics, your AC is made up of the sum of other modifiers, each of which can have their own independent bonuses and penalties. Your AC is equal to the following:
 
 \begin{figure}[h]
-    \centering 10 \add half base attack bonus \add Dexterity \add armor modifier \add shield modifier \add natural armor modifier \add dodge modifier \add size modifier \add competence bonuses \add enhancement bonus
+    \centering 10 \add Dexterity \add armor modifier \add shield modifier \add dodge modifier \add size modifier \add other bonuses and penalties
 \end{figure}
 
-\parhead{Base Attack Bonus} Your experience and aptitude in combat affects your ability to defend yourself; experienced warriors know how to recognize and avoid or parry blows that would easily fell novices. As a result, you add half your base attack bonus to your dodge modifier to armor class. This is an inherent bonus, and stacks with all other bonuses to your dodge modifier.
-\parhead{Natural Armor Modifier} Natural armor, such as from having unusually tough skin or thick hide, improves your AC. Armor and natural armor do not fully stack; add the higher modifier plus half the lower modifier to your AC. For example, if a warhorse (\plus4 natural armor modifier) wears chainmail barding (\plus6 armor modifier), it gets a total of a \plus8 bonus to AC: the chainmail provides \plus6, and its natural armor is halved to give a \plus2 bonus.
-\parhead{Dodge Modifier} Your dodge modifier represents your ability to actively avoid blows. Any situation that denies you your Dexterity bonus also denies you your dodge modifier.
+\parhead{Base Attack Bonus} Your experience and aptitude in combat affects your ability to defend yourself; experienced warriors know how to recognize and avoid or parry blows that would easily fell novices. As a result, you add half your base attack bonus to your dodge modifier to armor class.
+\parhead{Dodge Modifier} Your dodge modifier represents your ability to actively avoid blows. Any situation that denies you your Dexterity bonus, such as being flat-footed, also denies you your dodge modifier.
+\parhead{Natural Armor} Creatures with unusually tough skin or thick hide, including most monsters, gain bonuses to their armor modifier. These bonuses stack with any armor such creatures might wear.
 \parhead{Size Modifier} Your size modifier is described on \tref{Size in Combat}.
 
 \subsubsection{Flat-Footed Armor Class}
 Sometimes you can't use your agility to avoid an attack. Your flat-footed armor class is equal to your armor class, ignoring your Dexterity, dodge modifier, and shield modifier. If your Dexterity is negative, you always apply the penalty, even while flat-footed.
 
 \subsubsection{Touch Armor Class}
-Sometimes your armor doesn't help you avoid an attack. Your touch armor class is equal to your armor class, ignoring your armor modifier and natural armor modifier. Most touch attacks come from spells.
+Sometimes your armor doesn't help you avoid an attack. Your touch armor class is equal to your armor class, ignoring your armor modifier. Most touch attacks come from spells.
 
 \subsection{Maneuver Class}
-Your Maneuver Class (MC) represents how good you are at defending against combat maneuvers. It's the attack roll result that an opponent needs to achieve to affect you with a maneuver. Like your Armor Class, your MC is made up of the sum of other modifiers, each of which can have competence and enhancement bonuses applied separately. You can also apply competence and enhancement bonuses directly. Your MC is equal to the following:
+Your Maneuver Class (MC) represents how good you are at defending against combat maneuvers. It's the attack roll result that an opponent needs to achieve to affect you with a maneuver. Like your Armor Class, your MC is made up of the sum of other modifiers, each of which can have independent bonuses and penalties. Your MC is equal to the following:
 
 \begin{figure}[h]
-    \centering 10 \add base attack bonus \add Strength \add Dexterity \add shield modifier \add dodge modifier \add special size modifier \add competence bonuses \add enhancement bonus \add AC bonuses and penalties
+    \centering 10 \add base attack bonus \add Strength \add Dexterity \add shield modifier \add dodge modifier \add special size modifier \add AC bonuses and penalties
 \end{figure}
 
-Any effect which gives a bonus or a penalty to your AC directly is also applied to your MC. For example, while prone, you take a \minus4 penalty to your MC, just like you do to your AC. 
+Any effect which gives a bonus or a penalty to your AC directly is also applied to your MC. For example, while prone, you take a \minus4 penalty to your MC, just like you do to your AC.
 
 Your special size modifier is described in \tref{Size in Combat}.
 
