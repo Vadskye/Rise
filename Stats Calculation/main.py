@@ -77,7 +77,6 @@ if __name__ == "__main__":
     if args['function'] == CREATURE:
         creature = Creature.from_creature_name(args['creature_input'],
                 args['level'])
-        print creature.to_latex()
         if args['output'] is not None:
             latex_string = creature.to_latex()
             output_file = open(args['output'], 'w')
