@@ -501,3 +501,11 @@ def improve_hv(level_progression, times_to_improve=1, enforce_cap = True):
         level_progression.hit_value+=1
     if enforce_cap:
         level_progression.hit_value = max(7, level_progression.hit_value)
+
+def lower_encumbrance(encumbrance):
+    return {
+            'heavy': 'medium',
+            'medium': 'light',
+            'light': 'none',
+            'none': 'none',
+            }[encumbrance]
