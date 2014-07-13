@@ -28,13 +28,13 @@ class Weapon(object):
     def from_weapon_name(cls, weapon_name):
         return {
                 'heavy_melee': cls('heavy melee', ENCUMBRANCE_HEAVY,
-                    ATTACK_TYPE_MELEE, [DAMAGE_PHYSICAL], 'd10m2'),
+                    ATTACK_TYPE_MELEE, [DAMAGE_PHYSICAL], 'd10'),
                 'medium_melee': cls('medium melee', ENCUMBRANCE_MEDIUM,
-                    ATTACK_TYPE_MELEE, [DAMAGE_PHYSICAL], 'd8m1'),
+                    ATTACK_TYPE_MELEE, [DAMAGE_PHYSICAL], 'd8'),
                 'light_melee': cls('light melee', ENCUMBRANCE_LIGHT,
-                    ATTACK_TYPE_MELEE, [DAMAGE_PHYSICAL], 'd6m0'),
+                    ATTACK_TYPE_MELEE, [DAMAGE_PHYSICAL], 'd6'),
                 'projectile': cls('projectile', ENCUMBRANCE_HEAVY,
-                    ATTACK_TYPE_PROJECTILE, [DAMAGE_PHYSICAL], 'd8m1'),
+                    ATTACK_TYPE_PROJECTILE, [DAMAGE_PHYSICAL], 'd8'),
                 'claws': cls('claws', ENCUMBRANCE_MEDIUM, ATTACK_TYPE_MELEE,
                     [DAMAGE_PHYSICAL, DAMAGE_PIERCING, DAMAGE_SLASHING], 'd6'),
                 'bite': cls('bite', ENCUMBRANCE_MEDIUM, ATTACK_TYPE_MELEE,
