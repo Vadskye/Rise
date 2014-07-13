@@ -1,4 +1,4 @@
-import dice
+import dice, util
 from strings import *
 
 class Weapon(object):
@@ -20,6 +20,9 @@ class Weapon(object):
             else:
                 self.damage_die.decrease_size()
         self.size = size
+
+    def increase_size(self):
+        self.set_size(util.increase_size(self.size))
 
     @classmethod
     def from_weapon_name(cls, weapon_name):

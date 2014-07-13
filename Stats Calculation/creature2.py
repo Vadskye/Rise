@@ -86,9 +86,9 @@ class Creature(object):
         if 'class' in raw_stats.keys():
             self.meta[LEVEL_PROGRESSION] = classes[
                     raw_stats['class']]
-        elif 'monster' in raw_stats.keys():
+        elif 'creature type' in raw_stats.keys():
             self.meta[LEVEL_PROGRESSION] = monster_types[
-                    raw_stats['monster']]
+                    raw_stats['creature type']]
 
         #set core
         if 'size' in raw_stats.keys():
@@ -132,14 +132,14 @@ class Creature(object):
             main_increases = (2 + self.meta[LEVEL])/4
             self.attributes[main_attribute].add_inherent(
                     main_increases)
-        except ValueError:
+        except KeyError:
             self.print_verb('Missing bonus attribute 1')
         try:
             second_attribute = raw_stats['bonus attribute 2']
             second_increases = (self.meta[LEVEL])/4
             self.attributes[second_attribute].add_inherent(
                     second_increases)
-        except ValueError:
+        except KeyError:
             self.print_verb('%s missing bonus attribute 2' % 
                     self.meta[NAME])
 
