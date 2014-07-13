@@ -142,3 +142,5 @@ OOZE = 'ooze'
 OUTSIDER = 'outsider'
 PLANT = 'plant'
 UNDEAD = 'undead'
+
+ENDLINE = '\\par\n'

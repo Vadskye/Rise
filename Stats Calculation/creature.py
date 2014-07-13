@@ -6,8 +6,6 @@ import dice
 from strings import *
 from abilities import abilities
 
-ENDLINE = '\\par\n'
-
 class Creature(object):
     def __init__(self, raw_stats, raw_attributes, level, verbose=False):
         #Core variable initializations
