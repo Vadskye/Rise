@@ -142,48 +142,22 @@ Spells that provide bonuses or penalties on attack rolls, damage rolls, saving t
 \parhead{Instantaneous Effects} Two or more spells with instantaneous durations work cumulatively when they affect the same target.
 
 \subsection{Bonuses, Penalties, and Modifiers}
-A bonus is the most basic way that a roll or numerical statistic can be modified. All bonuses have one of four types: inherent, competence, enhancement, and circumstance. These types are described in Bonus Types, below. You use these types to determine whether different bonuses stack. Bonuses from the same source never stack.
-
-A penalty is like a bonus, but it subtracts instead of adds. Penalties are never typed, and always stack, except that penalties from the same source don't stack. For example, a creature who is sickened by both a \spell{ghoul touch} spell and an \spell{unholy blight} spell takes a \minus4 penalty to everything that being sickened penalizes. However, a creature suffering from the \spell{crushing despair} spell does not take any additional penalties if another \spell{crushing despair} is cast on it -- even if the second spell is cast by a different caster.
+Bonuses and penalties are the most basic way that a roll or numerical statistic can be modified. A bonus increases the roll or statistic, and a penalty decreases it. Usually, bonuses and penalties stack with each other. However, bonuses and penalties from the same source never stack. For example, a creature who is sickened by both a \spell{ghoul touch} spell and an \spell{unholy blight} spell takes a \minus4 penalty to everything that being sickened penalizes. However, a creature suffering from the \spell{crushing despair} spell does not take any additional penalties if another \spell{crushing despair} is cast on it -- even if the second spell is cast by a different caster.
 
 A modifier is the sum of bonuses and penalties. Most of the time, a modifier is the number that you add to the d20 when you take an action. For example, when you attack, you add your attack modifier, which is determined by the sum of all of your attack bonuses and attack penalties. Armor Class is a special case, as discussed in Armor Class, below.
 
-\subsubsection{Bonus Types}
-There are four bonus types, described below. Everything which gives a numerical improvement to a character's abilities belongs to one of these bonus types.
-\parhead{Inherent bonuses} These are bonuses which are an inseparable part of a character. They come from base attack bonus, skill ranks, ability modifiers, and other fundamental parts of a character. The bonus provided by wearing a suit of armor or wielding a shield is also considered an inherent bonus, since it is inherent to the item. Inherent bonuses stack with other inherent bonuses.
-\parhead{Competence bonuses} These are bonuses which derive from a character's experience and ability. They usually come from feats, racial features, and class features. For example, Great Fortitude gives a competence bonus to Fortitude saves. Competence bonuses stack with other competence bonuses.
-\parhead{Enhancement bonuses} These are bonuses which derive from magical improvements to a character's abilities. Almost all spells and magic items (except those relating to armor, shields, and weapons) give enhancement bonuses. Enhancement bonuses do not stack with other enhancement bonuses.
-\parhead{Circumstance bonuses} These are bonuses which derive from specific circumstances. Feats, class features, and magic items which are dependent on circumstances or are extremely temporary in nature can give circumstance bonuses. For example, a rogue's sneak attack gives a circumstance bonus to damage. Circumstance bonuses stack with other circumstance bonuses.
-
-\subsubsection{Armor Class}
-Your AC is equal to 10 plus the sum of five modifiers, described below. Each of those modifiers is calculated separately before being added together to get your final AC. 
-\parhead{Armor modifier} An armor modifier usually comes from armor that you wear. It does not apply against touch attacks.
-\parhead{Shield modifier} A shield modifier usually comes from a shield that you wield. It does not apply when you are flat-footed.
-\parhead{Natural armor modifier} A natural armor modifier represents the physical durability of your body. It does not apply against touch attacks. Armor and natural armor do not fully stack; see below.
-\parhead{Dodge modifier} A dodge modifier represents your ability to avoid attacks. It does not apply when you are flat-footed.
-\parhead{AC modifier} A small number of things can affect a character's Armor Class directly. AC modifiers apply to all types of Armor Class.
-
-Armor and natural armor are very similar, so they do not fully stack. To calculate your character's total AC, add the higher modifier plus half the lower modifier to your AC. For example, if a warhorse (\plus4 natural armor modifier) wears chainmail barding (\plus6 armor modifier), it gets a total of a \plus8 bonus to AC: the chainmail provides \plus6, and its natural armor is halved to give a \plus2 bonus.
-
-An example can help illustrate how armor class stacking works. Bob the Fighter is wearing \plus1 full plate, wielding a heavy shield, and wearing a Ring of Protection \plus1. 
-\begin{itemize*}
-\item His AC modifier is \plus1 (enhancement, from the Ring of Protection).
-\item His armor modifier is 8 (inherent) \add 1 (enhancement) = 9.
-\item His shield modifier is 2 (inherent).
-\item Therefore, his total armor class is 10 \add 1 \add 9 \add 2 = 22.
-\end{itemize*}
-
-If he were to receive a \spell{barkskin} spell, his natural armor modifier would be \plus2. However, his total armor class would only increase by \plus1, since he is wearing full plate.
+\parhead{Enhancement Bonuses} Enhancement bonuses are always granted by magic or supernatural abilities. Unlike other bonuses, enhancement bonuses do not stack with each other. Each enhancement bonus will specify what it applies to, such as "attack bonus" or "Fortitude saves". Use only the highest enhancement bonus that applies. If you have an enhancement bonus that affects a broad category of rolls, such as "all saving throws", it doesn't stack with more narrow enhancement bonuses, such as "Fortitude saves".
 
 \subsection{Special Stacking Rules}
-Not every kind of effect uses the normal bonus stacking system. Exceptions to the normal stacking rules are described below. If a specific spell or effect says otherwise, it overrules these exceptions, as normal.
+Some effects never stack with each other. Exceptions to the normal stacking rules are described below.
 \begin{itemize*}
-\item Magical effects that increase size do not stack.
-\item Damage reduction does not stack. Only the best value applicable to the attack applies.
-\item Effects that grant extra attacks (such as the \spell{haste} spell) do not stack.
-\item Temporary hit points do not stack.
-\item If a character has two separate abilities which let him add the same attribute to a given roll or numerical attribute, the attribute is still only added once.
-\item Effects that reduce the effective spell level of a spell affected by metamagic can never reduce a spell below its original level.
+    \item Effects from the same source do not stack. Any spell or ability with the same name has the same source. 
+    \item Magical effects that increase size do not stack.
+    \item Damage reduction does not stack. Only the best value applicable to the attack applies.
+    \item Effects that grant extra attacks (such as the \spell{haste} spell) do not stack.
+    \item Temporary hit points do not stack.
+    \item If a character has two separate abilities which let him add the same attribute to a given roll or numerical attribute, the attribute is still only added once.
+    \item Effects that reduce the effective spell level of a spell affected by metamagic can never reduce a spell below its original level.
 \end{itemize*}
 
 \section{Spell Descriptions}
