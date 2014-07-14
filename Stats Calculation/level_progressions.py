@@ -123,8 +123,10 @@ classes[WIZARD] = LevelProgression(WIZARD, POOR, POOR, POOR, GOOD, 4)
 
 monster_types = dict()
 
+def animal_modifications(base_creature):
+    base_creature.attributes[INT].add_inherent(-8)
 monster_types[ANIMAL] = LevelProgression(ANIMAL, AVG, AVG, 
-        AVG, POOR, 6)
+        AVG, POOR, 6, animal_modifications)
 monster_types[ABERRATION] = LevelProgression(ABERRATION, AVG,
         AVG, POOR, AVG, 5)
 monster_types[CONSTRUCT] = LevelProgression(CONSTRUCT, AVG, AVG, POOR, POOR, 5)
