@@ -1,8 +1,6 @@
-strength=4
+strength=4 primary
 dexterity=2
-constitution=2
+constitution=2 secondary
 intelligence=-1
 wisdom=0
 charisma=1
-bonus attribute 1=strength
-bonus attribute 2=constitution
