@@ -1,8 +1,6 @@
-strength=3
-dexterity=4
+strength=3 secondary
+dexterity=4 primary
 constitution=2
 intelligence=0
 wisdom=0
 charisma=0
-bonus attribute 1=dexterity
-bonus attribute 2=strength
