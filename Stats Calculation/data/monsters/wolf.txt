@@ -1,15 +1,12 @@
 name=wolf
-level=2
 creature type=animal
 weapon=bite
 
 #attributes
-strength=2
-dexterity=2
-constitution=2
-intelligence=-8
-wisdom=2
-charisma=0
+strength=good
+dexterity=good
+constitution=average
+wisdom=average
 
 #abilities
 trait=natural trip

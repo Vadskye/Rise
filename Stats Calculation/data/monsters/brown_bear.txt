@@ -1,17 +1,13 @@
 name=brown bear
-level=6
 creature type=animal
 weapon=claws
 offhand weapon=claws
 size=large
 
 #attributes
-strength=3
-dexterity=0
-constitution=3
-intelligence=-8
-wisdom=2
-charisma=0
+strength=good
+constitution=good
+wisdom=average
 
 #abilities
 trait=natural armor
