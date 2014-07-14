@@ -95,7 +95,7 @@ if __name__ == "__main__":
             battle = combat.Battle(creature, creature2)
             repeat_count = 500
             results = run_repeated_battles(battle, repeat_count)
-            print 'Monster win %:', results[0], results[2]
+            print 'First creature win %:', results[0], results[2]
 
     elif args['function'] == COMBAT:
         for i in xrange(20):
