@@ -1,4 +1,5 @@
 from strings import *
+import re
 import equipment, util
 from abilities import abilities
 from level_progressions import classes, monster_types
@@ -120,29 +121,9 @@ class Creature(object):
             #use try/except to allow missing attributes
             try:
                 self.attributes[attribute_name].add_inherent(
-                    util.conditional_int(raw_stats[attribute_name]))
+                        self._parse_attribute(raw_stats[attribute_name]))
             except ValueError:
-                self.print_verb('missing attribute')
-
-        #Apply level-based scaling
-        self._scale_attributes_by_level(raw_stats)
-
-    def _scale_attributes_by_level(self, raw_stats):
-        try:
-            main_attribute = raw_stats['bonus attribute 1']
-            main_increases = (2 + self.meta[LEVEL])/4
-            self.attributes[main_attribute].add_inherent(
-                    main_increases)
-        except KeyError:
-            self.print_verb('Missing bonus attribute 1')
-        try:
-            second_attribute = raw_stats['bonus attribute 2']
-            second_increases = (self.meta[LEVEL])/4
-            self.attributes[second_attribute].add_inherent(
-                    second_increases)
-        except KeyError:
-            self.print_verb('%s missing bonus attribute 2' % 
-                    self.meta[NAME])
+                self.print_verb('missing attribute: '+attribute_name)
 
     def _update_level_scaling(self):
         scale_factor = self.meta[LEVEL]/4
@@ -155,6 +136,34 @@ class Creature(object):
                 self.attacks[DAMAGE][weapon].add_enhancement(scale_factor)
         for save in SAVES:
             self.defenses[save].add_enhancement(scale_factor)
+
+    #parse an attribute from raw_stats
+    def _parse_attribute(self, raw_attribute):
+        split = re.split(' ', raw_attribute)
+        progression = None
+        starting_value = 0
+        for elem in split:
+            if util.is_number(elem):
+                starting_value = int(elem)
+            else:
+                progression = elem
+
+        level = self.meta[LEVEL]
+        try:
+            value = starting_value + {
+                    None: 0,
+                    #primary and secondary are for PCs
+                    'primary': (level+2)/4,
+                    'secondary': level/4,
+                    #progressions are for monsters
+                    POOR: level/4,
+                    AVERAGE: level/2+1,
+                    GOOD: (level*3)/4+2,
+                    }[progression]
+        except ValueError:
+            self.print_verb('unable to understand attribute: %s' % elem)
+
+        return value
 
     def _apply_level_progression(self):
         self.attacks[ATTACK_BONUS].set_progression(
