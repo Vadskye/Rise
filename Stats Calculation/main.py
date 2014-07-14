@@ -88,6 +88,7 @@ if __name__ == "__main__":
             else:
                 creature2 = Creature.from_creature_name('ftr-typical',
                         creature.meta['level'])
+            print creature
             print creature2
             creature = combat.CombatCreature.from_creature(creature)
             creature2 = combat.CombatCreature.from_creature(creature2)
