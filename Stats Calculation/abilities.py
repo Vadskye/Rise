@@ -206,13 +206,13 @@ abilities['warrior'] = Ability('warrior', apply_benefit = warrior_benefit,
         tags=[ABILITY_TEMPLATE])
 
 def brute_benefit(creature):
-    util.improve_hv(creature.level_progression)
-    util.improve_save(creature.level_progression, FORTITUDE)
+    util.improve_hv(creature.meta[LEVEL_PROGRESSION])
+    util.improve_save(creature.meta[LEVEL_PROGRESSION], FORTITUDE)
 abilities['brute'] = Ability('brute', apply_benefit = brute_benefit,
         tags=[ABILITY_TEMPLATE])
 
 def scout_benefit(creature):
-    util.improve_save(creature.level_progression, REFLEX)
+    util.improve_save(creature.meta[LEVEL_PROGRESSION], REFLEX)
     creature.speed += min(10, creature.speed)
 abilities['scout'] = Ability('scout', apply_benefit = scout_benefit,
         tags=[ABILITY_TEMPLATE])
