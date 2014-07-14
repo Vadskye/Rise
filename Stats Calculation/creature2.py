@@ -81,7 +81,8 @@ class Creature(object):
         raw_stats = self.raw_stats
         #set meta
         if self.meta[LEVEL] is None:
-            self.meta[LEVEL] = int(raw_stats['level'])
+            if LEVEL in raw_stats.keys():
+                self.meta[LEVEL] = int(raw_stats['level'])
         if 'alignment' in raw_stats.keys():
             self.meta[ALIGNMENT] = raw_stats['alignment']
         self.meta[NAME] = raw_stats['name']
@@ -91,6 +92,15 @@ class Creature(object):
         elif 'creature type' in raw_stats.keys():
             self.meta[LEVEL_PROGRESSION] = monster_types[
                     raw_stats['creature type']]
+
+        #Add all the abilities to the character
+        for ability_type in ABILITY_TYPES:
+            if ability_type in raw_stats.keys():
+                for ability_name in raw_stats[ability_type]:
+                    self.add_ability(abilities[ability_name])
+        #Now that we have the abilities, we can calculate the level if necessary
+        if self.meta[LEVEL] is None:
+            self.meta[LEVEL] = self._calc_minimum_level()
 
         #set core
         if 'size' in raw_stats.keys():
@@ -110,20 +120,21 @@ class Creature(object):
             if self.items[weapon] is not None:
                 self.items[weapon].set_size(self.core[SIZE])
 
-        #Add all the abilities to the character
-        for ability_type in ABILITY_TYPES:
-            if ability_type in raw_stats.keys():
-                for ability_name in raw_stats[ability_type]:
-                    self.add_ability(abilities[ability_name])
-
         #Add attributes
         for attribute_name in ATTRIBUTE_NAMES:
             #use try/except to allow missing attributes
             try:
                 self.attributes[attribute_name].add_inherent(
                         self._parse_attribute(raw_stats[attribute_name]))
-            except ValueError:
+            except KeyError:
                 self.print_verb('missing attribute: '+attribute_name)
+
+        #apply effects of abilities, now that we have the core mechanics
+        for ability in self.abilities:
+            ability.apply_benefit(self)
+
+    def _calc_minimum_level(self):
+        return 1
 
     def _update_level_scaling(self):
         scale_factor = self.meta[LEVEL]/4
@@ -160,7 +171,7 @@ class Creature(object):
                     AVERAGE: level/2+1,
                     GOOD: (level*3)/4+2,
                     }[progression]
-        except ValueError:
+        except KeyError:
             self.print_verb('unable to understand attribute: %s' % elem)
 
         return value
@@ -179,9 +190,6 @@ class Creature(object):
             if not ability.meets_prerequisites(self):
                 self.print_verb('Ability prerequisites not met')
                 return False
-        #Templates must be applied later
-        if not ability.has_tag(ABILITY_TEMPLATE):
-            ability.apply_benefit(self)
         self.abilities.add(ability)
         return True
 
