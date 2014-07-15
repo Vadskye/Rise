@@ -214,3 +214,9 @@ def scout_benefit(creature):
     creature.speed += min(10, creature.core[SPEED])
 abilities['scout'] = Ability('scout', apply_benefit = scout_benefit,
         tags=[ABILITY_TEMPLATE])
+
+####################
+#MONSTER TYPES
+####################
+
+abilities['construct'] = Ability('construct', text='construct traits')
