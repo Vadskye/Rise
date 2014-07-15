@@ -144,3 +144,4 @@ PLANT = 'plant'
 UNDEAD = 'undead'
 
 ENDLINE = '\\par\n'
+NONE = 'none'

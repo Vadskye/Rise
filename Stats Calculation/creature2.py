@@ -188,20 +188,21 @@ class Creature(object):
         self.meta[LEVEL_PROGRESSION].apply_modifications(self)
 
     def add_ability(self, ability, check_prerequisites = True, by_name = False):
+        print ability, by_name
+        if by_name:
+            ability = abilities[ability]
         if check_prerequisites:
             if not ability.meets_prerequisites(self):
                 self.print_verb('Ability prerequisites not met')
                 return False
         #abilities can be added by name instead of as an ability object
         #but they have to be sourced properly in that case
-        if by_name:
-            ability = abilities[ability]
         self.abilities.add(ability)
         return True
 
     def add_abilities(self, abilities, by_name = False):
         for ability in abilities:
-            self.add_ability(ability, by_name)
+            self.add_ability(ability, by_name = by_name)
 
 
     def _calculate_derived_statistics(self):
@@ -209,6 +210,10 @@ class Creature(object):
         self.attacks[MANEUVER_BONUS].set_level(self.meta[LEVEL])
         for save in SAVES:
             self.defenses[save].set_level(self.meta[LEVEL])
+        self.defenses[AC].natural_armor.set_level(self.meta[LEVEL])
+        derp = self.defenses[AC].natural_armor
+        print derp.level
+        print derp.progression
 
         dexterity_to_ac = self.attributes[DEX].get_total()
         if self.items[ARMOR] is not None:
