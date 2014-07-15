@@ -188,14 +188,14 @@ class Creature(object):
         self.meta[LEVEL_PROGRESSION].apply_modifications(self)
 
     def add_ability(self, ability, check_prerequisites = True, by_name = False):
+        #abilities can be added by name instead of as an ability object
+        #but they have to be sourced properly in that case
         if by_name:
             ability = abilities[ability]
         if check_prerequisites:
             if not ability.meets_prerequisites(self):
                 self.print_verb('Ability prerequisites not met')
                 return False
-        #abilities can be added by name instead of as an ability object
-        #but they have to be sourced properly in that case
         self.abilities.add(ability)
         return True
 
