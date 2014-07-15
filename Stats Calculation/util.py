@@ -106,7 +106,16 @@ class SavingThrow(ModifierProgression):
             'average': (level*3)/4+1,
             'good': level+2,
             }[progression]
-        self.inherent = base_save_bonus
+        self.inherent += base_save_bonus
+
+class NaturalArmor(ModifierProgression):
+    def _apply_progression(self, progression, level):
+        self.inherent += {
+                None: 0,
+                POOR: level/4,
+                AVERAGE: level/2+1,
+                GOOD: (level*3)/4+2,
+                }[progression]
 
 class AttackBonus(ModifierProgression):
     def __init__(self, progression = None, level = None):
@@ -204,12 +213,13 @@ class ArmorClass:
         self.armor = Modifier()
         self.shield = Modifier()
         self.dodge = Modifier()
-        self.natural_armor = Modifier()
+        self.natural_armor = NaturalArmor()
         self.misc.add_inherent(10)
 
     def normal(self):
         normal = sum([self.misc.get_total(), self.shield.get_total(), self.dodge.get_total()])
-        normal += sum_armor(self.armor.get_total(), self.natural_armor.get_total())
+        normal += self.armor.get_total()
+        normal += self.natural_armor.get_total()
         return normal
 
     def touch(self):
@@ -217,7 +227,8 @@ class ArmorClass:
 
     def flatfooted(self):
         flatfooted = self.misc.get_total()
-        flatfooted += sum_armor(self.armor.get_total(), self.natural_armor.get_total())
+        flatfooted += self.armor.get_total()
+        flatfooted += self.natural_armor.get_total()
         return flatfooted
 
     def add_all(self, ac_modifiers):
