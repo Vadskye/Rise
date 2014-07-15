@@ -223,7 +223,7 @@ class Creature(object):
             self.defenses[AC].shield.add_inherent(
                     self.items[SHIELD].ac_bonus)
 
-        self.attacks[ATTACK_BONUS].add_inherent(self._calculate_attack_attribute_bonus())
+        self._calculate_attack_attribute_bonus()
         self.attacks[ATTACK_BONUS].add_inherent(util.get_size_modifier(self.core[SIZE]))
         self.attacks[MANEUVER_BONUS].set_attributes(self.attributes[STR],
                 self.attributes[DEX])
@@ -257,11 +257,12 @@ class Creature(object):
 
     def _calculate_attack_attribute_bonus(self):
         #we are assuming offhand weapon is no heavier than main weapon
-        if self.items[WEAPON_PRIMARY].encumbrance =='light':
-            return max(self.attributes[STR].get_total(),
-                    self.attributes[DEX].get_total())
+        if self.items[WEAPON_PRIMARY].encumbrance =='light' and self.attributes[DEX].get_total() >= self.attributes[STR].get_total():
+            self.attacks[ATTACK_BONUS].add_bonus(
+                    self.attributes[DEX].get_total(), DEX)
         else:
-            return self.attributes[STR].get_total()
+            self.attacks[ATTACK_BONUS].add_bonus(
+                    self.attributes[STR].get_total(), STR)
 
 
     def _add_save_attributes(self):
