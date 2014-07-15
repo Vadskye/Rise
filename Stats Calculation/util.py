@@ -89,29 +89,28 @@ class ModifierProgression(Modifier):
 
     def set_progression(self, progression):
         self.progression = progression
-        if self.progression and self.level:
+        if self.progression is not None and self.level is not None:
             self._apply_progression(self.progression, self.level)
             self._update()
 
     def set_level(self, level):
         self.level = level
-        if self.progression and self.level:
+        if self.progression is not None and self.level is not None:
             self._apply_progression(self.progression, self.level)
             self._update()
 
 class SavingThrow(ModifierProgression):
     def _apply_progression(self, progression, level):
-        base_save_bonus = {
+        self.inherent += {
             'poor': level/2,
             'average': (level*3)/4+1,
             'good': level+2,
             }[progression]
-        self.inherent += base_save_bonus
 
 class NaturalArmor(ModifierProgression):
     def _apply_progression(self, progression, level):
         self.inherent += {
-                None: 0,
+                NONE: 0,
                 POOR: level/4,
                 AVERAGE: level/2+1,
                 GOOD: (level*3)/4+2,

@@ -16,7 +16,7 @@ class LevelProgression(object):
             WILL: will,
             }
         self.hit_value = hit_value
-        self.natural_armor_progression = None
+        self.natural_armor_progression = natural_armor_progression
         self.apply_modifications = apply_modifications
 
 classes = dict()
@@ -32,17 +32,17 @@ def barbarian_modifications(base_creature):
         abilities.larger_than_belief(base_creature)
 
 classes[BARBARIAN] = LevelProgression(BARBARIAN, GOOD, GOOD,
-        AVERAGE, POOR, 7, None, barbarian_modifications)
+        AVERAGE, POOR, 7, NONE, barbarian_modifications)
 
 def cleric_modifications(base_creature):
     base_creature.attack_mode='damage spell'
 
 classes[CLERIC] = LevelProgression(CLERIC, AVERAGE, AVERAGE, POOR, GOOD,
-        5, None, cleric_modifications)
+        5, NONE, cleric_modifications)
 
 
 classes[DRUID] = LevelProgression(DRUID, AVERAGE, GOOD, POOR, AVERAGE,
-        None, 5)
+        NONE, 5)
 
 
 def fighter_modifications(base_creature):
@@ -65,11 +65,11 @@ def fighter_modifications(base_creature):
         #add critical changes
 
 classes[FIGHTER] = LevelProgression(FIGHTER, GOOD, GOOD, POOR, AVERAGE,
-        6, None, fighter_modifications)
+        6, NONE, fighter_modifications)
 
 
 classes[GENERIC] = LevelProgression(GENERIC, AVERAGE, AVERAGE, AVERAGE,
-        AVERAGE, None, 5)
+        AVERAGE, NONE, 5)
 
 def monk_modifications(base_creature):
     #wisdom is used often, so make it quick to access
@@ -99,29 +99,29 @@ def monk_modifications(base_creature):
         base_creature.weapon_damage.add_inherent(wisdom/2)
 
 classes[MONK] = LevelProgression(MONK, GOOD, AVERAGE, AVERAGE, AVERAGE,
-        5, None)
+        5, NONE)
 
 
 classes[PALADIN] = LevelProgression(PALADIN, GOOD, GOOD, POOR, GOOD,
-        6, None)
+        6, NONE)
 
 
 def rogue_modifications(base_creature):
     base_creature.add_ability('danger sense')
 
 classes[ROGUE] = LevelProgression(ROGUE, AVERAGE, POOR, GOOD, AVERAGE,
-        5, None, rogue_modifications)
+        5, NONE, rogue_modifications)
 
 
 classes[SPELLWARPED] = LevelProgression(SPELLWARPED, AVERAGE, AVERAGE,
-        AVERAGE, AVERAGE, 5, None)
+        AVERAGE, AVERAGE, 5, NONE)
 
 
-classes[SORCERER] = LevelProgression(SORCERER, POOR, POOR, POOR, GOOD, 4, None)
+classes[SORCERER] = LevelProgression(SORCERER, POOR, POOR, POOR, GOOD, 4, NONE)
 
-classes[WARRIOR] = LevelProgression(WARRIOR, GOOD, GOOD, POOR, POOR, 6, None)
+classes[WARRIOR] = LevelProgression(WARRIOR, GOOD, GOOD, POOR, POOR, 6, NONE)
 
-classes[WIZARD] = LevelProgression(WIZARD, POOR, POOR, POOR, GOOD, 4, None)
+classes[WIZARD] = LevelProgression(WIZARD, POOR, POOR, POOR, GOOD, 4, NONE)
 
 monster_types = dict()
 
@@ -154,7 +154,7 @@ monster_types[FEY] = LevelProgression(FEY, POOR, POOR, AVG, AVG, 5,
         POOR, fey_modifications)
 
 monster_types[HUMANOID] = LevelProgression(HUMANOID, POOR, POOR, POOR,
-        POOR, 4, None)
+        POOR, 4, NONE)
 
 def magical_beast_modifications(base_creature):
     base_creature.add_ability('low-light vision', by_name=True)
@@ -167,7 +167,7 @@ monster_types[MONSTROUS_HUMANOID] = LevelProgression(MONSTROUS_HUMANOID,
 def ooze_modifications(base_creature):
     base_creature.add_ability('ooze', by_name=True)
 monster_types[OOZE] = LevelProgression(OOZE, POOR, AVG, POOR, POOR, 6,
-        None, ooze_modifications)
+        NONE, ooze_modifications)
 
 monster_types[OUTSIDER] = LevelProgression(OUTSIDER, AVG, AVG, AVG, AVG,
         5, AVG)
