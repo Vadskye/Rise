@@ -123,16 +123,33 @@ classes[WIZARD] = LevelProgression(WIZARD, POOR, POOR, POOR, GOOD, 4)
 
 monster_types = dict()
 
+def aberration_modifications(base_creature):
+    base_creature.add_ability('darkvision', by_name=True)
+monster_types[ABERRATION] = LevelProgression(ABERRATION, AVG,
+        AVG, POOR, AVG, 5, aberration_modifications)
+
 def animal_modifications(base_creature):
     base_creature.attributes[INT].add_inherent(-8)
+    base_creature.add_abilities(('low-light vision', 'scent'), by_name=True)
 monster_types[ANIMAL] = LevelProgression(ANIMAL, AVG, AVG, 
         AVG, POOR, 6, animal_modifications)
-monster_types[ABERRATION] = LevelProgression(ABERRATION, AVG,
-        AVG, POOR, AVG, 5)
-monster_types[CONSTRUCT] = LevelProgression(CONSTRUCT, AVG, AVG, POOR, POOR, 5)
+
+def construct_modifications(base_creature):
+    base_creature.add_abilities(('darkvision', 'construct'),
+            by_name=True)
+monster_types[CONSTRUCT] = LevelProgression(CONSTRUCT, AVG, AVG, POOR, POOR, 5, construct_modifications)
+
+def dragon_modifications(base_creature):
+    base_creature.add_abilities(('darkvision', 'low-light vision'),
+            by_name=True)
 monster_types[DRAGON] = LevelProgression(DRAGON, AVG, AVG, 
-        AVG, AVG, 6)
-monster_types[FEY] = LevelProgression(FEY, POOR, POOR, AVG, AVG, 5)
+        AVG, AVG, 6, dragon_modifications)
+
+def fey_modifications(base_crreature):
+    base_creature.add_ability('low-light vision', by_name=True)
+monster_types[FEY] = LevelProgression(FEY, POOR, POOR, AVG, AVG, 5,
+        fey_modifications)
+
 monster_types[HUMANOID] = LevelProgression(HUMANOID, POOR, POOR, POOR,
         POOR, 4)
 monster_types[MAGICAL_BEAST] = LevelProgression(MAGICAL_BEAST, AVG,
