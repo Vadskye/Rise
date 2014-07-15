@@ -193,8 +193,6 @@ def natural_weapon_benefit(creature):
 abilities['improved natural weapon'] = Ability('improved natural weapon',
         apply_benefit = natural_weapon_benefit)
 
-
-
 ####################
 #MONSTER TEMPLATES
 ####################
@@ -213,6 +211,6 @@ abilities['brute'] = Ability('brute', apply_benefit = brute_benefit,
 
 def scout_benefit(creature):
     util.improve_save(creature.meta[LEVEL_PROGRESSION], REFLEX)
-    creature.speed += min(10, creature.speed)
+    creature.speed += min(10, creature.core[SPEED])
 abilities['scout'] = Ability('scout', apply_benefit = scout_benefit,
         tags=[ABILITY_TEMPLATE])
