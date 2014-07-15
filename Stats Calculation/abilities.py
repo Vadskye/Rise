@@ -220,3 +220,6 @@ abilities['scout'] = Ability('scout', apply_benefit = scout_benefit,
 ####################
 
 abilities['construct'] = Ability('construct', text='construct traits')
+abilities['ooze'] = Ability('ooze', text='ooze traits')
+abilities['plant'] = Ability('plant', text='plant traits')
+abilities['undead'] = Ability('undead', text='undead traits')

@@ -152,12 +152,29 @@ monster_types[FEY] = LevelProgression(FEY, POOR, POOR, AVG, AVG, 5,
 
 monster_types[HUMANOID] = LevelProgression(HUMANOID, POOR, POOR, POOR,
         POOR, 4)
+
+def magical_beast_modifications(base_creature):
+    base_creature.add_ability('low-light vision', by_name=True)
 monster_types[MAGICAL_BEAST] = LevelProgression(MAGICAL_BEAST, AVG,
-        AVG, AVG, POOR, 6)
+        AVG, AVG, POOR, 6, magical_beast_modifications)
+
 monster_types[MONSTROUS_HUMANOID] = LevelProgression(MONSTROUS_HUMANOID,
         AVG, AVG, POOR, AVG, 5)
-monster_types[OOZE] = LevelProgression(OOZE, POOR, AVG, POOR, POOR, 6)
+
+def ooze_modifications(base_creature):
+    base_creature.add_ability('ooze', by_name=True)
+monster_types[OOZE] = LevelProgression(OOZE, POOR, AVG, POOR, POOR, 6,
+        ooze_modifications)
+
 monster_types[OUTSIDER] = LevelProgression(OUTSIDER, AVG, AVG, AVG, AVG,
         5)
-monster_types[PLANT] = LevelProgression(PLANT, POOR, AVG, POOR, POOR, 5)
-monster_types[UNDEAD] = LevelProgression(UNDEAD, AVG, AVG, POOR, AVG, 5)
+
+def plant_modifications(base_creature):
+    base_creature.add_ability('plant', by_name=True)
+monster_types[PLANT] = LevelProgression(PLANT, POOR, AVG, POOR, POOR, 5,
+        plant_modifications)
+
+def undead_modifications(base_creature):
+    base_creature.add_ability('undead', by_name=True)
+monster_types[UNDEAD] = LevelProgression(UNDEAD, AVG, AVG, POOR, AVG, 5,
+        undead_modifications)
