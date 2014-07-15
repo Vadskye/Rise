@@ -185,13 +185,22 @@ class Creature(object):
         self.core[HIT_VALUE] = self.meta[LEVEL_PROGRESSION].hit_value
         self.meta[LEVEL_PROGRESSION].apply_modifications(self)
 
-    def add_ability(self, ability, check_prerequisites = True):
+    def add_ability(self, ability, check_prerequisites = True, by_name = False):
         if check_prerequisites:
             if not ability.meets_prerequisites(self):
                 self.print_verb('Ability prerequisites not met')
                 return False
+        #abilities can be added by name instead of as an ability object
+        #but they have to be sourced properly in that case
+        if by_name:
+            ability = abilities[ability]
         self.abilities.add(ability)
         return True
+
+    def add_abilities(self, abilities, by_name = False):
+        for ability in abilities:
+            self.add_ability(ability, by_name)
+
 
     def _calculate_derived_statistics(self):
         self.attacks[ATTACK_BONUS].set_level(self.meta[LEVEL])
