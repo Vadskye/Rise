@@ -212,8 +212,6 @@ class Creature(object):
             self.defenses[save].set_level(self.meta[LEVEL])
         self.defenses[AC].natural_armor.set_level(self.meta[LEVEL])
         derp = self.defenses[AC].natural_armor
-        print derp.level
-        print derp.progression
 
         dexterity_to_ac = self.attributes[DEX].get_total()
         if self.items[ARMOR] is not None:
