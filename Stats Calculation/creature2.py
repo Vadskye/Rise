@@ -183,6 +183,8 @@ class Creature(object):
             self.defenses[save].set_progression(
                     self.meta[LEVEL_PROGRESSION].save_progressions[save])
         self.core[HIT_VALUE] = self.meta[LEVEL_PROGRESSION].hit_value
+        self.defenses[AC].natural_armor.set_progression(
+                self.meta[LEVEL_PROGRESSION].natural_armor_progression)
         self.meta[LEVEL_PROGRESSION].apply_modifications(self)
 
     def add_ability(self, ability, check_prerequisites = True, by_name = False):
