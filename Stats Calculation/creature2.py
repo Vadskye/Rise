@@ -188,7 +188,6 @@ class Creature(object):
         self.meta[LEVEL_PROGRESSION].apply_modifications(self)
 
     def add_ability(self, ability, check_prerequisites = True, by_name = False):
-        print ability, by_name
         if by_name:
             ability = abilities[ability]
         if check_prerequisites:
