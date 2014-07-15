@@ -233,7 +233,7 @@ class Creature(object):
         #set damage for each weapon
         for weapon in WEAPONS:
             if self.items[weapon] is not None:
-                self.attacks[DAMAGE][weapon].add_die(
+                self.attacks[DAMAGE][weapon].set_die(
                         self.items[weapon].damage_die)
         self.attacks[DAMAGE][WEAPON_PRIMARY].add_inherent(
                 self.attributes[STR].get_total()/2)
