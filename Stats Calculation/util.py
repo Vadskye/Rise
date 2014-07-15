@@ -8,46 +8,36 @@ d20 = dice.dx(20)
 class Modifier(object):
 
     def __init__(self):
-        self.inherent=0
-        self.enhancement=0
-        self.competence=0
-        self.circumstance=0
-        self.die=None
-        self.raw_total = 0
+        self.bonuses = {}
+        self.die = None
+        self.total_bonus = 0
 
-    def add_inherent(self, bonus):
-        self.inherent+=bonus
+    def add_bonus(self, bonus_value, bonus_type):
+        #Overlap with the existing type if there is one 
+        try:
+            self.bonuses[bonus_type] = max(self.bonuses[bonus_type],
+                    bonus_value)
+        except KeyError:
+            self.bonuses[bonus_type] = bonus_value
         self._update()
 
-    def add_enhancement(self, bonus):
-        self.enhancement = max(self.enhancement, bonus)
-        self._update()
+    def add_inherent(self, bonus_value):
+        self.add_bonus(bonus_value, 'inherent')
 
-    def add_competence(self, bonus):
-        self.competence += bonus
-        self._update()
+    def add_enhancement(self, bonus_value):
+        self.add_bonus(bonus_value, 'enhancement')
 
-    def add_circumstance(self, bonus):
-        self.circumstance+=bonus
-        self._update()
-
-    def add_all(self, bonus_dict):
-        keys = bonus_dict.keys()
-        if 'inherent' in keys:
-            self.add_inherent(bonus_dict['inherent'])
-        if 'enhancement' in keys:
-            self.add_enhancement(bonus_dict['enhancement'])
-        if 'competence' in keys:
-            self.add_competence(bonus_dict['competence'])
-        if 'circumstance' in keys:
-            self.add_circumstance(bonus_dict['circumstance'])
-        self._update()
+    def add_competence(self, bonus_value):
+        self.add_bonus(bonus_value, 'competence')
 
     def _update(self):
-        self.raw_total = sum([self.inherent, self.enhancement, self.competence,
-            self.circumstance])
+        total = 0
+        for key in self.bonuses:
+            total += self.bonuses[key]
+        self.total_bonus = total
 
-    def add_die(self, die):
+    def set_die(self, die):
+        #Dice always overlap instead of stacking
         try:
             if die.average > self.die.average:
                 self.die=die
@@ -58,26 +48,26 @@ class Modifier(object):
         #return int if there are no dice
         if self.die is not None and not ignore_die:
             if roll:
-                return self.raw_total + self.die.roll()
+                return self.total_bonus + self.die.roll()
             else:
-                return self.raw_total + self.die.average
-        return self.raw_total
+                return self.total_bonus + self.die.average
+        return self.total_bonus
 
     def __str__(self):
-        return 'Modifier({0} = inh {1}, comp {2}, enh {3}, circ {4}, die {5})'.format(
-                self.get_total(), self.inherent, self.competence,
-                self.enhancement, self.circumstance, self.die)
+        text = 'Modifier(%s = ' % self.get_total()
+        for key in self.bonuses:
+            text += '%s %s, ' % (key, self.bonuses[key])
+        if self.die is not None:
+            text += 'die %s' % self.die
+        text += ')'
+        return text
 
     def mstr(self):
         return mstr(self.get_total())
 
 class ModifierProgression(Modifier):
     def __init__(self, progression = None, level = None):
-        self.inherent=0
-        self.enhancement=0
-        self.competence=0
-        self.circumstance=0
-        self.die=None
+        super(ModifierProgression, self).__init__()
         self.progression = progression
         self.level = level
         if self.progression and self.level:
@@ -101,33 +91,28 @@ class ModifierProgression(Modifier):
 
 class SavingThrow(ModifierProgression):
     def _apply_progression(self, progression, level):
-        self.inherent += {
+        bonus = {
             'poor': level/2,
             'average': (level*3)/4+1,
             'good': level+2,
             }[progression]
+        self.add_bonus(bonus, 'progression')
 
 class NaturalArmor(ModifierProgression):
     def _apply_progression(self, progression, level):
-        self.inherent += {
+        bonus = {
                 NONE: 0,
-                POOR: level/4,
-                AVERAGE: level/2+1,
-                GOOD: (level*3)/4+2,
+                POOR: level/4+2,
+                AVERAGE: level/2+4,
+                GOOD: (level*3)/4+6,
                 }[progression]
+        self.add_bonus(bonus, 'progression')
 
 class AttackBonus(ModifierProgression):
     def __init__(self, progression = None, level = None):
         super(AttackBonus, self).__init__(progression, level)
         self.base_attack_bonus = 0
         self.offhand_penalty = 5
-        self.enhancement_offhand = 0
-
-    def set_base_attack_bonus(self, base_attack_bonus):
-        difference = base_attack_bonus - self.base_attack_bonus
-        self.base_attack_bonus = base_attack_bonus
-        self.add_inherent(difference)
-        self._update()
 
     def _apply_progression(self, progression, level):
         base_attack_bonus = {
@@ -135,49 +120,22 @@ class AttackBonus(ModifierProgression):
             'average': (level*3)/4,
             'good': level,
             }[progression]
-        self.set_base_attack_bonus(base_attack_bonus)
+        self.base_attack_bonus = max(self.base_attack_bonus, base_attack_bonus)
+        self.add_bonus(base_attack_bonus, 'base attack bonus')
 
-    def _adjust_offhand_penalty(self, bonus, for_main_hand, for_offhand):
+    def _adjust_offhand_penalty(self, bonus_value, for_main_hand, for_offhand):
         if not for_offhand:
-            self.offhand_penalty += bonus
+            self.offhand_penalty += bonus_value
         if not for_main_hand:
-            self.offhand_penalty -= bonus
+            self.offhand_penalty -= bonus_value
 
-    def add_inherent(self, bonus, for_main_hand = True, for_offhand = True):
-        super(AttackBonus, self).add_inherent(bonus)
-        self._adjust_offhand_penalty(bonus, for_main_hand, for_offhand)
+    def add_bonus(self, bonus_value, bonus_type, for_main_hand = True,
+            for_offhand = True):
+        super(AttackBonus, self).add_bonus(bonus_value, bonus_type)
+        self._adjust_offhand_penalty(bonus_value, for_main_hand, for_offhand)
 
-    def add_enhancement(self, bonus, for_main_hand = True, for_offhand = True):
-        #First, adjust the penalties if necessary
-        if not for_main_hand:
-            bonus_relative_to_offhand = max(0, bonus - self.enhancement_offhand)
-            self.offhand_penalty -= bonus_relative_to_offhand
-        if not for_offhand:
-            bonus_relative_to_main_hand = max(0, bonus - self.enhancement)
-            self.offhand_penalty += bonus_relative_to_main_hand
-        #Then apply the bonus
-        if for_main_hand:
-            self.enhancement = max(self.enhancement, bonus)
-        if for_offhand:
-            self.enhancement_offhand = max(self.enhancement_offhand, bonus)
-        self._update()
-
-    def add_competence(self, bonus, for_main_hand = True, for_offhand = True):
-        super(AttackBonus, self).add_competence(bonus)
-        self._adjust_offhand_penalty(bonus, for_main_hand, for_offhand)
-
-    def add_circumstance(self, bonus, for_main_hand = True, for_offhand = True):
-        super(AttackBonus, self).add_circumstance(bonus)
-        self._adjust_offhand_penalty(bonus, for_main_hand, for_offhand)
-
-    def get_total_offhand(self, roll=False):
-        #return int if there are no dice
-        if self.die:
-            if roll:
-                return self.raw_total - self.offhand_penalty + self.die.roll()
-            else:
-                return self.raw_total - self.offhand_penalty + self.die.average
-        return self.raw_total - self.offhand_penalty
+    def get_total_offhand(self, roll=False, ignore_die=False):
+        return self.get_total(roll, ignore_die) - self.offhand_penalty
 
     def mstr_offhand(self):
         return mstr(self.get_total_offhand())
@@ -190,7 +148,7 @@ class ManeuverBonus(ModifierProgression):
             'average': (level*3)/4,
             'good': level,
             }[progression]
-        self.set_base_attack_bonus(base_attack_bonus)
+        self.add_bonus(base_attack_bonus, 'base attack bonus')
 
     def set_attributes(self, strength, dexterity):
         self.strength = strength
@@ -213,7 +171,7 @@ class ArmorClass:
         self.shield = Modifier()
         self.dodge = Modifier()
         self.natural_armor = NaturalArmor()
-        self.misc.add_inherent(10)
+        self.misc.add_bonus(10, 'base')
 
     def normal(self):
         normal = sum([self.misc.get_total(), self.shield.get_total(), self.dodge.get_total()])
