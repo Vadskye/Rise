@@ -48,17 +48,19 @@ class CombatCreature(object):
         damage_dealt = 0
         if attack_bonus is None:
             attack_bonus = self.attacks[ATTACK_BONUS].get_total()
+        #allow enemy to be a creature object or an AC
         try:
             is_hit, is_threshold_hit = util.attack_hits(
-                    attack_bonus, enemy.armor_class.normal(),
+                    attack_bonus, enemy.defenses[AC].normal(),
                     threshold=5)
-        except:
+        except AttributeError:
+            print 'nope'
             is_hit, is_threshold_hit = util.attack_hits(
                     attack_bonus, enemy, threshold=5)
         if is_hit:
-            damage_dealt += self.attacks[WEAPON_DAMAGE_PRIMARY].get_total(roll=True)
+            damage_dealt += self.attacks[DAMAGE][WEAPON_PRIMARY].get_total(roll=True)
         if is_threshold_hit:
-            damage_dealt += self.offhand_weapon_damage.get_total(roll=True)
+            damage_dealt += self.attacks[DAMAGE][WEAPON_SECONDARY].get_total(roll=True)
         if deal_damage:
             enemy.take_damage(damage_dealt, self.items[WEAPON_PRIMARY].damage_types)
         return is_hit, damage_dealt
