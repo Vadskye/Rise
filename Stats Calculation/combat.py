@@ -29,10 +29,10 @@ class CombatCreature(object):
 
     def default_attack(self, enemy):
         return {
-                'full attack': self.full_attack(enemy),
-                'damage spell': self.damage_spell(enemy),
-                'special attack': self.special_attack(enemy),
-                }[self.attack_mode]
+                'full attack': self.full_attack,
+                'damage spell': self.damage_spell,
+                'special attack': self.special_attack,
+                }[self.attack_mode](enemy)
 
     def full_attack(self, enemy, deal_damage = True):
         damage_dealt_total = 0
@@ -41,7 +41,7 @@ class CombatCreature(object):
             is_hit, damage_dealt = self.single_attack(enemy, self.attacks[ATTACK_BONUS].get_total() - 5*i, deal_damage)
             damage_dealt_total += damage_dealt
             hit_count += 1 if is_hit else 0
-        return hit_count, damage_dealt
+        return hit_count, damage_dealt_total
 
     def single_attack(self, enemy, attack_bonus = None,
             deal_damage = True):
