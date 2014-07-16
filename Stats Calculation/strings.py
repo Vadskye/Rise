@@ -145,3 +145,7 @@ UNDEAD = 'undead'
 
 ENDLINE = '\\par\n'
 NONE = 'none'
+
+BASE = 'base'
+ENHANCEMENT = 'enhancement'
+BAB = 'base attack bonus'
