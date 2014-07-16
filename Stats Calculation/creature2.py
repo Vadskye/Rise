@@ -124,8 +124,8 @@ class Creature(object):
         for attribute_name in ATTRIBUTE_NAMES:
             #use try/except to allow missing attributes
             try:
-                self.attributes[attribute_name].add_inherent(
-                        self._parse_attribute(raw_stats[attribute_name]))
+                self.attributes[attribute_name].add_bonus(
+                        self._parse_attribute(raw_stats[attribute_name]), BASE)
             except KeyError:
                 self.print_verb('missing attribute: '+attribute_name)
 
@@ -214,41 +214,41 @@ class Creature(object):
 
         dexterity_to_ac = self.attributes[DEX].get_total()
         if self.items[ARMOR] is not None:
-            self.defenses[AC].armor.add_inherent(self.items[ARMOR].ac_bonus)
+            self.defenses[AC].armor.add_bonus(self.items[ARMOR].ac_bonus, BASE)
             if self.items[ARMOR].encumbrance=='medium' or self.items[ARMOR].encumbrance=='heavy':
                 dexterity_to_ac /=2
-        self.defenses[AC].dodge.add_inherent(dexterity_to_ac)
+        self.defenses[AC].dodge.add_bonus(dexterity_to_ac, DEX)
 
         if self.items[SHIELD] is not None:
-            self.defenses[AC].shield.add_inherent(
-                    self.items[SHIELD].ac_bonus)
+            self.defenses[AC].shield.add_bonus(
+                    self.items[SHIELD].ac_bonus, BASE)
 
         self._calculate_attack_attribute_bonus()
-        self.attacks[ATTACK_BONUS].add_inherent(util.get_size_modifier(self.core[SIZE]))
+        self.attacks[ATTACK_BONUS].add_bonus(util.get_size_modifier(self.core[SIZE]), SIZE)
         self.attacks[MANEUVER_BONUS].set_attributes(self.attributes[STR],
                 self.attributes[DEX])
-        self.attacks[MANEUVER_BONUS].add_inherent(util.get_size_modifier(
-            self.core[SIZE], is_special_size_modifier=True))
+        self.attacks[MANEUVER_BONUS].add_bonus(util.get_size_modifier(
+            self.core[SIZE], is_special_size_modifier=True), SIZE)
 
         #set damage for each weapon
         for weapon in WEAPONS:
             if self.items[weapon] is not None:
                 self.attacks[DAMAGE][weapon].set_die(
                         self.items[weapon].damage_die)
-        self.attacks[DAMAGE][WEAPON_PRIMARY].add_inherent(
-                self.attributes[STR].get_total()/2)
+        self.attacks[DAMAGE][WEAPON_PRIMARY].add_bonus(
+                self.attributes[STR].get_total()/2, STR)
 
         self._add_save_attributes()
 
-        self.defenses[AC].dodge.add_inherent(
-                util.ifloor(self.attacks[ATTACK_BONUS].base_attack_bonus/2))
+        self.defenses[AC].dodge.add_bonus(
+                util.ifloor(self.attacks[ATTACK_BONUS].base_attack_bonus/2), BAB)
 
         self.defenses[MC].add_inherent(self.defenses[AC].touch())
         self.defenses[MC].add_inherent(self.attacks[ATTACK_BONUS].base_attack_bonus/2)
         self.defenses[MC].add_inherent(self.attributes[STR].get_total())
 
-        self.core[INITIATIVE].add_inherent(self.attributes[DEX].get_total())
-        self.core[INITIATIVE].add_inherent(self.attributes[WIS].get_total()/2)
+        self.core[INITIATIVE].add_bonus(self.attributes[DEX].get_total(), DEX)
+        self.core[INITIATIVE].add_bonus(self.attributes[WIS].get_total()/2, WIS)
 
         #Assume user has basic feats
         self.add_ability(abilities['overwhelming force'])
@@ -266,18 +266,18 @@ class Creature(object):
 
 
     def _add_save_attributes(self):
-        self.defenses[FORTITUDE].add_inherent(
-                self.attributes[CON].get_total())
-        self.defenses[FORTITUDE].add_inherent(util.ifloor(
-            self.attributes[STR].get_total()/2))
-        self.defenses[REFLEX].add_inherent(
-                self.attributes[DEX].get_total())
-        self.defenses[REFLEX].add_inherent(util.ifloor(
-            self.attributes[WIS].get_total()/2))
-        self.defenses[WILL].add_inherent(
-                self.attributes[CHA].get_total())
-        self.defenses[WILL].add_inherent(util.ifloor(
-            self.attributes[INT].get_total()/2))
+        self.defenses[FORTITUDE].add_bonus(
+                self.attributes[CON].get_total(), CON)
+        self.defenses[FORTITUDE].add_bonus(util.ifloor(
+            self.attributes[STR].get_total()/2), STR)
+        self.defenses[REFLEX].add_bonus(
+                self.attributes[DEX].get_total(), DEX)
+        self.defenses[REFLEX].add_bonus(util.ifloor(
+            self.attributes[WIS].get_total()/2), WIS)
+        self.defenses[WILL].add_bonus(
+                self.attributes[CHA].get_total(), CHA)
+        self.defenses[WILL].add_bonus(util.ifloor(
+            self.attributes[INT].get_total()/2), INT)
         
     @classmethod
     def from_creature_name(cls, creature_name, level, verbose=False):
