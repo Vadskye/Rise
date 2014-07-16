@@ -91,8 +91,8 @@ abilities['rage'] = Ability('rage', rage_benefit)
 
 def overwhelming_force_benefit(creature):
     if creature.weapon.encumbrance == 'heavy':
-        creature.weapon_damage.add_inherent(
-                (creature.attributes[STR].get_total()+1)/2)
+        creature.weapon_damage.bonus(
+                creature.attributes[STR].get_total(), STR)
 def overwhelming_force_prerequisites(creature):
         return creature.attributes[STR].get_total() >=5 and creature.attacks[ATTACK_BONUS].base_attack_bonus >=8 and creature.weapon.encumbrance == 'heavy'
 abilities['overwhelming force'] = Ability('overwhelming force', overwhelming_force_benefit,
