@@ -4,6 +4,7 @@ import util
 import combat
 import cProfile
 from abilities import abilities
+from strings import *
 
 CREATURE = 'creature'
 COMBAT = 'combat'
