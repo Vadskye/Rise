@@ -58,7 +58,7 @@ class Creature(object):
 
         self._calculate_derived_statistics()
         self.core[HIT_POINTS] = (self.attributes[CON].get_total()/2 +
-                self.core[HIT_VALUE] * self.meta[LEVEL])
+                self.core[HIT_VALUE]) * self.meta[LEVEL]
         self._update_level_scaling()
 
     def _init_objects(self):
