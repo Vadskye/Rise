@@ -4,9 +4,9 @@ weapon=bite
 
 #attributes
 strength=good
-dexterity=good
+dexterity=average
 constitution=average
-wisdom=average
+wisdom=poor
 
 #abilities
 trait=natural trip
