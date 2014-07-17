@@ -201,6 +201,12 @@ class ArmorClass:
         if 'natural_armor' in keys:
             self.natural_armor.add_all(ac_modifiers['natural_armor'])
 
+    def get_details(self):
+        return "%s = %s (armor) + %s (shield) + %s (dodge) + %s (natural_armor)" % (
+                self.misc.get_total(), self.armor.get_total(),
+                self.shield.get_total(), self.dodge.get_total(),
+                self.natural_armor.get_total())
+
     def __str__(self):
         ac = 'AC ' + str(self.normal())
         ac += ', touch ' + str(self.touch())
