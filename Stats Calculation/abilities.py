@@ -143,7 +143,7 @@ def deadly_aim_benefit(creature):
             'deadly aim')
     damage_bonus = 2+(creature.attacks[ATTACK_BONUS].base_attack_bonus/5)*2
     creature.attacks[DAMAGE][WEAPON_PRIMARY].add_bonus(damage_bonus, 
-            'deadly im')
+            'deadly aim')
 abilities['deadly aim'] = Ability('deadly aim', deadly_aim_benefit, lambda creature:
         creature.attributes[DEX].get_total() >= 3,
         set(('feat', 'combat', 'precision', 'style')))
