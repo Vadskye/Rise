@@ -73,12 +73,12 @@ def danger_sense_benefit(creature):
 abilities['danger sense'] = Ability('danger sense', danger_sense_benefit)
 
 def larger_than_life_benefit(creature):
-    creature.weapon_damage.die.increase_size(increase_min=True)
+    creature.items[WEAPON_PRIMARY].die.increase_size(increase_min=True)
 abilities['larger than life'] = Ability('larger than life', larger_than_life_benefit)
 abilities['larger than belief'] = Ability('larger than belief', larger_than_life_benefit)
 
 def rage_benefit(level, creature):
-    creature.weapon_damage.add_competence(util.std_scale(level))
+    creature.attacks[DAMAGE][WEAPON_PRIMARY].add_competence(util.std_scale(level))
     creature.defenses[AC].misc.add_circumstance(-2)
     creature.saves.fortitude.add_competence(util.std_scale(level))
     creature.saves.will.add_competence(util.std_scale(level))
@@ -90,11 +90,11 @@ abilities['rage'] = Ability('rage', rage_benefit)
 ####################
 
 def overwhelming_force_benefit(creature):
-    if creature.weapon.encumbrance == 'heavy':
-        creature.weapon_damage.bonus(
+    if creature.items[WEAPON_PRIMARY].encumbrance == 'heavy':
+        creature.attacks[DAMAGE][WEAPON_PRIMARY].bonus(
                 creature.attributes[STR].get_total(), STR)
 def overwhelming_force_prerequisites(creature):
-        return creature.attributes[STR].get_total() >=5 and creature.attacks[ATTACK_BONUS].base_attack_bonus >=8 and creature.weapon.encumbrance == 'heavy'
+        return creature.attributes[STR].get_total() >=5 and creature.attacks[ATTACK_BONUS].base_attack_bonus >=8 and creature.items[WEAPON_PRIMARY].encumbrance == 'heavy'
 abilities['overwhelming force'] = Ability('overwhelming force', overwhelming_force_benefit,
         overwhelming_force_prerequisites, set(('feat', 'combat', 'power')))
 
@@ -123,10 +123,11 @@ abilities['combat expertise'] = Ability('combat expertise', combat_expertise_ben
 def power_attack_benefit(creature):
     creature.attack_bonus.add_circumstance(-util.bab_scale(creature.level))
     damage_bonus = 2+(creature.attack_bonus.base_attack_bonus/5)*2
-    if creature.weapon.encumbrance == 'medium' or creature.weapon.encumbrance == 'heavy':
-        creature.weapon_damage.add_circumstance(damage_bonus)
+    if creature.items[WEAPON_PRIMARY].encumbrance == 'medium' or creature.items[WEAPON_PRIMARY].encumbrance == 'heavy':
+        creature.attacks[DAMAGE][WEAPON_PRIMARY].add_bonus(damage_bonus,
+                'power attack')
     else:
-        creature.weapon_damage.add_circumstance(damage_bonus/2)
+        creature.attacks[DAMAGE][WEAPON_PRIMARY].add_bonus(damage_bonus/2, 'power attack')
     if creature.offhand_weapon:
         creature.offhand_weapon_damage.add_circumstance(damage_bonus/2)
 abilities['power attack'] = Ability('power attack', power_attack_benefit, lambda creature:
@@ -136,7 +137,8 @@ abilities['power attack'] = Ability('power attack', power_attack_benefit, lambda
 def deadly_aim_benefit(creature):
     creature.attack_bonus.add_circumstance(-util.bab_scale(creature.level))
     damage_bonus = 2+(creature.attack_bonus.base_attack_bonus/5)*2
-    creature.weapon_damage.add_circumstance(damage_bonus)
+    creature.attacks[DAMAGE][WEAPON_PRIMARY].add_bonus(damage_bonus, 
+            'deadly im')
 abilities['deadly aim'] = Ability('deadly aim', deadly_aim_benefit, lambda creature:
         creature.attributes[DEX].get_total() >= 3,
         set(('feat', 'combat', 'precision', 'style')))
