@@ -99,6 +99,7 @@ if __name__ == "__main__":
             print 'First creature win %:', results[0], results[2]
 
     elif args['function'] == COMBAT:
+        print 'Level, 1st Win %, Rounds'
         for i in xrange(20):
             """
             barbarian = Character.from_creature_name('brb-heavy', i+1)
@@ -126,7 +127,7 @@ if __name__ == "__main__":
 
             repeat_count = 500
             results = run_repeated_battles(battle, repeat_count)
-            print i+1, results[0], results[2]
+            print '%s   %s   %s' % (i+1, results[0], results[2])
 
             #print npc.armor_class.normal() - generic_ac_real[i]
 
