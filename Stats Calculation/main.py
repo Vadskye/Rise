@@ -109,8 +109,8 @@ if __name__ == "__main__":
             npc2 = Character.from_creature_name('npc', i+1)
             rogue = Character.from_creature_name('rogue-single', i+1)
             """
-            first_name = 'monk-unarmed'
-            second_name = 'ftr-heavy'
+            first_name = args['creature_input']
+            second_name = args['creature_input_2']
             first = Creature.from_creature_name(first_name, i+1)
             first = combat.CombatCreature.from_creature(first)
             second = Creature.from_creature_name(second_name, i+1)
@@ -120,7 +120,7 @@ if __name__ == "__main__":
             #print second
 
             #first.add_ability(abilities['combat expertise'], False)
-            first.add_ability(abilities['power attack'], False)
+            #first.add_ability(abilities['power attack'], False)
 
             battle = combat.Battle(first, second)
 
