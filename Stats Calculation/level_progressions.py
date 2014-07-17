@@ -69,7 +69,7 @@ classes[FIGHTER] = LevelProgression(FIGHTER, GOOD, GOOD, POOR, AVERAGE,
 
 
 classes[GENERIC] = LevelProgression(GENERIC, AVERAGE, AVERAGE, AVERAGE,
-        AVERAGE, NONE, 5)
+        AVERAGE, 5, NONE)
 
 def monk_modifications(base_creature):
     #wisdom is used often, so make it quick to access
