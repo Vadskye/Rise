@@ -96,7 +96,7 @@ def monk_modifications(base_creature):
 
     #improved ki strike
     if base_creature.meta[LEVEL]>=10:
-        base_creature.weapon_damage.add_inherent(wisdom/2)
+        base_creature.attacks[DAMAGE][WEAPON_PRIMARY].add_inherent(wisdom/2)
 
 classes[MONK] = LevelProgression(MONK, GOOD, AVERAGE, AVERAGE, AVERAGE,
         5, NONE)
