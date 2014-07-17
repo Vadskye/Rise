@@ -87,7 +87,7 @@ if __name__ == "__main__":
                 creature = get_character_or_monster(args['creature_input_2'],
                         args['level'])
             else:
-                creature2 = Creature.from_creature_name('ftr-typical',
+                creature2 = Creature.from_creature_name('generic',
                         creature.meta['level'])
             print creature
             print creature2
