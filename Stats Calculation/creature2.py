@@ -167,9 +167,9 @@ class Creature(object):
                     'primary': (level+2)/4,
                     'secondary': level/4,
                     #progressions are for monsters
-                    POOR: level/4,
-                    AVERAGE: level/2+1,
-                    GOOD: (level*3)/4+2,
+                    POOR: level/4+1,
+                    AVERAGE: level/3+2,
+                    GOOD: level/2+3,
                     }[progression]
         except KeyError:
             self.print_verb('unable to understand attribute: %s' % elem)
