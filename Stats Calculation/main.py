@@ -84,8 +84,8 @@ if __name__ == "__main__":
             output_file.write(latex_string)
         else:
             if args['creature_input_2']:
-                creature = get_character_or_monster(args['creature_input_2'],
-                        args['level'])
+                creature2 = Creature.from_creature_name(
+                        args['creature_input_2'], creature.meta['level'])
             else:
                 creature2 = Creature.from_creature_name('generic',
                         creature.meta['level'])
