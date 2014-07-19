@@ -1,0 +1,15 @@
+name=
+creature type=
+weapon=
+
+#attributes
+strength=
+dexterity=
+constitution=
+intelligence=
+wisdom=
+charisma=
+
+#abilities
+trait=
+feat= 
