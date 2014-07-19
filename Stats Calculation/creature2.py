@@ -150,7 +150,7 @@ class Creature(object):
 
     #parse an attribute from raw_stats
     def _parse_attribute(self, raw_attribute):
-        split = re.split(' ', raw_attribute)
+        split = re.split('[ +,]', raw_attribute)
         progression = None
         starting_value = 0
         for elem in split:
