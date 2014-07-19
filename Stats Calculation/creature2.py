@@ -91,11 +91,11 @@ class Creature(object):
         if 'class' in raw_stats.keys():
             self.meta[LEVEL_PROGRESSION] = classes[
                     raw_stats['class']]
+            self.meta[USE_MAGIC_BONUSES] = True
         elif 'creature type' in raw_stats.keys():
             self.meta[LEVEL_PROGRESSION] = monster_types[
                     raw_stats['creature type']]
-        if USE_MAGIC_BONUSES in raw_stats.keys():
-            self.meta[USE_MAGIC_BONUSES] = raw_stats[USE_MAGIC_BONUSES]
+            self.meta[USE_MAGIC_BONUSES] = False
 
         #Add all the abilities to the character
         for ability_type in ABILITY_TYPES:
