@@ -9,8 +9,6 @@ constitution=good
 wisdom=average
 
 #abilities
-trait=strength
-trait=constitution *2
 feat=endurance
 feat=diehard
 template=brute

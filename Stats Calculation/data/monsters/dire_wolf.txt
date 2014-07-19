@@ -10,9 +10,6 @@ constitution=average
 wisdom=average
 
 #abilities
-trait=strength *4
-trait=dexterity
-trait=constitution
 trait=natural trip
 trait=improved natural weapon
 template=scout
