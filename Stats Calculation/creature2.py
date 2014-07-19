@@ -160,7 +160,8 @@ class Creature(object):
         for elem in split:
             if util.is_number(elem):
                 starting_value = int(elem)
-            else:
+            #check if elem is true to ignore empty strings
+            elif elem:
                 progression = elem
 
         self.attributes[attribute_name].add_bonus(starting_value, BASE)
