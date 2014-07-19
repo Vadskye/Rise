@@ -199,7 +199,7 @@ abilities['natural trip'] = Ability('natural trip', text = natural_trip_text,
 def natural_weapon_benefit(creature):
     creature.items[WEAPON_PRIMARY].increase_size()
 abilities['improved natural weapon'] = Ability('improved natural weapon',
-        apply_benefit = natural_weapon_benefit)
+        apply_benefit = natural_weapon_benefit, points=1)
 
 ####################
 #MONSTER TEMPLATES
