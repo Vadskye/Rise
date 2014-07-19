@@ -10,11 +10,7 @@ constitution=good
 wisdom=average
 
 #abilities
-trait=natural armor
 trait=improved natural weapon
-trait=strength *2
-trait=dexterity
-trait=constitution *3
 trait=natural grab
 feat=endurance
 feat=diehard
