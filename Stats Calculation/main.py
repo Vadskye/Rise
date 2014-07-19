@@ -87,7 +87,7 @@ if __name__ == "__main__":
                 creature2 = Creature.from_creature_name(
                         args['creature_input_2'], creature.meta['level'])
             else:
-                creature2 = Creature.from_creature_name('generic',
+                creature2 = Creature.from_creature_name('average',
                         creature.meta['level'])
             print creature
             print creature2
