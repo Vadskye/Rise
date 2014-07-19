@@ -158,14 +158,6 @@ abilities['track'] = new_feat('track')
 #MONSTER TRAITS
 ####################
 
-def natural_armor_benefit(creature):
-    #Give 2 AC the first time, 1 every additional time
-    if creature.has_ability(abilities['natural armor']):
-        creature.defenses[AC].natural_armor.add_inherent(1)
-    else:
-        creature.defenses[AC].natural_armor.add_inherent(2)
-abilities['natural armor'] = Ability('natural armor', natural_armor_benefit)
-
 abilities['darkvision'] = Ability('darkvision', tags = ['sense'], value = 60,
         text=lambda x: '%s %s ft.' % (x.name, x.value))
 abilities['low-light vision'] = Ability('low-light vision', tags = ['sense'])
