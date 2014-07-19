@@ -62,22 +62,29 @@ def identify_effect_of_bonuses(creature):
 #note that we assume overwhelm 2 since overwhelm penalties are so common 
     #so actual character AC should be two higher
 def get_generic_ac_calc():
-    return [i+13 for i in range(1,21)]
+    return [i+13 for i in range(21)]
 def get_generic_ac_real():
-    return [i+15 for i in range(1,21)]
+    return [i+15 for i in range(21)]
 def get_generic_hp():
-    return [i*7 for i in range(1,21)]
+    return [i*7 for i in range(21)]
 
 #set a creature's AC to match generic AC
 def normalize_ac(creature):
     creature.armor_class.misc.add_circumstance(
-            get_generic_ac_calc()[creature.level-1] - creature.armor_class.normal())
+            get_generic_ac_calc()[creature.level] - creature.armor_class.normal())
+
+def print_generic_stats(level):
+    print "Generic stats for comparison"
+    print "AC %s, MC %s" % (get_generic_ac_real()[level], 0)
+    print "HP %s, Fort %s, Ref %s, Will %s" % (get_generic_hp()[level],
+            0, 0, 0)
 
 if __name__ == "__main__":
     args = initialize_argument_parser()
     if args['function'] == CREATURE:
         creature = Creature.from_creature_name(args['creature_input'],
                 args['level'])
+        print creature
         if args['output'] is not None:
             latex_string = creature.to_latex()
             output_file = open(args['output'], 'w')
@@ -86,17 +93,15 @@ if __name__ == "__main__":
             if args['creature_input_2']:
                 creature2 = Creature.from_creature_name(
                         args['creature_input_2'], creature.meta['level'])
+                print creature2
+                creature = combat.CombatCreature.from_creature(creature)
+                creature2 = combat.CombatCreature.from_creature(creature2)
+                battle = combat.Battle(creature, creature2)
+                repeat_count = 500
+                results = run_repeated_battles(battle, repeat_count)
+                print 'First creature win %:', results[0], results[2]
             else:
-                creature2 = Creature.from_creature_name('average',
-                        creature.meta['level'])
-            print creature
-            print creature2
-            creature = combat.CombatCreature.from_creature(creature)
-            creature2 = combat.CombatCreature.from_creature(creature2)
-            battle = combat.Battle(creature, creature2)
-            repeat_count = 500
-            results = run_repeated_battles(battle, repeat_count)
-            print 'First creature win %:', results[0], results[2]
+                print_generic_stats(creature.meta[LEVEL])
 
     elif args['function'] == COMBAT:
         print 'Level, 1st Win %, Rounds'
