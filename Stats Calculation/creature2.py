@@ -134,7 +134,7 @@ class Creature(object):
             ability.apply_benefit(self)
 
     def _calc_minimum_level(self):
-        return 1
+        return max(1, sum([ability.points for ability in self.abilities]))
 
     def _update_level_scaling(self):
         scale_factor = self.meta[LEVEL]/4
