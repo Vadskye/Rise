@@ -69,7 +69,7 @@ class Creature(object):
                 WEAPON_SECONDARY: util.Modifier()
                 }
         for attribute in ATTRIBUTES:
-            self.attributes[attribute] = util.Modifier()
+            self.attributes[attribute] = util.Attribute()
         self.defenses[AC] = util.ArmorClass()
         self.defenses[MC] = util.Modifier()
         self.defenses[DR] = util.DamageReduction()
@@ -124,8 +124,8 @@ class Creature(object):
         for attribute_name in ATTRIBUTE_NAMES:
             #use try/except to allow missing attributes
             try:
-                self.attributes[attribute_name].add_bonus(
-                        self._parse_attribute(raw_stats[attribute_name]), BASE)
+                self._parse_attribute(attribute_name,
+                        raw_stats[attribute_name])
             except KeyError:
                 self.print_verb('missing attribute: '+attribute_name)
 
@@ -149,7 +149,7 @@ class Creature(object):
             self.defenses[save].add_enhancement(scale_factor)
 
     #parse an attribute from raw_stats
-    def _parse_attribute(self, raw_attribute):
+    def _parse_attribute(self, attribute_name, raw_attribute):
         split = re.split('[ +,]', raw_attribute)
         progression = None
         starting_value = 0
@@ -159,22 +159,9 @@ class Creature(object):
             else:
                 progression = elem
 
-        level = self.meta[LEVEL]
-        try:
-            value = starting_value + {
-                    None: 0,
-                    #primary and secondary are for PCs
-                    'primary': (level+2)/4,
-                    'secondary': level/4,
-                    #progressions are for monsters
-                    POOR: level/4+1,
-                    AVERAGE: level/3+2,
-                    GOOD: level/2+3,
-                    }[progression]
-        except KeyError:
-            self.print_verb('unable to understand attribute: %s' % elem)
-
-        return value
+        self.attributes[attribute_name].add_bonus(starting_value, BASE)
+        self.attributes[attribute_name].set_progression(progression)
+        self.attributes[attribute_name].set_level(self.meta[LEVEL])
 
     def _apply_level_progression(self):
         self.attacks[ATTACK_BONUS].set_progression(
@@ -202,7 +189,6 @@ class Creature(object):
     def add_abilities(self, abilities, by_name = False):
         for ability in abilities:
             self.add_ability(ability, by_name = by_name)
-
 
     def _calculate_derived_statistics(self):
         self.attacks[ATTACK_BONUS].set_level(self.meta[LEVEL])
