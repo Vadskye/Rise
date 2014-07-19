@@ -89,6 +89,20 @@ class ModifierProgression(Modifier):
             self._apply_progression(self.progression, self.level)
             self._update()
 
+class Attribute(ModifierProgression):
+    def _apply_progression(self, progression, level):
+        bonus = {
+                None: 0,
+                #primary and secondary are for PCs
+                'primary': (level+2)/4,
+                'secondary': level/4,
+                #progressions are for monsters
+                POOR: level/4+1,
+                AVERAGE: level/3+2,
+                GOOD: level/2+3,
+                }[progression]
+        self.add_bonus(bonus, 'progression')
+
 class SavingThrow(ModifierProgression):
     def _apply_progression(self, progression, level):
         bonus = {
