@@ -39,6 +39,9 @@ class Weapon(object):
                     [DAMAGE_PHYSICAL, DAMAGE_PIERCING, DAMAGE_SLASHING], 'd6'),
                 'bite': cls('bite', ENCUMBRANCE_MEDIUM, ATTACK_TYPE_MELEE,
                     [DAMAGE_PHYSICAL, DAMAGE_PIERCING, DAMAGE_SLASHING], 'd8'),
+                'tentacles': cls('tentacles', ENCUMBRANCE_LIGHT,
+                    ATTACK_TYPE_MELEE, (DAMAGE_PHYSICAL, DAMAGE_BLUDGEONING),
+                    'd8'),
                 'unarmed': cls('unarmed', ENCUMBRANCE_LIGHT, ATTACK_TYPE_MELEE,
                     [DAMAGE_PHYSICAL], 'd3'),
                 'none': None
