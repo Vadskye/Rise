@@ -72,7 +72,7 @@ classes[FIGHTER] = LevelProgression(FIGHTER, GOOD, GOOD, POOR, AVERAGE,
         6, NONE, fighter_modifications)
 
 
-classes[GENERIC] = LevelProgression(GENERIC, AVERAGE, AVERAGE, AVERAGE,
+classes[AVERAGE] = LevelProgression(AVERAGE, AVERAGE, AVERAGE, AVERAGE,
         AVERAGE, 5, NONE)
 
 def monk_modifications(base_creature):
@@ -132,7 +132,7 @@ monster_types = dict()
 def aberration_modifications(base_creature):
     base_creature.add_ability('darkvision', by_name=True)
 monster_types[ABERRATION] = LevelProgression(ABERRATION, AVG,
-        AVG, POOR, AVG, 5, POOR, aberration_modifications)
+        AVG, POOR, AVG, 5, AVERAGE, aberration_modifications)
 
 def animal_modifications(base_creature):
     base_creature.attributes[INT].add_inherent(-8)
