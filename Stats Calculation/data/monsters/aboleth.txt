@@ -1,0 +1,16 @@
+name=aboleth
+creature type=aberration
+weapon=tentacles
+
+#attributes
+strength=good+2
+constitution=good
+intelligence=average+2
+wisdom=average
+charisma=average
+
+#abilities
+trait=enslave
+trait=slime
+trait=carapace
+#feat=
