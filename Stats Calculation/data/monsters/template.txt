@@ -1,5 +1,8 @@
+#meta
 name=
 creature type=
+
+#items
 weapon=
 
 #attributes
@@ -13,3 +16,7 @@ charisma=
 #abilities
 trait=
 feat= 
+
+#core
+size=
+speed=
