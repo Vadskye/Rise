@@ -158,19 +158,6 @@ abilities['track'] = new_feat('track')
 #MONSTER TRAITS
 ####################
 
-abilities['strength'] = Ability('strength', lambda c:
-        c.attributes[STR].add_inherent(1))
-abilities['dexterity'] = Ability('dexterity', lambda c:
-        c.attributes[DEX].add_inherent(1))
-abilities['constitution'] = Ability('constitution', lambda c:
-        c.attributes[CON].add_inherent(1))
-abilities['intelligence'] = Ability('intelligence', lambda c:
-        c.attributes[INT].add_inherent(1))
-abilities['wisdom'] = Ability('wisdom', lambda c: 
-        c.attributes[WIS].add_inherent(1))
-abilities['charisma'] = Ability('charisma', lambda c:
-        c.attributes[CHA].add_inherent(1))
-
 def natural_armor_benefit(creature):
     #Give 2 AC the first time, 1 every additional time
     if creature.has_ability(abilities['natural armor']):
