@@ -19,6 +19,10 @@ class LevelProgression(object):
         self.natural_armor_progression = natural_armor_progression
         self.apply_modifications = apply_modifications
 
+    def improve_progression(self, progression_name):
+        setattr(self, progression_name, util.improved_progression(
+            getattr(self, progression_name)))
+
 classes = dict()
 
 def barbarian_modifications(base_creature):
