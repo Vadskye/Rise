@@ -10,7 +10,7 @@ class Ability(object):
     #the ability is referenced (primarily with to_latex()) 
     #text can be either a string or a function
     def __init__(self, name, apply_benefit = None, meets_prerequisites = None, 
-            tags = None, value = None, text = None):
+            tags = None, value = None, text = None, points=0):
         self.name = name
         self.tags = set()
         if tags is not None:
@@ -26,6 +26,7 @@ class Ability(object):
             self.meets_prerequisites = meets_prerequisites
         self.value = value
         self.text = text
+        self.points = points
 
     def has_tag(self, tag):
         if self.tags is None:
