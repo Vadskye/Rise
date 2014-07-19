@@ -37,6 +37,7 @@ class Creature(object):
                 LEVEL: level,
                 LEVEL_PROGRESSION: None,
                 NAME: None,
+                USE_MAGIC_BONUSES: False,
                 VERBOSE: verbose,
                 }
         self.items = {
@@ -59,7 +60,8 @@ class Creature(object):
         self._calculate_derived_statistics()
         self.core[HIT_POINTS] = (self.attributes[CON].get_total()/2 +
                 self.core[HIT_VALUE]) * self.meta[LEVEL]
-        self._update_level_scaling()
+        if self.meta[USE_MAGIC_BONUSES]:
+            self._update_level_scaling()
 
     def _init_objects(self):
         self.attacks[ATTACK_BONUS] = util.AttackBonus()
@@ -92,6 +94,8 @@ class Creature(object):
         elif 'creature type' in raw_stats.keys():
             self.meta[LEVEL_PROGRESSION] = monster_types[
                     raw_stats['creature type']]
+        if USE_MAGIC_BONUSES in raw_stats.keys():
+            self.meta[USE_MAGIC_BONUSES] = raw_stats[USE_MAGIC_BONUSES]
 
         #Add all the abilities to the character
         for ability_type in ABILITY_TYPES:
