@@ -1,9 +1,12 @@
+#meta
 name=aboleth
 creature type=aberration
+
+#items
 weapon=tentacles
 
 #attributes
-strength=good+2
+strength=average+2
 constitution=good
 intelligence=average+2
 wisdom=average
@@ -14,3 +17,7 @@ trait=enslave
 trait=slime
 trait=carapace
 #feat=
+
+#core
+size=large
+speed=10, swim 60
