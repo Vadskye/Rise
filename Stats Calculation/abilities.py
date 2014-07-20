@@ -184,7 +184,7 @@ abilities['enslave'] = Ability('enslave', text = 'enslave', points=4)
 abilities['slime'] = Ability('slime', text = 'slime', points=3)
 abilities['carapace'] = Ability('carapace', 
         apply_benefit = lambda c: c.meta[LEVEL_PROGRESSION].improve_progression(
-            'natural_armor_progression'))
+            'natural_armor_progression'), points=1)
 
 ####################
 #MONSTER TEMPLATES
