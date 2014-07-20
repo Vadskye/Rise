@@ -1,0 +1,14 @@
+#meta
+name=ideal
+creature type=ideal
+
+#attributes
+strength=good
+dexterity=average
+constitution=average
+intelligence=average
+wisdom=average
+charisma=average
+
+#items
+weapon=medium_melee
