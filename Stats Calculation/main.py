@@ -59,8 +59,9 @@ def identify_effect_of_bonuses(creature):
     print current_char.damage_per_round(generic_ac_calc[i])
 
 #this is the generic AC we assume for attack calculations
+#correct AC is level + 15
 #note that we assume overwhelm 2 since overwhelm penalties are so common 
-    #so actual character AC should be two higher
+#so actual character AC should be two higher
 def get_generic_ac_calc():
     return [i+13 for i in range(21)]
 def get_generic_ac_real():
@@ -93,6 +94,9 @@ if __name__ == "__main__":
             if args['creature_input_2']:
                 creature2 = Creature.from_creature_name(
                         args['creature_input_2'], creature.meta['level'])
+            else:
+                creature2 = Creature.from_creature_name(LEVEL, 
+                        creature.meta[LEVEL])
                 print creature2
                 creature = combat.CombatCreature.from_creature(creature)
                 creature2 = combat.CombatCreature.from_creature(creature2)
@@ -100,8 +104,6 @@ if __name__ == "__main__":
                 repeat_count = 500
                 results = run_repeated_battles(battle, repeat_count)
                 print 'First creature win %:', results[0], results[2]
-            else:
-                print_generic_stats(creature.meta[LEVEL])
 
     elif args['function'] == COMBAT:
         print 'Level, 1st Win %, Rounds'
