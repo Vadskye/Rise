@@ -185,3 +185,18 @@ def undead_modifications(base_creature):
     base_creature.add_ability('undead', by_name=True)
 monster_types[UNDEAD] = LevelProgression(UNDEAD, AVG, AVG, POOR, AVG, 5,
         AVG, undead_modifications)
+
+#modify the creature so it matches the ideal target AC and other stats
+def ideal_modifications(base_creature):
+    #compensate for AC bonus from BAB
+    #base_creature.defenses[AC].dodge.add_bonus(-(base_creature.meta[LEVEL]/2),
+    base_creature.defenses[AC].dodge.add_bonus(-((base_creature.meta[LEVEL]*3)/8),
+            'babfix')
+    #compensate for AC bonus from Dex
+    base_creature.defenses[AC].dodge.add_bonus(
+            -(base_creature.attributes[DEX].get_total()), 'dexfix')
+    #this overrides the base 10 because it has the same type
+    base_creature.defenses[AC].misc.add_bonus(base_creature.meta[LEVEL]+15,
+            BASE)
+monster_types[IDEAL] = LevelProgression(IDEAL, AVERAGE, POOR, POOR, POOR,
+        6, NONE, ideal_modifications)
