@@ -216,10 +216,10 @@ class ArmorClass:
             self.natural_armor.add_all(ac_modifiers['natural_armor'])
 
     def get_details(self):
-        return "%s = %s (armor) + %s (shield) + %s (dodge) + %s (natural_armor)" % (
+        return "%s = %s (armor) + %s (shield) + %s (dodge) + %s (natural armor) + %s (misc)" % (
                 self.misc.get_total(), self.armor.get_total(),
                 self.shield.get_total(), self.dodge.get_total(),
-                self.natural_armor.get_total())
+                self.natural_armor.get_total(), self.misc.get_total())
 
     def __str__(self):
         ac = 'AC ' + str(self.normal())
@@ -399,7 +399,7 @@ def bab_scale(base_attack_bonus):
     return 2+base_attack_bonus/5
 
 def get_size_statistics(size, in_feet = False):
-    space, reach, movement = {
+    space, reach, land_speed = {
                 SIZE_FINE: (0.5, 0, 5),
                 SIZE_DIMINUITIVE: (1, 0, 10),
                 SIZE_TINY: (2.5, 0, 15),
@@ -413,8 +413,8 @@ def get_size_statistics(size, in_feet = False):
     if in_feet:
         space = value_in_feet(space)
         reach = value_in_feet(reach)
-        movement = value_in_feet(movement)
-    return space, reach, movement
+        land_speed = value_in_feet(land_speed)
+    return space, reach, land_speed
 
 def get_size_modifier(size, is_special_size_modifier = False):
     if is_special_size_modifier:
@@ -502,3 +502,18 @@ def lower_encumbrance(encumbrance):
             'light': 'none',
             'none': 'none',
             }[encumbrance]
+
+def split_filtered(text, split_on=' '):
+    #filter None removes all elements that evaluate to False
+    return filter(None, re.split(split_on, text))
+
+def split_descriptor_and_value(text, split_on='[ +,]'):
+    text = split_filtered(text, split_on)
+    descriptor = None
+    value = 0
+    for elem in text:
+        if is_number(elem):
+            value = int(elem)
+        else:
+            descriptor = elem
+    return (descriptor, value)
