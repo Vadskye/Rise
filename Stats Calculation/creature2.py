@@ -114,9 +114,13 @@ class Creature(object):
         self.core[SPACE], self.core[REACH], self.core[SPEEDS][LAND_SPEED] = \
                 util.get_size_statistics(self.core[SIZE])
         #If the creature lists its speeds explicitly, use those instead
-        if SPEEDS in raw_stats.keys():
-            #Split the speeds into each separate speed
-            speeds = util.split_filtered(raw_stats[SPEEDS], ',')
+        if SPEEDS in raw_stats.keys() or 'speed' in raw_stats.keys():
+            #Split the raw speeds into each separate speed
+            #Allow either "speed" or "speeds" in creature file
+            try:
+                speeds = util.split_filtered(raw_stats[SPEEDS], ',')
+            except KeyError:
+                speeds = util.split_filtered(raw_stats['speed'], ',')
             for speed in speeds:
                 speed_mode, speed_value = util.split_descriptor_and_value(
                         speed)
