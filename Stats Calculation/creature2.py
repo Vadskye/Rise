@@ -22,7 +22,7 @@ class Creature(object):
                 REACH: None,
                 SIZE: SIZE_MEDIUM,
                 SPACE: None,
-                SPEED: None,
+                SPEEDS: {},
                 }
         self.defenses = {
                 AC: None,
@@ -107,11 +107,23 @@ class Creature(object):
             self.meta[LEVEL] = self._calc_minimum_level()
 
         #set core
-        if 'size' in raw_stats.keys():
+        if SIZE in raw_stats.keys():
             self.core[SIZE] = raw_stats['size']
         else:
             self.core[SIZE] = SIZE_MEDIUM
-        self.core[SPACE], self.core[REACH], self.core[SPEED] = util.get_size_statistics(self.core[SIZE])
+        self.core[SPACE], self.core[REACH], self.core[SPEEDS][LAND_SPEED] = \
+                util.get_size_statistics(self.core[SIZE])
+        #If the creature lists its speeds explicitly, use those instead
+        if SPEEDS in raw_stats.keys():
+            #Split the speeds into each separate speed
+            speeds = util.split_filtered(raw_stats[SPEEDS], ',')
+            for speed in speeds:
+                speed_mode, speed_value = util.split_descriptor_and_value(
+                        speed)
+                if speed_mode in SPEED_MODES:
+                    self.core[SPEEDS][speed_mode] = speed_value
+                else:
+                    self.core[SPEEDS][LAND_SPEED] = speed_value
 
         #set items
         equipment_set = equipment.EquipmentSet.from_raw_stats(
@@ -154,15 +166,8 @@ class Creature(object):
 
     #parse an attribute from raw_stats
     def _parse_attribute(self, attribute_name, raw_attribute):
-        split = re.split('[ +,]', raw_attribute)
-        progression = None
-        starting_value = 0
-        for elem in split:
-            if util.is_number(elem):
-                starting_value = int(elem)
-            #check if elem is true to ignore empty strings
-            elif elem:
-                progression = elem
+        progression, starting_value = util.split_descriptor_and_value(
+                raw_attribute)
 
         self.attributes[attribute_name].add_bonus(starting_value, BASE)
         self.attributes[attribute_name].set_progression(progression)
@@ -292,6 +297,7 @@ class Creature(object):
         full_string += '\n'+ self._to_string_defenses() 
         full_string += '\n' + self._to_string_attacks() 
         full_string += '\n' + self._to_string_attributes()
+        full_string += '\n' + self._to_string_core()
         return full_string
 
     def _to_string_defenses(self):
@@ -314,6 +320,11 @@ class Creature(object):
         for attribute_name in ATTRIBUTE_NAMES:
             attributes += ' ' + str(self.attributes[attribute_name].get_total())
         return attributes
+
+    def _to_string_core(self):
+        core = 'Space %s, Reach %s, Speed %s' % (self.core[SPACE],
+                self.core[REACH], self.core[SPEEDS])
+        return core
 
     def get_text_of_abilities_by_tag(self, tag, prefix = None, joiner = ', ',
             suffix = None):
@@ -402,7 +413,7 @@ class Creature(object):
         movement = r'\textbf{Space} %s; \textbf{Reach} %s' % (
                 util.value_in_feet(self.core[SPACE]), 
                 util.value_in_feet(self.core[REACH]))
-        movement += r'; \textbf{Speed} %s' % util.value_in_feet(self.core[SPEED])
+        movement += r'; \textbf{Speed} %s' % util.value_in_feet(self.core[SPEEDS])
         movement += self.get_text_of_abilities_by_tag('movement', prefix = ', ')
         movement += ENDLINE
         return movement
