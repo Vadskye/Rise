@@ -1671,13 +1671,6 @@ This spell can be made permanent with a \spell{permanency} ritual.
   \par Additionally, this spell has a chance to dispel any effect that \spell{remove curse} can remove, even if \spell{dispel magic} can't dispel that effect.
 \end{spelleffect}
 
-\spellsectioncomma{Dispel Magic}{Lesser}
-\spellschool{Abjuration (Negation) [Magic]}
-\spelllvl{Clr 1, Drd 2, Magic 1, Sor/Wiz 1}
-\begin{spelleffect}
-  This spell functions like a targeted \spell{dispel magic}, except that you add half your caster level to your dispel check.
-\end{spelleffect}
-
 \spellsection{Displacement}
 \spellschool{Illusion (Glamer)}
 \spelllvl{Sor/Wiz 4}
@@ -3284,17 +3277,18 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
 \spelldesc{You create an invisible but tangible field of force that surrounds you, protecting you from attacks.}
 \spellschool{Abjuration (Shielding) [Force]}
 \spelllvl{Sor/Wiz 1}
-\spellrng{Personal}
-\spelltgt{You}
-\spelldur{\durlong (D)}
+\spellrng{\rngclose}
+\spelltgt{One creature}
+\spelldur{\durshort or \durlong; see text (D)}
+\spellsave{Will negates (harmless)}
+\spellsr{Yes (Will)}
 \begin{spelleffect}
-  You gain a \plus2 armor modifier to AC. \bonusscalingdescription
+    As you cast this spell, you choose whether to create body armor or a shield. If you choose body armor, the subject gains a \plus2 armor modifier to AC. If you choose a shield, the subject gains a \plus2 shield modifier to AC. The bonus granted increases to \plus3 at 8th level, to \plus4 at 14th level, and finally to \plus5 at 20th level. 
   \par Unlike mundane armor, \spell{mage armor} entails no armor check penalty, arcane spell failure chance, or speed reduction.
+  \par If you cast this spell on yourself, it lasts for \durlong duration. On any other creature, it lasts for \durshort duration.
 \end{spelleffect}
 \begin{spellnotes}
-  This armor is treated as a separate piece or armor from any other armor the creature is wearing, so it does not stack with any existing armor modifier. Since \spell{mage armor} is made of force, incorporeal creatures can't bypass it the way they do normal armor.
-  
-  If you become subject to the \spell{shield} spell during the duration of this spell, the \spell{shield} spell lasts until this spell's duration ends.
+    If you cast this spell on the same creature twice, you can grant the creature both body armor and a shield. The armor created by this spell is treated as a separate piece or armor from any other armor the creature is wearing, so it does not stack with any existing bonuses. Since \spell{mage armor} is made of force, incorporeal creatures can't bypass it the way they do normal armor.
 \end{spellnotes}
 
 \spellsection{Mage Hand}
@@ -4422,7 +4416,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \end{spellnotes}
 
 \spellsection{Sanctuary}
-\spellschool{Abjuration/Enchantment (Compulsion, Shielding)}
+\spellschool{Abjuration/Enchantment (Compulsion, Shielding) [Mind-Affecting]}
 \spelllvl{Abjur 1, Clr 1, Pal 1, Protection 1}
 \spellrng{Touch}
 \spelltgt{Touched creature}
@@ -4432,6 +4426,9 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \begin{spelleffect}
   Any opponent attempting to strike or otherwise directly attack the shielded creature, even with a targeted spell, must attempt a Will save. If the save succeeds, the opponent can attack normally and is unaffected by that casting of the spell. If the save fails, the opponent can't follow through with the attack, that part of its action is lost, and it can't directly attack the shielded creature for the duration of the spell. Those not attempting to attack the subject remain unaffected. This spell does not prevent the shielded creature from being attacked or affected by area or effect spells. The subject cannot attack without breaking the spell but may use nonattack spells or otherwise act.
 \end{spelleffect}
+\begin{spellnotes}
+    This is considered a mind-affecting effect on any creature that attempts to attack the shielded creature. Creatures immune to mind-affecting effects can attack the shielded creature freely.
+\end{spellnotes}
 
 \pdfbookmark[2]{S}{SpellDescriptionsS}
 \begin{comment}
@@ -4703,24 +4700,6 @@ This spell can be made permanent with a \spell{permanency} ritual.
   \par Alternatively, you can target a single solid object or crystalline creature. In the case of large objects, such as walls, you target a 5 ft. cube. The target takes damage, with a Fortitude save for half damage.
   \par A creature holding vulnerable objects can attempt a Will save to negate any effect on to those objects.
 \end{spelleffect}
-
-\spellsection{Shield}
-\spelldesc{You create an invisible, heavy shield-sized mobile disk of force. It hovers in front of your ally, automatically moving to ward off enemy blows.}
-\spellschool{Abjuration (Shielding) [Force]}
-\spelllvl{Sor/Wiz 1}
-\spellrng{Touch}
-\spelltgt{Touched creature}
-\spelldur{\durshort (D); see text}
-\spellsave{Will negates (harmless)}
-\spellsr{Yes (Will)}
-\begin{spelleffect}
-  The subject gains a \plus2 shield modifier to AC. \bonusscalingdescription The subject is not encumbered or hindered in any way by the shield.
-\end{spelleffect}
-\begin{spellnotes}
-  This shield is considered to be separate from any other shields the creature is using, so it never stacks with existing shield modifiers. Since the \spell{shield} is made of force, incorporeal creatures can't bypass it the way they do normal shields.
-  
-  If you cast this spell on a creature subject to the \spell{mage armor} spell, its duration lasts until the \spell{mage armor} spell expires. 
-\end{spellnotes}
 
 \spellsection{Shield of Faith}
 \spelldesc{You create a shimmmering, magical shield that protects your ally as long as you maintain faith.}
