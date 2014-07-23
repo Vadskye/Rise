@@ -151,18 +151,6 @@
   When you make a weapon good, evil, lawful, or chaotic, \spell{align weapon} is a good, evil, lawful, or chaotic spell, respectively.
 \end{spellnotes}
 
-\spellsection{Alter Appearance}
-\spellschool{Transmutation (Polymorph)}
-\spelllvl{Trans 1}
-\spellrng{Personal}
-\spelltgt{You}
-\spelldur{\durlong}
-\spellsave{Fortitude negates}
-\spellsr{Yes (Fortitude)}
-\begin{spelleffect}
-    As part of casting this spell, you can make a Disguise check with a \plus10 enhancement bonus to alter your appearance. You can only alter your physical body, not your clothes or items.
-\end{spelleffect}
-
 \spellsection{Alter Weapon}
 \spellschool{Transmutation (Alteration)}
 \spelllvl{Sor/Wiz 1}
@@ -598,7 +586,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsection{Burning Hands}
 \spelldesc{You expel a cone of searing flame shoots from your fingertips, searing creatures in front of you.}
 \spellschool{Evocation (Energy) [Fire]}
-\spelllvl{Destruction 1, Fire 1, Sor/Wiz 1}
+\spelllvl{Destruction 1, Drd 1, Fire 1, Sor/Wiz 1}
 \spellarea{\areamed cone-shaped burst}
 \spelldur{Instantaneous}
 \spellsave{Reflex half}
@@ -664,25 +652,6 @@ If you take life damage, you lose all temporary hit points provided by this spel
   Any aggressive action against or damage dealt to a calmed creature immediately breaks the spell on all calmed creatures.
 
   This spell automatically suppresses (but does not dispel) any effects of spells or abilities that affect or require emotions, including all other enchantment (emotion) spells.
-\end{spellnotes}
-
-\spellsection{Cause Fear}
-\spelldesc{You fill your enemy with fear.}
-\spellschool{Enchantment (Emotion) [Fear, Mind-Affecting]}
-\spelllvl{Clr 1, Ench 1}
-\spellrng{\rngclose}
-\spelltgt{One creature}
-\spelldur{\durshort/1 round (D)}
-\spellsave{Will negates}
-\spellsr{Yes (Will)}
-\begin{spellhealthy}
-  The subject is shaken, causing it to be vulnerable.
-\end{spellhealthy}
-\begin{spellblood}
-  As the healthy effect, plus the subject is frightened for 1 round.
-\end{spellblood}
-\begin{spellnotes}
-  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. A frightened creature flees from the source of its fear as best it can. If unable to flee, it may fight. In addition, it is vulnerable.
 \end{spellnotes}
 
 \spellsection{Chain Lightning}
@@ -905,30 +874,17 @@ If you take life damage, you lose all temporary hit points provided by this spel
   This spell functions like \spell{command}, except that it affects multiple creatures.
 \end{spelleffect}
 
-\spellsectioncomma{Cone of Cold}{Lesser}
-\spelldesc{You create an area of extreme cold that drains heat from creatures in the area.}
-\spellschool{Evocation (Energy) [Cold]}
-\spelllvl{Drd 2, Sor/Wiz 2}
-\spellarea{\areamed cone-shaped burst}
-\spelldur{Instantaneous and 1 round}
-\spellsave{None/Reflex half}
-\spellsr{Yes (Reflex)}
-\spelldmg{2d6 cold damage \add d6 per four caster levels above 4th.}
-\begin{spelleffect}
-  Everything in the area takes damage. Creatures damaged by the spell are fatigued for 1 round.
-\end{spelleffect}
-\begin{spellnotes}
-    A fatigued character can neither sprint nor charge and is vulnerable, giving it a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
-\end{spellnotes}
-
 \spellsection{Cone of Cold}
 \spelldesc{You create an area of extreme cold that drains heat from creatures in the area, diminishing their ability to move and fight.}
 \spellschool{Evocation (Energy) [Cold]}
 \spelllvl{Drd 5, Sor/Wiz 5}
+\spellarea{\areamed cone-shaped burst}
+\spelldur{Instantaneous and 1 round}
 \spellsave{Reflex half/None}
+\spellsr{Yes (Reflex)}
 \spelldmg{5d6 cold damage \add d6 per four caster levels above 10th.}
 \begin{spelleffect}
-  This spell functions as \spell{lesser cone of cold}, except that affected creatures are fatigued for 5 rounds.
+    Everything in the area takes damage. Creatures damaged by the spell are fatigued for 5 rounds.
 \end{spelleffect}
 
 \spellsectioncomma{Cone of Cold}{Greater}
@@ -1067,7 +1023,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsection{Crush Life}
 \spelldesc{You attack the life force of a single foe directly, allowing no possibility for escape.}
 \spellschool{Necromancy (Life)}
-\spelllvl{Death 1, Necro 1}
+\spelllvl{Death 1, Sor/Wiz 1}
 \spellrng{\rngmed}
 \spelltgt{One living creature}
 \spelldur{Instantaneous}
@@ -1586,27 +1542,6 @@ This spell can be made permanent with a \spell{permanency} ritual.
   This spell gives no information about a creature's strengths or abilities -- only its weaknesses.
 \end{spellnotes}
 
-\spellsection{Disguise Self}
-\spellschool{Illusion (Glamer) [Unreal]}
-\spelllvl{Illus 1, Trickery 1}
-\spellrng{\rngpers}
-\spelltgt{You}
-\spelldur{\durlong (D)}
-\begin{spelleffect}
-    As part of casting this spell, you can make a Disguise check with a \plus10 enhancement bonus to alter your appearance, including your clothes and equipment.
-\end{spelleffect}
-\begin{spellnotes}
-  A creature that interacts with the effect gets a Will save to recognize it as an illusion. A creature that recognizes the effect as an illusion automatically sees through the disguise unless you are also disguised nonmagically, in which case it must beat that Disguise check as normal.
-\end{spellnotes}
-
-\spellsectioncomma{Disguise Self}{Greater}
-\spellschool{Illusion (Glamer) [Unreal]}
-\spelllvl{Illus 3}
-\spelldur{\durext (D)}
-\begin{spelleffect}
-  This spell functions like \spell{disguise self}, except that it lasts longer and you can change the disguise at will. By concentrating on the spell as a standard action, you can take on an entirely new appearance, just as if you has cast \spell{disguise self}. 
-\end{spelleffect}
-
 \spellsection{Disintegrate}
 \spelldesc{You shoot a thin, green ray from your pointing finger that completely destroys whatever it hits.}
 \spellschool{Transmutation (Alteration)}
@@ -2047,19 +1982,6 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldur{\durshort}
 \begin{spelleffect}
   You gain 5 temporary hit points \add 1 per caster level above 2nd. In addition, you gain a \plus2 enhancement bonus to Fortitude saves. \bonusscalingdescription If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
-\end{spelleffect}
-
-\spellsection{Farsight}
-\spelldesc{You grant the subject the ability to see farther and more accurately.}
-\spellschool{Divination (Awareness)}
-\spelllvl{Div 1}
-\spellrng{\rngtouch}
-\spelltgt{Touched creature}
-\spelldur{\durlong (D)}
-\spellsave{Will negates (harmless)}
-\spellsr{Yes (Will)}
-\begin{spelleffect}
-  The subject gains a \plus2 enhancement bonus to Spot checks and takes half the normal penalty for range increments and for Spot checks made at a distance. \bonusscalingdescription
 \end{spelleffect}
 
 \spellsection{Fear}

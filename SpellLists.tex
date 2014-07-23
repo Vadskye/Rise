@@ -20,7 +20,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \subsection{1st-level Cleric Spells}
 \begin{spelllist}
   \spellhead{Bane} Nearby enemies take \minus2 to attack.
-  \spellhead{Cause Fear} One creature is shaken, may flee.
   \spellhead{Command} One subject obeys selected command for 1 round.
   \spellhead{Cure Light Wounds} Cures 2d6 damage.
   \spellhead{Delay Poison} Quickly stops poison from harming subject.
@@ -620,7 +619,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \subsection{Trickery Domain}
 \subsubsection{Trickery Domain Spells}
 \begin{spelllist}
-  \spellhead[1]{Disguise Self} Changes your appearance.
+  \spellhead[1]{}
   \spellhead[1]{Ventriloquism} Throws voice for medium duration.
   \spellhead[2]{Darkness} Object sheds supernatural shadow in medium radius.
   \spellhead[2]{Silence} Negates sound in medium radius.
@@ -715,6 +714,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
 \subsection{1st-level Druid Spells}
 \begin{spelllist}
+  \spellhead{Burning Hands} 1d6 fire damage in medium cone.
   \spellhead{Cure Light Wounds} Cures 2d6 damage.
   \spellhead{Delay Poison} Quickly stops poison from harming subject.
   \spellhead{Earth's Pull} Subject feels gravity more strongly.
@@ -732,7 +732,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \begin{spelllist}
   \spellhead{Aqueous Blade} Weapon makes touch attacks. 
   \spellhead{Barkskin} Grants \plus2 bonus to AC and DR 2/adamantine.
-  \spellheadc{Cone of Cold}{Lesser} 2d6 cold damage and brief fatigue in medium cone.
   \spellhead{Control Water} Raises or lowers bodies of water.
   \spellhead{Cure Moderate Wounds} Cures 4d6 damage.
   \spellhead{Earthen Blade} Create magical weapon from the ground.
@@ -927,37 +926,33 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead[Div]{Detect Object} Detects a type of object in large cone.
   \spellhead{Locate Object} Senses direction toward visualized object.
   \spellhead{Message} Whispered conversation at distance.
-  \spellheadrestricted{Farsight} Doubles range of vision.
   \spellheadrestrictedc{Precognition}{Lesser} See into the future to gain attack and damage bonus.
 
   \spellhead[Ench]{Command} One subject obeys selected command for 1 round.
   \spellhead{Sanctuary} Opponents can't attack subject until it attacks.
   \spellhead{Sleep} Tire a creature, possibly putting it to sleep.
   \spellheadrestricted{Attraction} Subject has an attraction you specify.
-  \spellheadrestricted{Cause Fear} One creature is shaken, may flee.
 
   \spellhead[Evoc]{Burning Hands} 1d6 fire damage in medium cone.
   \spellhead{Mage Hand} 5-pound telekinesis.
   \spellhead{Magic Missile} Force missiles unerringly deal 2d4 damage.
   \spellhead{Shocking Grasp} Touch deals 2d6 electricity damage.
   \spellheadrestricted{Feather Fall} Objects or creatures fall slowly.
-  \spellheadrestricted{Gust of Wind} Blows away or knocks down smaller creatures in large line.
+  %\spellheadrestricted{Gust of Wind} Blows away or knocks down smaller creatures in large line.
 
   \spellhead[Illus]{Color Spray} Creatures in medium cone are bewildered.
   \spellhead{Dancing Lights} Creates torches or other lights.
   \spellhead{Ventriloquism} Throws voice for medium duration.
   \spellheadrestricted{Create Sound} Figment sounds.
-  \spellheadrestricted{Disguise Self} Changes your appearance.
 
   \spellhead[Necro]{Enfeeblement} Inflicts \minus4 penalty to physical attribute.
   \spellhead{Inflict Light Wounds} Deals 2d6 damage.
-  \spellheadrestricted{Crush Life} Target takes 1d10 damage unavoidably.
+  \spellhead{Crush Life} Target takes 1d10 damage unavoidably.
   \spellheadrestricted{False Life} Gain 5 temporary hp \plus1/level.
 
-  \spellhead[Trans]{Magic Vestment} Armor or shield becomes \plus2.
+  \spellhead[Trans]{Alter Weapon} Change weapon into similar weapon.
+  \spellhead{Magic Vestment} Armor or shield becomes \plus2.
   \spellhead{Quiet Mind} Briefly gain bonus to Concentation checks.
-  \spellhead{Alter Weapon} Change weapon into similar weapon.
-  \spellheadrestricted{Alter Appearance} Transforms your appearance.
   \spellheadrestricted{Expeditious Retreat} Your speed doubles.
 \end{swspelllist}
 
@@ -989,8 +984,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellheadrestricted{Aversion} Subject has aversion you specify.
   \spellheadrestricted{Charm Person} Makes one person your friend.
 
-  \spellheadc[Evoc]{Cone of Cold}{Lesser} 2d6 cold damage and brief fatigue in medium cone.
-  \spellhead{Scorching Ray} Ray (or rays) deal 4d6 fire damage.
+  \spellhead[Evoc]{Scorching Ray} Ray (or rays) deal 4d6 fire damage.
   \spellhead{Shatter} Sonic vibration damages objects or crystalline creatures.
   \spellhead{Sound Burst} Deafen and damage creatures and objects in an area. 
   \spellheadrestricted{Interposing Hand} Hand provides cover against one opponent at a time.
@@ -1054,7 +1048,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead{Invisibility} Subject is invisible until it attacks.
   \spellhead{Phantom Steed} Shadow horse appears for extended duration.
   \spellhead{Rainbow Pattern} Lights fascinate 24 HV of creatures.
-  \spellheadrestrictedc{Disguise Self}{Greater} Change your appearance at will.
   \spellheadrestricted{Minor Image} As \spell{silent image}, plus some sound.
 
   \spellhead[Necro]{Contagion} Infects subject with chosen disease.
@@ -1393,6 +1386,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead{Identify} Determines properties of magic item.
   \spellhead{Unseen Servant} Invisible force obeys your commands.
   \spellhead[Craft]{Mending} Makes minor repairs on an object.
+  \spellhead[Disguise]{Disguise Self} Changes your appearance.
   \spellhead[Engineering]{Mending} Makes minor repairs on an object.
   \spellhead[Forgery]{Erase} Mundane or magical writing vanishes.
   \spellhead[Nature]{Mount} Summons riding horse for 24 hours.
@@ -1431,6 +1425,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead{Secret Page} Changes one page to hide its real content.
   \spellhead{Sepia Snake Sigil} Creates text symbol that immobilizes reader.
   \spellheadc[Craft]{Mending}{Greater} Repairs an object.
+  \spellhead[Disguise]{Disguise Self}{Greater} Change your appearance at will.
   \spellheadc[Eng]{Mending}{Greater} Repairs an object.
 %\spellhead[Craft]{Object Reading} Learn details about an object's previous owners.
 %\spellhead[Engineering]{Object Reading} Learn details about an object's previous owners.
@@ -1555,6 +1550,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \subsection{1st-level Divine Rituals}
 \begin{rituallist}
   \spellhead[Craft]{Mending} Makes minor repairs on an object.
+  \spellhead[Disguise]{Disguise Self} Changes your appearance.
   \spellhead[Eng]{Mending} Makes minor repairs on an object.
   \spellhead[Nature]{Pass without Trace} One subject/level leaves no tracks.
   \spellhead[Relig]{Bless Water} Makes holy water.
@@ -1589,6 +1585,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead[Arcana]{Fire Trap} Opened object deals 1d4/level fire damage.
   \spellhead{Remove Curse} Frees object or person from curse.
   \spellheadc[Craft]{Mending}{Greater} Repairs an object.
+  \spellhead[Disguise]{Disguise Self}{Greater} Change your appearance at will.
   \spellheadc[Engineering]{Mending}{Greater} Repairs an object.
   \spellhead[Heal]{Remove Disease} Cures all diseases affecting subject.
   \spellhead{Remove Blindness/Deafness} Cures normal or magical conditions.

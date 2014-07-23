@@ -19,6 +19,19 @@
 A \spell{silence} spell or similar effect can prevent the alarm from being heard. Ethereal or astral creatures do not trigger the alarm. \ritual{Alarm} can be made permanent with a permanency spell.
 \end{spellnotes}
 
+\spellsection{Alter Self}
+\spellschool{Transmutation (Polymorph)}
+\spelllvl{Arcane 2}
+\spellskill{Disguise}
+\spellrng{Personal}
+\spelltgt{You}
+\spelldur{\durlong}
+\spellsave{Fortitude negates}
+\spellsr{Yes (Fortitude)}
+\begin{spelleffect}
+    You use the Disguise check required to perform this ritual to alter your shape. You gain a \plus10 enhancement bonus on the check, and you take no penalties for emulating a different gender or race.
+\end{spelleffect}
+
 \spellsection{Analyze Dweomer}
 \spelldesc{You infallibly discern the magical properties of a magic item.}
 \spellschool{Divination (Knowledge)}
@@ -556,6 +569,29 @@ This ritual imbues an area with unholy power. Every undead creature in a \ritual
 \begin{spelleffect}
 You immediately become aware of any attempt to observe you by means of a divination (scrying) spell or effect. The ritual's area radiates from you and moves as you move. You know the location of every magical sensor within the ritual's area.
 \par If the scrying attempt originates within the area, you also know its location; otherwise, you and the scrier immediately make opposed caster level checks (1d20 \add caster level). If you at least match the scrier's result, you get a visual image of the scrier and an accurate sense of his or her direction and distance from you.
+\end{spelleffect}
+
+\spellsection{Disguise Self}
+\spellschool{Illusion (Glamer) [Unreal]}
+\spellskill{Disguise}
+\spelllvl{Arcane 1, Divine 1}
+\spellrng{\rngpers}
+\spelltgt{You}
+\spelldur{\durlong (D)}
+\begin{spelleffect}
+    You use the Disguise check required to perform this ritual to create an illusory disguise for yourself. You gain a \plus10 enhancement bonus on the check, and you can freely alter the appearance of your clothes and equipment, regardless of their original form.
+\end{spelleffect}
+\begin{spellnotes}
+  A creature that interacts with the effect gets a Will save to recognize it as an illusion. A creature that recognizes the effect as an illusion automatically sees through the disguise unless you are also disguised through non-illusory means, in which case it must beat that Disguise check as normal.
+\end{spellnotes}
+
+\spellsectioncomma{Disguise Self}{Greater}
+\spellschool{Illusion (Glamer) [Unreal]}
+\spellskill{Disguise}
+\spelllvl{Arcane 3, Divine 3}
+\spelldur{\durext (D)}
+\begin{spelleffect}
+  This ritual functions like \spell{disguise self}, except that it lasts longer and you can change the disguise at will. By concentrating on the effect as a standard action, you can take on an entirely new appearance, just as if you had performed the \spell{disguise self} ritual again.
 \end{spelleffect}
 
 \spellsection{Discern Location}
