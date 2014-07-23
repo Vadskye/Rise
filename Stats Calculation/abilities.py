@@ -180,11 +180,12 @@ def natural_weapon_benefit(creature):
 abilities['improved natural weapon'] = Ability('improved natural weapon',
         apply_benefit = natural_weapon_benefit, points=1)
 
-abilities['enslave'] = Ability('enslave', text = 'enslave', points=4)
-abilities['slime'] = Ability('slime', text = 'slime', points=3)
+abilities['enslave'] = Ability('enslave', text = 'enslave', points=2)
+abilities['slime'] = Ability('slime', text = 'slime', points=2)
 abilities['carapace'] = Ability('carapace', 
         apply_benefit = lambda c: c.meta[LEVEL_PROGRESSION].improve_progression(
             'natural_armor_progression'), points=1)
+abilities['mucus cloud'] = Ability('mucus cloud', points=2)
 
 ####################
 #MONSTER TEMPLATES
