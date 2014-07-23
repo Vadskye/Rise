@@ -46,6 +46,7 @@ class Creature(object):
                 WEAPON_PRIMARY: None,
                 WEAPON_SECONDARY: None,
                 }
+        self.skills = dict()
 
         self.abilities = set()
         self.raw_stats = raw_stats
