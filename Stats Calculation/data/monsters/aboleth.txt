@@ -16,6 +16,7 @@ charisma=average
 trait=enslave
 trait=slime
 trait=carapace
+trait=mucus cloud
 #feat=
 
 #core
