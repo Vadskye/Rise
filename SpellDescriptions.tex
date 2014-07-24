@@ -24,7 +24,7 @@
 \spellsection{Ablative Fortress}
 \spelldesc{You instantly create a simmering field of magical energy, protecting you and your allies from hostile magic.}
 \spellschool{Abjuration (Negation) [Magic]}
-\spelllvl{Abjur 4, Magic 4}
+\spelllvl{Abjur 3, Magic 3}
 \spellarea{\areamed radius limit centered on you}
 \spelltgts{All allies within the area}
 \spellsave{Will negates (harmless)}
@@ -914,32 +914,6 @@ If you take life damage, you lose all temporary hit points provided by this spel
   This spell functions like \spell{confusion}, except that it affects multiple creatures. If there are more creatures in the area than you can affect, randomly determine which creatures are affected.
 \end{spelleffect}
 
-\spellsection{Contagion}
-\spelldesc{You infect your foe with a contagious disease.}
-\spellschool{Necromancy (Flesh) [Disease]}
-\spelllvl{Clr 3, Destruction 3, Drd 3, Sor/Wiz 3}
-\spellrng{\rngmed}
-\spelltgt{One living creature}
-\spelldur{Instantaneous}
-\spellsave{Fortitude negates}
-\spellsr{Yes (Fortitude)}
-\begin{spelleffect}
-  The subject contracts a disease selected from the table below, which strikes immediately (no incubation period). The DC for both the initial and subsequent saving throws is equal to this spell's save DC.  
-  \begin{dtable}
-    \begin{tabularx}{\columnwidth}{l X}
-      \thead{Disease} & \thead{Damage} \\
-      Blinding sickness & 1d4 Str\footnotetemp{1} \\
-      Cackle fever & 1d6 Wis \\
-      Filth fever & 1d3 Dex and 1d3 Con \\
-      Mindfire & 1d6 Int \\
-      Red ache & 1d6 Str \\
-      Shakes & 1d6 Dex \\
-      Slimy doom & 1d6 Con
-    \end{tabularx}
-    1 Each time a victim takes 3 or more Strength damage from blinding sickness, he or she must make another Fortitude save or be permanently blinded.	 
-  \end{dtable}
-\end{spelleffect}
-
 \spellsection{Control Water}
 \spelldesc{You manipulate elemental forces to control water around you.}
 \spellschool{Evocation (Control) [Water]}
@@ -1006,29 +980,6 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \begin{spellnotes}
  A staggered character may take a single move action or standard action each round, but not both. She cannot take full-round actions, but she may take swift actions. In addition, she is vulnerable, causing her to take a \minus2 penalty on attack rolls, saving throws, checks, DCs, and AC.
 \end{spellnotes}
-
-\spellsection{Crush Life}
-\spelldesc{You attack the life force of a single foe directly, allowing no possibility for escape.}
-\spellschool{Necromancy (Life)}
-\spelllvl{Death 1, Sor/Wiz 1}
-\spellrng{\rngmed}
-\spelltgt{One living creature}
-\spelldur{Instantaneous}
-\spellsave{None}
-\spellsr{Yes (Fort)}
-\spelldmg{1d10 life damage \add d10 per four caster levels above 2nd}
-\begin{spelleffect}
-  The target takes damage.
-\end{spelleffect}
-
-\spellsectioncomma{Crush Life}{Greater}
-\spelldesc{You obliterate the life force of a single foe directly, allowing no possibility for escape.}
-\spellschool{Necromancy (Life)}
-\spelllvl{Necro 4}
-\spelldmg{4d10 life damage \add d10 per four caster levels above 8th}
-\begin{spelleffect}
-  This spell functions like \spell{crush life}, except that the target is also sickened for 5 rounds.
-\end{spelleffect}
 
 \spellsection{Crushing Despair}
 \spelldesc{You fill a number of creatures with sadness and gloom.}
@@ -1192,25 +1143,6 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \end{spelleffect}
 \begin{spellnotes}
   \spell{Daylight} brought into an area of magical darkness (or vice versa) is temporarily negated, so that the otherwise prevailing light conditions exist in the overlapping areas of effect.
-\end{spellnotes}
-
-\spellsection{Daze}
-\spelldesc{You cloud the mind of your foe, preventing it from taking any actions.}
-\spellschool{Enchantment (Inhibition) [Mind-Affecting]}
-\spelllvl{Sor/Wiz 3}
-\spellrng{\rngmed}
-\spelltgt{One creature}
-\spelldur{\durshort}
-\spellsave{None/Will negates}
-\spellsr{Yes (Will)}
-\begin{spellhealthy}
-  The subject is bewildered, making it vulnerable.
-\end{spellhealthy}
-\begin{spellblood}
-  As the healthy effect, and the subject is also dazed for 1 round if it fails a Will save. A dazed creature can take no actions, though it can defend itself normally.
-\end{spellblood}
-\begin{spellnotes}
-  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
 \end{spellnotes}
 
 \spellsectioncomma{Daze}{Mass}
@@ -1932,17 +1864,6 @@ This spell can be made permanent with a \spell{permanency} ritual.
   The light is too dim to have any special effect on undead or dark-dwelling creatures vulnerable to light. The \spell{faerie fire} can be blue, green, or violet, according to your choice at the time of casting. This spell does not cause any harm to the objects or creatures thus outlined.
 \end{spelleffect}
 
-\spellsection{False Life}
-\spelldesc{You harness the power of life to grant yourself a limited ability to avoid death.}
-\spellschool{Necromancy (Life)}
-\spelllvl{Necro 1}
-\spellrng{\rngpers}
-\spelltgt{You}
-\spelldur{\durshort}
-\begin{spelleffect}
-  You gain 5 temporary hit points \add 1 per caster level above 2nd. In addition, you gain a \plus2 enhancement bonus to Fortitude saves. \bonusscalingdescription If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
-\end{spelleffect}
-
 \spellsection{Fear}
 \spelldesc{You project an invisible cone that drives creatures away from you in abject fear.}
 \spellschool{Enchantment (Emotion) [Fear, Mind-Affecting]}
@@ -2279,25 +2200,20 @@ This spell can be made permanent with a \spell{permanency} ritual.
     While in the air, a creature with a glide speed can control its fall as a move action. This allows it to move up to its speed horizontally in a direction of its choice while moving only five feet down. If it desires, it can move half as far horizontally and fall down twice as fast. It takes no falling damage if it touches the ground while gliding.
 \end{spellnotes}
 
-\begin{comment}
 \spellsection{Ghoul Touch}
 \spellschool{Necromancy (Flesh)}
-\spelllvl{Sor/Wiz 3}
+\spelllvl{Sor/Wiz 1}
 \spellrng{\rngtouch}
 \spelltgt{Touched living creature}
 \spelldur{\durshort}
 \spellsave{None/Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
-  The subject is sickened, making it vulnerable.
+  The subject is sickened, making it vulnerable. If it fails a Fortitude save, it exudes a carrion stench that causes all living creatures (except you and the subject) in a \areasmall radius spread to become sickened for 5 rounds, making them vulnerable. A successful Fortitude save negates the sickening from the stench.
 \end{spelleffect}
-\begin{spellblood}
-  In addition, the subject is paralyzed if it fails a Fortitude save. Each round that it is paralyzed, the subject can make a new saving throw. If it succeeds, it is no longer paralyzed by the spell, though it is still sickened. In addition, as long as it is paralyzed, the subject exudes a carrion stench that causes all living creatures (except you) in a \areasmall radius spread to become sickened (Fortitude negates) for 5 rounds.
-\end{spellblood}
 \begin{spellnotes}
   A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
 \end{spellnotes}
-\end{comment}
 
 \spellsection{Giant Vermin}
 \spellschool{Transmutation (Polymorph)}
@@ -2497,7 +2413,7 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \spellsection{Heroism}
 \spelldesc{You imbue your ally with great bravery and morale in battle.}
 \spellschool{Enchantment (Emotion) [Mind-Affecting, Morale]}
-\spelllvl{Ench 3}
+\spelllvl{Sor/Wiz 3}
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{\durshort (D)}
@@ -2988,14 +2904,14 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
 
 \spellsection{Levitate}
 \spellschool{Evocation (Control)}
-\spelllvl{Evoc 3}
+\spelllvl{Sor/Wiz 3}
 \spellrng{\rngclose}
 \spelltgt{You or one willing creature or one object (total weight up to 100 lb./level)}
 \spelldur{\durshort (D)}
 \spellsave{None}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  This spell allows you to telekinetically move the subject up and down as you wish. A creature must be willing to be levitated, and an object must be unattended or possessed by a willing creature. You can mentally direct the recipient to move up or down as much as 20 feet each round; doing so is a swift action. You cannot move the recipient horizontally, but the recipient could clamber along the face of a cliff, for example, or push against a ceiling to move laterally (generally at half its base land speed).
+  This spell allows you to telekinetically move the subject up and down as you wish. A creature must be willing to be levitated, and an object must be unattended or possessed by a willing creature. As a swift action, you can mentally direct the subject to move up or down as much as 20 feet each round. You cannot move the recipient horizontally, but the recipient could clamber along the face of a cliff, for example, or push against a ceiling to move laterally (generally at half its base land speed).
 \end{spelleffect}
 
 \spellsection{Lifeseeking Missile}
@@ -4007,17 +3923,6 @@ This spell can be made permanent with a \spell{permanency} ritual.
   The subject's Dexterity score cannot drop below 1.
 \end{spellnotes}
 
-\spellsection{Redirection}
-\spellschool{Abjuration (Shielding)}
-\spelllvl{Abjur 3}
-\spellrng{Personal}
-\spelltgt{You}
-\spelldur{\durshort (D)}
-\begin{spelleffect}
-  Attacks made against you have a 20\% miss chance. This miss chance stacks with and is rolled before any other miss chance, such as from active cover. Any attack that misses you because of this miss chance is instead made against a new creature of your choice, other than the attacker.
-  \par The new target must be a creature adjacent to you that the attacker threatens (if using a melee weapon) or can target (if using a ranged weapon). The new target must also be a creature that you can see and target. If there is no such creature, the attack simply misses.
-\end{spelleffect}
-
 \spellsection{Reduce Person}
 \spellschool{Transmutation (Polymorph) [Size-Affecting]}
 \spelllvl{Trans 1}
@@ -4827,32 +4732,6 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
   Everything in the area takes damage, and creatures are deafened for 5 rounds. A successful Fortitude save halves the damage and negates the deafening.
 \end{spelleffect}
 
-\spellsection{Spell Immunity}
-\spellschool{Abjuration (Shielding) [Magic]}
-\spelllvl{Clr 3, Magic 3, Protection 3, Sor/Wiz 3}
-\spellrng{\rngclose}
-\spelltgt{One creature}
-\spelldur{\durshort}
-\spellsave{Will negates (harmless)}
-\spellsr{Yes (Will)}
-\begin{spelleffect}
-  The subject is immune to the effects of one school of magic. Any spell from the chosen school which allows spell resistance simply fails to affect the subject. This applies to spells of 4th level or lower. At 8th level, and every four levels thereafter, the maximum spell level affected increases by one.
-\end{spelleffect}
-\begin{spellnotes}
-   This spell protects against spells, spell-like effects of magic items, and innate spell-like abilities of creatures. It does not protect against supernatural or extraordinary abilities, such as breath weapons or gaze attacks, nor against spells which do not allows spell resistance.
-  \par A creature can have only one \spell{spell immunity} effect on it at a time.
-\end{spellnotes}
-
-\spellsectioncomma{Spell Immunity}{Greater}
-\spellschool{Abjuration (Shielding) [Magic]}
-\spelllvl{Clr 8, Magic 8, Protection 8, Sor/Wiz 8}
-\begin{spelleffect}
-  This spell functions like \spell{spell immunity}, except that it protects the subject from two schools, and the immunity applies to spells of any level.
-\end{spelleffect}
-\begin{spellnotes}
-  A creature can have only one \spell{spell immunity} effect on it at a time.
-\end{spellnotes}
-
 \spellsection{Spell Resistance}
 \spellschool{Abjuration (Shielding) [Magic]}
 \spelllvl{Clr 4, Magic 4, Protection 4, Sor/Wiz 4}
@@ -5468,33 +5347,6 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
   \par If you use this power to hurl a creature against a solid surface, it takes damage as if it had fallen 50 feet (5d6 damage).
 \end{spelleffect}
 
-\spellsection{Telepathic Bond}
-\spelldesc{You forge a mental link binding two allies together.}
-\spellschool{Divination/Transmutation (Communication, Imbuement)}
-\spelllvl{Sor/Wiz 3}
-\spellrng{\rngclose}
-\spelltgts{You and one willing creature, or two willing creatures}
-\spelldur{\durext (D)}
-\spellsave{None}
-\spellsr{Yes (Will)}
-\begin{spelleffect}
-  The subjects can communicate mentally through telepathy. The communication is instantaneous across any distance within the same plane.
-\end{spelleffect}
-\begin{spellnotes}
-  No special influence is established as a result of the bond. This spell can be made permanent with a \spell{permanency} ritual.
-\end{spellnotes}
-
-\spellsection{Telepathic Bond, Mass}
-\spellschool{Divination/Transmutation (Communication, Imbuement)}
-\spelllvl{Sor/Wiz 6}
-\spelltgts{You plus up to five willing creatures in a \areamed radius }
-\begin{spelleffect}
-  This spell functions like \spell{telepathic bond}, except that it links multiple creatures together into the same bond. Each affected creature can communicate with all other creatures, either privately or to the group as a whole. If desired, you may leave yourself out of the bond forged. This decision must be made at the time of casting.
-\end{spelleffect}
-\begin{spellnotes}
-This spell can be made permanent with a \spell{permanency} ritual. If you cast this spell multiple times, you may link each casting of the spell together such that all subjects may telepathically communicate with each other. 
-\end{spellnotes}
-
 \spellsection{Temporal Stasis}
 \spellschool{Transmutation (Temporal)}
 \spelllvl{Sor/Wiz 8}
@@ -5770,19 +5622,34 @@ This spell can be made permanent with a \spell{permanency} ritual. If you cast t
 \spellsave{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The subject gains the ability to ``see'' any living creatures and their equipment within 60 feet perfectly, regardless of lighting conditions, physical barriers, invisibility, or any other means of concealment.
+  The subject gains the ability to ``see'' any living creatures and their equipment within 30 feet perfectly, regardless of lighting conditions, physical barriers, invisibility, or any other means of concealment.
+
+  If you cast this spell on an undead creature, the range of the vision is doubled to 60 feet.
+\end{spelleffect}
+
+\spellsection{Unliving Heart}
+\spelldesc{You harness the power of unlife to grant yourself a limited ability to avoid death.}
+\spellschool{Necromancy (Life)}
+\spelllvl{Necro 1}
+\spellrng{\rngpers}
+\spelltgt{You}
+\spelldur{\durlong}
+\begin{spelleffect}
+  You gain 5 temporary hit points \add 1 per caster level above 2nd. If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
+
+  In addition, you are treated as being undead for the purpose of spells or abilities which affect undead. This causes some unintelligent undead, such as skeletons and zombies, to avoid attacking you.
 \end{spelleffect}
 
 %gaining full temp HP would be level 5
 \spellsection{Vampiric Touch}
 \spellschool{Necromancy (Life)}
-\spelllvl{Necro 3}
+\spelllvl{Sor/Wiz 4}
 \spellrng{Touch}
 \spelltgt{Touched living creature}
 \spelldur{Instantaneous/\durmed}
 \spellsave{Fortitude half}
 \spellsr{Yes (Fortitude)}
-\spelldmg{6d8 life damage \add d8 per two caster levels above 6th}
+\spelldmg{8d8 life damage \add d8 per two caster levels above 8th}
 \begin{spelleffect}
   The touched creature takes damage. You gain temporary hit points equal to half the damage you deal. However, you can't gain more hit points than the damage required to kill the subject. The temporary hit points disappear 1 hour later.
 
