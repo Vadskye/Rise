@@ -562,7 +562,7 @@ Unholy water can be thrown as a splash weapon, dealing 2d4 points of damage to a
 \spellsection{Darkness}
 \spelldesc{You create a dark aura around an object of your choosing, keeping light without. Even a dwarf's vision is hampered by this shadowy sphere.}
 \spellschool{Illusion (Glamer) [Darkness]}
-\spellskill{Arcana, Craft}
+\spellskill{Arcana}
 \spelllvl{Arcane 2, Divine 2}
 \spelltime{1 minute}
 \spellrng{\rngtouch}
@@ -786,7 +786,7 @@ The object receives no saving throw against the explosion. Magic traps such as \
 
 \spellsection{Fabricate}
 \spellschool{Transmutation (Alteration)}
-\spellskill{Craft, Engineering}
+\spellskill{Craft (any), Engineering}
 \spelllvl{Arcane 5}
 \spelltime{See text}
 \spellrng{\rngclose}
@@ -869,7 +869,7 @@ This divination is keyed to the recipient, not its companions, and its effect do
 \spellsection{Find Traps}
 \spelldesc{You grant your ally an intuitive insight into the workings of traps, allowing her to easily spot danger ahead.}
 \spellschool{Divination (Knowledge)}
-\spellskill{Craft, Engineering, Perception}
+\spellskill{Craft (traps), Engineering, Perception}
 \spelllvl{Arcana 2, Divine 2}
 \spellrng{Touch}
 \spelltgt{One touched creature}
@@ -1350,7 +1350,7 @@ This spell imbues the chosen object or creature with an enchanted mouth that sud
 
 \spellsection{Major Creation}
 \spellschool{Conjuration (Creation)}
-\spellskill{Craft, Engineering}
+\spellskill{Craft (any), Engineering}
 \spelllvl{Arcane 5}
 \spelltime{10 minutes}
 \spellrng{\rngclose}
@@ -1388,7 +1388,7 @@ You draw an indelible mark on the subject and state some behavior on the part of
 
 \spellsection{Mending}
 \spellschool{Transmutation (Alteration)}
-\spellskill{Craft, Engineering}
+\spellskill{Craft (any), Engineering}
 \spelllvl{Arcane 1, Divine 1}
 \spelltime{1 minute}
 \spellrng{Touch}
@@ -1406,7 +1406,7 @@ The spell cannot affect creatures (including constructs).
 
 \spellsection{Mending, Greater}
 \spellschool{Transmutation (Alteration)}
-\spellskill{Craft, Engineering}
+\spellskill{Craft (any), Engineering}
 \spelllvl{Arcane 3, Divine 3}
 \spelltgt{One object of up to 10 cu. ft./level}
 \begin{spelleffect}
@@ -1429,7 +1429,7 @@ The subject is protected from all devices and spells that detect, influence, or 
 
 \spellsection{Minor Creation}
 \spellschool{Conjuration (Creation)}
-\spellskill{Craft, Engineering}
+\spellskill{Craft (any), Engineering}
 \spelllvl{Arcane 4}
 \spelltime{1 minute}
 \spellrng{0 ft.}
@@ -1616,33 +1616,6 @@ If cast on a creature, \spell{nondetection} wards anything the creature carries 
 \begin{spelleffect}
 This spell hides an object from location by divination (scrying) effects, such as the \spell{scrying} spell or a crystal ball. Such an attempt automatically fails (if the divination is targeted on the object) or fails to perceive the object (if the divination is targeted on a nearby location, object, or person).
 \end{spelleffect}
-
-\spellsection{Object Reading}
-\spellschool{Divination (Knowledge)}
-\spellskill{Craft, Engineering}
-\spelllvl{Arcane 3}
-\spelltime{1 minute}
-\spellrng{Touch}
-\spelltgt{Object touched}
-\spelldur{Concentration, up to \durlong}
-\spellsave{None}
-\spellsr{Yes (Will)}
-\begin{spelleffect}
-You can learn details of an inanimate object's previous owner. Objects accumulate psychic impressions left by their previous owners, which can be read by use of this power. The amount of information revealed depends on how long you study a particular object.
-\par 1st Minute: Last owner's race.
-\par 2nd Minute: Last owner's gender.
-\par 3rd Minute: Last owner's age.
-\par 4th Minute: Last owner's alignment.
-\par 5th Minute: How last owner gained and lost the object.
-\par 6th\add Minute: Next-to-last owner's race, and so on.
-\par The power always correctly identifies the last owner of the item. Each owner after the first has a 10\% chance to be skipped. This chance increases by 10\% per previous owner; the second owner has a 10\% chance to be skipped, the third owner has a 20\% chance to be skipped, and so on. The spell can never reveal an owner beyond the tenth owner.
-\par This power will not identify casual users as owners. (Anyone who uses an object to attack someone or something is not thereafter considered a casual user.)
-\par You can continue to run through a list of previous owners and learn details about them as long as the spell's duration lasts. 
-\end{spelleffect}
-\begin{spellnotes}
-An object without any previous owners reveals no information. If you use this spell additional times on the same object, the information yielded is the same as if you were using the power on the object for the first time.
-\end{spellnotes}
-\end{comment}
 
 \spellsection{Pass Without Trace}
 \spellschool{Transmutation (Imbuement)}
@@ -2283,6 +2256,36 @@ The shambler spell creates 1d4\plus2 shambling mounds. The creatures willingly a
 \par The shamblers have resistance to fire as normal shambling mounds do only if the terrain is rainy, marshy, or damp.
 \end{spelleffect}
 
+\spellsection{Shape Metal}
+\spellschool{Transmutation (Alteration)}
+\spellskill{Craft (metal)}
+\spelllvl{Arcane 4, Divine 4}
+\begin{spelleffect}
+    This ritual functions like \spell{shape wood}, except that it requires Craft (metal) and shapes metal instead of wood. 
+\end{spelleffect}
+
+\spellsection{Shape Stone}
+\spellschool{Transmutation (Alteration) [Earth]}
+\spellskill{Craft (stone)}
+\spelllvl{Arcane 3, Divine 3}
+\begin{spelleffect}
+    This ritual functions like \spell{shape wood}, except that it requires Craft (stone) and shapes stone instead of wood.
+\end{spelleffect}
+
+\spellsection{Shape Wood}
+\spellschool{Transmutation (Alteration)}
+\spellskill{Craft (wood)}
+\spelllvl{Arcane 2, Divine 2}
+\spelltime{10 minutes}
+\spellrng{Touch}
+\spelltgt{Nonmagical wood touched, affecting up to 10 cubic feet}
+\spelldur{Instantaneous}
+\spellsave{No}
+\spellsr{Yes (Fortitude)}
+\begin{spelleffect}
+    You use the Craft check required to perform this ritual to shape an existing piece of wood, or part of a larger piece of wood, to suit your purposes. You gain a \plus10 enhancement bonus on the check, and you need no additional tools, but you can only affect wood.
+\end{spelleffect}
+
 \spellsection{Snare}
 \spellschool{Transmutation (Alteration) [Trap]}
 \spellskill{Survival}
@@ -2337,7 +2340,7 @@ This spell does not affect a corpse that has been turned into an undead creature
 \begin{comment}
 \spellsection{Spellstaff}
 \spellschool{Transmutation (Imbuement) [Magic]}
-\spellskill{Craft, Nature}
+\spellskill{Craft (wood), Nature}
 \spelllvl{Divine 4}
 \spellcmp{V, S, F}
 \spelltime{10 minutes}
