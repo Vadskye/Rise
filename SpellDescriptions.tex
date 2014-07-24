@@ -1483,12 +1483,16 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellschool{Conjuration (Translocation) [Teleportation]}
 \spelllvl{Conj 3, Travel 3}
 \spellrng{\rngclose}
-\spelltgt{You; see text}
+\spelltgt{One willing creature}
 \spelldur{Instantaneous}
+\spellsave{None}
+\spellsr{Yes (Will)}
 \begin{spelleffect}
-  You instantly transfer yourself from your current location to any other spot within range to which you have line of sight. You can bring along objects as long as their weight doesn't exceed your maximum load. Movement caused by the use of dimension slide does not provoke attacks of opportunity.
-  \par If you somehow attempt to transfer yourself to a location occupied by a solid body or a location you can't see, the spell simply fails to function.
+    The target is instantly teleported from its current location to any other spot within range to which you have line of sight. It can bring along objects as long as their weight doesn't exceed the creature's maximum load.
 \end{spelleffect}
+\begin{spellnotes}
+    If you somehow attempt to transfer the creature into a location occupied by a solid body or a location you can't see, the spell simply fails to function.
+\end{spellnotes}
 
 \spellsection{Dimensional Anchor}
 \spelldesc{You surround your foe in a shimmering emerald field that completely blocks extradimensional travel, preventing it from escaping you.}
@@ -1500,7 +1504,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsave{Will partial}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The subject cannot travel extradimensionally for an hour. A successful Will save reduces the duration to 5 rounds. Effects barred by a \spell{dimensional anchor} include \spell{astral projection}, \spell{blink}, \spell{dimension door}, \spell{dissipating touch}, \spell{ethereal jaunt}, \spell{gate}, \spell{maze}, \spell{plane shift}, \spell{shadow walk}, \spell{teleport}, and similar spell-like, psionic, or supernatural abilities.
+  The subject cannot travel extradimensionally for an hour. A successful Will save reduces the duration to 5 rounds. Effects barred by a \spell{dimensional anchor} include \spell{astral projection}, \spell{blink}, \spell{dimension door}, \spell{ethereal jaunt}, \spell{gate}, \spell{maze}, \spell{plane shift}, \spell{shadow walk}, \spell{teleport}, and similar spell-like, psionic, or supernatural abilities.
 \end{spelleffect}
 \begin{spellnotes}
   A dimensional anchor does not interfere with the movement of creatures already in ethereal or astral form when the spell is cast, nor does it block extradimensional perception or attack forms, such as summoning monsters. Also, dimensional anchor does not prevent summoned creatures from disappearing at the end of a summoning spell. 
@@ -1631,20 +1635,6 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsr{Yes (Will)/Yes (Fortitude)}
 \begin{spelleffect}
   This spell infuses a melee weapon with positive energy, making it deadly to undead. Each round, the first bloodied undead creature struck by this weapon must succeed on a Fortitude save or be destroyed utterly. Healthy undead creatures suffer no ill effect.
-\end{spelleffect}
-
-\spellsection{Dissipating Touch}
-\spelldesc{Your mere touch can disperse the surface material of your foe, sending a tiny portion of it far away.}
-\spellschool{Conjuration (Translocation) [Teleportation]}
-\spelllvl{Conj 2}
-\spellrng{\rngtouch}
-\spelltgt{Creature or object touched}
-\spelldur{Instantaneous/1 round}
-\spellsave{Will half (object)}
-\spellsr{Yes (Will)}
-\spelldmg{4d8 physical damage \add d8 per two caster levels above 4th}
-\begin{spelleffect}
-  The touched target takes damage and is sickened for 1 round. This damage ignores the hardness and damage reduction.
 \end{spelleffect}
 
 \spellsection{Divine Favor}
@@ -2178,10 +2168,11 @@ This spell can be made permanent with a \spell{permanency} ritual.
     An unencumbered creature with a fly speed can fly through the air. See \pcref{Flying}, for more details.
 \end{spellnotes}
 
+%priced as buff spell for range
 \spellsection{Fog Cloud}
 \spelldesc{You conjure a bank of fog from a location you choose, concealing those inside.}
 \spellschool{Conjuration (Creation) [Fog]}
-\spelllvl{Drd 3, Sor/Wiz 3, Water 3}
+\spelllvl{Drd 2, Sor/Wiz 2, Water 2}
 \spellrng{\rngmed}
 \spellarea{\areamed radius cylinder-shaped spread}
 \spelleff{Fog in the area}
@@ -2189,7 +2180,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsave{None}
 \spellsr{No}
 \begin{spelleffect}
-  Everything within the spell's area has concealment (\plus4 AC). The cloud is stationary once created.
+    Fog blocks sight in the area, causing all creatures within or looking through the area to treat everything they see as if it had concealment (\plus4 AC). The cloud is stationary once created.
 \end{spelleffect}
 \begin{spellnotes}
     Fog spells do not function underwater and can be dispersed by wind. A moderate wind (11\add mph) disperses the fog in 5 rounds; a strong wind (21\add mph) disperses the fog in 1 round. Localized wind, such as from a \spell{gust of wind} spell, only disperses the fog where it overlaps the fog. A fire spell burns away the fog in the area into which it deals damage.
@@ -2984,15 +2975,6 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
 \spelltgts{Five creatures or objects weighing no more than 100 lb./level in the area}
 \begin{spelleffect}
   This spell functions like \spell{invisibility}, except that it affects multiple creatures. If the effct is broken for one creature, the other subjects remain invisible.
-\end{spelleffect}
-
-\spellsection{Invisibility Purge}
-\spellschool{Abjuration (Negation)}
-\spelllvl{Clr 2, Sor/Wiz 2}
-\spellarea{\arealarge radius mobile emanation from you}
-\spelldur{\durlong (D)}
-\begin{spelleffect}
-  You surround yourself with a mobile sphere of power that suppresses all forms of invisibility. Anything invisible becomes visible while in the area.
 \end{spelleffect}
 
 \spellsection{Invisibility Sphere}
@@ -4237,7 +4219,19 @@ This spell can be made permanent with a \spell{permanency} ritual.
   This spell's damage reduction allows the subject to ignore the first 8 physical damage it takes each round. If it is hit by an attack that deals life damage, such as \spell{crush life}, it cannot use its damage reduction for 1 round.
 \end{spellnotes}
 
-\spellsection{Retrieve}
+\spellsection{Retrieve Ally}
+\spellschool{Conjuration (Translocation) [Teleportation]}
+\spelllvl{Conj 2}
+\spellrng{\rngmed}
+\spelltgt{One willing creture}
+\spelldur{Instantaneous}
+\spellsave{None}
+\spellsr{Yes (Will)}
+\begin{spelleffect}
+    You teleport the target into a free space adjacent to you. You must have line of sight and line of effect to the destination. If you accidentally attempt to teleport the creature into an invalid location, the spell simply fails.
+\end{spelleffect}
+
+\spellsection{Retrieve Object}
 \spellschool{Conjuration (Translocation) [Teleportation]}
 \spelllvl{Conj 1}
 \spellrng{\rngclose}
@@ -4249,7 +4243,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
   You teleport an item you can see within range directly to your hand. If the object is attended, this spell automatically fails.
 \end{spelleffect}
 
-\spellsectioncomma{Retrieve}{Greater}
+\spellsectioncomma{Retrieve Object}{Greater}
 \spellschool{Conjuration (Translocation) [Teleportation]}
 \spelllvl{Conj 5}
 \spellrng{\rngmed}
@@ -4968,14 +4962,6 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spelltgt{One spellcaster, creature, or object}
 \begin{spelleffect}
   This spell functions like \spell{greater dispel magic}, except that you can choose to gain the effects of any spells you dispel or counterspell as if they had been originally cast on you. The effects last for the remainder of their original durations or for 5 rounds, whichever is shorter. Spells that cannot be cast on you, such as spells which have a range of personal, are simply dispelled.
-\end{spelleffect}
-
-\spellsectioncomma{Spelltheft}{Lesser}
-\spellschool{Abjuration (Negation) [Magic]}
-\spelllvl{Abjur 2, Magic 2}
-\spelltgt{One spellcaster, creature, or object}
-\begin{spelleffect}
-  This spell functions like \spell{lesser dispel magic}, except that you can choose to gain the effects of any spells you dispel as if they had been originally cast on you. The effects last for the remainder of their original durations or for 5 rounds, whichever is shorter. Spells that cannot be cast on you, such as spells which have a range of personal, are simply dispelled.
 \end{spelleffect}
 
 \spellsection{Spell Turning}
