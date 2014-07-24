@@ -391,6 +391,39 @@ You send your mind to another plane of existence (an Elemental Plane or some pla
 Sending out your mind in this way can be dangerous. If this ritual is performed unsuccessfully, your Intelligence, Wisdom, and Charisma drop to 0. This is treated as ability drain. Every 24 hours, you may make a new Will saving throw against DC 20 to throw off the effect. Though this effect cannot be dispelled with \spell{dispel magic}, it can be removed with \spell{remove curse}.
 \end{spelleffect}
 
+\spellsection{Contagion}
+\spelldesc{You infect your foe with a contagious disease.}
+\spellschool{Necromancy (Flesh)}
+\spellskill{Heal}
+\spelllvl{Arcane 3, Divine 3}
+\spelltime{10 minutes}
+\spellrng{See text}
+\spelltgt{One living creature}
+\spelldur{Instantaneous}
+\spellsave{Fortitude negates}
+\spellsr{Yes (Fortitude)}
+\begin{spelleffect}
+  The subject contracts a disease selected from the table below, which strikes immediately (no incubation period). The DC for both the initial and subsequent saving throws is equal to this spell's save DC.  
+  \begin{dtable}
+    \begin{tabularx}{\columnwidth}{l X}
+      \thead{Disease} & \thead{Damage} \\
+      Blinding sickness & 1d4 Str\footnotetemp{1} \\
+      Cackle fever & 1d6 Wis \\
+      Filth fever & 1d3 Dex and 1d3 Con \\
+      Mindfire & 1d6 Int \\
+      Red ache & 1d6 Str \\
+      Shakes & 1d6 Dex \\
+      Slimy doom & 1d6 Con
+    \end{tabularx}
+    1 Each time a victim takes 3 or more Strength damage from blinding sickness, he or she must make another Fortitude save or be permanently blinded.	 
+  \end{dtable}
+
+  The subject must be within a number of miles equal to your ritual check result, and you must have fresh flesh or blood that belongs to the subject.
+\end{spelleffect}
+\begin{spellnotes}
+    In general, blood is not considered ``fresh'' after one hour, while flesh takes up between a day and a week to decay, depending on the conditions.
+\end{spellnotes}
+
 \spellsection{Continual Flame}
 \spellschool{Illusion (Figment) [Light]}
 \spellskill{Arcana}
@@ -2449,6 +2482,36 @@ You cause an object or location to emanate magical vibrations that attract eithe
 \end{spelleffect}
 \begin{spellnotes}
 \spell{Sympathy} counters and dispels \spell{antipathy}.
+\end{spellnotes}
+
+\spellsection{Telepathic Bond}
+\spelldesc{You forge a mental link binding two allies together.}
+\spellschool{Divination/Transmutation (Communication, Imbuement)}
+\spellskill{Arcana, Linguistics}
+\spelllvl{Arcane 3}
+\spelltime{10 minutes}
+\spellrng{\rngclose}
+\spelltgts{You and one willing creature, or two willing creatures}
+\spelldur{\durext (D)}
+\spellsave{None}
+\spellsr{Yes (Will)}
+\begin{spelleffect}
+  The subjects can communicate mentally through telepathy. The communication is instantaneous across any distance within the same plane.
+\end{spelleffect}
+\begin{spellnotes}
+  No special influence is established as a result of the bond. This ritual can be made permanent with a \spell{permanency} ritual.
+\end{spellnotes}
+
+\spellsection{Telepathic Bond, Mass}
+\spellschool{Divination/Transmutation (Communication, Imbuement)}
+\spellskill{Arcana}
+\spelllvl{Arcane 6}
+\spelltgts{You plus up to five willing creatures in a \areamed radius}
+\begin{spelleffect}
+  This ritual functions like \spell{telepathic bond}, except that it links multiple creatures together into the same bond. Each affected creature can communicate with all other creatures, either privately or to the group as a whole. If desired, you may leave yourself out of the bond forged. This decision must be made at the time of casting.
+\end{spelleffect}
+\begin{spellnotes}
+This ritual can be made permanent with a \spell{permanency} ritual. If you perform this ritual multiple times, you may link each casting of the ritual together such that all subjects may telepathically communicate with each other. 
 \end{spellnotes}
 
 \spellsection{Teleport}
