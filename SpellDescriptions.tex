@@ -302,24 +302,10 @@ This spell can be made permanent with a \spell{permanency} ritual.
 
 If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
 
-\spellsection{Attraction}
-\spelldesc{You cause the subject to feel attracted to something.}
-\spellschool{Enchantment (Emotion) [Mind-Affecting]}
-\spelllvl{Ench 1}
-\spellrng{\rngmed}
-\spelltgt{One creature}
-\spelldur{\durext}
-\spellsave{Will negates}
-\spellsr{Yes (Will)}
-\begin{spelleffect}
-  An affected creature feels attracted to a particular person or object. The subject will take reasonable steps to meet, get close to, attend, or find the object of its implanted attraction. It is not blindly obsessed, and will only act on this attraction when not engaged in combat or other critical matters. The subject won't perform obviously suicidal actions. He can still recognize danger but will not flee unless the threat is immediate. If you make the subject feel an attraction to yourself, you can't command him indiscriminately, although he will be willing to listen to you (even if he disagrees).
-  \par This spell grants you a \plus4 bonus on any social interaction checks you make involving the subject (such as Bluff, Diplomacy, Intimidate, and Sense Motive).
-\end{spelleffect}
-
 \spellsection{Aversion}
 \spelldesc{You make the subject want to avoid something.}
 \spellschool{Enchantment (Emotion) [Mind-Affecting]}
-\spelllvl{Ench 2}
+\spelllvl{Ench 3}
 \spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{\durext}
@@ -858,6 +844,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
   \par \subspell{Fall} As soon as possible, the subject falls to the ground. It may act normally on its turn, except that it can't get up from its prone position.
   \par \subspell{Flee} On its turn, the subject moves away from you as quickly as possible. It may do nothing but move during its turn, and it provokes attacks of opportunity for this movement as normal.
   \par \subspell{Halt} On its turn, the subject can take no actions, but it can defend itself normally.
+  \par \subspell{Laugh} On its turn, the subject takes a standard action to do nothing but laugh uproariously, provoking attacks of opportunity. After that, it can act normally.
 \end{spellblood}
 \begin{spellnotes}
   A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
@@ -2544,28 +2531,6 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \begin{spelleffect}
   This spell functions like \spell{heroism}, except the subject also gains 35 temporary hit points \add 1 per caster level above 14th. In addition, the subject is immune to hostile morale effects.
 \end{spelleffect}
-
-\spellsection{Hideous Laughter}
-\spelldesc{You force the subject to collapse into gales of manic laughter with an unnaturally amusing joke.}
-\spellschool{Enchantment (Compulsion) [Mind-Affecting]}
-\spelllvl{Sor/Wiz 2}
-\spellrng{\rngclose}
-\spelltgt{One creature}
-\spelldur{\durshort}
-\spellsave{Will negates}
-\spellsr{Yes (Will)}
-\begin{spelleffect}
-  The subject is bewildered, making it vulnerable.
-\end{spelleffect}
-\begin{spellblood}
-  In addition, the subject is flat-footed and must spend a standard action each round to do nothing but laugh uncontrollably. After each time it laughs, the affected creature can attempt a new saving throw. If it succeeds, it can stop laughing, though it is still bewildered.
-\end{spellblood}
-\begin{spellnotes}
-  A creature with an Intelligence score of \minus8 or lower is not affected. A creature whose type is different from the caster's receives a \plus4 bonus on its saving throw, because humor doesn't ``translate'' well.
-\end{spellnotes}
-\begin{spellnotes}
-  A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
-\end{spellnotes}
 
 \spellsection{Hold Monster}
 \spellschool{Enchantment (Inhibition) [Mind-Affecting]}
@@ -4601,22 +4566,6 @@ This spell can be made permanent with a \spell{permanency} ritual.
   This spell functions like \spell{share pain}, except that it redirects all damage that one creature would take instead of redirecting half of the damage.
 \end{spelleffect}
 
-\spellsection{Shatter}
-\spelldesc{You create a loud, ringing noise that sunders solid objects.}
-\spellschool{Evocation (Energy) [Sonic]}
-\spelllvl{Destruction 2, Sor/Wiz 2}
-\spellrng{\rngclose}
-\spelltgtorarea{One solid object or one crystalline creature; or \areasmall radius spread}
-\spelldur{Instantaneous}
-\spellsave{Will negates (object)/Will negates (object) or Fortitude half; see text}
-\spellsr{Yes (Will)}
-\spelldmg{4d6 sonic damage \add d6 per two levels above 4th}
-\begin{spelleffect}
-  Used as an area attack, shatter destroys nonmagical objects of crystal, glass, ceramic, or porcelain. All such objects within a \areasmall radius of the point of origin are smashed into dozens of pieces by the spell. Objects weighing more than 1 pound per your level are not affected, but all other objects of the appropriate composition are shattered.
-  \par Alternatively, you can target a single solid object or crystalline creature. In the case of large objects, such as walls, you target a 5 ft. cube. The target takes damage, with a Fortitude save for half damage.
-  \par A creature holding vulnerable objects can attempt a Will save to negate any effect on to those objects.
-\end{spelleffect}
-
 \spellsection{Shield of Faith}
 \spelldesc{You create a shimmmering, magical shield that protects your ally as long as you maintain faith.}
 \spellschool{Abjuration (Shielding)}
@@ -4894,7 +4843,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \end{spellnotes}
 
 \spellsection{Sound Burst}
-\spelldesc{You blast an area with a cacophony of sound.}
+\spelldesc{You create a cacophony of sound.}
 \spellschool{Evocation (Energy) [Sonic]}
 \spelllvl{Sor/Wiz 2}
 \spellrng{\rngclose}
@@ -4904,7 +4853,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellsr{Yes (Fortitude)}
 \spelldmg{2d6 sonic damage \add d6 per four levels above 4th}
 \begin{spelleffect}
-  Creatures in the area take damage and are deafened for 5 rounds. A successful Fortitude save halves the damage and negates the deafening.
+  Everything in the area takes damage, and creatures are deafened for 5 rounds. A successful Fortitude save halves the damage and negates the deafening.
 \end{spelleffect}
 
 \spellsection{Spell Immunity}
