@@ -102,7 +102,7 @@
 \spelldesc{You inflict debilitating pain on your foe, crippling its ability to act.}
 \spellschool{Necromancy (Flesh)}
 \spelllvl{Sor/Wiz 4}
-\spellrng{\rngclose}
+\spellrng{\rngmed}
 \spellsave{None}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
@@ -1703,18 +1703,18 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelllvl{Death 4, Sor/Wiz 4}
 \spellrng{\rngclose}
 \spelltgt{One creature} 
-\spelldur{\durlong}
+\spelldur{\durshort}
 \spellsave{Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
-  The target gains three negative levels.
-  \par Each negative level gives a creature a \minus1 penalty on attack rolls, saving throws, checks, and effective level (for determining the power, DC, and other details of spells or special abilities). Additionally, a spellcaster loses one spell slot from his or her highest available level. If the subject has at least as many negative levels as levels, it dies.
-  \par An undead creature struck by the ray gains physical damage reduction 8/positive instead. This damage reduction increases by 1 per two caster levels above 8th.
+  The subject gains three negative levels.
+  \par Each negative level gives a creature a \minus1 penalty on attack rolls, saving throws, checks, and DCs. Additionally, each negative level causes the creature to lower its maximum hit points by 5, and a spellcaster loses one spell slot from his or her highest available level. If the subject has at least as many negative levels as it has levels, it dies.
+  \par An undead creature gains physical damage reduction 8/positive instead. This damage reduction increases by 1 per two caster levels above 8th.
 \end{spelleffect}
 \begin{spellnotes}
   This spell stacks with any effect that bestows negative levels, including itself.
 
-  The damage reduction allows an undead subject to ignore the first 8 physical damage it takes each round. If it is hit by an attack that deals positive damage, such as \spell{cure light wounds}, it cannot use its damage reduction for 1 round.
+  The damage reduction allows an undead subject to ignore the first 8 physical damage it takes each round. If it is hit by a positive attack, such as \spell{cure light wounds}, it cannot use its damage reduction for 1 round.
 \end{spellnotes}
 
 \spellsection{Enfeeblement}
@@ -4815,7 +4815,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \end{spellnotes}
 
 \spellsection{Stinking Cloud}
-\spellschool{Conjuration/Necromancy (Creation, Flesh)}
+\spellschool{Conjuration (Creation)}
 \spelllvl{Sor/Wiz 5}
 \spellsave{None/Fortitude negates}
 \spellsr{None/Yes (Fortitude)}
@@ -4829,7 +4829,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellsection{Stoneskin}
 \spelldesc{You dramatically toughen a creature's skin, giving it the appearance of stone.}
 \spellschool{Transmutation (Alteration) [Earth]}
-\spelllvl{Drd 4, Earth 4, Protection 4, Trans 4}
+\spelllvl{Drd 4, Earth 4, Protection 4, Sor/Wiz 4}
 \spellrng{Touch}
 \spelltgt{Touched creature}
 \spelldur{\durshort}
@@ -5425,16 +5425,6 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
   This spell's effect may make it impossible for the target to cast some or all of its spells, if the requisite attribute drops below the minimum required to cast spells of that level.
 \end{spellnotes}
 
-\spellsection{Transfer Suffering}
-\spellschool{Necromancy (Life)}
-\spelllvl{Necro 4}
-\spellrng{Touch}
-\spelltgt{One creature}
-\spelldmg{8d6 life damage \add d8 per two caster levels above 8th}
-\begin{spelleffect}
-  The touched creature takes damage, and you immediately regain hit points equal the amount of damage you transfer. You cannot transfer more damage than you have taken, and you cannot use this spell to gain hit points in excess of your full normal total.
-\end{spelleffect}
-
 \spellsection{Transmute Any Object}
 \spellschool{Transmutation (Alteration, Polymorph)}
 \spelllvl{Sor/Wiz 9}
@@ -5590,17 +5580,17 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 %gaining full temp HP would be level 5
 \spellsection{Vampiric Touch}
 \spellschool{Necromancy (Life)}
-\spelllvl{Sor/Wiz 4}
+\spelllvl{Necro 4}
 \spellrng{Touch}
 \spelltgt{Touched living creature}
-\spelldur{Instantaneous/\durmed}
+\spelldur{Instantaneous/\durlong}
 \spellsave{Fortitude half}
 \spellsr{Yes (Fortitude)}
 \spelldmg{8d8 life damage \add d8 per two caster levels above 8th}
 \begin{spelleffect}
-  The touched creature takes damage. You gain temporary hit points equal to half the damage you deal. However, you can't gain more hit points than the damage required to kill the subject. The temporary hit points disappear 1 hour later.
+  The touched creature takes damage. You gain temporary hit points equal to half the damage you deal. You can't gain more hit points than subject has. The temporary hit points disappear 1 hour later. If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
 
-  If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
+  As long as you have temporary hit points from this spell, you are treated as being undead for the purpose of spells or abilities which affect undead. This causes some unintelligent undead, such as skeletons and zombies, to avoid attacking you.
 \end{spelleffect}
 
 \spellsection{Veil}
@@ -5878,7 +5868,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
     \item Transport travelers. A wish can lift one creature per caster level from anywhere on any plane and place those creatures anywhere else on any plane regardless of local conditions. An unwilling target gets a Will save to negate the effect, and spell resistance (if any) applies.
     \item Undo misfortune. A wish can undo a single recent event. The wish forces a reroll of any roll made within the last round (including your last turn). Reality reshapes itself to accommodate the new result. For example, a wish could undo an opponent's successful save, a foe's successful critical hit (either the attack roll or the critical roll), a friend's failed save, and so on. The reroll, however, may be as bad as or worse than the original roll. An unwilling target gets a Will save to negate the effect, and spell resistance (if any) applies.
   \end{itemize*}
-  \par When casting a wish, you do not specify the exact spell or effect you wish to duplicate. Instead, you make a wish, describing what you want to have happen, and make a DC 20 Wisdom check. If the check fails, your intent is redirected or perverted in some way. For example, a wish to turn a foe to stone would normally mimic the flesh to stone effect of the transmute flesh and stone spell. However, if the Wisdom check failed, your foe might gain the benefit of a stoneskin spell instead.
+  \par When casting a wish, you do not specify the exact spell or effect you wish to duplicate. Instead, you make a wish, describing what you want to have happen, and make a DC 20 Wisdom check. If the check fails, your intent is redirected or perverted in some way. For example, a wish to turn a foe to stone would normally mimic the flesh to stone effect of the transmute flesh and stone spell. However, if the Wisdom check failed, your foe might gain the benefit of a \spell{stoneskin} spell instead.
   \par You may try to use a wish to produce greater effects than these, but doing so is dangerous. The DC of the Wisdom check increases to 25, and the negative consequences for failing the check increase in proportion to the potency of the effect you try to create.
 \end{spelleffect}
 \begin{spellnotes}
