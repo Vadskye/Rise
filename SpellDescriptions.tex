@@ -299,38 +299,6 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \subsubsection{B}
 \end{comment}
 
-\spellsection{Baleful Polymorph}
-\spelldesc{You transmute your foe into a small, insignificant animal.}
-\spellschool{Transmutation (Polymorph)}
-\spelllvl{Drd 6, Trans 5}
-\spellrng{Touch}
-\spelltgt{Touched creature}
-\spelldur{\durshort or Permanent (D); see text}
-\spellsave{Fortitude negates, Will partial; see text}
-\spellsr{Yes (Fortitude)}
-\begin{spellhealthy}
-  The subject is sickened, making it vulnerable. A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
-\end{spellhealthy}
-\begin{spellblood}
-  You change the subject into a Small or smaller animal of no more than 1 HD (such as a dog, lizard, monkey, or toad). The subject takes on all the statistics and special abilities of an average member of the new form in place of its own, except as follows:
-  \begin{itemize*} 
-    \item The target retains its own alignment, personality, and mental attributes.
-    \item The target retains its own level and hit points.
-    \item The target retains the ability to understand (but not to speak) the languages it understood in its original form. It can write in the languages it understands, but only the form is capable of writing in some manner (such as drawing in the dirt with a paw). 
-  \end{itemize*}
-
-  All items worn or carried by the subject fall to the ground at its feet, even if they could be worn or carried by the new form. 
-
-  If the new form would prove fatal to the creature (for example, if you polymorphed a landbound target into a fish, or an airborne target into a toad), the subject gets a \plus4 bonus on the save. 
-
-  If the spell succeeds, the subject must also make a Will save. If the second save fails, the transformation is permanent. Otherwise, the creature reverts to its true form after the \durshort duration.
-
-  If the subject remains in the new form for 24 consecutive hours, it must attempt another Will save. If this save fails, it loses all remnants of its original form, and its statistics fully match that of its new form. These abilities and statistics return to normal if the effect is later ended. The subject must repeat this save every 24 hours that it remains in its new form.
-\end{spellblood}
-\begin{spellnotes}
-    Incorporeal or gaseous creatures are immune to \spell{baleful polymorph}, and a creature with the shapechanger subtype (such as a lycanthrope or a doppelganger) can revert to its natural form as a standard action (which ends the spell's effect). 
-\end{spellnotes}
-
 \spellsection{Bane}
 \spelldesc{You fill your enemies with dismay, impairing their ability to fight.}
 \spellschool{Enchantment (Emotion) [Mind-Affecting, Morale]}
@@ -1907,7 +1875,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 
 \spellsection{Finger of Death}
 \spellschool{Necromancy (Life) [Death]}
-\spelllvl{Death 7, Necro 7}
+\spelllvl{Death 7, Sor/Wiz 7}
 \spellrng{\rngclose}
 \spelltgt{One living creature}
 \spelldur{Instantaneous}
@@ -2389,7 +2357,7 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 
 \spellsectioncomma{Heroism}{Greater}
 \spellschool{Enchantment (Emotion) [Mind-Affecting, Morale]}
-\spelllvl{Ench 7}
+\spelllvl{Sor/Wiz 7}
 \begin{spelleffect}
   This spell functions like \spell{heroism}, except the subject also gains 35 temporary hit points \add 1 per caster level above 14th. In addition, the subject is immune to hostile morale effects.
 \end{spelleffect}
@@ -3051,30 +3019,6 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
   \par You can also use this spell to target a single item. The item gets a Will save at a \minus5 penalty to avoid being permanently rendered nonmagical. Even artifacts are subject to this use of disjunction, though there is only a 1\% chance per caster level of actually affecting such powerful items. Additionally, if an artifact is destroyed, you permanently lose the ability to cast \spell{mage's disjunction}. (This ability cannot be recovered by mortal magic, not even \spell{miracle} or \spell{wish}.)
   \par \subspell{Note} Destroying artifacts is a dangerous business, and it is 95\% likely to attract the attention of some powerful being who has an interest in or connection with the device.
 \end{spelleffect}
-
-%need to run expected damage analysis
-%basic math: attack is like save half, so ``should'' deal 49 damage
-%assume 32 AC, 8 attr
-%assume 4 rounds of attacking at 50% chance to hit = 36 damage.
-%benefits strongly from +CL.
-%At 20 CL: 85 damage vs 64 damage
-\spellsection{Mage's Sword}
-\spellschool{Evocation (Control) [Force]}
-\spelllvl{Evoc 7}
-\spellrng{\rngmed}
-\spelleff{One sword}
-\spelldur{\durshort (D)}
-\spellsave{None}
-\spellsr{Yes (Will)}
-\begin{spelleffect}
-  This spell brings into being a shimmering, swordlike plane of force. The sword strikes at any opponent within its range, as you desire, starting in the round that you cast the spell. The sword attacks its designated target once each round on your turn. Its attack bonus is equal to your caster level \add your casting attribute. It deals 4d6 points of force damage \add half your casting attribute \add 1d6 per four caster levels above 14th, with a threat range of 19--20 and a critical multiplier of \mtimes2.
-  \par The sword always strikes from your direction. It does not contribute to overwhelm penalties, but it benefits from any that exist. If the sword goes beyond the spell range from you, if it goes out of your sight, or if you are not directing it, the sword returns to you and hovers.
-\end{spelleffect}
-\begin{spellnotes}
-  Each round after the first, you can redirect the sword to a new target as a swift action. If you do not, the sword continues to attack the previous round's target.
-  \par As a force effect, the sword can strike ethereal and incorporeal creatures. It cannot be attacked or harmed by physical attacks, but \spell{dispel magic}, \spell{disintegrate}, a sphere of annihilation, or a rod of cancellation affects it. The sword's AC is 10.
-  \par If an attacked creature has spell resistance, the resistance is checked the first time \spell{mage's sword} strikes it. If the sword is successfully resisted, the spell is dispelled. If not, the sword has its full effect on that creature for the duration of the spell.
-\end{spellnotes}
 
 \spellsection{Magic Circle against Chaos}
 \spellschool{Abjuration (Interdiction) [Barrier, Lawful]}
@@ -3856,7 +3800,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 
 \spellsectioncomma{Reduce Person}{Mass}
 \spellschool{Transmutation (Polymorph) [Size-Affecting]}
-\spelllvl{Trans 6}
+\spelllvl{Trans 5}
 \spellrng{\rngmed}
 \spellarea{\areamed radius limit}
 \spelltgts{Five humanoid creatures within the area}
@@ -4187,7 +4131,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 
 \spellsection{Shadow Body}
 \spellschool{Illusion/Transmutation (Polymorph, Shadow)}
-\spelllvl{Sor/Wiz 8}
+\spelllvl{Sor/Wiz 7}
 \spellrng{Personal}
 \spelltgt{You}
 \spelldur{\durmed (D)}
@@ -4483,7 +4427,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spelldesc{You decelerate your enemy's motions, causing her to move and act more slowly than normal.}
 \spellschool{Transmutation (Temporal)}
 \spelllvl{Sor/Wiz 2}
-\spellrng{\rngclose}
+\spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{\durshort}
 \spellsave{Will negates}
@@ -4495,8 +4439,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellsectioncomma{Slow}{Mass}
 \spelldesc{You decelerate your enemies' motions, causing them to move and act more slowly than normal.}
 \spellschool{Transmutation (Temporal)}
-\spelllvl{Sor/Wiz 7}
-\spellrng{\rngmed}
+\spelllvl{Sor/Wiz 6}
 \spelltgts{Five creatures in an \areamed radius}
 \begin{spelleffect}
   This spell functions like \spell{slow}, except that it affects multiple creatures.
@@ -4613,7 +4556,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 
 \spellsection{Spell Turning}
 \spellschool{Abjuration (Shielding) [Magic]}
-\spelllvl{Magic 7, Protection 7, Abjur 7}
+\spelllvl{Magic 7, Protection 7, Sor/Wiz 7}
 \spellrng{Personal}
 \spelltgt{You}
 \spelldur{\durlong or until expended}
