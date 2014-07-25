@@ -1523,7 +1523,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
   The subject of this spell appears to be about 2 feet away from its true location. Attacks against the subject have a 50\% miss chance as if it were invisible. However, unlike invisibility, this spell does not prevent enemies from targeting the creature normally, and it does not allow the creature to hide.
 \end{spelleffect}
 \begin{spellnotes}
-  True seeing reveals the subject's true location.
+    \spellindirect{true seeing}{True seeing} reveals the subject's true location.
 \end{spellnotes}
 
 \spellsection{Disrupting Weapon}
@@ -2102,20 +2102,25 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \end{spelleffect}
 
 \spellsection{Foresight}
+\spellschool{Divination (Knowledge)}
+\spelllvl{Knowledge 5, Protection 5, Div 5}
+\spellrng{Touch}
+\spelltgt{Touched creature}
+\spelldur{\durshort or \durlong; see text (D)}
+\spellsave{None or Will negates (harmless)}
+\spellsr{No or Yes (Will)}
+\begin{spelleffect} 
+    The subject receives instantaneous warnings of impending danger or harm that would befall it. It gains an enhancement bonus to initiative checks equal to your caster level, and a \plus3 enhancement bonus to its dodge modifier and Reflex saves. This bonus increases to \plus4 at 14th level, and to \plus5 at 20th level.
+  \par If you cast this spell on yourself, it lasts for \durlong duration. On any other creature, it lasts for \durshort duration.
+\end{spelleffect}
+
+\spellsectioncomma{Foresight}{Greater}
 \spelldesc{You bestow a powerful sixth sense to your ally, giving them clear visions of any imminent danger.}
 \spellschool{Divination (Knowledge)}
 \spelllvl{Knowledge 9, Protection 9, Div 9}
-\spellrng{Touch}
-\spelltgt{Touched creature}
-\spelldur{\durlong (D)}
-\spellsave{None or Will negates (harmless)}
-\spellsr{No or Yes (Will)}
 \begin{spelleffect}
-  The subject receives instantaneous warnings of impending danger or harm that would befall them. She is never surprised or flat-footed, and gains a \plus20 enhancement bonus on initiative checks. In addition, the spell gives the subject a general idea of what action she might take to best protect herself and bestows a \plus5 enhancement bonus to Reflex saves and dodge modifier.
+    This spell functions like \spel{foresight}, except that the subject is also never surprised or flat-footed.
 \end{spelleffect}
-\begin{spellnotes}
-  \spell{Foresight} is a difficult spell to cast, since it requires maintaining a constant channel into the future. You may only have one \spell{foresight} spell active at once. If you cast the spell again before the duration wears off, the old spell is dismissed and only the new casting is active. 
-\end{spellnotes}
 
 \spellsection{Freedom}
 \spellschool{Transmutation (Imbuement)}
