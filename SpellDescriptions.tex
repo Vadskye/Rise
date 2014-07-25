@@ -1428,7 +1428,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 
 \spellsection{Discern Vulnerability}
 \spellschool{Divination (Knowledge)}
-\spelllvl{Div 4, Sor/Wiz 5}
+\spelllvl{Sor/Wiz 4}
 \spelltime{1 swift action}
 \spellrng{\rngmed}
 \spelltgt{One creature}
@@ -1860,8 +1860,16 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   A pale glow surrounds and outlines all creatures and objects in the area. Outlined subjects shed light as candles. Outlined creatures do not benefit from the concealment normally provided by darkness (though a 3rd-level or higher magical darkness effect functions normally), \spell{blur}, \spell{displacement}, \spell{invisibility}, or similar effects. Illusionary figments such as \spell{silent image} are not outlined, which may reveal them for what they are.
-  
+
   The light is too dim to have any special effect on undead or dark-dwelling creatures vulnerable to light. The \spell{faerie fire} can be blue, green, or violet, according to your choice at the time of casting. This spell does not cause any harm to the objects or creatures thus outlined.
+\end{spelleffect}
+
+\spellsection{False Reality}
+\spellschool{Illusion (Figment)}
+\spellarea{1 mile radius spread limit centered on you; see text}
+\spelldur{\durlong (D)}
+\begin{spelleffect}
+    This spell functions like \spell{persistent image}, except that the illusion affects a massive area for \durlong duration.
 \end{spelleffect}
 
 \spellsection{Fear}
@@ -2095,7 +2103,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 
 \spellsection{Forceful Hand}
 \spellschool{Evocation (Control) [Force]}
-\spelllvl{Evoc 4}
+\spelllvl{Sor/Wiz 4}
 \begin{spelleffect}
   This spell functions like \spell{interposing hand}, except that it can also pursue and bull rush one opponent you select. You must direct the hand to bull rush an opponent as a swift action. If you do, the \spell{forceful hand} may make a bull rush attack that does not provoke an attack of opportunity. Its maneuver modifier equals your caster level \add your casting attribute, \plus4 for being Large. Its Maneuver Class is equal to 10 \add its maneuver modifier.
   \par The hand always moves with the opponent to push them back as far as possible. It has no movement limit for this purpose, but it cannot exceed the spell's range.
@@ -2778,7 +2786,7 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \spellsection{Interposing Hand}
 \spelldesc{You create a floating, disembodied hand made of magical force that shields you from your foe's blows.}
 \spellschool{Evocation (Control) [Force]}
-\spelllvl{Evoc 2}
+\spelllvl{Sor/Wiz 2}
 \spellrng{\rngmed}
 \spelleff{Large hand made of force}
 \spelldur{\durshort (D)}
@@ -3219,8 +3227,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsection{Major Image}
 \spellschool{Illusion (Figment) [Unreal]}
 \spelllvl{Illus 4}
-\spellrng{\rngfar}
-\spelldur{\durshort}
+\spellarea{\arealarge radius limit}
 \begin{spelleffect}
   This spell functions like \spell{silent image}, except that sound, smell, and thermal illusions are included in the spell effect. By concentrating on the spell, you can move the image within the range.
 \end{spelleffect}
@@ -3314,8 +3321,6 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsection{Minor Image}
 \spellschool{Illusion (Figment) [Unreal]}
 \spelllvl{Illus 3}
-\spellrng{\rngmed}
-\spelldur{\durshort}
 \begin{spelleffect}
   This spell functions like \spell{silent image}, except that it includes some minor sounds but not understandable speech.
 \end{spelleffect}
@@ -3506,7 +3511,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsection{Persistent Image}
 \spellschool{Illusion (Figment)}
 \spelllvl{Illus 6}
-\spellrng{\rngfar}
+\spellarea{\arealarge radius limit}
 \spelldur{\durmed (D)}
 \begin{spelleffect}
   This spell functions like \spell{silent image}, except that the figment includes visual, auditory, olfactory, and thermal components, and the figment follows a script determined by you. The figment follows that script without your having to concentrate on it. The illusion can include intelligible speech if you wish.
@@ -3890,23 +3895,6 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \subsubsection{Q-R}
 \end{comment}
 
-\spellsection{Rainbow Pattern}
-\spelldesc{You create a glowing, rainbow-hued pattern of interweaving colors that fascinates those within it.}
-\spellschool{Enchantment/Illusion (Compulsion, Figment) [Light, Mind-Affecting, Sight-Dependent]}
-\spelllvl{Sor/Wiz 4}
-\spellrng{\rngmed}
-\spellarea{\areasmall radius spread}
-\spelleff{Colorful lights in the area}
-\spelldur{Concentration}
-\spellsave{Will negates}
-\spellsr{Yes (Will)}
-\begin{spelleffect}
-  Creatures in the spell's area are fascinated. While concentrating on the spell, you can make the pattern move up to 30 feet per round (moving its effective point of origin). All fascinated creatures follow the moving rainbow of light, trying to get or remain within the effect. Fascinated creatures who are restrained and removed from the pattern still try to follow it. If the pattern leads its subjects into a dangerous area each fascinated creature gets a second save. If the view of the lights is completely blocked, creatures who can't see them are no longer affected.
-\end{spelleffect}
-\begin{spellnotes}
-  The spell does not affect sightless creatures.
-\end{spellnotes}
-
 \spellsection{Ray of Clumsiness}
 \spelldesc{You fire a coruscating ray from your hand. When it strikes your foe, he becomes clumsier and less agile.}
 \spellschool{Necromancy (Flesh)}
@@ -4285,7 +4273,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 
 \spellsection{Seeming}
 \spellschool{Illusion (Glamer) [Unreal]}
-\spelllvl{Illus 5, Trickery 6}
+\spelllvl{Sor/Wiz 5, Trickery 6}
 \spellrng{\rngclose}
 \spellarea{\areamed radius limit}
 \spelltgts{One creature per level within the area}
@@ -4317,14 +4305,14 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsection{Shadow Conjuration}
 \spelldesc{You use material from the Plane of Shadow to shape quasi-real illusions of one or more creatures, objects, or forces.}
 \spellschool{Illusion (Shadow)}
-\spelllvl{Illus 4}
+\spelllvl{Illus 7}
 \spellrng{See text}
 \spelleff{See text}
 \spelldur{See text}
 \spellsave{Will disbelief (if interacted with); varies, see text}
 \spellsr{Yes (Will); See text}
 \begin{spelleffect}
-  Shadow conjuration can mimic any non-restricted sorcerer or wizard conjuration (summoning) or conjuration (creation) spell of 3rd level or lower. If you summon a creature, as with the \spell{summon monster} spells, you may only summon a creature that you know how to summon with such a spell.
+  Shadow conjuration can mimic any non-restricted sorcerer or wizard conjuration (summoning) or conjuration (creation) spell of 5th level or lower. If you summon a creature, as with the \spell{summon monster} spells, you may only summon a creature that you know how to summon with such a spell.
   \par Shadow conjurations are actually half as strong as the real things, though creatures who believe the shadow conjurations to be real are affected by them at full strength.
   \par Any creature that interacts with the conjured object, force, or creature can make a Will save to recognize its true nature.
   \par Spells that deal damage have normal effects unless an affected creature succeeds on a Will save. Each disbelieving creature takes only half damage from the attack. If the disbelieved attack has a special effect other than damage, that effect is half as strong (if applicable) or only half as likely to occur. Regardless of the result of the save to disbelieve, an affected creature is also allowed any save (or spell resistance) that the spell being simulated allows.
@@ -4332,18 +4320,8 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \end{spelleffect}
 \begin{spellnotes}
   A creature that succeeds on its save sees the shadow conjurations as transparent images superimposed on vague, shadowy forms.
-  \par When you learn this spell, you choose three creatures from the 3rd-level or lower lists on the Summon Monster table, one at each level. You can summon those creatures with this or any summon monster spell.
+  \par When you learn this spell, you choose two creatures from the 3rd-level list or lower on \tref{Summon Monster List}. You can summon those creatures with this or any \spell{summon monster} spell.
   \par Objects automatically succeed on their Will saves against this spell.
-\end{spellnotes}
-
-\spellsectioncomma{Shadow Conjuration}{Greater}
-\spellschool{Illusion (Shadow)}
-\spelllvl{Illus 7}
-\begin{spelleffect}
-  This spell functions like \spell{shadow conjuration}, except that it can duplicate any non-restricted sorcerer or wizard conjuration (summoning) or conjuration (creation) spell of 6th level or lower.
-\end{spelleffect}
-\begin{spellnotes}
-  When you learn this spell, you choose six creatures from the 6th-level or lower lists on the Summon Monster table, one at each level. You can summon those creatures with this or any summon monster spell.
 \end{spellnotes}
 
 \spellsection{Shadow Evocation}
@@ -4355,19 +4333,12 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsave{Will disbelief (if interacted with); varies, see text}
 \spellsr{Yes (Will); see text}
 \begin{spelleffect}
-  You tap energy from the Plane of Shadow to cast a quasi-real, illusory version of a non-restricted sorcerer or wizard evocation spell of 4th level or lower. (For a spell with more than one level, use the best one applicable to you.)
+  You tap energy from the Plane of Shadow to cast a quasi-real, illusory version of a non-restricted sorcerer or wizard evocation spell of 3rd level or lower. (For a spell with more than one level, use the best one applicable to you.)
   \par Spells that deal damage have normal effects unless an affected creature succeeds on a Will save. Each disbelieving creature takes only half damage from the attack. If the disbelieved attack has a special effect other than damage, that effect is half as strong (if applicable) or only half as likely to occur. Regardless of the result of the save to disbelieve, an affected creature is also allowed any save (or spell resistance) that the spell being simulated allows.
 \end{spelleffect}
 \begin{spellnotes}
   Objects automatically succeed on their Will saves against this spell.
 \end{spellnotes}
-
-\spellsectioncomma{Shadow Evocation}{Greater}
-\spellschool{Illusion (Shadow)}
-\spelllvl{Illus 8}
-\begin{spelleffect}
-  This spell functions like \spell{shadow evocation}, except that it enables you to create partially real, illusory versions of non-restricted sorcerer or wizard evocation spells of 7th level or lower.
-\end{spelleffect}
 
 \spellsection{Shadow Puppet}
 \spellschool{Conjuration/Illusion (Shadow, Translocation) [Planar, Unreal]}
@@ -4540,11 +4511,11 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellrng{\rngmed}
 \spellarea{\areamed radius limit}
 \spelleff{Visual figment within the area}
-\spelldur{Concentration}
+\spelldur{\durshort}
 \spellsave{Will disbelief (if interacted with)}
 \spellsr{No}
 \begin{spelleffect}
-  This spell creates the visual illusion of an object, creature, or force, as visualized by you. The illusion does not create sound, smell, texture, or temperature. You can move the image within the limits of the size of the effect.
+  This spell creates the visual illusion of an object, creature, or force, as visualized by you. The illusion does not create sound, smell, texture, or temperature. If you concentrate as a standard action, you move the image within the limits of the size of the effect.
 \end{spelleffect}
 
 \spellsection{Skysmite}
@@ -4927,7 +4898,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 
 \spellsection{Suggestion}
 \spellschool{Enchantment (Compulsion) [Language-Dependent, Mind-Affecting, Sound-Dependent]}
-\spelllvl{Sor/Wiz 5}
+\spelllvl{Ench 4}
 \spellcmp{V, M}
 \spellrng{\rngclose}
 \spelltgt{One living creature}
