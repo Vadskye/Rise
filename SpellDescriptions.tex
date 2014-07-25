@@ -690,10 +690,10 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelldesc{You manipulate the minds of many people so they think of you as a trusted friend and ally.}
 \spellschool{Enchantment (Emotion) [Charm, Mind-Affecting]}
 \spelllvl{Ench 6}
-\spellarea{\areamed radius}
+\spellarea{\areamed radius limit}
 \spelltgts{Five humanoid creatures within the area}
 \begin{spelleffect}
-  This spell functions like \spell{charm person}, except that it affects multiple creatures at a longer range.
+  This spell functions like \spell{charm person}, except that it affects multiple creatures.
 \end{spelleffect}
 
 \spellsection{Circle of Death}
@@ -950,7 +950,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
   The subject is staggered. It can take a move action or a standard action each round, but not both. 
 \end{spellhealthy}
 \begin{spellblood}
-  The subject cannot move its limbs. Generally, that means it is paralyzed, except that it can move its head and mouth.
+  The subject cannot move its limbs, including any wings. Generally, that means it is paralyzed, except that it can move its head and mouth.
 \end{spellblood}
 \begin{spellnotes}
  A staggered character may take a single move action or standard action each round, but not both. She cannot take full-round actions, but she may take swift actions. In addition, she is vulnerable, causing her to take a \minus2 penalty on attack rolls, saving throws, checks, DCs, and AC.
@@ -1542,9 +1542,8 @@ This spell can be made permanent with a \spell{permanency} ritual.
 
 \spellsection{Dominate Person}
 \spellschool{Enchantment (Compulsion) [Domination, Mind-Affecting]}
-\spelllvl{Ench 6}
-\spelltime{Full-round action}
-\spellrng{\rngclose}
+\spelllvl{Ench 7}
+\spellrng{\rngmed}
 \spelltgt{One humanoid}
 \spelldur{One day}
 \spellsave{Will negates}
@@ -2224,7 +2223,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 
 \spellsection{Grasping Hand}
 \spellschool{Evocation (Control) [Force]}
-\spelllvl{Evoc 6}
+\spelllvl{Sor/Wiz 6}
 \begin{spelleffect}
   This spell functions like \spell{interposing hand}, except the hand can also grapple one opponent that you select. You must direct the hand to grapple an opponent as a swift action. If you do, the \spell{grasping hand} may make a grapple attack as a swift action. Its maneuver modifier equals your caster level \add your casting attribute, \plus4 for being Large. Its Maneuver Class is equal to 10 \add its maneuver modifier.
   \par The hand holds but does not harm creatures it grapples. While the hand is grappling a foe, you must spend a swift action each round to sustain the hand's grapple; otherwise, the grappled creature escapes automatically.
@@ -3729,7 +3728,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 
 \spellsection{Project Image}
 \spellschool{Illusion (Shadow)}
-\spelllvl{Illus 6}
+\spelllvl{Sor/Wiz 6}
 \spellrng{\rngmed}
 \spelleff{One shadow duplicate}
 \spelldur{\durshort (D)}
