@@ -811,7 +811,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsection{Combat Transformation}
 \spelldesc{You become a virtual fighting machine -- stronger, tougher, faster, and more skilled in combat. Your mind-set changes so that you relish combat instead of casting spells.}
 \spellschool{Transmutation (Augment)}
-\spelllvl{Sor/Wiz 5}
+\spelllvl{Sor/Wiz 7}
 \spellcmp{Verbal, Somatic, and Material}
 \spellrng{\rngpers}
 \spelltgt{You}
@@ -1459,7 +1459,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldmg{12d8 physical damage \add d8 per two caster levels above 12th}
 \begin{spelleffect}
   Any creature reduced to 0 hit points by this spell is entirely disintegrated, leaving behind only a trace of fine dust. A disintegrated creature's equipment is unaffected.
-  \par When used against an object, the ray simply disintegrates as much as one 10-foot cube of nonliving matter. Thus, the spell disintegrates only part of any very large object or structure targeted. The ray affects even objects constructed entirely of force, such as \spell{forceful hand} or a \spell{wall of force}, but not magical effects such as a \spell{globe of invulnerability} or an \spell{antimagic field}.
+  \par When used against an object, the ray simply disintegrates as much as one 10-foot cube of nonliving matter. Thus, the spell disintegrates only part of any very large object or structure targeted. The ray affects even objects constructed entirely of force, \spell{wall of force}, but not magical effects such as a \spell{globe of invulnerability} or an \spell{antimagic field}.
 \end{spelleffect}
 \begin{spellnotes}
   Only the first creature or object struck can be affected; that is, the ray affects only one target per casting.
@@ -1972,7 +1972,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsection{Fire Shield}
 \spelldesc{You appear to immolate yourself in a wreath of flame that lashes out at anyone who tries to harm you.}
 \spellschool{Abjuration/Evocation (Energy, Shielding) [Fire or Cold]}
-\spelllvl{Fire 4, Sor/Wiz 4}
+\spelllvl{Fire 5, Sor/Wiz 4}
 \spellrng{\rngpers}
 \spelltgt{You}
 \spelldur{\durshort (D)}
@@ -2100,18 +2100,6 @@ This spell can be made permanent with a \spell{permanency} ritual.
   \par \subspell{Barred Cage} This version of the spell produces a 20-foot cube made of bands of force (similar to a wall of force spell) for bars. The bands are a half-inch wide, with half-inch gaps between them. Any creature capable of passing through such a small space can escape; others are confined. You can't attack a creature in a barred cage with a weapon unless the weapon can fit between the gaps. Even against such weapons (including arrows and similar ranged attacks), a creature in the barred cage has cover. All spells and breath weapons can pass through the gaps in the bars.
   \par \subspell{Windowless Cell} This version of the spell produces a 10-foot cube with no way in and no way out. Solid walls of force form its six sides.
 \end{spelleffect}
-
-\spellsection{Forceful Hand}
-\spellschool{Evocation (Control) [Force]}
-\spelllvl{Sor/Wiz 4}
-\begin{spelleffect}
-  This spell functions like \spell{interposing hand}, except that it can also pursue and bull rush one opponent you select. You must direct the hand to bull rush an opponent as a swift action. If you do, the \spell{forceful hand} may make a bull rush attack that does not provoke an attack of opportunity. Its maneuver modifier equals your caster level \add your casting attribute, \plus4 for being Large. Its Maneuver Class is equal to 10 \add its maneuver modifier.
-  \par The hand always moves with the opponent to push them back as far as possible. It has no movement limit for this purpose, but it cannot exceed the spell's range.
-  \par If you do not direct the hand to bull rush, it simply provides cover as \spell{interposing hand}.
-\end{spelleffect}
-\begin{spellnotes}
-  A very strong creature could not push the hand out of its way because the latter would instantly reposition itself between the creature and you, but an opponent could push the hand up against you by successfully bull rushing it.
-\end{spellnotes}
 
 \spellsection{Foresight}
 \spelldesc{You bestow a powerful sixth sense to your ally, giving them clear visions of any imminent danger.}
@@ -2640,7 +2628,7 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
   If the creature is touching the ground, it becomes permanently entombed in a state of suspended animation (as the \spell{temporal stasis} spell) in a small sphere far beneath the surface of the earth. It remains there unless an \spell{emancipation} spell is cast at the locale where the imprisonment took place.
 \end{spellblood}
 \begin{spellnotes}
-   A slowed creature can only act during the action phase, and it takes a \minus10 penalty to initiative checks.
+A slowed creature can take only a single move action or standard action each turn, but not both. It cannot take full-round actions, but it may take swift actions. Additionally, it takes a \minus2 penalty to attack rolls, Strength and Dexterity-based checks, and armor class.
 
   The subject must be bloodied at the time that the spell is cast to be imprisoned. Magical search by a crystal ball, a \spell{locate creature} spell, or some other similar divination does not reveal the fact that a creature is imprisoned, but \spell{discern location} does. A \spell{wish} or \spell{miracle} spell will not free the recipient, but will reveal where it is entombed.
 \end{spellnotes}
@@ -3430,23 +3418,6 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \subsubsection{O-P}
 \end{comment}
 
-\spellsection{Oak Body}
-\spellschool{Transmutation (Polymorph)}
-\spelllvl{Druid 7, Sor/Wiz 7}
-\spellrng{Personal}
-\spelltgt{You}
-\spelldur{\durshort (D)}
-\begin{spelleffect}
-  This power transforms your body into living oak, which grants you several advantages.
-  \par You gain physical damage reduction 15/fire or adamantine and a \plus5 enhancement bonus to your armor modifier. You are immune to ability damage, blindness, deafness, disease, drowning, poison, stunning, and all spells or attacks that affect your physiology or respiration, because you have no physiology or respiration while this power is in effect.
-  \par You take only half damage from cold effects of all kinds. However, you become susceptible to all special attacks that affect wood, and you gain vulnerability to fire.
-  \par You gain a \plus4 enhancement bonus to Strength and Constitution, but you take a \minus2 penalty to Dexterity (to a minimum Dexterity score of \minus9), and your speed is reduced to half normal. You can speak but cannot drink (and thus can't use potions). You have an armor check penalty of \minus4 and an arcane spell failure chance of 25%.
-  \par Your unarmed attacks deal damage equal to a club sized for you (1d4 for Small characters, 1d6 for Medium characters), and you are considered armed when making unarmed attacks. When you make a full attack against an object or structure using your unarmed strike, you deal double damage.
-\end{spelleffect}
-\begin{spellnotes}
-  This spell's damage reduction allows the subject to ignore the first 15 physical damage it takes each round. If it is hit by a adamantine weapon or fire attack, it cannot use its damage reduction for 1 round.
-\end{spellnotes}
-
 \spellsection{Obscuring Mist}
 \spelldesc{You conjure a bank of fog that arises around you, concealing you and your allies.}
 \spellschool{Conjuration (Creation) [Fog]}
@@ -3470,31 +3441,6 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \end{spelleffect}
 \begin{spellnotes}
   A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
-\end{spellnotes}
-
-\spellsection{Overland Flight}
-\spellschool{Transmutation (Imbuement)}
-\spelllvl{Sor/Wiz 6}
-\spellrng{Personal}
-\spelltgt{You}
-\spelldur{\durext}
-\begin{spelleffect}
-  At any point during the duration of the spell, you can concentrate as a standard action to fly for 1 round, as the \spell{fly} spell. When using this spell for long-distance movement, you can concentrate to fly each round without taking nonlethal damage, but you cannot take a forced march. This means you can cover 60 miles in an ten-hour period of flight (or 40 miles at a speed of 40 feet).
-\end{spelleffect}
-
-\spellsection{Passwall}
-\spellschool{Transmutation (Alteration)}
-\spelllvl{Sor/Wiz 5, Travel 5}
-\spellrng{Touch}
-\spelleff{5 ft. by 8 ft. opening, 10 ft. deep plus 5 ft. deep per three additional levels}
-\spelldur{\durext (D)}
-\spellsave{None}
-\spellsr{No}
-\begin{spelleffect}
-  You create a passage through wooden, plaster, or stone walls, but not through metal or other harder materials. The passage is 10 feet deep plus an additional 5 feet deep per three caster levels above 9th (15 feet at 12th, 20 feet at 15th, and a maximum of 25 feet deep at 18th level). If the wall's thickness is more than the depth of the passage created, then a single \spell{passwall} simply makes a niche or short tunnel. Several \spell{passwall} spells can then form a continuing passage to breach very thick walls. When \spell{passwall} ends, creatures within the passage are ejected out the nearest exit.
-\end{spelleffect}
-\begin{spellnotes}
-  If someone dispels the \spell{passwall} or you dismiss it, creatures in the passage are ejected out the far exit, if there is one, or out the sole exit if there is only one.
 \end{spellnotes}
 
 \spellsection{Persistent Image}
@@ -3605,7 +3551,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
   The struck target takes damage and is frozen solid, causing it to be paralyzed for 5 rounds.
 \end{spellblood}
 \begin{spellnotes}
-    A slowed creature can only act during the action phase, and it takes a \minus10 penalty to initiative checks.
+A slowed creature can take only a single move action or standard action each turn, but not both. It cannot take full-round actions, but it may take swift actions. Additionally, it takes a \minus2 penalty to attack rolls, Strength and Dexterity-based checks, and armor class.
 
    A paralyzed creature cannot take any action that requires motion. It has effective Dexterity and Strength scores of \minus10 and is helpless, but can take purely mental actions. A winged creature flying in the air at the time that it becomes paralyzed cannot flap its wings and falls. A paralyzed swimmer can't swim and may drown. A creature can move through a space occupied by a paralyzed creature -- ally or otherwise. Each square occupied by a paralyzed creature, however, counts as 2 squares.
  \end{spellnotes}
@@ -4577,7 +4523,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellsave{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
- A slowed creature can only act during the action phase, and it takes a \minus10 penalty to initiative checks.
+    A slowed creature can take only a single move action or standard action each turn, but not both. It cannot take full-round actions, but it may take swift actions. Additionally, it takes a \minus2 penalty to attack rolls, Strength and Dexterity-based checks, and armor class.
 \end{spelleffect}
 
 \spellsectioncomma{Slow}{Mass}
@@ -5298,7 +5244,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
   In addition, the subject is placed into a state of suspended animation unless it makes a successful Will save. For the creature, time ceases to flow and its condition becomes fixed. The creature does not grow older. Its body functions virtually cease, and no force or effect can harm it. This state persists until the magic is removed (such as by a successful \spell{dispel magic} spell or an \spell{emancipation} spell).
 \end{spellblood}
 \begin{spellnotes}
- A slowed creature can only act during the action phase, and it takes a \minus10 penalty to initiative checks.
+    A slowed creature can take only a single move action or standard action each turn, but not both. It cannot take full-round actions, but it may take swift actions. Additionally, it takes a \minus2 penalty to attack rolls, Strength and Dexterity-based checks, and armor class.
 \end{spellnotes}
 
 \spellsection{Power Word Fear}
@@ -5428,7 +5374,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 
 \spellsection{Transmute Flesh and Stone}
 \spellschool{Transmutation (Polymorph)}
-\spelllvl{Earth 6, Trans 6}
+\spelllvl{Earth 6, Sor/Wiz 6}
 \spellrng{\rngmed}
 \spelltgt{One creature or a cylinder of stone from 1 ft. to 3 ft. in diameter and up to 10 ft. long}
 \spelldur{\durshort/Instantaneous}
@@ -5437,12 +5383,12 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spelldmg{3d8 damage per round; see text}
 \begin{spelleffect}
   This spell has different effects depending on the version chosen.
-  \par \subspell{Flesh to Stone} The subject is slowed for the duration of the spell, and takes 3d8 physical damage each round as its body gradually turns to stone. A Fortitude save negates this effect. If the subject reaches 0 hit points before the spell ends, it becomes a mindless, inert statue, along with all its carried gear. If the statue resulting from this effect is broken or damaged, the subject (if ever returned to its original state) has similar damage or deformities. The creature is not dead, but it is not considered alive either.
+  \par \subspell{Flesh to Stone} The subject is slowed for the duration of the spell, and takes 3d8 physical damage each round as its body gradually turns to stone. If the subject reaches 0 hit points before the spell ends, it becomes a mindless, inert statue, along with all its carried gear. If the statue resulting from this effect is broken or damaged, the subject (if ever returned to its original state) has similar damage or deformities. The creature is not dead, but it is not considered alive either.
   \par Only creatures made of flesh are affected by this effect.
-  \par \subspell{Stone to Flesh} This effect restores a petrified creature to its normal state, restoring life and goods. The creature must make a DC 15 Fortitude save to survive the process. Any petrified creature, regardless of size, can be restored. A restored creature has as many hit points as it had when it was petrified. Stone which was not originally a petrified creature is unaffected.
+  \par \subspell{Stone to Flesh} This effect restores a petrified creature to its normal state, restoring life and goods. Any petrified creature, regardless of size, can be restored. A restored creature has as many hit points as it had when it was petrified. Stone which was not originally a petrified creature is unaffected.
 \end{spelleffect}
 \begin{spellnotes}
- A slowed creature can only act during the action phase, and it takes a \minus10 penalty to initiative checks.
+A slowed creature can take only a single move action or standard action each turn, but not both. It cannot take full-round actions, but it may take swift actions. Additionally, it takes a \minus2 penalty to attack rolls, Strength and Dexterity-based checks, and armor class.
 \end{spellnotes}
 
 \spellsection{Tree Shape}
@@ -5651,13 +5597,13 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 
 \spellsection{Wall of Fire}
 \spellschool{Evocation (Energy) [Fire, Wall]}
-\spelllvl{Drd 5, Fire 5, Sor/Wiz 5}
+\spelllvl{Drd 4, Fire 4, Sor/Wiz 4}
 \spellrng{\rngmed}
 \spelleff{Opaque sheet of flame up to 100 ft. long or a ring of fire with a radius of up to 20 ft.; either form 20 ft. high}
 \spelldur{\durshort}
 \spellsave{Reflex half or Reflex negates; see text}
 \spellsr{Yes (Reflex)}
-\spelldmg{5d6 \add d6 per four caster levels above 10th; see text}
+\spelldmg{4d6 \add d6 per four caster levels above 8th; see text}
 \begin{spelleffect}
   An immobile, blazing curtain of shimmering violet fire springs into existence. The wall deals damage to any creature passing through it. A successful Reflex save halves this damage. In addition, the wall radiates heat, dealing 2d6 points of fire damage to creatures within 10 feet and 1d6 points of fire damage to those past 10 feet but within 20 feet. No save is allowed against this damage. The wall deals this damage at the start of each of your turns to All creatures within the area.
   \par If you evoke the wall so that it appears where creatures are, each creature takes damage as if passing through the wall. If any 5-foot length of wall takes 20 points of cold damage or more in 1 round, that length goes out.
