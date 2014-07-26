@@ -3007,7 +3007,7 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
 
 \spellsection{Mage's Disjunction}
 \spellschool{Abjuration (Negation) [Magic]}
-\spelllvl{Magic 9, Abjur 9}
+\spelllvl{Magic 9, Sor/Wiz 9}
 \spellrng{\rngmed}
 \spelltgtorarea{One magic item or \areamed radius burst}
 \spelldur{Instantaneous}
@@ -3670,6 +3670,23 @@ This spell can be made permanent with a \spell{permanency} ritual.
 This spell can be made permanent with a \spell{permanency} ritual.
 \end{spellnotes}
 
+\spellsection{Prohibition}
+\spellschool{Abjuration (Interdiction)}
+\spelllvl{Law 8, Abjur 9}
+\spellarea{100 foot radius mobile emanation centered on you}
+\spellsave{Will half/Will negates}
+\spelldur{\durshort}
+\spellsr{Yes (Will)}
+\spelldmg{8d6 damage \add 1d6 per four levels above 16th}
+\begin{spelleffect}
+    When you cast this spell, you choose an action. Any creature within the area that intentionally attempts to take the chosen action takes damage and is unable to complete the action. A successful Will save halves the damage and allows the creature to take the action successfully. Any individual creature can only be affected by the \spell{prohibition} once per round.
+
+    You may choose any action that must be taken intentionally. For example, you could prohibit creatures from attacking, but not from breathing. Likewise, you cannot prohibit actions that have non-voluntary components, such as ``protecting yourself with natural armor''. 
+\end{spelleffect}
+\begin{spellnotes}
+    Creatures that take prohibited actions know they were magically prevented from taking their chosen action, and may choose to take a different action. However, they are granted no special insight into the precise nature of the prohibition they violated.
+\end{spellnotes}
+
 \spellsection{Project Image}
 \spellschool{Illusion (Shadow)}
 \spelllvl{Sor/Wiz 6}
@@ -3746,33 +3763,10 @@ This spell can be made permanent with a \spell{permanency} ritual.
   This spell functions like \spell{protection from evil}, except that it protects against chaotic effects.
 \end{spelleffect}
 
-\spellsection{Protection from Spells}
-\spellschool{Abjuration (Shielding) [Magic]}
-\spelllvl{Magic 8, Sor/Wiz 8}
-\begin{spelleffect}
-  This spell functions like \spell{spell resistance}, except that the subject also gains a \plus5 enhancement bonus on saving throws against spells and spell-like abilities (but not against supernatural and extraordinary abilities).
-\end{spelleffect}
-
 \pdfbookmark[2]{Q-R}{SpellDescriptionsQR}
 \begin{comment}
 \subsubsection{Q-R}
 \end{comment}
-
-\spellsection{Ray of Clumsiness}
-\spelldesc{You fire a coruscating ray from your hand. When it strikes your foe, he becomes clumsier and less agile.}
-\spellschool{Necromancy (Flesh)}
-\spelllvl{Sor/Wiz 1}
-\spellrng{\rngclose}
-\spelleff{Ray}
-\spelldur{\durshort}
-\spellsave{Fortitude half}
-\spellsr{Yes (Fortitude)}
-\begin{spelleffect}
-  You must succeed on a ranged touch attack. The subject takes a \minus4 penalty to Dexterity.
-\end{spelleffect}
-\begin{spellnotes}
-  The subject's Dexterity score cannot drop below 1.
-\end{spellnotes}
 
 \spellsection{Reduce Person}
 \spellschool{Transmutation (Polymorph) [Size-Affecting]}
