@@ -19,6 +19,19 @@
 A \spell{silence} spell or similar effect can prevent the alarm from being heard. Ethereal or astral creatures do not trigger the alarm. \ritual{Alarm} can be made permanent with a permanency spell.
 \end{spellnotes}
 
+\spellsection{Alter Self}
+\spellschool{Transmutation (Polymorph)}
+\spelllvl{Arcane 2}
+\spellskill{Disguise}
+\spellrng{Personal}
+\spelltgt{You}
+\spelldur{\durlong}
+\spellsave{Fortitude negates}
+\spellsr{Yes (Fortitude)}
+\begin{spelleffect}
+    You use the Disguise check required to perform this ritual to alter your shape. You gain a \plus10 enhancement bonus on the check, and you take no penalties for emulating a different gender or race.
+\end{spelleffect}
+
 \spellsection{Analyze Dweomer}
 \spelldesc{You infallibly discern the magical properties of a magic item.}
 \spellschool{Divination (Knowledge)}
@@ -378,6 +391,39 @@ You send your mind to another plane of existence (an Elemental Plane or some pla
 Sending out your mind in this way can be dangerous. If this ritual is performed unsuccessfully, your Intelligence, Wisdom, and Charisma drop to 0. This is treated as ability drain. Every 24 hours, you may make a new Will saving throw against DC 20 to throw off the effect. Though this effect cannot be dispelled with \spell{dispel magic}, it can be removed with \spell{remove curse}.
 \end{spelleffect}
 
+\spellsection{Contagion}
+\spelldesc{You infect your foe with a contagious disease.}
+\spellschool{Necromancy (Flesh)}
+\spellskill{Heal}
+\spelllvl{Arcane 3, Divine 3}
+\spelltime{10 minutes}
+\spellrng{See text}
+\spelltgt{One living creature}
+\spelldur{Instantaneous}
+\spellsave{Fortitude negates}
+\spellsr{Yes (Fortitude)}
+\begin{spelleffect}
+  The subject contracts a disease selected from the table below, which strikes immediately (no incubation period). The DC for both the initial and subsequent saving throws is equal to this spell's save DC.  
+  \begin{dtable}
+    \begin{tabularx}{\columnwidth}{l X}
+      \thead{Disease} & \thead{Damage} \\
+      Blinding sickness & 1d4 Str\footnotetemp{1} \\
+      Cackle fever & 1d6 Wis \\
+      Filth fever & 1d3 Dex and 1d3 Con \\
+      Mindfire & 1d6 Int \\
+      Red ache & 1d6 Str \\
+      Shakes & 1d6 Dex \\
+      Slimy doom & 1d6 Con
+    \end{tabularx}
+    1 Each time a victim takes 3 or more Strength damage from blinding sickness, he or she must make another Fortitude save or be permanently blinded.	 
+  \end{dtable}
+
+  The subject must be within a number of miles equal to your ritual check result, and you must have fresh flesh or blood that belongs to the subject.
+\end{spelleffect}
+\begin{spellnotes}
+    In general, blood is not considered ``fresh'' after one hour, while flesh takes up between a day and a week to decay, depending on the conditions.
+\end{spellnotes}
+
 \spellsection{Continual Flame}
 \spellschool{Illusion (Figment) [Light]}
 \spellskill{Arcana}
@@ -513,6 +559,26 @@ Unholy water can be thrown as a splash weapon, dealing 2d4 points of damage to a
 \end{spellnotes}
 \spellmat{5 pounds of powdered silver (worth 25 gp).}
 
+\spellsection{Darkness}
+\spelldesc{You create a dark aura around an object of your choosing, keeping light without. Even a dwarf's vision is hampered by this shadowy sphere.}
+\spellschool{Illusion (Glamer) [Darkness]}
+\spellskill{Arcana}
+\spelllvl{Arcane 2, Divine 2}
+\spelltime{1 minute}
+\spellrng{\rngtouch}
+\spelltgt{Object touched}
+\spelldur{\durlong (D)}
+\spellsave{None}
+\spellsr{No}
+\begin{spelleffect}
+  This ritual causes an object to radiate shadowy illumination out to a \areamed radius. This causes the level of illumination to drop to shadowy illumination or the current prevailing condition, whichever is lower. Darkvision is ineffective in magical darkness, and confers no advantage over normal vision.
+\end{spelleffect}
+\begin{spellnotes}
+  If \spell{darkness} is cast on a small object that is then placed inside or under a lightproof covering, the spell's effect is blocked until the covering is removed.
+
+  Normal lights (torches, candles, lanterns, and so forth) are incapable of brightening the area or shining through it, as are light spells of lower level. Such effects are also suppressed if they originate from within the area of the darkness, preventing them from shining light elsewhere. Higher level light spells are not affected by darkness.
+\end{spellnotes}
+
 \spellsection{Demand}
 \spellschool{Divination/Enchantment (Communication, Compulsion) [Mind-Affecting]}
 \spellskill{Arcana}
@@ -556,6 +622,31 @@ This ritual imbues an area with unholy power. Every undead creature in a \ritual
 \begin{spelleffect}
 You immediately become aware of any attempt to observe you by means of a divination (scrying) spell or effect. The ritual's area radiates from you and moves as you move. You know the location of every magical sensor within the ritual's area.
 \par If the scrying attempt originates within the area, you also know its location; otherwise, you and the scrier immediately make opposed caster level checks (1d20 \add caster level). If you at least match the scrier's result, you get a visual image of the scrier and an accurate sense of his or her direction and distance from you.
+\end{spelleffect}
+
+\spellsection{Disguise Self}
+\spellschool{Illusion (Glamer) [Unreal]}
+\spellskill{Disguise}
+\spelllvl{Arcane 1, Divine 1}
+\spelltime{1 minute}
+\spellrng{\rngpers}
+\spelltgt{You}
+\spelldur{\durlong (D)}
+\begin{spelleffect}
+    You use the Disguise check required to perform this ritual to create an illusory disguise for yourself. You gain a \plus10 enhancement bonus on the check, and you can freely alter the appearance of your clothes and equipment, regardless of their original form.
+\end{spelleffect}
+\begin{spellnotes}
+  A creature that interacts with the effect gets a Will save to recognize it as an illusion. A creature that recognizes the effect as an illusion automatically sees through the disguise unless you are also disguised through non-illusory means, in which case it must beat that Disguise check as normal.
+\end{spellnotes}
+
+\spellsectioncomma{Disguise Self}{Greater}
+\spellschool{Illusion (Glamer) [Unreal]}
+\spellskill{Disguise}
+\spelllvl{Arcane 3, Divine 3}
+\spelltime{10 minutes}
+\spelldur{\durext (D)}
+\begin{spelleffect}
+  This ritual functions like \spell{disguise self}, except that it lasts longer and you can change the disguise at will. By concentrating on the effect as a standard action, you can take on an entirely new appearance, just as if you had performed the \spell{disguise self} ritual again.
 \end{spelleffect}
 
 \spellsection{Discern Location}
@@ -695,7 +786,7 @@ The object receives no saving throw against the explosion. Magic traps such as \
 
 \spellsection{Fabricate}
 \spellschool{Transmutation (Alteration)}
-\spellskill{Craft, Engineering}
+\spellskill{Craft (any), Engineering}
 \spelllvl{Arcane 5}
 \spelltime{See text}
 \spellrng{\rngclose}
@@ -778,7 +869,7 @@ This divination is keyed to the recipient, not its companions, and its effect do
 \spellsection{Find Traps}
 \spelldesc{You grant your ally an intuitive insight into the workings of traps, allowing her to easily spot danger ahead.}
 \spellschool{Divination (Knowledge)}
-\spellskill{Craft, Engineering, Perception}
+\spellskill{Craft (traps), Engineering, Perception}
 \spelllvl{Arcana 2, Divine 2}
 \spellrng{Touch}
 \spelltgt{One touched creature}
@@ -1076,6 +1167,19 @@ You prepare an object to be called from virtually any location directly to your 
 \end{spelleffect}
 \spellmat{A sapphire worth at least 500 gp.}
 
+\spellsection{Invisibility Purge}
+\spellschool{Abjuration (Negation)}
+\spellskill{Arcana}
+\spelllvl{Arcane 2, Divine 2}
+\spelltime{1 minute}
+\spellrng{Touch}
+\spelltgt{Touched object or creature}
+\spellarea{\arealarge radius mobile emanation from subject}
+\spelldur{\durlong (D)}
+\begin{spelleffect}
+  You surround the touched object or creature with a mobile sphere of power that suppresses all forms of invisibility. Anything invisible becomes visible while in the area.
+\end{spelleffect}
+
 \spellsection{Ironwood}
 \spellschool{Transmutation (Alteration)}
 \spellskill{Nature}
@@ -1246,7 +1350,7 @@ This spell imbues the chosen object or creature with an enchanted mouth that sud
 
 \spellsection{Major Creation}
 \spellschool{Conjuration (Creation)}
-\spellskill{Craft, Engineering}
+\spellskill{Craft (any), Engineering}
 \spelllvl{Arcane 5}
 \spelltime{10 minutes}
 \spellrng{\rngclose}
@@ -1284,7 +1388,7 @@ You draw an indelible mark on the subject and state some behavior on the part of
 
 \spellsection{Mending}
 \spellschool{Transmutation (Alteration)}
-\spellskill{Craft, Engineering}
+\spellskill{Craft (any), Engineering}
 \spelllvl{Arcane 1, Divine 1}
 \spelltime{1 minute}
 \spellrng{Touch}
@@ -1302,7 +1406,7 @@ The spell cannot affect creatures (including constructs).
 
 \spellsection{Mending, Greater}
 \spellschool{Transmutation (Alteration)}
-\spellskill{Craft, Engineering}
+\spellskill{Craft (any), Engineering}
 \spelllvl{Arcane 3, Divine 3}
 \spelltgt{One object of up to 10 cu. ft./level}
 \begin{spelleffect}
@@ -1325,7 +1429,7 @@ The subject is protected from all devices and spells that detect, influence, or 
 
 \spellsection{Minor Creation}
 \spellschool{Conjuration (Creation)}
-\spellskill{Craft, Engineering}
+\spellskill{Craft (any), Engineering}
 \spelllvl{Arcane 4}
 \spelltime{1 minute}
 \spellrng{0 ft.}
@@ -1513,32 +1617,22 @@ If cast on a creature, \spell{nondetection} wards anything the creature carries 
 This spell hides an object from location by divination (scrying) effects, such as the \spell{scrying} spell or a crystal ball. Such an attempt automatically fails (if the divination is targeted on the object) or fails to perceive the object (if the divination is targeted on a nearby location, object, or person).
 \end{spelleffect}
 
-\spellsection{Object Reading}
-\spellschool{Divination (Knowledge)}
-\spellskill{Craft, Engineering}
-\spelllvl{Arcane 3}
-\spelltime{1 minute}
+\spellsection{Overland Flight}
+\spellschool{Transmutation (Imbuement)}
+\spellskill{Arcana}
+\spelllvl{Arcane 6}
+\spelltime{10 minutes}
 \spellrng{Touch}
-\spelltgt{Object touched}
-\spelldur{Concentration, up to \durlong}
-\spellsave{None}
-\spellsr{Yes (Will)}
+\spelltgt{One creature}
+\spelldur{\durext}
 \begin{spelleffect}
-You can learn details of an inanimate object's previous owner. Objects accumulate psychic impressions left by their previous owners, which can be read by use of this power. The amount of information revealed depends on how long you study a particular object.
-\par 1st Minute: Last owner's race.
-\par 2nd Minute: Last owner's gender.
-\par 3rd Minute: Last owner's age.
-\par 4th Minute: Last owner's alignment.
-\par 5th Minute: How last owner gained and lost the object.
-\par 6th\add Minute: Next-to-last owner's race, and so on.
-\par The power always correctly identifies the last owner of the item. Each owner after the first has a 10\% chance to be skipped. This chance increases by 10\% per previous owner; the second owner has a 10\% chance to be skipped, the third owner has a 20\% chance to be skipped, and so on. The spell can never reveal an owner beyond the tenth owner.
-\par This power will not identify casual users as owners. (Anyone who uses an object to attack someone or something is not thereafter considered a casual user.)
-\par You can continue to run through a list of previous owners and learn details about them as long as the spell's duration lasts. 
+  At any point during the duration of the spell, the subject can concentrate as a standard action to gain a 30 foot fly speed with good maneuverability for 1 round. When not concentrating on the spell, it falls at only 60 feet per round, preventing it from taking any damage from landing.
+
+  The subject can use this spell for long-distance movement, concentrating to fly each round. However, it cannot take a forced march. This means it can typically cover 30 miles in an ten-hour period of flight.
 \end{spelleffect}
 \begin{spellnotes}
-An object without any previous owners reveals no information. If you use this spell additional times on the same object, the information yielded is the same as if you were using the power on the object for the first time.
+    An unencumbered creature with a fly speed can fly through the air. See \pcref{Flying}, for more details.
 \end{spellnotes}
-\end{comment}
 
 \spellsection{Pass Without Trace}
 \spellschool{Transmutation (Imbuement)}
@@ -1553,6 +1647,23 @@ An object without any previous owners reveals no information. If you use this sp
 \begin{spelleffect}
 The subject or subjects can move through any type of terrain and leave neither footprints nor scent. Tracking the subjects is virtually impossible by nonmagical means; the DC is increased by 20.
 \end{spelleffect}
+
+\spellsection{Passwall}
+\spellschool{Transmutation (Alteration)}
+\spellskill{Craft (any), Engineering}
+\spelllvl{Arcane 5, Divine 5}
+\spelltime{10 minutes}
+\spellrng{Touch}
+\spelleff{5 ft. by 8 ft. opening, 10 ft. deep plus 5 ft. deep per three additional levels}
+\spelldur{\durext (D)}
+\spellsave{None}
+\spellsr{No}
+\begin{spelleffect}
+  You create a passage through wooden, plaster, or stone walls, but not through metal or other harder materials. The passage is 10 feet deep plus an additional 5 feet deep per three caster levels above 9th (15 feet at 12th, 20 feet at 15th, and a maximum of 25 feet deep at 18th level). If the wall's thickness is more than the depth of the passage created, then a single \spell{passwall} simply makes a niche or short tunnel. Several \spell{passwall} spells can then form a continuing passage to breach very thick walls. When \spell{passwall} ends, creatures within the passage are ejected out the nearest exit.
+\end{spelleffect}
+\begin{spellnotes}
+  If someone dispels the \spell{passwall} or you dismiss it, creatures in the passage are ejected out the far exit, if there is one, or out the sole exit if there is only one.
+\end{spellnotes}
 
 \spellsection{Permanency}
 \begin{spelleffect}
@@ -1637,6 +1748,24 @@ Spells cast on other creatures, objects, or locations (not on you) are vulnerabl
 \begin{spelleffect}
 This spell functions like \spell{major image}, except that the effect is permanent. By concentrating, you can move the image within the limits of the range, but it is static while you are not concentrating.
 \end{spelleffect}
+
+\spellsection{Phase Door}
+\spellschool{Conjuration (Creation/Translocation) [Planar]}
+\spellskill{Craft (any), Engineering}
+\spelllvl{Arcane 7, Divine 7}
+\spelltime{10 minutes}
+\spellrng{Touch}
+\spelleff{Ethereal 5 ft. by 8 ft. opening, 10 ft. deep \add 5 ft. deep per three levels}
+\spelldur{\durext or until discharged}
+\spellsave{None}
+\spellsr{No}
+\begin{spelleffect}
+  This ritual creates an ethereal passage through wooden, plaster, or stone walls, but not other materials. The phase door is invisible and inaccessible to all creatures except you, and only you can use the passage. It can be used a number of times equal to half your caster level before the ritual ends. You disappear when you enter the phase door and appear when you exit. If you desire, you can take one other creature (Medium or smaller) through the door. This counts as two uses of the door. The door does not allow light, sound, or ritual effects through it, nor can you see through it without using it. Thus, the ritual can provide an escape route, though certain creatures, such as phase spiders, can follow with ease.
+  \par You can allow other creatures to use the phase door by setting some triggering condition for the door. Such conditions can be as simple or elaborate as you desire. They can be based on a creature's name, identity, or alignment, but otherwise must be based on observable actions or qualities. Intangibles such as level, class, and hit points don't qualify.
+\end{spelleffect}
+\begin{spellnotes}
+  The \spell{true seeing} spell or similar magic reveals the presence of a phase door but does not allow its use. A \spell{phase door} is subject to \spell{dispel magic}. If anyone is within the passage when it is dispelled, he is harmlessly ejected just as if he were inside a \spell{passwall} effect. This ritual can be made permanent with a \spell{permanency} ritual.
+\end{spellnotes}
 
 \spellsection{Planar Binding}
 \spellschool{Abjuration/Conjuration (Translocation) [Planar] [see text for lesser planar binding]}
@@ -2179,6 +2308,36 @@ The shambler spell creates 1d4\plus2 shambling mounds. The creatures willingly a
 \par The shamblers have resistance to fire as normal shambling mounds do only if the terrain is rainy, marshy, or damp.
 \end{spelleffect}
 
+\spellsection{Shape Metal}
+\spellschool{Transmutation (Alteration)}
+\spellskill{Craft (metal)}
+\spelllvl{Arcane 4, Divine 4}
+\begin{spelleffect}
+    This ritual functions like \spell{shape wood}, except that it requires Craft (metal) and shapes metal instead of wood. 
+\end{spelleffect}
+
+\spellsection{Shape Stone}
+\spellschool{Transmutation (Alteration) [Earth]}
+\spellskill{Craft (stone)}
+\spelllvl{Arcane 3, Divine 3}
+\begin{spelleffect}
+    This ritual functions like \spell{shape wood}, except that it requires Craft (stone) and shapes stone instead of wood.
+\end{spelleffect}
+
+\spellsection{Shape Wood}
+\spellschool{Transmutation (Alteration)}
+\spellskill{Craft (wood)}
+\spelllvl{Arcane 2, Divine 2}
+\spelltime{10 minutes}
+\spellrng{Touch}
+\spelltgt{Nonmagical wood touched, affecting up to 10 cubic feet}
+\spelldur{Instantaneous}
+\spellsave{No}
+\spellsr{Yes (Fortitude)}
+\begin{spelleffect}
+    You use the Craft check required to perform this ritual to shape an existing piece of wood, or part of a larger piece of wood, to suit your purposes. You gain a \plus10 enhancement bonus on the check, and you need no additional tools, but you can only affect wood.
+\end{spelleffect}
+
 \spellsection{Snare}
 \spellschool{Transmutation (Alteration) [Trap]}
 \spellskill{Survival}
@@ -2233,7 +2392,7 @@ This spell does not affect a corpse that has been turned into an undead creature
 \begin{comment}
 \spellsection{Spellstaff}
 \spellschool{Transmutation (Imbuement) [Magic]}
-\spellskill{Craft, Nature}
+\spellskill{Craft (wood), Nature}
 \spelllvl{Divine 4}
 \spellcmp{V, S, F}
 \spelltime{10 minutes}
@@ -2378,6 +2537,36 @@ You cause an object or location to emanate magical vibrations that attract eithe
 \end{spelleffect}
 \begin{spellnotes}
 \spell{Sympathy} counters and dispels \spell{antipathy}.
+\end{spellnotes}
+
+\spellsection{Telepathic Bond}
+\spelldesc{You forge a mental link binding two allies together.}
+\spellschool{Divination/Transmutation (Communication, Imbuement)}
+\spellskill{Arcana, Linguistics}
+\spelllvl{Arcane 3}
+\spelltime{10 minutes}
+\spellrng{\rngclose}
+\spelltgts{You and one willing creature, or two willing creatures}
+\spelldur{\durext (D)}
+\spellsave{None}
+\spellsr{Yes (Will)}
+\begin{spelleffect}
+  The subjects can communicate mentally through telepathy. The communication is instantaneous across any distance within the same plane.
+\end{spelleffect}
+\begin{spellnotes}
+  No special influence is established as a result of the bond. This ritual can be made permanent with a \spell{permanency} ritual.
+\end{spellnotes}
+
+\spellsection{Telepathic Bond, Mass}
+\spellschool{Divination/Transmutation (Communication, Imbuement)}
+\spellskill{Arcana}
+\spelllvl{Arcane 6}
+\spelltgts{You plus up to five willing creatures in a \areamed radius}
+\begin{spelleffect}
+  This ritual functions like \spell{telepathic bond}, except that it links multiple creatures together into the same bond. Each affected creature can communicate with all other creatures, either privately or to the group as a whole. If desired, you may leave yourself out of the bond forged. This decision must be made at the time of casting.
+\end{spelleffect}
+\begin{spellnotes}
+This ritual can be made permanent with a \spell{permanency} ritual. If you perform this ritual multiple times, you may link each casting of the ritual together such that all subjects may telepathically communicate with each other. 
 \end{spellnotes}
 
 \spellsection{Teleport}
