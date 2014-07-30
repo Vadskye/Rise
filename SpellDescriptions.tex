@@ -1580,7 +1580,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 
 \spellsection{Earthquake}
 \spellschool{Evocation (Control) [Earth]}
-\spelllvl{Destruction 8, Drd 8, Clr 8, Earth 7}
+\spelllvl{Destruction 8, Drd 8, Clr 8, Earth 8}
 \spellrng{\rngfar}
 \spellarea{\arealarge radius spread (S)}
 \spelldur{1 round}
@@ -1588,14 +1588,41 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsr{No}
 \begin{spelleffect}
   An intense but highly localized tremor rips the ground. The shock knocks creatures down, collapses structures, opens cracks in the ground, and more. The effect lasts for 1 round, during which time creatures on the ground can't move or attack. A spellcaster on the ground who attempts to cast a spell must make a Concentration check against a DC equal to (this spell's save DC \add double the level of the spell being cast) or lose the spell. The earthquake affects all terrain, vegetation, structures, and creatures in the area. The specific effect of an earthquake spell depends on the nature of the terrain where it is cast.
-  \par \subspell{Cave, Cavern, or Tunnel} The spell collapses the roof, dealing 7d8 bludgeoning damage \add d8 per four caster levels above 14th to any creature caught under the cave-in (Reflex half) and pinning that creature beneath the rubble (see below). An earthquake cast on the roof of a very large cavern could also endanger those outside the actual area but below the falling debris.
-  \par \subspell{Cliffs} Earthquake causes a cliff to crumble, creating a landslide that travels horizontally as far as it fell vertically. Any creature in the path takes 7d6 bludgeoning damage \add d6 per four caster levels above 14th (Reflex half) and is pinned beneath the rubble (see below).
-  \par \subspell{Open Ground} Each creature standing in the area must make a Reflex save or fall down. Fissures open in the earth, and every creature on the ground has a 25\% chance to fall into one (Reflex save to avoid, whether the creature fell down or not). At the end of the spell, all fissures grind shut, dealing 7d10 bludgeoning damage \add d10 per four caster levels above 14th to any creatures trapped in them and ejecting their bodies (dead or alive).
-  \par \subspell{Structure} Any structure standing on open ground takes 10 damage per caster level, enough to collapse a typical wooden or masonry building, but not a structure built of stone or reinforced masonry. Hardness does not reduce this damage, nor is it halved as damage dealt to objects normally is. Any creature caught inside a collapsing structure takes 7d6 bludgeoning damage \add d6 per four caster levels above 14th (Reflex half) and is pinned beneath the rubble (see below).
+  \par \subspell{Cave, Cavern, or Tunnel} The spell collapses the roof, dealing 8d8 bludgeoning damage \add d8 per four caster levels above 16th to any creature caught under the cave-in (Reflex half) and pinning that creature beneath the rubble (see below). An earthquake cast on the roof of a very large cavern could also endanger those outside the actual area but below the falling debris.
+  \par \subspell{Cliffs} Earthquake causes a cliff to crumble, creating a landslide that travels horizontally as far as it fell vertically. Any creature in the path takes 8d6 bludgeoning damage \add d6 per four caster levels above 16th (Reflex half) and is pinned beneath the rubble (see below).
+  \par \subspell{Open Ground} Each creature standing in the area must make a Reflex save or fall down. Fissures open in the earth, and every creature on the ground has a 25\% chance to fall into one (Reflex save to avoid, whether the creature fell down or not). At the end of the spell, all fissures grind shut, dealing 8d10 bludgeoning damage \add d10 per four caster levels above 16th to any creatures trapped in them and ejecting their bodies (dead or alive).
+  \par \subspell{Structure} Any structure standing on open ground takes 10 damage per caster level, enough to collapse a typical wooden or masonry building, but not a structure built of stone or reinforced masonry. Hardness does not reduce this damage, nor is it halved as damage dealt to objects normally is. Any creature caught inside a collapsing structure takes 8d6 bludgeoning damage \add d6 per four caster levels above 16th (Reflex half) and is pinned beneath the rubble (see below).
   \par \subspell{River, Lake, or Marsh} Fissures open underneath the water, draining away the water from that area and forming muddy ground. Soggy marsh or swampland becomes quicksand for the duration of the spell, sucking down creatures and structures. Each creature in the area must make a Reflex save or sink down in the mud and quicksand. At the end of the spell, the rest of the body of water rushes in to replace the drained water, possibly drowning those caught in the mud.
 \end{spelleffect}
 \begin{spellnotes}
   Any creature pinned beneath rubble takes 1d6 nonlethal damage per minute while pinned. If a pinned character falls unconscious, he or she must make a DC 15 Constitution check or take 1d6 lethal damage each minute thereafter until freed or dead.
+\end{spellnotes}
+
+\spellsection{Earthspike}
+\spelldesc{You create a spike from the ground that impales your foe.} 
+\spellschool{Transmutation (Animation) [Earth]}
+\spelllvl{Drd 3, Earth 3}
+\spellrng{\rngmed}
+\spelltgt{One creature or object}
+\spellsave{None}
+\spellsr{Yes (Fort)}
+\spelldmg{6d8 piercing damage \add d8 per two levels above 6th}
+\begin{spelleffect}
+    If the target is within 10 feet of natural earth or stone, make an attack roll using your caster level \add your casting attribute. If you hit the target's AC, it takes damage. If you also beat its Maneuver Class, it is immobilized for 5 rounds, preventing it from moving from its space.
+
+    An immobilized creature can break free by destroying the spike. The spike has an AC of 10, and 2 hit points per caster level.
+\end{spelleffect}
+
+\spellsectioncomma{Earthspike}{Mass}
+\spelllvl{Drd 6, Earth 6}
+\spellarea{\areasmall radius limit}
+\spelltgts{Enemies or objects within the area}
+\spelldmg{6d8 piercing damage \add d8 per four levels above 12th}
+\begin{spelleffect}
+    This spell functions like \spell{earthspike}, except that it affects multiple targets. Each immobilized creature must destroy a separate spike to break free. 
+\end{spelleffect}
+\begin{spellnotes}
+    This spell cannot attack more than one target within a single 5-ft. square.
 \end{spellnotes}
 
 \spellsection{Elemental Swarm}
@@ -2043,6 +2070,20 @@ This spell can be made permanent with a \spell{permanency} ritual.
   \par \subspell{Windowless Cell} This version of the spell produces a 10-foot cube with no way in and no way out. Solid walls of force form its six sides.
 \end{spelleffect}
 
+\spellsection{Foresee Probability}
+\spellschool{Divination (Knowledge)}
+\spelllvl{Div 2, Knowledge 2}
+\spellrng{\rngmed}
+\spelltgt{One willing creature}
+\spelldur{\durshort}
+\spellsave{None}
+\spellsr{Yes (Will)}
+\begin{spelleffect}
+    When you cast this spell, you roll a d20 twice. Each time the subject would roll a d20, it instead uses a result you rolled for it. The die results are used in the same order you rolled them. Any die results unused when the spell duration expires are discarded.
+
+    At 10th level, and every 5 levels thereafter, you roll an additional die when you cast this spell.
+\end{spelleffect}
+
 \spellsection{Foresight}
 \spellschool{Divination (Knowledge)}
 \spelllvl{Knowledge 5, Protection 5, Sor/Wiz 5}
@@ -2056,12 +2097,24 @@ This spell can be made permanent with a \spell{permanency} ritual.
   \par If you cast this spell on yourself, it lasts for \durlong duration. On any other creature, it lasts for \durshort duration.
 \end{spelleffect}
 
+\spellsection{Forget}
+\spellschool{Enchantment (Complusion)}
+\spelllvl{Chaos 1, Ench 1}
+\spellrng{\rngmed}
+\spelltgt{One creature}
+\spelldur{\durlong}
+\spellsave{Will negates}
+\spellsr{Yes (Will)}
+\begin{spelleffect}
+    The subject forgets something simple. You can't make it forget something important, such as its name. You must know what you want it to forget. The spell does not prevent the subject from learning the information again, and it can remember the information normally after the spell's duration is done.
+\end{spelleffect}
+
 \spellsectioncomma{Foresight}{Greater}
 \spelldesc{You bestow a powerful sixth sense to your ally, giving them clear visions of any imminent danger.}
 \spellschool{Divination (Knowledge)}
 \spelllvl{Knowledge 9, Protection 9, Sor/Wiz 9}
 \begin{spelleffect}
-    This spell functions like \spel{foresight}, except that the subject is also never surprised or flat-footed.
+    This spell functions like \spell{foresight}, except that the subject is also never surprised or flat-footed.
 \end{spelleffect}
 
 \spellsection{Freedom}
@@ -2220,7 +2273,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 
 \spellsection{Gust of Wind}
 \spellschool{Evocation (Control) [Air]}
-\spelllvl{Air 1, Drd 1, Evoc 1}
+\spelllvl{Air 1, Drd 1}
 \spellarea{\arealarge line-shaped immobile emanation from you}
 \spelleff{Wind within the area}
 \spelldur{1 round}
@@ -2253,7 +2306,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngtouch}
 \spelltgt{Touched creature}
 \spelldur{Instantaneous}
-\spellsave{Fortitude half/None}
+\spellsave{None/Fortitude half}
 \spellsr{Yes (Fortitude)}
 \spelldmg{12d8 negative energy damage \add d8 per two caster levels above 12th}
 \begin{spelleffect}
@@ -2738,7 +2791,6 @@ A slowed creature can take only a single move action or standard action each tur
   All weapons and armor that the subject wields gain a \plus3 enhancement bonus for as long as she wields them. This bonus increases to \plus4 at 14th level, and to \plus5 at 20th level.
 \end{spelleffect}
 
-
 \spellsection{Invisibility}
 \spellschool{Illusion (Glamer)}
 \spelllvl{Sor/Wiz 3, Trickery 3}
@@ -2802,7 +2854,7 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
 \spellsection{Irresistible Dance}
 \spelldesc{You fill your enemy with an overpowering urge to dance and caper in place. Against its will, it begins doing so, complete with foot shuffling and tapping.}
 \spellschool{Enchantment (Compulsion) [Mind-Affecting]}
-\spelllvl{Sor/Wiz 9}
+\spelllvl{Chaos 9, Sor/Wiz 9}
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{1d4 rounds}
@@ -3432,7 +3484,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 
 \spellsection{Poison}
 \spellschool{Necromancy (Flesh) [Poison]}
-\spelllvl{Clr 4, Drd 3}
+\spelllvl{Clr 4, Death 4, Drd 3}
 \spellrng{Touch}
 \spelltgt{Touched living creature}
 \spelldur{Instantaneous; see text}
@@ -3572,20 +3624,6 @@ A slowed creature can take only a single move action or standard action each tur
 \spelllvl{Div 7, Sor/Wiz 8}
 \begin{spelleffect}
   This spell functions like \spell{lesser precognition}, except that it also affects your saving throws and dodge modifier to AC. In addition, when making a full attack, you may make an additional attack at a \minus5 penalty.
-\end{spelleffect}
-
-\spellsection{Foresee Probability}
-\spellschool{Divination (Knowledge)}
-\spelllvl{Div 2, Knowledge 2}
-\spellrng{\rngmed}
-\spelltgt{One willing creature}
-\spelldur{\durshort}
-\spellsave{None}
-\spellsr{Yes (Will)}
-\begin{spelleffect}
-    When you cast this spell, you roll a d20 twice. Each time the subject would roll a d20, it instead uses a result you rolled for it. The die results are used in the same order you rolled them. Any die results unused when the spell duration expires are discarded.
-
-    At 10th level, and every 5 levels thereafter, you roll an additional die when you cast this spell.
 \end{spelleffect}
 
 \spellsection{Manipulate Probability}
@@ -4212,7 +4250,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 
 \spellsection{Share Pain}
 \spellschool{Abjuration/Necromancy (Life, Shielding)}
-\spelllvl{Clr 2, Pal 2, Protection 2, Sor/Wiz 2}
+\spelllvl{Clr 2, Death 2, Pal 2, Protection 2, Sor/Wiz 2}
 \spellrng{\rngmed}
 \spelltgts{You and one willing creature}
 \spelldur{\durlong (D)}
@@ -5328,7 +5366,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spelltgt{You}
 \spelldur{\durext (D)}
 \begin{spelleffect}
-  You become able to assume the form of a Large living tree or shrub or a Large dead tree trunk with a small number of limbs. The closest inspection cannot reveal that the tree in question is actually a magically concealed creature. To all normal tests you are, in fact, a tree or shrub, although a Spellcraft check can reveal a faint transmutation on the tree. While in tree form, you can observe all that transpires around you just as if you were in your normal form, and your hit points and save bonuses remain unaffected. You gain a \plus10 enhancement bonus to your armor modifier, but you have an effective Dexterity score of 0 and a speed of 0 feet. You are immune to critical hits while in tree form. All clothing and gear carried or worn changes with you.
+  You become able to assume the form of a Large living tree or shrub or a Large dead tree trunk with a small number of limbs. The closest inspection cannot reveal that the tree in question is actually a magically concealed creature. To all normal tests you are, in fact, a tree or shrub, although a Spellcraft check can reveal a faint transmutation on the tree. While in tree form, you can observe all that transpires around you just as if you were in your normal form, and your hit points and save bonuses remain unaffected. You gain a \plus10 enhancement bonus to your armor modifier, but you have an effective Dexterity score of \minus10 and a speed of 0 feet. You are immune to critical hits while in tree form. All clothing and gear carried or worn changes with you.
 \end{spelleffect}
 \begin{spellnotes}
   You can dismiss tree shape as a free action (instead of as a standard action).
