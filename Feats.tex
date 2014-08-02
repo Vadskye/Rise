@@ -296,6 +296,7 @@ Combat style feats grant a character the ability to fight in a particular style,
 \tind \tind \featref{Snatch Arrows} & Dex 5, Deflect Arrows, Improved Unarmed Strike & Catch a deflected ranged attack & Defense, Reaction & \featpref{Snatch Arrows} \\
 \featref{Mounted Archery} & Ride 1 rank & Reduced penalty for ranged attacks while mounted by 4 & Mounted, Precision & \featpref{Mounted Archery} \\
 \featref{Mounted Combat} & Ride 1 rank & Negate hits on mount with Ride check & Defense, Mounted & \featpref{Mounted Combat} \\
+\featref{Mounted Trample} & Ride 8 ranks & Target cannot avoid mounted overrun & Mobility, Mounted & \featpref{Trample} \\
 \featref{Opportunist} & Dex 3 & \plus2 to attack and damage on attacks of opportunity & Finesse, Style & \featpref{Opportunist} \\
 \featref{Overpowering Assault} & Str 3 & Trade AC for maneuver bonus & Power, Style & \featpref{Overpowering Assault} \\
 \featref{Parry} & Dex 3 & Ready yourself to parry incoming blows & Defense, Reaction & \featpref{Parry} \\
@@ -309,7 +310,6 @@ Combat style feats grant a character the ability to fight in a particular style,
 \featref{Shield Proficiency} & \x &  No armor check penalty on attack rolls & Equipment & \featpref{Shield Proficiency} \\
 \tind \featref{Tower Shield Proficiency} & Shield Proficiency & No armor check penalty on attack rolls & Equipment & \featpref{Tower Shield Proficiency} \\
 \featref{Tactical Readiness} & Int 3 & Ready two actions at once & Reaction & \featpref{Tactical Readiness} \\
-\featref{Mounted Trample} & Ride 8 ranks & Target cannot avoid mounted overrun & Mobility, Mounted & \featpref{Trample} \\
 \featref{Two-Weapon Fighting} & Dex 3 & Gain \plus2 attack bonus when fighting with two weapons & Finesse & \featpref{Two-Weapon Fighting} \\
 \tind \featref{Two-Weapon Defense} & Two-Weapon Fighting & Off-hand weapon grants \plus1 shield bonus to AC, later \plus3 & Defense, Finesse & \featpref{Two-Weapon Defense} \\
 \featref{Weapon Proficiency}\fn{1} & \x &  Don't provoke when attacking with weapon group & Equipment & \featpref{Weapon Proficiency} \\
@@ -1091,6 +1091,10 @@ Choose two magical classes you possess.
 \parhead{Prerequisite} Ride 1 rank.
 \parhead{Benefit} Once per round when your mount is hit in combat, you may attempt a Ride check (as a reaction) to negate the hit. The hit is negated if your Ride check result is greater than the opponent's attack roll. (Essentially, the Ride check result becomes the mount's Armor Class if it's higher than the mount's regular AC.)%Mounted Combat
 
+\feat{Mounted Trample}{Combat}
+\parhead{Prerequisites} Ride 8 ranks.
+\parhead{Benefit} When you attempt to overrun an opponent while mounted, your target may not choose to avoid you. Your mount may make one attack with an appropriate natural weapon (hoof, claw, or other leg-based attack) against any target you knock down, gaining the standard \plus4 bonus on attack rolls against prone targets.
+
 \feat{Nauseating Strike}{Combat, Strike}
 \featpre Base attack bonus \plus12.
 \featben When you attack, you may take a \minus6 penalty to hit. If you deal damage, and your foe is bloodied after your damage is dealt, it must make a Fortitude save to avoid being nauseated for 1 round. The DC is equal to 10 \add your base attack bonus \add your attack attribute (Strength or Dexterity). You cannot make more than one Strike each round.
@@ -1348,10 +1352,6 @@ You can use any combination of performance feats you possess a number of times p
 \feat{Threatening Fire}{Combat, Style}
 \parhead{Prerequisites} Base attack bonus \plus4.
 \parhead{Benefit} While in this style, when you make a standard attack to attack a creature with a ranged weapon, you are considered to be threatening it for the purpose of determining overwhelm penalties. In exchange, you must direct all your attacks against the same creature when making a standard attack.
-
-\feat{Trample}{Combat}
-\parhead{Prerequisites} Ride 8 ranks.
-\parhead{Benefit} When you attempt to overrun an opponent while mounted, your target may not choose to avoid you. Your mount may make one attack with an appropriate natural weapon (hoof, claw, or other leg-based attack) against any target you knock down, gaining the standard \plus4 bonus on attack rolls against prone targets.
 
 \feat{Trapfinder}{Skill}
 \featpre Perception 5 ranks.
