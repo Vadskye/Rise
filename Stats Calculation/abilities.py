@@ -149,10 +149,15 @@ abilities['deadly aim'] = Ability('deadly aim', deadly_aim_benefit, lambda creat
         creature.attributes[DEX].get_total() >= 3,
         set(('feat', 'combat', 'precision', 'style')))
 
-abilities['endurance'] = new_feat('endurance')
-abilities['run'] = new_feat('run')
-abilities['diehard'] = new_feat('diehard')
-abilities['track'] = new_feat('track')
+abilities['endurance'] = new_feat('endurance', tags=[TAG_DEFENSE])
+abilities['diehard'] = new_feat('diehard', tags=[TAG_DEFENSE])
+abilities['track'] = new_feat('track', tags=['skill'])
+abilities['dodge'] = new_feat('dodge', tags=[TAG_DEFENSE, 'combat', 
+'mobility'])
+abilities['mobility'] = new_feat('mobility', tags=[TAG_DEFENSE, 'combat', 
+'mobility'])
+abilities['spring attack'] = new_feat('spring attack', tags=[TAG_DEFENSE,
+'combat', 'mobility'])
 
 ####################
 #MONSTER TRAITS
@@ -180,12 +185,14 @@ def natural_weapon_benefit(creature):
 abilities['improved natural weapon'] = Ability('improved natural weapon',
         apply_benefit = natural_weapon_benefit, points=1)
 
-abilities['enslave'] = Ability('enslave', text = 'enslave', points=2)
-abilities['slime'] = Ability('slime', text = 'slime', points=2)
-abilities['carapace'] = Ability('carapace', 
+abilities['enslave'] = Ability('enslave', tags=[TAG_ATTACK], text = 'enslave',
+        points=2)
+abilities['slime'] = Ability('slime', tags=[TAG_ATTACK], text = 'slime', points=2)
+abilities['carapace'] = Ability('carapace', tags=[TAG_DEFENSE],
         apply_benefit = lambda c: c.meta[LEVEL_PROGRESSION].improve_progression(
             'natural_armor_progression'), points=1)
-abilities['mucus cloud'] = Ability('mucus cloud', points=2)
+abilities['mucus cloud'] = Ability('mucus cloud', tags=[TAG_AURA], points=2)
+abilities['black cloud'] = Ability('black cloud', tags=[TAG_ATTACK], points=3)
 
 ####################
 #MONSTER TEMPLATES
