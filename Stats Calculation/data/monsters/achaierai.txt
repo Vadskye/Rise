@@ -1,0 +1,24 @@
+#meta
+name=Achaierai
+creature type=outsider
+
+#items
+weapon=claws
+offhand weapon=claws
+
+#attributes
+strength=average+2
+dexterity=average
+constitution=average
+intelligence=poor
+wisdom=poor
+
+#abilities
+trait=black cloud
+feat=dodge
+feat=mobility
+feat=spring attack
+
+#core
+size=Large
+speed=50
