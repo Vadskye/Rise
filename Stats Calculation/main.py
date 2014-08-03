@@ -1,5 +1,5 @@
 import argparse
-from creature2 import Creature
+from creature import Creature
 import util
 import combat
 import cProfile
@@ -95,7 +95,7 @@ if __name__ == "__main__":
                 creature2 = Creature.from_creature_name(
                         args['creature_input_2'], creature.meta['level'])
             else:
-                creature2 = Creature.from_creature_name(LEVEL, 
+                creature2 = Creature.from_creature_name('ideal', 
                         creature.meta[LEVEL])
                 print creature2
                 creature = combat.CombatCreature.from_creature(creature)
