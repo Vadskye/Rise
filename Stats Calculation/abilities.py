@@ -112,7 +112,7 @@ def two_weapon_defense_benefit(creature):
         creature.defenses[AC].shield.add_competence(2)
 abilities['two weapon defense'] = Ability('two-weapon defense', two_weapon_defense_benefit,
         lambda creature: creature.attributes[DEX].get_total() >= 3,
-        set(('feat', 'combat', 'defensje', 'finesse')))
+        set(('feat', 'combat', 'defense', 'finesse')))
 
 def combat_expertise_benefit(creature):
     creature.attacks[ATTACK_BONUS].add_bonus(-util.bab_scale(creature.level),
@@ -159,6 +159,19 @@ abilities['mobility'] = new_feat('mobility', tags=[TAG_DEFENSE, 'combat',
 abilities['spring attack'] = new_feat('spring attack', tags=[TAG_DEFENSE,
 'combat', 'mobility'])
 
+def great_fortitude_benefit(creature):
+    creature.defenses[FORTITUDE].add_bonus(2, 'great fortitude')
+abilities['great fortitude'] = new_feat('great fortitude',
+        great_fortitude_benefit, tags=[SAVING_THROW])
+def iron_will_benefit(creature):
+    creature.defenses[WILL].add_bonus(2, 'iron will')
+abilities['iron will'] = new_feat('iron will',
+        iron_will_benefit, tags=[SAVING_THROW])
+def lightning_reflexes_benefit(creature):
+    creature.defenses[REFLEX].add_bonus(2, 'lightning reflexes')
+abilities['lightning reflexes'] = new_feat('lightning reflexes',
+        lightning_reflexes_benefit, tags=[SAVING_THROW], text='1/day reroll Reflex')
+
 ####################
 #MONSTER TRAITS
 ####################
@@ -193,6 +206,9 @@ abilities['carapace'] = Ability('carapace', tags=[TAG_DEFENSE],
             'natural_armor_progression'), points=1)
 abilities['mucus cloud'] = Ability('mucus cloud', tags=[TAG_AURA], points=2)
 abilities['black cloud'] = Ability('black cloud', tags=[TAG_ATTACK], points=3)
+abilities['babble'] = Ability('babble', tags=[TAG_ATTACK], points=2)
+abilities['madness'] = Ability('madness', tags=[TAG_DEFENSE], points=1)
+abilities['wisdom drain'] = Ability('wisdom drain', tags=[TAG_ATTACK], points=1)
 
 ####################
 #MONSTER TEMPLATES
@@ -215,6 +231,15 @@ def scout_benefit(creature):
     creature.speed += min(10, creature.core[SPEED])
 abilities['scout'] = Ability('scout', apply_benefit = scout_benefit,
         tags=[ABILITY_TEMPLATE])
+
+def incorporeal_benefit(creature):
+    #add Cha to hit points
+    creature.core[HIT_POINTS] += creature.meta[LEVEL] * \
+            creature.attributes[CHA].get_total()/2
+    creature.attributes[STR].set_inapplicable()
+    creature.attributes[CON].set_inapplicable()
+abilities['incorporeal'] = Ability('incorporeal',
+        apply_benefit = incorporeal_benefit, tags=[ABILITY_TEMPLATE])
 
 ####################
 #MONSTER TYPES
