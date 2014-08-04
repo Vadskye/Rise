@@ -44,6 +44,8 @@ class Weapon(object):
                     'd8'),
                 'unarmed': cls('unarmed', ENCUMBRANCE_LIGHT, ATTACK_TYPE_MELEE,
                     [DAMAGE_PHYSICAL], 'd3'),
+                'wisdom drain': cls('wisdom drain', ENCUMBRANCE_LIGHT,
+                    ATTACK_TYPE_MELEE, ['wisdom drain'], 'd4'),
                 'none': None
                 }[weapon_name]
 

@@ -103,6 +103,9 @@ class Attribute(ModifierProgression):
                 }[progression]
         self.add_bonus(bonus, 'progression')
 
+    def set_inapplicable(self):
+        self.get_total = lambda : 0
+
 class SavingThrow(ModifierProgression):
     def _apply_progression(self, progression, level):
         bonus = {
