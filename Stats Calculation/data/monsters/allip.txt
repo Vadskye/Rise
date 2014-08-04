@@ -1,0 +1,23 @@
+#meta
+name=Allip
+creature type=undead
+template=incorporeal
+
+#items
+weapon=wisdom drain
+
+#attributes
+dexterity=average
+intelligence=poor
+wisdom=-2
+charisma=average
+
+#abilities
+trait=babble
+trait=madness
+trait=wisdom drain
+feat=lightning reflexes
+feat=dodge
+
+#core
+speed=fly 30
