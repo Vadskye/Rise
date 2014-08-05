@@ -4,13 +4,14 @@ from strings import *
 class Weapon(object):
 
     def __init__(self, name, encumbrance, attack_type, damage_types,
-            damage_die_name):
+            damage_die_name, deals_damage = True):
         self.name = name
         self.encumbrance = encumbrance
         self.attack_type = attack_type
         self.damage_types = damage_types
         self.damage_die = dice.Dice.from_string(damage_die_name)
         self.size = SIZE_MEDIUM
+        self.deals_damage = deals_damage
 
     def set_size(self, size):
         difference_from_current_size = SIZES.index(size) - SIZES.index(self.size)
@@ -45,8 +46,8 @@ class Weapon(object):
                 'unarmed': cls('unarmed', ENCUMBRANCE_LIGHT, ATTACK_TYPE_MELEE,
                     [DAMAGE_PHYSICAL], 'd3'),
                 'wisdom drain': cls('wisdom drain', ENCUMBRANCE_LIGHT,
-                    ATTACK_TYPE_MELEE, ['wisdom drain'], 'd4'),
-                'none': None
+                    ATTACK_TYPE_MELEE, ['wisdom drain'], 'd4', 
+                    deals_damage=False), 'none': None
                 }[weapon_name]
 
 class Armor:
