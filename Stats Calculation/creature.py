@@ -424,8 +424,11 @@ class Creature(object):
         speeds = ['%s %s' % (s, self.core[SPEEDS][s]) for s in self.core[SPEEDS]
                 if self.core[SPEEDS][s]]
         movement += ', '.join(speeds)
-        movement += self.get_text_of_abilities_by_tag(TAG_SENSE, prefix = ', ')
         movement += ENDLINE
+        senses = self.get_text_of_abilities_by_tag(TAG_SENSE, prefix = ', ')
+        if senses:
+            movement += senses
+            movement += ENDLINE
         return movement
 
     def _latex_defenses(self):
