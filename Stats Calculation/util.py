@@ -469,9 +469,12 @@ def attack_damage_to_latex(weapon, weapon_damage):
             DAMAGE_BLUDGEONING]
     damage_types_without_physical = [t for t in weapon.damage_types
             if not t in ignored_damage_types]
-    return '%s%s %s damage' % (weapon_damage.die,
+    damage_string = '%s%s %s' % (weapon_damage.die,
             mstr(weapon_damage.get_total(ignore_die = True), ignore_zero = True),
             ' '.join(damage_types_without_physical))
+    if weapon.deals_damage:
+        damage_string += ' damage'
+    return damage_string
 
 def improved_progression(progression):
     if progression == POOR:
