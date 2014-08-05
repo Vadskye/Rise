@@ -20,4 +20,4 @@ feat=lightning reflexes
 feat=dodge
 
 #core
-speed=fly 30
+speed=fly 30, noland
