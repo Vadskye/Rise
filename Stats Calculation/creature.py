@@ -502,9 +502,12 @@ class Creature(object):
     def _latex_feats(self):
         feats_string = ''
         feats = self.get_abilities_by_tag('feat')
+        #sort feats by their name
+        feats = sorted(feats, key=lambda x:x.name)
+        print feats
         if feats:
             feats_string += r'\textbf{Feats} '
-            feats_string += ', '.join([feat.get_text().title()
+            feats_string += ', '.join([feat.name.title()
                 for feat in feats])
             feats_string += ENDLINE
         return feats_string
