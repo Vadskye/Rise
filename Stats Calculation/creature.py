@@ -127,6 +127,8 @@ class Creature(object):
                         speed)
                 if speed_mode in SPEED_MODES:
                     self.core[SPEEDS][speed_mode] = speed_value
+                elif speed_mode == 'noland':
+                    self.core[SPEEDS][LAND_SPEED] = None
                 else:
                     self.core[SPEEDS][LAND_SPEED] = speed_value
 
@@ -418,7 +420,10 @@ class Creature(object):
         movement = r'\textbf{Space} %s; \textbf{Reach} %s' % (
                 util.value_in_feet(self.core[SPACE]), 
                 util.value_in_feet(self.core[REACH]))
-        movement += r'; \textbf{Speed} %s' % util.value_in_feet(self.core[SPEEDS])
+        movement += r'; \textbf{Speed} '
+        speeds = ['%s %s' % (s, self.core[SPEEDS][s]) for s in self.core[SPEEDS]
+                if self.core[SPEEDS][s]]
+        movement += ', '.join(speeds)
         movement += self.get_text_of_abilities_by_tag(TAG_SENSE, prefix = ', ')
         movement += ENDLINE
         return movement
