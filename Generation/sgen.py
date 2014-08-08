@@ -310,7 +310,7 @@ def switch(data, choices, outputs):
     for i in xrange(len(choices)):
         if choices[i]==data:
             return outputs[i]
-    raise Exception("Switch failed", choices, outputs)
+    raise Exception("Switch failed", data, choices, outputs)
     return False
 
 def find_unique_args(args):
