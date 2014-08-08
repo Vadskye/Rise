@@ -177,7 +177,7 @@ abilities['lightning reflexes'] = new_feat('lightning reflexes',
 ####################
 
 abilities['darkvision'] = Ability('darkvision', tags = ['sense'], value = 60,
-        text=lambda x: '%s %s ft.' % (x.name, x.value))
+        text='Darkvision %s ft.')
 abilities['low-light vision'] = Ability('low-light vision', tags = ['sense'])
 abilities['scent'] = Ability('scent', tags = ['sense'])
 
