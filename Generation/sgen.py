@@ -126,21 +126,6 @@ def calculate_spell_level(args):
 
     combined_condition_strength_levels = sum(level_increases.values())
 
-    """
-    if args['damage']:
-        added_level = calculate_damage(args)
-        present_fundamental_elements.add('damage')
-    if args['condition']:
-        added_level = calculate_condition(args)
-        present_fundamental_elements.add('condition')
-    if args['buff']:
-        added_level = calculate_buff(args)
-        if buff_count>1:
-            added_level*=PART
-        buff_count+=1
-        present_fundamental_elements.add('buff')
-    """
-
     #Use different calculations if it is a buff-only spell
     if 'damage' in present_fundamental_elements or 'condition' in present_fundamental_elements:
         area_level = convert_area(args['area'])
@@ -352,38 +337,9 @@ def parse_string_args_to_dict(text):
             raise ValueError("every sub-argument needs two values!")
     return resulting_args
 
-def reparse_nested_args(parser, args, verbose = False):
-    for arg_to_reparse in fundamental_spell_elements:
-        if args[arg_to_reparse] is None:
-            continue
-        nested_args = parse_string_args_to_dict(args[arg_to_reparse])
-        args[arg_to_reparse] = nested_args
-
-        """
-            nested_args = arg[arg_to_reparse].split(',')
-            nested_args = [x.strip() for x in nested_args]
-            args[arg_to_reparse] = dict()
-            for nested_arg in nested_args:
-                nested_arg = nested_arg.split('=')
-                args[arg_to_reparse][
-            
-            nested_args = args[arg_to_reparse]
-            if verbose: print "nested args string:", nested_args
-            nested_args = re.sub(r'(\w+)=', r'-\1 ', nested_args)
-            if verbose: print "substituted nested args string:", nested_args
-            nested_args = shlex.split(nested_args)
-            if verbose: print "split nested args:", nested_args
-            nested_args = vars(parser.parse_args(nested_args))
-            args[arg_to_reparse] = nested_args
-            #nested_args now contains a complete set of arguments
-            #Extend non-nested args
-            """
-    return args
-
 if __name__ == "__main__":
     parser = initialize_argument_parser()
     args = vars(parser.parse_args())
-    #args = reparse_nested_args(parser, args)
     if args['load_name']:
         name_pattern = re.compile(args['load_name'], re.IGNORECASE)
         storage = open(storage_file_name, 'r')
