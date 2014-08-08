@@ -1,0 +1,16 @@
+#meta
+name=tiny animated object
+group=animated object
+level=1
+
+#items
+weapon=slam
+
+#attributes
+strength=average-8
+dexterity=poor+4
+constitution=average
+wisdom=poor
+
+#core
+size=tiny

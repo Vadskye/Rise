@@ -1,0 +1,16 @@
+#meta
+name=colossal animated object
+group=animated object
+level=16
+
+#items
+weapon=slam
+
+#attributes
+strength=average
+dexterity=poor
+constitution=average
+wisdom=poor
+
+#core
+size=colossal
