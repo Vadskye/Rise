@@ -34,6 +34,8 @@ class Creature(object):
                 }
         self.meta = {
                 ALIGNMENT: 'Neutral',
+                COMBAT_DESCRIPTION: None,
+                DESCRIPTION: None,
                 LEVEL: level,
                 LEVEL_PROGRESSION: None,
                 NAME: None,
@@ -97,6 +99,10 @@ class Creature(object):
             self.meta[LEVEL_PROGRESSION] = monster_types[
                     raw_stats['creature type']]
             self.meta[USE_MAGIC_BONUSES] = False
+        if DESCRIPTION in raw_stats.keys():
+            self.meta[DESCRIPTION] = raw_stats[DESCRIPTION]
+        if COMBAT_DESCRIPTION in raw_stats.keys():
+            self.meta[COMBAT_DESCRIPTION] = raw_stats[COMBAT_DESCRIPTION]
 
         #Add all the abilities to the character
         for ability_type in ABILITY_TYPES:
@@ -253,11 +259,6 @@ class Creature(object):
         self.core[INITIATIVE].add_bonus(self.attributes[DEX].get_total(), DEX)
         self.core[INITIATIVE].add_bonus(self.attributes[WIS].get_total()/2, WIS)
 
-        #Assume user has basic feats
-        self.add_ability(abilities['overwhelming force'])
-        self.add_ability(abilities['two weapon fighting'])
-        self.add_ability(abilities['two weapon defense'])
-
     def _calculate_attack_attribute_bonus(self):
         #we are assuming offhand weapon is no heavier than main weapon
         if self.items[WEAPON_PRIMARY].encumbrance =='light' and self.attributes[DEX].get_total() >= self.attributes[STR].get_total():
@@ -292,6 +293,15 @@ class Creature(object):
             creature_file = open(creature_filename, 'r')
 
         raw_stats = util.parse_stats_from_file(creature_file)
+        #If the creature is part of a creature group, add the stats for the
+        #creature group to the stats for the creature
+        #but allow the specific creature to take precedence
+        if 'group' in raw_stats.keys():
+            group_raw_stats = util.parse_stats_from_file(
+                    'data/monsters/%s.txt' % (''.join(raw_stats['group'])))
+            for key in group_raw_stats.keys():
+                if key not in raw_stats.keys():
+                    raw_stats[key] = group_raw_stats[key]
         return cls(raw_stats, level, verbose)
 
     def print_verb(self, message):
@@ -329,9 +339,14 @@ class Creature(object):
         return attributes
 
     def _to_string_core(self):
-        core = 'Space %s, Reach %s, Speed %s' % (self.core[SPACE],
-                self.core[REACH], self.core[SPEEDS])
+        core = 'Space %s, Reach %s, Speed: %s' % (self.core[SPACE],
+                self.core[REACH], self._to_string_speeds())
         return core
+
+    def _to_string_speeds(self):
+        speeds = ['%s %s' % (s, self.core[SPEEDS][s]) for s in self.core[SPEEDS]
+                if self.core[SPEEDS][s]]
+        return ', '.join(speeds)
 
     def get_text_of_abilities_by_tag(self, tag, prefix = None, joiner = ', ',
             suffix = None):
@@ -372,6 +387,8 @@ class Creature(object):
         monster_string += self._latex_feats()
         monster_string += self._latex_skills()
         monster_string += horizontal_rule
+
+        monster_string += self._latex_fluff()
 
         """
         if self.skills['Sense Motive'] is not None:
@@ -421,9 +438,7 @@ class Creature(object):
                 util.value_in_feet(self.core[SPACE]), 
                 util.value_in_feet(self.core[REACH]))
         movement += r'; \textbf{Speed} '
-        speeds = ['%s %s' % (s, self.core[SPEEDS][s]) for s in self.core[SPEEDS]
-                if self.core[SPEEDS][s]]
-        movement += ', '.join(speeds)
+        movement += self._to_string_speeds()
         movement += ENDLINE
         senses = self.get_text_of_abilities_by_tag(TAG_SENSE, prefix = ', ')
         if senses:
@@ -512,7 +527,6 @@ class Creature(object):
         feats = self.get_abilities_by_tag('feat')
         #sort feats by their name
         feats = sorted(feats, key=lambda x:x.name)
-        print feats
         if feats:
             feats_string += r'\textbf{Feats} '
             feats_string += ', '.join([feat.name.title()
@@ -523,6 +537,12 @@ class Creature(object):
     #TODO
     def _latex_skills(self):
         return ''
+
+    def _latex_fluff(self):
+        fluff = ''
+        fluff += r'\parhead{Description} %s' % self.meta[DESCRIPTION]
+        fluff += r'\parhead{Combat} %s' % self.meta[COMBAT_DESCRIPTION]
+        return fluff
 
     def has_ability(self, ability):
         return ability in self.abilities
