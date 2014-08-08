@@ -8,8 +8,7 @@ weapon=wisdom drain
 
 #attributes
 dexterity=average
-intelligence=poor
-wisdom=-2
+wisdom=-4
 charisma=average
 
 #abilities
@@ -21,3 +20,8 @@ feat=dodge
 
 #core
 speed=fly 30, noland
+
+#fluff
+description=An allip is the spectral remains of someone driven to suicide by a madness that afflicted it in life. It craves only revenge and unrelentingly pursues those who tormented it in life and pushed it over the brink. 
+An allip cannot speak intelligibly.
+combat=An allip is unable to cause physical harm, although it doesn’t appear to know that. It keeps flailing away at enemies, yet it inflicts no physical wounds.
