@@ -197,3 +197,5 @@ TAG_PROTECTION = 'protection'
 TAG_IMMUNITY = 'immunity'
 TAG_SAVE = 'saving throw'
 
+DESCRIPTION = 'description'
+COMBAT_DESCRIPTION = 'combat'
