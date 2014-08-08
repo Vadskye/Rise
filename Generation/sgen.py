@@ -11,7 +11,7 @@ range_choices = ['personal', 'touch', 'close', 'medium', 'far', 'extreme']
 condition_choices = [0,1,1.5,2,2.5,3,3.5]
 touch_attack_choices =['none','poor','1','average','2', 'ray']
 storage_file_name = 'spells.txt'
-condition_debug=False
+condition_debug=True
 general_debug=True
 damage_debug=False
 buff_debug=False
@@ -40,8 +40,7 @@ def initialize_argument_parser():
     parser.add_argument('-u', '--duration', dest = 'duration', type=str,
             default='short', choices=duration_choices)
     parser.add_argument('--dispellable', dest = 'dispellable',
-            help='Subject to dispelling?', default=True,
-            type=util.bool_parser)
+            help='Subject to dispelling?', type=util.bool_parser, default=True)
     parser.add_argument('--concentration', dest = 'concentration', 
             type=util.bool_parser, help='Requires concentration?')
     parser.add_argument('--save_ends', dest='save_ends', 
@@ -50,28 +49,27 @@ def initialize_argument_parser():
             help='Bloodied is checked only when spell is cast?',
             type=util.bool_parser) 
     parser.add_argument('-a', '--area', dest='area', type=str,
-            default='none', choices=area_choices)
+            choices=area_choices)
     parser.add_argument('--choose_targets', dest='choose_targets',
             type=util.bool_parser, help='Choose targets of area spell?')
     parser.add_argument('-m', '--max_targets', dest='max_targets', type=util.bool_parser,
             help='Max target limit')
     parser.add_argument('-s', '--save', dest='save', type=str,
-            help='Saving throw type', default='none',
+            help='Saving throw type', 
             choices=['none','half','partial','negates'])
     parser.add_argument('--sr', dest='sr', type=util.bool_parser,
             help='Spell resistance allowed?', default=True)
     parser.add_argument('-l', '--limit_types', dest='limit_types', type=str,
-            help='Limit affected types?', default=0, choices=['0','1','2','3'])
+            help='Limit affected types?', choices=['0','1','2','3'])
     parser.add_argument('--escapable', dest='escapable', type=str,
-            help='Is the spell escapable?', default=0, choices=['0','1','2'])
+            help='Is the spell escapable?', choices=['0','1','2'])
     parser.add_argument('--noncombat', dest='noncombat', 
             type=util.bool_parser, help='Irrelevant in combat?')
     parser.add_argument('--touch_attack', dest='touch_attack',
             type=str, help='Touch attack and bab',
-            default='none',
             choices = touch_attack_choices)
     parser.add_argument('--trigger', dest='trigger', type=str,
-            help='Triggered by specific event?', default='none',
+            help='Triggered by specific event?',
             choices=['false','immediate','no_action'])
     parser.add_argument('--casting_time', dest='casting_time', type=str,
             default='standard', choices=['standard', 'full', 'swift'])
@@ -256,7 +254,7 @@ def calculate_condition(args):
         elif save=='negates':
             strength_level*=HALF
     #area
-    if not (args['area']=='none' or args['area']=='tiny'):
+    if not (args['area']==None or args['area']=='tiny'):
         #damage spells decrease in damage when they become AOE
         #condition spells also need similar mitigation in addition to area cost.
         strength_level*=1.25
@@ -287,7 +285,7 @@ def convert_condition_tier(condition_tier):
     #return (4-condition_tier)*4
 
 def convert_duration(duration):
-    if not duration:
+    if duration is None:
         return 0
     #duration_choices = ['round','short','medium','long','extreme', 'permanent']
     return switch(duration, duration_choices, [-3, 0, 1, 2, 3, 5])
@@ -297,13 +295,19 @@ def convert_duration_damage(duration):
     return switch(duration, duration_choices, [0.5,2, 3, 4, 5, 7])
 
 def convert_area(area):
+    if area is None:
+        return 0
     #area_choices = ['none', 'tiny', 'normal','large_line', 'mr', 'medium_radius','large_cone','large_radius']
     return switch(area, area_choices, [0,1,2,3,4,4,5,6])
 
 def convert_area_buff(area):
+    if area is None:
+        return 0
     return switch(area, area_choices, [0,2,2,2.5,3,3,3.5,4])
 
 def convert_range(spell_range):
+    if spell_range is None:
+        return 0
     #range_choices = ['personal', 'touch', 'close', 'medium', 'far', 'extreme']
     return switch(spell_range, range_choices, [-2,-2,-1,0,1,2])
 
@@ -312,6 +316,8 @@ def convert_range(spell_range):
     #return switch(spell_range, range_choices, [0,0,1,2,3,4])
 
 def convert_range_buff(spell_range):
+    if spell_range is None:
+        return 0
     #range_choices = ['personal', 'touch', 'close', 'medium', 'far', 'extreme']
     return switch(spell_range, range_choices, [0,0.5,1,1.5,2])
 
