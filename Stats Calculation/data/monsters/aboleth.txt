@@ -22,3 +22,7 @@ trait=mucus cloud
 #core
 size=large
 speed=10, swim 60
+
+#fluff
+description=The aboleth is a revolting fishlike amphibian found primarily in subterranean lakes and rivers. An aboleth has a pink belly. Four pulsating blueblack orifices line the bottom of its body and secrete gray slime that smells like rancid grease. It uses its tail for propulsion in the water and drags itself along with its tentacles on land. An aboleth weighs about 6,500 pounds.
+combat=An aboleth attacks by flailing with its long, slimy tentacles, though it prefers to fight from a distance using its illusion powers.
