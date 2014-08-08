@@ -1,4 +1,5 @@
 import argparse
+import shlex
 import re
 import util
 
@@ -15,61 +16,60 @@ general_debug=True
 damage_debug=False
 buff_debug=False
 
+fundamental_spell_element_names = ('damage', 'condition', 'buff')
+
 default_args = {'choose_targets': False, 'duration': 'short', 'max_targets': 0, 'touch_attack': 'none', 'concentration': False, 'load_name': '', 'bloodied': False, 'area': 'none', 'noncombat': False, 'alternate': False, 'damage': False, 'instantaneous': False, 'trigger': 'none', 'save': 'none', 'save_name': '', 'buff': 0, 'save_ends': False, 'casting_time': 'standard', 'limit_types': 0, 'dispellable': True, 'escapable': 0, 'condition': 0, 'healthy': False, 'sr': True, 'range': 'medium', 'dot': False}
 
 #Return the arguments
 def initialize_argument_parser():
     parser = argparse.ArgumentParser(description='Spell information')
-    parser.add_argument('-d', '--damage', dest = 'damage', type=util.bool_parser,
-            help='Damage level', nargs='*', default=0)
-    parser.add_argument('-c', '--condition', nargs='*', dest='condition', type=float,
-            help='Condition tier', default=0, choices=condition_choices)
-    parser.add_argument('-b', '--buff', nargs='*', dest = 'buff', type=int,
-            help='Buff level', default=0)
-    parser.add_argument('-o', '--bloodied', dest = 'bloodied', type=util.bool_parser,
-            nargs='*', default=False)
+    parser.add_argument('-d', '--damage', dest = 'damage', type=str,
+            help='Damage level')
+    parser.add_argument('-c', '--condition', dest='condition', type=str,
+            help='Condition tier', nargs='*')
+    parser.add_argument('-b', '--buff', dest = 'buff', type=str,
+            help='Buff level', nargs='*')
+    parser.add_argument('-t', '--tier', dest='tier', type=str,
+            help='Tier of the strength of the effect', choices=condition_choices)
+    parser.add_argument('--bloodied', dest='bloodied', type=util.bool_parser,
+            help='Condition only affects healthy creatures?')
+    parser.add_argument('--healthy', dest='healthy', type=util.bool_parser,
+            help='Condition only affects healthy creatures?')
     parser.add_argument('--alternate', dest = 'alternate', type=util.bool_parser,
-            nargs='*', default=False)
+            )
     parser.add_argument('-u', '--duration', dest = 'duration', type=str,
-            default='short', nargs='*',
-            choices=duration_choices)
+            default='short', choices=duration_choices)
     parser.add_argument('--dispellable', dest = 'dispellable',
-            help='Subject to dispelling?', nargs='*', default=True,
+            help='Subject to dispelling?', default=True,
             type=util.bool_parser)
     parser.add_argument('--concentration', dest = 'concentration', 
-            type=util.bool_parser, help='Requires concentration?',
-            nargs='*', default=False)
+            type=util.bool_parser, help='Requires concentration?')
     parser.add_argument('--save_ends', dest='save_ends', 
-            type=util.bool_parser, help='Save each round to end?',
-            nargs='*', default=False)
+            type=util.bool_parser, help='Save each round to end?')
     parser.add_argument('--instantaneous', dest='instantaneous',
             help='Bloodied is checked only when spell is cast?',
-            type=util.bool_parser, nargs='*', default=False) 
+            type=util.bool_parser) 
     parser.add_argument('-a', '--area', dest='area', type=str,
             default='none', choices=area_choices)
-    parser.add_argument('-t', '--choose_targets', dest='choose_targets',
-            type=util.bool_parser, default=False,
-            help='Choose targets of area spell?')
+    parser.add_argument('--choose_targets', dest='choose_targets',
+            type=util.bool_parser, help='Choose targets of area spell?')
     parser.add_argument('-m', '--max_targets', dest='max_targets', type=util.bool_parser,
-            help='Max target limit', default=False)
+            help='Max target limit')
     parser.add_argument('-s', '--save', dest='save', type=str,
-            help='Saving throw type', nargs='*', default='none',
+            help='Saving throw type', default='none',
             choices=['none','half','partial','negates'])
     parser.add_argument('--sr', dest='sr', type=util.bool_parser,
             help='Spell resistance allowed?', default=True)
-    parser.add_argument('-l', '--limit_types', dest='limit_types', type=int,
-            help='Limit affected types?', default=0, nargs='*', choices=[0,1,2,3])
-    parser.add_argument('--escapable', dest='escapable', type=int,
-            help='Is the spell escapable?', default=0, choices=[0,1,2])
+    parser.add_argument('-l', '--limit_types', dest='limit_types', type=str,
+            help='Limit affected types?', default=0, choices=['0','1','2','3'])
+    parser.add_argument('--escapable', dest='escapable', type=str,
+            help='Is the spell escapable?', default=0, choices=['0','1','2'])
     parser.add_argument('--noncombat', dest='noncombat', 
-            type=util.bool_parser, help='Irrelevant in combat?',
-            nargs='*', default=False)
+            type=util.bool_parser, help='Irrelevant in combat?')
     parser.add_argument('--touch_attack', dest='touch_attack',
             type=str, help='Touch attack and bab',
-            nargs='*', default='none',
+            default='none',
             choices = touch_attack_choices)
-    parser.add_argument('-e', '--healthy', dest='healthy', type=util.bool_parser,
-            help='Only affects healthy creatures?', nargs='*', default=False)
     parser.add_argument('--trigger', dest='trigger', type=str,
             help='Triggered by specific event?', default='none',
             choices=['false','immediate','no_action'])
@@ -77,54 +77,76 @@ def initialize_argument_parser():
             default='standard', choices=['standard', 'full', 'swift'])
     parser.add_argument('-r', '--range', dest='range', type=str,
             default='medium', choices=range_choices)
-    parser.add_argument('--save_name', dest='save_name', type=str, 
-            nargs='*', default='')
-    parser.add_argument('--load_name', dest='load_name', type=str, 
-            nargs='*', default='')
+    parser.add_argument('--save_name', dest='save_name', type=str)
+    parser.add_argument('--load_name', dest='load_name', type=str)
     parser.add_argument('--dot', dest='dot', type=util.bool_parser,
-            help='damage over time?', nargs='*', default=False)
-    return vars(parser.parse_args())
+            help='damage over time?')
+    return parser
+    #return vars(parser.parse_args())
 
 def calculate_spell_level(args):
-    """
-    Need compatibility to use different attributes for different aspects
-    of the spell. 
-    Solution: Copy args such that we have one args per separate condition
-    (or other aspect)
-    For arguments that only have one value, simply copy them across all aspects
-    For arguments that have multiple values, assign one value per aspect
-    Thus, the args after this splitting will always have one value per argument
-    """
 
-    split_args = util.generate_split_args(args)
+    print "args:", args
+
+    #split_args = util.generate_split_args(args)
     combined_condition_strength_levels = 0
-    all_aspects = set()
+    #we need to keep track of all fundamental elements present in a spell
+    present_fundamental_elements = set()
     buff_count=0
-    for args in split_args:
-        if general_debug: print find_unique_args(args)
-        if args['damage']:
-            added_level = calculate_damage(args)
-            all_aspects.add('damage')
-        if args['condition']:
-            added_level = calculate_condition(args)
-            all_aspects.add('condition')
-        if args['buff']:
-            added_level = calculate_buff(args)
-            if buff_count>1:
-                added_level*=PART
-            buff_count+=1
-            all_aspects.add('buff')
+    #track the level increases from each spell element
+    level_increases = {
+            'damage': 0,
+            'condition': 0,
+            'buff': 0,
+    }
+    for spell_element_name in fundamental_spell_element_names:
+        if args[spell_element_name] is None:
+            continue
+        for spell_element in args[spell_element_name]:
+            #if there is at least one spell element, add it to the list of
+            #present fundamental elements
+            present_fundamental_elements.add(spell_element_name)
+            #each spell component starts as a copy of the general aspects of the spell
+            spell_element_complete_args = args
+            #each spell component also has different args unique to the element
+            spell_element_unique_args = parse_string_args_to_dict(
+                    spell_element)
+            #the two must be combined, with the unique args replacing the base args
+            for key in spell_element_unique_args:
+                spell_element_complete_args[key] = spell_element_unique_args[key]
+            level_increases[spell_element_name] = calculate_fundamental_spell_element_level(
+                    spell_element_name, spell_element_complete_args)
 
-        #if there are multiple unique aspects
-        if len(all_aspects)>1:
+    #we have now gathered the levels for all fundamental elements of the spell
+
+    #if there are multiple unique aspects, the net increases from all
+    #elements except the most powerful element cost less
+    if len(present_fundamental_elements)>1:
+        max_level_increase = max(level_increases.values())
+        for key in level_increases:
+            if level_increases[key] < max_level_increase:
+                level_increases[key]*=PART
+            level_increases[key] = max(1, level_increases[key])
+
+    combined_condition_strength_levels = sum(level_increases.values())
+
+    """
+    if args['damage']:
+        added_level = calculate_damage(args)
+        present_fundamental_elements.add('damage')
+    if args['condition']:
+        added_level = calculate_condition(args)
+        present_fundamental_elements.add('condition')
+    if args['buff']:
+        added_level = calculate_buff(args)
+        if buff_count>1:
             added_level*=PART
-
-        combined_condition_strength_levels += max(1,added_level)
-        if general_debug:
-            print 'current combined:', combined_condition_strength_levels
+        buff_count+=1
+        present_fundamental_elements.add('buff')
+    """
 
     #Use different calculations if it is a buff-only spell
-    if 'damage' in all_aspects or 'condition' in all_aspects:
+    if 'damage' in present_fundamental_elements or 'condition' in present_fundamental_elements:
         area_level = convert_area(args['area'])
         #adding max targets shouldn't affect small areas.
         if args['max_targets'] and area_level>=2:
@@ -143,13 +165,21 @@ def calculate_spell_level(args):
     if not args['trigger']=='none':
         if args['trigger']=='no_action': total_level+=1
         if args['trigger']: total_level*=1.5
-    if 'buff' in all_aspects:
+    if 'buff' in present_fundamental_elements:
         total_level+= convert_range_buff(args['range'])
     else:
         total_level += convert_range(args['range'])
     if general_debug: print 'total_level', total_level
 
     return total_level-3
+
+def calculate_fundamental_spell_element_level(spell_element_name,
+        spell_element_args):
+    return {
+            'damage': calculate_damage,
+            'condition': calculate_condition,
+            'buff': calculate_buff,
+            }[spell_element_name](spell_element_args)
 
 def calculate_damage(args):
     if damage_debug: print 'Calculating damage aspect' 
@@ -191,7 +221,7 @@ def calculate_buff(args):
 
 def calculate_condition(args):
     if condition_debug: print 'Calculating condition aspect'
-    effect_level = convert_condition_tier(args['condition'])
+    effect_level = convert_condition_tier(args['tier'])
     
     if args['alternate']: effect_level+=1
     if args['bloodied']:
@@ -232,9 +262,9 @@ def calculate_condition(args):
         #damage spells decrease in damage when they become AOE
         #condition spells also need similar mitigation in addition to area cost.
         strength_level*=1.25
-    if args['escapable']==1:
+    if args['escapable']=='1':
         strength_level*=PART
-    elif args['escapable']==2:
+    elif args['escapable']=='2':
         strength_level*=HALF
     if args['healthy']: strength_level*=HALF
     if condition_debug: print 'raw strength_level', strength_level
@@ -242,22 +272,20 @@ def calculate_condition(args):
     return strength_level
 
 def calculate_limit_types(limit_types, strength_level):
-    if limit_types==1:
-        strength_level*=0.9
-    elif limit_types==2: 
-        strength_level*=0.75
-    elif limit_types==3:
-        strength_level*=0.6
-    return strength_level
-
+    multiplier = {
+            '1': 0.9,
+            '2': 0.75,
+            '3': 0.6,
+            }[limit_types]
+    return strength_level*multiplier
 
 #Return the level adjustment associated with the condition tier
 def convert_condition_tier(condition_tier):
     return {
-            3: 4,
-            2: 8,
-            1.5: 12,
-            1: 16}[condition_tier]
+            '3': 4,
+            '2': 8,
+            '1.5': 12,
+            '1': 16}[condition_tier]
     #return (4-condition_tier)*4
 
 def convert_duration(duration):
@@ -281,11 +309,9 @@ def convert_range(spell_range):
     #range_choices = ['personal', 'touch', 'close', 'medium', 'far', 'extreme']
     return switch(spell_range, range_choices, [-2,-2,-1,0,1,2])
 
-"""
-def convert_range_aoe(spell_range):
+#def convert_range_aoe(spell_range):
     #range_choices = ['personal', 'touch', 'close', 'medium', 'far', 'extreme']
-    return switch(spell_range, range_choices, [0,0,1,2,3,4])
-"""
+    #return switch(spell_range, range_choices, [0,0,1,2,3,4])
 
 def convert_range_buff(spell_range):
     #range_choices = ['personal', 'touch', 'close', 'medium', 'far', 'extreme']
@@ -304,9 +330,57 @@ def find_unique_args(args):
         if not args[key]==default_args[key]:
             unique[key]=args[key]
     return unique
-    
+
+#accept string in the format "arg1=blah, arg2=herp derp, arg3=whee"
+#return dict in the format {arg1: blah, arg2: herp derp, arg3: whee}
+def parse_string_args_to_dict(text):
+    resulting_args = dict()
+    separate_args = [x.strip() for x in re.split('[, ]+', text)]
+    for individual_arg in separate_args:
+        split_args = [x.strip() for x in individual_arg.split('=')]
+        #most args should be of the format "arg1=blah"
+        #but some can exist on their own, and are simply boolean toggles
+        try:
+            (key, value) = split_args
+            resulting_args[key] = value
+        except ValueError:
+            print split_args
+            raise ValueError("every sub-argument needs two values!")
+    return resulting_args
+
+def reparse_nested_args(parser, args, verbose = False):
+    for arg_to_reparse in fundamental_spell_elements:
+        if args[arg_to_reparse] is None:
+            continue
+        nested_args = parse_string_args_to_dict(args[arg_to_reparse])
+        args[arg_to_reparse] = nested_args
+
+        """
+            nested_args = arg[arg_to_reparse].split(',')
+            nested_args = [x.strip() for x in nested_args]
+            args[arg_to_reparse] = dict()
+            for nested_arg in nested_args:
+                nested_arg = nested_arg.split('=')
+                args[arg_to_reparse][
+            
+            nested_args = args[arg_to_reparse]
+            if verbose: print "nested args string:", nested_args
+            nested_args = re.sub(r'(\w+)=', r'-\1 ', nested_args)
+            if verbose: print "substituted nested args string:", nested_args
+            nested_args = shlex.split(nested_args)
+            if verbose: print "split nested args:", nested_args
+            nested_args = vars(parser.parse_args(nested_args))
+            args[arg_to_reparse] = nested_args
+            #nested_args now contains a complete set of arguments
+            #Extend non-nested args
+            """
+    return args
+
 if __name__ == "__main__":
-    args = initialize_argument_parser()
+    parser = initialize_argument_parser()
+    args = vars(parser.parse_args())
+    print "initial args", args
+    #args = reparse_nested_args(parser, args)
     if args['load_name']:
         load_name = ' '.join(args['load_name'])
         name_pattern = re.compile(load_name)
