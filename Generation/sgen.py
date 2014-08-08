@@ -382,8 +382,7 @@ if __name__ == "__main__":
     print "initial args", args
     #args = reparse_nested_args(parser, args)
     if args['load_name']:
-        load_name = ' '.join(args['load_name'])
-        name_pattern = re.compile(load_name)
+        name_pattern = re.compile(args['load_name'], re.IGNORECASE)
         storage = open(storage_file_name, 'r')
         #Find the spell in the storage file and print three lines
         #The lines are (name), (args), (level)
