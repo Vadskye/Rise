@@ -86,8 +86,6 @@ def initialize_argument_parser():
 
 def calculate_spell_level(args):
 
-    print "args:", args
-
     #split_args = util.generate_split_args(args)
     combined_condition_strength_levels = 0
     #we need to keep track of all fundamental elements present in a spell
@@ -379,7 +377,6 @@ def reparse_nested_args(parser, args, verbose = False):
 if __name__ == "__main__":
     parser = initialize_argument_parser()
     args = vars(parser.parse_args())
-    print "initial args", args
     #args = reparse_nested_args(parser, args)
     if args['load_name']:
         name_pattern = re.compile(args['load_name'], re.IGNORECASE)
