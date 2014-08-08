@@ -20,3 +20,7 @@ feat=
 #core
 size=
 speed=
+
+#fluff
+description=
+combat=
