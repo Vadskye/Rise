@@ -1,0 +1,12 @@
+#meta
+name=
+creature type=
+template=
+
+#abilities
+trait=
+feat= 
+
+#fluff
+description=
+combat=
