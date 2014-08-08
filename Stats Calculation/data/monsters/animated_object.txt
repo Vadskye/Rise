@@ -1,0 +1,7 @@
+#meta
+creature type=construct
+template=mindless
+
+#fluff
+description=Animated objects come in all sizes, shapes, and colors. They owe their existence as creatures to spells such as \spell{animate objects} or similar supernatural abilities.
+combat=Animated objects fight only as directed by the animator. They follow orders without question and to the best of their abilities. Since they do not need to breathe and never tire, they can be extremely capable minions. \par An animated object can have one or more of the following special abilities, depending on its form.
