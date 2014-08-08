@@ -1,0 +1,16 @@
+#meta
+name=huge animated object
+group=animated object
+level=8
+
+#items
+weapon=slam
+
+#attributes
+strength=average
+dexterity=poor
+constitution=average
+wisdom=poor
+
+#core
+size=huge
