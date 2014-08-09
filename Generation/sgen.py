@@ -84,6 +84,40 @@ def initialize_argument_parser():
 
 def calculate_spell_level(args):
 
+    #start from -3 because it makes multipliers work better
+    total_level = -3
+
+    total_level += levels_from_fundamental_elements()
+
+    #Use different calculations if it is a buff-only spell
+    if 'damage' in present_fundamental_elements or 'condition' in present_fundamental_elements:
+        area_level = convert_area(args['area'])
+        #adding max targets shouldn't affect small areas.
+        if args['max_targets'] and area_level>=2:
+            area_level= max (area_level*HALF,2)
+        if args['choose_targets']: area_level+=1
+    else:
+        area_level = convert_area_buff(args['area'])
+        #adding max targets shouldn't affect small areas.
+        if args['max_targets'] and area_level>=2:
+            area_level= max (area_level*HALF,2)
+        #all buffs are assumed to choose targets - not added separately 
+    if general_debug: print 'area_level', area_level
+
+    total_level += area_level
+    if not args['sr']: total_level+=1
+    if not args['trigger']=='none':
+        if args['trigger']=='no_action': total_level+=1
+        if args['trigger']: total_level*=1.5
+    if 'buff' in present_fundamental_elements:
+        total_level+= convert_range_buff(args['range'])
+    else:
+        total_level += convert_range(args['range'])
+    if general_debug: print 'total_level', total_level
+
+    return total_level
+
+def levels_from_fundamental_elements():
     #split_args = util.generate_split_args(args)
     combined_condition_strength_levels = 0
     #we need to keep track of all fundamental elements present in a spell
@@ -124,35 +158,7 @@ def calculate_spell_level(args):
                 level_increases[key]*=PART
             level_increases[key] = max(1, level_increases[key])
 
-    combined_condition_strength_levels = sum(level_increases.values())
-
-    #Use different calculations if it is a buff-only spell
-    if 'damage' in present_fundamental_elements or 'condition' in present_fundamental_elements:
-        area_level = convert_area(args['area'])
-        #adding max targets shouldn't affect small areas.
-        if args['max_targets'] and area_level>=2:
-            area_level= max (area_level*HALF,2)
-        if args['choose_targets']: area_level+=1
-    else:
-        area_level = convert_area_buff(args['area'])
-        #adding max targets shouldn't affect small areas.
-        if args['max_targets'] and area_level>=2:
-            area_level= max (area_level*HALF,2)
-        #all buffs are assumed to choose targets - not added separately 
-    if general_debug: print 'area_level', area_level
-
-    total_level = combined_condition_strength_levels+area_level
-    if not args['sr']: total_level+=1
-    if not args['trigger']=='none':
-        if args['trigger']=='no_action': total_level+=1
-        if args['trigger']: total_level*=1.5
-    if 'buff' in present_fundamental_elements:
-        total_level+= convert_range_buff(args['range'])
-    else:
-        total_level += convert_range(args['range'])
-    if general_debug: print 'total_level', total_level
-
-    return total_level-3
+    return sum(level_increases.values())
 
 def calculate_fundamental_spell_element_level(spell_element_name,
         spell_element_args):
