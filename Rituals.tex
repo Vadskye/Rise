@@ -365,8 +365,7 @@ This ritual blesses an area with holy power. Every undead creature in a \ritual{
 \begin{spelleffect}
 You send your mind to another plane of existence (an Elemental Plane or some plane farther removed) in order to receive advice and information from powers there. You are allowed one such question per caster level. The answers given are correct within the limits of the entity's knowledge. ``Unclear" is a legitimate answer, because even powerful beings of other planes are not necessarily omniscient. In cases where a one-word answer would be misleading or contrary to the entity's interests, a short phrase (five words or less) may be given as an answer instead.
 
-Sending out your mind in this way can be dangerous. If this ritual is performed unsuccessfully, your Intelligence, Wisdom, and Charisma drop to 0. This is treated as ability drain. Every 24 hours, you may make a new Will saving throw against DC 20 to throw off the effect. Though this effect cannot be dispelled with \spell{dispel magic}, it can be removed with \spell{remove curse}.
-\end{spelleffect}
+Sending out your mind in this way can be dangerous. After performing this ritual, or if the ritual is interrupted, you must make a DC 20 Will save. Failure means your Intelligence, Wisdom, and Charisma drop to 0. This is treated as ability drain. Every 24 hours, you may make a new Will saving throw against DC 20 to throw off the effect. Though this effect cannot be dispelled with \spell{dispel magic}, it can be removed with \spell{break enchantment}.  \end{spelleffect}
 
 \spellsection{Contagion}
 \spelldesc{You infect your foe with a contagious disease.}
@@ -1513,20 +1512,18 @@ The warded creature or object becomes difficult to detect by divination spells a
 If cast on a creature, \spell{nondetection} wards anything the creature carries as well as the creature itself.
 \end{spellnotes}
 
-\begin{comment}
 \spellsection{Obscure Object}
 \spellschool{Abjuration (Shielding)}
 \spelllvl{Arcane 3, Divine 3}
-\spelltime{1 standard action}
+\spelltime{1 minute}
 \spellrng{Touch}
-\spelltgt{One object touched of up to 100 lb./level}
+\spelltgt{One object touched of up to 100 lb.}
 \spelldur{\durext (D)}
 \spellsave{Will negates (object)}
 \spellsr{Yes (object)}
 \begin{spelleffect}
 This spell hides an object from location by divination (scrying) effects, such as the \spell{scrying} spell or a crystal ball. Such an attempt automatically fails (if the divination is targeted on the object) or fails to perceive the object (if the divination is targeted on a nearby location, object, or person).
 \end{spelleffect}
-\end{comment}
 
 \spellsection{Overland Flight}
 \spellschool{Transmutation (Imbuement)}
@@ -2167,7 +2164,7 @@ The shambler spell creates 1d4\plus2 shambling mounds. The creatures willingly a
 \spellschool{Transmutation (Alteration)}
 \spelllvl{Arcane 4, Divine 4}
 \begin{spelleffect}
-    This ritual functions like \spell{shape wood}, except that it requires Craft (metal) and shapes metal instead of wood. 
+    This ritual functions like \spell{shape wood}, except that you make a Craft (metal) check, and you shape metal instead of wood. 
 \end{spelleffect}
 
 \spellsection{Shape Stone}
