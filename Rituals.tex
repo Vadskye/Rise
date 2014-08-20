@@ -5,7 +5,8 @@
 \spelllvl{Arcane 1, Divine 1}
 \spelltime{1 minute}
 \spellrng{\rngclose}
-\spellarea{\arealarge radius emanation centered on a point in space}
+\spelltgt{One location}
+\spellarea{\arealarge radius emanation}
 \spelldur{\durext (D)}
 \spellsave{None}
 \spellsr{No}
@@ -85,7 +86,8 @@ The most common use for this ritual is to get an animal to carry a message to yo
 \spelllvl{Arcane 9, Nature 9}
 \spelltime{1 hour}
 \spellrng{\rngclose}
-\spelltgt{One location (up to a 10 ft. cube/level) or one object}
+\spelltgt{One object or location}
+\spellarea{100 ft. radius emanation}
 \spelldur{One week (D)}
 \spellsave{Will partial}
 \spellsr{Yes (Will)}
@@ -117,7 +119,7 @@ You create an invisible magical sensor that sends you visual information. You ca
 \spelllvl{Arcane 2}
 \spelltime{1 minute}
 \spellrng{Touch}
-\spelltgt{The door, chest, or portal touched, up to 30 sq. ft./level in size}
+\spelltgt{The door, chest, or portal touched, up to a 10-foot cube in size}
 \spelldur{Permanent}
 \spellsave{None}
 \spellsr{No}
@@ -134,7 +136,7 @@ A \ritual{knock} spell does not remove an arcane lock; it only suppresses the ef
 \spelllvl{Arcane 1}
 \spelltime{1 minute}
 \spellrng{\rngtouch}
-\spelleff{One personal rune or mark, all of which must fit within 1 sq. ft.}
+\spelleff{One personal rune or mark, all of which must fit within 1-foot square}
 \spelldur{Permanent}
 \spellsave{None}
 \spellsr{No}
@@ -235,12 +237,12 @@ You awaken a tree or animal to humanlike sentience.
 \spelllvl{Divine 1}
 \spelltime{1 minute}
 \spellrng{Touch}
-\spelltgt{Flask of water touched}
+\spelltgt{Water touched}
 \spelldur{Instantaneous}
 \spellsave{Will negates (object)}
 \spellsr{Yes (object)}
 \begin{spelleffect}
-This ritual imbues a flask (1 pint) of water with holy power, turning it into holy water.
+This ritual imbues a flask (1 pint) of water with holy power, turning it into holy water. Larger bodies of water can be made holy by performing this ritual multiple times.
 \end{spelleffect}
 \begin{spellnotes}
 Holy water can be thrown as a splash weapon, dealing 2d4 points of damage to a struck undead creature or an evil outsider.
@@ -344,6 +346,7 @@ You instantly gain knowledge of as many as three facts from among the following 
 \spelllvl{Divine 2}
 \spelltime{1 minute }
 \spellrng{\rngclose}
+\spelltgt{One location}
 \spellarea{\areamed radius emanation}
 \spelldur{24 hours}
 \spellsave{None}
@@ -443,12 +446,12 @@ Winter & Frigid cold, blizzard, or thaw \\
 \spelllvl{Arcane 2, Divine 2, Nature 2}
 \spelltime{10 minutes}
 \spellrng{\rngclose}
-\spelleff{Food and water to sustain three humans or one horse/level for 24 hours}
+\spelleff{Food and water to sustain three humans or one horse/level}
 \spelldur{Instantaneous; see text}
 \spellsave{None}
 \spellsr{No}
 \begin{spelleffect}
-The food that this ritual creates is simple fare of your choice -- highly nourishing, if rather bland. Food so created decays and becomes inedible within 24 hours, although it can be kept fresh for another 24 hours by casting a \ritual{purify food and water} spell on it. The water created by this ritual is just like clean rain water, and it doesn't go bad as the food does.
+    This ritual creats food and drink that will sustain creatures for 24 hours. The food that this ritual creates is simple fare of your choice -- highly nourishing, if rather bland. Food so created decays and becomes inedible within 24 hours, although it can be kept fresh for another 24 hours by casting a \ritual{purify food and water} spell on it. The water created by this ritual is just like clean rain water, and it doesn't go bad as the food does.
 \end{spelleffect}
 
 \spellsection{Create Water}
@@ -564,6 +567,7 @@ The contact itself is not mind-affecting -- only the \spell{suggestion}.
 \spelllvl{Divine 2}
 \spelltime{1 minute}
 \spellrng{\rngclose}
+\spelltgt{One location}
 \spellarea{\areamed radius emanation}
 \spelldur{24 hours}
 \spellsave{None}
@@ -579,7 +583,7 @@ This ritual imbues an area with unholy power. Every undead creature in a \ritual
 \spellschool{Divination (Awareness) [Magic]}
 \spelllvl{Arcane 4}
 \spelltime{1 minute}
-\spellarea{\arealarge radius emanation centered on you}
+\spellarea{\arealarge radius mobile emanation centered on you}
 \spelldur{\durext}
 \spellsave{None}
 \spellsr{No}
@@ -631,7 +635,8 @@ This ritual reveals the name of a chosen creature or object's location (place, n
 \spelllvl{Arcane 5, Divine 5}
 \spelltime{10 minutes}
 \spellrng{\rngmed}
-\spellarea{\arealarge radius emanation centered on a point in space}
+\spelltgt{One location}
+\spellarea{\arealarge radius emanation}
 \spelldur{Thirty days}
 \spellsave{None}
 \spellsr{Yes (Will)}
@@ -772,7 +777,8 @@ This spell makes a lock or other small mechanism seem to be trapped to anyone wh
 \spellschool{Illusion (Glamer)}
 \spelllvl{Arcane 5}
 \spelltime{10 minutes}
-\spellrng{Touch}
+\spellrng{\rngclose}
+\spelltgt{One location}
 \spellarea{\arealarge radius emanation}
 \spelldur{\durext (D)}
 \spellsave{None}
@@ -975,8 +981,9 @@ This spell functions like \spell{glyph of warding}, except that it affects a lar
 \spellschool{Evocation (Power) [Good]}
 \spelllvl{Divine 7}
 \spelltime{24 hours}
-\spellrng{Touch}
-\spellarea{\arealarge radius emanation from the touched point}
+\spellrng{\rngclose}
+\spelltgt{One location}
+\spellarea{\arealarge radius emanation}
 \spelldur{Instantaneous/1 year}
 \spellsave{See text}
 \spellsr{See text}
@@ -1118,7 +1125,7 @@ You prepare an object to be called from virtually any location directly to your 
 \spelllvl{Nature 3}
 \spelltime{1 minute/lb. created}
 \spellrng{0 ft.}
-\spelltgt{One wooden object weighing up to 5 lb./level}
+\spelltgt{One wooden object weighing up to 50 pounds}
 \spelldur{Instantaneous}
 \spellsave{None}
 \spellsr{No}
@@ -1209,7 +1216,7 @@ You conjure up a phantom watchdog that is invisible to everyone but yourself. It
 \spelllvl{Sor/Wiz 7}
 \spelltime{1 minute}
 \spellrng{\rngclose}
-\spelleff{Extradimensional mansion, up to three 10 ft. cubes/level (S)}
+\spelleff{Extradimensional mansion, up to ten 10-foot cubes (S)}
 \spelldur{One week (D)}
 \spellsave{None}
 \spellsr{No}
@@ -1224,7 +1231,7 @@ You conjure up an extradimensional dwelling that has a single entrance on the pl
 \spelllvl{Arcane 5}
 \spelltime{10 minutes}
 \spellrng{\rngclose}
-\spellarea{30 ft. cube/level (S)}
+\spellarea{Up to ten 10-foot cubes (S)}
 \spelldur{\durext (D)}
 \spellsave{None}
 \spellsr{No}
@@ -1242,7 +1249,7 @@ This spell ensures privacy. Anyone looking into the area from outside sees only 
 \spelllvl{Arcane 1}
 \spelltime{1 minute}
 \spellrng{Touch}
-\spelltgt{One touched object weighing up to 5 lb./level}
+\spelltgt{One touched object weighing up to 50 pounds}
 \spelldur{Thirty days (D)}
 \spellsave{None; see text}
 \spellsr{No}
@@ -1328,7 +1335,7 @@ The spell cannot affect creatures (including constructs).
 \spellsectioncomma{Mending}{Greater}
 \spellschool{Transmutation (Alteration)}
 \spelllvl{Arcane 3, Divine 3, Nature 3}
-\spelltgt{One object of up to 10 cu. ft./level}
+\spelltgt{One object no larger than a 10-foot cube}
 \begin{spelleffect}
 This ritual functions like \spell{mending}, except that it completely repairs an object made of any substance, even one with multiple breaks, to be as strong as new. The spell does not restore the magical abilities of a broken magic item made whole, and it cannot mend broken magic rods, staffs, or wands. The spell does not repair items that have been warped, burned, disintegrated, ground to powder, melted, or vaporized, nor does it affect creatures (including constructs).
 \end{spelleffect}
@@ -2583,8 +2590,9 @@ This ritual conceals the alignment of an object or a creature from all forms of 
 \spellschool{Evocation (Power) [Evil]}
 \spelllvl{Divine 5}
 \spelltime{24 hours}
-\spellrng{Touch}
-\spellarea{\arealarge radius emanating from the touched point}
+\spellrng{\rngclose}
+\spelltgt{One location}
+\spellarea{\arealarge radius emanation}
 \spelldur{Instantaneous/1 year}
 \spellsave{See text}
 \spellsr{See text}
