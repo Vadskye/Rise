@@ -177,6 +177,7 @@ Combat style feats grant a character the ability to fight in a particular style,
 \featref{Combat Casting} & \x &  \plus2 bonus on Concentration checks to cast spells, reroll 1/day & \featpref{Combat Casting} \\
 \featref{Craftcaster} & Craft (any) 8 ranks, 2nd level spells & Increase caster level when creating, transforming objects & \featpref{Craftcaster} \\
 \featref{Improved Counterspell} & \x &  Counterspell with spell of same school & \featpref{Improved Counterspell} \\
+\featref{Legendary Magic} & 5th level spells & Weak creatures are always considered bloodied & \featpref{Legendary Magic} \\
 \featref{Magical Synthesis} & Levels in two magical classes & Increase spellcasting ability in two magical classes at once & \featpref{Magical Synthesis} \\
 \featref{Mass Transporter} & 5th level Conjuration (Translocation) spell & Transport many creatures at once & \featpref{Mass Transporter} \\ 
 \featref{Mighty Summons} & 2nd level summoning spell & Summoned creatures gain \plus2 Str, \plus2 Con & \featpref{Mighty Summons} \\
@@ -993,6 +994,10 @@ In addition, when training a creature, if your check result is 30 or higher, you
 \featpre Bluff 13 ranks.
 \featben Your lies can fool even magic. When you make a Bluff check, if the result is 30 or higher, anyone using magic to reveal or prevent lies must make a caster level check with a DC equal to your Bluff check in order to affect your lie. Regardless of the result of the check, the caster is not aware that the check was made.
 
+\feat{Legendary Magic}{Magic}
+\featpre 5th level spells.
+\featben If your caster level with a spell is at least twice a creature's level, it is treated as bloodied for the purpose of determining the effects of that spell.
+
 \feat{Legendary Maneuver Master}{Combat}
 \featpre Base attack bonus \plus12, any three Maneuver feats.
 \featben You never provoke an attack of opportunity for failing a combat maneuver. In addition, if you succeed at a combat maneuver attack by 10 or more, you deal normal damage with the weapon used to perform the maneuver in addition to gaining the successful effects of the maneuver. If the maneuver was performed without a weapon, you deal damage equivalent to an unarmed attack.
@@ -1272,7 +1277,7 @@ Choose a skill.
 \feat{Skill Mastery}{Skill}
 Choose a skill.
 \featpre 10 ranks in the chosen skill.
-\featben When making a skill check with your chosen skill, you may take 10 even if stress and distraction would normally prevent you from doing so. When you take 10, you treat any roll of less than 10 as if it were a 10.
+\featben When making a skill check with your chosen skill, stress and distraction do not prevent you from taking 10, allowing you to automatically succeed. You still cannot take 10 when opposed. See \pcref{Taking 10}.
 \parhead{Special} You can gain this feat multiple times. Its effects do not stack. Each time you take the feat, it applies to a new skill.
 
 \feat{Skill Training}{Skill}
