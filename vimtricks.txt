@@ -9,3 +9,6 @@ vim substitution to add labels to sections:
 
 vim substitution to add \featref to feats:
 :.,$s:\\featref{\(.\{-}\)}\(.\{-}\)\\\\:\\featref{\1}\2\& \\featpref{\1} \\\\:cg
+
+vim macro to put "Arcane X" at the front of a list of spell levels
+/, Arcaned2€krdv/\dT{ pa, /spelllvl
