@@ -283,9 +283,9 @@ Combat style feats grant a character the ability to fight in a particular style,
 \tind \tind \featref{Armor Proficiency (Heavy)} & Armor Proficiency (medium) & No armor check penalty on attack rolls & Equipment & \featpref{Armor Proficiency (Heavy)} \\
 \featref{Blind-Fight} & \x &  Reroll miss chance for concealment in melee & Awareness & \featpref{Blind-Fight} \\
 \featref{Cautious Attack} & \x & Trade damage for MC & Defense, Style & \featpref{Cautious Attack} \\
-\featref{Combat Expertise} & Int 3 & Trade attack bonus for AC & Defense, Style & \featpref{Combat Expertise} \\
 \featref{Covering Fire} & \x & Trade ranged attack bonus to penalize struck foes & Precision, Style & \featpref{Covering Fire} \\
 \featref{Deadly Aim} & Dex 3 & Trade ranged attack bonus for damage & Precision, Style & \featpref{Deadly Aim} \\
+\featref{Defensive Fighting} & \x & Trade attack bonus for AC & Defense, Style & \featpref{Defensive Fighting} \\
 \featref{Dodge} & Dex 3 & \plus4 AC against some attacks of opportunity from selected target & Defense, Mobility & \featpref{Dodge} \\
 \featref{Exotic Weapon Proficiency}\fn{1} & \x & Don't provoke when attacking with exotic weapons & Equipment & \featpref{Exotic Weapon Proficiency} \\
 \featref{Far Shot} & \x & Increase range increment by 50\% or 100\% & Precision & \featpref{Far Shot} \\
@@ -320,7 +320,6 @@ Combat style feats grant a character the ability to fight in a particular style,
 \featref{Cleave} & Str 3, base attack bonus \plus4 & Extra melee attack after dropping target & Power & \featpref{Cleave} \\
 \featref{Combat Mobility} & Dex 3, base attack bonus \plus4, Dodge & Avoid some attacks of opportunity from selected target & Defense, Mobility & \featpref{Combat Mobility} \\
 \tind \featref{Spring Attack} & Dex 3, base attack bonus \plus4, Dodge, Combat Mobility & Move before and after attacks & Mobility, Style & \featpref{Spring Attack} \\
-\featref{Defensive Stance} & Base attack bonus \plus4 & Trade ability to move for MC & Defense, Style & \featpref{Defensive Stance} \\
 \featref{Distracting Foe} & Base attack bonus \plus4 & Threatened foes suffer Concentration penalties & Style & \featpref{Distracting Foe} \\
 \featref{Feign Weakness} & Base attack bonus \plus4 & Provoke attack to render foe flat-footed & Style & \featpref{Feign Weakness} \\
 \featref{Improved Dirty Trick} & Base attack bonus \plus4 & \plus2 bonus on dirty trick attacks; dirty tricks last longer & Finesse, Maneuver & \featpref{Improved Dirty Trick} \\
@@ -336,6 +335,7 @@ Combat style feats grant a character the ability to fight in a particular style,
 \featref{Riposte} & Dex 3, base attack bonus \plus4, Parry & Foes provoke if you parry very well & Reaction & \featpref{Riposte} \\
 \featref{Tactical Analysis} & Int 3, Base attack bonus \plus4 & Identify foe's strengths and weaknesses & Awareness & \featpref{Tactical Analysis} \\
 \featref{Threatening Fire} & Base attack bonus \plus4 & Help overwhelm foes with ranged weapons & Precision, Style & \featpref{Threatening Fire} \\
+\featref{Unshakeable Stance} & Base attack bonus \plus4 & Trade ability to move for MC & Defense, Style & \featpref{Unshakeable Stance} \\
 \featref{Weapon Focus} & Base attack bonus \plus4 & Special ability with weapon group & Equipment & \featpref{Weapon Focus} \\
 
 \midrule
@@ -493,10 +493,6 @@ If you have four or more celestial bloodline feats, your damage reduction increa
 \feat{Combat Casting}{Magic}
 \parhead{Benefit} You get a \plus2 bonus on Concentration checks made to cast a spell or use a spell-like ability. In addition, once per day you may reroll a Concentration check made to cast a spell.
 
-\feat{Combat Expertise}{Combat, Style}
-\parhead{Prerequisite} Int 3.
-\parhead{Benefit} While in this style, you gain a \plus2 bonus to your dodge modifier. In addition, you increase the bonus gained from using the total defense action (see \pref{Total Defense}) by the same amount. In exchange, you take a \minus2 penalty on attack rolls. At base attack bonus \plus4, and every 4 base attack bonus thereafter, you increase the bonus and penalty by 1. If you do not wield a melee weapon and take the standard attack or total defense action during your turn, you cannot use this style.
-
 \feat{Confusing Strike}{Combat, Strike}
 \featpre Base attack bonus \plus12.
 \featben When you attack, you may take a \minus6 penalty to hit. If you deal damage, and your foe is bloodied after your damage is dealt, it must make a Will save to avoid being confused for 5 rounds. The DC is equal to 10 \add your base attack bonus \add your attack attribute (Strength or Dexterity). You cannot make more than one Strike each round.
@@ -542,9 +538,8 @@ Contingent actions depend on a trigger condition. If the trigger condition occur
 \featpre 12th level, Cha 5.
 \featben You may gain the benefits of the \spell{death ward} spell for up to 5 rounds each day. Activating this ability is a swift action, and it lasts until you will it to stop (a free action) or until the duration expires.
 
-\feat{Defensive Stance}{Combat, Style}
-\parhead{Prerequisites} Base attack bonus \plus4
-\parhead{Benefit} While in this style, you gain a \plus3 bonus to Maneuver Class. In exchange, you are unable to move. At base attack bonus \plus8, and every 4 base attack bonus thereafter, you increase the bonus by 1.
+\feat{Defensive Fighting}{Combat, Style}
+\parhead{Benefit} While in this style, you gain a \plus2 bonus to your dodge modifier. In exchange, you take a \minus2 penalty on attack rolls. At base attack bonus \plus4, and every 4 base attack bonus thereafter, you increase the bonus and penalty by 1. If you do not wield a melee weapon and take the standard attack or total defense action during your turn, you cannot use this style.
 
 \feat{Deflect Arrows}{Combat}
 \parhead{Prerequisites} Dex 3, Improved Unarmed Strike.
@@ -1432,6 +1427,10 @@ You can fight with a weapon in each hand more effectively.
 \parhead{Prerequisites} Str 5, Two-Weapon Fighting, base attack bonus \plus12.
 \parhead{Benefit} When fighting with two weapons at once, you may add half your Strength to damage with your secondary weapon.
 \parhead{Normal} Without this feat, you do not apply Strength to damage with your secondary weapon.
+
+\feat{Unshakeable Stance}{Combat, Style}
+\parhead{Prerequisites} Base attack bonus \plus4
+\parhead{Benefit} While in this style, you gain a \plus3 bonus to Maneuver Class. In exchange, you are unable to move. At base attack bonus \plus8, and every 4 base attack bonus thereafter, you increase the bonus by 1.
 
 \feat{Versatile Crafter}{Item Creation}
 \parhead{Prerequisite} Craft (any) 10 ranks.
