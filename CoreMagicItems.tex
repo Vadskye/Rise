@@ -614,7 +614,23 @@ A holy symbol is a small object that enhances a divine spellcaster's power. Holy
 
 \parhead{Physical Description} A typical holy symbol is a no larger than 4 inches in each dimension and can be easily held in the palm of a hand. Most holy symbols are metal, but they can be made from wood, bone, or even more exotic materials, depending on the deity they symbolize.
 
+Many holy symbols are designed to be worn as an amulet in addition to being held in the hand. When worn in this way, the holy symbol occupies a torso body slot.
+
 \parhead{Activation} Holy symbols use the same activation method as wands.
+
+\begin{dtable}
+    \begin{tabularx}{\columnwidth}{X l l}
+        \thead{Special Ability} & \thead{Cost} & \thead{Item Level} \\
+        Channeling & 2,000 & 6th \\
+        Channeling, Greater & 8,000 & 12th \\
+    \end{tabularx}
+\end{dtable}
+
+\impdescription{Channeling}{2,000}{6th}{Faint Evocation (Channeling)}{6th}{\x} As long as you wield or wear a channeling holy symbol, your channel energy ability deals or heals an extra d6 points of damage. This is considered an enhancement bonus. If you do not have the channel energy ability, this ability does not affect you.
+
+\mitemreq{Evocation}{Channeling}{3}{6th}{Craft (as holy symbol) 10}
+
+\impdescription{Channeling, Greater}{8,000}{12th}{Moderate Evocation (Channeling)}{12th}{\x} This holy symbol functions like a \magicitem{channeling} holy symbol, except that it increases the damage by 2d6 instead. This is considered an enhancement bonus.
 
 \subsection{Wands}
 
