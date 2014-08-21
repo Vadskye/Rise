@@ -97,11 +97,6 @@ In order to activate a spell completion item, a character must be able to cast s
 \section{Magic Item Effects}
 Most magic items either provide numerical bonuses or emulate the effect of a spell in some way.
 
-\subsection{Scaling Bonuses}\label{Scaling Bonuses}
-A number of magic items provide direct numerical bonuses to a particular aspect of a character. For some items, the bonus inherently provided by the item is the minimum bonus it grants. For example, a \mitem{\plus2 longsword} grants a \plus2 bonus to attack and damage to any character, even a 1st level character. However, a character of legendary might can draw more power from the same item. Any scaling item provides at \plus1 bonus when worn by a character of at least 4th level. This bonus increases to \plus2 at 8th level, to \plus3 at 12th level, to \plus4 at 16th level, and finally to \plus5 at 20th level. If an item scales, it is noted in its description.
-
-Only class levels are considered when determining the scaling bonus of an item. Hit Values of any other type are not included.
-
 \subsection{Saving Throws}
 
 If a magic item allows a saving throw against its effects, the DC is listed in the item's description. Typically, the DC is equal to 10 \add the character level of the item's wielder \add the minimum attribute required to cast a spell of the same level as the item's effect.
@@ -146,7 +141,7 @@ Items without components do not have a ``Cost'' entry. For them, the market pric
 
 \subsection{Armor and Shields}
 
-Magic body armor and shields protect the wearer to a greater extent than their nonmagical equivalents. They always provide a scaling enhancement bonus to a character's armor modifier or shield modifier to AC; see \pcref{Scaling Bonuses} for details. In addition to an enhancement bonus, armor may have special abilities or be made of an unusual material.
+Magic body armor and shields protect the wearer to a greater extent than their nonmagical equivalents. They always provide an enhancement bonus to a character's armor modifier or shield modifier to AC. In addition to an enhancement bonus, armor may have special abilities or be made of an unusual material.
 
 Body armor is always created so that even if the type of armor comes with boots or gauntlets, these pieces can be switched for other magic boots or gauntlets.
 
@@ -156,7 +151,7 @@ The prices of enhancement bonuses to armor are listed in \trefnp{Magic Armor and
 \begin{dtable}
 \lcaption{Magic Armor and Shields}
 \begin{tabularx}{\columnwidth} {>{\ccol}X c c}
-  \thead{Minimum Enhancement Bonus} & \thead{Base Price} & \thead{Item Level}\\
+  \thead{Enhancement Bonus} & \thead{Base Price} & \thead{Item Level}\\
 \plus1 armor/shield & 500 gp & 4th \\
 \plus2 armor/shield & 2,000 gp & 6th \\
 \plus3 armor/shield & 4,500 gp & 9th \\
@@ -352,12 +347,12 @@ Protection \plus5 & 50,000 gp \\
 \mitemreq{Conjuration/Transmutation}{Creation, Temporal}{2}{4th}{Craft (metal) 8}
 
 \appdescription{Protection}{Varies}{see text}{Varied Abjuration (Shielding)}{Varies}{}{\x}
-A ring of protection grants a scaling enhancement bonus to your saving throws while worn. See \pref{Scaling Bonuses} for details on scaling bonuses. The properties of the ring depend on its minimum enhancement bonus, as shown in the table below.
+A ring of protection grants an enhancement bonus to your saving throws while worn. The price of the ring depends on its enhancement bonus, as shown in the table below.
 
 \begin{dtable}
 \caption{Ring of Protection}
 \begin{tabularx}{\columnwidth} {>{\ccol}X c c}
-  \thead{Minimum Enhancement Bonus} & \thead{Base Price} & \thead{Item Level} \\
+  \thead{Enhancement Bonus} & \thead{Base Price} & \thead{Item Level} \\
 \plus1  & 500 gp & 4th\\
 \plus2 & 2,000 gp & 6th\\
 \plus3 & 4,500 gp & 9th\\
@@ -366,7 +361,7 @@ A ring of protection grants a scaling enhancement bonus to your saving throws wh
 \end{tabularx}
 \end{dtable}
 
-The caster level is equal to three times the item's minimum enhancement bonus. To craft the item, you must have a number of ranks in Craft (jewelry) equal to the item's caster level \add 4.
+The caster level is equal to three times the item's enhancement bonus. To craft the item, you must have a number of ranks in Craft (jewelry) equal to the item's caster level \add 4.
 
 \mitemreq{Abjuration}{Shielding}{1}{varies}{Craft (jewelry) varies}
 
@@ -392,14 +387,14 @@ The caster level is equal to three times the item's minimum enhancement bonus. T
 
 \subsection{Weapons}
 
-Magic weapons improve a character's combat abilities. They always provide a scaling enhancement bonus to a character's attack and damage; see \pcref{Scaling Bonuses} for details. In addition to an enhancement bonus, weapons may have special abilities or be made of an unusual material.
+Magic weapons improve a character's combat abilities. They always provide an enhancement bonus to a character's attack and damage with attacks using the weapon. In addition to an enhancement bonus, weapons may have special abilities or be made of an unusual material.
 
 \parhead{Weapon Prices} The prices of enhancement bonuses to weapons are listed in \trefnp{Magic Weapons}, and the prices of special abilities are listed on \trefnp{Weapon Special Abilities}. If a weapon has a special ability, the price of the special ability is added to the price of the weapon.
 
 \begin{dtable}
 \caption{Magic Weapons}
 \begin{tabularx}{\columnwidth} {>{\ccol}X c c}
-  \thead{Minimum Enhancement Bonus} & \thead{Base Price} & \thead{Item Level}\\
+  \thead{Enhancement Bonus} & \thead{Base Price} & \thead{Item Level}\\
 \plus1 weapon & 1,000 gp & 5th \\
 \plus2 weapon & 4,000 gp & 9th \\
 \plus3 weapon & 9,000 gp & 12th \\
@@ -587,7 +582,7 @@ A staff is a long shaft, usually made of wood, that enhances a spellcaster's pow
 \begin{dtable}
 \caption{Staff Prices}
 \begin{tabularx}{\columnwidth} {>{\ccol}X c c}
-  \thead{Minimum Enhancement Bonus} & \thead{Base Price} & \thead{Item Level}\\
+  \thead{Enhancement Bonus} & \thead{Base Price} & \thead{Item Level}\\
 \plus1 staff & 750 gp & 4th \\
 \plus2 staff & 3,000 gp & 8th \\
 \plus3 staff & 6,750 gp & 11th \\
@@ -608,7 +603,7 @@ A holy symbol is a small object that enhances a divine spellcaster's power. Holy
 \begin{dtable}
 \caption{Holy Symbol Prices}
 \begin{tabularx}{\columnwidth} {>{\ccol}X c c}
-  \thead{Minimum Enhancement Bonus} & \thead{Base Price} & \thead{Item Level}\\
+  \thead{Enhancement Bonus} & \thead{Base Price} & \thead{Item Level}\\
 \plus1 holy symbol & 750 gp & 4th \\
 \plus2 holy symbol & 3,000 gp & 8th \\
 \plus3 holy symbol & 6,750 gp & 11th \\
@@ -623,7 +618,7 @@ A holy symbol is a small object that enhances a divine spellcaster's power. Holy
 
 \subsection{Wands}
 
-A wand is a thin baton that enhances a spellcaster's power. Wands always provide a scaling enhancement bonus to caster level with a particular school of magic; see \pcref{Scaling Bonuses} for details. In addition to an enhancement bonus, wands may have special abilities or be made of an unusual material.
+A wand is a thin baton that enhances a spellcaster's power. Wands always provide an enhancement bonus to caster level with a particular school of magic. In addition to an enhancement bonus, wands may have special abilities or be made of an unusual material.
 
 \parhead{Wand Prices} The prices of enhancement bonuses to wands are listed in \trefnp{Magic wands}, and the prices of special abilities are listed on \trefnp{Wand Special Abilities}. If a wand has a special ability, the price of the special ability is added to the price of the wand.
 
@@ -634,7 +629,7 @@ A wand is a thin baton that enhances a spellcaster's power. Wands always provide
 \begin{dtable}
 \caption{Wand Prices}
 \begin{tabularx}{\columnwidth} {>{\ccol}X c c}
-  \thead{Minimum Enhancement Bonus} & \thead{Base Price} & \thead{Item Level}\\
+  \thead{Enhancement Bonus} & \thead{Base Price} & \thead{Item Level}\\
 \plus1 wand & 250 gp & 3rd \\
 \plus2 wand & 1,000 gp & 5th \\
 \plus3 wand & 2,250 gp & 7th \\
