@@ -12,3 +12,9 @@ vim substitution to add \featref to feats:
 
 vim macro to put "Arcane X" at the front of a list of spell levels
 /, Arcaned2€krdv/\dT{ pa, /spelllvl
+
+vim macro to divide a number by 2, removing commas
+yiW:vnewpS,ayiWñi="/2€krdLñ:q!n
+
+vim substitution to add commas to numbers missing commas
+.,$s:\v(\d)((\d\d\d)+\d@!)@=:\1,:cg
