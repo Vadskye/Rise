@@ -3201,7 +3201,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
   This spell functions like \spell{silent image}, except that sound, smell, and thermal illusions are included in the spell effect. By concentrating on the spell, you can move the image within the range.
 \end{spelleffect}
 \begin{spellnotes}
-  The image disappears when struck by an opponent unless you cause the illusion to react appropriately. Even then, the opponent who struck the image gets a Will save to disbelieve the illusion for interacting with the image.
+    When you cast this spell, you make a Will attack. This attack is made against any creature that interacts with the effect. If you fail, the creature disbelieves the spell. In order to interact with the illusion with a Perception check, the creature must make a Perception check that beats your Will attack. 
 \end{spellnotes}
 
 \spellsection{Mass (Spell Name)}
@@ -3216,7 +3216,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{Will partial}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  You banish the subject into an extradimensional labyrinth of force planes. Each round on its turn, it may attempt a DC 20 Intelligence check to escape the labyrinth as a full-round action. If the subject doesn't escape, the maze disappears after 5 minutes, forcing the subject back to the location where it was originally banished. A successful Will save prevents you from placing it in the middle of the labyrinth, lowering the DC of the Intelligence check to 15.
+  You banish the subject into an extradimensional labyrinth of force planes. Each round on its turn, it may attempt an Intelligence check to escape the labyrinth as a full-round action. You make a Will attack to attempt to place it in the middle of the labyrinth. A successful attack means the DC of the Intelligence check is 20, while a failed attack means the DC is 15. If the subject doesn't escape, the maze disappears after 5 minutes, forcing the subject back to the location where it was originally banished.
   \par On escaping or leaving the maze, the subject reappears where it had been when the maze spell was cast. If this location is filled with a solid object, the subject appears in the nearest open space.
 \end{spelleffect}
 \begin{spellnotes}
@@ -3231,7 +3231,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldur{\durlong}
 \begin{spelleffect}
   This spell enables you to meld your body and possessions into a single block of stone. The stone must be large enough to accommodate your body in all three dimensions. When the casting is complete, you and not more than 100 pounds of nonliving gear merge with the stone. If either condition is violated, the spell fails and is wasted.
-  \par While in the stone, you remain in contact, however tenuous, with the face of the stone through which you melded. You remain aware of the passage of time and can cast spells on yourself while hiding in the stone. Nothing that goes on outside the stone can be seen, but you can still hear what happens around you. Minor physical damage to the stone does not harm you, but its partial destruction (to the extent that you no longer fit within it) expels you and deals you 5d6 points of damage. The stone's complete destruction expels you and slays you instantly unless you make a DC 20 Fortitude save.
+  \par While in the stone, you remain in contact, however tenuous, with the face of the stone through which you melded. You remain aware of the passage of time and can cast spells on yourself while hiding in the stone. Nothing that goes on outside the stone can be seen, but you can still hear what happens around you. Minor physical damage to the stone does not harm you, but its partial destruction (to the extent that you no longer fit within it) expels you and deals you 5d6 points of damage. If the stone is completely destroyed, you are expelled, and you die unless your Fortitude defense is at least 20.
   \par Any time before the duration expires, you can step out of the stone through the surface that you entered. If the spell's duration expires or the effect is dispelled before you voluntarily exit the stone, you are violently expelled and take 5d6 points of damage.
 \end{spelleffect}
 \begin{spellnotes}
@@ -3294,7 +3294,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
   This spell functions like \spell{silent image}, except that it includes some minor sounds but not understandable speech.
 \end{spelleffect}
 \begin{spellnotes}
-  The image disappears when struck by an opponent unless you cause the illusion to react appropriately. Even then, the opponent who struck the image gets a Will save to disbelieve the illusion for interacting with the image.
+    When you cast this spell, you make a Will attack. This attack is made against any creature that interacts with the effect. If you fail, the creature disbelieves the spell. In order to interact with the illusion with a Perception check, the creature must make a Perception check that beats your Will attack. 
 \end{spellnotes}
 
 \spellsection{Miracle}
@@ -3324,7 +3324,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \end{spelleffect}
 \begin{spellnotes}
   If you request a miracle, your deity (or the power you pray to) will expect something of you in return. You must cast commune to learn what this is within 24 hours, or you will lose the ability to cast any cleric spells other than commune. For more moderate miracles, you may be required to offer 25,000gp worth of incense and gems. For especially powerful miracles, or multiple moderate miracles, you may geased with a task to complete.
-  \par A duplicated spell allows saving throws and spell resistance as normal, but the save DCs are as for a 9th-level spell. When a miracle spell duplicates a spell with a material component that costs more than 5,000 gp, you must provide that component.
+  \par When a miracle spell duplicates a spell with a material component that costs more than 5,000 gp, you must provide that component.
 \end{spellnotes}
 
 \spellsection{Mirror Image}
@@ -3716,7 +3716,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
       Blue & 5th & Stops divination and mental attacks.
       Petrified if bloodied, slowed and entangled for 1 minute if healthy (Fortitude negates). & \spellindirect{magic missile}{Magic missile} \\
       Indigo & 6th & Stops all spells.
-      Will save or become insane (as \spell{insanity} spell). & \spell{Daylight} \\
+      Become insane, as \spell{insanity} spell (Will negates). & \spell{Daylight} \\
       Violet & 7th & Energy field destroys all objects and effects.\footnotetemp{1}
       Creatures sent to another plane (as \spell{plane shift} ritual) (Will negates). & \spellindirect{dispel magic}{Dispel magic} \\
     \end{tabularx}
@@ -3758,7 +3758,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
   \par If you desire, any spell you cast whose range is touch or greater can originate from the projected image instead of from you. The projected image can't cast any spells on itself except for illusion spells. The spells affect other targets normally, despite originating from the projected image.
 \end{spelleffect}
 \begin{spellnotes}
-  Objects are affected by the projected image as if they had succeeded on their Will save.
+    Objects are always considered to disbelieve this spell.
   \par You must maintain line of effect to the projected image at all times. If your line of effect is obstructed, the spell ends. If you use \spell{dimension door}, \spell{teleport}, \spell{plane shift}, or a similar spell that breaks your line of effect, even momentarily, the spell ends.
 \end{spellnotes}
 
@@ -3945,7 +3945,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
     When the subject is attacked by a creature within \rngclose range of it, the subject can mentally command this spell to activate (an immediate action). If it does, spell is discharged, and the attacking creature is dazzled for 5 rounds. If the attacking creature is bloodied, you can make a Fortitude attack to blind it for 5 rounds as well.
 \end{spelleffect}
 \begin{spellnotes}
-    A successful Will save can prevent the subject from gaining the benefits of the spell, but there is no saving throw against the dazzling effect.
+    You must make a Will attack to shield an unwilling subject, but no attack is necessary for the dazzling effect.
 \end{spellnotes}
 
 \spellsection{Retributive Shield}
@@ -4218,7 +4218,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
   \par A shadow creature has half the hit points of a normal creature of its kind (regardless of whether it's disbelieved). It deals normal damage and has all normal abilities and weaknesses. Against a creature that recognizes it as a shadow creature, however, the shadow creature deals half damage, and all special abilities that do not deal lethal damage are only 50\% likely to work. (Roll for each use separately.)
 \end{spelleffect}
 \begin{spellnotes}
-  A creature that succeeds on its save sees the shadow conjurations as transparent images superimposed on vague, shadowy forms.
+  A creature that disbelieves the effect sees the shadow conjurations as transparent images superimposed on vague, shadowy forms.
   \par When you learn this spell, you choose two creatures from the 5th-level list or lower on \tref{Summon Monster List}. You can summon those creatures with this or any \spell{summon monster} spell.
   \par Objects are always considered to disbelieve this spell.
 \end{spellnotes}
@@ -4237,7 +4237,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
   \par A creature that disbelieves the spell takes only half damage from the attack. If the disbelieved attack has a special effect other than damage, that effect is half as strong (if applicable) or only half as likely to occur.
 \end{spelleffect}
 \begin{spellnotes}
-  A creature that succeeds on its save sees the shadow conjurations as transparent images superimposed on vague, shadowy forms. Objects are always considered to disbelieve this spell.
+  A creature that disbelieves the effect sees the shadow conjurations as transparent images superimposed on vague, shadowy forms. Objects are always considered to disbelieve this spell.
 \end{spellnotes}
 
 \spellsection{Shadow Puppet}
@@ -4413,7 +4413,9 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spelldef{Will negates; see text or none (object)}
 \spellsr{Yes (Will); see text}
 \begin{spelleffect}
-  Upon the casting of this spell, complete silence prevails in the affected area. No sound can be heard or made in the area, but sound passes through the area normally. Spellcasters are treated as being deafened for the purpose of casting spells with verbal components, and suffer a 20\% chance of spell failure. The spell can be cast on a point in space, but the effect is stationary unless cast on a mobile object. The spell can be centered on a creature, and the effect then radiates from the creature and moves as it moves. An unwilling creature who enters the spell's area can attempt a Will save to negate the spell's effect on them and can use spell resistance, if any. A creature who successfully resists the spell can hear and make sound normally, but still cannot be hear or be heard by other creatures in the area (unless they also resisted the spell). Items in a creature's possession or magic items that emit sound receive the benefits of saves and spell resistance, but unattended objects and points in space do not. 
+  Upon the casting of this spell, complete silence prevails in the affected area. No sound can be heard or made in the area, but sound passes through the area normally. Spellcasters are treated as being deafened for the purpose of casting spells with verbal components, and suffer a 20\% chance of spell failure. The spell can be cast on a point in space, but the effect is stationary unless cast on a mobile object. The spell can be centered on a creature, and the effect then radiates from the creature and moves as it moves.
+  
+  You must make a Will attack to affect an unwilling creature who enters the spell's area. A creature who successfully resists the spell can hear and make sound normally, but still cannot be hear or be heard by other creatures in the area (unless they also resisted the spell).
 \end{spelleffect}
 \begin{spellnotes}
   This spell provides a defense against sound-dependent effects. Sonic effects are too powerful for magic such as this to muffle, and function normally.
@@ -4670,7 +4672,8 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellsr{Yes (Reflex)}
 \begin{spelleffect}
   Any ground-covering vegetation in the spell's area becomes very hard and sharply pointed. In areas of bare earth, roots and rootlets act in the same way. Typically, spike growth can be cast in any outdoor setting except open water, ice, heavy snow, sandy desert, or bare stone. Any foe moving on foot into or through the spell's area takes 1d4 points of physical piercing damage for each 5 feet of movement through the spiked area. Allies suffer no ill effects.
-  \par Any creature that takes damage from this spell must also succeed on a Reflex save or suffer injuries to its feet and legs that slow its land speed by one-half. The Reflex save must be repeated each round that the creature moves through the area. This speed penalty lasts for 12 hours or until the injured creature receives magical healing. Another character can remove the penalty by taking 10 minutes to dress the injuries and succeeding on a Heal check against the spell's save DC.
+
+  Whenever a creature is damaged by this spell, you make a Fortitude attack against it. A successful attack makes slows its land speed by one-half. This speed penalty lasts for 12 hours or until the injured creature receives magical healing. Another character can remove the penalty by taking 10 minutes to dress the injuries and succeeding on a Heal check that beats your Fortitude attack.
 \end{spelleffect}
 
 \spellsection{Spike Stones}
@@ -4767,12 +4770,12 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellsr{Yes (varies)}
 \spelldmg{Varies}
 \begin{spelleffect}
-  This spell creates an enormous black storm cloud. Lightning and crashing claps of thunder appear within the storm. Each creature beneath the cloud must succeed on a Fortitude save or be deafened for 5 minutes. Violent rain and wind gusts obscure all sight beyond 100 feet. A creature less than 100 feet away has concealment (\plus4 AC). Ranged attacks within the area of the storm take a \minus4 penalty, and spells cast within the area are disrupted unless the caster succeeds on a Concentration check against a DC equal to 20 \add double the level of the spell.
+  This spell creates an enormous black storm cloud. Lightning and crashing claps of thunder appear within the storm. You make a Fortitude attack to deafen each creature beneath the cloud for 5 minutes. Violent rain and wind gusts obscure all sight beyond 100 feet. A creature less than 100 feet away has concealment (\plus4 AC). Ranged attacks within the area of the storm take a \minus4 penalty, and spells cast within the area are disrupted unless the caster succeeds on a Concentration check against a DC equal to 20 \add double the level of the spell.
   \par If you do not maintain concentration on the spell after casting it, the spell ends. If you continue to concentrate, the spell generates new effects in each following round, as noted below. Each effect occurs during your turn.
-  \par 2nd Round: Acid rains down, dealing 1d10 acid damage to everything in the area (no save).
-  \par 3rd Round: You call three bolts of lightning down from the cloud. You decide where the bolts strike. No two bolts may strike the same target. Each bolt deals 9d6 electricity damage \add d6 per four levels above 18th. A creature struck can attempt a Reflex save for half damage. If you do not direct the lightning bolts, each bolt automatically targets the largest available target in the area.
+  \par 2nd Round: Acid rains down, dealing 1d10 acid damage to everything in the area.
+  \par 3rd Round: You call three bolts of lightning down from the cloud. You decide where the bolts strike. No two bolts may strike the same target. Each bolt deals 9d6 electricity damage \add d6 per four levels above 18th. You make a Reflex attack to deal damage to each creature in the path of the bolt. A failed attack deals half damage. If you do not direct the lightning bolts, each bolt automatically targets the largest available target in the area.
   \par 4th Round: Hailstones rain down, dealing 5d6 bludgeoning damage to all enemies in the area.
-  \par 5th through 10th Rounds: Acid rains down, dealing 1d10 damage to everything in the area (no save).
+  \par 5th through 10th Rounds: Acid rains down, dealing 1d10 damage to everything in the area.
 \end{spelleffect}
 
 \spellsection{Stormlord}
@@ -4806,7 +4809,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
     You deal damage to the target. In addition, if you succeed at a Fortitude attack, for 5 rounds all damage it takes is doubled. This does not double the initial damage dealt by this spell.
 \end{spelleffect}
 \begin{spellnotes}
-  A successful Heal check with a DC equal to this spell's save DC negates the doubling of damage. 
+    A Heal check that beats your Fortitude attack negates the doubling of damage. 
 \end{spellnotes}
 
 \spellsection{Suggestion}
@@ -4823,7 +4826,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
   \par The suggested course of activity can continue for the entire duration. If the suggested activity can be completed in a shorter time, the spell ends when the subject finishes what it was asked to do. You can instead specify conditions that will trigger a special activity during the duration. If the condition is not met before the spell duration expires, the activity is not performed.
 \end{spelleffect}
 \begin{spellnotes}
-  A very reasonable suggestion can cause the save to be made with a \minus2 or greater penalty. A creature that makes its saving throw against \spell{suggestion} is immune to all further attempts by the same spellcaster for 24 hours.
+  A very reasonable suggestion can grant a \plus2 or greater bonus on the attack. A creature that resists a \spell{suggestion} is immune to all further attempts by the same spellcaster for 24 hours.
 \end{spellnotes}
 
 \spellsectioncomma{Suggestion}{Mass}
@@ -5388,7 +5391,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spelltgt{You}
 \spelldur{\durext (D)}
 \begin{spelleffect}
-  You become able to assume the form of a Large living tree or shrub or a Large dead tree trunk with a small number of limbs. The closest inspection cannot reveal that the tree in question is actually a magically concealed creature. To all normal tests you are, in fact, a tree or shrub, although a Spellcraft check can reveal a faint transmutation on the tree. While in tree form, you can observe all that transpires around you just as if you were in your normal form, and your hit points and save bonuses remain unaffected. You gain a \plus10 enhancement bonus to your armor modifier, but you have an effective Dexterity score of \minus10 and cannot move. You are immune to critical hits while in tree form. All clothing and gear carried or worn changes with you.
+  You become able to assume the form of a Large living tree or shrub or a Large dead tree trunk with a small number of limbs. The closest inspection cannot reveal that the tree in question is actually a magically concealed creature. To all normal tests you are, in fact, a tree or shrub, although a Spellcraft check can reveal a faint transmutation on the tree. While in tree form, you can observe all that transpires around you just as if you were in your normal form, and your hit points and defenses remain unaffected. You gain a \plus10 enhancement bonus to your armor modifier, but you have an effective Dexterity score of \minus10 and cannot move. You are immune to critical hits while in tree form. All clothing and gear carried or worn changes with you.
 \end{spelleffect}
 \begin{spellnotes}
   You can dismiss tree shape as a free action (instead of as a standard action).
@@ -5544,10 +5547,10 @@ A slowed creature can take only a single move action or standard action each tur
 \spelldef{Will disbelief (if interacted with)}
 \spellsr{No}
 \begin{spelleffect}
-  You can make your voice (or any sound that you can normally make vocally) seem to issue from someplace else. You can speak in any language you know. With respect to such voices and sounds, anyone who hears the sound and rolls a successful save recognizes it as illusory (but still hears it).
+  You can make your voice (or any sound that you can normally make vocally) seem to issue from someplace else. You can speak in any language you know. With respect to such voices and sounds, anyone who disbelieves the sound recognizes it as illusory (but still hears it).
 \end{spelleffect}
 \begin{spellnotes}
-    When you cast this spell, you make a Will attack. This attack is made against any creature that interacts with the effect. If you fail, the creature disbelieves the spell. In order to interact with the illusion with a Perception check, the creature must make a Perception check that beats your Will attack. Anyone witnessing the subject perform an impossible action, such as attacking or climbing without the use of its hands, gains a \plus10 bonus to their Will defense against this attack.
+    When you cast this spell, you make a Will attack. This attack is made against any creature that interacts with the effect. If you fail, the creature disbelieves the spell. In order to interact with the illusion with a Perception check, the creature must make a Perception check that beats your Will attack. 
 \end{spellnotes}
 
 \begin{comment}
@@ -5634,7 +5637,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
   This spell forms a wall of stone atop existing rock surfaces. A wall of stone is 4 inches thick and composed of up to ten 5-foot squares. You can double the wall's area by halving its thickness. The wall cannot be conjured so that it occupies the same space as a creature or another object.
   \par You can create a wall of stone in almost any shape you desire. The wall created need not be vertical, nor rest upon any firm foundation; however, it must merge with and be solidly supported by existing stone. It can be used to bridge a chasm, for instance, or as a ramp. For this use, if the span is more than 20 feet, the wall must be arched and buttressed. This requirement reduces the spell's area by half. The wall can be crudely shaped to allow crenellations, battlements, and so forth by likewise reducing the area.
   \par Like any other stone wall, this one can be destroyed by a disintegrate spell or by normal means such as breaking and chipping. Each 5-foot square of the wall has 15 hit points per inch of thickness and hardness 8. A section of wall whose hit points drop to 0 is breached. If a creature tries to break through the wall with a single attack, the DC for the Strength check is 20 \add 2 per inch of thickness.
-  \par It is possible to trap mobile opponents within or under a wall of stone, provided the wall is shaped so it can hold the creatures. Creatures can avoid entrapment with successful Reflex saves.
+  \par With a successful Reflex attakc, it is possible to trap mobile opponents within or under a wall of stone, provided the wall is shaped so it can hold the creatures.
 \end{spelleffect}
 
 \spellsection{Wall of Thorns}
@@ -5794,15 +5797,12 @@ This spell can be made permanent with a \spell{permanency} ritual.
     \item Create a magic item, or add to the powers of an existing magic item.
     \item Remove injuries and afflictions. A single wish can aid one creature per caster level, and all subjects are cured of the same kind of affliction. For example, you could heal all the damage you and your companions have taken, or remove all poison effects from everyone in the party, but not do both with the same wish. A wish can never restore the experience point loss from casting a spell or the level or Constitution loss from being raised from the dead.
     \item Revive the dead. A wish can bring a dead creature back to life by duplicating a resurrection spell. A wish can revive a dead creature whose body has been destroyed, but the task takes two wishes, one to recreate the body and another to infuse the body with life again. A wish cannot prevent a character who was brought back to life from losing an experience level.
-    \item Transport travelers. A wish can lift one creature per caster level from anywhere on any plane and place those creatures anywhere else on any plane regardless of local conditions. An unwilling target gets a Will save to negate the effect, and spell resistance (if any) applies.
-    \item Undo misfortune. A wish can undo a single recent event. The wish forces a reroll of any roll made within the last round (including your last turn). Reality reshapes itself to accommodate the new result. For example, a wish could undo an opponent's successful save, a foe's successful critical hit (either the attack roll or the critical roll), a friend's failed save, and so on. The reroll, however, may be as bad as or worse than the original roll. An unwilling target gets a Will save to negate the effect, and spell resistance (if any) applies.
+    \item Transport travelers. A wish can lift one creature per caster level from anywhere on any plane and place those creatures anywhere else on any plane regardless of local conditions. You must make a Will attack to affect unwilling targets.
+    \item Undo misfortune. A wish can undo a single recent event. The wish forces a reroll of any roll made within the last round (including your last turn). Reality reshapes itself to accommodate the new result. For example, a wish could undo a foe's successful critical hit (either the attack roll or the critical roll), a friend's failed attack, and so on. The reroll, however, may be as bad as or worse than the original roll. You must make a Will attack to affect an unwilling target.
   \end{itemize*}
   \par When casting a wish, you do not specify the exact spell or effect you wish to duplicate. Instead, you make a wish, describing what you want to have happen, and make a DC 20 Wisdom check. If the check fails, your intent is redirected or perverted in some way. For example, a wish to turn a foe to stone would normally mimic the flesh to stone effect of the transmute flesh and stone spell. However, if the Wisdom check failed, your foe might gain the benefit of a \spell{stoneskin} spell instead.
   \par You may try to use a wish to produce greater effects than these, but doing so is dangerous. The DC of the Wisdom check increases to 25, and the negative consequences for failing the check increase in proportion to the potency of the effect you try to create.
 \end{spelleffect}
-\begin{spellnotes}
-  Duplicated spells allow saves and spell resistance as normal.
-\end{spellnotes}
 \spellmat{10,000gp of diamonds. In addition, when a \spell{wish} duplicates a spell with a material component that costs more than 10,000 gp, you must provide that component.}
 
 \spellsection{Word of Chaos}
