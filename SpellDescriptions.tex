@@ -695,7 +695,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
   \par The hand attacks once per round, and its attack bonus equals your caster level \add your casting attribute, which is the hand's Strength score, \minus1 for being Large.
 \end{spelleffect}
 \begin{spellblood}
-  The struck creature is dazed for 1 round. A save negates the dazing, but not the damage.
+  You also make a Fortitude attack to daze the struck creature for 1 round.
 \end{spellblood}
 \begin{spellnotes}
   Directing the spell to a new target is a swift action.
@@ -760,7 +760,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelltgt{You}
 \spelldur{\durshort (D)}
 \begin{spelleffect}
-  You gain a \plus3 enhancement bonus to Strength, Dexterity, Constitution, and Fortitude saves. This bonus increases to \plus4 at 14th level and to \plus5 at 20th level. In addition, you gain proficiency with any weapons you hold (except exotic weapons).
+  You gain a \plus3 enhancement bonus to Strength, Dexterity, Constitution, and Fortitude defense. This bonus increases to \plus4 at 14th level and to \plus5 at 20th level. In addition, you gain proficiency with any weapons you hold (except exotic weapons).
 \end{spelleffect}
 \begin{spellnotes}
   If you cast a spell or use a spell activation or spell completion magic item, the spell immediately ends.
@@ -1348,7 +1348,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{Will partial}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The subject cannot travel extradimensionally for an hour. A successful Will save reduces the duration to 5 rounds. Effects barred by a \spell{dimensional anchor} include \spell{astral projection}, \spell{blink}, \spell{dimension door}, \spell{ethereal jaunt}, \spell{gate}, \spell{maze}, \spell{plane shift}, \spell{shadow walk}, \spell{teleport}, and similar spell-like, psionic, or supernatural abilities.
+    You make a Will attack against the subject. Success means it cannot travel extradimensionally for an hour, while failure reduces the duration to 5 rounds. Effects barred by a \spell{dimensional anchor} include \spell{astral projection}, \spell{blink}, \spell{dimension door}, \spell{ethereal jaunt}, \spell{gate}, \spell{maze}, \spell{plane shift}, \spell{shadow walk}, \spell{teleport}, and similar spell-like, psionic, or supernatural abilities.
 \end{spelleffect}
 \begin{spellnotes}
   A dimensional anchor does not interfere with the movement of creatures already in ethereal or astral form when the spell is cast, nor does it block extradimensional perception or attack forms, such as summoning monsters. Also, dimensional anchor does not prevent summoned creatures from disappearing at the end of a summoning spell. 
@@ -1379,7 +1379,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{None}
 \spellsr{No}
 \begin{spelleffect}
-  You instantly recognize all of the target's vulnerabilities. This grants you a \plus2 bonus to attack rolls, weapon damage rolls, and save DCs against that creature. In addition, you learn any significant weaknesses the creature has. This includes, but is not limited to, the following information:
+  You instantly recognize all of the target's vulnerabilities. This grants you a \plus2 bonus to attacks and weapon damage against that creature. In addition, you learn any significant weaknesses the creature has. This includes, but is not limited to, the following information:
   \begin{itemize*}
     \item Which of the target's saving throws is lowest
     \item If the target has any vulnerabilities to specific damage types
@@ -1478,7 +1478,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{Will negates (object)/Fortitude negates}
 \spellsr{Yes (Will)/Yes (Fortitude)}
 \begin{spelleffect}
-  This spell infuses a melee weapon with positive energy, making it deadly to undead. Each round, the first bloodied undead creature struck by this weapon must succeed on a Fortitude save or be destroyed utterly. Healthy undead creatures suffer no ill effect.
+  This spell infuses a melee weapon with positive energy, making it deadly to undead. The first time the weapon strikes a bloodied undead creature each round, you make a Fortitude attack against the creature. A successful attack means the creature is destroyed utterly. Healthy undead creatures suffer no ill effect.
 \end{spelleffect}
 
 \spellsection{Divine Favor}
@@ -1579,6 +1579,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \end{spellnotes}
 
 \spellsection{Earthquake}
+\spelldesc{An intense but highly localized tremor rips the ground. The shock knocks creatures down, collapses structures, opens cracks in the ground, and more.}
 \spellschool{Evocation (Control) [Earth]}
 \spelllvl{Destruction 8, Divine 8, Earth 8, Nature 8}
 \spellrng{\rngfar}
@@ -1587,15 +1588,15 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{See text}
 \spellsr{No}
 \begin{spelleffect}
-  An intense but highly localized tremor rips the ground. The shock knocks creatures down, collapses structures, opens cracks in the ground, and more. The effect lasts for 1 round, during which time creatures on the ground can't move or attack. A spellcaster on the ground who attempts to cast a spell must make a Concentration check against a DC equal to (this spell's save DC \add double the level of the spell being cast) or lose the spell. The earthquake affects all terrain, vegetation, structures, and creatures in the area. The specific effect of an earthquake spell depends on the nature of the terrain where it is cast.
-  \par \subspell{Cave, Cavern, or Tunnel} The spell collapses the roof, dealing 8d8 bludgeoning damage \add d8 per four caster levels above 16th to any creature caught under the cave-in (Reflex half) and pinning that creature beneath the rubble (see below). An earthquake cast on the roof of a very large cavern could also endanger those outside the actual area but below the falling debris.
-  \par \subspell{Cliffs} Earthquake causes a cliff to crumble, creating a landslide that travels horizontally as far as it fell vertically. Any creature in the path takes 8d6 bludgeoning damage \add d6 per four caster levels above 16th (Reflex half) and is pinned beneath the rubble (see below).
-  \par \subspell{Open Ground} Each creature standing in the area must make a Reflex save or fall down. Fissures open in the earth, and every creature on the ground has a 25\% chance to fall into one (Reflex save to avoid, whether the creature fell down or not). At the end of the spell, all fissures grind shut, dealing 8d10 bludgeoning damage \add d10 per four caster levels above 16th to any creatures trapped in them and ejecting their bodies (dead or alive).
+    You make a Reflex attack against everything in the area. This attack has various effects, depending on the terrain. Regardless of the terrain, creatures on the ground can't move and take a \minus10 penalty to physical attacks. A spellcaster on the ground who attempts to cast a spell must make a Concentration check against a DC equal to (your attack result \add double the level of the spell being cast) or lose the spell. The specific effect of an earthquake spell depends on the nature of the terrain where it is cast.
+  \par \subspell{Cave, Cavern, or Tunnel} The spell collapses the roof, dealing 8d8 bludgeoning damage \add d8 per four caster levels above 16th to any creature caught under the cave-in. A successful attack also pins creatures beneath the rubble, while a failed attack deals half damage. An earthquake cast on the roof of a very large cavern could also endanger those outside the actual area but below the falling debris.
+  \par \subspell{Cliffs} Earthquake causes a cliff to crumble, creating a landslide that travels horizontally as far as it fell vertically. Any creature in the path takes 8d6 bludgeoning damage \add d6 per four caster levels above 16th. A successful attack also pins creatures beneath the rubble, while a failed attack deals half damage.
+  \par \subspell{Open Ground} A succesful attack causes a creature to fall down. In addition, fissures open in the earth, and every creature on the ground has a 25\% chance to be above one. You make a Reflex attack against each creature threatened by a fissure. A successful attack causes a creature to fall into the fissure. At the end of the spell, all fissures grind shut, dealing 8d10 bludgeoning damage \add d10 per four caster levels above 16th to any creatures trapped in them and ejecting their bodies (dead or alive).
   \par \subspell{Structure} Any structure standing on open ground takes 10 damage per caster level, enough to collapse a typical wooden or masonry building, but not a structure built of stone or reinforced masonry. Hardness does not reduce this damage, nor is it halved as damage dealt to objects normally is. Any creature caught inside a collapsing structure takes 8d6 bludgeoning damage \add d6 per four caster levels above 16th (Reflex half) and is pinned beneath the rubble (see below).
   \par \subspell{River, Lake, or Marsh} Fissures open underneath the water, draining away the water from that area and forming muddy ground. Soggy marsh or swampland becomes quicksand for the duration of the spell, sucking down creatures and structures. Each creature in the area must make a Reflex save or sink down in the mud and quicksand. At the end of the spell, the rest of the body of water rushes in to replace the drained water, possibly drowning those caught in the mud.
 \end{spelleffect}
 \begin{spellnotes}
-  Any creature pinned beneath rubble takes 1d6 nonlethal damage per minute while pinned. If a pinned character falls unconscious, he or she must make a DC 15 Constitution check or take 1d6 lethal damage each minute thereafter until freed or dead.
+    A creature pinned beneath rubble is treated as being pinned. Each round, it can attempt to escape the pin as a standard action. Escaping requires a DC 20 Escape Artist check or grapple attack. As long as it stays pinned, it takes 1d6 nonlethal damage per minute. If a pinned creature falls unconscious, it takes 1d6 lethal damage each minute until it is freed or dies.
 \end{spellnotes}
 
 \spellsection{Earthspike}
