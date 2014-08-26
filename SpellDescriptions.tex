@@ -95,7 +95,7 @@
 \spellsr{No}
 \spelldmg{4d6 acid damage per round}
 \begin{spelleffect}
-  This spell functions like \spell{solid fog}, except that the spell's vapors are highly acidic. At the start of each of your turns, you make a Fortitude attack to deal damage to all creatures and objects in the area. A failed attack deals half damage.
+  This spell functions like \spell{solid fog}, except that the fog is highly acidic. At the start of each of your turns, you make a Fortitude attack to deal damage to all creatures and objects in the area. A failed attack deals half damage.
 \end{spelleffect}
 
 \spellsection{Agony}
@@ -625,7 +625,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsr{Yes (Will)}
 \spelldmg{8d6 divine damage \add d6 per two caster levels above 8th}
 \begin{spelleffect}
-    You make a Will attack to deal damage to the target and bewilder it for 5 rounds. A failed attack deals half damage.
+    If the target is not chaotic, it is bewildered for 5 rounds, and you make a Will attack to deal damage to it. A failed attack deals half damage.
 \end{spelleffect}
 
 \spellsection{Charm Monster}
@@ -726,7 +726,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelllvl{Arcane 7}
 \spelldef{None/Fortitude negates}
 \begin{spelleffect}
-  This spell functions like \spell{fog cloud}, except that the spell's vapors are deathly poisonous. At the start of each of your turns, you make a Fortitude attack against all living creatures in the area. A successful attack deals 1d4 Constitution damage.
+  This spell functions like \spell{fog cloud}, except that the fog is poisonous. At the start of each of your turns, you make a Fortitude attack against all living creatures in the area. A successful attack deals 1d4 Constitution damage.
   \par Unlike a \spell{fog cloud}, the \spell{cloudkill} moves away from you at 10 feet per round, rolling along the surface of the ground. Figure out the cloud's new spread each round based on its new point of origin, which is 10 feet farther away from the point of origin where you cast the spell.
 \end{spelleffect}
 \begin{spellnotes}
@@ -1246,7 +1246,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  You read the subject's surface thoughts. A Will save prevents you from reading its thoughts. You gain a \plus4 bonus to Bluff, Diplomacy, and Intimidate checks against creatures whose mind you are reading.
+    You make a Will attack to read the subject's surface thoughts. A failed attack prevents you from reading its thoughts. You gain a \plus4 bonus to Bluff, Diplomacy, and Intimidate checks against creatures whose mind you are reading.
 \end{spelleffect}
 
 \spellsectioncomma{Read Mind}{Greater}
@@ -1254,7 +1254,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelllvl{Arcane 7, Knowledge 7}
 \spelldef{None}
 \begin{spelleffect}
-    This spell functions like \spell{read mind}, except that no saving throw is allowed.
+    This spell functions like \spell{read mind}, except that no attack is needed.
 \end{spelleffect}
 
 \spellsectioncomma{Read Mind}{Mass}
@@ -1608,7 +1608,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsr{Yes (Fort)}
 \spelldmg{6d8 piercing damage \add d8 per two levels above 6th}
 \begin{spelleffect}
-    If the target is within 10 feet of natural earth or stone, make an attack roll using your caster level \add your casting attribute. If you hit the target's AC, it takes damage. If you also beat its Maneuver Class, it is immobilized for 5 rounds, preventing it from moving from its space.
+    If the target is within 10 feet of natural earth or stone, you make a physical attack using your caster level \add your casting attribute as your attack bonus. If you hit the target's AC, it takes damage. If you also beat its Maneuver Class, it is immobilized for 5 rounds, preventing it from moving from its space.
 
     An immobilized creature can break free by destroying the spike. The spike has an AC of 10, and 2 hit points per caster level.
 \end{spelleffect}
@@ -1928,10 +1928,10 @@ This spell can be made permanent with a \spell{permanency} ritual.
 6d8 fire damage \add d8 per four caster levels above 12th (holly berry bombs)}
 \begin{spelleffect}
   Depending on the version of fire seeds you choose, you turn acorns into splash weapons that you or another character can throw, or you turn holly berries into bombs that you can detonate on command.
-  \par \subspell{Acorn Grenades} As many as four acorns turn into special splash weapons that can be hurled as far as 100 feet. A ranged touch attack roll is required to strike the intended target. If you miss, the acorn detonates in a random corner of the intended target square. Together, the acorns are capable of dealing 6d6 fire damage \add d6 per four caster levels above 12th, divided up among the acorns as you wish.
-  \par Each acorn explodes upon striking any hard surface, damaging all creatures in a \areasmall radius burst. A creature within this area that makes a successful Reflex saving throw takes only half damage; a creature struck directly is not allowed a saving throw.
+  \par \subspell{Acorn Grenades} As many as four acorns turn into special splash weapons that can be hurled as far as 100 feet. A ranged touch attack is required to strike the intended target. If you miss, the acorn detonates in a random corner of the intended target square. Together, the acorns are capable of dealing 6d6 fire damage \add d6 per four caster levels above 12th, divided up among the acorns as you wish.
+  \par Each acorn explodes upon striking any hard surface. When it does, you make a Reflex attack to damage all creatures in a \areasmall radius burst. A failed attack deals half damage. You automatically succeed on this attack against a creature struck by the acorn directly.
   \par \subspell{Holly Berry Bombs} You turn as many as eight holly berries into special bombs. The holly berries are usually placed by hand, since they are too light to make effective thrown weapons (they can be tossed only 5 feet). Together, the holly berries are capable of dealing 6d6 fire damage \add d6 per four caster levels above 12th, divided up among the berries as you wish.
-  \par If you are within \rngmed range and speak a word of command (as a standard action), each berry instantly bursts into flame, striking every creature in a \areamed radius burst. A creature in the area that makes a successful Reflex saving throw takes only half damage.
+  \par If you are within \rngmed range and speak a word of command (as a standard action), each berry instantly bursts into flame. When they do, you make a Reflex attack against every creature in a \areamed radius burst of the berries. A failed attack deals half damage.
 \end{spelleffect}
 \begin{spellnotes}
   You can only have one \spell{fire seeds} active at any time.
@@ -1949,7 +1949,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsr{No/Yes (Reflex)}
 \spelldmg{4d6 fire or cold damage \add d6 per four levels above 8th}
 \begin{spelleffect}
-  Any creature that hits you with its body or a melee weapon takes damage. Each individual creature can take this damage only once per round. The damage type and other effects depend on which kind of \spell{fire shield} is used. This decision must be made at the time the spell is cast.
+  You can make a Reflex attack to deal damage to any creature that hits you with its body or a melee weapon. A failed attack deals half damage. Each individual creature can take this damage only once per round. The damage type and other effects depend on which kind of \spell{fire shield} is used. This decision must be made at the time the spell is cast.
 
   \par \subspell{Warm Shield} The flames are warm to the touch and deal fire damage. You gain cold damage reduction 20 \add 1 per caster level above 8th.
   \par \subspell{Chill Shield} The flames are cool to the touch and deal cold damage. You gain fire damage reduction 20 \add 1 per caster level above 8th.
@@ -1971,7 +1971,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsr{Yes (Reflex)}
 \spelldmg{8d6 fire damage \add d6 per four caster levels above 16th}
 \begin{spelleffect}
-  The spell deals damage to all enemies in the area, leaving your allies unscathed.
+    You make a Reflex attack to deal damage to everything in the area, except for your allies. A failed attack deals half damage.
 \end{spelleffect}
 
 \spellsection{Fireball}
@@ -1985,7 +1985,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsr{Yes (Reflex)}
 \spelldmg{3d6 fire damage \add d6 per four caster levels above 6th.}
 \begin{spelleffect}
-  Everything in the area takes damage.
+    You make a Reflex attack to deal damage to everything in the area. A failed attack deals half damage.
 \end{spelleffect}
 \begin{spellnotes}
   If a destructive spell deals enough damage to an interposing barrier to shatter or breaks through it, its effects may continue beyond the barrier if the area permits; otherwise, it stops at the barrier just as any other spell effect does.
@@ -2017,7 +2017,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsr{Yes (Reflex)}
 \spelldmg{5d6 fire and divine damage \add d6 per four caster levels above 8th; see text}
 \begin{spelleffect}
-  Half the damage is fire damage, but the other half results directly from divine power. Your allies in the area take half damage.
+    You make a Reflex attack to deal damage to everything in the area. A failed attack deals half damage. Half the damage is fire damage, but the other half results directly from divine power. Your allies in the area take only the fire damage.
 \end{spelleffect}
 
 \spellsection{Fly}
@@ -2151,7 +2151,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsr{Yes (Reflex)}
 \spelldmg{6d6 cold damage \add d6 per four levels above 12th}
 \begin{spelleffect}
-  Creatures in the area take damage. 
+    You make a Reflex attack to deal damage to everything in the area. A failed attack deals half damage.
   
   If the \spell{freezing sphere} strikes a body of water or a liquid that is principally water (not including water-based creatures), it freezes the liquid to a depth of 6 inches over an area equal to 100 square feet (a 10-foot square) per caster level (maximum 1,500 square feet). This ice lasts for 5 rounds. Creatures that were swimming on the surface of frozen water become trapped in the ice. Attempting to break free is a full-round action. A trapped creature must make a Strength check or an Escape Artist check against this spell's save DC to do so.
 \end{spelleffect}
@@ -2201,11 +2201,12 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelllvl{Arcane 1}
 \spellrng{\rngtouch}
 \spelltgt{Touched living creature}
+\spellarea{\areasmall radius emanation; see text}
 \spelldur{\durshort}
 \spelldef{None/Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
-  The subject is sickened, making it vulnerable. If it fails a Fortitude save, it exudes a carrion stench that causes all living creatures (except you and the subject) in a \areasmall radius spread to become sickened for 5 rounds, making them vulnerable. A successful Fortitude save negates the sickening from the stench.
+  The subject is sickened, making it vulnerable. If you succeed at a Fortitude attack, it exudes a carrion stench that causes all living creatures (except you and the subject) in a \areasmall radius emanation of the subject to become sickened as long as they stay within the area, making them vulnerable.
 \end{spelleffect}
 \begin{spellnotes}
   A vulnerable creature takes a \minus2 penalty to attacks, defenses, and checks.
@@ -2264,8 +2265,8 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{See text}
 \spellsr{No}
 \begin{spelleffect}
-  Any creature in the area when the spell is cast must make a successful Reflex save or fall. A creature can walk within or through the area of grease at half normal speed with a DC 10 Balance check. Failure means it can't move that round, while failure by 5 or more means it falls (see the Balance skill for details). A creature standing in a greased area loses its Dexterity and dodge modifiers to AC due to the slippery surface.
-  \par The spell can also be used to create a greasy coating on an item. Material objects not in use are always affected by this spell, while an object wielded or employed by a creature receives a Reflex saving throw to avoid the effect entirely. If the initial saving throw fails, the creature immediately drops the item. If the item is successfully greased, a saving throw must be made in each round that the creature attempts to pick up or use the greased item. A creature wearing greased armor or clothing gains a \plus10 enhancement bonus on Escape Artist checks and on grapple attacks made to resist or escape a grapple or to escape a pin.
+    You make a Reflex attack to make each creature in the area prone. A creature can walk within or through the area of grease at half normal speed with a DC 10 Balance check. Failure means it can't move that round, while failure by 5 or more means it falls (see the Balance skill for details). A creature standing in a greased area loses its Dexterity and dodge modifiers to AC due to the slippery surface.
+  \par The spell can also be used to create a greasy coating on an item. Material objects not in use are always affected by this spell, while you must make a Reflex attack to affect an object wielded or employed by a creature. If you succeed, the item becomes greasy and the creature immediately drops it. A creature can pick up and use a greased item, but it takes a \minus5 penalty with all actions requiring the item, such as attacks. In addition, whenever it fails at an action while holding the item, it drops the item. A creature wearing greased armor or clothing gains a \plus10 enhancement bonus on Escape Artist checks and on grapple attacks made to resist or escape a grapple or to escape a pin.
 \end{spelleffect}
 
 \spellsection{Greater (Spell Name)}
@@ -2280,14 +2281,14 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{Fortitude partial; see text.}
 \spellsr{No}
 \begin{spelleffect}
-  This spell creates a severe blast of air (approximately 50 mph) that originates from you, affecting all creatures in its path. Creatures are affected according to their size category. A successful Fortitude save causes a creature to be affected as if it were one size category larger. Flying creatures are affected as if one size category smaller.
+  This spell creates a severe blast of air (approximately 50 mph) that originates from you. Creatures and objects are affected according to their size. You make a Fortitude attack against everything in the area. A failed attack means the creature or object is treated as if it were one size category larger. Flying creatures are affected as if they were one size category smaller.
   \begin{itemize*}
     \item Tiny or smaller creatures are knocked prone and blown to the edge of the spell's range.
     \item Small creatures are knocked prone by the force of the wind.
     \item Medium creatures are unable to move forward against the force of the wind.
     \item Large or larger creatures may move normally.
   \end{itemize*}
-  \par Any creature, regardless of size, takes a \minus4 penalty on ranged attacks and Listen checks in the spell's area.
+  \par Any creature, regardless of size, takes a \minus5 penalty on ranged attacks and Listen checks in the spell's area.
   \par In addition to the effects noted, a gust of wind can do anything that a sudden blast of wind would be expected to do. It can extinguish open flames, create a stinging spray of sand or dust, fan a large fire, overturn delicate awnings or hangings, heel over a small boat, and blow gases or vapors to the edge of its range.
 \end{spelleffect}
 \begin{spellnotes}
@@ -2310,7 +2311,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsr{Yes (Fortitude)}
 \spelldmg{12d8 negative energy damage \add d8 per two caster levels above 12th}
 \begin{spelleffect}
-  The touched creature takes damage. In addition, it takes four points of Constitution damage. A successful Fortitude save halves the negative energy damage but does not mitigate the Constitution damage.
+    You make a Fortitude attack to deal damage to the touched creature. A failed attack deals half damage. Regardless, it also takes four points of Constitution damage.
 \end{spelleffect}
 \begin{spellnotes}
   If used on an undead creature, \spell{harm} acts like \spell{heal}.
@@ -2381,13 +2382,13 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellschool{Evocation (Energy) [Fire]}
 \spelllvl{Nature 2}
 \spellrng{\rngmed}
-\spelltgt{Metal equipment of one creature within the area}
+\spelltgt{Metal equipment of one creature}
 \spelldur{\durshort (D)}
-\spelldef{See text}
-\spellsr{Yes (Will)}
+\spelldef{Fortitude half}
+\spellsr{Yes (Fortitude)}
 \spelldmg{2d6 fire damage per round \add 1d6 per four levels above 4th; see text}
 \begin{spelleffect}
-  This spell makes metal burning hot, causing it to deal damage each round. A creature not touching metal takes no damage from this spell. A creature wielding metal equipment can attempt a Fortitude save for half damage each round. A creature wearing metal armor receives no saving throw, and is also vulnerable for the duration of the spell.
+    At the start of each of your turns, you make a Fortitude attack to deal damage to the subject. A failed attack deals half damage. You gain a \plus10 bonus on this attack if the subject is wearing metal armor.
 \end{spelleffect}
 \begin{spellnotes}
 A vulnerable creature takes a \minus2 penalty to attacks, defenses, and checks.
@@ -2488,7 +2489,7 @@ A vulnerable creature takes a \minus2 penalty to attacks, defenses, and checks.
 \spellsr{Yes (Will)}
 \spelldmg{8d6 divine damage \add d6 per two caster levels above 8th}
 \begin{spelleffect}
-  If the target is not good, it takes damage and is bewildered for 5 rounds. A successful Will save halves the damage.
+    If the target is not good, it is bewildered for 5 rounds, and you make a Will attack to deal damage to it. A failed attack deals half damage.
 \end{spelleffect}
 
 \spellsection{Holy Sword}
@@ -2553,7 +2554,7 @@ A vulnerable creature takes a \minus2 penalty to attacks, defenses, and checks.
 \spellsr{Yes (Fortitude)}
 \spelldmg{8d6 physical damage \add d6 per four caster levels above 16th}
 \begin{spelleffect}
-  Each target takes damage. Plants and creature with the water subtype take a \minus5 penalty on their saving throw. 
+    You make a Fortitude attack to deal damage to each affected creature. A failed attack deals half damage. Plants and creature with the water subtype take a \minus5 penalty on their saving throw. 
 \end{spelleffect}
 
 \spellsection{Hypnotic Pattern}
@@ -2567,7 +2568,7 @@ A vulnerable creature takes a \minus2 penalty to attacks, defenses, and checks.
 \spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  Creatures within the spell's area are fascinated. Each fascinated creature stands or sits quietly, taking no actions other than to pay attention to the fascinating effect for the duration of the spell. It takes a \minus4 penalty on skill checks made as reactions, such as Listen and Spot checks. Any potential threat, such as a hostile creature approaching, allows the fascinated creature a new saving throw. Any obvious threat, such as noticing someone draw a weapon, cast a spell, or aim a ranged weapon at the fascinated creature automatically breaks the effect. A fascinated creature's ally may shake it free of the spell as a standard action.
+    Creatures within the spell's area are fascinated. Each fascinated creature stands or sits quietly, taking no actions other than to pay attention to the fascinating effect for the duration of the spell. It takes a \minus4 penalty on skill checks made as reactions, such as Listen and Spot checks. Any potential threat, such as a hostile creature approaching, allows the fascinated creature a new saving throw. Any obvious threat, such as noticing someone draw a weapon, cast a spell, or aim a ranged weapon at the fascinated creature automatically breaks the effect. A fascinated creature's ally may shake it free of the spell as a standard action.
 \end{spelleffect}
 \begin{spellnotes}
   Creatures who cannot see the lights are not affected by this spell.
@@ -2589,7 +2590,7 @@ A vulnerable creature takes a \minus2 penalty to attacks, defenses, and checks.
 \spellsr{Yes (Reflex)}
 \spelldmg{4d4 cold and bludgeoning damage \add d4 per four caster levels above 8th}
 \begin{spelleffect}
-  All creatures within the area take damage. The area is difficult terrain for 1 round.
+    You deal damage to everything in the area. The area is difficult terrain for 1 round.
 \end{spelleffect}
 
 \spellsection{Implosion}
@@ -2681,7 +2682,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spellsr{Yes (Fortitude)}
 \spelldmg{2d6 negative energy damage \add d6 per two caster levels above 2nd}
 \begin{spelleffect}
-  The target takes damage. Since undead are powered by negative energy, this spell heals them instead of dealing damage.
+    You make a Fortiude attack to deal damage to the target. A failed attack deals half damage. Since undead are powered by negative energy, this spell heals them instead of dealing damage.
 \end{spelleffect}
 
 \spellsectioncomma{Inflict Light Wounds}{Mass}
@@ -2694,9 +2695,9 @@ A slowed creature can take only a single move action or standard action each tur
 \spelldef{Fortitude half}
 \spellsr{Yes (Fortitude)}
 \spelldmg{5d6 negative energy damage \add d6 per four caster levels above 10th}
-\begin{spellnotes}
-  The targets take damage. Like other \spellindirect{inflict light wounds}{inflict} spells, \spell{mass inflict light wounds} heals undead instead of dealing damage. A cleric capable of spontaneously casting \spellindirect{inflict light wounds}{inflict} spells can also spontaneously cast \spellindirect{mass inflict light wounds}{mass inflict} spells.
-\end{spellnotes}
+\begin{spelleffect}
+    You make a Fortitude attack to deal damage to each target. A failed attack deals half damage. Like other \spellindirect{inflict light wounds}{inflict} spells, \spell{mass inflict light wounds} heals undead instead of dealing damage.
+\end{spelleffect}
 
 \spellsection{Inflict Moderate Wounds}
 \spellschool{Necromancy (Vitalism) [Negative]}
@@ -2919,7 +2920,7 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
 \spellsr{Yes (Reflex)}
 \spelldmg{3d6 electricity damage \add d6 per four caster levels above 6th}
 \begin{spelleffect}
-  You release a powerful stroke of electrical energy that deals damage to each creature within its area. The bolt begins at your fingertips.
+    You make a Reflex attack to deal damage to everything in the area. A failed attack deals half damage.
   \par The lightning bolt sets fire to combustibles and damages objects in its path. It can melt metals with a low melting point, such as lead, gold, copper, silver, or bronze. If the damage caused to an interposing barrier shatters or breaks through it, the bolt may continue beyond the barrier if the spell's range permits; otherwise, it stops at the barrier just as any other spell effect does.
 \end{spelleffect}
 
@@ -2956,7 +2957,7 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
 \spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  You temporarily link the fates of any two creatures, if both fail their saving throws. If either linked creature experiences pain, both feel it. When one gains or loses hit points, the other gains or loses the same amount.
+    You make a Will attack against both subjects. If you succeed at both attacks, they become magically linked. If either linked creature experiences pain, both feel it. When one gains or loses hit points, the other gains or loses the same amount.
 \end{spelleffect}
 \begin{spellnotes}
   The loss of hit points caused by this spell is not damage, and is not affected by damage reduction or other abilities which affect damage.
@@ -3263,7 +3264,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsr{Yes (Reflex)}
 \spelldmg{9d6 fire damage \add d6 per four caster levels above 18th}
 \begin{spelleffect}
-  Every creature and object in the area takes damage. Flying creatures within the area of size Huge or smaller that fail their Reflex saves are driven to the ground, taking falling damage appropriate to the distance they descended. Creatures on the ground that fail their Reflex saves are knocked prone.
+    You make a Reflex attack to deal damage to everything in the area. A failed attack deals half damage. If you succeed against a flying creature within the area of size Huge or smaller, it is driven to the ground, taking falling damage appropriate to the distance it descends. If you succeed against a creature on the ground, it falls prone.
 \end{spelleffect}
 \begin{spellnotes}
   This spell functions indoors or underground, but not underwater.
@@ -3278,10 +3279,10 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{None/Will negates}
 \spellsr{None/Yes (Will)}
 \begin{spelleffect}
-  This spell functions like \spell{fog cloud}, except each creature in the fog take a \minus5 penalty to Wisdom unless it makes a Will save. A creature that successfully saves against the fog is not affected, but if it remains in the fog, it must make a new save each minute to avoid being affected. Affected creatures take the penalty as long as they remain in the fog and for 5 rounds thereafter. The fog is stationary and lasts for 1 hour (or until dispersed by wind).
+  This spell functions like \spell{fog cloud}, except that the fog hampers mental ability. Once per minute, you make a Will attack against all creatures in the area. A successful attack imposes a \minus5 penalty to Wisdom. Affected creatures take the penalty as long as they remain in the fog and for 5 rounds thereafter. The fog is stationary and lasts for 1 hour (or until dispersed by wind).
 \end{spelleffect}
 \begin{spellnotes}
-  A moderate wind (11\add mph) disperses the fog in 5 rounds; a strong wind (21\add mph) disperses the fog in 1 round.
+  A moderate wind (11\add mph) disperses the fog in 5 rounds; a strong wind (21\add mph) disperses the fog in 1 round. The penalty to Wisdom imposed by this spell does not stack with itself.
 \end{spellnotes}
 
 \spellsection{Minor Image}
@@ -3426,7 +3427,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsr{Yes (Will)}
 \spelldmg{8d6 divine damage \add d6 per two caster levels above 8th}
 \begin{spelleffect}
-  If the target is not lawful, it takes damage and is bewildered for 5 rounds. A successful Will save halves the damage.
+    If the target is not lawful, it is bewildered for 5 rounds, and you make a Will attack to deal damage to it. A failed attack deals half damage.
 \end{spelleffect}
 \begin{spellnotes}
   A vulnerable creature takes a \minus2 penalty to attacks, defenses, and checks.
@@ -3451,10 +3452,10 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{Will disbelief and Fortitude negates; see text}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The subject is shaken, causing it to be vulnerable for 5 rounds.
+    You make a Will attack to make the subject shaken for 5 rounds, leaving it vulnerable.
 \end{spelleffect}
 \begin{spellblood}
-  The subject must also make a Fortitude save. If it fails, it loses all its hit points and takes 9 critical damage, causing it to begin dying.
+    If you succeed at the Will attack, make a Fortitude attack. If you succeed, the target loses all its hit points and takes 9 critical damage, causing it to begin dying.
 \end{spellblood}
 \begin{spellnotes}
   A vulnerable creature takes a \minus2 penalty to attacks, defenses, and checks.
@@ -3470,7 +3471,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{Will disbelief}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The subject perceives itself to be banished to an extradimensional labyrinth of force planes, as the \spell{maze} spell. It cannot see or hear anything to the contrary, causing it to be treated as if blinded and deafened for most purposes. Typically, this means the subject moves in a random direction each round to escape the maze. If it encounters any physical resistance in its movements or takes any damage, it may immediately make a Will save to disbelieve the effect.
+  The subject perceives itself to be banished to an extradimensional labyrinth of force planes, as the \spell{maze} spell. It cannot see or hear anything to the contrary, causing it to be treated as if blinded and deafened for most purposes. Typically, this means the subject moves in a random direction each round to escape the maze. If it encounters any physical resistance in its movements or takes any damage, you must make another Will attack to maintain the effect.
 \end{spelleffect}
 
 \spellsection{Phantom Steed}
@@ -3496,6 +3497,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \end{spelleffect}
 
 \spellsection{Poison}
+\spelldesc{Calling upon the venomous powers of natural predators, you infect the subject with a horrible poison that drains its life force.}
 \spellschool{Necromancy (Flesh) [Poison]}
 \spelllvl{Death 4, Divine 4, Nature 3}
 \spellrng{Touch}
@@ -3504,7 +3506,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{Fortitude negates; see text}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
-  Calling upon the venomous powers of natural predators, you infect the subject with a horrible poison that drains its life force by making a successful melee touch attack. The poison deals 1d6 points of Constitution damage immediately. A Fortitude save negates this damage. The spell continues dealing another 1d6 points of Constitution damage every two rounds until the subject makes two successful Fortitude saves to resist the poison.
+    You make a Fortitude attack against the touched creature. Success means it takes 1d6 points of Constitution damage immediately. Every two rounds, you make another Fortitude attack to deal 1d6 points of Constitution damage. The spell lasts until you fail the Fortitude attack twice.
 \end{spelleffect}
 
 \spellsection{Polar Ray}
@@ -3661,6 +3663,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \end{spellnotes}
 
 \spellsection{Prismatic Spray}
+\spelldesc{This spell causes seven shimmering, intertwined, multicolored beams of light to spray from your hand.}
 \spellschool{Evocation (Control, Energy) [Light]}
 \spelllvl{Arcane 7, Chaos 7}
 \spellarea{\arealarge cone-shaped burst}
@@ -3668,7 +3671,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{See text}
 \spellsr{Yes (varies)}
 \begin{spelleffect}
-  This spell causes seven shimmering, intertwined, multicolored beams of light to spray from your hand. Each beam has a different power. Every creature in the area is randomly struck by one or more beams, which have unique effects.
+    You make an attack against every creature in the area. Each creature is randomly affected by a differently colored beam. The beam color determines the effects the creature suffers, as shown on the table below.
   \begin{dtable}
     \begin{tabularx}{\columnwidth}{l >{\lcol}p{4em} >{\lcol}X}
       \thead{1d8} & \thead{Color of Beam} & \thead{Effect} \\
@@ -3731,7 +3734,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsr{Yes (Will)}
 \spelldmg{8d6 damage \add 1d6 per four levels above 16th}
 \begin{spelleffect}
-    When you cast this spell, you choose an action. Any creature within the area that intentionally attempts to take the chosen action takes damage and is unable to complete the action. A successful Will save halves the damage and allows the creature to take the action successfully. Any individual creature can only be affected by the \spell{prohibition} once per round.
+    When you cast this spell, you choose an action. Whenever a creature within the area intentionally attempts to take the chosen action, you make a Will attack against them. A successful attack means they are unable to complete the action, while a failed attack means they take half damage. Any individual creature can only be affected by the \spell{prohibition} once per round.
 
     You may choose any action that must be taken intentionally. For example, you could prohibit creatures from attacking, but not from breathing. Likewise, you cannot prohibit actions that have non-voluntary components, such as ``protecting yourself with natural armor''. 
 \end{spelleffect}
@@ -3875,8 +3878,9 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  An invisible, mobile field surrounds you and prevents creatures from approaching you. You decide how big the field is at the time of casting. Any creature within or entering the field must attempt a save. If it fails, it becomes unable to move toward you for the duration of the spell. Repelled creatures' actions are not otherwise restricted.
-  \par They can fight other creatures and can cast spells and attack you with ranged weapons. The creature is free to make melee attacks against you if you come within reach. If a repelled creature moves away from you and then tries to turn back toward you, it cannot move any closer if it is still within the spell's area.
+  An invisible, mobile field surrounds you and prevents creatures from approaching you. You decide how big the field is at the time of casting. At the start of each of your turns, you make a Will attack. Any creature within or entering the field who cannot resist your attack is unable to move towards you that round.
+  
+  Repelled creatures' actions are not otherwise restricted. They can fight other creatures and can cast spells and attack you with ranged weapons. The creature is free to make melee attacks against you if you come within reach. If a repelled creature moves away from you and then tries to turn back toward you, it cannot move any closer if it is still within the spell's area.
 \end{spelleffect}
 \begin{spellnotes}
   Unlike most barrier spells, this spell does not collapse if you move towards a creature held at bay by the barrier. The spell continues to prevent that creature from approaching you, but the creature suffers no other ill effect.
@@ -3936,7 +3940,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{Will negates (harmless), Fortitude negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-    When the subject is attacked by a creature within \rngclose range of it, the subject can mentally command this spell to activate (an immediate action). If it does, spell is discharged, and the attacking creature is dazzled for 5 rounds. If the attacking creature is bloodied, it must make a Fortitude save to avoid being blinded as well.
+    When the subject is attacked by a creature within \rngclose range of it, the subject can mentally command this spell to activate (an immediate action). If it does, spell is discharged, and the attacking creature is dazzled for 5 rounds. If the attacking creature is bloodied, you can make a Fortitude attack to blind it for 5 rounds as well.
 \end{spelleffect}
 \begin{spellnotes}
     A successful Will save can prevent the subject from gaining the benefits of the spell, but there is no saving throw against the dazzling effect.
@@ -3987,7 +3991,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spelldef{Will negates (object)}
 \begin{spelleffect}
-  This spell functions like \spell{retrieve}, except that if the object is attended, it comes to your hand if the creature holding the item fails a Will save.
+  This spell functions like \spell{retrieve}, except that if the object is attended, it comes to your hand if you succeed on a Will attack against the attending creature.
 \end{spelleffect}
 
 \spellsection{Revelation}
@@ -4011,11 +4015,11 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spellarea{Up to five 10 ft. cubes (S)}
 \spelldur{Concentration (up to 5 rounds)}
-\spelldef{None; see text}
+\spelldef{None}
 \spellsr{No}
 \begin{spelleffect}
   This spell reverses gravity in an area, causing all unattached objects and creatures within that area to fall upward and reach the top of the area in 1 round. If some solid object (such as a ceiling) is encountered in this fall, falling objects and creatures strike it in the same manner as they would during a normal downward fall. If an object or creature reaches the top of the area without striking anything, it remains there, oscillating slightly, until the spell ends. At the end of the spell duration, affected objects and creatures fall downward.
-  \par A creature caught in the area can attempt a Reflex save to react to the shift in gravity. Common reactions include securing oneself if possible, or jumping to reach more stable ground.
+  %an initiative check belongs here \par A creature caught in the area can attempt a Reflex save to react to the shift in gravity. Common reactions include securing oneself if possible, or jumping to reach more stable ground.
 \end{spelleffect}
 \begin{spellnotes}
   Creatures who can fly or levitate can keep themselves from falling, though the shift in gravity can be disorienting. A creature that reacts by jumping does not actually move until its turn, but it moves in the direction of its jump, rather than simply falling upwards.
@@ -4060,7 +4064,10 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{Will negates (harmless) and Will negates; see text}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  Any opponent attempting to strike or otherwise directly attack the shielded creature, even with a targeted spell, must attempt a Will save. If the save succeeds, the opponent can attack normally and is unaffected by that casting of the spell. If the save fails, the opponent can't follow through with the attack, that part of its action is lost, and it can't directly attack the shielded creature for the duration of the spell. Those not attempting to attack the subject remain unaffected. This spell does not prevent the shielded creature from being attacked or affected by area or effect spells. The subject cannot attack without breaking the spell but may use nonattack spells or otherwise act.
+    At the start of each of your turns, you make a Will attack. Any creature attempting to physically attack the subject who cannot resist your attack is unable to complete the attack, and it has no effect on the subject.
+
+If the subject takes any offensive action, the spell immediately ends.
+
 \end{spelleffect}
 \begin{spellnotes}
     This is considered a mind-affecting effect on any creature that attempts to attack the shielded creature. Creatures immune to mind-affecting effects can attack the shielded creature freely.
@@ -4138,7 +4145,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelleff{Ray}
 \spelldur{Instantaneous and see text}
-\spelldef{Reflex partial}
+\spelldef{None}
 \spellsr{Yes (Reflex)}
 \spelldmg{6d6 divine damage \add d6 per two caster levels above 6th; see text}
 \begin{spelleffect}
@@ -4204,15 +4211,14 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsr{Yes (Will); See text}
 \begin{spelleffect}
   Shadow conjuration can mimic any non-restricted sorcerer or wizard conjuration spell of 5th level or lower. If you summon a creature, as with the \spell{summon monster} spells, you may only summon a creature that you know how to summon with such a spell.
-  \par Shadow conjurations are actually half as strong as the real things, though creatures who believe the shadow conjurations to be real are affected by them at full strength.
-  \par Any creature that interacts with the conjured object, force, or creature can make a Will save to recognize its true nature.
-  \par Spells that deal damage have normal effects unless an affected creature succeeds on a Will save. Each disbelieving creature takes only half damage from the attack. If the disbelieved attack has a special effect other than damage, that effect is half as strong (if applicable) or only half as likely to occur. Regardless of the result of the save to disbelieve, an affected creature is also allowed any save (or spell resistance) that the spell being simulated allows.
-  \par A shadow creature has half the hit points of a normal creature of its kind (regardless of whether it's recognized as shadowy). It deals normal damage and has all normal abilities and weaknesses. Against a creature that recognizes it as a shadow creature, however, the shadow creature deals half damage, and all special abilities that do not deal lethal damage are only 50\% likely to work. (Roll for each use and each affected character separately.)
+  \par When you cast this spell, you make a Will attack in addition to any other attacks required for the spell. This attack is made against any creature that interacts with the conjured object, force, or creature. If you fail, the creature disbelieves the spell.
+  \par A creature that disbelieves the spell takes only half damage from the attack. If the disbelieved attack has a special effect other than damage, that effect is half as strong (if applicable) or only half as likely to occur.
+  \par A shadow creature has half the hit points of a normal creature of its kind (regardless of whether it's disbelieved). It deals normal damage and has all normal abilities and weaknesses. Against a creature that recognizes it as a shadow creature, however, the shadow creature deals half damage, and all special abilities that do not deal lethal damage are only 50\% likely to work. (Roll for each use separately.)
 \end{spelleffect}
 \begin{spellnotes}
   A creature that succeeds on its save sees the shadow conjurations as transparent images superimposed on vague, shadowy forms.
-  \par When you learn this spell, you choose two creatures from the 3rd-level list or lower on \tref{Summon Monster List}. You can summon those creatures with this or any \spell{summon monster} spell.
-  \par Objects automatically succeed on their Will saves against this spell.
+  \par When you learn this spell, you choose two creatures from the 5th-level list or lower on \tref{Summon Monster List}. You can summon those creatures with this or any \spell{summon monster} spell.
+  \par Objects are always considered to disbelieve this spell.
 \end{spellnotes}
 
 \spellsection{Shadow Evocation}
@@ -4225,10 +4231,11 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsr{Yes (Will); see text}
 \begin{spelleffect}
   You tap energy from the Plane of Shadow to cast a quasi-real, illusory version of a non-restricted sorcerer or wizard evocation spell of 3rd level or lower. (For a spell with more than one level, use the best one applicable to you.)
-  \par Spells that deal damage have normal effects unless an affected creature succeeds on a Will save. Each disbelieving creature takes only half damage from the attack. If the disbelieved attack has a special effect other than damage, that effect is half as strong (if applicable) or only half as likely to occur. Regardless of the result of the save to disbelieve, an affected creature is also allowed any save (or spell resistance) that the spell being simulated allows.
+  \par When you cast this spell, you make a Will attack in addition to any other attacks required for the spell. This attack is made against any creature that interacts with the conjured object, force, or creature. If you fail, the creature disbelieves the spell.
+  \par A creature that disbelieves the spell takes only half damage from the attack. If the disbelieved attack has a special effect other than damage, that effect is half as strong (if applicable) or only half as likely to occur.
 \end{spelleffect}
 \begin{spellnotes}
-  Objects automatically succeed on their Will saves against this spell.
+  A creature that succeeds on its save sees the shadow conjurations as transparent images superimposed on vague, shadowy forms. Objects are always considered to disbelieve this spell.
 \end{spellnotes}
 
 \spellsection{Shadow Puppet}
@@ -4283,7 +4290,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelllvl{Arcane 3, Divine 3}
 \spelldef{Will negates}
 \begin{spelleffect}
-  This spell functions like \spell{share pain}, except that it can affect unwilling creatures. 
+  This spell functions like \spell{share pain}, except that it can affect unwilling creatures. You must succeed at a Will attack against both subjects for the spell to work.
 \end{spelleffect}
 
 \spellsectioncomma{Share Pain}{Greater}
@@ -4349,7 +4356,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsr{Yes (Fortitude)}
 \spelldmg{2d6 electricity damage \add d6 per two caster levels above 2nd}
 \begin{spelleffect}
-  If you hit with a touch attack, the target takes damage. If it fails a Fortitude save, it is also staggered for 1 round. When delivering the jolt, you gain a \plus2 bonus to attack if the opponent is wearing metal armor (or made out of metal, carrying a lot of metal, or the like).
+    You make a touch attack to deal damage to the target. If you hit, you also make a Fortitude attack to stagger it for 1 round. You gain a \plus2 bonus to attack with this spell if the target is wearing metal armor or otherwise has a significant quantity of metal.
 \end{spelleffect}
 \begin{spellnotes}
    A staggered character may take a single move action or standard action each round, but not both. She cannot take full-round actions, but she may take swift actions. In addition, she is vulnerable, causing her to take a \minus2 penalty on attacks, defenses, and checks.
@@ -4366,7 +4373,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsr{Yes (Fortitude)}
 \spelldmg{4d6 sonic damage \add d6 per four caster levels above 8th; see text}
 \begin{spelleffect}
-  Any creature in the area takes damage and is deafened for 5 rounds. A successful save negates the deafness and reduces the damage by half. Any exposed brittle or crystalline object or crystalline creature takes 4d8 points of sonic damage \add d8 per four caster levels above 8th.
+    You make a Fortitude attack to deal damage to everything in the area. A successful attack also deafens the target for 5 rounds, while a failed attack deals half damage. You gain a \plus5 bonus to attack against brittle or crystalline objects and creatures.
 \end{spelleffect}
 
 \spellsectioncomma{Shout}{Greater}
@@ -4376,7 +4383,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{Fortitude partial or Reflex negates (object); See text}
 \spelldmg{7d6 sonic damage \add d6 per four caster levels above 14th; see text}
 \begin{spelleffect}
-  This spell functions like \spell{shout}, except that it is larger and the deafness lasts for 5 rounds. Any exposed brittle or crystalline object or crystalline creature takes 7d8 points of sonic damage \add d8 per four caster levels above 14th.
+  This spell functions like \spell{shout}, except that it is larger.
 \end{spelleffect}
 
 \spellsection{Shrink Item}
@@ -4434,7 +4441,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellsr{Yes (Reflex)}
 \spelldmg{12d6 electricity damage \add d6 per two caster levels above 12th}
 \begin{spelleffect}
-  Lightning strikes where you direct, dealing damage to all creatures and objects in its path. If no creatures or objects lie in its path, the lightning will instead strike the closest occupied square within a \areamed radius limit.
+  Lightning strikes where you direct, allowing you to make a Reflex attack to deal damage to everything in . A failed attack deals half damage. If no creatures or objects lie in its path, the lightning will instead strike the closest occupied square within a \areamed radius limit.
 \end{spelleffect}
 \begin{spellnotes}
  \spell{Invisibility} and other forms of concealment do not protect creatures from the lightning, but it does not differentiate between friend, foe, and inanimate object.
@@ -4580,7 +4587,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellsr{Yes (Fortitude)}
 \spelldmg{2d6 sonic damage \add d6 per four levels above 4th}
 \begin{spelleffect}
-  Everything in the area takes damage, and creatures are deafened for 5 rounds. A successful Fortitude save halves the damage and negates the deafening.
+    You make a Fortitude attack to deal damage to everything in the area. A successful attack also deafens the target for 1 round, while a failed attack deals half damage.
 \end{spelleffect}
 
 \spellsection{Spell Resistance}
@@ -4724,7 +4731,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spelldef{None/Fortitude negates}
 \spellsr{None/Yes (Fortitude)}
 \begin{spelleffect}
-  This spell functions like \spell{fog cloud}, except that creatures within the cloud are sickened, making them vulnerable. A successful Fortitude save negates the sickening. The condition lasts as long as the creature remains in the cloud and for 5 rounds after it leaves. Any creature that succeeds on its save but remains in the cloud must continue to save each round on your turn.
+  This spell functions like \spell{fog cloud}, except that the fog has a putrid stench. At the start of each of your turns, you make a Fortitude attack to sicken all creatures in the area. The condition lasts as long as the creature remains in the cloud and for 5 rounds after it leaves.
 \end{spelleffect}
 \begin{spellnotes}
   A vulnerable creature takes a \minus2 penalty to attacks, defenses, and checks. This spell can be made permanent with a \spell{permanency} ritual. A permanent \spell{stinking cloud} dispersed by wind reforms in 10 minutes.
@@ -4777,7 +4784,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellsr{None/Yes (Fortitude)} 
 \spelldmg{7d6 bludgeoning damage \add d6 per four levels above 14th}
 \begin{spelleffect}
-  You gain physical damage reduction 35 against ranged attacks such as projectile weapons and thrown weapons. This damage reduction increases by 1 per caster level above 14th. In addition, any creature that hits you with its body or a melee weapon takes damage. Each individual creature can take this damage only once per round.
+  You gain physical damage reduction 35 against ranged attacks such as projectile weapons and thrown weapons. This damage reduction increases by 1 per caster level above 14th. In addition, you can make a Fortitude attack to deal damage to any creature that strikes you with its body or a melee weapon. A failed attack deals half damage. Each individual creature can take this damage only once per round.
 \end{spelleffect}
 \begin{spellnotes}
     This spell's damage reduction allows the subject to ignore the first 35 physical damage it takes each round from ranged attacks. The saving throw and spell resistance apply against the damage dealt, but not against this spell's other effects.
@@ -4794,7 +4801,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellsr{Yes (Fortitude)}
 \spelldmg{7d10 physical damage \add d10 per four caster levels above 14th}
 \begin{spelleffect}
-  The target takes damage. In addition, if it fails a Fortitude save, for 5 rounds all damage it takes is doubled. This does not double the initial damage dealt by this spell.
+    You deal damage to the target. In addition, if you succeed at a Fortitude attack, for 5 rounds all damage it takes is doubled. This does not double the initial damage dealt by this spell.
 \end{spelleffect}
 \begin{spellnotes}
   A successful Heal check with a DC equal to this spell's save DC negates the doubling of damage. 
@@ -5114,10 +5121,10 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellsr{Yes (Reflex)}
 \spelldmg{5d6 solar damage \add d6 per four caster levels above 10th; see text}
 \begin{spelleffect}
-  Each creature in the beam takes damage and is dazzled for 5 rounds. Any creatures to which sunlight is harmful or unnatural instead take 5d10 points of damage \add d10 per four caster levels above 10th and are blinded for 5 rounds. A successful Reflex save negates the dazzling (or blindness) and reduces the damage by half.
+    You make a Reflex attack to deal damage to everything in the area. A failed attack deals half damage. A failed attack deals half damage. Any creatures to which sunlight is harmful or unnatural instead take 5d10 points of damage \add d10 per four caster levels above 10th, and if your Reflex attack is successful, they are blinded for 5 rounds.
 \end{spelleffect}
 \begin{spellnotes}
-  A dazzled creature has a 20\% miss chance on all attack rolls and takes a \minus4 penalty to Spot checks. He is also unable to see with darkvision. 
+  A dazzled creature has a 20\% miss chance on all attack rolls and takes a \minus4 penalty to Spot checks. It is also unable to see with darkvision. 
 \end{spellnotes}
 
 \spellsection{Sunburst}
@@ -5165,7 +5172,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \begin{spelleffect}
   You may manipulate objects or creatures at a distance as if you were holding the object in your hands. When doing so, your effective Strength is equal to half your casting attribute, and your effective Dexterity is equal to half your Intelligence. You can move objects at a speed of up to 20 feet per round in any direction.
 
-   A creature can negate the effect on itself or an object it possesses with a successful Will save. Each round, the subject can attempt a new saving throw to negate the effect. If you are prevented from affecting a target in this way, it and any of its possessions are immune to your attempts for the duration of the spell, though you can still attempt to affect other creatures or objects. 
+  To affect a creature or an attended object, you must make a successful Will attack. This attack must be repeated each round. If you are prevented from affecting a target in this way, it and any of its possessions are immune to your attempts for the duration of the spell, though you can still attempt to affect other creatures or objects. 
 \end{spelleffect}
 \begin{spellnotes}
   This spell generally moves objects too slowly for them to be used as weapons. However, some indirect weapons, such as crossbows, may be used to attack with this spell. 
@@ -5194,7 +5201,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \begin{spelleffect}
   You can throw the affected objects or creatures anywhere within the spell's range. All subjects of this spell must be thrown to the same place. You can hurl up to a total weight of 25 pounds per caster level.
   \par You must succeed on ranged attack rolls (one per creature or object thrown) to hit the target of the hurled items with the items, applying your caster level and casting attribute to the attack roll instead of your base attack bonus and Dexterity. Hurled weapons deal their normal damage. Other objects deal damage ranging from 1 point per 25 pounds of weight (for less dangerous objects such as an empty barrel) to 1d6 points per 25 pounds of weight (for hard, dense objects such as a boulder).
-  \par Creatures are allowed Will saves (and spell resistance) to avoid being hurled or having their held possessions be targeted by this power.
+  \par To affect a creature or attended item, you must make a successful Will attack.
   \par If you use this power to hurl a creature against a solid surface, it takes damage as if it had fallen 50 feet (5d6 damage).
 \end{spelleffect}
 
@@ -5222,7 +5229,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
   If you succeed on a melee touch attack, the subject is slowed for a \durshort duration.
 \end{spelleffect}
 \begin{spellblood}
-  In addition, the subject is placed into a state of suspended animation unless it makes a successful Will save. For the creature, time ceases to flow and its condition becomes fixed. The creature does not grow older. Its body functions virtually cease, and no force or effect can harm it. This state persists until the magic is removed (such as by a successful \spell{dispel magic} spell or an \spell{emancipation} spell).
+  In addition, if you succeed on a Will attack against the touched creature, it is placed into a state of suspended animation. For the creature, time ceases to flow and its condition becomes fixed. The creature does not grow older. Its body functions virtually cease, and no force or effect can harm it. This state persists until the magic is removed (such as by a successful \spell{dispel magic} spell or an \spell{emancipation} spell).
 \end{spellblood}
 \begin{spellnotes}
     A slowed creature can take only a single move action or standard action each turn, but not both. It cannot take full-round actions, but it may take swift actions. Additionally, it takes a \minus2 penalty to attack rolls, Strength and Dexterity-based checks, and armor class.
@@ -5461,7 +5468,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spellsr{Yes (Will)}
 \spelldmg{8d6 divine damage \add d6 per two caster levels above 8th}
 \begin{spelleffect}
-  If the target is not evil, it takes damage and is sickened for 5 rounds, making it vulnerable. A successful Will save halves the damage.
+    If the target is not evil, it is sickened for 5 rounds, and you make a Will attack to deal damage to it. A failed attack deals half damage.
 \end{spelleffect}
 \begin{spellnotes}
   A vulnerable creature takes a \minus2 penalty to attacks, defenses, and checks.
@@ -5505,7 +5512,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spellsr{Yes (Fortitude)}
 \spelldmg{8d8 life damage \add d8 per two caster levels above 8th}
 \begin{spelleffect}
-  The touched creature takes damage. You gain temporary hit points equal to half the damage you deal. You can't gain more hit points than subject has. The temporary hit points disappear 1 hour later. If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
+    You make a Fortitude attack to deal damage to the touched creature. A failed attack deals half damage. You gain temporary hit points equal to half the damage you deal. You can't gain more hit points than subject has. The temporary hit points disappear 1 hour later. If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
 
   As long as you have temporary hit points from this spell, you are treated as being undead for the purpose of spells or abilities which affect undead. This causes some unintelligent undead, such as skeletons and zombies, to avoid attacking you.
 \end{spelleffect}
@@ -5522,7 +5529,7 @@ A slowed creature can take only a single move action or standard action each tur
   The subject's arms and torso are masked in illusion, causing onlookers to perceive whatever movements you project instead of the creature's true actions. For example, the subject might draw a dagger and attack another creature, but anyone watching would only see the subject folding its arms, even as the dagger strikes true.
 \end{spelleffect}
 \begin{spellnotes}
-  A creature that interacts with the effect gets a Will save to recognize it as an illusion. In order to interact with the illusion with a Perception check, the creature must make a Perception check that beats your saving throw DC with this spell. Anyone witnessing the subject perform an impossible action, such as attacking or climbing without the use of its hands, receives a Will save with a \plus10 bonus.
+    When you cast this spell, you make a Will attack. This attack is made against any creature that interacts with the effect. If you fail, the creature disbelieves the spell. In order to interact with the illusion with a Perception check, the creature must make a Perception check that beats your Will attack. Anyone witnessing the subject perform an impossible action, such as attacking or climbing without the use of its hands, gains a \plus10 bonus to their Will defense against this attack.
 \end{spellnotes}
 
 \spellsection{Ventriloquism}
@@ -5537,6 +5544,9 @@ A slowed creature can take only a single move action or standard action each tur
 \begin{spelleffect}
   You can make your voice (or any sound that you can normally make vocally) seem to issue from someplace else. You can speak in any language you know. With respect to such voices and sounds, anyone who hears the sound and rolls a successful save recognizes it as illusory (but still hears it).
 \end{spelleffect}
+\begin{spellnotes}
+    When you cast this spell, you make a Will attack. This attack is made against any creature that interacts with the effect. If you fail, the creature disbelieves the spell. In order to interact with the illusion with a Perception check, the creature must make a Perception check that beats your Will attack. Anyone witnessing the subject perform an impossible action, such as attacking or climbing without the use of its hands, gains a \plus10 bonus to their Will defense against this attack.
+\end{spellnotes}
 
 \begin{comment}
 \spellsection{Vestments of the Mage}
@@ -5587,7 +5597,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spellsr{Yes (Reflex)}
 \spelldmg{4d6 \add d6 per four caster levels above 8th; see text}
 \begin{spelleffect}
-  An immobile, blazing curtain of shimmering violet fire springs into existence. The wall deals damage to any creature passing through it. A successful Reflex save halves this damage. In addition, the wall radiates heat, dealing 2d6 points of fire damage to creatures within 10 feet and 1d6 points of fire damage to those past 10 feet but within 20 feet. No save is allowed against this damage. The wall deals this damage at the start of each of your turns to All creatures within the area.
+  An immobile, blazing curtain of shimmering violet fire springs into existence. Whenever a creature passes through the wall, you make a Reflex attack to deal damage to it. A failed attack deals half damage. In addition, the wall radiates heat, dealing 2d6 points of fire damage to creatures within 10 feet and 1d6 points of fire damage to those past 10 feet but within 20 feet. The wall deals this damage at the start of each of your turns to all creatures within the area.
   \par If you evoke the wall so that it appears where creatures are, each creature takes damage as if passing through the wall. If any 5-foot length of wall takes 20 points of cold damage or more in 1 round, that length goes out.
 \end{spelleffect}
 \begin{spellnotes}
@@ -5684,7 +5694,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{Fortitude partial}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
-  Living creatures in the area are exhausted. A successful Fortitude save causes a creature to be fatigued instead. This spell has no effect on a creature that is already exhausted.
+    You make a Fortitude attack to exhaust all creatures in the area. A failed attack means they are fatigued instead. This spell has no effect on a creature that is already exhausted.
 \end{spelleffect}
 \begin{spellnotes}
     An exhausted character cannot sprint or charge, moves at half speed, and takes a \minus4 penalty to attacks, defenses, and checks. A fatigued character can neither sprint nor charge and is vulnerable, giving it a \minus2 penalty to attacks, defenses, and checks.
@@ -5715,7 +5725,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{Reflex negates; see text}
 \spellsr{No}
 \begin{spelleffect}
-  Each creature in the spell's area are entangled unless it makes a successful Reflex save. This save must be repeated each round that the creature moves or fights within the area. An entangled creature can spend a standard action to make a grapple attack or Escape Artist attempt against the spell's save DC to break the webs holding it, preventing it from being entangled. A creature entangled by the spell remains entangled until it breaks the webs holding it or escapes the spell's area.
+    You make a Reflex attack to entangle all creatures in the area. This attack is repeated each round that a creature moves or fights within the area. An entangled creature can spend a standard action to make a grapple attack or Escape Artist attempt against your Reflex attack to break the webs holding it, preventing it from being entangled. A creature entangled by the spell remains entangled until it breaks the webs holding it or escapes the spell's area.
   \par If the strands can be anchored to two or more solid and diametrically opposed structures, such as walls, the strands are much more sturdy. A creature entangled within a sturdy web is unable to move from its square until it stops being entangled.
 \end{spelleffect}
 \begin{spellnotes}
@@ -5745,7 +5755,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsr{Yes (Fortitude)}
 \spelldmg{4d6 bludgeoning damage \add d6 per two levels above 4th}
 \begin{spelleffect}
-  The target takes damage from the powerful winds. A successful Fortitude save halves the damage. In addition, you may make a bull rush attack with an enhancement bonus equal to your caster level \add your casting attribute. If you succeed, you may have the wind bull rush the target in any direction -- even vertically. Moving the target up takes twice as much movement as moving the target horizontally.
+    You make a Fortitude attack to deal damage to the target. A failed attack deals half damage. In addition, you may make a bull rush attack with an attack bonus equal to your caster level \add your casting attribute. If you succeed, you may have the wind bull rush the target in any direction -- even vertically. Moving the target up takes twice as much movement as moving the target horizontally.
 \end{spelleffect}
 
 \spellsection{Windstrike, Greater}
@@ -5799,7 +5809,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellcmp{Verbal only}
 \spellarea{\arealarge radius spread centered on you}
 \spelldur{Instantaneous}
-\spelldef{None or Will negates; see text}
+\spelldef{None}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
   Each nonchaotic creature in the area is bewildered, making it vulnerable for 5 rounds.
