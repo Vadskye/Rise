@@ -271,7 +271,7 @@
 \spelldef{Fortitude half}
 \spellsr{Yes (Fortitude)}
 \spelldmg{18d8 life damage \add d6 per four caster levels above 18th}
-\par Any creature reduced to 0 or fewer hit points by this spell is entirely assimilated into your form, leaving behind only a trace of fine dust. An assimilated creature's equipment is unaffected.
+You make a Fortitude attack to deal damage to the target. If it has no hit points remaining after taking damage from this spell, the target is entirely assimilated into your form, leaving behind only a trace of fine dust. An assimilated creature's equipment is unaffected.
 \par If the creature has at least 1 hit point following your use of this power, you gain temporary hit points equal to half the damage you dealt for 1 hour.
 \par If the creature is completely assimilated, you gain a number of temporary hit points equal to the damage you dealt and a \plus4 enhancement bonus to each of your attributes for 1 hour. In addition, you gain the appearance of the creature for 1 hour, granting you a \plus10 enhancement bonus on Disguise checks made to appear as that creature during that time.
 
@@ -522,7 +522,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsr{Yes (Reflex)}
 \spelldmg{1d6 fire damage \add 1d6 per four caster levels above 2nd}
 \begin{spelleffect}
-  Everything in the area takes damage. Unattended flammable objects burn if the flames touch them. A character can extinguish burning items as a full-round action.
+    You make a Reflex attack to deal damage to everything in the area. A failed attack deals half damage. Unattended flammable objects burn if the flames touch them. A character can extinguish burning items as a full-round action.
 \end{spelleffect}
 
 \pdfbookmark[2]{C}{SpellDescriptionsC}
@@ -542,8 +542,8 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsr{Yes (Reflex)}
 \spelldmg{3d8 electricity damage \add d8 per four caster levels above 6th}
 \begin{spelleffect}
-  Immediately upon completion of the spell, and once per round thereafter, you may call down a vertical bolt of lightning which deals damage to anyone in its path. Calling a bolt is a standard action that requires concentration. You may call a total number of bolts equal to your caster level.
-  \par If you are outdoors and in a stormy area -- a rain shower, clouds and wind, hot and cloudy conditions, or even a tornado (including a whirlwind formed by a djinni or an air elemental of at least Large size) -- each bolt deals 3d8 electricity damage \add d8 per four caster levels above 6th instead.
+  Immediately upon completion of the spell, and once per round thereafter, you may call down a vertical bolt of lightning which deals damage to anyone in its path. When you do, you make a Reflex attack to deal damage to everything in the bolt's path. A failed attack deals half damage. Calling a bolt is a standard action that requires concentration. You may call a total number of bolts equal to your caster level.
+  \par If you are outdoors and in a stormy area -- a rain shower, clouds and wind, hot and cloudy conditions, or even a tornado (including a whirlwind formed by a djinni or an air elemental of at least Large size) -- each bolt deals 3d10 electricity damage \add d10 per four caster levels above 6th instead.
 \end{spelleffect}
 \begin{spellnotes}
   This spell functions indoors or underground, but not underwater.
@@ -555,12 +555,12 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelllvl{Air 5, Nature 5}
 \spelldef{Reflex half/Reflex negates}
 \spelldmg{5d8 electricity damage \add d8 per four caster levels above 10th}
-\begin{spellblood}
-    You make a Reflex attack to deal damage to each creature struck by the bolt. A successful attack also staggers the creature for 1 round, while a failed attack deals half damage.
-\end{spellblood}
 \begin{spelleffect}
-  This spell functions like \spell{call lightning}, except as noted above. If you are outdoors in a stormy area, each bolt deals 5d8 electricity damage \add d8 per four caster levels above 10th instead.
+    This spell functions like \spell{call lightning}, except that it can stagger bloodied creatures, as noted below. If you are outdoors in a stormy area, each bolt deals 5d10 electricity damage \add d10 per four caster levels above 10th instead.
 \end{spelleffect}
+\begin{spellblood}
+    A successful attack against a bloodied creature (after taking into account the damage dealt by the spell) staggers it for 1 round.
+\end{spellblood}
 \begin{spellnotes}
  A staggered character may take a single move action or standard action each round, but not both. She cannot take full-round actions, but she may take swift actions. In addition, she is vulnerable, causing her to take a \minus2 penalty on attacks, defenses, and checks.
 \end{spellnotes}
@@ -595,7 +595,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsr{Yes (Reflex)}
 \spelldmg{5d10 electricity damage \add d10 per four caster levels above 10th}
 \begin{spelleffect}
-  This spell deals full damage to the primary target and half damage to each of the secondary targets. No secondary target can be struck more than once. You can choose to affect fewer secondary targets than the maximum.
+    You make a Reflex attack to deal damage to all of the spell's targets. A failed attack deals half damage. This spell deals full damage to the primary target and half damage to each of the secondary targets. No secondary target can be struck more than once. You can choose to affect fewer secondary targets than the maximum.
 \end{spelleffect}
 
 \spellsection{Changestaff}
@@ -676,7 +676,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelldef{Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spellblood}
-  The subjects are reduced to 0 hit points and take 9 critical damage, causing them to begin dying.
+    You make a Fortitude attack against each affected creature. A successful attack reduces a target to 0 hit points and deals 9 critical damage, causing the target to begin dying.
 \end{spellblood}
 \begin{spellnotes}
   This spell can affect 2 levels worth of living creatures per caster level. Creatures with the lowest level are affected first; among creatures with equal levels, those who are closest to the burst's point of origin are affected first. No creature whose level is greater than half your caster level can be affected, and levels that are not sufficient to affect a creature are wasted. Healthy creatures are not affected by the spell, and do not count against the spell's level limit.
@@ -726,7 +726,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelllvl{Arcane 7}
 \spelldef{None/Fortitude negates}
 \begin{spelleffect}
-  This spell functions like \spell{fog cloud}, except that living creatures inside the fog take 1d4 Constitution damage on your turn each round. A successful Fortitude save negates the damage for that round.
+  This spell functions like \spell{fog cloud}, except that the spell's vapors are deathly poisonous. At the start of each of your turns, you make a Fortitude attack against all living creatures in the area. A successful attack deals 1d4 Constitution damage.
   \par Unlike a \spell{fog cloud}, the \spell{cloudkill} moves away from you at 10 feet per round, rolling along the surface of the ground. Figure out the cloud's new spread each round based on its new point of origin, which is 10 feet farther away from the point of origin where you cast the spell.
 \end{spelleffect}
 \begin{spellnotes}
@@ -743,7 +743,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  Creatures in the area are dazzled and bewildered.
+  You make a Will attack against each creature in the area. A successful attack dazzles and bewilders the subject.
 \end{spelleffect}
 \begin{spellnotes}
   A dazzled creature has a 20\% miss chance on all attack rolls and takes a \minus4 penalty to Spot checks. He is also unable to see with darkvision. A bewildered creature is mentally affected in a way that detracts from its ability to act, causing it to be vulnerable. It takes a \minus2 penalty to attacks, defenses, and checks.
@@ -814,7 +814,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsr{Yes (Reflex)}
 \spelldmg{5d6 cold damage \add d6 per four caster levels above 10th.}
 \begin{spelleffect}
-    Everything in the area takes damage. Creatures damaged by the spell are fatigued for 5 rounds.
+    You make a Reflex attack to deal damage to everything in the area. A failed attack deals half damage. Creatures damaged by the spell are fatigued for 5 rounds.
 \end{spelleffect}
 
 \spellsectioncomma{Cone of Cold}{Greater}
@@ -978,7 +978,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{Instantaneous}
-\spelldef{Fortitude half (harmless) or Fortitude half; see text}
+\spelldef{Fortitude half; see text}
 \spellsr{Yes (Fortitude)}
 \spellheal{2d6 damage \add d6 per two caster levels above 2nd}
 \begin{spelleffect}
@@ -993,7 +993,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellarea{\areamed radius limit}
 \spelltgts{Five creatures within the area}
 \spelldur{Instantaneous}
-\spelldef{Fortitude half (harmless) or Fortitude half; see text}
+\spelldef{Fortitude half; see text}
 \spellsr{Yes (Fortitude)}
 \spellheal{5d6 damage \add d6 per four caster levels above 10th}
 \begin{spelleffect}
