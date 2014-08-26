@@ -95,7 +95,7 @@
 \spellsr{No}
 \spelldmg{4d6 acid damage per round}
 \begin{spelleffect}
-  This spell functions like \spell{solid fog}, except that the fog is highly acidic. At the start of each of your turns, you make a Fortitude attack to deal damage to all creatures and objects in the area. A failed attack deals half damage.
+  This spell functions like \spell{solid fog}, except that the fog is highly acidic. When you cast this spell, and at the start of each of your turns, you make a Fortitude attack to deal damage to all creatures and objects in the area. A failed attack deals half damage.
 \end{spelleffect}
 
 \spellsection{Agony}
@@ -377,7 +377,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelldef{None}
 \spellsr{No}
 \begin{spelleffect}
-  At the start of your turn, every creature within the area of the spell is the target of a grapple attack. This attack is also made in the round that \spell{black tentacles} is cast. Treat the tentacles attacking a particular target as a Medium creature with a base attack bonus equal to your caster level and a Strength score of 8. Thus, its grapple attack modifier is equal to your caster level \plus8. Roll only once each round for the entire spell effect, and apply the result to all creatures within the area of effect.
+  When you cast this spell, and at the start of each of your turns, every creature within the area of the spell is the target of a grapple attack. This attack is also made in the round that \spell{black tentacles} is cast. Treat the tentacles attacking a particular target as a Medium creature with a base attack bonus equal to your caster level and a Strength score of 8. Thus, its grapple attack modifier is equal to your caster level \plus8. Roll only once each round for the entire spell effect, and apply the result to all creatures within the area of effect.
   \par If the tentacles succeed in grappling a foe, that foe takes 1d8\plus4 damage. Each round that black tentacles succeeds on a grapple attack, it deals an additional 1d8\plus4 damage. The tentacles continue to crush the opponent until the spell ends or the opponent escapes.
   \par The tentacles are immune to all types of damage. The entire area of effect is considered difficult terrain while the tentacles last, and any creature that enters the area of the spell is immediately attacked by the tentacles.
 \end{spelleffect}
@@ -726,7 +726,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelllvl{Arcane 7}
 \spelldef{None/Fortitude negates}
 \begin{spelleffect}
-  This spell functions like \spell{fog cloud}, except that the fog is poisonous. At the start of each of your turns, you make a Fortitude attack against all living creatures in the area. A successful attack deals 1d4 Constitution damage.
+  This spell functions like \spell{fog cloud}, except that the fog is poisonous. When you cast this spell, and at the start of each of your turns, you make a Fortitude attack against all living creatures in the area. A successful attack deals 1d4 Constitution damage.
   \par Unlike a \spell{fog cloud}, the \spell{cloudkill} moves away from you at 10 feet per round, rolling along the surface of the ground. Figure out the cloud's new spread each round based on its new point of origin, which is 10 feet farther away from the point of origin where you cast the spell.
 \end{spelleffect}
 \begin{spellnotes}
@@ -1739,6 +1739,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \end{spelleffect}
 
 \spellsection{Entangle}
+\spelldesc{Grasses, weeds, bushes, and even trees wrap, twist, and entwine about creatures in the area or those that enter the area, holding them fast.}
 \spellschool{Transmutation (Animation)}
 \spelllvl{Nature 1, Wild 1}
 \spellrng{\rngmed}
@@ -1747,7 +1748,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{Reflex partial}
 \spellsr{No}
 \begin{spelleffect}
-  Grasses, weeds, bushes, and even trees wrap, twist, and entwine about creatures in the area or those that enter the area, holding them fast and causing them to become entangled. The creature can break free and move half its normal speed by using a standard action to make a grapple attack or an Escape Artist check against this spell's save DC. A creature that succeeds on a Reflex save is not entangled but can still move at only half speed through the area. Each round on your turn, the plants once again attempt to entangle all creatures that have avoided or escaped entanglement.
+    When you cast this spell, and at the start of each of your turns, you make a Reflex attack to entangle all creatures and objects in the area. An entangled creature can break free and move half its normal speed by using a standard action to make a grapple attack or an Escape Artist check that beats your Reflex attack. Creatures in the area that are not entangled can still move at only half speed through the area.
 \end{spelleffect}
 \begin{spellnotes}
   The effects of the spell may be altered somewhat based on the nature of the entangling plants. If no plants exist in the area, the spell has no effect.
@@ -2094,7 +2095,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{None or Will negates (harmless)}
 \spellsr{No or Yes (Will)}
 \begin{spelleffect} 
-    The subject receives instantaneous warnings of impending danger or harm that would befall it. It gains an enhancement bonus to initiative checks equal to your caster level, and a \plus3 enhancement bonus to its dodge modifier and Reflex saves. This bonus increases to \plus4 at 14th level, and to \plus5 at 20th level.
+    The subject receives instantaneous warnings of impending danger or harm that would befall it. It gains an enhancement bonus to initiative checks equal to your caster level, and a \plus3 enhancement bonus to its dodge modifier and Reflex defense. This bonus increases to \plus4 at 14th level, and to \plus5 at 20th level.
   \par If you cast this spell on yourself, it lasts for \durlong duration. On any other creature, it lasts for \durshort duration.
 \end{spelleffect}
 
@@ -2154,7 +2155,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \begin{spelleffect}
     You make a Reflex attack to deal damage to everything in the area. A failed attack deals half damage.
   
-  If the \spell{freezing sphere} strikes a body of water or a liquid that is principally water (not including water-based creatures), it freezes the liquid to a depth of 6 inches over an area equal to 100 square feet (a 10-foot square) per caster level (maximum 1,500 square feet). This ice lasts for 5 rounds. Creatures that were swimming on the surface of frozen water become trapped in the ice. Attempting to break free is a full-round action. A trapped creature must make a Strength check or an Escape Artist check against this spell's save DC to do so.
+  If the \spell{freezing sphere} strikes a body of water or a liquid that is principally water (not including water-based creatures), it freezes the liquid to a depth of 6 inches over an area equal to 100 square feet (a 10-foot square) per caster level. This ice lasts for 5 rounds. Creatures that were swimming on the surface of frozen water become trapped in the ice. Attempting to break free is a full-round action. A trapped creature must make a grapple attack or an Escape Artist check that beats your Reflex attack to escape.
 \end{spelleffect}
 
 \pdfbookmark[2]{G}{SpellDescriptionsG}
@@ -2389,7 +2390,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsr{Yes (Fortitude)}
 \spelldmg{2d6 fire damage per round \add 1d6 per four levels above 4th; see text}
 \begin{spelleffect}
-    At the start of each of your turns, you make a Fortitude attack to deal damage to the subject. A failed attack deals half damage. You gain a \plus10 bonus on this attack if the subject is wearing metal armor.
+    When you cast this spell, and at the start of each of your turns, you make a Fortitude attack to deal damage to the subject. A failed attack deals half damage. You gain a \plus10 bonus on this attack if the subject is wearing metal armor.
 \end{spelleffect}
 \begin{spellnotes}
 A vulnerable creature takes a \minus2 penalty to attacks, defenses, and checks.
@@ -3084,7 +3085,7 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
 \begin{spelleffect}
   All magical effects within the radius of the spell, except for those on you, are disjoined. That is, spells and spell-like effects are separated into their individual components (ending the effect as a \spell{dispel magic} spell does).
   \par You also have a 2\% chance per caster level of destroying an \spell{antimagic field}.
-  \par You can also use this spell to target a single item. The item gets a Will save at a \minus5 penalty to avoid being permanently rendered nonmagical. Even artifacts are subject to this use of disjunction, though there is only a 1\% chance per caster level of actually affecting such powerful items. Additionally, if an artifact is destroyed, you permanently lose the ability to cast \spell{mage's disjunction}. (This ability cannot be recovered by mortal magic, not even \spell{miracle} or \spell{wish}.)
+  \par You can also use this spell to target a single item. If you succeed at a Will attack with a \plus5 bonus, the item is permanently rendered nonmagical. Even artifacts are subject to this use of disjunction, though there is only a 1\% chance per caster level of actually affecting such powerful items. Additionally, if an artifact is destroyed, you permanently lose the ability to cast \spell{mage's disjunction}. (This ability cannot be recovered by mortal magic, not even \spell{miracle} or \spell{wish}.)
   \par \subspell{Note} Destroying artifacts is a dangerous business, and it is 95\% likely to attract the attention of some powerful being who has an interest in or connection with the device.
 \end{spelleffect}
 
@@ -3104,7 +3105,7 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
 \spelldef{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  All creatures within the area gain the effects of a \spell{protection from evil} spell. In addition, no nongood summoned creatures can enter the area unless they make a successful Will save.
+  All creatures within the area gain the effects of a \spell{protection from evil} spell. In addition, no nongood summoned creatures can enter the area.
 \end{spelleffect}
 
 \spellsection{Magic Circle against Good}
@@ -3879,7 +3880,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  An invisible, mobile field surrounds you and prevents creatures from approaching you. You decide how big the field is at the time of casting. At the start of each of your turns, you make a Will attack. Any creature within or entering the field who cannot resist your attack is unable to move towards you that round.
+  An invisible, mobile field surrounds you and prevents creatures from approaching you. You decide how big the field is at the time of casting. When you cast this spell, and at the start of each of your turns, you make a Will attack. Any creature within or entering the field who cannot resist your attack is unable to move towards you that round.
   
   Repelled creatures' actions are not otherwise restricted. They can fight other creatures and can cast spells and attack you with ranged weapons. The creature is free to make melee attacks against you if you come within reach. If a repelled creature moves away from you and then tries to turn back toward you, it cannot move any closer if it is still within the spell's area.
 \end{spelleffect}
@@ -4065,7 +4066,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{Will negates (harmless) and Will negates; see text}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-    At the start of each of your turns, you make a Will attack. Any creature attempting to physically attack the subject who cannot resist your attack is unable to complete the attack, and it has no effect on the subject.
+    When you cast this spell, and at the start of each of your turns, you make a Will attack. Any creature attempting to physically attack the subject who cannot resist your attack is unable to complete the attack, and it has no effect on the subject.
 
 If the subject takes any offensive action, the spell immediately ends.
 
@@ -4732,7 +4733,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spelldef{None/Fortitude negates}
 \spellsr{None/Yes (Fortitude)}
 \begin{spelleffect}
-  This spell functions like \spell{fog cloud}, except that the fog has a putrid stench. At the start of each of your turns, you make a Fortitude attack to sicken all creatures in the area. The condition lasts as long as the creature remains in the cloud and for 5 rounds after it leaves.
+  This spell functions like \spell{fog cloud}, except that the fog has a putrid stench. When you cast this spell, and at the start of each of your turns, you make a Fortitude attack to sicken all creatures in the area. The condition lasts as long as the creature remains in the cloud and for 5 rounds after it leaves.
 \end{spelleffect}
 \begin{spellnotes}
   A vulnerable creature takes a \minus2 penalty to attacks, defenses, and checks. This spell can be made permanent with a \spell{permanency} ritual. A permanent \spell{stinking cloud} dispersed by wind reforms in 10 minutes.
@@ -5598,7 +5599,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spellsr{Yes (Reflex)}
 \spelldmg{4d6 \add d6 per four caster levels above 8th; see text}
 \begin{spelleffect}
-  An immobile, blazing curtain of shimmering violet fire springs into existence. Whenever a creature passes through the wall, you make a Reflex attack to deal damage to it. A failed attack deals half damage. In addition, the wall radiates heat, dealing 2d6 points of fire damage to creatures within 10 feet and 1d6 points of fire damage to those past 10 feet but within 20 feet. The wall deals this damage at the start of each of your turns to all creatures within the area.
+  An immobile, blazing curtain of shimmering violet fire springs into existence. Whenever a creature passes through the wall, you make a Reflex attack to deal damage to it. A failed attack deals half damage. In addition, the wall radiates heat, dealing 2d6 points of fire damage to creatures within 10 feet and 1d6 points of fire damage to those past 10 feet but within 20 feet. The wall deals this damage when you cast this spell, and at the start of each of your turns.
   \par If you evoke the wall so that it appears where creatures are, each creature takes damage as if passing through the wall. If any 5-foot length of wall takes 20 points of cold damage or more in 1 round, that length goes out.
 \end{spelleffect}
 \begin{spellnotes}
