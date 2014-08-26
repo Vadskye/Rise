@@ -394,7 +394,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelldmg{6d6 force damage \add d6 per four caster levels above 12th}
 \begin{spelleffect}
   You make a Reflex attack to deal damage to any creature passing through the wall. A failed attack deals half damage. If you create the wall so that it appears where creatures are, each creature takes damage as if passing through the wall. Each such creature can avoid the wall completely (ending up on the side of its choice) and thus take no damage if your attack fails.
-  \par A \spell{blade barrier} provides cover (\plus4 bonus to AC, \plus2 bonus on Reflex defense) against attacks made through it.
+  \par A \spell{blade barrier} provides cover (\plus4 bonus to physical defenses, \plus2 bonus to Reflex defense) against attacks made through it.
 \end{spelleffect}
 
 \spellsection{Blasphemy}
@@ -505,7 +505,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelldef{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The subject gains concealment, granting it a \plus4 bonus to AC. This concealment allows the subject to use the Stealth skill to hide without other cover or concealment, though other restrictions apply as normal.
+  The subject gains concealment, granting it a \plus4 bonus to its physical defenses. This concealment allows the subject to use the Stealth skill to hide without other cover or concealment, though other restrictions apply as normal.
 \end{spelleffect}
 \begin{spellnotes}
   A \spell{see invisibility} spell does not counteract the blurring effect, but a \spell{true seeing} spell does.
@@ -647,11 +647,11 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  This charm makes a humanoid creature regard you as its trusted friend and ally. If it is currently faced with any obvious threat from you or your allies, such as someone drawing a weapon, casting a spell, or aiming a ranged weapon at the creature, it receives a \plus5 bonus on its saving throw.
+    If you succeed at a Will attack, the subject regards you as its trusted friend and ally. If it is currently faced with any obvious threat from you or your allies, such as someone drawing a weapon, casting a spell, or aiming a ranged weapon at the creature, you take a \minus5 penalty on the Will attack.
   \par The spell does not enable you to control the subject as if it were an automaton, but it perceives your words and actions in the most favorable way. You can try to give the subject orders, but you must succeed at a Diplomacy check to convince it to do anything it wouldn't ordinarily do. (Retries are not allowed.) Treat the target as a friend (a \plus10 relationship modifier) for the purpose of the Diplomacy check. An affected creature never obeys suicidal or obviously harmful orders, but it might be convinced that something very dangerous is worth doing.
 \end{spelleffect}
 \begin{spellnotes}
-  Any act by you or your apparent allies that threatens the \spell{charmed} person breaks the spell. A creature that makes its saving throw against \spell{charm person} is immune to all further attempts by the same spellcaster for 24 hours.
+  Any act by you or your apparent allies that threatens the \spell{charmed} person breaks the spell. A creature that resists this spell is immune to all further attempts by the same spellcaster for 24 hours.
 \end{spellnotes}
 
 \spellsectioncomma{Charm Person}{Mass}
@@ -713,7 +713,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   This spell has four effects.
-  \par First, each shielded creature gains a \plus5 enhancement bonus to its saving throws.
+  \par First, each shielded creature gains a \plus5 enhancement bonus to its defenses.
   \par Second, each shielded creature gains spell resistance against lawful spells and spells cast by lawful creatures.
   \par Third, the abjuration blocks possession and mental influence, just as \spell{protection from law} does.
   \par Finally, if a lawful creature within \rngmed range of the shielded creature successfully attacks it in any way, the offending attacker takes 4d6 damage. Any single creature can take this damage only once per round.
@@ -1129,7 +1129,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
   The subject is immune to all death spells, magical death effects, energy drain, and any negative energy effects.
 \end{spelleffect}
 \begin{spellnotes}
-  This spell doesn't remove negative levels that the subject has already gained, nor does it affect the saving throw necessary 24 hours after gaining a negative level.
+  This spell doesn't remove negative levels that the subject has already gained.
   \par \spell{Death ward} does not protect against other sorts of attacks, even if those attacks might be lethal.
 \end{spellnotes}
 
@@ -1172,7 +1172,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{Fortitude negates (harmless)}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
-  The subject becomes temporarily immune to the effects of poison. It does not make any saving throws against poison during this spell's duration. This effect does not prevent the subject from becoming poisoned, and any poisons in the subject's system when the spell ends will continue their effects normally. 
+  The subject becomes temporarily immune to the effects of poison. Poisons the subject is exposed to do not make attacks against it. This effect does not prevent the subject from becoming poisoned, and any poisons in the subject's system when the spell ends will continue their effects normally. 
 \end{spelleffect}
 \begin{spellnotes}
   This spell does not cure any damage that poison may have already done.
@@ -1197,7 +1197,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \begin{spelleffect}
   This spell functions like \spell{fireball}, except that it is larger and can detonate up to 5 rounds after the spell is cast. You select the amount of delay upon completing the spell, and that time cannot change once it has been set unless someone touches the bead (see below). For every round that this spell is delayed, your caster level with it increases by 2.
 
-  If you choose a delay, a glowing bead sits at the point of origin until it detonates. A creature can pick up and hurl the bead as a thrown weapon (range increment 10 feet). If a creature handles and moves the bead within 1 round of its detonation, there is a 25\% chance that the bead detonates while being handled. A creature holding the bead (not merely standing next to or even touching the bead) receives no saving throw against the spell's effect.
+  If you choose a delay, a glowing bead sits at the point of origin until it detonates. A creature can pick up and hurl the bead as a thrown weapon (range increment 10 feet). If a creature handles and moves the bead within 1 round of its detonation, there is a 25\% chance that the bead detonates while being handled.
 \end{spelleffect}
 
 \spellsection{Destruction}
@@ -1381,7 +1381,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \begin{spelleffect}
   You instantly recognize all of the target's vulnerabilities. This grants you a \plus2 bonus to attacks and weapon damage against that creature. In addition, you learn any significant weaknesses the creature has. This includes, but is not limited to, the following information:
   \begin{itemize*}
-    \item Which of the target's saving throws is lowest
+    \item Which of the target's defenses is lowest
     \item If the target has any vulnerabilities to specific damage types
     \item How to overcome the target's damage reduction, regeneration, or other similar abilities
   \end{itemize*}
@@ -1609,9 +1609,9 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsr{Yes (Fort)}
 \spelldmg{6d8 piercing damage \add d8 per two levels above 6th}
 \begin{spelleffect}
-    If the target is within 10 feet of natural earth or stone, you make a physical attack using your caster level \add your casting attribute as your attack bonus. If you hit the target's AC, it takes damage. If you also beat its Maneuver Class, it is immobilized for 5 rounds, preventing it from moving from its space.
+    If the target is within 10 feet of natural earth or stone, you make a physical attack using your caster level \add your casting attribute as your attack bonus. If you hit, it takes damage. If you also beat its Maneuver Class, it is immobilized for 5 rounds, preventing it from moving from its space.
 
-    An immobilized creature can break free by destroying the spike. The spike has an AC of 10, and 2 hit points per caster level.
+    An immobilized creature can break free by destroying the spike. The spike's physical defenses are all 10, and it has 2 hit points per caster level.
 \end{spelleffect}
 
 \spellsectioncomma{Earthspike}{Mass}
@@ -1678,7 +1678,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
   The subject gains three negative levels.
-  \par Each negative level gives a creature a \minus1 penalty on attack rolls, saving throws, checks, and DCs. Additionally, each negative level causes the creature to lower its maximum hit points by 5, and a spellcaster loses one spell slot from his or her highest available level. If the subject has at least as many negative levels as it has levels, it dies.
+  \par Each negative level gives a creature a \minus1 penalty on attacks, special defenses, and checks. Additionally, each negative level causes the creature to lower its maximum hit points by 5, and a spellcaster loses one spell slot from his or her highest available level. If the subject has at least as many negative levels as it has levels, it dies.
   \par An undead creature gains physical damage reduction 8/positive instead. This damage reduction increases by 1 per two caster levels above 8th.
 \end{spelleffect}
 \begin{spellnotes}
@@ -1716,7 +1716,8 @@ This spell can be made permanent with a \spell{permanency} ritual.
   This spell causes instant growth of a humanoid creature, doubling its height and multiplying its weight by 8. This increase changes the creature's size category to the next larger one. This has several effects.
   \begin{itemize*} 
     \item \plus10 ft. bonus to movement speed.
-    \item \minus1 penalty to attack rolls and AC due to its increased size.
+    \item \plus4 bonus to maneuver attack and defense.
+    \item \minus1 penalty to other physical attacks and defenses.
   \item \minus2 penalty to Dexterity.
   \item \plus2 enhancement bonus to Strength.
   \end{itemize*}
@@ -2049,7 +2050,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{None}
 \spellsr{No}
 \begin{spelleffect}
-    Fog blocks sight in the area, causing all creatures within or looking through the area to treat everything they see as if it had concealment (\plus4 AC). The cloud is stationary once created.
+    Fog blocks sight in the area, causing all creatures within or looking through the area to treat everything they see as if it had concealment (\plus4 to physical defenses). The cloud is stationary once created.
 \end{spelleffect}
 \begin{spellnotes}
     Fog spells do not function underwater and can be dispersed by wind. A moderate wind (11\add mph) disperses the fog in 5 rounds; a strong wind (21\add mph) disperses the fog in 1 round. Localized wind, such as from a \spell{gust of wind} spell, only disperses the fog where it overlaps the fog. A fire spell burns away the fog in the area into which it deals damage.
@@ -2267,7 +2268,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{See text}
 \spellsr{No}
 \begin{spelleffect}
-    You make a Reflex attack to make each creature in the area prone. A creature can walk within or through the area of grease at half normal speed with a DC 10 Balance check. Failure means it can't move that round, while failure by 5 or more means it falls (see the Balance skill for details). A creature standing in a greased area loses its Dexterity and dodge modifiers to AC due to the slippery surface.
+    You make a Reflex attack to make each creature in the area prone. A creature can walk within or through the area of grease at half normal speed with a DC 10 Balance check. Failure means it can't move that round, while failure by 5 or more means it falls (see the Balance skill for details). A creature standing in a greased area is flat-footed due to the slippery surface.
   \par The spell can also be used to create a greasy coating on an item. Material objects not in use are always affected by this spell, while you must make a Reflex attack to affect an object wielded or employed by a creature. If you succeed, the item becomes greasy and the creature immediately drops it. A creature can pick up and use a greased item, but it takes a \minus5 penalty with all actions requiring the item, such as attacks. In addition, whenever it fails at an action while holding the item, it drops the item. A creature wearing greased armor or clothing gains a \plus10 enhancement bonus on Escape Artist checks and on grapple attacks made to resist or escape a grapple or to escape a pin.
 \end{spelleffect}
 
@@ -2408,7 +2409,7 @@ A vulnerable creature takes a \minus2 penalty to attacks, defenses, and checks.
 \spelldef{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The subject gains a \plus2 enhancement bonus on attack rolls, checks, and saving throws. \bonusscalingdescription
+  The subject gains a \plus2 enhancement bonus on physical attacks, checks, and defenses. \bonusscalingdescription
 \end{spelleffect}
 
 \spellsectioncomma{Heroism}{Greater}
@@ -2474,7 +2475,7 @@ A vulnerable creature takes a \minus2 penalty to attacks, defenses, and checks.
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   A brilliant divine radiance surrounds the subjects, protecting them from attacks, granting them resistance to spells cast by evil creatures, and damaging evil creatures when they strike the subjects. This abjuration has four effects.
-  \par First, each shielded creature gains a \plus5 enhancement bonus to its saving throws.
+  \par First, each shielded creature gains a \plus5 enhancement bonus to its defenses.
   \par Second, each shielded creature gains spell resistance 10 against evil spells and spells cast by evil creatures.
   \par Third, the abjuration blocks possession and mental influence, just as protection from evil does.
   \par Finally, if a evil creature within \rngmed range of the shielded creature successfully attacks it in any way, the offending attacker takes 4d6 damage. Any single creature can take this damage only once per round.
@@ -2778,7 +2779,7 @@ A slowed creature can take only a single move action or standard action each tur
   \par An interposing hand is 10 feet long and about that wide with its fingers outstretched. It has half as many hit points as you do when you're undamaged, and its AC is 15 (\minus1 size, \plus6 natural). It takes damage as a normal creature, but most magical effects that don't cause damage do not affect it.
 \end{spelleffect}
 \begin{spellnotes}
-  \par The hand never provokes attacks of opportunity from opponents. It cannot push through a \spell{wall of force} or enter an \spell{antimagic field}, but it suffers the full effect of a \spell{prismatic wall} or \spell{prismatic sphere}. The hand makes saving throws as its caster.
+  \par The hand never provokes attacks of opportunity from opponents. It cannot push through a \spell{wall of force} or enter an \spell{antimagic field}, but it suffers the full effect of a \spell{prismatic wall} or \spell{prismatic sphere}. The hand's defenses are the same as its caster.
   \spell{Disintegrate} or a successful \spell{dispel magic} destroys the hand without a saving throw. Directing the hand to a new target is a swift action.
 \end{spellnotes}
 
@@ -2946,7 +2947,7 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
     \item Produce any other effect whose power level is in line with the above effects, such as a single creature automatically hitting on its next attack or taking a \minus5 penalty on its next saving throw.
   \end{itemize*}
   \par When casting a limited wish, you do not specify the exact spell or effect you wish to duplicate. Instead, you make a wish, describing what you want to have happen, and make a DC 15 Wisdom check. If the check fails, your intent is redirected or perverted in some way. For example, a \spell{limited wish} to turn a foe to stone would normally mimic the \spell{flesh to stone} effect of the \spell{transmute flesh and stone} spell. However, if the Wisdom check failed, your foe might gain the benefit of a \spell{stoneskin} spell instead.
-  \par A duplicated spell allows saving throws and spell resistance as normal for the spell. When a limited wish spell duplicates a spell with a material component that costs more than 1,000 gp, you must provide that component (in addition to the 1,000 gp cost for this spell).
+  \par When a limited wish spell duplicates a spell with a material component that costs more than 1,000 gp, you must provide that component (in addition to the 1,000 gp cost for this spell).
 \end{spelleffect}
 \spellmat{A diamond worth no less than 1,000 gp (see above).}
 
@@ -2970,7 +2971,7 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
 \spelllvl{Arcane 7}
 \spelltgts{Five living creatures within the area}
 \begin{spelleffect}
-  This spell functions as \spell{link vitality}, except that it affects many creatures. The spell links all creatures who fail their saving throws. If any of the linked creatures lose or gain hit points, all linked creatures lose or gain the same amount, and so on.
+  This spell functions as \spell{link vitality}, except that it affects many creatures. The spell links all creatures your Will attack succeeds against. If any of the linked creatures lose or gain hit points, all linked creatures lose or gain the same amount, and so on.
 \end{spelleffect}
 
 \spellsection{Locate Entity}
@@ -3386,7 +3387,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellschool{Divination (Knowledge)}
 \spelllvl{Div 9}
 \begin{spelleffect}
-  This spell functions like \spell{moment of prescience}, except that the bonus and extra rolls apply to all attack rolls, opposed checks, and saving throws you make until the beginning of your next turn.
+  This spell functions like \spell{moment of prescience}, except that the bonus and extra rolls apply to all of your physical attacks, opposed checks, and defenses until the beginning of your next turn.
 \end{spelleffect}
 \begin{spellnotes}
   You can't have more than one \spellindirect{lesser moment of prescience}{moment of prescience} effect active on you at the same time.
@@ -3632,7 +3633,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spellschool{Divination (Knowledge)}
 \spelllvl{Arcane 5, Div 4}
 \begin{spelleffect}
-  This spell functions like \spell{lesser precognition}, except that it also affects your saving throws and dodge modifier to AC.
+  This spell functions like \spell{lesser precognition}, except that it also affects your defenses and dodge modifier to AC.
 \end{spelleffect}
 
 \spellsectioncomma{Precognition}{Greater}
@@ -3640,7 +3641,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spellschool{Divination (Knowledge)}
 \spelllvl{Arcane 8, Div 7}
 \begin{spelleffect}
-  This spell functions like \spell{lesser precognition}, except that it also affects your saving throws and dodge modifier to AC. In addition, when making a full attack, you may make an additional attack at a \minus5 penalty.
+  This spell functions like \spell{lesser precognition}, except that it also affects your defenses and dodge modifier to AC. In addition, when making a full attack, you may make an additional attack at a \minus5 penalty.
 \end{spelleffect}
 
 \spellsection{Manipulate Probability}
@@ -3801,7 +3802,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{Will negates (harmless)}
 \spellsr{No; See text}
 \begin{spelleffect}
-  The subject gains a \plus2 enhancement bonus on saving throws. \bonusscalingdescription
+  The subject gains a \plus2 enhancement bonus to its defenses. \bonusscalingdescription
 
   In addition, the spell blocks any evil attempt to possess or exercise mental control over the creature (such as any domination effect). The protection does not prevent such effects from targeting the protected creature, but it suppresses the effect for the duration of the \spell{protection from evil} spell. If the \spell{protection from evil} spell ends before the effect granting mental control does, the would-be controller would then be able to mentally command the controlled creature. Likewise, the barrier keeps out a possessing life force but does not expel one if it is in place before the spell is cast. This effect works only against attacks by evil creatures or from evil effects.
 \end{spelleffect}
@@ -3838,7 +3839,8 @@ This spell can be made permanent with a \spell{permanency} ritual.
   This spell causes instant diminution of a humanoid creature, halving its height, length, and width and dividing its weight by 8. This decrease changes the creature's size category to the next smaller one. This has several effects.
   \begin{itemize*} 
     \item \minus10 ft. penalty to movement speed.
-    \item \plus1 bonus to attack rolls and AC due to its decreased size.
+    \item \minus4 penalty to maneuver attack and defense.
+    \item \plus1 bonus to other physical attacks and defenses.
   \item \minus2 penalty to Strength.
   \item \plus2 enhancement bonus to Dexterity.
   \end{itemize*}
@@ -4006,7 +4008,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   You grant the target a powerful revelatory vision of a possible future. This spell has different effects depending on the version chosen. Creatures without an Intelligence score are not affected by this spell.
-  \par \subspell{Revelation of Destruction} You inflict a vision of a terrible future upon the target. It takes a \minus4 penalty to attack rolls, checks, saving throws, DCs, and AC as it struggles to avoid the certainty of its own doom. If it becomes bloodied, these penalties increase by 2.
+  \par \subspell{Revelation of Destruction} You inflict a vision of a terrible future upon the target. It takes a \minus4 penalty to attacks, defenses, and checks as it struggles to avoid the certainty of its own doom. If it becomes bloodied, these penalties increase by 2.
   \par \subspell{Revelation of Prowess} You show the target a vision of its success in the combat to come. It gains the benefits of a \spell{greater precognition} spell.
   \par \subspell{Revelation of Truth} You show the target the truth of the world around it. It gains the benefits of a \spell{true seeing} spell.
 \end{spelleffect}
@@ -4325,7 +4327,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   A dim, blue glow surrounds the subjects, protecting them from attacks, granting them resistance to spells cast by chaotic creatures, and slowing chaotic creatures when they strike the subjects. This abjuration has four effects.
-  \par First, each shielded creature gains a \plus5 enhancement bonus to its saving throws.
+  \par First, each shielded creature gains a \plus5 enhancement bonus to its defenses.
   \par Second, each shielded creature gains spell resistance 10 against chaotic spells and spells cast by chaotic creatures.
   \par Third, the abjuration blocks possession and mental influence, just as \spell{protection from chaos} does.
   \par Finally, if a chaotic creature within \rngmed range of the shielded creature successfully attacks it in any way, the offending attacker takes 4d6 damage. Any single creature can take this damage only once per round.
@@ -4702,7 +4704,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \end{spelleffect}
 \begin{spellnotes}
   The \spell{spiritual weapon} strikes as a spell, not as a weapon, so, for example, ignores physical damage reduction. As a force effect, it can strike incorporeal creatures without the normal miss chance associated with incorporeality. If the weapon goes beyond the spell range, if it goes out of your sight, or if you are not directing it, the weapon returns to you and hovers. Even if the spiritual weapon is a ranged weapon, use the spell's range, not the weapon's normal range increment, and switching targets still is a move action.
-  \par A \spell{spiritual weapon} cannot be attacked or harmed by physical attacks, but \spell{dispel magic}, \spell{disintegrate}, and similar effects can affect it. A spiritual weapon's AC against touch attacks is 12 (10 \add \plus2 bonus for Tiny size).
+  \par A \spell{spiritual weapon} cannot be attacked or harmed by physical attacks, but \spell{dispel magic}, \spell{disintegrate}, and similar effects can affect it. A spiritual weapon's physical defenses are all 12 (10 \add \plus2 bonus for Tiny size).
   \par The weapon that you get is usually a force replica of any weapon from your deity's weapon group. A cleric without a deity gets a weapon based on his alignment. A neutral cleric without a deity can create a spiritual weapon of any alignment, provided he is acting at least generally in accord with that alignment at the time. The weapon groups associated with each alignment are as follows.
   \par Chaos: Axes
   \par Evil: Flexible weapons
@@ -4826,7 +4828,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
   \par The suggested course of activity can continue for the entire duration. If the suggested activity can be completed in a shorter time, the spell ends when the subject finishes what it was asked to do. You can instead specify conditions that will trigger a special activity during the duration. If the condition is not met before the spell duration expires, the activity is not performed.
 \end{spelleffect}
 \begin{spellnotes}
-  A very reasonable suggestion can grant a \plus2 or greater bonus on the attack. A creature that resists a \spell{suggestion} is immune to all further attempts by the same spellcaster for 24 hours.
+  A very reasonable suggestion can grant a \plus2 or greater bonus on the Will attack. A creature that resists this spell is immune to all further attempts by the same spellcaster for 24 hours.
 \end{spellnotes}
 
 \spellsectioncomma{Suggestion}{Mass}
@@ -5456,7 +5458,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   A malevolent darkness surrounds the subjects, protecting them from attacks, granting them resistance to spells cast by good creatures, and weakening good creatures when they strike the subjects. This abjuration has four effects.
-  \par First, each shielded creature gains a \plus5 enhancement bonus to its saving throws.
+  \par First, each shielded creature gains a \plus5 enhancement bonus to its defenses.
   \par Second, each shielded creature gains spell resistance 10 against chaotic spells and spells cast by good creatures.
   \par Third, the abjuration blocks possession and mental influence, just as protection from good does.
   \par Finally, if a good creature within \rngmed range of the shielded creature successfully attacks it in any way, the offending attacker takes 4d6 damage. Any single creature can take this damage only once per round.
