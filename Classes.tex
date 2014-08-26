@@ -33,7 +33,7 @@ There are eleven classes in Rise.
 
 A high base attack bonus can grant additional attacks, as described in \pcref{Combat}.
 
-\parhead{Base Special Defense Progressions} This measures how resistant members of the class are to unusual kinds of attacks. There are three kinds of saving throws. Fortitude saves represent your ability to resist attacks on your body, like poisons and diseases. Reflex saves represent your ability to avoid attacks, such as pit traps or explosions. Will saves represent your ability to resist mental influence, like fearsome creatures and enchantment spells. You add your base saving throw bonus to all saving throws you make of that type. There are three progressions: Good, Average, or Poor. The effects of each progression are described on \trefnp{Base Progressions}.
+\parhead{Base Special Defense Progressions} This measures how resistant members of the class are to unusual kinds of attacks. There are three kinds of special defenses. Your Fortitude defense represents your ability to resist attacks to your body, like poisons and diseases. Your Reflex defense represents your ability to avoid attacks, such as pit traps or explosions. Your Will defense represents your ability to resist mental influence, like fearsome creatures and enchantment spells. You add your base saving throw bonus to all saving throws you make of that type. There are three progressions: Good, Average, or Poor. The effects of each progression are described on \trefnp{Base Progressions}.
 
 \begin{dtable}
     \lcaption{Base Progressions}
@@ -53,7 +53,7 @@ A high base attack bonus can grant additional attacks, as described in \pcref{Co
 \begin{dtable*}
 \lcaption{The Barbarian}
 \begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\babcolgood}} X}
-\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} \\
+\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
 1st & \plus1         & \plus3 & \plus1 & \plus0 & Damage reduction, rage \plus2 \\
 2nd & \plus2         & \plus4 & \plus2 & \plus1 & Endurance, fast movement \\
 3rd & \plus3         & \plus5 & \plus3 & \plus1 & Channeled rage, uncanny dodge \\
@@ -124,9 +124,9 @@ If a barbarian already has uncanny dodge from a different class, he stacks those
 
 \subcf{Wary Rage} The barbarian only suffers a \minus1 penalty to physical defenses for raging.
 
-\subcf{Willful Rage} The barbarian adds his rage bonus to his Will saves.
+\subcf{Willful Rage} The barbarian adds his rage bonus to his Will defense.
 
-\subcf{6th -- Terrifying Rage (Su)} Whenever the barbarian attacks, all enemies he threatens must make a Will save or be shaken for 5 rounds. The save DC is equal to 10 \add the barbarian's level \add his Charisma modifier. A shaken creature is vulnerable, causing it to take a \minus2 penalty to attacks, defenses, and checks. This can only affect any individual creature once per 24 hours.
+\subcf{6th -- Terrifying Rage (Su)} Whenever the barbarian makes a physical attack, he may also make a Will attack against all enemies he threatens. His attack bonus equals his barbarian level \add his Charisma. Affected creatures are shaken for 5 rounds. A shaken creature is vulnerable, causing it to take a \minus2 penalty to attacks, defenses, and checks. This can only affect any individual creature once per 24 hours.
 
 \subcf{6th -- Unstoppable Rage} Each round, the barbarian can bull rush an opponent as a swift action that does not provoke attacks of opportunity.
 
@@ -140,7 +140,7 @@ If a barbarian already has uncanny dodge from a different class, he stacks those
 
 \subcf{18th -- Invulnerable Rage} The barbarian doubles his damage reduction. This replaces his rage bonus to Strength.
 
-\cf{Bbn}{Grit (Ex)} At 4th level, a barbarian's resilience allows him to shrug off magical effects. If he makes a successful Fortitude save against an attack that normally deals half damage on a successful save, he instead takes no damage.
+\cf{Bbn}{Grit (Ex)} At 4th level, a barbarian's resilience allows him to shrug off magical effects. If he resists a Fortitude attack that normally deals half damage when resisted, he instead takes no damage.
 
 \cf{Bbn}{Improved Uncanny Dodge (Ex)} At 6th level and higher, a barbarian is always treated as being threatened by two fewer creatures than he actually is for the purpose of determining overwhelm penalties. This defense can deny a barbarian the ability to sneak attack the barbarian.
 \par If a character already has improved uncanny dodge from a second class and gains improved uncanny dodge, the character stacks those levels to determine if he should gain greater uncanny dodge.
@@ -155,7 +155,7 @@ If a barbarian already has uncanny dodge from a different class, he stacks those
 
 \cf{Bbn}{Indomitable Will (Ex)} At 13th level, a barbarian becomes immune to compulsion and domination spells and effects.
 
-\cf{Bbn}{Improved Grit (Ex)} At 16th level, a barbarian's fortitude knows no bounds. If he fails a Fortitude save against an effect that deals half damage on a successful save, he takes only half damage.
+\cf{Bbn}{Improved Grit (Ex)} At 16th level, a barbarian's fortitude knows no bounds. If he is affected by Fortitude attack that would deal half damage when resisted, he takes only half damage from the attack, even if he fails to resist it.
 
 \cf{Bbn}{Larger than Belief (Ex)} At 17th level, the barbarian's larger than life ability improves. He is treated as being two size categories larger than he actually is.
 
@@ -167,7 +167,7 @@ If a barbarian already has uncanny dodge from a different class, he stacks those
 \begin{dtable*}
 \lcaption{The Cleric}
 \begin{tabularx}{\textwidth}{>{\ccol}p{2em} >{\ccol}p{7em} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} \\
+\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
 1st & \plus0 & \plus1 & \plus0 & \plus3 & Matters of faith, lesser domain aspect \\
 2nd & \plus1 & \plus2 & \plus1 & \plus4         & Channel energy \\
 3rd & \plus2 & \plus3 & \plus1 & \plus5         & Lesser domain aspect \\
@@ -455,7 +455,7 @@ A cleric who grossly violates the code of conduct required by his god loses all 
 \begin{dtable}
 \lcaption{The Druid}
 \begin{tabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\centering}p{\babcolavg} *{3}{>{\ccol}p{\savecol}} >{\ccol}X}
-\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} \\
+\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
 1st & \plus0 & \plus3 & \plus0 & \plus1 & Nature sense, wild speech \\
 2nd & \plus1 & \plus4 & \plus1 & \plus2 & Woodland stride \\
 3rd & \plus2 & \plus5 & \plus1 & \plus3 & Wild aspect \\
@@ -659,7 +659,7 @@ A druid who ceases to revere nature, changes to a prohibited alignment, or teach
 \begin{dtable}
 \lcaption{The Fighter}
 \begin{tabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} \\
+\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
 1st & \plus1                         & \plus3 & \plus0 & \plus1 & Armor discipline \\
 2nd & \plus2                         & \plus4 & \plus1 & \plus2 & Bonus feat \\
 3rd & \plus3                         & \plus5 & \plus1 & \plus3 & Weapon discipline \\
@@ -775,7 +775,7 @@ Vulnerable & None & \x & \x \\
 \begin{dtable}
 \lcaption{The Monk}
 \begin{tabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolavg} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} \\
+\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
 1st & \plus1                    & \plus1 & \plus3 & \plus3    & Unarmed warrior, unfettered defense \\
 2nd & \plus2                    & \plus2 & \plus4 & \plus4    & Fast movement, \Ki power \\
 3rd & \plus3                    & \plus3 & \plus5 & \plus5    & Evasion, uncanny dodge \\
@@ -914,7 +914,7 @@ A monk who becomes chaotic cannot gain new levels as a monk, but retains all mon
 \lcaption{The Paladin}
 \begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecolpoof}} X *{4}{>{\ccol}p{\spellcolpoof}}}
 & & & & & & \multicolumn{4}{c}{\thead{---{}---Spells per Day---{}---}} \\
-\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} \\
+\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} \\
 1st  & \plus1                        & \plus3  & \plus0 & \plus3 & Aura of good, discernment (evil), smite evil & \x & \x & \x & \x \\
 2nd  & \plus2                        & \plus4  & \plus1 & \plus4 & Improved smite, lay on hands & \x & \x & \x & \x \\
 3rd  & \plus3                        & \plus5  & \plus1 & \plus5 & Aura of courage, bulwark of defense, divine health & \x & \x & \x & \x \\ 
@@ -1075,7 +1075,7 @@ A paladin who ceases to be lawful good, who willfully commits an evil act, or wh
 \begin{dtable}
 \lcaption{The Ranger}
 \begin{tabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} \\
+\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
 1st  & \plus1                        & \plus3  & \plus1  & \plus1 & Quarry \plus2, Track, wild speech \\
 2nd  & \plus2                        & \plus4  & \plus2  & \plus2 & Danger sense, favored terrain \\
 3rd  & \plus3                        & \plus5  & \plus3  & \plus3 & Ranger lore \\
@@ -1227,7 +1227,7 @@ If the ranger has the Camouflage ranger lore (see \pcref{Camouflage}), this allo
 \begin{dtable*}
 \lcaption{The Rogue}
 \begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\babcolgood}} X}
-\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} \\
+\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
 1st  & \plus0                & \plus0 & \plus3  & \plus1 & Sneak attack \plus1d6 \\
 2nd  & \plus1                & \plus1 & \plus4  & \plus2 & Danger sense, skill talent \\
 3rd  & \plus2                & \plus1 & \plus5  & \plus3 & Sneak attack \plus2d6, uncanny dodge \\
@@ -1358,7 +1358,7 @@ At 8th level, and every four levels thereafter, the rogue gains an additional co
 \begin{dtable*}
 \lcaption{The Sorcerer}
 \begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{7em} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} \\
+\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
 1st & \plus0 & \plus0 & \plus0 & \plus3 & Arcane invocation \\
 2nd & \plus1 & \plus1 & \plus1 & \plus4     & Arcane invocation, spellsurge \plus2 \\
 3rd & \plus1 & \plus1 & \plus1 & \plus5     & Expanded spell knowledge \\
@@ -1687,7 +1687,7 @@ As a move action, he may move the weapon up to 30 feet in any direction, even ve
 \begin{dtable*}
 \lcaption{The Wizard}
 \begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{7em} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort Save} & \thead{Ref Save} & \thead{Will Save} & \thead{Special} \\
+\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
 1st & \plus0 & \plus0 & \plus0 & \plus3 & Arcane invocation \\
 2nd & \plus1 & \plus1 & \plus1 & \plus4     & Arcane invocation, magic feat \\
 3rd & \plus1 & \plus1 & \plus1 & \plus5     & Arcane insight \\
