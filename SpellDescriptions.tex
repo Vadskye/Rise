@@ -27,7 +27,7 @@
 \spelllvl{Abjur 3, Magic 3}
 \spellarea{\areamed radius limit centered on you}
 \spelltgts{All allies within the area}
-\spellsave{Will negates (harmless)}
+\spelldef{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   This spell functions like \spell{ablative shield}, except that it affects multiple creatures.
@@ -58,7 +58,7 @@
 \spellrng{\rngmed}
 \spelleff{One arrow of acid}
 \spelldur{1 round per two levels}
-\spellsave{None}
+\spelldef{None}
 \spellsr{No}
 \spelldmg{2d6 acid damage \add d6 per round}
 \begin{spelleffect}
@@ -74,10 +74,10 @@
 \spellschool{Conjuration (Creation) [Acid]}
 \spelllvl{Arcane 5}
 \spellrng{\rngfar}
-\spellsave{None/Fortitude negates}
+\spelldef{None/Fortitude negates}
 \spelldmg{5d6 acid damage \add 2d6 per round}
 \begin{spelleffect}
-  This spell functions as \spell{acid arrow}, except that the target is also vulnerable for the duration of the spell if it fails a Fortitude save.
+  This spell functions as \spell{acid arrow}, except that a successful Fortitude attack makes the target vulnerable for the duration of the spell.
 \end{spelleffect}
 \begin{spellnotes}
   A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. If the target becomes submerged in liquid or takes at least twenty points of fire or cold damage, this spell's effect ends.
@@ -91,11 +91,11 @@
 \spellarea{\areamed radius spread}
 \spelleff{Fog in the area}
 \spelldur{\durshort}
-\spellsave{Fortitude half}
+\spelldef{Fortitude half}
 \spellsr{No}
 \spelldmg{4d6 acid damage per round}
 \begin{spelleffect}
-  This spell functions like \spell{solid fog}, except that the spell's vapors are highly acidic, dealing damage to all creatures and objects within the area on each round at the start of your turn. The fog does not do damage in the round it is cast. A successful Fortitude save halves the damage.
+  This spell functions like \spell{solid fog}, except that the spell's vapors are highly acidic. At the start of each of your turns, you make a Fortitude attack to deal damage to all creatures and objects in the area. A failed attack deals half damage.
 \end{spelleffect}
 
 \spellsection{Agony}
@@ -103,7 +103,7 @@
 \spellschool{Necromancy (Flesh)}
 \spelllvl{Arcane 4}
 \spellrng{\rngmed}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
   The subject suffers a \minus4 penalty to attack rolls, saving throws, checks, DCs, and AC.
@@ -116,10 +116,10 @@
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{\durshort}
-\spellsave{Will negates (harmless)}
+\spelldef{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The subject gains temporary hit points equal 10 \add 1 per caster level above 4th. In addition, it gains a \plus2 enhancement bonus to Will saves. \bonusscalingdescription  If the subject takes life damage, it loses all temporary hit points provided by this spell before applying the damage.
+  The subject gains temporary hit points equal 10 \add 1 per caster level above 4th. In addition, it gains a \plus2 enhancement bonus to Will defense. \bonusscalingdescription  If the subject takes life damage, it loses all temporary hit points provided by this spell before applying the damage.
 \end{spelleffect}
 
 \spellsection{Air Walk}
@@ -129,7 +129,7 @@
 \spellrng{\rngtouch}
 \spelltgt{Creature (Gargantuan or smaller) touched}
 \spelldur{\durshort}
-\spellsave{Fortitude negates (harmless)}
+\spelldef{Fortitude negates (harmless)}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
   The subject can walk on air as if it were solid ground. The magic only affects the subject's legs, and does not grant the ability to climb vertically through the air.
@@ -143,9 +143,9 @@
 \spelldesc{You enhance a weapon while bringing it closer to your ideals.}
 \spellschool{Evocation/Transmutation (Augment, Channeling) [see text]}
 \spelllvl{Chaos 2, Evil 2, Good 2, Law 2}
-\spellsave{Will negates (object)}
+\spelldef{Will negates (object)}
 \begin{spelleffect}
-  This spell functions like \spell{magic weapon}, except that it also makes a weapon good, evil, lawful, or chaotic, as you choose, allowing it to overcome damage reduction of the appropriate type. When cast on a weapon that already has an alignment, this spell overrides the alignment of the weapon unless the weapon makes a Will save.
+  This spell functions like \spell{magic weapon}, except that it also makes a weapon good, evil, lawful, or chaotic, as you choose, allowing it to overcome damage reduction of the appropriate type. When cast on a weapon that already has an alignment, this spell overrides the alignment of the weapon on a successful Will attack.
 \end{spelleffect}
 \begin{spellnotes}
   When you make a weapon good, evil, lawful, or chaotic, \spell{align weapon} is a good, evil, lawful, or chaotic spell, respectively.
@@ -157,7 +157,7 @@
 \spellrng{Touch}
 \spelltgt{Touched weapon}
 \spelldur{\durmed}
-\spellsave{Will negates (object)}
+\spelldef{Will negates (object)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
     You can transform the target weapon into a different weapon from the same weapon group. In addition, you can decrease (but not increase) its size by one size category.
@@ -190,7 +190,7 @@
 \spellarea{\areamed radius limit}
 \spelltgts{One Small object/level within the area; see text}
 \spelldur{\durshort}
-\spellsave{None}
+\spelldef{None}
 \spellsr{No}
 \begin{spelleffect}
   Each animated object immediately attacks whomever or whatever you initially designate. Your control of the objects is limited to simple commands (``Attack,'' ``Defend,'' ``Stop,'' and so forth).
@@ -219,7 +219,7 @@
 \spelllvl{Divine 7, Nature 6, Wild 7}
 \spellarea{\areasmall radius immobile emanation from you}
 \spelldur{\durlong (D)}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   Living creatures cannot enter the spell's area. Nonliving creatures, such as constructs and undead, suffer no ill effect.
@@ -234,7 +234,7 @@
 \spelllvl{Arcane 7, Divine 8, Magic 7}
 \spellarea{\areasmall radius mobile emanation from you}
 \spelldur{\durlong (D)}
-\spellsave{None}
+\spelldef{None}
 \spellsr{No}
 \begin{spelleffect}
   All spells, spell-like abilities, supernatural abilities, and magic items fail to function within the area of this spell. They cannot be activated from within the field, and any existing effects brought into or cast into the area are suppressed. Time spent within an \spell{antimagic field} counts against a suppressed spell's duration.
@@ -255,7 +255,7 @@
 \spellrng{\rngclose}
 \spelltgt{One weapon}
 \spelldur{\durshort (D)}
-\spellsave{Will negates}
+\spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   Attacks with the affected weapon are made as touch attacks. However, damage with the weapon is halved, including any bonuses to weapon damage.
@@ -268,7 +268,7 @@
 \spellrng{\rngtouch}
 \spelltgt{Touched living creature}
 \spelldur{Instantaneous and one hour; see text}
-\spellsave{Fortitude half}
+\spelldef{Fortitude half}
 \spellsr{Yes (Fortitude)}
 \spelldmg{18d8 life damage \add d6 per four caster levels above 18th}
 \par Any creature reduced to 0 or fewer hit points by this spell is entirely assimilated into your form, leaving behind only a trace of fine dust. An assimilated creature's equipment is unaffected.
@@ -284,7 +284,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{\durext}
-\spellsave{Will negates}
+\spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   An affected creature feels an aversion to a particular person or object. If the object of the implanted aversion is an individual or a physical object, she will prefer not to approach within 30 feet of it. If it is a word, she will try not to utter it; if it is an action, she will not willingly attempt to perform it; and if it is an event, she will not willingly attend it. The subject will take reasonable steps to avoid the object of its aversion, but will not put herself in jeopardy by doing so.
@@ -305,7 +305,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelllvl{Divine 1, Evil 1, War 1}
 \spellarea{\areamed radius burst}
 \spelldur{Instantaneous}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   All enemies within the area take a \minus2 penalty to attack rolls for 5 rounds.
@@ -335,7 +335,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellrng{Touch}
 \spelltgt{Touched living creature}
 \spelldur{\durshort}
-\spellsave{Fortitude negates (harmless)}
+\spelldef{Fortitude negates (harmless)}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
   The subject gains a \plus2 enhancement bonus to its armor modifier. \bonusscalingdescription In addition, the subject gains physical damage reduction 2/adamantine or fire. This damage reduction increases by 1 per two levels above 4th.
@@ -351,7 +351,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{Permanent}
-\spellsave{Will negates}
+\spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   The subject suffers one of the following three effects, chosen by you:
@@ -374,7 +374,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellarea{\areasmall radius spread}
 \spelleff{Black tentacles in the area}
 \spelldur{\durshort (D)}
-\spellsave{None}
+\spelldef{None}
 \spellsr{No}
 \begin{spelleffect}
   At the start of your turn, every creature within the area of the spell is the target of a grapple attack. This attack is also made in the round that \spell{black tentacles} is cast. Treat the tentacles attacking a particular target as a Medium creature with a base attack bonus equal to your caster level and a Strength score of 8. Thus, its grapple attack modifier is equal to your caster level \plus8. Roll only once each round for the entire spell effect, and apply the result to all creatures within the area of effect.
@@ -389,12 +389,12 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellrng{\rngmed}
 \spelleff{Wall of whirling blades up to 100 ft. long, or a ringed wall of whirling blades with a radius of up to 20 ft.; either form 20 ft. high}
 \spelldur{\durshort (D)}
-\spellsave{Reflex half or Reflex negates; see text}
+\spelldef{Reflex half or Reflex negates; see text}
 \spellsr{Yes (Reflex)}
 \spelldmg{6d6 force damage \add d6 per four caster levels above 12th}
 \begin{spelleffect}
-  Any creature passing through the wall takes damage, with a Reflex save for half. If you create the wall so that it appears where creatures are, each creature takes damage as if passing through the wall. Each such creature can avoid the wall (ending up on the side of its choice) and thus take no damage by making a successful Reflex save.
-  \par A \spell{blade barrier} provides cover (\plus4 bonus to AC, \plus2 bonus on Reflex saves) against attacks made through it.
+  You make a Reflex attack to deal damage to any creature passing through the wall. A failed attack deals half damage. If you create the wall so that it appears where creatures are, each creature takes damage as if passing through the wall. Each such creature can avoid the wall completely (ending up on the side of its choice) and thus take no damage if your attack fails.
+  \par A \spell{blade barrier} provides cover (\plus4 bonus to AC, \plus2 bonus on Reflex defense) against attacks made through it.
 \end{spelleffect}
 
 \spellsection{Blasphemy}
@@ -404,7 +404,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellcmp{Verbal only}
 \spellarea{\arealarge radius spread centered on you}
 \spelldur{Instantaneous}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
   \par Each nonevil creature in the area is sickened, making it vulnerable for 5 rounds.
@@ -437,7 +437,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelllvl{Divine 2, Good 2, Pal 2, War 2}
 \spellarea{\areamed radius burst}
 \spelldur{Instantaneous}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   All allies within the area gain a \plus2 enhancement bonus to attack rolls for 5 rounds. \bonusscalingdescription
@@ -459,7 +459,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellrng{Touch}
 \spelltgt{Touched creature}
 \spelldur{\durlong (D)}
-\spellsave{Fortitude negates}
+\spelldef{Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spellhealthy}
   The subject is sickened, making it vulnerable.
@@ -502,7 +502,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{\durshort (D)}
-\spellsave{Will negates (harmless)}
+\spelldef{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   The subject gains concealment, granting it a \plus4 bonus to AC. This concealment allows the subject to use the Stealth skill to hide without other cover or concealment, though other restrictions apply as normal.
@@ -518,7 +518,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelllvl{Arcane 1, Destruction 1, Nature 1, Fire 1}
 \spellarea{\areamed cone-shaped burst}
 \spelldur{Instantaneous}
-\spellsave{Reflex half}
+\spelldef{Reflex half}
 \spellsr{Yes (Reflex)}
 \spelldmg{1d6 fire damage \add 1d6 per four caster levels above 2nd}
 \begin{spelleffect}
@@ -538,7 +538,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellrng{\rngmed}
 \spellarea{\arealarge vertical line of lightning, 5 ft. wide}
 \spelldur{Instantaneous and \durmed (D); see text}
-\spellsave{Reflex half}
+\spelldef{Reflex half}
 \spellsr{Yes (Reflex)}
 \spelldmg{3d8 electricity damage \add d8 per four caster levels above 6th}
 \begin{spelleffect}
@@ -553,10 +553,10 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelldesc{You repeatedly call intense bolts of lightning that flash down from thin air to smite your foes.}
 \spellschool{Evocation (Energy) [Electricity]}
 \spelllvl{Air 5, Nature 5}
-\spellsave{Reflex half/Reflex negates}
+\spelldef{Reflex half/Reflex negates}
 \spelldmg{5d8 electricity damage \add d8 per four caster levels above 10th}
 \begin{spellblood}
-  A creature struck by a bolt is also staggered for 1 round. It can take a move action or a standard action each round, but not both. A successful Reflex save to halves the damage and negates the staggering.
+    You make a Reflex attack to deal damage to each creature struck by the bolt. A successful attack also staggers the creature for 1 round, while a failed attack deals half damage.
 \end{spellblood}
 \begin{spelleffect}
   This spell functions like \spell{call lightning}, except as noted above. If you are outdoors in a stormy area, each bolt deals 5d8 electricity damage \add d8 per four caster levels above 10th instead.
@@ -572,7 +572,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellrng{\rngmed}
 \spellarea{\areamed radius spread}
 \spelldur{Concentration}
-\spellsave{Will negates}
+\spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   Creatures in the area have their emotions calmed. Creatures so affected cannot take violent actions (although they can defend themselves) or do anything destructive.
@@ -591,7 +591,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellarea{\areamed radius centered on the primary target}
 \spelltgts{One primary target, plus five secondary targets within the area}
 \spelldur{Instantaneous}
-\spellsave{Reflex half}
+\spelldef{Reflex half}
 \spellsr{Yes (Reflex)}
 \spelldmg{5d10 electricity damage \add d10 per four caster levels above 10th}
 \begin{spelleffect}
@@ -607,7 +607,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellrng{\rngtouch}
 \spelltgt{Your touched staff}
 \spelldur{\durmed (D)}
-\spellsave{None}
+\spelldef{None}
 \spellsr{No}
 \begin{spelleffect}
   Your staff turns into a creature that looks and fights just like a treant. The staff-treant defends you and obeys any spoken commands. However, it is by no means a true treant; it cannot converse with actual treants or control trees. If the staff-treant is reduced to 0 or fewer hit points, it crumbles to powder and the staff is destroyed. Otherwise, the staff returns to its normal form when the spell duration expires (or when the spell is dismissed), and it can be used as the focus for another casting of the spell. The staff-treant is always at full strength when created, despite any wounds it may have incurred the last time it appeared.
@@ -621,11 +621,11 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{Instantaneous/5 rounds}
-\spellsave{None/Will half}
+\spelldef{None/Will half}
 \spellsr{Yes (Will)}
 \spelldmg{8d6 divine damage \add d6 per two caster levels above 8th}
 \begin{spelleffect}
-  If the target is not chaotic, it takes damage and is bewildered for 5 rounds. A successful Will save halves the damage.
+    You make a Will attack to deal damage to the target and bewilder it for 5 rounds. A failed attack deals half damage.
 \end{spelleffect}
 
 \spellsection{Charm Monster}
@@ -644,7 +644,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellrng{\rngmed}
 \spelltgt{One humanoid creature}
 \spelldur{\durlong}
-\spellsave{Will negates}
+\spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   This charm makes a humanoid creature regard you as its trusted friend and ally. If it is currently faced with any obvious threat from you or your allies, such as someone drawing a weapon, casting a spell, or aiming a ranged weapon at the creature, it receives a \plus5 bonus on its saving throw.
@@ -673,7 +673,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellarea{\areamed radius limit}
 \spelltgts{Several living creatures within the area}
 \spelldur{Instantaneous}
-\spellsave{Fortitude negates}
+\spelldef{Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spellblood}
   The subjects are reduced to 0 hit points and take 9 critical damage, causing them to begin dying.
@@ -687,7 +687,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelldesc{You create a floating, disembodied hand made of magical force that strikes your foe.}
 \spellschool{Evocation (Control) [Force]}
 \spelllvl{Evoc 9, Strength 9}
-\spellsave{None/Fortitude negates}
+\spelldef{None/Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \spelldmg{2d10 force damage \add half casting attribute}
 \begin{spelleffect}
@@ -709,7 +709,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellarea{\areamed radius limit centered on you}
 \spelltgts{Five creatures within the area}
 \spelldur{\durshort (D)}
-\spellsave{Will negates (harmless)}
+\spelldef{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   This spell has four effects.
@@ -724,7 +724,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelldesc{You conjure a yellowish green fog bank that obscures vision and slowly poisons creatures inside.}
 \spellschool{Conjuration (Creation) [Fog, Poison]}
 \spelllvl{Arcane 7}
-\spellsave{None/Fortitude negates}
+\spelldef{None/Fortitude negates}
 \begin{spelleffect}
   This spell functions like \spell{fog cloud}, except that living creatures inside the fog take 1d4 Constitution damage on your turn each round. A successful Fortitude save negates the damage for that round.
   \par Unlike a \spell{fog cloud}, the \spell{cloudkill} moves away from you at 10 feet per round, rolling along the surface of the ground. Figure out the cloud's new spread each round based on its new point of origin, which is 10 feet farther away from the point of origin where you cast the spell.
@@ -740,7 +740,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelllvl{Arcane 1}
 \spellarea{\areamed cone-shaped burst}
 \spelldur{1d4 rounds}
-\spellsave{Will negates}
+\spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   Creatures in the area are dazzled and bewildered.
@@ -775,7 +775,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{1 round}
-\spellsave{Will negates}
+\spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
   The subject is bewildered, making it vulnerable.
@@ -810,7 +810,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelllvl{Arcane 5, Nature 5}
 \spellarea{\areamed cone-shaped burst}
 \spelldur{Instantaneous and 1 round}
-\spellsave{Reflex half/None}
+\spelldef{Reflex half/None}
 \spellsr{Yes (Reflex)}
 \spelldmg{5d6 cold damage \add d6 per four caster levels above 10th.}
 \begin{spelleffect}
@@ -834,7 +834,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{\durshort}
-\spellsave{Will negates}
+\spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
   The subject is bewildered, making it vulnerable.
@@ -864,7 +864,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellrng{\rngfar}
 \spellarea{Water in one volume/level of 10 ft. by 10 ft. by 2 ft. (S)}
 \spelldur{\durmed (D)}
-\spellsave{None; see text}
+\spelldef{None; see text}
 \spellsr{No}
 \begin{spelleffect}
   Depending on the version you choose, the \spell{control water} spell raises or lowers water.
@@ -881,7 +881,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spellrng{\rngclose}
 \spelleff{Illusory sounds}
 \spelldur{\durshort (D)}
-\spellsave{Will disbelief (if interacted with)}
+\spelldef{Will disbelief (if interacted with)}
 \spellsr{No}
 \begin{spelleffect}
   This spell allows you to create a volume of sound that rises, recedes, approaches, or remains at a fixed place. You choose what type of sound this spell creates when casting it and cannot thereafter change the sound's basic character.
@@ -899,7 +899,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose; see text}
 \spelleff{One swarm of centipedes per two levels}
 \spelldur{\durmed}
-\spellsave{None}
+\spelldef{None}
 \spellsr{No}
 \begin{spelleffect}
   This spell creates one centipede swarm per two caster levels. They must all be adjacent at least one other swarm. You may summon the centipede swarms so that they share the area of other creatures. The swarms remain stationary, attacking any creatures in their area, unless you command the creeping doom to move (a standard action). As a standard action, you can command any number of the swarms to move toward any prey within \rngmed range of you. You cannot command any swarm to move more than \rngmed range away from you, and if you exceed that distance, the swarm remains stationary, attacking any creatures in its area (but it can be commanded again if you move within range).
@@ -912,7 +912,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{\durshort}
-\spellsave{Fortitude negates}
+\spelldef{Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spellhealthy}
   The subject is staggered. It can take a move action or a standard action each round, but not both. 
@@ -930,7 +930,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelllvl{Arcane 3}
 \spellarea{\areamed cone-shaped burst}
 \spelldur{\durmed}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   Each creature in the area is vulnerable.
@@ -943,7 +943,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldesc{You create a floating, disembodied hand made of magical force that crushes your foe in its grasp.}
 \spellschool{Evocation (Control) [Force]}
 \spelllvl{Evoc 8}
-\spellsave{Fortitude partial}
+\spelldef{Fortitude partial}
 \spellsr{Yes (Fortitude)}
 \spelldmg{2d6 \add half casting attribute}
 \begin{spelleffect}
@@ -978,7 +978,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{Instantaneous}
-\spellsave{Fortitude half (harmless) or Fortitude half; see text}
+\spelldef{Fortitude half (harmless) or Fortitude half; see text}
 \spellsr{Yes (Fortitude)}
 \spellheal{2d6 damage \add d6 per two caster levels above 2nd}
 \begin{spelleffect}
@@ -993,7 +993,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellarea{\areamed radius limit}
 \spelltgts{Five creatures within the area}
 \spelldur{Instantaneous}
-\spellsave{Fortitude half (harmless) or Fortitude half; see text}
+\spelldef{Fortitude half (harmless) or Fortitude half; see text}
 \spellsr{Yes (Fortitude)}
 \spellheal{5d6 damage \add d6 per four caster levels above 10th}
 \begin{spelleffect}
@@ -1048,7 +1048,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellarea{\areasmall radius limit}
 \spelleff{Up to four lights within the area}
 \spelldur{\durshort (D)}
-\spellsave{None}
+\spelldef{None}
 \spellsr{No}
 \begin{spelleffect}
   Depending on the version selected, you create up to four lights that resemble lanterns or torches (and cast that amount of light), or up to four glowing spheres of light (which look like will-o'-wisps), or one faintly glowing, vaguely humanoid shape. The \spell{dancing lights} must stay within a \areasmall radius in relation to each other. You can spend a swift action on your turn to move the lights as you desire: forward or back, up or down, straight or turning corners, or the like. The lights can move up to 100 feet per round. A light winks out if the distance between you and it exceeds the spell's range.
@@ -1063,7 +1063,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngtouch}
 \spelltgt{Touched creature}
 \spelldur{\durlong}
-\spellsave{Fortitude negates (harmless)}
+\spelldef{Fortitude negates (harmless)}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
   The subject gains the ability to see 60 feet even in total darkness. Beyond 60 feet, the subject can see dimly, treating areas of darkness as shadowy illumination. Darkvision does not function if a creature is in an area of bright light or is dazzled. Darkvision is black and white only, but otherwise like normal sight.
@@ -1078,7 +1078,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngtouch}
 \spelltgt{Object touched}
 \spelldur{\durlong (D)}
-\spellsave{None}
+\spelldef{None}
 \spellsr{No}
 \begin{spelleffect}
   The object touched sheds light as bright as full daylight in a \arealarge radius, and dim light for an additional 50 feet beyond that. Creatures that take penalties in bright light also take them while within the radius of this magical light. Despite its name, this spell is not the equivalent of sunlight for the purposes of creatures that are damaged or destroyed by bright light.
@@ -1106,7 +1106,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spelltgt{Living creature}
 \spelldur{\durshort; see text}
-\spellsave{Fortitude negates}
+\spelldef{Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spellblood}
   The subject becomes vulnerable. If it drops to 0 hit points, it dies immediately, and you gain 10 temporary hit points \add 1 per caster level above 4th. These temporary hit points last for 1 round per level the subject had.
@@ -1123,7 +1123,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelltgt{One living creature}
 \spelldur{\durshort}
-\spellsave{Fortitude negates (harmless)}
+\spelldef{Fortitude negates (harmless)}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
   The subject is immune to all death spells, magical death effects, energy drain, and any negative energy effects.
@@ -1150,7 +1150,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{\durlong}
-\spellsave{Will negates}
+\spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
   The subject is bewildered, making it vulnerable.
@@ -1169,7 +1169,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelltgt{Touched creature}
 \spelldur{\durshort}
-\spellsave{Fortitude negates (harmless)}
+\spelldef{Fortitude negates (harmless)}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
   The subject becomes temporarily immune to the effects of poison. It does not make any saving throws against poison during this spell's duration. This effect does not prevent the subject from becoming poisoned, and any poisons in the subject's system when the spell ends will continue their effects normally. 
@@ -1207,7 +1207,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{Instantaneous}
-\spellsave{Fortitude negates}
+\spelldef{Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spellhealthy}
   The target is staggered for 5 rounds. It can take a move action or a standard action each round, but not both.
@@ -1226,7 +1226,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelllvl{Divine 3, Pal 2}
 \spellarea{\arealarge cone-shaped mobile emanation from you}
 \spelldur{Concentration}
-\spellsave{None}
+\spelldef{None}
 \spellsr{No}
 \begin{spelleffect}
     As you cast this spell, you choose an alignment: good, evil, lawful, or chaotic. Anything within the spell's area that has the chosen alignment has a faint aura, visible only to you.
@@ -1243,7 +1243,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{Concentration}
-\spellsave{Will negates}
+\spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   You read the subject's surface thoughts. A Will save prevents you from reading its thoughts. You gain a \plus4 bonus to Bluff, Diplomacy, and Intimidate checks against creatures whose mind you are reading.
@@ -1252,7 +1252,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsectioncomma{Read Mind}{Greater}
 \spellschool{Divination (Awareness) [Mind-Affecting]}
 \spelllvl{Arcane 7, Knowledge 7}
-\spellsave{None}
+\spelldef{None}
 \begin{spelleffect}
     This spell functions like \spell{read mind}, except that no saving throw is allowed.
 \end{spelleffect}
@@ -1272,7 +1272,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellcmp{Verbal only}
 \spellarea{40 foot cube-shaped spread centered on you}
 \spelldur{Instantaneous/5 rounds}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
   \par Each nonlawful creature in the area is deafened for 5 rounds.
@@ -1317,7 +1317,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelllvl{Conj 7, Travel 8}
 \spellarea{\areamed radius limit centered on you}
 \spelltgts{You and up to five other willing creatures within the area}
-\spellsave{None}
+\spelldef{None}
 \spellsr{No}
 \begin{spelleffect}
   This spell functions like \spell{dimension door}, except that it affects multiple creatures. Creatures must be willing to be teleported. You choose the destinations for each affected creature freely, within the range of the spell. Each affected creature is dazed until the start of your next turn.
@@ -1329,7 +1329,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelltgt{One willing creature}
 \spelldur{Instantaneous}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
     The target is instantly teleported from its current location to any other spot within range to which you have line of sight. It can bring along objects as long as their weight doesn't exceed the creature's maximum load.
@@ -1345,7 +1345,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{\durlong/5 rounds}
-\spellsave{Will partial}
+\spelldef{Will partial}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   The subject cannot travel extradimensionally for an hour. A successful Will save reduces the duration to 5 rounds. Effects barred by a \spell{dimensional anchor} include \spell{astral projection}, \spell{blink}, \spell{dimension door}, \spell{ethereal jaunt}, \spell{gate}, \spell{maze}, \spell{plane shift}, \spell{shadow walk}, \spell{teleport}, and similar spell-like, psionic, or supernatural abilities.
@@ -1360,7 +1360,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelllvl{Divine 3, Law 3, Pal 3}
 \spellarea{\arealarge cone-shaped mobile emanation from you}
 \spelldur{Concentration}
-\spellsave{None}
+\spelldef{None}
 \spellsr{No}
 \begin{spelleffect}
   You know when any creature in the area deliberately and knowingly speaks a lie. The spell does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions.
@@ -1376,7 +1376,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{Instantaneous}
-\spellsave{None}
+\spelldef{None}
 \spellsr{No}
 \begin{spelleffect}
   You instantly recognize all of the target's vulnerabilities. This grants you a \plus2 bonus to attack rolls, weapon damage rolls, and save DCs against that creature. In addition, you learn any significant weaknesses the creature has. This includes, but is not limited to, the following information:
@@ -1397,7 +1397,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelleff{Ray}
 \spelldur{Instantaneous}
-\spellsave{Fortitude half (object)}
+\spelldef{Fortitude half (object)}
 \spellsr{Yes (Fortitude)}
 \spelldmg{12d8 physical damage \add d8 per two caster levels above 12th}
 \begin{spelleffect}
@@ -1414,7 +1414,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelltgt{One extraplanar creature}
 \spelldur{Instantaneous}
-\spellsave{Will negates; see text}
+\spelldef{Will negates; see text}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   This spell forces an extraplanar creature, including any summoned creature, back to its proper plane. If the spell is successful, the creature is instantly whisked away, but there is a 20\% chance of actually sending the subject to a plane other than its own.
@@ -1427,7 +1427,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellarea{\areamed radius burst; see text}
 \spelltgt{One creature or object; or everything in the area}
 \spelldur{Instantaneous; see text}
-\spellsave{None}
+\spelldef{None}
 \spellsr{No}
 \begin{spelleffect}
   You can use \spell{dispel magic} to end ongoing spells that have been cast on a creature or object, to temporarily suppress the magical abilities of a magic item, to end ongoing spells (or at least their effects) within an area, or to counter another spellcaster's spell. A dispelled spell ends as if its duration had expired. Some spells, as detailed in their descriptions, can't be defeated by dispel magic. Dispel magic can dispel (but not counter) spell-like effects just as it does spells.
@@ -1460,7 +1460,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{\durshort (D)}
-\spellsave{Will negates (harmless)}
+\spelldef{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   The subject of this spell appears to be about 2 feet away from its true location. Attacks against the subject have a 50\% miss chance as if it were invisible. However, unlike invisibility, this spell does not prevent enemies from targeting the creature normally, and it does not allow the creature to hide.
@@ -1475,7 +1475,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelltgt{One melee weapon}
 \spelldur{\durshort}
-\spellsave{Will negates (object)/Fortitude negates}
+\spelldef{Will negates (object)/Fortitude negates}
 \spellsr{Yes (Will)/Yes (Fortitude)}
 \begin{spelleffect}
   This spell infuses a melee weapon with positive energy, making it deadly to undead. Each round, the first bloodied undead creature struck by this weapon must succeed on a Fortitude save or be destroyed utterly. Healthy undead creatures suffer no ill effect.
@@ -1514,7 +1514,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spelltgt{One humanoid}
 \spelldur{One day}
-\spellsave{Will negates}
+\spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   You can control the actions of any humanoid creature through a telepathic link that you establish with the subject's mind.
@@ -1542,7 +1542,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spelltgt{One Large or smaller creature}
 \spelldur{\durshort}
-\spellsave{No}
+\spelldef{No}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   The subject moves at half speed and takes a \minus2 penalty to armor class. If it is flying within 10 feet of the ground, the subject falls to the ground.
@@ -1557,7 +1557,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{0 ft.}
 \spelleff{Earthen weapon}
 \spelldur{\durlong (D)}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
     This spell creates a weapon from the ground. The weapon can be of any type you are proficient with. In addition, the weapon is magical, as the \spell{magic weapon} spell.
@@ -1569,7 +1569,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{Touch}
 \spelltgt{Touched creature}
 \spelldur{\durshort}
-\spellsave{Fortitude negates (harmless)}
+\spelldef{Fortitude negates (harmless)}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
   The subject gains the earth glide ability, as an earth elemental. This allows it to glide through stone, dirt, or almost any other sort of earth except metal  as if it were air. The subject can walk or climb at any angle in the earth. However, the subject generally cannot breathe, speak, or hear while gliding. While gliding, a creature can remain partially within the earth, granting it cover.
@@ -1584,7 +1584,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngfar}
 \spellarea{\arealarge radius spread (S)}
 \spelldur{1 round}
-\spellsave{See text}
+\spelldef{See text}
 \spellsr{No}
 \begin{spelleffect}
   An intense but highly localized tremor rips the ground. The shock knocks creatures down, collapses structures, opens cracks in the ground, and more. The effect lasts for 1 round, during which time creatures on the ground can't move or attack. A spellcaster on the ground who attempts to cast a spell must make a Concentration check against a DC equal to (this spell's save DC \add double the level of the spell being cast) or lose the spell. The earthquake affects all terrain, vegetation, structures, and creatures in the area. The specific effect of an earthquake spell depends on the nature of the terrain where it is cast.
@@ -1604,7 +1604,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelllvl{Earth 3, Nature 3}
 \spellrng{\rngmed}
 \spelltgt{One creature or object}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Fort)}
 \spelldmg{6d8 piercing damage \add d8 per two levels above 6th}
 \begin{spelleffect}
@@ -1631,7 +1631,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spelleff{Two or more summoned creatures in a \areamed radius}
 \spelldur{\durlong (D)}
-\spellsave{None}
+\spelldef{None}
 \spellsr{No}
 \begin{spelleffect}
   This spell opens a portal to an Elemental Plane and summons elementals from it. A druid can choose the plane (Air, Earth, Fire, or Water); a cleric opens a portal to the plane matching his domain.
@@ -1646,7 +1646,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{Personal and \rngclose; see text}
 \spelleff{Ray; see text}
 \spelldur{\durlong or until discharged}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
   This spell functions like \spell{greater resist energy}, except that you store up the energy you absorb and can later discharge it as a ray. To discharge a ray requires a standard action. You can choose to fire any number of rays during the spell's duration. The ray you fire must be of one of the energy types you have stored (if you have stored more than one type, you can choose what kind of energy to use for each ray). If a ray successfully strikes its target (requiring a ranged touch attack), the target takes damage equal to the amount of energy damage of that type you have stored, up to a maximum of three times your caster level. As long as this power remains in effect, you can continue to absorb energy damage and fire additional rays using the stored damage.
@@ -1673,7 +1673,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelltgt{One creature} 
 \spelldur{\durshort}
-\spellsave{Fortitude negates}
+\spelldef{Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
   The subject gains three negative levels.
@@ -1693,7 +1693,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{\durshort}
-\spellsave{Fortitude negates}
+\spelldef{Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
   The subject takes a \minus4 penalty to your choice of Strength, Dexterity, or Constitution.
@@ -1709,7 +1709,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelltgt{One humanoid creature}
 \spelldur{\durshort (D)}
-\spellsave{Fortitude negates}
+\spelldef{Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
   This spell causes instant growth of a humanoid creature, doubling its height and multiplying its weight by 8. This increase changes the creature's size category to the next larger one. This has several effects.
@@ -1743,7 +1743,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spellarea{\areasmall radius spread}
 \spelldur{\durshort (D)}
-\spellsave{Reflex partial}
+\spelldef{Reflex partial}
 \spellsr{No}
 \begin{spelleffect}
   Grasses, weeds, bushes, and even trees wrap, twist, and entwine about creatures in the area or those that enter the area, holding them fast and causing them to become entangled. The creature can break free and move half its normal speed by using a standard action to make a grapple attack or an Escape Artist check against this spell's save DC. A creature that succeeds on a Reflex save is not entangled but can still move at only half speed through the area. Each round on your turn, the plants once again attempt to entangle all creatures that have avoided or escaped entanglement.
@@ -1789,7 +1789,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelllvl{Arcane 9, Travel 9}
 \spellrng{Touch}
 \spelltgts{You and up to five touched willing creatures}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   This spell functions like \spell{ethereal jaunt}, except that it affects multiple willing creatures (and their equipment). Once ethereal, the subjects need not stay together.
@@ -1804,7 +1804,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{\durshort (D)}
-\spellsave{Will negates (harmless)}
+\spelldef{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   Your base land speed doubles, to a maximum of a \plus30 foot increase. (This adjustment is treated as an enhancement bonus.) There is no effect on other modes of movement.
@@ -1825,7 +1825,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellarea{\areasmall radius limit}
 \spelleff{Dim lights in the area}
 \spelldur{\durshort (D)}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   A pale glow surrounds and outlines all creatures and objects in the area. Outlined subjects shed light as candles. Outlined creatures do not benefit from the concealment normally provided by darkness (though a 3rd-level or higher magical darkness effect functions normally), \spell{blur}, \spell{displacement}, \spell{invisibility}, or similar effects. Illusionary figments such as \spell{silent image} are not outlined, which may reveal them for what they are.
@@ -1847,7 +1847,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelllvl{Arcane 5}
 \spellarea{\areamed cone-shaped burst}
 \spelldur{\durshort (D)}
-\spellsave{Will negates}
+\spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
   Creatures in the area are shaken, causing them to be vulnerable.
@@ -1868,7 +1868,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellarea{\areamed radius limit}
 \spelltgts{Five Medium or smaller freefalling object or creatures within the area}
 \spelldur{\durshort or until landing}
-\spellsave{Will negates (harmless) or Will negates (object)}
+\spelldef{Will negates (harmless) or Will negates (object)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   The affected creatures or objects fall slowly. Feather fall instantly changes the rate at which the targets fall to a mere 60 feet per round (equivalent to the end of a fall from a few feet), and the subjects take no damage upon landing while the spell is in effect. However, when the spell duration expires, a normal rate of falling resumes.
@@ -1886,7 +1886,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngtouch}
 \spelltgt{Touched creature}
 \spelldur{Instantaneous}
-\spellsave{Will negates}
+\spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
   The target is bewildered, making it vulnerable for 5 rounds.
@@ -1906,7 +1906,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelltgt{One living creature}
 \spelldur{Instantaneous}
-\spellsave{Fortitude negates}
+\spelldef{Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spellhealthy}
   The target is staggered for 5 rounds. It can take a move action or a standard action each round, but not both.
@@ -1922,7 +1922,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellarea{\areasmall or \areamed radius burst from the touched objects; see text}
 \spelltgts{Up to four touched acorns or up to eight touched holly berries}
 \spelldur{\durlong or until used}
-\spellsave{None or Reflex half; see text}
+\spelldef{None or Reflex half; see text}
 \spellsr{Yes (Reflex)}
 \spelldmg{6d6 fire damage \add d6 per four caster levels above 12th (acorn grenades);\par
 6d8 fire damage \add d8 per four caster levels above 12th (holly berry bombs)}
@@ -1945,7 +1945,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngpers}
 \spelltgt{You}
 \spelldur{\durshort (D)}
-\spellsave{None/Reflex half}
+\spelldef{None/Reflex half}
 \spellsr{No/Yes (Reflex)}
 \spelldmg{4d6 fire or cold damage \add d6 per four levels above 8th}
 \begin{spelleffect}
@@ -1967,7 +1967,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spellarea{\arealarge spread}
 \spelldur{Instantaneous}
-\spellsave{Reflex half}
+\spelldef{Reflex half}
 \spellsr{Yes (Reflex)}
 \spelldmg{8d6 fire damage \add d6 per four caster levels above 16th}
 \begin{spelleffect}
@@ -1981,7 +1981,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spellarea{\areasmall radius spread}
 \spelldur{Instantaneous}
-\spellsave{Reflex half}
+\spelldef{Reflex half}
 \spellsr{Yes (Reflex)}
 \spelldmg{3d6 fire damage \add d6 per four caster levels above 6th.}
 \begin{spelleffect}
@@ -1997,7 +1997,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{0 ft.}
 \spelleff{Sword-like beam}
 \spelldur{\durlong (D)}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
   A 3 foot long beam of red-hot fire springs forth from your hand. In addition to providing illumination like a torch, you can wield this bladelike beam as a weapon. It is treated like a scimitar, except that all damage dealt with it is fire damage, you add half your casting attribute to damage in place of half your Strength, and it is treated as a light weapon, so you can use Dexterity to attack with it. Alternately, you can hurl flames from the weapon up to \rngmed range as if it were a thrown weapon.
@@ -2013,7 +2013,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spellarea{\areamed radius cylinder, 40 ft. high}
 \spelldur{Instantaneous}
-\spellsave{Reflex half}
+\spelldef{Reflex half}
 \spellsr{Yes (Reflex)}
 \spelldmg{5d6 fire and divine damage \add d6 per four caster levels above 8th; see text}
 \begin{spelleffect}
@@ -2026,7 +2026,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngtouch}
 \spelltgt{Touched creature}
 \spelldur{\durshort}
-\spellsave{Fortitude negates (harmless)}
+\spelldef{Fortitude negates (harmless)}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
     The subject gains a 30 foot fly speed with good maneuverability.
@@ -2044,7 +2044,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellarea{\areamed radius cylinder-shaped spread}
 \spelleff{Fog in the area}
 \spelldur{\durshort}
-\spellsave{None}
+\spelldef{None}
 \spellsr{No}
 \begin{spelleffect}
     Fog blocks sight in the area, causing all creatures within or looking through the area to treat everything they see as if it had concealment (\plus4 AC). The cloud is stationary once created.
@@ -2059,7 +2059,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spelleff{Barred cage (20 ft. cube) or windowless cell (10 ft. cube)}
 \spelldur{\durlong (D)}
-\spellsave{Reflex negates; see text}
+\spelldef{Reflex negates; see text}
 \spellsr{No}
 \begin{spelleffect}
   This powerful spell brings into being an immobile, invisible cubical prison composed of either bars of force or solid walls of force (your choice).
@@ -2076,7 +2076,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spelltgt{One willing creature}
 \spelldur{\durshort}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
     When you cast this spell, you roll a d20 twice. Each time the subject would roll a d20, it instead uses a result you rolled for it. The die results are used in the same order you rolled them. Any die results unused when the spell duration expires are discarded.
@@ -2090,7 +2090,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{Touch}
 \spelltgt{Touched creature}
 \spelldur{\durshort or \durlong; see text (D)}
-\spellsave{None or Will negates (harmless)}
+\spelldef{None or Will negates (harmless)}
 \spellsr{No or Yes (Will)}
 \begin{spelleffect} 
     The subject receives instantaneous warnings of impending danger or harm that would befall it. It gains an enhancement bonus to initiative checks equal to your caster level, and a \plus3 enhancement bonus to its dodge modifier and Reflex saves. This bonus increases to \plus4 at 14th level, and to \plus5 at 20th level.
@@ -2103,7 +2103,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{\durlong}
-\spellsave{Will negates}
+\spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
     The subject forgets something simple. You can't make it forget something important, such as its name. You must know what you want it to forget. The spell does not prevent the subject from learning the information again, and it can remember the information normally after the spell's duration is done.
@@ -2123,7 +2123,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngtouch}
 \spelltgt{Touched creature}
 \spelldur{\durshort}
-\spellsave{Will negates (harmless)}
+\spelldef{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   The subject can move and attack normally for the duration of the spell, even under the influence of magic that usually impedes movement, such as paralysis, \spell{solid fog}, \spell{slow}, and \spell{web}. The subject gains a \plus20 enhancement bonus to Maneuver Class against grapple attacks, as well as on grapple attacks or Escape Artist checks made to escape a grapple or a pin.
@@ -2147,7 +2147,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spellarea{\areamed radius burst}
 \spelldur{Instantaneous/5 rounds; see text}
-\spellsave{Reflex half; see text}
+\spelldef{Reflex half; see text}
 \spellsr{Yes (Reflex)}
 \spelldmg{6d6 cold damage \add d6 per four levels above 12th}
 \begin{spelleffect}
@@ -2168,7 +2168,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngtouch}
 \spelltgt{Touched willing corporeal creature}
 \spelldur{\durshort (D)}
-\spellsave{None}
+\spelldef{None}
 \spellsr{No}
 \begin{spelleffect}
   The subject and all its gear become insubstantial, misty, and translucent. Its armor modifier becomes 0, though other modifiers continue to apply normally. The subject gains physical damage reduction 10/magic and becomes immune to critical hits. It can't attack or cast spells with verbal, somatic, material, or focus components while in gaseous form. (This does not rule out the use of certain spells that the subject may have prepared using the feats Silent Spell or Still Spell.) If it has a touch spell ready to use, that spell is discharged harmlessly when the gaseous form spell takes effect.
@@ -2185,7 +2185,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{\durlong}
-\spellsave{Will negates (harmless)}
+\spelldef{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   The subject gains a 30 foot glide speed.
@@ -2202,7 +2202,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngtouch}
 \spelltgt{Touched living creature}
 \spelldur{\durshort}
-\spellsave{None/Fortitude negates}
+\spelldef{None/Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
   The subject is sickened, making it vulnerable. If it fails a Fortitude save, it exudes a carrion stench that causes all living creatures (except you and the subject) in a \areasmall radius spread to become sickened for 5 rounds, making them vulnerable. A successful Fortitude save negates the sickening from the stench.
@@ -2218,7 +2218,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellarea{\areamed radius limit}
 \spelltgts{Up to three vermin within the area}
 \spelldur{\durmed}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
   You turn three normal-sized centipedes, two normal-sized spiders, or a single normal-sized scorpion into Large-sized forms. Only one type of vermin can be transmuted (so a single casting cannot affect both a centipede and a spider), and all must be grown to the same size.
@@ -2232,7 +2232,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellarea{\areasmall radius spread}
 \spelleff{Glittering particles in the area}
 \spelldur{\durshort}
-\spellsave{None}
+\spelldef{None}
 \spellsr{No}
 \begin{spelleffect}
   A cloud of golden particles covers everyone and everything in the area, visibly outlining invisible things for the duration of the spell. It likewise negates the effects of \spell{blur} and \spell{displacement}, and reveals illusionary figments such as \spell{silent image} for what they are. All within the area at the time that the spell is cast are covered by the dust, which continues to sparkle until it fades.
@@ -2261,7 +2261,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelltgtorarea{One object or a 10 ft. square}
 \spelldur{\durshort (D)}
-\spellsave{See text}
+\spelldef{See text}
 \spellsr{No}
 \begin{spelleffect}
   Any creature in the area when the spell is cast must make a successful Reflex save or fall. A creature can walk within or through the area of grease at half normal speed with a DC 10 Balance check. Failure means it can't move that round, while failure by 5 or more means it falls (see the Balance skill for details). A creature standing in a greased area loses its Dexterity and dodge modifiers to AC due to the slippery surface.
@@ -2277,7 +2277,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellarea{\arealarge line-shaped immobile emanation from you}
 \spelleff{Wind within the area}
 \spelldur{1 round}
-\spellsave{Fortitude partial; see text.}
+\spelldef{Fortitude partial; see text.}
 \spellsr{No}
 \begin{spelleffect}
   This spell creates a severe blast of air (approximately 50 mph) that originates from you, affecting all creatures in its path. Creatures are affected according to their size category. A successful Fortitude save causes a creature to be affected as if it were one size category larger. Flying creatures are affected as if one size category smaller.
@@ -2306,7 +2306,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngtouch}
 \spelltgt{Touched creature}
 \spelldur{Instantaneous}
-\spellsave{None/Fortitude half}
+\spelldef{None/Fortitude half}
 \spellsr{Yes (Fortitude)}
 \spelldmg{12d8 negative energy damage \add d8 per two caster levels above 12th}
 \begin{spelleffect}
@@ -2323,7 +2323,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{Touch}
 \spelltgts{One creature}
 \spelldur{\durshort}
-\spellsave{Will negates (harmless)}
+\spelldef{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   The subject is hasted. It doubles all of its movement speeds (to a maximum of an additional 30 feet of movement), and can take an additional attack at a \minus5 penalty when it makes a standard attack. The increase to movement speed is considered an enhancement bonus.
@@ -2349,7 +2349,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngtouch}
 \spelltgt{Touched creature}
 \spelldur{Instantaneous}
-\spellsave{Fortitude negates (harmless) or Fortitude negates; see text}
+\spelldef{Fortitude negates (harmless) or Fortitude negates; see text}
 \spellsr{Yes (Fortitude)}
 \spellheal{12d8 \add d8 per two caster levels above 12th}
 \begin{spelleffect}
@@ -2370,7 +2370,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngtouch}
 \spelltgt{Your mount touched}
 \spelldur{Instantaneous}
-\spellsave{Fortitude negates (harmless)}
+\spelldef{Fortitude negates (harmless)}
 \spellsr{Yes (Fortitude)}
 \spellheal{6d8 \add d8 per two caster levels above 6th}
 \begin{spelleffect}
@@ -2383,7 +2383,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spelltgt{Metal equipment of one creature within the area}
 \spelldur{\durshort (D)}
-\spellsave{See text}
+\spelldef{See text}
 \spellsr{Yes (Will)}
 \spelldmg{2d6 fire damage per round \add 1d6 per four levels above 4th; see text}
 \begin{spelleffect}
@@ -2402,7 +2402,7 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{\durshort (D)}
-\spellsave{Will negates (harmless)}
+\spelldef{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   The subject gains a \plus2 enhancement bonus on attack rolls, checks, and saving throws. \bonusscalingdescription
@@ -2438,7 +2438,7 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \spellrng{\rngclose}
 \spelltgt{One humanoid creature}
 \spelldur{\durshort (D); see text}
-\spellsave{Will negates; see text}
+\spelldef{Will negates; see text}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
   The subject is bewildered, making it vulnerable.
@@ -2467,7 +2467,7 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \spellarea{\areamed radius limit centered on you}
 \spelltgts{Five creatures within the area}
 \spelldur{\durshort (D)}
-\spellsave{See text}
+\spelldef{See text}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   A brilliant divine radiance surrounds the subjects, protecting them from attacks, granting them resistance to spells cast by evil creatures, and damaging evil creatures when they strike the subjects. This abjuration has four effects.
@@ -2484,7 +2484,7 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{Instantaneous/5 rounds}
-\spellsave{None/Will half}
+\spelldef{None/Will half}
 \spellsr{Yes (Will)}
 \spelldmg{8d6 divine damage \add d6 per two caster levels above 8th}
 \begin{spelleffect}
@@ -2499,7 +2499,7 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \spellrng{\rngtouch}
 \spelltgt{Melee weapon touched}
 \spelldur{\durmed}
-\spellsave{Will negates (object)}
+\spelldef{Will negates (object)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   The affected weapon acts as a \plus5 holy weapon. The spell is automatically cancelled 1 round after the weapon leaves your hand. You cannot have more than one \spell{holy sword} at a time.
@@ -2516,7 +2516,7 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \spellcmp{Verbal only}
 \spellarea{\arealarge radius spread centered on you}
 \spelldur{Instantaneous}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
   \par Each nongood creature in the area is deafened for 5 rounds.
@@ -2549,7 +2549,7 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \spellrng{\rngfar}
 \spellarea{\arealarge radius limit}
 \spelltgts{Ten living creatures within the area}
-\spellsave{Fortitude half}
+\spelldef{Fortitude half}
 \spellsr{Yes (Fortitude)}
 \spelldmg{8d6 physical damage \add d6 per four caster levels above 16th}
 \begin{spelleffect}
@@ -2564,7 +2564,7 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \spellarea{\areasmall radius spread}
 \spelleff{Colorful lights in the area}
 \spelldur{\durshort}
-\spellsave{Will negates}
+\spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   Creatures within the spell's area are fascinated. Each fascinated creature stands or sits quietly, taking no actions other than to pay attention to the fascinating effect for the duration of the spell. It takes a \minus4 penalty on skill checks made as reactions, such as Listen and Spot checks. Any potential threat, such as a hostile creature approaching, allows the fascinated creature a new saving throw. Any obvious threat, such as noticing someone draw a weapon, cast a spell, or aim a ranged weapon at the fascinated creature automatically breaks the effect. A fascinated creature's ally may shake it free of the spell as a standard action.
@@ -2585,7 +2585,7 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \spellrng{\rngmed}
 \spellarea{\areasmall radius cylinder, 20 ft. high}
 \spelldur{Instantaneous/1 round}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Reflex)}
 \spelldmg{4d4 cold and bludgeoning damage \add d4 per four caster levels above 8th}
 \begin{spelleffect}
@@ -2599,7 +2599,7 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \spellrng{\rngclose}
 \spelltgts{One corporeal creature/round}
 \spelldur{Instantaneous and concentration (up to 5 rounds); see text}
-\spellsave{None/Fortitude negates}
+\spelldef{None/Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spellhealthy}
   The target creature you concentrate on is staggered for 5 rounds. It can take a move action or a standard action each round, but not both.
@@ -2618,7 +2618,7 @@ A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{See text}
-\spellsave{Will negates}
+\spelldef{Will negates}
 \spellsr{Yes (Will)}
 \spelldmg{18d8 physical damage \add d8 per two caster levels above 18th}
 \begin{spelleffect}
@@ -2640,7 +2640,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{\durshort}
-\spellsave{Will negates (harmless)}
+\spelldef{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   The subject gains physical damage reduction 4/force. This damage reduction increases by 1 per two caster levels above 4th.
@@ -2677,7 +2677,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{Instantaneous}
-\spellsave{Fortitude half}
+\spelldef{Fortitude half}
 \spellsr{Yes (Fortitude)}
 \spelldmg{2d6 negative energy damage \add d6 per two caster levels above 2nd}
 \begin{spelleffect}
@@ -2691,7 +2691,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spellarea{\areamed radius limit}
 \spelltgts{Five creatures within the area}
 \spelldur{Instantaneous}
-\spellsave{Fortitude half}
+\spelldef{Fortitude half}
 \spellsr{Yes (Fortitude)}
 \spelldmg{5d6 negative energy damage \add d6 per four caster levels above 10th}
 \begin{spellnotes}
@@ -2748,7 +2748,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spellrng{Touch}
 \spelltgt{Touched living creature}
 \spelldur{Permanent}
-\spellsave{Will negates}
+\spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
   The creature is bewildered, making it vulnerable.
@@ -2767,7 +2767,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spellrng{\rngmed}
 \spelleff{Large hand made of force}
 \spelldur{\durshort (D)}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
   The hand created by this spell stays between you and one opponent, providing you with cover (\plus4 AC) from that creature. In addition, if the creature is Large size or smaller, it moves at half speed while moving towards you. 
@@ -2785,7 +2785,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{\durshort}
-\spellsave{Will negates (harmless)}
+\spelldef{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   All weapons and armor that the subject wields gain a \plus3 enhancement bonus for as long as she wields them. This bonus increases to \plus4 at 14th level, and to \plus5 at 20th level.
@@ -2797,7 +2797,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spellrng{\rngclose}
 \spelltgt{A creature or object weighing no more than 100 lb./level}
 \spelldur{\durshort (D)}
-\spellsave{Will negates (harmless) or Will negates (harmless, object)}
+\spelldef{Will negates (harmless) or Will negates (harmless, object)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   The creature or object touched becomes invisible, vanishing from sight, even from darkvision. If the recipient is a creature carrying gear, that vanishes, too.
@@ -2858,7 +2858,7 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{1d4 rounds}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   The subject is flat-footed and must spend a standard action each round to do nothing but dance, which provokes attacks of opportunity.
@@ -2875,7 +2875,7 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
 \spellrng{\rngclose}
 \spelltgt{One Medium or smaller object}
 \spelldur{Instantaneous; see text}
-\spellsave{None}
+\spelldef{None}
 \spellsr{No}
 \begin{spelleffect}
   The knock spell telekinetically opens stuck, barred, locked, held, or arcane locked objects. If the object is stuck or held, you can immediately make an Strength check to break it open, using your caster level instead of your Strength. Others can aid you on this check as normal. In addition, if the object is locked, you can immediately make a Disable Device check to open the lock as if you had rolled a 20 on the check. You get an enhancement bonus on the Disable Device check equal to half your caster level.
@@ -2893,7 +2893,7 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
 \spellrng{\rngclose}
 \spelltgt{You or one willing creature or one object (total weight up to 100 lb./level)}
 \spelldur{\durshort (D)}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   This spell allows you to telekinetically move the subject up and down as you wish. A creature must be willing to be levitated, and an object must be unattended or possessed by a willing creature. As a swift action, you can mentally direct the subject to move up or down as much as 20 feet each round. You cannot move the recipient horizontally, but the recipient could clamber along the face of a cliff, for example, or push against a ceiling to move laterally (generally at half its base land speed).
@@ -2915,7 +2915,7 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
 \spelllvl{Arcane 3, Destruction 3, Nature 3}
 \spellarea{100 ft. line}
 \spelldur{Instantaneous}
-\spellsave{Reflex half}
+\spelldef{Reflex half}
 \spellsr{Yes (Reflex)}
 \spelldmg{3d6 electricity damage \add d6 per four caster levels above 6th}
 \begin{spelleffect}
@@ -2930,7 +2930,7 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
 \spellrng{See text}
 \spelltgteffarea{See text}
 \spelldur{See text}
-\spellsave{None; see text}
+\spelldef{None; see text}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   A limited wish lets you create nearly any type of effect. For example, a limited wish can do any of the following things.
@@ -2953,7 +2953,7 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
 \spellarea{\areamed radius limit centered on you}
 \spelltgts{Any two living creatures within the area}
 \spelldur{\durshort}
-\spellsave{Will negates}
+\spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   You temporarily link the fates of any two creatures, if both fail their saving throws. If either linked creature experiences pain, both feel it. When one gains or loses hit points, the other gains or loses the same amount.
@@ -2984,7 +2984,7 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
 \spelllvl{Arcane 2, Divine 2}
 \spellrng{\rngmed}
 \spelldur{\durmed (D)}
-\spellsave{None}
+\spelldef{None}
 \spellsr{No}
 \begin{spelleffect}
   You sense the direction of a well-known or clearly visualized creature if it is within the spell's range. You can search for general creatures based on visual characteristics (such as ``pointy ears'' or ``looking human''), in which case you locate the nearest one of its kind if more than one is within the range. Attempting to find a certain creature requires a specific and accurate mental image of a distinguishing visual characteristic, such as its clothes or face; if the image is not close enough to the actual creature, the spell fails.
@@ -3006,7 +3006,7 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
 \spelllvl{Arcane 1, Divine 1}
 \spellrng{\rngmed}
 \spelldur{\durmed (D)}
-\spellsave{None}
+\spelldef{None}
 \spellsr{No}
 \begin{spelleffect}
   You sense the direction of a well-known or clearly visualized object if it is within the spell's range. You can search for general items, in which case you locate the nearest one of its kind if more than one is within the range. Attempting to find a certain item requires a specific and accurate mental image; if the image is not close enough to the actual object, the spell fails.
@@ -3045,7 +3045,7 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{\durshort or \durlong; see text (D)}
-\spellsave{Will negates (harmless)}
+\spelldef{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
     As you cast this spell, you choose whether to create body armor or a shield. If you choose body armor, the subject gains a \plus2 armor modifier to AC. If you choose a shield, the subject gains a \plus2 shield modifier to AC. The bonus granted increases to \plus3 at 8th level, to \plus4 at 14th level, and finally to \plus5 at 20th level. 
@@ -3062,7 +3062,7 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
 \spellrng{\rngclose}
 \spelltgt{One nonmagical, unattended object weighing up to 5 lb.}
 \spelldur{\durshort}
-\spellsave{None}
+\spelldef{None}
 \spellsr{No}
 \begin{spelleffect}
   You point your finger at an object and can lift it and move it in any direction from a distance. By directing the spell as a swift action, you can propel the object as far as 15 feet in any direction each round, though the spell ends if the distance between you and the object ever exceeds the spell's range.
@@ -3077,7 +3077,7 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
 \spellrng{\rngmed}
 \spelltgtorarea{One magic item or \areamed radius burst}
 \spelldur{Instantaneous}
-\spellsave{Will negates (object)}
+\spelldef{Will negates (object)}
 \spellsr{No}
 \begin{spelleffect}
   All magical effects within the radius of the spell, except for those on you, are disjoined. That is, spells and spell-like effects are separated into their individual components (ending the effect as a \spell{dispel magic} spell does).
@@ -3099,7 +3099,7 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
 \spellrng{Touch}
 \spellarea{\areasmall mobile emanation from touched creature}
 \spelldur{\durshort (D)}
-\spellsave{Will negates (harmless)}
+\spelldef{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   All creatures within the area gain the effects of a \spell{protection from evil} spell. In addition, no nongood summoned creatures can enter the area unless they make a successful Will save.
@@ -3125,7 +3125,7 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{\durshort}
-\spellsave{Will negates (harmless)}
+\spelldef{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   This spell makes one of the subject's natural weapons a \plus2 magic weapon, granting a \plus2 enhancement bonus to attack and damage rolls. \bonusscalingdescription
@@ -3151,7 +3151,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellarea{\areamed radius limit}
 \spelltgts{Creatures in the area}
 \spelldur{Instantaneous}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Fortitude)}
 \spelldmg{2d4 force damage \add d4 per two levels above 2nd; see text}
 \begin{spelleffect}
@@ -3165,7 +3165,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelltgt{One suit of armor or shield}
 \spelldur{\durmed}
-\spellsave{Will negates (harmless, object)}
+\spelldef{Will negates (harmless, object)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   You imbue body armor or a shield with a \plus2 enhancement bonus, increasing the wielder's AC. \bonusscalingdescription
@@ -3180,7 +3180,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelltgt{One weapon or fifty projectiles (all of which must be in contact with each other at the time of casting)}
 \spelldur{\durshort}
-\spellsave{Will negates (harmless, object)}
+\spelldef{Will negates (harmless, object)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   You imbue a weapon or stack of projectiles with a \plus2 enhancement bonus, giving its wielder a \plus2 enhancement bonus to attack and damage. \bonusscalingdescription
@@ -3210,7 +3210,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{Instantaneous; see text}
-\spellsave{Will partial}
+\spelldef{Will partial}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   You banish the subject into an extradimensional labyrinth of force planes. Each round on its turn, it may attempt a DC 20 Intelligence check to escape the labyrinth as a full-round action. If the subject doesn't escape, the maze disappears after 5 minutes, forcing the subject back to the location where it was originally banished. A successful Will save prevents you from placing it in the middle of the labyrinth, lowering the DC of the Intelligence check to 15.
@@ -3243,7 +3243,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellarea{\areamed radius limit}
 \spelltgts{Five creatures within the area}
 \spelldur{\durlong}
-\spellsave{None}
+\spelldef{None}
 \spellsr{No}
 \begin{spelleffect}
   You can whisper messages and receive whispered replies with little chance of being overheard. You point your finger at each creature you want to receive the message. When you whisper, the whispered message is audible to all targeted creatures within range. Magical silence, 1 foot of stone, 1 inch of common metal (or a thin sheet of lead), or 3 feet of wood or dirt blocks the spell. The message does not have to travel in a straight line. It can circumvent a barrier if there is an open path between you and the subject, and the path's entire length lies within the spell's range. The creatures that receive the message can whisper a reply that you hear. The spell transmits sound, not meaning. It doesn't transcend language barriers.
@@ -3259,7 +3259,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngfar}
 \spellarea{A \arealarge radius cylinder, 100 ft. high}
 \spelldur{Instantaneous}
-\spellsave{Reflex half/Reflex negates}
+\spelldef{Reflex half/Reflex negates}
 \spellsr{Yes (Reflex)}
 \spelldmg{9d6 fire damage \add d6 per four caster levels above 18th}
 \begin{spelleffect}
@@ -3275,7 +3275,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelllvl{Arcane 4, Trickery 4}
 \spellrng{\rngclose}
 \spelldur{\durlong and 5 rounds; see text}
-\spellsave{None/Will negates}
+\spelldef{None/Will negates}
 \spellsr{None/Yes (Will)}
 \begin{spelleffect}
   This spell functions like \spell{fog cloud}, except each creature in the fog take a \minus5 penalty to Wisdom unless it makes a Will save. A creature that successfully saves against the fog is not affected, but if it remains in the fog, it must make a new save each minute to avoid being affected. Affected creatures take the penalty as long as they remain in the fog and for 5 rounds thereafter. The fog is stationary and lasts for 1 hour (or until dispersed by wind).
@@ -3300,7 +3300,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{See text}
 \spelltgteffarea{See text}
 \spelldur{See text}
-\spellsave{See text}
+\spelldef{See text}
 \spellsr{Yes (varies; see text)}
 \begin{spelleffect}
   You don't so much cast a miracle as request one. You state what you would like to have happen and request that your deity (or the power you pray to for spells) intercede.
@@ -3348,7 +3348,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelltgt{You}
 \spelleff{One illusory double}
 \spelldur{\durshort (D); see text}
-\spellsave{None/Will disbelief (if interacted with); see text}
+\spelldef{None/Will disbelief (if interacted with); see text}
 \spellsr{No}
 \begin{spelleffect}
   You become invisible (as \spell{invisibility}, a glamer), and at the same time, an illusory double of you (as \spell{major image}, an unreal figment) appears. You are then free to go elsewhere while your double moves away. The double appears within range but thereafter moves as you direct it (which requires concentration beginning on the first round after the casting). You can make the figment appear superimposed perfectly over your own body so that observers don't notice an image appearing and you turning invisible. You and the figment can then move in different directions. The double moves at your speed and can talk and gesture as if it were real, but it cannot attack or cast spells, though it can pretend to do so.
@@ -3362,7 +3362,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellarea{\arealarge radius limit centered on you}
 \spelltgts{Any number of creatures in the area}
 \spelldur{Instantaneous}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Fortitude)}
 \spelldmg{7d4 force damage \add d4 per four levels above 14th}
 \begin{spelleffect}
@@ -3422,7 +3422,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{Instantaneous/5 rounds}
-\spellsave{None/Will half}
+\spelldef{None/Will half}
 \spellsr{Yes (Will)}
 \spelldmg{8d6 divine damage \add d6 per two caster levels above 8th}
 \begin{spelleffect}
@@ -3448,7 +3448,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{Instantaneous}
-\spellsave{Will disbelief and Fortitude negates; see text}
+\spelldef{Will disbelief and Fortitude negates; see text}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   The subject is shaken, causing it to be vulnerable for 5 rounds.
@@ -3467,7 +3467,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{\durmed}
-\spellsave{Will disbelief}
+\spelldef{Will disbelief}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   The subject perceives itself to be banished to an extradimensional labyrinth of force planes, as the \spell{maze} spell. It cannot see or hear anything to the contrary, causing it to be treated as if blinded and deafened for most purposes. Typically, this means the subject moves in a random direction each round to escape the maze. If it encounters any physical resistance in its movements or takes any damage, it may immediately make a Will save to disbelieve the effect.
@@ -3481,7 +3481,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelleff{One quasi-real, horselike creature}
 \spelldur{\durext (D)}
-\spellsave{None}
+\spelldef{None}
 \spellsr{No}
 \begin{spelleffect}
   This spell creates a Large, horselike creature that can only be ridden by you or one person you designate. The mount cannot fight, and has an AC of 18 (\minus1 size, \plus4 natural armor, \plus5 Dex) and 10 hit points \add 1 per caster level. If it loses all its hit points, the phantom steed disappears. A phantom steed has a speed of 10 feet per two caster levels. It can bear its rider's weight plus up to 10 pounds per caster level.
@@ -3501,7 +3501,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{Touch}
 \spelltgt{Touched living creature}
 \spelldur{Instantaneous; see text}
-\spellsave{Fortitude negates; see text}
+\spelldef{Fortitude negates; see text}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
   Calling upon the venomous powers of natural predators, you infect the subject with a horrible poison that drains its life force by making a successful melee touch attack. The poison deals 1d6 points of Constitution damage immediately. A Fortitude save negates this damage. The spell continues dealing another 1d6 points of Constitution damage every two rounds until the subject makes two successful Fortitude saves to resist the poison.
@@ -3514,7 +3514,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelleff{Ray}
 \spelldur{Instantaneous/5 rounds}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Fortitude)}
 \spelldmg{16d6 cold damage \add d6 per three caster levels above 16th}
 \begin{spellhealthy}
@@ -3536,7 +3536,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{Instantaneous/5 rounds}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Fortitude)}
 \begin{spellhealthy}
   The target is sickened, making it vulnerable for 5 rounds.
@@ -3557,7 +3557,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spellrng{\rngclose}
 \spelltgt{One living creature}
 \spelldur{Instantaneous}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Fortitude)}
 \begin{spellhealthy}
   The target is sickened for 5 rounds, making it vulnerable.
@@ -3578,7 +3578,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{Instantaneous}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
   The target is bewildered, making it vulnerable for 5 rounds.
@@ -3599,7 +3599,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{Instantaneous}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
   The target is bewildered, making it vulnerable for 5 rounds.
@@ -3665,7 +3665,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelllvl{Arcane 7, Chaos 7}
 \spellarea{\arealarge cone-shaped burst}
 \spelldur{Instantaneous}
-\spellsave{See text}
+\spelldef{See text}
 \spellsr{Yes (varies)}
 \begin{spelleffect}
   This spell causes seven shimmering, intertwined, multicolored beams of light to spray from your hand. Each beam has a different power. Every creature in the area is randomly struck by one or more beams, which have unique effects.
@@ -3690,7 +3690,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelleff{Wall up to 50 ft. wide, 30 ft. high}
 \spelldur{\durshort (D)}
-\spellsave{See text}
+\spelldef{See text}
 \spellsr{See text}
 \begin{spelleffect}
   This spell creates a vertical, opaque wall -- a shimmering, multicolored plane of light that protects you from all forms of attack. The wall flashes with seven colors, each of which has a distinct power and purpose. The wall is immobile, and you can pass through and remain near the wall without harm. However, any other creature with less than 8 levels that is within 20 feet of the wall is blinded for 1 minute by the colors if it looks at the wall.
@@ -3726,7 +3726,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellschool{Abjuration (Interdiction)}
 \spelllvl{Abjur 9, Law 8}
 \spellarea{100 foot radius mobile emanation centered on you}
-\spellsave{Will half/Will negates}
+\spelldef{Will half/Will negates}
 \spelldur{\durshort}
 \spellsr{Yes (Will)}
 \spelldmg{8d6 damage \add 1d6 per four levels above 16th}
@@ -3745,7 +3745,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spelleff{One shadow duplicate}
 \spelldur{\durshort (D)}
-\spellsave{Will disbelief (if interacted with)}
+\spelldef{Will disbelief (if interacted with)}
 \spellsr{No}
 \begin{spelleffect}
   You tap energy from the Plane of Shadow to create a quasi-real, illusory version of yourself. The projected image looks, sounds, and smells like you but is intangible. The projected image mimics your actions (including speech) unless you direct it to act differently (which is a move action).
@@ -3770,7 +3770,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{Touch}
 \spelltgt{Touched creature}
 \spelldur{\durlong or until discharged}
-\spellsave{Fortitude negates (harmless)}
+\spelldef{Fortitude negates (harmless)}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
   This spell grants temporary immunity to the type of energy you specify when you cast it (acid, cold, electricity, fire, or sonic). When the spell absorbs 10 points per caster level of energy damage, it is discharged.
@@ -3793,7 +3793,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{\durshort (D)}
-\spellsave{Will negates (harmless)}
+\spelldef{Will negates (harmless)}
 \spellsr{No; See text}
 \begin{spelleffect}
   The subject gains a \plus2 enhancement bonus on saving throws. \bonusscalingdescription
@@ -3827,7 +3827,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelltgt{One humanoid creature}
 \spelldur{\durshort (D)}
-\spellsave{Fortitude negates}
+\spelldef{Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
   This spell causes instant diminution of a humanoid creature, halving its height, length, and width and dividing its weight by 8. This decrease changes the creature's size category to the next smaller one. This has several effects.
@@ -3860,7 +3860,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{Touch}
 \spelltgt{Touched living creature}
 \spelldur{\durshort}
-\spellsave{Fortitude negates (harmless)}
+\spelldef{Fortitude negates (harmless)}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
   You grant immense healing power to a creature with a touch. The target of this spell automatically heals a number of hit points each round equal to your caster level.
@@ -3872,7 +3872,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelllvl{Arcane 6, Protection 6, Travel 6}
 \spellarea{Up to a \arealarge radius mobile emanation centered on you}
 \spelldur{\durshort (D)}
-\spellsave{Will negates}
+\spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   An invisible, mobile field surrounds you and prevents creatures from approaching you. You decide how big the field is at the time of casting. Any creature within or entering the field must attempt a save. If it fails, it becomes unable to move toward you for the duration of the spell. Repelled creatures' actions are not otherwise restricted.
@@ -3888,7 +3888,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spelleff{5 ft. radius sphere, centered around creatures or objects}
 \spelldur{\durshort (D)}
-\spellsave{Reflex negates}
+\spelldef{Reflex negates}
 \spellsr{Yes (Reflex)}
 \begin{spelleffect}
   This spell creates a globe of shimmering force centered around a creature or object. The sphere persists for the spell's duration, containing any creatures or objects held inside, provided they are small enough to fit within the diameter of the sphere. It is not subject to damage of any sort.
@@ -3904,7 +3904,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{Touch}
 \spelltgt{Touched creature}
 \spelldur{\durlong or until discharged}
-\spellsave{Fortitude negates (harmless)}
+\spelldef{Fortitude negates (harmless)}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
   The subject gains energy damage reduction 10 against whichever of the five energy types that you select: acid, cold, electricity, fire, or sonic. This damage reduction increases by 1 per caster level above 4th.
@@ -3933,7 +3933,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose; see text}
 \spelltgt{One creature; see text}
 \spelldur{\durshort or until discharged/5 rounds}
-\spellsave{Will negates (harmless), Fortitude negates}
+\spelldef{Will negates (harmless), Fortitude negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
     When the subject is attacked by a creature within \rngclose range of it, the subject can mentally command this spell to activate (an immediate action). If it does, spell is discharged, and the attacking creature is dazzled for 5 rounds. If the attacking creature is bloodied, it must make a Fortitude save to avoid being blinded as well.
@@ -3948,7 +3948,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose/\rngmed}
 \spelltgt{One creature}
 \spelldur{\durshort}
-\spellsave{Will negates (harmless)}
+\spelldef{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   A subject within \rngclose range gains physical damage reduction 8/life. This damage reduction increases by 1 per two caster levels above 8th. In addition, the spell reflects the damage back at the creature's attackers. Any creature within \rngmed range of the subject that attacks it takes life damage equal to the amount of damage resisted by this spell.
@@ -3963,7 +3963,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spelltgt{One willing creture}
 \spelldur{Instantaneous}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
     You teleport the target into a free space adjacent to you. You must have line of sight and line of effect to the destination. If you accidentally attempt to teleport the creature into an invalid location, the spell simply fails.
@@ -3975,7 +3975,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelltgt{One object you can hold or carry in one hand, weighing up to 10 lb./level}
 \spelldur{Instantaneous}
-\spellsave{None (object)}
+\spelldef{None (object)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   You teleport an item you can see within range directly to your hand. If the object is attended, this spell automatically fails.
@@ -3985,7 +3985,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellschool{Conjuration (Translocation) [Teleportation]}
 \spelllvl{Conj 5}
 \spellrng{\rngmed}
-\spellsave{Will negates (object)}
+\spelldef{Will negates (object)}
 \begin{spelleffect}
   This spell functions like \spell{retrieve}, except that if the object is attended, it comes to your hand if the creature holding the item fails a Will save.
 \end{spelleffect}
@@ -3996,7 +3996,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{\durshort}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   You grant the target a powerful revelatory vision of a possible future. This spell has different effects depending on the version chosen. Creatures without an Intelligence score are not affected by this spell.
@@ -4011,7 +4011,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spellarea{Up to five 10 ft. cubes (S)}
 \spelldur{Concentration (up to 5 rounds)}
-\spellsave{None; see text}
+\spelldef{None; see text}
 \spellsr{No}
 \begin{spelleffect}
   This spell reverses gravity in an area, causing all unattached objects and creatures within that area to fall upward and reach the top of the area in 1 round. If some solid object (such as a ceiling) is encountered in this fall, falling objects and creatures strike it in the same manner as they would during a normal downward fall. If an object or creature reaches the top of the area without striking anything, it remains there, oscillating slightly, until the spell ends. At the end of the spell duration, affected objects and creatures fall downward.
@@ -4029,7 +4029,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{Touch}
 \spelltgt{Touched dead creature}
 \spelldur{Instantaneous}
-\spellsave{None}
+\spelldef{None}
 \spellsr{No}
 \begin{spelleffect}
   This spell restores a creature to life like the \spell{raise dead} ritual, except that the affected creature suffers no negative effects for having died. However, the spell must be cast within one round of the creature's death per four caster levels. After that time, it has no effect (and the material components are not consumed).
@@ -4057,7 +4057,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{Touch}
 \spelltgt{Touched creature}
 \spelldur{\durshort}
-\spellsave{Will negates (harmless) and Will negates; see text}
+\spelldef{Will negates (harmless) and Will negates; see text}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   Any opponent attempting to strike or otherwise directly attack the shielded creature, even with a targeted spell, must attempt a Will save. If the save succeeds, the opponent can attack normally and is unaffected by that casting of the spell. If the save fails, the opponent can't follow through with the attack, that part of its action is lost, and it can't directly attack the shielded creature for the duration of the spell. Those not attempting to attack the subject remain unaffected. This spell does not prevent the shielded creature from being attacked or affected by area or effect spells. The subject cannot attack without breaking the spell but may use nonattack spells or otherwise act.
@@ -4078,7 +4078,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellarea{\arealarge radius spread centered on you}
 \spelleff{Colorful lights in the area}
 \spelldur{\durshort}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   All enemies within the spell's area are bewildered for as long as they can see the lights, and for 5 rounds thereafter. In addition, the area is illuminated in bright light out to a 100 ft. radius, and dim light extends an additional 100 ft. beyond that.
@@ -4094,7 +4094,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelleff{One or more rays}
 \spelldur{Instantaneous}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Reflex)}
 \spelldmg{4d6 fire damage \add d6 per two caster levels above 4th}
 \begin{spelleffect}
@@ -4108,7 +4108,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellarea{\areamed radius limit}
 \spelltgts{Five creatures or objects within the area}
 \spelldur{\durext (D)}
-\spellsave{Will negates (object)}
+\spelldef{Will negates (object)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   You change the sounds that creatures or objects make. You can deaden sounds that exist or transform sounds into other sounds, but you cannot create new sounds where none existed or amplify the volume of existing sounds. All affected creatures or objects must have their sounds altered in the same way.
@@ -4138,7 +4138,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelleff{Ray}
 \spelldur{Instantaneous and see text}
-\spellsave{Reflex partial}
+\spelldef{Reflex partial}
 \spellsr{Yes (Reflex)}
 \spelldmg{6d6 divine damage \add d6 per two caster levels above 6th; see text}
 \begin{spelleffect}
@@ -4169,7 +4169,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellarea{\areamed radius limit}
 \spelltgts{One creature per level within the area}
 \spelldur{\durext (D)}
-\spellsave{Will negates (harmless)}
+\spelldef{Will negates (harmless)}
 \spellsr{Yes}
 \begin{spelleffect}
   This spell functions like \spell{disguise self}, except that it affects multiple creatures. Affected creatures resume their normal appearances if slain.
@@ -4200,7 +4200,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{See text}
 \spelleff{See text}
 \spelldur{See text}
-\spellsave{Will disbelief (if interacted with); varies, see text}
+\spelldef{Will disbelief (if interacted with); varies, see text}
 \spellsr{Yes (Will); See text}
 \begin{spelleffect}
   Shadow conjuration can mimic any non-restricted sorcerer or wizard conjuration spell of 5th level or lower. If you summon a creature, as with the \spell{summon monster} spells, you may only summon a creature that you know how to summon with such a spell.
@@ -4221,7 +4221,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{See text}
 \spelleff{See text}
 \spelldur{See text}
-\spellsave{Will disbelief (if interacted with); varies, see text}
+\spelldef{Will disbelief (if interacted with); varies, see text}
 \spellsr{Yes (Will); see text}
 \begin{spelleffect}
   You tap energy from the Plane of Shadow to cast a quasi-real, illusory version of a non-restricted sorcerer or wizard evocation spell of 3rd level or lower. (For a spell with more than one level, use the best one applicable to you.)
@@ -4238,7 +4238,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelltgt{You}
 \spelleff{One shadow duplicate}
 \spelldur{\durmed}
-\spellsave{None/Will disbelief (if interacted with)}
+\spelldef{None/Will disbelief (if interacted with)}
 \spellsr{No}
 \begin{spelleffect}
   You step into the Plane of Shadow (as \spell{shadow walk}, a planar translocation effect), and at the same time, you create a quasi-real, illusory version of yourself (as \spell{project image}, an unreal shadow effect). The double appears superimposed over your body so that observers don't notice an image appearing and you disappearing. You can then control the image and cast spells through it even though you are on a different plane.
@@ -4253,7 +4253,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{\durshort}
-\spellsave{Will negates (harmless)}
+\spelldef{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
     The subject is protected by a shadowy umbra that connects directly to the Plane of Shadow. All attacks that would affect the creature, including magical and supernatural attacks, have a 50\% chance to be absorbed by the umbra. Attacks absorbed by the umbra have no effect on the subject. The umbra is selective, and does not inhibit beneficial effects.
@@ -4267,7 +4267,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spelltgts{You and one willing creature}
 \spelldur{\durlong (D)}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   This spell creates a connection between you and a willing subject. As you cast the spell, you decide which creature will be protected. When the protected creature would take damage to its hit points, it instead takes half of that damage (rounded down), and you lose hit points equal to the other half of the damage (rounded up).
@@ -4281,7 +4281,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsectioncomma{Share Pain}{Forced}
 \spellschool{Abjuration/Necromancy (Life, Shielding)}
 \spelllvl{Arcane 3, Divine 3}
-\spellsave{Will negates}
+\spelldef{Will negates}
 \begin{spelleffect}
   This spell functions like \spell{share pain}, except that it can affect unwilling creatures. 
 \end{spelleffect}
@@ -4312,7 +4312,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellarea{\areamed radius limit centered on you}
 \spelltgts{Five creatures within the area}
 \spelldur{\durshort (D)}
-\spellsave{See text}
+\spelldef{See text}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   A dim, blue glow surrounds the subjects, protecting them from attacks, granting them resistance to spells cast by chaotic creatures, and slowing chaotic creatures when they strike the subjects. This abjuration has four effects.
@@ -4329,7 +4329,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{Touch}
 \spelltgt{One touched nonmagical oak club or quarterstaff}
 \spelldur{\durshort}
-\spellsave{Will negates (object)}
+\spelldef{Will negates (object)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   Your own nonmagical club or quarterstaff becomes a weapon with a \plus2 enhancement bonus on attack and damage rolls. \bonusscalingdescription (A quarterstaff gains this enhancement for both ends of the weapon.) In addition, the weapon deals damage as if it were one size category larger (a Small club or quarterstaff so transmuted deals 1d6 points of damage, a Medium 1d8, and a Large 1d10).
@@ -4345,7 +4345,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{Touch}
 \spelltgt{Creature or object touched}
 \spelldur{Instantaneous}
-\spellsave{None/Fortitude negates}
+\spelldef{None/Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \spelldmg{2d6 electricity damage \add d6 per two caster levels above 2nd}
 \begin{spelleffect}
@@ -4362,7 +4362,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellcmp{Verbal only}
 \spellarea{\areamed cone-shaped burst}
 \spelldur{Instantaneous}
-\spellsave{Fortitude half/Fortitude negates}
+\spelldef{Fortitude half/Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \spelldmg{4d6 sonic damage \add d6 per four caster levels above 8th; see text}
 \begin{spelleffect}
@@ -4373,7 +4373,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellschool{Evocation (Energy) [Sonic]}
 \spelllvl{Arcane 7, Destruction 7, Strength 7}
 \spellarea{\arealarge cone-shaped burst}
-\spellsave{Fortitude partial or Reflex negates (object); See text}
+\spelldef{Fortitude partial or Reflex negates (object); See text}
 \spelldmg{7d6 sonic damage \add d6 per four caster levels above 14th; see text}
 \begin{spelleffect}
   This spell functions like \spell{shout}, except that it is larger and the deafness lasts for 5 rounds. Any exposed brittle or crystalline object or crystalline creature takes 7d8 points of sonic damage \add d8 per four caster levels above 14th.
@@ -4385,7 +4385,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{Touch}
 \spelltgt{One Small (or larger) nonmagical object; see text}
 \spelldur{24 hours; see text}
-\spellsave{Will negates (object)}
+\spelldef{Will negates (object)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   You are able to shrink one nonmagical item to 1/16 of its normal size in each dimension (to about 1/4,000 the original volume and mass). This change effectively reduces the object's size by four categories. Optionally, you can also change its now shrunken composition to a clothlike one. Objects changed by a \spell{shrink item} spell can be returned to normal composition and size merely by tossing them onto any solid surface or by a word of command from the original caster. The object must be resting on a stable surface to return to its original size; if the command word is spoken while the object is not stable (such as while it is in the air), the object returns to its original size as soon as it finds a resting point. Even a burning fire and its fuel can be shrunk by this spell. Restoring the shrunken object to its normal size and composition ends the spell.
@@ -4401,7 +4401,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellrng{\rngmed}
 \spellarea{\areamed radius mobile emanation centered on a creature, object, or point in space}
 \spelldur{\durshort (D)}
-\spellsave{Will negates; see text or none (object)}
+\spelldef{Will negates; see text or none (object)}
 \spellsr{Yes (Will); see text}
 \begin{spelleffect}
   Upon the casting of this spell, complete silence prevails in the affected area. No sound can be heard or made in the area, but sound passes through the area normally. Spellcasters are treated as being deafened for the purpose of casting spells with verbal components, and suffer a 20\% chance of spell failure. The spell can be cast on a point in space, but the effect is stationary unless cast on a mobile object. The spell can be centered on a creature, and the effect then radiates from the creature and moves as it moves. An unwilling creature who enters the spell's area can attempt a Will save to negate the spell's effect on them and can use spell resistance, if any. A creature who successfully resists the spell can hear and make sound normally, but still cannot be hear or be heard by other creatures in the area (unless they also resisted the spell). Items in a creature's possession or magic items that emit sound receive the benefits of saves and spell resistance, but unattended objects and points in space do not. 
@@ -4417,7 +4417,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellarea{\areamed radius limit}
 \spelleff{Visual figment within the area}
 \spelldur{\durshort}
-\spellsave{Will disbelief (if interacted with)}
+\spelldef{Will disbelief (if interacted with)}
 \spellsr{No}
 \begin{spelleffect}
   This spell creates the visual illusion of an object, creature, or force, as visualized by you. The illusion does not create sound, smell, texture, or temperature. If you concentrate as a standard action, you move the image within the limits of the size of the effect.
@@ -4430,7 +4430,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellrng{\rngext}
 \spellarea{\arealarge vertical line of lightning, 5 ft. wide, and \areamed radius limit}
 \spelldur{Instantaneous}
-\spellsave{Reflex half}
+\spelldef{Reflex half}
 \spellsr{Yes (Reflex)}
 \spelldmg{12d6 electricity damage \add d6 per two caster levels above 12th}
 \begin{spelleffect}
@@ -4447,7 +4447,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellrng{Touch}
 \spelltgt{Touched living creature}
 \spelldur{Instantaneous}
-\spellsave{Fortitude negates}
+\spelldef{Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spellhealthy}
   The target is staggered for 5 rounds. It can take a move action or a standard action each round, but not both.
@@ -4465,7 +4465,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellrng{\rngmed}
 \spelltgt{One living creature}
 \spelldur{\durshort}
-\spellsave{Will negates}
+\spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   The subject is fatigued and attempts to go to sleep as soon as possible, though it will not stop fighting to do so. Awakening a creature put to sleep by this spell is difficult, and requires a standard action.
@@ -4490,7 +4490,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{\durshort}
-\spellsave{Will negates}
+\spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
     A slowed creature can take only a single move action or standard action each turn, but not both. It cannot take full-round actions, but it may take swift actions. Additionally, it takes a \minus2 penalty to attack rolls, Strength and Dexterity-based checks, and armor class.
@@ -4511,7 +4511,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellrng{\rngclose}
 \spellarea{\arealarge radius}
 \spelldur{Instantaneous}
-\spellsave{None}
+\spelldef{None}
 \spellsr{No}
 \begin{spelleffect}
   When this spell is cast, all natural, undressed earth or stone in the spell's area is softened. Wet earth becomes thick mud, dry earth becomes loose sand or dirt, and stone becomes soft clay that is easily molded or chopped. You affect a 10-foot square area to a depth of 1 to 4 feet, depending on the toughness or resilience of the ground at that spot. Magical, enchanted, dressed, or worked stone cannot be affected. Earth or stone creatures are not affected.
@@ -4540,7 +4540,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spelllvl{Arcane 6}
 \spellarea{\areamed radius spread centered on you}
 \spelldur{\durshort}
-\spellsave{Will negates}
+\spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   This spell causes all creatures within the area to turn on each other rather than attack their foes. Each affected creature has a 50\% chance to attack the nearest target each round. (Roll to determine each creature's behavior every round at the beginning of its turn.) A creature that does not attack its nearest neighbor is free to act normally for that round. After each round that a subject is compelled to attack the nearest target, it may make a saving throw to throw off the effect.
@@ -4557,7 +4557,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellrng{\rngfar}
 \spelltgt{One living creature}
 \spelldur{Instantaneous}
-\spellsave{Will half}
+\spelldef{Will half}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
   The target takes 1 Charisma damage per three caster levels.
@@ -4576,7 +4576,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellrng{\rngclose}
 \spellarea{\areasmall radius spread}
 \spelldur{Instantaneous}
-\spellsave{Fortitude half/Fortitude negates}
+\spelldef{Fortitude half/Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \spelldmg{2d6 sonic damage \add d6 per four levels above 4th}
 \begin{spelleffect}
@@ -4589,7 +4589,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{\durshort}
-\spellsave{Will negates (harmless)}
+\spelldef{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   The subject gains spell resistance against all spells.
@@ -4645,7 +4645,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellrng{Touch}
 \spelltgt{Touched creature}
 \spelldur{\durmed}
-\spellsave{Fortitude negates (harmless)}
+\spelldef{Fortitude negates (harmless)}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
     The subject can climb and travel on vertical surfaces or even traverse ceilings as well as a spider does. The affected creature must have its hands free to climb in this manner. The subject gains a climb speed of 20 feet; furthermore, it need not make Climb checks to traverse a vertical or horizontal surface (even upside down). See \pcref{Climbing}, for more details.
@@ -4657,7 +4657,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellrng{\rngmed}
 \spellarea{\areasmall radius}
 \spelldur{\durshort (D)}
-\spellsave{None/Reflex negates}
+\spelldef{None/Reflex negates}
 \spellsr{Yes (Reflex)}
 \begin{spelleffect}
   Any ground-covering vegetation in the spell's area becomes very hard and sharply pointed. In areas of bare earth, roots and rootlets act in the same way. Typically, spike growth can be cast in any outdoor setting except open water, ice, heavy snow, sandy desert, or bare stone. Any foe moving on foot into or through the spell's area takes 1d4 points of physical piercing damage for each 5 feet of movement through the spiked area. Allies suffer no ill effects.
@@ -4680,7 +4680,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellrng{\rngmed}
 \spelleff{Magic weapon of force}
 \spelldur{\durshort (D)}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   The weapon created by this spell attacks once each round on your turn. This functions just as if you were attacking with the weapon, except that you use your casting ability in place of your Strength and you never get multiple attacks with the weapon.
@@ -4706,7 +4706,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellarea{\arealarge radius limit}
 \spelleff{Nine or more Large summoned creatures within the area}
 \spelldur{\durshort (D)}
-\spellsave{Reflex half; see text}
+\spelldef{Reflex half; see text}
 \spellsr{No}
 \spelldmg{9d6 bludgeoning damage \add d6 per four levels above 18th}
 \begin{spelleffect}
@@ -4721,7 +4721,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellsection{Stinking Cloud}
 \spellschool{Conjuration (Creation)}
 \spelllvl{Arcane 5}
-\spellsave{None/Fortitude negates}
+\spelldef{None/Fortitude negates}
 \spellsr{None/Yes (Fortitude)}
 \begin{spelleffect}
   This spell functions like \spell{fog cloud}, except that creatures within the cloud are sickened, making them vulnerable. A successful Fortitude save negates the sickening. The condition lasts as long as the creature remains in the cloud and for 5 rounds after it leaves. Any creature that succeeds on its save but remains in the cloud must continue to save each round on your turn.
@@ -4737,7 +4737,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellrng{Touch}
 \spelltgt{Touched creature}
 \spelldur{\durshort}
-\spellsave{Fortitude negates (harmless)}
+\spelldef{Fortitude negates (harmless)}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
     The subject gains a \plus3 enhancement bonus to its armor modifier. This bonus increases to \plus4 at 14th level, and to \plus5 at 20th level. In addition, it gains physical damage reduction 8/adamantine. This damage reduction increases by 1 per two levels above 8th.
@@ -4754,7 +4754,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellarea{360 ft. radius cylinder, 200 ft. high}
 \spelleff{Supernatural weather in the area}
 \spelldur{Concentration (maximum 10 rounds)}
-\spellsave{See text}
+\spelldef{See text}
 \spellsr{Yes (varies)}
 \spelldmg{Varies}
 \begin{spelleffect}
@@ -4773,7 +4773,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellrng{Personal}
 \spelltgt{You}
 \spelldur{\durshort (D)}
-\spellsave{None/Fortitude half}
+\spelldef{None/Fortitude half}
 \spellsr{None/Yes (Fortitude)} 
 \spelldmg{7d6 bludgeoning damage \add d6 per four levels above 14th}
 \begin{spelleffect}
@@ -4790,7 +4790,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{Instantaneous/5 rounds}
-\spellsave{None/Fortitude negates}
+\spelldef{None/Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \spelldmg{7d10 physical damage \add d10 per four caster levels above 14th}
 \begin{spelleffect}
@@ -4807,7 +4807,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellrng{\rngclose}
 \spelltgt{One living creature}
 \spelldur{\durext or until completed}
-\spellsave{Will negates}
+\spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   You influence the actions of the target creature by suggesting a course of activity (limited to a sentence or two). The suggestion must be worded in such a manner as to make the activity sound reasonable. Asking the creature to do some obviously harmful act automatically negates the effect of the spell. Additionally, any obvious threat, such as someone drawing a weapon, casting a spell, or aiming a ranged weapon at the fascinated creature, grants the creature a new saving throw with a \plus5 bonus.
@@ -4834,7 +4834,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellrng{\rngclose}
 \spelleff{One summoned creature}
 \spelldur{\durshort (D)}
-\spellsave{None}
+\spelldef{None}
 \spellsr{No}
 \begin{spelleffect}
   This spell summons an extraplanar creature (typically an outsider, elemental, or magical beast native to another plane). It appears where you designate and acts on your next turn. You must spend a swift action each round to control the creature summoned by this spell. If you do, it attacks your opponents to the best of its ability. You can direct the creature not to attack, to attack particular enemies, or to perform other actions if you can communicate with it. If you do not actively control the creature summoned by this spell, it acts according to its nature.
@@ -4977,7 +4977,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellrng{\rngclose}
 \spelleff{One summoned creature}
 \spelldur{\durshort (D)}
-\spellsave{None}
+\spelldef{None}
 \spellsr{No}
 \begin{spelleffect}
   This spell summons a natural creature. It appears where you designate and acts on your next turn. You must spend a swift action each round to control the creature summoned by this spell. If you do, it attacks your opponents to the best of its ability. You can direct the creature not to attack, to attack particular enemies, or to perform other actions if you can communicate with it. If you do not actively control the creature summoned by this spell, it acts according to its nature.
@@ -5110,7 +5110,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spelllvl{Nature 5}
 \spellarea{\arealarge line}
 \spelldur{Instantaneous/5 rounds}
-\spellsave{Reflex half/Reflex negates}
+\spelldef{Reflex half/Reflex negates}
 \spellsr{Yes (Reflex)}
 \spelldmg{5d6 solar damage \add d6 per four caster levels above 10th; see text}
 \begin{spelleffect}
@@ -5143,7 +5143,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellrng{\rngmed}
 \spelltgtortgts{See text}
 \spelldur{Concentration, up to \durmed/Instantaneous; see text}
-\spellsave{Will negates (object)/None; see text}
+\spelldef{Will negates (object)/None; see text}
 \spellsr{Yes (Will)/None; see text}
 \begin{spelleffect}
   Depending on the version selected, the spell can provide a gentle, sustained force, perform a variety of maneuvers, or exert a single short, violent thrust.
@@ -5160,7 +5160,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellrng{\rngmed}
 \spelltgt{One object or creature at a time}
 \spelldur{Concentration, up to 5 minutes}
-\spellsave{Will negates (object); see text}
+\spelldef{Will negates (object); see text}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   You may manipulate objects or creatures at a distance as if you were holding the object in your hands. When doing so, your effective Strength is equal to half your casting attribute, and your effective Dexterity is equal to half your Intelligence. You can move objects at a speed of up to 20 feet per round in any direction.
@@ -5177,7 +5177,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{Concentration, up to \durmed}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   Once per round, you can telekinetically attack a foe of your choice. You can perform a bull rush, a disarm, a dirty trick, a grapple (including a pin, if you have already grappled a foe), or a trip. Resolve these attempts as normal, except that they don't provoke attacks of opportunity, you use your caster level in place of your base attack bonus, and you use your casting attribute in place of your Strength. In addition, you get a \plus2 enhancement bonus to maneuvers with this spell. \bonusscalingdescription
@@ -5189,7 +5189,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellrng{\rngmed}
 \spelltgtortgts{Five objects or creatures in a \areamed radius \add one per four caster levels above 8th}
 \spelldur{Instantaneous}
-\spellsave{Will negates (object); see text}
+\spelldef{Will negates (object); see text}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   You can throw the affected objects or creatures anywhere within the spell's range. All subjects of this spell must be thrown to the same place. You can hurl up to a total weight of 25 pounds per caster level.
@@ -5216,7 +5216,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellrng{Touch}
 \spelltgt{Touched creature}
 \spelldur{\durshort/Permanent}
-\spellsave{None/Will negates}
+\spelldef{None/Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   If you succeed on a melee touch attack, the subject is slowed for a \durshort duration.
@@ -5235,7 +5235,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{\durshort}
-\spellsave{None}
+\spelldef{None}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
   The subject is shaken, causing it to be vulnerable.
@@ -5267,7 +5267,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellrng{\rngtouch}
 \spelltgt{Touched creature}
 \spelldur{\durshort}
-\spellsave{Will negates (harmless)}
+\spelldef{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   This spell grants the subject the mental power of a totem animal. It has three forms, each of which grants a \plus2 enhancement bonus to a mental attribute.
@@ -5299,7 +5299,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellrng{\rngtouch}
 \spelltgt{One creature}
 \spelldur{\durshort}
-\spellsave{Fortitude negates (harmless)}
+\spelldef{Fortitude negates (harmless)}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
   This spell grants the subject the physical power of an animal. It has three forms, each of which grants a \plus2 enhancement bonus to a physical attribute.
@@ -5332,7 +5332,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellrng{Touched}
 \spelltgt{Touched creature}
 \spelldur{\durshort}
-\spellsave{Will half}
+\spelldef{Will half}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
    Your successful melee touch attack applies a \minus4 penalty to the target's Intelligence, Wisdom, and Charisma scores. This penalty can't reduce any of these scores below \minus9.
@@ -5347,7 +5347,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellrng{\rngmed}
 \spelltgt{One creature, or one nonmagical object of up to 1000 cu. ft.}
 \spelldur{See text}
-\spellsave{Fortitude negates (object); see text}
+\spelldef{Fortitude negates (object); see text}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
   This spell can be used to duplicate the effects of \spell{fabricate}, \spell{major creation}, \spell{passwall}, \spell{shape stone}, \spell{transmute flesh and stone}, or \spell{wall of stone}. The object or creature to be transformed must meet any requirements of the spell to be duplicated, except that it must be within \rngmed range.
@@ -5359,7 +5359,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellrng{\rngmed}
 \spelltgt{One creature or a cylinder of stone from 1 ft. to 3 ft. in diameter and up to 10 ft. long}
 \spelldur{\durshort/Instantaneous}
-\spellsave{Fortitude negates (object); see text}
+\spelldef{Fortitude negates (object); see text}
 \spellsr{Yes (Fortitude)}
 \spelldmg{3d8 damage per round; see text}
 \begin{spelleffect}
@@ -5405,7 +5405,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spellrng{Touch}
 \spelltgt{Touched creature}
 \spelldur{\durshort}
-\spellsave{Will negates (harmless)}
+\spelldef{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   You confer on the subject the ability to see all things as they actually are. The subject sees through normal and magical darkness, notices secret doors hidden by magic, sees the truth behind visual figments and glamers, and sees the true form of polymorphed, changed, or transmuted things. Further, the subject can focus its vision to see into the Ethereal Plane (but not into extradimensional spaces). The effect extends out to \rngmed range.
@@ -5440,7 +5440,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spellarea{\areamed radius limit centered on you}
 \spelltgts{Five creatures within the area}
 \spelldur{\durshort (D)}
-\spellsave{See text}
+\spelldef{See text}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   A malevolent darkness surrounds the subjects, protecting them from attacks, granting them resistance to spells cast by good creatures, and weakening good creatures when they strike the subjects. This abjuration has four effects.
@@ -5457,7 +5457,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{Instantaneous/5 rounds}
-\spellsave{Will half/Will negates}
+\spelldef{Will half/Will negates}
 \spellsr{Yes (Will)}
 \spelldmg{8d6 divine damage \add d6 per two caster levels above 8th}
 \begin{spelleffect}
@@ -5473,7 +5473,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spellrng{Touch}
 \spelltgt{One creature}
 \spelldur{\durlong (D)}
-\spellsave{Will negates (harmless)}
+\spelldef{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   The subject gains the ability to ``see'' any living creatures and their equipment within 30 feet perfectly, regardless of lighting conditions, physical barriers, invisibility, or any other means of concealment.
@@ -5501,7 +5501,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spellrng{Touch}
 \spelltgt{Touched living creature}
 \spelldur{Instantaneous/\durlong}
-\spellsave{Fortitude half}
+\spelldef{Fortitude half}
 \spellsr{Yes (Fortitude)}
 \spelldmg{8d8 life damage \add d8 per two caster levels above 8th}
 \begin{spelleffect}
@@ -5516,7 +5516,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spellrng{\rngclose}
 \spelltgt{One humanoid creature}
 \spelldur{\durshort}
-\spellsave{Will negates}
+\spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   The subject's arms and torso are masked in illusion, causing onlookers to perceive whatever movements you project instead of the creature's true actions. For example, the subject might draw a dagger and attack another creature, but anyone watching would only see the subject folding its arms, even as the dagger strikes true.
@@ -5532,7 +5532,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spellrng{\rngclose}
 \spelleff{Intelligible sound, usually speech}
 \spelldur{\durshort (D)}
-\spellsave{Will disbelief (if interacted with)}
+\spelldef{Will disbelief (if interacted with)}
 \spellsr{No}
 \begin{spelleffect}
   You can make your voice (or any sound that you can normally make vocally) seem to issue from someplace else. You can speak in any language you know. With respect to such voices and sounds, anyone who hears the sound and rolls a successful save recognizes it as illusory (but still hears it).
@@ -5546,7 +5546,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spellrng{Touch}
 \spelltgt{Touched nonmagical armor or shield}
 \spelldur{\durext (D)}
-\spellsave{Will negates (harmless, object)}
+\spelldef{Will negates (harmless, object)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   The armor or shield's chance of arcane spell failure decreases by 10\% as long as you are wearing or using it. If any other creature wears the armor, it receives no benefit from this spell.
@@ -5564,7 +5564,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spellcmp{Verbal only}
 \spelltgts{Up to five living creatures in a \arealarge radius spread centered on you}
 \spelldur{Concentration, up to 2 rounds; see text}
-\spellsave{Fortitude negates}
+\spelldef{Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spellhealthy}
   The subjects are sickened, making them vulnerable for 5 rounds. If you concentrate for a second round, subjects still in the area are nauseated for 1 round.
@@ -5583,7 +5583,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spellrng{\rngmed}
 \spelleff{Opaque sheet of flame up to 100 ft. long or a ring of fire with a radius of up to 20 ft.; either form 20 ft. high}
 \spelldur{\durshort}
-\spellsave{Reflex half or Reflex negates; see text}
+\spelldef{Reflex half or Reflex negates; see text}
 \spellsr{Yes (Reflex)}
 \spelldmg{4d6 \add d6 per four caster levels above 8th; see text}
 \begin{spelleffect}
@@ -5600,7 +5600,7 @@ This spell can be made permanent with a \spell{permanency} ritual. A permanent \
 \spellrng{\rngmed}
 \spelleff{Wall whose area is up to ten 10 ft. squares}
 \spelldur{\durshort (D)}
-\spellsave{None}
+\spelldef{None}
 \spellsr{No}
 \begin{spelleffect}
   This spell creates an invisible wall made of force. Nothing can pass through or alter the wall. It forms a flat, vertical plane, and it must be continuous and unbroken when formed. If the surface is broken by any object or creature, the spell fails.
@@ -5616,7 +5616,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spelleff{Stone wall whose area is up to ten 5 ft. squares (S)}
 \spelldur{Instantaneous}
-\spellsave{See text}
+\spelldef{See text}
 \spellsr{No}
 \begin{spelleffect}
   This spell forms a wall of stone atop existing rock surfaces. A wall of stone is 4 inches thick and composed of up to ten 5-foot squares. You can double the wall's area by halving its thickness. The wall cannot be conjured so that it occupies the same space as a creature or another object.
@@ -5631,7 +5631,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spelleff{Wall of thorny brush, up to ten 10 ft. cubes (S)}
 \spelldur{\durlong (D)}
-\spellsave{None}
+\spelldef{None}
 \spellsr{No}
 \begin{spelleffect}
   This spell creates a barrier of very tough, pliable, tangled brush bearing needle-sharp thorns as long as a human's finger. Any creature forced into or attempting to move through a wall of thorns takes slashing damage per square of movement equal to 25 minus the creature's flat-footed AC. (Creatures with a flat-footed Armor Class of 25 or higher, take no damage from contact with the wall.)
@@ -5652,7 +5652,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellarea{\areamed radius limit}
 \spelltgt{1 Small nonmagical wooden object/level within the area}
 \spelldur{Instantaneous}
-\spellsave{Will negates (object)}
+\spelldef{Will negates (object)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   You cause wood to bend and warp, permanently destroying its straightness, form, and strength. A warped door springs open (or becomes stuck, requiring a Strength check to open, at your option). A boat or ship springs a leak. Warped ranged weapons are useless. A warped melee weapon imposes a \minus4 penalty on attack rolls.
@@ -5669,7 +5669,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{Touch}
 \spelltgts{Five touched creatures}
 \spelldur{\durlong (D)}
-\spellsave{Fortitude negates (harmless)}
+\spelldef{Fortitude negates (harmless)}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
   The transmuted creatures can tread on any liquid as if it were firm ground. Mud, oil, snow, quicksand, running water, ice, and even lava can be traversed easily, since the subjects' feet hover an inch or two above the surface. (Creatures crossing molten lava still take damage from the heat because they are near it.) The subjects can move across the surface as if it were normal ground.
@@ -5681,7 +5681,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelllvl{Arcane 8, Death 8, War 8}
 \spellarea{\arealarge cone-shaped burst}
 \spelldur{\durshort}
-\spellsave{Fortitude partial}
+\spelldef{Fortitude partial}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
   Living creatures in the area are exhausted. A successful Fortitude save causes a creature to be fatigued instead. This spell has no effect on a creature that is already exhausted.
@@ -5695,7 +5695,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelllvl{Arcane 5, Death 5, War 5}
 \spellarea{\arealarge cone-shaped burst}
 \spelldur{\durshort}
-\spellsave{No}
+\spelldef{No}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
   Living creatures in the area are fatigued. This spell has no effect on a creature that is already fatigued.
@@ -5712,7 +5712,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellarea{\areamed radius spread}
 \spelleff{Webs in the area}
 \spelldur{\durshort (D)}
-\spellsave{Reflex negates; see text}
+\spelldef{Reflex negates; see text}
 \spellsr{No}
 \begin{spelleffect}
   Each creature in the spell's area are entangled unless it makes a successful Reflex save. This save must be repeated each round that the creature moves or fights within the area. An entangled creature can spend a standard action to make a grapple attack or Escape Artist attempt against the spell's save DC to break the webs holding it, preventing it from being entangled. A creature entangled by the spell remains entangled until it breaks the webs holding it or escapes the spell's area.
@@ -5741,7 +5741,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spelltgt{One creature or object}
 \spelldur{Instantaneous}
-\spellsave{Fortitude half}
+\spelldef{Fortitude half}
 \spellsr{Yes (Fortitude)}
 \spelldmg{4d6 bludgeoning damage \add d6 per two levels above 4th}
 \begin{spelleffect}
@@ -5766,7 +5766,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{See text}
 \spelltgteffarea{See text}
 \spelldur{See text}
-\spellsave{See text}
+\spelldef{See text}
 \spellsr{Yes (varies)}
 \begin{spelleffect}
   This spell is the mightiest spell a wizard or sorcerer can cast. By simply speaking your desires aloud, you can alter reality to better suit you.
@@ -5799,7 +5799,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellcmp{Verbal only}
 \spellarea{\arealarge radius spread centered on you}
 \spelldur{Instantaneous}
-\spellsave{None or Will negates; see text}
+\spelldef{None or Will negates; see text}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
   Each nonchaotic creature in the area is bewildered, making it vulnerable for 5 rounds.
@@ -5842,7 +5842,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{Touch}
 \spelltgt{Touched melee weapon}
 \spelldur{\durshort}
-\spellsave{Will negates (harmless)}
+\spelldef{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   This spell functions as \spell{magic weapon}, except that the affected weapon also gains an additional five feet of reach, extending the wielder's threatened area. Attacks outside the weapon's normal range deal half damage, but are otherwise treated exactly as if the wielder was attacking with the weapon normally.
