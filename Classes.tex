@@ -961,16 +961,16 @@ If the paladin smites a creature that is not evil, the smite attack deals no dam
 
 \cf{Pal}{Improved Smite (Su)} At 2nd level, and every three levels thereafter, the paladin can select one improved smiting ability. Each improved smiting ability adds an effect to the paladin's smite ability. Whenever the paladin smites, she chooses one improved smiting ability she has and adds its effect to her smite. The special attack bonus for a paladin's improved smiting abilities is equal to the paladin's level her Charisma. She may select one of the following improved smiting effects.
 \subcf{Blinding} The paladin's smite manifests as a bright light. She makes a Will attack against the struck creature to blind it for one round per four paladin levels (minimum 1). Creatures vulnerable to light (such as vampires) take extra damage equal to twice the paladin's level.
-\subcf{Resounding} The paladin's smite knocks his foes off their feet. She makes a Reflex attack to A creature struck by the smite must make a Reflex save to avoid being pushed back five feet per four paladin levels and being knocked prone.
-\subcf{Staggering} The paladin's smite hits with incredible force. A creature struck by the smite must make a Fortitude save to avoid being staggered for one round per four paladin levels (minimum 1).
+\subcf{Resounding} The paladin's smite knocks his foes off their feet. She makes a Reflex attack against the struck creature to push it back by five feet per four paladin levels and knock it prone.
+\subcf{Staggering} The paladin's smite hits with incredible force. She makes a Fortitude attack against the struck creature to stagger for one round per four paladin levels (minimum 1).
 
-\cf{Pal}{Lay On Hands (Su)} Beginning at 2nd level, a paladin can heal wounds (her own or those of others) with a touch. Each use heals 1d8 hit points per paladin level as a standard action. The paladin can lay on hands a number of times per day equal to 1 \add half her Charisma (minimum 1). Against undead creatures, this ability instead deals positive energy damage. A touch attack is required to hit unwilling targets, and a successful Will save halves the damage or healing received.
+\cf{Pal}{Lay On Hands (Su)} Beginning at 2nd level, a paladin can heal wounds (her own or those of others) with divine power. As a standard action, she can touch a creature to heal damage. She heals 1d8 hit points per paladin level. The paladin can lay on hands a number of times per day equal to 1 \add half her Charisma (minimum 1). Against undead creatures, this ability instead deals positive energy damage. A touch attack and Fortitude attack is required against unwilling targets. A failed Fortitude attack deals half damage.
 
  \cf{Pal}{Aura of Courage (Su)} Beginning at 3rd level, a paladin is immune to fear (magical or otherwise). Each ally within 10 feet of her gains a \plus4 enhancement bonus to special defenses against fear effects. This ability functions while the paladin is conscious, but not if she is unconscious or dead.
 
 \cf{Pal}{Divine Health (Ex)} At 3rd level, a paladin gains immunity to all diseases, including supernatural and magical diseases.
 
-\cf{Pal}{Divine Grace (Su)} At 4th level, whenever a paladin makes a successful save against an attack that would normally have a partial effect or deal half damage on a successful save, she instead ignores that aspect of the attack.
+\cf{Pal}{Divine Grace (Su)} At 4th level, if the paladin resists a Fortitude, Reflex, or Will attack that normally deals half damage when resisted, she instead takes no damage.
 
 \cf{Pal}{Spells} Beginning at 4th level, a paladin gains the ability to cast a small number of divine spells, which are drawn from the paladin spell list.
 
@@ -1030,9 +1030,9 @@ A paladin's selection of spells is limited. A paladin begins play knowing no spe
 \cf{Pal}{Smite Chaos (Su)} At 7th level, the paladin gains the ability to smite chaotic creatures as well as evil creatures with her smite ability, but she must choose which to smite before making the attack. If the paladin attempts to smite a chaotic creature, and that creature is not chaotic, the smite attack deals no damage at all (not even normal weapon damage), but the use of the ability is still spent.
 
 \cfnl{Improved Smiting (Su)} At 8th level, the paladin gains an additional improved smiting ability, and adds the following improved smiting abilities to the list of those that can be selected.
-\subcf{Dazing} The paladin's smite shatters her foe's ability to concentrate. A creature struck by the smite must make a Fortitude save to avoid being dazed for one round.
-\subcf{Impeding} The paladin's smite traps her foe in place, unable to escape her wrath. A creature struck by the smite must make a Reflex save to avoid having all its movement speeds reduced to 5 feet for one round.
-\subcf{Coercing} The paladin's smite forces her foe to join the cause of righteousness, if only for a moment. A creature struck by the smite must make a Will save or else be affected by a \spell{suggestion}, as the spell, of the paladin's choice. The effect lasts for one round.
+\subcf{Dazing} The paladin's smite shatters her foe's ability to concentrate. She makes a Fortitude attack against the struck creature to daze it for 1 round.
+\subcf{Impeding} The paladin's smite traps her foe in place, unable to escape her wrath. She makes a Reflex attack against the struck creature to reduce all its movement speeds to 5 feet for one round.
+\subcf{Coercing} The paladin's smite forces her foe to join the cause of righteousness, if only for a moment. She makes a Will attack against the struck creature to compel it to obey a \spell{suggestion}, as the spell, of the paladin's choice. The effect lasts for one round.
 
 \cf{Pal}{Aura of Determination (Su)} At 9th level, the paladin becomes immune to compulsion effects. Each ally within 10 feet of her gains a \plus4 enhancement bonus to special defenses against compulsion effects.
 
@@ -1140,7 +1140,7 @@ All of the following are class features of the ranger.
 
 \subcf{Combat Style} The ranger is skilled with the traditional ranger combat styles. He gains the Precise Shot and Two-Weapon Fighting feats if he meets the prerequisites. However, the benefits of this lore apply only when the ranger uses light or no armor.
 
-\subcf{Evasion} If the ranger makes a successful Reflex saving throw against an attack that normally deals half damage on a successful save, he instead takes no damage. A helpless ranger does not gain the benefit of evasion.
+\subcf{Evasion} If the ranger resists a Reflex attack that normally deals half damage when resisted, he instead takes no damage. Evasion can be used only if a ranger is wearing light armor or no armor. A helpless ranger does not gain the benefit of evasion.
 
 \subcf{Fast Movement} The ranger increases his movement speed by 10 feet when unencumbered.
 
@@ -1193,7 +1193,7 @@ The ranger must have the greater combat style lore to choose this lore. The bene
 
 \subcf{Hail of Arrows} A number of times per day equal to 1 \add half the ranger's Constitution, he may take a full-round action to fire a single projectile at every enemy within a \areamed radius. All enemies must be within one range increment of the ranger. This lore can be used with any projectile weapon that the ranger can reload as a free action.
 
-\subcf{Improved Evasion} The ranger's ability to avoid damage improves. He still takes no damage on a successful Reflex saving throw against attacks, but henceforth he takes only half damage on a failed save. A helpless ranger does not gain the benefit of improved evasion. He must have the evasion lore to choose this lore. 
+\subcf{Improved Evasion} The ranger's ability to avoid damage improves. If he is affected by Reflex attack that would deal half damage when resisted, he takes only half damage from the attack, even if the attack succeeds. Like evasion, improved evasion can be used only if a ranger is wearing light armor or no armor. A helpless ranger does not gain the benefit of improved evasion.
 
 \subcf{Storm of Blades} A number of times per day equal to 1 \add half the ranger's Constitution, he may take a standard action to make a single melee attack against every enemy he threatens.
 
@@ -1298,7 +1298,7 @@ At 8th level, and every four levels thereafter, the rogue gains an additional co
 
 \subcf{Distracting Attack} A creature damaged by the rogue's sneak attack takes a penalty on its Concentration checks equal to number of sneak attack dice the rogue would roll. This penalty lasts for 5 rounds.
 
-\subcf{Evasion} If the rogue makes a successful Reflex saving throw against an attack that normally deals half damage on a successful save, she instead takes no damage. A helpless ranger does not gain the benefit of evasion.
+\subcf{Evasion} If the rogue resists a Reflex attack that normally deals half damage when resisted, she instead takes no damage. Evasion can be used only if a rogue is wearing light armor or no armor. A helpless rogue does not gain the benefit of evasion.
 
 \subcf{Distant Precision} The rogue can make sneak attacks from up to 100 feet away.
 
@@ -1310,7 +1310,7 @@ At 8th level, and every four levels thereafter, the rogue gains an additional co
 
 \subcf{8th -- Bewildering Ambush*} A creature damaged by this sneak attack is bewildered for 5 rounds, making it vulnerable. A vulnerable creature takes a \minus2 penalty to attacks, defenses, and checks. This is an ambush attack, and only functions once per creature.
 
-\subcf{8th -- Defensive Roll} When the rogue would take physical damage that reduces her to 0 hit points, she can attempt to roll with the blow to reduce the damage. As an immediate action, she can make a Reflex save with a DC equal to the damage dealt. Success means she takes half damage, and the damage is nonlethal. Failure means she takes full damage. She must be aware of the attack to use this ability. The evasion and improved evasion abilities do not help in any way. This ability can be used number of times per day equal to 1 \add half the rogue's Constitution (minimum 1).
+\subcf{8th -- Defensive Roll} When the rogue would take physical damage that reduces her to 0 hit points, she can attempt to roll with the blow to reduce the damage as an immediate action. If the damage dealt is less than her Reflex defense, she takes half damage, and the damage is nonlethal. She must be aware of the attack to use this ability. This ability can be used number of times per day equal to 1 \add half the rogue's Constitution (minimum 1).
 
 \subcf{8th -- Hamstring*} A creature damaged by this sneak attack has its land speed halved for 5 rounds. Despite the name, this can be used on creatures who do not have hamstrings. This is an ambush attack, and only works once per creature.
 
