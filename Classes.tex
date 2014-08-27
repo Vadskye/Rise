@@ -600,7 +600,7 @@ This ability doesn't make the animals any more friendly or cooperative than norm
 \subcf{7th -- Slither} The druid gains a climb speed equal to half her base land speed. She does not need to use her hands to climb in this way. See \pcref{Climbing}, for more details.
 \subcf{9th -- Climb} The druid gains a climb speed equal to her base land speed. See \pcref{Climbing}, for more details.
 \subcf{9th -- Limited Flight} The druid grows wings, granting her a fly speed equal to her land speed with average maneuverability. See \pcref{Flying}, for more details. She can only fly for a number of rounds equal to 3 \add half her Constitution. After that limit is reached, she must rest for 5 minutes.
-\subcf{9th -- Venom} When the druid embodies this apsect, she transforms one of her natural weapons to become poisonous. If she hits with that natural attack, she may inject poison as an immediate action. Every round, the creature must make a Fortitude save against a DC equal to 10 \add the druid's level \add her Constitution. If the creature fails, it takes 2 points of Constitution damage. The poison ends after the creature makes two successful Fortitude saves against it.
+\subcf{9th -- Venom} When the druid embodies this apsect, she transforms one of her natural weapons to become poisonous. If she hits with that natural attack, she may inject poison as an immediate action. When she injects poison, and at the start of each of the druid's turns, she makes a Fortitude attack against the creature. Her attack bonus is equal to her druid level \add her Constitution. If the attack succeeds, the creature takes 2 points of Constitution damage. The poison lasts until the druid fails the Fortitude attack twice.
 \subcf{9th -- Wolfpack} Overwhelmed foes the druid threatens increase their overwhelm penalties by 1.
 
 \cf{Drd}{Venom Immunity (Ex)} At 4th level, a druid gains immunity to all poisons.
@@ -611,7 +611,7 @@ For example, a druid casting \spell{gust of wind} could create a line of wind or
 
 \cd{Drd}{Wild Speech (Plants) (Ex)} At 6th level, a druid can also converse with plants and plant creatures using her wild speech ability. A regular plant's sense of its surroundings is limited, so it won't be able to give (or recognize) detailed descriptions of creatures or answer questions about events outside its immediate vicinity.
 
-\cf{Drd}{Improved Wild Speech (Su)} At 8th level, anything the druid speaks with with using her wild speech ability must make a Will save to avoid being charmed, as the \spell{charm person} spell, by the druid. The effect lasts for the duration of the conversation, and for 1 hour thereafter. This ability is not mind-affecting, and can affect creatures or even objects of any kind that the druid can converse with. Objects are always considered to fail their Will save.  The druid can choose not to exert this influence.
+\cf{Drd}{Improved Wild Speech (Su)} At 8th level, the druid may make a Will attack to charm any creature she speaks with using her wild speech ability. Her attack bonus is equal to her druid level \add her Charisma. The effect lasts for the duration of the conversation, and for 1 hour thereafter. This ability is not mind-affecting, and can affect creatures or even objects of any kind that the druid can converse with. The attack automatically succeeds against objects.
 
 \cf{Drd}{Improved Natural Casting (Ex)} At 10th level, a druid expands the range of her natural casting ability. She can cause area spells to originate from up to \rngclose range away from her.
 
@@ -629,12 +629,12 @@ For example, a druid casting \spell{gust of wind} could create a line of wind or
 \subcf{Heart of Oak} The druid gains the effects of the \spell{stoneskin} spell, with a caster level equal to her druid level \add her Constitution, except that the damage reduction is overcome by fire instead of adamantine weapons.
 \subcf{Heart of Water} The druid gains the effects of the \spell{freedom} spell.
 \subcf{15th -- Air Mantle}  The druid is surrounded by a mantle of air. Thrown and projectile weapons have a 50\% chance to miss her while this effect is active. Unusually large weapons, such as a giant's boulders, may suffer a decreased miss chance as appropriate to their size.
-\subcf{15th -- Aqueous Step}  Wherever the druid moves, she leaves a path of animated water that can grab creatures and cause them to trip. A creature crossing the path must make a Reflex save with a DC equal to 10 \add the druid's level \add the druid's Constitution or fall prone and be unable to complete the movement.
-\subcf{15th -- Flaming Step} Wherever the druid moves, she leaves a path of burning flame behind her that lasts for 1 round. A creature who crosses the path takes 1d6 points of fire damage per two druid levels. It can make a Reflex save to halve the damage, with a DC equal to 10 \add the druid's level \add the druid's Constitution.
-\subcf{15th -- Lifegiving Step} Wherever the druid moves, she leaves a path of small, living plants that entangle foes for 1 round. An enemy crossing the path must make a Reflex save with a DC equal to 10 \add the druid's level \add the druid's Constitution or be entangled by the plants and unable to complete the movement. The plants appear on any surface, and will continue to grow if they can survive, though they may die quickly if they appear on inhospitable terrain.
+\subcf{15th -- Aqueous Step}  Wherever the druid moves, she leaves a path of animated water that can grab creatures. Whenever a creature crosses the path, the druid makes a Reflex attack to trip the creature, causing it to fall prone and waste the rest of its movement. Her attack bonus is equal to her druid level \add her Constitution.
+\subcf{15th -- Flaming Step} Wherever the druid moves, she leaves a path of burning flame behind her that lasts for 1 round. Whenever a creature crosses the path, the druid makes a Reflex attack to deal damage to the creature. The attack deals 1d6 points of fire damage per two druid levels. Her attack bonus is equal to her druid level \add her Constitution. A failed attack deals half damage.
+\subcf{15th -- Lifegiving Step} Wherever the druid moves, she leaves a path of small, living plants that entangle foes for 1 round.  Whenever a creature crosses the path, the druid makes a Reflex attack to entangle the creature, causing it to waste the rest of its movement. Her attack bonus is equal to her druid level \add her Constitution. The plants appear on any surface, and will continue to grow if they can survive, though they may die quickly if they appear on inhospitable terrain.
 \subcf{17th -- Flight} The druid gains a fly speed equal to her land speed, with good maneuverability. She may remain flying for up to 5 rounds at a time. After that, she must land for 1 round before she can fly again. See \pcref{Flying}, for more details.
 \subcf{17th -- Flaming Soul} The druid gains the fire subtype, making her immune to fire but giving her a 50\% vulnerability to cold damage. In addition, whenever she deals fire damage to a creature, the creature is ignited for 5 rounds.
-\par An ignited creature is vulnerable, causing it to take a \minus2 penalty to attacks, defenses, and checks. In addition, it takes d6 damage per round from the fire. If the creature takes a move action, it can attempt a DC 15 Reflex save to put out the flames. This action provokes attacks of opportunity. Dropping prone as part of the action gives a \plus4 bonus on this save.
+\par An ignited creature is vulnerable, causing it to take a \minus2 penalty to attacks, defenses, and checks. In addition, it takes d6 damage per round from the fire. If the creature takes a move action, it can attempt a DC 10 Dexterity check to put out the flames. This action provokes attacks of opportunity. Dropping prone as part of the action gives a \plus5 bonus on this check.
 \subcf{17th -- Sunblessed Rejuvenation} The druid gains fast healing equal to her druid level as long as she remains in sunlight or touches a plant of her size or larger.
 \subcf{17th -- Sunscour} This aspect functions like the heart of the sun natural aspect, except that it also suppresses shadow effects and the visual components of illusions within the area of bright light. 
 \subcf{17th -- Water's Flow} As a swift action, the druid can transform herself into a rushing flow of water with a volume roughly equal to her normal volume for 1 round. In this form, she may move wherever water could go, but she cannot take other actions, such as jumping, attacking, or casting spells. Her speed is halved when moving uphill and doubled when moving downhill. She does not provoke attacks of opportunity for moving, and has physical damage reduction equal to her druid level. She may return to her normal form as a free action.
@@ -646,7 +646,7 @@ For example, a druid casting \spell{gust of wind} could create a line of wind or
 
 \cf{Drd}{Timeless Body (Ex)} After attaining 14th level, a druid no longer takes attribute penalties for aging and cannot be magically aged. Any penalties she may have already incurred, however, remain in place. Bonuses still accrue, and the druid still dies of old age when her time is up.
 
-\cf{Drd}{Commanding Wild Speech (Ex)} At 16th level, the druid can use her wild speech ability to control creatures' actions. If the druid converses with a creature using her wild speech ability, she may spend a standard action and an additional wild speech use to dominate one creature she is speaking with, as the \spell{dominate person} spell. A successful Will save against a DC of 10 \add druid level \add Charisma negates this effect. This ability is not mind-affecting, and can affect creatures of any kind that the druid can converse with.
+\cf{Drd}{Commanding Wild Speech (Ex)} At 16th level, the druid can use her wild speech ability to control creatures' actions. If the druid converses with a creature using her wild speech ability, she may spend a standard action and an additional wild speech use to make a Will attack against one creature she is speaking with. A successful attack means the creature is dominated, as the \spell{dominate person} spell. Her attack bonus is equal to her druid level \add her Charisma. This ability is not mind-affecting, and can affect creatures of any kind that the druid can converse with. The attack automatically succeeds against objects.
 
 \cf{Drd}{Totemic Aspect (Su)} At 18th level, the druid can choose any one wild aspect (but not natural aspect). She permanently gains the abilities of that aspect, as if she was constantly manifesting it. She may suppress or resume this effect as a swift action.
 
@@ -831,15 +831,15 @@ A monk's attacks may be with either fist interchangeably or even from elbows, kn
 
 \cf{Mnk}{Fast Movement (Ex)} At 2nd level, a monk increases her land speed by 10 feet while unencumbered.
 
-\cf{Mnk}{Ki Power (Su)} At 2nd level, the monk gains the ability to use channel her \ki energy to enhance her abilities temporarily. She may use this ability a number of times per day equal to half her monk level \add her Wisdom, but no more than once per round. If a \ki power allows a saving throw, the DC is equal to 10 \add the monk's level \add her Wisdom. She may choose one of the abilities listed below.
+\cf{Mnk}{Ki Power (Su)} At 2nd level, the monk gains the ability to use channel her \ki energy to enhance her abilities temporarily. She may use this ability a number of times per day equal to half her monk level \add her Wisdom, but no more than once per round. If a \ki power requires a special attack, the monk's attack bonus is equal to her monk level \add her Wisdom. She may choose one of the abilities listed below.
 
 \subcf{Flurry of Blows} When the monk makes a standard attack, she can make an additional attack at a \minus5 penalty.
 
-\subcf{Stunning Fist} As part of an unarmed attack, the monk can strike a weak point to interfere with her foe's \ki. If the attack deals damage, the creature must make a Fortitude save to avoid being staggered for 1 round. If the foe is bloodied, it is stunned for 1 round instead.
+\subcf{Stunning Fist} As part of an unarmed attack, the monk can strike a weak point to interfere with her foe's \ki. If the attack deals damage, the monk makes a Fortitude attack to stagger the struck creature for 1 round. If the creature is bloodied, it is stunned for 1 round instead.
 
 \subcf{Surpass Limits} As a swift action, the monk can surpass the physical limitations of her body. Until the start of her next turn, she adds her Wisdom to checks based on Strength and Dexterity. This does not affect checks based on multiple attributes, such as initiative checks.
 
-\cf{Mnk}{Evasion (Ex)} At 3rd level or higher, if a monk makes a successful Reflex saving throw against an attack that normally deals half damage on a successful save, she instead takes no damage. Evasion can be used only if a monk is wearing light armor or no armor. A helpless monk does not gain the benefit of evasion.
+\cf{Mnk}{Evasion (Ex)} At 3rd level or higher, if the monk resists a Reflex attack that normally deals half damage when resisted, she instead takes no damage. Evasion can be used only if a monk is wearing light armor or no armor. A helpless monk does not gain the benefit of evasion.
 
 \cf{Mnk}{Uncanny Dodge (Ex)} Starting at 3rd level, a monk can react to danger before her senses would normally allow her to do so. She may apply her Dexterity and dodge modifier to her physical defenses while flat-footed.
 
@@ -855,7 +855,7 @@ If a monk already has uncanny dodge from a different class, she stacks those lev
 
 \subcf{Wholeness of Body} As a standard action, the monk can correct the flow of energy within her body. She heals 1d6 points of damage per two monk levels.
 
-\cf{Mnk}{Still Mind (Ex)} A monk of 5th level or higher may add half her Wisdom to Will saves in place of half her Intelligence.
+\cf{Mnk}{Still Mind (Ex)} A monk of 5th level or higher may add half her Wisdom to her Will defense in place of half her Intelligence.
 
 \cf{Mnk}{Improved Uncanny Dodge (Ex)} At 6th level and higher, a monk can no longer be overwhelmed as easily; she can react to multiple opponents as easily as she can react to a single attacker. The monk is always treated as being threatened by two fewer creatures than she actually is for the purpose of determining overwhelm penalties.
 \par If a character already has uncanny dodge (see above) from a second class and gains improved uncanny dodge, the character stacks those levels to determine if she should gain greater uncanny dodge.
@@ -870,7 +870,7 @@ If a monk already has uncanny dodge from a different class, she stacks those lev
 
 \subcf{Slow Fall} As an immediate action, the monk can slow the rate at which she falls to 60 feet per round, which is too slow to hurt her if she hits the ground. She must be touching a solid object to use this ability. The effect lasts for 1 round.
 
-\cf{Mnk}{Improved Evasion (Ex)} At 9th level, a monk's evasion ability improves. She still takes no damage on a successful Reflex saving throw against attacks, but henceforth she takes only half damage on a failed save. A helpless monk does not gain the benefit of improved evasion.
+\cf{Mnk}{Improved Evasion (Ex)} At 9th level, a monk's evasion ability improves. If she is affected by Reflex attack that would deal half damage when resisted, she takes only half damage from the attack, even if the attack succeeds. Like evasion, improved evasion can be used only if a monk is wearing light armor or no armor. A helpless monk does not gain the benefit of improved evasion.
 
 \cf{Mnk}{Greater Uncanny Dodge (Ex)} At 10th level and higher, a monk can no longer be overwhelmed, regardless of the number of foes surrounding her.
 
@@ -888,7 +888,7 @@ If a monk already has uncanny dodge from a different class, she stacks those lev
 
 \subcf{Empty Step} As a swift action, the monk can step into the Ethereal Plane for 1 round, as the \spell{ethereal jaunt} spell.
 
-\subcf{Quivering Palm} As a standard action, the monk can make a single unarmed strike. If the attack deals damage, the struck creature is sickened by the disruption of the \ki within in its body for 5 rounds. At any point during that time, the monk can will the struck target to die (a free action). If she does, and the creature is bloodied, it must make a Fortitude save. If it fails, it loses all its hit points and takes 9 critical damage, rendering it unconscious and dying (see \pcref{Dying}).
+\subcf{Quivering Palm} As a standard action, the monk can make a single unarmed strike. If the attack deals damage, the struck creature is sickened by the disruption of the \ki within in its body for 5 rounds. At any point during that time, the monk can will the struck target to die (a free action). If she does, and the creature is bloodied, she makes a Fortitude attack against the target. If she succeeds, it loses all its hit points and takes 9 critical damage, rendering it unconscious and dying (see \pcref{Dying}).
 
 \cf{Mnk}{Timeless (Ex)} Upon attaining 15th level, a monk no longer takes penalties to her attribute scores for aging, and cannot be magically aged. She also gains the benefits of being middle-aged if she did not already possess them, granting her a \plus1 bonus to her Intelligence, Wisdom, and Charisma. Any aging penalties she has are removed. The monk still dies of old age when her time is up.
 
@@ -959,9 +959,9 @@ At 5th level, she may also detect chaotic alignments.
 
 If the paladin smites a creature that is not evil, the smite attack deals no damage at all (not even normal weapon damage), but the use of the ability is still spent.
 
-\cf{Pal}{Improved Smite (Su)} At 2nd level, and every three levels thereafter, the paladin can select one improved smiting ability. Each improved smiting ability adds an effect to the paladin's smite ability. Whenever the paladin smites, she chooses one improved smiting ability she has and adds its effect to her smite. The save DC for a paladin's improved smiting abilities is 10 \add the paladin's level \add the paladin's Charisma. She may select one of the following improved smiting effects.
-\subcf{Blinding} The paladin's smite manifests as a bright light. A creature struck by the smite must make a Will save to avoid being blinded for one round per four paladin levels (minimum 1). Creatures vulnerable to light (such as vampires) take extra damage equal to twice the paladin's level.
-\subcf{Resounding} The paladin's smite knocks his foes off their feet. A creature struck by the smite must make a Reflex save to avoid being pushed back five feet per four paladin levels and being knocked prone.
+\cf{Pal}{Improved Smite (Su)} At 2nd level, and every three levels thereafter, the paladin can select one improved smiting ability. Each improved smiting ability adds an effect to the paladin's smite ability. Whenever the paladin smites, she chooses one improved smiting ability she has and adds its effect to her smite. The special attack bonus for a paladin's improved smiting abilities is equal to the paladin's level her Charisma. She may select one of the following improved smiting effects.
+\subcf{Blinding} The paladin's smite manifests as a bright light. She makes a Will attack against the struck creature to blind it for one round per four paladin levels (minimum 1). Creatures vulnerable to light (such as vampires) take extra damage equal to twice the paladin's level.
+\subcf{Resounding} The paladin's smite knocks his foes off their feet. She makes a Reflex attack to A creature struck by the smite must make a Reflex save to avoid being pushed back five feet per four paladin levels and being knocked prone.
 \subcf{Staggering} The paladin's smite hits with incredible force. A creature struck by the smite must make a Fortitude save to avoid being staggered for one round per four paladin levels (minimum 1).
 
 \cf{Pal}{Lay On Hands (Su)} Beginning at 2nd level, a paladin can heal wounds (her own or those of others) with a touch. Each use heals 1d8 hit points per paladin level as a standard action. The paladin can lay on hands a number of times per day equal to 1 \add half her Charisma (minimum 1). Against undead creatures, this ability instead deals positive energy damage. A touch attack is required to hit unwilling targets, and a successful Will save halves the damage or healing received.
