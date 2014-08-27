@@ -308,7 +308,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelldef{None}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  All enemies within the area take a \minus2 penalty to attack rolls for 5 rounds.
+  All enemies within the area take a \minus2 penalty to physical attacks for 5 rounds.
 \end{spelleffect}
 
 \spellsection{Banishment}
@@ -440,7 +440,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelldef{None}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  All allies within the area gain a \plus2 enhancement bonus to attack rolls for 5 rounds. \bonusscalingdescription
+  All allies within the area gain a \plus2 enhancement bonus to physical attacks for 5 rounds. \bonusscalingdescription
 \end{spelleffect}
 
 \spellsection{Bless Weapon}
@@ -468,7 +468,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
   The subject is blinded, deafened, or sickened, as you choose.
 \end{spellblood}
 \begin{spellnotes}
-   The choice of bloodied conditions is made at the time the spell is cast. A vulnerable creature takes a \minus2 penalty to attacks, defenses, and checks. A blinded character cannot see. She takes a \minus2 penalty to attack rolls, Armor Class, and any checks which involve sight. In addition, she is flat-footed and moves at half speed. All checks and activities that rely on vision (such as reading and Spot checks) automatically fail. A blinded character has a 50\% miss chance on all attacks.
+   The choice of bloodied conditions is made at the time the spell is cast. A vulnerable creature takes a \minus2 penalty to attacks, defenses, and checks. A blinded character cannot see. She takes a \minus2 penalty to physical attacks and defenses, and any checks which involve sight. In addition, she is flat-footed and moves at half speed. All checks and activities that rely on vision (such as reading and Spot checks) automatically fail. A blinded character has a 50\% miss chance on all attacks.
 
   A deafened character cannot hear. She automatically fails Listen checks, takes a \minus2 penalty to any checks which involve hearing, and has a 20\% chance of spell failure when casting spells with verbal components.
   
@@ -746,7 +746,7 @@ If you take life damage, you lose all temporary hit points provided by this spel
   You make a Will attack against each creature in the area. A successful attack dazzles and bewilders the subject.
 \end{spelleffect}
 \begin{spellnotes}
-  A dazzled creature has a 20\% miss chance on all attack rolls and takes a \minus4 penalty to Spot checks. He is also unable to see with darkvision. A bewildered creature is mentally affected in a way that detracts from its ability to act, causing it to be vulnerable. It takes a \minus2 penalty to attacks, defenses, and checks.
+  A dazzled creature has a 20\% miss chance on all physical attacks and takes a \minus4 penalty to Spot checks. He is also unable to see with darkvision. A bewildered creature is mentally affected in a way that detracts from its ability to act, causing it to be vulnerable. It takes a \minus2 penalty to attacks, defenses, and checks.
 
   Creatures who cannot see the light are not affected by this spell. Merely closing one's eyes is insufficient protection.
 \end{spellnotes}
@@ -1545,7 +1545,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{No}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The subject moves at half speed and takes a \minus2 penalty to armor class. If it is flying within 10 feet of the ground, the subject falls to the ground.
+  The subject moves at half speed and takes a \minus2 penalty to physical defenses. If it is flying within 10 feet of the ground, the subject falls to the ground.
 \end{spelleffect}
 \begin{spellnotes}
   If the subject gets farther than 10 feet from the ground, the spell's effect is broken. As a result, the spell cannot affect creatures flying high above the ground.
@@ -1773,7 +1773,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelltgt{Touched creature}
 \spelldur{\durshort (D)}
 \begin{spelleffect}
-  Each ranged attack directed at the subject for which the attacker must make an attack roll has a 50\% miss chance (similar to the effects of active cover). Other attacks that simply work at a distance are not affected.
+  Each physical ranged attack directed at the subject has a 50\% miss chance (similar to the effects of active cover). Other attacks that simply work at a distance are not affected.
 \end{spelleffect}
 
 \spellsection{Ethereal Jaunt}
@@ -2411,7 +2411,7 @@ A vulnerable creature takes a \minus2 penalty to attacks, defenses, and checks.
 \spelldef{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The subject gains a \plus2 enhancement bonus on physical attacks, checks, and defenses. \bonusscalingdescription
+  The subject gains a \plus2 enhancement bonus on physical attacks, checks, and special defenses. \bonusscalingdescription
 \end{spelleffect}
 
 \spellsectioncomma{Heroism}{Greater}
@@ -2634,7 +2634,7 @@ A vulnerable creature takes a \minus2 penalty to attacks, defenses, and checks.
   If the creature is touching the ground, it becomes permanently entombed in a state of suspended animation (as the \spell{temporal stasis} spell) in a small sphere far beneath the surface of the earth. It remains there unless an \spell{emancipation} spell is cast at the locale where the imprisonment took place.
 \end{spellblood}
 \begin{spellnotes}
-A slowed creature can take only a single move action or standard action each turn, but not both. It cannot take full-round actions, but it may take swift actions. Additionally, it takes a \minus2 penalty to attack rolls, Strength and Dexterity-based checks, and armor class.
+A slowed creature can take only a single move action or standard action each turn, but not both. It cannot take full-round actions, but it may take swift actions. Additionally, it takes a \minus2 penalty to physical attacks and defenses, as well as Strength and Dexterity-based checks.
 
   The subject must be bloodied at the time that the spell is cast to be imprisoned. Magical search by a crystal ball, a \spell{locate creature} spell, or some other similar divination does not reveal the fact that a creature is imprisoned, but \spell{discern location} does. A \spell{wish} or \spell{miracle} spell will not free the recipient, but will reveal where it is entombed.
 \end{spellnotes}
@@ -3402,7 +3402,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelltgt{You}
 \spelldur{\durext or until discharged}
 \begin{spelleffect}
-  This spell grants you a powerful sixth sense in relation to yourself. Once during the spell's duration, you may choose to use its effect. You may roll twice on any single attack roll, opposed check, or saving throw. Activating the effect takes an immediate action, so you can even activate it on another character's turn if needed. Once activated, the spell ends.
+  This spell grants you a powerful sixth sense in relation to yourself. Once during the spell's duration, you may choose to use its effect. You may roll twice on any single attack roll or opposed check. Activating the effect takes an immediate action, so you can even activate it on another character's turn if needed. Once activated, the spell ends.
 \end{spelleffect}
 \begin{spellnotes}
   You can't have more than one \spellindirect{lesser moment of prescience}{moment of prescience} effect active on you at the same time.
@@ -3531,7 +3531,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
   The struck target takes damage and is frozen solid, causing it to be paralyzed for 5 rounds.
 \end{spellblood}
 \begin{spellnotes}
-A slowed creature can take only a single move action or standard action each turn, but not both. It cannot take full-round actions, but it may take swift actions. Additionally, it takes a \minus2 penalty to attack rolls, Strength and Dexterity-based checks, and armor class.
+A slowed creature can take only a single move action or standard action each turn, but not both. It cannot take full-round actions, but it may take swift actions. Additionally, it takes a \minus2 penalty to physical attacks and defenses, as well as Strength and Dexterity-based checks.
 
    A paralyzed creature cannot take any action that requires motion. It has effective Dexterity and Strength scores of \minus10 and is helpless, but can take purely mental actions. A winged creature flying in the air at the time that it becomes paralyzed cannot flap its wings and falls. A paralyzed swimmer can't swim and may drown. A creature can move through a space occupied by a paralyzed creature -- ally or otherwise. Each square occupied by a paralyzed creature, however, counts as 2 squares.
  \end{spellnotes}
@@ -4160,7 +4160,7 @@ If the subject takes any offensive action, the spell immediately ends.
   If you succeed on a ranged touch attack to hit with the ray, the target takes damage and is dazzled for 1 round. An undead creature takes 6d8 points of damage \add d8 per two caster levels above 6th, and an undead creature particularly vulnerable to bright light takes 6d10 points of damage \add d10 per two caster levels above 6th and is blinded for 1 round instead.
 \end{spelleffect}
 \begin{spellnotes}
-  A dazzled creature has a 20\% miss chance on all attack rolls and takes a \minus4 penalty to Spot checks. He is also unable to see with darkvision.
+  A dazzled creature has a 20\% miss chance on all physical attacks and takes a \minus4 penalty to Spot checks. He is also unable to see with darkvision.
 \end{spellnotes}
 
 \spellsection{See Invisibility}
@@ -4510,7 +4510,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-    A slowed creature can take only a single move action or standard action each turn, but not both. It cannot take full-round actions, but it may take swift actions. Additionally, it takes a \minus2 penalty to attack rolls, Strength and Dexterity-based checks, and armor class.
+    A slowed creature can take only a single move action or standard action each turn, but not both. It cannot take full-round actions, but it may take swift actions. Additionally, it takes a \minus2 penalty to physical attacks and defenses, as well as Strength and Dexterity-based checks.
 \end{spelleffect}
 
 \spellsectioncomma{Slow}{Mass}
@@ -5135,7 +5135,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
     You make a Reflex attack to deal damage to everything in the area. A failed attack deals half damage. A failed attack deals half damage. Any creatures to which sunlight is harmful or unnatural instead take 5d10 points of damage \add d10 per four caster levels above 10th, and if your Reflex attack is successful, they are blinded for 5 rounds.
 \end{spelleffect}
 \begin{spellnotes}
-  A dazzled creature has a 20\% miss chance on all attack rolls and takes a \minus4 penalty to Spot checks. It is also unable to see with darkvision. 
+  A dazzled creature has a 20\% miss chance on all physical attacks and takes a \minus4 penalty to Spot checks. It is also unable to see with darkvision. 
 \end{spellnotes}
 
 \spellsection{Sunburst}
@@ -5211,7 +5211,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   You can throw the affected objects or creatures anywhere within the spell's range. All subjects of this spell must be thrown to the same place. You can hurl up to a total weight of 25 pounds per caster level.
-  \par You must succeed on ranged attack rolls (one per creature or object thrown) to hit the target of the hurled items with the items, applying your caster level and casting attribute to the attack roll instead of your base attack bonus and Dexterity. Hurled weapons deal their normal damage. Other objects deal damage ranging from 1 point per 25 pounds of weight (for less dangerous objects such as an empty barrel) to 1d6 points per 25 pounds of weight (for hard, dense objects such as a boulder).
+  \par You must succeed on physical ranged attacks (one per creature or object thrown) to hit the target of the hurled items with the items, with an attack bonus equal to your caster level \add your casting attribute. Hurled weapons deal their normal damage. Other objects deal damage ranging from 1 point per 25 pounds of weight (for less dangerous objects such as an empty barrel) to 1d6 points per 25 pounds of weight (for hard, dense objects such as a boulder).
   \par To affect a creature or attended item, you must make a successful Will attack.
   \par If you use this power to hurl a creature against a solid surface, it takes damage as if it had fallen 50 feet (5d6 damage).
 \end{spelleffect}
@@ -5243,7 +5243,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
   In addition, if you succeed on a Will attack against the touched creature, it is placed into a state of suspended animation. For the creature, time ceases to flow and its condition becomes fixed. The creature does not grow older. Its body functions virtually cease, and no force or effect can harm it. This state persists until the magic is removed (such as by a successful \spell{dispel magic} spell or an \spell{emancipation} spell).
 \end{spellblood}
 \begin{spellnotes}
-    A slowed creature can take only a single move action or standard action each turn, but not both. It cannot take full-round actions, but it may take swift actions. Additionally, it takes a \minus2 penalty to attack rolls, Strength and Dexterity-based checks, and armor class.
+    A slowed creature can take only a single move action or standard action each turn, but not both. It cannot take full-round actions, but it may take swift actions. Additionally, it takes a \minus2 penalty to physical attacks and defenses, as well as Strength and Dexterity-based checks.
 \end{spellnotes}
 
 \spellsection{Power Word Fear}
@@ -5387,7 +5387,7 @@ This spell can be made permanent with a \spell{permanency} ritual, in which case
   \par \subspell{Stone to Flesh} This effect restores a petrified creature to its normal state, restoring life and goods. Any petrified creature, regardless of size, can be restored. A restored creature has as many hit points as it had when it was petrified. Stone which was not originally a petrified creature is unaffected.
 \end{spelleffect}
 \begin{spellnotes}
-A slowed creature can take only a single move action or standard action each turn, but not both. It cannot take full-round actions, but it may take swift actions. Additionally, it takes a \minus2 penalty to attack rolls, Strength and Dexterity-based checks, and armor class.
+A slowed creature can take only a single move action or standard action each turn, but not both. It cannot take full-round actions, but it may take swift actions. Additionally, it takes a \minus2 penalty to physical attacks and defenses, as well as Strength and Dexterity-based checks.
 \end{spellnotes}
 
 \spellsection{Tree Shape}
@@ -5676,7 +5676,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{Will negates (object)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  You cause wood to bend and warp, permanently destroying its straightness, form, and strength. A warped door springs open (or becomes stuck, requiring a Strength check to open, at your option). A boat or ship springs a leak. Warped ranged weapons are useless. A warped melee weapon imposes a \minus4 penalty on attack rolls.
+  You cause wood to bend and warp, permanently destroying its straightness, form, and strength. A warped door springs open (or becomes stuck, requiring a Strength check to open, at your option). A boat or ship springs a leak. Warped ranged weapons are useless. A warped melee weapon imposes a \minus4 penalty on physical attacks.
   \par You may warp one Small or smaller object or its equivalent per caster level. A Medium object counts as two Small objects, a Large object as four, a Huge object as eight, a Gargantuan object as sixteen, and a Colossal object as thirty-two.
   \par Alternatively, you can unwarp wood (effectively warping it back to normal) with this spell, straightening wood that has been warped by this spell or by other means. \spellindirect{make whole}{Make whole}, on the other hand, does no good in repairing a warped item.
 \end{spelleffect}
@@ -5740,7 +5740,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
   \par If the strands can be anchored to two or more solid and diametrically opposed structures, such as walls, the strands are much more sturdy. A creature entangled within a sturdy web is unable to move from its square until it stops being entangled.
 \end{spelleffect}
 \begin{spellnotes}
-  An entangled creature moves at half speed, cannot sprint or charge, and takes a \minus2 penalty to attack rolls, Strength and Dexterity-based checks, and armor class. If it attempts to cast a spell must make a Concentration check (DC 10 \add double the spell's level) or lose the spell.
+  An entangled creature moves at half speed, cannot sprint or charge, and takes a \minus2 penalty to physical attacks and defenses, as well as Strength and Dexterity-based checks. If it attempts to cast a spell must make a Concentration check (DC 10 \add double the spell's level) or lose the spell.
   The strands are too widely spaced to significantly obscure sight, but are flammable. A magic flaming sword can slash them away as easily as a hand brushes away cobwebs. Any fire can set the webs alight and burn away 5 square feet in 1 round. All creatures within flaming webs take 2d4 points of fire damage from the flames.
   
   This spell can be made permanent with a \spell{permanency} ritual. A permanent \spell{web} that is destroyed regrows in 10 minutes.
