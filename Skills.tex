@@ -113,7 +113,7 @@ Sneak up on someone & Stealth (Dex) & Perception (Wis) \\
 Steal a coin pouch & Sleight of Hand (Dex) & Perception (Wis) \\
 Tie a prisoner securely & Devices (Int)\fn{2} & Escape Artist (Dex) \\
 \end{tabularx}
-1 An Intimidate check is opposed by the target's Will save, not a skill check. See the Intimidate skill description for more information. \\
+1 An Intimidate check is opposed by the target's Will defense, not a skill check. See the Intimidate skill description for more information. \\
 2 You can also tie a prisoner with a grapple attack. See \pcref{Grapple}. \\
 \end{dtable}
 
@@ -472,7 +472,7 @@ Animals are easier to handle than other kinds of creatures. The DCs listed are f
 
 \subsubsection{Handling Creatures}
 You can use Creature Handling to control a creature's actions. Success indicates it does what you want on its next action. Failure indicates that your action is wasted, and the creature does not listen to you. Exceptional failure may make the creature hostile, depending on the circumstances.
-\parhead{Pacify} As a standard action, you can make a check to pacify a creature. If the creature fails a Will save with a DC equal to your Creature Handling check, it will do nothing for 5 rounds. If it is threatened or damaged, this effect is automatically broken. Actively hostile creatures gain a \plus10 bonus on this saving throw. If you interfere with an action the creature is trained to perform while it is pacified, such as entering a room it is trained to guard, it receives a new saving throw each round with a \plus10 bonus. You an attempt to pacify a creature as a swift action by taking a \minus10 penalty on the check.
+\parhead{Pacify} As a standard action, you can make a Creature Handling check against a creature. Your check is opposed by its Will defense. If you succeed, the creature does nothing for 5 rounds. You take a \minus10 penalty on this attack against actively hostile creatures. If the creature is threatened or damaged, this effect is automatically broken. If you interfere with an action the creature is trained to perform while it is pacified, such as entering a room it is trained to guard, you must make another check against it. If you fail or do not attempt the check, the effect is automatically broken. You can attempt to pacify a creature as a swift action by taking a \minus10 penalty on the check.
 \parhead{Perform Trained Action} As a swift action, you can make a DC 10 check to convince a creature to perform an action it is trained to perform. Generally, wild animals are not trained in any actions, so this is not effective on them.
 \parhead{Push} As a standard action, you can make a DC 25 check to convince a willing creature to perform an action it is not trained to perform, but which it is physically capable of performing. This also covers making a creature perform a forced march and similar activities. You can attempt to push a creature as a swift action by taking a \minus10 penalty on the check.
 
@@ -588,7 +588,7 @@ Net & 20 \\
 Manacles  & 30 \\
 Masterwork manacles  & 35 \\
 Grappler & Grappler's grapple attack result	 \\
-\spell{Entangle}, \spell{web}, or similar spells & Spell's save DC \\
+\spell{Entangle}, \spell{web}, or similar spells & Spellcaster's attack result \\
 \end{tabularx}
 \end{dtable}
 
@@ -606,7 +606,7 @@ You can make a DC 15 Heal check to treat wounded people, allowing them to recove
 You can tend as many as six patients at a time. You need a few items and supplies (bandages, salves, and so on) that are easy to come by in settled lands. Accelerating a creature's recovery counts as light activity. %What does light activity mean?
 
 \subsubsection{First Aid}
-You can make a DC 15 Heal check as a standard action to stabilize a dying character. Success indicates that the patient becomes stable, and no longer needs to make Fortitude saves each round to stave off death. 
+You can make a DC 15 Heal check as a standard action to stabilize a dying character. Success indicates that the patient becomes stable.
 
 \subsubsection{Treat Poison or Disease}
 You can make a Heal check to treat poison or disease in a character. The next time the character would make a saving throw against the poison or disease, it can use its saving throw result or your Heal check result, whichever is higher. A creature can only benefit from one such attempt to treat a poison on each saving throw.
@@ -625,7 +625,7 @@ You gain a \plus4 bonus on your Intimidate check for every size category that yo
 You can make an Intimidate check to convince a creature to do what you want. This functions like a Persuasion check to form an agreement with a group, except that you are always considered an enemy of the group you are intimidating (\plus5 DC modifier). In addition, the DC is 5 lower if the group thinks your group is significantly stronger than them, or 5 higher if the group thinks your group is significantly weaker.
 
 \subsubsection{Demoralize Foe}
-As a standard action, you can make an Intimidate check to demoralize a foe within \rngmed range of you. The target must make a Will save against your check result. If it fails, it becomes shaken for 5 rounds.
+As a standard action, you can make an Intimidate check against a creature within \rngmed range of you. Your check is opposed by its Will defense. If you succeed, the creature is shaken for 5 rounds.
 
 \subsection{Knowledge (Int; Trained Only)}\label{Knowledge (Int; Trained Only)}
 Like the Craft, Profession, and Perform skills, Knowledge actually encompasses a number of unrelated skills. Knowledge represents a study of some body of lore, possibly an academic or even scientific discipline. Below are listed typical fields of study.
@@ -703,12 +703,12 @@ While sleeping, you take a \minus10 penalty to Perception.
 \subsubsection{Passive and Active Attention}\label{Perception:Passive and Active Attention}
 You automatically notice some things about your environment, even when you're distracted or focusing on other tasks (such as combat). At all times, you are considered to be ``taking 0'' on a Perception check, allowing you to notice anything with a DC up to your Perception modifier, including all applicable bonuses and penalties. You can only passively perform tasks which do not require a specific action to perform.
 
-You can make a conscious effort to pay attention to events around you. This allows you to make Perception checks to notice events, rather than simply using your modifier. This is tiring to do over long periods of time: for every hour you spend being actively attentive, you must make a DC 10 Fortitude save to avoid being fatigued. The DC increases by 2 for every hour after the first.
+You can make a conscious effort to pay attention to events around you. This allows you to make Perception checks to notice events, rather than simply using your modifier. This is tiring to do over long periods of time: if (10 \add twice the number of hours you have spent being actively attentive) exceeds your Fortitude defense, you become fatigued.
 
 \subsubsection{Discern Illusion}
-You can notice inconsistencies in illusion spells. The DC is equal to the save DC of the spell. Success means you get a Will save to disbelieve the illusion as if you interacted with the illusion. Failure means you don't notice anything amiss.
+You can notice inconsistencies in illusion spells. The DC is equal to the spellcaster's check result when casting the spell. Success means you have interacted with the illusion, allowing you to use your Will defense to disbelieve it. Failure means you don't notice anything amiss.
 
-If the illusion is completely missing a sense that should logically be present, such as a \spell{silent image} of people in armor, the DC to identify the illusion with that sense is lowered by 10.
+If the illusion is completely missing a sense that should logically be present, such as a \spell{silent image} of people in armor, the DC to interact with the illusion with that sense is lowered by 10.
 
 \subsubsection{Identify Disguise}
 You can identify disguises on other creatures. The DC is equal to the Disguise check result used to create the disguise. Success means you know that the creature is disguised. If you succeed by 10 or more, you can also discern the creature's true appearance beneath the disguise. After making a check to identify a disguise on a particular creature, you cannot make another check to identify the same disguise on that creature for one hour.
@@ -964,7 +964,7 @@ You can make a DC 15 Ride check as a move action to drop low and take cover behi
 Sense Motive represents your ability to read body language and emotion.
 
 \subsubsection{Discern Enchantment}
-You can automatically notice when a creature is affected by mind-controlling magic -- including yourself. Treat your Sense Motive modifier as your check result. The DC is normally equal to the save DC of the spell. Domination effects have a DC that is 10 lower than normal. Success means you recognize that the creature is affected by mind-affecting magic. Failure means you don't notice anything amiss.
+You can automatically notice when a creature is affected by mind-controlling magic -- including yourself. Treat your Sense Motive modifier as your check result. The DC to identify an Emotion effect such as \spell{charm person} is 25, while the DC to identify a Compulsion effect such as \spell{dominate person} is 15. Success means you recognize that the creature is affected by mind-affecting magic. Failure means you don't notice anything amiss.
 
 This can only be used if the effect in question is actually affecting the creature's behavior at the time. For example, a person who has been given an unnatural aversion to cheese by the \spell{aversion} spell would generally not be affected by the enchantment unless it was presented with cheese. Therefore, you could not discern the enchantment on the creature simply by talking to it about the weather. 
 
@@ -1028,7 +1028,7 @@ While sleeping, you take a \minus10 penalty to Spellcraft.
 \subsubsection{Passive and Active Attention}\label{Spellcraft:Passive and Active Attention}
 Like the Perception skill, Spellcraft allows you to automatically notice spells and magical effects in your environment, evne when you're distracted or focusing on other tasks. At all times, you are considered to be ``taking 0'' on a Spellcraft check, allowing you to notice anything with a DC up to your Spellcraft modifier, including all applicable bonuses and penalties. You can only passively perform tasks which do not require a specific action to perform.
 
-As a swift action, you can make a conscious effort to pay attention to spells and magical effects around you. This allows you to make Spellcraft checks to notice events, rather than simply using your modifier. This is mentally tiring: for every hour you spend being actively attentive, you must make a DC 10 Will save to avoid being fatigued. The DC increases by 2 for every hour after the first.
+As a swift action, you can make a conscious effort to pay attention to spells and magical effects around you. This allows you to make Spellcraft checks to notice events, rather than simply using your modifier. This is mentally tiring to do over long periods of time: if (10 \add twice the number of hours you have spent being actively attentive) exceeds your Will defense, you become fatigued.
 
 \subsubsection{Notice Magic Auras}
 You can notice the presence of magic within 100 feet of you with a DC 10 Spellcraft check. Success means you notice that magic exists. Success by 5 or more means you know the number of magical auras, and the strength and direction to each aura. Success by 10 or more means you notice the location of each aura and their precise nature, including strength, school, subschool, and descriptors. Failure means you don't notice any magic.
@@ -1137,12 +1137,11 @@ Calm water & 10 \\
 Rough water & 15 \\
 Stormy water & 20\footnotetemp{1}
 \end{tabularx}
-1 You can't take 10 on a Swim check in stormy water, even if you aren't
-otherwise being threatened or distracted.
+1 You can't take 10 on a Swim check in stormy water, even if you aren't otherwise being threatened or distracted.
 \end{dtable}
 
 \subsubsection{Swimming Underwater}
-You can swim underwater just like you can above water. If you are underwater, either because you failed a Swim check or because you are swimming underwater intentionally, you must hold your breath. You can hold your breath for a number of rounds equal to 5 \add your Constitution. After that period of time, you must make a DC 10 Fortitude save every round to continue holding your breath. Each round, the DC for the save increases by 5. If you fail the Fortitude save, you begin to drown.
+You can swim underwater just like you can above water. If you are underwater, either because you failed a Swim check or because you are swimming underwater intentionally, you must hold your breath. You can hold your breath for a number of rounds equal to 5 \add your Constitution. After that period of time, you must make a DC 10 Constitution check every round to continue holding your breath. Each round, the DC for the check increases by 5. If you fail, you begin to drown.
 
 \subsubsection{Swimming with a Swim Speed}
 A creature with a swim speed can move through water at its indicated speed without making Swim checks. It gains a \plus5 bonus on any Swim check to perform a special action or avoid a hazard. The creature can always take 10 on a Swim check, even if distracted or endangered when swimming.
