@@ -111,22 +111,21 @@ Combat style feats grant a character the ability to fight in a particular style,
 \begin{longtabu}{>{\lcol}p{10em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{3em}}
 %    \taburowcolors{1}{white}{tbrown}
     \thead{General Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
-%Brute Fortitude & \x & Use Str and half Con for Fortitute saves \\
 \featref{Endurance} & Con 3 & Resist nonlethal damage & \featpref{Endurance} \\
-\featref{Deathless} & Con 5 or base Fortitude save \plus10 & Immune to death effects & \featpref{Deathless} \\
+\featref{Deathless} & Con 5 or base Fortitude defense \plus10 & Immune to death effects & \featpref{Deathless} \\
 \featref{Diehard} & Con 3 & Remain conscious after taking critical damage & \featpref{Diehard} \\
-\featref{Fearless} & Cha 5 or base Will save \plus10 & Immune to fear and hostile morale effects & \featpref{Fearless} \\
-\featref{Great Fortitude} & \x &  \plus2 bonus on Fortitude saves, reroll 1/day & \featpref{Great Fortitude} \\
-\featref{Iron Will} & \x &  \plus2 bonus on Will saves, reroll 1/day & \featpref{Iron Will} \\
+\featref{Fearless} & Cha 5 or base Will defense \plus10 & Immune to fear and hostile morale effects & \featpref{Fearless} \\
+\featref{Great Fortitude} & \x &  \plus2 bonus to Fortitude defense, reroll 1/day & \featpref{Great Fortitude} \\
+\featref{Iron Will} & \x &  \plus2 bonus to Will defense, reroll 1/day & \featpref{Iron Will} \\
 \featref{Legendary Charisma} & 11th level, Cha 5 & \plus5 to Charisma for some purposes & \featpref{Legendary Charisma} \\
 \featref{Legendary Constitution} & 11th level, Con 5 & \plus5 to Constitution for some purposes & \featpref{Legendary Constitution} \\
 \featref{Legendary Dexterity} & 11th level, Dex 5 & \plus5 to Dexterity for some purposes & \featpref{Legendary Dexterity} \\
 \featref{Legendary Intelligence} & 11th level, Int 5 & \plus5 to Intelligence for some purposes & \featpref{Legendary Intelligence} \\
 \featref{Legendary Strength} & 11th level, Str 5 & \plus5 to Strength for some purposes & \featpref{Legendary Strength} \\
 \featref{Legendary Wisdom} & 11th level, Wis 5 & \plus5 to Wisdom for some purposes & \featpref{Legendary Wisdom} \\
-\featref{Lightning Reflexes} & \x &  \plus2 bonus on Reflex saves, reroll 1/day & \featpref{Lightning Reflexes} \\
-\featref{Mental Fortress} & Cha 9 or base Will save \plus18 & Immune to hostile mind-affecting effects & \featpref{Mental Fortress} \\
-\featref{Perfect Health} & Con 3 or base Fortitude save \plus6 & Immune to disease, later poison & \featpref{Perfect Health} \\
+\featref{Lightning Reflexes} & \x &  \plus2 bonus to Reflex defense, reroll 1/day & \featpref{Lightning Reflexes} \\
+\featref{Mental Fortress} & Cha 9 or base Will defense \plus18 & Immune to hostile mind-affecting effects & \featpref{Mental Fortress} \\
+\featref{Perfect Health} & Con 3 or base Fortitude defense \plus6 & Immune to disease, later poison & \featpref{Perfect Health} \\
 \featref{Swift} & \x & Increase speed by 5 feet & \featpref{Swift} \\
 \featref{Toughness} & \x &  \plus3 hit points \plus1 per level above 3 & \featpref{Toughness} \\
 
@@ -214,7 +213,7 @@ Combat style feats grant a character the ability to fight in a particular style,
 \featref{Fascinating Performance} & Perform 4 ranks & Fascinate group of creatures & \featpref{Fascinating Performance} \\
 \featref{Freeing Performance} & Perform 12 ranks  & Dispel magical effects on ally & \featpref{Freeing Performance} \\
 \featref{Inspire Competence} & Perform 4 ranks  & Grant allies bonuses to skill checks & \featpref{Inspire Competence} \\
-\featref{Inspire Courage} & Perform 6 ranks  & Grant allies bonuses to attack rolls and saves against fear & \featpref{Inspire Courage} \\
+\featref{Inspire Courage} & Perform 6 ranks  & Grant allies bonuses to physical attacks and defenses against fear & \featpref{Inspire Courage} \\
 \featref{Inspire Greatness} & Perform 12 ranks  & Grant allies bonuses to saving throws and AC & \featpref{Inspire Greatness} \\
 \featref{Inspire Heroics} & Perform 18 ranks  & Grant allies temporary hit points and extra attack & \featpref{Inspire Heroics} \\
 \featref{Inspire Spellpower} & Perform 8 ranks  & Grant allies bonus to caster level & \featpref{Inspire Spellpower} \\
@@ -225,7 +224,7 @@ Combat style feats grant a character the ability to fight in a particular style,
 
 \midrule
 \thead{Racial Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
-\featref{Dwarven Resilience} & Dwarf & \plus2 to saves against spells & \featpref{Dwarven Resilience} \\
+\featref{Dwarven Resilience} & Dwarf & \plus2 to defenses against spells & \featpref{Dwarven Resilience} \\
 \featref{Focused Mind} & Elf & Use Intelligence to concentrate instead of Constitution & \featpref{Focused Mind} \\
 \featref{Giantfighter} & Dwarf, gnome, or halfling & \plus2 to dodge against Large or larger creatures & \featpref{Giantfighter} \\
 \featref{Stonecunning} & Dwarf & Gain a sixth sense about stonework & \featpref{Stonecunning} \\
@@ -410,7 +409,7 @@ Here is the format for feat descriptions.
 
 \feat{Arcane Spellgift}{Spellgift}
 \featpre 2nd level, Cha 1.
-\featben You gain the ability to use a non-restricted sorcerer/wizard spell as a spell-like ability once per day. You choose which spell when you gain this feat, and that choice cannot thereafter be changed. Your effective caster level is equal to your level, and the save DC is equal to 10 \add half caster level \add your Charisma.
+\featben You gain the ability to use a non-restricted sorcerer/wizard spell as a spell-like ability once per day. You choose which spell when you gain this feat, and that choice cannot thereafter be changed. Your effective caster level is equal to your level, and your magic attack bonus is equal to half your caster level \add your Charisma.
 
 The spell's level must be no greater than half of your total levels in non-casting classes. In addition, its level cannot exceed your Charisma.
 \parhead{Special} You may take this feat multiple times. Each time, you choose a new spell to gain as a spell-like ability. You may use any combination of the spells a number of times per day equal to the number of spellgift feats you have. The number of spellgift feats you have cannot exceed your Charisma.
@@ -447,7 +446,7 @@ Choose one category of armor: light, medium, heavy, or shields.
 
 \feat{Bewildering Strike}{Combat, Strike}
 \featpre Base attack bonus \plus8.
-\featben When you attack, you may take a \minus4 penalty to hit. If you deal damage, the foe struck must make a Will save to avoid being bewildered for 5 rounds. A vulnerable creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. The DC is equal to 10 \add your base attack bonus \add your attack attribute (Strength or Dexterity). You cannot make more than one Strike each round.
+\featben When you make a physical attack, you may take a \minus4 penalty to hit. If you deal damage, you make a Will attack against the struck foe to bewilder it for 5 rounds. Your attack bonus is equal to your base attack bonus \add your physical attack attribute (Strength or Dexterity).  A bewildered creature is vulnerable, causing it to take a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. You cannot make more than one Strike each round.
 
 \feat{Blind-Fight}{Combat}
 \parhead{Benefit} In melee, every time you miss because of being unable to see your opponent, you can reroll your miss chance one time to see if you actually hit. In addition, you are not flat-footed against invisible attackers adjacent to you.
@@ -496,9 +495,9 @@ If you have four or more celestial bloodline feats, your damage reduction increa
 
 \feat{Confusing Strike}{Combat, Strike}
 \featpre Base attack bonus \plus12.
-\featben When you attack, you may take a \minus6 penalty to hit. If you deal damage, and your foe is bloodied after your damage is dealt, it must make a Will save to avoid being confused for 5 rounds. The DC is equal to 10 \add your base attack bonus \add your attack attribute (Strength or Dexterity). You cannot make more than one Strike each round.
+\featben When you make a physical attack, you may take a \minus6 penalty to hit. If you deal damage, and your foe is bloodied after your damage is dealt, you make a Will attack against the struck foe to confuse it for 5 rounds. Your attack bonus is equal to your base attack bonus \add your physical attack attribute (Strength or Dexterity).
 
-\confusionexplanation A foe confused by this effect does not automatically attack you on its next turn, even though you attacked it.
+\confusionexplanation A foe confused by this effect does not automatically attack you on its next turn, even though you attacked it. You cannot make more than one Strike each round.
 
 \feat{Contingent Attack}{Combat, Reaction}
 \featpre Int 5, base attack bonus \plus12.
@@ -550,7 +549,7 @@ Contingent actions depend on a trigger condition. If the trigger condition occur
 
 \feat{Demolishing Strike}{Combat, Strike}
 \featpre Base attack bonus \plus16.
-\featben When you attack, you may take a \minus8 penalty to hit. If you hit, you deal double damage. You cannot make more than one Strike each round.
+\featben When you make a physical attack, you may take a \minus8 penalty to hit. If you hit, you deal double damage. You cannot make more than one Strike each round.
 
 \feat{Diehard}{General}
 \parhead{Prerequisite} Constitution 3.
@@ -792,7 +791,7 @@ Only spells which affect a single target and have a casting time no shorter than
 
 \feat{Immobilizing Strike}{Combat, Strike}
 \featpre Base attack bonus \plus8.
-\featben When you attack with a melee weapon, you may take a \minus4 penalty to hit. If you deal damage, the foe struck must make a Fortitude save or lose its ability to move for 1 round. It can defend itself and act normally, but it cannot move from its current location. Flying creatures must immediately land, but do not crash. The DC is equal to 10 \add your base attack bonus \add your attack attribute (Strength or Dexterity). You cannot make more than one Strike each round.
+\featben When you make a physical attack, you may take a \minus4 penalty to hit. If you deal damage, you make a Fortitude attack against the struck foe to immobilize it 5 rounds. Your attack bonus is equal to your base attack bonus \add your physical attack attribute (Strength or Dexterity). An immobilized creature can defend itself and attack normally, but it cannot move from its current location. Flying creatures must immediately land, but do not crash. You cannot make more than one Strike each round.
 
 \feat{Improved Shove}{Combat, Maneuver}
 \parhead{Prerequisites} Base attack bonus \plus4
@@ -817,7 +816,7 @@ Only spells which affect a single target and have a casting time no shorter than
 
 \feat{Improved Imbued Spellstrike}{Metamagic}
 \parhead{Prerequisite} Ability to cast 3rd level spells, Imbued Spellstrike.
-\parhead{Benefit} This metamagic functions like Imbued Strike, except that the imbuement lasts for 5 minutes if you have not struck a foe. If the weapon leaves your hands or if you cast another spell, the imbuement fades away without effect.
+\parhead{Benefit} This metamagic functions like Imbued Spellstrike, except that the imbuement lasts for 5 minutes if you have not struck a foe. If the weapon leaves your hands or if you cast another spell, the imbuement fades away without effect.
 
 An improved imbued spellstrike uses up a spell slot two levels higher than the spell's actual level.
 
@@ -882,7 +881,7 @@ You can use any combination of performance feats you possess a number of times p
 
 \feat{Intimidating Strike}{Combat, Strike}
 \featpres Base attack bonus \plus8, Intimidate 8 ranks.
-\featben When you attack, you may take a penalty to hit of \minus4 or greater. If you deal damage, you may make an Intimidate check as an immediate action to demoralize the foe you struck if it is within 30 feet of you. You gain a bonus to your Intimidate equal to the penalty you took to hit. You cannot make more than one Strike each round.
+\featben When you make a physical attack, you may take a penalty to hit of \minus4 or greater. If you deal damage and the struck creature is within \rngmed range, you may make an Intimidate check as an immediate action to demoralize it (see \pcref{Demoralize}). You gain a bonus to your Intimidate check equal to the penalty you took to hit. You cannot make more than one Strike each round.
 
 \feat{Intuitive Defense}{Combat, Defense, Style}
 \featpre Wis 3, base attack bonus \plus8.
@@ -898,7 +897,7 @@ You can use any combination of performance feats you possess a number of times p
 
 \feat{Killing Blow}{Combat, Strike}
 \featpre Base attack bonus \plus16.
-\featben When you attack, you may take a \minus8 penalty to hit. If you deal damage, and your foe is bloodied after your damage is dealt, it must make a Fortitude save or die. This is a death effect. The DC is equal to 10 \add your base attack bonus \add your attack attribute (Strength or Dexterity). You cannot make more than one Strike each round.
+\featben When you make a physical attack, you may take a \minus8 penalty to hit. If you deal damage, and the struck creature is bloodied after your damage is dealt, you make a Fortitude attack against it. If your attack succeeds, the creature dies immediately. This is a death effect. Your attack bonus is equal to your base attack bonus \add your physical attack attribute (Strength or Dexterity). You cannot make more than one Strike each round.
 
 \feat{Knockdown}{Combat, Maneuver, Power}
 \featpres Strength 3, base attack bonus \plus4
@@ -1096,7 +1095,7 @@ Choose two magical classes you possess.
 
 \feat{Nauseating Strike}{Combat, Strike}
 \featpre Base attack bonus \plus12.
-\featben When you attack, you may take a \minus6 penalty to hit. If you deal damage, and your foe is bloodied after your damage is dealt, it must make a Fortitude save to avoid being nauseated for 1 round. The DC is equal to 10 \add your base attack bonus \add your attack attribute (Strength or Dexterity). You cannot make more than one Strike each round.
+\featben When you make a physical attack, you may take a \minus6 penalty to hit. If you deal damage, and your foe is bloodied after your damage is dealt, you make a Fortitude attack against the struck foe to nauseate it for 1 round. Your attack bonus is equal to your base attack bonus \add your physical attack attribute (Strength or Dexterity). A nauseated creature can only take a single move action each round. You cannot make more than one Strike each round.
 
 \feat{Open Minded}{Skill}
 \parhead{Benefit} You gain two skill points. You may spend these skill points immediately.
@@ -1120,7 +1119,7 @@ Choose two magical classes you possess.
 
 \feat{Penetrating Strike}{Combat, Strike}
 \featpre Base attack bonus \plus12.
-\featben When you attack, you may take a \minus6 penalty to hit. If you deal damage, the foe struck must make a Fortitude save or lose its damage reduction for 5 rounds. The DC is equal to 10 \add your base attack bonus \add your Strength. You cannot make more than one Strike each round.
+\featben When you make a physical attack, you may take a \minus6 penalty to hit. If you deal damage, you make a Fortitude attack against the struck creature. If your attack succeeds, it loses its damage reduction for 5 rounds. Your attack bonus is equal to your base attack bonus \add your physical attack attribute (Strength or Dexterity). You cannot make more than one Strike each round.
 
 \feat{Perfect Health}{General}
 \featpre Constitution 3 or base Fortitude save \plus6.
@@ -1132,7 +1131,7 @@ Choose two magical classes you possess.
 
 \feat{Pierce Wings}{Combat, Strike}
 \featpre Base attack bonus \plus8.
-\featben When you attack with a ranged weapon, you may take a \minus4 penalty to hit. If you deal damage, the foe struck must make a Fortitude save or lose its ability to fly for 1 round. The DC is equal to 10 \add your base attack bonus \add your attack attribute (Strength or Dexterity). This only affects creatures who use wings or other physical means to fly, and has no effect on creatures with magical or supernatural flight. You cannot make more than one Strike each round.
+\featben When you make a physical attack with a ranged weapon, you may take a \minus4 penalty to hit. If you deal damage, you make a Fortitude attack against the struck creature. If your attack succeeds, it loses its ability to fly for 1 round. Your attack bonus is equal to your base attack bonus \add your physical attack attribute (Strength or Dexterity). This only affects creatures who use wings or other physical means to fly, and has no effect on creatures with magical or supernatural flight. You cannot make more than one Strike each round.
 
 \feat{Prescient Surge}{Awareness, Surge}
 \featpre 12th level, Wis 5.
@@ -1263,7 +1262,7 @@ Only area spells can be shaped. A shaped spell uses a spell slot two levels high
 
 \feat{Sickening Strike}{Combat, Strike}
 \featpre Base attack bonus \plus8.
-\featben When you attack, you may take a \minus4 penalty to hit. If you deal damage, the foe struck must make a Fortitude save to avoid being sickened for 5 rounds. The DC is equal to 10 \add your base attack bonus \add your attack attribute (Strength or Dexterity). You cannot make more than one Strike each round.
+\featben When you make a physical attack, you may take a \minus4 penalty to hit. If you deal damage, you make a Fortitude attack against the struck creature to sicken it for 5 rounds. Your attack bonus is equal to your base attack bonus \add your physical attack attribute (Strength or Dexterity). You cannot make more than one Strike each round.
 
 \feat{Silent Spell}{Metamagic}
 \parhead{Prerequisite} Ability to cast 2nd level spells.
