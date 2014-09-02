@@ -363,7 +363,7 @@ Channeling energy is a standard action that does not provoke attacks of opportun
 
 \subcf{Air} The cleric channels electrical energy. This deals electricity damage and heals creatures with the air subtype. A failed attack deals half damage.
 \subcf{Chaos} The cleric channels anarchic energy. Roll randomly each time this power is used to determine whether it functions as channeling negative energy or channeling positive energy, except that it always heals chaotic creatures and harms lawful creatures. The cleric may choose which creatures to exclude from the effect after determining which effect is generated.
-\subcf{Death} The cleric channels negative energy, except that any creatures dealt critical damage by this power are instantly killed, with no defense allowed. This is a death effect.
+\subcf{Death} The cleric channels negative energy, except that any creatures dealt critical damage by this power are instantly killed. This is a death effect.
 \subcf{Destruction} The cleric channels destructive energy. This functions like channeling negative energy, except that it deals sonic damage.
 \subcf{Earth} The cleric channels seismic energy, making a Reflex attack to deal physical bludgeoning damage to all creatures in the area on the ground. A failed attack deals half damage.
 \subcf{Evil} The cleric channels negative energy, except that it has no effect on evil creatures.
@@ -413,7 +413,7 @@ Channeling energy is a standard action that does not provoke attacks of opportun
 \subcf{Fire -- Mantle of Fire} As a swift action, the cleric can surround himself in a mantle of fire for 5 rounds. He gains the effect of a \spell{fire shield} spell, with a caster level equal to his cleric level \add his domain attribute.
 \subcf{Good -- Invoke Good} The cleric channels positive energy, except that it deals divine damage to evil creatures. 
 \subcf{Knowledge -- See the Truth} As a swift action, the cleric can gain the benefit of the \spell{true seeing} spell for 1 round.
-\subcf{Law -- Invoke Law} This power functions like the Law channeled domain power, except that chaotic creatures receieve no defense against the effect.
+\subcf{Law -- Invoke Law} This power functions like the Law channeled domain power, except that the attack automatically succeeds against chaotic creatures.
 \subcf{Magic -- Invoke Magic} This power functions like the Magic channeled domain power, except that affected spellcasters receive a \plus5 enhancement bonus to the next spell they cast. If this bonus is not used within 5 rounds, it is wasted. 
 \subcf{Protection -- Invoke Sanctuary} This power functions like the Protection channeled domain power, except that each subject also receives the benefit of a \spell{sanctuary} spell for 5 rounds. If a subject attacks, the \spell{sanctuary} is broken for that creature, but not for any other subject. 
 \subcf{Strength -- Invoke Strength} As a swift action, the cleric can add his cleric level as an enhancement bonus to his Strength for 1 round.
@@ -497,7 +497,7 @@ All of the following are class features of the druid.
 
 A druid also knows Druidic, a secret language known only to druids, which she learns upon becoming a 1st-level druid. Druidic is a free language for a druid; that is, she knows it in addition to her regular allotment of languages and it doesn't take up a language slot. Druids are forbidden to teach this language to nondruids. Druidic has its own alphabet.
 
-\cf{Drd}{Spells} A druid casts nature spells using her Wisdom. To learn or cast a spell, a druid must have a Wisdom at least equal to half the spell's level. The Difficulty Class for a saving throw against a druid's spell is 10 \add half the druid's caster level \add the druid's Wisdom.
+\cf{Drd}{Spells} A druid casts nature spells using her Wisdom. To learn or cast a spell, a druid must have a Wisdom at least equal to half the spell's level. A druid's magic attack bonus equals half her caster level \add her Wisdom.
 
 Like other spellcasters, the number of spells a druid knows and can cast each day is limited. These limitations are given below on \trefnp{Druid Spells per Day} and \trefnp{Druid Spells Known}. A druid's spells are drawn from the nature spell list (see \pcref{Nature Spells}).
 
@@ -976,7 +976,7 @@ If the paladin smites a creature that is not evil, the smite attack deals no dam
 
 Paladins do not require somatic components to cast spells, even if the spell would normally require a somatic component. A paladin need only request the favor of her deity to invoke divine magic.
 
-\par To learn or cast a spell, a paladin must have a Charisma score at least equal to half the spell's level. The Difficulty Class for a saving throw against a paladin's spell is 10 \add half the paladin's caster level \add her Charisma.
+\par To learn or cast a spell, a paladin must have a Charisma score at least equal to half the spell's level. A paladin's magic attack bonus equals half her caster level \add her Charisma.
 
 \par Like other spellcasters, a paladin can cast only a certain number of spells of each spell level per day. Her base daily spell allotment is given on \trefnp{The Paladin}.
 
@@ -1040,7 +1040,7 @@ A paladin's selection of spells is limited. A paladin begins play knowing no spe
 
 \cf{Pal}{Pass Judgment (Su)} At 10th level, the paladin gains the ability to freely pass judgment on those she deems unworthy. As a swift action, she may pass judgment on a creature within 100 feet of her once per day. The creature is treated as being evil, chaotic, or both, at the paladin's discretion, in place of their original alignment. This effect lasts for one day per paladin level, or until the paladin changes her mind about the subject (a free action). This does not change the creature's actions or behavior, but the creature is subject to smite evil or smite chaos, would register as evil under the inspection of a \spell{detect evil} spell, and so on.
 
-No saving throw is allowed against this effect, and it cannot be dispelled, but a \spell{remove curse}, \spell{miracle}, or \spell{wish} spell can remove it. The paladin can use this ability an additional time per day at 13th level and every odd level thereafter. A paladin should be careful when using this ability, as persecution of the innocent can lead overzealous paladins to fall.
+No attack is required for this effect, and it cannot be dispelled, but a \spell{remove curse}, \spell{miracle}, or \spell{wish} spell can remove it. The paladin can use this ability an additional time per day at 13th level and every odd level thereafter. A paladin should be careful when using this ability, as persecution of the innocent can lead overzealous paladins to fall.
 
 \cfnl{Improved Smiting (Su)} At 11th level, the paladin gains an additional improved smiting ability, and adds the following improved smiting ability to the list of those that can be selected.
 \subcf{Axiomatic} The paladin's smite is filled with exceptionally lawful divine energy. The attack ignores all damage reduction of chaotic creatures. Aberrations and chaotic outsiders take extra damage equal to twice the paladin's level.
@@ -1395,7 +1395,7 @@ All of the following are class features of the sorcerer.
 
  \cf{Sor}{Weapon and Armor Proficiency}  Sorcerers are proficient with simple weapons  and one other weapon group.  They are not proficient with any type of armor or shield. Armor of any type interferes with a sorcerer's arcane gestures, which can cause his spells with somatic components to fail.
 
-\cf{Sor}{Spells} A sorcerer casts arcane spells using his Charisma.  To learn or cast a spell, a sorcerer must have a Charisma at least equal to the spell's level. The Difficulty Class for a saving throw against a sorcerer's spell is 10 \add half the sorcerer's caster level \add his Charisma.
+\cf{Sor}{Spells} A sorcerer casts arcane spells using his Charisma.  To learn or cast a spell, a sorcerer must have a Charisma at least equal to the spell's level. A sorcerer's magic attack bonus equals half his caster level \add his Charisma.
 
 Like other spellcasters, the number of spells a sorcerer knows and can cast each day is limited. These limitations are given below on \trefnp{Sorcerer Spells per Day} and \trefnp{Sorcerer Spells Known}. A sorcerer's spells are drawn from the common spells on the sorcerer/wizard spell list (see \pcref{Sorcerer/Wizard Spells}). Sorcerers need to rest for eight hours in order to regain spells.
 
@@ -1682,14 +1682,14 @@ As a move action, he may move the weapon up to 30 feet in any direction, even ve
 \parhead{8th -- Haste} As a standard action, the spellwarped dramatically accelerates a creature within \rngclose range for 5 rounds. It doubles all of its movement speeds (to a maximum of an additional 30 feet of movement), and can take an additional attack at a \minus5 penalty when it makes a standard attack. The increase to movement speed is considered an enhancement bonus.
 \parhead{8th -- Pause Time} The spellwarped makes a Will attack against a single creature within \rngclose range to completely stop time for it for 5 rounds. The affected creature can take no actions and cannot be moved, damaged, or even affected in any way until the effect ends. The spellwarped may dismiss the effect as a swift action.
 \parhead{10th -- Accelerate Movement, Greater} This power functions like the accelerate movement power, except that it costs two spellwarp points and can be used as a move action. If the spellwarped uses this power on himself, it only requires a swift action to activate.
-\parhead{12th -- Timestream} The spellwarped manipulates time in a \arealarge line that extends out from him for 5 rounds. All creatures and objects that pass through the line are slowed for 1 round, with no saving throw allowed. The spellwarped can exclude his allies from the effect. The timestream is virtually invisible, requiring a DC 30 Perception check to notice in a clear environment, though objects passing through the effect can make it obvious.
+\parhead{12th -- Timestream} The spellwarped manipulates time in a \arealarge line that extends out from him for 5 rounds. All creatures and objects that pass through the line are slowed for 1 round. The spellwarped can exclude his allies from the effect. The timestream is virtually invisible, requiring a DC 30 Perception check to notice in a clear environment, though objects passing through the effect can make it obvious.
 \parhead{14th -- Inhuman Speed} As a move action, the spellwarped can accelerate himself to immense speed, allowing him to move up to five times his speed. During this time, he does not provoke attacks of opportunity, can move through squares occupied by enemies without penalty, and can treat liquids as if they were solid ground.
 \parhead{14th -- Mass Slow} This power functions like the slow power, except that it costs two spellwarp points and affects up to five creatures within \rngclose range of the spellwarped.
 \parhead{16th -- Time Reversal} As a swift action, the spellwarped can spend a spellwarp point to create a ``time lock.'' The time lock persists for one round. As a standard action, he can make a Will attack against a creature within \rngmed range to bring it backwards through time to the point at which the time lock was created. An affected creature is perfectly restored to the point immediately after the time lock was created. The effects of any actions that the creature took in the intervening time are undone, any damage it dealt or took is removed, it is restored to its original location, and the creature is restored in all other ways, just as if the intervening time had never occured. The spellwarped cannot reverse time for himself in this way.
 \parhead{16th -- Supreme Acceleration} As a standard action, the spellwarped can spend three spellwarp points to accelerate himself so much that he can take an additional round of actions immediately. During this round, all creatures he attacks are treated as helpless, but he cannot perform a coup de grace or similar ability; such an act requires more care and precision than is possible with such immense speed. After using this ability, he must wait 5 rounds before he can use it again.
 \parhead{18th -- Mass Haste} This power functions like the haste power, except that it costs two spellwarp points and affects up to five creatures within \rngclose range of the spellwarped.
 \parhead{18th -- Time Stop} As a standard action, the spellwarped can spend two spellwarp points to step into an alternate timestream, causing him to speed up so greatly that all other creatures seem frozen. He can act for 1d3\plus1 rounds of apparent time. During this time, all objects and creatures are frozen in place and are completely invulnerable to the spellwarped, though he may affect them with spellwarped powers normally. After using this ability, he must wait 5 rounds before he can use it again.
-\parhead{20th -- Sever Time} As a standard action, the spellwarped can spend two spellwarp points to completely stop time for a single creature for 5 rounds. This functions like the pause time power, except that no saving throw is allowed.
+\parhead{20th -- Sever Time} As a standard action, the spellwarped can spend two spellwarp points to completely stop time for a single creature for 5 rounds. This functions like the pause time power, except that no attack is required.
 
 \subsection{Wizard}
 \begin{dtable*}
@@ -1735,7 +1735,7 @@ All of the following are class features of the wizard.
 
 \cf{Wiz}{Bonus Languages} A wizard may learn Draconic in addition to the bonus languages available to the character because of her race (see Chapter 2: Races). Many ancient tomes of magic are written in Draconic, and apprentice wizards often learn it as part of their studies.
 
-\cf{Wiz}{Spells} A wizard casts arcane spells using her Intelligence. To learn or cast a spell, a wizard must have an Intelligence at least equal to the spell's level. The Difficulty Class for a saving throw against a wizard's spell is 10 \add half the wizard's caster level \add her Intelligence.
+\cf{Wiz}{Spells} A wizard casts arcane spells using her Intelligence. To learn or cast a spell, a wizard must have an Intelligence at least equal to the spell's level. A wizard's magic attack bonus equals half her caster level \add her Intelligence.
 
 Like other spellcasters, the number of spells a wizard knows and can cast each day is limited. These limitations are given below on \trefnp{Wizard Spells per Day} and \trefnp{Wizard Spells Known}. A wizard's spells are drawn from the common spells on the sorcerer/wizard spell list (see \pcref{Sorcerer/Wizard Spells}). Wizards need to rest for eight hours in order to regain spells. 
 
@@ -1874,7 +1874,7 @@ of the abilities of each of the character's classes.
 
 \parhead{Special Defenses} Add your character's levels in classes that grant the same base special defense bonus progressions together, then sum those base special defense bonuses to find your total base defense bonus.
 
-\par For example, a 3rd-level rogue/2nd-level ranger has a \plus5 base defense bonus on Fortitude saving throws (\plus1 from 3 levels in a class with a poor Fortitude defense and \plus4 from two levels in a class with a good Fortitude defense), a \plus7 base defense bonus on Reflex saving throws (from five levels in classes with good Reflex defenses), and a \plus2 base defense bonus on Will saving throws (from five levels in classes with poor Will defenses).
+\par For example, a 3rd-level rogue/2nd-level ranger has a base Fortitude defense bonus of \plus5 (\plus1 from 3 levels in a class with a poor Fortitude defense and \plus4 from two levels in a class with a good Fortitude defense), a base Reflex defense bonus of \plus7 (from five levels in classes with good Reflex defenses), and a base Will defense bonus of \plus2 (from five levels in classes with poor Will defenses).
 
 \parhead{Skills} When taking the first level in a class, if that class gives more skill points than the most skill points the character already received from a class, the character immediately gets skill points equal to the difference. For example, if a fighter took a level in rogue, he would immediately get the difference between the rogue's 8 skill points at 1st level and the fighter's 2 skill points at first level, for a total of 6 skill points.
 
