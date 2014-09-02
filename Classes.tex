@@ -1288,7 +1288,7 @@ If a rogue already has uncanny dodge from a different class, she stacks those le
 
 \cf{Rog}{Combat Tricks} As a rogue gains experience, she learns a small number of tricks that aid her and confound her foes. At 4th level, a rogue gains a combat trick. All combat tricks are (Ex) abilities unless otherwise noted.
 
-Tricks marked with an asterisk are called ambush tricks. Ambush tricks only function on the first sneak attack the rogue makes against a particular creature in an encounter. If an ambush trick allows a saving throw, the DC is 10 \add the rogue's level \add the rogue's Intelligence.
+Tricks marked with an asterisk are called ambush tricks. Ambush tricks only function on the first sneak attack the rogue makes against a particular creature in an encounter. If an ambush trick requires a special attack, the attack bonus is equal to the rogue's level \add her Intelligence.
 
 At 8th level, and every four levels thereafter, the rogue gains an additional combat trick. Some combat tricks have minimum rogue levels, as indicated in the name of the ability. The list of combat tricks are given below.
 
@@ -1314,9 +1314,9 @@ At 8th level, and every four levels thereafter, the rogue gains an additional co
 
 \subcf{8th -- Hamstring*} A creature damaged by this sneak attack has its land speed halved for 5 rounds. Despite the name, this can be used on creatures who do not have hamstrings. This is an ambush attack, and only works once per creature.
 
-\subcf{8th -- Slippery Mind} If the rogue fails a saving throw against a mind-affecting spell or effect, she can make another saving throw 1 round later against the same DC. Success means she is treated as having succeeded against the spell's saving throw, allowing her to end any ongoing effects from the spell. This does not help against instantaneous effects, and does not affect spell resistance.
+\subcf{8th -- Slippery Mind} Whenever a Will attack for a mind-affecting spell or effect succeeds against the rogue by less than 5, she is affected normally at first. One round later, the rogue is instead affected as if the attack had failed. This does not help against instantaneous effects.
 
-\subcf{12th -- Ambush Strike*} If the rogue uses a Strike feat (see \pcref{Strike Feats}) on this sneak attack, she may add her Intelligence to the saving throw DC against the strike. This is an ambush attack, and only works once per creature.
+\subcf{12th -- Ambush Strike*} If the rogue uses a Strike feat (see \pcref{Strike Feats}) on this sneak attack, she may add her Intelligence to the special attack for the strike. This is an ambush attack, and only works once per creature.
 
 \subcf{12th -- Assassination} To use this ability, the rogue must spend a full round studying a creature within 30 feet of her that has not noticed her and who is not in combat. If she make a melee sneak attack against that target within 1 round, her attack deals maximum damage. If the target becomes aware of her presence before she attacks, this ability has no benefit.
 
@@ -1548,7 +1548,7 @@ A spellwarped is proficient with simple weapons, any two weapon groups, light an
 \subcf{Telekinesis -- Object Manipulation} The spellwarped can concentrate as a standard action to move objects within five feet of him telekinetically. He can slowly lift or manipulate one object by up to one foot per round. The object can weigh up to five pounds. This level of control is insufficient to make skill checks or wield a weapon or shield effectively.
 \subcf{Temporal -- Time Awareness} The spellwarped always knows exactly what time it is, and can track the passage of time precisely without effort.
 
-\cf{Spl}{Invoke Power (Su)} A spellwarped can invoke his innate magic to generate powerful effects by spending a spellwarp point. If a saving throw is allowed, the DC is equal to 10 \add the spellwarped's class level \add his key attribute. He chooses a single power at 1st level from those available based on his choice of innate magic. At 4th level, and every two levels thereafter, he gains an additional power. Some powers require a minimum spellwarped level before they can be selected, as indicated in their description. The list of powers is given at \pcref{Spellwarped Powers}.
+\cf{Spl}{Invoke Power (Su)} A spellwarped can invoke his innate magic to generate powerful effects by spending a spellwarp point. He chooses a single power at 1st level from those available based on his choice of innate magic. At 4th level, and every two levels thereafter, he gains an additional power. If a special attack is required, his attack bonus is equal to his spellwarped class level \add his key attribute. Some powers require a minimum spellwarped level before they can be selected, as indicated in their description. The list of powers is given at \pcref{Spellwarped Powers}.
 
 \cf{Spl}{Surge of Power (Su)} At 2nd level, a spellwarped can invoke a surge of magical power that allows him to embody his innate magic more fully for 5 rounds. To invoke a surge of power, he must spend a spellwarp point as a a swift action. The effect of his surge depends on his choice of innate magic, as described below.
 \subcf{Alteration -- Alter Body} The spellwarped enhances his physical ability. He gains a \plus2 enhancement bonus to a physical attribute of his choice. This bonus increases by 1 at 8th, 14th, and 20th level.
@@ -1571,7 +1571,7 @@ A spellwarped is proficient with simple weapons, any two weapon groups, light an
 \cf{Spl}{Spellwarped Aspect (Su)} At 3rd level, the spellwarped gains a new ability based on his continued exposure to magical energy. Most aspects are specific to particular kinds of innate magic, but some aspects can be taken by any spellwarped. These aspects are listed under the General heading.  At 7th level, and every four levels thereafter, the spellwarped gains an additional spellwarped aspect. Some aspects require a minimum spellwarped level, as indicated below. The full list of spellwarped aspects is given below.
 
 \parhead{General}
-\subcf{Spellwarped Soul} The spellwarped may use his character level in place of his spellwarped level to determine the effects of his spellwarped abilities, including damage dealt and saving throw DCs. This does not affect the number of spellwarp points he has available.
+\subcf{Spellwarped Soul} The spellwarped may use his character level in place of his spellwarped level to determine the effects of his spellwarped abilities, including the damage dealt and the special attack bonus. This does not affect the number of spellwarp points he has available.
 \subcf{7th -- Expanded Senses} The range of the spellwarped's attuned senses ability doubles.
 \subcf{11th -- Accelerated Recovery} The spellwarped regains spellwarp points once per 10 minutes, rather than once per hour.
 \subcf{11th -- Rapid Senses} The spellwarped can constantly gain the benefit of his attuned senses ability. He can toggle his enhanced senses on or off as a swift action. If the ability does not have a duration, such as the temporal attuned senses ability, this aspect has no effect.
@@ -1589,7 +1589,7 @@ A spellwarped is proficient with simple weapons, any two weapon groups, light an
 \subcf{7th -- Flame Eater} When the spellwarped resists fire damage with his spellwarped body ability, he gains temporary hit points equal to the damage resisted for 5 minutes.
 
 \parhead{Telekinesis}
-\subcf{Improved Object Manipulation} When the spellwarped uses his object manipulation ability, he can affect objects within 10 feet, with a weight limit of up to two pounds per spellwarped level. He has enough control to make skill checks with a DC of up to 10.
+\subcf{Improved Object Manipulation} When the spellwarped uses his object manipulation ability, he can affect objects within 10 feet, with a weight limit of up to two pounds per spellwarped level. He has enough control to make checks with a DC of up to 10.
 \subcf{7th -- Shieldbearer} The spellwarped may wield shields, except tower shields, telekinetically. The shield floats in his square, granting him its bonus to his shield defense modifier. He does not need a free hand to wield the shield and suffers no armor check penalty or arcane spell failure from it. The shield follows him as he moves. If it is forcibly removed from his square, he loses control over it and it falls to the ground.
 \subcf{11th -- Mind Armory} The spellwarped may control a number of weapons equal to half his Intelligence with his mind blade ability. This does not allow him to make additional attacks per round, but he may attack interchangeably with any weapon he controls. Each weapon threatens an area and contributes to overwhelm penalties, just as with his normal mind blade ability.
 
