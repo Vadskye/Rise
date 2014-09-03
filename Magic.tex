@@ -101,7 +101,7 @@ If you ever try to cast a spell in conditions where the characteristics of the s
 Spells also fail if your concentration is broken and might fail if you're wearing armor while casting a spell with somatic components.
 
 \subsection{The Spell's Effect}
-Once you know which creatures (or objects or areas) are affected, and whether those creatures have made successful saving throws (if any were allowed), you can apply whatever results a spell entails.
+Once you know which creatures (or objects or areas) are affected, you can apply whatever results a spell entails.
 
 \subsection{Special Spell Effects}
 Many special spell effects are handled according to the school or subschool of the
@@ -126,7 +126,8 @@ Spells or magical effects usually work as described, no matter how many other sp
 However, spells, feats, class features, and other effects that have very similar effects may not both help the subject. A character can only be increased so far beyond his or her normal limits; even layered with powerful magical effects, a commoner is no serious threat to a giant. The limitations on these effects are provided by the stacking rules described below.
 
 \subsection{Stacking Effects}
-Spells that provide bonuses or penalties on attack rolls, damage rolls, saving throws, and so on usually do not stack with themselves. More generally, two bonuses of the same type don't stack even if they come from different spells (or from effects other than spells; see Bonus Types, below).
+Spells that provide bonuses or penalties usually do not stack with themselves. More generally, two enhancement bonuses don't stack even if they come from different spells; see \pcref{Stacking Rules}, for more details.
+
 \parhead{Same Effect More than Once in Different Strengths} In cases when two or more identical spells are operating in the same area or on the same target, but at different strengths, only the best one applies. This is called overlapping.
 
 \parhead{Same Effect with Differing Results} The same spell can sometimes produce varying effects if applied to the same recipient more than once. Usually, the last spell in the series trumps the others. None of the previous spells are actually removed or dispelled, but their effects become irrelevant while the final spell in the series lasts.
@@ -160,7 +161,7 @@ Abjuration spells manipulate the raw essence of magic to protect allies or ward 
 \parhead{Interdiction} An interdiction spell hedges out creatures or forces of an opposing alignment or type. \spellindirect{protection from evil}{Protection from evil} is an interdiction spell.
 \parhead{Negating} A negating spell negates magical effects. \spell{Dispel magic} is a negating spell.
 \parhead{Shielding} A shielding spell protects creatures or objects from harm. \spell{Shield} is a shielding spell.
-\parhead{Warding} A warding spell protects an area from intrusion. If one warding spell is active within 10 feet of another for 24 hours or more, the magical fields interfere with each other and create barely visible energy fluctuations. The DC to find such spells with the Spot skill drops by 4. The DC drops by an additional 2 for each additional warding spell beyond the second. \spellindirect{glyph of warding}{Glyph of warding} is a warding spell.
+\parhead{Warding} A warding spell protects an area from intrusion. If one warding spell is active within 10 feet of another for 24 hours or more, the magical fields interfere with each other and create barely visible energy fluctuations. The DC to find such spells with the Perception skill drops by 4. The DC drops by an additional 2 for each additional warding spell beyond the second. \spellindirect{glyph of warding}{Glyph of warding} is a warding spell.
 
 \subsubsection{Conjuration}
 Conjuration spells transport and create objects and creatures to aid you. A creature or object brought into being or transported to your location by a conjuration spell cannot appear inside another creature or object, nor can it appear floating in an empty space. It must arrive in an open location on a surface capable of supporting it. The creature or object must appear within the spell's range, but it does not have to remain within the range. There are three subschools of conjuration spells.
@@ -232,7 +233,7 @@ Many of these descriptors have no game effect by themselves, but they govern how
 
 \begin{itemize*}
 \item Air spells do not function in environments without air.
-\item Barrier spells cannot be used offensively. If you force the barrier against a force or creature it prohibits, you feel a discernible pressure against the barrier. If you continue to apply pressure, you end the spell.
+\item Barrier spells cannot be used offensively. If you force the barrier against a force or creature it prohibits, you feel a discernible pressure against the barrier. If you continue to apply pressure, the spell ends.
 \item Curse spells cannot be dispelled by \spell{dispel magic} or similar effects. However, they can be removed with a \spell{break enchantment}, \spell{limited wish},\spell{miracle}, \spell{remove curse}, or \spell{wish} spell.
 \item A detection spell can penetrate barriers, but is always blocked by special materials of some kind. Unless otherwise specified in the spell description, the spell is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.
 \item Fire spells do not function underwater. Unless otherwise noted, a fire spell provides light equivalent to a torch.
@@ -243,16 +244,16 @@ Many of these descriptors have no game effect by themselves, but they govern how
 \item Size-affecting spells alter a creature's size. Multiple size increasing or size decreasing effects never stack. If a creature is affected by both size-increasing and size-decreasing effects, they cancel out on a one for one basis, and any remaining effect occurs normally.
 \item Sound-dependent spells use sound as a fundamental component of the spell. If the target cannot hear the spell, it has no effect.
 \item Teleportation spells instantaneously move creatures by travelling through the Astral Plane. Anything that blocks planar travel also blocks teleportation.
-\item Trap spells do not have obvious effects immediately. They can be detected with the Spot skill. The DC to detect a trap spell is 25 \add spell level. Most, but not all, traps can be disabled with the Disable Device skill. If it can be disabled, the DC is 25 \add spell level.
+\item Trap spells do not have obvious effects immediately. They can be detected with the Perception skill. The DC to detect a trap spell is 25 \add spell level. Most, but not all, traps can be disabled with the Disable Device skill. If it can be disabled, the DC is 25 \add spell level.
 \par No more than one trap spell can be placed on the same object or in the same area. Only the first trap placed has any effect. It must be dispelled or discharged before any new traps can be placed.
 \item Unreal spells do not have ``real'' effects and can be disbelieved. Unreal effects cannot cause damage to objects or creatures, support weight, provide nutrition, or provide protection from the elements. Consequently, these spells are useful for confounding or delaying foes, but useless for attacking them directly unless combined with a real effect.
-\par Creatures encountering an unreal spell usually do not receive saving throws to recognize it as illusory until they study it carefully or interact with it in some fashion. A Spot or Listen check can be made to interact with an unreal effect if appropriate to the type of effect. Unless otherwise specified by the spell, the DC of such a check is equal to the saving throw DC of the spell.
-\par Once a creature has interacted with an unreal effect, it can make a Will save. A successful saving throw reveals it to be false. Its effects can still be observed if desired, but they are mere shadows of the full effect: visual effects appear translucent outlines, sounds can be heard as ghostly echoes, and so on.
-\par A failed saving throw indicates that a character fails to notice something is amiss. A character faced with definitive proof that an unreal effect isn't real needs no saving throw. If any viewer successfully disbelieves an unreal effect and communicates this fact to others, each such viewer gains a saving throw with a \plus4 bonus.
+\par When an unreal spell is cast, the caster makes a magic check, with the same bonus as his magic attack bonus. Creatures encountering an unreal spell usually cannot recognize it as illusory until they study it carefully or interact with it in some fashion. A Perception check can be made to interact with an unreal effect if appropriate to the type of effect. Unless otherwise specified by the spell, the DC of such a check is equal to the magic check result used when the effect was created.
+\par If a creature interacts with an unreal effect, the magic check is opposed by the creature's Will defense. If the check fails, the creature recognizes the illusion as false. Its effects can still be observed if desired, but they are mere shadows of the full effect: visual effects appear translucent outlines, sounds can be heard as ghostly echoes, and so on.
+\par If the check succeeds, the character fails to notice something is amiss. A character faced with definitive proof that an unreal effect isn't real automatically recognizes it as illusory. If any viewer successfully disbelieves an unreal effect and communicates this fact to others, each such viewer receives a \plus5 bonus to their Will defense against the effect.
 \end{itemize*}
 
 \subsection{Level}
-The next line of a spell description gives the spell's level, a number between 0 and 9 that defines the spell's relative power. This number is preceded by an abbreviation for the class whose members can cast the spell. The Level entry also indicates whether a spell is a domain spell and, if so, what its domain and its level as a domain spell are. A spell's level affects the DC for any save allowed against the effect.
+The next line of a spell description gives the spell's level, a number between 1 and 9 that defines the spell's relative power. This number is preceded by an abbreviation for the class whose members can cast the spell. The Level entry also indicates whether a spell is a domain spell and, if so, what its domain and its level as a domain spell are. A spell's level affects the DC for any save allowed against the effect.
 
 Names of spellcasting classes are abbreviated as follows: cleric Clr; druid Drd; paladin Pal; ranger Rgr; sorcerer Sor; wizard Wiz.
 
