@@ -103,7 +103,7 @@ Combat style feats grant a character the ability to fight in a particular style,
 \begin{longtabu}{>{\lcol}p{10em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{3em}}
 %    \taburowcolors{1}{white}{tbrown}
     \thead{General Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
-\featref{Endurance} & Con 3 & Resist nonlethal damage & \featpref{Endurance} \\
+\featref{Endurance} & Con 3 & Fight normally without hit points & \featpref{Endurance} \\
 \featref{Deathless} & Con 5 or base Fortitude defense \plus10 & Immune to death effects & \featpref{Deathless} \\
 \featref{Diehard} & Con 3 & Remain conscious after taking critical damage & \featpref{Diehard} \\
 \featref{Fearless} & Cha 5 or base Will defense \plus10 & Immune to fear and hostile morale effects & \featpref{Fearless} \\
@@ -664,12 +664,12 @@ If you are 14th level, you gain a fly speed equal to your base land speed, thoug
 \parhead{Benefit} When casting a heightened spell, you gain a \plus2 bonus to caster level. A heightened spell uses up a spell slot one level higher than the spell's actual level. Unlike other metamagic feats, you can apply this metamagic feat any number of times, increasing your caster level by 2 each time.
 
 \feat{Endurance}{General}
-\featpre Con 3
-\parhead{Benefit} You gain nonlethal damage reduction equal to 2 \add half your character level. The damage reduction allows you to ignore the first points of nonlethal damage you take each round. You resist 1 additional point of damage per two levels.
+\featpre Con 3.
+\parhead{Benefit} You are not staggered when you have no hit points remaining. You still take critical damage and risk death if you are damaged when you have no hit points.
 
-In addition, wearing medium armor does not make you encumbered. This allows you to sleep in medium armor without penalty, and affects any class features which only function while you are unencumbered. 
+In addition, wearing medium armor does not make you encumbered. This allows you to sleep in medium armor without penalty, and affects any class features which only function while you are unencumbered.
 
-\parhead{Normal} A character without this feat who sleeps in medium or heavier armor is automatically fatigued the next day.
+\parhead{Normal} A character without this feat who has no hit points remaining is staggered. In addition, a character without this feat who sleeps in medium or heavier armor is automatically fatigued the next day.
 \parhead{Special} A barbarian automatically gains Endurance as a bonus feat at 3rd level. He need not select it.
 
 \feat{Energetic Substitution}{Metamagic}
