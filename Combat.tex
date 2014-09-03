@@ -8,10 +8,10 @@ Once in combat, creatures attack each other (see \pcref{Attacks}) and defend the
 When it's your turn, you can take one standard action, one move action, and one swift action. If you want, you can take a full-round action instead of your standard and move actions. You can always ``downgrade'' an action to a lesser action: turning a standard action into a move action, or a move action into a swift action.
 
 \section{Attacks}\label{Attacks}
-An ``attack'' is anything that affects another creatures in a potentially harmful way. There are two kinds of attacks: physical attacks, which are made with weapons or fists, and special attacks, which are made with magic or supernatural power. Physical attacks always involve an attack roll against a DC set by the defender, which is usually its Armor Class (see \pcref{Armor Class}). Effects which give a bonus ``to hit'' or ``to attack'' improve physical attacks. Special attacks do not have attack rolls, and usually allow a saving throw by the defender against a DC set by the attacker (see \pcref{Saving Throws}). Some attacks are both physical and special. These attacks usually require an attack roll to hit, and impose a special effect if the attack hits. 
+An ``attack'' is anything that affects another creatures in a potentially harmful way. There are two kinds of attacks: physical attacks, which are made with weapons or fists, and special attacks, which are made with magic or supernatural power. All physical attacks, and most special attacks, involve an attack roll against a DC set by one of the defender's defenses.
 
 \subsection{Standard Attack}
-As a standard action, you can try to strike a foe with a weapon you are wielding. To do so, make an attack roll with a weapon you are wielding, adding your attack modifier to the roll. If your result equals or exceeds your foe's Armor Class, your attack hits, and your foe takes damage.
+As a standard action, you can try to strike a foe with a weapon you are wielding. To do so, make an attack roll with a weapon you are wielding, adding your attack modifier to the roll. If your result equals or exceeds your foe's physical defense, your attack hits, and your foe takes damage.
 
 You can also make a single attack as an attack of opportunity. See \pcref{Attacks of Opportunity}. 
 
@@ -75,10 +75,10 @@ You can make a number of attacks of opportunity each round equal to 1 \add half 
 \subsection{Special Attacks}
 
 \subsubsection{Disarm}\label{Disarm}
-Instead of striking a foe directly, you can strike an item it is wearing or holding. You make an attack with your weapon as normal, except that you target the creature's touch AC instead of its normal AC. If your attack hits, you deal damage to the object rather than to your foe. If your attack also beats the creature's Maneuver Class, and the item is not well-secured (such as a ring or suit of armor), it falls to the ground in the creature's square.
+Instead of striking a foe directly, you can strike an item it is wearing or holding. You make an attack with your weapon as normal, except that you target the creature's touch defense instead of its normal physical defense. If your attack hits, you deal damage to the object rather than to your foe. If your attack also beats the creature's Maneuver Class, and the item is not well-secured (such as a ring or suit of armor), it falls to the ground in the creature's square.
 
 \subsubsection{Feint}\label{Feint}
-Instead of striking to deal damage, you can feint to leave your foe off-balance. You make a melee attack with your weapon as normal, except that you target the creature's touch AC instead of its normal AC. If you hit, you deal no damage, but it is flat-footed against the next attack made against it. The attack must be made before the creature's next action, or else the feint is wasted.
+Instead of striking to deal damage, you can feint to leave your foe off-balance. You make a melee attack with your weapon as normal, except that you target the creature's touch defense instead of its normal physical defense. If you hit, you deal no damage, but it is flat-footed against the next attack made against it. The attack must be made before the creature's next action, or else the feint is wasted.
 
 \subsection{Combat Maneuvers}\label{Combat Maneuvers}
 A combat maneuver is an attempt to physically hinder your foe with your body, such as by shoving or tripping it. Unless otherwise noted, using a combat maneuver requires a free hand and takes a standard action. You make an attack against a creature within your reach, adding your maneuver modifier to the roll instead of your attack modifier. If your result equals or exceeds your foe's Maneuver Class, your attack hits, and your foe is affected by the maneuver.
@@ -106,7 +106,7 @@ Your attack attribute depends on the maneuver you are using, as described in \pc
 
 \subsubsection{Maneuver Descriptions}
 
-\parhead{Dirty Trick}\label{Dirty Trick} You strike your foe in a sensitive spot, pull its pants down, or creatively use your environment to attack. Success means the creature is vulnerable for 1 round, causing giving it a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC. For every 5 points by which you succeed, the creature is vulnerable for an additional round. You can perform a dirty trick with either Strength or Dexterity.
+\parhead{Dirty Trick}\label{Dirty Trick} You strike your foe in a sensitive spot, pull its pants down, or creatively use your environment to attack. Success means the creature is vulnerable for 1 round, causing giving it a \minus2 penalty to attacks, defenses, and checks. For every 5 points by which you succeed, the creature is vulnerable for an additional round. You can perform a dirty trick with either Strength or Dexterity.
 
 \parhead{Grapple}\label{Grapple} You physically grab and restrain your foe. Success means you and the creature become grappled, which limits your ability to act. See \pcref{Grappling} for more details.
 
@@ -114,54 +114,55 @@ Your attack attribute depends on the maneuver you are using, as described in \pc
 
 \parhead{Shove}\label{Shove} You shove your foe where you want it to go. Success means you move the creature 5 feet in a direction of your choice. For every 5 points by which you succeed, you can move it an additional 5 feet. You cannot move the creature further after moving it outside of your reach, but you can take a move action to move with the creature as you shove it to move it farther. If the creature encounters a solid object or creature, you must stop shoving it. You can only shove a creature with Strength.
 
-\parhead{Trip}\label{Trip} You try to trip your foe. Success means the creature falls prone, causing it to take a \minus4 penalty to attack rolls and AC. You can trip a creature with Strength or Dexterity.
+\parhead{Trip}\label{Trip} You try to trip your foe. Success means the creature falls prone, causing it to take a \minus4 penalty to physical attacks and defenses. You can trip a creature with Strength or Dexterity.
 
 \section{Defenses}\label{Defenses}
+Physical attacks are made against physical defenses: normal physical defense, touch defense, flat-footed defense, or maneuver defense. Special attacks are made against special defenses: Fortitude defense, Reflex defense, or Will defense.
 
-\subsection{Armor Class}
-Your Armor Class (AC) represents how hard it is for opponents to land a solid, damaging blow on you. It's the attack roll result that an opponent needs to achieve to hit you. Unlike most combat statistics, your AC is made up of the sum of other modifiers, each of which can have their own independent bonuses and penalties. Your AC is equal to the following:
+\subsection{Physical Defenses}
+Your physical defense represents how hard it is for opponents to land a solid, damaging blow on you. It's the attack roll result that an opponent needs to achieve to hit you with a physical attack. Unlike most combat statistics, your physical defense is made up of the sum of other modifiers, each of which can have their own independent bonuses and penalties. It is equal to the following:
 
 \begin{figure}[h]
-    \centering 10 \add Dexterity \add armor modifier \add shield modifier \add dodge modifier \add size modifier \add other bonuses and penalties
+    \centering 10 \add Dexterity \add armor defense modifier \add shield defense modifier \add dodge defense modifier \add size modifier \add other bonuses and penalties
 \end{figure}
 
-\parhead{Base Attack Bonus} Your experience and aptitude in combat affects your ability to defend yourself; experienced warriors know how to recognize and avoid or parry blows that would easily fell novices. As a result, you add half your base attack bonus to your dodge modifier to armor class.
-\parhead{Dodge Modifier} Your dodge modifier represents your ability to actively avoid blows. Any situation that denies you your Dexterity bonus, such as being flat-footed, also denies you your dodge modifier.
+\parhead{Base Attack Bonus} Your experience and aptitude in combat affects your ability to defend yourself; experienced warriors know how to recognize and avoid or parry blows that would easily fell novices. As a result, you add half your base attack bonus to your dodge defense modifier.
+\parhead{Dodge Modifier} Your dodge defense modifier represents your ability to actively avoid blows. Any situation that denies you your Dexterity bonus, such as being flat-footed, also denies you your dodge modifier.
 \parhead{Natural Armor} Creatures with unusually tough skin or thick hide, including most monsters, gain bonuses to their armor modifier. These bonuses stack with any armor such creatures might wear.
 \parhead{Size Modifier} Your size modifier is described on \tref{Size in Combat}.
 
-\subsubsection{Flat-Footed Armor Class}
-Sometimes you can't use your agility to avoid an attack. Your flat-footed armor class is equal to your armor class, ignoring your Dexterity, dodge modifier, and shield modifier. If your Dexterity is negative, you always apply the penalty, even while flat-footed.
+\subsubsection{Flat-Footed Defense}
+Sometimes you can't use your agility to avoid an attack. Your flat-footed physical is equal to your physical defense, ignoring your Dexterity, dodge defense modifier, and shield defense modifier. If your Dexterity is negative, you always apply the penalty, even while flat-footed.
 
-\subsubsection{Touch Armor Class}
-Sometimes your armor doesn't help you avoid an attack. Your touch armor class is equal to your armor class, ignoring your armor modifier. Most touch attacks come from spells.
+\subsubsection{Touch Defense}
+Sometimes your armor doesn't help you avoid an attack. Your touch defense is equal to your physical defense, ignoring your armor modifier. Most touch attacks come from spells.
 
-\subsection{Maneuver Class}
-Your Maneuver Class (MC) represents how good you are at defending against combat maneuvers. It's the attack roll result that an opponent needs to achieve to affect you with a maneuver. Like your Armor Class, your MC is made up of the sum of other modifiers, each of which can have independent bonuses and penalties. Your MC is equal to the following:
+\subsubsection{Maneuver Defense}
+Your maneuver defense represents how good you are at defending against combat maneuvers. It's the attack roll result that an opponent needs to achieve to affect you with a maneuver attack. Your maneuver defense is made up of the sum of other modifiers, each of which can have independent bonuses and penalties. It is equal to the following:
 
 \begin{figure}[h]
-    \centering 10 \add base attack bonus \add Strength \add Dexterity \add shield modifier \add dodge modifier \add special size modifier \add AC bonuses and penalties
+    \centering 10 \add base attack bonus \add Strength \add Dexterity \add shield defense modifier \add dodge defense modifier \add special size modifier \add other bonuses and penalties
 \end{figure}
-
-Any effect which gives a bonus or a penalty to your AC directly is also applied to your MC. For example, while prone, you take a \minus4 penalty to your MC, just like you do to your AC.
 
 Your special size modifier is described in \tref{Size in Combat}.
 
-\subsection{Hit Points}
-Your hit points is a defense that represents how much more punishment you can take. When you run out hit points, you can't act anymore, and you might die, as described in \pcref{Injury, Death, and Healing}.
+\subsection{Special Defenses}
+There are three special defenses: Fortitude, Reflex, and Will.
+\parhead{Fortitude} This defense measures your ability to stand up to physical punishment or attacks against your vitality and health. Apply your Constitution and half your Strength to your Fortitude defense.
+\parhead{Reflex} This defense measures your ability to dodge area attacks and to react to certain attacks. Apply your Dexterity and half your Wisdom to your Reflex defense.
+\parhead{Will} This defense measures your resistance to mental influence as well as many magical effects. Apply your Charisma and half your Intelligence to your Will defense.
 
-\subsection{Saving Throws}
-Generally, when you are subject to an unusual or magical attack, you get a saving throw to avoid or reduce the effect. You make a saving throw by rolling a d20 and adding your saving throw modifier. If it is greater than the save DC of the attack, you resist the attack (though it may still have partial effects on you). Your saving throw modifier is calculated as follows:
+\subsubsection{Calculating Special Defenses}
+All special defenses are calculated in the following way:
 
 \begin{figure}[h]
-\centering Base save bonus \add primary attribute \add 1/2 secondary attribute \add enhancement bonus \add other bonuses and penalties
+\centering Base defense bonus \add primary attribute \add half secondary attribute \add enhancement bonus \add other bonuses and penalties
 \end{figure}
 
-\subsubsection{Saving Throw Types}
-The three different kinds of saving throws are Fortitude, Reflex, and Will.
-\parhead{Fortitude} These saves measure your ability to stand up to physical punishment or attacks against your vitality and health. Apply your Constitution and half your Strength to your Fortitude saving throws.
-\parhead{Reflex} These saves test your ability to dodge area attacks and to react to certain attacks. Apply your Dexterity and half your Wisdom to your Reflex saving throws.
-\parhead{Will} These saves reflect your resistance to mental influence as well as many magical effects. Apply your Charisma and half your Intelligence to your Will saving throws.
+Your base defense bonus comes from your classes. See \pcref{Base Special Defense Progressions}, for more details.
+
+\subsection{Hit Points}
+Your hit points is a defense that represents how much more punishment you can take. When you run out hit points, you can't act anymore, and you might die, as described in \pcref{Injury, Death, and Healing}.
 
 \section{Movement and Positioning}\label{Movement and Positioning}
 
@@ -175,7 +176,7 @@ Sometimes, movement and distance are represented in squares. A 30-ft. movement i
 \parhead{Move} As a move action, you can move up to your speed.
 \parhead{Stand Up} As a move action, you can stand up from being prone. For most creatures, this requires using a hand to help get up.
 \parhead{Withdraw}\label{Withdraw} As a standard action, you can move up to your speed. Before you do so, you can designate one creature who threatens you. This movement does not provoke attacks of opportunity from that creature. At base attack bonus \plus6, \plus11, and \plus16, you may avoid provoking attacks of opportunity from an additional opponent of your choice.
-\parhead{Charge}\label{Charge} As a full-round action, you can move up to twice your speed and make a single attack with a \plus2 bonus to hit at the end of your charge. While charging, and until the start of your next turn, you take a \minus2 penalty to armor class.
+\parhead{Charge}\label{Charge} As a full-round action, you can move up to twice your speed and make a single attack with a \plus2 bonus to hit at the end of your charge. While charging, and until the start of your next turn, you take a \minus2 penalty to physical defenses.
 \par You must move at least 30 feet to gain the benefit of a charge, and all movement must be in a single straight line. If there are any obstacles in your path which hinder your movement, you cannot charge. A charge that fails or becomes invalid partway through becomes a hustle action.
 \par  At base attack bonus \plus6, the attack you make at the end of a charge deals double damage if you hit by 5 or more. At base attack bonus \plus 11, the attack deals triple damage if you hit by 10 or more. At base attack bonus \plus16, the attack deals quadruple damage if you hit by 15 or more.
 \parhead{Struggle} As a full-round action, you can move five feet, regardless of movement penalties. You can use this to move even if your speed is decreased below five feet by penalties.
@@ -200,7 +201,7 @@ Enemies three size categories larger than you, and all allies, are not considere
 
 \subsubsection{Squeezing}
 
-In some cases, you may have to squeeze into or through an area that isn't as wide as the space you take up. You can squeeze through or into a space that is at least half as wide as your normal space. While squeezing, you move half as fast, and you take a \minus4 penalty on attack rolls and AC. You can squeeze into tighter spaces with the Escape Artist skill.
+In some cases, you may have to squeeze into or through an area that isn't as wide as the space you take up. You can squeeze through or into a space that is at least half as wide as your normal space. While squeezing, you move half as fast, and you take a \minus4 penalty on physical attacks and defenses. You can squeeze into tighter spaces with the Escape Artist skill.
 
 Creatures that take up multiple squares take up half their normal number of squares while squeezing. For example, a Large creature who normally takes up four spaces takes up two spaces while squeezing.
 
@@ -226,7 +227,7 @@ Each creature with a fly speed also has a maneuverability: good, average, poor, 
 
 \parhead{Special Maneuverability} A flying creature with special maneuverability does not experience gravity like other creatures. In addition to the effects of good maneuverability, it moves up and down at the same speed as it moves horizontally. It can also hover in place without spending a move action.
 
-\parhead{Falling} If a flying creature loses control, usually by failing to maintain its minimum forward speed, or loses the ability to fly, it falls. While falling, a flying creature can attempt to recover by making a DC 20 Reflex save as a move action. If it succeeds, it can begin flying as normal. Otherwise, it continues falling for another round.
+\parhead{Falling} If a flying creature loses control, usually by failing to maintain its minimum forward speed, or loses the ability to fly, it falls. While falling, a flying creature can attempt to recover by making a DC 15 Dexterity check as a move action. If it succeeds, it can begin flying as normal. Otherwise, it continues falling for another round.
 
 \subsection{Gliding}\label{Gliding}
 A creature with a glide speed can glide through the air at the indicated speed. It must be unencumbered (see \pcref{Carrying Capacity}).
@@ -264,7 +265,7 @@ When you are above half hit points, you suffer no significant effects from losin
 When you drop to half your hit points or below, you are bloodied. This makes you more vulnerable to certain spells and effects, but you suffer no direct penalties. If you take additional damage, you can become staggered.
 
 \subsubsection{Staggered}
-When you take damage that would reduce your hit points to 0, you become staggered. While staggered, you may take a single move action or standard action each round, but not both. You cannot take full-round actions, but you may take swift actions. In addition, you are vulnerable, causing you to take a \minus2 penalty on attack rolls, saving throws, checks, DCs, and AC.
+When you take damage that would reduce your hit points to 0, you become staggered. While staggered, you may take a single move action or standard action each round, but not both. You cannot take full-round actions, but you may take swift actions. In addition, you are vulnerable, causing you to take a \minus2 penalty to attacks, defenses, and checks.
 
 If you take additional damage while at 0 hit points, you begin dying (see Dying, below).
 
@@ -273,7 +274,7 @@ When you take damage while you have no hit points remaining, that damage represe
 
 If you have no hit points, and your critical damage exceeds your Constitution, you fall unconscious. Otherwise, you are staggered as long as you are dying.
 
-While dying, you must make a Fortitude save every round. The DC is equal to 15 \add the critical damage you have taken. If you fail three times, you die. If you succeed three times, or receive healing that would normally restore hit points, you become stable (see Stable, below). Another character can give first aid to help you stabilize (see \pcref{Heal}).
+While dying, you must make a Constitution check every round. The DC is equal to 10 \add the critical damage you have taken. If you fail three times, you die. If you succeed three times, or receive healing that would normally restore hit points, you become stable (see Stable, below). Another character can give first aid to help you stabilize (see \pcref{Heal}).
 
 If you take additional damage, you can die (see Dead, below).
 
@@ -323,7 +324,7 @@ Certain effects give a character temporary hit points which act as a protection 
 \end{dtable}
 
 \begin{dtable}
-    \lcaption{Armor Class Bonuses and Penalties}
+    \lcaption{Physical Defense Bonuses and Penalties}
     \begin{tabularx}{\columnwidth}{>{\lcol}X >{\ccol}X}
         \thead{Defender's Condition} & \thead{Effect} \\
         Behind active cover & 20\% miss \\
@@ -355,7 +356,7 @@ Bonuses and penalties are the most basic way that a roll or numerical statistic 
 \subsection{Stacking Rules}\label{Stacking Rules}
 Usually, modifiers stack with each other, meaning that you add or subtract all of the modifiers to get the final result. However, enhancement bonuses and certain specific kinds of modifiers do not stack with each other. When bonuses don't stack with each other, you only apply the highest bonus. Likewise, when penalties don't stack with each ather, you only apply the highest penalty.
 
-\parhead{Enhancement Bonuses} Enhancement bonuses are always granted by magic or supernatural abilities. Unlike other bonuses, enhancement bonuses do not stack with each other. Each enhancement bonus will specify what it applies to, such as "attack bonus" or "Fortitude saves". Use only the highest enhancement bonus that applies. If you have an enhancement bonus that affects a broad category of rolls, such as "all saving throws", it doesn't stack with more narrow enhancement bonuses, such as "Fortitude saves".
+\parhead{Enhancement Bonuses} Enhancement bonuses are always granted by magic or supernatural abilities. Unlike other bonuses, enhancement bonuses do not stack with each other. Each enhancement bonus will specify what it applies to, such as ``physical attacks'' or ``Fortitude defense''. Use only the highest enhancement bonus that applies. If you have an enhancement bonus that affects a broad category of rolls, such as ``all special defenses'', it doesn't stack with more narrow enhancement bonuses, such as ``Fortitude defense''.
 
 \parhead{Special Exceptions}
 
@@ -387,9 +388,9 @@ If the obstacle is active and mobile, such as a creature or tree branches blowin
 
 \subsubsection{Passive Cover}
 
-If the obstacle is stationary, such as a tree trunk or wall, the defender has passive cover. A creature with passive cover relative to you has a \plus4 bonus to armor class.
+If the obstacle is stationary, such as a tree trunk or wall, the defender has passive cover. A creature with passive cover relative to you has a \plus4 bonus to physical defenses.
 
-\parhead{Reflex Saves} A creature with passive cover gains a \plus2 bonus on Reflex saves against attacks that originate or burst out from a point on the other side of the cover from it. Note that spread effects can extend around corners and thus negate this cover bonus.
+\parhead{Reflex Defense} A creature with passive cover gains a \plus4 bonus to Reflex defense against attacks that originate or burst out from a point on the other side of the cover from it. Note that spread effects can extend around corners and thus negate this cover bonus.
 \parhead{Small Obstacles} A low obstacle (such as a wall no higher than half your height) provides passive cover, but only to creatures within 30 feet (6 squares) of it. The attacker can ignore the cover if he's closer to the obstacle than his target. If two creatures are equally distant from the wall, it grants cover to both of them.
 \parhead{Attacks of Opportunity} You can't execute an attack of opportunity against an opponent with passive cover relative to you.
 \parhead{Stealth Checks} You can use passive cover to make a Stealth check to hide, but not active cover.
@@ -397,12 +398,12 @@ If the obstacle is stationary, such as a tree trunk or wall, the defender has pa
 
 \subsubsection{Improved Cover}
 
-A creature can benefit from both passive and active cover. However, cover of the same type generally doesn't stack; a creature behind two trees is not substantially more protected than a creature behind a single tree. In some cases, cover may stack. In that case, each additional obstacle increases the miss chance by 10\% or grants an additional \plus2 bonus to AC, as appropritae.
+A creature can benefit from both passive and active cover. However, cover of the same type generally doesn't stack; a creature behind two trees is not substantially more protected than a creature behind a single tree. In some cases, cover may stack. In that case, each additional obstacle increases the miss chance by 10\% or grants an additional \plus2 bonus to physical defenses, as appropritae.
 
 Exceptionally well covered opponents, such as a creature behind an arrow slit in a castle, may receive additional benefits. For example, it might gain improved evasion, and there may be limitations on what kind of attacks are possible.
 
 \subsection{Concealment}\label{Concealment}
-Concealment represents anything which makes it more difficult to see your target, such as dim lighting. A creature with concealment from you gains a \plus4 bonus to Armor Class. Concealment bonuses do not apply if you can't see your opponent (such as if you close your eyes).
+Concealment represents anything which makes it more difficult to see your target, such as dim lighting. A creature with concealment from you gains a \plus4 bonus to physical defenses. Concealment bonuses do not apply if you can't see your opponent (such as if you close your eyes).
 
 \parhead{Determining Concealment} When making a melee attack against an adjacent target, your target has concealment if his space is entirely within an effect that grants concealment.
 
@@ -439,7 +440,7 @@ If it is impossible to see your target, you can't attack him normally. However, 
 You can't execute an attack of opportunity against an invisible opponent, even if you know what square or squares the opponent occupies.
 
 \subsection{Overwhelm}\label{Overwhelm}
-When a creature is being attacked by multiple foes at once, it is less able to defend itself. A creature is considered overwhelmed if it is being threatened by more than one creature. Multiple creatures occupying the same square count as a single creature when determining overwhelm penalties. If a creature is overwhelmed, it takes a penalty to armor class equal to the number of creatures threatening it.
+When a creature is being attacked by multiple foes at once, it is less able to defend itself. A creature is considered overwhelmed if it is being threatened by more than one creature. Multiple creatures occupying the same square count as a single creature when determining overwhelm penalties. If a creature is overwhelmed, it takes a penalty to physical defenses equal to the number of creatures threatening it.
 
 \subsection{Total Defense}\label{Total Defense}
 As a standard action, you can focus entirely on defense, granting you a \plus4 bonus to your dodge modifier for 1 round. While using the total defense action, you can't make attacks of opportunity, but you still threaten squares normally for the purpose of overwhelm penalties and similar effects.
@@ -447,9 +448,9 @@ As a standard action, you can focus entirely on defense, granting you a \plus4 b
 \subsection{Helpless Defenders}
 A helpless creature is someone who is bound, sleeping, paralyzed, unconscious, or otherwise at your mercy. It is flat-footed and is treated as having a Dexterity of \minus10.
 
-\parhead{Coup de Grace}\label{Coup de Grace} As a full-round action, you can deliver a coup de grace to a helpless opponent adjacent to you. You automatically hit with your weapon and score a critical hit. If the defender survives the damage, he must make a Fortitude save (DC 10 \add damage dealt) or die.
+\parhead{Coup de Grace}\label{Coup de Grace} As a full-round action, you can deliver a coup de grace to a helpless opponent adjacent to you. You automatically hit with your weapon and score a critical hit. If the damage exceeds the struck creature's Fortitude defense, it immediately dies.
 
-Delivering a coup de grace requires focused concentration and methodical action, leaving you defenseless. This causes you to provoke attacks of opportunity. If you take damage while delivering a coup de grace, you must make a Fortitude save (DC 10 \add total damage taken) or else the coup de grace fails.
+Delivering a coup de grace requires focused concentration and methodical action, leaving you defenseless. This causes you to provoke attacks of opportunity. If you take damage while delivering a coup de grace, you must make a Concentration check (DC 10 \add total damage taken) or else the coup de grace fails. Your bonus on Concentration checks is equal to your level \add your Constitution.
 
 You can't deliver a coup de grace against a creature that is immune to critical hits. You can deliver a coup de grace against a creature with total concealment, but doing this requires two consecutive full-round actions (one to ``find'' the creature once you've determined what square it's in, and one to deliver the coup de grace).
 
@@ -463,7 +464,7 @@ When using a ranged weapon, you take a \minus2 penalty per range increment betwe
 If you are restricted to only taking a move or standard action, but not both, you can spend a standard action to perform a partial version of a full-round action. For most actions, you spend the first round starting the action, and use a second standard action to complete it. Some full-round actions have specific partial versions described below which you take instead. You can only take these partial actions when you cannot take full-round actions. 
 
 \subsubsection{Partial Charge}
-As a standard action, you can move up to your speed and make a single attack against a foe. You must move in a straight line, and your movement must not be impeded in any way. In addition, you take a \minus2 penalty to AC until the start of your next turn. An interrupted partial charge becomes a move action.
+As a standard action, you can move up to your speed and make a single attack against a foe. You must move in a straight line, and your movement must not be impeded in any way. In addition, you take a \minus2 penalty to physical defenses until the start of your next turn. An interrupted partial charge becomes a move action.
 
 \subsubsection{Partial Withdraw}
 As a standard action, you can move up to half your speed. Before you do so, you can designate one creature who threatens you. This movement does not provoke attacks of opportunity from that creature.
@@ -498,7 +499,7 @@ A spellcaster can use \spell{dispel magic} to counterspell another spellcaster, 
 \section{Special Rules}\label{Special Rules}
 
 \subsection{Critical Success and Failure}\label{Critical Success and Failure}
-A natural 1 (the d20 comes up 1) on an attack roll or saving throw is treated as rolling a \minus10. A natural 20 (the d20 comes up 20) is treated as rolling a 30. Under normal circumstances, a natural 1 automatically misses, and a natural 20 automatically hits.
+A natural 1 (the d20 comes up 1) on an attack roll is treated as rolling a \minus10. A natural 20 (the d20 comes up 20) is treated as rolling a 30. Under normal circumstances, a natural 1 automatically misses, and a natural 20 automatically hits.
 
 \subsubsection{Critical Hits}\label{Critical Hits}
 When you roll a natural 20 on an attack roll and hit, you have scored a critical threat. Roll another attack roll at the same attack bonus. If that attack also hits, you deal double damage.
@@ -511,7 +512,7 @@ If you double any in-game value twice, it becomes three times as large. An addit
 \parhead{Real-World Values} Values that are ``real'', such as movement and distance, are an exception. If you double a real-world value twice, it becomes four times as large. 
 
 \subsection{Size in Combat}\label{Size in Combat}
-Size affects your space and reach in combat. In addition, your attack modifier and armor class is affected by your size modifier. These effects are shown on \trefnp{Size in Combat}. 
+Size affects your space and reach in combat. In addition, your physical attacks and defefenses are affected by your size modifier. These effects are shown on \trefnp{Size in Combat}. 
 
 \begin{dtable*}
     \lcaption{Size in Combat}
@@ -532,8 +533,8 @@ Size affects your space and reach in combat. In addition, your attack modifier a
         Colossal (long) & 30\add ft. & 20\add ft. & \minus8 & \plus16 & Great wyrm red dragon \\
     \end{tabularx}
     1 Creatures can vary in space and reach. These are simply typical values. \\
-    2 Added to your attack modifier and Armor Class \\
-    3 Added to your maneuver modifier and Maneuver Class \\
+    2 Added to your physical attacks and defenses other than for maneuvers \\
+    3 Added to your maneuver attack and defense \\
 \end{dtable*}
 
 Unusually large or small creatures also have other special rules apply to them. 
@@ -563,7 +564,7 @@ In the case of abnormally large mounts (two or more size categories larger than 
 
 \parhead{Combat while Mounted} With a DC 5 Ride check, you can guide your mount with your knees so as to use both hands to attack or defend yourself. This is a free action.
 
-If your mount moves more than its normal speed when charging, you also take the AC penalty associated with a charge. If you make an attack at the end of such a charge, you receive the bonus gained from the charge. When charging on horse-back, you deal double damage with a lance (see \pcref{Charge}).
+If your mount moves more than its normal speed when charging, you also take the physical defense penalty associated with a charge. If you make an attack at the end of such a charge, you receive the bonus gained from the charge. When charging on horse-back, you deal double damage with a lance (see \pcref{Charge}).
 
 You can use ranged weapons while your mount is taking a double move, but at a \minus4 penalty on the attack roll. You can use ranged weapons while your mount is sprinting, but at a \minus8 penalty (see \pcref{Sprint}). In either case, you make the attack roll when your mount has completed half its movement. You can make a full attack with a ranged weapon while your mount is moving. Likewise, you can take move actions normally.
 
@@ -582,7 +583,7 @@ If you can wield two weapons at once, you can attack with both weapons at once w
 
 You take no penalties for alternating attacks between two (or more) weapons, as long as you do not attack with both weapons at once. Normally, you can't make unarmed attacks as if fighting with two weapons. However, monks and other characters who have the special ability to treat multiple parts of their body as weapons can use two-weapon fighting
 
-\par For example, Felix the 1st-level fighter is wielding a longsword and a short sword against an evil goblin. The goblin has an AC of 15. Felix has a Strength of 3 and a base attack bonus of \plus1. This means his attack bonus with either weapon individually is \plus4. If he attacks with both weapons at once, he takes no penalty to his attack roll (because his off-hand weapon is light), but his attack with his off-hand weapon takes a \minus5 penalty. So his attack bonus would be \plus4 (with his longsword) and \minus1 (with his short sword). If he rolls a 15, he will hit the goblin with his longsword, but not with his short sword.
+\par For example, Felix the 1st-level fighter is wielding a longsword and a short sword against an evil goblin. The goblin has a physical defense of 15. Felix has a Strength of 3 and a base attack bonus of \plus1. This means his attack bonus with either weapon individually is \plus4. If he attacks with both weapons at once, he takes no penalty to his attack roll (because his off-hand weapon is light), but his attack with his off-hand weapon takes a \minus5 penalty. So his attack bonus would be \plus4 (with his longsword) and \minus1 (with his short sword). If he rolls a 15, he will hit the goblin with his longsword, but not with his short sword.
 
 \par If Felix had the Two-Weapon Fighting feat, his attack bonus would be \plus6 with his longsword and \plus1 with his short sword. Assuming he rolls a 15 again, he would hit the goblin with both weapons, dealing damage with both of them.
 
