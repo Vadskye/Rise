@@ -741,7 +741,7 @@ Vulnerable & None & \x & \x \\
 \par A fighter cannot use this ability more than once against a single source. For example, if a fighter is exhausted by a \spell{ray of exhaustion} spell, he can use this ability to downgrade the exhaustion to fatigue, but he can't then expend a second use to negate the fatigue. The lesser condition that this ability imposes may be cured or removed normally, but doing so does not affect the resurgence of the condition the fighter was originally afflicted with. If a fighter uses this ability to mitigate or negate a condition which he must suffer as a sacrifice or cost to gain some benefit, he automatically forfeits the benefit he would have gained.
 
 \cf{Ftr}{Improved Armor Discipline} At 7th level, a fighter's training in his chosen armor category (or with all armor categories) improves. He reduces the armor check penalty by 4 and decreases the arcane spell failure by 15\%. In addition, he treats his chosen armor (or armors) as if it were one encumbrance category lighter than it is. This does not stack with the effects of armor discipline.
-\par This ability means heavy armor is treated as medium, medium armor is treated as light armor, and light armor is treated as being unarmored. Likewise, tower shields are treated as heavy shields (and no longer impose a \minus2 penalty to physical attacks), heavy shields are treated as light shields, and both light shields and bucklers are treated as being unarmored. This can remove the halving of the fighter's Dexterity bonus, if appropriate for the new encumbrance of the fighter's armor.
+\par This ability means heavy armor is treated as medium armor, medium armor is treated as light armor, and light armor is treated as being unarmored. Likewise, tower shields are treated as heavy shields (and no longer impose a \minus2 penalty to physical attacks), heavy shields are treated as light shields, and both light shields and bucklers are treated as being unarmored. This can remove the halving of the fighter's Dexterity bonus, if appropriate for the new encumbrance of the fighter's armor.
 \par This allows the fighter to qualify for class features using the reduced armor encumbrance category. For example, a fighter 9 / wizard 2 who reduces his encumbrance in light armor could cast without any arcane spell failure in light armor.
 \par A fighter who chose a specific armor category gains a \plus2 bonus to his dodge defense modifier while using armor of that category.
 
@@ -839,7 +839,7 @@ A monk's attacks may be with either fist interchangeably or even from elbows, kn
 
 \subcf{Surpass Limits} As a swift action, the monk can surpass the physical limitations of her body. Until the start of her next turn, she adds her Wisdom to checks based on Strength and Dexterity. This does not affect checks based on multiple attributes, such as initiative checks.
 
-\cf{Mnk}{Evasion (Ex)} At 3rd level or higher, if the monk resists a Reflex attack that normally deals half damage when resisted, she instead takes no damage. Evasion can be used only if a monk is wearing light armor or no armor. A helpless monk does not gain the benefit of evasion.
+\cf{Mnk}{Evasion (Ex)} At 3rd level or higher, if the monk resists a Reflex attack that normally deals half damage when resisted, she instead takes no damage. Evasion can be used only if a monk is unencumbered. A helpless monk does not gain the benefit of evasion.
 
 \cf{Mnk}{Uncanny Dodge (Ex)} Starting at 3rd level, a monk can react to danger before her senses would normally allow her to do so. She may apply her Dexterity and dodge modifier to her physical defenses while flat-footed.
 
@@ -870,7 +870,7 @@ If a monk already has uncanny dodge from a different class, she stacks those lev
 
 \subcf{Slow Fall} As an immediate action, the monk can slow the rate at which she falls to 60 feet per round, which is too slow to hurt her if she hits the ground. She must be touching a solid object to use this ability. The effect lasts for 1 round.
 
-\cf{Mnk}{Improved Evasion (Ex)} At 9th level, a monk's evasion ability improves. If she is affected by Reflex attack that would deal half damage when resisted, she takes only half damage from the attack, even if the attack succeeds. Like evasion, improved evasion can be used only if a monk is wearing light armor or no armor. A helpless monk does not gain the benefit of improved evasion.
+\cf{Mnk}{Improved Evasion (Ex)} At 9th level, a monk's evasion ability improves. If she is affected by Reflex attack that would deal half damage when resisted, she takes only half damage from the attack, even if the attack succeeds. Like evasion, improved evasion can be used only if a monk is unencumbered. A helpless monk does not gain the benefit of improved evasion.
 
 \cf{Mnk}{Greater Uncanny Dodge (Ex)} At 10th level and higher, a monk can no longer be overwhelmed, regardless of the number of foes surrounding her.
 
@@ -1138,9 +1138,9 @@ All of the following are class features of the ranger.
 
 \cf{Rgr}{Ranger Lore} At 3rd level, a ranger can choose an additional ability drawn from ancient ranger lore. All ranger lore abilities are extraordinary abilities unless specified otherwise. He may choose from any of the following options. At 6th level, and every 3 levels thereafter, the ranger gains an additional ranger lore ability.
 
-\subcf{Combat Style} The ranger is skilled with the traditional ranger combat styles. He gains the Precise Shot and Two-Weapon Fighting feats if he meets the prerequisites. However, the benefits of this lore apply only when the ranger uses light or no armor.
+\subcf{Combat Style} The ranger is skilled with the traditional ranger combat styles. He gains the Precise Shot and Two-Weapon Fighting feats if he meets the prerequisites. However, the benefits of this lore apply only when the ranger is unencumbered.
 
-\subcf{Evasion} If the ranger resists a Reflex attack that normally deals half damage when resisted, he instead takes no damage. Evasion can be used only if a ranger is wearing light armor or no armor. A helpless ranger does not gain the benefit of evasion.
+\subcf{Evasion} If the ranger resists a Reflex attack that normally deals half damage when resisted, he instead takes no damage. Evasion can be used only if a ranger is unencumbered. A helpless ranger does not gain the benefit of evasion.
 
 \subcf{Fast Movement} The ranger increases his movement speed by 10 feet when unencumbered.
 
@@ -1161,7 +1161,7 @@ Humanoids (civilized)  & Undead and constructs \\
 
 \subcf{Improved Combat Style} The ranger increases his skill in the traditional ranger combat styles. He adds half his Wisdom to damage when using ranged attacks or when attacking with two weapons at once. Natural weapons qualify for this purpose if the ranger attacks with two natural weapons at once.
 
-The ranger must have the combat style lore to select this lore. The benefits of this lore apply only when the ranger uses light or no armor.
+The ranger must have the combat style lore to select this lore. The benefits of this lore apply only when the ranger is unencumbered.
 
 \subcf{Scent} The ranger gains scent. 
 
@@ -1187,13 +1187,13 @@ The ranger must have the combat style lore to select this lore. The benefits of 
 
 \subcf{Combat Style Mastery} The ranger's abilities with traditional ranger combat styles reach their peak. When using a ranged weapon, he can take a move action to study the weak points of a foe within one range increment. If he does, the next attack he makes against that foe is made as a touch attack, if it is made within 1 round. When wielding two weapons at once, he gains the pounce ability, allowing him to take a full attack action at the end of a charge.
 
-The ranger must have the greater combat style lore to choose this lore. The benefits apply only if the ranger is wearing light or no armor.
+The ranger must have the greater combat style lore to choose this lore. The benefits apply only if the ranger is unencumbered.
 
-\subcf{Greater Combat Style} The ranger's abilities with traditional ranger combat styles improves again. He gains the Two-Weapon Rend and Manyshot feats if he meets the prerequisites (see \pcref{Two-Weapon Rend} and \pcref{Manyshot}). He must have the improved combat style lore to choose this lore. The benefits of this lore only apply if the ranger is wearing light or no armor.
+\subcf{Greater Combat Style} The ranger's abilities with traditional ranger combat styles improves again. He gains the Two-Weapon Rend and Manyshot feats if he meets the prerequisites (see \pcref{Two-Weapon Rend} and \pcref{Manyshot}). He must have the improved combat style lore to choose this lore. The benefits of this lore only apply if the ranger is unencumbered.
 
 \subcf{Hail of Arrows} A number of times per day equal to 1 \add half the ranger's Constitution, he may take a full-round action to fire a single projectile at every enemy within a \areamed radius. All enemies must be within one range increment of the ranger. This lore can be used with any projectile weapon that the ranger can reload as a free action.
 
-\subcf{Improved Evasion} The ranger's ability to avoid damage improves. If he is affected by Reflex attack that would deal half damage when resisted, he takes only half damage from the attack, even if the attack succeeds. Like evasion, improved evasion can be used only if a ranger is wearing light armor or no armor. A helpless ranger does not gain the benefit of improved evasion.
+\subcf{Improved Evasion} The ranger's ability to avoid damage improves. If he is affected by Reflex attack that would deal half damage when resisted, he takes only half damage from the attack, even if the attack succeeds. Like evasion, improved evasion can be used only if a ranger is unencumbered. A helpless ranger does not gain the benefit of improved evasion.
 
 \subcf{Storm of Blades} A number of times per day equal to 1 \add half the ranger's Constitution, he may take a standard action to make a single melee attack against every enemy he threatens.
 
@@ -1298,7 +1298,7 @@ At 8th level, and every four levels thereafter, the rogue gains an additional co
 
 \subcf{Distracting Attack} A creature damaged by the rogue's sneak attack takes a penalty on its Concentration checks equal to number of sneak attack dice the rogue would roll. This penalty lasts for 5 rounds.
 
-\subcf{Evasion} If the rogue resists a Reflex attack that normally deals half damage when resisted, she instead takes no damage. Evasion can be used only if a rogue is wearing light armor or no armor. A helpless rogue does not gain the benefit of evasion.
+\subcf{Evasion} If the rogue resists a Reflex attack that normally deals half damage when resisted, she instead takes no damage. Evasion can be used only if a rogue is unencumbered. A helpless rogue does not gain the benefit of evasion.
 
 \subcf{Distant Precision} The rogue can make sneak attacks from up to 100 feet away.
 
@@ -1324,7 +1324,7 @@ At 8th level, and every four levels thereafter, the rogue gains an additional co
 
 \subcf{12th -- Dispelling Ambush (Su)*} A creature damaged by this sneak attack is affected by a targeted \spell{dispel magic}. The caster level for this ability is equal to the rogue's level \add her Intelligence. This is an ambush attack, and only works once per creature.
 
-\subcf{12th -- Improved Evasion} If the rogue is affected by Reflex attack that would deal half damage when resisted, she takes only half damage from the attack, even if the attack succeeds. Like evasion, improved evasion can be used only if a rogue is wearing light armor or no armor. A helpless rogue does not gain the benefit of improved evasion.
+\subcf{12th -- Improved Evasion} If the rogue is affected by Reflex attack that would deal half damage when resisted, she takes only half damage from the attack, even if the attack succeeds. Like evasion, improved evasion can be used only if a rogue is unencumbered. A helpless rogue does not gain the benefit of improved evasion.
 
 \subcf{12th -- Perfect Precision} The rogue has no range limit on her sneak attacks. She must the distant precision combat trick to gain this trick.
 
@@ -1594,7 +1594,7 @@ A spellwarped is proficient with simple weapons, any two weapon groups, light an
 \subcf{11th -- Mind Armory} The spellwarped may control a number of weapons equal to half his Intelligence with his mind blade ability. This does not allow him to make additional attacks per round, but he may attack interchangeably with any weapon he controls. Each weapon threatens an area and contributes to overwhelm penalties, just as with his normal mind blade ability.
 
 \parhead{Temporal}
-\subcf{Evasion} If the spellwarped resists a Reflex attack that normally deals half damage when resisted, he instead takes no damage. Evasion can be used only if a spellwarped is wearing light armor or no armor. A helpless spellwarped does not gain the benefit of evasion.
+\subcf{Evasion} If the spellwarped resists a Reflex attack that normally deals half damage when resisted, he instead takes no damage. Evasion can be used only if a spellwarped is unencumbered. A helpless spellwarped does not gain the benefit of evasion.
 \subcf{Fast Movement} The spellwarped gains a \plus10 foot bonus to movement speed.
 \subcf{Uncanny Dodge} The spellwarped may apply his Dexterity and dodge modifier to his physical defenses while flat-footed.
 \subcf{7th -- Accelerate Attack} While his surge of power is active, the spellwarped can make an additional attack at a \minus5 penalty when making a full attack.
