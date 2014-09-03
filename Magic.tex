@@ -246,14 +246,14 @@ Many of these descriptors have no game effect by themselves, but they govern how
 \item Teleportation spells instantaneously move creatures by travelling through the Astral Plane. Anything that blocks planar travel also blocks teleportation.
 \item Trap spells do not have obvious effects immediately. They can be detected with the Perception skill. The DC to detect a trap spell is 25 \add spell level. Most, but not all, traps can be disabled with the Disable Device skill. If it can be disabled, the DC is 25 \add spell level.
 \par No more than one trap spell can be placed on the same object or in the same area. Only the first trap placed has any effect. It must be dispelled or discharged before any new traps can be placed.
-\item Unreal spells do not have ``real'' effects and can be disbelieved. Unreal effects cannot cause damage to objects or creatures, support weight, provide nutrition, or provide protection from the elements. Consequently, these spells are useful for confounding or delaying foes, but useless for attacking them directly unless combined with a real effect.
+\label{Unreal Spells}\item Unreal spells do not have ``real'' effects and can be disbelieved. Unreal effects cannot cause damage to objects or creatures, support weight, provide nutrition, or provide protection from the elements. Consequently, these spells are useful for confounding or delaying foes, but useless for attacking them directly unless combined with a real effect.
 \par When an unreal spell is cast, the caster makes a magic check, with the same bonus as his magic attack bonus. Creatures encountering an unreal spell usually cannot recognize it as illusory until they study it carefully or interact with it in some fashion. A Perception check can be made to interact with an unreal effect if appropriate to the type of effect. Unless otherwise specified by the spell, the DC of such a check is equal to the magic check result used when the effect was created.
 \par If a creature interacts with an unreal effect, the magic check is opposed by the creature's Will defense. If the check fails, the creature recognizes the illusion as false. Its effects can still be observed if desired, but they are mere shadows of the full effect: visual effects appear translucent outlines, sounds can be heard as ghostly echoes, and so on.
 \par If the check succeeds, the character fails to notice something is amiss. A character faced with definitive proof that an unreal effect isn't real automatically recognizes it as illusory. If any viewer successfully disbelieves an unreal effect and communicates this fact to others, each such viewer receives a \plus5 bonus to their Will defense against the effect.
 \end{itemize*}
 
 \subsection{Level}
-The next line of a spell description gives the spell's level, a number between 1 and 9 that defines the spell's relative power. This number is preceded by an abbreviation for the class whose members can cast the spell. The Level entry also indicates whether a spell is a domain spell and, if so, what its domain and its level as a domain spell are. A spell's level affects the DC for any save allowed against the effect.
+The next line of a spell description gives the spell's level, a number between 1 and 9 that defines the spell's relative power. This number is preceded by an abbreviation for the class whose members can cast the spell. The Level entry also indicates whether a spell is a domain spell and, if so, what its domain and its level as a domain spell are.
 
 Names of spellcasting classes are abbreviated as follows: cleric Clr; druid Drd; paladin Pal; ranger Rgr; sorcerer Sor; wizard Wiz.
 
@@ -342,7 +342,7 @@ A sphere-shaped spell expands from its point of origin to fill a spherical area.
 
 \subparhead{Multiple Targets} Most spells which have multiple targets also specify an area that the targets must reside in. If the spell says ``all creatures'', you do not have the ability to choose which creatures it affects; otherwise, you may pick and choose creatures within the area.
 
-\subparhead{Personal Spells} Some spells have a target of ``You'' and a range of ``Personal''. Such spells have no saving throw or spell resistance entries.
+\subparhead{Personal Spells} Some spells have a target of ``You'' and a range of ``Personal''. Such spells have no defense or spell resistance entries.
 
 \subparhead{Redirecting a Spell} Some spells allow you to redirect the effect to new targets or areas after you cast the spell. Redirecting a spell is a swift action that does not provoke attacks of opportunity.
 
@@ -392,25 +392,22 @@ Some touch spells allow you to touch multiple targets as part of the spell. You 
 
 \parhead{(D) Dismissible} If the Duration line ends with ``(D)," you can dismiss the spell at will. You must be within range of the spell's effect and must speak words of dismissal, which are usually a shortened, modified form of the spell's verbal component. If the spell has no verbal component, you can dismiss the effect with a gesture. Dismissing a spell is a swift action that does not provoke attacks of opportunity. A spell that depends on concentration is dismissible by its very nature, and dismissing it does not take an action, since all you have to do to end the spell is to stop concentrating on your turn.
 
-\subsection{Saving Throw}
-Usually a harmful spell allows a target to make a saving throw to avoid some or all of the effect. The Saving Throw entry in a spell description defines which type of saving throw the spell allows and describes how saving throws against the spell work.
-\parhead{Negates} The spell has no effect on a subject that makes a successful saving throw.
-\parhead{Partial} The spell causes an effect on its subject. A successful saving throw means that some lesser effect occurs.
-\parhead{Half} The spell deals damage, and a successful saving throw halves the damage taken (round down).
-\parhead{None} No saving throw is allowed.
-\parhead{Disbelief} A successful save lets the subject ignore the effect.
-\parhead{(object)} The spell can be cast on objects, which receive saving throws only if they are magical or if they are attended (held, worn, grasped, or the like) by a creature resisting the spell, in which case the object uses the creature's saving throw bonus unless its own bonus is greater. (This notation does not mean that a spell can be cast only on objects. Some spells of this sort can be cast on creatures or objects.) A magic item's saving throw bonuses are each equal to 2 \add one-half the item's caster level.
-\parhead{(harmless)} The spell is usually beneficial, not harmful, but a targeted creature can attempt a saving throw if it desires.
-\subsubsection{Saving Throw Difficulty Class}
-A saving throw against your spell has a DC of 10 \add half your caster level \add your casting attribute (Intelligence for a wizard, Wisdom for a druid, and Charisma for a sorcerer, paladin, and most clerics). If you have more than one caster level, use the caster level appropriate to the class that you are casting the spell from, including any modifiers specific to that spell (such as from the Spell Focus feat).
+\subsection{Defenses}\label{Magic Defenses}
+Usually, a harmful spell requires a successful magic attack to have its full effect. The Defenses entry in a spell description defines which type of defenses the spell allows, and what effect the spell has if it is resisted.
+\parhead{Negates} A failed attack means the spell has no effect.
+\parhead{Partial} A failed attack means the spell still has a partial effect.
+\parhead{Half} A failed attack means the spell deals half damage.
+\parhead{None} No attack is required.
+\parhead{Disbelief} The spell can be disbelieved ( \pcref{Unreal Spells}).
+\parhead{(object)} The spell can be cast on objects, which have defenses only if they are magical or if they are attended (held, worn, grasped, or the like) by a creature resisting the spell, in which case the object uses the creature's defenses unless its own are greater. (This notation does not mean that a spell can be cast only on objects. Most spells of this sort can be cast on creatures or objects.) A magic item's special defenses are each equal to 12 \add one-half the item's caster level.
+\parhead{(harmless)} The spell is usually beneficial, not harmful, but an attack may be required to affect an unwilling creature.
 
-\parhead{Succeeding on a Saving Throw} A creature that successfully saves against a spell that has no obvious physical effects feels a hostile force or a tingle, but cannot deduce the exact nature of the attack without the use of the Spellcraft skill.
+\subsubsection{Magic Attack Bonus}\label{Magic Attack Bonus}
+To beat a creature's defenses, you make a magic attack. Your magic attack bonus is equal to half your caster level \add your casting attribute (Intelligence for a wizard, Wisdom for a druid, and Charisma for a sorcerer, paladin, and cleric). If you have more than one caster level, use the caster level appropriate to the class that you are casting the spell from, including any modifiers specific to that spell (such as from \pcref{Spell Focus}).
 
-\parhead{Overwhelming Failures and Successes} A natural 1 (the d20 comes up 1) on a saving throw is treated as rolling a \minus10, and a natural 20 (the d20 comes up 20) is treated as rolling a 30. Under all but the most extreme circumstances, a natural 1 is an automatic failure, and a natural 20 is an automatic success.
+\subsubsection{Resisting a Spell} A creature that successfully resists a spell that has no obvious physical effects feels a hostile force or a tingle, but cannot deduce the exact nature of the attack without the use of the Spellcraft skill (see \pcref{Spellcraft}).
 
-\parhead{Voluntarily Giving up a Saving Throw} A creature can voluntarily forego a saving throw and willingly accept a spell's result. However, a character with a special resistance to magical effects cannot suppress that quality.
-
-\parhead{Damaging Items} Unless the descriptive text for the spell specifies otherwise, all items carried or worn by a creature are assumed to survive a magical attack. If an item is not carried or worn and is not magical, it does not get a saving throw. It simply is dealt the appropriate damage.
+\subsubsection{Not Resisting a Spell} A creature can voluntarily forego its defenses and willingly accept a spell's result. However, a character with a special resistance to magical effects cannot suppress that quality.
 
 \subsection{Spell Resistance}
 Some creatures are unusually resistant to spells. To affect a creature with spell resistance using a spell or spell-like ability, a special attack is always required. The defense used against the attack is indicated by the spell. If the spell already requires an attack of that type, use the same attack to determine both spell resistance and the the effect of the spell. Otherwise, make a separate attack to determine spell resistance. If the attack fails, the spell has no effect on the creature.
@@ -424,6 +421,8 @@ This portion of a spell description details what the spell does and how it works
 This is the amount of damage the spell deals. Typically, the effect will specify who takes the damage. If no effect is specified, the spell damages all of its targets, or all creatures (but not objects) in the area. A spell with this entry is considered a damaging spell. A spell without this entry is not, even if it could be used to deal damage.
 
 Spells can inflict many kinds of damage. Common damage types include acid, bludgeoning, cold, divine, electricity, fire, force, life, physical, piercing, slashing, solar, and sonic.
+
+\parhead{Damaging Items} Unless the descriptive text for the spell specifies otherwise, all items carried or worn by a creature are assumed to survive a magical attack. If an item is not carried or worn and is not magical, it does not get any defenses. It simply is dealt the appropriate damage.
 
 \subsubsection{Healing}
 This is the amount of damage the spell heals. Typically, the effect will specify who receives the healing. If no effect is specified, the spell heals all of its targets, or all creatures (but not objects) in the area.
