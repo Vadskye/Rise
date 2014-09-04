@@ -22,7 +22,7 @@ The subject treats the first few points of damage it takes as nonlethal damage. 
 \spellsr{No}
 \spelldmg{d6 acid damage \add 1 per caster level}
 \begin{spelleffect}
-If you hit on a ranged touch attack, the target takes damage.
+    You make a ranged touch attack to deal damage to the target.
 \end{spelleffect}
 
 \spellsection{Bestow Protection}
@@ -33,7 +33,7 @@ If you hit on a ranged touch attack, the target takes damage.
 \spelldef{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The subject gains a \plus2 bonus to armor class and saving throws. \bonusscalingdescription These benefits apply only against against spells and spell-like abilities.
+  The subject gains a \plus2 enhancement bonus to all defenses. \bonusscalingdescription This bonus applies only against against spells and spell-like abilities.
 \end{spelleffect}
 
 \spellsection{Combat Telekinesis}
@@ -63,13 +63,13 @@ You can move the weapon up to 30 feet in any direction, even vertically, as a mo
 \spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
-The subject is bewildered.
+    You make a Will attack against the subject to bewilder it.
 \end{spellhealthy}
 \begin{spellblood}
-The subject is confused. \confusionexplanation
+    You make a Will attack against the subject to confuse it. \confusionexplanation
 \end{spellblood}
 \begin{spellnotes}
-A bewildered creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
+A bewildered creature is vulnerable, causing it to take a \minus2 penalty to attacks, defenses, and checks.
 \par Attackers are not at any special advantage when attacking a confused character. A confused character will not make attacks of opportunity against any creature that it is not already devoted to attacking (either because of its most recent action or because it has just been attacked).
 \end{spellnotes}
 
@@ -83,7 +83,7 @@ A bewildered creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \spellsr{No}
 \spelldmg{d6 damage \add 1 per caster level; see text}
 \begin{spelleffect}
-This spell creates one or more projectiles, such as a arrows or bolts, that you magically propel at a foe. This allows you to make a ranged attack, using your caster level in place of your base attack bonus to attack. If the attack hits, it deals damage. Regardless of the number of projectiles summoned, only one attack roll is made, and the damage dealt is unchanged.
+This spell creates one or more projectiles, such as a arrows or bolts, that you magically propel at a foe. You make a physical ranged attack to deal damage to the target, using your using your caster level in place of your base attack bonus. Regardless of the number of projectiles summoned, only one attack roll is made, and the damage dealt is unchanged.
 \end{spelleffect}
 \begin{spellnotes}
 At the end of the spell's duration, the projectiles disappear without a trace.
@@ -98,10 +98,10 @@ At the end of the spell's duration, the projectiles disappear without a trace.
 \spelldef{None}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
-The subject is bewildered.
+    You make a Will attack to bewilder the subject.
 \end{spellhealthy}
 \begin{spellnotes}
-A bewildered creature takes a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
+A bewildered creature is vulnerable, causing it to take a \minus2 penalty to attacks, defenses, and checks.
 \end{spellnotes}
 
 \spellsection{Draining Touch}
@@ -114,7 +114,7 @@ A bewildered creature takes a \minus2 penalty to attack rolls, saving throws, ch
 \spellsr{Yes (Will)}
 \spelldmg{d6 damage \add 1 per caster level}
 \begin{spelleffect}
-If you succeed on a melee touch attack, the target takes damage. You gain temporary hit points equal to half the damage you deal. However, you can't gain more health than is necessary to kill the subject. The temporary hit points disappear 5 rounds later. If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
+    You make a melee touch attack to deal damage to the target. You gain temporary hit points equal to half the damage you deal. However, you can't gain more health than is necessary to kill the subject. The temporary hit points disappear 5 rounds later. If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
 \end{spelleffect}
 
 \spellsection{Exhaustion}
@@ -126,10 +126,10 @@ If you succeed on a melee touch attack, the target takes damage. You gain tempor
 \spelldef{Fortitude negates}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
-The subject is exhausted.
+    You make a Fortitude attack against the subject to exhaust it.
 \end{spelleffect}
 \begin{spellnotes}
- An exhausted character moves at half speed and takes a \minus4 penalty to attack rolls, saving throws, checks, DCs, and AC.
+     An exhausted character moves at half speed and takes a \minus4 penalty to attacks, defenses, and checks.
 \end{spellnotes}
 
 \spellsection{False Foe}
@@ -141,8 +141,11 @@ The subject is exhausted.
 \spelldef{Will disbelief}
 \spellsr{No}
 \begin{spelleffect}
-This spell creates an illusory creature which seems to attack your foes. It can contribute to overwhelm penalties, though it never actually deals damage. It has an AC of 10. A creature that strikes or damages the image may make a Will save to recognize it as illusory.
+    This spell creates an illusory creature which seems to attack your foes. It can contribute to overwhelm penalties, though it never actually deals damage. Its physical defenses are 10.
 \end{spelleffect}
+\begin{spellnotes}
+    When you use this invocation, you make a magic check, with the same bonus as your magic attack bonus. This check is opposed by the Will defense of any creature that interacts with the effect. If you fail, the creature disbelieves the spell. In order to interact with the illusion with a Perception check, the creature must make a Perception check that beats your magic check.
+\end{spellnotes}
 
 \spellsection{Imbue Weapon}
 \spelldesc{You imbue an ally's weapon with potent magical energy, making its next strike more effective.}
@@ -154,8 +157,11 @@ This spell creates an illusory creature which seems to attack your foes. It can 
 \spellsr{Yes (Will)}
 \spelldmg{d6 physical damage \add 1 per caster level}
 \begin{spelleffect}
-The next successful attack with the target weapon deals extra damage. The creature wielding the weapon can make a saving throw to avoid having its weapon enhanced, but the creature struck by the weapon gets no saving throw and cannot apply spell resistance.
+The next successful attack with the target weapon deals extra damage.
 \end{spelleffect}
+\begin{spellnotes} 
+    The creature wielding the weapon can make a saving throw to avoid having its weapon enhanced, but the creature struck by the weapon gets no saving throw and cannot apply spell resistance.
+\end{spellnotes}
 
 \spellsection{Magic Ray}
 \spelldesc{You fire a ray of magical energy at your foe.}
@@ -167,7 +173,7 @@ The next successful attack with the target weapon deals extra damage. The creatu
 \spellsr{Yes (Reflex)}
 \spelldmg{d6 force damage \add 1 per caster level}
 \begin{spelleffect}
-You must succeed on a ranged touch attack. If you hit, the target takes damage. As with \spell{magic missile}, inanimate objects are not damaged by the spell.
+    You make a ranged touch attack to deal damage to the target. As with \spell{magic missile}, inanimate objects are not damaged by this invocation.
 \end{spelleffect}
 
 \spellsection{Phantom Darkness}
@@ -179,10 +185,10 @@ You must succeed on a ranged touch attack. If you hit, the target takes damage. 
 \spelldef{Will disbelief}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The touched subject can only see darkness surrounding it, causing it to be blinded. Creatures with extrasensory perception abilities, such as tremorsense, may use those abilities normally.
+    You make a melee touch attack to blind the target. Creatures with extrasensory perception abilities, such as tremorsense, may use those abilities normally.
 \end{spelleffect}
 \begin{spellnotes}
-   A blinded character cannot see. She takes a \minus2 penalty to attack rolls, Armor Class, and any checks which involve sight. In addition, she is flat-footed and moves at half speed. All checks and activities that rely on vision (such as reading and Spot checks) automatically fail. All opponents are considered to have total concealment (50\% miss chance) relative to the blinded character.
+    A blinded creature cannot see. It is flat-footed and moves at half speed. In addition, it is defenseless, causing it to provoke attacks of opportunity for all its actions. All checks and activities that rely on vision (such as reading and visual Perception checks) automatically fail, and any checks related to vision (such as Climb and Sense Motive checks) take a \minus4 penalty. All opponents are considered to be invisible (50\% miss chance) relative to the blinded creature.
 \end{spellnotes}
 
 \spellsection{Premonition}
@@ -192,12 +198,12 @@ You must succeed on a ranged touch attack. If you hit, the target takes damage. 
 \spelltgt{One creature}
 \spelldur{1 round; see text}
 \spelldef{Will negates (harmless)}
-\spellsr{Yes (Will)
+\spellsr{Yes (Will)}
 \begin{spelleffect}
-The subject gains a \plus4 bonus to hit on the next single attack roll it makes, provided that its target is also within the spell's range. This bonus increases by \plus1 for every three levels above 1st level.
+The subject gains a \plus4 bonus to its next physical attack, provided that its target is also within the spell's range. This bonus increases by \plus1 for every three levels above 1st level.
 \end{spelleffect}
 
-\spellsectioncomma}{Slow}{Lesser}
+\spellsectioncomma{Slow}{Lesser}
 \spelldesc{You decelerate your enemy's motions temporarily, causing her to move and act more slowly than normal.}
 \spellschool{Transmutation (Temporal)}
 \spellrng{\rngmed}
@@ -206,10 +212,10 @@ The subject gains a \plus4 bonus to hit on the next single attack roll it makes,
 \spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-The subject is slowed.
+    The subject is slowed.
 \end{spelleffect}
 \begin{spellnotes}
- A slowed creature can take only a single move action or standard action each turn, but not both. It cannot take full-round actions, but it may take swift actions. Additionally, it takes a \minus2 penalty to attack rolls, Strength and Dexterity-based checks, and armor class.
+    A slowed creature can take only a single move action or standard action each turn, but not both. It cannot take full-round actions, but it may take swift actions. Additionally, it takes a \minus2 penalty to physical attacks and defenses, as well as Strength and Dexterity-based checks.
 \end{spellnotes}
 
 \spellsection{Twist Fate}
@@ -220,5 +226,5 @@ The subject is slowed.
 \spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-You know what the subject is most likely going to do during its next turn. After learning that, you can choose to impose a \minus4 penalty to its attack rolls, saving throws, checks, DCs, or AC for one round.
+You know what the subject is most likely going to do during its next turn. After learning that, you can choose to impose a \minus4 penalty to its attacks, defenses, or checks for 1 round.
 \end{spelleffect}
