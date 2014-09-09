@@ -12,7 +12,7 @@ COMBAT = 'combat'
 def initialize_argument_parser():
     parser = argparse.ArgumentParser(description='Calculate combat statistics for Rise characters')
     parser.add_argument('-f', '--function', dest='function',
-            help='function to perform', default=COMBAT,
+            help='function to perform', default=CREATURE,
             choices=[COMBAT, CREATURE])
     parser.add_argument('-c', '--creature-input', dest='creature_input', 
             help='the creature file to load')
