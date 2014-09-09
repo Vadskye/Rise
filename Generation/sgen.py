@@ -23,24 +23,22 @@ BUFF = 'buff'
 def initialize_argument_parser():
     parser = argparse.ArgumentParser(description='Spell information')
     parser.add_argument('-d', dest=DAMAGE, action='store_true')
-    parser.add_argument('-c', dest=CONDITION, action='store_true')
-    parser.add_argument('-b', dest=BUFF, action='store_true')
-    parser.add_argument('-t', '--tier', dest='tier', type=int,
-            help='Tier of the strength of the effect', choices=condition_choices)
-    parser.add_argument('--bloodied', dest='bloodied', type=util.bool_parser,
+    parser.add_argument('-c', dest=CONDITION, type=float)
+    parser.add_argument('-b', dest=BUFF, type=int)
+    parser.add_argument('-o', '--bloodied', dest='bloodied', action='store_true',
             help='Condition only affects healthy creatures?')
-    parser.add_argument('--healthy', dest='healthy', type=util.bool_parser,
+    parser.add_argument('-e', '--healthy', dest='healthy', action='store_true',
             help='Condition only affects healthy creatures?')
     parser.add_argument('--alternateeffect', dest = 'alternateeffect', 
             type=util.bool_parser)
     parser.add_argument('-u', '--duration', dest = 'duration', type=str,
-            choices=duration_choices)
+            choices=duration_choices, default='short')
     parser.add_argument('--undispellable', dest = 'undispellable',
             help='Immune to dispelling?', type=util.bool_parser)
     parser.add_argument('--concentration', dest = 'concentration', 
             type=util.bool_parser, help='Requires concentration?')
     parser.add_argument('--saveends', dest='saveends', 
-            type=util.bool_parser, help='Save each round to end?')
+            action='store_true', help='Save each round to end?')
     parser.add_argument('--bloodiedinstant', dest='bloodiedinstant',
             help='Bloodied is checked only when spell is cast?',
             type=util.bool_parser) 
@@ -50,13 +48,13 @@ def initialize_argument_parser():
             type=util.bool_parser, help='Choose targets of area spell?')
     parser.add_argument('-m', '--maxtargets', dest='maxtargets', type=util.bool_parser,
             help='Max target limit')
-    parser.add_argument('-s', '--save', dest='save', type=str,
+    parser.add_argument('-v', '--save', dest='save', type=str,
             help='Saving throw type', 
             choices=['none','half','partial','negates'])
     parser.add_argument('--nosr', dest='nosr', type=util.bool_parser,
             help='Doesn\'t allow spell resistance?')
-    parser.add_argument('-l', '--limittypes', dest='limittypes', type=str,
-            help='Limit affected types?', choices=['0','1','2','3'])
+    parser.add_argument('-l', '--limittypes', dest='limittypes', type=int,
+            help='Limit affected types?', choices=[0,1,2,3])
     parser.add_argument('--escapable', dest='escapable', type=str,
             help='Is the spell escapable?', choices=['0','1','2'])
     parser.add_argument('--noncombat', dest='noncombat', 
@@ -70,7 +68,7 @@ def initialize_argument_parser():
     parser.add_argument('--castingtime', dest='castingtime', type=str,
             choices=['standard', 'full', 'swift'])
     parser.add_argument('-r', '--range', dest='range', type=str,
-            choices=range_choices)
+            choices=range_choices, default='medium')
     parser.add_argument('--savename', dest='savename', type=str)
     parser.add_argument('--loadname', dest='loadname', type=str)
     parser.add_argument('--dot', dest='dot', type=util.bool_parser,
@@ -109,41 +107,43 @@ class Spell:
 
 class SpellComponent:
     def __init__(self, component_type, alternate_effect=None, area=None,
-            bloodied_only=None, check_bloodied_instantly=None, component_tier=None,
+            bloodied_only=None, check_bloodied_instantly=None, component_strength=None,
             duration=None, escapable=None, healthy_only=None,
             limit_affected_types=None, noncombat=None, requires_concentration=None,
             save_ends=None, saving_throw=None, touch_attack=None,
             undispellable=None):
-        self.level = calculate_base_level(alternate_effect, component_type, component_tier)
+        self.level = calculate_base_level(alternate_effect, component_type, component_strength)
         if bloodied_only:
             self.level *=0.4
-        self.level += calculate_duration_modifier(component_type, component_tier, duration, requires_concentration, undispellable, save_ends, check_bloodied_instantly)
+        self.level += calculate_duration_modifier(component_type, component_strength, duration, requires_concentration, undispellable, save_ends, check_bloodied_instantly)
         self.level *= calculate_miscellaneous_component_multiplier(area,
                 escapable, healthy_only, limit_affected_types, noncombat,
                 saving_throw, touch_attack)
 
-def calculate_base_level(alternate_effect, component_type, component_tier):
+def calculate_base_level(alternate_effect, component_type, component_strength):
     level = {
             DAMAGE: 4,
-            CONDITION: rank_condition_tier(component_tier),
-            BUFF: component_tier,
+            CONDITION: rank_condition_strength(component_strength),
+            BUFF: component_strength,
             }[component_type]
     if alternate_effect:
         level+=1
     return level
 
-#Return the level adjustment associated with the condition tier
-def rank_condition_tier(condition_tier):
-    if condition_tier is None:
-        return 0
-    return {
+#Return the level adjustment associated with the condition strength
+def rank_condition_strength(condition_strength):
+    #this is called for all strengths, even inapplicable ones
+    #so we need to support arbitrary strengths
+    try:
+        return {
             3: 4,
             2: 8,
             1.5: 12,
-            1: 16}[condition_tier]
-    #return (4-condition_tier)*4
+            1: 16}[condition_strength]
+    except KeyError:
+        return 0
 
-def calculate_duration_modifier(component_type, component_tier, duration, requires_concentration, undispellable, save_ends, check_bloodied_instantly):
+def calculate_duration_modifier(component_type, component_strength, duration, requires_concentration, undispellable, save_ends, check_bloodied_instantly):
     if duration is None:
         return 0
     #duration_choices = ['round','short','medium','long','extreme', 'permanent']
@@ -152,12 +152,12 @@ def calculate_duration_modifier(component_type, component_tier, duration, requir
     elif component_type==CONDITION or component_type==BUFF:
         level = switch(duration, duration_choices, [-3,0,1,2,3,5])
 
-    #apply condition tier modifier
+    #apply condition strength modifier
     if component_type==CONDITION:
-        if component_tier==1.5:
+        if component_strength==1.5:
             level+=3
             level*=1.5
-        elif component_tier == 1:
+        elif component_strength == 1:
             level+=3
             level*=2
 
@@ -308,7 +308,7 @@ if __name__ == "__main__":
                     area = derp['area'],
                     bloodied_only = derp['bloodied'], 
                     check_bloodied_instantly = derp['bloodiedinstant'],
-                    component_tier = derp['tier'],
+                    component_strength = derp[component_type],
                     duration = derp['duration'],
                     escapable = derp['escapable'],
                     healthy_only = derp['healthy'],
