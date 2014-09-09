@@ -2,6 +2,7 @@ name=dire wolf
 creature type=animal
 weapon=bite
 size=large
+level=6
 
 #attributes
 strength=good

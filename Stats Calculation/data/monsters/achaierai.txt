@@ -1,6 +1,7 @@
 #meta
 name=Achaierai
 creature type=outsider
+level=8
 
 #items
 weapon=claws
