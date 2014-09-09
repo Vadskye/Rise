@@ -1,5 +1,5 @@
 import util
-from strings import * 
+from strings import *
 
 class Ability(object):
     #Name of the ability, a function that applies the benefits of the ability
@@ -196,19 +196,19 @@ abilities['natural trip'] = Ability('natural trip', text = natural_trip_text,
 def natural_weapon_benefit(creature):
     creature.items[WEAPON_PRIMARY].increase_size()
 abilities['improved natural weapon'] = Ability('improved natural weapon',
-        apply_benefit = natural_weapon_benefit, points=1)
+        apply_benefit = natural_weapon_benefit)
 
 abilities['enslave'] = Ability('enslave', tags=[TAG_ATTACK], text = 'enslave',
         points=2)
-abilities['slime'] = Ability('slime', tags=[TAG_ATTACK], text = 'slime', points=2)
+abilities['slime'] = Ability('slime', tags=[TAG_ATTACK], text = 'slime')
 abilities['carapace'] = Ability('carapace', tags=[TAG_DEFENSE],
         apply_benefit = lambda c: c.meta[LEVEL_PROGRESSION].improve_progression(
-            'natural_armor_progression'), points=1)
-abilities['mucus cloud'] = Ability('mucus cloud', tags=[TAG_AURA], points=2)
-abilities['black cloud'] = Ability('black cloud', tags=[TAG_ATTACK], points=3)
-abilities['babble'] = Ability('babble', tags=[TAG_ATTACK], points=2)
-abilities['madness'] = Ability('madness', tags=[TAG_DEFENSE], points=1)
-abilities['wisdom drain'] = Ability('wisdom drain', tags=[TAG_ATTACK], points=1)
+            'natural_armor_progression'))
+abilities['mucus cloud'] = Ability('mucus cloud', tags=[TAG_AURA])
+abilities['black cloud'] = Ability('black cloud', tags=[TAG_ATTACK])
+abilities['babble'] = Ability('babble', tags=[TAG_ATTACK])
+abilities['madness'] = Ability('madness', tags=[TAG_DEFENSE])
+abilities['wisdom drain'] = Ability('wisdom drain', tags=[TAG_ATTACK])
 
 ####################
 #MONSTER TEMPLATES
