@@ -15,12 +15,12 @@ def initialize_argument_parser():
             help='function to perform', default=COMBAT,
             choices=[COMBAT, CREATURE])
     parser.add_argument('-c', '--creature-input', dest='creature_input', 
-            help='the creature file to load', default=None)
+            help='the creature file to load')
     parser.add_argument('-c2', '--creature-input-2', dest='creature_input_2',
-            help='the creature file to load', default=None)
+            help='the creature file to load')
     parser.add_argument('-l', '--level', dest='level', type=int,
-            help='the level of the creature', default=None)
-    parser.add_argument('-o', '--output', dest='output', default=None,
+            help='the level of the creature')
+    parser.add_argument('-o', '--output', dest='output',
             help='A file name to store any output in')
     return vars(parser.parse_args())
 
