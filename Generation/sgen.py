@@ -1,5 +1,4 @@
 import argparse
-import shlex
 import re
 import util
 
@@ -7,7 +6,7 @@ PART=0.8
 HALF=0.6
 duration_choices = ['round','short','medium','long','extreme', 'permanent']
 area_choices = ['none', 'tiny', 'normal','large_line', 'mr', 'medium_radius','large_cone','large_radius']
-range_choices = ['personal', 'touch', 'close', 'medium', 'far', 'extreme']
+range_choices = ['personal', 'touch', 'close', 'medium', 'long', 'extreme']
 condition_choices = [0,1,1.5,2,2.5,3,3.5]
 touch_attack_choices =['none','poor','1','average','2', 'ray']
 storage_file_name = 'spells.txt'
@@ -15,6 +14,9 @@ condition_debug=True
 general_debug=True
 damage_debug=False
 buff_debug=False
+DAMAGE = 'damage'
+CONDITION = 'condition'
+BUFF = 'buff'
 
 fundamental_spell_element_names = ('damage', 'condition', 'buff')
 
@@ -82,40 +84,127 @@ def initialize_argument_parser():
     return parser
     #return vars(parser.parse_args())
 
-def calculate_spell_level(args):
+class Spell:
+    def init():
+        self.components = {
+                'damage': list(),
+                'condition': list(),
+                'buff': list(),
+                }
 
-    #start from -3 because it makes multipliers work better
-    total_level = -3
+    def get_level():
+        level=-3
+        for component_type in self.components.keys:
+            for component in self.components[component_type]:
+                level += component.level
+        level += calculate_area_modifier()
+        if no_spell_resistance:
+            level += 1
+        if trigger:
+            if trigger == 'no_action':
+                level +=1
+            level *= 1.5
+        if spell_range:
+                #range_choices = ['personal', 'touch', 'close', 'medium', 'long', 'extreme']
+            if self.components[DAMAGE] or self.components[CONDITION]:
+                level += switch(spell_range, range_choices, (-2,-2,-1,0,1,2))
+            else:
+                level += switch(spell_range, range_choices, (0,0.5,1,1.5,2))
+        return level
 
-    total_level += levels_from_fundamental_elements()
+class SpellComponent:
+    def init(component_type, alternate_effect=None, bloodied_only=None, check_bloodied_instantly=None, component_strength=None, undispellable=None, duration=None, requires_concentration=None, save_ends=None):
+        self.level = calculate_base_level(alternate_effect, component_type, component_strength)
+        if bloodied_only:
+            self.level *=0.4
+        self.level += calculate_duration_modifier(component_type, component_strength, duration, requires_concentration, undispellable, save_ends, check_bloodied_instantly)
+        self.level *= calculate_miscellaneous_component_multiplier()
 
-    #Use different calculations if it is a buff-only spell
-    if 'damage' in present_fundamental_elements or 'condition' in present_fundamental_elements:
-        area_level = convert_area(args['area'])
-        #adding max targets shouldn't affect small areas.
-        if args['max_targets'] and area_level>=2:
-            area_level= max (area_level*HALF,2)
-        if args['choose_targets']: area_level+=1
+def calculate_base_level(alternate_effect, component_type, component_strength):
+    level = {
+            'damage': 4,
+            'condition': rank_condition_tier(component_strength),
+            'buff': component_strength,
+            }[component_type]
+    if alternate_effect:
+        level+=1
+    return level
+
+#Return the level adjustment associated with the condition tier
+def rank_condition_tier(condition_tier):
+    return {
+            '3': 4,
+            '2': 8,
+            '1.5': 12,
+            '1': 16}[condition_tier]
+    #return (4-condition_tier)*4
+
+def calculate_duration_modifier(component_type, component_strength, duration, requires_concentration, undispellable, save_ends, check_bloodied_instantly):
+    if duration is None:
+        return 0
+    #duration_choices = ['round','short','medium','long','extreme', 'permanent']
+    if component_type=='damage':
+        level = switch(duration, duration_choices, [0.5, 2, 3, 4, 5, 7])
+    elif component_type=='condition' or component_type=='buff':
+        level = switch(duration, duration_choices, [-3,0,1,2,3,5])
+
+    #apply condition tier modifier
+    if component_type=='condition':
+        if component_strength==1.5:
+            level+=3
+            level*=1.5
+        elif component_strength == 1:
+            level+=3
+            level*=2
+
+    #now that the base level is established, apply universal modifiers
+    if undispellable:
+        level+=1
+    if save_ends:
+        level*=PART
+    if requires_concentration:
+        level*=HALF
+    if check_bloodied_instantly:
+        level*=PART
+    return level
+
+def calculate_miscellaneous_component_multiplier():
+    multiplier=1
+    if limit_affected_types:
+        multiplier *= switch(limit_affected_types, [1,2,3], [0.9,0.75,0.6])
+    if noncombat:
+        multiplier *= PART
+    if touch_attack:
+        multiplier *= switch(touch_attack, ['ray', 'poor', '1', 'average', '2'],
+                [HALF, PART, PART, 0.9, 0.9])
+    if saving_throw:
+        multiplier *= switch(saving_throw, ['negates', 'half', 'partial'],
+                [HALF, PART, PART])
+    if area and area is not 'tiny':
+        multiplier *= 1.25
+    if escapable:
+        multiplier *= switch(escapable, ['1', '2'], [PART, HALF])
+    if healthy_only:
+        multiplier *= HALF
+    return multiplier
+
+def calculate_area_modifier():
+    if not area:
+        return 0
+    #area_choices = ['none', 'tiny', 'normal','large_line', 'mr', 'medium_radius','large_cone','large_radius']
+    area_level = 0
+    if self.components[DAMAGE] or self.components[CONDITION]:
+        area_level = switch(area, area_choices, [0,1,2,3,4,4,5,6])
     else:
-        area_level = convert_area_buff(args['area'])
-        #adding max targets shouldn't affect small areas.
-        if args['max_targets'] and area_level>=2:
-            area_level= max (area_level*HALF,2)
-        #all buffs are assumed to choose targets - not added separately 
-    if general_debug: print 'area_level', area_level
-
-    total_level += area_level
-    if not args['sr']: total_level+=1
-    if not args['trigger']=='none':
-        if args['trigger']=='no_action': total_level+=1
-        if args['trigger']: total_level*=1.5
-    if 'buff' in present_fundamental_elements:
-        total_level+= convert_range_buff(args['range'])
-    else:
-        total_level += convert_range(args['range'])
-    if general_debug: print 'total_level', total_level
-
-    return total_level
+        area_level = switch(area, area_choices, [0,2,2,2.5,3,3,3.5,4])
+    #adding max targets shouldn't affect small areas.
+    if max_targets and area_level>=2:
+        area_level = max(area_level*HALF,2)
+    #spells that are pure buffs don't have a penalty for choosing targets
+    if choose_targets and (self.components[DAMAGE] or
+            self.components[CONDITION]):
+        area_level+=1
+    level += area_level
 
 def levels_from_fundamental_elements():
     #split_args = util.generate_split_args(args)
@@ -160,158 +249,6 @@ def levels_from_fundamental_elements():
 
     return sum(level_increases.values())
 
-def calculate_fundamental_spell_element_level(spell_element_name,
-        spell_element_args):
-    return {
-            'damage': calculate_damage,
-            'condition': calculate_condition,
-            'buff': calculate_buff,
-            }[spell_element_name](spell_element_args)
-
-def calculate_damage(args):
-    if damage_debug: print 'Calculating damage aspect' 
-    effect_level = 4
-
-    if args['dot']:
-        duration_level = convert_duration_damage(
-            args['duration'])
-        if args['concentration']: duration_level*=HALF
-        strength_level = effect_level + duration_level
-    else:
-        strength_level = effect_level
-
-    if args['limit_types']: 
-        strength_level = calculate_limit_types(args['limit_types'], strength_level)
-
-    return strength_level
-    
-def calculate_buff(args):
-    if buff_debug: print 'Calculating buff aspect'
-    effect_level = args['buff']
-    if args['alternate']: effect_level+=1
-
-    #may not want to use same duration conversions as condition spells
-    duration_level = convert_duration(args['duration'])
-    if args['concentration']: duration_level*=HALF
-    if buff_debug: print 'duration_level', duration_level
-    
-    strength_level = effect_level + duration_level
-    if args['limit_types']: 
-        strength_level = calculate_limit_types(args['limit_types'], strength_level)
-    if args['noncombat']: strength_level*=PART
-    if args['instantaneous']: strength_level*=PART
-    if not (args['area']=='none' or args['area']=='tiny'):
-        strength_level*=1.25
-    if buff_debug: print 'strength_level', strength_level
-
-    return strength_level
-
-def calculate_condition(args):
-    if condition_debug: print 'Calculating condition aspect'
-    effect_level = convert_condition_tier(args['tier'])
-    
-    if args['alternate']: effect_level+=1
-    if args['bloodied']:
-        effect_level*=0.4
-    if condition_debug: print 'effect_level', effect_level
-
-    duration_level = convert_duration(args['duration'])
-    if not args['dispellable']: duration_level+=1
-    if args['condition']<2: duration_level+=3
-    if args['condition']==1: duration_level*=2
-    elif args['condition']==1.5: duration_level*=1.5
-    if args['concentration']: duration_level*=HALF
-    if args['save_ends']: duration_level*=PART
-    if args['bloodied'] and args['instantaneous']: duration_level*=PART
-    if condition_debug: print 'duration_level', duration_level
-
-    strength_level = effect_level + duration_level 
-    if args['limit_types']: 
-        strength_level = calculate_limit_types(args['limit_types'], strength_level)
-    if args['noncombat']: strength_level*=PART
-    #touch attack
-    if args['touch_attack']=='poor' or args['touch_attack']=='1':
-        strength_level*=PART
-    elif args['touch_attack']=='average' or args['touch_attack']=='2':
-        strength_level*=0.9
-    elif args['touch_attack']=='ray':
-        #If you miss with a ray, you can't try again
-        strength_level*=HALF
-    #saving throw
-    if not args['save']=='none':
-        save = args['save']
-        if save=='half' or save=='partial':
-            strength_level*=PART
-        elif save=='negates':
-            strength_level*=HALF
-    #area
-    if not (args['area']==None or args['area']=='tiny'):
-        #damage spells decrease in damage when they become AOE
-        #condition spells also need similar mitigation in addition to area cost.
-        strength_level*=1.25
-    if args['escapable']=='1':
-        strength_level*=PART
-    elif args['escapable']=='2':
-        strength_level*=HALF
-    if args['healthy']: strength_level*=HALF
-    if condition_debug: print 'raw strength_level', strength_level
-
-    return strength_level
-
-def calculate_limit_types(limit_types, strength_level):
-    multiplier = {
-            '1': 0.9,
-            '2': 0.75,
-            '3': 0.6,
-            }[limit_types]
-    return strength_level*multiplier
-
-#Return the level adjustment associated with the condition tier
-def convert_condition_tier(condition_tier):
-    return {
-            '3': 4,
-            '2': 8,
-            '1.5': 12,
-            '1': 16}[condition_tier]
-    #return (4-condition_tier)*4
-
-def convert_duration(duration):
-    if duration is None:
-        return 0
-    #duration_choices = ['round','short','medium','long','extreme', 'permanent']
-    return switch(duration, duration_choices, [-3, 0, 1, 2, 3, 5])
-
-#convert duration for damage spells
-def convert_duration_damage(duration):
-    return switch(duration, duration_choices, [0.5,2, 3, 4, 5, 7])
-
-def convert_area(area):
-    if area is None:
-        return 0
-    #area_choices = ['none', 'tiny', 'normal','large_line', 'mr', 'medium_radius','large_cone','large_radius']
-    return switch(area, area_choices, [0,1,2,3,4,4,5,6])
-
-def convert_area_buff(area):
-    if area is None:
-        return 0
-    return switch(area, area_choices, [0,2,2,2.5,3,3,3.5,4])
-
-def convert_range(spell_range):
-    if spell_range is None:
-        return 0
-    #range_choices = ['personal', 'touch', 'close', 'medium', 'far', 'extreme']
-    return switch(spell_range, range_choices, [-2,-2,-1,0,1,2])
-
-#def convert_range_aoe(spell_range):
-    #range_choices = ['personal', 'touch', 'close', 'medium', 'far', 'extreme']
-    #return switch(spell_range, range_choices, [0,0,1,2,3,4])
-
-def convert_range_buff(spell_range):
-    if spell_range is None:
-        return 0
-    #range_choices = ['personal', 'touch', 'close', 'medium', 'far', 'extreme']
-    return switch(spell_range, range_choices, [0,0.5,1,1.5,2])
-
 def switch(data, choices, outputs):
     for i in xrange(len(choices)):
         if choices[i]==data:
@@ -346,6 +283,7 @@ def parse_string_args_to_dict(text):
 if __name__ == "__main__":
     parser = initialize_argument_parser()
     args = vars(parser.parse_args())
+    print 'args:', args
     if args['load_name']:
         name_pattern = re.compile(args['load_name'], re.IGNORECASE)
         storage = open(storage_file_name, 'r')
@@ -366,7 +304,15 @@ if __name__ == "__main__":
                 lines_read+=1
         storage.close() 
     else:
-        spell_level = calculate_spell_level(args)
+        spell = Spell()
+        for component_type in (DAMAGE, CONDITION, BUFF):
+            for component in args[component_type]:
+                spell.components[component_type].add(SpellComponent(component_type,
+                    args['alternateeffect'], args['bloodied'], args['bloodiedinstant'],
+                    args['strength'], args['undispellable'], args['duration'],
+                    args['concentration'], args['saveends']))
+
+        spell_level = spell.get_level()
         if args['save_name']:            
             save_name = ' '.join(args['save_name'])
             print 'Spell level of', save_name+': ', spell_level
