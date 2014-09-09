@@ -198,5 +198,9 @@ def ideal_modifications(base_creature):
     #this overrides the base 10 because it has the same type
     base_creature.defenses[AC].misc.add_bonus(base_creature.meta[LEVEL]+15,
             BASE)
-monster_types[IDEAL] = LevelProgression(IDEAL, AVERAGE, POOR, POOR, POOR,
+    #add magic bonus to attack and damage
+    base_creature.attacks[ATTACK_BONUS].add_bonus(base_creature.meta[LEVEL]/4, ENHANCEMENT)
+    base_creature.attacks[DAMAGE][WEAPON_PRIMARY].add_bonus(base_creature.meta[LEVEL]/4, ENHANCEMENT)
+    base_creature.attacks[DAMAGE][WEAPON_SECONDARY].add_bonus(base_creature.meta[LEVEL]/4, ENHANCEMENT)
+monster_types[IDEAL] = LevelProgression(IDEAL, GOOD, POOR, POOR, POOR,
         6, NONE, ideal_modifications)
