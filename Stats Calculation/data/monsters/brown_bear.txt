@@ -3,6 +3,7 @@ creature type=animal
 weapon=claws
 offhand weapon=claws
 size=large
+level=8
 
 #attributes
 strength=good
