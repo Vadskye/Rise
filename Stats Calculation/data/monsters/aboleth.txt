@@ -1,6 +1,7 @@
 #meta
 name=aboleth
 creature type=aberration
+level=10
 
 #items
 weapon=tentacles

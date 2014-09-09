@@ -1,6 +1,7 @@
 name=wolf
 creature type=animal
 weapon=bite
+level=2
 
 #attributes
 strength=good
