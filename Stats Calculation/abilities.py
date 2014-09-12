@@ -215,8 +215,8 @@ abilities['wisdom drain'] = Ability('wisdom drain', tags=[TAG_ATTACK])
 ####################
 
 def warrior_benefit(creature):
-    util.improve_bab(creature.level_progression)
-    util.improve_hv(creature.level_progression)
+    util.improve_bab(creature.meta[LEVEL_PROGRESSION])
+    util.improve_hv(creature.meta[LEVEL_PROGRESSION])
 abilities['warrior'] = Ability('warrior', apply_benefit = warrior_benefit,
         tags=[ABILITY_TEMPLATE])
 
