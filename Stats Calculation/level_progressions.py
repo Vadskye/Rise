@@ -129,75 +129,90 @@ classes[WIZARD] = LevelProgression(WIZARD, POOR, POOR, POOR, GOOD, 4, NONE)
 
 monster_types = dict()
 
-def aberration_modifications(base_creature):
-    base_creature.add_ability('darkvision', by_name=True)
-monster_types[ABERRATION] = LevelProgression(ABERRATION, AVG,
-        AVG, POOR, AVG, 5, AVERAGE, aberration_modifications)
+def get_monster_level_progression(creature_type):
+    if creature_type == ABERRATION:
+        def aberration_modifications(base_creature):
+            base_creature.add_ability('darkvision', by_name=True)
+        return LevelProgression(ABERRATION, AVG,
+                AVG, POOR, AVG, 5, POOR, aberration_modifications)
 
-def animal_modifications(base_creature):
-    base_creature.attributes[INT].add_inherent(-8)
-    base_creature.add_abilities(('low-light vision', 'scent'), by_name=True)
-monster_types[ANIMAL] = LevelProgression(ANIMAL, AVG, AVG, 
-        AVG, POOR, 6, POOR, animal_modifications)
+    elif creature_type == ANIMAL:
+        def animal_modifications(base_creature):
+            base_creature.attributes[INT].add_inherent(-8)
+            base_creature.add_abilities(('low-light vision', 'scent'), by_name=True)
+        return LevelProgression(ANIMAL, AVG, AVG, 
+                AVG, POOR, 6, POOR, animal_modifications)
 
-def construct_modifications(base_creature):
-    base_creature.add_abilities(('darkvision', 'construct'),
-            by_name=True)
-monster_types[CONSTRUCT] = LevelProgression(CONSTRUCT, AVG, AVG, POOR, POOR,
-    5, GOOD, construct_modifications)
+    elif creature_type == CONSTRUCT:
+        def construct_modifications(base_creature):
+            base_creature.add_abilities(('darkvision', 'construct'),
+                    by_name=True)
+        return LevelProgression(CONSTRUCT, AVG, AVG, POOR, POOR,
+            5, GOOD, construct_modifications)
 
-def dragon_modifications(base_creature):
-    base_creature.add_abilities(('darkvision', 'low-light vision'),
-            by_name=True)
-monster_types[DRAGON] = LevelProgression(DRAGON, AVG, AVG, 
-        AVG, AVG, 6, GOOD, dragon_modifications)
+    elif creature_type == DRAGON:
+        def dragon_modifications(base_creature):
+            base_creature.add_abilities(('darkvision', 'low-light vision'),
+                    by_name=True)
+            return LevelProgression(DRAGON, AVG, AVG, 
+                    AVG, AVG, 6, GOOD, dragon_modifications)
 
-def fey_modifications(base_crreature):
-    base_creature.add_ability('low-light vision', by_name=True)
-monster_types[FEY] = LevelProgression(FEY, POOR, POOR, AVG, AVG, 5,
-        POOR, fey_modifications)
+    elif creature_type == FEY:
+        def fey_modifications(base_creature):
+            base_creature.add_ability('low-light vision', by_name=True)
+        return LevelProgression(FEY, POOR, POOR, AVG, AVG, 5,
+                POOR, fey_modifications)
 
-monster_types[HUMANOID] = LevelProgression(HUMANOID, POOR, POOR, POOR,
-        POOR, 4, NONE)
+    elif creature_type == HUMANOID:
+        return LevelProgression(HUMANOID, POOR, POOR, POOR,
+                POOR, 4, NONE)
 
-def magical_beast_modifications(base_creature):
-    base_creature.add_ability('low-light vision', by_name=True)
-monster_types[MAGICAL_BEAST] = LevelProgression(MAGICAL_BEAST, AVG,
-        AVG, AVG, POOR, 6, AVG, magical_beast_modifications)
+    elif creature_type == MAGICAL_BEAST:
+        def magical_beast_modifications(base_creature):
+            base_creature.add_ability('low-light vision', by_name=True)
+        return LevelProgression(MAGICAL_BEAST, AVG,
+                AVG, AVG, POOR, 6, AVG, magical_beast_modifications)
 
-monster_types[MONSTROUS_HUMANOID] = LevelProgression(MONSTROUS_HUMANOID,
-        AVG, AVG, POOR, AVG, 5, AVG)
+    elif creature_type == MONSTROUS_HUMANOID:
+        return LevelProgression(MONSTROUS_HUMANOID,
+                AVG, AVG, POOR, AVG, 5, AVG)
 
-def ooze_modifications(base_creature):
-    base_creature.add_ability('ooze', by_name=True)
-monster_types[OOZE] = LevelProgression(OOZE, POOR, AVG, POOR, POOR, 6,
-        NONE, ooze_modifications)
+    elif creature_type == OOZE:
+        def ooze_modifications(base_creature):
+            base_creature.add_ability('ooze', by_name=True)
+        return LevelProgression(OOZE, POOR, AVG, POOR, POOR, 6,
+                NONE, ooze_modifications)
 
-monster_types[OUTSIDER] = LevelProgression(OUTSIDER, AVG, AVG, AVG, AVG,
-        5, AVG)
+    elif creature_type == OUTSIDER:
+        return LevelProgression(OUTSIDER, AVG, AVG, AVG, AVG,
+                5, AVG)
 
-def plant_modifications(base_creature):
-    base_creature.add_ability('plant', by_name=True)
-monster_types[PLANT] = LevelProgression(PLANT, POOR, AVG, POOR, POOR, 5,
-        AVG, plant_modifications)
+    elif creature_type == PLANT:
+        def plant_modifications(base_creature):
+            base_creature.add_ability('plant', by_name=True)
+        return LevelProgression(PLANT, POOR, AVG, POOR, POOR, 5,
+                AVG, plant_modifications)
 
-def undead_modifications(base_creature):
-    base_creature.add_ability('undead', by_name=True)
-monster_types[UNDEAD] = LevelProgression(UNDEAD, AVG, AVG, POOR, AVG, 5,
-        AVG, undead_modifications)
+    elif creature_type == UNDEAD:
+        def undead_modifications(base_creature):
+            base_creature.add_ability('undead', by_name=True)
+        return LevelProgression(UNDEAD, AVG, AVG, POOR, AVG, 5,
+                AVG, undead_modifications)
 
-#modify the creature so it matches the ideal target AC and other stats
-def ideal_modifications(base_creature):
-    #compensate for AC bonus from BAB
-    base_creature.defenses[AC].dodge.add_bonus(-(base_creature.meta[LEVEL]/2),
-    #base_creature.defenses[AC].dodge.add_bonus(-((base_creature.meta[LEVEL]*3)/8),
-            'babfix')
-    #compensate for AC bonus from Dex
-    base_creature.defenses[AC].dodge.add_bonus(
-            -(base_creature.attributes[DEX].get_total()), 'dexfix')
-    #this overrides the base 10 because it has the same type
-    base_creature.defenses[AC].misc.add_bonus(base_creature.meta[LEVEL]+15,
-            BASE)
-    #add magic bonus to attack and damage
-monster_types[IDEAL] = LevelProgression(IDEAL, GOOD, POOR, POOR, POOR,
-        5, NONE, ideal_modifications)
+    elif creature_type == IDEAL:
+        #modify the creature so it matches the ideal target AC and other stats
+        def ideal_modifications(base_creature):
+            #compensate for AC bonus from BAB
+            base_creature.defenses[AC].dodge.add_bonus(-(base_creature.meta[LEVEL]/2),
+                    #base_creature.defenses[AC].dodge.add_bonus(-((base_creature.meta[LEVEL]*3)/8),
+                    'babfix')
+            #compensate for AC bonus from Dex
+            base_creature.defenses[AC].dodge.add_bonus(
+                    -(base_creature.attributes[DEX].get_total()), 'dexfix')
+            #this overrides the base 10 because it has the same type
+            base_creature.defenses[AC].misc.add_bonus(base_creature.meta[LEVEL]+15,
+                    BASE)
+        return LevelProgression(IDEAL, GOOD, POOR, POOR, POOR,
+                    5, NONE, ideal_modifications)
+    else:
+        raise Exception("Can't identify creature type %s" % creature_type)
