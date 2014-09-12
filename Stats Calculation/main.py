@@ -97,16 +97,19 @@ if __name__ == "__main__":
             else:
                 creature2 = Creature.from_creature_name('ideal', 
                         creature.meta[LEVEL])
-                print creature2
-                creature = combat.CombatCreature.from_creature(creature)
-                creature2 = combat.CombatCreature.from_creature(creature2)
-                battle = combat.Battle(creature, creature2)
-                repeat_count = 500
-                results = run_repeated_battles(battle, repeat_count)
-                print 'First creature win %:', results[0], results[2]
+            print creature2
+            creature = combat.CombatCreature.from_creature(creature)
+            creature2 = combat.CombatCreature.from_creature(creature2)
+            battle = combat.Battle(creature, creature2)
+            repeat_count = 500
+            results = run_repeated_battles(battle, repeat_count)
+            print 'First creature win %:', results[0], results[2]
+            avg_hit_chance_first = creature.avg_hit_probability(creature2.defenses[AC].normal())
+            avg_hit_chance_second = creature2.avg_hit_probability(creature.defenses[AC].normal())
+            print 'avg hit chance:    %s    %s' % (avg_hit_chance_first, avg_hit_chance_second)
 
     elif args['function'] == COMBAT:
-        print 'Level, 1st Win %, Rounds'
+        print 'Lvl\twin%1\tRounds\thit%1\thit%2'
         for i in xrange(20):
             """
             barbarian = Character.from_creature_name('brb-heavy', i+1)
@@ -134,7 +137,11 @@ if __name__ == "__main__":
 
             repeat_count = 500
             results = run_repeated_battles(battle, repeat_count)
-            print '%s   %s   %s' % (i+1, results[0], results[2])
+            print '%s \t%s \t%s' % (i+1, results[0], results[2]),
+            avg_hit_chance_first = first.avg_hit_probability(second.defenses[AC].normal())
+            avg_hit_chance_second = second.avg_hit_probability(first.defenses[AC].normal())
+            print '\t%s \t%s' % (avg_hit_chance_first, avg_hit_chance_second),
+            print '\t%s' % first.defenses[AC].normal()
 
             #print npc.armor_class.normal() - generic_ac_real[i]
 
