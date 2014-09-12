@@ -477,7 +477,9 @@ def attack_damage_to_latex(weapon, weapon_damage):
     return damage_string
 
 def improved_progression(progression):
-    if progression == POOR:
+    if progression == NONE:
+        return POOR
+    elif progression == POOR:
         return AVERAGE
     elif progression == AVERAGE:
         return GOOD
