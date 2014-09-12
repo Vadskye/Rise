@@ -189,8 +189,8 @@ monster_types[UNDEAD] = LevelProgression(UNDEAD, AVG, AVG, POOR, AVG, 5,
 #modify the creature so it matches the ideal target AC and other stats
 def ideal_modifications(base_creature):
     #compensate for AC bonus from BAB
-    #base_creature.defenses[AC].dodge.add_bonus(-(base_creature.meta[LEVEL]/2),
-    base_creature.defenses[AC].dodge.add_bonus(-((base_creature.meta[LEVEL]*3)/8),
+    base_creature.defenses[AC].dodge.add_bonus(-(base_creature.meta[LEVEL]/2),
+    #base_creature.defenses[AC].dodge.add_bonus(-((base_creature.meta[LEVEL]*3)/8),
             'babfix')
     #compensate for AC bonus from Dex
     base_creature.defenses[AC].dodge.add_bonus(
@@ -199,8 +199,5 @@ def ideal_modifications(base_creature):
     base_creature.defenses[AC].misc.add_bonus(base_creature.meta[LEVEL]+15,
             BASE)
     #add magic bonus to attack and damage
-    base_creature.attacks[ATTACK_BONUS].add_bonus(base_creature.meta[LEVEL]/4, ENHANCEMENT)
-    base_creature.attacks[DAMAGE][WEAPON_PRIMARY].add_bonus(base_creature.meta[LEVEL]/4, ENHANCEMENT)
-    base_creature.attacks[DAMAGE][WEAPON_SECONDARY].add_bonus(base_creature.meta[LEVEL]/4, ENHANCEMENT)
 monster_types[IDEAL] = LevelProgression(IDEAL, GOOD, POOR, POOR, POOR,
-        6, NONE, ideal_modifications)
+        5, NONE, ideal_modifications)
