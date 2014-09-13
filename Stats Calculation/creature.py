@@ -296,8 +296,8 @@ class Creature(object):
         #creature group to the stats for the creature
         #but allow the specific creature to take precedence
         if 'group' in raw_stats.keys():
-            group_raw_stats = util.parse_stats_from_file(
-                    'data/monsters/%s.txt' % (''.join(raw_stats['group'])))
+            group_file = open('data/monsters/%s.txt' % (''.join(raw_stats['group'])))
+            group_raw_stats = util.parse_stats_from_file(group_file)
             for key in group_raw_stats.keys():
                 if key not in raw_stats.keys():
                     raw_stats[key] = group_raw_stats[key]
