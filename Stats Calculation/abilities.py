@@ -209,6 +209,7 @@ abilities['black cloud'] = Ability('black cloud', tags=[TAG_ATTACK])
 abilities['babble'] = Ability('babble', tags=[TAG_ATTACK])
 abilities['madness'] = Ability('madness', tags=[TAG_DEFENSE])
 abilities['wisdom drain'] = Ability('wisdom drain', tags=[TAG_ATTACK])
+abilities['mindless'] = Ability('mindless', tags=[TAG_DEFENSE])
 
 ####################
 #MONSTER TEMPLATES
