@@ -1,15 +1,16 @@
 #meta
 name=Achaierai
 creature type=outsider
-level=8
+level=7
+template=warrior
 
 #items
 weapon=claws
 offhand weapon=claws
 
 #attributes
-strength=average+2
-dexterity=average
+strength=average
+dexterity=good
 constitution=average
 intelligence=poor
 wisdom=poor
