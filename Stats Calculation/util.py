@@ -120,8 +120,8 @@ class NaturalArmor(ModifierProgression):
         bonus = {
                 NONE: 0,
                 POOR: level/4+2,
-                AVERAGE: level/2+4,
-                GOOD: (level*3)/4+6,
+                AVERAGE: level/3+4,
+                GOOD: level/2+6,
                 }[progression]
         self.add_bonus(bonus, 'progression')
 
