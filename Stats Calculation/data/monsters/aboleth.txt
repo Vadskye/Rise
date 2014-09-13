@@ -1,13 +1,14 @@
 #meta
 name=aboleth
 creature type=aberration
-level=10
+level=9
+template=warrior
 
 #items
 weapon=tentacles
 
 #attributes
-strength=average+2
+strength=average
 constitution=good
 intelligence=average+2
 wisdom=average
@@ -18,6 +19,7 @@ trait=enslave
 trait=slime
 trait=carapace
 trait=mucus cloud
+trait=improved natural weapon
 #feat=
 
 #core

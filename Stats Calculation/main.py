@@ -141,7 +141,8 @@ if __name__ == "__main__":
             avg_hit_chance_first = first.avg_hit_probability(second.defenses[AC].normal())
             avg_hit_chance_second = second.avg_hit_probability(first.defenses[AC].normal())
             print '\t%s \t%s' % (avg_hit_chance_first, avg_hit_chance_second),
-            print '\t%s' % first.defenses[AC].normal()
+            #print '\t%s' % first.defenses[AC].normal()
+            print '\t%s' % first.attacks[ATTACK_BONUS].base_attack_bonus
 
             #print npc.armor_class.normal() - generic_ac_real[i]
 
