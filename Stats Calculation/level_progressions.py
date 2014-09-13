@@ -188,7 +188,7 @@ def get_monster_progression(creature_type):
 
     elif creature_type == OUTSIDER:
         return LevelProgression(OUTSIDER, AVG, AVG, AVG, AVG,
-                5, AVG)
+                5, POOR)
 
     elif creature_type == PLANT:
         def plant_modifications(base_creature):
