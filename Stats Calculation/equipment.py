@@ -43,7 +43,7 @@ class Weapon(object):
                 'tentacles': cls('tentacles', ENCUMBRANCE_LIGHT,
                     ATTACK_TYPE_MELEE, (DAMAGE_PHYSICAL, DAMAGE_BLUDGEONING),
                     'd8'),
-                'slam': cls('slam', ENCUMBRANCE_MEDIUM,
+                'slam': cls('slam', ENCUMBRANCE_LIGHT,
                     ATTACK_TYPE_MELEE, (DAMAGE_PHYSICAL, DAMAGE_BLUDGEONING),
                     'd8'),
                 'unarmed': cls('unarmed', ENCUMBRANCE_LIGHT, ATTACK_TYPE_MELEE,
