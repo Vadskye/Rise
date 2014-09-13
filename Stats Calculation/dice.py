@@ -38,7 +38,6 @@ class Dice(object):
 
     #always decrease min when decreasing size
     def decrease_size(self):
-        print 'herp', self.dice_count, self.die_size,
         if self.die_size<6:
             self.die_size -=1
         elif self.die_size == 6 and self.dice_count >1:
@@ -46,7 +45,6 @@ class Dice(object):
             self.dice_count /= 2
         else:
             self.die_size -= 2
-        print 'derp', self.dice_count, self.die_size
         self.average = self._get_average()
 
     def roll(self):
