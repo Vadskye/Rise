@@ -2,7 +2,7 @@ from strings import *
 import re
 import equipment, util
 from abilities import abilities
-from level_progressions import classes, monster_types, get_monster_level_progression
+from level_progressions import get_class_progression, get_monster
 
 class Creature(object):
     def __init__(self, raw_stats, level=None,
@@ -92,11 +92,10 @@ class Creature(object):
             self.meta[ALIGNMENT] = raw_stats['alignment']
         self.meta[NAME] = raw_stats['name']
         if 'class' in raw_stats.keys():
-            self.meta[LEVEL_PROGRESSION] = classes[
-                    raw_stats['class']]
+            self.meta[LEVEL_PROGRESSION] = get_class_progression(raw_stats['class'])
             self.meta[USE_MAGIC_BONUSES] = True
         elif 'creature type' in raw_stats.keys():
-            self.meta[LEVEL_PROGRESSION] = get_monster_level_progression(
+            self.meta[LEVEL_PROGRESSION] = get_monster_progression(
                     raw_stats['creature type'])
             self.meta[USE_MAGIC_BONUSES] = False
         if DESCRIPTION in raw_stats.keys():
