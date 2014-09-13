@@ -23,7 +23,7 @@ class LevelProgression(object):
         setattr(self, progression_name, util.improved_progression(
             getattr(self, progression_name)))
 
-def get_class(class_name):
+def get_class_progression(class_name):
     if class_name == BARBARIAN:
         def barbarian_modifications(base_creature):
             base_creature.add_ability(abilities.rage)
@@ -132,7 +132,7 @@ def get_class(class_name):
     else:
         raise Exception("Can't recognize class name %s" % class_name)
 
-def get_monster(creature_type):
+def get_monster_progression(creature_type):
     if creature_type == ABERRATION:
         def aberration_modifications(base_creature):
             base_creature.add_ability('darkvision', by_name=True)
