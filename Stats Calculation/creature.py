@@ -2,7 +2,7 @@ from strings import *
 import re
 import equipment, util
 from abilities import abilities
-from level_progressions import get_class_progression, get_monster
+from level_progressions import get_class_progression, get_monster_progression
 
 class Creature(object):
     def __init__(self, raw_stats, level=None,
