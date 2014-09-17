@@ -1,0 +1,25 @@
+#meta
+name=orc warrior
+creature type=humanoid
+class=warrior
+
+#items
+weapon=heavy_melee
+armor=light
+
+#attributes
+strength=average+1
+dexterity=poor
+constitution=poor
+intelligence=-2
+wisdom=-1
+
+#abilities
+feat=power attack
+
+#core
+size=medium
+
+#fluff
+description=Orcs usually have black hair, lupine ears and reddish eyes. They prefer wearing vivid colors that many humans would consider unpleasant, such as blood red, mustard yellow, yellow-green, and deep purple. Their equipment is dirty and unkempt. An adult male orc is about six and a half feet tall and weighs about 250 pounds.  Females are slightly smaller. The language an orc speaks varies slightly from tribe to tribe, but any orc is understandable by someone else who speaks Orc. Some orcs know Goblin or Giant as well. Most orcs encountered away from their homes are warriors.
+combat=Orcs tend towards larger weapons, preferring those that cause the most damage in the least time. Though they will freely take advantage of any advantage afforded them in battle, orcs are honorable in victory or defeat. They willingly take prisoners and always spare noncombatants -- it is dishonorable for an orc to fight someone unable or unwilling to fight back.
