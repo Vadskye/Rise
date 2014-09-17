@@ -710,10 +710,9 @@ The fighter's class skills (and the key attribute for each skill) are Athletics 
 
 \sssecfake{Class Features}
 All of the following are class features of the fighter.
- \cf{Ftr}{Weapon and Armor Proficiency}  A fighter is proficient with simple weapons,  any four other weapon groups,  all armor (heavy, medium, and light) and shields (including tower shields).
+ \cf{Ftr}{Weapon and Armor Proficiency}  A fighter is proficient with simple weapons, any four other weapon groups,  all armor (heavy, medium, and light) and shields (including tower shields).
 
-\cf{Ftr}{Armor Discipline} A fighter's training grants him additional capability when using his armor. He may choose an armor category (light, medium, heavy, or shields), or he may choose to train equally with all kinds of armor and shields. Whether or not he chooses a specific armor category, he reduces his armor check penalty by 2 and reduces his arcane spell failure by 5\% when using his chosen armor. These benefits apply separately to armor and shields, if the fighter uses both and chose not to focus in a particular armor category. This effect cannot reduce those penalties below 0.
-\par If the fighter chose a particular armor category, he gains a \plus1 bonus to his dodge defense modifier while using armor of that category.
+\cf{Ftr}{Armor Discipline} A fighter's training grants him additional capability in armor. He must choose to improve his agility or his resilience in armor. This applies to all armor discipline abilities the fighter has. If he improves his agility, he reduces his armor check penalty by 2 and reduces his arcane spell failure by 5\% while wearing armor of any kind. If he improves his resilience, he gains nonlethal damage reduction equal to his fighter level while wearing armor of any kind. This damage reduction allows him to ignore the first points of nonlethal damage he takes each round.
 
 \cfl{Ftr}{2nd}{Bonus Feat} The fighter gets a bonus combat-oriented feat. This bonus feat must be drawn from the feats noted as combat feats on \tref{Combat Feats}. A fighter must still meet all prerequisites for a bonus feat, including attribute score and base attack bonus minimums. The fighter gains an additional bonus feat at his 6th fighter level and every four fighter levels thereafter (6th, 10th, 14th, and 18th).
 
@@ -757,10 +756,10 @@ Vulnerable & None & \x & \x \\
 
 \par A fighter cannot use this ability more than once against a single source. For example, if a fighter is exhausted by a \spell{ray of exhaustion} spell, he can use this ability to downgrade the exhaustion to fatigue, but he can't then expend a second use to negate the fatigue. The lesser condition that this ability imposes may be cured or removed normally, but doing so does not affect the resurgence of the condition the fighter was originally afflicted with. If a fighter uses this ability to mitigate or negate a condition which he must suffer as a sacrifice or cost to gain some benefit, he automatically forfeits the benefit he would have gained.
 
-\cfl{Ftr}{7th}{Improved Armor Discipline} The fighter's training in his chosen armor category (or with all armor categories) improves. He reduces the armor check penalty by 4 and decreases the arcane spell failure by 15\%. In addition, he treats his chosen armor (or armors) as if it were one encumbrance category lighter than it is. This does not stack with the effects of armor discipline.
-\par This ability means heavy armor is treated as medium armor, medium armor is treated as light armor, and light armor is treated as being unarmored. Likewise, tower shields are treated as heavy shields (and no longer impose a \minus2 penalty to physical attacks), heavy shields are treated as light shields, and both light shields and bucklers are treated as being unarmored. This can remove the halving of the fighter's Dexterity bonus, if appropriate for the new encumbrance of the fighter's armor.
-\par This allows the fighter to qualify for class features using the reduced armor encumbrance category. For example, a fighter 9 / wizard 2 who reduces his encumbrance in light armor could cast without any arcane spell failure in light armor.
-\par A fighter who chose a specific armor category gains a \plus2 bonus to his dodge defense modifier while using armor of that category.
+\cfl{Ftr}{7th}{Improved Armor Discipline} The fighter's training in his chosen armor category (or with all armor categories) improves. If he chose agility, he reduces his armor check penalty by 4 and decreases his arcane spell failure by 15\%. This does not stack with the effects of armor discipline. In addition, he treats all armor as if it were one encumbrance category lighter than it is.
+\par This ability means heavy armor is treated as medium armor, medium armor is treated as light armor, and light armor is treated as being unarmored. Similarly, tower shields are treated as heavy shields (and no longer impose a \minus2 penalty to physical attacks), heavy shields are treated as light shields, and both light shields and bucklers are treated as being unarmored. This can remove the halving of the fighter's Dexterity bonus, if appropriate for the new encumbrance of the fighter's armor. This allows the fighter to qualify for class features using the reduced armor encumbrance category. For example, a fighter 9 / wizard 2 who reduces his encumbrance in light armor could cast spells without any arcane spell failure in light armor.
+
+If the fighter chose resilience, his damage reduction from armor discipline applies against all physical damage.
 
 \cfl{Ftr}{9th}{Improved Weapon Discipline} The fighter's training in his chosen weapons improves. He gains a \plus4 bonus to resist disarm and sunder attempts when using his chosen weapons. If he chose a specific weapon group, he gains a \plus2 bonus to physical attacks with weapons from that group. If he did not, he can apply all weapon group-specific feats he has to any weapon group that he trains with for 8 hours. He retains this benefit for one week after the training.
 
@@ -769,8 +768,9 @@ Vulnerable & None & \x & \x \\
 \cfl{Ftr}{11th}{Improved Combat Discipline} The fighter's ability to keep fighting despite negative influence improves. He can reduce conditions by two steps instead of one when using combat discipline. For example, a stunned fighter who used combat discipline would instead be staggered.
 \par In addition, a fighter may use combat discipline to reduce any penalties he suffers to attribute scores, physical attacks, weapon damage rolls, skill checks, or ability checks that come from negative effects not listed on the combat discipline chart by 2. This cannot be used to reduce the effects of ability damage or drain.
 
-\cfl{Ftr}{13th}{Greater Armor Discipline} The fighter's training in his chosen armor becomes still greater. He reduces his armor check penalty by 6 and decreases his arcane spell failure by 30\% when using his chosen armor. In addition, he treats his chosen armor as if it were two encumbrance categories lighter than it actually is whenever doing so would be beneficial to him. This does not stack with the benefits of armor discipline or improved armor discipline.
-\par A fighter who chose a specific armor category gains a \plus3 bonus to his dodge defense modifier while using armor of that category.
+\cfl{Ftr}{13th}{Greater Armor Discipline} The fighter's training in his chosen armor becomes still greater. If he chose agility, he reduces his armor check penalty by 6 and decreases his arcane spell failure by 30\% while wearing armor of any kind. In addition, he treats all armor as if it were two encumbrance categories lighter than it actually is whenever doing so would be beneficial to him. This does not stack with the benefits of armor discipline or improved armor discipline.
+
+If the fighter chose resilience, he adds half his Constutition to his physical defenses while wearing armor of any kind. This bonus applies even when the fighter is flat-footed, but it does not apply against touch attacks. He loses this bonus when he is helpless or unarmored.
 
 \cfl{Ftr}{14th}{Improved Adaptive Style} The fighter's ability to adapt to situations improves. He need only spend 1 minute training to change a single adaptive style feat. He may continue training as he wishes, changing one adaptive style feat per minute.
 
@@ -782,8 +782,9 @@ Vulnerable & None & \x & \x \\
 
 \cfl{Ftr}{19th}{True Discipline} The fighter's discipline in his chosen area is beyond equal. He must choose either weapon discipline, armor discipline, or combat discipline. Depending on which discipline he chooses, he gains a different bonus.
 \subcf{True Weapon Discipline} The fighter can take 10 on the first attack he makes each round and automatically confirms all critical threats while using his chosen weapons.
-\subcf{True Armor Discipline} The fighter no longer suffers armor check penalties or arcane spell failure with his chosen armor. In addition, he treats his chosen armor as if it were three encumbrance categories lighter than it actually is.
-\par A fighter who chose a specific armor category gains a \plus4 bonus to his dodge defense modifier while using armor of that category.
+\subcf{True Armor Discipline} If the fighter chose agility, he no longer suffers armor check penalties or arcane spell failure with any armor. He ignores the encumbrance of all armor, causing him to be treated as unarmored whenever doing so is beneficial to him. In addition, he applies the defense bonus from any body armor he wears to his touch armor class and Reflex defense.
+
+If the fighter chose resilience, he applies his damage reduction to all damage, including from magical attacks. In addition, he applies the defense bonus from any body armor he wears to his Fortitude defense.
 \subcf{True Combat Discipline} The fighter can use combat discipline to be staggered instead of suffering any nondamaging negative effect with a duration.
 
 \cfl{Ftr}{20th}{Greater Adaptive Style} The fighter's ability to react to situations is unparalleled. He need only spend a swift action to exchange an adaptive style feat.
