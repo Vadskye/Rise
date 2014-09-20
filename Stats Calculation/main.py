@@ -1,9 +1,9 @@
 import argparse
-from creature import Creature, generate_creature_from_file_name
+from creature import generate_creature_from_file_name
 import util
 import combat
 import cProfile
-from abilities import abilities
+from abilities import Ability
 from strings import *
 
 CREATURE = 'creature'
@@ -84,6 +84,9 @@ if __name__ == "__main__":
                 args['verbose'])
         creature.update()
         print creature
+        print creature.attacks[ATTACK_BONUS]
+        print creature.abilities[INACTIVE]
+        print creature.abilities[ACTIVE]
         print ''
         creatures.append(creature)
 
