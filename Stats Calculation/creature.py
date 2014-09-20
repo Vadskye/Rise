@@ -2,7 +2,7 @@ from strings import *
 import re
 import equipment, util
 from abilities import abilities
-from level_progressions import get_class_progression
+from class_progressions import get_class_progression
 
 def generate_creature_from_file_name(file_name, level=None, verbose=False):
     file_name = util.fix_creature_file_name(file_name)
@@ -34,6 +34,8 @@ def generate_creature_from_creature_name(creature_name, raw_stats, verbose=False
             }[creature_name](raw_stats)
 
 class Creature(object):
+    class_progression = None
+    class_modifications = None
     def __init__(self, raw_stats, verbose=False):
         self.attacks = {
                 ATTACK_BONUS: None,
@@ -68,7 +70,6 @@ class Creature(object):
                 ALIGNMENT: 'Neutral',
                 COMBAT_DESCRIPTION: None,
                 DESCRIPTION: None,
-                LEVEL_PROGRESSION: None,
                 LEVEL: 1,
                 NAME: None,
                 USE_MAGIC_BONUSES: False,
@@ -93,7 +94,7 @@ class Creature(object):
     def update(self):
         self.reset_objects()
         self.interpret_raw_stats()
-        self.apply_level_progression()
+        self.apply_class_progression()
         self.calculate_derived_statistics()
         self.reset_combat()
 
@@ -207,16 +208,16 @@ class Creature(object):
         for ability in abilities_to_remove:
             self.abilities[INACTIVE].remove(ability)
 
-    def apply_level_progression(self):
+    def apply_class_progression(self):
         self.attacks[ATTACK_BONUS].set_progression(
-                self.meta[LEVEL_PROGRESSION].bab_progression)
+                self.class_progression.bab_progression)
         for save in SAVES:
             self.defenses[save].set_progression(
-                    self.meta[LEVEL_PROGRESSION].save_progressions[save])
-        self.core[HIT_VALUE] = self.meta[LEVEL_PROGRESSION].hit_value
+                    self.class_progression.save_progressions[save])
+        self.core[HIT_VALUE] = self.class_progression.hit_value
         self.defenses[AC].natural_armor.set_progression(
-                self.meta[LEVEL_PROGRESSION].natural_armor_progression)
-        self.meta[LEVEL_PROGRESSION].apply_modifications(self)
+                self.class_progression.natural_armor_progression)
+        self.class_progression.apply_modifications(self)
 
     def add_ability(self, ability, check_prerequisites = False, by_name = False):
         #abilities can be added by name instead of as an ability object
@@ -542,7 +543,7 @@ class Creature(object):
 
         subheader = r'%s %s %s \hfill \textbf{CR} %s' % (
                 self.meta[ALIGNMENT].title(), self.core[SIZE].title(),
-                self.meta[LEVEL_PROGRESSION].name, self.meta[LEVEL])
+                self.class_progression.name, self.meta[LEVEL])
         subheader += ENDLINE
         #if self.subtypes:
         #    types +=' {0}'.format()
@@ -695,16 +696,10 @@ class Monster(Creature):
     pass
 
 class Barbarian(Character):
-    #meta[LEVEL_PROGRESSION] = get_class_progression('barbarian')
-    def __init__(self, raw_stats):
-        super(Barbarian, self).__init__(raw_stats)
-        self.meta[LEVEL_PROGRESSION] = get_class_progression('barbarian')
+    class_progression = get_class_progression('barbarian')
 
 class Fighter(Character):
-    #meta[LEVEL_PROGRESSION] = get_class_progression('fighter')
-    def __init__(self, raw_stats):
-        super(Fighter, self).__init__(raw_stats)
-        self.meta[LEVEL_PROGRESSION] = get_class_progression('fighter')
+    class_progression = get_class_progression('fighter')
 
 class Wizard(Character):
 
