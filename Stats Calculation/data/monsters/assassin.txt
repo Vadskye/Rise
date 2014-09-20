@@ -1,0 +1,26 @@
+#meta
+name=assassin
+creature type=humanoid
+template=warrior
+level=2
+
+#items
+weapon=light_melee
+offhand weapon=light_melee
+armor=light
+
+#attributes
+strength=poor
+dexterity=good
+constitution=poor
+intelligence=poor
+
+#abilities
+feat=dodge
+
+#core
+size=medium
+
+#fluff
+description=Assassins are typically garbed in black or dark grey.
+combat=Assassins strike from the shadows and use concealment and cover to their advantage.

@@ -3,5 +3,5 @@ race=human
 class=fighter
 weapon=heavy_melee
 armor=heavy
-attributes=warrior
+attributes=warrior_dex
 feat=overwhelming force

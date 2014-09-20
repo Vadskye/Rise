@@ -1,5 +1,5 @@
 import argparse
-from creature import Creature
+from creature import Creature, generate_creature_from_file_name
 import util
 import combat
 import cProfile
@@ -8,20 +8,20 @@ from strings import *
 
 CREATURE = 'creature'
 COMBAT = 'combat'
+BATTLE_REPEAT_COUNT = 500
 
 def initialize_argument_parser():
     parser = argparse.ArgumentParser(description='Calculate combat statistics for Rise characters')
-    parser.add_argument('-f', '--function', dest='function',
-            help='function to perform', default=CREATURE,
-            choices=[COMBAT, CREATURE])
-    parser.add_argument('-c', '--creature-input', dest='creature_input', 
-            help='the creature file to load')
-    parser.add_argument('-c2', '--creature-input-2', dest='creature_input_2',
+    parser.add_argument('-b', '--battle', dest='battle', action='store_true',
+            help='simulate a battle between the creatures?')
+    parser.add_argument('-c', '--creature', dest='creature', nargs="*",
             help='the creature file to load')
     parser.add_argument('-l', '--level', dest='level', type=int,
             help='the level of the creature')
     parser.add_argument('-o', '--output', dest='output',
             help='A file name to store any output in')
+    parser.add_argument('-v', '--verbose', dest='verbose', action='store_true',
+            help='show verbose output?')
     return vars(parser.parse_args())
 
 def compare_ac_to_reflex(creature):
@@ -43,10 +43,6 @@ def rounds_survived_generic(creature, i):
 def single_battle(battle):
     victor, round_count = battle.determine_victor()
     print victor.name, victor.current_hit_points, victor.max_hit_points, round_count
-
-def run_repeated_battles(battle, repeat_count):
-    win_prob1, win_prob2, avg_rounds = battle.iterated_battles(repeat_count)
-    return win_prob1, win_prob2, avg_rounds
 
 def identify_effect_of_bonuses(creature):
     print i+1, current_char.damage_per_round(generic_ac_calc[i]), current_char.damage_per_round(
@@ -82,33 +78,34 @@ def print_generic_stats(level):
 
 if __name__ == "__main__":
     args = initialize_argument_parser()
-    if args['function'] == CREATURE:
-        creature = Creature.from_creature_name(args['creature_input'],
-                args['level'])
+    creatures = list()
+    for creature_file_name in args['creature']:
+        creature = generate_creature_from_file_name(creature_file_name, args['level'],
+                args['verbose'])
+        creature.update()
         print creature
-        if args['output'] is not None:
-            latex_string = creature.to_latex()
-            output_file = open(args['output'], 'w')
-            output_file.write(latex_string)
-        else:
-            if args['creature_input_2']:
-                creature2 = Creature.from_creature_name(
-                        args['creature_input_2'], creature.meta['level'])
-            else:
-                creature2 = Creature.from_creature_name('ideal', 
-                        creature.meta[LEVEL])
-            print creature2
-            creature = combat.CombatCreature.from_creature(creature)
-            creature2 = combat.CombatCreature.from_creature(creature2)
-            battle = combat.Battle(creature, creature2)
-            repeat_count = 500
-            results = run_repeated_battles(battle, repeat_count)
-            print 'First creature win %:', results[0], results[2]
-            avg_hit_chance_first = creature.avg_hit_probability(creature2.defenses[AC].normal())
-            avg_hit_chance_second = creature2.avg_hit_probability(creature.defenses[AC].normal())
-            print 'avg hit chance:    %s    %s' % (avg_hit_chance_first, avg_hit_chance_second)
+        print ''
+        creatures.append(creature)
 
-    elif args['function'] == COMBAT:
+    if args['battle']:
+        if len(creatures)>=2:
+            first = creatures[0]
+            second = creatures[1]
+            battle = combat.Battle(first, second)
+            battle_results = battle.iterated_battles(BATTLE_REPEAT_COUNT)
+            print "Battle results:", battle_results
+            average_hit_chance_first = first.average_hit_probability(second.defenses[AC].normal())
+            average_hit_chance_second = second.average_hit_probability(first.defenses[AC].normal())
+            print 'avg hit chance:    %s    %s' % (average_hit_chance_first, average_hit_chance_second)
+        else:
+            raise Exception("Can't battle: not enough creatures")
+
+    if args['output'] is not None:
+        latex_string = creatures[0].to_latex()
+        output_file = open(args['output'], 'w')
+        output_file.write(latex_string)
+
+    if False:
         print 'Lvl\twin%1\tRounds\thit%1\thit%2'
         for i in xrange(20):
             """
@@ -122,9 +119,9 @@ if __name__ == "__main__":
             """
             first_name = args['creature_input']
             second_name = args['creature_input_2']
-            first = Creature.from_creature_name(first_name, i+1)
+            first = Creature.from_creature_name(first_name, i+1, args['verbose'])
             first = combat.CombatCreature.from_creature(first)
-            second = Creature.from_creature_name(second_name, i+1)
+            second = Creature.from_creature_name(second_name, i+1, args['verbose'])
             second = combat.CombatCreature.from_creature(second)
 
             #print first
@@ -138,11 +135,11 @@ if __name__ == "__main__":
             repeat_count = 500
             results = run_repeated_battles(battle, repeat_count)
             print '%s \t%s \t%s' % (i+1, results[0], results[2]),
-            avg_hit_chance_first = first.avg_hit_probability(second.defenses[AC].normal())
-            avg_hit_chance_second = second.avg_hit_probability(first.defenses[AC].normal())
-            print '\t%s \t%s' % (avg_hit_chance_first, avg_hit_chance_second),
-            #print '\t%s' % first.defenses[AC].normal()
-            print '\t%s' % first.attacks[ATTACK_BONUS].base_attack_bonus
+            average_hit_chance_first = first.average_hit_probability(second.defenses[AC].normal())
+            average_hit_chance_second = second.average_hit_probability(first.defenses[AC].normal())
+            print '\t%s \t%s' % (average_hit_chance_first, average_hit_chance_second),
+            print '\t%s \t%s' % (first.attacks[DAMAGE][WEAPON_PRIMARY].get_total(),
+                    second.attacks[DAMAGE][WEAPON_PRIMARY].get_total())
 
             #print npc.armor_class.normal() - generic_ac_real[i]
 

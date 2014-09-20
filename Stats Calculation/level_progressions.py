@@ -26,14 +26,14 @@ class LevelProgression(object):
 def get_class_progression(class_name):
     if class_name == BARBARIAN:
         def barbarian_modifications(base_creature):
-            base_creature.add_ability(abilities.rage)
-            base_creature.add_ability(abilities.barbarian_damage_reduction)
+            base_creature.add_ability(abilities['rage'])
+            base_creature.add_ability(abilities['barbarian damage reduction'])
             if base_creature.meta[LEVEL]>=2:
                 base_creature.add_ability(abilities['danger sense'])
             if base_creature.meta[LEVEL]>=7:
-                abilities.larger_than_life(base_creature)
+                base_creature.add_ability(abilities['larger than life'])
             if base_creature.meta[LEVEL]>=17:
-                abilities.larger_than_belief(base_creature)
+                base_creature.add_ability(abilities['larger than belief'])
         return LevelProgression(BARBARIAN, GOOD, GOOD,
                 AVERAGE, POOR, 7, NONE, barbarian_modifications)
 
@@ -151,7 +151,7 @@ def get_monster_progression(creature_type):
             base_creature.add_abilities(('darkvision', 'construct'),
                     by_name=True)
         return LevelProgression(CONSTRUCT, AVG, AVG, POOR, POOR,
-            5, GOOD, construct_modifications)
+            5, AVERAGE, construct_modifications)
 
     elif creature_type == DRAGON:
         def dragon_modifications(base_creature):
@@ -167,18 +167,18 @@ def get_monster_progression(creature_type):
                 POOR, fey_modifications)
 
     elif creature_type == HUMANOID:
-        return LevelProgression(HUMANOID, POOR, POOR, POOR,
-                POOR, 4, NONE)
+        return LevelProgression(HUMANOID, AVG, POOR, POOR,
+                AVERAGE, 4, NONE)
 
     elif creature_type == MAGICAL_BEAST:
         def magical_beast_modifications(base_creature):
             base_creature.add_ability('low-light vision', by_name=True)
         return LevelProgression(MAGICAL_BEAST, AVG,
-                AVG, AVG, POOR, 6, AVG, magical_beast_modifications)
+                AVG, AVG, POOR, 6, POOR, magical_beast_modifications)
 
     elif creature_type == MONSTROUS_HUMANOID:
         return LevelProgression(MONSTROUS_HUMANOID,
-                AVG, AVG, POOR, AVG, 5, AVG)
+                AVG, AVG, POOR, AVG, 5, POOR)
 
     elif creature_type == OOZE:
         def ooze_modifications(base_creature):

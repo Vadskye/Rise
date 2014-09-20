@@ -1,0 +1,33 @@
+#meta
+name=troll
+creature type=monstrous humanoid
+template=warrior
+level=6
+
+#items
+weapon=slam
+offhand weapon=slam
+
+#attributes
+strength=good
+dexterity=poor
+constitution=extreme
+intelligence=-3
+wisdom=-1
+
+#abilities
+trait=darkvision
+trait=low-light vision
+trait=regeneration
+trait=scent
+feat=power attack
+feat=overpowering assault
+
+#core
+size=large
+languages=Troll
+speed=30
+
+#fluff
+description=Trolls walk upright but hunched forward with sagging shoulders. Their gait is uneven, and when they run, their arms dangle and drag along the ground. For all this seeming awkwardness, trolls are very agile. A typical adult troll stands 9 feet tall and weighs 500 pounds. Females are slightly larger than males. A troll’s rubbery hide is moss green, mottled green and gray, or putrid gray. The hair is usually greenish black or iron gray.
+combat=Trolls have no fear of death: They launch themselves into combat without hesitation, flailing wildly at the closest opponent. Even when confronted with fire, they try to get around the flames and attack.

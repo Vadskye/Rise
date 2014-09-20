@@ -59,6 +59,7 @@ ATTACK_TYPE_PROJECTILE = 'projectile'
 ATTACK_TYPE_THROWN = 'thrown'
 ATTACK_TYPE_SPECIAL = 'special'
 
+EXTREME = 'extreme'
 GOOD = 'good'
 AVERAGE = 'average'
 AVG = AVERAGE
@@ -196,6 +197,15 @@ TAG_MOVE = 'movement'
 TAG_PROTECTION = 'protection'
 TAG_IMMUNITY = 'immunity'
 TAG_SAVE = 'saving throw'
+TAG_POWER = 'power'
+TAG_STYLE = 'style'
 
 DESCRIPTION = 'description'
 COMBAT_DESCRIPTION = 'combat'
+
+ACTIVE = 'active'
+INACTIVE = 'inactive'
+
+CLASS = 'class'
+CURRENT_HIT_POINTS = 'current hit points'
+CRITICAL_DAMAGE = 'critical damage'
