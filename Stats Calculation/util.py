@@ -7,7 +7,7 @@ import os.path
 d20 = dice.dx(20)
 
 def fix_creature_file_name(file_name):
-    for directory_path in ('', 'data/', 'monsters/'):
+    for directory_path in ('', 'data/', 'data/monsters/'):
         if os.path.isfile(directory_path+file_name):
             return directory_path+file_name
         if os.path.isfile(directory_path+file_name+'.txt'):
@@ -498,23 +498,13 @@ def improved_progression(progression):
     else:
         raise Exception('Unknown progression: ' + str(progression))
 
-def improve_bab(level_progression):
-    if level_progression is None: return False
-    level_progression.bab_progression = improved_progression(
-            level_progression.bab_progression)
-
-def improve_save(level_progression, save_name):
-    if level_progression is None: return False
-    level_progression.save_progressions[save_name] = improved_progression(
-        level_progression.save_progressions[save_name])
-
-#Normally, HV maxes at 7
-def improve_hv(level_progression, times_to_improve=1, enforce_cap = True):
-    if level_progression is None: return False
-    for i in xrange(times_to_improve):
-        level_progression.hit_value+=1
+#normally, HV maxes at 7
+def improved_hit_value(hit_value, enforce_cap=True):
+    hit_value += 1
     if enforce_cap:
-        level_progression.hit_value = min(7, level_progression.hit_value)
+        return min(7, hit_value)
+    else:
+        return hit_value
 
 def lower_encumbrance(encumbrance):
     if encumbrance is None: return False
