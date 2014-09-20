@@ -2,8 +2,17 @@ import re
 import math
 import dice
 from strings import *
+import os.path
 
 d20 = dice.dx(20)
+
+def fix_creature_file_name(file_name):
+    for directory_path in ('', 'data/', 'monsters/'):
+        if os.path.isfile(directory_path+file_name):
+            return directory_path+file_name
+        if os.path.isfile(directory_path+file_name+'.txt'):
+            return directory_path+file_name+'.txt'
+    return False
 
 class Modifier(object):
 
@@ -100,6 +109,7 @@ class Attribute(ModifierProgression):
                 POOR: level/4+1,
                 AVERAGE: level/3+2,
                 GOOD: level/2+3,
+                EXTREME: (level*3)/4+4,
                 }[progression]
         self.add_bonus(bonus, 'progression')
 
@@ -220,7 +230,7 @@ class ArmorClass:
 
     def get_details(self):
         return "%s = %s (armor) + %s (shield) + %s (dodge) + %s (natural armor) + %s (misc)" % (
-                self.misc.get_total(), self.armor.get_total(),
+                self.normal(), self.armor.get_total(),
                 self.shield.get_total(), self.dodge.get_total(),
                 self.natural_armor.get_total(), self.misc.get_total())
 
@@ -395,7 +405,7 @@ def attack_count(base_attack_bonus):
 
 #+2, +3 at 8th, +4 at 14th, +5 at 20th
 def std_scale(level):
-    return (level+10)/6
+    return max(2,(level+10)/6)
 
 #+2, +3 at 5th, +4 at 10th, +5 at 15th, +6 at 20th
 def bab_scale(base_attack_bonus):
@@ -489,21 +499,25 @@ def improved_progression(progression):
         raise Exception('Unknown progression: ' + str(progression))
 
 def improve_bab(level_progression):
+    if level_progression is None: return False
     level_progression.bab_progression = improved_progression(
             level_progression.bab_progression)
 
 def improve_save(level_progression, save_name):
+    if level_progression is None: return False
     level_progression.save_progressions[save_name] = improved_progression(
         level_progression.save_progressions[save_name])
 
 #Normally, HV maxes at 7
 def improve_hv(level_progression, times_to_improve=1, enforce_cap = True):
+    if level_progression is None: return False
     for i in xrange(times_to_improve):
         level_progression.hit_value+=1
     if enforce_cap:
-        level_progression.hit_value = max(7, level_progression.hit_value)
+        level_progression.hit_value = min(7, level_progression.hit_value)
 
 def lower_encumbrance(encumbrance):
+    if encumbrance is None: return False
     return {
             'heavy': 'medium',
             'medium': 'light',
@@ -525,3 +539,8 @@ def split_descriptor_and_value(text, split_on='[ +,]'):
         else:
             descriptor = elem
     return (descriptor, value)
+
+#return probability that attack hits
+def hit_probability(attack_bonus, ac):
+    probability = (21+attack_bonus-ac)/20.0
+    return min(0.95, max(0.05, probability))
