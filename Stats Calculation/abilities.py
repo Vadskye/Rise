@@ -9,17 +9,17 @@ class Ability(object):
     #the name (and value, if present) are not what should be printed when
     #the ability is referenced (primarily with to_latex()) 
     #text can be either a string or a function
-    def __init__(self, name, apply_benefit = None, meets_prerequisites = None, 
+    def __init__(self, name, benefit = None, meets_prerequisites = None, 
             tags = None, value = None, text = None, points=0):
         self.name = name
         self.tags = set()
         if tags is not None:
             for tag in tags:
                 self.tags.add(tag)
-        if apply_benefit is None:
-            self.apply_benefit = lambda x: True
+        if benefit is None:
+            self.benefit = lambda x: False
         else:
-            self.apply_benefit = apply_benefit
+            self.benefit = benefit
         if meets_prerequisites is None:
             self.meets_prerequisites = lambda x: True
         else:
@@ -27,6 +27,11 @@ class Ability(object):
         self.value = value
         self.text = text
         self.points = points
+
+    def apply_benefit(self, base_creature, check_prerequisites=True):
+        if (not check_prerequisites) or self.meets_prerequisites(base_creature):
+            return self.benefit(base_creature)
+        return False
 
     def has_tag(self, tag):
         if self.tags is None:
@@ -47,14 +52,14 @@ class Ability(object):
     def __repr__(self):
         return 'Ability({0})'.format(self.name)
 
-def new_feat(name, apply_benefit = None, meets_prerequisites = None, tags = None,
+def new_feat(name, benefit = None, meets_prerequisites = None, tags = None,
         value = None, text = None):
     feat_tags = set()
     feat_tags.add('feat')
     if tags is not None:
         for tag in tags:
             feat_tags.add(tag)
-    return Ability(name, apply_benefit, meets_prerequisites, feat_tags, value,
+    return Ability(name, benefit, meets_prerequisites, feat_tags, value,
             text)
 
 abilities = dict()
@@ -64,26 +69,26 @@ abilities = dict()
 ####################
 
 def barbarian_damage_reduction_benefit(creature):
-    creature.damage_reduction = util.DamageReduction(creature.level,
+    creature.damage_reduction = util.DamageReduction(creature.meta[LEVEL],
         'physical')
 abilities['barbarian damage reduction'] = Ability('damage reduction',
         barbarian_damage_reduction_benefit)
     
 def danger_sense_benefit(creature):
-    creature.initiative.add_competence(level/2)
+    creature.core[INITIATIVE].add_bonus(creature.meta[LEVEL]/2, 'dange sense')
 abilities['danger sense'] = Ability('danger sense', danger_sense_benefit)
 
 def larger_than_life_benefit(creature):
-    creature.items[WEAPON_PRIMARY].die.increase_size(increase_min=True)
+    creature.items[WEAPON_PRIMARY].increase_size()
 abilities['larger than life'] = Ability('larger than life', larger_than_life_benefit)
 abilities['larger than belief'] = Ability('larger than belief', larger_than_life_benefit)
 
-def rage_benefit(level, creature):
-    creature.attacks[DAMAGE][WEAPON_PRIMARY].add_competence(util.std_scale(level))
+def rage_benefit(creature):
+    rage_bonus = util.std_scale(creature.meta[LEVEL])
+    creature.attributes[STR].add_bonus(rage_bonus, 'rage')
+    creature.attributes[CHA].add_bonus(rage_bonus, 'rage')
     creature.defenses[AC].misc.add_bonus(-2, 'rage')
-    creature.saves.fortitude.add_competence(util.std_scale(level))
-    creature.saves.will.add_competence(util.std_scale(level))
-    creature.current_hit_points += level*util.std_scale(level)
+    creature.core[HIT_POINTS].add_bonus(creature.meta[LEVEL]*rage_bonus, 'rage')
 abilities['rage'] = Ability('rage', rage_benefit)
 
 ####################
@@ -92,7 +97,7 @@ abilities['rage'] = Ability('rage', rage_benefit)
 
 def overwhelming_force_benefit(creature):
     if creature.items[WEAPON_PRIMARY].encumbrance == 'heavy':
-        creature.attacks[DAMAGE][WEAPON_PRIMARY].bonus(
+        creature.attacks[DAMAGE][WEAPON_PRIMARY].add_bonus(
                 creature.attributes[STR].get_total(), STR)
 def overwhelming_force_prerequisites(creature):
         return creature.attributes[STR].get_total() >=5 and creature.attacks[ATTACK_BONUS].base_attack_bonus >=8 and creature.items[WEAPON_PRIMARY].encumbrance == 'heavy'
@@ -172,6 +177,13 @@ def lightning_reflexes_benefit(creature):
 abilities['lightning reflexes'] = new_feat('lightning reflexes',
         lightning_reflexes_benefit, tags=[SAVING_THROW], text='1/day reroll Reflex')
 
+def swift_benefit(creature):
+    for speed_mode in creature.core[SPEEDS].keys():
+        creature.core[SPEEDS][speed_mode] += 5
+abilities['swift'] = new_feat('swift', swift_benefit)
+
+abilities['overpowering assault'] = new_feat('overpowering assault', tags=[TAG_POWER, TAG_STYLE])
+
 ####################
 #MONSTER TRAITS
 ####################
@@ -196,13 +208,13 @@ abilities['natural trip'] = Ability('natural trip', text = natural_trip_text,
 def natural_weapon_benefit(creature):
     creature.items[WEAPON_PRIMARY].increase_size()
 abilities['improved natural weapon'] = Ability('improved natural weapon',
-        apply_benefit = natural_weapon_benefit)
+        benefit = natural_weapon_benefit)
 
 abilities['enslave'] = Ability('enslave', tags=[TAG_ATTACK], text = 'enslave',
         points=2)
 abilities['slime'] = Ability('slime', tags=[TAG_ATTACK], text = 'slime')
 abilities['carapace'] = Ability('carapace', tags=[TAG_DEFENSE],
-        apply_benefit = lambda c: c.meta[LEVEL_PROGRESSION].improve_progression(
+        benefit = lambda c: c.meta[LEVEL_PROGRESSION].improve_progression(
             'natural_armor_progression'))
 abilities['mucus cloud'] = Ability('mucus cloud', tags=[TAG_AURA])
 abilities['black cloud'] = Ability('black cloud', tags=[TAG_ATTACK])
@@ -210,37 +222,40 @@ abilities['babble'] = Ability('babble', tags=[TAG_ATTACK])
 abilities['madness'] = Ability('madness', tags=[TAG_DEFENSE])
 abilities['wisdom drain'] = Ability('wisdom drain', tags=[TAG_ATTACK])
 abilities['mindless'] = Ability('mindless', tags=[TAG_DEFENSE])
+abilities['regeneration'] = Ability('regeneration', tags=[TAG_DEFENSE])
 
 ####################
 #MONSTER TEMPLATES
 ####################
 
 def warrior_benefit(creature):
+    if creature.meta[LEVEL_PROGRESSION] is None: return False
     util.improve_bab(creature.meta[LEVEL_PROGRESSION])
     util.improve_hv(creature.meta[LEVEL_PROGRESSION])
-abilities['warrior'] = Ability('warrior', apply_benefit = warrior_benefit,
+abilities['warrior'] = Ability('warrior', benefit = warrior_benefit,
         tags=[ABILITY_TEMPLATE])
 
 def brute_benefit(creature):
+    if creature.meta[LEVEL_PROGRESSION] is None: return False
     util.improve_hv(creature.meta[LEVEL_PROGRESSION])
     util.improve_save(creature.meta[LEVEL_PROGRESSION], FORTITUDE)
-abilities['brute'] = Ability('brute', apply_benefit = brute_benefit,
+abilities['brute'] = Ability('brute', benefit = brute_benefit,
         tags=[ABILITY_TEMPLATE])
 
 def scout_benefit(creature):
     util.improve_save(creature.meta[LEVEL_PROGRESSION], REFLEX)
     creature.speed += min(10, creature.core[SPEED])
-abilities['scout'] = Ability('scout', apply_benefit = scout_benefit,
+abilities['scout'] = Ability('scout', benefit = scout_benefit,
         tags=[ABILITY_TEMPLATE])
 
 def incorporeal_benefit(creature):
     #add Cha to hit points
-    creature.core[HIT_POINTS] += creature.meta[LEVEL] * \
-            creature.attributes[CHA].get_total()/2
+    creature.core[HIT_POINTS].add_bonus(creature.meta[LEVEL] *
+            creature.attributes[CHA].get_total()/2, 'cha')
     creature.attributes[STR].set_inapplicable()
     creature.attributes[CON].set_inapplicable()
 abilities['incorporeal'] = Ability('incorporeal',
-        apply_benefit = incorporeal_benefit, tags=[ABILITY_TEMPLATE])
+        benefit = incorporeal_benefit, tags=[ABILITY_TEMPLATE])
 
 ####################
 #MONSTER TYPES

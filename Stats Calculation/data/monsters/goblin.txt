@@ -1,7 +1,7 @@
 #meta
 name=goblin warrior
 creature type=humanoid
-class=warrior
+template=warrior
 
 #items
 weapon=light_melee
@@ -18,6 +18,7 @@ feat=swift
 #core
 size=small
 speed=20
+languages=Goblin
 
 #fluff
 description=A goblin stands 3 to 3-1/2 feet tall and weigh 40 to 45 pounds. Its eyes are usually dull and glazed, varying in color from red to yellow. A goblin’s skin color ranges from yellow through any shade of orange to a deep red; usually all members of a single tribe are about the same color. Goblins wear clothing of dark leather, tending toward drab, soiled-looking colors. Goblins speak Goblin; those with Intelligence scores of 12 or higher also speak Common. Most goblins encountered outside their homes are warriors; the information in the statistics block is for one of 1st level.
