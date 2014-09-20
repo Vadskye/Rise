@@ -2,7 +2,6 @@ from strings import *
 import re
 import equipment, util
 from abilities import abilities
-from level_progressions import get_class_progression
 
 def generate_creature_from_file_name(file_name, level=None, verbose=False):
     file_name = util.fix_creature_file_name(file_name)
@@ -68,7 +67,7 @@ class Creature(object):
                 ALIGNMENT: 'Neutral',
                 COMBAT_DESCRIPTION: None,
                 DESCRIPTION: None,
-                LEVEL_PROGRESSION: None,
+                CLASS_PROGRESSION: None,
                 LEVEL: 1,
                 NAME: None,
                 USE_MAGIC_BONUSES: False,
@@ -93,7 +92,7 @@ class Creature(object):
     def update(self):
         self.reset_objects()
         self.interpret_raw_stats()
-        self.apply_level_progression()
+        self.apply_class_progression()
         self.calculate_derived_statistics()
         self.reset_combat()
 
@@ -207,16 +206,26 @@ class Creature(object):
         for ability in abilities_to_remove:
             self.abilities[INACTIVE].remove(ability)
 
-    def apply_level_progression(self):
+    def apply_class_progression(self):
+        self.create_class_progression()
         self.attacks[ATTACK_BONUS].set_progression(
-                self.meta[LEVEL_PROGRESSION].bab_progression)
+                self.meta[CLASS_PROGRESSION][BAB])
         for save in SAVES:
             self.defenses[save].set_progression(
-                    self.meta[LEVEL_PROGRESSION].save_progressions[save])
-        self.core[HIT_VALUE] = self.meta[LEVEL_PROGRESSION].hit_value
-        self.defenses[AC].natural_armor.set_progression(
-                self.meta[LEVEL_PROGRESSION].natural_armor_progression)
-        self.meta[LEVEL_PROGRESSION].apply_modifications(self)
+                    self.meta[CLASS_PROGRESSION][save])
+        self.core[HIT_VALUE] = self.meta[CLASS_PROGRESSION][HIT_VALUE]
+        if NATURAL_ARMOR_PROGRESSION in self.meta[CLASS_PROGRESSION]:
+            self.defenses[AC].natural_armor.set_progression(
+                    self.meta[CLASS_PROGRESSION].natural_armor_progression)
+        self.apply_class_modifications()
+
+    #This must be overridden
+    def create_class_progression(self):
+        raise Exception("No class progression available!");
+
+    #This can optionally be overridden
+    def apply_class_modifications(self):
+        pass
 
     def add_ability(self, ability, check_prerequisites = False, by_name = False):
         #abilities can be added by name instead of as an ability object
@@ -409,6 +418,13 @@ class Creature(object):
     def attack(self, enemy):
         return self.standard_physical_attack(enemy)
 
+    def magic_attack(self, enemy):
+        #Use highest-level, no optimization, no save spell
+        damage_die = dice.Dice.from_string('{0}d10'.format(max(1,self.meta[LEVEL]/2)))
+        damage_dealt = damage_die.roll()
+        enemy.take_damage(damage_dealt, ['spell'])
+        return damage_dealt
+
     #make a standard physical attack against a foe
     def standard_physical_attack(self, enemy, deal_damage = True):
         damage_dealt_total = 0
@@ -542,7 +558,7 @@ class Creature(object):
 
         subheader = r'%s %s %s \hfill \textbf{CR} %s' % (
                 self.meta[ALIGNMENT].title(), self.core[SIZE].title(),
-                self.meta[LEVEL_PROGRESSION].name, self.meta[LEVEL])
+                self.meta[CLASS_PROGRESSION].name, self.meta[LEVEL])
         subheader += ENDLINE
         #if self.subtypes:
         #    types +=' {0}'.format()
@@ -691,29 +707,330 @@ class Character(Creature):
         for save in SAVES:
             self.defenses[save].add_enhancement(scale_factor)
 
+class Barbarian(Character):
+    def create_class_progression(self):
+        self.meta[CLASS_PROGRESSION] = {
+                BAB: GOOD,
+                FORT: GOOD,
+                REF: AVERAGE,
+                WILL: POOR,
+                HIT_VALUE: 7,
+                }
+
+    def apply_class_modifications(self):
+        self.add_ability(abilities['rage'])
+        self.add_ability(abilities['barbarian damage reduction'])
+        if self.meta[LEVEL]>=2:
+            self.add_ability(abilities['danger sense'])
+        if self.meta[LEVEL]>=7:
+            self.add_ability(abilities['larger than life'])
+        if self.meta[LEVEL]>=17:
+            self.add_ability(abilities['larger than belief'])
+
+class Cleric(Character):
+    def create_class_progression(self):
+        self.meta[CLASS_PROGRESSION] = {
+                BAB: AVERAGE,
+                FORT: AVERAGE,
+                REF: POOR,
+                WILL: GOOD,
+                HIT_VALUE: 5,
+                }
+
+class Druid(Character):
+    def create_class_progression(self):
+        self.meta[CLASS_PROGRESSION] = {
+                BAB: AVERAGE,
+                FORT: GOOD,
+                REF: POOR,
+                WILL: AVERAGE,
+                HIT_VALUE: 5,
+                }
+
+class Fighter(Character):
+    def create_class_progression(self):
+        self.meta[CLASS_PROGRESSION] = {
+                BAB: GOOD,
+                FORT: GOOD,
+                REF: POOR,
+                WILL: AVERAGE,
+                HIT_VALUE: 6,
+                }
+
+    def apply_class_modifications(self):
+        #armor discipline
+        armor_discipline_count = (self.meta[LEVEL]+5)/6
+        self.defenses[AC].dodge.add_competence(
+                armor_discipline_count)
+        for i in xrange(1, armor_discipline_count):
+            self.items[ARMOR].encumbrance = util.lower_encumbrance(
+                    self.items[ARMOR].encumbrance)
+        #weapon discipline
+        ab = 0
+        ab += 1 if self.meta[LEVEL]>=3 else 0
+        ab += 1 if self.meta[LEVEL]>=9 else 0
+        self.attacks[ATTACK_BONUS].add_competence(ab)
+        if self.meta[LEVEL]>=15:
+            pass
+            #add critical changes
+
+class Monk(Character):
+    def create_class_progression(self):
+        self.meta[CLASS_PROGRESSION] = {
+                BAB: GOOD,
+                FORT: AVERAGE,
+                REF: AVERAGE,
+                WILL: GOOD,
+                HIT_VALUE: 5,
+                }
+
+    def apply_class_modifications(self):
+        #wisdom is used often, so make it quick to access
+        wisdom = self.attributes[WIS].get_total()
+
+        #enlightened defense
+        if self.items[ARMOR] is None:
+            self.defenses[AC].misc.add_inherent(wisdom)
+        else:
+            self.printverb('Monk is wearing armor? %s' %
+                    self.items[ARMOR])
+
+        #unarmed strike
+        if self.items[WEAPON_PRIMARY] is None:
+            unarmed_weapon = equipment.Weapon.from_weapon_name('unarmed')
+            #make the weapon deal monk damage
+            for i in xrange(2):
+                unarmed_weapon.damage_die.increase_size(increase_min=True)
+            self.items[WEAPON_PRIMARY] = unarmed_weapon
+            self.attacks[WEAPON_DAMAGE_PRIMARY].add_die(
+                    unarmed_weapon)
+
+        #wholeness of body
+
+        #improved ki strike
+        if self.meta[LEVEL]>=10:
+            self.attacks[DAMAGE][WEAPON_PRIMARY].add_inherent(wisdom/2)
+
+class Paladin(Character):
+    def create_class_progression(self):
+        self.meta[CLASS_PROGRESSION] = {
+                BAB: GOOD,
+                FORT: GOOD,
+                REF: POOR,
+                WILL: GOOD,
+                HIT_VALUE: 6,
+                }
+
+class Rogue(Character):
+    def create_class_progression(self):
+        self.meta[CLASS_PROGRESSION] = {
+                BAB: AVERAGE,
+                FORT: POOR,
+                REF: GOOD,
+                WILL: AVERAGE,
+                HIT_VALUE: 5,
+                }
+
+    def apply_class_modifications(self):
+        self.add_ability('danger sense')
+
+class Spellwarped(Character):
+    def create_class_progression(self):
+        self.meta[CLASS_PROGRESSION] = {
+                BAB: AVERAGE,
+                FORT: AVERAGE,
+                REF: AVERAGE,
+                WILL: AVERAGE,
+                HIT_VALUE: 5,
+                }
+
+class Sorcerer(Character):
+    def create_class_progression(self):
+        self.meta[CLASS_PROGRESSION] = {
+                BAB: POOR,
+                FORT: POOR,
+                REF: POOR,
+                WILL: GOOD,
+                HIT_VALUE: 4,
+                }
+
+class Wizard(Character):
+    def create_class_progression(self):
+        self.meta[CLASS_PROGRESSION] = {
+                BAB: POOR,
+                FORT: POOR,
+                REF: POOR,
+                WILL: GOOD,
+                HIT_VALUE: 4,
+                }
+
 class Monster(Creature):
     pass
 
-class Barbarian(Character):
-    #meta[LEVEL_PROGRESSION] = get_class_progression('barbarian')
-    def __init__(self, raw_stats):
-        super(Barbarian, self).__init__(raw_stats)
-        self.meta[LEVEL_PROGRESSION] = get_class_progression('barbarian')
+class Aberration(Monster):
+    def create_class_progression(self):
+        self.meta[CLASS_PROGRESSION] = {
+                BAB: AVERAGE,
+                FORT: AVERAGE,
+                REF: POOR,
+                WILL: AVERAGE,
+                HIT_VALUE: 5,
+                NATURAL_ARMOR_PROGRESSION: POOR,
+                }
 
-class Fighter(Character):
-    #meta[LEVEL_PROGRESSION] = get_class_progression('fighter')
-    def __init__(self, raw_stats):
-        super(Fighter, self).__init__(raw_stats)
-        self.meta[LEVEL_PROGRESSION] = get_class_progression('fighter')
+    def apply_class_modifications(self):
+        self.add_ability('darkvision', by_name=True)
 
-class Wizard(Character):
+class Animal(Monster):
+    def create_class_progression(self):
+        self.meta[CLASS_PROGRESSION] = {
+                BAB: AVERAGE,
+                FORT: AVERAGE,
+                REF: POOR,
+                WILL: AVERAGE,
+                HIT_VALUE: 5,
+                NATURAL_ARMOR_PROGRESSION: POOR,
+                }
 
-    def damage_spell(self, enemy):
-        #Use highest-level, no optimization, no save spell
-        damage_die = dice.Dice.from_string('{0}d10'.format(max(1,self.meta[LEVEL]/2)))
-        damage_dealt = damage_die.roll()
-        enemy.take_damage(damage_dealt, ['spell'])
-        return damage_dealt
+    def apply_class_modifications(self):
+        self.attributes[INT].add_inherent(-8)
+        self.add_abilities(('low-light vision', 'scent'), by_name=True)
+
+class Construct(Monster):
+    def create_class_progression(self):
+        self.meta[CLASS_PROGRESSION] = {
+                BAB: AVERAGE,
+                FORT: AVERAGE,
+                REF: POOR,
+                WILL: POOR,
+                HIT_VALUE: 5,
+                NATURAL_ARMOR_PROGRESSION: AVERAGE,
+                }
+
+    def apply_class_modifications(self):
+        self.add_abilities(('construct', 'darkvision'), by_name=True)
+
+class Fey(Monster):
+    def create_class_progression(self):
+        self.meta[CLASS_PROGRESSION] = {
+                BAB: POOR,
+                FORT: POOR,
+                REF: AVERAGE,
+                WILL: AVERAGE,
+                HIT_VALUE: 4,
+                NATURAL_ARMOR_PROGRESSION: POOR,
+                }
+
+class Humanoid(Monster):
+    def create_class_progression(self):
+        self.meta[CLASS_PROGRESSION] = {
+                BAB: AVERAGE,
+                FORT: POOR,
+                REF: POOR,
+                WILL: POOR,
+                HIT_VALUE: 4,
+                }
+
+class MagicalBeast(Monster):
+    def create_class_progression(self):
+        self.meta[CLASS_PROGRESSION] = {
+                BAB: AVERAGE,
+                FORT: AVERAGE,
+                REF: AVERAGE,
+                WILL: POOR,
+                HIT_VALUE: 5,
+                NATURAL_ARMOR_PROGRESSION: POOR,
+                }
+
+    def apply_class_modifications(self):
+        self.add_ability('low-light vision', by_name=True)
+
+class MonstrousHumanoid(Monster):
+    def create_class_progression(self):
+        self.meta[CLASS_PROGRESSION] = {
+                BAB: AVERAGE,
+                FORT: AVERAGE,
+                REF: AVERAGE,
+                WILL: POOR,
+                HIT_VALUE: 5,
+                NATURAL_ARMOR_PROGRESSION: POOR,
+                }
+
+class Ooze(Monster):
+    def create_class_progression(self):
+        self.meta[CLASS_PROGRESSION] = {
+                BAB: POOR,
+                FORT: AVERAGE,
+                REF: POOR,
+                WILL: POOR,
+                HIT_VALUE: 6,
+                }
+
+    def apply_class_modifications(self):
+        self.add_ability('ooze', by_name=True)
+
+class Outsider(Monster):
+    def create_class_progression(self):
+        self.meta[CLASS_PROGRESSION] = {
+                BAB: AVERAGE,
+                FORT: AVERAGE,
+                REF: AVERAGE,
+                WILL: AVERAGE,
+                HIT_VALUE: 5,
+                NATURAL_ARMOR_PROGRESSION: POOR,
+                }
+
+    def apply_class_modifications(self):
+        self.add_ability('low-light vision', by_name=True)
+
+class Plant(Monster):
+    def create_class_progression(self):
+        self.meta[CLASS_PROGRESSION] = {
+                BAB: POOR,
+                FORT: AVERAGE,
+                REF: POOR,
+                WILL: POOR,
+                HIT_VALUE: 5,
+                NATURAL_ARMOR_PROGRESSION: POOR,
+                }
+
+    def apply_class_modifications(self):
+        self.add_ability('ooze', by_name=True)
+
+class Undead(Monster):
+    def create_class_progression(self):
+        self.meta[CLASS_PROGRESSION] = {
+                BAB: AVERAGE,
+                FORT: AVERAGE,
+                REF: POOR,
+                WILL: AVERAGE,
+                HIT_VALUE: 5,
+                NATURAL_ARMOR_PROGRESSION: POOR,
+                }
+
+    def apply_class_modifications(self):
+        self.add_ability('undead', by_name=True)
+
+class IdealCreature(Creature):
+    def create_class_progression(self):
+        self.meta[CLASS_PROGRESSION] = {
+                BAB: GOOD,
+                FORT: POOR,
+                REF: POOR,
+                WILL: POOR,
+                HIT_VALUE: 5,
+                }
+
+    def apply_class_modifications(self):
+        #compensate for AC bonus from BAB
+        self.defenses[AC].dodge.add_bonus(-(self.meta[LEVEL]/2),
+                'babfix')
+        #compensate for AC bonus from Dex
+        self.defenses[AC].dodge.add_bonus(
+                -(self.attributes[DEX].get_total()), 'dexfix')
+        #this overrides the base 10 because it has the same type
+        self.defenses[AC].misc.add_bonus(self.meta[LEVEL]+15,
+                BASE)
 
 class Aboleth(Creature):
     pass
