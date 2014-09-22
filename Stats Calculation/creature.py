@@ -132,6 +132,8 @@ class Creature(object):
             self.defenses[save] = util.SavingThrow()
         self.core[HIT_POINTS] = util.Modifier()
         self.core[INITIATIVE] = util.Modifier()
+        for ability_type in self.abilities:
+            self.abilities[ability_type] = list()
 
     def interpret_raw_stats(self):
         raw_stats = self.raw_stats
