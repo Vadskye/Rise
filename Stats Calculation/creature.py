@@ -102,7 +102,7 @@ class Creature(object):
                 }
         self.raw_stats = raw_stats
 
-        self.reset_objects()
+        self.update()
 
     def update(self):
         self.reset_objects()

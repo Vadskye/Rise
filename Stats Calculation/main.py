@@ -82,7 +82,6 @@ if __name__ == "__main__":
     for creature_file_name in args['creature']:
         creature = generate_creature_from_file_name(creature_file_name, args['level'],
                 args['verbose'])
-        creature.update()
         print creature
         print creature.attacks[ATTACK_BONUS]
         print creature.abilities[INACTIVE]
