@@ -22,6 +22,8 @@ def initialize_argument_parser():
             help='A file name to store any output in')
     parser.add_argument('-v', '--verbose', dest='verbose', action='store_true',
             help='show verbose output?')
+    parser.add_argument('-m', '--matchlevel', dest='match_level', action='store_true',
+            help='match the levels of all subsequent creatures to the level of the first creature?')
     return vars(parser.parse_args())
 
 def compare_ac_to_reflex(creature):
@@ -83,11 +85,12 @@ if __name__ == "__main__":
         creature = generate_creature_from_file_name(creature_file_name, args['level'],
                 args['verbose'])
         print creature
-        print creature.attacks[ATTACK_BONUS]
-        print creature.abilities[INACTIVE]
-        print creature.abilities[ACTIVE]
         print ''
         creatures.append(creature)
+        #This is kinda hacky, but shouldn't cause problems
+        if args['match_level']:
+            args['level'] = creature.meta[LEVEL]
+            args['match_level'] = False
 
     if args['battle']:
         if len(creatures)>=2:
@@ -96,8 +99,8 @@ if __name__ == "__main__":
             battle = combat.Battle(first, second)
             battle_results = battle.iterated_battles(BATTLE_REPEAT_COUNT)
             print "Battle results:", battle_results
-            average_hit_chance_first = first.average_hit_probability(second.defenses[AC].normal())
-            average_hit_chance_second = second.average_hit_probability(first.defenses[AC].normal())
+            average_hit_chance_first = first.average_hit_probability(second)
+            average_hit_chance_second = second.average_hit_probability(first)
             print 'avg hit chance:    %s    %s' % (average_hit_chance_first, average_hit_chance_second)
         else:
             raise Exception("Can't battle: not enough creatures")

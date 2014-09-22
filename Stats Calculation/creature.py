@@ -329,7 +329,6 @@ class Creature(object):
             self.attacks[ATTACK_BONUS].add_bonus(
                     self.attributes[STR].get_total(), STR)
 
-
     def add_save_attributes(self):
         self.defenses[FORTITUDE].add_bonus(
                 self.attributes[CON].get_total(), CON)
@@ -449,10 +448,14 @@ class Creature(object):
     def is_alive(self):
         if self.combat[CRITICAL_DAMAGE] > self.attributes[CON].get_total():
             return False
+        for attribute in ATTRIBUTES:
+            if self.attributes[attribute] <= -10:
+                return False
         return True
 
     def attack(self, enemy):
-        return self.standard_physical_attack(enemy, 'physical')
+        defense_type = self.items[WEAPON_PRIMARY].defense_type
+        return self.standard_physical_attack(enemy, defense_type)
 
     def magic_attack(self, enemy):
         #Use highest-level, no optimization, no save spell
@@ -521,12 +524,20 @@ class Creature(object):
 
     def take_damage(self, damage, damage_types):
         damage = self.defenses[DR].reduce_damage(damage, damage_types)
-        if self.combat[CURRENT_HIT_POINTS] > 0:
-            self.combat[CURRENT_HIT_POINTS] = max(0, self.combat[CURRENT_HIT_POINTS] -damage)
-        else:
-            self.combat[CRITICAL_DAMAGE] += damage
+        if DAMAGE_PHYSICAL in damage_types:
+            if self.combat[CURRENT_HIT_POINTS] > 0:
+                self.combat[CURRENT_HIT_POINTS] = max(0, self.combat[CURRENT_HIT_POINTS] -damage)
+            else:
+                self.combat[CRITICAL_DAMAGE] += damage
+        #Are we taking attribute damage?
+        elif damage_types in ATTRIBUTES:
+            #in this case the attribute name is passed alone without other types
+            damaged_attribute = damage_types
+            self.attributes[damage_types] -= damage
 
     def average_hit_probability(self, enemy, defense_type = None):
+        if defense_type is None:
+            defense_type = self.items[WEAPON_PRIMARY].defense_type
         #allow "enemy" to be either a Creature or a simple numerical target
         try:
             enemy_defense = enemy.get_defense(defense_type)
@@ -659,7 +670,7 @@ class Creature(object):
     def _latex_attacks(self):
         attacks = ''
         if self.items[WEAPON_PRIMARY] is not None:
-            attack_title = r'\textbf{%s}' % self.items[WEAPON_PRIMARY].attack_type.title()
+            attack_title = r'\textbf{%s}' % self.items[WEAPON_PRIMARY].attack_range.title()
             attack_name = self.items[WEAPON_PRIMARY].name.title()
             attack_bonus = self.attacks[ATTACK_BONUS].mstr()
             attack_damage = util.attack_damage_to_latex(
