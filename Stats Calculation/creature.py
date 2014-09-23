@@ -520,7 +520,9 @@ class Creature(object):
         return util.attack_hits(attack_bonus, self.get_defense(defense_type), threshold)
 
     def get_damage(self, is_hit, is_threshold_hit):
-        damage = self.attacks[DAMAGE][WEAPON_PRIMARY].get_total(roll=True)
+        damage = 0
+        if is_hit:
+            damage += self.attacks[DAMAGE][WEAPON_PRIMARY].get_total(roll=True)
         if is_threshold_hit and self.attacks[DAMAGE][WEAPON_SECONDARY]:
             damage += self.attacks[DAMAGE][WEAPON_SECONDARY].get_total(roll=True)
         return damage
