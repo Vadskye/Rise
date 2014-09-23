@@ -147,7 +147,6 @@ PLANT = 'plant'
 UNDEAD = 'undead'
 
 ENDLINE = '\\par\n'
-NONE = 'none'
 
 BASE = 'base'
 ENHANCEMENT = 'enhancement'
