@@ -64,6 +64,7 @@ GOOD = 'good'
 AVERAGE = 'average'
 AVG = AVERAGE
 POOR = 'poor'
+PROGRESSIONS = [None, POOR, AVERAGE, GOOD, EXTREME]
 
 SIZE_FINE = 'fine'
 SIZE_DIMINUITIVE = 'diminuitive'
@@ -211,3 +212,4 @@ CURRENT_HIT_POINTS = 'current hit points'
 CRITICAL_DAMAGE = 'critical damage'
 NATURAL_ARMOR = 'natural armor'
 CREATURE_TYPE = 'creature type'
+SPECIAL = 'special'
