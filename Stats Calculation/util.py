@@ -155,7 +155,7 @@ class SavingThrow(ModifierProgression):
 class NaturalArmor(ModifierProgression):
     def _apply_progression(self, progression, level):
         bonus = {
-                NONE: 0,
+                None: 0,
                 POOR: level/4+2,
                 AVERAGE: level/3+4,
                 GOOD: level/2+6,
