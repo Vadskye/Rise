@@ -3,7 +3,7 @@ name=Allip
 creature type=undead
 template=incorporeal
 template=antiwarrior
-level=4
+level=6
 
 #items
 weapon=wisdom drain
