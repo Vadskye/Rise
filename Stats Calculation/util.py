@@ -99,6 +99,11 @@ class ModifierProgression(Modifier):
             self._update()
 
 class Attribute(ModifierProgression):
+
+    def __init__(self):
+        super(Attribute, self).__init__()
+        self.damage = 0
+
     def _apply_progression(self, progression, level):
         bonus = {
                 None: 0,
@@ -115,6 +120,14 @@ class Attribute(ModifierProgression):
 
     def set_inapplicable(self):
         self.get_total = lambda : 0
+
+    def take_damage(self, damage):
+        self.damage += penalty_value
+        self._update()
+
+    def _update(self):
+        super(Attribute, self)._update()
+        self.total_bonus -= self.damage
 
 class SavingThrow(ModifierProgression):
     def _apply_progression(self, progression, level):
