@@ -4,4 +4,4 @@ class=cleric
 armor=medium
 shield=heavy
 weapon=medium_melee
-attributes=cleric-warrior
+attributes=cleric_warrior
