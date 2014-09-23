@@ -2,13 +2,14 @@
 name=Allip
 creature type=undead
 template=incorporeal
+template=antiwarrior
 level=4
 
 #items
 weapon=wisdom drain
 
 #attributes
-dexterity=average
+dexterity=poor
 wisdom=-4
 charisma=average
 
@@ -23,6 +24,5 @@ feat=dodge
 speed=fly 30, noland
 
 #fluff
-description=An allip is the spectral remains of someone driven to suicide by a madness that afflicted it in life. It craves only revenge and unrelentingly pursues those who tormented it in life and pushed it over the brink. 
-An allip cannot speak intelligibly.
+description=An allip is the spectral remains of someone driven to suicide by a madness that afflicted it in life. It craves only revenge and unrelentingly pursues those who tormented it in life and pushed it over the brink. An allip cannot speak intelligibly.
 combat=An allip is unable to cause physical harm, although it doesn’t appear to know that. It keeps flailing away at enemies, yet it inflicts no physical wounds.
