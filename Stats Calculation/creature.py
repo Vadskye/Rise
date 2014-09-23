@@ -23,7 +23,16 @@ def generate_creature_from_raw_stats(raw_stats, verbose):
 def generate_creature_from_class_name(class_name, raw_stats, verbose):
     return {
             'barbarian': Barbarian,
+            'cleric': Cleric,
+            'druid': Druid,
             'fighter': Fighter,
+            'monk': Monk,
+            'paladin': Paladin,
+            'ranger': Ranger,
+            'rogue': Rogue,
+            'spellwarped': Spellwarped,
+            'sorcerer': Sorcerer,
+            'wizard': Wizard,
             }[class_name](raw_stats, verbose)
 
 def generate_creature_from_creature_type(creature_type, raw_stats, verbose): 
@@ -71,6 +80,7 @@ class Creature(object):
                 REFLEX: None,
                 WILL: None,
                 DR: None,
+                SPECIAL: None,
                 }
         self.progressions = {
                 BAB: None,
@@ -116,6 +126,8 @@ class Creature(object):
     def reset_combat(self):
         self.combat[CURRENT_HIT_POINTS] = self.core[HIT_POINTS].get_total()
         self.combat[CRITICAL_DAMAGE] = 0
+        for attribute in self.attributes:
+            self.attributes[attribute].reset_damage()
 
     def reset_objects(self):
         self.attacks[ATTACK_BONUS] = util.AttackBonus()
@@ -129,6 +141,7 @@ class Creature(object):
         self.defenses[AC] = util.ArmorClass()
         self.defenses[MC] = util.Modifier()
         self.defenses[DR] = util.DamageReduction()
+        self.defenses[SPECIAL] = list()
         for save in SAVES:
             self.defenses[save] = util.SavingThrow()
         self.core[HIT_POINTS] = util.Modifier()
@@ -256,6 +269,9 @@ class Creature(object):
         self.abilities[INACTIVE].append(ability)
         return True
 
+    def add_special_defense(self, special_defense):
+        self.defenses[SPECIAL].append(special_defense)
+
     def meets_prerequisites(self, ability):
         #TODO: make less confusing
         return ability.meets_prerequisites(self)
@@ -344,20 +360,22 @@ class Creature(object):
             self.attributes[INT].get_total()/2), INT)
 
     def improve_progression(self, progression):
+        self.change_progression(progression, 1)
+
+    def reduce_progression(self, progression):
+        self.change_progression(progression, -1)
+
+    def change_progression(self, progression_name, steps_to_change, allow_extreme = False):
         #make sure we're not altering a non-existent progression
         #(though natural armor is allowed to be None, since it is often unset)
-        if self.progressions[progression] is None and not progression == NATURAL_ARMOR:
-            return False
+        if self.progressions[progression_name] is None and not progression_name == NATURAL_ARMOR:
+            raise Exception("progression "+progression_name+" does not exist, so it can't be altered")
 
         #HIT_VALUE works differently from other progressions
-        if progression == HIT_VALUE:
-            self.progressions[progression] = util.improved_hit_value(self.progressions[progression])
+        if progression_name == HIT_VALUE:
+            self.progressions[progression_name] = util.change_hit_value(self.progressions[progression_name], steps_to_change, allow_extreme)
         else:
-            if progression not in self.progressions or self.progressions[progression] is None:
-                self.progressions[progression] = POOR
-            else:
-                self.progressions[progression] = util.improved_progression(self.progressions[progression])
-        return True
+            self.progressions[progression_name] = util.change_progression(self.progressions[progression_name], steps_to_change, allow_extreme)
 
     @classmethod
     def from_creature_name(cls, creature_name, level, verbose=False):
@@ -449,7 +467,7 @@ class Creature(object):
         if self.combat[CRITICAL_DAMAGE] > self.attributes[CON].get_total():
             return False
         for attribute in ATTRIBUTES:
-            if self.attributes[attribute] <= -10:
+            if self.attributes[attribute].get_total() <= -10:
                 return False
         return True
 
@@ -488,15 +506,18 @@ class Creature(object):
     def single_attack(self, enemy, attack_bonus = None, defense_type = None, deal_damage = True, threshold=5):
         #allow "enemy" to be either a Creature or a simple numerical target
         try:
-            enemy_defense = enemy.get_defense(defense_type)
+            is_hit, is_threshold_hit = enemy.attack_hits(attack_bonus, defense_type, threshold)
         except AttributeError:
-            enemy_defense = enemy
-        is_hit, is_threshold_hit = util.attack_hits(attack_bonus, enemy_defense, threshold)
+            is_hit, is_threshold_hit = util.attack_hits(attack_bonus, enemy, threshold)
         damage = self.get_damage(is_hit, is_threshold_hit)
         damage_types = self.get_damage_types(is_hit, is_threshold_hit)
         if deal_damage:
             enemy.take_damage(damage, damage_types)
         return is_hit, is_threshold_hit, damage
+
+    #allow special defenses and overriding in subclasses?
+    def attack_hits(self, attack_bonus, defense_type, threshold):
+        return util.attack_hits(attack_bonus, self.get_defense(defense_type), threshold)
 
     def get_damage(self, is_hit, is_threshold_hit):
         damage = self.attacks[DAMAGE][WEAPON_PRIMARY].get_total(roll=True)
@@ -524,16 +545,21 @@ class Creature(object):
 
     def take_damage(self, damage, damage_types):
         damage = self.defenses[DR].reduce_damage(damage, damage_types)
+        for special_defense in self.defenses[SPECIAL]:
+            damage = special_defense(damage, damage_types)
+        if damage is None:
+            return
         if DAMAGE_PHYSICAL in damage_types:
             if self.combat[CURRENT_HIT_POINTS] > 0:
                 self.combat[CURRENT_HIT_POINTS] = max(0, self.combat[CURRENT_HIT_POINTS] -damage)
             else:
                 self.combat[CRITICAL_DAMAGE] += damage
         #Are we taking attribute damage?
-        elif damage_types in ATTRIBUTES:
-            #in this case the attribute name is passed alone without other types
-            damaged_attribute = damage_types
-            self.attributes[damage_types] -= damage
+        elif any(damage_type in ATTRIBUTES for damage_type in damage_types):
+            for damage_type in [d for d in damage_types if d in ATTRIBUTES]:
+                #in this case the attribute name is passed alone without other types
+                damaged_attribute = damage_type
+                self.attributes[damage_type].take_damage(damage)
 
     def average_hit_probability(self, enemy, defense_type = None):
         if defense_type is None:
@@ -854,6 +880,14 @@ class Paladin(Character):
         self.progressions[FORT] = GOOD
         self.progressions[REF] = POOR
         self.progressions[WILL] = GOOD
+        self.progressions[HIT_VALUE] = 6
+
+class Ranger(Character):
+    def create_progressions(self):
+        self.progressions[BAB] = GOOD
+        self.progressions[FORT] = GOOD
+        self.progressions[REF] = AVERAGE
+        self.progressions[WILL] = AVERAGE
         self.progressions[HIT_VALUE] = 6
 
 class Rogue(Character):

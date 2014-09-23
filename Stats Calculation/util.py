@@ -520,24 +520,25 @@ def attack_damage_to_latex(weapon, weapon_damage):
         damage_string += ' damage'
     return damage_string
 
-def improved_progression(progression):
-    if progression == NONE:
-        return POOR
-    elif progression == POOR:
-        return AVERAGE
-    elif progression == AVERAGE:
-        return GOOD
-    elif progression == GOOD:
-        return GOOD
+def change_progression(progression, steps_to_change, allow_extreme = False):
+    new_index = PROGRESSIONS.index(progression) + steps_to_change
+    new_index = max(new_index, 0)
+    #normally we prohibit the "extreme" progression, since it is rarely used
+    if allow_extreme:
+        max_index = 4
     else:
-        raise Exception('Unknown progression: ' + str(progression))
+        max_index = 3
+    new_index = min(new_index, max_index)
+    return PROGRESSIONS[new_index]
 
-#normally, HV maxes at 7
-def improved_hit_value(hit_value, enforce_cap=True):
-    hit_value += 1
-    if enforce_cap:
-        return min(7, hit_value)
+def change_hit_value(hit_value, steps_to_change, allow_extreme = False):
+    hit_value += steps_to_change
+    #normally, HV has a min of 4 and a max of 7
+    if allow_extreme:
+        return hit_value
     else:
+        hit_value = min(7, hit_value)
+        hit_value = max(4, hit_value)
         return hit_value
 
 def lower_encumbrance(encumbrance):
