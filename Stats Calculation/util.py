@@ -122,12 +122,26 @@ class Attribute(ModifierProgression):
         self.get_total = lambda : 0
 
     def take_damage(self, damage):
-        self.damage += penalty_value
+        self.damage += damage
         self._update()
 
     def _update(self):
         super(Attribute, self)._update()
         self.total_bonus -= self.damage
+
+    def reset_damage(self):
+        self.damage = 0
+        self._update()
+
+    def __str__(self):
+        text = 'Attribute(%s = ' % self.get_total()
+        for key in self.bonuses:
+            text += '%s %s, ' % (key, self.bonuses[key])
+        text += '%s %s' % ('damage', self.damage)
+        if self.die is not None:
+            raise Exception("Attributes shouldn't have dice")
+        text += ')'
+        return text
 
 class SavingThrow(ModifierProgression):
     def _apply_progression(self, progression, level):
