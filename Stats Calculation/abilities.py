@@ -1,4 +1,5 @@
 import util
+import dice
 from strings import *
 
 def get_ability_by_name(ability_name):
@@ -246,6 +247,14 @@ def warrior_benefit(creature):
 Ability.create_ability('warrior', benefit = warrior_benefit,
         meets_prerequisites = warrior_prerequisites, tags=[ABILITY_TEMPLATE])
 
+def antiwarrior_prerequisites(creature):
+    return creature.progressions[BAB] is not None and creature.progressions[HIT_VALUE] is not None
+def antiwarrior_benefit(creature):
+    creature.reduce_progression(BAB)
+    creature.reduce_progression(HIT_VALUE)
+Ability.create_ability('antiwarrior', benefit = antiwarrior_benefit,
+        meets_prerequisites = antiwarrior_prerequisites, tags=[ABILITY_TEMPLATE])
+
 def brute_prerequisites(creature):
     return creature.progressions[FORT] is not None and creature.progressions[HIT_VALUE] is not None
 def brute_benefit(creature):
@@ -269,8 +278,15 @@ def incorporeal_benefit(creature):
             creature.attributes[CHA].get_total()/2, 'cha')
     creature.attributes[STR].set_inapplicable()
     creature.attributes[CON].set_inapplicable()
-Ability.create_ability('incorporeal',
-        benefit = incorporeal_benefit, tags=[ABILITY_TEMPLATE])
+    def incorporeal_defense(damage, damage_types):
+        d2 = dice.dx(2)
+        if d2.roll() == 1:
+            return None
+        else:
+            return damage
+    creature.add_special_defense(incorporeal_defense)
+Ability.create_ability('incorporeal', benefit = incorporeal_benefit,
+        tags=[ABILITY_TEMPLATE])
 
 ####################
 #MONSTER TYPES
