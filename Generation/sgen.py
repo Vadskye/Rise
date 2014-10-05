@@ -90,7 +90,7 @@ class Spell:
         for component_type in self.components.keys():
             for component in self.components[component_type]:
                 level += component.level
-        level += calculate_area_modifier(area, choose_targets, max_targets)
+        level += calculate_area_modifier(area, choose_targets, max_targets, self.components)
         if no_spell_resistance:
             level += 1
         if trigger:
@@ -193,12 +193,12 @@ def calculate_miscellaneous_component_multiplier(area, escapable, healthy_only,
         multiplier *= HALF
     return multiplier
 
-def calculate_area_modifier(area=None, choose_targets=None, max_targets=None):
+def calculate_area_modifier(area=None, choose_targets=None, max_targets=None, components = None):
     if not area:
         return 0
     #area_choices = ['none', 'tiny', 'normal','large_line', 'mr', 'medium_radius','large_cone','large_radius']
     level = 0
-    if self.components[DAMAGE] or self.components[CONDITION]:
+    if components is not None and (DAMAGE in components.keys() or CONDITION in components.keys()):
         level = switch(area, area_choices, [0,1,2,3,4,4,5,6])
     else:
         level = switch(area, area_choices, [0,2,2,2.5,3,3,3.5,4])
