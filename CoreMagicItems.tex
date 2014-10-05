@@ -74,9 +74,9 @@ In order to activate a spell completion item, a character must be able to cast s
 \section{Magic Item Effects}
 Most magic items either provide numerical bonuses or emulate the effect of a spell in some way.
 
-\subsection{Saving Throws}
+\subsection{Special Attacks}
 
-If a magic item allows a saving throw against its effects, the DC is listed in the item's description. Typically, the DC is equal to 10 \add the character level of the item's wielder \add the minimum attribute required to cast a spell of the same level as the item's effect.
+If a magic item requires a successful special attack to have its full effect, the attack bonus is listed in the item's description. Typically, the attack bonus is equal to the level of the item's wielder \add the spell level of the item's effect.
 
 \begin{comment}
 \subsection{Charges, Doses, and Multiple Uses}
@@ -99,7 +99,7 @@ Items with full descriptions have their powers detailed, and each of the followi
 \begin{itemize*}
 \itemhead{Aura:} Most of the time, a Spellcraft check will reveal the school of magic associated with a magic item and the strength of the aura an item emits. This information (when applicable) is given at the beginning of the item's notational entry. See the Spellcraft skill for details.
 
-\itemhead{Caster Level:} The next item in a notational entry gives the caster level of the item, indicating its relative power. The caster level determines the item's saving throw bonus, as well as other level-dependent aspects of the powers of the item (if variable). It also determines the level that must be contended with should the item come under the effect of a dispel magic spell or similar situation. This information is given in the form ``CL x,'' where ``CL'' is an abbreviation for caster level and ``x'' is a number representing the caster level itself.
+\itemhead{Caster Level:} The next item in a notational entry gives the caster level of the item, indicating its relative power. The caster level determines the item's special defenses, as well as other level-dependent aspects of the powers of the item (if variable). It also determines the level that must be contended with should the item come under the effect of a dispel magic spell or similar situation. This information is given in the form ``CL x,'' where ``CL'' is an abbreviation for caster level and ``x'' is a number representing the caster level itself.
 
 For potions, scrolls, and wands, the creator can set the caster level of an item at any number high enough to cast the stored spell and not higher than her own caster level. For other magic items, the caster level is determined by the item itself. In this case, the creator's caster level must be as high as the item's caster level (and prerequisites may effectively put a higher minimum on the creator's level).
 
@@ -361,7 +361,7 @@ Protection \plus5 & 50,000 gp \\
 \mitemreq{Conjuration/Transmutation}{Creation, Temporal}{2}{4th}{Craft (metal) 8}
 
 \appdescription{Protection}{Varies}{see text}{Ring}{Varied Abjuration (Shielding)}{}{\x}
-A ring of protection grants an enhancement bonus to your saving throws while worn. The price of the ring depends on its enhancement bonus, as shown in the table below.
+A ring of protection grants an enhancement bonus to your special defenses while worn. The price of the ring depends on its enhancement bonus, as shown in the table below.
 
 \begin{dtable}
     \caption{Ring of Protection}
@@ -843,7 +843,7 @@ Magic items radiate magical auras which can be detected with the Spellcraft skil
 
 \subsection{Damaging Magic Items}
 
-A magic item doesn't need to make a saving throw unless it is unattended, it is specifically targeted by the effect, or its wielder rolls a natural 1 on his save. Magic items should always get a saving throw against spells that might deal damage to them - even against attacks from which a nonmagical item would normally get no chance to save. Magic items use the same saving throw bonus for all saves, no matter what the type (Fortitude, Reflex, or Will). A magic item's saving throw bonus equals 2 \add its caster level. The only exceptions to this are intelligent magic items, which make Will saves based on their own Charisma and Intelligence scores.
+A magic item is normally unharmed by attacks unless it is unattended or is specifically targeted by an effect. A magic item's special defenses are all equal to 10 \add the caster level of the item. The only exceptions to this are intelligent magic items, which apply their Charisma and Intelligence to their Will defense.
 
 Magic items, unless otherwise noted, take damage as nonmagical items of the same sort. A damaged magic item continues to function, but if it is broken, its magic ceases to function until it is repaired. If it is destroyed, all its magical power is lost.
 
