@@ -235,7 +235,7 @@ The prices of enhancement bonuses to armor are listed in \trefnp{Magic Armor and
 
 \mitemreq{Abjuration}{Shielding}{1}{2nd}{Craft (as armor) 6}
 
-\appdescription{Energy Resistance}{2,000}{8th}{Armor}{Moderate Abjuration (Shielding)}{6th}{Immediate (triggered)} When you take energy damage, you can activate this armor to gain damage reduction equal to 10 \add half your level against that type of energy damage for 5 rounds. During this time, the armor casts light as a torch. The color of the light depends on the energy damage resisted: green for acid, blue for cold, yellow for electricity, and red for fire.
+\appdescription{Energy Resistance}{2,000}{8th}{Armor}{Moderate Abjuration (Shielding)}{6th}{Immediate (triggered)} When you take energy damage, you can activate this armor to gain damage reduction equal to 10 \add half your level against that type of energy damage. In addition, the armor casts light as a torch. The color of the light depends on the energy damage resisted: green for acid, blue for cold, yellow for electricity, and red for fire. Both effects lasts for 5 rounds, during which time you cannot activate the item's abilities.
 
 \mitemreq{Abjuration}{Shielding}{3}{6th}{Craft (as armor) 10}
 
@@ -243,11 +243,15 @@ The prices of enhancement bonuses to armor are listed in \trefnp{Magic Armor and
 
 If you activate the item, you deal 1d10 fire damage per two levels to your attacker (minimum 2d10). In addition, it is ignited for 5 rounds. An ignited creature is vulnerable, causing it to take a \minus2 penalty to attacks, defenses, and checks. In addition, at the end of each of its turns, it takes d6 damage from the fire. If the creature takes a move action, it can attempt a DC 10 Dexterity check to put out the flames. This action requires a free hand. Dropping prone as part of the action gives a \plus5 bonus on this check.
 
+After you activate this ability, you are wreathed in flame, causing you to cast light as a torch. This effect lasts for 5 rounds, during which time you cannot activate the item's abilities.
+
 \mitemreqdesc{Evocation}{Energy}{Fire}{2}{4th}{Craft (as armor) 8}
 
 \appdescription{Freezing Burst}{800}{5th}{Armor, Shield}{Faint Evocation (Energy) [Cold]}{4th}{Immediate (triggered)} When you are struck or missed by a melee attack, you can trigger a frigid burst against the foe that attacked you. Body armor triggers if the attack hits, and shields trigger if the attack misses.
 
 If you activate the item, you deal 1d10 cold damage per two levels to your attacker (minimum 2d10). In addition, it is fatigued for 5 rounds. A fatigued character can neither sprint nor charge and is vulnerable, giving it a \minus2 penalty to attacks, defenses, and checks.
+
+After you activate this ability, you radiate frigid cold, causing you to snuff out torches and other small fires within a 5 foot radius of you. This effect lasts for 5 rounds, during which time you cannot activate the item's abilities.
 
 \mitemreqdesc{Evocation}{Energy}{Cold}{2}{4th}{Craft (as armor) 8}
 
@@ -271,11 +275,13 @@ If you activate the item, you deal 1d10 cold damage per two levels to your attac
 
 If you activate the item, you deal 1d10 electricity damage per two levels to your attacker (minimum 3d10). In addition, if you succeed at a Fortitude attack, it is staggered for 5 rounds. A staggered character may take a single move action or standard action each round, but not both. She cannot take full-round actions, but she may take swift actions. In addition, she is vulnerable, causing her to take a \minus2 penalty on attacks, defenses, and checks.
 
+After you activate this ability, you crackle with electrical energy, causing you to radiate flashing light as a torch. This effect lasts for 5 rounds, during which time you cannot activate the item's abilities.
+ñ
 \mitemreqdesc{Evocation}{Energy}{Electricity}{3}{6th}{Craft (as armor) 10}
 
 \appdescription{Spell Reflecting}{60,000}{16th}{Shield}{Strong Abjuration (Shielding) [Magic]}{14th}{Immediate (triggered)} This shield's surface is completely reflective, allowing it to act as a mirror. When you are targeted by a spell or spell-like ability, you can activate the shield to reflect the spell back at its caster exactly like the \spell{spell turning} spell.
 
-After you activate this item, its surface becomes dully metallic instead of reflective for 5 rounds. During this time, you cannot activate it again.
+After you activate this ability, the shield's surface becomes dully metallic instead of reflective. This effect lasts for 5 rounds, during which time you cannot activate the item's abilities.
 
 \mitemreqdesc{Abjuration}{Shielding}{Magic}{7}{14th}{Craft (as armor) 18}
 
@@ -426,11 +432,11 @@ Magic weapons improve a character's combat abilities. They always provide an enh
 \caption{Magic Weapons}
 \begin{tabularx}{\columnwidth} {>{\ccol}X c c}
   \thead{Enhancement Bonus} & \thead{Base Price} & \thead{Item Level}\\
-\plus1 weapon & 1,000 gp & 5th \\
-\plus2 weapon & 4,000 gp & 9th \\
-\plus3 weapon & 9,000 gp & 12th \\
-\plus4 weapon & 16,000 gp & 15th \\
-\plus5 weapon & 25,000 gp & 18th \\
+\plus1 weapon & 200 gp & 3rd \\
+\plus2 weapon & 1,000 gp & 6th \\
+\plus3 weapon & 5,000 gp & 10th \\
+\plus4 weapon & 25,000 gp & 13th \\
+\plus5 weapon & 125,000 gp & 17th \\
 \end{tabularx}
 \end{dtable}
 
@@ -438,7 +444,7 @@ Magic weapons improve a character's combat abilities. They always provide an enh
 
 \parhead{Caster Level for Weapons} The caster level of a magic weapon with a special ability is given in the item description. For an item with only an enhancement bonus, the caster level is three times the enhancement bonus. If an item has both an enhancement bonus and a special ability, the higher of the two caster level requirements must be met.
 
-\parhead{Hardness and Hit Points} Each \plus1 of enhancement bonus adds 2 to an armor or shield's hardness and \plus10 to its hit points.
+\parhead{Hardness and Hit Points} Each \plus1 of enhancement bonus adds 2 to a weapon's hardness and \plus10 to its hit points.
 
 \parhead{Ranged Weapons and Ammunition} The enhancement bonus from a ranged weapon does not stack with the enhancement bonus from ammunition. Only the higher of the two enhancement bonuses applies. Special abilities are applied from both sources, as long as they are not identical. If conflicting special abilities exist, the special ability on the ammunition takes precedence.
 
@@ -451,28 +457,30 @@ Magic ammunition loses its magic after being fired, whether it hits or misses.
 \parhead{Magic Weapons and Critical Hits} Some weapon qualities and some specific weapons have an extra effect on a critical hit. These special effects function against creatures not subject to critical hits. When fighting against such creatures, roll for critical hits as you would against any other creature subject to critical hits. On a successful critical roll, apply the special effect, but do not multiply the weapon's regular damage.
 
 \begin{dtable*}
-\lcaption{Weapon Special Abilities}
-\begin{tabularx}{\textwidth}{l >{\lcol}X l l}
-    \thead{Special Ability} & \thead{Description} & \thead{Cost} & \thead{Item Level} \\
-  Bane & Add special ability that only functions against certain creatures & Special & Special \\
-  Surestrike, Lesser & 1/day roll critical confirmation twice & 500 gp & 4th \\
-  Defending & Trade attack and damage for AC & 1,000 gp & 5th \\
-  Flaming & 1/day ignite struck foe &  1,000 gp & 5th \\
-  Freezing & 1/day fatigue struck foe &  1,000 gp & 5th \\
-  Forceful & 3/day knock back struck foe &  1,000 gp & 5th \\
-  Returning & Weapon returns after being thrown &  1,000 gp & 5th \\
-  Entangling & 5/day entangle struck foe &  1,500 gp & 6th \\
-  Morphing & 3/day weapon transforms into similar weapon &  2,000 gp & 6th \\
-  Shocking & 1/day stagger struck foe &  2,000 gp & 6th \\
-  Vampiric & 3/day lick weapon to regain hit points &  2,000 gp & 6th \\
-  Returning, Greater & Weapon returns immediately after being thrown &  2,250 gp & 7th \\
-  Poisoning & 3/day coat weapon in poison &  4,000 gp & 9th \\
-  Surestrike & 1/day reroll missed attack &  4,000 gp & 9th \\
-  Thieving & 3/day absorb struck object into weapon &  4,000 gp & 9th \\
-  Heartseeking & 1/day automatically score critical hit after striking target repeatedly &  6,250 gp & 11th \\
-  Soulreaving & Weapon strikes the soul for delayed damage instead of normal damage &  16,000 gp & 15th \\
-  Vorpal & 1/day sever foe's head in a single blow &  20,250 gp & 18th \\
-\end{tabularx}
+    \lcaption{Weapon Special Abilities}
+    \begin{tabularx}{\textwidth}{l >{\lcol}X l l}
+        \thead{Special Ability} & \thead{Description} & \thead{Cost} & \thead{Item Level} \\
+        Bane & Add special ability that only functions against certain creatures & Special & Special \\
+        Morphing & Weapon transforms into similar weapon & 200 gp & 3rd \\
+        Entangling & Entangle struck foe & 400 gp & 4th \\
+        Flaming & Ignite struck foe & 400 gp & 4th \\
+        Forceful & Knock back struck foe &  400 gp & 4th \\
+        Thundering & Deafen struck foe and those nearby & 400 gp & 4th \\
+        Freezing & Fatigue struck foe & 400 gp & 4th \\
+        Surestrike, Lesser & Roll critical confirmation twice & 400 gp & 4th \\
+        Defending & Trade attack and damage for AC & 500 gp & 4th \\
+        Returning & Weapon returns after being thrown &  1,000 gp & 6th \\
+        Poisoning & Quickly coat weapon in duplicated poison & 1,600 gp & 7th \\
+        Shocking & Stagger struck foe & 1,600 gp & 7th \\
+        Vampiric & Lick weapon to regain hit points &  1,600 gp & 7th \\
+        Surestrike & Reroll missed attacks &  4,000 gp & 9th \\
+        Thieving & Absorb struck objects into weapon & 4,000 gp & 9th \\
+        Returning, Greater & Weapon returns immediately after being thrown & 5,000 gp & 10th \\
+        Heartseeking & Automatically score critical hit after striking target repeatedly &  12,000 gp & 12th \\
+        Poisoning, Greater & Quickly coat weapon in potent duplicated poison & 24,000 gp & 13th \\
+        Soulreaving & Weapon strikes the soul for delayed damage instead of normal damage &  60,000 gp & 16th \\
+        Vorpal & 1/day sever foe's head in a single blow & 140,000 gp & 18th \\
+    \end{tabularx}
 \end{dtable*}
 
 \subsubsection{Bane} \parhead{Price (Level)} Special \parhead{Aura, Caster Level} Special \par
@@ -495,98 +503,116 @@ Vermin & \\
 
 \mitemreq{Transmutation}{Augment}{2}{4th}{Craft (as weapon) 8}
 
-\impdescription{Defending}{1,000}{5th}{Faint Abjuration (Shielding)}{4th}{Move (specific action)} By spinning this weapon in your hands in a complete revolution clockwise, you can command it to aid in your attempts to defend yourself. If you do, you do not apply its enhancement bonus to attack and damage. However, you add its enhancement bonus to your dodge modifier when you make a standard attack or take the total defense action. If you spin the weapon counter-clockwise, you can command the weapon to instead apply its bonus to your attack and damage, as normal.
+\impdescription{Defending}{500}{4th}{Faint Abjuration (Shielding)}{4th}{Move (specific action)} If you spin this weapon in your hands in a complete revolution clockwise, you do not apply its enhancement bonus to attack and damage. However, you add its enhancement bonus to your dodge defense modifier for 1 round whenever you make a standard attack or take the total defense action. If you spin the weapon counter-clockwise, the weapon instead applies its bonus to your attack and damage, as normal.
 
 \mitemreq{Abjuration}{Shielding}{2}{4th}{Craft (as weapon) 8}
 
-\impdescription{Entangling}{1,500}{6th}{Faint Conjuration (Creation)}{2nd}{Immediate (triggered) 5/day} When you strike a foe with this weapon, you can cause webbing to spring into existence, entangling the struck foe for 5 rounds. The foe can break out of the webbing with a grapple or Escape Artist check against a DC equal to 15 \add your character level.
+\impdescription{Entangling}{400}{4th}{Faint Conjuration (Creation)}{2nd}{Immediate (triggered)} When you strike a foe with this weapon, you can cause webbing to spring into existence, entangling the struck foe for 5 rounds. The foe can break out of the webbing with a grapple or Escape Artist check against a DC equal to 15 \add your level.
 
-An entangled creature moves at half speed, cannot run or charge, and takes a \minus2 penalty to attack rolls, Strength and Dexterity-based checks, and armor class. An entangled character who attempts to cast a spell must make a Concentration check (DC 10 \add double the spell's level) or lose the spell.
+An entangled creature moves at half speed, cannot run or charge, and takes a \minus2 penalty to physical attacks and defenses, as well as Strength and Dexterity-based checks. An entangled character who attempts to cast a spell must make a Concentration check (DC 10 \add double the spell's level) or lose the spell.
 
 \mitemreq{Conjuration}{Creation}{1}{2nd}{Craft (as weapon) 6}
 
-\impdescription{Flaming}{1,000}{5th}{Faint Evocation (Energy) [Fire]}{2nd}{Immediate (triggered) 1/day} When you strike a foe with this weapon, you can engulf the weapon in flames. If you do, your foe is ignited for 5 rounds or until it puts out the flames, which requires a move action and a DC 15 Reflex save. While ignited, it takes d6 fire damage each round and is vulnerable, causing it to take a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
+\impdescription{Flaming}{400}{4th}{Faint Evocation (Energy) [Fire]}{2nd}{Immediate (triggered)} When you strike a foe with this weapon, you can engulf the struck creature in flames. If you do, it is ignited for 5 rounds. An ignited creature is vulnerable, causing it to take a \minus2 penalty to attacks, defenses, and checks. In addition, at the end of each of its turns, it takes d6 damage from the fire. If the creature takes a move action, it can attempt a DC 10 Dexterity check to put out the flames. This action requires a free hand. Dropping prone as part of the action gives a \plus5 bonus on this check.
+
+When you activate this ability, the weapon is wreathed in flames, causing damage you deal with it to be treated as fire damage in addition to its other types. This effect lasts for 5 rounds, during which time you cannot activate the item's abilities.
 
 \mitemreqdesc{Evocation}{Energy}{Fire}{1}{2nd}{Craft (as weapon) 6}
 
-\impdescription{Freezing}{1,000}{5th}{Faint Evocation (Energy) [Cold]}{2nd}{Immediate (triggered) 1/day} When you strike a foe with this weapon, you can unleash an icy blast from the weapon. If you do, your foe is fatigued for 5 rounds. While fatigued, it can neither run nor charge and is vulnerable, giving it a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
+\impdescription{Freezing}{400}{4th}{Faint Evocation (Energy) [Cold]}{2nd}{Immediate (triggered)} When you strike a foe with this weapon, you can unleash an icy blast from the weapon. If you do, your foe is fatigued for 5 rounds. A fatigued creature can neither sprint nor charge and is vulnerable, giving it a \minus2 penalty to attacks, defenses, and checks.
+
+When you activate this ability, the weapon radiates chilling cold, causing damage you deal with it to be treated as cold damage in addition to its other types. This effect lasts for 5 rounds, during which time you cannot activate the item's abilities.
 
 \mitemreqdesc{Evocation}{Energy}{Cold}{1}{2nd}{Craft (as weapon) 6}
 
-\impdescription{Forceful}{1,000}{5th}{Faint Evocation (Control)}{4th}{Immediate (triggered) 3/day} When you strike a foe with this weapon, you can activate the weapon to immediately make a bull rush attempt with a circumstance bonus equal to the damage you dealt with the attack. You do not provoke an attack of opportunity for the bull rush, even if you fail, and you do not have to move with your foe to knock it back the full distance.
+\impdescription{Forceful}{400}{4th}{Faint Evocation (Control)}{4th}{Immediate (triggered)} When you strike a foe with this weapon, you can activate the weapon to immediately make a bull rush attempt with a circumstance bonus equal to the damage you dealt with the attack. You do not provoke an attack of opportunity for the bull rush, even if you fail, and you do not have to move with your foe to knock it back the full distance.
 
-\mitemreq{Evocation}{Control}{2}{4th}{Craft (as weapon) 8}
+After you activate this ability, the weapon feels heavier in your hands. This effect lasts for 5 rounds, during which time you cannot activate the item's abilities.
+
+\mitemreq{Evocation}{Control}{1}{2nd}{Craft (as weapon) 6}
 
 %As 5th level spell because it feels right. Based losely on Discern
 %Vulnerability, although this feels like Awareness, so True Seeing?
-\impdescription{Heartseeking}{6,250}{11th}{Moderate Divination (Awareness)}{10th}{Immediate (triggered) 1/day} When you strike the same foe with this weapon for multiple rounds in a row, you can suddenly perceive a critical weakness in your foe's defenses. You must strike the foe for a number of consecutive rounds equal to the critical multiplier of the weapon you are using. If you activate the item, the final hit automatically becomes a confirmed critical hit. This has no effect on creatures immune to critical hits.
+\impdescription{Heartseeking}{12,000}{12th}{Moderate Divination (Awareness)}{10th}{Immediate (triggered)} When you strike the same foe with this weapon for multiple rounds in a row, you can suddenly perceive a critical weakness in your foe's defenses. You must strike the foe for a number of consecutive rounds equal to the critical multiplier of the weapon you are using. If you activate the item, the final hit automatically becomes a confirmed critical hit. This has no effect on creatures immune to critical hits.
+
+When you activate this ability, you gain a \plus4 bonus to confirm critical hits. This effect lasts for 5 rounds, during which time you cannot activate the item's abilities.
 
 \mitemreq{Divination}{Awareness}{5}{10th}{Craft (as weapon) 14}
 
-\impdescription{Morphing}{2,000}{6th}{Faint Transmutation (Alteration)}{4th}{Standard (specific action) 3/day} A morphing weapon can transform into any other weapon from its weapon group. To transform a morphing weapon, you must grab it with both hands and strike it against your knee, as if breaking it, while visualizing its new form. It remains transformed until you command it to transform again.
+\impdescription{Morphing}{200}{6th}{Faint Transmutation (Alteration)}{4th}{Standard (specific action)} A morphing weapon can transform into any other weapon from its weapon group. To transform a morphing weapon, you must grab it with both hands and strike it against your knee or other hard object, as if breaking it, while visualizing its new form (a standard action). It remains transformed until you transform it again.
 
-\mitemreq{Transmutation}{Alteration}{2}{4th}{Craft (as weapon) 8}
+\mitemreq{Transmutation}{Alteration}{1}{2nd}{Craft (as weapon) 6}
 
-\impdescription{Poisoning}{4,000}{6th}{Faint Conjuration/Transmutation (Creation, Temporal)}{4th}{Swift (specific action) 3/day and standard (specific action)} A poisoning weapon can conjure poisons to cover the striking surface of the weapon. The poison must first be inserted into a small slot in the hilt of the weapon (a standard action). Once a poison is present in the slot, you can coat the weapon with a dose of the poison by pressing a small button on the hilt (a swift action). Only liquid poisons worth 100 gp per dose or less can be duplicated in this way. 
+%price as 2nd level spell?
+\impdescription{Poisoning}{1,600}{7th}{Faint Conjuration/Transmutation (Creation, Temporal)}{4th}{Swift (specific action) and standard (specific action)} A poisoning weapon can conjure poisons to cover the striking surface of the weapon. The poison must first be inserted into a small slot in the hilt of the weapon (a standard action). Once a poison is present in the slot, you can coat the weapon with a dose of the poison by pressing a small button on the hilt (a swift action). After a poison has been used, it takes 5 rounds for the weapon to create more poison, during which time the weapon cannot be activated. Only liquid poisons worth 100 gp per dose or less can be duplicated in this way.
 
-The poison within the weapon is kept fresh magically, decaying at a rate of one minute per day. It can be emptied as a standard action. 
+The poison within the weapon is kept fresh magically, decaying at a rate of one minute per day. The weapon can be emptied by pressing a second button to open its slot and pouring the poison out (a standard action). You can freely insert and remove poison from the weapon, but coating the weapon in poison costs an activation.
 
 \mitemreq{Conjuration, Transmutation}{2}{4th}{Craft (as weapon) 8}
 
-\impdescription{Poisoning, Greater}{16,000}{15th}{Moderate Conjuration/Transmutation (Creation, Temporal)}{8th}{Swift (specific action) 3/day and standard (specific action)} This ability functions like the poisoning weapon ability, except that it can duplicate liquid poisons of up to 1,000 gp per dose. In addition, up to five different poisons can be stored within the weapon. When you coat the weapon with poison, you may choose which poison to use. 
+%price as 5th level spell? similar to 20 uses of a one-shot item worth 1000 gp, so sure
+\impdescription{Poisoning, Greater}{24,000}{13th}{Moderate Conjuration/Transmutation (Creation, Temporal)}{10th}{Swift (specific action) and standard (specific action)} This ability functions like the \magicitem{poisoning} weapon ability, except that it can duplicate liquid poisons of up to 1,000 gp per dose. In addition, up to five different poisons can be stored within the weapon. When you coat the weapon with poison, you may choose which poison to use.
 
-\mitemreq{Conjuration, Transmutation}{4}{8th}{Craft (as weapon) 12}
+\mitemreq{Conjuration, Transmutation}{5}{10th}{Craft (as weapon) 14}
 
-\impdescription{Returning}{1,000}{5th}{Faint Conjuration (Translocation) [Teleportation]}{4th}{\x} After being thrown, a returning weapon teleports back to the creature that threw it. It returns to the thrower just before the creature's next turn (and is therefore ready to use again in that turn).
+\impdescription{Returning}{1,000}{6th}{Faint Conjuration (Translocation) [Teleportation]}{4th}{\x} After being thrown, a returning weapon teleports back to the creature that threw it. It returns to the thrower just before the creature's next turn (and is therefore ready to use again in that turn).
 
 Catching a returning weapon when it comes back is a free action. If you can't catch it, the weapon drops to the ground in the square from which it was thrown.
 
 \mitemreqdesc{Conjuration}{Translocation}{Teleportation}{2}{4th}{Craft (as weapon) 8}
 
-\impdescription{Returning, Greater}{2,250}{7th}{Faint Conjuration (Translocation) [Teleportation]}{6th}{\x} This functions as the returning ability, except that the weapon teleports back to the creature that threw it immediately after the attack is resolved, allowing the creature to make multiple attacks in the same round with the same throwing weapon. 
+\impdescription{Returning, Greater}{5,000}{10th}{Faint Conjuration (Translocation) [Teleportation]}{6th}{\x} This ability functions like the \magicitem{returning} ability, except that the weapon teleports back to the creature that threw it immediately after the attack is resolved, allowing the creature to make multiple attacks in the same round with the same thrown weapon. 
 
 \mitemreqdesc{Conjuration}{Translocation}{Teleportation}{3}{6th}{Craft (as weapon) 10}
 
-%As 8th level spell? I have no idea. There aren't actually any spells this can
-%be based on.
-\impdescription{Soulreaving}{16,000}{15th}{Strong Necromancy (Soul)}{16th}{\x and standard (specific action)} This ghostly, translucent weapon strikes directly at the target's soul. It ignores all damage reduction, but it does not deal hit point damage. In fact, a creature struck by the weapon only feels the weapon pass through it harmlessly. Damage that would be dealt by the weapon is delayed for up to 24 hours. While the damage is delayed, it cannot be cured.
+%As 7th level spell? I have no idea. There aren't actually any spells this can be based on.
+\impdescription{Soulreaving}{60,000}{16th}{Strong Necromancy (Soul)}{16th}{\x and standard (specific action)} This ghostly, translucent weapon strikes directly at the target's soul. It ignores all damage reduction, but it does not deal hit point damage. In fact, a creature struck by the weapon only feels the weapon pass through it harmlessly. Damage that would be dealt by the weapon is delayed for up to 24 hours. While the damage is delayed, it cannot be cured.
 
 In order to convert the delayed damage into real damage, the wielder must stab himself through the heart with the weapon as a standard action. This deals no damage to the wielder, but any creatures that have been dealt damage by the weapon immediately take lethal damage equal to the delayed damage the weapon has stored up for them. Any such damage dealt in excess of the creature's hit points is converted directly into critical damage.
 
 A soulreaver weapon has no effect on objects or constructs. While wielded, it has physical form only for its wielder, making it impossible to sunder or disarm. While not in use, it can be picked up and touched normally.
 
-\mitemreq{Necromancy}{Soul}{8}{16th}{Craft (as weapon) 20}
+\mitemreq{Necromancy}{Soul}{7}{14th}{Craft (as weapon) 18}
 
-\impdescriptiondc{Shocking}{2,000}{6th}{Faint Evocation (Energy) [Electricity]}{4th}{Immediate (triggered) 1/day}{Fortitude DC 12} When you strike a foe with this weapon, you can unleash an powerful electrical jolt from the weapon. If you do, your foe is staggered for 5 rounds if it fails a Fortitude save. While staggered, it may take a single move action or standard action each round, but not both. It cannot take full-round actions, but it may take swift actions. In addition, it is vulnerable, causing it to take a \minus2 penalty on attack rolls, saving throws, checks, DCs, and AC.
+\impdescriptiondc{Shocking}{1,600}{7th}{Faint Evocation (Energy) [Electricity]}{4th}{Immediate (triggered)}{Fortitude (level \add 2)} When you strike a foe with this weapon, you can unleash an powerful electrical jolt from the weapon. If you do, make a Fortitude attack. If you succeed, your foe is staggered for 5 rounds. A staggered creature may take a single move action or standard action each round, but not both. She cannot take full-round actions, but she may take swift actions. In addition, she is vulnerable, causing her to take a \minus2 penalty on attacks, defenses, and checks.
+
+When you activate this ability, the weapon crackles with electrical energy, causing damage you deal with it to be treated as electrical damage in addition to its other types. This effect lasts for 5 rounds, during which time you cannot activate the item's abilities.
 
 \mitemreqdesc{Evocation}{Energy}{Electricity}{2}{4th}{Craft (as weapon) 8}
 
-\impdescription{Surestrike, Lesser}{500}{4th}{Faint Divination (Knowledge)}{2nd}{Immediate (triggered) 1/day} When you threaten a critical hit with this weapon, you can activate it to receive a brief glimpse of the future, showing you how to wound your foe deeply. If you do, you may roll the threat confirmation twice and take whichever roll you prefer.
+\impdescription{Surestrike, Lesser}{400}{4th}{Faint Divination (Knowledge)}{2nd}{Immediate (triggered)} When you threaten a critical hit with this weapon, you can activate it to receive a brief glimpse of the future, showing you how to wound your foe deeply. If you do, you may roll the threat confirmation twice and take whichever roll you prefer.
+
+After you activate this ability, you see shadowy glimpses of alternate futures out of the corner of your eyes. This effect lasts for 5 rounds, during which time you cannot activate the item's abilities.
 
 \mitemreq{Divination}{Knowledge}{1}{2nd}{Craft (as weapon) 6}
 
-\impdescription{Surestrike}{4,000}{9th}{Faint Divination (Knowledge)}{6th}{Immediate (triggered) 3/day} When you miss an attack with this weapon, you can activate it to reroll the attack roll. You must take the second result.
+\impdescription{Surestrike}{4,000}{9th}{Faint Divination (Knowledge)}{8th}{Immediate (triggered)} When you miss an attack with this weapon, you can activate it to reroll the attack roll. You must take the second result.
 
-\mitemreq{Divination}{Knowledge}{2}{4th}{Craft (as weapon) 8}
+When you activate this ability, you see shadowy glimpses of alternate futures superimposed over objects and creatures you see. This effect lasts for 5 rounds, during which time you cannot activate the item's abilities.
 
-\impdescription{Thieving}{4,000}{9th}{Faint Transmutation (Alteration)}{4th}{Immediate (trigger) 3/day and standard (specific action)} When you strike an object with this weapon, if the object is at least one size category smaller than the weapon, you may activate the weapon. If you do, the object is absorbed into the weapon, leaving no trace that it ever existed. Striking an attended object requires a successful disarm or sunder attempt.
+\mitemreq{Divination}{Knowledge}{3}{6th}{Craft (as weapon) 10}
 
-You can retrieve objects from the weapon by running your hand along the length of the striking surface of the weapon (a standard action). If you do, the last item absorbed by the weapon appears in your hand. You may retrieve objects from within the weapon any number of times per day, but you may only absorb objects three times per day.
+\impdescription{Thieving}{4,000}{9th}{Faint Transmutation (Alteration)}{4th}{Immediate (trigger) and standard (specific action)} When you strike an object with this weapon, if the object is at least one size category smaller than the weapon, you may activate the weapon. If you do, the object is absorbed into the weapon, leaving no trace that it ever existed. Striking an attended object requires a successful disarm or sunder attempt.
 
-The weapon can hold no more than three objects at once. If you attempt to absorb an object while the weapon is full, the attempt fails. 
+You can retrieve objects from the weapon by running your hand along the length of the striking surface of the weapon (a standard action). If you do, the last item absorbed by the weapon appears in your hand. You may freely retrieve objects from within the weapon, but absorbing objects costs an activation.
+
+The weapon can hold no more than three objects at once. If you attempt to absorb an object while the weapon is full, the attempt fails.
 
 \mitemreq{Transmutation}{Alteration}{2}{4th}{Craft (as weapon) 8}
 
-\impdescription{Thundering}{8,000}{2nd}{Faint Evocation (Energy) [Sonic]}{2nd}{Immediate (triggered) 1/day} When you strike a foe with this weapon, you can detonate a deafening roll of thunder, deafening the struck foe and all other creatures within a \areasmall radius of you. You are immune to the deafening effect.
+\impdescriptiondc{Thundering}{400}{4th}{Faint Evocation (Energy) [Sonic]}{2nd}{Immediate (triggered)}{Fortitude (level \add 1)} When you strike a foe with this weapon in melee, you can detonate a deafening roll of thunder. If you do, make a Fortitude attack against the struck foe and all other creatures within a \areasmall radius of you. A successful attack deafens a creature for 5 rounds. You are immune to the deafening effect.
+
+After you activate this ability, the weapon emits non-damaging thunderous echoes whenever it strikes a solid object or creature. This effect lasts for 5 rounds, during which time you cannot activate the item's abilities.
 
 \mitemreqdesc{Evocation}{Energy}{Sonic}{4}{8th}{Craft (as weapon) 8}
 
-\impdescription{Vampiric}{2,000}{9th}{Faint Necromancy (Life)}{4th}{Move (specific action) 3/day} If you lick the striking part of this weapon (a move action), you regain hit points equal to the damage dealt by the weapon on its last successful attack. If the weapon has not dealt damage in the past round, you regain no hit points.
+\impdescription{Vampiric}{1,600}{7th}{Faint Necromancy (Life)}{4th}{Move (specific action)} If you lick the striking part of this weapon (a move action), you regain hit points equal to the damage dealt by the weapon on its last successful attack. If the weapon has not dealt damage in the past round, you regain no hit points.
 
 \mitemreq{Necromancy}{Life}{2}{4th}{Craft (as weapon) 8}
 
-%9th level like Power Word Kill
-\impdescription{Vorpal}{20,250}{18th}{Strong Transmutation (Augment)}{18th}{Immediate (triggered) 1/day} When you roll a 20 with this weapon and confirm the critical hit, you can instantly decapitate your foe. If you do, it dies immediately, with no saving throw allowed. This has no effect on creatures without a discernable head, creatures unaffected by the loss of a single head, or creatures whose head you cannot reach.
+%8th level - 9th level for Power Word Kill, down to 8th because the trigger is
+%so hard to pull off
+\impdescription{Vorpal}{140,000}{18th}{Strong Transmutation (Augment)}{18th}{Immediate (triggered)} If you roll a 20 with this weapon and confirm the critical hit, you can instantly decapitate your foe. If you do, it dies immediately. This has no effect on creatures without a discernable head, creatures unaffected by the loss of a single head, or creatures whose head you cannot reach.
 
 \mitemreq{Transmutation}{Augment}{9}{18th}{Craft (as weapon) 22}
 
@@ -716,7 +742,7 @@ An ignited creature is vulnerable, causing it to take a \minus2 penalty to attac
 
 \impdescriptiondc{Shocking}{2,000}{9th}{Faint Evocation (Energy) [Electricity]}{8th}{Immediate (triggered) 1/day}{Fortitude DC 12} As you cast a spell, you can activate this wand to stagger a single creature affected by the spell for 5 rounds. The target receives a Fortitude save to avoid being staggered.
 
-A staggered character may take a single move action or standard action each round, but not both. She cannot take full-round actions, but she may take swift actions. In addition, she is vulnerable, causing her to take a \minus2 penalty on attack rolls, saving throws, checks, DCs, and AC.
+A staggered creature may take a single move action or standard action each round, but not both. She cannot take full-round actions, but she may take swift actions. In addition, she is vulnerable, causing her to take a \minus2 penalty on attack rolls, saving throws, checks, DCs, and AC.
 
 \mitemreqdesc{Evocation}{Energy}{Electricity}{2}{4th}{Craft (as wand) 8}
 
