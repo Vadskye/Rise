@@ -149,15 +149,15 @@ Body armor is always created so that even if the type of armor comes with boots 
 The prices of enhancement bonuses to armor are listed in \trefnp{Magic Armor and Shields}. If armor has a special ability, the price of the special ability is added to the price of the armor. The number of special abilities on the armor cannot exceed the enhancement bonus of the armor. Additionally, the price of all special abilities cannot exceed twice the price of the enhancement bonus on the armor.
 
 \begin{dtable}
-\lcaption{Magic Armor and Shields}
-\begin{tabularx}{\columnwidth} {>{\ccol}X c c}
-  \thead{Enhancement Bonus} & \thead{Base Price} & \thead{Item Level}\\
-\plus1 armor/shield & 500 gp & 4th \\
-\plus2 armor/shield & 2,000 gp & 6th \\
-\plus3 armor/shield & 4,500 gp & 9th \\
-\plus4 armor/shield & 8,000 gp & 12th \\
-\plus5 armor/shield & 12,500 gp & 14th\\
-\end{tabularx}
+    \lcaption{Magic Armor and Shields}
+    \begin{tabularx}{\columnwidth} {>{\ccol}X c c}
+        \thead{Enhancement Bonus} & \thead{Base Price} & \thead{Item Level}\\
+        \plus1 armor/shield & 100 gp & 2nd \\
+        \plus2 armor/shield & 500 gp & 4th \\
+        \plus3 armor/shield & 2,500 gp & 8th \\
+        \plus4 armor/shield & 12,500 gp & 12th \\
+        \plus5 armor/shield & 62,500 gp & 16th\\
+    \end{tabularx}
 \end{dtable}
 
 \parhead{Caster Level for Armor and Shields} The caster level of a magic shield or magic armor with a special ability is given in the item description. For an item with only an enhancement bonus, the caster level is three times the enhancement bonus. If an item has both an enhancement bonus and a special ability, the higher of the two caster level requirements must be met.
@@ -169,75 +169,94 @@ The prices of enhancement bonuses to armor are listed in \trefnp{Magic Armor and
 \parhead{Activation} A character benefits from magic armor and shields in exactly the way a character benefits from nonmagical armor and shields - by wearing them. Special abilities on body armor are usually activated if the character is struck or damaged, while special abilities on shields are usually activated if the character avoids an attack.
 
 \begin{dtable}
-\lcaption{Armor Special Abilities}
-\begin{tabularx}{\columnwidth}{>{\lcol}X l l l}
-  \thead{Special Ability} & \thead{Cost} & \thead{Item Level} & \thead{Location}\\
-  Energy Resistance, Lesser & 500 gp & 4th & Armor\\
-  Flaming Burst & 1,000 gp & 5th & Armor, Shield \\
-  Freezing Burst & 1,000 gp & 5th & Armor, Shield \\
-  Glamered & 1,000 gp & 5th & Armor \\
-  Bashing & 2,250 gp & 7th & Shield \\
-  Ghost Touch & 2,250 gp & 7th & Armor, Shield \\
-  Shocking Burst & 2,250 gp & 7th & Armor, Shield \\
-  Spell Resistance & 2,250 gp & 7th & Armor \\
-  Energy Resistance & 4,500 gp & 9th & Armor\\
-  Invulnerability & 9,000 gp & 12th & Armor \\
-  Spell Reflecting & 12,250 gp & 14th & Shield \\
-  Spell Resistance & 12,500 gp & 14th & Armor \\
-\end{tabularx}
+    \lcaption{Armor Special Abilities}
+    \begin{tabularx}{\columnwidth}{>{\lcol}X l l l}
+        \thead{Special Ability} & \thead{Cost} & \thead{Item Level} & \thead{Location}\\
+        Bashing, Lesser & 200 gp & 3rd & Shield \\
+        Energy Resistance, Lesser & 200 gp & 3rd & Armor\\
+        Flaming Burst & 800 gp & 5th & Armor, Shield \\
+        Freezing Burst & 800 gp & 5th & Armor, Shield \\
+        Glamered & 800 gp & 5th & Armor \\
+        Bashing & 1,000 gp & 6th & Shield \\
+        Ghost Touch & 1,000 gp & 7th & Armor, Shield \\
+        Energy Resistance & 2,000 gp & 8th & Armor\\
+        Shocking Burst & 2,000 gp & 8th & Armor, Shield \\
+        Invulnerability & 2,000 gp & 12th & Armor \\
+        Bashing, Greater & 5,000 gp & 10th & Shield \\
+        Invulnerability, Greater & 30,000 gp & 14th & Armor \\
+        Spell Reflecting & 60,000 gp & 16th & Shield \\
+
+
+        Spell Resistance & 2,250 gp & 7th & Armor \\
+        Spell Resistance & 12,500 gp & 14th & Armor \\
+    \end{tabularx}
 \end{dtable}
 
-\appdescription{Bashing}{2,250}{7th}{Shield}{Faint Transmutation (Augment)}{6th}{\x} When a shield with this ability is used to perform a shield bash, it deals damage as if it were two size categories larger (so a Medium light shield deals 1d6 damage, and a Medium heavy shield deals 1d8 damage). 
+\appdescription{Bashing, Lesser}{200}{3rd}{Shield}{Faint Transmutation (Augment)}{4th}{\x} When a shield with this ability is used to perform a shield bash, it deals damage as if it were one size category larger (so a Medium light shield deals 1d4 damage, and a Medium heavy shield deals 1d6 damage). This is considered an enhancement bonus, and does not stack with similar abilities.
+
+\mitemreq{Transmutation}{Augment}{2}{4th}{Craft (as shield) 8}
+
+\appdescription{Bashing}{1,000}{6th}{Shield}{Faint Transmutation (Augment)}{6th}{\x} When a shield with this ability is used to perform a shield bash, it deals damage as if it were two size categories larger (so a Medium light shield deals 1d6 damage, and a Medium heavy shield deals 1d8 damage). This is considered an enhancement bonus, and does not stack with similar abilities.
 
 \mitemreq{Transmutation}{Augment}{3}{6th}{Craft (as shield) 10}
 
-\appdescription{Energy Resistance, Lesser}{500}{4th}{Armor}{Faint Abjuration (Shielding)}{2nd}{Immediate (triggered) 1/day} When you take energy damage, you can activate this armor to reduce the damage by 5 \add half your character level.
+\appdescription{Bashing, Greater}{5,000}{10th}{Shield}{Faint Transmutation (Augment)}{10th}{\x} This shield functions like a bashing shield. In addition, you gain a \plus2 bonus to your dodge defense modifier for 1 round against any creature you successfully shield bash with this shield.
+
+\mitemreq{Transmutation}{Augment}{5}{10th}{Craft (as shield) 14}
+
+\appdescription{Energy Resistance, Lesser}{200}{3rd}{Armor}{Faint Abjuration (Shielding)}{2nd}{Immediate (triggered)} When you take energy damage, you can activate this armor to reduce the damage by 5 \add half your level.
 
 \mitemreq{Abjuration}{Shielding}{1}{2nd}{Craft (as armor) 6}
 
-\appdescription{Energy Resistance}{4,500}{9th}{Armor}{Moderate Abjuration (Shielding)}{6th}{Immediate (triggered) 1/day} When you take energy damage, you can activate this armor to gain damage reduction equal to 15 \add half your character level against that type of energy damage for 5 rounds.
+\appdescription{Energy Resistance}{2,000}{8th}{Armor}{Moderate Abjuration (Shielding)}{6th}{Immediate (triggered)} When you take energy damage, you can activate this armor to gain damage reduction equal to 10 \add half your level against that type of energy damage for 5 rounds. During this time, the armor casts light as a torch. The color of the light depends on the energy damage resisted: green for acid, blue for cold, yellow for electricity, and red for fire.
 
-\mitemreq{Abjuration}{Shielding}{3}{6th}{Craft (as armor) 12}
+\mitemreq{Abjuration}{Shielding}{3}{6th}{Craft (as armor) 10}
 
-\appdescription{Flaming Burst}{1,000}{5th}{Armor, Shield}{Faint Evocation (Energy) [Fire]}{4th}{Immediate (triggered) 1/day} When you are struck or missed by a melee attack, you can trigger a burst of flames which sear the foe that attacked you. Body armor triggers if the attack hits, and shields trigger if the attack misses.
+\appdescription{Flaming Burst}{800}{5th}{Armor, Shield}{Faint Evocation (Energy) [Fire]}{4th}{Immediate (triggered)} When you are struck or missed by a melee attack, you can trigger a burst of flames which sear the foe that attacked you. Body armor triggers if the attack hits, and shields trigger if the attack misses.
 
-If you activate the item, your foe takes 1d10 fire damage per two character levels (minimum 2d10). In addition, it is ignited for 5 rounds or until it puts out the flames, which requires a move action and a DC 15 Reflex save. While ignited, it takes d6 fire damage each round and is vulnerable, causing it to take a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
+If you activate the item, you deal 1d10 fire damage per two levels to your attacker (minimum 2d10). In addition, it is ignited for 5 rounds. An ignited creature is vulnerable, causing it to take a \minus2 penalty to attacks, defenses, and checks. In addition, at the end of each of its turns, it takes d6 damage from the fire. If the creature takes a move action, it can attempt a DC 10 Dexterity check to put out the flames. This action requires a free hand. Dropping prone as part of the action gives a \plus5 bonus on this check.
 
 \mitemreqdesc{Evocation}{Energy}{Fire}{2}{4th}{Craft (as armor) 8}
 
-\appdescription{Freezing Burst}{1,000}{5th}{Armor, Shield}{Faint Evocation (Energy) [Cold]}{4th}{Immediate (triggered) 1/day} When you are struck or missed by a melee attack, you can trigger a frigid burst against the foe that attacked you. Body armor triggers if the attack hits, and shields trigger if the attack misses.
+\appdescription{Freezing Burst}{800}{5th}{Armor, Shield}{Faint Evocation (Energy) [Cold]}{4th}{Immediate (triggered)} When you are struck or missed by a melee attack, you can trigger a frigid burst against the foe that attacked you. Body armor triggers if the attack hits, and shields trigger if the attack misses.
 
-If you activate the item, your foe takes 1d10 cold damage per two character levels (minimum 2d10). In addition, it is fatigued for 5 rounds. While fatigued, it can neither run nor charge and is vulnerable, giving it a \minus2 penalty to attack rolls, saving throws, checks, DCs, and AC.
+If you activate the item, you deal 1d10 cold damage per two levels to your attacker (minimum 2d10). In addition, it is fatigued for 5 rounds. A fatigued character can neither sprint nor charge and is vulnerable, giving it a \minus2 penalty to attacks, defenses, and checks.
 
 \mitemreqdesc{Evocation}{Energy}{Cold}{2}{4th}{Craft (as armor) 8}
 
-\appdescription{Ghost Touch}{2,250}{7th}{Armor, Shield}{Faint Conjuration (Translocation) [Planar]}{6th}{\x} This armor or shield seems almost translucent. Both its enhancement bonus and its armor bonus count against the attacks of incorporeal creatures. It can be picked up, moved, and worn by incorporeal creatures at any time. Incorporeal creatures gain the armor or shield's enhancement bonus against both corporeal and incorporeal attacks, and they can still pass freely through solid objects.
+\appdescription{Ghost Touch}{1,000}{6th}{Armor, Shield}{Faint Conjuration (Translocation) [Planar]}{6th}{\x} This armor or shield seems almost translucent. You apply the full bonus granted by this armor or shield, including its enhancement bonus,against the attacks of incorporeal creatures. It can be picked up, moved, and worn by incorporeal creatures at any time. Incorporeal creatures gain the armor or shield's enhancement bonus against both corporeal and incorporeal attacks, and they can still pass freely through solid objects.
 
 \mitemreqdesc{Conjuration}{Translocation}{Planar}{3}{6th}{Craft (as armor) 10}
 
-\appdescription{Glamered}{1,000}{5th}{Armor}{Faint Illusion (Glamer)}{4th}{Standard (specific action)} If you trace the symbol of a mask on your chest (a standard action), this armor appears to change shape and form to assume the appearance of a normal set of clothing. You may choose the design of the clothing. The armor retains all its properties (including weight and sound) when glamered. Only a \spell{true seeing} spell or similar magic reveals the true nature of the armor when disguised. The armor remains disguised until you trace the symbol of the mask in the reverse direction, at which point it regains its normal appearance. 
+\appdescription{Glamered}{800}{5th}{Armor}{Faint Illusion (Glamer)}{4th}{Standard (specific action)} If you trace the symbol of a mask on your chest (a standard action), this armor appears to change shape and form to assume the appearance of a normal set of clothing. You may choose the design of the clothing. The armor retains all its properties (including weight and sound) when glamered. Only a \spell{true seeing} spell or similar magic reveals the true nature of the armor when disguised. The armor remains disguised until you trace the symbol of the mask in the reverse direction, at which point it regains its normal appearance. 
 
 \mitemreq{Illusion}{Glamer}{2}{4th}{Craft (as armor) 8}
 
-\appdescription{Invulnerability}{9,000}{12th}{Armor}{Moderate Abjuration (Shielding)}{12th}{\x} This suit of armor grants the wearer damage reduction equal to his character level. The damage reduction is overcome by adamantine weapons.
+\appdescription{Invulnerability}{2,000}{8th}{Armor}{Moderate Abjuration (Shielding)}{8th}{Standard (specific action)} If you strike your chest with a weapon or other hard object (a standard action), this armor grants you physical damage reduction equal to your level for 5 rounds. This allows you to ignore the first points of physical damage you take each round. If you are hit by an adamantine weapon, you cannot use your damage reduction for 1 round.
+
+\mitemreq{Abjuration}{Shielding}{3}{6th}{Craft (as armor) 10}
+
+\appdescription{Invulnerability, Greater}{30,000}{14th}{Armor}{Moderate Abjuration (Shielding)}{12th}{\x} This armor functions like invulnerability armor, except that the damage reduction lasts for 12 hours.
 
 \mitemreq{Abjuration}{Shielding}{6}{12th}{Craft (as armor) 16}
 
-\appdescriptiondc{Shocking Burst}{2,250}{7th}{Armor, Shield}{Faint Evocation (Energy) [Electricity]}{6th}{Immediate (triggered) 1/day}{Fortitude DC 13} When you are struck or missed by a melee attack, you can trigger a powerful jolt of electricity that zaps the foe that attacked you. Body armor triggers if the attack hits, and shields trigger if the attack misses.
+\appdescriptiondc{Shocking Burst}{2,000}{8th}{Armor, Shield}{Faint Evocation (Energy) [Electricity]}{6th}{Immediate (triggered)}{Fortitude (level \add 3)} When you are struck or missed by a melee attack, you can trigger a powerful jolt of electricity that zaps the foe that attacked you. Body armor triggers if the attack hits, and shields trigger if the attack misses.
 
-If you activate the item, your foe takes 1d10 electricity damage per two character levels (minimum 3d10). In addition, it is staggered for 5 rounds if it fails a Fortitude save. While staggered, it may take a single move action or standard action each round, but not both. It cannot take full-round actions, but it may take swift actions. In addition, it is vulnerable, causing it to take a \minus2 penalty on attack rolls, saving throws, checks, DCs, and AC.
+If you activate the item, you deal 1d10 electricity damage per two levels to your attacker (minimum 3d10). In addition, if you succeed at a Fortitude attack, it is staggered for 5 rounds. A staggered character may take a single move action or standard action each round, but not both. She cannot take full-round actions, but she may take swift actions. In addition, she is vulnerable, causing her to take a \minus2 penalty on attacks, defenses, and checks.
 
 \mitemreqdesc{Evocation}{Energy}{Electricity}{3}{6th}{Craft (as armor) 10}
 
-\appdescription{Spell Reflecting}{12,250}{14th}{Shield}{Strong Abjuration (Shielding) [Magic]}{14th}{Immediate (triggered) 1/day} This shield seems like a mirror. Its surface is completely reflective. When you are targeted by a spell or spell-like ability, you can activate the shield to reflect the spell back at its caster exactly like the \spell{spell turning} spell.
+\appdescription{Spell Reflecting}{60,000}{16th}{Shield}{Strong Abjuration (Shielding) [Magic]}{14th}{Immediate (triggered)} This shield's surface is completely reflective, allowing it to act as a mirror. When you are targeted by a spell or spell-like ability, you can activate the shield to reflect the spell back at its caster exactly like the \spell{spell turning} spell.
+
+After you activate this item, its surface becomes dully metallic instead of reflective for 5 rounds. During this time, you cannot activate it again.
 
 \mitemreqdesc{Abjuration}{Shielding}{Magic}{7}{14th}{Craft (as armor) 18}
 
-\appdescription{Spell Resistance}{2,250}{7th}{Armor}{Moderate Abjuration (Shielding) [Magic]}{6th}{Standard (specific action) 1/day} By crouching low and striking the ground with your fist, you command this armor to grant you spell resistance. The spell resistance lasts for as long as you remain crouching, and for 5 rounds theareafter. You can move at half speed while crouching.
+\appdescription{Spell Resistance}{5,000}{10th}{Armor}{Moderate Abjuration (Shielding) [Magic]}{8th}{Standard (specific action) 1/day} If you crouch low and strike the ground with your fist (a standard action), this armor grants you spell resistance. The spell resistance lasts as long as you remain crouching, and for 5 rounds theareafter. You can move at half speed while crouching.
 
-During that time, you may always make a saving throw when a spell is cast on you. If you succeed, the spell has no effect on you. The type of saving throw made is indicated by the spell. If the spell also allows a saving throw of the same type, only one roll is made.
+To affect a creature with spell resistance using a spell or spell-like ability, a special attack is always required. The defense used against the attack is indicated by the spell. If the attack fails, the spell has no effect.
 
-\mitemreqdesc{Abjuration}{Shielding}{Magic}{3}{6th}{Craft (as armor) 10}
+\mitemreqdesc{Abjuration}{Shielding}{Magic}{4}{8th}{Craft (as armor) 12}
 
 \subsection{Arms}
 
