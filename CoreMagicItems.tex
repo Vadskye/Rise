@@ -139,6 +139,57 @@ Items without components do not have a ``Cost'' entry. For them, the market pric
 
 \section{Apparel}
 
+\begin{dtable}
+    \lcaption{Armor and Shield Special Abilities}
+    \begin{tabularx}{\columnwidth}{>{\lcol}X l l l}
+        \thead{Special Ability} & \thead{Cost} & \thead{Item Level} & \thead{Location}\\
+        Bashing, Lesser & 200 gp & 3rd & Shield \\
+        Energy Resistance, Lesser & 200 gp & 3rd & Armor\\
+        Flaming Burst & 800 gp & 5th & Armor, Shield \\
+        Freezing Burst & 800 gp & 5th & Armor, Shield \\
+        Glamered & 800 gp & 5th & Armor \\
+        Bashing & 1,000 gp & 6th & Shield \\
+        Ghost Touch & 1,000 gp & 7th & Armor, Shield \\
+        Energy Resistance & 2,000 gp & 8th & Armor\\
+        Shocking Burst & 2,000 gp & 8th & Armor, Shield \\
+        Invulnerability & 2,000 gp & 12th & Armor \\
+        Bashing, Greater & 5,000 gp & 10th & Shield \\
+        Spell Resistance & 5,000 gp & 10th & Armor \\
+        Invulnerability, Greater & 30,000 gp & 14th & Armor \\
+        Spell Reflecting & 60,000 gp & 16th & Shield \\
+    \end{tabularx}
+\end{dtable}
+
+\begin{dtable}
+    \lcaption{Other Apparel Special Abilities}
+    \begin{tabularx}{\columnwidth}{>{\lcol}X l l l}
+        \thead{Special Ability} & \thead{Cost} & \thead{Item Level} & \thead{Location}\\ 
+        Ring of Protection \plus1 & 100 gp & 2nd & Ring \\
+        Ring of Energy Resistance, Lesser & 200 gp & 3rd & Ring \\
+        Boots of Elvenkind & 300 gp & 5th & Legs \\
+        Ring of Protection \plus2 & 500 gp & 4th & Ring \\
+        Belt of Constitution & 2,000 gp & 8th & Torso \\
+        Circlet of Wisdom & 2,000 gp & 8th & Head \\
+        Cloak of Charisma & 2,000 gp & 8th & Torso \\
+        Gauntlets of Ogre Strength & 2,000 gp & 8th & Arms \\
+        Gloves of Dexterity & 2,000 gp & 8th & Arms \\
+        Headband of Intellect & 2,000 gp & 8th & Head \\
+        Boots of Mobility & 1,000 gp & 6th & Legs \\
+        Ring of Sustenance & 1,000 gp & 6th & Ring \\
+        Ring of Energy Resistance & 2,000 gp & 8th & Ring \\
+        Ring of Protection \plus3 & 2,500 gp & 8th & Ring \\
+        Boots of Speed & 5,000 gp & 10th & Legs \\
+        Belt of Constitution, Greater & 12,000 gp & 12th & Torso \\
+        Circlet of Wisdom, Greater & 12,000 gp & 12th & Head \\
+        Cloak of Charisma, Greater & 12,000 gp & 12th & Torso \\
+        Gauntlets of Ogre Strength, Greater & 12,000 gp & 12th & Arms \\
+        Gloves of Dexterity, Greater & 12,000 gp & 12th & Arms \\
+        Headband of Intellect, Greater & 12,000 gp & 12th & Head \\
+        Ring of Protection \plus4 & 12,500 gp & 12th & Ring \\
+        Ring of Protection \plus5 & 62,500 gp & 16th & Ring \\
+    \end{tabularx}
+\end{dtable}
+
 \subsection{Armor and Shields}
 
 Magic body armor and shields protect the wearer to a greater extent than their nonmagical equivalents. They always provide an enhancement bonus to a character's armor modifier or shield modifier to AC. In addition to an enhancement bonus, armor may have special abilities or be made of an unusual material.
@@ -168,27 +219,6 @@ The prices of enhancement bonuses to armor are listed in \trefnp{Magic Armor and
 
 \parhead{Activation} A character benefits from magic armor and shields in exactly the way a character benefits from nonmagical armor and shields - by wearing them. Special abilities on body armor are usually activated if the character is struck or damaged, while special abilities on shields are usually activated if the character avoids an attack.
 
-\begin{dtable}
-    \lcaption{Armor Special Abilities}
-    \begin{tabularx}{\columnwidth}{>{\lcol}X l l l}
-        \thead{Special Ability} & \thead{Cost} & \thead{Item Level} & \thead{Location}\\
-        Bashing, Lesser & 200 gp & 3rd & Shield \\
-        Energy Resistance, Lesser & 200 gp & 3rd & Armor\\
-        Flaming Burst & 800 gp & 5th & Armor, Shield \\
-        Freezing Burst & 800 gp & 5th & Armor, Shield \\
-        Glamered & 800 gp & 5th & Armor \\
-        Bashing & 1,000 gp & 6th & Shield \\
-        Ghost Touch & 1,000 gp & 7th & Armor, Shield \\
-        Energy Resistance & 2,000 gp & 8th & Armor\\
-        Shocking Burst & 2,000 gp & 8th & Armor, Shield \\
-        Invulnerability & 2,000 gp & 12th & Armor \\
-        Bashing, Greater & 5,000 gp & 10th & Shield \\
-        Spell Resistance & 5,000 gp & 10th & Armor \\
-        Invulnerability, Greater & 30,000 gp & 14th & Armor \\
-        Spell Reflecting & 60,000 gp & 16th & Shield \\
-    \end{tabularx}
-\end{dtable}
-
 \appdescription{Bashing, Lesser}{200}{3rd}{Shield}{Faint Transmutation (Augment)}{4th}{\x} When a shield with this ability is used to perform a shield bash, it deals damage as if it were one size category larger (so a Medium light shield deals 1d4 damage, and a Medium heavy shield deals 1d6 damage). This is considered an enhancement bonus, and does not stack with similar abilities.
 
 \mitemreq{Transmutation}{Augment}{2}{4th}{Craft (as shield) 8}
@@ -197,7 +227,7 @@ The prices of enhancement bonuses to armor are listed in \trefnp{Magic Armor and
 
 \mitemreq{Transmutation}{Augment}{3}{6th}{Craft (as shield) 10}
 
-\appdescription{Bashing, Greater}{5,000}{10th}{Shield}{Faint Transmutation (Augment)}{10th}{\x} This shield functions like a bashing shield. In addition, you gain a \plus2 bonus to your dodge defense modifier for 1 round against any creature you successfully shield bash with this shield.
+\appdescription{Bashing, Greater}{5,000}{10th}{Shield}{Faint Transmutation (Augment)}{10th}{\x} This shield functions like a \magicitem{bashing} shield. In addition, you gain a \plus2 bonus to your dodge defense modifier for 1 round against any creature you successfully shield bash with this shield.
 
 \mitemreq{Transmutation}{Augment}{5}{10th}{Craft (as shield) 14}
 
@@ -233,7 +263,7 @@ If you activate the item, you deal 1d10 cold damage per two levels to your attac
 
 \mitemreq{Abjuration}{Shielding}{3}{6th}{Craft (as armor) 10}
 
-\appdescription{Invulnerability, Greater}{30,000}{14th}{Armor}{Moderate Abjuration (Shielding)}{12th}{\x} This armor functions like invulnerability armor, except that the damage reduction lasts for 12 hours.
+\appdescription{Invulnerability, Greater}{30,000}{14th}{Armor}{Moderate Abjuration (Shielding)}{12th}{\x} This armor functions like \magicitem{invulnerability} armor, except that the damage reduction lasts for 12 hours.
 
 \mitemreq{Abjuration}{Shielding}{6}{12th}{Craft (as armor) 16}
 
@@ -249,7 +279,7 @@ After you activate this item, its surface becomes dully metallic instead of refl
 
 \mitemreqdesc{Abjuration}{Shielding}{Magic}{7}{14th}{Craft (as armor) 18}
 
-\appdescription{Spell Resistance}{5,000}{10th}{Armor}{Moderate Abjuration (Shielding) [Magic]}{8th}{Standard (specific action)} If you crouch low and strike the ground with your fist (a standard action), this armor grants you spell resistance. The spell resistance lasts as long as you remain crouching, and for 5 rounds theareafter. You can move at half speed while crouching.
+\appdescription{Spell Resistance}{5,000}{10th}{Armor}{Moderate Abjuration (Shielding) [Magic]}{8th}{Standard (specific action)} If you crouch low and strike the ground with your fist (a standard action), this armor grants you spell resistance. The spell resistance lasts as long as you remain crouching, and for 5 rounds thereafter (maximum 5 minutes). You can move at half speed while crouching.
 
 To affect a creature with spell resistance using a spell or spell-like ability, a special attack is always required. The defense used against the attack is indicated by the spell. If the attack fails, the spell has no effect.
 
@@ -257,51 +287,51 @@ To affect a creature with spell resistance using a spell or spell-like ability, 
 
 \subsection{Arms}
 
-\appdescription{Gloves of Dexterity}{2,250}{7th}{Arms}{Faint Transmutation (Augment)}{6th}{Standard (specific action) 1/day} By rubbing your gloved palms together (a standard action), you command these gauntlets to grant you a \plus2 enhancement bonus to Dexterity for 5 minutes. Unless you can defend yourself without the use of your hands, you provoke attacks of opportunity when activating this item.
+\appdescription{Gloves of Dexterity}{2,000}{8th}{Arms}{Faint Transmutation (Augment)}{4th}{Standard (specific action)} By rubbing your gloved palms together (a standard action), you command these gauntlets to grant you a \plus2 enhancement bonus to Dexterity for 5 minutes. Unless you can defend yourself without the use of your hands, you provoke attacks of opportunity when activating this item.
 
 \mitemreq{Transmutation}{Augment}{2}{6th}{Craft (leather or textiles) 10}
 
-\appdescription{Gloves of Dexterity, Greater}{9,000}{12th}{Arms}{Moderate Transmutation (Augment)}{12th}{Standard (specific action) 1/day} These gloves function like \magicitem{gloves of dexterity}, except that they grant a \plus4 enhancement bonus to Dexterity instead.
+\appdescription{Gloves of Dexterity, Greater}{12,000}{12th}{Arms}{Moderate Transmutation (Augment)}{12th}{Standard (specific action)} These gloves function like \magicitem{gloves of dexterity}, except that they grant a \plus4 enhancement bonus to Dexterity instead.
 
-\mitemreq{Transmutation}{Augment}{5}{12th}{Craft (leather or textiles) 16}
+\mitemreq{Transmutation}{Augment}{5}{2th}{Craft (leather or textiles) 16}
 
-\appdescription{Gauntlets of Ogre Strength}{2,250}{7th}{Arms}{Faint Transmutation (Augment)}{6th}{Standard (specific action) 1/day} By striking your gauntleted fists against each other in front of you (a standard action), you command these gauntlets to grant you a \plus2 enhancement bonus to Strength for 5 minutes. Unless you can defend yourself without the use of your hands, you provoke attacks of opportunity when activating this item.
+\appdescription{Gauntlets of Ogre Strength}{2,000}{8th}{Arms}{Faint Transmutation (Augment)}{6th}{Standard (specific action)} By striking your gauntleted fists against each other in front of you (a standard action), you command these gauntlets to grant you a \plus2 enhancement bonus to Strength for 5 minutes. Unless you can defend yourself without the use of your hands, you provoke attacks of opportunity when activating this item.
 
 \mitemreq{Transmutation}{Augment}{2}{6th}{Craft (metal) 10}
 
-\appdescription{Gauntlets of Giant Strength}{9,000}{12th}{Arms}{Moderate Transmutation (Augment)}{8th}{Standard (specific action) 1/day} These gauntlets function like \magicitem{gauntlets of ogre strength}, except that they grant a \plus4 enhancement bonus to Strength instead.
+\appdescription{Gauntlets of Giant Strength}{12,000}{12th}{Arms}{Moderate Transmutation (Augment)}{8th}{Standard (specific action)} These gauntlets function like \magicitem{gauntlets of ogre strength}, except that they grant a \plus4 enhancement bonus to Strength instead.
 
-\mitemreq{Transmutation}{Augment}{5}{12th}{Craft (metal) 16}
+\mitemreq{Transmutation}{Augment}{5}{2th}{Craft (metal) 16}
 
 \subsection{Head}
 
-\appdescription{Circlet of Wisdom}{2,250}{7th}{Head}{Faint Transmutation (Augment)}{6th}{Standard (specific action) 1/day} By bowing your head and closing your eyes in contemplation (a standard action), you command this circlet to grant you a \plus2 enhancement bonus to Wisdom for 5 minutes. Unless you can defend yourself while blind, you provoke attacks of opportunity when activating this item.
+\appdescription{Circlet of Wisdom}{2,000}{8th}{Head}{Faint Transmutation (Augment)}{4th}{Standard (specific action) 1/day} By bowing your head and closing your eyes in contemplation (a standard action), you command this circlet to grant you a \plus2 enhancement bonus to Wisdom for 5 minutes. Unless you can defend yourself while blind, you provoke attacks of opportunity when activating this item.
 
 \mitemreq{Transmutation}{Augment}{2}{6th}{Craft (metal) 10}
 
-\appdescription{Circlet of Wisdom, Greater}{8,000}{12th}{Head}{Moderate Transmutation (Augment)}{12th}{Standard (specific action) 1/day} This circlet functions like a \magicitem{circlet of wisdom}, except that it grants a \plus4 enhancement bonus to Wisdom instead.
+\appdescription{Circlet of Wisdom, Greater}{12,000}{10th}{Head}{Moderate Transmutation (Augment)}{12th}{Standard (specific action) 1/day} This circlet functions like a \magicitem{circlet of wisdom}, except that it grants a \plus4 enhancement bonus to Wisdom instead.
 
-\mitemreq{Transmutation}{Augment}{5}{12th}{Craft (metal) 16}
+\mitemreq{Transmutation}{Augment}{5}{2th}{Craft (metal) 16}
 
-\appdescription{Headband of Intellect}{2,250}{7th}{Head}{Faint Transmutation (Augment)}{6th}{Standard (specific action) 1/day} By stroking your chin or beard thoughtfully with one hand (a standard action), you command this headband to grant you a \plus2 enhancement bonus to Intelligence for 5 minutes.
+\appdescription{Headband of Intellect}{2,000}{8th}{Head}{Faint Transmutation (Augment)}{4th}{Standard (specific action)} By stroking your chin or beard thoughtfully with one hand (a standard action), you command this headband to grant you a \plus2 enhancement bonus to Intelligence for 5 minutes.
 
 \mitemreq{Transmutation}{Augment}{2}{6th}{Craft (metal) 10}
 
-\appdescription{Headband of Intellect, Greater}{9,000}{12th}{Head}{Moderate Transmutation (Augment)}{12th}{Standard (specific action) 1/day} This headband functions like a \magicitem{headband of intellect}, except that it grants a \plus4 enhancement bonus to Intelligence instead.
+\appdescription{Headband of Intellect, Greater}{12,000}{10th}{Head}{Moderate Transmutation (Augment)}{12th}{Standard (specific action)} This headband functions like a \magicitem{headband of intellect}, except that it grants a \plus4 enhancement bonus to Intelligence instead.
 
-\mitemreq{Transmutation}{Augment}{5}{12th}{Craft (metal) 16}
+\mitemreq{Transmutation}{Augment}{5}{2th}{Craft (metal) 16}
 
 \subsection{Legs}
 
-\appdescription{Boots of Elvenkind}{1,400}{6th}{Legs}{Faint Transmutation (Augment)}{4th}{Standard (specific action) 3/day} While wearing these boots, you gain a \plus2 enhancement bonus to Stealth checks. In addition, by crouching down and touching the top of one of the boots, you can command the boots to grant you a \plus5 enhancement bonus to Stealth checks. The bonus lasts for as long as you remain crouching, and for 5 rounds thereafter. You can move at half speed while crouching. 
+\appdescription{Boots of Elvenkind}{300}{4th}{Legs}{Faint Transmutation (Augment)}{2nd}{Standard (specific action)} While wearing these boots, you gain a \plus2 enhancement bonus to Stealth checks. In addition, if you crouch down and touch the top of one of the boots (a standard action), you gain a \plus5 enhancement bonus to Stealth checks. The bonus lasts as long as you remain crouching, and for 5 rounds thereafter (maximum 5 minutes). You can move at half speed while crouching.
 
-\mitemreq{Transmutation}{Augment}{2}{4th}{Craft (leather) 8}
+\mitemreq{Transmutation}{Augment}{1}{2nd}{Craft (leather) 6}
 
-\appdescription{Boots of Mobility}{5,000}{10th}{Legs}{Faint Transmutation (Augment)}{5th}{\x} While wearing these boots, you gain a \plus5 enhancement bonus to Acrobatics and Athletics checks.
+\appdescription{Boots of Mobility}{1,000}{6th}{Legs}{Faint Transmutation (Augment)}{4th}{\x} While wearing these boots, you gain a \plus4 enhancement bonus to Acrobatics and Athletics checks.
 
-\mitemreq{Transmutation}{Augment}{1}{5th}{Craft (leather) 9}
+\mitemreq{Transmutation}{Augment}{1}{4th}{Craft (leather) 8}
 
-\appdescription{Boots of Speed}{8,000}{12th}{Legs}{Moderate Transmutation (Temporal)}{8th}{Swift (specific action) 1/day} By clicking your heels together (a swift action), you can command these boots to grant you the effects of the \spell{haste} spell for 5 rounds.
+\appdescription{Boots of Speed}{5,000}{10th}{Legs}{Moderate Transmutation (Temporal)}{8th}{Standard (specific action)} If you stomp your foot on the ground three times (a standard action), you gain the effects of the \spell{haste} spell. This benefit lasts as long as you move continuously without taking any other action, and for 5 rounds thereafter (maximum 5 minutes).
 
 \mitemreq{Transmutation}{Temporal}{4}{8th}{Craft (leather) 12}
 
@@ -335,30 +365,15 @@ Protection \plus5 & 50,000 gp \\
 \end{dtable}
 \end{comment}
 
-\begin{dtable}
-    \lcaption{Rings}
-    \begin{tabularx}{\columnwidth}{>{\lcol}X l l}
-        \thead{Ring} & \thead{Market Price} & \thead{Item Level} \\
-        Energy Resistance, Lesser & 500 gp & 4th \\
-        Protection \plus1 & 500 gp & 4th \\
-        Sustenance & 1,000 gp & 5th \\
-        Protection \plus2 & 2,000 gp & 6th \\
-        Energy Resistance & 4,500 gp & 9th \\
-        Protection \plus3 & 4,500 gp & 9th \\
-        Protection \plus4 & 8,000 gp & 12th \\
-        Protection \plus5 & 12,500 gp & 14th \\
-    \end{tabularx}
-\end{dtable}
-
-\appdescription{Energy Resistance, Lesser}{500}{4th}{Ring}{Faint Abjuration (Shielding)}{2nd}{Immediate (triggered) 1/day} When you take energy damage, you can activate this ring to reduce the damage by 5 \add half your character level.
+\appdescription{Energy Resistance, Lesser}{200}{3rd}{Ring}{Faint Abjuration (Shielding)}{2nd}{Immediate (triggered)} When you take energy damage, you can activate this ring to reduce the damage by 5 \add half your level.
 
 \mitemreq{Abjuration}{Shielding}{1}{2nd}{Craft (metal) 6}
 
-\appdescription{Energy Resistance}{4,500}{9th}{Ring}{Moderate Abjuration (Shielding)}{6th}{Immediate (triggered) 1/day} When you take energy damage, you can activate this ring to gain damage reduction equal to 15 \add half your character level against that type of energy damage for 5 rounds.
+\appdescription{Energy Resistance}{2,000}{8th}{Ring}{Moderate Abjuration (Shielding)}{6th}{Immediate (triggered)} When you take energy damage, you can activate this ring to gain damage reduction equal to 10 \add half your level against that type of energy damage for 5 rounds. During this time, the ring casts light as a torch. The color of the light depends on the energy damage resisted: green for acid, blue for cold, yellow for electricity, and red for fire.
 
-\mitemreq{Abjuration}{Shielding}{3}{6th}{Craft (metal) 12}
+\mitemreq{Abjuration}{Shielding}{3}{6th}{Craft (metal) 10}
 
-\appdescription{Sustenance}{1,000}{5th}{Ring}{Faint Conjuration/Transmutation (Creation, Temporal)}{4th}{\x} This ring continually provides its wearer with life-sustaining nourishment. The ring also refreshes the body and mind, so that its wearer needs only sleep 2 hours per day to gain the benefit of 8 hours of sleep. This does not affect how much rest the wearer must get to regain spells. The ring must be worn for a full week before it begins to work. If it is removed, the owner must wear it for another week to reattune it to himself.
+\appdescription{Sustenance}{1,000}{6th}{Ring}{Faint Conjuration/Transmutation (Creation, Temporal)}{4th}{\x} This ring continually provides its wearer with life-sustaining nourishment. The ring also refreshes the body and mind, so that its wearer needs only sleep 2 hours per day to gain the benefit of 8 hours of sleep. This does not affect how much rest the wearer must get to regain spells. The ring must be worn for a full week before it begins to work. If it is removed, the owner must wear it for another week to reattune it to himself.
 
 \mitemreq{Conjuration/Transmutation}{Creation, Temporal}{2}{4th}{Craft (metal) 8}
 
@@ -366,15 +381,15 @@ Protection \plus5 & 50,000 gp \\
 A ring of protection grants an enhancement bonus to your saving throws while worn. The price of the ring depends on its enhancement bonus, as shown in the table below.
 
 \begin{dtable}
-\caption{Ring of Protection}
-\begin{tabularx}{\columnwidth} {>{\ccol}X c c}
-  \thead{Enhancement Bonus} & \thead{Base Price} & \thead{Item Level} \\
-\plus1  & 500 gp & 4th\\
-\plus2 & 2,000 gp & 6th\\
-\plus3 & 4,500 gp & 9th\\
-\plus4 & 8,000 gp & 12th \\
-\plus5 & 16,000 gp & 15th \\
-\end{tabularx}
+    \caption{Ring of Protection}
+    \begin{tabularx}{\columnwidth} {>{\ccol}X c c}
+        \thead{Enhancement Bonus} & \thead{Base Price} & \thead{Item Level} \\
+        \plus1 & 100 gp & 2nd \\
+        \plus2 & 500 gp & 4th \\
+        \plus3 & 2,500 gp & 8th \\
+        \plus4 & 12,500 gp & 12th \\
+        \plus5 & 62,500 gp & 16th \\
+    \end{tabularx}
 \end{dtable}
 
 The caster level is equal to three times the item's enhancement bonus. To craft the item, you must have a number of ranks in Craft (jewelry) equal to the item's caster level \add 4.
@@ -383,21 +398,21 @@ The caster level is equal to three times the item's enhancement bonus. To craft 
 
 \subsection{Torso}
 
-\appdescription{Belt of Constitution}{2,250}{7th}{Torso}{Faint Transmutation (Augment)}{6th}{Standard (specific action) 1/day} By tightening the straps on this belt with both hands (a standard action), you command it to grant you a \plus2 enhancement bonus to Constitution for 5 rounds. Unless you can defend yourself without the use of your hands, you provoke attacks of opportunity when activating this item.
+\appdescription{Belt of Constitution}{2,000}{8th}{Torso}{Faint Transmutation (Augment)}{6th}{Standard (specific action)} By tightening the straps on this belt with both hands (a standard action), you command it to grant you a \plus2 enhancement bonus to Constitution for 5 minutes. Unless you can defend yourself without the use of your hands, you provoke attacks of opportunity when activating this item.
 
 \mitemreq{Transmutation}{Augment}{2}{6th}{Craft (textiles) 10}
 
-\appdescription{Belt of Constitution, Greater}{9,000}{12th}{Torso}{Moderate Transmutation (Augment)}{12th}{Standard (specific action) 1/day} This belt functions like a \magicitem{belt of constitution}, except that it grants a \plus4 enhancement bonus to Constitution instead.
+\appdescription{Belt of Constitution, Greater}{12,000}{12th}{Torso}{Moderate Transmutation (Augment)}{12th}{Standard (specific action) 1/day} This belt functions like a \magicitem{belt of constitution}, except that it grants a \plus4 enhancement bonus to Constitution instead.
 
-\mitemreq{Transmutation}{Augment}{5}{12th}{Craft (textiles) 16}
+\mitemreq{Transmutation}{Augment}{5}{2th}{Craft (textiles) 16}
 
-\appdescription{Cloak of Charisma}{2,250}{7th}{Torso}{Faint Transmutation (Augment)}{6th}{Standard (specific action) 1/day} By flourishing this cloak with one hand (a standard action), you command it to grant you a \plus2 enhancement bonus to Charisma for 5 rounds.
+\appdescription{Cloak of Charisma}{2,000}{8th}{Torso}{Faint Transmutation (Augment)}{6th}{Standard (specific action)} By flourishing this cloak with one hand (a standard action), you command it to grant you a \plus2 enhancement bonus to Charisma for 5 minutes.
 
 \mitemreq{Transmutation}{Augment}{2}{6th}{Craft (textiles) 10}
 
-\appdescription{Cloak of Charisma, Greater}{9,000}{12th}{Torso}{Moderate Transmutation (Augment)}{12th}{Standard (specific action) 1/day} This cloak functions like a \magicitem{cloak of charisma}, except that it grants a \plus4 enhancement bonus to Charisma instead.
+\appdescription{Cloak of Charisma, Greater}{12,000}{12th}{Torso}{Moderate Transmutation (Augment)}{12th}{Standard (specific action)} This cloak functions like a \magicitem{cloak of charisma}, except that it grants a \plus4 enhancement bonus to Charisma instead.
 
-\mitemreq{Transmutation}{Augment}{5}{12th}{Craft (textiles) 16}
+\mitemreq{Transmutation}{Augment}{5}{2th}{Craft (textiles) 16}
 
 \section{Implements}
 
