@@ -61,47 +61,20 @@
 \newcommand{\tind}{\hspace{1em}}
 
 \newcommand{\appdescription}[7]{\subsubsection{#1} \parhead{Price (Level)} #2 gp (#3) \parhead{Body Location} #4 \parhead{Aura, Caster Level} #5, #6 \parhead{Activation} #7 \par}
-\newcommand{\appdescriptiondc}[8]{\appdescription{#1}{#2}{#3}{#4}{#5}{#6}{#7} \parhead{Saving Throw} #8 \add character level\par}
+\newcommand{\appdescriptiondc}[8]{\appdescription{#1}{#2}{#3}{#4}{#5}{#6}{#7} \parhead{Special Attack (Attack Bonus)} #8 \par}
 \newcommand{\impdescription}[6]{\subsubsection{#1} \parhead{Price (Level)} #2 gp (#3) \parhead{Aura, Caster Level} #4, #5 \parhead{Activation} #6 \par}
 \newcommand{\impdescriptionnoact}[5]{\subsubsection{#1} \parhead{Price (Level)} #2 gp (#3) \parhead{Aura, Caster Level} #4, #5 \par}
-\newcommand{\impdescriptiondc}[7]{\impdescription{#1}{#2}{#3}{#4}{#5}{#6} \parhead{Saving Throw} #7 \add character level\par}
-\newcommand{\impdescriptiondcnoact}[6]{\impdescription{#1}{#2}{#3}{#4}{#5} \parhead{Saving Throw} #6 \add character level\par}
+\newcommand{\impdescriptiondc}[7]{\impdescription{#1}{#2}{#3}{#4}{#5}{#6} \parhead{Special Attack (Attack Bonus)} #7 \par}
+\newcommand{\impdescriptiondcnoact}[6]{\impdescription{#1}{#2}{#3}{#4}{#5} \parhead{Special Attack (Attack Bonus)} #6 \par}
 %Spell creation requirements, without descriptors
 %School, subschool, spell level, caster level, craft skill
 \newcommand{\mitemreq}[5]{\par \textit{Creation Requirements:} #1 (#2) #3; caster level #4 or #5}
 \newcommand{\mitemreqdesc}[6]{\par \textit{Creation Requirements:} #1 (#2) [#3] #4; caster level #5 or #6}
 %Legacy
-\newcommand{\armdescription}[5]{\subsubsection{#1} \parhead{Bonus} \plus #2 \parhead{Caster Level} #3 \parhead{Aura} #4 \parhead{Activation} #5 \par}
-\newcommand{\armdescriptiondc}[6]{\armdescription{#1}{#2}{#3}{#4}{#5} \my{\textbf{Save DC:} #6 \add character level} \par}
-\newcommand{\itemdescription}[7]{\my{\subsubsection{#1} \parhead{Price (Level)} #2 gp (#3) \parhead{Body Slot} #4 \parhead{Caster Level} #5 \parhead{Aura} #6 \parhead{Activation} #7 \par}}
-\newcommand{\itemdescriptiondc}[8]{\itemdescription{#1}{#2}{#3}{#4}{#5}{#6}{#7} \my{\textbf{Save DC:} #8 \add character level} \par}
-\newcommand{\itemdescriptionmulti}[6]{ \subsubsection{#1} \noindent{\small
-  \rowcolors{1}{white}{tbrown} \begin{tabularx}{\columnwidth}{X *{#2}{l}} #3 \end{tabularx}} \parhead{Aura School} #4 \parhead{Body Slot} #5 \parhead{Activation} #6 \par}
-\newcommand{\itemdescriptiononek}[4]{\itemdescriptionmulti{#1}{5}{
-\thead{Bonus:} & \thead{\plus1} & \thead{\plus2} & \thead{\plus3} & \thead{\plus4} & \thead{\plus5} \\
-\thead{Price:} & 1,000 gp & 4,000 gp & 9,000 gp & 16,000 gp & 25,000 gp \\
-\thead{Level:} & 3rd & 7th & 9th & 12th & 14th \\
-\thead{Caster Level:} & 4th & 6th & 9th & 12th & 15th \\
-\thead{Aura:} & Faint & Faint & Moderate & Moderate & Strong
-}{#2}{#3}{#4}}
-\newcommand{\itemdescriptiononefivek}[4]{\itemdescriptionmulti{#1}{5}{
-\thead{Bonus:} & \thead{\plus1} & \thead{\plus2} & \thead{\plus3} & \thead{\plus4} & \thead{\plus5} \\
-\thead{Price:} & 1,500 gp & 6,000 gp & 13,500 gp & 24,000 gp & 37,500 gp \\
-\thead{Level:} & 4th & 8th & 11th & 14th & 16th \\
-\thead{Caster Level:} & 4th & 6th & 9th & 12th & 15th \\
-\thead{Aura:} & Faint & Faint & Moderate & Moderate & Strong
-}{#2}{#3}{#4}}
-\newcommand{\itemdescriptiontwok}[4]{\itemdescriptionmulti{#1}{5}{
-\thead{Bonus:} & \thead{\plus1} & \thead{\plus2} & \thead{\plus3} & \thead{\plus4} & \thead{\plus5} \\
-\thead{Price:} & 2,000 gp & 8,000 gp & 18,000 gp & 32,000 gp & 50,000 gp \\
-\thead{Level:} & 5th & 9th & 12th & 15th & 18th \\
-\thead{Caster Level:} & 4th & 6th & 9th & 12th & 15th \\
-\thead{Aura:} & Faint & Faint & Moderate & Moderate & Strong
-}{#2}{#3}{#4}}
 \newcommand{\tooldescription}[6]{\subsubsection{#1} \parhead{Price (Level)} #2 gp (#3) \parhead{Caster Level} #4 \parhead{Aura} #5 \parhead{Activation} #6 \par}
 %one shot items should not have scaling DCs
-\newcommand{\tooldescriptiondcos}[7]{\tooldescription{#1}{#2}{#3}{#4}{#5}{#6} \my{\textbf{Save DC:} #7} \par}
-\newcommand{\tooldescriptiondc}[7]{\tooldescription{#1}{#2}{#3}{#4}{#5}{#6} \my{\textbf{Save DC:} #7 \add character level} \par}
+\newcommand{\tooldescriptiondcos}[7]{\tooldescription{#1}{#2}{#3}{#4}{#5}{#6} \parhead{Special Attack (Attack Bonus)} #7\par}
+\newcommand{\tooldescriptiondc}[7]{\tooldescription{#1}{#2}{#3}{#4}{#5}{#6} \parhead{Special Attack (Attack Bonus)} #7\par}
 
 \newcommand{\prereq}[1]{\subparhead{Prerequisites:} #1}
 \newcommand{\bpl}[3]{(\plus #1) #2 gp (#3)}
