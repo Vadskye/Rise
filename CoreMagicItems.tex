@@ -74,6 +74,9 @@ In order to activate a spell completion item, a character must be able to cast s
 \section{Magic Item Effects}
 Most magic items either provide numerical bonuses or emulate the effect of a spell in some way.
 
+\subsection{Removing Magic Items}
+Unless otherwise noted, magic items that have effects on the creature using the item must continue to be worn or held as long as the effect lasts. If a magic item is removed before its effect's duration duration is up, the effect ends. Items which are consumed when used or which do not affect their user are unaffected by this rule.
+
 \subsection{Special Attacks}
 
 If a magic item requires a successful special attack to have its full effect, the attack bonus is listed in the item's description. Typically, the attack bonus is equal to the level of the item's wielder \add the spell level of the item's effect.
@@ -285,6 +288,10 @@ To affect a creature with spell resistance using a spell or spell-like ability, 
 \appdescription{Gauntlets of Giant Strength}{12,000}{12th}{Arms}{Moderate Transmutation (Augment)}{8th}{Standard (specific action)} These gauntlets function like \magicitem{gauntlets of ogre strength}, except that they grant a \plus4 enhancement bonus to Strength instead.
 
 \mitemreq{Transmutation}{Augment}{5}{12th}{Craft (metal) 16}
+
+\appdescription{Throwing Gloves}{200}{3rd}{Arms}{Faint Transmutation (Augment)}{2nd}{Immediate (triggered)} When you throw an item, you can activate these gauntlets to gain a \plus2 bonus to the attack. In addition, the item is treated as a thrown weapon, so you do not take the normal \minus4 penalty for throwing an item not designed to be thrown.
+
+\mitemreq{Transmutation}{Augment}{1}{2nd}{Craft (leather or textiles) 6}
 
 \subsection{Head}
 
@@ -809,6 +816,18 @@ Any corporeal creature can imbibe a potion. The potion must be swallowed, or in 
 A character can carefully administer a potion to an unconscious creature as a full-round action, trickling the liquid down the creature's throat. Likewise, it takes a full-round action to apply an oil to an unconscious creature. Exceptionally large objects or creatures require a greater time expenditure.
 
 \parhead{Potion Descriptions} The caster level for a standard potion is equal to twice the spell level of the spell in the potion. Common potions refer to potions of spells on the unrestricted arcane, divine, and nature lists. Any other spells, such as cleric domain spells and restricted arcane spells, are considered ``uncommon''.
+
+\parhead{Potion Mishaps} Extraordinarily powerful potions can be dangerous to imbibe. Whenever you use a potion, if the caster level of the potion exceeds your level, roll 1d20 and subtract the difference between your level and the potion's caster level. Compare the result to \trefnp{Potion Mishaps}.
+
+\begin{dtable}
+    \begin{tabularx}{\columnwidth}{l X}
+        \thead{Mishap Result} & \thead{Mishap Effect} \\
+        11\plus & No additional effects \\
+        6--10 & User also takes damage equal to the potion's caster level \\
+        1--5 & As above, and the user is nauseated for 1 round \\
+        0 or below & As above, and the potion does not have its normal effect \\
+    \end{tabularx}
+\end{dtable}
 
 \subsection{Wondrous Items}
 
