@@ -371,9 +371,9 @@ Protection \plus5 & 50,000 gp \\
 A ring of protection grants an enhancement bonus to your special defenses while worn. The price of the ring depends on its enhancement bonus, as shown in the table below.
 
 \begin{dtable}
-    \caption{Ring of Protection}
-    \begin{tabularx}{\columnwidth} {>{\ccol}X c c}
-        \thead{Enhancement Bonus} & \thead{Base Price} & \thead{Item Level} \\
+    \lcaption{Ring of Protection}
+    \begin{tabularx}{\columnwidth} {l X X}
+        \thead{Bonus} & \thead{Base Price} & \thead{Item Level} \\
         \plus1 & 100 gp & 2nd \\
         \plus2 & 500 gp & 4th \\
         \plus3 & 2,500 gp & 8th \\
@@ -388,11 +388,38 @@ The caster level is equal to three times the item's enhancement bonus. To craft 
 
 \subsection{Torso}
 
+\appdescription{Amulet of Mighty Fists}{Varies}{see text}{Torso}{Varied Transmutation (Augment)}{}{\x}
+An amulet of mighty fists grants an enhancement bonus to attack and damage with natural weapons, including unarmed attacks. The price of the amulet depends on its enhancement bonus, as shown in the table below.
+
+\begin{dtable}
+    \caption{Amulet of Mighty Fists}
+    \begin{tabularx}{\columnwidth}{l X X}
+        \thead{Bonus} & \thead{Base Price} & \thead{Item Level} \\
+        \plus1 & 200 gp & 3rd \\
+        \plus2 & 1000 gp & 6th \\
+        \plus3 & 5,000 gp & 10th \\
+        \plus4 & 25,000 gp & 13th \\
+        \plus5 & 125,000 gp & 17th \\
+    \end{tabularx}
+\end{dtable}
+
+The caster level is equal to three times the item's enhancement bonus. To craft the item, you must have a number of ranks in Craft (jewelry) equal to the item's caster level \add 4.
+
+\mitemreq{Transmutation}{Augment}{1}{varies}{Craft (jewelry) varies}
+
+\appdescription{Amulet of the Planes}{30,000}{14th}{Torso}{Moderate Conjuration (Translocation) [Planar]}{12th}{1 minute (specific action)} By holding this amulet in one hand and concentrating on a specific plane for 1 minute, you can create the effects of a \ritual{plane shift} ritual. Activating the item successfully requires a DC 20 Knowledge (planes) check. If you fail, you activate the amulet without effect. If you fail by 10 or more, you and any creatures with you are transported to a random plane.
+
+\mitemreqdesc{Conjuration}{Translocation}{Planar}{6}{12th}{Craft (jewelry) 16}
+
+\appdescription{Amulet of Nondetection}{5,000}{10th}{Torso}{Moderate Abjuration (Shielding)}{8th}{\x} This silver amulet protects you from divination effects, as the \ritual{nondetection} ritual. If a divination is attempted against you, the caster must make a caster level check against a DC equal to 15 \add your level (minimum DC 23).
+
+\mitemreq{Abjuration}{Shielding}{3}{8th}{Craft (jewelry) 10}
+
 \appdescription{Belt of Constitution}{2,000}{8th}{Torso}{Faint Transmutation (Augment)}{6th}{Standard (specific action)} By tightening the straps on this belt with both hands (a standard action), you command it to grant you a \plus2 enhancement bonus to Constitution for 5 minutes. Unless you can defend yourself without the use of your hands, you provoke attacks of opportunity when activating this item.
 
 \mitemreq{Transmutation}{Augment}{2}{6th}{Craft (textiles) 10}
 
-\appdescription{Belt of Constitution, Greater}{12,000}{12th}{Torso}{Moderate Transmutation (Augment)}{12th}{Standard (specific action) 1/day} This belt functions like a \magicitem{belt of constitution}, except that it grants a \plus4 enhancement bonus to Constitution instead.
+\appdescription{Belt of Constitution, Greater}{12,000}{12th}{Torso}{Moderate Transmutation (Augment)}{12th}{Standard (specific action)} This belt functions like a \magicitem{belt of constitution}, except that it grants a \plus4 enhancement bonus to Constitution instead.
 
 \mitemreq{Transmutation}{Augment}{5}{12th}{Craft (textiles) 16}
 
@@ -463,7 +490,7 @@ Magic ammunition loses its magic after being fired, whether it hits or misses.
         Heartseeking & Automatically score critical hit after striking target repeatedly &  12,000 gp & 12th \\
         Poisoning, Greater & Quickly coat weapon in potent duplicated poison & 24,000 gp & 13th \\
         Soulreaving & Weapon strikes the soul for delayed damage instead of normal damage &  60,000 gp & 16th \\
-        Vorpal & 1/day sever foe's head in a single blow & 140,000 gp & 18th \\
+        Vorpal & Sever foe's head in a single blow & 140,000 gp & 18th \\
     \end{tabularx}
 \end{dtable*}
 
@@ -732,7 +759,7 @@ When you activate this ability, the wand radiate frigid cold, causing it to snuf
 
 \mitemreqdesc{Evocation}{Energy}{Cold}{1}{2nd}{Craft (as wand) 6}
 
-\impdescriptiondc{Shocking}{1,600}{7th}{Faint Evocation (Energy) [Electricity]}{8th}{Immediate (triggered) 1/day}{Fortitude (level \add 2)} As you cast a spell, you can activate this wand. If you do, make a Fortitude attack against a single creature affected by the spell. A successful attack causes the target to be staggered for 5 rounds.
+\impdescriptiondc{Shocking}{1,600}{7th}{Faint Evocation (Energy) [Electricity]}{8th}{Immediate (triggered)}{Fortitude (level \add 2)} As you cast a spell, you can activate this wand. If you do, make a Fortitude attack against a single creature affected by the spell. A successful attack causes the target to be staggered for 5 rounds.
 
 A staggered creature may take a single move action or standard action each round, but not both. She cannot take full-round actions, but she may take swift actions. In addition, she is vulnerable, causing her to take a \minus2 penalty on attacks, defenses, and checks.
 
@@ -836,13 +863,13 @@ Wondrous items are items which are inherently magical in some way.
 \tooldescription{Bag of Holding}{Varies}{see text}{Varied Conjuration (Translocation) [Planar]}{}{\x} This appears to be a common cloth sack about 2 feet by 4 feet in size. The bag of holding opens into a nondimensional space: Its inside is larger than its outside dimensions. Regardless of what is put into the bag, it weighs a fixed amount. This weight, and the limits in weight and volume of the bag's contents, depend on the bag's type, as shown on the table below.
 
 \begin{dtable*}
-\begin{tabularx}{\textwidth}{l l X X X X}
-    \thead{Bag} & \thead{Bag Weight} & \thead{Weight Limit} & \thead{Space Limit} \thead{Base Price} & \thead{Item Level}\\
-Type I & 15 lb. & 250 lb. & 5 ft. radius & 750 gp & 5th \\
-Type II & 20 lb. & 500 lb. & 10 ft. radius & 1,500 gp & 7th \\
-Type III & 25 lb. & 1,000 lb. & 15 ft. radius & 3,000 & 9th \\
-Type IV & 30 lb. & 1,500 lb. & 20 ft. radius & 6,000 & 10th \\
-\end{tabularx}
+    \begin{tabularx}{\textwidth}{l l X X X X}
+        \thead{Bag} & \thead{Bag Weight} & \thead{Weight Limit} & \thead{Space Limit} \thead{Base Price} & \thead{Item Level}\\
+        Type I & 15 lb. & 250 lb. & 5 ft. radius & 750 gp & 5th \\
+        Type II & 20 lb. & 500 lb. & 10 ft. radius & 1,500 gp & 7th \\
+        Type III & 25 lb. & 1,000 lb. & 15 ft. radius & 3,000 & 9th \\
+        Type IV & 30 lb. & 1,500 lb. & 20 ft. radius & 6,000 & 10th \\
+    \end{tabularx}
 \end{dtable*}
 
 If the bag is overloaded, or if sharp objects pierce it from the outside, the bag ruptures and is ruined. All contents are lost forever. If a bag of holding is turned inside out, its contents spill out, unharmed, but the bag must be put right before it can be used again. If living creatures are placed within the bag, they can survive for up to 10 minutes, after which time they suffocate. Retrieving a specific item from a bag of holding is a move action - unless the bag contains more than an ordinary backpack would hold, in which case retrieving a specific item is a full-round action.
@@ -850,6 +877,32 @@ If the bag is overloaded, or if sharp objects pierce it from the outside, the ba
 If a bag of holding is placed within a portable hole a rift to the Astral Plane is torn in the space: Bag and hole alike are sucked into the void and forever lost. If a portable hole is placed within a bag of holding, it opens a gate to the Astral Plane: The hole, the bag, and any creatures within a 10-foot radius are drawn there, destroying the portable hole and bag of holding in the process.
 
 \mitemreqdesc{Conjuration}{Translocation}{Planar}{2}{4th}{Craft (textiles) 8}
+
+\tooldescription{Bag of Tricks}{Varies}{see text}{Varied Conjuration (Summoning)}{}{\x} This small sack appears normal and empty. However, anyone reaching into the bag feels a small, fuzzy ball. If the ball is removed and tossed up to 20 feet away, it turns into an animal. The animal serves the character who drew it from the bag for 1 minute (or until slain or ordered back into the bag), at which point it disappears. It can follow any of the commands described in the Creature Handling skill. Each of the three kinds of a bag of tricks produces a different set of animals. Use the following tables to determine what animals can be drawn out of each.
+
+Animals produced are always random, and only one may exist at a time. If a new animal is drawn from the bag, the previous animal is immediately unsummoned.
+
+\begin{dtable}
+    \lcaption{Bag of Tricks Types}
+    \begin{tabularx}{\columnwidth}{l X X}
+        \thead{Bag Type} & \thead{Base Price} & \thead{Item Level}\\
+        Gray & 200 gp & 3rd \\
+        Rust & 2,000 gp & 8th \\
+        Tan & 12,000 gp & 12th \\
+    \end{tabularx}
+\end{dtable}
+
+\begin{dtable}
+    \lcaption{Bag of Tricks Animals}
+    \begin{tabularx}{\columnwidth}{l X X X}
+        \thead{Roll} & \thead{Gray Bag} & \thead{Rust Bag} & \thead{Tan Bag} \\
+        1-20   & Dire rat   & Dire weasel   & Snake, giant constrictor \\
+        21-40  & Cat        & Lion          & Dire lion \\
+        41-60  & Badger     & Dire badger   & Dire wolverine \\
+        61-80  & Owl        & Giant owl     & Griffon \\
+        81-100 & Wolf       & Dire wolf    & Rhinoceros \\
+    \end{tabularx}
+\end{dtable}
 
 \section{Magic Item Rules}
 
