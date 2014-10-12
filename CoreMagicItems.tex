@@ -273,6 +273,42 @@ To affect a creature with spell resistance using a spell or spell-like ability, 
 
 \subsection{Arms}
 
+\appdescription{Bracers of Archery}{Varies}{see text}{Arms}{Varied Transmutation (Augment)}{}{\x} While you wear these bracers, you gain an enhancement bonus to physical attacks with bows and crossbows. The price of the amulet depends on its enhancement bonus, as shown in the table below.
+
+\begin{dtable}
+    \lcaption{Bracers of Archery}
+    \begin{tabularx}{\columnwidth}{l X X}
+        \thead{Bonus} & \thead{Base Price} & \thead{Item Level} \\
+        \plus1 & 100 gp & 2nd \\
+        \plus2 & 500 gp & 4th \\
+        \plus3 & 2,500 gp & 8th \\
+        \plus4 & 12,500 gp & 12th \\
+        \plus5 & 62,500 gp & 16th \\
+    \end{tabularx}
+\end{dtable}
+
+The caster level is equal to three times the item's enhancement bonus. To craft the item, you must have a number of ranks in Craft (leather or metal) equal to the item's caster level \add 4.
+
+\mitemreq{Transmutation}{Augment}{1}{varies}{Craft (leather or metal) varies}
+
+\appdescription{Bracers of Armor}{Varies}{see text}{Arms}{Abjuration (Shielding) [Force]}{}{\x} While you wear these bracers, you gain an invisible but tangible field of force that acts as armor. The armor bonus provided by the bracers depends on its bonus, as shown on the table below. Since this armor is made of magical force, incorporeal creatures can't bypass it the way they do normal armor. Armor from the bracers is considered a separate piece of armor from any body armor you wear, so they do not stack; use the higher of the two values. 
+
+\begin{dtable}
+    \lcaption{Bracers of Armor}
+    \begin{tabularx}{\columnwidth}{l X X}
+        \thead{Bonus} & \thead{Base Price} & \thead{Item Level} \\
+        \plus1 & 100 gp & 2nd \\
+        \plus2 & 500 gp & 4th \\
+        \plus3 & 2,500 gp & 8th \\
+        \plus4 & 12,500 gp & 12th \\
+        \plus5 & 62,500 gp & 16th \\
+    \end{tabularx}
+\end{dtable}
+
+The caster level is equal to three times the item's bonus. To craft the item, you must have a number of ranks in Craft (leather or metal) equal to the item's caster level \add 4.
+
+\mitemreqdesc{Abjuration}{Shielding}{Force}{1}{varies}{Craft (leather or metal) varies}
+
 \appdescription{Gloves of Dexterity}{2,000}{8th}{Arms}{Faint Transmutation (Augment)}{6th}{Standard (specific action)} By rubbing your gloved palms together (a standard action), you command these gauntlets to grant you a \plus2 enhancement bonus to Dexterity for 5 minutes. Unless you can defend yourself without the use of your hands, you provoke attacks of opportunity when activating this item.
 
 \mitemreq{Transmutation}{Augment}{2}{6th}{Craft (leather or textiles) 10}
@@ -313,17 +349,47 @@ To affect a creature with spell resistance using a spell or spell-like ability, 
 
 \subsection{Legs}
 
-\appdescription{Boots of Elvenkind}{300}{4th}{Legs}{Faint Transmutation (Augment)}{2nd}{Standard (specific action)} While wearing these boots, you gain a \plus2 enhancement bonus to Stealth checks. In addition, if you crouch down and touch the top of one of the boots (a standard action), you gain a \plus5 enhancement bonus to Stealth checks. The bonus lasts as long as you remain crouching, and for 5 rounds thereafter (maximum 5 minutes). You can move at half speed while crouching.
+\appdescription{Boots of Elvenkind}{500}{4th}{Legs}{Faint Transmutation (Augment)}{2nd}{\x} While wearing these boots, you gain a \plus4 enhancement bonus to Stealth checks.
 
-\mitemreq{Transmutation}{Augment}{1}{2nd}{Craft (leather) 6}
+\mitemreq{Transmutation}{Augment}{1}{2nd}{Craft (leather or textiles) 6}
+
+\appdescription{Boots of Levitation}{2,000}{8th}{Legs}{Faint Evocation (Control)}{6th}{Standard (specific action)} By lifting and planting one leg in mid-air, as if climbing an invisible stair (a standard action), you can gain the benefit of the \spell{levitate} spell on yourself for 5 rounds.
+
+\mitemreq{Evocation}{Control}{3}{6th}{Craft (leather or textiles) 10}
 
 \appdescription{Boots of Mobility}{1,000}{6th}{Legs}{Faint Transmutation (Augment)}{4th}{\x} While wearing these boots, you gain a \plus4 enhancement bonus to Acrobatics and Athletics checks.
 
-\mitemreq{Transmutation}{Augment}{1}{4th}{Craft (leather) 8}
+\mitemreq{Transmutation}{Augment}{1}{4th}{Craft (leather or textiles) 8}
 
 \appdescription{Boots of Speed}{5,000}{10th}{Legs}{Moderate Transmutation (Temporal)}{8th}{Standard (specific action)} If you stomp your foot on the ground three times (a standard action), you gain the effects of the \spell{haste} spell. This benefit lasts as long as you move continuously without taking any other action, and for 5 rounds thereafter (maximum 5 minutes).
 
-\mitemreq{Transmutation}{Temporal}{4}{8th}{Craft (leather) 12}
+\mitemreq{Transmutation}{Temporal}{4}{8th}{Craft (leather or textiles) 12}
+
+\appdescription{Boots of Striding and Springing}{2,500}{6th}{Legs}{Faint Transmutation (Augment)}{4th}{\x} While wearing these boots, you gain a \plus10 foot enhancement bonus to your land speed. In addition, you gain a \plus4 enhancement bonus to Jump checks.
+
+\mitemreq{Transmutation}{Augment}{2}{4th}{Craft (leather or textiles) 8}
+
+\appdescription{Boots of Teleportation, Lesser}{2,000}{8th}{Legs}{Faint Conjuration (Translocation) [Teleportation]}{6th}{Standard (specific action)} By clicking your heels together three times (a standard action), you can teleport up to 30 feet to a location you can see, as the \spell{dimension slide} spell.
+
+\mitemreqdesc{Conjuration}{Translocation}{Teleportation}{3}{6th}{Craft (leather or textiles) 10}
+
+\appdescription{Boots of Teleportation}{5,000}{10th}{Legs}{Moderate Conjuration (Translocation) [Teleportation]}{8th}{Standard (specific action)} These boots function like \magicitem{lesser boots of teleportation}, except that you can teleport up to 1000 feet to a location you can specify, as the \spell{dimension door} spell.
+
+\mitemreqdesc{Conjuration}{Translocation}{Teleportation}{4}{8th}{Craft (leather or textiles) 12}
+
+\appdescription{Boots of Teleportation, Greater}{30,000}{14th}{Legs}{Moderate Conjuration (Translocation) [Teleportation]}{12th}{Standard (specific action)} These boots function like \magicitem{lesser boots of teleportation}, except that you can teleport up to 100 miles to a location you can specify, as the \spell{teleport} ritual.
+
+\mitemreqdesc{Conjuration}{Translocation}{Teleportation}{6}{12th}{Craft (leather or textiles) 16}
+
+%800 for endure elements, *3/4 for warming only, +800 for snow+ice travelling
+%(like 1st level ritual?)
+\appdescription{Boots of the Winterlands}{1,400}{7th}{Legs}{Faint Evocation/Transmutation(Augment, Control)}{4th}{\x} While wearing these boots, you can travel across snow and ice without slipping or suffering movement penalties for the terrain. In addition, the boots keep you warm, protecting you in conditions as cold as \minus50 Fahrenheit.
+
+\mitemreq{Evocation/Transmutation}{Augment, Control}{2}{4th}{Craft (leather or textiles) 8}
+
+\appdescription{Winged Boots}{5,000}{10th}{Legs}{Moderate Transmutation (Imbuement)}{8th}{Standard (specific action)} By touching the sides of both of these boots simultaneously (a standard action), you can cause wings to sprout from them. If you are unencumbered, you can fly with a 30 foot speed and average maneuverability, as the \spell{fly} spell, for 5 rounds. See \pcref{Flying}, for more details.
+
+\mitemreq{Transmutation}{Imbuement}{4}{8th}{Craft (leather or textiles) 12}
 
 \subsection{Rings}
 
@@ -388,11 +454,10 @@ The caster level is equal to three times the item's enhancement bonus. To craft 
 
 \subsection{Torso}
 
-\appdescription{Amulet of Mighty Fists}{Varies}{see text}{Torso}{Varied Transmutation (Augment)}{}{\x}
-An amulet of mighty fists grants an enhancement bonus to attack and damage with natural weapons, including unarmed attacks. The price of the amulet depends on its enhancement bonus, as shown in the table below.
+\appdescription{Amulet of Mighty Fists}{Varies}{see text}{Torso}{Varied Transmutation (Augment)}{}{\x} While wearing this amulet, you gain an enhancement bonus to physical attack and damage with natural weapons, including unarmed attacks. The price of the amulet depends on its enhancement bonus, as shown in the table below.
 
 \begin{dtable}
-    \caption{Amulet of Mighty Fists}
+    \lcaption{Amulet of Mighty Fists}
     \begin{tabularx}{\columnwidth}{l X X}
         \thead{Bonus} & \thead{Base Price} & \thead{Item Level} \\
         \plus1 & 200 gp & 3rd \\
@@ -407,11 +472,11 @@ The caster level is equal to three times the item's enhancement bonus. To craft 
 
 \mitemreq{Transmutation}{Augment}{1}{varies}{Craft (jewelry) varies}
 
-\appdescription{Amulet of the Planes}{30,000}{14th}{Torso}{Moderate Conjuration (Translocation) [Planar]}{12th}{1 minute (specific action)} By holding this amulet in one hand and concentrating on a specific plane for 1 minute, you can create the effects of a \ritual{plane shift} ritual. Activating the item successfully requires a DC 20 Knowledge (planes) check. If you fail, you activate the amulet without effect. If you fail by 10 or more, you and any creatures with you are transported to a random plane.
+\appdescription{Amulet of the Planes}{30,000}{14th}{Torso}{Moderate Conjuration (Translocation) [Planar]}{12th}{1 minute (specific action)} By holding this amulet in one hand and concentrating on a specific plane for 1 minute, you can create the effects of a \ritual{plane shift} ritual. Activating the item successfully requires a DC 15 Knowledge (planes) check. If you fail, your activation of the amulet has no effect. If you fail by 10 or more, you and any creatures with you are transported to a random plane. Each time you activate this item in the same day, the DC of the check increases by 5.
 
 \mitemreqdesc{Conjuration}{Translocation}{Planar}{6}{12th}{Craft (jewelry) 16}
 
-\appdescription{Amulet of Nondetection}{5,000}{10th}{Torso}{Moderate Abjuration (Shielding)}{8th}{\x} This silver amulet protects you from divination effects, as the \ritual{nondetection} ritual. If a divination is attempted against you, the caster must make a caster level check against a DC equal to 15 \add your level (minimum DC 23).
+\appdescription{Amulet of Nondetection}{5,000}{10th}{Torso}{Moderate Abjuration (Shielding)}{8th}{\x} While you wear this silver amulet, it protects you from divination effects as the \ritual{nondetection} ritual. If a divination is attempted against you, the caster must make a caster level check against a DC equal to 15 \add your level (minimum DC 23).
 
 \mitemreq{Abjuration}{Shielding}{3}{8th}{Craft (jewelry) 10}
 
@@ -422,6 +487,11 @@ The caster level is equal to three times the item's enhancement bonus. To craft 
 \appdescription{Belt of Constitution, Greater}{12,000}{12th}{Torso}{Moderate Transmutation (Augment)}{12th}{Standard (specific action)} This belt functions like a \magicitem{belt of constitution}, except that it grants a \plus4 enhancement bonus to Constitution instead.
 
 \mitemreq{Transmutation}{Augment}{5}{12th}{Craft (textiles) 16}
+
+%priced as +3rd level activated, since stonecunning is so situational
+\appdescription{Belt of Dwarvenkind}{4,000}{7th}{Faint Divination/Transmutation (Augment, Awareness)}{6th}{Standard (specific action)} This belt functions like a \magicitem{belt of constitution}. In addition, you gain dwarven characteristics while wearing it. You gain a \plus4 bonus to social checks when dealing with dwarves, but take a \minus2 penalty with all other creatures. You also gain the benefits of the Stonecunning feat, regardless of whether you meet the prerequisites.
+
+\mitemreq{Divination/Transmutation}{Augment, Awareness}{3}{6th}{Craft (textiles) 10}
 
 \appdescription{Cloak of Charisma}{2,000}{8th}{Torso}{Faint Transmutation (Augment)}{6th}{Standard (specific action)} By flourishing this cloak with one hand (a standard action), you command it to grant you a \plus2 enhancement bonus to Charisma for 5 minutes.
 
@@ -903,6 +973,34 @@ Animals produced are always random, and only one may exist at a time. If a new a
         81-100 & Wolf       & Dire wolf    & Rhinoceros \\
     \end{tabularx}
 \end{dtable}
+
+\mitemreq{Conjuration}{Summoning}{1 (gray), 3 (rust), or 5 (tan)}{2 (gray), 6 (rust), or 10 (tan)}{Craft (textiles) 6 (gray), 10 (rust), or 14 (tan)}
+
+\tooldescription{Bead of Force}{600}{5th}{Moderate Evocation (Control) [Force]}{10th}{Standard (specific action)} This small black sphere appears to be a lusterless pearl. By holding it in your hand and throwing it at an object or creature, you can surround the struck target with a \spell{resilient sphere}, as the spell. The bead is treated as a thrown weapon with a range increment of 20 feet.  Your Reflex attack bonus for the \spell{resilient sphere} effect is equal to your level \add 5.
+
+If you miss your target, the bead will still activate if it strikes a solid object, potentially wasting its effect. After being activated, the bead is destroyed.
+
+\mitemreqdesc{Evocation}{Control}{Force}{5}{10th}{Craft (jewelry) 14}
+
+\tooldescription{Bottle of Air}{800}{5th}{Faint Conjuration (Creation)}{4th}{Standard (specific action)} This item appears to be a normal glass bottle with a cork. By uncorking the bottle (a standard action), you can cause the bottle to continually fill itself with clean air for 1 hour. It will remain filled with clean air even if taken into an airless environment or environment with dangerous gases, allowing you to breathe from the bottle. Liquid can still fill the bottle, and the bottle will continuously bubble as air is created until the liquid is removed.
+
+The bottle can even be shared by multiple creatures who pass it around. Breathing out of the bottle is a standard action, but a creature that does so can then act for as long as it can hold its breath.
+
+\mitemreq{Conjuration}{Creation}{2}{4th}{Craft (ceramics) 8}
+
+\tooldescription{Friendstone}{3,000}{9th}{Strong Conjuration/Divination (Scrying, Translocation) [Teleportation]}{14th}{Standard (specific action)} This item appears to be a glossy, smooth stone about three inches in diameter. It can be used to summon a willing creature from a great distance. By pressing the stone to your forehead and speaking your full name, you can activate the stone to make it attune to you, allowing you to be summoned by a creature using the stone. This replaces the stone's attunement to any other creature.
+
+By grasping the stone in your hand and throwing it to the ground, you can activate cause the stone to transport the creature attuned to the stone to the stone's location. The creature is granted a brief glimpse of the stone's surroundings, as if looking out through the stone, and may refuse the summoning. If the creature refuses, or if it is physically impossible for the creature to appear, your activation of the stone has no effect. If the creature accepts, the stone is destroyed and the creature is unerringly teleported into the stone's location.
+
+This item is usually made of stone, but can also be made from glass.
+
+\mitemreq{Conjuration/Divination}{Scrying, Translocation}{7}{14th}{Craft (ceramics or stone) 18th}
+
+\tooldescription{Witch's Broom}{60,000}{16th}{Strong Divination/Transmutation (Communication, Imbuement)}{14th}{Standard (specific action)} This broom can fly as directed by its owner, as the \ritual{overland flight} ritual. Riding the broom is like riding a mount, except that you do not need to control it and some actions (such as taking cover behind the mount) are infeasible due to the shape of the broom.
+
+In addition to riding the broom, you attune to the broom as a standard action by holding it firmly by the handle and concentrating. If you have attuned to the broom, you can command it to fly on its own by specifying a location or a direction and distance. The broom understands all locations that you know. If the broom is within \rngext range of you and can hear your commands, it will obey your commands after 1 round. Both attuning to the broom and issuing a command to the broom count as activating the broom, but simply riding the broom does not.
+
+\mitemreq{Divination/Transmutation}{Communication, Imbuement}{7}{14th}{Craft (wood) 18}
 
 \section{Magic Item Rules}
 
