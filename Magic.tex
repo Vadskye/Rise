@@ -43,7 +43,8 @@ rain or sleet. \\
 4 You can cast only spells without somatic components for which you have any required material component in hand. \\
 \end{dtable}
 
-\subsubsection{Casting Defensively}
+\subsection{Defending Yourself While Concentrating}
+Concentrating does not prevent you from defending yourself normally. However, some actions that require concentration prevent you from defending yourself, such as casting spells.
 You can make a Concentration check while casting a spell to multi-task, allowing you to defend yourself normally while casting the spell. The DC is equal to 10 \add double the level of the spell you're casting. Success means you can defend yourself normally. Failure means you are unable to maintain concentration on both things at once, and you must choose whether to lose the spell or lose the ability to defend yourself.
 
 \subsubsection{Taking Damage}
@@ -205,10 +206,10 @@ Illusion spells deceive the senses of others. They conceal things that exist or 
 \subsubsection{Necromancy}
 Necromancy spells manipulate the power of life and death, as well as souls. Spells involving positive and negative energy belong to this school. There are three subschools of necromancy spells.
 
-\parhead{Flesh} A flesh spell affects the home of a creature's life energy: its body. Many flesh spells inflict or remove physical disabilities. \spellindirect[ray of enfeeblement]{Ray of enfeeblement} is a flesh spell.
+\parhead{Flesh} A flesh spell affects the home of a creature's life energy: its body. Many flesh spells inflict or remove physical disabilities. \spell{Enfeeblement} is a flesh spell.
 \parhead{Life} A life spell manipulates a creature's life force directly. \spellindirect{crush life}{Crush life} is a life spell.
 \parhead{Soul} A soul spell manipulates the subject's soul, either restoring it to its proper place or fragmenting it for terrible purposes. \spellindirect{raise dead}{Raise dead} is a soul spell.
-\parhead{Vitalism} An vitalism spell channels positive or negative energy. This can be used to enhance or destroy a subject's life energy, or to manipulate creatures powered by negative energy. \spellindirect{cure light wounds}{Cure light wounds} is a vitalism spell.
+\parhead{Vitalism} A vitalism spell channels positive or negative energy. This can be used to enhance or destroy a subject's life energy, or to manipulate creatures powered by negative energy. \spellindirect{cure light wounds}{Cure light wounds} is a vitalism spell.
 
 \subsubsection{Transmutation}
 Transmutation spells change the properties of creatures and objects. There are three subschools of transmutation spells.
@@ -271,9 +272,7 @@ A gag spoils the incantation (and thus the spell). A spellcaster who has been de
 \subsection{Casting Time}
 All spells have a casting time of 1 standard action unless otherwise specified in the spell description. Some take 1 round or more, while a few require only a swift or immediate action.
 
-If a s spell takes more than a full-round action to cast, you must spend each round of the casting time taking a full-round action to cast the spell. The spell takes effect at the end of your last round of casting. These actions must be consecutive and uninterrupted, or the spell automatically fails.
-
-A spell with a casting time of 1 swift action (such as a quickened spell) or 1 immediate action doesn't count against your normal limit of one spell per round. Casting a spell with those casting times doesn't provoke attacks of opportunity.
+If a spell takes more than a full-round action to cast, you must spend each round of the casting time taking a full-round action to cast the spell. The spell takes effect at the end of your last round of casting. These actions must be consecutive and uninterrupted, or the spell automatically fails.
 
 You make all pertinent decisions about a spell (range, target, area, effect, version, and so forth) when the spell comes into effect.
 
@@ -482,9 +481,27 @@ Rituals are ceremonies that create magical effects. Spellcasting characters, or 
 \par Like a spell, each ritual has a school, a level, and a magical effect. Rituals are described in Chapter 13. The description of each ritual follows the same format as the description of spells in Chapter 12, except for the description of ritual levels. Unlike spells, which have levels based on class, rituals have levels based on the source of magic: arcane, divine, or nature. A ritual always matches the magic source of the person performing the ritual. For example, \spell{scrying} is an arcane ritual when performed by a wizard, but a divine ritual when performed by a cleric.
 \subsection{Ritual Requirements} In order to learn and perform a ritual, you must be able to cast at least one spell of the same level as the ritual.
 \subsection{Ritual Books}
-A ritual book contains one or more rituals that you can use as frequently as you like, as long as you can spare the time and the components to perform the ritual. Scribing a ritual in a ritual book costs an amount of precious inks equal to 100 \mtimes ritual level \mtimes ritual level.
+A ritual book contains one or more rituals that you can use as frequently as you like, as long as you can spare the time and the components to perform the ritual. Scribing a ritual in a ritual book costs an amount of precious inks.
 \subsection{Ritual Components}
-Every ritual has a material component cost. Unless otherwise specified in the ritual description, the material component cost for a ritual is equal to 10 \mtimes ritual level \mtimes ritual level. This cost can be paid with precious metals or gems, or with special materials designed to perform rituals. Some rituals have unique costs and may require specific material components.
+Every ritual has a material component cost. This cost can be paid with precious metals or gems, or with special materials designed to perform rituals. Some rituals have unique costs and may require specific material components.
+\subsection{Ritual Costs}
+The costs to scribe and perform rituals are described on \trefnp{Ritual Costs}.
+\begin{dtable}
+    \lcaption{Ritual Costs}
+    \begin{tabularx}{\columnwidth}{X l l}
+        \thead{Ritual Level} & \thead{Cost to Perform} & \thead{Cost to Scribe} & \thead{Item Level} & \\
+        1st-Level & 5 gp & 50 gp & 1st \\
+        2nd-Level & 20 gp & 200 gp & 3rd \\
+        3rd-Level & 50 gp & 500 gp & 4th \\
+        4th-Level & 125 gp & 1250 gp & 7th \\
+        5th-Level & 300 gp & 3000 gp & 9th \\
+        6th-Level & 750 gp & 7500 gp & 11th \\
+        7th-Level & 1500 gp & 15000 gp & 12th \\
+        8th-Level & 3500 gp & 35000 gp & 14th \\
+        9th-Level & 7500 gp & 75000 gp & 16th \\
+    \end{tabularx}
+\end{dtable}
+
 \subsection{Performing Rituals}
 \par To perform a ritual, you must have a ritual book containing the ritual and the material components required for the ritual. If you are distracted during the ritual, you must make a Concentration check, just as if you were casting a spell of the ritual's level. If you fail, the ritual is ruined and you must start from the beginning. You can generally recover half the material components from an interrupted ritual.
 \par Performing a ritual and casting a ritual mean the same thing.
