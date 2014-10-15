@@ -325,6 +325,10 @@ The caster level is equal to three times the item's bonus. To craft the item, yo
 
 \mitemreq{Transmutation}{Augment}{5}{12th}{Craft (metal) 16}
 
+\appdescription{Gauntlet of the Ram}{400}{3rd}{Arms}{Faint Evocation (Control)}{2nd}{Immediate (triggered)} When you strike a foe with an unarmed attack using the hand wearing this gauntlet, you can activate it to immediately make a bull rush attack against the struck foe. You gain a bonus on the bull rush attack equal to the your damage dealt, and you never provoke attacks of opportunity for the attack, even if you miss. In addition, you do not need to move with the foe to push it backwards.
+
+When you activate this ability, the gauntlet grows small ram horns. This effect lasts for 5 rounds, during which time you cannot activate the item's abilities.
+
 \appdescription{Throwing Gloves}{200}{3rd}{Arms}{Faint Transmutation (Augment)}{2nd}{Immediate (triggered)} When you throw an item, you can activate these gauntlets to gain a \plus2 bonus to the attack. In addition, the item is treated as a thrown weapon, so you do not take the normal \minus4 penalty for throwing an item not designed to be thrown.
 
 \mitemreq{Transmutation}{Augment}{1}{2nd}{Craft (leather or textiles) 6}
@@ -489,7 +493,7 @@ The caster level is equal to three times the item's enhancement bonus. To craft 
 \mitemreq{Transmutation}{Augment}{5}{12th}{Craft (textiles) 16}
 
 %priced as +3rd level activated, since stonecunning is so situational
-\appdescription{Belt of Dwarvenkind}{4,000}{7th}{Faint Divination/Transmutation (Augment, Awareness)}{6th}{Standard (specific action)} This belt functions like a \magicitem{belt of constitution}. In addition, you gain dwarven characteristics while wearing it. You gain a \plus4 bonus to social checks when dealing with dwarves, but take a \minus2 penalty with all other creatures. You also gain the benefits of the Stonecunning feat, regardless of whether you meet the prerequisites.
+\appdescription{Belt of Dwarvenkind}{4,000}{7th}{Torso}{Faint Divination/Transmutation (Augment, Awareness)}{6th}{Standard (specific action)} This belt functions like a \magicitem{belt of constitution}. In addition, you gain dwarven characteristics while wearing it. You gain a \plus4 bonus to social checks when dealing with dwarves, but take a \minus2 penalty with all other creatures. You also gain the benefits of the Stonecunning feat, regardless of whether you meet the prerequisites.
 
 \mitemreq{Divination/Transmutation}{Augment, Awareness}{3}{6th}{Craft (textiles) 10}
 
@@ -925,12 +929,31 @@ A character can carefully administer a potion to an unconscious creature as a fu
 \parhead{Potion Mishaps} Extraordinarily powerful potions can be dangerous to imbibe. Whenever you use a potion, if the caster level of the potion exceeds your level, roll 1d20 and subtract the difference between your level and the potion's caster level. Compare the result to \trefnp{Potion Mishaps}.
 
 \begin{dtable}
+    \lcaption{Potion Mishaps}
     \begin{tabularx}{\columnwidth}{l X}
         \thead{Mishap Result} & \thead{Mishap Effect} \\
         11\plus & No additional effects \\
         6--10 & User also takes damage equal to the potion's caster level \\
         1--5 & As above, and the user is nauseated for 1 round \\
         0 or below & As above, and the potion does not have its normal effect \\
+    \end{tabularx}
+\end{dtable}
+
+\subsection{Rituals}
+
+\begin{dtable}
+    \lcaption{Ritual Costs}
+    \begin{tabularx}{\columnwidth}{X l l}
+        \thead{Ritual Level} & \thead{Cost to Perform} & \thead{Cost to Scribe} & \thead{Item Level} & \\
+        1st-Level & 5 gp & 50 gp & 1st \\
+        2nd-Level & 20 gp & 200 gp & 3rd \\
+        3rd-Level & 50 gp & 500 gp & 4th \\
+        4th-Level & 125 gp & 1250 gp & 7th \\
+        5th-Level & 300 gp & 3000 gp & 9th \\
+        6th-Level & 750 gp & 7500 gp & 11th \\
+        7th-Level & 1500 gp & 15000 gp & 12th \\
+        8th-Level & 3500 gp & 35000 gp & 14th \\
+        9th-Level & 7500 gp & 75000 gp & 16th \\
     \end{tabularx}
 \end{dtable}
 
