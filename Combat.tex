@@ -162,7 +162,7 @@ All special defenses are calculated in the following way:
 Your base defense bonus comes from your classes. See \pcref{Base Special Defense Progressions}, for more details.
 
 \subsection{Hit Points}
-Your hit points is a defense that represents how much more punishment you can take. When you run out hit points, you can't act anymore, and you might die, as described in \pcref{Injury, Death, and Healing}.
+Your hit points represent how much punishment you can take. When you run out hit points, your actions are limited and you might die, as described in \pcref{Injury, Death, and Healing}.
 
 \section{Movement and Positioning}\label{Movement and Positioning}
 
@@ -177,7 +177,7 @@ Sometimes, movement and distance are represented in squares. A 30-ft. movement i
 \parhead{Stand Up} As a move action, you can stand up from being prone. For most creatures, this requires using a hand to help get up.
 \parhead{Withdraw}\label{Withdraw} As a standard action, you can move up to your speed. Before you do so, you can designate one creature who threatens you. This movement does not provoke attacks of opportunity from that creature. At base attack bonus \plus6, \plus11, and \plus16, you may avoid provoking attacks of opportunity from an additional opponent of your choice.
 \parhead{Charge}\label{Charge} As a full-round action, you can move up to twice your speed and make a single attack with a \plus2 bonus to hit at the end of your charge. While charging, and until the start of your next turn, you take a \minus2 penalty to physical defenses.
-\par You must move at least 30 feet to gain the benefit of a charge, and all movement must be in a single straight line. If there are any obstacles in your path which hinder your movement, you cannot charge. A charge that fails or becomes invalid partway through becomes a hustle action.
+\par You must move at least 30 feet to gain the benefit of a charge, and all movement must be in a single straight line. If there are any obstacles in your path which hinder your movement, you cannot charge. If your charge fails or becomes invalid partway through, you move as far as you can and stop.
 \par  At base attack bonus \plus6, the attack you make at the end of a charge deals double damage if you hit by 5 or more. At base attack bonus \plus 11, the attack deals triple damage if you hit by 10 or more. At base attack bonus \plus16, the attack deals quadruple damage if you hit by 15 or more.
 \parhead{Struggle} As a full-round action, you can move five feet, regardless of movement penalties. You can use this to move even if your speed is decreased below five feet by penalties.
 
@@ -197,7 +197,7 @@ Some terrain is hard to move through, like thick bushes or a swamp. If a square 
 \subsubsection{Obstacles}
 An obstacle is anything that gets in your way. Enemies and large solid objects like walls are blocking obstacles: they completely block your movement. If you can get past an obstacle, like a low wall, that square is treated as difficult terrain. Some obstacles require a skill check to bypass.
 
-Enemies three size categories larger than you, and all allies, are not considered obstacles, and do not hinder your movement.
+Enemies three size categories larger or smaller than you, and all allies, are not considered obstacles and do not hinder your movement.
 
 \subsubsection{Squeezing}
 
@@ -205,7 +205,7 @@ In some cases, you may have to squeeze into or through an area that isn't as wid
 
 Creatures that take up multiple squares take up half their normal number of squares while squeezing. For example, a Large creature who normally takes up four spaces takes up two spaces while squeezing.
 
-\parhead{Accidentally Squeezing} Sometimes a character ends its movement while moving through a space where it's not normally allowed to stop. When that happens, the character is squeezing in the space until it can move. If squeezing is impossible, it immediately moves to the closest available space where it can be. Try not to do this.
+\parhead{Accidentally Squeezing} Sometimes a character ends its movement while moving through a space where it's not normally allowed to stop. When that happens, the character is squeezing in the space until it can move. If squeezing is impossible, the creature immediately moves to the closest available space. Try not to do this.
 
 \subsection{Special Movement Modes}\label{Special Movement Modes}
 Some spells and abilities grant creatures the ability to move in unusual ways. These forms of movement are described here.
@@ -347,8 +347,8 @@ Certain effects give a character temporary hit points which act as a protection 
     \end{tabularx}
     1 The defender is flat-footed. \\
     2 Treat as a bonus against ranged attacks, instead of a penalty \\
-    2 The defender is flat-footed, and treat the defender's Dexterity as \minus10. \\
-    3 The creature suffers a penalty equal to the number of creatures threatening it.
+    3 The defender is flat-footed, and treat the defender's Dexterity as \minus10. \\
+    4 The creature suffers a penalty equal to the number of creatures threatening it.
 \end{dtable}
 
 Bonuses and penalties are the most basic way that a roll or numerical statistic can be modified. A bonus increases the roll or statistic, and a penalty decreases it. Bonuses and penalties are also called modifiers.
@@ -419,7 +419,7 @@ Grappling creatures are physically struggling with each other. While grappled, y
 \subsubsection{Being Grappled}
 While grappled, you suffer certain penalties and restrictions, as described below. Other than these restrictions, you can act normally. You can also take certain actions in a grapple, as described in \pcref{Grapple Actions} 
 \begin{itemize*}
-    \item You must use a free hand (or equivalent limbs) to grapple, preventing you from taking any actions which would require having two free hands. If you cannot free a hand, you suffer a \minus10 penalty to al attack rolls, including grapple attacks, until you have a free hand.
+    \item You must use a free hand (or equivalent limbs) to grapple, preventing you from taking any actions which would require having two free hands. If you cannot free a hand, you suffer a \minus10 penalty to all physical attacks, including grapple attacks, until you have a free hand.
     \item You are flat-footed against all creatures except the ones you are grappling, and you do not threaten any other creatures.
     \item You take a \minus4 penalty to attack rolls made with weapons that are not light, since they are too large and cumbersome to be used effectively in a grapple.
     \item Spellcasting is extremely difficult. You cannot cast spells with somatic components. Using a spell-like ability or casting a spell without somatic components requires a Concentration check with a DC equal to 20 \add double spell level.
@@ -430,7 +430,7 @@ While grappled, you suffer certain penalties and restrictions, as described belo
 While grappled, you can take four special actions to try to affect the grapple.
 
 \parhead{Bind Foe} As a standard action, you can make a grapple attack to bind your foe with ropes or other restraints. You must have the restraints in hand (in addition to the free hand required to grapple). Apply the result against the MC of a creature grappling you. Success means the creature is bound, rendering it helpless and effectively paralyzed. The only physical action a bound creature can take is to escape the bindings with an Escape Artist check, though it can take mental actions. If you have the time, you can take 20 on your grapple attack to secure bindings on a helpless foe, including a foe rendered helpless through this attack.
-\parhead{Escape the Grapple} As a standard action, you can make a grapple attack or Escape Artist check to escape from the grapple. Apply the result against the MC of each creature grappling you Success against an individual creature means you are no longer grappling that creature.
+\parhead{Escape the Grapple} As a standard action, you can make a grapple attack or Escape Artist check to escape from the grapple. Apply the result against the MC of each creature grappling you. Success against an individual creature means you are no longer grappling that creature.
 \parhead{Move the Grapple} As a move action, you can make a grapple attack to move the grapple. Apply the result against the MC of each creature grappling you. If you beat every creature's MC, you can move yourself and all other creatures in the grapple up to half your speed. At the end of your movement, you choose which spaces creatures grappling you are in, as long as they stay adjacent to you.
 \parhead{Pin} As a standard action, you can make a grapple attack to pin a foe. If you succeed, that creature becomes pinned (in addition to being grappled), while you remain only grappled. The only physical action a pinned creature can take is to escape the grapple, though it can take mental actions. At your discretion, you can cover the mouth of a pinned creature to prevent it from speaking. 
 
@@ -465,9 +465,6 @@ If you are restricted to only taking a move or standard action, but not both, yo
 
 \subsubsection{Partial Charge}
 As a standard action, you can move up to your speed and make a single attack against a foe. You must move in a straight line, and your movement must not be impeded in any way. In addition, you take a \minus2 penalty to physical defenses until the start of your next turn. An interrupted partial charge becomes a move action.
-
-\subsubsection{Partial Withdraw}
-As a standard action, you can move up to half your speed. Before you do so, you can designate one creature who threatens you. This movement does not provoke attacks of opportunity from that creature.
 
 \subsection{Delay}\label{Delay}
 By choosing to delay, you take no action and then act normally on whatever initiative count you decide to act. When you delay, you voluntarily reduce your own initiative result for the rest of the combat. When your new, lower initiative count comes up later in the same round, you can act normally. You can specify this new initiative result or just wait until some time later in the round and act then, thus fixing your new initiative count at that point.
