@@ -1,0 +1,26 @@
+#meta
+name=
+creature type=
+
+#items
+weapon=
+
+#attributes
+strength=
+dexterity=
+constitution=
+intelligence=
+wisdom=
+charisma=
+
+#abilities
+trait=
+feat= 
+
+#core
+size=
+speed=
+
+#fluff
+description=
+combat=
