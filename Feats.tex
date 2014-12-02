@@ -310,6 +310,7 @@ Combat style feats grant a character the ability to fight in a particular style,
 \midrule
 \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Type} & \thead{Page} \\
 \featref{Cleave} & Str 3, base attack bonus \plus4 & Extra melee attack after dropping target & Power & \featpref{Cleave} \\
+\featref{Cleaving Smite} & Smite ability, base attack bonus \plus4, Cleave & Extra attack from Cleave is also a smite \\
 \featref{Combat Mobility} & Dex 3, base attack bonus \plus4, Dodge & Avoid some attacks of opportunity from selected target & Defense, Mobility & \featpref{Combat Mobility} \\
 \tind \featref{Spring Attack} & Dex 3, base attack bonus \plus4, Dodge, Combat Mobility & Move before and after attacks & Mobility, Style & \featpref{Spring Attack} \\
 \featref{Distracting Foe} & Base attack bonus \plus4 & Threatened foes suffer Concentration penalties & Style & \featpref{Distracting Foe} \\
@@ -473,8 +474,12 @@ If you have four or more celestial bloodline feats, your damage reduction increa
 \parhead{Benefit} You gain a \plus2 bonus to caster level with Evocation (Channeling) spells and spells from the Good domain. If you have four or more celestial bloodline feats, this bonus increases to \plus4.
 
 \feat{Cleave}{Combat}
-\parhead{Prerequisites} Str 3, base attack bonus \plus4
+\parhead{Prerequisites} Str 3, base attack bonus \plus4.
 \parhead{Benefit} If you make a melee attack that knocks a creature unconscious or kills it, you can immediately make an extra melee attack at the same attack bonus against another creature within reach. The extra attack must be made with the same weapon, and it includes all bonuses and penalties that applied to the original attack. You cannot move before making this extra attack. There is no limit to the number of times you can use this feat per round.
+
+\feat{Cleaving Smite}{Combat}
+\featpre Smite ability, base attack bonus \plus4, Cleave.
+\featben If make a melee smite attack that grants you an extra attack from the Cleave feat, the extra attack is also a smite of the exact same type. This does not consume any additional uses of your smite ability.
 
 \feat{Cleaving Stride}{Combat}
 \parhead{Prerequisites} Str 3, base attack bonus \plus8, Cleave.
