@@ -219,7 +219,7 @@
 \spellsection{Antimagic Field}
 \spelldesc{You create a mobile, spherical energy field that suppresses magic.}
 \spellschool{Abjuration (Negation) [Magic]}
-\spelllvl{Arcane 7, Divine 8, Magic 7}
+\spelllvl{Abjur 7, Divine 8, Magic 7}
 \spellarea{\areasmall radius mobile emanation from you}
 \spelldur{\durlong (D)}
 \spelldef{None}
@@ -1626,6 +1626,25 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \begin{spellnotes}
     This spell cannot attack more than one target within a single 5-ft. square.
 \end{spellnotes}
+
+\spellsection{Edict}
+\spellschool{Abjuration/Divination (Communication, Interdiction)}
+\spelllvl{Abjur 6, Divine 6}
+\spellarea{\arealarge radius mobile emanation from you}
+\spelldur{\durshort}
+\spellsave{None and Will half; see text}
+\spellsr{Yes (Will)}
+\spelldmg{6d6 damage \add 1d6 per four levels above 12th}
+\begin{spelleffect}
+    You loudly declare a single, specific rule which which all creatures must obey, such as ``Do not use ranged weapons'' or ``Do not lie''. If the rule is too complicated, the spell fails. The spell grants all creatures that enter the area an understanding of the rule, even if they were unable to understand the rule as originally stated.
+
+    Once the rule is established, any creature within the area who breaks the rule takes damage. You know whenever a creature in the area breaks the rule. If you break the rule, you take damage and the spell ends.
+\end{spelleffect}
+\begin{spellnotes}
+    Mindless creatures are given no special insight into the rule.
+\end{spellnotes}
+
+
 
 \spellsection{Elemental Swarm}
 \spellschool{Conjuration (Summoning) [see text]}
@@ -4290,14 +4309,6 @@ This spell can be made permanent with a \spell{permanency} ritual.
   This spell functions like \spell{share pain}, except that you can share your damage with an unwilling creature if you succeed on a Will attack.
 \end{spelleffect}
 
-\spellsectioncomma{Share Pain}{Greater}
-\spellschool{Abjuration/Necromancy (Life, Shielding)}
-\spelllvl{Abjur 6}
-\spelldur{\durshort (D)}
-\begin{spelleffect}
-  This spell functions like \spell{share pain}, except that it redirects all damage that one creature would take instead of redirecting half of the damage.
-\end{spelleffect}
-
 \spellsection{Shield of Faith}
 \spelldesc{You create a shimmmering, magical shield that protects your ally as long as you maintain faith.}
 \spellschool{Abjuration (Shielding)}
@@ -5391,7 +5402,7 @@ A slowed creature can take only a single move action or standard action each tur
 
 \spellsection{True Seeing}
 \spellschool{Divination (Awareness)}
-\spelllvl{Arcane 6, Divine 6, Knowledge 6, Law 6}
+\spelllvl{Arcane 6, Divine 6, Knowledge 6}
 \spellcmp{Verbal, Somatic, and Material}
 \spellrng{Touch}
 \spelltgt{Touched creature}
