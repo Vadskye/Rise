@@ -102,6 +102,22 @@ def rage_benefit(creature):
     creature.core[HIT_POINTS].add_bonus(creature.meta[LEVEL]*rage_bonus, 'rage')
 Ability.create_ability('rage', rage_benefit)
 
+def armor_discipline_agility_benefit(creature):
+    armor_discipline_count = (creature.meta[LEVEL]+5)/6
+    for i in xrange(1, armor_discipline_count):
+        creature.items[ARMOR].encumbrance = util.lower_encumbrance(
+                creature.items[ARMOR].encumbrance)
+Ability.create_ability('armor discipline (agility)', armor_discipline_agility_benefit)
+
+def armor_discipline_resilience_benefit(creature):
+    if creature.get_level() > 7:
+        creature.damage_reduction = util.DamageReduction(creature.meta[LEVEL], 'physical')
+    if creature.get_level() > 13:
+        constitution = creature.attributes[CON].get_total()
+        creature.defenses[AC].misc.add_bonus(constitution/2, CON)
+Ability.create_ability('armor discipline (resilience)', armor_discipline_resilience_benefit)
+
+
 ####################
 #FEATS
 ####################

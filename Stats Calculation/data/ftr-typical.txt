@@ -5,3 +5,4 @@ weapon=medium_melee
 armor=heavy
 shield=heavy
 attributes=warrior
+trait=armor discipline (resilience)
