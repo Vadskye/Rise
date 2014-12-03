@@ -442,6 +442,9 @@ class Creature(object):
                 if self.core[SPEEDS][s]]
         return ', '.join(speeds)
 
+    def get_level(self):
+        return self.meta[LEVEL]
+
     def get_text_of_abilities_by_tag(self, tag, prefix = None, joiner = ', ',
             suffix = None):
         text = ''
@@ -762,7 +765,9 @@ class Creature(object):
         fluff += r'\parhead{Combat} %s' % self.meta[COMBAT_DESCRIPTION]
         return fluff
 
-    def has_ability(self, ability):
+    def has_ability(self, ability, by_object = False):
+        if not by_object:
+            ability = get_ability_by_name(ability)
         return ability in self.abilities
 
 class Character(Creature):
@@ -825,13 +830,9 @@ class Fighter(Character):
         self.progressions[HIT_VALUE] = 6
 
     def apply_class_modifications(self):
-        #armor discipline
-        armor_discipline_count = (self.meta[LEVEL]+5)/6
-        self.defenses[AC].dodge.add_competence(
-                armor_discipline_count)
-        for i in xrange(1, armor_discipline_count):
-            self.items[ARMOR].encumbrance = util.lower_encumbrance(
-                    self.items[ARMOR].encumbrance)
+        #armor discipline is tracked by a separate ability because it requires a choice. we just set a default value for that choice here
+        if not (self.has_ability('armor discipline (agility)') or self.has_ability('armor discipline (resilience)')):
+            self.add_ability('armor discipline (agility)')
         #weapon discipline
         ab = 0
         ab += 1 if self.meta[LEVEL]>=3 else 0

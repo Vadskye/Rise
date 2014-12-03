@@ -5,3 +5,4 @@ weapon=heavy_melee
 armor=heavy
 attributes=warrior
 feat=overwhelming force
+trait=armor discipline (resilience)
