@@ -16,14 +16,20 @@ def initialize_argument_parser():
             help='simulate a battle between the creatures?')
     parser.add_argument('-c', '--creature', dest='creature', nargs="*",
             help='the creature file to load')
+    parser.add_argument('-e', '--enemy', dest='enemy', nargs="*",
+            help='enemy creature files to load (for combat purposes)')
     parser.add_argument('-l', '--level', dest='level', type=int,
-            help='the level of the creature')
+            help='the level of the creatures')
+    parser.add_argument('-el', '--enemylevel', dest='enemy_level', type=int,
+            help='the level of the enemy creatures (defaults to being the same as for the given creatures')
     parser.add_argument('-o', '--output', dest='output',
             help='A file name to store any output in')
     parser.add_argument('-v', '--verbose', dest='verbose', action='store_true',
             help='show verbose output?')
     parser.add_argument('-m', '--matchlevel', dest='match_level', action='store_true',
             help='match the levels of all subsequent creatures to the level of the first creature?')
+    parser.add_argument('-t', '--test', dest='test', action='store_true',
+            help='for one-off tests')
     return vars(parser.parse_args())
 
 def compare_ac_to_reflex(creature):
