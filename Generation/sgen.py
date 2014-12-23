@@ -41,7 +41,7 @@ def initialize_argument_parser():
             action='store_true', help='Save each round to end?')
     parser.add_argument('--bloodiedinstant', dest='bloodiedinstant',
             help='Bloodied is checked only when spell is cast?',
-            type=util.bool_parser) 
+            action='store_true') 
     parser.add_argument('-a', '--area', dest='area', type=str,
             choices=area_choices)
     parser.add_argument('--choosetargets', dest='choosetargets',
