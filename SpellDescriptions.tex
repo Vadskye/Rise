@@ -699,11 +699,10 @@ If you take life damage, you lose all temporary hit points provided by this spel
 \spelldef{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  This spell has four effects.
+  This spell has three effects.
   \par First, each shielded creature gains a \plus5 enhancement bonus to its defenses.
   \par Second, each shielded creature gains spell resistance against lawful spells and spells cast by lawful creatures.
-  \par Third, the abjuration blocks possession and mental influence, just as \spell{protection from law} does.
-  \par Finally, if a lawful creature within \rngmed range of the shielded creature successfully attacks it in any way, the offending attacker takes 4d6 damage. Any single creature can take this damage only once per round.
+  \par Third, if a lawful creature within \rngmed range of the shielded creature successfully attacks it in any way, the offending attacker takes 4d6 damage. Any single creature can take this damage only once per round.
 \end{spelleffect}
 \spellfocus{A tiny reliquary containing some sacred relic, such as a scrap of parchment from a chaotic text. The reliquary costs at least 250 gp.}
 
@@ -1527,9 +1526,6 @@ This spell can be made permanent with a \spell{permanency} ritual.
   \par Subjects resist this control, and any subject forced to take actions against its nature receives a new saving throw. This does not apply when a subject is merely ordered to perform an action it disagrees with -- the action must be directly opposed to the subject's beliefs. Ordering a paladin to murder an innocent would grant the paladin a saving throw, but ordering him to build a bridge that would allow an evil army to cross a river would not grant him a saving throw. Obviously self-destructive orders are never carried out. Once control is established, the range at which it can be exercised is unlimited, as long as you and the subject are on the same plane. You need not see the subject to control it.
   \par If you recast this spell on a subject you have dominated before it escapes your control, you can extend the duration of the spell indefinitely. The subject does not get a new saving throw when you renew your control in this fashion.
 \end{spelleffect}
-\begin{spellnotes}
-  \spell{Protection from evil} or a similar spell can prevent you from exercising control or using the telepathic link while the subject is so shielded, but such an effect neither prevents the establishment of domination nor dispels it.
-\end{spellnotes}
 
 \pdfbookmark[2]{E}{SpellDescriptionsE}
 \begin{comment}
@@ -2480,11 +2476,10 @@ A vulnerable creature takes a \minus2 penalty to attacks, defenses, and checks.
 \spelldef{See text}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  A brilliant divine radiance surrounds the subjects, protecting them from attacks, granting them resistance to spells cast by evil creatures, and damaging evil creatures when they strike the subjects. This abjuration has four effects.
+  A brilliant divine radiance surrounds the subjects, protecting them from attacks, granting them resistance to spells cast by evil creatures, and damaging evil creatures when they strike the subjects. This abjuration has three effects.
   \par First, each shielded creature gains a \plus5 enhancement bonus to its defenses.
   \par Second, each shielded creature gains spell resistance 10 against evil spells and spells cast by evil creatures.
-  \par Third, the abjuration blocks possession and mental influence, just as protection from evil does.
-  \par Finally, if a evil creature within \rngmed range of the shielded creature successfully attacks it in any way, the offending attacker takes 4d6 damage. Any single creature can take this damage only once per round.
+  \par Third, if a evil creature within \rngmed range of the shielded creature successfully attacks it in any way, the offending attacker takes 4d6 damage. Any single creature can take this damage only once per round.
 \end{spelleffect}
 \spellfocus{A tiny reliquary containing some sacred relic. The reliquary costs at least 250 gp.}
 
@@ -3096,37 +3091,16 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
   \par \subspell{Note} Destroying artifacts is a dangerous business, and it is 95\% likely to attract the attention of some powerful being who has an interest in or connection with the device.
 \end{spelleffect}
 
-\spellsection{Magic Circle against Chaos}
-\spellschool{Abjuration (Interdiction) [Barrier, Lawful]}
-\spelllvl{Arcane 5, Chaos 5, Divine 5, Pal 4}
-\begin{spelleffect}
-  This spell functions like \spell{magic circle against evil}, except that it is similar to \spell{protection from chaos} instead of \spell{protection from evil}, and it hedges out nonlawful summoned creatures.
-\end{spelleffect}
-
-\spellsection{Magic Circle against Evil}
+\spellsection{Magic Circle against Alignment}
 \par Abjuration (Interdiction) [Barrier, Good]
-\spelllvl{Arcane 5, Divine 5, Good 5, Pal 4}
+\spelllvl{Arcane 5, Chaos 5, Divine 5, Evil 5, Good 5, Law 5, Pal 4}
 \spellrng{Touch}
 \spellarea{\areasmall mobile emanation from touched creature}
 \spelldur{\durshort (D)}
 \spelldef{Will negates (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  All creatures within the area gain the effects of a \spell{protection from evil} spell. In addition, no nongood summoned creatures can enter the area.
-\end{spelleffect}
-
-\spellsection{Magic Circle against Good}
-\spellschool{Abjuration (Interdiction) [Barrier, Evil]}
-\spelllvl{Arcane 5, Divine 5, Evil 5}
-\begin{spelleffect}
-  This spell functions like \spell{magic circle against evil}, except that it is similar to \spell{protection from good} instead of \spell{protection from evil}, and it hedges out nonevil summoned creatures.
-\end{spelleffect}
-
-\spellsection{Magic Circle against Law}
-\spellschool{Abjuration (Interdiction) [Barrier, Chaotic]}
-\spelllvl{Arcane 5, Divine 5, Chaos 5}
-\begin{spelleffect}
-  This spell functions like \spell{magic circle against evil}, except that it is similar to \spell{protection from law} instead of \spell{protection from evil}, and it hedges out nonchaotic summoned creatures.
+    All creatures within the area gain the effects of a \spell{protection from alignment} spell, using an alignment of your choice. In addition, no summoned creatures can enter the area except summoned creatures of the chosen alignment.
 \end{spelleffect}
 
 \spellsection{Magic Fang}
@@ -3790,13 +3764,6 @@ This spell can be made permanent with a \spell{permanency} ritual.
   \par You must maintain line of effect to the projected image at all times. If your line of effect is obstructed, the spell ends. If you use \spell{dimension door}, \spell{teleport}, \spell{plane shift}, or a similar spell that breaks your line of effect, even momentarily, the spell ends.
 \end{spellnotes}
 
-\spellsection{Protection from Chaos}
-\spellschool{Abjuration (Interdiction) [Lawful]}
-\spelllvl{Arcane 1, Divine 1, Law 1, Pal 1}
-\begin{spelleffect}
-  This spell functions like \spell{protection from evil}, except that it protects against lawful effects.
-\end{spelleffect}
-
 \spellsection{Protection from Energy}
 \spellschool{Abjuration (Shielding)}
 \spelllvl{Arcane 3, Divine 3, Nature 3, Pal 3, Protection 3}
@@ -3819,34 +3786,19 @@ This spell can be made permanent with a \spell{permanency} ritual.
   This spell functions like \spell{protection from energy}, except that it protects from all five types of energy. When the spell absorbs 10 points per caster level of damage in total, regardless of its type, it is discharged.
 \end{spelleffect}
 
-\spellsection{Protection from Evil}
+\spellsection{Protection from Alignment}
 \spelldesc{You guard your ally with a faint pure white aura, shielding him from evil influence.}
 \spellschool{Abjuration (Interdiction) [Good]}
-\spelllvl{Arcane 1, Divine 1, Good 1, Pal 1}
+\spelllvl{Arcane 1, Chaos 1, Divine 1, Evil 1, Good 1, Law 1, Pal 1}
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{\durshort (D)}
 \spelldef{Will negates (harmless)}
 \spellsr{No; See text}
 \begin{spelleffect}
-  The subject gains a \plus2 enhancement bonus to its defenses. \bonusscalingdescription
+    The subject gains a \plus2 enhancement bonus to its special defenses. \bonusscalingdescription
 
-  In addition, the spell blocks any evil attempt to possess or exercise mental control over the creature (such as any domination effect). The protection does not prevent such effects from targeting the protected creature, but it suppresses the effect for the duration of the \spell{protection from evil} spell. If the \spell{protection from evil} spell ends before the effect granting mental control does, the would-be controller would then be able to mentally command the controlled creature. Likewise, the barrier keeps out a possessing life force but does not expel one if it is in place before the spell is cast. This effect works only against attacks by evil creatures or from evil effects.
-\end{spelleffect}
-
-\spellsection{Protection from Good}
-\spellschool{Abjuration (Interdiction) [Evil]}
-\spelllvl{Arcane 1, Divine 1, Evil 1}
-\begin{spelleffect}
-  This spell functions like\spell{protection from evil}, except that it protects against good effects.
-\end{spelleffect}
-
-\spellsection{Protection from Law}
-\spellschool{Abjuration (Interdiction) [Chaotic]}
-\spelllvl{Arcane 1, Chaos 1, Divine 1}
-\begin{spelleffect}
-  This spell functions like \spell{protection from evil}, except that it protects against chaotic effects.
-\end{spelleffect}
+    In addition, as you cast this spell, you choose an alignment. The subject gains an additional \plus2 bonus to special defenses against effects with the given alignment or which originate from creatures with the given alignment.\end{spelleffect}
 
 \pdfbookmark[2]{Q-R}{SpellDescriptionsQR}
 \begin{comment}
@@ -4330,11 +4282,10 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{See text}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  A dim, blue glow surrounds the subjects, protecting them from attacks, granting them resistance to spells cast by chaotic creatures, and slowing chaotic creatures when they strike the subjects. This abjuration has four effects.
+  A dim, blue glow surrounds the subjects, protecting them from attacks, granting them resistance to spells cast by chaotic creatures, and slowing chaotic creatures when they strike the subjects. This abjuration has three effects.
   \par First, each shielded creature gains a \plus5 enhancement bonus to its defenses.
   \par Second, each shielded creature gains spell resistance 10 against chaotic spells and spells cast by chaotic creatures.
-  \par Third, the abjuration blocks possession and mental influence, just as \spell{protection from chaos} does.
-  \par Finally, if a chaotic creature within \rngmed range of the shielded creature successfully attacks it in any way, the offending attacker takes 4d6 damage. Any single creature can take this damage only once per round.
+  \par Third, if a chaotic creature within \rngmed range of the shielded creature successfully attacks it in any way, the offending attacker takes 4d6 damage. Any single creature can take this damage only once per round.
 \end{spelleffect}
 \spellfocus{A tiny reliquary containing some sacred relic, such as a scrap of parchment from a lawful text. The reliquary costs at least 250 gp.}
 
@@ -5445,11 +5396,10 @@ A slowed creature can take only a single move action or standard action each tur
 \spelldef{See text}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  A malevolent darkness surrounds the subjects, protecting them from attacks, granting them resistance to spells cast by good creatures, and weakening good creatures when they strike the subjects. This abjuration has four effects.
+  A malevolent darkness surrounds the subjects, protecting them from attacks, granting them resistance to spells cast by good creatures, and weakening good creatures when they strike the subjects. This abjuration has three effects.
   \par First, each shielded creature gains a \plus5 enhancement bonus to its defenses.
   \par Second, each shielded creature gains spell resistance 10 against chaotic spells and spells cast by good creatures.
-  \par Third, the abjuration blocks possession and mental influence, just as protection from good does.
-  \par Finally, if a good creature within \rngmed range of the shielded creature successfully attacks it in any way, the offending attacker takes 4d6 damage. Any single creature can take this damage only once per round.
+  \par Third, if a good creature within \rngmed range of the shielded creature successfully attacks it in any way, the offending attacker takes 4d6 damage. Any single creature can take this damage only once per round.
 \end{spelleffect}
 \spellfocus{A tiny reliquary containing some sacred relic, such as a piece of parchment from an unholy text. The reliquary costs at least 250 gp.}
 
