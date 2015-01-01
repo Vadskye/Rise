@@ -123,13 +123,16 @@ class Creature(object):
 
         self.update()
 
-    def get_hit_points(self):
+    @property
+    def hit_points(self):
         return self.core[HIT_POINTS]
 
-    def get_current_hit_points(self):
+    @property
+    def current_hit_points(self):
         return self.combat[CURRENT_HIT_POINTS]
 
-    def get_initiative(self):
+    @property
+    def initiative(self):
         return self.core[INITIATIVE]
 
     def get_size(self):
@@ -203,7 +206,7 @@ class Creature(object):
 
     #a more minimalistic update for combat purposes
     def reset_combat(self):
-        self.combat[CURRENT_HIT_POINTS] = self.get_hit_points().get_total()
+        self.combat[CURRENT_HIT_POINTS] = self.hit_points.get_total()
         self.combat[CRITICAL_DAMAGE] = 0
         for attribute in self.attributes:
             self.attributes[attribute].reset_damage()
@@ -493,7 +496,7 @@ class Creature(object):
         defenses = str(self.defenses[AC])
         defenses += '; maneuver_class '+str(
                 self.defenses[MC].get_total())
-        defenses += '\nHP '+str(self.get_hit_points().get_total())
+        defenses += '\nHP '+str(self.hit_points.get_total())
         defenses += '; Fort '+util.mstr(self.defenses[FORTITUDE].get_total())
         defenses += ', Ref '+util.mstr(self.defenses[REFLEX].get_total())
         defenses += ', Will '+util.mstr(self.defenses[WILL].get_total())
@@ -645,7 +648,7 @@ class Creature(object):
         return hit_chance_total / len(attack_bonuses)
 
     def roll_initiative(self):
-        return util.d20.roll()+self.get_initiative().get_total()
+        return util.d20.roll()+self.initiative.get_total()
 
     #to be overridden
     def special_attack(self, enemy):
@@ -711,7 +714,7 @@ class Creature(object):
     def _latex_senses(self):
         #TODO: add Perception. Requires skills.
         senses = r'\textbf{Init} %s; Perception %s' % (
-                self.get_initiative().mstr(), util.mstr(0))
+                self.initiative.mstr(), util.mstr(0))
         senses += self.get_text_of_abilities_by_tag(TAG_SENSE, prefix=', ')
         senses += ENDLINE
         return senses
