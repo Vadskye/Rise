@@ -2,12 +2,12 @@ from strings import *
 import equipment, util
 from abilities import get_ability_by_name
 
-def generate_creature_from_file_name(file_name, level=None, verbose=False):
-    file_name = util.fix_creature_file_name(file_name)
+def generate_creature_from_file_name(original_file_name, level=None, verbose=False):
+    file_name = util.fix_creature_file_name(original_file_name)
     try:
         assert file_name
     except AssertionError:
-        raise Exception("Could not find file " + file_name)
+        raise Exception("Could not find file for " + original_file_name)
         
     creature_file = open(file_name, 'r')
     raw_stats = util.parse_stats_from_file(creature_file)
