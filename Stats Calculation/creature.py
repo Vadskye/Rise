@@ -21,19 +21,23 @@ def generate_creature_from_raw_stats(raw_stats, verbose):
     raise Exception("Could not generate creature from raw stats")
 
 def generate_creature_from_class_name(class_name, raw_stats, verbose):
-    return {
-            'barbarian': Barbarian,
-            'cleric': Cleric,
-            'druid': Druid,
-            'fighter': Fighter,
-            'monk': Monk,
-            'paladin': Paladin,
-            'ranger': Ranger,
-            'rogue': Rogue,
-            'spellwarped': Spellwarped,
-            'sorcerer': Sorcerer,
-            'wizard': Wizard,
-            }[class_name](raw_stats, verbose)
+    try:
+        return {
+                'barbarian': Barbarian,
+                'cleric': Cleric,
+                'druid': Druid,
+                'fighter': Fighter,
+                'monk': Monk,
+                'paladin': Paladin,
+                'ranger': Ranger,
+                'rogue': Rogue,
+                'spellwarped': Spellwarped,
+                'sorcerer': Sorcerer,
+                'warrior': Warrior,
+                'wizard': Wizard,
+                }[class_name](raw_stats, verbose)
+    except:
+        raise Exception("Class name " + class_name + " not recognized")
 
 def generate_creature_from_creature_type(creature_type, raw_stats, verbose): 
     return {
@@ -866,10 +870,8 @@ class Monk(Character):
             unarmed_weapon = equipment.Weapon.from_weapon_name('unarmed')
             #make the weapon deal monk damage
             for i in xrange(2):
-                unarmed_weapon.damage_die.increase_size(increase_min=True)
+                unarmed_weapon.damage_die.increase_size()
             self.items[WEAPON_PRIMARY] = unarmed_weapon
-            self.attacks[WEAPON_DAMAGE_PRIMARY].add_die(
-                    unarmed_weapon)
 
         #wholeness of body
 
@@ -919,6 +921,14 @@ class Sorcerer(Character):
         self.progressions[REF] = POOR
         self.progressions[WILL] = GOOD
         self.progressions[HIT_VALUE] = 4
+
+class Warrior(Character):
+    def create_progressions(self):
+        self.progressions[BAB] = GOOD
+        self.progressions[FORT] = GOOD
+        self.progressions[REF] = POOR
+        self.progressions[WILL] = POOR
+        self.progressions[HIT_VALUE] = 6
 
 class Wizard(Character):
     def create_progressions(self):
