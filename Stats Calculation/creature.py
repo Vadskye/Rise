@@ -123,6 +123,74 @@ class Creature(object):
 
         self.update()
 
+    def get_hit_points(self):
+        return self.core[HIT_POINTS]
+
+    def get_initiative(self):
+        return self.core[INITIATIVE]
+
+    def get_size(self):
+        return self.core[SIZE]
+
+    def get_size_modifier(self, is_special_size_modifier = False):
+        return util.get_size_modifier(self.get_size(), is_special_size_modifier)
+
+    def get_special_size_modifier(self):
+        return self.get_size_modifier(is_special_size_modifier = True)
+
+    def get_land_speed(self):
+        return self.get_speed_mode(LAND_SPEED)
+
+    def get_speed(self, speed_mode):
+        try:
+            return self.core[SPEEDS][speed_mode]
+        except KeyError:
+            raise Exception("Unrecognized speed mode " + speed_mode)
+
+    def set_speed(self, speed_mode, speed_value):
+        try:
+            self.core[SPEEDS][speed_mode] = speed_value
+        except KeyError:
+            raise Exception("Unrecognized speed mode " + speed_mode)
+
+    def modify_speed(self, speed_mode, speed_modifier):
+        try:
+            self.core[SPEEDS][speed_mode] += speed_modifier
+        except KeyError:
+            raise Exception("Unrecognized speed mode " + speed_mode)
+
+    def get_all_speeds(self):
+        return self.core[SPEEDS]
+
+    def get_speed_modes(self):
+        return self.core[SPEEDS].keys()
+
+    def get_fortitude(self):
+        return self.defenses[FORTITUDE]
+
+    def get_reflex(self):
+        return self.defenses[REFLEX]
+
+    def get_will(self):
+        return self.defenses[WILL]
+
+    def get_defense_total(self, defense_type):
+        if defense_type is None:
+            return None
+        elif defense_type == 'physical':
+            return self.defenses[AC].normal()
+        elif defense_type == 'touch':
+            return self.defenses[AC].touch()
+        elif defense_type == 'maneuver':
+            return self.defenses[MC].get_total()
+        elif defense_type in SAVE_NAMES:
+            return self.defenses[defense_type].get_total()
+        else:
+            raise Exception("Unrecognized defense type: "+defense_type)
+
+    def get_class_progression(self):
+        return self.meta[CLASS_PROGRESSION]
+
     def update(self):
         self.reset_objects()
         self.interpret_raw_stats()
@@ -540,74 +608,6 @@ class Creature(object):
     def get_damage_types(self, is_hit, is_threshold_hit):
         #TODO: include damage types from secondary weapon
         return self.items[WEAPON_PRIMARY].damage_types
-
-    def get_hit_points(self):
-        return self.core[HIT_POINTS]
-
-    def get_initiative(self):
-        return self.core[INITIATIVE]
-
-    def get_size(self):
-        return self.core[SIZE]
-
-    def get_size_modifier(self, is_special_size_modifier = False):
-        return util.get_size_modifier(self.get_size(), is_special_size_modifier)
-
-    def get_special_size_modifier(self):
-        return self.get_size_modifier(is_special_size_modifier = True)
-
-    def get_land_speed(self):
-        return self.get_speed_mode(LAND_SPEED)
-
-    def get_speed(self, speed_mode):
-        try:
-            return self.core[SPEEDS][speed_mode]
-        except KeyError:
-            raise Exception("Unrecognized speed mode " + speed_mode)
-
-    def set_speed(self, speed_mode, speed_value):
-        try:
-            self.core[SPEEDS][speed_mode] = speed_value
-        except KeyError:
-            raise Exception("Unrecognized speed mode " + speed_mode)
-
-    def modify_speed(self, speed_mode, speed_modifier):
-        try:
-            self.core[SPEEDS][speed_mode] += speed_modifier
-        except KeyError:
-            raise Exception("Unrecognized speed mode " + speed_mode)
-
-    def get_all_speeds(self):
-        return self.core[SPEEDS]
-
-    def get_speed_modes(self):
-        return self.core[SPEEDS].keys()
-
-    def get_fortitude(self):
-        return self.defenses[FORTITUDE]
-
-    def get_reflex(self):
-        return self.defenses[REFLEX]
-
-    def get_will(self):
-        return self.defenses[WILL]
-
-    def get_defense_total(self, defense_type):
-        if defense_type is None:
-            return None
-        elif defense_type == 'physical':
-            return self.defenses[AC].normal()
-        elif defense_type == 'touch':
-            return self.defenses[AC].touch()
-        elif defense_type == 'maneuver':
-            return self.defenses[MC].get_total()
-        elif defense_type in SAVE_NAMES:
-            return self.defenses[defense_type].get_total()
-        else:
-            raise Exception("Unrecognized defense type: "+defense_type)
-
-    def get_class_progression(self):
-        return self.meta[CLASS_PROGRESSION]
 
     def take_damage(self, damage, damage_types):
         damage = self.defenses[DR].reduce_damage(damage, damage_types)
