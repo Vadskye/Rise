@@ -132,7 +132,7 @@ class Creature(object):
 
     #a more minimalistic update for combat purposes
     def reset_combat(self):
-        self.combat[CURRENT_HIT_POINTS] = self.core[HIT_POINTS].get_total()
+        self.combat[CURRENT_HIT_POINTS] = self.get_hit_points().get_total()
         self.combat[CRITICAL_DAMAGE] = 0
         for attribute in self.attributes:
             self.attributes[attribute].reset_damage()
@@ -285,11 +285,11 @@ class Creature(object):
         return ability.meets_prerequisites(self)
 
     def calculate_derived_statistics(self):
-        self.attacks[ATTACK_BONUS].set_level(self.meta[LEVEL])
-        self.attacks[MANEUVER_BONUS].set_level(self.meta[LEVEL])
+        self.attacks[ATTACK_BONUS].set_level(self.get_level())
+        self.attacks[MANEUVER_BONUS].set_level(self.get_level())
         for save in SAVES:
-            self.defenses[save].set_level(self.meta[LEVEL])
-        self.defenses[AC].natural_armor.set_level(self.meta[LEVEL])
+            self.defenses[save].set_level(self.get_level())
+        self.defenses[AC].natural_armor.set_level(self.get_level())
 
         self.apply_inactive_abilities()
 
@@ -309,9 +309,8 @@ class Creature(object):
                 self.attributes[DEX])
 
         #apply size modifiers
-        size_modifier = util.get_size_modifier(self.core[SIZE])
-        special_size_modifier = util.get_size_modifier(self.core[SIZE],
-                is_special_size_modifier=True)
+        size_modifier = self.get_size_modifier()
+        special_size_modifier = self.get_special_size_modifier()
         self.attacks[ATTACK_BONUS].add_bonus(size_modifier, SIZE)
         self.attacks[MANEUVER_BONUS].add_bonus(special_size_modifier, SIZE)
         self.defenses[AC].misc.add_bonus(size_modifier, SIZE)
@@ -339,10 +338,10 @@ class Creature(object):
 
         self.apply_inactive_abilities()
 
-        self.core[HIT_POINTS].add_bonus(self.core[HIT_VALUE] * self.meta[LEVEL],
+        self.core[HIT_POINTS].add_bonus(self.core[HIT_VALUE] * self.get_level(),
                 'hit value')
         self.core[HIT_POINTS].add_bonus((self.attributes[CON].get_total()/2) * 
-                self.meta[LEVEL], 'con')
+                self.get_level(), 'con')
 
     def calculate_attack_attribute_bonus(self):
         #we are assuming offhand weapon is no heavier than main weapon
@@ -412,7 +411,7 @@ class Creature(object):
 
     def __str__(self):
         full_string = '%s %s' % (self.meta[NAME],
-                str(self.meta[LEVEL]))
+                str(self.get_level()))
         full_string += '\n'+ self._to_string_defenses() 
         full_string += '\n' + self._to_string_attacks() 
         full_string += '\n' + self._to_string_attributes()
@@ -423,7 +422,7 @@ class Creature(object):
         defenses = str(self.defenses[AC])
         defenses += '; maneuver_class '+str(
                 self.defenses[MC].get_total())
-        defenses += '\nHP '+str(self.core[HIT_POINTS].get_total())
+        defenses += '\nHP '+str(self.get_hit_points().get_total())
         defenses += '; Fort '+util.mstr(self.defenses[FORTITUDE].get_total())
         defenses += ', Ref '+util.mstr(self.defenses[REFLEX].get_total())
         defenses += ', Will '+util.mstr(self.defenses[WILL].get_total())
@@ -488,7 +487,7 @@ class Creature(object):
 
     def magic_attack(self, enemy):
         #Use highest-level, no optimization, no save spell
-        damage_die = dice.Dice.from_string('{0}d10'.format(max(1,self.meta[LEVEL]/2)))
+        damage_die = dice.Dice.from_string('{0}d10'.format(max(1,self.get_level()/2)))
         damage_dealt = damage_die.roll()
         enemy.take_damage(damage_dealt, ['spell'])
         return damage_dealt
@@ -542,6 +541,48 @@ class Creature(object):
         #TODO: include damage types from secondary weapon
         return self.items[WEAPON_PRIMARY].damage_types
 
+    def get_hit_points(self):
+        return self.core[HIT_POINTS]
+
+    def get_initiative(self):
+        return self.core[INITIATIVE]
+
+    def get_size(self):
+        return self.core[SIZE]
+
+    def get_size_modifier(self, is_special_size_modifier = False):
+        return util.get_size_modifier(self.get_size(), is_special_size_modifier)
+
+    def get_special_size_modifier(self):
+        return self.get_size_modifier(is_special_size_modifier = True)
+
+    def get_land_speed(self):
+        return self.get_speed_mode(LAND_SPEED)
+
+    def get_speed(self, speed_mode):
+        try:
+            return self.core[SPEEDS][speed_mode]
+        except KeyError:
+            raise Exception("Unrecognized speed mode " + speed_mode)
+
+    def set_speed(self, speed_mode, speed_value):
+        try:
+            self.core[SPEEDS][speed_mode] = speed_value
+        except KeyError:
+            raise Exception("Unrecognized speed mode " + speed_mode)
+
+    def modify_speed(self, speed_mode, speed_modifier):
+        try:
+            self.core[SPEEDS][speed_mode] += speed_modifier
+        except KeyError:
+            raise Exception("Unrecognized speed mode " + speed_mode)
+
+    def get_all_speeds(self):
+        return self.core[SPEEDS]
+
+    def get_speed_modes(self):
+        return self.core[SPEEDS].keys()
+
     def get_fortitude(self):
         return self.defenses[FORTITUDE]
 
@@ -564,6 +605,9 @@ class Creature(object):
             return self.defenses[defense_type].get_total()
         else:
             raise Exception("Unrecognized defense type: "+defense_type)
+
+    def get_class_progression(self):
+        return self.meta[CLASS_PROGRESSION]
 
     def take_damage(self, damage, damage_types):
         damage = self.defenses[DR].reduce_damage(damage, damage_types)
@@ -598,7 +642,7 @@ class Creature(object):
         return hit_chance_total / len(attack_bonuses)
 
     def roll_initiative(self):
-        return util.d20.roll()+self.core[INITIATIVE].get_total()
+        return util.d20.roll()+self.get_initiative().get_total()
 
     #to be overridden
     def special_attack(self, enemy):
@@ -653,7 +697,7 @@ class Creature(object):
 
         subheader = r'%s %s %s \hfill \textbf{CR} %s' % (
                 self.meta[ALIGNMENT].title(), self.core[SIZE].title(),
-                self.meta[NAME], self.meta[LEVEL])
+                self.meta[NAME], self.get_level())
         subheader += ENDLINE
         #if self.subtypes:
         #    types +=' {0}'.format()
@@ -664,7 +708,7 @@ class Creature(object):
     def _latex_senses(self):
         #TODO: add Perception. Requires skills.
         senses = r'\textbf{Init} %s; Perception %s' % (
-                self.core[INITIATIVE].mstr(), util.mstr(0))
+                self.get_initiative().mstr(), util.mstr(0))
         senses += self.get_text_of_abilities_by_tag(TAG_SENSE, prefix=', ')
         senses += ENDLINE
         return senses
@@ -697,7 +741,7 @@ class Creature(object):
 
         #Add HP and damage reduction
         defenses += r'\textbf{HP} %s (%s HV)' % (self.core[HIT_POINTS].get_total(),
-                self.meta[LEVEL])
+                self.get_level())
         defenses += self.get_text_of_abilities_by_tag(DR, ', ')
         defenses += ENDLINE
 
@@ -793,7 +837,7 @@ class Character(Creature):
         self.add_automatic_scaling_bonuses()
 
     def add_automatic_scaling_bonuses(self):
-        scale_factor = self.meta[LEVEL]/4
+        scale_factor = self.get_level()/4
         self.defenses[AC].armor.add_enhancement(scale_factor)
         if self.items[SHIELD]:
             self.defenses[AC].shield.add_enhancement(scale_factor)
@@ -815,11 +859,11 @@ class Barbarian(Character):
     def apply_class_modifications(self):
         self.add_ability('rage')
         self.add_ability('barbarian damage reduction')
-        if self.meta[LEVEL]>=2:
+        if self.get_level()>=2:
             self.add_ability('danger sense')
-        if self.meta[LEVEL]>=7:
+        if self.get_level()>=7:
             self.add_ability('larger than life')
-        if self.meta[LEVEL]>=17:
+        if self.get_level()>=17:
             self.add_ability('larger than belief')
 
 class Cleric(Character):
@@ -852,10 +896,10 @@ class Fighter(Character):
             self.add_ability('armor discipline (agility)')
         #weapon discipline
         ab = 0
-        ab += 1 if self.meta[LEVEL]>=3 else 0
-        ab += 1 if self.meta[LEVEL]>=9 else 0
+        ab += 1 if self.get_level()>=3 else 0
+        ab += 1 if self.get_level()>=9 else 0
         self.attacks[ATTACK_BONUS].add_competence(ab)
-        if self.meta[LEVEL]>=15:
+        if self.get_level()>=15:
             pass
             #add critical changes
 
@@ -889,7 +933,7 @@ class Monk(Character):
         #wholeness of body
 
         #improved ki strike
-        if self.meta[LEVEL]>=10:
+        if self.get_level()>=10:
             self.attacks[DAMAGE][WEAPON_PRIMARY].add_inherent(wisdom/2)
 
 class Paladin(Character):
@@ -1086,11 +1130,11 @@ class IdealCreature(Creature):
 
     def apply_class_modifications(self):
         #compensate for AC bonus from BAB
-        self.defenses[AC].dodge.add_bonus(-(self.meta[LEVEL]/2),
+        self.defenses[AC].dodge.add_bonus(-(self.get_level()/2),
                 'babfix')
         #compensate for AC bonus from Dex
         self.defenses[AC].dodge.add_bonus(
                 -(self.attributes[DEX].get_total()), 'dexfix')
         #this overrides the base 10 because it has the same type
-        self.defenses[AC].misc.add_bonus(self.meta[LEVEL]+15,
+        self.defenses[AC].misc.add_bonus(self.get_level()+15,
                 BASE)
