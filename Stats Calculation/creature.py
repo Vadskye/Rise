@@ -124,16 +124,84 @@ class Creature(object):
         self.update()
 
     @property
+    def strength(self):
+        return self.attributes[STRENGTH]
+
+    @strength.setter
+    def strength(self, value):
+        self.attributes[STRENGTH] = value
+
+    @property
+    def dexterity(self):
+        return self.attributes[DEXTERITY]
+
+    @dexterity.setter
+    def dexterity(self, value):
+        self.attributes[DEXTERITY] = value
+
+    @property
+    def constitution(self):
+        return self.attributes[CONSTITUTION]
+
+    @constitution.setter
+    def constitution(self, value):
+        self.attributes[CONSTITUTION] = value
+
+    @property
+    def intelligence(self):
+        return self.attributes[INTELLIGENCE]
+
+    @intelligence.setter
+    def intelligence(self, value):
+        self.attributes[INTELLIGENCE] = value
+
+    @property
+    def wisdom(self):
+        return self.attributes[WISDOM]
+
+    @wisdom.setter
+    def wisdom(self, value):
+        self.attributes[WISDOM] = value
+
+    @property
+    def charisma(self):
+        return self.attributes[CHARISMA]
+
+    @charisma.setter
+    def charisma(self, value):
+        self.attributes[CHARISMA] = value
+
+    @property
     def hit_points(self):
         return self.core[HIT_POINTS]
+
+    @hit_points.setter
+    def hit_points(self, value):
+        self.core[HIT_POINTS] = value
 
     @property
     def current_hit_points(self):
         return self.combat[CURRENT_HIT_POINTS]
 
+    @current_hit_points.setter
+    def current_hit_points(self, value):
+        self.combat[CURRENT_HIT_POINTS] = value
+
+    @property
+    def critical_damage(self):
+        return self.combat[CRITICAL_DAMAGE]
+
+    @critical_damage.setter
+    def critical_damage(self, value):
+        self.combat[CRITICAL_DAMAGE] = value
+
     @property
     def initiative(self):
         return self.core[INITIATIVE]
+
+    @initiative.setter
+    def initiative(self, value):
+        self.core[INITIATIVE] = value
 
     def get_size(self):
         return self.core[SIZE]
@@ -144,8 +212,17 @@ class Creature(object):
     def get_special_size_modifier(self):
         return self.get_size_modifier(is_special_size_modifier = True)
 
-    def get_land_speed(self):
-        return self.get_speed_mode(LAND_SPEED)
+    @property
+    def speeds(self):
+        return self.core[SPEEDS]
+
+    @property
+    def land_speed(self):
+        return self.core[SPEEDS][LAND_SPEED]
+
+    @property
+    def speed_modes(self):
+        return self.core[SPEEDS].keys()
 
     def get_speed(self, speed_mode):
         try:
@@ -165,19 +242,16 @@ class Creature(object):
         except KeyError:
             raise Exception("Unrecognized speed mode " + speed_mode)
 
-    def get_all_speeds(self):
-        return self.core[SPEEDS]
-
-    def get_speed_modes(self):
-        return self.core[SPEEDS].keys()
-
-    def get_fortitude(self):
+    @property
+    def fortitude(self):
         return self.defenses[FORTITUDE]
 
-    def get_reflex(self):
+    @property
+    def reflex(self):
         return self.defenses[REFLEX]
 
-    def get_will(self):
+    @property
+    def will(self):
         return self.defenses[WILL]
 
     def get_defense_total(self, defense_type):
@@ -194,7 +268,8 @@ class Creature(object):
         else:
             raise Exception("Unrecognized defense type: "+defense_type)
 
-    def get_class_progression(self):
+    @property
+    def class_progression(self):
         return self.meta[CLASS_PROGRESSION]
 
     def update(self):
@@ -206,8 +281,8 @@ class Creature(object):
 
     #a more minimalistic update for combat purposes
     def reset_combat(self):
-        self.combat[CURRENT_HIT_POINTS] = self.hit_points.get_total()
-        self.combat[CRITICAL_DAMAGE] = 0
+        self.current_hit_points = self.hit_points.get_total()
+        self.critical_damage = 0
         for attribute in self.attributes:
             self.attributes[attribute].reset_damage()
 
