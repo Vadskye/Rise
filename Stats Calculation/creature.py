@@ -528,7 +528,7 @@ class Creature(object):
 
     #allow special defenses and overriding in subclasses?
     def attack_hits(self, attack_bonus, defense_type, threshold):
-        return util.attack_hits(attack_bonus, self.get_defense(defense_type), threshold)
+        return util.attack_hits(attack_bonus, self.get_defense_total(defense_type), threshold)
 
     def get_damage(self, is_hit, is_threshold_hit):
         damage = 0
@@ -542,7 +542,16 @@ class Creature(object):
         #TODO: include damage types from secondary weapon
         return self.items[WEAPON_PRIMARY].damage_types
 
-    def get_defense(self, defense_type):
+    def get_fortitude(self):
+        return self.defenses[FORTITUDE]
+
+    def get_reflex(self):
+        return self.defenses[REFLEX]
+
+    def get_will(self):
+        return self.defenses[WILL]
+
+    def get_defense_total(self, defense_type):
         if defense_type is None:
             return None
         elif defense_type == 'physical':
@@ -579,7 +588,7 @@ class Creature(object):
             defense_type = self.items[WEAPON_PRIMARY].defense_type
         #allow "enemy" to be either a Creature or a simple numerical target
         try:
-            enemy_defense = enemy.get_defense(defense_type)
+            enemy_defense = enemy.get_defense_total(defense_type)
         except AttributeError:
             enemy_defense = enemy
         attack_bonuses = self.get_physical_attack_bonus_progression()
