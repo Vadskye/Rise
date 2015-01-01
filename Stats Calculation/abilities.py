@@ -79,12 +79,12 @@ class Ability(object):
 ####################
 
 def barbarian_damage_reduction_benefit(creature):
-    creature.damage_reduction = util.DamageReduction(creature.meta[LEVEL],
+    creature.damage_reduction = util.DamageReduction(creature.get_level(),
         'physical')
 Ability.create_ability('barbarian damage reduction', barbarian_damage_reduction_benefit)
     
 def danger_sense_benefit(creature):
-    creature.core[INITIATIVE].add_bonus(creature.meta[LEVEL]/2, 'danger sense')
+    creature.get_initiative().add_bonus(creature.get_level()/2, 'danger sense')
 Ability.create_ability('danger sense', danger_sense_benefit)
 
 def larger_than_life_benefit(creature):
@@ -95,15 +95,15 @@ Ability.create_ability('larger than life', larger_than_life_benefit)
 Ability.create_ability('larger than belief', larger_than_life_benefit)
 
 def rage_benefit(creature):
-    rage_bonus = util.std_scale(creature.meta[LEVEL])
+    rage_bonus = util.std_scale(creature.get_level())
     creature.attributes[STR].add_bonus(rage_bonus, 'rage')
     creature.attributes[CHA].add_bonus(rage_bonus, 'rage')
     creature.defenses[AC].misc.add_bonus(-2, 'rage')
-    creature.core[HIT_POINTS].add_bonus(creature.meta[LEVEL]*rage_bonus, 'rage')
+    creature.get_hit_points().add_bonus(creature.get_level()*rage_bonus, 'rage')
 Ability.create_ability('rage', rage_benefit)
 
 def armor_discipline_agility_benefit(creature):
-    armor_discipline_count = (creature.meta[LEVEL]+5)/6
+    armor_discipline_count = (creature.get_level()+5)/6
     for i in xrange(1, armor_discipline_count):
         creature.items[ARMOR].encumbrance = util.lower_encumbrance(
                 creature.items[ARMOR].encumbrance)
@@ -111,7 +111,7 @@ Ability.create_ability('armor discipline (agility)', armor_discipline_agility_be
 
 def armor_discipline_resilience_benefit(creature):
     if creature.get_level() > 7:
-        creature.damage_reduction = util.DamageReduction(creature.meta[LEVEL], 'physical')
+        creature.damage_reduction = util.DamageReduction(creature.get_level(), 'physical')
     if creature.get_level() > 13:
         constitution = creature.attributes[CON].get_total()
         creature.defenses[AC].misc.add_bonus(constitution/2, CON)
@@ -206,8 +206,8 @@ Ability.create_feat('lightning reflexes',
         lightning_reflexes_benefit, tags=[SAVING_THROW], text='1/day reroll Reflex')
 
 def swift_benefit(creature):
-    for speed_mode in creature.core[SPEEDS].keys():
-        creature.core[SPEEDS][speed_mode] += 5
+    for speed_mode in creature.get_speed_modes():
+        creature.modify_speed(speed_mode, 5)
 Ability.create_feat('swift', swift_benefit)
 
 Ability.create_feat('overpowering assault', tags=[TAG_POWER, TAG_STYLE])
@@ -222,13 +222,13 @@ Ability.create_ability('low-light vision', tags = ['sense'])
 Ability.create_ability('scent', tags = ['sense'])
 
 def natural_grab_text(creature):
-    return 'Natural grab (%s) %s' % (util.decrease_size(creature.core[SIZE]).title(),
+    return 'Natural grab (%s) %s' % (util.decrease_size(creature.get_size()).title(),
             creature.attacks[MANEUVER_BONUS].mstr())
 Ability.create_ability('improved grab', text = natural_grab_text,
         tags=['special attack'])
 
 def natural_trip_text(creature):
-    return 'Natural trip (%s) %s' % (util.increase_size(creature.core[SIZE]).title(),
+    return 'Natural trip (%s) %s' % (util.increase_size(creature.get_size()).title(),
             creature.attacks[MANEUVER_BONUS].mstr())
 Ability.create_ability('natural trip', text = natural_trip_text,
         tags=['special attack'])
@@ -274,23 +274,23 @@ Ability.create_ability('antiwarrior', benefit = antiwarrior_benefit,
 def brute_prerequisites(creature):
     return creature.progressions[FORT] is not None and creature.progressions[HIT_VALUE] is not None
 def brute_benefit(creature):
-    util.improve_hv(creature.meta[CLASS_PROGRESSION])
-    util.improve_save(creature.meta[CLASS_PROGRESSION], FORTITUDE)
+    util.improve_hv(creature.get_class_progression())
+    util.improve_save(creature.get_class_progression(), FORTITUDE)
 Ability.create_ability('brute', benefit = brute_benefit,
         meets_prerequisites = brute_prerequisites, tags=[ABILITY_TEMPLATE])
 
 def scout_prerequisites(creature):
-    return creature.progressions[REFLEX] is not None and creature.core[SPEEDS] is not None
+    return creature.progressions[REFLEX] is not None and creature.get_all_speeds() is not None
 def scout_benefit(creature):
-    util.improve_save(creature.meta[CLASS_PROGRESSION], REFLEX)
-    for speed_mode in creature.core[SPEEDS]:
-        creture.core[SPEEDS][speed_mode] += min(10, creature.core[SPEEDS][LAND_SPEED])
+    util.improve_save(creature.get_class_progression(), REFLEX)
+    for speed_mode in creature.get_speed_modes():
+        creture.modify_speed(speed_mode, min(10, creature.get_land_speed()))
 Ability.create_ability('scout', benefit = scout_benefit,
         meets_prerequisites = scout_prerequisites, tags=[ABILITY_TEMPLATE])
 
 def incorporeal_benefit(creature):
     #add Cha to hit points
-    creature.core[HIT_POINTS].add_bonus(creature.meta[LEVEL] *
+    creature.get_hit_points().add_bonus(creature.get_level() *
             creature.attributes[CHA].get_total()/2, 'cha')
     creature.attributes[STR].set_inapplicable()
     creature.attributes[CON].set_inapplicable()
