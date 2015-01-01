@@ -124,6 +124,38 @@ class Creature(object):
         self.update()
 
     @property
+    def attack_bonus(self):
+        return self.attacks[ATTACK_BONUS]
+
+    @attack_bonus.setter
+    def attack_bonus(self, value):
+        self.attacks[ATTACK_BONUS] = value
+
+    @property
+    def maneuver_bonus(self):
+        return self.attacks[MANEUVER_BONUS]
+
+    @maneuver_bonus.setter
+    def maneuver_bonus(self, value):
+        self.attacks[MANEUVER_BONUS] = value
+
+    @property
+    def primary_weapon_damage(self):
+        return self.attacks[DAMAGE][WEAPON_PRIMARY]
+
+    @primary_weapon_damage.setter
+    def primary_weapon_damage(self, value):
+        self.attacks[DAMAGE][WEAPON_PRIMARY] = value
+
+    @property
+    def secondary_weapon_damage(self):
+        return self.attacks[DAMAGE][WEAPON_SECONDARY]
+
+    @secondary_weapon_damage.setter
+    def secondary_weapon_damage(self, value):
+        self.attacks[DAMAGE][WEAPON_SECONDARY] = value
+
+    @property
     def strength(self):
         return self.attributes[STRENGTH]
 
@@ -172,6 +204,22 @@ class Creature(object):
         self.attributes[CHARISMA] = value
 
     @property
+    def space(self):
+        return self.core[SPACE]
+
+    @space.setter
+    def space(self, value):
+        self.core[SPACE] = value
+
+    @property
+    def reach(self):
+        return self.core[REACH]
+
+    @reach.setter
+    def reach(self, value):
+        self.core[REACH] = value
+
+    @property
     def hit_points(self):
         return self.core[HIT_POINTS]
 
@@ -203,11 +251,86 @@ class Creature(object):
     def initiative(self, value):
         self.core[INITIATIVE] = value
 
-    def get_size(self):
+    @property
+    def size(self):
         return self.core[SIZE]
 
+    @size.setter
+    def size(self, value):
+        self.core[SIZE] = value
+
+    @property
+    def armor_class(self):
+        return self.defenses[AC]
+
+    @armor_class.setter
+    def armor_class(self, value):
+        self.defenses[AC] = value
+
+    @property
+    def maneuver_defense(self):
+        return self.defenses[MC]
+
+    @maneuver_defense.setter
+    def maneuver_defense(self, value):
+        self.defenses[MC] = value
+
+    @property
+    def damage_reduction(self):
+        return self.defenses[DR]
+
+    @damage_reduction.setter
+    def damage_reduction(self, value):
+        self.defenses[DR] = value
+
+    @property
+    def special_defenses(self):
+        return self.defenses[SPECIAL]
+
+    @special_defenses.setter
+    def special_defenses(self, value):
+        self.defenses[SPECIAL] = value
+
+    @property
+    def fortitude_defense(self):
+        return self.defenses[FORTITUDE]
+
+    @fortitude_defense.setter
+    def fortitude_defense(self, value):
+        self.defenses[FORTITUDE] = value
+
+    @property
+    def reflex_defense(self):
+        return self.defenses[REFLEX]
+
+    @reflex_defense.setter
+    def reflex_defense(self, value):
+        self.defenses[REFLEX] = value
+
+    @property
+    def will_defense(self):
+        return self.defenses[WILL]
+
+    @will_defense.setter
+    def will_defense(self, value):
+        self.defenses[WILL] = value
+
+    def get_defense_total(self, defense_type):
+        if defense_type is None:
+            return None
+        elif defense_type == 'physical':
+            return self.defenses[AC].normal()
+        elif defense_type == 'touch':
+            return self.defenses[AC].touch()
+        elif defense_type == 'maneuver':
+            return self.defenses[MC].get_total()
+        elif defense_type in SAVE_NAMES:
+            return self.defenses[defense_type].get_total()
+        else:
+            raise Exception("Unrecognized defense type: "+defense_type)
+
     def get_size_modifier(self, is_special_size_modifier = False):
-        return util.get_size_modifier(self.get_size(), is_special_size_modifier)
+        return util.get_size_modifier(self.size, is_special_size_modifier)
 
     def get_special_size_modifier(self):
         return self.get_size_modifier(is_special_size_modifier = True)
@@ -216,9 +339,17 @@ class Creature(object):
     def speeds(self):
         return self.core[SPEEDS]
 
+    @speeds.setter
+    def speeds(self, value):
+        self.core[SPEEDS] = value
+
     @property
     def land_speed(self):
         return self.core[SPEEDS][LAND_SPEED]
+
+    @land_speed.setter
+    def land_speed(self, value):
+        self.core[SPEEDS][LAND_SPEED] = value
 
     @property
     def speed_modes(self):
@@ -243,34 +374,60 @@ class Creature(object):
             raise Exception("Unrecognized speed mode " + speed_mode)
 
     @property
-    def fortitude(self):
-        return self.defenses[FORTITUDE]
+    def armor(self):
+        return self.items[ARMOR]
+
+    @armor.setter
+    def armor(self, value):
+        self.items[ARMOR] = value
 
     @property
-    def reflex(self):
-        return self.defenses[REFLEX]
+    def primary_weapon(self):
+        return self.items[WEAPON_PRIMARY]
+
+    @primary_weapon.setter
+    def primary_weapon(self, value):
+        self.items[WEAPON_PRIMARY] = value
 
     @property
-    def will(self):
-        return self.defenses[WILL]
+    def secondary_weapon(self):
+        return self.items[WEAPON_SECONDARY]
 
-    def get_defense_total(self, defense_type):
-        if defense_type is None:
-            return None
-        elif defense_type == 'physical':
-            return self.defenses[AC].normal()
-        elif defense_type == 'touch':
-            return self.defenses[AC].touch()
-        elif defense_type == 'maneuver':
-            return self.defenses[MC].get_total()
-        elif defense_type in SAVE_NAMES:
-            return self.defenses[defense_type].get_total()
-        else:
-            raise Exception("Unrecognized defense type: "+defense_type)
+    @secondary_weapon.setter
+    def secondary_weapon(self, value):
+        self.items[WEAPON_SECONDARY] = value
+
+    @property
+    def shield(self):
+        return self.items[SHIELD]
+
+    @shield.setter
+    def shield(self, value):
+        self.items[SHIELD] = value
+
+    @property
+    def alignment(self):
+        return self.meta[ALIGNMENT]
 
     @property
     def class_progression(self):
         return self.meta[CLASS_PROGRESSION]
+
+    @property
+    def combat_description(self):
+        return self.meta[COMBAT_DESCRIPTION]
+
+    @property
+    def description(self):
+        return self.meta[DESCRIPTION]
+
+    @property
+    def name(self):
+        return self.meta[NAME]
+
+    @name.setter
+    def name(self, value):
+        self.meta[NAME] = value
 
     def update(self):
         self.reset_objects()
@@ -287,22 +444,22 @@ class Creature(object):
             self.attributes[attribute].reset_damage()
 
     def reset_objects(self):
-        self.attacks[ATTACK_BONUS] = util.AttackBonus()
-        self.attacks[MANEUVER_BONUS] = util.ManeuverBonus()
+        self.attack_bonus = util.AttackBonus()
+        self.maneuver_bonus = util.ManeuverBonus()
         self.attacks[DAMAGE] = {
                 WEAPON_PRIMARY: util.Modifier(),
                 WEAPON_SECONDARY: util.Modifier()
                 }
         for attribute in ATTRIBUTES:
             self.attributes[attribute] = util.Attribute()
-        self.defenses[AC] = util.ArmorClass()
-        self.defenses[MC] = util.Modifier()
-        self.defenses[DR] = util.DamageReduction()
-        self.defenses[SPECIAL] = list()
+        self.armor_class = util.ArmorClass()
+        self.maneuver_defense = util.Modifier()
+        self.damage_reduction = util.DamageReduction()
+        self.special_defenses = list()
         for save in SAVES:
             self.defenses[save] = util.SavingThrow()
-        self.core[HIT_POINTS] = util.Modifier()
-        self.core[INITIATIVE] = util.Modifier()
+        self.hit_points = util.Modifier()
+        self.initiative = util.Modifier()
         for ability_type in self.abilities:
             self.abilities[ability_type] = list()
 
@@ -310,14 +467,14 @@ class Creature(object):
         raw_stats = self.raw_stats
         #set meta
         if LEVEL in raw_stats.keys():
-            self.meta[LEVEL] = int(raw_stats['level'])
+            self.level = int(raw_stats['level'])
         if 'alignment' in raw_stats.keys():
-            self.meta[ALIGNMENT] = raw_stats['alignment']
-        self.meta[NAME] = raw_stats['name']
+            self.alignment = raw_stats['alignment']
+        self.name = raw_stats['name']
         if DESCRIPTION in raw_stats.keys():
-            self.meta[DESCRIPTION] = raw_stats[DESCRIPTION]
+            self.description = raw_stats[DESCRIPTION]
         if COMBAT_DESCRIPTION in raw_stats.keys():
-            self.meta[COMBAT_DESCRIPTION] = raw_stats[COMBAT_DESCRIPTION]
+            self.combat_description = raw_stats[COMBAT_DESCRIPTION]
 
         #Add all the abilities to the character
         for ability_type in ABILITY_TYPES:
@@ -327,11 +484,11 @@ class Creature(object):
 
         #set core
         if SIZE in raw_stats.keys():
-            self.core[SIZE] = raw_stats['size']
+            self.size = raw_stats['size']
         else:
-            self.core[SIZE] = SIZE_MEDIUM
-        self.core[SPACE], self.core[REACH], self.core[SPEEDS][LAND_SPEED] = \
-                util.get_size_statistics(self.core[SIZE])
+            self.size = SIZE_MEDIUM
+        self.space, self.reach, self.land_speed = \
+                util.get_size_statistics(self.size)
         #If the creature lists its speeds explicitly, use those instead
         if SPEEDS in raw_stats.keys() or 'speed' in raw_stats.keys():
             #Split the raw speeds into each separate speed
@@ -341,25 +498,25 @@ class Creature(object):
             except KeyError:
                 speeds = util.split_filtered(raw_stats['speed'], ',')
             for speed in speeds:
-                speed_mode, speed_value = util.split_descriptor_and_value(
-                        speed)
+                speed_mode, speed_value = util.split_descriptor_and_value(speed)
                 if speed_mode in SPEED_MODES:
-                    self.core[SPEEDS][speed_mode] = speed_value
+                    self.speeds[speed_mode] = speed_value
                 elif speed_mode == 'noland':
-                    self.core[SPEEDS][LAND_SPEED] = None
+                    self.land_speed = None
                 else:
-                    self.core[SPEEDS][LAND_SPEED] = speed_value
+                    self.land_speed = speed_value
 
         #set items
         equipment_set = equipment.EquipmentSet.from_raw_stats(
                 raw_stats)
-        self.items[WEAPON_PRIMARY] = equipment_set.weapon
-        self.items[WEAPON_SECONDARY] = equipment_set.offhand_weapon
-        self.items[ARMOR] = equipment_set.armor
-        self.items[SHIELD] = equipment_set.shield
-        for weapon in WEAPONS:
-            if self.items[weapon] is not None:
-                self.items[weapon].set_size(self.core[SIZE])
+        self.primary_weapon = equipment_set.weapon
+        if self.primary_weapon is not None:
+            self.primary_weapon.set_size(self.size)
+        self.secondary_weapon = equipment_set.offhand_weapon
+        if self.secondary_weapon is not None:
+            self.secondary_weapon.set_size(self.size)
+        self.armor = equipment_set.armor
+        self.shield = equipment_set.shield
 
         #Add attributes
         for attribute_name in ATTRIBUTE_NAMES:
@@ -374,8 +531,7 @@ class Creature(object):
 
     #parse an attribute from raw_stats
     def parse_attribute(self, attribute_name, raw_attribute):
-        progression, starting_value = util.split_descriptor_and_value(
-                raw_attribute)
+        progression, starting_value = util.split_descriptor_and_value(raw_attribute)
 
         self.attributes[attribute_name].add_bonus(starting_value, BASE)
         self.attributes[attribute_name].set_progression(progression)
