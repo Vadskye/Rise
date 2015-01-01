@@ -126,6 +126,9 @@ class Creature(object):
     def get_hit_points(self):
         return self.core[HIT_POINTS]
 
+    def get_current_hit_points(self):
+        return self.combat[CURRENT_HIT_POINTS]
+
     def get_initiative(self):
         return self.core[INITIATIVE]
 
