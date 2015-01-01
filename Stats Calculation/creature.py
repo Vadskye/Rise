@@ -40,7 +40,7 @@ def generate_creature_from_class_name(class_name, raw_stats, verbose):
                 'warrior': Warrior,
                 'wizard': Wizard,
                 }[class_name](raw_stats, verbose)
-    except:
+    except KeyError:
         raise Exception("Class name " + class_name + " not recognized")
 
 def generate_creature_from_creature_type(creature_type, raw_stats, verbose): 
