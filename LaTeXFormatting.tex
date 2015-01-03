@@ -7,9 +7,15 @@
 %\titleformat{\subsubsection}{\bfseries\raggedright}{}{0.5em}{\lsssec}
 
 %make bigger section headers
-\titleformat*{\section}{\LARGE}
-\titleformat*{\subsection}{\Large}
-\titleformat*{\subsubsection}{\large}
+\titleformat*{\section}{\LARGE\bfseries}
+%\titleformat*{\subsection}{\Large}
+\titleformat*{\subsubsection}{\large\bfseries}
+
+\titleformat{\subsection}
+  {\Large\bfseries}   % The style of the section title
+  {}                             % a prefix
+  {0pt}                          % How much space exists between the prefix and the title
+  {}    % How the section is represented
 
 %Format the page margins
 \addtolength{\voffset}{-1in}
