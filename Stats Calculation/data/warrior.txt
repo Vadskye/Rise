@@ -1,4 +1,4 @@
-name=GenericWarrior
+name=Warrior
 race=human
 class=warrior
 weapon=medium_melee
