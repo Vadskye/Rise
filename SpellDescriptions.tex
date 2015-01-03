@@ -1520,10 +1520,10 @@ This spell can be made permanent with a \spell{permanency} ritual.
   You can control the actions of any humanoid creature through a telepathic link that you establish with the subject's mind.
   \par If you and the subject have a common language, you can generally force the subject to perform as you desire, within the limits of its abilities. If no common language exists, you can communicate only basic commands, such as ``Come here," ``Go there," ``Fight," and ``Stand still." If you concentrate on the spell, you know what the subject is experiencing, but you do not receive direct sensory input from it, nor can it communicate with you telepathically.
   \par Once you have given a dominated creature a command, it continues to attempt to carry out that command to the exclusion of all other activities except those necessary for day-to-day survival (such as sleeping, eating, and so forth). Because of this limited range of activity, a Sense Motive check against DC 15 (rather than DC 25) can determine that the subject's behavior is being influenced by an enchantment effect (see the Sense Motive skill description).
-  It takes time for the link to be established. For the first hour after the spell is cast, you must concentrate on the spell (a standard action) to control the subject's actions. While you are not concentrating on the spell, the creature acts as if confused, as the \spell{confusion} spell, except that it never attacks you. If the subject would randomly attack you, it instead is forced to follow your commands. At the end of the hour, the creature makes a second saving throw against the spell effect. If you concentrate on the spell during this time, it takes a \minus4 penalty on the saving throw. If the creature succeeds, it ignores the spell effect; otherwise, you dominate it fully for the remainder of the spell duration.
+  It takes time for the link to be established. For the first hour after the spell is cast, you must concentrate on the spell (a standard action) to control the subject's actions. While you are not concentrating on the spell, the creature acts as if confused, as the \spell{confusion} spell, except that it never attacks you. If the subject would randomly attack you, it instead is forced to follow your commands. At the end of the hour, you must make a second Will attack. If you concentrate on the spell during this time, you gain a \plus4 bonus to the attack. If your attack succeeds, you dominate the creature fully for the remainder of the spell duration. Otherwise, the creature is freed.
   \par After the first hour, changing your instructions or giving a dominated creature a new command is the equivalent of redirecting a spell, so it is a move action.
   \par By concentrating fully on the spell (a standard action), you can receive full sensory input as interpreted by the mind of the subject, though it still can't communicate with you. You can't actually see through the subject's eyes, so it's not as good as being there yourself, but you still get a good idea of what's going on.
-  \par Subjects resist this control, and any subject forced to take actions against its nature receives a new saving throw. This does not apply when a subject is merely ordered to perform an action it disagrees with -- the action must be directly opposed to the subject's beliefs. Ordering a paladin to murder an innocent would grant the paladin a saving throw, but ordering him to build a bridge that would allow an evil army to cross a river would not grant him a saving throw. Obviously self-destructive orders are never carried out. Once control is established, the range at which it can be exercised is unlimited, as long as you and the subject are on the same plane. You need not see the subject to control it.
+  \par Subjects resist this control, and you must make a new attack to force the subject to take an action against its nature. Failure means it breaks free. This does not apply when a subject is merely ordered to perform an action it disagrees with -- the action must be directly opposed to the subject's beliefs. Ordering a paladin to murder an innocent would require a new attack, but ordering him to build a bridge that would allow an evil army to cross a river would not. If your command would obviously lead to the creature's death, your attack takes a \minus10 penalty. Once control is established, the range at which it can be exercised is unlimited, as long as you and the subject are on the same plane. You need not see the subject to control it.
   \par If you recast this spell on a subject you have dominated before it escapes your control, you can extend the duration of the spell indefinitely. You do not need to make a new attack when you renew your control in this fashion.
 \end{spelleffect}
 
@@ -2450,7 +2450,7 @@ A vulnerable creature takes a \minus2 penalty to attacks, defenses, and checks.
   The subject is bewildered, making it vulnerable.
 \end{spellhealthy}
 \begin{spellblood}
-  As the healthy effect, and the subject is paralyzed and unable to act. Each round on its turn, the subject may attempt a new saving throw to end the paralysis. If it succeeds, it is no longer paralyzed, though it is still bewildered and can take no other actions that round.
+  As the healthy effect, and the subject is paralyzed and unable to act. You must make a new attack each round on your turn. Failure means the subject is no longer paralyzed, though it is still bewildered.
 \end{spellblood}
 \begin{spellnotes}
   A vulnerable creature takes a \minus2 penalty to attacks, defenses, and checks.
@@ -2558,7 +2558,7 @@ A vulnerable creature takes a \minus2 penalty to attacks, defenses, and checks.
 \spellsr{Yes (Fortitude)}
 \spelldmg{8d6 physical damage \add d6 per four caster levels above 16th}
 \begin{spelleffect}
-    You make a Fortitude attack to deal damage to each affected creature. A failed attack deals half damage. Plants and creature with the water subtype take a \minus5 penalty on their saving throw. 
+    You make a Fortitude attack to deal damage to each affected creature. A failed attack deals half damage. You gain a \plus5 bonus to attack plants and creatures with the water subtype. 
 \end{spelleffect}
 
 \spellsection{Hypnotic Pattern}
@@ -2572,7 +2572,7 @@ A vulnerable creature takes a \minus2 penalty to attacks, defenses, and checks.
 \spelldef{Will negates}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-    Creatures within the spell's area are fascinated. Each fascinated creature stands or sits quietly, taking no actions other than to pay attention to the fascinating effect for the duration of the spell. It takes a \minus4 penalty on skill checks made as reactions, such as Listen and Spot checks. Any potential threat, such as a hostile creature approaching, allows the fascinated creature a new saving throw. Any obvious threat, such as noticing someone draw a weapon, cast a spell, or aim a ranged weapon at the fascinated creature automatically breaks the effect. A fascinated creature's ally may shake it free of the spell as a standard action.
+    Creatures within the spell's area are fascinated. Each fascinated creature stands or sits quietly, taking no actions other than to pay attention to the fascinating effect for the duration of the spell. It takes a \minus4 penalty on skill checks made as reactions, such as Listen and Spot checks. Any obvious threat, such as noticing someone draw a weapon, cast a spell, or aim a ranged weapon at the fascinated creature, automatically breaks the effect. A fascinated creature's ally may shake it free of the spell as a standard action.
 \end{spelleffect}
 \begin{spellnotes}
   Creatures who cannot see the lights are not affected by this spell.
@@ -2781,7 +2781,7 @@ A slowed creature can take only a single move action or standard action each tur
 \end{spelleffect}
 \begin{spellnotes}
   \par The hand never provokes attacks of opportunity from opponents. It cannot push through a \spell{wall of force} or enter an \spell{antimagic field}, but it suffers the full effect of a \spell{prismatic wall} or \spell{prismatic sphere}. The hand's defenses are the same as its caster.
-  \spell{Disintegrate} or a successful \spell{dispel magic} destroys the hand without a saving throw. Directing the hand to a new target is a swift action.
+  \spell{Disintegrate} or a successful \spell{dispel magic} destroys the hand. Directing the hand to a new target is a swift action.
 \end{spellnotes}
 
 \spellsection{Invest Magic}
@@ -2945,7 +2945,7 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
     \item Duplicate any other spell of 4th level or lower, provided the spell is not of a school prohibited to you.
     \item Duplicate any other spell of 3rd level or lower, even if it's of a prohibited school.
     \item Undo the harmful effects of many spells, such as geas/quest or insanity.
-    \item Produce any other effect whose power level is in line with the above effects, such as a single creature automatically hitting on its next attack or taking a \minus5 penalty on its next saving throw.
+    \item Produce any other effect whose power level is in line with the above effects, such as a single creature automatically hitting on its next attack or taking a \minus5 penalty to its defenses for 5 rounds.
   \end{itemize*}
   \par When casting a limited wish, you do not specify the exact spell or effect you wish to duplicate. Instead, you make a wish, describing what you want to have happen, and make a DC 15 Wisdom check. If the check fails, your intent is redirected or perverted in some way. For example, a \spell{limited wish} to turn a foe to stone would normally mimic the \spell{flesh to stone} effect of the \spell{transmute flesh and stone} spell. However, if the Wisdom check failed, your foe might gain the benefit of a \spell{stoneskin} spell instead.
   \par When a limited wish spell duplicates a spell with a material component that costs more than 1,000 gp, you must provide that component (in addition to the 1,000 gp cost for this spell).
