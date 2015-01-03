@@ -79,42 +79,42 @@ class Ability(object):
 ####################
 
 def barbarian_damage_reduction_benefit(creature):
-    creature.damage_reduction = util.DamageReduction(creature.get_level(),
+    creature.damage_reduction = util.DamageReduction(creature.level,
         'physical')
 Ability.create_ability('barbarian damage reduction', barbarian_damage_reduction_benefit)
     
 def danger_sense_benefit(creature):
-    creature.get_initiative().add_bonus(creature.get_level()/2, 'danger sense')
+    creature.initiative().add_bonus(creature.level/2, 'danger sense')
 Ability.create_ability('danger sense', danger_sense_benefit)
 
 def larger_than_life_benefit(creature):
-    if creature.items[WEAPON_PRIMARY] is None:
+    if creature.primary_weapon is None:
         return False
-    creature.items[WEAPON_PRIMARY].increase_size()
+    creature.primary_weapon.increase_size()
 Ability.create_ability('larger than life', larger_than_life_benefit)
 Ability.create_ability('larger than belief', larger_than_life_benefit)
 
 def rage_benefit(creature):
-    rage_bonus = util.std_scale(creature.get_level())
-    creature.attributes[STR].add_bonus(rage_bonus, 'rage')
-    creature.attributes[CHA].add_bonus(rage_bonus, 'rage')
-    creature.defenses[AC].misc.add_bonus(-2, 'rage')
-    creature.get_hit_points().add_bonus(creature.get_level()*rage_bonus, 'rage')
+    rage_bonus = util.std_scale(creature.level)
+    creature.strength.add_bonus(rage_bonus, 'rage')
+    creature.charisma.add_bonus(rage_bonus, 'rage')
+    creature.armor_class.misc.add_bonus(-2, 'rage')
+    creature.get_hit_points().add_bonus(creature.level*rage_bonus, 'rage')
 Ability.create_ability('rage', rage_benefit)
 
 def armor_discipline_agility_benefit(creature):
-    armor_discipline_count = (creature.get_level()+5)/6
+    armor_discipline_count = (creature.level+5)/6
     for i in xrange(1, armor_discipline_count):
-        creature.items[ARMOR].encumbrance = util.lower_encumbrance(
-                creature.items[ARMOR].encumbrance)
+        creature.armor.encumbrance = util.lower_encumbrance(
+                creature.armor.encumbrance)
 Ability.create_ability('armor discipline (agility)', armor_discipline_agility_benefit)
 
 def armor_discipline_resilience_benefit(creature):
-    if creature.get_level() > 7:
-        creature.damage_reduction = util.DamageReduction(creature.get_level(), 'physical')
-    if creature.get_level() > 13:
-        constitution = creature.attributes[CON].get_total()
-        creature.defenses[AC].misc.add_bonus(constitution/2, CON)
+    if creature.level > 7:
+        creature.damage_reduction = util.DamageReduction(creature.level, 'physical')
+    if creature.level > 13:
+        constitution = creature.constitution.get_total()
+        creature.armor_class.misc.add_bonus(constitution/2, CON)
 Ability.create_ability('armor discipline (resilience)', armor_discipline_resilience_benefit)
 
 
@@ -123,63 +123,63 @@ Ability.create_ability('armor discipline (resilience)', armor_discipline_resilie
 ####################
 
 def overwhelming_force_prerequisites(creature):
-    return creature.items[WEAPON_PRIMARY].encumbrance == 'heavy'
+    return creature.primary_weapon.encumbrance == 'heavy'
 def overwhelming_force_benefit(creature):
-    creature.attacks[DAMAGE][WEAPON_PRIMARY].add_bonus(
-                creature.attributes[STR].get_total(), STR)
+    creature.primary_weapon_damage.add_bonus(
+                creature.strength.get_total(), STR)
 def overwhelming_force_prerequisites(creature):
-        return creature.attributes[STR].get_total() >=5 and creature.attacks[ATTACK_BONUS].base_attack_bonus >=8 and creature.items[WEAPON_PRIMARY].encumbrance == 'heavy'
+        return creature.strength.get_total() >=5 and creature.attack_bonus.base_attack_bonus >=8 and creature.primary_weapon.encumbrance == 'heavy'
 Ability.create_ability('overwhelming force', overwhelming_force_benefit,
         overwhelming_force_prerequisites, set(('feat', 'combat', 'power')))
 
 def two_weapon_fighting_benefit(creature):
     if creature.offhand_weapon:
-        creature.attacks[ATTACK_BONUS].add_competence(2)
+        creature.attack_bonus.add_competence(2)
 
 Ability.create_ability('two-weapon fighting', two_weapon_fighting_benefit,
-        lambda creature: creature.attributes[DEX].get_total() >=3, 
+        lambda creature: creature.dexterity.get_total() >=3, 
         set(('feat', 'combat', 'finesse')))
 
 def two_weapon_defense_benefit(creature):
     if creature.offhand_weapon:
-        creature.defenses[AC].shield.add_competence(2)
+        creature.armor_class.shield.add_competence(2)
 Ability.create_ability('two-weapon defense', two_weapon_defense_benefit,
-        lambda creature: creature.attributes[DEX].get_total() >= 3,
+        lambda creature: creature.dexterity.get_total() >= 3,
         set(('feat', 'combat', 'defense', 'finesse')))
 
 def combat_expertise_benefit(creature):
-    creature.attacks[ATTACK_BONUS].add_bonus(-util.bab_scale(creature.level),
+    creature.attack_bonus.add_bonus(-util.bab_scale(creature.level),
             'combat expertise')
-    creature.defenses[AC].dodge.add_bonus(util.bab_scale(creature.level),
+    creature.armor_class.dodge.add_bonus(util.bab_scale(creature.level),
             'combat expertise')
 Ability.create_ability('combat expertise', combat_expertise_benefit, 
         lambda creature: creature.attributes.intelligence.get_total() >= 3,
         set(('feat', 'combat', 'defense', 'style')))
 
 def power_attack_benefit(creature):
-    creature.attacks[ATTACK_BONUS].add_bonus(-util.bab_scale(creature.level), 
+    creature.attack_bonus.add_bonus(-util.bab_scale(creature.level), 
             'power attack')
-    damage_bonus = 2+(creature.attacks[ATTACK_BONUS].base_attack_bonus/5)*2
-    if creature.items[WEAPON_PRIMARY].encumbrance == 'medium' or creature.items[WEAPON_PRIMARY].encumbrance == 'heavy':
-        creature.attacks[DAMAGE][WEAPON_PRIMARY].add_bonus(damage_bonus,
+    damage_bonus = 2+(creature.attack_bonus.base_attack_bonus/5)*2
+    if creature.primary_weapon.encumbrance == 'medium' or creature.primary_weapon.encumbrance == 'heavy':
+        creature.primary_weapon_damage.add_bonus(damage_bonus,
                 'power attack')
     else:
-        creature.attacks[DAMAGE][WEAPON_PRIMARY].add_bonus(damage_bonus/2, 'power attack')
+        creature.primary_weapon_damage.add_bonus(damage_bonus/2, 'power attack')
     if creature.offhand_weapon:
         creature.offhand_weapon_damage.add_bonus(damage_bonus/2, 
                 'power attack')
 Ability.create_ability('power attack', power_attack_benefit, lambda creature:
-        creature.attributes[STR].get_total() >= 3,
+        creature.strength.get_total() >= 3,
         ['feat', 'combat', 'power', 'style'])
 
 def deadly_aim_benefit(creature):
-    creature.attacks[ATTACK_BONUS].add_bonus(-util.bab_scale(creature.level), 
+    creature.attack_bonus.add_bonus(-util.bab_scale(creature.level), 
             'deadly aim')
-    damage_bonus = 2+(creature.attacks[ATTACK_BONUS].base_attack_bonus/5)*2
-    creature.attacks[DAMAGE][WEAPON_PRIMARY].add_bonus(damage_bonus, 
+    damage_bonus = 2+(creature.attack_bonus.base_attack_bonus/5)*2
+    creature.primary_weapon_damage.add_bonus(damage_bonus, 
             'deadly aim')
 Ability.create_ability('deadly aim', deadly_aim_benefit, lambda creature:
-        creature.attributes[DEX].get_total() >= 3,
+        creature.dexterity.get_total() >= 3,
         set(('feat', 'combat', 'precision', 'style')))
 
 Ability.create_feat('endurance', tags=[TAG_DEFENSE])
@@ -197,11 +197,11 @@ def great_fortitude_benefit(creature):
 Ability.create_feat('great fortitude',
         great_fortitude_benefit, tags=[SAVING_THROW])
 def iron_will_benefit(creature):
-    creature.defenses[WILL].add_bonus(2, 'iron will')
+    creature.will.add_bonus(2, 'iron will')
 Ability.create_feat('iron will',
         iron_will_benefit, tags=[SAVING_THROW])
 def lightning_reflexes_benefit(creature):
-    creature.defenses[REFLEX].add_bonus(2, 'lightning reflexes')
+    creature.reflex.add_bonus(2, 'lightning reflexes')
 Ability.create_feat('lightning reflexes',
         lightning_reflexes_benefit, tags=[SAVING_THROW], text='1/day reroll Reflex')
 
@@ -222,19 +222,19 @@ Ability.create_ability('low-light vision', tags = ['sense'])
 Ability.create_ability('scent', tags = ['sense'])
 
 def natural_grab_text(creature):
-    return 'Natural grab (%s) %s' % (util.decrease_size(creature.get_size()).title(),
-            creature.attacks[MANEUVER_BONUS].mstr())
+    return 'Natural grab (%s) %s' % (util.decrease_size(creature.size).title(),
+            creature.maneuver_bonus.mstr())
 Ability.create_ability('improved grab', text = natural_grab_text,
         tags=['special attack'])
 
 def natural_trip_text(creature):
-    return 'Natural trip (%s) %s' % (util.increase_size(creature.get_size()).title(),
-            creature.attacks[MANEUVER_BONUS].mstr())
+    return 'Natural trip (%s) %s' % (util.increase_size(creature.size).title(),
+            creature.maneuver_bonus.mstr())
 Ability.create_ability('natural trip', text = natural_trip_text,
         tags=['special attack'])
 
 def natural_weapon_benefit(creature):
-    creature.items[WEAPON_PRIMARY].increase_size()
+    creature.primary_weapon.increase_size()
 Ability.create_ability('improved natural weapon',
         benefit = natural_weapon_benefit)
 
@@ -290,10 +290,10 @@ Ability.create_ability('scout', benefit = scout_benefit,
 
 def incorporeal_benefit(creature):
     #add Cha to hit points
-    creature.get_hit_points().add_bonus(creature.get_level() *
-            creature.attributes[CHA].get_total()/2, 'cha')
-    creature.attributes[STR].set_inapplicable()
-    creature.attributes[CON].set_inapplicable()
+    creature.hit_points().add_bonus(creature.level *
+            creature.charisma.get_total()/2, 'cha')
+    creature.strength.set_inapplicable()
+    creature.constitution.set_inapplicable()
     def incorporeal_defense(damage, damage_types):
         d2 = dice.dx(2)
         if d2.roll() == 1:
