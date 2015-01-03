@@ -65,7 +65,7 @@ Axes & Battleaxe, greataxe, handaxe, throwing axe & Double axe, dwarven urgrosh,
 Blunt weapons & Club, greatclub, mace, morningstar, quarterstaff, sap & Gnome hooked hammer, maul \\
 Blades, heavy & Falchion, greatsword, longsword, scimitar & Bastard sword, two-bladed sword \\
 Blades, light & Dagger, punching dagger, rapier, short sword & Kukri \\
-Bows & Longbow, shortbow (and composite) & \\
+Bows & Longbow, shortbow & \\
 Crossbows & Heavy crossbow, light crossbow & Hand crossbow, repeating crossbows \\
 Flexible Weapons & Flail, heavy flail, nunchaku & Whip \\
 Headed weapons & Heavy pick, light hammer, light pick, sickle, warhammer & \\
@@ -99,12 +99,6 @@ Double weapons are large weapons with two ends. You can fight with both ends of 
 Ranged weapons are used to make attacks against distant foes within the range of your weapon. There are two kinds of ranged weapons: projectile weapons and thrown weapons.
 
 \parhead{Range Increments} All ranged weapons have a ``range increment'', which indicates the distance at which you can effectively attack with the weapon. Any attack against a target within your range increment takes no penalty. For each range increment by which the target is distant from you, you take a cumulative \minus2 penalty to your attack roll. A thrown weapon has a maximum range of five range increments. A projectile weapon can shoot out to ten range increments.
-
-\subsubsection{Projectile Weapons} Projectile weapons fire ammunition, such as arrows, bolts, or sling bullets, rather than striking foes directly. Unlike normal, you always use your Dexterity to attack with projectile weapons, and you do not add your Strength to damage unless using a sling or a specially built composite bow. If you have a Strength penalty to damage, you apply that penalty with all slings and bows.
-
-\parhead{Ammunition Use} Generally speaking, ammunition that hits its target is destroyed or rendered useless, while normal ammunition that misses has a 50\% chance of being destroyed or lost.
-
-\parhead{Reloading} When using a bow, a character can draw ammunition as a free action; crossbows and slings require a move action to reload. Reloading always requires two hands.
 
 \subsubsection{Thrown Weapons} Thrown weapons are thrown at a target to deal damage. They generally do not break when thrown.
 
@@ -219,9 +213,7 @@ descriptions for details.
 
     Bows &&&&&& \\
     \tind Longbow\fn{3} & Heavy (Ranged) & 1d8 & Piercing & 40 gp & 3 lb. & Impact, Projectile (100 ft.) \\
-    \tind Longbow, composite\fn{3} & Heavy (Ranged) & 1d8 & Piercing & 50 gp & 3 lb. & Impact, Projectile (100 ft.) \\
     \tind Shortbow\fn{3} & Medium (Ranged) & 1d6 & Piercing & 30 gp & 2 lb. & Impact, Projectile (50 ft.) \\
-    \tind Shortbow, composite\fn{3} & Medium (Ranged) & 1d6 & Piercing & 40 gp & 2 lb. & Impact, Projectile (50 ft.) \\
     \tind Arrows (20) & \x & \x & \x & 1 gp & 3 lb. & Ammunition \\
 
     Crossbows &&&&&& \\
@@ -362,7 +354,7 @@ Some weapons found on \trefnp{Weapons} have special properties. The list of spec
 \parhead{Grappling} You gain a \plus2 bonus to physical attacks with this weapon in a grapple.
 \parhead{Nonlethal} This weapon deals nonlethal damage rather than lethal damage. See \pcref{Nonlethal Damage}.
 \parhead{Parrying} You can a \plus2 bonus to parry attempts with this weapon.
-\parhead{Projectile} This weapon fires projectiles. Projectile weapons have a range increment listed in their description, which indicates the distance they can be easily fired at. See \pcref{Ranged Weapons}.
+\parhead{Projectile} This weapon fires projectiles at range. Projectile weapons must be reloaded. The time required to reload a projectile weapon is given in the weapon description.
 \parhead{Reach} This weapon strikes at double your natural reach (so 10 feet for a typical Small or Medium creature). However, it cannot attack a creature within your natural reach.
 
 Reach weapons can held using a different grip to strike nearby foes. This is called ``short hafting''. While short hafting a reach weapon, you ignore the weapon's reach property, but you take a \minus4 penalty to physical attacks with it.
@@ -372,17 +364,17 @@ Reach weapons can held using a different grip to strike nearby foes. This is cal
 \parhead{Unarmed} This weapon is used as part of an unarmed strike. It cannot be disarmed. Unless you have the Improved Unarmed Strike feat (see \pref{Improved Unarmed Strike}), you can't take attacks of opportunity or defend yourself with this weapon, which makes you defenseless. See \pcref{Attacks of Opportunity}.
 \parhead{Unbalanced} If you roll either a 1 or 2 when attacking this weapon, you critically fail the attack (see \pcref{Critical Success and Failure}.
 
-\subsection{Weapon Descriptions}
-Weapons found on \trefnp{Weapons} that have special options for the wielder ("you") are described below. Splash weapons are described under Special Substances and Items.
+\subsection{Weapon Special Abilities}
+Some weapons in \trefnp{Weapons} have unique special abilities, which are described below.
 \parhead{Claw Sheath} A claw sheath is not a weapon in itself, but a covering over a single claw that a creature can use to make claw attacks. Claw sheaths do not grant a creature without claws a claw attack. Normally, a sheath does not improve the claw attack, but magical claw sheaths can be made which grant bonuses to attacks made with the claw. It may be possible to find or craft unusual sheaths for natural weapons other than claws.
 \parhead{Crossbow, Hand} You can draw a hand crossbow back by hand. Loading a hand crossbow is a move action that provokes attacks of opportunity.
-\par You can fire a crossbow from a prone position without penalty.
+\par You can fire a crossbow from a prone position without penalty. You apply a Strength penalty to damage with a crossbow, but not a Strength bonus.
 \parhead{Crossbow, Heavy} You draw a heavy crossbow back by turning a small winch. Loading a heavy crossbow is a full-round action that requires both hands.
-\par You can fire a crossbow from a prone position without penalty.
+\par You can fire a crossbow from a prone position without penalty. You apply a Strength penalty to damage with a crossbow, but not a Strength bonus.
 \parhead{Crossbow, Light} You draw a light crossbow back by pulling a lever. Loading a light crossbow is a move action that requires both hands.
-\par You can fire a crossbow from a prone position without penalty.
+\par You can fire a crossbow from a prone position without penalty. You apply a Strength penalty to damage with a crossbow, but not a Strength bonus.
 \parhead{Crossbow, Repeating} The repeating crossbow (whether heavy or light) holds 10 crossbow bolts. As long as it holds bolts, you can reload it by pulling the reloading lever (a free action). Loading a new case of 10 bolts is a full-round action that requires both hands.
-\par You can fire a crossbow from a prone position without penalty.
+\par You can fire a crossbow from a prone position without penalty. You apply a Strength penalty to damage with a crossbow, but not a Strength bonus.
 \parhead{Hammer, Gnome Hooked} This weapon has a hammer head which deals 1d8 points of damage, and a hook which deals 1d6 points of damage. The hook is a tripping weapon.
 \parhead{Longbow} You need both hands to fire a bow, regardless of its size. One hand is free when not firing the bow. Loading a bow is a free action that requires both hands. A longbow is too unwieldy to use while you are mounted.
 \parhead{Net} A net is used to entangle enemies. When you throw a net, you make a ranged touch attack against your target. If you hit, the target is entangled. An entangled creature moves at half speed, cannot run or charge, and takes a \minus2 penalty to physical attacks and defenses, as well as Strength and Dexterity-based checks. If you control the trailing rope by succeeding on an opposed Strength check while holding it, the entangled creature can move only within the limits that the rope allows. If the entangled creature attempts to cast a spell, it must make a DC 15 \add double spell level Concentration check or be unable to cast the spell.
