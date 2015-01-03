@@ -67,7 +67,7 @@ Blades, heavy & Falchion, greatsword, longsword, scimitar & Bastard sword, two-b
 Blades, light & Dagger, punching dagger, rapier, short sword & Kukri \\
 Bows & Longbow, shortbow (and composite) & \\
 Crossbows & Heavy crossbow, light crossbow & Hand crossbow, repeating crossbows \\
-Flexible Weapons & Flail, heavy flail, nunchaku & Spiked chain, whip \\
+Flexible Weapons & Flail, heavy flail, nunchaku & Whip \\
 Headed weapons & Heavy pick, light hammer, light pick, sickle, warhammer & \\
 Monk weapons & Kama, nunchaku, quarterstaff, sai, shuriken, siangham & \\
 Polearms & Glaive, guisarme, halberd, ranseur, scythe & \\
@@ -93,7 +93,7 @@ This is a measure of how much effort it takes to wield a weapon in combat. A wea
 Melee weapons are used for making melee attacks against foes within your reach (see \pcref{Reach}). Most weapons are melee weapons.
 
 \subsubsection{Double Weapons}
-Double weapons are large weapons with two ends. You can fight with both ends of a double weapon simultaneously, just like two-weapon fighting (see \pcref{Two-Weapon Fighting}). Alternately, you can attack with one end at a time, as with a normal heavy weapon. If you have the ability to use a double weapon in one hand, you can only fight with one end at a time, not both. 
+Double weapons are large weapons with two ends. You can fight with both ends of a double weapon simultaneously, just like two-weapon fighting (see \pcref{Two-Weapon Fighting}). Alternately, you can attack with one end at a time, as with a normal heavy weapon. If you have the ability to use a double weapon in one hand, you can only fight with one end at a time, not both.
 
 \subsection{Ranged Weapons}
 Ranged weapons are used to make attacks against distant foes within the range of your weapon. There are two kinds of ranged weapons: projectile weapons and thrown weapons.
@@ -113,8 +113,6 @@ Ranged weapons are used to make attacks against distant foes within the range of
 \parhead{Throwing Other Weapons} It is possible to throw a weapon that is not designed to be thrown. The range increment is 10 feet. You are treated as being nonproficient with the weapon, causing you to take a \minus4 penalty on the attack roll. If it hits, the weapon deals its normal damage, but it scores a critical threat only on a natural roll of 20 and deals double damage on a critical hit.
 
 \parhead{Heavy Weapons} Heavy thrown weapons require a standard action to throw, rather than an attack action like normal. They are not always physically thrown with two hands, but they require the use of your entire body to propel the weapon, preventing you from using your offhand for anything else. This can cause you to provoke attacks of opportunity for being unable to defend yourself (see \pcref{Attacks of Opportunity}).
-
-\parhead{Shurikens and Darts} Although they are thrown weapons, shuriken and darts are treated as ammunition for the purposes of drawing them, crafting special versions of them, and what happens to them after they are thrown.
 
 \subsection{Weapon Size} Every weapon has a size category. This designation indicates the size of the creature for which the weapon was designed. Weapons for unusually large creatures deal more damage, while weapons for unusually small creatures deal less damage. These differences are shown on \trefnp{Weapon Damage and Size}.
 
@@ -183,14 +181,14 @@ descriptions for details.
 \begin{dtable!*}
 \lcaption{Weapons}
     \begin{tabularx}{\textwidth}{p{12em} c c >{\ccol}p{10em} c c >{\ccol}X}
-    \thead{Weapons} & \thead{Encumbrance} & \thead{Dmg} & \thead{Damage Type\footnotetemp{2}} & \thead{Cost} & \thead{Weight\footnotetemp{1}} & \thead{Special} \\
+    \thead{Weapons} & \thead{Encumbrance} & \thead{Dmg} & \thead{Damage Type\fn{1}} & \thead{Cost} & \thead{Weight\fn{2}} & \thead{Special} \\
 
     Armor weapons &&&&&& \\
-    \tind Shield, heavy & Medium & 1d4 & Bludgeoning & special & special & Forceful \\
-    \tind Shield, light & Light & 1d3 & Bludgeoning & special & special & Forceful \\
-    \tind Spiked armor & Light & 1d6 & Piercing & special & special & Grappling \\
-    \tind Spiked shield, heavy & Medium & \x & Piercing & special & special & Forceful \\
-    \tind Spiked shield, light & Light & \x & Piercing & special & special & Forceful \\
+    \tind Shield, heavy\fn{3} & Medium & 1d4 & Bludgeoning & special & special & Forceful \\
+    \tind Shield, light\fn{3} & Light & 1d3 & Bludgeoning & special & special & Forceful \\
+    \tind Spiked armor\fn{3} & Light & 1d6 & Piercing & special & special & Grappling \\
+    \tind Spiked shield, heavy\fn{3} & Medium & 1d6 & Piercing & special & special & Forceful \\
+    \tind Spiked shield, light\fn{3} & Light & 1d4 & Piercing & special & special & Forceful \\
 
     Axes &&&&&& \\
     \tind Axe, throwing & Light & 1d6 & Slashing & 8 gp & 2 lb. & Throwing (10 ft.) \\
@@ -206,8 +204,8 @@ descriptions for details.
     \tind Scimitar & Medium & 1d8 & Slashing & 15 gp & 4 lb. & Keen \\
 
     Blades, light &&&&&& \\
-    \tind Dagger & Light & 1d4 & Piercing or slashing & 2 gp & 1 lb. & Throwing (10 ft.) \\
-    \tind Dagger, punching & Light & 1d4 & Piercing & 2 gp & 1 lb. & Keen \\
+    \tind Dagger & Light & 1d4 & Piercing or slashing & 2 gp & 1 lb. & Keen, Small, Throwing (10 ft.) \\
+    \tind Dagger, punching & Light & 1d4 & Piercing & 2 gp & 1 lb. & Impact, Small \\
     \tind Rapier & Medium & 1d6 & Piercing & 20 gp & 2 lb. & Finesse, Impact \\
     \tind Sword, short & Light & 1d6 & Piercing or slashing & 10 gp & 2 lb. & Keen \\
 
@@ -220,15 +218,15 @@ descriptions for details.
     \tind Sap & Light & 1d6 & Bludgeoning & 1 gp & 2 lb. & Nonlethal \\
 
     Bows &&&&&& \\
-    \tind Longbow & Heavy (Ranged) & 1d8 & Piercing & 40 gp & 3 lb. & Impact, Projectile (100 ft.) \\
-    \tind Longbow, composite & Heavy (Ranged) & 1d8 & Piercing & 50 gp & 3 lb. & Impact, Projectile (100 ft.) \\
-    \tind Shortbow & Medium (Ranged) & 1d6 & Piercing & 30 gp & 2 lb. & Impact, Projectile (50 ft.) \\
-    \tind Shortbow, composite & Medium (Ranged) & 1d6 & Piercing & 40 gp & 2 lb. & Impact, Projectile (50 ft.) \\
+    \tind Longbow\fn{3} & Heavy (Ranged) & 1d8 & Piercing & 40 gp & 3 lb. & Impact, Projectile (100 ft.) \\
+    \tind Longbow, composite\fn{3} & Heavy (Ranged) & 1d8 & Piercing & 50 gp & 3 lb. & Impact, Projectile (100 ft.) \\
+    \tind Shortbow\fn{3} & Medium (Ranged) & 1d6 & Piercing & 30 gp & 2 lb. & Impact, Projectile (50 ft.) \\
+    \tind Shortbow, composite\fn{3} & Medium (Ranged) & 1d6 & Piercing & 40 gp & 2 lb. & Impact, Projectile (50 ft.) \\
     \tind Arrows (20) & \x & \x & \x & 1 gp & 3 lb. & Ammunition \\
 
     Crossbows &&&&&& \\
-    \tind Crossbow, heavy & Heavy (Ranged) & 1d10 & Piercing & 50 gp & 8 lb. & Impact, Projectile (100 ft.) \\
-    \tind Crossbow, light & Medium (Ranged) & 1d8 & Piercing & 40 gp & 4 lb. & Impact, Projectile (50 ft.) \\
+    \tind Crossbow, heavy\fn{3} & Heavy (Ranged) & 1d10 & Piercing & 50 gp & 8 lb. & Impact, Projectile (100 ft.) \\
+    \tind Crossbow, light\fn{3} & Medium (Ranged) & 1d8 & Piercing & 40 gp & 4 lb. & Impact, Projectile (50 ft.) \\
     \tind Bolts, crossbow (10) & \x & \x & \x & 1 gp & 1 lb. & Ammunition \\
 
     Flexible weapons &&&&&& \\
@@ -240,12 +238,12 @@ descriptions for details.
 
 \begin{dtable!*}
     \begin{tabularx}{\textwidth}{p{12em} c c >{\ccol}p{10em} c c >{\ccol}X}
-        \thead{Weapons} & \thead{Encumbrance} & \thead{Dmg} & \thead{Damage Type\footnotetemp{2}} & \thead{Cost} & \thead{Weight\footnotetemp{1}} & \thead{Special} \\
+    \thead{Weapons} & \thead{Encumbrance} & \thead{Dmg} & \thead{Damage Type\fn{1}} & \thead{Cost} & \thead{Weight\fn{2}} & \thead{Special} \\
         Headed weapons &&&&&& \\
         \tind Hammer, light & Light & 1d4 & Bludgeoning & 1 gp & 2 lb. & Throwing (20 ft.) \\
         \tind Pick, heavy & Medium & 1d8 & Piercing & 8 gp & 6 lb. & Impact, Unbalanced \\
         \tind Pick, light & Light & 1d6 & Piercing & 4 gp & 3 lb. & Impact, Unbalanced \\
-        \tind Sickle & Light & 1d6 & Slashing & 6 gp & 2 lb. & Impact \\
+        \tind Sickle & Light & 1d6 & Slashing & 6 gp & 2 lb. & Tripping \\
         \tind Warhammer & Medium & 1d8 & Bludgeoning & 12 gp & 5 lb. & Impact \\
 
         Monk weapons &&&&&& \\
@@ -253,7 +251,7 @@ descriptions for details.
         \tind Nunchaku & Light & 1d6 & Bludgeoning & 2 gp & 2 lb. & Disarming, Unbalanced \\
         \tind Quarterstaff & Heavy & 1d6/1d6 & Bludgeoning & \x & 4 lb. & Double \\
         \tind Sai & Light & 1d4 & Piercing or bludgeoning & 1 gp & 1 lb. & Disarming, Impact \\
-        \tind Shuriken (5) & Light (Ranged) & 1d4 & Piercing & 1 gp & 1/2 lb. & Thrown (10 ft.) \\
+        \tind Shuriken (5) & Light (Ranged) & 1d4 & Piercing & 1 gp & 1/2 lb. & Ammunition, Thrown (10 ft.) \\
         \tind Siangham & Light & 1d6 & Piercing & 3 gp & 1 lb. & Parrying \\
 
         Polearms &&&&&& \\
@@ -266,8 +264,8 @@ descriptions for details.
 
         Simple weapons &&&&&& \\
         \tind Club & Medium & 1d6 & Bludgeoning & \x & 3 lb. & \x \\
-        \tind Crossbow, light & Medium (Ranged) & 1d8 & Piercing & 35 gp & 4 lb. & Projectile (100 ft.) \\
-        \tind Dagger & Light & 1d4 & Piercing or slashing & 2 gp & 1 lb. & Keen, Thrown (10 ft.) \\
+        \tind Crossbow, light\fn{3} & Medium (Ranged) & 1d8 & Piercing & 35 gp & 4 lb. & Projectile (100 ft.) \\
+        \tind Dagger & Light & 1d4 & Piercing or slashing & 2 gp & 1 lb. & Keen, Small, Thrown (10 ft.) \\
         \tind Quarterstaff & Heavy & 1d6/1d6 & Bludgeoning & \x & 4 lb. & Double \\
         \tind Unarmed strike & Light & 1d3 & Bludgeoning & \x & \x & Nonlethal, Unarmed \\
 
@@ -280,16 +278,16 @@ descriptions for details.
 
         Thrown weapons &&&&&& \\
         \tind Axe, throwing & Light & 1d6 & Slashing & 8 gp & 2 lb. & Thrown (10 ft.) \\
-        \tind Dagger & Light & 1d4 & Piercing or slashing & 2 gp & 1 lb. & Keen, Thrown (10 ft.) \\
-        \tind Dart (5) & Light (Ranged) & 1d4 & Piercing & 1 gp & 1/2 lb. & Thrown (20 ft.) \\
+        \tind Dagger & Light & 1d4 & Piercing or slashing & 2 gp & 1 lb. & Keen, Small, Thrown (10 ft.) \\
+        \tind Dart (5) & Light (Ranged) & 1d4 & Piercing & 1 gp & 1/2 lb. & Ammunition, Thrown (20 ft.) \\
         \tind Hammer, light & Light & 1d4 & Bludgeoning & 1 gp & 2 lb. & Thrown (20 ft.) \\
         \tind Javelin & Medium (Ranged) & 1d6 & Piercing & 1 gp & 2 lb. & Thrown (30 ft.) \\
-        \tind Shuriken (5) & Light (Ranged) & 1d2 & Piercing & 1 gp & 1/2 lb. & Thrown (10 ft.) \\
-        \tind Sling & Light (Ranged) & 1d4 & Bludgeoning & 2 gp & 0 lb. & Projectile (50 ft.) \\
+        \tind Shuriken (5) & Light (Ranged) & 1d2 & Piercing & 1 gp & 1/2 lb. & Ammunition, Thrown (10 ft.) \\
+        \tind Sling\fn{3} & Light (Ranged) & 1d4 & Bludgeoning & 2 gp & 0 lb. & Projectile (50 ft.) \\
         \tind Bullets, sling (20) & \x & \x & \x & 1 gp & 5 lb. & Ammunition \\
 
         Unarmed weapons &&&&&&\\
-        \tind Claw Sheath & \x & \x & \x & 50 gp & 3 lb. & Special \\
+        \tind Claw Sheath\fn{3} & \x & \x & \x & 50 gp & 3 lb. & Special \\
         \tind Gauntlet & Light & 1d3 & Bludgeoning & 2 gp & 1 lb. & Unarmed \\
         \tind Gauntlet, spiked & Light & 1d4 & Piercing & 5 gp & 1 lb. & Unarmed \\
         \tind Unarmed strike & Light & 1d3 & Bludgeoning & \x & \x & Nonlethal, Unarmed \\
@@ -298,53 +296,54 @@ descriptions for details.
 
 \begin{dtable!*}
     \begin{tabularx}{\textwidth}{p{12em} c c >{\ccol}p{10em} c c >{\ccol}X}
-        \thead{Exotic Weapons} & \thead{Encumbrance} & \thead{Dmg} & \thead{Damage Type\footnotetemp{2}} & \thead{Cost} & \thead{Weight\footnotetemp{1}} & \thead{Special} \\
+        \thead{Exotic Weapons} & \thead{Encumbrance} & \thead{Dmg} & \thead{Damage Type\fn{1}} & \thead{Cost} & \thead{Weight\fn{2}} & \thead{Special} \\
         Armor &&&&&& \\
         Axes &&&&&& \\
-        \tind Axe, orc double\fn{5} & Heavy & 1d8/1d8 & Slashing & 60 gp & 15 lb. & Double, Impact \\
-        \tind Urgrosh, dwarven\fn{5} & Heavy & 1d8/1d6 & Slashing or piercing & 50 gp & 12 lb. & Double, Impact \\
+        \tind Axe, orc double & Heavy & 1d8/1d8 & Slashing & 60 gp & 15 lb. & Double, Impact \\
+        \tind Urgrosh, dwarven\fn{3} & Heavy & 1d8/1d6 & Slashing or piercing & 50 gp & 12 lb. & Bracing, Double, Impact \\
         Blunt weapons &&&&&& \\
         Blades, heavy &&&&&& \\
         \tind Sword, bastard & Heavy & 1d10 & Slashing & 75 gp & 6 lb. & \x \\
-        \tind Sword, two-bladed\fn{5} & Heavy & 1d8/1d8 & Slashing & 100 gp & 10 lb. & Double \\
+        \tind Sword, two-bladed & Heavy & 1d8/1d8 & Slashing & 100 gp & 10 lb. & Double \\
         Blades, light &&&&&& \\
         \tind Kukri & Light & 1d4 & Slashing & 8 gp & 2 lb. & \x \\
         Bows &&&&&& \\
         Crossbows &&&&&& \\
-        \tind Crossbow, hand & Light (Ranged) & 1d4 & Piercing & 100 gp & 2 lb. & Projectile (30 ft.) \\
-        \tind Crossbow, repeating heavy & Heavy (Ranged) & 1d10 & Piercing & 400 gp & 12 lb. & Projectile (100 ft.) \\
-        \tind Crossbow, repeating light & Medium (Ranged) & 1d8 & Piercing & 250 gp & 6 lb. & Projectile (50 ft.) \\
+        \tind Crossbow, hand\fn{3} & Light (Ranged) & 1d4 & Piercing & 100 gp & 2 lb. & Projectile (30 ft.) \\
+        \tind Crossbow, repeating heavy\fn{3} & Heavy (Ranged) & 1d10 & Piercing & 400 gp & 12 lb. & Projectile (100 ft.) \\
+        \tind Crossbow, repeating light\fn{3} & Medium (Ranged) & 1d8 & Piercing & 250 gp & 6 lb. & Projectile (50 ft.) \\
         \tind Bolts, hand (10) & \x & \x & \x & 1 gp & 1 lb. & Ammunition \\
         \tind Bolts, repeating (5) & \x & \x & \x & 1 gp & 1 lb. & Ammunition \\
         Flexible weapons &&&&&& \\
-        \tind Chain, spiked\fn{4} & Heavy & 1d8 & Piercing & 25 gp & 10 lb. & Reach \\
-        \tind Flail, dire\fn{5} & Heavy & 1d8/1d8 & Bludgeoning & 90 gp & 10 lb. & Disarming, Double, Tripping \\
-        \tind Whip & Light & 1d3\fn{3} & Slashing & 1 gp & 2 lb. & Nonlethal, Special \\
+        \tind Flail, dire & Heavy & 1d8/1d8 & Bludgeoning & 90 gp & 10 lb. & Disarming, Double, Tripping \\
+        \tind Whip\fn{3} & Light & 1d3 & Slashing & 1 gp & 2 lb. & Disarming, Nonlethal, Tripping \\
         Headed weapons &&&&&& \\
-        \tind Hammer, gnome hooked & Heavy & 1d8/1d6 & Bludgeoning and piercing & 20 gp & 6 lb. & Double \\
+        \tind Hammer, gnome hooked\fn{3} & Heavy & 1d8/1d6 & Bludgeoning or piercing & 20 gp & 6 lb. & Double, Impact, Tripping \\
         Monk weapons &&&&&& \\
         Polearms &&&&&& \\
         Simple weapons &&&&&& \\
         Spear &&&&&& \\
+        \tind Urgrosh, dwarven\fn{3} & Heavy & 1d8/1d6 & Slashing or piercing & 50 gp & 12 lb. & Bracing, Double, Impact \\
         Thrown weapons &&&&&& \\
-        \tind Bolas & Light (Ranged) & 1d4\fn{3} & Bludgeoning & 5 gp & 2 lb. & Thrown (10 ft.) \\
-        \tind Net & Medium (Ranged) & \x & \x & 20 gp & 6 lb. & Thrown (10 ft.) \\
+        \tind Bolas & Light (Ranged) & 1d4\fn{3} & Bludgeoning & 5 gp & 2 lb. & Thrown (10 ft.), Tripping \\
+        \tind Net\fn{3} & Medium (Ranged) & \x & \x & 20 gp & 6 lb. & Thrown (10 ft.) \\
         Unarmed weapons &&&&&&\\
     \end{tabularx}
-    1 Weight figures are for Medium weapons. A Small weapon weighs half as much, and a Large weapon weighs twice as much. \\
-    2 When two types are given, the weapon is both types if the entry specifies ``and," or either type (attacker's choice) if the entry specifies ``or." \\
+    1 When two types are given, the weapon is both types if the entry specifies ``and," or either type (attacker's choice) if the entry specifies ``or." \\
+    2 Weight figures are for Medium weapons. A Small weapon weighs half as much, and a Large weapon weighs twice as much. \\
+    3 This weapon has special rules. \\
 \end{dtable!*}
 
 \begin{dtable!*}
     \lcaption{Natural Weapons}
-    \begin{tabularx}{\textwidth}{l c c c >{\lcol}X}
-        \thead{Natural Weapons} & \thead{Encumbrance} & \thead{Dmg} & \thead{Type\footnotetemp{2}} & \thead{Special} \\
-        Bite & Medium & 1d8 & \x & Piercing and bludgeoning  & \x \\
-        Claw & Light & 1d6 & \x & Slashing and piercing & \x \\
-        Constrict\fn{2} & Heavy & 1d10 & \x & Bludgeoning & \x \\
-        Gore & Heavy & 1d8 & \x & Piercing & \x \\
-        Slam & Medium & 1d8 & \x & Bludgeoning & \x \\
-        Unarmed Strike & Light & 1d3\fn{3} & \x & Bludgeoning & Unarmed \\
+    \begin{tabularx}{\textwidth}{p{12em} c c >{\ccol}p{15em} >{\ccol}X}
+        \thead{Natural Weapons} & \thead{Encumbrance} & \thead{Dmg} & \thead{Damage Type\footnotetemp{2}} & \thead{Special} \\
+        Bite & Medium & 1d8 & Piercing and bludgeoning  & \x \\
+        Claw & Light & 1d6 & Slashing and piercing & \x \\
+        Constrict\fn{2} & Heavy & 1d10 & Bludgeoning & \x \\
+        Gore & Heavy & 1d8 & Piercing & \x \\
+        Slam & Medium & 1d8 & Bludgeoning & \x \\
+        Unarmed Strike & Light & 1d3\fn{3} & Bludgeoning & Unarmed \\
     \end{tabularx}
     1 When two types are given, the weapon is both types if the entry specifies ``and," or either type (attacker's choice) if the entry specifies ``or." \\
     2 This attack can only be used against a foe you are grappling with. \\
@@ -352,7 +351,7 @@ descriptions for details.
 
 \subsection{Weapon Properties}
 Some weapons found on \trefnp{Weapons} have special properties. The list of special properties is given below.
-\parhead{Ammunition} This weapon is designed to be fired by a projectile weapon. It is treated as an improvised weapon if used to attack otherwise.
+\parhead{Ammunition} This weapon is designed to thrown or fired by a projectile weapon in large quantities. It is cheaper to buy and craft, but ammunition that hits its target is destroyed, and ammunition that misses has a 50\% chance to be destroyed or lost.
 \parhead{Bracing} As a move action, you can brace this weapon against a charge for 1 round. While you are bracing your weapon, creatures that charge you provoke attacks of opportunity from you.
 \parhead{Charging} This weapon deals double damage when used from the back of a charging mount.
 \parhead{Disarming} You can use this weapon to make disarm atacks. You gain a \plus2 bonus on such attacks, and can apply magical bonuses from the weapon to the attack.
@@ -367,102 +366,41 @@ Some weapons found on \trefnp{Weapons} have special properties. The list of spec
 \parhead{Reach} This weapon strikes at double your natural reach (so 10 feet for a typical Small or Medium creature). However, it cannot attack a creature within your natural reach.
 
 Reach weapons can held using a different grip to strike nearby foes. This is called ``short hafting''. While short hafting a reach weapon, you ignore the weapon's reach property, but you take a \minus4 penalty to physical attacks with it.
+\parhead{Small} This weapon is unusually small. It is one size category smaller than normal for a light weapon (that is, three size categories smaller than the creature it is intended for). This makes it easier to conceal (see \pcref{Sleight of Hand}).
 \parhead{Throwing} This weapon is designed to be thrown. Throwing weapons have a range increment listed in their description, which indicates the distance they can be easily thrown. See \pcref{Thrown Weapons}.
 \parhead{Tripping} You can use this weapon to make trip attacks. You gain a \plus2 bonus on such attacks, and can apply magical bonuses from the weapon to the attack.
-\parhead{Unarmed} Unless you have the Improved Unarmed Strike feat (see \pref{Improved Unarmed Strike}), you can't take attacks of opportunity or defend yourself with this weapon, which makes you defenseless. See \pcref{Attacks of Opportunity}.
+\parhead{Unarmed} This weapon is used as part of an unarmed strike. It cannot be disarmed. Unless you have the Improved Unarmed Strike feat (see \pref{Improved Unarmed Strike}), you can't take attacks of opportunity or defend yourself with this weapon, which makes you defenseless. See \pcref{Attacks of Opportunity}.
 \parhead{Unbalanced} If you roll either a 1 or 2 when attacking this weapon, you critically fail the attack (see \pcref{Critical Success and Failure}.
 
 \subsection{Weapon Descriptions}
 Weapons found on \trefnp{Weapons} that have special options for the wielder ("you") are described below. Splash weapons are described under Special Substances and Items.
-\parhead{Arrows} An arrow used as a melee weapon is treated as a light improvised weapon (\minus4 penalty on attack rolls) and deals damage as a dagger of its size (critical multiplier x2). Arrows come in a leather quiver that holds 20 arrows. An arrow that hits its target is destroyed; one that misses has a 50\% chance of being destroyed or lost.
-\parhead{Axe, Orc Double} An orc double axe is a double weapon. You can fight with it as if fighting with two weapons, but if you do, you incur all the normal attack penalties associated with fighting with two weapons, just as if you were using a medium weapon and a light weapon.
-\par A creature wielding an orc double axe in one hand can't use it as a double weapon -- only one end of the weapon can be used in any given round.
-\parhead{Bolas} You can use this weapon to make a ranged trip attack against an opponent.
-\parhead{Bolts} A crossbow bolt used as a melee weapon is treated as a light improvised weapon (\minus4 penalty on attack rolls) and deals damage as a dagger of its size (crit \mult2). Bolts come in a wooden case that holds 10 bolts (or 5, for a repeating crossbow). A bolt that hits its target is destroyed; one that misses has a 50\% chance of being destroyed or lost.
-\parhead{Bullets, Sling} Bullets come in a leather pouch that holds 10 bullets. A bullet that hits its target is destroyed; one that misses has a 50\% chance of being destroyed or lost.
-\parhead{Chain, Spiked} A spiked chain has reach, so you can strike opponents 10 feet away with it. In addition, unlike most other weapons with reach, it can be used against an adjacent foe. However, you do not threaten foes you are not adjacent to. In addition, you cannot attack foes who have cover from you unless they are adjacent to you.
-\par You can make trip attacks with the chain. If you are tripped during your own trip attempt, you can drop the chain to avoid being tripped.
-\par When using a spiked chain, you get a \plus2 bonus on opposed attack rolls made to disarm an opponent.
-\par You cannot short haft a spiked chain.
-
 \parhead{Claw Sheath} A claw sheath is not a weapon in itself, but a covering over a single claw that a creature can use to make claw attacks. Claw sheaths do not grant a creature without claws a claw attack. Normally, a sheath does not improve the claw attack, but magical claw sheaths can be made which grant bonuses to attacks made with the claw. It may be possible to find or craft unusual sheaths for natural weapons other than claws.
-
 \parhead{Crossbow, Hand} You can draw a hand crossbow back by hand. Loading a hand crossbow is a move action that provokes attacks of opportunity.
-\par You can shoot, but not load, a hand crossbow with one hand at no penalty. You can shoot a hand crossbow with each hand, but you take a penalty on attack rolls as if attacking with two light weapons.
 \par You can fire a crossbow from a prone position without penalty.
-\parhead{Crossbow, Heavy} You draw a heavy crossbow back by turning a small winch. Loading a heavy crossbow is a full-round action that provokes attacks of opportunity.
-\par Normally, operating a heavy crossbow requires two hands. However, you can shoot, but not load, a heavy crossbow with one hand at a \minus4 penalty on attack rolls. You can shoot a heavy crossbow with each hand, but you take a penalty on attack rolls as if attacking with two medium weapons. This penalty is cumulative with the penalty for one-handed firing.
+\parhead{Crossbow, Heavy} You draw a heavy crossbow back by turning a small winch. Loading a heavy crossbow is a full-round action that requires both hands.
 \par You can fire a crossbow from a prone position without penalty.
-\parhead{Crossbow, Light} You draw a light crossbow back by pulling a lever. Loading a light crossbow is a move action that provokes attacks of opportunity.
-\par Normally, operating a light crossbow requires two hands. However, you can shoot, but not load, a light crossbow with one hand at a \minus2 penalty on attack rolls. You can shoot a light crossbow with each hand, just as if wielding two light weapons at once. This penalty is cumulative with the penalty for one-handed firing.
+\parhead{Crossbow, Light} You draw a light crossbow back by pulling a lever. Loading a light crossbow is a move action that requires both hands.
 \par You can fire a crossbow from a prone position without penalty.
-\parhead{Crossbow, Repeating} The repeating crossbow (whether heavy or light) holds 5 crossbow bolts. As long as it holds bolts, you can reload it by pulling the reloading lever (a free action). Loading a new case of 5 bolts is a full-round action that provokes attacks of opportunity.
-\par You can fire a repeating crossbow with one hand or fire a repeating crossbow in each hand in the same manner as you would a normal crossbow of the same size. However, you must fire the weapon with two hands in order to use the reloading lever, and you must use two hands to load a new case of bolts.
+\parhead{Crossbow, Repeating} The repeating crossbow (whether heavy or light) holds 10 crossbow bolts. As long as it holds bolts, you can reload it by pulling the reloading lever (a free action). Loading a new case of 10 bolts is a full-round action that requires both hands.
 \par You can fire a crossbow from a prone position without penalty.
-\parhead{Dagger} Daggers, including punching daggers, are unusually small, and are considered one size category smaller than normal for a light weapon (that is, three size categories smaller than the creature it is intended for). This typically grants a \plus2 bonus on Sleight of Hand checks to conceal the dagger. A dagger can be used as a light weapon by a creature one size smaller than the dagger is designed for.
-\parhead{Dart} Although they are thrown weapons, darts are treated as ammunition for the purposes of drawing them, crafting special versions of them, and what happens to them after they are thrown.
-
-\parhead{Flail, Dire} A dire flail is a double weapon. You can fight with it as if fighting with two weapons, but if you do, you incur all the normal attack penalties associated with fighting with two weapons, just as if you were using a medium weapon and a light weapon. A creature wielding a dire flail in one hand can't use it as a double weapon -- only one end of the weapon can be used in any given round.
-\par When using a dire flail, you get a \plus2 bonus on opposed attack rolls made to disarm an enemy.
-\par You can also use this weapon to make trip attacks.
-\parhead{Flail or Heavy Flail} With a flail, you get a \plus2 bonus on opposed attack rolls made to disarm an enemy.
-\par You can also use this weapon to make trip attacks.
-\parhead{Gauntlet} This metal glove lets you deal lethal damage rather than nonlethal damage with unarmed strikes. A strike with a gauntlet is otherwise considered an unarmed attack. The cost and weight given are for a single gauntlet. Medium and heavy armors (except breastplate) come with gauntlets.
-\parhead{Gauntlet, Spiked} Your opponent cannot use a disarm action to disarm you of spiked gauntlets. The cost and weight given are for a single gauntlet. An attack with a spiked gauntlet is considered an armed attack.
-\parhead{Glaive} A glaive has reach. You can strike opponents 10 feet away with it, but you can't use it against an adjacent foe unless you short haft it.
-\parhead{Guisarme} A guisarme has reach. You can strike opponents 10 feet away with it, but you can't use it against an adjacent foe unless you short haft it.
-\par You can also use it to make trip attacks. If you are tripped during your own trip attempt, you can drop the guisarme to avoid being tripped.
-\parhead{Halberd} If you use a ready action to set a halberd against a charge, you deal double damage on a successful hit against a charging character.
-\par You can use a halberd to make trip attacks. If you are tripped during your own trip attempt, you can drop the halberd to avoid being tripped.
-\parhead{Hammer, Gnome Hooked} A gnome hooked hammer is a double weapon. You can fight with it as if fighting with two weapons, but if you do, you incur all the normal attack penalties associated with fighting with two weapons, just as if you were using a medium weapon and a light weapon. The hammer's blunt head is a bludgeoning weapon that deals 1d6 points of damage (crit \mult3). Its hook is a piercing weapon that deals 1d4 points of damage (crit \mult4). You can use either head as the primary weapon. The other head is the offhand weapon. A creature wielding a gnome hooked hammer in one hand can't use it as a double weapon -- only one end of the weapon can be used in any given round.
-\par You can use a gnome hooked hammer to make trip attacks. If you are tripped during your own trip attempt, you can drop the gnome hooked hammer to avoid being tripped.
-\parhead{Javelin} You can throw a javelin using Strength to attack, treating it as a medium thrown weapon. Since it is not designed for melee, you are treated as nonproficient with it and take a \minus4 penalty on attack rolls if you use a javelin as a melee weapon.
-\parhead{Kama} The kama is a special monk weapon. This designation gives a monk wielding a kama special options.
-\par You can use a kama to make trip attacks. If you are tripped during your own trip attempt, you can drop the kama to avoid being tripped.
-\parhead{Lance} A lance deals double damage when used from the back of a charging mount. It has reach, so you can strike opponents 10 feet away with it, but you can't use it against an adjacent foe unless you short haft it.
-\par While mounted, you can wield a lance with one hand.
-\parhead{Longbow} You need at least two hands to fire a bow, regardless of its size. One hand is free when not firing the bow. A longbow is too unwieldy to use while you are mounted. If you have a penalty for low Strength, apply it to damage rolls when you use a longbow. If you have a bonus for high Strength, you can apply it to damage rolls when you use a composite longbow (see below) but not a regular longbow.
-\parhead{Longbow, Composite} You need at least two hands to fire a bow, regardless of its size. One hand is free when not firing the bow. You can use a composite longbow while mounted. All composite bows are made with a particular strength rating (that is, each requires a minimum Strength to use with proficiency). If your Strength bonus is less than the strength rating of the composite bow, you can't effectively use it, so you take a \minus4 penalty to attacks with it. The default composite longbow requires a Strength of at least 0. A composite longbow's Strength rating is the maximum Strength you can use when calculating damage. Each point of Strength bonus granted by the bow adds 25 gp to its cost.
-\par For purposes of weapon proficiency and similar feats, a composite longbow is treated as if it were a longbow.
-\parhead{Longspear} A longspear has reach. You can strike opponents 10 feet away with it, but you can't use it against an adjacent foe unless you short haft it. If you use a ready action to set a longspear against a charge, you deal double damage on a successful hit against a charging character.
-\parhead{Net} A net is used to entangle enemies. When you throw a net, you make a ranged touch attack against your target. A net's maximum range is 10 feet. If you hit, the target is entangled. An entangled creature moves at half speed, cannot run or charge, and takes a \minus2 penalty to physical attacks and defenses, as well as Strength and Dexterity-based checks. If you control the trailing rope by succeeding on an opposed Strength check while holding it, the entangled creature can move only within the limits that the rope allows. If the entangled creature attempts to cast a spell, it must make a DC 15 \add double spell level Concentration check or be unable to cast the spell.
+\parhead{Hammer, Gnome Hooked} This weapon has a hammer head which deals 1d8 points of damage, and a hook which deals 1d6 points of damage. The hook is a tripping weapon.
+\parhead{Longbow} You need both hands to fire a bow, regardless of its size. One hand is free when not firing the bow. Loading a bow is a free action that requires both hands. A longbow is too unwieldy to use while you are mounted.
+\parhead{Net} A net is used to entangle enemies. When you throw a net, you make a ranged touch attack against your target. If you hit, the target is entangled. An entangled creature moves at half speed, cannot run or charge, and takes a \minus2 penalty to physical attacks and defenses, as well as Strength and Dexterity-based checks. If you control the trailing rope by succeeding on an opposed Strength check while holding it, the entangled creature can move only within the limits that the rope allows. If the entangled creature attempts to cast a spell, it must make a DC 15 \add double spell level Concentration check or be unable to cast the spell.
 \par An entangled creature can escape with a DC 20 Escape Artist check (a full-round action). The net has 5 hit points and can be burst with a DC 20 Strength check (also a full-round action).
 \par A net is useful only against creatures within one size category of you.
 \par A net must be folded to be thrown effectively. The first time you throw your net in a fight, you make a normal ranged touch attack roll. After the net is unfolded, you take a \minus4 penalty on attack rolls with it. It takes 2 rounds for a proficient user to fold a net and twice that long for a nonproficient one to do so.
-\parhead{Nunchaku} The nunchaku is a special monk weapon. This designation gives a monk wielding a nunchaku special options. With a nunchaku, you get a \plus2 bonus on opposed attack rolls made to disarm an enemy.
-\parhead{Quarterstaff} A quarterstaff is a double weapon. You can fight with it as if fighting with two weapons, but if you do, you incur all the normal attack penalties associated with fighting with two weapons, just as if you were using a medium weapon and a light weapon. A creature wielding a quarterstaff in one hand can't use it as a double weapon -- only one end of the weapon can be used in any given round.
-\par The quarterstaff is a special monk weapon. This designation gives a monk wielding a quarterstaff special options.
-\parhead{Ranseur} A ranseur has reach. You can strike opponents 10 feet away with it, but you can't use it against an adjacent foe unless you short haft it.
-\par With a ranseur, you get a \plus2 bonus on opposed attack rolls made to disarm an opponent.
-\parhead{Rapier} You apply your Dexterity instead of your Strength to attack rolls with a rapier sized for you, even though it isn't a light weapon for you. You can't wield a rapier in two hands.
-\parhead{Sai} With a sai, you get a \plus4 bonus on opposed attack rolls made to disarm an enemy.
-\par The sai is a special monk weapon. This designation gives a monk wielding a sai special options.
-\parhead{Scythe} A scythe can be used to make trip attacks. If you are tripped during your own trip attempt, you can drop the scythe to avoid being tripped.
 \parhead{Shield, Heavy or Light} You can bash with a shield instead of using it for defense. See Armor for details.
-\parhead{Shortbow} You need at least two hands to use a bow, regardless of its size. You can use a shortbow while mounted. If you have a penalty for low Strength, apply it to damage rolls when you use a shortbow. If you have a bonus for high Strength, you can apply it to damage rolls when you use a composite shortbow (see below) but not a regular shortbow.
-\parhead{Shortbow, Composite} You need at least two hands to use a bow, regardless of its size. You can use a composite shortbow while mounted. All composite bows are made with a particular strength rating (that is, each requires a minimum Strength to use with proficiency). If your Strength bonus is less than the strength rating of the composite bow, you can't effectively use it, so you take a \minus4 penalty to attacks with it. The default composite shortbow requires a Strength of at least 0. A composite longbow's Strength rating is the maximum Strength you can use when calculating damage. Each point of Strength bonus granted by the bow adds 25 gp to its cost.
-\parhead{Shortspear} A shortspear is small enough to wield one-handed.
-\parhead{Shuriken} A shuriken is a special monk weapon. This designation gives a monk wielding shuriken special options. A shuriken can't be used as a melee weapon.
-\par Although they are thrown weapons, shuriken are treated as ammunition for the purposes of drawing them, crafting special versions of them, and what happens to them after they are thrown. 
-\par You can throw shuriken from a prone position without penalty.
-\parhead{Siangham} The siangham is a special monk weapon. This designation gives a monk wielding a siangham special options.
-\parhead{Sickle} A sickle can be used to make trip attacks. If you are tripped during your own trip attempt, you can drop the sickle to avoid being tripped.
-\parhead{Sling} Your Strength applies to damage rolls when you use a sling, just as it does for thrown weapons. You can fire, but not load, a sling with one hand. Loading a sling is a move action that requires two hands and provokes attacks of opportunity.
-\par You can hurl ordinary stones with a sling, but stones are not as dense or as round as bullets. Thus, such an attack deals damage as if the weapon were designed for a creature one size category smaller than you and you take a \minus1 penalty on attack rolls.
-\parhead{Spear} If you use a ready action to set a spear against a charge, you deal double damage on your first successful hit against a charging character.
+\parhead{Shortbow} You need both hands to fire a bow, regardless of its size. One hand is free when not firing the bow. Loading a bow is a free action that requires both hands.
+\parhead{Sling} You can fire, but not load, a sling with one hand. Loading a sling is a free action that requires both hands.
+\par You can hurl ordinary stones with a sling, but stones are not as dense or as round as bullets. You take a \minus1 penalty to attack and damage rolls when using ordinary stones.
 \parhead{Spiked Armor} You can outfit your armor with spikes, which can deal damage in a grapple or bull rush. See Armor for details.
 \parhead{Spiked Shield, Heavy or Light} You can bash with a spiked shield instead of using it for defense. See Armor for details.
-\parhead{Strike, Unarmed} A Medium character deals 1d3 points of nonlethal damage with an unarmed strike. A Small character deals 1d2 points of nonlethal damage. A monk or any character with the Improved Unarmed Strike feat can deal lethal or nonlethal damage with unarmed strikes, at her option. The damage from an unarmed strike is considered weapon damage for the purposes of effects that give you a bonus on weapon damage rolls.
-\par An unarmed strike is always considered a light weapon. Therefore, you can use your Dexterity instead of your Strength to attack rolls with an unarmed strike.
-\parhead{Sword, Bastard} A bastard sword can be used two-handed without special training. Though it is a heavy weapon, it can be used in one hand by a character with the appropriate training.
-\parhead{Sword, Two-Bladed} A two-bladed sword is a double weapon. You can fight with it as if fighting with two weapons, but if you do, you incur all the normal attack penalties associated with fighting with two weapons, just as if you were using a medium weapon and a light weapon. A creature wielding a two-bladed sword in one hand can't use it as a double weapon -- only one end of the weapon can be used in any given round.
-\parhead{Urgrosh, Dwarven} A dwarven urgrosh is a double weapon. You can fight with it as if fighting with two weapons, but if you do, you incur all the normal attack penalties associated with fighting with two weapons, just as if you were using a medium weapon and a light weapon. The urgrosh's axe head is a slashing weapon that deals 1d8 points of damage. Its spear head is a piercing weapon that deals 1d6 points of damage. You can use either head as the primary weapon. The other is the off-hand weapon. A creature wielding a dwarven urgrosh in one hand can't use it as a double weapon -- only one end of the weapon can be used in any given round.
-\par If you use a ready action to set an urgrosh against a charge, you deal double damage on your first hit against the charging character. If you set an urgrosh against a charging character, the spear head is the part of the weapon that deals damage.
-\parhead{Waraxe, Dwarven} A dwarven waraxe can be used two-handed without special training. Though it is a heavy weapon, it can be used in one hand by a character with the appropriate training. Dwarves do not treat dwarven waraxes as exotic weapons.
-\parhead{Whip} A whip deals nonlethal damage. The whip is treated as a light melee weapon with 15 foot reach, though you don't threaten the area into which you can make an attack. In addition, unlike most other weapons with reach, you can use it against foes anywhere within your reach (including adjacent foes).
-\par Using a whip provokes an attack of opportunity, just as if you had used a ranged weapon.
-\par You can make trip attacks with a whip.
-\par When using a whip, you get a \plus2 bonus on opposed attack rolls made to disarm an opponent.
+
+\parhead{Unarmed Strike} Anyone can attack unarmed, but it is more dangerous than attacking with a weapon. See \pcref{Unarmed Combat}.
+
+\parhead{Urgrosh, Dwarven} This weapon has an axe head which deals 1d8 points of damage, and a spear which deals 1d6 points of damage. The spear is a bracing weapon. You must be proficient with axes to use the axe head, and proficient with spears to use the spear head.
+\parhead{Whip} A whip is treated as a light melee weapon with 15 foot reach, though you don't threaten the area into which you can make an attack. In addition, unlike most other weapons with reach, you can use it against foes anywhere within your reach (including adjacent foes).
+\par Using a whip provokes attacks of opportunity, just as if you had used a ranged weapon.
 
 \section{Armor}
 
