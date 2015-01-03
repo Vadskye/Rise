@@ -1,0 +1,24 @@
+#meta
+name=stone giant
+creature type=monstrous humanoid
+template=warrior
+level=16
+armor=medium
+
+#items
+weapon=slam
+
+#attributes
+strength=good
+constitution=good
+intelligence=-2
+wisdom=poor
+charisma=poor
+#abilities
+trait=carapace
+#feat= 
+
+
+#core
+size=huge
+speed=50
