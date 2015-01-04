@@ -74,7 +74,7 @@ You can make a number of attacks of opportunity each round equal to 1 \add half 
 \subsection{Special Attacks}
 
 \subsubsection{Feint}\label{Feint}
-Instead of striking to deal damage, you can feint to leave your foe off-balance. You make a melee attack with your weapon as normal, except that you target the creature's Reflex defense instead of its Armor defense. Success means you deal no damage, but the creature is flat-footed against the next attack made against it. The attack must be made before the creature's next action, or else the feint is wasted.
+Instead of striking to deal damage, you can feint to leave your foe off-balance. You make a melee attack with your weapon as normal, except that you target the creature's Reflex defense instead of its Armor defense. Success means you deal no damage, but the creature takes a \minus4 penalty to physical defenses for 1 round.
 
 \subsection{Combat Maneuvers}\label{Combat Maneuvers}
 A combat maneuver is an attempt to physically hinder your foe with your body, such as by shoving or tripping it. Unless otherwise noted, using a combat maneuver requires a free hand and takes a standard action. You make an attack against a creature within your reach, adding your maneuver modifier to the roll instead of your attack modifier. If your result equals or exceeds your foe's Maneuver defense, your attack hits, and your foe is affected by the maneuver.
@@ -116,31 +116,25 @@ Your attack attribute depends on the maneuver you are using, as described in \pc
 \parhead{Trip}\label{Trip} You try to trip your foe. Success means the creature falls prone, causing it to take a \minus4 penalty to physical attacks and defenses. You can trip a creature with Strength or Dexterity.
 
 \section{Defenses}\label{Defenses}
-Physical attacks are made against physical defenses: normal physical defense, touch defense, flat-footed defense, or maneuver defense. Special attacks are made against special defenses: Fortitude defense, Reflex defense, or Will defense.
+Physical attacks are made against physical defenses: Armor defense or Maneuver defense. Special attacks are made against special defenses: Fortitude defense, Reflex defense, or Will defense.
 
-\subsection{Physical Defenses}
-Your physical defense represents how hard it is for opponents to land a solid, damaging blow on you. It's the attack roll result that an opponent needs to achieve to hit you with a physical attack. Unlike most combat statistics, your physical defense is made up of the sum of other modifiers, each of which can have their own independent bonuses and penalties. It is equal to the following:
+\subsection{Armor Defense}
+Your Armor defense represents how hard it is for opponents to land a solid, damaging blow on you. It's the attack roll result that an opponent needs to achieve to hit you with a normal physical attack. Unlike most combat statistics, your Armor defense is made up of the sum of other modifiers, each of which can have their own independent bonuses and penalties. It is equal to the following:
 
 \begin{figure}[h]
-    \centering 10 \add Dexterity \add armor defense modifier \add shield defense modifier \add dodge defense modifier \add size modifier \add other bonuses and penalties
+    \centering 10 \add half base attack bonus \add Dexterity \add armor modifier \add shield modifier \add dodge modifier \add size modifier \add other bonuses and penalties
 \end{figure}
 
-\parhead{Base Attack Bonus} Your experience and aptitude in combat affects your ability to defend yourself; experienced warriors know how to recognize and avoid or parry blows that would easily fell novices. As a result, you add half your base attack bonus to your dodge defense modifier.
-\parhead{Dodge Modifier} Your dodge defense modifier represents your ability to actively avoid blows. Any situation that denies you your Dexterity bonus, such as being flat-footed, also denies you your dodge modifier.
+\parhead{Base Attack Bonus} Your experience and aptitude in combat affects your ability to defend yourself; experienced warriors know how to recognize and avoid or parry blows that would easily fell novices. As a result, you add half your base attack bonus to your Armor defense.
+\parhead{Enhancement Bonuses} You can have separate enhancement bonuses to your armor modifier, shield modifier, and dodge modifier. All of these enhancement bonuses stack to improve your Armor defense.
 \parhead{Natural Armor} Creatures with unusually tough skin or thick hide, including most monsters, gain bonuses to their armor modifier. These bonuses stack with any armor such creatures might wear.
 \parhead{Size Modifier} Your size modifier is described on \tref{Size in Combat}.
 
-\subsubsection{Flat-Footed Defense}
-Sometimes you can't use your agility to avoid an attack. Your flat-footed physical is equal to your physical defense, ignoring your Dexterity, dodge defense modifier, and shield defense modifier. If your Dexterity is negative, you always apply the penalty, even while flat-footed.
-
-\subsubsection{Touch Defense}
-Sometimes your armor doesn't help you avoid an attack. Your touch defense is equal to your physical defense, ignoring your armor modifier. Most touch attacks come from spells.
-
-\subsubsection{Maneuver Defense}
-Your maneuver defense represents how good you are at defending against combat maneuvers. It's the attack roll result that an opponent needs to achieve to affect you with a maneuver attack. Your maneuver defense is made up of the sum of other modifiers, each of which can have independent bonuses and penalties. It is equal to the following:
+\subsection{Maneuver Defense}
+Your Maneuver defense represents how good you are at defending against combat maneuvers. It's the attack roll result that an opponent needs to achieve to affect you with a maneuver attack. Your Maneuver defense is made up of the sum of other modifiers, each of which can have independent bonuses and penalties. It is equal to the following:
 
 \begin{figure}[h]
-    \centering 10 \add base attack bonus \add Strength \add Dexterity \add shield defense modifier \add dodge defense modifier \add special size modifier \add other bonuses and penalties
+    \centering 10 \add base attack bonus \add Strength \add Dexterity \add shield modifier \add dodge modifier \add special size modifier \add other bonuses and penalties
 \end{figure}
 
 Your special size modifier is described in \tref{Size in Combat}.
@@ -211,7 +205,7 @@ Some spells and abilities grant creatures the ability to move in unusual ways. T
 A creature with a burrow speed can move through the ground at the indicated speed in any direction, even vertically. Unless otherwise noted, the creature can only burrow through dirt and loose earth, not rock or harder substances. It does not leave behind a usable tunnel for other creatures. 
 
 \subsubsection{Climbing}\label{Climbing}
-A creature with a climb speed can move at the indicated speed while climbing. In addition, it has a \plus5 bonus to Climb checks (see \pcref{Climb}). It can always choose to take 10 on Climb checks, even if rushed or threatened, and is not flat-footed while climbing. It cannot make an accelerated climb. 
+A creature with a climb speed can move at the indicated speed while climbing. In addition, it has a \plus5 bonus to Climb checks (see \pcref{Climb}). It can always choose to take 10 on Climb checks, even if rushed or threatened. It cannot make an accelerated climb. 
 
 \subsubsection{Flying}\label{Flying}
 A creature with a fly speed can fly through the air at the indicated speed. It must be unencumbered (see \pcref{Carrying Capacity}). If a creature with a fly speed is encumbered, it is treated as having a glide speed instead (see \pcref{Gliding}), which it can use to glide even though it is encumbered.
@@ -242,9 +236,9 @@ At the start of a battle, each creature that is aware of the combat makes an ini
 Creatures act in order of their initiative, highest to lowest. After the creature with the lowest initiative acts, a new round begins and the creature with the highest initiative acts again. You usually keep your initiative for the whole encounter, even if you can't act. However, some special actions can change your initiative count.
 
 \subsubsection{Surprise Attacks}\label{Surprise Attacks}
-Sometimes, some creatures are not aware of the combat when it starts. This most commonly happens with ambushes. Any creature that is not aware of the combat doesn't get to make an initiative check during the first round of combat. Until it takes its first action, it is flat-footed and can't take attacks of opportunity.
+Sometimes, some creatures are not aware of the combat when it starts. This most commonly happens with ambushes. Any creature that is not aware of the combat doesn't get to make an initiative check during the first round of combat. Until it takes its first action, it is vulnerable (\minus2 penalty to attacks, defenses, and checks) and can't take attacks of opportunity.
 
-Sometimes, everyone is surprised, such as if a guard walks around a corner to unexpectedly find a group of muggers. In that case, initiative is rolled normally, but all creatures are flat-footed and can't take attacks of opportunity until they take their first action.
+Sometimes, everyone is surprised, such as if a guard walks around a corner to unexpectedly find a group of muggers. In that case, initiative is rolled normally, but all creatures are vulnerable and can't take attacks of opportunity until they take their first action.
 
 \section{Injury, Death, and Healing}\label{Injury, Death, and Healing}
 Your hit points measure how hard you are to kill. No matter how many hit points you lose, your character isn't hindered in any way until your hit points drop to 0.
@@ -316,7 +310,7 @@ Certain effects give a character temporary hit points which act as a protection 
         Squeezing through a space & \minus4 \\
         Vulnerable & \minus2 \\
     \end{tabularx}
-    1 The defender is flat-footed. \\
+    1 The defender is defenseless, causing it to provoke attacks of opportunity for all its actions. \\
     2 Most ranged weapons can't be used while the attacker is prone, but you can use a crossbow or shuriken while prone at no penalty.
 \end{dtable}
 
@@ -328,23 +322,24 @@ Certain effects give a character temporary hit points which act as a protection 
         Behind passive cover & \plus4 \\
         Blinded & \x\fn{1} \\
         Concealed & \plus4 \\
-        Cowering & \minus2\fn{1} \\
+        Cowering & \minus2 \\
         Crouching or kneeling & \minus2\fn{2} \\
         Entangled & \minus2 \\
         Grappling (but attacker is not) & \plus0\fn{1} \\
-        Helpless (such as paralyzed, sleeping, or bound) & \plus0\fn{3} \\
+        Helpless (such as paralyzed, sleeping, or bound) & \x\fn{3} \\
         Invisible & see Invisibility \\
         Overwhelmed & special\fn{4} \\
-        Pinned & \minus4\fn{3} \\
+        Pinned & \x\fn{3} \\
         Prone & \minus4\fn{2} \\
         Squeezing through a space & \minus4 \\
         Stunned & \minus2\fn{1} \\
+        Unaware of attacker & \fn{3} \\
         Total defense & \plus4 \\
         Vulnerable & \minus2 \\
     \end{tabularx}
-    1 The defender is flat-footed. \\
+    1 The defender is defenseless, causing it to provoke attacks of opportunity for all its actions. \\
     2 Treat as a bonus against ranged attacks, instead of a penalty \\
-    3 The defender is flat-footed, and treat the defender's Dexterity as \minus10. \\
+    3 The defender's Reflex defense is 10, and its physical defenses are 10 \add size modifier. \\
     4 The creature suffers a penalty equal to the number of creatures threatening it.
 \end{dtable}
 
@@ -413,11 +408,11 @@ In addition, some magical effects provide concealment against all attacks, regar
 \subsection{Grappling}
 Grappling creatures are physically struggling with each other. While grappled, you suffer certain penalties and restrictions, as described below. 
 
-\subsubsection{Being Grappled}
-While grappled, you suffer certain penalties and restrictions, as described below. Other than these restrictions, you can act normally. You can also take certain actions in a grapple, as described in \pcref{Grapple Actions} 
+\subsubsection{Being In A Grapple}
+While grappling, you suffer certain penalties and restrictions, as described below. Other than these restrictions, you can act normally. You can also take certain actions in a grapple, as described in \pcref{Grapple Actions} 
 \begin{itemize*}
     \item You must use a free hand (or equivalent limbs) to grapple, preventing you from taking any actions which would require having two free hands. If you cannot free a hand, you suffer a \minus10 penalty to all physical attacks, including grapple attacks, until you have a free hand.
-    \item You are flat-footed against all creatures except the ones you are grappling, and you do not threaten any other creatures.
+    \item You take a \minus4 penalty to physical defenses against creatures you are not grappling with.
     \item You take a \minus4 penalty to attack rolls made with weapons that are not light, since they are too large and cumbersome to be used effectively in a grapple.
     \item Spellcasting is extremely difficult. You cannot cast spells with somatic components. Using a spell-like ability or casting a spell without somatic components requires a Concentration check with a DC equal to 20 \add double spell level.
     \item You cannot move normally (but see Move the Grapple, below).
@@ -426,8 +421,8 @@ While grappled, you suffer certain penalties and restrictions, as described belo
 \subsubsection{Grapple Actions}
 While grappled, you can take four special actions to try to affect the grapple.
 
-\parhead{Bind Foe} As a standard action, you can make a grapple attack to bind your foe with ropes or other restraints. You must have the restraints in hand (in addition to the free hand required to grapple). Apply the result against the MC of a creature grappling you. Success means the creature is bound, rendering it helpless and effectively paralyzed. The only physical action a bound creature can take is to escape the bindings with an Escape Artist check, though it can take mental actions. If you have the time, you can take 20 on your grapple attack to secure bindings on a helpless foe, including a foe rendered helpless through this attack.
-\parhead{Escape the Grapple} As a standard action, you can make a grapple attack or Escape Artist check to escape from the grapple. Apply the result against the MC of each creature grappling you. Success against an individual creature means you are no longer grappling that creature.
+\parhead{Bind Foe} As a standard action, you can make a grapple attack to bind your foe with ropes or other restraints. You must have the restraints in hand (in addition to the free hand required to grapple). Apply the result against the Maneuver defense of a creature grappling you. Success means the creature is bound, rendering it helpless and effectively paralyzed. The only physical action a bound creature can take is to escape the bindings, which requires a grapple attack or Escape Artist check which beats the grapple attack made to bind it. If you have the time, you can take 20 on your grapple attack to secure bindings on a helpless foe, including a foe rendered helpless through this attack.
+\parhead{Escape the Grapple} As a standard action, you can make a grapple attack or Escape Artist check to escape from the grapple. Apply the result against the Maneuver defense of each creature grappling you. Success against an individual creature means you are no longer grappling that creature.
 \parhead{Move the Grapple} As a move action, you can make a grapple attack to move the grapple. Apply the result against the MC of each creature grappling you. If you beat every creature's MC, you can move yourself and all other creatures in the grapple up to half your speed. At the end of your movement, you choose which spaces creatures grappling you are in, as long as they stay adjacent to you.
 \parhead{Pin} As a standard action, you can make a grapple attack to pin a foe. If you succeed, that creature becomes pinned (in addition to being grappled), while you remain only grappled. The only physical action a pinned creature can take is to escape the grapple, though it can take mental actions. At your discretion, you can cover the mouth of a pinned creature to prevent it from speaking. 
 
@@ -443,11 +438,11 @@ When a creature is being attacked by multiple foes at once, it is less able to d
 As a standard action, you can focus entirely on defense, granting you a \plus4 bonus to your dodge modifier for 1 round. While using the total defense action, you can't make attacks of opportunity, but you still threaten squares normally for the purpose of overwhelm penalties and similar effects.
 
 \subsection{Helpless Defenders}
-A helpless creature is someone who is bound, sleeping, paralyzed, unconscious, or otherwise at your mercy. It is flat-footed and is treated as having a Dexterity of \minus10.
+A helpless creature is completely at an opponent's mercy. Its Reflex defense is 10, and its physical defenses are equal to 10 \add its size modifier. Paralyzed, bound, and unconscious creatures are helpless, as well as creatures completely unaware of an attack.
 
 \parhead{Coup de Grace}\label{Coup de Grace} As a full-round action, you can deliver a coup de grace to a helpless opponent adjacent to you. You automatically hit with your weapon and score a critical hit. If the damage exceeds the struck creature's Fortitude defense, it immediately dies.
 
-Delivering a coup de grace requires focused concentration and methodical action, leaving you defenseless. This causes you to provoke attacks of opportunity. If you take damage while delivering a coup de grace, you must make a Concentration check (DC 10 \add total damage taken) or else the coup de grace fails. Your bonus on Concentration checks is equal to your level \add your Constitution.
+Delivering a coup de grace requires focused concentration and methodical action. This leaves you defenseless, causing you to provoke attacks of opportunity. If you take damage in excess of your Fortitude defense while delivering a coup de grace, your attempt fails.
 
 You can't deliver a coup de grace against a creature that is immune to critical hits. You can deliver a coup de grace against a creature with total concealment, but doing this requires two consecutive full-round actions (one to ``find'' the creature once you've determined what square it's in, and one to deliver the coup de grace).
 
