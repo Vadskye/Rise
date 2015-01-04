@@ -81,11 +81,11 @@ class Creature(object):
                 SPACE: None,
                 SPEEDS: {},
                 }
-        self.combat = {
+        self._combat = {
                 CURRENT_HIT_POINTS: 0,
                 CRITICAL_DAMAGE: 0,
                 }
-        self.defenses = {
+        self._defenses = {
                 AC: None,
                 MC: None,
                 FORTITUDE: None,
@@ -94,7 +94,7 @@ class Creature(object):
                 DR: None,
                 SPECIAL: None,
                 }
-        self.progressions = {
+        self._progressions = {
                 BAB: None,
                 FORT: None,
                 REF: None,
@@ -255,19 +255,19 @@ class Creature(object):
 
     @property
     def current_hit_points(self):
-        return self.combat[CURRENT_HIT_POINTS]
+        return self._combat[CURRENT_HIT_POINTS]
 
     @current_hit_points.setter
     def current_hit_points(self, value):
-        self.combat[CURRENT_HIT_POINTS] = value
+        self._combat[CURRENT_HIT_POINTS] = value
 
     @property
     def critical_damage(self):
-        return self.combat[CRITICAL_DAMAGE]
+        return self._combat[CRITICAL_DAMAGE]
 
     @critical_damage.setter
     def critical_damage(self, value):
-        self.combat[CRITICAL_DAMAGE] = value
+        self._combat[CRITICAL_DAMAGE] = value
 
     @property
     def initiative(self):
@@ -287,59 +287,59 @@ class Creature(object):
 
     @property
     def armor_class(self):
-        return self.defenses[AC]
+        return self._defenses[AC]
 
     @armor_class.setter
     def armor_class(self, value):
-        self.defenses[AC] = value
+        self._defenses[AC] = value
 
     @property
     def maneuver_defense(self):
-        return self.defenses[MC]
+        return self._defenses[MC]
 
     @maneuver_defense.setter
     def maneuver_defense(self, value):
-        self.defenses[MC] = value
+        self._defenses[MC] = value
 
     @property
     def damage_reduction(self):
-        return self.defenses[DR]
+        return self._defenses[DR]
 
     @damage_reduction.setter
     def damage_reduction(self, value):
-        self.defenses[DR] = value
+        self._defenses[DR] = value
 
     @property
     def special_defenses(self):
-        return self.defenses[SPECIAL]
+        return self._defenses[SPECIAL]
 
     @special_defenses.setter
     def special_defenses(self, value):
-        self.defenses[SPECIAL] = value
+        self._defenses[SPECIAL] = value
 
     @property
     def fortitude(self):
-        return self.defenses[FORTITUDE]
+        return self._defenses[FORTITUDE]
 
     @fortitude.setter
     def fortitude(self, value):
-        self.defenses[FORTITUDE] = value
+        self._defenses[FORTITUDE] = value
 
     @property
     def reflex(self):
-        return self.defenses[REFLEX]
+        return self._defenses[REFLEX]
 
     @reflex.setter
     def reflex(self, value):
-        self.defenses[REFLEX] = value
+        self._defenses[REFLEX] = value
 
     @property
     def will(self):
-        return self.defenses[WILL]
+        return self._defenses[WILL]
 
     @will.setter
     def will(self, value):
-        self.defenses[WILL] = value
+        self._defenses[WILL] = value
 
     def get_defense(self, defense_type):
         if defense_type in ['physical', 'touch', 'flat-footed']:
@@ -496,17 +496,22 @@ class Creature(object):
 
     def get_progression(self, progression_type):
         try:
-            return self.progressions[progression_type]
+            return self._progressions[progression_type]
         except KeyError:
             raise Exception("Unrecognized progression type " + progression_type)
 
+    def set_progression(self, progression_type, value):
+        if progression_type not in (BAB, FORT, REF, WILL, HIT_VALUE, NATURAL_ARMOR):
+            raise Exception("Invalid progression type: " + str(progession_type))
+        self._progressions[progression_type] = value
+
     @property
     def hit_value(self):
-        return self.progressions[HIT_VALUE]
+        return self._progressions[HIT_VALUE]
 
     @hit_value.setter
     def hit_value(self, value):
-        self.progressions[HIT_VALUE] = value
+        self._progressions[HIT_VALUE] = value
 
     @name.setter
     def name(self, value):
@@ -638,13 +643,13 @@ class Creature(object):
         self.create_progressions()
         self.apply_inactive_abilities()
         self.attack_bonus.set_progression(
-                self.progressions[BAB])
+                self.get_progression(BAB))
         for defense_name in SAVES:
             self.get_defense(defense_name).set_progression(
-                    self.progressions[defense_name])
-        if NATURAL_ARMOR in self.progressions:
+                    self.get_progression(defense_name))
+        if NATURAL_ARMOR in self._progressions:
             self.armor_class.natural_armor.set_progression(
-                    self.progressions[NATURAL_ARMOR])
+                    self.get_progression(NATURAL_ARMOR))
         self.apply_class_modifications()
 
     #This must be overridden
@@ -676,7 +681,7 @@ class Creature(object):
         self.attack_bonus.set_level(self.level)
         self.maneuver_bonus.set_level(self.level)
         for save in SAVES:
-            self.defenses[save].set_level(self.level)
+            self.get_defense(save).set_level(self.level)
         self.armor_class.natural_armor.set_level(self.level)
 
         self.apply_inactive_abilities()
@@ -717,9 +722,9 @@ class Creature(object):
         self.armor_class.dodge.add_bonus(
                 util.ifloor(self.attack_bonus.base_attack_bonus/2), BAB)
 
-        self.defenses[MC].add_inherent(self.armor_class.touch())
-        self.defenses[MC].add_inherent(self.attack_bonus.base_attack_bonus/2)
-        self.defenses[MC].add_inherent(self.strength.get_total())
+        self.maneuver_defense.add_inherent(self.armor_class.touch())
+        self.maneuver_defense.add_inherent(self.attack_bonus.base_attack_bonus/2)
+        self.maneuver_defense.add_inherent(self.strength.get_total())
 
         self.initiative.add_bonus(self.dexterity.get_total(), DEX)
         self.initiative.add_bonus(self.wisdom.get_total()/2, WIS)
@@ -741,17 +746,17 @@ class Creature(object):
                     self.strength.get_total(), STR)
 
     def add_save_attributes(self):
-        self.defenses[FORTITUDE].add_bonus(
+        self.fortitude.add_bonus(
                 self.constitution.get_total(), CON)
-        self.defenses[FORTITUDE].add_bonus(util.ifloor(
+        self.fortitude.add_bonus(util.ifloor(
             self.strength.get_total()/2), STR)
-        self.defenses[REFLEX].add_bonus(
+        self.reflex.add_bonus(
                 self.dexterity.get_total(), DEX)
-        self.defenses[REFLEX].add_bonus(util.ifloor(
+        self.reflex.add_bonus(util.ifloor(
             self.wisdom.get_total()/2), WIS)
-        self.defenses[WILL].add_bonus(
+        self.will.add_bonus(
                 self.charisma.get_total(), CHA)
-        self.defenses[WILL].add_bonus(util.ifloor(
+        self.will.add_bonus(util.ifloor(
             self.intelligence.get_total()/2), INT)
 
     def improve_progression(self, progression):
@@ -809,11 +814,11 @@ class Creature(object):
     def _to_string_defenses(self):
         defenses = str(self.armor_class)
         defenses += '; maneuver_class '+str(
-                self.defenses[MC].get_total())
+                self.maneuver_defense.get_total())
         defenses += '\nHP '+str(self.hit_points.get_total())
-        defenses += '; Fort '+util.mstr(self.defenses[FORTITUDE].get_total())
-        defenses += ', Ref '+util.mstr(self.defenses[REFLEX].get_total())
-        defenses += ', Will '+util.mstr(self.defenses[WILL].get_total())
+        defenses += '; Fort '+util.mstr(self.fortitude.get_total())
+        defenses += ', Ref '+util.mstr(self.reflex.get_total())
+        defenses += ', Will '+util.mstr(self.will.get_total())
         return defenses
 
     def _to_string_attacks(self):
@@ -933,8 +938,8 @@ class Creature(object):
         if damage is None:
             return
         if DAMAGE_PHYSICAL in damage_types:
-            if self.combat[CURRENT_HIT_POINTS] > 0:
-                self.combat[CURRENT_HIT_POINTS] = max(0, self.combat[CURRENT_HIT_POINTS] - damage)
+            if self.current_hit_points > 0:
+                self.current_hit_points = max(0, self.current_hit_points - damage)
             else:
                 self.critical_damage += damage
         #Are we taking attribute damage?
@@ -1049,7 +1054,7 @@ class Creature(object):
         defenses = r'\textbf{AC} %s, touch %s, flat-footed %s' % (
                 self.armor_class.normal(), self.armor_class.touch(),
                 self.armor_class.flatfooted())
-        defenses += r'; \textbf{MC} %s' % self.defenses[MC].get_total()
+        defenses += r'; \textbf{MC} %s' % self.maneuver_defense.get_total()
         defenses += self.get_text_of_abilities_by_tag(TAG_MOVE,
                 prefix = '(', suffix = ')')
         defenses += ENDLINE
@@ -1068,8 +1073,8 @@ class Creature(object):
 
         #Add saving throws
         defenses+=r'\textbf{Saves} Fort %s, Ref %s, Will %s' % (
-                self.defenses[FORT].mstr(), self.defenses[REF].mstr(),
-                self.defenses[WILL].mstr())
+                self.fortitude.mstr(), self.reflex.mstr(),
+                self.will.mstr())
         defenses += self.get_text_of_abilities_by_tag(SAVING_THROW,
                 prefix = '; ')
         defenses += ENDLINE
@@ -1163,15 +1168,15 @@ class Character(Creature):
             for weapon in WEAPONS:
                 self.attacks[DAMAGE][weapon].add_enhancement(scale_factor)
         for save in SAVES:
-            self.defenses[save].add_enhancement(scale_factor)
+            self.get_defense(save).add_enhancement(scale_factor)
 
 class Barbarian(Character):
     def create_progressions(self):
-        self.progressions[BAB] = GOOD
-        self.progressions[FORT] = GOOD
-        self.progressions[REF] = AVERAGE
-        self.progressions[WILL] = POOR
-        self.hit_value = 7
+        self.set_progression(BAB, GOOD)
+        self.set_progression(FORT, GOOD)
+        self.set_progression(REF, AVERAGE)
+        self.set_progression(WILL, POOR)
+        self.set_progression(HIT_VALUE, 7)
 
     def apply_class_modifications(self):
         self.add_ability('rage')
@@ -1185,27 +1190,27 @@ class Barbarian(Character):
 
 class Cleric(Character):
     def create_progressions(self):
-        self.progressions[BAB] = AVERAGE
-        self.progressions[FORT] = AVERAGE
-        self.progressions[REF] = POOR
-        self.progressions[WILL] = GOOD
-        self.hit_value = 5
+        self.set_progression(BAB, AVERAGE)
+        self.set_progression(FORT, AVERAGE)
+        self.set_progression(REF, POOR)
+        self.set_progression(WILL, GOOD)
+        self.set_progression(HIT_VALUE, 5)
 
 class Druid(Character):
     def create_progressions(self):
-        self.progressions[BAB] = AVERAGE
-        self.progressions[FORT] = GOOD
-        self.progressions[REF] = POOR
-        self.progressions[WILL] = AVERAGE
-        self.hit_value = 5
+        self.set_progression(BAB, AVERAGE)
+        self.set_progression(FORT, GOOD)
+        self.set_progression(REF, POOR)
+        self.set_progression(WILL, AVERAGE)
+        self.set_progression(HIT_VALUE, 5)
 
 class Fighter(Character):
     def create_progressions(self):
-        self.progressions[BAB] = GOOD
-        self.progressions[FORT] = GOOD
-        self.progressions[REF] = POOR
-        self.progressions[WILL] = AVERAGE
-        self.hit_value = 6
+        self.set_progression(BAB, GOOD)
+        self.set_progression(FORT, GOOD)
+        self.set_progression(REF, POOR)
+        self.set_progression(WILL, AVERAGE)
+        self.set_progression(HIT_VALUE, 6)
 
     def apply_class_modifications(self):
         #armor discipline is tracked by a separate ability because it requires a choice. we just set a default value for that choice here
@@ -1222,11 +1227,11 @@ class Fighter(Character):
 
 class Monk(Character):
     def create_progressions(self):
-        self.progressions[BAB] = GOOD
-        self.progressions[FORT] = AVERAGE
-        self.progressions[REF] = AVERAGE
-        self.progressions[WILL] = GOOD
-        self.hit_value = 5
+        self.set_progression(BAB, GOOD)
+        self.set_progression(FORT, AVERAGE)
+        self.set_progression(REF, AVERAGE)
+        self.set_progression(WILL, GOOD)
+        self.set_progression(HIT_VALUE, 5)
 
     def apply_class_modifications(self):
         #wisdom is used often, so make it quick to access
@@ -1255,86 +1260,86 @@ class Monk(Character):
 
 class Paladin(Character):
     def create_progressions(self):
-        self.progressions[BAB] = GOOD
-        self.progressions[FORT] = GOOD
-        self.progressions[REF] = POOR
-        self.progressions[WILL] = GOOD
-        self.hit_value = 6
+        self.set_progression(BAB, GOOD)
+        self.set_progression(FORT, GOOD)
+        self.set_progression(REF, POOR)
+        self.set_progression(WILL, GOOD)
+        self.set_progression(HIT_VALUE, 6)
 
 class Ranger(Character):
     def create_progressions(self):
-        self.progressions[BAB] = GOOD
-        self.progressions[FORT] = GOOD
-        self.progressions[REF] = AVERAGE
-        self.progressions[WILL] = AVERAGE
-        self.hit_value = 6
+        self.set_progression(BAB, GOOD)
+        self.set_progression(FORT, GOOD)
+        self.set_progression(REF, AVERAGE)
+        self.set_progression(WILL, AVERAGE)
+        self.set_progression(HIT_VALUE, 6)
 
 class Rogue(Character):
     def create_progressions(self):
-        self.progressions[BAB] = AVERAGE
-        self.progressions[FORT] = POOR
-        self.progressions[REF] = GOOD
-        self.progressions[WILL] = AVERAGE
-        self.hit_value = 5
+        self.set_progression(BAB, AVERAGE)
+        self.set_progression(FORT, POOR)
+        self.set_progression(REF, GOOD)
+        self.set_progression(WILL, AVERAGE)
+        self.set_progression(HIT_VALUE, 5)
 
     def apply_class_modifications(self):
         self.add_ability('danger sense')
 
 class Spellwarped(Character):
     def create_progressions(self):
-        self.progressions[BAB] = AVERAGE
-        self.progressions[FORT] = AVERAGE
-        self.progressions[REF] = AVERAGE
-        self.progressions[WILL] = AVERAGE
-        self.hit_value = 5
+        self.set_progression(BAB, AVERAGE)
+        self.set_progression(FORT, AVERAGE)
+        self.set_progression(REF, AVERAGE)
+        self.set_progression(WILL, AVERAGE)
+        self.set_progression(HIT_VALUE, 5)
 
 class Sorcerer(Character):
     def create_progressions(self):
-        self.progressions[BAB] = POOR
-        self.progressions[FORT] = POOR
-        self.progressions[REF] = POOR
-        self.progressions[WILL] = GOOD
-        self.hit_value = 4
+        self.set_progression(BAB, POOR)
+        self.set_progression(FORT, POOR)
+        self.set_progression(REF, POOR)
+        self.set_progression(WILL, GOOD)
+        self.set_progression(HIT_VALUE, 4)
 
 class Warrior(Character):
     def create_progressions(self):
-        self.progressions[BAB] = GOOD
-        self.progressions[FORT] = GOOD
-        self.progressions[REF] = POOR
-        self.progressions[WILL] = POOR
-        self.hit_value = 6
+        self.set_progression(BAB, GOOD)
+        self.set_progression(FORT, GOOD)
+        self.set_progression(REF, POOR)
+        self.set_progression(WILL, POOR)
+        self.set_progression(HIT_VALUE, 6)
 
 class Wizard(Character):
     def create_progressions(self):
-        self.progressions[BAB] = POOR
-        self.progressions[FORT] = POOR
-        self.progressions[REF] = POOR
-        self.progressions[WILL] = GOOD
-        self.hit_value = 4
+        self.set_progression(BAB, POOR)
+        self.set_progression(FORT, POOR)
+        self.set_progression(REF, POOR)
+        self.set_progression(WILL, GOOD)
+        self.set_progression(HIT_VALUE, 4)
 
 class Monster(Creature):
     pass
 
 class Aberration(Monster):
     def create_progressions(self):
-        self.progressions[BAB] = AVERAGE
-        self.progressions[FORT] = AVERAGE
-        self.progressions[REF] = POOR
-        self.progressions[WILL] = AVERAGE
-        self.hit_value = 5
-        self.progressions[NATURAL_ARMOR] = POOR
+        self.set_progression(BAB, AVERAGE)
+        self.set_progression(FORT, AVERAGE)
+        self.set_progression(REF, POOR)
+        self.set_progression(WILL, AVERAGE)
+        self.set_progression(HIT_VALUE, 5)
+        self.set_progression(NATURAL_ARMOR, POOR)
 
     def apply_class_modifications(self):
         self.add_ability('darkvision')
 
 class Animal(Monster):
     def create_progressions(self):
-        self.progressions[BAB] = AVERAGE
-        self.progressions[FORT] = AVERAGE
-        self.progressions[REF] = POOR
-        self.progressions[WILL] = AVERAGE
-        self.hit_value = 5
-        self.progressions[NATURAL_ARMOR] = POOR
+        self.set_progression(BAB, AVERAGE)
+        self.set_progression(FORT, AVERAGE)
+        self.set_progression(REF, POOR)
+        self.set_progression(WILL, AVERAGE)
+        self.set_progression(HIT_VALUE, 5)
+        self.set_progression(NATURAL_ARMOR, POOR)
 
     def apply_class_modifications(self):
         self.intelligence.add_inherent(-8)
@@ -1342,108 +1347,108 @@ class Animal(Monster):
 
 class Construct(Monster):
     def create_progressions(self):
-        self.progressions[BAB] = AVERAGE
-        self.progressions[FORT] = AVERAGE
-        self.progressions[REF] = POOR
-        self.progressions[WILL] = POOR
-        self.hit_value = 5
-        self.progressions[NATURAL_ARMOR] = AVERAGE
+        self.set_progression(BAB, AVERAGE)
+        self.set_progression(FORT, AVERAGE)
+        self.set_progression(REF, POOR)
+        self.set_progression(WILL, POOR)
+        self.set_progression(HIT_VALUE, 5)
+        self.set_progression(NATURAL_ARMOR, AVERAGE)
 
     def apply_class_modifications(self):
         self.add_abilities(('construct', 'darkvision'))
 
 class Fey(Monster):
     def create_progressions(self):
-        self.progressions[BAB] = POOR
-        self.progressions[FORT] = POOR
-        self.progressions[REF] = AVERAGE
-        self.progressions[WILL] = AVERAGE
-        self.hit_value = 4
-        self.progressions[NATURAL_ARMOR] = POOR
+        self.set_progression(BAB, POOR)
+        self.set_progression(FORT, POOR)
+        self.set_progression(REF, AVERAGE)
+        self.set_progression(WILL, AVERAGE)
+        self.set_progression(HIT_VALUE, 4)
+        self.set_progression(NATURAL_ARMOR, POOR)
 
 class Humanoid(Monster):
     def create_progressions(self):
-        self.progressions[BAB] = AVERAGE
-        self.progressions[FORT] = POOR
-        self.progressions[REF] = POOR
-        self.progressions[WILL] = POOR
-        self.hit_value = 4
+        self.set_progression(BAB, AVERAGE)
+        self.set_progression(FORT, POOR)
+        self.set_progression(REF, POOR)
+        self.set_progression(WILL, POOR)
+        self.set_progression(HIT_VALUE, 4)
 
 class MagicalBeast(Monster):
     def create_progressions(self):
-        self.progressions[BAB] = AVERAGE
-        self.progressions[FORT] = AVERAGE
-        self.progressions[REF] = AVERAGE
-        self.progressions[WILL] = POOR
-        self.hit_value = 5
-        self.progressions[NATURAL_ARMOR] = POOR
+        self.set_progression(BAB, AVERAGE)
+        self.set_progression(FORT, AVERAGE)
+        self.set_progression(REF, AVERAGE)
+        self.set_progression(WILL, POOR)
+        self.set_progression(HIT_VALUE, 5)
+        self.set_progression(NATURAL_ARMOR, POOR)
 
     def apply_class_modifications(self):
         self.add_ability('low-light vision')
 
 class MonstrousHumanoid(Monster):
     def create_progressions(self):
-        self.progressions[BAB] = AVERAGE
-        self.progressions[FORT] = AVERAGE
-        self.progressions[REF] = AVERAGE
-        self.progressions[WILL] = POOR
-        self.hit_value = 5
-        self.progressions[NATURAL_ARMOR] = POOR
+        self.set_progression(BAB, AVERAGE)
+        self.set_progression(FORT, AVERAGE)
+        self.set_progression(REF, AVERAGE)
+        self.set_progression(WILL, POOR)
+        self.set_progression(HIT_VALUE, 5)
+        self.set_progression(NATURAL_ARMOR, POOR)
 
 class Ooze(Monster):
     def create_progressions(self):
-        self.progressions[BAB] = POOR
-        self.progressions[FORT] = AVERAGE
-        self.progressions[REF] = POOR
-        self.progressions[WILL] = POOR
-        self.hit_value = 6
+        self.set_progression(BAB, POOR)
+        self.set_progression(FORT, AVERAGE)
+        self.set_progression(REF, POOR)
+        self.set_progression(WILL, POOR)
+        self.set_progression(HIT_VALUE, 6)
 
     def apply_class_modifications(self):
         self.add_ability('ooze')
 
 class Outsider(Monster):
     def create_progressions(self):
-        self.progressions[BAB] = AVERAGE
-        self.progressions[FORT] = AVERAGE
-        self.progressions[REF] = AVERAGE
-        self.progressions[WILL] = AVERAGE
-        self.hit_value = 5
-        self.progressions[NATURAL_ARMOR] = POOR
+        self.set_progression(BAB, AVERAGE)
+        self.set_progression(FORT, AVERAGE)
+        self.set_progression(REF, AVERAGE)
+        self.set_progression(WILL, AVERAGE)
+        self.set_progression(HIT_VALUE, 5)
+        self.set_progression(NATURAL_ARMOR, POOR)
 
     def apply_class_modifications(self):
         self.add_ability('low-light vision')
 
 class Plant(Monster):
     def create_progressions(self):
-        self.progressions[BAB] = POOR
-        self.progressions[FORT] = AVERAGE
-        self.progressions[REF] = POOR
-        self.progressions[WILL] = POOR
-        self.hit_value = 5
-        self.progressions[NATURAL_ARMOR] = POOR
+        self.set_progression(BAB, POOR)
+        self.set_progression(FORT, AVERAGE)
+        self.set_progression(REF, POOR)
+        self.set_progression(WILL, POOR)
+        self.set_progression(HIT_VALUE, 5)
+        self.set_progression(NATURAL_ARMOR, POOR)
 
     def apply_class_modifications(self):
         self.add_ability('plant')
 
 class Undead(Monster):
     def create_progressions(self):
-        self.progressions[BAB] = AVERAGE
-        self.progressions[FORT] = AVERAGE
-        self.progressions[REF] = POOR
-        self.progressions[WILL] = AVERAGE
-        self.hit_value = 5
-        self.progressions[NATURAL_ARMOR] = POOR
+        self.set_progression(BAB, AVERAGE)
+        self.set_progression(FORT, AVERAGE)
+        self.set_progression(REF, POOR)
+        self.set_progression(WILL, AVERAGE)
+        self.set_progression(HIT_VALUE, 5)
+        self.set_progression(NATURAL_ARMOR, POOR)
 
     def apply_class_modifications(self):
         self.add_ability('undead')
 
 class IdealCreature(Creature):
     def create_progressions(self):
-        self.progressions[BAB] = GOOD
-        self.progressions[FORT] = POOR
-        self.progressions[REF] = POOR
-        self.progressions[WILL] = POOR
-        self.progressions[HIT_VALUE] = 5
+        self.set_progression(BAB, GOOD)
+        self.set_progression(FORT, POOR)
+        self.set_progression(REF, POOR)
+        self.set_progression(WILL, POOR)
+        self.set_progression(HIT_VALUE, 5)
 
     def apply_class_modifications(self):
         #compensate for AC bonus from BAB
