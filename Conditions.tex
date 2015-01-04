@@ -7,9 +7,9 @@
 
 \parhead{Bewildered} A bewildered creature is mentally affected in a way that detracts from his ability to act, causing him to be vulnerable. A vulnerable creature takes a \minus2 penalty to attacks, defenses, and checks.
 
-\parhead{Blinded} A blinded creature cannot see. It is flat-footed and moves at half speed. In addition, it is defenseless, causing it to provoke attacks of opportunity for all its actions. All checks and activities that rely on vision (such as reading and visual Perception checks) automatically fail, and any checks related to vision (such as Climb and Sense Motive checks) take a \minus4 penalty. All opponents are considered to be invisible (50\% miss chance) relative to the blinded creature.
+\parhead{Blinded} A blinded creature cannot see. It moves at half speed and is defenseless, causing it to provoke attacks of opportunity for all its actions. All checks and activities that rely on vision (such as reading and visual Perception checks) automatically fail, and any checks related to vision (such as Climb and Sense Motive checks) take a \minus4 penalty. All opponents are considered to be invisible (50\% miss chance) relative to the blinded creature.
 
-\parhead{Blown Away} Depending on its size, a creature can be blown away by winds of high velocity. A creature on the ground that is blown away is knocked down and rolls 1d4 \mtimes 10 feet, taking 1d4 points of nonlethal damage per 10 feet. A flying creature that is blown away is blown back 2d6 \mtimes 10 feet and takes 2d6 points of nonlethal damage due to battering and buffering.
+\pdssxarhead{Blown Away} Depending on its size, a creature can be blown away by winds of high velocity. A creature on the ground that is blown away is knocked down and rolls 1d4 \mtimes 10 feet, taking 1d4 points of nonlethal damage per 10 feet. A flying creature that is blown away is blown back 2d6 \mtimes 10 feet and takes 2d6 points of nonlethal damage due to battering and buffering.
 
 \parhead{Bloodied} At or below half hit points. Bloodied creatures are more vulnerable to many spells and effects.
 
@@ -17,7 +17,7 @@
 
 \parhead{Confused}\label{Confused} A confused creature is unable to independently control its actions. \confusionexplanation A confused creature does not make attacks of opportunity against any creature that it is not already devoted to attacking (either because of its most recent action or because it has just been attacked).
 
-\parhead{Cowering} The creature is frozen in fear and can take no actions. A cowering creature is vulnerable and flat-footed, causing it to take a \minus2 penalty on attacks, defenses, and checks.
+\parhead{Cowering} The creature is frozen in fear and can take no actions. A cowering creature is vulnerable (\minus2 penalty to attacks, saves, and checks).
 
 \parhead{Dazed} The creature is unable to act normally. A dazed creature can take no actions, but can defend itself normally. A dazed condition typically lasts 1 round.
 
@@ -41,27 +41,23 @@
 
 \parhead{Fatigued} A fatigued creature can neither sprint nor charge and is vulnerable, giving it a \minus2 penalty to attacks, defenses, and checks. If the fatigue does not have a set duration, doing anything that would normally cause fatigue causes the fatigued creature to become exhausted. After 8 hours of complete rest, fatigued creatures are no longer fatigued.
 
-\parhead{Flat-Footed} A flat-footed creature is unable to react normally to attacks. It does not apply its Dexterity (if positive), dodge modifier, or shield modifier to its physical defenses. It still suffers any penalties from having a negative Dexterity.
-
 \parhead{Frightened} A frightened creature flees from the source of its fear as best it can. If unable to flee, it may fight. A frightened creature is vulnerable, causing it to take a \minus2 penalty on all attacks, defenses, and checks. A frightened creature can use special abilities, including spells, to flee; indeed, the creature must use such means if they are the only way to escape.
 
 A creature shaken by multiple sources becomes frightened. A creature frightened by multiple sources becomes panicked.
 
 \parhead{Grappled} A grappled creature is in wrestling or some other form of hand-to-hand struggle with one or more attackers. While grappled, you suffer certain penalties and restrictions, as described below.
+
 \begin{itemize*}
-\item You must use one of your hands (or equivalent limbs) to grapple, preventing you from taking any actions which would require having two free hands. For example, you cannot attack with a two-handed weapon while grappling.
-\item You take a \minus2 penalty to all physical attacks except those made to grapple.
-\item You are flat-footed against all opponents except the one you are grappling.
-\item Anyone making a ranged attack at you has a 50\% chance to strike the other participant in the grapple instead.
-\item You do not threaten any opponents except for the creature you are grappling with.
-\item You take an additional \minus4 penalty to physical attacks made with one-handed weapons, since they are too large and cumbersome to be used effectively in a grapple.
-\item You cannot cast spells with somatic components.
-\item Casting a spell without somatic components requires a DC 20 \add double spell level Concentration check.
-\item You cannot move normally.
+    \item You must use a free hand (or equivalent limbs) to grapple, preventing you from taking any actions which would require having two free hands. If you cannot free a hand, you suffer a \minus10 penalty to all physical attacks, including grapple attacks, until you have a free hand.
+    \item You take a \minus4 penalty to physical defenses against creatures you are not grappling with.
+    \item You take a \minus4 penalty to attack rolls made with weapons that are not light, since they are too large and cumbersome to be used effectively in a grapple.
+    \item Spellcasting is extremely difficult. You cannot cast spells with somatic components. Using a spell-like ability or casting a spell without somatic components requires a Concentration check with a DC equal to 20 \add double spell level.
+    \item You cannot move normally (but see Move the Grapple, below).
 \end{itemize*}
+
 Other than the restrictions listed above, you can act normally. You can also try to move the grapple, escape the grapple, or pin your opponent. See \pref{Grapple} for more information.
 
-\parhead{Helpless} A helpless creature is paralyzed, held, bound, sleeping, unconscious, or otherwise completely at an opponent's mercy. It is flat-footed and is treated as having a Dexterity of \minus10. Helpless creatures can be killed instantly by a coup de grace (see \pcref{Coup de Grace}).
+\parhead{Helpless} A helpless creature is completely at an opponent's mercy. Its Reflex defense is 10, and its physical defenses are equal to 10 \add its size modifier. In addition, it cannot take attacks of opportunity. Paralyzed, bound, and unconscious creatures are helpless, as well as creatures completely unaware of an attack. Helpless creatures can be killed instantly by a coup de grace (see \pcref{Coup de Grace}).
 
 \parhead{Incorporeal} Having no physical body. Incorporeal creatures are immune to all nonmagical attack forms. They can be harmed only by other incorporeal creatures, \plus1 or better magic weapons, spells, spell-like effects, or supernatural effects.
 
@@ -69,7 +65,7 @@ Other than the restrictions listed above, you can act normally. You can also try
 
 \parhead{Immobilized} An immobilized creature can't move out of the space it was in when it became immobilized. Immobilized flying creatures that have the ability to hover can maintain their initial altitude. All other flying creatures subjected to this condition descend at a rate of 20 feet per round until they reach the ground, taking no falling damage.
 
-\parhead{Invisible} Visually undetectable. An invisible creature is almost always hidden, causing its foes to be flat-footed against its attacks. It is difficult to detect by visual means, gaining a \plus20 bonus to Hide checks while moving and a \plus40 bonus while immobile. Attackers suffer a 50\% miss chance even if they know the location of the invisible creature, and knowing the location of an invisible creature does not prevent you from being flat-footed against its attacks. See \pcref{Perception} and \pcref{Stealth}, for how to identify invisible creatures.
+\parhead{Invisible} An invisible creature or object cannot be seen. Other creatures are defenseless against an invisible creature, causing them to provoke attacks of opportunity for their actions. Attackers suffer a 50\% miss chance even if they know the location of the invisible creature. See \pcref{Perception} and \pcref{Stealth}, for how to identify invisible creatures.
 
 \parhead{Knocked Down} Depending on their size, creatures can be knocked down by winds of high velocity. Creatures on the ground are knocked prone by the force of the wind. Flying creatures are instead blown back 1d6 \mtimes 10 feet.
 
@@ -87,7 +83,7 @@ Panicked is a more extreme state of fear than shaken or frightened.
 
 \parhead{Petrified} A petrified creature has been turned to stone and is considered unconscious. If a petrified creature cracks or breaks, but the broken pieces are joined with the body as he returns to flesh, he is unharmed. If the creature's petrified body is incomplete when it returns to flesh, the body is similarly incomplete and there is some amount of permanent hit point loss and/or debilitation.
 
-\parhead{Pinned} Held immobile (but not helpless) in a grapple.
+\parhead{Pinned} A pinned creature is held completely immobile in a grapple. Like a helpless creature, its Reflex defense is 10, and its physical defenses are equal to 10 \add its size modifier. Unlike a helpless creature, a pinned creature cannot be killed instantly by a coup de grace.
 
 \parhead{Prone} The creature is on the ground. An attacker who is prone has a \minus4 penalty on melee attack rolls and cannot use a ranged weapon (except for a crossbow). A defender who is prone gains a \plus4 bonus to physical defenses against ranged attacks, but takes a \minus4 penalty to physical defenses against melee attacks.
 
@@ -105,9 +101,9 @@ A creature shaken by multiple sources becomes frightened. A creature frightened 
 
 \parhead{Staggered} A staggered creature may take a single move action or standard action each round, but not both. She cannot take full-round actions, but she may take swift actions. In addition, she is vulnerable, causing her to take a \minus2 penalty on attacks, defenses, and checks. A creature with 0 hit points is staggered.
 
-\parhead{Stunned} A stunned creature drops everything held, can't take actions, and is flat-footed and vulnerable, causing her to take a \minus2 penalty on attacks, defenses, and checks.
+\parhead{Stunned} A stunned creature drops everything held, can't take actions, and is vulnerable, causing it to take a \minus2 penalty on attacks, defenses, and checks.
 
-\parhead{Unaware} An unaware creature has not had time to react. It is flat-footed and cannot take attacks of opportunity or immediate actions. All creatures are unaware until they take their first action in an encounter. Note that an encounter can start before initiative is rolled.
+\parhead{Unaware} A creature unaware that it is being attacked is helpless. Once it has been attacked, the creature is not helpless, even if cannot see or identify its attacker.
 
 \parhead{Unconscious} Knocked out and helpless. Unconsciousness usually results from taking significant damage. 
 
