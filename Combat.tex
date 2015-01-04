@@ -119,7 +119,14 @@ Your attack attribute depends on the maneuver you are using, as described in \pc
 \parhead{Trip}\label{Trip} You try to trip your foe. Success means the creature falls prone, causing it to take a \minus4 penalty to physical attacks and defenses. You can trip a creature with Strength or Dexterity.
 
 \section{Defenses}\label{Defenses}
-Physical attacks are made against physical defenses: Armor defense or Maneuver defense. Special attacks are made against special defenses: Fortitude defense, Reflex defense, or Will defense.
+Usually, when you are attacked, the attacker has to make an attack roll against a specific defense. If the attack roll is at least as high as that defense, the attack succeeds. There are three physical defenses and two special defenses.
+\begin{itemize*}
+    \item Armor defense: Your Armor defense protects you from normal physical attacks, such as attempts to stab you with a sword. It is the most commonly used defense. Armor defense is a physical defense.
+    \item Maneuver defense: Your Maneuver defense protects you fromd unusual physical attacks, such as attempts to trip or disarm you. Maneuver defense is a physical defense.
+    \item Reflex defense: Your Reflex protects you from attacks you have to avoid, such as explosions or falling rocks. Reflex defense is a physical defense.
+    \item Fortitude defense: Your Fortitude defense protects you from attacks you have to physically endure or resist, such as poisons and deadly spells. Fortitude defense is a special defense. 
+    \item Will defense: Your Will defense protects you from attacks you have to mentally endure or resist, such as terrifying creatures and magical manipulation. Will defense is a special defense.
+\end{itemize*}
 
 \subsection{Armor Defense}
 Your Armor defense represents how hard it is for opponents to land a solid, damaging blow on you. It's the attack roll result that an opponent needs to achieve to hit you with a normal physical attack. Unlike most combat statistics, your Armor defense is made up of the sum of other modifiers, each of which can have their own independent bonuses and penalties. It is equal to the following:
@@ -142,20 +149,33 @@ Your Maneuver defense represents how good you are at defending against combat ma
 
 Your special size modifier is described in \tref{Size in Combat}.
 
-\subsection{Special Defenses}
-There are three special defenses: Fortitude, Reflex, and Will.
-\parhead{Fortitude} This defense measures your ability to stand up to physical punishment or attacks against your vitality and health. Apply your Constitution and half your Strength to your Fortitude defense.
-\parhead{Reflex} This defense measures your ability to dodge area attacks and to react to certain attacks. Apply your Dexterity and half your Wisdom to your Reflex defense.
-\parhead{Will} This defense measures your resistance to mental influence as well as many magical effects. Apply your Charisma and half your Intelligence to your Will defense.
+\subsection{Reflex Defense}
 
-\subsubsection{Calculating Special Defenses}
-All special defenses are calculated in the following way:
+Reflex defense is a physical defense, and is modified by effects that affect physical defenses. Your Reflex defense is calculated in the following way:
 
 \begin{figure}[h]
-\centering Base defense bonus \add primary attribute \add half secondary attribute \add enhancement bonus \add other bonuses and penalties
+\centering Base defense bonus \add Dexterity \add half Wisdom \add dodge modifier \add enhancement bonus \add size modifier \add other bonuses and penalties
 \end{figure}
+\parhead{Base Defense Bonus} Your base defense bonus comes from your classes. See \pcref{Base Special Defense Progressions}, for more details.
+\parhead{Size Modifier} You apply your size modifier to your Reflex defense.
 
-Your base defense bonus comes from your classes. See \pcref{Base Special Defense Progressions}, for more details.
+\subsection{Fortitude Defense}
+
+Fortitude defense is a special defense, and is modified by effects that affect special defenses. Your Fortitude defense is calculated in the following way:
+
+\begin{figure}[h]
+\centering Base defense bonus \add Constitution \add half Strength \add enhancement bonus \add other bonuses and penalties
+\end{figure}
+\parhead{Base Defense Bonus} Your base defense bonus comes from your classes. See \pcref{Base Special Defense Progressions}, for more details.
+
+\subsection{Will Defense}
+
+Your Will defense is a special defense, and is modified by effects that affect special defenses. It is calculated in the following way:
+
+\begin{figure}[h]
+\centering Base defense bonus \add Charisma \add half Intelligence \add enhancement bonus \add other bonuses and penalties
+\end{figure}
+\parhead{Base Defense Bonus} Your base defense bonus comes from your classes. See \pcref{Base Special Defense Progressions}, for more details.
 
 \subsection{Hit Points}
 Your hit points represent how much punishment you can take. When you run out hit points, your actions are limited and you might die, as described in \pcref{Injury, Death, and Healing}.
@@ -342,7 +362,7 @@ Certain effects give a character temporary hit points which act as a protection 
     \end{tabularx}
     1 The defender is defenseless, causing it to provoke attacks of opportunity for all its actions. \\
     2 Treat as a bonus against ranged attacks, instead of a penalty \\
-    3 The defender's Reflex defense is 10, and its physical defenses are 10 \add size modifier. \\
+    3 The defender's Reflex and physical defenses are 10 \add size modifier. \\
     4 The creature suffers a penalty equal to the number of creatures threatening it.
 \end{dtable}
 
