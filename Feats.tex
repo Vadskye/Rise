@@ -352,6 +352,7 @@ Combat styles can only be used while you are engaged in combat. If you do not ch
 \featref{Predictive Defense} & Int 3, base attack bonus \plus8 & Add half Int to defense & Awareness, Defense, Style & \featpref{Predictive Defense} \\
 \featref{Sickening Strike} & Base attack bonus \plus8 & Attack sickens foe & Strike & \featpref{Sickening Strike} \\
 \featref{Tactical Prediction} & Int 3, Base attack bonus \plus8 & Predict foe's next action & Awareness & \featpref{Tactical Prediction} \\
+\featref{Threatening Fire} & Overwhelming Fire, base attack bonus \plus8 & Threaten adjacent creatures with a ranged weapon & \featpref{Threatening Fire} \\
 \featref{Wall Slam} & Str 5, base attack bonus \plus8 & Slam opponent into wall to deal bonus damage & Maneuver, Power & \featpref{Wall Slam} \\
 \featref{Whirlwind Attack} & Dex 5, base attack bonus \plus8 & One melee attack against each opponent within reach & Style & \featpref{Whirlwind Attack} \\
 
@@ -1359,8 +1360,12 @@ You can use any combination of performance feats you possess a number of times p
 \parhead{Benefit} You can attempt to identify the strengths and weaknesses of creatures based on your combat experience. As a swift action, you can make a special check with a bonus equal to your base attack bonus \add your Intelligence \add 2 per round you have seen the creature fight. The DC is equal to 10 \add the creature's CR. If you succeed, you learn about the monster's combat abilities as if you had made a successful Knowledge check.
 
 \feat{Tactical Prediction}{Combat}
-\parhead{Prerequisites} Intelligence 3, Base attack bonus \plus8
+\parhead{Prerequisites} Intelligence 3, base attack bonus \plus8.
 \parhead{Benefit} You can attempt to predict what your opponent will do. As a swift action, you can make a special check with a bonus equal to your base attack bonus \add your Intelligence \add 2 per round you have seen the creature fight. The DC is equal to 15 \add the creature's CR. If you succeed, you learn what the creature is planning to do during its next turn. Of course, it can change its plans, particularly if it hears you tell your allies what it will do.
+
+\feat{Threatening Fire}{Combat, Reaction, Style}
+\featpre Overwhelming Fire, base attack bonus \plus8.
+\featben When using a ranged weapon, you threaten creatures within your natural reach, allowing you to take attacks of opportunity and contribute to overwhelm penalties. (A Medium creature would threaten adjacent creatures). This does not remove any other penalties for fighting at close range, such as the danger of provoking attacks of opportunity. In exchange, you cannot make ranged attacks against creatures beyond half of your range increment.
 
 \feat{Trapfinder}{Skill}
 \featpre Perception 5 ranks.
