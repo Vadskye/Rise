@@ -95,6 +95,8 @@ Combat maneuver feats are combat feats which specifically deal with maneuvers --
 \subsection{Combat Style Feats}
 Combat style feats grant a character the ability to fight in a particular style, granting them bonuses while fighting in that style. A character can only fight in one style at once. Initiating a style or changing to a different style is a swift action, but a style can be stopped as a free action. Any feat designated as a combat style feat is also considered a combat feat.
 
+Combat styles can only be used while you are engaged in combat. If you do not charge or take a standard attack during your turn, you stop using your style, preventing you from gaining its benefits during your turn.
+
 \onecolumn
 \section{Feat Table}
 
@@ -292,7 +294,7 @@ Combat style feats grant a character the ability to fight in a particular style,
 \featref{Mounted Archery} & Ride 1 rank & Reduced penalty for ranged attacks while mounted by 4 & Mounted, Precision & \featpref{Mounted Archery} \\
 \featref{Mounted Combat} & Ride 1 rank & Negate hits on mount with Ride check & Defense, Mounted & \featpref{Mounted Combat} \\
 \featref{Mounted Trample} & Ride 8 ranks & Target cannot avoid mounted overrun & Mobility, Mounted & \featpref{Trample} \\
-\featref{Opportunist} & Dex 3 & \plus2 to attack and damage on attacks of opportunity & Finesse, Style & \featpref{Opportunist} \\
+\featref{Opportunist} & Dex 3 & \plus2 to attack and damage on attacks of opportunity & Reaction, Style & \featpref{Opportunist} \\
 \featref{Overpowering Assault} & Str 3 & Trade defense for maneuver bonus & Power, Style & \featpref{Overpowering Assault} \\
 \featref{Parry} & Dex 3 & Ready yourself to parry incoming blows & Defense, Reaction & \featpref{Parry} \\
 \tind \featref{Shielded Parry} & Dex 3, shield proficiency, Parry & Add shield modifier to parry attempts & Defense, Reaction & \featpref{Shielded Parry} \\
@@ -315,11 +317,11 @@ Combat style feats grant a character the ability to fight in a particular style,
 \featref{Combat Mobility} & Dex 3, base attack bonus \plus4, Dodge & Avoid some attacks of opportunity from selected target & Defense, Mobility & \featpref{Combat Mobility} \\
 \tind \featref{Spring Attack} & Dex 3, base attack bonus \plus4, Dodge, Combat Mobility & Move before and after attacks & Mobility, Style & \featpref{Spring Attack} \\
 \featref{Distracting Foe} & Base attack bonus \plus4 & Threatened foes suffer Concentration penalties & Style & \featpref{Distracting Foe} \\
-\featref{Feign Weakness} & Base attack bonus \plus4 & Provoke attack to render foe flat-footed & Style & \featpref{Feign Weakness} \\
+\featref{Feign Weakness} & Base attack bonus \plus4 & Provoke attack to gain bonus to hit & Style & \featpref{Feign Weakness} \\
 \featref{Improved Dirty Trick} & Base attack bonus \plus4 & \plus2 bonus to dirty trick attacks; dirty tricks last longer & Finesse, Maneuver & \featpref{Improved Dirty Trick} \\
 \featref{Improved Disarm} & Base attack bonus \plus4 & \plus2 bonus to disarm attacks; knock foe's weapon away after disarming & Finesse, Maneuver & \featpref{Improved Disarm} \\
 \featref{Improved Feint} & Base attack bonus \plus4 & \plus2 bonus to feint attacks; feint lasts longer & Finesse, Maneuver & \featpref{Improved Feint} \\
-\featref{Improved Grapple} & Base attack bonus \plus4 & \plus2 bonus to grapple attacks; not flat-footed while grappling & Maneuver, Power & \featpref{Improved Grapple} \\
+\featref{Improved Grapple} & Base attack bonus \plus4 & \plus2 bonus to grapple attacks; not vulnerable while grappling & Maneuver, Power & \featpref{Improved Grapple} \\
 \featref{Improved Overrun} & Base attack bonus \plus4 & \plus2 bonus to overrun attacks; target can't avoid & Maneuver, Power & \featpref{Improved Overrun} \\
 \featref{Improved Shove} & Base attack bonus \plus4 & \plus2 bonus to shove attacks; move target without moving & Maneuver, Power & \featpref{Improved Shove} \\
 \featref{Improved Trip} & Base attack bonus \plus4 & \plus2 bonus to trip attacks; tripped foe provokes attacks of opportunity & Finesse, Maneuver & \featpref{Improved Trip} \\
@@ -365,7 +367,7 @@ Combat style feats grant a character the ability to fight in a particular style,
 \featref{Legendary Mounted Warrior} & Base attack bonus \plus12, any three Mounted feats & Share damage with mount & Mounted& \featpref{Legendary Mounted Warrior} \\
 \featref{Legendary Power} & Base attack bonus \plus12, any three Power feats & Wield weapons as if they were less encumbering & Power& \featpref{Legendary Power} \\
 \featref{Legendary Precision} & Base attack bonus \plus12, any three Precision feats & Very accurate hits deal maximum damage & Precision & \featpref{Legendary Precision} \\
-\featref{Legendary Reaction} & Retain full defenses when flat-footed & Combat, Reaction & \featpref{Legendary Reaction} \\
+\featref{Legendary Reaction} & \plus10 to initiative checks & Combat, Reaction & \featpref{Legendary Reaction} \\
 \featref{Legendary Style} & Base attack bonus \plus12, any three Style feats & Use two styles at once & \x & \featpref{Legendary Style} \\
 \featref{Manyshot} & Dex 7, base attack bonus \plus12 & Shoot two projectiles simultaneously & Precision, Style & \featpref{Manyshot} \\
 \featref{Penetrating Strike} & Base attack bonus \plus12 & Attack removes foe's damage reduction & Strike & \featpref{Penetrating Strike} \\
@@ -445,9 +447,9 @@ Choose one category of armor: light, medium, heavy, or shields.
 \featben When you make a physical attack, you may take a \minus4 penalty to hit. If you deal damage, you make a Will attack against the struck foe to bewilder it for 5 rounds. Your attack bonus is equal to your base attack bonus \add your physical attack attribute (Strength or Dexterity).  A bewildered creature is vulnerable, causing it to take a \minus2 penalty to attacks, defenses, and checks. You cannot make more than one Strike each round.
 
 \feat{Blind-Fight}{Combat}
-\parhead{Benefit} In melee, every time you miss because of being unable to see your opponent, you can reroll your miss chance one time to see if you actually hit. In addition, you are not flat-footed against invisible attackers adjacent to you.
-\par If you have 10 ranks in Perception, you can automatically pinpoint the location of any invisible creature adjacent to you.
-\parhead{Normal} You have a 50\% chance to miss opponents you can't see, and you are flat-footed against them.
+\parhead{Benefit} In melee, every time you miss because of being unable to see your opponent, you can reroll your miss chance one time to see if you actually hit. In addition, you are not defenseless against invisible attackers.
+\par In addition, if you have 10 ranks in Perception, you can automatically pinpoint the location of any invisible creature adjacent to you.
+\parhead{Normal} You have a 50\% chance to miss opponents you can't see, and you are defenseless against them.
 
 \feat{Cautious Attack}{Combat, Style}
 \parhead{Benefit} While in this style, you gain a \plus2 bonus to your Maneuver Class. In exchange, you take a \minus2 penalty to damage rolls. At base attack bonus \plus4, and every 4 base attack bonus thereafter, you increase the bonus and penalty by 1. If you do not make a standard attack with a melee weapon during your turn, you cannot use this style.
@@ -734,7 +736,7 @@ You can use any combination of performance feats you possess a number of times p
 
 \feat{Feign Weakness}{Combat, Style}
 \featpre Base attack bonus \plus4.
-\featben While in this style, as part of a standard attack, you may provoke an attack of opportunity from one opponent threatening you. You gain a \plus4 bonus to physical defenses against this attack. If the opponent takes the attack of opportunity, they are flat-footed against your next attack, provided that it is made within 1 round.
+\featben While in this style, as part of a standard attack, you may provoke an attack of opportunity from one opponent threatening you. You gain a \plus4 bonus to physical defenses against this attack. If the creature takes the attack of opportunity, you gain a \plus4 bonus to your next attack against it, provided the attack is made within 1 round.
 
 \feat{Focused Mind}{Racial}
 \parhead{Prerequisite} Elf.
@@ -802,12 +804,11 @@ Only spells which affect a single target and have a casting time no shorter than
 
 \feat{Improved Disarm}{Combat, Finesse}
 \parhead{Prerequisites} Base attack bonus \plus4
-\parhead{Benefit} When you knock an item away from a creature, you can make it land up to 15 feet away in a random direction. You also gain a \plus2 bonus to disarm attacks.
+\parhead{Benefit} When you disarm a creature, you can make the disarmed item land up to 15 feet away in a random direction. You also gain a \plus2 bonus to disarm attacks.
 
 \feat{Improved Feint}{Combat, Finesse}
 \parhead{Prerequisites} Base attack bonus \plus4
-\parhead{Benefit} When you feint against a creature, it remains flat-footed until it is struck by an attack, provided the attack is made before its next turn. You also gain a \plus2 bonus to feint attacks.
-\parhead{Normal} A feinted creature is flat-footed until the next attack is made against it.
+\parhead{Benefit} When you feint against a creature, if you beat its Armor defense by 5 or more, you deal damage with your weapon normally. You also gain a \plus2 bonus to feint attacks.
 
 \feat{Improved Imbued Spellstrike}{Metamagic}
 \parhead{Prerequisite} Ability to cast 3rd level spells, Imbued Spellstrike.
@@ -817,8 +818,8 @@ An improved imbued spellstrike spell uses up a spell slot two levels higher than
 
 \feat{Improved Grapple}{Combat, Maneuver}
 \parhead{Prerequisites} Base attack bonus \plus4
-\parhead{Benefit} Grappling does not make you flat-footed against other creatures. You also gain a \plus2 bonus to grapple attacks.
-\parhead{Normal} While grappling, you are flat-footed against all creatures except the ones you are grappling.
+\parhead{Benefit} Grappling does not make you vulnerable against other creatures. You also gain a \plus2 bonus to grapple attacks.
+\parhead{Normal} While grappling, you are vulnerable against all creatures except the ones you are grappling.
 
 \feat{Improved Initiative}{Combat}
 \parhead{Benefit} You gain a \plus2 bonus to initiative checks. In addition, once per day you may reroll an initiative check.
@@ -881,7 +882,7 @@ You can use any combination of performance feats you possess a number of times p
 
 \feat{Intuitive Defense}{Combat, Defense, Style}
 \featpre Wis 3, base attack bonus \plus8.
-\featben While in this style, you can add half your Wisdom to your physical defenses in place of your Dexterity. This bonus does not apply if you would be denied your Dexterity defense bonus, such as when you are flat-footed.
+\featben While in this style, can add half your Wisdom to your Armor and Maneuver defenses in place of your Dexterity. You also apply your full Wisdom to your Reflex defense instead of your Dexterity bonus. 
 
 \feat{Intuitive Reaction}{Combat, Reaction}
 \featpres Wisdom 3, base attack bonus \plus4
@@ -901,8 +902,8 @@ You can use any combination of performance feats you possess a number of times p
 
 \feat{Ledgewalker}{Skill}
 \featpre Acrobatics 5 ranks.
-\featben Using Acrobatics to move along narrow surfaces does not reduce your speed. If you have 10 ranks in Acrobatics, you are not flat-footed while doing so.
-\parhead{Normal} You move at half speed while balancing on precarious surfaces, and you are flat-footed while doing so.
+\featben Using Acrobatics to move along narrow surfaces does not reduce your speed. If you have 10 ranks in Acrobatics, you are not vulnerable while doing so.
+\parhead{Normal} You move at half speed while balancing on precarious surfaces, and you are vulnerable while doing so.
 
 \feat{Legendary Awareness}{Awareness, Combat}
 \featpre Base attack bonus \plus12, any three Awareness feats.
@@ -1019,7 +1020,7 @@ In addition, when training a creature, if your check result is 30 or higher, you
 
 \feat{Legendary Reaction}{Combat, Reaction}
 \featpre Base attack bonus \plus12, any three Reaction feats.
-\featben You cannot caught be flat-footed, and always retain your Dexterity, dodge, and shield defense modifiers. This ability can prevent rogues from sneak attacking you.
+\featben You gain a \plus10 bonus to initiative checks.
 
 \feat{Legendary Strength}{General}
 \featpre 11th level, Strength 5.
@@ -1103,7 +1104,7 @@ The spell's level must be no greater than half of your total levels in non-casti
 \feat{Open Minded}{Skill}
 \parhead{Benefit} You gain two skill points. You may spend these skill points immediately.
 
-\feat{Opportunist}{Combat, Style}
+\feat{Opportunist}{Combat, Reaction, Style}
 \parhead{Prerequisite} Dex 3.
 \parhead{Benefit} While in this style, you gain a \plus2 bonus to attack and damage on attacks of opportunity. In exchange, you take a \minus2 penalty to attacks that are not attacks of opportunity. At base attack bonus \plus4, and every 4 base attack bonus thereafter, you increase the bonus and penalty by 1.
 
@@ -1118,7 +1119,7 @@ The spell's level must be no greater than half of your total levels in non-casti
 
 \feat{Parry}{Combat, Defense, Reaction, Style}
 \featpre Dexterity 3.
-\featben While in this style, whenever you are attacked and you are not flat-footed against the attack, you may make an attack roll to attempt to parry the attack. You may treat the result of your attack roll as your physical defense against that attack if it would be higher. You can normally make one parry attempt each round. If your base attack bonus is high enough to grant you multiple attacks, you may also make multiple parry attempts. Each parry attempt after the first takes a cumulative \minus5 penalty, just like your attack rolls do.
+\featben While in this style, whenever you are attacked and you are aware of the attack, you may make an attack roll to attempt to parry the attack. You may treat the result of your attack roll as your physical defense against that attack if it would be higher. You can normally make one parry attempt each round. If your base attack bonus is high enough to grant you multiple attacks, you may also make multiple parry attempts. Each parry attempt after the first takes a cumulative \minus5 penalty, just like your attack rolls do.
 
 In exchange, you take a \minus4 penalty to all physical attacks not made to parry.
 
@@ -1162,7 +1163,7 @@ In exchange, you take a \minus4 penalty to all physical attacks not made to parr
 
 \feat{Predictive Defense}{Combat, Defense, Style}
 \featpre Intelligence 3, base attack bonus \plus8.
-\featben While in this style, you can add half your Intelligence to your physical defenses in place of your Dexterity. This bonus does not apply if you would be denied your Dexterity defense bonus, such as when you are flat-footed.
+\featben While in this style, you can add half your Intelligence to your physical defenses in place of your Dexterity.
 
 \feat{Quick Draw}{Combat}
 \parhead{Benefit} You can draw light weapons as a free action and medium weapons as a swift action. You can draw heavy weapons and hidden weapons of any type (see the Sleight of Hand skill) as a move action.
@@ -1469,15 +1470,15 @@ Choose one weapon group.
 \parhead{Benefit} You gain a special ability based on the weapon group chosen. These special abilities only function when you are making attacks with weapons from your chosen weapon group.
 \begin{itemize*}
     \item Armor weapons: When you perform a shield bash, you still benefit from the shield's defense bonus. In addition, armor spikes no longer impose a penalty to your physical defenses.
-    \item Axes: You gain a \plus2 bonus to physical attacks against unarmored creatures (creatures without an armor defense bonus).
-    \item Blades, heavy: You gain a \plus2 bonus to physical attacks against unarmored creatures (creatures without an armor defense bonus).
-    \item Blades, light: If you draw a light blade and attack with it in the same round, your foe is flat-footed against the attack. After the attack, the creature is unaffected by this ability for the rest of the encounter.
-    \item Blunt weapons: When you deal damage to a creature, it takes a \minus2 penalty to Will defenses for 1 round. This penalty is not cumulative with itself.
+    \item Axes: You gain a \plus2 bonus to physical attacks against creatures not wearing medium or heavy armor.
+    \item Blades, heavy: You gain a \plus2 bonus to physical attacks against creatures not wearing medium or heavy armor.
+    \item Blades, light: If you draw a light blade and attack with it in the same round, you gain a \plus2 bonus to attack. The creature you attack is unaffected by this ability for the rest of the encounter.
+    \item Blunt weapons: When you deal damage to a creature, it takes a \minus2 penalty to Will defense for 1 round. This penalty is not cumulative with itself.
     \item Bows: You can ignore cover (but not total cover) provided by creatures and objects that are at least ten feet away from both you and your target.
     \item Crossbows: The time required for you to reload crossbows is reduced to a free action (for a hand or light crossbow) or a move action (for a heavy crossbow). Reloading a heavy crossbow still provokes an attack of opportunity, but reloading hand and light crossbows does not.
-    \item Flexible weapons: You gain a \plus2 bonus to physical attacks against creatures with a shield defense bonus.
-    \item Headed weapons: You gain a \plus2 bonus to physical attacks against armored creatures (creatures with an armor defense bonus).
-    \item Monk weapons: ??
+    \item Flexible weapons: You gain a \plus2 bonus to physical attacks against creatures using a shield.
+    \item Headed weapons: You gain a \plus2 bonus to physical attacks against creatures wearing medium or heavy armor.
+    \item Monk weapons: You gain a \plus2 bonus to maneuver attacks.
     \item Polearms: You can switch grips to short haft or stop short hafting a polearm as a swift action, and you take no penalty while short hafting it.
     \item Spears: If a creature charges you, it provokes an attack of opportunity from you when it enters your threatened area.
     \item Thrown weapons: You can defend yourself with a thrown weapon as you throw it, which can prevent you from taking attacks of opportunity for throwing weapons in melee (see \pcref{Thrown Weapons in Melee}).
