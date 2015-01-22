@@ -920,10 +920,10 @@ A monk who becomes chaotic cannot gain new levels as a monk, but retains all mon
 \lcaption{The Paladin}
 \begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecolpoof}} X}
 \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
-1st  & \plus1                        & \plus3  & \plus0 & \plus3 & Discernment (ally), smite \\
+1st  & \plus1                        & \plus3  & \plus0 & \plus3 & Discernment, smite \\
 2nd  & \plus2                        & \plus4  & \plus1 & \plus4 & Smite power, lay on hands \\
 3rd  & \plus3                        & \plus5  & \plus1 & \plus5 & Divine gift \\
-4th  & \plus4                        & \plus6  & \plus2 & \plus6 & Discernment (foe) \\
+4th  & \plus4                        & \plus6  & \plus2 & \plus6 & Discern foe \\
 5th  & \plus5                        & \plus7  & \plus2 & \plus7 & Smite power \\
 6th  & \plus6/\plus1                 & \plus8  & \plus3 & \plus8 & Divine gift \\
 7th  & \plus7/\plus2                 & \plus9  & \plus3 & \plus9 & Pass judgment \\
@@ -969,6 +969,7 @@ A paladin can smite evil a number of times per day equal to half her paladin lev
 
 The paladin chooses a single smite power ability from the list below. At 5th level, and every 3 levels thereafter, she gains an additional smite power. Some smite powers have minimum paladin levels, as indicated in the title of the ability. All smite powers are supernatural abilities unless otherwise noted.
 
+\parhead{Any Alignment}
 \subcf{Bewildering} The paladin's smite challenges her foe's mind. If the paladin succeeds on a Will attack, the struck creature is bewildered for 5 rounds.
 \subcf{Resounding} The paladin's smite knocks her foe off its feet. The struck creature is knocked prone.
 \subcf{Sickening} The paladin's smite strikes her foe where it is weak. If the paladin succeeds on a Fortitude attack, the struck creature is sickened for 5 rounds.
@@ -983,6 +984,13 @@ The paladin chooses a single smite power ability from the list below. At 5th lev
 \subcf{17th -- Brilliant} The paladin's smite cannot be turned aside by mortal defenses. The smite attack is made against the enemy's Reflex defense.
 \subcf{20th -- Converting} The paladin's smite shows her foe the error of its ways. If the struck creature is bloodied, and the paladin succeeds at a Will attack, the struck creature's alignment changes. It gains the paladin's devoted alignment for 1 week. After that time, it can choose to return to its original alignment, or keep its new alignment permanently.
 
+\parhead{Good}
+\subcf{5th -- Bolstering} The paladin's smite aids her ally. If her smite succeeds, an ally within \rngmed range gains temporary hit points equal to twice the paladin's level.
+
+\parhead{Evil}
+\subcf{5th -- Executing} The paladin's smite takes her foe's life. If the paladin succeeds on a Fortitude attack, the struck creature is affected by the \spell{death knell} spell.
+\subcf{8th -- Agonizing} The paladin's smite inflicts debilitating pain. The struck creature is affected by the \spell{agony} spell.
+
 \cfl{Pal}{2nd}{Lay On Hands (Su)} The paladin can channel divine power to heal the wounds of her allies and inflict wounds on her foes. As a standard action, she can touch a creature. If the creature's alignment is not opposed to her devoted alignment, the creature is healed. If the creature's alignment is opposed to the paladin's devoted alignment, the creature takes divine damage. This ability heals or inflicts 1d8 hit points of damage per paladin level.
 
 The paladin can lay on hands a number of times per day equal to 1 \add half her Charisma (minimum 1). When using lay on hands on an unwilling target, the paladin must make a touch attack against the creature's Reflex defense. If she hits, she must make a Fortitude attack. A failed Fortitude attack heals or inflicts half damage.
@@ -996,25 +1004,32 @@ The paladin can lay on hands a number of times per day equal to 1 \add half her 
 \subcf{6th -- Divine Grace} If the paladin resists a Fortitude, Reflex, or Will attack that normally deals half damage when resisted, she instead takes no damage.
 \subcf{6th -- Shielded Senses} The paladin is immune to sight-dependent and sound-dependent effects, whenever that is beneficial to her.
 \subcf{9th -- Implacable Resolve} The paladin is immune to compulsion and inhibition effects.
-\subcf{9th -- Expanded Discernment} The area affected by the paladin's discernment ability improves to a 100 ft. cone.
 \subcf{12th -- Improved Divine Grace} If the paladin resists a Fortitude, Reflex, or Will attack that has any partial effect when resisted, she instead suffers no effect. The paladin must have the divine grace gift in order to select this gift.
-\subcf{15th -- Aura of Protection} The paladin continuously radiates a \spell{magic circle against evil}, as the spell, except that it protects against the alignment opposed to the paladin's devoted alignment.
 
 \parhead{Chaotic Divine Gifts}
+\subcf{Chaotic Mind} The paladin's speech is unaffected by spells with magically detect truth, lies, or alignment. Such spells never detect the paladin, just as if she was not there at all.
+\subcf{6th -- Confusion} As a standard action, the paladin can expend a use of her smite ability to confuse a creature, as the \spell{confusion} spell.
+\subcf{12th -- Mass Confusion} As a standard action, the paladin can expend a use of her smite ability to confuse many creatures, as the \spell{mass confusion} spell.
+\subcf{12th -- Freedom} The paladin continuously gains the benefit of the \spell{freedom} spell.
 
 \parhead{Evil Divine Gifts}
+\subcf{6th -- Executioner} The paladin gains a \plus2 bonus to physical damage against bloodied creatures.
+\subcf{9th -- Debilitating Aura} All creatures within a \areamed radius of the paladin are vulnerable (\minus2 to attacks, defenses, and checks).
 
 \parhead{Good Divine Gifts}
 \subcf{6th -- Shield Other} The paladin gains the ability to take damage for her allies. When she lays on hands, she can bestow a \spell{share pain} effect to shield the subject in addition to the healing, using her paladin level \add her Charisma as her caster level.
 \subcf{9th -- Martyr's Shield} Whenever an ally within 100 feet would take critical damage, the paladin can expend a use of her lay on hands ability as an immediate action. If she does, the ally takes no damage, and the paladin takes that damage as regular damage instead.
 \subcf{12th -- Benevolent Guardian} The paladin may give up a use of her smite ability to gain a use of her lay on hands ability.
+\subcf{15th -- Aura of Protection} The paladin continuously radiates a \spell{magic circle against evil}, as the spell.
 
 \parhead{Lawful Divine Gifts}
 \subcf{Command} As a standard action, the paladin can expend a use of her smite ability to issue a \spell{command}, as the spell.
-\subcf{9th -- Enforcer} The paladin gains a \plus2 bonus to her physical and special attacks against creatures who are currently breaking the law. The paladin must be aware of the offense in order to gain this bonus.
+\subcf{9th -- Enforcer} The paladin gains a \plus2 bonus to her attacks against creatures who are currently breaking the law. The paladin must be aware of the offense in order to gain this bonus.
 \subcf{12th -- Edict} As a standard action, the paladin can expend a use of her smite ability to issue an \spell{edict}, as the spell.
 \subcf{15th -- Truthbearer} The paladin is immune to unreal effects on her, such as phantasms. Additionally, she automatically sees through figments. Unlike normally seeing through figments, the paladin does not receive any indication that the figment would otherwise be there - the figment simply does not exist for the paladin.
+\subcf{18th -- Prohibition} As a standard action, the paladin can expend a use of her smite ability to issue a \spell{prohibition}, as the spell.
 
+\cfl{Pal}{4th}{Discern Foe} When the paladin uses her discernment ability, she also learns which creatures within the cone have the alignment opposed to her devoted alignment.
 
 \cfl{Pal}{7th}{Pass Judgment (Su)} The paladin gains the ability to pass judgment on those she deems unworthy. Once per day as a swift action, she may pass judgment on a creature within 100 feet of her. For the purpose of spells and effects, the creature is treated as if it had the alignment opposed to the paladin's devoted alignment. This effect lasts for one day per paladin level, or until the paladin changes her mind about the subject (a free action). This does not change the creature's actions or behavior, but the creature is subject to the paladin's smite attack, would detect as that alignment under the inspection of a \spell{detect alignment} spell, and so on.
 
@@ -1022,11 +1037,9 @@ No attack is required for this effect, and it cannot be dispelled, but a \spell{
 
 \cfl{Pal}{10th}{Certain Smite (Su)} If the paladin smites a creature who is not opposed to her devoted alignment, the smite attempt is not used.
 
-\cfl{Pal}{13th}{Martyr's Boon (Su)} If the paladin dies while fighting evil or protecting her allies, her fallen body erupts in a burst of positive energy, granting all her allies within 100 feet the benefit of a \spell{heal} spell.
-
 \cfl{Pal}{18th}{Greater Aura of Warding (Su)} The paladin radiates a \spell{globe of invulnerability}, as the spell, instead of a \spell{lesser globe of invulnerability}. The effect continues to travel with the paladin.
 
-\cfl{Pal}{19th}{Martyr's Glorious Retribution (Su)} If the paladin dies while fighting evil or protecting her allies, she can choose to make the explosion of positive energy from her glory of the martyr ability painful to her foes. If she does, her body is almost completely consumed by holy power, preventing her from being raised with \spell{raise dead} and similar effects that require an intact body. This has two effects. First, a \spell{sunburst} spell immediately takes effect over the area where the paladin fell. Second, a \spell{storm of vengeance} spell begins to take effect, centered on the same area. The spell lasts for 10 rounds, and the lightning strikes focus on the paladin's enemies. Both of these effects harm only the paladin's foes, and do no damage to her allies. However, her allies' vision is still impeded by the \spell{storm of vengeance}.
+\cfl{Pal}{19th}{Martyr's Glorious Retribution (Su)} If the paladin dies in the devoted service of her chosen alignment, she may choose to have her fallen body erupt in an immense burst of divine power. If she does, her body is almost completely consumed, preventing her from being raised with \spell{raise dead} and similar effects that require an intact body. This has two effects. First, a \spell{sunburst} spell immediately takes effect over the area where the paladin fell. Second, a \spell{storm of vengeance} spell begins to take effect, centered on the same area. The spell lasts for 10 rounds, and the lightning strikes target the paladin's enemies. Both of these effects harm only the paladin's foes, and do not harm her allies. However, her allies' vision is still impeded by the \spell{storm of vengeance}.
 
 \cfl{Pal}{20th}{Greater Smite (Su)} The paladin can use two smite powers on every smite attack she makes.
 
