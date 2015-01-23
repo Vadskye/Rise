@@ -128,13 +128,13 @@ At his 6th barbarian level, and every three barbarian levels thereafter, the bar
 
 \subcf{Willful Rage} The barbarian adds his rage bonus to his Will defense.
 
-\subcf{6th -- Terrifying Rage (Su)} Whenever the barbarian makes a physical attack, he may also make a Will attack against all enemies he threatens. His attack bonus equals his barbarian level \add his Charisma. A successfully attack makes a creature \shaken for 5 rounds. This ability can only affect any individual creature once per 24 hours.
+\subcf{6th -- Terrifying Rage (Su)} Whenever the barbarian makes a physical attack, he may also make a (barbarian level \add Charisma vs. Will) attack against all enemies he threatens. A successful attack makes a creature \shaken for 5 rounds. This ability can only affect any individual creature once per 24 hours.
 
 \subcf{6th -- Unstoppable Rage} Each round, the barbarian can shove an opponent as a swift action that does not provoke attacks of opportunity.
 
 \subcf{9th -- Overwhelming Rage (Su)} The barbarian counts as two creatures for the purpose of determining overwhelm penalties. This does not allow him to overwhelm a creature by himself.
 
-\subcf{12th -- Overpowering Rage} The barbarian adds his rage bonus to his maneuver modifier.
+\subcf{12th -- Overpowering Rage} The barbarian adds his rage bonus to his maneuver attacks.
 
 \subcf{12th -- Spellbreaker Rage (Su)} The barbarian gains spell resistance while raging. To affect a creature with spell resistance using a spell or spell-like ability, a special attack is always required. The defense used against the attack is indicated by the spell. If the attack fails, the spell has no effect on the barbarian.
 
@@ -142,7 +142,7 @@ At his 6th barbarian level, and every three barbarian levels thereafter, the bar
 
 \subcf{18th -- Invulnerable Rage} The barbarian doubles his damage reduction. This replaces his rage bonus to Strength.
 
-\cfl{Bbn}{4th}{Grit (Ex)} The barbarian's resilience allows him to shrug off magical effects. If he resists a Fortitude attack that normally deals half damage when resisted, he instead takes no damage.
+\cfl{Bbn}{4th}{Grit (Ex)} The barbarian's resilience allows him to shrug off magical effects. If he resists a attack against his Fortitude that deals half damage on a failed attack, he instead takes no damage.
 
 \cfl{Bbn}{5th}{Improved Damage Reduction (Ex)} The barbarian can apply half his damage reduction against any attack which deal damage, including magical and supernatural attacks.
 
@@ -161,7 +161,7 @@ At his 6th barbarian level, and every three barbarian levels thereafter, the bar
 
 \cfl{Bbn}{15th}{Improved Damage Reduction (Ex)} The barbarian can apply his full damage reduction against any attack which deal damage, including magical and supernatural attacks.
 
-\cfl{Bbn}{16th}{Improved Grit (Ex)} The barbarian's fortitude knows no bounds. If he is affected by Fortitude attack that would deal half damage when resisted, he takes only half damage from the attack, even if the attack succeeds.
+\cfl{Bbn}{16th}{Improved Grit (Ex)} The barbarian's fortitude knows no bounds. If he fails to resist an attack against his Fortitude that deals half damage on a failed attack, he takes only half damage from the attack.
 
 \cfl{Bbn}{17th}{Larger than Belief (Ex)} The barbarian's larger than life ability improves. He is treated as being two size categories larger than he actually is.
 
@@ -331,7 +331,7 @@ At his 2nd cleric level, the cleric gains an additional lesser domain aspect fro
 
 \cfl{Clr}{2nd}{Channel Energy (Su)} By channeling the power of his faith through his holy (or unholy) symbol, a cleric can act as a powerful conduit of divine energy. He must choose whether to channel positive or negative energy. Once this choice is made, it cannot be reversed.
 
-When a cleric channels energy, he affects all creatures in a \areamed radius burst centered on him, including himself if he desires. The cleric may choose to exclude a number of other creatures from the effect equal to 1 \add half his Wisdom. The amount of damage dealt (if negative energy is channeled) or healed (if positive energy is channeled) is equal to 1d6 damage per two cleric levels. The cleric must make a Fortitude attack to affect unwilling targets, with an attack bonus is equal to his cleric level \add his Charisma. The attack deals or heals half damage if it fails.
+When a cleric channels energy, he affects all creatures in a \areamed radius burst centered on him, including himself if he desires. The cleric may choose to exclude a number of other creatures from the effect equal to 1 \add half his Wisdom. The amount of damage dealt (if negative energy is channeled) or healed (if positive energy is channeled) is equal to 1d6 damage per two cleric levels. The cleric must make a (cleric level \add Charisma) attack against the Fortitude of unwilling targets. The energy burst deals or heals half damage if the attack fails.
 
 Channeling energy is a standard action that does not provoke attacks of opportunity. A cleric can channel energy a number of times per day equal to 3 \add half his Charisma. A cleric must be able to present his holy symbol to use this ability. The abilities used 
 
@@ -386,12 +386,12 @@ At his 19th cleric level, the cleric gains an additional domain mastery from one
 \subcf{Fire} The cleric channels fiery energy, making a Reflex attack to deal fire damage to all creatures in the area. Creatures with the fire subtype are healed instead. A failed attack deals half damage.
 \subcf{Good} The cleric channels positive energy, except that it has no effect on evil creatures.
 \subcf{Knowledge} The cleric channels insight from knowledge. Each subject is not healed or damaged, but it gains an enhancement bonus equal to half the cleric's level on the next physical attack or check that it makes. If this bonus is not used within 5 rounds, it is wasted.
-\subcf{Law} The cleric channels axiomatic energy, making a Will attack to deal damage to all creatures within a 40 ft. cube centered on the cleric. The attack deals 4 damage per two cleric levels. A failed attack deals half damage. This has no effect on lawful creatures.
+\subcf{Law} The cleric channels axiomatic energy, making an attack vs. Will to deal damage to all creatures within a 40 ft. cube centered on the cleric. The attack deals 4 damage per two cleric levels. A failed attack deals half damage. This has no effect on lawful creatures.
 \subcf{Magic} The cleric channels magical energy. This heals creatures who can cast spells and deals damage to creatures who cannot.
 \subcf{Protection} The cleric grants each subject temporary hit points equal to half the amount that channeling positive energy would have healed. Undead gain temporary hit points as well. The temporary hit points last for 5 rounds.
 \subcf{Strength} The cleric channels energy as normal, except that he also gains a \plus2 enhancement bonus to Strength for 1 round. At 8th, 14th, and 20th cleric level, this bonus increases by \plus1. 
 \subcf{Travel} The cleric channels positive energy. All subjects gain a \plus10 foot enhancement bonus to movement speed for 1 round.
-\subcf{Trickery} The cleric channels trickery and confusion, making a Will attack against each creature in the area. A successful attack deals and heals no damage, but makes the creature \bewildered for 5 rounds. This is a mind-affecting effect.
+\subcf{Trickery} The cleric channels trickery and confusion, making an attack vs. Will against each creature in the area. A successful attack deals and heals no damage, but makes the creature \bewildered for 5 rounds. This is a mind-affecting effect.
 \subcf{Vitality} The cleric channels energy as normal, except that he deals or heals an extra 1d6 damage.
 \subcf{War} The cleric channels energy as normal, except that he can exclude two additional creatures from the effect.
 \subcf{Wild} The cleric channels positive energy, except that the cleric can decide whether it acts as positive or negative energy to animals and plants.
@@ -618,7 +618,7 @@ The descriptions below describe the effects of the aspect. With many aspects, th
 \subcf{7th -- Slither} The druid gains a climb speed equal to half her base land speed. She does not need to use her hands to climb in this way. See \pcref{Climbing}, for more details.
 \subcf{9th -- Climb} The druid gains a climb speed equal to her base land speed. See \pcref{Climbing}, for more details.
 \subcf{9th -- Limited Flight} The druid grows wings, granting her a fly speed equal to her land speed with average maneuverability. See \pcref{Flying}, for more details. She can only fly for a number of rounds equal to 3 \add half her Constitution. After that limit is reached, she must rest for 5 minutes.
-\subcf{9th -- Venom} When the druid embodies this apsect, she transforms one of her natural weapons to become poisonous. If she hits with that natural attack, she may inject poison as an immediate action. When she injects poison, and at the start of each of the druid's turns, she makes a Fortitude attack against the creature. Her attack bonus is equal to her druid level \add her Constitution. If the attack succeeds, the creature takes 2 points of Constitution damage. The poison lasts until the druid fails the Fortitude attack twice.
+\subcf{9th -- Venom} When the druid embodies this apsect, she transforms one of her natural weapons to become poisonous. If she hits with that natural attack, she may inject poison as an immediate action. At the end of each round, she makes a (druid level \add Constitution) attack against the creature's Fortitude. If the attack succeeds, the creature takes 2 points of Constitution damage. The poison lasts until the druid fails the attack twice.
 \subcf{9th -- Wolfpack} Overwhelmed foes the druid threatens increase their overwhelm penalties by 1.
 
 \cfl{Drd}{4th}{Venom Immunity (Ex)} The druid gains immunity to all poisons.
@@ -629,7 +629,7 @@ For example, a druid casting \spell{gust of wind} could create a line of wind or
 
 \cfl{Drd}{6th}{Wild Speech (Plants) (Ex)} The druid can also converse with plants and plant creatures using her wild speech ability. A regular plant's sense of its surroundings is limited, so it won't be able to give (or recognize) detailed descriptions of creatures or answer questions about events outside its immediate vicinity.
 
-\cfl{Drd}{8th}{Improved Wild Speech (Su)} When using her wild speech ability, the druid may make a Will attack to charm whatever she is speaking with. Her attack bonus is equal to her druid level \add her Charisma. The effect lasts for the duration of the conversation, and for 1 hour thereafter. This ability is not mind-affecting, and can affect creatures or even objects of any kind that the druid can converse with. The attack automatically succeeds against objects.
+\cfl{Drd}{8th}{Commanding Wild Speech (Su)} As a standard action that consumes a use of her wild speech ability, the druid can attempt to charm a creature she is speaking with using her wild speech ability. If she succeeds at a (druid level \add Charisma) attack against its Will, the target is charmed. The effect lasts for the duration of the conversation, and for 1 hour thereafter. This ability is not mind-affecting, and can affect creatures or even objects of any kind that the druid can use her wild speech to converse with. The attack automatically succeeds against non-intelligent objects.
 
 A charmed creature or object regards the druid as a trusted friend and ally. The druid cannot control the subject as if it were an automaton, but it perceives her words and actions in the most favorable way. She can try to give the subject orders, but she must succeed at a Persuasion check to convince it to do anything it wouldn't ordinarily do. (Retries are not allowed.) Treat the subject as a friend (a \plus10 relationship modifier) for the purpose of the Persuasion check. An affected creature never obeys suicidal or obviously harmful orders, but it might be convinced that something very dangerous is worth doing.
 
@@ -667,7 +667,7 @@ A charmed creature or object regards the druid as a trusted friend and ally. The
 
 \cfl{Drd}{14th}{Timeless Body (Ex)} The druid no longer takes attribute penalties for aging and cannot be magically aged. Any penalties she may have already incurred, however, remain in place. Bonuses still accrue, and the druid still dies of old age when her time is up.
 
-\cfl{Drd}{16th}{Commanding Wild Speech (Ex)} The druid can use her wild speech ability to control creatures' actions. If the druid converses with a creature using her wild speech ability, she may spend a standard action and an additional wild speech use to make a Will attack against one creature she is speaking with. A successful attack means the creature is dominated, as the \spell{dominate person} spell. Her attack bonus is equal to her druid level \add her Charisma. This ability is not mind-affecting, and can affect creatures of any kind that the druid can converse with. The attack automatically succeeds against objects.
+\cfl{Drd}{16th}{Dominating Wild Speech (Ex)} When the druid uses her commanding wild speech ability, she can dominate the subject (as the \spell{dominate person spell) instead of charming it. This ability is not mind-affecting, and can affect creatures of any kind that the druid can converse with. The attack automatically succeeds against non-intelligent objects.
 
 \cfl{Drd}{18th}{Totemic Aspect (Su)} The druid can choose any one wild aspect (but not natural aspect). She permanently gains the abilities of that aspect, as if she was constantly manifesting it. She may suppress or resume this effect as a swift action.
 
@@ -854,12 +854,12 @@ A monk's attacks may be with either fist interchangeably or even from elbows, kn
 
 \cfl{Mnk}{2nd}{Fast Movement (Ex)} The monk increases her land speed by 10 feet while unencumbered.
 
-\cfl{Mnk}{2nd}{Ki Power (Su)} The monk gains the ability to channel her \ki energy to temporarily enhance her abilities. She may use any combination of \ki powers she knows a number of times per day equal to half her monk level \add her Wisdom (minimum 1), but no more than once per round. If a \ki power requires a special attack, the monk's attack bonus is equal to her monk level \add her Wisdom.
+\cfl{Mnk}{2nd}{Ki Power (Su)} The monk gains the ability to channel her \ki energy to temporarily enhance her abilities. She may use any combination of \ki powers she knows a number of times per day equal to half her monk level \add her Wisdom (minimum 1), but no more than once per round.
 
 The monk chooses one \ki power from the list below. At her 5th monk level, and every three monk levels thereafter, the monk gains an additional \ki power. Some \ki powers have minimum monk levels, as indicated in the title of the power. All \ki powers are supernatural abilities unless otherwise noted.
 
 \subcf{Flurry of Blows} As part of a standard attack, the monk can make an additional attack at a \minus5 penalty.
-\subcf{Stunning Fist} As part of an unarmed attack, the monk can strike a weak point to interfere with her foe's \ki. If the attack deals damage, the monk makes a Fortitude attack to stagger the struck creature for 1 round. If the creature is bloodied, it is stunned for 1 round instead.
+\subcf{Stunning Fist} As part of an unarmed attack, the monk can strike a weak point to interfere with her foe's \ki. If the attack deals damage, the monk makes a (monk level \add Wisdom) attack against the Fortitude of the struck creature to stagger it for 1 round. If the creature is bloodied, it is stunned for 1 round instead.
 \subcf{Surpass Limits} As a swift action, the monk can surpass the physical limitations of her body. Until the start of her next turn, she adds her Wisdom to checks based on Strength and Dexterity. This does not affect checks based on multiple attributes, such as initiative checks.
 \subcf{5th -- Speed Boost} As a swift action, the monk can force her muscles to strain beyond their normal limits. Until the end of her turn, she gains increases her land speed by 20 feet, and a gains \plus2 bonus to her dodge defense modifier.
 \subcf{5th -- Wholeness of Body} As a standard action, the monk can correct the flow of energy within her body. She heals 1d6 points of damage per two monk levels.
@@ -868,7 +868,7 @@ The monk chooses one \ki power from the list below. At her 5th monk level, and e
 \subcf{11th -- Diamond Fists} As a swift action, the monk can empower her unarmed strike with incredible force. Until the start of her next turn, she adds half her Wisdom to damage and treats her unarmed strike as if it were an adamantine weapon for the purpose of overcoming damage reduction and hardness.
 \subcf{11th -- Flash Step} As a move action, the monk can slip between spaces, allowing her to teleport to anywhere she can see within 30 feet. If her line of effect is blocked, even by an invisible barrier, or if this would somehow place her inside a solid object, the ability fails. 
 \subcf{14th -- Empty Step} As a swift action, the monk can step into the Ethereal Plane until the end of her turn, as the \spell{ethereal jaunt} spell. She may return as a free action.
-\subcf{14th -- Quivering Palm} As a standard action, the monk can make a single unarmed strike. If the attack deals damage, the struck creature is \sickened by the disruption of the \ki within in its body for 5 rounds. At any point during that time, the monk can will the struck target to die (a free action). If she does, and the creature is bloodied, she makes a Fortitude attack against the target. If the attack succeeds, the creature loses all its hit points and takes 9 critical damage, rendering it unconscious and dying (see \pcref{Dying}).
+\subcf{14th -- Quivering Palm} As a standard action, the monk can make a single unarmed strike. If the attack deals damage, the struck creature is \sickened by the disruption of the \ki within in its body for 5 rounds. At any point during that time, the monk can will the struck target to die (a free action). If she does, and the creature is bloodied, she makes a (monk level \add Wisdom) attack against the Fortitude of the target. If the attack succeeds, the creature loses all its hit points and takes 9 critical damage, rendering it unconscious and dying (see \pcref{Dying}).
 \subcf{17th -- Moment of Perfection} The monk can align herself with the universe to achieve a single moment of perfection. As a swift action, she can add her monk level as an enhancement bonus to any single physical attack or opposed check. Alternately, when she is physically attacked, she can use an immediate action to add her monk level to her physical defenses against the attack. After using this ability, she must wait five minutes before she can use it again.
 \subcf{17th -- Empty Body} As a move action, the monk can step into the Ethereal Plane for 5 rounds, as the \spell{ethereal jaunt} spell. For the duration of the effect, she may switch between the planes as a move action.
 
@@ -968,19 +968,19 @@ A paladin can smite evil a number of times per day equal to half her paladin lev
 The paladin chooses a single smite power ability from the list below. At 5th level, and every 3 levels thereafter, she gains an additional smite power. Some smite powers have minimum paladin levels, as indicated in the title of the ability. All smite powers are supernatural abilities unless otherwise noted.
 
 \parhead{Any Alignment}
-\subcf{Bewildering} The paladin's smite challenges her foe's mind. If the paladin succeeds on a Will attack, the struck creature is \bewildered for 5 rounds.
+\subcf{Bewildering} The paladin's smite challenges her foe's mind. If the paladin succeeds on an attack vs. Will, the struck creature is \bewildered for 5 rounds.
 \subcf{Resounding} The paladin's smite knocks her foe off its feet. The struck creature is knocked prone.
 \subcf{Sickening} The paladin's smite strikes her foe where it is weak. If the paladin succeeds on a Fortitude attack, the struck creature is \sickened for 5 rounds.
-\subcf{5th -- Blinding} The paladin's smite manifests as a bright light. If the paladin succeeds on a Will attack, the struck creature is blinded for 1 round (see \pcref{Blinded}). Creatures vulnerable to light (such as vampires) take extra damage equal to twice her paladin level.
+\subcf{5th -- Blinding} The paladin's smite manifests as a bright light. If the paladin succeeds on an attack vs. Will, the struck creature is blinded for 1 round (see \pcref{Blinded}). Creatures vulnerable to light (such as vampires) take extra damage equal to twice her paladin level.
 \subcf{5th -- Impeding} The paladin's smite traps her foe in place, unable to escape her wrath. The struck creature's speed is reduced to 5 feet for 1 round.
 \subcf{5th -- Penetrating} The paladin's smite punches through her enemies' defenses. The attack reduces the foe's damage reduction by an amount equal to the paladin's level for 1 round, regardless of the type of damage reduction.
 \subcf{8th -- Seeking} The paladin's smite is uncannily guided to its target. The attack ignores any miss chance, though the weapon must still be physically able to strike the target.
 \subcf{8th -- Staggering} The paladin's smite hits with incredible force. If the paladin succeeds on a Fortitude attack, the struck creature is \staggered for 5 rounds.
 \subcf{11th -- Dazing} The paladin's smite shatters her foe's ability to think. If the paladin succeeds on a Fortitude attack, the struck creature is \dazed for 1 round.
-\subcf{11th -- Coercing} The paladin's smite compels her foe to briefly join her cause. If she succeeds at a Will attack, the struck creature must obey a \spell{suggestion}, as the spell, of the paladin's choice. The effect lasts for one round.
+\subcf{11th -- Coercing} The paladin's smite compels her foe to briefly join her cause. If she succeeds at an attack vs. Will, the struck creature must obey a \spell{suggestion}, as the spell, of the paladin's choice. The effect lasts for one round.
 \subcf{14th -- Dispelling} The paladin's smite strips away her foe's magical protections. The struck creature is subject to a targeted \spell{dispel magic} with a bonus equal to the paladin's level \add her Charisma.
 \subcf{17th -- Brilliant} The paladin's smite cannot be turned aside by mortal defenses. The smite attack is made against the enemy's Reflex defense.
-\subcf{20th -- Converting} The paladin's smite shows her foe the error of its ways. If the struck creature is bloodied, and the paladin succeeds at a Will attack, the struck creature's alignment changes. It gains the paladin's devoted alignment for 1 week. After that time, it can choose to return to its original alignment, or keep its new alignment permanently.
+\subcf{20th -- Converting} The paladin's smite shows her foe the error of its ways. If the struck creature is bloodied, and the paladin succeeds at an attack vs. Will, the struck creature's alignment changes. It gains the paladin's devoted alignment for 1 week. After that time, it can choose to return to its original alignment, or keep its new alignment permanently.
 
 \parhead{Good}
 \subcf{5th -- Bolstering} The paladin's smite aids her ally. If her smite succeeds, an ally within \rngmed range gains temporary hit points equal to twice the paladin's level.
@@ -991,7 +991,7 @@ The paladin chooses a single smite power ability from the list below. At 5th lev
 
 \cfl{Pal}{2nd}{Lay On Hands (Su)} The paladin can channel divine power to heal the wounds of her allies and inflict wounds on her foes. As a standard action, she can touch a creature. If the creature's alignment is not opposed to her devoted alignment, the creature is healed. If the creature's alignment is opposed to the paladin's devoted alignment, the creature takes divine damage. This ability heals or inflicts 1d8 hit points of damage per paladin level.
 
-The paladin can lay on hands a number of times per day equal to 1 \add half her Charisma (minimum 1). When using lay on hands on an unwilling target, the paladin must make a touch attack against the creature's Reflex defense. If she hits, she must make a Fortitude attack. A failed Fortitude attack heals or inflicts half damage.
+The paladin can lay on hands a number of times per day equal to 1 \add half her Charisma (minimum 1). When using lay on hands on an unwilling target, the paladin must make a touch attack. If she hits, she must make a (paladin level \add Charisma) attack against the touched creature's Fortitude. A failed attack heals or inflicts half damage.
 
 \cfl{Pal}{3rd}{Divine Gift} The paladin's devotion to her ideals is rewarded with a divine gift. At her 6th paladin level, and every three paladin levels thereafter, she gains an additional divine gift. Some divine gifts have minimum paladin levels, as indicated in the title of the ability. The list of divine gifts for each alignment is given below. All divine gifts are supernatural abilities unless otherwise noted. If a divine gift requires an attack, the paladin's attack bonus is equal to her level \add her Charisma.
 
@@ -999,10 +999,10 @@ The paladin can lay on hands a number of times per day equal to 1 \add half her 
 \subcf{Divine Health} The paladin is immune to poison and disease.
 \subcf{Unbending Mind} The paladin is immune to charm and domination effects.
 \subcf{Unshakeable Courage} The paladin is immune to fear and negative morale effects.
-\subcf{6th -- Divine Grace} If the paladin resists a Fortitude, Reflex, or Will attack that normally deals half damage when resisted, she instead takes no damage.
+\subcf{6th -- Divine Grace} If the paladin resists an attack against her Fortitude, Reflex, or Will that normally deals half damage when resisted, she instead takes no damage.
 \subcf{6th -- Shielded Senses} The paladin is immune to sight-dependent and sound-dependent effects, whenever that is beneficial to her.
 \subcf{9th -- Implacable Resolve} The paladin is immune to compulsion and inhibition effects.
-\subcf{12th -- Improved Divine Grace} If the paladin resists a Fortitude, Reflex, or Will attack that has any partial effect when resisted, she instead suffers no effect. The paladin must have the divine grace gift in order to select this gift.
+\subcf{12th -- Improved Divine Grace} If the paladin resists an attack against her Fortitude, Reflex, or Will that has any partial effect when resisted, she instead suffers no effect. The paladin must have the divine grace gift in order to select this gift.
 
 \parhead{Chaotic Divine Gifts}
 \subcf{Chaotic Mind} The paladin's speech is unaffected by spells with magically detect truth, lies, or alignment. Such spells never detect the paladin, just as if she was not there at all.
@@ -1258,7 +1258,7 @@ A rogue can only sneak attack creatures with a discernible body structure -- ooz
 
 If a rogue already has uncanny dodge from a different class, she stacks those class levels to determine whether she gains improved uncanny dodge (see below) instead.
 
-\cfl{Rog}{4th}{Combat Tricks} The rogue gains a single combat trick to aid her and confound her foes. If a combat trick requires a special attack, the attack bonus is equal to her rogue level \add her Intelligence. Tricks marked with an asterisk are called ambush tricks. Ambush tricks only function on the first sneak attack the rogue makes against a particular creature in an encounter.
+\cfl{Rog}{4th}{Combat Tricks} The rogue gains a single combat trick to aid her and confound her foes. Tricks marked with an asterisk are called ambush tricks. Ambush tricks only function on the first sneak attack the rogue makes against a particular creature in an encounter.
 
 The rogue chooses a single combat trick from the list below. At her 8th rogue level, and every four rogue levels thereafter, the rogue gains an additional combat trick. Some combat tricks have minimum rogue levels, as indicated in the title of the ability. All combat tricks are extraordinary abilities unless otherwise noted.
 
@@ -1284,13 +1284,13 @@ The rogue chooses a single combat trick from the list below. At her 8th rogue le
 
 \subcf{8th -- Hamstring*} A creature damaged by this sneak attack has its land speed halved for 5 rounds. Despite the name, this can be used on creatures who do not have hamstrings. This is an ambush attack, and only works once per creature.
 
-\subcf{8th -- Slippery Mind} Whenever a Will attack for a mind-affecting spell or effect succeeds against the rogue by less than 5, she is affected normally at first. One round later, the rogue is instead affected as if the attack had failed. This does not help against instantaneous effects.
+\subcf{8th -- Slippery Mind} Whenever an attack for a mind-affecting spell or effect succeeds against the rogue by less than 5, she is affected normally at first. One round later, the rogue is instead affected as if the attack had failed. This does not help against instantaneous effects.
 
 \subcf{12th -- Ambush Strike*} If the rogue uses a Strike feat (see \pcref{Strike Feats}) on this sneak attack, she may add her Intelligence to the special attack for the strike. This is an ambush attack, and only works once per creature.
 
 \subcf{12th -- Assassination} To use this ability, the rogue must spend a full round studying a creature within 30 feet of her that has not noticed her and who is not in combat. If she make a melee sneak attack against that target within 1 round, her attack deals maximum damage. If the target becomes aware of her presence before she attacks, this ability has no benefit.
 
-\subcf{12th -- Confusing Ambush*} The rogue makes a Will attack against the struck creature to confuse or bewilder it for 1 round. A healthy creature is \bewildered, while a creature bloodied after the damage from this attack is \confused. A foe confused by this effect does not automatically attack the rogue on its next turn, even though she attacked it. This is an ambush attack, and only works once per creature, regardless of the result of the attack.
+\subcf{12th -- Confusing Ambush*} The rogue makes a (rogue level \add Intelligence) attack against the Will of the struck creature to confuse or bewilder it for 1 round. A healthy creature is \bewildered, while a creature bloodied after the damage from this attack is \confused. A foe confused by this effect does not automatically attack the rogue on its next turn, even though she attacked it. This is an ambush attack, and only works once per creature, regardless of the result of the attack.
 
 \subcf{12th -- Crippling Ambush*} A creature damaged by this sneak attack takes Strength damage equal to the rogue's Intelligence. This is an ambush attack, and only works once per creature.
 
@@ -1300,11 +1300,11 @@ The rogue chooses a single combat trick from the list below. At her 8th rogue le
 
 \subcf{12th -- Perfect Precision} The rogue has no range limit on her sneak attacks. She must the distant precision combat trick to gain this trick.
 
-\subcf{16th -- Deadly Ambush*} The rogue makes a Fortitude attack against the struck creature. If the attack succeeds, and the creature is bloodied after the damage dealt by this attack, it loses all its hit points and takes 9 critical damage, causing it to begin dying. If the creature is not bloodied, it suffers no ill effect. This is an ambush attack, and only works once per creature, regardless of the result of the attack.
+\subcf{16th -- Deadly Ambush*} The rogue makes a (rogue level \add Intelligence) attack against the Fortitude of the struck creature. If the attack succeeds, and the creature is bloodied after the damage dealt by this attack, it loses all its hit points and takes 9 critical damage, causing it to begin dying. If the creature is not bloodied, it suffers no ill effect. This is an ambush attack, and only works once per creature, regardless of the result of the attack.
 
 \subcf{16th -- Hide in Plain Sight} The rogue can use the Stealth skill to hide even while being observed, taking a \minus5 penalty to the Stealth check. She still needs cover or concealment to hide.
 
-\subcf{16th -- Paralyzing Ambush*} The rogue makes a Fortitude attack against the struck creature. If the attack succeeds, and the creature is bloodied after the damage dealt by this attack, it is paralyzed for 5 rounds. If the creature is not bloodied, it suffers no ill effect. This is an ambush attack, and only works once per creature, regardless of the result of the attack.
+\subcf{16th -- Paralyzing Ambush*} The rogue makes a (rogue level \add Intelligence) attack against the Fortitude of the struck creature. If the attack succeeds, and the creature is bloodied after the damage dealt by this attack, it is paralyzed for 5 rounds. If the creature is not bloodied, it suffers no ill effect. This is an ambush attack, and only works once per creature, regardless of the result of the attack.
 
 \subcf{16th -- Opportunist} Once per round, the rogue can make an attack of opportunity against a creature that has just taken physical damage from another creature's attack. This attack counts as one of the rogue's attacks of opportunity for that round.
 
@@ -1516,7 +1516,7 @@ A spellwarped is proficient with simple weapons, any two weapon groups, light an
 
 \cf{Spl}{Spellwarp Pool (Su)} A spellwarped has the ability to tap into the latent magic within his body to generate magical effects. He has a maximum number of spellwarp points equal to half his spellwarped level \add his Constitution (minimum 1 point). Each hour, he regains a number of spellwarp points equal to his key attribute. As long as he has at least one spellwarp point remaining, he gains a minor ability based on his choice of magic.
 \subcf{Alteration -- Alter Appearance} The spellwarped can change minor aspects of his appearance at will -- removing a mole or lengthening his beard slightly. This can grant him a \plus2 bonus to Disguise checks. Major changes are not possible.
-\subcf{Pyromancy -- Ember} The spellwarped can snap his fingers as a swift action to create a small ember of flame in his hand for 5 minutes. This ember casts light as a torch, and can deal 1 point of fire damage with a successful touch attack against Reflex defense. The ember can be dismissed as a swift action or extinguished as a move action.
+\subcf{Pyromancy -- Ember} The spellwarped can snap his fingers as a swift action to create a small ember of flame in his hand for 5 minutes. This ember casts light as a torch, and can deal 1 point of fire damage with a successful touch attack. The ember can be dismissed as a swift action or extinguished as a move action.
 \subcf{Telekinesis -- Object Manipulation} The spellwarped can concentrate as a standard action to move objects within five feet of him telekinetically. He can slowly lift or manipulate one object by up to one foot per round. The object can weigh up to five pounds. This level of control is insufficient to make skill checks or wield a weapon or shield effectively.
 \subcf{Temporal -- Time Awareness} The spellwarped always knows exactly what time it is, and can track the passage of time precisely without effort.
 
@@ -1578,9 +1578,9 @@ At his 7th spellwarped level, and every four spellwarped levels thereafter, the 
 \cfl{Spl}{4th}{Resist Magic (Ex)} The power of the magic with the spellwarped offers him some measure of protection against hostile magical effects. He gains a \plus1 bonus to special defenses against spells and spell-like abilities. This bonus increases by \plus1 at his 8th spellwarped level and every 4 spellwarped levels thereafter.
 
 \cfl{Spl}{5th}{Manipulate Magic (Su)} The spellwarped can channel his innate magic to manipulate other forms of magic. Using this ability costs a spellwarp point. 
-\subcf{Alteration -- Absorption} As an immediate action, when the spellwarped makes successfully resists a Fortitude attack from a spell or spell-like ability, he may absorb the magic harmlessly into his body. The spell has no effect on him, even if it would normally have an effect on a failed attack.
+\subcf{Alteration -- Absorption} As an immediate action, when the spellwarped makes successfully resists an attack against his Fortitude from a spell or spell-like ability, he may absorb the magic harmlessly into his body. The spell has no effect on him, even if it would normally have an effect on a failed attack.
 \subcf{Pyromancy -- Fuel the Flame} As an immediate action, when the spellwarped is affected by a spell or spell-like ability, he may channel its energy into a burst of flame around him. Creatures within a \areasmall radius of the spellwarped take fire damage equal to his spellwarped level. The spell still has its normal effect on the spellwarped.
-\subcf{Telekinesis -- Mind over Matter} As an immediate action, when the spellwarped is subject to a Fortitude attack from a spell or spell-like ability, he may use his Will defense instead.
+\subcf{Telekinesis -- Mind over Matter} As an immediate action, when the spellwarped is subject to an attack against his Fortitude from a spell or spell-like ability, he may use his Will defense instead.
 \subcf{Temporal -- Accelerate Magic} As a swift action, the spellwarped can increase or decrease the duration of any spell or spell-like ability affecting him by two rounds. This can end the effect immediately if it has no time remaining. The spellwarped can't increase the duration beyond twice the spell's original duration.
 
 \cfl{Spl}{9th}{Spell Resistance (Ex)} The magic within the spellwarped allows him to completely ignore other magic, granting him spell resistance. To affect a creature with spell resistance using a spell or spell-like ability, a special attack is always required. The defense used against the attack is indicated by the spell. If the attack fails, the spell has no effect on the spellwarped.
@@ -1594,17 +1594,16 @@ At his 7th spellwarped level, and every four spellwarped levels thereafter, the 
 \ssecfake{Spellwarped Powers}\label{Spellwarped Powers}
 
 \subsubsection{Alteration Powers}
-\parhead{1st -- Lesser Reduction} The spellwarped makes a Fortitude attack against a creature within \rngclose range. A successful attack causes the creature to become one size category smaller for 2 rounds. This has the following effects:
+\parhead{1st -- Lesser Reduction} The spellwarped makes an attack against the Fortitude of a creature within \rngclose range. A successful attack causes the creature to become one size category smaller for 2 rounds. This has the following effects:
   \begin{itemize*} 
     \item \minus10 ft. penalty to movement speed.
     \item \minus4 penalty to maneuver attack and defense.
     \item \plus1 bonus to other physical attacks and defenses.
     \item \plus4 bonus to Stealth.
-    \item Carrying capacity is reduced (see \pcref{Carrying Capacity}).
   \end{itemize*}
 This is a size-affecting effect.
 \parhead{4th -- Reduction} This power functions like the lesser reduction power, except that the foe is reduced for 5 rounds.
-\parhead{6th -- Purge} The spellwarped can end any single effect or condition on him which requires a successful Fortitude attack. If he identify the effects on him, such as with a Spellcraft check, he may freely choose which effect to end. If he cannot differentiate the effects, choose the effect ended randomly.
+\parhead{6th -- Purge} The spellwarped can end any single effect or condition on him which requires a successful attack against his Fortitude. If he identify the effects on him, such as with a Spellcraft check, he may freely choose which effect to end. If he cannot differentiate the effects, choose the effect ended randomly.
 \parhead{8th -- Body Bludgeon} The spellwarped elongates and distorts a part of his body and strikes a foe with it. The foe must be within his reach, as if he were wielding a reach weapon. He must make a physical attack with that part of his body. If he hits, he deals 1d6 bludgeoning damage per spellwarped level \add his Strength. In addition, whether he hits or misses, he may make a shove attack on the creature that does not provoke attacks of opportunity. He need not move with the creature to push it back.
 \parhead{8th -- Enlargement} This power functions like the \spell{enlarge person} spell, except that it can affect creatures of any type.
 \parhead{10th -- Amorphous Body} The spellwarped transforms his body into an amorphous form for 1 round. In this form, he gains several benefits. He gains a \plus20 bonus against grapple attacks, is immune to critical hits, takes no penalties for squeezing, and can move through spaces that are no more than two inches in width, though doing so forces him to move at half speed.
@@ -1625,43 +1624,43 @@ This is a size-affecting effect.
 \parhead{6th -- Fiery Protection} As a standard action, the spellwarped can bestow fire and cold damage reduction equal to twice his spellwarped level on a creature within 30 feet of him. The protection lasts for 1 hour.
 \parhead{8th -- Conflagration} As a standard action, the spellwarped can release a powerful explosion of flame. He makes a Reflex attack to deal damage to all enemies and objects within a \areamed radius spread of him. This attack deals 1d6 fire damage per two spellwarped levels. A failed attack deals half damage.
 \parhead{10th -- Fire Shield} As a standard action, the spellwarped can wreath himself in flame for 5 rounds. Any creature that hits him with its body or a melee weapon takes 1d6 fire damage per two spellwarped levels. Each individual creature can take this damage only once per round.
-\parhead{10th -- Flameheart} As a standard action, the spellwarped can become a being of pure fire for 1 round. In this form, he is immune to physical damage and can pass through openings as small as one inch at no movement penalty. However, he cannot attack normally or use any of his items, as they meld into his body. He may invoke any of his spellwarped powers normally. In this form, he can make a touch attack against Reflex defense as a standard action to deal 1d6 points of fire damage per spellwarped level.
+\parhead{10th -- Flameheart} As a standard action, the spellwarped can become a being of pure fire for 1 round. In this form, he is immune to physical damage and can pass through openings as small as one inch at no movement penalty. However, he cannot attack normally or use any of his items, as they meld into his body. He may invoke any of his spellwarped powers normally. In this form, he can make a touch attack as a standard action to deal 1d6 points of fire damage per spellwarped level.
 \parhead{12th -- Firestride} As a move action, the spellwarped can may teleport to any active flame of at least Tiny size within \rngmed range. When he does so, he immolates himself and disappears into a pile of ash before stepping out from the flame unharmed. An ordinary torch is sufficient flame to teleport to, but not a candle.
 \parhead{14th -- Flight of the Phoenix} As a swift action, the spellwarped can spend two spellwarp points to fly on wings of flame for 5 rounds. His fly speed is equal to his base land speed, and his maneuverability is good. See \pcref{Flying}, for more details. At the end of the duration, the wings are extinguished. This ability is draining to use, and the spellwarped must wait for five minutes after using it before he can use it again.
 \parhead{14th -- Greater Flameheart} This power functions like the flameheart power, except that it lasts for 5 rounds.
 \parhead{16th -- } 
 \parhead{18th -- Phoenix Revival} When the spellwarped takes critical damage, he may spend five spellwarp points as an immediate action, even if the critical damage would be sufficient to kill him. If he does, he ignores the critical damage he just took and dissolves into a pile of ash for 5 rounds. During this time, he can take no actions. If the pile of ash remains intact after 5 rounds, the spellwarped is restored to his normal body, with zero hit points but with all critical damage healed. However, if the pile of ash is dispersed, the spellwarped dies. The ash cannot be harmed by fire damage, and if the pile of ash would take at least 10 points of fire damage during a round, the spellwarped returns one round sooner. The spellwarped may take his normal actions immediately after being restored.
-\parhead{20th -- Immolate} The spellwarped makes a Fortitude attack against a foe within \rngclose range to consume it in flames from the inside out. This attack deals d6 points of fire damage per spellwarped level, and if the creature is bloodied after it takes this damage, it immediately dies. A failed attack deals half damage and leaves a bloodied creature with 0 hit points.
+\parhead{20th -- Immolate} The spellwarped makes an attack against the Fortitude of a foe within \rngclose range to consume it in flames from the inside out. This attack deals d6 points of fire damage per spellwarped level, and if the creature is bloodied after it takes this damage, it immediately dies. A failed attack deals half damage and leaves a bloodied creature with 0 hit points.
 
 \subsubsection{Telekinesis Powers}
-\parhead{1st -- Lesser Crush} As a standard action, the spellwarped can crush a creature or object within \rngclose range with telekinetic force. He makes a Fortitude attack to deal damage. This attack deals 1d6 points of physical damage \add 1 per spellwarped level. A failed attack deals half damage.
+\parhead{1st -- Lesser Crush} As a standard action, the spellwarped can crush a creature or object within \rngclose range with telekinetic force. If he succeeds at an attack against Fortitude, he deals 1d6 points of physical damage \add 1 per spellwarped level. A failed attack deals half damage.
 \parhead{1st -- Mind Blade} As a swift action, the spellwarped can telekinetically wield an unattended weapon within \rngclose range for 5 rounds. The weapon must be a light or medium weapon appropriate for his size. This allows him to attack with the weapon just as if he were holding it in one hand, except that he uses his Intelligence in place of his Strength. In all other respects, this functions as if he were wielding the weapon normally, including contributing to overwhelm penalties and taking attacks of opportunity. The weapon floats in midair and threatens all squares adjacent to it, and he may make attacks of opportunity with the weapon or with a weapon he wields in his hands, but not both.
 As a move action, he may move the weapon up to 30 feet in any direction, even vertically. If the weapon goes outside of \rngclose range, he loses control of it and it falls to the ground.
-\parhead{4th -- Crush} This power functions like the lesser crush attack, except that it deals 1d6 points of physical damage per spellwarped level, and a successful Fortitude attack also makes the creature \sickened for 5 rounds.
+\parhead{4th -- Crush} This power functions like the lesser crush attack, except that it deals 1d6 points of physical damage per spellwarped level. If the attack against Fortitude succeeds, the target is also \sickened for 5 rounds.
 \parhead{4th -- Mighty Mind Blade} This power functions like the mind blade power, except that the spellwarped may also use a heavy weapon appropriate for his size, allowing him to attack with it just as if he were holding it in two hands. The spellwarped must have the mind blade power to select this power.
 \parhead{6th -- Distant Manipulation} As a standard action, the spellwarped can mentally exert influence at up to \rngclose range. This allows him to take any standard action which he could normally take with his hands, using his Intelligence in place of his Strength or Dexterity, as appropriate. He may take actions that require more than a standard action to complete by spending the same amount of time concentrating, spending one spellwarp point per two rounds that he spends concentrating.
 \subcf{6th -- Dual Mind Blade} This power functions like his mind blade power, except that the spellwarped may wield two weapons at once. They must stay in the same space, and he may make two-weapon fighting attacks with the weapons, just as if he was wielding them with two hands. The spellwarped must have the mind blade power to select this power.
 \parhead{8th -- }
 \parhead{10th -- Telekinetic Force} This power functions like the \spell{telekinetic force} spell, using his Intelligence as his casting attribute.
-\parhead{12th -- Strangle} As a standard action, the spellwarped can make a Fortitude attack against a creature within \rngclose range to crush its windpipe. This attack deals 1d6 damage per spellwarped level. If the target is bloodied after the damage is dealt, it is nauseated for 1 round. A failed attack deals half damage, and prevents the foe from being nauseated. This power costs two spellwarp points.
+\parhead{12th -- Strangle} As a standard action, the spellwarped can make an attack against the Fortitude of a creature within \rngclose range to crush its windpipe. This attack deals 1d6 damage per spellwarped level. If the target is bloodied after the damage is dealt, it is nauseated for 1 round. A failed attack deals half damage, and prevents the foe from being nauseated. This power costs two spellwarp points.
 \parhead{14th -- }
 \parhead{16th -- } 
 \parhead{18th -- }
 \parhead{20th -- Mass Strangle} This power functions like the strangle power, except that it costs three spellwarp points and the spellwarped can affect any creatures within a \areasmall radius.
 
 \subsubsection{Temporal Powers}
-\parhead{1st -- Lesser Timetheft} As a standard action, the spellwarped can attempt to steal time. He makes a Will attack against an adjacent creature to force it to skip an action. If it is bloodied, it skips a standard action, while if it is healthy, it skips a move action.
-\parhead{4th -- Slow} As a standard action, the spellwarped makes a Will attack against a creature within \rngclose range, making it \slowed for 5 rounds.
+\parhead{1st -- Lesser Timetheft} As a standard action, the spellwarped can attempt to steal time. He makes an attack against the Will of an adjacent creature to force it to skip an action. If it is bloodied, it skips a standard action, while if it is healthy, it skips a move action.
+\parhead{4th -- Slow} As a standard action, the spellwarped makes an attack against the Will of a creature within \rngclose range, making it \slowed for 5 rounds.
 \parhead{4th -- Timetheft} This power functions like lesser timetheft, except that the spellwarped regains a spellwarp point if the attack is successful.
 \parhead{6th -- Accelerate Movement} As a standard action, the spellwarped can accelerate a creature within \rngclose range so much that he can seem to pause time for everyone but the subject. This allows the subject to immediately take a single move action. During this move action, the subject does not provoke attacks of opportunity and can move through squares occupied by enemies without penalty. If the spellwarped uses this power on himself, it only requires a move action to activate.
-\parhead{6th -- Disjointed Time} As a standard action, the spellwarped makes a Fortitude attack against a single creature within \rngmed range to chaotically disrupt its local flow of time. If the attack succeeds, the creature takes a \minus4 penalty to attacks, defenses, and checks for 5 rounds.
+\parhead{6th -- Disjointed Time} As a standard action, the spellwarped makes an attack against the Fortitude of a single creature within \rngmed range to chaotically disrupt its local flow of time. If the attack succeeds, the creature takes a \minus4 penalty to attacks, defenses, and checks for 5 rounds.
 \parhead{8th -- Haste} As a standard action, the spellwarped dramatically accelerates a creature within \rngclose range for 5 rounds. It doubles all of its movement speeds (to a maximum of an additional 30 feet of movement), and can take an additional attack at a \minus5 penalty when it makes a standard attack. The increase to movement speed is considered an enhancement bonus.
-\parhead{8th -- Pause Time} As a standard action, the spellwarped makes a Will attack against a single creature within \rngclose range to completely stop time for it for 5 rounds. The affected creature can take no actions and cannot be moved, damaged, or even affected in any way until the effect ends. The spellwarped may dismiss the effect as a swift action.
+\parhead{8th -- Pause Time} As a standard action, the spellwarped makes an attack against the Will of a single creature within \rngclose range to completely stop time for it for 5 rounds. The affected creature can take no actions and cannot be moved, damaged, or even affected in any way until the effect ends. The spellwarped may dismiss the effect as a swift action.
 \parhead{10th -- Accelerate Movement, Greater} This power functions like the accelerate movement power, except that it costs two spellwarp points and can be used as a move action. If the spellwarped uses this power on himself, it only requires a swift action to activate.
 \parhead{12th -- Timestream} The spellwarped manipulates time in a \arealarge line that extends out from him for 5 rounds. All creatures and objects that pass through the line are \slowed for 1 round. The spellwarped can exclude his allies from the effect. The timestream is virtually invisible, requiring a DC 30 Perception check to notice in a clear environment, though objects passing through the effect can make it obvious.
 \parhead{14th -- Inhuman Speed} As a move action, the spellwarped can accelerate himself to immense speed, allowing him to move up to five times his speed. During this time, he does not provoke attacks of opportunity, can move through squares occupied by enemies without penalty, and can treat liquids as if they were solid ground.
 \parhead{14th -- Mass Slow} This power functions like the slow power, except that it costs two spellwarp points and affects up to five creatures within \rngclose range of the spellwarped.
-\parhead{16th -- Time Reversal} As a swift action, the spellwarped can spend a spellwarp point to create a ``time lock.'' The time lock persists for one round. As a standard action, he can make a Will attack against a creature within \rngmed range to bring it backwards through time to the point at which the time lock was created. An affected creature is perfectly restored to the point immediately after the time lock was created. The effects of any actions that the creature took in the intervening time are undone, any damage it dealt or took is removed, it is restored to its original location, and the creature is restored in all other ways, just as if the intervening time had never occured. The spellwarped cannot reverse time for himself in this way.
+\parhead{16th -- Time Reversal} As a swift action, the spellwarped can spend a spellwarp point to create a ``time lock.'' The time lock persists for one round. As a standard action, he can make an attack against the Will of a creature within \rngmed range to bring it backwards through time to the point at which the time lock was created. An affected creature is perfectly restored to the point immediately after the time lock was created. The effects of any actions that the creature took in the intervening time are undone, any damage it dealt or took is removed, it is restored to its original location, and the creature is restored in all other ways, just as if the intervening time had never occured. The spellwarped cannot reverse time for himself in this way.
 \parhead{16th -- Supreme Acceleration} As a standard action, the spellwarped can spend three spellwarp points to accelerate himself so much that he can take an additional round of actions immediately. During this round, all creatures he attacks are treated as helpless, but he cannot perform a coup de grace or similar ability; such an act requires more care and precision than is possible with such immense speed. After using this ability, he must wait 5 rounds before he can use it again.
 \parhead{18th -- Mass Haste} This power functions like the haste power, except that it costs two spellwarp points and affects up to five creatures within \rngclose range of the spellwarped.
 \parhead{18th -- Time Stop} As a standard action, the spellwarped can spend two spellwarp points to step into an alternate timestream, causing him to speed up so greatly that all other creatures seem frozen. He can act for 1d3\plus1 rounds of apparent time. During this time, all objects and creatures are frozen in place and are completely invulnerable to the spellwarped, though he may affect them with spellwarped powers normally. After using this ability, he must wait 5 rounds before he can use it again.
