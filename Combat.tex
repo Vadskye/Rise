@@ -1,11 +1,56 @@
 \chapter{Combat}\label{Combat}
 
 \section{How Combat Works}
-Combat takes place in a series of ``rounds'', which represent about six seconds of action. Each round, every character gets a turn to act. The order in which creatures take turns is determined by their initiative (see \pcref{Initiative}). 
+Combat takes place in a series of ``rounds'', which represent about six seconds of action (see \pcref{The Combat Round}). In combat, creatures attack each other (see \pcref{Attacks}) and defend themselves (see \pcref{Defenses}), while moving around the battlefield (see \pcref{Movement and Positioning}). When your defenses fail, you can get hurt (see \pcref{Injury, Death, and Healing}). In unusual situations, you might become more or less likely to succeed at your actions (see \pcref{Circumstances, Bonuses, and Penalties}).
 
-Once in combat, creatures attack each other (see \pcref{Attacks}) and defend themselves (see \pcref{Defenses}), while moving around the battlefield (see \pcref{Movement and Positioning}). When your defenses fail, you can get hurt (see \pcref{Injury, Death, and Healing}). In unusual situations, you might become more or less likely to succeed at your actions (see \pcref{Circumstances, Bonuses, and Penalties}).
+\section{The Combat Round}\label{The Combat Round}
 
-When it's your turn, you can take one standard action, one move action, and one swift action. If you want, you can take a full-round action instead of your standard and move actions. You can always ``downgrade'' an action to a lesser action: turning a standard action into a move action, or a move action into a swift action.
+Each round of a combat is divided into two phases: a movement phase and an action phase. During each phase, all characters declare their actions simultaneously, and then those actions are resolved simultaneously.
+
+\subsection{The Movement Phase}\label{The Movement Phase}
+
+Movement takes place first in the round. During the movement phase, all creatures can take move actions (see \pcref{Movement and Positioning}). You can take any number of move actions during the movement phase, as long as all of those actions can be performed simultaneously. For example, you can walk your speed and draw your sword in a single movement phase. However, you cannot draw a sword and equip a shield in the same phase. Equipping a shield takes two hands, leaving you with no free hand to draw your sword.
+
+Once all creatures are done moving, the action phase begins.
+
+\subsection{The Action Phase}\label{The Action Phase}
+
+During the action phase, each creature can take a single standard action.
+
+Once all creatures have declared their actions, actions are resolved.
+
+\subsection{Resolving Actions}\label{Resolving Actions}
+
+The actions of all creatures are simultaneously resolved in the following order.
+
+\begin{enumerate*}
+    \item Determine affected targets.
+    \item Check action success. Example: Making attack rolls.
+    \item Determine action results. Example: Making damage rolls.
+    \item Apply action results. Examples: Reducing hit points, moving character locations, and applying penalties.
+\end{enumerate*}
+
+In the vast majority of cases, there is no need to go through this order explicitly. Combats will run much faster if attack and damage rolls are generally made and announced at the same time as the actions are chosen, even before all characters have explicitly stated their actions. The order of resolution matters when taking actions that can significantly change the situation, such as grappling an enemy or casting complex spells.
+
+\subsubsection{Conflicting Actions}\label{Conflicting Actions}
+
+In some situations, actions that should take place at the same time directly conflict with each other. This most commonly happens with movement. In this case, each involved character rolls initiative. The creature with the highest initiative result succeeds. All other creatures come as close as possible to completing their intended action.
+
+Your initiative check is calculated as follows:
+
+\begin{figure}[h]
+    \centering Dexterity \add half Wisdom \add enhancement bonus \add other bonuses and penalties
+\end{figure}
+
+For example, if two creatures were racing to reach a door, they would both roll initiative. The winner would reach the door and stop in their intended square, and the loser would stop adjacent to their intended square. 
+
+\subsection{Delaying}\label{Delaying}
+In each phase, you can delay your action rather than acting immediately. If you delay, you do nothing until after the actions of all other creatures have been resolved. At that point, you declare your action and it is resolved. If multiple creatures delay, all their actions are declared resolved simultaneously, after the actions of all the creatures that did not delay. You cannot delay more than once in a single phase.
+
+\subsection{Swift and Immediate Actions}\label{Swift and Immediate Actions}
+Each round, you can take a single swift or immediate action. Swift and immediate actions can be taken in either the movement or action phase. Swift actions must be declared along with any other actions you intend to take during that phase. Immediate actions do not need to be declared ahead of time. Instead, abilities that can be used as immediate actions specify triggering conditions that allow the action to be taken.
+
+Swift and immediate actions are resolved immediately, before any other actions resolve. If multiple swift or immediate actions are taken simultaneously, they are resolved using the normal rules for resolving simultaneous actions.
 
 \section{Attacks}\label{Attacks}
 An ``attack'' is anything that affects another creatures in a potentially harmful way. There are two kinds of attacks: physical attacks, which are made with weapons or fists, and special attacks, which are made with magic or supernatural power. All physical attacks, and most special attacks, require making an attack roll against a defense. If the result of the attack roll meets or exceeds the defense, the attack succeeds.
@@ -233,21 +278,6 @@ A creature with a glide speed can glide through the air at the indicated speed. 
 
 While in the air, a creature with a glide speed can control its fall as a move action. This allows it to move up to its speed horizontally in a direction of its choice while moving only five feet down. If it desires, it can move half as far horizontally and fall down twice as fast. It takes no falling damage if it touches the ground while gliding.
 
-\section{Initiative}\label{Initiative}
-
-At the start of a battle, each creature that is aware of the combat makes an initiative check. Your initiative check is calculated as follows:
-
-\begin{figure}[h]
-    \centering Dexterity \add half Wisdom \add enhancement bonus \add other bonuses and penalties
-\end{figure}
-
-Creatures act in order of their initiative, highest to lowest. After the creature with the lowest initiative acts, a new round begins and the creature with the highest initiative acts again. You usually keep your initiative for the whole encounter, even if you can't act. However, some special actions can change your initiative count.
-
-\subsubsection{Surprise Attacks}\label{Surprise Attacks}
-Sometimes, some creatures are not aware of the combat when it starts. This most commonly happens with ambushes. Any creature that is not aware of the combat doesn't get to make an initiative check during the first round of combat. Until it takes its first action, it is vulnerable (\minus2 penalty to attacks, defenses, and checks) and can't take attacks of opportunity.
-
-Sometimes, everyone is surprised, such as if a guard walks around a corner to unexpectedly find a group of muggers. In that case, initiative is rolled normally, but all creatures are vulnerable and can't take attacks of opportunity until they take their first action.
-
 \section{Injury, Death, and Healing}\label{Injury, Death, and Healing}
 Your hit points measure how hard you are to kill. No matter how many hit points you lose, your character isn't hindered in any way until your hit points drop to 0.
 
@@ -433,17 +463,6 @@ While grappled, you can take four special actions to try to affect the grapple.
 \parhead{Move the Grapple} As a move action, you can make a grapple attack to move the grapple. Apply the result against the MC of each creature grappling you. If you beat every creature's MC, you can move yourself and all other creatures in the grapple up to half your speed. At the end of your movement, you choose which spaces creatures grappling you are in, as long as they stay adjacent to you.
 \parhead{Pin} As a standard action, you can make a grapple attack to pin a foe. If you succeed, that creature becomes pinned (in addition to being grappled), while you remain only grappled. The only physical action a pinned creature can take is to escape the grapple, though it can take mental actions. At your discretion, you can cover the mouth of a pinned creature to prevent it from speaking. 
 
-\subsection{Invisibility}
-If it is impossible to see your target, you can't attack him normally. However, you can attack a square that you think he occupies. An attack into a square occupied by an invisible enemy has a 50\% miss chance. If an adjacent invisible creature strikes you, you can automatically identify the square he occupied when he struck you.
-
-You can't execute an attack of opportunity against an invisible opponent, even if you know what square or squares the opponent occupies.
-
-\subsection{Overwhelm}\label{Overwhelm}
-When a creature is being attacked by multiple foes at once, it is less able to defend itself. A creature is considered overwhelmed if it is being threatened by more than one creature. Multiple creatures occupying the same square count as a single creature when determining overwhelm penalties. If a creature is overwhelmed, it takes a penalty to physical defenses equal to the number of creatures threatening it.
-
-\subsection{Total Defense}\label{Total Defense}
-As a standard action, you can focus entirely on defense, granting you a \plus4 bonus to your dodge modifier for 1 round. While using the total defense action, you can't make attacks of opportunity, but you still threaten squares normally for the purpose of overwhelm penalties and similar effects.
-
 \subsection{Helpless Defenders}
 A helpless creature is completely at an opponent's mercy. Its physical defenses are equal to 10 \add its size modifier. Paralyzed, bound, and unconscious creatures are helpless, as well as creatures completely unaware of an attack.
 
@@ -453,8 +472,22 @@ Delivering a coup de grace requires focused concentration and methodical action.
 
 You can't deliver a coup de grace against a creature that is immune to critical hits. You can deliver a coup de grace against a creature with total concealment, but doing this requires two consecutive full-round actions (one to ``find'' the creature once you've determined what square it's in, and one to deliver the coup de grace).
 
+\subsection{Invisibility}
+If it is impossible to see your target, you can't attack him normally. However, you can attack a square that you think he occupies. An attack into a square occupied by an invisible enemy has a 50\% miss chance. If an adjacent invisible creature strikes you, you can automatically identify the square he occupied when he struck you.
+
+You can't execute an attack of opportunity against an invisible opponent, even if you know what square or squares the opponent occupies.
+
+\subsection{Overwhelm}\label{Overwhelm}
+When a creature is being attacked by multiple foes at once, it is less able to defend itself. A creature is considered overwhelmed if it is being threatened by more than one creature. Multiple creatures occupying the same square count as a single creature when determining overwhelm penalties. If a creature is overwhelmed, it takes a penalty to physical defenses equal to the number of creatures threatening it.
+
 \subsection{Range Increments}
 When using a ranged weapon, you take a \minus2 penalty per range increment between you and your target. For example, when using a longbow with a range increment of 100 feet against a target 170 feet away, you take a \minus2 penalty to attack rolls.
+
+\subsubsection{Surprise Attacks}\label{Surprise Attacks}
+Sometimes, creatures are not aware that combat is taking place when the combat starts. This most commonly happens with ambushes. Any creature that is not aware of the combat continues continues taking whatever actions it would normally be taking until it becomes aware of the combat. A creature that is not aware it is in combat can't take attacks of opportunity.
+
+\subsection{Total Defense}\label{Total Defense}
+As a standard action, you can focus entirely on defense, granting you a \plus4 bonus to your dodge modifier for 1 round. While using the total defense action, you can't make attacks of opportunity, but you still threaten squares normally for the purpose of overwhelm penalties and similar effects.
 
 \section{Special Actions}
 
@@ -464,33 +497,6 @@ If you are restricted to only taking a move or standard action, but not both, yo
 
 \subsubsection{Partial Charge}
 As a standard action, you can move up to your speed and make a single attack against a foe. You must move in a straight line, and your movement must not be impeded in any way. In addition, you take a \minus2 penalty to physical defenses until the start of your next turn. An interrupted partial charge becomes a move action.
-
-\subsection{Delay}\label{Delay}
-By choosing to delay, you take no action and then act normally on whatever initiative count you decide to act. When you delay, you voluntarily reduce your own initiative result for the rest of the combat. When your new, lower initiative count comes up later in the same round, you can act normally. You can specify this new initiative result or just wait until some time later in the round and act then, thus fixing your new initiative count at that point.
-
-You never get back the time you spend waiting to see what's going to happen. Additionally, you can't interrupt anyone else's action (as you can with a readied action).
-
-\parhead{Initiative Consequences of Delaying} Your initiative result becomes the count on which you took the delayed action. If you come to your next action and have not yet performed an action, you don't get to take a delayed action (though you can delay again).
-
-If you take a delayed action in the next round, before your regular turn comes up, your initiative count rises to that new point in the order of battle, and you do not get your regular action that round.
-
-\subsection{Ready}\label{Ready}
-The ready action lets you prepare to take an action later, after your turn is over but before your next one has begun. Readying is a standard action. It does not provoke an attack of opportunity (though the action that you ready might do so).
-
-\parhead{Readying an Action} You can ready a standard action or a move action. To do so, specify the action you will take and the conditions under which you will take it. You cannot ready in response to an action that you take -- the action must be outside of your control. Then, any time before your next action, you may take the readied action in response to that condition. The action occurs just before the action that triggers it. If the triggered action is part of another character's activities, you interrupt the other character. Assuming he is still capable of doing so, he continues his actions once you complete your readied action. Your initiative result changes. For the rest of the encounter, your initiative result is the count on which you took the readied action, and you act immediately ahead of the character whose action triggered your readied action.
-
-You can take some free actions as part of your readied action, but in general you can take no actions other than the action you readied.
-
-\parhead{Initiative Consequences of Readying} Your initiative result becomes the count on which you took the readied action. If you come to your next action and have not yet performed your readied action, you don't get to take the readied action (though you can ready the same action again). If you take your readied action in the next round, before your regular turn comes up, your initiative count rises to that new point in the order of battle, and you do not get your regular action that round.
-
-\parhead{Distracting Spellcasters} You can ready a full attack against a spellcaster with the trigger ``if she starts casting a spell." If you damage
-the spellcaster, she may lose the spell she was trying to cast (as determined by her Concentration check result).
-
-\parhead{Readying to Counterspell} You may ready a counterspell against a spellcaster (often with the trigger ``if she starts casting a spell"). In this case, when the spellcaster starts a spell, you get a chance to identify it with a Spellcraft check (DC 15 \add spell level). If you do, and if you can cast that same spell (are able to cast it and have it prepared, if you prepare spells), you can cast the spell as a counterspell and automatically ruin the other spellcaster's spell. Counterspelling works even if one spell is divine and the other arcane.
-
-A spellcaster can use \spell{dispel magic} to counterspell another spellcaster, but it doesn't always work.
-
-\parhead{Readying a Weapon against a Charge} You can ready certain piercing weapons, setting them to receive charges (see \trefcp{Weapons}). A readied weapon of this type deals double damage on your first attack with it against a charging character.
 
 \section{Special Rules}\label{Special Rules}
 
