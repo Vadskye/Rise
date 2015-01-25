@@ -301,7 +301,7 @@ if __name__ == "__main__":
             for component in component_args[component_type]:
                 derp = vars(parser.parse_args(component.split()))
                 derp = merge_args(derp, general_args)
-                print 'parsed:', derp
+                print '\nparsed:', derp
                 spell.components[component_type].append(SpellComponent(
                     component_type = component_type,
                     alternate_effect = derp['alternateeffect'],
