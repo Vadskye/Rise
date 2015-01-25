@@ -918,25 +918,25 @@ A monk who becomes chaotic cannot gain new levels as a monk, but retains all mon
 \lcaption{The Paladin}
 \begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecolpoof}} X}
 \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
-1st  & \plus1                        & \plus3  & \plus0 & \plus3 & Invoke divinity (smite) \\
+1st  & \plus1                        & \plus3  & \plus0 & \plus3 & Discernment, divine power (smite) \\
 2nd  & \plus2                        & \plus4  & \plus1 & \plus4 & Discernment \\
 3rd  & \plus3                        & \plus5  & \plus1 & \plus5 & Divine gift \\
-4th  & \plus4                        & \plus6  & \plus2 & \plus6 & Invoke divinity \\
+4th  & \plus4                        & \plus6  & \plus2 & \plus6 & Divine power \\
 5th  & \plus5                        & \plus7  & \plus2 & \plus7 & Discern foe \\
 6th  & \plus6/\plus1                 & \plus8  & \plus3 & \plus8 & Divine gift \\
-7th  & \plus7/\plus2                 & \plus9  & \plus3 & \plus9 & Invoke divinity \\
+7th  & \plus7/\plus2                 & \plus9  & \plus3 & \plus9 & Divine power \\
 8th  & \plus8/\plus3                 & \plus10 & \plus4 & \plus10& Pass judgment \\
 9th  & \plus9/\plus4                 & \plus11 & \plus4 & \plus11& Divine gift \\
-10th & \plus10/\plus5                & \plus12 & \plus5 & \plus12& Invoke divinity \\
+10th & \plus10/\plus5                & \plus12 & \plus5 & \plus12& Divine power \\
 11th & \plus11/\plus6/\plus1         & \plus13 & \plus5 & \plus13& \\
 12th & \plus12/\plus7/\plus2         & \plus14 & \plus6 & \plus14& Divine gift \\
-13th & \plus13/\plus8/\plus3         & \plus15 & \plus6 & \plus15& Invoke divinity \\
+13th & \plus13/\plus8/\plus3         & \plus15 & \plus6 & \plus15& Divine power \\
 14th & \plus14/\plus9/\plus4         & \plus16 & \plus7 & \plus16& \\
 15th & \plus15/\plus10/\plus5        & \plus17 & \plus7 & \plus17& Divine gift \\
-16th & \plus16/\plus11/\plus6/\plus1 & \plus18 & \plus8 & \plus18& Invoke divinity \\
+16th & \plus16/\plus11/\plus6/\plus1 & \plus18 & \plus8 & \plus18& Divine power \\
 17th & \plus17/\plus12/\plus7/\plus2 & \plus19 & \plus8 & \plus19& \\
 18th & \plus18/\plus13/\plus8/\plus3 & \plus20 & \plus9 & \plus20& Martyr's glorious retribution \\
-19th & \plus19/\plus14/\plus9/\plus4 & \plus21 & \plus9 & \plus21& Invoke divinity \\
+19th & \plus19/\plus14/\plus9/\plus4 & \plus21 & \plus9 & \plus21& Divine power \\
 20th & \plus20/\plus15/\plus10/\plus5& \plus22 &\plus10 &\plus22 & Greater smite \\
 \end{tabularx}
 \end{dtable*}
@@ -954,56 +954,55 @@ All of the following are class features of the paladin.
 
 \cft{Pal}{Alignment Devotion}{Su} A paladin is devoted to a specific alignment. She must choose one of her alignment components: good, evil, lawful, or chaotic. The alignment she chooses is her devoted alignment. A paladin's class features are affected by this choice. She excels at slaying creatures with alignments opposed to her devoted alignment. A paladin's devoted alignment cannot be changed without extraordinary repurcussions to the paladin.
 
-\cft{Pal}{Invoke Divinity}{Su} A paladin can invoke divine power to achieve incredible effects. She gains the smite divine invocation.
+\cft{Pal}{Discernment}{Su} A paladin can discern truths about creatures she sees as a swift action. When she uses this ability, she learns which creatures within a \arealarge cone have her devoted alignment. The paladin does not learn anything else about their alignments.
 
-At 4th level, and every 3 levels thereafter, the paladin gains an additional divine invocation. Some divine invocations have minimum paladin levels, as indicated in the title of the ability. Some divine gifts are also restricted to paladins with specific devoted alignments. All divine invocations are supernatural abilities unless otherwise noted. The paladin's special attack bonus with divine invocations is equal to her paladin level \add her Charisma.
+The paladin may use her discernment ability a number of times per day equal to half her paladin level \add her Wisdom (minimum 1).
 
-Divine invocations are marked with an asterisk are called smite invocations. Smite invocations function like the paladin's smite ability, except that they also have additional effects. Unless otherwise noted, these additional effects only occur if the smited creature does not share the paladin's devoted alignment.
+\cft{Pal}{Divine Power}{Su} A paladin can invoke divine power to achieve incredible effects. She gains the smite divine power.
+
+At 4th level, and every 3 levels thereafter, the paladin gains an additional divine power. Some divine powers have minimum paladin levels, as indicated in the title of the ability. Some divine gifts are also restricted to paladins with specific devoted alignments. All divine powers are supernatural abilities unless otherwise noted. The paladin's special attack bonus with divine powers is equal to her paladin level \add her Charisma.
+
+Divine powers marked with an asterisk are called smite invocations. Smite invocations function like the paladin's smite ability, except that they also have additional effects. Unless otherwise noted, these additional effects only occur if the smited creature does not share the paladin's devoted alignment.
 
 \parhead{Any Alignment}
 
 \subcf{Smite} When making a physical melee attack, a paladin may attempt to smite her foe. If the creature does not share her devoted alignment, she adds her Charisma (if positive) to her attack roll, and deals bonus damage equal to her paladin level. If she smites a creature who shares her devoted alignment, she deals no damage at all (not even normal weapon damage), but the use of the ability is still spent. Smiting takes no action, but can only be done once per round.
 \subcf{4th -- Lay on Hands} As a standard action, the paladin can make a touch attack against a creature. If the creature's alignment is not opposed to her devoted alignment, the creature is healed. If the creature's alignment is opposed to the paladin's devoted alignment, the creature takes divine damage. This ability heals or inflicts 1d8 hit points of damage per paladin level. The paladin must make a special attack to affect unwilling targets. A failed attack heals or inflicts half damage.
 
-\subcf{Bewildering Smite*} The paladin's smite challenges her foe's mind. If the paladin succeeds on a special attack vs. Will, the struck creature is \bewildered for 5 rounds.
-\subcf{Resounding Smite*} The paladin's smite knocks her foe off its feet. The struck creature is knocked prone.
-\subcf{Sickening Smite*} The paladin's smite strikes her foe where it is weak. If the paladin succeeds on a special attack vs. Will, the struck creature is \sickened for 5 rounds.
 \subcf{4th -- Align Weapon} As a standard action, the paladin can augment her weapon with the power of her devoted alignment, as the \spell{align weapon} spell. Her caster level is equal to her paladin level \add half her Charisma.
-\subcf{4th -- Impeding Smite*} The paladin's smite traps her foe in place, unable to escape her wrath. The struck creature's speed is reduced to 5 feet for 1 round.
-\subcf{4th -- Penetrating Smite*} The paladin's smite punches through her enemies' defenses. The attack reduces the foe's damage reduction by an amount equal to the paladin's level for 1 round, regardless of the type of damage reduction.
+\subcf{4th -- Bewildering Smite*} The paladin's smite challenges her foe's mind. The struck creature is \bewildered for 5 rounds.
+\subcf{4th -- Resounding Smite*} The paladin's smite knocks her foe off its feet. The struck creature is knocked prone.
+\subcf{4th -- Sickening Smite*} The paladin's smite strikes her foe where it is weak. The struck creature is \sickened for 5 rounds.
+\subcf{7th -- Penetrating Smite*} The paladin's smite punches through her foe's defenses. The struck creature loses its damage reduction during the current round, including against the paladin's smite attack.
 \subcf{7th -- Seeking Smite*} The paladin's smite is uncannily guided to its target. The attack ignores any miss chance, though the weapon must still be physically able to strike the target.
 \subcf{7th -- Staggering Smite*} The paladin's smite hits with incredible force. If the paladin succeeds on a special attack vs. Fortitude, the struck creature is \staggered for 5 rounds.
-\subcf{10th -- Dazing Smite*} The paladin's smite shatters her foe's ability to think. If the paladin succeeds on a special attack vs. Fortitude, the struck creature is \dazed for 1 round.
-\subcf{10th -- Coercing Smite*} The paladin's smite compels her foe to briefly join her cause. If she succeeds at an attack vs. Will, the struck creature must obey a \spell{suggestion}, as the spell, of the paladin's choice. The effect lasts for one round.
-\subcf{13th -- Dispelling Smite*} The paladin's smite strips away her foe's magical protections. The struck creature is subject to a targeted \spell{dispel magic} with a dispel bonus equal to the paladin's level \add her Charisma.
+\subcf{10th -- Dazing Smite*} The paladin's smite shatters her foe's ability to think. If the stuck creature is bloodied after the damage from the smite, it is \dazed for 1 round.
+\subcf{13th -- Dispelling Smite*} The paladin's smite strips away her foe's magical protections. The struck creature is subject to a targeted \spell{dispel magic} with a dispel bonus equal to the paladin's level \add half her Charisma.
 \subcf{16th -- Brilliant Smite*} The paladin's smite cannot be turned aside by mortal defenses. The smite attack is made against the enemy's Reflex defense.
-\subcf{19th -- Converting Smite*} The paladin's smite shows her foe the error of its ways. If the struck creature is bloodied, and the paladin succeeds at an attack vs. Will, the struck creature's alignment changes. It gains the paladin's devoted alignment for 1 week. After that time, it can choose to return to its original alignment, or keep its new alignment permanently.
+\subcf{16th -- Coercing Smite*} The paladin's smite compels her foe to briefly join her cause. If she succeeds on a special attack vs. Will, the struck creature must obey a \spell{suggestion}, as the spell, of the paladin's choice. The paladin must speak the suggestion aloud, but she need not speak in a language the subject understands. The effect lasts for one round.
+\subcf{19th -- Converting Smite*} The paladin's smite shows her foe the error of its ways. If the struck creature is bloodied after the damage from the smite, and the paladin succeeds at a special attack vs. Will, the struck creature's alignment changes. It gains the paladin's devoted alignment for 1 week. After that time, it can choose to return to its original alignment, or keep its new alignment permanently.
 
-\parhead{Chaos Divine Invocations}
+\parhead{Chaos Divine Powers}
 \subcf{7th -- Break the Chains} As a standard action, the paladin can break all shackles, bindings, and locks within a \arealarge radius of her. Nonmagical objects are automatically broken. To break magical objects, the paladin must make a special attack against a DC of 10 \add the object's caster level.
-\subcf{7th -- Confusion} As a standard action, the paladin can confuse a creature within \rngmed range, as the \spell{confusion} spell.
+\subcf{7th -- Confusion} As a standard action, the paladin can confuse a creature, as the \spell{confusion} spell.
 \subcf{10th -- Free the Mind} As a standard action, the paladin can dispel all magical enchantment and illusions affecting a creature within \rngmed range.
-\subcf{13th -- Mass Confusion} As a standard action, the paladin can confuse many creatures, as the \spell{mass confusion} spell. The paladin must have the confusion divine invocation to select this invocation.
+\subcf{13th -- Mass Confusion} As a standard action, the paladin can confuse many creatures, as the \spell{mass confusion} spell. The paladin must have the confusion divine power to select this invocation.
 
-\parhead{Good Divine Invocations}
+\parhead{Good Divine Powers}
 \subcf{4th -- Challenging Smite*} The paladin's smite compels her foe's attention. The struck creature takes a \minus2 penalty on attacks against all creatures other than the paladin.
 \subcf{4th -- Shield Other} As a standard action, the paladin can choose to take half the damage that an ally within \rngmed range will take, as the \spell{share pain} spell.
 \subcf{4th -- Blinding Smite*} The paladin's smite manifests as a bright light. If the paladin succeeds on a special attack vs. Will, the struck creature is \blinded for 1 round. Creatures vulnerable to light (such as vampires) take extra damage equal to twice her paladin level.
 \subcf{7th -- Martyr's Shield} As an immediate action, when an ally within \rngmed range would take critical damage, the paladin can take that damage as regular damage instead.
 
-\parhead{Evil Divine Invocations}
+\parhead{Evil Divine Powers}
 \subcf{7th -- Executing Smite*} The paladin's smite takes her foe's life. If the paladin succeeds on a special attack vs. Fortitude, the struck creature is affected by the \spell{death knell} spell.
 \subcf{10th -- Agonizing Smite*} The paladin's smite inflicts debilitating pain. The struck creature is affected by the \spell{agony} spell.
 
-\parhead{Law Divine Invocations}
+\parhead{Law Divine Powers}
 \subcf{4th -- Command} As a standard action, the paladin can issue a \spell{command}, as the spell. Unlike normal, the \spell{command} is effective regardless of whether paladin speaks in a language the subject understands.
 \subcf{13th -- Edict} As a standard action, the paladin can issue an \spell{edict}, as the spell.
 \subcf{16th -- See the Truth} As a standard action, the paladin can unerringly dispel all magical enchantments and illusions within a \arealarge radius.
 \subcf{19th -- Prohibition} As a standard action, the paladin can issue a \spell{prohibition}, as the spell.
-
-\cflt{Pal}{2nd}{Discernment}{Su} A paladin can discern truths about creatures she sees as a swift action. When she uses this ability, she learns which creatures within a \arealarge cone have her devoted alignment. The paladin does not learn anything else about their alignments.
-
-The paladin may use her discernment ability a number of times per day equal to half her paladin level \add her Wisdom (minimum 1).
 
 \cfl{Pal}{3rd}{Divine Gift} The paladin's devotion to her ideals is rewarded with a divine gift which improves her abilities. She chooses a single divine gift from the list below. At 6th level, and every 3 levels thereafter, she gains an additional divine gift. Some divine gifts have minimum paladin levels, as indicated in the title of the ability. All divine gifts are supernatural abilities unless otherwise noted.
 
