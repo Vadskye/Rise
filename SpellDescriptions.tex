@@ -427,15 +427,6 @@ If you take life damage, you lose all temporary hit points provided by this spel
   All allies within the area gain a \plus2 enhancement bonus to physical attacks for 5 rounds. \bonusscalingdescription
 \end{spelleffect}
 
-\spellsection{Bless Weapon}
-\spelldesc{You imbue a weapon with divine power, causing it to strike true against evil foes.}
-\spellschool{Evocation/Transmutation (Channeling, Imbuement) [Good]}
-\spelllvl{Pal 2}
-\spellcmp{Verbal only}
-\begin{spelleffect}
-  This spell functions like \spell{magic weapon}, except that the weapon also becomes good, which means it can bypass the damage reduction of certain creatures. (This effect overrides and suppresses any other alignment the weapon might have.)
-\end{spelleffect}
-
 \spellsection{Blindness/Deafness}
 \spelldesc{You afflict one of the subject's senses.}
 \spellschool{Necromancy (Flesh)}
@@ -2312,21 +2303,6 @@ This spell can be made permanent with a \spell{permanency} ritual.
   \par If used against an undead creature, \spell{heal} instead acts like \spell{harm}.
 \end{spellnotes}
 
-\spellsection{Heal Mount}
-\spelldesc{You fill your mount with a massive influx of positive energy, restoring its body to its fullest.}
-\spellschool{Necromancy (Vitalism) [Positive]}
-\spelllvl{Pal 3}
-\spellcmp{Verbal only}
-\spellrng{\rngtouch}
-\spelltgt{Your mount touched}
-\spelldur{Instantaneous}
-\spelldef{Fortitude negates (harmless)}
-\spellsr{Yes (Fortitude)}
-\spellheal{6d8 \add d8 per two caster levels above 6th}
-\begin{spelleffect}
-  This spell functions like \spell{heal}, but it affects only the paladin's special mount.
-\end{spelleffect}
-
 \spellsection{Heat Metal}
 \spellschool{Evocation (Energy) [Fire]}
 \spelllvl{Nature 2}
@@ -2434,25 +2410,6 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \begin{spelleffect}
     If the target is not good, it is bewildered for 5 rounds, and you make a Will attack to deal damage to it. A failed attack deals half damage.
 \end{spelleffect}
-
-\spellsection{Holy Sword}
-\spelldesc{You channel holy power into your sword, or any other melee weapon you choose, allowing it to smite your foes with ease.}
-\spellschool{Evocation/Transmutation (Imbuement, Channeling) [Good]}
-\spelllvl{Pal 4}
-\spellcmp{Verbal only}
-\spellrng{\rngtouch}
-\spelltgt{Melee weapon touched}
-\spelldur{\durmed}
-\spelldef{Will negates (object)}
-\spellsr{Yes (Will)}
-\begin{spelleffect}
-  The affected weapon acts as a \plus5 holy weapon. The spell is automatically cancelled 1 round after the weapon leaves your hand. You cannot have more than one \spell{holy sword} at a time.
-  \par If this spell is cast on a magic weapon, the powers of the spell supersede any that the weapon normally has, rendering the normal enhancement bonus and powers of the weapon inoperative for the duration of the spell.
-\end{spelleffect}
-\begin{spellnotes}
-  This spell is not cumulative with any other spell that might modify the weapon in any way. It does not work on artifacts.
-  %What is a holy weapon?
-\end{spellnotes}
 
 \spellsection{Holy Word}
 \spellschool{Evocation (Channeling) [Good]}
