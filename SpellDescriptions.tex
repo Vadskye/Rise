@@ -439,11 +439,11 @@
 \spelldur{\durshort (D)}
 \spelldef{Magic vs. Fortitude}
 \spellsr{Yes (Fortitude)}
-\begin{spelleffect}
+\begin{spellhealthy}
   The subject is \sickened.
-\end{spelleffect}
+\end{spellhealthy}
 \begin{spellblood}
-  The subject is \blinded for 1 round or \deafened for the duration of the spell, as you choose.
+  As the healthy effect, and the subject is \blinded for 1 round or \deafened for the duration of the spell, as you choose.
 \end{spellblood}
 \begin{spellnotes}
    The choice of bloodied conditions is made at the time the spell is cast.
@@ -649,7 +649,9 @@
     You make a magic attack vs. Fortitude against each affected creature. A successful attack reduces the target to 0 hit points and deals 9 critical damage, causing the target to begin dying.
 \end{spellblood}
 \begin{spellnotes}
-  This spell can affect 2 levels worth of living creatures per caster level. Creatures with the lowest level are affected first; among creatures with equal levels, those who are closest to the burst's point of origin are affected first. No creature whose level is greater than half your caster level can be affected, and levels that are not sufficient to affect a creature are wasted. Healthy creatures are not affected by the spell, and do not count against the spell's level limit.
+    This spell can affect 2 levels worth of living creatures per caster level. Creatures with the lowest level are affected first; among creatures with equal levels, those who are closest to the burst's point of origin are affected first. No creature whose level is greater than half your caster level can be affected, and levels that are not sufficient to affect a creature are wasted.
+  
+    Healthy creatures are not affected by this spell, and do not count against its level limit.
 \end{spellnotes}
 \spellmat{The powder of a crushed black pearl with a minimum value of 100 gp.}
 
@@ -684,7 +686,7 @@
   This spell has three effects.
   \par First, each shielded creature gains a \plus5 enhancement bonus to its defenses.
   \par Second, each shielded creature gains spell resistance against lawful spells and spells cast by lawful creatures.
-  \par Third, if a lawful creature within \rngmed range of the shielded creature successfully attacks it in any way, the offending attacker takes 4d6 damage. Any single creature can take this damage only once per round.
+  \par Third, at the end of each round, all lawful creatures within \rngclose range of the subject that attacked the subject with their body or a melee weapon that round take 4d6 points of damage. A creature that attacks multiple creatures shielded by this spell can take this damage multiple times.
 \end{spelleffect}
 \spellfocus{A tiny reliquary containing some sacred relic, such as a scrap of parchment from a chaotic text. The reliquary costs at least 250 gp.}
 
@@ -2294,7 +2296,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellschool{Evocation (Energy) [Fire]}
 \spelllvl{Nature 2}
 \spellrng{\rngmed}
-\spelltgt{One metal object of up to Small size}
+\spelltgt{One metal object of up to Medium size}
 \spelldur{\durshort (D)}
 \spelldef{Magic vs. Fortitude (object)}
 \spellsr{Yes (Fortitude)}
@@ -2303,7 +2305,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
     At the end of each round, you make a magic attack vs. Fortitude to deal damage to the target object and any creature in contact with it. A failed attack deals half damage.
 \end{spelleffect}
 \begin{spellnotes}
-  If the subject is underwater, this spell deals half damage,  and boils the surrounding water. Any cold intense enough to damage the creature negates fire damage from the spell (and vice versa) on a point-for-point basis.
+  If the subject is underwater, this spell deals half damage,  and boils the surrounding water. Any cold intense enough to damage the creature negates fire damage from the spell (and vice versa) on a point-for-point basis. This spell can affect the armor worn by a typical Medium creature, but not generally by a larger creature.
 \end{spellnotes}
 
 \spellsection{Heroism}
@@ -2316,7 +2318,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{Magic vs. Will (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The subject gains a \plus2 enhancement bonus on physical attacks, checks, and special defenses. \bonusscalingdescription
+  The subject gains a \plus2 enhancement bonus on physical attacks, all checks, and special defenses. \bonusscalingdescription
 \end{spelleffect}
 
 \spellsectioncomma{Heroism}{Greater}
@@ -2349,10 +2351,10 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelltgt{One humanoid creature}
 \spelldur{\durshort (D); see text}
-\spelldef{Magic vs. Will; see text}
+\spelldef{Magic vs. Will}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
-  The subject is bewildered, making it \vulnerable.
+  The subject is \bewildered.
 \end{spellhealthy}
 \begin{spellblood}
   As the healthy effect, and the subject is paralyzed and unable to act. You must make a new attack each round on your turn. Failure means the subject is no longer paralyzed, though it is still bewildered.
@@ -2375,13 +2377,13 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellarea{\areamed radius limit centered on you}
 \spelltgts{Five creatures within the area}
 \spelldur{\durshort (D)}
-\spelldef{See text}
+\spelldef{Magic vs. Will (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   A brilliant divine radiance surrounds the subjects, protecting them from attacks, granting them resistance to spells cast by evil creatures, and damaging evil creatures when they strike the subjects. This abjuration has three effects.
   \par First, each shielded creature gains a \plus5 enhancement bonus to its defenses.
-  \par Second, each shielded creature gains spell resistance 10 against evil spells and spells cast by evil creatures.
-  \par Third, if a evil creature within \rngmed range of the shielded creature successfully attacks it in any way, the offending attacker takes 4d6 damage. Any single creature can take this damage only once per round.
+  \par Second, each shielded creature gains spell resistance against evil spells and spells cast by evil creatures.
+  \par Third, at the end of each round, all evil creatures within \rngclose range of the subject that attacked the subject with their body or a melee weapon that round take 4d6 points of damage. A creature that attacks multiple creatures shielded by this spell can take this damage multiple times.
 \end{spelleffect}
 \spellfocus{A tiny reliquary containing some sacred relic. The reliquary costs at least 250 gp.}
 
@@ -4163,7 +4165,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
   A dim, blue glow surrounds the subjects, protecting them from attacks, granting them resistance to spells cast by chaotic creatures, and slowing chaotic creatures when they strike the subjects. This abjuration has three effects.
   \par First, each shielded creature gains a \plus5 enhancement bonus to its defenses.
   \par Second, each shielded creature gains spell resistance 10 against chaotic spells and spells cast by chaotic creatures.
-  \par Third, if a chaotic creature within \rngmed range of the shielded creature successfully attacks it in any way, the offending attacker takes 4d6 damage. Any single creature can take this damage only once per round.
+  \par Third, at the end of each round, all chaotic creatures within \rngclose range of the subject that attacked the subject with their body or a melee weapon that round take 4d6 points of damage. A creature that attacks multiple creatures shielded by this spell can take this damage multiple times.
 \end{spelleffect}
 \spellfocus{A tiny reliquary containing some sacred relic, such as a scrap of parchment from a lawful text. The reliquary costs at least 250 gp.}
 
@@ -5277,7 +5279,7 @@ A slowed creature can take only a single move action or standard action each tur
   A malevolent darkness surrounds the subjects, protecting them from attacks, granting them resistance to spells cast by good creatures, and weakening good creatures when they strike the subjects. This abjuration has three effects.
   \par First, each shielded creature gains a \plus5 enhancement bonus to its defenses.
   \par Second, each shielded creature gains spell resistance 10 against chaotic spells and spells cast by good creatures.
-  \par Third, if a good creature within \rngmed range of the shielded creature successfully attacks it in any way, the offending attacker takes 4d6 damage. Any single creature can take this damage only once per round.
+  \par Third, at the end of each round, all good creatures within \rngclose range of the subject that attacked the subject with their body or a melee weapon that round take 4d6 points of damage. A creature that attacks multiple creatures shielded by this spell can take this damage multiple times.
 \end{spelleffect}
 \spellfocus{A tiny reliquary containing some sacred relic, such as a piece of parchment from an unholy text. The reliquary costs at least 250 gp.}
 
