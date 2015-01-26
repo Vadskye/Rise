@@ -409,8 +409,8 @@
     \end{tabularx}
     1 Living creatures die. Nonliving creatures are destroyed.
   \end{dtable}
-  \par \subspell{Sickened} The creature is sickened, making it \vulnerable for 5 rounds.
-  \par \subspell{Nausated} The creature is nauseated for 1 round.
+  \par \subspell{Sickened} The creature is \sickened for 5 rounds.
+  \par \subspell{Nausated} The creature is \nauseated for 1 round.
   \par \subspell{Paralyzed} The creature is paralyzed and helpless for 5 rounds.
   \par \subspell{Killed} Living creatures die. Nonliving creatures are destroyed.
 \end{spellblood}
@@ -491,11 +491,11 @@
 \spelllvl{Arcane 1, Destruction 1, Nature 1, Fire 1}
 \spellarea{\areamed cone-shaped burst}
 \spelldur{Instantaneous}
-\spelldef{Reflex half}
+\spelldef{Magic vs. Reflex}
 \spellsr{Yes (Reflex)}
 \spelldmg{1d6 fire damage \add 1d6 per four caster levels above 2nd}
 \begin{spelleffect}
-    You make a Reflex attack to deal damage to everything in the area. A failed attack deals half damage. Unattended flammable objects burn if the flames touch them. A character can extinguish burning items as a full-round action.
+    Everything in the area takes damage. A failed attack deals half damage. Unattended flammable objects burn if the flames touch them. A character can extinguish burning items as a full-round action.
 \end{spelleffect}
 
 \pdfbookmark[2]{C}{SpellDescriptionsC}
@@ -511,11 +511,11 @@
 \spellrng{\rngmed}
 \spellarea{\arealarge vertical line of lightning, 5 ft. wide}
 \spelldur{Instantaneous and \durmed (D); see text}
-\spelldef{Reflex half}
+\spelldef{Magic vs. Reflex}
 \spellsr{Yes (Reflex)}
 \spelldmg{3d8 electricity damage \add d8 per four caster levels above 6th}
 \begin{spelleffect}
-  Immediately upon completion of the spell, and once per round thereafter, you may call down a vertical bolt of lightning which deals damage to anyone in its path. When you do, you make a Reflex attack to deal damage to everything in the bolt's path. A failed attack deals half damage. Calling a bolt is a standard action that requires concentration. You may call a total number of bolts equal to your caster level.
+  Immediately upon completion of the spell, and once per round thereafter, you may call down a vertical bolt of lightning which deals damage to anyone in its path. When you do, you make a magic attack vs. Reflex to deal damage to everything in the bolt's path. A failed attack deals half damage. Calling a bolt is a standard action that requires concentration. You may call a total number of bolts equal to your caster level.
   \par If you are outdoors and in a stormy area -- a rain shower, clouds and wind, hot and cloudy conditions, or even a tornado (including a whirlwind formed by a djinni or an air elemental of at least Large size) -- each bolt deals 3d10 electricity damage \add d10 per four caster levels above 6th instead.
 \end{spelleffect}
 \begin{spellnotes}
@@ -526,17 +526,14 @@
 \spelldesc{You repeatedly call intense bolts of lightning that flash down from thin air to smite your foes.}
 \spellschool{Evocation (Energy) [Electricity]}
 \spelllvl{Air 5, Nature 5}
-\spelldef{Reflex half/Reflex negates}
+\spelldef{Magic vs. Reflex and Fortitude}
 \spelldmg{5d8 electricity damage \add d8 per four caster levels above 10th}
 \begin{spelleffect}
     This spell functions like \spell{call lightning}, except that it can stagger bloodied creatures, as noted below. If you are outdoors in a stormy area, each bolt deals 5d10 electricity damage \add d10 per four caster levels above 10th instead.
 \end{spelleffect}
 \begin{spellblood}
-    If your Reflex attack succeeds against a bloodied creature (after taking into account the damage dealt by this spell), it is staggered for 1 round.
+    If your magic attack beats the target's Fortitude, it is \staggered for 1 round.
 \end{spellblood}
-\begin{spellnotes}
- A staggered character may take a single move action or standard action each round, but not both. She cannot take full-round actions, but she may take swift actions. In addition, she is \vulnerable, causing her to take a \minus2 penalty on attacks, defenses, and checks.
-\end{spellnotes}
 
 \spellsection{Calm Emotions}
 \spelldesc{You calm a group of creatures, preventing the situation from getting out of hand.}
@@ -568,7 +565,7 @@
 \spellsr{Yes (Reflex)}
 \spelldmg{5d10 electricity damage \add d10 per four caster levels above 10th}
 \begin{spelleffect}
-    You make a Reflex attack to deal damage to all of the spell's targets. A failed attack deals half damage. This spell deals full damage to the primary target and half damage to each of the secondary targets. No secondary target can be struck more than once. You can choose to affect fewer secondary targets than the maximum.
+    All of the spell's targets take damage. A failed attack deals half damage. This spell deals full damage to the primary target and half damage to each of the secondary targets. No secondary target can be struck more than once. You can choose to affect fewer secondary targets than the maximum.
 \end{spelleffect}
 
 \spellsection{Changestaff}
@@ -594,11 +591,11 @@
 \spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{Instantaneous/5 rounds}
-\spelldef{None/Will half}
+\spelldef{Magic vs. Will}
 \spellsr{Yes (Will)}
 \spelldmg{8d6 divine damage \add d6 per two caster levels above 8th}
 \begin{spelleffect}
-    If the target is not chaotic, it is bewildered for 5 rounds, and you make a Will attack to deal damage to it. A failed attack deals half damage.
+    If the target is not chaotic, it is \bewildered for 5 rounds and takes damage. A failed attack deals half damage, but does not prevent the creature from being bewildered.
 \end{spelleffect}
 
 \spellsection{Charm Monster}
@@ -620,7 +617,7 @@
 \spelldef{Magic vs. Will}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-    If you succeed at a Will attack, the subject regards you as its trusted friend and ally. If it is currently faced with any obvious threat from you or your allies, such as someone drawing a weapon, casting a spell, or aiming a ranged weapon at the creature, you take a \minus5 penalty on the Will attack.
+    The subject regards you as its trusted friend and ally. If it is currently faced with any obvious threat from you or your allies, such as someone drawing a weapon, casting a spell, or aiming a ranged weapon at the creature, you take a \minus5 penalty on the magic attack.
   \par The spell does not enable you to control the subject as if it were an automaton, but it perceives your words and actions in the most favorable way. You can try to give the subject orders, but you must succeed at a Persuasion check to convince it to do anything it wouldn't ordinarily do. (Retries are not allowed.) Treat the target as a friend (a \plus10 relationship modifier) for the purpose of the Persuasion check. An affected creature never obeys suicidal or obviously harmful orders, but it might be convinced that something very dangerous is worth doing.
 \end{spelleffect}
 \begin{spellnotes}
@@ -649,7 +646,7 @@
 \spelldef{Magic vs. Fortitude}
 \spellsr{Yes (Fortitude)}
 \begin{spellblood}
-    You make a Fortitude attack against each affected creature. A successful attack reduces a target to 0 hit points and deals 9 critical damage, causing the target to begin dying.
+    You make a magic attack vs. Fortitude against each affected creature. A successful attack reduces the target to 0 hit points and deals 9 critical damage, causing the target to begin dying.
 \end{spellblood}
 \begin{spellnotes}
   This spell can affect 2 levels worth of living creatures per caster level. Creatures with the lowest level are affected first; among creatures with equal levels, those who are closest to the burst's point of origin are affected first. No creature whose level is greater than half your caster level can be affected, and levels that are not sufficient to affect a creature are wasted. Healthy creatures are not affected by the spell, and do not count against the spell's level limit.
@@ -660,18 +657,17 @@
 \spelldesc{You create a floating, disembodied hand made of magical force that strikes your foe.}
 \spellschool{Evocation (Control) [Force]}
 \spelllvl{Evoc 9, Strength 9}
-\spelldef{None/Magic vs. Fortitude}
+\spelldef{Special vs. AD, Magic vs. Fortitude}
 \spellsr{Yes (Fortitude)}
 \spelldmg{2d10 force damage \add half casting attribute}
 \begin{spelleffect}
-  This spell functions like \spell{interposing hand}, except that the hand can also strike one opponent that you select. The floating hand can move as far as 60 feet and can attack in the same round. Since this hand is directed by you, its ability to notice or attack invisible or concealed creatures is no better than yours.
-  \par The hand attacks once per round, and its attack bonus equals your caster level \add your casting attribute, which is the hand's Strength score, \minus1 for being Large.
+  This spell functions like \spell{interposing hand}, except that the hand can also strike foes. Each round, as a swift action, you can command the hand to attack a foe. If you do, it makes a physical attack against that foe during the action phase. Its attack bonus equals your caster level \add your casting attribute (the hand's Strength) \sub 1 (for being Large).
 \end{spelleffect}
 \begin{spellblood}
-  You also make a Fortitude attack against the struck creature to daze it for 1 round.
+    If the struck creature is bloodied, you also make a magic attack vs. Fortitude to daze it for 1 round.
 \end{spellblood}
 \begin{spellnotes}
-  Directing the spell to a new target is a swift action.
+  The floating hand can move as far as 60 feet and can attack in the same round. Since this hand is directed by you, its ability to notice or attack invisible or concealed creatures is no better than yours.
 \end{spellnotes}
 
 \spellsection{Cloak of Chaos}
@@ -696,9 +692,9 @@
 \spelldesc{You conjure a yellowish green fog bank that obscures vision and slowly poisons creatures inside.}
 \spellschool{Conjuration (Creation) [Fog, Poison]}
 \spelllvl{Arcane 7}
-\spelldef{None/Magic vs. Fortitude}
+\spelldef{Magic vs. Fortitude}
 \begin{spelleffect}
-  This spell functions like \spell{fog cloud}, except that the fog is poisonous. When you cast this spell, and at the start of each of your turns, you make a Fortitude attack against all living creatures in the area to deal 1d4 Constitution damage.
+  This spell functions like \spell{fog cloud}, except that the fog is poisonous. At the end of each round, you make a magic attack vs. Fortitude against all living creatures in the area to deal 1d4 Constitution damage.
   \par Unlike a \spell{fog cloud}, the \spell{cloudkill} moves away from you at 10 feet per round, rolling along the surface of the ground. Figure out the cloud's new spread each round based on its new point of origin, which is 10 feet farther away from the point of origin where you cast the spell.
 \end{spelleffect}
 \begin{spellnotes}
@@ -715,11 +711,9 @@
 \spelldef{Magic vs. Will}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  You make a Will attack against each creature in the area to dazzle and bewilder them.
+    Creatures in the area are \dazzled and \bewildered.
 \end{spelleffect}
 \begin{spellnotes}
-  A dazzled creature has a 20\% miss chance on all physical attacks and takes a \minus4 penalty to Spot checks. He is also unable to see with darkvision. A bewildered creature is mentally affected in a way that detracts from its ability to act, causing it to be \vulnerable. It takes a \minus2 penalty to attacks, defenses, and checks.
-
   Creatures who cannot see the light are not affected by this spell. Merely closing one's eyes is insufficient protection, however.
 \end{spellnotes}
 
@@ -750,10 +744,10 @@
 \spelldef{Magic vs. Will}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
-  The subject is bewildered, making it \vulnerable.
+  The subject is \bewildered.
 \end{spellhealthy}
 \begin{spellblood}
-  The subject must perform one of the following actions of your choice.
+  The subject must perform one of the following actions, as you choose.
   \par \subspell{Approach} On its turn, the subject moves toward you as quickly and directly as possible. The creature may do nothing but move during its turn, and it provokes attacks of opportunity for this movement as normal.
   \par \subspell{Drop} As soon as possible, the subject drops whatever it is holding. It may act normally on its turn, except that it can't pick up any dropped items.
   \par \subspell{Fall} As soon as possible, the subject falls to the ground. It may act normally on its turn, except that it can't get up from its prone position.
@@ -781,11 +775,11 @@
 \spelllvl{Arcane 5, Nature 5}
 \spellarea{\areamed cone-shaped burst}
 \spelldur{Instantaneous and 1 round}
-\spelldef{Reflex half/None}
+\spelldef{Magic vs. Reflex}
 \spellsr{Yes (Reflex)}
 \spelldmg{5d6 cold damage \add d6 per four caster levels above 10th.}
 \begin{spelleffect}
-    You make a Reflex attack to deal damage to everything in the area. A failed attack deals half damage. Creatures damaged by the spell are fatigued for 5 rounds.
+    Everything in the area takes damage. A failed attack deals half damage. Creatures damaged by the spell are \fatigued for 5 rounds.
 \end{spelleffect}
 
 \spellsectioncomma{Cone of Cold}{Greater}
@@ -808,14 +802,11 @@
 \spelldef{Magic vs. Will}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
-  The subject is bewildered, making it \vulnerable.
+  The subject is \bewildered.
 \end{spellhealthy}
 \begin{spellblood}
-  The subject is confused. \confusionexplanation
+  The subject is confused. \confusionexplanation A confused creature does not make attacks of opportunity against any creature that it is not already devoted to attacking (either because of its most recent action or because it has just been attacked).
 \end{spellblood}
-\begin{spellnotes}
-  \par Attackers are not at any special advantage when attacking a \spell{confused} character. A \spell{confused} character will not make attacks of opportunity against any creature that it is not already devoted to attacking (either because of its most recent action or because it has just been attacked).
-\end{spellnotes}
 
 \spellsectioncomma{Confusion}{Mass}
 \spelldesc{You compel a group of creatures to act randomly, sowing confusion in your foes' ranks.}
@@ -834,7 +825,7 @@
 \spellrng{\rngfar}
 \spellarea{Water in one volume/level of 10 ft. by 10 ft. by 2 ft. (S)}
 \spelldur{\durmed (D)}
-\spelldef{None; see text}
+\spelldef{None}
 \spellsr{No}
 \begin{spelleffect}
   Depending on the version you choose, the \spell{control water} spell raises or lowers water.
@@ -851,7 +842,7 @@
 \spellrng{\rngclose}
 \spelleff{Illusory sounds}
 \spelldur{\durshort (D)}
-\spelldef{Will disbelief (if interacted with)}
+\spelldef{Magic check vs. Perception and Will (if interacted with)}
 \spellsr{No}
 \begin{spelleffect}
   This spell allows you to create a volume of sound that rises, recedes, approaches, or remains at a fixed place. You choose what type of sound this spell creates when casting it and cannot thereafter change the sound's basic character.
@@ -885,14 +876,11 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{Magic vs. Fortitude}
 \spellsr{Yes (Fortitude)}
 \begin{spellhealthy}
-  The subject is staggered. It can take a move action or a standard action each round, but not both. 
+  The subject is \staggered.
 \end{spellhealthy}
 \begin{spellblood}
   The subject cannot move its limbs, including any wings. Generally, that means it is paralyzed, except that it can move its head and mouth.
 \end{spellblood}
-\begin{spellnotes}
- A staggered character may take a single move action or standard action each round, but not both. She cannot take full-round actions, but she may take swift actions. In addition, she is \vulnerable, causing her to take a \minus2 penalty on attacks, defenses, and checks.
-\end{spellnotes}
 
 \spellsection{Crushing Despair}
 \spelldesc{You fill a number of creatures with sadness and gloom.}
@@ -910,7 +898,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldesc{You create a floating, disembodied hand made of magical force that crushes your foe in its grasp.}
 \spellschool{Evocation (Control) [Force]}
 \spelllvl{Evoc 8}
-\spelldef{Fortitude partial}
+\spelldef{Special vs. Maneuver defense}
 \spellsr{Yes (Fortitude)}
 \spelldmg{2d6 \add half casting attribute}
 \begin{spelleffect}
@@ -945,11 +933,11 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelltgt{One creature}
 \spelldur{Instantaneous}
-\spelldef{Fortitude half; see text}
+\spelldef{Magic vs. Fortitude}
 \spellsr{Yes (Fortitude)}
 \spellheal{2d6 damage \add d6 per two caster levels above 2nd}
 \begin{spelleffect}
-  You heal the target. Since undead are powered by negative energy, this spell deals positive damage to them instead of curing their wounds.
+  You heal the target. Since undead are powered by negative energy, this spell deals positive damage to them instead of curing their wounds. A failed attack heals or inflicts half damage.
 \end{spelleffect}
 
 \spellsectioncomma{Cure Light Wounds}{Mass}
@@ -960,11 +948,11 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellarea{\areamed radius limit}
 \spelltgts{Five creatures within the area}
 \spelldur{Instantaneous}
-\spelldef{Fortitude half; see text}
+\spelldef{Magic vs. Fortitude}
 \spellsr{Yes (Fortitude)}
 \spellheal{5d6 damage \add d6 per four caster levels above 10th}
 \begin{spelleffect}
-  You heal the targets. Like other \spellindirect{cure light wounds}{cure} spells, this spell deals positive damage to affected undead rather than curing them.
+  You heal the targets. Like other \spellindirect{cure light wounds}{cure} spells, this spell deals positive damage to affected undead rather than curing them. A failed attack deals half damage.
 \end{spelleffect}
 
 \spellsection{Cure Moderate Wounds}
@@ -1117,7 +1105,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{Magic vs. Will}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
-  The subject is bewildered, making it \vulnerable.
+  The subject is \bewildered.
 \end{spellhealthy}
 \begin{spellblood}
   The subject immediately falls asleep. If left undisturbed, it will sleep until it dies. As long as it remains bloodied, it cannot be awakened until the spell's duration expires, though it can be awakened normally after that point.
@@ -1185,7 +1173,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{Magic vs. Fortitude}
 \spellsr{Yes (Fortitude)}
 \begin{spellhealthy}
-  The target is staggered for 5 rounds. It can take a move action or a standard action each round, but not both.
+  The target is \staggered for 5 rounds.
 \end{spellhealthy}
 \begin{spellblood}
   The target loses all its hit points and takes 9 critical damage, causing it to begin dying.
@@ -1291,13 +1279,13 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spelltgt{One creature}
 \spelldur{\durlong/5 rounds}
-\spelldef{Will partial}
+\spelldef{Magic vs. Will}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-    You make a Will attack against the subject. Success means it cannot travel extradimensionally for an hour, while failure reduces the duration to 5 rounds. Effects barred by a \spell{dimensional anchor} include \spell{astral projection}, \spell{blink}, \spell{dimension door}, \spell{ethereal jaunt}, \spell{gate}, \spell{maze}, \spell{plane shift}, \spell{shadow walk}, \spell{teleport}, and similar spell-like, psionic, or supernatural abilities.
+    The subject cannot travel extradimensionally. If your magic attack succeeds, this spell's duration is one hour, while a failed attack reduces the duration to 5 rounds. Effects barred by a \spell{dimensional anchor} include \spell{astral projection}, \spell{blink}, \spell{dimension door}, \spell{ethereal jaunt}, \spell{gate}, \spell{maze}, \spell{plane shift}, \spell{shadow walk}, \spell{teleport}, and similar spell-like or supernatural abilities.
 \end{spelleffect}
 \begin{spellnotes}
-  A dimensional anchor does not interfere with the movement of creatures already in ethereal or astral form when the spell is cast, nor does it block extradimensional perception or attack forms, such as summoning monsters. Also, dimensional anchor does not prevent summoned creatures from disappearing at the end of a summoning spell. 
+    This spell does not interfere with the movement of creatures already in ethereal or astral form when the spell is cast, nor does it block extradimensional perception or attack forms, such as summoning monsters. Also, it does not prevent summoned creatures from disappearing at the end of a summoning spell.
 \end{spellnotes}
 
 \spellsection{Discern Lies}
@@ -1343,11 +1331,11 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelleff{Ray}
 \spelldur{Instantaneous}
-\spelldef{Fortitude half (object)}
+\spelldef{Physical vs. Reflex, Magic vs. Fortitude (object)}
 \spellsr{Yes (Fortitude)}
 \spelldmg{12d8 physical damage \add d8 per two caster levels above 12th}
 \begin{spelleffect}
-  Any creature reduced to 0 hit points by this spell is entirely disintegrated, leaving behind only a trace of fine dust. A disintegrated creature's equipment is unaffected.
+    If you hit the target with a ranged touch attack, you make a magic attack vs. Fortitude to deal damage. If that attack fails, you deal half damage. Any creature reduced to 0 hit points by this spell is entirely disintegrated, leaving behind only a trace of fine dust. A disintegrated creature's equipment is unaffected.
   \par When used against an object, the ray simply disintegrates as much as one 10-foot cube of nonliving matter. Thus, the spell disintegrates only part of any very large object or structure targeted. The ray affects even objects constructed entirely of force, \spell{wall of force}, but not magical effects such as an \spell{antimagic field}.
 \end{spelleffect}
 \begin{spellnotes}
@@ -1360,10 +1348,10 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelltgt{One extraplanar creature}
 \spelldur{Instantaneous}
-\spelldef{Magic vs. Will; see text}
+\spelldef{Magic vs. Will}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  This spell forces an extraplanar creature, including any summoned creature, back to its proper plane. If the spell is successful, the creature is instantly whisked away, but there is a 20\% chance of actually sending the subject to a plane other than its own.
+    This spell forces an extraplanar creature, including any summoned creature, back to its proper plane. There is a 20\% chance of actually sending the subject to a plane other than its own.
 \end{spelleffect}
 
 \spellsection{Dispel Magic}
@@ -1421,10 +1409,10 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spelltgt{One melee weapon}
 \spelldur{\durshort}
-\spelldef{Magic vs. Will (object)/Magic vs. Fortitude}
+\spelldef{Magic vs. Will (object), Magic vs. Fortitude}
 \spellsr{Yes (Will)/Yes (Fortitude)}
 \begin{spelleffect}
-  This spell infuses a melee weapon with positive energy, making it deadly to undead. The first time the weapon strikes a bloodied undead creature each round, you make a Fortitude attack against the creature to destroy it utterly. Healthy undead creatures suffer no ill effect.
+    This spell infuses a melee weapon with positive energy, making it deadly to undead. The first time the weapon strikes a bloodied undead creature each round, you make a magic attack vs. Fortitude to destroy the struck creature utterly. Healthy undead creatures suffer no ill effect.
 \end{spelleffect}
 
 \spellsection{Divine Favor}
@@ -1485,7 +1473,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spelltgt{One Large or smaller creature}
 \spelldur{\durshort}
-\spelldef{No}
+\spelldef{None}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   The subject moves at half speed and takes a \minus2 penalty to physical defenses. If it is flying within 10 feet of the ground, the subject falls to the ground.
@@ -1528,15 +1516,15 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngfar}
 \spellarea{\arealarge radius spread (S)}
 \spelldur{1 round}
-\spelldef{See text}
+\spelldef{Magic vs. Reflex}
 \spellsr{No}
 \begin{spelleffect}
-    You make a Reflex attack against everything in the area. This attack has various effects, depending on the terrain. Regardless of the terrain, creatures on the ground can't move and take a \minus10 penalty to physical attacks. A spellcaster on the ground who attempts to cast a spell must make a Concentration check against a DC equal to (your attack result \add double the level of the spell being cast) or lose the spell. The specific effect of an earthquake spell depends on the nature of the terrain where it is cast.
-  \par \subspell{Cave, Cavern, or Tunnel} The spell collapses the roof, dealing 8d8 bludgeoning damage \add d8 per four caster levels above 16th to any creature caught under the cave-in. If your Reflex attack is successful against a creature, it is pinned beneath the rubble, while a failed attack deals half damage. An earthquake cast on the roof of a very large cavern could also endanger those outside the actual area but below the falling debris.
-  \par \subspell{Cliffs} Earthquake causes a cliff to crumble, creating a landslide that travels horizontally as far as it fell vertically. Any creature in the path takes 8d6 bludgeoning damage \add d6 per four caster levels above 16th. If your Reflex attack is successful against a creature, it is pinned beneath the rubble, while a failed attack deals half damage.
-  \par \subspell{Open Ground} If your Reflex attack is successful against a creature, it falls prone. In addition, fissures open in the earth, and every creature on the ground has a 25\% chance to be above one. You make a Reflex attack against each creature threatened by a fissure. A successful attack causes a creature to fall into the fissure. At the end of the spell, all fissures grind shut, dealing 8d10 bludgeoning damage \add d10 per four caster levels above 16th to any creatures trapped in them and ejecting their bodies (dead or alive).
-  \par \subspell{Structure} Any structure standing on open ground takes 10 damage per caster level, enough to collapse a typical wooden or masonry building, but not a structure built of stone or reinforced masonry. Hardness does not reduce this damage, nor is it halved as damage dealt to objects normally is. Any creature caught inside a collapsing structure takes 8d6 bludgeoning damage \add d6 per four caster levels above 16th. If your Reflex attack is successful against a creature, it is pinned beneath the rubble, while a failed attack deals half damage.
-  \par \subspell{River, Lake, or Marsh} Fissures open underneath the water, draining away the water from that area and forming muddy ground. Soggy marsh or swampland becomes quicksand for the duration of the spell, sucking down creatures and structures.  If your Reflex attack is successful against a creature, it sinks ten feet beneath the surface, buried in the mud and quicksand. A DC 25 Climb or Swim check is required to escape. At the end of the spell, the rest of the body of water rushes in to replace the drained water, possibly drowning those caught in the mud.
+    This spell has various effects, depending on the terrain. Regardless of the terrain, creatures on the ground can't move and take a \minus10 penalty to physical attacks. A spellcaster on the ground who attempts to cast a spell must make a Concentration check against a DC equal to (your attack result \add double the level of the spell being cast) or lose the spell. The specific effect of an earthquake spell depends on the nature of the terrain where it is cast.
+  \par \subspell{Cave, Cavern, or Tunnel} The spell collapses the roof, dealing 8d8 bludgeoning damage \add d8 per four caster levels above 16th to any creature caught under the cave-in. If your attack is successful against a creature, it is pinned beneath the rubble, while a failed attack deals half damage. An earthquake cast on the roof of a very large cavern could also endanger those outside the actual area but below the falling debris.
+  \par \subspell{Cliffs} Earthquake causes a cliff to crumble, creating a landslide that travels horizontally as far as it fell vertically. Any creature in the path takes 8d6 bludgeoning damage \add d6 per four caster levels above 16th. If your attack is successful against a creature, it is pinned beneath the rubble, while a failed attack deals half damage.
+  \par \subspell{Open Ground} If your attack is successful against a creature, it falls prone. In addition, fissures open in the earth, and every creature on the ground has a 25\% chance to be above one. You make a magic attack vs. Reflex against each creature threatened by a fissure. A successful attack causes a creature to fall into the fissure. At the end of the spell, all fissures grind shut, dealing 8d10 bludgeoning damage \add d10 per four caster levels above 16th to any creatures trapped in them and ejecting their bodies (dead or alive).
+  \par \subspell{Structure} Any structure standing on open ground takes 10 damage per caster level, enough to collapse a typical wooden or masonry building, but not a structure built of stone or reinforced masonry. Hardness does not reduce this damage, nor is it halved as damage dealt to objects normally is. Any creature caught inside a collapsing structure takes 8d6 bludgeoning damage \add d6 per four caster levels above 16th. If your attack is successful against a creature, it is pinned beneath the rubble, while a failed attack deals half damage.
+  \par \subspell{River, Lake, or Marsh} Fissures open underneath the water, draining away the water from that area and forming muddy ground. Soggy marsh or swampland becomes quicksand for the duration of the spell, sucking down creatures and structures.  If your attack is successful against a creature, it sinks ten feet beneath the surface, buried in the mud and quicksand. A DC 25 Climb or Swim check is required to escape. At the end of the spell, the rest of the body of water rushes in to replace the drained water, possibly drowning those caught in the mud.
 \end{spelleffect}
 \begin{spellnotes}
     A creature pinned beneath rubble is treated as being pinned. Each round, it can attempt to escape the pin as a standard action. Escaping requires a DC 20 Escape Artist check or grapple attack. As long as it stays pinned, it takes 1d6 nonlethal damage per minute. If a pinned creature falls unconscious, it takes 1d6 lethal damage each minute until it is freed or dies.
@@ -1548,11 +1536,11 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelllvl{Earth 3, Nature 3}
 \spellrng{\rngmed}
 \spelltgt{One creature or object}
-\spelldef{None}
+\spelldef{Special vs. AD and Maneuver Defense}
 \spellsr{Yes (Fort)}
 \spelldmg{6d8 piercing damage \add d8 per two levels above 6th}
 \begin{spelleffect}
-    If the target is within 10 feet of natural earth or stone, you make a physical attack using your caster level \add your casting attribute as your attack bonus. If you hit, it takes damage. If you also beat its Maneuver Class, it is immobilized for 5 rounds, preventing it from moving from its space.
+    If the target is within 10 feet of natural earth or stone, you make a physical attack using your caster level \add your casting attribute as your attack bonus. If you hit, the target takes damage. If your attack also beats its Maneuver Class, it is immobilized for 5 rounds, preventing it from moving from its space.
 
     An immobilized creature can break free by destroying the spike. The spike's physical defenses are all 10, and it has 2 hit points per caster level.
 \end{spelleffect}
@@ -1709,13 +1697,13 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spellarea{\areasmall radius spread}
 \spelldur{\durshort (D)}
-\spelldef{Reflex partial}
+\spelldef{Magic vs. Reflex}
 \spellsr{No}
 \begin{spelleffect}
-    When you cast this spell, and at the start of each of your turns, you make a Reflex attack against all creatures and objects in the area to entangle them. An entangled creature can break free and move half its normal speed by using a standard action to make a grapple attack or an Escape Artist check that beats your Reflex attack. Creatures in the area that are not entangled can still move at only half speed through the area.
+    At the end of each round, you make a magic attack vs. Reflex against all creature and objects in the area to make them \entangled. An entangled creature can break free and move half its normal speed by using a standard action to make a grapple attack or an Escape Artist check that beats your magic attack. Creatures in the area that are not entangled can still move at only half speed through the area.
 \end{spelleffect}
 \begin{spellnotes}
-  The effects of the spell may be altered somewhat based on the nature of the entangling plants. If no plants exist in the area, the spell has no effect.
+    The effects of the spell may be altered somewhat based on the nature of the entangling plants. If no plants exist in the area, the spell has no effect.
 \end{spellnotes}
 
 \spellsection{Entangling Growth}
@@ -1773,11 +1761,11 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{Magic vs. Will (harmless)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  Your base land speed doubles, to a maximum of a \plus30 foot increase. (This adjustment is treated as an enhancement bonus.) There is no effect on other modes of movement.
+    The subject's base land speed doubles, to a maximum of a \plus30 foot increase. (This adjustment is treated as an enhancement bonus.) There is no effect on other modes of movement.
 \end{spelleffect}
 \begin{spellnotes}
- As with any effect that increases your speed, this spell affects your jumping distance.
- \end{spellnotes}
+    As with any effect that increases your speed, this spell affects your jumping distance (see \pcref{Athletics}).
+\end{spellnotes}
 
 \pdfbookmark[2]{F}{SpellDescriptionsF}
 \begin{comment}
@@ -1817,31 +1805,30 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{Magic vs. Will}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
-  Creatures in the area are shaken, causing them to be \vulnerable.
+    Creatures in the area are \shaken.
 \end{spellhealthy}
 \begin{spellblood}
-  Creatures in the area are frightened.
+    Creatures in the area are \frightened.
 \end{spellblood}
 
 \spellsection{Feather Fall}
 \spellschool{Evocation (Control) [Air]}
 \spelllvl{Air 1, Evoc 1, Travel 1}
 \spellcmp{Verbal only}
-\spelltime{1 immediate action}
+\spelltime{1 swift action}
 \spellrng{\rngmed}
 \spellarea{\areamed radius limit}
 \spelltgts{Five Medium or smaller freefalling object or creatures within the area}
 \spelldur{\durshort or until landing}
-\spelldef{Magic vs. Will (harmless) or Magic vs. Will (object)}
+\spelldef{Magic vs. Will (harmless, object)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  The affected creatures or objects fall slowly. Feather fall instantly changes the rate at which the targets fall to a mere 60 feet per round (equivalent to the end of a fall from a few feet), and the subjects take no damage upon landing while the spell is in effect. However, when the spell duration expires, a normal rate of falling resumes.
+    The affected creatures or objects fall slowly. Feather fall instantly changes the rate at which the targets fall to a mere 60 feet per round (equivalent to the end of a fall from a few feet), and the subjects take no damage upon landing while the spell is in effect. However, when the spell duration expires, a normal rate of falling resumes.
   \par The spell affects one or more Medium or smaller creatures (including gear and carried objects up to each creature's maximum load) or objects, or the equivalent in larger creatures: A Large creature or object counts as two Medium creatures or objects, a Huge creature or object counts as two Large creatures or objects, and so forth.
   \par If the spell is cast on a falling item, the object does half normal damage based on its weight, with no bonus for the height of the drop.
 \end{spelleffect}
 \begin{spellnotes}
-  You can cast this spell instantaneously, quickly enough to save yourself if you unexpectedly fall. 
-  \par Feather fall works only upon free-falling objects. It no special effect on ranged weapons unless they are falling quite a distance. It does not affect a sword blow or a charging or flying creature.
+    \par Feather fall works only upon free-falling objects. It no special effect on ranged weapons unless they are falling an extraordinary distance. It does not affect a sword blow or a charging or flying creature.
 \end{spellnotes}
 
 \spellsection{Feeblemind}
@@ -1850,13 +1837,13 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngtouch}
 \spelltgt{Touched creature}
 \spelldur{Instantaneous}
-\spelldef{Magic vs. Will}
+\spelldef{Physical vs. Reflex, Magic vs. Will}
 \spellsr{Yes (Will)}
 \begin{spellhealthy}
-  The target is bewildered, making it \vulnerable for 5 rounds.
+    If you hit on a melee touch attack, the target is bewildered.
 \end{spellhealthy}
 \begin{spellblood}
-  The target's Intelligence drops to \minus9, giving it roughly the intellect of a lizard. It is unable to use Intelligence-based skills, cast spells, understand language, or communicate coherently. Still, it knows who its friends are and can follow them and even protect them. The subject remains in this state until a \spell{heal}, \spell{limited wish}, \spell{miracle}, or \spell{wish} spell is used to cancel the effect of the \spell{feeblemind}.
+    If you hit on a melee touch attack, the target's Intelligence drops to \minus9, giving it roughly the intellect of a lizard. It is unable to use Intelligence-based skills, cast spells, understand language, or communicate coherently. Still, it knows who its friends are and can follow them and even protect them. The subject remains in this state until a \spell{heal}, \spell{limited wish}, \spell{miracle}, or \spell{wish} spell is used to cancel the effect of the \spell{feeblemind}.
 \end{spellblood}
 \begin{spellnotes}
   The target must be bloodied when the spell is cast to suffer the bloodied effect.
@@ -2189,13 +2176,14 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsection{Grasping Hand}
 \spellschool{Evocation (Control) [Force]}
 \spelllvl{Arcane 6}
+\spelldef{Special vs. Maneuver defense}
 \begin{spelleffect}
-  This spell functions like \spell{interposing hand}, except the hand can also grapple one opponent that you select. You must direct the hand to grapple an opponent as a swift action. If you do, the \spell{grasping hand} may make a grapple attack as a swift action. Its maneuver modifier equals your caster level \add your casting attribute, \plus4 for being Large. Its Maneuver Class is equal to 10 \add its maneuver modifier.
-  \par The hand holds but does not harm creatures it grapples. While the hand is grappling a foe, you must spend a swift action each round to sustain the hand's grapple; otherwise, the grappled creature escapes automatically.
+  This spell functions like \spell{interposing hand}, except the hand can also grapple foes. Each round, as a swift action, you can command the hand to grapple a foe. If you do, it makes a grapple attack against that foe during the action phase. Its attack bonus equals your caster level \add your casting attribute (the hand's Strength) \add 4 (for being Large). Its Maneuver defense is equal to 10 \add the same modifier.
+  \par The hand holds but does not harm creatures it grapples. While the hand is grappling a foe, you must spend a swift action each round to command the hand to sustain the grapple; otherwise, the grappled creature escapes automatically.
   \par If you do not direct the hand to grapple, it simply provides cover as \spell{interposing hand}.
 \end{spelleffect}
 \begin{spellnotes}
-  Directing the spell to a new target is a swift action.
+  The floating hand can move as far as 60 feet and can attack in the same round. Since this hand is directed by you, its ability to notice or attack invisible or concealed creatures is no better than yours.
 \end{spellnotes}
 
 \spellsection{Grease}
@@ -3231,7 +3219,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelltgt{You}
 \spelleff{One illusory double}
 \spelldur{\durshort (D); see text}
-\spelldef{None/Will disbelief (if interacted with); see text}
+\spelldef{Magic check vs. Perception and Will (if interacted with); see text}
 \spellsr{No}
 \begin{spelleffect}
   You become invisible (as \spell{invisibility}, a glamer), and at the same time, an illusory double of you (as \spell{major image}, an unreal figment) appears. You are then free to go elsewhere while your double moves away. The double appears within range but thereafter moves as you direct it (which requires concentration beginning on the first round after the casting). You can make the figment appear superimposed perfectly over your own body so that observers don't notice an image appearing and you turning invisible. You and the figment can then move in different directions. The double moves at your speed and can talk and gesture as if it were real, but it cannot attack or cast spells, though it can pretend to do so.
@@ -3618,7 +3606,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spelleff{One shadow duplicate}
 \spelldur{\durshort (D)}
-\spelldef{Will disbelief (if interacted with)}
+\spelldef{Magic check vs. Perception and Will (if interacted with)}
 \spellsr{No}
 \begin{spelleffect}
   You tap energy from the Plane of Shadow to create a quasi-real, illusory version of yourself. The projected image looks, sounds, and smells like you but is intangible. The projected image mimics your actions (including speech) unless you direct it to act differently (which is a move action).
@@ -4106,7 +4094,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelltgt{You}
 \spelleff{One shadow duplicate}
 \spelldur{\durmed}
-\spelldef{None/Will disbelief (if interacted with)}
+\spelldef{None/Magic check vs. Perception and Will (if interacted with)}
 \spellsr{No}
 \begin{spelleffect}
   You step into the Plane of Shadow (as \spell{shadow walk}, a planar translocation effect), and at the same time, you create a quasi-real, illusory version of yourself (as \spell{project image}, an unreal shadow effect). The double appears superimposed over your body so that observers don't notice an image appearing and you disappearing. You can then control the image and cast spells through it even though you are on a different plane.
@@ -4279,7 +4267,7 @@ Extraordinarily loud noises, such as the yell of a giant or a sonic attack, are 
 \spellarea{\areamed radius limit}
 \spelleff{Visual figment within the area}
 \spelldur{\durshort}
-\spelldef{Will disbelief (if interacted with)}
+\spelldef{Magic check vs. Perception and Will (if interacted with)}
 \spellsr{No}
 \begin{spelleffect}
   This spell creates the visual illusion of an object, creature, or force, as visualized by you. The illusion does not create sound, smell, texture, or temperature. If you concentrate as a standard action, you move the image within the limits of the size of the effect.
@@ -5360,7 +5348,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spellrng{\rngclose}
 \spelleff{Intelligible sound, usually speech}
 \spelldur{\durshort (D)}
-\spelldef{Will disbelief (if interacted with)}
+\spelldef{Magic check vs. Perception and Will (if interacted with)}
 \spellsr{No}
 \begin{spelleffect}
   You can make your voice (or any sound that you can normally make vocally) seem to issue from someplace else. You can speak in any language you know. With respect to such voices and sounds, anyone who disbelieves the sound recognizes it as illusory (but still hears it).
