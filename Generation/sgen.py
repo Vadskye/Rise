@@ -114,11 +114,14 @@ class SpellComponent:
             undispellable=None):
         self.level = calculate_base_level(alternate_effect, component_type, component_strength)
         if bloodied_only:
-            self.level *=0.4
+            self.level *= 0.4
+        print "base level:", self.level
         self.level += calculate_duration_modifier(component_type, component_strength, duration, requires_concentration, undispellable, save_ends, check_bloodied_instantly)
+        print "with duration modifier:", self.level
         self.level *= calculate_miscellaneous_component_multiplier(area,
                 escapable, healthy_only, limit_affected_types, noncombat,
                 saving_throw, touch_attack)
+        print "with miscellaneous modifiers:", self.level
 
 def calculate_base_level(alternate_effect, component_type, component_strength):
     level = {
@@ -151,6 +154,8 @@ def calculate_duration_modifier(component_type, component_strength, duration, re
         level = switch(duration, duration_choices, [0.5, 2, 3, 4, 5, 7])
     elif component_type==CONDITION or component_type==BUFF:
         level = switch(duration, duration_choices, [-3,0,1,2,3,5])
+    else:
+        raise Exception("unrecognized component_type %s" % component_type)
 
     #apply condition strength modifier
     if component_type==CONDITION:
@@ -170,6 +175,8 @@ def calculate_duration_modifier(component_type, component_strength, duration, re
         level*=HALF
     if check_bloodied_instantly:
         level*=PART
+
+    print "duration modifier:", level
     return level
 
 def calculate_miscellaneous_component_multiplier(area, escapable, healthy_only,
@@ -245,7 +252,7 @@ def parse_string_args_to_dict(text):
 def merge_args(parsed_component_args, general_args):
     merged_args = general_args.copy()
     for arg in parsed_component_args.keys():
-        if parsed_component_args[arg] is not None:
+        if parsed_component_args[arg]:
             merged_args[arg] = parsed_component_args[arg]
     return merged_args
 
