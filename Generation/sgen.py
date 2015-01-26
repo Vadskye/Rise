@@ -32,7 +32,7 @@ def initialize_argument_parser():
     parser.add_argument('--alternateeffect', dest = 'alternateeffect', 
             type=util.bool_parser)
     parser.add_argument('-u', '--duration', dest = 'duration', type=str,
-            choices=duration_choices, default='short')
+            choices=duration_choices)
     parser.add_argument('--undispellable', dest = 'undispellable',
             help='Immune to dispelling?', type=util.bool_parser)
     parser.add_argument('--concentration', dest = 'concentration', 
@@ -148,7 +148,7 @@ def rank_condition_strength(condition_strength):
 
 def calculate_duration_modifier(component_type, component_strength, duration, requires_concentration, undispellable, save_ends, check_bloodied_instantly):
     if duration is None:
-        return 0
+        duration = 'short'
     #duration_choices = ['round','short','medium','long','extreme', 'permanent']
     if component_type==DAMAGE:
         level = switch(duration, duration_choices, [0.5, 2, 3, 4, 5, 7])
