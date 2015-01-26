@@ -117,7 +117,7 @@
 \spellrng{\rngtouch}
 \spelltgt{Creature (Gargantuan or smaller) touched}
 \spelldur{\durshort}
-\spelldef{Magic vs. Fortitude (harmless)}
+\spelldef{Magic vs. Will (harmless)}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
   The subject can walk on air as if it were solid ground. The magic only affects the subject's legs, and does not grant the ability to climb vertically through the air.
@@ -1858,7 +1858,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{Magic vs. Fortitude}
 \spellsr{Yes (Fortitude)}
 \begin{spellhealthy}
-  The target is staggered for 5 rounds. It can take a move action or a standard action each round, but not both.
+  The target is \staggered for 5 rounds.
 \end{spellhealthy}
 \begin{spellblood}
   The target loses all its hit points and takes 9 critical damage, causing it to begin dying.
@@ -1871,16 +1871,16 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellarea{\areasmall or \areamed radius burst from the touched objects; see text}
 \spelltgts{Up to four touched acorns or up to eight touched holly berries}
 \spelldur{\durlong or until used}
-\spelldef{None or Reflex half; see text}
+\spelldef{Physical vs. Reflex, Magic vs. Reflex; see text}
 \spellsr{Yes (Reflex)}
 \spelldmg{6d6 fire damage \add d6 per four caster levels above 12th (acorn grenades);\par
 6d8 fire damage \add d8 per four caster levels above 12th (holly berry bombs)}
 \begin{spelleffect}
   Depending on the version of fire seeds you choose, you turn acorns into splash weapons that you or another character can throw, or you turn holly berries into bombs that you can detonate on command.
-  \par \subspell{Acorn Grenades} As many as four acorns turn into special splash weapons that can be hurled as far as 100 feet. When you throw an acorn, you make a Reflex attack to strike the intended target. If you miss, the acorn detonates in a random corner of the intended target square. Together, the acorns are capable of dealing 6d6 fire damage \add d6 per four caster levels above 12th, divided up among the acorns as you wish.
-  \par Each acorn explodes upon striking any hard surface. When it does, you make a Reflex attack to deal damage to all creatures in a \areasmall radius burst. A failed attack deals half damage. You automatically succeed on this attack against a creature struck by the acorn directly.
+  \par \subspell{Acorn Grenades} As many as four acorns turn into special splash weapons that can be hurled as far as 100 feet. When you throw an acorn, you make a physical ranged attack vs. Reflex to strike the intended target. If you miss, the acorn detonates in a random corner of the intended target square. Together, the acorns are capable of dealing 6d6 fire damage \add d6 per four caster levels above 12th, divided up among the acorns as you wish.
+  \par Each acorn explodes upon striking any hard surface. When it does, you make a magic attack vs. Reflex to deal damage to all creatures in a \areasmall radius burst. A failed attack deals half damage. You automatically succeed on this attack against a creature struck by the acorn directly.
   \par \subspell{Holly Berry Bombs} You turn as many as eight holly berries into special bombs. The holly berries are usually placed by hand, since they are too light to make effective thrown weapons (they can be tossed only 5 feet). Together, the holly berries are capable of dealing 6d6 fire damage \add d6 per four caster levels above 12th, divided up among the berries as you wish.
-  \par If you are within \rngmed range and speak a word of command (as a standard action), each berry instantly bursts into flame. When they do, you make a Reflex attack to deal damage to every creature in a \areamed radius burst of the berries. A failed attack deals half damage.
+  \par If you are within \rngmed range and speak a word of command (as a standard action), each berry instantly bursts into flame. When they do, you make a magic attack vs. Reflex to deal damage to every creature in a \areamed radius burst of the berries. A failed attack deals half damage.
 \end{spelleffect}
 \begin{spellnotes}
   You can only have one \spell{fire seeds} active at any time.
@@ -1890,15 +1890,15 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsection{Fire Shield}
 \spelldesc{You appear to immolate yourself in a wreath of flame that lashes out at anyone who tries to harm you.}
 \spellschool{Abjuration/Evocation (Energy, Shielding) [Fire or Cold]}
-\spelllvl{Arcane 4, Fire 5}
-\spellrng{\rngpers}
-\spelltgt{You}
+\spelllvl{Arcane 4, Fire 4}
+\spellrng{\rngpers/\rngclose}
+\spelltgt{You/One or more creatures}
 \spelldur{\durshort (D)}
-\spelldef{None/Reflex half}
+\spelldef{Magic vs. Reflex}
 \spellsr{No/Yes (Reflex)}
 \spelldmg{4d6 fire or cold damage \add d6 per four levels above 8th}
 \begin{spelleffect}
-  You can make a Reflex attack to deal damage to any creature that hits you with its body or a melee weapon. If your attack fails, you deal half damage. Each individual creature can take this damage only once per round. The damage type and other effects depend on which kind of \spell{fire shield} is used. This decision must be made at the time the spell is cast.
+    At the end of each round, you make a magic attack vs. Reflex to deal damage to all creatures within \rngclose range that attacked you with their body or a melee weapon that round. A failed attack deals half damage. The damage type and other effects depend on which kind of \spell{fire shield} is used. This decision must be made at the time the spell is cast.
 
   \par \subspell{Warm Shield} The flames are warm to the touch and deal fire damage. You gain cold damage reduction 20 \add 1 per caster level above 8th.
   \par \subspell{Chill Shield} The flames are cool to the touch and deal cold damage. You gain fire damage reduction 20 \add 1 per caster level above 8th.
@@ -1916,11 +1916,11 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spellarea{\arealarge spread}
 \spelldur{Instantaneous}
-\spelldef{Reflex half}
+\spelldef{Magic vs. Reflex}
 \spellsr{Yes (Reflex)}
 \spelldmg{8d6 fire damage \add d6 per four caster levels above 16th}
 \begin{spelleffect}
-    You make a Reflex attack to deal damage to everything in the area, except for your allies. A failed attack deals half damage.
+    Everything in the area, except your allies, takes damage. A failed attack deals half damage.
 \end{spelleffect}
 
 \spellsection{Fireball}
@@ -1930,14 +1930,14 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spellarea{\areasmall radius spread}
 \spelldur{Instantaneous}
-\spelldef{Reflex half}
+\spelldef{Magic vs. Reflex}
 \spellsr{Yes (Reflex)}
 \spelldmg{3d6 fire damage \add d6 per four caster levels above 6th.}
 \begin{spelleffect}
-    You make a Reflex attack to deal damage to everything in the area. A failed attack deals half damage.
+    Everything in the area takes damage. A failed attack deals half damage.
 \end{spelleffect}
 \begin{spellnotes}
-  If a destructive spell deals enough damage to an interposing barrier to shatter or breaks through it, its effects may continue beyond the barrier if the area permits; otherwise, it stops at the barrier just as any other spell effect does.
+    If a destructive spell deals enough damage to an interposing barrier to shatter or breaks through it, its effects may continue beyond the barrier if the area permits; otherwise, it stops at the barrier just as any other spell effect does.
 \end{spellnotes}
 
 \spellsection{Flame Blade}
@@ -1962,11 +1962,11 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spellarea{\areamed radius cylinder, 40 ft. high}
 \spelldur{Instantaneous}
-\spelldef{Reflex half}
+\spelldef{Magic vs. Reflex}
 \spellsr{Yes (Reflex)}
 \spelldmg{5d6 fire and divine damage \add d6 per four caster levels above 8th; see text}
 \begin{spelleffect}
-    You make a Reflex attack to deal damage to everything in the area. A failed attack deals half damage. Half the damage is fire damage, but the other half results directly from divine power. Your allies in the area take only the fire damage.
+    Everything in the area takes damage. A failed attack deals half damage. Half the damage is fire damage, but the other half results directly from divine power. Your allies in the area take only the fire damage.
 \end{spelleffect}
 
 \spellsection{Fly}
@@ -2008,14 +2008,13 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spelleff{Barred cage (20 ft. cube) or windowless cell (10 ft. cube)}
 \spelldur{\durlong (D)}
-\spelldef{Reflex negates; see text}
+\spelldef{Magic vs. Reflex}
 \spellsr{No}
 \begin{spelleffect}
-  This powerful spell brings into being an immobile, invisible cubical prison composed of either bars of force or solid walls of force (your choice).
+  This powerful spell brings into being an immobile, invisible cubical prison composed of either bars of force or solid walls of force (your choice). You make a magic attack vs. Reflex against any creature adjacent to the cage when it is formed. A failed attack allows the creature to disrupt the cage, preventing it cage from being formed in any squares adjacent to the creature. The rest of the cage is formed regardless.
   \par Creatures within the area are caught and contained unless they are too big to fit inside, in which case the spell automatically fails. Teleportation and other forms of astral travel provide a means of escape, but the force walls or bars extend into the Ethereal Plane, blocking ethereal travel.
-  \par A creature who makes a Reflex save chooses whether it wants to be inside or outside of the forcecage when it forms. The forcecage is formed regardless.
   \par Like a \spell{wall of force} spell, a forcecage resists \spell{dispel magic}, but it is \vulnerable to a \spell{disintegrate} spell, and it can be destroyed by a \magicitem{sphere of annihilation} or a \magicitem{rod of cancellation}.
-  \par \subspell{Barred Cage} This version of the spell produces a 20-foot cube made of bands of force (similar to a wall of force spell) for bars. The bands are a half-inch wide, with half-inch gaps between them. Any creature capable of passing through such a small space can escape; others are confined. You can't attack a creature in a barred cage with a weapon unless the weapon can fit between the gaps. Even against such weapons (including arrows and similar ranged attacks), a creature in the barred cage has cover. All spells and breath weapons can pass through the gaps in the bars.
+  \par \subspell{Barred Cage} This version of the spell produces a 20-foot cube made of bands of force (similar to a \spell{wall of force} spell) for bars. The bands are a half-inch wide, with half-inch gaps between them. Any creature capable of passing through such a small space can escape; others are confined. You can't attack a creature in a barred cage with a weapon unless the weapon can fit between the gaps. Even against such weapons (including arrows and similar ranged attacks), a creature in the barred cage has cover. All spells and breath weapons can pass through the gaps in the bars.
   \par \subspell{Windowless Cell} This version of the spell produces a 10-foot cube with no way in and no way out. Solid walls of force form its six sides.
 \end{spelleffect}
 
@@ -2039,7 +2038,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{Touch}
 \spelltgt{Touched creature}
 \spelldur{\durshort or \durlong; see text (D)}
-\spelldef{None or Magic vs. Will (harmless)}
+\spelldef{Magic vs. Will (harmless)}
 \spellsr{No or Yes (Will)}
 \begin{spelleffect} 
     The subject receives instantaneous warnings of impending danger or harm that would befall it. It gains an enhancement bonus to initiative checks equal to your caster level, and a \plus3 enhancement bonus to its dodge modifier and Reflex defense. This bonus increases to \plus4 at 14th level, and to \plus5 at 20th level.
@@ -2055,7 +2054,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldef{Magic vs. Will}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-    The subject forgets something simple. You can't make it forget something important, such as its name. You must know what you want it to forget. The spell does not prevent the subject from learning the information again, and it can remember the information normally after the spell's duration is done.
+    The subject forgets something simple. You can't make it forget something important, such as its name. You must know what you want it to forget. The spell does not prevent the subject from learning the information again, and it can remember the information normally after the spell's duration.
 \end{spelleffect}
 
 \spellsectioncomma{Foresight}{Greater}
@@ -2076,7 +2075,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsr{Yes (Will)}
 \begin{spelleffect}
   The subject can move and attack normally for the duration of the spell, even under the influence of magic that usually impedes movement, such as paralysis, \spell{solid fog}, \spell{slow}, and \spell{web}. The subject gains a \plus20 enhancement bonus to Maneuver Class against grapple attacks, as well as on grapple attacks or Escape Artist checks made to escape a grapple or a pin.
-  \par The spell also allows the subject to move and attack normally while underwater, provided that the weapon is wielded in the hand rather than hurled.
+  \par The spell also allows the subject to move and attack with melee weapons normally while underwater.
 \end{spelleffect}
 
 \spellsectioncomma{Freedom}{Mass}
@@ -2130,17 +2129,20 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \end{spellnotes}
 
 \spellsection{Ghoul Touch}
+\spelldesc{Your foe feels the touch of a ghoul's undead hand against its flesh.}
 \spellschool{Necromancy (Flesh)}
 \spelllvl{Arcane 1}
-\spellrng{\rngtouch}
-\spelltgt{Touched living creature}
-\spellarea{\areasmall radius emanation; see text}
-\spelldur{\durshort}
-\spelldef{None/Magic vs. Fortitude}
+\spellrng{\rngclose}
+\spelltgt{One living creature}
+\spelldur{1 round}
+\spelldef{Magic vs. Fortitude}
 \spellsr{Yes (Fortitude)}
-\begin{spelleffect}
-  The subject is sickened, making it \vulnerable. If you succeed at a Fortitude attack, it exudes a carrion stench that causes all living creatures (except you and the subject) in a \areasmall radius emanation of the subject to become sickened as long as they stay within the area, making them \vulnerable.
-\end{spelleffect}
+\begin{spellhealthy}
+    The subject is \sickened.
+\end{spellhealthy}
+\begin{spellblood}
+    The subject is \nauseated.
+\end{spellhealthy}
 
 \spellsection{Giant Vermin}
 \spellschool{Transmutation (Polymorph)}
@@ -2807,7 +2809,7 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
 \spelllvl{Arcane 3, Destruction 3, Nature 3}
 \spellarea{100 ft. line}
 \spelldur{Instantaneous}
-\spelldef{Reflex half}
+\spelldef{Magic vs. Reflex}
 \spellsr{Yes (Reflex)}
 \spelldmg{3d6 electricity damage \add d6 per four caster levels above 6th}
 \begin{spelleffect}
@@ -3130,7 +3132,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngfar}
 \spellarea{A \arealarge radius cylinder, 100 ft. high}
 \spelldur{Instantaneous}
-\spelldef{Reflex half/Reflex negates}
+\spelldef{Magic vs. Reflex/Reflex negates}
 \spellsr{Yes (Reflex)}
 \spelldmg{9d6 fire damage \add d6 per four caster levels above 18th}
 \begin{spelleffect}
@@ -3533,9 +3535,9 @@ This spell can be made permanent with a \spell{permanency} ritual.
   \begin{dtable}
     \begin{tabularx}{\columnwidth}{l >{\lcol}p{4em} >{\lcol}X}
       \thead{1d8} & \thead{Color of Beam} & \thead{Effect} \\
-      1 & Red & 15 points fire damage (Reflex half) \\
-      2 & Orange & 30 points acid damage (Reflex half) \\
-      3 & Yellow & 45 points electricity damage (Reflex half) \\
+      1 & Red & 15 points fire damage (Magic vs. Reflex) \\
+      2 & Orange & 30 points acid damage (Magic vs. Reflex) \\
+      3 & Yellow & 45 points electricity damage (Magic vs. Reflex) \\
       4 & Green & 40 damage and nauseated for 1 round (Magic vs. Fortitude) \\
       5 & Blue & Petrified if bloodied, slowed for 5 rounds if healthy (Magic vs. Fortitude) \\
       6 & Indigo & Insane, as \spell{insanity} spell (Magic vs. Will) \\
@@ -3562,11 +3564,11 @@ This spell can be made permanent with a \spell{permanency} ritual.
     \begin{tabularx}{\textwidth}{l l >{\lcol}X l}
       \thead{Color} & \thead{Order} & \thead{Effect of Color} & \thead{Negated By} \\
       Red & 1st & Stops nonmagical ranged weapons.
-      Deals 15 points of fire damage (Reflex half). & \spellindirect{cone of cold}{cone of cold} \\
+      Deals 15 points of fire damage (Magic vs. Reflex). & \spellindirect{cone of cold}{cone of cold} \\
       Orange & 2nd & Stops magical ranged weapons.
-      Deals 30 points of acid damage (Reflex half). & \spellindirect{gust of wind}{Gust of wind} \\
+      Deals 30 points of acid damage (Magic vs. Reflex). & \spellindirect{gust of wind}{Gust of wind} \\
       Yellow & 3rd & Stops poisons, gases, and petrification.
-      Deals 45 points of electricity damage (Reflex half). & \spell{Disintegrate} \\
+      Deals 45 points of electricity damage (Magic vs. Reflex). & \spell{Disintegrate} \\
       Green & 4th & Stops breath weapons.
       Poison (40 damage and nauseated for 1 round; Magic vs. Fortitude). & \spell{Passwall} \\
       Blue & 5th & Stops divination and mental attacks.
@@ -4283,7 +4285,7 @@ Extraordinarily loud noises, such as the yell of a giant or a sonic attack, are 
 \spellrng{\rngext}
 \spellarea{\arealarge vertical line of lightning, 5 ft. wide, and \areamed radius limit}
 \spelldur{Instantaneous}
-\spelldef{Reflex half}
+\spelldef{Magic vs. Reflex}
 \spellsr{Yes (Reflex)}
 \spelldmg{12d6 electricity damage \add d6 per two caster levels above 12th}
 \begin{spelleffect}
@@ -4541,7 +4543,7 @@ Extraordinarily loud noises, such as the yell of a giant or a sonic attack, are 
 \spellarea{\arealarge radius limit}
 \spelleff{Nine or more Large summoned creatures within the area}
 \spelldur{\durshort (D)}
-\spelldef{Reflex half; see text}
+\spelldef{Magic vs. Reflex; see text}
 \spellsr{No}
 \spelldmg{9d6 bludgeoning damage \add d6 per four levels above 18th}
 \begin{spelleffect}
@@ -4945,7 +4947,7 @@ Extraordinarily loud noises, such as the yell of a giant or a sonic attack, are 
 \spelllvl{Nature 5}
 \spellarea{\arealarge line}
 \spelldur{Instantaneous/5 rounds}
-\spelldef{Reflex half/Reflex negates}
+\spelldef{Magic vs. Reflex/Reflex negates}
 \spellsr{Yes (Reflex)}
 \spelldmg{5d6 solar damage \add d6 per four caster levels above 10th; see text}
 \begin{spelleffect}
@@ -5401,7 +5403,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spellrng{\rngmed}
 \spelleff{Opaque sheet of flame up to 100 ft. long or a ring of fire with a radius of up to 20 ft.; either form 20 ft. high}
 \spelldur{\durshort}
-\spelldef{Reflex half; see text}
+\spelldef{Magic vs. Reflex; see text}
 \spellsr{Yes (Reflex)}
 \spelldmg{4d6 \add d6 per four caster levels above 8th; see text}
 \begin{spelleffect}
