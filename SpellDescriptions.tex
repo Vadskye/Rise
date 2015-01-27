@@ -1154,7 +1154,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \end{spelleffect}
 
 \spellsection{Delayed Blast Fireball}
-\spellschool{Evocation (Energy) [Fire]}
+\spellschool{Evocation (Energy) [Destructive, Fire]}
 \spelllvl{Arcane 6, Fire 6}
 \spellarea{\areamed radius spread}
 \spelldur{5 rounds or less; see text}
@@ -1164,6 +1164,11 @@ This spell can be made permanent with a \spell{permanency} ritual.
 
   If you choose a delay, a glowing bead sits at the point of origin until it detonates. A creature can pick up and hurl the bead as a thrown weapon (range increment 10 feet). If a creature handles and moves the bead within 1 round of its detonation, there is a 25\% chance that the bead detonates while being handled.
 \end{spelleffect}
+\begin{spellnotes}
+    \destructivespellnotes
+
+    \firespellnotes
+\end{spellnotes}
 
 \spellsection{Destruction}
 \spellschool{Necromancy (Flesh) [Death]}
@@ -1599,10 +1604,10 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{Personal and \rngclose; see text}
 \spelleff{Ray; see text}
 \spelldur{\durlong or until discharged}
-\spelldef{None}
+\spelldef{None, Physical vs. Reflex}
 \spellsr{Yes (Fortitude)}
 \begin{spelleffect}
-  This spell functions like \spell{greater resist energy}, except that you store up the energy you absorb and can later discharge it as a ray. To discharge a ray requires a standard action. You can choose to fire any number of rays during the spell's duration. The ray you fire must be of one of the energy types you have stored (if you have stored more than one type, you can choose what kind of energy to use for each ray). If a ray successfully strikes its target (requiring a Reflex attack), the target takes damage equal to the amount of energy damage of that type you have stored, up to a maximum of three times your caster level. As long as this power remains in effect, you can continue to absorb energy damage and fire additional rays using the stored damage.
+  This spell functions like \spell{greater resist energy}, except that you store up the energy you absorb and can later discharge it as a ray. To discharge a ray requires a standard action. You can choose to fire any number of rays during the spell's duration. The ray you fire must be of one of the energy types you have stored (if you have stored more than one type, you can choose what kind of energy to use for each ray). If a ray successfully strikes its target (requiring a ranged touch attack vs. Reflex), the target takes damage equal to the amount of energy damage of that type you have stored, up to a maximum of three times your caster level. As long as this power remains in effect, you can continue to absorb energy damage and fire additional rays using the stored damage.
 \end{spelleffect}
 \begin{spellnotes}
   This spell's descriptor is the same as the type of energy you discharge in a ray; thus, its subtype can change during the course of the spell's duration.
@@ -1939,7 +1944,9 @@ This spell can be made permanent with a \spell{permanency} ritual.
     Everything in the area takes damage. A failed attack deals half damage.
 \end{spelleffect}
 \begin{spellnotes}
-    If a destructive spell deals enough damage to an interposing barrier to shatter or breaks through it, its effects may continue beyond the barrier if the area permits; otherwise, it stops at the barrier just as any other spell effect does.
+    \destructivespellnotes
+
+    \firespellnotes
 \end{spellnotes}
 
 \spellsection{Flame Blade}
@@ -1954,12 +1961,14 @@ This spell can be made permanent with a \spell{permanency} ritual.
   A 3 foot long beam of red-hot fire springs forth from your hand. In addition to providing illumination like a torch, you can wield this bladelike beam as a weapon. It is treated like a scimitar, except that all damage dealt with it is fire damage, you add half your casting attribute to damage in place of half your Strength, and it is treated as a light weapon, so you can use Dexterity to attack with it. Alternately, you can hurl flames from the weapon up to \rngmed range as if it were a thrown weapon.
 \end{spelleffect}
 \begin{spellnotes}
-  Fire spells do not function underwater. A \spell{flame weapon} can ignite combustible materials such as parchment, straw, dry sticks, and cloth. Spell resistance applies when a foe is struck by the weapon, but not when the blade is created.
+    \firespellnotes
+
+    Spell resistance applies when a foe is struck by the weapon, but not when the blade is created.
 \end{spellnotes}
 
 \spellsection{Flame Strike}
 \spelldesc{You call a vertical column of divine fire that roars downward, consuming your unworthy foes.}
-\spellschool{Evocation (Channeling, Energy) [Fire]}
+\spellschool{Evocation (Channeling, Energy) [Destructive, Fire]}
 \spelllvl{Destruction 5, Divine 5, Fire 5, War 5}
 \spellrng{\rngclose}
 \spellarea{\areamed radius cylinder, 40 ft. high}
@@ -1970,6 +1979,11 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \begin{spelleffect}
     Everything in the area takes damage. A failed attack deals half damage. Half the damage is fire damage, but the other half results directly from divine power. Your allies in the area take only the fire damage.
 \end{spelleffect}
+\begin{spellnotes}
+    \destructivespellnotes
+
+    \firespellnotes
+\end{spellnotes}
 
 \spellsection{Fly}
 \spellschool{Transmutation (Imbuement)}
@@ -2144,7 +2158,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \end{spellhealthy}
 \begin{spellblood}
     The subject is \nauseated.
-\end{spellhealthy}
+\end{spellblood}
 
 \spellsection{Giant Vermin}
 \spellschool{Transmutation (Polymorph)}
@@ -2801,7 +2815,7 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
 \end{spelleffect}
 
 \spellsection{Lightning Bolt}
-\spellschool{Evocation (Energy) [Electricity]}
+\spellschool{Evocation (Energy) [Destructive, Electricity]}
 \spelllvl{Arcane 3, Destruction 3, Nature 3}
 \spellarea{100 ft. line}
 \spelldur{Instantaneous}
@@ -2809,9 +2823,11 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
 \spellsr{Yes (Reflex)}
 \spelldmg{3d6 electricity damage \add d6 per four caster levels above 6th}
 \begin{spelleffect}
-    You make a Reflex attack to deal damage to everything in the area. A failed attack deals half damage.
-  \par The lightning bolt sets fire to combustibles and damages objects in its path. It can melt metals with a low melting point, such as lead, gold, copper, silver, or bronze. If the damage caused to an interposing barrier shatters or breaks through it, the bolt may continue beyond the barrier if the spell's range permits; otherwise, it stops at the barrier just as any other spell effect does.
+    Everything in the area takes damage. A failed attack deals half damage.
 \end{spelleffect}
+\begin{spellnotes}
+    \destructivespellnotes
+\end{spellnotes}
 
 \spellsection{Limited Wish}
 \spellschool{Universal}
