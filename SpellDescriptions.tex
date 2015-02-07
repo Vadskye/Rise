@@ -393,10 +393,16 @@
 \spelldur{\durshort (D)}
 \spellsr{Yes (Reflex)}
 \spelldmg{6d6 force damage \add d6 per four caster levels above 12th}
-\spellattack{Magic vs. Reflex}
 \begin{spelleffect}
-    Whenever a creature passes through the wall, you make a magic attack vs. Reflex to deal damage to it. A failed attack deals half damage. If you create the wall so that it appears where creatures are, each creature takes damage as if passing through the wall. If your attack fails against those creatures, they can avoid the wall completely, ending up on the side of their choice.
-  \par A \spell{blade barrier} provides cover (\plus4 bonus to physical defenses) against attacks made through it.
+    Whenever a creature passes through the wall, you make a magic attack against it. If you create the wall so it appears where creatures are, you also make attack attack against them. The wall provides active cover (20\% miss chance) against attacks made through it. Attacks that miss in this way harmlessly strike the wall.
+\end{spelleffect}
+\spellattack{Magic vs. Reflex}
+\begin{spellsuccess}
+    The target takes damage.
+\end{spellsuccess}
+\begin{spellfailure}
+    As above, but a failed attack deals half damage.
+\end{spellfailure}
 \end{spelleffect}
 
 \spellsection{Blasphemy}
