@@ -35,6 +35,7 @@
 \newcommand{\subcf}[1]{\par \emph{#1}:}    %Italicize sub-class-feature headers
 \newcommand{\subsk}[1]{\par \emph{#1}:}    %Italicize sub-skill headers
 \newcommand{\parhead}[1]{\par \textbf{#1}:}    %Bold the first word of sectional paragraphs
+\newcommand{\parheadni}[1]{\par\noindent \textbf{#1}:}    %Bold the first word of sectional paragraphs, without indentation
 \newcommand{\subparhead}[1]{\par \emph{#1}:}
 \newcommand{\itemhead}[1]{\item \textbf{#1}}
 \newcommand{\thead}[1]{\textbf{#1}}    %Bold the header of tables
@@ -130,29 +131,29 @@
 \newcommand{\wilditem}{\addtocounter{enumi}{1} \item}
 \newcommand{\wilditemplus}{\addtocounter{enumi}{3} \item}
 
-\newcommand{\spelllvl}[1]{\parhead{Level} #1}
-\newcommand{\spellschool}[1]{\par #1}
-\newcommand{\spellcmp}[1]{\parhead{Components} #1}
-\newcommand{\spelltime}[1]{\parhead{Casting Time} #1}
-\newcommand{\spellrng}[1]{\parhead{Range} #1}
-\newcommand{\spellarea}[1]{\parhead{Area} #1}
-\newcommand{\spelleff}[1]{\parhead{Manifestation} #1}
-\newcommand{\spelltgt}[1]{\parhead{Target} #1}
-\newcommand{\spelltgts}[1]{\parhead{Targets} #1}
-\newcommand{\spelltgtortgts}[1]{\parhead{Target or Targets} #1}
-\newcommand{\spelltgtorarea}[1]{\parhead{Target or Area} #1}
-\newcommand{\spelltgteffarea}[1]{\parhead{Target or Area} #1}
-\newcommand{\spelldur}[1]{\parhead{Duration} #1}
-\newcommand{\spelldef}[1]{\parhead{Defenses} #1}
-\newcommand{\spellsr}[1]{\parhead{Spell Resistance} #1}
+\newcommand{\spelllvl}[1]{\parheadni{Level} #1}
+\newcommand{\spellschool}[1]{\par\noindent #1}
+\newcommand{\spellcmp}[1]{\parheadni{Components} #1}
+\newcommand{\spelltime}[1]{\parheadni{Casting Time} #1}
+\newcommand{\spellrng}[1]{\parheadni{Range} #1}
+\newcommand{\spellarea}[1]{\parheadni{Area} #1}
+\newcommand{\spelleff}[1]{\parheadni{Manifestation} #1}
+\newcommand{\spelltgt}[1]{\parheadni{Target} #1}
+\newcommand{\spelltgts}[1]{\parheadni{Targets} #1}
+\newcommand{\spelltgtortgts}[1]{\parheadni{Target or Targets} #1}
+\newcommand{\spelltgtorarea}[1]{\parheadni{Target or Area} #1}
+\newcommand{\spelltgteffarea}[1]{\parheadni{Target or Area} #1}
+\newcommand{\spelldur}[1]{\parheadni{Duration} #1}
+\newcommand{\spellsr}[1]{\parheadni{Spell Resistance} #1}
 
 \newcommand{\spelldesc}[1]{\par \textit{#1}}
-\newcommand{\spelldmg}[1]{\parhead{Damage} #1}
-\newcommand{\spellheal}[1]{\parhead{Healing} #1}
-\newcommand{\spellfocus}[1]{\par \textit{Focus:} #1}
-\newcommand{\spellmat}[1]{\par \textit{Material Components:} #1}
+\newcommand{\spelldmg}[1]{\parheadni{Damage} #1}
+\newcommand{\spellheal}[1]{\parheadni{Healing} #1}
+\newcommand{\spellattack}[1]{\parheadni{Attack} #1}
+\newcommand{\spellfocus}[1]{\par\noindent \textit{Focus:} #1}
+\newcommand{\spellmat}[1]{\par\noindent \textit{Material Components:} #1}
 
-\newcommand{\spellskill}[1]{\parhead{Skill} #1}
+\newcommand{\spellskill}[1]{\parheadni{Skill} #1}
 
 \newcommand{\rngpers}{Personal}
 \newcommand{\rngtouch}{Touch}
