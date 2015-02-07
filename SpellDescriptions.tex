@@ -93,7 +93,7 @@
     Everything in the area takes damage.
 \end{spellsuccess}
 \begin{spellfailure}
-    A failed attack deals half damage.
+    As above, but a failed attack deals half damage.
 \end{spellfailure}
 
 \spellsection{Agony}
@@ -253,9 +253,9 @@
 \spelldur{\durshort (D)}
 \spellsr{Yes (Will)}
 \spellattack{Magic vs. Will}
-\begin{spelleffect}
+\begin{spellsuccess}
   Attacks with the affected weapon are made against Reflex defense instead of Armor defense. However, damage with the weapon is halved, including any bonuses to damage.
-\end{spelleffect}
+\end{spellsuccess}
 
 \spellsection{Assimilate}
 \spelldesc{Your pointing finger turns black as obsidian. You touch a creature and it dissolves into dust as you assimilate its form into your own body.}
@@ -267,11 +267,14 @@
 \spellsr{Yes (Fortitude)}
 \spelldmg{18d8 life damage \add d6 per four caster levels above 18th}
 \spellattack{Magic vs. Fortitude}
-\begin{spelleffect}
-    The target takes damage. A failed attack deals half damage. If the target has no hit points remaining after taking damage from this spell, it is entirely assimilated into your form, leaving behind only a trace of fine dust. An assimilated creature's equipment is unaffected.
+\begin{spellsuccess}
+    The target takes damage. If the target has no hit points remaining after taking damage from this spell, it is entirely assimilated into your form, leaving behind only a trace of fine dust. An assimilated creature's equipment is unaffected.
     \par If the creature has at least 1 hit point following your use of this power, you gain temporary hit points equal to half the damage you dealt for 1 hour.
     \par If the creature is completely assimilated, you gain a number of temporary hit points equal to the damage you dealt and a \plus4 enhancement bonus to each of your attributes for 1 hour. In addition, you gain the appearance of the creature for 1 hour, granting you a \plus10 enhancement bonus on Disguise checks made to appear as that creature during that time.
-\end{spelleffect}
+\end{spellsuccess}
+\begin{spellfailure}
+    As above, but a failed attack deals half damage.
+\end{spellfailure}
 \begin{spellnotes}
     If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
 \end{spellnotes}
@@ -285,10 +288,10 @@
 \spelldur{\durext}
 \spellsr{Yes (Will)}
 \spellattack{Magic vs. Will}
-\begin{spelleffect}
+\begin{spellsuccess}
   An affected creature feels an aversion to a particular person or object. If the object of the implanted aversion is an individual or a physical object, she will prefer not to approach within 30 feet of it. If it is a word, she will try not to utter it; if it is an action, she will not willingly attempt to perform it; and if it is an event, she will not willingly attend it. The subject will take reasonable steps to avoid the object of its aversion, but will not put herself in jeopardy by doing so.
   \par If the subject is forced into taking an action she has an aversion to, she is bewildered as long as she performs the action, making her \vulnerable.
-\end{spelleffect}
+\end{spellsuccess}
 
 \pdfbookmark[2]{B}{SpellDescriptionsB}
 \begin{comment}
@@ -302,9 +305,9 @@
 \spellarea{\areamed radius burst}
 \spelldur{Instantaneous}
 \spellsr{Yes (Will)}
-\begin{spelleffect}
+\begin{spellsuccess}
   All enemies within the area take a \minus2 penalty to physical attacks for 5 rounds.
-\end{spelleffect}
+\end{spellsuccess}
 
 \spellsection{Banishment}
 \spelldesc{You force extraplanar creatures back to their home plane.}
@@ -332,9 +335,9 @@
 \spelldur{\durshort}
 \spellsr{Yes (Fortitude)}
 \spellattack{Magic vs. Fortitude (harmless)}
-\begin{spelleffect}
+\begin{spellsuccess}
   The subject gains a \plus2 enhancement bonus to its armor modifier. \spellbonusscalingdescription In addition, the subject gains physical damage reduction 2/adamantine or fire. This damage reduction increases by 1 per two caster levels above 4th.
-\end{spelleffect}
+\end{spellsuccess}
 \begin{spellnotes}
   This spell's damage reduction allows the subject to ignore the first 2 physical damage it takes each round. If it is hit by a adamantine weapon or an attack that deals fire damage, it cannot use its damage reduction for 1 round.
 \end{spellnotes}
@@ -348,7 +351,7 @@
 \spelldur{Permanent}
 \spellsr{Yes (Will)}
 \spellattack{Magic vs. Will}
-\begin{spelleffect}
+\begin{spellsuccess}
   The subject suffers one of the following three effects, chosen by you:
   \begin{itemize*}
     \item \minus6 penalty to an attribute.
@@ -356,7 +359,7 @@
     \item Each turn, the target has a 25\% chance to take no action; otherwise, it acts normally.
   \end{itemize*}
   \par You may also invent your own curse, but it should be no more powerful than those described above.
-\end{spelleffect}
+\end{spellsuccess}
 \begin{spellnotes}
   Curses cannot be dispelled.
 \end{spellnotes}
@@ -371,10 +374,15 @@
 \spelldur{\durshort (D)}
 \spellsr{No}
 \begin{spelleffect}
-  When you cast this spell, and at the start of each of your turns, every creature within the area of the spell is the target of a grapple attack. This attack is also made in the round that \spell{black tentacles} is cast. Treat the tentacles attacking a particular target as a Medium creature with a base attack bonus equal to your caster level and a Strength score of 8. Thus, its grapple attack modifier is equal to your caster level \plus8. Roll only once each round for the entire spell effect, and apply the result to all creatures within the area of effect.
-  \par If the tentacles succeed in grappling a foe, that foe takes 1d8\plus4 damage. Each round that black tentacles succeeds on a grapple attack, it deals an additional 1d8\plus4 damage. The tentacles continue to crush the opponent until the spell ends or the opponent escapes.
-  \par The tentacles are immune to all types of damage. The entire area of effect is considered difficult terrain while the tentacles last, and any creature that enters the area of the spell is immediately attacked by the tentacles.
+    At the end of each round, you make a grapple attack against every creature in the area. In addition, the entire area is considered difficult terrain.
 \end{spelleffect}
+\spellattack{Caster level \add casting attribute vs. Maneuver defense (grapple)}
+\begin{spellsuccess}
+    The target is grappled and takes 1d8\plus4 bludgeoning damage. It remains grappled until it escape the tentacle. The tentacle's Maneuver defense is equal to 10 \add your caster level \add your casting attribute.
+\end{spellsuccess}
+\begin{spellnotes}
+  \par The tentacles are immune to all types of damage. The entire area of effect is considered difficult terrain while the tentacles last, and any creature that enters the area of the spell is immediately attacked by the tentacles.
+\end{spellnotes}
 
 \spellsection{Blade Barrier}
 \spelldesc{You create an immobile, vertical curtain of whirling blades shaped of pure force.}
