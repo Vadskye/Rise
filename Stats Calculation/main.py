@@ -109,7 +109,6 @@ if __name__ == "__main__":
             allies.append(generate_creatures(args['allies'], level, args['verbose']))
             enemies.append(generate_creatures(args['enemies'], level, args['verbose']))
     else:
-        print 'derp', args['level']
         allies = generate_creatures(args['allies'], int(args['level']), args['verbose'])
         enemies = generate_creatures(args['enemies'], int(args['level']), args['verbose'])
 
