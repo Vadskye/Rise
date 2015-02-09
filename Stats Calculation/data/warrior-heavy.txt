@@ -1,0 +1,6 @@
+name=Warrior
+race=human
+class=warrior
+weapon=heavy_melee
+armor=medium
+attributes=warrior_dex_secondary

@@ -1,0 +1,7 @@
+name=Warrior
+race=human
+class=warrior
+weapon=light_melee
+offhand weapon=light_melee
+armor=medium
+attributes=warrior_dex

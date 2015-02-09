@@ -4,4 +4,3 @@ class=barbarian
 weapon=heavy_melee
 armor=medium
 attributes=warrior
-feat=overwhelming force
