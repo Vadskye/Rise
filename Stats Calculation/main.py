@@ -130,7 +130,7 @@ if __name__ == "__main__":
         if args['level'] == 'all':
             for i in xrange(len(allies)):
                 battle_results, hit_chances = generate_battle_results(allies[i], enemies[i])
-                print "Level %s \t%.3g\t%.3g" % (i+1, battle_results[0], battle_results[1])
+                print "Level %s \t%.3f\t%.3f\t%.3f" % (i+1, battle_results[0], battle_results[1], battle_results[2])
         else:
             battle_results, hit_chances = generate_battle_results(allies, enemies)
             print "Battle results:", battle_results
