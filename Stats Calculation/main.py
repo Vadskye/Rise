@@ -105,7 +105,7 @@ if __name__ == "__main__":
     allies = list()
     enemies = list()
     if args['level'] == 'all':
-        for level in xrange(1,20):
+        for level in xrange(1,21):
             allies.append(generate_creatures(args['allies'], level, args['verbose']))
             enemies.append(generate_creatures(args['enemies'], level, args['verbose']))
     else:
