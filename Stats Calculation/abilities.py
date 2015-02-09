@@ -84,7 +84,7 @@ def barbarian_damage_reduction_benefit(creature):
 Ability.create_ability('barbarian damage reduction', barbarian_damage_reduction_benefit)
     
 def danger_sense_benefit(creature):
-    creature.initiative().add_bonus(creature.level/2, 'danger sense')
+    creature.initiative.add_bonus(creature.level/2, 'danger sense')
 Ability.create_ability('danger sense', danger_sense_benefit)
 
 def larger_than_life_benefit(creature):
@@ -99,7 +99,7 @@ def rage_benefit(creature):
     creature.strength.add_bonus(rage_bonus, 'rage')
     creature.charisma.add_bonus(rage_bonus, 'rage')
     creature.armor_class.misc.add_bonus(-2, 'rage')
-    creature.get_hit_points().add_bonus(creature.level*rage_bonus, 'rage')
+    creature.hit_points.add_bonus(creature.level*rage_bonus, 'rage')
 Ability.create_ability('rage', rage_benefit)
 
 def armor_discipline_agility_benefit(creature):
@@ -121,16 +121,6 @@ Ability.create_ability('armor discipline (resilience)', armor_discipline_resilie
 ####################
 #FEATS
 ####################
-
-def overwhelming_force_prerequisites(creature):
-    return creature.primary_weapon.encumbrance == 'heavy'
-def overwhelming_force_benefit(creature):
-    creature.primary_weapon_damage.add_bonus(
-                creature.strength.get_total(), STR)
-def overwhelming_force_prerequisites(creature):
-        return creature.strength.get_total() >=5 and creature.attack_bonus.base_attack_bonus >=8 and creature.primary_weapon.encumbrance == 'heavy'
-Ability.create_ability('overwhelming force', overwhelming_force_benefit,
-        overwhelming_force_prerequisites, set(('feat', 'combat', 'power')))
 
 def two_weapon_fighting_benefit(creature):
     if creature.offhand_weapon:
