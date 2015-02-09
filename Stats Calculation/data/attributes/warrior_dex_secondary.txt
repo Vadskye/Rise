@@ -1,0 +1,6 @@
+strength=4 primary
+dexterity=3 secondary
+constitution=2
+intelligence=0
+wisdom=0
+charisma=0
