@@ -56,22 +56,6 @@ def full_hit_probability(primary_attack_bonus, ac, base_attack_bonus):
     return total_hits
 """
 
-def attack_damage_dealt(attack_bonus, ac, average_damage):
-    return util.hit_probability(attack_bonus, ac)*average_damage
-
-def full_attack_damage_dealt(primary_attack_bonus, ac, base_attack_bonus,
-        average_damage):
-    return average_damage * full_attack_hits(primary_attack_bonus, ac,
-            base_attack_bonus)
-
-def rounds_survived(primary_attack_bonus, ac, base_attack_bonus, average_damage, hp):
-    total_damage=0
-    round_count=0
-    while total_damage<=hp:
-        total_damage+=full_attack_damage_dealt(primary_attack_bonus, ac, base_attack_bonus, average_damage)
-        round_count+=1
-    return round_count
-
 def get_initiative_order(creatures):
     order = sorted(creatures, key = lambda creature: creature.roll_initiative())
     #order is normally from lowest to highest
