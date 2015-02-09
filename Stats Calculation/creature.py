@@ -1266,6 +1266,10 @@ class Paladin(Character):
         self.set_progression(WILL, GOOD)
         self.set_progression(HIT_VALUE, 6)
 
+    def apply_class_modifications(self):
+        if self.level>=5:
+            self.armor_class.misc.add_bonus(self.charisma.get_total()/2, CHA)
+
 class Ranger(Character):
     def create_progressions(self):
         self.set_progression(BAB, GOOD)
