@@ -923,7 +923,7 @@ class Creature(object):
         damage = 0
         if is_hit:
             damage += self.primary_weapon_damage.get_total(roll=True)
-        if is_threshold_hit and self.attacks[DAMAGE][WEAPON_SECONDARY]:
+        if is_threshold_hit and self.items[WEAPON_SECONDARY]:
             damage += self.attacks[DAMAGE][WEAPON_SECONDARY].get_total(roll=True)
         return damage
 
@@ -1269,6 +1269,23 @@ class Paladin(Character):
     def apply_class_modifications(self):
         if self.level>=5:
             self.armor_class.misc.add_bonus(self.charisma.get_total()/2, CHA)
+
+    #assume smite
+    def standard_physical_attack(self, enemy, defense_type, deal_damage = True):
+        damage_dealt_total = 0
+        hit_count = 0
+        for i, attack_bonus in enumerate(self.get_physical_attack_bonus_progression()):
+            #smite on the first attack
+            if i==0:
+                attack_bonus += self.charisma.get_total()
+            is_hit, is_threshold_hit, damage_dealt = self.single_attack(enemy, attack_bonus, defense_type, deal_damage)
+            if is_hit:
+                hit_count += 1
+            if damage_dealt:
+                if i==0:
+                    damage_dealt += self.level
+                damage_dealt_total += damage_dealt
+        return hit_count, damage_dealt
 
 class Ranger(Character):
     def create_progressions(self):
