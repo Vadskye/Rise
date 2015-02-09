@@ -14,14 +14,14 @@ def initialize_argument_parser():
     parser = argparse.ArgumentParser(description='Calculate combat statistics for Rise characters')
     parser.add_argument('-b', '--battle', dest='battle', action='store_true',
             help='simulate a battle between the creatures?')
-    parser.add_argument('-c', '--creature', dest='creature', nargs="*",
-            help='the creature file to load')
-    parser.add_argument('-e', '--enemy', dest='enemy', nargs="*",
+    parser.add_argument('-a', '--ally', dest='allies', nargs="*",
+            help='allied creature files to load')
+    parser.add_argument('-e', '--enemy', dest='enemies', nargs="*",
             help='enemy creature files to load (for combat purposes)')
-    parser.add_argument('-l', '--level', dest='level', type=int,
-            help='the level of the creatures')
+    parser.add_argument('-l', '--level', dest='level', type=str,
+            help='the level of the allied creatures')
     parser.add_argument('-el', '--enemylevel', dest='enemy_level', type=int,
-            help='the level of the enemy creatures (defaults to being the same as for the given creatures')
+            help='the level of the enemy creatures (defaults to allied creature level)')
     parser.add_argument('-o', '--output', dest='output',
             help='A file name to store any output in')
     parser.add_argument('-v', '--verbose', dest='verbose', action='store_true',
@@ -31,12 +31,6 @@ def initialize_argument_parser():
     parser.add_argument('-t', '--test', dest='test', action='store_true',
             help='for one-off tests')
     return vars(parser.parse_args())
-
-def compare_ac_to_reflex(creature):
-    return 'AC {0}, Reflex {1}, {2}'.format(
-            creature.armor_class.get_normal(),
-            creature.saves['reflex'].total(),
-            util.mstr(creature.armor_class.get_normal() - (10 + creature.saves['reflex'].total())))
 
 def rounds_survived(attacker, defender):
     return combat.rounds_survived(attacker.attack_bonus.total(),
@@ -84,32 +78,64 @@ def print_generic_stats(level):
     print "HP %s, Fort %s, Ref %s, Will %s" % (get_generic_hp()[level],
             0, 0, 0)
 
+def generate_creatures(creature_file_names, level, verbose):
+    if creature_file_names is None:
+        return
+    creatures = list()
+    for creature_file_name in creature_file_names:
+        creature = generate_creature_from_file_name(creature_file_name, level,
+                verbose)
+        creatures.append(creature)
+    return creatures
+
+def generate_battle_results(allies, enemies):
+    # for now, just have the two first creatures fight
+    # later on, simulate multi-creature battles
+    first = allies[0]
+    second = enemies[0]
+    battle = combat.Battle(first, second)
+    battle_results = battle.iterated_battles(BATTLE_REPEAT_COUNT)
+
+    average_hit_chance_first = first.average_hit_probability(second)
+    average_hit_chance_second = second.average_hit_probability(first)
+    return battle_results, (average_hit_chance_first, average_hit_chance_second)
+
 if __name__ == "__main__":
     args = initialize_argument_parser()
-    creatures = list()
-    for creature_file_name in args['creature']:
-        creature = generate_creature_from_file_name(creature_file_name, args['level'],
-                args['verbose'])
-        print creature
-        print ''
-        creatures.append(creature)
-        #This is kinda hacky, but shouldn't cause problems
-        if args['match_level']:
-            args['level'] = creature.meta[LEVEL]
-            args['match_level'] = False
+    allies = list()
+    enemies = list()
+    if args['level'] == 'all':
+        for level in xrange(1,20):
+            allies.append(generate_creatures(args['allies'], level, args['verbose']))
+            enemies.append(generate_creatures(args['enemies'], level, args['verbose']))
+    else:
+        print 'derp', args['level']
+        allies = generate_creatures(args['allies'], int(args['level']), args['verbose'])
+        enemies = generate_creatures(args['enemies'], int(args['level']), args['verbose'])
+
+        if allies:
+            print "allies:"
+            for ally in allies:
+                print ally
+                #print ally.armor_class.get_details()
+                print ''
+
+        if enemies:
+            print "enemies:"
+            for enemy in enemies:
+                print enemy
+                #print enemy.armor_class.get_details()
+                print ''
 
     if args['battle']:
-        if len(creatures)>=2:
-            first = creatures[0]
-            second = creatures[1]
-            battle = combat.Battle(first, second)
-            battle_results = battle.iterated_battles(BATTLE_REPEAT_COUNT)
-            print "Battle results:", battle_results
-            average_hit_chance_first = first.average_hit_probability(second)
-            average_hit_chance_second = second.average_hit_probability(first)
-            print 'avg hit chance:    %s    %s' % (average_hit_chance_first, average_hit_chance_second)
+        if args['level'] == 'all':
+            for i in xrange(len(allies)):
+                battle_results, hit_chances = generate_battle_results(allies[i], enemies[i])
+                print "Level %s \t%.3g\t%.3g" % (i+1, battle_results[0], battle_results[1])
         else:
-            raise Exception("Can't battle: not enough creatures")
+            battle_results, hit_chances = generate_battle_results(allies, enemies)
+            print "Battle results:", battle_results
+            print "Avg hit chance:", hit_chances
 
     if args['output'] is not None:
         latex_string = creatures[0].to_latex()
