@@ -47,10 +47,9 @@
 \spelleff{One arrow of acid}
 \spelldur{1 round per two caster levels}
 \spellsr{No}
-\spelldmg{2d8 acid damage \add d8 per round}
 \spellattack{Magic vs. Reflex}
 \begin{spellsuccess}
-    The target takes damage. The acid remains on the target after the initial impact, dealing damage each round on your turn.
+    2d8 acid damage immediately, and d8 acid damage at the end of each round after the first.
 \end{spellsuccess}
 \begin{spellnotes}
   If the target becomes submerged in water or takes at least ten points of cold or fire damage, this spell's effect ends.
@@ -62,10 +61,13 @@
 \spelllvl{Arcane 5}
 \spellrng{\rngfar}
 \spelldmg{5d8 acid damage \add 2d8 per round}
-\spellattack{Magic vs. Reflex}
 \begin{spelleffect}
-  This spell functions as \spell{acid arrow}, except that your attack is also made against the target's Fortitude.
+  This spell functions like \spell{acid arrow}, except that it deals more damage, and your attack is also made against the target's Fortitude if you beat the target's Reflex.
 \end{spelleffect}
+\spellattack{Magic vs. Reflex}
+\begin{spellsuccess}
+    5d8 acid damage immediately, and 2d8 acid damage at the end of each round after the first.
+\end{spellsuccess}
 \spellattack{Magic vs. Fortitude}
 \begin{spellsuccess}
     The target is \vulnerable.
@@ -83,14 +85,12 @@
 \spelleff{Fog in the area}
 \spelldur{\durshort}
 \spellsr{No}
-\spelldmg{4d6 acid damage per round}
-\spellattack{Magic vs. Fortitude}
 \begin{spelleffect}
     This spell functions like \spell{solid fog}, except that the fog is highly acidic. At the end of each round, you attack everything in the area.
 \end{spelleffect}
 \spellattack{Magic vs. Fortitude}
 \begin{spellsuccess}
-    Everything in the area takes damage.
+    4d6 acid damage.
 \end{spellsuccess}
 \begin{spellfailure}
     As above, but a failed attack deals half damage.
@@ -118,8 +118,11 @@
 \spellsr{Yes (Will)}
 \spellattack{Magic vs. Will (harmless)}
 \begin{spellsuccess}
-  The subject gains temporary hit points equal 10 \add 1 per caster level above 4th. In addition, it gains a \plus2 enhancement bonus to Will defense. \spellbonusscalingdescription  If the subject takes life damage, it loses all temporary hit points provided by this spell before applying the damage.
+    10 temporary hit points \add 1 per caster level above 4th, and a \plus2 enhancement bonus to Will defense. \spellbonusscalingdescription
 \end{spellsuccess}
+\begin{spellnotes}
+    If the subject takes life damage, it loses all temporary hit points provided by this spell before applying the damage.
+\end{spellnotes}
 
 \spellsection{Air Walk}
 \spelldesc{You imbue the subject with the ability to walk on nothing but air.}
@@ -128,12 +131,11 @@
 \spellrng{\rngtouch}
 \spelltgt{Creature (Gargantuan or smaller) touched}
 \spelldur{\durshort}
-\spellsr{Yes (Fortitude)}
-\spellattack{Magic vs. Will (harmless)}
-\begin{spellsuccess}
+\spellsr{Yes (Will)}
+\begin{spelleffect}
   The subject can walk on air as if it were solid ground. The magic only affects the subject's legs, and does not grant the ability to climb vertically through the air.
   \par Should the spell end while the subject is still aloft, the magic fails slowly. The subject floats downward 60 feet per round for 1d6 rounds. If it reaches the ground in that amount of time, it lands safely. If not, it falls the rest of the distance, taking 1d6 damage per 10 feet of fall.
-\end{spellsuccess}
+\end{spelleffect}
 \begin{spellnotes}
   \par You can cast \spell{air walk} on a specially trained mount so it can be ridden through the air. You can train a mount to move with the aid of \spell{air walk} (counts as a trick; see Handle Animal skill) with one week of work and a DC 25 Handle Animal check.
 \end{spellnotes}
@@ -142,9 +144,12 @@
 \spelldesc{You enhance a weapon while bringing it closer to your ideals.}
 \spellschool{Evocation/Transmutation (Augment, Channeling) [see text]}
 \spelllvl{Chaos 2, Evil 2, Good 2, Law 2}
+\begin{spelleffect}
+  This spell functions like \spell{magic weapon}, except that it can also give the weapon an aligment.
+\end{spelleffect}
 \spellattack{Magic vs. Will (object)}
 \begin{spellsuccess}
-  This spell functions like \spell{magic weapon}, except that it also makes a weapon good, evil, lawful, or chaotic, as you choose, allowing it to overcome damage reduction of the appropriate type. When cast on a weapon that already has an alignment, you make a magic attack vs. Will. If you succeed, the spell's alignment overrides the alignment of the weapon.
+    The item becomes good, evil, lawful, or chaotic, as you choose, allowing it to overcome damage reduction of the appropriate type. This overrides any existing alignments.
 \end{spellsuccess}
 \begin{spellnotes}
   When you make a weapon good, evil, lawful, or chaotic, \spell{align weapon} is a good, evil, lawful, or chaotic spell, respectively.
@@ -159,14 +164,18 @@
 \spellsr{Yes (Will)}
 \spellattack{Magic vs. Will (object)}
 \begin{spellsuccess}
-    You can transform the target weapon into a different weapon from the same weapon group. In addition, you can decrease (but not increase) its size by one size category.
+    The weapon transforms into a different weapon from the same weapon group. In addition, you can decrease (but not increase) its size by one size category.
 \end{spellsuccess}
 
 \spellsectioncomma{Alter Weapon}{Greater}
 \spellschool{Transmutation (Alteration)}
 \spelllvl{Arcane 4}
+\begin{spelleffect}
+    This spell functions like \spell{alter weapon}, except that you have more freedom over the weapon's shape. In addition, at any time during the duration of the spell, you can touch the weapon and concentrate (a standard action) to change the weapon's shape again.
+\end{spelleffect}
+\spellattack{Magic vs. Will (object)}
 \begin{spellsuccess}
-    This spell functions like \spell{alter weapon}, except that you can transform the target weapon into any other type of manufactured weapon (not improvised weapon). In addition, you can decrease or increase its size by one size category. At any point during this spell's duration, you can concentrate as a standard action to change the weapon again.
+    The weapon transforms into any other manufactured weapon (but not an improvised weapon). In addition, you can increase or decrease its size by one size category.
 \end{spellsuccess}
 
 \spellsection{Animal Growth}
@@ -176,9 +185,9 @@
 \spellrng{\rngmed}
 \spellarea{\areamed radius limit}
 \spelltgts{Five animals (Gargantuan or smaller) within the area}
-\begin{spellsuccess}
+\begin{spelleffect}
   This spell functions like \spell{enlarge person}, except that it affects multiple animals, as noted above.
-\end{spellsuccess}
+\end{spelleffect}
 
 \begin{comment}
 \spellsection{Animate Objects}
@@ -205,7 +214,7 @@
 \spelllvl{Nature 5, Plant 5}
 \spelltgts{One Small plant/level within the area; see text}
 \begin{spelleffect}
-  This spell functions as \spell{animate objects}, except that you animate plants instead of inanimate objects.
+  This spell functions like \spell{animate objects}, except that you animate plants instead of inanimate objects.
 \end{spelleffect}
 \begin{spellnotes}
   \spell{Animate plants} cannot affect plant creatures, nor does it affect nonliving vegetable material.
@@ -219,7 +228,7 @@
 \spelldur{\durlong (D)}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-  Living creatures cannot enter the spell's area. Nonliving creatures, such as constructs and undead, suffer no ill effect.
+    Living creatures cannot enter the spell's area. Nonliving creatures, such as constructs and undead, suffer no ill effect.
 \end{spelleffect}
 \begin{spellnotes}
   Barrier spells may be used only defensively, not aggressively. Creatures in the area at the time that the spell is cast are unaffected by the spell.
@@ -254,7 +263,7 @@
 \spellsr{Yes (Will)}
 \spellattack{Magic vs. Will}
 \begin{spellsuccess}
-  Attacks with the affected weapon are made against Reflex defense instead of Armor defense. However, damage with the weapon is halved, including any bonuses to damage.
+    Attacks with the affected weapon are made against Reflex defense instead of Armor defense. However, damage with the weapon is halved, including any bonuses to damage.
 \end{spellsuccess}
 
 \spellsection{Assimilate}
@@ -265,16 +274,18 @@
 \spelltgt{Touched living creature}
 \spelldur{Instantaneous and one hour; see text}
 \spellsr{Yes (Fortitude)}
-\spelldmg{18d8 life damage \add d6 per four caster levels above 18th}
 \spellattack{Magic vs. Fortitude}
 \begin{spellsuccess}
-    The target takes damage. If the target has no hit points remaining after taking damage from this spell, it is entirely assimilated into your form, leaving behind only a trace of fine dust. An assimilated creature's equipment is unaffected.
-    \par If the creature has at least 1 hit point following your use of this power, you gain temporary hit points equal to half the damage you dealt for 1 hour.
-    \par If the creature is completely assimilated, you gain a number of temporary hit points equal to the damage you dealt and a \plus4 enhancement bonus to each of your attributes for 1 hour. In addition, you gain the appearance of the creature for 1 hour, granting you a \plus10 enhancement bonus on Disguise checks made to appear as that creature during that time.
+    18d8 life damage \add d6 per four caster levels above 18th. 
 \end{spellsuccess}
 \begin{spellfailure}
     As above, but a failed attack deals half damage.
 \end{spellfailure}
+\begin{spelleffect}
+    If the target has no hit points remaining after taking damage from this spell, it is entirely assimilated into your form, leaving behind only a trace of fine dust. An assimilated creature's equipment is unaffected.
+    \par If the creature has at least 1 hit point following your use of this power, you gain temporary hit points equal to half the damage you dealt for 1 hour.
+    \par If the creature is completely assimilated, you gain a number of temporary hit points equal to the damage you dealt and a \plus4 enhancement bonus to each of your attributes for 1 hour. In addition, you gain the appearance of the creature for 1 hour, granting you a \plus10 enhancement bonus on Disguise checks made to appear as that creature during that time.
+\end{spelleffect}
 \begin{spellnotes}
     If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
 \end{spellnotes}
@@ -403,7 +414,6 @@
 \begin{spellfailure}
     As above, but a failed attack deals half damage.
 \end{spellfailure}
-\end{spelleffect}
 
 \spellsection{Blasphemy}
 \spelldesc{You speak an unholy utterance of great power, afflicting all those nearby who do not share your allegiance to evil.}
@@ -413,29 +423,16 @@
 \spellarea{\arealarge radius spread centered on you}
 \spelldur{Instantaneous}
 \spellsr{Yes (Will)}
-\begin{spellhealthy}
-  \par Each nonevil creature in the area is sickened, making it \vulnerable for 5 rounds.
-\end{spellhealthy}
-\begin{spellblood}
-  \par Each nonevil creature in the area suffers one or more of the following ill effects, depending on its level.
-  \begin{dtable}
-    \begin{tabularx}{\columnwidth}{l >{\lcol}X}
-      \par \thead{Level} & \thead{Effect} \\
-      \par Equal to caster level & Sickened \\
-      \par Up to caster level \minus5 & Nauseated, sickened \\
-      \par Up to caster level \minus10 & Paralyzed, nauseated, sickened \\
-      \par Up to caster level \minus15 & Killed\fn{1}
-    \end{tabularx}
-    1 Living creatures die. Nonliving creatures are destroyed.
-  \end{dtable}
-  \par \subspell{Sickened} The creature is \sickened for 5 rounds.
-  \par \subspell{Nausated} The creature is \nauseated for 1 round.
-  \par \subspell{Paralyzed} The creature is paralyzed and helpless for 5 rounds.
-  \par \subspell{Killed} Living creatures die. Nonliving creatures are destroyed.
-\end{spellblood}
-\begin{spellnotes}
-  Creatures whose level exceeds your caster level are unaffected by \spell{blasphemy}.
-\end{spellnotes}
+\begin{spelleffect}
+    Each nonevil creature in the area whose level does not exceed your caster level is \sickened for 5 rounds.
+    
+    Bloodied creatures also suffer one or more of the following ill effects, depending on their level.
+    \begin{itemize*}
+        \item Up to caster level \minus5: The creature is also \nauseated for 1 round.
+        \item Up to caster level \minus10: The creature is also \paralyzed for 5 rounds.
+        \item Up to caster level \minus15: The creature immediately dies. A nonliving creature is destroyed.
+    \end{itemize*}
+\end{spelleffect}
 
 \spellsection{Bless}
 \spelldesc{You fill your allies with confidence, improving their prowess in combat.}
@@ -444,9 +441,10 @@
 \spellarea{\areamed radius burst}
 \spelldur{Instantaneous}
 \spellsr{Yes (Will)}
-\begin{spelleffect}
+\spellattack{Magic vs. Will (harmless)}
+\begin{spellsuccess}
   All allies within the area gain a \plus2 enhancement bonus to physical attacks for 5 rounds. \spellbonusscalingdescription
-\end{spelleffect}
+\end{spellsuccess}
 
 \spellsection{Blindness/Deafness}
 \spelldesc{You afflict one of the subject's senses.}
@@ -457,14 +455,13 @@
 \spelldur{\durshort (D)}
 \spellsr{Yes (Fortitude)}
 \spellattack{Magic vs. Fortitude}
-\begin{spellhealthy}
-  The subject is \sickened.
-\end{spellhealthy}
-\begin{spellblood}
-  As the healthy effect, and the subject is \blinded for 1 round or \deafened for the duration of the spell, as you choose.
-\end{spellblood}
+\begin{spellsuccess}
+    The subject is \sickened.
+    
+    If the subject becomes \bloodied, it is also \blinded for 1 round or \deafened for the duration of the spell, as you choose.
+\end{spellsuccess}
 \begin{spellnotes}
-   The choice of \bloodied conditions is made at the time the spell is cast.
+   The choice of bloodied conditions is made at the time the spell is cast.
 \end{spellnotes}
 
 \spellsection{Blink}
@@ -496,9 +493,9 @@
 \spelldur{\durshort (D)}
 \spellsr{Yes (Will)}
 \spellattack{Magic vs. Will (harmless)}
-\begin{spelleffect}
-    Other creatures take a \minus2 penalty on checks and physical attacks against the subject that rely on sight, such as Perception and Sense Motive checks.
-\end{spelleffect}
+\begin{spellsuccess}
+    Other creatures take a \minus2 penalty on sight-based checks and physical attacks against the subject, such as Perception and Sense Motive checks.
+\end{spellsuccess}
 \begin{spellnotes}
   A \spell{see invisibility} spell does not counteract the blurring effect, but a \spell{true seeing} spell does.
 \end{spellnotes}
@@ -512,9 +509,12 @@
 \spellsr{Yes (Reflex)}
 \spelldmg{1d6 fire damage \add 1d6 per four caster levels above 2nd}
 \spellattack{Magic vs. Reflex}
-\begin{spelleffect}
-    Everything in the area takes damage. A failed attack deals half damage. Unattended flammable objects burn if the flames touch them. A character can extinguish burning items as a full-round action.
-\end{spelleffect}
+\begin{spellsuccess}
+    Everything in the area takes damage. Unattended flammable objects burn if the flames touch them.
+\end{spellsuccess}
+\begin{spellfailure}
+    As above, but a failed attack deals half damage.
+\end{spellfailure}
 
 \pdfbookmark[2]{C}{SpellDescriptionsC}
 \begin{comment}
@@ -523,7 +523,7 @@
 
 \spellsection{Call Lightning}
 \spelldesc{You repeatedly call bolts of lightning that flash down from thin air to smite your foes.}
-\spellschool{Evocation (Energy) [Electricity]}
+\spellschool{Evocation (Energy) [Destructive, Electricity]}
 \spelllvl{Air 3, Nature 3}
 \spelltime{Full-round action}
 \spellrng{\rngmed}
@@ -531,27 +531,38 @@
 \spelldur{Instantaneous and \durmed (D); see text}
 \spellsr{Yes (Reflex)}
 \spelldmg{3d8 electricity damage \add d8 per four caster levels above 6th}
-\spellattack{Magic vs. Reflex}
 \begin{spelleffect}
-  Immediately upon completion of the spell, and once per round thereafter, you may call down a vertical bolt of lightning which deals damage to anyone in its path. When you do, you make a magic attack vs. Reflex to deal damage to everything in the bolt's path. A failed attack deals half damage. Calling a bolt is a standard action that requires concentration. You may call a total number of bolts equal to your caster level.
-  \par If you are outdoors and in a stormy area -- a rain shower, clouds and wind, hot and cloudy conditions, or even a tornado (including a whirlwind formed by a djinni or an air elemental of at least Large size) -- each bolt deals 3d10 electricity damage \add d10 per four caster levels above 6th instead.
+    When you cast this spell, and once per round thereafter, you may call down a vertical bolt of lightning. When you do, you make a magic attack against everything in the bolt's path. Calling a bolt is a standard action that requires concentration. You may call a total number of bolts equal to your caster level.
+
+    If you are outdoors and in a stormy area -- a rain shower, clouds and wind, hot and cloudy conditions, or even a tornado -- each bolt deals 3d10 electricity damage \add d10 per four caster levels above 6th instead.
 \end{spelleffect}
+\spellattack{Magic vs. Reflex}
+\begin{spellsuccess}
+    Everything in the bolt's path takes damage.
+\end{spellsuccess}
+\begin{spellfailure}
+    As above, but a failed attack deals half damage.
+\end{spellfailure}
 \begin{spellnotes}
-  This spell functions indoors or underground, but not underwater.
+    This spell functions indoors or underground, but not underwater. \destructivespellnotes
 \end{spellnotes}
 
 \spellsectioncomma{Call Lightning}{Greater}
 \spelldesc{You repeatedly call intense bolts of lightning that flash down from thin air to smite your foes.}
-\spellschool{Evocation (Energy) [Electricity]}
+\spellschool{Evocation (Energy) [Destructive, Electricity]}
 \spelllvl{Air 5, Nature 5}
 \spelldmg{5d8 electricity damage \add d8 per four caster levels above 10th}
 \spellattack{Magic vs. Reflex and Fortitude}
 \begin{spelleffect}
-    This spell functions like \spell{call lightning}, except that it can stagger \bloodied creatures, as noted below. If you are outdoors in a stormy area, each bolt deals 5d10 electricity damage \add d10 per four caster levels above 10th instead.
+    This spell functions like \spell{call lightning}, except that your attack is also made against the target's Fortitude. If you are outdoors in a stormy area, each bolt deals 5d10 electricity damage \add d10 per four caster levels above 10th instead.
 \end{spelleffect}
-\begin{spellblood}
-    If your magic attack beats the target's Fortitude, it is \staggered for 1 round.
-\end{spellblood}
+\spellattack{Magic vs. Fortitude}
+\begin{spellsuccess}
+    If the target is \bloodied, it is staggered for 1 round.
+\end{spellsuccess}
+\begin{spellnotes}
+    This spell functions indoors or underground, but not underwater. \destructivespellnotes
+\end{spellnotes}
 
 \spellsection{Calm Emotions}
 \spelldesc{You calm a group of creatures, preventing the situation from getting out of hand.}
@@ -562,9 +573,9 @@
 \spelldur{Concentration}
 \spellsr{Yes (Will)}
 \spellattack{Magic vs. Will}
-\begin{spelleffect}
+\begin{spellsuccess}
   Creatures in the area have their emotions calmed. Creatures so affected cannot take violent actions (although they can defend themselves) or do anything destructive.
-\end{spelleffect}
+\end{spellsuccess}
 \begin{spellnotes}
   Any aggressive action against or damage dealt to a calmed creature immediately breaks the spell on all calmed creatures.
 
@@ -582,9 +593,12 @@
 \spellsr{Yes (Reflex)}
 \spelldmg{5d10 electricity damage \add d10 per four caster levels above 10th}
 \spellattack{Reflex half}
-\begin{spelleffect}
-    All of the spell's targets take damage. A failed attack deals half damage. This spell deals full damage to the primary target and half damage to each of the secondary targets. No secondary target can be struck more than once. You can choose to affect fewer secondary targets than the maximum.
-\end{spelleffect}
+\begin{spellsuccess}
+    All of the spell's targets take damage. This spell deals full damage to the primary target and half damage to each of the secondary targets. No secondary target can be struck more than once. You can choose to affect fewer secondary targets than the maximum.
+\end{spellsuccess}
+\begin{spellfailure}
+    As above, but a failed attack deals half damage.
+\end{spellfailure}
 
 \spellsection{Changestaff}
 \spelldesc{You plant your staff in the ground and transform it into a massive tree-like creature which obeys your every command.}
@@ -611,18 +625,21 @@
 \spellsr{Yes (Will)}
 \spelldmg{8d6 divine damage \add d6 per two caster levels above 8th}
 \spellattack{Magic vs. Will}
-\begin{spelleffect}
-    If the target is not chaotic, it is \bewildered for 5 rounds and takes damage. A failed attack deals half damage, but does not prevent the creature from being bewildered.
-\end{spelleffect}
+\begin{spellsuccess}
+    If the target is not chaotic, it is \bewildered for 5 rounds and takes damage.
+\end{spellsuccess}
+\begin{spellfailure}
+    As above, but a failed attack deals half damage.
+\end{spellfailure}
 
 \spellsection{Charm Monster}
 \spelldesc{You manipulate a creature's mind so it thinks of you as a trusted friend and ally.}
 \spellschool{Enchantment (Emotion) [Charm, Mind-Affecting]}
 \spelllvl{Ench 5}
 \spelltgt{One creature}
-\begin{spelleffect}
+\begin{spellsuccess}
   This spell functions like \spell{charm person}, except that the effect is not restricted by creature type.
-\end{spelleffect}
+\end{spellsuccess}
 
 \spellsection{Charm Person}
 \spelldesc{You manipulate a person's mind so he thinks of you as a trusted friend and ally.}
@@ -633,10 +650,10 @@
 \spelldur{\durlong}
 \spellsr{Yes (Will)}
 \spellattack{Magic vs. Will}
-\begin{spelleffect}
+\begin{spellsuccess}
     The subject regards you as its trusted friend and ally. If it is currently faced with any obvious threat from you or your allies, such as someone drawing a weapon, casting a spell, or aiming a ranged weapon at the creature, you take a \minus5 penalty on the magic attack.
   \par The spell does not enable you to control the subject as if it were an automaton, but it perceives your words and actions in the most favorable way. You can try to give the subject orders, but you must succeed at a Persuasion check to convince it to do anything it wouldn't ordinarily do. (Retries are not allowed.) Treat the target as a friend (a \plus10 relationship modifier) for the purpose of the Persuasion check. An affected creature never obeys suicidal or obviously harmful orders, but it might be convinced that something very dangerous is worth doing.
-\end{spelleffect}
+\end{spellsuccess}
 \begin{spellnotes}
   Any act by you or your apparent allies that threatens the \spell{charmed} person breaks the spell. A creature that resists this spell is immune to all further attempts by the same spellcaster for 24 hours.
 \end{spellnotes}
@@ -647,9 +664,9 @@
 \spelllvl{Ench 6}
 \spellarea{\areamed radius limit}
 \spelltgts{Five humanoid creatures within the area}
-\begin{spelleffect}
+\begin{spellsuccess}
   This spell functions like \spell{charm person}, except that it affects multiple creatures.
-\end{spelleffect}
+\end{spellsuccess}
 
 \spellsection{Circle of Death}
 \spelldesc{You snuff out the life force of your weakened foes by flooding them with negative energy.}
@@ -662,14 +679,12 @@
 \spelldur{Instantaneous}
 \spellsr{Yes (Fortitude)}
 \spellattack{Magic vs. Fortitude}
-\begin{spellblood}
-    You make a magic attack vs. Fortitude against each affected creature. A successful attack reduces the target to 0 hit points and deals 9 critical damage, causing the target to begin dying.
-\end{spellblood}
-\begin{spellnotes}
-    This spell can affect 2 levels worth of living creatures per caster level. Creatures with the lowest level are affected first; among creatures with equal levels, those who are closest to the burst's point of origin are affected first. No creature whose level is greater than half your caster level can be affected, and levels that are not sufficient to affect a creature are wasted.
-  
-    Healthy creatures are not affected by this spell, and do not count against its level limit.
-\end{spellnotes}
+\begin{spelleffect}
+    This spell affects all \bloodied living creatures in the area, starting with the creature with the lowest level, until it affects a total number of levels equal to twice your caster level. Among creatures with equal levels, those closest to the burst's point of origin are affected first. No creature whose level is greater than half your caster level can be affected, and levels that are not sufficient to affect a creature are wasted. Healthy creatures are not affected by this spell, and do not count against its level limit.
+\end{spelleffect}
+\begin{spellsuccess}
+    If the target is bloodied, it is reduced to 0 hit points and takes 9 critical damage, causing it to begin dying.
+\end{spellsuccess}
 \spellmat{The powder of a crushed black pearl with a minimum value of 100 gp.}
 
 \spellsection{Clenched Fist}
@@ -678,13 +693,17 @@
 \spelllvl{Evoc 9, Strength 9}
 \spellsr{Yes (Fortitude)}
 \spelldmg{2d10 force damage \add half casting attribute}
-\spellattack{Special vs. AD, Magic vs. Fortitude}
 \begin{spelleffect}
-  This spell functions like \spell{interposing hand}, except that the hand can also strike foes. Each round, as a swift action, you can command the hand to attack a foe. If you do, it makes a physical attack against that foe during the action phase. Its attack bonus equals your caster level \add your casting attribute (the hand's Strength) \sub 1 (for being Large).
+  This spell functions like \spell{interposing hand}, except that the hand can also strike foes. Each round, as a swift action, you can command the hand to attack a foe. If you do, it makes a physical attack against that foe during the action phase.
 \end{spelleffect}
-\begin{spellblood}
-    If the struck creature is \bloodied, you also make a magic attack vs. Fortitude to daze it for 1 round.
-\end{spellblood}
+\spellattack{Caster level \add casting attribute vs. Armor defense}
+\begin{spellsuccess}
+    The target takes damage. In addition, if it is \bloodied, you make an additional magic attack.
+\end{spellsuccess}
+\spellattack{Magic vs. Fortitude}
+\begin{spellsuccess}
+    If the target is bloodied, it is \dazed for 1 round.
+\end{spellsuccess}
 \begin{spellnotes}
   The floating hand can move as far as 60 feet and can attack in the same round. Since this hand is directed by you, its ability to notice or attack invisible or concealed creatures is no better than yours.
 \end{spellnotes}
@@ -699,12 +718,12 @@
 \spelldur{\durshort (D)}
 \spellsr{Yes (Will)}
 \spellattack{Magic vs. Will (harmless)}
-\begin{spelleffect}
+\begin{spellsuccess}
   This spell has three effects.
-  \par First, each shielded creature gains a \plus5 enhancement bonus to its defenses.
-  \par Second, each shielded creature gains spell resistance against lawful spells and spells cast by lawful creatures.
+  \par First, each subject gains a \plus5 enhancement bonus to its defenses.
+  \par Second, each subject gains spell resistance against lawful spells and spells cast by lawful creatures.
   \par Third, at the end of each round, all lawful creatures within \rngclose range of the subject that attacked the subject with their body or a melee weapon that round take 4d6 points of damage. A creature that attacks multiple creatures shielded by this spell can take this damage multiple times.
-\end{spelleffect}
+\end{spellsuccess}
 \spellfocus{A tiny reliquary containing some sacred relic, such as a scrap of parchment from a chaotic text. The reliquary costs at least 250 gp.}
 
 \spellsection{Cloudkill}
@@ -713,12 +732,16 @@
 \spelllvl{Arcane 7}
 \spellattack{Magic vs. Fortitude}
 \begin{spelleffect}
-  This spell functions like \spell{fog cloud}, except that the fog is poisonous. At the end of each round, you make a magic attack vs. Fortitude against all living creatures in the area to deal 1d4 Constitution damage.
+    This spell functions like \spell{fog cloud}, except that the fog is poisonous. At the end of each round, you attack all living creatures in the area.
   \par Unlike a \spell{fog cloud}, the \spell{cloudkill} moves away from you at 10 feet per round, rolling along the surface of the ground. Figure out the cloud's new spread each round based on its new point of origin, which is 10 feet farther away from the point of origin where you cast the spell.
 \end{spelleffect}
+\spellattack{Magic vs. Fortitude}
+\begin{spellsuccess}
+    1d4 Constitution damage.
+\end{spellsuccess}
 \begin{spellnotes}
   Holding one's breath doesn't help against the poison, but creatures immune to poison are unaffected.
-  \par Because the vapors are heavier than air, they sink to the lowest level of the land, even pouring down den or sinkhole openings. It cannot penetrate liquids, nor can it be cast underwater.
+  \par Because the vapors are heavier than air, they sink to the lowest level of the land, even pouring down den or sinkhole openings. This spell cannot penetrate liquids, nor can it be cast underwater.
 \end{spellnotes}
 
 \spellsection{Color Spray}
@@ -808,7 +831,7 @@
 \spellarea{\arealarge cone-shaped burst}
 \spelldmg{8d6 cold damage \add d6 per four caster levels above 16th.}
 \begin{spelleffect}
-  This spell functions as \spell{cone of cold}, except that it affects a larger area.
+  This spell functions like \spell{cone of cold}, except that it affects a larger area.
 \end{spelleffect}
 
 \spellsection{Confusion}
@@ -2389,8 +2412,8 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellattack{Magic vs. Will (harmless)}
 \begin{spelleffect}
   A brilliant divine radiance surrounds the subjects, protecting them from attacks, granting them resistance to spells cast by evil creatures, and damaging evil creatures when they strike the subjects. This abjuration has three effects.
-  \par First, each shielded creature gains a \plus5 enhancement bonus to its defenses.
-  \par Second, each shielded creature gains spell resistance against evil spells and spells cast by evil creatures.
+  \par First, each subject gains a \plus5 enhancement bonus to its defenses.
+  \par Second, each subject gains spell resistance against evil spells and spells cast by evil creatures.
   \par Third, at the end of each round, all evil creatures within \rngclose range of the subject that attacked the subject with their body or a melee weapon that round take 4d6 points of damage. A creature that attacks multiple creatures shielded by this spell can take this damage multiple times.
 \end{spelleffect}
 \spellfocus{A tiny reliquary containing some sacred relic. The reliquary costs at least 250 gp.}
@@ -3923,7 +3946,7 @@ If the subject takes any offensive action, the spell immediately ends.
 
 \end{spelleffect}
 \begin{spellnotes}
-    This is considered a mind-affecting effect on any creature that attempts to attack the shielded creature. Creatures immune to mind-affecting effects can attack the shielded creature freely.
+    This is considered a mind-affecting effect on any creature that attempts to attack the subject. Creatures immune to mind-affecting effects can attack the subject freely.
 \end{spellnotes}
 
 \pdfbookmark[2]{S}{SpellDescriptionsS}
@@ -4147,8 +4170,8 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellattack{See text}
 \begin{spelleffect}
   A dim, blue glow surrounds the subjects, protecting them from attacks, granting them resistance to spells cast by chaotic creatures, and slowing chaotic creatures when they strike the subjects. This abjuration has three effects.
-  \par First, each shielded creature gains a \plus5 enhancement bonus to its defenses.
-  \par Second, each shielded creature gains spell resistance 10 against chaotic spells and spells cast by chaotic creatures.
+  \par First, each subject gains a \plus5 enhancement bonus to its defenses.
+  \par Second, each subject gains spell resistance 10 against chaotic spells and spells cast by chaotic creatures.
   \par Third, at the end of each round, all chaotic creatures within \rngclose range of the subject that attacked the subject with their body or a melee weapon that round take 4d6 points of damage. A creature that attacks multiple creatures shielded by this spell can take this damage multiple times.
 \end{spelleffect}
 \spellfocus{A tiny reliquary containing some sacred relic, such as a scrap of parchment from a lawful text. The reliquary costs at least 250 gp.}
@@ -5256,8 +5279,8 @@ A slowed creature can take only a single move action or standard action each tur
 \spellattack{See text}
 \begin{spelleffect}
   A malevolent darkness surrounds the subjects, protecting them from attacks, granting them resistance to spells cast by good creatures, and weakening good creatures when they strike the subjects. This abjuration has three effects.
-  \par First, each shielded creature gains a \plus5 enhancement bonus to its defenses.
-  \par Second, each shielded creature gains spell resistance 10 against chaotic spells and spells cast by good creatures.
+  \par First, each subject gains a \plus5 enhancement bonus to its defenses.
+  \par Second, each subject gains spell resistance 10 against chaotic spells and spells cast by good creatures.
   \par Third, at the end of each round, all good creatures within \rngclose range of the subject that attacked the subject with their body or a melee weapon that round take 4d6 points of damage. A creature that attacks multiple creatures shielded by this spell can take this damage multiple times.
 \end{spelleffect}
 \spellfocus{A tiny reliquary containing some sacred relic, such as a piece of parchment from an unholy text. The reliquary costs at least 250 gp.}
