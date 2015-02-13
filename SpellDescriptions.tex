@@ -2887,6 +2887,24 @@ This spell can be made permanent (on objects only) with a \spell{permanency} rit
   This spell functions as \spell{link vitality}, except that it affects many creatures. The spell links all creatures your Will attack succeeds against. If any of the linked creatures lose or gain hit points, all linked creatures lose or gain the same amount, and so on.
 \end{spelleffect}
 
+\spellsection{Living Projectile}
+\spellschool{Abjuration/Evocation (Control, Shielding)}
+\spelllvl{Arcane 3}
+\spellrng{\rngclose}
+\spelltgts{One willing creature and one creature}
+\spelldur{Instantaneous and 1 round}
+\spellsr{Yes (Will) and No}
+\begin{spelleffect}
+    You telekinetically fling a willing creature at great speed into a foe. The willing subject is moved adjacent to the foe attacked, gains the benefit of the \spell{ablate impact} spell, and is knocked prone. If the attack hits a different target than intended, such as because of active cover, the ally moves adjacent to that target instead.
+\end{spelleffect}
+\spellattack{Caster level \add casting attribute vs. Armor defense}
+\begin{spellsuccess}
+    6d6 damage \add d6 per two caster levels above 6th. The flung creature takes half the damage dealt.
+\end{spellsuccess}
+\begin{spellfailure}
+    Half damage to the foe. The damage taken by the flung creature is not halved.
+\end{spellfailure}
+
 \spellsection{Locate Entity}
 \spellschool{Divination (Awareness) [Detection]}
 \spelllvl{Arcane 6, Knowledge 6}
