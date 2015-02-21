@@ -60,17 +60,12 @@
 \spellschool{Conjuration (Creation) [Acid]}
 \spelllvl{Arcane 5}
 \spellrng{\rngfar}
-\spelldmg{5d8 acid damage \add 2d8 per round}
-\begin{spelleffect}
-  This spell functions like \spell{acid arrow}, except that it deals more damage, and your attack is also made against the target's Fortitude if you beat the target's Reflex.
-\end{spelleffect}
-\spellattack{Magic vs. Reflex}
+\spelleff{One arrow of acid}
+\spelldur{1 round per two caster levels}
+\spellsr{No}
+\spellattack{Magic vs. Reflex and Fortitude}
 \begin{spellsuccess}
-    5d8 acid damage immediately, and 2d8 acid damage at the end of each round after the first.
-\end{spellsuccess}
-\spellattack{Magic vs. Fortitude}
-\begin{spellsuccess}
-    The target is \vulnerable.
+    If you beat the target's Reflex defense, it takes 5d8 acid damage immediately, and 2d8 acid damage at the end of each round after the first. If you also beat the target's Fortitude defense, it is \vulnerable.
 \end{spellsuccess}
 \begin{spellnotes}
    If the target becomes submerged in liquid or takes at least twenty points of fire or cold damage, this spell's effect ends.
@@ -86,9 +81,11 @@
 \spelldur{\durshort}
 \spellsr{No}
 \begin{spelleffect}
-    This spell functions like \spell{solid fog}, except that the fog is highly acidic. At the end of each round, you attack everything in the area.
+    This spell functions like \spell{solid fog}, except that the fog is highly acidic.
 \end{spelleffect}
-\spellattack{Magic vs. Fortitude}
+\spelltriggeredattack{Magic vs. Fortitude}
+\spelltrigger{End of round}
+\spelltriggertarget{All creatures in the area}
 \begin{spellsuccess}
     4d6 acid damage.
 \end{spellsuccess}
@@ -403,13 +400,14 @@
 \spelleff{Wall of whirling blades up to 100 ft. long, or a ringed wall of whirling blades with a radius of up to 20 ft.; either form 20 ft. high}
 \spelldur{\durshort (D)}
 \spellsr{Yes (Reflex)}
-\spelldmg{6d6 force damage \add d6 per four caster levels above 12th}
 \begin{spelleffect}
-    Whenever a creature passes through the wall, you make a magic attack against it. If you create the wall so it appears where creatures are, you also make attack attack against them. The wall provides active cover (20\% miss chance) against attacks made through it. Attacks that miss in this way harmlessly strike the wall.
+    The wall provides active cover (20\% miss chance) against attacks made through it. Attacks that miss in this way harmlessly strike the wall.
 \end{spelleffect}
-\spellattack{Magic vs. Reflex}
+\spelltriggeredattack{Magic vs. Reflex}
+\spelltriggers{Wall is created on creature, or creature passes through wall}
+\spelltriggertarget{The creature in the wall}
 \begin{spellsuccess}
-    The target takes damage.
+    6d6 force damage \add d6 per four caster levels above 12th.
 \end{spellsuccess}
 \begin{spellfailure}
     As above, but a failed attack deals half damage.
@@ -1921,22 +1919,25 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldesc{You appear to immolate yourself in a wreath of flame that lashes out at anyone who tries to harm you.}
 \spellschool{Abjuration/Evocation (Energy, Shielding) [Fire or Cold]}
 \spelllvl{Arcane 4, Fire 4}
-\spellrng{\rngpers/\rngclose}
-\spelltgt{You/One or more creatures}
+\spellrng{\rngpers}
+\spelltgt{You}
 \spelldur{\durshort (D)}
-\spellsr{No/Yes (Reflex)}
-\spelldmg{4d6 fire or cold damage \add d6 per four caster levels above 8th}
-\spellattack{Magic vs. Reflex}
+\spellsr{Yes (Fortitude)}
 \begin{spelleffect}
-    At the end of each round, you make a magic attack vs. Reflex to deal damage to all creatures within \rngclose range that attacked you with their body or a melee weapon that round. A failed attack deals half damage. The damage type and other effects depend on which kind of \spell{fire shield} is used. This decision must be made at the time the spell is cast.
-
-  \par \subspell{Warm Shield} The flames are warm to the touch and deal fire damage. You gain cold damage reduction 20 \add 1 per caster level above 8th.
-  \par \subspell{Chill Shield} The flames are cool to the touch and deal cold damage. You gain fire damage reduction 20 \add 1 per caster level above 8th.
-
-  Regardless of the version, the flames are thin and wispy, giving off light equal to only half the illumination of a normal torch (10 feet).
+    You gain cold damage reduction 20 \add 1 per caster level above 8th, and radiate light as a torch.
 \end{spelleffect}
+\spelltriggeredattack{Magic vs. Reflex}
+\spelltrigger{Creature within \rngclose range attacks you with a melee weapon}
+\spelltriggertarget{Attacking creature}
+\begin{spellsuccess}
+    4d6 fire or cold damage \add d6 per four caster levels above 8th.
+\end{spellsuccess}
+\begin{spellfailure}
+    Half damage.
+\end{spellfailure}
+
 \begin{spellnotes}
-  The damage reduction allows the subject to ignore the first 20 energy damage it takes each round of the appropriate type. Creatures wielding weapons with exceptional reach are not subject to this spell's damage if they attack you.
+  The damage reduction allows the subject to ignore the first 20 energy damage it takes each round of the appropriate type.
 \end{spellnotes}
 
 \spellsection{Fire Storm}
