@@ -1,49 +1,53 @@
 \section{Arcane Invocation Descriptions}
 
-\spellsection{Ablative Aura}
+\invocationsection{Ablative Aura}
 \spelldesc{You surround your ally with a faint yellow aura that partially shields him from incoming damage.}
-\spellschool{Abjuration (Shielding)}
-\spellrng{\rngclose}
-\spelltgt{One creature}
+\spelltabular
+\longcol{\spellschool{Abjuration (Shielding)}} \\
+\spelltgt{One creature} & \spellrng{\rngclose} \\
 \spelldur{1 round}
 \spellsr{Yes (Will)}
+\end{tabularx}
 \spellattack{Will negates (harmless)}
 \begin{spelleffect}
 The subject treats the first few points of damage it takes as nonlethal damage. The amount of damage converted is equal to 5 \add caster level.
 \end{spelleffect}
 
-\spellsection{Acid Orb}
+\invocationsection{Acid Orb}
 \spelldesc{You conjure a small orb of acid out of nothingness and propel it towards your foe.}
-\spellschool{Conjuration (Creation) [Acid]}
-\spellrng{\rngclose}
-\spelleff{One missile of acid}
-\spelldur{Instantaneous}
+\spelltabular
+\longcol{\spellschool{Conjuration (Creation) [Acid]}} \\
+\spelltgt{One creature or object} & \spellrng{\rngclose} \\
+\longcol{\spelleff{One ball of acid}} \\
 \spellsr{No}
+\end{tabularx}
 \spelldmg{d6 acid damage \add 1 per caster level}
 \spellattack{Reflex negates}
 \begin{spelleffect}
     You make a Reflex attack to deal damage to the target.
 \end{spelleffect}
 
-\spellsection{Bestow Protection}
-\spellschool{Abjuration (Shielding)}
-\spellrng{\rngclose}
-\spelltgt{One creature}
+\invocationsection{Bestow Protection}
+\spelltabular
+\spellschool{Abjuration (Shielding)} & \\
+\spelltgt{One creature} & \spellrng{\rngclose} \\
 \spelldur{1 round}
 \spellsr{Yes (Will)}
+\end{tabularx}
 \spellattack{Will negates (harmless)}
 \begin{spelleffect}
   The subject gains a \plus2 enhancement bonus to all defenses. \bonusscalingdescription This bonus applies only against against spells and spell-like abilities.
 \end{spelleffect}
 
-\spellsection{Combat Telekinesis}
+\invocationsection{Combat Telekinesis}
 \spelldesc{You telekinetically control a light weapon and use it to attack.}
-\spellschool{Evocation (Control)}
-\spelltime{1 swift action}
-\spellrng{\rngclose}
-\spelltgt{One unattended light weapon appropriate for your size}
+\spelltabular
+\longcol{\spellschool{Evocation (Control)}} \\
+\longcol{\spelltime{1 swift action}} \\
+\spelltgt{One unattended light weapon appropriate for your size} & \spellrng{\rngclose} \\
 \spelldur{Concentration}
 \spellsr{Yes (Will)}
+\end{tabularx}
 \spellattack{Will negates (object)}
 \begin{spelleffect}
 This spell lets you control the target weapon from a distance. This allows you to attack with the weapon just as if you were holding it in your hand, except that you use your casting attribute in place of your Strength. In all other respects, this functions as if he were wielding the weapon normally, including contributing to overwhelm penalties and taking attacks of opportunity. The weapon floats in midair and threatens all squares adjacent to it, and he may make attacks of opportunity with the weapon or with a weapon he wields in his hands, but not both.
@@ -54,13 +58,14 @@ You can move the weapon up to 30 feet in any direction, even vertically, as a mo
     Weapons affected by the spell receive spell resistance, but spell resistance does not protect creatures struck by the weapon. Unlike most spells, you can maintain concentratation on this spell as a swift action.
 \end{spellnotes}
 
-\spellsection{Confusion, Lesser}
+\invocationsection{Confusion, Lesser}
 \spelldesc{You compel a foe you touch to act randomly.}
-\spellschool{Enchantment (Compulsion) [Mind-Affecting]}
-\spellrng{Touch}
-\spelltgt{Touched creature}
+\spelltabular
+\longcol{\spellschool{Enchantment (Compulsion) [Mind-Affecting]}} \\
+\spelltgt{One creature} & \spellrng{Touch} \\
 \spelldur{1 round}
 \spellsr{Yes (Will)}
+\end{tabularx}
 \spellattack{Will negates}
 \begin{spellhealthy}
     You make a Will attack against the subject to bewilder it.
@@ -73,29 +78,32 @@ A bewildered creature is vulnerable, causing it to take a \minus2 penalty to att
 \par Attackers are not at any special advantage when attacking a confused character. A confused character will not make attacks of opportunity against any creature that it is not already devoted to attacking (either because of its most recent action or because it has just been attacked).
 \end{spellnotes}
 
-\spellsection{Conjure Projectile}
-\spelldesc{You create arrows from thin air and magically fire them at your foe.}
-\spellschool{Conjuration (Creation)}
-\spellrng{\rngmed}
-\spelleff{Up to one Tiny projectile/level}
+\invocationsection{Conjure Projectile}
+\spelldesc{You create an arrow from thin air and magically fire it at your foe.}
+\spelltabular
+\longcol{\spellschool{Conjuration (Creation)}} \\
+\spelltgt{One creature or object} & \spellrng{\rngmed} \\
+\longcol{\spelleff{One projectile}} \\
 \spelldur{1 round}
 \spellsr{No}
-\spelldmg{d6 damage \add 1 per caster level; see text}
+\end{tabularx}
 \spellattack{None}
+\spelldmg{d6 damage \add 1 per caster level; see text}
 \begin{spelleffect}
-This spell creates one or more projectiles, such as a arrows or bolts, that you magically propel at a foe. You make a physical ranged attack to deal damage to the target, using your using your caster level in place of your base attack bonus. Regardless of the number of projectiles summoned, only one attack roll is made, and the damage dealt is unchanged.
+This spell creates a projectile, such as an arrow or bolt, that you magically propel at a foe. You make a physical ranged attack to deal damage to the target, using your using your caster level in place of your base attack bonus.
 \end{spelleffect}
 \begin{spellnotes}
 At the end of the spell's duration, the projectiles disappear without a trace.
 \end{spellnotes}
 
-\spellsection{Distract}
+\invocationsection{Distract}
 \spelldesc{You cloud the mind of the subject, distracting it from what it was going to do.}
-\spellschool{Enchantment (Compulsion) [Mind-affecting]}
-\spellrng{\rngclose}
-\spelltgt{One creature}
+\spelltabular
+\longcol{\spellschool{Enchantment (Compulsion) [Mind-affecting]}} \\
+\spelltgt{One creature} & \spellrng{\rngclose} \\
 \spelldur{\durshort}
 \spellsr{Yes (Will)}
+\end{tabularx}
 \spellattack{None}
 \begin{spellhealthy}
     You make a Will attack to bewilder the subject.
@@ -104,26 +112,28 @@ At the end of the spell's duration, the projectiles disappear without a trace.
 A bewildered creature is vulnerable, causing it to take a \minus2 penalty to attacks, defenses, and checks.
 \end{spellnotes}
 
-\spellsection{Draining Touch}
+\invocationsection{Draining Touch}
 \spelldesc{You drain your foe's life force with a touch, drawing it into yourself.}
-\spellschool{Necromancy (Life)}
-\spellrng{Touch}
-\spelltgt{Living creature touched}
-\spelldur{Instantaneous/5 rounds; see text}
+\spelltabular
+\longcol{\spellschool{Necromancy (Life)}} \\
+\spelltgt{One living creature} & \spellrng{Touch} \\
+\spelldur{5 rounds; see text}
 \spellsr{Yes (Will)}
 \spelldmg{d6 damage \add 1 per caster level}
+\end{tabularx}
 \spellattack{Will half}
 \begin{spelleffect}
     You make a melee touch attack to deal damage to the target. You gain temporary hit points equal to half the damage you deal. However, you can't gain more health than is necessary to kill the subject. The temporary hit points disappear 5 rounds later. If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
 \end{spelleffect}
 
-\spellsection{Exhaustion}
+\invocationsection{Exhaustion}
 \spelldesc{You momentarily weaken your foe's body.}
-\spellschool{Necromancy (Flesh)}
-\spellrng{\rngmed}
-\spelltgt{One living creature}
+\spelltabular
+\longcol{\spellschool{Necromancy (Flesh)}} \\
+\spelltgt{One living creature} & \spellrng{\rngmed} \\
 \spelldur{1 round}
 \spellsr{Yes (Fortitude)}
+\end{tabularx}
 \spellattack{Fortitude negates}
 \begin{spelleffect}
     You make a Fortitude attack against the subject to exhaust it.
@@ -132,29 +142,33 @@ A bewildered creature is vulnerable, causing it to take a \minus2 penalty to att
      An exhausted character moves at half speed and takes a \minus4 penalty to attacks, defenses, and checks.
 \end{spellnotes}
 
-\spellsection{False Foe}
+\invocationsection{False Foe}
 \spelldesc{You create an illusion of a threatening creature, tricking your foes into attacking and defending against it as if it were real.}
-\spellschool{Illusion (Figment) [Unreal]}
-\spellrng{\rngmed}
-\spelleff{One Medium illusory creature}
+\spelltabular
+\longcol{\spellschool{Illusion (Figment) [Unreal]}} \\
+\spelleff{Illusory creature} & \spellrng{\rngmed} \\
 \spelldur{Concentration + 2 rounds}
 \spellsr{No}
+\end{tabularx}
 \spellattack{Will disbelief}
 \begin{spelleffect}
-    This spell creates an illusory creature which seems to attack your foes. It can contribute to overwhelm penalties, though it never actually deals damage. Its physical defenses are 10.
+    This spell creates an illusory creature of your size which seems to attack your foes. It can contribute to overwhelm penalties, though it never actually deals damage. Its physical defenses are 10.
+    
+    The creature must be of your size and general shape, though you can freely decide the details of its appearance. You cannot control its actions; if there are no foes available attack, it continues attacking thin air.
 \end{spelleffect}
 \begin{spellnotes}
     When you use this invocation, you make a magic check, with the same bonus as your magic attack bonus. This check is opposed by the Will defense of any creature that interacts with the effect. If you fail, the creature disbelieves the spell. In order to interact with the illusion with a Perception check, the creature must make a Perception check that beats your magic check.
 \end{spellnotes}
 
-\spellsection{Imbue Weapon}
+\invocationsection{Imbue Weapon}
 \spelldesc{You imbue an ally's weapon with potent magical energy, making its next strike more effective.}
-\spellschool{Transmutation (Imbuement)}
-\spellrng{\rngclose}
-\spelltgt{One weapon}
+\spelltabular
+\longcol{\spellschool{Transmutation (Imbuement)}} \\
+\spelltgt{One weapon} & \spellrng{\rngclose} \\
 \spelldur{1 round or until discharged}
 \spellsr{Yes (Will)}
 \spelldmg{d6 physical damage \add 1 per caster level}
+\end{tabularx}
 \spellattack{Will negates (harmless)}
 \begin{spelleffect}
 The next successful attack with the target weapon deals extra damage.
@@ -163,26 +177,26 @@ The next successful attack with the target weapon deals extra damage.
     The creature wielding the weapon can make a saving throw to avoid having its weapon enhanced, but the creature struck by the weapon gets no saving throw and cannot apply spell resistance.
 \end{spellnotes}
 
-\spellsection{Magic Ray}
+\invocationsection{Magic Ray}
 \spelldesc{You fire a ray of magical energy at your foe.}
-\spellschool{Evocation [Force]}
-\spellrng{\rngclose}
-\spelleff{Ray}
-\spelldur{Instantaneous}
+\spelltabular
+\longcol{\spellschool{Evocation [Force]}} \\
+\spelltgt{One creature} & \spellrng{\rngclose} \\
 \spellsr{Yes (Reflex)}
 \spelldmg{d6 force damage \add 1 per caster level}
-\spellattack{None}
+\end{tabularx}
 \begin{spelleffect}
     You make a Reflex attack to deal damage to the target. As with \spell{magic missile}, inanimate objects are not damaged by this invocation.
 \end{spelleffect}
 
-\spellsection{Phantom Darkness}
+\invocationsection{Phantom Darkness}
 \spelldesc{You twist your foe's perceptions, convincing it that the world has suddenly become dark.}
-\spellschool{Illusion (Phantasm) [Unreal]}
-\spellrng{Touch}
-\spelltgt{Touched creature}
+\spelltabular
+\longcol{\spellschool{Illusion (Phantasm) [Unreal]}} \\
+\spelltgt{One creature} & \spellrng{Touch} \\
 \spelldur{1 round}
 \spellsr{Yes (Will)}
+\end{tabularx}
 \spellattack{Will disbelief}
 \begin{spelleffect}
     You make a melee touch attack to blind the target. Creatures with extrasensory perception abilities, such as tremorsense, may use those abilities normally.
@@ -191,39 +205,39 @@ The next successful attack with the target weapon deals extra damage.
     A blinded creature cannot see. A blinded creature cannot see. It moves at half speed and is defenseless, causing it to provoke attacks of opportunity for its actions. All checks and activities that rely on vision (such as reading and visual Perception checks) automatically fail, and any checks related to vision (such as Climb and Sense Motive checks) take a \minus4 penalty. All opponents are considered to be invisible (50\% miss chance) relative to the blinded creature.
 \end{spellnotes}
 
-\spellsection{Premonition}
+\invocationsection{Premonition}
 \spelldesc{You grant your ally a brief glimpse of the future that shows it where to strike in combat.}
-\spellschool{Divination (Knowledge)}
-\spellrng{\rngmed}
-\spelltgt{One creature}
+\spelltabular
+\longcol{\spellschool{Divination (Knowledge)}} \\
+\spelltgt{One creature} & \spellrng{\rngmed} \\
 \spelldur{1 round; see text}
 \spellsr{Yes (Will)}
+\end{tabularx}
 \spellattack{Will negates (harmless)}
 \begin{spelleffect}
 The subject gains a \plus4 bonus to its next physical attack, provided that its target is also within the spell's range. This bonus increases by \plus1 for every three levels above 1st level.
 \end{spelleffect}
 
-\spellsectioncomma{Slow}{Lesser}
+\invocationsectioncomma{Slow}{Lesser}
 \spelldesc{You decelerate your enemy's motions temporarily, causing her to move and act more slowly than normal.}
-\spellschool{Transmutation (Temporal)}
-\spellrng{\rngmed}
-\spelltgt{One creature}
+\spelltabular
+\longcol{\spellschool{Transmutation (Temporal)}} \\
+\spelltgt{One creature} & \spellrng{\rngmed} \\
 \spelldur{1 round}
 \spellsr{Yes (Will)}
+\end{tabularx}
 \spellattack{Will negates}
 \begin{spelleffect}
-    The subject is slowed.
+    The subject is \slowed.
 \end{spelleffect}
-\begin{spellnotes}
-    A slowed creature can take only a single move action or standard action each turn, but not both. It cannot take full-round actions, but it may take swift actions. Additionally, it takes a \minus2 penalty to physical attacks and defenses, as well as Strength and Dexterity-based checks.
-\end{spellnotes}
 
-\spellsection{Twist Fate}
-\spellschool{Divination (Knowledge)}
-\spellrng{\rngmed}
-\spelltgt{One creature}
+\invocationsection{Twist Fate}
+\spelltabular
+\longcol{\spellschool{Divination (Knowledge)}} \\
+\spelltgt{One creature} & \spellrng{\rngmed} \\
 \spelldur{1 round}
 \spellsr{Yes (Will)}
+\end{tabularx}
 \spellattack{Will negates}
 \begin{spelleffect}
 You know what the subject is most likely going to do during its next turn. After learning that, you can choose to impose a \minus4 penalty to its attacks, defenses, or checks for 1 round.
