@@ -46,7 +46,6 @@
 \spelltabular
 \spellschool{Conj (Creation) [Acid]} & \spelllists{Arcane} \\
 \spelltgt{One creature or object} & \spellrng{\rngmed} \\
-\spelleff{One arrow of acid} & \\
 \spelldur{1 round per two caster levels}
 \end{tabularx}
 \spellattack{Magic vs. Reflex}
@@ -62,7 +61,6 @@
 \spelltabular
 \spellschool{Conj (Creation) [Acid]} & \spelllists{Arcane} \\
 \spelltgt{One creature or object} & \spellrng{\rngfar} \\
-\spelleff{One arrow of acid} & \\
 \spelldur{1 round per two caster levels}
 \end{tabularx}
 \spellattack{Magic vs. Reflex and Fortitude}
@@ -78,7 +76,6 @@
 \spelltabular
 \spellschool{Conj (Creation) [Acid]} & \spelllists{Arcane, Destruction} \\
 \spellarea{\areamed radius spread} & \spellrng{\rngmed} \\
-\spelleff{Fog in the area} & \\
 \spelldur{\durshort}
 \end{tabularx}
 \begin{spelleffect}
@@ -383,7 +380,6 @@
 \spelltabular
 \spellschool{Conj/Trans (Animation, Creation)} & \spelllists{Arcane} \\
 \spellarea{\areasmall radius spread} & \spellrng{\rngmed} \\
-\longcol{\spelleff{Black tentacles in the area}} \\
 \spelldur{\durshort \dismissable}
 \end{tabularx}
 \begin{spelleffect}
@@ -401,12 +397,12 @@
 \spelldesc{You create an immobile, vertical curtain of whirling blades shaped of pure force.}
 \spelltabular
 \spellschool{Evoc (Energy) [Force, Wall]} & \spelllists{Divine, War} \\
-\spelleff{Wall of whirling blades} & \spellrng{\rngmed} \\
+\spellarea{100 ft. wall, 20 ft. high \shapeable} & \spellrng{\rngmed} \\
 \spelldur{\durshort \dismissable}
 \spellsr{Yes (Reflex)}
 \end{tabularx}
 \begin{spelleffect}
-    You create a wall of blades made of force energy. You can make a single straight wall up to 100 feet long, or a ringed cylinder of blades with a radius of up to 20 feet. In either case, the wall is 20 feet high. The wall provides active cover (20\% miss chance) against attacks made through it. Attacks that miss in this way harmlessly strike the wall.
+    You create a wall of blades made of force energy. It is up to 100 feet long, and 20 feet high. The wall provides active cover (20\% miss chance) against attacks made through it. Attacks that miss in this way harmlessly strike the wall. The wall is considered difficult terrain.
 \end{spelleffect}
 \spelltriggeredattack{Magic vs. Reflex}
 \spelltriggers{Wall is created on creature, or creature passes through wall}
@@ -877,7 +873,7 @@
 \spelldesc{You manipulate elemental forces to control water around you.}
 \spelltabular
 \spellschool{Evoc (Control) [Water]} & \spelllists{Nature, Water} \\
-\spellarea{Water in one volume/caster level of 10 ft. by 10 ft. by 2 ft. (S)} & \spellrng{\rngfar} \\
+\spellarea{Water in one 5 ft. cube/caster level} & \spellrng{\rngfar} \\
 \spelldur{\durmed \dismissable}
 \end{tabularx}
 \begin{spelleffect}
@@ -892,7 +888,7 @@
 \spellsection{Create Sound}{1}
 \spelltabular
 \spellschool{Illus (Figment) [Unreal]} & \spelllists{Illus} \\
-\spelleff{Illusory sounds} & \spellrng{\rngclose} \\
+\longcol{\spellrng{\rngclose}} \\
 \spelldur{\durshort \dismissable}
 \end{tabularx}
 \spellattack{Magic check vs. Perception and Will (if interacted with)}
@@ -908,12 +904,11 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldesc{You summon uncountable hordes of centipedes to overwhelm your foes.}
 \spelltabular
 \spellschool{Conj (Summoning)} & \spelllists{Nature} \\
-\spelltime{Full-round action}
-\spelleff{One swarm of centipedes per two caster levels} & \spellrng{\rngclose; see text} \\
+\spelltime{Full-round action} & \spellrng{\rngmed} \\
 \spelldur{\durmed}
 \end{tabularx}
 \begin{spelleffect}
-  This spell creates one centipede swarm per two caster levels. They must all be adjacent at least one other swarm. You may summon the centipede swarms so that they share the area of other creatures. The swarms remain stationary, attacking any creatures in their area, unless you command the creeping doom to move (a standard action). As a standard action, you can command any number of the swarms to move toward any prey within \rngmed range of you. You cannot command any swarm to move more than \rngmed range away from you, and if you exceed that distance, the swarm remains stationary, attacking any creatures in its area (but it can be commanded again if you move within range).
+  This spell creates one centipede swarm per two caster levels. They must all be adjacent at least one other swarm. You may summon the centipede swarms so that they share the area of other creatures. The swarms remain stationary, attacking any creatures in their area, unless you command the creeping doom to move (a standard action). As a standard action, you can command any number of the swarms to move toward any prey within range of you. Any swarm out of range of you remains stationary, attacking any creatures in its area.
 \end{spelleffect}
 
 \spellsection{Cripple}{6}
@@ -1054,15 +1049,16 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsection{Dancing Lights}{1}
 \spelltabular
 \spellschool{Illus (Figment) [Light]} & \spelllists{Arcane} \\
-\spellarea{\areasmall radius limit} & \spellrng{\rngmed} \\
-\longcol{\spelleff{Up to four lights in the area}} \\
+\spellarea{\areamed radius limit} & \spellrng{\rngmed} \\
 \spelldur{\durshort \dismissable}
 \end{tabularx}
 \begin{spelleffect}
-  Depending on the version selected, you create up to four lights that resemble lanterns or torches (and cast that amount of light), or up to four glowing spheres of light (which look like will-o'-wisps), or one faintly glowing, vaguely humanoid shape. The \spell{dancing lights} must stay within a \areasmall radius in relation to each other. You can spend a swift action on your turn to move the lights as you desire: forward or back, up or down, straight or turning corners, or the like. The lights can move up to 100 feet per round. A light winks out if the distance between you and it exceeds the spell's range.
+    This spell creates mobile sources of light. You can create up to four lights which resemble lanterns or torches, up to four glowing spheres of light, or a single glowing, vaguely humanoid shape. Regardless of their form, each light creates bright illumination in a \areamed radius, as a torch.
+
+    As a swift action, you can move the lights as you desire through the air. They can move up to 100 feet per round, but they must always stay within range of you, and all the lights must remain within a single \areamed radius. Any light which goes beyond those limits winks out.
 \end{spelleffect}
 \begin{spellnotes}
-This spell can be made permanent with a \spell{permanency} ritual.
+    This spell can be made permanent with a \spell{permanency} ritual.
 \end{spellnotes}
 
 \spellsection{Darkvision}{2}
@@ -1376,7 +1372,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldesc{You shoot a thin, green ray from your pointing finger that completely destroys whatever it hits.}
 \spelltabular
 \spellschool{Trans (Alteration)} & \spelllists{Arcane, Destruction} \\
-\spelleff{Ray} & \spellrng{\rngclose} \\
+\spelltgt{One creature or object} & \spellrng{\rngclose} \\
 \spellsr{Yes (Fortitude)}
 \spelldmg{12d8 physical damage \add d8 per two caster levels above 12th}
 \end{tabularx}
@@ -1531,7 +1527,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsection{Earthen Blade}{2}
 \spelltabular
 \spellschool{Trans (Alteration, Augment) [Earth]} & \spelllists{Earth, Nature} \\
-\spelleff{Earthen weapon} & \spellrng{0 ft.} \\
+\longcol{\spellrng{Touch}} \\
 \spelldur{\durlong \dismissable}
 \spellsr{Yes (Fortitude)}
 \end{tabularx}
@@ -1558,7 +1554,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldesc{An intense but highly localized tremor rips the ground. The shock knocks creatures down, collapses structures, opens cracks in the ground, and more.}
 \spelltabular
 \spellschool{Evoc (Control) [Earth]} & \spelllists{Destruction, Divine, Earth, Nature} \\
-\spellarea{\arealarge radius spread (S)} & \spellrng{\rngfar} \\
+\spellarea{\arealarge radius spread} & \spellrng{\rngfar} \\
 \spelldur{1 round}
 \end{tabularx}
 \spellattack{Magic vs. Reflex}
@@ -1620,17 +1616,15 @@ This spell can be made permanent with a \spell{permanency} ritual.
     Mindless creatures are given no special insight into the rule.
 \end{spellnotes}
 
-
-
 \spellsection{Elemental Swarm}{9}
 \spelltabular
 \spellschool{Conj (Summoning) [see text]} & \spelllists{Air, Earth, Fire, Nature, Water} \\
-\spelleff{Two or more summoned creatures in a \areamed radius} & \spellrng{\rngmed} \\
+\spellarea{\arealarge radius limit} & \spellrng{\rngmed} \\
 \spelldur{\durlong \dismissable}
 \end{tabularx}
 \begin{spelleffect}
   This spell opens a portal to an Elemental Plane and summons elementals from it. A druid can choose the plane (Air, Earth, Fire, or Water); a cleric opens a portal to the plane matching his domain.
-  \par When the spell is complete, 2d4 Large elementals appear. Five minutes later, 1d4 Huge elementals appear. Five minutes after that, one greater elemental appears. Once these creatures appear, they serve you for the duration of the spell.
+  \par When the spell is complete, 2d4 Large elementals appear. Five minutes later, 1d4 Huge elementals appear. Five minutes after that, one greater elemental appears. All creatures initially appear wherever you desire within the spell's area. Once these creatures appear, they serve you for the duration of the spell.
   \par The elementals obey you explicitly and never attack you, even if someone else manages to gain control over them. You do not need to concentrate to maintain control over the elementals. You can dismiss them singly or in groups at any time.
   \par When you use a summoning spell to summon an air, earth, fire, or water creature, it is a spell of that type.
 \end{spelleffect}
@@ -1638,7 +1632,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsection{Energy Conversion}{7}
 \spelltabular
 \spellschool{Abjur/Evoc (Energy, Shielding) [see text]} & \spelllists{Arcane, Protection} \\
-\spelleff{Ray; see text} & \spellrng{Personal and \rngclose; see text} \\
+\longcol{\spellrng{Personal and \rngclose; see text}} \\
 \spelldur{\durlong or until discharged}
 \spellsr{Yes (Fortitude)}
 \end{tabularx}
@@ -1821,7 +1815,6 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelltabular
 \spellschool{Illus (Figment) [Light, Unreal]} & \spelllists{Nature} \\
 \spellarea{\areasmall radius limit} & \spellrng{\rngmed} \\
-\longcol{\spelleff{Dim lights in the area}} \\
 \spelldur{\durshort \dismissable}
 \spellsr{Yes (Will)}
 \end{tabularx}
@@ -1990,7 +1983,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsection{Flame Blade}{2}
 \spelltabular
 \spellschool{Evoc (Energy) [Fire]} & \spelllists{Nature, Fire} \\
-\spelleff{Sword-like beam} & \spellrng{0 ft.} \\
+\longcol{\spellrng{Touch}} \\
 \spelldur{\durlong \dismissable}
 \spellsr{Yes (Fortitude)}
 \end{tabularx}
@@ -2042,7 +2035,6 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelltabular
 \spellschool{Conj (Creation) [Fog]} & \spelllists{Arcane, Nature, Water} \\
 \spellarea{\areamed radius cylinder-shaped spread} & \spellrng{\rngmed} \\
-\longcol{\spelleff{Fog in the area}} \\
 \spelldur{\durshort}
 \end{tabularx}
 \begin{spelleffect}
@@ -2055,7 +2047,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsection{Forcecage}{7}
 \spelltabular
 \spellschool{Evoc (Control) [Force]} & \spelllists{Evoc} \\
-\spelleff{Barred cage (20 ft. cube) or windowless cell (10 ft. cube)} & \spellrng{\rngmed} \\
+\longcol{\spellrng{\rngmed}} \\
 \spelldur{\durlong \dismissable}
 \end{tabularx}
 \spellattack{Magic vs. Reflex}
@@ -2207,7 +2199,6 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelltabular
 \spellschool{Conj (Creation)} & \spelllists{Arcane} \\
 \spellarea{\areasmall radius spread} & \spellrng{\rngmed} \\
-\longcol{\spelleff{Glittering particles in the area}} \\
 \spelldur{\durshort}
 \end{tabularx}
 \begin{spelleffect}
@@ -2252,7 +2243,6 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelltabular
 \spellschool{Evoc (Control) [Air]} & \spelllists{Air, Nature} \\
 \longcol{\spellarea{\arealarge line-shaped immobile emanation from you}} \\
-\longcol{\spelleff{Wind in the area}} \\
 \end{tabularx}
 \spellattack{Special vs. Maneuver Defense}
 \begin{spelleffect}
@@ -2493,7 +2483,6 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelltabular
 \spellschool{Ench/Illus (Compulsion, Figment) [Light, Mind-Affecting]} & \spelllists{Arcane} \\
 \spellarea{\areasmall radius spread} & \spellrng{\rngmed} \\
-\longcol{\spelleff{Colorful lights in the area}} \\
 \spelldur{\durshort}
 \spellsr{Yes (Will)}
 \end{tabularx}
@@ -2696,15 +2685,15 @@ A slowed creature can take only a single move action or standard action each tur
 \end{spellnotes}
 
 \spellsection{Interposing Hand}{2}
-\spelldesc{You create a floating, disembodied hand made of magical force that shields you from your foe's blows.}
+\spelldesc{You create a massive hand from thin air that blocks your foe's attacks.}
 \spelltabular
 \spellschool{Evoc (Control) [Force]} & \spelllists{Arcane} \\
-\spelleff{Large hand made of force} & \spellrng{\rngmed} \\
+\longcol{\spellrng{\rngmed}} \\
 \spelldur{\durshort \dismissable}
 \spellsr{Yes (Fortitude)}
 \end{tabularx}
 \begin{spelleffect}
-  The hand created by this spell stays between you and one opponent, providing you with active cover from that creature. Each physical attack that creature makes against you has a 20\% chance to strike the hand instead. In addition, if the creature is Large size or smaller, it moves at half speed while moving towards you. 
+    This spell creates a floating, disembodied hand made of magical force. The hand stays between you and one opponent, providing you with active cover from that creature. Each physical attack that creature makes against you has a 20\% chance to strike the hand instead. In addition, if the creature is Large size or smaller, it moves at half speed while moving towards you. 
   \par If you cannot see the hand's target, it will stop moving until it is directed to a visible target. The hand does not pursue opponents.
   \par An interposing hand is 10 feet long and about that wide with its fingers outstretched. It has 3 hit points per caster level, and a physical defense of 15 (\minus1 size, \plus6 natural armor). It takes damage as a normal creature, but most effects that don't cause damage do not affect it.
 \end{spelleffect}
@@ -3273,12 +3262,11 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelltabular
 \spellschool{Illus (Figment, Glamer) [Unreal]} & \spelllists{Arcane, Trickery} \\
 \spelltgt{You} & \spellrng{Personal/\rngmed} \\
-\longcol{\spelleff{One illusory double}} \\
 \spelldur{\durshort \dismissable; see text}
 \end{tabularx}
 \spellattack{Magic check vs. Perception and Will (if interacted with); see text}
 \begin{spelleffect}
-  You become invisible (as \spell{invisibility}, a glamer), and at the same time, an illusory double of you (as \spell{major image}, an unreal figment) appears. You are then free to go elsewhere while your double moves away. The double appears within range but thereafter moves as you direct it (which requires concentration beginning on the first round after the casting). You can make the figment appear superimposed perfectly over your own body so that observers don't notice an image appearing and you turning invisible. You and the figment can then move in different directions. The double moves at your speed and can talk and gesture as if it were real, but it cannot attack or cast spells, though it can pretend to do so.
+    You become invisible (as \spell{invisibility}, a glamer), and at the same time, an illusory double of you (as \spell{major image}, an unreal figment) appears. You are then free to go elsewhere while your double moves away. The double appears within range but thereafter moves as you direct it (which requires concentration beginning on the first round after the casting). You can make the figment appear superimposed perfectly over your own body so that observers don't notice an image appearing and you turning invisible. You and the figment can then move in different directions. The double moves at your speed and can talk and gesture as if it were real, but it cannot attack or cast spells, though it can pretend to do so.
   \par The illusory double lasts as long as you concentrate upon it, plus 5 additional rounds. After you cease concentration, the illusory double continues to carry out the same activity until the duration expires. The invisibility lasts for 5 minutes, regardless of concentration.
 \end{spelleffect}
 
@@ -3432,7 +3420,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldesc{You fire a blue-white ray of frigid air and ice, freezing your foe in place.}
 \spelltabular
 \spellschool{Evoc (Energy) [Cold]} & \spelllists{Arcane, Water} \\
-\spelleff{Ray} & \spellrng{\rngclose} \\
+\spelltgt{One creature or object} & \spellrng{\rngclose} \\
 \spelldur{Instantaneous/5 rounds}
 \spellsr{Yes (Fortitude)}
 \spelldmg{16d6 cold damage \add d6 per three caster levels above 16th}
@@ -3562,12 +3550,11 @@ A blinded creature cannot see. It moves at half speed and is defenseless, causin
 \spellsection{Prismatic Sphere}{9}
 \spelltabular
 \spellschool{Evoc (Control, Energy) [Light]} & \spelllists{Arcane} \\
-\spelleff{\areasmall radius hollow sphere centered on you}
 \end{tabularx}
 \begin{spelleffect}
-  This spell functions like \spell{prismatic wall}, except you conjure up an immobile, opaque globe of shimmering, multicolored light that surrounds you and protects you from all forms of attack. The sphere flashes in all colors of the visible spectrum. 
+  This spell functions like \spell{prismatic wall}, except you conjure up a \areasmall immobile, opaque sphere of shimmering, multicolored light that surrounds you and protects you from all forms of attack. The sphere flashes in all colors of the visible spectrum. 
   \par You can pass into and out of the prismatic sphere and remain near it without harm. However, the sphere blocks any attempt to project something through it (including spells). Other creatures that attempt to attack you or pass through suffer the effects of each color, one at a time. You can fight from partially within the sphere. If you do, you gain cover from anyone outside the sphere.
-  \par Typically, only the upper hemisphere of the globe will exist, since you are at the center of the sphere, so the lower half is usually excluded by the floor surface you are standing on.
+  \par Typically, only the upper hemisphere of the globe will exist, since it is created with you at the center, so the lower half is usually excluded by the floor surface you are standing on.
   \par The colors of the sphere have the same effects as the colors of a prismatic wall.
 \end{spelleffect}
 \begin{spellnotes}
@@ -3602,7 +3589,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsection{Prismatic Wall}{8}
 \spelltabular
 \spellschool{Evoc (Control, Energy) [Light]} & \spelllists{Arcane, Chaos} \\
-\spelleff{Wall up to 50 ft. wide, 30 ft. high} & \spellrng{\rngclose} \\
+\spellarea{\arealarge wall, 20 ft. high} & \spellrng{\rngclose} \\
 \spelldur{\durshort \dismissable}
 \spellsr{See text}
 \end{tabularx}
@@ -3659,7 +3646,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsection{Project Image}{6}
 \spelltabular
 \spellschool{Illus (Shadow)} & \spelllists{Arcane} \\
-\spelleff{One shadow duplicate} & \spellrng{\rngmed} \\
+\longcol{\spellrng{\rngmed}} \\
 \spelldur{\durshort \dismissable}
 \end{tabularx}
 \spellattack{Magic check vs. Perception and Will (if interacted with)}
@@ -3813,13 +3800,13 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsection{Resilient Sphere}{5}
 \spelltabular
 \spellschool{Evoc (Control) [Force]} & \spelllists{Evoc} \\
-\spelleff{5 ft. radius sphere, centered around creatures or objects} & \spellrng{\rngmed} \\
+\spelltgt{One creature or object} & \spellrng{\rngmed} \\
 \spelldur{\durshort \dismissable}
 \spellsr{Yes (Reflex)}
 \end{tabularx}
 \spellattack{Reflex negates}
 \begin{spelleffect}
-  This spell creates a globe of shimmering force centered around a creature or object. The sphere persists for the spell's duration, containing any creatures or objects held inside, provided they are small enough to fit within the diameter of the sphere. It is not subject to damage of any sort.
+  This spell creates a globe of shimmering force. The sphere persists for the spell's duration, containing any creatures or objects held inside, provided they are small enough to fit within the diameter of the sphere. It is not subject to damage of any sort.
   \par The subject may struggle, but the sphere cannot be physically moved either by people outside it or by the struggles of those within.
 \end{spelleffect}
 \begin{spellnotes}
@@ -3934,7 +3921,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsection{Reverse Gravity}{8}
 \spelltabular
 \spellschool{Trans} & \spelllists{Air, Arcane, Trickery} \\
-\spellarea{Up to five 10 ft. cubes (S)} & \spellrng{\rngclose} \\
+\spellarea{\arealarge radius emanation} & \spellrng{\rngclose} \\
 \spelldur{Concentration (up to 5 rounds)}
 \end{tabularx}
 \begin{spelleffect}
@@ -4000,7 +3987,6 @@ If the subject takes any offensive action, the spell immediately ends.
 \spelltabular
 \spellschool{Ench/Illus (Compulsion, Figment) [Light, Mind-Affecting, Sight-Dependent]} & \spelllists{Arcane} \\
 \longcol{\spellarea{\arealarge radius spread centered on you}} \\
-\longcol{\spelleff{Colorful lights in the area}} \\
 \spelldur{\durshort}
 \spellsr{Yes (Will)}
 \end{tabularx}
@@ -4015,7 +4001,7 @@ If the subject takes any offensive action, the spell immediately ends.
 \spelldesc{You blast your enemies with fiery rays.}
 \spelltabular
 \spellschool{Evoc (Energy) [Fire]} & \spelllists{Arcane, Fire} \\
-\spelleff{One or more rays} & \spellrng{\rngclose} \\
+\spelltgts{One or more objects or creatures} & \spellrng{\rngclose} \\
 \spellsr{Yes (Reflex)}
 \spelldmg{4d6 fire damage \add d6 per two caster levels above 4th}
 \end{tabularx}
@@ -4027,7 +4013,6 @@ If the subject takes any offensive action, the spell immediately ends.
 \spelltabular
 \spellschool{Conj (Creation)} & \spelllists{Arcane, Nature} \\
 \longcol{\spellarea{200 ft. radius spread centered on you, 50 ft. high}} \\
-\longcol{\spelleff{Fog in the area}} \\
 \end{tabularx}
 \begin{spelleffect}
   This spell functions like \spell{obscuring mist}, except that the effect is much larger.
@@ -4040,7 +4025,7 @@ If the subject takes any offensive action, the spell immediately ends.
 \spelldesc{You channel divine power into a searing blast of light that erupts your palm, striking your foe.}
 \spelltabular
 \spellschool{Evoc (Channeling) [Light]} & \spelllists{Divine} \\
-\spelleff{Ray} & \spellrng{\rngclose} \\
+\spelltgt{One creature or object} & \spellrng{\rngclose} \\
 \spelldur{Instantaneous and see text}
 \spellsr{Yes (Reflex)}
 \spelldmg{6d6 divine damage \add d6 per two caster levels above 6th; see text}
@@ -4102,7 +4087,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldesc{You use material from the Plane of Shadow to shape quasi-real illusions of one or more creatures, objects, or forces.}
 \spelltabular
 \spellschool{Illus (Shadow)} & \spelllists{Illus} \\
-\spelleff{See text} & \spellrng{See text} \\
+\spelltgtorarea{See text} & \spellrng{See text} \\
 \spelldur{See text}
 \spellsr{Yes (Will); See text}
 \end{tabularx}
@@ -4122,7 +4107,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsection{Shadow Evoc}{5}
 \spelltabular
 \spellschool{Illus (Shadow)} & \spelllists{Illus} \\
-\spelleff{See text} & \spellrng{See text} \\
+\spelltgtorarea{See text} & \spellrng{See text} \\
 \spelldur{See text}
 \spellsr{Yes (Will); see text}
 \end{tabularx}
@@ -4140,7 +4125,6 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelltabular
 \spellschool{Conj/Illus (Shadow, Translocation) [Planar, Unreal]} & \spelllists{Illus} \\
 \spelltgt{You} & \spellrng{Personal/\rngfar; see text} \\
-\longcol{\spelleff{One shadow duplicate}} \\
 \spelldur{\durmed}
 \end{tabularx}
 \spellattack{None/Magic check vs. Perception and Will (if interacted with)}
@@ -4314,7 +4298,6 @@ Extraordinarily loud noises, such as the yell of a giant or a sonic attack, are 
 \spelltabular
 \spellschool{Illus (Figment) [Unreal]} & \spelllists{Illus} \\
 \spellarea{\areamed radius limit} & \spellrng{\rngmed} \\
-\longcol{\spelleff{Visual figment in the area}} \\
 \spelldur{\durshort}
 \end{tabularx}
 \spellattack{Magic check vs. Perception and Will (if interacted with)}
@@ -4562,7 +4545,7 @@ Extraordinarily loud noises, such as the yell of a giant or a sonic attack, are 
 \spelldesc{You bring into being a weapon made of pure force which attacks your foes of its own volition.}
 \spelltabular
 \spellschool{Evoc (Energy) [Force]} & \spelllists{Divine, War} \\
-\spelleff{Magic weapon of force} & \spellrng{\rngmed} \\
+\longcol{\spellrng{\rngmed}} \\
 \spelldur{\durshort \dismissable}
 \spellsr{Yes (Will)}
 \end{tabularx}
@@ -4587,7 +4570,6 @@ Extraordinarily loud noises, such as the yell of a giant or a sonic attack, are 
 \spellschool{Conj (Summoning)} & \spelllists{Nature, Wild} \\
 \longcol{\spelltime{Full-round action}} \\
 \spellarea{\arealarge radius limit} & \spellrng{\rngfar} \\
-\longcol{\spelleff{Nine or more Large summoned creatures in the area}} \\
 \spelldur{\durshort \dismissable}
 \spelldmg{9d6 bludgeoning damage \add d6 per four caster levels above 18th}
 \end{tabularx}
@@ -4634,7 +4616,6 @@ Extraordinarily loud noises, such as the yell of a giant or a sonic attack, are 
 \spellschool{Conj/Evoc (Energy, Control, Creation)} & \spelllists{Air, Divine, Nature, War, Water} \\
 \spelltime{Full-round action}
 \spellarea{360 ft. radius cylinder, 200 ft. high} & \spellrng{\rngfar} \\
-\longcol{\spelleff{Supernatural weather in the area}} \\
 \spelldur{Concentration (maximum 10 rounds)}
 \spellsr{Yes (varies)}
 \spelldmg{Varies}
@@ -4713,8 +4694,7 @@ Extraordinarily loud noises, such as the yell of a giant or a sonic attack, are 
 \spellsection{Summon Monster I}{1}\hypertarget{spell:summon monster}{}
 \spelltabular
 \spellschool{Conj (Summoning) [see text]} & \spelllists{Arcane, Divine} \\
-\spelltime{Full-round action}
-\spelleff{One summoned creature} & \spellrng{\rngclose} \\
+\spelltime{Full-round action} & \spellrng{\rngclose} \\
 \spelldur{\durshort \dismissable}
 \end{tabularx}
 \begin{spelleffect}
@@ -4728,7 +4708,6 @@ Extraordinarily loud noises, such as the yell of a giant or a sonic attack, are 
 \spelltabular
 \spellschool{Conj (Summoning)} & \spelllists{Arcane, Divine} \\
 \spellarea{\areamed radius limit} & \spellrng{\rngclose} \\
-\longcol{\spelleff{One or more summoned creatures in the area}} \\
 \end{tabularx}
 \begin{spelleffect}
     This spell functions like \spell{summon monster I}, except that you can summon one creature from the 2nd-level list or 1d3 creatures of the same kind from the 1st-level list. When you learn this spell, you choose two creatures from the 2nd-level list or lower on \tref{Summon Monster List}. You can summon those creatures with this or any other \spell{summon monster} spell.
@@ -4738,7 +4717,6 @@ Extraordinarily loud noises, such as the yell of a giant or a sonic attack, are 
 \spelltabular
 \spellschool{Conj (Summoning)} & \spelllists{Arcane, Chaos, Divine, Evil, Good, Law} \\
 \spellarea{\areamed radius limit} & \spellrng{\rngclose} \\
-\longcol{\spelleff{One or more summoned creatures in the area}} \\
 \end{tabularx}
 \begin{spelleffect}
     This spell functions like \spell{summon monster I}, except that you can summon one creature from the 3rd-level list or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 3rd-level list or lower on \tref{Summon Monster List}. You can summon those creatures with this or any other \spell{summon monster} spell.
@@ -4748,7 +4726,6 @@ Extraordinarily loud noises, such as the yell of a giant or a sonic attack, are 
 \spelltabular
 \spellschool{Conj (Summoning)} & \spelllists{Arcane, Divine} \\
 \spellarea{\areamed radius limit} & \spellrng{\rngclose} \\
-\longcol{\spelleff{One or more summoned creatures in the area}} \\
 \end{tabularx}
 \begin{spelleffect}
     This spell functions like \spell{summon monster I}, except that you can summon one creature from the 4th-level list or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 4th-level list or lower on \tref{Summon Monster List}. You can summon those creatures with this or any other \spell{summon monster} spell.
@@ -4758,7 +4735,6 @@ Extraordinarily loud noises, such as the yell of a giant or a sonic attack, are 
 \spelltabular
 \spellschool{Conj (Summoning)} & \spelllists{Air, Arcane, Divine, Earth, Fire, Water} \\
 \spellarea{\areamed radius limit} & \spellrng{\rngclose} \\
-\longcol{\spelleff{One or more summoned creatures in the area}} \\
 \end{tabularx}
 \begin{spelleffect}
     This spell functions like \spell{summon monster I}, except that you can summon one creature from the 5th-level list or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 5th-level list or lower on \tref{Summon Monster List}. You can summon those creatures with this or any other \spell{summon monster} spell.
@@ -4768,7 +4744,6 @@ Extraordinarily loud noises, such as the yell of a giant or a sonic attack, are 
 \spelltabular
 \spellschool{Conj (Summoning)} & \spelllists{Arcane, Chaos, Divine, Evil, Good, Law} \\
 \spellarea{\areamed radius limit} & \spellrng{\rngclose} \\
-\longcol{\spelleff{One or more summoned creatures in the area}} \\
 \end{tabularx}
 \begin{spelleffect}
     This spell functions like \spell{summon monster I}, except you can summon one creature from the 6th-level list or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 6th-level list or lower on \tref{Summon Monster List}. You can summon those creatures with this or any other \spell{summon monster} spell.
@@ -4778,7 +4753,6 @@ Extraordinarily loud noises, such as the yell of a giant or a sonic attack, are 
 \spelltabular
 \spellschool{Conj (Summoning)} & \spelllists{Arcane, Divine} \\
 \spellarea{\areamed radius limit} & \spellrng{\rngclose} \\
-\longcol{\spelleff{One or more summoned creatures in the area}} \\
 \end{tabularx}
 \begin{spelleffect}
     This spell functions like \spell{summon monster I}, except that you can summon one creature from the 7th-level list or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 7th-level list or lower on \tref{Summon Monster List}. You can summon those creatures with this or any other \spell{summon monster} spell.
@@ -4788,7 +4762,6 @@ Extraordinarily loud noises, such as the yell of a giant or a sonic attack, are 
 \spelltabular
 \spellschool{Conj (Summoning)} & \spelllists{Air, Arcane, Divine, Earth, Fire, Water} \\
 \spellarea{\areamed radius limit} & \spellrng{\rngclose} \\
-\longcol{\spelleff{One or more summoned creatures in the area}} \\
 \end{tabularx}
 \begin{spelleffect}
     This spell functions like \spell{summon monster I}, except that you can summon one creature from the 8th-level list or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 8th-level list or lower on \tref{Summon Monster List}. You can summon those creatures with this or any other \spell{summon monster} spell.
@@ -4798,7 +4771,6 @@ Extraordinarily loud noises, such as the yell of a giant or a sonic attack, are 
 \spelltabular
 \spellschool{Conj (Summoning)} & \spelllists{Arcane, Chaos, Divine, Evil, Good, Law} \\
 \spellarea{\areamed radius limit} & \spellrng{\rngclose} \\
-\longcol{\spelleff{One or more summoned creatures in the area}} \\
 \end{tabularx}
 \begin{spelleffect}
     This spell functions like \spell{summon monster I}, except that you can summon one creature from the 9th-level list or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 9th-level list or lower on \tref{Summon Monster List}. You can summon those creatures with this or any other \spell{summon monster} spell.
@@ -4863,7 +4835,7 @@ Extraordinarily loud noises, such as the yell of a giant or a sonic attack, are 
 \spelltabular
 \spellschool{Conj (Summoning)} & \spelllists{Nature} \\
 \longcol{\spelltime{Full-round action}} \\
-\spelleff{One summoned creature} & \spellrng{\rngclose} \\
+\longcol{\spellrng{\rngclose}} \\
 \spelldur{\durshort \dismissable}
 \end{tabularx}
 \begin{spelleffect}
@@ -4877,7 +4849,6 @@ Extraordinarily loud noises, such as the yell of a giant or a sonic attack, are 
 \spelltabular
 \spellschool{Conj (Summoning)} & \spelllists{Nature} \\
 \spellarea{\areamed radius limit} & \spellrng{\rngclose} \\
-\spelleff{One or more summoned creatures in the area} & \\
 \end{tabularx}
 \begin{spelleffect}
   This spell functions like \spellindirect{summon nature's ally i}{summon nature's ally I}, except that you can summon one 2nd-level creature or 1d3 1st-level creatures of the same kind. When you learn this spell, you choose two creatures from the 2nd-level list or lower on \tref{Summon Nature's Ally List}. You can summon those creatures with this or any other \spell{summon nature's ally} spell.
@@ -4887,7 +4858,6 @@ Extraordinarily loud noises, such as the yell of a giant or a sonic attack, are 
 \spelltabular
 \spellschool{Conj (Summoning) [see text]} & \spelllists{Nature, Wild} \\
 \spellarea{\areamed radius limit} & \spellrng{\rngclose} \\
-\longcol{\spelleff{One or more summoned creatures in the area}} \\
 \end{tabularx}
 \begin{spelleffect}
   This spell functions like \spellindirect{summon nature's ally i}{summon nature's ally I}, except that you can summon one 3rd-level creature, 1d3 2nd-level creatures of the same kind, or 1d4\plus1 1st-level creatures of the same kind. When you learn this spell, you choose two creatures from the 3rd-level list or lower on \tref{Summon Nature's Ally List}. You can summon those creatures with this or any other \spell{summon nature's ally} spell.
@@ -4897,7 +4867,6 @@ Extraordinarily loud noises, such as the yell of a giant or a sonic attack, are 
 \spelltabular
 \spellschool{Conj (Summoning) [see text]} & \spelllists{Nature} \\
 \spellarea{\areamed radius limit} & \spellrng{\rngclose} \\
-\longcol{\spelleff{One or more summoned creatures in the area}} \\
 \end{tabularx}
 \begin{spelleffect}
   This spell functions like \spellindirect{summon nature's ally i}{summon nature's ally I}, except that you can summon one 4th-level creature or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 4th-level list or lower on \tref{Summon Nature's Ally List}. You can summon those creatures with this or any other \spell{summon nature's ally} spell.
@@ -4907,7 +4876,6 @@ Extraordinarily loud noises, such as the yell of a giant or a sonic attack, are 
 \spelltabular
 \spellschool{Conj (Summoning) [see text]} & \spelllists{Nature} \\
 \spellarea{\areamed radius limit} & \spellrng{\rngclose} \\
-\longcol{\spelleff{One or more summoned creatures in the area}} \\
 \end{tabularx}
 \begin{spelleffect}
   This spell functions like \spellindirect{summon nature's ally i}{summon nature's ally I}, except that you can summon one 5th-level creature or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 5th-level list or lower on \tref{Summon Nature's Ally List}. You can summon those creatures with this or any other \spell{summon nature's ally} spell.
@@ -4917,7 +4885,6 @@ Extraordinarily loud noises, such as the yell of a giant or a sonic attack, are 
 \spelltabular
 \spellschool{Conj (Summoning) [see text]} & \spelllists{Nature, Wild} \\
 \spellarea{\areamed radius limit} & \spellrng{\rngclose} \\
-\longcol{\spelleff{One or more summoned creatures in the area}} \\
 \end{tabularx}
 \begin{spelleffect}
   This spell functions like \spellindirect{summon nature's ally i}{summon nature's ally I}, except that you can summon one 6th-level creature or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 6th-level list or lower on \tref{Summon Nature's Ally List}. You can summon those creatures with this or any other \spell{summon nature's ally} spell.
@@ -4927,7 +4894,6 @@ Extraordinarily loud noises, such as the yell of a giant or a sonic attack, are 
 \spelltabular
 \spellschool{Conj (Summoning) [see text]} & \spelllists{Nature} \\
 \spellarea{\areamed radius limit} & \spellrng{\rngclose} \\
-\longcol{\spelleff{One or more summoned creatures in the area}} \\
 \end{tabularx}
 \begin{spelleffect}
   This spell functions like \spellindirect{summon nature's ally i}{summon nature's ally I}, except that you can summon one 7th-level creature or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 7th-level list or lower on \tref{Summon Nature's Ally List}. You can summon those creatures with this or any other \spell{summon nature's ally} spell.
@@ -4937,7 +4903,6 @@ Extraordinarily loud noises, such as the yell of a giant or a sonic attack, are 
 \spelltabular
 \spellschool{Conj (Summoning) [see text]} & \spelllists{Nature} \\
 \spellarea{\areamed radius limit} & \spellrng{\rngclose} \\
-\longcol{\spelleff{One or more summoned creatures in the area}} \\
 \end{tabularx}
 \begin{spelleffect}
   This spell functions like \spellindirect{summon nature's ally i}{summon nature's ally I}, except that you can summon one 8th-level creature or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 8th-level list or lower on \tref{Summon Nature's Ally List}. You can summon those creatures with this or any other \spell{summon nature's ally} spell.
@@ -4947,7 +4912,6 @@ Extraordinarily loud noises, such as the yell of a giant or a sonic attack, are 
 \spelltabular
 \spellschool{Conj (Summoning) [see text]} & \spelllists{Nature, Wild} \\
 \spellarea{\areamed radius limit} & \spellrng{\rngclose} \\
-\longcol{\spelleff{One or more summoned creatures in the area}} \\
 \end{tabularx}
 \begin{spelleffect}
   This spell functions like \spellindirect{summon nature's ally i}{summon nature's ally I}, except that you can summon one 9th-level creature or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 9th-level list or lower on \tref{Summon Nature's Ally List}. You can summon those creatures with this or any other \spell{summon nature's ally} spell.
@@ -4993,7 +4957,6 @@ Extraordinarily loud noises, such as the yell of a giant or a sonic attack, are 
 \spelltabular
 \spellschool{Conj (Summoning)} & \spelllists{Nature, Wild} \\
 \spellarea{\areamed radius limit} & \spellrng{\rngclose} \\
-\longcol{\spelleff{One or more summoned creatures in the area}} \\
 \end{tabularx}
 \begin{spelleffect}
   This spell functions like \spellindirect{summon nature's ally i}{summon nature's ally I}, except that you can summon up to one creature per caster level from the 4th-level list or lower.
@@ -5406,7 +5369,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spelltabular
 \spellschool{Illus (Figment)} & \spelllists{Arcane, Trickery} \\
 \longcol{\spellcmp{V, F}} \\
-\spelleff{Intelligible sound, usually speech} & \spellrng{\rngclose} \\
+\longcol{\spellrng{\rngclose}} \\
 \spelldur{\durshort \dismissable}
 \end{tabularx}
 \spellattack{Magic check vs. Perception and Will (if interacted with)}
@@ -5460,7 +5423,7 @@ A slowed creature can take only a single move action or standard action each tur
 \spellsection{Wall of Fire}{5}
 \spelltabular
 \spellschool{Evoc (Energy) [Fire, Wall]} & \spelllists{Arcane, Nature, Fire} \\
-\spelleff{Opaque sheet of flame up to 100 ft. long or a ring of fire with a radius of up to 20 ft.; either form 20 ft. high} & \spellrng{\rngmed} \\
+\spellarea{100 ft. wall, 20 ft. high \shapeable} & \spellrng{\rngmed} \\
 \spelldur{\durshort}
 \spellsr{Yes (Reflex)}
 \spelldmg{4d6 \add d6 per four caster levels above 8th; see text}
@@ -5477,7 +5440,7 @@ This spell can be made permanent with a \spell{permanency} ritual. A permanent \
 \spellsection{Wall of Force}{6}
 \spelltabular
 \spellschool{Evoc (Control) [Force, Wall]} & \spelllists{Arcane} \\
-\spelleff{Wall whose area is up to ten 10 ft. squares} & \spellrng{\rngmed} \\
+\spellarea{100 ft. wall, 10 ft. high} & \spellrng{\rngmed} \\
 \spelldur{\durshort \dismissable}
 \end{tabularx}
 \begin{spelleffect}
@@ -5491,7 +5454,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsection{Wall of Stone}{5}
 \spelltabular
 \spellschool{Conj/Trans (Alteration, Creation) [Earth, Wall]} & \spelllists{Arcane, Earth, Nature} \\
-\spelleff{Stone wall whose area is up to ten 5 ft. squares (S)} & \spellrng{\rngmed} \\
+\spellarea{\arealarge wall, 5 ft. high \shapeable} & \spellrng{\rngmed} \\
 \end{tabularx}
 \spellattack{See text}
 \begin{spelleffect}
@@ -5503,7 +5466,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsection{Wall of Thorns}{5}
 \spelltabular
 \spellschool{Conj (Creation) [Wall]} & \spelllists{Nature, Wild} \\
-\spelleff{Wall of thorny brush, up to ten 10 ft. cubes (S)} & \spellrng{\rngmed} \\
+\spellarea{100 ft. wall, 10 ft. high \shapeable} & \spellrng{\rngmed} \\
 \spelldur{\durlong \dismissable}
 \end{tabularx}
 \begin{spelleffect}
@@ -5583,7 +5546,6 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelltabular
 \spellschool{Conj (Creation)} & \spelllists{Arcane} \\
 \spellarea{\areamed radius spread} & \spellrng{\rngclose} \\
-\longcol{\spelleff{Webs in the area}} \\
 \spelldur{\durshort \dismissable}
 \end{tabularx}
 \spellattack{Reflex negates; see text}

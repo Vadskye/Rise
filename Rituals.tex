@@ -105,7 +105,7 @@ A vulnerable creature takes a \minus2 penalty to attacks, defenses, and checks.
 \spelltabular
 \spellschool{Divination (Scrying)} & \spelllists{Arcane} \\
 \longcol{\spelltime{1 minute}} \\
-\spelleff{Magical sensor} & \spellrng{\rngmed/Unlimited} \\
+\longcol{\spellrng{\rngmed/Unlimited}} \\
 \spelldur{\durlong \dismissable}
 \spellsr{No}
 \spellattack{None}
@@ -136,14 +136,13 @@ A \ritual{knock} spell does not remove an arcane lock; it only suppresses the ef
 \spelldesc{You inscribe your personal rune or mark on a creature or object.}
 \spelltabular
 \spellschool{Universal} & \spelllists{Arcane} \\
-\longcol{\spelltime{1 minute}} \\
-\spelleff{One personal rune or mark, all of which must fit within 1-foot square} & \spellrng{\rngtouch} \\
+\spelltime{1 minute} & \spellrng{\rngtouch} \\
 \spelldur{Permanent}
 \spellsr{No}
 \spellattack{None}
 \end{tabularx}
 \begin{spelleffect}
-You etch your personal rune or mark upon any substance without harm to the material upon which it is placed. Your personal rune or mark can consist of no more than six characters. The writing can be visible or invisible.
+    You etch your personal rune or mark upon any substance without harm to the material upon which it is placed. Your personal rune or mark can consist of no more than six characters, and must fit within one square foot. The writing can be visible or invisible.
 \end{spelleffect}
 \begin{spellnotes}
 If an \spell{arcane mark} is placed on a living being, normal wear gradually causes the effect to fade in about a month. Arcane mark must be cast on an object prior to casting \spell{instant summons} on the same object.
@@ -267,8 +266,7 @@ This ritual frees the subject from enchantments, transmutations, and curses. \ri
 \spellsection{Clairaudience/Clairvoyance}{3}
 \spelltabular
 \spellschool{Divination (Scrying)} & \spelllists{Arcane, Divine} \\
-\longcol{\spelltime{1 minute}} \\
-\spelleff{Magical sensor} & \spellrng{1,000 feet} \\
+\spelltime{1 minute} & \spellrng{\rngext} \\
 \spelldur{\durmed \dismissable}
 \spellsr{No}
 \spellattack{None}
@@ -280,8 +278,7 @@ This ritual creates an invisible magical sensor at a specific location that enab
 \spellsection{Clone}{7}
 \spelltabular
 \spellschool{Conjuration/Necromancy (Creation, Soul)} & \spelllists{Arcane} \\
-\longcol{\spelltime{10 minutes}} \\
-\spelleff{One clone} & \spellrng{Touch} \\
+\spelltime{10 minutes} & \spellrng{Touch} \\
 \spelldur{Instantaneous}
 \spellsr{No}
 \spellattack{None}
@@ -440,27 +437,26 @@ Winter & Frigid cold, blizzard, or thaw \\
 \spellsection{Create Food and Water}{2}
 \spelltabular
 \spellschool{Conjuration (Creation)} & \spelllists{Arcane, Divine, Nature} \\
-\longcol{\spelltime{10 minutes}} \\
-\spelleff{Food and water to sustain three humans or one horse/level} & \spellrng{\rngclose} \\
+\spelltime{10 minutes} & \spellrng{\rngclose} \\
 \spelldur{Instantaneous; see text}
 \spellsr{No}
 \spellattack{None}
 \end{tabularx}
 \begin{spelleffect}
-    This ritual creats food and drink that will sustain creatures for 24 hours. The food that this ritual creates is simple fare of your choice -- highly nourishing, if rather bland. Food so created decays and becomes inedible within 24 hours, although it can be kept fresh for another 24 hours by casting a \ritual{purify food and water} spell on it. The water created by this ritual is just like clean rain water, and it doesn't go bad as the food does.
+    This ritual creats food and drink. For each caster level you possess, you can create sustenance for three humans or one horse for 24 hours. The food that this ritual creates is simple fare of your choice -- highly nourishing, if rather bland. Food so created decays and becomes inedible within 24 hours, although it can be kept fresh for another 24 hours by performing a \ritual{purify food and water} ritual on it. The water created by this ritual is just like clean rain water, and it doesn't go bad as the food does.
 \end{spelleffect}
 
 \spellsection{Create Water}{1}
 \spelldesc{You create water to ease the thirst of you and your companions.}
 \spelltabular
 \spellschool{Conjuration (Creation) [Water]} & \spelllists{Divine} \\
-\spelleff{Up to 2 gallons of water/level} & \spellrng{\rngclose} \\
+\spelltime{1 minute} & \spellrng{\rngclose} \\
 \spelldur{Instantaneous}
 \spellsr{No}
 \spellattack{None}
 \end{tabularx}
 \begin{spelleffect}
-This ritual generates wholesome, drinkable water, just like clean rain water. Water can be created in an area as small as will actually contain the liquid, or in an area three times as large -- possibly creating a downpour or filling many small receptacles.
+This ritual generates 2 gallons/level of wholesome, drinkable water, just like clean rain water. Water can be created in an area as small as will actually contain the liquid, or in an area three times as large -- possibly creating a downpour or filling many small receptacles.
 \end{spelleffect}
 \begin{spellnotes}
 Conjuration spells can't create substances or objects within a creature. Water weighs about 8 pounds per gallon. One cubic foot of water contains roughly 8 gallons and weighs about 60 pounds.
@@ -852,8 +848,7 @@ A \spell{knock} spell does not bypass a \spell{fire trap}. An unsuccessful \spel
 \spellsection{Floating Disk}{1}
 \spelltabular
 \spellschool{Evocation [Force]} & \spelllists{Arcane} \\
-\longcol{\spelltime{1 minute}} \\
-\spelleff{2 ft. radius disk of force} & \spellrng{\rngmed} \\
+\spelltime{1 minute} & \spellrng{\rngmed} \\
 \spelldur{\durext \dismissable}
 \spellsr{No}
 \spellattack{None}
@@ -888,8 +883,7 @@ This spell seals an area against all planar travel into or within it. This inclu
 \spellsection{Gate}{9}
 \spelltabular
 \spellschool{Conjuration (Creation, Translocation) [Planar]} & \spelllists{Arcane, Divine} \\
-\longcol{\spelltime{1 minute}} \\
-\spelleff{See text} & \spellrng{\rngmed} \\
+\spelltime{1 minute} & \spellrng{\rngmed} \\
 \spelldur{Concentration (up to 5 rounds); see text}
 \spellsr{No}
 \spellattack{None}
@@ -1010,8 +1004,7 @@ You make natural terrain look, sound, and smell like some other sort of natural 
 \spelldesc{You bring forth a great feast, including a magnificent table, chairs, service, and food and drink, re-enacting the celebrations of ancient heroes. After your allies consume the ambrosial food and nectar-like bevarage, they are restored in body and mind.}
 \spelltabular
 \spellschool{Conjuration/Enchantment (Creation, Emotion)} & \spelllists{Arcane, Divine, Nature} \\
-\longcol{\spelltime{10 minutes}} \\
-\spelleff{Feast} & \spellrng{\rngclose} \\
+\spelltime{10 minutes} & \spellrng{\rngclose} \\
 \spelldur{1 hour plus \durext; see text}
 \spellsr{No}
 \spellattack{None}
@@ -1046,7 +1039,7 @@ If used on a cursed item, \ritual{Identify} only reveals the properties the item
 \spelltabular
 \spellschool{Enchantment/Illusion (Compulsion, Glamer) [Mind-Affecting, Trap]} & \spelllists{Arcane} \\
 \longcol{\spelltime{1 minute or longer; see text}} \\
-\spelleff{Writing on one touched object weighing no more than 10 lb.} & \spellrng{Touch} \\
+\spelltgt{One object} & \spellrng{Touch} \\
 \spelldur{Permanent \dismissable}
 \spellsr{Yes (Will)}
 \spellattack{Will negates; see text}
@@ -1061,14 +1054,13 @@ The \spell{true seeing} spell can reveal the hidden message. The casting time de
 \spellsection{Illusory Wall}{3}
 \spelltabular
 \spellschool{Illusion (Figment) [Unreal]} & \spelllists{Arcane} \\
-\longcol{\spelltime{1 minute}} \\
-\spelleff{Image 1 ft. by 10 ft. by 10 ft.} & \spellrng{\rngclose} \\
+\spelltime{1 minute} & \spellrng{\rngclose} \\
 \spelldur{Permanent}
 \spellsr{No}
 \spellattack{Will disbelief (if interacted with)}
 \end{tabularx}
 \begin{spelleffect}
-This spell creates the illusion of a wall, floor, ceiling, or similar surface. It appears absolutely real when viewed, but physical objects can pass through it without difficulty. When the spell is used to hide pits, traps, or normal doors, any detection abilities that do not require sight work normally. Touch or a probing search reveals the true nature of the surface, though such measures do not cause the illusion to disappear.
+This spell creates the illusion of a wall, floor, ceiling, or similar surface. The image must fit within a 10 foot square. It appears absolutely real when viewed, but physical objects can pass through it without difficulty. When the spell is used to hide pits, traps, or normal doors, any detection abilities that do not require sight work normally. Touch or a probing search reveals the true nature of the surface, though such measures do not cause the illusion to disappear.
 \end{spelleffect}
 
 \spellsection{Instant Refuge}{7}
@@ -1178,8 +1170,7 @@ If the spell is is dispelled or the duration expires, the tree takes root immedi
 \spellsection{Mage's Faithful Hound}
 \spelltabular
 \spellschool{Conjuration (Creation)} & \spelllists{Arcane} \\
-\longcol{\spelltime{1 minute}} \\
-\spelleff{Phantom watchdog} & \spellrng{\rngclose} \\
+\spelltime{1 minute} & \spellrng{\rngclose} \\
 \spelldur{24 hours \dismissable or until discharged, then 1 round/caster level; see text}
 \spellsr{No}
 \spellattack{None}
@@ -1196,7 +1187,7 @@ You conjure up a phantom watchdog that is invisible to everyone but yourself. It
 \spelltabular
 \spellschool{Conjuration (Creation)} & \spelllists{Sor/Wiz} \\
 \longcol{\spelltime{1 minute}} \\
-\spelleff{Extradimensional mansion, up to ten 10-foot cubes (S)} & \spellrng{\rngclose} \\
+\spellarea{Up to ten 10-foot cubes} & \spellrng{\rngclose} \\
 \spelldur{One week \dismissable}
 \spellsr{No}
 \spellattack{None}
@@ -1264,8 +1255,7 @@ This spell imbues the chosen object or creature with an enchanted mouth that sud
 \spellsection{Major Creation}{5}
 \spelltabular
 \spellschool{Conjuration (Creation)} & \spelllists{Arcane} \\
-\longcol{\spelltime{10 minutes}} \\
-\spelleff{One object, up to 1 cu. ft./level} & \spellrng{\rngclose} \\
+\spelltime{10 minutes} & \spellrng{\rngclose} \\
 \spelldur{See text}
 \end{tabularx}
 \begin{spelleffect}
@@ -1340,8 +1330,7 @@ The subject is protected from all devices and spells that detect, influence, or 
 \spellsection{Minor Creation}{4}
 \spelltabular
 \spellschool{Conjuration (Creation)} & \spelllists{Arcane} \\
-\longcol{\spelltime{1 minute}} \\
-\spelleff{One object, up to 1 cu. ft./level} & \spellrng{\rngclose} \\
+\spelltime{1 minute} & \spellrng{\rngclose} \\
 \spelldur{\durext \dismissable}
 \spellsr{No}
 \spellattack{None}
@@ -1409,8 +1398,7 @@ This spell does not affect other types of divination magic (\spell{augury}, \spe
 \spellsection{Mount}{1}
 \spelltabular
 \spellschool{Conjuration (Summoning)} & \spelllists{Arcane} \\
-\longcol{\spelltime{1 minute}} \\
-\spelleff{One mount} & \spellrng{\rngclose} \\
+\spelltime{1 minute} & \spellrng{\rngclose} \\
 \spelldur{\durext \dismissable}
 \spellsr{No}
 \spellattack{None}
@@ -1550,13 +1538,13 @@ The subject or subjects can move through any type of terrain and leave neither f
 \spelltabular
 \spellschool{Transmutation (Alteration)} & \spelllists{Arcane, Divine, Nature} \\
 \longcol{\spelltime{10 minutes}} \\
-\spelleff{5 ft. by 8 ft. opening, 10 ft. deep plus 5 ft. deep per three additional levels} & \spellrng{Touch} \\
+\spellarea{One 5-foot cube per three caster levels} & \spellrng{Touch} \\
 \spelldur{\durext \dismissable}
 \spellsr{No}
 \spellattack{None}
 \end{tabularx}
 \begin{spelleffect}
-  You create a passage through wooden, plaster, or stone walls, but not through metal or other harder materials. The passage is 10 feet deep plus an additional 5 feet deep per three caster levels above 9th (15 feet at 12th, 20 feet at 15th, and a maximum of 25 feet deep at 18th level). If the wall's thickness is more than the depth of the passage created, then a single \spell{passwall} simply makes a niche or short tunnel. Several \spell{passwall} spells can then form a continuing passage to breach very thick walls. When \spell{passwall} ends, creatures within the passage are ejected out the nearest exit.
+  You create a passage through wooden, plaster, or stone walls, but not through metal or other harder materials. The material within the area simply ceases to exist for the duration of the spell. If the wall's thickness is more than the depth of the passage created, then a single \spell{passwall} makes a niche or short tunnel. Several \spell{passwall} spells can then form a continuing passage to breach very thick walls. When \spell{passwall} ends, creatures within the passage are ejected out the nearest exit.
 \end{spelleffect}
 \begin{spellnotes}
   If someone dispels the \spell{passwall} or you dismiss it, creatures in the passage are ejected out the far exit, if there is one, or out the sole exit if there is only one.
@@ -1649,8 +1637,7 @@ This spell functions like \spell{major image}, except that the effect is permane
 \spelldesc{You create a quasi-real horselike creature to serve you or one of your allies. It has a black head and body, gray mane and tail, and smoke-colored, insubstantial hooves that make no sound. On its body, it bears what seems to be a saddle, bit, and bridle sized perfectly for its intended rider.}
 \spelltabular
 \spellschool{Illusion/Transmutation (Imbuement, Shadow)} & \spelllists{Arcane} \\
-\longcol{\spelltime{1 minute}} \\
-\spelleff{One quasi-real, horselike creature} & \spellrng{\rngclose} \\
+\spelltime{1 minute} & \spellrng{\rngclose} \\
 \spelldur{\durext \dismissable}
 \spellsr{No}
 \spellattack{None}
@@ -1671,7 +1658,7 @@ This spell functions like \spell{major image}, except that the effect is permane
 \spelltabular
 \spellschool{Conjuration (Creation/Translocation) [Planar]} & \spelllists{Arcane, Divine} \\
 \longcol{\spelltime{10 minutes}} \\
-\spelleff{Ethereal 5 ft. by 8 ft. opening, 10 ft. deep \add 5 ft. deep per three levels} & \spellrng{Touch} \\
+\spellarea{One 5-foot cube per three caster levels} & \spellrng{Touch} \\
 \spelldur{\durext or until discharged}
 \spellsr{No}
 \spellattack{None}
@@ -1770,8 +1757,7 @@ You set the triggering condition when casting the spell. The event that triggers
 \spellsection{Prying Eyes}{5}
 \spelltabular
 \spellschool{Conjuration (Creation)} & \spelllists{Arcane} \\
-\longcol{\spelltime{1 minute}} \\
-\spelleff{Ten or more levitating eyes} & \spellrng{One mile} \\
+\spelltime{1 minute} & \spellrng{One mile} \\
 \spelldur{\durext; see text \dismissable}
 \spellsr{No}
 \spellattack{None}
@@ -2022,8 +2008,7 @@ This spell combines several elements to create a powerful protection from scryin
 \spellsection{Scrying}{5}
 \spelltabular
 \spellschool{Divination (Scrying)} & \spelllists{Arcane, Divine, Nature} \\
-\longcol{\spelltime{1 hour}} \\
-\spelleff{Magical sensor} & \spellrng{See text} \\
+\spelltime{1 hour} & \spellrng{See text} \\
 \spelldur{\durmed \dismissable}
 \spellsr{Yes (Will)}
 \spellattack{Will negates}
@@ -2103,8 +2088,7 @@ A Spellcraft check reveals dim magic on the page in question but does not reveal
 \spellsection{Secure Shelter}{4}
 \spelltabular
 \spellschool{Conjuration (Creation, Summoning)} & \spelllists{Arcane} \\
-\longcol{\spelltime{10 minutes}} \\
-\spelleff{20 ft. square structure} & \spellrng{\rngclose} \\
+\spelltime{10 minutes} & \spellrng{\rngclose} \\
 \spelldur{\durext \dismissable}
 \spellsr{No}
 \spellattack{None}
@@ -2188,7 +2172,6 @@ To use this spell, you must be in an area of shadowy illumination. You and any o
 \spellschool{Conjuration/Transmutation (Animation, Creation)} & \spelllists{Natural} \\
 \longcol{\spelltime{1 hour}} \\
 \spellarea{\areamed radius limit} & \spellrng{\rngmed} \\
-\longcol{\spelleff{Three or more shambling mounds within the area}} \\
 \spelldur{Seven days or seven months \dismissable; see text}
 \spellsr{No}
 \spellattack{None}
@@ -2295,7 +2278,7 @@ You store one spell that you know in a wooden quarterstaff. Only one such spell 
 \spelltabular
 \spellschool{Abjuration/Necromancy (Life, Warding) [Death, Trap]} & \spelllists{Arcane} \\
 \longcol{\spelltime{10 minutes}} \\
-\spelleff{One symbol} & \spellrng{Touch} \\
+\spelltgt{One object} & \spellrng{Touch} \\
 \spelldur{Permanent or until discharged}
 \spellsr{Yes (Fortitude)}
 \spellattack{Fortitude negates}
@@ -2498,13 +2481,13 @@ This ritual functions like \spell{teleport}, except that you can teleport up to 
 \spelltabular
 \spellschool{Conjuration (Translocation) [Teleportation, Trap]} & \spelllists{Arcane} \\
 \longcol{\spelltime{10 minutes}} \\
-\spelleff{\areasmall radius circle} & \spellrng{Touch} \\
+\longcol{\spellrng{Touch}} \\
 \spelldur{\durext or until discharged \dismissable}
 \spellsr{Yes (Will)}
 \spellattack{Will negates}
 \end{tabularx}
 \begin{spelleffect}
-You create an invisible circle on the floor or other horizontal surface that teleports, as \spell{greater teleport}, any creature who stands on it to a designated spot. Once you designate the destination for the circle, you can't change it. The ritual fails if the destination is not a valid destination.
+You create an invisible \areasmall radius circle on the floor or other horizontal surface that teleports, as \spell{greater teleport}, any creature who stands on it to a designated spot. Once you designate the destination for the circle, you can't change it. The ritual fails if the destination is not a valid destination.
 \par The circle can teleport a number of creatures equal to your caster level before it ceases to function.
 \end{spelleffect}
 \begin{spellnotes}
@@ -2515,7 +2498,7 @@ Magic traps such as \spell{teleportation circle} can be detected with the Percep
 \spelltabular
 \spellschool{Evocation (Control)} & \spelllists{Arcane} \\
 \longcol{\spelltime{1 minute}} \\
-\longcol{\spelleff{\areamed radius immobile sphere centered on you}} \\
+\longcol{\spellarea{\areamed radius immobile emanation centered on you}} \\
 \spelldur{\durext \dismissable}
 \spellsr{No}
 \spellattack{None}
@@ -2649,8 +2632,7 @@ An area can receive only one hallow or unhallow spell (and its associated spell 
 \spellsection{Unseen Servant}{1}
 \spelltabular
 \spellschool{Conjuration/Evocation (Creation, Control)} & \spelllists{Arcane} \\
-\longcol{\spelltime{1 minute}} \\
-\spelleff{One invisible, mindless, shapeless servant} & \spellrng{\rngmed} \\
+\spelltime{1 minute} & \spellrng{\rngmed} \\
 \spelldur{\durlong \dismissable}
 \spellsr{No}
 \spellattack{None}
