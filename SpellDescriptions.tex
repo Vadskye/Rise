@@ -81,9 +81,8 @@
 \begin{spelleffect}
     This spell functions like \spell{solid fog}, except that the fog is highly acidic.
 \end{spelleffect}
-\spelltriggeredattack{Magic vs. Fortitude}
+\spellattacktargets{Magic vs. Fortitude}{Everything in the area}
 \spelltrigger{End of round}
-\spelltriggertarget{All creatures in the area}
 \begin{spellsuccess}
     4d6 acid damage.
 \end{spellsuccess}
@@ -312,11 +311,13 @@
 \spelldesc{You fill your enemies with dismay, impairing their ability to fight.}
 \spelltabular
 \spellschool{Ench (Emotion) [Mind-Affecting, Morale]} & \spelllists{Divine, Evil, War} \\
-\spellarea{\areamed radius burst} & \\
+\spellarea{\areamed radius burst} & \spelltgts{All enemies in the area} \\
+\spelldur{5 rounds}
 \spellsr{Yes (Will)}
 \end{tabularx}
+\spellattack{Magic vs. Will}
 \begin{spellsuccess}
-  All enemies in the area take a \minus2 penalty to physical attacks for 5 rounds.
+    \minus2 penalty to physical attacks for 5 rounds.
 \end{spellsuccess}
 
 \spellsection{Banishment}{6}
@@ -402,9 +403,8 @@
 \begin{spelleffect}
     You create a wall of blades made of force energy. It is up to 100 feet long, and 20 feet high. The wall provides active cover (20\% miss chance) against attacks made through it. Attacks that miss in this way harmlessly strike the wall. The wall is considered difficult terrain.
 \end{spelleffect}
-\spelltriggeredattack{Magic vs. Reflex}
+\spellattacktarget{Magic vs. Reflex}{Creature in wall}
 \spelltriggers{Wall is created on creature, or creature passes through wall}
-\spelltriggertarget{The creature in the wall}
 \begin{spellsuccess}
     6d6 force damage \add d6 per four caster levels above 12th.
 \end{spellsuccess}
@@ -499,17 +499,19 @@
 \spelldesc{You expel a cone of searing flame shoots from your fingertips, searing creatures in front of you.}
 \spelltabular
 \spellschool{Evoc (Energy) [Fire]} & \spelllists{Arcane, Destruction, Nature, Fire} \\
-\spellarea{\areamed cone-shaped burst} & \\
+\spellarea{\areamed cone-shaped burst} & \spelltgts{Everything in the area} \\
 \spellsr{Yes (Reflex)}
-\spelldmg{1d6 fire damage \add 1d6 per four caster levels above 2nd}
 \end{tabularx}
 \spellattack{Magic vs. Reflex}
 \begin{spellsuccess}
-    Everything in the area takes damage. Unattended flammable objects burn if the flames touch them.
+    1d6 fire damage \add 1d6 per four caster levels above 2nd.
 \end{spellsuccess}
 \begin{spellfailure}
-    As above, but a failed attack deals half damage.
+    Half damage.
 \end{spellfailure}
+\begin{spellnotes}
+     Unattended flammable objects burn if the flames touch them. \destructivespellnotes
+\end{spellnotes}
 
 \pdfbookmark[2]{C}{SpellDescriptionsC}
 \begin{comment}
@@ -520,23 +522,19 @@
 \spelldesc{You repeatedly call bolts of lightning that flash down from thin air to smite your foes.}
 \spelltabular
 \spellschool{Evoc (Energy) [Destructive, Electricity]} & \spelllists{Air, Nature} \\
-\spelltime{Full-round action}
-\spellarea{\arealarge vertical line of lightning, 5 ft. wide} & \spellrng{\rngmed} \\
+\spellarea{\arealarge vertical line, 5 ft. wide} & \spellrng{\rngmed} \\
 \spelldur{Instantaneous and \durmed \dismissable; see text}
 \spellsr{Yes (Reflex)}
-\spelldmg{3d8 electricity damage \add d8 per four caster levels above 6th}
 \end{tabularx}
 \begin{spelleffect}
-    When you cast this spell, and once per round thereafter, you may call down a vertical bolt of lightning. When you do, you make a magic attack against everything in the bolt's path. Calling a bolt is a standard action that requires concentration. You may call a total number of bolts equal to your caster level.
-
-    If you are outdoors and in a stormy area -- a rain shower, clouds and wind, hot and cloudy conditions, or even a tornado -- each bolt deals 3d10 electricity damage \add d10 per four caster levels above 6th instead.
+    When you cast this spell, and once per round thereafter, you may call down a vertical bolt of lightning. Calling a bolt is a standard action that requires concentration. You may call a total number of bolts equal to your caster level.
 \end{spelleffect}
-\spellattack{Magic vs. Reflex}
+\spellattacktargets{Magic vs. Reflex}{Everything in the bolt's area}
 \begin{spellsuccess}
-    Everything in the bolt's path takes damage.
+    3d8 electricity damage \add d8 per four caster levels above 6th. If you are outdoors and in a stormy area -- a rain shower, clouds and wind, hot and cloudy conditions, or even a tornado -- this deals 3d10 electricity damage \add d10 per four caster levels above 6th instead.
 \end{spellsuccess}
 \begin{spellfailure}
-    As above, but a failed attack deals half damage.
+    Half damage.
 \end{spellfailure}
 \begin{spellnotes}
     This spell functions indoors or underground, but not underwater. \destructivespellnotes
@@ -546,16 +544,20 @@
 \spelldesc{You repeatedly call intense bolts of lightning that flash down from thin air to smite your foes.}
 \spelltabular
 \spellschool{Evoc (Energy) [Destructive, Electricity]} & \spelllists{Air, Nature} \\
-\spelldmg{5d8 electricity damage \add d8 per four caster levels above 10th}
 \end{tabularx}
-\spellattack{Magic vs. Reflex and Fortitude}
 \begin{spelleffect}
-    This spell functions like \spell{call lightning}, except that your attack is also made against the target's Fortitude. If you are outdoors in a stormy area, each bolt deals 5d10 electricity damage \add d10 per four caster levels above 10th instead.
+    This spell functions like \spell{call lightning}, except that the bolts are more powerful.
 \end{spelleffect}
-\spellattack{Magic vs. Fortitude}
+\spellattack{Magic vs. Reflex and Fortitude}
+\spellattackseparatetargets{Everything in the bolt's area}
 \begin{spellsuccess}
-    If the target is \bloodied, it is staggered for 1 round.
+    If you beat the target's Reflex defense, it takes 5d8 electricity damage \add d8 per four caster levels above 10th. If you are outdoors in a stormy area, it takes 5d10 electricity damage \add d10 per four caster levels above 10th instead.
+    
+    If the target is bloodied, and you also beat its Fortitude defense, it is \staggered for 5 rounds.
 \end{spellsuccess}
+\begin{spellfailure}
+    Half damage, and the target is not staggered.
+\end{spellfailure}
 \begin{spellnotes}
     This spell functions indoors or underground, but not underwater. \destructivespellnotes
 \end{spellnotes}
@@ -568,9 +570,9 @@
 \spelldur{Concentration}
 \spellsr{Yes (Will)}
 \end{tabularx}
-\spellattack{Magic vs. Will}
+\spellattacktargets{Magic vs. Will}{All creatures in the area}
 \begin{spellsuccess}
-  Creatures in the area have their emotions calmed. Creatures so affected cannot take violent actions (although they can defend themselves) or do anything destructive.
+    The target has its emotions calmed. It cannot take violent actions (although it can defend itself) or do anything destructive.
 \end{spellsuccess}
 \begin{spellnotes}
   Any aggressive action against or damage dealt to a calmed creature immediately breaks the spell on all calmed creatures.
@@ -582,25 +584,24 @@
 \spelldesc{You create a stroke of lightning which strikes a single foe before arcing to hit a number of other foes of your choice.}
 \spelltabular
 \spellschool{Evoc (Energy) [Electricity]} & \spelllists{Arcane, Destruction, Nature} \\
-\spellarea{\areamed radius centered on the primary target} & \spellrng{\rngmed} \\
-\longcol{\spelltgts{One primary target, plus five secondary targets in the area}} \\
-\spellsr{Yes (Reflex)}
-\spelldmg{5d10 electricity damage \add d10 per four caster levels above 10th}
+\longcol{\spellrng{\rngmed}} \\
+\longcol{\spellarea{\areamed radius limit centered on the primary target}} \\
+\longcol{\spelltgts{One primary target, plus up to five secondary targets in the area}} \\
+\spellsr{Yes (Fortitude)}
 \end{tabularx}
-\spellattack{Reflex half}
+\spellattack{Magic vs. Reflex}
 \begin{spellsuccess}
-    All of the spell's targets take damage. This spell deals full damage to the primary target and half damage to each of the secondary targets. No secondary target can be struck more than once. You can choose to affect fewer secondary targets than the maximum.
+    5d10 electricity damage \add d10 per four caster levels above 10th. Secondary targets take half damage.
 \end{spellsuccess}
 \begin{spellfailure}
-    As above, but a failed attack deals half damage.
+    Half damage.
 \end{spellfailure}
 
 \spellsection{Changestaff}{7}
 \spelldesc{You plant your staff in the ground and transform it into a massive tree-like creature which obeys your every command.}
 \spelltabular
 \spellschool{Trans (Alteration, Animation)} & \spelllists{Nature, Wild} \\
-\longcol{\spellcmp{Verbal, Somatic, and Focus}} \\
-\spelltime{Full-round action}
+\spellcmp{Verbal, Somatic, and Focus} & \spelltime{Full-round action} \\
 \spelltgt{Your touched staff} & \spellrng{\rngtouch} \\
 \spelldur{\durmed \dismissable}
 \end{tabularx}
@@ -613,24 +614,23 @@
 \spelldesc{You unleash a multicolored explosion of leaping, ricocheting energy to smite your foes.}
 \spelltabular
 \spellschool{Evoc (Channeling) [Chaotic]} & \spelllists{Chaos} \\
-\spelltgt{One creature} & \spellrng{\rngmed} \\
+\spelltgt{One nonchaotic creature} & \spellrng{\rngmed} \\
 \spelldur{Instantaneous/5 rounds}
 \spellsr{Yes (Will)}
-\spelldmg{8d6 divine damage \add d6 per two caster levels above 8th}
 \end{tabularx}
 \spellattack{Magic vs. Will}
 \begin{spellsuccess}
-    If the target is not chaotic, it is \bewildered for 5 rounds and takes damage.
+    If the target is not chaotic, it takes 8d6 divine damage \add d6 per two caster levels above 8th, and is \bewildered for 5 rounds.
 \end{spellsuccess}
 \begin{spellfailure}
-    As above, but a failed attack deals half damage.
+    Half damage.
 \end{spellfailure}
 
 \spellsection{Charm Monster}{5}
 \spelldesc{You manipulate a creature's mind so it thinks of you as a trusted friend and ally.}
 \spelltabular
 \spellschool{Ench (Emotion) [Charm, Mind-Affecting]} & \spelllists{Ench} \\
-\longcol{\spelltgt{One creature}} \\
+\spelltgt{One creature} & \spellrng{\rngmed} \\
 \end{tabularx}
 \begin{spellsuccess}
   This spell functions like \spell{charm person}, except that the effect is not restricted by creature type.
@@ -640,7 +640,7 @@
 \spelldesc{You manipulate a person's mind so he thinks of you as a trusted friend and ally.}
 \spelltabular
 \spellschool{Ench (Emotion) [Charm, Mind-Affecting]} & \spelllists{Ench} \\
-\spelltgt{One humanoid} & \spellrng{\rngmed} \\
+\spelltgt{One humanoid creature} & \spellrng{\rngmed} \\
 \spelldur{\durlong}
 \spellsr{Yes (Will)}
 \end{tabularx}
@@ -658,7 +658,7 @@
 \spelltabular
 \spellschool{Ench (Emotion) [Charm, Mind-Affecting]} & \spelllists{Ench} \\
 \spellarea{\areamed radius limit} & \spellrng{\rngmed} \\
-\longcol{\spelltgts{Five creatures in the area}} \\
+\longcol{\spelltgts{Five humanoid creatures in the area}} \\
 \end{tabularx}
 \begin{spellsuccess}
   This spell functions like \spell{charm person}, except that it affects multiple humanoid creatures.
@@ -670,13 +670,13 @@
 \spellschool{Necro (Vitalism) [Death, Negative]} & \spelllists{Death, Divine} \\
 \longcol{\spellcmp{Verbal, Somatic, and Focus}} \\
 \spellarea{\areamed radius limit} & \spellrng{\rngmed} \\
-\longcol{\spelltgts{Several living creatures in the area}} \\
+\longcol{\spelltgts{Several bloodied living creatures in the area}} \\
 \spellsr{Yes (Fortitude)}
 \end{tabularx}
-\spellattack{Magic vs. Fortitude}
 \begin{spelleffect}
     This spell affects all \bloodied living creatures in the area, starting with the creature with the lowest level, until it affects a total number of levels equal to twice your caster level. Among creatures with equal levels, those closest to the burst's point of origin are affected first. No creature whose level is greater than half your caster level can be affected, and levels that are not sufficient to affect a creature are wasted. Healthy creatures are not affected by this spell, and do not count against its level limit.
 \end{spelleffect}
+\spellattack{Magic vs. Fortitude}
 \begin{spellsuccess}
     If the target is bloodied, it is reduced to 0 hit points and takes 9 critical damage, causing it to begin dying.
 \end{spellsuccess}
@@ -687,16 +687,17 @@
 \spelltabular
 \spellschool{Evoc (Control) [Force]} & \spelllists{Evoc, Strength} \\
 \spellsr{Yes (Fortitude)}
-\spelldmg{2d10 force damage \add half casting attribute}
 \end{tabularx}
 \begin{spelleffect}
-  This spell functions like \spell{interposing hand}, except that the hand can also strike foes. Each round, as a swift action, you can command the hand to attack a foe. If you do, it makes a physical attack against that foe during the action phase.
+  This spell functions like \spell{interposing hand}, except that the hand can also strike foes. Each round, as a swift action, you can command the hand to attack a foe. If you do, it attacks that foe during the action phase.
 \end{spelleffect}
 \spellattack{Caster level \add casting attribute vs. Armor defense}
+\spellattackseparatetarget{One creature}
 \begin{spellsuccess}
-    The target takes damage. In addition, if it is \bloodied, you make an additional magic attack.
+    2d10 force damage \add half casting attribute. If the target is \bloodied, you make an additional attack.
 \end{spellsuccess}
-\spellattack{Magic vs. Fortitude}
+\spellattacktarget{Magic vs. Fortitude}{Struck creature}
+\spelltrigger{The hand strikes a bloodied creature}
 \begin{spellsuccess}
     If the target is bloodied, it is \dazed for 1 round.
 \end{spellsuccess}
@@ -729,10 +730,11 @@
 \end{tabularx}
 \spellattack{Magic vs. Fortitude}
 \begin{spelleffect}
-    This spell functions like \spell{fog cloud}, except that the fog is poisonous. At the end of each round, you attack all living creatures in the area.
+    This spell functions like \spell{fog cloud}, except that the fog is poisonous.
   \par Unlike a \spell{fog cloud}, the \spell{cloudkill} moves away from you at 10 feet per round, rolling along the surface of the ground. Figure out the cloud's new spread each round based on its new point of origin, which is 10 feet farther away from the point of origin where you cast the spell.
 \end{spelleffect}
-\spellattack{Magic vs. Fortitude}
+\spellattacktargets{Magic vs. Fortitude}{Everything in the area}
+\spelltrigger{End of round}
 \begin{spellsuccess}
     1d4 Constitution damage.
 \end{spellsuccess}
@@ -746,13 +748,14 @@
 \spelltabular
 \spellschool{Illus (Figment) [Light, Sight-Dependent]} & \spelllists{Arcane} \\
 \longcol{\spellarea{\areamed cone-shaped burst}} \\
+\longcol{\spelltgts{All creatures in the area}} \\
 \spelldur{1d4 rounds}
 \spellsr{Yes (Will)}
 \end{tabularx}
 \spellattack{Magic vs. Will}
-\begin{spelleffect}
-    Creatures in the area are \dazzled and \bewildered.
-\end{spelleffect}
+\begin{spellsuccess}
+    The target is \dazzled and \bewildered.
+\end{spellsuccess}
 \begin{spellnotes}
   Creatures who cannot see the light are not affected by this spell. Merely closing one's eyes is insufficient protection, however.
 \end{spellnotes}
@@ -1923,9 +1926,8 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \begin{spelleffect}
     You gain cold damage reduction 20 \add 1 per caster level above 8th, and radiate light as a torch.
 \end{spelleffect}
-\spelltriggeredattack{Magic vs. Reflex}
+\spellattacktarget{Magic vs. Reflex}{Attacking creature}
 \spelltrigger{Creature within \rngclose range attacks you with a melee weapon}
-\spelltriggertarget{Attacking creature}
 \begin{spellsuccess}
     4d6 fire or cold damage \add d6 per four caster levels above 8th.
 \end{spellsuccess}
@@ -3818,11 +3820,13 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellschool{Abjur/Illus (Figment, Shielding)} & \spelllists{Arcane} \\
 \spelltgt{One creature; see text} & \spellrng{\rngclose; see text} \\
 \spelldur{\durshort or until discharged}
-\spellsr{Yes (Will)}
+\spellsr{Yes (Fortitude)}
 \end{tabularx}
-\spelltriggeredattack{Magic vs. Fortitude}
-\spelltrigger{Creature within \rngclose range of the subject attacks it with a melee weapon. Activating the trigger requires an immediate action from the subject, and discharges the spell.}
-\spelltriggertarget{Attacking creature}
+\begin{spelleffect}
+    The subject is protected by a retributive shield that can be activated when the subject is attacked. Activating the triggered attack requires an immediate action from either you or the subject, and discharges the spell.
+\end{spelleffect}
+\spellattacktarget{Magic vs. Reflex}{Attacking creature}
+\spelltrigger{Creature within \rngclose range of the subject attacks it with a melee weapon}
 \begin{spellsuccess}
     The target is \dazzled for 5 rounds. If it is \bloodied, it is also \blinded for 5 rounds.
 \end{spellsuccess}
