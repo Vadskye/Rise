@@ -144,9 +144,12 @@
 \newcommand{\spelldmg}[1]{\parheadni{Damage} #1}
 \newcommand{\spellheal}[1]{\parheadni{Healing} #1}
 \newcommand{\spellattack}[1]{\parheadni{Attack} #1}
-\newcommand{\spelltriggeredattack}[1]{\parheadni{Triggered Attack} #1}
+\newcommand{\spellattacktarget}[2]{\spelltabularcompressed \thead{Attack:} #1 & \thead{Target:} #2 \\\end{tabularx}}
+\newcommand{\spellattacktargets}[2]{\spelltabularcompressed \thead{Attack:} #1 & \thead{Targets:} #2 \\\end{tabularx}}
+\newcommand{\spellattackseparatetarget}[1]{\parhead{Target} #1}
+\newcommand{\spellattackseparatetargets}[1]{\parhead{Targets} #1}
+
 \newcommand{\spelltrigger}[1]{\parhead{Trigger} #1}
-\newcommand{\spelltriggertarget}[1]{\parhead{Target} #1}
 \newcommand{\spelltriggers}[1]{\parhead{Triggers} #1}
 \newcommand{\spellfocus}[1]{\par\noindent \textit{Focus:} #1}
 \newcommand{\spellmat}[1]{\par\noindent \textit{Material Components:} #1}
@@ -158,7 +161,6 @@
 \newcommand{\spelltime}[1]{\thead{Casting Time:} #1}
 \newcommand{\spellrng}[1]{\thead{Range:} #1}
 \newcommand{\spellarea}[1]{\thead{Area:} #1}
-\newcommand{\spelleff}[1]{\thead{Manifestation:} #1}
 \newcommand{\spelltgt}[1]{\thead{Target:} #1}
 \newcommand{\spelltgts}[1]{\thead{Targets:} #1}
 \newcommand{\spelltgtortgts}[1]{\thead{Target or Targets:} #1}
@@ -168,7 +170,6 @@
 \newcommand{\longcol}[1]{\multicolumn{2}{l}{#1}}
 \newcommand{\spelldur}[1]{\longcol{\thead{Duration:} #1} \\}
 \newcommand{\spellsr}[1]{\longcol{\thead{Spell Resistance:} #1} \\}
-\newcommand{\spellefflong}[1]{\longcol{\thead{Manifestation:} #1}\\}
 
 \newcommand{\rngpers}{Personal}
 \newcommand{\rngtouch}{Touch}
@@ -232,9 +233,11 @@
 \newcommand{\firespellnotes}{Fire spells do not function underwater. They can ignite combustable materials, such as dry wood and cloth.}
 
 \newcommand{\spelltabular}{\par\noindent\begin{tabularx}{\columnwidth}{>{\lcol}X l}\hangindent=1em}
+\newcommand{\spelltabularcompressed}{\par\noindent\begin{tabularx}{\columnwidth}{@{}>{\lcol}X l}\hangindent=1em}
 \newcommand{\spelltablecolumns}{>{\lcol}X l}
 
 \newcommand{\spelllevelschool}[2]{\spelllvl{#1} & #2 \\}
 \newcommand{\spelllevelnew}[3]{\thead{\nth{#1} level} #2 & #3 \\}
 
 \newcommand{\dismissable}{(Dismissable)}
+\newcommand{\shapeable}{(S)}
