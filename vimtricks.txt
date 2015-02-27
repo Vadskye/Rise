@@ -18,3 +18,6 @@ yiW:vnewpS,ayiWñi="/2€krdLñ:q!n
 
 vim substitution to add commas to numbers missing commas
 .,$s:\v(\d)((\d\d\d)+\d@!)@=:\1,:cg
+
+vim macro to create \spellschoollevel
+/spellschoolOalevel€kr€kr€@7Mdt{a
