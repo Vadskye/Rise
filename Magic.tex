@@ -303,11 +303,11 @@ You can count diagonally across a square, but remember that every second diagona
 
 \parhead{Burst} A burst spell has an immediate effect on all valid targets within an area.
 
-\parhead{Emanation} An emanation spell has effects within an area for the duration of the spell. It emanates from a specific creature or object, and if that creature or object moves, the emanation moves with it.
+\parhead{Emanation} An emanation spell has effects within an area for the duration of the spell. It emanates from a specific creature or object, rather than a location. If that creature or object moves, the emanation moves with it.
 
 \parhead{Limit} A limit spell has an immediate effect within an area. It may affect specific targets of your choice, or it may create effects at locations within the area, but it will not affect the entire area at once. Its point of origin is a location.
 
-\parhead{Zone} A zone spell has effects within an area for the duration of the spell. It does not move after being created.
+\parhead{Zone} A zone spell has effects within an area for the duration of the spell. Unless otherwise noted, it does not move after being created.
 
 \subsubsection{Area Shapes}
 
@@ -315,11 +315,13 @@ You can count diagonally across a square, but remember that every second diagona
 
 \parhead{Cylinder} A cylinder extends out from the point of origin in a circle, up to the given radius. Cylinders also have a specific height. Cylinders ignore obstacles that partially block line of effect, as long as there is a path around the obstacle that lies entirely within the spell's area.
 
-\parhead{Line} A line extends from the point of origin in a straight line, up to the given length. Lines also have a specific width. Unless otherwise specified, a line-shaped spell affects an area 5 feet wide. The affected squares are chosen such that they stay close to the chosen line as possible. All squares affected by a line must be contiguous, so every square is adjacent to another affected square, disregarding diagonals.
+\parhead{Line} A line extends from the point of origin in a straight line, up to the given length. Lines also have a specific width and height. Unless otherwise specified, a line-shaped spell affects an area 5 feet wide and 5 feet high. The affected squares are chosen such that they stay close to the chosen line as possible. All squares affected by a line must be contiguous, so every square is adjacent to another affected square, disregarding diagonals.
 
 \subparhead{Shapeable Lines}\label{Shapeable} Some lines are shapeable, as denoted by \shapeable. A shapeable line can make 90 degree turns at any point in its path, which you can freely determine within the normal limitations.
 
 \parhead{Sphere} A sphere extends from the point of origin in all directions. Any spell which only specifies a radius for its area is sphere-shaped.
+
+\parhead{Wall} A wall is like a line, except that it has no width. Instead, it affects the boundary between squares. Walls can also be shapeable.
 
 \parhead{Specific Shapes} Some spells specify a series of volumes that make up the area of the spell. Most commonly, the volumes are cubes. You may arrange the volumes as you want, with the restriction that each volume in the spell's area must be adjacent to one other volume in the spell's area.
 
