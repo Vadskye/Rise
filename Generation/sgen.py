@@ -68,7 +68,7 @@ def initialize_argument_parser():
     parser.add_argument('--castingtime', dest='castingtime', type=str,
             choices=['standard', 'full', 'swift'])
     parser.add_argument('-r', '--range', dest='range', type=str,
-            choices=range_choices, default='medium')
+            choices=range_choices)
     parser.add_argument('--savename', dest='savename', type=str)
     parser.add_argument('--loadname', dest='loadname', type=str)
     parser.add_argument('--dot', dest='dot', type=util.bool_parser,
