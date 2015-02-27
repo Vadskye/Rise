@@ -289,10 +289,9 @@ If you have the ability to make multiple touch attacks, such as from the \spell{
 \parhead{Unlimited} The spell reaches anywhere on the same plane of existence.
 \parhead{Range Expressed in Feet} Some spells have no standard range category, just a range expressed in feet.
 
-\subsection{Aiming a Spell}
-You must make some choice about whom the spell is to affect or where the effect is to originate, depending on the type of spell. The next entry in a spell description defines the spell's target (or targets) or its area, as appropriate.
+\subsection{Area}\label{Spell Area}
 
-\parhead{Area}\label{Spell Area} Some spells affect an area. Sometimes a spell description specifies a specially defined area, but usually an area falls into one of the categories defined below.
+Some spells affect an area. Sometimes a spell description specifies a specially defined area, but usually an area falls into one of the categories defined below.
 
 When casting an area spell, you select the point where the spell originates. The point of origin of a spell is always a grid intersection. When determining whether a given creature is within the area of a spell, count out the distance from the point of origin in squares just as you do when moving a character or when determining the range for a ranged attack. The only difference is that instead of counting from the center of one square to the center of the next, you count from intersection to intersection.
 
@@ -300,37 +299,40 @@ You can freely decrease a spell's area, provided that you decrease it uniformly 
 
 You can count diagonally across a square, but remember that every second diagonal counts as 2 squares of distance. If the far edge of a square is within the spell's area, anything within that square is within the spell's area. If the spell's area only touches the near edge of a square, however, anything within that square is unaffected by the spell.
 
-\subparhead{Burst, Emanation, Limit, Spread} Many spells that affect an area function as a burst, an emanation, a limit, a spread, or a wall. In each case, you select the spell's point of origin and measure its effect from that point.
+\subsubsection{Area Types}
 
-A burst affects whatever it catches in its area, even including creatures that you can't see. A burst's area defines how far from the point of origin the spell's effect extends. The effects of burst spells do not extend around corners.
+\parhead{Burst} A burst spell has an immediate effect on all valid targets within an area.
 
-An emanation functions like a burst, except that the effect continues to radiate from the point of origin for the duration of the spell.
+\parhead{Emanation} An emanation spell has effects within an area for the duration of the spell. It emanates from a specific creature or object, and if that creature or object moves, the emanation moves with it.
 
-A limit is more like a range than a normal area. A spell can have effects within its limiting area, but it will not affect the entire area at once, and it generally cannot affect things outside its limiting area.
+\parhead{Limit} A limit spell has an immediate effect within an area. It may affect specific targets of your choice, or it may create effects at locations within the area, but it will not affect the entire area at once. Its point of origin is a location.
 
-A spread radiates out like a burst but can turn corners. You select the point of origin, and the spell spreads out a given distance in all directions. Figure the area the spell effect fills by taking into account any turns the spell effect takes.
+\parhead{Zone} A zone spell has effects within an area for the duration of the spell. It does not move after being created.
 
-\subparhead{Cone, Cylinder, Line, or Sphere} Most spells that affect an area have a particular shape, such as a cone, cylinder, line, or sphere. Unless otherwise specified, the shape of a burst, emanation, or spread is a sphere.
+\subsubsection{Area Shapes}
 
-A cone-shaped spell shoots away from you in a quarter-circle in the direction you designate, extending out to a limit defined by the spell. It starts from any corner of your square and widens out as it goes. Most cones are either bursts or emanations (see above), and thus won't go around corners.
+\parhead{Cone} A cone extends from the point of origin in a quarter-sphere, up to the given length.
 
-When casting a cylinder-shaped spell, you select the spell's point of origin. This point is the center of a horizontal circle, and the spell shoots down from the circle, filling a cylinder. A cylinder-shaped spell ignores any vertical obstructions within its area.
+\parhead{Cylinder} A cylinder extends out from the point of origin in a circle, up to the given radius. Cylinders also have a specific height. Cylinders ignore obstacles that partially block line of effect, as long as there is a path around the obstacle that lies entirely within the spell's area.
 
-A line-shaped spell shoots away from you in a line in the direction you designate. It starts from any corner of your square and extends to the limit of its range or until it strikes a barrier that blocks line of effect. A line-shaped spell affects all creatures in squares that the line passes through. Unless otherwise specified, a line spell affects an area 10 feet wide. The affected squares are chosen such that they stay close to the chosen line as possible.
+\parhead{Line} A line extends from the point of origin in a straight line, up to the given length. Lines also have a specific width. Unless otherwise specified, a line-shaped spell affects an area 5 feet wide. The affected squares are chosen such that they stay close to the chosen line as possible. All squares affected by a line must be contiguous, so every square is adjacent to another affected square, disregarding diagonals.
 
-A sphere-shaped spell expands from its point of origin to fill a spherical area. Spheres are typically denoted by simply specifying the radius of the spell.
+\subparhead{Shapeable Lines}\label{Shapeable} Some lines are shapeable, as denoted by \shapeable. A shapeable line can make 90 degree turns at any point in its path, which you can freely determine within the normal limitations.
 
-A wall-shaped spell extends in a single direction from its point of origin. All walls must be contiguous, so every part of the wall is adjacent to another part of the wall. Unless otherwise specified, walls must be vertical and go straight in a particular direction. Some walls are shapeable, as denoted by \shapeable. You can make corners when constructing the path of a shapeable wall.
+\parhead{Sphere} A sphere extends from the point of origin in all directions. Any spell which only specifies a radius for its area is sphere-shaped.
 
-\subparhead{Specific Areas} Some spells specify a series of volumes that make up the area of the spell. Most commonly, the volumes are cubes. You may arrange the volumes as you want, with the restriction that each volume in the spell's area must be adjacent to one other volume in the spell's area.
+\parhead{Specific Shapes} Some spells specify a series of volumes that make up the area of the spell. Most commonly, the volumes are cubes. You may arrange the volumes as you want, with the restriction that each volume in the spell's area must be adjacent to one other volume in the spell's area.
 
-\subparhead{Area Sizes} The area affected by many spells falls into one of four sizes. Each size defines the extent to which the spell extends out from its origin, whether as a radius or as the length of a cone or line. Small spells extend 10 feet out. Medium spells extend 20 feet out. Large spells extend 50 feet out. Other spells affect a specific area defined in the spell's description.
+\subsubsection{Area Sizes}
 
-\subparhead{Objects} A spell with this kind of area affects objects within an area you select (as Creatures, but affecting objects instead).
+The area affected by many spells falls into one of three sizes. Each size defines the extent to which the spell extends out from its origin, whether as a radius or as a length. Some spells have specific sizes, as given in the spell description.
 
-\subparhead{Other} A spell can have a unique area, as defined in its description.
+\parhead{Small} Small spells extend 10 feet from their point of origin.
+\parhead{Medium} Medium spells extend 20 feet from their point of origin.
+\parhead{Large} Large spells extend 50 feet from their point of origin.
 
-\parhead{Target or Targets} Some spells have a target or targets. You cast these spells on creatures or objects, as defined by the spell itself. You must be able to see or touch the target, and you must specifically choose that target. You do not have to select your target until you finish casting the spell.
+\subsection{Targets}
+Some spells have a target or targets. You cast these spells on creatures or objects, as defined by the spell itself. You must be able to see or touch the target, and you must specifically choose that target. You do not have to select your target until you finish casting the spell.
 
 \subparhead{Multiple Targets} Most spells which have multiple targets also specify an area that the targets must reside in. If the spell says ``all creatures'', you do not have the ability to choose which creatures it affects; otherwise, you may pick and choose creatures within the area.
 
