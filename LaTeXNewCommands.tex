@@ -154,28 +154,29 @@
 \newcommand{\spellfocus}[1]{\par\noindent \textit{Focus:} #1}
 \newcommand{\spellmat}[1]{\par\noindent \textit{Material Components:} #1}
 
-\newcommand{\spelllvl}[1]{\thead{Level:} #1}
+\newcommand{\spelltwocol}[2]{\spelltabularcompressed #1 & #2\end{tabularx}}
+\newcommand{\spellinfo}[2]{\spelltwocol{#1}{\thead{Lists:} #2}}
+
 \newcommand{\spellschool}[1]{#1}
-\newcommand{\spelllists}[1]{\thead{Lists:} #1}
-\newcommand{\spellcmp}[1]{\thead{Components:} #1}
-\newcommand{\spelltime}[1]{\thead{Casting Time:} #1}
-\newcommand{\spellrng}[1]{\thead{Range:} #1}
+\newcommand{\spelllists}[1]{\parheadni{Lists} #1}
+\newcommand{\spellcmp}[1]{\parheadni{Components} #1}
+\newcommand{\spelltime}[1]{\parheadni{Casting Time} #1}
+\newcommand{\spellrng}[1]{\parheadni{Range} #1}
 
-\newcommand{\spellarea}[1]{\thead{Area:} #1}
-\newcommand{\spellburst}[1]{\thead{Burst:} #1}
-\newcommand{\spellemanation}[1]{\thead{Emanation:} #1}
-\newcommand{\spelllimit}[1]{\thead{Limit:} #1}
-\newcommand{\spellzone}[1]{\thead{Zone:} #1}
+\newcommand{\spellarea}[1]{\parheadni{Area} #1}
+\newcommand{\spellburst}[1]{\parheadni{Burst} #1}
+\newcommand{\spellemanation}[1]{\parheadni{Emanation} #1}
+\newcommand{\spelllimit}[1]{\parheadni{Limit} #1}
+\newcommand{\spellzone}[1]{\parheadni{Zone} #1}
 
-\newcommand{\spelltgt}[1]{\thead{Target:} #1}
-\newcommand{\spelltgts}[1]{\thead{Targets:} #1}
-\newcommand{\spelltgtortgts}[1]{\thead{Target or Targets:} #1}
-\newcommand{\spelltgtorarea}[1]{\thead{Target or Area:} #1}
-\newcommand{\spelltgteffarea}[1]{\thead{Target or Area:} #1}
+\newcommand{\spelltgt}[1]{\parheadni{Target} #1}
+\newcommand{\spelltgts}[1]{\parheadni{Targets} #1}
+\newcommand{\spelltgtortgts}[1]{\parheadni{Target or Targets} #1}
+\newcommand{\spelltgtorarea}[1]{\parheadni{Target or Area} #1}
+\newcommand{\spelltgteffarea}[1]{\parheadni{Target or Area} #1}
 
-\newcommand{\longcol}[1]{\multicolumn{2}{l}{#1}}
-\newcommand{\spelldur}[1]{\longcol{\thead{Duration:} #1} \\}
-\newcommand{\spellsr}[1]{\longcol{\thead{Spell Resistance:} #1} \\}
+\newcommand{\spelldur}[1]{\parheadni{Duration} #1}
+\newcommand{\spellsr}[1]{\parheadni{Spell Resistance} #1}
 
 \newcommand{\rngpers}{Personal}
 \newcommand{\rngtouch}{Touch}

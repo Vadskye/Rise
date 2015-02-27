@@ -6,9 +6,9 @@
 
 \spellsection{Alarm}{1}
 \spelltabular
-\spellschool{Abjuration (Warding) [Trap]} & \spelllists{Arcane, Divine} \\
-\longcol{\spelltime{1 minute}} \\
-\spellzone{\arealarge radius} & \spellrng{\rngclose} \\
+\spellinfo{Abjuration (Warding) [Trap]}{Arcane, Divine}
+\spelltime{1 minute}
+\spelltwocol{\spellzone{\arealarge radius}}{\spellrng{\rngclose}}
 \spelldur{\durext \dismissable}
 \spellsr{No}
 \spellattack{None}
@@ -24,9 +24,9 @@
 
 \spellsection{Alter Self}{2}
 \spelltabular
-\spellschool{Transmutation (Polymorph)} & \spelllists{Arcane} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{You} & \spellrng{Personal} \\
+\spellinfo{Transmutation (Polymorph)}{Arcane}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{You}}{\spellrng{Personal}}
 \spelldur{\durlong}
 \spellsr{Yes (Fortitude)}
 \spellattack{Fortitude negates}
@@ -38,8 +38,8 @@
 \spellsection{Analyze Dweomer}{5}
 \spelldesc{You infallibly discern the magical properties of a magic item.}
 \spelltabular
-\spellschool{Divination (Knowledge)} & \spelllists{Arcane} \\
-\longcol{\spelltime{1 minute}} \\
+\spellinfo{Divination (Knowledge)}{Arcane}
+\spelltime{1 minute}
 \end{tabularx}
 \begin{spelleffect}
     This ritual functions like \spell{identify}, except that it also reveals the exact properties of cursed items and artifacts.
@@ -47,9 +47,9 @@
 
 \spellsection{Animate Dead}{3}
 \spelltabular
-\spellschool{Necromancy (Soul, Vitalism) [Evil, Negative]} & \spelllists{Arcane, Divine} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgts{One or more corpses touched} & \spellrng{Touch} \\
+\spellinfo{Necromancy (Soul, Vitalism) [Evil, Negative]}{Arcane, Divine}
+\spelltime{1 minute}
+\spelltwocol{\spelltgts{One or more corpses touched}}{\spellrng{Touch}}
 \spelldur{Instantaneous}
 \spellsr{No}
 \spellattack{None}
@@ -70,9 +70,9 @@
 \spellsection{Animal Messenger}{2}
 \spelldesc{You compel a Tiny animal to go to a spot you designate.}
 \spelltabular
-\spellschool{Enchantment (Compulsion) [Mind-Affecting]} & \spelllists{Arcane, Nature} \\
-\longcol{\spelltime{1 minute; see text}} \\
-\spelltgt{One Tiny animal} & \spellrng{\rnglong} \\
+\spellinfo{Enchantment (Compulsion) [Mind-Affecting]}{Arcane, Nature}
+\spelltime{1 minute; see text}
+\spelltwocol{\spelltgt{One Tiny animal}}{\spellrng{\rnglong}}
 \spelldur{One week}
 \spellsr{Yes (Will)}
 \spellattack{None; see text}
@@ -87,10 +87,10 @@
 
 \spellsection{Antipathy}{9}
 \spelltabular
-\spellschool{Enchantment (Emotion) [Mind-Affecting]} & \spelllists{Arcane, Nature} \\
-\longcol{\spelltime{1 hour}} \\
-\spelltgt{One object or location} & \spellrng{\rngclose} \\
-\longcol{\spellemanation{100 ft. radius centered on the target}} \\
+\spellinfo{Enchantment (Emotion) [Mind-Affecting]}{Arcane, Nature}
+\spelltime{1 hour}
+\spelltwocol{\spelltgt{One object or location}}{\spellrng{\rngclose}}
+\spellemanation{100 ft. radius centered on the target}
 \spelldur{One week \dismissable}
 \spellsr{Yes (Will)}
 \spellattack{Will partial}
@@ -105,9 +105,9 @@
 
 \spellsection{Arcane Eye}{4}
 \spelltabular
-\spellschool{Divination (Scrying)} & \spelllists{Arcane} \\
-\longcol{\spelltime{1 minute}} \\
-\longcol{\spellrng{\rngmed/Unlimited}} \\
+\spellinfo{Divination (Scrying)}{Arcane}
+\spelltime{1 minute}
+\spellrng{\rngmed/Unlimited}
 \spelldur{\durlong \dismissable}
 \spellsr{No}
 \spellattack{None}
@@ -120,9 +120,9 @@
 
 \spellsection{Arcane Lock}{2}
 \spelltabular
-\spellschool{Abjuration/Transmutation (Alteration, Warding)} & \spelllists{Arcane} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{The door, chest, or portal touched, up to a 10-foot cube in size} & \spellrng{Touch} \\
+\spellinfo{Abjuration/Transmutation (Alteration, Warding)}{Arcane}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{The door, chest, or portal touched, up to a 10-foot cube in size}}{\spellrng{Touch}}
 \spelldur{Permanent}
 \spellsr{No}
 \spellattack{None}
@@ -137,8 +137,8 @@
 \spellsection{Arcane Mark}{1}
 \spelldesc{You inscribe your personal rune or mark on a creature or object.}
 \spelltabular
-\spellschool{Universal} & \spelllists{Arcane} \\
-\spelltime{1 minute} & \spellrng{\rngtouch} \\
+\spellinfo{Universal}{Arcane}
+\spelltwocol{\spelltime{1 minute}}{\spellrng{\rngtouch}}
 \spelldur{Permanent}
 \spellsr{No}
 \spellattack{None}
@@ -153,9 +153,9 @@
 \begin{comment}
 \spellsection{Astral Projection}
 \spelltabular
-\spellschool{Conjuration/Necromancy (Creation, Soul) [Planar]} & \spelllists{Arcane, Divine} \\
-\longcol{\spelltime{1 hour}} \\
-\spelltgts{You plus one additional willing creature touched per two caster levels} & \spellrng{Touch} \\
+\spellinfo{Conjuration/Necromancy (Creation, Soul) [Planar]}{Arcane, Divine}
+\spelltime{1 hour}
+\spelltwocol{\spelltgts{You plus one additional willing creature touched per two caster levels}}{\spellrng{Touch}}
 \spelldur{See text}
 \spellsr{Yes (Fortitude)}
 \spellattack{None}
@@ -175,9 +175,9 @@
 
 \spellsection{Atonement}{5}
 \spelltabular
-\spellschool{Evocation (Channeling)} & \spelllists{Divine, Nature} \\
-\longcol{\spelltime{1 hour}} \\
-\spelltgt{Living creature touched} & \spellrng{Touch} \\
+\spellinfo{Evocation (Channeling)}{Divine, Nature}
+\spelltime{1 hour}
+\spelltwocol{\spelltgt{Living creature touched}}{\spellrng{Touch}}
 \spelldur{Instantaneous}
 \spellsr{Yes (Will)}
 \spellattack{None}
@@ -198,9 +198,9 @@
 
 \spellsection{Augury}{2}
 \spelltabular
-\spellschool{Divination (Knowledge)} & \spelllists{Divine} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{You} & \spellrng{Personal} \\
+\spellinfo{Divination (Knowledge)}{Divine}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{You}}{\spellrng{Personal}}
 \spelldur{Instantaneous}
 \end{tabularx}
 \begin{spelleffect}
@@ -218,9 +218,9 @@
 
 \spellsection{Awaken}{7}
 \spelltabular
-\spellschool{Transmutation (Augment, Imbuement)} & \spelllists{Nature} \\
-\longcol{\spelltime{24 hours}} \\
-\spelltgt{Animal or tree touched} & \spellrng{Touch} \\
+\spellinfo{Transmutation (Augment, Imbuement)}{Nature}
+\spelltime{24 hours}
+\spelltwocol{\spelltgt{Animal or tree touched}}{\spellrng{Touch}}
 \spelldur{Instantaneous}
 \spellsr{Yes (Will)}
 \spellattack{Will negates}
@@ -236,9 +236,9 @@
 
 \spellsection{Bless Water}{1}
 \spelltabular
-\spellschool{Evocation (Channeling) [Good]} & \spelllists{Divine} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{Water touched} & \spellrng{Touch} \\
+\spellinfo{Evocation (Channeling) [Good]}{Divine}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{Water touched}}{\spellrng{Touch}}
 \spelldur{Instantaneous}
 \spellsr{Yes (object)}
 \spellattack{Will negates (object)}
@@ -252,9 +252,9 @@
 
 \spellsection{Break Enchantment}{5}
 \spelltabular
-\spellschool{Abjuration (Negation) [Magic]} & \spelllists{Arcane, Divine} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{One creature} & \spellrng{\rngclose} \\
+\spellinfo{Abjuration (Negation) [Magic]}{Arcane, Divine}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
 \spelldur{Instantaneous}
 \spellsr{No}
 \spellattack{See text}
@@ -267,8 +267,8 @@
 
 \spellsection{Clairaudience/Clairvoyance}{3}
 \spelltabular
-\spellschool{Divination (Scrying)} & \spelllists{Arcane, Divine} \\
-\spelltime{1 minute} & \spellrng{\rngext} \\
+\spellinfo{Divination (Scrying)}{Arcane, Divine}
+\spelltwocol{\spelltime{1 minute}}{\spellrng{\rngext}}
 \spelldur{\durmed \dismissable}
 \spellsr{No}
 \spellattack{None}
@@ -279,8 +279,8 @@
 
 \spellsection{Clone}{7}
 \spelltabular
-\spellschool{Conjuration/Necromancy (Creation, Soul)} & \spelllists{Arcane} \\
-\spelltime{10 minutes} & \spellrng{Touch} \\
+\spellinfo{Conjuration/Necromancy (Creation, Soul)}{Arcane}
+\spelltwocol{\spelltime{10 minutes}}{\spellrng{Touch}}
 \spelldur{Instantaneous}
 \spellsr{No}
 \spellattack{None}
@@ -299,9 +299,9 @@
 
 \spellsection{Commune}{5}
 \spelltabular
-\spellschool{Divination (Communication) [Planar]} & \spelllists{Divine} \\
-\longcol{\spelltime{10 minutes}} \\
-\spelltgt{You} & \spellrng{Personal} \\
+\spellinfo{Divination (Communication) [Planar]}{Divine}
+\spelltime{10 minutes}
+\spelltwocol{\spelltgt{You}}{\spellrng{Personal}}
 \spelldur{\durmed}
 \end{tabularx}
 \begin{spelleffect}
@@ -312,9 +312,9 @@
 \spellsection{Commune with Nature}{5}
 \spelldesc{You become one with nature, attaining knowledge of the surrounding territory.}
 \spelltabular
-\spellschool{Divination (Knowledge)} & \spelllists{Nature} \\
-\longcol{\spelltime{10 minutes}} \\
-\spelltgt{You} & \spellrng{Personal} \\
+\spellinfo{Divination (Knowledge)}{Nature}
+\spelltime{10 minutes}
+\spelltwocol{\spelltgt{You}}{\spellrng{Personal}}
 \spelldur{Instantaneous}
 \end{tabularx}
 \begin{spelleffect}
@@ -325,9 +325,9 @@
 \spellsection{Comprehend Languages}{2}
 \spelldesc{You can understand any language.}
 \spelltabular
-\spellschool{Divination (Communication)} & \spelllists{Arcane, Divine, Nature} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{You} & \spellrng{\rngpers} \\
+\spellinfo{Divination (Communication)}{Arcane, Divine, Nature}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{You}}{\spellrng{\rngpers}}
 \spelldur{\durlong}
 \end{tabularx}
 \begin{spelleffect}
@@ -342,9 +342,9 @@
 
 \spellsection{Consecrate}{2}
 \spelltabular
-\spellschool{Evocation (Channeling) [Good]} & \spelllists{Divine} \\
-\longcol{\spelltime{1 minute}} \\
-\spellzone{\areamed radius} & \spellrng{\rngclose} \\
+\spellinfo{Evocation (Channeling) [Good]}{Divine}
+\spelltime{1 minute}
+\spelltwocol{\spellzone{\areamed radius}}{\spellrng{\rngclose}}
 \spelldur{24 hours}
 \spellsr{No}
 \spellattack{None}
@@ -355,9 +355,9 @@
 
 \spellsection{Contact Other Plane}{5}
 \spelltabular
-\spellschool{Divination (Knowledge) [Planar]} & \spelllists{Arcane} \\
-\longcol{\spelltime{10 minutes}} \\
-\spelltgt{You} & \spellrng{Personal} \\
+\spellinfo{Divination (Knowledge) [Planar]}{Arcane}
+\spelltime{10 minutes}
+\spelltwocol{\spelltgt{You}}{\spellrng{Personal}}
 \spelldur{Concentration}
 \end{tabularx}
 \begin{spelleffect}
@@ -368,9 +368,9 @@
 \spellsection{Contagion}{3}
 \spelldesc{You infect your foe with a contagious disease.}
 \spelltabular
-\spellschool{Necromancy (Flesh)} & \spelllists{Arcane, Divine, Nature} \\
-\longcol{\spelltime{10 minutes}} \\
-\spelltgt{One living creature} & \spellrng{10 miles; see text} \\
+\spellinfo{Necromancy (Flesh)}{Arcane, Divine, Nature}
+\spelltime{10 minutes}
+\spelltwocol{\spelltgt{One living creature}}{\spellrng{10 miles; see text}}
 \spelldur{Instantaneous}
 \spellsr{Yes (Fortitude)}
 \spellattack{Fortitude negates}
@@ -399,9 +399,9 @@
 
 \spellsection{Continual Flame}{2}
 \spelltabular
-\spellschool{Illusion (Figment) [Light]} & \spelllists{Arcane, Divine} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{Object touched} & \spellrng{Touch} \\ \\
+\spellinfo{Illusion (Figment) [Light]}{Arcane, Divine}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{Object touched}}{\spellrng{Touch}}
 \spelldur{Permanent}
 \spellsr{No}
 \spellattack{None}
@@ -412,9 +412,9 @@
 
 \spellsection{Control Weather}{7}
 \spelltabular
-\spellschool{Evocation (Control) [Air]} & \spelllists{Arcane, Divine} \\
-\longcol{\spelltime{10 minutes; see text}} \\
-\longcol{\spellzone{2 mile radius cylinder centered on you, 2 miles high; see text}} \\
+\spellinfo{Evocation (Control) [Air]}{Arcane, Divine}
+\spelltime{10 minutes; see text}
+\spellzone{2 mile radius cylinder centered on you, 2 miles high; see text}
 \spelldur{4d12 hours; see text}
 \spellsr{No}
 \spellattack{None}
@@ -438,8 +438,8 @@
 
 \spellsection{Create Food and Water}{2}
 \spelltabular
-\spellschool{Conjuration (Creation)} & \spelllists{Arcane, Divine, Nature} \\
-\spelltime{10 minutes} & \spellrng{\rngclose} \\
+\spellinfo{Conjuration (Creation)}{Arcane, Divine, Nature}
+\spelltwocol{\spelltime{10 minutes}}{\spellrng{\rngclose}}
 \spelldur{Instantaneous; see text}
 \spellsr{No}
 \spellattack{None}
@@ -451,8 +451,8 @@
 \spellsection{Create Water}{1}
 \spelldesc{You create water to ease the thirst of you and your companions.}
 \spelltabular
-\spellschool{Conjuration (Creation) [Water]} & \spelllists{Divine} \\
-\spelltime{1 minute} & \spellrng{\rngclose} \\
+\spellinfo{Conjuration (Creation) [Water]}{Divine}
+\spelltwocol{\spelltime{1 minute}}{\spellrng{\rngclose}}
 \spelldur{Instantaneous}
 \spellsr{No}
 \spellattack{None}
@@ -466,7 +466,7 @@
 
 \spellsection{Create Greater Undead}{8}
 \spelltabular
-\spellschool{Necromancy (Soul, Vitalism) [Evil, Negative]} & \spelllists{Arcane, Divine} \\
+\spellinfo{Necromancy (Soul, Vitalism) [Evil, Negative]}{Arcane, Divine}
 \end{tabularx}
 \begin{spelleffect}
     This ritual functions like \ritual{create undead}, except that you can create more powerful and intelligent sorts of undead: wraiths, spectres, and devourers. The type or types of undead you can create is based on your caster level, as shown on the table below.
@@ -482,9 +482,9 @@
 
 \spellsection{Create Undead}{5}
 \spelltabular
-\spellschool{Necromancy (Soul, Vitalism) [Evil, Negative]} & \spelllists{Arcane, Divine} \\
-\longcol{\spelltime{1 hour}} \\
-\spelltgt{One corpse} & \spellrng{\rngclose} \\
+\spellinfo{Necromancy (Soul, Vitalism) [Evil, Negative]}{Arcane, Divine}
+\spelltime{1 hour}
+\spelltwocol{\spelltgt{One corpse}}{\spellrng{\rngclose}}
 \spelldur{Instantaneous}
 \spellsr{No}
 \spellattack{None}
@@ -509,9 +509,9 @@
 
 \spellsection{Curse Water}{1}
 \spelltabular
-\spellschool{Evocation (Channeling) [Evil]} & \spelllists{Divine} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{Flask of water touched} & \spellrng{Touch} \\
+\spellinfo{Evocation (Channeling) [Evil]}{Divine}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{Flask of water touched}}{\spellrng{Touch}}
 \spelldur{Instantaneous}
 \spellsr{Yes (Will)}
 \spellattack{Will negates (object)}
@@ -526,9 +526,9 @@
 \spellsection{Darkness}{2}
 \spelldesc{You create a dark aura around an object of your choosing, keeping light without. Even a dwarf's vision is hampered by this shadowy sphere.}
 \spelltabular
-\spellschool{Illusion (Glamer) [Darkness]} & \spelllists{Arcane, Divine} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{Object touched} & \spellrng{\rngtouch} \\
+\spellinfo{Illusion (Glamer) [Darkness]}{Arcane, Divine}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{Object touched}}{\spellrng{\rngtouch}}
 \spelldur{\durlong \dismissable}
 \spellsr{No}
 \spellattack{None}
@@ -544,7 +544,7 @@
 
 \spellsection{Demand}{8}
 \spelltabular
-\spellschool{Divination/Enchantment (Communication, Compulsion) [Mind-Affecting]} & \spelllists{Arcane} \\
+\spellinfo{Divination/Enchantment (Communication, Compulsion) [Mind-Affecting]}{Arcane}
 \spellsr{Yes (Will)}
 \spellattack{None/Will negates}
 \end{tabularx}
@@ -558,9 +558,9 @@
 
 \spellsection{Desecrate}{2}
 \spelltabular
-\spellschool{Evocation (Channeling) [Evil]} & \spelllists{Divine} \\
-\longcol{\spelltime{1 minute}} \\
-\spellzone{\areamed radius} & \spellrng{\rngclose} \\
+\spellinfo{Evocation (Channeling) [Evil]}{Divine}
+\spelltime{1 minute}
+\spelltwocol{\spellzone{\areamed radius}}{\spellrng{\rngclose}}
 \spelldur{24 hours}
 \spellsr{No}
 \spellattack{None}
@@ -571,9 +571,9 @@
 
 \spellsection{Detect Scrying}{4}
 \spelltabular
-\spellschool{Divination (Awareness) [Magic]} & \spelllists{Arcane} \\
-\longcol{\spelltime{1 minute}} \\
-\longcol{\spellemanation{\arealarge radius centered on you}} \\
+\spellinfo{Divination (Awareness) [Magic]}{Arcane}
+\spelltime{1 minute}
+\spellemanation{\arealarge radius centered on you}
 \spelldur{\durext}
 \spellsr{No}
 \spellattack{None}
@@ -585,9 +585,9 @@
 
 \spellsection{Disguise Self}{1}
 \spelltabular
-\spellschool{Illusion (Glamer) [Unreal]} & \spelllists{Arcane} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{You} & \spellrng{\rngpers} \\
+\spellinfo{Illusion (Glamer) [Unreal]}{Arcane}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{You}}{\spellrng{\rngpers}}
 \spelldur{\durlong \dismissable}
 \end{tabularx}
 \begin{spelleffect}
@@ -599,8 +599,8 @@
 
 \spellsectioncomma{Disguise Self}{Greater}{3}
 \spelltabular
-\spellschool{Illusion (Glamer) [Unreal]} & \spelllists{Arcane} \\
-\longcol{\spelltime{10 minutes}} \\
+\spellinfo{Illusion (Glamer) [Unreal]}{Arcane}
+\spelltime{10 minutes}
 \spelldur{\durext \dismissable}
 \end{tabularx}
 \begin{spelleffect}
@@ -609,9 +609,9 @@
 
 \spellsection{Discern Location}{8}
 \spelltabular
-\spellschool{Divination (Knowledge)} & \spelllists{Arcane, Divine, Nature} \\
-\longcol{\spelltime{10 minutes}} \\
-\spelltgt{One creature or object} & \spellrng{Unlimited} \\
+\spellinfo{Divination (Knowledge)}{Arcane, Divine, Nature}
+\spelltime{10 minutes}
+\spelltwocol{\spelltgt{One creature or object}}{\spellrng{Unlimited}}
 \spelldur{Instantaneous}
 \spellsr{No}
 \spellattack{None}
@@ -624,9 +624,9 @@
 \spellsection{Dimensional Lock}{5}
 \spelldesc{You create a shimmering emerald field that completely blocks extradimensional travel.}
 \spelltabular
-\spellschool{Abjuration (Negation)} & \spelllists{Arcane, Divine} \\
-\longcol{\spelltime{10 minutes}} \\
-\spellzone{\arealarge radius} & \spellrng{\rngmed} \\
+\spellinfo{Abjuration (Negation)}{Arcane, Divine}
+\spelltime{10 minutes}
+\spelltwocol{\spellzone{\arealarge radius}}{\spellrng{\rngmed}}
 \spelldur{Thirty days}
 \spellsr{Yes (Will)}
 \spellattack{None}
@@ -640,9 +640,9 @@
 
 \spellsection{Divination}{4}
 \spelltabular
-\spellschool{Divination (Knowledge)} & \spelllists{Divine} \\
-\longcol{\spelltime{10 minutes}} \\
-\spelltgt{You} & \spellrng{Personal} \\
+\spellinfo{Divination (Knowledge)}{Divine}
+\spelltime{10 minutes}
+\spelltwocol{\spelltgt{You}}{\spellrng{Personal}}
 \spelldur{Instantaneous}
 \end{tabularx}
 \begin{spelleffect}
@@ -654,9 +654,9 @@
 
 \spellsection{Dream}{5}
 \spelltabular
-\spellschool{Divination/Illusion (Communication, Phantasm)} & \spelllists{Arcane, Divine, Nature} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{One creature} & \spellrng{Unlimited} \\
+\spellinfo{Divination/Illusion (Communication, Phantasm)}{Arcane, Divine, Nature}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{One creature}}{\spellrng{Unlimited}}
 \spelldur{See text}
 \spellsr{Yes (Will)}
 \spellattack{None}
@@ -672,9 +672,9 @@
 
 \spellsection{Emancipation}{8}
 \spelltabular
-\spellschool{Abjuration (Negation)} & \spelllists{Arcane, Divine} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{One creature} & \spellrng{\rngmed or see text} \\
+\spellinfo{Abjuration (Negation)}{Arcane, Divine}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed or see text}}
 \spelldur{Instantaneous}
 \spellsr{Yes (Will)}
 \end{tabularx}
@@ -684,9 +684,9 @@
 
 \spellsection{Endure Elements}{1}
 \spelltabular
-\spellschool{Abjuration (Shielding)} & \spelllists{Arcane, Divine, Nature} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{Creature touched} & \spellrng{Touch} \\
+\spellinfo{Abjuration (Shielding)}{Arcane, Divine, Nature}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{Creature touched}}{\spellrng{Touch}}
 \spelldur{\durext}
 \spellsr{Yes (Will)}
 \end{tabularx}
@@ -699,9 +699,9 @@
 
 \spellsection{Erase}{1}
 \spelltabular
-\spellschool{Transmutation (Alteration)} & \spelllists{Arcane} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{One scroll or two pages} & \spellrng{Touch} \\
+\spellinfo{Transmutation (Alteration)}{Arcane}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{One scroll or two pages}}{\spellrng{Touch}}
 \spelldur{Instantaneous}
 \spellsr{No}
 \spellattack{See text}
@@ -715,10 +715,10 @@
 
 \spellsection{Explosive Runes}{3}
 \spelltabular
-\spellschool{Abjuration (Warding) [Force, Traps]} & \spelllists{Arcane} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{One object (Tiny or smaller)} & \spellrng{Touch} \\
-\longcol{\spellburst{\areasmall radius centered on target; see text}} \\
+\spellinfo{Abjuration (Warding) [Force, Traps]}{Arcane}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{One object (Tiny or smaller)}}{\spellrng{Touch}}
+\spellburst{\areasmall radius centered on target; see text}
 \spelldur{Permanent until discharged \dismissable}
 \spellsr{Yes (Reflex)}
 \end{tabularx}
@@ -734,9 +734,9 @@
 
 \spellsection{Fabricate}{5}
 \spelltabular
-\spellschool{Transmutation (Alteration)} & \spelllists{Arcane, Nature} \\
-\longcol{\spelltime{See text}} \\
-\spelltgt{Up to 100 cu. ft.; see text} & \spellrng{\rngclose} \\
+\spellinfo{Transmutation (Alteration)}{Arcane, Nature}
+\spelltime{See text}
+\spelltwocol{\spelltgt{Up to 100 cu. ft.; see text}}{\spellrng{\rngclose}}
 \spelldur{Instantaneous}
 \spellsr{No}
 \spellattack{None}
@@ -750,9 +750,9 @@
 
 \spellsection{False Trap}{2}
 \spelltabular
-\spellschool{Illusion (Figment) [Unreal]} & \spelllists{Arcane} \\
-\longcol{\spelltime{1 standard action}} \\
-\spelltgt{Object touched} & \spellrng{Touch} \\
+\spellinfo{Illusion (Figment) [Unreal]}{Arcane}
+\spelltime{1 standard action}
+\spelltwocol{\spelltgt{Object touched}}{\spellrng{Touch}}
 \spelldur{Permanent \dismissable}
 \spellsr{No}
 \spellattack{None}
@@ -764,9 +764,9 @@
 
 \spellsection{False Vision}{5}
 \spelltabular
-\spellschool{Illusion (Glamer)} & \spelllists{Arcane} \\
-\longcol{\spelltime{10 minutes}} \\
-\spellzone{\arealarge radius} & \spellrng{\rngclose} \\
+\spellinfo{Illusion (Glamer)}{Arcane}
+\spelltime{10 minutes}
+\spelltwocol{\spellzone{\arealarge radius}}{\spellrng{\rngclose}}
 \spelldur{\durext \dismissable}
 \spellsr{No}
 \spellattack{None}
@@ -777,9 +777,9 @@
 
 \spellsection{Fertility/Infertility}{3}
 \spelltabular
-\spellschool{Transmutation (Alteration)} & \spelllists{Divine} \\
-\longcol{\spelltime{1 hour}} \\
-\longcol{\spellzone{1/2 mile radius centered on you}} \\
+\spellinfo{Transmutation (Alteration)}{Divine}
+\spelltime{1 hour}
+\spellzone{1/2 mile radius centered on you}
 \spelldur{1 year}
 \spellsr{No}
 \spellattack{None}
@@ -795,9 +795,9 @@
 
 \spellsection{Find the Path}{6}
 \spelltabular
-\spellschool{Divination (Knowledge)} & \spelllists{Arcane, Divine, Nature} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{One touched creature} & \spellrng{Touch} \\
+\spellinfo{Divination (Knowledge)}{Arcane, Divine, Nature}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{One touched creature}}{\spellrng{Touch}}
 \spelldur{\durext \dismissable}
 \spellsr{Yes (Will)}
 \end{tabularx}
@@ -812,8 +812,8 @@
 \spellsection{Find Traps}{2}
 \spelldesc{You grant your ally an intuitive insight into the workings of traps, allowing her to easily spot danger ahead.}
 \spelltabular
-\spellschool{Divination (Knowledge)} & \spelllists{Arcana, Divine, Nature} \\
-\spelltgt{One touched creature} & \spellrng{Touch} \\
+\spellinfo{Divination (Knowledge)}{Arcana, Divine, Nature}
+\spelltwocol{\spelltgt{One touched creature}}{\spellrng{Touch}}
 \spelldur{\durmed}
 \end{tabularx}
 \begin{spelleffect}
@@ -826,10 +826,10 @@
 \spellsection{Fire Trap}{3}
 \spelldesc{You create a trap that creates a fiery explosion when an intruder opens the item that the trap protects.}
 \spelltabular
-\spellschool{Abjuration/Evocation (Energy, Warding) [Fire]} & \spelllists{Arcane, Nature} \\
-\longcol{\spelltime{10 minutes}} \\
-\spelltgt{One openable object} & \spellrng{Touch} \\
-\longcol{\spellburst{\areasmall radius centered on the target; see text}} \\
+\spellinfo{Abjuration/Evocation (Energy, Warding) [Fire]}{Arcane, Nature}
+\spelltime{10 minutes}
+\spelltwocol{\spelltgt{One openable object}}{\spellrng{Touch}}
+\spellburst{\areasmall radius centered on the target; see text}
 \spelldur{Permanent until discharged \dismissable}
 \spellsr{Yes (Reflex)}
 \end{tabularx}
@@ -846,8 +846,8 @@
 
 \spellsection{Floating Disk}{1}
 \spelltabular
-\spellschool{Evocation [Force]} & \spelllists{Arcane} \\
-\spelltime{1 minute} & \spellrng{\rngmed} \\
+\spellinfo{Evocation [Force]}{Arcane}
+\spelltwocol{\spelltime{1 minute}}{\spellrng{\rngmed}}
 \spelldur{\durext \dismissable}
 \spellsr{No}
 \spellattack{None}
@@ -858,9 +858,9 @@
 
 \spellsection{Forbiddance}{8}
 \spelltabular
-\spellschool{Abjuration/Evocation (Power, Warding)} & \spelllists{Divine} \\
-\longcol{\spelltime{1 hour}} \\
-\spellzone{Up to ten 60 ft. cubes} & \spellrng{\rngmed} \\
+\spellinfo{Abjuration/Evocation (Power, Warding)}{Divine}
+\spelltime{1 hour}
+\spelltwocol{\spellzone{Up to ten 60 ft. cubes}}{\spellrng{\rngmed}}
 \spelldur{Permanent}
 \spellsr{Yes (Will)}
 \spellattack{See text}
@@ -881,8 +881,8 @@
 
 \spellsection{Gate}{9}
 \spelltabular
-\spellschool{Conjuration (Creation, Translocation) [Planar]} & \spelllists{Arcane, Divine} \\
-\spelltime{1 minute} & \spellrng{\rngmed} \\
+\spellinfo{Conjuration (Creation, Translocation) [Planar]}{Arcane, Divine}
+\spelltwocol{\spelltime{1 minute}}{\spellrng{\rngmed}}
 \spelldur{Concentration (up to 5 rounds); see text}
 \spellsr{No}
 \spellattack{None}
@@ -897,9 +897,9 @@
 
 \spellsection{Geas/Quest}{6}
 \spelltabular
-\spellschool{Enchantment (Compulsion) [Language-Dependent, Mind-Affecting, Sound-Dependent]} & \spelllists{Arcane,  Divine} \\
-\longcol{\spelltime{10 minutes}} \\
-\spelltgt{One living creature} & \spellrng{\rngmed} \\
+\spellinfo{Enchantment (Compulsion) [Language-Dependent, Mind-Affecting, Sound-Dependent]}{Arcane,  Divine}
+\spelltime{10 minutes}
+\spelltwocol{\spelltgt{One living creature}}{\spellrng{\rngmed}}
 \spelldur{Thirty days, one week, or until discharged \dismissable}
 \spellsr{Yes (Will)}
 \spellattack{None}
@@ -917,9 +917,9 @@
 
 \spellsection{Gentle Repose}{2}
 \spelltabular
-\spellschool{Transmutation (Temporal)} & \spelllists{Arcane, Divine, Nature} \\
-\longcol{\spelltime{10 minutes}} \\
-\spelltgt{Corpse touched} & \spellrng{Touch} \\
+\spellinfo{Transmutation (Temporal)}{Arcane, Divine, Nature}
+\spelltime{10 minutes}
+\spelltwocol{\spelltgt{Corpse touched}}{\spellrng{Touch}}
 \spelldur{Thirty days \dismissable}
 \spellsr{Yes (object)}
 \spellattack{Will negates (object)}
@@ -932,10 +932,10 @@
 \spellsection{Glyph of Warding}{3}
 \spelldesc{You weave a tracery of faintly glowing lines over an object or in the air, forming a warding sigil. When the spell is completed, the glyph and tracery become nearly invisible.}
 \spelltabular
-\spellschool{Abjuration (Warding) [Trap} & \spelllists{Divine} \\
-    \longcol{\spelltime{10 minutes}} \\
-    \spelltgt{One object or location} & \spellrng{Touch} \\
-    \longcol{\spelllimit{\areamed radius centered on target; see text} } \\
+\spellinfo{Abjuration (Warding) [Trap}{Divine}
+    \spelltime{10 minutes}
+    \spelltwocol{\spelltgt{One object or location}}{\spellrng{Touch}}
+    \spelllimit{\areamed radius centered on target; see text} 
     \spelldur{Permanent until discharged \dismissable}
     \spellsr{Yes (Reflex); see text}
 \end{tabularx}
@@ -954,7 +954,7 @@
 
 \spellsection{Glyph of Warding, Greater}{6}
 \spelltabular
-\spellschool{Abjuration [Barrier]} & \spelllists{Divine} \\
+\spellinfo{Abjuration [Barrier]}{Divine}
 \spelllimit{\arealarge radius centered on touched object or location; see text}
 \end{tabularx}
 \spelldmg{6d6 damage \add d6 per four caster levels after 12th; see text}
@@ -967,9 +967,9 @@
 
 \spellsection{Hallow}{7}
 \spelltabular
-\spellschool{Evocation (Power) [Good]} & \spelllists{Divine} \\
-\longcol{\spelltime{24 hours}} \\
-\spellzone{\arealarge radius} & \spellrng{\rngclose} \\
+\spellinfo{Evocation (Power) [Good]}{Divine}
+\spelltime{24 hours}
+\spelltwocol{\spellzone{\arealarge radius}}{\spellrng{\rngclose}}
 \spelldur{Instantaneous/1 year}
 \spellsr{See text}
 \spellattack{See text}
@@ -988,9 +988,9 @@
 
 \spellsection{Hallucinatory Terrain}{4}
 \spelltabular
-\spellschool{Illusion (Glamer)} & \spelllists{Arcane} \\
-\longcol{\spelltime{10 minutes}} \\
-\spellzone{Ten 30 ft. cubes} & \spellrng{\rnglong} \\
+\spellinfo{Illusion (Glamer)}{Arcane}
+\spelltime{10 minutes}
+\spelltwocol{\spellzone{Ten 30 ft. cubes}}{\spellrng{\rnglong}}
 \spelldur{24 hours \dismissable}
 \spellsr{No}
 \spellattack{Will disbelief (if interacted with)}
@@ -1002,8 +1002,8 @@
 \spellsection{Heroes' Feast}{6}
 \spelldesc{You bring forth a great feast, including a magnificent table, chairs, service, and food and drink, re-enacting the celebrations of ancient heroes. After your allies consume the ambrosial food and nectar-like bevarage, they are restored in body and mind.}
 \spelltabular
-\spellschool{Conjuration/Enchantment (Creation, Emotion)} & \spelllists{Arcane, Divine, Nature} \\
-\spelltime{10 minutes} & \spellrng{\rngclose} \\
+\spellinfo{Conjuration/Enchantment (Creation, Emotion)}{Arcane, Divine, Nature}
+\spelltwocol{\spelltime{10 minutes}}{\spellrng{\rngclose}}
 \spelldur{1 hour plus \durext; see text}
 \spellsr{No}
 \spellattack{None}
@@ -1019,9 +1019,9 @@
 
 \spellsection{Identify}{1}
 \spelltabular
-\spellschool{Divination (Knowledge)} & \spelllists{Arcane, Divine} \\
-\longcol{\spelltime{1 hour}} \\
-\spelltgts{One touched object} & \spellrng{Touch} \\
+\spellinfo{Divination (Knowledge)}{Arcane, Divine}
+\spelltime{1 hour}
+\spelltwocol{\spelltgts{One touched object}}{\spellrng{Touch}}
 \spelldur{Instantaneous}
 \spellsr{No}
 \spellattack{None}
@@ -1036,9 +1036,9 @@
 \spellsection{Illusory Script}{4}
 \spelldesc{You write a message woven with a hidden magical command, compelling any viewer except the message's intended recipient to obey you.}
 \spelltabular
-\spellschool{Enchantment/Illusion (Compulsion, Glamer) [Mind-Affecting, Trap]} & \spelllists{Arcane} \\
-\longcol{\spelltime{1 minute or longer; see text}} \\
-\spelltgt{One object} & \spellrng{Touch} \\
+\spellinfo{Enchantment/Illusion (Compulsion, Glamer) [Mind-Affecting, Trap]}{Arcane}
+\spelltime{1 minute or longer; see text}
+\spelltwocol{\spelltgt{One object}}{\spellrng{Touch}}
 \spelldur{Permanent \dismissable}
 \spellsr{Yes (Will)}
 \spellattack{Will negates; see text}
@@ -1052,8 +1052,8 @@
 
 \spellsection{Illusory Wall}{3}
 \spelltabular
-\spellschool{Illusion (Figment) [Unreal]} & \spelllists{Arcane} \\
-\spelltime{1 minute} & \spellrng{\rngclose} \\
+\spellinfo{Illusion (Figment) [Unreal]}{Arcane}
+\spelltwocol{\spelltime{1 minute}}{\spellrng{\rngclose}}
 \spelldur{Permanent}
 \spellsr{No}
 \spellattack{Will disbelief (if interacted with)}
@@ -1064,9 +1064,9 @@
 
 \spellsection{Instant Refuge}{7}
 \spelltabular
-\spellschool{Conjuration/Transmutation (Imbuement, Translocation) [Teleportation} & \spelllists{Divine} \\
-    \longcol{\spelltime{1 minute}} \\
-    \spelltgt{Object touched} & \spellrng{Touch} \\
+\spellinfo{Conjuration/Transmutation (Imbuement, Translocation) [Teleportation}{Divine}
+    \spelltime{1 minute}
+    \spelltwocol{\spelltgt{Object touched}}{\spellrng{Touch}}
     \spelldur{Permanent until discharged}
     \spellsr{No}
     \spellattack{None}
@@ -1077,9 +1077,9 @@
 
 \spellsection{Instant Retrieval}{7}
 \spelltabular
-\spellschool{Conjuration/Transmutation (Imbuement, Translocation) [Teleportation]} & \spelllists{Arcane} \\
-\longcol{\spelltime{10 minutes}} \\
-\spelltgt{One object weighing 10 lb. or less whose longest dimension is 6 ft. or less} & \spellrng{See text} \\
+\spellinfo{Conjuration/Transmutation (Imbuement, Translocation) [Teleportation]}{Arcane}
+\spelltime{10 minutes}
+\spelltwocol{\spelltgt{One object weighing 10 lb. or less whose longest dimension is 6 ft. or less}}{\spellrng{See text}}
 \spelldur{Permanent until discharged}
 \spellsr{No}
 \spellattack{None}
@@ -1095,10 +1095,10 @@
 
 \spellsection{Invisibility Purge}{2}
 \spelltabular
-\spellschool{Abjuration (Negation)} & \spelllists{Arcane, Divine} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{One object or creature} & \spellrng{Touch} \\
-\longcol{\spellemanation{\arealarge radius centered on the target}} \\
+\spellinfo{Abjuration (Negation)}{Arcane, Divine}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{One object or creature}}{\spellrng{Touch}}
+\spellemanation{\arealarge radius centered on the target}
 \spelldur{\durlong \dismissable}
 \end{tabularx}
 \begin{spelleffect}
@@ -1107,9 +1107,9 @@
 
 \spellsection{Ironwood}{3}
 \spelltabular
-\spellschool{Transmutation (Alteration)} & \spelllists{Nature} \\
-\longcol{\spelltime{1 minute/lb. created}} \\
-\spelltgt{One wooden object weighing up to 50 pounds} & \spellrng{Touch} \\
+\spellinfo{Transmutation (Alteration)}{Nature}
+\spelltime{1 minute/lb. created}
+\spelltwocol{\spelltgt{One wooden object weighing up to 50 pounds}}{\spellrng{Touch}}
 \spelldur{Instantaneous}
 \spellsr{No}
 \spellattack{None}
@@ -1123,9 +1123,9 @@
 
 \spellsection{Legend Lore}{5}
 \spelltabular
-\spellschool{Divination (Knowledge)} & \spelllists{Arcane} \\
-\longcol{\spelltime{See text}} \\
-\spelltgt{You} & \spellrng{Personal} \\
+\spellinfo{Divination (Knowledge)}{Arcane}
+\spelltime{See text}
+\spelltwocol{\spelltgt{You}}{\spellrng{Personal}}
 \spelldur{See text}
 \end{tabularx}
 \begin{spelleffect}
@@ -1135,9 +1135,9 @@
 
 \spellsection{Light}{1}
 \spelltabular
-\spellschool{Illusion (Figment) [Light]} & \spelllists{Arcane, Divine, Nature} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{Object touched} & \spellrng{\rngtouch} \\
+\spellinfo{Illusion (Figment) [Light]}{Arcane, Divine, Nature}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{Object touched}}{\spellrng{\rngtouch}}
 \spelldur{\durlong \dismissable}
 \spellsr{No}
 \spellattack{None}
@@ -1150,9 +1150,9 @@
 
 \spellsection{Liveoak}{6}
 \spelltabular
-\spellschool{Transmutation (Animation)} & \spelllists{Divine} \\
-\longcol{\spelltime{10 minutes}} \\
-\spelltgt{Tree touched} & \spellrng{Touch} \\
+\spellinfo{Transmutation (Animation)}{Divine}
+\spelltime{10 minutes}
+\spelltwocol{\spelltgt{Tree touched}}{\spellrng{Touch}}
 \spelldur{Thirty days \dismissable}
 \spellsr{No}
 \spellattack{None}
@@ -1168,8 +1168,8 @@
 \begin{comment}
 \spellsection{Mage's Faithful Hound}
 \spelltabular
-\spellschool{Conjuration (Creation)} & \spelllists{Arcane} \\
-\spelltime{1 minute} & \spellrng{\rngclose} \\
+\spellinfo{Conjuration (Creation)}{Arcane}
+\spelltwocol{\spelltime{1 minute}}{\spellrng{\rngclose}}
 \spelldur{24 hours \dismissable or until discharged, then 1 round/caster level; see text}
 \spellsr{No}
 \spellattack{None}
@@ -1184,9 +1184,9 @@
 
 \spellsection{Mage's Magnificent Mansion}{7}
 \spelltabular
-\spellschool{Conjuration (Creation)} & \spelllists{Sor/Wiz} \\
-\longcol{\spelltime{1 minute}} \\
-\spellzone{Up to ten 10-foot cubes} & \spellrng{\rngclose} \\
+\spellinfo{Conjuration (Creation)}{Sor/Wiz}
+\spelltime{1 minute}
+\spelltwocol{\spellzone{Up to ten 10-foot cubes}}{\spellrng{\rngclose}}
 \spelldur{One week \dismissable}
 \spellsr{No}
 \spellattack{None}
@@ -1199,9 +1199,9 @@
 
 \spellsection{Mage's Private Sanctum}{5}
 \spelltabular
-\spellschool{Abjuration (Ward)} & \spelllists{Arcane} \\
-\longcol{\spelltime{10 minutes}} \\
-\spellzone{Up to ten 10-foot cubes} & \spellrng{\rngclose} \\
+\spellinfo{Abjuration (Ward)}{Arcane}
+\spelltime{10 minutes}
+\spelltwocol{\spellzone{Up to ten 10-foot cubes}}{\spellrng{\rngclose}}
 \spelldur{\durext \dismissable}
 \spellsr{No}
 \spellattack{None}
@@ -1218,9 +1218,9 @@
 
 \spellsection{Magic Aura}{1}
 \spelltabular
-\spellschool{Illusion (Glamer) [Magic]} & \spelllists{Arcane} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{One touched object weighing up to 50 pounds} & \spellrng{Touch} \\
+\spellinfo{Illusion (Glamer) [Magic]}{Arcane}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{One touched object weighing up to 50 pounds}}{\spellrng{Touch}}
 \spelldur{Thirty days \dismissable}
 \spellsr{No}
 \spellattack{None; see text}
@@ -1235,9 +1235,9 @@
 
 \spellsection{Magic Mouth}{1}
 \spelltabular
-\spellschool{Illusion (Glamer)} & \spelllists{Arcane} \\
-\longcol{\spelltime{1 standard action}} \\
-\spelltgt{One creature or object} & \spellrng{\rngclose} \\
+\spellinfo{Illusion (Glamer)}{Arcane}
+\spelltime{1 standard action}
+\spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngclose}}
 \spelldur{One month or until discharged \dismissable}
 \spellsr{Yes (object)}
 \spellattack{Will negates (object)}
@@ -1253,8 +1253,8 @@
 
 \spellsection{Major Creation}{5}
 \spelltabular
-\spellschool{Conjuration (Creation)} & \spelllists{Arcane} \\
-\spelltime{10 minutes} & \spellrng{\rngclose} \\
+\spellinfo{Conjuration (Creation)}{Arcane}
+\spelltwocol{\spelltime{10 minutes}}{\spellrng{\rngclose}}
 \spelldur{See text}
 \end{tabularx}
 \begin{spelleffect}
@@ -1274,9 +1274,9 @@
 
 \spellsection{Mark of Justice}{5}
 \spelltabular
-\spellschool{Necromancy [Lawful]} & \spelllists{Divine} \\
-\longcol{\spelltime{10 minutes}} \\
-\spelltgt{Creature touched} & \spellrng{Touch} \\
+\spellinfo{Necromancy [Lawful]}{Divine}
+\spelltime{10 minutes}
+\spelltwocol{\spelltgt{Creature touched}}{\spellrng{Touch}}
 \spelldur{Permanent \dismissable; see text}
 \spellsr{Yes (Will)}
 \spellattack{None}
@@ -1289,9 +1289,9 @@
 
 \spellsection{Mending}{1}
 \spelltabular
-\spellschool{Transmutation (Alteration)} & \spelllists{Arcane, Divine, Nature} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{One object of up to 1 lb.} & \spellrng{Touch} \\
+\spellinfo{Transmutation (Alteration)}{Arcane, Divine, Nature}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{One object of up to 1 lb.}}{\spellrng{Touch}}
 \spelldur{Instantaneous}
 \spellsr{Yes (Will)}
 \end{tabularx}
@@ -1305,7 +1305,7 @@
 
 \spellsectioncomma{Mending}{Greater}{3}
 \spelltabular
-\spellschool{Transmutation (Alteration)} & \spelllists{Arcane, Divine, Nature} \\
+\spellinfo{Transmutation (Alteration)}{Arcane, Divine, Nature}
 \spelltgt{One object no larger than a 10-foot cube}
 \end{tabularx}
 \begin{spelleffect}
@@ -1314,9 +1314,9 @@
 
 \spellsection{Mind Blank}{9}
 \spelltabular
-\spellschool{Abjuration (Shielding)} & \spelllists{Arcane} \\
-\longcol{\spelltime{1 standard action}} \\
-\spelltgt{One creature} & \spellrng{\rngclose} \\
+\spellinfo{Abjuration (Shielding)}{Arcane}
+\spelltime{1 standard action}
+\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
 \spelldur{\durext}
 \spellsr{Yes (Will)}
 \end{tabularx}
@@ -1326,8 +1326,8 @@
 
 \spellsection{Minor Creation}{4}
 \spelltabular
-\spellschool{Conjuration (Creation)} & \spelllists{Arcane} \\
-\spelltime{1 minute} & \spellrng{\rngclose} \\
+\spellinfo{Conjuration (Creation)}{Arcane}
+\spelltwocol{\spelltime{1 minute}}{\spellrng{\rngclose}}
 \spelldur{\durext \dismissable}
 \spellsr{No}
 \spellattack{None}
@@ -1342,8 +1342,8 @@
 \begin{comment}
 \spellsection{Mirage Arcana}
 \spelltabular
-\spellschool{Illusion (Glamer)} & \spelllists{Arcane} \\
-\longcol{\spelltime{1 standard action}} \\
+\spellinfo{Illusion (Glamer)}{Arcane}
+\spelltime{1 standard action}
 \spellzone{Ten 20 ft. cubes}
 \spelldur{\durext \dismissable}
 \end{tabularx}
@@ -1354,9 +1354,9 @@
 
 \spellsection{Misdirection}{2}
 \spelltabular
-\spellschool{Illusion (Glamer)} & \spelllists{Arcane} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{One creature or object, up to a 10 ft. cube in size} & \spellrng{\rngclose} \\
+\spellinfo{Illusion (Glamer)}{Arcane}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{One creature or object, up to a 10 ft. cube in size}}{\spellrng{\rngclose}}
 \spelldur{\durext \dismissable}
 \spellsr{No}
 \spellattack{None or Will negates; see text}
@@ -1370,9 +1370,9 @@
 
 \spellsection{Modify Memory}{4}
 \spelltabular
-\spellschool{Divination/Enchantment (Knowledge) [Mind-Affecting]} & \spelllists{Arcane} \\
-\longcol{\spelltime{1 minute; see text}} \\
-\spelltgt{One living creature} & \spellrng{\rngclose} \\
+\spellinfo{Divination/Enchantment (Knowledge) [Mind-Affecting]}{Arcane}
+\spelltime{1 minute; see text}
+\spelltwocol{\spelltgt{One living creature}}{\spellrng{\rngclose}}
 \spelldur{Permanent}
 \spellsr{Yes (Will)}
 \spellattack{Will negates}
@@ -1394,8 +1394,8 @@
 
 \spellsection{Mount}{1}
 \spelltabular
-\spellschool{Conjuration (Summoning)} & \spelllists{Arcane} \\
-\spelltime{1 minute} & \spellrng{\rngclose} \\
+\spellinfo{Conjuration (Summoning)}{Arcane}
+\spelltwocol{\spelltime{1 minute}}{\spellrng{\rngclose}}
 \spelldur{\durext \dismissable}
 \spellsr{No}
 \spellattack{None}
@@ -1406,9 +1406,9 @@
 
 \spellsection{Move Earth}{6}
 \spelltabular
-\spellschool{Transmutation (Alteration) [Earth]} & \spelllists{Nature} \\
-\longcol{\spelltime{See text}} \\
-\spellzone{Ten 10-foot cubes, no more than 10 feet deep} & \spellrng{\rnglong} \\
+\spellinfo{Transmutation (Alteration) [Earth]}{Nature}
+\spelltime{See text}
+\spelltwocol{\spellzone{Ten 10-foot cubes, no more than 10 feet deep}}{\spellrng{\rnglong}}
 \spelldur{Instantaneous}
 \spellsr{No}
 \spellattack{None}
@@ -1424,9 +1424,9 @@
 
 \spellsection{Neutralize Poison}{4}
 \spelltabular
-\spellschool{Transmutation (Alteration) [Healing]} & \spelllists{Divine, Nature} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{Creature or object of up to 1 cu. ft./level touched} & \spellrng{Touch} \\
+\spellinfo{Transmutation (Alteration) [Healing]}{Divine, Nature}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{Creature or object of up to 1 cu. ft./level touched}}{\spellrng{Touch}}
 \spelldur{\durext \dismissable}
 \spellsr{Yes (Fortitude)}
 \end{tabularx}
@@ -1437,9 +1437,9 @@
 
 \spellsection{Nightmare}{6}
 \spelltabular
-\spellschool{Divination/Illusion (Commnication, Phantasm)} & \spelllists{Arcane, Divine, Nature} \\
-\longcol{\spelltime{10 minutes}} \\
-\spelltgt{One living creature} & \spellrng{Unlimited} \\
+\spellinfo{Divination/Illusion (Commnication, Phantasm)}{Arcane, Divine, Nature}
+\spelltime{10 minutes}
+\spelltwocol{\spelltgt{One living creature}}{\spellrng{Unlimited}}
 \spelldur{Instantaneous}
 \spellsr{Yes (Will)}
 \spellattack{Will negates; see text}
@@ -1474,9 +1474,9 @@
 
 \spellsection{Nondetection}{3}
 \spelltabular
-\spellschool{Abjuration (Shielding)} & \spelllists{Arcane, Divine} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{Creature or object touched} & \spellrng{Touch} \\
+\spellinfo{Abjuration (Shielding)}{Arcane, Divine}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{Creature or object touched}}{\spellrng{Touch}}
 \spelldur{\durext \dismissable}
 \spellsr{Yes (Will)}
 \end{tabularx}
@@ -1489,9 +1489,9 @@
 
 \spellsection{Obscure Object}{3}
 \spelltabular
-\spellschool{Abjuration (Shielding)} & \spelllists{Arcane} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{One object touched of up to 100 lb.} & \spellrng{Touch} \\
+\spellinfo{Abjuration (Shielding)}{Arcane}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{One object touched of up to 100 lb.}}{\spellrng{Touch}}
 \spelldur{\durext \dismissable}
 \spellsr{Yes (object)}
 \spellattack{Will negates (object)}
@@ -1502,9 +1502,9 @@
 
 \spellsection{Overland Flight}{6}
 \spelltabular
-\spellschool{Transmutation (Imbuement)} & \spelllists{Arcane} \\
-\longcol{\spelltime{10 minutes}} \\
-\spelltgt{One creature} & \spellrng{Touch} \\
+\spellinfo{Transmutation (Imbuement)}{Arcane}
+\spelltime{10 minutes}
+\spelltwocol{\spelltgt{One creature}}{\spellrng{Touch}}
 \spelldur{\durext}
 \end{tabularx}
 \begin{spelleffect}
@@ -1518,9 +1518,9 @@
 
 \spellsection{Pass Without Trace}{1}
 \spelltabular
-\spellschool{Transmutation (Imbuement)} & \spelllists{Nature} \\
-\longcol{\spelltime{1 standard action}} \\
-\spelltgts{Five touched creatures} & \spellrng{Touch} \\
+\spellinfo{Transmutation (Imbuement)}{Nature}
+\spelltime{1 standard action}
+\spelltwocol{\spelltgts{Five touched creatures}}{\spellrng{Touch}}
 \spelldur{\durext \dismissable}
 \spellsr{Yes (Will)}
 \end{tabularx}
@@ -1530,9 +1530,9 @@
 
 \spellsection{Passwall}{5}
 \spelltabular
-\spellschool{Transmutation (Alteration)} & \spelllists{Arcane, Divine, Nature} \\
-\longcol{\spelltime{10 minutes}} \\
-\spellzone{One 5-foot cube per three caster levels} & \spellrng{Touch} \\
+\spellinfo{Transmutation (Alteration)}{Arcane, Divine, Nature}
+\spelltime{10 minutes}
+\spelltwocol{\spellzone{One 5-foot cube per three caster levels}}{\spellrng{Touch}}
 \spelldur{\durext \dismissable}
 \spellsr{No}
 \spellattack{None}
@@ -1546,9 +1546,9 @@
 
 \spellsection{Permanency}{5}
 \spelltabular
-\spellschool{Universal} & \spelllists{Arcane} \\
-\longcol{\spelltime{10 minutes}} \\
-\spelltgteffarea{See text} & \spellrng{See text} \\
+\spellinfo{Universal}{Arcane}
+\spelltime{10 minutes}
+\spelltwocol{\spelltgteffarea{See text}}{\spellrng{See text}}
 \spelldur{Permanent; see text}
 \spellsr{No}
 \spellattack{None}
@@ -1620,7 +1620,7 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Permanent Image}{6}
 \spelltabular
-\spellschool{Illusion (Figment) [Unreal]} & \spelllists{Arcane} \\
+\spellinfo{Illusion (Figment) [Unreal]}{Arcane}
 \spelldur{Permanent \dismissable}
 \end{tabularx}
 \begin{spelleffect}
@@ -1630,8 +1630,8 @@ Additionally, the following spells can be cast upon objects or areas only and re
 \spellsection{Phantom Steed}{3}
 \spelldesc{You create a quasi-real horselike creature to serve you or one of your allies. It has a black head and body, gray mane and tail, and smoke-colored, insubstantial hooves that make no sound. On its body, it bears what seems to be a saddle, bit, and bridle sized perfectly for its intended rider.}
 \spelltabular
-\spellschool{Illusion/Transmutation (Imbuement, Shadow)} & \spelllists{Arcane} \\
-\spelltime{1 minute} & \spellrng{\rngclose} \\
+\spellinfo{Illusion/Transmutation (Imbuement, Shadow)}{Arcane}
+\spelltwocol{\spelltime{1 minute}}{\spellrng{\rngclose}}
 \spelldur{\durext \dismissable}
 \spellsr{No}
 \spellattack{None}
@@ -1650,9 +1650,9 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Phase Door}{7}
 \spelltabular
-\spellschool{Conjuration (Creation/Translocation) [Planar]} & \spelllists{Arcane, Divine} \\
-\longcol{\spelltime{10 minutes}} \\
-\spellzone{One 5-foot cube per three caster levels} & \spellrng{Touch} \\
+\spellinfo{Conjuration (Creation/Translocation) [Planar]}{Arcane, Divine}
+\spelltime{10 minutes}
+\spelltwocol{\spellzone{One 5-foot cube per three caster levels}}{\spellrng{Touch}}
 \spelldur{\durext or until discharged}
 \spellsr{No}
 \spellattack{None}
@@ -1667,7 +1667,7 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Planar Binding}{6}
 \spelltabular
-\spellschool{Abjuration/Conjuration (Translocation) [Planar] [see text for lesser planar binding]} & \spelllists{Arcane} \\
+\spellinfo{Abjuration/Conjuration (Translocation) [Planar] [see text for lesser planar binding]}{Arcane}
 \spelltgts{Up to three elementals or outsiders, totaling no more than 12 levels, no two of which can be more than 30 ft. apart when they appear}
 \end{tabularx}
 \begin{spelleffect}
@@ -1676,7 +1676,7 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsectioncomma{Planar Binding}{Greater}{8}
 \spelltabular
-\spellschool{Abjuration/Conjuration (Translocation) [Planar] [see text for lesser planar binding]} & \spelllists{Arcane} \\
+\spellinfo{Abjuration/Conjuration (Translocation) [Planar] [see text for lesser planar binding]}{Arcane}
 \spelltgts{Up to three elementals or outsiders, totaling no more than 18 levels, no two of which can be more than 30 ft. apart when they appear.}
 \end{tabularx}
 \begin{spelleffect}
@@ -1685,9 +1685,9 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsectioncomma{Planar Binding}{Lesser}{5}
 \spelltabular
-\spellschool{Abjuration/Conjuration (Translocation) [Planar] [see text]} & \spelllists{Arcane} \\
-\longcol{\spelltime{10 minutes or 2 hours}} \\
-\spelltgt{One elemental or outsider of 6th level or lower} & \spellrng{\rngclose; see text} \\
+\spellinfo{Abjuration/Conjuration (Translocation) [Planar] [see text]}{Arcane}
+\spelltime{10 minutes or 2 hours}
+\spelltwocol{\spelltgt{One elemental or outsider of 6th level or lower}}{\spellrng{\rngclose; see text}}
 \spelldur{Instantaneous}
 \spellsr{No and Yes; see text}
 \spellattack{Will negates}
@@ -1707,9 +1707,9 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Plane Shift}{7}
 \spelltabular
-\spellschool{Conjuration (Translocation) [Planar]} & \spelllists{Arcane, Divine} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{Creature touched, or up to eight willing creatures joining hands} & \spellrng{Touch} \\
+\spellinfo{Conjuration (Translocation) [Planar]}{Arcane, Divine}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{Creature touched, or up to eight willing creatures joining hands}}{\spellrng{Touch}}
 \spelldur{Instantaneous}
 \spellsr{Yes (Will)}
 \spellattack{Will negates}
@@ -1723,9 +1723,9 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Prestidigitation}{1}
 \spelltabular
-\spellschool{Universal} & \spelllists{Arcane} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{See text} & \spellrng{Personal/\rngclose} \\
+\spellinfo{Universal}{Arcane}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{See text}}{\spellrng{Personal/\rngclose}}
 \spelldur{1 hour}
 \spellsr{Yes (Will)}
 \spellattack{None}
@@ -1739,7 +1739,7 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Programmed Image}{7}
 \spelltabular
-\spellschool{Illusion (Figment)} & \spelllists{Arcane} \\
+\spellinfo{Illusion (Figment)}{Arcane}
 \spelldur{Permanent until triggered, then 5 rounds}
 \end{tabularx}
 \begin{spelleffect}
@@ -1750,8 +1750,8 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Prying Eyes}{5}
 \spelltabular
-\spellschool{Conjuration (Creation)} & \spelllists{Arcane} \\
-\spelltime{1 minute} & \spellrng{One mile} \\
+\spellinfo{Conjuration (Creation)}{Arcane}
+\spelltwocol{\spelltime{1 minute}}{\spellrng{One mile}}
 \spelldur{\durext; see text \dismissable}
 \spellsr{No}
 \spellattack{None}
@@ -1770,7 +1770,7 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsectioncomma{Prying Eyes}{Greater}{8}
 \spelltabular
-\spellschool{Conjuration/Divination (Awareness, Creation)} & \spelllists{Arcane} \\
+\spellinfo{Conjuration/Divination (Awareness, Creation)}{Arcane}
 \spellrng{10 miles}
 \end{tabularx}
 \begin{spelleffect}
@@ -1779,8 +1779,8 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Purify Food and Drink}{1}
 \spelltabular
-\spellschool{Transmutation (Alteration)} & \spelllists{Divine, Nature} \\
-\spelltgt{5 cu. ft. of contaminated food and water} & \spellrng{Touch} \\
+\spellinfo{Transmutation (Alteration)}{Divine, Nature}
+\spelltwocol{\spelltgt{5 cu. ft. of contaminated food and water}}{\spellrng{Touch}}
 \spelldur{Instantaneous}
 \spellsr{Yes (Fortitude)}
 \spellattack{Fortitude negates (object)}
@@ -1794,9 +1794,9 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Raise Dead}{5}
 \spelltabular
-\spellschool{Necromancy (Life, Soul) [Healing]} & \spelllists{Divine} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{Dead creature touched} & \spellrng{Touch} \\
+\spellinfo{Necromancy (Life, Soul) [Healing]}{Divine}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{Dead creature touched}}{\spellrng{Touch}}
 \spelldur{Instantaneous}
 \spellsr{No}
 \spellattack{None; see text}
@@ -1813,8 +1813,8 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Read Magic}{1}
 \spelltabular
-\spellschool{Divination (Knowledge)} & \spelllists{Arcane, Divine} \\
-\spelltgt{You} & \spellrng{Personal} \\
+\spellinfo{Divination (Knowledge)}{Arcane, Divine}
+\spelltwocol{\spelltgt{You}}{\spellrng{Personal}}
 \spelldur{\durlong}
 \end{tabularx}
 \begin{spelleffect}
@@ -1826,9 +1826,9 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Reincarnate}{4}
 \spelltabular
-\spellschool{Conjuration/Necromancy (Creation, Soul)} & \spelllists{Nature} \\
-\longcol{\spelltime{1 hour}} \\
-\spelltgt{Dead creature touched} & \spellrng{Touch} \\
+\spellinfo{Conjuration/Necromancy (Creation, Soul)}{Nature}
+\spelltime{1 hour}
+\spelltwocol{\spelltgt{Dead creature touched}}{\spellrng{Touch}}
 \spelldur{Instantaneous}
 \spellsr{No}
 \spellattack{None; see text}
@@ -1869,9 +1869,9 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Remove Blindness/Deafness}{3}
 \spelltabular
-\spellschool{Necromancy (Life) [Healing, Positive]} & \spelllists{Divine, Nature} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{Creature touched} & \spellrng{Touch} \\
+\spellinfo{Necromancy (Life) [Healing, Positive]}{Divine, Nature}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{Creature touched}}{\spellrng{Touch}}
 \spelldur{Instantaneous}
 \spellsr{Yes (Fortitude)}
 \end{tabularx}
@@ -1881,9 +1881,9 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Remove Curse}{4}
 \spelltabular
-\spellschool{Necromancy} & \spelllists{Arcane, Divine, Nature} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{Creature or item touched} & \spellrng{Touch} \\
+\spellinfo{Necromancy}{Arcane, Divine, Nature}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{Creature or item touched}}{\spellrng{Touch}}
 \spelldur{Instantaneous}
 \spellsr{Yes (Will)}
 \end{tabularx}
@@ -1893,9 +1893,9 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Remove Disease}{3}
 \spelltabular
-\spellschool{Transmutation (Alteration) [Healing]} & \spelllists{Divine, Nature} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{Creature touched} & \spellrng{Touch} \\
+\spellinfo{Transmutation (Alteration) [Healing]}{Divine, Nature}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{Creature touched}}{\spellrng{Touch}}
 \spelldur{Instantaneous}
 \spellsr{Yes (Fortitude)}
 \end{tabularx}
@@ -1908,7 +1908,7 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Restoration}{4}
 \spelltabular
-\spellschool{Necromancy (Life) [Healing, Positive]} & \spelllists{Divine} \\
+\spellinfo{Necromancy (Life) [Healing, Positive]}{Divine}
 \end{tabularx}
 \begin{spelleffect}
     This ritual functions like \spell{lesser restoration}, except that it is more effective. It cures all temporary ability damage, restores all points permanently drained from a single attribute (your choice if more than one is drained), eliminates any fatigue or exhaustion suffered by the target, and removes one negative level.
@@ -1920,8 +1920,8 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsectioncomma{Restoration}{Greater}{7}
 \spelltabular
-\spellschool{Necromancy (Life) [Healing, Positive]} & \spelllists{Divine} \\
-\longcol{\spelltime{10 minutes}} \\
+\spellinfo{Necromancy (Life) [Healing, Positive]}{Divine}
+\spelltime{10 minutes}
 \end{tabularx}
 \begin{spelleffect}
     This ritual functions like \spell{lesser restoration}, except that it is more effective. It dispels all magical effects penalizing the creature's abilities, cures all temporary ability damage, and restores all points permanently drained from all attribute scores. It also eliminates fatigue and exhaustion, and removes all forms of insanity, confusion, and similar mental effects. Finally, it removes all negative levels afflicting the healed creature. 
@@ -1933,9 +1933,9 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsectioncomma{Restoration}{Lesser}{2}
 \spelltabular
-\spellschool{Necromancy (Life) [Healing, Positive]} & \spelllists{Divine} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{Creature touched} & \spellrng{Touch} \\
+\spellinfo{Necromancy (Life) [Healing, Positive]}{Divine}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{Creature touched}}{\spellrng{Touch}}
 \spelldur{Instantaneous}
 \spellsr{Yes (Will)}
 \end{tabularx}
@@ -1948,8 +1948,8 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Resurrection}{7}
 \spelltabular
-\spellschool{Necromancy (Life, Soul)} & \spelllists{Clr} \\
-\longcol{\spelltime{10 minutes}} \\
+\spellinfo{Necromancy (Life, Soul)}{Clr}
+\spelltime{10 minutes}
 \end{tabularx}
 \begin{spelleffect}
     This ritual functions like \spell{raise dead}, except that you are able to restore life and complete strength to any deceased creature.
@@ -1963,9 +1963,9 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Screen}{8}
 \spelltabular
-\spellschool{Illusion (Figment, Glamer) [Unreal]} & \spelllists{Arcane} \\
-\longcol{\spelltime{10 minutes}} \\
-\spellzone{30 ft. cube/level} & \spellrng{\rngclose} \\
+\spellinfo{Illusion (Figment, Glamer) [Unreal]}{Arcane}
+\spelltime{10 minutes}
+\spelltwocol{\spellzone{30 ft. cube/level}}{\spellrng{\rngclose}}
 \spelldur{\durext}
 \spellsr{No}
 \spellattack{None or Will disbelief (if interacted with); see text}
@@ -1978,10 +1978,10 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Sculpt Sound}{4}
 \spelltabular
-\spellschool{Illusion (Glamer)} & \spelllists{Arcane} \\
-\longcol{\spelltime{10 minutes}} \\
-\spelllimit{\areamed radius} & \spellrng{\rngmed} \\
-\longcol{\spelltgts{Five creatures or objects within the area}} \\
+\spellinfo{Illusion (Glamer)}{Arcane}
+\spelltime{10 minutes}
+\spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngmed}}
+\spelltgts{Five creatures or objects within the area}
 \spelldur{\durext \dismissable}
 \spellsr{Yes (Will)}
 \spellattack{Will negates (object)}
@@ -1997,8 +1997,8 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Scrying}{5}
 \spelltabular
-\spellschool{Divination (Scrying)} & \spelllists{Arcane, Divine, Nature} \\
-\spelltime{1 hour} & \spellrng{See text} \\
+\spellinfo{Divination (Scrying)}{Arcane, Divine, Nature}
+\spelltwocol{\spelltime{1 hour}}{\spellrng{See text}}
 \spelldur{\durmed \dismissable}
 \spellsr{Yes (Will)}
 \spellattack{Will negates}
@@ -2033,8 +2033,8 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsectioncomma{Scrying}{Greater}{7}
 \spelltabular
-\spellschool{Divination (Scrying)} & \spelllists{Arcane, Divine, Nature} \\
-\longcol{\spelltime{1 minute}} \\
+\spellinfo{Divination (Scrying)}{Arcane, Divine, Nature}
+\spelltime{1 minute}
 \spelldur{\durext}
 \end{tabularx}
 \begin{spelleffect}
@@ -2043,9 +2043,9 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Secret Chest}{4}
 \spelltabular
-\spellschool{Conjuration (Teleportation) [Object-Affecting, Planar]} & \spelllists{Arcane} \\
-\longcol{\spelltime{10 minutes}} \\
-\spelltgt{One chest and up to 1 cu. ft. of goods/caster level} & \spellrng{See text} \\
+\spellinfo{Conjuration (Teleportation) [Object-Affecting, Planar]}{Arcane}
+\spelltime{10 minutes}
+\spelltwocol{\spelltgt{One chest and up to 1 cu. ft. of goods/caster level}}{\spellrng{See text}}
 \spelldur{Sixty days or until discharged}
 \spellsr{No}
 \spellattack{None}
@@ -2060,9 +2060,9 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Secret Page}{3}
 \spelltabular
-\spellschool{Transmutation (Alteration)} & \spelllists{Arcane} \\
-\longcol{\spelltime{10 minutes}} \\
-\spelltgt{Page touched, up to 3 sq. ft. in size} & \spellrng{Touch} \\
+\spellinfo{Transmutation (Alteration)}{Arcane}
+\spelltime{10 minutes}
+\spelltwocol{\spelltgt{Page touched, up to 3 sq. ft. in size}}{\spellrng{Touch}}
 \spelldur{Permanent}
 \spellsr{No}
 \spellattack{None}
@@ -2077,8 +2077,8 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Secure Shelter}{4}
 \spelltabular
-\spellschool{Conjuration (Creation, Summoning)} & \spelllists{Arcane} \\
-\spelltime{10 minutes} & \spellrng{\rngclose} \\
+\spellinfo{Conjuration (Creation, Summoning)}{Arcane}
+\spelltwocol{\spelltime{10 minutes}}{\spellrng{\rngclose}}
 \spelldur{\durext \dismissable}
 \spellsr{No}
 \spellattack{None}
@@ -2092,9 +2092,9 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Sending}{5}
 \spelltabular
-\spellschool{Divination (Communication)} & \spelllists{Arcane, Divine} \\
-\longcol{\spelltime{10 minutes}} \\
-\spelltgt{One creature} & \spellrng{See text} \\
+\spellinfo{Divination (Communication)}{Arcane, Divine}
+\spelltime{10 minutes}
+\spelltwocol{\spelltgt{One creature}}{\spellrng{See text}}
 \spelldur{1 round; see text}
 \spellsr{No}
 \spellattack{None}
@@ -2106,9 +2106,9 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Sepia Snake Sigil}{3}
 \spelltabular
-\spellschool{Abjuration/Transmutation (Temporal, Warding) [Trap]} & \spelllists{Arcane} \\
-\longcol{\spelltime{10 minutes}} \\
-\spelltgt{One touched book or written work} & \spellrng{Touch} \\
+\spellinfo{Abjuration/Transmutation (Temporal, Warding) [Trap]}{Arcane}
+\spelltime{10 minutes}
+\spelltwocol{\spelltgt{One touched book or written work}}{\spellrng{Touch}}
 \spelldur{Permanent or until discharged; then one week}
 \spellsr{No}
 \spellattack{Reflex negates}
@@ -2125,9 +2125,9 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Sequester}{7}
 \spelltabular
-\spellschool{Abjuration/Transmutation (Shielding, Temporal)} & \spelllists{Arcane} \\
-\longcol{\spelltime{10 minutes}} \\
-\spelltgt{One willing creature or object (up to ten 2 ft. cubes) touched} & \spellrng{Touch} \\
+\spellinfo{Abjuration/Transmutation (Shielding, Temporal)}{Arcane}
+\spelltime{10 minutes}
+\spelltwocol{\spelltgt{One willing creature or object (up to ten 2 ft. cubes) touched}}{\spellrng{Touch}}
 \spelldur{Thirty days \dismissable}
 \spellsr{No or Yes (object)}
 \spellattack{None or Will negates (object)}
@@ -2141,9 +2141,9 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Shadow Walk}{6}
 \spelltabular
-\spellschool{Conjuration/Illusion (Shadow, Translocation) [Planar]} & \spelllists{Arcane} \\
-\longcol{\spelltime{1 standard action}} \\
-\spelltgts{You and up to four touched creatures} & \spellrng{Touch} \\
+\spellinfo{Conjuration/Illusion (Shadow, Translocation) [Planar]}{Arcane}
+\spelltime{1 standard action}
+\spelltwocol{\spelltgts{You and up to four touched creatures}}{\spellrng{Touch}}
 \spelldur{\durext \dismissable}
 \spellsr{Yes (Will)}
 \spellattack{Will negates}
@@ -2159,9 +2159,9 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Shambler}{9}
 \spelltabular
-\spellschool{Conjuration/Transmutation (Animation, Creation)} & \spelllists{Natural} \\
-\longcol{\spelltime{1 hour}} \\
-\spelllimit{\areamed radius} & \spellrng{\rngmed} \\
+\spellinfo{Conjuration/Transmutation (Animation, Creation)}{Natural}
+\spelltime{1 hour}
+\spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngmed}}
 \spelldur{Seven days or seven months \dismissable; see text}
 \spellsr{No}
 \spellattack{None}
@@ -2173,7 +2173,7 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Shape Metal}{4}
 \spelltabular
-\spellschool{Transmutation (Alteration)} & \spelllists{Arcane, Divine, Nature} \\
+\spellinfo{Transmutation (Alteration)}{Arcane, Divine, Nature}
 \end{tabularx}
 \begin{spelleffect}
     This ritual functions like \spell{shape wood}, except that you make a Craft (metal) check, and you shape metal instead of wood. 
@@ -2181,7 +2181,7 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Shape Stone}{3}
 \spelltabular
-\spellschool{Transmutation (Alteration) [Earth]} & \spelllists{Arcane, Divine, Nature} \\
+\spellinfo{Transmutation (Alteration) [Earth]}{Arcane, Divine, Nature}
 \end{tabularx}
 \begin{spelleffect}
     This ritual functions like \spell{shape wood}, except that you make a Craft (stone) check, and you shape stone instead of wood.
@@ -2189,9 +2189,9 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Shape Wood}{2}
 \spelltabular
-\spellschool{Transmutation (Alteration)} & \spelllists{Arcane, Divine, Nature} \\
-\longcol{\spelltime{10 minutes}} \\
-\spelltgt{Nonmagical wood touched, affecting up to 10 cubic feet} & \spellrng{Touch} \\
+\spellinfo{Transmutation (Alteration)}{Arcane, Divine, Nature}
+\spelltime{10 minutes}
+\spelltwocol{\spelltgt{Nonmagical wood touched, affecting up to 10 cubic feet}}{\spellrng{Touch}}
 \spelldur{Instantaneous}
 \spellsr{Yes (Fortitude)}
 \spellattack{No}
@@ -2202,9 +2202,9 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Snare}{3}
 \spelltabular
-\spellschool{Transmutation (Alteration) [Trap]} & \spelllists{Nature} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{Touched nonmagical circle of vine, rope, or thong with a 2 ft. diameter \add 2 ft./level} & \spellrng{Touch} \\
+\spellinfo{Transmutation (Alteration) [Trap]}{Nature}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{Touched nonmagical circle of vine, rope, or thong with a 2 ft. diameter \add 2 ft./level}}{\spellrng{Touch}}
 \spelldur{Permanent until triggered or broken}
 \spellsr{No}
 \spellattack{None}
@@ -2217,9 +2217,10 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Soul Bind}{9}
 \spelltabular
-\spellschool{Necromancy (Soul)} & \spelllists{Arcane, Divine} \\
-\spelltime{1 minute} & \spellcmp{Verbal, Somatic, Focus} \\
-\spelltgt{Corpse} & \spellrng{\rngclose} \\
+\spellinfo{Necromancy (Soul)}{Arcane, Divine}
+\spelltime{1 minute}
+\spellcmp{Verbal, Somatic, Focus}
+\spelltwocol{\spelltgt{Corpse}}{\spellrng{\rngclose}}
 \spelldur{Permanent}
 \spellsr{No}
 \spellattack{None}
@@ -2231,9 +2232,9 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Speak with Dead}{3}
 \spelltabular
-\spellschool{Divination/Necromancy (Communication, Flesh) [Language-Dependent]} & \spelllists{Arcane, Divine} \\
-\longcol{\spelltime{10 minutes}} \\
-\spelltgt{One dead creature} & \spellrng{\rngclose} \\
+\spellinfo{Divination/Necromancy (Communication, Flesh) [Language-Dependent]}{Arcane, Divine}
+\spelltime{10 minutes}
+\spelltwocol{\spelltgt{One dead creature}}{\spellrng{\rngclose}}
 \spelldur{10 minutes \dismissable}
 \spellsr{No}
 \spellattack{Will negates; see text}
@@ -2250,9 +2251,10 @@ Additionally, the following spells can be cast upon objects or areas only and re
 \begin{comment}
 \spellsection{Spellstaff}
 \spelltabular
-\spellschool{Transmutation (Imbuement) [Magic]} & \spelllists{Divine} \\
-\spelltime{10 minutes} & \spellcmp{Verbal, Somatic, Focus} \\
-\spelltgt{Wooden quarterstaff touched} & \spellrng{Touch} \\
+\spellinfo{Transmutation (Imbuement) [Magic]}{Divine}
+\spelltime{10 minutes}
+\spellcmp{Verbal, Somatic, Focus}
+\spelltwocol{\spelltgt{Wooden quarterstaff touched}}{\spellrng{Touch}}
 \spelldur{Permanent until discharged \dismissable}
 \spellsr{Yes (Will)}
 \spellattack{Will negates (object)}
@@ -2266,9 +2268,9 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Symbol of Death}{7}
 \spelltabular
-\spellschool{Abjuration/Necromancy (Life, Warding) [Death, Trap]} & \spelllists{Arcane} \\
-\longcol{\spelltime{10 minutes}} \\
-\spelltgt{One object} & \spellrng{Touch} \\
+\spellinfo{Abjuration/Necromancy (Life, Warding) [Death, Trap]}{Arcane}
+\spelltime{10 minutes}
+\spelltwocol{\spelltgt{One object}}{\spellrng{Touch}}
 \spelldur{Permanent or until discharged}
 \spellsr{Yes (Fortitude)}
 \spellattack{Fortitude negates}
@@ -2286,7 +2288,7 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Symbol of Destruction}{7}
 \spelltabular
-\spellschool{Abjuration/Necromancy (Flesh, Warding) [Death, Trap]} & \spelllists{Divine} \\
+\spellinfo{Abjuration/Necromancy (Flesh, Warding) [Death, Trap]}{Divine}
 \end{tabularx}
 \begin{spelleffect}
     This spell functions like \spell{symbol of death}, except that the triggering creature instead suffers the effects of the \spell{destruction} spell.
@@ -2297,7 +2299,7 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Symbol of Fear}{7}
 \spelltabular
-\spellschool{Abjuration/Enchantment (Emotion, Warding) [Fear, Mind-Affecting, Trap]} & \spelllists{Arcane} \\
+\spellinfo{Abjuration/Enchantment (Emotion, Warding) [Fear, Mind-Affecting, Trap]}{Arcane}
 \spellsr{Yes (Will)}
 \spellattack{Will negates}
 \end{tabularx}
@@ -2310,7 +2312,7 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Symbol of Insanity}{6}
 \spelltabular
-\spellschool{Abjuration/Enchantment (Compulsion, Warding) [Mind-Affecting, Trap]} & \spelllists{Arcane} \\
+\spellinfo{Abjuration/Enchantment (Compulsion, Warding) [Mind-Affecting, Trap]}{Arcane}
 \spellsr{Yes (Will)}
 \spellattack{Will negates}
 \end{tabularx}
@@ -2323,7 +2325,7 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Symbol of Pain}{5}
 \spelltabular
-\spellschool{Abjuration/Necromancy (Flesh, Warding) [Trap]} & \spelllists{Arcane} \\
+\spellinfo{Abjuration/Necromancy (Flesh, Warding) [Trap]}{Arcane}
 \spellattack{None}
 \end{tabularx}
 \begin{spelleffect}
@@ -2335,7 +2337,7 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Symbol of Persuasion}{4}
 \spelltabular
-\spellschool{Abjuration/Enchantment (Compulsion, Warding) [Language-Dependent, Mind-Affecting, Sound-Dependent, Trap]} & \spelllists{Arcane} \\
+\spellinfo{Abjuration/Enchantment (Compulsion, Warding) [Language-Dependent, Mind-Affecting, Sound-Dependent, Trap]}{Arcane}
 \spellsr{Yes (Will)}
 \spellattack{Will negates}
 \end{tabularx}
@@ -2348,7 +2350,7 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Symbol of Sleep}{7}
 \spelltabular
-\spellschool{Abjuration/Enchantment (Compulsion, Warding) [Mind-Affecting, Trap]} & \spelllists{Arcane} \\
+\spellinfo{Abjuration/Enchantment (Compulsion, Warding) [Mind-Affecting, Trap]}{Arcane}
 \spellsr{Yes (Will)}
 \spellattack{Will negates}
 \end{tabularx}
@@ -2361,9 +2363,9 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Sympathetic Vibration}{5}
 \spelltabular
-\spellschool{Evocation (Energy) [Sonic]} & \spelllists{Arcane} \\
-\longcol{\spelltime{10 minutes}} \\
-\spelltgt{One freestanding structure} & \spellrng{Touch} \\
+\spellinfo{Evocation (Energy) [Sonic]}{Arcane}
+\spelltime{10 minutes}
+\spelltwocol{\spelltgt{One freestanding structure}}{\spellrng{Touch}}
 \spelldur{Up to 1 minute}
 \spellsr{Yes (Fortitude)}
 \spellattack{None; see text}
@@ -2377,9 +2379,9 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Sympathy}{9}
 \spelltabular
-\spellschool{Enchantment (Emotion) [Mind-Affecting]} & \spelllists{Arcane, Nature} \\
-\longcol{\spelltime{1 hour}} \\
-\spelltgt{One location (up to a 10 ft. cube/level) or one object} & \spellrng{\rngclose} \\
+\spellinfo{Enchantment (Emotion) [Mind-Affecting]}{Arcane, Nature}
+\spelltime{1 hour}
+\spelltwocol{\spelltgt{One location (up to a 10 ft. cube/level) or one object}}{\spellrng{\rngclose}}
 \spelldur{One week \dismissable}
 \spellsr{Yes (Will)}
 \spellattack{Will partial}
@@ -2392,9 +2394,9 @@ Additionally, the following spells can be cast upon objects or areas only and re
 \spellsection{Telepathic Bond}{3}
 \spelldesc{You forge a mental link binding two allies together.}
 \spelltabular
-\spellschool{Divination/Transmutation (Communication, Imbuement)} & \spelllists{Arcane} \\
-\longcol{\spelltime{10 minutes}} \\
-\spelltgts{You and one willing creature, or two willing creatures} & \spellrng{\rngclose} \\
+\spellinfo{Divination/Transmutation (Communication, Imbuement)}{Arcane}
+\spelltime{10 minutes}
+\spelltwocol{\spelltgts{You and one willing creature, or two willing creatures}}{\spellrng{\rngclose}}
 \spelldur{\durext \dismissable}
 \spellsr{Yes (Will)}
 \spellattack{None}
@@ -2408,7 +2410,7 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Telepathic Bond, Mass}{6}
 \spelltabular
-\spellschool{Divination/Transmutation (Communication, Imbuement)} & \spelllists{Arcane} \\
+\spellinfo{Divination/Transmutation (Communication, Imbuement)}{Arcane}
 \spelltgts{You plus up to five willing creatures in a \areamed radius}
 \end{tabularx}
 \begin{spelleffect}
@@ -2420,9 +2422,9 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Teleport}{6}
 \spelltabular
-\spellschool{Conjuration (Translocation) [Teleportation]} & \spelllists{Arcane} \\
-\longcol{\spelltime{1 minute; see text}} \\
-\spelltgts{You and up to four touched Medium creatures; see text} & \spellrng{Personal and touch} \\
+\spellinfo{Conjuration (Translocation) [Teleportation]}{Arcane}
+\spelltime{1 minute; see text}
+\spelltwocol{\spelltgts{You and up to four touched Medium creatures; see text}}{\spellrng{Personal and touch}}
 \spelldur{Instantaneous}
 \spellsr{Yes (Will)}
 \spellattack{None and Will negates (object)}
@@ -2450,8 +2452,8 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Teleport Object}{7}
 \spelltabular
-\spellschool{Conjuration (Translocation) [Teleportation]} & \spelllists{Arcane} \\
-\spelltgt{One touched object of up to 50 lb./level and 3 cu. ft./level} & \spellrng{Touch} \\
+\spellinfo{Conjuration (Translocation) [Teleportation]}{Arcane}
+\spelltwocol{\spelltgt{One touched object of up to 50 lb./level and 3 cu. ft./level}}{\spellrng{Touch}}
 \spellsr{Yes (object)}
 \spellattack{Will negates (object)}
 \end{tabularx}
@@ -2461,7 +2463,7 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Teleport, Greater}{8}
 \spelltabular
-\spellschool{Conjuration (Translocation) [Teleportation]} & \spelllists{Arcane} \\
+\spellinfo{Conjuration (Translocation) [Teleportation]}{Arcane}
 \end{tabularx}
 \begin{spelleffect}
     This ritual functions like \spell{teleport}, except that you can teleport up to 1,000 miles, and you cannot arrive off target. In addition, you need not have seen the destination, provided that you have an accurate and specific description of the place to which you are teleporting. If you attempt to teleport with insufficient information, with misleading information, or to an invalid location (such as inside a solid object), you simply disappear and reappear in your original location.
@@ -2469,9 +2471,9 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Teleportation Circle}{9}
 \spelltabular
-\spellschool{Conjuration (Translocation) [Teleportation, Trap]} & \spelllists{Arcane} \\
-\longcol{\spelltime{10 minutes}} \\
-\longcol{\spellrng{Touch}} \\
+\spellinfo{Conjuration (Translocation) [Teleportation, Trap]}{Arcane}
+\spelltime{10 minutes}
+\spellrng{Touch}
 \spelldur{\durext or until discharged \dismissable}
 \spellsr{Yes (Will)}
 \spellattack{Will negates}
@@ -2486,9 +2488,9 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Tiny Hut}{3}
 \spelltabular
-\spellschool{Evocation (Control)} & \spelllists{Arcane} \\
-\longcol{\spelltime{1 minute}} \\
-\longcol{\spellzone{\areamed radius centered on you}} \\
+\spellinfo{Evocation (Control)}{Arcane}
+\spelltime{1 minute}
+\spellzone{\areamed radius centered on you}
 \spelldur{\durext \dismissable}
 \spellsr{No}
 \spellattack{None}
@@ -2501,8 +2503,8 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Tongues}{4}
 \spelltabular
-\spellschool{Divination (Communication)} & \spelllists{Arcane, Divine, Nature} \\
-\spelltgt{Creature touched} & \spellrng{Touch} \\
+\spellinfo{Divination (Communication)}{Arcane, Divine, Nature}
+\spelltwocol{\spelltgt{Creature touched}}{\spellrng{Touch}}
 \spelldur{\durlong}
 \spellsr{Yes (Will)}
 \end{tabularx}
@@ -2515,7 +2517,7 @@ Additionally, the following spells can be cast upon objects or areas only and re
 
 \spellsection{Transport via Plants}{6}
 \spelltabular
-\spellschool{Conjuration (Translocation) [Teleportation]} & \spelllists{Nature} \\
+\spellinfo{Conjuration (Translocation) [Teleportation]}{Nature}
 \end{tabularx}
 \begin{spelleffect}
     This ritual functions like \spell{teleport}, except that both the starting and ending points must be living, Medium or larger plants. You and any other creatures you bring with you step into one plant and out of the other plant.
@@ -2530,8 +2532,8 @@ You can enter any normal plant (Medium or larger) and pass any distance to a pla
 
 \spellsection{Trap the Soul}{8}
 \spelltabular
-\spellschool{Necromancy (Life, Soul)} & \spelllists{Arcane} \\
-\spelltgt{One trigger object; see text} & \spellrng{Touch} \\
+\spellinfo{Necromancy (Life, Soul)}{Arcane}
+\spelltwocol{\spelltgt{One trigger object; see text}}{\spellrng{Touch}}
 \spelldur{Permanent; see text}
 \spellsr{Yes; see text}
 \spellattack{None}
@@ -2545,9 +2547,9 @@ You can enter any normal plant (Medium or larger) and pass any distance to a pla
 
 \spellsection{Tree Stride}{5}
 \spelltabular
-\spellschool{Conjuration (Translocation) [Teleportation]} & \spelllists{Nature} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{You} & \spellrng{Personal} \\
+\spellinfo{Conjuration (Translocation) [Teleportation]}{Nature}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{You}}{\spellrng{Personal}}
 \end{tabularx}
 \begin{spelleffect}
     This ritual functions like \spell{teleport}, except that it only affects you, and both the starting and ending points must be Large or larger trees.
@@ -2570,8 +2572,8 @@ You gain the ability to enter trees and move from inside one tree to inside anot
 
 \spellsection{True Resurrection}{9}
 \spelltabular
-\spellschool{Necromancy (Life, Soul)} & \spelllists{Divine} \\
-\longcol{\spelltime{1 hour}} \\
+\spellinfo{Necromancy (Life, Soul)}{Divine}
+\spelltime{1 hour}
 \end{tabularx}
 \begin{spelleffect}
     This spell functions like \spell{raise dead}, except that you can resurrect a creature that has been dead for as long as 10 years per caster level. This spell can even bring back creatures whose bodies have been destroyed, provided that you unambiguously identify the deceased in some fashion (reciting the deceased's time and place of birth or death is the most common method).
@@ -2585,9 +2587,9 @@ You gain the ability to enter trees and move from inside one tree to inside anot
 
 \spellsection{Undetectable Alignment}{2}
 \spelltabular
-\spellschool{Abjuration (Shielding)} & \spelllists{Arcane} \\
-\longcol{\spelltime{1 minute}} \\
-\spelltgt{One creature or object} & \spellrng{\rngclose} \\
+\spellinfo{Abjuration (Shielding)}{Arcane}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngclose}}
 \spelldur{\durext \dismissable}
 \spellsr{Yes (Will)}
 \spellattack{Will negates (object)}
@@ -2598,9 +2600,9 @@ You gain the ability to enter trees and move from inside one tree to inside anot
 
 \spellsection{Unhallow}{5}
 \spelltabular
-\spellschool{Evocation (Power) [Evil]} & \spelllists{Divine} \\
-\longcol{\spelltime{24 hours}} \\
-\spellzone{\arealarge radius} & \spellrng{\rngclose} \\
+\spellinfo{Evocation (Power) [Evil]}{Divine}
+\spelltime{24 hours}
+\spelltwocol{\spellzone{\arealarge radius}}{\spellrng{\rngclose}}
 \spelldur{Instantaneous/1 year}
 \spellsr{See text}
 \spellattack{See text}
@@ -2620,8 +2622,8 @@ You gain the ability to enter trees and move from inside one tree to inside anot
 
 \spellsection{Unseen Servant}{1}
 \spelltabular
-\spellschool{Conjuration/Evocation (Creation, Control)} & \spelllists{Arcane} \\
-\spelltime{1 minute} & \spellrng{\rngmed} \\
+\spellinfo{Conjuration/Evocation (Creation, Control)}{Arcane}
+\spelltwocol{\spelltime{1 minute}}{\spellrng{\rngmed}}
 \spelldur{\durlong \dismissable}
 \spellsr{No}
 \spellattack{None}
@@ -2633,8 +2635,8 @@ You gain the ability to enter trees and move from inside one tree to inside anot
 
 \spellsection{Vision}{7}
 \spelltabular
-\spellschool{Divination (Knowledge)} & \spelllists{Arcane} \\
-\longcol{\spelltime{1 minute}} \\
+\spellinfo{Divination (Knowledge)}{Arcane}
+\spelltime{1 minute}
 \end{tabularx}
 \begin{spelleffect}
     This ritual functions like \spell{legend lore}, except that it works more quickly but produces some strain on you. You pose a question about some person, place, or object, then perform the ritual. If the person or object is at hand or if you are in the place in question, you receive a vision about it by succeeding on a caster level check (1d20 \add caster level) against DC 20. If only detailed information on the person, place, or object is known, the DC is 25, and the information gained is incomplete. If only rumors are known, the DC is 30, and the information gained is vague. After the spell is complete, you are exhausted.
@@ -2643,9 +2645,9 @@ You gain the ability to enter trees and move from inside one tree to inside anot
 
 \spellsection{Water Breathing}{3}
 \spelltabular
-\spellschool{Transmutation (Imbuement)} & \spelllists{Arcane, Divine, Nature} \\
-\longcol{\spelltime{10 minutes}} \\
-\spelltgt{Living creatures touched} & \spellrng{Touch} \\
+\spellinfo{Transmutation (Imbuement)}{Arcane, Divine, Nature}
+\spelltime{10 minutes}
+\spelltwocol{\spelltgt{Living creatures touched}}{\spellrng{Touch}}
 \spelldur{\durext \dismissable; see text}
 \spellsr{Yes (Will)}
 \end{tabularx}
@@ -2658,9 +2660,9 @@ You gain the ability to enter trees and move from inside one tree to inside anot
 
 \spellsection{Whispering Wind}{2}
 \spelltabular
-\spellschool{Divination (Communication) [Air]} & \spelllists{Arcane, Nature} \\
-\longcol{\spelltime{1 minute}} \\
-\longcol{\spellrng{10 miles}} \\
+\spellinfo{Divination (Communication) [Air]}{Arcane, Nature}
+\spelltime{1 minute}
+\spellrng{10 miles}
 \spelldur{\durext or until discharged}
 \spellsr{No}
 \spellattack{None}
@@ -2675,9 +2677,9 @@ You gain the ability to enter trees and move from inside one tree to inside anot
 
 \spellsection{Wind Walk}{6}
 \spelltabular
-\spellschool{Transmutation (Polymorph) [Air]} & \spelllists{Divine, Nature} \\
-\longcol{\spelltime{1 standard action}} \\
-\spelltgts{You and up to four touched creatures} & \spellrng{Touch} \\
+\spellinfo{Transmutation (Polymorph) [Air]}{Divine, Nature}
+\spelltime{1 standard action}
+\spelltwocol{\spelltgts{You and up to four touched creatures}}{\spellrng{Touch}}
 \spelldur{\durext \dismissable; see text}
 \spellsr{Yes (Will)}
 \end{tabularx}
@@ -2690,9 +2692,9 @@ You gain the ability to enter trees and move from inside one tree to inside anot
 
 \spellsection{Zone of Truth}{2}
 \spelltabular
-\spellschool{Enchantment (Inhibition) [Mind-Affecting]} & \spelllists{Arcane, Divine} \\
-\longcol{\spelltime{1 minute}} \\
-\spellzone{\areamed radius} & \spellrng{\rngmed} \\
+\spellinfo{Enchantment (Inhibition) [Mind-Affecting]}{Arcane, Divine}
+\spelltime{1 minute}
+\spelltwocol{\spellzone{\areamed radius}}{\spellrng{\rngmed}}
 \spelldur{\durmed}
 \spellsr{Yes (Will)}
 \spellattack{Will negates}
