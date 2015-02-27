@@ -262,8 +262,8 @@
 \spelldur{\durshort}
 \spellattack{Magic vs. Will}
 \begin{spellsuccess}
-    An affected creature feels an aversion to a particular person or object. If the object of the implanted aversion is an individual or a physical object, she will prefer not to approach within 30 feet of it. If it is a word, she will try not to utter it; if it is an action, she will not willingly attempt to perform it; and if it is an event, she will not willingly attend it. The subject will take reasonable steps to avoid the object of its aversion, but will not put herself in jeopardy by doing so.
-    \par If the subject is forced to take an action she has an aversion to, she takes a \minus4 penalty to attacks, defenses, and checks for 1 round.
+    The subject feels an aversion to a particular person or object. If the object of the implanted aversion is an individual or a physical object, she will prefer not to approach within 30 feet of it. If it is a word, she will try not to utter it; if it is an action, she will not willingly attempt to perform it; and if it is an event, she will not willingly attend it. The subject will take reasonable steps to avoid the object of its aversion, but will not put herself in jeopardy by doing so.
+    \par If the subject is unable to avoid the object of her aversion, she takes a \minus4 penalty to attacks, defenses, and checks for 1 round.
 \end{spellsuccess}
 
 \pdfbookmark[2]{B}{SpellDescriptionsB}
@@ -275,11 +275,12 @@
 \spellsection{Bane}{1}
 \spelldesc{You fill your enemies with dismay, impairing their ability to fight.}
 \spellinfo{Ench (Emotion) [Mind-Affecting, Morale]}{Divine, Evil, War}
-\spelltwocol{\spellburst{\areamed radius}}{\spelltgts{All enemies in the area}}
+\spellburst{\areamed radius centered on you}
+\spelltgts{All enemies in the area}
 \spelldur{5 rounds}
 \spellattack{Magic vs. Will}
 \begin{spellsuccess}
-    \minus2 penalty to physical attacks for 5 rounds.
+    \minus2 penalty to physical attacks.
 \end{spellsuccess}
 \spellsr{Yes (Will)}
 
