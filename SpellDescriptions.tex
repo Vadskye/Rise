@@ -75,7 +75,7 @@
 \spelldesc{A billowing mass of acidic vapors fills the area, slowing creatures down and obscuring sight.}
 \spelltabular
 \spellschool{Conj (Creation) [Acid]} & \spelllists{Arcane, Destruction} \\
-\spellarea{\areamed radius spread} & \spellrng{\rngmed} \\
+\spellarea{\areamed radius cylinder-shaped spread} & \spellrng{\rngmed} \\
 \spelldur{\durshort}
 \end{tabularx}
 \begin{spelleffect}
@@ -87,7 +87,7 @@
     4d6 acid damage.
 \end{spellsuccess}
 \begin{spellfailure}
-    As above, but a failed attack deals half damage.
+    As above, but half damage.
 \end{spellfailure}
 
 \spellsection{Agony}{5}
@@ -277,7 +277,7 @@
     18d8 life damage \add d6 per four caster levels above 18th. 
 \end{spellsuccess}
 \begin{spellfailure}
-    As above, but a failed attack deals half damage.
+    As above, but half damage.
 \end{spellfailure}
 \begin{spelleffect}
     If the target has no hit points remaining after taking damage from this spell, it is entirely assimilated into your form, leaving behind only a trace of fine dust. An assimilated creature's equipment is unaffected.
@@ -409,7 +409,7 @@
     6d6 force damage \add d6 per four caster levels above 12th.
 \end{spellsuccess}
 \begin{spellfailure}
-    As above, but a failed attack deals half damage.
+    As above, but half damage.
 \end{spellfailure}
 
 \spellsection{Blasphemy}{7}
@@ -507,7 +507,7 @@
     1d6 fire damage \add 1d6 per four caster levels above 2nd.
 \end{spellsuccess}
 \begin{spellfailure}
-    Half damage.
+    As above, but half damage.
 \end{spellfailure}
 \begin{spellnotes}
      Unattended flammable objects burn if the flames touch them. \destructivespellnotes
@@ -534,7 +534,7 @@
     3d8 electricity damage \add d8 per four caster levels above 6th. If you are outdoors and in a stormy area -- a rain shower, clouds and wind, hot and cloudy conditions, or even a tornado -- this deals 3d10 electricity damage \add d10 per four caster levels above 6th instead.
 \end{spellsuccess}
 \begin{spellfailure}
-    Half damage.
+    As above, but half damage.
 \end{spellfailure}
 \begin{spellnotes}
     This spell functions indoors or underground, but not underwater. \destructivespellnotes
@@ -556,7 +556,7 @@
     If the target is bloodied, and you also beat its Fortitude defense, it is \staggered for 5 rounds.
 \end{spellsuccess}
 \begin{spellfailure}
-    Half damage, and the target is not staggered.
+    As above, but half damage and the target is not staggered.
 \end{spellfailure}
 \begin{spellnotes}
     This spell functions indoors or underground, but not underwater. \destructivespellnotes
@@ -594,7 +594,7 @@
     5d10 electricity damage \add d10 per four caster levels above 10th. Secondary targets take half damage.
 \end{spellsuccess}
 \begin{spellfailure}
-    Half damage.
+    As above, but half damage.
 \end{spellfailure}
 
 \spellsection{Changestaff}{7}
@@ -623,7 +623,7 @@
     If the target is not chaotic, it takes 8d6 divine damage \add d6 per two caster levels above 8th, and is \bewildered for 5 rounds.
 \end{spellsuccess}
 \begin{spellfailure}
-    Half damage.
+    As above, but half damage.
 \end{spellfailure}
 
 \spellsection{Charm Monster}{5}
@@ -640,6 +640,7 @@
 \spelldesc{You manipulate a person's mind so he thinks of you as a trusted friend and ally.}
 \spelltabular
 \spellschool{Ench (Emotion) [Charm, Mind-Affecting]} & \spelllists{Ench} \\
+\longcol{\spellcmp{Somatic only}} \\
 \spelltgt{One humanoid creature} & \spellrng{\rngmed} \\
 \spelldur{\durlong}
 \spellsr{Yes (Will)}
@@ -757,7 +758,7 @@
     The target is \dazzled and \bewildered.
 \end{spellsuccess}
 \begin{spellnotes}
-  Creatures who cannot see the light are not affected by this spell. Merely closing one's eyes is insufficient protection, however.
+    Creatures who cannot see the light are not affected by this spell. Merely closing one's eyes is insufficient protection, however.
 \end{spellnotes}
 
 \spellsection{Combat Transformation}{7}
@@ -818,7 +819,7 @@
 \spelltabular
 \spellschool{Evoc (Energy) [Cold]} & \spelllists{Arcane, Nature} \\
 \longcol{\spellarea{\areamed cone-shaped burst}} \\
-\spelldur{5 rounds}
+\longcol{\spelltgts{All creatures in the area}} \\
 \spellsr{Yes (Reflex)}
 \end{tabularx}
 \spellattack{Magic vs. Reflex}
@@ -826,7 +827,7 @@
     5d6 cold damage \add d6 per four caster levels above 10th. In addition, the target is \fatigued for 5 rounds.
 \end{spellsuccess}
 \begin{spellfailure}
-    Half damage, and the target is not fatigued.
+    As above, but half damage and the target is not fatigued.
 \end{spellfailure}
 
 \spellsectioncomma{Cone of Cold}{Greater}{8}
