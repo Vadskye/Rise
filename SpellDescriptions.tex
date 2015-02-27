@@ -371,11 +371,12 @@
 \spellinfo{Evoc (Channeling) [Evil]}{Divine, Evil}
 \spellcmp{Verbal only}
 \spellburst{\arealarge radius centered on you}
+\spelltgts{All nonevil creatures in the area}
 \spellsr{Yes (Will)}
 \begin{spelleffect}
-    Each nonevil creature in the area whose level does not exceed your caster level is \sickened for 5 rounds.
+    If the target's level does not exceed your caster level, it is \sickened for 5 rounds.
 
-    Bloodied creatures also suffer one or more of the following ill effects, depending on their level.
+    If it is also bloodied, it also suffers one or more of the following ill effects, depending on its level.
     \begin{itemize*}
         \item Up to caster level \minus5: The creature is also \nauseated for 1 round.
         \item Up to caster level \minus10: The creature is also \paralyzed for 5 rounds.
@@ -1097,13 +1098,13 @@
 \spellinfo{Evoc (Channeling) [Lawful]}{Divine, Law}
 \spellcmp{Verbal only}
 \spellburst{\arealarge radius centered on you}
+\spelltgts{All nonlawful creatures in the area}
 \spelldur{Instantaneous/5 rounds}
 \spellsr{Yes (Will)}
-\begin{spellhealthy}
-    \par Each nonlawful creature in the area is deafened for 5 rounds.
-\end{spellhealthy}
-\begin{spellblood}
-    \par Each nonlawful creature in the area suffers one or more of the following ill effects, depending on its level.
+\begin{spelleffect}
+    If the target's level does not exceed your caster level, it is \deafened for 5 rounds.
+
+    If it is also bloodied, it also suffers one or more of the following ill effects, depending on its level.
     \begin{dtable}
         \begin{tabularx}{\columnwidth}{l >{\lcol}X}
             \par \thead{Level} & \thead{Effect} \\
@@ -1118,10 +1119,7 @@
     \par \subspell{Stunned} The creature is stunned for 1 round.
     \par \subspell{Paralyzed} The creature is paralyzed and helpless for 5 rounds.
     \par \subspell{Killed} Living creatures die. Nonliving creatures are destroyed.
-\end{spellblood}
-\begin{spellnotes}
-    Creatures whose level exceeds your caster level are unaffected by this spell. A deafened creature cannot hear. It automatically fails Listen checks, takes a \minus4 penalty to any checks which involve hearing, and has a 20\% chance of spell failure when casting spells with verbal components.
-\end{spellnotes}
+\end{spelleffect}
 
 \spellsection{Dimension Door}{4}
 \spellinfo{Conj (Translocation) [Teleportation]}{Arcane, Travel}
@@ -2109,12 +2107,12 @@
 \spellinfo{Evoc (Channeling) [Good]}{Good, Divine}
 \spellcmp{Verbal only}
 \spellburst{\arealarge radius centered on you}
+\spelltgts{All nongood creatures in the area}
 \spellsr{Yes (Will)}
-\begin{spellhealthy}
-    \par Each nongood creature in the area is deafened for 5 rounds.
-\end{spellhealthy}
-\begin{spellblood}
-    \par Each nongood creature in the area suffers one or more of the following ill effects, depending on its level.
+\begin{spelleffect}
+    If the target's level does not exceed your caster level, it is \deafened for 5 rounds.
+
+    If it is also bloodied, it also suffers one or more of the following ill effects, depending on its level.
     \begin{dtable}
         \begin{tabularx}{\columnwidth}{l >{\lcol}X}
             \par \thead{Level} & \thead{Effect} \\
@@ -2129,10 +2127,7 @@
     \par \subspell{Blinded} The creature is blinded for 2 rounds.
     \par \subspell{Paralyzed} The creature is paralyzed and helpless for 5 rounds.
     \par \subspell{Killed} Living creatures die. Nonliving creatures are destroyed.
-\end{spellblood}
-\begin{spellnotes}
-    Creatures whose level exceeds your caster level are unaffected by \spell{holy word}. A deafened creature cannot hear. It automatically fails Listen checks, takes a \minus4 penalty to any checks which involve hearing, and has a 20\% chance of spell failure when casting spells with verbal components.
-\end{spellnotes}
+\end{spelleffect}
 
 \spellsection{Horrid Wilting}{8}
 \spelldesc{You dessicate your foes from a great distance, shriveling their bodies.}
@@ -4852,12 +4847,12 @@
 \spellinfo{Evoc (Channeling) [Chaotic]}{Chaos}
 \spellcmp{Verbal only}
 \spellburst{\arealarge radius centered on you}
+\spelltgts{All nonlawful creatures in the area}
 \spellsr{Yes (Will)}
-\begin{spellhealthy}
-    Each nonchaotic creature in the area is bewildered, making it \vulnerable for 5 rounds.
-\end{spellhealthy}
-\begin{spellblood}
-    Each nonchaotic creature in the area suffers one or more of the following ill effects, depending on its level.
+\begin{spelleffect}
+    If the target's level does not exceed your caster level, it is \vulnerable for 5 rounds.
+
+    If it is bloodied, it also suffers one or more of the following ill effects, depending on its level.
     \begin{dtable}
         \begin{tabularx}{\columnwidth}{l >{\lcol}X}
             \par \thead{Level} & \thead{Effect} \\
@@ -4872,10 +4867,7 @@
     \par \subspell{Confused} The creature is confused for 2 rounds.
     \par \subspell{Paralyzed} The creature is paralyzed and helpless for 5 rounds.
     \par \subspell{Killed} Living creatures die. Nonliving creatures are destroyed.
-\end{spellblood}
-\begin{spellnotes}
-    Creatures whose level exceeds your caster level are unaffected by \spell{word of chaos}.
-\end{spellnotes}
+\end{spelleffect}
 
 \spellsection{Word of Recall}{6}
 \spellinfo{Conj (Translocation) [Teleportation]}{Divine}
