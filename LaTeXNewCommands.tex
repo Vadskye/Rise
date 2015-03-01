@@ -149,6 +149,9 @@
 \newcommand{\spellattackseparatetarget}[1]{\parhead{Target} #1}
 \newcommand{\spellattackseparatetargets}[1]{\parhead{Targets} #1}
 
+\newcommand{\spelltargetattack}[2]{\spelltabularcompressed \thead{Target:} #1 & \thead{Attack:} #2 \\\end{tabularx}}
+\newcommand{\spelltargetsattack}[2]{\spelltabularcompressed \thead{Targets:} #1 & \thead{Attack:} #2 \\\end{tabularx}}
+
 \newcommand{\spelltrigger}[1]{\parhead{Trigger} #1}
 \newcommand{\spelltriggers}[1]{\parhead{Triggers} #1}
 \newcommand{\spellfocus}[1]{\par\noindent \textit{Focus:} #1}
@@ -248,3 +251,28 @@
 
 \newcommand{\dismissable}{(Dismissable)}
 \newcommand{\shapeable}{(S)}
+\newcommand{\rngunrestricted}{(Unrestricted)}
+
+% http://tex.stackexchange.com/questions/135617/how-to-i-reduce-space-before-and-after-hrule
+\newcommand{\HRule}[2][\medskipamount]{\par
+  \vspace*{\dimexpr-\parskip-\baselineskip+#1}
+  \noindent\rule{\linewidth}{#2}\par
+  \vspace*{\dimexpr-\parskip-.5\baselineskip+#1}}
+
+\newcommand{\spellline}{\par\HRule[0.5\medskipamount]{0.2pt}}
+% weird spacing before twocol
+\newcommand{\spelllinespaced}{\spellline\vspace{0.5\medskipamount}}
+
+\newcommand{\spelleffect}{\parheadni{Effect}\xspace}
+\newcommand{\spellsuccess}{\parheadni{Success}\xspace}
+%\newcommand{\spellfailure}{\parheadni{Failure}\xspace}
+\newcommand{\spellnotes}{\spellline\par\noindent\textit{Note}:\xspace}
+\newcommand{\spellspecial}{\parheadni{Special}\xspace}
+\newcommand{\spellcheck}[1]{\parheadni{Check} #1\xspace}
+
+\DeclareDocumentCommand{\spellfailure}{o}
+{
+    \IfNoValueTF{#1}
+    {\parheadni{Failure}}
+    {\par\noindent \textbf{Failure} (#1):}\xspace
+}
