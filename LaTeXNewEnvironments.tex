@@ -65,21 +65,52 @@
 {\begin{enumerate*}\setcounter{enumi}{9}}
 {\end{enumerate*}}
 
-\newenvironment{spelleffect}
-{\parheadni{Effect}}
-{}
 \newenvironment{spellhealthy}
 {\parheadni{Healthy Effect}}
 {}
 \newenvironment{spellblood}
 {\parheadni{Bloodied Effect}}
 {}
-\newenvironment{spellnotes}
-{\par\noindent \textit{Note:}}
-{}
-\newenvironment{spellsuccess}
-{\parhead{Success}}
-{}
-\newenvironment{spellfailure}
-{\parhead{Failure}}
-{}
+
+\newenvironment{spelleffectindent}
+{\begin{addmargin}[1em]{0pt}\parhead{Effect}}
+{\end{addmargin}}
+\newenvironment{spellsuccessindent}
+{\begin{addmargin}[1em]{0pt}\parhead{Success}}
+{\end{addmargin}}
+
+\newenvironment{spelltargetindent}
+{\begin{addmargin}[1em]{0pt}}
+{\end{addmargin}}
+
+% with a star, don't include \spellline
+\DeclareDocumentEnvironment{spelltarget}{s m t{l} o}
+{\IfBooleanF{#1}{\spellline}
+    \IfNoValueTF{#4}
+    {\spelltgt{#2}}
+    {
+        \IfBooleanTF{#3}
+        {\spelltgt{#2}\parhead{Attack} #4}
+        {\spelltwocol{\spelltgt{#2}}{\spellattack{#4}}}
+    }
+    \begin{addmargin}[1em]{0pt}
+}
+{
+    \end{addmargin}
+}
+
+% with a star, don't include \spellline
+\DeclareDocumentEnvironment{spelltargets}{s m t{l} o}
+{\IfBooleanF{#1}{\spellline}
+    \IfNoValueTF{#4}
+    {\spelltgts{#2}}
+    {
+        \IfBooleanTF{#3}
+        {\spelltgts{#2}\parhead{Attack} #4}
+        {\spelltwocol{\spelltgts{#2}}{\spellattack{#4}}}
+    }
+    \begin{addmargin}[1em]{0pt}
+}
+{
+    \end{addmargin}
+}
