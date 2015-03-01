@@ -59,11 +59,12 @@ Spells that are not subject to spell resistance are not affected by \spell{ablat
 \spelldur{\durshort}
 \spellline
 \spelleffect Fog in the area, as \spell{solid fog}.
-\begin{spelltarget}*{Everything in the area}[Magic vs. Fortitude]
-    \spelltrigger{End of round}
-    \spellsuccess 4d6 acid damage.
-    \spellfailure As above, but half damage.
-\end{spelltarget}
+\begin{spelltrigger}{End of round}
+    \begin{spelltarget}*{Everything in the area}[Magic vs. Fortitude]
+        \spellsuccess 4d6 acid damage.
+        \spellfailure As above, but half damage.
+    \end{spelltarget}
+\end{spelltrigger}
 
 \spellsection{Agony}{5}
 \spelldesc{You inflict debilitating pain on your foe, crippling its ability to act.}
@@ -283,10 +284,11 @@ Spells that are not subject to spell resistance are not affected by \spell{ablat
 \spellsr{Yes (Fortitude)}
 \spellline
 \spelleffect The area is considered difficult terrain.
-\begin{spelltargets}*{All creatures in the area within 5 feet of the ground}l[Caster level \add casting attribute vs. Maneuver defense (grapple)]
-    \spelltrigger{End of round}
-    \spellsuccess The target is grappled and takes 1d8\plus4 bludgeoning damage. It remains grappled until it escape the tentacle. The tentacle's Maneuver defense is equal to 10 \add your caster level \add your casting attribute.
-\end{spelltargets}
+\begin{spelltrigger}{Start of action phase}
+    \begin{spelltargets}*{All creatures in the area within 5 feet of the ground}l[Caster level \add casting attribute vs. Maneuver defense (grapple)]
+        \spellsuccess The target is grappled and takes 1d8\plus4 bludgeoning damage. It remains grappled until it escape the tentacle. The tentacle's Maneuver defense is equal to 10 \add your caster level \add your casting attribute.
+    \end{spelltargets}
+\end{spelltrigger}
 \spellnotes The tentacles are immune to all forms of attack.
 
 \spellsection{Blade Barrier}{6}
@@ -298,11 +300,12 @@ Spells that are not subject to spell resistance are not affected by \spell{ablat
 \spellsr{Yes (Reflex)}
 \spellline
 \spelleffect You create a wall of blades made of force energy. The wall provides active cover (20\% miss chance) against attacks made through it. Attacks that miss in this way harmlessly strike the wall. The wall is considered difficult terrain.
-\begin{spelltargets}*{Creature in wall}[Magic vs. Reflex]
-    \spelltrigger{Creature passes through wall}
-    \spellsuccess 6d6 force damage \add d6 per four caster levels above 12th.
-    \spellfailure As above, but half damage.
-\end{spelltargets}
+\begin{spelltrigger}{Creature passes through wall}
+    \begin{spelltargets}*{Creature in wall}[Magic vs. Reflex]
+        \spellsuccess 6d6 force damage \add d6 per four caster levels above 12th.
+        \spellfailure As above, but half damage.
+    \end{spelltargets}
+\end{spelltrigger}
 
 \spellsection{Blasphemy}{7}
 \spelldesc{You speak an unholy utterance of great power, afflicting all those nearby who do not share your allegiance to evil.}
@@ -550,10 +553,11 @@ If the staff-treant is reduced to 0 or fewer hit points, it crumbles to powder a
 \spelleffect Fog in the area, as \spell{fog cloud}, except that the fog is mobile and poisonous.
 
 \par The fog moves away from you at 10 feet per round, rolling along the surface of the ground. Figure out the cloud's new area each round based on its new point of origin, which is 10 feet farther away from the point of origin where you cast the spell.
-\begin{spelltargets}*{Everything in the area}[Magic vs. Fortitude]
-    \spelltrigger{End of round}
-    \spellsuccess 1d4 Constitution damage.
-\end{spelltargets}
+\begin{spelltrigger}{End of round}
+    \begin{spelltargets}*{Everything in the area}[Magic vs. Fortitude]
+        \spellsuccess 1d4 Constitution damage.
+    \end{spelltargets}
+\end{spelltrigger}
 \spellnotes Holding one's breath doesn't help against the poison, but creatures immune to poison are unaffected.
 \par Because the vapors are heavier than air, they sink to the lowest level of the land, even pouring down den or sinkhole openings. This spell cannot penetrate liquids, nor can it be cast underwater.
 
@@ -1099,11 +1103,17 @@ Artifacts and deities are unaffected by mortal magic such as this.
 
 \spellsection{Disrupting Weapon}{4}
 \spellinfo{Necro/Trans (Imbuement, Positive)}{Divine}
-\spelltwocol{\spelltgt{One melee weapon}}{\spellrng{\rngclose}}
+\spellrng{\rngclose}
 \spelldur{\durshort}
-\spellattack{Magic vs. Will (object), Magic vs. Fortitude}
-\spelleffect This spell infuses a melee weapon with positive energy, making it deadly to undead. The first time the weapon strikes a \bloodied undead creature each round, you make a magic attack vs. Fortitude to destroy the struck creature utterly. Healthy undead creatures suffer no ill effect.
-\spellsr{Yes (Will)/Yes (Fortitude)}
+\spellsr{Yes (Fortitude)}
+\begin{spelltarget}{One melee weapon}
+    \spelleffect The target weapon becomes deadly to undead.
+    \begin{spelltrigger}{The target weapon strikes a bloodied undead creature for the first time in a round}
+        \begin{spelltarget}*{One bloodied undead creature}[Magic vs. Fortitude]
+            \spellsuccess The target creature is utterly destroyed.
+        \end{spelltarget}
+    \end{spelltrigger}
+\end{spelltarget}
 
 \spellsection{Divine Favor}{1}
 \spelldesc{You imbue yourself with skill in combat by calling upon the divine power of your patron.}
@@ -1427,11 +1437,12 @@ The light is too dim to have any special effect on undead or dark-dwelling creat
 \begin{spelltarget}{You}
     \spelleffect You gain cold damage reduction 20 \add 1 per caster level above 8th, and radiate light as a torch. In addition, creatures that attack you take damage.
 \end{spelltarget}
-\begin{spelltarget}*{Attacking creature}[Magic vs. Reflex]
-    \spelltrigger{Creature within \rngclose range attacks you with a melee weapon}
-    \spellsuccess 4d6 fire or cold damage \add d6 per four caster levels above 8th.
-    \spellfailure Half damage.
-\end{spelltarget}
+\begin{spelltrigger}{Creature within \rngclose range attacks you with a melee weapon}
+    \begin{spelltarget}*{Attacking creature}[Magic vs. Reflex]
+        \spellsuccess 4d6 fire or cold damage \add d6 per four caster levels above 8th.
+        \spellfailure Half damage.
+    \end{spelltarget}
+\end{spelltrigger}
 
 \spellnotes The damage reduction allows the subject to ignore the first 20 energy damage it takes each round of the appropriate type.
 \spellsr{Yes (Fortitude)}
@@ -2692,12 +2703,16 @@ Resist energy absorbs only damage. The subject could still suffer unfortunate si
 \spellinfo{Abjur/Illus (Figment, Shielding)}{Arcane}
 \spelltwocol{\spelltgt{One creature; see text}}{\spellrng{\rngclose; see text}}
 \spelldur{\durshort or until discharged}
-\spelleffect The subject is protected by a retributive shield that can be activated when the subject is attacked. Activating the triggered attack requires an immediate action from either you or the subject, and discharges the spell.
-\spellattacktarget{Magic vs. Reflex}{Attacking creature}
-\spelltrigger{Creature within \rngclose range of the subject attacks it with a melee weapon}
-\spellsuccess The target is \dazzled for 5 rounds. If it is \bloodied, it is also \blinded for 5 rounds.
-\spellfailure The target is dazzled for 5 rounds.
 \spellsr{Yes (Fortitude)}
+\begin{spelltarget}{One creature}
+    \spelleffect The target is protected by a retributive shield that can be activated when the subject is attacked. Activating the triggered attack requires an immediate action from either you or the subject, and discharges the spell.
+    \begin{spelltrigger}{Creature within \rngclose range of the target attacks it with a melee weapon}
+    \begin{spelltarget}*{Attacking creature}[Magic vs. Reflex]
+            \spellsuccess The target is \dazzled for 5 rounds. If it is \bloodied, it is also \blinded for 5 rounds.
+            \spellfailure The target is dazzled for 5 rounds.
+        \end{spelltarget}
+    \end{spelltrigger}
+\end{spelltarget}
 
 \spellsection{Retributive Shield}{4}
 \spellinfo{Abjur/Necro (Life, Shielding)}{Arcane}
