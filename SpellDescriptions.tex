@@ -1118,26 +1118,33 @@ Artifacts and deities are unaffected by mortal magic such as this.
 \spellsection{Divine Favor}{1}
 \spelldesc{You imbue yourself with skill in combat by calling upon the divine power of your patron.}
 \spellinfo{Trans (Augment)}{Divine, Strength, War}
-\spelltwocol{\spelltgt{You}}{\spellrng{\rngpers}}
 \spelldur{\durshort}
-\spelleffect You gain a \plus2 enhancement bonus on attack and weapon damage rolls. \spellbonusscalingdescription
+\begin{spelltarget}{You}
+    \spelleffect \plus2 enhancement bonus on attack and weapon damage rolls. \spellbonusscalingdescription
+\end{spelltarget}
 
 \spellsectioncomma{Divine Favor}{Greater}{4}
 \spelldesc{You imbue yourself with great strength and skill in combat by calling upon the divine power of your patron.}
 \spellinfo{Trans (Augment)}{Divine, Strength, War}
-\spelleffect This spell functions like \spell{divine favor}, except that you also gain a \plus2 enhancement bonus to Strength.
+\spelldur{\durshort}
+\begin{spelltarget}{You}
+    \spelleffect As \spell{divine favor}, except that you also gain a \plus2 enhancement bonus to Strength.
+\end{spelltarget}
 
 \spellsection{Dominate Monster}{8}
 \spellinfo{Ench (Compulsion) [Domination, Mind-Affecting]}{Ench}
-\spelltgt{One creature}
-\spelleffect This spell functions like \spell{dominate person}, except that the spell is not restricted by creature type.
+\spellrng{\rngmed}
+\spelldur{One day}
+\begin{spelltarget}{One creature}[Magic vs. Will]
+    \spellsuccess The target is dominated, as \spell{dominate person}, except that the effect does not depend on creature type.
+\end{spelltarget}
 
 \spellsection{Dominate Person}{7}
 \spellinfo{Ench (Compulsion) [Domination, Mind-Affecting]}{Ench}
-\spelltwocol{\spelltgt{One humanoid}}{\spellrng{\rngmed}}
+\spellrng{\rngmed}
 \spelldur{One day}
-\spellattack{Magic vs. Will}
-\spelleffect You can control the actions of any humanoid creature through a telepathic link that you establish with the subject's mind.
+\begin{spelltarget}{One humanoid creature}[Magic vs. Will]
+    \spellsuccess You can control the actions of the target through a telepathic link that you establish with the subject's mind.
 \par If you and the subject have a common language, you can generally force the subject to perform as you desire, within the limits of its abilities. If no common language exists, you can communicate only basic commands, such as ``Come here," ``Go there," ``Fight," and ``Stand still." If you concentrate on the spell, you know what the subject is experiencing, but you do not receive direct sensory input from it, nor can it communicate with you telepathically.
 \par Once you have given a dominated creature a command, it continues to attempt to carry out that command to the exclusion of all other activities except those necessary for day-to-day survival (such as sleeping, eating, and so forth). Because of this limited range of activity, a Sense Motive check against DC 15 (rather than DC 25) can determine that the subject's behavior is being influenced by an enchantment effect (see the Sense Motive skill description).
 It takes time for the link to be established. For the first hour after the spell is cast, you must concentrate on the spell (a standard action) to control the subject's actions. While you are not concentrating on the spell, the creature acts as if confused, as the \spell{confusion} spell, except that it never attacks you. If the subject would randomly attack you, it instead is forced to follow your commands. At the end of the hour, you must make a second Will attack. If you concentrate on the spell during this time, you gain a \plus4 bonus to the attack. If your attack succeeds, you dominate the creature fully for the remainder of the spell duration. Otherwise, the creature is freed.
@@ -1145,6 +1152,7 @@ It takes time for the link to be established. For the first hour after the spell
 \par By concentrating fully on the spell (a standard action), you can receive full sensory input as interpreted by the mind of the subject, though it still can't communicate with you. You can't actually see through the subject's eyes, so it's not as good as being there yourself, but you still get a good idea of what's going on.
 \par Subjects resist this control, and you must make a new attack to force the subject to take an action against its nature. Failure means it breaks free. This does not apply when a subject is merely ordered to perform an action it disagrees with -- the action must be directly opposed to the subject's beliefs. Ordering a paladin to murder an innocent would require a new attack, but ordering him to build a bridge that would allow an evil army to cross a river would not. If your command would obviously lead to the creature's death, your attack takes a \minus10 penalty. Once control is established, the range at which it can be exercised is unlimited, as long as you and the subject are on the same plane. You need not see the subject to control it.
 \par If you recast this spell on a subject you have dominated before it escapes your control, you can extend the duration of the spell indefinitely. You do not need to make a new attack when you renew your control in this fashion.
+\end{spelltarget}
 
 \pdfbookmark[2]{E}{SpellDescriptionsE}
 \begin{comment}
