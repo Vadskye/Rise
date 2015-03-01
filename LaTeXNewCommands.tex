@@ -152,8 +152,6 @@
 \newcommand{\spelltargetattack}[2]{\spelltabularcompressed \thead{Target:} #1 & \thead{Attack:} #2 \\\end{tabularx}}
 \newcommand{\spelltargetsattack}[2]{\spelltabularcompressed \thead{Targets:} #1 & \thead{Attack:} #2 \\\end{tabularx}}
 
-\newcommand{\spelltrigger}[1]{\parhead{Trigger} #1}
-\newcommand{\spelltriggers}[1]{\parhead{Triggers} #1}
 \newcommand{\spellfocus}[1]{\par\noindent \textit{Focus:} #1}
 \newcommand{\spellmat}[1]{\par\noindent \textit{Material Components:} #1}
 
@@ -243,7 +241,7 @@
 \newcommand{\firespellnotes}{Fire spells do not function underwater. They can ignite combustable materials, such as dry wood and cloth.}
 
 \newcommand{\spelltabular}{\par\noindent\begin{tabularx}{\columnwidth}{>{\lcol}X l}\hangindent=1em}
-\newcommand{\spelltabularcompressed}{\par\noindent\begin{tabularx}{\columnwidth}{@{}>{\lcol}X l}\hangindent=1em}
+\newcommand{\spelltabularcompressed}{\par\noindent\begin{tabularx}{\linewidth}{@{}>{\lcol}X l}\hangindent=1em}
 \newcommand{\spelltablecolumns}{>{\lcol}X l}
 
 \newcommand{\spelllevelschool}[2]{\spelllvl{#1} & #2 \\}
