@@ -1163,33 +1163,37 @@ It takes time for the link to be established. For the first hour after the spell
 \spellsection{Earth's Pull}{1}
 \spelldesc{You intensify the pull of gravity on your foe, causing it to feel much heavier and making its movements sluggish.}
 \spellinfo{Evoc (Control) [Earth]}{Earth, Nature}
-\spelltwocol{\spelltgt{One Large or smaller creature}}{\spellrng{\rngmed}}
+\spellrng{\rngmed}
 \spelldur{\durshort}
-\spelleffect The subject moves at half speed and takes a \minus2 penalty to physical defenses. If it is flying within 10 feet of the ground, the subject falls to the ground.
-\spellnotes If the subject gets farther than 10 feet from the ground, the spell's effect is broken. As a result, the spell cannot affect creatures flying high above the ground.
 \spellsr{Yes (Will)}
+\begin{spelltarget}{One Large or smaller creature}
+    \spelleffect The subject moves at half speed and takes a \minus2 penalty to physical defenses. If it is flying within 10 feet of the ground, the subject falls to the ground.
+\end{spelltarget}
+\spellnotes If the subject gets farther than 10 feet from the ground, the spell's effect is broken. As a result, the spell cannot affect creatures flying high above the ground.
 
 \spellsection{Earthen Blade}{2}
 \spellinfo{Trans (Alteration, Augment) [Earth]}{Earth, Nature}
 \spellrng{Touch}
 \spelldur{\durlong \dismissable}
-\spelleffect This spell creates a weapon from the ground. The weapon can be of any type you are proficient with. In addition, the weapon is magical, as the \spell{magic weapon} spell.
 \spellsr{Yes (Fortitude)}
+\spellline
+\spelleffect This spell creates a weapon from the ground. The weapon can be of any type you are proficient with. In addition, the weapon is magical, as the \spell{magic weapon} spell.
 
 \spellsection{Earth Glide}{5}
 \spellinfo{Trans (Imbuement) [Earth]}{Earth, Nature}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{Touch}}
+\spellrng{Touch}
 \spelldur{\durshort}
-\spelleffect The subject gains the earth glide ability, as an earth elemental. This allows it to glide through stone, dirt, or almost any other sort of earth except metal  as if it were air. The subject can walk or climb at any angle in the earth. However, the subject generally cannot breathe, speak, or hear while gliding. While gliding, a creature can remain partially within the earth, granting it cover.
-\spellnotes The subject's burrowing leaves behind no tunnel or hole, nor does it create any ripple or other signs of its presence.
 \spellsr{Yes (Fortitude)}
+\begin{spelltarget}{One creature}
+\spelleffect The subject gains the earth glide ability, as an earth elemental. This allows it to glide through stone, dirt, or almost any other sort of earth except metal  as if it were air. The subject can walk or climb at any angle in the earth. However, the subject generally cannot breathe, speak, or hear while gliding. While gliding, a creature can remain partially within the earth, granting it cover.
+\end{spelltarget}
+\spellnotes The subject's burrowing leaves behind no tunnel or hole, nor does it create any ripple or other signs of its presence.
 
 \spellsection{Earthquake}{8}
 \spelldesc{An intense but highly localized tremor rips the ground. The shock knocks creatures down, collapses structures, opens cracks in the ground, and more.}
 \spellinfo{Evoc (Control) [Earth]}{Destruction, Divine, Earth, Nature}
 \spelltwocol{\spellzone{\arealarge radius}}{\spellrng{\rngfar}}
 \spelldur{1 round}
-\spellattack{Magic vs. Reflex}
 \spelleffect This spell has various effects, depending on the terrain. Regardless of the terrain, creatures on the ground can't move and take a \minus10 penalty to physical attacks. A spellcaster on the ground who attempts to cast a spell must make a Concentration check against a DC equal to (your attack result \add double the level of the spell being cast) or lose the spell. The specific effect of an earthquake spell depends on the nature of the terrain where it is cast.
 \par \subspell{Cave, Cavern, or Tunnel} The spell collapses the roof, dealing 8d8 bludgeoning damage \add d8 per four caster levels above 16th to any creature caught under the cave-in. If your attack is successful against a creature, it is pinned beneath the rubble, while a failed attack deals half damage. An earthquake cast on the roof of a very large cavern could also endanger those outside the actual area but below the falling debris.
 \par \subspell{Cliffs} Earthquake causes a cliff to crumble, creating a landslide that travels horizontally as far as it fell vertically. Any creature in the path takes 8d6 bludgeoning damage \add d6 per four caster levels above 16th. If your attack is successful against a creature, it is pinned beneath the rubble, while a failed attack deals half damage.
