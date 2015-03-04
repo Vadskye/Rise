@@ -25,6 +25,7 @@ them as a group. Others belong to particular categories. The categories are give
     \item Combat maneuver feats are combat feats which grant a character particular talent with specific maneuvers.
     \item Combat strike feats allow a character to impose special effects when they strike a foe.
     \item Combat style feats change the way a character fights. A character can only use one style at a time.
+    \item Bane feats provide characters with bonuses against specific kinds of foes. You can only gain the benefits of a single Bane feat against a particular creature. If more than such feat applies, choose which one to gain the benefits from.
 \end{itemize}
 
 \subsection{Bloodline Feats}
@@ -127,6 +128,10 @@ Strike feats grant a character the ability to make an unusually potent attack wi
 \featref{Toughness} & \x &  \plus3 hit points \plus1 per level above 3 & \featpref{Toughness} \\
 
 \midrule
+\thead{Bane Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
+\featref{Assault the Weak Minded} & 2nd level Enchantment spell & Gain \plus1 against bewildered foes & \featpref{Assault the Weak Minded} \\
+
+\midrule
 \thead{Bloodline Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
 \featref{Celestial Heritage} & Nonevil alignment & Smite evil 1/day & \featpref{Celestial Heritage} \\
 \tind \featref{Celestial Body} & Nonevil alignment, Celestial Heritage & Gain physical damage reduction & \featpref{Celestial Body} \\
@@ -170,7 +175,6 @@ Strike feats grant a character the ability to make an unusually potent attack wi
 
 \midrule
 \thead{Magic Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
-\featref{Assault the Weak Minded} & 3rd level Enchantment spell & Gain \plus2 bonus to attack bewildered foes \\
 \featref{Bardic Spellpower} & Arcane spellcasting ability & Fighter and rogue levels improve some spells & \featpref{Bardic Spellpower} \\
 \featref{Battlecaster} & Proficiency with light armor & Reduce arcane spell failure by 10\% & \featpref{Battlecaster} \\
 \featref{Combat Casting} & \x &  \plus2 bonus to Concentration checks to cast spells, reroll 1/day & \featpref{Combat Casting} \\
@@ -436,9 +440,10 @@ Choose one category of armor: light, medium, heavy, or shields.
 \parhead{Normal} See Armor Proficiency (light).
 \parhead{Special} Fighters, barbarians, paladins, clerics, druids, and spellwarped automatically have Armor Proficiency (medium) as a bonus feat. They need not select it.
 
-\feat{Assault the Weak Minded}{Magic}
-\featpre Ability to cast an Enchantment spell of 3rd level or higher.
-\featben You gain a \plus2 bonus to attacks against \bewildered creatures.
+\feat{Assault the Weak Minded}{Bane, Magic}
+\featpre Ability to cast an Enchantment spell of 2nd level or higher.
+\featben You gain a \plus1 bonus to attacks and defenses against \bewildered creatures.
+\featspecial You can only apply the benefits of a single Bane feat against a particular foe.
 
 \feat{Bardic Spellpower}{Magic}
 \featpre Ability to cast arcane spells.
