@@ -59,11 +59,12 @@ Spells that are not subject to spell resistance are not affected by \spell{ablat
 \spelldur{\durshort}
 \spellline
 \spelleffect Fog in the area, as \spell{solid fog}.
-\begin{spelltarget}*{Everything in the area}[Magic vs. Fortitude]
-    \spelltrigger{End of round}
-    \spellsuccess 4d6 acid damage.
-    \spellfailure As above, but half damage.
-\end{spelltarget}
+\begin{spelltrigger}{End of every round}
+    \begin{spelltarget}*{Everything in the area}[Magic vs. Fortitude]
+        \spellsuccess 4d6 acid damage.
+        \spellfailure As above, but half damage.
+    \end{spelltarget}
+\end{spelltrigger}
 
 \spellsection{Agony}{5}
 \spelldesc{You inflict debilitating pain on your foe, crippling its ability to act.}
@@ -285,10 +286,11 @@ Spells that are not subject to spell resistance are not affected by \spell{ablat
 \spellsr{Yes (Fortitude)}
 \spellline
 \spelleffect The area is considered difficult terrain.
-\begin{spelltargets}*{All creatures in the area within 5 feet of the ground}l[Caster level \add casting attribute vs. Maneuver defense (grapple)]
-    \spelltrigger{End of round}
-    \spellsuccess The target is grappled and takes 1d8\plus4 bludgeoning damage. It remains grappled until it escape the tentacle. The tentacle's Maneuver defense is equal to 10 \add your caster level \add your casting attribute.
-\end{spelltargets}
+\begin{spelltrigger}{Start of every action phase}
+    \begin{spelltargets}*{All creatures in the area within 5 feet of the ground}l[Caster level \add casting attribute vs. Maneuver defense (grapple)]
+        \spellsuccess The target is grappled and takes 1d8\plus4 bludgeoning damage. It remains grappled until it escape the tentacle. The tentacle's Maneuver defense is equal to 10 \add your caster level \add your casting attribute.
+    \end{spelltargets}
+\end{spelltrigger}
 \spellnotes The tentacles are immune to all forms of attack.
 
 \spellsection{Blade Barrier}{6}
@@ -300,11 +302,12 @@ Spells that are not subject to spell resistance are not affected by \spell{ablat
 \spellsr{Yes (Reflex)}
 \spellline
 \spelleffect You create a wall of blades made of force energy. The wall provides active cover (20\% miss chance) against attacks made through it. Attacks that miss in this way harmlessly strike the wall. The wall is considered difficult terrain.
-\begin{spelltargets}*{Creature in wall}[Magic vs. Reflex]
-    \spelltrigger{Creature passes through wall}
-    \spellsuccess 6d6 force damage \add d6 per four caster levels above 12th.
-    \spellfailure As above, but half damage.
-\end{spelltargets}
+\begin{spelltrigger}{Creature passes through wall}
+    \begin{spelltargets}*{Creature in wall}[Magic vs. Reflex]
+        \spellsuccess 6d6 force damage \add d6 per four caster levels above 12th.
+        \spellfailure As above, but half damage.
+    \end{spelltargets}
+\end{spelltrigger}
 
 \spellsection{Blasphemy}{7}
 \spelldesc{You speak an unholy utterance of great power, afflicting all those nearby who do not share your allegiance to evil.}
@@ -552,10 +555,11 @@ If the staff-treant is reduced to 0 or fewer hit points, it crumbles to powder a
 \spelleffect Fog in the area, as \spell{fog cloud}, except that the fog is mobile and poisonous.
 
 \par The fog moves away from you at 10 feet per round, rolling along the surface of the ground. Figure out the cloud's new area each round based on its new point of origin, which is 10 feet farther away from the point of origin where you cast the spell.
-\begin{spelltargets}*{Everything in the area}[Magic vs. Fortitude]
-    \spelltrigger{End of round}
-    \spellsuccess 1d4 Constitution damage.
-\end{spelltargets}
+\begin{spelltrigger}{End of every round}
+    \begin{spelltargets}*{Everything in the area}[Magic vs. Fortitude]
+        \spellsuccess 1d4 Constitution damage.
+    \end{spelltargets}
+\end{spelltrigger}
 \spellnotes Holding one's breath doesn't help against the poison, but creatures immune to poison are unaffected.
 \par Because the vapors are heavier than air, they sink to the lowest level of the land, even pouring down den or sinkhole openings. This spell cannot penetrate liquids, nor can it be cast underwater.
 
@@ -1108,42 +1112,56 @@ Artifacts and deities are unaffected by mortal magic such as this.
 
 \spellsection{Disrupting Weapon}{4}
 \spellinfo{Necro/Trans (Imbuement, Positive)}{Divine}
-\spelltwocol{\spelltgt{One melee weapon}}{\spellrng{\rngclose}}
+\spellrng{\rngclose}
 \spelldur{\durshort}
-\spellattack{Magic vs. Will (object), Magic vs. Fortitude}
-\spelleffect This spell infuses a melee weapon with positive energy, making it deadly to undead. The first time the weapon strikes a \bloodied undead creature each round, you make a magic attack vs. Fortitude to destroy the struck creature utterly. Healthy undead creatures suffer no ill effect.
-\spellsr{Yes (Will)/Yes (Fortitude)}
+\spellsr{Yes (Fortitude)}
+\begin{spelltarget}{One melee weapon}
+    \spelleffect The target weapon becomes deadly to undead.
+    \begin{spelltrigger}{The target weapon strikes a bloodied undead creature for the first time in a round}
+        \begin{spelltarget}*{One bloodied undead creature}[Magic vs. Fortitude]
+            \spellsuccess The target creature is utterly destroyed.
+        \end{spelltarget}
+    \end{spelltrigger}
+\end{spelltarget}
 
 \spellsection{Divine Favor}{1}
 \spelldesc{You imbue yourself with skill in combat by calling upon the divine power of your patron.}
 \spellinfo{Trans (Augment)}{Divine, Strength, War}
-\spelltwocol{\spelltgt{You}}{\spellrng{\rngpers}}
 \spelldur{\durshort}
-\spelleffect You gain a \plus2 enhancement bonus on attack and weapon damage rolls. \spellbonusscalingdescription
+\begin{spelltarget}{You}
+    \spelleffect \plus2 enhancement bonus on attack and weapon damage rolls. \spellbonusscalingdescription
+\end{spelltarget}
 
 \spellsectioncomma{Divine Favor}{Greater}{4}
 \spelldesc{You imbue yourself with great strength and skill in combat by calling upon the divine power of your patron.}
 \spellinfo{Trans (Augment)}{Divine, Strength, War}
-\spelleffect This spell functions like \spell{divine favor}, except that you also gain a \plus2 enhancement bonus to Strength.
+\spelldur{\durshort}
+\begin{spelltarget}{You}
+    \spelleffect As \spell{divine favor}, except that you also gain a \plus2 enhancement bonus to Strength.
+\end{spelltarget}
 
 \spellsection{Dominate Monster}{8}
 \spellinfo{Ench (Compulsion) [Domination, Mind-Affecting]}{Ench}
-\spelltgt{One creature}
-\spelleffect This spell functions like \spell{dominate person}, except that the spell is not restricted by creature type.
+\spellrng{\rngmed}
+\spelldur{One day}
+\begin{spelltarget}{One creature}[Magic vs. Will]
+    \spellsuccess The target is dominated, as \spell{dominate person}, except that the effect does not depend on creature type.
+\end{spelltarget}
 
 \spellsection{Dominate Person}{7}
 \spellinfo{Ench (Compulsion) [Domination, Mind-Affecting]}{Ench}
-\spelltwocol{\spelltgt{One humanoid}}{\spellrng{\rngmed}}
+\spellrng{\rngmed}
 \spelldur{One day}
-\spellattack{Magic vs. Will}
-\spelleffect You can control the actions of any humanoid creature through a telepathic link that you establish with the subject's mind.
-\par If you and the subject have a common language, you can generally force the subject to perform as you desire, within the limits of its abilities. If no common language exists, you can communicate only basic commands, such as ``Come here," ``Go there," ``Fight," and ``Stand still." If you concentrate on the spell, you know what the subject is experiencing, but you do not receive direct sensory input from it, nor can it communicate with you telepathically.
-\par Once you have given a dominated creature a command, it continues to attempt to carry out that command to the exclusion of all other activities except those necessary for day-to-day survival (such as sleeping, eating, and so forth). Because of this limited range of activity, a Sense Motive check against DC 15 (rather than DC 25) can determine that the subject's behavior is being influenced by an enchantment effect (see the Sense Motive skill description).
-It takes time for the link to be established. For the first hour after the spell is cast, you must concentrate on the spell (a standard action) to control the subject's actions. While you are not concentrating on the spell, the creature acts as if confused, as the \spell{confusion} spell, except that it never attacks you. If the subject would randomly attack you, it instead is forced to follow your commands. At the end of the hour, you must make a second Will attack. If you concentrate on the spell during this time, you gain a \plus4 bonus to the attack. If your attack succeeds, you dominate the creature fully for the remainder of the spell duration. Otherwise, the creature is freed.
-\par After the first hour, changing your instructions or giving a dominated creature a new command is the equivalent of redirecting a spell, so it is a move action.
-\par By concentrating fully on the spell (a standard action), you can receive full sensory input as interpreted by the mind of the subject, though it still can't communicate with you. You can't actually see through the subject's eyes, so it's not as good as being there yourself, but you still get a good idea of what's going on.
-\par Subjects resist this control, and you must make a new attack to force the subject to take an action against its nature. Failure means it breaks free. This does not apply when a subject is merely ordered to perform an action it disagrees with -- the action must be directly opposed to the subject's beliefs. Ordering a paladin to murder an innocent would require a new attack, but ordering him to build a bridge that would allow an evil army to cross a river would not. If your command would obviously lead to the creature's death, your attack takes a \minus10 penalty. Once control is established, the range at which it can be exercised is unlimited, as long as you and the subject are on the same plane. You need not see the subject to control it.
-\par If you recast this spell on a subject you have dominated before it escapes your control, you can extend the duration of the spell indefinitely. You do not need to make a new attack when you renew your control in this fashion.
+\begin{spelltarget}{One humanoid creature}[Magic vs. Will]
+    \spellsuccess You can control the actions of the target through a telepathic link that you establish with the subject's mind.
+    \par If you and the subject have a common language, you can generally force the subject to perform as you desire, within the limits of its abilities. If no common language exists, you can communicate only basic commands, such as ``Come here," ``Go there," ``Fight," and ``Stand still." If you concentrate on the spell, you know what the subject is experiencing, but you do not receive direct sensory input from it, nor can it communicate with you telepathically.
+    \par Once you have given a dominated creature a command, it continues to attempt to carry out that command to the exclusion of all other activities except those necessary for day-to-day survival (such as sleeping, eating, and so forth). Because of this limited range of activity, a Sense Motive check against DC 15 (rather than DC 25) can determine that the subject's behavior is being influenced by an enchantment effect (see the Sense Motive skill description).
+    It takes time for the link to be established. For the first hour after the spell is cast, you must concentrate on the spell (a standard action) to control the subject's actions. While you are not concentrating on the spell, the creature acts as if confused, as the \spell{confusion} spell, except that it never attacks you. If the subject would randomly attack you, it instead is forced to follow your commands. At the end of the hour, you must make a second Will attack. If you concentrate on the spell during this time, you gain a \plus4 bonus to the attack. If your attack succeeds, you dominate the creature fully for the remainder of the spell duration. Otherwise, the creature is freed.
+    \par After the first hour, changing your instructions or giving a dominated creature a new command is the equivalent of redirecting a spell, so it is a move action.
+    \par By concentrating fully on the spell (a standard action), you can receive full sensory input as interpreted by the mind of the subject, though it still can't communicate with you. You can't actually see through the subject's eyes, so it's not as good as being there yourself, but you still get a good idea of what's going on.
+    \par Subjects resist this control, and you must make a new attack to force the subject to take an action against its nature. Failure means it breaks free. This does not apply when a subject is merely ordered to perform an action it disagrees with -- the action must be directly opposed to the subject's beliefs. Ordering a paladin to murder an innocent would require a new attack, but ordering him to build a bridge that would allow an evil army to cross a river would not. If your command would obviously lead to the creature's death, your attack takes a \minus10 penalty. Once control is established, the range at which it can be exercised is unlimited, as long as you and the subject are on the same plane. You need not see the subject to control it.
+    \par If you recast this spell on a subject you have dominated before it escapes your control, you can extend the duration of the spell indefinitely. You do not need to make a new attack when you renew your control in this fashion.
+\end{spelltarget}
 
 \pdfbookmark[2]{E}{SpellDescriptionsE}
 \begin{comment}
@@ -1154,70 +1172,86 @@ It takes time for the link to be established. For the first hour after the spell
 \spellsection{Earth's Pull}{1}
 \spelldesc{You intensify the pull of gravity on your foe, causing it to feel much heavier and making its movements sluggish.}
 \spellinfo{Evoc (Control) [Earth]}{Earth, Nature}
-\spelltwocol{\spelltgt{One Large or smaller creature}}{\spellrng{\rngmed}}
+\spellrng{\rngmed}
 \spelldur{\durshort}
-\spelleffect The subject moves at half speed and takes a \minus2 penalty to physical defenses. If it is flying within 10 feet of the ground, the subject falls to the ground.
-\spellnotes If the subject gets farther than 10 feet from the ground, the spell's effect is broken. As a result, the spell cannot affect creatures flying high above the ground.
 \spellsr{Yes (Will)}
+\begin{spelltarget}{One Large or smaller creature}
+    \spelleffect The subject moves at half speed and takes a \minus2 penalty to physical defenses. If it is flying within 10 feet of the ground, the subject falls to the ground.
+\end{spelltarget}
+\spellnotes If the subject gets farther than 10 feet from the ground, the spell's effect is broken. As a result, the spell cannot affect creatures flying high above the ground.
 
 \spellsection{Earthen Blade}{2}
 \spellinfo{Trans (Alteration, Augment) [Earth]}{Earth, Nature}
 \spellrng{Touch}
 \spelldur{\durlong \dismissable}
-\spelleffect This spell creates a weapon from the ground. The weapon can be of any type you are proficient with. In addition, the weapon is magical, as the \spell{magic weapon} spell.
 \spellsr{Yes (Fortitude)}
+\spellline
+\spelleffect This spell creates a weapon from the ground. The weapon can be of any type you are proficient with. In addition, the weapon is magical, as the \spell{magic weapon} spell.
 
 \spellsection{Earth Glide}{5}
 \spellinfo{Trans (Imbuement) [Earth]}{Earth, Nature}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{Touch}}
+\spellrng{Touch}
 \spelldur{\durshort}
-\spelleffect The subject gains the earth glide ability, as an earth elemental. This allows it to glide through stone, dirt, or almost any other sort of earth except metal  as if it were air. The subject can walk or climb at any angle in the earth. However, the subject generally cannot breathe, speak, or hear while gliding. While gliding, a creature can remain partially within the earth, granting it cover.
-\spellnotes The subject's burrowing leaves behind no tunnel or hole, nor does it create any ripple or other signs of its presence.
 \spellsr{Yes (Fortitude)}
+\begin{spelltarget}{One creature}
+    \spelleffect The subject gains the earth glide ability, as an earth elemental. This allows it to glide through stone, dirt, or almost any other sort of earth except metal  as if it were air. The subject can walk or climb at any angle in the earth. However, the subject generally cannot breathe, speak, or hear while gliding. While gliding, a creature can remain partially within the earth, granting it cover.
+\end{spelltarget}
+\spellnotes The subject's burrowing leaves behind no tunnel or hole, nor does it create any ripple or other signs of its presence.
 
 \spellsection{Earthquake}{8}
-\spelldesc{An intense but highly localized tremor rips the ground. The shock knocks creatures down, collapses structures, opens cracks in the ground, and more.}
+\spelldesc{An intense but highly localized tremor shakes the ground. The shock knocks creatures down and makes fighting or escaping difficult. Eventually, the ground swallows those foolish enough to remain.}
 \spellinfo{Evoc (Control) [Earth]}{Destruction, Divine, Earth, Nature}
-\spelltwocol{\spellzone{\arealarge radius}}{\spellrng{\rngfar}}
-\spelldur{1 round}
-\spellattack{Magic vs. Reflex}
-\spelleffect This spell has various effects, depending on the terrain. Regardless of the terrain, creatures on the ground can't move and take a \minus10 penalty to physical attacks. A spellcaster on the ground who attempts to cast a spell must make a Concentration check against a DC equal to (your attack result \add double the level of the spell being cast) or lose the spell. The specific effect of an earthquake spell depends on the nature of the terrain where it is cast.
-\par \subspell{Cave, Cavern, or Tunnel} The spell collapses the roof, dealing 8d8 bludgeoning damage \add d8 per four caster levels above 16th to any creature caught under the cave-in. If your attack is successful against a creature, it is pinned beneath the rubble, while a failed attack deals half damage. An earthquake cast on the roof of a very large cavern could also endanger those outside the actual area but below the falling debris.
-\par \subspell{Cliffs} Earthquake causes a cliff to crumble, creating a landslide that travels horizontally as far as it fell vertically. Any creature in the path takes 8d6 bludgeoning damage \add d6 per four caster levels above 16th. If your attack is successful against a creature, it is pinned beneath the rubble, while a failed attack deals half damage.
-\par \subspell{Open Ground} If your attack is successful against a creature, it falls prone. In addition, fissures open in the earth, and every creature on the ground has a 25\% chance to be above one. You make a magic attack vs. Reflex against each creature threatened by a fissure. A successful attack causes a creature to fall into the fissure. At the end of the spell, all fissures grind shut, dealing 8d10 bludgeoning damage \add d10 per four caster levels above 16th to any creatures trapped in them and ejecting their bodies (dead or alive).
-\par \subspell{Structure} Any structure standing on open ground takes 10 damage per caster level, enough to collapse a typical wooden or masonry building, but not a structure built of stone or reinforced masonry. Hardness does not reduce this damage, nor is it halved as damage dealt to objects normally is. Any creature caught inside a collapsing structure takes 8d6 bludgeoning damage \add d6 per four caster levels above 16th. If your attack is successful against a creature, it is pinned beneath the rubble, while a failed attack deals half damage.
-\par \subspell{River, Lake, or Marsh} Fissures open underneath the water, draining away the water from that area and forming muddy ground. Soggy marsh or swampland becomes quicksand for the duration of the spell, sucking down creatures and structures.  If your attack is successful against a creature, it sinks ten feet beneath the surface, buried in the mud and quicksand. A DC 25 Climb or Swim check is required to escape. At the end of the spell, the rest of the body of water rushes in to replace the drained water, possibly drowning those caught in the mud.
-\spellnotes A creature pinned beneath rubble is treated as being pinned. Each round, it can attempt to escape the pin as a standard action. Escaping requires a DC 20 Escape Artist check or grapple attack. As long as it stays pinned, it takes 1d6 nonlethal damage per minute. If a pinned creature falls unconscious, it takes 1d6 lethal damage each minute until it is freed or dies.
+\spelltwocol{\spellzone{\arealarge radius}}{\spellrng{\rngmed}}
+\spelldur{5 rounds}
+\spellline
+\spelleffect The area is difficult terrain. Creatures in the area take a \minus2 penalty to physical attacks, defenses, and checks. Casting a spell in the area requires a Concentration check against a DC equal to 10 \add your caster level \add double the level of the spell being cast.
+\begin{spelltrigger}{End of every round, except the last round}
+    \begin{spelltarget}*{All creatures in the area}[Magic vs. Reflex]
+        \spellsuccess The target is knocked prone.
+    \end{spelltarget}
+    \begin{spelltarget}*{All buildings and structures in the area}
+        \spelleffect 8d8 bludgeoning damage \add d8 per four caster levels above 16th.
+    \end{spelltarget}
+\end{spelltrigger}
+\begin{spelltrigger}{End of the last round}
+    \begin{spelltarget}*{All creatures in the area}
+        \spelleffect 8d6 bludgeoning damage \add d6 per four caster levels above 16th. In addition, the target is grappled by the ground until it escapes. To escape, it must beat a Maneuver defense equal to 10 \add your caster level \add your casting attribute.
+    \end{spelltarget}
+\end{spelltrigger}
+\spellnotes In terrain with unusual ground, such as rivers or swamps, this spell may have different effects.
 
 \spellsection{Earthspike}{3}
 \spelldesc{You create a spike from the ground that impales your foe.} 
 \spellinfo{Trans (Animation) [Earth]}{Earth, Nature}
-\spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngmed}}
-\spelldmg{6d8 piercing damage \add d8 per two caster levels above 6th}
-\spellattack{Special vs. AD and Maneuver Defense}
-\spelleffect If the target is within 10 feet of natural earth or stone, you make a physical attack using your caster level \add your casting attribute as your attack bonus. If you hit, the target takes damage. If your attack also beats its Maneuver Class, it is immobilized for 5 rounds, preventing it from moving from its space.
-
-An immobilized creature can break free by destroying the spike. The spike's physical defenses are all 10, and it has 2 hit points per caster level.
+\spellrng{\rngmed}
 \spellsr{Yes (Fort)}
+\begin{spelltarget}{One creature or object within 10 feet of natural earth or stone}l[Caster level \add casting attribute vs. Armor defense and Maneuver defense]
+    \spellsuccess[Armor defense] 6d8 piercing damage \add d8 per two caster levels above 6th.
+    \spellsuccess[Armor defense and Maneuver defense] The target is \immobilized by a spike from the ground for 5 rounds. It can break free by destroying the spike. The spike's physical defenses are all 10, and it has 2 hit points per caster level.
+\end{spelltarget}
 
 \spellsectioncomma{Earthspike}{Mass}{6}
 \spellinfo{Trans (Animation) [Earth]}{Earth, Nature}
-\spelltwocol{\spelllimit{\areasmall radius}}{\spellrng{\rngmed}}
-\spelltgts{Enemies or objects in the area}
-\spelldmg{6d8 piercing damage \add d8 per four caster levels above 12th}
-\spelleffect This spell functions like \spell{earthspike}, except that it affects multiple targets. Each immobilized creature must destroy a separate spike to break free. 
-\spellnotes This spell cannot attack more than one target within a single 5-ft. square.
+\spellrng{\rngmed}
+\spelllimit{\areasmall radius}
+\begin{spelltargets}{Everything in the area within 10 feet of natural earth or stone}l[Caster level \add casting attribute vs. Armor defense and Maneuver defense]
+    \spellsuccess The target is damaged and possibly immobilized, as \spell{earthspike}, except that it takes 6d8 piercing damage \add d8 per four caster levels above 12th.
+\end{spelltargets}
+\spellnotes This spell cannot attack more than one target within a single 5-ft. square. Each immobilized creature must destroy a separate spike to break free.
 
 \spellsection{Edict}{6}
 \spellinfo{Abjur/Div (Communication, Interdiction)}{Abjur, Law}
 \spellemanation{\arealarge radius centered on you}
 \spelldur{\durshort}
-\spelldmg{6d6 damage \add 1d6 per four caster levels above 12th}
-\spelleffect You loudly declare a single, specific rule which which all creatures must obey, such as ``Do not use ranged weapons'' or ``Do not lie''. If the rule is too complicated, the spell fails. The spell grants all creatures that enter the area an understanding of the rule, even if they were unable to understand the rule as originally stated.
-
-Once the rule is established, any creature in the area who breaks the rule takes damage. You know whenever a creature in the area breaks the rule, but you do not know which creature. If you break the rule, you take damage and the spell ends.
-\spellnotes Mindless creatures are given no special insight into the rule.
 \spellsr{Yes (Will)}
+\spellline
+\spelleffect You loudly declare a single, specific rule which which all creatures must obey, such as ``Do not use ranged weapons'' or ``Do not lie''. If the rule is too complicated, the spell fails. The spell grants all creatures that enter the area an understanding of the rule, even if they were unable to understand the rule as originally stated. If you break the rule, the spell ends -- after you suffer the consequences.
+\begin{spelltrigger}{A creature breaks the rule}
+    \begin{spelltarget}*{The creature breaking the rule}
+        \spelleffect 6d6 damage \add 1d6 per four caster levels above 12th. You know a creature broke the rule, but not which creature.
+    \end{spelltarget}
+\end{spelltrigger}
+\spellnotes Mindless creatures are given no special insight into the rule.
 
 \spellsection{Elemental Swarm}{9}
 \spellinfo{Conj (Summoning) [see text]}{Air, Earth, Fire, Nature, Water}
@@ -1436,11 +1470,12 @@ The light is too dim to have any special effect on undead or dark-dwelling creat
 \begin{spelltarget}{You}
     \spelleffect You gain cold damage reduction 20 \add 1 per caster level above 8th, and radiate light as a torch. In addition, creatures that attack you take damage.
 \end{spelltarget}
-\begin{spelltarget}*{Attacking creature}[Magic vs. Reflex]
-    \spelltrigger{Creature within \rngclose range attacks you with a melee weapon}
-    \spellsuccess 4d6 fire or cold damage \add d6 per four caster levels above 8th.
-    \spellfailure Half damage.
-\end{spelltarget}
+\begin{spelltrigger}{Creature within \rngclose range attacks you with a melee weapon}
+    \begin{spelltarget}*{Attacking creature}[Magic vs. Reflex]
+        \spellsuccess 4d6 fire or cold damage \add d6 per four caster levels above 8th.
+        \spellfailure Half damage.
+    \end{spelltarget}
+\end{spelltrigger}
 
 \spellnotes The damage reduction allows the subject to ignore the first 20 energy damage it takes each round of the appropriate type.
 \spellsr{Yes (Fortitude)}
@@ -2701,12 +2736,16 @@ Resist energy absorbs only damage. The subject could still suffer unfortunate si
 \spellinfo{Abjur/Illus (Figment, Shielding)}{Arcane}
 \spelltwocol{\spelltgt{One creature; see text}}{\spellrng{\rngclose; see text}}
 \spelldur{\durshort or until discharged}
-\spelleffect The subject is protected by a retributive shield that can be activated when the subject is attacked. Activating the triggered attack requires an immediate action from either you or the subject, and discharges the spell.
-\spellattacktarget{Magic vs. Reflex}{Attacking creature}
-\spelltrigger{Creature within \rngclose range of the subject attacks it with a melee weapon}
-\spellsuccess The target is \dazzled for 5 rounds. If it is \bloodied, it is also \blinded for 5 rounds.
-\spellfailure The target is dazzled for 5 rounds.
 \spellsr{Yes (Fortitude)}
+\begin{spelltarget}{One creature}
+    \spelleffect The target is protected by a retributive shield that can be activated when the subject is attacked. Activating the triggered attack requires an immediate action from either you or the subject, and discharges the spell.
+    \begin{spelltrigger}{Creature within \rngclose range of the target attacks it with a melee weapon}
+        \begin{spelltarget}*{Attacking creature}[Magic vs. Reflex]
+            \spellsuccess The target is \dazzled for 5 rounds. If it is \bloodied, it is also \blinded for 5 rounds.
+            \spellfailure The target is dazzled for 5 rounds.
+        \end{spelltarget}
+    \end{spelltrigger}
+\end{spelltarget}
 
 \spellsection{Retributive Shield}{4}
 \spellinfo{Abjur/Necro (Life, Shielding)}{Arcane}
