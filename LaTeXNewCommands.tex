@@ -34,8 +34,13 @@
 \newcommand{\cflt}[4]{\par \textbf{#2 -- #3 (#4):}\label{#1:#3}}    %class feature with level and extraordinary/supernatural type
 \newcommand{\subcf}[1]{\par \emph{#1}:}    %Italicize sub-class-feature headers
 \newcommand{\subsk}[1]{\par \emph{#1}:}    %Italicize sub-skill headers
-\newcommand{\parhead}[1]{\par \textbf{#1}:}    %Bold the first word of sectional paragraphs
-\newcommand{\parheadni}[1]{\par\noindent \textbf{#1}:}    %Bold the first word of sectional paragraphs, without indentation
+
+\DeclareDocumentCommand{\parhead}{s m o}
+{\par \IfBooleanT{#1}{\noindent}%
+    \IfNoValueTF{#3}
+    {\textbf{#2}:}
+    {\textbf{#2} (#3):}\xspace
+}
 \newcommand{\subparhead}[1]{\par \emph{#1}:}
 \newcommand{\itemhead}[1]{\item \textbf{#1}}
 \newcommand{\thead}[1]{\textbf{#1}}    %Bold the header of tables
@@ -141,9 +146,9 @@
 \newcommand{\wilditemplus}{\addtocounter{enumi}{3} \item}
 
 \newcommand{\spelldesc}[1]{\par \textit{#1}}
-\newcommand{\spelldmg}[1]{\parheadni{Damage} #1}
-\newcommand{\spellheal}[1]{\parheadni{Healing} #1}
-\newcommand{\spellattack}[1]{\parheadni{Attack} #1}
+\newcommand{\spelldmg}[1]{\parhead*{Damage} #1}
+\newcommand{\spellheal}[1]{\parhead*{Healing} #1}
+\newcommand{\spellattack}[1]{\parhead*{Attack} #1}
 \newcommand{\spellattacktarget}[2]{\spelltabularcompressed \thead{Attack:} #1 & \thead{Target:} #2 \\\end{tabularx}}
 \newcommand{\spellattacktargets}[2]{\spelltabularcompressed \thead{Attack:} #1 & \thead{Targets:} #2 \\\end{tabularx}}
 \newcommand{\spellattackseparatetarget}[1]{\parhead{Target} #1}
@@ -159,25 +164,25 @@
 \newcommand{\spellinfo}[2]{\spelltwocol{#1}{\thead{Lists:} #2}}
 
 \newcommand{\spellschool}[1]{#1}
-\newcommand{\spelllists}[1]{\parheadni{Lists} #1}
-\newcommand{\spellcmp}[1]{\parheadni{Components} #1}
-\newcommand{\spelltime}[1]{\parheadni{Casting Time} #1}
-\newcommand{\spellrng}[1]{\parheadni{Range} #1}
+\newcommand{\spelllists}[1]{\parhead*{Lists} #1}
+\newcommand{\spellcmp}[1]{\parhead*{Components} #1}
+\newcommand{\spelltime}[1]{\parhead*{Casting Time} #1}
+\newcommand{\spellrng}[1]{\parhead*{Range} #1}
 
-\newcommand{\spellarea}[1]{\parheadni{Area} #1}
-\newcommand{\spellburst}[1]{\parheadni{Burst} #1}
-\newcommand{\spellemanation}[1]{\parheadni{Emanation} #1}
-\newcommand{\spelllimit}[1]{\parheadni{Limit} #1}
-\newcommand{\spellzone}[1]{\parheadni{Zone} #1}
+\newcommand{\spellarea}[1]{\parhead*{Area} #1}
+\newcommand{\spellburst}[1]{\parhead*{Burst} #1}
+\newcommand{\spellemanation}[1]{\parhead*{Emanation} #1}
+\newcommand{\spelllimit}[1]{\parhead*{Limit} #1}
+\newcommand{\spellzone}[1]{\parhead*{Zone} #1}
 
-\newcommand{\spelltgt}[1]{\parheadni{Target} #1}
-\newcommand{\spelltgts}[1]{\parheadni{Targets} #1}
-\newcommand{\spelltgtortgts}[1]{\parheadni{Target or Targets} #1}
-\newcommand{\spelltgtorarea}[1]{\parheadni{Target or Area} #1}
-\newcommand{\spelltgteffarea}[1]{\parheadni{Target or Area} #1}
+\newcommand{\spelltgt}[1]{\parhead*{Target} #1}
+\newcommand{\spelltgts}[1]{\parhead*{Targets} #1}
+\newcommand{\spelltgtortgts}[1]{\parhead*{Target or Targets} #1}
+\newcommand{\spelltgtorarea}[1]{\parhead*{Target or Area} #1}
+\newcommand{\spelltgteffarea}[1]{\parhead*{Target or Area} #1}
 
-\newcommand{\spelldur}[1]{\parheadni{Duration} #1}
-\newcommand{\spellsr}[1]{\parheadni{Spell Resistance} #1}
+\newcommand{\spelldur}[1]{\parhead*{Duration} #1}
+\newcommand{\spellsr}[1]{\parhead*{Spell Resistance} #1}
 
 \newcommand{\rngpers}{Personal}
 \newcommand{\rngtouch}{Touch}
@@ -204,9 +209,14 @@
 \newcommand{\featpre}{\parhead{Prerequisite} }
 \newcommand{\featpres}{\parhead{Prerequisites} }
 \newcommand{\featben}{\parhead{Benefit} }
+\newcommand{\featspecial}{\parhead{Special} }
 \newcommand{\featref}[1]{\hyperlink{feat:#1}{\hypertarget{ft:#1}{#1}}}
+%featref no target
+\newcommand{\featrefnt}[1]{\hyperlink{feat:#1}{#1}}
 \newcommand{\featpref}[1]{\pageref{feat:#1}}
 %\newcommand{\featref}[1]{}
+
+\newcommand{\featbanenotes}{You can only apply the benefits of a single Bane feat against a particular foe.}
 
 \newcommand{\skill}[2]{\subsection{#1 (#2)}\label{#1}}
 
@@ -226,6 +236,7 @@
 \newcommand{\dazed}{\conditionlink{dazed} \reminder{unable to act}\xspace}
 \newcommand{\deafened}{\conditionlink{deafened} \reminder{unable to hear}\xspace}
 \newcommand{\ignited}{\conditionlink{ignited} \reminder{d6 damage/round, Dex DC 10 to extinguish, \vulneffect}\xspace}
+\newcommand{\immobilized}{\conditionlink{immobilized} \reminder{Unable to leave its location}}
 \newcommand{\nauseated}{\conditionlink{nauseated} \reminder{unable to act in action phase, \vulneffect}\xspace}
 \newcommand{\paralyzed}{\conditionlink{paralyzed} \reminder{helpless, unable to move}\xspace}
 \newcommand{\shaken}{\conditionlink{shaken} \reminder{\vulneffect}\xspace}
@@ -240,8 +251,8 @@
 \newcommand{\destructivespellnotes}{If a destructive spell deals enough damage to an interposing barrier to shatter or breaks through it, its effects may continue beyond the barrier if the area permits; otherwise, it stops at the barrier just as any other spell effect does.\xspace}
 \newcommand{\firespellnotes}{Fire spells do not function underwater. They can ignite combustable materials, such as dry wood and cloth.}
 
-\newcommand{\spelltabular}{\par\noindent\begin{tabularx}{\columnwidth}{>{\lcol}X l}\hangindent=1em}
-\newcommand{\spelltabularcompressed}{\par\noindent\begin{tabularx}{\linewidth}{@{}>{\lcol}X l}\hangindent=1em}
+\newcommand{\spelltabular}{\par\noindent\begin{tabularx}{\columnwidth}{>{\lcol}X l}}
+\newcommand{\spelltabularcompressed}{\par\noindent\begin{tabularx}{\linewidth}{@{}>{\lcol}X l}}
 \newcommand{\spelltablecolumns}{>{\lcol}X l}
 
 \newcommand{\spelllevelschool}[2]{\spelllvl{#1} & #2 \\}
@@ -261,16 +272,22 @@
 % weird spacing before twocol
 \newcommand{\spelllinespaced}{\spellline\vspace{0.5\medskipamount}}
 
-\newcommand{\spelleffect}{\parheadni{Effect}\xspace}
-\newcommand{\spellsuccess}{\parheadni{Success}\xspace}
-%\newcommand{\spellfailure}{\parheadni{Failure}\xspace}
+\newcommand{\spelleffect}{\parhead*{Effect}}
+%\newcommand{\spellsuccess}{\parhead*{Success}}
+%\newcommand{\spellfailure}{\parhead*{Failure}\xspace}
 \newcommand{\spellnotes}{\spellline\par\noindent\textit{Note}:\xspace}
-\newcommand{\spellspecial}{\parheadni{Special}\xspace}
-\newcommand{\spellcheck}[1]{\parheadni{Check} #1\xspace}
+\newcommand{\spellspecial}{\parhead*{Special}}
+\newcommand{\spellcheck}[1]{\parhead*{Check} #1}
 
 \DeclareDocumentCommand{\spellfailure}{o}
 {
     \IfNoValueTF{#1}
-    {\parheadni{Failure}}
-    {\par\noindent \textbf{Failure} (#1):}\xspace
+    {\parhead*{Failure}}
+    {\parhead*{Failure}[#1]}
+}
+\DeclareDocumentCommand{\spellsuccess}{o}
+{
+    \IfNoValueTF{#1}
+    {\parhead*{Success}}
+    {\parhead*{Success}[#1]}
 }
