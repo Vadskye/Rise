@@ -66,22 +66,11 @@
 {\end{enumerate*}}
 
 \newenvironment{spellhealthy}
-{\parheadni{Healthy Effect}}
+{\parhead*{Healthy Effect}}
 {}
 \newenvironment{spellblood}
-{\parheadni{Bloodied Effect}}
+{\parhead*{Bloodied Effect}}
 {}
-
-\newenvironment{spelleffectindent}
-{\begin{addmargin}[1em]{0pt}\parhead{Effect}}
-{\end{addmargin}}
-\newenvironment{spellsuccessindent}
-{\begin{addmargin}[1em]{0pt}\parhead{Success}}
-{\end{addmargin}}
-
-\newenvironment{spelltargetindent}
-{\begin{addmargin}[1em]{0pt}}
-{\end{addmargin}}
 
 % with a star, don't include \spellline
 \DeclareDocumentEnvironment{spelltarget}{s m t{l} o}
@@ -117,7 +106,7 @@
 
 \DeclareDocumentEnvironment{spelltrigger}{m}
 {
-    \parheadni{Trigger} #1
+    \parhead*{Trigger} #1
     \begin{addmargin}[1em]{0pt}
 }
 {
@@ -126,7 +115,7 @@
 
 \DeclareDocumentEnvironment{spelltriggers}{m}
 {
-    \parheadni{Triggers} #1
+    \parhead*{Triggers} #1
     \begin{addmargin}[1em]{0pt}
 }
 {
