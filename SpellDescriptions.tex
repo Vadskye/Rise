@@ -286,7 +286,7 @@ Spells that are not subject to spell resistance are not affected by \spell{ablat
 \spellsr{Yes (Fortitude)}
 \spellline
 \spelleffect The area is considered difficult terrain.
-\begin{spelltrigger}{Start of every action phase}
+\begin{spelltrigger}{End of every movement phase}
     \begin{spelltargets}*{All creatures in the area within 5 feet of the ground}l[Caster level \add casting attribute vs. Maneuver defense (grapple)]
         \spellsuccess The target is grappled and takes 1d8\plus4 bludgeoning damage. It remains grappled until it escape the tentacle. The tentacle's Maneuver defense is equal to 10 \add your caster level \add your casting attribute.
     \end{spelltargets}
@@ -1257,121 +1257,162 @@ Artifacts and deities are unaffected by mortal magic such as this.
 \spellinfo{Conj (Summoning) [see text]}{Air, Earth, Fire, Nature, Water}
 \spelltwocol{\spelllimit{\arealarge radius}}{\spellrng{\rngmed}}
 \spelldur{\durlong \dismissable}
+\spellline
 \spelleffect This spell opens a portal to an Elemental Plane and summons elementals from it. A druid can choose the plane (Air, Earth, Fire, or Water); a cleric opens a portal to the plane matching his domain.
 \par When the spell is complete, 2d4 Large elementals appear. Five minutes later, 1d4 Huge elementals appear. Five minutes after that, one greater elemental appears. All creatures initially appear wherever you desire within the spell's area. Once these creatures appear, they serve you for the duration of the spell.
 \par The elementals obey you explicitly and never attack you, even if someone else manages to gain control over them. You do not need to concentrate to maintain control over the elementals. You can dismiss them singly or in groups at any time.
-\par When you use a summoning spell to summon an air, earth, fire, or water creature, it is a spell of that type.
+\spellnotes When you use a summoning spell to summon an air, earth, fire, or water creature, it is a spell of that type.
 
 \spellsection{Energy Conversion}{7}
 \spellinfo{Abjur/Evoc (Energy, Shielding) [see text]}{Arcane, Protection}
 \spellrng{Personal and \rngclose; see text}
 \spelldur{\durlong or until discharged}
-\spellattack{None, Physical vs. Reflex}
-\spelleffect This spell functions like \spell{greater resist energy}, except that you store up the energy you absorb and can later discharge it as a ray. To discharge a ray requires a standard action. You can choose to fire any number of rays during the spell's duration. The ray you fire must be of one of the energy types you have stored (if you have stored more than one type, you can choose what kind of energy to use for each ray). If a ray successfully strikes its target (requiring a ranged touch attack vs. Reflex), the target takes damage equal to the amount of energy damage of that type you have stored, up to a maximum of three times your caster level. As long as this power remains in effect, you can continue to absorb energy damage and fire additional rays using the stored damage.
-\spellnotes This spell's descriptor is the same as the type of energy you discharge in a ray; thus, its subtype can change during the course of the spell's duration.
 \spellsr{Yes (Fortitude)}
+\begin{spelltarget}{You}
+    \spelleffect You resist energy damage, as \spell{greater resist energy}, except that you store up the energy you absorb. As a standard action, you can expend some of that energy to make an attack.
+\end{spelltarget}
+\begin{spelltarget}{One creature}[Magic vs. Reflex]
+    \spelleffect Choose an energy type that you have stored. You expend damage of that type of up to three times your caster level.
+    \spellsuccess The target takes damage equal to the energy expended.
+\end{spelltarget}
+\spellattack{None, Physical vs. Reflex}
+\spellnotes This spell's descriptor is the same as the type of energy you discharge in a ray; thus, its subtype can change during the course of the spell's duration.
 
 \spellsection{Energy Drain}{8}
 \spellinfo{Necro (Vitalism) [Negative]}{Arcane, Death, Divine, Evil}
-\spelleffect This spell functions like \spell{enervation}, except that the target gains six negative levels.
-\par An undead creature struck by the ray instead gains temporary hit points equal to 40 \add your caster level and physical damage reduction 16/positive. 
+\spellrng{\rngclose}
+\spelldur{\durshort}
+\spellsr{Yes (Fortitude)}
+\begin{spelltarget}{One creature}[Magic vs. Fortitude]
+    \spelleffect If the target is living, it gains six \negativelevels.
+
+    \spelleffect If the target is undead, it gains temporary hit points equal to 40 \add your caster level and physical damage reduction 16/positive.
+\end{spelltarget}
 \spellnotes The damage reduction allows an undead subject to ignore the first 16 physical damage it takes each round. If it is hit by an attack that deals positive damage, such as \spell{cure light wounds}, it cannot use its damage reduction for 1 round.
 
 \spellsection{Enervation}{4}
 \spelldesc{Your foe's body loses its color momentarily as you drain its life force away.}
-\spellinfo{Necro (Vitalism) [Negative]}{Arcane, Death}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
+\spellinfo{Necro (Vitalism) [Negative]}{Arcane, Death, Divine, Evil}
+\spellrng{\rngclose}
 \spelldur{\durshort}
-\spellattack{Magic vs. Fortitude}
-\spelleffect The subject gains three negative levels.
-\par Each negative level gives a creature a \minus1 penalty on attacks, special defenses, and checks. Additionally, each negative level causes the creature to lower its maximum hit points by 5, and a spellcaster loses one spell slot from his or her highest available level. If the subject has at least as many negative levels as it has levels, it dies.
-\par An undead creature gains physical damage reduction 8/positive instead. This damage reduction increases by 1 per two caster levels above 8th.
+\spellsr{Yes (Fortitude)}
+\begin{spelltarget}{One creature}[Magic vs. Fortitude]
+    \spelleffect If the target is living, it gains three \negativelevels.
+
+    If the target is undead, it gains physical damage reduction 8/positive instead. This damage reduction increases by 1 per two caster levels above 8th.
+\end{spelltarget}
 \spellnotes This spell stacks with any effect that bestows negative levels, including itself.
 
 The damage reduction allows an undead subject to ignore the first 8 physical damage it takes each round. If it is hit by a positive attack, such as \spell{cure light wounds}, it cannot use its damage reduction for 1 round.
-\spellsr{Yes (Fortitude)}
 
 \spellsection{Enfeeblement}{1}
 %\spelldesc{You fire a coruscating ray from your hand. When it strikes your foe, he becomes weaker.}
 \spellinfo{Necro (Flesh)}{Arcane, Death}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
+\spellrng{\rngmed}
 \spelldur{\durshort}
-\spellattack{Magic vs. Fortitude}
-\spelleffect The subject takes a \minus4 penalty to your choice of Strength, Dexterity, or Constitution.
-\spellnotes This spell cannot reduce the subject's attributes below \minus9.
 \spellsr{Yes (Fortitude)}
+\begin{spelltarget}{One creature}[Magic vs. Fortitude]
+    \spellsuccess The target takes a \minus4 penalty to your choice of Strength, Dexterity, or Constitution.
+    \spellfailure As above, but the penalty is halved.
+\end{spelltarget}
+\spellnotes This spell cannot reduce an attribute below \minus9.
 
 \spellsection{Enlarge Person}{3}
 \spellinfo{Trans (Polymorph) [Size-Affecting]}{Strength, Trans}
 \spelltime{Full-round action}
-\spelltwocol{\spelltgt{One humanoid creature}}{\spellrng{\rngclose}}
+\spellrng{\rngclose}
 \spelldur{\durshort \dismissable}
-\spellattack{Magic vs. Fortitude}
-\spelleffect This spell causes instant growth of a humanoid creature, doubling its height and multiplying its weight by 8. This increase changes the creature's size category to the next larger one. This has several effects.
-\begin{itemize} 
-    \item \plus10 ft. bonus to movement speed.
-    \item \plus4 bonus to maneuver attack and defense.
-    \item \minus1 penalty to other physical attacks and defenses.
-    \item \minus2 penalty to Dexterity.
-    \item \plus2 enhancement bonus to Strength.
-    \item \minus4 penalty to Stealth checks.
-\end{itemize}
-\par A humanoid creature whose size increases to Large has a space of 10 feet and a natural reach of 10 feet.
-\par If insufficient room is available for the desired growth, the creature attains the maximum possible size and may make a Strength check (using its increased Strength) to burst any enclosures in the process. If it fails, it is constrained without harm by the materials enclosing it -- the spell cannot be used to crush a creature by increasing its size.
-\par All equipment worn or carried by a creature is similarly enlarged by the spell. Melee and projectile weapons affected by this spell deal more damage. Other magical properties are not affected by this spell. Any enlarged item that leaves an enlarged creature's possession (including a projectile or thrown weapon) instantly returns to its normal size. This means that thrown weapons deal their normal damage, and projectiles deal damage based on the size of the weapon that fired them. Magical properties of enlarged items are not increased by this spell.
-\par This spell cannot increase a creature beyond Gargantuan size.
-\spellnotes Multiple magical effects that increase size do not stack. This spell can be made permanent with a \spell{permanency} ritual.
 \spellsr{Yes (Fortitude)}
+\begin{spelltarget}{One humanoid creature (Huge or smaller)}l[Magic vs. Fortitude]
+    \spelleffect The target instantly grows, doubling its height and multiplying its weight by 8. This increase changes the creature's size category to the next larger one. This has several effects.
+    \begin{itemize} 
+        \item \plus10 ft. bonus to movement speed.
+        \item \plus4 bonus to maneuver attack and defense.
+        \item \minus1 penalty to other physical attacks and defenses.
+        \item \minus2 penalty to Dexterity.
+        \item \plus2 enhancement bonus to Strength.
+        \item \minus4 penalty to Stealth checks.
+    \end{itemize}
+    \par A typical humanoid creature whose size increases to Large has a space of 10 feet and a natural reach of 10 feet.
+    \par If insufficient room is available for the desired growth, the creature attains the maximum possible size and may make a Strength check (using its increased Strength) to burst any enclosures in the process. If it fails, it is constrained without harm by the materials enclosing it -- the spell cannot be used to crush a creature by increasing its size.
+    \par All equipment worn or carried by a creature is similarly enlarged by the spell. Melee and projectile weapons affected by this spell deal more damage. Other magical properties are not affected by this spell. Any enlarged item that leaves an enlarged creature's possession (including a projectile or thrown weapon) instantly returns to its normal size. This means that thrown weapons deal their normal damage, and projectiles deal damage based on the size of the weapon that fired them. Magical properties of enlarged items are not increased by this spell.
+\end{spelltarget}
+\spellnotes Multiple magical effects that increase size do not stack. This spell can be made permanent with a \spell{permanency} ritual.
 
 \spellsectioncomma{Enlarge Person}{Mass}{7}
 \spellinfo{Trans (Polymorph) [Size-Affecting]}{Strength, Trans}
+\spelltime{Full-round action}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngmed}}
-\spelltgts{Five humanoid creatures in the area}
-\spelleffect This spell functions like \spell{enlarge person}, except that it affects multiple creatures.
+\spelldur{\durshort \dismissable}
+\spellsr{Yes (Fortitude)}
+\begin{spelltarget}{Five humanoid creatures in the area (Huge or smaller)}
+    \spelleffect The target is enlarged, as \spell{enlarge person}.
+\end{spelltarget}
 
 \spellsection{Entangle}{1}
-\spelldesc{Grasses, weeds, bushes, and even trees wrap, twist, and entwine about creatures in the area or those that enter the area, holding them fast.}
+\spelldesc{Grasses, weeds, bushes, and even trees ensnare creatures in the area.}
 \spellinfo{Trans (Animation)}{Nature, Wild}
 \spelltwocol{\spellzone{\areasmall radius}}{\spellrng{\rngmed}}
 \spelldur{\durshort \dismissable}
-\spellattack{Magic vs. Reflex}
-\spelleffect At the end of each round, you make a magic attack vs. Reflex against all creature and objects in the area to make them \entangled. An entangled creature can break free and move half its normal speed by using a standard action to make a grapple attack or an Escape Artist check that beats your magic attack. Creatures in the area that are not entangled can still move at only half speed through the area.
-\spellnotes The effects of the spell may be altered somewhat based on the nature of the entangling plants. If no plants exist in the area, the spell has no effect.
+\spellline
+\spelleffect The area is difficult terrain.
+\begin{spelltrigger}{End of every movement phase}
+    \begin{spelltarget}*{Each creature in the area within 5 feet of plants}l[Magic vs. Reflex]
+        \spellsuccess The target is \entangled and \immobilized. It can break free of the effect as a standard action by making a grapple attack or Escape Artist check that beats your magic attack result.
+    \end{spelltarget}
+\end{spelltrigger}
+\spellnotes The effects of this spell may be altered somewhat based on the nature of the plants in the area. If no plants exist in the area, this spell has no effect.
 
 \spellsection{Entangling Growth}{4}
+\spelldesc{Grasses, weeds, bushes, and even trees grow out of thin air to ensnare creatures in the area.}
 \spellinfo{Trans (Alteration, Animation)}{Nature, Wild}
-\spellzone{\areamed radius}
-\spelleffect This spell functions like \spell{entangle}, except that it affects a wider area and also grows new plants in the area. These plants grow from any terrain, even if it would not normally support plant life, and entangle creatures in the area for the duration of the spell. When the magic fades, the plants with and recede into the ground, leaving no trace that they were ever there.
+\spelltwocol{\spellzone{\areamed radius}}{\spellrng{\rngmed}}
+\spelldur{\durshort \dismissable}
+\spellline
+\spelleffect The area is difficult terrain. Plants grow in the area, even if the terrain would not normally support plant life. At the end of the spell's duration, the plants recede into the ground, leaving no trace that they were ever there.
+\begin{spelltrigger}{End of every movement phase}
+    \begin{spelltarget}{Each creature in the area within 5 feet of the ground}l[Magic vs. Reflex]
+        \spellsuccess The target is ensnared, as \spell{entangle}.
+    \end{spelltarget}
+\end{spelltrigger}
+\spellnotes The effects of this spell may be altered somewhat based on the nature of the plants in the area.
 
 \spellsection{Entropic Shield}{2}
 \spelldesc{You surround your ally with a magical field that glows with a chaotic blast of multicolored hues. This field deflects incoming ranged attacks, causing them to randomly swerve away from their intended target.}
 \spellinfo{Abjur (Shielding)}{Chaos, Divine}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{Touch}}
+\spellrng{Touch}
 \spelldur{\durshort \dismissable}
-\spelleffect Each physical ranged attack directed at the subject has a 50\% miss chance (similar to the effects of active cover). Other attacks that simply work at a distance are not affected.
+\begin{spelltarget}{One creature}
+    \spelleffect Each physical ranged attack directed at the target has a 50\% miss chance (similar to the effects of active cover). Other attacks that simply work at a distance are not affected.
+\end{spelltarget}
 
 \spellsection{Ethereal Jaunt}{7}
 \spellinfo{Conj (Translocation) [Planar]}{Arcane, Travel}
-\spelltwocol{\spelltgt{You}}{\spellrng{\rngpers}}
 \spelldur{\durshort \dismissable}
+\begin{spelltarget}{You}
 \spelleffect You become ethereal, along with your equipment. For the duration of the spell, you are in a place called the Ethereal Plane, which overlaps the normal, physical, Material Plane. When the spell expires, you return to material existence.
 \par An ethereal creature is invisible, insubstantial, and capable of moving in any direction, even up or down, albeit at half normal speed. As an insubstantial creature, you can move through solid objects, including living creatures. An ethereal creature can see and hear on the Material Plane, but everything looks gray and ephemeral. Sight and hearing onto the Material Plane are limited to 60 feet.
 \par Force effects and abjurations affect an ethereal creature normally. Their effects extend onto the Ethereal Plane from the Material Plane, but not vice versa. An ethereal creature can't attack material creatures, and spells you cast while ethereal affect only other ethereal things. Certain material creatures or objects have attacks or effects that work on the Ethereal Plane (such as a basilisk's gaze attack). Treat other ethereal creatures and ethereal objects as if they were material. 
 \par If you end the spell and become material while inside a material object (such as a solid wall), you are shunted off to the nearest open space and take 1d6 damage per 5 feet that you so travel.
+\end{spelltarget}
 
 \spellsection{Etherealness}{9}
 \spellinfo{Conj (Translocation) [Planar]}{Arcane, Travel}
-\spelltwocol{\spelltgts{You and up to five touched willing creatures}}{\spellrng{Touch}}
-\spelleffect This spell functions like \spell{ethereal jaunt}, except that it affects multiple willing creatures (and their equipment). Once ethereal, the subjects need not stay together.
-\spellnotes When the spell expires, all affected creatures on the Ethereal Plane return to material existence.
+\spellrng{Touch}
 \spellsr{Yes (Will)}
+\begin{spelltarget}{You and up to five willing creatures}
+    \spelleffect The target becomes ethereal, as \spell{ethereal jaunt}.
+\end{spelltarget}
+\spellnotes When the spell expires, all affected creatures on the Ethereal Plane return to material existence.
 
 \spellsection{Expeditious Retreat}{1}
 \spellinfo{Trans (Temporal)}{Trans}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
+\spellrng{\rngclose}
 \spelldur{\durshort \dismissable}
-\spelleffect The subject's base land speed doubles, to a maximum of a \plus30 foot increase. (This adjustment is treated as an enhancement bonus.) There is no effect on other modes of movement.
-\spellnotes As with any effect that increases your speed, this spell affects your jumping distance (see \pcref{Athletics}).
+\begin{spelltarget}{One creature}
+    \spelleffect The target's land speed doubles, to a maximum of a \plus30 foot increase. (This adjustment is treated as an enhancement bonus.) There is no effect on other modes of movement.
+\end{spelltarget}
+\spellnotes As with any effect that increases your speed, this spell affects your ability to jump (see \pcref{Athletics}).
 
 \pdfbookmark[2]{F}{SpellDescriptionsF}
 \begin{comment}
