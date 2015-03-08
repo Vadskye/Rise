@@ -864,6 +864,7 @@ The monk chooses one \ki power from the list below. At her 5th monk level, and e
 \subcf{5th -- Speed Boost} As a swift action, the monk can force her muscles to strain beyond their normal limits. Until the end of her turn, she gains increases her land speed by 20 feet, and a gains \plus2 bonus to her dodge defense modifier.
 \subcf{5th -- Wholeness of Body} As a standard action, the monk can correct the flow of energy within her body. She heals 1d6 points of damage per two monk levels.
 \subcf{8th -- Rapid Step} As a move action, the monk can move up to her speed without provoking attacks of opportunity.
+\subcf{8th -- Redirect Attack} As an immediate action, when a foe misses the monk with a melee attack, the monk can redirect the attack. Both the foe and the monk must threaten a third creature. If the monk redirects the attack, the foe rolls the same attack against the third creature.
 \subcf{8th -- Slow Fall} As a swift action while falling, the monk can slow the rate at which she falls to 60 feet per round, which is too slow to hurt her if she hits the ground. She must be touching a solid object to use this ability. The effect lasts until the end of her turn.
 \subcf{11th -- Diamond Fists} As a swift action, the monk can empower her unarmed strike with incredible force. Until the start of her next turn, she adds half her Wisdom to damage and treats her unarmed strike as if it were an adamantine weapon for the purpose of overcoming damage reduction and hardness.
 \subcf{11th -- Flash Step} As a move action, the monk can slip between spaces, allowing her to teleport to anywhere she can see within 30 feet. If her line of effect is blocked, even by an invisible barrier, or if this would somehow place her inside a solid object, the ability fails. 
@@ -962,7 +963,7 @@ The paladin may use her discernment ability a number of times per day equal to h
 
 At 4th level, and every 3 levels thereafter, the paladin gains an additional divine power. Some divine powers have minimum paladin levels, as indicated in the title of the ability. Some divine powers are also restricted to paladins with specific devoted alignments. All divine powers are supernatural abilities unless otherwise noted. The paladin's special attack bonus with divine powers is equal to her paladin level \add her Charisma.
 
-Divine powers marked with an asterisk are called smite invocations. Smite invocations function like the paladin's smite ability, except that they also have additional effects. Unless otherwise noted, these additional effects only occur if the smited creature does not share the paladin's devoted alignment.
+Divine powers marked with an asterisk are called smite powers. Smite powers function like the smite divine power, except that they also have additional effects. Unless otherwise noted, these additional effects only occur if the smited creature does not share the paladin's devoted alignment.
 
 \parhead{Any Alignment}
 
@@ -1335,21 +1336,21 @@ The rogue chooses a single combat trick from the list below. At her 8th rogue le
 1st & \plus0 & \plus0 & \plus0 & \plus3 & Arcane invocation \\
 2nd & \plus1 & \plus1 & \plus1 & \plus4     & Arcane invocation, spellsurge \plus2 \\
 3rd & \plus1 & \plus1 & \plus1 & \plus5     & Expanded spell knowledge \\
-4th & \plus2 & \plus2 & \plus2 & \plus6     & Spellblend invocation \\
+4th & \plus2 & \plus2 & \plus2 & \plus6     & Defensive spellblend \\
 5th & \plus2 & \plus2 & \plus2 & \plus7     & Expanded spell knowledge \\
 6th & \plus3 & \plus3 & \plus3 & \plus8     & Spellsurge \\
 7th & \plus3 & \plus3 & \plus3 & \plus9     & Expanded spell knowledge \\
-8th & \plus4 & \plus4 & \plus4 & \plus10    & Defensive spellblend, spellsurge \plus3 \\
+8th & \plus4 & \plus4 & \plus4 & \plus10    & Offensive spellblend, spellsurge \plus3 \\
 9th & \plus4 & \plus4 & \plus4 & \plus11    & Expanded spell knowledge \\
 10th & \plus5 & \plus5 & \plus5 & \plus12    & Spellsurge, versatile spellcaster \\
 11th & \plus5 & \plus5 & \plus5 & \plus13    & Expanded spell knowledge \\
-12th & \plus6/\plus1 & \plus6 & \plus6 & \plus14& Offensive spellblend \\
+12th & \plus6/\plus1 & \plus6 & \plus6 & \plus14& Improved defensive spellblend \\
 13th & \plus6/\plus1 & \plus6 & \plus6 & \plus15& Expanded spell knowledge \\
 14th & \plus7/\plus2 & \plus7 & \plus7 & \plus16& Spellsurge, spellsurge \plus4 \\
 15th & \plus7/\plus2 & \plus7 & \plus7 & \plus17& Expanded spell knowledge \\
-16th & \plus8/\plus3 & \plus8 & \plus8 & \plus18 & Rapid spellblend \\
+16th & \plus8/\plus3 & \plus8 & \plus8 & \plus18 & Improved offensive spellblend \\
 17th & \plus8/\plus3 & \plus8 & \plus8 & \plus19 & Expanded spell knowledge \\
-18th & \plus9/\plus4 & \plus9 & \plus9 & \plus20 & Spellsurge \\
+18th & \plus9/\plus4 & \plus9 & \plus9 & \plus20 & Endless surge, spellsurge \\
 19th & \plus9/\plus4 & \plus9 & \plus9 & \plus21 & Expanded spell knowledge \\
 20th & \plus10/\plus5 & \plus10& \plus10& \plus22 & Spellsurge \plus5 \\
 \end{tabularx}
@@ -1456,15 +1457,17 @@ At his 6th sorcerer level, and every four sorcerer levels thereafter, the sorcer
 
 \cflt{Sor}{3rd}{Expanded Spell Knowledge}{Ex} The sorcerer learns how to cast a particularly esoteric spell. He may choose a restricted spell from the arcane spell list with a spell level of no more than half his sorcerer level (normally, the highest level spell he can cast) and add it to his spell list. He must still use a spell known to learn it, as normal. At his 5th sorcerer level, and every odd sorcerer level thereafter, he can gain access to an additional restricted spell.
 
-\cflt{Sor}{4th}{Spellblend Invocation}{Ex} The sorcerer may combine his arcane invocations with his spells. As a full-round action, the sorcerer may cast a spell that affects only himself using a spell slot one level higher than what the spell would normally require. The spell must have a casting time of 1 standard action or less. If he does, he may also use an arcane invocation as part of the same action. The arcane invocation need not target the sorcerer.
+\cflt{Sor}{4th}{Defensive Spellblend}{Ex} The sorcerer may combine his arcane invocations with his spells. As a full-round action, the sorcerer may cast a spell that affects only himself using a spell slot one level higher than what the spell would normally require. The spell must have a casting time of 1 standard action or less. If he does, he may also use an arcane invocation as part of the same action. The arcane invocation need not target the sorcerer.
 
-\cflt{Sor}{8th}{Defensive Spellblend}{Ex} The sorcerer may combine two spells together. As a full-round action, the sorcerer may cast two spells at once, resolving each spell's effects separately. The spells cast in this way must have a casting time of 1 standard action or less, and must be at least three spell levels apart, such as a 1st-level spell and a 4th-level spell. In addition, one of the two spells must affect only the sorcerer. Using improved spellblend costs a spell slot of one level higher than the highest level spell being cast.
+\cflt{Sor}{8th}{Offensive Spellblend}{Ex} This ability functions like defensive spellblend, except that the spell need not only affect the sorcerer.
 
-\cflt{Sorc}{10th}{Versatile Spellcaster}{Ex} The sorcerer's intuitive grasp of magic allows him to be flexible in his use of arcane energy. He can use two sorcerer spell slots of the same level to cast a spell or use an ability requiring a sorcerer spell slot of one level higher.
+\cflt{Sorc}{10th}{Versatile Spellcaster}{Ex} The sorcerer's intuitive grasp of magic allows him to be flexible in his use of arcane energy. He can use two sorcerer spell slots of the same level to cast a spell or use an ability requiring a sorcerer spell slot of one level higher. This can allow him to use a spell slot of a higher level than the highest level spell he can cast.
 
-\cflt{Sor}{12th}{Offensive Spellblend}{Ex} The sorcerer may combine a damaging spell and a nondamaging spell together. As a full-round action, the sorcerer may cast two spells at once, resolving each spell's effects separately. The spells cast in this way must have a casting time of 1 standard action or less, and must at least three spell levels apart, such as a 1st-level spell and a 4th-level spell. One spell must be a damaging spell, and the other must not. Using offensive spellblend costs a spell slot of two levels higher than the highest level spell being cast.
+\cflt{Sor}{12th}{Improved Defensive Spellblend}{Ex} The sorcerer may combine two spells together. As a full-round action, the sorcerer may cast two spells at once, resolving each spell's effects separately.The spells cast in this way must have a casting time of 1 standard action or less, and must be at least three spell levels apart, such as a 1st-level spell and a 4th-level spell. In addition, one of the two spells must affect only the sorcerer. Using improved defensive spellblend costs a spell slot of one level higher than the highest level spell being cast.
 
-\cflt{Sor}{16th}{Endless Surge}{Ex} There is no limit to the duration of a sorcerer's spellsurge ability. If a spellsurge lasts longer than 5 rounds, he automatically succeeds on any Concentration check he makes to end the surge.
+\cflt{Sor}{16th}{Offensive Spellblend}{Ex} this ability functions like improved defensive spellblend, except that neither spell must only affect the sorcerer.
+
+\cflt{Sor}{18th}{Endless Surge}{Ex} There is no limit to the duration of a sorcerer's spellsurge ability. If a spellsurge lasts longer than 5 rounds, he automatically succeeds on any Concentration check he makes to end the surge.
 
 \cflt{Sor}{20th}{Dual Surge}{Ex} The sorcerer may enter two spellsurges at once. He gains the benefits and suffers the consequences of both surges. However, while using two surges at once, he takes a \minus5 penalty to Concentration checks to end a spellsurge.
 
@@ -1889,4 +1892,3 @@ The character gains spells from all of his or her spellcasting classes separatel
 Characters with magical ability gain a special benefit when multiclassing. Such a character must choose a specific spellcasting class he has. For every two levels that a character has in nonmagical classes, up to the number of levels he has in his chosen spellcasting class, he increases his spellcasting ability with that class. This increases his spells per day, spells known, and caster level as if he had gained a level in his chosen spellcasting class. No class features or other abilities can be gained in this way. 
 
 For example, Gish, a 2nd level fighter / 2th level wizard, would have the spells per day, spells known, and caster level of a 3rd level wizard. If he gained two more fighter levels, his spellcasting ability would not increase.
-
