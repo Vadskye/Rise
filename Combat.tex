@@ -125,18 +125,20 @@ Instead of striking to deal damage, you can feint to leave your foe off-balance.
 Instead of striking to deal damage, you can try to just touch your opponent. This is usually done to channel spells that require touching a creature. Touch attacks target Reflex defense instead of Armor defense.
 
 \subsection{Combat Maneuvers}\label{Combat Maneuvers}
-A combat maneuver is an attempt to physically hinder your foe with your body, such as by shoving or tripping it. Unless otherwise noted, using a combat maneuver requires a free hand and takes a standard action. You make an attack against a creature within your reach, adding your maneuver modifier to the roll instead of your attack modifier. If your result equals or exceeds your foe's Maneuver defense, your attack hits, and your foe is affected by the maneuver.
+A combat maneuver is an attempt to physically hinder your foe with your body, such as by shoving or tripping it. Unless otherwise noted, using a combat maneuver requires a free hand and replaces a physical attack made during a standard attack. You make an attack against a creature within your reach, adding your maneuver modifier to the roll instead of your attack modifier. If your result equals or exceeds your foe's Maneuver defense, your attack hits, and your foe is affected by the maneuver.
+
+You cannot perform a combat maneuver on an attack of opportunity.
 
 \begin{dtable}
     \lcaption{Combat Maneuvers}
     \begin{tabularx}{\columnwidth}{l l l X}
         \thead{Maneuver}  & \thead{Action} & \thead{Attribute} & \thead{Brief Description} \\
-        Dirty Trick & Standard & Str or Dex & Impose penalty on an foe \\
-        Disarm & Standard & Str or Dex & Force foe to drop item \\
-        Grapple & Standard & Str & Wrestle with an foe \\
-        Overrun & Full-round & Str & Move through an foe \\
-        Shove & Standard & Str &  Move an foe \\
-        Trip & Standard & Str or Dex & Trip an foe \\
+        Dirty Trick & Attack & Str or Dex & Impose penalty on a foe \\
+        Disarm & Attack & Str or Dex & Force foe to drop item \\
+        Grapple & Attack & Str & Wrestle with a foe \\
+        Overrun & Move & Str & Move through a foe \\
+        Shove & Attack & Str &  Move a foe \\
+        Trip & Attack & Str or Dex & Trip a foe \\
     \end{tabularx}
 \end{dtable}
 
@@ -153,15 +155,15 @@ Your attack attribute depends on the maneuver you are using, as described in \pc
 
 \parhead{Dirty Trick}\label{Dirty Trick} You strike your foe in a sensitive spot, pull its pants down, or creatively use your environment to attack. Success means the creature is \vulnerable for 1 round. For every 5 points by which you succeed, the creature is vulnerable for an additional round. You can perform a dirty trick with either Str or Dexterity.
 
-\parhead{Disarm}\label{Disarm} You can strike an item your foe is wearing or holding. Success means you hold the item instead of your foe. Well-secured items, such as rings and body armor, cannot be disarmed. You can perform a disarm with either Strength or Dexterity. You can also with any weapon, rather than using a free hand. If you disarm with a weapon, the item falls to the ground in the creature's square.
+\parhead{Disarm}\label{Disarm} You can strike an item your foe is wearing or holding. Success means you hold the item instead of your foe. You take a penalty of up to \minus20 if you disarm a well-secured item, such as a ring or body armor. You can perform a disarm with either Strength or Dexterity. You can also with any weapon, rather than using a free hand. If you disarm with a weapon, the item falls to the ground in the creature's square.
 
 \parhead{Grapple}\label{Grapple} You physically grab and restrain your foe. Success means you and the creature become grappled, which limits your ability to act. See \pcref{Grappling} for more details.
 
-\parhead{Overrun}\label{Overrun} You move directly through your foe. This maneuver requires a full-round action. When you overrun, you move up to your speed. Each creature in your way can choose to avoid you, allowing you to pass through its square unhindered. Each time you encounter a creature in your way that didn't avoid you, you make an overrun attack. Success means you can move through the creature's space, though it is considered difficult terrain. Success by 10 or more means the creature is knocked prone, and the area is not considered difficult terrain. You can only overrun a creature with Strength.
+\parhead{Overrun}\label{Overrun} As part of a move action, you move directly through creatures in your way. Each creature in your way can choose to avoid you, allowing you to pass through its square unhindered. Each time you encounter a creature in your way that didn't avoid you, you make an overrun attack. Success means you can move through the creature's space, though it is considered difficult terrain. Success by 10 or more means the creature is knocked prone, and the area is not considered difficult terrain. Failure means you end your movement immediately. You can only overrun a creature with Strength.
 
-\parhead{Shove}\label{Shove} You shove your foe where you want it to go. Success means you move the creature 5 feet in a direction of your choice. For every 5 points by which you succeed, you can move it an additional 5 feet. You cannot move the creature further after moving it outside of your reach, but you can take a move action to move with the creature as you shove it to move it farther. If the creature encounters a solid object or creature, you must stop shoving it. You can only shove a creature with Strength.
+\parhead{Shove}\label{Shove} You shove your foe where you want it to go. Success means you move the creature 5 feet in a direction of your choice. For every 5 points by which you succeed, you can move it an additional 5 feet. You cannot normally move the creature further after moving it outside of your reach. If the creature encounters a solid object or creature, you must stop shoving it. You can only shove a creature with Strength.
 
-\parhead{Trip}\label{Trip} You try to trip your foe. Success means the creature falls prone, causing it to take a \minus4 penalty to physical attacks and defenses. You can trip a creature with Strength or Dexterity.
+\parhead{Trip}\label{Trip} You try to trip your foe. Success means the creature falls prone, causing it to take a \minus4 penalty to physical attacks and defenses. It can stand up as a move action. You can trip a creature with Strength or Dexterity.
 
 \section{Defenses}\label{Defenses}
 Usually, when you are attacked, the attacker has to make an attack roll against a specific defense. If the attack roll is at least as high as that defense, the attack succeeds. There are three physical defenses and two special defenses.
