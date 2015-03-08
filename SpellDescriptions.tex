@@ -672,13 +672,12 @@ If the staff-treant is reduced to 0 or fewer hit points, it crumbles to powder a
 \spellsection{Create Sound}{1}
 \spelldesc{You create false sounds from nowhere.}
 \spellinfo{Illus (Figment) [Unreal]}{Illus}
-\spellrng{\rngclose}
+\spelltwocol{\spellzone{\areamed radius}}{\spellrng{\rngmed}}
 \spelldur{\durshort \dismissable}
 \spellline
-\spellcheck{Magic vs. Perception and Will (if interacted with)}
-\spelleffect This spell allows you to create a volume of sound that rises, recedes, approaches, or remains at a fixed place. You choose what type of sound this spell creates when casting it and cannot thereafter change the sound's basic character.
-\par The volume of sound created depends on your caster level. You can produce as much noise as two normal humans per caster level. Thus, talking, singing, shouting, walking, marching, or running sounds can be created. The noise a \spell{ghost sound} spell produces can be virtually any type of sound within the volume limit, including speech. A horde of rats running and squeaking is about the same volume as eight humans running and shouting. A roaring lion is equal to the noise from sixteen humans, while a roaring dire tiger is equal to the noise from twenty humans.
-\spellnotes This spell can be made permanent with a \spell{permanency} ritual.
+\spelleffect This spell creates a volume of sound within the area, as determined by you. As a standard action, you can concentrate to alter the sound within the area.
+\par The volume of sound created depends on your caster level. You can produce as much noise as two normal humans per caster level. Thus, talking, singing, shouting, walking, marching, or running sounds can be created. The noise can be virtually any type of sound within the volume limit, including speech. A horde of rats running and squeaking is about the same volume as eight humans running and shouting. A roaring lion is equal to the noise from sixteen humans, while a roaring dire tiger is equal to the noise from twenty humans.
+\spellnotes Creatures can identify the illusion, as \spell{silent image}. This spell can be made permanent with a \spell{permanency} ritual.
 
 \spellsection{Creeping Doom}{7}
 \spelldesc{You summon uncountable hordes of centipedes to overwhelm your foes.}
@@ -1421,13 +1420,14 @@ The damage reduction allows an undead subject to ignore the first 8 physical dam
 \spellsr{Yes (Will)}
 
 \spellsection{Faerie Fire}{1}
-\spellinfo{Illus (Figment) [Light, Unreal]}{Nature}
+\spellinfo{Illus (Figment) [Light]}{Nature}
 \spelltwocol{\spelllimit{\areasmall radius}}{\spellrng{\rngmed}}
 \spelldur{\durshort \dismissable}
-\spelleffect A pale glow surrounds and outlines all creatures and objects in the area. Outlined subjects shed light as candles. Outlined creatures do not benefit from the concealment normally provided by darkness (though a 3rd-level or higher magical darkness effect functions normally), \spell{blur}, \spell{displacement}, \spell{invisibility}, or similar effects. Illusary figments such as \spell{silent image} are not outlined, which may reveal them for what they are.
-
-The light is too dim to have any special effect on undead or dark-dwelling creatures \vulnerable to light. The \spell{faerie fire} can be blue, green, or violet, according to your choice at the time of casting. This spell does not cause any harm to the objects or creatures thus outlined.
 \spellsr{Yes (Will)}
+\begin{spelltarget}{Everything in the area}
+    \spelleffect A pale glow surrounds and outlines the target, causing it to shed light as a candle. This negates invisibility, concealment, and similar effects.
+\end{spelltarget}
+\spellnotes Illusory figments such as \spell{silent image} are not outlined, which may reveal them for what they are. The light is too dim to have any special effect on creatures vulnerable to light. The \spell{faerie fire} can be blue, green, or violet, according to your choice at the time of casting. This spell does not cause any harm to the objects or creatures thus outlined.
 
 \spellsection{False Reality}{9}
 \spellinfo{Illus (Figment)}{Illus}
@@ -1689,7 +1689,7 @@ While in the air, a creature with a glide speed can control its fall as a move a
 \spellinfo{Conj (Creation)}{Arcane}
 \spelltwocol{\spellburst{\areasmall radius}}{\spellrng{\rngmed}}
 \spelldur{\durshort}
-\spelleffect A cloud of golden particles covers everyone and everything in the area, visibly outlining invisible things for the duration of the spell. It likewise negates the effects of \spell{blur} and \spell{displacement}, and reveals illusionary figments such as \spell{silent image} for what they are. All in the area at the time that the spell is cast are covered by the dust, which continues to sparkle until it fades.
+\spelleffect A cloud of golden particles covers everyone and everything in the area, visibly outlining invisible things for the duration of the spell. It likewise negates the effects of \spell{blur} and \spell{displacement}, and reveals illusory figments such as \spell{silent image} for what they are. All in the area at the time that the spell is cast are covered by the dust, which continues to sparkle until it fades.
 \par Any creature covered by the dust takes a \minus40 penalty on Hide checks.
 \spelleffect Water and similar substances can remove the dust.
 
@@ -2277,9 +2277,11 @@ The missiles strike unerringly, even if the target has cover or concealment. Spe
 
 \spellsection{Major Image}{4}
 \spellinfo{Illus (Figment) [Unreal]}{Illus}
-\spelllimit{\arealarge radius}
-\spelleffect This spell functions like \spell{silent image}, except that sound, smell, and thermal illusions are included in the spell effect. By concentrating on the spell, you can move the image within the range.
-\spellnotes When you cast this spell, you make a magic check, with the same bonus as your magic attack bonus. This check is opposed by the Will defense of any creature that interacts with the effect. If you fail, the creature disbelieves the spell. In order to interact with the illusion with a Perception check, the creature must make a Perception check that beats your magic check.
+\spelltwocol{\spellzone{\arealarge radius}}{\spellrng{\rngmed}}
+\spelldur{\durshort}
+\spellline
+\spelleffect A figment of your design appears within the area, as \spell{silent image}, except that sound, smell, and thermal elements are included.
+\spellnotes Creatures can identify the illusion, as \spell{silent image}.
 
 \invocationsection{Mass (Spell Name)}
 \par Any spell whose name begins with mass is alphabetized in this chapter according to the second word of the spell name. Thus, the description of a mass spell appears near the description of the spell on which it is based. Spell chains that have mass spells in them include those based on the spells charm monster, cure critical wounds, cure light wounds, cure moderate wounds, cure serious wounds, enlarge person, heal, hold monster, hold person, inflict critical wounds, inflict light wounds, inflict moderate wounds, inflict serious wounds, invisibility, reduce person, suggestion, totemic mind, and totemic power.
@@ -2333,8 +2335,11 @@ The missiles strike unerringly, even if the target has cover or concealment. Spe
 
 \spellsection{Minor Image}{3}
 \spellinfo{Illus (Figment) [Unreal]}{Illus}
-\spelleffect This spell functions like \spell{silent image}, except that it includes some minor sounds but not understandable speech.
-\spellnotes When you cast this spell, you make a magic check, with the same bonus as your magic attack bonus. This check is opposed by the Will defense of any creature that interacts with the effect. If you fail, the creature disbelieves the spell. In order to interact with the illusion with a Perception check, the creature must make a Perception check that beats your magic check.
+\spelltwocol{\spellzone{\areamed radius}}{\spellrng{\rngmed}}
+\spelldur{\durshort}
+\spellline
+\spelleffect A figment of your design appears within the area, as \spell{silent image}, except that sound elements are included.
+\spellnotes Creatures can identify the illusion, as \spell{silent image}.
 
 \spellsection{Miracle}{9}
 \spellinfo{Evoc (Channeling)}{Divine}
@@ -2427,13 +2432,15 @@ The missiles strike unerringly, even if the target has cover or concealment. Spe
 
 \spellsection{Persistent Image}{6}
 \spellinfo{Illus (Figment)}{Illus}
-\spelllimit{\arealarge radius}
+\spelltwocol{\spellzone{\arealarge radius}}{\spellrng{\rngmed}}
 \spelldur{\durmed \dismissable}
-\spelleffect This spell functions like \spell{silent image}, except that the figment includes visual, auditory, olfactory, and thermal components, and the figment follows a script determined by you. The figment follows that script without your having to concentrate on it. The illusion can include intelligible speech if you wish.
+\spellline
+\spelleffect A figment of your design appears within the area, as \spell{silent image}, except that sound, smell, and thermal elements are included. When you cast the spell, you set a script for the figment to follow. It follows that script without you having to concentrate on the spell.
+\spellnotes Creatures can identify the illusion, as \spell{silent image}.
 
 \spellsection{Phantasmal Killer}{4}
 \spelldesc{You create a phantasmal image of the most fearsome creature imaginable to the subject simply by forming the fears of the subject's subconscious mind into something that its conscious mind can visualize: this most horrible beast.}
-\spellinfo{Ench/Illus (Emotion, Phantasm) [Death, Fear, Mind-Affecting, Unreal]}{Arcane, Trickery}
+\spellinfo{Ench/Illus (Emotion, Phantasm) [Death, Fear, Mind-Affecting]}{Arcane, Trickery}
 \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
 \spellattack{Will disbelief and Magic vs. Fortitude; see text}
 \spelleffect You make a Will attack to make the subject shaken for 5 rounds, leaving it \vulnerable.
@@ -2444,7 +2451,7 @@ The missiles strike unerringly, even if the target has cover or concealment. Spe
 
 \spellsection{Phantasmal Maze}{5}
 \spelldesc{You manipulate the subject's perceptions, causing it to believe that it is trapped in a labyrinth.}
-\spellinfo{Illus (Phantasm) [Unreal]}{Arcane, Trickery}
+\spellinfo{Illus (Phantasm)}{Arcane, Trickery}
 \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
 \spelldur{\durmed}
 \spellattack{Will disbelief}
@@ -2453,7 +2460,7 @@ The missiles strike unerringly, even if the target has cover or concealment. Spe
 
 \spellsection{Phantasmal Wound}{2}
 \spelldesc{You manipulate the subject's perceptions, causing it to believe that it is grievously wounded.}
-\spellinfo{Illus (Phantasm) [Unreal]}{Arcane}
+\spellinfo{Illus (Phantasm)}{Arcane}
 \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
 \spelldur{\durshort}
 \spellattack{Will disbelief}
@@ -3067,11 +3074,13 @@ Extraordinarily loud noises, such as the yell of a giant or a sonic attack, are 
 
 \spellsection{Silent Image}{2}
 \spellinfo{Illus (Figment) [Unreal]}{Illus}
-\spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngmed}}
+\spelltwocol{\spellzone{\areamed radius}}{\spellrng{\rngmed}}
 \spelldur{\durshort}
-\spellattack{Magic check vs. Perception and Will (if interacted with)}
-\spelleffect This spell creates the visual illusion of an object, creature, or force, as visualized by you. The illusion does not create sound, smell, texture, or temperature. If you concentrate as a standard action, you move the image within the limits of the size of the effect.
-\spellnotes When you cast this spell, you make a magic check, with the same bonus as your magic attack bonus. This check is opposed by the Will defense of any creature that interacts with the effect. If you fail, the creature disbelieves the spell. In order to interact with the illusion with a Perception check, the creature must make a Perception check that beats your magic check.
+\spellline
+\spelleffect This spell creates the visual illusion of an object, creature, or force within the area, as determined by you. The illusion does not create sound, smell, texture, or temperature. As a standard action, you can concentrate to alter the image within the area.
+\spellnotes Creatures can recognize the figment as unreal by interacting with it physically, or by making a Perception check against a DC equal to 10 \add half your caster level \add your casting attribute. A creature gets a \plus10 bonus on this Perception check when using senses which should be present in the figment, but which are missing.
+
+A creature faced with definitive proof that the figment is unreal can disbelieve it, treating it as if it were not there.
 
 \spellsection{Skysmite}{6}
 \spelldesc{You call down lightning from the heavens, unerringly striking your foes, even if you cannot see them.}
