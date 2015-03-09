@@ -248,6 +248,7 @@ def calculate_area_modifier(area=None, choose_targets=None, max_targets=None, co
         return 0
     #area_choices = ['none', 'tiny', 'normal','large_line', 'mr', 'medium_radius','large_cone','large_radius']
     level = 0
+    # these are the area weights for condition and damage spells
     if components is not None and (DAMAGE in components.keys() or CONDITION in components.keys()):
         level = {
                 'none': 0,
@@ -260,6 +261,7 @@ def calculate_area_modifier(area=None, choose_targets=None, max_targets=None, co
                 }[area]
         #level = switch(area, area_choices, [0,1,2,3,4,4,5,6])
     else:
+        # these are the area weights for buff-only spells
         level = {
                 'none': 0,
                 'tiny': 2,
