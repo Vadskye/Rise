@@ -1,0 +1,7 @@
+name=Rogue-twf
+race=human
+class=rogue
+weapon=light_melee
+offhand weapon=light_melee
+armor=light
+attributes=warrior_dex
