@@ -1,0 +1,7 @@
+name=Wizard
+race=human
+class=wizard
+weapon=unarmed
+armor=light
+shield=heavy
+attributes=wizard
