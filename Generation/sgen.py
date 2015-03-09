@@ -100,9 +100,23 @@ class Spell:
         if spell_range:
                 #range_choices = ['personal', 'touch', 'close', 'medium', 'long', 'extreme']
             if self.components[DAMAGE] or self.components[CONDITION]:
-                level += switch(spell_range, range_choices, (-2,-2,-1,0,1,2))
+                level += {
+                        'personal': -2,
+                        'touch': -2,
+                        'close': -1,
+                        'medium': 0,
+                        'long': 1,
+                        'extreme': 2,
+                        }[spell_range]
             else:
-                level += switch(spell_range, range_choices, (0,0.5,1,1.5,2))
+                level += {
+                        'personal': 0,
+                        'touch': 0.5,
+                        'close': 1,
+                        'medium': 1.5,
+                        'long': 2,
+                        'extreme': 2.5,
+                        }[spell_range]
         return level
 
 class SpellComponent:
@@ -151,9 +165,23 @@ def calculate_duration_modifier(component_type, component_strength, duration, re
         duration = 'short'
     #duration_choices = ['round','short','medium','long','extreme', 'permanent']
     if component_type==DAMAGE:
-        level = switch(duration, duration_choices, [0.5, 2, 3, 4, 5, 7])
+        level = {
+                'round': 0.5,
+                'short': 2,
+                'medium': 3,
+                'long': 4,
+                'extreme': 5,
+                'permanent': 7,
+                }[duration]
     elif component_type==CONDITION or component_type==BUFF:
-        level = switch(duration, duration_choices, [-3,0,1,2,3,5])
+        level = {
+                'round': -3,
+                'short': 0,
+                'medium': 1,
+                'long': 2,
+                'extreme': 3,
+                'permanent': 5,
+                }[duration]
     else:
         raise Exception("unrecognized component_type %s" % component_type)
 
@@ -183,19 +211,34 @@ def calculate_miscellaneous_component_multiplier(area, escapable, healthy_only,
         limit_affected_types, noncombat, saving_throw, touch_attack):
     multiplier=1
     if limit_affected_types:
-        multiplier *= switch(limit_affected_types, [1,2,3], [0.9,0.75,0.6])
+        multiplier *= {
+                1: 0.9,
+                2: 0.75,
+                3: 0.6,
+                }[limit_affected_types]
     if noncombat:
         multiplier *= PART
     if touch_attack:
-        multiplier *= switch(touch_attack, ['ray', 'poor', '1', 'average', '2'],
-                [HALF, PART, PART, 0.9, 0.9])
+        multiplier *= {
+                'ray': HALF,
+                'poor': PART,
+                '1': PART,
+                'average': 0.9,
+                '2': 0.9
+                }[touch_attack]
     if saving_throw:
-        multiplier *= switch(saving_throw, ['negates', 'half', 'partial'],
-                [HALF, PART, PART])
+        multiplier *= {
+                'negates': HALF,
+                'half': PART,
+                'partial': PART,
+                }[saving_throw]
     if area and area is not 'tiny':
         multiplier *= 1.25
     if escapable:
-        multiplier *= switch(escapable, ['1', '2'], [PART, HALF])
+        multiplier *= {
+                1: PART,
+                2: HALF,
+                }[escapable]
     if healthy_only:
         multiplier *= HALF
     return multiplier
@@ -206,9 +249,27 @@ def calculate_area_modifier(area=None, choose_targets=None, max_targets=None, co
     #area_choices = ['none', 'tiny', 'normal','large_line', 'mr', 'medium_radius','large_cone','large_radius']
     level = 0
     if components is not None and (DAMAGE in components.keys() or CONDITION in components.keys()):
-        level = switch(area, area_choices, [0,1,2,3,4,4,5,6])
+        level = {
+                'none': 0,
+                'tiny': 1,
+                'normal': 2,
+                'large_line': 3,
+                'medium_radius': 4,
+                'large_cone': 4,
+                'large_radius': 5,
+                }[area]
+        #level = switch(area, area_choices, [0,1,2,3,4,4,5,6])
     else:
-        level = switch(area, area_choices, [0,2,2,2.5,3,3,3.5,4])
+        level = {
+                'none': 0,
+                'tiny': 2,
+                'normal': 2,
+                'large_line': 2.5,
+                'medium_radius': 3,
+                'large_cone': 3,
+                'large_radius': 3.5,
+                }[area]
+        #level = switch(area, area_choices, [0,2,2,2.5,3,3,3.5,4])
     #adding max targets shouldn't affect small areas.
     if max_targets and level>=2:
         level = max(level*HALF,2)
@@ -217,13 +278,6 @@ def calculate_area_modifier(area=None, choose_targets=None, max_targets=None, co
             self.components[CONDITION]):
         level+=1
     return level
-
-def switch(data, choices, outputs):
-    for i in xrange(len(choices)):
-        if choices[i]==data:
-            return outputs[i]
-    raise Exception("Switch failed", data, choices, outputs)
-    return False
 
 def find_unique_args(args):
     unique=dict()
