@@ -174,25 +174,30 @@ def calculate_duration_modifier(component_type, component_strength, duration, re
                 'permanent': 7,
                 }[duration]
     elif component_type==CONDITION or component_type==BUFF:
-        level = {
-                'round': -3,
-                'short': 0,
-                'medium': 1,
-                'long': 2,
-                'extreme': 3,
-                'permanent': 5,
+        if component_type == CONDITION and component_strength in [1.5, 1]:
+            # high-tier conditions get a big level bump if they are longer than 1 round
+            # but there isn't a huge difference between different durations once 
+            # you pass the 5 round threshold
+            level = {
+                'round': 0,
+                'short': 5,
+                'medium': 6,
+                'long': 7,
+                'extreme': 8,
+                'permanent': 10,
                 }[duration]
+        else:
+            # this is the normal scaling for condition and damage spell durations
+            level = {
+                    'round': -3,
+                    'short': 0,
+                    'medium': 1,
+                    'long': 2,
+                    'extreme': 3,
+                    'permanent': 5,
+                    }[duration]
     else:
         raise Exception("unrecognized component_type %s" % component_type)
-
-    #apply condition strength modifier
-    if component_type==CONDITION:
-        if component_strength==1.5:
-            level+=3
-            level*=1.5
-        elif component_strength == 1:
-            level+=3
-            level*=2
 
     #now that the base level is established, apply universal modifiers
     if undispellable:
