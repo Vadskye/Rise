@@ -17,7 +17,7 @@
 \end{spelltarget}
 \spellnotes This spell's damage reduction allows the subject to ignore the first 10 physical damage it takes each round. If it is hit by a attack that deals force damage, such as \spell{magic missile}, it cannot use its damage reduction for 1 round.
 
-You can cast this spell instantaneously, quickly enough react to an opponent attacking you (but before the attack is rolled).
+You can cast this spell in response to an opponent attacking you, before the attack is rolled.
 
 \spellsection{Ablative Shield}{1}
 \spelldesc{You instantly encase yourself a shimmering field of magical energy, protecting you from hostile magic.}
@@ -30,7 +30,9 @@ You can cast this spell instantaneously, quickly enough react to an opponent att
 \end{spelltarget}
 \spellnotes This spell's damage reduction allows the subject to ignore the first 5 damage it takes each round from spells and spell-like abilities. If it is hit by a attack that deals force damage, such as \spell{magic missile}, it cannot use its damage reduction for 1 round.
 
-Spells that are not subject to spell resistance are not affected by \spell{ablative shield}. You can cast this spell instantly - quickly enough to gain its benefits in an emergency. Casting the spell is an immediate action, so you can use this spell even when it's not your turn.
+You can cast this spell in response to an opponent attacking you, before the attack is rolled.
+
+Spells that are not subject to spell resistance are not affected by \spell{ablative shield}.
 
 \spellsection{Acid Arrow}{2}
 \spelldesc{You fire a magical arrow of acid from your hand that speeds to its target.}
@@ -1421,59 +1423,57 @@ The damage reduction allows an undead subject to ignore the first 8 physical dam
 
 \spellsection{Faerie Fire}{1}
 \spellinfo{Illus (Figment) [Light]}{Nature}
-\spelltwocol{\spelllimit{\areasmall radius}}{\spellrng{\rngmed}}
+\spelltwocol{\spellburst{\areasmall radius}}{\spellrng{\rngmed}}
 \spelldur{\durshort \dismissable}
 \spellsr{Yes (Will)}
 \begin{spelltarget}{Everything in the area}
-    \spelleffect A pale glow surrounds and outlines the target, causing it to shed light as a candle. This negates invisibility, concealment, and similar effects.
+    \spelleffect A pale glow surrounds and outlines the target, causing it to shed light as a candle. This imposes a \minus20 penalty to Stealth checks, and negates invisibility, concealment, and similar effects. Illusory figments, such as those created by the \spell{silent image} spell, are not outlined, which may reveal their false nature.
 \end{spelltarget}
-\spellnotes Illusory figments such as \spell{silent image} are not outlined, which may reveal them for what they are. The light is too dim to have any special effect on creatures vulnerable to light. The \spell{faerie fire} can be blue, green, or violet, according to your choice at the time of casting. This spell does not cause any harm to the objects or creatures thus outlined.
+\spellnotes The light is too dim to have any special effect on creatures vulnerable to light.
 
 \spellsection{False Reality}{9}
-\spellinfo{Illus (Figment)}{Illus}
-\spelllimit{1 mile radius}
+\spellinfo{Illus (Figment) [Unreal]}{Illus}
+\spellzone{1 mile radius centered on you}
 \spelldur{\durlong \dismissable}
-\spelleffect This spell functions like \spell{persistent image}, except that the illusion affects a massive area for \durlong duration.
+\spellline
+\spelleffect A scripted figment of your design appears within the area, as \spell{persistent image}.
+\spellnotes Creatures can identify the illusion, as \spell{silent image}.
 
 \spellsection{Fear}{5}
 \spelldesc{You project an invisible cone that drives creatures away from you in abject fear.}
 \spellinfo{Ench (Emotion) [Fear, Mind-Affecting]}{Arcane}
 \spellburst{\areamed cone}
 \spelldur{\durshort \dismissable}
-\spellattack{Magic vs. Will}
-\begin{spellhealthy}
-    Creatures in the area are \shaken.
-\end{spellhealthy}
-\begin{spellblood}
-    Creatures in the area are \frightened.
-\end{spellblood}
 \spellsr{Yes (Will)}
+\begin{spelltarget}{All creatures in the area}[Magic vs. Will]
+    \spellsuccess The target is \shaken.
+    
+    If it is \bloodied, it is \frightened instead.
+\end{spelltarget}
 
 \spellsection{Feather Fall}{1}
 \spellinfo{Evoc (Control) [Air]}{Air, Evoc, Travel}
-\spellcmp{Verbal only}
-\spelltime{1 swift action}
+\spelltwocol{\spelltime{1 swift action}}{\spellcmp{Verbal only}}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngmed}}
-\spelltgts{Five Medium or smaller freefalling objects or willing creatures in the area}
 \spelldur{\durshort or until landing}
-\spelleffect The affected creatures or objects fall slowly. Feather fall instantly changes the rate at which the targets fall to a mere 60 feet per round (equivalent to the end of a fall from a few feet), and the subjects take no damage upon landing while the spell is in effect. However, when the spell duration expires, a normal rate of falling resumes.
-\par The spell affects one or more Medium or smaller creatures (including gear and carried objects up to each creature's maximum load) or objects, or the equivalent in larger creatures: A Large creature or object counts as two Medium creatures or objects, a Huge creature or object counts as two Large creatures or objects, and so forth.
-\par If the spell is cast on a falling item, the object does half normal damage based on its weight, with no bonus for the height of the drop.
-\spellnotes \par Feather fall works only upon free-falling objects. It no special effect on ranged weapons unless they are falling an extraordinary distance. It does not affect a sword blow or a charging or flying creature.
 \spellsr{Yes (Will)}
+\begin{spelltargets}{Five freefalling objects or willing creatures in the area (Medium or smaller)}
+    \spelleffect This spell changes at which the target falls to a mere 60 feet per round (equivalent to the end of a fall from a few feet). It takes no damage from falling. If it is heavy enough to deal falling damage to other creatures and objects, it deals half its normal falling damage, with no bonus for the height of the drop.
+\end{spelltarget}
+\spellnotes This spell affects up to five Medium or smaller creatures (including gear and carried objects up to each creature's maximum load) or objects, or the equivalent in larger creatures: A Large creature or object counts as two Medium creatures or objects, a Huge creature or object counts as two Large creatures or objects, and so forth.
+
+This spell works only upon free-falling objects. It no special effect on ranged weapons unless they are falling an extraordinary distance. It does not affect a sword blow or a charging or flying creature.
 
 \spellsection{Feeblemind}{5}
 \spellinfo{Ench (Inhibition) [Mind-Affecting]}{Arcane}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngtouch}}
-\spellattack{Physical vs. Reflex, Magic vs. Will}
-\begin{spellhealthy}
-    If you touch the target, it is bewildered.
-\end{spellhealthy}
-\begin{spellblood}
-    If you toucht the target, its Intelligence drops to \minus9, giving it roughly the intellect of a lizard. It is unable to use Intelligence-based skills, cast spells, understand language, or communicate coherently. Still, it knows who its friends are and can follow them and even protect them. The subject remains in this state until a \spell{heal}, \spell{limited wish}, \spell{miracle}, or \spell{wish} spell is used to cancel the effect of the \spell{feeblemind}.
-\end{spellblood}
-\spellnotes The target must be \bloodied when the spell is cast to suffer the \bloodied effect.
+\spellrng{5 feet}
+\spelldur{\durshort or permanent}
 \spellsr{Yes (Will)}
+\begin{spelltarget}{One creature}[Magic vs. Will]
+    \spellsuccess The target is \bewildered for \durshort duration.
+    
+    If the target is \bloodied, its Intelligence drops to \minus9, giving it roughly the intellect of a lizard. It is unable to use Intelligence-based skills, cast spells, understand language, or communicate coherently. Still, it knows who its friends are and can follow them and even protect them. The subject remains in this state until a \spell{heal}, \spell{limited wish}, \spell{miracle}, or \spell{wish} spell is used to cancel the effect of the \spell{feeblemind}.
+\end{spelltarget}
 
 \spellsection{Finger of Death}{7}
 \spellinfo{Necro (Life) [Death]}{Arcane, Death}
@@ -1689,9 +1689,10 @@ While in the air, a creature with a glide speed can control its fall as a move a
 \spellinfo{Conj (Creation)}{Arcane}
 \spelltwocol{\spellburst{\areasmall radius}}{\spellrng{\rngmed}}
 \spelldur{\durshort}
-\spelleffect A cloud of golden particles covers everyone and everything in the area, visibly outlining invisible things for the duration of the spell. It likewise negates the effects of \spell{blur} and \spell{displacement}, and reveals illusory figments such as \spell{silent image} for what they are. All in the area at the time that the spell is cast are covered by the dust, which continues to sparkle until it fades.
-\par Any creature covered by the dust takes a \minus40 penalty on Hide checks.
-\spelleffect Water and similar substances can remove the dust.
+\begin{spelltarget}{Everything in the area}
+    \spelleffect Golden particles surround and outline the target. This imposes a \minus20 penalty to Stealth checks, and negates invisibility, concealment, and similar effects. Illusory figments, such as those created by the \spell{silent image} spell, are not outlined, which may reveal their false nature.
+\end{spelltarget}
+\spellnotes Water and similar substances can remove the dust.
 
 \spellsection{Grasping Hand}{6}
 \spellinfo{Evoc (Control) [Force]}{Arcane}
