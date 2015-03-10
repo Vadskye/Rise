@@ -161,11 +161,11 @@ def rank_condition_strength(condition_strength):
         return 0
 
 def calculate_duration_modifier(component_type, component_strength, duration, requires_concentration, undispellable, save_ends, check_bloodied_instantly):
-    if duration is None:
-        duration = 'short'
     #duration_choices = ['round','short','medium','long','extreme', 'permanent']
     if component_type==DAMAGE:
         level = {
+                # assume no duration by default
+                None: 0,
                 'round': 0.5,
                 'short': 2,
                 'medium': 3,
@@ -180,6 +180,8 @@ def calculate_duration_modifier(component_type, component_strength, duration, re
             # you pass the 5 round threshold
             level = {
                 'round': 0,
+                # assume short duration by default
+                None: 5,
                 'short': 5,
                 'medium': 6,
                 'long': 7,
@@ -190,6 +192,8 @@ def calculate_duration_modifier(component_type, component_strength, duration, re
             # this is the normal scaling for condition and damage spell durations
             level = {
                     'round': -3,
+                    # assume short duration by default
+                    None: 0,
                     'short': 0,
                     'medium': 1,
                     'long': 2,
