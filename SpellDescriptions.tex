@@ -890,7 +890,6 @@ As a swift action, you can move the lights as you desire through the air. They c
 \spellsection{Deflection}{3}
 \spelldesc{You shield yourself from enemy attacks, causing them to deflect away from you harmlessly.}
 \spellinfo{Abjur (Shielding)}{Abjur}
-\spellrng{Personal}
 \spelldur{\durlong}
 \begin{spelltarget}{You}
     \spelleffect You gain a \plus2 enhancement bonus to your physical defenses. \spellbonusscalingdescription
@@ -900,7 +899,6 @@ As a swift action, you can move the lights as you desire through the air. They c
 \spellsection{Delay Damage}{5}
 \spelldesc{You partially shift yourself into the future, delaying the impact of attacks against you.}
 \spellinfo{Abjur/Trans (Shielding, Temporal)}{\spelllists{Arcane}}
-\spellrng{Personal}
 \spelldur{\durmed}
 \begin{spelltarget}{You}
     \spelleffect Whenever you take damage, half of the damage (rounded down) is not dealt to you immediately. This damage is tracked separately. At the end of the spell's duration, you take all of the delayed damage at once. For every point of damage dealt in this way in excess of your hit points, you take 1 point of critical damage.
@@ -1266,12 +1264,12 @@ Artifacts and deities are unaffected by mortal magic such as this.
 
 \spellsection{Energy Conversion}{7}
 \spellinfo{Abjur/Evoc (Energy, Shielding) [see text]}{Arcane, Protection}
-\spellrng{Personal and \rngclose; see text}
 \spelldur{\durlong or until discharged}
 \spellsr{Yes (Fortitude)}
 \begin{spelltarget}{You}
     \spelleffect You resist energy damage, as \spell{greater resist energy}, except that you store up the energy you absorb. As a standard action, you can expend some of that energy to make an attack.
 \end{spelltarget}
+\spellrng{\rngclose}
 \begin{spelltarget}{One creature}[Magic vs. Reflex]
     \spelleffect Choose an energy type that you have stored. You expend damage of that type of up to three times your caster level.
     \spellsuccess The target takes damage equal to the energy expended.
