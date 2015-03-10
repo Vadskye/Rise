@@ -320,7 +320,7 @@ Spells that are not subject to spell resistance are not affected by \spell{ablat
 \begin{spelltargets}{All nonevil creatures in the area}
     \spelleffect If the target's level does not exceed your caster level, it is \sickened for 5 rounds.
 
-    If it is also bloodied, it also suffers one or more of the following ill effects, depending on its level.
+    If it is also \bloodied, it also suffers one or more of the following ill effects, depending on its level.
     \begin{itemize}
         \item Up to caster level \minus5: The creature is also \nauseated for 1 round.
         \item Up to caster level \minus10: The creature is also \paralyzed for 5 rounds.
@@ -1477,15 +1477,13 @@ This spell works only upon free-falling objects. It no special effect on ranged 
 
 \spellsection{Finger of Death}{7}
 \spellinfo{Necro (Life) [Death]}{Arcane, Death}
-\spelltwocol{\spelltgt{One living creature}}{\spellrng{\rngclose}}
-\spellattack{Magic vs. Fortitude}
-\begin{spellhealthy}
-    The target is \staggered for 5 rounds.
-\end{spellhealthy}
-\begin{spellblood}
-    The target loses all its hit points and takes 9 critical damage, causing it to begin dying.
-\end{spellblood}
+\spellrng{\rngclose}
 \spellsr{Yes (Fortitude)}
+\begin{spelltarget}{One living creature}[Magic vs. Fortitude]
+    \spellsuccess The target is \staggered for 5 rounds.
+
+    If it is \bloodied, it instead loses all its hit points and takes 9 critical damage, causing it to begin dying.
+\end{spelltarget}
 
 \spellsection{Fire Seeds}{6}
 \spellinfo{Evoc/Trans (Energy, Imbuement) [Fire]}{Fire, Nature, Wild}
