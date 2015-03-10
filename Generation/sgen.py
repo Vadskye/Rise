@@ -286,13 +286,6 @@ def calculate_area_modifier(area=None, choose_targets=None, max_targets=None, co
         level+=1
     return level
 
-def find_unique_args(args):
-    unique=dict()
-    for key in args.keys():
-        if not args[key]==default_args[key]:
-            unique[key]=args[key]
-    return unique
-
 #accept string in the format "arg1=blah, arg2=herp derp, arg3=whee"
 #return dict in the format {arg1: blah, arg2: herp derp, arg3: whee}
 def parse_string_args_to_dict(text):
@@ -396,12 +389,12 @@ if __name__ == "__main__":
                 general_args['range'],
                 general_args['trigger'])
         if general_args['savename']:            
-            save_name = ' '.join(general_args['savename'])
+            save_name = ''.join(general_args['savename'])
             print 'Spell level of', save_name+': ', spell_level
             storage = open(storage_file_name,'a')
             storage.seek(0)
             storage.write(save_name+'\n')
-            storage.write(find_unique_args(general_args).__str__()+'\n')
+            storage.write(general_args.__str__()+'\n')
             storage.write('Spell Level: '+str(spell_level)+'\n\n')
             storage.close()
         else:
