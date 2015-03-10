@@ -1487,20 +1487,20 @@ This spell works only upon free-falling objects. It no special effect on ranged 
 
 \spellsection{Fire Seeds}{6}
 \spellinfo{Evoc/Trans (Energy, Imbuement) [Fire]}{Fire, Nature, Wild}
-\spelltwocol{\spellburst{\areasmall or \areamed radius centered on the touched objects; see text}}{\spellrng{\rngtouch}}
-\spelltgts{Up to four touched acorns or up to eight touched holly berries}
-\spelldur{\durlong or until used}
-\spelldmg{6d6 fire damage \add d6 per four caster levels above 12th (acorn grenades);\par
-6d8 fire damage \add d8 per four caster levels above 12th (holly berry bombs)}
-\spellattack{Physical vs. Reflex, Magic vs. Reflex; see text}
-\spelleffect Depending on the version of fire seeds you choose, you turn acorns into splash weapons that you or another character can throw, or you turn holly berries into bombs that you can detonate on command.
-\par \subspell{Acorn Grenades} As many as four acorns turn into special splash weapons that can be hurled as far as 100 feet. When you throw an acorn, you make a physical ranged attack vs. Reflex to strike the intended target. If you miss, the acorn detonates in a random corner of the intended target square. Together, the acorns are capable of dealing 6d6 fire damage \add d6 per four caster levels above 12th, divided up among the acorns as you wish.
-\par Each acorn explodes upon striking any hard surface. When it does, you make a magic attack vs. Reflex to deal damage to all creatures in a \areasmall radius burst. A failed attack deals half damage. You automatically succeed on this attack against a creature struck by the acorn directly.
-\par \subspell{Holly Berry Bombs} You turn as many as eight holly berries into special bombs. The holly berries are usually placed by hand, since they are too light to make effective thrown weapons (they can be tossed only 5 feet). Together, the holly berries are capable of dealing 6d8 fire damage \add d8 per four caster levels above 12th, divided up among the berries as you wish.
-\par If you are within \rngmed range and speak a word of command (as a standard action), each berry instantly bursts into flame. When they do, you make a magic attack vs. Reflex to deal damage to every creature in a \areamed radius burst of the berries. A failed attack deals half damage.
-\spellnotes You can only have one \spell{fire seeds} active at any time.
-\par \mfx{Material Component} The acorns or holly berries.
+\spelldur{1 hour or until discharged}
 \spellsr{Yes (Reflex)}
+\spellline
+\spelleffect You can imbue up to four acorns, holly berries, or other seeds with fiery energy capable of dealing up to 6d6 damage \add d6 per four caster levels above 12th. You may freely decide the distribution of damage between the target berries.
+
+As a standard action, you can say a command word to detonate any number of affected seeds. In addition, the seeds detonate on impact. They may be thrown, with a range increment of 20 feet.
+\spellburst{\areamed radius centered on a detonating seed}
+\begin{spelltarget}*{Everything in the area}[Magic vs. Reflex]
+    \spellsuccess The target takes the damage imbued into the seed.
+    \spellfailure As above, but half damage.
+    \spellspecial This attack automatically succeeds against a creature that is struck directly by a thrown seed or holding a seed when it detonates.
+\end{spelltarget}
+\mfx{Material Component} The seeds.
+\spellnotes You can only have one \spell{fire seeds} spell active at any time.
 
 \spellsection{Fire Shield}{4}
 \spelldesc{You appear to immolate yourself in a wreath of flame that lashes out at anyone who tries to harm you.}
