@@ -1485,13 +1485,13 @@ This spell works only upon free-falling objects. It no special effect on ranged 
 
 \spellsection{Fire Seeds}{6}
 \spellinfo{Evoc/Trans (Energy, Imbuement) [Fire]}{Fire, Nature, Wild}
-\spelldur{1 hour or until discharged}
+\spelldur{\durext or until discharged}
 \spellsr{Yes (Reflex)}
 \spellline
 \spelleffect You can imbue up to four acorns, holly berries, or other seeds with fiery energy capable of dealing up to 6d6 damage \add d6 per four caster levels above 12th. You may freely decide the distribution of damage between the target berries.
 
 As a standard action, you can say a command word to detonate any number of affected seeds. In addition, the seeds detonate on impact. They may be thrown, with a range increment of 20 feet.
-\spellburst{\areamed radius centered on a detonating seed}
+\spellburst{\areasmall radius centered on a detonating seed}
 \begin{spelltarget}*{Everything in the area}[Magic vs. Reflex]
     \spellsuccess The target takes the damage imbued into the seed.
     \spellfailure As above, but half damage.
@@ -1542,29 +1542,31 @@ As a standard action, you can say a command word to detonate any number of affec
 
 \spellsection{Flame Blade}{2}
 \spellinfo{Evoc (Energy) [Fire]}{Nature, Fire}
-\spellrng{Touch}
+\spellsr{Yes (Fortitude)}
 \spelldur{\durlong \dismissable}
-\spelleffect A 3 foot long beam of red-hot fire springs forth from your hand. In addition to providing illumination like a torch, you can wield this bladelike beam as a weapon. It is treated like a scimitar, except that all damage dealt with it is fire damage, you add half your casting attribute to damage in place of half your Strength, and it is treated as a light weapon, so you can use Dexterity to attack with it. Alternately, you can hurl flames from the weapon up to \rngmed range as if it were a thrown weapon.
+    \spelleffect A 3 foot long beam of red-hot fire springs forth from your hand. In addition to providing illumination like a torch, you can wield this bladelike beam as a weapon. It is treated like a scimitar, except that all damage dealt with it is fire damage, you add half your casting attribute to damage in place of half your Strength, and it is treated as a light weapon, so you can use Dexterity to attack with it. Alternately, you can hurl flames from the weapon up to \rngmed range as if it were a thrown weapon.
 \spellnotes \firespellnotes
 
 Spell resistance applies when a foe is struck by the weapon, but not when the blade is created.
-\spellsr{Yes (Fortitude)}
 
 \spellsection{Flame Strike}{5}
 \spelldesc{You call a vertical column of divine fire that roars downward, consuming your unworthy foes.}
 \spellinfo{Evoc (Channeling, Energy) [Destructive, Fire]}{Destruction, Divine, Fire, War}
-\spelltwocol{\spellburst{\areamed radius cylinder, 40 ft. high}}{\spellrng{\rngclose}}
-\spelldmg{5d6 fire and divine damage \add d6 per four caster levels above 8th; see text}
-\spellattack{Magic vs. Reflex}
-\spelleffect Everything in the area takes damage. A failed attack deals half damage. Half the damage is fire damage, but the other half results directly from divine power. Your allies in the area take only the fire damage.
+\spellrng{\rngclose}
+\spellburst{\areamed radius cylinder, 40 ft. high}
+\spellsr{Yes (Fortitude)}
+\begin{spelltarget}{Everything in the area}[Magic vs. Reflex]
+    \spellsuccess 5d6 fire and divine damage \add d6 per four caster levels above 8th. If the target is an ally, it takes half damage, and all of the damage it takes is fire damage.
+    \spellfailure As above, but half damage.
+\end{spelltarget}
 \spellnotes \destructivespellnotes
 
 \firespellnotes
-\spellsr{Yes (Fortitude)}
 
 \spellsection{Fly}{4}
 \spellinfo{Trans (Imbuement)}{Arcane}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngtouch}}
+\spellrng{\rngtouch}
+\begin{spelltarget}{One creature}
 \spelldur{\durshort}
 \spelleffect The subject gains a 30 foot fly speed with good maneuverability.
 \spellnotes An unencumbered creature with a fly speed can fly through the air. See \pcref{Flying}, for more details.
