@@ -418,3 +418,16 @@ Hold Person, Mass
 {'bloodied': [True, False], 'area': 'medium_radius', 'healthy': [False, True], 'save_ends': [True, False], 'condition': [1.0, 3.0], 'choose_targets': True, 'limit_types': [2], 'max_targets': True, 'save': ['negates'], 'save_name': ['Hold', 'Person,', 'Mass']}
 Spell Level: 8.05
 
+f e e b l e m i n d
+f e e b l e m i n d
+{'loadname': None, 'condition': None, 'alternateeffect': None, 'duration': None, 'range': 'touch', 'concentration': None, 'undispellable': True, 'bloodied': False, 'area': None, 'noncombat': None, 'damage': False, 'choosetargets': None, 'trigger': None, 'bloodiedinstant': False, 'saveends': False, 'save': 'negates', 'buff': None, 'savename': 'feeblemind', 'castingtime': None, 'maxtargets': None, 'escapable': None, 'touchattack': None, 'nosr': None, 'healthy': False, 'limittypes': 1, 'dot': None}
+Spell Level: 5.152
+
+feeblemind
+{'loadname': None, 'condition': None, 'alternateeffect': None, 'duration': None, 'range': 'touch', 'concentration': None, 'undispellable': True, 'bloodied': False, 'area': None, 'noncombat': None, 'damage': False, 'choosetargets': None, 'trigger': None, 'bloodiedinstant': False, 'saveends': False, 'save': 'negates', 'buff': None, 'savename': 'feeblemind', 'castingtime': None, 'maxtargets': None, 'escapable': None, 'touchattack': None, 'nosr': None, 'healthy': False, 'limittypes': 1, 'dot': None}
+Spell Level: 5.152
+
+finger of death
+{'loadname': None, 'condition': None, 'alternateeffect': None, 'duration': None, 'range': 'close', 'concentration': None, 'undispellable': False, 'bloodied': False, 'area': None, 'noncombat': None, 'damage': False, 'choosetargets': None, 'trigger': None, 'bloodiedinstant': True, 'saveends': False, 'save': 'negates', 'buff': None, 'savename': 'finger of death', 'castingtime': None, 'maxtargets': None, 'escapable': None, 'touchattack': None, 'nosr': None, 'healthy': False, 'limittypes': 1, 'dot': None}
+Spell Level: 6.8
+
