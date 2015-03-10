@@ -34,7 +34,7 @@ def initialize_argument_parser():
     parser.add_argument('-u', '--duration', dest = 'duration', type=str,
             choices=duration_choices)
     parser.add_argument('--undispellable', dest = 'undispellable',
-            help='Immune to dispelling?', type=util.bool_parser)
+            help='Immune to dispelling?', action='store_true')
     parser.add_argument('--concentration', dest = 'concentration', 
             type=util.bool_parser, help='Requires concentration?')
     parser.add_argument('--saveends', dest='saveends', 
