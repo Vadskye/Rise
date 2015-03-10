@@ -156,6 +156,8 @@ Strike feats grant a character the ability to make an unusually potent attack wi
 
 \midrule
 \thead{Class Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
+\featref{Battletrance} & Rage ability & Enter trance instead of angry rage & \featpref{Battletrance} \\
+\featref{Domain Devotion} & Domain mastery ability & Use domain attribute for all spells, \plus1 with domain spells & \featpref{Domain Devotion} \\
 \featref{Extra Channeling} & Ability to channel energy & Can channel energy 3 more times per day & \featpref{Extra Channeling} \\
 \featref{Extra Invocation} & Ability to use an arcane invocation & Learn a new arcane invocation & \featpref{Extra Invocation} \\
 \featref{Extra Rage} & Rage ability & Can rage 1 more time per day & \featpref{Extra Rage} \\
@@ -164,6 +166,7 @@ Strike feats grant a character the ability to make an unusually potent attack wi
 \featref{Intense Channeling} & Channel energy 3d6 & \plus1d6 damage or healing with channel energy & \featpref{Intense Channeling} \\
 \featref{Mental Discipline} & Combat discipline ability & Use Charisma for combat discipline & \featpref{Mental Discipline} \\
 \featref{Rapid Wild Aspect} & Wild aspect ability & Activate wild aspect as a swift action \\
+\featref{Savvy Rogue} & Combat trick ability & Use Charisma for combat tricks & \featpref{Savvy Rogue} \\
 \featref{Selective Channeling} & Channel energy ability & Can exclude two additional creatures & \featpref{Selective Channeling} \\
 \featref{Shield Discipline} & Armor discipline ability & Apply armor discipline with shields \\
 \featref{Trap Sense} & Danger sense class feature & Automatically detect traps & \featpref{Trap Sense} \\
@@ -454,6 +457,10 @@ Choose one category of armor: light, medium, heavy, or shields.
 \featpre Proficiency with light armor.
 \featben You reduce your chance of arcane spell failure from wearing armor by 10\%.
 
+\feat{Battletrance}{Class}
+\featpre Rage ability.
+\featben When you use your rage ability, you can enter a trance instead of getting angry. in place of the normal benefits and drawbacks from raging, you add your rage bonus to your Constitution, Wisdom, and Will defense. Any other abilities, such as channeled rages, function normally.
+
 \feat{Bewildering Strike}{Combat, Strike}
 \featpre Base attack bonus \plus8.
 \featben When you make a physical attack, you may take a \minus4 penalty to hit. If you deal damage, you make a Will attack against the struck foe to make it \bewildered for 5 rounds. Your attack bonus is equal to your base attack bonus \add your physical attack attribute (Strength or Dexterity). You cannot make more than one Strike each round.
@@ -579,6 +586,11 @@ The spell's level must be no greater than half of your total levels in non-casti
 \feat{Dodge}{Combat}
 \parhead{Prerequisite} Dex 3.
 \parhead{Benefit} You may designate an opponent as a free action. You receive a \plus4 bonus to your dodge modifier against attacks of opportunity from that opponent that were provoked by movement. In addition, you gain a \plus4 bonus to Acrobatics checks made to tumble against that opponent.
+
+\feat{Domain Devotion}{Class}
+Choose a cleric domain.
+\featpre Domain aspect from the chosen domain.
+\featben You may use the domain attribute from the chosen domain as your casting attribute when determining your magic attack bonus for all spells. In addition, you gain a \plus1 bonus to caster level with spells from the chosen domain.
 
 \feat{Draconic Breath}{Bloodline, Dragon}
 \parhead{Prerequisites} Con 3, any three dragon bloodline feats.
@@ -1251,6 +1263,10 @@ If you have three or more Reaction feats, you can draw light and medium weapons 
 \feat{Ritual Caster}{Magic}
 \featpre Intelligence 3.
 \featben You can learn and perform rituals as if you were an arcane caster with a caster level equal to your character level. The maximum level of ritual that you can learn or perform is equal to half your character level.
+
+\feat{Savvy Rogue}{Class}
+\featpre Combat trick ability.
+\featben You can use Charisma in place of Intelligence for combat tricks that depend on Intelligence, and for your special attack bonus with combat tricks.
 
 \feat{Scale the Beast}{Skill}
 \featpre Climb 8 ranks.
