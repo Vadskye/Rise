@@ -218,7 +218,7 @@ def calculate_duration_modifier(component_type, component_strength, duration, re
     if discharged == 'depleted':
         level*=PART
     elif discharged == 'delayed':
-        level*=HALF
+        level*=0.5  # this is even more significant than HALF
 
     print "duration modifier:", level
     return level
