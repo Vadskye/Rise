@@ -69,6 +69,9 @@ def initialize_argument_parser():
             choices=['standard', 'full', 'swift'])
     parser.add_argument('-r', '--range', dest='range', type=str,
             choices=range_choices)
+    parser.add_argument('--discharged', type=str, choices=[None, 'depleted', 'delayed'],
+            help='Discharged before its duration is over? \
+            1=effect depleted over time, 2=delayed single effect')
     parser.add_argument('--savename', dest='savename', type=str)
     parser.add_argument('--loadname', dest='loadname', type=str)
     parser.add_argument('--dot', dest='dot', type=util.bool_parser,
@@ -122,7 +125,7 @@ class Spell:
 class SpellComponent:
     def __init__(self, component_type, alternate_effect=None, area=None,
             bloodied_only=None, check_bloodied_instantly=None, component_strength=None,
-            duration=None, escapable=None, healthy_only=None,
+            discharged=None, duration=None, escapable=None, healthy_only=None,
             limit_affected_types=None, noncombat=None, requires_concentration=None,
             save_ends=None, saving_throw=None, touch_attack=None,
             undispellable=None):
@@ -130,7 +133,7 @@ class SpellComponent:
         if bloodied_only:
             self.level *= 0.4
         print "base level:", self.level
-        self.level += calculate_duration_modifier(component_type, component_strength, duration, requires_concentration, undispellable, save_ends, check_bloodied_instantly)
+        self.level += calculate_duration_modifier(component_type, component_strength, duration, requires_concentration, undispellable, save_ends, check_bloodied_instantly, discharged)
         print "with duration modifier:", self.level
         self.level *= calculate_miscellaneous_component_multiplier(area,
                 escapable, healthy_only, limit_affected_types, noncombat,
@@ -160,7 +163,7 @@ def rank_condition_strength(condition_strength):
     except KeyError:
         return 0
 
-def calculate_duration_modifier(component_type, component_strength, duration, requires_concentration, undispellable, save_ends, check_bloodied_instantly):
+def calculate_duration_modifier(component_type, component_strength, duration, requires_concentration, undispellable, save_ends, check_bloodied_instantly, discharged):
     #duration_choices = ['round','short','medium','long','extreme', 'permanent']
     if component_type==DAMAGE:
         level = {
@@ -212,6 +215,10 @@ def calculate_duration_modifier(component_type, component_strength, duration, re
         level*=HALF
     if check_bloodied_instantly:
         level*=PART
+    if discharged == 'depleted':
+        level*=PART
+    elif discharged == 'delayed':
+        level*=HALF
 
     print "duration modifier:", level
     return level
@@ -374,6 +381,7 @@ if __name__ == "__main__":
                     bloodied_only = derp['bloodied'], 
                     check_bloodied_instantly = derp['bloodiedinstant'],
                     component_strength = derp[component_type],
+                    discharged = derp['discharged'],
                     duration = derp['duration'],
                     escapable = derp['escapable'],
                     healthy_only = derp['healthy'],
