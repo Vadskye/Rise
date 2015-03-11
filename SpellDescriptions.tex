@@ -67,6 +67,7 @@ Spells that are not subject to spell resistance are not affected by \spell{ablat
         \spellfailure As above, but half damage.
     \end{spelltarget}
 \end{spelltrigger}
+\spellnotes \fogspellnotes
 
 \spellsection{Agony}{5}
 \spelldesc{You inflict debilitating pain on your foe, crippling its ability to act.}
@@ -562,7 +563,7 @@ If the staff-treant is reduced to 0 or fewer hit points, it crumbles to powder a
         \spellsuccess 1d4 Constitution damage.
     \end{spelltargets}
 \end{spelltrigger}
-\spellnotes Holding one's breath doesn't help against the poison, but creatures immune to poison are unaffected.
+\spellnotes Holding one's breath doesn't help against the poison, but creatures immune to poison are unaffected. \fogspellnotes
 \par Because the vapors are heavier than air, they sink to the lowest level of the land, even pouring down den or sinkhole openings. This spell cannot penetrate liquids, nor can it be cast underwater.
 
 \spellsection{Color Spray}{1}
@@ -1566,11 +1567,12 @@ Spell resistance applies when a foe is struck by the weapon, but not when the bl
 \spellsection{Fly}{4}
 \spellinfo{Trans (Imbuement)}{Arcane}
 \spellrng{\rngtouch}
-\begin{spelltarget}{One creature}
 \spelldur{\durshort}
-\spelleffect The subject gains a 30 foot fly speed with good maneuverability.
-\spellnotes An unencumbered creature with a fly speed can fly through the air. See \pcref{Flying}, for more details.
 \spellsr{Yes (Fortitude)}
+\begin{spelltarget}{One creature}
+    \spelleffect The target gains a 30 foot fly speed with good maneuverability.
+\end{spelltarget}
+\spellnotes An unencumbered creature with a fly speed can fly through the air. See \pcref{Flying}, for more details.
 
 %priced as buff spell for range
 \spellsection{Fog Cloud}{2}
@@ -1578,8 +1580,9 @@ Spell resistance applies when a foe is struck by the weapon, but not when the bl
 \spellinfo{Conj (Creation) [Fog]}{Arcane, Nature, Water}
 \spelltwocol{\spellzone{\areamed radius cylinder}}{\spellrng{\rngmed}}
 \spelldur{\durshort}
-\spelleffect Fog blocks sight in the area, causing all creatures within or looking through the area to treat everything they see as if it had concealment (\plus4 to physical defenses). The cloud is stationary once created.
-\spellnotes Fog spells do not function underwater and can be dispersed by wind. A moderate wind (11\add mph) disperses the fog in 5 rounds; a strong wind (21\add mph) disperses the fog in 1 round. Localized wind, such as from a \spell{gust of wind} spell, only disperses the fog where it overlaps the fog. A fire spell burns away the fog in the area into which it deals damage.
+\spellline
+\spelleffect Fog blocks sight in the area, causing all creatures within or looking through the area to treat everything they see as if it had \concealment.
+\spellnotes \fogspellnotes
 
 \spellsection{Forcecage}{7}
 \spellinfo{Evoc (Control) [Force]}{Evoc}
@@ -2330,7 +2333,7 @@ The missiles strike unerringly, even if the target has cover or concealment. Spe
 \spelldur{\durlong and 5 rounds; see text}
 \spellattack{None/Magic vs. Will}
 \spelleffect This spell functions like \spell{fog cloud}, except that the fog hampers mental ability. Once per minute, you make a Will attack against all creatures in the area to impose a \minus5 penalty to Wisdom. Affected creatures take the penalty as long as they remain in the fog and for 5 rounds thereafter. The fog is stationary and lasts for 1 hour (or until dispersed by wind).
-\spellnotes A moderate wind (11\add mph) disperses the fog in 5 rounds; a strong wind (21\add mph) disperses the fog in 1 round. The penalty to Wisdom imposed by this spell does not stack with itself.
+\spellnotes The penalty to Wisdom imposed by this spell does not stack with itself. \fogspellnotes
 
 \spellsection{Minor Image}{3}
 \spellinfo{Illus (Figment) [Unreal]}{Illus}
@@ -2419,6 +2422,7 @@ The missiles strike unerringly, even if the target has cover or concealment. Spe
 \spellinfo{Conj (Creation) [Fog]}{Arcane, Divine, Nature, Water}
 \spellzone{\areamed radius cylinder centered on you, 20 ft. high}
 \spelleffect This spell functions like \spell{fog cloud}, except that the fog created is centered on you.
+\spellnotes \fogspellnotes
 
 \spellsection{Order's Wrath}{4}
 \spellinfo{Evoc (Channeling) [Lawful]}{Law}
@@ -2894,7 +2898,7 @@ If the subject takes any offensive action, the spell immediately ends.
 \spellinfo{Conj (Creation) [Fog]}{Arcane, Nature}
 \spellzone{200 ft. radius cylinder centered on you, 50 ft. high}
 \spelleffect This spell functions like \spell{obscuring mist}, except that the effect is much larger.
-\spellnotes A severe wind disperses the fog within 1 minute, a windstorm disperses it within 5 rounds, and a hurricane disperses it within a round.
+\spellnotes A severe wind disperses the fog within 1 minute, a windstorm disperses it within 5 rounds, and a hurricane disperses it within a round. \fogspellnotes
 
 \spellsection{Searing Light}{3}
 \spelldesc{You channel divine power into a searing blast of light that erupts your palm, striking your foe.}
@@ -3140,7 +3144,7 @@ A creature faced with definitive proof that the figment is unreal can disbelieve
 \spelldur{\durmed}
 \spelleffect This spell functions like \spell{fog cloud}, but in addition to obscuring sight, the fog is so thick that any creature attempting to move through it progresses at a speed of 5 feet, regardless of its normal speed, and it takes a \minus2 penalty on all melee attack and melee damage rolls. The vapors prevent effective ranged weapon attacks (except for magic rays and the like). A creature or object that falls into solid fog is slowed, so that each 10 feet of vapor that it passes through reduces falling damage by 1d6.
 \par A creature in the fog can take a full-round action to make a Strength check, moving 5 feet for every 5 by which the result exceeds DC 0. This movement is affected by any other effects which impede movement, as normal.
-\spellnotes A severe wind (31\add mph) disperses the fog in 5 rounds, and a hurricane force wind disperses the fog in 1 round. This spell can be made permanent with a \spell{permanency} ritual. A permanent solid fog dispersed by wind reforms in 10 minutes.
+\spellnotes This spell can be made permanent with a \spell{permanency} ritual. A permanent solid fog dispersed by wind reforms in 10 minutes. \fogspellnotes
 
 \spellsection{Song of Discord}{6}
 \spellinfo{Ench (Compulsion) [Auditory, Mind-Affecting]}{Arcane}
