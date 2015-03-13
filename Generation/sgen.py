@@ -56,7 +56,7 @@ def initialize_argument_parser():
     parser.add_argument('-l', '--limittypes', dest='limittypes', type=int,
             help='Limit affected types?', choices=[0,1,2,3])
     parser.add_argument('--escapable', dest='escapable', type=str,
-            help='Is the spell escapable?', choices=['0','1','2'])
+            help='Is the spell escapable?', choices=['1','2'])
     parser.add_argument('--noncombat', dest='noncombat', 
             type=util.bool_parser, help='Irrelevant in combat?')
     parser.add_argument('--touchattack', dest='touchattack',
@@ -252,8 +252,8 @@ def calculate_miscellaneous_component_multiplier(area, escapable, healthy_only,
         multiplier *= 1.25
     if escapable:
         multiplier *= {
-                1: PART,
-                2: HALF,
+                '1': PART,
+                '2': HALF,
                 }[escapable]
     if healthy_only:
         multiplier *= HALF
