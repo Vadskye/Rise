@@ -135,7 +135,7 @@ class SpellComponent:
         print "base level:", self.level
         self.level += calculate_duration_modifier(component_type, component_strength, duration, requires_concentration, undispellable, save_ends, check_bloodied_instantly, discharged)
         print "with duration modifier:", self.level
-        self.level *= calculate_miscellaneous_component_multiplier(area,
+        self.level *= calculate_miscellaneous_component_multiplier(component_type, area,
                 escapable, healthy_only, limit_affected_types, noncombat,
                 saving_throw, touch_attack)
         print "with miscellaneous modifiers:", self.level
@@ -223,8 +223,8 @@ def calculate_duration_modifier(component_type, component_strength, duration, re
     print "duration modifier:", level
     return level
 
-def calculate_miscellaneous_component_multiplier(area, escapable, healthy_only,
-        limit_affected_types, noncombat, saving_throw, touch_attack):
+def calculate_miscellaneous_component_multiplier(component_type, area, escapable,
+        healthy_only, limit_affected_types, noncombat, saving_throw, touch_attack):
     multiplier=1
     if limit_affected_types:
         multiplier *= {
@@ -234,22 +234,6 @@ def calculate_miscellaneous_component_multiplier(area, escapable, healthy_only,
                 }[limit_affected_types]
     if noncombat:
         multiplier *= PART
-    if touch_attack:
-        multiplier *= {
-                'ray': HALF,
-                'poor': PART,
-                '1': PART,
-                'average': 0.9,
-                '2': 0.9
-                }[touch_attack]
-    if saving_throw:
-        multiplier *= {
-                'negates': HALF,
-                'half': PART,
-                'partial': PART,
-                }[saving_throw]
-    if area and area is not 'tiny':
-        multiplier *= 1.25
     if escapable:
         multiplier *= {
                 '1': PART,
@@ -257,6 +241,28 @@ def calculate_miscellaneous_component_multiplier(area, escapable, healthy_only,
                 }[escapable]
     if healthy_only:
         multiplier *= HALF
+
+    # some components for damage spells are represented as increased damage dice
+    # rather than increased spell level
+    if component_type != 'damage':
+        if touch_attack:
+            multiplier *= {
+                    'ray': HALF,
+                    'poor': PART,
+                    '1': PART,
+                    'average': 0.9,
+                    '2': 0.9
+                    }[touch_attack]
+        if saving_throw:
+            multiplier *= {
+                    'none': 1,
+                    'negates': HALF,
+                    'half': PART,
+                    'partial': PART,
+                    }[saving_throw]
+        if area and area is not 'tiny':
+            multiplier *= 1.25
+
     return multiplier
 
 def calculate_area_modifier(area=None, choose_targets=None, max_targets=None, components = None):
