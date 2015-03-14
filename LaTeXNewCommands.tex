@@ -236,7 +236,7 @@
 \newcommand{\dazed}{\conditionlink{dazed} \reminder{unable to act}\xspace}
 \newcommand{\deafened}{\conditionlink{deafened} \reminder{unable to hear}\xspace}
 \newcommand{\ignited}{\conditionlink{ignited} \reminder{d6 damage/round, Dex DC 10 to extinguish, \vulneffect}\xspace}
-\newcommand{\immobilized}{\conditionlink{immobilized} \reminder{Unable to leave its location}}
+\newcommand{\immobilized}{\conditionlink{immobilized} \reminder{Unable to leave its location}\xspace}
 \newcommand{\nauseated}{\conditionlink{nauseated} \reminder{unable to act in action phase, \vulneffect}\xspace}
 \newcommand{\negativelevels}{\conditionlink{negative levels} \reminder{\minus1 to attacks, special defenses, and checks, \minus5 hit points, lose spell slot}}
 \newcommand{\paralyzed}{\conditionlink{paralyzed} \reminder{helpless, unable to move}\xspace}
@@ -249,8 +249,11 @@
 
 \newcommand{\condition}[1]{\parhead{#1}\label{#1}\hypertarget{condition:#1}{}}
 
+\newcommand{\concealment}{concealment \reminder{\plus4 to physical defenses}}
+
 \newcommand{\destructivespellnotes}{If a destructive spell deals enough damage to an interposing barrier to shatter or breaks through it, its effects may continue beyond the barrier if the area permits; otherwise, it stops at the barrier just as any other spell effect does.\xspace}
 \newcommand{\firespellnotes}{Fire spells do not function underwater. They can ignite combustable materials, such as dry wood and cloth.}
+\newcommand{\fogspellnotes}{Fog spells do not function underwater and can be dispersed by wind. A moderate wind (11\add mph) disperses the fog in 5 rounds; a strong wind (21\add mph) disperses the fog in 1 round. Localized wind, such as from a \spell{gust of wind} spell, only disperses the fog where it overlaps the fog. A fire spell burns away the fog in the area into which it deals damage.}
 
 \newcommand{\spelltabular}{\par\noindent\begin{tabularx}{\columnwidth}{>{\lcol}X l}}
 \newcommand{\spelltabularcompressed}{\par\noindent\begin{tabularx}{\linewidth}{@{}>{\lcol}X l}}
