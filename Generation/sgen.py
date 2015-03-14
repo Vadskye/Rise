@@ -208,7 +208,7 @@ def calculate_duration_modifier(component_type, component_strength, duration, re
 
     #now that the base level is established, apply universal modifiers
     if undispellable:
-        level+=1
+        level*=1.5
     if save_ends:
         level*=PART
     if requires_concentration:
