@@ -156,8 +156,8 @@ def rank_condition_strength(condition_strength):
     #so we need to support arbitrary strengths
     try:
         return {
-            3: 4,
-            2: 8,
+            3: 2,
+            2: 6,
             1.5: 12,
             1: 16}[condition_strength]
     except KeyError:
@@ -194,14 +194,14 @@ def calculate_duration_modifier(component_type, component_strength, duration, re
         else:
             # this is the normal scaling for condition and damage spell durations
             level = {
-                    'round': -3,
+                    'round': 0,
                     # assume short duration by default
-                    None: 0,
-                    'short': 0,
-                    'medium': 1,
-                    'long': 2,
-                    'extreme': 3,
-                    'permanent': 5,
+                    None: 2,
+                    'short': 2,
+                    'medium': 3,
+                    'long': 4,
+                    'extreme': 5,
+                    'permanent': 7,
                     }[duration]
     else:
         raise Exception("unrecognized component_type %s" % component_type)
