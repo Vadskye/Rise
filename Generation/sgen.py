@@ -292,8 +292,8 @@ def calculate_area_modifier(area=None, choose_targets=None, max_targets=None, co
     if max_targets and level>=2:
         level = max(level*HALF,2)
     #spells that are pure buffs don't have a penalty for choosing targets
-    if choose_targets and (self.components[DAMAGE] or
-            self.components[CONDITION]):
+    if choose_targets and (components[DAMAGE] or
+            components[CONDITION]):
         level+=1
     return level
 
