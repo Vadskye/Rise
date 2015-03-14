@@ -133,7 +133,7 @@ class SpellComponent:
         if bloodied_only:
             self.level *= 0.4
         print "base level:", self.level
-        self.level += calculate_duration_modifier(component_type, component_strength, duration, requires_concentration, undispellable, save_ends, check_bloodied_instantly, discharged)
+        self.level += calculate_duration_modifier(component_type, component_strength, duration, requires_concentration, undispellable, save_ends, bloodied_only, check_bloodied_instantly, discharged)
         print "with duration modifier:", self.level
         self.level *= calculate_miscellaneous_component_multiplier(component_type, area,
                 escapable, healthy_only, limit_affected_types, noncombat,
@@ -163,7 +163,7 @@ def rank_condition_strength(condition_strength):
     except KeyError:
         return 0
 
-def calculate_duration_modifier(component_type, component_strength, duration, requires_concentration, undispellable, save_ends, check_bloodied_instantly, discharged):
+def calculate_duration_modifier(component_type, component_strength, duration, requires_concentration, undispellable, save_ends, bloodied_only, check_bloodied_instantly, discharged):
     #duration_choices = ['round','short','medium','long','extreme', 'permanent']
     if component_type==DAMAGE:
         level = {
@@ -213,7 +213,7 @@ def calculate_duration_modifier(component_type, component_strength, duration, re
         level*=PART
     if requires_concentration:
         level*=HALF
-    if check_bloodied_instantly:
+    if check_bloodied_instantly and not bloodied_only:
         level*=PART
     if discharged == 'depleted':
         level*=PART
