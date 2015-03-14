@@ -46,7 +46,7 @@ def initialize_argument_parser():
             choices=area_choices)
     parser.add_argument('--choosetargets', dest='choosetargets',
             type=util.bool_parser, help='Choose targets of area spell?')
-    parser.add_argument('-m', '--maxtargets', dest='maxtargets', type=util.bool_parser,
+    parser.add_argument('-m', '--maxtargets', dest='maxtargets', action='store_true',
             help='Max target limit')
     parser.add_argument('-v', '--save', dest='save', type=str,
             help='Saving throw type', 
