@@ -729,7 +729,7 @@ If the staff-treant is reduced to 0 or fewer hit points, it crumbles to powder a
 \spellrng{\rngclose}
 \spellsr{Yes (Fortitude)}
 \begin{spelltarget}{One creature}[Magic vs. Fortitude]
-    \spelleffect As \spell{cure light wounds}, except that it heals 8d6 damage \add d6 per two caster levels above 8th. For every 5 points of healing granted by this spell, it can instead cure 1 point of critical damage.
+    \spelleffect If the target is living, it is healed for 8d6 damage \add d6 per two caster levels above 8th. For every 5 points of healing granted by this spell, it can instead cure 1 point of critical damage.
     \spellsuccess If the target is undead, it takes that much positive damage.
     \spellfailure As above, but half damage.
 \end{spelltarget}
@@ -763,7 +763,7 @@ If the staff-treant is reduced to 0 or fewer hit points, it crumbles to powder a
 \spellrng{\rngclose}
 \spellsr{Yes (Fortitude)}
 \begin{spelltargets}{Five creatures in the area}[Magic vs. Fortitude]
-    \spelleffect As \spell{cure light wounds}, except that it heals 5d6 damage \add d6 per four caster levels above 10th.
+    \spelleffect As \spell{cure light wounds}, excpet that it heals 5d6 damage \add d6 per four caster levels above 10th.
     \spellsuccess As \spell{cure light wounds}.
     \spellfailure As above, but half damage.
 \end{spelltargets}
@@ -774,7 +774,7 @@ If the staff-treant is reduced to 0 or fewer hit points, it crumbles to powder a
 \spellrng{\rngclose}
 \spellsr{Yes (Fortitude)}
 \begin{spelltarget}{One creature}[Magic vs. Fortitude]
-    \spelleffect As \spell{cure light wounds}, except that it heals 4d6 damage \add d6 per two caster levels above 4th. For every 15 points of healing granted by this spell, it can instead cure 1 point of critical damage.
+    \spelleffect If the target is living, it is healed for 4d6 damage \add d6 per two caster levels above 4th. For every 15 points of healing granted by this spell, it can instead cure 1 point of critical damage.
     \spellsuccess If the target is undead, it takes that much positive damage.
     \spellfailure As above, but half damage.
 \end{spelltarget}
@@ -794,7 +794,7 @@ If the staff-treant is reduced to 0 or fewer hit points, it crumbles to powder a
 \spellrng{\rngclose}
 \spellsr{Yes (Fortitude)}
 \begin{spelltarget}{One creature}[Magic vs. Fortitude]
-    \spelleffect As \spell{cure light wounds}, except that it heals 6d6 damage \add d6 per two caster levels above 6th. For every 10 points of healing granted by this spell, it can instead cure 1 point of critical damage.
+    \spelleffect If the target is living, it is healed for 6d6 damage \add d6 per two caster levels above 6th. For every 10 points of healing granted by this spell, it can instead cure 1 point of critical damage.
     \spellsuccess If the target is undead, it takes that much positive damage.
     \spellfailure As above, but half damage.
 \end{spelltarget}
@@ -1932,119 +1932,147 @@ This spell can be made permanent with a \spell{permanency} ritual.
 
 \spellsection{Ice Storm}{4}
 \spelldesc{You conjure magical hailstones that pound down, smashing and chilling creatures in their path.}
-\spellinfo{Conj/Evoc (Creation, Energy) [Cold]}{Arcane, Destruction, Nature, Water}
-\spelltwocol{\spellburst{\areasmall radius cylinder, 20 ft. high}}{\spellrng{\rngmed}}
-\spelldur{Instantaneous/1 round}
-\spelldmg{4d4 cold and bludgeoning damage \add d4 per four caster levels above 8th}
-\spelleffect You deal damage to everything in the area. The area is difficult terrain for 1 round.
+\spellinfo{Conj/Evoc (Creation, Energy) [Cold, Destructive]}{Arcane, Destruction, Nature, Water}
+\spellrng{\rngmed}
+\spellburst{\areasmall radius cylinder, 20 ft. high}
+\spelldur{1 round}
+\spellline
+\spelleffect The area is difficult terrain for 1 round.
 \spellsr{Yes (Reflex)}
+\begin{spelltargets}*{Everything in the area}
+    \spellsuccess 4d4 cold and bludgeoning damage \add d4 per four caster levels above 8th.
+\end{spelltargets}
+\spellnotes \destructivespellnotes
 
 \spellsection{Implosion}{9}
 \spelldesc{You create a destructive responance in your foe's body that destroys it from the inside out.}
 \spellinfo{Evoc (Control)}{Destruction, Divine}
-\spelltwocol{\spelltgts{One corporeal creature/round}}{\spellrng{\rngclose}}
-\spelldur{Instantaneous and concentration (up to 5 rounds); see text}
-\spellattack{None/Magic vs. Fortitude}
-\begin{spellhealthy}
-    The target creature you concentrate on is staggered for 5 rounds. It can take a move action or a standard action each round, but not both.
-\end{spellhealthy}
-\begin{spellblood}
-    The target is instantly slain.
-\end{spellblood}
-\spellnotes You can concentrate on one creature per round. You can target a particular creature only once with each casting of the spell.
-\par \spell{Implosion} has no effect on creatures in \spell{gaseous form} or on incorporeal creatures.
+\spellrng{\rngclose}
+\spelldur{Concentration (up to 5 rounds)}
 \spellsr{Yes (Fortitude)}
+\spellline
+\begin{spelltrigger}{End of every round}
+    \begin{spelltarget}{One creature}*[Magic vs. Fortitude]
+        \spellsuccess The target is \staggered for 5 rounds.
+
+        If the target is \bloodied, it is instead instantly slain.
+        \spellspecial You cannot target the same creature more than once per casting of this spell.
+    \end{spelltarget}
+\end{spelltrigger}
+\spellnotes \spell{Implosion} has no effect on creatures in \spell{gaseous form} or on incorporeal creatures.
 
 \spellsection{Imprisonment}{9}
+\spelldesc{You teleport your foe deep beneath the earth, leaving it in stasis forever.}
 \spellinfo{Conj/Trans (Time, Translocation) [Teleportation]}{Arcane, Earth, Law}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
+\spellrng{\rngclose}
 \spelldur{See text}
-\spelldmg{18d8 physical damage \add d8 per two caster levels above 18th}
-\spellattack{Magic vs. Will}
-\spelleffect The target takes damage as its body is partially teleported away, and it is slowed for 5 rounds. This damage ignores hardness and damage reduction.
-\begin{spellblood}
-    If the creature is touching the ground, it becomes permanently entombed in a state of suspended animation (as the \spell{temporal stasis} spell) in a small sphere far beneath the surface of the earth. It remains there unless an \spell{emancipation} spell is cast at the locale where the imprisonment took place.
-\end{spellblood}
-\spellnotes A slowed creature can take only a single move action or standard action each turn, but not both. It cannot take full-round actions, but it may take swift actions. Additionally, it takes a \minus2 penalty to physical attacks and defenses, as well as Strength and Dexterity-based checks.
-
-The subject must be \bloodied at the time that the spell is cast to be imprisoned. Magical search by a crystal ball, a \spell{locate creature} spell, or some other similar divination does not reveal the fact that a creature is imprisoned, but \spell{discern location} does. A \spell{wish} or \spell{miracle} spell will not free the recipient, but will reveal where it is entombed.
 \spellsr{Yes (Will)}
+\begin{spelltarget}{One creature touching the ground}[Magic vs. Will]
+    \spellsuccess The target is \slowed for 5 rounds.
+
+    \spellsuccess If the target is \bloodied, it instead becomes permanently entombed in a state of suspended animation (as the \spell{temporal stasis} spell) in a small sphere far beneath the surface of the earth. It remains there until an \spell{emancipation} spell is cast at the location where the imprisonment took place.
+\end{spelltarget}
+
+\spellnotes If the target becomes inprisoned beneath the earth, it is very difficult to find. Magical search by a crystal ball, a \spell{locate creature} spell, or some other similar divination does not reveal the fact that a creature is imprisoned, but \spell{discern location} does. A \spell{wish} or \spell{miracle} spell will not free the recipient, but will reveal where it is entombed.
 
 \spellsection{Inertial Shield}{2}
 \spelldesc{You create a barrier around your ally that resists physical intrusion.}
 \spellinfo{Abjur (Shielding)}{Arcane}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
+\spellrng{\rngclose}
 \spelldur{\durshort}
-\spelleffect The subject gains physical damage reduction 4/force. This damage reduction increases by 1 per two caster levels above 4th.
-\spellnotes This spell's damage reduction allows the subject to ignore the first 4 physical damage it takes each round. If it is hit by a attack that deals force damage, such as \spell{magic missile}, it cannot use its damage reduction for 1 round.
 \spellsr{Yes (Will)}
+\begin{spelltarget}{One creature}
+    \spelleffect The target gains physical damage reduction 4/force. This damage reduction increases by 1 per two caster levels above 4th.
+\end{spelltarget}
+\spellnotes This spell's damage reduction allows the subject to ignore the first 4 physical damage it takes each round. If it is hit by a attack that deals force damage, such as \spell{magic missile}, it cannot use its damage reduction for 1 round.
 
 \spellsection{Inflict Critical Wounds}{4}
 \spellinfo{Necro (Vitalism) [Negative]}{Arcane, Divine}
-\spelldmg{8d6 negative energy damage \add d6 per two caster levels above 8th}
-\spelleffect This spell functions like \spell{inflict light wounds}, except that for every 10 points of damage dealt in excess of the subject's hit points, it can instead inflict 1 point of critical damage.
-\spellnotes This effect can cause a creature to begin dying without being disabled first.
+\spellrng{\rngclose}
+\spellsr{Yes (Fortitude)}
+\begin{spelltarget}{One creature}[Magic vs. Fortitude]
+    \spellsuccess If the target is not undead, this spell inflicts 8d6 negative energy damage \add d6 per two caster levels above 8th. For every 5 points of damage dealt in excess of the subject's hit points, it can instead inflict 1 point of critical damage.
+    \spellfailure As above, but half damage.
+    \spelleffect If the target is undead, it is instead healed for that much damage.
+\end{spelltarget}
 
 \spellsectioncomma{Inflict Critical Wounds}{Mass}{8}
 \spellinfo{Necro (Vitalism) [Negative]}{Arcane, Divine}
-\spelldmg{8d6 negative energy damage \add d6 per four caster levels above 10th}
-\spelleffect This spell functions like \spell{mass inflict light wounds}, except that for every 10 points of damage dealt in excess of the subject's hit points, it can instead inflict 1 point of critical damage.
-\spellnotes This effect can cause a creature to begin dying without being disabled first.
+\spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngmed}}
+\spellsr{Yes (Fortitude)}
+\begin{spelltargets}{Five creatures in the area}[Magic vs. Fortitude]
+    \spellsuccess As \spell{inflict light wounds}, except that it deals 8d6 negative energy damage \add d6 per four caster levels above 16th.
+    \spellfailure As above, but half damage.
+    \spelleffect If the target is undead, it is instead healed for that much damage.
+\end{spelltargets}
 
 \spellsection{Inflict Light Wounds}{1}
 \spellinfo{Necro (Vitalism) [Negative]}{Arcane, Divine}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
-\spelldmg{2d6 negative energy damage \add d6 per two caster levels above 2nd}
-\spellattack{Fortitude half}
-\spelleffect You make a Fortiude attack to deal damage to the target. A failed attack deals half damage. Since undead are powered by negative energy, this spell heals them instead of dealing damage.
+\spellrng{\rngclose}
 \spellsr{Yes (Fortitude)}
+\begin{spelltarget}{One creature}[Magic vs. Fortitude]
+    \spellsuccess If the target is not undead, it takes 2d6 negative energy damage \add d6 per two caster levels above 2nd.
+    \spellfailure As above, but half damage.
+    \spelleffect If the target is undead, it is instead healed for that much damage.
+\end{spelltarget}
 
 \spellsectioncomma{Inflict Light Wounds}{Mass}{5}
 \spellinfo{Necro (Vitalism) [Negative]}{Arcane, Divine}
-\spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
-\spelltgts{Five creatures in the area}
-\spelldmg{5d6 negative energy damage \add d6 per four caster levels above 10th}
-\spellattack{Fortitude half}
-\spelleffect You make a Fortitude attack to deal damage to each target. A failed attack deals half damage. Like other \spellindirect{inflict light wounds}{inflict} spells, \spell{mass inflict light wounds} heals undead instead of dealing damage.
+\spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngmed}}
 \spellsr{Yes (Fortitude)}
+\begin{spelltargets}{Five creatures in the area}[Magic vs. Fortitude]
+    \spellsuccess As \spell{inflict light wounds}, except that it deals 5d6 negative energy damage \add d6 per four caster levels above 10th.
+    \spellfailure As above, but half damage.
+    \spelleffect If the target is undead, it is instead healed for that much damage.
+\end{spelltargets}
 
 \spellsection{Inflict Moderate Wounds}{2}
 \spellinfo{Necro (Vitalism) [Negative]}{Arcane, Divine}
-\spelldmg{4d6 negative energy damage \add d6 per two caster levels above 4th}
-\spelleffect This spell functions like \spell{inflict light wounds}, except that for every 20 points of damage dealt in excess of the subject's hit points, it can instead inflict 1 point of critical damage.
-\spellnotes This effect can cause a creature to begin dying without being disabled first.
+\begin{spelltarget}{One creature}[Magic vs. Fortitude]
+    \spellsuccess If the target is not undead, this spell inflicts 4d6 negative energy damage \add d6 per two caster levels above 4th. For every 15 points of damage dealt in excess of the subject's hit points, it can instead inflict 1 point of critical damage.
+    \spellfailure As above, but half damage.
+    \spelleffect If the target is undead, it is instead healed for that much damage.
+\end{spelltarget}
 
 \spellsectioncomma{Inflict Moderate Wounds}{Mass}{6}
 \spellinfo{Necro (Vitalism) [Negative]}{Arcane, Divine}
-\spelldmg{6d6 negative energy damage \add d6 per four caster levels above 10th}
-\spelleffect This spell functions like \spell{mass inflict light wounds}, except that for every 20 points of damage dealt in excess of the subject's hit points, it can instead inflict 1 point of critical damage.
-\spellnotes This effect can cause a creature to begin dying without being disabled first.
+\spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngmed}}
+\spellsr{Yes (Fortitude)}
+\begin{spelltargets}{Five creatures in the area}[Magic vs. Fortitude]
+    \spellsuccess As \spell{inflict moderate wounds}, except that it deals 6d6 negative energy damage \add d6 per four caster levels above 12th.
+    \spellfailure As above, but half damage.
+    \spelleffect If the target is undead, it is instead healed for that much damage.
+\end{spelltargets}
 
 \spellsection{Inflict Serious Wounds}{3}
 \spellinfo{Necro (Vitalism) [Negative]}{Arcane, Divine}
-\spelldmg{6d6 negative energy damage \add d6 per two caster levels above 6th}
-\spelleffect This spell functions like \spell{inflict light wounds}, except that for every 15 points of damage dealt in excess of the subject's hit points, it can instead inflict 1 point of critical damage.
-\spellnotes This effect can cause a creature to begin dying without being disabled first.
+\spellrng{\rngclose}
+\spellsr{Yes (Fortitude)}
+\begin{spelltarget}{One creature}[Magic vs. Fortitude]
+    \spellsuccess If the target is not undead, this spell inflicts 6d6 negative energy damage \add d6 per two caster levels above 6th. For every 10 points of damage dealt in excess of the subject's hit points, it can instead inflict 1 point of critical damage.
+    \spellfailure As above, but half damage.
+    \spelleffect If the target is undead, it is instead healed for that much damage.
+\end{spelltarget}
 
 \spellsectioncomma{Inflict Serious Wounds}{Mass}{7}
 \spellinfo{Necro (Vitalism) [Negative]}{Arcane, Divine}
-\spelldmg{7d6 negative energy damage \add d6 per four caster levels above 10th}
-\spelleffect This spell functions like \spell{mass inflict light wounds}, except that for every 15 points of damage dealt in excess of the subject's hit points, it can instead inflict 1 point of critical damage.
-\spellnotes This effect can cause a creature to begin dying without being disabled first.
+\spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngmed}}
+\spellsr{Yes (Fortitude)}
+\begin{spelltargets}{Five creatures in the area}[Magic vs. Fortitude]
+    \spellsuccess As \spell{inflict serious wounds}, except that it deals 7d6 negative energy damage \add d6 per four caster levels above 14th.
+    \spellfailure As above, but half damage.
+    \spelleffect If the target is undead, it is instead healed for that much damage.
+\end{spelltargets}
 
 \spellsection{Insanity}{6}
 \spellinfo{Ench (Compulsion) [Mind-Affecting]}{Chaos, Ench}
-\spelltwocol{\spelltgt{One living creature}}{\spellrng{Touch}}
+\spellrng{\rngclose}
 \spelldur{Permanent}
-\spellattack{Magic vs. Will}
-\begin{spellhealthy}
-    The creature is bewildered, making it \vulnerable.
-\end{spellhealthy}
-\begin{spellblood}
-    \par The affected creature is confused (see the \spell{confusion} spell).
-\end{spellblood}
-\spellnotes \spell{Remove curse} and \spell{dispel magic} do not remove \spell{insanity}. \spell{Greater restoration}, \spell{heal}, \spell{limited wish}, \spell{miracle}, or \spell{wish} can restore the creature.
 \spellsr{Yes (Will)}
+\begin{spelltarget}{One creature}[Magic vs. Will]
+    \spellsuccess As long as the target is \bloodied, it is \confused.
+\end{spelltarget}
+\spellnotes \spell{Remove curse} and \spell{dispel magic} do not remove \spell{insanity}. \spell{Greater restoration}, \spell{heal}, \spell{limited wish}, \spell{miracle}, or \spell{wish} can restore the creature.
 
 \spellsection{Interposing Hand}{2}
 \spelldesc{You create a massive hand from thin air that blocks your foe's attacks.}
@@ -2065,61 +2093,69 @@ If the hand goes out of range of you, it winks out. It cannot push through a \sp
 
 \spellsection{Invest Magic}{4}
 \spellinfo{Trans (Augment)}{Arcane, Divine, War}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
+\spellrng{\rngclose}
 \spelldur{\durshort}
-\spelleffect All weapons and armor that the subject wields gain a \plus3 enhancement bonus for as long as she wields them. This bonus increases to \plus4 at 14th caster level, and to \plus5 at 20th caster level.
 \spellsr{Yes (Will)}
+\begin{spelltarget}{One creature}
+    \spelleffect All weapons and armor that the target wields gain a \plus3 enhancement bonus for as long as it wields them. This bonus increases to \plus4 at 14th caster level, and to \plus5 at 20th caster level.
+\end{spelltarget}
 
 \spellsection{Invisibility}{3}
 \spellinfo{Illus (Glamer)}{Arcane, Trickery}
-\spelltwocol{\spelltgt{A creature or object weighing no more than 100 lb./caster level}}{\spellrng{\rngclose}}
+\spellrng{\rngclose}
 \spelldur{\durshort \dismissable}
-\spellattack{Magic vs. Will (object)}
-\spellsuccess The creature or object touched becomes invisible, vanishing from sight, even from darkvision. If the recipient is a creature carrying gear, that vanishes, too.
-\par Items dropped or put down by an invisible creature become visible; items picked up disappear if tucked into the clothing or pouches worn by the creature. Light, however, never becomes invisible, although a source of light can become so (thus, the effect is that of a light with no visible source). Any part of an item that the subject carries but that extends more than 5 feet from it becomes visible.
-\par Of course, the subject is not magically silenced, and certain other conditions can render the recipient detectable (such as stepping in a puddle). The spell ends if the subject attacks any creature. For purposes of this spell, an attack includes any spell targeting a foe or whose area or effect includes a foe. (Exactly who is a foe depends on the invisible character's perceptions.) Actions directed at unattended objects do not break the spell. Causing harm indirectly is not an attack. Thus, an invisible being can open doors, talk, eat, climb stairs, summon monsters and have them attack, cut the ropes holding a rope bridge while enemies are on the bridge, remotely trigger traps, open a portcullis to release attack dogs, and so forth. If the subject attacks directly, however, it immediately becomes visible along with all its gear. Spells such as \spell{bless} that specifically affect allies but not foes are not attacks for this purpose, even when they include foes in their area.
-\spellnotes This spell can be made permanent (on objects only) with a \spell{permanency} ritual.
 \spellsr{Yes (Will)}
+\begin{spelltarget}{One creature or object weighing no more than 100 lb./caster level}
+    \spelleffect The target and its equipment become invisible. An invisible creature cannot be seen, even by darkvision. Invisible creatures can be detected with the Perception skill (see \pcref{Perception}).
+    
+    If the target attacks any creature, such as by casting any spell that affects an unwilling creature, it becomes visible.
+\end{spelltarget}
+\spellnotes This spell can be made permanent (on objects only) with a \spell{permanency} ritual.
 
 \spellsectioncomma{Invisibility}{Greater}{6}
 \spellinfo{Illus (Glamer)}{Illus}
-\spelleffect This spell functions like \spell{invisibility}, except that the subject becomes invisible again at the start of each of its turns, even if it attacked a creature during its previous turn.
+\spellrng{\rngclose}
+\spelldur{\durshort \dismissable}
+\spellsr{Yes (Will)}
+\begin{spelltarget}{One creature or object weighing no more than 100 lb./caster level}
+    \spelleffect The target becomes invisible, as \spell{invisibility}. At the end of every round, if the target did not attack a creature that round, it becomes invisible again.
+\end{spelltarget}
 
 \spellsectioncomma{Invisibility}{Mass}{7}
 \spellinfo{Illus (Glamer)}{Arcane, Trickery}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngmed}}
-\spelltgts{Five creatures or objects weighing no more than 100 lb./caster level in the area}
-\spelleffect This spell functions like \spell{invisibility}, except that it affects multiple creatures. If the effct is broken for one creature, the other subjects remain invisible.
-
-\spellsection{Invisibility Sphere}{5}
-\spellinfo{Illus (Glamer)}{Arcane}
-\spellemanation{\areasmall radius centered on the creature or object touched}
-\spelleffect This spell functions like \spell{invisibility}, except that this spell confers invisibility upon all creatures within a \areasmall radius emanation of the recipient. The center of the effect is mobile with the recipient.
-\par Those affected by this spell can see each other and themselves as if unaffected by the spell. Any affected creature moving out of the area becomes visible, but creatures moving into the area after the spell is cast do not become invisible. Affected creatures (other than the recipient) who attack negate the invisibility only for themselves. If the spell recipient attacks, the \spell{invisibility sphere} ends.
+\spelldur{\durshort \dismissable}
+\spellsr{Yes (Will)}
+\begin{spelltargets}{Five creatures or objects weighing no more than 100 lb./caster level in the area}
+    \spelleffect The target becomes invisible, as \spell{invisibility}.
+\end{spelltargets}
 
 \spellsection{Iron Body}{8}
 \spellinfo{Trans (Polymorph)}{Arcane, Earth, Strength}
-\spelltwocol{\spelltgt{You}}{\spellrng{\rngpers}}
 \spelldur{\durshort \dismissable}
-\spelleffect This spell transforms your body into living iron, which grants you several powerful resistances and abilities.
+\begin{spelltarget}{You}
+    \spelleffect This spell transforms your body into living iron, which grants you several powerful resistances and abilities.
 \par You gain physical damage reduction 15/adamantine. You are immune to blindness, critical hits, attribute damage, deafness, disease, drowning, electricity, poison, stunning, and all spells or attacks that affect your physiology or respiration, because you have no physiology or respiration while this spell is in effect. You take only half damage from acid and fire of all kinds.
 \par You gain a \plus5 enhancement bonus to your Strength score, but you take a \minus5 penalty to Dexterity as well, and your speed is reduced to half normal. You have a \minus8 armor check penalty. You cannot drink (and thus can't use potions) or play wind instruments.
 \par Your unarmed attacks deal damage equal to a warhammer sized for you (1d6 for Small characters or 1d8 for Medium characters), and you are considered armed when making unarmed attacks.
 \par Your weight increases by a factor of ten, causing you to sink in water like a stone. However, you could survive the crushing pressure and lack of air at the bottom of the ocean -- at least until the spell duration expires.
+\end{spelltarget}
 \spellnotes This spell's damage reduction allows the subject to ignore the first 15 physical damage it takes each round. If it is hit by an adamantine weapon, it cannot use its damage reduction for 1 round.
 
 \spellsection{Irresistible Dance}{9}
 \spelldesc{You fill your enemy with an overpowering urge to dance and caper in place. Against its will, it begins doing so, complete with foot shuffling and tapping.}
 \spellinfo{Ench (Compulsion) [Mind-Affecting]}{Arcane, Chaos}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
-\spelldur{1d4 rounds}
-\spelleffect The subject is defenseless and must spend a standard action each round to do nothing but dance, which provokes attacks of opportunity.
+\spellrng{\rngclose}
+\spelldur{1 round}
+\spellsr{Yes (Will)}
+\begin{spelltarget}{One creature}
+    \spelleffect The subject is defenseless and must spend a standard action to do nothing but dance, which provokes attacks of opportunity.
+\end{spelltarget}
 
 \pdfbookmark[2]{J-L}{SpellDescriptionsJ-L}
 \begin{comment}
 \subsubsection{J-L}
 \end{comment}
-\spellsr{Yes (Will)}
 
 \spellsection{Knock}{2}
 \spellinfo{Evoc (Control)}{Evoc}
