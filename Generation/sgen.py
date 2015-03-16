@@ -53,12 +53,14 @@ def initialize_argument_parser():
             choices=['none','half','partial','negates'])
     parser.add_argument('--nosr', dest='nosr', type=util.bool_parser,
             help='Doesn\'t allow spell resistance?')
+    parser.add_argument('--norepeat', dest='norepeat', action='store_true',
+            help='Target immune for 24 hours after spell is cast?')
     parser.add_argument('-l', '--limittypes', dest='limittypes', type=int,
             help='Limit affected types?', choices=[0,1,2,3])
     parser.add_argument('--escapable', dest='escapable', type=str,
             help='Is the spell escapable?', choices=['1','2'])
     parser.add_argument('--noncombat', dest='noncombat', 
-            type=util.bool_parser, help='Irrelevant in combat?')
+            action='store_true', help='Irrelevant in combat?')
     parser.add_argument('--touchattack', dest='touchattack',
             type=str, help='Touch attack and bab',
             choices = touch_attack_choices)
@@ -88,7 +90,7 @@ class Spell:
                 }
 
     def get_level(self, area=None, choose_targets=None, max_targets=None,
-            no_spell_resistance=None, spell_range=None, trigger=None):
+            no_spell_resistance=None, no_repeat=None, spell_range=None, trigger=None):
         level=-3
         for component_type in self.components.keys():
             for component in self.components[component_type]:
@@ -96,6 +98,8 @@ class Spell:
         level += calculate_area_modifier(area, choose_targets, max_targets, self.components)
         if no_spell_resistance:
             level += 1
+        if no_repeat:
+            level *= PART
         if trigger:
             if trigger == 'no_action':
                 level +=1
@@ -404,6 +408,7 @@ if __name__ == "__main__":
                 general_args['choosetargets'],
                 general_args['maxtargets'],
                 general_args['nosr'],
+                general_args['norepeat'],
                 general_args['range'],
                 general_args['trigger'])
         if general_args['savename']:            
