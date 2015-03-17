@@ -31,7 +31,7 @@ def initialize_argument_parser():
     parser.add_argument('-e', '--healthy', dest='healthy', action='store_true',
             help='Condition only affects healthy creatures?')
     parser.add_argument('--alternateeffect', dest = 'alternateeffect', 
-            type=util.bool_parser)
+            help='Spell has an alternate effect?', action='store_true')
     parser.add_argument('-u', '--duration', dest = 'duration', type=str,
             choices=duration_choices)
     parser.add_argument('--undispellable', dest = 'undispellable',
