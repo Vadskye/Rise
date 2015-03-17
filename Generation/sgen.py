@@ -10,6 +10,7 @@ area_choices = ['none', 'tiny', 'normal','large_line', 'mr', 'medium_radius','la
 range_choices = ['personal', 'touch', 'close', 'medium', 'long', 'extreme']
 condition_choices = [0,1,1.5,2,2.5,3,3.5]
 touch_attack_choices =['none','poor','1','average','2', 'ray']
+bloodied_behavior_choices = ['while', 'instant', 'ifever']
 storage_file_name = 'spells.txt'
 condition_debug=True
 general_debug=True
@@ -39,9 +40,12 @@ def initialize_argument_parser():
             type=util.bool_parser, help='Requires concentration?')
     parser.add_argument('--saveends', dest='saveends', 
             action='store_true', help='Save each round to end?')
-    parser.add_argument('--bloodiedinstant', dest='bloodiedinstant',
-            help='Bloodied is checked only when spell is cast?',
-            action='store_true') 
+    parser.add_argument('--bloodiedbehavior', dest='bloodiedinstant',
+            help='''How is the bloodied effect triggered?
+                "while": active while target is bloodied during duration (default)
+                "instant": activates if target is bloodied when cast
+                "ifever": activates if target is ever bloodied during duration''',
+            choices=bloodied_behavior_choices)
     parser.add_argument('-a', '--area', dest='area', type=str,
             choices=area_choices)
     parser.add_argument('--choosetargets', dest='choosetargets',
@@ -90,12 +94,36 @@ class Spell:
                 }
 
     def get_level(self, area=None, choose_targets=None, max_targets=None,
-            no_spell_resistance=None, no_repeat=None, spell_range=None, trigger=None):
+            bloodied_behavior=None, duration=None, no_spell_resistance=None,
+            no_repeat=None, spell_range=None, trigger=None):
         level=-3
         for component_type in self.components.keys():
             for component in self.components[component_type]:
-                level += component.level
+                # if the bloodied effect only happens if the target is
+                # bloodied as the spell is cast, the healthy effect is
+                # discounted, since it won't usually trigger.
+                if bloodied_behavior == 'instant' and not component.bloodied_only:
+                    level += component.level * PART
+                # if the bloodied effect happens if the target is ever bloodied
+                # during the duration of the spell, the bloodied effect is more
+                # expensive, based on the duration of the spell.
+                elif bloodied_behavior == 'ifever' and component.bloodied_only:
+                    level += component.level * {
+                            None: 1,
+                            'round': 1,
+                            'short': 1.1,
+                            'medium': 1.2,
+                            'long': 1.3,
+                            'extreme': 1.5,
+                            'permanent': 2,
+                            }[duration]
+                # if there is no bloodied effect, or if the bloodied effect
+                # happens for as long as the target is bloodied,
+                # there is no special modifier to the level of the component
+                else:
+                    level += component.level
         level += calculate_area_modifier(area, choose_targets, max_targets, self.components)
+
         if no_spell_resistance:
             level += 1
         if no_repeat:
@@ -128,16 +156,20 @@ class Spell:
 
 class SpellComponent:
     def __init__(self, component_type, alternate_effect=None, area=None,
-            bloodied_only=None, check_bloodied_instantly=None, component_strength=None,
+            bloodied_only=None, component_strength=None,
             discharged=None, duration=None, escapable=None, healthy_only=None,
             limit_affected_types=None, noncombat=None, requires_concentration=None,
             save_ends=None, saving_throw=None, touch_attack=None,
             undispellable=None):
+
+        #some attributes need to be referenced externally to the component
+        self.bloodied_only = bloodied_only
+
         self.level = calculate_base_level(alternate_effect, component_type, component_strength)
         if bloodied_only:
             self.level *= 0.4
         print "base level:", self.level
-        self.level += calculate_duration_modifier(component_type, component_strength, duration, requires_concentration, undispellable, save_ends, bloodied_only, check_bloodied_instantly, discharged)
+        self.level += calculate_duration_modifier(component_type, component_strength, duration, requires_concentration, undispellable, save_ends, bloodied_only, discharged)
         print "with duration modifier:", self.level
         self.level *= calculate_miscellaneous_component_multiplier(component_type, area,
                 escapable, healthy_only, limit_affected_types, noncombat,
@@ -167,7 +199,7 @@ def rank_condition_strength(condition_strength):
     except KeyError:
         return 0
 
-def calculate_duration_modifier(component_type, component_strength, duration, requires_concentration, undispellable, save_ends, bloodied_only, check_bloodied_instantly, discharged):
+def calculate_duration_modifier(component_type, component_strength, duration, requires_concentration, undispellable, save_ends, bloodied_only, discharged):
     #duration_choices = ['round','short','medium','long','extreme', 'permanent']
     if component_type==DAMAGE:
         level = {
@@ -217,8 +249,6 @@ def calculate_duration_modifier(component_type, component_strength, duration, re
         level*=PART
     if requires_concentration:
         level*=HALF
-    if check_bloodied_instantly and not bloodied_only:
-        level*=PART
     if discharged == 'depleted':
         level*=PART
     elif discharged == 'delayed':
@@ -389,7 +419,6 @@ if __name__ == "__main__":
                     alternate_effect = derp['alternateeffect'],
                     area = derp['area'],
                     bloodied_only = derp['bloodied'], 
-                    check_bloodied_instantly = derp['bloodiedinstant'],
                     component_strength = derp[component_type],
                     discharged = derp['discharged'],
                     duration = derp['duration'],
@@ -407,6 +436,8 @@ if __name__ == "__main__":
                 general_args['area'],
                 general_args['choosetargets'],
                 general_args['maxtargets'],
+                general_args['bloodiedinstant'],
+                general_args['duration'],
                 general_args['nosr'],
                 general_args['norepeat'],
                 general_args['range'],
