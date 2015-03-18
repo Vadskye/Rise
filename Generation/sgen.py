@@ -6,7 +6,12 @@ import util
 PART=0.8
 HALF=0.6
 duration_choices = ['round','short','medium','long','extreme', 'permanent']
-area_choices = ['none', 'tiny', 'normal','large_line', 'mr', 'medium_radius','large_cone','large_radius']
+area_choices = ['tiny', 'normal',
+    'small_radius', 'medium_radius,' 'large_radius',
+    'large_line',
+    'medium_cone', 'large_cone',
+    'medium_wall', 'large_wall'
+]
 range_choices = ['personal', 'touch', 'close', 'medium', 'long', 'extreme']
 condition_choices = [0,1,1.5,2,2.5,3,3.5]
 touch_attack_choices =['none','poor','1','average','2', 'ray']
@@ -307,21 +312,28 @@ def calculate_area_modifier(area=None, choose_targets=None, max_targets=None, co
     # these are the area weights for condition and damage spells
     if components is not None and (DAMAGE in components.keys() or CONDITION in components.keys()):
         level = {
-                'none': 0,
+                None: 0,
                 'tiny': 1,
+                'medium_wall': 1,
+                'large_wall': 2,
+                'medium_cone': 2,
                 'normal': 2,
+                'small_radius': 2,
+                'huge_wall': 3,
                 'large_line': 3,
-                'medium_radius': 4,
                 'large_cone': 4,
+                'medium_radius': 4,
                 'large_radius': 6,
                 }[area]
         #level = switch(area, area_choices, [0,1,2,3,4,4,5,6])
     else:
         # these are the area weights for buff-only spells
         level = {
-                'none': 0,
+                None: 0,
                 'tiny': 2,
+                'medium_cone': 2,
                 'normal': 2,
+                'small_radius': 2,
                 'large_line': 2.5,
                 'medium_radius': 3,
                 'large_cone': 3,
