@@ -7,7 +7,7 @@ PART=0.8
 HALF=0.6
 duration_choices = ['round','short','medium','long','extreme', 'permanent']
 area_choices = ['tiny', 'normal',
-    'small_radius', 'medium_radius,' 'large_radius',
+    'small_radius', 'medium_radius', 'large_radius',
     'large_line',
     'medium_cone', 'large_cone',
     'medium_wall', 'large_wall', 'huge_wall',
