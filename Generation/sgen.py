@@ -10,7 +10,7 @@ area_choices = ['tiny', 'normal',
     'small_radius', 'medium_radius,' 'large_radius',
     'large_line',
     'medium_cone', 'large_cone',
-    'medium_wall', 'large_wall'
+    'medium_wall', 'large_wall', 'huge_wall',
 ]
 range_choices = ['personal', 'touch', 'close', 'medium', 'long', 'extreme']
 condition_choices = [0,1,1.5,2,2.5,3,3.5]
