@@ -309,8 +309,6 @@ def calculate_miscellaneous_component_multiplier(component_type, area, escapable
                     'half': PART,
                     'partial': PART,
                     }[saving_throw]
-        if area and area is not 'tiny':
-            multiplier *= 1.25
 
     return multiplier
 
@@ -353,7 +351,7 @@ def calculate_area_modifier(area=None, choose_targets=None, max_targets=None,
         #level = switch(area, area_choices, [0,2,2,2.5,3,3,3.5,4])
     #adding max targets shouldn't affect small areas.
     if max_targets and level>=2:
-        level = max(level*HALF,2)
+        level = 2 + (level-2)*HALF
     #spells that are pure buffs don't have a penalty for choosing targets
     if choose_targets and (components[DAMAGE] or
             components[CONDITION]):
