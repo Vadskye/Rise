@@ -83,6 +83,8 @@ def initialize_argument_parser():
     parser.add_argument('--discharged', type=str, choices=[None, 'depleted', 'delayed'],
             help='Discharged before its duration is over? \
             1=effect depleted over time, 2=delayed single effect')
+    parser.add_argument('--shapeable', action='store_true',
+            help='Line or wall can be shaped?')
     parser.add_argument('--savename', dest='savename', type=str)
     parser.add_argument('--loadname', dest='loadname', type=str)
     parser.add_argument('--dot', dest='dot', type=util.bool_parser,
@@ -99,8 +101,8 @@ class Spell:
                 }
 
     def get_level(self, area=None, choose_targets=None, max_targets=None,
-            bloodied_behavior=None, duration=None, no_spell_resistance=None,
-            no_repeat=None, spell_range=None, trigger=None):
+            shapeable=None, bloodied_behavior=None, duration=None,
+            no_spell_resistance=None, no_repeat=None, spell_range=None, trigger=None):
         level=-3
         for component_type in self.components.keys():
             for component in self.components[component_type]:
@@ -127,7 +129,7 @@ class Spell:
                 # there is no special modifier to the level of the component
                 else:
                     level += component.level
-        level += calculate_area_modifier(area, choose_targets, max_targets, self.components)
+        level += calculate_area_modifier(area, choose_targets, max_targets, shapeable, self.components)
 
         if no_spell_resistance:
             level += 1
@@ -304,7 +306,8 @@ def calculate_miscellaneous_component_multiplier(component_type, area, escapable
 
     return multiplier
 
-def calculate_area_modifier(area=None, choose_targets=None, max_targets=None, components = None):
+def calculate_area_modifier(area=None, choose_targets=None, max_targets=None, 
+        shapeable=None, components = None):
     if not area:
         return 0
     #area_choices = ['none', 'tiny', 'normal','large_line', 'mr', 'medium_radius','large_cone','large_radius']
@@ -347,6 +350,8 @@ def calculate_area_modifier(area=None, choose_targets=None, max_targets=None, co
     if choose_targets and (components[DAMAGE] or
             components[CONDITION]):
         level+=1
+    if shapeable:
+        level += 1
     return level
 
 #accept string in the format "arg1=blah, arg2=herp derp, arg3=whee"
@@ -448,6 +453,7 @@ if __name__ == "__main__":
                 general_args['area'],
                 general_args['choosetargets'],
                 general_args['maxtargets'],
+                general_args['shapeable'],
                 general_args['bloodiedinstant'],
                 general_args['duration'],
                 general_args['nosr'],
