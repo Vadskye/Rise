@@ -103,7 +103,7 @@ class Spell:
     def get_level(self, area=None, choose_targets=None, max_targets=None,
             shapeable=None, bloodied_behavior=None, duration=None,
             no_spell_resistance=None, no_repeat=None, spell_range=None, trigger=None):
-        level=-3
+        level=0
         for component_type in self.components.keys():
             for component in self.components[component_type]:
                 # if the bloodied effect only happens if the target is
@@ -129,7 +129,11 @@ class Spell:
                 # there is no special modifier to the level of the component
                 else:
                     level += component.level
+
+        print
+        print 'combined level from components', level
         level += calculate_area_modifier(area, choose_targets, max_targets, shapeable, self.components)
+        print 'total level after area modifier', level
 
         if no_spell_resistance:
             level += 1
@@ -159,7 +163,11 @@ class Spell:
                         'long': 2,
                         'extreme': 2.5,
                         }[spell_range]
-        return level
+
+        print 'combined level after range and misc modifiers', level
+        # we subtract 3 to convert from 'spell level' as used for modifiers and
+        # the actual level of the spell
+        return level-3
 
 class SpellComponent:
     def __init__(self, component_type, alternate_effect=None, area=None,
@@ -201,8 +209,8 @@ def rank_condition_strength(condition_strength):
         return {
             3: 2,
             2: 6,
-            1.5: 12,
-            1: 16}[condition_strength]
+            1.5: 10,
+            1: 14}[condition_strength]
     except KeyError:
         return 0
 
