@@ -188,7 +188,7 @@ class SpellComponent:
         print "with duration modifier:", self.level
         self.level *= calculate_miscellaneous_component_multiplier(component_type, area,
                 escapable, healthy_only, limit_affected_types, noncombat,
-                saving_throw, touch_attack)
+                saving_throw, touch_attack, bloodied_only)
         print "with miscellaneous modifiers:", self.level
 
 def calculate_base_level(alternate_effect, component_type, component_strength):
@@ -273,7 +273,8 @@ def calculate_duration_modifier(component_type, component_strength, duration, re
     return level
 
 def calculate_miscellaneous_component_multiplier(component_type, area, escapable,
-        healthy_only, limit_affected_types, noncombat, saving_throw, touch_attack):
+        healthy_only, limit_affected_types, noncombat, saving_throw, touch_attack,
+        bloodied_only):
     multiplier=1
     if limit_affected_types:
         multiplier *= {
@@ -309,6 +310,11 @@ def calculate_miscellaneous_component_multiplier(component_type, area, escapable
                     'half': PART,
                     'partial': PART,
                     }[saving_throw]
+        # in general, conditions should be more expensive with area spells
+        # but bloodied effects are less useful, since you're much less likely to
+        # trigger them shortly after the spell is cast
+        if area and area is not 'tiny' and not bloodied_only:
+            multiplier *= 1.25
 
     return multiplier
 
