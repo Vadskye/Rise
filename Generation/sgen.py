@@ -355,10 +355,9 @@ def calculate_area_modifier(area=None, choose_targets=None, max_targets=None,
                 'large_radius': 4,
                 }[area]
         #level = switch(area, area_choices, [0,2,2,2.5,3,3,3.5,4])
-    # adding max targets shouldn't affect small areas
-    # but should have a strong effect on large areas
+    #adding max targets shouldn't affect small areas.
     if max_targets and level>=2:
-        level = 2 + (level-2)*0.5
+        level = 2 + (level-2)*HALF
     #spells that are pure buffs don't have a penalty for choosing targets
     if choose_targets and (components[DAMAGE] or components[CONDITION]):
         level += 1
