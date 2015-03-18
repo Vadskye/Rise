@@ -680,8 +680,9 @@ class Creature(object):
     def calculate_derived_statistics(self):
         self.attack_bonus.set_level(self.level)
         self.maneuver_bonus.set_level(self.level)
-        for save in SAVES:
-            self.get_defense(save).set_level(self.level)
+        for save_name in SAVES:
+            self.get_defense(save_name).set_level(self.level)
+            self.get_defense(save_name).add_bonus(10, BASE)
         self.armor_class.natural_armor.set_level(self.level)
 
         self.apply_inactive_abilities()
@@ -812,29 +813,35 @@ class Creature(object):
         return full_string
 
     def _to_string_defenses(self):
-        defenses = str(self.armor_class)
-        defenses += '; maneuver_class '+str(
-                self.maneuver_defense.get_total())
-        defenses += '\nHP '+str(self.hit_points.get_total())
-        defenses += '; Fort '+util.mstr(self.fortitude.get_total())
-        defenses += ', Ref '+util.mstr(self.reflex.get_total())
-        defenses += ', Will '+util.mstr(self.will.get_total())
+        defenses = "[HP] {0}; [Defs] AD {1}, MD {2}; Fort {3}, Ref {4}, Will {5}".format(
+                self.hit_points.get_total(),
+                self.armor_class.normal(),
+                self.maneuver_defense.get_total(),
+                self.fortitude.get_total(),
+                self.reflex.get_total(),
+                self.will.get_total(),
+                )
         return defenses
 
     def _to_string_attacks(self):
-        attacks = 'Atk ' + util.mstr(self.attack_bonus.get_total())
-        attacks += ' ('+ str(self.primary_weapon_damage.get_total()) + ')'
+        attacks = '[Atk] {0}: {1}'.format(
+                util.mstr(self.attack_bonus.get_total()),
+                self.primary_weapon_damage.get_total()
+                )
         return attacks
 
     def _to_string_attributes(self):
-        attributes = 'Attr'
+        attributes = '[Attr]'
         for attribute_name in ATTRIBUTE_NAMES:
             attributes += ' ' + str(self.attributes[attribute_name].get_total())
         return attributes
 
     def _to_string_core(self):
-        core = 'Space %s, Reach %s, Speed: %s' % (self.space,
-                self.reach, self._to_string_speeds())
+        core = '[Space] {0}, [Reach] {1}, [Speed] {2}'.format(
+                self.space,
+                self.reach,
+                self._to_string_speeds()
+                )
         return core
 
     def _to_string_speeds(self):
