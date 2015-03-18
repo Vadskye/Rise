@@ -153,6 +153,8 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead[Trans]{Gaseous Form} Subject becomes insubstantial and can fly slowly.
   \spellhead{Shrink Item} Object shrinks to one-sixteenth size.
   \spellheadrestricted{Enlarge Person} Humanoid creature doubles in size.
+
+  \spellhead[Univ]{Prismatic Beam} Beam of multicolored light has random effects.
 \end{swspelllist}
 
 \subsubsection{4th-level Arcane Spells} 
@@ -165,7 +167,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead[Conj]{Blink} You randomly vanish and reappear for short duration.
   \spellhead{Dismissal} Forces a creature to return to native plane.
   \spellhead{Ice Storm} Hail deals 4d4 damage in small cylinder.
-  \spellhead{Mind Fog} Fog imposes \minus5 penalty to Wisdom.
   \spellhead{Summon Monster IV} Calls extraplanar creature to fight for you.
   \spellheadrestricted{Dimension Door} Teleports you within 1,000 feet.
 
@@ -175,7 +176,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellheadrestricted{Precognition} See into the future to gain combat bonuses.
 
   \spellhead[Ench]{Hold Monster} As hold person, but any creature.
-  \spellhead{Mind Fog} Fog imposes \minus5 penalty to Wisdom.
   \spellhead{Phantasmal Killer} Fearsome illusion can frighten target to death.
   \spellheadc{Sleep}{Mass} Tire multiple creatures, possibly putting them to sleep.
   \spellheadrestricted{Suggestion} Compels subject to follow stated course of action.
@@ -223,7 +223,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead[Ench]{Fear} Subjects within medium cone flee for short duration.
   \spellhead{Feeblemind} Subject's Intelligence drops to \minus9.
   \spellhead{Phantasmal Maze} Subject acts as if affected by \spell{maze}.
-  \spellhead{Power Word Confuse} Bloodied subject acts randomly.
   \spellheadrestricted{Charm Monster} Makes monster believe it is your ally.
 
   \spellhead[Evoc]{Chain Lightning} 5d10 damage; secondary targets take half damage.
@@ -232,7 +231,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead{Wall of Fire} Passing through wall deals 5d6 damage.
   \spellheadrestricted{Telekinetic Thrust} Hurl objects with the force of your mind.
 
-  \spellhead[Illus]{Invisibility Sphere} Makes everyone within small radius invisible.
+  \spellheadc[Illus]{Mirror Image}{Greater} Creates regenerating decoy duplicates of you.
   \spellhead{Phantasmal Maze} Subject acts as if affected by \spell{maze}.
   \spellhead{Retributive Brilliance} Subject can dazzle or blind attacker once.
   \spellheadrestricted{Shadow Evocation} Mimics 3rd level or lower evocation spell, only half real.
@@ -248,6 +247,8 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead{Wall of Stone} Creates a stone wall that can be shaped.
   %\spellheadrestricted{Animate Objects} Objects attack your foes.
   \spellheadrestrictedc{Reduce Person}{Mass} Reduces several creatures.
+
+  \spellhead[Univ]{Prismatic Wall} Multicolored wall has random effects.
 \end{swspelllist}
 
 \subsubsection{6th-level Arcane Spells} 
@@ -256,7 +257,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellheadc{Dispel Magic}{Greater} As dispel magic, but up to \plus20 on check.
   \spellheadc{Protection from Energy}{Greater} As \spell{protection from energy}, but against all energy types.
   \spellhead{Repulsion} Creatures can't approach you.
-  \spellheadrestricted{Edict} Issue a command that nearby creatures must obey or risk punishment.
+  \spellheadrestricted{Prohibition} Punish creatures that take specific action.
 
   \spellhead[Conj]{Banishment} Banish multiple extraplanar creatures. 
   \spellhead{Solid Fog} Fog blocks vision and slows movement.
@@ -269,7 +270,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellheadrestricted{Moment of Prescience} Roll twice with bonus for single attack, save, or opposed check.
 
   \spellhead[Ench]{Insanity} Subject indefinitely acts randomly.
-  \spellhead{Power Word Fear} Subject is unavoidably afraid.
+  \spellhead{Power Word Confuse} Bloodied subject acts randomly.
   \spellhead{Song of Discord} Compel creatures to fight each other.
   \spellheadrestrictedc{Charm Person}{Mass} As \spell{charm person}, but affects multiple creatures.
 
@@ -284,7 +285,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
   \spellhead[Necro]{Cripple} Subject cannot use its limbs. 
   \spellhead{Harm} Touch deals 12d8 damage and 4 Con damage.
-  \spellhead{Power Word Blind} Blinds bloodied creature.
   \spellheadc{Inflict Moderate Wounds}{Mass} Deals 6d6 damage to many creatures.
   \spellheadrestricted{Soulrend} Target takes Charisma damage.
 
@@ -312,13 +312,11 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
   \spellheadc[Ench]{Confusion}{Mass} Multiple creatures act randomly.
   \spellhead{Deep Slumber} Subject falls asleep for a long time.
-  \spellhead{Power Word Stun} Stuns a creature.
   \spellheadc{Heroism}{Greater} Gives combat bonuses, temporary hit points.
   \spellheadrestricted{Dominate Person} Controls humanoid telepathically.
 
   \spellhead[Evoc]{Energy Conversion} As \spell{greater resist energy}, plus you can fire rays of absorbed energy.
   \spellhead{Missile Storm} Swarm of missiles strike many creatures.
-  \spellhead{Prismatic Spray} Rays hit subjects with variety of effects.
   \spellheadc{Shout}{Greater} Yell deals 7d6 sonic damage in large cone; stuns creatures, damages objects.
   \spellheadrestricted{Forcecage}\M Cube or cage of force imprisons all inside.
 
@@ -329,6 +327,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
   \spellhead[Necro]{Finger of Death} Kills one subject.
   \spellheadc{Inflict Serious Wounds}{Mass} Deals 7d6 damage to many creatures.
+  \spellhead{Power Word Blind} Blinds bloodied creature.
   \spellhead{Strip the Flesh} Rend foe's skin from its body.
   \spellheadrestrictedc{Link Vitality}{Mass} As \spell{link vitality}, but affects one creature/level.
 
@@ -337,6 +336,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead{Shadow Body} You become a living shadow.
   \spellheadrestrictedc{Enlarge Person}{Mass} Multiple humanoid creatures double in size.
 
+  \spellhead[Univ]{Prismatic Spray} Cone of multicolored light has random effects.
   \spellhead[Univ]{Limited Wish}\M Alters reality -- within spell limits.
 \end{swspelllist}
 
@@ -356,11 +356,12 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
   \spellheadc[Ench]{Hold Person}{Mass} As \spell{hold person}, but affects multiple creatures.
   \spellhead{Scintillating Pattern} Twisting colors confuse, stun, or render unconscious.
+  \spellhead{Power Word Stun} Stuns a creature.
   \spellheadrestrictedc{Suggestion}{Mass} As \spell{suggestion}, but shorter and affects multiple creatures.
 
   \spellheadc[Evoc]{Cone of Cold}{Greater} 8d6 cold damage and fatigue in large cone.
   \spellhead{Polar Ray} Ranged touch attack slows and deals 16d6 cold damage.
-  \spellhead{Prismatic Wall} Wall's colors have array of effects.
+  \spellhead{}
   \spellheadrestricted{Crushing Hand} Large hand provides cover or crushes your foes.
 
   \spellhead[Illus]{Scintillating Pattern} Twisting colors confuse, stun, or render unconscious.
@@ -381,7 +382,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \subsubsection{9th-level Arcane Spells} 
 \begin{swspelllist}
     \spellhead[Abjur]{Mage's Disjunction} Dispels all magic.
-  \spellheadrestricted{Prohibition} Punish creatures that take specific action.
+    \spellheadrestrictedc{Prohibition}{Greater} Forcibly prevent creatures from taking specific action.
 
   \spellhead[Conj]{Imprisonment} Entombs subject beneath the earth.
   \spellhead{Shadow Puppet} Step into Plane of Shadow and create shadow duplicate in your stead.
@@ -398,7 +399,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellheadrestricted{Dominate Monster} As dominate person, but any creature.
 
   \spellhead[Evoc]{Meteor Swarm} Massive hail of meteors deals 9d8 damage.
-  \spellhead{Prismatic Sphere} As \spell{prismatic wall}, but surrounds on all sides.
+  \spellhead{}
   \spellheadrestricted{Clenched Fist} Large hand provides cover or attacks your foes.
 
   \spellhead[Illus]{Shadow Puppet} Step into Plane of Shadow and create shadow duplicate in your stead.
@@ -414,6 +415,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead{Imprisonment} Entombs subject beneath the earth.
   \spellheadrestricted{Time Stop} You act freely for 1d3\plus1 rounds.
 
+  \spellhead[Univ]{Prismatic Storm} Sphere of multicolored light has random effects.
   \spellhead[Univ]{Wish}\M As \spell{limited wish}, but with fewer limits.
 \end{swspelllist}
 
@@ -808,14 +810,14 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead[3]{Confusion} Subject acts randomly.
   \spellhead[3]{Summon Monster III*} Calls extraplanar creature to fight for you.
   \spellhead[4]{Chaos Hammer} Bewilders, deals 8d6 damage to nonchaotic creature.
-  \spellhead[5]{Animate Objects} Objects attack your foes.
+  \spellhead[5]{Prismatic Wall}
   \spellhead[5]{Magic Circle against Law} Protect allies in a \areamed radius.
   \spellhead[6]{Insanity} Subject indefinitely acts randomly.
   \spellhead[6]{Summon Monster VI*} Calls extraplanar creature to fight for you.
   \spellhead[7]{Prismatic Spray} Rays hit subjects with a variety of effects.
   \spellhead[7]{Word of Chaos} Kills, confuses, stuns, or deafens nonchaotic subjects in large radius.
   \spellhead[8]{Cloak of Chaos}\F Protect multiple creatures against lawful foes. 
-  \spellhead[8]{Prismatic Wall} Wall's colors have array of effects.
+  \spellhead[8]{}
   \spellhead[9]{Irresistible Dance} Forces subject to dance.
   \spellhead[9]{Summon Monster IX*} Calls extraplanar creature to fight for you.
 \end{spelllist}
@@ -1023,13 +1025,14 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead[4]{Order's Wrath} Bewilders and deals 8d6 damage to nonlawful creature.
   \spellheadc[5]{Command}{Mass} As \spell{command}, but affects multiple creatures.
   \spellhead[5]{Magic Circle against Chaos} Protect allies in a \areamed radius and hedge out opposing outsiders.
-  \spellhead[6]{Edict} Issue a command that nearby creatures must obey or risk punishment.
+  \spellhead[6]{Prohibition} Punish creatures that take specific action.
   \spellhead[6]{Summon Monster VI*} Calls extraplanar creature to fight for you.
   \spellhead[7]{Dictum} Kills, paralyzes, stuns, or staggers nonlawful subjects in 40 ft. cube.
-  \spellhead[7]{Power Word Stun} Stuns bloodied creature.
-  \spellhead[8]{Prohibition} Punish creatures that take specific action.
+  \spellhead[7]{}
+  \spellhead[8]{Power Word Stun} Stuns bloodied creature.
   \spellhead[8]{Shield of Law}\F Protect multiple creatures against lawful foes.
-  \spellhead[9]{Imprisonment} Entombs subject beneath the earth.
+  \spellheadc[9]{Prohibition}{Greater} Forcibly prevent creatures from taking specific action.
+  %\spellhead[9]{Imprisonment} Entombs subject beneath the earth.
   \spellhead[9]{Summon Monster IX*} Calls extraplanar creature to fight for you.
 \end{spelllist}
 *Summons lawful creatures only.
@@ -1160,7 +1163,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
   \spellhead[2]{Silence} Subject cannot make sound.
   \spellhead[3]{Confusion} Subject acts randomly.
   \spellhead[3]{Invisibility} Subject invisible until it attacks.
-  \spellhead[4]{Mind Fog} Fog imposes \minus5 penalty to Wisdom.
+  \spellhead[4]{}
   \spellhead[4]{Phantasmal Killer} Fearsome illusion can frighten target to death.
   \spellhead[5]{Seeming} Changes appearance of group of creatures.
   \spellhead[5]{Phantasmal Maze} Subject acts as if affected by \spell{maze}.

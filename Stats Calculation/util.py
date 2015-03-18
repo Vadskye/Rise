@@ -262,9 +262,7 @@ class ArmorClass:
                 self.natural_armor.get_total(), self.misc.get_total())
 
     def __str__(self):
-        ac = 'AC ' + str(self.normal())
-        ac += ', touch ' + str(self.touch())
-        ac += ', flat-footed ' + str(self.flatfooted())
+        ac = 'AD ' + str(self.normal())
         return ac
 
 class DamageReduction(object):

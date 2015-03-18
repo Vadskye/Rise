@@ -6,10 +6,16 @@ import util
 PART=0.8
 HALF=0.6
 duration_choices = ['round','short','medium','long','extreme', 'permanent']
-area_choices = ['none', 'tiny', 'normal','large_line', 'mr', 'medium_radius','large_cone','large_radius']
+area_choices = ['tiny', 'normal',
+    'small_radius', 'medium_radius', 'large_radius',
+    'large_line',
+    'medium_cone', 'large_cone',
+    'medium_wall', 'large_wall', 'huge_wall',
+]
 range_choices = ['personal', 'touch', 'close', 'medium', 'long', 'extreme']
 condition_choices = [0,1,1.5,2,2.5,3,3.5]
 touch_attack_choices =['none','poor','1','average','2', 'ray']
+bloodied_behavior_choices = ['while', 'instant', 'ifever']
 storage_file_name = 'spells.txt'
 condition_debug=True
 general_debug=True
@@ -30,7 +36,7 @@ def initialize_argument_parser():
     parser.add_argument('-e', '--healthy', dest='healthy', action='store_true',
             help='Condition only affects healthy creatures?')
     parser.add_argument('--alternateeffect', dest = 'alternateeffect', 
-            type=util.bool_parser)
+            help='Spell has an alternate effect?', action='store_true')
     parser.add_argument('-u', '--duration', dest = 'duration', type=str,
             choices=duration_choices)
     parser.add_argument('--undispellable', dest = 'undispellable',
@@ -39,9 +45,12 @@ def initialize_argument_parser():
             type=util.bool_parser, help='Requires concentration?')
     parser.add_argument('--saveends', dest='saveends', 
             action='store_true', help='Save each round to end?')
-    parser.add_argument('--bloodiedinstant', dest='bloodiedinstant',
-            help='Bloodied is checked only when spell is cast?',
-            action='store_true') 
+    parser.add_argument('--bloodiedbehavior', dest='bloodiedinstant',
+            help='''How is the bloodied effect triggered?
+                "while": active while target is bloodied during duration (default)
+                "instant": activates if target is bloodied when cast
+                "ifever": activates if target is ever bloodied during duration''',
+            choices=bloodied_behavior_choices)
     parser.add_argument('-a', '--area', dest='area', type=str,
             choices=area_choices)
     parser.add_argument('--choosetargets', dest='choosetargets',
@@ -53,12 +62,14 @@ def initialize_argument_parser():
             choices=['none','half','partial','negates'])
     parser.add_argument('--nosr', dest='nosr', type=util.bool_parser,
             help='Doesn\'t allow spell resistance?')
+    parser.add_argument('--norepeat', dest='norepeat', action='store_true',
+            help='Target immune for 24 hours after spell is cast?')
     parser.add_argument('-l', '--limittypes', dest='limittypes', type=int,
             help='Limit affected types?', choices=[0,1,2,3])
     parser.add_argument('--escapable', dest='escapable', type=str,
             help='Is the spell escapable?', choices=['1','2'])
     parser.add_argument('--noncombat', dest='noncombat', 
-            type=util.bool_parser, help='Irrelevant in combat?')
+            action='store_true', help='Irrelevant in combat?')
     parser.add_argument('--touchattack', dest='touchattack',
             type=str, help='Touch attack and bab',
             choices = touch_attack_choices)
@@ -72,6 +83,8 @@ def initialize_argument_parser():
     parser.add_argument('--discharged', type=str, choices=[None, 'depleted', 'delayed'],
             help='Discharged before its duration is over? \
             1=effect depleted over time, 2=delayed single effect')
+    parser.add_argument('--shapeable', action='store_true',
+            help='Line or wall can be shaped?')
     parser.add_argument('--savename', dest='savename', type=str)
     parser.add_argument('--loadname', dest='loadname', type=str)
     parser.add_argument('--dot', dest='dot', type=util.bool_parser,
@@ -88,14 +101,44 @@ class Spell:
                 }
 
     def get_level(self, area=None, choose_targets=None, max_targets=None,
-            no_spell_resistance=None, spell_range=None, trigger=None):
-        level=-3
+            shapeable=None, bloodied_behavior=None, duration=None,
+            no_spell_resistance=None, no_repeat=None, spell_range=None, trigger=None):
+        level=0
         for component_type in self.components.keys():
             for component in self.components[component_type]:
-                level += component.level
-        level += calculate_area_modifier(area, choose_targets, max_targets, self.components)
+                # if the bloodied effect only happens if the target is
+                # bloodied as the spell is cast, the healthy effect is
+                # discounted, since it won't usually trigger.
+                if bloodied_behavior == 'instant' and not component.bloodied_only:
+                    level += component.level * HALF
+                # if the bloodied effect happens if the target is ever bloodied
+                # during the duration of the spell, the bloodied effect is more
+                # expensive, based on the duration of the spell.
+                elif bloodied_behavior == 'ifever' and component.bloodied_only:
+                    level += component.level * {
+                            None: 1,
+                            'round': 1,
+                            'short': 1.1,
+                            'medium': 1.2,
+                            'long': 1.3,
+                            'extreme': 1.5,
+                            'permanent': 2,
+                            }[duration]
+                # if there is no bloodied effect, or if the bloodied effect
+                # happens for as long as the target is bloodied,
+                # there is no special modifier to the level of the component
+                else:
+                    level += component.level
+
+        print
+        print 'combined level from components', level
+        level += calculate_area_modifier(area, choose_targets, max_targets, shapeable, self.components)
+        print 'total level after area modifier', level
+
         if no_spell_resistance:
             level += 1
+        if no_repeat:
+            level *= PART
         if trigger:
             if trigger == 'no_action':
                 level +=1
@@ -120,24 +163,32 @@ class Spell:
                         'long': 2,
                         'extreme': 2.5,
                         }[spell_range]
-        return level
+
+        print 'combined level after range and misc modifiers', level
+        # we subtract 3 to convert from 'spell level' as used for modifiers and
+        # the actual level of the spell
+        return level-3
 
 class SpellComponent:
     def __init__(self, component_type, alternate_effect=None, area=None,
-            bloodied_only=None, check_bloodied_instantly=None, component_strength=None,
+            bloodied_only=None, component_strength=None,
             discharged=None, duration=None, escapable=None, healthy_only=None,
             limit_affected_types=None, noncombat=None, requires_concentration=None,
             save_ends=None, saving_throw=None, touch_attack=None,
             undispellable=None):
+
+        #some attributes need to be referenced externally to the component
+        self.bloodied_only = bloodied_only
+
         self.level = calculate_base_level(alternate_effect, component_type, component_strength)
         if bloodied_only:
             self.level *= 0.4
         print "base level:", self.level
-        self.level += calculate_duration_modifier(component_type, component_strength, duration, requires_concentration, undispellable, save_ends, check_bloodied_instantly, discharged)
+        self.level += calculate_duration_modifier(component_type, component_strength, duration, requires_concentration, undispellable, save_ends, bloodied_only, discharged)
         print "with duration modifier:", self.level
-        self.level *= calculate_miscellaneous_component_multiplier(area,
+        self.level *= calculate_miscellaneous_component_multiplier(component_type, area,
                 escapable, healthy_only, limit_affected_types, noncombat,
-                saving_throw, touch_attack)
+                saving_throw, touch_attack, bloodied_only)
         print "with miscellaneous modifiers:", self.level
 
 def calculate_base_level(alternate_effect, component_type, component_strength):
@@ -158,12 +209,12 @@ def rank_condition_strength(condition_strength):
         return {
             3: 2,
             2: 6,
-            1.5: 12,
-            1: 16}[condition_strength]
+            1.5: 10,
+            1: 14}[condition_strength]
     except KeyError:
         return 0
 
-def calculate_duration_modifier(component_type, component_strength, duration, requires_concentration, undispellable, save_ends, check_bloodied_instantly, discharged):
+def calculate_duration_modifier(component_type, component_strength, duration, requires_concentration, undispellable, save_ends, bloodied_only, discharged):
     #duration_choices = ['round','short','medium','long','extreme', 'permanent']
     if component_type==DAMAGE:
         level = {
@@ -208,13 +259,11 @@ def calculate_duration_modifier(component_type, component_strength, duration, re
 
     #now that the base level is established, apply universal modifiers
     if undispellable:
-        level+=1
+        level*=1.5
     if save_ends:
         level*=PART
     if requires_concentration:
         level*=HALF
-    if check_bloodied_instantly:
-        level*=PART
     if discharged == 'depleted':
         level*=PART
     elif discharged == 'delayed':
@@ -223,8 +272,9 @@ def calculate_duration_modifier(component_type, component_strength, duration, re
     print "duration modifier:", level
     return level
 
-def calculate_miscellaneous_component_multiplier(area, escapable, healthy_only,
-        limit_affected_types, noncombat, saving_throw, touch_attack):
+def calculate_miscellaneous_component_multiplier(component_type, area, escapable,
+        healthy_only, limit_affected_types, noncombat, saving_throw, touch_attack,
+        bloodied_only):
     multiplier=1
     if limit_affected_types:
         multiplier *= {
@@ -234,22 +284,6 @@ def calculate_miscellaneous_component_multiplier(area, escapable, healthy_only,
                 }[limit_affected_types]
     if noncombat:
         multiplier *= PART
-    if touch_attack:
-        multiplier *= {
-                'ray': HALF,
-                'poor': PART,
-                '1': PART,
-                'average': 0.9,
-                '2': 0.9
-                }[touch_attack]
-    if saving_throw:
-        multiplier *= {
-                'negates': HALF,
-                'half': PART,
-                'partial': PART,
-                }[saving_throw]
-    if area and area is not 'tiny':
-        multiplier *= 1.25
     if escapable:
         multiplier *= {
                 '1': PART,
@@ -257,9 +291,35 @@ def calculate_miscellaneous_component_multiplier(area, escapable, healthy_only,
                 }[escapable]
     if healthy_only:
         multiplier *= HALF
+
+    # some components for damage spells are represented as increased damage dice
+    # rather than increased spell level
+    if component_type != 'damage':
+        if touch_attack:
+            multiplier *= {
+                    'ray': HALF,
+                    'poor': PART,
+                    '1': PART,
+                    'average': 0.9,
+                    '2': 0.9
+                    }[touch_attack]
+        if saving_throw:
+            multiplier *= {
+                    'none': 1,
+                    'negates': HALF,
+                    'half': PART,
+                    'partial': PART,
+                    }[saving_throw]
+        # in general, conditions should be more expensive with area spells
+        # but bloodied effects are less useful, since you're much less likely to
+        # trigger them shortly after the spell is cast
+        if area and area is not 'tiny' and not bloodied_only:
+            multiplier *= 1.25
+
     return multiplier
 
-def calculate_area_modifier(area=None, choose_targets=None, max_targets=None, components = None):
+def calculate_area_modifier(area=None, choose_targets=None, max_targets=None, 
+        shapeable=None, components = None):
     if not area:
         return 0
     #area_choices = ['none', 'tiny', 'normal','large_line', 'mr', 'medium_radius','large_cone','large_radius']
@@ -267,34 +327,43 @@ def calculate_area_modifier(area=None, choose_targets=None, max_targets=None, co
     # these are the area weights for condition and damage spells
     if components is not None and (DAMAGE in components.keys() or CONDITION in components.keys()):
         level = {
-                'none': 0,
+                None: 0,
                 'tiny': 1,
+                'medium_wall': 1,
+                'large_wall': 2,
+                'medium_cone': 2,
                 'normal': 2,
+                'small_radius': 2,
+                'huge_wall': 3,
                 'large_line': 3,
-                'medium_radius': 4,
                 'large_cone': 4,
-                'large_radius': 5,
+                'medium_radius': 4,
+                'large_radius': 6,
                 }[area]
         #level = switch(area, area_choices, [0,1,2,3,4,4,5,6])
     else:
         # these are the area weights for buff-only spells
         level = {
-                'none': 0,
+                None: 0,
                 'tiny': 2,
+                'medium_cone': 2,
                 'normal': 2,
+                'small_radius': 2,
                 'large_line': 2.5,
                 'medium_radius': 3,
                 'large_cone': 3,
-                'large_radius': 3.5,
+                'large_radius': 4,
                 }[area]
         #level = switch(area, area_choices, [0,2,2,2.5,3,3,3.5,4])
-    #adding max targets shouldn't affect small areas.
+    # adding max targets shouldn't affect small areas
+    # but should have a strong effect on large areas
     if max_targets and level>=2:
-        level = max(level*HALF,2)
+        level = 2 + (level-2)*0.5
     #spells that are pure buffs don't have a penalty for choosing targets
-    if choose_targets and (components[DAMAGE] or
-            components[CONDITION]):
-        level+=1
+    if choose_targets and (components[DAMAGE] or components[CONDITION]):
+        level += 1
+    if shapeable:
+        level += 1
     return level
 
 #accept string in the format "arg1=blah, arg2=herp derp, arg3=whee"
@@ -379,7 +448,6 @@ if __name__ == "__main__":
                     alternate_effect = derp['alternateeffect'],
                     area = derp['area'],
                     bloodied_only = derp['bloodied'], 
-                    check_bloodied_instantly = derp['bloodiedinstant'],
                     component_strength = derp[component_type],
                     discharged = derp['discharged'],
                     duration = derp['duration'],
@@ -397,7 +465,11 @@ if __name__ == "__main__":
                 general_args['area'],
                 general_args['choosetargets'],
                 general_args['maxtargets'],
+                general_args['shapeable'],
+                general_args['bloodiedinstant'],
+                general_args['duration'],
                 general_args['nosr'],
+                general_args['norepeat'],
                 general_args['range'],
                 general_args['trigger'])
         if general_args['savename']:            
