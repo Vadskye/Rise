@@ -103,7 +103,7 @@ class Spell:
                 # bloodied as the spell is cast, the healthy effect is
                 # discounted, since it won't usually trigger.
                 if bloodied_behavior == 'instant' and not component.bloodied_only:
-                    level += component.level * PART
+                    level += component.level * HALF
                 # if the bloodied effect happens if the target is ever bloodied
                 # during the duration of the spell, the bloodied effect is more
                 # expensive, based on the duration of the spell.
