@@ -322,7 +322,7 @@ When you make a weapon good, evil, lawful, or chaotic, \spell{align weapon} is a
 \begin{spelltargets}{All nonevil creatures in the area}
     \spelleffect If the target's level does not exceed your caster level, it is \sickened for 5 rounds.
 
-    If it is also \bloodied when the spell is cast, it also suffers one or more of the following ill effects, depending on its level.
+    If the target is also \bloodied when the spell is cast, it also suffers one or more of the following ill effects, depending on its level.
     \begin{itemize}
         \item Up to caster level \minus5: The creature is also \nauseated for 1 round.
         \item Up to caster level \minus10: The creature is also \paralyzed for 5 rounds.
@@ -351,7 +351,6 @@ When you make a weapon good, evil, lawful, or chaotic, \spell{align weapon} is a
 
     If the target is \bloodied when the spell is cast, it is also \blinded for 1 round or \deafened for the duration of the spell, as you choose.
 \end{spelltarget}
-\spellnotes The choice of bloodied conditions is made at the time the spell is cast.
 
 \spellsection{Blink}{4}
 \spelldesc{You rapidly blink in and out of reality, confounding your foes and protecting you from their attacks.}
@@ -419,7 +418,7 @@ When you make a weapon good, evil, lawful, or chaotic, \spell{align weapon} is a
 \begin{spelltargets}{Everything in the area}l[Magic vs. Reflex and Fortitude]
     \spellsuccess If you beat the target's Reflex defense, it takes 5d8 electricity damage \add d8 per four caster levels above 10th. If you are outdoors in a stormy area, it takes 5d10 electricity damage \add d10 per four caster levels above 10th instead.
 
-    If the target is \bloodied when the spell is cast, and you also beat its Fortitude defense, it is \staggered for 5 rounds.
+    If the target is \bloodied after the damage is dealt, and you also beat its Fortitude defense, it is \staggered for 5 rounds.
     \spellfailure As above, but half damage and the target is not staggered.
 \end{spelltargets}
 \spelleffect You may call additional bolts, as \spell{call lightning}.
@@ -517,7 +516,7 @@ If the staff-treant is reduced to 0 or fewer hit points, it crumbles to powder a
 \spellline
 \spelleffect This spell affects all \bloodied living creatures in the area, starting with the creature with the lowest level, until it affects a total number of levels equal to twice your caster level. Among creatures with equal levels, those closest to the burst's point of origin are affected first. No creature whose level is greater than half your caster level can be affected, and levels that are not sufficient to affect a creature are wasted. Healthy creatures are not affected by this spell, and do not count against its level limit.
 \begin{spelltargets}*{Several bloodied living creatures in the area}l[Magic vs. Fortitude]
-    \spellsuccess If the target is \bloodied when the spell is cast, it is reduced to 0 hit points and takes 9 critical damage, causing it to begin dying.
+    \spellsuccess If the target is bloodied when the spell is cast, it is reduced to 0 hit points and takes 9 critical damage, causing it to begin dying.
 \end{spelltargets}
 \spellline
 \spellmat{The powder of a crushed black pearl with a minimum value of 100 gp.}
@@ -531,9 +530,11 @@ If the staff-treant is reduced to 0 or fewer hit points, it crumbles to powder a
 \spellline
 \spelleffect As \spell{interposing hand}, except that the hand attacks its target instead of protecting you from it.
 \begin{spelltarget}*{One creature}l[Caster level \add casting attribute vs. Armor defense]
-    \spellsuccess 2d10 force damage \add half casting attribute. If the target is \bloodied, you make an additional attack.
-    \begin{spelltarget}*{Struck creature}[Magic vs. Fortitude]
-        \spellsuccess If the target is \bloodied, it is \dazed for 1 round.
+    \spellsuccess 2d10 force damage \add half casting attribute.
+    
+    If the target is \bloodied after the damage is dealt, you make an additional attack.
+    \begin{spelltarget}*{Struck bloodied creature}[Magic vs. Fortitude]
+        \spellsuccess The target is \dazed for 1 round.
     \end{spelltarget}
 \end{spelltarget}
 \spellnotes The hand attacks during the action phase, regardless of when you direct it to attack a target.
@@ -860,7 +861,7 @@ As a swift action, you can move the lights as you desire through the air. They c
 \spellrng{\rngmed}
 \spelldur{\durshort; see text}
 \begin{spelltarget}{Living creature}[Magic vs. Fortitude]
-    \spellsuccess If the subject is bloodied, it is \vulnerable. If it drops to 0 hit points, it dies immediately, and you gain 10 temporary hit points \add 1 per caster level above 4th. These temporary hit points last for 1 round per level the subject had.
+    \spellsuccess As long as the target is bloodied, it is \vulnerable. If it drops to 0 hit points, it dies immediately, and you gain 10 temporary hit points \add 1 per caster level above 4th. These temporary hit points last for 1 round per level the subject had.
 \end{spelltarget}
 \spellnotes If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
 
@@ -892,7 +893,9 @@ As a swift action, you can move the lights as you desire through the air. They c
 \spelldur{\durlong}
 \spellsr{Yes (Will)}
 \begin{spelltarget}{One creature}[Magic vs. Will]
-    \spellsuccess The target is \bewildered. If it is \bloodied, it immediately falls asleep. If left undisturbed, it will sleep until it dies. As long as it remains bloodied, it cannot be awakened until the spell's duration expires, though it can be awakened normally after that point.
+    \spellsuccess The target is \bewildered.
+    
+    If the target becomes \bloodied at any point during the spell's duration, it immediately falls asleep. If left undisturbed, it will sleep until it dies. As long as it remains bloodied, it cannot be awakened until the spell's duration expires, though it can be awakened normally after that point.
 \end{spelltarget}
 
 \spellsection{Deflection}{3}
@@ -945,7 +948,9 @@ If you choose a delay, a glowing bead sits at the point of origin until it deton
 \spellrng{\rngclose}
 \spellsr{Yes (Fortitude)}
 \begin{spelltarget}{One creature}[Magic vs. Fortitude]
-    \spellsuccess The target is \staggered for 5 rounds. If it is bloodied, it loses all its hit points and takes 9 critical damage, causing it to begin dying.
+    \spellsuccess The target is \staggered for 5 rounds.
+    
+    If the target is \bloodied when the spell is cast, it loses all its hit points and takes 9 critical damage, causing it to begin dying.
 \end{spelltarget}
 \spellnotes The remains of a creature killed by this spell are consumed utterly (but not its equipment or possessions). The only way to restore life such a creature is to use \spell{true resurrection}, a carefully worded \spell{wish} spell followed by \spell{resurrection}, or \spell{miracle}.
 \spellfocus{A special holy (or unholy) symbol of silver marked with verses of anathema (cost 250 gp).}
@@ -970,7 +975,7 @@ By concentrating on an aura (a standard action), you can determine the strength 
 \begin{spelltargets}{All nonlawful creatures in the area}
     \spelleffect If the target's level does not exceed your caster level, it is \sickened for 5 rounds.
 
-    If it is also bloodied, it also suffers one or more of the following ill effects, depending on its level.
+    If the target is also \bloodied when the spell is cast, it also suffers one or more of the following ill effects, depending on its level.
     \begin{dtable}
         \begin{tabularx}{\columnwidth}{l >{\lcol}X}
             \par \thead{Level} & \thead{Effect} \\
@@ -1124,7 +1129,7 @@ Artifacts and deities are unaffected by mortal magic such as this.
 \spellsr{Yes (Fortitude)}
 \begin{spelltarget}{One melee weapon}
     \spelleffect The target weapon becomes deadly to undead.
-    \begin{spelltrigger}{The target weapon strikes a bloodied undead creature for the first time in a round}
+    \begin{spelltrigger}{The target weapon strikes a \bloodied undead creature for the first time in a round}
         \begin{spelltarget}*{One bloodied undead creature}[Magic vs. Fortitude]
             \spellsuccess The target creature is utterly destroyed.
         \end{spelltarget}
@@ -1440,7 +1445,7 @@ The damage reduction allows an undead subject to ignore the first 8 physical dam
 \begin{spelltarget}{All creatures in the area}[Magic vs. Will]
     \spellsuccess The target is \shaken.
 
-    If it is \bloodied, it is \frightened instead.
+    As long as the target is \bloodied, it is \frightened instead.
 \end{spelltarget}
 
 \spellsection{Feather Fall}{1}
@@ -1456,15 +1461,15 @@ The damage reduction allows an undead subject to ignore the first 8 physical dam
 
 This spell works only upon free-falling objects. It no special effect on ranged weapons unless they are falling an extraordinary distance. It does not affect a sword blow or a charging or flying creature.
 
-\spellsection{Feeblemind}{5}
+\spellsection{Feeblemind}{7}
 \spellinfo{Ench (Inhibition) [Mind-Affecting]}{Arcane}
-\spellrng{5 feet}
+\spellrng{\rngclose}
 \spelldur{\durshort or permanent}
 \spellsr{Yes (Will)}
 \begin{spelltarget}{One creature}[Magic vs. Will]
     \spellsuccess The target is \bewildered for \durshort duration.
 
-    If the target is \bloodied, its Intelligence drops to \minus9, giving it roughly the intellect of a lizard. It is unable to use Intelligence-based skills, cast spells, understand language, or communicate coherently. Still, it knows who its friends are and can follow them and even protect them. The subject remains in this state until a \spell{heal}, \spell{limited wish}, \spell{miracle}, or \spell{wish} spell is used to cancel the effect of the \spell{feeblemind}.
+    If the target is \bloodied when the spell is cast, its Intelligence drops to \minus9, giving it roughly the intellect of a lizard. It is unable to use Intelligence-based skills, cast spells, understand language, or communicate coherently. Still, it knows who its friends are and can follow them and even protect them. The subject remains in this state until a \spell{heal}, \spell{limited wish}, \spell{miracle}, or \spell{wish} spell is used to cancel the effect of the \spell{feeblemind}.
 \end{spelltarget}
 
 \spellsection{Finger of Death}{7}
@@ -1845,7 +1850,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \begin{spelltarget}{One humanoid creature}[Magic vs. Will]
     \spellsuccess The target is \bewildered.
 
-    If the target becomes \bloodied, it is also \dazed and unable to act. At the end of every round where the creature is bloodied, you must make a new Magic vs. Will attack against it to sustain the effect. If this attack fails, the creature is no longer dazed for the remainder of the spell, though it remains bewildered.
+    As long as the target is \bloodied, it is also \dazed and unable to act. At the end of every round where the creature is bloodied, you must make a new Magic vs. Will attack against it to sustain the effect. If this attack fails, the creature is no longer dazed for the remainder of the spell, though it remains bewildered.
 \end{spelltarget}
 
 \spellsectioncomma{Hold Person}{Mass}{8}
