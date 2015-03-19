@@ -3966,11 +3966,13 @@ If you cast this spell on an undead creature, the range of the vision is doubled
 \spellsection{Unliving Heart}{1}
 \spelldesc{You harness the power of unlife to grant yourself a limited ability to avoid death.}
 \spellinfo{Necro (Life)}{Necro}
-\spelltwocol{\spelltgt{You}}{\spellrng{\rngpers}}
+\spellrng{\rngpers}
 \spelldur{\durlong}
-\spelleffect You gain 5 temporary hit points \add 1 per caster level above 2nd. If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
+\begin{spelltarget}{You}
+    \spelleffect You gain 5 temporary hit points \add 1 per two caster levels above 2nd. If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
 
 In addition, you are treated as being undead for the purpose of spells or abilities which affect undead. This causes some unintelligent undead, such as skeletons and zombies, to avoid attacking you.
+\end{spelltarget}
 
 %gaining full temp HP would be level 5
 \spellsection{Vampiric Touch}{4}
