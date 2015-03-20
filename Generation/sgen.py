@@ -360,8 +360,9 @@ def calculate_area_modifier(area=None, choose_targets=None, max_targets=None,
     if max_targets and level>=2:
         level = 2 + (level-2)*0.5
     #spells that are pure buffs don't have a penalty for choosing targets
+    # choosing targets should have a stronger effect on larger areas
     if choose_targets and (components[DAMAGE] or components[CONDITION]):
-        level += 1
+        level *= 1.25
     if shapeable:
         level += 1
     return level
