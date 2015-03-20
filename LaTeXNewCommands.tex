@@ -55,7 +55,7 @@
 \newcommand{\M}{\textsuperscript{M}}
 \newcommand{\F}{\textsuperscript{F}}
 \newcommand{\mfx}[1]{\emph{#1}}    % For material components, focuses, and XP costs for spells
-\newcommand{\subspell}[1]{\emph{#1}:}    %For parts of spells
+\newcommand{\subspell}[1]{\emph{#1}}    %For parts of spells
 \newcommand{\magicitem}[1]{\emph{#1}}    %For the names of items
 \newcommand{\mitem}[1]{\emph{#1}}
 \newcommand{\shead}[1]{\> \textbf{#1}}    %For the headers of spells in spell lists
@@ -279,7 +279,7 @@
 % weird spacing before twocol
 \newcommand{\spelllinespaced}{\spellline\vspace{0.5\medskipamount}}
 
-\newcommand{\spelleffect}{\parhead*{Effect}}
+%\newcommand{\spelleffect}{\parhead*{Effect}}
 %\newcommand{\spellsuccess}{\parhead*{Success}}
 %\newcommand{\spellfailure}{\parhead*{Failure}\xspace}
 \newcommand{\spellnotes}{\spellline\par\noindent\textit{Note}:\xspace}
@@ -297,4 +297,10 @@
     \IfNoValueTF{#1}
     {\parhead*{Success}}
     {\parhead*{Success}[#1]}
+}
+\DeclareDocumentCommand{\spelleffect}{o}
+{
+    \IfNoValueTF{#1}
+    {\parhead*{Effect}}
+    {\parhead*{Effect}[#1]}
 }
