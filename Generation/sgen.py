@@ -336,8 +336,8 @@ def calculate_area_modifier(area=None, choose_targets=None, max_targets=None,
                 'small_radius': 2,
                 'huge_wall': 3,
                 'large_line': 3,
-                'large_cone': 4,
                 'medium_radius': 4,
+                'large_cone': 5,
                 'large_radius': 6,
                 }[area]
         #level = switch(area, area_choices, [0,1,2,3,4,4,5,6])
@@ -351,7 +351,7 @@ def calculate_area_modifier(area=None, choose_targets=None, max_targets=None,
                 'small_radius': 2,
                 'large_line': 2.5,
                 'medium_radius': 3,
-                'large_cone': 3,
+                'large_cone': 3.5,
                 'large_radius': 4,
                 }[area]
         #level = switch(area, area_choices, [0,2,2,2.5,3,3,3.5,4])
