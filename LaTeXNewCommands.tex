@@ -175,8 +175,8 @@
 \newcommand{\spelllimit}[1]{\parhead*{Limit} #1}
 \newcommand{\spellzone}[1]{\parhead*{Zone} #1}
 
-\newcommand{\spelltgt}[1]{\parhead*{Target} #1}
-\newcommand{\spelltgts}[1]{\parhead*{Targets} #1}
+%\newcommand{\spelltgt}[1]{\parhead*{Target} #1}
+%\newcommand{\spelltgts}[1]{\parhead*{Targets} #1}
 \newcommand{\spelltgtortgts}[1]{\parhead*{Target or Targets} #1}
 \newcommand{\spelltgtorarea}[1]{\parhead*{Target or Area} #1}
 \newcommand{\spelltgteffarea}[1]{\parhead*{Target or Area} #1}
@@ -253,10 +253,10 @@
 \newcommand{\concealment}{concealment \reminder{\plus4 to physical defenses}}
 
 \newcommand{\destructivespellnotes}{If a destructive spell deals enough damage to an interposing barrier to shatter or breaks through it, its effects may continue beyond the barrier if the area permits; otherwise, it stops at the barrier just as any other spell effect does.\xspace}
-\newcommand{\firespellnotes}{Fire spells do not function underwater. They can ignite combustable materials, such as dry wood and cloth.}
-\newcommand{\fogspellnotes}{Fog spells do not function underwater and can be dispersed by wind. Localized wind, such as from a \spell{gust of wind} spell, only disperses the fog where it overlaps the fog. A fire spell burns away the fog in the area into which it deals damage.}
-\newcommand{\fogwindspellnotes}{A moderate wind (11\add mph) disperses the fog in 5 rounds; a strong wind (21\add mph) disperses the fog in 1 round.}
-\newcommand{\norepeatnotes}{You can only affect any individual creature with this spell once per 24 hours.}
+\newcommand{\firespellnotes}{Fire spells do not function underwater. They can ignite combustable materials, such as dry wood and cloth.\xspace}
+\newcommand{\fogspellnotes}{Fog spells do not function underwater and can be dispersed by wind. Localized wind, such as from a \spell{gust of wind} spell, only disperses the fog where it overlaps the fog. A fire spell burns away the fog in the area into which it deals damage.\xspace}
+\newcommand{\fogwindspellnotes}{A moderate wind (11\add mph) disperses the fog in 5 rounds; a strong wind (21\add mph) disperses the fog in 1 round.\xspace}
+\newcommand{\norepeatnotes}{You can only affect any individual creature with this spell once per 24 hours.\xspace}
 
 \newcommand{\spelltabular}{\par\noindent\begin{tabularx}{\columnwidth}{>{\lcol}X l}}
 \newcommand{\spelltabularcompressed}{\par\noindent\begin{tabularx}{\linewidth}{@{}>{\lcol}X l}}
@@ -283,7 +283,7 @@
 %\newcommand{\spelleffect}{\parhead*{Effect}}
 %\newcommand{\spellsuccess}{\parhead*{Success}}
 %\newcommand{\spellfailure}{\parhead*{Failure}\xspace}
-\newcommand{\spellnotes}{\spellline\par\noindent\textit{Note}:\xspace}
+\newcommand{\spellnotes}{\spellline\par\noindent\textit{Notes}:\xspace}
 \newcommand{\spellspecial}{\parhead*{Special}}
 \newcommand{\spellcheck}[1]{\parhead*{Check} #1}
 
@@ -304,4 +304,16 @@
     \IfNoValueTF{#1}
     {\parhead*{Effect}}
     {\parhead*{Effect}[#1]}
+}
+\DeclareDocumentCommand{\spelltgt}{m o}
+{
+    \IfNoValueTF{#2}
+    {\parhead*{Target} #1}
+    {\parhead*{#2 Target} #1}
+}
+\DeclareDocumentCommand{\spelltgts}{m o}
+{
+    \IfNoValueTF{#2}
+    {\parhead*{Targets} #1}
+    {\parhead*{#2 Targets} #1}
 }

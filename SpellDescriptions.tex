@@ -630,9 +630,10 @@ Holding one's breath doesn't help against the poison, but creatures immune to po
 \spelldesc{You create an area of extreme cold that drains heat from creatures in the area, diminishing their ability to move and fight.}
 \spellinfo{Evoc (Energy) [Cold, Destructive]}{Arcane, Nature}
 \spellburst{\areamed cone}
+\spelldur{\durshort}
 \spellsr{Yes (Fortitude)}
 \begin{spelltarget}{Everything in the area}[Magic vs. Reflex]
-    \spellsuccess 5d6 cold damage \add d6 per four caster levels above 10th. In addition, the target is \fatigued for 5 rounds.
+    \spellsuccess 5d6 cold damage \add d6 per four caster levels above 10th. In addition, the target is \fatigued.
     \spellfailure As above, but half damage and the target is not fatigued.
 \end{spelltarget}
 \spellnotes \destructivespellnotes
@@ -1128,14 +1129,14 @@ Artifacts and deities are unaffected by mortal magic such as this.
 \spellrng{\rngclose}
 \spelldur{\durshort}
 \spellsr{Yes (Fortitude)}
-\begin{spelltarget}{One melee weapon}
+\begin{spelltarget}[Primary]{One melee weapon}
     \spelleffect The target weapon becomes deadly to undead.
-    \begin{spelltrigger}{The target weapon strikes a \bloodied undead creature for the first time in a round}
-        \begin{spelltarget}*{One bloodied undead creature}[Magic vs. Fortitude]
-            \spellsuccess The target creature is utterly destroyed.
-        \end{spelltarget}
-    \end{spelltrigger}
 \end{spelltarget}
+\begin{spelltrigger}{The primary target strikes a \bloodied undead creature for the first time in a round}
+    \begin{spelltarget}*[Secondary]{One bloodied undead creature}l[Magic vs. Fortitude]
+        \spellsuccess The target creature is utterly destroyed.
+    \end{spelltarget}
+\end{spelltrigger}
 
 \spellsection{Divine Favor}{1}
 \spelldesc{You imbue yourself with skill in combat by calling upon the divine power of your patron.}
@@ -1794,15 +1795,15 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spelldur{\durshort \dismissable}
 \spellsr{Yes (Fortitude)}
-\begin{spelltarget}{One metal object}
+\begin{spelltarget}[Primary]{One metal object}
     \spelleffect The target object becomes extremely hot.
-    \begin{spelltrigger}{End of every round}
-        \begin{spelltargets}*{The object and everything touching it}l[Magic vs. Fortitude]
-            \spellsuccess The target takes 2d6 fire damage \add d6 per four caster levels above 4th.
-            \spellfailure As above, but half damage.
-        \end{spelltargets}
-    \end{spelltrigger}
 \end{spelltarget}
+\begin{spelltrigger}{End of every round}
+    \begin{spelltargets}*[Secondary]{The primary target and everything touching it}l[Magic vs. Fortitude]
+        \spellsuccess The target takes 2d6 fire damage \add d6 per four caster levels above 4th.
+        \spellfailure As above, but half damage.
+    \end{spelltargets}
+\end{spelltrigger}
 \spellnotes If the subject is underwater, this spell deals half damage,  and boils the surrounding water. Any cold intense enough to damage the creature negates fire damage from the spell (and vice versa) on a point-for-point basis. This spell can affect the armor worn by a typical Medium creature, but not generally by a larger creature.
 
 \spellsection{Heroism}{3}
@@ -2995,18 +2996,19 @@ Since the image is not a creature, it is difficult to disrupt, and many spells h
 
 \spellsection{Retributive Brilliance}{5}
 \spellinfo{Abjur/Illus (Figment, Shielding)}{Arcane}
-\spelltwocol{\spelltgt{One creature; see text}}{\spellrng{\rngclose; see text}}
+\spellrng{\rngclose}
 \spelldur{\durshort or until discharged}
 \spellsr{Yes (Fortitude)}
-\begin{spelltarget}{One creature}
+\begin{spelltarget}[Primary]{One creature}
     \spelleffect The target is protected by a retributive shield that can be activated when it is attacked. Activating the triggered attack requires an immediate action from either you or the target, and discharges the spell.
-    \begin{spelltrigger}{Creature within \rngclose range of the target attacks it with a melee weapon}
-        \begin{spelltarget}*{Attacking creature}[Magic vs. Reflex]
-            \spellsuccess The target is \dazzled for 5 rounds. If it is \bloodied, it is also \blinded for 5 rounds.
-            \spellfailure The target is dazzled for 5 rounds.
-        \end{spelltarget}
-    \end{spelltrigger}
 \end{spelltarget}
+\begin{spelltrigger}{Creature attacks the primary target with a melee weapon}
+    \spellrng{\rngclose}
+    \begin{spelltarget}*[Secondary]{Attacking creature}[Magic vs. Reflex]
+        \spellsuccess The target is \dazzled for 5 rounds. If it is \bloodied, it is also \blinded for 5 rounds.
+        \spellfailure The target is dazzled for 5 rounds.
+    \end{spelltarget}
+\end{spelltrigger}
 
 \spellsection{Retributive Shield}{4}
 \spellinfo{Abjur/Necro (Life, Shielding)}{Arcane}
@@ -3065,7 +3067,7 @@ Since the image is not a creature, it is difficult to disrupt, and many spells h
 \spellinfo{Trans}{Air, Arcane, Trickery}
 \spelltwocol{\spellzone{\arealarge radius cylinder}}{\spellrng{\rngclose}}
 \spelldur{Concentration (up to 5 rounds)}
-\spelltarget{Everything in the area}
+\begin{spelltarget}{Everything in the area}
     \spelleffect The target falls upwards, reaching the top of the area within 1 round. If the target strikes a solid object, such as a ceiling, it is affected in the same way as it would be during a normal fall. Otherwise, it floats at the top of the area, oscillating slightly. When the spell ends, if the target is still floating, it falls, potentially taking damage for the fall.
 \end{spelltarget}
 \spellnotes Creatures who can fly or levitate can keep themselves from falling, though the shift in gravity can be disorienting.
@@ -3090,26 +3092,26 @@ Since the image is not a creature, it is difficult to disrupt, and many spells h
 \spellnotes This spell's damage reduction allows the target to ignore the first 10 physical damage it takes each round. If it is hit by an attack that deals appropriately aligned damage, such as a weapon affected by \spell{align weapon} or a spell with the appropriate descriptor, it cannot use its damage reduction for 1 round.
 Multiple magical effects that increase size do not stack.
 
+\pdfbookmark[2]{S}{SpellDescriptionsS}
+\begin{comment}
+\subsubsection{S}
+\end{comment}
+
 \spellsection{Sanctuary}{1}
 \spellinfo{Abjur/Ench (Compulsion, Shielding) [Mind-Affecting]}{Arcane, Divine, Protection}
 \spellrng{Touch}
 \spelldur{\durshort or until discharged}
 \spellsr{Yes (Will)}
-\begin{spelltarget}{One creature}
+\begin{spelltarget}[Primary]{One creature}
     \spelleffect The target is shielded from enemy attacks. If it attacks any creature, this spell immediately ends.
 \end{spelltarget}
-\begin{spelltrigger}*{The shielded creature is attacked}
-    \begin{spelltarget}*{The attacking creature}[Magic vs. Will]
-        \spellsuccess The target is unable to attack the shielded creature. It can attack a different creature instead.
+\begin{spelltrigger}{The primary target is attacked}
+    \begin{spelltarget}*[Secondary]{The attacking creature}[Magic vs. Will]
+        \spellsuccess The target is unable to attack the primary target. It can attack a different creature instead.
     \end{spelltarget}
 \end{spelltrigger}
 
 \spellnotes This is considered a mind-affecting effect on any creature that attempts to attack the subject. Creatures immune to mind-affecting effects can attack the subject freely.
-
-\pdfbookmark[2]{S}{SpellDescriptionsS}
-\begin{comment}
-\subsubsection{S}
-\end{comment}
 
 \spellsection{Scintillating Pattern}{8}
 \spelldesc{You create a massive spread of colorful lights that spin and whirl in a complex pattern that bewilders your foes.}
@@ -3216,7 +3218,7 @@ If the target is out of range of you, the effect is suppressed until it returns 
 \spellsr{Yes (Will)}
 \begin{spelltargets}{You and one creature}[Magic vs. Will]
     \spellsuccess You share damage with the other target, as \spell{share pain}.
-\end{spelltarget}
+\end{spelltargets}
 
 \spellsection{Shield of Faith}{1}
 \spelldesc{You create a shimmmering, magical shield that protects your ally as long as you maintain faith.}
@@ -3257,50 +3259,67 @@ If the target is out of range of you, the effect is suppressed until it returns 
 \spellsection{Shocking Grasp}{1}
 \spelldesc{You deliver a powerful electrical shock to your foe.}
 \spellinfo{Evoc (Energy) [Electricity]}{Arcane, Destruction}
-\spelltwocol{\spelltgt{Creature or object touched}}{\spellrng{Touch}}
-\spelldmg{2d6 electricity damage \add d6 per two caster levels above 2nd}
-\spellattack{None/Magic vs. Fortitude}
-\spelleffect You make a Reflex attack to deal damage to the target. If you hit, you also make a Fortitude attack to stagger it for 1 round. You gain a \plus2 bonus to attack with this spell if the target is wearing metal armor or otherwise has a significant quantity of metal.
-\spellnotes A staggered character may take a single move action or standard action each round, but not both. She cannot take full-round actions, but she may take swift actions. In addition, she is \vulnerable, causing her to take a \minus2 penalty on attacks, defenses, and checks.
+\spellrng{5 ft.}
 \spellsr{Yes (Fortitude)}
+\begin{spelltarget}{One creature or object}l[Magic vs. Reflex and Fortitude]
+    \spellspecial You gain a \plus2 bonus to attack if the target is wearing metal armor or otherwise has a significant quantity of metal.
+    \spellsuccess[Reflex] 2d6 electricity damage \add d6 per two caster levels above 2nd.
+    \spellfailure[Reflex] As above, but half damage.
+    \spellsuccess[Reflex and Fortitude] The target is \staggered for 1 round.
+\end{spelltarget}
 
 \spellsection{Shout}{4}
 \spelldesc{You emit an ear-splitting yell that deafens and damages creatures in its path.}
 \spellinfo{Evoc (Energy) [Sonic]}{Arcane, Destruction, Strength}
 \spellcmp{Verbal only}
 \spellburst{\areamed cone}
-\spelldmg{4d6 sonic damage \add d6 per four caster levels above 8th; see text}
-\spellattack{Fortitude half/Magic vs. Fortitude}
-\spelleffect You make a Fortitude attack to deal damage to everything in the area. A successful attack also deafens the target for 5 rounds, while a failed attack deals half damage. You gain a \plus5 bonus to attack against brittle or crystalline objects and creatures.
 \spellsr{Yes (Fortitude)}
+\begin{spelltargets}{Everything in the area}
+    \spellspecial You gain a \plus5 bonus to attack against brittle or crystalline objects and creatures.
+    \spellsuccess 4d6 sonic damage \add d6 per four caster levels above 8th. In addition, the target is \deafened.
+    \spellfailure As above, but half damage, and the target is not deafened.
+\end{spelltargets}
 
 \spellsectioncomma{Shout}{Greater}{7}
 \spellinfo{Evoc (Energy) [Sonic]}{Arcane, Destruction, Strength}
+\spellcmp{Verbal only}
 \spellburst{\arealarge cone}
+\spellsr{Yes (Fortitude)}
+\begin{spelltargets}{Everything in the area}
+    \spellspecial You gain a \plus5 bonus to attack against brittle or crystalline objects and creatures.
+    \spellsuccess 7d6 sonic damage \add d6 per four caster levels above 8th. In addition, the target is \deafened.
+    \spellfailure As above, but half damage, and the target is not deafened.
+\end{spelltargets}
+
 \spelldmg{7d6 sonic damage \add d6 per four caster levels above 14th; see text}
 \spellattack{Fortitude partial or Reflex negates (object); See text}
 \spelleffect This spell functions like \spell{shout}, except that it is larger.
 
 \spellsection{Shrink Item}{3}
 \spellinfo{Trans (Alteration)}{Trans}
-\spelltwocol{\spelltgt{One Small (or larger) nonmagical object; see text}}{\spellrng{Touch}}
-\spelldur{24 hours; see text}
-\spellattack{Magic vs. Will (object)}
-\spelleffect You are able to shrink one nonmagical item to 1/16 of its normal size in each dimension (to about 1/4,000 the original volume and mass). This change effectively reduces the object's size by four categories. Optionally, you can also change its now shrunken composition to a clothlike one. Objects changed by a \spell{shrink item} spell can be returned to normal composition and size merely by tossing them onto any solid surface or by a word of command from the original caster. The object must be resting on a stable surface to return to its original size; if the command word is spoken while the object is not stable (such as while it is in the air), the object returns to its original size as soon as it finds a resting point. Even a burning fire and its fuel can be shrunk by this spell. Restoring the shrunken object to its normal size and composition ends the spell.
-\par You can shrink a Medium object at 8th caster level, a Large object at 12th caster level, a Huge object at 16th caster level, or a Gargantuan object at 24th caster level.
-\spellnotes This spell can be made permanent with a \spell{permanency} ritual, in which case the affected object can be shrunk and expanded an indefinite number of times, but only by the original caster. If you recast the spell each day on an object, you can keep it at its small size indefinitely.
+\spellrng{\rngclose}
+\spelldur{24 hours or until discharged}
 \spellsr{Yes (Will)}
+\spellspecial As you cast this spell, choose a command word.
+\begin{spelltarget}{One nonmagical object (Medium or smaller; see text)}l[Magic vs. Will]
+    \spellsuccess The target shrinks to 1/16 of its normal size in each dimension (to about 1/4,000 the original volume and mass). This change effectively reduces its size by four size categories. If the target is physically unable to shrink, such as a ring on a finger, it shrinks as much as it can without causing harm to itself or the physical impediment.
+
+    As a standard action, any creature can speak the command word to return the target to its original size. It must be resting on a stable surface. If the command word is spoken while the target is not stable, such as while it is in the air, it returns to its original size as soon as it finds a resting point. Restoring the target to its normal size ends the spell.
+\end{spelltarget}
+\spellnotes This spell can normally target an object of up to Medium size. You can shrink a Large object at 10th caster level, a Huge object at 16th caster level, or a Gargantuan object at 24th caster level.
+\par This spell can be made permanent with a \spell{permanency} ritual, in which case the affected object can be shrunk and expanded an indefinite number of times, but only by the original caster. If you recast the spell each day on an object, you can keep it at its small size indefinitely.
 
 \spellsection{Silence}{2}
 \spellinfo{Illus (Glamer)}{Divine, Trickery}
-\spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngmed}}
+\spellrng{\rngmed}
 \spelldur{\durshort \dismissable}
-\spellattack{Magic vs. Will (object)}
-\spelleffect If you succeed on a Will attack, the subject becomes unable to make noise. Any noises it makes are inaudible to other creatures. When you cast the spell, you may choose whether the subject can still hear itself normally, potentially causing it to be unaware of the effect of the spell.
+\spellsr{Yes (Will)}
+\begin{spelltarget}{One creature or object}[Magic vs. Will]
+    \spelleffect The target becomes unable to make noise. Any noises it makes are inaudible to other creatures. When you cast the spell, you may choose whether the subject can still hear itself normally, potentially causing it to be unaware of the effect of the spell.
 
 Extraordinarily loud noises, such as the yell of a giant, are merely muffled by the spell rather than completely silenced. The DC to hear such sounds produced by the subject is increased by 40. Sonic attacks function normally.
+\end{spelltarget}
 \spellnotes Spellcasters unable to hear themselves cast are treated as deafened, and suffer a 20\% chance of spell failure when casting spells with verbal components.
-\spellsr{Yes (Will)}
 
 \spellsection{Silent Image}{2}
 \spellinfo{Illus (Figment) [Unreal]}{Illus}
@@ -3315,56 +3334,53 @@ A creature faced with definitive proof that the figment is unreal can disbelieve
 \spellsection{Skysmite}{6}
 \spelldesc{You call down lightning from the heavens, unerringly striking your foes, even if you cannot see them.}
 \spellinfo{Evoc (Energy) [Electricity]}{Air, Arcane, Destruction, Nature}
-\spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngext}}
+\spellrng{\rngext}
 \spellburst{\arealarge vertical line of lightning, 5 ft. wide}
-\spelldmg{12d6 electricity damage \add d6 per two caster levels above 12th}
-\spellattack{Magic vs. Reflex}
-\spelleffect Lightning strikes where you direct, allowing you to make a Reflex attack to deal damage to everything in the burst. A failed attack deals half damage. If no creatures or objects lie in its path, the lightning will instead strike the closest occupied square within a \areamed radius limit.
-\spellnotes \spell{Invisibility} and other forms of concealment do not protect creatures from the lightning, but it does not differentiate between friend, foe, and inanimate object.
 \spellsr{Yes (Fortitude)}
-
-\spellsection{Slay Living}{6}
-\spelldesc{Your hand seethes with an eerie dark fire as you reach out to touch your foe, instantly snuffing out his life.}
-\spellinfo{Necro (Life) [Death]}{Death, Divine}
-\spelltwocol{\spelltgt{One living creature}}{\spellrng{Touch}}
-\spellattack{Magic vs. Fortitude}
-\begin{spellhealthy}
-    The target is staggered for 5 rounds. It can take a move action or a standard action each round, but not both.
-\end{spellhealthy}
-\begin{spellblood}
-    The target loses all its hit points and takes 9 critical damage, causing it to begin dying.
-\end{spellblood}
-\spellnotes A staggered character may take a single move action or standard action each round, but not both. She cannot take full-round actions, but she may take swift actions. In addition, she is \vulnerable, causing her to take a \minus2 penalty on attacks, defenses, and checks.
-\spellsr{Yes (Fortitude)}
+\spellspecial If no creature or objects lie in the area, the lightning strikes elsewhere instead. It strikes the  occupied square within the spell's range that lies closest to its original destination. If multiple occupied squares are equally close, it strikes the largest target.
+\begin{spelltargets}{Everything in the area}[Magic vs. Reflex]
+    \spellsuccess 12d6 electricity damage \add d6 per two caster levels above 12th.
+    \spellfailure As above, but half damage.
+\end{spelltargets}
+\spellnotes The lightning can unerringly identify invisible and concealed creatures, but it does not differentiate between friend, foe, and inanimate object.
 
 \spellsection{Sleep}{1}
 \spellinfo{Ench (Compulsion) [Mind-Affecting, Sleep]}{Arcane}
-\spelltwocol{\spelltgt{One living creature}}{\spellrng{\rngmed}}
+\spellrng{\rngmed}
 \spelldur{\durshort}
-\spellattack{Magic vs. Will}
-\spelleffect The subject is fatigued and attempts to go to sleep as soon as possible, though it will not stop fighting to do so. Awakening a creature put to sleep by this spell is difficult, and requires a standard action.
-\spellnotes A fatigued character can neither sprint nor charge and is \vulnerable, giving it a \minus2 penalty to attacks, defenses, and checks.
 \spellsr{Yes (Will)}
+\begin{spelltarget}{One living creature}[Magic vs. Will]
+    \spellsuccess The target is \fatigued and attempts to go to sleep as soon as possible, though it will not stop fighting to do so. Awakening a creature put to sleep by this spell is difficult, and requires a standard action.
+\end{spelltarget}
 
 \spellsectioncomma{Sleep}{Mass}{4}
 \spellinfo{Ench (Compulsion) [Mind-Affecting, Sleep]}{Arcane}
-\spelltgts{Five creatures within a \areamed radius limit}
-\spelleffect This spell functions like \spell{sleep}, except that it affects multiple creatures.
+\spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngmed}}
+\spelldur{\durshort}
+\spellsr{Yes (Will)}
+\begin{spelltargets}{Five creatures within the area}
+    \spellsuccess The target becomes tired, as \spell{spell}.
+\end{spelltargets}
 
 \spellsection{Slow}{2}
 \spelldesc{You decelerate your enemy's motions, causing her to move and act more slowly than normal.}
 \spellinfo{Trans (Temporal)}{Arcane}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
+\spellrng{\rngmed}
 \spelldur{\durshort}
-\spellattack{Magic vs. Will}
-\spelleffect A slowed creature can take only a single move action or standard action each turn, but not both. It cannot take full-round actions, but it may take swift actions. Additionally, it takes a \minus2 penalty to physical attacks and defenses, as well as Strength and Dexterity-based checks.
 \spellsr{Yes (Will)}
+\begin{spelltarget}{One creature}[Magic vs. Will]
+    \spellsuccess The target is \slowed.
+\end{spelltarget}
 
 \spellsectioncomma{Slow}{Mass}{6}
 \spelldesc{You decelerate your enemies' motions, causing them to move and act more slowly than normal.}
 \spellinfo{Trans (Temporal)}{Arcane}
-\spelltgts{Five creatures in an \areamed radius}
-\spelleffect This spell functions like \spell{slow}, except that it affects multiple creatures.
+\spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngmed}}
+\spelldur{\durshort}
+\spellsr{Yes (Will)}
+\begin{spelltargets}{Five creatures in the area}
+    \spelleffect The target is \slowed.
+\end{spelltargets}
 
 \spellsection{Solid Fog}{6}
 \spellinfo{Conj (Creation)}{Arcane, Druid, Water}
