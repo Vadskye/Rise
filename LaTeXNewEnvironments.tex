@@ -73,14 +73,14 @@
 {}
 
 % with a star, don't include \spellline
-\DeclareDocumentEnvironment{spelltarget}{s m t{l} o}
+\DeclareDocumentEnvironment{spelltarget}{s o m t{l} o}
 {\IfBooleanF{#1}{\spellline}
-    \IfNoValueTF{#4}
-    {\spelltgt{#2}}
+    \IfNoValueTF{#5}
+    {\spelltgt{#3}[#2]}
     {
-        \IfBooleanTF{#3}
-        {\spelltgt{#2}\parhead{Attack} #4}
-        {\spelltwocol{\spelltgt{#2}}{\spellattack{#4}}}
+        \IfBooleanTF{#4}
+        {\spelltgt{#3}[#2]\parhead{Attack} #5}
+        {\spelltwocol{\spelltgt{#3}[#2]}{\spellattack{#5}}}
     }
     \begin{addmargin}[1em]{0pt}
 }
@@ -88,15 +88,15 @@
     \end{addmargin}
 }
 
-% with a star, don't include \spellline
-\DeclareDocumentEnvironment{spelltargets}{s m t{l} o}
+% same thing, but plural
+\DeclareDocumentEnvironment{spelltargets}{s o m t{l} o}
 {\IfBooleanF{#1}{\spellline}
-    \IfNoValueTF{#4}
-    {\spelltgts{#2}}
+    \IfNoValueTF{#5}
+    {\spelltgts{#3}[#2]}
     {
-        \IfBooleanTF{#3}
-        {\spelltgts{#2}\parhead{Attack} #4}
-        {\spelltwocol{\spelltgts{#2}}{\spellattack{#4}}}
+        \IfBooleanTF{#4}
+        {\spelltgts{#3}[#2]\parhead{Attack} #5}
+        {\spelltwocol{\spelltgts{#3}[#2]}{\spellattack{#5}}}
     }
     \begin{addmargin}[1em]{0pt}
 }
