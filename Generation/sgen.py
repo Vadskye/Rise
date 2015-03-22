@@ -5,6 +5,7 @@ import util
 
 PART=0.8
 HALF=0.6
+damage_type_choices = ['force']
 duration_choices = ['round','short','medium','long','extreme', 'permanent']
 area_choices = ['tiny', 'normal',
     'small_radius', 'medium_radius', 'large_radius',
@@ -39,6 +40,9 @@ def initialize_argument_parser():
             help='Spell has an alternate effect?', action='store_true')
     parser.add_argument('-u', '--duration', dest = 'duration', type=str,
             choices=duration_choices)
+    parser.add_argument('--damagetype', dest = 'damagetype', type=str,
+            choices = damage_type_choices,
+            help = 'force damage is more expensive')
     parser.add_argument('--undispellable', dest = 'undispellable',
             help='Immune to dispelling?', action='store_true')
     parser.add_argument('--concentration', dest = 'concentration', 
@@ -175,12 +179,12 @@ class SpellComponent:
             discharged=None, duration=None, escapable=None, healthy_only=None,
             limit_affected_types=None, noncombat=None, requires_concentration=None,
             save_ends=None, saving_throw=None, touch_attack=None,
-            undispellable=None):
+            undispellable=None, damage_type=None):
 
         #some attributes need to be referenced externally to the component
         self.bloodied_only = bloodied_only
 
-        self.level = calculate_base_level(alternate_effect, component_type, component_strength)
+        self.level = calculate_base_level(alternate_effect, component_type, component_strength, damage_type)
         if bloodied_only:
             self.level *= 0.4
         print "base level:", self.level
@@ -198,7 +202,9 @@ def calculate_base_level(alternate_effect, component_type, component_strength):
             BUFF: component_strength,
             }[component_type]
     if alternate_effect:
-        level+=1
+        level += 1
+    if damage_type == 'force':
+        level += 1
     return level
 
 #Return the level adjustment associated with the condition strength
@@ -460,7 +466,8 @@ if __name__ == "__main__":
                     save_ends = derp['saveends'],
                     saving_throw = derp['save'],
                     touch_attack = derp['touchattack'],
-                    undispellable = derp['undispellable']))
+                    undispellable = derp['undispellable'],
+                    damage_type = derp['damagetype']))
 
         spell_level = spell.get_level(
                 general_args['area'],
