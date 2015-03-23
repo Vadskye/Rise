@@ -46,7 +46,7 @@ def initialize_argument_parser():
     parser.add_argument('--undispellable', dest = 'undispellable',
             help='Immune to dispelling?', action='store_true')
     parser.add_argument('--concentration', dest = 'concentration', 
-            type=util.bool_parser, help='Requires concentration?')
+            action='store_true', help='Requires concentration?')
     parser.add_argument('--saveends', dest='saveends', 
             action='store_true', help='Save each round to end?')
     parser.add_argument('--bloodiedbehavior', dest='bloodiedinstant',
