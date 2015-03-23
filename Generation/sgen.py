@@ -195,7 +195,7 @@ class SpellComponent:
                 saving_throw, touch_attack, bloodied_only)
         print "with miscellaneous modifiers:", self.level
 
-def calculate_base_level(alternate_effect, component_type, component_strength):
+def calculate_base_level(alternate_effect, component_type, component_strength, damage_type):
     level = {
             DAMAGE: 4,
             CONDITION: rank_condition_strength(component_strength),
