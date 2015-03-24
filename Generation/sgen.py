@@ -229,9 +229,9 @@ def calculate_duration_modifier(component_type, component_strength, duration, re
                 'round': 0.5,
                 'short': 2,
                 'medium': 3,
-                'long': 4,
-                'extreme': 5,
-                'permanent': 7,
+                'long': 3.5,
+                'extreme': 4,
+                'permanent': 5,
                 }[duration]
     elif component_type==CONDITION or component_type==BUFF:
         if component_type == CONDITION and component_strength in [1.5, 1]:
@@ -244,9 +244,9 @@ def calculate_duration_modifier(component_type, component_strength, duration, re
                 None: 5,
                 'short': 5,
                 'medium': 6,
-                'long': 7,
-                'extreme': 8,
-                'permanent': 10,
+                'long': 6.5,
+                'extreme': 7,
+                'permanent': 8,
                 }[duration]
         else:
             # this is the normal scaling for condition and damage spell durations
@@ -256,9 +256,9 @@ def calculate_duration_modifier(component_type, component_strength, duration, re
                     None: 2,
                     'short': 2,
                     'medium': 3,
-                    'long': 4,
-                    'extreme': 5,
-                    'permanent': 7,
+                    'long': 3.5,
+                    'extreme': 4,
+                    'permanent': 5,
                     }[duration]
     else:
         raise Exception("unrecognized component_type %s" % component_type)
