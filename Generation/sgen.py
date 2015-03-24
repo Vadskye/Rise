@@ -64,7 +64,7 @@ def initialize_argument_parser():
     parser.add_argument('-v', '--save', dest='save', type=str,
             help='Saving throw type', 
             choices=['none','half','partial','negates'])
-    parser.add_argument('--nosr', dest='nosr', type=util.bool_parser,
+    parser.add_argument('--nosr', dest='nosr', action='store_true',
             help='Doesn\'t allow spell resistance?')
     parser.add_argument('--norepeat', dest='norepeat', action='store_true',
             help='Target immune for 24 hours after spell is cast?')
