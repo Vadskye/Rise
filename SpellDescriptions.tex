@@ -60,7 +60,7 @@ Spells that are not subject to spell resistance are not affected by \spell{ablat
 \spelltwocol{\spellzone{\areamed radius cylinder}}{\spellrng{\rngmed}}
 \spelldur{\durshort}
 \spellline
-\spelleffect Fog in the area, as \spell{solid fog}.
+\spelleffect Fog fills the area, as \spell{solid fog}, except that the fog is acidic.
 \begin{spelltrigger}{End of every round}
     \begin{spelltarget}*{Everything in the area}[Magic vs. Fortitude]
         \spellsuccess 4d6 acid damage.
@@ -528,7 +528,7 @@ If the staff-treant is reduced to 0 or fewer hit points, it crumbles to powder a
 \spelldur{\durshort \dismissable}
 \spellsr{Yes (Fortitude)}
 \spellline
-\spelleffect As \spell{interposing hand}, except that the hand attacks its target instead of protecting you from it.
+\spelleffect This spell creates a hand, as \spell{interposing hand}, except that the hand attacks its target instead of protecting you from it.
 \begin{spelltarget}*{One creature}l[Caster level \add casting attribute vs. Armor defense]
     \spellsuccess 2d10 force damage \add half casting attribute.
     
@@ -537,7 +537,7 @@ If the staff-treant is reduced to 0 or fewer hit points, it crumbles to powder a
         \spellsuccess The target is \dazed for 1 round.
     \end{spelltarget}
 \end{spelltarget}
-\spellnotes The hand attacks during the action phase, regardless of when you direct it to attack a target.
+\spellnotes As \spell{interposing hand}. The hand attacks during the action phase, regardless of when you direct it to attack a target.
 
 \spellsection{Cloak of Chaos}{8}
 \spelldesc{You shield your allies with an an powerful aura that resembles a random pattern of color -- an affront to your lawful foes.}
@@ -732,6 +732,7 @@ Holding one's breath doesn't help against the poison, but creatures immune to po
 \begin{spelltarget}*{One creature}l[Caster level \add casting attribute vs. Maneuver defense]
     \spellsuccess The target is grappled. It takes 2d6 bludgeoning damage \add half your casting attribute.
 \end{spelltarget}
+\spellnotes As \spell{interposing hand}. The hand attacks during the action phase, regardless of when you direct it to attack a target.
 
 \spellsection{Cure Critical Wounds}{4}
 \spelldesc{You lay your hand on a creature and channel positive energy into it, healing even the most grievous injuries.}
@@ -1575,7 +1576,7 @@ Spell resistance applies when a foe is struck by the weapon, but not when the bl
 
 %priced as buff spell for range
 \spellsection{Fog Cloud}{2}
-\spelldesc{You conjure a bank of fog from a location you choose, concealing those inside.}
+\spelldesc{You conjure a bank of fog, concealing those inside.}
 \spellinfo{Conj (Creation) [Fog]}{Arcane, Nature, Water}
 \spelltwocol{\spellzone{\areamed radius cylinder}}{\spellrng{\rngmed}}
 \spelldur{\durshort}
@@ -1717,9 +1718,10 @@ Spell resistance applies when a foe is struck by the weapon, but not when the bl
 \spellsr{Yes (Fortitude)}
 \spellline
 \spelleffect This spell creates a hand, as \spell{interposing hand}, except that the hand grapples its target instead of protecting you from it.
-\begin{spelltarget}*{One creature}l[Caster level \add casting attribute vs. Maneuver defense]
+\begin{spelltarget}*{One creature or object}l[Caster level \add casting attribute vs. Maneuver defense]
     \spellsuccess The target is grappled. The hand deals no damage.
 \end{spelltarget}
+\spellnotes As \spell{interposing hand}. The hand attacks during the action phase, regardless of when you direct it to attack a target.
 
 \spellsection{Grease}{1}
 \spelldesc{You conjure a layer of slippery grease on the ground, tripping up your foes.}
@@ -2064,7 +2066,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \end{spelltargets}
 
 \spellsection{Insanity}{6}
-\spellinfo{Ench (Compulsion) [Mind-Affecting]}{Chaos, Ench}
+\spellinfo{Ench (Compulsion) [Mind-Affecting]}{Arcane}
 \spellrng{\rngclose}
 \spelldur{Permanent}
 \spellsr{Yes (Will)}
@@ -2080,15 +2082,14 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldur{\durshort \dismissable}
 \spellsr{Yes (Fortitude)}
 \spellline
-\spelleffect This spell creates a floating, disembodied hand made of magical force. The hand is 10 feet long and about that wide with its fingers outstretched. It has 3 hit points per caster level, an Armor defense of 10 \add half your caster level, and a Maneuver defense of 10 \add your caster level \add your casting attribute. Most effects that don't affect objects do not affect the hand.
+\spelleffect This spell creates a floating, disembodied hand made of magical force. Each round, as a swift action, you can direct the hand to protect you from a target. If you do not direct the hand, it remains motionless.
 
-Each round, as a swift action, you can direct the hand to protect you from a target. If you do not direct the hand, it remains motionless.
+The hand is 10 feet long and about that wide with its fingers outstretched. It has 3 hit points per caster level, an Armor defense of 10 \add half your caster level, and a Maneuver defense of 10 \add your caster level \add your casting attribute. Most effects that don't affect objects do not affect the hand.
+
 \begin{spelltarget}*{One creature}
     \spelleffect The hand provides you with active cover from the target. Each physical attack the target makes against you has a 20\% chance to strike the hand instead. In addition, if the target is Large size or smaller, it moves at half speed while moving towards you.
 \end{spelltarget}
-\spellnotes The hand can move up to 60 feet per round. It never provokes attacks of opportunity from opponents. Since the hand is directed by you, its ability to interact with invisible or concealed creatures is no better than yours. Its special defenses are the same as your special defenses.
-
-If the hand goes out of range of you, it winks out. It cannot push through a \spell{wall of force} or enter an \spell{antimagic field}, but it suffers the full effect of a \spell{prismatic wall} or \spell{prismatic sphere}. \spell{Disintegrate} or a successful \spell{dispel magic} destroys it.
+\spellnotes The hand can move up to 60 feet per round. It never provokes attacks of opportunity from opponents. Since the hand is directed by you, its ability to interact with invisible or concealed creatures is no better than yours. Its special defenses are the same as your special defenses. If the hand goes out of range of you, it winks out.
 
 \spellsection{Invest Magic}{4}
 \spellinfo{Trans (Augment)}{Arcane, Divine, War}
@@ -2177,6 +2178,20 @@ If the hand goes out of range of you, it winks out. It cannot push through a \sp
     \spelleffect You can telekinetically move the target vertically. A creature must be willing to be levitated, and an object must be unattended or possessed by a willing creature. As a swift action, you can mentally direct the subject to move up or down as much as 20 feet each round. You cannot move the recipient horizontally, but the recipient could clamber along the face of a cliff, for example, or push against a ceiling to move laterally (generally at half its land speed).
 \end{spelltarget}
 
+\spellsection{Lifebreaker Curse}{7}
+\spelldesc{You permanently cripple your foe's life force.}
+\spellinfo{Necro (Life) [Curse]}{Necro}
+\spellrng{\rngmed}
+\spelldur{Permanent}
+\spellsr{Yes (Will)}
+\begin{spelltarget}{One living creature}[Magic vs. Will]
+    \spellsuccess 12d6 life damage \add d6 per two caster levels above 12th. The target's maximum hit points are reduced by the amount of life damage it takes from this attack (to a minimum of 1).
+    \spellfailure As above, but half damage, and the target's maximum hit points are not reduced.
+\end{spelltarget}
+\spellnotes If this spell is cast multiple times on the same target, the reduction of maximum hit points does not stack. Only the largest reduction applies.
+
+\cursespellnotes
+
 \spellsection{Lifeseeking Missile}{3}
 \spellinfo{Evoc/Necro (Control, Life) [Force]}{Arcane}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngmed}}
@@ -2230,7 +2245,7 @@ Any missiles you do not explicitly target will automatically strike a living cre
 \end{spelltargets}
 \spellnotes The loss of hit points caused by this spell is not damage, and is not affected by damage reduction or other abilities which affect damage.
 
-\spellsectioncomma{Link Vitality}{Mass}{7}
+\spellsectioncomma{Link Vitality}{Mass}{6}
 \spellinfo{Necro (Life)}{Arcane}
 \spelllimit{\areamed radius centered on you}
 \spelldur{\durshort}
@@ -3383,101 +3398,76 @@ A creature faced with definitive proof that the figment is unreal can disbelieve
 \end{spelltargets}
 
 \spellsection{Solid Fog}{6}
-\spellinfo{Conj (Creation)}{Arcane, Druid, Water}
-\spelldur{\durmed}
-\spelleffect This spell functions like \spell{fog cloud}, but in addition to obscuring sight, the fog is so thick that any creature attempting to move through it progresses at a speed of 5 feet, regardless of its normal speed, and it takes a \minus2 penalty on all melee attack and melee damage rolls. The vapors prevent effective ranged weapon attacks (except for magic rays and the like). A creature or object that falls into solid fog is slowed, so that each 10 feet of vapor that it passes through reduces falling damage by 1d6.
+\spelldesc{You conjure a bank of immensely thick fog, concealing those inside.}
+\spellinfo{Conj (Creation) [Fog]}{Arcane, Nature, Water}
+\spelltwocol{\spellzone{\areamed radius cylinder}}{\spellrng{\rngmed}}
+\spelldur{\durshort}
+\spellline
+\spelleffect Fog blocks sight in the area, as \spell{fog cloud}. In addition to obscuring sight, the fog is so thick that any creature attempting to move through it progresses at a speed of 5 feet, regardless of its normal speed, and it takes a \minus2 penalty on all melee attack and melee damage rolls. The vapors prevent effective ranged weapon attacks (except for magic rays and the like). A creature or object that falls into solid fog is slowed, so that each 10 feet of vapor that it passes through reduces falling damage by 1d6.
 \par A creature in the fog can take a full-round action to make a Strength check, moving 5 feet for every 5 by which the result exceeds DC 0. This movement is affected by any other effects which impede movement, as normal.
-\spellnotes This spell can be made permanent with a \spell{permanency} ritual. A permanent solid fog dispersed by wind reforms in 10 minutes. \fogspellnotes
+\spellnotes \fogspellnotes A severe wind disperses the fog within 1 minute, a windstorm disperses it within 5 rounds, and a hurricane disperses it within a round.
+
+This spell can be made permanent with a \spell{permanency} ritual. A permanent solid fog dispersed by wind reforms in 10 minutes.
 
 \spellsection{Song of Discord}{6}
+\spelldesc{Magical music fills the air, sowing confusion among your foes.}
 \spellinfo{Ench (Compulsion) [Auditory, Mind-Affecting]}{Arcane}
-\spellburst{\areamed radius centered on you}
-\spelldur{\durshort}
-\spellattack{Magic vs. Will}
-\spelleffect This spell causes all creatures in the area to turn on each other rather than attack their foes. Each affected creature has a 50\% chance to attack the nearest target each round. (Roll to determine each creature's behavior every round at the beginning of its turn.) A creature that does not attack its nearest neighbor is free to act normally for that round. After each round that a subject is compelled to attack the nearest target, it may make a saving throw to throw off the effect.
-\par Creatures forced to attack their fellows employ all methods at their disposal, choosing their deadliest spells and most advantageous combat tactics. They do not, however, harm targets that have fallen unconscious.
-\spellnotes Creatures whose level exceeds your caster level are immune to this spell.
+\spelltwocol{\spellburst{\areamed radius}}{\spellrng{\rngmed}}
+\spelldur{Concentration}
 \spellsr{Yes (Will)}
+\begin{spelltarget}{All creatures in the area}[Magic vs. Will]
+    \spellsuccess The target is \bewildered.
 
-\spellsection{Soulrend}{6}
-\spelldesc{You attack your foe's soul directly.}
-\spellinfo{Necro (Soul)}{Necro}
-\spelltwocol{\spelltgt{One living creature}}{\spellrng{\rngfar}}
-\spellattack{Will half}
-\begin{spellhealthy}
-    The target takes 1 Charisma damage per three caster levels.
-\end{spellhealthy}
-\begin{spellblood}
-    The target takes 1 Charisma damage per two caster levels.
-\end{spellblood}
-\spellnotes A creature with a Charisma of \minus10 is unable to act. Undead can take Charisma damage from this spell despite being immune to ability damage. 
-\spellsr{Yes (Will)}
+    As long as the target is \bloodied, it is instead \confused.
+\end{spelltarget}
 
 \spellsection{Sound Burst}{2}
 \spelldesc{You create a cacophony of sound.}
 \spellinfo{Evoc (Energy) [Sonic]}{Arcane}
 \spelltwocol{\spellburst{\areasmall radius}}{\spellrng{\rngclose}}
-\spelldmg{2d6 sonic damage \add d6 per four caster levels above 4th}
-\spellattack{Fortitude half/Magic vs. Fortitude}
-\spelleffect You make a Fortitude attack to deal damage to everything in the area. A successful attack also deafens the target for 1 round, while a failed attack deals half damage.
 \spellsr{Yes (Fortitude)}
+\begin{spelltarget}{Everything in the area}[Magic vs. Fortitude]
+    \spellsuccess 2d6 sonic damage \add d6 per four caster levels above 4th.
+    \spellfailure As above, but half damage.
+\end{spelltarget}
 
 \spellsection{Spell Resistance}{4}
 \spellinfo{Abjur (Shielding) [Magic]}{Abjur, Magic, Protection}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
+\spellrng{\rngclose}
 \spelldur{\durshort}
-\spelleffect The subject gains spell resistance against all spells.
-\spellnotes A creature with spell resistance may always make a saving throw when a spell is cast on it. If the creature succeeds, the spell has no effect on it. The type of saving throw made is indicated by the spell. If the spell also allows a saving throw of the same type, only one roll is made.
 \spellsr{Yes (Will)}
+\begin{spelltarget}{One creature}
+    \spelleffect The target gains spell resistance against all spells.
+\end{spelltarget}
+\spellnotes A creature with spell resistance may always make a saving throw when a spell is cast on it. If the creature succeeds, the spell has no effect on it. The type of saving throw made is indicated by the spell. If the spell also allows a saving throw of the same type, only one roll is made.
 
 \spellsection{Spelltheft}{5}
 \spellinfo{Abjur (Negation) [Magic]}{Abjur, Magic}
-\spelleffect This spell functions like \spell{dispel magic}, except that you can choose to gain the effects of any spells you dispel or counterspell as if they had been originally cast on you. The effects last for the remainder of their original durations or for 5 rounds, whichever is shorter. Spells that cannot be cast on you, such as spells which have a range of personal, are simply dispelled.
+\spellspecial This spell functions like \spell{dispel magic}, except that you can choose to gain the effects of any spells you dispel as if they had been originally cast on you. The effects last for the remainder of their original durations or for 5 rounds, whichever is shorter. Spells that cannot be cast on you, such as spells which only affect the caster, are simply dispelled.
 
 \spellsectioncomma{Spelltheft}{Greater}{8}
 \spellinfo{Abjur (Negation) [Magic]}{Abjur}
-\spelleffect This spell functions like \spell{greater dispel magic}, except that you can choose to gain the effects of any spells you dispel or counterspell as if they had been originally cast on you. The effects last for the remainder of their original durations or for 5 rounds, whichever is shorter. Spells that cannot be cast on you, such as spells which have a range of personal, are simply dispelled.
+\spellspecial This spell functions like \spell{greater dispel magic}, except that you can choose to gain the effects of any spells you dispel as if they had been originally cast on you. The effects last for the remainder of their original durations or for 5 rounds, whichever is shorter. Spells that cannot be cast on you, such as spells which only affect the caster, are simply dispelled.
 
 \spellsection{Spell Turning}{7}
 \spellinfo{Abjur (Shielding) [Magic]}{Arcane, Magic, Protection}
-\spelltwocol{\spelltgt{You}}{\spellrng{Personal}}
 \spelldur{\durlong or until expended}
-\spelleffect Spells and spell-like effects targeted on you are turned back upon the original caster. The abjuration turns only spells that have you as a target. Effect and area spells are not affected. Spell turning also fails to stop touch range spells. 
-\par From seven to ten (1d4\plus6) spell levels are affected by the turning. The exact number is rolled secretly.
-\par When you are targeted by a spell of higher level than the amount of spell turning you have left, that spell is partially turned; both you and the caster each take half damage. For all effects other than damage, there is a 50\% chance that you suffer the effects; otherwise, the caster suffers the effects.
-\spellnotes If you and a spellcasting attacker are both shielded by spell turning effects in operation, a resonating field is created.
-\par Roll randomly to determine the result.
-\begin{dtable}
-    \begin{tabularx}{\columnwidth}{l >{\lcol}X}
-        \thead{d\%} & \thead{Effect} \\
-        01--70 & Spell drains away without effect. \\
-        71--80 & Spell affects both of you equally at full effect. \\
-        81--97 & Both turning effects are rendered nonfunctional for 1d4 minutes. \\
-        98--100 & Both of you go through a rift into another plane.
-    \end{tabularx}
-\end{dtable}
+\begin{spelltarget}{You}
+    \spelleffect If you would be a target of a spell or spell-like ability, the caster is targeted instead. If the spell affects multiple targets, the other targets are affected normally. If the caster is not a valid target, the spell simply has no effect on you.
+
+    After three spells have been reflected in this way, the spell ends. You can reflect one additional spell per 7 caster levels above 14th.
+\end{spelltarget}
 
 \spellsection{Spider Climb}{2}
+\spelldesc{You grant your ally the ability climb on walls and ceilings as well as a spider does.}
 \spellinfo{Trans (Imbuement)}{Arcane, Nature, Travel}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{Touch}}
+\spellrng{Touch}
 \spelldur{\durmed}
-\spelleffect The subject can climb and travel on vertical surfaces or even traverse ceilings as well as a spider does. The affected creature must have its hands free to climb in this manner. The subject gains a climb speed of 20 feet; furthermore, it need not make Climb checks to traverse a vertical or horizontal surface (even upside down). See \pcref{Climbing}, for more details.
-\spellsr{Yes (Fortitude)}
-
-\spellsection{Spike Growth}{2}
-\spellinfo{Trans (Alteration)}{Nature}
-\spelltwocol{\spellzone{\areasmall radius}}{\spellrng{\rngmed}}
-\spelldur{\durshort \dismissable}
-\spellattack{None/Reflex negates}
-\spelleffect Any ground-covering vegetation in the spell's area becomes very hard and sharply pointed. In areas of bare earth, roots and rootlets act in the same way. Typically, spike growth can be cast in any outdoor setting except open water, ice, heavy snow, sandy desert, or bare stone. Any foe moving on foot into or through the spell's area takes 1d4 points of physical piercing damage for each 5 feet of movement through the spiked area. Allies suffer no ill effects.
-
-Whenever a creature is damaged by this spell, you make a Fortitude attack against it. A successful attack makes slows its land speed by one-half. This speed penalty lasts for 12 hours or until the injured creature receives magical healing. Another character can remove the penalty by taking 10 minutes to dress the injuries and succeeding on a Heal check that beats your Fortitude attack.
-\spellsr{Yes (Fortitude)}
-
-\spellsection{Spike Stones}{4}
-\spellinfo{Trans (Alteration)}{Nature}
-\spellzone{\areamed radius}
-\spelleffect This spell functions like \spell{spike growth}, except that it deals 1d8 physical piercing damage to creatures moving through it and it can also be cast on rocky ground, stone floors, and similar surfaces.
+\spellsr{Yes (Will)}
+\begin{spelltarget}{One creature}
+    \spelleffect The target gains a climb speed of 20 feet. It must have its hands free to climb in this manner.
+\end{spelltarget}
+\spellnotes See \pcref{Climbing}, for more details.
 
 %need to run expected damage calculation
 \spellsection{Spiritual Weapon}{2}
@@ -3485,106 +3475,133 @@ Whenever a creature is damaged by this spell, you make a Fortitude attack agains
 \spellinfo{Evoc (Energy) [Force]}{Divine, War}
 \spellrng{\rngmed}
 \spelldur{\durshort \dismissable}
-\spelleffect The weapon created by this spell attacks once each round on your turn. This functions just as if you were attacking with the weapon, except that you use your casting ability in place of your Strength and you never get multiple attacks with the weapon.
-\par The weapon attacks the same target until you redirect it (a swift action). The weapon is treated as a separate creature for the purpose of overwhelm penalties.
-\par If an attacked creature has spell resistance, you make a spell penetration check the first time the spiritual weapon strikes it. If the weapon is successfully resisted, it cannot harm that creature. If not, the weapon has its normal full effect on that creature for the duration of the spell.
-\par The weapon takes the shape of a weapon favored by your deity or a weapon with some spiritual significance or symbolism to you (see below), and has the same threat range and critical multipliers as a real weapon of its form.
-\spellnotes The \spell{spiritual weapon} strikes as a spell, not as a weapon, so, for example, ignores physical damage reduction. As a force effect, it can strike incorporeal creatures without the normal miss chance associated with incorporeality. If the weapon goes beyond the spell range, if it goes out of your sight, or if you are not directing it, the weapon returns to you and hovers. Even if the spiritual weapon is a ranged weapon, use the spell's range, not the weapon's normal range increment, and switching targets still is a move action.
-\par A \spell{spiritual weapon} cannot be attacked or harmed by physical attacks, but \spell{dispel magic}, \spell{disintegrate}, and similar effects can affect it. A spiritual weapon's physical defenses are all 12 (10 \add \plus2 bonus for Tiny size).
-\par The weapon that you get is usually a force replica of any weapon from your deity's weapon group. A cleric without a deity gets a weapon based on his alignment. A neutral cleric without a deity can create a spiritual weapon of any alignment, provided he is acting at least generally in accord with that alignment at the time. The weapon groups associated with each alignment are as follows.
-\par Chaos: Axes
-\par Evil: Flexible weapons
-\par Good: Headed weapons
-\par Law: Heavy blades
 \spellsr{Yes (Will)}
+\spellline
+\spelleffect This spell creates a floating weapon made of magical force. Each round, as a swift action, you can direct the weapon to attack a target. If you do not direct the weapon, it remains motionless.
+
+The weapon is sized for you, and can be any type of weapon you are proficient with, though the weapon's shape does not alter this spell's effects. It has 3 hit points per caster level, an Armor defense of 10 \add half your caster level, and a Maneuver defense of 10 \add your caster level \add your casting attribute. Most effects that don't affect objects do not affect the weapon.
+
+\begin{spelltarget}*{One creature or object}l[Caster level \add casting attribute vs. Armor defense]
+    \spellsuccess d8 force damage \add half your casting attribute.
+\end{spelltarget}
+\spellnotes The weapon attacks during the action phase, regardless of when you direct it to attack a target.
+
+The weapon can move up to 60 feet per round. It never provokes attacks of opportunity from opponents. Since the weapon is directed by you, its ability to interact with invisible or concealed creatures is no better than yours. Its special defenses are the same as your special defenses. If the weapon goes out of range of you, it winks out.
 
 \spellsection{Stampede}{9}
+\spelldesc{You summon a stampede of bison that trample your foes before disappearing as quickly as they arrived.}
 \spellinfo{Conj (Summoning)}{Nature, Wild}
 \spelltime{Full-round action}
-\spelltwocol{\spelllimit{\arealarge radius}}{\spellrng{\rngfar}}
+\spellarea{100 ft. line, 20 ft. wide}
 \spelldur{\durshort \dismissable}
-\spelldmg{9d6 bludgeoning damage \add d6 per four caster levels above 18th}
-\spellattack{Magic vs. Reflex; see text}
-\spelleffect This spell summons a stampede of nine bison to trample your foes. Creatures trampled by the herd of bison take 1d6 damage per bison in the herd. You can summon one additional bison per four caster levels above 18th.
-\par The bison are summoned in a place that you designate within the spell's area, with each creature being summoned in the closest free space to the point of origin. If there is insufficient room for all of the bison to appear while standing on stable ground, the spell will summon fewer bison than the maximum. The herd of bison always moves directly away from you, trampling anything of Large size or smaller that gets in their way. If the herd is thinned to fewer than 5 bison, they stop stampeding and scatter in random directions.
-\par The bison do not attack, even if cornered; they will only stampede. At the end of the spell's duration, the bison disappear.
-\spellnotes Under normal circumstances, the bison can travel 800 feet over the duration of the spell.
+\begin{spelltarget}{Everything in the area}[Magic vs. Reflex]
+    \spellsuccess 9d6 bludgeoning damage \add d6 per four caster levels above 18th, and the target is knocked \prone.
+    \spellfailure Half damage, and the target is not knocked prone.
+\end{spelltarget}
 
 \spellsection{Stinking Cloud}{5}
+\spelldesc{You create putrid vapors which obscure sight and sicken creatures.}
 \spellinfo{Conj (Creation)}{Arcane}
-\spellattack{None/Magic vs. Fortitude}
-\spelleffect This spell functions like \spell{fog cloud}, except that the fog has a putrid stench. When you cast this spell, and at the start of each of your turns, you make a Fortitude attack to sicken all creatures in the area. The condition lasts as long as the creature remains in the cloud and for 5 rounds after it leaves.
-\spellnotes This spell can be made permanent with a \spell{permanency} ritual. A permanent \spell{stinking cloud} dispersed by wind reforms in 10 minutes.
+\spelltwocol{\spellzone{\areamed radius cylinder}}{\spellrng{\rngmed}}
+\spelldur{\durshort}
+\spellline
+\spelleffect Fog fills the area, as \spell{fog cloud}, except that the fog has a putrid stench.
+\begin{spelltrigger}{End of every round}
+    \begin{spelltarget}*{Everything in the area}[Magic vs. Fortitude]
+        \spellsuccess The target is \sickened for as long as it remains in the cloud, and for 5 rounds after it leaves.
+    \end{spelltarget}
+\end{spelltrigger}
+\spellnotes This spell can be made permanent with a \spell{permanency} ritual. A permanent \spell{stinking cloud} dispersed by wind reforms in 10 minutes. \fogspellnotes \fogwindspellnotes
 
 \spellsection{Stoneskin}{4}
 \spelldesc{You dramatically toughen a creature's skin, giving it the appearance of stone.}
 \spellinfo{Trans (Alteration) [Earth]}{Arcane, Earth, Nature, Protection}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{Touch}}
+\spellrng{Touch}
 \spelldur{\durshort}
-\spelleffect The subject gains a \plus3 enhancement bonus to its armor modifier. This bonus increases to \plus4 at 14th caster level, and to \plus5 at 20th caster level. In addition, it gains physical damage reduction 8/adamantine. This damage reduction increases by 1 per two caster levels above 8th.
-\spellnotes This spell's damage reduction allows the subject to ignore the first 8 physical damage it takes each round. If it is hit by an adamantine weapon, it cannot use its damage reduction for 1 round.
 \spellsr{Yes (Fortitude)}
+\begin{spelltarget}{One creature}
+    \spelleffect The target gains a \plus3 enhancement bonus to its armor modifier. This bonus increases to \plus4 at 14th caster level, and to \plus5 at 20th caster level. In addition, it gains physical damage reduction 8/adamantine. This damage reduction increases by 1 per two caster levels above 8th.
+\end{spelltarget}
+\spellnotes This spell's damage reduction allows the subject to ignore the first 8 physical damage it takes each round. If it is hit by an adamantine weapon, it cannot use its damage reduction for 1 round.
 
 \spellsection{Storm of Vengeance}{9}
 \spellinfo{Conj/Evoc (Energy, Control, Creation)}{Air, Divine, Nature, War, Water}
 \spelltime{Full-round action}
-\spelltwocol{\spellzone{360 ft. radius cylinder, 200 ft. high}}{\spellrng{\rngfar}}
+\spelltwocol{\spellzone{500 ft. radius cylinder}}{\spellrng{\rngfar}}
 \spelldur{Concentration (maximum 10 rounds)}
-\spelldmg{Varies}
-\spellattack{See text}
-\spelleffect This spell creates an enormous black storm cloud. Lightning and crashing claps of thunder appear within the storm. You make a Fortitude attack to deafen each creature beneath the cloud for 5 minutes. Violent rain and wind gusts obscure all sight beyond 100 feet. A creature less than 100 feet away has concealment (\plus4 to physical defenses). Ranged attacks in the area of the storm take a \minus4 penalty, and spells cast in the area are disrupted unless the caster succeeds on a Concentration check against a DC equal to 20 \add double the level of the spell.
-\par If you do not maintain concentration on the spell after casting it, the spell ends. If you continue to concentrate, the spell generates new effects in each following round, as noted below. Each effect occurs during your turn.
-\par 2nd Round: Acid rains down, dealing 1d10 acid damage to everything in the area.
-\par 3rd Round: You call three bolts of lightning down from the cloud. You decide where the bolts strike. No two bolts may strike the same target. Each bolt deals 9d6 electricity damage \add d6 per four caster levels above 18th. You make a Reflex attack to deal damage to each creature in the path of the bolt. A failed attack deals half damage. If you do not direct the lightning bolts, each bolt automatically targets the largest available target in the area.
-\par 4th Round: Hailstones rain down, dealing 5d6 bludgeoning damage to all enemies in the area.
-\par 5th through 10th Rounds: Acid rains down, dealing 1d10 damage to everything in the area.
-\spellsr{Yes (varies)}
+\spellsr{Yes (Fortitude)}
+\spellline
+\spelleffect An enormous storm cloud occupies the top 200 feet of the area, as \spell{fog cloud}. Within the area, lightning strikes and thunder rolls. Sunlight is blocked by the dark cloud. This may cause the area to have shadowy illumination, granting everything in it \concealment.
+
+At the end of every round, the storm has an additional effect, as shown on \tref{Storm of Vengeance Effects}. Damaging effects deal 9d6 damage \add d6 per four caster levels above 18th.
+
+\begin{dtable*}
+    \lcaption{Storm of Vengeance Effects}
+    \begin{tabularx}{\textwidth}{l l l >{\lcol}X l}
+        \thead{Rounds} & \thead{Effect} & \thead{Defense} & \thead{Success} & \thead{Failure} \\
+        Odd (1, 3, 5, 7, 9)   & Lightning  & Reflex    & Electricity damage (foes only) & Half damage \\
+        Even (2, 4, 6, 8, 10) & Thunder    & Fortitude & Deafened for 5 rounds & No effect \\
+        2, 6, 10              & Hail       & Reflex    & Bludgeoning damage & Half damage \\
+        4, 8                  & Acid rain  & None      & Acid damage & \x \\
+    \end{tabularx}
+\end{dtable*}
+\spellnotes When the storm has multiple effects in the same round, roll a single attack and compare the result to all relevant defenses.
 
 \spellsection{Stormlord}{7}
 \spelldesc{You surround yourself in a whirlwind which deflects ranged attacks and batters your foes.} 
 \spellinfo{Abjur/Evoc (Control, Shielding)}{Air, Nature}
-\spelltwocol{\spelltgt{You}}{\spellrng{Personal}}
 \spelldur{\durshort \dismissable}
-\spelldmg{7d6 bludgeoning damage \add d6 per four caster levels above 14th}
-\spellattack{None/Fortitude half}
-\spelleffect You gain physical damage reduction 35 against ranged attacks such as projectile weapons and thrown weapons. This damage reduction increases by 1 per caster level above 14th. In addition, you can make a Fortitude attack to deal damage to any creature that strikes you with its body or a melee weapon. A failed attack deals half damage. Each individual creature can take this damage only once per round.
-\spellnotes This spell's damage reduction allows the subject to ignore the first 35 physical damage it takes each round from ranged attacks. The saving throw and spell resistance apply against the damage dealt, but not against this spell's other effects.
+\spellsr{Yes (Fortitude)}
+\begin{spelltarget}[Primary]{You}
+    \spelleffect You gain physical damage reduction against ranged attacks, such as projectile weapons and thrown weapons. The damage reduction is equal to 35 \add 1 per caster level above 14th.
+\end{spelltarget}
+\begin{spelltrigger}{A creature attacks you with a melee weapon}
+    \begin{spelltarget}[Secondary]{Magic vs. Fortitude}
+        \spellsuccess 7d6 bludgeoning damage \add d6 per four caster levels above 14th.
+    \end{spelltarget}
+\end{spelltrigger}
+\spellnotes This spell's damage reduction allows the subject to ignore the first 35 physical damage it takes each round from ranged attacks.
 
 \spellsection{Strip the Flesh}{7}
-\spelldesc{You rend parts of your foe's skin off its body, inflicting grievous wounds and leaving it \vulnerable.}
+\spelldesc{You rend parts of your foe's skin off its body, inflicting grievous wounds and leaving it vulnerable.}
 \spellinfo{Necro (Flesh)}{Arcane}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
-\spelldur{Instantaneous/5 rounds}
-\spelldmg{7d10 physical damage \add d10 per four caster levels above 14th}
-\spellattack{None/Magic vs. Fortitude}
-\spelleffect You deal damage to the target. In addition, if you succeed at a Fortitude attack, for 5 rounds all damage it takes is doubled. This does not double the initial damage dealt by this spell.
-\spellnotes A Heal check that beats your Fortitude attack negates the doubling of damage. 
+\spellrng{\rngclose}
+\spelldur{\durshort}
 \spellsr{Yes (Fortitude)}
+\begin{spelltarget}{One creature}[Magic vs. Fortitude]
+    \spelleffect 7d10 physical damage \add d10 per four caster levels above 14th
+    \spellsuccess All damage the target takes is doubled. This does not apply to the initial damage dealt by this spell.
+\end{spelltarget}
+\spellnotes The doubling of damage can be negated by a Heal check that beats your magic attack result.
 
 \spellsection{Suggestion}{4}
 \spellinfo{Ench (Compulsion) [Language-Dependent, Mind-Affecting, Sound-Dependent]}{Ench}
-\spellcmp{V, M}
-\spelltwocol{\spelltgt{One living creature}}{\spellrng{\rngclose}}
+\spellcmp{Verbal only}
+\spellrng{\rngclose}
 \spelldur{\durext or until completed}
-\spellattack{Magic vs. Will}
 \spellsr{Yes (Will)}
-\spelleffect You influence the actions of the target creature by suggesting a course of activity (limited to a sentence or two). The suggestion must be worded in such a manner as to make the activity sound reasonable. Asking the creature to do some obviously harmful act automatically negates the effect of the spell. Additionally, any obvious threat, such as someone drawing a weapon, casting a spell, or aiming a ranged weapon at the fascinated creature, grants the creature a new saving throw with a \plus5 bonus.
-\par The suggested course of activity can continue for the entire duration. If the suggested activity can be completed in a shorter time, the spell ends when the subject finishes what it was asked to do. You can instead specify conditions that will trigger a special activity during the duration. If the condition is not met before the spell duration expires, the activity is not performed.
-\spellnotes A very reasonable suggestion can grant a \plus2 or greater bonus on the Will attack.
+\begin{spelltarget}{One creature}[Magic vs. Will]
+    \spelleffect You influence the actions of the target creature by suggesting a course of activity (limited to a sentence or two). The suggestion must be worded in such a manner as to make the activity sound reasonable. Asking the creature to do some obviously harmful act automatically negates the effect of the spell. Additionally, any obvious threat, such as someone drawing a weapon, casting a spell, or aiming a ranged weapon at the fascinated creature, grants the creature a new saving throw with a \plus5 bonus.
+    \par The suggested course of activity can continue for the entire duration. If the suggested activity can be completed in a shorter time, the spell ends when the subject finishes what it was asked to do. You can instead specify conditions that will trigger a special activity during the duration. If the condition is not met before the spell duration expires, the activity is not performed.
+\end{spelltarget}
+\spellnotes A very reasonable suggestion can grant a \plus2 or greater bonus on the magic attack.
 
 \norepeatnotes
 
 \spellsectioncomma{Suggestion}{Mass}{8}
 \spellinfo{Ench (Compulsion) [Language-Dependent, Mind-Affecting, Sound-Dependent]}{Ench}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
-\spelltgts{Five creatures in the area}
 \spelldur{\durmed}
-\spelleffect This spell functions like \spell{suggestion}, except that it can affect multiple creatures and has a shorter duration. The same suggestion applies to all subjects.
+\begin{spelltargets}{Five creatures in the area}[Magic vs. Will]
+    \spelleffect The target obeys a suggestion, as \spell{suggestion}.
+\end{spelltargets}
+\spellnotes All targets must receive the same suggestion.
 
 \spellsection{Summon Monster I}{1}\hypertarget{spell:summon monster}{}
 \spellinfo{Conj (Summoning) [see text]}{Arcane, Divine}
 \spelltwocol{\spelltime{Full-round action}}{\spellrng{\rngclose}}
 \spelldur{\durshort \dismissable}
+\spellline
 \spelleffect This spell summons an extraplanar creature (typically an outsider, elemental, or magical beast native to another plane). It appears where you designate and acts on your next turn. You must spend a swift action each round to control the creature summoned by this spell. If you do, it attacks your opponents to the best of its ability. You can direct the creature not to attack, to attack particular enemies, or to perform other actions if you can communicate with it. If you do not actively control the creature summoned by this spell, it acts according to its nature.
 \par When you learn this spell, you choose two creatures from the 1st-level list on \tref{Summon Monster List}. You can summon those creatures with this or any other summon monster spell.
 \par A summoned monster cannot summon or otherwise conjure another creature, nor can it use any teleportation or planar travel abilities. Creatures cannot be summoned into an environment that cannot support them.
@@ -3593,41 +3610,57 @@ Whenever a creature is damaged by this spell, you make a Fortitude attack agains
 \spellsection{Summon Monster II}{2}
 \spellinfo{Conj (Summoning)}{Arcane, Divine}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
+\spelldur{\durshort \dismissable}
+\spellline
 \spelleffect This spell functions like \spell{summon monster I}, except that you can summon one creature from the 2nd-level list or 1d3 creatures of the same kind from the 1st-level list. When you learn this spell, you choose two creatures from the 2nd-level list or lower on \tref{Summon Monster List}. You can summon those creatures with this or any other \spell{summon monster} spell.
 
 \spellsection{Summon Monster III}{3}
 \spellinfo{Conj (Summoning)}{Arcane, Chaos, Divine, Evil, Good, Law}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
+\spelldur{\durshort \dismissable}
+\spellline
 \spelleffect This spell functions like \spell{summon monster I}, except that you can summon one creature from the 3rd-level list or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 3rd-level list or lower on \tref{Summon Monster List}. You can summon those creatures with this or any other \spell{summon monster} spell.
 
 \spellsection{Summon Monster IV}{4}
 \spellinfo{Conj (Summoning)}{Arcane, Divine}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
+\spelldur{\durshort \dismissable}
+\spellline
 \spelleffect This spell functions like \spell{summon monster I}, except that you can summon one creature from the 4th-level list or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 4th-level list or lower on \tref{Summon Monster List}. You can summon those creatures with this or any other \spell{summon monster} spell.
 
 \spellsection{Summon Monster V}{4}
 \spellinfo{Conj (Summoning)}{Air, Arcane, Divine, Earth, Fire, Water}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
+\spelldur{\durshort \dismissable}
+\spellline
 \spelleffect This spell functions like \spell{summon monster I}, except that you can summon one creature from the 5th-level list or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 5th-level list or lower on \tref{Summon Monster List}. You can summon those creatures with this or any other \spell{summon monster} spell.
 
 \spellsection{Summon Monster VI}{6}
 \spellinfo{Conj (Summoning)}{Arcane, Chaos, Divine, Evil, Good, Law}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
+\spelldur{\durshort \dismissable}
+\spellline
 \spelleffect This spell functions like \spell{summon monster I}, except you can summon one creature from the 6th-level list or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 6th-level list or lower on \tref{Summon Monster List}. You can summon those creatures with this or any other \spell{summon monster} spell.
 
 \spellsection{Summon Monster VII}{7}
 \spellinfo{Conj (Summoning)}{Arcane, Divine}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
+\spelldur{\durshort \dismissable}
+\spellline
 \spelleffect This spell functions like \spell{summon monster I}, except that you can summon one creature from the 7th-level list or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 7th-level list or lower on \tref{Summon Monster List}. You can summon those creatures with this or any other \spell{summon monster} spell.
 
 \spellsection{Summon Monster VIII}{7}
 \spellinfo{Conj (Summoning)}{Air, Arcane, Divine, Earth, Fire, Water}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
+\spelldur{\durshort \dismissable}
+\spellline
 \spelleffect This spell functions like \spell{summon monster I}, except that you can summon one creature from the 8th-level list or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 8th-level list or lower on \tref{Summon Monster List}. You can summon those creatures with this or any other \spell{summon monster} spell.
 
 \spellsection{Summon Monster IX}{9}
 \spellinfo{Conj (Summoning)}{Arcane, Chaos, Divine, Evil, Good, Law}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
+\spelldur{\durshort \dismissable}
+\spellline
 \spelleffect This spell functions like \spell{summon monster I}, except that you can summon one creature from the 9th-level list or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 9th-level list or lower on \tref{Summon Monster List}. You can summon those creatures with this or any other \spell{summon monster} spell.
 
 \begin{dtable!*}
@@ -3690,6 +3723,7 @@ Whenever a creature is damaged by this spell, you make a Fortitude attack agains
 \spelltime{Full-round action}
 \spellrng{\rngclose}
 \spelldur{\durshort \dismissable}
+\spellline
 \spelleffect This spell summons a natural creature. It appears where you designate and acts on your next turn. You must spend a swift action each round to control the creature summoned by this spell. If you do, it attacks your opponents to the best of its ability. You can direct the creature not to attack, to attack particular enemies, or to perform other actions if you can communicate with it. If you do not actively control the creature summoned by this spell, it acts according to its nature.
 \par When you learn this spell, you choose two creatures from the 1st-level list on \tref{Summon Nature's Ally List}. You can summon those creatures with this or any other \spell{summon nature's ally} spell.
 \par A summoned monster cannot summon or otherwise conjure another creature, nor can it use any teleportation or planar travel abilities. Creatures cannot be summoned into an environment that cannot support them.
@@ -3698,41 +3732,57 @@ Whenever a creature is damaged by this spell, you make a Fortitude attack agains
 \spellsection{Summon Nature's Ally II}{2}
 \spellinfo{Conj (Summoning)}{Nature}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
+\spelldur{\durshort \dismissable}
+\spellline
 \spelleffect This spell functions like \spellindirect{summon nature's ally i}{summon nature's ally I}, except that you can summon one 2nd-level creature or 1d3 1st-level creatures of the same kind. When you learn this spell, you choose two creatures from the 2nd-level list or lower on \tref{Summon Nature's Ally List}. You can summon those creatures with this or any other \spell{summon nature's ally} spell.
 
 \spellsection{Summon Nature's Ally III}{3}
 \spellinfo{Conj (Summoning) [see text]}{Nature, Wild}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
+\spelldur{\durshort \dismissable}
+\spellline
 \spelleffect This spell functions like \spellindirect{summon nature's ally i}{summon nature's ally I}, except that you can summon one 3rd-level creature, 1d3 2nd-level creatures of the same kind, or 1d4\plus1 1st-level creatures of the same kind. When you learn this spell, you choose two creatures from the 3rd-level list or lower on \tref{Summon Nature's Ally List}. You can summon those creatures with this or any other \spell{summon nature's ally} spell.
 
 \spellsection{Summon Nature's Ally IV}{4}
 \spellinfo{Conj (Summoning) [see text]}{Nature}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
+\spelldur{\durshort \dismissable}
+\spellline
 \spelleffect This spell functions like \spellindirect{summon nature's ally i}{summon nature's ally I}, except that you can summon one 4th-level creature or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 4th-level list or lower on \tref{Summon Nature's Ally List}. You can summon those creatures with this or any other \spell{summon nature's ally} spell.
 
 \spellsection{Summon Nature's Ally V}{5}
 \spellinfo{Conj (Summoning) [see text]}{Nature}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
+\spelldur{\durshort \dismissable}
+\spellline
 \spelleffect This spell functions like \spellindirect{summon nature's ally i}{summon nature's ally I}, except that you can summon one 5th-level creature or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 5th-level list or lower on \tref{Summon Nature's Ally List}. You can summon those creatures with this or any other \spell{summon nature's ally} spell.
 
 \spellsection{Summon Nature's Ally VI}{6}
 \spellinfo{Conj (Summoning) [see text]}{Nature, Wild}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
+\spelldur{\durshort \dismissable}
+\spellline
 \spelleffect This spell functions like \spellindirect{summon nature's ally i}{summon nature's ally I}, except that you can summon one 6th-level creature or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 6th-level list or lower on \tref{Summon Nature's Ally List}. You can summon those creatures with this or any other \spell{summon nature's ally} spell.
 
 \spellsection{Summon Nature's Ally VII}{7}
 \spellinfo{Conj (Summoning) [see text]}{Nature}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
+\spelldur{\durshort \dismissable}
+\spellline
 \spelleffect This spell functions like \spellindirect{summon nature's ally i}{summon nature's ally I}, except that you can summon one 7th-level creature or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 7th-level list or lower on \tref{Summon Nature's Ally List}. You can summon those creatures with this or any other \spell{summon nature's ally} spell.
 
 \spellsection{Summon Nature's Ally VIII}{8}
 \spellinfo{Conj (Summoning) [see text]}{Nature}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
+\spelldur{\durshort \dismissable}
+\spellline
 \spelleffect This spell functions like \spellindirect{summon nature's ally i}{summon nature's ally I}, except that you can summon one 8th-level creature or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 8th-level list or lower on \tref{Summon Nature's Ally List}. You can summon those creatures with this or any other \spell{summon nature's ally} spell.
 
 \spellsection{Summon Nature's Ally IX}{9}
 \spellinfo{Conj (Summoning) [see text]}{Nature, Wild}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
+\spelldur{\durshort \dismissable}
+\spellline
 \spelleffect This spell functions like \spellindirect{summon nature's ally i}{summon nature's ally I}, except that you can summon one 9th-level creature or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 9th-level list or lower on \tref{Summon Nature's Ally List}. You can summon those creatures with this or any other \spell{summon nature's ally} spell.
 
 \begin{dtable*}
@@ -3774,6 +3824,8 @@ Whenever a creature is damaged by this spell, you make a Fortitude attack agains
 \spellsection{Summon Nature's Army}{8}
 \spellinfo{Conj (Summoning)}{Nature, Wild}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
+\spelldur{\durshort \dismissable}
+\spellline
 \spelleffect This spell functions like \spellindirect{summon nature's ally i}{summon nature's ally I}, except that you can summon up to one creature per caster level from the 4th-level list or lower.
 \par When you learn this spell, you choose a creature from the 4th-level list or lower on the Summon Nature's Ally table. That is the only creature you can summon with this spell.
 
@@ -3781,19 +3833,24 @@ Whenever a creature is damaged by this spell, you make a Fortitude attack agains
 \spelldesc{You evoke a dazzling beam of intense light, blinding your foes with the power of the sun itself.}
 \spellinfo{Evoc (Control) [Light]}{Nature}
 \spellburst{\arealarge line, 10 ft. wide}
-\spelldur{Instantaneous/5 rounds}
-\spelldmg{5d6 solar damage \add d6 per four caster levels above 10th; see text}
-\spellattack{Magic vs. Reflex/Reflex negates}
-\spelleffect You make a Reflex attack to deal damage to everything in the area. A failed attack deals half damage. A failed attack deals half damage. You deal extra damage equal to twice your caster level against any creatures to which sunlight is harmful or unnatural, and they are blinded for 5 rounds if your attack succeeds.
-\spellnotes A dazzled creature has a 20\% miss chance on all physical attacks and takes a \minus4 penalty to Spot checks. It is also unable to see with darkvision. 
 \spellsr{Yes (Fortitude)}
+\begin{spelltarget}{Everything in the area}[Magic vs. Reflex]
+    \spellsuccess 5d6 solar damage \add d6 per four caster levels above 10th.
+
+    If the target is vulnerable to sunlight, it is also \blinded for 5 rounds.
+    \spellfailure As above, but half damage, and the target is not blinded.
+\end{spelltarget}
 
 \spellsection{Sunburst}{8}
 \spelldesc{You cause a globe of searing radiance to explode silently from a point you select.}
 \spellinfo{Evoc (Control) [Light]}{Nature}
 \spelltwocol{\spellburst{\areamed radius}}{\spellrng{\rngmed}}
-\spelldmg{8d6 solar damage \add d6 per four caster levels above 16th; see text}
-\spelleffect This spell functions as \spell{sunbeam}, except that it affects a \areamed radius and deals more damage.
+\begin{spelltarget}{Everything in the area}[Magic vs. Reflex]
+    \spellsuccess 8d6 solar damage \add d6 per four caster levels above 1l6th.
+
+    If the target is vulnerable to sunlight, it is also \blinded for 5 rounds.
+    \spellfailure As above, but half damage, and the target is not blinded.
+\end{spelltarget}
 
 \pdfbookmark[2]{T}{SpellDescriptionsT}
 \begin{comment}
