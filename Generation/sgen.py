@@ -68,6 +68,12 @@ def initialize_argument_parser():
             help='Doesn\'t allow spell resistance?')
     parser.add_argument('--norepeat', dest='norepeat', action='store_true',
             help='Target immune for 24 hours after spell is cast?')
+    parser.add_argument('--repeatable', dest='repeatable', type=int,
+            choices=[0, 1, 2],
+            help='''Effect can be used multiple times?
+                0: no (default)
+                1: twice
+                2: caster level times''')
     parser.add_argument('-l', '--limittypes', dest='limittypes', type=int,
             help='Limit affected types?', choices=[0,1,2,3])
     parser.add_argument('--escapable', dest='escapable', type=str,
@@ -106,7 +112,8 @@ class Spell:
 
     def get_level(self, area=None, choose_targets=None, max_targets=None,
             shapeable=None, bloodied_behavior=None, duration=None,
-            no_spell_resistance=None, no_repeat=None, spell_range=None, trigger=None):
+            no_spell_resistance=None, no_repeat=None, spell_range=None, trigger=None,
+            repeatable=None):
         level=0
         for component_type in self.components.keys():
             for component in self.components[component_type]:
@@ -139,10 +146,14 @@ class Spell:
         level += calculate_area_modifier(area, choose_targets, max_targets, shapeable, self.components)
         print 'total level after area modifier', level
 
-        if no_spell_resistance:
-            level += 1
+        if repeatable == 1:
+            level *= 1.25
+        elif repeatable == 2:
+            level *= 1.5
         if no_repeat:
             level *= PART
+        if no_spell_resistance:
+            level += 1
         if trigger:
             if trigger == 'no_action':
                 level +=1
@@ -479,7 +490,8 @@ if __name__ == "__main__":
                 general_args['nosr'],
                 general_args['norepeat'],
                 general_args['range'],
-                general_args['trigger'])
+                general_args['trigger'],
+                general_args['repeatable'])
         if general_args['savename']:            
             save_name = ''.join(general_args['savename'])
             print 'Spell level of', save_name+': ', spell_level
