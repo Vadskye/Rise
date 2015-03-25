@@ -2,7 +2,9 @@
 \section{Skills Summary}
 A character's skills describe the myriad of talents that people have.
 
-\parhead{Skill Points} At 1st level, your character gains a certain number of skill points. Skill points represent your training in a particular area. You get a base allotment of 2, 4, 6, or 8 skill points, depending on your character's class. These skill points can be spent on any skills. In addition, you gain additional skill points based on your attributes that can only be spent on skills associated with the relevant attribute. For each attribute, you gain a number of skill points equal to half your attribute score.
+\parhead{Skill Points} At 1st level, your character gains a certain number of skill points. Skill points represent your training in a particular area. You get a base allotment of 2, 4, 6, or 8 skill points, depending on your character's class. You also gain additional skill points equal your Intelligence. If your Intelligence is negative, it subtracts from your skill points (to a minimum of 0 skill points). These skill points can be spent on any skills.
+
+You also gain additional skill points based on your attributes. For each attribute except Constitution and Intelligence, you gain a number of skill points equal to half your attribute. These skill points can only be spent on skills from the relevant attribute.
 
 \par If your character's attributes increase, she may immediately gain a skill point which can be spent on skills with that key attribute. However, temporary bonuses and penalties to attributes, such as from spells, magic items, and circumstances, do not affect your skill points. If she gains a level in a new class that has more skill points than any class she previously had, the character immediately gains skill points equal to the difference between the skill points provided by the two classes. These skill points can be spent on any skill.
 
@@ -359,11 +361,10 @@ The DC of the check depends on the difficulty of the task and the conditions of 
     20 & Uneven surface with narrow hand and foot holds & Unknotted rope, unweathered natural rock, typical ruin wall, brick wall \\
     20 & Overhang or ceiling with only handholds & Tree limbs, butcher's ceiling with meat hooks \\
     25 & Rough surface with no holds & Weathered natural rock, well-made stone wall \\
-    \x\fn{1} & Smooth surface & Glass window, \spell{wall of force} \\
-    30 & Smooth surface with chimney setup & \x \\
-    35 & Smooth surface corner & \x \\
+    30 & Bracing between two smooth surfaces (chimney) & Parallel \spellindirect{wall of force}{walls of force} \\
+    35 & Bracing in a corner between two smooth surfaces & \spell{forcecage} \\
+    40 & Smooth surface & Glass window, \spell{wall of force} \\
 \end{tabularx}
-    1 A perfectly smooth, flat, surface cannot be climbed on its own.\\
 \end{dtable*}
 
 \begin{dtable}
@@ -376,7 +377,7 @@ The DC of the check depends on the difficulty of the task and the conditions of 
 \plus2 & Surface is slightly slippery, such as damp stone \\
 \plus5 & Surface is very slippery, such as ice or oil-covered stone 
 \end{tabularx}
-1 These modifiers are cumulative; use any that apply.
+1 These modifiers are cumulative with modifiers of different kinds. Use any that apply (but not if one modifier is just a more extreme version of another).
 \end{dtable}
 
 \subsubsection{Catch Falling Character}
