@@ -72,6 +72,10 @@
 {\parhead*{Bloodied Effect}}
 {}
 
+\DeclareDocumentEnvironment{spellmargin}{}
+{\begin{addmargin}[1em]{0pt}}
+{\end{addmargin}}
+
 % with a star, don't include \spellline
 \DeclareDocumentEnvironment{spelltarget}{s o m t{l} o}
 {\IfBooleanF{#1}{\spellline}
@@ -82,10 +86,10 @@
         {\spelltgt{#3}[#2]\parhead{Attack} #5}
         {\spelltwocol{\spelltgt{#3}[#2]}{\spellattack{#5}}}
     }
-    \begin{addmargin}[1em]{0pt}
+    \begin{spellmargin}
 }
 {
-    \end{addmargin}
+    \end{spellmargin}
 }
 
 % same thing, but plural
@@ -98,26 +102,26 @@
         {\spelltgts{#3}[#2]\parhead{Attack} #5}
         {\spelltwocol{\spelltgts{#3}[#2]}{\spellattack{#5}}}
     }
-    \begin{addmargin}[1em]{0pt}
+    \begin{spellmargin}
 }
 {
-    \end{addmargin}
+    \end{spellmargin}
 }
 
 \DeclareDocumentEnvironment{spelltrigger}{m}
 {
     \parhead*{Trigger} #1
-    \begin{addmargin}[1em]{0pt}
+    \begin{spellmargin}
 }
 {
-    \end{addmargin}
+    \end{spellmargin}
 }
 
 \DeclareDocumentEnvironment{spelltriggers}{m}
 {
     \parhead*{Triggers} #1
-    \begin{addmargin}[1em]{0pt}
+    \begin{spellmargin}
 }
 {
-    \end{addmargin}
+    \end{spellmargin}
 }
