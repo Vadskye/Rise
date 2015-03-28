@@ -22,8 +22,7 @@ This spell's damage reduction allows the subject to ignore the first 10 physical
 \spellsection{Ablative Shield}{1}
 \spelldesc{You instantly encase yourself a shimmering field of magical energy, protecting you from hostile magic.}
 \spellinfo{Abjur (Negation) [Magic]}{Abjur, Magic}
-\spelltime{Immediate action}
-\spellcmp{Verbal only}
+\spelltwocol{\spelltime{Immediate action}}{\spellcmp{Verbal only}}
 \spelldur{1 round}
 \begin{spelltarget}{You}
     \spelleffect You gain spell damage reduction 5/force. This damage reduction increases by 1 per caster level above 2nd.
@@ -41,6 +40,7 @@ Spells that are not subject to spell resistance are not affected by \spell{ablat
 \spelldur{1 round per two caster levels}
 \begin{spelltarget}{One creature or object}[Magic vs. Reflex]
     \spellsuccess 2d8 acid damage immediately, and d8 acid damage at the end of each round after the first.
+    \spellfailure As above, but no lingering damage.
 \end{spelltarget}
 \spellnotes If the target becomes submerged in water or takes at least ten points of cold or fire damage, this spell's effect ends.
 
@@ -78,7 +78,7 @@ Spells that are not subject to spell resistance are not affected by \spell{ablat
 \spelldur{\durshort}
 \spellsr{Yes (Fortitude)}
 \begin{spelltarget}{One creature}
-    \spelleffect \minus4 penalty to attacks, defenses, and checks.
+    \spelleffect The target takes a \minus4 penalty to attacks, defenses, and checks.
 \end{spelltarget}
 
 \spellsection{Aid}{2}
@@ -88,9 +88,9 @@ Spells that are not subject to spell resistance are not affected by \spell{ablat
 \spelldur{\durshort}
 \spellsr{Yes (Will)}
 \begin{spelltarget}{One creature}
-    \spelleffect 10 temporary hit points \add 1 per caster level above 4th, and a \plus2 enhancement bonus to Will defense. \spellbonusscalingdescription
+    \spelleffect The target gains 10 temporary hit points \add 1 per caster level above 4th, and a \plus2 enhancement bonus to Will defense. \spellbonusscalingdescription
 \end{spelltarget}
-\spellnotes If the subject takes life damage, it loses all temporary hit points provided by this spell before applying the damage.
+\spellnotes If the target takes life damage, it loses all temporary hit points provided by this spell before applying the damage.
 
 \spellsection{Air Walk}{4}
 \spelldesc{You imbue the subject with the ability to walk on nothing but air.}
