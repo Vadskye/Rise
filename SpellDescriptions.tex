@@ -13,11 +13,9 @@
 \spelltwocol{\spelltime{Immediate action}}{\spellcmp{Verbal only}}
 \spelldur{1 round}
 \begin{spelltarget}{You}
-    \spelleffect You gain physical damage reduction 8/force. This damage reduction increases by 1 per caster level above 4th.
+    \spelleffect You gain physical damage reduction, reducing the physical damage you take each round by 8 \add 1 per caster level above 4th. If you take force damage, you cannot use your damage reduction for 1 round.
 \end{spelltarget}
 \spellnotes After casting this spell, you cannot cast it again for 5 rounds. You can cast this spell in response to an opponent attacking you, before the attack is rolled.
-
-This spell's damage reduction allows the subject to ignore the first 10 physical damage it takes each round. If it is hit by a attack that deals force damage, such as \spell{magic missile}, it cannot use its damage reduction for 1 round.
 
 \spellsection{Ablative Shield}{1}
 \spelldesc{You instantly encase yourself a shimmering field of magical energy, protecting you from hostile magic.}
@@ -25,11 +23,9 @@ This spell's damage reduction allows the subject to ignore the first 10 physical
 \spelltwocol{\spelltime{Immediate action}}{\spellcmp{Verbal only}}
 \spelldur{1 round}
 \begin{spelltarget}{You}
-    \spelleffect You gain spell damage reduction 5/force. This damage reduction increases by 1 per caster level above 2nd.
+    \spelleffect You gain spell damage reduction, reducing the damage you take each round from spells by 4 \add 1 per caster level above 2nd. If you take force damage, you cannot use your damage reduction for 1 round.
 \end{spelltarget}
-\spellnotes This spell's damage reduction allows the subject to ignore the first 5 damage it takes each round from spells and spell-like abilities. If it is hit by a attack that deals force damage, such as \spell{magic missile}, it cannot use its damage reduction for 1 round.
-
-You can cast this spell in response to an opponent attacking you, before the attack is rolled.
+\spellnotes After casting this spell, you cannot cast it again for 5 rounds. You can cast this spell in response to an opponent attacking you, before the attack is rolled.
 
 Spells that are not subject to spell resistance are not affected by \spell{ablative shield}.
 
@@ -264,9 +260,8 @@ When you make a weapon good, evil, lawful, or chaotic, \spell{align weapon} is a
 \spelldur{\durshort}
 \spellsr{Yes (Fortitude)}
 \begin{spelltarget}{One living creature}
-    \spelleffect The target gains a \plus2 enhancement bonus to its armor modifier. \spellbonusscalingdescription In addition, the target gains physical damage reduction 2/adamantine or fire. This damage reduction increases by 1 per two caster levels above 4th.
+    \spelleffect The target gains a \plus2 enhancement bonus to its armor modifier. \spellbonusscalingdescription In addition, the target gains physical damage reduction, reducing the physical damage it takes each round by 2 \add 1 per two caster levels above 4th. If it is hit by an adamatine weapon or takes fire damage, it cannot use its damage reduction for 1 round.
 \end{spelltarget}
-\spellnotes This spell's damage reduction allows the target to ignore the first 2 physical damage it takes each round. If it is hit by a adamantine weapon or an attack that deals fire damage, it cannot use its damage reduction for 1 round.
 
 \spellsection{Bestow Curse}{4}
 \spelldesc{You place a curse on your foe, crippling its ability to act.}
@@ -309,7 +304,7 @@ When you make a weapon good, evil, lawful, or chaotic, \spell{align weapon} is a
 \spellline
 \spelleffect This spell creates a wall of blades made of force energy. The wall provides active cover (20\% miss chance) against attacks made through it. Attacks that miss in this way harmlessly strike the wall. The wall is considered difficult terrain.
 \begin{spelltrigger}{A creature passes through the wall}
-    \begin{spelltarget}*{Creature in wall}[Magic vs. Reflex]
+    \begin{spelltarget}*{The creature in the wall}[Magic vs. Reflex]
         \spellsuccess 6d6 force damage \add d6 per four caster levels above 12th.
         \spellfailure As above, but half damage.
     \end{spelltarget}
@@ -1136,7 +1131,7 @@ Artifacts and deities are unaffected by mortal magic such as this.
     \spelleffect The target weapon becomes deadly to undead.
 \end{spelltarget}
 \begin{spelltrigger}{The primary target strikes a \bloodied undead creature for the first time in a round}
-    \begin{spelltarget}*[Secondary]{One bloodied undead creature}l[Magic vs. Fortitude]
+    \begin{spelltarget}*[Secondary]{The bloodied undead creature}l[Magic vs. Fortitude]
         \spellsuccess The target creature is utterly destroyed.
     \end{spelltarget}
 \end{spelltrigger}
@@ -1300,9 +1295,8 @@ Artifacts and deities are unaffected by mortal magic such as this.
 \begin{spelltarget}{One creature}[Magic vs. Fortitude]
     \spelleffect If the target is living, it gains six \negativelevels.
 
-    \spelleffect If the target is undead, it gains temporary hit points equal to 40 \add your caster level and physical damage reduction 16/positive.
+    \spelleffect If the target is undead, it gains temporary hit points equal to 40 \add your caster level. In addition, it gains physical damage reduction, reducing the physical damage it takes each round by 16 \add 1 per caster level above 16th. If it takes positive damage, it cannot use its damage reduction for 1 round.
 \end{spelltarget}
-\spellnotes The damage reduction allows an undead subject to ignore the first 16 physical damage it takes each round. If it is hit by an attack that deals positive damage, such as \spell{cure light wounds}, it cannot use its damage reduction for 1 round.
 
 \spellsection{Enervation}{4}
 \spelldesc{Your foe's body loses its color momentarily as you drain its life force away.}
@@ -1313,11 +1307,9 @@ Artifacts and deities are unaffected by mortal magic such as this.
 \begin{spelltarget}{One creature}[Magic vs. Fortitude]
     \spelleffect If the target is living, it gains three \negativelevels.
 
-    If the target is undead, it gains physical damage reduction 8/positive instead. This damage reduction increases by 1 per two caster levels above 8th.
+    If the target is undead, it gains physical damage reduction, reducing the physical damage it takes each round by 8 \add 1 per caster level above 8th. If it takes positive damage, it cannot use its damage reduction for 1 round.
 \end{spelltarget}
 \spellnotes This spell stacks with any effect that bestows negative levels, including itself.
-
-The damage reduction allows an undead subject to ignore the first 8 physical damage it takes each round. If it is hit by a positive attack, such as \spell{cure light wounds}, it cannot use its damage reduction for 1 round.
 
 \spellsection{Enfeeblement}{1}
 %\spelldesc{You fire a coruscating ray from your hand. When it strikes your foe, he becomes weaker.}
@@ -1371,7 +1363,7 @@ The damage reduction allows an undead subject to ignore the first 8 physical dam
 \spellline
 \spelleffect The area is difficult terrain.
 \begin{spelltrigger}{End of every movement phase}
-    \begin{spelltarget}*{Each creature in the area within 5 feet of plants}l[Magic vs. Reflex]
+    \begin{spelltarget}*{All creatures in the area within 5 feet of plants}l[Magic vs. Reflex]
         \spellsuccess The target is \entangled and \immobilized. It can break free of the effect as a standard action by making a grapple attack or Escape Artist check that beats your magic attack result.
     \end{spelltarget}
 \end{spelltrigger}
@@ -1385,7 +1377,7 @@ The damage reduction allows an undead subject to ignore the first 8 physical dam
 \spellline
 \spelleffect The area is difficult terrain. Plants grow in the area, even if the terrain would not normally support plant life. At the end of the spell's duration, the plants recede into the ground, leaving no trace that they were ever there.
 \begin{spelltrigger}{End of every movement phase}
-    \begin{spelltarget}{Each creature in the area within 5 feet of the ground}l[Magic vs. Reflex]
+    \begin{spelltarget}{All creatures in the area within 5 feet of the ground}l[Magic vs. Reflex]
         \spellsuccess The target is ensnared, as \spell{entangle}.
     \end{spelltarget}
 \end{spelltrigger}
@@ -1521,16 +1513,14 @@ As a standard action, you can say a command word to detonate any number of affec
 \spelldur{\durshort \dismissable}
 \spellsr{Yes (Fortitude)}
 \begin{spelltarget}{You}
-    \spelleffect You gain cold damage reduction 25 \add 1 per caster level above 10th, and radiate light as a torch. In addition, creatures that attack you take damage.
+    \spelleffect You gain cold damage reduction, reducing the cold damage you take each round by 20 \add 2 per caster level above 8th. In addition, you radiate light as a torch, and creatures that attack you take damage.
 \end{spelltarget}
 \begin{spelltrigger}{Creature within \rngclose range makes a physical attack against you}
-    \begin{spelltarget}*{Attacking creature}[Magic vs. Reflex]
+    \begin{spelltarget}*{The attacking creature}[Magic vs. Reflex]
         \spellsuccess 5d6 fire damage \add d6 per four caster levels above 10th.
         \spellfailure Half damage.
     \end{spelltarget}
 \end{spelltrigger}
-
-\spellnotes The damage reduction allows the subject to ignore the first 25 energy damage it takes each round of the appropriate type.
 
 \spellsection{Fire Storm}{8}
 \spelldesc{You fill a massive area with sheets of roaring flame, burning everyone who opposes you.}
@@ -1678,10 +1668,11 @@ Spell resistance applies when a foe is struck by the weapon, but not when the bl
 \spellrng{\rngtouch}
 \spelldur{\durshort \dismissable}
 \begin{spelltarget}{One willing corporeal creature}
-    \spelleffect The target and all its equipment becomes insubstantial, misty, and translucent. Its armor modifier becomes 0, though other defense modifiers continue to apply normally. The subject gains physical damage reduction 10/magic and becomes immune to critical hits. It can't attack or cast spells with verbal, somatic, material, or focus components while in gaseous form. If it has a touch spell ready to use, that spell is discharged harmlessly when the gaseous form spell takes effect.
+    \spelleffect The target and all its equipment becomes insubstantial, misty, and translucent. Its armor modifier becomes 0, though other defense modifiers continue to apply normally. It gains physical damage reduction, reducing the physical damage it takes each round by 15 \add 2 per caster level above 6th. If it takes damage from a spell or magic weapon, it cannot use its damage reduction for 1 round. It becomes immune to critical hits.
+    
+    The target can't attack or cast spells with verbal, somatic, material, or focus components while in gaseous form. If it has a touch spell ready to use, that spell is discharged harmlessly when the gaseous form spell takes effect.
     \par A gaseous creature can fly at a speed of 10 feet (special maneuverability). It can pass through small holes or narrow openings, even mere cracks, with all it was wearing or holding in its hands, as long as the spell persists. The creature is subject to the effects of wind, and it can't enter water or other liquid. It also can't manipulate objects or activate items, even those carried along with its gaseous form. Continuously active items remain active, though in some cases their effects may be moot.
 \end{spelltarget}
-\spellnotes This spell's damage reduction allows the subject to ignore the first 10 physical damage it takes each round. If it is hit by a magical attack, such as a damaging spell or magic weapon, it cannot use its damage reduction for 1 round.
 
 \spellsection{Gentle Descent}{2}
 \spelldesc{You grant your ally ephemeral wings which allow him to glide.}
@@ -1997,9 +1988,8 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldur{\durshort}
 \spellsr{Yes (Will)}
 \begin{spelltarget}{One creature}
-    \spelleffect The target gains physical damage reduction 4/force. This damage reduction increases by 1 per two caster levels above 4th.
+    \spelleffect The target gains physical damage reduction, reducing the physical damage it takes each round by 4 \add 1 per caster level above 4th. If it takes force damage, it cannot use its damage reduction for 1 round.
 \end{spelltarget}
-\spellnotes This spell's damage reduction allows the subject to ignore the first 4 physical damage it takes each round. If it is hit by a attack that deals force damage, such as \spell{magic missile}, it cannot use its damage reduction for 1 round.
 
 \spellsection{Inflict Critical Wounds}{4}
 \spellinfo{Necro (Vitalism) [Negative]}{Arcane, Divine}
@@ -2149,12 +2139,12 @@ The hand is 10 feet long and about that wide with its fingers outstretched. It h
 \spelldur{\durshort \dismissable}
 \begin{spelltarget}{You}
     \spelleffect This spell transforms your body into living iron, which grants you several powerful resistances and abilities.
-    \par You gain physical damage reduction 15/adamantine. You are immune to blindness, critical hits, attribute damage, deafness, disease, drowning, electricity, poison, stunning, and all spells or attacks that affect your physiology or respiration, because you have no physiology or respiration while this spell is in effect. You take only half damage from acid and fire of all kinds.
+    \par You gain physical damage reduction, reducing the physical damage you take each round by 16 \add 1 per caster level above 16th. If you are hit by an adamantine weapon, you cannot use your damage reduction for 1 round.
+    \par You are immune to blindness, critical hits, attribute damage, deafness, disease, drowning, electricity, poison, stunning, and all spells or attacks that affect your physiology or respiration, because you have no physiology or respiration while this spell is in effect. You take only half damage from acid and fire of all kinds.
     \par You gain a \plus5 enhancement bonus to your Strength score, but you take a \minus5 penalty to Dexterity as well, and your speed is reduced to half normal. You have a \minus8 armor check penalty. You cannot drink (and thus can't use potions) or play wind instruments.
     \par Your unarmed attacks deal damage equal to a warhammer sized for you (1d6 for Small characters or 1d8 for Medium characters), and you are considered armed when making unarmed attacks.
     \par Your weight increases by a factor of ten, causing you to sink in water like a stone. However, you could survive the crushing pressure and lack of air at the bottom of the ocean -- at least until the spell duration expires.
 \end{spelltarget}
-\spellnotes This spell's damage reduction allows the subject to ignore the first 15 physical damage it takes each round. If it is hit by an adamantine weapon, it cannot use its damage reduction for 1 round.
 
 \spellsection{Irresistible Dance}{9}
 \spelldesc{You fill your enemy with an overpowering urge to dance and caper in place. Against its will, it begins doing so, complete with foot shuffling and tapping.}
@@ -3005,12 +2995,10 @@ Since the image is not a creature, it is difficult to disrupt, and many spells h
 \spelldur{\durlong or until expended}
 \spellsr{Yes (Fortitude)}
 \begin{spelltarget}{One creature}
-    \spelleffect The target gains damage reduction against a single energy type of your choice (acid, cold, electricity, fire). The damage resisted is equal to 8 \add 1 per caster level above 4th.
+    \spelleffect The target gains gains damage reduction against a single energy type of your choice (acid, cold, electricity, fire). This reduces the damage it takes each round from that energy type by 10 \add 2 per caster level above 4th.
     \par The spell can absorb a maximum amount of damage equal to 10 points per caster level. After it absorbs its maximum amount of damage, the spell ends.
 \end{spelltarget}
-\spellnotes This spell's damage reduction allows the subject to ignore the first 10 energy damage it takes each round of the appropriate type.
-
-\par This spell overlaps (and does not stack with) \spell{protection from energy}. If a character is shielded by both spells, the \spellindirect{protection from energy}{protection} spell absorbs damage until its power is exhausted. A character can only be affected by one \spell{resist energy} spell at once.
+\spellnotes This spell overlaps (and does not stack with) \spell{protection from energy}. If a character is shielded by both spells, the \spellindirect{protection from energy}{protection} spell absorbs damage until its power is exhausted. A character can only be affected by one \spell{resist energy} spell at once.
 
 \spellsectioncomma{Resist Energy}{Greater}{4}
 \spellinfo{Abjur (Shielding)}{Arcane, Divine, Nature}
@@ -3018,7 +3006,7 @@ Since the image is not a creature, it is difficult to disrupt, and many spells h
 \spelldur{\durlong or until expended}
 \spellsr{Yes (Fortitude)}
 \begin{spelltarget}{One creature}
-    \spelleffect The target gains damage reduction against all energy types (acid, cold, electricity, fire). The damage resisted is equal to 16 \add 1 per caster level above 8th.
+    \spelleffect The target gains damage reduction against all energy types (acid, cold, electricity, fire). This reduces the energy damage it takes each round by 20 \add 2 per caster level above 8th.
     \par The spell can absorb a maximum amount of damage equal to 10 points per caster level. After it absorbs its maximum amount of damage, the spell ends.
 \end{spelltarget}
 \spellnotes As \spell{resist energy}.
@@ -3047,9 +3035,8 @@ Since the image is not a creature, it is difficult to disrupt, and many spells h
 \spelldur{\durshort}
 \spellsr{Yes (Will)}
 \begin{spelltarget}{One creature}
-    \spelleffect The target gains physical damage reduction 8/life. This damage reduction increases by 1 per two caster levels above 8th. In addition, any creature within \rngmed range of the target that deals damage to it takes life damage equal to the damage resisted by this damage reduction.
+    \spelleffect The target gains physical damage reduction, reducing the physical damage it takes each round by 8 \add 1 per caster level above 8th. If it takes life damage, it cannot use its damage reduction for 1 round. In addition, any creature within \rngmed range of the target that deals damage to it takes life damage equal to the damage resisted by this damage reduction.
 \end{spelltarget}
-\spellnotes This spell's damage reduction allows the subject to ignore the first 8 physical damage it takes each round. If it is hit by an attack that deals life damage, such as \spell{crush life}, it cannot use its damage reduction for 1 round.
 
 \spellsection{Retrieve Ally}{2}
 \spelldesc{You save your ally from danger by teleporting it next to you.}
@@ -3120,10 +3107,9 @@ Since the image is not a creature, it is difficult to disrupt, and many spells h
 \spellinfo{Trans (Augment, Polymorph) [Size-Affecting]}{Divine, Good, Strength}
 \spelldur{\durshort \dismissable}
 \begin{spelltarget}{You}
-    \spellsuccess You become larger, as \spell{enlarge person}. In addition, you gain physical damage reduction equal to 10 \add 1 per two caster levels above 10th. This damage reduction is overcome by evil attacks if you are good or neutral, and by good attacks if you are evil.
+    \spellsuccess You become larger, as \spell{enlarge person}. In addition, you gain physical damage reduction, reducing the physical damage you take each round by 10 \add 1 per caster level above 10th. This damage reduction is overcome by evil attacks if you are good or neutral, and by good attacks if you are evil. If you are hit by an appropraitely aligned attack, you cannot use your damage reduction for 1 round.
 \end{spelltarget}
-\spellnotes This spell's damage reduction allows the target to ignore the first 10 physical damage it takes each round. If it is hit by an attack that deals appropriately aligned damage, such as a weapon affected by \spell{align weapon} or a spell with the appropriate descriptor, it cannot use its damage reduction for 1 round.
-Multiple magical effects that increase size do not stack.
+\spellnotes Multiple magical effects that increase size do not stack.
 
 \pdfbookmark[2]{S}{SpellDescriptionsS}
 \begin{comment}
@@ -3207,11 +3193,10 @@ This spell can be made permanent with a \spell{permanency} ritual.
     \spelleffect Your body and all your equipment are subsumed by your shadow. As a living shadow, you blend perfectly into any other shadow and vanish in darkness. You appear as an unattached shadow in areas of full light.
     \par You can move at your normal speed, on any surface, including walls and ceilings, as well as across the surfaces of liquids -- even up the face of a waterfall.
     \par You become perfectly flat, potentially allowing you to move into locations you would not normally be able to move into.
-    \par While in your shadow body, you gain damage reduction 15/solar and darkvision out to 60 feet. You are immune to ability damage, disease, drowning, and poison. You take only half damage from acid, electricity, and fire of all kinds.
+    \par While in your shadow body, you gain physical damage reduction, reducing the physical damage you take each round by 14 \add 1 per caster level above 14th. If you take solar damage, you cannot use your damage reduction for 1 round. You are immune to ability damage, disease, drowning, and poison. You take only half damage from energy attacks (acid, cold, electricity, and fire).
     \par While affected by this spell, you can be detected by spells that read thoughts, life, or presences (including true seeing), or if you make suspicious movements in lighted areas.
     \par You cannot harm anyone physically or manipulate any objects, but you can use your spells normally. Doing so may attract notice, but if you remain in a shadowed area, you get a \plus15 enhancement bonus on your Hide check to remain unnoticed.
 \end{spelltarget}
-\spellnotes This spell's damage reduction allows the subject to ignore the first 15 physical damage it takes each round. If it is hit by an attack that deals solar damage, such as \spell{sunbeam}, it cannot use its damage reduction for 1 round.
 
 \spellsection{Shadow Puppet}{9}
 \spellinfo{Conj/Illus (Shadow, Translocation) [Planar, Unreal]}{Illus}
@@ -3538,9 +3523,8 @@ The weapon can move up to 60 feet per round. It never provokes attacks of opport
 \spelldur{\durshort}
 \spellsr{Yes (Fortitude)}
 \begin{spelltarget}{One creature}
-    \spelleffect The target gains a \plus3 enhancement bonus to its armor modifier. This bonus increases to \plus4 at 14th caster level, and to \plus5 at 20th caster level. In addition, it gains physical damage reduction 8/adamantine. This damage reduction increases by 1 per two caster levels above 8th.
+    \spelleffect The target gains a \plus3 enhancement bonus to its armor modifier. This bonus increases to \plus4 at 14th caster level, and to \plus5 at 20th caster level. In addition, it gains physical damage reduction, reducing the damage it takes each round from physical attacks by 8 \add 1 per caster level above 8th. If it is hit by an adamantine weapon, it cannot use its damage reduction for 1 round.
 \end{spelltarget}
-\spellnotes This spell's damage reduction allows the subject to ignore the first 8 physical damage it takes each round. If it is hit by an adamantine weapon, it cannot use its damage reduction for 1 round.
 
 \spellsection{Storm of Vengeance}{9}
 \spellinfo{Conj/Evoc (Energy, Control, Creation)}{Air, Divine, Nature, War, Water}
@@ -3571,14 +3555,14 @@ At the end of every round, the storm has an additional effect, as shown on \tref
 \spelldur{\durshort \dismissable}
 \spellsr{Yes (Fortitude)}
 \begin{spelltarget}[Primary]{You}
-    \spelleffect You gain physical damage reduction against ranged attacks, such as projectile weapons and thrown weapons. The damage reduction is equal to 35 \add 1 per caster level above 14th.
+    \spelleffect You gain physical damage reduction against ranged attacks, reducing the physical damage you take each round from ranged attacks by 35 \add 2 per caster level above 14th.
 \end{spelltarget}
-\begin{spelltrigger}{A creature attacks you with a melee weapon}
-    \begin{spelltarget}[Secondary]{Magic vs. Fortitude}
+\begin{spelltrigger}{Creature within \rngclose range makes a physical attack against you}
+    \begin{spelltarget}[Secondary]{Attacking creature}[Magic vs. Fortitude]
         \spellsuccess 7d6 bludgeoning damage \add d6 per four caster levels above 14th.
+        \spellfailure As above, but half damage.
     \end{spelltarget}
 \end{spelltrigger}
-\spellnotes This spell's damage reduction allows the subject to ignore the first 35 physical damage it takes each round from ranged attacks.
 
 \spellsection{Strip the Flesh}{7}
 \spelldesc{You rend parts of your foe's skin off its body, inflicting grievous wounds and leaving it vulnerable.}
