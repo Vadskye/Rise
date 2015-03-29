@@ -1669,7 +1669,7 @@ Spell resistance applies when a foe is struck by the weapon, but not when the bl
 \spelldur{\durshort \dismissable}
 \begin{spelltarget}{One willing corporeal creature}
     \spelleffect The target and all its equipment becomes insubstantial, misty, and translucent. Its armor modifier becomes 0, though other defense modifiers continue to apply normally. It gains physical damage reduction, reducing the physical damage it takes each round by 15 \add 2 per caster level above 6th. If it takes damage from a spell or magic weapon, it cannot use its damage reduction for 1 round. It becomes immune to critical hits.
-    
+
     The target can't attack or cast spells with verbal, somatic, material, or focus components while in gaseous form. If it has a touch spell ready to use, that spell is discharged harmlessly when the gaseous form spell takes effect.
     \par A gaseous creature can fly at a speed of 10 feet (special maneuverability). It can pass through small holes or narrow openings, even mere cracks, with all it was wearing or holding in its hands, as long as the spell persists. The creature is subject to the effects of wind, and it can't enter water or other liquid. It also can't manipulate objects or activate items, even those carried along with its gaseous form. Continuously active items remain active, though in some cases their effects may be moot.
 \end{spelltarget}
@@ -2355,10 +2355,17 @@ Any missiles you do not explicitly target will automatically strike a living cre
 
 \spellsection{Magic Circle against Alignment}{5}
 \spellinfo{Abjur (Interdiction) [Barrier, Good]}{Arcane, Chaos, Divine, Evil, Good, Law}
-\spelltwocol{\spellemanation{\areasmall radius centered on touched creature}}{\spellrng{Touch}}
+\spellrng{Touch}
 \spelldur{\durshort \dismissable}
-\spelleffect All creatures in the area gain the effects of a \spell{protection from alignment} spell, using an alignment of your choice. In addition, no summoned creatures can enter the area except summoned creatures of the chosen alignment.
 \spellsr{Yes (Will)}
+\spellspecial When you cast this spell, choose an alignment (chaotic, good, lawful, or evil).
+\begin{spelltarget}[Primary]{One creature}
+    \spellemanation{\areasmall radius from the primary target}
+\end{spelltarget}
+\spelleffect Summoned creatures which have the chosen alignment cannot enter the area.
+\begin{spelltargets}*[Secondary]{All creatures in the area}
+    \spelleffect The target is protected from the chosen alignment, as \spell{protection from alignment}.
+\end{spelltargets}
 
 \spellsection{Magic Fang}{2}
 \spellinfo{Trans (Augment)}{Nature}
