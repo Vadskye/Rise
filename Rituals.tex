@@ -80,48 +80,50 @@ Once destroyed, an undead skeleton or zombie can never be animated again, even i
 \spelltime{1 minute}
 \spellrng{\rngmed}
 \spelldur{\durlong \dismissable}
-\spelleffect You create an invisible magical sensor that sends you visual information. You can create the \ritual{arcane eye} within \rngmed range, but it can then travel outside your line of sight without hindrance. An \ritual{arcane eye} travels at 30 feet per round. It sees exactly as you would see if you were there.
-\par The eye can travel in any direction as long as the ritual lasts. Solid barriers block its passage, but it can pass through a hole or space as small as 1 inch in diameter. The eye can't enter another plane of existence, even through a \spell{gate} or similar magical portal.
-\par You must concentrate to use an \ritual{arcane eye}. If you do not concentrate, the eye is inert until you again concentrate.
+\spellline
+\spelleffect This ritual creates a magic sensor. A magic sensor is a floating, invisible sphere approximately one inch in diameter. As a standard action, you can concentrate to see through the sensor as if you were in its location. While concentrating, you can move the sensor up to 30 feet per round in any direction.
+
+You can freely control and see through the sensor even if it moves beyond the spell's range, or out of your line of effect.
+\spellnotes Solid barriers block the sensor's passage. It is unable to enter another plane of existence, even through a \spell{gate} or similar magical portal.
 
 \spellsection{Arcane Lock}{2}
 \spellinfo{Abjuration/Transmutation (Alteration, Warding)}{Arcane}
 \spelltime{1 minute}
-\spelltwocol{\spelltgt{The door, chest, or portal touched, up to a 10-foot cube in size}}{\spellrng{Touch}}
+\spellrng{Touch}
 \spelldur{Permanent}
-\spelleffect The target object is magically locked. You can freely pass your own \ritual{arcane lock} without affecting it; otherwise, a door or object secured with this ritual can be opened only by breaking in or with a successful \ritual{dispel magic} or \ritual{knock} spell. Add 10 to the normal DC to break open a door or portal affected by this ritual.
-\spellnotes A \ritual{knock} spell does not remove an arcane lock; it only suppresses the effect for 10 minutes.
+\begin{spelltarget}{One closable object, such as a door or box (Large or smaller)}
+\spelleffect The target object is magically locked. It can be unlocked with a Devices check against a DC equal to 30 \add your caster level. The DC to break it open forcibly increases by 10.
+
+You can freely pass your own \ritual{arcane lock}, as if the object were not locked.
+\spellnotes A \ritual{knock} spell suppresses the effect for 10 minutes, but does not dispel the \spell{arcane lock}.
 
 \spellsection{Arcane Mark}{1}
-\spelldesc{You inscribe your personal rune or mark on a creature or object.}
+\spelldesc{You inscribe your personal sigil on a creature or object.}
 \spellinfo{Universal}{Arcane}
-\spelltwocol{\spelltime{1 minute}}{\spellrng{\rngtouch}}
+\spelltime{1 minute}
+\spellrng{\rngtouch}
 \spelldur{Permanent}
-\spelleffect You etch your personal rune or mark upon any substance without harm to the material upon which it is placed. Your personal rune or mark can consist of no more than six characters, and must fit within one square foot. The writing can be visible or invisible.
-\spellnotes If an \spell{arcane mark} is placed on a living being, normal wear gradually causes the effect to fade in about a month. Arcane mark must be cast on an object prior to casting \spell{instant summons} on the same object.
+\spellspecial When you learn this ritual, choose a personal rune or mark. It can consist of no more than six characters, and must fit within one square foot.
+\begin{spelltarget}{One creature or object}
+    \spelleffect Your personal rune or mark is written on the target. The target is not harmed by the writing. You can choose whether the writing will be visible or invisible.
+\end{spelltarget}
+\spellnotes If an \spell{arcane mark} is placed on a creature, normal wear gradually causes the effect to fade in about a month. You must place your mark on an object before \spell{instant summons} can be cast on it.
 
-\spelleffect 
 \spellsection{Atonement}{5}
 \spellinfo{Evocation (Channeling)}{Divine, Nature}
 \spelltime{1 hour}
-\spelltwocol{\spelltgt{Living creature touched}}{\spellrng{Touch}}
-\spelldur{Instantaneous}
+\spellrng{Touch}
 \spellsr{Yes (Will)}
-\spelleffect This ritual removes the burden of evil acts or misdeeds from the subject. The creature seeking atonement must be truly repentant and desirous of setting right its misdeeds. If the atoning creature committed the evil act unwittingly or under some form of compulsion, \ritual{atonement} operates normally at no cost to you. However, in the case of a creature atoning for deliberate misdeeds and acts of a knowing and willful nature, you must intercede with your deity (requiring you to burn 1,000 gp in offerings) in order to expunge the subject's burden. Many casters first assign a subject of this sort a quest (see \ritual{geas/quest}) or similar penance to determine whether the creature is truly contrite before casting the \ritual{atonement} ritual on its behalf.
-\par \ritual{Atonement} may be cast for one of several purposes, depending on the version selected.
-\par \subspell{Reverse Magical Alignment Change} If a creature has had its alignment magically changed, atonement returns its alignment to its original status at no cost in experience points.
-\par \subspell{Restore Class} A paladin who has lost her class features due to committing an evil act may have her paladinhood restored to her by this ritual.
-\par \subspell{Restore Cleric or Druid Spell Powers} A cleric or druid who has lost the ability to cast spells by incurring the anger of his or her deity may regain that ability by seeking \ritual{atonement} from another cleric of the same deity or another druid. If the transgression was intentional, the casting cleric must burn 1,000 gp in rare incense and offerings for his intercession. If the transgression was unintentional, no such offering must be made.
-\par \subspell{Redemption or Temptation} You may cast this ritual upon a creature of an opposing alignment in order to offer it a chance to change its alignment to match yours. The prospective subject must be present for the entire casting process. Upon completion of the ritual, the subject freely chooses whether it retains its original alignment or acquiesces to your offer and changes to your alignment. No duress, compulsion, or magical influence can force the subject to take advantage of the opportunity offered if it is unwilling to abandon its old alignment. This use of the ritual does not work on outsiders or any creature incapable of changing its alignment naturally.
-\par Though the ritual description refers to evil acts, atonement can also be used on any creature that has performed acts against its alignment, whether those acts are evil, good, chaotic, or lawful.
-\spellnotes \par \subspell{Note} Normally, changing alignment is up to the player. This use of atonement simply offers a believable way for a character to change his or her alignment drastically, suddenly, and definitively.
-\spellmat{When cast for the benefit of a creature whose guilt was the result of deliberate acts, 1,000 gp in rare incense and offerings must be burned.}
+\begin{spelltarget}{One creature}
+    \spelleffect If the target has been punished for a significant transgression against its alignment, deity, or organization, this ritual can undo that punishment. The exact effects of this atonement depend on the nature of the punishment the creature is suffering.
+
+    The cost of the ritual depends on the circumstances of the act that provoked the punishment. If the creature's act was unintentional, or under magical influence, no material components are required. If the creature's act was intentional, but the creature seeks atonement intentionally, the normal cost must be paid. If the creature's act was intentional, and the creature does not seek atonement willingly, the material component cost is doubled.
+\end{spelltarget}
 
 \spellsection{Augury}{2}
 \spellinfo{Divination (Knowledge)}{Divine}
 \spelltime{1 minute}
-\spelltwocol{\spelltgt{You}}{\spellrng{Personal}}
-\spelldur{Instantaneous}
+\begin{spelltarget}{You}
 \spelleffect An \ritual{augury} can tell you whether a particular action will bring good or bad results for you in the immediate future.
 \par The base chance for receiving a meaningful reply is 70\% \add 1\% per caster level; this roll is made secretly. A question may be so straightforward that a successful result is automatic, or so vague as to have no chance of success. If the augury succeeds, you get one of four results:
 \begin{itemize}
@@ -137,7 +139,6 @@ Once destroyed, an undead skeleton or zombie can never be animated again, even i
 \spellinfo{Transmutation (Augment, Imbuement)}{Nature}
 \spelltime{24 hours}
 \spelltwocol{\spelltgt{Animal or tree touched}}{\spellrng{Touch}}
-\spelldur{Instantaneous}
 \spellsr{Yes (Will)}
 \spellattack{Will negates}
 \spelleffect You awaken a tree or animal to humanlike sentience.
@@ -151,7 +152,6 @@ Once destroyed, an undead skeleton or zombie can never be animated again, even i
 \spellinfo{Evocation (Channeling) [Good]}{Divine}
 \spelltime{1 minute}
 \spelltwocol{\spelltgt{Water touched}}{\spellrng{Touch}}
-\spelldur{Instantaneous}
 \spellsr{Yes (object)}
 \spellattack{Will negates (object)}
 \spelleffect This ritual imbues a flask (1 pint) of water with holy power, turning it into holy water. Larger bodies of water can be made holy by performing this ritual multiple times.
@@ -161,7 +161,6 @@ Once destroyed, an undead skeleton or zombie can never be animated again, even i
 \spellinfo{Abjuration (Negation) [Magic]}{Arcane, Divine}
 \spelltime{1 minute}
 \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
-\spelldur{Instantaneous}
 \spellattack{See text}
 \spelleffect This ritual frees the subject from enchantments, transmutations, and curses. \ritual{Break enchantment} can reverse even an instantaneous effect. For each such effect, you make a caster level check (1d20 \add caster level) against a DC of 11 \add caster level of the effect. Success means that the creature is free of the spell, curse, or effect. For a cursed magic item, the DC is 25.
 \par If the spell is one that cannot be dispelled by \ritual{dispel magic}, \ritual{break enchantment} works only if that spell is 5th level or lower.
@@ -176,7 +175,6 @@ Once destroyed, an undead skeleton or zombie can never be animated again, even i
 \spellsection{Clone}{7}
 \spellinfo{Conjuration/Necromancy (Creation, Soul)}{Arcane}
 \spelltwocol{\spelltime{10 minutes}}{\spellrng{Touch}}
-\spelldur{Instantaneous}
 \spelleffect This ritual makes an inert duplicate of a creature. If the original individual has been slain, its soul immediately transfers to the clone, creating a replacement (provided that the soul is free and willing to return; see Bringing Back the Dead, page \pageref{Bringing Back the Dead}). The original's physical remains, should they still exist, become inert and cannot thereafter be restored to life. If the original creature has reached the end of its natural life span (that is, it has died of natural causes), any cloning attempt fails.
 \par To create the duplicate, you must have a piece of flesh (not hair, nails, scales, or the like) with a volume of at least 1 cubic inch that was taken from the original creature's living body. The piece of flesh need not be fresh, but it must be kept from rotting. Once the ritual is cast, the duplicate must be grown in a laboratory for 2d4 months.
 \par When the clone is completed, the original's soul enters it immediately, if that creature is already dead and willing. The clone is physically identical with the original and possesses the same personality and memories as the original. In other respects, treat the clone as if it were the original character raised from the dead. If Constitution drain would give the clone a Constitution score of 0, the ritual fails.
@@ -198,7 +196,6 @@ Once destroyed, an undead skeleton or zombie can never be animated again, even i
 \spellinfo{Divination (Knowledge)}{Nature}
 \spelltime{10 minutes}
 \spelltwocol{\spelltgt{You}}{\spellrng{Personal}}
-\spelldur{Instantaneous}
 \spelleffect You instantly gain knowledge of as many as three facts from among the following subjects: the ground or terrain, plants, minerals, bodies of water, people, general animal population, presence of woodland creatures, presence of powerful unnatural creatures, or even the general state of the natural setting.
 \par In outdoor settings, the ritual operates in a 10 mile radius. In natural underground settings -- caves, caverns, and the like -- the radius is limited to 1,000 feet. The ritual does not function where nature has been replaced by construction or settlement, such as in dungeons and towns.
 
@@ -234,7 +231,6 @@ Once destroyed, an undead skeleton or zombie can never be animated again, even i
 \spellinfo{Necromancy (Flesh)}{Arcane, Divine, Nature}
 \spelltime{10 minutes}
 \spelltwocol{\spelltgt{One living creature}}{\spellrng{10 miles; see text}}
-\spelldur{Instantaneous}
 \spellsr{Yes (Fortitude)}
 \spellattack{Fortitude negates}
 \spelleffect The subject contracts a disease selected from the table below, which strikes immediately (no incubation period). The DC for both the initial and subsequent saving throws is equal to this spell's save DC.  
@@ -290,7 +286,6 @@ The subject must be within 10 miles, and you must have fresh flesh or blood that
 \spelldesc{You create water to ease the thirst of you and your companions.}
 \spellinfo{Conjuration (Creation) [Water]}{Divine}
 \spelltwocol{\spelltime{1 minute}}{\spellrng{\rngclose}}
-\spelldur{Instantaneous}
 \spelleffect This ritual generates 2 gallons/level of wholesome, drinkable water, just like clean rain water. Water can be created in an area as small as will actually contain the liquid, or in an area three times as large -- possibly creating a downpour or filling many small receptacles.
 \spellnotes Conjuration spells can't create substances or objects within a creature. Water weighs about 8 pounds per gallon. One cubic foot of water contains roughly 8 gallons and weighs about 60 pounds.
 
@@ -310,7 +305,6 @@ The subject must be within 10 miles, and you must have fresh flesh or blood that
 \spellinfo{Necromancy (Soul, Vitalism) [Evil, Negative]}{Arcane, Divine}
 \spelltime{1 hour}
 \spelltwocol{\spelltgt{One corpse}}{\spellrng{\rngclose}}
-\spelldur{Instantaneous}
 \spelleffect A much more potent ritual than \ritual{animate dead}, this evil ritual allows you to create more powerful sorts of undead: ghouls, ghasts, mummies, and mohrgs. The type or types of undead you can create is based on your caster level, as shown on the table below.
 \begin{dtable}
     \begin{tabularx}{\columnwidth}{*{2}{>{\lcol}X}}
@@ -329,7 +323,6 @@ The subject must be within 10 miles, and you must have fresh flesh or blood that
 \spellinfo{Evocation (Channeling) [Evil]}{Divine}
 \spelltime{1 minute}
 \spelltwocol{\spelltgt{Flask of water touched}}{\spellrng{Touch}}
-\spelldur{Instantaneous}
 \spellsr{Yes (Will)}
 \spellattack{Will negates (object)}
 \spelleffect This ritual imbues a flask (1 pint) of water with unholy power, turning it into unholy water.
@@ -387,7 +380,6 @@ Normal lights (torches, candles, lanterns, and so forth) are incapable of bright
 \spellinfo{Divination (Knowledge)}{Arcane, Divine, Nature}
 \spelltime{10 minutes}
 \spelltwocol{\spelltgt{One creature or object}}{\spellrng{Unlimited}}
-\spelldur{Instantaneous}
 \spelleffect This ritual reveals the name of a chosen creature or object's location (place, name, business name, building name, or the like), community, county (or similar political division), country, continent, and the plane of existence where the target lies. \spell{Discern location} circumvents normal means of protection from scrying or location; nothing short of a \spell{mind blank} spell or the direct intervention of a deity prevents you from learning the information.
 \par To find a creature with the ritual, you must have seen the creature or have some item that once belonged to it. To find an object, you must have touched it at least once.
 
@@ -405,7 +397,6 @@ Normal lights (torches, candles, lanterns, and so forth) are incapable of bright
 \spellinfo{Divination (Knowledge)}{Divine}
 \spelltime{10 minutes}
 \spelltwocol{\spelltgt{You}}{\spellrng{Personal}}
-\spelldur{Instantaneous}
 \spelleffect Similar to \spell{augury} but more powerful, a \spell{divination} spell can provide you with a useful piece of advice in reply to a question concerning a specific goal, event, or activity that is to occur within one week. The advice can be as simple as a short phrase, or it might take the form of a cryptic rhyme or omen. If your party doesn't act on the information, the conditions may change so that the information is no longer useful. The base chance for a correct divination is 70\% \add 1\% per caster level. If the dice roll fails, you know the spell failed, unless specific magic yielding false information is at work.
 \spellnotes \par As with \spell{augury}, multiple divinations about the same topic by the same caster use the same dice result as the first divination spell and yield the same answer each time.
 
@@ -424,7 +415,6 @@ Normal lights (torches, candles, lanterns, and so forth) are incapable of bright
 \spellinfo{Abjuration (Negation)}{Arcane, Divine}
 \spelltime{1 minute}
 \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed or see text}}
-\spelldur{Instantaneous}
 \spellsr{Yes (Will)}
 \spelleffect The subject is freed from all spells and effects that restrict its actions, including binding, charms, entangle, daze, domination, grappling, imprisonment, \spell{maze}, nausea, paralysis, petrification, pinning, sleep, slow, stun, \spell{temporal stasis}, and \spell{web}. To free a creature from \spell{imprisonment} or \spell{maze}, you must know its name and background, and you must cast this spell at the spot where it was entombed or banished into the maze.
 
@@ -441,7 +431,6 @@ Normal lights (torches, candles, lanterns, and so forth) are incapable of bright
 \spellinfo{Transmutation (Alteration)}{Arcane}
 \spelltime{1 minute}
 \spelltwocol{\spelltgt{One scroll or two pages}}{\spellrng{Touch}}
-\spelldur{Instantaneous}
 \spellattack{See text}
 \spelleffect This ritual removes writings of either magical or mundane nature from a scroll or from one or two pages of paper, parchment, or similar surfaces. Nonmagical writing is automatically erased. To erase magical writing, you must succeed on a caster level check against a DC of 11 \add the caster level of the magic. 
 \spellnotes With this spell, you can remove \spell{explosive runes}, a \spell{glyph of warding}, a \spell{sepia snake sigil}, or an \spell{arcane mark}, but not \spell{illusory script} or a \spellindirect{symbol of death}{symbol} spell. This ritual grants no special protection against activating such traps. If you fail to erase \spell{explosive runes}, a \spell{glyph of warding}, or a \spell{sepia snake sigil}, you accidentally activate that writing instead.
@@ -463,7 +452,6 @@ Normal lights (torches, candles, lanterns, and so forth) are incapable of bright
 \spellinfo{Transmutation (Alteration)}{Arcane, Nature}
 \spelltime{See text}
 \spelltwocol{\spelltgt{Up to 100 cu. ft.; see text}}{\spellrng{\rngclose}}
-\spelldur{Instantaneous}
 \spelleffect You convert material of one sort into a product that is of the same material. Creatures or magic items cannot be created or transmuted by the fabricate spell. The quality of items made by this spell is commensurate with the quality of material used as the basis for the new fabrication. If you work with a mineral, the target is reduced to 10 cubic feet instead of 100 cubic feet.
 \par You must make an appropriate Craft check to fabricate articles requiring a high degree of craftsmanship, such as armor, or an appropriate Engineering check to fabricate objects requiring complex engineering, such as a ballista.
 \par Casting requires 1 minute per 10 cubic feet (or 1 cubic foot) of material to be affected by the spell.
@@ -698,7 +686,6 @@ This spell feeds a number of Medium or smaller creatures equal to your caster le
 \spellinfo{Transmutation (Alteration)}{Nature}
 \spelltime{1 minute/lb. created}
 \spelltwocol{\spelltgt{One wooden object weighing up to 50 pounds}}{\spellrng{Touch}}
-\spelldur{Instantaneous}
 \spelleffect This ritual transforms the object into ironwood. While remaining natural wood in almost every way, ironwood is as strong, heavy, and resistant to fire as steel. Spells that affect metal or iron do not function on ironwood. Spells that affect wood do affect ironwood, although ironwood does not burn.
 \spellnotes By performing this ritual multiple times in succession, you may transform wooden objects too heavy to be affected by a single casting of the ritual. Ironwood armor and weapons created through this spell are as durable as their normal steel counterparts, and are freely usable by druids.
 
@@ -803,7 +790,6 @@ Divination (scrying) spells cannot perceive anything within the area, and those 
 \spellinfo{Transmutation (Alteration)}{Arcane, Divine, Nature}
 \spelltime{1 minute}
 \spelltwocol{\spelltgt{One object of up to 1 lb.}}{\spellrng{Touch}}
-\spelldur{Instantaneous}
 \spellsr{Yes (Will)}
 \spelleffect Mending repairs small breaks or tears in objects (but not warps, such as might be caused by a \spell{warp wood} spell). It will weld broken metallic objects such as a ring, a chain link, a medallion, or a slender dagger, providing but one break exists.
 \par Ceramic or wooden objects with multiple breaks can be invisibly rejoined to be as strong as new. A hole in a leather sack or a wineskin is completely healed over by \spell{mending}. The spell can repair items which are magical, but the item's magical abilities are not restored. 
@@ -866,7 +852,6 @@ Divination (scrying) spells cannot perceive anything within the area, and those 
 \spellinfo{Transmutation (Alteration) [Earth]}{Nature}
 \spelltime{See text}
 \spelltwocol{\spellzone{Ten 10-foot cubes, no more than 10 feet deep}}{\spellrng{\rnglong}}
-\spelldur{Instantaneous}
 \spelleffect This ritual moves dirt (clay, loam, sand), possibly collapsing embankments, moving hillocks, shifting dunes, and so forth.
 \par However, in no event can rock formations be collapsed or moved. The area to be affected determines the casting time. For every 150-foot square (up to 10 feet deep), casting takes 10 minutes. The maximum area, 750 feet by 750 feet, takes 4 hours and 10 minutes to move.
 \par This spell does not violently break the surface of the ground. Instead, it creates wavelike crests and troughs, with the earth reacting with glacierlike fluidity until the desired result is achieved. Trees, structures, rock formations, and such are mostly unaffected except for changes in elevation and relative topography.
@@ -885,7 +870,6 @@ Divination (scrying) spells cannot perceive anything within the area, and those 
 \spellinfo{Divination/Illusion (Commnication, Phantasm)}{Arcane, Divine, Nature}
 \spelltime{10 minutes}
 \spelltwocol{\spelltgt{One living creature}}{\spellrng{Unlimited}}
-\spelldur{Instantaneous}
 \spellsr{Yes (Will)}
 \spellattack{Will negates; see text}
 \spelleffect You send a hideous and unsettling phantasmal vision to a specific creature that you name or otherwise specifically designate.
@@ -1065,7 +1049,6 @@ Additionally, the following spells can be cast upon objects or areas only and re
 \spellinfo{Abjuration/Conjuration (Translocation) [Planar] [see text]}{Arcane}
 \spelltime{10 minutes or 2 hours}
 \spelltwocol{\spelltgt{One elemental or outsider of 6th level or lower}}{\spellrng{\rngclose; see text}}
-\spelldur{Instantaneous}
 \spellsr{No and Yes; see text}
 \spellattack{Will negates}
 \spelleffect Performing this ritual attempts a dangerous act: to lure a creature from another plane to a specifically prepared trap. The called creature is held in the trap until it agrees to perform one service in return for its freedom.
@@ -1081,7 +1064,6 @@ Additionally, the following spells can be cast upon objects or areas only and re
 \spellinfo{Conjuration (Translocation) [Planar]}{Arcane, Divine}
 \spelltime{1 minute}
 \spelltwocol{\spelltgt{Creature touched, or up to eight willing creatures joining hands}}{\spellrng{Touch}}
-\spelldur{Instantaneous}
 \spellsr{Yes (Will)}
 \spellattack{Will negates}
 \spelleffect You move yourself or some other creature to another plane of existence or alternate dimension. If several willing persons link hands in a circle, as many as eight can be affected by the plane shift at the same time. Precise accuracy as to a particular arrival location on the intended plane is nigh impossible, and you typically appear 5 to 500 miles (5d\%) from your intended destination. From the Material Plane, you can reach any adjacent plane: the Ethereal Plane, the Plane of Shadow, or the Astral Plane. The Astral Plane connects to every plane, but transit from other planes is usually more limited.
@@ -1123,7 +1105,6 @@ You set the triggering condition when casting the spell. The event that triggers
 \spellsection{Purify Food and Drink}{1}
 \spellinfo{Transmutation (Alteration)}{Divine, Nature}
 \spelltwocol{\spelltgt{5 cu. ft. of contaminated food and water}}{\spellrng{Touch}}
-\spelldur{Instantaneous}
 \spellsr{Yes (Fortitude)}
 \spellattack{Fortitude negates (object)}
 \spelleffect This spell makes spoiled, rotten, poisonous, or otherwise contaminated food and water pure and suitable for eating and drinking. This spell does not prevent subsequent natural decay or spoilage. Unholy water and similar food and drink of significance is spoiled by \spell{purify food and drink}, but the spell has no effect on creatures of any type or magical liquids, such as potions.
@@ -1133,7 +1114,6 @@ You set the triggering condition when casting the spell. The event that triggers
 \spellinfo{Necromancy (Life, Soul) [Healing]}{Divine}
 \spelltime{1 minute}
 \spelltwocol{\spelltgt{Dead creature touched}}{\spellrng{Touch}}
-\spelldur{Instantaneous}
 \spellattack{None; see text}
 \spelleffect You restore life to a creature that has been dead for no longer than thirty days. The subject's soul must be free and willing to return. If the subject's soul is not willing to return, the spell does not work; therefore, a subject that wants to return receives no saving throw.
 \par Coming back from the dead is an ordeal. The subject gains a negative level. If the subject was 1st level when it died, it takes 2 points of Constitution drain instead. This negative level or Constitution drain lasts for one month, or until the subject next gains a level. A character who died with spells prepared has a 50\% chance of losing any given spell upon being raised, in addition to losing spells for losing a level. A spellcasting creature that doesn't prepare spells (such as a sorcerer) has a 50\% chance of losing any given unused spell slot as if it had been used to cast a spell, in addition to losing spell slots for losing a level.
@@ -1152,7 +1132,6 @@ You set the triggering condition when casting the spell. The event that triggers
 \spellinfo{Conjuration/Necromancy (Creation, Soul)}{Nature}
 \spelltime{1 hour}
 \spelltwocol{\spelltgt{Dead creature touched}}{\spellrng{Touch}}
-\spelldur{Instantaneous}
 \spellattack{None; see text}
 \spelleffect With this spell, you bring back a dead creature in another body, provided that its death occurred no more than one week before the casting of the spell and the subject's soul is free and willing to return. If the subject's soul is not willing to return, the spell does not work; therefore, a subject that wants to return receives no saving throw.
 \par Since the dead creature is returning in a new body, all physical ills and afflictions are repaired. The condition of the remains and the cause of death, except death from old age, is not a factor. So long as some small portion of the creature's body still exists, it can be reincarnated, but the portion receiving the spell must have been part of the creature's body at the time of death. The magic of the spell creates an entirely new body for the soul to inhabit from the natural elements at hand. The body ages to match the age of the original creature over the course of the ritual.
@@ -1188,7 +1167,6 @@ You set the triggering condition when casting the spell. The event that triggers
 \spellinfo{Necromancy (Life) [Healing, Positive]}{Divine, Nature}
 \spelltime{1 minute}
 \spelltwocol{\spelltgt{Creature touched}}{\spellrng{Touch}}
-\spelldur{Instantaneous}
 \spellsr{Yes (Fortitude)}
 \spelleffect This ritual cures blindness or deafness (your choice), whether the effect is normal or magical in nature. The spell does not restore ears or eyes that have been lost, but it repairs them if they are damaged.
 
@@ -1196,7 +1174,6 @@ You set the triggering condition when casting the spell. The event that triggers
 \spellinfo{Necromancy}{Arcane, Divine, Nature}
 \spelltime{1 minute}
 \spelltwocol{\spelltgt{Creature or item touched}}{\spellrng{Touch}}
-\spelldur{Instantaneous}
 \spellsr{Yes (Will)}
 \spelleffect This ritual removes all curses on an object or a creature. If an item is inherently cursed, the spell does not remove that curse, though it typically enables the creature afflicted with any such cursed item to remove and get rid of it. Certain special curses may not be removed by this spell or may only be removed by a caster of a certain level or higher.
 
@@ -1204,7 +1181,6 @@ You set the triggering condition when casting the spell. The event that triggers
 \spellinfo{Transmutation (Alteration) [Healing]}{Divine, Nature}
 \spelltime{1 minute}
 \spelltwocol{\spelltgt{Creature touched}}{\spellrng{Touch}}
-\spelldur{Instantaneous}
 \spellsr{Yes (Fortitude)}
 \spelleffect This ritual cures all diseases that the subject is suffering from. The spell also kills parasites, including green slime and others. Certain special diseases may not be cured by this spell or may be cured only by a caster of a certain level or higher.
 \spellnotes This ritual does not prevent reinfection after a new exposure to the same disease at a later date.
@@ -1226,7 +1202,6 @@ You set the triggering condition when casting the spell. The event that triggers
 \spellinfo{Necromancy (Life) [Healing, Positive]}{Divine}
 \spelltime{1 minute}
 \spelltwocol{\spelltgt{Creature touched}}{\spellrng{Touch}}
-\spelldur{Instantaneous}
 \spellsr{Yes (Will)}
 \spelleffect This ritual dispels any magical effects reducing one of the subject's attribute scores or cures up to 5 points of temporary ability damage to one of the subject's attribute scores. It also eliminates any fatigue or exhaustion suffered by the character.
 \spellnotes This ritual does not restore permanent ability drain.
@@ -1402,7 +1377,6 @@ An \spell{erase} spell destroys the entire page of text.
 \spellinfo{Transmutation (Alteration)}{Arcane, Divine, Nature}
 \spelltime{10 minutes}
 \spelltwocol{\spelltgt{Nonmagical wood touched, affecting up to 10 cubic feet}}{\spellrng{Touch}}
-\spelldur{Instantaneous}
 \spellsr{Yes (Fortitude)}
 \spellattack{No}
 \spelleffect As part of performing this ritual, you make a Craft (wood) check to change the shape of an existing piece of wood, or part of a larger piece of wood, to suit your purposes. You gain a \plus10 enhancement bonus on the check, and you need no additional tools.
@@ -1528,7 +1502,6 @@ An \spell{erase} spell destroys the entire page of text.
 \spellinfo{Conjuration (Translocation) [Teleportation]}{Arcane}
 \spelltime{1 minute; see text}
 \spelltwocol{\spelltgts{You and up to four touched Medium creatures; see text}}{\spellrng{Personal and touch}}
-\spelldur{Instantaneous}
 \spellsr{Yes (Will)}
 \spellattack{None and Will negates (object)}
 \spelleffect This spell instantly transports you and the subjects to a designated destination, which may be as distant as 100 miles away. Each creature can bring along objects whose weight doesn't exceed the creature's maximum load. All creatures to be transported must be in contact with one another, and at least one of those creatures must be in contact with you. After completing the spell, you and anyone bring with you must skip their next actions as they adjust to their new surroundings.
