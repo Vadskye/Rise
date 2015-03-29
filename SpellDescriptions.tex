@@ -180,7 +180,7 @@ When you make a weapon good, evil, lawful, or chaotic, \spell{align weapon} is a
 \spellemanation{\areasmall radius centered on you}
 \spelldur{\durlong \dismissable}
 \spellline
-\spelleffect All spells, spell-like abilities, supernatural abilities, and magic items fail to function in the area of this spell. They cannot be activated from within the field, and any existing effects brought into or cast into the area are suppressed. Time spent within an \spell{antimagic field} counts against a suppressed spell's duration.
+\spelleffect All spells, spell-like abilities, supernatural abilities, and magic items fail to function in the area. They cannot be activated from within the field, and any existing effects brought into or cast into the area are suppressed. Time spent within an \spell{antimagic field} counts against a suppressed spell's duration.
 \par Summoned creatures of any type and incorporeal undead disappear if they enter an \spell{antimagic field}. They reappear in the same spot once the field goes away. (The effects of instantaneous conjurations, such as \spell{create water}, are not affected by an \spell{antimagic field} because the conjuration itself is no longer in effect, only its result.)
 \par Creatures within an \spell{antimagic field} cannot dismiss spells. However, you can dismiss your own antimagic field.
 \spellnotes A normal creature can enter the area, as can normal missiles. Furthermore, while a magic sword does not function magically in the area, it is still a sword. The spell has no effect on golems and other constructs that are imbued with magic during their creation process and are thereafter self-supporting (unless they have been summoned, in which case they are treated like any other summoned creatures). Elementals, corporeal undead, and outsiders are likewise unaffected unless summoned.
@@ -2356,12 +2356,12 @@ Any missiles you do not explicitly target will automatically strike a living cre
 \spellsection{Magic Circle against Alignment}{5}
 \spellinfo{Abjur (Interdiction) [Barrier, Good]}{Arcane, Chaos, Divine, Evil, Good, Law}
 \spellrng{Touch}
+\spelltgt{One creature}[Primary]
+\spellemanation{\areasmall radius from the primary target}
 \spelldur{\durshort \dismissable}
 \spellsr{Yes (Will)}
 \spellspecial When you cast this spell, choose an alignment (chaotic, good, lawful, or evil).
-\begin{spelltarget}[Primary]{One creature}
-    \spellemanation{\areasmall radius from the primary target}
-\end{spelltarget}
+\spellline
 \spelleffect Summoned creatures which have the chosen alignment cannot enter the area.
 \begin{spelltargets}*[Secondary]{All creatures in the area}
     \spelleffect The target is protected from the chosen alignment, as \spell{protection from alignment}.
