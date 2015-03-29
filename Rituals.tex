@@ -7,41 +7,44 @@
 \spelltime{1 minute}
 \spelltwocol{\spellzone{\arealarge radius}}{\spellrng{\rngclose}}
 \spelldur{\durext \dismissable}
-\spellsr{No}
-\spellattack{None}
-\spelleffect This ritual sounds a mental or audible alarm each time a creature of Tiny or larger size enters the warded area. If you set a password as you cast the spell, a creature that speaks the password before entering the area does not trigger the alarm. You decide at the time of casting whether the alarm will be mental or audible.
-\par \subspell{Mental Alarm} A mental alarm alerts you (and only you) so long as you remain within 1 mile of the warded area. You note a single mental ``ping'' that awakens you from normal sleep but does not otherwise disturb concentration. A \ritual{silence} spell has no effect on a mental alarm.
-\par \subspell{Audible Alarm} An audible alarm produces the sound of a hand bell. It is typically clearly audible up to 100 feet away. The sound lasts for 1 round. 
-\spellnotes A \spell{silence} spell or similar effect can prevent an audible alarm from being heard. Ethereal or astral creatures do not trigger the alarm. This ritual can be made permanent with a \spell{permanency} ritual.
+\spellspecial When you perform this ritual, you choose whether to create an audible or mental alarm. You may also designate a password.
+\spellline
+\begin{spelltrigger}{A creature (Tiny or larger) enters the area without speaking the password}
+    \spelleffect[Audible Alarm] The sound of a hand bell rings in the area. It is typically clearly identifiable up to 100 feet away, and audible up to 500 feet away.
+    \spelleffect[Mental Alarm] You receive a single mental ``ping''. This awakens you from normal sleep but does not otherwise disturb concentration.
+\end{spelltrigger}
+\spellnotes A \spell{silence} spell or similar effect can prevent an audible alarm from being heard. This ritual can be made permanent with a \spell{permanency} ritual.
 
 \spellsection{Alter Self}{2}
 \spellinfo{Transmutation (Polymorph)}{Arcane}
 \spelltime{1 minute}
-\spelltwocol{\spelltgt{You}}{\spellrng{Personal}}
 \spelldur{\durlong}
-\spellsr{Yes (Fortitude)}
-\spellattack{Fortitude negates}
-\spelleffect As part of performing this ritual, you make a Disguise check. You gain a \plus10 enhancement bonus on the check, and you take no penalties for emulating a different gender or race.
+\spellsr{Yes (Will)}
+\begin{spelltarget}{You}
+    \spelleffect When you perform this ritual, you make a Disguise check to disguise yourself. You gain a \plus10 enhancement bonus on the check, and you take no penalties for emulating a different gender or race.
+\end{spelltarget}
 
 \spellsection{Analyze Dweomer}{5}
 \spelldesc{You infallibly discern the magical properties of a magic item.}
 \spellinfo{Divination (Knowledge)}{Arcane}
 \spelltime{1 minute}
-\spelleffect This ritual functions like \spell{identify}, except that it also reveals the exact properties of cursed items and artifacts.
+\spellrng{Touch}
+\begin{spelltarget}{One object}
+    \spelleffect You learn the target's magic properties, as \spell{identify}. This ritual reveals the exact properties of cursed items and artifacts.
+\end{spelltarget}
 
 \spellsection{Animate Dead}{3}
 \spellinfo{Necromancy (Soul, Vitalism) [Evil, Negative]}{Arcane, Divine}
 \spelltime{1 minute}
-\spelltwocol{\spelltgts{One or more corpses touched}}{\spellrng{Touch}}
-\spelldur{Instantaneous}
-\spellsr{No}
-\spellattack{None}
-\spelleffect This ritual turns the bones or bodies of recently dead creatures into undead skeletons or zombies by binding a fragment of their souls to the corpses. The undead so created follow your spoken commands.
-\par The undead can follow you, or they can remain in an area and attack any creature (or just a specific kind of creature) entering the place. They remain animated until they are destroyed.
-\par Regardless of the type of undead you create with this ritual, you can't create more levels of undead than twice your caster level with a single casting of \ritual{animate dead}.
-\par The undead you create remain under your control indefinitely. No matter how many times you use this ritual, however, you can control only 4 levels worth of undead creatures per caster level. If you exceed this number, all the newly created creatures fall under your control, and any excess undead from previous castings become uncontrolled. (You choose which creatures are released.) If you are a cleric, any undead you might command by virtue of your power to command or rebuke undead do not count toward the limit.
-\par \subspell{Skeletons} A skeleton can be created only from a mostly intact corpse or skeleton. The corpse must have bones. If a skeleton is made from a corpse, the flesh falls off the bones.
-\par \subspell{Zombies} A zombie can be created only from a mostly intact corpse. The corpse must be that of a creature with a true anatomy.
+\spellrng{Touch}
+\begin{spelltarget}{One or more corpses}
+    \spelleffect This ritual turns the bones or bodies of recently dead creatures into undead skeletons or zombies by binding a fragment of their souls to the corpses. The undead so created follow your spoken commands.
+    \par The undead can follow you, or they can remain in an area and attack any creature (or just a specific kind of creature) entering the place. They remain animated until they are destroyed.
+    \par Regardless of the type of undead you create with this ritual, you can't create more levels of undead than twice your caster level with a single casting of \ritual{animate dead}.
+    \par The undead you create remain under your control indefinitely. No matter how many times you use this ritual, however, you can control only 4 levels worth of undead creatures per caster level. If you exceed this number, all the newly created creatures fall under your control, and any excess undead from previous castings become uncontrolled. (You choose which creatures are released.) If you are a cleric, any undead you might command by virtue of your power to command or rebuke undead do not count toward the limit.
+    \par \subspell{Skeletons} A skeleton can be created only from a mostly intact corpse or skeleton. The corpse must have bones. If a skeleton is made from a corpse, the flesh falls off the bones.
+    \par \subspell{Zombies} A zombie can be created only from a mostly intact corpse. The corpse must be that of a creature with a true anatomy.
+\end{spelltarget}
 \spellnotes A destroyed skeleton or zombie can't be animated again.
 \spellmat{You must place a black onyx gem worth at least 10 gp per level of the undead into the mouth or eye socket of each corpse you intend to animate. The magic of the ritual turns these gems into worthless, burned-out shells.}
 
@@ -49,24 +52,27 @@
 \spelldesc{You compel a Tiny animal to go to a spot you designate.}
 \spellinfo{Enchantment (Compulsion) [Mind-Affecting]}{Arcane, Nature}
 \spelltime{1 minute; see text}
-\spelltwocol{\spelltgt{One Tiny animal}}{\spellrng{\rnglong}}
+\spellrng{\rnglong}
 \spelldur{One week}
 \spellsr{Yes (Will)}
-\spellattack{None; see text}
-\spelleffect As soon as you begin performing this ritual, the animal approaches you and awaits your bidding. You can mentally impress on the animal a certain place well known to you or an obvious landmark. The directions must be simple, because the animal depends on your knowledge and can't find a destination on its own. During the casting of the ritual, you can attach some small item or note to the messenger. The animal then goes to the designated location and waits there, straying only to gather food and water as necessary, until the duration of the ritual expires. During this period of waiting, the messenger allows others to approach it and remove any scroll or token it carries.
+\begin{spelltarget}{One Tiny animal}
+    \spelleffect As soon as you begin performing this ritual, the target animal approaches you and awaits your bidding. You can mentally impress on the animal a certain place well known to you or an obvious landmark. The directions must be simple, because the animal depends on your knowledge and can't find a destination on its own. During the casting of the ritual, you can attach some small item or note to the messenger. The animal then goes to the designated location and waits there, straying only to gather food and water as necessary, until the duration of the ritual expires. During this period of waiting, the messenger allows others to approach it and remove any scroll or token it carries.
+\end{spelltarget}
 \spellnotes The most common use for this ritual is to get an animal to carry a message to your allies. The animal cannot be one tamed or trained by someone else, including such creatures as familiars and animal companions. The intended recipient gains no special ability to communicate with the animal or read any attached message (if it's written in a language he or she doesn't know, for example).
 \spellfocus{Food desirable to the animal}
 
 \spellsection{Antipathy}{9}
 \spellinfo{Enchantment (Emotion) [Mind-Affecting]}{Arcane, Nature}
 \spelltime{1 hour}
-\spelltwocol{\spelltgt{One object or location}}{\spellrng{\rngclose}}
+\spellrng{\rngclose}
 \spellemanation{100 ft. radius centered on the target}
 \spelldur{One week \dismissable}
 \spellsr{Yes (Will)}
 \spellattack{Will partial}
-\spelleffect You cause an object or location to emanate magical vibrations that repel either a specific kind of intelligent creature or creatures of a particular alignment, as defined by you. Creatures of the designated kind or alignment feel an overpowering revulsion while in the area or near the item. The kind of creature to be affected must be named specifically. A creature subtype is not specific enough. Likewise, the specific alignment to be repelled must be named.
-\par An affected creature abandons the area or item, shunning it and never willingly returning to it while the ritual is in effect. A creature that makes a successful saving throw can stay in the area or touch the item, but is vulnerable while doing so.
+\begin{spelltarget}{One object or location}
+    \spelleffect You cause an object or location to emanate magical vibrations that repel either a specific kind of intelligent creature or creatures of a particular alignment, as defined by you. Creatures of the designated kind or alignment feel an overpowering revulsion while in the area or near the item. The kind of creature to be affected must be named specifically. A creature subtype is not specific enough. Likewise, the specific alignment to be repelled must be named.
+    \par An affected creature abandons the area or item, shunning it and never willingly returning to it while the ritual is in effect. A creature that makes a successful saving throw can stay in the area or touch the item, but is vulnerable while doing so.
+\end{spelltarget}
 \spellnotes A vulnerable creature takes a \minus2 penalty to attacks, defenses, and checks.
 
 \spellsection{Arcane Eye}{4}
@@ -627,12 +633,12 @@ The geased creature must follow the given instructions for at least 12 hours a d
 
 \spellsection{Glyph of Warding}{3}
 \spelldesc{You weave a tracery of faintly glowing lines over an object or in the air, forming a warding sigil. When the spell is completed, the glyph and tracery become nearly invisible.}
-\spellinfo{Abjuration (Warding) [Trap}{Divine}
-    \spelltime{10 minutes}
-    \spelltwocol{\spelltgt{One object or location}}{\spellrng{Touch}}
-    \spelllimit{\areamed radius centered on target; see text} 
-    \spelldur{Permanent until discharged \dismissable}
-    \spellsr{Yes (Reflex); see text}
+\spellinfo{Abjuration (Warding) [Trap]}{Divine}
+\spelltime{10 minutes}
+\spelltwocol{\spelltgt{One object or location}}{\spellrng{Touch}}
+\spelllimit{\areamed radius centered on target; see text} 
+\spelldur{Permanent until discharged \dismissable}
+\spellsr{Yes (Reflex); see text}
 \spelldmg{3d6 damage \add d6 per four caster levels after 6th; see text}
 \spellattack{Reflex half; see text}
 \spelleffect \par This powerful inscription harms those who enter, pass, or open the warded area or object. A glyph of warding can guard a bridge or passage, ward a portal, trap a chest or box, and so on. You set the conditions of the ward. The glyph can be triggered by anything within the area that a normal human could observe and react to.
@@ -688,12 +694,11 @@ This spell feeds a number of Medium or smaller creatures equal to your caster le
 \spellsection{Identify}{1}
 \spellinfo{Divination (Knowledge)}{Arcane, Divine}
 \spelltime{1 hour}
-\spelltwocol{\spelltgts{One touched object}}{\spellrng{Touch}}
-\spelldur{Instantaneous}
-\spellsr{No}
-\spellattack{None}
-\spelleffect The spell determines all magic properties of a single magic item, including how to activate those functions (if appropriate), and how many charges are left (if any).
-\spellnotes If used on a cursed item, \ritual{Identify} only reveals the properties the item appears to have, not the properties of the curse. \ritual{Identify} does not function when used on an artifact.
+\spellrng{Touch}
+\begin{spelltarget}{One object}
+    \spelleffect You learn all of the target's magic properties, including how to activate any functions it has.
+\end{spelltarget}
+\spellnotes If used on a cursed item, this ritual only reveals the properties the item appears to have, not the properties of the curse. This ritual does not function when used on an artifact.
 
 \spellsection{Illusory Script}{4}
 \spelldesc{You write a message woven with a hidden magical command, compelling any viewer except the message's intended recipient to obey you.}
@@ -715,12 +720,12 @@ This spell feeds a number of Medium or smaller creatures equal to your caster le
 \spelleffect This spell creates the illusion of a wall, floor, ceiling, or similar surface. The image must fit within a 10 foot square. It appears absolutely real when viewed, but physical objects can pass through it without difficulty. When the spell is used to hide pits, traps, or normal doors, any detection abilities that do not require sight work normally. Touch or a probing search reveals the true nature of the surface, though such measures do not cause the illusion to disappear.
 
 \spellsection{Instant Refuge}{7}
-\spellinfo{Conjuration/Transmutation (Imbuement, Translocation) [Teleportation}{Divine}
-    \spelltime{1 minute}
-    \spelltwocol{\spelltgt{Object touched}}{\spellrng{Touch}}
-    \spelldur{Permanent until discharged}
-    \spellsr{No}
-    \spellattack{None}
+\spellinfo{Conjuration/Transmutation (Imbuement, Translocation) [Teleportation]}{Divine}
+\spelltime{1 minute}
+\spelltwocol{\spelltgt{Object touched}}{\spellrng{Touch}}
+\spelldur{Permanent until discharged}
+\spellsr{No}
+\spellattack{None}
 \spelleffect You imbue an object with the power to instantly transport its possessor to your abode. After the ritual is performed, you must willingly give the object to a creature and at the same time inform the creature of a command word to be spoken when the item is used. To make use of the item, the subject speaks the command word at the same time that it rends or breaks the item (at least a standard action, depending on the object). When this is done, the individual and all objects it is wearing and carrying (to a maximum of the character's heavy load) are instantly transported to your abode. No other creatures are affected.
 
 \spellsection{Instant Retrieval}{7}
@@ -794,16 +799,16 @@ As a swift action, you can suppress or intensify the light, preventing the objec
 \spellsr{No}
 \spellattack{None}
 \spelleffect You conjure up an extradimensional dwelling that has a single entrance on the plane from which the spell was cast. The entry point looks like a faint shimmering in the air that is 4 feet wide and 8 feet high. Only those you designate may enter the mansion, and the portal is shut and made invisible behind you when you enter. You may open it again from your own side at will. Once observers have passed beyond the entrance, they are in a magnificent foyer with numerous chambers beyond. The atmosphere is clean, fresh, and warm.
-    \par You can create any floor plan you desire to the limit of the spell's effect. The place is furnished and contains sufficient foodstuffs to serve a nine-course banquet to a dozen people per caster level. A staff of near-transparent servants (as many as two per caster level), liveried and obedient, wait upon all who enter. The servants function as \spell{unseen servant} spells except that they are visible and can go anywhere in the mansion.
-    \par Since the place can be entered only through its special portal, outside conditions do not affect the mansion, nor do conditions inside it pass to the plane beyond.
+\par You can create any floor plan you desire to the limit of the spell's effect. The place is furnished and contains sufficient foodstuffs to serve a nine-course banquet to a dozen people per caster level. A staff of near-transparent servants (as many as two per caster level), liveried and obedient, wait upon all who enter. The servants function as \spell{unseen servant} spells except that they are visible and can go anywhere in the mansion.
+\par Since the place can be entered only through its special portal, outside conditions do not affect the mansion, nor do conditions inside it pass to the plane beyond.
 
-    \spellsection{Mage's Private Sanctum}{5}
-        \spellinfo{Abjuration (Ward)}{Arcane}
-    \spelltime{10 minutes}
-    \spelltwocol{\spellzone{Up to ten 10-foot cubes}}{\spellrng{\rngclose}}
-    \spelldur{\durext \dismissable}
-    \spellsr{No}
-    \spellattack{None}
+\spellsection{Mage's Private Sanctum}{5}
+\spellinfo{Abjuration (Ward)}{Arcane}
+\spelltime{10 minutes}
+\spelltwocol{\spellzone{Up to ten 10-foot cubes}}{\spellrng{\rngclose}}
+\spelldur{\durext \dismissable}
+\spellsr{No}
+\spellattack{None}
 \spelleffect This spell ensures privacy. Anyone looking into the area from outside sees only a dark, foggy mass. Darkvision cannot penetrate it. No sounds, no matter how loud, can escape the area, so nobody can eavesdrop from outside. Those inside can see out normally.
 
 Divination (scrying) spells cannot perceive anything within the area, and those within are immune to \spell{detect thoughts}. The ward prevents speech between those inside and those outside (because it blocks sound), but it does not prevent other communication, such as a sending or message spell, or telepathic communication, such as that between a wizard and her familiar.
@@ -903,15 +908,15 @@ Divination (scrying) spells cannot perceive anything within the area, and those 
 \spellsr{No}
 \spellattack{None or Will negates; see text}
 \spelleffect As part of performing this ritual, you choose another object within range. For the duration of the ritual, the subject of \spell{misdirection} is detected as if it were the other object. No saving throw is allowed against this effect. Detection spells provide information based on the second object rather than on the actual target of the detection unless the caster of the detection succeeds on a Will save. For instance, you could make yourself detect as a tree if one were within range at casting: not evil, not lying, not magical, neutral in alignment, and so forth.
-    \spellnotes This spell does not affect other types of divination magic (\spell{augury}, \spell{clairaudience/clairvoyance}, and the like).
+\spellnotes This spell does not affect other types of divination magic (\spell{augury}, \spell{clairaudience/clairvoyance}, and the like).
 
-    \spellsection{Modify Memory}{4}
-        \spellinfo{Divination/Enchantment (Knowledge) [Mind-Affecting]}{Arcane}
-    \spelltime{1 minute; see text}
-    \spelltwocol{\spelltgt{One living creature}}{\spellrng{\rngclose}}
-    \spelldur{Permanent}
-    \spellsr{Yes (Will)}
-    \spellattack{Will negates}
+\spellsection{Modify Memory}{4}
+\spellinfo{Divination/Enchantment (Knowledge) [Mind-Affecting]}{Arcane}
+\spelltime{1 minute; see text}
+\spelltwocol{\spelltgt{One living creature}}{\spellrng{\rngclose}}
+\spelldur{Permanent}
+\spellsr{Yes (Will)}
+\spellattack{Will negates}
 \spelleffect You reach into the subject's mind and modify as many as 5 minutes of its memories in one of the following ways.
 \begin{itemize}
     \item Eliminate all memory of an event the subject actually experienced. This can negate the effects of spells like \spell{suggestion} which require specific memories (such as a command given) to function.
@@ -1545,14 +1550,14 @@ An \spell{erase} spell destroys the entire page of text.
 \spellsr{Yes (Fortitude)}
 \spellattack{Fortitude negates}
 \spelleffect This ritual allows you to scribe a potent rune of power upon a surface. When it is triggered, the triggering creature suffers the effects of a \spell{finger of death} spell. It can be set to trigger in response to any visual cue that takes place within \rngclose range of the symbol which can be ``seen'' by the symbol. Darkness does not stop the symbol's sight, but physical obstacles or illusions block it. Once the ritual is performed, the triggering conditions cannot be changed.
-    \par When scribing a \spell{symbol of death}, you can specify a password or phrase. Anyone speaking the password cannot trigger the rune so long as the creature remains within \rngmed range of the rune. If the creature leaves that range and returns later, it must say the password again.
-    \spellnotes The symbol is considered to have a Perception modifier equal to your caster level. Magic traps such as \spell{symbol of death} can be detected with the Perception skill and disabled with the Devices skill. The DC in each case is 25 \add spell level, or 32 for \spell{symbol of death}.
-    \par \spellindirect{read magic}{Read magic} allows you to identify a \spell{symbol of death} with a DC 17 Spellcraft check. Of course, if the symbol of death is set to be triggered by reading it, this will trigger the symbol.
-    \par \spellindirect{dispel magic}{Dispel magic} can remove a \spell{symbol of death}, but an \spell{erase} spell has no effect. Destruction of the surface where a \spell{symbol of death} is inscribed destroys the symbol but also triggers it on the closest creature within \rngclose range of the symbol.
-    \par \spell{Symbol of death} can be made permanent with a \spell{permanency} spell. A permanent \spell{symbol of death} that is disabled becomes inactive for 10 minutes, then can be triggered again as normal.
+\par When scribing a \spell{symbol of death}, you can specify a password or phrase. Anyone speaking the password cannot trigger the rune so long as the creature remains within \rngmed range of the rune. If the creature leaves that range and returns later, it must say the password again.
+\spellnotes The symbol is considered to have a Perception modifier equal to your caster level. Magic traps such as \spell{symbol of death} can be detected with the Perception skill and disabled with the Devices skill. The DC in each case is 25 \add spell level, or 32 for \spell{symbol of death}.
+\par \spellindirect{read magic}{Read magic} allows you to identify a \spell{symbol of death} with a DC 17 Spellcraft check. Of course, if the symbol of death is set to be triggered by reading it, this will trigger the symbol.
+\par \spellindirect{dispel magic}{Dispel magic} can remove a \spell{symbol of death}, but an \spell{erase} spell has no effect. Destruction of the surface where a \spell{symbol of death} is inscribed destroys the symbol but also triggers it on the closest creature within \rngclose range of the symbol.
+\par \spell{Symbol of death} can be made permanent with a \spell{permanency} spell. A permanent \spell{symbol of death} that is disabled becomes inactive for 10 minutes, then can be triggered again as normal.
 
-    \spellsection{Symbol of Destruction}{7}
-        \spellinfo{Abjuration/Necromancy (Flesh, Warding) [Death, Trap]}{Divine}
+\spellsection{Symbol of Destruction}{7}
+\spellinfo{Abjuration/Necromancy (Flesh, Warding) [Death, Trap]}{Divine}
 \spelleffect This spell functions like \spell{symbol of death}, except that the triggering creature instead suffers the effects of the \spell{destruction} spell.
 \spellnotes Magic traps such as \spell{symbol of destruction} can be detected with the Perception skill and disabled with the Devices skill. The DC in each case is 25 \add spell level, or 32 for \spell{symbol of destruction}.
 
