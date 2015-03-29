@@ -13,24 +13,19 @@
 \spelltwocol{\spelltime{Immediate action}}{\spellcmp{Verbal only}}
 \spelldur{1 round}
 \begin{spelltarget}{You}
-    \spelleffect You gain physical damage reduction 10/force. This damage reduction increases by 1 per caster level above 4th.
+    \spelleffect You gain physical damage reduction, reducing the physical damage you take each round by 8 \add 1 per caster level above 4th. If you take force damage, you cannot use your damage reduction for 1 round.
 \end{spelltarget}
-\spellnotes This spell's damage reduction allows the subject to ignore the first 10 physical damage it takes each round. If it is hit by a attack that deals force damage, such as \spell{magic missile}, it cannot use its damage reduction for 1 round.
-
-You can cast this spell in response to an opponent attacking you, before the attack is rolled.
+\spellnotes After casting this spell, you cannot cast it again for 5 rounds. You can cast this spell in response to an opponent attacking you, before the attack is rolled.
 
 \spellsection{Ablative Shield}{1}
 \spelldesc{You instantly encase yourself a shimmering field of magical energy, protecting you from hostile magic.}
 \spellinfo{Abjur (Negation) [Magic]}{Abjur, Magic}
-\spelltime{Immediate action}
-\spellcmp{Verbal only}
+\spelltwocol{\spelltime{Immediate action}}{\spellcmp{Verbal only}}
 \spelldur{1 round}
 \begin{spelltarget}{You}
-    \spelleffect You gain spell damage reduction 5/force. This damage reduction increases by 1 per caster level above 2nd.
+    \spelleffect You gain spell damage reduction, reducing the damage you take each round from spells by 4 \add 1 per caster level above 2nd. If you take force damage, you cannot use your damage reduction for 1 round.
 \end{spelltarget}
-\spellnotes This spell's damage reduction allows the subject to ignore the first 5 damage it takes each round from spells and spell-like abilities. If it is hit by a attack that deals force damage, such as \spell{magic missile}, it cannot use its damage reduction for 1 round.
-
-You can cast this spell in response to an opponent attacking you, before the attack is rolled.
+\spellnotes After casting this spell, you cannot cast it again for 5 rounds. You can cast this spell in response to an opponent attacking you, before the attack is rolled.
 
 Spells that are not subject to spell resistance are not affected by \spell{ablative shield}.
 
@@ -41,6 +36,7 @@ Spells that are not subject to spell resistance are not affected by \spell{ablat
 \spelldur{1 round per two caster levels}
 \begin{spelltarget}{One creature or object}[Magic vs. Reflex]
     \spellsuccess 2d8 acid damage immediately, and d8 acid damage at the end of each round after the first.
+    \spellfailure As above, but no lingering damage.
 \end{spelltarget}
 \spellnotes If the target becomes submerged in water or takes at least ten points of cold or fire damage, this spell's effect ends.
 
@@ -49,10 +45,12 @@ Spells that are not subject to spell resistance are not affected by \spell{ablat
 \spellinfo{Conj (Creation) [Acid]}{Arcane}
 \spellrng{\rngfar}
 \spelldur{1 round per two caster levels}
-\begin{spelltarget}{One creature or object}[Magic vs. Ref and Fort]
-    \spellsuccess If you beat the target's Reflex defense, it takes 5d8 acid damage immediately, and 2d8 acid damage at the end of each round after the first. If you also beat the target's Fortitude defense, it is \vulnerable.
+\begin{spelltarget}{One creature or object}l[Magic vs. Reflex and Fortitude]
+    \spellsuccess[Reflex] 5d8 acid damage immediately, and 2d8 acid damage at the end of each round after the first.
+    \spellfailure[Reflex] As above, but no lingering damage.
+    \spellsuccess[Fortitude] The target is \sickened.
 \end{spelltarget}
-\spellnotes As \spell{acid arrow}, except that twenty points of fire or acid damage are required to end the effect.
+\spellnotes As \spell{acid arrow}, except that twenty points of cold or fire damage are required to end the effect.
 
 \spellsection{Acid Fog}{8}
 \spelldesc{A billowing mass of acidic vapors fills the area, slowing creatures down and obscuring sight.}
@@ -76,7 +74,7 @@ Spells that are not subject to spell resistance are not affected by \spell{ablat
 \spelldur{\durshort}
 \spellsr{Yes (Fortitude)}
 \begin{spelltarget}{One creature}
-    \spelleffect \minus4 penalty to attacks, defenses, and checks.
+    \spelleffect The target takes a \minus4 penalty to attacks, defenses, and checks.
 \end{spelltarget}
 
 \spellsection{Aid}{2}
@@ -86,12 +84,12 @@ Spells that are not subject to spell resistance are not affected by \spell{ablat
 \spelldur{\durshort}
 \spellsr{Yes (Will)}
 \begin{spelltarget}{One creature}
-    \spelleffect 10 temporary hit points \add 1 per caster level above 4th, and a \plus2 enhancement bonus to Will defense. \spellbonusscalingdescription
+    \spelleffect The target gains 10 temporary hit points \add 1 per caster level above 4th, and a \plus2 enhancement bonus to Will defense. \spellbonusscalingdescription
 \end{spelltarget}
-\spellnotes If the subject takes life damage, it loses all temporary hit points provided by this spell before applying the damage.
+\spellnotes If the target takes life damage, it loses all temporary hit points provided by this spell before applying the damage.
 
 \spellsection{Air Walk}{4}
-\spelldesc{You imbue the subject with the ability to walk on nothing but air.}
+\spelldesc{You imbue an ally with the ability to walk on nothing but air.}
 \spellinfo{Trans (Imbuement) [Air]}{Air, Divine, Nature, Travel}
 \spellrng{\rngtouch}
 \spelldur{\durshort}
@@ -182,11 +180,14 @@ When you make a weapon good, evil, lawful, or chaotic, \spell{align weapon} is a
 \spellemanation{\areasmall radius centered on you}
 \spelldur{\durlong \dismissable}
 \spellline
-\spelleffect All spells, spell-like abilities, supernatural abilities, and magic items fail to function in the area of this spell. They cannot be activated from within the field, and any existing effects brought into or cast into the area are suppressed. Time spent within an \spell{antimagic field} counts against a suppressed spell's duration.
-\par Summoned creatures of any type and incorporeal undead disappear if they enter an \spell{antimagic field}. They reappear in the same spot once the field goes away. (The effects of instantaneous conjurations, such as \spell{create water}, are not affected by an \spell{antimagic field} because the conjuration itself is no longer in effect, only its result.)
+\spelleffect All spells, spell-like abilities, and magic items fail to function in the area. They cannot be activated from within the field, and any existing effects brought into or cast into the area are suppressed. Time spent within an \spell{antimagic field} counts against a suppressed spell's duration.
+\par Summoned creatures of any type disappear if they enter an \spell{antimagic field}. They reappear in the same spot once the field goes away. 
 \par Creatures within an \spell{antimagic field} cannot dismiss spells. However, you can dismiss your own antimagic field.
-\spellnotes A normal creature can enter the area, as can normal missiles. Furthermore, while a magic sword does not function magically in the area, it is still a sword. The spell has no effect on golems and other constructs that are imbued with magic during their creation process and are thereafter self-supporting (unless they have been summoned, in which case they are treated like any other summoned creatures). Elementals, corporeal undead, and outsiders are likewise unaffected unless summoned.
-\par \spell{Dispel magic} does not remove the field. Two or more \spell{antimagic fields} sharing any of the same space have no effect on each other. Certain spells, such as \spell{wall of force}, \spell{prismatic sphere}, and \spell{prismatic wall}, remain unaffected by \spell{antimagic field} (see the individual spell descriptions).
+\spellnotes This spell has no effect on golems and other constructs that are imbued with magic during their creation process and are thereafter self-supporting (unless they have been summoned, in which case they are treated like any other summoned creatures).
+
+The effects of instantaneous conjurations, such as \spell{create water}, are not affected by this spell because the conjuration itself is no longer in effect, only its result.
+
+\par \spell{Dispel magic} does not remove the field. Two or more \spell{antimagic fields} sharing any of the same space have no effect on each other.
 \par Any part of a creature that lies outside the field is unaffected by the field.
 \par Artifacts and deities are unaffected by mortal magic such as this. 
 
@@ -216,7 +217,7 @@ When you make a weapon good, evil, lawful, or chaotic, \spell{align weapon} is a
 \spellnotes If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
 
 \spellsection{Aversion}{3}
-\spelldesc{You make the subject want to avoid something.}
+\spelldesc{You make a creature want to avoid something.}
 \spellinfo{Ench (Emotion) [Mind-Affecting]}{Ench}
 \spellrng{\rngmed}
 \spelldur{\durshort}
@@ -262,11 +263,10 @@ When you make a weapon good, evil, lawful, or chaotic, \spell{align weapon} is a
 \spelldur{\durshort}
 \spellsr{Yes (Fortitude)}
 \begin{spelltarget}{One living creature}
-    \spelleffect The target gains a \plus2 enhancement bonus to its armor modifier. \spellbonusscalingdescription In addition, the target gains physical damage reduction 2/adamantine or fire. This damage reduction increases by 1 per two caster levels above 4th.
+    \spelleffect The target gains a \plus2 enhancement bonus to its armor modifier. \spellbonusscalingdescription In addition, the target gains physical damage reduction, reducing the physical damage it takes each round by 2 \add 1 per two caster levels above 4th. If it is hit by an adamatine weapon or takes fire damage, it cannot use its damage reduction for 1 round.
 \end{spelltarget}
-\spellnotes This spell's damage reduction allows the target to ignore the first 2 physical damage it takes each round. If it is hit by a adamantine weapon or an attack that deals fire damage, it cannot use its damage reduction for 1 round.
 
-\spellsection{Bestow Curse}{5}
+\spellsection{Bestow Curse}{4}
 \spelldesc{You place a curse on your foe, crippling its ability to act.}
 \spellrng{\rngclose}
 \spellinfo{Necro (Life) [Curse]}{Death, Divine, Evil, Necro}
@@ -305,12 +305,12 @@ When you make a weapon good, evil, lawful, or chaotic, \spell{align weapon} is a
 \spelldur{\durshort \dismissable}
 \spellsr{Yes (Fortitude)}
 \spellline
-\spelleffect You create a wall of blades made of force energy. The wall provides active cover (20\% miss chance) against attacks made through it. Attacks that miss in this way harmlessly strike the wall. The wall is considered difficult terrain.
+\spelleffect This spell creates a wall of blades made of force energy. The wall provides active cover (20\% miss chance) against attacks made through it. Attacks that miss in this way harmlessly strike the wall. The wall is considered difficult terrain.
 \begin{spelltrigger}{A creature passes through the wall}
-    \begin{spelltargets}*{Creature in wall}[Magic vs. Reflex]
+    \begin{spelltarget}*{The creature in the wall}[Magic vs. Reflex]
         \spellsuccess 6d6 force damage \add d6 per four caster levels above 12th.
         \spellfailure As above, but half damage.
-    \end{spelltargets}
+    \end{spelltarget}
 \end{spelltrigger}
 
 \spellsection{Blasphemy}{7}
@@ -322,11 +322,11 @@ When you make a weapon good, evil, lawful, or chaotic, \spell{align weapon} is a
 \begin{spelltargets}{All nonevil creatures in the area}
     \spelleffect If the target's level does not exceed your caster level, it is \sickened for 5 rounds.
 
-    If the target is also \bloodied when the spell is cast, it also suffers one or more of the following ill effects, depending on its level.
+    If the target is also \bloodied, it also suffers one or more of the following ill effects, depending on its level.
     \begin{itemize}
-        \item Up to caster level \minus5: The creature is also \nauseated for 1 round.
-        \item Up to caster level \minus10: The creature is also \paralyzed for 5 rounds.
-        \item Up to caster level \minus15: The creature immediately dies. A nonliving creature is destroyed.
+        \item Up to caster level \minus5: The target is also \nauseated for 1 round.
+        \item Up to caster level \minus10: The target is also \paralyzed for 5 rounds.
+        \item Up to caster level \minus15: The target immediately dies. A nonliving creature is destroyed.
     \end{itemize}
 \end{spelltargets}
 
@@ -349,7 +349,7 @@ When you make a weapon good, evil, lawful, or chaotic, \spell{align weapon} is a
 \begin{spelltarget}{One creature}[Magic vs. Fortitude]
     \spellsuccess The target is \sickened.
 
-    If the target is \bloodied when the spell is cast, it is also \blinded for 1 round or \deafened for the duration of the spell, as you choose.
+    If the target is \bloodied, it is also \blinded for 1 round or \deafened for the duration of the spell, as you choose.
 \end{spelltarget}
 
 \spellsection{Blink}{4}
@@ -493,7 +493,7 @@ If the staff-treant is reduced to 0 or fewer hit points, it crumbles to powder a
 \spellsr{Yes (Will)}
 \begin{spelltarget}{One humanoid creature}[Magic vs. Will]
     \spellsuccess The target regards you as its trusted friend and ally. If it is currently faced with any obvious threat from you or your allies, such as someone drawing a weapon, casting a spell, or aiming a ranged weapon at the creature, you take a \minus5 penalty on the magic attack.
-    \par The spell does not enable you to control the subject as if it were an automaton, but it perceives your words and actions in the most favorable way. You can try to give the subject orders, but you must succeed at a Persuasion check to convince it to do anything it wouldn't ordinarily do. (Retries are not allowed.) Treat the target as a friend (a \plus10 relationship modifier) for the purpose of the Persuasion check. An affected creature never obeys suicidal or obviously harmful orders, but it might be convinced that something very dangerous is worth doing.
+    \par The spell does not enable you to control the target as if it were an automaton, but it perceives your words and actions in the most favorable way. You can try to give the target orders, but you must succeed at a Persuasion check to convince it to do anything it wouldn't ordinarily do. (Retries are not allowed.) Treat the target as a friend (a \plus10 relationship modifier) for the purpose of the Persuasion check. An affected creature never obeys suicidal or obviously harmful orders, but it might be convinced that something very dangerous is worth doing.
 \end{spelltarget}
 \spellnotes Any act by you or your apparent allies that threatens the \spell{charmed} person breaks the spell.
 
@@ -516,7 +516,7 @@ If the staff-treant is reduced to 0 or fewer hit points, it crumbles to powder a
 \spellline
 \spelleffect This spell affects all \bloodied living creatures in the area, starting with the creature with the lowest level, until it affects a total number of levels equal to twice your caster level. Among creatures with equal levels, those closest to the burst's point of origin are affected first. No creature whose level is greater than half your caster level can be affected, and levels that are not sufficient to affect a creature are wasted. Healthy creatures are not affected by this spell, and do not count against its level limit.
 \begin{spelltargets}*{Several bloodied living creatures in the area}l[Magic vs. Fortitude]
-    \spellsuccess If the target is bloodied when the spell is cast, it is reduced to 0 hit points and takes 9 critical damage, causing it to begin dying.
+    \spellsuccess If the target is bloodied, it is reduced to 0 hit points and takes 9 critical damage, causing it to begin dying.
 \end{spelltargets}
 \spellline
 \spellmat{The powder of a crushed black pearl with a minimum value of 100 gp.}
@@ -531,7 +531,7 @@ If the staff-treant is reduced to 0 or fewer hit points, it crumbles to powder a
 \spelleffect This spell creates a hand, as \spell{interposing hand}, except that the hand attacks its target instead of protecting you from it.
 \begin{spelltarget}*{One creature}l[Caster level \add casting attribute vs. Armor defense]
     \spellsuccess 2d10 force damage \add half casting attribute.
-    
+
     If the target is \bloodied after the damage is dealt, you make an additional attack.
     \begin{spelltarget}*{Struck bloodied creature}[Magic vs. Fortitude]
         \spellsuccess The target is \dazed for 1 round.
@@ -603,16 +603,16 @@ Holding one's breath doesn't help against the poison, but creatures immune to po
 \spellsr{Yes (Will)}
 \begin{spelltarget}{One creature}[Magic vs. Will]
     \spellsuccess The target is \bewildered.
-    
-    If the target is \bloodied when the spell is cast, it must also perform one of the following actions, as you choose.
-    \par \subspell{Approach}: On its turn, the subject moves toward you as quickly and directly as possible. The creature may do nothing but move during its turn, and it provokes attacks of opportunity for this movement as normal.
-    \par \subspell{Drop}: As soon as possible, the subject drops whatever it is holding. It may act normally on its turn, except that it can't pick up any dropped items.
-    \par \subspell{Fall}: As soon as possible, the subject falls to the ground. It may act normally on its turn, except that it can't get up from its prone position.
-    \par \subspell{Flee}: On its turn, the subject moves away from you as quickly as possible. It may do nothing but move during its turn, and it provokes attacks of opportunity for this movement as normal.
-    \par \subspell{Halt}: On its turn, the subject can take no actions, but it can defend itself normally.
-    \par \subspell{Laugh}: On its turn, the subject takes a standard action to do nothing but laugh uproariously, provoking attacks of opportunity. After that, it can act normally.
+
+    If the target is \bloodied, it must also perform one of the following actions, as you choose.
+    \par \subspell{Approach}: On its turn, the target moves toward you as quickly and directly as possible. The creature may do nothing but move during its turn, and it provokes attacks of opportunity for this movement as normal.
+    \par \subspell{Drop}: As soon as possible, the target drops whatever it is holding. It may act normally on its turn, except that it can't pick up any dropped items.
+    \par \subspell{Fall}: As soon as possible, the target falls to the ground. It may act normally on its turn, except that it can't get up from its prone position.
+    \par \subspell{Flee}: On its turn, the target moves away from you as quickly as possible. It may do nothing but move during its turn, and it provokes attacks of opportunity for this movement as normal.
+    \par \subspell{Halt}: On its turn, the target can take no actions, but it can defend itself normally.
+    \par \subspell{Laugh}: On its turn, the target takes a standard action to do nothing but laugh uproariously, provoking attacks of opportunity. After that, it can act normally.
 \end{spelltarget}
-\spellnotes If the subject can't understand or carry out your command, the spell automatically fails.
+\spellnotes If the target can't understand or carry out your command, the spell automatically fails.
 
 \spellsectioncomma{Command}{Mass}{5}
 \spelldesc{You compel many foes to obey your command.}
@@ -707,8 +707,8 @@ Holding one's breath doesn't help against the poison, but creatures immune to po
 \spellsr{Yes (Fortitude)}
 \begin{spelltarget}{One creature}[Magic vs. Fortitude]
     \spellsuccess The target is \staggered.
-    
-     As long as the target is \bloodied, it cannot move its limbs, including any wings. Generally, that means it is paralyzed, except that it can move its head and mouth.
+
+    As long as the target is \bloodied, it cannot move its limbs, including any wings. Generally, that means it is paralyzed, except that it can move its head and mouth.
 \end{spelltarget}
 
 \spellsection{Crushing Despair}{3}
@@ -842,7 +842,7 @@ As a swift action, you can move the lights as you desire through the air. They c
 \spelldur{\durlong}
 \spellsr{Yes (Fortitude)}
 \begin{spelltarget}{One creature}
-    \spelleffect The subject gains the ability to see 60 feet even in total darkness. Beyond 60 feet, the subject can see dimly, treating areas of darkness as shadowy illumination. Darkvision does not function if a creature is in an area of bright light or is dazzled. Darkvision is black and white only, but otherwise like normal sight.
+    \spelleffect The target gains the ability to see 60 feet even in total darkness. Beyond 60 feet, the target can see dimly, treating areas of darkness as shadowy illumination. Darkvision does not function if a creature is in an area of bright light or is dazzled. Darkvision is black and white only, but otherwise like normal sight.
 \end{spelltarget}
 \spellnotes This spell does not grant the ability to see in magical darkness. This spell can be made permanent with a \spell{permanency} ritual.
 
@@ -864,7 +864,7 @@ As a swift action, you can move the lights as you desire through the air. They c
 \spellrng{\rngmed}
 \spelldur{\durshort; see text}
 \begin{spelltarget}{Living creature}[Magic vs. Fortitude]
-    \spellsuccess As long as the target is bloodied, it is \vulnerable. If it drops to 0 hit points, it dies immediately, and you gain 10 temporary hit points \add 1 per caster level above 4th. These temporary hit points last for 1 round per level the subject had.
+    \spellsuccess As long as the target is bloodied, it is \vulnerable. If it drops to 0 hit points, it dies immediately, and you gain 10 temporary hit points \add 1 per caster level above 4th. These temporary hit points last for 1 round per level the target had.
 \end{spelltarget}
 \spellnotes If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
 
@@ -875,9 +875,9 @@ As a swift action, you can move the lights as you desire through the air. They c
 \spelldur{\durshort}
 \spellsr{Yes (Fortitude)}
 \begin{spelltarget}{One living creature}
-    \spelleffect The subject is immune to all death spells, magical death effects, energy drain, and any negative energy effects.
+    \spelleffect The target is immune to all death spells, magical death effects, energy drain, and any negative energy effects.
 \end{spelltarget}
-\spellnotes This spell doesn't remove negative levels that the subject has already gained. It does not protect against other sorts of attacks, even if those attacks might be lethal.
+\spellnotes This spell doesn't remove negative levels that the target has already gained. It does not protect against other sorts of attacks, even if those attacks might be lethal.
 
 \spellsectioncomma{Death Ward}{Mass}{7}
 \spelldesc{You shield your allies from deadly spells.}
@@ -897,7 +897,7 @@ As a swift action, you can move the lights as you desire through the air. They c
 \spellsr{Yes (Will)}
 \begin{spelltarget}{One creature}[Magic vs. Will]
     \spellsuccess The target is \bewildered.
-    
+
     If the target becomes \bloodied at any point during the spell's duration, it immediately falls asleep. If left undisturbed, it will sleep until it dies. As long as it remains bloodied, it cannot be awakened until the spell's duration expires, though it can be awakened normally after that point.
 \end{spelltarget}
 
@@ -925,7 +925,7 @@ As a swift action, you can move the lights as you desire through the air. They c
 \spelldur{\durshort}
 \spellsr{Yes (Fortitude)}
 \begin{spelltarget}{One creature}
-    \spelleffect The subject becomes temporarily immune to the effects of poison. Poisons the subject is exposed to do not make attacks against it. This effect does not prevent the subject from becoming poisoned, and any poisons in the subject's system when the spell ends will continue their effects normally. 
+    \spelleffect The target becomes temporarily immune to the effects of poison. Poisons it is exposed to do not make attacks against it. This effect does not prevent the target from becoming poisoned, and any poisons in the target's system when the spell ends will continue their effects normally. 
 \end{spelltarget}
 \spellnotes This spell does not cure any damage that poison may have already done.
 
@@ -952,8 +952,8 @@ If you choose a delay, a glowing bead sits at the point of origin until it deton
 \spellsr{Yes (Fortitude)}
 \begin{spelltarget}{One creature}[Magic vs. Fortitude]
     \spellsuccess The target is \staggered for 5 rounds.
-    
-    If the target is \bloodied when the spell is cast, it loses all its hit points and takes 9 critical damage, causing it to begin dying.
+
+    If the target is \bloodied, it loses all its hit points and takes 9 critical damage, causing it to begin dying.
 \end{spelltarget}
 \spellnotes The remains of a creature killed by this spell are consumed utterly (but not its equipment or possessions). The only way to restore life such a creature is to use \spell{true resurrection}, a carefully worded \spell{wish} spell followed by \spell{resurrection}, or \spell{miracle}.
 \spellfocus{A special holy (or unholy) symbol of silver marked with verses of anathema (cost 250 gp).}
@@ -1030,7 +1030,7 @@ By concentrating on an aura (a standard action), you can determine the strength 
 \spelldur{\durlong/5 rounds}
 \spellsr{Yes (Will)}
 \begin{spelltarget}{One creature}[Magic vs. Will]
-    \spellsuccess  The subject cannot travel extradimensionally for 1 hour. Effects barred by a \spell{dimensional anchor} include \spell{astral projection}, \spell{blink}, \spell{dimension door}, \spell{ethereal jaunt}, \spell{gate}, \spell{maze}, \spell{plane shift}, \spell{shadow walk}, \spell{teleport}, and similar spell-like or supernatural abilities.
+    \spellsuccess  The target cannot travel extradimensionally for 1 hour. Effects barred by a \spell{dimensional anchor} include \spell{astral projection}, \spell{blink}, \spell{dimension door}, \spell{ethereal jaunt}, \spell{gate}, \spell{maze}, \spell{plane shift}, \spell{shadow walk}, \spell{teleport}, and similar spell-like or supernatural abilities.
     \spellfailure As above, but the effect lasts for 5 rounds.
 \end{spelltarget}
 \spellnotes This spell does not interfere with the movement of creatures already in ethereal or astral form when the spell is cast, nor does it block extradimensional perception or attack forms, such as summoning monsters. Also, it does not prevent summoned creatures from disappearing at the end of a summoning spell.
@@ -1122,7 +1122,7 @@ Artifacts and deities are unaffected by mortal magic such as this.
 \spelldur{\durshort \dismissable}
 \spellsr{Yes (Will)}
 \begin{spelltarget}{One creature}
-    \spelleffect The target appears to be about 2 feet away from its true location. Attacks against the subject have a 50\% miss chance as if it were invisible. However, unlike invisibility, this spell does not prevent enemies from targeting the creature normally, and it does not allow the creature to hide.
+    \spelleffect The target appears to be about 2 feet away from its true location. Attacks against it have a 50\% miss chance, as if it were invisible. However, unlike invisibility, this spell does not prevent enemies from targeting the creature normally, and it does not allow the creature to hide.
 \end{spelltarget}
 
 \spellsection{Disrupting Weapon}{4}
@@ -1134,7 +1134,7 @@ Artifacts and deities are unaffected by mortal magic such as this.
     \spelleffect The target weapon becomes deadly to undead.
 \end{spelltarget}
 \begin{spelltrigger}{The primary target strikes a \bloodied undead creature for the first time in a round}
-    \begin{spelltarget}*[Secondary]{One bloodied undead creature}l[Magic vs. Fortitude]
+    \begin{spelltarget}*[Secondary]{The bloodied undead creature}l[Magic vs. Fortitude]
         \spellsuccess The target creature is utterly destroyed.
     \end{spelltarget}
 \end{spelltrigger}
@@ -1168,14 +1168,26 @@ Artifacts and deities are unaffected by mortal magic such as this.
 \spellrng{\rngmed}
 \spelldur{One day}
 \begin{spelltarget}{One humanoid creature}[Magic vs. Will]
-    \spellsuccess You can control the actions of the target through a telepathic link that you establish with the subject's mind.
-    \par If you and the subject have a common language, you can generally force the subject to perform as you desire, within the limits of its abilities. If no common language exists, you can communicate only basic commands, such as ``Come here," ``Go there," ``Fight," and ``Stand still." If you concentrate on the spell, you know what the subject is experiencing, but you do not receive direct sensory input from it, nor can it communicate with you telepathically.
-    \par Once you have given a dominated creature a command, it continues to attempt to carry out that command to the exclusion of all other activities except those necessary for day-to-day survival (such as sleeping, eating, and so forth). Because of this limited range of activity, a Sense Motive check against DC 15 (rather than DC 25) can determine that the subject's behavior is being influenced by an enchantment effect (see the Sense Motive skill description).
-    It takes time for the link to be established. For the first hour after the spell is cast, you must concentrate on the spell (a standard action) to control the subject's actions. While you are not concentrating on the spell, the creature acts as if confused, as the \spell{confusion} spell, except that it never attacks you. If the subject would randomly attack you, it instead is forced to follow your commands. At the end of the hour, you must make a second Will attack. If you concentrate on the spell during this time, you gain a \plus4 bonus to the attack. If your attack succeeds, you dominate the creature fully for the remainder of the spell duration. Otherwise, the creature is freed.
+    \spellsuccess You can control the actions of the target through a telepathic link that you establish with the target's mind.
+    \par If you and the target have a common language, you can generally force the target to perform as you desire, within the limits of its abilities. If no common language exists, you can communicate only basic commands, such as ``Come here," ``Go there," ``Fight," and ``Stand still." If you concentrate on the spell, you know what the target is experiencing, but you do not receive direct sensory input from it, nor can it communicate with you telepathically.
+    \par Once you have given a dominated creature a command, it continues to attempt to carry out that command to the exclusion of all other activities except those necessary for day-to-day survival (such as sleeping, eating, and so forth). Because of this limited range of activity, a Sense Motive check against DC 15 (rather than DC 25) can determine that the target's behavior is being influenced by an enchantment effect (see the Sense Motive skill description).
+    It takes time for the link to be established. For the first hour after the spell is cast, you must concentrate on the spell (a standard action) to control the target's actions. While you are not concentrating on the spell, the creature acts as if confused, as the \spell{confusion} spell, except that it never attacks you. If the target would randomly attack you, it instead is forced to follow your commands. At the end of the hour, you must make a second Will attack. If you concentrate on the spell during this time, you gain a \plus4 bonus to the attack. If your attack succeeds, you dominate the creature fully for the remainder of the spell duration. Otherwise, the creature is freed.
     \par After the first hour, changing your instructions or giving a dominated creature a new command is the equivalent of redirecting a spell, so it is a move action.
-    \par By concentrating fully on the spell (a standard action), you can receive full sensory input as interpreted by the mind of the subject, though it still can't communicate with you. You can't actually see through the subject's eyes, so it's not as good as being there yourself, but you still get a good idea of what's going on.
-    \par Subjects resist this control, and you must make a new attack to force the subject to take an action against its nature. Failure means it breaks free. This does not apply when a subject is merely ordered to perform an action it disagrees with -- the action must be directly opposed to the subject's beliefs. Ordering a paladin to murder an innocent would require a new attack, but ordering him to build a bridge that would allow an evil army to cross a river would not. If your command would obviously lead to the creature's death, your attack takes a \minus10 penalty. Once control is established, the range at which it can be exercised is unlimited, as long as you and the subject are on the same plane. You need not see the subject to control it.
-    \par If you recast this spell on a subject you have dominated before it escapes your control, you can extend the duration of the spell indefinitely. You do not need to make a new attack when you renew your control in this fashion.
+    \par By concentrating fully on the spell (a standard action), you can receive full sensory input as interpreted by the mind of the target, though it still can't communicate with you. You can't actually see through the target's eyes, so it's not as good as being there yourself, but you still get a good idea of what's going on.
+    \par The target resists this control, and you must make a new attack to force it to take an action against its nature. Failure means it breaks free. This does not apply when a target is merely ordered to perform an action it disagrees with -- the action must be directly opposed to the target's beliefs. Ordering a paladin to murder an innocent would require a new attack, but ordering him to build a bridge that would allow an evil army to cross a river would not. If your command would obviously lead to the creature's death, your attack takes a \minus10 penalty. Once control is established, the range at which it can be exercised is unlimited, as long as you and the target are on the same plane. You need not see the target to control it.
+    \par If you recast this spell on a target you have dominated before it escapes your control, you can extend the duration of the spell indefinitely. You do not need to make a new attack when you renew your control in this fashion.
+\end{spelltarget}
+
+\spellsection{Drain Life}{5}
+\spellinfo{Necro (Life)}{Necro}
+\spellrng{\rngclose}
+\spelldur{\durlong}
+\spellsr{Yes (Fortitude)}
+\begin{spelltarget}{One living creature}[Magic vs. Fortitude]
+    \spellsuccess 10d6 life damage \add d6 per two caster levels above 8th. You gain temporary hit points equal to half the damage you deal. You can't gain more hit points than the target had. The temporary hit points disappear after 1 hour. If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
+
+    As long as you have temporary hit points from this spell, you are treated as being undead for the purpose of spells or abilities which affect undead. This can cause some unintelligent undead, such as skeletons and zombies, to avoid attacking you.
+    \spellfailure As above, but half damage.
 \end{spelltarget}
 
 \pdfbookmark[2]{E}{SpellDescriptionsE}
@@ -1191,9 +1203,9 @@ Artifacts and deities are unaffected by mortal magic such as this.
 \spelldur{\durshort}
 \spellsr{Yes (Will)}
 \begin{spelltarget}{One Large or smaller creature}
-    \spelleffect The subject moves at half speed and takes a \minus2 penalty to physical defenses. If it is flying within 10 feet of the ground, the subject falls to the ground.
+    \spelleffect The target moves at half speed and takes a \minus2 penalty to physical defenses. If it is flying within 10 feet of the ground, it falls to the ground.
 \end{spelltarget}
-\spellnotes If the subject gets farther than 10 feet from the ground, the spell's effect is broken. As a result, the spell cannot affect creatures flying high above the ground.
+\spellnotes If the target gets farther than 10 feet from the ground, the spell's effect is broken. As a result, the spell cannot affect creatures flying high above the ground.
 
 \spellsection{Earthen Blade}{2}
 \spellinfo{Trans (Alteration, Augment) [Earth]}{Earth, Nature}
@@ -1209,9 +1221,9 @@ Artifacts and deities are unaffected by mortal magic such as this.
 \spelldur{\durshort}
 \spellsr{Yes (Fortitude)}
 \begin{spelltarget}{One creature}
-    \spelleffect The subject gains the earth glide ability, as an earth elemental. This allows it to glide through stone, dirt, or almost any other sort of earth except metal  as if it were air. The subject can walk or climb at any angle in the earth. However, the subject generally cannot breathe, speak, or hear while gliding. While gliding, a creature can remain partially within the earth, granting it cover.
+    \spelleffect The target gains the earth glide ability, as an earth elemental. This allows it to glide through stone, dirt, or almost any other sort of earth except metal  as if it were air. It can walk or climb at any angle in the earth. However, the target generally cannot breathe, speak, or hear while gliding. While gliding, the target can remain partially within the earth, granting it cover.
 \end{spelltarget}
-\spellnotes The subject's burrowing leaves behind no tunnel or hole, nor does it create any ripple or other signs of its presence.
+\spellnotes The target's burrowing leaves behind no tunnel or hole, nor does it create any ripple or other signs of its presence.
 
 \spellsection{Earthquake}{8}
 \spelldesc{An intense but highly localized tremor shakes the ground. The shock knocks creatures down and makes fighting or escaping difficult. Eventually, the ground swallows those foolish enough to remain.}
@@ -1286,9 +1298,8 @@ Artifacts and deities are unaffected by mortal magic such as this.
 \begin{spelltarget}{One creature}[Magic vs. Fortitude]
     \spelleffect If the target is living, it gains six \negativelevels.
 
-    \spelleffect If the target is undead, it gains temporary hit points equal to 40 \add your caster level and physical damage reduction 16/positive.
+    \spelleffect If the target is undead, it gains temporary hit points equal to 40 \add your caster level. In addition, it gains physical damage reduction, reducing the physical damage it takes each round by 16 \add 1 per caster level above 16th. If it takes positive damage, it cannot use its damage reduction for 1 round.
 \end{spelltarget}
-\spellnotes The damage reduction allows an undead subject to ignore the first 16 physical damage it takes each round. If it is hit by an attack that deals positive damage, such as \spell{cure light wounds}, it cannot use its damage reduction for 1 round.
 
 \spellsection{Enervation}{4}
 \spelldesc{Your foe's body loses its color momentarily as you drain its life force away.}
@@ -1299,11 +1310,9 @@ Artifacts and deities are unaffected by mortal magic such as this.
 \begin{spelltarget}{One creature}[Magic vs. Fortitude]
     \spelleffect If the target is living, it gains three \negativelevels.
 
-    If the target is undead, it gains physical damage reduction 8/positive instead. This damage reduction increases by 1 per two caster levels above 8th.
+    If the target is undead, it gains physical damage reduction, reducing the physical damage it takes each round by 8 \add 1 per caster level above 8th. If it takes positive damage, it cannot use its damage reduction for 1 round.
 \end{spelltarget}
 \spellnotes This spell stacks with any effect that bestows negative levels, including itself.
-
-The damage reduction allows an undead subject to ignore the first 8 physical damage it takes each round. If it is hit by a positive attack, such as \spell{cure light wounds}, it cannot use its damage reduction for 1 round.
 
 \spellsection{Enfeeblement}{1}
 %\spelldesc{You fire a coruscating ray from your hand. When it strikes your foe, he becomes weaker.}
@@ -1357,7 +1366,7 @@ The damage reduction allows an undead subject to ignore the first 8 physical dam
 \spellline
 \spelleffect The area is difficult terrain.
 \begin{spelltrigger}{End of every movement phase}
-    \begin{spelltarget}*{Each creature in the area within 5 feet of plants}l[Magic vs. Reflex]
+    \begin{spelltarget}*{All creatures in the area within 5 feet of plants}l[Magic vs. Reflex]
         \spellsuccess The target is \entangled and \immobilized. It can break free of the effect as a standard action by making a grapple attack or Escape Artist check that beats your magic attack result.
     \end{spelltarget}
 \end{spelltrigger}
@@ -1371,7 +1380,7 @@ The damage reduction allows an undead subject to ignore the first 8 physical dam
 \spellline
 \spelleffect The area is difficult terrain. Plants grow in the area, even if the terrain would not normally support plant life. At the end of the spell's duration, the plants recede into the ground, leaving no trace that they were ever there.
 \begin{spelltrigger}{End of every movement phase}
-    \begin{spelltarget}{Each creature in the area within 5 feet of the ground}l[Magic vs. Reflex]
+    \begin{spelltarget}{All creatures in the area within 5 feet of the ground}l[Magic vs. Reflex]
         \spellsuccess The target is ensnared, as \spell{entangle}.
     \end{spelltarget}
 \end{spelltrigger}
@@ -1471,7 +1480,7 @@ This spell works only upon free-falling objects. It no special effect on ranged 
 \begin{spelltarget}{One creature}[Magic vs. Will]
     \spellsuccess The target is \bewildered for \durshort duration.
 
-    If the target is \bloodied when the spell is cast, its Intelligence drops to \minus9, giving it roughly the intellect of a lizard. It is unable to use Intelligence-based skills, cast spells, understand language, or communicate coherently. Still, it knows who its friends are and can follow them and even protect them. The subject remains in this state until a \spell{heal}, \spell{limited wish}, \spell{miracle}, or \spell{wish} spell is used to cancel the effect of the \spell{feeblemind}.
+    If the target is \bloodied, its Intelligence drops to \minus9, giving it roughly the intellect of a lizard. It is unable to use Intelligence-based skills, cast spells, understand language, or communicate coherently. Still, it knows who its friends are and can follow them and even protect them. The target remains in this state until a \spell{heal}, \spell{limited wish}, \spell{miracle}, or \spell{wish} spell is used to cancel the effect of the \spell{feeblemind}.
 \end{spelltarget}
 
 \spellsection{Finger of Death}{7}
@@ -1505,18 +1514,16 @@ As a standard action, you can say a command word to detonate any number of affec
 \spelldesc{You appear to immolate yourself in a wreath of flame that lashes out at anyone who tries to harm you.}
 \spellinfo{Abjur/Evoc (Energy, Shielding) [Fire or Cold]}{Arcane, Fire}
 \spelldur{\durshort \dismissable}
+\spellsr{Yes (Fortitude)}
 \begin{spelltarget}{You}
-    \spelleffect You gain cold damage reduction 20 \add 1 per caster level above 8th, and radiate light as a torch. In addition, creatures that attack you take damage.
+    \spelleffect You gain cold damage reduction, reducing the cold damage you take each round by 20 \add 2 per caster level above 8th. In addition, you radiate light as a torch, and creatures that attack you take damage.
 \end{spelltarget}
-\begin{spelltrigger}{Creature within \rngclose range attacks you with a melee weapon}
-    \begin{spelltarget}*{Attacking creature}[Magic vs. Reflex]
-        \spellsuccess 4d6 fire or cold damage \add d6 per four caster levels above 8th.
+\begin{spelltrigger}{Creature within \rngclose range makes a physical attack against you}
+    \begin{spelltarget}*{The attacking creature}[Magic vs. Reflex]
+        \spellsuccess 5d6 fire damage \add d6 per four caster levels above 10th.
         \spellfailure Half damage.
     \end{spelltarget}
 \end{spelltrigger}
-
-\spellnotes The damage reduction allows the subject to ignore the first 20 energy damage it takes each round of the appropriate type.
-\spellsr{Yes (Fortitude)}
 
 \spellsection{Fire Storm}{8}
 \spelldesc{You fill a massive area with sheets of roaring flame, burning everyone who opposes you.}
@@ -1632,7 +1639,7 @@ Spell resistance applies when a foe is struck by the weapon, but not when the bl
 \spelldur{\durlong}
 \spellsr{Yes (Will)}
 \begin{spelltarget}{One creature}[Magic vs. Will]
-    \spelleffect The target forgets something simple. You can't make it forget something important, such as its name. You must know what you want it to forget. The spell does not prevent the subject from learning the information again, and it can remember the information normally after the spell's duration.
+    \spelleffect The target forgets something simple. You can't make it forget something important, such as its name. You must know what you want it to forget. The spell does not prevent the target from learning the information again, and it can remember the information normally after the spell's duration.
 \end{spelltarget}
 
 \spellsection{Freedom}{4}
@@ -1641,7 +1648,7 @@ Spell resistance applies when a foe is struck by the weapon, but not when the bl
 \spelldur{\durshort}
 \spellsr{Yes (Will)}
 \begin{spelltarget}{One creature}
-    \spelleffect The target can move and attack normally for the duration of the spell, even under the influence of magic that usually impedes movement, such as paralysis, \spell{solid fog}, \spell{slow}, and \spell{web}. The subject gains a \plus20 enhancement bonus to Maneuver Class against grapple attacks, as well as on grapple attacks or Escape Artist checks made to escape a grapple or a pin.
+    \spelleffect The target can move and attack normally for the duration of the spell, even under the influence of magic that usually impedes movement, such as paralysis, \spell{solid fog}, \spell{slow}, and \spell{web}. The target gains a \plus20 enhancement bonus to Maneuver Class against grapple attacks, as well as on grapple attacks or Escape Artist checks made to escape a grapple or a pin.
     \par The spell also allows the target to move and attack with melee weapons normally while underwater.
 \end{spelltarget}
 
@@ -1664,10 +1671,11 @@ Spell resistance applies when a foe is struck by the weapon, but not when the bl
 \spellrng{\rngtouch}
 \spelldur{\durshort \dismissable}
 \begin{spelltarget}{One willing corporeal creature}
-    \spelleffect The target and all its equipment becomes insubstantial, misty, and translucent. Its armor modifier becomes 0, though other defense modifiers continue to apply normally. The subject gains physical damage reduction 10/magic and becomes immune to critical hits. It can't attack or cast spells with verbal, somatic, material, or focus components while in gaseous form. If it has a touch spell ready to use, that spell is discharged harmlessly when the gaseous form spell takes effect.
+    \spelleffect The target and all its equipment becomes insubstantial, misty, and translucent. Its armor modifier becomes 0, though other defense modifiers continue to apply normally. It gains physical damage reduction, reducing the physical damage it takes each round by 15 \add 2 per caster level above 6th. If it takes damage from a spell or magic weapon, it cannot use its damage reduction for 1 round. It becomes immune to critical hits.
+
+    The target can't attack or cast spells with verbal, somatic, material, or focus components while in gaseous form. If it has a touch spell ready to use, that spell is discharged harmlessly when the gaseous form spell takes effect.
     \par A gaseous creature can fly at a speed of 10 feet (special maneuverability). It can pass through small holes or narrow openings, even mere cracks, with all it was wearing or holding in its hands, as long as the spell persists. The creature is subject to the effects of wind, and it can't enter water or other liquid. It also can't manipulate objects or activate items, even those carried along with its gaseous form. Continuously active items remain active, though in some cases their effects may be moot.
 \end{spelltarget}
-\spellnotes This spell's damage reduction allows the subject to ignore the first 10 physical damage it takes each round. If it is hit by a magical attack, such as a damaging spell or magic weapon, it cannot use its damage reduction for 1 round.
 
 \spellsection{Gentle Descent}{2}
 \spelldesc{You grant your ally ephemeral wings which allow him to glide.}
@@ -1676,7 +1684,7 @@ Spell resistance applies when a foe is struck by the weapon, but not when the bl
 \spelldur{\durlong}
 \spellsr{Yes (Will)}
 \begin{spelltarget}{One creature}
-    \spelleffect The subject gains a 30 foot glide speed.
+    \spelleffect The target gains a 30 foot glide speed.
 \end{spelltarget}
 \spellnotes A creature with a glide speed can glide through the air at the indicated speed (see \pcref{Gliding}).
 
@@ -1781,7 +1789,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \end{spelltargets}
 
 \spellsection{Heal}{6}
-\spelldesc{You fill the subject with a massive influx of positive energy, restoring its body to its fullest.}
+\spelldesc{You fill an ally with a massive influx of positive energy, restoring its body to its fullest.}
 \spellinfo{Necro (Vitalism) [Positive]}{Divine, Good, Nature, Vitality}
 \spellrng{\rngclose}
 \spellsr{Yes (Fortitude)}
@@ -1806,7 +1814,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
         \spellfailure As above, but half damage.
     \end{spelltargets}
 \end{spelltrigger}
-\spellnotes If the subject is underwater, this spell deals half damage,  and boils the surrounding water. Any cold intense enough to damage the creature negates fire damage from the spell (and vice versa) on a point-for-point basis. This spell can affect the armor worn by a typical Medium creature, but not generally by a larger creature.
+\spellnotes If the target is underwater, this spell deals half damage, and boils the surrounding water. Any cold intense enough to damage the creature negates fire damage from the spell (and vice versa) on a point-for-point basis. This spell can affect the armor worn by a typical Medium creature, but not generally by a larger creature.
 
 \spellsection{Heroism}{3}
 \spelldesc{You imbue your ally with great bravery and morale in battle.}
@@ -1896,11 +1904,11 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \begin{spelltargets}{All nongood creatures in the area}
     \spelleffect If the target's level does not exceed your caster level, it is \deafened for 5 rounds.
 
-    If it is also \bloodied, it also suffers one or more of the following ill effects, depending on its level.
+    If it is also \bloodied, it suffers one or more of the following ill effects, depending on its level.
     \begin{itemize}
-        \item Up to caster level \minus5: The creature is also \blinded for 1 round.
-        \item Up to caster level \minus10: The creature is also \paralyzed for 5 rounds.
-        \item Up to caster level \minus15: The creature immediately dies. A nonliving creature is destroyed.
+        \item Up to caster level \minus5: The target is also \blinded for 1 round.
+        \item Up to caster level \minus10: The target is also \paralyzed for 5 rounds.
+        \item Up to caster level \minus15: The target immediately dies. A nonliving creature is destroyed.
     \end{itemize}
 \end{spelltargets}
 
@@ -1983,16 +1991,15 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldur{\durshort}
 \spellsr{Yes (Will)}
 \begin{spelltarget}{One creature}
-    \spelleffect The target gains physical damage reduction 4/force. This damage reduction increases by 1 per two caster levels above 4th.
+    \spelleffect The target gains physical damage reduction, reducing the physical damage it takes each round by 4 \add 1 per caster level above 4th. If it takes force damage, it cannot use its damage reduction for 1 round.
 \end{spelltarget}
-\spellnotes This spell's damage reduction allows the subject to ignore the first 4 physical damage it takes each round. If it is hit by a attack that deals force damage, such as \spell{magic missile}, it cannot use its damage reduction for 1 round.
 
 \spellsection{Inflict Critical Wounds}{4}
 \spellinfo{Necro (Vitalism) [Negative]}{Arcane, Divine}
 \spellrng{\rngclose}
 \spellsr{Yes (Fortitude)}
 \begin{spelltarget}{One creature}[Magic vs. Fortitude]
-    \spellsuccess If the target is not undead, this spell inflicts 8d6 negative energy damage \add d6 per two caster levels above 8th. For every 5 points of damage dealt in excess of the subject's hit points, it can instead inflict 1 point of critical damage.
+    \spellsuccess If the target is not undead, this spell inflicts 8d6 negative energy damage \add d6 per two caster levels above 8th. For every 5 points of damage dealt in excess of the target's hit points, it can instead inflict 1 point of critical damage.
     \spellfailure As above, but half damage.
     \spelleffect If the target is undead, it is instead healed for that much damage.
 \end{spelltarget}
@@ -2030,7 +2037,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsection{Inflict Moderate Wounds}{2}
 \spellinfo{Necro (Vitalism) [Negative]}{Arcane, Divine}
 \begin{spelltarget}{One creature}[Magic vs. Fortitude]
-    \spellsuccess If the target is not undead, this spell inflicts 4d6 negative energy damage \add d6 per two caster levels above 4th. For every 15 points of damage dealt in excess of the subject's hit points, it can instead inflict 1 point of critical damage.
+    \spellsuccess If the target is not undead, this spell inflicts 4d6 negative energy damage \add d6 per two caster levels above 4th. For every 15 points of damage dealt in excess of the target's hit points, it can instead inflict 1 point of critical damage.
     \spellfailure As above, but half damage.
     \spelleffect If the target is undead, it is instead healed for that much damage.
 \end{spelltarget}
@@ -2050,7 +2057,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spellsr{Yes (Fortitude)}
 \begin{spelltarget}{One creature}[Magic vs. Fortitude]
-    \spellsuccess If the target is not undead, this spell inflicts 6d6 negative energy damage \add d6 per two caster levels above 6th. For every 10 points of damage dealt in excess of the subject's hit points, it can instead inflict 1 point of critical damage.
+    \spellsuccess If the target is not undead, this spell inflicts 6d6 negative energy damage \add d6 per two caster levels above 6th. For every 10 points of damage dealt in excess of the target's hit points, it can instead inflict 1 point of critical damage.
     \spellfailure As above, but half damage.
     \spelleffect If the target is undead, it is instead healed for that much damage.
 \end{spelltarget}
@@ -2135,12 +2142,12 @@ The hand is 10 feet long and about that wide with its fingers outstretched. It h
 \spelldur{\durshort \dismissable}
 \begin{spelltarget}{You}
     \spelleffect This spell transforms your body into living iron, which grants you several powerful resistances and abilities.
-    \par You gain physical damage reduction 15/adamantine. You are immune to blindness, critical hits, attribute damage, deafness, disease, drowning, electricity, poison, stunning, and all spells or attacks that affect your physiology or respiration, because you have no physiology or respiration while this spell is in effect. You take only half damage from acid and fire of all kinds.
+    \par You gain physical damage reduction, reducing the physical damage you take each round by 16 \add 1 per caster level above 16th. If you are hit by an adamantine weapon, you cannot use your damage reduction for 1 round.
+    \par You are immune to blindness, critical hits, attribute damage, deafness, disease, drowning, electricity, poison, stunning, and all spells or attacks that affect your physiology or respiration, because you have no physiology or respiration while this spell is in effect. You take only half damage from acid and fire of all kinds.
     \par You gain a \plus5 enhancement bonus to your Strength score, but you take a \minus5 penalty to Dexterity as well, and your speed is reduced to half normal. You have a \minus8 armor check penalty. You cannot drink (and thus can't use potions) or play wind instruments.
     \par Your unarmed attacks deal damage equal to a warhammer sized for you (1d6 for Small characters or 1d8 for Medium characters), and you are considered armed when making unarmed attacks.
     \par Your weight increases by a factor of ten, causing you to sink in water like a stone. However, you could survive the crushing pressure and lack of air at the bottom of the ocean -- at least until the spell duration expires.
 \end{spelltarget}
-\spellnotes This spell's damage reduction allows the subject to ignore the first 15 physical damage it takes each round. If it is hit by an adamantine weapon, it cannot use its damage reduction for 1 round.
 
 \spellsection{Irresistible Dance}{9}
 \spelldesc{You fill your enemy with an overpowering urge to dance and caper in place. Against its will, it begins doing so, complete with foot shuffling and tapping.}
@@ -2149,7 +2156,7 @@ The hand is 10 feet long and about that wide with its fingers outstretched. It h
 \spelldur{1 round}
 \spellsr{Yes (Will)}
 \begin{spelltarget}{One creature}
-    \spelleffect The subject is defenseless and must spend a standard action to do nothing but dance, which provokes attacks of opportunity.
+    \spelleffect The target is defenseless and must spend a standard action to do nothing but dance, which provokes attacks of opportunity.
 \end{spelltarget}
 
 \pdfbookmark[2]{J-L}{SpellDescriptionsJ-L}
@@ -2175,7 +2182,7 @@ The hand is 10 feet long and about that wide with its fingers outstretched. It h
 \spelldur{\durshort \dismissable}
 \spellsr{Yes (Will)}
 \begin{spelltarget}{One object or willing creature (total weight up to 100 lb./caster level)}
-    \spelleffect You can telekinetically move the target vertically. A creature must be willing to be levitated, and an object must be unattended or possessed by a willing creature. As a swift action, you can mentally direct the subject to move up or down as much as 20 feet each round. You cannot move the recipient horizontally, but the recipient could clamber along the face of a cliff, for example, or push against a ceiling to move laterally (generally at half its land speed).
+    \spelleffect You can telekinetically move the target vertically. A creature must be willing to be levitated, and an object must be unattended or possessed by a willing creature. As a swift action, you can mentally direct the target to move up or down as much as 20 feet each round. You cannot move the recipient horizontally, but the recipient could clamber along the face of a cliff, for example, or push against a ceiling to move laterally (generally at half its land speed).
 \end{spelltarget}
 
 \spellsection{Lifebreaker Curse}{7}
@@ -2316,7 +2323,7 @@ Any missiles you do not explicitly target will automatically strike a living cre
 \spelldur{\durshort or \durlong; see text \dismissable}
 \spellsr{Yes (Will)}
 \begin{spelltarget}{One creature}
-    \spelleffect As you cast this spell, you choose whether to create body armor or a shield. If you choose body armor, the target gains a \plus2 armor modifier. If you choose a shield, the subject gains a \plus2 shield modifier. The bonus granted increases to \plus3 at 8th caster level, to \plus4 at 14th caster level, and finally to \plus5 at 20th caster level. 
+    \spelleffect As you cast this spell, you choose whether to create body armor or a shield. If you choose body armor, the target gains a \plus2 armor modifier. If you choose a shield, the target gains a \plus2 shield modifier. The bonus granted increases to \plus3 at 8th caster level, to \plus4 at 14th caster level, and finally to \plus5 at 20th caster level. 
     \par Unlike mundane armor, \spell{mage armor} entails no armor check penalty, arcane spell failure chance, or speed reduction.
     \par If you are the target, this spell lasts for \durlong duration. On any other creature, it lasts for \durshort duration.
 \end{spelltarget}
@@ -2351,10 +2358,17 @@ Any missiles you do not explicitly target will automatically strike a living cre
 
 \spellsection{Magic Circle against Alignment}{5}
 \spellinfo{Abjur (Interdiction) [Barrier, Good]}{Arcane, Chaos, Divine, Evil, Good, Law}
-\spelltwocol{\spellemanation{\areasmall radius centered on touched creature}}{\spellrng{Touch}}
+\spellrng{Touch}
+\spelltgt{One creature}[Primary]
+\spellemanation{\areasmall radius from the primary target}
 \spelldur{\durshort \dismissable}
-\spelleffect All creatures in the area gain the effects of a \spell{protection from alignment} spell, using an alignment of your choice. In addition, no summoned creatures can enter the area except summoned creatures of the chosen alignment.
 \spellsr{Yes (Will)}
+\spellspecial When you cast this spell, choose an alignment (chaotic, good, lawful, or evil).
+\spellline
+\spelleffect Summoned creatures which have the chosen alignment cannot enter the area.
+\begin{spelltargets}*[Secondary]{All creatures in the area}
+    \spelleffect The target is protected from the chosen alignment, as \spell{protection from alignment}.
+\end{spelltargets}
 
 \spellsection{Magic Fang}{2}
 \spellinfo{Trans (Augment)}{Nature}
@@ -2438,7 +2452,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellattack{Will partial}
 \spellsr{Yes (Will)}
 \begin{spelltarget}{One creature}[Magic vs. Will]
-    \spellsuccess The target is banished to an extradimensional labyrinth of force planes. Each round, as a full-round action, it may attempt a DC 20 Intelligence check to escape the labyrinth. If the subject doesn't escape, the maze disappears after 5 minutes, forcing the subject back to the location where it was originally banished.
+    \spellsuccess The target is banished to an extradimensional labyrinth of force planes. Each round, as a full-round action, it may attempt a DC 20 Intelligence check to escape the labyrinth. If the target doesn't escape, the maze disappears after 5 minutes, forcing the target back to the location where it was originally banished.
     \spellfailure As above, but the DC of the Intelligence check to escape is 10.
 \end{spelltarget}
 \spellnotes Spells and abilities that move a creature within a plane, such as \spell{teleport} and \spell{dimension door}, do not help a creature escape a \spell{maze} spell, although a \spell{plane shift} spell allows it to exit to whatever plane is designated in that spell. Minotaurs can escape the spell automatically.
@@ -2477,7 +2491,7 @@ When leaving the maze, the target reappears where it had been when the maze spel
 \spellsr{Yes (Fortitude)}
 \begin{spelltargets}{Everything in the area}[Magic vs. Reflex]
     \spellsuccess 9d6 fire damage \add d6 per four caster levels above 18th. If the target is on the ground, it falls prone.
-    
+
     If the target is in the air, and is Gargantuan or smaller, it is driven to the ground. It takes falling damage as appropriate for the distance descended.
     \spellfailure As above, but half damage, and the target is not knocked prone or driven to the ground.
 \end{spelltargets}
@@ -2536,9 +2550,7 @@ When leaving the maze, the target reappears where it had been when the maze spel
 
 \spellsection{Mislead}{6}
 \spellinfo{Illus (Figment, Glamer) [Unreal]}{Arcane, Trickery}
-\spelltwocol{\spelltgt{You}}{\spellrng{Personal/\rngmed}}
 \spelldur{\durshort \dismissable}
-\spellattack{Magic check vs. Perception and Will (if interacted with); see text}
 \begin{spelltarget}{You}
     \spelleffect You become invisible, as \spell{invisibility}. At the same time, an illusory double of you appears, as \spell{major image}.
 
@@ -2559,7 +2571,7 @@ When leaving the maze, the target reappears where it had been when the maze spel
 \spelldur{\durext or until discharged}
 \begin{spelltarget}{You}
     \spelleffect As \spell{lesser moment of prescience}, except that you also gain a bonus equal to half your caster level on the roll.
-    
+
     Alternately, you can dischage the spell to protect yourself. As an immediate action, when you are attacked by a physical attack, you can gain a bonus to your dodge modifier equal to half your caster level. Unlike normal, you can still take this immediate action even if if you are unaware of the attack. Doing so makes you aware of the attack, allowing you to defend yourself normally.
 \end{spelltarget}
 \spellnotes As \spell{lesser moment of prescience}.
@@ -2614,7 +2626,7 @@ When leaving the maze, the target reappears where it had been when the maze spel
 \spellnotes Creatures can identify the illusion, as \spell{silent image}.
 
 \spellsection{Phantasmal Killer}{4}
-\spelldesc{You create a phantasmal image of the most fearsome creature imaginable to the subject simply by forming the fears of the subject's subconscious mind into something that its conscious mind can visualize: this most horrible beast.}
+\spelldesc{You create a phantasmal image of the most fearsome creature imaginable to your foe simply by forming the fears of its subconscious mind into something that its conscious mind can visualize: this most horrible beast.}
 \spellinfo{Ench/Illus (Emotion, Phantasm) [Death, Fear, Mind-Affecting]}{Arcane, Trickery}
 \spellrng{\rngmed}
 \spellsr{Yes (Will)}
@@ -2625,19 +2637,19 @@ When leaving the maze, the target reappears where it had been when the maze spel
 \end{spelltarget}
 
 \spellsection{Phantasmal Maze}{5}
-\spelldesc{You manipulate the subject's perceptions, causing it to believe that it is trapped in a labyrinth.}
+\spelldesc{You manipulate a foe's perceptions, causing it to believe that it is trapped in a labyrinth.}
 \spellinfo{Illus (Phantasm)}{Arcane, Trickery}
 \spellrng{\rngmed}
 \spelldur{\durmed}
 \spellsr{Yes (Will)}
 \begin{spelltarget}{One creature}[Magic vs. Will]
-    \spellsuccess The target perceives itself to be banished to an extradimensional labyrinth of force planes, as the \spell{maze} spell. It cannot see or hear anything to the contrary, causing it to be treated as if blinded and deafened for most purposes. However, it can still see and hear itself. Typically, this means the subject moves in a random direction each round to escape the maze.
+    \spellsuccess The target perceives itself to be banished to an extradimensional labyrinth of force planes, as the \spell{maze} spell. It cannot see or hear anything to the contrary, causing it to be treated as if blinded and deafened for most purposes. However, it can still see and hear itself. Typically, this means the target moves in a random direction each round to escape the maze.
 
     If the target encounters any physical resistance in its movements or takes any damage, you must make another attack to maintain the effect. Failure means the target disbelieves the phantasm, ending the spell.
 \end{spelltarget}
 
 \spellsection{Phantasmal Wound}{2}
-\spelldesc{You manipulate the subject's perceptions, causing it to believe that it is grievously wounded.}
+\spelldesc{You manipulate a foe's perceptions, causing it to believe that it is grievously wounded.}
 \spellinfo{Illus (Phantasm)}{Arcane}
 \spellrng{\rngmed}
 \spelldur{\durshort}
@@ -2649,7 +2661,7 @@ When leaving the maze, the target reappears where it had been when the maze spel
 \end{spelltarget}
 
 \spellsection{Poison}{4}
-\spelldesc{Calling upon the venomous powers of natural predators, you infect the subject with a horrible poison that drains its life force.}
+\spelldesc{Calling upon the venomous powers of natural predators, you infect your foe with a horrible poison that drains its life force.}
 \spellinfo{Necro (Flesh) [Poison]}{Death, Divine, Nature}
 \spellrng{\rngclose}
 \spelldur{5 minutes \undispellable}
@@ -2685,7 +2697,7 @@ When leaving the maze, the target reappears where it had been when the maze spel
 \begin{spelltarget}{One creature}
     \spelleffect The target is \sickened.
 
-    If the target is \bloodied when the spell is cast, it is instead \blinded.
+    If the target is \bloodied, it is instead \blinded.
 \end{spelltarget}
 
 \spellsection{Power Word Confuse}{6}
@@ -2697,7 +2709,7 @@ When leaving the maze, the target reappears where it had been when the maze spel
 \begin{spelltarget}{One creature}
     \spelleffect The target is \bewildered.
 
-    If the target is \bloodied when the spell is cast, it is instead \confused.
+    If the target is \bloodied, it is instead \confused.
 \end{spelltarget}
 
 \spellsection{Power Word Kill}{9}
@@ -2710,7 +2722,7 @@ When leaving the maze, the target reappears where it had been when the maze spel
 \begin{spelltarget}{One living creature}
     \spelleffect The target is \sickened.
 
-    If the target is \bloodied when the spell is cast, and its level does not exceed your caster level, it dies instead.
+    If the target is \bloodied, and its level does not exceed your caster level, it dies instead.
 \end{spelltarget}
 
 \spellsection{Power Word Stun}{8}
@@ -2723,7 +2735,7 @@ When leaving the maze, the target reappears where it had been when the maze spel
 \begin{spelltarget}{One creature}
     \spelleffect The target is \bewildered.
 
-    If the target is \bloodied when the spell is cast, it is instead \stunned.
+    If the target is \bloodied, it is instead \stunned.
 \end{spelltarget}
 
 \spellsectioncomma{Precognition}{Lesser}{2}
@@ -2935,7 +2947,7 @@ Since the image is not a creature, it is difficult to disrupt, and many spells h
     \par All equipment worn or carried by a creature is similarly reduced by the spell. Melee and projectile weapons deal less damage. Other magical properties are not affected by this spell. Any reduced item that leaves the reduced creature's possession (including a projectile or thrown weapon) instantly returns to its normal size. This means that thrown weapons deal their normal damage (projectiles deal damage based on the size of the weapon that fired them).
 \end{spelltarget}
 \spellnotes Multiple magical effects that reduce size do not stack. This spell can be made permanent with a \spell{permanency} ritual.
-    \par A Small humanoid creature whose size decreases to Tiny has a space of 2-1/2 feet and a natural reach of 0 feet (meaning that it must enter an opponent's square to attack). A Large humanoid creature whose size decreases to Medium has a space of 5 feet and a natural reach of 5 feet.
+\par A Small humanoid creature whose size decreases to Tiny has a space of 2-1/2 feet and a natural reach of 0 feet (meaning that it must enter an opponent's square to attack). A Large humanoid creature whose size decreases to Medium has a space of 5 feet and a natural reach of 5 feet.
 
 \spellsectioncomma{Reduce Person}{Mass}{5}
 \spellinfo{Trans (Polymorph) [Size-Affecting]}{Trans}
@@ -2954,7 +2966,7 @@ Since the image is not a creature, it is difficult to disrupt, and many spells h
 \spellsr{Yes (Fortitude)}
 \begin{spelltarget}{One living creature}
     \spelleffect The target automatically heals a number of hit points each round equal to your caster level.
-    \par You can also use this spell to regrow lost portions of the subject's body and to reattach severed limbs or body parts, if you do nothing but concentrate on regrowing the lost body part or reattaching the severed limb for 5 minutes.
+    \par You can also use this spell to regrow lost portions of the target's body and to reattach severed limbs or body parts, if you do nothing but concentrate on regrowing the lost body part or reattaching the severed limb for 5 minutes.
 \end{spelltarget}
 
 \spellsection{Repulsion}{6}
@@ -2991,12 +3003,10 @@ Since the image is not a creature, it is difficult to disrupt, and many spells h
 \spelldur{\durlong or until expended}
 \spellsr{Yes (Fortitude)}
 \begin{spelltarget}{One creature}
-    \spelleffect The target gains damage reduction against a single energy type of your choice (acid, cold, electricity, fire). The damage resisted is equal to 8 \add 1 per caster level above 4th.
+    \spelleffect The target gains gains damage reduction against a single energy type of your choice (acid, cold, electricity, fire). This reduces the damage it takes each round from that energy type by 10 \add 2 per caster level above 4th.
     \par The spell can absorb a maximum amount of damage equal to 10 points per caster level. After it absorbs its maximum amount of damage, the spell ends.
 \end{spelltarget}
-\spellnotes This spell's damage reduction allows the subject to ignore the first 10 energy damage it takes each round of the appropriate type.
-
-\par This spell overlaps (and does not stack with) \spell{protection from energy}. If a character is shielded by both spells, the \spellindirect{protection from energy}{protection} spell absorbs damage until its power is exhausted. A character can only be affected by one \spell{resist energy} spell at once.
+\spellnotes This spell overlaps (and does not stack with) \spell{protection from energy}. If a character is shielded by both spells, the \spellindirect{protection from energy}{protection} spell absorbs damage until its power is exhausted. A character can only be affected by one \spell{resist energy} spell at once.
 
 \spellsectioncomma{Resist Energy}{Greater}{4}
 \spellinfo{Abjur (Shielding)}{Arcane, Divine, Nature}
@@ -3004,7 +3014,7 @@ Since the image is not a creature, it is difficult to disrupt, and many spells h
 \spelldur{\durlong or until expended}
 \spellsr{Yes (Fortitude)}
 \begin{spelltarget}{One creature}
-    \spelleffect The target gains damage reduction against all energy types (acid, cold, electricity, fire). The damage resisted is equal to 16 \add 1 per caster level above 8th.
+    \spelleffect The target gains damage reduction against all energy types (acid, cold, electricity, fire). This reduces the energy damage it takes each round by 20 \add 2 per caster level above 8th.
     \par The spell can absorb a maximum amount of damage equal to 10 points per caster level. After it absorbs its maximum amount of damage, the spell ends.
 \end{spelltarget}
 \spellnotes As \spell{resist energy}.
@@ -3020,7 +3030,9 @@ Since the image is not a creature, it is difficult to disrupt, and many spells h
 \begin{spelltrigger}{Creature attacks the primary target with a melee weapon}
     \spellrng{\rngclose}
     \begin{spelltarget}*[Secondary]{Attacking creature}[Magic vs. Reflex]
-        \spellsuccess The target is \dazzled for 5 rounds. If it is \bloodied, it is also \blinded for 5 rounds.
+        \spellsuccess The target is \dazzled for 5 rounds.
+
+        If the target is \bloodied, it is also \blinded for 5 rounds.
         \spellfailure The target is dazzled for 5 rounds.
     \end{spelltarget}
 \end{spelltrigger}
@@ -3031,9 +3043,8 @@ Since the image is not a creature, it is difficult to disrupt, and many spells h
 \spelldur{\durshort}
 \spellsr{Yes (Will)}
 \begin{spelltarget}{One creature}
-    \spelleffect The target gains physical damage reduction 8/life. This damage reduction increases by 1 per two caster levels above 8th. In addition, any creature within \rngmed range of the target that deals damage to it takes life damage equal to the damage resisted by this damage reduction.
+    \spelleffect The target gains physical damage reduction, reducing the physical damage it takes each round by 8 \add 1 per caster level above 8th. If it takes life damage, it cannot use its damage reduction for 1 round. In addition, any creature within \rngmed range of the target that deals damage to it takes life damage equal to the damage resisted by this damage reduction.
 \end{spelltarget}
-\spellnotes This spell's damage reduction allows the subject to ignore the first 8 physical damage it takes each round. If it is hit by an attack that deals life damage, such as \spell{crush life}, it cannot use its damage reduction for 1 round.
 
 \spellsection{Retrieve Ally}{2}
 \spelldesc{You save your ally from danger by teleporting it next to you.}
@@ -3072,7 +3083,9 @@ Since the image is not a creature, it is difficult to disrupt, and many spells h
 \spellline
 \spellspecial This spell has three versions. Its effects depend on which version is chosen.
 \begin{spelltarget}*{One creature}
-    \spelleffect[\subspell{Revelation of Destruction}] You inflict a vision of a terrible future upon the target. It takes a \minus4 penalty to attacks, defenses, and checks as it struggles to avoid the certainty of its own doom. If it becomes \bloodied, these penalties increase by 2.
+    \spelleffect[\subspell{Revelation of Destruction}] You inflict a vision of a terrible future upon the target. It takes a \minus4 penalty to attacks, defenses, and checks as it struggles to avoid the certainty of its own doom.
+
+    As long as the target is \bloodied, these penalties increase by 2.
     \spelleffect[\subspell{Revelation of Prowess}] You show the target a vision of its success in the combat to come. It gains the benefits of a \spell{greater precognition} spell.
     \spelleffect[\subspell{Revelation of Truth}] You show the target the truth of the world around it. It gains the benefits of a \spell{true seeing} spell.
 \end{spelltarget}
@@ -3102,10 +3115,9 @@ Since the image is not a creature, it is difficult to disrupt, and many spells h
 \spellinfo{Trans (Augment, Polymorph) [Size-Affecting]}{Divine, Good, Strength}
 \spelldur{\durshort \dismissable}
 \begin{spelltarget}{You}
-    \spellsuccess You become larger, as \spell{enlarge person}. In addition, you gain physical damage reduction equal to 10 \add 1 per two caster levels above 10th. This damage reduction is overcome by evil attacks if you are good or neutral, and by good attacks if you are evil.
+    \spellsuccess You become larger, as \spell{enlarge person}. In addition, you gain physical damage reduction, reducing the physical damage you take each round by 10 \add 1 per caster level above 10th. This damage reduction is overcome by evil attacks if you are good or neutral, and by good attacks if you are evil. If you are hit by an appropraitely aligned attack, you cannot use your damage reduction for 1 round.
 \end{spelltarget}
-\spellnotes This spell's damage reduction allows the target to ignore the first 10 physical damage it takes each round. If it is hit by an attack that deals appropriately aligned damage, such as a weapon affected by \spell{align weapon} or a spell with the appropriate descriptor, it cannot use its damage reduction for 1 round.
-Multiple magical effects that increase size do not stack.
+\spellnotes Multiple magical effects that increase size do not stack.
 
 \pdfbookmark[2]{S}{SpellDescriptionsS}
 \begin{comment}
@@ -3126,7 +3138,7 @@ Multiple magical effects that increase size do not stack.
     \end{spelltarget}
 \end{spelltrigger}
 
-\spellnotes This is considered a mind-affecting effect on any creature that attempts to attack the subject. Creatures immune to mind-affecting effects can attack the subject freely.
+\spellnotes This is considered a mind-affecting effect on any creature that attempts to attack the target. Creatures immune to mind-affecting effects can attack the target freely.
 
 \spellsection{Scintillating Pattern}{8}
 \spelldesc{You create a massive spread of colorful lights that spin and whirl in a complex pattern that bewilders your foes.}
@@ -3143,7 +3155,7 @@ Multiple magical effects that increase size do not stack.
 
 \spellsection{Scorching Ray}{2}
 \spelldesc{You blast your foe with a fiery ray.}
-\spellinfo{Evoc (Energy) [Fire]}{Arcane, Fire}
+\spellinfo{Evoc (Energy) [Fire]}{Arcane, Destruction, Fire}
 \spellrng{\rngclose}
 \spelldur{\durshort}
 \spellsr{Yes (Fortitude)}
@@ -3183,17 +3195,15 @@ This spell can be made permanent with a \spell{permanency} ritual.
 
 \spellsection{Shadow Body}{7}
 \spellinfo{Illus/Trans (Polymorph, Shadow)}{Arcane}
-\spellrng{Personal}
 \spelldur{\durmed \dismissable}
 \begin{spelltarget}{You}
-\spelleffect Your body and all your equipment are subsumed by your shadow. As a living shadow, you blend perfectly into any other shadow and vanish in darkness. You appear as an unattached shadow in areas of full light.
-\par You can move at your normal speed, on any surface, including walls and ceilings, as well as across the surfaces of liquids -- even up the face of a waterfall.
-\par You become perfectly flat, potentially allowing you to move into locations you would not normally be able to move into.
-\par While in your shadow body, you gain damage reduction 15/solar and darkvision out to 60 feet. You are immune to ability damage, disease, drowning, and poison. You take only half damage from acid, electricity, and fire of all kinds.
-\par While affected by this spell, you can be detected by spells that read thoughts, life, or presences (including true seeing), or if you make suspicious movements in lighted areas.
-\par You cannot harm anyone physically or manipulate any objects, but you can use your spells normally. Doing so may attract notice, but if you remain in a shadowed area, you get a \plus15 enhancement bonus on your Hide check to remain unnoticed.
+    \spelleffect Your body and all your equipment are subsumed by your shadow. As a living shadow, you blend perfectly into any other shadow and vanish in darkness. You appear as an unattached shadow in areas of full light.
+    \par You can move at your normal speed, on any surface, including walls and ceilings, as well as across the surfaces of liquids -- even up the face of a waterfall.
+    \par You become perfectly flat, potentially allowing you to move into locations you would not normally be able to move into.
+    \par While in your shadow body, you gain physical damage reduction, reducing the physical damage you take each round by 14 \add 1 per caster level above 14th. If you take solar damage, you cannot use your damage reduction for 1 round. You are immune to ability damage, disease, drowning, and poison. You take only half damage from energy attacks (acid, cold, electricity, and fire).
+    \par While affected by this spell, you can be detected by spells that read thoughts, life, or presences (including true seeing), or if you make suspicious movements in lighted areas.
+    \par You cannot harm anyone physically or manipulate any objects, but you can use your spells normally. Doing so may attract notice, but if you remain in a shadowed area, you get a \plus15 enhancement bonus on your Hide check to remain unnoticed.
 \end{spelltarget}
-\spellnotes This spell's damage reduction allows the subject to ignore the first 15 physical damage it takes each round. If it is hit by an attack that deals solar damage, such as \spell{sunbeam}, it cannot use its damage reduction for 1 round.
 
 \spellsection{Shadow Puppet}{9}
 \spellinfo{Conj/Illus (Shadow, Translocation) [Planar, Unreal]}{Illus}
@@ -3209,7 +3219,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldur{\durshort}
 \spellsr{Yes (Will)}
 \begin{spelltarget}{One creature}
-    \spelleffect All attacks that would affect the creature, including magical and supernatural attacks, have a 50\% chance to be absorbed by the umbra. Attacks absorbed by the umbra have no effect on the subject. The umbra is selective, and does not inhibit beneficial effects.
+    \spelleffect All attacks that would affect the creature, including magical and supernatural attacks, have a 50\% chance to be absorbed by the umbra. Attacks absorbed by the umbra have no effect on the target. The umbra is selective, and does not inhibit beneficial effects.
 
     Whenever the umbra absorbs an attack, it alters the creature's appearance (including smell, sound, and other senses, as appropriate) with a glamer. This causes the creature to seem as if were affected by the attack. Outside observers have no way of knowing which attacks were absorbed by the umbra unless they can recognize the illusion. The spell does not attempt to mimic the effects of extraordinary attacks which cannot be disguised, such as attacks which would destroy the creature's body.
 \end{spelltarget}
@@ -3220,11 +3230,11 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldur{\durlong \dismissable}
 \spellsr{Yes (Will)}
 \begin{spelltargets}{You and one willing creature}
-\spelleffect This spell creates a connection between you and a willing target. As you cast the spell, you decide which creature will be protected. When the protected creature would take damage to its hit points, it instead takes half of that damage (rounded down), and you lose hit points equal to the other half of the damage (rounded up).
+    \spelleffect This spell creates a connection between you and a willing target. As you cast the spell, you decide which creature will be protected. When the protected creature would take damage to its hit points, it instead takes half of that damage (rounded down), and you lose hit points equal to the other half of the damage (rounded up).
 
-If the target is out of range of you, the effect is suppressed until it returns within the range.
+    If the target is out of range of you, the effect is suppressed until it returns within the range.
 \end{spelltargets}
-\spellnotes The loss of hit points caused by this spell is not damage, and is not affected by damage reduction or other abilities which affect damage. When this spell ends, subsequent damage is no longer divided between the subject and you, but damage already shared is not reassigned.
+\spellnotes The loss of hit points caused by this spell is not damage, and is not affected by damage reduction or other abilities which affect damage. When this spell ends, subsequent damage is no longer divided between the target and you, but damage already shared is not reassigned.
 
 \spellsectioncomma{Share Pain}{Forced}{3}
 \spellinfo{Abjur/Necro (Life, Shielding)}{Arcane, Divine, Evil}
@@ -3330,9 +3340,9 @@ If the target is out of range of you, the effect is suppressed until it returns 
 \spelldur{\durshort \dismissable}
 \spellsr{Yes (Will)}
 \begin{spelltarget}{One creature or object}[Magic vs. Will]
-    \spelleffect The target becomes unable to make noise. Any noises it makes are inaudible to other creatures. When you cast the spell, you may choose whether the subject can still hear itself normally, potentially causing it to be unaware of the effect of the spell.
+    \spelleffect The target becomes unable to make noise. Any noises it makes are inaudible to other creatures. When you cast the spell, you may choose whether the target can still hear itself normally, potentially causing it to be unaware of the effect of the spell.
 
-Extraordinarily loud noises, such as the yell of a giant, are merely muffled by the spell rather than completely silenced. The DC to hear such sounds produced by the subject is increased by 40. Sonic attacks function normally.
+    Extraordinarily loud noises, such as the yell of a giant, are merely muffled by the spell rather than completely silenced. The DC to hear such sounds produced by the target is increased by 40. Sonic attacks function normally.
 \end{spelltarget}
 \spellnotes Spellcasters unable to hear themselves cast are treated as deafened, and suffer a 20\% chance of spell failure when casting spells with verbal components.
 
@@ -3520,9 +3530,8 @@ The weapon can move up to 60 feet per round. It never provokes attacks of opport
 \spelldur{\durshort}
 \spellsr{Yes (Fortitude)}
 \begin{spelltarget}{One creature}
-    \spelleffect The target gains a \plus3 enhancement bonus to its armor modifier. This bonus increases to \plus4 at 14th caster level, and to \plus5 at 20th caster level. In addition, it gains physical damage reduction 8/adamantine. This damage reduction increases by 1 per two caster levels above 8th.
+    \spelleffect The target gains a \plus3 enhancement bonus to its armor modifier. This bonus increases to \plus4 at 14th caster level, and to \plus5 at 20th caster level. In addition, it gains physical damage reduction, reducing the damage it takes each round from physical attacks by 8 \add 1 per caster level above 8th. If it is hit by an adamantine weapon, it cannot use its damage reduction for 1 round.
 \end{spelltarget}
-\spellnotes This spell's damage reduction allows the subject to ignore the first 8 physical damage it takes each round. If it is hit by an adamantine weapon, it cannot use its damage reduction for 1 round.
 
 \spellsection{Storm of Vengeance}{9}
 \spellinfo{Conj/Evoc (Energy, Control, Creation)}{Air, Divine, Nature, War, Water}
@@ -3553,14 +3562,14 @@ At the end of every round, the storm has an additional effect, as shown on \tref
 \spelldur{\durshort \dismissable}
 \spellsr{Yes (Fortitude)}
 \begin{spelltarget}[Primary]{You}
-    \spelleffect You gain physical damage reduction against ranged attacks, such as projectile weapons and thrown weapons. The damage reduction is equal to 35 \add 1 per caster level above 14th.
+    \spelleffect You gain physical damage reduction against ranged attacks, reducing the physical damage you take each round from ranged attacks by 35 \add 2 per caster level above 14th.
 \end{spelltarget}
-\begin{spelltrigger}{A creature attacks you with a melee weapon}
-    \begin{spelltarget}[Secondary]{Magic vs. Fortitude}
+\begin{spelltrigger}{Creature within \rngclose range makes a physical attack against you}
+    \begin{spelltarget}[Secondary]{Attacking creature}[Magic vs. Fortitude]
         \spellsuccess 7d6 bludgeoning damage \add d6 per four caster levels above 14th.
+        \spellfailure As above, but half damage.
     \end{spelltarget}
 \end{spelltrigger}
-\spellnotes This spell's damage reduction allows the subject to ignore the first 35 physical damage it takes each round from ranged attacks.
 
 \spellsection{Strip the Flesh}{7}
 \spelldesc{You rend parts of your foe's skin off its body, inflicting grievous wounds and leaving it vulnerable.}
@@ -3582,7 +3591,7 @@ At the end of every round, the storm has an additional effect, as shown on \tref
 \spellsr{Yes (Will)}
 \begin{spelltarget}{One creature}[Magic vs. Will]
     \spelleffect You influence the actions of the target creature by suggesting a course of activity (limited to a sentence or two). The suggestion must be worded in such a manner as to make the activity sound reasonable. Asking the creature to do some obviously harmful act automatically negates the effect of the spell. Additionally, any obvious threat, such as someone drawing a weapon, casting a spell, or aiming a ranged weapon at the fascinated creature, grants the creature a new saving throw with a \plus5 bonus.
-    \par The suggested course of activity can continue for the entire duration. If the suggested activity can be completed in a shorter time, the spell ends when the subject finishes what it was asked to do. You can instead specify conditions that will trigger a special activity during the duration. If the condition is not met before the spell duration expires, the activity is not performed.
+    \par The suggested course of activity can continue for the entire duration. If the suggested activity can be completed in a shorter time, the spell ends when the target finishes what it was asked to do. You can instead specify conditions that will trigger a special activity during the duration. If the condition is not met before the spell duration expires, the activity is not performed.
 \end{spelltarget}
 \spellnotes A very reasonable suggestion can grant a \plus2 or greater bonus on the magic attack.
 
@@ -3860,189 +3869,211 @@ At the end of every round, the storm has an additional effect, as shown on \tref
 \spellsection{Telekinesis}{6}
 \spelldesc{You move objects or creatures by concentrating on them.}
 \spellinfo{Evoc (Control)}{Evoc}
-\spelltwocol{\spelltgtortgts{See text}}{\spellrng{\rngmed}}
-\spelldur{Concentration, up to \durmed/Instantaneous; see text}
-\spellattack{Magic vs. Will (object)/None; see text}
-\spelleffect Depending on the version selected, the spell can provide a gentle, sustained force, perform a variety of maneuvers, or exert a single short, violent thrust.
-\par \subspell{Sustained Force} As the \spell{telekinetic force} spell.
-
-\par \subspell{Combat Maneuver} As the \spell{telekinetic maneuver} spell.
-
-\par \subspell{Violent Thrust} Alternatively, the spell energy can be spent in a single round, as the \spell{telekinetic thrust} spell.
+\spellrng{\rngmed}
+\spelldur{Concentration or until discharged}
+\spellline
+\spellspecial Each round, you choose one of three effects.
+\spelleffect[Sustained Force] As \spell{telekinetic force}.
+\spelleffect[Combat Maneuver] As \spell{telekinetic maneuver}.
+\spelleffect[Violent Thrust] As \spell{telekinetic thrust}. Using this effect ends the spell.
 
 \spellsection{Telekinetic Force}{4}
 \spellinfo{Evoc (Control)}{Evoc}
-\spelltwocol{\spelltgt{One object or creature at a time}}{\spellrng{\rngmed}}
-\spelldur{Concentration, up to 5 minutes}
-\spellattack{Magic vs. Will (object); see text}
-\spelleffect You may manipulate objects or creatures at a distance as if you were holding the object in your hands. When doing so, your effective Strength is equal to half your casting attribute, and your effective Dexterity is equal to half your Intelligence. You can move objects at a speed of up to 20 feet per round in any direction.
-
-To affect a creature or an attended object, you must make a successful Will attack. This attack must be repeated each round. If you are prevented from affecting a target in this way, it and any of its possessions are immune to your attempts for the duration of the spell, though you can still attempt to affect other creatures or objects. 
-\spellnotes This spell generally moves objects too slowly for them to be used as weapons. However, some indirect weapons, such as crossbows, may be used to attack with this spell. 
+\spellrng{\rngmed}
+\spelldur{Concentration}
 \spellsr{Yes (Will)}
+\begin{spelltrigger}{End of every round}
+    \begin{spelltarget}*{One creature or object}[Magic vs. Will]
+        \spellsuccess You can take a standard action using the target as if you were holding it in your hands. Your effective Strength is equal to your Charisma, and your effective Dexterity is equal to your Intelligence. You can move the target up to thirty feet per round.
+    \end{spelltarget}
+\end{spelltrigger}
+\spellnotes If a target resists your attempt to control it, it (and its equipment) is immune to any further attempts you make for the duration of the spell.
 
 \spellsection{Telekinetic Maneuver}{3}
 \spellinfo{Evoc (Control)}{Evoc}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
-\spelldur{Concentration, up to \durmed}
-\spelleffect Once per round, you can telekinetically attack a foe of your choice. You can perform a disarm, dirty trick, grapple (including a pin, if you have already grappled a foe), shove, or trip attack. Resolve these attempts as normal, except that they don't provoke attacks of opportunity, you use your caster level in place of your base attack bonus, and you use your casting attribute in place of your Strength. In addition, you get a \plus2 enhancement bonus to maneuvers with this spell. \spellbonusscalingdescription
+\spellrng{\rngmed}
+\spelldur{Concentration}
 \spellsr{Yes (Will)}
+\spellline
+\begin{spelltrigger}{End of every round}
+    \spellspecial Choose one of the following combat maneuvers: disarm, dirty trick, grapple, shove, or trip.
+    \begin{spelltarget}*{One creature or object}l[Caster level \add casting attribute vs. Maneuver defense]
+        \spellsuccess The target is affected by the chosen maneuver.
+    \end{spelltarget}
+\end{spelltrigger}
 
 \spellsection{Telekinetic Thrust}{5}
 \spellinfo{Evoc (Control)}{Evoc}
-\spelltwocol{\spelltgtortgts{Five objects or creatures in a \areamed radius \add one per four caster levels above 8th}}{\spellrng{\rngmed}}
-\spellattack{Magic vs. Will (object); see text}
-\spelleffect You can throw the affected objects or creatures anywhere within the spell's range. All subjects of this spell must be thrown to the same place. You can hurl up to a total weight of 25 pounds per caster level.
-\par You must succeed on physical ranged attacks (one per creature or object thrown) to hit the target of the hurled items with the items, with an attack bonus equal to your caster level \add your casting attribute. Hurled weapons deal their normal damage. Other objects deal damage ranging from 1 point per 25 pounds of weight (for less dangerous objects such as an empty barrel) to 1d6 points per 25 pounds of weight (for hard, dense objects such as a boulder).
-\par To affect a creature or attended item, you must make a successful Will attack.
-\par If you use this power to hurl a creature against a solid surface, it takes damage as if it had fallen 50 feet (5d6 damage).
+\spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngmed}}
 \spellsr{Yes (Will)}
+\begin{spelltarget}{One creature or object}[Magic vs. Will]
+    \spellsuccess You throw the target in any direction a number of feet equal to 50 \add 5 per two caster levels above 10th. You can only throw it half as far vertically.
+
+    If the target strikes a solid obstacle, such as another creature, both the target and the struck obstacle take 1d6 physical bludgeoning damage per 10 feet of movement the target had left to travel.
+\end{spelltarget}
 
 \spellsection{Telepathy}{5}
 \spellinfo{Div (Communication)}{Arcane}
-\spelltwocol{\spelltgt{You}}{\spellrng{Personal}}
 \spelldur{\durlong}
-\spelleffect You gain telepathy out to a range of 100 feet. This allows you to send mental messages to any creature within range that has a language. Non-telepathic creatures can reply mentally to your messages, but they cannot initiative a telepathic conversation with you.
+\begin{spelltarget}{You}
+    \spelleffect You gain telepathy out to a range of 100 feet. This allows you to send mental messages to any creature within range that has a language. Non-telepathic creatures can reply mentally to your messages, but they cannot initiative a telepathic conversation with you.
 
-You can address multiple creatures at once with telepathy, but maintaining separate mental conversations is just as difficult as simultaneously speaking and listening to multiple creatures at the same time. 
+    You can address multiple creatures at once with telepathy, but maintaining separate mental conversations is just as difficult as simultaneously speaking and listening to multiple creatures at the same time. 
+\end{spelltarget}
 
 \spellsection{Temporal Stasis}{8}
 \spellinfo{Trans (Temporal)}{Arcane}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{Touch}}
-\spelldur{\durshort/Permanent}
-\spellattack{None/Magic vs. Will}
-\spelleffect The subject is slowed for a \durshort duration.
-\begin{spellblood}
-    In addition, you make a Will attack against the touched creature. A successful attack causes the subject to be placed into a state of suspended animation. For the creature, time ceases to flow and its condition becomes fixed. The creature does not grow older. Its body functions virtually cease, and no force or effect can harm it. This state persists until the magic is removed (such as by a successful \spell{dispel magic} spell or an \spell{emancipation} spell).
-\end{spellblood}
-\spellnotes A slowed creature can take only a single move action or standard action each turn, but not both. It cannot take full-round actions, but it may take swift actions. Additionally, it takes a \minus2 penalty to physical attacks and defenses, as well as Strength and Dexterity-based checks.
+\spellrng{5 feet}
+\spelldur{\durlong/Permanent}
 \spellsr{Yes (Will)}
+\begin{spelltarget}{One creature}[Magic vs. Will]
+    \spellsuccess The target is \slowed for a \durlong duration.
 
-\spellsection{Power Word Fear}{6}
-\spell{You fill your foe with an inescapable fear, forcing it to flee from your presence.}
-\spellinfo{Ench (Emotion) [Fear, Mind-Affecting]}{Arcane}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
-\spelldur{\durshort}
-\begin{spellhealthy}
-    The subject is shaken, causing it to be \vulnerable.
-\end{spellhealthy}
-\begin{spellblood}
-    The subject is frightened.
-\end{spellblood}
-\spellnotes A \vulnerable character takes a \minus2 penalty on attacks, defenses, and checks. A frightened creature is the same, except that it also flees from the source of its fear as best it can. If unable to flee, it may fight.
-\par A character shaken by multiple sources becomes frightened. A character frightened by multiple sources becomes panicked.
-\spellsr{Yes (Will)}
+    If the target is \bloodied, it is instead permanently placed into a state of suspended animation. For the target, time ceases to flow and its condition becomes fixed. It does not grow older. Its body functions virtually cease, and no force or effect can move or harm it.
+\end{spelltarget}
 
 \spellsection{Time Stop}{9}
 \spellinfo{Trans (Temporal)}{Arcane}
-\spelltwocol{\spelltgt{You}}{\spellrng{Personal}}
 \spelldur{1d3\plus1 rounds (apparent time); see text}
-\spelleffect This spell seems to make time cease to flow for everyone but you. In fact, you step into an alternate timestream, causing you to speed up so greatly that all other creatures seem frozen, though they are actually still moving at their normal speeds. You are free to act for 1d3\plus1 rounds of apparent time. You are still \vulnerable to danger, such as from heat or dangerous gases, but your actions have no effect on anything in the world other than yourself. Objects and creatures appear frozen in place. You cannot cast spells that affect any targets except yourself; the temporal magic is too strong to permit interference from lesser magic, and attempts to cast magic beyond the accelerated time surrounding you simply fail. The only exception is for temporal spells, which can be cast normally inside a \spell{time stop}. The subjects are not affected and do not attempt to resist the effects until the end of the \spell{time stop}, so you do not know whether they are affected by any spells you cast until the effect has expired.
+\spellline
+\spelleffect This spell seems to make time cease to flow for everyone but you. In fact, you step into an alternate timestream, causing you to speed up so greatly that all other creatures seem frozen, though they are actually still moving at their normal speeds. You are free to act for 1d3\plus1 rounds of apparent time. You are still \vulnerable to danger, such as from heat or dangerous gases, but your actions have no effect on anything in the world other than yourself. Objects and creatures appear frozen in place. You cannot cast spells that affect any targets except yourself; the temporal magic is too strong to permit interference from lesser magic, and attempts to cast magic beyond the accelerated time surrounding you simply fail. The only exception is for temporal spells, which can be cast normally inside a \spell{time stop}. The targets are not affected and do not attempt to resist the effects until the end of the \spell{time stop}, so you do not know whether they are affected by any spells you cast until the effect has expired.
 \spellnotes Most spellcasters use the additional time to improve their defenses or flee from combat. You are undetectable while \spell{time stop} lasts. You cannot enter an area protected by an \spell{antimagic field} while under the effect of \spell{time stop}.
 
 \spellsection{Totemic Mind}{2}
+\spelldesc{You grant your ally the mental prowess of a totem animal.}
 \spellinfo{Trans (Augment)}{Arcane, Divine, Nature}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngtouch}}
+\spellrng{\rngtouch}
 \spelldur{\durshort}
-\spelleffect This spell grants the subject the mental power of a totem animal. It has three forms, each of which grants a \plus2 enhancement bonus to a mental attribute.
-\par \subspell{Eagle's Splendor} The transmuted creature becomes more persuasive and personally forceful, gaining a bonus to Charisma.
-\par \subspell{Fox's Cunning} The transmuted creature becomes smarter, gaining a bonus to Intelligence.
-\par \subspell{Owl's Wisdom} The transmuted creature becomes more perceptive, gaining a bonus to Wisdom.
 \spellsr{Yes (Will)}
+\begin{spelltarget}{One creature}
+    \spelleffect The target gains a \plus2 enhancement bonus to a mental attribute. The attribute depends on which version is chosen.
+    \par \subspell{Eagle's Splendor}: The transmuted creature becomes more persuasive and personally forceful, gaining a bonus to Charisma.
+    \par \subspell{Fox's Cunning}: The transmuted creature becomes smarter, gaining a bonus to Intelligence.
+    \par \subspell{Owl's Wisdom}: The transmuted creature becomes more perceptive, gaining a bonus to Wisdom.
+\end{spelltarget}
 
 \spellsectioncomma{Totemic Mind}{Greater}{5}
 \spellinfo{Trans (Augment)}{Arcane, Divine, Nature}
-\spelleffect This spell functions like \spell{totemic mind}, except that it grants a \plus4 enhancement bonus to the chosen attribute instead. Alternately, you can grant the subject a \plus2 enhancement bonus to all mental attributes.
+\spellrng{\rngtouch}
+\spelldur{\durshort}
+\spellsr{Yes (Will)}
+\begin{spelltarget}{One creature}
+    \spelleffect The target's mind improves, as \spell{totemic mind}, except that it gains a \plus4 enhancement bonus. Alternately, you can grant the target a \plus2 enhancement bonus to all its mental attributes.
+\end{spelltarget}
 
 \spellsectioncomma{Totemic Mind}{Mass}{6}
 \spellinfo{Trans (Augment)}{Arcane, Divine, Nature}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngmed}}
-\spelltgts{Five creatures in the area}
-\spelleffect This spell functions like \spell{totemic mind}, except that it affects multiple creatures. All affected creatures must gain a bonus to the same attribute.
+\spellsr{Yes (Will)}
+\begin{spelltargets}{Five creatures in the area}
+    \spelleffect The target's mind improves, as \spell{totemic mind}. 
+\end{spelltargets}
+\spellnotes All affected creatures must gain a bonus to the same attribute.
 
 \spellsection{Totemic Power}{2}
+\spelldesc{You grant your ally the physical prowess of a totem animal.}
 \spellinfo{Trans (Augment)}{Arcane, Divine, Nature, Strength}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngtouch}}
+\spellrng{\rngtouch}
 \spelldur{\durshort}
-\spelleffect This spell grants the subject the physical power of an animal. It has three forms, each of which grants a \plus2 enhancement bonus to a physical attribute.
-\par \subspell{Bear's Endurance} The transmuted creature gains greater vitality and stamina, gaining a bonus to Constitution. Hit points gained by a temporary increase in Constitution score are not temporary hit points. They go away when the subject's Constitution drops back to normal. They are not lost first as temporary hit points are.
-\par \subspell{Bull's Strength} The transmuted creature becomes stronger, gaining a bonus to Strength.
-\par \subspell{Cat's Grace} The transmuted creature becomes more graceful, agile, and coordinated, gaining a bonus to Dexterity.
 \spellsr{Yes (Fortitude)}
+\begin{spelltarget}{One creature}
+    \spelleffect The target gains a \plus2 enhancement bonus to a physical attribute. The attribute depends on which version is chosen.
+    \par \subspell{Bear's Endurance}: The transmuted creature gains greater vitality and stamina, gaining a bonus to Constitution. Hit points gained by a temporary increase in Constitution score are not temporary hit points. They go away when the target's Constitution drops back to normal. They are not lost first as temporary hit points are.
+    \par \subspell{Bull's Strength}: The transmuted creature becomes stronger, gaining a bonus to Strength.
+    \par \subspell{Cat's Grace}: The transmuted creature becomes more graceful, agile, and coordinated, gaining a bonus to Dexterity.
+\end{spelltarget}
 
 \spellsectioncomma{Totemic Power}{Greater}{5}
 \spellinfo{Trans (Augment)}{Arcane, Divine, Nature, Strength}
-\spelleffect This spell functions like \spell{totemic power}, except that it grants a \plus4 enhancement bonus to the chosen attribute instead. Alternately, you can grant the subject a \plus2 enhancement bonus to all physical attributes.
+\spellrng{\rngtouch}
+\spelldur{\durshort}
+\spellsr{Yes (Will)}
+\begin{spelltarget}{One creature}
+    \spelleffect The target's body improves, as \spell{totemic power}, except that it gains a \plus4 enhancement bonus. Alternately, you can grant the target a \plus2 enhancement bonus to all its physical attributes.
+\end{spelltarget}
 
 \spellsectioncomma{Totemic Power}{Mass}{6}
 \spellinfo{Trans (Augment)}{Arcane, Divine, Nature}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngmed}}
-\spelltgts{Five creatures in the area}
-\spelleffect This spell functions like \spell{totemic power}, except that it affects multiple creatures. Each affected creature must have the same attribute increased. 
+\spellsr{Yes (Will)}
+\begin{spelltargets}{Five creatures in the area}
+    \spelleffect The target's body improves, as \spell{totemic power}. 
+\end{spelltargets}
+\spellnotes All affected creatures must gain a bonus to the same attribute.
 
 \spellsection{Touch of Idiocy}{2}
 \spelldesc{With a touch, you reduce the target's mental faculties.}
 \spellinfo{Ench (Inhibition) [Mind-Affecting]}{Arcane}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{One}}
+\spellrng{5 feet}
 \spelldur{\durshort}
-\spellattack{Will half}
-\spelleffect The subject takes a \minus4 penalty to the target's Intelligence, Wisdom, and Charisma scores. This penalty can't reduce any of these scores below \minus9.
-\spellnotes This spell's effect may make it impossible for the target to cast some or all of its spells, if the requisite attribute drops below the minimum required to cast spells of that level.
 \spellsr{Yes (Will)}
+\begin{spelltarget}{One creature}[Magic vs. Reflex and Will]
+    \spellsuccess[Reflex] The target takes a \minus4 penalty to its Intelligence, Wisdom, and Charisma. This penalty can't reduce any of these attributes below \minus9.
+    \spellfailure[Will] As above, but the penalty is halved.
+\end{spelltarget}
+\spellnotes This spell's effect may make it impossible for the target to cast some or all of its spells, if its casting attribute drops below the minimum required to cast spells of that level.
 
 \spellsection{Transmute Any Object}{9}
 \spellinfo{Trans (Alteration, Polymorph)}{Arcane}
-\spelltwocol{\spelltgt{One creature, or one nonmagical object of up to 1000 cu. ft.}}{\spellrng{\rngmed}}
-\spelldur{See text}
-\spellattack{Magic vs. Fortitude (object); see text}
-\spelleffect This spell can be used to duplicate the effects of \spell{fabricate}, \spell{major creation}, \spell{passwall}, \spell{shape stone}, \spell{transmute flesh and stone}, or \spell{wall of stone}. The object or creature to be transformed must meet any requirements of the spell to be duplicated, except that it must be within \rngmed range.
+\spellrng{\rngmed}
 \spellsr{Yes (Fortitude)}
+\spellspecial This spell can be used to duplicate the effects of \spell{fabricate}, \spell{passwall}, \spell{shape metal}, \spell{shape stone}, \spell{shape wood}, \spell{transmute flesh and stone}, or \spell{wall of stone}. The object or creature to be transformed must meet any requirements of the spell being duplicated, other than range.
 
 \spellsection{Transmute Flesh and Stone}{6}
 \spellinfo{Trans (Polymorph)}{Arcane, Earth}
-\spelltwocol{\spelltgt{One creature or a cylinder of stone from 1 ft. to 3 ft. in diameter and up to 10 ft. long}}{\spellrng{\rngmed}}
-\spelldur{\durshort/Instantaneous}
-\spelldmg{3d8 damage per round; see text}
-\spellattack{Magic vs. Fortitude (object); see text}
-\spelleffect This spell has different effects depending on the version chosen.
-\par \subspell{Flesh to Stone} The subject is slowed for the duration of the spell, and takes 3d8 physical damage each round as its body gradually turns to stone. If the subject reaches 0 hit points before the spell ends, it becomes a mindless, inert statue, along with all its carried gear. If the statue resulting from this effect is broken or damaged, the subject (if ever returned to its original state) has similar damage or deformities. The creature is not dead, but it is not considered alive either.
-\par Only creatures made of flesh are affected by this effect.
-\par \subspell{Stone to Flesh} This effect restores a petrified creature to its normal state, restoring life and goods. Any petrified creature, regardless of size, can be restored. A restored creature has as many hit points as it had when it was petrified. Stone which was not originally a petrified creature is unaffected.
-\spellnotes A slowed creature can take only a single move action or standard action each turn, but not both. It cannot take full-round actions, but it may take swift actions. Additionally, it takes a \minus2 penalty to physical attacks and defenses, as well as Strength and Dexterity-based checks.
+\spellrng{\rngmed}
 \spellsr{Yes (Fortitude)}
+\spellspecial This spell has two versions: transmuting flesh into stone, and transmuting stone into flesh. Its effects depend on which version is chosen.
+\begin{spelltarget}{One creature (Huge or smaller)}[Magic vs. Fortitude]
+    \spellspecial If the target is not made of flesh (such as a golem), it is unaffected.
+    \spellsuccess 6d6 physical damage immediately, and 3d6 physical damage at the end of each round after the first.
+
+    If the target loses all its hit points, it becomes a mindless, inert statue, along with all its equipment. If the statue resulting from this effect is broken or damaged, the target (if ever returned to its original state) has similar damage or deformities. The target is neither alive nor dead in this state.
+    \spellfailure As above, but half damage.
+\end{spelltarget}
+
+\begin{spelltarget}{One petrified creature (Huge or smaller)}
+    \spellsuccess The target is restored to its normal state, including its equipment. Stone which was not originally a petrified creature is unaffected.
+\end{spelltarget}
 
 \spellsection{Tree Shape}{2}
 \spellinfo{Trans (Polymorph)}{Nature}
-\spelltwocol{\spelltgt{You}}{\spellrng{Personal}}
 \spelldur{\durext \dismissable}
-\spelleffect You become able to assume the form of a Large living tree or shrub or a Large dead tree trunk with a small number of limbs. The closest inspection cannot reveal that the tree in question is actually a magically concealed creature. To all normal tests you are, in fact, a tree or shrub, although a Spellcraft check can reveal a faint transmutation on the tree. While in tree form, you can observe all that transpires around you just as if you were in your normal form, and your hit points and defenses remain unaffected. You gain a \plus10 enhancement bonus to your armor modifier, but you have an effective Dexterity score of \minus10 and cannot move. You are immune to critical hits while in tree form. All clothing and gear carried or worn changes with you.
-\spellnotes You can dismiss tree shape as a free action (instead of as a standard action).
+\begin{spelltarget}{You}
+    \spelleffect You become able to assume the form of a Large living tree or shrub or a Large dead tree trunk with a small number of limbs. The closest inspection cannot reveal that the tree in question is actually a magically concealed creature. To all normal tests you are, in fact, a tree or shrub, although a Spellcraft check can reveal the magical aura on the tree. While in tree form, you can observe all that transpires around you just as if you were in your normal form. You gain a \plus10 enhancement bonus to your armor modifier, but you have an effective Dexterity score of \minus10 and cannot move. You are immune to critical hits while in tree form. All clothing and gear carried or worn changes with you.
+\end{spelltarget}
 
 \spellsection{Tremorsense}{1}
 \spellinfo{Trans (Imbuement)}{Nature, Earth}
-\spelltwocol{\spelltgt{You}}{\spellrng{Personal/\arealarge limit}}
 \spelldur{Concentration}
-\spelleffect You gain the tremorsense ability. If you are touching a surface, you can automatically pinpoint the location of anything in the area of the spell that is in contact with the surface, including inanimate objects.
+\begin{spelltarget}{You}
+    \spelleffect You gain the tremorsense ability with a range of 50 feet. If you are touching a surface, you can automatically pinpoint the location of anything within 50 feet that is in contact with the surface, including inanimate objects.
+\end{spelltarget}
 \spellnotes Tremorsense functions on surfaces of any kind, regardless of lighting conditions.
 
 \spellsection{True Seeing}{6}
+\spelldesc{You grant your ally the ability to see all things as they actually are.}
 \spellinfo{Div (Awareness)}{Arcane, Divine, Knowledge}
 \spellcmp{Verbal, Somatic, and Material}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{Touch}}
+\spellrng{Touch}
 \spelldur{\durshort}
-\spelleffect You confer on the subject the ability to see all things as they actually are. The subject sees through normal and magical darkness, notices secret doors hidden by magic, sees the truth behind visual figments and glamers, and sees the true form of polymorphed, changed, or transmuted things. Further, the subject can focus its vision to see into the Ethereal Plane (but not into extradimensional spaces). The effect extends out to \rngmed range.
-\spellnotes \spellindirect{true seeing}{True seeing} does not penetrate solid objects. It in no way confers X-ray vision or its equivalent. It does not negate concealment, including that caused by fog and the like. True seeing does not help the viewer see through mundane disguises, spot creatures who are simply hiding, or notice secret doors hidden by mundane means. In addition, the spell effects cannot be further enhanced with known magic, so one cannot use \spell{true seeing} through a scrying effect.
-\spellmat{An ointment for the eyes that costs 100 gp and is made from mushroom powder, saffron, and fat.}
 \spellsr{Yes (Will)}
+\begin{spelltarget}{One creature}
+    \spelleffect The target sees through normal and magical darkness, notices secret doors hidden by magic, sees the truth behind visual figments and glamers, and sees the true form of polymorphed, changed, or transmuted things. In addition, the target can see into the Ethereal Plane (but not into extradimensional spaces). The effect extends out to \rngmed range.
+\end{spelltarget}
+\spellnotes This effect does not allow the target to see into or through solid objects. It does not negate concealment, including that caused by fog and the like. True seeing does not help the viewer see through mundane disguises, spot creatures who are simply hiding, or notice secret doors hidden by mundane means. In addition, the spell effects cannot be further enhanced with known magic, so one cannot use \spell{true seeing} through a scrying effect.
+\spellmat{An ointment for the eyes that costs 100 gp and is made from mushroom powder, saffron, and fat.}
 
 \spellsection{True Strike}{6}
 \spelldesc{You grant your ally a temporary, intuitive insight into the immediate future during their next attack.}
 \spellinfo{Div (Knowledge)}{Arcane}
-\spelltime{1 swift action}
-\spellcmp{Verbal only}
-\spelltwocol{\spelltgt{one creature}}{\spellrng{\rngmed}}
-\spelldur{See text}
-\spelleffect The subject's next single physical attack (if it is made before the end of the next round) gains a \plus20 enhancement bonus, and ignores all miss chances. After casting this spell, you cannot cast it again for 5 rounds.
+\spelltwocol{\spelltime{1 swift action}}{\spellcmp{Verbal only}}
+\spellrng{\rngmed}
+\spelldur{1 round or until discharged}
+\begin{spelltarget}{One creature}
+    \spelleffect The target's next physical attack gains a \plus20 enhancement bonus, and ignores all miss chances. 
+\end{spelltarget}
+\spellnotes After casting this spell, you cannot cast it again for 5 rounds.
 
 \pdfbookmark[2]{U-Z}{SpellDescriptionsU-Z}
 \begin{comment}
@@ -4050,68 +4081,58 @@ You can address multiple creatures at once with telepathy, but maintaining separ
 \end{comment}
 
 \spellsection{Unholy Aura}{8}
+\spelldesc{You shield your allies with malevolent darkness, protecting them from good foes.}
 \spellinfo{Abjur (Interdiction) [Evil]}{Divine, Evil}
 \spellcmp{Verbal, Somatic, and Focus}
 \spelllimit{\areamed radius centered on you}
-\spelltgts{Five creatures in the area}
 \spelldur{\durshort \dismissable}
-\spellattack{See text}
-\spelleffect A malevolent darkness surrounds the subjects, protecting them from attacks, granting them resistance to spells cast by good creatures, and weakening good creatures when they strike the subjects. This abjuration has three effects.
-\par First, each subject gains a \plus5 enhancement bonus to its defenses.
-\par Second, each subject gains spell resistance 10 against chaotic spells and spells cast by good creatures.
-\par Third, at the end of each round, all good creatures within \rngclose range of the subject that attacked the subject with their body or a melee weapon that round take 4d6 points of damage. A creature that attacks multiple creatures shielded by this spell can take this damage multiple times.
-\spellfocus{A tiny reliquary containing some sacred relic, such as a piece of parchment from an unholy text. The reliquary costs at least 250 gp.}
 \spellsr{Yes (Will)}
+\begin{spelltargets}{Five creatures in the area}
+    The target gains a \plus5 enhancement bonus to its defenses. In addition, it gains spell resistance against good spells and spells cast by good creatures.
+    \par At the end of each round, all good creatures within \rngclose range of the target that attacked it with their body or a melee weapon that round take 4d6 points of damage. A creature that attacks multiple creatures shielded by this spell can take this damage multiple times.
+\end{spelltargets}
+\spellline
+\spellfocus{A tiny reliquary containing some sacred relic, such as a piece of parchment from an unholy text. The reliquary costs at least 250 gp.}
 
 \spellsection{Unholy Blight}{4}
 \spellinfo{Evoc (Channeling) [Evil]}{Evil}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
-\spelldur{Instantaneous/5 rounds}
-\spelldmg{8d6 divine damage \add d6 per two caster levels above 8th}
-\spellattack{Will half/Magic vs. Will}
-\spelleffect If the target is not evil, it is sickened for 5 rounds, and you make a Will attack to deal damage to it. A failed attack deals half damage.
+\spellrng{\rngmed}
+\spelldur{5 rounds}
 \spellsr{Yes (Will)}
+\begin{spelltarget}{One nonevil creature}[Magic vs. Will]
+    \spellsuccess 8d6 divine damage \add d6 per two caster levels above 8th, and the target is \sickened for 5 rounds.
+    \spellfailure As above, but half damage.
+\end{spelltarget}
 
 \spellsection{Unliving Eyes}{3}
 \spellinfo{Div/Necro (Awareness, Life)}{Arcane}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{Touch}}
+\spellrng{Touch}
 \spelldur{\durlong \dismissable}
-\spelleffect The subject gains the ability to ``see'' any living creatures and their equipment within 30 feet perfectly, regardless of lighting conditions, physical barriers, invisibility, or any other means of concealment.
-
-If you cast this spell on an undead creature, the range of the vision is doubled to 60 feet.
 \spellsr{Yes (Will)}
+\begin{spelltarget}{One creature}
+    \spelleffect The target gains the ability to ``see'' any living creatures and their equipment within 30 feet perfectly, regardless of lighting conditions, physical barriers, invisibility, or any other means of concealment.
+
+    If the target is undead, the range of the vision is doubled to 60 feet.
+\end{spelltarget}
 
 \spellsection{Unliving Heart}{1}
 \spelldesc{You harness the power of unlife to grant yourself a limited ability to avoid death.}
 \spellinfo{Necro (Life)}{Necro}
-\spellrng{\rngpers}
 \spelldur{\durlong}
 \begin{spelltarget}{You}
     \spelleffect You gain 5 temporary hit points \add 1 per two caster levels above 2nd. If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
 
-In addition, you are treated as being undead for the purpose of spells or abilities which affect undead. This causes some unintelligent undead, such as skeletons and zombies, to avoid attacking you.
+    In addition, you are treated as being undead for the purpose of spells or abilities which affect undead. This can cause some unintelligent undead, such as skeletons and zombies, to avoid attacking you.
 \end{spelltarget}
-
-%gaining full temp HP would be level 5
-\spellsection{Vampiric Touch}{4}
-\spellinfo{Necro (Life)}{Necro}
-\spelltwocol{\spelltgt{One living creature}}{\spellrng{Touch}}
-\spelldur{Instantaneous/\durlong}
-\spelldmg{8d8 life damage \add d8 per two caster levels above 8th}
-\spellattack{Fortitude half}
-\spelleffect You make a Fortitude attack to deal damage to the touched creature. A failed attack deals half damage. You gain temporary hit points equal to half the damage you deal. You can't gain more hit points than the subject has. The temporary hit points disappear 1 hour later. If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
-
-As long as you have temporary hit points from this spell, you are treated as being undead for the purpose of spells or abilities which affect undead. This causes some unintelligent undead, such as skeletons and zombies, to avoid attacking you.
-\spellsr{Yes (Fortitude)}
 
 \spellsection{Ventriloquism}{1}
 \spellinfo{Illus (Figment)}{Arcane, Trickery}
-\spellcmp{V, F}
-\spellrng{\rngclose}
+\spellcmp{Somatic only}
+\spellrng{\rngmed}
 \spelldur{\durshort \dismissable}
-\spellattack{Magic check vs. Perception and Will (if interacted with)}
-\spelleffect You can make your voice (or any sound that you can normally make vocally) seem to issue from someplace else. You can speak in any language you know. With respect to such voices and sounds, anyone who disbelieves the sound recognizes it as illusory (but still hears it).
-\spellnotes When you cast this spell, you make a magic check, with the same bonus as your magic attack bonus. This check is opposed by the Will defense of any creature that interacts with the effect. If you fail, the creature disbelieves the spell. In order to interact with the illusion with a Perception check, the creature must make a Perception check that beats your magic check.
+\begin{spelltarget}{You}
+    \spelleffect Your voice (or any sound that you can normally make vocally) originates from another location within range. As a swift action, you can change the apparent origin of your voice.
+\end{spelltarget}
 
 \begin{comment}
 \spellsection{Vestments of the Mage}{2}
@@ -4130,129 +4151,149 @@ As long as you have temporary hit points from this spell, you are treated as bei
 \spellinfo{Necro (Life) [Death, Sound-Dependent]}{Death, Necro}
 \spellcmp{Verbal only}
 \spellburst{\arealarge radius centered on you}
-\spelltgts{Up to five living creatures in the area}
 \spelldur{Concentration, up to 2 rounds; see text}
-\spellattack{Magic vs. Fortitude}
-\begin{spellhealthy}
-    The subjects are sickened, making them \vulnerable for 5 rounds. If you concentrate for a second round, subjects still in the area are nauseated for 1 round.
-\end{spellhealthy}
-\begin{spellblood}
-    The subjects are nauseated for 1 round. If you concentrate for a second round, subjects still in the area are reduced to 0 hit points and take 9 critical damage, causing them to begin dying.
-\end{spellblood}
-\spellnotes This spell affects a maximum number of creatures equal to your caster level. Creatures closest to you are affected first, so creatures farther away may be unaffected if there are enough intervening creatures. Each creature makes only one saving throw against the effect.
 \spellsr{Yes (Fortitude)}
+\begin{spelltargets}{Living creatures in the area}[Magic vs. Fortitude]
+    \spellsuccess The target is \staggered for 1 round.
+\end{spelltargets}
+\spellspecial If you concentrate for a second round, you make another attack.
+\begin{spelltargets}{Bloodied living creatures in the area}[Magic vs. Fortitude]
+    \spellsuccess The target dies.
+\end{spelltargets}
 
-\spellsection{Wall of Fire}{5}
+\spellsection{Wall of Fire}{4}
 \spellinfo{Evoc (Energy) [Fire, Wall]}{Arcane, Nature, Fire}
-\spelltwocol{\spellzone{100 ft. wall, 20 ft. high \shapeable}}{\spellrng{\rngmed}}
+\spelltwocol{\spellzone{100 ft. wall, 10 ft. high \shapeable}}{\spellrng{\rngmed}}
 \spelldur{\durshort}
-\spelldmg{4d6 \add d6 per four caster levels above 8th; see text}
-\spellattack{Magic vs. Reflex; see text}
-\spelleffect An immobile, blazing curtain of shimmering violet fire springs into existence. Whenever a creature passes through the wall, you make a Reflex attack to deal damage to it. A failed attack deals half damage. In addition, the wall radiates heat, dealing 2d6 points of fire damage to creatures within 10 feet and 1d6 points of fire damage to those past 10 feet but within 20 feet. This damage does not require an attakc, and is dealt at the start of each of your turns after you create the wall.
-\par If you evoke the wall so that it appears where creatures are, each creature takes damage as if passing through the wall. If any 5-foot length of wall takes 20 points of cold damage or more in 1 round, that length goes out.
-\spellnotes This spell can be made permanent with a \spell{permanency} ritual. A permanent \spell{wall of fire} that is extinguished by cold damage becomes inactive for 10 minutes, then reforms at normal strength.
 \spellsr{Yes (Fortitude)}
+\spellline
+\spelleffect This spell creates a wall made of fire.
+\begin{spelltrigger}{A creature passes through the wall}
+    \begin{spelltarget}*{Creature in wall}[Magic vs. Reflex]
+        \spellsuccess 4d6 fire damage \add d6 per four caster levels above 10th.
+        \spellfailure As above, but half damage.
+    \end{spelltarget}
+\end{spelltrigger}
+\spellnotes Any part of the wall takes 20 cold damage is extinguished.
+
+This spell can be made permanent with a \spell{permanency} ritual. A permanent \spell{wall of fire} that is extinguished by cold damage becomes inactive for 10 minutes, then reforms at normal strength.
 
 \spellsection{Wall of Force}{6}
 \spellinfo{Evoc (Control) [Force, Wall]}{Arcane}
-\spelltwocol{\spellzone{100 ft. wall, 10 ft. high}}{\spellrng{\rngmed}}
+\spelltwocol{\spellzone{100 ft. solid wall, 10 ft. high}}{\spellrng{\rngmed}}
 \spelldur{\durshort \dismissable}
-\spelleffect This spell creates an invisible wall made of force. Nothing can pass through or alter the wall. It forms a flat, vertical plane, and it must be continuous and unbroken when formed. If the surface is broken by any object or creature, the spell fails.
-\spellnotes The wall is unaffected by most spells, including \spell{dispel magic}. However, \spell{disintegrate} immediately destroys it, as does a \magicitem{rod of cancellation}, a \magicitem{sphere of annihilation}, or a \spell{mage's disjunction} spell. As a force effect, it blocks ethereal creatures as well as material ones.
+\spellline
+\spelleffect This spell creates an invisible wall made of force. A 5-foot square of wall has 5 hit points per caster level, and hardness equal to your caster level.
+\spellnotes \forcespellnotes
+
 This spell can be made permanent with a \spell{permanency} ritual.
 
 \spellsection{Wall of Stone}{5}
 \spellinfo{Conj/Trans (Alteration, Creation) [Earth, Wall]}{Arcane, Earth, Nature}
-\spelltwocol{\spellzone{\arealarge wall, 5 ft. high \shapeable}}{\spellrng{\rngmed}}
-\spellattack{See text}
-\spelleffect This spell forms a wall of stone atop existing rock surfaces. A wall of stone is 4 inches thick and composed of up to ten 5-foot squares. You can double the wall's area by halving its thickness. The wall cannot be conjured so that it occupies the same space as a creature or another object.
-\par You can create a wall of stone in almost any shape you desire. The wall created need not be vertical, nor rest upon any firm foundation; however, it must merge with and be solidly supported by existing stone. It can be used to bridge a chasm, for instance, or as a ramp. For this use, if the span is more than 20 feet, the wall must be arched and buttressed. This requirement reduces the spell's area by half. The wall can be crudely shaped to allow crenellations, battlements, and so forth by likewise reducing the area.
-\par Like any other stone wall, this one can be destroyed by a \spell{disintegrate} spell or by normal means such as breaking and chipping. Each 5-foot square of the wall has 15 hit points per inch of thickness and hardness 8. A section of wall whose hit points drop to 0 is breached. If a creature tries to break through the wall with a single attack, the DC for the Strength check is 20 \add 2 per inch of thickness.
+\spelltwocol{\spellzone{\arealarge solid wall, 5 ft. high \shapeable}}{\spellrng{\rngmed}}
+\spellline
+\spelleffect This spell creates a wall made of stone atop an existing rock surface. A 5-foot square of wall has 60 hit points, and hardness 8. The wall is four inches thick.
+\par Unlike most walls, a \spell{wall of stone} need not be vertical. It need not rest entirely on solid ground, as long as it is solidly supported by existing stone.
+\par A wall of stone can be crudely shaped to add crenellations, battlements, and so forth.
+\spellnotes Once created, the stone is nonmagical, and can be destroyed like any other stone.
 
 \spellsection{Wall of Thorns}{5}
 \spellinfo{Conj (Creation) [Wall]}{Nature, Wild}
-\spelltwocol{\spellzone{100 ft. wall, 10 ft. high \shapeable}}{\spellrng{\rngmed}}
+\spelltwocol{\spellzone{100 ft. line, 5 ft. wide, 10 ft. high \shapeable}}{\spellrng{\rngmed}}
 \spelldur{\durlong \dismissable}
-\spelleffect This spell creates a barrier of very tough, pliable, tangled brush bearing needle-sharp thorns as long as a human's finger. Any creature forced into or attempting to move through a wall of thorns takes slashing damage per square of movement equal to twice your caster level, minus the creature's Armor defense.
-\par You can make the wall as thin as 5 feet thick, which allows you to shape the wall as twenty 10\mult10\mult5 foot blocks. This has no effect on the damage dealt by the thorns, but any creature attempting to break through takes that much less time to force its way through the barrier.
-\par Creatures can force their way slowly through the wall by making a grapple attack or Escape Artist check as a full-round action. The creature moves 5 feet for each full 5 points by which the check result exceeds 20, up to a maximum distance equal to its normal land speed. Of course, moving or attempting to move through the thorns incurs damage as described above. A creature trapped in the thorns can choose to remain motionless in order to avoid taking any more damage.
-\par If you have at least 5 feet of thorns between you and an opponent, it provides cover. If you have at least 20 feet of thorns between you, it provides total cover.
-\par Any creature in the area of the spell when it is cast takes damage as if it had moved into the wall and is caught inside. In order to escape, it must attempt to push its way free, or it can wait until the spell ends. Creatures with the ability to pass throughs overgrown areas unhindered can pass through a wall of thorns at normal speed without taking damage.
-\spellnotes A \spell{wall of thorn} can be breached by slow work with edged weapons or fire. It has hardness 8 and 30 hit points per square foot of thickness.
-\par Despite its appearance, a \spell{wall of thorns} is not actually a living plant, and thus is unaffected by spells that affect plants.
+\spelleffect This spell creates a thicket of thorns in the area. A 5-foot cube of wall has 10 hit points per caster level. Moving into or out of a square in the area costs 20 feet of movement. The wall can be created where creatures are.
 
-\spellsection{Warp Wood}{2}
-\spellinfo{Trans (Alteration)}{Destruction, Nature}
-\spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
-\spelltgt{1 Small nonmagical wooden object/caster level in the area}
-\spellattack{Magic vs. Will (object)}
-\spelleffect You cause wood to bend and warp, permanently destroying its straightness, form, and strength. A warped door springs open (or becomes stuck, requiring a Strength check to open, at your option). A boat or ship springs a leak. Warped ranged weapons are useless. A warped melee weapon imposes a \minus4 penalty on physical attacks.
-\par You may warp one Small or smaller object or its equivalent per caster level. A Medium object counts as two Small objects, a Large object as four, a Huge object as eight, a Gargantuan object as sixteen, and a Colossal object as thirty-two.
-\par Alternatively, you can unwarp wood (effectively warping it back to normal) with this spell, straightening wood that has been warped by this spell or by other means. \spellindirect{make whole}{Make whole}, on the other hand, does no good in repairing a warped item.
-\spellnotes You can combine multiple consecutive \spell{warp wood} spells to warp (or unwarp) an object that is too large for you to warp with a single spell. Until the object is completely warped, it suffers no ill effects.
-\spellsr{Yes (Will)}
+The wall provides total cover against attacks through the wall. A creature in the wall has cover from attacks on either side of the wall.
+\begin{spelltrigger}{A creature enters or exits a square in the area}
+    \begin{spelltarget}{The moving creature}
+        \spelleffect 3d6 physical piercing damage.
+    \end{spelltarget}
+\end{spelltrigger}
+\spellnotes A \spell{wall of thorn} can be breached by slow work with edged weapons or fire. It has hardness 8 and 30 hit points per square foot of thickness.
 
 \spellsection{Water Walk}{3}
 \spellinfo{Trans (Imbuement) [Water]}{Druid, Water}
-\spelltwocol{\spelltgts{Five touched creatures}}{\spellrng{Touch}}
+\spellrng{Touch}
 \spelldur{\durlong \dismissable}
-\spelleffect The transmuted creatures can tread on any liquid as if it were firm ground. Mud, oil, snow, quicksand, running water, ice, and even lava can be traversed easily, since the subjects' feet hover an inch or two above the surface. (Creatures crossing molten lava still take damage from the heat because they are near it.) The subjects can move across the surface as if it were normal ground.
-\par If the spell is cast underwater (or while the subjects are partially or wholly submerged in whatever liquid they are in), the subjects are borne toward the surface at 60 feet per round until they can stand on it.
 \spellsr{Yes (Fortitude)}
+\begin{spelltargets}{Five creatures}
+    \spelleffect The target can tread on any liquid as if it were firm ground. Mud, oil, snow, quicksand, running water, ice, and even lava can be traversed easily, since the target's feet hover an inch or two above the surface.
+    \par If the target is underwater, it rises toward the surface at 60 feet per round it can stand on it.
+\end{spelltargets}
 
 \spellsection{Waves of Exhaustion}{8}
 \spellinfo{Necro (Flesh)}{Arcane, Death, War}
 \spellburst{\arealarge cone}
 \spelldur{\durshort}
-\spellattack{Fortitude partial}
-\spelleffect You make a Fortitude attack to exhaust all creatures in the area. A failed attack means they are fatigued instead. This spell has no effect on a creature that is already exhausted.
-\spellnotes An exhausted character cannot sprint or charge, moves at half speed, and takes a \minus4 penalty to attacks, defenses, and checks. A fatigued character can neither sprint nor charge and is \vulnerable, giving it a \minus2 penalty to attacks, defenses, and checks.
 \spellsr{Yes (Fortitude)}
+\begin{spelltargets}{All creatures in the area}[Magic vs. Fortitude]
+    \spellsuccess The target is \exhausted.
+    \spellfailure The target is \fatigued.
+\end{spelltargets}
 
 \spellsection{Waves of Fatigue}{5}
 \spellinfo{Necro (Flesh)}{Arcane, Death, War}
 \spellburst{\arealarge cone}
 \spelldur{\durshort}
-\spellattack{No}
-\spelleffect Living creatures in the area are fatigued. This spell has no effect on a creature that is already fatigued.
-\spellnotes A fatigued character can neither sprint nor charge and is \vulnerable, giving it a \minus2 penalty to attacks, defenses, and checks.
 \spellsr{Yes (Fortitude)}
+\begin{spelltargets}{All creatures in the area}
+    \spelleffect The target is \fatigued.
+\end{spelltargets}
 
 \spellsection{Web}{3}
 \spelldesc{You create a many-layered mass of strong, stricky strands that entangle creatures caught within them. The strands are similar to spider webs, but larger and tougher.}
 \spellinfo{Conj (Creation)}{Arcane}
 \spelltwocol{\spellzone{\areamed radius}}{\spellrng{\rngclose}}
 \spelldur{\durshort \dismissable}
-\spellattack{Reflex negates; see text}
-\spelleffect You make a Reflex attack to entangle all creatures in the area. This attack is repeated each round that a creature moves or fights in the area. An entangled creature can spend a standard action to make a grapple attack or Escape Artist attempt against your Reflex attack to break the webs holding it, preventing it from being entangled. A creature entangled by the spell remains entangled until it breaks the webs holding it or escapes the spell's area.
-\par If the strands can be anchored to two or more solid and diametrically opposed structures, such as walls, the strands are much more sturdy. A creature entangled within a sturdy web is unable to move from its square until it stops being entangled.
-\spellnotes An entangled creature moves at half speed, cannot sprint or charge, and takes a \minus2 penalty to physical attacks and defenses, as well as Strength and Dexterity-based checks. If it attempts to cast a spell must make a Concentration check (DC 10 \add double the spell's level) or lose the spell.
-The strands are too widely spaced to significantly obscure sight, but are flammable. A magic flaming sword can slash them away as easily as a hand brushes away cobwebs. Any fire can set the webs alight and burn away 5 square feet in 1 round. All creatures within flaming webs take 2d4 points of fire damage from the flames.
+\begin{spelltrigger}{A creature in the area moves}
+    \begin{spelltarget}{The moving creature}[Magic vs. Reflex]
+        \spellsuccess The target is \entangled. As a standard action, it can make a grapple attack or Escape Artist check. If its result beats your attack result, it is no longer entangled.
+    \end{spelltarget}
+\end{spelltrigger}
+\spellnotes The strands are too widely spaced to significantly obscure sight, but are flammable. Any five-foot square that takes 5 points of fire damage is destroyed. A magic flaming sword can slash them away as easily as a hand brushes away cobwebs. Any fire can set the webs alight and burn away 5 square feet in 1 round. All creatures within flaming webs take 2d4 points of fire damage from the flames.
 
 This spell can be made permanent with a \spell{permanency} ritual. A permanent \spell{web} that is destroyed regrows in 10 minutes.
 
 \spellsection{Weird}{9}
 \spellinfo{Ench/Illus (Emotion, Phantasm) [Death, Fear, Mind-Affecting, Unreal]}{Arcane, Trickery}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngmed}}
-\spelltgts{Five creatures in the area}
-\spelleffect This spell functions like \spell{phantasmal killer}, except that it affects multiple creatures.
+\begin{spelltarget}{Five creatures in the area}[Magic vs. Will and Fortitude]
+    \spellsuccess[Will] The target is \shaken for 5 rounds.
+
+    \spellsuccess[Will and Fortitude] If the target is \bloodied, it dies.
+\end{spelltarget}
 
 \spellsection{Windstrike}{2}
 \spelldesc{You command the air to bludgeon the target, sending it flying.}
 \spellinfo{Evoc (Control) [Air]}{Air, Nature}
-\spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngmed}}
-\spelldmg{4d6 bludgeoning damage \add d6 per two caster levels above 4th}
-\spellattack{Fortitude half}
-\spelleffect You make a Fortitude attack to deal damage to the target. A failed attack deals half damage. In addition, you may make a shove attack with an attack bonus equal to your caster level \add your casting attribute. If you succeed, you may have the wind shove the target in any direction -- even vertically. Moving the target up takes twice as much movement as moving the target horizontally.
+\spellrng{\rngmed}
 \spellsr{Yes (Fortitude)}
+\begin{spelltarget}{One creature or object}l[Magic vs. Fortitude]
+    \begin{spellmargin}
+        \spellsuccess 4d6 bludgeoning damage \add d6 per two caster levels above 4th.
+        \spellfailure Half damage.
+    \end{spellmargin}
+    \spellattack Caster level \add casting attribute vs. Maneuver defense (shove)
+    \begin{spellmargin}
+        \spellsuccess You shove the target in any direction -- even vertically. Moving the target up takes twice as much movement as moving the target horizontally.
+    \end{spellmargin}
+\end{spelltarget}
 
 \spellsection{Windstrike, Greater}{5}
 \spelldesc{You command the air to bludgeon the target with tremendous force, sending it flying.}
 \spellinfo{Evoc (Control) [Air]}{Air, Nature}
-\spelldmg{10d6 bludgeoning damage \add d6 per two caster levels above 10th}
-\spelleffect This spell functions like \spell{windstrike}, except that the shove is much more powerful. You make a shove attack with an enhancement bonus equal to your caster level \add your casting attribute \add 12, treating the wind as a Gargantuan creature.
-
-If you succeed, you knock the target prone and may have the wind shove the target in any direction -- even vertically. Moving the target up does not require more movement than moving the target horizontally.
+\spellrng{\rngmed}
+\spellsr{Yes (Fortitude)}
+\begin{spelltarget}{One creature or object}l[Magic vs. Fortitude]
+    \begin{spellmargin}
+        \spellsuccess 10d6 bludgeoning damage \add d6 per two caster levels above 10th.
+        \spellfailure Half damage.
+    \end{spellmargin}
+    \spellattack Caster level \add casting attribute \add 12 vs. Maneuver defense (shove)
+    \begin{spellmargin}
+        \spellsuccess You shove the target in any direction -- even vertically.
+    \end{spellmargin}
+\end{spelltarget}
 
 \spellsection{Wish}{9}
 \spellinfo{Universal}{Arcane, Magic}
@@ -4285,42 +4326,43 @@ If you succeed, you knock the target prone and may have the wind shove the targe
 \spellinfo{Evoc (Channeling) [Chaotic]}{Chaos}
 \spellcmp{Verbal only}
 \spellburst{\arealarge radius centered on you}
-\spelltgts{All nonlawful creatures in the area}
-\spelleffect If the target's level does not exceed your caster level, it is \vulnerable for 5 rounds.
-
-If it is \bloodied, it also suffers one or more of the following ill effects, depending on its level.
-\begin{dtable}
-    \begin{tabularx}{\columnwidth}{l >{\lcol}X}
-        \par \thead{Level} & \thead{Effect} \\
-        \par Equal to caster level & Bewildered \\
-        \par Up to caster level \minus5 & Confused, bewildered \\
-        \par Up to caster level \minus10 & Paralyzed, nauseated, sickened \\
-        \par Up to caster level \minus15 & Killed\fn{1}
-        1 Living creatures die. Nonliving creatures are destroyed.
-    \end{tabularx}
-\end{dtable}
-\par \subspell{Bewildered} The creature is bewildered, making it \vulnerable for 5 rounds.
-\par \subspell{Confused} The creature is confused for 2 rounds.
-\par \subspell{Paralyzed} The creature is paralyzed and helpless for 5 rounds.
-\par \subspell{Killed} Living creatures die. Nonliving creatures are destroyed.
 \spellsr{Yes (Will)}
+\begin{spelltargets}{All nonchaotic creatures in the area}
+    \spelleffect If the target's level does not exceed your caster level, it is \bewildered for 5 rounds.
+
+    If the target is also \bloodied, it also suffers one or more of the following ill effects, depending on its level.
+    \begin{itemize}
+        \item Up to caster level \minus5: The target is also \confused for 1 round.
+        \item Up to caster level \minus10: The target is also \paralyzed for 5 rounds.
+        \item Up to caster level \minus15: The target immediately dies. A nonliving creature is destroyed.
+    \end{itemize}
+\end{spelltargets}
 
 \spellsection{Word of Recall}{6}
 \spellinfo{Conj (Translocation) [Teleportation]}{Divine}
 \spellcmp{Verbal only}
-\spelltwocol{\spelltgt{You}}{\spellrng{Unlimited}}
-\spelleffect This spell teleports you instantly back to your sanctuary. You must designate the sanctuary when you ready the spell for the day, and it must be a very familiar place. The actual point of arrival is a designated area no larger than 10 feet by 10 feet. You can be transported any distance within a plane but cannot travel between planes. You can transport, in addition to yourself, any objects you carry, as long as their weight doesn't exceed your maximum load. Exceeding this limit causes the spell to fail.
+\spellrng{Unlimited \rngunrestricted}
+\begin{spelltarget}{You}
+    \spelleffect This spell teleports you instantly back to your sanctuary. You must designate the sanctuary when you ready the spell for the day, and it must be a very familiar place. The actual point of arrival is a designated area no larger than 10 feet by 10 feet. You can be transported any distance within a plane but cannot travel between planes. You can transport, in addition to yourself, any objects you carry, as long as their weight doesn't exceed your maximum load. Exceeding this limit causes the spell to fail.
+\end{spelltarget}
 
 \spellsection{Zephyr Blade}{3}
 \spelldesc{You imbue a weapon with the power of the wind, allowing it to manipulate air currents as it strikes.}
 \spellinfo{Evoc/Trans (Augment, Control) [Air]}{Air, Nature}
-\spelltwocol{\spelltgt{One melee weapon}}{\spellrng{Touch}}
+\spellrng{Touch}
 \spelldur{\durshort}
-\spelleffect This spell functions as \spell{magic weapon}, except that the affected weapon also gains an additional five feet of reach, extending the wielder's threatened area. Attacks outside the weapon's normal range deal half damage, but are otherwise treated exactly as if the wielder was attacking with the weapon normally.
-\spellnotes Despite the name of the spell, it can affect melee weapons of any type, even reach weapons. The weapon's extended reach is visible, and opponents can defend themselves normally against the attacks.
 \spellsr{Yes (Will)}
+\begin{spelltarget}{One melee weapon}
+    \spelleffect The target weapon is enhanced, as \spell{magic weapon}. In addition, it also gains an additional five feet of reach, extending the wielder's threatened area. Attacks outside the weapon's normal range deal half damage, but are otherwise treated exactly as if the wielder was attacking with the weapon normally.
+\end{spelltarget}
+\spellnotes Despite the name of the spell, it can affect melee weapons of any type, even reach weapons. The weapon's extended reach is visible, and opponents can defend themselves normally against the attacks.
 
 \spellsectioncomma{Zephyr Blade}{Greater}{6}
 \spelldesc{You imbue a weapon with the full might of the wind, allowing it to shred opponents with nothing but the air itself.}
 \spellinfo{Evoc/Trans (Augment, Control) [Air]}{Air, Nature}
-\spelleffect This spell functions like \spell{zephyr blade}, except that it extends the weapon's reach by ten feet, and attacks outside the weapon's normal range deal full damage.
+\spellrng{Touch}
+\spelldur{\durshort}
+\spellsr{Yes (Will)}
+\begin{spelltarget}{One melee weapon}
+    \spelleffect The target weapon is enhanced and extended, as \spell{zephyr blade}, except that the weapon's rach increases by ten feet, and attacks outside the weapon's normal range deal full damage.
+\end{spelltarget}
