@@ -342,11 +342,12 @@
 \ExplSyntaxOff
 
 \ExplSyntaxOn
-\DeclareDocumentCommand{\ritualcost}{m o}
+\DeclareDocumentCommand{\ritualcost}{s m o}
 {
-    \spellmat{\ritualcostparser#1\xspace
-        \IfValueTF{#2}
-        {#2}
+    \IfBooleanF{#1}{\spellline}
+    \spellmat{\ritualcostparser#2\xspace
+        \IfValueTF{#3}
+        {#3}
         {in~ritual~components.}
     }
 }
