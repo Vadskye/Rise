@@ -322,3 +322,36 @@
     {\parhead*{Targets} #1}
     {\parhead*{#2 Targets} #1}
 }
+
+\DeclareDocumentCommand{\ritualcostparser}{t{1} t{2} t{3} t{4} t{5} t{6} t{7} t{8} t{9}}
+{%
+    \IfBooleanT{#1}{5 gp}%
+    \IfBooleanT{#2}{20 gp}%
+    \IfBooleanT{#3}{50 gp}%
+    \IfBooleanT{#4}{125 gp}%
+    \IfBooleanT{#5}{300 gp}%
+    \IfBooleanT{#6}{750 gp}%
+    \IfBooleanT{#7}{1500 gp}%
+    \IfBooleanT{#8}{3000 gp}%
+    \IfBooleanT{#9}{7500 gp}%
+}
+
+\ExplSyntaxOn
+\DeclareDocumentCommand{\ritualcost}{m o}
+{
+    \spellmat{\ritualcostparser#1\xspace
+        \IfValueTF{#2}
+        {#2}
+        {in~ritual~components.}
+    }
+}
+\ExplSyntaxOff
+
+\ExplSyntaxOn
+\DeclareDocumentCommand{\ifstr}{m m m o}
+{
+    \ifnum \pdfstrcmp{#1}{#2}=0 #3
+    \else \IfValueT{#4}{#4}
+    \fi
+}
+\ExplSyntaxOff
