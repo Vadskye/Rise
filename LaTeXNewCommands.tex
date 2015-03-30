@@ -316,12 +316,11 @@
     {\parhead*{Target} #1}
     {\parhead*{#2 Target} #1}
 }
-\DeclareDocumentCommand{\spelltgts}{s m o}
+\DeclareDocumentCommand{\spelltgts}{m o}
 {
-    \IfBooleanF{#1}{\spellline}
-    \IfNoValueTF{#3}
-    {\parhead*{Targets} #2}
-    {\parhead*{#3 Targets} #2}
+    \IfNoValueTF{#2}
+    {\parhead*{Targets} #1}
+    {\parhead*{#2 Targets} #1}
 }
 
 \ExplSyntaxOn
