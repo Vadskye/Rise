@@ -113,13 +113,13 @@ Strike feats grant a character the ability to make an unusually potent attack wi
     \featref{Diehard} & Con 3 & Remain conscious after taking critical damage & \featpref{Diehard} \\
     \featref{Fearless} & Cha 5 or base Will defense \plus10 & Immune to fear and hostile morale effects & \featpref{Fearless} \\
     \featref{Great Fortitude} & \x &  \plus2 bonus to Fortitude defense & \featpref{Great Fortitude} \\
-    \featref{Iron Will} & \x &  \plus2 bonus to Will defense & \featpref{Iron Will} \\
-    \featref{Legendary Charisma} & 11th level, Cha 5 & \plus5 to Charisma for some purposes & \featpref{Legendary Charisma} \\
-    \featref{Legendary Constitution} & 11th level, Con 5 & \plus5 to Constitution for some purposes & \featpref{Legendary Constitution} \\
-    \featref{Legendary Dexterity} & 11th level, Dex 5 & \plus5 to Dexterity for some purposes & \featpref{Legendary Dexterity} \\
-    \featref{Legendary Intelligence} & 11th level, Int 5 & \plus5 to Intelligence for some purposes & \featpref{Legendary Intelligence} \\
-    \featref{Legendary Strength} & 11th level, Str 5 & \plus5 to Strength for some purposes & \featpref{Legendary Strength} \\
-    \featref{Legendary Wisdom} & 11th level, Wis 5 & \plus5 to Wisdom for some purposes & \featpref{Legendary Wisdom} \\
+    \featref{Iron Will} & \x & \plus2 bonus to Will defense & \featpref{Iron Will} \\
+    \featref{Legendary Charisma} & 11th level, Cha 6 & \plus5 to Charisma for some purposes & \featpref{Legendary Charisma} \\
+    \featref{Legendary Constitution} & 11th level, Con 6 & \plus5 to Constitution for some purposes & \featpref{Legendary Constitution} \\
+    \featref{Legendary Dexterity} & 11th level, Dex 6 & \plus5 to Dexterity for some purposes & \featpref{Legendary Dexterity} \\
+    \featref{Legendary Intelligence} & 11th level, Int 6 & \plus5 to Intelligence for some purposes & \featpref{Legendary Intelligence} \\
+    \featref{Legendary Strength} & 11th level, Str 6 & \plus5 to Strength for some purposes & \featpref{Legendary Strength} \\
+    \featref{Legendary Wisdom} & 11th level, Wis 6 & \plus5 to Wisdom for some purposes & \featpref{Legendary Wisdom} \\
     \featref{Lightning Reflexes} & \x &  \plus2 bonus to Reflex defense & \featpref{Lightning Reflexes} \\
     \featref{Mental Fortress} & Cha 9 or base Will defense \plus18 & Immune to hostile mind-affecting effects & \featpref{Mental Fortress} \\
     \featref{Perfect Health} & Con 3 or base Fortitude defense \plus6 & Immune to disease, later poison & \featpref{Perfect Health} \\
@@ -134,9 +134,11 @@ Strike feats grant a character the ability to make an unusually potent attack wi
     \midrule
     \thead{Bloodline Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
     \featref{Celestial Heritage} & Nonevil alignment & Smite evil 1/day & \featpref{Celestial Heritage} \\
+    \tind \featref{Celestial Blessing} & Celestial Heritage & Gain ability to bless allies & \featpref{Celestial Blessing} \\
     \tind \featref{Celestial Body} & Nonevil alignment, Celestial Heritage & Gain physical damage reduction & \featpref{Celestial Body} \\
     \tind \featref{Celestial Smiting} & Nonevil alignment, Celestial Heritage & Smite evil more often, more accurately & \featpref{Celestial Smiting} \\
     \tind \featref{Celestial Soul} & Nonevil alignment, any three celestial feats & Gain spell resistance against evil & \featpref{Celestial Soul} \\
+    \tind \featref{Celestial Wings} & Any three celestial bloodline feats & Gain wings to slow falls, glide, eventually fly & \featpref{Celestial Wings} \\
     \featref{Draconic Heritage} & \x & Resist damage from chosen dragon's energy type & \featpref{Draconic Heritage} \\
     \tind \featref{Draconic Breath} & Con 3, any three dragon bloodline feats & Gain dragon's breath weapon & \featpref{Draconic Breath} \\
     \tind \featref{Draconic Might} & Any three dragon bloodline feats & Gain \plus1 to physical attribute & \featpref{Draconic Might} \\
@@ -474,6 +476,10 @@ Choose one category of armor: light, medium, heavy, or shields.
 \feat{Cautious Attack}{Combat, Style}
 \parhead{Benefit} While in this style, you gain a \plus2 bonus to your Maneuver Class. In exchange, you take a \minus2 penalty to damage rolls. At base attack bonus \plus4, and every 4 base attack bonus thereafter, you increase the bonus and penalty by 1. If you do not make a standard attack with a melee weapon during your turn, you cannot use this style.
 
+\feat{Celestial Blessing}{Bloodline, Celestial}
+\parhead{Prerequisites} Nonevil alignment, Celestial Heritage.
+\parhead{Benefit} As a standard action, you can bless your allies, as the \spell{bless} spell. You can use this ability a number of times per day equal to the number of celestial bloodline feats you have.
+
 \feat{Celestial Body}{Bloodline, Celestial}
 \parhead{Prerequisites} Nonevil alignment, Celestial Heritage.
 \parhead{Benefit} You gain physical damage reduction 2/evil. This damage reduction allows you to ignore the first two points of damage you take each round. If you are hit by an evil-aligned attack, you cannot use your damage reduction for 1 round.
@@ -495,6 +501,10 @@ If you have four or more celestial bloodline feats, your damage reduction increa
 \feat{Celestial Spell Conduit}{Bloodline, Celestial}
 \parhead{Prerequisites} Nonevil alignment, Celestial Heritage.
 \parhead{Benefit} You gain a \plus2 bonus to caster level with Evocation (Channeling) spells and spells from the Good domain. If you have four or more celestial bloodline feats, this bonus increases to \plus4.
+
+\feat{Celestial Wings}{Bloodline, Dragon}
+\parhead{Prerequisite} Any three celestial bloodline feats.
+\parhead{Benefit} You gain feathery wings that sprout from your back. These allow you to slow your fall so you fall no more than 60 feet per round, preventing you from taking falling damage. If you are 8th level, you can use the wings to glide at a rate equal to your base land speed. While gliding, you move forward each round at a rate equal to your base land speed, and you descend at a rate of 10 feet per round.
 
 \feat{Cleave}{Combat, Power}
 \parhead{Prerequisites} Str 3, base attack bonus \plus4.
@@ -649,7 +659,7 @@ When you use your breath weapon, you make a Reflex attack to deal damage to ever
 
 \feat{Draconic Wings}{Bloodline, Dragon}
 \parhead{Prerequisite} Any three dragon bloodline feats.
-\parhead{Benefit} You gain wings that sprout from your back. These allow you to slow your fall so you fall no more than 60 feet per round, preventing you from taking falling damage. If you are 8th level, you can use the wings to glide at a rate equal to your base land speed. While gliding, you move forward each round at a rate equal to your base land speed, and you descend at a rate of 10 feet per round.
+\parhead{Benefit} You gain scaly wings that sprout from your back. These allow you to slow your fall so you fall no more than 60 feet per round, preventing you from taking falling damage. If you are 8th level, you can use the wings to glide at a rate equal to your base land speed. While gliding, you move forward each round at a rate equal to your base land speed, and you descend at a rate of 10 feet per round.
 
 If you are 14th level, you gain a fly speed equal to your base land speed, though you can only fly for a number of rounds equal to 3 \add half your Constitution. After that limit is reached, you must rest for 5 minutes to recuperate. If you are 20th level, you can fly for any length of time without needing to rest.
 
@@ -947,7 +957,7 @@ You can use any combination of performance feats you possess a number of times p
 \featben You can balance on surfaces that cannot support your weight. The DC is 30 for liquids such as water, 40 for dense gases and raw energy, and 50 for ordinary air. While balancing in this way, you must take a move action each round to continue moving; you cannot remain in the same place in consecutive rounds, or you will fall. The DC increases by 2 for each consecutive round that you spend balancing in this way. You gain a \plus4 bonus on this check per size category smaller than Medium, or a \minus4 penalty per size category larger than Medium.
 
 \feat{Legendary Charisma}{General}
-\featpre 11th level, Charisma 5.
+\featpre 11th level, Charisma 6.
 \featben You gain a \plus5 bonus to Charisma-based checks.
 
 \feat{Legendary Climber}{Skill}
@@ -962,7 +972,7 @@ You can use any combination of performance feats you possess a number of times p
 In addition, you can now climb surfaces that are perfectly smooth. The DC is 30 for perfectly smooth vertical surfaces, and 40 to climb on a perfectly smooth ceiling.
 
 \feat{Legendary Constitution}{General}
-\featpre 11th level, Constitution 5.
+\featpre 11th level, Constitution 6.
 \featben You gain a \plus5 bonus to Constitution-based checks. In addition, you treat your Constitution as being 5 higher for the purpose of feats of endurance such as holding your breath or sprinting.
 
 \feat{Legendary Craftsman}{Skill}
@@ -978,7 +988,7 @@ This feat does not affect the material components required to craft magical item
 You must be aware of a spell to disable it, either through the Spellcraft skill or because the effect is noticeable. You cannot disable spell effects on creatures.
 
 \feat{Legendary Dexterity}{General}
-\featpre 11th level, Dexterity 5.
+\featpre 11th level, Dexterity 6.
 \featben You gain a \plus5 bonus to Dexterity-based checks, as well as to initiative.
 
 \feat{Legendary Disguise}{Skill}
@@ -1012,7 +1022,7 @@ In addition, when training a creature, if your check result is 30 or higher, you
 \featben A number of times per day equal to 3 \add half your Wisdom, you may take a standard action to make a Heal check on a creature you can touch. The creature heals hit points equal to twice your check result. For every twenty hit points you would restore, you can instead cure one point of critical damage.
 
 \feat{Legendary Intelligence}{General}
-\featpre 11th level, Intelligence 5.
+\featpre 11th level, Intelligence 6.
 \featben You gain a \plus5 bonus to Intelligence-based checks. In addition, you can memorize any information perfectly to recall later.
 
 \feat{Legendary Intimidation}{Skill}
@@ -1056,7 +1066,7 @@ In addition, when training a creature, if your check result is 30 or higher, you
 \featben You gain a \plus10 bonus to initiative checks.
 
 \feat{Legendary Strength}{General}
-\featpre 11th level, Strength 5.
+\featpre 11th level, Strength 6.
 \featben You gain a \plus5 bonus to Strength-based checks. In addition, you treat your Strength as being 5 higher for the purpose of determining your carrying and lifting capacity.
 
 \feat{Legendary Style}{Combat}
@@ -1079,7 +1089,7 @@ When swimming, if your check result is 30 or higher, you do not suffer any penal
 \featben When tumbling, if your check result is 30 or higher, you gain two benefits. First, you do not provoke attacks of opportunity for that movement. Second, you can tumble through areas occupied by enemies as if they were unoccupied.
 
 \feat{Legendary Wisdom}{General}
-\featpre 11th level, Wisdom 5.
+\featpre 11th level, Wisdom 6.
 \featben You gain a \plus5 bonus to Wisdom-based checks. In addition, once per day you can receive a prophetic insight into future events, as the \spell{divination} ritual.
 
 \feat{Lightning Reflexes}{General}
