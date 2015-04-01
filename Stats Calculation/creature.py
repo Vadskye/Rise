@@ -1265,6 +1265,11 @@ class Monk(Character):
 
         #wholeness of body
 
+        #still mind
+        if self.level >= 5 and wisdom/2 >= self.intelligence.get_total():
+            self.will.remove_bonus(INT)
+            self.will.add_bonus(wisdom/2, WIS)
+
         #improved ki strike
         if self.level>=10:
             self.primary_weapon_damage.add_inherent(wisdom/2)
