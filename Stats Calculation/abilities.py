@@ -132,7 +132,8 @@ Ability.create_ability('two-weapon fighting', two_weapon_fighting_benefit,
 
 def two_weapon_defense_benefit(creature):
     if creature.secondary_weapon:
-        creature.armor_class.shield.add_bonus(2, 'shield')
+        bonus = creature.level/8+1
+        creature.armor_class.shield.add_bonus(bonus, 'shield')
 Ability.create_ability('two-weapon defense', two_weapon_defense_benefit,
         lambda creature: creature.dexterity.get_total() >= 3,
         set(('feat', 'combat', 'defense', 'finesse')))
