@@ -1262,6 +1262,7 @@ class Monk(Character):
             for i in xrange(2):
                 unarmed_weapon.damage_die.increase_size()
             self.primary_weapon = unarmed_weapon
+            self.secondary_weapon = unarmed_weapon
 
         #ki strike
         ki_strike_bonus = (self.level-1)/3
