@@ -1238,7 +1238,7 @@ class Monk(Character):
     def create_progressions(self):
         self.set_progression(BAB, GOOD)
         self.set_progression(FORT, AVERAGE)
-        self.set_progression(REF, AVERAGE)
+        self.set_progression(REF, GOOD)
         self.set_progression(WILL, GOOD)
         self.set_progression(HIT_VALUE, 5)
 
