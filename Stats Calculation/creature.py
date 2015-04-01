@@ -1270,10 +1270,6 @@ class Monk(Character):
             self.will.remove_bonus(INT)
             self.will.add_bonus(wisdom/2, WIS)
 
-        #improved ki strike
-        if self.level>=10:
-            self.primary_weapon_damage.add_inherent(wisdom/2)
-
 class Paladin(Character):
     def create_progressions(self):
         self.set_progression(BAB, GOOD)
