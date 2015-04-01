@@ -117,7 +117,6 @@ if __name__ == "__main__":
             for ally in allies:
                 print ally
                 #print ally.armor_class.get_details()
-                print ally.primary_weapon_damage
                 print ''
 
         if enemies:
