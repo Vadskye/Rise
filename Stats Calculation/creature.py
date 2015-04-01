@@ -1263,6 +1263,11 @@ class Monk(Character):
                 unarmed_weapon.damage_die.increase_size()
             self.primary_weapon = unarmed_weapon
 
+        #ki strike
+        ki_strike_bonus = (self.level-1)/3
+        self.attack_bonus.add_enhancement(ki_strike_bonus)
+        for weapon in WEAPONS:
+            self.attacks[DAMAGE][weapon].add_enhancement(ki_strike_bonus)
         #wholeness of body
 
         #still mind
