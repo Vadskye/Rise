@@ -83,9 +83,15 @@ def initialize_argument_parser():
     parser.add_argument('--touchattack', dest='touchattack',
             type=str, help='Touch attack and bab',
             choices = touch_attack_choices)
-    parser.add_argument('--trigger', dest='trigger', type=str,
-            help='Triggered by specific event?',
-            choices=['false','immediate','noaction'])
+    parser.add_argument('-t', '--trigger', dest='trigger', type=str,
+            help='Triggered by specific event? easy or hard trigger',
+            choices=['easy','hard'])
+    parser.add_argument('--triggerduration', dest='triggerduration',
+            type = str, choices = duration_choices,
+            help = 'how long does the trigger last before expiring uselessly?')
+    parser.add_argument('--triggeraction', dest='triggeraction',
+            type = str, choices = ['immediate', 'none'],
+            help = 'does the trigger require an action to activate?')
     parser.add_argument('--castingtime', dest='castingtime', type=str,
             choices=['standard', 'full', 'swift'])
     parser.add_argument('-r', '--range', dest='range', type=str,
@@ -113,7 +119,7 @@ class Spell:
     def get_level(self, area=None, choose_targets=None, max_targets=None,
             shapeable=None, bloodied_behavior=None, duration=None,
             no_spell_resistance=None, no_repeat=None, spell_range=None, trigger=None,
-            repeatable=None):
+            trigger_action = None, repeatable=None):
         level=0
         for component_type in self.components.keys():
             for component in self.components[component_type]:
@@ -154,10 +160,6 @@ class Spell:
             level *= PART
         if no_spell_resistance:
             level += 1
-        if trigger:
-            if trigger == 'no_action':
-                level +=1
-            level *= 1.5
         if spell_range:
                 #range_choices = ['personal', 'touch', 'close', 'medium', 'long', 'extreme']
             if self.components[DAMAGE] or self.components[CONDITION]:
@@ -189,8 +191,8 @@ class SpellComponent:
             bloodied_only=None, component_strength=None,
             discharged=None, duration=None, escapable=None, healthy_only=None,
             limit_affected_types=None, noncombat=None, requires_concentration=None,
-            save_ends=None, saving_throw=None, touch_attack=None,
-            undispellable=None, damage_type=None):
+            save_ends=None, saving_throw=None, touch_attack=None, undispellable=None,
+            damage_type=None, trigger=None, trigger_action = None, trigger_duration=None):
 
         #some attributes need to be referenced externally to the component
         self.bloodied_only = bloodied_only
@@ -199,11 +201,11 @@ class SpellComponent:
         if bloodied_only:
             self.level *= 0.4
         print "base level:", self.level
-        self.level += calculate_duration_modifier(component_type, component_strength, duration, requires_concentration, undispellable, save_ends, bloodied_only, discharged)
+        self.level += calculate_duration_modifier(component_type, component_strength, duration, requires_concentration, undispellable, save_ends, bloodied_only, discharged, trigger, trigger_action, trigger_duration)
         print "with duration modifier:", self.level
         self.level *= calculate_miscellaneous_component_multiplier(component_type, area,
                 escapable, healthy_only, limit_affected_types, noncombat,
-                saving_throw, touch_attack, bloodied_only)
+                saving_throw, touch_attack, bloodied_only, trigger, trigger_action)
         print "with miscellaneous modifiers:", self.level
 
 def calculate_base_level(alternate_effect, component_type, component_strength, damage_type):
@@ -231,7 +233,7 @@ def rank_condition_strength(condition_strength):
     except KeyError:
         return 0
 
-def calculate_duration_modifier(component_type, component_strength, duration, requires_concentration, undispellable, save_ends, bloodied_only, discharged):
+def calculate_duration_modifier(component_type, component_strength, duration, requires_concentration, undispellable, save_ends, bloodied_only, discharged, trigger, trigger_action, trigger_duration):
     if component_type==DAMAGE:
         level = {
                 # assume no duration by default
@@ -291,12 +293,30 @@ def calculate_duration_modifier(component_type, component_strength, duration, re
     elif discharged == 'delayed':
         level*=0.5  # this is even more significant than HALF
 
+    #apply trigger duration modifiers, which don't use duration multipliers
+
+    if trigger:
+        level += {
+                # if it expires after 1 round, that's actually weaker than not
+                # being triggered at all
+                'round': -1,
+                # assume short duration by default
+                None: 0,
+                'short': 0,
+                'medium': 1,
+                'long': 1.5,
+                'extreme': 2,
+                'month': 2.5,
+                'year': 3,
+                'permanent': 4,
+                }[trigger_duration]
+
     print "duration modifier:", level
     return level
 
 def calculate_miscellaneous_component_multiplier(component_type, area, escapable,
         healthy_only, limit_affected_types, noncombat, saving_throw, touch_attack,
-        bloodied_only):
+        bloodied_only, trigger, trigger_action):
     multiplier=1
     if limit_affected_types:
         multiplier *= {
@@ -337,6 +357,24 @@ def calculate_miscellaneous_component_multiplier(component_type, area, escapable
         # trigger them shortly after the spell is cast
         if area and area is not 'tiny' and not bloodied_only:
             multiplier *= 1.25
+
+    if trigger:
+        if trigger_action is None or trigger_action == 'none':
+            multiplier *= 1.25
+        elif trigger_action == 'immediate':
+            # no extra cost for immediate action triggers
+            pass
+        else:
+            raise Exception('unrecognized trigger action %s' % trigger_action)
+        if trigger == 'easy':
+            multiplier *= 1.25
+        elif trigger == 'hard':
+            # hard triggers may not actually go off, so no need to increase the
+            # level - if trigger_duration is long, that will increase the level
+            # enough, and if not, then it's irrelevant
+            pass
+        else:
+            raise Exception('unrecognized trigger %s' % trigger)
 
     return multiplier
 
@@ -467,23 +505,26 @@ if __name__ == "__main__":
                 derp = merge_args(derp, general_args)
                 print '\nparsed:', derp
                 spell.components[component_type].append(SpellComponent(
-                    component_type = component_type,
-                    alternate_effect = derp['alternateeffect'],
-                    area = derp['area'],
-                    bloodied_only = derp['bloodied'], 
-                    component_strength = derp[component_type],
-                    discharged = derp['discharged'],
-                    duration = derp['duration'],
-                    escapable = derp['escapable'],
-                    healthy_only = derp['healthy'],
+                    component_type      = component_type,
+                    alternate_effect    = derp['alternateeffect'],
+                    area                = derp['area'],
+                    bloodied_only       = derp['bloodied'], 
+                    component_strength  = derp[component_type],
+                    discharged          = derp['discharged'],
+                    duration            = derp['duration'],
+                    escapable           = derp['escapable'],
+                    healthy_only        = derp['healthy'],
                     limit_affected_types = derp['limittypes'],
-                    noncombat = derp['noncombat'],
+                    noncombat           = derp['noncombat'],
                     requires_concentration = derp['concentration'],
-                    save_ends = derp['saveends'],
-                    saving_throw = derp['save'],
-                    touch_attack = derp['touchattack'],
-                    undispellable = derp['undispellable'],
-                    damage_type = derp['damagetype']))
+                    save_ends           = derp['saveends'],
+                    saving_throw        = derp['save'],
+                    touch_attack        = derp['touchattack'],
+                    undispellable       = derp['undispellable'],
+                    damage_type         = derp['damagetype'],
+                    trigger             = derp['trigger'],
+                    trigger_action    = derp['triggeraction'],
+                    trigger_duration    = derp['triggerduration']))
 
         spell_level = spell.get_level(
                 general_args['area'],
