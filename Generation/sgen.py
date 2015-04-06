@@ -92,6 +92,9 @@ def initialize_argument_parser():
     parser.add_argument('--triggeraction', dest='triggeraction',
             type = str, choices = ['immediate', 'none'],
             help = 'does the trigger require an action to activate?')
+    parser.add_argument('--triggerdischarged', type=str, choices=[None, 'depleted', 'delayed'],
+            help='Trigger is discharged before its duration is over? \
+            1=effect depleted over time, 2=delayed single effect')
     parser.add_argument('--castingtime', dest='castingtime', type=str,
             choices=['standard', 'full', 'swift'])
     parser.add_argument('-r', '--range', dest='range', type=str,
@@ -192,7 +195,8 @@ class SpellComponent:
             discharged=None, duration=None, escapable=None, healthy_only=None,
             limit_affected_types=None, noncombat=None, requires_concentration=None,
             save_ends=None, saving_throw=None, touch_attack=None, undispellable=None,
-            damage_type=None, trigger=None, trigger_action = None, trigger_duration=None):
+            damage_type=None, trigger=None, trigger_action = None, trigger_duration=None,
+            trigger_discharged = None):
 
         #some attributes need to be referenced externally to the component
         self.bloodied_only = bloodied_only
@@ -207,6 +211,8 @@ class SpellComponent:
                 escapable, healthy_only, limit_affected_types, noncombat,
                 saving_throw, touch_attack, bloodied_only, trigger, trigger_action)
         print "with miscellaneous modifiers:", self.level
+        self.level += calculate_trigger_duration_modifier(trigger, trigger_duration, trigger_discharged)
+        print "with trigger modifiers:", self.level
 
 def calculate_base_level(alternate_effect, component_type, component_strength, damage_type):
     level = {
@@ -293,24 +299,6 @@ def calculate_duration_modifier(component_type, component_strength, duration, re
     elif discharged == 'delayed':
         level*=0.5  # this is even more significant than HALF
 
-    #apply trigger duration modifiers, which don't use duration multipliers
-
-    if trigger:
-        level += {
-                # if it expires after 1 round, that's actually weaker than not
-                # being triggered at all
-                'round': -1,
-                # assume short duration by default
-                None: 0,
-                'short': 0,
-                'medium': 1,
-                'long': 1.5,
-                'extreme': 2,
-                'month': 2.5,
-                'year': 3,
-                'permanent': 4,
-                }[trigger_duration]
-
     print "duration modifier:", level
     return level
 
@@ -377,6 +365,34 @@ def calculate_miscellaneous_component_multiplier(component_type, area, escapable
             raise Exception('unrecognized trigger %s' % trigger)
 
     return multiplier
+
+#apply trigger duration modifiers, which are unaffected by other multipliers
+def calculate_trigger_duration_modifier(trigger = None, trigger_duration = None, trigger_discharged = None):
+    if trigger:
+        level = {
+                # if it expires after 1 round, that's actually weaker than not
+                # being triggered at all
+                'round': -1,
+                # assume short duration by default
+                None: 0,
+                'short': 0,
+                'medium': 1,
+                'long': 1.5,
+                'extreme': 2,
+                'month': 2.5,
+                'year': 3,
+                'permanent': 4,
+                }[trigger_duration]
+    else:
+        return 0
+
+    #these are the same modifiers used for normal duration modifiers
+    if trigger_discharged == 'depleted':
+        level*=PART
+    elif trigger_discharged == 'delayed':
+        level*=0.5  # this is even more significant than HALF
+
+    return level
 
 def calculate_area_modifier(area=None, choose_targets=None, max_targets=None, 
         shapeable=None, components = None):
@@ -524,6 +540,7 @@ if __name__ == "__main__":
                     damage_type         = derp['damagetype'],
                     trigger             = derp['trigger'],
                     trigger_action    = derp['triggeraction'],
+                    trigger_discharged    = derp['triggerdischarged'],
                     trigger_duration    = derp['triggerduration']))
 
         spell_level = spell.get_level(
