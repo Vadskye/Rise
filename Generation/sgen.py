@@ -6,7 +6,7 @@ import util
 PART=0.8
 HALF=0.6
 damage_type_choices = ['force']
-duration_choices = ['round','short','medium','long','extreme', 'permanent']
+duration_choices = ['round','short','medium','long','extreme', 'month', 'year', 'permanent']
 area_choices = ['tiny', 'normal',
     'small_radius', 'medium_radius', 'large_radius',
     'large_line',
@@ -232,7 +232,6 @@ def rank_condition_strength(condition_strength):
         return 0
 
 def calculate_duration_modifier(component_type, component_strength, duration, requires_concentration, undispellable, save_ends, bloodied_only, discharged):
-    #duration_choices = ['round','short','medium','long','extreme', 'permanent']
     if component_type==DAMAGE:
         level = {
                 # assume no duration by default
@@ -242,7 +241,9 @@ def calculate_duration_modifier(component_type, component_strength, duration, re
                 'medium': 3,
                 'long': 3.5,
                 'extreme': 4,
-                'permanent': 5,
+                'month': 4.5,
+                'year': 5,
+                'permanent': 6,
                 }[duration]
     elif component_type==CONDITION or component_type==BUFF:
         if component_type == CONDITION and component_strength in [1.5, 1]:
@@ -257,7 +258,9 @@ def calculate_duration_modifier(component_type, component_strength, duration, re
                 'medium': 6,
                 'long': 6.5,
                 'extreme': 7,
-                'permanent': 8,
+                'month': 7.5,
+                'year': 8,
+                'permanent': 9,
                 }[duration]
         else:
             # this is the normal scaling for condition and damage spell durations
@@ -269,7 +272,9 @@ def calculate_duration_modifier(component_type, component_strength, duration, re
                     'medium': 3,
                     'long': 3.5,
                     'extreme': 4,
-                    'permanent': 5,
+                    'month': 4.5,
+                    'year': 5,
+                    'permanent': 6,
                     }[duration]
     else:
         raise Exception("unrecognized component_type %s" % component_type)
