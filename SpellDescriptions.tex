@@ -106,7 +106,6 @@ Spells that are not subject to spell resistance are not affected by \spell{ablat
 \spellrng{\rngclose}
 \begin{spelltarget}{One weapon or fifty projectiles (in a single group)}
     \spelleffect The weapon is enhanced, as \spell{magic weapon}.
-    \spellattack{Magic vs. Will (object)}
     \spellsuccess The item becomes good, evil, lawful, or chaotic, as you choose, allowing it to overcome damage reduction of the appropriate type. This overrides any existing alignments.
 \end{spelltarget}
 \spellnotes As \spell{magic weapon}.
@@ -119,7 +118,7 @@ When you make a weapon good, evil, lawful, or chaotic, \spell{align weapon} is a
 \spellrng{Touch}
 \spelldur{\durmed}
 \spellsr{Yes}
-\begin{spelltarget}{One weapon}[Magic vs. Will (object)]
+\begin{spelltarget}{One weapon}[Magic vs. Will]
     \spellsuccess The weapon transforms into a different weapon from the same weapon group. In addition, you can decrease (but not increase) its size by one size category.
 \end{spelltarget}
 \spellnotes This spell has no effect on natural attacks or unarmed strikes.
@@ -130,7 +129,7 @@ When you make a weapon good, evil, lawful, or chaotic, \spell{align weapon} is a
 \spellrng{Touch}
 \spelldur{\durmed}
 \spellsr{Yes}
-\begin{spelltarget}{One weapon}[Magic vs. Will (object)]
+\begin{spelltarget}{One weapon}[Magic vs. Will]
     \spellsuccess The weapon transforms into any other manufactured weapon (but not an improvised weapon). In addition, you can increase or decrease its size by one size category.
     \spelleffect As a standard action that requires concentration, you can touch the weapon to change its shape again.
 \end{spelltarget}
@@ -247,16 +246,12 @@ The effects of instantaneous conjurations, such as \spell{create water}, are not
 \spellsection{Banishment}{6}
 \spelldesc{You force extraplanar creatures back to their home plane.}
 \spellinfo{Abjur/Conj (Interdiction, Translocation) [Planar]}{Arcane, Divine}
-\spellcmp{Verbal, Somatic, and Focus}
 \spellrng{\rngmed}
 \spelldur{Concentration}
 \begin{spelltargets}{One extraplanar creature}[Magic vs. Will]
     \spellsuccess The target is banished, as \spell{dismissal}.
 \end{spelltargets}
 \spelleffect As long as you concentrate on this spell, you can attack a new target each round. An individual creature can only be targeted once per casting of this spell.
-\spellnotes You can improve the spell's chance of success by presenting at least one object or substance that the target hates, fears, or otherwise opposes. For each such object or substance, you gain a \plus2 bonus on your caster level with the spell. For example, if this spell were cast on a demon that hated light and was \vulnerable to holy water and cold iron weapons, you might use iron, holy water, and a torch in the spell. The three items would give you a \plus6 bonus on your caster level. 
-\par Certain rare items might work twice as well as a normal item for the purpose of the bonuses (each providing a \plus4 bonus to your caster level).
-\spellfocus{Any item that is distasteful to the target (optional, see above)}
 
 \spellsection{Barkskin}{2}
 \spelldesc{You toughen a creature's skin, giving it the appearance of tree bark.}
@@ -453,16 +448,16 @@ This spell automatically suppresses (but does not dispel) any effects of spells 
 \spellsection{Changestaff}{7}
 \spelldesc{You plant your staff in the ground and transform it into a massive tree-like creature which obeys your every command.}
 \spellinfo{Trans (Alteration, Animation)}{Nature, Wild}
-\spellcmp{Verbal, Somatic, and Focus}
+\spellcmp{Verbal, Somatic, and Material}
 \spelltime{Full-round action}
 \spelltwocol{\spelltgt{Your touched staff}}{\spellrng{\rngtouch}}
 \spelldur{\durmed \dismissable}
 \spellline
 \spelleffect Your staff turns into a creature that looks and fights just like a treant. The staff-treant defends you and obeys any spoken commands. However, it is by no means a true treant; it cannot converse with actual treants or control trees.
 
-If the staff-treant is reduced to 0 or fewer hit points, it crumbles to powder and the staff is destroyed. Otherwise, the staff returns to its normal form when the spell duration expires (or when the spell is dismissed), and it can be used as the focus for another casting of the spell. The staff-treant is always at full strength when created, despite any wounds it may have incurred the last time it appeared.
+If the staff-treant is reduced to 0 or fewer hit points, it crumbles to powder and the staff is destroyed. Otherwise, the staff returns to its normal form when the spell duration expires (or when the spell is dismissed), and it can be used as the material component for another casting of the spell. The staff-treant is always at full strength when created, despite any wounds it may have incurred the last time it appeared.
 \spellline
-\spellfocus{The quarterstaff, which must be specially prepared. The staff must be a sound limb cut from an ash, oak, or yew, then cured, shaped, carved, and polished (a process requiring twenty-eight days). You cannot adventure or engage in other strenuous activity during the shaping and carving of the staff.}
+\spellmat{The quarterstaff, which must be specially prepared. The staff must be a sound limb cut from an ash, oak, or yew, then cured, shaped, carved, and polished (a process requiring twenty-eight days). You cannot adventure or engage in other strenuous activity during the shaping and carving of the staff.}
 
 \spellsection{Chaos Hammer}{4}
 \spelldesc{You unleash a multicolored explosion of leaping, ricocheting energy to smite your foes.}
@@ -512,7 +507,6 @@ If the staff-treant is reduced to 0 or fewer hit points, it crumbles to powder a
 \spellsection{Circle of Death}{6}
 \spelldesc{You snuff out the life force of your weakened foes by flooding them with negative energy.}
 \spellinfo{Necro (Vitalism) [Death, Negative]}{Death, Divine}
-\spellcmp{Verbal, Somatic, and Focus}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngmed}}
 \spellsr{Yes}
 \spellline
@@ -544,7 +538,6 @@ If the staff-treant is reduced to 0 or fewer hit points, it crumbles to powder a
 \spellsection{Cloak of Chaos}{8}
 \spelldesc{You shield your allies with an an powerful aura that resembles a random pattern of color -- an affront to your lawful foes.}
 \spellinfo{Abjur (Shielding) [Chaotic]}{Chaos, Divine}
-\spellcmp{Verbal, Somatic, and Focus}
 \spelllimit{\areamed radius centered on you}
 \spelldur{\durshort \dismissable}
 \spellsr{Yes}
@@ -552,8 +545,6 @@ If the staff-treant is reduced to 0 or fewer hit points, it crumbles to powder a
     The target gains a \plus5 enhancement bonus to its defenses. In addition, it gains spell resistance against lawful spells and spells cast by lawful creatures.
     \par At the end of each round, all lawful creatures within \rngclose range of the target that attacked it with their body or a melee weapon that round take 4d6 points of damage. A creature that attacks multiple creatures shielded by this spell can take this damage multiple times.
 \end{spelltargets}
-\spellline
-\spellfocus{A tiny reliquary containing some sacred relic, such as a scrap of parchment from a chaotic text. The reliquary costs at least 250 gp.}
 
 \spellsection{Cloudkill}{7}
 \spelldesc{You conjure a yellowish green fog bank that obscures vision and slowly poisons creatures inside.}
@@ -949,7 +940,6 @@ If you choose a delay, a glowing bead sits at the point of origin until it deton
 
 \spellsection{Destruction}{7}
 \spellinfo{Necro (Flesh) [Death]}{Destruction, Divine}
-\spellcmp{Verbal, Somatic, and Focus}
 \spellrng{\rngclose}
 \spellsr{Yes}
 \begin{spelltarget}{One creature}[Magic vs. Fortitude]
@@ -958,7 +948,6 @@ If you choose a delay, a glowing bead sits at the point of origin until it deton
     If the target is \bloodied, it loses all its hit points and takes 9 critical damage, causing it to begin dying.
 \end{spelltarget}
 \spellnotes The remains of a creature killed by this spell are consumed utterly (but not its equipment or possessions). The only way to restore life such a creature is to use \spell{true resurrection}, a carefully worded \spell{wish} spell followed by \spell{resurrection}, or \spell{miracle}.
-\spellfocus{A special holy (or unholy) symbol of silver marked with verses of anathema (cost 250 gp).}
 
 \spellsection{Detect Alignment}{3}
 \spelldesc{You sense the presence of creatures with a particular alignment.}
@@ -1065,7 +1054,7 @@ By concentrating on an aura (a standard action), you can determine the strength 
 \spellinfo{Trans (Alteration)}{Arcane, Destruction}
 \spellrng{\rngclose}
 \spellsr{Yes}
-\begin{spelltarget}{One creature or attended object}l[Magic vs. Reflex and Fortitude (object)]
+\begin{spelltarget}{One creature or attended object}l[Magic vs. Reflex and Fortitude]
     \spellsuccess 12d8 physical damage \add d8 per two caster levels above 12th.
     \spellfailure[Fortitude] As above, but half damage.
     \spellfailure[Reflex] No effect.
@@ -1675,7 +1664,7 @@ Spell resistance applies when a foe is struck by the weapon, but not when the bl
 \begin{spelltarget}{One willing corporeal creature}
     \spelleffect The target and all its equipment becomes insubstantial, misty, and translucent. Its armor modifier becomes 0, though other defense modifiers continue to apply normally. It gains physical damage reduction, reducing the physical damage it takes each round by 15 \add 2 per caster level above 6th. If it takes damage from a spell or magic weapon, it cannot use its damage reduction for 1 round. It becomes immune to critical hits.
 
-    The target can't attack or cast spells with verbal, somatic, material, or focus components while in gaseous form. If it has a touch spell ready to use, that spell is discharged harmlessly when the gaseous form spell takes effect.
+    The target can't attack or cast spells with verbal, somatic, or material components while in gaseous form. If it has a touch spell ready to use, that spell is discharged harmlessly when the gaseous form spell takes effect.
     \par A gaseous creature can fly at a speed of 10 feet (special maneuverability). It can pass through small holes or narrow openings, even mere cracks, with all it was wearing or holding in its hands, as long as the spell persists. The creature is subject to the effects of wind, and it can't enter water or other liquid. It also can't manipulate objects or activate items, even those carried along with its gaseous form. Continuously active items remain active, though in some cases their effects may be moot.
 \end{spelltarget}
 
@@ -1877,7 +1866,6 @@ This spell can be made permanent with a \spell{permanency} ritual.
 
 \spellsection{Holy Aura}{8}
 \spellinfo{Abjur (Interdiction) [Good]}{Divine, Good}
-\spellcmp{Verbal, Somatic, and Focus}
 \spelllimit{\areamed radius centered on you}
 \spelldur{\durshort \dismissable}
 \spellsr{Yes}
@@ -1885,8 +1873,6 @@ This spell can be made permanent with a \spell{permanency} ritual.
     The target gains a \plus5 enhancement bonus to its defenses. In addition, it gains spell resistance against evil spells and spells cast by evil creatures.
     \par At the end of each round, all evil creatures within \rngclose range of the target that attacked it with their body or a melee weapon that round take 4d6 points of damage. A creature that attacks multiple creatures shielded by this spell can take this damage multiple times.
 \end{spelltargets}
-\spellline
-\spellfocus{A tiny reliquary containing some sacred relic. The reliquary costs at least 250 gp.}
 
 \spellsection{Holy Smite}{4}
 \spellinfo{Evoc (Channeling) [Good]}{Good}
@@ -2230,7 +2216,6 @@ Any missiles you do not explicitly target will automatically strike a living cre
 \spellcmp{Verbal, Somatic, and Material}
 \spelltwocol{\spelltgteffarea{See text}}{\spellrng{See text}}
 \spelldur{See text}
-\spellattack{None; see text}
 \spelleffect A limited wish lets you create nearly any type of effect. For example, a limited wish can do any of the following things.
 \begin{itemize}
     \item Duplicate any general sorcerer/wizard spell of 6th level or lower, provided the spell is not of a school prohibited to you.
@@ -2453,7 +2438,6 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellinfo{Conj (Translocation) [Planar]}{Conj, Trickery}
 \spellrng{\rngmed}
 \spelldur{Instantaneous; see text}
-\spellattack{Will partial}
 \spellsr{Yes}
 \begin{spelltarget}{One creature}[Magic vs. Will]
     \spellsuccess The target is banished to an extradimensional labyrinth of force planes. Each round, as a full-round action, it may attempt a DC 20 Intelligence check to escape the labyrinth. If the target doesn't escape, the maze disappears after 5 minutes, forcing the target back to the location where it was originally banished.
@@ -3265,7 +3249,6 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsection{Shield of Law}{8}
 \spelldesc{A dim, blue glow surrounds your allies, protecting them from attacks.}
 \spellinfo{Abjur (Shielding) [Lawful]}{Divine, Law}
-\spellcmp{Verbal, Somatic, and Focus}
 \spelllimit{\areamed radius centered on you}
 \spelldur{\durshort \dismissable}
 \spellsr{Yes}
@@ -3273,7 +3256,6 @@ This spell can be made permanent with a \spell{permanency} ritual.
     The target gains a \plus5 enhancement bonus to its defenses. In addition, it gains spell resistance against lawful spells and spells cast by lawful creatures.
     \par At the end of each round, all lawful creatures within \rngclose range of the target that attacked it with their body or a melee weapon that round take 4d6 points of damage. A creature that attacks multiple creatures shielded by this spell can take this damage multiple times.
 \end{spelltargets}
-\spellfocus{A tiny reliquary containing some sacred relic, such as a scrap of parchment from a lawful text. The reliquary costs at least 250 gp.}
 
 \spellsection{Shillelagh}{1}
 \spellinfo{Trans}{Nature}
@@ -3319,10 +3301,6 @@ This spell can be made permanent with a \spell{permanency} ritual.
     \spellsuccess 7d6 sonic damage \add d6 per four caster levels above 8th. In addition, the target is \deafened.
     \spellfailure As above, but half damage, and the target is not deafened.
 \end{spelltargets}
-
-\spelldmg{7d6 sonic damage \add d6 per four caster levels above 14th; see text}
-\spellattack{Fortitude partial or Reflex negates (object); See text}
-\spelleffect This spell functions like \spell{shout}, except that it is larger.
 
 \spellsection{Shrink Item}{3}
 \spellinfo{Trans (Alteration)}{Trans}
@@ -4087,7 +4065,6 @@ At the end of every round, the storm has an additional effect, as shown on \tref
 \spellsection{Unholy Aura}{8}
 \spelldesc{You shield your allies with malevolent darkness, protecting them from good foes.}
 \spellinfo{Abjur (Interdiction) [Evil]}{Divine, Evil}
-\spellcmp{Verbal, Somatic, and Focus}
 \spelllimit{\areamed radius centered on you}
 \spelldur{\durshort \dismissable}
 \spellsr{Yes}
@@ -4096,7 +4073,6 @@ At the end of every round, the storm has an additional effect, as shown on \tref
     \par At the end of each round, all good creatures within \rngclose range of the target that attacked it with their body or a melee weapon that round take 4d6 points of damage. A creature that attacks multiple creatures shielded by this spell can take this damage multiple times.
 \end{spelltargets}
 \spellline
-\spellfocus{A tiny reliquary containing some sacred relic, such as a piece of parchment from an unholy text. The reliquary costs at least 250 gp.}
 
 \spellsection{Unholy Blight}{4}
 \spellinfo{Evoc (Channeling) [Evil]}{Evil}
