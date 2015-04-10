@@ -278,7 +278,7 @@ The effects of instantaneous conjurations, such as \spell{create water}, are not
     \end{itemize}
     \par You may also invent your own curse, but it should be no more powerful than those described above.
 \end{spelltarget}
-\spellnotes Curses cannot be dispelled.
+\spellnotes \cursespellnotes
 
 \spellsection{Black Tentacles}{7}
 \spelldesc{You conjure a field of rubbery black tentacles, each 5 feet long. These waving members seem to spring forth from the earth, floor, or whatever surface is underfoot -- including water. They grasp and entwine around creatures that enter the area, holding them fast and crushing them with great strength.}
@@ -440,9 +440,12 @@ This spell automatically suppresses (but does not dispel) any effects of spells 
 \spellrng{\rngmed}
 \spelllimit{\areamed radius centered on the primary target}
 \spellsr{Yes}
-\begin{spelltargets}{One primary target, plus up to five secondary targets in the area}l[Magic vs. Reflex]
+\begin{spelltarget}[Primary]{One creature}
     \spellsuccess 5d10 electricity damage \add d10 per four caster levels above 10th. Secondary targets take half damage.
     \spellfailure As above, but half damage.
+\end{spelltarget}
+\begin{spelltargets}*[Secondary]{Up to five creatures in the area}l[Magic vs. Reflex]
+    \spellsuccess The target takes half the damage dealt to the primary target.
 \end{spelltargets}
 
 \spellsection{Changestaff}{7}
@@ -1117,15 +1120,14 @@ Artifacts and deities are unaffected by mortal magic such as this.
 \end{spelltarget}
 
 \spellsection{Disrupting Weapon}{4}
+\spelldesc{You imbue a weapon with positive energy, making it deadly to undead.}
 \spellinfo{Necro/Trans (Imbuement, Positive)}{Divine}
 \spellrng{\rngclose}
+\spellfocus{One melee weapon}
 \spelldur{\durshort}
 \spellsr{Yes}
-\begin{spelltarget}[Primary]{One melee weapon}
-    \spelleffect The target weapon becomes deadly to undead.
-\end{spelltarget}
-\begin{spelltrigger}{The primary target strikes a \bloodied undead creature for the first time in a round}
-    \begin{spelltarget}*[Secondary]{The bloodied undead creature}l[Magic vs. Fortitude]
+\begin{spelltrigger}{The focus weapon strikes a \bloodied undead creature for the first time in a round}
+    \begin{spelltarget}*{The bloodied undead creature}l[Magic vs. Fortitude]
         \spellsuccess The target creature is utterly destroyed.
     \end{spelltarget}
 \end{spelltrigger}
@@ -1794,13 +1796,11 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spelldesc{You heat your foe's armor, blistering its skin.}
 \spellinfo{Evoc (Energy) [Fire]}{Nature}
 \spellrng{\rngmed}
+\spellfocus{One metal object}
 \spelldur{\durshort \dismissable}
 \spellsr{Yes}
-\begin{spelltarget}[Primary]{One metal object}
-    \spelleffect The target object becomes extremely hot.
-\end{spelltarget}
 \begin{spelltrigger}{End of every round}
-    \begin{spelltargets}*[Secondary]{The primary target and everything touching it}l[Magic vs. Fortitude]
+    \begin{spelltargets}*{The focus and everything touching it}l[Magic vs. Fortitude]
         \spellsuccess The target takes 2d6 fire damage \add d6 per four caster levels above 4th.
         \spellfailure As above, but half damage.
     \end{spelltargets}
@@ -2348,14 +2348,14 @@ Any missiles you do not explicitly target will automatically strike a living cre
 \spellsection{Magic Circle against Alignment}{5}
 \spellinfo{Abjur (Interdiction) [Barrier, Good]}{Arcane, Chaos, Divine, Evil, Good, Law}
 \spellrng{Touch}
-\spelltgt{One creature}[Primary]
-\spellemanation{\areasmall radius from the primary target}
+\spellfocus{One creature}
+\spellemanation{\areasmall radius from the focus}
 \spelldur{\durshort \dismissable}
 \spellsr{Yes}
 \spellspecial When you cast this spell, choose an alignment (chaotic, good, lawful, or evil).
 \spellline
 \spelleffect Summoned creatures which have the chosen alignment cannot enter the area.
-\begin{spelltargets}*[Secondary]{All creatures in the area}
+\begin{spelltargets}*{All creatures in the area}
     \spelleffect The target is protected from the chosen alignment, as \spell{protection from alignment}.
 \end{spelltargets}
 
@@ -3010,14 +3010,13 @@ Since the image is not a creature, it is difficult to disrupt, and many spells h
 \spellsection{Retributive Brilliance}{5}
 \spellinfo{Abjur/Illus (Figment, Shielding)}{Arcane}
 \spellrng{\rngclose}
+\spellfocus{One creature}
 \spelldur{\durshort or until discharged}
 \spellsr{Yes}
-\begin{spelltarget}[Primary]{One creature}
-    \spelleffect The target is protected by a retributive shield that can be activated when it is attacked. Activating the triggered attack requires an immediate action from either you or the target, and discharges the spell.
-\end{spelltarget}
-\begin{spelltrigger}{Creature attacks the primary target with a melee weapon}
+\begin{spelltrigger}{A creature attacks the focus creature with a melee weapon}
+    \parhead*{Trigger Action} Immediate action by you or the focus creature
     \spellrng{\rngclose}
-    \begin{spelltarget}*[Secondary]{Attacking creature}[Magic vs. Reflex]
+    \begin{spelltarget}*{The attacking creature}[Magic vs. Reflex]
         \spellsuccess The target is \dazzled for 5 rounds.
 
         If the target is \bloodied, it is also \blinded for 5 rounds.
@@ -3115,14 +3114,13 @@ Since the image is not a creature, it is difficult to disrupt, and many spells h
 \spellsection{Sanctuary}{1}
 \spellinfo{Abjur/Ench (Compulsion, Shielding) [Mind-Affecting]}{Arcane, Divine, Protection}
 \spellrng{Touch}
+\spellfocus{One creature}
 \spelldur{\durshort or until discharged}
 \spellsr{Yes}
-\begin{spelltarget}[Primary]{One creature}
-    \spelleffect The target is shielded from enemy attacks. If it attacks any creature, this spell immediately ends.
-\end{spelltarget}
-\begin{spelltrigger}{The primary target is attacked}
-    \begin{spelltarget}*[Secondary]{The attacking creature}[Magic vs. Will]
-        \spellsuccess The target is unable to attack the primary target. It can attack a different creature instead.
+\spellspecial If the focus creature attacks any other creature, this spell immediately ends.
+\begin{spelltrigger}{The focus creature is attacked}
+    \begin{spelltarget}*{The attacking creature}[Magic vs. Will]
+        \spellsuccess The target is unable to attack the focus creature. It can attack a different creature instead.
     \end{spelltarget}
 \end{spelltrigger}
 
