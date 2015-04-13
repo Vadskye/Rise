@@ -49,7 +49,7 @@ def initialize_argument_parser():
             action='store_true', help='Requires concentration?')
     parser.add_argument('--saveends', dest='saveends', 
             action='store_true', help='Save each round to end?')
-    parser.add_argument('--bloodiedbehavior', dest='bloodiedinstant',
+    parser.add_argument('--bloodiedbehavior', dest='bloodiedbehavior',
             help='''How is the bloodied effect triggered?
                 "while": active while target is bloodied during duration (default)
                 "instant": activates if target is bloodied when cast
@@ -548,7 +548,7 @@ if __name__ == "__main__":
                 general_args['choosetargets'],
                 general_args['maxtargets'],
                 general_args['shapeable'],
-                general_args['bloodiedinstant'],
+                general_args['bloodiedbehavior'],
                 general_args['duration'],
                 general_args['nosr'],
                 general_args['norepeat'],
