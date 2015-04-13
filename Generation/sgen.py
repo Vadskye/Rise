@@ -17,6 +17,7 @@ range_choices = ['personal', 'touch', 'close', 'medium', 'long', 'extreme']
 condition_choices = [0,1,1.5,2,2.5,3,3.5]
 touch_attack_choices =['none','poor','1','average','2', 'ray']
 bloodied_behavior_choices = ['while', 'instant', 'ifever']
+casting_time_choices = 'immediate swift standard fullround minute 10minutes hour day'.split()
 storage_file_name = 'spells.txt'
 condition_debug=True
 general_debug=True
@@ -96,7 +97,7 @@ def initialize_argument_parser():
             help='Trigger is discharged before its duration is over? \
             1=effect depleted over time, 2=delayed single effect')
     parser.add_argument('--castingtime', dest='castingtime', type=str,
-            choices=['standard', 'full', 'swift'])
+            choices=casting_time_choices)
     parser.add_argument('-r', '--range', dest='range', type=str,
             choices=range_choices)
     parser.add_argument('--discharged', type=str, choices=[None, 'depleted', 'delayed'],
@@ -122,7 +123,7 @@ class Spell:
     def get_level(self, area=None, choose_targets=None, max_targets=None,
             shapeable=None, bloodied_behavior=None, duration=None,
             no_spell_resistance=None, no_repeat=None, spell_range=None, trigger=None,
-            trigger_action = None, repeatable=None):
+            trigger_action = None, repeatable=None, casting_time=None):
         level=0
         for component_type in self.components.keys():
             for component in self.components[component_type]:
@@ -154,6 +155,20 @@ class Spell:
         print 'combined level from components', level
         level += calculate_area_modifier(area, choose_targets, max_targets, shapeable, self.components)
         print 'total level after area modifier', level
+
+        if casting_time is not None:
+            level *= {
+                    'immediate': 1.75,
+                    'swift': 1.5,
+                    # assume 'standard' is standard
+                    None: 1,
+                    'standard': 1,
+                    'full': 0.9,
+                    'minute': 0.8,
+                    '10minutes': 0.7,
+                    'hour': 0.6,
+                    'day': 0.5,
+                    }[casting_time]
 
         if repeatable == 1:
             level *= 1.25
@@ -554,7 +569,9 @@ if __name__ == "__main__":
                 general_args['norepeat'],
                 general_args['range'],
                 general_args['trigger'],
-                general_args['repeatable'])
+                general_args['triggeraction'],
+                general_args['repeatable'],
+                general_args['castingtime'])
         if general_args['savename']:            
             save_name = ''.join(general_args['savename'])
             print 'Spell level of', save_name+': ', spell_level
