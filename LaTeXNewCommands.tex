@@ -157,7 +157,7 @@
 \newcommand{\spelltargetattack}[2]{\spelltabularcompressed \thead{Target:} #1 & \thead{Attack:} #2 \\\end{tabularx}}
 \newcommand{\spelltargetsattack}[2]{\spelltabularcompressed \thead{Targets:} #1 & \thead{Attack:} #2 \\\end{tabularx}}
 
-\newcommand{\spellfocus}[1]{\par\noindent \textit{Focus:} #1}
+%\newcommand{\spellfocus}[1]{\par\noindent \textit{Focus:} #1}
 \newcommand{\spellmat}[1]{\par\noindent \textit{Material Components:} #1}
 
 \newcommand{\spelltwocol}[2]{\spelltabularcompressed #1 & #2\end{tabularx}}
@@ -182,6 +182,7 @@
 \newcommand{\spelltgteffarea}[1]{\parhead*{Target or Area} #1}
 
 \newcommand{\spelldur}[1]{\parhead*{Duration} #1}
+\newcommand{\spellfocus}[1]{\parhead*{Focus} #1}
 \newcommand{\spellsr}[1]{\parhead*{Spell Resistance} #1}
 
 \newcommand{\rngpers}{Personal}
@@ -257,7 +258,7 @@
 \newcommand{\concealment}{concealment \reminder{\plus4 to physical defenses}}
 
 \newcommand{\destructivespellnotes}{If a destructive spell deals enough damage to an interposing barrier to shatter or breaks through it, its effects may continue beyond the barrier if the area permits; otherwise, it stops at the barrier just as any other spell effect does.\xspace}
-\newcommand{\cursespellnotes}{Curses cannot be dispelled.\xspace}
+\newcommand{\cursespellnotes}{Curses cannot be dispelled with \spell{dispel magic}, but can be removed with \spell{break enchantment} or \spell{remove curse}.\xspace}
 \newcommand{\firespellnotes}{Fire spells shed light equivalent to a torch. They do not function underwater. They can ignite combustable materials, such as dry wood and cloth.\xspace}
 \newcommand{\forcespellnotes}{Force spells also affect the Ethereal Plane.}
 \newcommand{\fogspellnotes}{Fog spells do not function underwater and can be dispersed by wind. Localized wind, such as from a \spell{gust of wind} spell, only disperses the fog where it overlaps the fog. A fire spell burns away the fog in the area into which it deals damage.\xspace}

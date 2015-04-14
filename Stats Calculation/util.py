@@ -30,6 +30,13 @@ class Modifier(object):
             self.bonuses[bonus_type] = bonus_value
         self._update()
 
+    def remove_bonus(self, bonus_type):
+        try:
+            self.bonuses[bonus_type] = 0
+        except KeyError:
+            pass
+        self._update()
+
     def add_inherent(self, bonus_value):
         self.add_bonus(bonus_value, 'inherent')
 
