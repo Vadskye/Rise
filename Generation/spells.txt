@@ -34,10 +34,6 @@ Bless
 {'area': 'medium_radius', 'instantaneous': [True], 'range': 'touch', 'limit_types': [1], 'save_name': ['Bless'], 'buff': [2]}
 Spell Level: 1.8
 
-Blindness/Deafness
-{'touch_attack': ['1'], 'bloodied': [True, False], 'healthy': [False, True], 'alternate': [True, False], 'range': 'touch', 'condition': [1.5, 3.0], 'duration': ['long'], 'save': ['negates'], 'save_name': ['Blindness/Deafness']}
-Spell Level: 2.0944
-
 Burning Hands
 {'range': 'touch', 'energy': True, 'damage': [True], 'save_name': ['Burning', 'Hands'], 'area': 'normal'}
 Spell Level: 1
@@ -193,10 +189,6 @@ Spell Level: 4.2
 Fear
 {'bloodied': [True, False], 'area': 'normal', 'healthy': [False, True], 'range': 'touch', 'save_name': ['Fear'], 'save': ['negates'], 'condition': [1.5, 3.0]}
 Spell Level: 5.175
-
-Feeblemind
-{'touch_attack': ['1'], 'bloodied': [True, False], 'instantaneous': [True], 'range': 'touch', 'condition': [1.0, 3.0], 'duration': ['permanent', 'short'], 'save': ['negates'], 'save_name': ['Feeblemind']}
-Spell Level: 5.368
 
 Finger of Death
 {'bloodied': [True, False], 'healthy': [False, True], 'instantaneous': [True], 'range': 'close', 'save_name': ['Finger', 'of', 'Death'], 'duration': ['long', 'short'], 'save': ['negates'], 'condition': [1.0, 2.0]}
@@ -430,4 +422,104 @@ Spell Level: 5.152
 finger of death
 {'loadname': None, 'condition': None, 'alternateeffect': None, 'duration': None, 'range': 'close', 'concentration': None, 'undispellable': False, 'bloodied': False, 'area': None, 'noncombat': None, 'damage': False, 'choosetargets': None, 'trigger': None, 'bloodiedinstant': True, 'saveends': False, 'save': 'negates', 'buff': None, 'savename': 'finger of death', 'castingtime': None, 'maxtargets': None, 'escapable': None, 'touchattack': None, 'nosr': None, 'healthy': False, 'limittypes': 1, 'dot': None}
 Spell Level: 6.8
+
+grease
+{'loadname': None, 'condition': None, 'alternateeffect': None, 'duration': None, 'range': 'medium', 'concentration': None, 'undispellable': False, 'discharged': None, 'bloodied': False, 'area': 'normal', 'noncombat': None, 'damage': False, 'choosetargets': None, 'trigger': None, 'bloodiedinstant': False, 'saveends': False, 'save': 'negates', 'buff': None, 'savename': 'grease', 'castingtime': None, 'maxtargets': None, 'escapable': '1', 'touchattack': None, 'nosr': None, 'healthy': False, 'limittypes': None, 'dot': None}
+Spell Level: 1.4
+
+hold person
+{'loadname': None, 'condition': None, 'alternateeffect': None, 'duration': 'short', 'range': 'close', 'concentration': None, 'undispellable': False, 'discharged': None, 'bloodied': False, 'area': None, 'noncombat': None, 'damage': False, 'choosetargets': None, 'trigger': None, 'bloodiedinstant': False, 'saveends': False, 'save': 'negates', 'buff': None, 'savename': 'hold person', 'castingtime': None, 'maxtargets': False, 'escapable': None, 'touchattack': None, 'nosr': None, 'healthy': False, 'limittypes': 2, 'dot': None}
+Spell Level: 2.21
+
+hold person
+{'loadname': None, 'condition': None, 'alternateeffect': None, 'duration': 'short', 'range': 'close', 'concentration': None, 'undispellable': False, 'discharged': None, 'bloodied': False, 'area': None, 'noncombat': None, 'damage': False, 'choosetargets': None, 'trigger': None, 'bloodiedinstant': False, 'saveends': False, 'save': 'negates', 'buff': None, 'savename': 'hold person', 'castingtime': None, 'maxtargets': False, 'escapable': None, 'touchattack': None, 'nosr': None, 'healthy': False, 'limittypes': 2, 'dot': None}
+Spell Level: 2.93
+
+hold person
+{'loadname': None, 'condition': None, 'alternateeffect': None, 'duration': 'short', 'range': 'close', 'concentration': None, 'undispellable': False, 'discharged': None, 'bloodied': False, 'area': None, 'noncombat': None, 'damage': False, 'choosetargets': None, 'trigger': None, 'bloodiedinstant': False, 'saveends': False, 'save': 'negates', 'buff': None, 'savename': 'hold person', 'castingtime': None, 'maxtargets': False, 'escapable': None, 'touchattack': None, 'nosr': None, 'healthy': False, 'limittypes': 2, 'dot': None}
+Spell Level: 2.48
+
+imprisonment
+{'loadname': None, 'condition': None, 'alternateeffect': None, 'duration': None, 'range': 'close', 'concentration': None, 'undispellable': False, 'discharged': None, 'bloodied': False, 'area': None, 'noncombat': None, 'damage': False, 'choosetargets': False, 'trigger': None, 'bloodiedinstant': True, 'saveends': False, 'save': 'negates', 'buff': None, 'savename': 'imprisonment', 'castingtime': None, 'maxtargets': False, 'escapable': None, 'touchattack': None, 'nosr': None, 'healthy': False, 'limittypes': 1, 'dot': None}
+Spell Level: 10.0184
+
+imprisonment
+{'loadname': None, 'condition': None, 'alternateeffect': None, 'duration': None, 'range': 'close', 'concentration': None, 'undispellable': False, 'discharged': None, 'bloodied': False, 'area': None, 'noncombat': None, 'damage': False, 'choosetargets': False, 'trigger': None, 'bloodiedinstant': True, 'saveends': False, 'save': 'negates', 'buff': None, 'savename': 'imprisonment', 'castingtime': None, 'maxtargets': False, 'escapable': None, 'touchattack': None, 'nosr': None, 'healthy': False, 'limittypes': 1, 'dot': None}
+Spell Level: 10.0184
+
+mass inflict light wounds
+{'loadname': None, 'condition': None, 'alternateeffect': None, 'duration': None, 'range': 'medium', 'concentration': None, 'undispellable': False, 'discharged': None, 'bloodied': False, 'area': 'medium_radius', 'noncombat': None, 'damage': False, 'choosetargets': True, 'trigger': None, 'bloodiedinstant': False, 'saveends': False, 'save': None, 'buff': None, 'savename': 'mass inflict light wounds', 'castingtime': None, 'maxtargets': True, 'escapable': None, 'touchattack': None, 'nosr': None, 'healthy': False, 'limittypes': None, 'dot': None}
+Spell Level: 4.4
+
+insanity
+{'loadname': None, 'condition': None, 'alternateeffect': None, 'duration': 'permanent', 'range': 'close', 'concentration': None, 'undispellable': True, 'discharged': None, 'bloodied': False, 'area': None, 'noncombat': None, 'damage': False, 'choosetargets': False, 'trigger': None, 'bloodiedinstant': False, 'saveends': False, 'save': 'negates', 'buff': None, 'savename': 'insanity', 'castingtime': None, 'maxtargets': False, 'escapable': None, 'touchattack': None, 'nosr': None, 'healthy': False, 'limittypes': 1, 'dot': None}
+Spell Level: 6.692
+
+irresistable dance
+{'loadname': None, 'condition': None, 'alternateeffect': None, 'duration': 'round', 'range': 'close', 'concentration': None, 'undispellable': False, 'discharged': None, 'bloodied': False, 'area': None, 'noncombat': None, 'damage': False, 'choosetargets': False, 'trigger': None, 'bloodiedinstant': False, 'saveends': False, 'save': None, 'buff': None, 'savename': 'irresistable dance', 'castingtime': None, 'maxtargets': False, 'escapable': None, 'touchattack': None, 'nosr': None, 'healthy': False, 'limittypes': 1, 'dot': None}
+Spell Level: 10.4
+
+temporal prison
+{'loadname': None, 'condition': None, 'norepeat': True, 'alternateeffect': None, 'duration': 'short', 'range': 'close', 'concentration': None, 'undispellable': False, 'discharged': None, 'bloodied': False, 'area': None, 'noncombat': False, 'damage': False, 'choosetargets': False, 'trigger': None, 'bloodiedinstant': False, 'saveends': False, 'save': 'negates', 'buff': None, 'savename': 'temporal prison', 'castingtime': None, 'maxtargets': False, 'escapable': None, 'touchattack': None, 'nosr': None, 'healthy': False, 'limittypes': None, 'dot': None}
+Spell Level: 4.76
+
+maze
+{'loadname': None, 'condition': None, 'norepeat': True, 'alternateeffect': None, 'duration': 'medium', 'range': 'medium', 'concentration': None, 'undispellable': False, 'discharged': None, 'bloodied': False, 'area': None, 'noncombat': False, 'damage': False, 'choosetargets': False, 'trigger': None, 'bloodiedinstant': False, 'saveends': False, 'save': 'partial', 'buff': None, 'savename': 'maze', 'castingtime': None, 'maxtargets': False, 'escapable': None, 'touchattack': None, 'nosr': None, 'healthy': False, 'limittypes': 1, 'dot': None}
+Spell Level: 7.968
+
+meteor swarm
+{'loadname': None, 'condition': None, 'norepeat': False, 'alternateeffect': None, 'duration': None, 'range': 'long', 'concentration': None, 'undispellable': False, 'discharged': None, 'bloodied': False, 'area': 'large_radius', 'noncombat': False, 'damage': False, 'choosetargets': False, 'trigger': None, 'bloodiedinstant': False, 'saveends': False, 'save': 'negates', 'buff': None, 'savename': 'meteor swarm', 'castingtime': None, 'maxtargets': False, 'escapable': None, 'touchattack': None, 'nosr': None, 'healthy': False, 'limittypes': None, 'dot': None}
+Spell Level: 10.0
+
+chaos hammer
+{'loadname': None, 'condition': None, 'norepeat': False, 'alternateeffect': None, 'duration': None, 'range': 'medium', 'concentration': None, 'undispellable': False, 'discharged': None, 'bloodied': False, 'area': None, 'noncombat': False, 'damage': False, 'choosetargets': False, 'trigger': None, 'bloodiedinstant': False, 'saveends': False, 'save': None, 'buff': None, 'savename': 'chaos hammer', 'castingtime': None, 'maxtargets': False, 'escapable': None, 'touchattack': None, 'nosr': None, 'healthy': False, 'limittypes': 1, 'dot': None}
+Spell Level: 4.2
+
+blindness/deafness
+{'loadname': None, 'condition': None, 'norepeat': False, 'alternateeffect': False, 'duration': None, 'range': 'close', 'concentration': None, 'undispellable': False, 'discharged': None, 'bloodied': False, 'area': None, 'noncombat': False, 'damage': False, 'choosetargets': False, 'trigger': None, 'bloodiedinstant': 'instant', 'saveends': False, 'save': 'negates', 'buff': None, 'savename': 'blindness/deafness', 'castingtime': None, 'maxtargets': False, 'escapable': None, 'touchattack': None, 'nosr': None, 'healthy': False, 'limittypes': None, 'dot': None}
+Spell Level: 1.04
+
+phantasmal maze
+{'loadname': None, 'condition': None, 'norepeat': False, 'alternateeffect': False, 'duration': 'medium', 'range': 'medium', 'concentration': None, 'undispellable': False, 'discharged': None, 'bloodied': False, 'area': None, 'noncombat': False, 'damage': False, 'choosetargets': False, 'trigger': None, 'bloodiedinstant': None, 'saveends': False, 'save': 'negates', 'buff': None, 'savename': 'phantasmal maze', 'castingtime': None, 'maxtargets': False, 'escapable': '2', 'touchattack': None, 'nosr': None, 'healthy': False, 'limittypes': None, 'dot': None}
+Spell Level: 4.92
+
+phantasmal wound
+{'loadname': None, 'condition': None, 'norepeat': False, 'alternateeffect': False, 'duration': 'short', 'range': 'close', 'concentration': None, 'undispellable': False, 'discharged': None, 'bloodied': False, 'area': None, 'noncombat': False, 'damage': False, 'choosetargets': False, 'trigger': None, 'bloodiedinstant': None, 'saveends': False, 'save': 'negates', 'buff': None, 'savename': 'phantasmal wound', 'castingtime': None, 'maxtargets': False, 'escapable': None, 'touchattack': None, 'nosr': None, 'healthy': False, 'limittypes': None, 'dot': None}
+Spell Level: 1.928
+
+poison
+{'loadname': None, 'condition': None, 'norepeat': False, 'alternateeffect': False, 'duration': 'medium', 'range': 'close', 'concentration': None, 'undispellable': False, 'discharged': None, 'bloodied': False, 'area': None, 'noncombat': False, 'damage': False, 'choosetargets': False, 'trigger': None, 'bloodiedinstant': None, 'saveends': False, 'save': 'negates', 'buff': None, 'savename': 'poison', 'castingtime': None, 'maxtargets': False, 'escapable': None, 'touchattack': None, 'nosr': None, 'healthy': False, 'limittypes': None, 'dot': None}
+Spell Level: 5.3936
+
+polar ray
+{'loadname': None, 'condition': None, 'norepeat': False, 'alternateeffect': False, 'duration': None, 'range': 'close', 'concentration': None, 'undispellable': False, 'discharged': None, 'bloodied': False, 'area': None, 'noncombat': False, 'damage': False, 'choosetargets': False, 'trigger': None, 'bloodiedinstant': 'instant', 'saveends': False, 'save': 'negates', 'buff': None, 'savename': 'polar ray', 'castingtime': None, 'maxtargets': False, 'escapable': None, 'touchattack': None, 'nosr': None, 'healthy': False, 'limittypes': None, 'dot': None}
+Spell Level: 8.344
+
+power word kill
+{'loadname': None, 'condition': None, 'norepeat': False, 'alternateeffect': False, 'duration': None, 'range': 'close', 'concentration': None, 'undispellable': False, 'discharged': None, 'bloodied': False, 'area': None, 'noncombat': False, 'damage': False, 'choosetargets': False, 'trigger': None, 'bloodiedinstant': 'instant', 'saveends': False, 'save': None, 'buff': None, 'savename': 'power word kill', 'castingtime': None, 'maxtargets': False, 'escapable': None, 'touchattack': None, 'nosr': None, 'healthy': False, 'limittypes': None, 'dot': None}
+Spell Level: 9.74
+
+confusion
+{'loadname': None, 'condition': None, 'norepeat': False, 'alternateeffect': False, 'duration': None, 'range': None, 'concentration': None, 'undispellable': False, 'discharged': None, 'bloodied': False, 'area': None, 'noncombat': False, 'damage': False, 'choosetargets': False, 'trigger': None, 'bloodiedinstant': None, 'saveends': False, 'save': 'negates', 'buff': None, 'savename': 'confusion', 'castingtime': None, 'maxtargets': False, 'escapable': None, 'touchattack': None, 'nosr': None, 'healthy': False, 'limittypes': 1, 'dot': None, 'shapeable': False}
+Spell Level: 3.156
+
+searing light
+{'loadname': None, 'condition': None, 'norepeat': False, 'alternateeffect': False, 'duration': None, 'range': 'close', 'concentration': None, 'undispellable': False, 'discharged': None, 'bloodied': False, 'area': None, 'noncombat': False, 'damage': False, 'choosetargets': False, 'trigger': None, 'bloodiedinstant': None, 'saveends': False, 'save': None, 'buff': None, 'savename': 'searing light', 'castingtime': None, 'maxtargets': False, 'escapable': None, 'touchattack': None, 'nosr': None, 'healthy': False, 'limittypes': None, 'dot': None, 'shapeable': False}
+Spell Level: 3.0
+
+drain life
+{'loadname': None, 'condition': None, 'norepeat': False, 'alternateeffect': False, 'duration': None, 'range': 'close', 'concentration': False, 'undispellable': False, 'discharged': None, 'bloodied': False, 'area': None, 'noncombat': False, 'damage': False, 'choosetargets': False, 'trigger': None, 'bloodiedinstant': None, 'saveends': False, 'save': None, 'buff': None, 'savename': 'drain life', 'castingtime': None, 'maxtargets': False, 'escapable': None, 'touchattack': None, 'nosr': False, 'healthy': False, 'damagetype': None, 'limittypes': None, 'dot': None, 'shapeable': False}
+Spell Level: 4
+
+finger of death
+{'loadname': None, 'condition': None, 'norepeat': False, 'alternateeffect': False, 'duration': None, 'range': 'close', 'concentration': False, 'undispellable': False, 'discharged': None, 'bloodied': False, 'area': None, 'noncombat': False, 'damage': False, 'choosetargets': False, 'trigger': None, 'bloodiedinstant': 'instant', 'saveends': False, 'save': 'negates', 'buff': None, 'savename': 'finger of death', 'castingtime': None, 'maxtargets': False, 'escapable': None, 'touchattack': None, 'nosr': False, 'healthy': False, 'damagetype': None, 'limittypes': 1, 'dot': None, 'shapeable': False}
+Spell Level: 7.0592
+
+bestow curse
+{'loadname': None, 'condition': None, 'norepeat': False, 'alternateeffect': False, 'duration': None, 'range': 'close', 'concentration': False, 'undispellable': True, 'discharged': None, 'bloodied': False, 'area': None, 'noncombat': False, 'damage': False, 'choosetargets': False, 'trigger': None, 'bloodiedinstant': None, 'saveends': False, 'save': 'negates', 'buff': None, 'savename': 'bestow curse', 'castingtime': None, 'maxtargets': False, 'escapable': None, 'touchattack': None, 'nosr': False, 'healthy': False, 'damagetype': None, 'limittypes': None, 'dot': None, 'shapeable': False}
+Spell Level: 4.1
+
+wail of the banshee
+{'loadname': None, 'condition': None, 'norepeat': False, 'alternateeffect': False, 'duration': None, 'range': 'touch', 'concentration': False, 'undispellable': False, 'discharged': None, 'bloodied': False, 'area': 'large_radius', 'noncombat': False, 'damage': False, 'choosetargets': False, 'trigger': None, 'bloodiedinstant': None, 'saveends': False, 'save': 'negates', 'buff': None, 'savename': 'wail of the banshee', 'castingtime': None, 'maxtargets': False, 'escapable': None, 'touchattack': None, 'nosr': False, 'healthy': False, 'damagetype': None, 'limittypes': None, 'dot': None, 'shapeable': False}
+Spell Level: 8.8516
 

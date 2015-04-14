@@ -683,6 +683,7 @@ class Creature(object):
         for save_name in SAVES:
             self.get_defense(save_name).set_level(self.level)
             self.get_defense(save_name).add_bonus(10, BASE)
+        self.maneuver_defense.add_bonus(10, BASE)
         self.armor_class.natural_armor.set_level(self.level)
 
         self.apply_inactive_abilities()
@@ -723,9 +724,10 @@ class Creature(object):
         self.armor_class.dodge.add_bonus(
                 util.ifloor(self.attack_bonus.base_attack_bonus/2), BAB)
 
-        self.maneuver_defense.add_inherent(self.armor_class.touch())
-        self.maneuver_defense.add_inherent(self.attack_bonus.base_attack_bonus/2)
-        self.maneuver_defense.add_inherent(self.strength.get_total())
+        self.maneuver_defense.add_bonus(self.attack_bonus.base_attack_bonus, BAB)
+        self.maneuver_defense.add_bonus(self.armor_class.shield.get_total(), 'shield')
+        self.maneuver_defense.add_bonus(self.strength.get_total(), STR)
+        self.maneuver_defense.add_bonus(self.dexterity.get_total(), DEX)
 
         self.initiative.add_bonus(self.dexterity.get_total(), DEX)
         self.initiative.add_bonus(self.wisdom.get_total()/2, WIS)
@@ -1236,7 +1238,7 @@ class Monk(Character):
     def create_progressions(self):
         self.set_progression(BAB, GOOD)
         self.set_progression(FORT, AVERAGE)
-        self.set_progression(REF, AVERAGE)
+        self.set_progression(REF, GOOD)
         self.set_progression(WILL, GOOD)
         self.set_progression(HIT_VALUE, 5)
 
@@ -1246,7 +1248,9 @@ class Monk(Character):
 
         #enlightened defense
         if self.armor is None:
-            self.armor_class.misc.add_inherent(wisdom)
+            self.armor_class.misc.add_bonus(wisdom, WIS)
+            self.maneuver_defense.add_bonus(wisdom, WIS)
+            self.reflex.add_bonus(wisdom, WIS)
         else:
             self.printverb('Monk is wearing armor? %s' %
                     self.armor)
@@ -1258,12 +1262,19 @@ class Monk(Character):
             for i in xrange(2):
                 unarmed_weapon.damage_die.increase_size()
             self.primary_weapon = unarmed_weapon
+            self.secondary_weapon = unarmed_weapon
 
+        #ki strike
+        ki_strike_bonus = (self.level-1)/3
+        self.attack_bonus.add_enhancement(ki_strike_bonus)
+        for weapon in WEAPONS:
+            self.attacks[DAMAGE][weapon].add_enhancement(ki_strike_bonus)
         #wholeness of body
 
-        #improved ki strike
-        if self.level>=10:
-            self.primary_weapon_damage.add_inherent(wisdom/2)
+        #still mind
+        if self.level >= 5 and wisdom/2 >= self.intelligence.get_total():
+            self.will.remove_bonus(INT)
+            self.will.add_bonus(wisdom/2, WIS)
 
 class Paladin(Character):
     def create_progressions(self):
