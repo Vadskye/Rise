@@ -103,7 +103,7 @@ Once destroyed, an undead creature never be animated again, even if the corpse i
 \spelleffect This ritual creates a magic sensor. As a standard action, you can concentrate to see through the sensor as if you were in its location. While concentrating, you can move the sensor up to 30 feet per round in any direction.
 
 You can freely control and see through the sensor even if it moves beyond the spell's range, or out of your line of effect.
-\spellnotes \sensorspellnotes
+\spellnotes \mobilesensorspellnotes{30}
 \ritualcost*{4}
 
 \spellsection{Arcane Lock}{2}
@@ -777,15 +777,13 @@ As a swift action, you can command the disk to move up to 50 feet. If you move f
 \spellinfo{Abjuration (Warding) [Trap]}{Divine}
 \spelltime{10 minutes}
 \spellrng{Touch}
-\spellfocus{One location}
-\spellzone{\areasmall radius limit centered on the focus}
+\spellzoneandburst{\areasmall radius}
 \spelldur{Thirty days or until discharged}
 \spellsr{Yes}
 \spellspecial When you perform this ritual, you can specify a password. You must also choose an energy type (acid, cold, electricity, or fire).
 \spellline
-\spelleffect This ritual creates an invisible, intangible glyph floating in the air at the focus location. A creature that can see invisible objects can perceive the glyph, which is takes up approximately one square foot. If the creature can read magic, such as with the \ritual{read magic} ritual, it can identify the energy type of the glyph.
+\spelleffect An invisible, intangible glyph floats in the air at the center of the area. A creature that can see invisible objects can perceive the glyph, which is takes up approximately one square foot. If the creature can read magic, such as with the \ritual{read magic} ritual, it can identify the energy type of the glyph.
 \begin{spelltrigger}{A creature enters the area without speaking the password}
-    \spellburst{\areasmall radius centered on the focus}
     \begin{spelltargets}*{Everything in the area}[Magic vs. Reflex]
         \spellsuccess 3d6 damage \add d6 per four caster levels after 6th. The damage is of the energy type chosen when the ritual was performed.
         \spellfailure As above, but half damage.
@@ -798,13 +796,11 @@ As a swift action, you can command the disk to move up to 50 feet. If you move f
 \spellinfo{Abjuration [Barrier]}{Divine}
 \spelltime{10 minutes}
 \spellrng{Touch}
-\spellfocus{One location}
-\spellzone{\arealarge radius limit centered on the focus}
+\spellzoneandburst{\arealarge radius}
 \spellspecial When you perform this ritual, you can specify a password. You must also choose an energy type (acid, cold, electricity, or fire).
 \spellline
 \spelleffect This spell creates an invisible glyph, as \spell{glyph of warding}.
 \begin{spelltrigger}{A creature enters the area without speaking the password}
-    \spellburst{\arealarge radius centered on the focus}
     \begin{spelltargets}*{Everything in the area}[Magic vs. Reflex]
         \spellsuccess 6d6 damage \add d6 per four caster levels after 12th. The damage is of the energy type chosen when the ritual was performed.
         \spellfailure As above, but half damage.
@@ -1334,182 +1330,192 @@ The passage can be used a number of times equal to half your caster level before
 \spellnotes Creatures can identify the illusion, as \spell{silent image}.
 \ritualcost{7}
 
-\spellsection{Prying Eyes}{5}
-\spellinfo{Conjuration (Creation)}{Arcane}
-\spelltwocol{\spelltime{1 minute}}{\spellrng{One mile}}
-\spelldur{\durext; see text \dismissable}
-\spelleffect You create a number of semitangible, visible magical orbs (called ``eyes") equal to your caster level. These eyes move out, scout around, and return as you direct them when casting the spell. Each eye can see 120 feet (normal vision only) in all directions.
-\par While the individual eyes are quite fragile, they're small and difficult to spot. Each eye is a Fine construct, about the size of a small apple, that has 1 hit point, a physical defense of 18 (\plus8 size bonus), flies at a speed of 30 feet with perfect maneuverability, and has a \plus16 Stealth modifier. It has a Perception modifier equal to your caster level and is subject to illusions, darkness, fog, and any other factors that would affect your ability to receive visual information about your surroundings. An eye traveling through darkness must find its way by touch.
-\par When you create the eyes, you specify instructions you want them to follow in a command of no more than twenty-five words. Any knowledge you possess is known by the eyes as well.
-\par In order to report their findings, the eyes must return to your hand. Each replays in your mind all it has seen during its existence. It takes an eye 1 round to replay 1 hour of recorded images. After relaying its findings, an eye disappears.
-\par If an eye ever gets more than 1 mile away from you, it instantly ceases to exist. However, your link with the eye is such that you won't know if the eye was destroyed because it wandered out of range or because of some other event.
-\par The eyes exist for up to 1 hour per caster level or until they return to you.
-\spellnotes \spellindirect{dispel magic}{Dispel magic} can destroy eyes. If an eye is sent into darkness, it could hit a wall or similar obstacle and destroy itself.
-\ritualcost*{5}
-
-\spellsectioncomma{Prying Eyes}{Greater}{8}
-\spellinfo{Conjuration/Divination (Awareness, Creation)}{Arcane}
-\spellrng{10 miles}
-\spelleffect This spell functions like \spell{prying eyes}, except that the eyes can range farther from you and they can see all things as they actually are, as the \spell{true seeing} spell.
-\ritualcost{8}
-
 \spellsection{Purify Food and Drink}{1}
 \spellinfo{Transmutation (Alteration)}{Divine, Nature}
-\spelltwocol{\spelltgt{5 cu. ft. of contaminated food and water}}{\spellrng{Touch}}
+\spelltime{1 minute}
+\spellrng{Touch}
+\spellzone{5 cubic feet}
 \spellsr{Yes}
-\spellattack{Fortitude negates (object)}
-\spelleffect This spell makes spoiled, rotten, poisonous, or otherwise contaminated food and water pure and suitable for eating and drinking. This spell does not prevent subsequent natural decay or spoilage. Unholy water and similar food and drink of significance is spoiled by \spell{purify food and drink}, but the spell has no effect on creatures of any type or magical liquids, such as potions.
-\spellnotes Water weighs about 8 pounds per gallon. One cubic foot of water contains roughly 8 gallons and weighs about 60 pounds.
+\spellline
+\spelleffect Spoiled, rotten, poisonous, or otherwise contaminated food and water in the area becomes pure and suitable for eating and drinking. This does not prevent subsequent natural decay or spoilage.
+\spellnotes This has no effect on alchemical substances, magical liquids such as holy water, or creatures of any kind.
+
+Water weighs about 8 pounds per gallon. One cubic foot of water contains roughly 8 gallons and weighs about 60 pounds.
 \ritualcost*{1}
 
 \spellsection{Raise Dead}{5}
 \spellinfo{Necromancy (Life, Soul) [Healing]}{Divine}
-\spelltime{1 minute}
-\spelltwocol{\spelltgt{Dead creature touched}}{\spellrng{Touch}}
-\spellattack{None; see text}
-\spelleffect You restore life to a creature that has been dead for no longer than thirty days. The subject's soul must be free and willing to return. If the subject's soul is not willing to return, the spell does not work; therefore, a subject that wants to return receives no saving throw.
-\par Coming back from the dead is an ordeal. The subject gains a negative level. If the subject was 1st level when it died, it takes 2 points of Constitution drain instead. This negative level or Constitution drain lasts for thirty days, or until the subject next gains a level. A character who died with spells prepared has a 50\% chance of losing any given spell upon being raised, in addition to losing spells for losing a level. A spellcasting creature that doesn't prepare spells (such as a sorcerer) has a 50\% chance of losing any given unused spell slot as if it had been used to cast a spell, in addition to losing spell slots for losing a level.
-\par A raised creature has 0 hit points and 1 critical damage. Any attribute damage is removed. Normal poison and normal disease are cured in the process of raising the subject, but magical diseases and curses are not undone. While the spell closes mortal wounds and repairs lethal damage of most kinds, the body of the creature to be raised must be whole. Otherwise, missing parts are still missing when the creature is brought back to life. None of the dead creature's equipment or possessions are affected in any way by this spell.
-\spellnotes A creature who has been turned into an undead creature or killed by a death effect can't be raised by this spell. Constructs, elementals, outsiders, and undead creatures can't be raised. The spell cannot bring back a creature that has died of old age.
-\spellmat{Diamonds worth a total of least 2,500 gp.}
-\ritualcost{5}
+\spelltime{1 hour}
+\spellrng{Touch}
+\begin{spelltarget}{The corpse of one dead creature}
+    \spelleffect The target returns to life. It must have been dead for no more than thirty days, and it must not have died due to a death effect or old age.
+
+    The raised creature creature has 0 hit points. All critical damage, attribute damage, and nonmagical poisons and diseases are cured. Magical effects, including magical poisons and diseases, are not removed. If the target's body is not whole, any missing parts are still missing when it is brought back to life.
+
+    \par Coming back from the dead is an ordeal. All of the target's spell slots and other daily abilities are expended until it rests. In addition, the target gains a negative level. If the subject was 1st level when it died, it takes 2 points of Constitution drain instead. This negative level or Constitution drain lasts for thirty days, or until the target gains a level.
+\end{spelltarget}
+\spellnotes The target's soul must be free and willing to return. If not, this ritual has no effect, and the material components are no consumed.
+
+This ritual has no effect on creatures killed by death effects, or whose bodies have been turned into undead, such as by \spell{animate dead}. Constructs, elementals, outsiders, and undead creatures can't be raised.
+\spellmat{1,000 gp in diamonds or diamond dust.}
 
 \spellsection{Read Magic}{1}
 \spellinfo{Divination (Knowledge)}{Arcane, Divine}
-\spelltwocol{\spelltgt{You}}{\spellrng{Personal}}
+\spellrng{Personal}
 \spelldur{\durlong}
-\spelleffect You gain the ability to decipher magical inscriptions on objects -- books, scrolls, weapons, and the like -- that would otherwise be unintelligible. This deciphering does not normally invoke the magic contained in the writing, although it may do so in the case of a cursed scroll. Furthermore, once the spell is cast and you have read the magical inscription, you are thereafter able to read that particular writing without recourse to the use of \spell{read magic}. The spell allows you to identify a \spell{glyph of warding} with a DC 13 Spellcraft check, a \spell{greater glyph of warding} with a DC 16 Spellcraft check, or any \spellindirect{symbol of death}{symbol} spell with a Spellcraft check (DC 10 \add spell level).
-\spellnotes \spell{Read magic} can be made permanent with a \spell{permanency} ritual.
+\begin{spelltarget}{You}
+    \spelleffect You gain the ability to decipher magical inscriptions on objects -- books, scrolls, weapons, and the like -- that would otherwise be unintelligible. This deciphering does not normally invoke the magic contained in the writing, although it may do so in the case of a cursed item. Once you have read an inscription in this way, you are thereafter able to read that particular writing without the use of this ritual.
+
+    This effect allows you to identify spells which create writing as part of their effect, such as \spell{glyph of warding} and \spellindirect{symbol of death}{symbol} spells, with a Spellcraft check against a DC equal to 10 \add spell level.
+\end{spelltarget}
+\spellnotes This ritual can be made permanent with a \spell{permanency} ritual.
 \ritualcost*{1}
 
-\spellsection{Reincarnate}{4}
+\spellsection{Reincarnate}{5}
 \spellinfo{Conjuration/Necromancy (Creation, Soul)}{Nature}
-\spelltime{1 hour}
-\spelltwocol{\spelltgt{Dead creature touched}}{\spellrng{Touch}}
+\spelltime{24 hours}
+\spellrng{Touch}
 \spellattack{None; see text}
-\spelleffect With this spell, you bring back a dead creature in another body, provided that its death occurred no more than one week before the casting of the spell and the subject's soul is free and willing to return. If the subject's soul is not willing to return, the spell does not work; therefore, a subject that wants to return receives no saving throw.
-\par Since the dead creature is returning in a new body, all physical ills and afflictions are repaired. The condition of the remains and the cause of death, except death from old age, is not a factor. So long as some small portion of the creature's body still exists, it can be reincarnated, but the portion receiving the spell must have been part of the creature's body at the time of death. The magic of the spell creates an entirely new body for the soul to inhabit from the natural elements at hand. The body ages to match the age of the original creature over the course of the ritual.
-\par A reincarnated creature is identical to the original creature in all respects, including physical abilities, except for its race. First eliminate the subject's racial adjustments (since it is no longer of his previous race) and then apply the adjustments found below to its remaining attribute scores. The subject gains a permanent negative level. (If this reduction would put its effective level at 0, it can't be reincarnated). This negative level lasts for thirty days, or until the subject next gains a level.
-\par It's possible for the change in the subject's attributes to make it difficult for it to pursue its previous character class. If this is the case, the subject is well advised to become a multiclass character.
-\par For a humanoid creature, the new incarnation is determined using the following table. For nonhumanoid creatures, a similar table of creatures of the same type should be created.
-\par Any effect that would prevent a resurrection spell from bringing a creature back from the dead also prevents reincarnate from bringing the creature back. Constructs, elementals, outsiders, and undead creatures can't be reincarnated. The spell cannot bring back a creature who has died of old age.
+\begin{spelltarget}{The remains of one dead creature}
+    \spelleffect The target returns to life in a new body. It must have been dead for no more than one year, and it must not have died due to old age.
+
+    The condition of the remains is not a factor. So long as some small portion of the creature's body still exists, it can be reincarnated, but the target portion must have been part of the creature's body at the time of death.
+
+    This ritual creates an entirely new body for the creature's soul to inhabit from the natural elements at hand. During the ritual, the body ages to match the age of the original creature at the time it died. The reincarnated creature has 0 hit points, and all negative effects are removed, even curses and missing body parts.
+
+    A reincarnated creature is identical to the original creature in all respects, except for its race. It loses all the attribute modifiers and special abilities from its old race. It gains the attribute modifiers and special abilities of its new race. However, its racial bonus feat and languages are unchanged.
+
+    If the target is a humanoid creature, its new race should be determined with \tref{Humanoid Reincarnations}. If not, a similar table for creatures of the same type should be used.
+
+    Coming back from the dead is an ordeal. All of the target's spell slots and other daily abilities are expended until it rests. In addition, the target gains a negative level. If the subject was 1st level when it died, it takes 2 points of Constitution drain instead. This negative level or Constitution drain lasts as long as the creature remains in its its new body. This penalty can be removed by returning to the creature's proper body, as with \spell{resurrection}, or with the Racial Acclimation feat (page \featpref{Racial Acclimation}).
+\end{spelltarget}
+
+\spellnotes As \spell{raise dead}.
+\spellmat{1,000 gp in ritual components}
+
 \begin{dtable}
-    \begin{tabularx}{\columnwidth}{l >{\lcol}X l l l}
-        d\% & Incarnation & Str & Dex & Con \\
-        01 & Bugbear & \plus4 & \plus2 & \plus2 \\
-        02--13 & Dwarf & \plus0 & \plus0 & \plus2 \\
-        14--25 & Elf & \plus0 & \plus2 & \minus2 \\
-        26 & Gnoll & \plus4 & \plus0 & \plus2 \\
-        27--38 & Gnome & \minus2 & \plus0 & \plus2 \\
-        39--42 & Goblin & \minus2 & \plus2 & \plus0 \\
-        43--52 & Half-elf & \plus0 & \plus0 & \plus0 \\
-        53--62 & Half-orc & \plus2 & \plus0 & \plus0 \\
-        63--74 & Halfling & \minus2 & \plus2 & \plus0 \\
-        75--89 & Human & \plus0 & \plus0 & \plus0 \\
-        90--93 & Kobold & \minus4 & \plus2 & \minus2 \\
-        94 & Lizardfolk & \plus2 & \plus0 & \plus2 \\
-        95--98 & Orc & \plus4 & \plus0 & \plus0 \\
-        99 & Troglodyte & \plus0 & \minus2 & \plus4 \\
-        100 & Other & ? & ? & ?
+    \lcaption{Humanoid Reincarnations}
+    \begin{tabularx}{\columnwidth}{l >{\lcol}X}
+        d\% & Incarnation \\
+        01 & Bugbear \\
+        02--13 & Dwarf \\
+        14--25 & Elf \\
+        26 & Gnoll \\
+        27--38 & Gnome \\
+        39--42 & Goblin \\
+        43--52 & Half-elf \\
+        53--62 & Half-orc \\
+        63--74 & Halfling \\
+        75--89 & Human \\
+        90--93 & Kobold \\
+        94 & Lizardfolk \\
+        95--98 & Orc \\
+        99 & Troglodyte \\
+        100 & Other
     \end{tabularx}
 \end{dtable}
-\par The reincarnated creature gains all abilities associated with its new form, including forms of movement and speeds, natural armor, natural attacks, extraordinary abilities, and the like, but it doesn't automatically speak the language of the new form.
-\spellnotes A wish or a miracle spell can restore a reincarnated character to his or her original form.
-\spellmat{Rare oils and unguents worth a total of least 500 gp, spread over the remains.}
-\ritualcost{4}
 
 \spellsection{Remove Blindness/Deafness}{3}
 \spellinfo{Necromancy (Life) [Healing, Positive]}{Divine, Nature}
 \spelltime{1 minute}
-\spelltwocol{\spelltgt{Creature touched}}{\spellrng{Touch}}
+\spellrng{Touch}
 \spellsr{Yes}
-\spelleffect This ritual cures blindness or deafness (your choice), whether the effect is normal or magical in nature. The spell does not restore ears or eyes that have been lost, but it repairs them if they are damaged.
+\begin{spelltarget}{One creature}
+    \spelleffect The target is cured of blindness, deafness, or both, as you choose. This ritual cannot recreate missing eyes, but it can repair damaged ones.
+\end{spelltarget}
 \ritualcost{3}
 
 \spellsection{Remove Curse}{4}
 \spellinfo{Necromancy}{Arcane, Divine, Nature}
 \spelltime{1 minute}
-\spelltwocol{\spelltgt{Creature or item touched}}{\spellrng{Touch}}
+\spellrng{Touch}
 \spellsr{Yes}
-\spelleffect This ritual removes all curses on an object or a creature. If an item is inherently cursed, the spell does not remove that curse, though it typically enables the creature afflicted with any such cursed item to remove and get rid of it. Certain special curses may not be removed by this spell or may only be removed by a caster of a certain level or higher.
+\begin{spelltarget}{One creature or object}
+    \spelleffect All curses affecting the target are removed. This ritual cannot remove a curse that is part of an item's magical effects, but it allows a creature using a cursed item to remove and discard the item.
+\end{spelltarget}
 \ritualcost{4}
 
 \spellsection{Remove Disease}{3}
 \spellinfo{Transmutation (Alteration) [Healing]}{Divine, Nature}
 \spelltime{1 minute}
-\spelltwocol{\spelltgt{Creature touched}}{\spellrng{Touch}}
+\spellrng{Touch}
 \spellsr{Yes}
-\spelleffect This ritual cures all diseases that the subject is suffering from. The spell also kills parasites, including green slime and others. Certain special diseases may not be cured by this spell or may be cured only by a caster of a certain level or higher.
-\spellnotes This ritual does not prevent reinfection after a new exposure to the same disease at a later date.
-\ritualcost*{3}
+\begin{spelltarget}{One creature}
+    \spelleffect All diseases affecting the target are removed. This also removes parasites, such as green slime.
+\end{spelltarget}
+\ritualcost{3}
 
 \spellsection{Restoration}{4}
 \spellinfo{Necromancy (Life) [Healing, Positive]}{Divine}
-\spelleffect This ritual functions like \spell{lesser restoration}, except that it is more effective. It cures all temporary ability damage, restores all points permanently drained from a single attribute (your choice if more than one is drained), eliminates any fatigue or exhaustion suffered by the target, and removes one negative level.
-\spellnotes This ritual does not restore negative levels or Constitution drain acquired due to death.
-\spellmat{Diamond dust worth 50 gp that is sprinkled over the target.}
+\spelltime{1 minute}
+\spellrng{Touch}
+\spellsr{Yes}
+\begin{spelltarget}{One creature}
+    \spelleffect The target is cured of all attribute damage, and up to five points of attribute drain. In addition, one negative level is removed.
+\end{spelltarget}
 \ritualcost{4}
 
 \spellsectioncomma{Restoration}{Greater}{7}
 \spellinfo{Necromancy (Life) [Healing, Positive]}{Divine}
-\spelltime{10 minutes}
-\spelleffect This ritual functions like \spell{lesser restoration}, except that it is more effective. It dispels all magical effects penalizing the creature's abilities, cures all temporary ability damage, and restores all points permanently drained from all attribute scores. It also eliminates fatigue and exhaustion, and removes all forms of insanity, confusion, and similar mental effects. Finally, it removes all negative levels afflicting the healed creature. 
-\spellnotes This ritual does not restore negative levels or Constitution drain acquired due to death.
-\spellmat{Diamond dust worth 250 gp that is sprinkled over the target.}
+\spelltime{1 minute}
+\spellrng{Touch}
+\spellsr{Yes}
+\begin{spelltarget}{One creature}
+    \spelleffect The target is cured of all attribute damage and attribute drain. In addition, up to five negative levels are removed.
+\end{spelltarget}
 \ritualcost{7}
 
 \spellsectioncomma{Restoration}{Lesser}{2}
 \spellinfo{Necromancy (Life) [Healing, Positive]}{Divine}
 \spelltime{1 minute}
-\spelltwocol{\spelltgt{Creature touched}}{\spellrng{Touch}}
+\spellrng{Touch}
 \spellsr{Yes}
-\spelleffect This ritual dispels any magical effects reducing one of the subject's attribute scores or cures up to 5 points of temporary ability damage to one of the subject's attribute scores. It also eliminates any fatigue or exhaustion suffered by the character.
-\spellnotes This ritual does not restore permanent ability drain.
+\begin{spelltarget}{One creature}
+    \spelleffect The target is cured of up to five points of attribute damage.
+\end{spelltarget}
 \ritualcost*{2}
 
 \spellsection{Resurrection}{7}
 \spellinfo{Necromancy (Life, Soul)}{Clr}
-\spelltime{10 minutes}
-\spelleffect This ritual functions like \spell{raise dead}, except that you are able to restore life and complete strength to any deceased creature.
-\par The condition of the remains is not a factor. So long as some small portion of the creature's body still exists, it can be resurrected, but the portion receiving the spell must have been part of the creature's body at the time of death. (The remains of a creature hit by a \spell{disintegrate} spell count as a small portion of its body.) The creature can have been dead no longer than 10 years per caster level.
-\par Upon completion of the spell, the creature is immediately restored to full hit points, vigor, and health, with no loss of prepared spells. The subject gains a negative level. If the subject was 1st level when it died, it takes 2 points of Constitution drain instead. This negative level or Constitution drain lasts for thirty days, or until the subject next gains a level.
-\spellnotes You can resurrect someone killed by a death effect or someone who has been turned into an undead creature and then destroyed. You cannot resurrect someone who has died of old age. Constructs, elementals, outsiders, and undead creatures can't be resurrected.
-\spellmat{A sprinkle of holy water and diamonds worth a total of at least 5,000 gp.}
-\ritualcost{7}
+\spelltime{1 hour}
+\spellrng{Touch}
+\begin{spelltarget}{The remains of one dead creature}
+    \spelleffect The target returns to life. It must have been dead for no more than one year per caster level, and it must not have died due to old age.
+
+    The condition of the remains is not a factor. So long as some small portion of the creature's body still exists, it can be resurrected, but the target portion must have been part of the creature's body at the time of death. 
+
+    The resurrected creature has 0 hit points, and all negative effects are removed, even curses and missing body parts.
+
+    \par Coming back from the dead is an ordeal. All of the target's spell slots and other daily abilities are expended until it rests. In addition, the target gains a negative level. If the subject was 1st level when it died, it takes 2 points of Constitution drain instead. This negative level or Constitution drain lasts for thirty days, or until the target gains a level.
+\end{spelltarget}
+
+\spellnotes As \spell{raise dead}.
+\spellmat{5,000 gp in diamonds or diamond dust.}
 
 \spellsection{Screen}{8}
 \spellinfo{Illusion (Figment, Glamer) [Unreal]}{Arcane}
 \spelltime{10 minutes}
-\spelltwocol{\spellzone{30 ft. cube/level}}{\spellrng{\rngclose}}
+\spelltwocol{\spellzone{20 ft. cube/level}}{\spellrng{\rngclose}}
 \spelldur{\durext}
-\spellattack{None or Will disbelief (if interacted with); see text}
-\spelleffect This spell combines several elements to create a powerful protection from scrying and direct observation. When casting the spell, you dictate what will and will not be observed in the spell's area. The illusion created must be stated in general terms. Once the conditions are set, they cannot be changed.
-\par Attempts to scry the area automatically detect the image stated by you with no save allowed. Sight and sound are appropriate to the illusion created.
-\par Direct observation may allow a save (as per a normal illusion), if there is cause to disbelieve what is seen. Even entering the area does not cancel the illusion or necessarily allow a save, assuming that the beings concealed by the illusion take care to stay out of the way of observers and the observers do not directly interact with the illusion.
+\spellline
+\spelleffect A scripted figment appears in the area, as \spell{persistent image}. In addition, everything else within the area cannot be seen, heard, or detected in any way by creatures outside the area, or scrying sensors in any location.
+\spellnotes Creatures can identify the illusion, as \spell{silent image}. A creature that identifies the illusion remains unable to see the true events in the area without entering.
 \ritualcost{8}
-
-\spellsection{Sculpt Sound}{4}
-\spellinfo{Illusion (Glamer)}{Arcane}
-\spelltime{10 minutes}
-\spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngmed}}
-\spelltgts{Five creatures or objects within the area}
-\spelldur{\durext \dismissable}
-\spellsr{Yes}
-\spellattack{Will negates (object)}
-\spelleffect You change the sounds that creatures or objects make. You can deaden sounds that exist or transform sounds into other sounds, but you cannot create new sounds where none existed or amplify the volume of existing sounds. All affected creatures or objects must have their sounds altered in the same way.
-
-At any point during the spell's duration, you can concentrate on the effect (a standard action) to change the sound for all affected creatures within your range. If you do so, the remaining duration is reduced by 1 hour, and the effect is dismissed for any affected creature outside your range.
-\spellnotes You can change the qualities of sounds but cannot create words with which you are unfamiliar yourself. A spellcaster whose voice is changed or quieted dramatically is treated as deafened when casting spells (20\% chance of failure)
-\ritualcost*{4}
 
 \spellsection{Scrying}{5}
 \spellinfo{Divination (Scrying)}{Arcane, Divine, Nature}
-\spelltwocol{\spelltime{1 hour}}{\spellrng{See text}}
+\spelltime{1 hour}
+\spellrng{Unlimited \rngunrestricted}
 \spelldur{\durmed \dismissable}
 \spellsr{Yes}
-\spellattack{Will negates}
-\spelleffect \par You can see and hear some creature, which may be at any distance. If the subject succeeds on a Will save, the scrying attempt simply fails. The difficulty of the save depends on how well you know the subject and what sort of connection (if any) you have to that creature. Furthermore, if the subject is on another plane, it gets a \plus5 bonus on its Will save.
+\spellspecial You can target any creature that you can unambiguously identify, regardless of its location.
+\begin{spelltarget}{One creature}[Magic vs. Will]
+    \spellsuccess A scrying sensor appears in the target's space, allowing you to see as if you were in its location. The sensor moves with the target at a speed of up to 150 feet. If the sensor is separated from the target, the sensor disappears.
+    \spellfailure No scrying sensor appears, and the target is immune to any further attempts you make for 24 hours.
 
+    \spellspecial Your attack is modified based on how well you know the subject and what sort of physical connection (if any) you have to that creature, as shown on \tref{Scrying Connection Modifiers}.
+\end{spelltarget}
+\spellnotes \sensorspellnotes
 \begin{dtable}
     \lcaption{Scrying Modifiers}
     \begin{tabularx}{\columnwidth}{>{\lcol}X >{\lcol}p{4em}}
@@ -1517,69 +1523,76 @@ At any point during the spell's duration, you can concentrate on the effect (a s
         None\footnotetemp{1} & \minus10 \\
         Secondhand (you have heard of the subject) & \minus5 \\
         Firsthand (you have met the subject) & \plus0 \\
-        Familiar (you know the subject well) & \plus \\
+        Familiar (you know the subject well) & \plus5 \\
         \thead{Connection} & \thead{Attack Modifier} \\
         Likeness or picture & \plus2 \\
         Possession or garment & \plus4 \\
-        Body part, lock of hair, bit of nail, etc. & \plus10
+        Body part, lock of hair, bit of nail, etc. & \plus10 \\
+        \thead{Location} & \thead{Attack Modifier} \\
+        Same plane & \plus0 \\
+        Adjacent or overlapping planes\fn{2} & \minus5 \\
+        Disconnected planes\fn{3} & \minus10 \\
     \end{tabularx}
     1 You must have some sort of connection to a creature you have no knowledge of.
+    2 Such as the Material Plane and the Ethereal Plane.
+    3 Such as the Material Plane and any outer plane.
 \end{dtable}
-
-\par If the save fails, you can see and hear the subject and the subject's immediate surroundings (approximately 10 feet in all directions of the subject). If the subject moves, the sensor follows at a speed of up to 150 feet.
-\par As with all divination (scrying) spells, the sensor has your full visual acuity, including any magical effects. In addition, the following spells have a 5\% chance per caster level of operating through the sensor: \spell{detect chaos}, \spell{detect evil}, \spell{detect good}, \spell{detect law}, \spell{message}, \spell{read magic}, and \spell{tongues}.
-\par If the save succeeds, it is immune to any further scrying attempts by you for the next 24 hours.
-\mfx{Arcana Focus:} A mirror of finely wrought and highly polished silver costing not less than 500 gp. The mirror must be at least 2 feet by 4 feet.
-\mfx{Religion Focus:} A holy water font costing not less than 50 gp.
-\mfx{Nature Focus:} A natural pool of water.
+\spellnotes If you use a reflective surface as you perform this ritual, such as a crystal ball or mirror, you can show other creatures the view through the sensor. Some magic items have special abilities if used in this way.
 \ritualcost{5}
 
 \spellsectioncomma{Scrying}{Greater}{7}
 \spellinfo{Divination (Scrying)}{Arcane, Divine, Nature}
 \spelltime{1 minute}
-\spelldur{\durext}
-\spelleffect This ritual functions like \spell{scrying}, except that it can be cast more quickly and lasts longer. Additionally, all of the following spells function reliably through the sensor: \spell{comprehend languages}, \spell{detect alignment}, \spell{message}, \spell{read magic}, and \spell{tongues}.
+\spellrng{Unlimited \rngunrestricted}
+\spelldur{\durext \dismissable}
+\spellsr{Yes}
+\spellspecial You can target any creature that you can unambiguously identify, regardless of its location.
+\begin{spelltarget}{One creature}[Magic vs. Will]
+    \spellsuccess You see the target's surroundings, as \spell{scrying}. In addition, the following spells function through the sensor: \spell{comprehend languages}, \spell{detect alignment}, \spell{message}, \spell{read magic}, and \spell{tongues}.
+    \spellfailure As \spell{scrying}.
+    \spellspecial As \spell{scrying}.
+\end{spelltarget}
+\spellnotes As \spell{scrying}.
 \ritualcost{7}
 
 \spellsection{Secret Chest}{4}
-\spellinfo{Conjuration (Teleportation) [Object-Affecting, Planar]}{Arcane}
+\spellinfo{Conjuration (Translocation) [Object-Affecting, Planar, Teleportation]}{Arcane}
 \spelltime{10 minutes}
-\spelltwocol{\spelltgt{One chest and up to 1 cu. ft. of goods/caster level}}{\spellrng{See text}}
-\spelldur{Sixty days or until discharged}
-\spelleffect You hide a chest on the Ethereal Plane for as long as sixty days and can retrieve it at will. The chest can contain up to 1 cubic foot of material per caster level (regardless of the chest's actual size, which is about 3 feet by 2 feet by 2 feet). If any living creatures are in the chest, there is a 75\% chance that the spell simply fails. Once the chest is hidden, you can retrieve it by concentrating (a standard action), and it appears next to you.
-\par The chest must be exceptionally well crafted and expensive, constructed for you by master crafters. The cost of such a chest is never less than 500 gp. Once it is constructed, you must make a tiny replica (of the same materials and perfect in every detail), so that the miniature of the chest appears to be a perfect copy. (The replica costs 25 gp.) You can have only one pair of these chests at any given time. The chests are nonmagical and can be fitted with locks, wards, and so on, just as any normal chest can be.
-\par To hide the chest, you cast the ritual while touching both the chest and the replica. The chest vanishes into the Ethereal Plane. You need the replica to recall the chest. After sixty days, there is a cumulative chance of 5\% per day that the chest is irretrievably lost. If the miniature of the chest is lost or destroyed, there is no way, not even with a wish spell, that the large chest can be summoned back, although an extraplanar expedition might be mounted to find it.
-\par Living things in the chest eat, sleep, and age normally, and they die if they run out of food, air, water, or whatever they need to survive.
-\spellfocus{The chest (which costs 500 gp) and its replica (which costs 25 gp).}
+\spellrng{Touch}
+\spelltgt{One Medium, nonmagical chest}
+\spelldur{One year or until discharged}
+\spellspecial When you perform this ritual, you must specify a command word. You may also fill the chest with up to one cubic foot of objects per caster level. This fills the chest, regardless of its exact dimensions.
+\spellline
+\spelleffect The chest is sent to the Ethereal Plane. As a standard action, you can speak the command word. If you do, the chest teleports into an open space on solid ground next to you, and the ritual is discharged.
+
+After the ritual's duration ends, speaking the command word has no effect, but the chest does not return.
+
+\spellnotes The chest can be fitted with locks, wards, and so on, just like any normal chest. A typical chest cost 2 gp. If the chest contains any living creatures, there is a 75\% chance that the ritual simply fails.
 \ritualcost{4}
 
 \spellsection{Secret Page}{3}
 \spellinfo{Transmutation (Alteration)}{Arcane}
 \spelltime{10 minutes}
-\spelltwocol{\spelltgt{Page touched, up to 3 sq. ft. in size}}{\spellrng{Touch}}
-\spelldur{Permanent}
-\spelleffect This ritual alters the contents of a page so that they appear to be something entirely different. The text of a spell can be changed to show even another spell. \spell{Explosive runes} or \spell{sepia snake sigil} can be cast upon the secret page.
-\par A \spell{comprehend languages} spell alone cannot reveal a \spell{secret page}'s contents. You are able to reveal the original contents by speaking a special word. You can then peruse the actual page, and return it to its secret page form at will. You can also remove the spell by double repetition of the special word.
-\spellnotes A Spellcraft check reveals dim magic on the page in question but does not reveal its true contents. \spell{True seeing} reveals the presence of the hidden material but does not reveal the contents. A \spell{secret page} spell can be dispelled, and the hidden writings can be destroyed by means of an \spell{erase} spell.
-\ritualcost*{3}
+\spellrng{Touch}
+\spelldur{One year or until discharged}
+\spellspecial When you perform this ritual, you must specify a command word.
+\spellline
+\begin{spelltarget}{One object with writing on it (Small or smaller)}
+    \spelleffect The writing on the target is transformed into completely different text. Even magical writing can be transformed in this way.
 
-\spellsection{Secure Shelter}{4}
-\spellinfo{Conjuration (Creation, Summoning)}{Arcane}
-\spelltwocol{\spelltime{10 minutes}}{\spellrng{\rngclose}}
-\spelldur{\durext \dismissable}
-\spelleffect You conjure a sturdy cottage or lodge made of material that is common in the area where the spell is cast. The floor is level, clean, and dry. In all respects the lodging resembles a normal cottage, with a sturdy door, two shuttered windows, and a small fireplace.
-\par The shelter has no heating or cooling source (other than natural insulation qualities). Therefore, it must be heated as a normal dwelling, and extreme heat adversely affects it and its occupants. The dwelling does, however, provide considerable security otherwise -- it is as strong as a normal stone building, regardless of its material composition. The dwelling resists flames and fire as if it were stone. It is impervious to normal missiles (but not the sort cast by siege engines or giants).
-\par The door, shutters, and even chimney are secure against intrusion, the former two being locked and the latter secured by an iron grate at the top and a narrow flue. In addition, these three areas are protected by an alarm spell. Finally, an \spell{unseen servant} is conjured to provide service to you for the duration of the shelter.
-\par The secure shelter contains rude furnishings -- eight bunks, a trestle table, eight stools, and a writing desk.
-\ritualcost{4}
+    As a standard action, any creature can speak the command word to tranform the text back into its original form. This discharges the ritual.
+\end{spelltarget}
+\ritualcost{3}
 
 \spellsection{Seeming}{4}
 \spellinfo{Illus (Glamer) [Unreal]}{Arcane}
+\spelltime{1 minute}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
-\spelltgts{One creature per caster level in the area}
 \spelldur{\durlong \dismissable}
-\spelleffect This spell functions like \spell{disguise self}, except that it affects multiple creatures. Affected creatures resume their normal appearances if slain.
 \spellsr{Yes}
+\begin{spelltarget}{Five creatures in the area}
+    \spelleffect The target is disguised, as \spell{disguise self}.
+\end{spelltarget}
 \ritualcost{4}
 
 \spellsection{Sending}{4}
@@ -1595,6 +1608,29 @@ At any point during the spell's duration, you can concentrate on the effect (a s
 \end{spelltarget}
 \spellnotes If the creature in question is not on the same plane of existence as you are, there is a 10\% chance that the sending does not arrive. (Local conditions on other planes may worsen this chance considerably.)
 \ritualcost*{4}
+
+\spellsection{Sensor Swarm}{5}
+\spellinfo{Conjuration (Creation)}{Arcane}
+\spelltime{10 minutes}
+\spellrng{One mile}
+\spelldur{\durext or until expended \dismissable}
+\spellline
+\spelleffect This ritual creates a number of magic sensors equal to your caster level. When you perform this ritual, you specify instructions that the sensors will obey. The instructions must be no more than twenty-five words long.
+
+\par In order to report its findings, a sensor must return to your hand. You can command a sensor you are holding to replay in your mind all it has seen during its existence. This requires one full-round action per hour of information. This process destroys the sensor.
+
+\par If a sensor ever gets more than 1 mile away from you, it is destroyed.
+\spellnotes \mobilesensorspellnotes{30}
+\ritualcost*{5}
+
+\spellsectioncomma{Sensor Swarm}{Greater}{8}
+\spellinfo{Conjuration/Divination (Awareness, Creation)}{Arcane}
+\spelltime{10 minutes}
+\spellrng{10 miles}
+\spelldur{\durext or until expended \dismissable}
+\spellline
+\spelleffect This ritual creates magic sensors that obey your commands, as \spell{sensor swarm}. In addition, the sensors benefit from the \spell{darkvision} and \spell{see invisibility} spells.
+\ritualcost{8}
 
 \spellsection{Sepia Snake Sigil}{4}
 \spellinfo{Abjuration/Transmutation (Temporal, Warding) [Trap]}{Arcane}
@@ -1615,110 +1651,121 @@ At any point during the spell's duration, you can concentrate on the effect (a s
 \spellsection{Sequester}{7}
 \spellinfo{Abjuration/Transmutation (Shielding, Temporal)}{Arcane}
 \spelltime{10 minutes}
-\spelltwocol{\spelltgt{One willing creature or object (up to ten 2 ft. cubes) touched}}{\spellrng{Touch}}
-\spelldur{Thirty days \dismissable}
-\spellsr{No or Yes (object)}
-\spellattack{None or Will negates (object)}
-\spelleffect The subject is invisible and cannot be detected by divination spells. However, it also becomes comatose and is effectively in a state of suspended animation until the spell wears off or is dispelled.
-\spellnotes The Will save prevents an attended or magical object from being sequestered. There is no save to see the sequestered creature or object or to detect it with a divination spell. This ritual does not prevent the subject from being discovered through other means, such as touch.
+\spellrng{Touch}
+\spelldur{Ten years}
+\spellsr{Yes}
+\begin{spelltarget}{One willing creature or object (Large or smaller)}
+    \spelleffect The target is placed in a state of suspended animation, as the bloodied effect of \spell{temporal stasis}. In addition, it is invisible and cannot be detected by Divination spells.
+\end{spelltarget}
 \ritualcost*{7}
 
 \spellsection{Shadow Walk}{6}
 \spellinfo{Conjuration/Illusion (Shadow, Translocation) [Planar]}{Arcane}
 \spelltime{1 standard action}
-\spelltwocol{\spelltgts{You and up to four touched creatures}}{\spellrng{Touch}}
+\spellrng{Touch}
 \spelldur{\durext \dismissable}
 \spellsr{Yes}
-\spellattack{Will negates}
-\spelleffect To use this spell, you must be in an area of shadowy illumination. You and any other subjects are then transported along a coiling path of shadowstuff to the edge of the Material Plane where it borders the Plane of Shadow. The effect is largely illusory, but the path is quasi-real. You can take more than one creature along with you, but all must be touching each other.
-\par In the region of shadow, you move at a rate of 50 miles per hour, moving normally on the borders of the Plane of Shadow but much more rapidly relative to the Material Plane. Thus, you can use this spell to travel rapidly by stepping onto the Plane of Shadow, moving the desired distance, and then stepping back onto the Material Plane.
-\par Because of the blurring of reality between the Plane of Shadow and the Material Plane, you can't make out details of the terrain or areas you pass over during transit, nor can you predict perfectly where your travel will end. It's impossible to judge distances accurately, making the spell virtually useless for scouting or spying. Furthermore, when the spell effect ends, you are shunted 1d10\mtimes 100 feet in a random horizontal direction from your desired endpoint. If this would place you within a solid object, you are shunted an additional 1d10\mtimes 1,000 feet in the same direction. If this would still place you within a solid object, you (and any creatures with you) are shunted to the nearest empty space available, but the strain of this activity renders each creature fatigued (no save).
+\begin{spelltargets}{You and up to five willing creatures}
+    \spelleffect The target is transported into the Plane of Shadow. It can travel and act normally there for the duration of the spell. When the spell ends, the target returns to the Material Plane. However, the Plane of Shadow and the Material Plane do not overlap perfectly, so it is shunted 1d10 \mtimes 1,000 feet in a random direction from its location on the Plane of Shadow as it returns. If this places it within a solid object, it appears in the closest open space to that point.
+\end{spelltargets}
+\spellnotes While in the Plane of Shadow, creatures move much more rapidly relative to the Material Plane. In general, a creature moving at 30 feet per round on the Plane of Shadow moves at 30 miles per hour relative to the Material Plane. The Material Plane is dimly visible from the Plane of Shadow, but it is impossible to see anything with a Perception DC higher than 0.
 
-\par Any creatures touched by you when \spell{shadow walk} is cast also make the transition to the borders of the Plane of Shadow.
-\par They may opt to follow you, wander off through the plane, or stumble back into the Material Plane (50\% chance for either of the latter results if they are lost or abandoned by you). Creatures unwilling to accompany you into the Plane of Shadow receive a Will saving throw, negating the effect if successful.
+If you are not on the Material Plane when you perform this ritual, it has no effect.
 \ritualcost{6}
 
 \spellsection{Shambler}{9}
 \spellinfo{Conjuration/Transmutation (Animation, Creation)}{Natural}
 \spelltime{1 hour}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngmed}}
-\spelldur{Seven days or seven months \dismissable; see text}
-\spelleffect The shambler spell creates 1d4\plus2 shambling mounds. The creatures willingly aid you in combat or battle, perform a specific mission, or serve as bodyguards. The creatures remain with you for seven days unless you dismiss them. If the shamblers are created only for guard duty, however, the duration of the spell is seven months. In this case, the shamblers can only be ordered to guard a specific site or location. Shamblers summoned to guard duty cannot move outside the spell's range, which is measured from the point where each first appeared. 
-\par The shamblers have resistance to fire as normal shambling mounds do only if the terrain is rainy, marshy, or damp.
+\spelldur{One week or one year \dismissable; see text}
+\spellline
+\spelleffect This ritual creates five shambling mounds under your control within the area. If you instruct them to perform a specific mission, such as guarding you, this ritual lasts for one week.
+
+Alternately, you can instruct the shambling mounds to guard a specific location. If you do, the ritual lasts for one year. However, the mounds are unable to move outside of a 1000 foot radius centered on the location without being destroyed.
+
+\spellnotes If the terrain the ritual is performed in is not rainy, marshy, or damp, the shambling mounds are not resistant to fire like normal shambling mounds.
 \ritualcost{9}
 
 \spellsection{Shape Metal}{4}
 \spellinfo{Transmutation (Alteration)}{Arcane, Divine, Nature}
-\spelleffect This ritual functions like \spell{shape wood}, except that you make a Craft (metal) check, and you shape metal instead of wood. 
+\spellspecial This ritual functions like \spell{shape wood}, except that you make a Craft (metal) check, and you shape metal instead of wood. 
 \ritualcost{4}
 
 \spellsection{Shape Stone}{3}
 \spellinfo{Transmutation (Alteration) [Earth]}{Arcane, Divine, Nature}
-\spelleffect This ritual functions like \spell{shape wood}, except that you make a Craft (stone) check, and you shape stone instead of wood.
+\spellspecial This ritual functions like \spell{shape wood}, except that you make a Craft (stone) check, and you shape stone instead of wood.
 \ritualcost{3}
 
 \spellsection{Shape Wood}{2}
 \spellinfo{Transmutation (Alteration)}{Arcane, Divine, Nature}
 \spelltime{10 minutes}
-\spelltwocol{\spelltgt{Nonmagical wood touched, affecting up to 10 cubic feet}}{\spellrng{Touch}}
+\spellrng{Touch}
+\spellzone{10 cubic feet}
 \spellsr{Yes}
-\spellattack{No}
-\spelleffect When you perform this ritual, you make a Craft (wood) check to change the shape of an existing piece of wood, or part of a larger piece of wood, to suit your purposes. You gain a \plus10 enhancement bonus on the check, and you need no additional tools.
-\ritualcost{2}
-
-\spellsection{Snare}{3}
-\spellinfo{Transmutation (Alteration) [Trap]}{Nature}
-\spelltime{1 minute}
-\spelltwocol{\spelltgt{Touched nonmagical circle of vine, rope, or thong with a 2 ft. diameter \add 2 ft./level}}{\spellrng{Touch}}
-\spelldur{Permanent until triggered or broken}
-\spelleffect This ritual enables you to make a snare that functions as a magic trap. The snare can be made from any supple vine, a thong, or a rope. When you cast \spell{snare} upon it, the cordlike object blends with its surroundings (Perception DC 23 to locate). One end of the snare is tied in a loop that contracts around one or more of the limbs of any creature stepping inside the circle.
-\par If a strong and supple tree is nearby, the snare can be fastened to it. The spell causes the tree to bend and then straighten when the loop is triggered, dealing 1d6 points of damage to the creature trapped and lifting it off the ground by the trapped limb or limbs. If no such tree is available, the cordlike object tightens around the creature, dealing no damage but causing it to be entangled.
-\par The snare is magical. To escape, a trapped creature must make a DC 23 Escape Artist check or a DC 23 Strength check that is a full-round action. The snare has a physical defense of 2 and 5 hit points. A successful escape from the snare breaks the loop and ends the spell.
-\ritualcost{3}
+\begin{spelltarget}{Up to 10 cubic feet of wood}
+    \spelleffect When you perform this ritual, you make a Craft (wood) check to change the target's shape. You gain a \plus10 enhancement bonus on the check, and you need no additional tools.
+\end{spelltarget}
+\spellnotes Large wooden objects can be crafted by performing this ritual multiple times.
+\ritualcost*{2}
 
 \spellsection{Soul Bind}{9}
 \spellinfo{Necromancy (Soul)}{Arcane, Divine}
 \spelltime{1 minute}
 \spellcmp{Verbal, Somatic, Focus}
-\spelltwocol{\spelltgt{Corpse}}{\spellrng{\rngclose}}
+\spellrng{\rngclose}
 \spelldur{Permanent}
-\spelleffect You draw the soul from a newly dead body and imprison it in a black sapphire gem. The subject must have been dead for no longer than 5 rounds before the ritual is started. The soul, once trapped in the gem, cannot be returned through \spell{clone}, \spell{raise dead}, \spell{reincarnate}, \spell{resurrection}, \spell{true resurrection}, or even a \spell{miracle} or a \spell{wish}. Only by destroying the gem or dispelling the spell on the gem can one free the soul (which is then still dead).
+\begin{spelltarget}{The corpse of one dead creature}
+    \spelleffect The target's soul is imprisoned in a black sapphire gem. This prevents the target from being raised from the dead or turned into an undead as long as the gem is intact. A creature holding the gem is able to raise or animate the creature.
+\end{spelltarget}
+
 \spellfocus{A black sapphire of at least 500 gp value for every level possessed by the creature whose soul is to be bound. If the gem is not valuable enough, it shatters when the binding is attempted. (While creatures have no concept of level as such, the value of the gem needed to trap an individual can be researched. Remember that this value can change over time as creatures gain more levels.)}
+\spellmat{A black sapphire gem worth at least 1000 gp, and ritual components worth 1,000 gp per level the target has. The gem is not consumed by the ritual. (Since creatures have no concept of ``level'' as such, the exact cost of the ritual cannot be known in advance. However, it is known that stronger souls are more difficult to bind, so it is possible to guess or research the approximate cost. If the ritual is performed with more ritual components than necessary, the extra components will not be consumed by the ritual.)}
 \ritualcost{9}
 
 \spellsection{Speak with Dead}{3}
 \spellinfo{Divination/Necromancy (Communication, Flesh) [Language-Dependent]}{Arcane, Divine}
 \spelltime{10 minutes}
-\spelltwocol{\spelltgt{One dead creature}}{\spellrng{\rngclose}}
+\spellrng{\rngclose}
 \spelldur{10 minutes \dismissable}
-\spellattack{Will negates; see text}
-\spelleffect You grant the semblance of life and intellect to a corpse, allowing it to answer several questions that you put to it. You may ask one question per two caster levels. Unasked questions are wasted if the duration expires. The corpse's knowledge is limited to what the creature knew during life, including the languages it spoke (if any). Answers are usually brief, cryptic, or repetitive. If the creature's alignment was different from yours, the corpse gets a Will save to resist the spell as if it were alive.
-\par If the corpse has been subject to \spell{speak with dead} within the past week, the new spell fails. You can cast this spell on a corpse that has been deceased for any amount of time, but the body must be mostly intact to be able to respond. A damaged corpse may be able to give partial answers or partially correct answers, but it must at least have a mouth in order to speak at all.
-\par This spell does not let you actually speak to the person (whose soul has departed). It instead draws on the imprinted knowledge stored in the corpse. The partially animated body retains the imprint of the soul that once inhabited it, and thus it can speak with all the knowledge that the creature had while alive. The corpse, however, cannot learn new information. Indeed, it can't even remember being questioned.
-\spellnotes This spell does not affect a corpse that has been turned into an undead creature.
+\begin{spelltarget}{The corpse of one dead creature}
+    \spelleffect The target gains the semblance of life and intellect, allowing it to answer several questions that you put to it. You may ask one question per two caster levels. Unasked questions are wasted if the duration expires.
+
+    The corpse's knowledge is limited to what the creature knew during life, including the languages it spoke (if any). A perfectly fresh, intact corpse knows almost as much as the creature did, though it speaks cryptically. The more damaged or decayed the corpse is, the more brief, repetitive, or vague its answers are. In general, a corpse's answers become useless after a week of decay. If the corpse's mouth is destroyed (or if it has no mouth), it cannot speak at all.
+\end{spelltarget}
+
+\spellnotes This ritual has no effect if the target has been subject to \spell{speak with dead} within the past week, or has been turned into an undead creature.
+
+\par This spell does not let you actually speak to the person (whose soul has departed). It instead draws on the imprinted knowledge stored in the corpse. The corpse is unable to learn new information, or even remember any previous questions asked of it.
 \ritualcost*{3}
 
 \spellsection{Symbol of Death}{7}
 \spellinfo{Abjuration/Necromancy (Life, Warding) [Death, Trap]}{Arcane}
 \spelltime{10 minutes}
-\spelltwocol{\spelltgt{One object}}{\spellrng{Touch}}
-\spelldur{Permanent or until discharged}
+\spelltwocol{\spellzone{\arealarge radius}}{\spellrng{Touch}}
+\spelldur{One year or until discharged}
 \spellsr{Yes}
-\spellattack{Fortitude negates}
-\spelleffect This ritual allows you to scribe a potent rune of power upon a surface. When it is triggered, the triggering creature suffers the effects of a \spell{finger of death} spell. It can be set to trigger in response to any visual cue that takes place within \rngclose range of the symbol which can be ``seen'' by the symbol. Darkness does not stop the symbol's sight, but physical obstacles or illusions block it. Once the ritual is performed, the triggering conditions cannot be changed.
-\par When scribing a \spell{symbol of death}, you can specify a password or phrase. Anyone speaking the password cannot trigger the rune so long as the creature remains within \rngmed range of the rune. If the creature leaves that range and returns later, it must say the password again.
-\spellnotes The symbol is considered to have a Perception modifier equal to your caster level. Magic traps such as \spell{symbol of death} can be detected with the Perception skill and disabled with the Devices skill. The DC in each case is 25 \add spell level, or 32 for \spell{symbol of death}.
-\par \spellindirect{read magic}{Read magic} allows you to identify a \spell{symbol of death} with a DC 17 Spellcraft check. Of course, if the symbol of death is set to be triggered by reading it, this will trigger the symbol.
-\par \spellindirect{dispel magic}{Dispel magic} can remove a \spell{symbol of death}, but an \spell{erase} spell has no effect. Destruction of the surface where a \spell{symbol of death} is inscribed destroys the symbol but also triggers it on the closest creature within \rngclose range of the symbol.
-\par \spell{Symbol of death} can be made permanent with a \spell{permanency} spell. A permanent \spell{symbol of death} that is disabled becomes inactive for 10 minutes, then can be triggered again as normal.
+\spellspecial When you perform this ritual, you must specify a triggering condition. The condition must be something that a typical human in the area could detect. You may also specify a target. If you do not specify a target, the target will be the creature closest to the center of the area. (The target is chosen randomly if there are equally close targets.)
+\spellline
+\spelleffect An invisible, intangible symbol floats in the air at the center of the area.
+\begin{spelltrigger}{The triggering condition occurs in the area}
+    \begin{spelltarget}*{The specified target}[Magic vs. Fortitude]
+        \spellsuccess The target is affected by \spell{finger of death}.
+    \end{spelltarget}
+\end{spelltrigger}
+
+\spellnotes Magic traps such as \spell{symbol of death} can be detected with the Perception skill and disabled with the Devices skill. The DC in each case is 25 \add spell level, or 32 for \spell{symbol of death}.
+\par This ritual can be made permanent with a \spell{permanency} spell. A permanent trap that is disabled becomes inactive for 10 minutes, then can be triggered again as normal.
 \ritualcost{7}
 
 \spellsection{Symbol of Destruction}{7}
 \spellinfo{Abjuration/Necromancy (Flesh, Warding) [Death, Trap]}{Divine}
-\spelleffect This spell functions like \spell{symbol of death}, except that the triggering creature instead suffers the effects of the \spell{destruction} spell.
+\spellspecial This ritual functions like \spell{symbol of death}, except that the target instead suffers the effects of the \spell{destruction} spell.
 \spellnotes Magic traps such as \spell{symbol of destruction} can be detected with the Perception skill and disabled with the Devices skill. The DC in each case is 25 \add spell level, or 32 for \spell{symbol of destruction}.
+\par This ritual can be made permanent with a \spell{permanency} spell. A permanent trap that is disabled becomes inactive for 10 minutes, then can be triggered again as normal.
 \ritualcost*{7}
 
+\begin{comment}
+%no adequate fear spell
 \spellsection{Symbol of Fear}{7}
 \spellinfo{Abjuration/Enchantment (Emotion, Warding) [Fear, Mind-Affecting, Trap]}{Arcane}
 \spellsr{Yes}
@@ -1726,75 +1773,73 @@ At any point during the spell's duration, you can concentrate on the effect (a s
 \spelleffect This spell functions like \spell{symbol of death}, except that the triggering creature instead suffers the effects of the \spell{terror} spell.
 \spellnotes Magic traps such as \spell{symbol of terror} can be detected with the Perception skill and disabled with the Devices skill. The DC in each case is 25 \add spell level, or 32 for \spell{symbol of terror}.
 \ritualcost*{7}
+\end{comment}
 
 \spellsection{Symbol of Insanity}{6}
 \spellinfo{Abjuration/Enchantment (Compulsion, Warding) [Mind-Affecting, Trap]}{Arcane}
-\spellsr{Yes}
-\spellattack{Will negates}
-\spelleffect This spell functions like \spell{symbol of death}, except that the triggering creature instead suffers the effects of the \spell{insanity} spell.
+\spellspecial This ritual functions like \spell{symbol of death}, except that the target instead suffers the effects of the \spell{insanity} spell.
 \spellnotes Magic traps such as \spell{symbol of insanity} can be detected with the Perception skill and disabled with the Devices skill. The DC in each case is 25 \add spell level, or 31 for \spell{symbol of insanity}.
 \ritualcost*{6}
 
 \spellsection{Symbol of Pain}{5}
 \spellinfo{Abjuration/Necromancy (Flesh, Warding) [Trap]}{Arcane}
-\spelleffect This spell functions like \spell{symbol of death}, except that the triggering creature instead suffers the effects of the \spell{crippling pain} spell.
+\spellspecial This ritual functions like \spell{symbol of death}, except that the target instead suffers the effects of the \spell{agony} spell.
 \spellnotes Magic traps such as \spell{symbol of pain} can be detected with the Perception skill and disabled with the Devices skill. The DC in each case is 25 \add spell level, or 30 for \spell{symbol of pain}.
 \ritualcost*{5}
 
 \spellsection{Symbol of Persuasion}{4}
 \spellinfo{Abjuration/Enchantment (Compulsion, Warding) [Language-Dependent, Mind-Affecting, Sound-Dependent, Trap]}{Arcane}
-\spellsr{Yes}
-\spellattack{Will negates}
-\spelleffect This spell functions like \spell{symbol of death}, except that the triggering creature is instead affected by the \spell{suggestion} spell. You choose the suggestion when you perform the ritual, and it cannot thereafter be changed.
+\spellspecial This ritual functions like \spell{symbol of death}, except that the target is instead affected by the \spell{suggestion} spell. When you perform this ritual, you choose which suggestion to issue.
 \spellnotes Magic traps such as \spell{symbol of persuasion} can be detected with the Perception skill and disabled with the Devices skill. The DC in each case is 25 \add spell level, or 29 for \spell{symbol of persuasion}.
 \ritualcost*{4}
 
+%this doesn't take into account the medium vs. short range alteration
 \spellsection{Symbol of Sleep}{7}
 \spellinfo{Abjuration/Enchantment (Compulsion, Warding) [Mind-Affecting, Trap]}{Arcane}
 \spellsr{Yes}
 \spellattack{Will negates}
-\spelleffect This spell functions like \spell{symbol of death}, except that the triggering creature instead suffers the effects of the \spell{deep slumber} spell.
+\spelleffect This spell functions like \spell{symbol of death}, except that the target instead suffers the effects of the \spell{deep slumber} spell.
 \spellnotes Magic traps such as \spell{symbol of sleep} can be detected with the Perception skill and disabled with the Devices skill. The DC in each case is 25 \add spell level, or 32 for \spell{symbol of sleep}.
 \ritualcost*{7}
 
-\spellsection{Sympathetic Vibration}{5}
-\spellinfo{Evocation (Energy) [Sonic]}{Arcane}
-\spelltime{10 minutes}
-\spelltwocol{\spelltgt{One freestanding structure}}{\spellrng{Touch}}
-\spelldur{Up to 1 minute}
-\spellsr{Yes}
-\spellattack{None; see text}
-\spelleffect By attuning yourself to a freestanding structure such you can create a damaging vibration within it. Once it begins, the vibration deals 2d10 points of damage per round to the target structure. (Hardness has no effect on the spell's damage.) You can choose at the time of casting to limit the duration of the spell; otherwise it lasts for 1 minute. If the spell is cast upon a target that is not freestanding, the surrounding stone dissipates the effect and no damage occurs.
-\spellnotes This ritual cannot affect creatures (including constructs). Since a structure is an unattended object, it gets no saving throw, and typically no spell resistance, to resist the effect.
-\ritualcost*{5}
-
 \spellsection{Sympathy}{9}
 \spellinfo{Enchantment (Emotion) [Mind-Affecting]}{Arcane, Nature}
+\spelldesc{You fill nearby creatures of a particular kind with an overpowering attraction, compelling them to come to an area.}
+\spellinfo{Enchantment (Emotion) [Mind-Affecting]}{Arcane, Nature}
 \spelltime{1 hour}
-\spelltwocol{\spelltgt{One location (up to a 10 ft. cube/level) or one object}}{\spellrng{\rngclose}}
+\spellrng{\rngclose}
+\spellzone{10 mile radius} (outer), 100 ft. radius (inner)
 \spelldur{One week \dismissable}
 \spellsr{Yes}
-\spellattack{Will partial}
-\spelleffect You cause an object or location to emanate magical vibrations that attract either a specific kind of intelligent creature or creatures of a particular alignment, as defined by you. The particular kind of creature to be affected must be named specifically. A creature subtype is not specific enough. Likewise, the specific alignment must be named.
-\par Creatures of the specified kind or alignment feel elated and pleased to be in the area or desire to touch or to possess the object. The compulsion to stay in the area or touch the object is overpowering. If the save is successful, the creature is released from the enchantment, but a subsequent save must be made 1d6\mult10 minutes later. If this save fails, the affected creature attempts to return to the area or object.
+\spellspecial When you perform this ritual, choose an alignment (chaotic, good, evil, or lawful) or creature type.
+\begin{spelltargets}{All creatures in the outer area of the chosen alignment or type}l[Magic vs. Will]
+    \spellsuccess The target is compelled to enter the inner area as soon as physically possible, using any means necessary. Once in the inner area, it feels elated, and will not willingly leave the area as long as the spell is in effect.
+    \spellfailure The target feels a desire to enter the inner area, though it is not compelled to act on that desire immediately.
+\end{spelltargets}
 \ritualcost{9}
 
 \spellsection{Telepathic Bond}{3}
 \spelldesc{You forge a mental link binding two allies together.}
 \spellinfo{Divination/Transmutation (Communication, Imbuement)}{Arcane}
 \spelltime{10 minutes}
-\spelltwocol{\spelltgts{You and one willing creature, or two willing creatures}}{\spellrng{\rngclose}}
+\spellrng{\rngclose}
+\spelltgts{Two willing creatures}
 \spelldur{\durext \dismissable}
 \spellsr{Yes}
-\spelleffect The subjects can communicate mentally through telepathy. The communication is instantaneous across any distance within the same plane.
+\spellline
+\spelleffect The targets can communicate mentally through telepathy. The communication is instantaneous across any distance within the same plane.
 \spellnotes No special influence is established as a result of the bond. This ritual can be made permanent with a \spell{permanency} ritual.
 \ritualcost*{3}
 
 \spellsection{Telepathic Bond, Mass}{6}
 \spellinfo{Divination/Transmutation (Communication, Imbuement)}{Arcane}
-\spelltgts{You plus up to five willing creatures in a \areamed radius}
-\spelleffect This ritual functions like \spell{telepathic bond}, except that it links multiple creatures together into the same bond. Each affected creature can communicate with all other creatures, either privately or to the group as a whole. If desired, you may leave yourself out of the bond forged. This decision must be made at the time of casting.
-\spellnotes This ritual can be made permanent with a \spell{permanency} ritual. If you perform this ritual multiple times, you may link each casting of the ritual together such that all subjects may telepathically communicate with each other. 
+\spelltime{1 hour}
+\spelllimit{\areamed radius centered on you}
+\spelldur{\durext \dismissable}
+\spelltgts{Up to five willing creatures in the area}
+\spellline
+\spelleffect The targets can communicate mentally through telepathy. Each target can communicate with all other creatures, either privately or to the group as a whole.
+\spellnotes This ritual can be made permanent with a \spell{permanency} ritual. If you perform this ritual multiple times, you may link each casting of the ritual together such that all targets may telepathically communicate with each other. 
 \ritualcost*{6}
 
 \spellsection{Teleport}{6}
