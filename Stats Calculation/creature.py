@@ -1276,6 +1276,20 @@ class Monk(Character):
             self.will.remove_bonus(INT)
             self.will.add_bonus(wisdom/2, WIS)
 
+        #bodily/mental perfection
+        if self.level >= 7:
+            self.strength.add_bonus(1, 'bodily perfection')
+            self.dexterity.add_bonus(1, 'bodily perfection')
+            self.constitution.add_bonus(1, 'bodily perfection')
+        if self.level >= 13:
+            self.intelligence.add_bonus(1, 'bodily perfection')
+            self.wisdom.add_bonus(1, 'bodily perfection')
+            self.charisma.add_bonus(1, 'bodily perfection')
+        if self.level >= 19:
+            self.strength.add_bonus(2, 'bodily perfection')
+            self.dexterity.add_bonus(2, 'bodily perfection')
+            self.constitution.add_bonus(2, 'bodily perfection')
+
 class Paladin(Character):
     def create_progressions(self):
         self.set_progression(BAB, GOOD)
