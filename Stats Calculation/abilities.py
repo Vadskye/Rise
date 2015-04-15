@@ -123,11 +123,13 @@ Ability.create_ability('armor discipline (resilience)', armor_discipline_resilie
 ####################
 
 def two_weapon_fighting_benefit(creature):
-    if creature.secondary_weapon:
-        creature.attack_bonus.add_competence(2)
+    creature.attack_bonus.add_competence(2)
+
+def two_weapon_fighting_prerequisites(creature):
+    return creature.dexterity.get_total()>= 3 and creature.secondary_weapon
 
 Ability.create_ability('two-weapon fighting', two_weapon_fighting_benefit,
-        lambda creature: creature.dexterity.get_total() >=3, 
+        two_weapon_fighting_prerequisites,
         set(('feat', 'combat', 'finesse')))
 
 def two_weapon_defense_benefit(creature):
@@ -135,7 +137,7 @@ def two_weapon_defense_benefit(creature):
         bonus = creature.level/8+1
         creature.armor_class.shield.add_bonus(bonus, 'shield')
 Ability.create_ability('two-weapon defense', two_weapon_defense_benefit,
-        lambda creature: creature.dexterity.get_total() >= 3,
+        two_weapon_fighting_prerequisites,
         set(('feat', 'combat', 'defense', 'finesse')))
 
 def combat_expertise_benefit(creature):
