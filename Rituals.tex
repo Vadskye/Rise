@@ -580,6 +580,36 @@ While the target is awake, before the dream is delivered, the magical aura from 
 \spellnotes This ritual does not protect the target from fire or cold damage.
 \ritualcost*{1}
 
+\spellsection{Enhance Armor}{2}
+\spellinfo{Transmutation (Augment)}{Arcane, Divine, Nature}
+\spelltime{1 hour}
+\spellrng{Touch}
+\begin{spelltarget}{One shield or suit of body armor}
+    \spelleffect If your caster level is high enough, the target's enhancement bonus increases by 1. Minimum caster levels are described in \tref{Minimum Caster Levels for Item Enhancements}.
+\end{spelltarget}
+\spellmat{Ritual components equal to the cost of the armor's new enhancement bonus, as described in \tref{Magic Armor and Shields}}.
+
+\spellsection{Enhance Weapon}{2}
+\spellinfo{Transmutation (Augment)}{Arcane, Divine, Nature}
+\spelltime{1 hour}
+\spellrng{Touch}
+\begin{spelltarget}{One weapon}
+    \spelleffect If your caster level is high enough, the target's enhancement bonus increases by 1. Minimum caster levels are described in \tref{Minimum Caster Levels for Item Enhancements}.
+\end{spelltarget}
+\spellmat{Ritual components equal to the cost of the weapon's new enhancement bonus, as described in \tref{Magic Weapons}}.
+
+\begin{dtable}
+    \lcaption{Minimum Caster Levels for Item Enhancements}
+    \begin{tabularx}{\columnwidth}{l X}
+        \thead{Enhancement Bonus} & \thead{Minimum Caster Level} \\
+        \plus1 & 4 \\
+        \plus2 & 8 \\
+        \plus3 & 12 \\
+        \plus4 & 16 \\
+        \plus5 & 20 \\
+    \end{tabularx}
+\end{dtable}
+
 \spellsection{Erase}{1}
 \spellinfo{Transmutation (Alteration)}{Arcane}
 \spelltime{1 minute}
@@ -931,6 +961,16 @@ As a swift action, you can command the disk to move up to 50 feet. If you move f
     \spelleffect The target is transformed into ironwood. While remaining natural wood in almost every way, ironwood is as strong, heavy, and resistant to fire as steel. Spells that affect metal or iron do not function on ironwood. Spells that affect wood do affect ironwood, although ironwood does not burn.
 \end{spelltarget}
 \spellnotes By performing this ritual multiple times in succession, you may transform wooden objects too heavy to be affected by a single casting of the ritual. Ironwood armor and weapons created through this spell are as durable as their normal steel counterparts, and are freely usable by druids.
+\ritualcost*{3}
+
+\spellsection{Item Attunement}{3}
+\spellinfo{Universal}{Arcane, Divine, Nature}
+\spelltime{1 hour}
+\spellrng{Touch}
+\begin{spelltarget}{One magical object}
+    \spelleffect You may use your caster level in place of your character level to determine the effects of the target's magical properties.
+\end{spelltarget}
+\spellnotes You may only use this ritual to attune to one item at a time. If you perform this ritual again, your attunement to the previous item is lost.
 \ritualcost*{3}
 
 \spellsection{Legend Lore}{5}
