@@ -59,10 +59,10 @@
 \newcommand{\magicitem}[1]{\emph{#1}}    %For the names of items
 \newcommand{\mitem}[1]{\emph{#1}}
 \newcommand{\shead}[1]{\> \textbf{#1}}    %For the headers of spells in spell lists
-\newcommand{\spellhead}[2][]{\item[#1] \textbf{\hyperlink{spell:#2}{#2}:}}    %Spell in a spell list
-\newcommand{\spellheadc}[3][]{\item[#1] \textbf{\hyperlink{spell:#3 #2}{#2, #3}:}}
-\newcommand{\spellheadrestricted}[1]{\item \textit{\textbf{\hyperlink{spell:#1}{#1}:}}}  %Restricted spell in a spell list
-\newcommand{\spellheadrestrictedc}[2]{\item \textit{\textbf{\hyperlink{spell:#2 #1}{#1, #2}:}}}  %Restricted spell in a spell list
+%\newcommand{\spellhead}[2][]{\item[#1] \textbf{\hyperlink{spell:#2}{#2}:}}    %Spell in a spell list
+%\newcommand{\spellheadc}[3][]{\item[#1] \textbf{\hyperlink{spell:#3 #2}{#2, #3}:}}
+%\newcommand{\spellheadrestricted}[1]{\item \textit{\textbf{\hyperlink{spell:#1}{#1}:}}}  %Restricted spell in a spell list
+%\newcommand{\spellheadrestrictedc}[2]{\item \textit{\textbf{\hyperlink{spell:#2 #1}{#1, #2}:}}}  %Restricted spell in a spell list
 \newcommand{\spellsection}[2]{\vspace{1em}\setlength\multicolsep{0pt}\begin{multicols}{2}
     \lowercase{\hypertarget{spell:#1}{}}\hypertarget{spell:#1}{\subsubsection{#1}}\columnbreak
     \begin{flushright}\large\textbf{\nth{#2} Level}\end{flushright}\end{multicols}
@@ -365,5 +365,31 @@
     \ifnum \pdfstrcmp{#1}{#2}=0 #3
     \else \IfValueT{#4}{#4}
     \fi
+}
+\ExplSyntaxOff
+
+\ExplSyntaxOn
+\DeclareDocumentCommand{\spellhead}{o s m o}
+{
+    \IfValueTF{#1}
+    {\item[#1]}
+    {\item}
+    \IfBooleanTF{#2}
+    {
+        \textit{
+            \textbf{
+                \IfValueTF{#4}
+                {\hyperlink{spell:#4~#3}{#3,~#4}}
+                {\hyperlink{spell:#3}{#3}}
+            }
+        }
+    }
+    {
+        \textbf{
+            \IfValueTF{#4}
+            {\hyperlink{spell:#4~#3}{#3,~#4}}
+            {\hyperlink{spell:#3}{#3}}
+        }
+    }:
 }
 \ExplSyntaxOff
