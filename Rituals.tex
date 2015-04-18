@@ -230,7 +230,7 @@ The magic circle is obvious, but a DC 16 Spellcraft check is required to identif
 \spellinfo{Conjuration (Creation)}{Arcane}
 \spelltime{24 hours}
 \spellrng{Touch}
-\spelleffect This ritual creates an inert duplicate of a creature. The duplicate body is identical to the creature's original body, but it has no soul, and rots if not preserved. It can be used in place of the creature's original body for the purpose of spells and effects which animate or raise the dead, such as \spell{animate dead} or \spell{raise dead} (see \pcref{Bringing Back the Dead}).
+\spelleffect This ritual creates an inert duplicate of a creature. The duplicate body is identical to the creature's original body, but it has no soul, and rots if not preserved. It can be used in place of the creature's original body for the purpose of spells and effects which animate or resurrect the dead, such as \spell{animate dead} or \spell{resurrection} (see \pcref{Bringing Back the Dead}).
 \ritualcost{7}[in ritual components, and a piece of flesh (not hair, nails, scales, or the like) with a volume of at least 1 cubic inch that was taken from the original creature's living body. The piece of flesh need not be fresh, but it must be kept from rotting.]
 
 \spellsection{Commune}{5}
@@ -798,7 +798,7 @@ As a swift action, you can command the disk to move up to 50 feet. If you move f
 \spelldur{Thirty days \dismissable}
 \spellsr{Yes}
 \begin{spelltarget}{Nonmagical object touched}
-    \spelleffect Time does not pass for the target, preventing it from decaying or spoiling. This can extend the time a poison or similar item lasts before becoming inert. If used on a corpse, this effectively extends the time limit on raising that creature from the dead (see \spell{raise dead}) and similar effects that require a fresh body. Additionally, this can make transporting a fallen comrade more pleasant.
+    \spelleffect Time does not pass for the target, preventing it from decaying or spoiling. This can extend the time a poison or similar item lasts before becoming inert. If used on a corpse, this effectively extends the time limit on raising that creature from the dead (see \spell{resurrection}) and similar effects that require a fresh body. Additionally, this can make transporting a fallen comrade more pleasant.
 \end{spelltarget}
 \ritualcost{2}
 
@@ -1339,11 +1339,9 @@ The passage can be used a number of times equal to half your caster level before
 \spellinfo{Conjuration (Translocation) [Planar]}{Arcane, Divine}
 \spelltime{1 minute}
 \spellrng{Touch}
+\spelltgts{Up to five willing creatures}
 \spellsr{Yes}
-\spellspecial When you perform this ritual, you specify a destination on another plane adjacent to your current plane. Precise accuracy is nigh impossible, and the actual destination is usually 1d100 miles away from the intended destination.
-\begin{spelltargets}{You and up to five willing creatures}
-    \spelleffect The target is teleported to the destination.
-\end{spelltargets}
+\spelleffect The targets teleport to a destination on another plane adjacent to your current plane. Precise accuracy is nigh impossible, and the actual destination is usually 1d100 miles away from the intended destination.
 \spellnotes The Astral Plane connects to every plane, but transit from other planes is usually more limited. From the Material Plane, you can reach the Ethereal Plane, the Plane of Shadow, or the Astral Plane.
 \ritualcost*{7}
 
@@ -1383,22 +1381,6 @@ The passage can be used a number of times equal to half your caster level before
 Water weighs about 8 pounds per gallon. One cubic foot of water contains roughly 8 gallons and weighs about 60 pounds.
 \ritualcost*{1}
 
-\spellsection{Raise Dead}{5}
-\spellinfo{Necromancy (Life, Soul) [Healing]}{Divine}
-\spelltime{1 hour}
-\spellrng{Touch}
-\begin{spelltarget}{The corpse of one dead creature}
-    \spelleffect The target returns to life. It must have been dead for no more than thirty days, and it must not have died due to a death effect or old age.
-
-    The raised creature creature has 0 hit points. All critical damage, attribute damage, and nonmagical poisons and diseases are cured. Magical effects, including magical poisons and diseases, are not removed. If the target's body is not whole, any missing parts are still missing when it is brought back to life.
-
-    \par Coming back from the dead is an ordeal. All of the target's spell slots and other daily abilities are expended until it rests. In addition, the target gains a negative level. If the subject was 1st level when it died, it takes 2 points of Constitution drain instead. This negative level or Constitution drain lasts for thirty days, or until the target gains a level.
-\end{spelltarget}
-\spellnotes The target's soul must be free and willing to return. If not, this ritual has no effect, and the material components are no consumed.
-
-This ritual has no effect on creatures killed by death effects, or whose bodies have been turned into undead, such as by \spell{animate dead}. Constructs, elementals, outsiders, and undead creatures can't be raised.
-\spellmat{1,000 gp in diamonds or diamond dust.}
-
 \spellsection{Read Magic}{1}
 \spellinfo{Divination (Knowledge)}{Arcane, Divine}
 \spellrng{Personal}
@@ -1430,7 +1412,7 @@ This ritual has no effect on creatures killed by death effects, or whose bodies 
     Coming back from the dead is an ordeal. All of the target's spell slots and other daily abilities are expended until it rests. In addition, the target gains a negative level. If the subject was 1st level when it died, it takes 2 points of Constitution drain instead. This negative level or Constitution drain lasts as long as the creature remains in its its new body. This penalty can be removed by returning to the creature's proper body, as with \spell{resurrection}, or with the Racial Acclimation feat (page \featpref{Racial Acclimation}).
 \end{spelltarget}
 
-\spellnotes As \spell{raise dead}.
+\spellnotes As \spell{resurrection}.
 \spellmat{1,000 gp in ritual components}
 
 \begin{dtable}
@@ -1515,6 +1497,22 @@ This ritual has no effect on creatures killed by death effects, or whose bodies 
 \end{spelltarget}
 \ritualcost*{2}
 
+\spellsectioncomma{Resurrection}{Lesser}{5}
+\spellinfo{Necromancy (Life, Soul) [Healing]}{Divine}
+\spelltime{1 hour}
+\spellrng{Touch}
+\begin{spelltarget}{The corpse of one dead creature}
+    \spelleffect The target returns to life. It must have been dead for no more than thirty days, and it must not have died due to a death effect or old age.
+
+    The resurrected creature creature has 0 hit points. All critical damage, attribute damage, and nonmagical poisons and diseases are cured. Magical effects, including magical poisons and diseases, are not removed. If the target's body is not whole, any missing parts are still missing when it is brought back to life.
+
+    \par Coming back from the dead is an ordeal. All of the target's spell slots and other daily abilities are expended until it rests. In addition, the target gains a negative level. If the subject was 1st level when it died, it takes 2 points of Constitution drain instead. This negative level or Constitution drain lasts for thirty days, or until the target gains a level.
+\end{spelltarget}
+\spellnotes The target's soul must be free and willing to return. If not, this ritual has no effect, and the material components are no consumed.
+
+This ritual has no effect on creatures killed by death effects, or whose bodies have been turned into undead, such as by \spell{animate dead}. Constructs, elementals, outsiders, and undead creatures can't be resurrected.
+\spellmat{1,000 gp in diamonds or diamond dust.}
+
 \spellsection{Resurrection}{7}
 \spellinfo{Necromancy (Life, Soul)}{Clr}
 \spelltime{1 hour}
@@ -1528,9 +1526,24 @@ This ritual has no effect on creatures killed by death effects, or whose bodies 
 
     \par Coming back from the dead is an ordeal. All of the target's spell slots and other daily abilities are expended until it rests. In addition, the target gains a negative level. If the subject was 1st level when it died, it takes 2 points of Constitution drain instead. This negative level or Constitution drain lasts for thirty days, or until the target gains a level.
 \end{spelltarget}
-
-\spellnotes As \spell{raise dead}.
+\spellnotes As \spell{lesser resurrection}.
 \spellmat{5,000 gp in diamonds or diamond dust.}
+
+\spellsectioncomma{Resurrection}{Greater}{9}
+\spellinfo{Necromancy (Life, Soul)}{Divine}
+\spelltime{24 hours}
+\spellspecial You can target any dead creature that you can unambiguously identify.
+\begin{spelltarget}{The one dead creature}
+    \spelleffect The target returns to life. It must have been dead for no more than ten years per caster level, and it must not have died due to old age.
+
+    The resurrected creature has full hit points, and all negative effects are removed, even curses and missing body parts.
+
+    \par Coming back from the dead is an ordeal. All of the target's spell slots and other daily abilities are expended until it rests. In addition, the target gains a negative level. If the subject was 1st level when it died, it takes 2 points of Constitution drain instead. This negative level or Constitution drain lasts for thirty days, or until the target gains a level.
+\end{spelltarget}
+\spellnotes The target's soul must be free and willing to return. If not, this ritual has no effect, and the material components are no consumed.
+
+Constructs, elementals, outsiders, and undead creatures can't be resurrected.
+\spellmat{25,000 gp in diamonds or diamond dust.}
 
 \spellsection{Screen}{8}
 \spellinfo{Illusion (Figment, Glamer) [Unreal]}{Arcane}
@@ -1755,7 +1768,7 @@ Alternately, you can instruct the shambling mounds to guard a specific location.
 \spellrng{\rngclose}
 \spelldur{Permanent}
 \begin{spelltarget}{The corpse of one dead creature}
-    \spelleffect The target's soul is imprisoned in a black sapphire gem. This prevents the target from being raised from the dead or turned into an undead as long as the gem is intact. A creature holding the gem is able to raise or animate the creature.
+    \spelleffect The target's soul is imprisoned in a black sapphire gem. This prevents the target from being resurrected or turned into an undead as long as the gem is intact. A creature holding the gem is able to resurrect or animate the creature.
 \end{spelltarget}
 
 \spellfocus{A black sapphire of at least 500 gp value for every level possessed by the creature whose soul is to be bound. If the gem is not valuable enough, it shatters when the binding is attempted. (While creatures have no concept of level as such, the value of the gem needed to trap an individual can be researched. Remember that this value can change over time as creatures gain more levels.)}
@@ -1885,49 +1898,76 @@ Alternately, you can instruct the shambling mounds to guard a specific location.
 \spellsection{Teleport}{6}
 \spellinfo{Conjuration (Translocation) [Teleportation]}{Arcane}
 \spelltime{1 minute; see text}
-\spelltwocol{\spelltgts{You and up to four touched Medium creatures; see text}}{\spellrng{Personal and touch}}
+\spellrng{Touch}
+\spelltgts{Five willing creatures (Medium or smaller; see text)}
 \spellsr{Yes}
-\spellattack{None and Will negates (object)}
-\spelleffect This spell instantly transports you and the subjects to a designated destination, which may be as distant as 100 miles away. Each creature can bring along objects whose weight doesn't exceed the creature's maximum load. All creatures to be transported must be in contact with one another, and at least one of those creatures must be in contact with you. After completing the spell, you and anyone bring with you must skip their next actions as they adjust to their new surroundings.
-\par By doubling the casting time of the ritual, you can take along an additional Medium creature. You can repeat this process, doubling the new casting time each time, up to a maximum casting time of just over an hour (allowing you to take a total of ten Medium creatures in addition to yourself).
-\par You can also bring creatures larger than Medium. A Large creature counts as two Medium creatures, a Huge creature counts as two Large creatures, and so forth.
-\par This ritual is unusually difficult to perform correctly. You must have some clear idea of the location and layout of the destination. The clearer your mental image, the more likely the teleportation works. Areas of strong physical or magical energy may make teleportation more hazardous or even impossible. As part of the ritual, you make an Intelligence check against DC 10. The following categories apply modifiers:
-\begin{itemize}
-    \item ``Very familiar" is a place where you have been very often and where you feel at home. You gain a \plus5 bonus.
-    \item ``Studied carefully" is a place you know well, either because you can currently see it, you've been there often, or you have used other means (such as scrying) to study the place for at least one hour. No bonuses or penalties apply.
-    \item ``Seen casually" is a place that you have seen more than once but with which you are not very familiar. You take a \minus5 penalty.
-    \item ``Viewed once" is a place that you have seen once, possibly using magic. You take a \minus10 penalty.
-    \item ``False destination" is a place that does not truly exist or if you are teleporting to an otherwise familiar location that no longer exists as such or has been so completely altered as to no longer be familiar to you. You automatically fail.
-\end{itemize}
+\spellspecial When you perform this ritual, you may double its casting time to affect an additional target. You can repeat this process, doubling the new casting time each time, up to a maximum of ten targets (with a casting time of thirty-two minutes).
 
-Success means you arrive on target. Failure means you arrive a random distance away from your intended destination in a random direction. The distance off target is equal to 1d10\mult1d10\% of the distance that you would have traveled to your intended destination. Failure by 10 or more means you arrive in a completely different area within range that is visually or thematically similar to your intended destination.
-\spellnotes This ritual is incapable of interplanar travel. Generally, you appear in the closest similar place within range. If no such area exists within the spell's range, the ritual simply fails instead.
+You may target creatures larger than Medium size. A Large creature counts as two Medium creatures, a Huge creature counts as two Large creatures, and so forth.
 
-Only objects held or in use (attended) by another person receive saving throws. You do not apply spell resistance against this ritual. 
-\ritualcost{6}
+\spelleffect When you perform this ritual, you specify a destination up to 100 miles away on your current plane, and make an Intelligence check. The DC of the check depends on your familiarity with the destination, as shown on \tref{Teleport DCs}.
+
+Success means the targets teleport to the intended destination. Failure means the targets arrive a random distance away from the intended destination in a random direction. The distance off target is equal to 1d10\mult1d10\% of the distance that they would have traveled to the intended destination. Failure by 10 or more means the targets arrive in a completely different area within range that is visually or thematically similar to the intended destination. If no such area exists within the spell's range, the ritual simply fails instead.
+
+After teleporting, the targets must skip their next actions.
+
+\spellnotes Areas of strong physical or magical energy may make teleportation more hazardous or even impossible. This ritual is incapable of interplanar travel.
+\ritualcost*{6}
+
+\begin{dtable}
+    \lcaption{Teleport DCs}
+    \begin{tabularx}{\columnwidth}{l X l}
+        \thead{Familiarity} & \thead{Destination Description} & \thead{DC} \\
+        Very familiar & You have been there very often, and feel at home. & 5 \\
+        Studied carefully & You know it well, either because you can currently see it, you've been there often, or you have studied it for at least one hour. & 10 \\
+        Seen casually & You have seen it more than once. & 15 \\
+        Viewed once & You have seen it once. & 20 \\
+        False Destination & It does not exist, or has changed beyond recognition. & \x\fn{1} \\
+    \end{tabularx}
+    1 You are automatically treated as if you had failed by 10 or more.
+\end{dtable}
 
 \spellsection{Teleport Object}{7}
 \spellinfo{Conjuration (Translocation) [Teleportation]}{Arcane}
-\spelltwocol{\spelltgt{One touched object of up to 50 lb./level and 3 cu. ft./level}}{\spellrng{Touch}}
+\spelltime{1 minute}
+\spellrng{Touch}
 \spellsr{Yes}
-\spellattack{Will negates (object)}
-\spelleffect This spell functions like \spell{teleport}, except that it teleports an object, not you. Creatures and magical forces (such as a \spell{delayed blast fireball}) cannot be teleported.
+\begin{spelltarget}{One touched object (Large or smaller)}
+    The target is teleported, as \spell{teleport}.
+\end{spelltarget}
 \ritualcost{7}
 
 \spellsection{Teleport, Greater}{8}
 \spellinfo{Conjuration (Translocation) [Teleportation]}{Arcane}
-\spelleffect This ritual functions like \spell{teleport}, except that you can teleport up to 1,000 miles, and you cannot arrive off target. In addition, you need not have seen the destination, provided that you have an accurate and specific description of the place to which you are teleporting. If you attempt to teleport with insufficient information, with misleading information, or to an invalid location (such as inside a solid object), you simply disappear and reappear in your original location.
-\ritualcost{8}
+\spelltime{1 minute; see text}
+\spellrng{Touch}
+\spelltgts{Five willing creatures (Medium or smaller; see text)}
+\spellsr{Yes}
+\spellspecial When you perform this ritual, you may double its casting time to affect an additional target. You can repeat this process, doubling the new casting time each time, up to a maximum of ten targets (with a casting time of thirty-two minutes).
+
+You may target creatures larger than Medium size. A Large creature counts as two Medium creatures, a Huge creature counts as two Large creatures, and so forth.
+\spelleffect When you perform this ritual, you specify a destination up to 1,000 miles away on your current plane. You must have seen the destination or specify it unambiguously. If the destination is invalid, or does not exist, the ritual simply fails.
+
+The targets teleport to the destination. After teleporting, the targets must skip their next actions.
+
+\spellnotes Areas of strong physical or magical energy may make teleportation more hazardous or even impossible. This ritual is incapable of interplanar travel.
+\ritualcost*{8}
 
 \spellsection{Teleportation Circle}{9}
 \spellinfo{Conjuration (Translocation) [Teleportation, Trap]}{Arcane}
 \spelltime{10 minutes}
 \spellrng{Touch}
-\spelldur{\durext or until discharged \dismissable}
+\spellzone{\areasmall radius}
+\spelldur{\durext or until expended \dismissable}
 \spellsr{Yes}
-\spellattack{Will negates}
-\spelleffect You create an invisible \areasmall radius circle on the floor or other horizontal surface that teleports, as \spell{greater teleport}, any creature who stands on it to a designated spot. Once you designate the destination for the circle, you can't change it. The ritual fails if the destination is not a valid destination.
-\par The circle can teleport a number of creatures equal to your caster level before it ceases to function.
+\spellspecial When you perform this ritual, you specify a destination up to 1,000 miles away on your current plane. You must have seen the destination or specify it unambiguously. If the destination is invalid, or does not exist, the ritual simply fails.
+\begin{spelltrigger}{A creature enters the area}
+    \spellspecial Once this ritual has triggered a number of times equal to your caster level, it is expended.
+    \begin{spelltarget}*{The entering creature}[Magic vs. Will]
+        \spelleffect The target is teleported to the specified destination. If the destination is invalid, or does not exist, the target is unaffected.
+    \end{spelltarget}
+\end{spelltrigger}
+
 \spellnotes Magic traps such as \spell{teleportation circle} can be detected with the Perception skill and disabled with the Devices skill. The DC in each case is 25 \add spell level, or 34 for \spell{teleportation circle}.
 \ritualcost*{9}
 
@@ -1936,74 +1976,35 @@ Only objects held or in use (attended) by another person receive saving throws. 
 \spelltime{1 minute}
 \spellzone{\areamed radius centered on you}
 \spelldur{\durext \dismissable}
-\spelleffect You create an unmoving, opaque sphere of any color you desire around your location. Half the sphere projects above the ground, and the lower hemisphere passes through the ground. As many as nine other Medium creatures can fit into the field with you; they can freely pass into and out of the hut without harming it. However, if you remove yourself from the hut, the spell ends.
-\par The temperature inside the hut is 70\degree F if the exterior temperature is between 0\degree and 100\degree F. An exterior temperature below 0\degree or above 100\degree lowers or raises the interior temperature on a 1-degree-for-1 basis. The hut also provides protection against the elements, such as rain, dust, and sandstorms. The hut withstands any wind of less than hurricane force, but a hurricane (75\add mph wind speed) or greater force destroys it.
-\par The interior of the hut is a hemisphere. Although the force field is opaque from the outside, it is transparent from within. Missiles, weapons, and most spell effects can pass through the hut without affecting it, although the occupants cannot be seen from outside the hut (they have total concealment).
-\ritualcost{3}
+\spellline
+\spelleffect The area is surrounded by an opaque sphere which blocks rain, dust, snow, and similar small objects. Wind speed within the area is reduced by 25 mph. The temperature can be raised by up to 50 degrees, or lowered by up to 25 degrees, until it reaches 70\degree F.
+\spellnotes Most creatures, objects, and spell effects can pass through the hut without affecting it.
+\ritualcost*{3}
 
 \spellsection{Tongues}{4}
 \spellinfo{Divination (Communication)}{Arcane, Divine, Nature}
-\spelltwocol{\spelltgt{Creature touched}}{\spellrng{Touch}}
+\spellrng{Touch}
 \spelldur{\durlong}
 \spellsr{Yes}
-\spelleffect This spell grants the creature touched the ability to speak and understand the language of any intelligent creature, whether it is a racial tongue or a regional dialect. The subject can speak only one language at a time, although it may be able to understand several languages. \spell{Tongues} does not enable the subject to speak with creatures who don't speak.
-\spellnotes \spell{Tongues} may be unable to translate dead or extremely obscure languages. It does not predispose any creature addressed toward the subject in any way. \spell{Tongues} can be made permanent with a \spell{permanency} spell.
+\begin{spelltarget}{Creature touched}
+    \spelleffect The target can speak and understand all langages, including dialects. It can speak only one language at a time, although it may be able to understand several languages.
+\spellnotes This ritual does not grant the ability to communicate with creatures that do not have a language. It may be unable to translate dead or extremely obscure languages. 
+
+This ritual can be made permanent with a \spell{permanency} ritual.
 \ritualcost*{4}
 
 \spellsection{Transport via Plants}{6}
 \spellinfo{Conjuration (Translocation) [Teleportation]}{Nature}
-\spelleffect This ritual functions like \spell{teleport}, except that both the starting and ending points must be living, Medium or larger plants. You and any other creatures you bring with you step into one plant and out of the other plant.
-\begin{comment}
-You can enter any normal plant (Medium or larger) and pass any distance to a plant of the same kind in a single round, regardless of the distance separating the two. The entry plant must be alive. The destination plant need not be familiar to you, but it also must be alive. If you are uncertain of the location of a particular kind of destination plant, you need merely designate direction and distance and the transport via plants spell moves you as close as possible to the desired location. If a particular destination plant is desired but the plant is not living, the spell fails and you are ejected from the entry plant.
-\par After completing the spell, you and anyone bring with you can't take any actions until the next turn that each creature would have.
-\par You can bring along objects as long as their weight doesn't exceed your maximum load. You may also bring one additional willing Medium or smaller creature (carrying gear or objects up to its maximum load) or its equivalent per three caster levels. Use the following equivalents to determine the maximum number of larger creatures you can bring along: A Large creature counts as two Medium creatures, a Huge creature counts as two Large creatures, and so forth. All creatures to be transported must be in contact with one another, and at least one of those creatures must be in contact with you.
-\par You can't use this spell to travel through plant creatures.
-\par The destruction of an occupied plant slays you and any creatures you have brought along, and ejects the bodies and all carried objects from the tree.
-\end{comment}
+\spellline
+\spelleffect This ritual functions like \spell{teleport}, except that both the starting and ending points must be living, Medium or larger plants.
 \ritualcost{6}
-
-\spellsection{Trap the Soul}{8}
-\spellinfo{Necromancy (Life, Soul)}{Arcane}
-\spelltwocol{\spelltgt{One trigger object; see text}}{\spellrng{Touch}}
-\spelldur{Permanent; see text}
-\spellsr{Yes}
-\spelleffect You imbue an object with the power to trap a creature's life and soul. The object must be inscribed with the creature's name. It holds the trapped creature indefinitely or until it is broken, which allows the creature's body to reform. Outsiders can be compelled to perform a single service for the creature releasing them; other creatures can simply go free.
-\par For a creature's soul to be trapped, it must intentionally pick up or accept the object while \bloodied. If it does so, its life force is automatically transferred to the gem without the benefit of a save, though spell resistance applies normally. If it picks up the object while healthy, or if any other creature picks up the object, nothing happens, though magical inspection can reveal the existence of the trap.
-\spellmat{In addition to the trigger object, a gem must be used. The gem must be worth at least 500 gp value for every level possessed by the creature to be trapped. When the ritual is performed, the gem shatters into dust which is embedded into the trigger object. If the gem is not valuable enough, the creature will suffer no ill effect when it picks up the trigger object, though the ritual's effect will still be discharged, rending the trigger object useless. (While creatures have no concept of level as such, the value of the gem needed to trap an individual can be researched. Remember that this value can change over time as creatures gain more levels.)}
-\spellfocus{A special trigger object, prepared as described above, is needed.}
-\ritualcost{8}
 
 \spellsection{Tree Stride}{5}
 \spellinfo{Conjuration (Translocation) [Teleportation]}{Nature}
 \spelltime{1 minute}
-\spelltwocol{\spelltgt{You}}{\spellrng{Personal}}
-\spelleffect This ritual functions like \spell{teleport}, except that it only affects you, and both the starting and ending points must be Large or larger trees.
-\begin{comment}
-You gain the ability to enter trees and move from inside one tree to inside another tree. The first tree you enter and all others you enter must be of the same kind, must be living, and must have girth at least equal to yours. By moving into an oak tree (for example), you instantly know the location of all other oak trees within transport range (see below) and may choose whether you want to pass into one or simply step back out of the tree you moved into. You may choose to pass to any tree of the appropriate kind within the transport range as shown on the following table.
-\begin{dtable}
-    \begin{tabularx}{\columnwidth}{>{\lcol}X >{\lcol}X}
-        Type of Tree & Transport Range \\
-        Oak, ash, yew & 3,000 feet \\
-        Elm, linden & 2,000 feet \\
-        Other deciduous & 1,500 feet \\
-        Any coniferous & 1,000 feet \\
-        All other trees & 500 feet
-    \end{tabularx}
-\end{dtable}
-\par You may move into a tree up to one time per caster level (passing from one tree to another counts only as moving into one tree). The spell lasts until the duration expires or you exit a tree. Each transport is a full-round action.
-\par You can, at your option, remain within a tree without transporting yourself, but you are forced out when the spell ends. If the tree in which you are concealed is chopped down or burned, you are slain if you do not exit before the process is complete.
-\end{comment}
+\spelltgt{You}
+\spellspecial This ritual functions like \spell{teleport}, except that it only affects you, and both the starting and ending points must be Large or larger trees.
 \ritualcost{5}
-
-\spellsection{True Resurrection}{9}
-\spellinfo{Necromancy (Life, Soul)}{Divine}
-\spelltime{1 hour}
-\spelleffect This spell functions like \spell{raise dead}, except that you can resurrect a creature that has been dead for as long as 10 years per caster level. This spell can even bring back creatures whose bodies have been destroyed, provided that you unambiguously identify the deceased in some fashion (reciting the deceased's time and place of birth or death is the most common method).
-\par Upon completion of the spell, the creature is immediately restored to full hit points, vigor, and health, with no negative levels, constitution drain, or loss of prepared spells.
-\par You can revive someone killed by a death effect or someone who has been turned into an undead creature and then destroyed. This spell can also resurrect elementals or outsiders, but it can't resurrect constructs or undead creatures.
-\spellnotes Even \spell{true resurrection} can't restore to life a creature who has died of old age.
-\spellmat{A sprinkle of holy (or unholy) water and diamonds worth a total of at least 10,000 gp.}
-\ritualcost{9}
 
 \spellsection{Undetectable Alignment}{2}
 \spellinfo{Abjuration (Shielding)}{Arcane}
@@ -2024,7 +2025,7 @@ You gain the ability to enter trees and move from inside one tree to inside anot
 \spellattack{See text}
 \spelleffect Unhallow makes a particular site, building, or structure an unholy site. This has three major effects.
 \par First, the site or structure is guarded by a \spell{magic circle against good} effect.
-\par Second, any dead body interred in an unhallowed site costs half the normal material components to raise as an undead creature.
+\par Second, any dead body interred in an unhallowed site costs half the normal material components to animate as an undead creature.
 \par Finally, you may choose to fix a single spell effect to the unhallowed site. The spell effect lasts for one year and functions throughout the entire site, regardless of its normal duration and area or effect. You may designate whether the effect applies to all creatures, creatures that share your faith or alignment, or creatures that adhere to another faith or alignment. At the end of the year, the chosen effect lapses, but it can be renewed or replaced simply by casting unhallow again.
 \par Spell effects that may be tied to an unhallowed site include \spell{aid}, \spell{bane}, \spell{bless}, \spell{cause fear}, \spell{darkness}, \spell{daylight}, \spell{death ward}, \spell{detect evil}, \spell{dimensional anchor}, \spell{discern lies}, \spell{endure elements}, \spell{freedom of movement}, \spell{invisibility purge}, \spell{protection from energy}, \spell{remove fear}, \spell{resist energy}, \spell{silence}, \spell{tongues}, and \spell{zone of truth}.
 \par Saving throws and spell resistance might apply to these spells' effects. (See the individual spell descriptions for details.)
