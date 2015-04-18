@@ -248,10 +248,12 @@ The effects of instantaneous conjurations, such as \spell{create water}, are not
 \spellinfo{Abjur/Conj (Interdiction, Translocation) [Planar]}{Arcane, Divine}
 \spellrng{\rngmed}
 \spelldur{Concentration}
-\begin{spelltargets}{One extraplanar creature}[Magic vs. Will]
-    \spellsuccess The target is banished, as \spell{dismissal}.
-\end{spelltargets}
-\spelleffect As long as you concentrate on this spell, you can attack a new target each round. An individual creature can only be targeted once per casting of this spell.
+\begin{spelltrigger}{End of every round}
+    \begin{spelltarget}{One extraplanar creature}[Magic vs. Will]
+        \spellsuccess The target is banished, as \spell{dismissal}.
+    \end{spelltarget}
+\end{spelltrigger}
+\spelleffect An individual creature can only be targeted once per casting of this spell.
 
 \spellsection{Barkskin}{2}
 \spelldesc{You toughen a creature's skin, giving it the appearance of tree bark.}
