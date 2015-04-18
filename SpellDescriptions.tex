@@ -997,18 +997,16 @@ By concentrating on an aura (a standard action), you can determine the strength 
 \spellinfo{Conj (Translocation) [Teleportation]}{Arcane, Travel}
 \spellrng{\rngext \rngunrestricted}
 \begin{spelltarget}{You}
-    \spelleffect The target is instantly teleported from its current location to any location within range, regardless of intervening obstacles. The destination can be visualized or specified by stating a direction and distance. The target can bring along objects as long as their weight doesn't exceed its maximum load.
+    \spelleffect You teleport to a destination within range. You must clearly visualize the destination. After arriving, you cannot act until the next action phase.
 
-    After arriving, the target is dazed until the next action phase.
+    If the destination is occupied, or dramatically different from how you visualized it, the spell fails.
 \end{spelltarget}
-\spellnotes \par If you arrive in a place that is already occupied by a solid body, you take 2d6 damage and are shunted to a random open space on a suitable surface within 100 feet of the intended location that is within the range of the spell.
-\par  If there is no free space within 100 feet, you take an additional 4d6 damage and the spell simply fails.
 
 \spellsectioncomma{Dimension Door}{Mass}{7}
 \spellinfo{Conj (Translocation) [Teleportation]}{Conj, Travel}
 \spelltwocol{\spelllimit{\areamed radius centered on you}}{\spellrng{\rngext}}
-\begin{spelltarget}{You and up to five other willing creatures in the area}
-    \spelleffect The target is teleported, as \spell{dimension door}.
+\begin{spelltarget}{Up to five willing creatures in the area}
+    \spelleffect The target teleports to a destination you specify, as \spell{dimension door}.
 \end{spelltarget}
 \spellnotes You can choose the destinations for each target independently, within the range of the spell. 
 
