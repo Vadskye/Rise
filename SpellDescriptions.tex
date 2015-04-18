@@ -2257,14 +2257,19 @@ Any missiles you do not explicitly target will automatically strike a living cre
 \end{spelltargets}
 
 \spellsection{Living Projectile}{3}
+\spelldesc{You telekinetically fling an ally at great speed towards your foe.}
 \spellinfo{Abjur/Evoc (Control, Shielding)}{Arcane}
 \spellrng{\rngclose}
+\spelltgt{One willing creature}[Primary]
+\spelltgt{One creature or object}[Secondary]
 \spelldur{1 round}
-\begin{spelltargets}{One willing creature and one creature or object}l[Caster level \add casting attribute vs. Armor defense]
-    \spelleffect You telekinetically fling a willing creature at great speed towards a foe. The willing target is moved adjacent to the foe attacked, gains the benefit of the \spell{ablate impact} spell for 1 round, and is knocked prone. If the attack hits a different target than intended, such as because of active cover, the flung creature moves adjacent to that target instead.
-    \spellsuccess The target creature or object takes 6d6 damage \add d6 per two caster levels above 6th. The flung creature takes half this amount of damage.
-    \spellfailure As above, but half damage to the target creature or object. The damage taken by the flung creature is not halved.
-\end{spelltargets}
+\spellline
+\spelleffect The primary target is moved adjacent to the secondary target, gains the benefit of the \spell{ablate impact} spell for 1 round, and is knocked prone.
+\spellattack{Caster level \add casting attribute vs. Armor defense (secondary target)}
+\begin{spellmargin}
+    \spellsuccess The secondary target takes 6d6 damage \add d6 per two caster levels above 6th. The primary target takes half this amount of damage.
+    \spellfailure As above, but half damage to the secondary target. The damage taken by the primary target is not halved.
+\end{spellmargin}
 
 \spellsection{Locate Entity}{6}
 \spellinfo{Div (Awareness) [Detection]}{Arcane, Knowledge}
