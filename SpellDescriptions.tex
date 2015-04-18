@@ -248,8 +248,9 @@ The effects of instantaneous conjurations, such as \spell{create water}, are not
 \spellinfo{Abjur/Conj (Interdiction, Translocation) [Planar]}{Arcane, Divine}
 \spellrng{\rngmed}
 \spelldur{Concentration}
+\spellline
 \begin{spelltrigger}{End of every round}
-    \begin{spelltarget}{One extraplanar creature}[Magic vs. Will]
+    \begin{spelltarget}*{One extraplanar creature}[Magic vs. Will]
         \spellsuccess The target is banished, as \spell{dismissal}.
     \end{spelltarget}
 \end{spelltrigger}
@@ -3217,23 +3218,28 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsection{Share Pain}{2}
 \spellinfo{Abjur/Necro (Life, Shielding)}{Arcane, Divine, Protection}
 \spellrng{\rngmed}
+\spelltgts{Two willing creatures}
 \spelldur{\durlong \dismissable}
 \spellsr{Yes}
-\begin{spelltargets}{You and one willing creature}
-    \spelleffect This spell creates a connection between you and a willing target. As you cast the spell, you decide which creature will be protected. When the protected creature would take damage to its hit points, it instead takes half of that damage (rounded down), and you lose hit points equal to the other half of the damage (rounded up).
+\spellspecial When you cast this spell, you choose which target will be protected.
+\spellline
+\spelleffect When the protected creature would take hit point damage, it instead loses half that many hit points (rounded down), and the other target loses hit points equal to the other half of the damage (rounded up).
 
-    If the target is out of range of you, the effect is suppressed until it returns within the range.
-\end{spelltargets}
-\spellnotes The loss of hit points caused by this spell is not damage, and is not affected by damage reduction or other abilities which affect damage. When this spell ends, subsequent damage is no longer divided between the target and you, but damage already shared is not reassigned.
+If the targets get out of range of each other, the effect is suppressed until they return within range.
+\spellnotes The loss of hit points caused by this spell is not damage, and is not affected by damage reduction or other abilities which affect damage.
 
 \spellsectioncomma{Share Pain}{Forced}{3}
 \spellinfo{Abjur/Necro (Life, Shielding)}{Arcane, Divine, Evil}
 \spellrng{\rngmed}
+\spelltgts{Two creatures}
 \spelldur{\durlong \dismissable}
 \spellsr{Yes}
-\begin{spelltargets}{You and one creature}[Magic vs. Will]
-    \spellsuccess You share damage with the other target, as \spell{share pain}.
-\end{spelltargets}
+\spellspecial When you cast this spell, you choose which target will be protected.
+\spellline
+\spellattack{Magic vs. Will}
+\begin{spellmargin}
+    \spellsuccess The targets share damage, as \spell{share pain}.
+\end{spellmargin}
 
 \spellsection{Shield of Faith}{1}
 \spelldesc{You create a shimmmering, magical shield that protects your ally as long as you maintain faith.}
