@@ -977,7 +977,7 @@ As a swift action, you can command the disk to move up to 50 feet. If you move f
 \spellinfo{Divination (Knowledge)}{Arcane}
 \spelltime{1 hour; see text}
 \spelldur{See text}
-\spelleffect This ritual brings to your mind legends about an important person, place, or thing. The amount of information, and the speed of the ritual, depends on how much information you have about the subject.
+\spelleffect When you perform this ritual, you specify an important person, place, or thing. You gain information about the subject. The amount of information, and the speed of the ritual, depends on how much information you have about the subject.
 
 If the person or thing is at hand, or if you are in the place in question, you learn complete and specific legends immediately after the ritual is complete.
 
@@ -987,6 +987,19 @@ If you only know rumors about the subject, you learn incomplete and vague legend
 
 \spellnotes If the person, place, or thing is not of legendary importance, you gain no information. In general, characters who are 11th level and higher are ``legendary," as are the sorts of creatures they contend with, the major magic items they wield, and the places where they perform their key deeds.
 \ritualcost{5}
+
+\spellsectioncomma{Legend Lore}{Greater}{7}
+\spellinfo{Divination (Knowledge)}{Arcane}
+\spelltime{1 minute}
+\spellline
+\spelleffect When you perform this ritual, you specify an important person, place, or thing, and make a caster level check (1d20 \add caster level). The difficulty of the check depends on how much information you have about the subject.
+
+If the person or thing is at hand, or if you are in the place in question, the DC is 20. If you only know detailed information about the subject, the DC is 30. If you only know rumors about the subject, the DC is 40.
+
+If you succeed, you learn legends that are either complete or specific, but not both. If you succeed by 10 or more, you learn complete and specific legends about the subject.  If you fail, you learn incomplete and vague legends. If you fail by 10 or more, you gain no information at all.
+
+After completing the ritual, you are \exhausted. If you perform this ritual while fatigued or exhausted, you fall unconscious for ten minutes after completing the ritual. When you wake up, you remember the information (if any).
+\ritualcost{7}
 
 \spellsection{Light}{1}
 \spellinfo{Illusion (Figment) [Light]}{Arcane, Divine, Nature}
@@ -1988,6 +2001,7 @@ The targets teleport to the destination. After teleporting, the targets must ski
 \spellsr{Yes}
 \begin{spelltarget}{Creature touched}
     \spelleffect The target can speak and understand all langages, including dialects. It can speak only one language at a time, although it may be able to understand several languages.
+\end{spelltarget}
 \spellnotes This ritual does not grant the ability to communicate with creatures that do not have a language. It may be unable to translate dead or extremely obscure languages. 
 
 This ritual can be made permanent with a \spell{permanency} ritual.
@@ -2009,11 +2023,12 @@ This ritual can be made permanent with a \spell{permanency} ritual.
 \spellsection{Undetectable Alignment}{2}
 \spellinfo{Abjuration (Shielding)}{Arcane}
 \spelltime{1 minute}
-\spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngclose}}
+\spellrng{\rngclose}
 \spelldur{\durext \dismissable}
 \spellsr{Yes}
-\spellattack{Will negates (object)}
-\spelleffect This ritual conceals the alignment of an object or a creature from all forms of divination.
+\begin{spelltarget}{One creature or object}
+    \spelleffect The target's alignment cannot be identified by detection spells and similar effects which reveal alignment, such as a paladin's discernment. Spells and abilities which have different effects depending on the target's alignment, such as a paladin's smite, function normally.
+\end{spelltarget}
 \ritualcost{2}
 
 \spellsection{Unhallow}{5}
@@ -2021,63 +2036,61 @@ This ritual can be made permanent with a \spell{permanency} ritual.
 \spelltime{24 hours}
 \spelltwocol{\spellzone{\arealarge radius}}{\spellrng{\rngclose}}
 \spelldur{Instantaneous/1 year}
-\spellsr{See text}
-\spellattack{See text}
-\spelleffect Unhallow makes a particular site, building, or structure an unholy site. This has three major effects.
-\par First, the site or structure is guarded by a \spell{magic circle against good} effect.
-\par Second, any dead body interred in an unhallowed site costs half the normal material components to animate as an undead creature.
-\par Finally, you may choose to fix a single spell effect to the unhallowed site. The spell effect lasts for one year and functions throughout the entire site, regardless of its normal duration and area or effect. You may designate whether the effect applies to all creatures, creatures that share your faith or alignment, or creatures that adhere to another faith or alignment. At the end of the year, the chosen effect lapses, but it can be renewed or replaced simply by casting unhallow again.
-\par Spell effects that may be tied to an unhallowed site include \spell{aid}, \spell{bane}, \spell{bless}, \spell{cause fear}, \spell{darkness}, \spell{daylight}, \spell{death ward}, \spell{detect evil}, \spell{dimensional anchor}, \spell{discern lies}, \spell{endure elements}, \spell{freedom of movement}, \spell{invisibility purge}, \spell{protection from energy}, \spell{remove fear}, \spell{resist energy}, \spell{silence}, \spell{tongues}, and \spell{zone of truth}.
-\par Saving throws and spell resistance might apply to these spells' effects. (See the individual spell descriptions for details.)
-\spellnotes An area can receive only one hallow or unhallow spell (and its associated spell effect) at a time. If an area is hallowed, it cannot be unhallowed.
-\spellmat{Herbs, oils, and incense worth at least 500 gp, plus 500 gp per level of the spell to be tied to the unhallowed area.}
-\ritualcost{5}
+\spellline
+\spelleffect The area becomes unholy. This has several effects.
+\begin{itemize}
+    \item A \spellindirect{magic circle against alignment}{magic circle against good} effect fills the area.
+    \item Any dead body interred in the area costs half the normal material components to animate as an undead creature.
+    \item While performing the ritual, you can cast another spell or perform another ritual you know. The spell or ritual functions in the entire area as long as this ritual lasts, regardless of its normal area or duration. You may designate whether the effect applies to all creatures, or to all creatures that have a specific faith or alignment. The spells and rituals which can be fixed to a \spell{hallow} ritual are as follows: \spell{aid}, \spell{bane}, \spell{bless}, \spell{comprehend languages}, \spell{darkness}, \spell{daylight}, \spell{death ward}, \spell{dimensional anchor}, \spell{endure elements}, \spell{freedom}, \spell{protection from energy}, \spell{resist energy}, \spell{silence}, \spell{tongues}, and \spell{zone of truth}.
+\end{itemize}
+\spellnotes An area can receive only one \spell{unhallow} spell (and its associated spell effect) at a time. If an area is \spellindirect{hallow}{hallowed}, it cannot be unhallowed.
+\ritualcost{7}
 
 \spellsection{Unseen Servant}{1}
 \spellinfo{Conjuration/Evocation (Creation, Control)}{Arcane}
-\spelltwocol{\spelltime{1 minute}}{\spellrng{\rngmed}}
-\spelldur{\durlong \dismissable}
-\spelleffect An unseen servant is an invisible, mindless, shapeless force that performs simple tasks at your command. It can run and fetch things, open unstuck doors, and hold chairs, as well as clean and mend. The servant can perform only one activity at a time, but it repeats the same activity over and over again if told to do so as long as you remain within range. It can open only normal doors, drawers, lids, and the like. It has an effective Strength score of 2 (so it can lift 20 pounds or drag 100 pounds). It can trigger traps and such, but it can exert only 20 pounds of force, which is not enough to activate certain pressure plates and other devices. It can't perform any task that requires a skill check with a DC higher than 10 or that requires a check using a skill that can't be used untrained. Its speed is 15 feet.
-\par The servant cannot attack in any way. It cannot be killed, but it dissipates if it takes 6 points of damage from area attacks. (It gets no saves against attacks.) If you attempt to send it beyond the spell's range (measured from your current position), the servant ceases to exist.
-\ritualcost{1}
-
-\spellsection{Vision}{7}
-\spellinfo{Divination (Knowledge)}{Arcane}
 \spelltime{1 minute}
-\spelleffect This ritual functions like \spell{legend lore}, except that it works more quickly but produces some strain on you. You pose a question about some person, place, or object, then perform the ritual. If the person or object is at hand or if you are in the place in question, you receive a vision about it by succeeding on a caster level check (1d20 \add caster level) against DC 20. If only detailed information on the person, place, or object is known, the DC is 25, and the information gained is incomplete. If only rumors are known, the DC is 30, and the information gained is vague. After the spell is complete, you are exhausted.
-\par If you perform this ritual while fatigued or exhausted, you must make a Fortitude save (DC 15 if fatigued or DC 20 if exhausted) or immediately fall unconscious for ten minutes. When you wake up, you remember the information (if any).
-\ritualcost{7}
+\spellrng{\rngmed}
+\spelldur{\durlong \dismissable}
+\spelleffect This ritual creates an invisible, mindless, shapeless force that performs simple tasks at your command. It can run and fetch things, open unstuck doors, and hold chairs, as well as clean and mend. The servant can perform only one activity at a time, but it repeats the same activity over and over again if told to do so. It can open only normal doors, drawers, lids, and the like. It has an effective Strength score of \minus8 (so it can lift 20 pounds or drag 100 pounds). It can trigger traps and similar devices, but it can exert only 20 pounds of force, which is not enough to activate certain pressure plates and other devices. It can't perform any task that requires a skill check with a DC higher than 10 or that requires a check using a skill that can't be used untrained. It hovers just off the ground, and moves at a speed of 15 feet.
+\par The servant cannot attack in any way. It cannot be killed, but it dissipates if it takes 6 points of damage from area attacks. It has no defenses, and all special attacks automatically succeed against it. If the servant gets out of range of you, it ceases to exist.
+\ritualcost{1}
 
 \spellsection{Water Breathing}{3}
 \spellinfo{Transmutation (Imbuement)}{Arcane, Divine, Nature}
 \spelltime{10 minutes}
-\spelltwocol{\spelltgt{Living creatures touched}}{\spellrng{Touch}}
+\spellrng{Touch}
 \spelldur{\durext \dismissable; see text}
 \spellsr{Yes}
-\spelleffect The transmuted creatures can breathe water freely. Divide the duration evenly among all the creatures you touch.
+\spellspecial Divide the duration evenly among all targets.
+\begin{spelltargets}{Five creatures}
+    \spelleffect The target can breathe water freely. 
+\end{spelltargets}
 \spellnotes The ritual does not make creatures unable to breathe air.
 \ritualcost*{3}
 
 \spellsection{Whispering Wind}{2}
 \spellinfo{Divination (Communication) [Air]}{Arcane, Nature}
 \spelltime{1 minute}
-\spellrng{10 miles}
+\spellrng{10 miles \rngunrestricted}
 \spelldur{\durext or until discharged}
-\spelleffect You send a message or sound on the wind to a designated spot. The whispering wind travels to a specific location within range that is familiar to you, provided that it can find a way to the location. A whispering wind is as gentle and unnoticed as a zephyr until it reaches the location. It then delivers its whisper-quiet message or other sound. Note that the message is delivered regardless of whether anyone is present to hear it. The wind then dissipates.
-\par You can prepare the spell to bear a message of no more than twenty-five words, cause the spell to deliver other sounds for 1 round, or merely have the whispering wind seem to be a faint stirring of the air. You can likewise cause the whispering wind to move as slowly as 1 mile per hour or as quickly as 1 mile per 10 minutes.
-\spellnotes This spell cannot speak verbal components, use command words, or activate magical effects.
+\spelleffect You send a message on the wind to a specified location within range. The message must be twenty-five words or less, and speaking the message must not take longer than five rounds. You must know an approximate path for the wind to travel to reach the destination. The wind travels along that path at a speed you specify, up to 50 feet per round.
+
+Until the wind reaches its destination, it is only detectable as a breeze. As soon as it arrives, it delivers the message audibly before dissipating.
+\spellnotes The wind's pronunciation is too inexact to activate effects that require command words.
 \ritualcost*{2}
 
 \spellsection{Wind Walk}{6}
 \spellinfo{Transmutation (Polymorph) [Air]}{Divine, Nature}
-\spelltime{1 standard action}
-\spelltwocol{\spelltgts{You and up to four touched creatures}}{\spellrng{Touch}}
+\spelltime{1 minute}
+\spellrng{Touch}
 \spelldur{\durext \dismissable; see text}
 \spellsr{Yes}
-\spelleffect \par You alter the substance of your body to a cloudlike vapor (as the \spell{gaseous form} spell) and move through the air, possibly at great speed. You can take other creatures with you, each of which acts independently.
-\par Normally, a wind walker flies at a speed of 10 feet with perfect maneuverability. If desired by the subject, a magical wind wafts a wind walker along at up to 600 feet per round (60 mph) with poor maneuverability. Wind walkers are not invisible but rather appear misty and translucent. If fully clothed in white, they are likely to be mistaken for clouds, fog, vapors, or the like.
-\par A wind walker can regain its physical form as desired and later resume the cloud form. Each change to and from vaporous form takes 5 rounds, which counts toward the duration of the ritual (as does any time spent in physical form). As noted above, you can dismiss the ritual, and you can even dismiss it for individual wind walkers and not others.
-\par For the last minute of the ritual's duration, a wind walker in cloud form automatically descends 60 feet per round (for a total of 600 feet), though it may descend faster if it wishes. This descent serves as a warning that the ritual is about to end.
+\begin{spelltargets}{Five creatures}
+    \spelleffect The target becomes a cloudlike vapor, as \spell{gaseous form}. As a full-round action, it can summon a magical wind to propel it along at a speed of up to 600 feet per round (65 mph) with poor maneuverability.
+
+    By concentrating for five rounds, the target can return to its physical form. This does not end the effect, and it can return to gaseous form by concentrating for five rounds. While transitioning in this way, it is treated as being in its physical form for the purpose of its defenses and magical effects. If its concentration is interrupted, it cannot take any actions until it finishes transforming into either gaseous or physical form.
+
+For the last minute of the ritual's duration, if the target is in its gaseous form, it automatically descends 60 feet per round (for a total of 600 feet), though it may descend faster if it wishes. This descent serves as a warning that the ritual is about to end.
 \ritualcost{6}
 
 \spellsection{Zone of Truth}{2}
@@ -2086,6 +2099,9 @@ This ritual can be made permanent with a \spell{permanency} ritual.
 \spelltwocol{\spellzone{\areamed radius}}{\spellrng{\rngmed}}
 \spelldur{\durmed}
 \spellsr{Yes}
-\spellattack{Will negates}
-\spelleffect Creatures within the area (or those who enter it) can't speak any deliberate and intentional lies. Each potentially affected creature is allowed a save to avoid the effects when the spell is cast or when the creature first enters the area. Affected creatures are aware of this enchantment. Therefore, they may avoid answering questions to which they would normally respond with a lie, or they may be evasive as long as they remain within the boundaries of the truth. Creatures who leave the area are free to speak as they choose.
+\begin{spelltargets}{All creatures in the area}[Magic vs. Will]
+    \spellsuccess The target is unable to speak any deliberate and intentional lies in the area. It is aware of this limitation, and can choose to change its answers to avoid speaking lies.
+    \spellfailure The target is able to lie freely in the area.
+\end{spelltargets}
+\spellnotes Creatures are effected as soon as they enter the area. Leaving and re-entering the area does not cause a new attack to be made.
 \ritualcost{2}
