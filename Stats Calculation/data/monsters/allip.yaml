@@ -11,11 +11,13 @@ dexterity: poor
 wisdom: -4
 charisma: average
 #abilities
-trait: babble
-trait: madness
-trait: wisdom drain
-feat: lightning reflexes
-feat: dodge
+traits:
+    - babble
+    - madness
+    - wisdom drain
+feats:
+    - lightning reflexes
+    - dodge
 #core
 speeds:
     fly: 30

@@ -8,5 +8,7 @@ dexterity: average
 constitution: average
 wisdom: poor
 #abilities
-trait: natural trip
-feat:  track
+traits:
+    - natural trip
+feats: 
+    - track

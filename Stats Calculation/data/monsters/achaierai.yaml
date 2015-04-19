@@ -13,10 +13,12 @@ constitution: average
 intelligence: poor
 wisdom: poor
 #abilities
-trait: black cloud
-feat: dodge
-feat: mobility
-feat: spring attack
+traits:
+    - black cloud
+feats:
+    - dodge
+    - mobility
+    - spring attack
 #core
 size: Large
 speed: 50

@@ -13,7 +13,8 @@ dexterity: good
 constitution: poor
 intelligence: poor
 #abilities
-feat: dodge
+feats:
+    - dodge
 #core
 size: medium
 #fluff

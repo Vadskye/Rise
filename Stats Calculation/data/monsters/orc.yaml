@@ -12,7 +12,8 @@ constitution: poor
 intelligence: -2
 wisdom: -1
 #abilities
-feat: power attack
+feats:
+    - power attack
 #core
 size: medium
 languages: Orc

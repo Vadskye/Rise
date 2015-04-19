@@ -13,8 +13,9 @@ intelligence: -2
 wisdom: poor
 charisma: poor
 #abilities
-trait: carapace
-#feat:  
+traits:
+    - carapace
+#feats:  
 
 #core
 size: huge
