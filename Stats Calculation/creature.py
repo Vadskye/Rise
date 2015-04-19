@@ -622,10 +622,14 @@ class Creature(object):
         self.apply_inactive_abilities()
 
     #parse an attribute from raw_stats
-    def parse_attribute(self, attribute_name, attribute_value):
+    def parse_attribute(self, attribute_name, raw_attribute):
         attribute = self.get_attribute(attribute_name)
-
-        attribute.add_bonus(attribute_value, BASE)
+        # sometimes attributes are raw numbers (usually for classes)
+        try:
+            attribute.add_bonus(int(raw_attribute), BASE)
+        # otherwise attributes are progressions (usually for monsters)
+        except:
+            attribute.set_progression(raw_attribute)
         attribute.set_level(self.level)
 
     def apply_inactive_abilities(self):
