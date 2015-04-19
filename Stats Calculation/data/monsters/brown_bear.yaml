@@ -9,8 +9,10 @@ strength: good
 constitution: good
 wisdom: average
 #abilities
-trait: improved natural weapon
-trait: natural grab
-feat: endurance
-feat: diehard
+traits:
+    - improved natural weapon
+    - natural grab
+feats:
+    - endurance
+    - diehard
 template: brute

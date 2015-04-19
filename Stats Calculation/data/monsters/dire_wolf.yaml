@@ -9,6 +9,7 @@ dexterity: good
 constitution: average
 wisdom: average
 #abilities
-trait: natural trip
-trait: improved natural weapon
+traits:
+    - natural trip
+    - improved natural weapon
 template: scout

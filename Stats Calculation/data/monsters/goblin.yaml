@@ -10,7 +10,8 @@ dexterity: poor+1
 wisdom: -1
 charisma: -3
 #abilities
-feat: swift
+feats:
+    - swift
 #core
 size: small
 speed: 20

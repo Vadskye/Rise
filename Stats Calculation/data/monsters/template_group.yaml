@@ -3,8 +3,8 @@ name:
 creature_type: 
 template: 
 #abilities
-trait: 
-feat:  
+traits: 
+feats:  
 #fluff
 description: 
 combat: 

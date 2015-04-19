@@ -13,12 +13,14 @@ constitution: extreme
 intelligence: -3
 wisdom: -1
 #abilities
-trait: darkvision
-trait: low-light vision
-trait: regeneration
-trait: scent
-feat: power attack
-feat: overpowering assault
+traits:
+    - darkvision
+    - low-light vision
+    - regeneration
+    - scent
+feats:
+    - power attack
+    - overpowering assault
 #core
 size: large
 languages: Troll
