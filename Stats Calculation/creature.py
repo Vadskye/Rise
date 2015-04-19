@@ -506,6 +506,14 @@ class Creature(object):
         self._progressions[progression_type] = value
 
     @property
+    def bab(self):
+        return self._progressions[BAB]
+
+    @property
+    def base_attack_bonus(self):
+        return self._progressions[BAB]
+
+    @property
     def hit_value(self):
         return self._progressions[HIT_VALUE]
 
@@ -770,14 +778,14 @@ class Creature(object):
     def change_progression(self, progression_name, steps_to_change, allow_extreme = False):
         #make sure we're not altering a non-existent progression
         #(though natural armor is allowed to be None, since it is often unset)
-        if self.progressions[progression_name] is None and not progression_name == NATURAL_ARMOR:
+        if self._progressions[progression_name] is None and not progression_name == NATURAL_ARMOR:
             raise Exception("progression "+progression_name+" does not exist, so it can't be altered")
 
         #HIT_VALUE works differently from other progressions
         if progression_name == HIT_VALUE:
-            self.progressions[progression_name] = util.change_hit_value(self.progressions[progression_name], steps_to_change, allow_extreme)
+            self._progressions[progression_name] = util.change_hit_value(self._progressions[progression_name], steps_to_change, allow_extreme)
         else:
-            self.progressions[progression_name] = util.change_progression(self.progressions[progression_name], steps_to_change, allow_extreme)
+            self._progressions[progression_name] = util.change_progression(self._progressions[progression_name], steps_to_change, allow_extreme)
 
     @classmethod
     def from_creature_name(cls, creature_name, level, verbose=False):
