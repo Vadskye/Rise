@@ -577,21 +577,11 @@ class Creature(object):
         self.space, self.reach, self.land_speed = \
                 util.get_size_statistics(self.size)
         #If the creature lists its speeds explicitly, use those instead
-        if SPEEDS in raw_stats.keys() or 'speed' in raw_stats.keys():
-            #Split the raw speeds into each separate speed
-            #Allow either "speed" or "speeds" in creature file
-            try:
-                speeds = util.split_filtered(raw_stats[SPEEDS], ',')
-            except KeyError:
-                speeds = util.split_filtered(raw_stats['speed'], ',')
-            for speed in speeds:
-                speed_mode, speed_value = util.split_descriptor_and_value(speed)
-                if speed_mode in SPEED_MODES:
-                    self.speeds[speed_mode] = speed_value
-                elif speed_mode == 'noland':
-                    self.land_speed = None
-                else:
-                    self.land_speed = speed_value
+        if SPEEDS in raw_stats:
+            for speed_mode in raw_stats[SPEEDS]:
+                self.speeds[speed_mode] = raw_stats[SPEEDS][speed_mode]
+        if 'speed' in raw_stats:
+            self.speeds['land'] = raw_stats['speed']
 
         #set items
         equipment_set = equipment.EquipmentSet.from_raw_stats(
