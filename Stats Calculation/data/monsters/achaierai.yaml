@@ -2,7 +2,8 @@
 name: Achaierai
 creature_type: outsider
 level: 7
-template: warrior
+templates:
+    - warrior
 #items
 weapon: claws
 offhand weapon: claws
