@@ -675,6 +675,10 @@ class Creature(object):
         self.inactive_abilities.append(ability)
         return True
 
+    def add_abilities(self, abilities, check_prerequisites = False, by_object = False):
+        for ability in abilities:
+            self.add_ability(ability, check_prerequisites, by_object)
+
     def add_special_defense(self, special_defense):
         self.special_defenses.append(special_defense)
 
