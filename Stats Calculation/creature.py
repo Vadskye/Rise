@@ -628,7 +628,7 @@ class Creature(object):
         try:
             attribute.add_bonus(int(raw_attribute), BASE)
         # otherwise attributes are progressions (usually for monsters)
-        except:
+        except ValueError:
             attribute.set_progression(raw_attribute)
         attribute.set_level(self.level)
 
