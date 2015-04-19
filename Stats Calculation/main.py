@@ -78,7 +78,7 @@ def print_generic_stats(level):
     print "HP %s, Fort %s, Ref %s, Will %s" % (get_generic_hp()[level],
             0, 0, 0)
 
-def generate_creatures(creature_file_names, level, verbose):
+def generate_creatures(creature_file_names, level = None, verbose = None):
     if creature_file_names is None:
         return
     creatures = list()
@@ -109,8 +109,8 @@ if __name__ == "__main__":
             allies.append(generate_creatures(args['allies'], level, args['verbose']))
             enemies.append(generate_creatures(args['enemies'], level, args['verbose']))
     else:
-        allies = generate_creatures(args['allies'], int(args['level']), args['verbose'])
-        enemies = generate_creatures(args['enemies'], int(args['level']), args['verbose'])
+        allies = generate_creatures(args['allies'], args['level'], args['verbose'])
+        enemies = generate_creatures(args['enemies'], args['level'], args['verbose'])
 
         if allies:
             print "allies:"
