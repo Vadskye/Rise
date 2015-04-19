@@ -868,11 +868,14 @@ class Creature(object):
         return text
 
     #Get abilities either with or without a given tag
-    def get_abilities_by_tag(self, tag, with_tag = True):
+    def get_abilities_by_tag(self, tag, with_tag = True, include_inactive = False):
+        valid_abilities = self.abilities['active']
+        if include_inactive:
+            valid_abilities += self.abilities['inactive']
         if with_tag:
-            return filter(lambda a: a.has_tag(tag), self.abilities)
+            return filter(lambda a: a.has_tag(tag), valid_abilities)
         else:
-            return filter(lambda a: not a.has_tag(tag), self.abilities)
+            return filter(lambda a: not a.has_tag(tag), valid_abilities)
 
     def new_round(self):
         self.damage_reduction.refresh()
@@ -1032,8 +1035,8 @@ class Creature(object):
         header =  '\\subsection{%s}\n\\begin{mstatblock}\n' % self.meta[NAME].title()
 
         subheader = r'%s %s %s \hfill \textbf{CR} %s' % (
-                self.meta[ALIGNMENT].title(), self.core[SIZE].title(),
-                self.meta[NAME], self.level)
+                self.alignment.title(), self.size.title(),
+                self.name, self.level)
         subheader += ENDLINE
         #if self.subtypes:
         #    types +=' {0}'.format()
@@ -1117,7 +1120,7 @@ class Creature(object):
 
             attacks += ENDLINE
 
-        base_maneuver_bonus = self.attack_bonus.base_attack_bonus + util.get_size_modifier(self.core[SIZE])
+        base_maneuver_bonus = self.attack_bonus.base_attack_bonus + util.get_size_modifier(self.size)
         attacks+= r'\textbf{BAB} %s; \textbf{Maneuvers} %s (Str), %s (Dex)' % (
                 self.attack_bonus.base_attack_bonus,
                 util.mstr(base_maneuver_bonus + self.strength.get_total()),
