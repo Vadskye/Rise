@@ -1,5 +1,7 @@
 name: dire wolf
 creature_type: animal
+template:
+    - scout
 weapon: bite
 size: large
 level: 6
@@ -12,4 +14,3 @@ wisdom: average
 traits:
     - natural trip
     - improved natural weapon
-template: scout

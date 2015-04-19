@@ -1,5 +1,7 @@
 name: brown bear
 creature_type: animal
+template:
+    - brute
 weapon: claws
 offhand weapon: claws
 size: large
@@ -15,4 +17,3 @@ traits:
 feats:
     - endurance
     - diehard
-template: brute

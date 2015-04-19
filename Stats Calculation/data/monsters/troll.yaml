@@ -1,7 +1,8 @@
 #meta
 name: troll
 creature_type: monstrous humanoid
-template: warrior
+template:
+    - warrior
 level: 6
 #items
 weapon: slam

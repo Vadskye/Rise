@@ -1,7 +1,8 @@
 #meta
 name: orc warrior
 creature_type: humanoid
-template: warrior
+template:
+    - warrior
 #items
 weapon: heavy_melee
 armor: light
