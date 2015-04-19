@@ -1,5 +1,7 @@
 name: black bear
 creature_type: animal
+template:
+    - brute
 weapon: claws
 offhand weapon: claws
 level: 4
@@ -11,4 +13,3 @@ wisdom: average
 feats:
     - endurance
     - diehard
-template: brute

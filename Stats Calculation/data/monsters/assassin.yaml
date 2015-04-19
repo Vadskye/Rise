@@ -1,7 +1,8 @@
 #meta
 name: assassin
 creature_type: humanoid
-template: warrior
+template:
+    - warrior
 level: 2
 #items
 weapon: light_melee

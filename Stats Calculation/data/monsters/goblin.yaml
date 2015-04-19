@@ -1,7 +1,8 @@
 #meta
 name: goblin warrior
 creature_type: humanoid
-template: warrior
+template:
+    - warrior
 #items
 weapon: light_melee
 armor: light
