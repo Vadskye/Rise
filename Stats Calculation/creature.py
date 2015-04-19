@@ -564,7 +564,7 @@ class Creature(object):
             self.combat_description = raw_stats[COMBAT_DESCRIPTION]
 
         #Add all the abilities to the character
-        for ability_type in ABILITY_TYPES:
+        for ability_type in ABILITY_TYPE_GROUPS:
             if ability_type in raw_stats.keys():
                 for ability_name in raw_stats[ability_type]:
                     self.add_ability(ability_name)
