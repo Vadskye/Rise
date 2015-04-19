@@ -1,7 +1,0 @@
-name=Ftr-dex
-race=human
-class=fighter
-weapon=light_melee
-armor=medium
-shield=heavy
-attributes=warrior_dex

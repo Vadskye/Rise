@@ -1,0 +1,10 @@
+name: Silk
+race: human
+class: rogue
+weapon: light_melee
+offhand weapon: light_melee
+armor: light
+attributes: silk
+feats:
+    - two-weapon fighting
+    - two-weapon defense
