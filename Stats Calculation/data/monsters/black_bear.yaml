@@ -1,0 +1,13 @@
+name: black bear
+creature_type: animal
+weapon: claws
+offhand weapon: claws
+level: 4
+#attributes
+strength: good
+constitution: good
+wisdom: average
+#abilities
+feat: endurance
+feat: diehard
+template: brute

@@ -1,0 +1,12 @@
+name: wolf
+creature_type: animal
+weapon: bite
+level: 2
+#attributes
+strength: good
+dexterity: average
+constitution: average
+wisdom: poor
+#abilities
+trait: natural trip
+feat:  track

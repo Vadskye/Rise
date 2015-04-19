@@ -1,0 +1,16 @@
+name: brown bear
+creature_type: animal
+weapon: claws
+offhand weapon: claws
+size: large
+level: 8
+#attributes
+strength: good
+constitution: good
+wisdom: average
+#abilities
+trait: improved natural weapon
+trait: natural grab
+feat: endurance
+feat: diehard
+template: brute
