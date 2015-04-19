@@ -517,6 +517,10 @@ def lower_encumbrance(encumbrance):
             'none': 'none',
             }[encumbrance]
 
+def split_filtered(text, split_on = ' '):
+    # filter None rmoves all elements that evaluate to False
+    return filter(None, re.split(split_on, text))
+
 #return probability that attack hits
 def hit_probability(attack_bonus, ac):
     probability = (21+attack_bonus-ac)/20.0
