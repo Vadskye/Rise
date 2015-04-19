@@ -92,6 +92,7 @@ ABILITY_TEMPLATE = 'template'
 ABILITY_FEAT = 'feat'
 ABILITY_TRAIT = 'trait'
 ABILITY_TYPES = set((ABILITY, ABILITY_TEMPLATE, ABILITY_FEAT, ABILITY_TRAIT))
+ABILITY_TYPE_GROUPS = set('abilities templates feats traits'.split())
 
 WEAPON_PRIMARY = 'primary weapon'
 WEAPON_SECONDARY = 'secondary weapon'
