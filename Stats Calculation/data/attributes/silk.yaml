@@ -1,0 +1,8 @@
+strength: 2
+dexterity: 4
+constitution: 2 
+intelligence: 4
+wisdom: 1
+charisma: 3
+primary: dexterity
+secondary: charisma

@@ -11,6 +11,7 @@ def generate_creature_from_file_name(original_file_name, level=None, verbose=Fal
         
     creature_file = open(file_name, 'r')
     raw_stats = util.parse_stats_from_file(creature_file)
+    print 'raw_stats', raw_stats
     assert raw_stats
     if level is not None:
         raw_stats[LEVEL] = level
@@ -613,17 +614,18 @@ class Creature(object):
                         raw_stats[attribute_name])
             except KeyError:
                 self.print_verb('missing attribute: '+attribute_name)
+        if 'primary' in raw_stats:
+            self.get_attribute(raw_stats['primary']).set_progression('primary')
+        if 'secondary' in raw_stats:
+            self.get_attribute(raw_stats['secondary']).set_progression('secondary')
 
         self.apply_inactive_abilities()
 
     #parse an attribute from raw_stats
-    def parse_attribute(self, attribute_name, raw_attribute):
-        progression, starting_value = util.split_descriptor_and_value(raw_attribute)
-
+    def parse_attribute(self, attribute_name, attribute_value):
         attribute = self.get_attribute(attribute_name)
 
-        attribute.add_bonus(starting_value, BASE)
-        attribute.set_progression(progression)
+        attribute.add_bonus(attribute_value, BASE)
         attribute.set_level(self.level)
 
     def apply_inactive_abilities(self):

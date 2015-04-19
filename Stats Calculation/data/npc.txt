@@ -1,7 +1,0 @@
-name=NPC
-race=human
-class=warrior
-weapon=medium_melee
-armor=medium
-shield=heavy
-attributes=npc_warrior

@@ -1,4 +1,0 @@
-name=Monk-unarmed
-race=human
-class=monk
-attributes=monk

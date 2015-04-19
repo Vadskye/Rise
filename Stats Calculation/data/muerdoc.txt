@@ -1,4 +1,0 @@
-name=Muerdoc
-race=human
-class=monk
-attributes=muerdoc

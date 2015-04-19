@@ -1,0 +1,7 @@
+name: Monk-unarmed
+race: human
+class: monk
+attributes: monk
+feats:
+    - two-weapon fighting
+    - two-weapon defense

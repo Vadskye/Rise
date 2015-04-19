@@ -1,7 +1,0 @@
-name=Ftr-heavy
-race=human
-class=fighter
-weapon=heavy_melee
-armor=heavy
-attributes=warrior
-trait=armor discipline (resilience)

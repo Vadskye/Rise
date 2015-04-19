@@ -1,7 +1,0 @@
-name=Sorcerer
-race=human
-class=sorcerer
-weapon=unarmed
-armor=light
-shield=heavy
-attributes=sorcerer

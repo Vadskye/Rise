@@ -1,0 +1,8 @@
+name: Ftr-heavy
+race: human
+class: fighter
+weapon: heavy_melee
+armor: heavy
+attributes: warrior_dex
+feats:
+    - overwhelming force

@@ -1,7 +1,0 @@
-name=Cleric-warrior
-race=human
-class=cleric
-armor=medium
-shield=heavy
-weapon=medium_melee
-attributes=cleric_warrior
