@@ -11,8 +11,8 @@ intelligence:
 wisdom: 
 charisma: 
 #abilities
-trait: 
-feat:  
+traits: 
+feats: 
 #core
 size: 
 speed: 
