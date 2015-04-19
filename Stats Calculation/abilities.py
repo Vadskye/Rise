@@ -249,7 +249,7 @@ Ability.create_ability('regeneration', tags=[TAG_DEFENSE])
 ####################
 
 def warrior_prerequisites(creature):
-    return creature.progressions[BAB] is not None and creature.progressions[HIT_VALUE] is not None
+    return creature.base_attack_bonus is not None and creature.hit_value is not None
 def warrior_benefit(creature):
     creature.improve_progression(BAB)
     creature.improve_progression(HIT_VALUE)
@@ -257,7 +257,7 @@ Ability.create_ability('warrior', benefit = warrior_benefit,
         meets_prerequisites = warrior_prerequisites, tags=[ABILITY_TEMPLATE])
 
 def antiwarrior_prerequisites(creature):
-    return creature.progressions[BAB] is not None and creature.progressions[HIT_VALUE] is not None
+    return creature.base_attack_bonus is not None and creature.hit_value is not None
 def antiwarrior_benefit(creature):
     creature.reduce_progression(BAB)
     creature.reduce_progression(HIT_VALUE)
@@ -265,7 +265,7 @@ Ability.create_ability('antiwarrior', benefit = antiwarrior_benefit,
         meets_prerequisites = antiwarrior_prerequisites, tags=[ABILITY_TEMPLATE])
 
 def brute_prerequisites(creature):
-    return creature.progressions[FORT] is not None and creature.progressions[HIT_VALUE] is not None
+    return creature.fortitude is not None and creature.hit_value is not None
 def brute_benefit(creature):
     util.improve_hv(creature.get_class_progression())
     util.improve_save(creature.get_class_progression(), FORTITUDE)
@@ -273,7 +273,7 @@ Ability.create_ability('brute', benefit = brute_benefit,
         meets_prerequisites = brute_prerequisites, tags=[ABILITY_TEMPLATE])
 
 def scout_prerequisites(creature):
-    return creature.progressions[REFLEX] is not None and creature.get_all_speeds() is not None
+    return creature.reflex is not None and creature.get_all_speeds() is not None
 def scout_benefit(creature):
     util.improve_save(creature.get_class_progression(), REFLEX)
     for speed_mode in creature.get_speed_modes():
