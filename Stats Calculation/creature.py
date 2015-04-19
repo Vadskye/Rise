@@ -11,7 +11,6 @@ def generate_creature_from_file_name(original_file_name, level=None, verbose=Fal
         
     creature_file = open(file_name, 'r')
     raw_stats = util.parse_stats_from_file(creature_file)
-    print 'raw_stats', raw_stats
     assert raw_stats
     if level is not None:
         raw_stats[LEVEL] = level
