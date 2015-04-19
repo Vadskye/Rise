@@ -67,7 +67,7 @@ class Ability(object):
     def create_feat(cls, name, benefit = None, meets_prerequisites = None,
             tags = None, value = None, text = None):
         feat_tags = set()
-        feat_tags.add('feat')
+        feat_tags.add(ABILITY_FEAT)
         if tags is not None:
             for tag in tags:
                 feat_tags.add(tag)
@@ -130,7 +130,7 @@ def two_weapon_fighting_prerequisites(creature):
 
 Ability.create_ability('two-weapon fighting', two_weapon_fighting_benefit,
         two_weapon_fighting_prerequisites,
-        set(('feat', 'combat', 'finesse')))
+        set((ABILITY_FEAT, 'combat', 'finesse')))
 
 def two_weapon_defense_benefit(creature):
     if creature.secondary_weapon:
@@ -138,7 +138,7 @@ def two_weapon_defense_benefit(creature):
         creature.armor_class.shield.add_bonus(bonus, 'shield')
 Ability.create_ability('two-weapon defense', two_weapon_defense_benefit,
         two_weapon_fighting_prerequisites,
-        set(('feat', 'combat', 'defense', 'finesse')))
+        set((ABILITY_FEAT, 'combat', 'defense', 'finesse')))
 
 def combat_expertise_benefit(creature):
     creature.attack_bonus.add_bonus(-util.bab_scale(creature.level),
@@ -147,7 +147,7 @@ def combat_expertise_benefit(creature):
             'combat expertise')
 Ability.create_ability('combat expertise', combat_expertise_benefit, 
         lambda creature: creature.attributes.intelligence.get_total() >= 3,
-        set(('feat', 'combat', 'defense', 'style')))
+        set((ABILITY_FEAT, 'combat', 'defense', 'style')))
 
 def power_attack_benefit(creature):
     creature.attack_bonus.add_bonus(-util.bab_scale(creature.level), 
@@ -163,7 +163,7 @@ def power_attack_benefit(creature):
                 'power attack')
 Ability.create_ability('power attack', power_attack_benefit, lambda creature:
         creature.strength.get_total() >= 3,
-        ['feat', 'combat', 'power', 'style'])
+        [ABILITY_FEAT, 'combat', 'power', 'style'])
 
 def deadly_aim_benefit(creature):
     creature.attack_bonus.add_bonus(-util.bab_scale(creature.level), 
@@ -173,7 +173,7 @@ def deadly_aim_benefit(creature):
             'deadly aim')
 Ability.create_ability('deadly aim', deadly_aim_benefit, lambda creature:
         creature.dexterity.get_total() >= 3,
-        set(('feat', 'combat', 'precision', 'style')))
+        set((ABILITY_FEAT, 'combat', 'precision', 'style')))
 
 Ability.create_feat('endurance', tags=[TAG_DEFENSE])
 Ability.create_feat('diehard', tags=[TAG_DEFENSE])
