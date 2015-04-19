@@ -3,6 +3,7 @@ import math
 import dice
 from strings import *
 import os.path
+import yaml
 
 d20 = dice.dx(20)
 
@@ -10,8 +11,8 @@ def fix_creature_file_name(file_name):
     for directory_path in ('', 'data/', 'data/monsters/'):
         if os.path.isfile(directory_path+file_name):
             return directory_path+file_name
-        if os.path.isfile(directory_path+file_name+'.txt'):
-            return directory_path+file_name+'.txt'
+        if os.path.isfile(directory_path+file_name+'.yaml'):
+            return directory_path+file_name+'.yaml'
     return False
 
 class Modifier(object):
@@ -310,51 +311,12 @@ def sum_armor(armor, natural_armor):
         return natural_armor + ifloor(armor/2)
 
 def parse_stats_from_file(input_file):
-    stats=dict()
-    for line in input_file:
-        line = line.strip().lower()
-        #ignore comments
-        line = line.split('#',1)[0]
-        #ignore blank lines
-        if line == '':
-            continue
-        #Separate data from data label
-        line = line.split('=',1)
-        #add the key, avoiding key overlap
-        try:
-            key = line[0].strip()
-            val = line[1].strip()
-        except IndexError:
-            raise Exception("Could not parse line into two pieces", line)
-        i=1
-        #abilities can appear multiple times and are always stored as a list
-        if key in ABILITY_TYPES:
-            if re.search(r'\*\d', val):
-                #If the ability ends with *3 or some other number, it should
-                #be stored multiple times
-                    val = val.split('*', 1)
-                    times_to_add_ability = int(val[1])
-                    val = val[0].strip()
-            else:
-                times_to_add_ability = 1
-            for i in xrange(times_to_add_ability):
-                try:
-                    stats[key].append(val)
-                except:
-                    stats[key] = list()
-                    stats[key].append(val)
-        #Normal values are stored singularly, and should error on duplicates
-        else:
-            if stats.has_key(key):
-                raise Exception('Multiple keys: '+key)
-            else:
-                stats[key] = val
-
+    stats = yaml.load(input_file)
     #If the attributes are referenced in an external file, add them
     #to the raw stats referenced here.
     #Otherwise, assume the attributes are present in the original file
-    if 'attributes' in stats.keys():
-        attribute_filename = 'data/attributes/'+stats['attributes']+'.txt'
+    if 'attributes' in stats:
+        attribute_filename = 'data/attributes/'+stats['attributes']+'.yaml'
         attribute_file = open(attribute_filename, 'r')
         attribute_stats = parse_stats_from_file(attribute_file)
         #Add the attributes to the stats to be returned
@@ -554,21 +516,6 @@ def lower_encumbrance(encumbrance):
             'light': 'none',
             'none': 'none',
             }[encumbrance]
-
-def split_filtered(text, split_on=' '):
-    #filter None removes all elements that evaluate to False
-    return filter(None, re.split(split_on, text))
-
-def split_descriptor_and_value(text, split_on='[ +,]'):
-    text = split_filtered(text, split_on)
-    descriptor = None
-    value = 0
-    for elem in text:
-        if is_number(elem):
-            value = int(elem)
-        else:
-            descriptor = elem
-    return (descriptor, value)
 
 #return probability that attack hits
 def hit_probability(attack_bonus, ac):
