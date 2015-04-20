@@ -3,5 +3,6 @@ race: human
 class: average
 armor: medium
 shield: heavy
-weapon: medium_melee
+weapons:
+    primary: medium_melee
 attributes: warrior

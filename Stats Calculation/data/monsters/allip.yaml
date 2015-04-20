@@ -6,7 +6,8 @@ template:
     - antiwarrior
 level: 6
 #items
-weapon: wisdom drain
+weapons:
+    primary: wisdom drain
 #attributes
 dexterity: poor
 wisdom: -4

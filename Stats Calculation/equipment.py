@@ -28,6 +28,8 @@ class Weapon(object):
 
     @classmethod
     def from_weapon_name(cls, weapon_name):
+        if weapon_name is None:
+            return None
         return {
                 'heavy_melee': cls('heavy melee', ENCUMBRANCE_HEAVY,
                     ATTACK_TYPE_MELEE, [DAMAGE_PHYSICAL], 'd10'),
@@ -61,6 +63,8 @@ class Armor:
 
     @classmethod
     def from_armor_name(cls, armor_name):
+        if armor_name is None:
+            return None
         return {
                 'heavy': cls(8, ENCUMBRANCE_HEAVY, ARMOR_TYPE_BODY),
                 'medium': cls(6, ENCUMBRANCE_MEDIUM, ARMOR_TYPE_BODY),
@@ -70,6 +74,8 @@ class Armor:
 
     @classmethod
     def from_shield_name(cls, shield_name):
+        if shield_name is None:
+            return None
         return {
                 'tower': Armor(4, ENCUMBRANCE_MEDIUM, ARMOR_TYPE_SHIELD),
                 'heavy': Armor(2, ENCUMBRANCE_NONE, ARMOR_TYPE_SHIELD),
@@ -86,21 +92,9 @@ class EquipmentSet:
 
     @classmethod
     def from_raw_stats(cls, raw_stats):
-        keys = raw_stats.keys()
-        if 'weapon' in keys:
-            weapon = raw_stats['weapon']
-        else:
-            weapon = 'none'
-        if 'offhand weapon' in keys:
-            offhand_weapon = raw_stats['offhand weapon']
-        else:
-            offhand_weapon = 'none'
-        if 'armor' in keys:
-            armor = raw_stats['armor']
-        else:
-            armor = 'none'
-        if 'shield' in keys:
-            shield = raw_stats['shield']
-        else:
-            shield = 'none'
-        return cls(weapon, offhand_weapon, armor, shield)
+        if 'weapons' in raw_stats:
+            primary_weapon = raw_stats['weapons']['primary'] if 'primary' in raw_stats['weapons'] else None
+            secondary_weapon = raw_stats['weapons']['secondary'] if 'secondary' in raw_stats['weapons'] else None
+        armor = raw_stats['armor'] if 'armor' in raw_stats else None
+        shield = raw_stats['shield'] if 'shield' in raw_stats else None
+        return cls(primary_weapon, secondary_weapon, armor, shield)

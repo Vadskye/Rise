@@ -2,8 +2,9 @@ name: brown bear
 creature_type: animal
 template:
     - brute
-weapon: claws
-offhand weapon: claws
+weapons:
+    primary: claws
+    secondary: claws
 size: large
 level: 8
 #attributes

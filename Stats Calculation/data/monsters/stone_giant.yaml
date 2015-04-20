@@ -6,7 +6,8 @@ template:
 level: 16
 armor: medium
 #items
-weapon: slam
+weapons:
+    primary: slam
 #attributes
 strength: good
 constitution: good

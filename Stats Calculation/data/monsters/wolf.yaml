@@ -1,6 +1,7 @@
 name: wolf
 creature_type: animal
-weapon: bite
+weapons:
+    primary: bite
 level: 2
 #attributes
 strength: good

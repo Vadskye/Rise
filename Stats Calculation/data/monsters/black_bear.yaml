@@ -2,8 +2,9 @@ name: black bear
 creature_type: animal
 template:
     - brute
-weapon: claws
-offhand weapon: claws
+weapons:
+    primary: claws
+    secondary: claws
 level: 4
 #attributes
 strength: good

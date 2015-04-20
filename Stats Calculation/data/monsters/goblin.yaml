@@ -4,7 +4,8 @@ creature_type: humanoid
 template:
     - warrior
 #items
-weapon: light_melee
+weapons:
+    primary: light_melee
 armor: light
 #attributes
 dexterity: poor+1

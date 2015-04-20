@@ -1,7 +1,8 @@
 name: Ftr-dex
 race: human
 class: fighter
-weapon: light_melee
+weapons:
+    primary: light_melee
 armor: medium
 shield: heavy
 attributes: warrior_dex

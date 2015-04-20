@@ -1,7 +1,8 @@
 name: Brb-defensive
 race: human
 class: barbarian
-weapon: medium_melee
+weapons:
+    primary: medium_melee
 armor: heavy
 shield: heavy
 attributes: warrior

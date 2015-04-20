@@ -2,7 +2,7 @@
 name: 
 creature_type: 
 #items
-weapon: 
+weapons: 
 #attributes
 strength: 
 dexterity: 

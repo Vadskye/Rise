@@ -5,8 +5,9 @@ level: 7
 templates:
     - warrior
 #items
-weapon: claws
-offhand weapon: claws
+weapons:
+    primary: claws
+    secondary: claws
 #attributes
 strength: average
 dexterity: good

@@ -3,7 +3,8 @@ name: small animated object
 group: animated object
 level: 1
 #items
-weapon: slam
+weapons:
+    primary: slam
 #attributes
 strength: average-4
 dexterity: poor+2
