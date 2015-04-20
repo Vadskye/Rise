@@ -389,16 +389,13 @@ def dict_match_prefix(input_dict, prefix):
             output_dict[key_without_prefix] = input_dict[key]
     return output_dict
 
-def attack_hits(attack_bonus, defense, threshold = None):
+def attack_hits(attack_bonus, defense):
     if attack_bonus is None:
         return False
     elif defense is None:
         return True
     attack_result = d20.roll() + attack_bonus
-    if threshold:
-        return attack_result >= defense, attack_result-threshold >= defense
-    else:
-        return attack_result >= defense
+    return attack_result >= defense
 
 #return number of attacks this base attack bonus grants
 def attack_count(base_attack_bonus):
