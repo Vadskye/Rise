@@ -4,7 +4,8 @@ creature_type: humanoid
 template:
     - warrior
 #items
-weapon: heavy_melee
+weapons:
+    primary: heavy_melee
 armor: light
 #attributes
 strength: average+1

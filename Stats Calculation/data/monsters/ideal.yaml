@@ -9,4 +9,5 @@ intelligence: average
 wisdom: average
 charisma: average
 #items
-weapon: medium_melee
+weapons:
+    primary: medium_melee

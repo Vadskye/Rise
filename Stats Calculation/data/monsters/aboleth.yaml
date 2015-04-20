@@ -5,7 +5,8 @@ level: 9
 templates:
     - warrior
 #items
-weapon: tentacles
+weapons:
+    primary: tentacles
 #attributes
 strength: average
 constitution: good

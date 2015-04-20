@@ -3,7 +3,8 @@ name: medium animated object
 group: animated object
 level: 2
 #items
-weapon: slam
+weapons:
+    primary: slam
 #attributes
 strength: average
 dexterity: poor
