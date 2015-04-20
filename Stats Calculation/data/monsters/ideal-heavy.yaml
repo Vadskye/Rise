@@ -1,0 +1,13 @@
+#meta
+name: ideal
+creature_type: ideal
+#attributes
+strength: good
+dexterity: average
+constitution: average
+intelligence: average
+wisdom: average
+charisma: average
+#items
+weapons:
+    primary: heavy_melee
