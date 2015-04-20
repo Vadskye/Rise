@@ -1,7 +1,8 @@
 name: Wizard
 race: human
 class: wizard
-weapon: unarmed
+weapons:
+    primary: unarmed
 armor: light
 shield: heavy
 attributes: wizard

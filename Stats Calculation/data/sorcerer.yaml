@@ -1,7 +1,8 @@
 name: Sorcerer
 race: human
 class: sorcerer
-weapon: unarmed
+weapons:
+    primary: unarmed
 armor: light
 shield: heavy
 attributes: sorcerer

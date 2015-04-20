@@ -2,7 +2,8 @@ name: dire wolf
 creature_type: animal
 template:
     - scout
-weapon: bite
+weapons:
+    primary: bite
 size: large
 level: 6
 #attributes
