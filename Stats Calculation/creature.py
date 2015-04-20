@@ -850,6 +850,8 @@ class Creature(object):
         return defenses
 
     def _to_string_attacks(self):
+        attack_progression = ', '.join([util.mstr(x) for x in self.get_physical_attack_bonus_progression()])
+
         damage = '0'
         if self.primary_weapon:
             die = self.primary_weapon_damage.die
@@ -865,10 +867,7 @@ class Creature(object):
             bonus = self.secondary_weapon_damage.get_total(ignore_die=True)
             if bonus:
                 damage += util.mstr(bonus)
-        attacks = '[Atk] {0}: {1}'.format(
-                util.mstr(self.attack_bonus.get_total()),
-                damage
-                )
+        attacks = '[Atk] {0}: {1}'.format(attack_progression, damage)
         return attacks
 
     def _to_string_attributes(self):
