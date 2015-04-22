@@ -76,14 +76,8 @@ class Modifier(object):
             pass
         self._update()
 
-    def add_inherent(self, bonus_value):
-        self.add_bonus(bonus_value, 'inherent')
-
     def add_enhancement(self, bonus_value):
         self.add_bonus(bonus_value, 'enhancement')
-
-    def add_competence(self, bonus_value):
-        self.add_bonus(bonus_value, 'competence')
 
     def _update(self):
         total = 0
