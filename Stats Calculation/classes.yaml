@@ -2,19 +2,29 @@ average:
     name: Average
     race: human
     class: average
-    equipment: standard_warrior
+    equipment: medium
     attributes: warrior
 barbarian:
     name: Barbarian
     race: human
     class: barbarian
-    equipment: medium_2hf
+    armor: medium
+    equipment: 2hf
     attributes: warrior_dex
     variants:
+        2wf:
+            name: Barbarian (2wf)
+            equipment: 2wf
+            feats:
+                - two-weapon fighting
+                - two-weapon defense
         defensive:
             name: Barbarian (defensive)
             equipment: heavy
             attributes: warrior
+        sobo:
+            name: Barbarian (sobo)
+            equipment: sobo
 cleric:
     name: Cleric
     race: human
@@ -31,12 +41,16 @@ fighter:
     variants: 
         2wf:
             name: Fighter (2wf)
-            equipment: medium_2wf_finesse
+            armor: medium
+            equipment: 2wf
             attributes: warrior_dex
             feats:
                 - two-weapon fighting
                 - two-weapon defense
             trait: armor discipline (agility)
+        2hf: 
+            name: Fighter (2hf)
+            equipment: 2hf
         dex:
             name: Fighter (dex)
             weapons:
@@ -47,7 +61,7 @@ fighter:
             trait: armor discipline (agility)
         heavy:
             name: Fighter (heavy)
-            equipment: heavy_2hf
+            equipment: 2hf
             feats:
                 - overwhelming force
 monk:
@@ -68,6 +82,9 @@ paladin:
     class: paladin
     equipment: heavy
     attributes: cleric_warrior
+    variants:
+        2wf:
+            
 rogue:
     name: Rogue
     race: human
@@ -77,7 +94,7 @@ rogue:
     variants:
         2wf:
             name: Rogue (2wf)
-            equipment: light_2wf
+            equipment: 2wf
             feats:
                 - two-weapon fighting
                 - two-weapon defense
@@ -105,7 +122,7 @@ warrior:
             equipment: heavy
         2wf:
             name: Warrior (2wf)
-            equipment: medium_2wf_finesse
+            equipment: 2wf
             attributes: warrior_dex
             feats:
                 - two-weapon fighting
