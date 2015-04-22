@@ -1,8 +1,0 @@
-name: Rogue-single
-race: human
-class: rogue
-weapons:
-    primary: light_melee
-armor: light
-shield: light
-attributes: warrior_dex

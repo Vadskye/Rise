@@ -1,8 +1,0 @@
-name: Rogue-twf
-race: human
-class: rogue
-weapons:
-    primary: light_melee
-    secondary: light_melee
-armor: light
-attributes: warrior_dex

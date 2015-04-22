@@ -1,8 +1,0 @@
-name: Ftr-2wf
-race: human
-class: fighter
-weapons:
-    primary: light_melee
-    secondary: light_melee
-armor: medium
-attributes: warrior_dex

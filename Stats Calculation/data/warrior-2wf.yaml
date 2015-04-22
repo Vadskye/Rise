@@ -1,8 +1,0 @@
-name: Warrior
-race: human
-class: warrior
-weapons:
-    primary: light_melee
-    secondary: light_melee
-armor: medium
-attributes: warrior_dex

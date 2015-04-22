@@ -1,8 +1,0 @@
-name: Wizard
-race: human
-class: wizard
-weapons:
-    primary: unarmed
-armor: light
-shield: heavy
-attributes: wizard
