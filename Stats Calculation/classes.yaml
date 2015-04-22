@@ -41,7 +41,8 @@ fighter:
     class: fighter
     equipment: heavy
     attributes: warrior
-    trait: armor discipline (resilience)
+    traits:
+        - armor discipline (resilience)
     variants: 
         2wf:
             weapons:
@@ -68,7 +69,8 @@ fighter:
                 - two-weapon fighting
                 - two-weapon defense
             attributes: warrior_dex
-            trait: armor discipline (agility)
+            traits: 
+                - armor discipline (agility)
         2hf: 
             weapons:
                 primary: heavy_melee
@@ -76,10 +78,12 @@ fighter:
             shield: ~
         dex:
             attributes: warrior_dex
-            trait: armor discipline (agility)
+            traits: 
+                - armor discipline (agility)
         dex_secondary:
             attributes: warrior_dex_secondary
-            trait: armor discipline (agility)
+            traits: 
+                - armor discipline (agility)
         nofeats:
             feats: []
 monk:
