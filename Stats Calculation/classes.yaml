@@ -14,7 +14,6 @@ barbarian:
     attributes: warrior_dex
     variants:
         2wf:
-            name: Barbarian (2wf)
             weapons:
                 primary: light_melee
                 secondary: light_melee
@@ -23,13 +22,12 @@ barbarian:
                 - two-weapon fighting
                 - two-weapon defense
         defensive:
-            name: Barbarian (defensive)
             equipment: heavy
             attributes: warrior
         sobo:
-            name: Barbarian (sobo)
             weapons:
                 primary: medium_melee
+                secondary: ~
             shield: heavy
 cleric:
     name: Cleric
@@ -46,37 +44,50 @@ fighter:
     trait: armor discipline (resilience)
     variants: 
         2wf:
-            name: Fighter (2wf)
-            armor: medium
             weapons:
                 primary: light_melee
                 secondary: light_melee
             shield: ~
-            attributes: warrior_dex
             feats:
                 - two-weapon fighting
                 - two-weapon defense
-            trait: armor discipline (agility)
-        2hf: 
-            name: Fighter (2hf)
+        2wf_medium:
             weapons:
-                primary: heavy_melee
+                primary: medium_melee
+                secondary: medium_melee
             shield: ~
-        dex:
-            name: Fighter (dex)
+            feats:
+                - two-weapon fighting
+                - two-weapon defense
+        2wf_dex:
             weapons:
                 primary: light_melee
-            armor: medium
-            shield: heavy
+                secondary: light_melee
+            shield: ~
+            feats:
+                - two-weapon fighting
+                - two-weapon defense
             attributes: warrior_dex
             trait: armor discipline (agility)
+        2hf: 
+            weapons:
+                primary: heavy_melee
+                secondary: ~
+            shield: ~
+        dex:
+            attributes: warrior_dex
+            trait: armor discipline (agility)
+        dex_secondary:
+            attributes: warrior_dex_secondary
+            trait: armor discipline (agility)
         heavy:
-            name: Fighter (heavy)
             weapons:
                 primary: heavy_melee
             shield: ~
             feats:
                 - overwhelming force
+        nofeats:
+            feats: []
 monk:
     name: Monk
     race: human
@@ -105,6 +116,8 @@ paladin:
             feats:
                 - two-weapon fighting
                 - two-weapon defense
+        dex:
+            attributes: cleric_dex
 rogue:
     name: Rogue
     race: human
@@ -113,7 +126,6 @@ rogue:
     attributes: warrior_dex
     variants:
         2wf:
-            name: Rogue (2wf)
             weapons:
                 primary: light_melee
                 secondary: light_melee
@@ -141,10 +153,8 @@ warrior:
     attributes: warrior
     variants:
         heavy:
-            name: Warrior (heavy)
             equipment: heavy
         2wf:
-            name: Warrior (2wf)
             weapons:
                 primary: light_melee
                 secondary: light_melee
