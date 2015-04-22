@@ -1,22 +1,21 @@
-heavy_2hf:
-    weapons:
-        primary: heavy_melee
-    armor: heavy
-heavy_2wf:
+2wf:
     weapons:
         primary: light_melee
         secondary: light_melee
-    armor: heavy
+    shield: ~
+    variants:
+        weapons:
+            primary: medium_melee
+            secondary: medium_melee
+2hf:
+    weapons:
+        primary: heavy_melee
+    shield: ~
 heavy:
     weapons:
         primary: medium_melee
     armor: heavy
     shield: heavy
-light_2wf_finesse:
-    weapons:
-        primary: light_melee
-        secondary: light_melee
-    armor: light
 light:
     weapons:
         primary: light_melee
@@ -27,22 +26,12 @@ mage:
         primary: unarmed
     armor: light
     shield: heavy
-medium_2hf:
-    weapons:
-        primary: heavy_melee
-    armor: medium
-medium_2wf_finesse:
-    weapons:
-        primary: light_melee
-        secondary: light_melee
-    armor: medium
-medium_2wf_medium:
-    weapons:
-        primary: medium_melee
-        secondary: medium_melee
-    armor: medium
 medium:
     weapons:
         primary: medium_melee
     armor: medium
+    shield: heavy
+sobo:
+    weapons:
+        primary: medium_melee
     shield: heavy
