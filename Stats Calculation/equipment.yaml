@@ -1,16 +1,3 @@
-2wf:
-    weapons:
-        primary: light_melee
-        secondary: light_melee
-    shield: ~
-    variants:
-        weapons:
-            primary: medium_melee
-            secondary: medium_melee
-2hf:
-    weapons:
-        primary: heavy_melee
-    shield: ~
 heavy:
     weapons:
         primary: medium_melee
