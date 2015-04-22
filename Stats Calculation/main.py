@@ -1,5 +1,5 @@
 import argparse
-from creature import generate_creature_from_file_name
+from creature import generate_creature_from_key
 import util
 import combat
 import cProfile
@@ -78,13 +78,14 @@ def print_generic_stats(level):
     print "HP %s, Fort %s, Ref %s, Will %s" % (get_generic_hp()[level],
             0, 0, 0)
 
-def generate_creatures(creature_file_names, level = None, verbose = None):
-    if creature_file_names is None:
+def generate_creatures(creature_keys, data, level = None, verbose = None):
+    if creature_keys is None:
         return
     creatures = list()
-    for creature_file_name in creature_file_names:
-        creature = generate_creature_from_file_name(creature_file_name, level,
-                verbose)
+    for creature_key in creature_keys:
+        creature = generate_creature_from_key(
+            creature_key, data, level, verbose
+        )
         creatures.append(creature)
     return creatures
 
@@ -102,27 +103,28 @@ def generate_battle_results(allies, enemies):
 
 if __name__ == "__main__":
     args = initialize_argument_parser()
+    data = util.import_data()
     allies = list()
     enemies = list()
     if args['level'] == 'all':
         for level in xrange(1,21):
-            allies.append(generate_creatures(args['allies'], level, args['verbose']))
-            enemies.append(generate_creatures(args['enemies'], level, args['verbose']))
+            allies.append(generate_creatures(args['allies'], data, level, args['verbose']))
+            enemies.append(generate_creatures(args['enemies'], data, level, args['verbose']))
     else:
-        allies = generate_creatures(args['allies'], args['level'], args['verbose'])
-        enemies = generate_creatures(args['enemies'], args['level'], args['verbose'])
+        allies = generate_creatures(args['allies'], data, args['level'], args['verbose'])
+        enemies = generate_creatures(args['enemies'], data, args['level'], args['verbose'])
 
         if allies:
             print "allies:"
             for ally in allies:
-                print ally
+                print ally#.to_latex()
                 #print ally.armor_class.get_details()
                 print ''
 
         if enemies:
             print "enemies:"
             for enemy in enemies:
-                print enemy
+                print enemy.to_latex()
                 #print enemy.armor_class.get_details()
                 print ''
 

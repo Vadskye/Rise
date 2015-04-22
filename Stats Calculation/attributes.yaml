@@ -1,0 +1,99 @@
+cleric_warrior:
+    strength: 3
+    dexterity: 0
+    constitution: 2
+    intelligence: 0
+    wisdom: 0
+    charisma: 4
+    primary: strength
+    secondary: charisma
+deekin:
+    strength: 0
+    dexterity: 1
+    constitution: 2
+    intelligence: 5
+    wisdom: 0
+    charisma: -1
+    primary: intelligence
+    secondary: constitution
+monk:
+    strength: 2
+    dexterity: 3
+    constitution: 2
+    intelligence: 0
+    wisdom: 4
+    charisma: -2
+    primary: wisdom
+    secondary: dexterity
+muerdoc:
+    strength: 1
+    dexterity: 3
+    constitution: 2
+    intelligence: 0
+    wisdom: 4
+    charisma: -1
+    primary: dexterity
+    secondary: wisdom
+npc_warrior:
+    strength: 2
+    dexterity: 1
+    constitution: 2
+    intelligence: 0
+    wisdom: 0
+    charisma: 0
+    primary: strength
+    secondary: constitution
+silk:
+    strength: 2
+    dexterity: 4
+    constitution: 2 
+    intelligence: 4
+    wisdom: 1
+    charisma: 3
+    primary: dexterity
+    secondary: charisma
+sorcerer:
+    strength: 0
+    dexterity: 2
+    constitution: 3
+    intelligence: 0
+    wisdom: 0
+    charisma: 4
+    primary: charisma
+    secondary: constitution
+warrior:
+    strength: 4
+    dexterity: 2
+    constitution: 2
+    intelligence: -1
+    wisdom: 0
+    charisma: 1
+    primary: strength
+    secondary: constitution
+warrior_dex:
+    strength: 3
+    dexterity: 4
+    constitution: 2
+    intelligence: 0
+    wisdom: 0
+    charisma: 0
+    primary: dexterity
+    secondary: strength
+warrior_dex_secondary:
+    strength: 4
+    dexterity: 3
+    constitution: 2
+    intelligence: 0
+    wisdom: 0
+    charisma: 0
+    primary: strength
+    secondary: dexterity
+wizard:
+    strength: 0
+    dexterity: 2
+    constitution: 3
+    intelligence: 4
+    wisdom: 0
+    charisma: 0
+    primary: intelligence
+    secondary: constitution

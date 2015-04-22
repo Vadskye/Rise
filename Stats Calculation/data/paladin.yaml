@@ -1,8 +1,0 @@
-name: Paladin
-race: human
-class: paladin
-weapons:
-    primary: medium_melee
-armor: heavy
-shield: heavy
-attributes: cleric_warrior

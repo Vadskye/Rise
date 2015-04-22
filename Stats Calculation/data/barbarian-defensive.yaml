@@ -1,8 +1,0 @@
-name: Brb-defensive
-race: human
-class: barbarian
-weapons:
-    primary: medium_melee
-armor: heavy
-shield: heavy
-attributes: warrior
