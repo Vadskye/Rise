@@ -20,14 +20,30 @@ def get_creature_data_from_key(key, data):
     else:
         # we probably have a variant class/monster
         key, variant = key.split('/')
-        if key in classes and variant in classes[key]['variants']:
-            creature_data = dict(classes[key])
-            creature_data.update(classes[key]['variants'][variant])
-            return creature_data
-        elif key in monsters and variant in monsters[key]['variants']:
-            creature_data = dict(monsters[key])
-            creature_data.update(monsters[key]['variants'][variant])
-            return creature_data
+        if key in classes:
+            if 'variants' in classes[key]:
+                if variant in classes[key]['variants']:
+                    creature_data = dict(classes[key])
+                    creature_data.update(classes[key]['variants'][variant])
+                    return creature_data
+                else:
+                    raise Exception("Class '{0}' does not have variant '{1}'. It has the following variants: {2}".format(
+                        key, variant, ', '.join(classes[key]['variants'].keys())))
+            else:
+                raise Exception("Class '{0}' does not have variant '{1}', because it has no variants.".format(
+                    key, variant))
+        elif key in monsters:
+            if 'variants' in monsters[key]:
+                if variant in monsters[key]['variants']:
+                    creature_data = dict(monsters[key])
+                    creature_data.update(monsters[key]['variants'][variant])
+                    return creature_data
+                else:
+                    raise Exception("Monster '{0}' does not have variant '{1}'. It has the following variants: {2}".format(
+                        key, variant, ', '.join(monsters[key]['variants'].keys())))
+            else:
+                raise Exception("Monster '{0}' does not have variant '{1}', because it has no variants.".format(
+                    key, variant))
         else:
             return False
 
