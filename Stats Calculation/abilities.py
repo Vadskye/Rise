@@ -123,7 +123,7 @@ Ability.create_ability('armor discipline (resilience)', armor_discipline_resilie
 ####################
 
 def two_weapon_fighting_benefit(creature):
-    creature.attack_bonus.add_competence(2)
+    creature.attack_bonus.add_bonus(2, 'two-weapon fighting')
 
 def two_weapon_fighting_prerequisites(creature):
     return creature.dexterity.get_total()>= 3 and creature.secondary_weapon
