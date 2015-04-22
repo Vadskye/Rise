@@ -19,37 +19,39 @@ def get_creature_data_from_key(key, data):
         return monsters[key]
     else:
         # we probably have a variant class/monster
-        key, variants = split_key_variants(key)
-        if not variants:
+        key, variant_keys = split_key_and_variant_keys(key)
+        if not variant_keys:
             raise Exception("Unable to recognize creature '{0}'".format(key))
         if key in classes:
             base_creature = dict(classes[key])
-            apply_variants(base_creature, variants, object_name = key)
+            apply_variants(base_creature, variant_keys, object_name = key, append_name = True)
             return base_creature
         elif key in monsters:
             base_creature = dict(monsters[key])
-            apply_variants(base_creature, variants, object_name = key)
+            apply_variants(base_creature, variant_keys, object_name = key, append_name = True)
             return base_creature
         else:
             raise Exception("Unable to recognize creature '{0}/{1}'".format(key, variant))
 
-def split_key_variants(key):
-    variants = key.split('/')
-    key = variants.pop(0)
-    return key, variants
+def split_key_and_variant_keys(key):
+    variant_keys = key.split('/')
+    key = variant_keys.pop(0)
+    return key, variant_keys
 
-def apply_variants(base_object, variants, object_name = 'object'):
+def apply_variants(base_object, variant_keys, object_name = 'object', append_name = False):
     if 'variants' in base_object:
-        for variant in variants:
-            if variant in base_object['variants']:
-                base_object.update(base_object['variants'][variant])
+        for variant_key in variant_keys:
+            if variant_key in base_object['variants']:
+                base_object.update(base_object['variants'][variant_key])
+                if append_name and not 'name' in base_object['variants'][variant_key]:
+                    base_object['name'] += '/{0}'.format(variant_key)
             else:
                 raise Exception("'{0}' does not have variant '{1}'. It has the following variants: {2}".format(
-                    object_name, variant, ', '.join(base_object['variants'].keys())))
+                    object_name, variant_key, ', '.join(base_object['variants'].keys())))
         return base_object
     else:
         raise Exception("'{0}' does not have variant '{1}', because it has no variants.".format(
-            object_name, variant))
+            object_name, variant_key))
 
 class Modifier(object):
 
@@ -381,12 +383,12 @@ def parse_creature_data(key, data):
         if key in data['equipment']:
             creature_equipment = data['equipment'][key]
         else:
-            key, variants = split_key_variants(key)
-            if not variants:
+            key, variant_keys = split_key_and_variant_keys(key)
+            if not variant_keys:
                 raise Exception("Unable to recognize equipment '{0}'".format(key))
             if key in creature_data['equipment']:
                 creature_equipment = dict(creature_data['equipment'][key])
-                apply_variants(creature_equipment, variants, object_name = key)
+                apply_variants(creature_equipment, variant_keys, object_name = key)
             else:
                 raise Exception("Unable to recognize equipment '{0}/{1}'".format(key, variant))
                 
