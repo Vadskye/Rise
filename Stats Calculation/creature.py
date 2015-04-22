@@ -2,19 +2,16 @@ from strings import *
 import equipment, util
 from abilities import get_ability_by_name
 
-def generate_creature_from_file_name(original_file_name, level=None, verbose=False):
-    file_name = util.fix_creature_file_name(original_file_name)
+def generate_creature_from_key(key, data, level=None, verbose=False):
+    creature_data = util.parse_creature_data(key, data)
     try:
-        assert file_name
+        assert creature_data
     except AssertionError:
-        raise Exception("Could not find file for " + original_file_name)
-        
-    creature_file = open(file_name, 'r')
-    raw_stats = util.parse_stats_from_file(creature_file)
-    assert raw_stats
+        raise Exception("Could not find data for " + key)
+
     if level is not None:
-        raw_stats[LEVEL] = level
-    return generate_creature_from_raw_stats(raw_stats, verbose)
+        creature_data[LEVEL] = level
+    return generate_creature_from_raw_stats(creature_data, verbose)
     #TODO: handle creature groups
 
 def generate_creature_from_raw_stats(raw_stats, verbose):

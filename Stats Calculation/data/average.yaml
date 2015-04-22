@@ -1,8 +1,0 @@
-name: Average
-race: human
-class: average
-armor: medium
-shield: heavy
-weapons:
-    primary: medium_melee
-attributes: warrior

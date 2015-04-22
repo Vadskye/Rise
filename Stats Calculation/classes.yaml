@@ -1,0 +1,122 @@
+average:
+    name: Average
+    race: human
+    class: average
+    equipment: standard_warrior
+    attributes: warrior
+barbarian:
+    name: Barbarian
+    race: human
+    class: barbarian
+    equipment: medium_2hf
+    attributes: warrior_dex
+    variants:
+        defensive:
+            name: Barbarian (defensive)
+            equipment: heavy
+            attributes: warrior
+cleric:
+    name: Cleric
+    race: human
+    class: cleric
+    equipment: medium
+    attributes: cleric_warrior
+fighter:
+    name: Fighter
+    race: human
+    class: fighter
+    equipment: heavy
+    attributes: warrior
+    trait: armor discipline (resilience)
+    variants: 
+        2wf:
+            name: Fighter (2wf)
+            equipment: medium_2wf_finesse
+            attributes: warrior_dex
+            feats:
+                - two-weapon fighting
+                - two-weapon defense
+            trait: armor discipline (agility)
+        dex:
+            name: Fighter (dex)
+            weapons:
+                primary: light_melee
+            armor: medium
+            shield: heavy
+            attributes: warrior_dex
+            trait: armor discipline (agility)
+        heavy:
+            name: Fighter (heavy)
+            equipment: heavy_2hf
+            feats:
+                - overwhelming force
+monk:
+    name: Monk
+    race: human
+    class: monk
+    attributes: monk
+    feats:
+        - two-weapon fighting
+        - two-weapon defense
+    variants:
+        muerdoc:
+            name: Muerdoc
+            attributes: muerdoc
+paladin:
+    name: Paladin
+    race: human
+    class: paladin
+    equipment: heavy
+    attributes: cleric_warrior
+rogue:
+    name: Rogue
+    race: human
+    class: rogue
+    equipment: light
+    attributes: warrior_dex
+    variants:
+        2wf:
+            name: Rogue (2wf)
+            equipment: light_2wf
+            feats:
+                - two-weapon fighting
+                - two-weapon defense
+        silk:
+            name: Silk
+            attributes: silk
+            feats:
+                - two-weapon fighting
+                - two-weapon defense
+sorcerer:
+    name: Sorcerer
+    race: human
+    class: sorcerer
+    equipment: mage
+    attributes: sorcerer
+warrior:
+    name: Warrior
+    race: human
+    class: warrior
+    equipment: medium
+    attributes: warrior
+    variants:
+        heavy:
+            name: Warrior (heavy)
+            equipment: heavy
+        2wf:
+            name: Warrior (2wf)
+            equipment: medium_2wf_finesse
+            attributes: warrior_dex
+            feats:
+                - two-weapon fighting
+                - two-weapon defense
+wizard:
+    name: Wizard
+    race: human
+    class: wizard
+    equipment: mage
+    attributes: wizard
+    variants: 
+        deekin:
+            name: Deekin
+            attributes: deekin

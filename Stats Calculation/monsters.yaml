@@ -1,0 +1,477 @@
+aboleth:
+    #meta
+    name: aboleth
+    creature_type: aberration
+    level: 9
+    templates:
+        - warrior
+    #items
+    weapons:
+        primary: tentacles
+    #attributes
+    strength: average
+    constitution: good
+    intelligence: average+2
+    wisdom: average
+    charisma: average
+    #abilities
+    traits:
+        - enslave
+        - slime
+        - carapace
+        - mucus cloud
+        - improved natural weapon
+    #feats: 
+    #core
+    size: large
+    speeds:
+        land: 10
+        swim: 60
+    #fluff
+    description: The aboleth is a revolting fishlike amphibian found primarily in subterranean lakes and rivers. An aboleth has a pink belly. Four pulsating blueblack orifices line the bottom of its body and secrete gray slime that smells like rancid grease. It uses its tail for propulsion in the water and drags itself along with its tentacles on land. An aboleth weighs about 6,500 pounds.
+    combat: An aboleth attacks by flailing with its long, slimy tentacles, though it prefers to fight from a distance using its illusion powers.
+achaierai:
+    #meta
+    name: Achaierai
+    creature_type: outsider
+    level: 7
+    templates:
+        - warrior
+    #items
+    weapons:
+        primary: claws
+        secondary: claws
+    #attributes
+    strength: average
+    dexterity: good
+    constitution: average
+    intelligence: poor
+    wisdom: poor
+    #abilities
+    traits:
+        - black cloud
+    feats:
+        - dodge
+        - mobility
+        - spring attack
+    #core
+    size: Large
+    speed: 50
+allip:
+    #meta
+    name: Allip
+    creature_type: undead
+    template:
+        - incorporeal
+        - antiwarrior
+    level: 6
+    #items
+    weapons:
+        primary: wisdom drain
+    #attributes
+    dexterity: poor
+    wisdom: -4
+    charisma: average
+    #abilities
+    traits:
+        - babble
+        - madness
+        - wisdom drain
+    feats:
+        - lightning reflexes
+        - dodge
+    #core
+    speeds:
+        fly: 30
+        land: ~
+    #fluff
+    description: An allip is the spectral remains of someone driven to suicide by a madness that afflicted it in life. It craves only revenge and unrelentingly pursues those who tormented it in life and pushed it over the brink. An allip cannot speak intelligibly.
+    combat: An allip is unable to cause physical harm, although it doesn't appear to know that. It keeps flailing away at enemies, yet it inflicts no physical wounds.
+animated_object:
+    #meta
+    creature_type: construct
+    template:
+        - mindless
+    #fluff
+    description: Animated objects come in all sizes, shapes, and colors. They owe their existence as creatures to spells such as \spell{animate objects} or similar supernatural abilities.
+    combat: Animated objects fight only as directed by the animator. They follow orders without question and to the best of their abilities. Since they do not need to breathe and never tire, they can be extremely capable minions. \par An animated object can have one or more of the following special abilities, depending on its form.
+    variants:
+        colossal:
+            #meta
+            name: animated object (colossal)
+            group: animated object
+            level: 16
+            #items
+            weapons:
+                primary: slam
+            #attributes
+            strength: average
+            dexterity: poor
+            constitution: average
+            wisdom: poor
+            #core
+            size: colossal
+        gargantuan:
+            #meta
+            name: animated object (gargantuan)
+            group: animated object
+            level: 12
+            #items
+            weapons:
+                primary: slam
+            #attributes
+            strength: average
+            dexterity: poor
+            constitution: average
+            wisdom: poor
+            #core
+            size: gargantuan
+        huge:
+            #meta
+            name: animated object (huge)
+            group: animated object
+            level: 8
+            #items
+            weapons:
+                primary: slam
+            #attributes
+            strength: average
+            dexterity: poor
+            constitution: average
+            wisdom: poor
+            #core
+            size: huge
+        large:
+            #meta
+            name: animated object (large)
+            group: animated object
+            level: 4
+            #items
+            weapons:
+                primary: slam
+            #attributes
+            strength: average
+            dexterity: poor
+            constitution: average
+            wisdom: poor
+            #core
+            size: large
+        medium:
+            #meta
+            name: animated object (medium)
+            group: animated object
+            level: 2
+            #items
+            weapons:
+                primary: slam
+            #attributes
+            strength: average
+            dexterity: poor
+            constitution: average
+            wisdom: poor
+            #core
+            size: medium
+        small:
+            #meta
+            name: animated object (small)
+            group: animated object
+            level: 1
+            #items
+            weapons:
+                primary: slam
+            #attributes
+            strength: average-4
+            dexterity: poor+2
+            constitution: average
+            wisdom: poor
+            #core
+            size: small
+        tiny:
+            #meta
+            name: animated object (tiny)
+            group: animated object
+            level: 1
+            #items
+            weapons:
+                primary: slam
+            #attributes
+            strength: average-8
+            dexterity: poor+4
+            constitution: average
+            wisdom: poor
+            #core
+            size: tiny
+assassin:
+    #meta
+    name: assassin
+    creature_type: humanoid
+    template:
+        - warrior
+    level: 2
+    #items
+    weapons:
+        primary: light_melee
+        secondary: light_melee
+    armor: light
+    #attributes
+    strength: poor
+    dexterity: good
+    constitution: poor
+    intelligence: poor
+    #abilities
+    feats:
+        - dodge
+    #core
+    size: medium
+    #fluff
+    description: Assassins are typically garbed in black or dark grey.
+    combat: Assassins strike from the shadows and use concealment and cover to their advantage.
+black_bear:
+    name: black bear
+    creature_type: animal
+    template:
+        - brute
+    weapons:
+        primary: claws
+        secondary: claws
+    level: 4
+    #attributes
+    strength: good
+    constitution: good
+    wisdom: average
+    #abilities
+    feats:
+        - endurance
+        - diehard
+brown_bear:
+    name: brown bear
+    creature_type: animal
+    template:
+        - brute
+    weapons:
+        primary: claws
+        secondary: claws
+    size: large
+    level: 8
+    #attributes
+    strength: good
+    constitution: good
+    wisdom: average
+    #abilities
+    traits:
+        - improved natural weapon
+        - natural grab
+    feats:
+        - endurance
+        - diehard
+dire_wolf:
+    name: dire wolf
+    creature_type: animal
+    template:
+        - scout
+    weapons:
+        primary: bite
+    size: large
+    level: 6
+    #attributes
+    strength: good
+    dexterity: good
+    constitution: average
+    wisdom: average
+    #abilities
+    traits:
+        - natural trip
+        - improved natural weapon
+goblin:
+    #meta
+    name: goblin warrior
+    creature_type: humanoid
+    template:
+        - warrior
+    #items
+    weapons:
+        primary: light_melee
+    armor: light
+    #attributes
+    dexterity: poor+1
+    wisdom: -1
+    charisma: -3
+    #abilities
+    feats:
+        - swift
+    #core
+    size: small
+    speed: 20
+    languages: Goblin
+    #fluff
+    description: A goblin stands 3 to 3-1/2 feet tall and weigh 40 to 45 pounds. Its eyes are usually dull and glazed, varying in color from red to yellow. A goblin's skin color ranges from yellow through any shade of orange to a deep red; usually all members of a single tribe are about the same color. Goblins wear clothing of dark leather, tending toward drab, soiled-looking colors. Goblins speak Goblin; those with Intelligence scores of 12 or higher also speak Common. Most goblins encountered outside their homes are warriors; the information in the statistics block is for one of 1st level.
+    combat: 
+ideal:
+    #meta
+    name: ideal
+    creature_type: ideal
+    #attributes
+    strength: good
+    dexterity: average
+    constitution: average
+    intelligence: average
+    wisdom: average
+    charisma: average
+    weapons:
+        primary: medium_melee
+    variants:
+        2wf:
+            name: ideal (2wf)
+            #items
+            weapons:
+                primary: light_melee
+                secondary: light_melee
+            feats:
+                - two-weapon fighting
+                - two-weapon defense
+            name:
+        heavy:
+            name: ideal (heavy)
+            #items
+            weapons:
+                primary: heavy_melee
+        2wf_medium:
+            name: ideal (2wf medium)
+            weapons:
+                primary: medium_melee
+                secondary: medium_melee
+            feats:
+                - two-weapon fighting
+                - two-weapon defense
+new_group_template:
+    #meta
+    name: 
+    creature_type: 
+    templates: 
+    #abilities
+    traits: 
+    feats:  
+    #fluff
+    description: 
+    combat: 
+new_monster_template:
+    #meta
+    name: 
+    creature_type: 
+    #items
+    weapons: 
+    #attributes
+    strength: 
+    dexterity: 
+    constitution: 
+    intelligence: 
+    wisdom: 
+    charisma: 
+    #abilities
+    trait: 
+    feats:  
+    #core
+    size: 
+    speed: 
+    #fluff
+    description: 
+    combat: 
+orc:
+    #meta
+    name: orc warrior
+    creature_type: humanoid
+    template:
+        - warrior
+    #items
+    weapons:
+        primary: heavy_melee
+    armor: light
+    #attributes
+    strength: average+1
+    dexterity: poor
+    constitution: poor
+    intelligence: -2
+    wisdom: -1
+    #abilities
+    feats:
+        - power attack
+    #core
+    size: medium
+    languages: Orc
+    #fluff
+    description: Orcs usually have black hair, lupine ears and reddish eyes. They prefer wearing vivid colors that many humans would consider unpleasant, such as blood red, mustard yellow, yellow-green, and deep purple. Their equipment is dirty and unkempt. An adult male orc is about six and a half feet tall and weighs about 250 pounds.  Females are slightly smaller. The language an orc speaks varies slightly from tribe to tribe, but any orc is understandable by someone else who speaks Orc. Some orcs know Goblin or Giant as well. Most orcs encountered away from their homes are warriors.
+    combat: Orcs tend towards larger weapons, preferring those that cause the most damage in the least time. Though they will freely take advantage of any advantage afforded them in battle, orcs are honorable in victory or defeat. They willingly take prisoners and always spare noncombatants -- it is dishonorable for an orc to fight someone unable or unwilling to fight back.
+stone_giant:
+    #meta
+    name: stone giant
+    creature_type: monstrous humanoid
+    template:
+        - warrior
+    level: 16
+    armor: medium
+    #items
+    weapons:
+        primary: slam
+    #attributes
+    strength: good
+    constitution: good
+    intelligence: -2
+    wisdom: poor
+    charisma: poor
+    #abilities
+    traits:
+        - carapace
+    #feats:  
+
+    #core
+    size: huge
+    speed: 50
+troll:
+    #meta
+    name: troll
+    creature_type: monstrous humanoid
+    template:
+        - warrior
+    level: 6
+    #items
+    weapons:
+        primary: slam
+        secondary: slam
+    #attributes
+    strength: good
+    dexterity: poor
+    constitution: extreme
+    intelligence: -3
+    wisdom: -1
+    #abilities
+    traits:
+        - darkvision
+        - low-light vision
+        - regeneration
+        - scent
+    feats:
+        - power attack
+        - overpowering assault
+    #core
+    size: large
+    languages: Troll
+    speed: 30
+    #fluff
+    description: Trolls walk upright but hunched forward with sagging shoulders. Their gait is uneven, and when they run, their arms dangle and drag along the ground. For all this seeming awkwardness, trolls are very agile. A typical adult troll stands 9 feet tall and weighs 500 pounds. Females are slightly larger than males. A troll's rubbery hide is moss green, mottled green and gray, or putrid gray. The hair is usually greenish black or iron gray.
+    combat: "Trolls have no fear of death: They launch themselves into combat without hesitation, flailing wildly at the closest opponent. Even when confronted with fire, they try to get around the flames and attack."
+wolf:
+    name: wolf
+    creature_type: animal
+    weapons:
+        primary: bite
+    level: 2
+    #attributes
+    strength: good
+    dexterity: average
+    constitution: average
+    wisdom: poor
+    #abilities
+    traits:
+        - natural trip
+    feats: 
+        - track

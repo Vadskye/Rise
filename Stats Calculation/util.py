@@ -7,13 +7,29 @@ import yaml
 
 d20 = dice.dx(20)
 
-def fix_creature_file_name(file_name):
-    for directory_path in ('', 'data/', 'data/monsters/'):
-        if os.path.isfile(directory_path+file_name):
-            return directory_path+file_name
-        if os.path.isfile(directory_path+file_name+'.yaml'):
-            return directory_path+file_name+'.yaml'
-    return False
+# valid formats:
+#   key = the name of the key in data
+#   key = "key"/"variant"
+def get_creature_data_from_key(key, data):
+    classes = data['classes']
+    monsters = data['monsters']
+    if key in classes:
+        return classes[key]
+    elif key in monsters:
+        return monsters[key]
+    else:
+        # we probably have a variant class/monster
+        key, variant = key.split('/')
+        if key in classes and variant in classes[key]['variants']:
+            creature_data = dict(classes[key])
+            creature_data.update(classes[key]['variants'][variant])
+            return creature_data
+        elif key in monsters and variant in monsters[key]['variants']:
+            creature_data = dict(monsters[key])
+            creature_data.update(monsters[key]['variants'][variant])
+            return creature_data
+        else:
+            return False
 
 class Modifier(object):
 
@@ -310,19 +326,44 @@ def sum_armor(armor, natural_armor):
     else:
         return natural_armor + ifloor(armor/2)
 
-def parse_stats_from_file(input_file):
-    stats = yaml.load(input_file)
+def import_data():
+    with open('attributes.yaml', 'r') as attributesfile:
+        attributes = yaml.load(attributesfile)
+    with open('classes.yaml', 'r') as classesfile:
+        classes = yaml.load(classesfile)
+    with open('equipment.yaml', 'r') as equipmentfile:
+        equipment = yaml.load(equipmentfile)
+    with open('monsters.yaml', 'r') as monstersfile:
+        monsters = yaml.load(monstersfile)
+    return {
+        'attributes': attributes,
+        'classes': classes,
+        'equipment': equipment,
+        'monsters': monsters,
+    }
+
+def parse_creature_data(key, data):
+    creature_data = get_creature_data_from_key(key, data)
+    if not creature_data:
+        return False
     #If the attributes are referenced in an external file, add them
-    #to the raw stats referenced here.
+    #to the raw creature_data referenced here.
     #Otherwise, assume the attributes are present in the original file
-    if 'attributes' in stats:
-        attribute_filename = 'data/attributes/'+stats['attributes']+'.yaml'
-        attribute_file = open(attribute_filename, 'r')
-        attribute_stats = parse_stats_from_file(attribute_file)
-        #Add the attributes to the stats to be returned
-        for key in attribute_stats:
-            stats[key] = attribute_stats[key]
-    return stats
+    if 'attributes' in creature_data:
+        creature_attributes = data['attributes'][creature_data['attributes']]
+        for key in creature_attributes:
+            # values from creature_data directly should override imported values
+            if not key in creature_data:
+                creature_data[key] = creature_attributes[key]
+    # equipment can also be referenced from an external file
+    if 'equipment' in creature_data:
+        creature_equipment = data['equipment'][creature_data['equipment']]
+        #Add the equipment to the stats to be returned
+        for key in creature_equipment:
+            # values from creature_data directly should override imported values
+            if not key in creature_data:
+                creature_data[key] = creature_equipment[key]
+    return creature_data
 
 #Return a new dict that contains a selection of items from
 #the original dict

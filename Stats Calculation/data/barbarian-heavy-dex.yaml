@@ -1,7 +1,0 @@
-name: Brb-heavy
-race: human
-class: barbarian
-weapons:
-    primary: heavy_melee
-armor: medium
-attributes: warrior_dex
