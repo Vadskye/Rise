@@ -18,6 +18,7 @@ barbarian:
             weapons:
                 primary: light_melee
                 secondary: light_melee
+            shield: ~
             feats:
                 - two-weapon fighting
                 - two-weapon defense
@@ -50,6 +51,7 @@ fighter:
             weapons:
                 primary: light_melee
                 secondary: light_melee
+            shield: ~
             attributes: warrior_dex
             feats:
                 - two-weapon fighting
@@ -95,7 +97,14 @@ paladin:
     attributes: cleric_warrior
     variants:
         2wf:
-            
+            weapons:
+                primary: light_melee
+                secondary: light_melee
+            shield: ~
+            attributes: cleric_dex
+            feats:
+                - two-weapon fighting
+                - two-weapon defense
 rogue:
     name: Rogue
     race: human
@@ -108,6 +117,7 @@ rogue:
             weapons:
                 primary: light_melee
                 secondary: light_melee
+            shield: ~
             feats:
                 - two-weapon fighting
                 - two-weapon defense
@@ -138,6 +148,7 @@ warrior:
             weapons:
                 primary: light_melee
                 secondary: light_melee
+            shield: ~
             attributes: warrior_dex
             feats:
                 - two-weapon fighting

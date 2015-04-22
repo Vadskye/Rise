@@ -1,3 +1,12 @@
+cleric_dex:
+    strength: 2
+    dexterity: 3
+    constitution: 2
+    intelligence: 0
+    wisdom: 0
+    charisma: 3
+    primary: dexterity
+    secondary: charisma
 cleric_warrior:
     strength: 3
     dexterity: 0
