@@ -80,12 +80,6 @@ fighter:
         dex_secondary:
             attributes: warrior_dex_secondary
             trait: armor discipline (agility)
-        heavy:
-            weapons:
-                primary: heavy_melee
-            shield: ~
-            feats:
-                - overwhelming force
         nofeats:
             feats: []
 monk:
