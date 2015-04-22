@@ -124,7 +124,7 @@ if __name__ == "__main__":
         if enemies:
             print "enemies:"
             for enemy in enemies:
-                print enemy.to_latex()
+                print enemy#.to_latex()
                 #print enemy.armor_class.get_details()
                 print ''
 
