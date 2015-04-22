@@ -1267,7 +1267,7 @@ class Fighter(Character):
         ab = 0
         ab += 1 if self.level>=3 else 0
         ab += 1 if self.level>=9 else 0
-        self.attack_bonus.add_competence(ab)
+        self.attack_bonus.add_bonus(ab, 'weapon discipline')
         if self.level>=15:
             pass
             #add critical changes
@@ -1433,7 +1433,7 @@ class Animal(Monster):
         self.set_progression(NATURAL_ARMOR, POOR)
 
     def apply_class_modifications(self):
-        self.intelligence.add_inherent(-8)
+        self.intelligence.add_bonus(-8, 'animal')
         self.add_abilities(('low-light vision', 'scent'))
 
 class Construct(Monster):
