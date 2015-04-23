@@ -212,7 +212,7 @@ Ability.create_feat('lightning reflexes',
         lightning_reflexes_benefit, tags=[SAVING_THROW], text='1/day reroll Reflex')
 
 def swift_benefit(creature):
-    for speed_mode in creature.get_speed_modes():
+    for speed_mode in creature.speed_modes:
         creature.modify_speed(speed_mode, 5)
 Ability.create_feat('swift', swift_benefit)
 
@@ -289,7 +289,7 @@ def scout_prerequisites(creature):
     return creature.reflex is not None and creature.get_all_speeds() is not None
 def scout_benefit(creature):
     util.improve_save(creature.get_class_progression(), REFLEX)
-    for speed_mode in creature.get_speed_modes():
+    for speed_mode in creature.speed_modes:
         creture.modify_speed(speed_mode, min(10, creature.get_land_speed()))
 Ability.create_ability('scout', benefit = scout_benefit,
         meets_prerequisites = scout_prerequisites, tags=[ABILITY_TEMPLATE])
