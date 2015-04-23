@@ -25,6 +25,15 @@ deekin:
     charisma: -1
     primary: intelligence
     secondary: constitution
+druid:
+    strength: 2
+    dexterity: 3
+    constitution: 2
+    intelligence: 0
+    wisdom: 3
+    charisma: 0
+    primary: wisdom
+    secondary: dexterity
 monk:
     strength: 2
     dexterity: 3
