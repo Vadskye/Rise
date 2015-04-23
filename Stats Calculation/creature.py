@@ -708,7 +708,7 @@ class Creature(object):
 
         dexterity_to_ac = self.dexterity.get_total()
         if self.armor is not None:
-            self.armor_class.armor.add_bonus(self.armor.ac_bonus, BASE)
+            self.armor_class.armor.add_bonus(self.armor.ac_bonus, 'armor')
             if self.armor.encumbrance=='medium' or self.armor.encumbrance=='heavy':
                 dexterity_to_ac /=2
         self.armor_class.dodge.add_bonus(dexterity_to_ac, DEX)
