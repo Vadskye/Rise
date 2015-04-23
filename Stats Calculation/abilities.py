@@ -1,3 +1,4 @@
+import equipment
 import util
 import dice
 from strings import *
@@ -103,6 +104,18 @@ def rage_benefit(creature):
 Ability.create_ability('rage', rage_benefit)
 
 def armor_discipline_agility_benefit(creature):
+    # adjust armor worn to ensure dex bonus
+    if creature.level <= 6 and (
+            creature.armor.encumbrance == ENCUMBRANCE_HEAVY
+            or creature.armor.encumbrance == ENCUMBRANCE_MEDIUM):
+        creature.armor.encumbrance = ENCUMBRANCE_LIGHT
+        creature.armor_class.armor.remove_bonus('armor')
+        creature.armor_class.armor.add_bonus(3, 'armor')
+    if creature.level <= 12 and creature.armor.encumbrance == ENCUMBRANCE_HEAVY:
+        creature.armor.encumbrance = ENCUMBRANCE_MEDIUM
+        creature.armor_class.armor.remove_bonus('armor')
+        creature.armor_class.armor.add_bonus(6, 'armor')
+
     armor_discipline_count = (creature.level+5)/6
     for i in xrange(1, armor_discipline_count):
         creature.armor.encumbrance = util.lower_encumbrance(
