@@ -35,6 +35,18 @@ cleric:
     class: cleric
     equipment: medium
     attributes: cleric_warrior
+druid:
+    name: Druid
+    race: human
+    class: druid
+    equipment: medium
+    attributes: druid
+    variants:
+        garruk:
+            weapons:
+                primary: light_melee
+                secondary: light_melee
+            shield: ~
 fighter:
     name: Fighter
     race: human
@@ -84,6 +96,11 @@ fighter:
             attributes: warrior_dex_secondary
             traits: 
                 - armor discipline (agility)
+        finesse:
+            weapons:
+                primary: light_melee
+                secondary: ~
+            shield: heavy
         nofeats:
             feats: []
 monk:
