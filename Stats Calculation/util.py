@@ -367,10 +367,7 @@ def parse_creature_data(key, data):
     #Otherwise, assume the attributes are present in the original file
     if 'attributes' in creature_data:
         creature_attributes = data['attributes'][creature_data['attributes']]
-        for key in creature_attributes:
-            # values from creature_data directly should override imported values
-            if not key in creature_data:
-                creature_data[key] = creature_attributes[key]
+        creature_data.update(creature_attributes)
     # equipment can also be referenced from an external file
     if 'equipment' in creature_data:
         key = creature_data['equipment']
