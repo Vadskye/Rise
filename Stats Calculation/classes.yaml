@@ -47,6 +47,7 @@ druid:
                 primary: light_melee
                 secondary: light_melee
             shield: ~
+            attributes: garruk
 fighter:
     name: Fighter
     race: human
