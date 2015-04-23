@@ -50,8 +50,8 @@ def apply_variants(base_object, variant_keys, object_name = 'object', append_nam
                     object_name, variant_key, ', '.join(base_object['variants'].keys())))
         return base_object
     else:
-        raise Exception("'{0}' does not have variant '{1}', because it has no variants.".format(
-            object_name, variant_key))
+        raise Exception("'{0}' does not have variants '{1}', because it has no variants.".format(
+            object_name, ', '.join(variant_keys)))
 
 class Modifier(object):
 
