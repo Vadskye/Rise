@@ -34,6 +34,15 @@ druid:
     charisma: 0
     primary: wisdom
     secondary: dexterity
+garruk:
+    strength: 4
+    dexterity: 5
+    constitution: 2
+    intelligence: 0
+    wisdom: 5
+    charisma: 0
+    primary: dexterity
+    secondary: wisdom
 monk:
     strength: 2
     dexterity: 3
