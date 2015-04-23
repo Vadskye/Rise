@@ -61,7 +61,7 @@ allip:
     #meta
     name: Allip
     creature_type: undead
-    template:
+    templates:
         - incorporeal
         - antiwarrior
     level: 6
@@ -90,7 +90,7 @@ allip:
 animated_object:
     #meta
     creature_type: construct
-    template:
+    templates:
         - mindless
     #fluff
     description: Animated objects come in all sizes, shapes, and colors. They owe their existence as creatures to spells such as \spell{animate objects} or similar supernatural abilities.
@@ -205,7 +205,7 @@ assassin:
     #meta
     name: assassin
     creature_type: humanoid
-    template:
+    templates:
         - warrior
     level: 2
     #items
@@ -229,7 +229,7 @@ assassin:
 black_bear:
     name: black bear
     creature_type: animal
-    template:
+    templates:
         - brute
     weapons:
         primary: claws
@@ -246,7 +246,7 @@ black_bear:
 brown_bear:
     name: brown bear
     creature_type: animal
-    template:
+    templates:
         - brute
     weapons:
         primary: claws
@@ -267,7 +267,7 @@ brown_bear:
 dire_wolf:
     name: dire wolf
     creature_type: animal
-    template:
+    templates:
         - scout
     weapons:
         primary: bite
@@ -286,7 +286,7 @@ goblin:
     #meta
     name: goblin warrior
     creature_type: humanoid
-    template:
+    templates:
         - warrior
     #items
     weapons:
@@ -306,6 +306,34 @@ goblin:
     #fluff
     description: A goblin stands 3 to 3-1/2 feet tall and weigh 40 to 45 pounds. Its eyes are usually dull and glazed, varying in color from red to yellow. A goblin's skin color ranges from yellow through any shade of orange to a deep red; usually all members of a single tribe are about the same color. Goblins wear clothing of dark leather, tending toward drab, soiled-looking colors. Goblins speak Goblin; those with Intelligence scores of 12 or higher also speak Common. Most goblins encountered outside their homes are warriors; the information in the statistics block is for one of 1st level.
     combat: 
+golem:
+    #meta
+    name: golem
+    creature_type: construct
+    #items
+    weapons:
+        primary: medium_melee
+    #attributes
+    strength: average
+    constitution: good
+    charisma: none
+    #abilities
+    #feats: ~
+    #core
+    size: medium
+    languages: Common (cannot speak)
+    #fluff
+    description: A golem is a magical construct constructed from awesomeness.
+    combat: 
+    variants:
+        clay:
+            dexterity: poor
+        iron:
+            templates:
+                - warrior
+            size: huge
+            strength: good
+            dexterity: poor
 ideal:
     #meta
     name: ideal
