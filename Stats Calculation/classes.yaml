@@ -109,6 +109,9 @@ monk:
     race: human
     class: monk
     attributes: monk
+    weapons:
+        primary: unarmed
+        secondary: unarmed
     feats:
         - two-weapon fighting
         - two-weapon defense
