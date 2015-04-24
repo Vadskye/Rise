@@ -257,9 +257,10 @@ Strike feats grant a character the ability to make an unusually potent attack wi
     \featref{Legendary Healer} & Heal 13 ranks & Heal damage three times per day & \featpref{Legendary Healer} \\
     \featref{Legendary Knowledge} & Knowledge (any) 13 ranks & \plus2 against creatures you identify & \featpref{Legendary Knowledge} \\
     \featref{Legendary Leaper} & Athletics 13 ranks & Always treated as having running start & \featpref{Legendary Leaper} \\
-    \featref{Legendary Liar} & Bluff 13 ranks & Lies appear to alter reality & \featpref{Legendary Liar} \\
-    \featref{Legendary Linguist} & Linguistics 13 ranks & Speak all languages & \featpref{Legendary Liar} \\
+    \featref{Legendary Liar} & Bluff 13 ranks & Lies appear to alter reality & \featpref{gLegendary Liar} \\
+    \featref{Legendary Linguist} & Linguistics 13 ranks & Speak all languages & \featpref{gLegendary Liar} \\
     \featref{Legendary Perception} & Perception 13 ranks & Gain extrasensory perception & \featpref{Legendary Perception} \\
+    \featref{Legendary Persuasion} & Persuasion 13 ranks & Compel listener to obey & \featpref{Legendary Perception} \\
     \featref{Legendary Rider} & Ride 13 ranks & Ride unwilling creatures & \featpref{Legendary Ride} \\
     \featref{Legendary Sprinter} & Athletics 13 ranks & You can sprint for much longer & \featpref{Legendary Sprinter} \\
     \featref{Legendary Stealth} & Stealth 13 ranks & Hide in plain sight & \featpref{Legendary Stealth} \\
@@ -1077,6 +1078,12 @@ You can use this ability a number of times per day equal to half the number of B
 \feat{Legendary Performance}{Performance, Skill}
 \featpres Perform 13 ranks, any three Performance feats.
 \featben You can sustain two performances as part of the same swift action. You take a \minus10 penalty to other Perform checks while sustaining two performances at once.
+
+\feat{Legendary Persuasion}{Performance, Skill}
+\featpres Persuasion 13 ranks.
+\featben When you make a Persuasion check, if the result is 30 or higher, you may treat it as an attack against the Will defense of one creature that hears you. If your attack succeeds against that creature, it is compelled to obey you, as \spell{suggestion}.
+
+You can use this ability three times per day.
 
 \feat{Legendary Power}{Combat, Power}
 \featpres Base attack bonus \plus12, any three Power feats.
