@@ -12,6 +12,7 @@
 \spellinfo{Abjur (Shielding)}{Abjur}
 \spelltwocol{\spelltime{Immediate action}}{\spellcmp{Verbal only}}
 \spelldur{1 round}
+\spellsr{No}
 \begin{spelltarget}{You}
     \spelleffect You gain physical damage reduction, reducing the physical damage you take each round by 8 \add 1 per caster level above 4th. If you take force damage, you cannot use your damage reduction for 1 round.
 \end{spelltarget}
@@ -22,6 +23,7 @@
 \spellinfo{Abjur (Negation) [Magic]}{Abjur, Magic}
 \spelltwocol{\spelltime{Immediate action}}{\spellcmp{Verbal only}}
 \spelldur{1 round}
+\spellsr{No}
 \begin{spelltarget}{You}
     \spelleffect You gain spell damage reduction, reducing the damage you take each round from spells by 4 \add 1 per caster level above 2nd. If you take force damage, you cannot use your damage reduction for 1 round.
 \end{spelltarget}
@@ -34,6 +36,7 @@ Spells that are not subject to spell resistance are not affected by \spell{ablat
 \spellinfo{Conj (Creation) [Acid]}{Arcane}
 \spellrng{\rngmed}
 \spelldur{1 round per two caster levels}
+\spellsr{No}
 \begin{spelltarget}{One creature or object}[Magic vs. Reflex]
     \spellsuccess 2d8 acid damage immediately, and d8 acid damage at the end of each round after the first.
     \spellfailure As above, but no lingering damage.
@@ -45,6 +48,7 @@ Spells that are not subject to spell resistance are not affected by \spell{ablat
 \spellinfo{Conj (Creation) [Acid]}{Arcane}
 \spellrng{\rngfar}
 \spelldur{1 round per two caster levels}
+\spellsr{No}
 \begin{spelltarget}{One creature or object}l[Magic vs. Reflex and Fortitude]
     \spellsuccess[Reflex] 5d8 acid damage immediately, and 2d8 acid damage at the end of each round after the first.
     \spellfailure[Reflex] As above, but no lingering damage.
@@ -57,6 +61,7 @@ Spells that are not subject to spell resistance are not affected by \spell{ablat
 \spellinfo{Conj (Creation) [Acid, Fog]}{Arcane, Destruction}
 \spelltwocol{\spellzone{\areamed radius cylinder}}{\spellrng{\rngmed}}
 \spelldur{\durshort}
+\spellsr{No}
 \spellline
 \spelleffect Fog fills the area, as \spell{solid fog}, except that the fog is acidic.
 \begin{spelltrigger}{End of every round}
@@ -104,6 +109,7 @@ Spells that are not subject to spell resistance are not affected by \spell{ablat
 \spellschool{Evoc/Trans (Augment, Channeling) [see text]}
 \spelllists{Chaos, Evil, Good, Law}
 \spellrng{\rngclose}
+\spellsr{No}
 \begin{spelltarget}{One weapon or fifty projectiles (in a single group)}
     \spelleffect The weapon is enhanced, as \spell{magic weapon}.
     \spellsuccess The item becomes good, evil, lawful, or chaotic, as you choose, allowing it to overcome damage reduction of the appropriate type. This overrides any existing alignments.
@@ -141,6 +147,7 @@ When you make a weapon good, evil, lawful, or chaotic, \spell{align weapon} is a
 \spelllists{Nature, Wild}
 \spelltime{Full-round action}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngmed}}
+\spellsr{No}
 \begin{spelltarget}{Five animals in the area}[Magic vs. Fortitude]
     \spellsuccess The target grows larger, as \spell{enlarge person}, except that it affects animals.
 \end{spelltarget}
@@ -159,6 +166,7 @@ When you make a weapon good, evil, lawful, or chaotic, \spell{align weapon} is a
 \spellsection{Animate Plants}{5}
 \spelldesc{You imbue inanimate plants with mobility and a semblance of life.}
 \spellinfo{Trans (Animation)}{Nature, Plant}
+\spellsr{No}
 \begin{spelltargets}{Up to one Small plant/level in the area; see text}
     \spelleffect This spell functions like \spell{animate objects}, except that you animate plants instead of inanimate objects.
 \end{spelltargets}
@@ -180,6 +188,7 @@ When you make a weapon good, evil, lawful, or chaotic, \spell{align weapon} is a
 \spellinfo{Abjur (Negation) [Magic]}{Abjur, Divine, Magic}
 \spellemanation{\areasmall radius centered on you}
 \spelldur{\durlong \dismissable}
+\spellsr{No}
 \spellline
 \spelleffect All spells, spell-like abilities, and magic items fail to function in the area. They cannot be activated from within the field, and any existing effects brought into or cast into the area are suppressed. Time spent within an \spell{antimagic field} counts against a suppressed spell's duration.
 \par Summoned creatures of any type disappear if they enter an \spell{antimagic field}. They reappear in the same spot once the field goes away. 
@@ -248,6 +257,7 @@ The effects of instantaneous conjurations, such as \spell{create water}, are not
 \spellinfo{Abjur/Conj (Interdiction, Translocation) [Planar, Teleportation]}{Arcane, Divine}
 \spellrng{\rngmed}
 \spelldur{Concentration}
+\spellsr{No}
 \spellline
 \begin{spelltrigger}{End of every round}
     \begin{spelltarget}*{One extraplanar creature}[Magic vs. Will]
@@ -558,6 +568,7 @@ If the staff-treant is reduced to 0 or fewer hit points, it crumbles to powder a
 \spellinfo{Conj (Creation) [Fog, Poison]}{Arcane}
 \spelltwocol{\spellzone{\areamed radius cylinder}}{\spellrng{\rngmed}}
 \spelldur{\durshort}
+\spellsr{No}
 \spellline
 \spelleffect Fog in the area, as \spell{fog cloud}, except that the fog is mobile and poisonous.
 
@@ -685,6 +696,7 @@ Holding one's breath doesn't help against the poison, but creatures immune to po
 \spellinfo{Illus (Figment) [Unreal]}{Illus}
 \spelltwocol{\spellzone{\areamed radius}}{\spellrng{\rngmed}}
 \spelldur{\durshort \dismissable}
+\spellsr{No}
 \spellline
 \spelleffect This spell creates a volume of sound within the area, as determined by you. As a standard action, you can concentrate to alter the sound within the area.
 \par The volume of sound created depends on your caster level. You can produce as much noise as two normal humans per caster level. Thus, talking, singing, shouting, walking, marching, or running sounds can be created. The noise can be virtually any type of sound within the volume limit, including speech. A horde of rats running and squeaking is about the same volume as eight humans running and shouting. A roaring lion is equal to the noise from sixteen humans, while a roaring dire tiger is equal to the noise from twenty humans.
@@ -696,6 +708,7 @@ Holding one's breath doesn't help against the poison, but creatures immune to po
 \spelltime{Full-round action}
 \spellrng{\rngmed}
 \spelldur{\durmed}
+\spellsr{No}
 \spellline
 \spelleffect This spell creates one centipede swarm per two caster levels. They must all be adjacent at least one other swarm. You may summon the centipede swarms so that they share the area of other creatures. The swarms remain stationary, attacking any creatures in their area, unless you command the creeping doom to move (a standard action). As a standard action, you can command any number of the swarms to move toward any prey within range of you. Any swarm out of range of you remains stationary, attacking any creatures in its area.
 
@@ -829,6 +842,7 @@ Holding one's breath doesn't help against the poison, but creatures immune to po
 \spellinfo{Illus (Figment) [Light]}{Arcane}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngmed}}
 \spelldur{\durshort \dismissable}
+\spellsr{No}
 \spellline
 \spelleffect This spell creates mobile sources of light. You can create up to four lights which resemble lanterns or torches, up to four glowing spheres of light, or a single glowing, vaguely humanoid shape. Regardless of their form, each light creates bright illumination in a \areamed radius, as a torch.
 
@@ -961,6 +975,7 @@ If you choose a delay, a glowing bead sits at the point of origin until it deton
 \spellinfo{Div (Awareness) [Detection]}{Divine}
 \spellemanation{\arealarge cone from you}
 \spelldur{Concentration}
+\spellsr{No}
 \spellline
 \spelleffect As you cast this spell, you choose an alignment: good, evil, lawful, or chaotic. Anything within the spell's area that has the chosen alignment has a faint aura, visible only to you.
 
@@ -1035,6 +1050,7 @@ By concentrating on an aura (a standard action), you can determine the strength 
 \spellinfo{Div (Awareness) [Detection]}{Divine, Law}
 \spellemanation{\arealarge cone from you}
 \spelldur{Concentration}
+\spellsr{No}
 \spellline
 \spelleffect You know when any creature in the area deliberately and knowingly speaks a lie. The spell does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions.
 \spellnotes Each round, you can turn to discern lies in a new area. A detection spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.
@@ -1043,6 +1059,7 @@ By concentrating on an aura (a standard action), you can determine the strength 
 \spellinfo{Div (Knowledge)}{Arcane}
 \spelltime{1 swift action}
 \spellrng{\rngmed}
+\spellsr{No}
 \begin{spelltarget}{One creature}
     \spelleffect You instantly recognize all of the target's vulnerabilities. This grants you a \plus2 bonus to attacks and weapon damage against that creature. In addition, you learn any significant weaknesses the creature has. This includes, but is not limited to, the following information:
     \begin{itemize}
@@ -1078,6 +1095,7 @@ By concentrating on an aura (a standard action), you can determine the strength 
 \spellsection{Dispel Magic}{3}
 \spellinfo{Abjur (Negation) [Magic]}{Arcane, Divine, Magic, Nature}
 \spellrng{\rngmed}
+\spellsr{No}
 \spellspecial This spell has two versions: a targeted dispel, and an area dispel. Its effects depend on which version is chosen.
 \begin{spelltarget}{One creature or object}[Caster level vs. Special]
     \spelleffect For every spell affecting the target, if the attack result beats a DC equal to 10 \add the caster level of the spell, it is dispelled.
@@ -1106,6 +1124,7 @@ Artifacts and deities are unaffected by mortal magic such as this.
 \spellsectioncomma{Dispel Magic}{Greater}{6}
 \spellinfo{Abjur (Negation) [Magic]}{Arcane, Divine, Magic, Nature}
 \spelltwocol{\spellarea{\areamed radius limit}}{\spellrng{\rngmed}}
+\spellsr{No}
 \begin{spelltargets}{All creatures and unattended objects in the area}l[Caster level vs. Special]
     \spelleffect Spells affecting the target are dispelled, as a targeted \spell{dispel magic}.
 \end{spelltargets}
@@ -1224,6 +1243,7 @@ Artifacts and deities are unaffected by mortal magic such as this.
 \spellinfo{Evoc (Control) [Earth]}{Destruction, Divine, Earth, Nature}
 \spelltwocol{\spellzone{\arealarge radius}}{\spellrng{\rngmed}}
 \spelldur{5 rounds}
+\spellsr{No}
 \spellline
 \spelleffect The area is difficult terrain. Creatures in the area take a \minus2 penalty to physical attacks, defenses, and checks. Casting a spell in the area requires a Concentration check against a DC equal to 10 \add your caster level \add double the level of the spell being cast.
 \begin{spelltrigger}{End of every round, except the last round}
@@ -1245,6 +1265,7 @@ Artifacts and deities are unaffected by mortal magic such as this.
 \spelldesc{You create a spike from the ground that impales your foe.} 
 \spellinfo{Trans (Animation) [Earth]}{Earth, Nature}
 \spellrng{\rngmed}
+\spellsr{No}
 \begin{spelltarget}{One creature or object within 10 feet of natural earth or stone}l[Caster level \add casting attribute vs. Armor defense and Maneuver defense]
     \spellsuccess[Armor defense] 6d8 piercing damage \add d8 per two caster levels above 6th.
     \spellsuccess[Armor defense and Maneuver defense] The target is \immobilized by a spike from the ground for 5 rounds. It can break free by destroying the spike. The spike's physical defenses are all 10, and it has 2 hit points per caster level.
@@ -1254,6 +1275,7 @@ Artifacts and deities are unaffected by mortal magic such as this.
 \spellinfo{Trans (Animation) [Earth]}{Earth, Nature}
 \spellrng{\rngmed}
 \spelllimit{\areasmall radius}
+\spellsr{No}
 \begin{spelltargets}{Everything in the area within 10 feet of natural earth or stone}l[Caster level \add casting attribute vs. Armor defense and Maneuver defense]
     \spellsuccess The target is damaged and possibly immobilized, as \spell{earthspike}, except that it takes 6d8 piercing damage \add d8 per four caster levels above 12th.
 \end{spelltargets}
@@ -1263,6 +1285,7 @@ Artifacts and deities are unaffected by mortal magic such as this.
 \spellinfo{Conj (Summoning) [see text]}{Air, Earth, Fire, Nature, Water}
 \spelltwocol{\spelllimit{\arealarge radius}}{\spellrng{\rngmed}}
 \spelldur{\durlong \dismissable}
+\spellsr{No}
 \spellline
 \spelleffect This spell opens a portal to an Elemental Plane and summons elementals from it. A druid can choose the plane (Air, Earth, Fire, or Water); a cleric opens a portal to the plane matching his domain.
 \par When the spell is complete, 2d4 Large elementals appear. Five minutes later, 1d4 Huge elementals appear. Five minutes after that, one greater elemental appears. All creatures initially appear wherever you desire within the spell's area. Once these creatures appear, they serve you for the duration of the spell.
@@ -1356,6 +1379,7 @@ Artifacts and deities are unaffected by mortal magic such as this.
 \spellinfo{Trans (Animation)}{Nature, Wild}
 \spelltwocol{\spellzone{\areasmall radius}}{\spellrng{\rngmed}}
 \spelldur{\durshort \dismissable}
+\spellsr{No}
 \spellline
 \spelleffect The area is difficult terrain.
 \begin{spelltrigger}{End of every movement phase}
@@ -1370,6 +1394,7 @@ Artifacts and deities are unaffected by mortal magic such as this.
 \spellinfo{Trans (Alteration, Animation)}{Nature, Wild}
 \spelltwocol{\spellzone{\areamed radius}}{\spellrng{\rngmed}}
 \spelldur{\durshort \dismissable}
+\spellsr{No}
 \spellline
 \spelleffect The area is difficult terrain. Plants grow in the area, even if the terrain would not normally support plant life. At the end of the spell's duration, the plants recede into the ground, leaving no trace that they were ever there.
 \begin{spelltrigger}{End of every movement phase}
@@ -1581,6 +1606,7 @@ Spell resistance applies when a foe is struck by the weapon, but not when the bl
 \spellinfo{Conj (Creation) [Fog]}{Arcane, Nature, Water}
 \spelltwocol{\spellzone{\areamed radius cylinder}}{\spellrng{\rngmed}}
 \spelldur{\durshort}
+\spellsr{No}
 \spellline
 \spelleffect Fog blocks sight in the area, causing all creatures within or looking through the area to treat everything they see as if it had \concealment.
 \spellnotes \fogspellnotes \fogwindspellnotes
@@ -1730,6 +1756,7 @@ Spell resistance applies when a foe is struck by the weapon, but not when the bl
 \spellinfo{Conj (Creation)}{Arcane}
 \spelltwocol{\spellzone{\areasmall radius}}{\spellrng{\rngmed}}
 \spelldur{\durshort \dismissable}
+\spellsr{No}
 \spellline
 \spelleffect Any creature moving through the area must make an Acrobatics check to balance. The DC is equal to half your caster level \add your casting attribute. Success means it moves normally (though usually at half speed, because it is balancing). Failure means the creature's movement is wasted. Failure by 10 or more means it also falls prone.
 
@@ -2259,6 +2286,7 @@ Any missiles you do not explicitly target will automatically strike a living cre
 \spelltgt{One willing creature}[Primary]
 \spelltgt{One creature or object}[Secondary]
 \spelldur{1 round}
+\spellsr{Yes (primary target), No (secondary target)}
 \spellline
 \spelleffect The primary target is moved adjacent to the secondary target, gains the benefit of the \spell{ablate impact} spell for 1 round, and is knocked prone.
 \spellattack{Caster level \add casting attribute vs. Armor defense (secondary target)}
@@ -2422,6 +2450,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellinfo{Illus (Figment) [Unreal]}{Illus}
 \spelltwocol{\spellzone{\arealarge radius}}{\spellrng{\rngmed}}
 \spelldur{\durshort}
+\spellsr{No}
 \spellline
 \spelleffect A figment of your design appears within the area, as \spell{silent image}, except that sound, smell, and thermal elements are included.
 \spellnotes Creatures can identify the illusion, as \spell{silent image}.
@@ -2497,6 +2526,7 @@ When leaving the maze, the target reappears where it had been when the maze spel
 \spellinfo{Illus (Figment) [Unreal]}{Illus}
 \spelltwocol{\spellzone{\areamed radius}}{\spellrng{\rngmed}}
 \spelldur{\durshort}
+\spellsr{No}
 \spellline
 \spelleffect A figment of your design appears within the area, as \spell{silent image}, except that sound elements are included.
 \spellnotes Creatures can identify the illusion, as \spell{silent image}.
@@ -2597,6 +2627,7 @@ When leaving the maze, the target reappears where it had been when the maze spel
 \spellinfo{Conj (Creation) [Fog]}{Arcane, Divine, Nature, Water}
 \spellzone{\areamed radius cylinder centered on you}
 \spelldur{\durshort}
+\spellsr{No}
 \spellline
 \spelleffect Fog blocks sight in the area, as \spell{fog cloud}.
 \spellnotes As \spell{fog cloud}.
@@ -3159,6 +3190,7 @@ Since the image is not a creature, it is difficult to disrupt, and many spells h
 \spellsection{Sea of Fog}{8}
 \spellinfo{Conj (Creation) [Fog]}{Arcane, Nature}
 \spellzone{200 ft. radius cylinder centered on you, 50 ft. high}
+\spellsr{No}
 \spellline
 \spelleffect Fog fills the area, as \spell{fog cloud}.
 \spellnotes \fogspellnotes A severe wind disperses the fog within 1 minute, a windstorm disperses it within 5 rounds, and a hurricane disperses it within a round.
@@ -3344,6 +3376,7 @@ If the targets get out of range of each other, the effect is suppressed until th
 \spellinfo{Illus (Figment) [Unreal]}{Illus}
 \spelltwocol{\spellzone{\areamed radius}}{\spellrng{\rngmed}}
 \spelldur{\durshort}
+\spellsr{No}
 \spellline
 \spelleffect This spell creates the visual illusion of an object, creature, or force within the area, as determined by you. The illusion does not create sound, smell, texture, or temperature. As a standard action, you can concentrate to alter the image within the area.
 \spellnotes Creatures can recognize the figment as unreal by interacting with it physically, or by making a Perception check against a DC equal to 10 \add half your caster level \add your casting attribute. A creature gets a \plus10 bonus on this Perception check when using senses which should be present in the figment, but which are missing.
@@ -3406,6 +3439,7 @@ A creature faced with definitive proof that the figment is unreal can disbelieve
 \spellinfo{Conj (Creation) [Fog]}{Arcane, Nature, Water}
 \spelltwocol{\spellzone{\areamed radius cylinder}}{\spellrng{\rngmed}}
 \spelldur{\durshort}
+\spellsr{No}
 \spellline
 \spelleffect Fog blocks sight in the area, as \spell{fog cloud}. In addition to obscuring sight, the fog is so thick that any creature attempting to move through it progresses at a speed of 5 feet, regardless of its normal speed, and it takes a \minus2 penalty on all melee attack and melee damage rolls. The vapors prevent effective ranged weapon attacks (except for magic rays and the like). A creature or object that falls into solid fog is slowed, so that each 10 feet of vapor that it passes through reduces falling damage by 1d6.
 \par A creature in the fog can take a full-round action to make a Strength check, moving 5 feet for every 5 by which the result exceeds DC 0. This movement is affected by any other effects which impede movement, as normal.
@@ -3498,6 +3532,7 @@ The weapon can move up to 60 feet per round. It never provokes attacks of opport
 \spelltime{Full-round action}
 \spellarea{100 ft. line, 20 ft. wide}
 \spelldur{\durshort \dismissable}
+\spellsr{No}
 \begin{spelltarget}{Everything in the area}[Magic vs. Reflex]
     \spellsuccess 9d6 bludgeoning damage \add d6 per four caster levels above 18th, and the target is knocked \prone.
     \spellfailure Half damage, and the target is not knocked prone.
@@ -3508,6 +3543,7 @@ The weapon can move up to 60 feet per round. It never provokes attacks of opport
 \spellinfo{Conj (Creation)}{Arcane}
 \spelltwocol{\spellzone{\areamed radius cylinder}}{\spellrng{\rngmed}}
 \spelldur{\durshort}
+\spellsr{No}
 \spellline
 \spelleffect Fog fills the area, as \spell{fog cloud}, except that the fog has a putrid stench.
 \begin{spelltrigger}{End of every round}
@@ -3604,6 +3640,7 @@ At the end of every round, the storm has an additional effect, as shown on \tref
 \spellinfo{Conj (Summoning) [see text]}{Arcane, Divine}
 \spelltwocol{\spelltime{Full-round action}}{\spellrng{\rngclose}}
 \spelldur{\durshort \dismissable}
+\spellsr{No}
 \spellline
 \spelleffect This spell summons an extraplanar creature (typically an outsider, elemental, or magical beast native to another plane). It appears where you designate and acts on your next turn. You must spend a swift action each round to control the creature summoned by this spell. If you do, it attacks your opponents to the best of its ability. You can direct the creature not to attack, to attack particular enemies, or to perform other actions if you can communicate with it. If you do not actively control the creature summoned by this spell, it acts according to its nature.
 \par When you learn this spell, you choose two creatures from the 1st-level list on \tref{Summon Monster List}. You can summon those creatures with this or any other summon monster spell.
@@ -3614,6 +3651,7 @@ At the end of every round, the storm has an additional effect, as shown on \tref
 \spellinfo{Conj (Summoning)}{Arcane, Divine}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
 \spelldur{\durshort \dismissable}
+\spellsr{No}
 \spellline
 \spelleffect This spell functions like \spell{summon monster I}, except that you can summon one creature from the 2nd-level list or 1d3 creatures of the same kind from the 1st-level list. When you learn this spell, you choose two creatures from the 2nd-level list or lower on \tref{Summon Monster List}. You can summon those creatures with this or any other \spell{summon monster} spell.
 
@@ -3621,6 +3659,7 @@ At the end of every round, the storm has an additional effect, as shown on \tref
 \spellinfo{Conj (Summoning)}{Arcane, Chaos, Divine, Evil, Good, Law}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
 \spelldur{\durshort \dismissable}
+\spellsr{No}
 \spellline
 \spelleffect This spell functions like \spell{summon monster I}, except that you can summon one creature from the 3rd-level list or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 3rd-level list or lower on \tref{Summon Monster List}. You can summon those creatures with this or any other \spell{summon monster} spell.
 
@@ -3628,6 +3667,7 @@ At the end of every round, the storm has an additional effect, as shown on \tref
 \spellinfo{Conj (Summoning)}{Arcane, Divine}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
 \spelldur{\durshort \dismissable}
+\spellsr{No}
 \spellline
 \spelleffect This spell functions like \spell{summon monster I}, except that you can summon one creature from the 4th-level list or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 4th-level list or lower on \tref{Summon Monster List}. You can summon those creatures with this or any other \spell{summon monster} spell.
 
@@ -3635,6 +3675,7 @@ At the end of every round, the storm has an additional effect, as shown on \tref
 \spellinfo{Conj (Summoning)}{Air, Arcane, Divine, Earth, Fire, Water}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
 \spelldur{\durshort \dismissable}
+\spellsr{No}
 \spellline
 \spelleffect This spell functions like \spell{summon monster I}, except that you can summon one creature from the 5th-level list or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 5th-level list or lower on \tref{Summon Monster List}. You can summon those creatures with this or any other \spell{summon monster} spell.
 
@@ -3642,6 +3683,7 @@ At the end of every round, the storm has an additional effect, as shown on \tref
 \spellinfo{Conj (Summoning)}{Arcane, Chaos, Divine, Evil, Good, Law}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
 \spelldur{\durshort \dismissable}
+\spellsr{No}
 \spellline
 \spelleffect This spell functions like \spell{summon monster I}, except you can summon one creature from the 6th-level list or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 6th-level list or lower on \tref{Summon Monster List}. You can summon those creatures with this or any other \spell{summon monster} spell.
 
@@ -3649,6 +3691,7 @@ At the end of every round, the storm has an additional effect, as shown on \tref
 \spellinfo{Conj (Summoning)}{Arcane, Divine}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
 \spelldur{\durshort \dismissable}
+\spellsr{No}
 \spellline
 \spelleffect This spell functions like \spell{summon monster I}, except that you can summon one creature from the 7th-level list or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 7th-level list or lower on \tref{Summon Monster List}. You can summon those creatures with this or any other \spell{summon monster} spell.
 
@@ -3656,6 +3699,7 @@ At the end of every round, the storm has an additional effect, as shown on \tref
 \spellinfo{Conj (Summoning)}{Air, Arcane, Divine, Earth, Fire, Water}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
 \spelldur{\durshort \dismissable}
+\spellsr{No}
 \spellline
 \spelleffect This spell functions like \spell{summon monster I}, except that you can summon one creature from the 8th-level list or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 8th-level list or lower on \tref{Summon Monster List}. You can summon those creatures with this or any other \spell{summon monster} spell.
 
@@ -3663,6 +3707,7 @@ At the end of every round, the storm has an additional effect, as shown on \tref
 \spellinfo{Conj (Summoning)}{Arcane, Chaos, Divine, Evil, Good, Law}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
 \spelldur{\durshort \dismissable}
+\spellsr{No}
 \spellline
 \spelleffect This spell functions like \spell{summon monster I}, except that you can summon one creature from the 9th-level list or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 9th-level list or lower on \tref{Summon Monster List}. You can summon those creatures with this or any other \spell{summon monster} spell.
 
@@ -3726,6 +3771,7 @@ At the end of every round, the storm has an additional effect, as shown on \tref
 \spelltime{Full-round action}
 \spellrng{\rngclose}
 \spelldur{\durshort \dismissable}
+\spellsr{No}
 \spellline
 \spelleffect This spell summons a natural creature. It appears where you designate and acts on your next turn. You must spend a swift action each round to control the creature summoned by this spell. If you do, it attacks your opponents to the best of its ability. You can direct the creature not to attack, to attack particular enemies, or to perform other actions if you can communicate with it. If you do not actively control the creature summoned by this spell, it acts according to its nature.
 \par When you learn this spell, you choose two creatures from the 1st-level list on \tref{Summon Nature's Ally List}. You can summon those creatures with this or any other \spell{summon nature's ally} spell.
@@ -3736,6 +3782,7 @@ At the end of every round, the storm has an additional effect, as shown on \tref
 \spellinfo{Conj (Summoning)}{Nature}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
 \spelldur{\durshort \dismissable}
+\spellsr{No}
 \spellline
 \spelleffect This spell functions like \spellindirect{summon nature's ally i}{summon nature's ally I}, except that you can summon one 2nd-level creature or 1d3 1st-level creatures of the same kind. When you learn this spell, you choose two creatures from the 2nd-level list or lower on \tref{Summon Nature's Ally List}. You can summon those creatures with this or any other \spell{summon nature's ally} spell.
 
@@ -3743,6 +3790,7 @@ At the end of every round, the storm has an additional effect, as shown on \tref
 \spellinfo{Conj (Summoning) [see text]}{Nature, Wild}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
 \spelldur{\durshort \dismissable}
+\spellsr{No}
 \spellline
 \spelleffect This spell functions like \spellindirect{summon nature's ally i}{summon nature's ally I}, except that you can summon one 3rd-level creature, 1d3 2nd-level creatures of the same kind, or 1d4\plus1 1st-level creatures of the same kind. When you learn this spell, you choose two creatures from the 3rd-level list or lower on \tref{Summon Nature's Ally List}. You can summon those creatures with this or any other \spell{summon nature's ally} spell.
 
@@ -3750,6 +3798,7 @@ At the end of every round, the storm has an additional effect, as shown on \tref
 \spellinfo{Conj (Summoning) [see text]}{Nature}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
 \spelldur{\durshort \dismissable}
+\spellsr{No}
 \spellline
 \spelleffect This spell functions like \spellindirect{summon nature's ally i}{summon nature's ally I}, except that you can summon one 4th-level creature or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 4th-level list or lower on \tref{Summon Nature's Ally List}. You can summon those creatures with this or any other \spell{summon nature's ally} spell.
 
@@ -3757,6 +3806,7 @@ At the end of every round, the storm has an additional effect, as shown on \tref
 \spellinfo{Conj (Summoning) [see text]}{Nature}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
 \spelldur{\durshort \dismissable}
+\spellsr{No}
 \spellline
 \spelleffect This spell functions like \spellindirect{summon nature's ally i}{summon nature's ally I}, except that you can summon one 5th-level creature or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 5th-level list or lower on \tref{Summon Nature's Ally List}. You can summon those creatures with this or any other \spell{summon nature's ally} spell.
 
@@ -3764,6 +3814,7 @@ At the end of every round, the storm has an additional effect, as shown on \tref
 \spellinfo{Conj (Summoning) [see text]}{Nature, Wild}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
 \spelldur{\durshort \dismissable}
+\spellsr{No}
 \spellline
 \spelleffect This spell functions like \spellindirect{summon nature's ally i}{summon nature's ally I}, except that you can summon one 6th-level creature or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 6th-level list or lower on \tref{Summon Nature's Ally List}. You can summon those creatures with this or any other \spell{summon nature's ally} spell.
 
@@ -3771,6 +3822,7 @@ At the end of every round, the storm has an additional effect, as shown on \tref
 \spellinfo{Conj (Summoning) [see text]}{Nature}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
 \spelldur{\durshort \dismissable}
+\spellsr{No}
 \spellline
 \spelleffect This spell functions like \spellindirect{summon nature's ally i}{summon nature's ally I}, except that you can summon one 7th-level creature or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 7th-level list or lower on \tref{Summon Nature's Ally List}. You can summon those creatures with this or any other \spell{summon nature's ally} spell.
 
@@ -3778,6 +3830,7 @@ At the end of every round, the storm has an additional effect, as shown on \tref
 \spellinfo{Conj (Summoning) [see text]}{Nature}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
 \spelldur{\durshort \dismissable}
+\spellsr{No}
 \spellline
 \spelleffect This spell functions like \spellindirect{summon nature's ally i}{summon nature's ally I}, except that you can summon one 8th-level creature or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 8th-level list or lower on \tref{Summon Nature's Ally List}. You can summon those creatures with this or any other \spell{summon nature's ally} spell.
 
@@ -3785,6 +3838,7 @@ At the end of every round, the storm has an additional effect, as shown on \tref
 \spellinfo{Conj (Summoning) [see text]}{Nature, Wild}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
 \spelldur{\durshort \dismissable}
+\spellsr{No}
 \spellline
 \spelleffect This spell functions like \spellindirect{summon nature's ally i}{summon nature's ally I}, except that you can summon one 9th-level creature or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 9th-level list or lower on \tref{Summon Nature's Ally List}. You can summon those creatures with this or any other \spell{summon nature's ally} spell.
 
@@ -3828,6 +3882,7 @@ At the end of every round, the storm has an additional effect, as shown on \tref
 \spellinfo{Conj (Summoning)}{Nature, Wild}
 \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
 \spelldur{\durshort \dismissable}
+\spellsr{No}
 \spellline
 \spelleffect This spell functions like \spellindirect{summon nature's ally i}{summon nature's ally I}, except that you can summon up to one creature per caster level from the 4th-level list or lower.
 \par When you learn this spell, you choose a creature from the 4th-level list or lower on the Summon Nature's Ally table. That is the only creature you can summon with this spell.
@@ -4122,6 +4177,7 @@ At the end of every round, the storm has an additional effect, as shown on \tref
 \spellcmp{Somatic only}
 \spellrng{\rngmed}
 \spelldur{\durshort \dismissable}
+\spellsr{No}
 \begin{spelltarget}{You}
     \spelleffect Your voice (or any sound that you can normally make vocally) originates from another location within range. As a swift action, you can change the apparent origin of your voice.
 \end{spelltarget}
@@ -4174,6 +4230,7 @@ This spell can be made permanent with a \spell{permanency} ritual. A permanent \
 \spellinfo{Evoc (Control) [Force, Wall]}{Arcane}
 \spelltwocol{\spellzone{100 ft. solid wall, 10 ft. high}}{\spellrng{\rngmed}}
 \spelldur{\durshort \dismissable}
+\spellsr{No}
 \spellline
 \spelleffect This spell creates an invisible wall made of force. A 5-foot square of wall has 5 hit points per caster level, and hardness equal to your caster level.
 \spellnotes \forcespellnotes
@@ -4183,6 +4240,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellsection{Wall of Stone}{5}
 \spellinfo{Conj/Trans (Alteration, Creation) [Earth, Wall]}{Arcane, Earth, Nature}
 \spelltwocol{\spellzone{\arealarge solid wall, 5 ft. high \shapeable}}{\spellrng{\rngmed}}
+\spellsr{No}
 \spellline
 \spelleffect This spell creates a wall made of stone atop an existing rock surface. A 5-foot square of wall has 60 hit points, and hardness 8. The wall is four inches thick.
 \par Unlike most walls, a \spell{wall of stone} need not be vertical. It need not rest entirely on solid ground, as long as it is solidly supported by existing stone.
@@ -4237,6 +4295,7 @@ The wall provides total cover against attacks through the wall. A creature in th
 \spellinfo{Conj (Creation)}{Arcane}
 \spelltwocol{\spellzone{\areamed radius}}{\spellrng{\rngclose}}
 \spelldur{\durshort \dismissable}
+\spellsr{No}
 \begin{spelltrigger}{A creature in the area moves}
     \begin{spelltarget}{The moving creature}[Magic vs. Reflex]
         \spellsuccess The target is \entangled. As a standard action, it can make a grapple attack or Escape Artist check. If its result beats your attack result, it is no longer entangled.
