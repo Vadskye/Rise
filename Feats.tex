@@ -389,7 +389,7 @@ Strike feats grant a character the ability to make an unusually potent attack wi
         \featref{Contingent Attack} & Int 5, base attack bonus \plus12 & Prepare to attack as immediate action & Reaction & \featpref{Contingent Attack} \\
         \featref{Legendary Awareness} & Base attack bonus \plus12, any three Awareness feats & Immune to overwhelm & Awareness & \featpref{Legendary Awareness} \\
         \featref{Legendary Defense} & Base attack bonus \plus12, any three Defense feats & \plus2 to all defenses & Defense & \featpref{Legendary Defense} \\
-        \featref{Legendary Finesse} & Base attack bonus \plus12, any three Finesse feats & Add half Dexterity to damage & Finesse & \featpref{Legendary Finesse} \\
+        \featref{Legendary Finesse} & Base attack bonus \plus12, any three Finesse feats & Roll maximum damage again & Finesse & \featpref{Legendary Finesse} \\
         \featref{Legendary Maneuver Master} & Base attack bonus \plus12, any three Maneuver feats & Never provoke, deal damage with very successful maneuvers & Maneuver & \featpref{Legendary Maneuver Master} \\
         \featref{Legendary Mobility} & Base attack bonus \plus12, any three Mobility feats & Movement does not provoke & Mobility& \featpref{Legendary Mobility} \\
         \featref{Legendary Mounted Warrior} & Base attack bonus \plus12, any three Mounted feats & Share damage with mount & Mounted& \featpref{Legendary Mounted Warrior} \\
@@ -1020,7 +1020,9 @@ You must be aware of a spell to disable it, either through the Spellcraft skill 
 
 \feat{Legendary Finesse}{Combat, Finesse}
 \featpre Base attack bonus \plus12, any three Finesse feats.
-\featben When you make physical melee attacks, you can add half your Dexterity to damage in addition to half your Strength.
+\featben When you roll the maximum amount of damage with a weapon, you roll the weapon's damage die (or dice) again and add the result to your damage dealt. There is no limit to the number of times a weapon's die can add to damage in this way.
+
+This feat does not affect weapons that roll a d3 or smaller die for damage. If the weapon's damage die would be treated as having a particular result instead of being rolled, that effect is not applied to any subsequent die rolls after the first. When fighting with two weapons, each weapon's damage die is rolled separately, including all additional rolls from this feat, before determining which weapon deals more damage.
 
 \feat{Legendary Handler}{Skill}
 \featpre Creature Handling 13 ranks.
@@ -1096,11 +1098,13 @@ You can use this ability three times per day.
 
 \feat{Legendary Power}{Combat, Power}
 \featpres Base attack bonus \plus12, any three Power feats.
-\featben You can use weapons as if they were one category less encumbering than they actually are. The weapon encumbrance categories are light, medium, and heavy. For example, you can use a greatsword as a medium weapon in one hand without suffering any penalties.
+\featben You can use weapons as if they were one category less encumbering than they actually are. The weapon encumbrance categories are light, medium, and heavy. For example, you can use a greatsword as a medium weapon, allowing you to wield it in one hand without suffering any penalties.
+
+In addition, you increase your damage dice with unarmed strikes and natural weapons by one size category.
 
 \feat{Legendary Precision}{Combat, Precison}
 \featpre Base attack bonus \plus12, any three Precision feats.
-\featben When attacking, if you hit your opponent by 10 or more, you deal maximum damage with your weapon. If the attack is a critical threat, you automatically confirm the threat.
+\featben When attacking, if you hit your opponent by 5 or more, you deal maximum damage with your weapon.
 
 \feat{Legendary Profession}{Skill}
 \featpre Profession (any) 13 ranks.
