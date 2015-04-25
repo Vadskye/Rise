@@ -110,7 +110,6 @@ Strike feats grant a character the ability to make an unusually potent attack wi
     \thead{General Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
     \featref{Endurance} & Con 3 & Fight normally without hit points & \featpref{Endurance} \\
     \featref{Deathless} & Con 5 or base Fortitude defense \plus10 & Immune to death effects & \featpref{Deathless} \\
-    \featref{Diehard} & Con 3 & Remain conscious after taking critical damage & \featpref{Diehard} \\
     \featref{Fearless} & Cha 5 or base Will defense \plus10 & Immune to fear and hostile morale effects & \featpref{Fearless} \\
     \featref{Great Fortitude} & \x &  \plus2 bonus to Fortitude defense & \featpref{Great Fortitude} \\
     \featref{Iron Will} & \x & \plus2 bonus to Will defense & \featpref{Iron Will} \\
@@ -313,6 +312,7 @@ Strike feats grant a character the ability to make an unusually potent attack wi
         \featref{Covering Fire} & \x & Trade ranged attack bonus to penalize struck foes & Precision, Style & \featpref{Covering Fire} \\
         \featref{Deadly Aim} & Dex 3 & Trade ranged attack bonus for damage & Precision, Style & \featpref{Deadly Aim} \\
         \featref{Defensive Fighting} & \x & Trade attack bonus for defense & Defense, Style & \featpref{Defensive Fighting} \\
+        \featref{Diehard} & Con 3 & Halve penalties from critical damage & Defense & \featpref{Diehard} \\
         \featref{Dodge} & Dex 3 & \plus4 defense against some attacks of opportunity from selected target & Defense, Mobility & \featpref{Dodge} \\
         \featref{Exotic Weapon Proficiency}\fn{1} & \x & Don't provoke when attacking with exotic weapons & Equipment & \featpref{Exotic Weapon Proficiency} \\
         \featref{Far Shot} & \x & Increase range increment by 50\% or 100\% & Precision & \featpref{Far Shot} \\
@@ -591,10 +591,10 @@ Contingent actions depend on a trigger condition. If the trigger condition occur
 \featpre Base attack bonus \plus16.
 \featben When you make a physical attack, you may take a \minus8 penalty to hit. If you hit, you deal double damage. You cannot make more than one Strike each round.
 
-\feat{Diehard}{General}
+\feat{Diehard}{Combat, Defense}
 \parhead{Prerequisite} Constitution 3.
-\parhead{Benefit} When you take critical damage, you do not automatically fall unconscious. You are still staggered, as normal for having no hit points remaining, and you still die when you take enough critical damage. See \pcref{Dying}, for more details.
-\parhead{Normal} A character without this feat who takes critical damage falls unconscious automatically.
+\parhead{Benefit} When you have critical damage, you suffer a penalty to attacks, checks, and defenses equal to half the amount of critical damage you have. See \pcref{Dying}, for details.
+\parhead{Normal} A character without this feat suffers a penalty to attacks, checks, and defenses equal to the critical damage it has.
 
 \feat{Dilettante}{Skill}
 \parhead{Prerequisite} Int 3.
