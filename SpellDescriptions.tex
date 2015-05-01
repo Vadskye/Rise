@@ -205,10 +205,10 @@ The effects of instantaneous conjurations, such as \spell{create water}, are not
 \spellsection{Assimilate}{9}
 \spelldesc{Your pointing finger turns black as obsidian. You touch a creature and it dissolves into dust as you assimilate its form into your own body.}
 \spellinfo{Necro/Trans (Augment, Life)}{Arcane, Evil}
-\spellrng{\rngtouch}
+\spellrng{\rngclose}
 \spelldur{Instantaneous and one hour; see text}
 \begin{spelltarget}{One living creature}[Magic vs. Fortitude]
-    \spellsuccess 18d8 life damage \add d6 per four caster levels above 18th. 
+    \spellsuccess 9d10 life damage \add d10 per four caster levels above 18th. 
     \spellfailure As above, but half damage.
     \spelleffect If the target has no hit points remaining after taking damage from this spell, it is entirely assimilated into your form, leaving behind only a trace of fine dust. An assimilated creature's equipment is unaffected.
     \par If the creature has at least 1 hit point following your use of this power, you gain temporary hit points equal to half the damage you dealt for 1 hour.
@@ -457,7 +457,7 @@ If the staff-treant is reduced to 0 or fewer hit points, it crumbles to powder a
 \spellrng{\rngmed}
 \spelldur{5 rounds}
 \begin{spelltarget}{One nonchaotic creature}[Magic vs. Will]
-    \spellsuccess 8d6 divine damage \add d6 per two caster levels above 8th, and the target is \bewildered for 5 rounds.
+    \spellsuccess 4d10 divine damage \add d10 per four caster levels above 8th, and the target is \bewildered for 5 rounds.
     \spellfailure As above, but half damage.
 \end{spelltarget}
 
@@ -713,7 +713,7 @@ Holding one's breath doesn't help against the poison, but creatures immune to po
 \spellinfo{Necro (Vitalism) [Positive]}{Divine, Life, Nature}
 \spellrng{\rngclose}
 \begin{spelltarget}{One creature}[Magic vs. Fortitude]
-    \spelleffect If the target is living, it is healed for 8d6 damage \add d6 per two caster levels above 8th. For every 5 points of healing granted by this spell, it can instead cure 1 point of critical damage.
+    \spelleffect If the target is living, it is healed for 4d10 damage \add d10 per four caster levels above 8th. For every 5 points of healing granted by this spell, it can instead cure 1 point of critical damage.
     \spellsuccess If the target is undead, it takes that much positive damage.
     \spellfailure As above, but half damage.
 \end{spelltarget}
@@ -733,7 +733,7 @@ Holding one's breath doesn't help against the poison, but creatures immune to po
 \spellinfo{Necro (Vitalism) [Positive]}{Divine, Nature}
 \spellrng{\rngclose}
 \begin{spelltarget}{One creature}[Magic vs. Fortitude]
-    \spelleffect If the target is living, it is healed for 2d6 damage \add d6 per two caster levels above 2nd.
+    \spelleffect If the target is living, it is healed for 1d10 damage \add d10 per four caster levels above 2nd.
     \spellsuccess If the target is undead, it takes that much positive damage.
     \spellfailure As above, but half damage.
 \end{spelltarget}
@@ -754,7 +754,7 @@ Holding one's breath doesn't help against the poison, but creatures immune to po
 \spellinfo{Necro (Life) [Positive]}{Divine, Life, Nature}
 \spellrng{\rngclose}
 \begin{spelltarget}{One creature}[Magic vs. Fortitude]
-    \spelleffect If the target is living, it is healed for 4d6 damage \add d6 per two caster levels above 4th. For every 15 points of healing granted by this spell, it can instead cure 1 point of critical damage.
+    \spelleffect If the target is living, it is healed for 2d10 damage \add d10 per four caster levels above 4th. For every 15 points of healing granted by this spell, it can instead cure 1 point of critical damage.
     \spellsuccess If the target is undead, it takes that much positive damage.
     \spellfailure As above, but half damage.
 \end{spelltarget}
@@ -773,7 +773,7 @@ Holding one's breath doesn't help against the poison, but creatures immune to po
 \spellinfo{Necro (Vitalism) [Positive]}{Divine, Life, Nature}
 \spellrng{\rngclose}
 \begin{spelltarget}{One creature}[Magic vs. Fortitude]
-    \spelleffect If the target is living, it is healed for 6d6 damage \add d6 per two caster levels above 6th. For every 10 points of healing granted by this spell, it can instead cure 1 point of critical damage.
+    \spelleffect If the target is living, it is healed for 3d10 damage \add d10 per four caster levels above 6th. For every 10 points of healing granted by this spell, it can instead cure 1 point of critical damage.
     \spellsuccess If the target is undead, it takes that much positive damage.
     \spellfailure As above, but half damage.
 \end{spelltarget}
@@ -1021,7 +1021,7 @@ By concentrating on an aura (a standard action), you can determine the strength 
 \spellinfo{Trans (Alteration)}{Arcane, Destruction}
 \spellrng{\rngclose}
 \begin{spelltarget}{One creature or attended object}l[Magic vs. Reflex and Fortitude]
-    \spellsuccess 12d8 physical damage \add d8 per two caster levels above 12th.
+    \spellsuccess 12d6 physical damage \add d8 per four caster levels above 12th.
     \spellfailure[Fortitude] As above, but half damage.
     \spellfailure[Reflex] No effect.
     \spelleffect Any creature reduced to 0 hit points by this spell is entirely disintegrated, leaving behind only a trace of fine dust. Its equipment is unaffected.
@@ -1138,7 +1138,7 @@ Artifacts and deities are unaffected by mortal magic such as this.
 \spellrng{\rngclose}
 \spelldur{\durlong}
 \begin{spelltarget}{One living creature}[Magic vs. Fortitude]
-    \spellsuccess 10d6 life damage \add d6 per two caster levels above 8th. You gain temporary hit points equal to half the damage you deal. You can't gain more hit points than the target had. The temporary hit points disappear after 1 hour. If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
+    \spellsuccess 5d10 life damage \add d10 per four caster levels above 8th. You gain temporary hit points equal to half the damage you deal. You can't gain more hit points than the target had. The temporary hit points disappear after 1 hour. If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
 
     As long as you have temporary hit points from this spell, you are treated as being undead for the purpose of spells or abilities which affect undead. This can cause some unintelligent undead, such as skeletons and zombies, to avoid attacking you.
     \spellfailure As above, but half damage.
@@ -1204,7 +1204,7 @@ Artifacts and deities are unaffected by mortal magic such as this.
 \spellrng{\rngmed}
 \spellsr{No}
 \begin{spelltarget}{One creature or object within 10 feet of natural earth or stone}l[Caster level \add casting attribute vs. Armor defense and Maneuver defense]
-    \spellsuccess[Armor defense] 6d8 piercing damage \add d8 per two caster levels above 6th.
+    \spellsuccess[Armor defense] 3d10 piercing damage \add d8 per four caster levels above 6th.
     \spellsuccess[Armor defense and Maneuver defense] The target is \immobilized by a spike from the ground for 5 rounds. It can break free by destroying the spike. The spike's physical defenses are all 10, and it has 2 hit points per caster level.
 \end{spelltarget}
 
@@ -1696,7 +1696,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellinfo{Necro (Vitalism) [Negative]}{Arcane, Death, Divine, Evil, Vitality}
 \spellrng{\rngclose}
 \begin{spelltarget}{One creature}[Magic vs. Fortitude]
-    \spelleffect If the target is undead, it is healed for 12d6 damage \add d6 per two caster levels above 12th.
+    \spelleffect If the target is undead, it is healed for 6d10 damage \add d10 per four caster levels above 12th.
     \spellsuccess If the target is not undead, it takes that much negative energy damage, as well as four points of Constitution damage.
     \spellfailure As above, but both the negative energy damage and constitution damage is halved.
 \end{spelltarget}
@@ -1724,7 +1724,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellinfo{Necro (Vitalism) [Positive]}{Divine, Good, Nature, Vitality}
 \spellrng{\rngclose}
 \begin{spelltarget}{One creature}[Magic vs. Fortitude]
-    \spelleffect If the target is living, it gains three benefits. First, it is healed for 12d6 damage \add d6 per two caster levels above 12th. Second, for every 5 points of healing granted by the spell, it can instead cure 1 point of critical damage. Third, all of the following conditions are also removed from the target: ability damage, bewildered, blinded, confused, dazed, dazzled, deafened, diseased, exhausted, fatigued, feebleminded, insanity, nauseated, sickened, stunned, and poisoned.
+    \spelleffect If the target is living, it gains three benefits. First, it is healed for 6d10 damage \add d10 per four caster levels above 12th. Second, for every 5 points of healing granted by the spell, it can instead cure 1 point of critical damage. Third, all of the following conditions are also removed from the target: ability damage, bewildered, blinded, confused, dazed, dazzled, deafened, diseased, exhausted, fatigued, feebleminded, insanity, nauseated, sickened, stunned, and poisoned.
     \spellsuccess If the target is undead, it takes that much positive damage.
     \spellfailure As above, but half damage.
 \end{spelltarget}
@@ -1808,7 +1808,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngmed}
 \spelldur{5 rounds}
 \begin{spelltarget}{One nongood creature}[Magic vs. Will]
-    \spellsuccess 8d6 divine damage \add d6 per two caster levels above 8th, and the target is \bewildered for 5 rounds.
+    \spellsuccess 4d10 divine damage \add d10 per four caster levels above 8th, and the target is \bewildered for 5 rounds.
     \spellfailure As above, but half damage.
 \end{spelltarget}
 
@@ -1907,7 +1907,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellinfo{Necro (Vitalism) [Negative]}{Arcane, Divine}
 \spellrng{\rngclose}
 \begin{spelltarget}{One creature}[Magic vs. Fortitude]
-    \spellsuccess If the target is not undead, this spell inflicts 8d6 negative energy damage \add d6 per two caster levels above 8th. For every 5 points of damage dealt in excess of the target's hit points, it can instead inflict 1 point of critical damage.
+    \spellsuccess If the target is not undead, this spell inflicts 4d10 negative energy damage \add d10 per four caster levels above 8th. For every 5 points of damage dealt in excess of the target's hit points, it can instead inflict 1 point of critical damage.
     \spellfailure As above, but half damage.
     \spelleffect If the target is undead, it is instead healed for that much damage.
 \end{spelltarget}
@@ -1925,7 +1925,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellinfo{Necro (Vitalism) [Negative]}{Arcane, Divine}
 \spellrng{\rngclose}
 \begin{spelltarget}{One creature}[Magic vs. Fortitude]
-    \spellsuccess If the target is not undead, it takes 2d6 negative energy damage \add d6 per two caster levels above 2nd.
+    \spellsuccess If the target is not undead, it takes 1d10 negative energy damage \add d10 per four caster levels above 2nd.
     \spellfailure As above, but half damage.
     \spelleffect If the target is undead, it is instead healed for that much damage.
 \end{spelltarget}
@@ -1943,7 +1943,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellrng{\rngclose}
 \spellinfo{Necro (Vitalism) [Negative]}{Arcane, Divine}
 \begin{spelltarget}{One creature}[Magic vs. Fortitude]
-    \spellsuccess If the target is not undead, this spell inflicts 4d6 negative energy damage \add d6 per two caster levels above 4th. For every 15 points of damage dealt in excess of the target's hit points, it can instead inflict 1 point of critical damage.
+    \spellsuccess If the target is not undead, this spell inflicts 2d10 negative energy damage \add d10 per four caster levels above 4th. For every 15 points of damage dealt in excess of the target's hit points, it can instead inflict 1 point of critical damage.
     \spellfailure As above, but half damage.
     \spelleffect If the target is undead, it is instead healed for that much damage.
 \end{spelltarget}
@@ -1961,7 +1961,7 @@ This spell can be made permanent with a \spell{permanency} ritual.
 \spellinfo{Necro (Vitalism) [Negative]}{Arcane, Divine}
 \spellrng{\rngclose}
 \begin{spelltarget}{One creature}[Magic vs. Fortitude]
-    \spellsuccess If the target is not undead, this spell inflicts 6d6 negative energy damage \add d6 per two caster levels above 6th. For every 10 points of damage dealt in excess of the target's hit points, it can instead inflict 1 point of critical damage.
+    \spellsuccess If the target is not undead, this spell inflicts 3d10 negative energy damage \add d10 per four caster levels above 6th. For every 10 points of damage dealt in excess of the target's hit points, it can instead inflict 1 point of critical damage.
     \spellfailure As above, but half damage.
     \spelleffect If the target is undead, it is instead healed for that much damage.
 \end{spelltarget}
@@ -2085,7 +2085,7 @@ The hand is 10 feet long and about that wide with its fingers outstretched. It h
 \spellrng{\rngmed}
 \spelldur{Permanent}
 \begin{spelltarget}{One living creature}[Magic vs. Will]
-    \spellsuccess 12d6 life damage \add d6 per two caster levels above 12th. The target's maximum hit points are reduced by the amount of life damage it takes from this attack (to a minimum of 1).
+    \spellsuccess 7d10 life damage \add d10 per four caster levels above 14th. The target's maximum hit points are reduced by the amount of life damage it takes from this attack (to a minimum of 1).
     \spellfailure As above, but half damage, and the target's maximum hit points are not reduced.
 \end{spelltarget}
 \spellnotes If this spell is cast multiple times on the same target, the reduction of maximum hit points does not stack. Only the largest reduction applies.
@@ -2161,7 +2161,7 @@ Any missiles you do not explicitly target will automatically strike a living cre
 \spelleffect The primary target is moved adjacent to the secondary target, gains the benefit of the \spell{ablate impact} spell for 1 round, and is knocked prone.
 \spellattack{Caster level \add casting attribute vs. Armor defense (secondary target)}
 \begin{spellmargin}
-    \spellsuccess The secondary target takes 6d6 damage \add d6 per two caster levels above 6th. The primary target takes half this amount of damage.
+    \spellsuccess The secondary target takes 3d10 damage \add d10 per four caster levels above 6th. The primary target takes half this amount of damage.
     \spellfailure As above, but half damage to the secondary target. The damage taken by the primary target is not halved.
 \end{spellmargin}
 
@@ -2500,7 +2500,7 @@ When leaving the maze, the target reappears where it had been when the maze spel
 \spellrng{\rngmed}
 \spelldur{5 rounds}
 \begin{spelltarget}{One nonlawful creature}
-    \spellsuccess 8d6 divine damage \add d6 per two caster levels above 8th, and the target is \bewildered for 5 rounds.
+    \spellsuccess 4d10 divine damage \add d10 per four caster levels above 8th, and the target is \bewildered for 5 rounds.
     \spellfailure As above, but half damage.
 \end{spelltarget}
 
@@ -2647,7 +2647,7 @@ When leaving the maze, the target reappears where it had been when the maze spel
 \spellinfo{Universal [Light]}{Arcane}
 \spellrng{\rngmed}
 \begin{spelltarget}{One creature}
-    \spellspecial The target is struck by a randomly colored beam of light. The beam color determines the effect and the defense used, as shown on \tref{Prismatic Beam Effects}. The damaging effects deal 6d6 damage \add d6 damage per two caster levels above 6th.
+    \spellspecial The target is struck by a randomly colored beam of light. The beam color determines the effect and the defense used, as shown on \tref{Prismatic Beam Effects}. The damaging effects deal 3d10 damage \add d10 damage per four caster levels above 6th.
 \end{spelltarget}
 
 \begin{dtable*}
@@ -3018,7 +3018,7 @@ Since the image is not a creature, it is difficult to disrupt, and many spells h
 \spellrng{\rngclose}
 \spelldur{\durshort}
 \begin{spelltarget}{One creature or object}[Magic vs. Reflex]
-    \spellsuccess 4d6 fire damage \add d6 per two caster levels above 4th. In addition, the target is \ignited.
+    \spellsuccess 2d10 fire damage \add d10 per four caster levels above 4th. In addition, the target is \ignited.
     \spellfailure As above, but half damage, and the target is not ignited.
 \end{spelltarget}
 
@@ -3036,7 +3036,7 @@ Since the image is not a creature, it is difficult to disrupt, and many spells h
 \spellrng{\rngclose}
 \begin{spelltarget}{One creature or object}[Magic vs. Reflex]
     \spelleffect If the target is undead or particularly vulnerable to bright light, it is also \dazzled for 5 rounds.
-    \spellsuccess 6d6 divine damage \add d6 per two caster levels above 6th.
+    \spellsuccess 3d10 divine damage \add d10 per four caster levels above 6th.
     \spellfailure As above, but half damage.
 \end{spelltarget}
 
@@ -3145,7 +3145,7 @@ If the targets get out of range of each other, the effect is suppressed until th
 \spellrng{5 ft.}
 \begin{spelltarget}{One creature or object}l[Magic vs. Reflex and Fortitude]
     \spellspecial You gain a \plus2 bonus to attack if the target is wearing metal armor or otherwise has a significant quantity of metal.
-    \spellsuccess[Reflex] 2d6 electricity damage \add d6 per two caster levels above 2nd.
+    \spellsuccess[Reflex] 1d10 electricity damage \add d10 per four caster levels above 2nd.
     \spellfailure[Reflex] As above, but half damage.
     \spellsuccess[Reflex and Fortitude] The target is \staggered for 1 round.
 \end{spelltarget}
@@ -3213,7 +3213,7 @@ A creature faced with definitive proof that the figment is unreal can disbelieve
 \spellburst{\arealarge vertical line of lightning, 5 ft. wide}
 \spellspecial If no creature or objects lie in the area, the lightning strikes elsewhere instead. It strikes the  occupied square within the spell's range that lies closest to its original destination. If multiple occupied squares are equally close, it strikes the largest target.
 \begin{spelltargets}{Everything in the area}[Magic vs. Reflex]
-    \spellsuccess 12d6 electricity damage \add d6 per two caster levels above 12th.
+    \spellsuccess 6d10 electricity damage \add d10 per four caster levels above 12th.
     \spellfailure As above, but half damage.
 \end{spelltargets}
 \spellnotes The lightning can unerringly identify invisible and concealed creatures, but it does not differentiate between friend, foe, and inanimate object.
@@ -3940,7 +3940,7 @@ At the end of every round, the storm has an additional effect, as shown on \tref
 \spellrng{\rngmed}
 \spelldur{5 rounds}
 \begin{spelltarget}{One nonevil creature}[Magic vs. Will]
-    \spellsuccess 8d6 divine damage \add d6 per two caster levels above 8th, and the target is \sickened for 5 rounds.
+    \spellsuccess 4d10 divine damage \add d10 per four caster levels above 8th, and the target is \sickened for 5 rounds.
     \spellfailure As above, but half damage.
 \end{spelltarget}
 
@@ -4106,7 +4106,7 @@ This spell can be made permanent with a \spell{permanency} ritual. A permanent \
 \spellrng{\rngmed}
 \begin{spelltarget}{One creature or object}l[Magic vs. Fortitude]
     \begin{spellmargin}
-        \spellsuccess 4d6 bludgeoning damage \add d6 per two caster levels above 4th.
+        \spellsuccess 2d10 bludgeoning damage \add d10 per four caster levels above 4th.
         \spellfailure Half damage.
     \end{spellmargin}
     \spellattack Caster level \add casting attribute vs. Maneuver defense (shove)
@@ -4121,7 +4121,7 @@ This spell can be made permanent with a \spell{permanency} ritual. A permanent \
 \spellrng{\rngmed}
 \begin{spelltarget}{One creature or object}l[Magic vs. Fortitude]
     \begin{spellmargin}
-        \spellsuccess 10d6 bludgeoning damage \add d6 per two caster levels above 10th.
+        \spellsuccess 5d10 bludgeoning damage \add d10 per four caster levels above 10th.
         \spellfailure Half damage.
     \end{spellmargin}
     \spellattack Caster level \add casting attribute \add 12 vs. Maneuver defense (shove)
