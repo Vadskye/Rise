@@ -1250,7 +1250,7 @@ Artifacts and deities are unaffected by mortal magic such as this.
 \begin{spelltarget}{One creature}[Magic vs. Fortitude]
     \spelleffect If the target is living, it gains six \negativelevels.
 
-    \spelleffect If the target is undead, it gains temporary hit points equal to 40 \add your caster level. In addition, it gains physical damage reduction, reducing the physical damage it takes each round by 16 \add 1 per caster level above 16th. If it takes positive damage, it cannot use its damage reduction for 1 round.
+    \spelleffect If the target is undead, it gains temporary hit points equal to 40 \add your caster level. In addition, it gains physical damage reduction, reducing the physical damage it takes each round by 16 \add 1 per two caster levels above 16th. If it takes positive damage, it cannot use its damage reduction for 1 round.
 \end{spelltarget}
 
 \spellsection{Enervation}{4}
@@ -1261,7 +1261,7 @@ Artifacts and deities are unaffected by mortal magic such as this.
 \begin{spelltarget}{One creature}[Magic vs. Fortitude]
     \spelleffect If the target is living, it gains three \negativelevels.
 
-    If the target is undead, it gains physical damage reduction, reducing the physical damage it takes each round by 8 \add 1 per caster level above 8th. If it takes positive damage, it cannot use its damage reduction for 1 round.
+    If the target is undead, it gains physical damage reduction, reducing the physical damage it takes each round by 8 \add 1 per two caster levels above 8th. If it takes positive damage, it cannot use its damage reduction for 1 round.
 \end{spelltarget}
 \spellnotes This spell stacks with any effect that bestows negative levels, including itself.
 
@@ -1458,7 +1458,7 @@ As a standard action, you can say a command word to detonate any number of affec
 \spellinfo{Abjur/Evoc (Energy, Shielding) [Fire or Cold]}{Arcane, Fire}
 \spelldur{\durshort \dismissable}
 \begin{spelltarget}{You}
-    \spelleffect You gain cold damage reduction, reducing the cold damage you take each round by 20 \add 2 per caster level above 8th. In addition, you radiate light as a torch, and creatures that attack you take damage.
+    \spelleffect You gain cold damage reduction, reducing the cold damage you take each round by 16 \add 1 per caster level above 8th. In addition, you radiate light as a torch, and creatures that attack you take damage.
 \end{spelltarget}
 \begin{spelltrigger}{Creature within \rngclose range makes a physical attack against you}
     \begin{spelltarget}*{The attacking creature}[Magic vs. Reflex]
@@ -1608,7 +1608,7 @@ Spell resistance applies when a foe is struck by the weapon, but not when the bl
 \spellrng{\rngtouch}
 \spelldur{\durshort \dismissable}
 \begin{spelltarget}{One willing corporeal creature}
-    \spelleffect The target and all its equipment becomes insubstantial, misty, and translucent. Its armor modifier becomes 0, though other defense modifiers continue to apply normally. It gains physical damage reduction, reducing the physical damage it takes each round by 15 \add 2 per caster level above 6th. If it takes damage from a spell or magic weapon, it cannot use its damage reduction for 1 round. It becomes immune to critical hits.
+    \spelleffect The target and all its equipment becomes insubstantial, misty, and translucent. Its armor defense modifier becomes 0, though other defense modifiers continue to apply normally. It gains physical damage reduction, reducing the physical damage it takes each round by 12 \add 1 per caster level above 6th. If it takes damage from a spell or magic weapon, it cannot use its damage reduction for 1 round. It becomes immune to critical hits.
 
     The target can't attack or cast spells with verbal, somatic, or material components while in gaseous form. If it has a touch spell ready to use, that spell is discharged harmlessly when the gaseous form spell takes effect.
     \par A gaseous creature can fly at a speed of 10 feet (special maneuverability). It can pass through small holes or narrow openings, even mere cracks, with all it was wearing or holding in its hands, as long as the spell persists. The creature is subject to the effects of wind, and it can't enter water or other liquid. It also can't manipulate objects or activate items, even those carried along with its gaseous form. Continuously active items remain active, though in some cases their effects may be moot.
@@ -2040,7 +2040,7 @@ The hand is 10 feet long and about that wide with its fingers outstretched. It h
 \spelldur{\durshort \dismissable}
 \begin{spelltarget}{You}
     \spelleffect This spell transforms your body into living iron, which grants you several powerful resistances and abilities.
-    \par You gain physical damage reduction, reducing the physical damage you take each round by 16 \add 1 per caster level above 16th. If you are hit by an adamantine weapon, you cannot use your damage reduction for 1 round.
+    \par You gain physical damage reduction, reducing the physical damage you take each round by 16 \add 1 per two caster levels above 16th. If you are hit by an adamantine weapon, you cannot use your damage reduction for 1 round.
     \par You are immune to blindness, critical hits, attribute damage, deafness, disease, drowning, electricity, poison, stunning, and all spells or attacks that affect your physiology or respiration, because you have no physiology or respiration while this spell is in effect. You take only half damage from acid and fire of all kinds.
     \par You gain a \plus5 enhancement bonus to your Strength score, but you take a \minus5 penalty to Dexterity as well, and your speed is reduced to half normal. You have a \minus8 armor check penalty. You cannot drink (and thus can't use potions) or play wind instruments.
     \par Your unarmed attacks deal damage equal to a warhammer sized for you (1d6 for Small characters or 1d8 for Medium characters), and you are considered armed when making unarmed attacks.
@@ -2873,7 +2873,7 @@ Since the image is not a creature, it is difficult to disrupt, and many spells h
 \spellrng{Touch}
 \spelldur{\durlong or until expended}
 \begin{spelltarget}{One creature}
-    \spelleffect The target gains gains damage reduction against a single energy type of your choice (acid, cold, electricity, fire). This reduces the damage it takes each round from that energy type by 10 \add 2 per caster level above 4th.
+    \spelleffect The target gains gains damage reduction against a single energy type of your choice (acid, cold, electricity, fire). This reduces the damage it takes each round from that energy type by 8 \add 1 per caster level above 4th.
     \par The spell can absorb a maximum amount of damage equal to 10 points per caster level. After it absorbs its maximum amount of damage, the spell ends.
 \end{spelltarget}
 \spellnotes This spell overlaps (and does not stack with) \spell{protection from energy}. If a character is shielded by both spells, the \spellindirect{protection from energy}{protection} spell absorbs damage until its power is exhausted. A character can only be affected by one \spell{resist energy} spell at once.
@@ -3221,6 +3221,7 @@ A creature faced with definitive proof that the figment is unreal can disbelieve
 
 \spellsection{Sleep}{1}
 \spellinfo{Ench (Compulsion) [Mind-Affecting, Sleep]}{Arcane}
+\spellcmp{Somatic only}
 \spellrng{\rngmed}
 \spelldur{\durshort}
 \begin{spelltarget}{One living creature}[Magic vs. Will]
