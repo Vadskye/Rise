@@ -334,6 +334,22 @@ golem:
             size: huge
             strength: good
             dexterity: poor
+heracore:
+  # meta
+  name: heracore
+  level: 8
+  creature_type: magical beast
+  # items
+  weapons: 
+    primary: claws
+  # attributes
+  strength: average
+  dexterity: average
+  constitution: poor
+  intelligence: -6
+  wisdom: 2
+  charisma: -2
+  size: large
 ideal:
     #meta
     name: ideal
