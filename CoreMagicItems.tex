@@ -123,8 +123,10 @@ Items without components do not have a ``Cost'' entry. For them, the market pric
     \lcaption{Armor and Shield Special Abilities}
     \begin{tabularx}{\columnwidth}{>{\lcol}X l l l}
         \thead{Special Ability} & \thead{Cost} & \thead{Item Level} & \thead{Location}\\
+        Feather \minus1 & 100 gp & 2nd & Armor, Shield \\
         Bashing, Lesser & 200 gp & 3rd & Shield \\
         Energy Resistance, Lesser & 200 gp & 3rd & Armor\\
+        Feather \minus2 & 500 gp & 4th & Armor, Shield \\
         Flaming Burst & 800 gp & 5th & Armor, Shield \\
         Freezing Burst & 800 gp & 5th & Armor, Shield \\
         Glamered & 800 gp & 5th & Armor \\
@@ -133,10 +135,13 @@ Items without components do not have a ``Cost'' entry. For them, the market pric
         Energy Resistance & 2,000 gp & 8th & Armor\\
         Shocking Burst & 2,000 gp & 8th & Armor, Shield \\
         Invulnerability & 2,000 gp & 12th & Armor \\
+        Feather \minus3 & 2,500 gp & 8th & Armor, Shield \\
         Bashing, Greater & 5,000 gp & 10th & Shield \\
         Spell Resistance & 5,000 gp & 10th & Armor \\
+        Feather \minus4 & 12,500 gp & 12th & Armor, Shield \\
         Invulnerability, Greater & 30,000 gp & 14th & Armor \\
         Spell Reflecting & 60,000 gp & 16th & Shield \\
+        Feather \minus5 & 62,500 gp & 16th & Armor, Shield \\
     \end{tabularx}
 \end{dtable}
 
@@ -250,6 +255,25 @@ When you activate this ability, you radiate frigid cold, causing you to snuff ou
 \appdescription{Invulnerability, Greater}{30,000}{14th}{Armor}{Moderate Abjuration (Shielding)}{12th}{\x} This armor functions like \magicitem{invulnerability} armor, except that the damage reduction lasts for 12 hours.
 
 \mitemreq{Abjuration}{Shielding}{6}{12th}{Craft (as armor) 16}
+
+\appdescription{Feather}{Varies}{see text}{Armor, Shield}{Varied Transmutation (Augment)}{}{\x}
+Feather armor reduces the armor check penalty of the armor it is on. The price of the bonus depends on its penalty reduction, as shown in the table below.
+
+\begin{dtable}
+    \lcaption{Feather Armor}
+    \begin{tabularx}{\columnwidth} {l X X}
+        \thead{Bonus} & \thead{Base Price} & \thead{Item Level} \\
+        \minus1 & 100 gp & 2nd \\
+        \minus2 & 500 gp & 4th \\
+        \minus3 & 2,500 gp & 8th \\
+        \minus4 & 12,500 gp & 12th \\
+        \minus5 & 62,500 gp & 16th \\
+    \end{tabularx}
+\end{dtable}
+
+The caster level is equal to three times the item's penalty reduction. To craft the item, you must have a number of ranks in the relevant Craft skill equal to the item's caster level \add 4.
+
+\mitemreq{Transmutation}{Augment}{1}{varies}{Craft (as armor) varies}
 
 \appdescriptiondc{Shocking Burst}{2,000}{8th}{Armor, Shield}{Faint Evocation (Energy) [Electricity]}{6th}{Immediate (triggered)}{Fortitude (level \add 3)} When you are struck or missed by a melee attack, you can trigger a powerful jolt of electricity that zaps the foe that attacked you. Body armor triggers if the attack hits, and shields trigger if the attack misses.
 
