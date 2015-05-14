@@ -424,21 +424,21 @@ orc:
     #meta
     name: orc warrior
     creature_type: humanoid
-    template:
-        - warrior
+    templates:
+      - warrior
     #items
     weapons:
         primary: heavy_melee
     armor: light
     #attributes
-    strength: average+1
+    strength: good
     dexterity: poor
     constitution: poor
     intelligence: -2
     wisdom: -1
     #abilities
-    feats:
-        - power attack
+    #feats:
+      #- power attack
     #core
     size: medium
     languages: Orc
@@ -449,7 +449,7 @@ stone_giant:
     #meta
     name: stone giant
     creature_type: monstrous humanoid
-    template:
+    templates:
         - warrior
     level: 16
     armor: medium
@@ -474,7 +474,7 @@ troll:
     #meta
     name: troll
     creature_type: monstrous humanoid
-    template:
+    templates:
         - warrior
     level: 6
     #items
