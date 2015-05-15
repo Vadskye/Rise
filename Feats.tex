@@ -325,6 +325,7 @@ Strike feats grant a character the ability to make an unusually potent attack wi
         \featref{Mounted Trample} & Ride 8 ranks & Target cannot avoid mounted overrun & Mobility, Mounted & \featpref{Mounted Trample} \\
         \featref{Opportunist} & Dex 3 & \plus2 to attack and damage on attacks of opportunity & Reaction, Style & \featpref{Opportunist} \\
         \featref{Overpowering Assault} & Str 3 & Trade defense for maneuver bonus & Power, Style & \featpref{Overpowering Assault} \\
+        \featref{Overwhelming Fire} & \x & Help overwhelm foes with ranged weapons & Reaction, Style & \featpref{Overwhelming Fire} \\
         \featref{Parry} & Dex 3 & Ready yourself to parry incoming blows & Defense, Reaction & \featpref{Parry} \\
         \tind \featref{Shielded Parry} & Dex 3, shield proficiency, Parry & Add shield modifier to parry attempts & Defense, Reaction, Style & \featpref{Shielded Parry} \\
         \featref{Point Blank Shot} & \x &  \plus2 bonus to ranged attacks within half range increment. & Precision, Style & \featpref{Point Blank Shot} \\
@@ -360,7 +361,6 @@ Strike feats grant a character the ability to make an unusually potent attack wi
         \featref{Reveal the Weak Point} & Base attack bonus \plus4 & Sacrifice attack and damage to penalize foe's defenses & Style & \featpref{Reveal the Weak Point} \\
         \featref{Riposte} & Dex 3, base attack bonus \plus4, Parry & Foes provoke if you parry very well & Reaction & \featpref{Riposte} \\
         \featref{Tactical Analysis} & Int 3, Base attack bonus \plus4 & Identify foe's strengths and weaknesses & Awareness & \featpref{Tactical Analysis} \\
-        \featref{Overwhelming Fire} & Base attack bonus \plus4 & Help overwhelm foes with ranged weapons & Reaction, Style & \featpref{Overwhelming Fire} \\
         \featref{Unshakeable Stance} & Base attack bonus \plus4 & Trade ability to move for bonuses against approaching foes & Defense, Style & \featpref{Unshakeable Stance} \\
         \featref{Weapon Focus} & Base attack bonus \plus4 & Special ability with weapon group & Equipment & \featpref{Weapon Focus} \\
 
@@ -565,7 +565,7 @@ Contingent actions depend on a trigger condition. If the trigger condition occur
 
 \feat{Counterstorm}{Combat, Reaction, Style}
 \featpre Base attack bonus \plus16.
-\featben Whenever an opponent misses you with a melee attack, it provokes an attack of opportunity from you.
+\featben Whenever an opponent misses you with a melee attack, it provokes an attack of opportunity from you. In exchange, you cannot take attacks of opportunity for any other reason.
 \stylepre Wield a melee weapon. You must take a standard attack or charge action each round.
 
 \feat{Craftcaster}{Magic}
@@ -574,7 +574,7 @@ Contingent actions depend on a trigger condition. If the trigger condition occur
 
 \feat{Deadly Aim}{Combat, Style}
 \parhead{Prerequisites} Dex 3.
-\parhead{Benefit} While in this style, you gain a \plus2 bonus to physical ranged damage rolls. In exchange, you take a \minus2 penalty on ranged physical attacks. At base attack bonus \plus4, and every 4 base attack bonus thereafter, you increase the bonus and penalty by 1.
+\parhead{Benefit} While in this style, you gain a \plus2 bonus to physical ranged damage rolls. In exchange, you take a \minus2 penalty on physical ranged attacks. At base attack bonus \plus4, and every 4 base attack bonus thereafter, you increase the bonus and penalty by 1.
 \stylepre Wield a ranged weapon. You must take a standard attack action each round.
 
 \feat{Deathless}{General}
@@ -586,7 +586,7 @@ Contingent actions depend on a trigger condition. If the trigger condition occur
 \featben You may gain the benefits of the \spell{death ward} spell for up to 5 rounds each day. Activating this ability is a swift action, and it lasts until you will it to stop (a free action) or until the duration expires.
 
 \feat{Defensive Fighting}{Combat, Style}
-\parhead{Benefit} While in this style, you gain a \plus2 bonus to your dodge defense modifier. In exchange, you take a \minus2 penalty on physical attacks. At base attack bonus \plus4, and every 4 base attack bonus thereafter, you increase the bonus and penalty by 1.
+\parhead{Benefit} While in this style, you gain a \plus2 bonus to your physical defenses. In exchange, you take a \minus2 penalty on physical attacks. At base attack bonus \plus4, and every 4 base attack bonus thereafter, you increase the bonus and penalty by 1.
 \stylepre Wield a melee weapon. You must take a standard attack or total defense action each round.
 
 \feat{Deflect Arrows}{Combat, Finesse, Reaction}
@@ -613,7 +613,7 @@ Contingent actions depend on a trigger condition. If the trigger condition occur
 
 \feat{Distracting Foe}{Combat, Style}
 \parhead{Prerequisites} Base attack bonus \plus4.
-\parhead{Benefit} While in this style, foes you threaten take a \minus2 penalty to Concentration checks. In exchange, you take a \minus2 penalty to physical defenses against melee attacks. At base attack bonus \plus4, and every 4 base attack bonus thereafter, you increase both penalties by 1.
+\parhead{Benefit} While in this style, foes you threaten take a \minus3 penalty to Concentration checks. In exchange, you take a \minus3 penalty to physical defenses against melee attacks. At base attack bonus \plus8, and every 4 base attack bonus thereafter, you increase both penalties by 1.
 \stylepre Wield a melee weapon. You must take a standard attack or charge action each round.
 
 \feat{Divine Spellgift}{Spellgift}
@@ -731,7 +731,7 @@ If you are 14th level, you gain a fly speed equal to your base land speed, thoug
 In addition, wearing medium armor does not make you encumbered. This allows you to sleep in medium armor without penalty, and affects any class features which only function while you are unencumbered.
 
 \parhead{Normal} A character without this feat who has no hit points remaining is staggered. In addition, a character without this feat who sleeps in medium or heavier armor is automatically fatigued the next day.
-\parhead{Special} A barbarian automatically gains Endurance as a bonus feat at 3rd level. He need not select it.
+\parhead{Special} A barbarian automatically gains Endurance as a bonus feat at 2nd level. He need not select it.
 
 \feat{Energetic Substitution}{Metamagic}
 \parhead{Prerequisite} Ability to cast 2nd level spells.
@@ -797,10 +797,8 @@ You can use any combination of performance feats you possess a number of times p
 
 \feat{Feign Weakness}{Combat, Style}
 \featpre Base attack bonus \plus4.
-\featben While in this style, as part of a standard attack, you may provoke an attack of opportunity from one opponent threatening you. You gain a \plus2 bonus to physical defenses against this attack. Unless the creature hits you on the attack of opportunity, you gain a \plus2 bonus to your next attack against it, provided the attack is made within 1 round.
+\featben While in this style, as part of a standard attack, you may provoke an attack of opportunity from one opponent threatening you. You gain a \plus3 bonus to physical defenses against this attack. Unless the creature hits you on the attack of opportunity, you gain a \plus3 bonus to your next attack against it, provided the attack is made within 1 round. At base attack bonus \plus8, and every 4 base attack bonus thereafter, these bonuses increase by 1.
 \stylepre Wield a melee weapon. You must take a standard attack action each round.
-
-Your bonuses to attack and defense increase to \plus3 at base attack bonus \plus8, to \plus4 at base attack bonus \plus12, and finally to \plus5 at base attack bonus \plus16.
 
 \feat{Focused Mind}{Racial}
 \parhead{Prerequisite} Elf.
@@ -905,7 +903,7 @@ In addition, your unarmed strikes can deal lethal or nonlethal damage as you cho
 
 \feat{Inescapable Bulwark}{Combat, Style}
 \featpre Base attack bonus \plus8.
-\featben While in this style, foes that take a withdraw action to move away from you still provoke attacks of opportunity from you. In exchange, you take a \minus4 penalty to physical defenses.
+\featben While in this style, foes that take a withdraw action to move away from you still provoke attacks of opportunity from you. In exchange, you take a \minus4 penalty to physical defenses against attacks of opportunity you provoke by moving.
 \stylepre Wield a melee weapon. You must take a standard attack or charge action each round.
 
 \feat{Inspire Competence}{Performance, Skill}
@@ -1163,7 +1161,7 @@ You can use this ability three times per day.
 
 \feat{Legendary Style}{Combat}
 \featpre Base attack bonus \plus12, any three Style feats.
-\featben You may have two styles active at once. Both styles can be changed as part of the same swift action.
+\featben You may have two styles active at once. Both styles can be initiated or changed as part of the same swift action.
 
 \feat{Legendary Survival}{Skill}
 \featpre Survival 13 ranks.
@@ -1200,7 +1198,7 @@ Choose two magical classes you possess.
 
 \feat{Manyshot}{Combat, Style}
 \parhead{Prerequisites} Dex 7, base attack bonus \plus12.
-\parhead{Benefit} While in this style, when you attack with a light thrown weapon or projectile weapon, you may attack with two projectiles or weapons at once. If the attack hits, the first projectile hits. If the attack hits by 5 or more, both projectiles hit. Apply precision-based damage (such as sneak attack) and critical hit damage only once for this attack. Taking advantage of this style requires having multiple weapons in hand or loading two projectiles at once, which may be difficult if you reload slowly.
+\parhead{Benefit} While in this style, when you attack with a light thrown weapon or projectile weapon, you may attack with two projectiles or weapons at once. If the attack hits, you roll damage twice and take the higher of the two roll, as with two-weapon fighting (see \pcref{Two-Weapon Fighting}). Taking advantage of this style requires having multiple weapons in hand or loading two projectiles at once, which may be difficult if you reload slowly.
 \stylepre Wield a ranged weapon. You must take a standard attack action each round.
 
 \feat{Mass Transporter}{Magic}
@@ -1252,16 +1250,15 @@ The spell's level must be no greater than half of your total levels in non-casti
 
 \feat{Opportunist}{Combat, Reaction, Style}
 \parhead{Prerequisite} Dex 3.
-\parhead{Benefit} While in this style, you gain a \plus2 bonus to attack and damage on attacks of opportunity. In exchange, you take a \minus2 penalty to attacks that are not attacks of opportunity. At base attack bonus \plus4, and every 4 base attack bonus thereafter, you increase the bonus and penalty by 1.
+\parhead{Benefit} While in this style, you gain a \plus2 bonus to attack and damage on attacks of opportunity. In exchange, you take a \minus2 penalty to physical attacks that are not attacks of opportunity. At base attack bonus \plus4, and every 4 base attack bonus thereafter, you increase the bonus and penalty by 1.
 \stylepre Wield a melee weapon. You must take a standard attack or charge action each round.
 
 \feat{Overpowering Assault}{Combat, Style}
 \parhead{Prerequisite} Str 3.
-\parhead{Benefit} While in this style, you take a \minus2 penalty to physical defenses and gain a \plus2 bonus to maneuver attack. At base attack bonus \plus4, and every 4 base attack bonus thereafter, you increase the bonus and penalty by 1.
+\parhead{Benefit} While in this style, you gain a \plus2 bonus to maneuver attacks. In exchange, you take a \minus2 penalty to physical defenses. At base attack bonus \plus4, and every 4 base attack bonus thereafter, you increase the bonus and penalty by 1.
 \stylepre Wield a melee weapon. You must take a standard attack or charge action each round.
 
 \feat{Overwhelming Fire}{Combat, Reaction, Style}
-\parhead{Prerequisites} Base attack bonus \plus4.
 \parhead{Benefit} While in this style, you contribute to overwhelm penalties against all creatures within a single range increment of you. You do not contribute to overwhelm penalties against creatures with cover from you. In exchange, you take a \minus2 penalty to your physical defenses.
 \stylepre Wield a ranged weapon. You must take a standard attack action each round.
 
