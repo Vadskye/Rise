@@ -350,6 +350,7 @@ Strike feats grant a character the ability to make an unusually potent attack wi
         \featref{Disarming Finish} & Base attack bonus \plus4 & Automatically disarm defeated foes & Finesse & \featpref{Disarming Finish} \\
         \featref{Distracting Foe} & Base attack bonus \plus4 & Threatened foes suffer Concentration penalties & Style & \featpref{Distracting Foe} \\
         \featref{Feign Weakness} & Base attack bonus \plus4 & Provoke attack to gain bonus to hit & Style & \featpref{Feign Weakness} \\
+        \featref{Gang Up} & Base attack bonus \plus4 & Increase overwhelm penalties foes suffer & \x & \featpref{Gang Up} \\
         \featref{Improved Dirty Trick} & Base attack bonus \plus4 & \plus2 bonus to dirty trick attacks; dirty tricks last longer & Finesse, Maneuver & \featpref{Improved Dirty Trick} \\
         \featref{Improved Disarm} & Base attack bonus \plus4 & \plus2 bonus to disarm attacks; knock foe's weapon away after disarming & Finesse, Maneuver & \featpref{Improved Disarm} \\
         \featref{Improved Feint} & Base attack bonus \plus4 & \plus2 bonus to feint attacks; feint lasts longer & Finesse, Maneuver & \featpref{Improved Feint} \\
@@ -409,6 +410,8 @@ Strike feats grant a character the ability to make an unusually potent attack wi
         \featref{Counterstorm} & Base attack bonus \plus16 & Foes that miss you provoke & Reaction, Style& \featpref{Counterstorm} \\
         \featref{Demolishing Strike} & Base attack bonus \plus16 & Attack deals double damage & Strike & \featpref{Demolishing Strike} \\
         \featref{Executioner} & Base attack bonus \plus16, any five Reaction feats & Gain free attacks against foes near death & Reaction & \featpref{Executioner} \\
+        \featref{Hurricane Attack} & Dex 7, Whirlwind Attack, base attack bonus \plus16 & Two melee attacks at all foes you threaten & Reaction & \featpref{Hurricane Attack} \\
+        \tind \featref{Mobile Hurricane} & Dex 7, Hurricane Attack, Mobile Whirlwind, Whirlwind Attack, base attack bonus \plus16 & Use whirlwind attack as standard action & Reaction & \featpref{Hurricane Attack} \\
         \featref{Killing Blow} & Base attack bonus \plus16 & Attack instantly kills foe without hit points & Strike & \featpref{Killing Blow} \\
     \end{longtabu}
     \begin{enumerate*}
@@ -817,6 +820,10 @@ You can use any combination of performance feats you possess a number of times p
 \featpre 16th level, Dex 7.
 \featben You may gain the benefits of the \spell{freedom} spell for up to 5 rounds each day. Activating this ability is a swift action, and it lasts until you will it to stop (a free action) or until the duration expires.
 
+\feat{Gang Up}{Combat}
+\featpre Base attack bonus \plus4.
+\featben You count as one additional creature for the purpose of determining overwhelm penalties. This does not allow you to overwhelm a creature by yourself.
+
 \feat{Giantfighter}{Racial}
 \parhead{Prerequisite} Dwarf, gnome, or halfling.
 \parhead{Benefit} You gain a \plus2 bonus to dodge modifier against creatures of size Large or larger.
@@ -836,6 +843,10 @@ You can use any combination of performance feats you possess a number of times p
 \parhead{Prerequisite} Base attack bonus \plus8.
 \parhead{Benefit} While in this style, you double your critical threat range with any weapon you wield. In exchange, you take a \minus4 penalty to all physical attacks which are not critical threats or threat confirmations. This does not stack with any other effects which increase threat range.
 \stylepre Wield a weapon. You must take a standard attack or charge action each round.
+
+\feat{Hurricane Attack}{Combat, Reaction}
+\featpres Dex 7, Whirlwind Attack, base attack bonus \plus16.
+\featben As a full-round action, you can make two melee attacks against each opponent you threaten. The second attack has a \minus10 penalty.
 
 \feat{Imbue Magic}{Item Creation}
 \parhead{Prerequisite} Caster level 2nd or Craft (any) 6 ranks.
@@ -1223,7 +1234,11 @@ Choose two magical classes you possess.
 \parhead{Prerequisite} Ability to cast a Conjuration (Summoning) spell of at least 2nd level.
 \parhead{Benefit} Each creature you conjure with a summoning spell gains a \plus2 enhancement bonus to Strength and Constitution for the duration of the spell that summoned it.
 
-\feat{Mobile Whirlwind}{Combat, Finesse, Mobility}
+\feat{Mobile Hurricane}{Combat, Reaction, Mobility}
+\featpres Dex 5, Hurricane Attack, Mobile Whirlwind, Whirlwind Attack, base attack bonus \plus8.
+\featben You can make a hurricane attack as a standard action.
+
+\feat{Mobile Whirlwind}{Combat, Reaction, Mobility}
 \featpres Dex 5, Whirlwind Attack, base attack bonus \plus8.
 \featben You can make a whirlwind attack as a standard action.
 
@@ -1657,7 +1672,7 @@ Choose one weapon group.
 \parhead{Benefit} You can alter a burst, emanation, line, or spread shaped spell to increase its area. Any numeric measurements of the spell's area increase by 100\%. A widened spell uses up a spell slot three levels higher than the spell's actual level.
 \par Spells that do not have an area of one of these four sorts are not affected by this feat.
 
-\feat{Whirlwind Attack}{Combat, Finesse}
+\feat{Whirlwind Attack}{Combat, Reaction}
 \parhead{Prerequisites} Dex 5, base attack bonus \plus8.
 \parhead{Benefit} As a full-round action, you can make a single melee attack against each opponent you threaten.
 
