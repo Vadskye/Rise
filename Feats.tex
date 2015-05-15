@@ -173,6 +173,7 @@ Strike feats grant a character the ability to make an unusually potent attack wi
     \featref{Savvy Rogue} & Combat trick ability & Use Charisma for combat tricks & \featpref{Savvy Rogue} \\
     \featref{Selective Channeling} & Channel energy ability & Can exclude two additional creatures & \featpref{Selective Channeling} \\
     \featref{Shield Discipline} & Armor discipline ability & Apply armor discipline with shields \\
+    \featref{Spellwarped Ritualist} & Spellwarped & Gain to perform rituals using spellwarped powers \\
     \featref{Trap Sense} & Danger sense class feature & Automatically detect traps & \featpref{Trap Sense} \\
     \featref{Versatility} & Two levels in two different classes & Increase effective class level with abilities \\
 
@@ -1418,7 +1419,7 @@ If you have three or more Reaction feats, you can draw light and medium weapons 
 
 \feat{Ritual Caster}{Magic}
 \featpre Intelligence 3.
-\featben You can learn and perform rituals as if you were an arcane caster with a caster level equal to your character level. The maximum level of ritual that you can learn or perform is equal to half your character level.
+\featben You can learn and perform rituals as if you were an arcane caster with a caster level equal to your character level. The maximum level of ritual that you can learn or perform is equal to half your character level or your Intelligence, whichever is lower.
 
 \feat{Savvy Rogue}{Class}
 \featpre Combat trick ability.
@@ -1490,6 +1491,16 @@ Choose a school of magic or a spell descriptor.
 Choose a school of magic or a spell descriptor to which you already have applied the Spell Focus feat.
 \featpre 4th level spells, Spell Focus.
 \featben You gain a \plus2 bonus to your caster level when casting spells and using spell-like abilities from the school of magic or with the spell descriptor you select. In exchange, you take a \minus2 penalty to caster level with all other spells and spell-like abilities.
+
+\feat{Spellwarped Ritualist}{Magic}
+\featben You can learn and perform rituals as if you were an arcane caster with a caster level equal to your spellwarped level \add your spellwarped key attribute. The maximum level of ritual that you can learn or perform is equal to half your spellwarped level or your spellwarped key attribute, whichever is lower.
+
+In addition, you gain a special ability based on which type of spellwarped you are.
+
+\subcf{Alteration} \x
+\subcf{Pyromancy} You can use any combustable item as a ritual component. It can replace an amount of ritual components equal to the value of the item.
+\subcf{Telekinesis} You can perform rituals from up to 30 feet away from the ritual components.
+\subcf{Temporal} You perform rituals twice as quickly.
 
 \feat{Spellwoven Performance}{Performance, Skill}
 \featpre Ability to cast spells, Perform 8 ranks, any other Performance feat.
