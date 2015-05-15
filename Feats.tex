@@ -315,7 +315,6 @@ Strike feats grant a character the ability to make an unusually potent attack wi
         \featref{Deadly Aim} & Dex 3 & Trade ranged attack bonus for damage & Precision, Style & \featpref{Deadly Aim} \\
         \featref{Defensive Fighting} & \x & Trade attack bonus for defense & Defense, Style & \featpref{Defensive Fighting} \\
         \featref{Diehard} & Con 3 & Halve penalties from critical damage & Defense & \featpref{Diehard} \\
-        \featref{Dodge} & Dex 3 & \plus4 defense against some attacks of opportunity from selected target & Defense, Mobility & \featpref{Dodge} \\
         \featref{Exotic Weapon Proficiency}\fn{1} & \x & Don't provoke when attacking with exotic weapons & Equipment & \featpref{Exotic Weapon Proficiency} \\
         \featref{Far Shot} & \x & Increase range increment by 50\% or 100\% & Precision & \featpref{Far Shot} \\
         \featref{Guardian} & \x & Adjacent allies suffer reduced overwhelm penalties. & Defense & \featpref{Guardian} \\
@@ -345,8 +344,8 @@ Strike feats grant a character the ability to make an unusually potent attack wi
         \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Type} & \thead{Page} \\
         \featref{Cleave} & Str 3, base attack bonus \plus4 & Extra melee attack after dropping target & Power & \featpref{Cleave} \\
         \featref{Close-Quarters Fighting} & Dex 3, attack bonus \plus4 & No penalty for squeezing or attacking while grappling & Style & \featpref{Close-Quarters Fighting} \\
-        \featref{Combat Mobility} & Dex 3, base attack bonus \plus4, Dodge & Avoid some attacks of opportunity from selected target & Defense, Mobility & \featpref{Combat Mobility} \\
-        \tind \featref{Spring Attack} & Dex 3, base attack bonus \plus4, Dodge, Combat Mobility & Move before and after attacks & Mobility, Style & \featpref{Spring Attack} \\
+        \featref{Combat Mobility} & Dex 3, base attack bonus \plus4 & Avoid movement-based attacks of opportunity from foe & Defense, Mobility & \featpref{Combat Mobility} \\
+        \tind \featref{Spring Attack} & Dex 3, base attack bonus \plus4, Combat Mobility & Move before and after attacks & Mobility, Style & \featpref{Spring Attack} \\
         \featref{Disarming Finish} & Base attack bonus \plus4 & Automatically disarm defeated foes & Finesse & \featpref{Disarming Finish} \\
         \featref{Distracting Foe} & Base attack bonus \plus4 & Threatened foes suffer Concentration penalties & Style & \featpref{Distracting Foe} \\
         \featref{Feign Weakness} & Base attack bonus \plus4 & Provoke attack to gain bonus to hit & Style & \featpref{Feign Weakness} \\
@@ -383,6 +382,7 @@ Strike feats grant a character the ability to make an unusually potent attack wi
         \featref{Sickening Strike} & Base attack bonus \plus8 & Attack sickens foe & Strike & \featpref{Sickening Strike} \\
         \featref{Tactical Prediction} & Int 3, Base attack bonus \plus8 & Predict foe's next action & Awareness & \featpref{Tactical Prediction} \\
         \featref{Threatening Fire} & Overwhelming Fire, base attack bonus \plus8 & Threaten adjacent creatures with a ranged weapon & Reaction, Style & \featpref{Threatening Fire} \\
+        \featref{Two-Weapon Rend} & Str 5, base attack bonus \plus8, Two-Weapon Fighting & Deal Strength damage with both weapons & Power & \featpref{Two-Weapon Rend} \\
         \featref{Wall Slam} & Str 5, base attack bonus \plus8 & Slam opponent into wall to deal bonus damage & Maneuver, Power & \featpref{Wall Slam} \\
         \featref{Whirlwind Attack} & Dex 5, base attack bonus \plus8 & One melee attack against each opponent within reach & Finesse & \featpref{Whirlwind Attack} \\
         \tind \featref{Mobile Whirlwind} & Dex 5, Whirlwind Attack, base attack bonus \plus8 & Use whirlwind attack as standard action & Finesse, Mobility & \featpref{Mobile Whirlwind} \\
@@ -404,7 +404,6 @@ Strike feats grant a character the ability to make an unusually potent attack wi
         \featref{Legendary Style} & Base attack bonus \plus12, any three Style feats & Use two styles at once & \x & \featpref{Legendary Style} \\
         \featref{Manyshot} & Dex 7, base attack bonus \plus12 & Shoot two projectiles simultaneously & Precision, Style & \featpref{Manyshot} \\
         \featref{Penetrating Strike} & Base attack bonus \plus12 & Attack removes foe's damage reduction & Strike & \featpref{Penetrating Strike} \\
-        \featref{Two-Weapon Rend} & Str 5, base attack bonus \plus12, Two-Weapon Fighting & Deal Strength damage with both weapons & Power & \featpref{Two-Weapon Rend} \\
 
         \midrule
         \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Type} & \thead{Page} \\
@@ -560,8 +559,8 @@ Contingent actions depend on a trigger condition. If the trigger condition occur
 Contingent actions depend on a trigger condition. If the trigger condition occurs and you have a contingent action prepared, you may take the contingent action as an immediate action. A contingent action remains prepared until you rest. You may only have one contingent action prepared at a time. If you prepare a new contingent action, it replaces the old action.
 
 \feat{Combat Mobility}{Combat}
-\parhead{Prerequisites} Dex 3, Dodge, base attack bonus \plus4.
-\parhead{Benefit} When you move, it does not provoke attacks of opportunity from your Dodge target.
+\parhead{Prerequisites} Dex 3, base attack bonus \plus4.
+\parhead{Benefit} As a free action, you may choose a creature you can see. When you move, you do not provoke attacks of opportunity from that creature.
 
 \feat{Covering Fire}{Combat, Style}
 \parhead{Benefit} While in this style, if you hit a creature with a physical ranged attack, it takes a \minus2 penalty to physical attacks for 1 round. In exchange, you take a \minus2 penalty to damage rolls with physical ranged attacks. At base attack bonus \plus4, and every 4 base attack bonus thereafter, you increase both penalties by 1.
@@ -621,10 +620,6 @@ Contingent actions depend on a trigger condition. If the trigger condition occur
 
 The spell's level must be no greater than half of your total levels in non-casting classes. In addition, its level cannot exceed your Charisma.
 \parhead{Special} You may take this feat multiple times. Each time, you choose a new spell to gain as a spell-like ability. You may use any combination of the spells a number of times per day equal to the number of spellgift feats you have. The number of spellgift feats you have cannot exceed your Charisma.
-
-\feat{Dodge}{Combat}
-\parhead{Prerequisite} Dex 3.
-\parhead{Benefit} You may designate an opponent as a free action. You receive a \plus4 bonus to your dodge modifier against attacks of opportunity from that opponent that were provoked by movement. In addition, you gain a \plus4 bonus to Acrobatics checks made to tumble against that opponent (see \pcref{Tumble}).
 
 \feat{Domain Devotion}{Class}
 Choose a cleric domain.
@@ -1469,9 +1464,9 @@ Choose a school of magic or a spell descriptor to which you already have applied
 \parhead{Prerequisites} Ride 1 rank, Ride-By Attack.
 \parhead{Benefit} When mounted and using the charge action, you deal double damage with a melee weapon (or triple damage with a lance) on your attack at the end of the charge.%Spirited Charge
 
-\feat{Spring Attack}{Combat, Style}
-\parhead{Prerequisites} Dex 3, Dodge, Mobility, base attack bonus \plus4.
-\parhead{Benefit} While in this style, you can take a full-round action to move up to your speed and make a standard attack. You must move at least 5 feet after each attack before you can make another attack. You cannot use this style while encumbered.
+\feat{Spring Attack}{Combat}
+\parhead{Prerequisites} Dex 3, Mobility, base attack bonus \plus4.
+\parhead{Benefit} As a full-round action, you can move up to your speed and make your standard attack. You must move at least 5 feet after each attack you make before you can make another attack. You cannot use this style while \encumbered.
 
 \feat{Still Spell}{Metamagic}
 \parhead{Prerequisite} Ability to cast 2nd level spells.
@@ -1585,9 +1580,8 @@ You can fight with a weapon in each hand more effectively.
 \parhead{Benefit} You gain a \plus2 attack bonus when attacking with two weapons at once.
 
 \feat{Two-Weapon Rend}{Combat, Power}
-\parhead{Prerequisites} Str 5, Two-Weapon Fighting, base attack bonus \plus12.
-\parhead{Benefit} When fighting with two weapons at once, you may add half your Strength to damage with your secondary weapon.
-\parhead{Normal} Without this feat, you do not apply Strength to damage with your secondary weapon.
+\parhead{Prerequisites} Str 5, Two-Weapon Fighting, base attack bonus \plus8.
+\parhead{Benefit} When fighting with two weapons at once, you gain a \plus1 bonus to physical damage.
 
 \feat{Unshakeable Stance}{Combat, Style}
 \parhead{Prerequisites} Base attack bonus \plus4.
