@@ -316,7 +316,7 @@ Strike feats grant a character the ability to make an unusually potent attack wi
         \featref{Diehard} & Con 3 & Halve penalties from critical damage & Defense & \featpref{Diehard} \\
         \featref{Exotic Weapon Proficiency}\fn{1} & \x & Don't provoke when attacking with exotic weapons & Equipment & \featpref{Exotic Weapon Proficiency} \\
         \featref{Far Shot} & \x & Increase range increment & Precision & \featpref{Far Shot} \\
-        \featref{Guardian} & \x & Adjacent allies suffer reduced overwhelm penalties. & Defense & \featpref{Guardian} \\
+        \featref{Guardian} & \x & Adjacent allies suffer reduced overwhelm penalties & Defense, Style & \featpref{Guardian} \\
         \featref{Improved Unarmed Strike} & \x &  Considered armed even when unarmed & \x & \featpref{Improved Unarmed Strike} \\
         \tind \featref{Deflect Arrows} & Dex 3, Improved Unarmed Strike & Deflect one ranged attacks with your bare hands & Finesse, Reaction & \featpref{Deflect Arrows} \\
         \tind \tind \featref{Snatch Arrows} & Dex 5, Deflect Arrows, Improved Unarmed Strike & Catch a deflected ranged attack & Finesse, Reaction & \featpref{Snatch Arrows} \\
@@ -821,8 +821,9 @@ Your bonuses to attack and defense increase to \plus3 at base attack bonus \plus
 \feat{Great Fortitude}{General}
 \parhead{Benefit} You gain a \plus2 bonus to your Fortitude defense.
 
-\feat{Guardian}{Combat}
-\parhead{Benefit} Allies adjacent to you are considered to be threatened by one fewer creature than they actually are for the purpose of determining overwhelm penalties. You must be wielding a melee weapon and able to attack to gain the benefits of this feat.
+\feat{Guardian}{Combat, Defense, Style}
+\parhead{Benefit} Allies adjacent to you reduce their overwhelm penalties by 2. At base attack bonus \plus4, and every 4 base attack bonus thereafter, the penalty reduction increases by 1.
+\stylepre Wield a melee weapon. You must take a standard attack or total defense action each round.
 
 \feat{Healing Surge}{Surge}
 \featpre 8th level, Con 3.
