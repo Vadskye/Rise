@@ -570,8 +570,8 @@ class Creature(object):
 
         #Add all the abilities to the character
         for ability_type in ABILITY_TYPE_GROUPS:
-            if ability_type in raw_stats.keys():
-                for ability_name in raw_stats[ability_type]:
+            if raw_stats.get(ability_type):
+                for ability_name in raw_stats.get(ability_type):
                     self.add_ability(ability_name)
 
         #set core
