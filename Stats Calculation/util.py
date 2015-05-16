@@ -40,11 +40,14 @@ def split_key_and_variant_keys(key):
 
 def apply_variants(base_object, variant_keys, object_name = 'object', append_name = False):
     if 'variants' in base_object:
+        variants = base_object.get('variants')
         for variant_key in variant_keys:
-            if variant_key in base_object['variants']:
-                base_object.update(base_object['variants'][variant_key])
-                if append_name and not 'name' in base_object['variants'][variant_key]:
-                    base_object['name'] += '/{0}'.format(variant_key)
+            if variant_key in variants:
+                variant = variants.get(variant_key)
+                if variant is not None:
+                    base_object.update(variant)
+                    if append_name and not 'name' in variant:
+                        base_object['name'] += '/{0}'.format(variant_key)
             else:
                 raise Exception("'{0}' does not have variant '{1}'. It has the following variants: {2}".format(
                     object_name, variant_key, ', '.join(base_object['variants'].keys())))
