@@ -260,7 +260,7 @@ The effects of instantaneous conjurations, such as \spell{create water}, are not
 \spellrng{Touch}
 \spelldur{\durshort}
 \begin{spelltarget}{One living creature}
-    \spelleffect The target gains a \plus2 enhancement bonus to its armor modifier. \spellbonusscalingdescription In addition, the target gains physical damage reduction, reducing the physical damage it takes each round by 2 \add 1 per four caster levels above 4th. If it is hit by an adamatine weapon or takes fire damage, it cannot use its damage reduction for 1 round.
+    \spelleffect The target gains a \plus2 enhancement bonus to its Armor defense. \spellbonusscalingdescription In addition, the target gains physical damage reduction, reducing the physical damage it takes each round by 2 \add 1 per four caster levels above 4th. If it is hit by an adamatine weapon or takes fire damage, it cannot use its damage reduction for 1 round.
 \end{spelltarget}
 
 \spellsection{Bestow Curse}{4}
@@ -1559,7 +1559,7 @@ Spell resistance applies when a foe is struck by the weapon, but not when the bl
 \spelldur{\durshort or \durlong; see text \dismissable}
 \spellsr{No}
 \begin{spelltarget}{One creature}
-    \spelleffect The target receives instantaneous warnings of impending danger or harm that would befall it. It gains an enhancement bonus to initiative checks equal to your caster level, and a \plus3 enhancement bonus to its dodge modifier and Reflex defense. This bonus increases to \plus4 at 14th caster level, and to \plus5 at 20th caster level.
+    \spelleffect The target receives instantaneous warnings of impending danger or harm that would befall it. It gains an enhancement bonus to initiative checks equal to your caster level, and a \plus3 enhancement bonus to its physical defenses. This bonus increases to \plus4 at 14th caster level, and to \plus5 at 20th caster level.
     \par If you cast this spell on yourself, it lasts for \durlong duration. On any other creature, it lasts for \durshort duration.
 \end{spelltarget}
 
@@ -1608,7 +1608,7 @@ Spell resistance applies when a foe is struck by the weapon, but not when the bl
 \spellrng{\rngtouch}
 \spelldur{\durshort \dismissable}
 \begin{spelltarget}{One willing corporeal creature}
-    \spelleffect The target and all its equipment becomes insubstantial, misty, and translucent. Its armor defense modifier becomes 0, though other defense modifiers continue to apply normally. It gains physical damage reduction, reducing the physical damage it takes each round by 12 \add 1 per caster level above 6th. If it takes damage from a spell or magic weapon, it cannot use its damage reduction for 1 round. It becomes immune to critical hits.
+    \spelleffect The target and all its equipment becomes insubstantial, misty, and translucent. It loses its defense bonus from its armor, though other defense modifiers continue to apply normally. It gains physical damage reduction, reducing the physical damage it takes each round by 12 \add 1 per caster level above 6th. If it takes damage from a spell or magic weapon, it cannot use its damage reduction for 1 round. It becomes immune to critical hits.
 
     The target can't attack or cast spells with verbal, somatic, or material components while in gaseous form. If it has a touch spell ready to use, that spell is discharged harmlessly when the gaseous form spell takes effect.
     \par A gaseous creature can fly at a speed of 10 feet (special maneuverability). It can pass through small holes or narrow openings, even mere cracks, with all it was wearing or holding in its hands, as long as the spell persists. The creature is subject to the effects of wind, and it can't enter water or other liquid. It also can't manipulate objects or activate items, even those carried along with its gaseous form. Continuously active items remain active, though in some cases their effects may be moot.
@@ -2218,10 +2218,11 @@ Any missiles you do not explicitly target will automatically strike a living cre
 \spellinfo{Abjur (Shielding) [Force]}{Arcane}
 \spellrng{\rngclose}
 \spelldur{\durshort or \durlong; see text \dismissable}
+\spellspecial When you cast this spell, you choose whether to create body armor or a shield. In addition, if you are the target, this spell lasts for \durlong duration. On any other creature, it lasts for \durshort duration.
 \begin{spelltarget}{One creature}
-    \spelleffect As you cast this spell, you choose whether to create body armor or a shield. If you choose body armor, the target gains a \plus2 armor modifier. If you choose a shield, the target gains a \plus2 shield modifier. The bonus granted increases to \plus3 at 8th caster level, to \plus4 at 14th caster level, and finally to \plus5 at 20th caster level. 
-    \par Unlike mundane armor, \spell{mage armor} entails no armor check penalty, arcane spell failure chance, or speed reduction.
-    \par If you are the target, this spell lasts for \durlong duration. On any other creature, it lasts for \durshort duration.
+    \spelleffect The target gains invisible body armor or a shield of the chosen kind, made of force. The defense bonus granted by the body armor or shield is equal to \plus2. The bonus granted increases to \plus3 at 8th caster level, to \plus4 at 14th caster level, and finally to \plus5 at 20th caster level. 
+    \par Unlike mundane armor, this armor has no armor check penalty, arcane spell failure chance, or encumbrance. If you create a shield, it floats in front of the target, and does not need to be wielded actively to grant its bonus.
+\spellspecial 
 \end{spelltarget}
 \spellnotes If you cast this spell on the same creature twice, you can grant the creature both body armor and a shield. The armor created by this spell is treated as a separate piece or armor from any other armor the creature is wearing, so it does not stack with any existing bonuses. Since \spell{mage armor} is made of force, incorporeal creatures can't bypass it the way they do normal armor.
 
@@ -2458,7 +2459,7 @@ When leaving the maze, the target reappears where it had been when the maze spel
 \begin{spelltarget}{You}
     \spelleffect As \spell{lesser moment of prescience}, except that you also gain a bonus equal to half your caster level on the roll.
 
-    Alternately, you can dischage the spell to protect yourself. As an immediate action, when you are attacked by a physical attack, you can gain a bonus to your dodge modifier equal to half your caster level. Unlike normal, you can still take this immediate action even if if you are unaware of the attack. Doing so makes you aware of the attack, allowing you to defend yourself normally.
+    Alternately, you can dischage the spell to protect yourself. As an immediate action, when you are attacked by a physical attack, you can gain a bonus to your physical defenses equal to half your caster level. Unlike normal, you can still take this immediate action even if if you are unaware of the attack. Doing so makes you aware of the attack, allowing you to defend yourself normally.
 \end{spelltarget}
 \spellnotes As \spell{lesser moment of prescience}.
 
@@ -2632,7 +2633,7 @@ When leaving the maze, the target reappears where it had been when the maze spel
 \spelldur{\durshort \dismissable}
 \spellsr{No}
 \begin{spelltarget}{You}
-    \spelleffect You gain a \plus3 enhancement bonus to your physical attacks and damage rolls, special defenses, and dodge defense modifier. This bonus increases to \plus4 at 14th caster level, and to \plus5 at 20th caster level.
+    \spelleffect You gain a \plus3 enhancement bonus to your physical attack and damage rolls, and all your defenses. This bonus increases to \plus4 at 14th caster level, and to \plus5 at 20th caster level.
 \end{spelltarget}
 
 \spellsectioncomma{Precognition}{Greater}{8}
@@ -3115,11 +3116,9 @@ If the targets get out of range of each other, the effect is suppressed until th
 \spellrng{\rngclose}
 \spelldur{\durshort or \durlong; see text \dismissable}
 \begin{spelltarget}{One creature}
-    \spelleffect The target gains a \plus2 shield modifier. \spellbonusscalingdescription Unlike a mundane shield, this shield does not require a free hand and has no armor check penalty or arcane spell failure chance.
-
-    \par If you are the target, this spell lasts for \durlong duration. On any other creature, it lasts for \durshort duration.
+    \spelleffect The target gains a shield with a \plus2 defense bonus. \spellbonusscalingdescription Unlike a mundane shield, this shield does not require a free hand and has no armor check penalty or arcane spell failure chance.
 \end{spelltarget}
-\spelleffect You can maintain concentration on this spell as a swift action.
+\spellspecial If you are the target, this spell lasts for \durlong duration. On any other creature, it lasts for \durshort duration. You can maintain concentration on this spell as a swift action.
 
 \spellsection{Shield of Law}{8}
 \spelldesc{A dim, blue glow surrounds your allies, protecting them from attacks.}
@@ -3374,7 +3373,7 @@ The weapon can move up to 60 feet per round. It never provokes attacks of opport
 \spellrng{Touch}
 \spelldur{\durshort}
 \begin{spelltarget}{One creature}
-    \spelleffect The target gains a \plus3 enhancement bonus to its armor modifier. This bonus increases to \plus4 at 14th caster level, and to \plus5 at 20th caster level. In addition, it gains physical damage reduction, reducing the damage it takes each round from physical attacks by 8 \add 1 per two caster levels above 8th. If it is hit by an adamantine weapon, it cannot use its damage reduction for 1 round.
+    \spelleffect The target gains a \plus3 enhancement bonus to its Armor defense. This bonus increases to \plus4 at 14th caster level, and to \plus5 at 20th caster level. In addition, it gains physical damage reduction, reducing the damage it takes each round from physical attacks by 8 \add 1 per two caster levels above 8th. If it is hit by an adamantine weapon, it cannot use its damage reduction for 1 round.
 \end{spelltarget}
 
 \spellsection{Storm of Vengeance}{9}
@@ -3885,7 +3884,7 @@ At the end of every round, the storm has an additional effect, as shown on \tref
 \spellinfo{Trans (Polymorph)}{Nature}
 \spelldur{\durext \dismissable}
 \begin{spelltarget}{You}
-    \spelleffect You become able to assume the form of a Large living tree or shrub or a Large dead tree trunk with a small number of limbs. The closest inspection cannot reveal that the tree in question is actually a magically concealed creature. To all normal tests you are, in fact, a tree or shrub, although a Spellcraft check can reveal the magical aura on the tree. While in tree form, you can observe all that transpires around you just as if you were in your normal form. You gain a \plus10 enhancement bonus to your armor modifier, but you have an effective Dexterity score of \minus10 and cannot move. You are immune to critical hits while in tree form. All clothing and gear carried or worn changes with you.
+    \spelleffect You become able to assume the form of a Large living tree or shrub or a Large dead tree trunk with a small number of limbs. The closest inspection cannot reveal that the tree in question is actually a magically concealed creature. To all normal tests you are, in fact, a tree or shrub, although a Spellcraft check can reveal the magical aura on the tree. While in tree form, you can observe all that transpires around you just as if you were in your normal form. You gain a \plus10 enhancement bonus to your Armor defense, but you have an effective Dexterity score of \minus10 and cannot move. You are immune to critical hits while in tree form. All clothing and gear carried or worn changes with you.
 \end{spelltarget}
 
 \spellsection{Tremorsense}{1}
