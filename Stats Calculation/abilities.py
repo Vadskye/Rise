@@ -16,7 +16,7 @@ class Ability(object):
     #the ability is referenced (primarily with to_latex()) 
     #text can be either a string or a function
     def __init__(self, name, benefit = None, meets_prerequisites = None, 
-            tags = None, value = None, text = None):
+                 tags = None, value = None, text = None):
         self.name = name
         self.tags = set()
         if tags is not None:
@@ -60,13 +60,13 @@ class Ability(object):
 
     @classmethod
     def create_ability(cls, name, benefit = None, meets_prerequisites = None,
-            tags = None, value = None, text = None):
+                       tags = None, value = None, text = None):
         ability = cls(name, benefit, meets_prerequisites, tags, value, text)
         Ability.all_abilities[name] = ability
 
     @classmethod
     def create_feat(cls, name, benefit = None, meets_prerequisites = None,
-            tags = None, value = None, text = None):
+                    tags = None, value = None, text = None):
         feat_tags = set()
         feat_tags.add(ABILITY_FEAT)
         if tags is not None:
@@ -81,9 +81,9 @@ class Ability(object):
 
 def barbarian_damage_reduction_benefit(creature):
     creature.damage_reduction = util.DamageReduction(creature.level,
-        'physical')
+                                                     'physical')
 Ability.create_ability('barbarian damage reduction', barbarian_damage_reduction_benefit)
-    
+
 def danger_sense_benefit(creature):
     creature.initiative.add_bonus(creature.level/2, 'danger sense')
 Ability.create_ability('danger sense', danger_sense_benefit)
@@ -119,7 +119,7 @@ def armor_discipline_agility_benefit(creature):
     armor_discipline_count = (creature.level+5)/6
     for i in xrange(1, armor_discipline_count):
         creature.armor.encumbrance = util.lower_encumbrance(
-                creature.armor.encumbrance)
+            creature.armor.encumbrance)
 Ability.create_ability('armor discipline (agility)', armor_discipline_agility_benefit)
 
 def armor_discipline_resilience_benefit(creature):
@@ -142,74 +142,74 @@ def two_weapon_fighting_prerequisites(creature):
     return creature.dexterity.get_total()>= 3 and creature.secondary_weapon
 
 Ability.create_ability('two-weapon fighting', two_weapon_fighting_benefit,
-        two_weapon_fighting_prerequisites,
-        set((ABILITY_FEAT, 'combat', 'finesse')))
+                       two_weapon_fighting_prerequisites,
+                       set((ABILITY_FEAT, 'combat', 'finesse')))
 
 def two_weapon_defense_benefit(creature):
     if creature.secondary_weapon:
         bonus = creature.level/8+1
         creature.armor_class.shield.add_bonus(bonus, 'shield')
 Ability.create_ability('two-weapon defense', two_weapon_defense_benefit,
-        two_weapon_fighting_prerequisites,
-        set((ABILITY_FEAT, 'combat', 'defense', 'finesse')))
+                       two_weapon_fighting_prerequisites,
+                       set((ABILITY_FEAT, 'combat', 'defense', 'finesse')))
 
 def combat_expertise_benefit(creature):
     creature.attack_bonus.add_bonus(-util.bab_scale(creature.level),
-            'combat expertise')
+                                    'combat expertise')
     creature.armor_class.dodge.add_bonus(util.bab_scale(creature.level),
-            'combat expertise')
+                                         'combat expertise')
 Ability.create_ability('combat expertise', combat_expertise_benefit, 
-        lambda creature: creature.attributes.intelligence.get_total() >= 3,
-        set((ABILITY_FEAT, 'combat', 'defense', 'style')))
+                       lambda creature: creature.attributes.intelligence.get_total() >= 3,
+                       set((ABILITY_FEAT, 'combat', 'defense', 'style')))
 
 def power_attack_benefit(creature):
     creature.attack_bonus.add_bonus(-util.bab_scale(creature.level), 
-            'power attack')
+                                    'power attack')
     damage_bonus = 2+(creature.attack_bonus.base_attack_bonus/5)*2
     if creature.primary_weapon.encumbrance == 'medium' or creature.primary_weapon.encumbrance == 'heavy':
         creature.primary_weapon_damage.add_bonus(damage_bonus,
-                'power attack')
+                                                 'power attack')
     else:
         creature.primary_weapon_damage.add_bonus(damage_bonus/2, 'power attack')
     if creature.secondary_weapon:
         creature.secondary_weapon_damage.add_bonus(damage_bonus/2, 
-                'power attack')
+                                                   'power attack')
 Ability.create_ability('power attack', power_attack_benefit, lambda creature:
-        creature.strength.get_total() >= 3,
-        [ABILITY_FEAT, 'combat', 'power', 'style'])
+                       creature.strength.get_total() >= 3,
+                       [ABILITY_FEAT, 'combat', 'power', 'style'])
 
 def deadly_aim_benefit(creature):
     creature.attack_bonus.add_bonus(-util.bab_scale(creature.level), 
-            'deadly aim')
+                                    'deadly aim')
     damage_bonus = 2+(creature.attack_bonus.base_attack_bonus/5)*2
     creature.primary_weapon_damage.add_bonus(damage_bonus, 
-            'deadly aim')
+                                             'deadly aim')
 Ability.create_ability('deadly aim', deadly_aim_benefit, lambda creature:
-        creature.dexterity.get_total() >= 3,
-        set((ABILITY_FEAT, 'combat', 'precision', 'style')))
+                       creature.dexterity.get_total() >= 3,
+                       set((ABILITY_FEAT, 'combat', 'precision', 'style')))
 
 Ability.create_feat('endurance', tags=[TAG_DEFENSE])
 Ability.create_feat('diehard', tags=[TAG_DEFENSE])
 Ability.create_feat('track', tags=['skill'])
 Ability.create_feat('dodge', tags=[TAG_DEFENSE, 'combat', 
-'mobility'])
+                                   'mobility'])
 Ability.create_feat('mobility', tags=[TAG_DEFENSE, 'combat', 
-'mobility'])
+                                      'mobility'])
 Ability.create_feat('spring attack', tags=[TAG_DEFENSE,
-'combat', 'mobility'])
+                                           'combat', 'mobility'])
 
 def great_fortitude_benefit(creature):
     creature.defenses[FORTITUDE].add_bonus(2, 'great fortitude')
 Ability.create_feat('great fortitude',
-        great_fortitude_benefit, tags=[SPECIAL_DEFENSE])
+                    great_fortitude_benefit, tags=[SPECIAL_DEFENSE])
 def iron_will_benefit(creature):
     creature.will.add_bonus(2, 'iron will')
 Ability.create_feat('iron will',
-        iron_will_benefit, tags=[SPECIAL_DEFENSE])
+                    iron_will_benefit, tags=[SPECIAL_DEFENSE])
 def lightning_reflexes_benefit(creature):
     creature.reflex.add_bonus(2, 'lightning reflexes')
 Ability.create_feat('lightning reflexes',
-        lightning_reflexes_benefit, tags=[SPECIAL_DEFENSE], text='1/day reroll Reflex')
+                    lightning_reflexes_benefit, tags=[SPECIAL_DEFENSE], text='1/day reroll Reflex')
 
 def swift_benefit(creature):
     for speed_mode in creature.speed_modes:
@@ -223,26 +223,26 @@ Ability.create_feat('overpowering assault', tags=[TAG_POWER, TAG_STYLE])
 ####################
 
 Ability.create_ability('darkvision', tags = ['sense'], value = 60,
-        text='Darkvision %s ft.')
+                       text='Darkvision %s ft.')
 Ability.create_ability('low-light vision', tags = ['sense'])
 Ability.create_ability('scent', tags = ['sense'])
 
 def natural_grab_text(creature):
     return 'Natural grab (%s) %s' % (util.decrease_size(creature.size).title(),
-            creature.maneuver_bonus.mstr())
+                                     creature.maneuver_bonus.mstr())
 Ability.create_ability('improved grab', text = natural_grab_text,
-        tags=['special attack'])
+                       tags=['special attack'])
 
 def natural_trip_text(creature):
     return 'Natural trip (%s) %s' % (util.increase_size(creature.size).title(),
-            creature.maneuver_bonus.mstr())
+                                     creature.maneuver_bonus.mstr())
 Ability.create_ability('natural trip', text = natural_trip_text,
-        tags=['special attack'])
+                       tags=['special attack'])
 
 def natural_weapon_benefit(creature):
     creature.primary_weapon.increase_size()
 Ability.create_ability('improved natural weapon',
-        benefit = natural_weapon_benefit)
+                       benefit = natural_weapon_benefit)
 
 Ability.create_ability('enslave', tags=[TAG_ATTACK], text = 'enslave')
 Ability.create_ability('slime', tags=[TAG_ATTACK], text = 'slime')
@@ -267,7 +267,7 @@ def warrior_benefit(creature):
     creature.improve_progression(BAB)
     creature.improve_progression(HIT_VALUE)
 Ability.create_ability('warrior', benefit = warrior_benefit,
-        meets_prerequisites = warrior_prerequisites, tags=[ABILITY_TEMPLATE])
+                       meets_prerequisites = warrior_prerequisites, tags=[ABILITY_TEMPLATE])
 
 def antiwarrior_prerequisites(creature):
     return creature.base_attack_bonus is not None and creature.hit_value is not None
@@ -275,7 +275,7 @@ def antiwarrior_benefit(creature):
     creature.reduce_progression(BAB)
     creature.reduce_progression(HIT_VALUE)
 Ability.create_ability('antiwarrior', benefit = antiwarrior_benefit,
-        meets_prerequisites = antiwarrior_prerequisites, tags=[ABILITY_TEMPLATE])
+                       meets_prerequisites = antiwarrior_prerequisites, tags=[ABILITY_TEMPLATE])
 
 def brute_prerequisites(creature):
     return creature.fortitude is not None and creature.hit_value is not None
@@ -283,7 +283,7 @@ def brute_benefit(creature):
     util.improve_hv(creature.get_class_progression())
     util.improve_save(creature.get_class_progression(), FORTITUDE)
 Ability.create_ability('brute', benefit = brute_benefit,
-        meets_prerequisites = brute_prerequisites, tags=[ABILITY_TEMPLATE])
+                       meets_prerequisites = brute_prerequisites, tags=[ABILITY_TEMPLATE])
 
 def scout_prerequisites(creature):
     return creature.reflex is not None and creature.get_all_speeds() is not None
@@ -292,12 +292,12 @@ def scout_benefit(creature):
     for speed_mode in creature.speed_modes:
         creture.modify_speed(speed_mode, min(10, creature.get_land_speed()))
 Ability.create_ability('scout', benefit = scout_benefit,
-        meets_prerequisites = scout_prerequisites, tags=[ABILITY_TEMPLATE])
+                       meets_prerequisites = scout_prerequisites, tags=[ABILITY_TEMPLATE])
 
 def incorporeal_benefit(creature):
     #add Cha to hit points
     creature.hit_points().add_bonus(creature.level *
-            creature.charisma.get_total()/2, 'cha')
+                                    creature.charisma.get_total()/2, 'cha')
     creature.strength.set_inapplicable()
     creature.constitution.set_inapplicable()
     def incorporeal_defense(damage, damage_types):
@@ -308,7 +308,7 @@ def incorporeal_benefit(creature):
             return damage
     creature.add_special_defense(incorporeal_defense)
 Ability.create_ability('incorporeal', benefit = incorporeal_benefit,
-        tags=[ABILITY_TEMPLATE])
+                       tags=[ABILITY_TEMPLATE])
 
 ####################
 #MONSTER TYPES

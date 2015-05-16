@@ -48,9 +48,9 @@ def apply_variants(base_object, variant_keys, object_name = 'object', append_nam
                     base_object.update(variant)
                     if append_name and not 'name' in variant:
                         base_object['name'] += '/{0}'.format(variant_key)
-            else:
-                raise Exception("'{0}' does not have variant '{1}'. It has the following variants: {2}".format(
-                    object_name, variant_key, ', '.join(base_object['variants'].keys())))
+                    else:
+                        raise Exception("'{0}' does not have variant '{1}'. It has the following variants: {2}".format(
+                            object_name, variant_key, ', '.join(base_object['variants'].keys())))
         return base_object
     else:
         raise Exception("'{0}' does not have variants '{1}', because it has no variants.".format(
@@ -67,7 +67,7 @@ class Modifier(object):
         #Overlap with the existing type if there is one 
         try:
             self.bonuses[bonus_type] = max(self.bonuses[bonus_type],
-                    bonus_value)
+                                           bonus_value)
         except KeyError:
             self.bonuses[bonus_type] = bonus_value
         self._update()
@@ -149,16 +149,16 @@ class Attribute(ModifierProgression):
 
     def _apply_progression(self, progression, level):
         bonus = {
-                None: 0,
-                #primary and secondary are for PCs
-                'primary': (level+2)/4,
-                'secondary': level/4,
-                #progressions are for monsters
-                POOR: level/4+1,
-                AVERAGE: level/3+2,
-                GOOD: level/2+3,
-                EXTREME: (level*3)/4+4,
-                }[progression]
+            None: 0,
+            #primary and secondary are for PCs
+            'primary': (level+2)/4,
+            'secondary': level/4,
+            #progressions are for monsters
+            POOR: level/4+1,
+            AVERAGE: level/3+2,
+            GOOD: level/2+3,
+            EXTREME: (level*3)/4+4,
+        }[progression]
         self.add_bonus(bonus, 'progression')
 
     def set_inapplicable(self):
@@ -189,11 +189,11 @@ class Attribute(ModifierProgression):
 class ArmorDefense(ModifierProgression):
     def _apply_progression(self, progression, level):
         bonus = {
-                None: 0,
-                POOR: level/4+2,
-                AVERAGE: level/3+4,
-                GOOD: level/2+6,
-                }[progression]
+            None: 0,
+            POOR: level/4+2,
+            AVERAGE: level/3+4,
+            GOOD: level/2+6,
+        }[progression]
         self.add_bonus(bonus, 'progression')
 
 class SpecialDefense(ModifierProgression):
@@ -202,7 +202,7 @@ class SpecialDefense(ModifierProgression):
             'poor': level/2,
             'average': (level*3)/4+1,
             'good': level+2,
-            }[progression]
+        }[progression]
         self.add_bonus(bonus, 'progression')
 
 class AttackBonus(ModifierProgression):
@@ -216,7 +216,7 @@ class AttackBonus(ModifierProgression):
             'poor': level/2,
             'average': (level*3)/4,
             'good': level,
-            }[progression]
+        }[progression]
         self.base_attack_bonus = max(self.base_attack_bonus, base_attack_bonus)
         self.add_bonus(base_attack_bonus, 'base attack bonus')
 
@@ -227,7 +227,7 @@ class AttackBonus(ModifierProgression):
             self.offhand_penalty -= bonus_value
 
     def add_bonus(self, bonus_value, bonus_type, for_main_hand = True,
-            for_offhand = True):
+                  for_offhand = True):
         super(AttackBonus, self).add_bonus(bonus_value, bonus_type)
         self._adjust_offhand_penalty(bonus_value, for_main_hand, for_offhand)
 
@@ -236,7 +236,7 @@ class AttackBonus(ModifierProgression):
 
     def mstr_offhand(self):
         return mstr(self.get_total_offhand())
-    
+
 class ManeuverBonus(ModifierProgression):
 
     def _apply_progression(self, progression, level):
@@ -244,7 +244,7 @@ class ManeuverBonus(ModifierProgression):
             'poor': level/2,
             'average': (level*3)/4,
             'good': level,
-            }[progression]
+        }[progression]
         self.add_bonus(base_attack_bonus, 'base attack bonus')
 
     def set_attributes(self, strength, dexterity):
@@ -338,7 +338,7 @@ def parse_creature_data(key, data):
                 apply_variants(creature_equipment, variant_keys, object_name = key)
             else:
                 raise Exception("Unable to recognize equipment '{0}/{1}'".format(key, variant))
-                
+
         #Add the equipment to the stats to be returned
         for key in creature_equipment:
             # values from creature_data directly should override imported values
@@ -433,16 +433,16 @@ def bab_scale(base_attack_bonus):
 
 def get_size_statistics(size, in_feet = False):
     space, reach, land_speed = {
-                SIZE_FINE: (0.5, 0, 5),
-                SIZE_DIMINUITIVE: (1, 0, 10),
-                SIZE_TINY: (2.5, 0, 15),
-                SIZE_SMALL: (5, 5, 20),
-                SIZE_MEDIUM: (5, 5, 30),
-                SIZE_LARGE: (10, 10, 40),
-                SIZE_HUGE: (15, 15, 50),
-                SIZE_GARGANTUAN: (20, 20, 60),
-                SIZE_COLOSSAL: (30, 30, 70),
-                }[size]
+        SIZE_FINE: (0.5, 0, 5),
+        SIZE_DIMINUITIVE: (1, 0, 10),
+        SIZE_TINY: (2.5, 0, 15),
+        SIZE_SMALL: (5, 5, 20),
+        SIZE_MEDIUM: (5, 5, 30),
+        SIZE_LARGE: (10, 10, 40),
+        SIZE_HUGE: (15, 15, 50),
+        SIZE_GARGANTUAN: (20, 20, 60),
+        SIZE_COLOSSAL: (30, 30, 70),
+    }[size]
     if in_feet:
         space = value_in_feet(space)
         reach = value_in_feet(reach)
@@ -452,27 +452,27 @@ def get_size_statistics(size, in_feet = False):
 def get_size_modifier(size, is_special_size_modifier = False):
     if is_special_size_modifier:
         return {
-                SIZE_FINE: -16,
-                SIZE_DIMINUITIVE: -12,
-                SIZE_TINY: -8,
-                SIZE_SMALL: -4,
-                SIZE_MEDIUM: 0,
-                SIZE_LARGE: 4,
-                SIZE_HUGE: 8,
-                SIZE_GARGANTUAN: 12,
-                SIZE_COLOSSAL: 16,
-                }[size]
-    return {
-            SIZE_FINE: 8,
-            SIZE_DIMINUITIVE: 4,
-            SIZE_TINY: 2,
-            SIZE_SMALL: 1,
+            SIZE_FINE: -16,
+            SIZE_DIMINUITIVE: -12,
+            SIZE_TINY: -8,
+            SIZE_SMALL: -4,
             SIZE_MEDIUM: 0,
-            SIZE_LARGE: -1,
-            SIZE_HUGE: -2,
-            SIZE_GARGANTUAN: -4,
-            SIZE_COLOSSAL: -8,
-            }[size]
+            SIZE_LARGE: 4,
+            SIZE_HUGE: 8,
+            SIZE_GARGANTUAN: 12,
+            SIZE_COLOSSAL: 16,
+        }[size]
+    return {
+        SIZE_FINE: 8,
+        SIZE_DIMINUITIVE: 4,
+        SIZE_TINY: 2,
+        SIZE_SMALL: 1,
+        SIZE_MEDIUM: 0,
+        SIZE_LARGE: -1,
+        SIZE_HUGE: -2,
+        SIZE_GARGANTUAN: -4,
+        SIZE_COLOSSAL: -8,
+    }[size]
 
 def value_in_feet(value):
     if value == 0.5:
@@ -496,12 +496,12 @@ def decrease_size(size):
 def attack_damage_to_latex(weapon, weapon_damage):
     #These damage types are too common and verbose to include
     ignored_damage_types = [DAMAGE_PHYSICAL, DAMAGE_SLASHING, DAMAGE_PIERCING,
-            DAMAGE_BLUDGEONING]
+                            DAMAGE_BLUDGEONING]
     damage_types_without_physical = [t for t in weapon.damage_types
-            if not t in ignored_damage_types]
+                                     if not t in ignored_damage_types]
     damage_string = '%s%s %s' % (weapon_damage.die,
-            mstr(weapon_damage.get_total(ignore_die = True), ignore_zero = True),
-            ' '.join(damage_types_without_physical))
+                                 mstr(weapon_damage.get_total(ignore_die = True), ignore_zero = True),
+                                 ' '.join(damage_types_without_physical))
     if weapon.deals_damage:
         damage_string += ' damage'
     return damage_string
@@ -530,11 +530,11 @@ def change_hit_value(hit_value, steps_to_change, allow_extreme = False):
 def lower_encumbrance(encumbrance):
     if encumbrance is None: return False
     return {
-            'heavy': 'medium',
-            'medium': 'light',
-            'light': 'none',
-            'none': 'none',
-            }[encumbrance]
+        'heavy': 'medium',
+        'medium': 'light',
+        'light': 'none',
+        'none': 'none',
+    }[encumbrance]
 
 def split_filtered(text, split_on = ' '):
     # filter None rmoves all elements that evaluate to False
