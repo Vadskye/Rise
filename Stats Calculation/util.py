@@ -186,16 +186,7 @@ class Attribute(ModifierProgression):
         text += ')'
         return text
 
-class SavingThrow(ModifierProgression):
-    def _apply_progression(self, progression, level):
-        bonus = {
-            'poor': level/2,
-            'average': (level*3)/4+1,
-            'good': level+2,
-            }[progression]
-        self.add_bonus(bonus, 'progression')
-
-class NaturalArmor(ModifierProgression):
+class ArmorDefense(ModifierProgression):
     def _apply_progression(self, progression, level):
         bonus = {
                 None: 0,
@@ -203,6 +194,15 @@ class NaturalArmor(ModifierProgression):
                 AVERAGE: level/3+4,
                 GOOD: level/2+6,
                 }[progression]
+        self.add_bonus(bonus, 'progression')
+
+class SpecialDefense(ModifierProgression):
+    def _apply_progression(self, progression, level):
+        bonus = {
+            'poor': level/2,
+            'average': (level*3)/4+1,
+            'good': level+2,
+            }[progression]
         self.add_bonus(bonus, 'progression')
 
 class AttackBonus(ModifierProgression):
@@ -260,53 +260,6 @@ class ManeuverBonus(ModifierProgression):
 
     def mstr(self, use_strength = True):
         return mstr(self.get_total(use_strength = use_strength))
-
-class ArmorClass:
-    def __init__(self):
-        self.misc = Modifier()
-        self.armor = Modifier()
-        self.shield = Modifier()
-        self.dodge = Modifier()
-        self.natural_armor = NaturalArmor()
-        self.misc.add_bonus(10, 'base')
-
-    def normal(self):
-        normal = sum([self.misc.get_total(), self.shield.get_total(), self.dodge.get_total()])
-        normal += self.armor.get_total()
-        normal += self.natural_armor.get_total()
-        return normal
-
-    def touch(self):
-        return sum([self.misc.get_total(), self.shield.get_total(), self.dodge.get_total()])
-
-    def flatfooted(self):
-        flatfooted = self.misc.get_total()
-        flatfooted += self.armor.get_total()
-        flatfooted += self.natural_armor.get_total()
-        return flatfooted
-
-    def add_all(self, ac_modifiers):
-        keys = ac_modifiers.keys()
-        if 'misc' in keys:
-            self.misc.add_all(ac_modifiers['misc'])
-        if 'armor' in keys:
-            self.armor.add_all(ac_modifiers['armor'])
-        if 'shield' in keys:
-            self.shield.add_all(ac_modifiers['shield'])
-        if 'dodge' in keys:
-            self.dodge.add_all(ac_modifiers['dodge'])
-        if 'natural_armor' in keys:
-            self.natural_armor.add_all(ac_modifiers['natural_armor'])
-
-    def get_details(self):
-        return "%s = %s (armor) + %s (shield) + %s (dodge) + %s (natural armor) + %s (misc)" % (
-                self.normal(), self.armor.get_total(),
-                self.shield.get_total(), self.dodge.get_total(),
-                self.natural_armor.get_total(), self.misc.get_total())
-
-    def __str__(self):
-        ac = 'AD ' + str(self.normal())
-        return ac
 
 class DamageReduction(object):
     def __init__(self, value = None, type_resisted = None, type_vulnerable=None):

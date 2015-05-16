@@ -201,15 +201,15 @@ Ability.create_feat('spring attack', tags=[TAG_DEFENSE,
 def great_fortitude_benefit(creature):
     creature.defenses[FORTITUDE].add_bonus(2, 'great fortitude')
 Ability.create_feat('great fortitude',
-        great_fortitude_benefit, tags=[SAVING_THROW])
+        great_fortitude_benefit, tags=[SPECIAL_DEFENSE])
 def iron_will_benefit(creature):
     creature.will.add_bonus(2, 'iron will')
 Ability.create_feat('iron will',
-        iron_will_benefit, tags=[SAVING_THROW])
+        iron_will_benefit, tags=[SPECIAL_DEFENSE])
 def lightning_reflexes_benefit(creature):
     creature.reflex.add_bonus(2, 'lightning reflexes')
 Ability.create_feat('lightning reflexes',
-        lightning_reflexes_benefit, tags=[SAVING_THROW], text='1/day reroll Reflex')
+        lightning_reflexes_benefit, tags=[SPECIAL_DEFENSE], text='1/day reroll Reflex')
 
 def swift_benefit(creature):
     for speed_mode in creature.speed_modes:

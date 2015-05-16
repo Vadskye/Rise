@@ -17,24 +17,14 @@ ATTRIBUTES = ATTRIBUTE_NAMES
 
 ARMOR = 'armor'
 SHIELD = 'shield'
-DODGE = 'dodge'
-NATURAL = 'natural armor'
-MISC = 'misc'
-AC_MODIFIERS = [ARMOR, SHIELD, DODGE, NATURAL, MISC]
-
-AC_NORMAL = 'normal'
-AC_TOUCH = 'touch'
-AC_FLAT = 'flat-footed'
-AC_TYPES = [AC_NORMAL, AC_TOUCH, AC_FLAT]
 
 FORTITUDE = 'fortitude'
 FORT = FORTITUDE
 REFLEX = 'reflex'
 REF = REFLEX
 WILL = 'will'
-SAVE_NAMES = [FORTITUDE, REFLEX, WILL]
-SAVES = SAVE_NAMES
-SAVING_THROW = 'saving throw'
+SPECIAL_DEFENSE_NAMES = [FORTITUDE, REFLEX, WILL]
+SPECIAL_DEFENSE = 'special defense'
 
 WEAPON_DAMAGE = 'damage'
 WEAPON_ENCUMBRANCE = 'encumbrance'
@@ -97,8 +87,8 @@ ABILITY_TYPE_GROUPS = set('abilities templates feats traits'.split())
 WEAPON_PRIMARY = 'primary weapon'
 WEAPON_SECONDARY = 'secondary weapon'
 WEAPONS = (WEAPON_PRIMARY, WEAPON_SECONDARY)
-AC = 'armor class'
-MC = 'maneuver class'
+AD = 'armor defense'
+MD = 'maneuver defense'
 NAME = 'name'
 CLASS_NAME = 'class name'
 ATTACK_BONUS = 'attack bonus'
@@ -197,7 +187,6 @@ TAG_SENSE = 'sense'
 TAG_MOVE = 'movement'
 TAG_PROTECTION = 'protection'
 TAG_IMMUNITY = 'immunity'
-TAG_SAVE = 'saving throw'
 TAG_POWER = 'power'
 TAG_STYLE = 'style'
 

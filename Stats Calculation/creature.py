@@ -83,13 +83,12 @@ class Creature(object):
                 CRITICAL_DAMAGE: 0,
                 }
         self._defenses = {
-                AC: None,
-                MC: None,
+                AD: None,
+                MD: None,
                 FORTITUDE: None,
                 REFLEX: None,
                 WILL: None,
                 DR: None,
-                SPECIAL: None,
                 }
         self._progressions = {
                 BAB: None,
@@ -283,20 +282,20 @@ class Creature(object):
         self._core[SIZE] = value
 
     @property
-    def armor_class(self):
-        return self._defenses[AC]
+    def armor_defense(self):
+        return self._defenses[AD]
 
-    @armor_class.setter
-    def armor_class(self, value):
-        self._defenses[AC] = value
+    @armor_defense.setter
+    def armor_defense(self, value):
+        self._defenses[AD] = value
 
     @property
     def maneuver_defense(self):
-        return self._defenses[MC]
+        return self._defenses[MD]
 
     @maneuver_defense.setter
     def maneuver_defense(self, value):
-        self._defenses[MC] = value
+        self._defenses[MD] = value
 
     @property
     def damage_reduction(self):
@@ -305,14 +304,6 @@ class Creature(object):
     @damage_reduction.setter
     def damage_reduction(self, value):
         self._defenses[DR] = value
-
-    @property
-    def special_defenses(self):
-        return self._defenses[SPECIAL]
-
-    @special_defenses.setter
-    def special_defenses(self, value):
-        self._defenses[SPECIAL] = value
 
     @property
     def fortitude(self):
@@ -339,10 +330,10 @@ class Creature(object):
         self._defenses[WILL] = value
 
     def get_defense(self, defense_type):
-        if defense_type in ['physical', 'touch', 'flat-footed']:
-            return self.armor_class
+        if defense_type == 'armor':
+            return self.armor_defense
         elif defense_type == 'maneuver':
-            return self.maneuver
+            return self.maneuver_defense
         elif defense_type == FORTITUDE:
             return self.fortitude
         elif defense_type == REFLEX:
@@ -351,17 +342,6 @@ class Creature(object):
             return self.will
         else:
             raise Exception("Unrecognized defense type: " + defense_type)
-
-    def get_defense_total(self, defense_type):
-        defense = self.get_defense(defense_type)
-        if defense_type == 'physical':
-            return defense.normal()
-        elif defense_type == 'touch':
-            return defense.touch()
-        elif defense_type == 'flat-footed':
-            return defense.flatfooted()
-        else:
-            return defense.get_total()
 
     def get_size_modifier(self, is_special_size_modifier = False):
         return util.get_size_modifier(self.size, is_special_size_modifier)
@@ -543,13 +523,12 @@ class Creature(object):
         self.secondary_weapon_damage = util.Modifier()
         for attribute_name in ATTRIBUTES:
             self.attributes[attribute_name] = util.Attribute()
-        self.armor_class = util.ArmorClass()
+        self.armor_defense = util.ArmorDefense()
         self.maneuver_defense = util.Modifier()
+        self.fortitude = util.SpecialDefense()
+        self.reflex = util.SpecialDefense()
+        self.will = util.SpecialDefense()
         self.damage_reduction = util.DamageReduction()
-        self.special_defenses = list()
-        self.fortitude = util.SavingThrow()
-        self.reflex = util.SavingThrow()
-        self.will = util.SavingThrow()
         self.hit_points = util.Modifier()
         self.initiative = util.Modifier()
         self.active_abilities = list()
@@ -658,12 +637,12 @@ class Creature(object):
         self.apply_inactive_abilities()
         self.attack_bonus.set_progression(
                 self.get_progression(BAB))
-        for defense_name in SAVES:
+        for defense_name in SPECIAL_DEFENSE_NAMES:
             self.get_defense(defense_name).set_progression(
                     self.get_progression(defense_name))
         if NATURAL_ARMOR in self._progressions:
-            self.armor_class.natural_armor.set_progression(
-                    self.get_progression(NATURAL_ARMOR))
+            self.armor_defense.set_progression(
+                self.get_progression(NATURAL_ARMOR))
         self.apply_class_modifications()
 
     #This must be overridden
@@ -698,24 +677,26 @@ class Creature(object):
     def calculate_derived_statistics(self):
         self.attack_bonus.set_level(self.level)
         self.maneuver_bonus.set_level(self.level)
-        for save_name in SAVES:
-            self.get_defense(save_name).set_level(self.level)
-            self.get_defense(save_name).add_bonus(10, BASE)
+        for special_defense in SPECIAL_DEFENSE_NAMES:
+            self.get_defense(special_defense).set_level(self.level)
+            self.get_defense(special_defense).add_bonus(10, BASE)
         self.maneuver_defense.add_bonus(10, BASE)
-        self.armor_class.natural_armor.set_level(self.level)
+        self.armor_defense.add_bonus(10, BASE)
+        self.armor_defense.set_level(self.level)
 
         self.apply_inactive_abilities()
 
         dexterity_to_ac = self.dexterity.get_total()
         if self.armor is not None:
-            self.armor_class.armor.add_bonus(self.armor.ac_bonus, 'armor')
+            self.armor_defense.add_bonus(self.armor.ac_bonus, ARMOR)
             if self.armor.encumbrance=='medium' or self.armor.encumbrance=='heavy':
                 dexterity_to_ac /=2
-        self.armor_class.dodge.add_bonus(dexterity_to_ac, DEX)
+        self.armor_defense.add_bonus(dexterity_to_ac, DEX)
+        self.maneuver_defense.add_bonus(dexterity_to_ac, DEX)
 
         if self.shield is not None:
-            self.armor_class.shield.add_bonus(
-                    self.shield.ac_bonus, BASE)
+            self.armor_defense.add_bonus(self.shield.ac_bonus, SHIELD)
+            self.maneuver_defense.add_bonus(self.shield.ac_bonus, SHIELD)
 
         self.calculate_attack_attribute_bonus()
         self.maneuver_bonus.set_attributes(self.strength,
@@ -726,7 +707,7 @@ class Creature(object):
         special_size_modifier = self.get_special_size_modifier()
         self.attack_bonus.add_bonus(size_modifier, SIZE)
         self.maneuver_bonus.add_bonus(special_size_modifier, SIZE)
-        self.armor_class.misc.add_bonus(size_modifier, SIZE)
+        self.armor_defense.add_bonus(size_modifier, SIZE)
         #stealth will be adjusted here once skills are implemented
 
         #set damage for each weapon
@@ -742,13 +723,11 @@ class Creature(object):
 
         self.add_save_attributes()
 
-        self.armor_class.dodge.add_bonus(
+        self.armor_defense.add_bonus(
                 util.ifloor(self.attack_bonus.base_attack_bonus/2), BAB)
 
         self.maneuver_defense.add_bonus(self.attack_bonus.base_attack_bonus, BAB)
-        self.maneuver_defense.add_bonus(self.armor_class.shield.get_total(), 'shield')
         self.maneuver_defense.add_bonus(self.strength.get_total(), STR)
-        self.maneuver_defense.add_bonus(self.dexterity.get_total(), DEX)
 
         self.initiative.add_bonus(self.dexterity.get_total(), DEX)
         self.initiative.add_bonus(self.wisdom.get_total()/2, WIS)
@@ -838,7 +817,7 @@ class Creature(object):
     def _to_string_defenses(self):
         defenses = "[HP] {0}; [Defs] AD {1}, MD {2}; Fort {3}, Ref {4}, Will {5}".format(
                 self.hit_points.get_total(),
-                self.armor_class.normal(),
+                self.armor_defense.get_total(),
                 self.maneuver_defense.get_total(),
                 self.fortitude.get_total(),
                 self.reflex.get_total(),
@@ -1106,15 +1085,15 @@ class Creature(object):
         return movement
 
     def _latex_defenses(self):
-        defenses = r'\textbf{AC} %s, touch %s, flat-footed %s' % (
-                self.armor_class.normal(), self.armor_class.touch(),
-                self.armor_class.flatfooted())
-        defenses += r'; \textbf{MC} %s' % self.maneuver_defense.get_total()
+        defenses = r'\textbf{AD} %s; \textbf{MC} %s' % (
+            self.armor_defense.get_total(), 
+            self.maneuver_defense.get_total()
+        )
         defenses += self.get_text_of_abilities_by_tag(TAG_MOVE,
                 prefix = '(', suffix = ')')
         defenses += ENDLINE
-        #Should provide detailed explanation of AC sources here
-        #defenses += '\par (%s)' % self.armor_class
+        #Should provide detailed explanation of AD sources here
+        #defenses += '\par (%s)' % self.armor_defense
 
         #Add HP and damage reduction
         defenses += r'\textbf{HP} %s (%s HV)' % (self.hit_points.get_total(),
@@ -1130,7 +1109,7 @@ class Creature(object):
         defenses+=r'\textbf{Saves} Fort %s, Ref %s, Will %s' % (
                 self.fortitude.mstr(), self.reflex.mstr(),
                 self.will.mstr())
-        defenses += self.get_text_of_abilities_by_tag(SAVING_THROW,
+        defenses += self.get_text_of_abilities_by_tag(SPECIAL_DEFENSE,
                 prefix = '; ')
         defenses += ENDLINE
 
@@ -1207,9 +1186,9 @@ class Character(Creature):
 
     def add_automatic_scaling_bonuses(self):
         scale_factor = self.level/4
-        self.armor_class.armor.add_enhancement(scale_factor)
+        self.armor_defense.armor.add_enhancement(scale_factor)
         if self.shield:
-            self.armor_class.shield.add_enhancement(scale_factor)
+            self.armor_defense.shield.add_enhancement(scale_factor)
         if self.primary_weapon:
             self.attack_bonus.add_enhancement(scale_factor)
             for weapon in WEAPONS:
@@ -1286,7 +1265,7 @@ class Monk(Character):
 
         #enlightened defense
         if self.armor is None:
-            self.armor_class.misc.add_bonus(wisdom, WIS)
+            self.armor_defense.misc.add_bonus(wisdom, WIS)
             self.maneuver_defense.add_bonus(wisdom, WIS)
             self.reflex.add_bonus(wisdom, WIS)
         else:
@@ -1338,7 +1317,7 @@ class Paladin(Character):
 
     def apply_class_modifications(self):
         if self.level>=5:
-            self.armor_class.misc.add_bonus(self.charisma.get_total()/2, CHA)
+            self.armor_defense.misc.add_bonus(self.charisma.get_total()/2, CHA)
 
     #assume smite
     def standard_physical_attack(self, enemy, defense_type, deal_damage = True):
@@ -1542,12 +1521,12 @@ class IdealCreature(Creature):
         self.set_progression(HIT_VALUE, 5)
 
     def apply_class_modifications(self):
-        #compensate for AC bonus from BAB
-        self.armor_class.dodge.add_bonus(-(self.level/2),
+        #compensate for AD bonus from BAB
+        self.armor_defense.add_bonus(-(self.level/2),
                 'babfix')
-        #compensate for AC bonus from Dex
-        self.armor_class.dodge.add_bonus(
+        #compensate for AD bonus from Dex
+        self.armor_defense.add_bonus(
                 -(self.dexterity.get_total()), 'dexfix')
         #this overrides the base 10 because it has the same type
-        self.armor_class.misc.add_bonus(self.level+15,
+        self.armor_defense.misc.add_bonus(self.level+15,
                 BASE)
