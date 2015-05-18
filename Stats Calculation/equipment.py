@@ -46,13 +46,15 @@ class Weapon(object):
                 'tentacles': cls('tentacles', ENCUMBRANCE_LIGHT,
                     ATTACK_TYPE_MELEE, (DAMAGE_PHYSICAL, DAMAGE_BLUDGEONING),
                     'd8'),
-                'slam': cls('slam', ENCUMBRANCE_LIGHT,
+                'slam': cls('slam', ENCUMBRANCE_MEDIUM,
                     ATTACK_TYPE_MELEE, (DAMAGE_PHYSICAL, DAMAGE_BLUDGEONING),
                     'd8'),
                 'unarmed': cls('unarmed', ENCUMBRANCE_LIGHT, ATTACK_TYPE_MELEE,
                     [DAMAGE_PHYSICAL], 'd3'),
                 'wisdom drain': cls('wisdom drain', ENCUMBRANCE_LIGHT,
-                    ATTACK_TYPE_MELEE, ['wisdom'], 'd4', defense_type = 'touch'), 'none': None
+                    ATTACK_TYPE_MELEE, ['wisdom'], 'd4', defense_type = 'touch'), 'none': None,
+                'swordfish': cls('swordfish', ENCUMBRANCE_MEDIUM,
+                    ATTACK_TYPE_MELEE, [DAMAGE_PHYSICAL, DAMAGE_BLUDGEONING, 'fish'], 'd6'),
                 }[weapon_name]
 
 class Armor:
@@ -92,9 +94,8 @@ class EquipmentSet:
 
     @classmethod
     def from_raw_stats(cls, raw_stats):
-        if 'weapons' in raw_stats:
-            primary_weapon = raw_stats['weapons']['primary'] if 'primary' in raw_stats['weapons'] else None
-            secondary_weapon = raw_stats['weapons']['secondary'] if 'secondary' in raw_stats['weapons'] else None
-        armor = raw_stats['armor'] if 'armor' in raw_stats else None
-        shield = raw_stats['shield'] if 'shield' in raw_stats else None
+        primary_weapon = raw_stats.get('weapons', {}).get('primary')
+        secondary_weapon = raw_stats.get('weapons',{}).get('secondary')
+        armor = raw_stats.get('armor')
+        shield = raw_stats.get('shield')
         return cls(primary_weapon, secondary_weapon, armor, shield)

@@ -1,26 +1,120 @@
+creature_types:
+  aberration:
+    bab: average
+    fortitude: average
+    reflex: poor
+    will: good
+    hit_value: 5
+    natural_armor: poor
+    traits:
+      - darkvision
+  animal:
+    bab: average
+    fortitude: good
+    reflex: average
+    will: poor
+    hit_value: 5
+    natural_armor: poor
+    traits:
+      - low-light vision
+      - scent
+  construct:
+    bab: average
+    fortitude: poor
+    reflex: poor
+    will: poor
+    hit_value: 5
+    natural_armor: average
+    traits:
+      - darkvision
+      - construct
+  fey:
+    bab: poor
+    fortitude: poor
+    reflex: average
+    will: average
+    hit_value: 4
+    natural_armor: poor
+  humanoid:
+    bab: poor
+    fortitude: poor
+    reflex: poor
+    will: poor
+    hit_value: 4
+  magical_beast:
+    bab: average
+    fortitude: average
+    reflex: average
+    will: poor
+    hit_value: 5
+    natural_armor: poor
+    traits:
+      - low-light vision
+  monstrous_humanoid:
+    bab: average
+    fortitude: average
+    reflex: poor
+    will: poor
+    hit_value: 5
+    natural_armor: poor
+  ooze:
+    bab: poor
+    fortitude: average
+    reflex: poor
+    will: poor
+    hit_value: 6
+    traits:
+      - ooze
+  outsider:
+    bab: average
+    fortitude: average
+    reflex: average
+    will: average
+    hit_value: 5
+    natural_armor: poor
+    traits:
+      - low-light vision
+  plant:
+    bab: poor
+    fortitude: average
+    reflex: poor
+    will: poor
+    hit_value: 5
+    natural_armor: poor
+    traits:
+      - plant
+  undead:
+    bab: poor
+    fortitude: poor
+    reflex: poor
+    will: average
+    hit_value: 5
+    natural_armor: poor
+    traits:
+      - undead
 aboleth:
     #meta
     name: aboleth
     creature_type: aberration
     level: 9
-    templates:
-        - warrior
     #items
     weapons:
         primary: tentacles
     #attributes
     strength: average
     constitution: good
-    intelligence: average+2
+    intelligence:
+      progression: average
+      value: 2
     wisdom: average
     charisma: average
     #abilities
     traits:
         - enslave
         - slime
-        - carapace
         - mucus cloud
         - improved natural weapon
+    natural_armor: good
     #feats: 
     #core
     size: large
@@ -466,8 +560,6 @@ stone_giant:
     wisdom: poor
     charisma: poor
     #abilities
-    traits:
-        - carapace
     #feats:  
 
     #core

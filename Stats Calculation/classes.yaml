@@ -1,194 +1,268 @@
 average:
-    name: Average
-    race: human
-    class: average
-    equipment: medium
-    attributes: warrior
+  name: Average
+  race: human
+  class: average
+  equipment: medium
+  attributes: warrior
 barbarian:
-    name: Barbarian
-    race: human
-    class: barbarian
-    armor: medium
-    weapons:
-        primary: heavy_melee
-    attributes: warrior_dex
-    variants:
-        2wf:
-            weapons:
-                primary: light_melee
-                secondary: light_melee
-            shield: ~
-            feats:
-                - two-weapon fighting
-                - two-weapon defense
-        defensive:
-            equipment: heavy
-            attributes: warrior
-        sobo:
-            weapons:
-                primary: medium_melee
-                secondary: ~
-            shield: heavy
+  name: Barbarian
+  race: human
+  class: barbarian
+  armor: medium
+  bab: good
+  fortitude: good
+  reflex: average
+  will: poor
+  hit_value: 7
+  special_attack_attribute: charisma
+  weapons:
+    primary: heavy_melee
+  attributes: warrior_dex
+  variants:
+    2wf:
+      weapons:
+        primary: light_melee
+        secondary: light_melee
+        shield: ~
+        feats:
+          - two-weapon fighting
+          - two-weapon defense
+      defensive:
+        equipment: heavy
+        attributes: warrior
+      sobo:
+        weapons:
+          primary: medium_melee
+          secondary: ~
+          shield: heavy
 cleric:
-    name: Cleric
-    race: human
-    class: cleric
-    equipment: medium
-    attributes: cleric_warrior
+  name: Cleric
+  race: human
+  class: cleric
+  equipment: medium
+  attributes: cleric_warrior
+  bab: average
+  fortitude: average
+  reflex: poor
+  will: good
+  hit_value: 5
 druid:
-    name: Druid
-    race: human
-    class: druid
-    equipment: medium
-    attributes: druid
-    variants:
-        garruk:
-            weapons:
-                primary: light_melee
-                secondary: light_melee
-            shield: ~
-            attributes: garruk
+  name: Druid
+  race: human
+  class: druid
+  equipment: medium
+  attributes: druid
+  bab: average
+  fortitude: good
+  reflex: poor
+  will: average
+  hit_value: 5
+  variants:
+    garruk:
+      weapons:
+        primary: light_melee
+        secondary: light_melee
+        shield: ~
+        attributes: garruk
 fighter:
-    name: Fighter
-    race: human
-    class: fighter
-    equipment: heavy
-    attributes: warrior
-    traits:
-        - armor discipline (resilience)
-    variants: 
-        2wf:
-            weapons:
-                primary: light_melee
-                secondary: light_melee
-            shield: ~
-            feats:
-                - two-weapon fighting
-                - two-weapon defense
-        2wf_medium:
-            weapons:
-                primary: medium_melee
-                secondary: medium_melee
-            shield: ~
-            feats:
-                - two-weapon fighting
-                - two-weapon defense
+  name: Fighter
+  race: human
+  class: fighter
+  equipment: heavy
+  attributes: warrior
+  bab: good
+  fortitude: good
+  reflex: poor
+  will: average
+  hit_value: 6
+  traits:
+    - armor discipline (resilience)
+  variants: 
+  2wf:
+    weapons:
+      primary: light_melee
+      secondary: light_melee
+      shield: ~
+      feats:
+        - two-weapon fighting
+        - two-weapon defense
+      2wf_medium:
+        weapons:
+          primary: medium_melee
+          secondary: medium_melee
+          shield: ~
+          feats:
+            - two-weapon fighting
+            - two-weapon defense
         2wf_dex:
-            weapons:
-                primary: light_melee
-                secondary: light_melee
+          weapons:
+            primary: light_melee
+            secondary: light_melee
             shield: ~
             feats:
-                - two-weapon fighting
-                - two-weapon defense
+              - two-weapon fighting
+              - two-weapon defense
             attributes: warrior_dex
             traits: 
                 - armor discipline (agility)
         2hf: 
-            weapons:
-                primary: heavy_melee
-                secondary: ~
-            shield: ~
+        weapons:
+          primary: heavy_melee
+          secondary: ~
+          shield: ~
         dex:
-            attributes: warrior_dex
-            traits: 
+          attributes: warrior_dex
+          traits: 
                 - armor discipline (agility)
         dex_secondary:
-            attributes: warrior_dex_secondary
-            traits: 
+          attributes: warrior_dex_secondary
+          traits: 
                 - armor discipline (agility)
         finesse:
-            weapons:
-                primary: light_melee
-                secondary: ~
+          weapons:
+            primary: light_melee
+            secondary: ~
             shield: heavy
         nofeats:
-            feats: []
+          feats: []
 monk:
-    name: Monk
-    race: human
-    class: monk
-    attributes: monk
-    weapons:
-        primary: unarmed
-        secondary: unarmed
+  name: Monk
+  race: human
+  class: monk
+  attributes: monk
+  bab: good
+  fortitude: average
+  reflex: good
+  will: good
+  hit_value: 5
+  weapons:
+    primary: unarmed
+    secondary: unarmed
     feats:
-        - two-weapon fighting
-        - two-weapon defense
+      - two-weapon fighting
+      - two-weapon defense
     variants:
-        muerdoc:
-            name: Muerdoc
-            attributes: muerdoc
+      muerdoc:
+        name: Muerdoc
+        attributes: muerdoc
 paladin:
-    name: Paladin
-    race: human
-    class: paladin
-    equipment: heavy
-    attributes: cleric_warrior
-    variants:
-        2wf:
-            weapons:
-                primary: light_melee
-                secondary: light_melee
-            shield: ~
-            attributes: cleric_dex
-            feats:
-                - two-weapon fighting
-                - two-weapon defense
+  name: Paladin
+  race: human
+  class: paladin
+  equipment: heavy
+  attributes: cleric_warrior
+  bab: good
+  fortitude: good
+  reflex: poor
+  will: good
+  hit_value: 6
+  variants:
+    2wf:
+      weapons:
+        primary: light_melee
+        secondary: light_melee
+        shield: ~
+        attributes: cleric_dex
+        feats:
+          - two-weapon fighting
+          - two-weapon defense
         dex:
-            attributes: cleric_dex
+          attributes: cleric_dex
+ranger:
+  name: Ranger
+  race: human
+  class: ranger
+  equipment: light
+  attributes: warrior_dex
+  bab: good
+  fortitude: good
+  reflex: good
+  will: average
+  hit_value: 6
 rogue:
-    name: Rogue
-    race: human
-    class: rogue
-    equipment: light
-    attributes: warrior_dex
-    variants:
-        2wf:
-            weapons:
-                primary: light_melee
-                secondary: light_melee
-            shield: ~
-            feats:
-                - two-weapon fighting
-                - two-weapon defense
+  name: Rogue
+  race: human
+  class: rogue
+  equipment: light
+  attributes: warrior_dex
+  bab: average
+  fortitude: poor
+  reflex: good
+  will: average
+  hit_value: 5
+  variants:
+    2wf:
+      weapons:
+        primary: light_melee
+        secondary: light_melee
+        shield: ~
+        feats:
+          - two-weapon fighting
+          - two-weapon defense
         silk:
-            name: Silk
-            attributes: silk
-            feats:
-                - two-weapon fighting
-                - two-weapon defense
+          name: Silk
+          attributes: silk
+          feats:
+            - two-weapon fighting
+            - two-weapon defense
 sorcerer:
-    name: Sorcerer
-    race: human
-    class: sorcerer
-    equipment: mage
-    attributes: sorcerer
+  name: Sorcerer
+  race: human
+  class: sorcerer
+  equipment: mage
+  attributes: sorcerer
+  bab: poor
+  fortitude: poor
+  reflex: poor
+  will: good
+  hit_value: 4
+spellwarped:
+  name: Spellwarped
+  race: human
+  class: spellwarped
+  equipment: medium
+  attributes: cleric_warrior
+  bab: good
+  fortitude: good
+  reflex: average
+  will: average
+  hit_value: 5
 warrior:
-    name: Warrior
-    race: human
-    class: warrior
-    equipment: medium
-    attributes: warrior
-    variants:
-        heavy:
-            equipment: heavy
-        2wf:
-            weapons:
-                primary: light_melee
-                secondary: light_melee
-            shield: ~
-            attributes: warrior_dex
-            feats:
-                - two-weapon fighting
-                - two-weapon defense
+  name: Warrior
+  race: human
+  class: warrior
+  equipment: medium
+  attributes: warrior
+  bab: good
+  fortitude: good
+  reflex: poor
+  will: poor
+  hit_value: 6
+  variants:
+    heavy:
+      equipment: heavy
+      2wf:
+        weapons:
+          primary: light_melee
+          secondary: light_melee
+          shield: ~
+          attributes: warrior_dex
+          feats:
+            - two-weapon fighting
+            - two-weapon defense
 wizard:
-    name: Wizard
-    race: human
-    class: wizard
-    equipment: mage
-    attributes: wizard
-    variants: 
-        deekin:
-            name: Deekin
-            attributes: deekin
+  name: Wizard
+  race: human
+  class: wizard
+  equipment: mage
+  attributes: wizard
+  casting_attribute: intelligence
+  bab: poor
+  fortitude: poor
+  reflex: poor
+  will: good
+  hit_value: 4
+  variants: 
+  deekin:
+    name: Deekin
+    attributes: deekin

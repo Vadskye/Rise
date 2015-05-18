@@ -318,6 +318,10 @@ def parse_creature_data(key, data):
     creature_data = get_creature_data_from_key(key, data)
     if not creature_data:
         return False
+    # apply creature type-based effects
+    if 'creature_type' in creature_data:
+        creature_type = creature_data['creature_type']
+        safe_update(creature_data, data['monsters']['creature_types'][creature_type], append_arrays = True)
     #If the attributes are referenced in an external file, add them
     #to the raw creature_data referenced here.
     #Otherwise, assume the attributes are present in the original file
@@ -345,6 +349,48 @@ def parse_creature_data(key, data):
             if not key in creature_data:
                 creature_data[key] = creature_equipment[key]
     return creature_data
+
+# in the YAML file, the attribute could simply be a value, simply be a
+# progression, or be a dictionary containing both a progression and a value
+# Return a dictionary in the format
+# {
+#     'strength': {
+#         'progression': strength_progression or None
+#         'value': strength_value or 0
+#     },
+#     ...
+# }
+def parse_attribute_data(creature_data):
+    attributes = dict()
+    for attribute_name in 'strength dexterity constitution intelligence wisdom charisma'.split():
+        # normally, if an attribute is missing, it means it is 0
+        attribute_data = creature_data.get(attribute_name, 'attribute not found')
+        if attribute_data == 'attribute not found':
+            progression = None
+            value = 0
+        # if the attribute is explicitly stated to be None, the creature does
+        # not have the attribute, such as a construct
+        elif attribute_data is None:
+            progression = None
+            value = None
+        elif isinstance(attribute_data, dict):
+            # we need to figure out whether we have a 
+            progression = attribute_data.get('progression')
+            value = attribute_data.get('value')
+        else:
+            # we have a single value, and we need to figure out whether it is a
+            # string (meaning a progression) or an int (meaning a value)
+            try:
+                progression = None
+                value = int(attribute_data)
+            except ValueError:
+                progression = attribute_data
+                value = 0
+        attributes[attribute_name] = {
+            'progression': progression,
+            'value': value,
+        }
+    return attributes
 
 #Return a new dict that contains a selection of items from
 #the original dict
@@ -430,6 +476,18 @@ def std_scale(level):
 #+2, +3 at 5th, +4 at 10th, +5 at 15th, +6 at 20th
 def bab_scale(base_attack_bonus):
     return 2+base_attack_bonus/5
+
+def default_space(size, in_feet = False):
+    space, reach, land_speed = get_size_statistics(size, in_feet)
+    return space
+
+def default_reach(size, in_feet = False):
+    space, reach, land_speed = get_size_statistics(size, in_feet)
+    return reach
+
+def default_land_speed(size, in_feet = False):
+    space, reach, land_speed = get_size_statistics(size, in_feet)
+    return land_speed
 
 def get_size_statistics(size, in_feet = False):
     space, reach, land_speed = {
@@ -544,3 +602,22 @@ def split_filtered(text, split_on = ' '):
 def hit_probability(attack_bonus, ac):
     probability = (21+attack_bonus-ac)/20.0
     return min(0.95, max(0.05, probability))
+
+# convert a string or list to make sure it becomes a list
+def ensure_list(string_or_list):
+    if isinstance(string_or_list, basestring):
+        return (string_or_list,)
+    else:
+        return string_or_list
+
+def safe_update(original_dict, additional_dict, append_arrays = False):
+    for key in additional_dict:
+        if key not in original_dict:
+            original_dict[key] = additional_dict[key]
+        elif append_arrays:
+            # try to append arrays
+            try:
+                for value in additional_dict[key]:
+                    original_dict[key].append(value)
+            except (TypeError, AttributeError):
+                pass
