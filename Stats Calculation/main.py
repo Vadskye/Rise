@@ -1,10 +1,12 @@
 import argparse
-from creature import generate_creature_from_key
+#from creature import generate_creature_from_key
+from creature2 import Creature
 import util
 import combat
 import cProfile
 from abilities import Ability
 from strings import *
+from pprint import pprint, PrettyPrinter
 
 CREATURE = 'creature'
 COMBAT = 'combat'
@@ -82,9 +84,15 @@ def generate_creatures(creature_keys, data, level = None, verbose = None):
     if creature_keys is None:
         return
     creatures = list()
+    if level is not None:
+        stats_override = {'level': level}
+    else:
+        stats_override = None
     for creature_key in creature_keys:
-        creature = generate_creature_from_key(
-            creature_key, data, level, verbose
+        creature = Creature.from_raw_stats(
+            raw_stats = data,
+            creature_key = creature_key, 
+            stats_override = stats_override
         )
         creatures.append(creature)
     return creatures
@@ -104,22 +112,36 @@ def generate_battle_results(allies, enemies):
 if __name__ == "__main__":
     args = initialize_argument_parser()
     data = util.import_data()
+    ally_names = args.get('allies')
+    if ally_names is not None and ally_names[0] == 'classes':
+        ally_names = 'barbarian cleric druid fighter paladin ranger rogue sorcerer spellwarped wizard'.split()
+    enemy_names = args.get('enemies')
+    if enemy_names is not None and enemy_names[0] == 'classes':
+        enemy_names = 'barbarian cleric druid fighter paladin ranger rogue sorcerer spellwarped wizard'.split()
     allies = list()
     enemies = list()
     if args['level'] == 'all':
         for level in xrange(1,21):
-            allies.append(generate_creatures(args['allies'], data, level, args['verbose']))
-            enemies.append(generate_creatures(args['enemies'], data, level, args['verbose']))
+            allies.append(generate_creatures(ally_names, data, level, args['verbose']))
+            enemies.append(generate_creatures(enemy_names, data, level, args['verbose']))
     else:
-        allies = generate_creatures(args['allies'], data, args['level'], args['verbose'])
-        enemies = generate_creatures(args['enemies'], data, args['level'], args['verbose'])
+        allies = generate_creatures(ally_names, data, args['level'], args['verbose'])
+        enemies = generate_creatures(enemy_names, data, args['level'], args['verbose'])
 
         if allies:
             print "allies:"
             for ally in allies:
                 print ally#.to_latex()
+                #print ally.traits
+                #ally.add_modifier('physical_attacks', 5, 'because')
+                #ally.add_modifier('physical_damage', 5, 'because')
+                #ally.add_modifier('physical_defenses', 5, 'because')
+                #ally.add_modifier('extra_attacks', 1, 'because')
+                #ally.level = 6
+                #print
+                #print ally#.to_latex()
                 #print ally.armor_class.get_details()
-                print ''
+                print
 
         if enemies:
             print "enemies:"
