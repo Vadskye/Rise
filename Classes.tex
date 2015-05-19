@@ -811,7 +811,7 @@ If the fighter chose resilience, he applies his damage reduction to all damage, 
 \lcaption{The Monk}
 \begin{tabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolavg} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
 \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
-1st & \plus1                    & \plus1 & \plus3 & \plus3    & Unarmed warrior, unfettered defense \\
+1st & \plus1                    & \plus1 & \plus3 & \plus3    & Enlightened defense, unarmed warrior \\
 2nd & \plus2                    & \plus2 & \plus4 & \plus4    & Fast movement, \Ki power \\
 3rd & \plus3                    & \plus3 & \plus5 & \plus5    & Evasion, uncanny dodge \\
 4th & \plus4                    & \plus4 & \plus6 & \plus6    & \Ki strike, Perfect Health\\
@@ -836,7 +836,7 @@ If the fighter chose resilience, he applies his damage reduction to all damage, 
 
 \cd{Alignment} Any nonchaotic.
 
-\cd{Hit Value} 6
+\cd{Hit Value} 5
 
 \sssecfake{Class Skills}
 The monk's class skills (and the key attribute for each skill) are Athletics (Str), Climb (Str), Swim (Str), Acrobatics (Dex), Escape Artist (Dex), Stealth (Dex), Heal (Wis), Perception (Wis), Survival (Wis), and Perform (Cha).
@@ -847,7 +847,7 @@ All of the following are class features of the monk.
 \cf{Mnk}{Weapon and Armor Proficiency}
 Monks are proficient with simple weapons, monk weapons, and any one other weapon group. Monks are not proficient with any armor or shields. When wearing armor, using a shield, or carrying a medium or heavy load, a monk loses the benefit of her unfettered defense, fast movement, and \ki abilities.
 
-\cft{Mnk}{Unfettered Defense}{Ex} A monk knows how to react intuitively to avoid blows. When \monkunencumbered, the monk may add her Wisdom to her physical defenses. She loses this bonus when she is helpless.
+\cft{Mnk}{Enlightened Defense}{Ex} A monk knows how to react intuitively to avoid blows. When \monkunencumbered, the monk may add her Wisdom to her physical defenses. She loses this bonus when she is helpless.
 
 \begin{comment}  %Made AC too high
  \cfnl{\Ki Ward (Ex)}\label{Mnk:Ki Ward (Ex)} When \monkunencumbered, a monk gains a \plus1 armor bonus to AC at 2nd level. This bonus increases by 1 for every two monk levels thereafter (\plus2 at 4th, \plus3 at 6th, etc.).
@@ -864,19 +864,19 @@ A monk's attacks may be with either fist interchangeably or even from elbows, kn
 
 \cflt{Mnk}{2nd}{Fast Movement}{Ex} The monk increases her land speed by 10 feet while \unencumbered.
 
-\cflt{Mnk}{2nd}{Ki Power}{Su} The monk gains the ability to channel her \ki energy to temporarily enhance her abilities. She may use any combination of \ki powers she knows a number of times per day equal to half her monk level \add her Wisdom (minimum 1), but no more than once per round.
+\cflt{Mnk}{2nd}{Ki Power}{Su} The monk gains the ability to channel her \ki energy to temporarily enhance her abilities. She may use any combination of \ki powers she knows a number of times per day equal to half her monk level \add her Charisma (minimum 1), but no more than once per round.
 
-The monk chooses one \ki power from the list below. At her 5th monk level, and every three monk levels thereafter, the monk gains an additional \ki power. Some \ki powers have minimum monk levels, as indicated in the title of the power. All \ki powers are supernatural abilities unless otherwise noted. The monk's special attack bonus with \ki powers is equal to her monk level \add her Wisdom.
+The monk chooses one \ki power from the list below. At her 5th monk level, and every three monk levels thereafter, the monk gains an additional \ki power. Some \ki powers have minimum monk levels, as indicated in the title of the power. All \ki powers are supernatural abilities unless otherwise noted. The monk's special attack bonus with \ki powers is equal to her monk level \add her Charisma.
 
 \subcf{Flurry of Blows} As a swift action, the monk can make a physical attack at a \minus5 penalty. This is in addition to any attacks she makes as part of a standard attack.
 \subcf{Stunning Fist} As part of an unarmed attack, the monk can strike a weak point to interfere with her foe's \ki. If the attack deals damage, the monk makes a special attack vs. Fortitude to make the struck creature \staggered for 1 round. If the creature is \bloodied, it is \stunned for 1 round instead.
-\subcf{Surpass Limits} As a swift action, the monk can surpass the physical limitations of her body. Until the start of her next turn, she adds her Wisdom to checks based on Strength and Dexterity. This does not affect checks based on multiple attributes, such as initiative checks.
+\subcf{Surpass Limits} As a swift action, the monk can surpass the physical limitations of her body. Until the start of her next turn, she adds her Charisma to checks based on Strength and Dexterity. This does not affect checks based on multiple attributes, such as initiative checks.
 \subcf{5th -- Speed Boost} As a swift action, the monk can force her muscles to strain beyond their normal limits. Until the end of her turn, she gains increases her land speed by 20 feet, and a gains \plus2 bonus to her physical defenses.
 \subcf{5th -- Wholeness of Body} As a standard action, the monk can correct the flow of energy within her body. She heals 1d10 points of damage per two monk levels.
 \subcf{8th -- Rapid Step} As a move action, the monk can move up to her speed without provoking attacks of opportunity.
 \subcf{8th -- Redirect Attack} As an immediate action, when a foe misses the monk with a melee attack, the monk can redirect the attack. Both the foe and the monk must threaten a third creature. If the monk redirects the attack, the foe rolls the same attack against the third creature.
 \subcf{8th -- Slow Fall} As a swift action while falling, the monk can slow the rate at which she falls to 60 feet per round, which is too slow to hurt her if she hits the ground. She must be touching a solid object to use this ability. The effect lasts until the end of her turn.
-\subcf{11th -- Diamond Fists} As a swift action, the monk can empower her unarmed strike with incredible force. Until the start of her next turn, she adds half her Wisdom to damage and treats her unarmed strike as if it were an adamantine weapon for the purpose of overcoming damage reduction and hardness.
+\subcf{11th -- Diamond Fists} As a swift action, the monk can empower her unarmed strike with incredible force. Until the start of her next turn, she adds half her Charisma to damage and treats her unarmed strike as if it were an adamantine weapon for the purpose of overcoming damage reduction and hardness.
 \subcf{11th -- Flash Step} As a move action, the monk can slip between spaces, allowing her to teleport to anywhere she can see within 30 feet. If her line of effect is blocked, even by an invisible barrier, or if this would somehow place her inside a solid object, the ability fails. 
 \subcf{14th -- Empty Step} As a swift action, the monk can step into the Ethereal Plane until the end of her turn, as the \spell{ethereal jaunt} spell. She may return as a free action.
 \subcf{14th -- Quivering Palm} As a standard action, the monk can make a single unarmed strike. If the attack deals damage, the struck creature is \sickened by the disruption of the \ki within in its body for 5 rounds. At any point during that time, the monk can will the struck target to die (a free action). If she does, and the creature is \bloodied, she makes a special attack vs. Fortitude. If the attack succeeds, the creature loses all its hit points and takes critical damage equal to her monk level, causing it to begin dying (see \pcref{Dying}).
