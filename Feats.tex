@@ -305,33 +305,23 @@ Strike feats grant a character the ability to make an unusually potent attack wi
 {\small
     \taburowcolors [2] 2{tbrown .. white}
     \begin{longtabu}{>{\lcol}p{10em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{6em} >{\lcol}p{3em}}
-        \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Type} & \thead{Page} \\
+        \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
         \featref{Armor Familiarity} & Proficiency with armor & Reduce penalties from wearing armor & Equipment & \featpref{Armor Familiarity} \\
         \featref{Armor Proficiency (Light)} & \x &  No armor check penalty on physical attacks & Equipment & \featpref{Armor Proficiency (Light)} \\
         \tind \featref{Armor Proficiency (Medium)} & Armor Proficiency (light) & No armor check penalty on physical attacks & Equipment & \featpref{Armor Proficiency (Medium)} \\
         \tind \tind \featref{Armor Proficiency (Heavy)} & Armor Proficiency (medium) & No armor check penalty on physical attacks & Equipment & \featpref{Armor Proficiency (Heavy)} \\
         \featref{Blind-Fight} & \x &  Reroll miss chance for concealment in melee & Awareness & \featpref{Blind-Fight} \\
-        \featref{Covering Fire} & \x & Trade ranged attack bonus to penalize struck foes & Precision, Style & \featpref{Covering Fire} \\
-        \featref{Deadly Aim} & Dex 3 & Trade ranged attack bonus for damage & Precision, Style & \featpref{Deadly Aim} \\
-        \featref{Defensive Fighting} & \x & Trade attack bonus for defense & Defense, Style & \featpref{Defensive Fighting} \\
         \featref{Diehard} & Con 3 & Halve penalties from critical damage & Defense & \featpref{Diehard} \\
         \featref{Exotic Weapon Proficiency}\fn{1} & \x & Don't provoke when attacking with exotic weapons & Equipment & \featpref{Exotic Weapon Proficiency} \\
         \featref{Far Shot} & \x & Increase range increment & Precision & \featpref{Far Shot} \\
-        \featref{Guardian} & \x & Adjacent allies suffer reduced overwhelm penalties & Defense, Style & \featpref{Guardian} \\
         \featref{Improved Unarmed Strike} & \x &  Considered armed even when unarmed & \x & \featpref{Improved Unarmed Strike} \\
         \tind \featref{Deflect Arrows} & Dex 3, Improved Unarmed Strike & Deflect one ranged attacks with your bare hands & Finesse, Reaction & \featpref{Deflect Arrows} \\
         \tind \tind \featref{Snatch Arrows} & Dex 5, Deflect Arrows, Improved Unarmed Strike & Catch a deflected ranged attack & Finesse, Reaction & \featpref{Snatch Arrows} \\
         \featref{Mounted Archery} & Ride 1 rank & Reduced penalty for ranged attacks while mounted by 4 & Mounted, Precision & \featpref{Mounted Archery} \\
         \featref{Mounted Combat} & Ride 1 rank & Negate hits on mount with Ride check & Defense, Mounted & \featpref{Mounted Combat} \\
         \featref{Mounted Trample} & Ride 8 ranks & Target cannot avoid mounted overrun & Mobility, Mounted & \featpref{Mounted Trample} \\
-        \featref{Opportunist} & Dex 3 & \plus2 to attack and damage on attacks of opportunity & Reaction, Style & \featpref{Opportunist} \\
-        \featref{Overpowering Assault} & Str 3 & Trade defense for maneuver bonus & Power, Style & \featpref{Overpowering Assault} \\
-        \featref{Overwhelming Fire} & \x & Help overwhelm foes with ranged weapons & Reaction, Style & \featpref{Overwhelming Fire} \\
         \featref{Parry} & Dex 3 & Ready yourself to parry incoming blows & Defense, Reaction & \featpref{Parry} \\
-        \tind \featref{Shielded Parry} & Dex 3, shield proficiency, Parry & Add shield modifier to parry attempts & Defense, Reaction, Style & \featpref{Shielded Parry} \\
-        \featref{Point Blank Shot} & \x &  \plus2 bonus to ranged attacks within half range increment. & Precision, Style & \featpref{Point Blank Shot} \\
-        \featref{Precise Shot} & \x & Ignore cover from creatures & Precision, Style & \featpref{Precise Shot} \\
-        \featref{Power Attack} & Str 3 & Trade melee attack bonus for damage & Power, Style & \featpref{Power Attack} \\
+        \tind \featref{Shielded Parry} & Dex 3, shield proficiency, Parry & Add shield modifier to parry attempts & Defense, Reaction & \featpref{Shielded Parry} \\
         \featref{Quick Draw} & \x & Draw weapon as swift action & Reaction & \featpref{Quick Draw} \\
         \featref{Ride-By Attack} & Ride 8 ranks & Move before and after a mounted charge & Mobility, Mounted & \featpref{Ride-By Attack} \\
         \tind \featref{Spirited Charge} & Ride-By Attack & Double damage with mounted charge & Mounted, Power & \featpref{Spirited Charge} \\
@@ -342,15 +332,10 @@ Strike feats grant a character the ability to make an unusually potent attack wi
         \featref{Weapon Proficiency}\fn{1} & \x &  Don't provoke when attacking with weapon group & Equipment & \featpref{Weapon Proficiency} \\
 
         \midrule
-        \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Type} & \thead{Page} \\
-        \featref{Chargebreaker} & Base attack bonus \plus4 & Trade ability to move for bonuses against approaching foes & Reaction, Style & \featpref{Chargebreaker} \\
+        \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
         \featref{Cleave} & Str 3, base attack bonus \plus4 & Extra melee attack after dropping target & Power & \featpref{Cleave} \\
-        \featref{Close-Quarters Fighting} & Dex 3, attack bonus \plus4 & No penalty for squeezing or attacking while grappling & Style & \featpref{Close-Quarters Fighting} \\
         \featref{Combat Mobility} & Dex 3, base attack bonus \plus4 & Avoid movement-based attacks of opportunity from foe & Defense, Mobility & \featpref{Combat Mobility} \\
-        \tind \featref{Spring Attack} & Dex 3, base attack bonus \plus4, Combat Mobility & Move before and after attacks & Mobility, Style & \featpref{Spring Attack} \\
         \featref{Disarming Finish} & Base attack bonus \plus4 & Automatically disarm defeated foes & Finesse & \featpref{Disarming Finish} \\
-        \featref{Distracting Foe} & Base attack bonus \plus4 & Threatened foes suffer Concentration penalties & Style & \featpref{Distracting Foe} \\
-        \featref{Feign Weakness} & Base attack bonus \plus4 & Provoke attack to gain bonus to hit & Style & \featpref{Feign Weakness} \\
         \featref{Gang Up} & Base attack bonus \plus4 & Increase overwhelm penalties foes suffer & \x & \featpref{Gang Up} \\
         \featref{Improved Dirty Trick} & Base attack bonus \plus4 & \plus2 bonus to dirty trick attacks; dirty tricks last longer & Finesse, Maneuver & \featpref{Improved Dirty Trick} \\
         \featref{Improved Disarm} & Base attack bonus \plus4 & \plus2 bonus to disarm attacks; knock foe's weapon away after disarming & Finesse, Maneuver & \featpref{Improved Disarm} \\
@@ -361,36 +346,23 @@ Strike feats grant a character the ability to make an unusually potent attack wi
         \featref{Improved Trip} & Base attack bonus \plus4 & \plus2 bonus to trip attacks; tripped foe provokes attacks of opportunity & Finesse, Maneuver & \featpref{Improved Trip} \\
         \featref{Intuitive Reaction} & Wis 3, base attack bonus \plus4 & Add half Wisdom to number of attacks of opportunity each round & Reaction & \featpref{Intuitive Reaction} \\
         \featref{Knockdown} & Str 3, base attack bonus \plus4 & Shoved foe can be knocked prone & Maneuver, Power & \featpref{Knockdown} \\
-        \featref{Reveal the Weak Point} & Base attack bonus \plus4 & Sacrifice attack and damage to penalize foe's defenses & Style & \featpref{Reveal the Weak Point} \\
         \featref{Riposte} & Dex 3, base attack bonus \plus4, Parry & Foes provoke if you parry very well & Reaction & \featpref{Riposte} \\
         \featref{Tactical Analysis} & Int 3, Base attack bonus \plus4 & Identify foe's strengths and weaknesses & Awareness & \featpref{Tactical Analysis} \\
         \featref{Weapon Focus} & Base attack bonus \plus4 & Special ability with weapon group & Equipment & \featpref{Weapon Focus} \\
 
         \midrule
-        \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Type} & \thead{Page} \\
-        \featref{Bewildering Strike} & Base attack bonus \plus8 & Attack bewilders foe & Strike & \featpref{Bewildering Strike} \\
+        \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
         \featref{Contingent Counter} & Int 3, base attack bonus \plus8 & Prepare to attack when attack misses you & Reaction & \featpref{Contingent Counter} \\
         \featref{Driving Assault} & Str 5, base attack bonus \plus8 & Shoved foe provokes attack from you & Power, Maneuver & \featpref{Driving Assault} \\
         \featref{Eye of the Storm} & Base attack bonus \plus8 & Reduce overwhelm penalties by 1 & Awareness, Defense & \featpref{Eye of the Storm} \\
-        \featref{Heartseeker} & Base attack bonus \plus8 & Trade attack bonus to double critical threat range & Precision, Style & \featpref{Heartseeker} \\
-        \featref{Impeding Strike} & Base attack bonus \plus8 & Melee attack inhibits foe's movement & Strike & \featpref{Impeding Strike} \\
-        \featref{Inescapable Bulwark} & Dex 3, Base attack bonus \plus8 & Withdrawing enemies cannot avoid provoking attacks of opportunity & Reaction, Style & \featpref{Inescapable Bulwark} \\
-        \featref{Intimidating Strike} & Base attack bonus \plus8, Intimidate 8 ranks & Attack lets you intimidate struck foe & Strike & \featpref{Intimidating Strike} \\
-        \featref{Intuitive Defense} & Wis 3, base attack bonus \plus8 & Add half Wisdom to defense in place of Dex & Awareness, Defense, Style & \featpref{Intuitive Defense} \\
-        \featref{Perfect Shot} & Dex 5, base attack bonus \plus8 & Ignore less than total cover/concealment on ranged attacks & Precision, Style & \featpref{Perfect Shot} \\
-        \featref{Pierce Wings} & Base attack bonus \plus8 & Ranged attack removes foe's ability to fly & Precision, Strike & \featpref{Pierce Wings} \\
-        \featref{Predictive Defense} & Int 3, base attack bonus \plus8 & Add half Int to defense in place of Dex & Awareness, Defense, Style & \featpref{Predictive Defense} \\
-        \featref{Sickening Strike} & Base attack bonus \plus8 & Attack sickens foe & Strike & \featpref{Sickening Strike} \\
         \featref{Tactical Prediction} & Int 3, Base attack bonus \plus8 & Predict foe's next action & Awareness & \featpref{Tactical Prediction} \\
-        \featref{Threatening Fire} & Overwhelming Fire, base attack bonus \plus8 & Threaten adjacent creatures with a ranged weapon & Reaction, Style & \featpref{Threatening Fire} \\
         \featref{Two-Weapon Rend} & Str 5, base attack bonus \plus8, Two-Weapon Fighting & Deal Strength damage with both weapons & Power & \featpref{Two-Weapon Rend} \\
         \featref{Wall Slam} & Str 5, base attack bonus \plus8 & Slam opponent into wall to deal bonus damage & Maneuver, Power & \featpref{Wall Slam} \\
         \featref{Whirlwind Attack} & Dex 5, base attack bonus \plus8 & One melee attack against each opponent within reach & Finesse & \featpref{Whirlwind Attack} \\
         \tind \featref{Mobile Whirlwind} & Dex 5, Whirlwind Attack, base attack bonus \plus8 & Use whirlwind attack as standard action & Finesse, Mobility & \featpref{Mobile Whirlwind} \\
 
         \midrule
-        \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Type} & \thead{Page} \\
-        \featref{Confusing Strike} & Base attack bonus \plus12 & Attack confuses bloodied foe & Strike & \featpref{Confusing Strike} \\
+        \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
         \featref{Contingent Attack} & Int 5, base attack bonus \plus12 & Prepare to attack as immediate action & Reaction & \featpref{Contingent Attack} \\
         \featref{Legendary Awareness} & Base attack bonus \plus12, any three Awareness feats & Immune to being overwhelmed & Awareness & \featpref{Legendary Awareness} \\
         \featref{Legendary Defense} & Base attack bonus \plus12, any three Defense feats & \plus2 to all defenses & Defense & \featpref{Legendary Defense} \\
@@ -401,23 +373,87 @@ Strike feats grant a character the ability to make an unusually potent attack wi
         \featref{Legendary Power} & Base attack bonus \plus12, any three Power feats & Wield weapons as if they were less encumbering & Power& \featpref{Legendary Power} \\
         \featref{Legendary Precision} & Base attack bonus \plus12, any three Precision feats & Very accurate hits deal maximum damage & Precision & \featpref{Legendary Precision} \\
         \featref{Legendary Reaction} & Base attack bonus \plus12, any three Reaction feats & \plus10 to initiative checks & Combat, Reaction & \featpref{Legendary Reaction} \\
-        \featref{Legendary Strike} & Base attack bonus \plus12, any three Strike feats & Use multiples strikes per round & \x & \featpref{Legendary Strike} \\
-        \featref{Legendary Style} & Base attack bonus \plus12, any three Style feats & Use two styles at once & \x & \featpref{Legendary Style} \\
-        \featref{Manyshot} & Dex 5, base attack bonus \plus12 & Shoot two projectiles simultaneously & Precision, Style & \featpref{Manyshot} \\
-        \featref{Penetrating Strike} & Base attack bonus \plus12 & Attack removes foe's damage reduction & Strike & \featpref{Penetrating Strike} \\
 
         \midrule
-        \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Type} & \thead{Page} \\
-        \featref{Counterstorm} & Base attack bonus \plus16 & Foes that miss you provoke & Reaction, Style& \featpref{Counterstorm} \\
-        \featref{Demolishing Strike} & Base attack bonus \plus16 & Attack deals double damage & Strike & \featpref{Demolishing Strike} \\
+        \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
         \featref{Executioner} & Base attack bonus \plus16, any three Reaction feats & Gain free attacks against foes near death & Reaction & \featpref{Executioner} \\
         \featref{Hurricane Attack} & Dex 7, Whirlwind Attack, base attack bonus \plus16 & Two melee attacks at all foes you threaten & Reaction & \featpref{Hurricane Attack} \\
         \tind \featref{Mobile Hurricane} & Dex 7, Hurricane Attack, Mobile Whirlwind, Whirlwind Attack, base attack bonus \plus16 & Use whirlwind attack as standard action & Reaction & \featpref{Hurricane Attack} \\
-        \featref{Killing Blow} & Base attack bonus \plus16 & Attack instantly kills foe without hit points & Strike & \featpref{Killing Blow} \\
     \end{longtabu}
     \begin{enumerate*}
         \item You can gain this feat multiple times. Each time you do, it has a different effect.
     \end{enumerate*}
+}%end of small text
+
+\subsection{Combat Style Feat Table}
+
+{\small
+    \taburowcolors [2] 2{tbrown .. white}
+    \begin{longtabu}{>{\lcol}p{10em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{6em} >{\lcol}p{3em}}
+        \thead{Style Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
+        \featref{Covering Fire} & \x & Trade ranged attack bonus to penalize struck foes & Precision, Style & \featpref{Covering Fire} \\
+        \featref{Deadly Aim} & Dex 3 & Trade ranged attack bonus for damage & Precision, Style & \featpref{Deadly Aim} \\
+        \featref{Defensive Fighting} & \x & Trade attack bonus for defense & Defense, Style & \featpref{Defensive Fighting} \\
+        \featref{Guardian} & \x & Adjacent allies suffer reduced overwhelm penalties & Defense, Style & \featpref{Guardian} \\
+        \featref{Opportunist} & Dex 3 & \plus2 to attack and damage on attacks of opportunity & Reaction, Style & \featpref{Opportunist} \\
+        \featref{Overpowering Assault} & Str 3 & Trade defense for maneuver bonus & Power, Style & \featpref{Overpowering Assault} \\
+        \featref{Overwhelming Fire} & \x & Help overwhelm foes with ranged weapons & Reaction, Style & \featpref{Overwhelming Fire} \\
+        \featref{Point Blank Shot} & \x &  \plus2 bonus to ranged attacks within half range increment. & Precision, Style & \featpref{Point Blank Shot} \\
+        \featref{Precise Shot} & \x & Ignore cover from creatures & Precision, Style & \featpref{Precise Shot} \\
+        \featref{Power Attack} & Str 3 & Trade melee attack bonus for damage & Power, Style & \featpref{Power Attack} \\
+
+        \midrule
+        \thead{Style Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
+        \featref{Chargebreaker} & Base attack bonus \plus4 & Trade ability to move for bonuses against approaching foes & Reaction, Style & \featpref{Chargebreaker} \\
+        \featref{Close-Quarters Fighting} & Dex 3, attack bonus \plus4 & No penalty for squeezing or attacking while grappling & Style & \featpref{Close-Quarters Fighting} \\
+        \featref{Distracting Foe} & Base attack bonus \plus4 & Threatened foes suffer Concentration penalties & Style & \featpref{Distracting Foe} \\
+        \featref{Feign Weakness} & Base attack bonus \plus4 & Provoke attack to gain bonus to hit & Style & \featpref{Feign Weakness} \\
+        \featref{Reveal the Weak Point} & Base attack bonus \plus4 & Sacrifice attack and damage to penalize foe's defenses & Style & \featpref{Reveal the Weak Point} \\
+        \featref{Spring Attack} & Dex 3, base attack bonus \plus4, Combat Mobility & Move before and after attacks & Mobility, Style & \featpref{Spring Attack} \\
+
+        \midrule
+        \thead{Style Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
+        \featref{Heartseeker} & Base attack bonus \plus8 & Trade attack bonus to double critical threat range & Precision, Style & \featpref{Heartseeker} \\
+        \featref{Inescapable Bulwark} & Dex 3, Base attack bonus \plus8 & Withdrawing enemies cannot avoid provoking attacks of opportunity & Reaction, Style & \featpref{Inescapable Bulwark} \\
+        \featref{Intuitive Defense} & Wis 3, base attack bonus \plus8 & Add half Wisdom to defense in place of Dex & Awareness, Defense, Style & \featpref{Intuitive Defense} \\
+        \featref{Perfect Shot} & Dex 5, base attack bonus \plus8 & Ignore less than total cover/concealment on ranged attacks & Precision, Style & \featpref{Perfect Shot} \\
+        \featref{Predictive Defense} & Int 3, base attack bonus \plus8 & Add half Int to defense in place of Dex & Awareness, Defense, Style & \featpref{Predictive Defense} \\
+        \featref{Threatening Fire} & Overwhelming Fire, base attack bonus \plus8 & Threaten adjacent creatures with a ranged weapon & Reaction, Style & \featpref{Threatening Fire} \\
+
+        \midrule
+        \thead{Style Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
+        \featref{Legendary Style} & Base attack bonus \plus12, any three Style feats & Use two styles at once & \x & \featpref{Legendary Style} \\
+        \featref{Manyshot} & Dex 5, base attack bonus \plus12 & Shoot two projectiles simultaneously & Precision, Style & \featpref{Manyshot} \\
+
+        \midrule
+        \thead{Style Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
+        \featref{Counterstorm} & Base attack bonus \plus16 & Foes that miss you provoke & Reaction, Style& \featpref{Counterstorm} \\
+    \end{longtabu}
+}%end of small text
+
+\subsection{Combat Strike Feat Table}
+
+{\small
+    \taburowcolors [2] 2{tbrown .. white}
+    \begin{longtabu}{>{\lcol}p{10em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{6em} >{\lcol}p{3em}}
+        \thead{Strike Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
+        \featref{Bewildering Strike} & Base attack bonus \plus8 & Attack bewilders foe & Strike & \featpref{Bewildering Strike} \\
+        \featref{Impeding Strike} & Base attack bonus \plus8 & Melee attack inhibits foe's movement & Strike & \featpref{Impeding Strike} \\
+        \featref{Intimidating Strike} & Base attack bonus \plus8, Intimidate 8 ranks & Attack lets you intimidate struck foe & Strike & \featpref{Intimidating Strike} \\
+        \featref{Pierce Wings} & Base attack bonus \plus8 & Ranged attack removes foe's ability to fly & Precision, Strike & \featpref{Pierce Wings} \\
+        \featref{Sickening Strike} & Base attack bonus \plus8 & Attack sickens foe & Strike & \featpref{Sickening Strike} \\
+
+        \midrule
+        \thead{Strike Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
+        \featref{Confusing Strike} & Base attack bonus \plus12 & Attack confuses bloodied foe & Strike & \featpref{Confusing Strike} \\
+        \featref{Legendary Strike} & Base attack bonus \plus12, any three Strike feats & Use multiples strikes per round & \x & \featpref{Legendary Strike} \\
+        \featref{Penetrating Strike} & Base attack bonus \plus12 & Attack removes foe's damage reduction & Strike & \featpref{Penetrating Strike} \\
+
+        \midrule
+        \thead{Strike Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
+        \featref{Demolishing Strike} & Base attack bonus \plus16 & Attack deals double damage & Strike & \featpref{Demolishing Strike} \\
+        \featref{Killing Blow} & Base attack bonus \plus16 & Attack instantly kills foe without hit points & Strike & \featpref{Killing Blow} \\
+    \end{longtabu}
 }%end of small text
 
 \twocolumn

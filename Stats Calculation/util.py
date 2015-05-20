@@ -475,7 +475,7 @@ def std_scale(level):
 
 #+2, +3 at 5th, +4 at 10th, +5 at 15th, +6 at 20th
 def bab_scale(base_attack_bonus):
-    return 2+base_attack_bonus/5
+    return 2+base_attack_bonus/4
 
 def default_space(size, in_feet = False):
     space, reach, land_speed = get_size_statistics(size, in_feet)
