@@ -4,7 +4,6 @@ from creature2 import Creature
 import util
 import combat
 import cProfile
-from abilities import Ability
 from strings import *
 from pprint import pprint, PrettyPrinter
 
@@ -81,9 +80,9 @@ def print_generic_stats(level):
             0, 0, 0)
 
 def generate_creatures(creature_keys, data, level = None, verbose = None):
-    if creature_keys is None:
-        return
     creatures = list()
+    if creature_keys is None:
+        return creatures
     if level is not None:
         stats_override = {'level': level}
     else:
@@ -109,6 +108,11 @@ def generate_battle_results(allies, enemies):
     average_hit_chance_second = second.average_hit_probability(first)
     return battle_results, (average_hit_chance_first, average_hit_chance_second)
 
+def avg(numbers):
+    if numbers is None:
+        return None
+    return float(sum(numbers))/len(numbers)
+
 if __name__ == "__main__":
     args = initialize_argument_parser()
     data = util.import_data()
@@ -122,33 +126,41 @@ if __name__ == "__main__":
     enemies = list()
     if args['level'] == 'all':
         for level in xrange(1,21):
-            allies.append(generate_creatures(ally_names, data, level, args['verbose']))
-            enemies.append(generate_creatures(enemy_names, data, level, args['verbose']))
+            allies += generate_creatures(ally_names, data, level, args['verbose'])
+            enemies += generate_creatures(enemy_names, data, level, args['verbose'])
     else:
         allies = generate_creatures(ally_names, data, args['level'], args['verbose'])
         enemies = generate_creatures(enemy_names, data, args['level'], args['verbose'])
 
-        if allies:
-            print "allies:"
-            for ally in allies:
-                print ally#.to_latex()
-                #print ally.traits
-                #ally.add_modifier('physical_attacks', 5, 'because')
-                #ally.add_modifier('physical_damage', 5, 'because')
-                #ally.add_modifier('physical_defenses', 5, 'because')
-                #ally.add_modifier('extra_attacks', 1, 'because')
-                #ally.level = 6
-                #print
-                #print ally#.to_latex()
-                #print ally.armor_class.get_details()
-                print
+    if allies:
+        print "allies:"
+        for i, ally in enumerate(allies):
+            print ally#.to_latex()
+            #print ally.traits
+            #ally.add_modifier('physical_attacks', 5, 'because')
+            #ally.add_modifier('physical_damage', 5, 'because')
+            #ally.add_modifier('physical_defenses', 5, 'because')
+            #ally.add_modifier('extra_attacks', 1, 'because')
+            #ally.size = 'large'
+            #ally.level = 6
+            #print
+            #print i+1, ally.armor_defense - avg(ally.physical_attack_progression), i+16 - avg(ally.physical_attack_progression)
+            #print ally#.to_latex()
+            #print ally.get_modifiers('maneuver_defense', as_dict = True)
+            #print ally.get_modifiers('armor_defense', as_dict = True)
+            #print ally.get_modifiers('reflex', as_dict = True)
+            #print ally.get_modifiers('will', as_dict = True)
+            #print ally.get_modifiers('primary_weapon_size', as_dict = True)
+            #print ally.primary_weapon.damage_die
+            #print ally.armor_class.get_details()
+            print
 
-        if enemies:
-            print "enemies:"
-            for enemy in enemies:
-                print enemy#.to_latex()
-                #print enemy.armor_class.get_details()
-                print ''
+    if enemies:
+        print "enemies:"
+        for enemy in enemies:
+            print enemy#.to_latex()
+            #print enemy.armor_class.get_details()
+            print ''
 
     if args['battle']:
         if args['level'] == 'all':
