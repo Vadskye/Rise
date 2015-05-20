@@ -1017,6 +1017,17 @@ By concentrating on an aura (a standard action), you can determine the strength 
 \end{spelltarget}
 \spellnotes This spell gives no information about a creature's strengths or abilities -- only its weaknesses. When the spell ends, the bonus to attack and damage is lost, but the knowledge remains.
 
+\spellsection{Discordant Song}{6}
+\spelldesc{Magical music fills the air, sowing confusion among your foes.}
+\spellinfo{Ench (Compulsion) [Auditory, Mind-Affecting]}{Arcane}
+\spelltwocol{\spellburst{\areamed radius}}{\spellrng{\rngmed}}
+\spelldur{Concentration}
+\begin{spelltarget}{All creatures in the area}[Magic vs. Will]
+    \spellsuccess The target is \bewildered.
+
+    As long as the target is \bloodied, it is instead \confused.
+\end{spelltarget}
+
 \spellsection{Disintegrate}{6}
 \spelldesc{You shoot a thin, green ray from your pointing finger that completely destroys whatever it hits.}
 \spellinfo{Trans (Alteration)}{Arcane, Destruction}
@@ -3265,17 +3276,6 @@ A creature faced with definitive proof that the figment is unreal can disbelieve
 \spellnotes \fogspellnotes A severe wind disperses the fog within 1 minute, a windstorm disperses it within 5 rounds, and a hurricane disperses it within a round.
 
 This spell can be made permanent with a \spell{permanency} ritual. A permanent solid fog dispersed by wind reforms in 10 minutes.
-
-\spellsection{Song of Discord}{6}
-\spelldesc{Magical music fills the air, sowing confusion among your foes.}
-\spellinfo{Ench (Compulsion) [Auditory, Mind-Affecting]}{Arcane}
-\spelltwocol{\spellburst{\areamed radius}}{\spellrng{\rngmed}}
-\spelldur{Concentration}
-\begin{spelltarget}{All creatures in the area}[Magic vs. Will]
-    \spellsuccess The target is \bewildered.
-
-    As long as the target is \bloodied, it is instead \confused.
-\end{spelltarget}
 
 \spellsection{Sound Burst}{2}
 \spelldesc{You create a cacophony of sound.}
