@@ -3,259 +3,330 @@ import util
 import dice
 from strings import *
 
+def get_all_abilities():
+    feats = {
+        'deadly aim': {
+            'modifiers': [
+                {
+                    'modifier_type': 'physical_attacks',
+                    'value': lambda c: -util.bab_scale(c.level) if c.strength >= 3 else 0,
+                },
+                {
+                    'modifier_type': 'physical_damage',
+                    'value': lambda c: util.bab_scale(c.level) if c.dexterity >= 3 else 0,
+                },
+            ],
+        },
+        'defensive fighting': {
+            'modifiers': [
+                {
+                    'modifier_type': 'physical_attacks',
+                    'value': lambda c: -util.bab_scale(c.level),
+                },
+                {
+                    'modifier_type': 'armor_defense',
+                    'value': lambda c: util.bab_scale(c.level),
+                },
+            ],
+        },
+        'great fortitude': {
+            'modifiers': [
+                {
+                    'modifier_type': 'fortitude',
+                    'value': 2,
+                },
+            ],
+        },
+        'iron will': {
+            'modifiers': [
+                {
+                    'modifier_type': 'will',
+                    'value': 2,
+                },
+            ],
+        },
+        'lightning reflexes': {
+            'modifiers': [
+                {
+                    'modifier_type': 'reflex',
+                    'value': 2,
+                },
+            ],
+        },
+        'power attack': {
+            'modifiers': [
+                {
+                    'modifier_type': 'physical_attacks',
+                    'value': lambda c: -util.bab_scale(c.level) if c.strength >= 3 else 0,
+                },
+                {
+                    'modifier_type': 'physical_damage',
+                    'value': power_attack_damage_modifier,
+                },
+            ],
+        },
+        'swift': {
+            'modifiers': [
+                {
+                    'modifier_type': 'land_speed',
+                    'value': 5,
+                },
+            ],
+        },
+        'toughness': {
+            'modifiers': [
+                {
+                    'modifier_type': 'hit_points',
+                    'value': lambda c: max(3, c.level)
+                },
+            ],
+        },
+        'two-weapon defense': {
+            'modifiers': [
+                {
+                    'modifier_type': 'physical_defenses',
+                    'value': lambda c: 2 if c.dexterity >= 3
+                    and c.primary_weapon is not None
+                    and c.secondary_weapon is not None
+                    else 0
+                },
+            ],
+        },
+        'two-weapon fighting': {
+            'modifiers': [
+                {
+                    'modifier_type': 'physical_attacks',
+                    'value': lambda c: 2 if c.dexterity >= 3
+                        and c.primary_weapon is not None
+                        and c.secondary_weapon is not None
+                        else 0
+                },
+            ],
+        },
+    }
+
+    class_features = {
+        'armor discipline (agility)': {
+            'functions': [
+                armor_discipline_agility_effect
+            ],
+        },
+        'armor discipline (resilience)': {
+            'modifiers': [
+                {
+                    'modifier_type': 'physical_damage_reduction',
+                    'value': lambda c: c.level if c.level > 5 else 0,
+                },
+                {
+                    'modifier_name': 'constitution',
+                    'modifier_type': 'armor_defense',
+                    'value': lambda c: c.constitution / 2 if c.level >=13 else 0,
+                },
+            ],
+        },
+        'barbarian damage reduction': {
+            'modifiers': [
+                {
+                    'modifier_type': 'physical_damage_reduction',
+                    'value': lambda c: c.level,
+                },
+            ],
+            'text': 'damage reduction',
+        },
+        'bodily perfection': {
+            'modifiers': [
+                {
+                    'modifier_types': ['strength', 'dexterity', 'constitution'],
+                    'value': lambda c: (c.level-1)/6,
+                },
+            ],
+        },
+        'danger sense': {
+            'modifiers': [
+                {
+                    'modifier_type': 'initiative',
+                    'value': lambda c: (c.level+1)/3 + 1,
+                },
+            ],
+        },
+        'ki strike': {
+            'modifiers': [
+                {
+                    'modifier_types': ['physical_attacks', 'physical_damage'],
+                    'value': lambda c: (c.level-1)/3,
+                },
+            ],
+        },
+        'larger than life': {
+            'modifiers': [
+                {
+                    'modifier_type': 'weapon_size',
+                    'value': 1,
+                },
+                {
+                    'modifier_type': 'maneuver_defense',
+                    'value': 4,
+                },
+            ],
+        },
+        'larger than belief': {
+            'modifiers': [
+                {
+                    'modifier_type': 'weapon_size',
+                    'value': 1,
+                },
+                {
+                    'modifier_type': 'maneuver_defense',
+                    'value': 4,
+                },
+            ],
+        },
+        'rage': {
+            'modifiers': [
+                {
+                    'modifier_types': ['strength', 'charisma'],
+                    'value': lambda c: util.std_scale(c.level),
+                },
+                {
+                    'modifier_type': 'hit_points',
+                    'value': lambda c: c.level * util.std_scale(c.level),
+                },
+                {
+                    'modifier_type': 'physical_defenses',
+                    'value': -2
+                },
+            ],
+        },
+        'still mind': {
+            'modifiers': [
+                {
+                    'modifier_name': 'intelligence',
+                    'modifier_type': 'will',
+                    'value': lambda c: c.wisdom / 2 if c.level >= 5 else 0,
+                },
+            ],
+        },
+        'timeless': {
+            'modifiers': [
+                {
+                    'modifier_types': ['intelligence', 'wisdom', 'charisma'],
+                    'value': lambda c: 1 if c.level >= 15 else 0,
+                },
+            ],
+        },
+        'unarmed warrior': {
+            'modifiers': [
+                {
+                    'modifier_type': 'weapon_size',
+                    'value': lambda c: 2 if c.primary_weapon.name == 'unarmed' else 0,
+                },
+            ],
+        },
+        'unfettered defense': {
+            'modifiers': [
+                {
+                    'modifier_name': 'wisdom',
+                    'modifier_types': ['physical_defenses','reflex'],
+                    'value': lambda c: c.wisdom,
+                },
+            ],
+        },
+        'weapon discipline': {
+            'modifiers': [
+                {
+                    'modifier_type': 'physical_attacks',
+                    'value': 1,
+                },
+            ],
+        },
+        'improved weapon discipline': {
+            'modifiers': [
+                {
+                    'modifier_type': 'physical_attacks',
+                    'value': 1,
+                },
+            ],
+        },
+    }
+
+    # the generic "abilities" is the combination of all feats, class features, etc.
+    # we just store those separately for ease of use
+    abilities = feats
+    abilities.update(class_features)
+    return abilities
+
 def get_ability_by_name(ability_name):
     try:
-        return Ability.all_abilities[ability_name]
+        return abilities[ability_name]
     except:
         raise Exception("Could not recognize ability {0}.".format(ability_name))
 
-class Ability(object):
-    all_abilities = dict()
-    #Name of the ability, a function that applies the effects of the ability
-    #to a creature, a function that tests whether the creature qualifies
-    #for the ability, a value associated with the ability, if appropriate
-    #(such as the range of darkvision), and special text for the ability if
-    #the name (and value, if present) are not what should be printed when
-    #the ability is referenced (primarily with to_latex()) 
-    #text can be either a string or a function
-    def __init__(self, name, effect = None, meets_prerequisites = None, 
-                 tags = None, value = None, text = None):
-        self.name = name
-        self.tags = set()
-        if tags is not None:
-            for tag in tags:
-                self.tags.add(tag)
-        if effect is None:
-            self.effect = lambda x: False
-        else:
-            self.effect = effect
-        if meets_prerequisites is None:
-            self.meets_prerequisites = lambda x: True
-        else:
-            self.meets_prerequisites = meets_prerequisites
-        self.value = value
-        self.text = text
-
-    def apply_effect(self, base_creature, check_prerequisites=True):
-        if check_prerequisites and not self.meets_prerequisites(base_creature):
-            return False
-        self.effect(base_creature)
-        return True
-
-    def has_tag(self, tag):
-        if self.tags is None:
-            return False
-        return tag in self.tags
-
-    def get_text(self, creature = None):
-        if self.text is not None:
-            #self.text can be either a string or a function
-            try:
-                return self.text(creature)
-            except TypeError:
-                return self.text
-        if self.value is not None:
-            return '%s %s' % (self.name, self.value)
-        return self.name
-
-    def __repr__(self):
-        return 'Ability({0})'.format(self.name)
-
-    @classmethod
-    def create_ability(cls, name, effect = None, meets_prerequisites = None,
-                       tags = None, value = None, text = None):
-        ability = cls(name, effect, meets_prerequisites, tags, value, text)
-        Ability.all_abilities[name] = ability
-
-    @classmethod
-    def create_feat(cls, name, effect = None, meets_prerequisites = None,
-                    tags = None, value = None, text = None):
-        feat_tags = set()
-        feat_tags.add(ABILITY_FEAT)
-        if tags is not None:
-            for tag in tags:
-                feat_tags.add(tag)
-        ability = cls(name, effect, meets_prerequisites, feat_tags, value, text)
-        Ability.all_abilities[name] = ability
-
-####################
-#CLASS FEATURES
-####################
-
-def barbarian_damage_reduction_effect(creature):
-    creature.damage_reduction = util.DamageReduction(creature.level,
-                                                     'physical')
-Ability.create_ability('barbarian damage reduction', barbarian_damage_reduction_effect)
-
-def danger_sense_effect(creature):
-    creature.initiative.add_bonus(creature.level/2, 'danger sense')
-Ability.create_ability('danger sense', danger_sense_effect)
-
-def larger_than_life_effect(creature):
-    if creature.primary_weapon is None:
-        return False
-    creature.primary_weapon.increase_size()
-Ability.create_ability('larger than life', larger_than_life_effect)
-Ability.create_ability('larger than belief', larger_than_life_effect)
-
-def rage_effect(creature):
-    rage_bonus = util.std_scale(creature.level)
-    creature.strength.add_bonus(rage_bonus, 'rage')
-    creature.charisma.add_bonus(rage_bonus, 'rage')
-    creature.armor_class.misc.add_bonus(-2, 'rage')
-    creature.hit_points.add_bonus(creature.level*rage_bonus, 'rage')
-Ability.create_ability('rage', rage_effect)
+def get_fundamental_progression_ability_names(name, level):
+    ability_names = list()
+    if name == 'barbarian':
+        ability_names += (
+            'barbarian damage reduction',
+            'rage',
+            'danger sense' if level >= 2 else None,
+            'larger than life' if level >= 7 else None,
+            'larger than belief' if level >= 17 else None,
+        )
+    elif name == 'fighter':
+        ability_names += (
+            'weapon discipline' if level >= 3 else None,
+            'improved weapon discipline' if level >=9 else None,
+        )
+    elif name == 'monk':
+        ability_names += (
+            'unfettered defense',
+            'unarmed warrior',
+            'ki strike' if level >= 3 else None,
+            'still mind' if level >= 5 else None,
+            'bodily perfection' if level >= 7 else None,
+            'timeless' if level >= 15 else None,
+        )
+    return [name for name in ability_names if name is not None]
 
 def armor_discipline_agility_effect(creature):
     # adjust armor worn to ensure dex bonus
     if creature.level <= 6 and (
             creature.armor.encumbrance == ENCUMBRANCE_HEAVY
             or creature.armor.encumbrance == ENCUMBRANCE_MEDIUM):
-        creature.armor.encumbrance = ENCUMBRANCE_LIGHT
-        creature.armor_class.armor.remove_bonus('armor')
-        creature.armor_class.armor.add_bonus(3, 'armor')
+        creature.armor = equipment.Armor.from_armor_name('light')
     if creature.level <= 12 and creature.armor.encumbrance == ENCUMBRANCE_HEAVY:
-        creature.armor.encumbrance = ENCUMBRANCE_MEDIUM
-        creature.armor_class.armor.remove_bonus('armor')
-        creature.armor_class.armor.add_bonus(6, 'armor')
+        creature.armor = equipment.Armor.from_armor_name('medium')
 
     armor_discipline_count = (creature.level+5)/6
     for i in xrange(1, armor_discipline_count):
         creature.armor.encumbrance = util.lower_encumbrance(
             creature.armor.encumbrance)
-Ability.create_ability('armor discipline (agility)', armor_discipline_agility_effect)
-
-def armor_discipline_resilience_effect(creature):
-    if creature.level > 7:
-        creature.damage_reduction = util.DamageReduction(creature.level, 'physical')
-    if creature.level > 13:
-        constitution = creature.constitution.get_total()
-        creature.armor_class.misc.add_bonus(constitution/2, CON)
-Ability.create_ability('armor discipline (resilience)', armor_discipline_resilience_effect)
-
 
 ####################
 #FEATS
 ####################
 
-def two_weapon_fighting_effect(creature):
-    creature.attack_bonus.add_bonus(2, 'two-weapon fighting')
-
-def two_weapon_fighting_prerequisites(creature):
-    return creature.dexterity.get_total()>= 3 and creature.secondary_weapon
-
-Ability.create_ability('two-weapon fighting', two_weapon_fighting_effect,
-                       two_weapon_fighting_prerequisites,
-                       set((ABILITY_FEAT, 'combat', 'finesse')))
-
-def two_weapon_defense_effect(creature):
-    if creature.secondary_weapon:
-        bonus = creature.level/8+1
-        creature.armor_class.shield.add_bonus(bonus, 'shield')
-Ability.create_ability('two-weapon defense', two_weapon_defense_effect,
-                       two_weapon_fighting_prerequisites,
-                       set((ABILITY_FEAT, 'combat', 'defense', 'finesse')))
-
-def combat_expertise_effect(creature):
-    creature.attack_bonus.add_bonus(-util.bab_scale(creature.level),
-                                    'combat expertise')
-    creature.armor_class.dodge.add_bonus(util.bab_scale(creature.level),
-                                         'combat expertise')
-Ability.create_ability('combat expertise', combat_expertise_effect, 
-                       lambda creature: creature.attributes.intelligence.get_total() >= 3,
-                       set((ABILITY_FEAT, 'combat', 'defense', 'style')))
-
-def power_attack_effect(creature):
-    creature.attack_bonus.add_bonus(-util.bab_scale(creature.level), 
-                                    'power attack')
-    damage_bonus = 2+(creature.attack_bonus.base_attack_bonus/5)*2
-    if creature.primary_weapon.encumbrance == 'medium' or creature.primary_weapon.encumbrance == 'heavy':
-        creature.primary_weapon_damage.add_bonus(damage_bonus,
-                                                 'power attack')
+def power_attack_damage_modifier(creature):
+    if creature.strength < 3:
+        return 0
+    elif creature.primary_weapon.encumbrance == 'light':
+        return util.bab_scale(c.level) / 2
     else:
-        creature.primary_weapon_damage.add_bonus(damage_bonus/2, 'power attack')
-    if creature.secondary_weapon:
-        creature.secondary_weapon_damage.add_bonus(damage_bonus/2, 
-                                                   'power attack')
-Ability.create_ability('power attack', power_attack_effect, lambda creature:
-                       creature.strength.get_total() >= 3,
-                       [ABILITY_FEAT, 'combat', 'power', 'style'])
-
-def deadly_aim_effect(creature):
-    creature.attack_bonus.add_bonus(-util.bab_scale(creature.level), 
-                                    'deadly aim')
-    damage_bonus = 2+(creature.attack_bonus.base_attack_bonus/5)*2
-    creature.primary_weapon_damage.add_bonus(damage_bonus, 
-                                             'deadly aim')
-Ability.create_ability('deadly aim', deadly_aim_effect, lambda creature:
-                       creature.dexterity.get_total() >= 3,
-                       set((ABILITY_FEAT, 'combat', 'precision', 'style')))
-
-Ability.create_feat('endurance', tags=[TAG_DEFENSE])
-Ability.create_feat('diehard', tags=[TAG_DEFENSE])
-Ability.create_feat('track', tags=['skill'])
-Ability.create_feat('dodge', tags=[TAG_DEFENSE, 'combat', 
-                                   'mobility'])
-Ability.create_feat('mobility', tags=[TAG_DEFENSE, 'combat', 
-                                      'mobility'])
-Ability.create_feat('spring attack', tags=[TAG_DEFENSE,
-                                           'combat', 'mobility'])
-
-def great_fortitude_effect(creature):
-    creature.defenses[FORTITUDE].add_bonus(2, 'great fortitude')
-Ability.create_feat('great fortitude',
-                    great_fortitude_effect, tags=[SPECIAL_DEFENSE])
-def iron_will_effect(creature):
-    creature.will.add_bonus(2, 'iron will')
-Ability.create_feat('iron will',
-                    iron_will_effect, tags=[SPECIAL_DEFENSE])
-def lightning_reflexes_effect(creature):
-    creature.reflex.add_bonus(2, 'lightning reflexes')
-Ability.create_feat('lightning reflexes',
-                    lightning_reflexes_effect, tags=[SPECIAL_DEFENSE], text='1/day reroll Reflex')
-
-def swift_effect(creature):
-    for speed_mode in creature.speed_modes:
-        creature.modify_speed(speed_mode, 5)
-Ability.create_feat('swift', swift_effect)
-
-Ability.create_feat('overpowering assault', tags=[TAG_POWER, TAG_STYLE])
+        return util.bab_scale(c.level)
 
 ####################
 #MONSTER TRAITS
 ####################
 
-Ability.create_ability('darkvision', tags = ['sense'], value = 60,
-                       text='Darkvision %s ft.')
-Ability.create_ability('low-light vision', tags = ['sense'])
-Ability.create_ability('scent', tags = ['sense'])
-
 def natural_grab_text(creature):
     return 'Natural grab (%s) %s' % (util.decrease_size(creature.size).title(),
                                      creature.maneuver_bonus.mstr())
-Ability.create_ability('improved grab', text = natural_grab_text,
-                       tags=['special attack'])
 
 def natural_trip_text(creature):
     return 'Natural trip (%s) %s' % (util.increase_size(creature.size).title(),
                                      creature.maneuver_bonus.mstr())
-Ability.create_ability('natural trip', text = natural_trip_text,
-                       tags=['special attack'])
 
 def natural_weapon_effect(creature):
     creature.primary_weapon.increase_size()
-Ability.create_ability('improved natural weapon',
-                       effect = natural_weapon_effect)
-
-Ability.create_ability('enslave', tags=[TAG_ATTACK], text = 'enslave')
-Ability.create_ability('slime', tags=[TAG_ATTACK], text = 'slime')
-Ability.create_ability('mucus cloud', tags=[TAG_AURA])
-Ability.create_ability('black cloud', tags=[TAG_ATTACK])
-Ability.create_ability('babble', tags=[TAG_ATTACK])
-Ability.create_ability('madness', tags=[TAG_DEFENSE])
-Ability.create_ability('wisdom drain', tags=[TAG_ATTACK])
-Ability.create_ability('mindless', tags=[TAG_DEFENSE])
-Ability.create_ability('regeneration', tags=[TAG_DEFENSE])
 
 ####################
 #MONSTER TEMPLATES
@@ -266,24 +337,18 @@ def warrior_prerequisites(creature):
 def warrior_effect(creature):
     creature.improve_progression(BAB)
     creature.improve_progression(HIT_VALUE)
-Ability.create_ability('warrior', effect = warrior_effect,
-                       meets_prerequisites = warrior_prerequisites, tags=[ABILITY_TEMPLATE])
 
 def antiwarrior_prerequisites(creature):
     return creature.base_attack_bonus is not None and creature.hit_value is not None
 def antiwarrior_effect(creature):
     creature.reduce_progression(BAB)
     creature.reduce_progression(HIT_VALUE)
-Ability.create_ability('antiwarrior', effect = antiwarrior_effect,
-                       meets_prerequisites = antiwarrior_prerequisites, tags=[ABILITY_TEMPLATE])
 
 def brute_prerequisites(creature):
     return creature.fortitude is not None and creature.hit_value is not None
 def brute_effect(creature):
     util.improve_hv(creature.get_class_progression())
     util.improve_save(creature.get_class_progression(), FORTITUDE)
-Ability.create_ability('brute', effect = brute_effect,
-                       meets_prerequisites = brute_prerequisites, tags=[ABILITY_TEMPLATE])
 
 def scout_prerequisites(creature):
     return creature.reflex is not None and creature.get_all_speeds() is not None
@@ -291,13 +356,11 @@ def scout_effect(creature):
     util.improve_save(creature.get_class_progression(), REFLEX)
     for speed_mode in creature.speed_modes:
         creture.modify_speed(speed_mode, min(10, creature.get_land_speed()))
-Ability.create_ability('scout', effect = scout_effect,
-                       meets_prerequisites = scout_prerequisites, tags=[ABILITY_TEMPLATE])
 
 def incorporeal_effect(creature):
     #add Cha to hit points
     creature.hit_points().add_bonus(creature.level *
-                                    creature.charisma.get_total()/2, 'cha')
+                                    creature.charisma, 'cha')
     creature.strength.set_inapplicable()
     creature.constitution.set_inapplicable()
     def incorporeal_defense(damage, damage_types):
@@ -307,14 +370,9 @@ def incorporeal_effect(creature):
         else:
             return damage
     creature.add_special_defense(incorporeal_defense)
-Ability.create_ability('incorporeal', effect = incorporeal_effect,
-                       tags=[ABILITY_TEMPLATE])
 
 ####################
 #MONSTER TYPES
 ####################
 
-Ability.create_ability('construct', text='construct traits')
-Ability.create_ability('ooze', text='ooze traits')
-Ability.create_ability('plant', text='plant traits')
-Ability.create_ability('undead', text='undead traits')
+abilities = get_all_abilities()

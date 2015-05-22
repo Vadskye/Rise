@@ -60,6 +60,15 @@ class Dice(object):
             total += (1 + self.die_size)/2.0
         return total
 
+    def __add__(self, value):
+        if value>0:
+            for i in xrange(value):
+                self.increase_size()
+        elif value < 0:
+            for i in xrange(value):
+                self.decrease_size()
+        return self
+
     def __str__(self):
         text = ''
         if self.dice_count: text+='{0}'.format(self.dice_count)

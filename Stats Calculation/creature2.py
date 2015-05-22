@@ -1,7 +1,8 @@
 import math
 from pprint import pprint, PrettyPrinter
-from abilities import get_ability_by_name
+from abilities import get_ability_by_name, get_fundamental_progression_ability_names
 import equipment
+from dice import Dice
 import util
 
 modifier_type_mappings = {
@@ -9,6 +10,7 @@ modifier_type_mappings = {
     'special_defenses': ['fortitude', 'will'],
     'physical_attacks': ['first_physical_attack_bonus', 'second_physical_attack_bonus', 'third_physical_attack_bonus', 'fourth_physical_attack_bonus', 'extra_physical_attack_bonus'],
     'physical_damage': ['primary_weapon_damage', 'secondary_weapon_damage'],
+    'weapon_size': ['primary_weapon_size', 'secondary_weapon_size'],
 }
 
 valid_modifier_types = set(
@@ -35,8 +37,12 @@ valid_modifier_types = set(
     extra_physical_attack_bonus
     primary_weapon_damage
     secondary_weapon_damage
-    extra_attacks'''.split()
-)
+    primary_weapon_size
+    secondary_weapon_size
+    extra_attacks
+    physical_damage_reduction
+    initiative
+'''.split())
 
 def get_default_modifiers(level, base_attack_bonus_progression,
                           fortitude_progression, reflex_progression,
@@ -64,6 +70,14 @@ def get_default_modifiers(level, base_attack_bonus_progression,
             modifiers['armor_defense']['natural_armor'] = base_progression_modifiers['natural_armor']
         else:
             add_progression_modifier(key, base_progression_modifiers[key], modifiers)
+
+    modifiers['fortitude']['constitution'] = lambda c: c.constitution
+    modifiers['fortitude']['strength'] = lambda c: c.strength / 2
+    modifiers['reflex']['dexterity'] = lambda c: c.dexterity
+    modifiers['reflex']['wisdom'] = lambda c: c.wisdom / 2
+    modifiers['will']['charisma'] = lambda c: c.charisma
+    modifiers['will']['intelligence'] = lambda c: c.intelligence / 2
+
     return modifiers
 
 def add_base_modifier(key, value, modifiers):
@@ -158,7 +172,7 @@ def get_attribute_progression(progression_type, level):
 
 class Creature(object):
     def __init__(self,
-                 class_name,
+                 fundamental_progression,
                  race,
                  # meta
                  combat_description = None,
@@ -204,7 +218,7 @@ class Creature(object):
                  traits = None,
                  ):
 
-        self.class_name = class_name
+        self.fundamental_progression = fundamental_progression
         self.race = race
 
         # base modifiers and progressions
@@ -266,6 +280,8 @@ class Creature(object):
 
         # abilities
         self._abilities = dict()
+        for ability_name in get_fundamental_progression_ability_names(fundamental_progression, level):
+            self.add_ability(ability_name)
         if abilities is not None:
             for ability in abilities:
                 self.add_ability(ability)
@@ -297,10 +313,18 @@ class Creature(object):
                 
                 # check to see how to combine multiple modifier types
                 if name in self._modifiers[modifier_type] and not replace_existing:
-                    if is_penalty:
-                        self._modifiers[modifier_type][name] = min(value, self._modifiers[modifier_type][name])
-                    else:
-                        self._modifiers[modifier_type][name] = max(value, self._modifiers[modifier_type][name])
+                    try:
+                        # if the value is simply a number, we can use max to keep the
+                        # higher value
+                        value = int(value)
+                        if is_penalty:
+                            self._modifiers[modifier_type][name] = min(value, self._modifiers[modifier_type][name])
+                        else:
+                            self._modifiers[modifier_type][name] = max(value, self._modifiers[modifier_type][name])
+                    except TypeError:
+                        # if the value is a function, which is common for abilities,
+                        # it should replace any non-function values
+                        self._modifiers[modifier_type][name] = value
                 else:
                     self._modifiers[modifier_type][name] = value
 
@@ -313,17 +337,31 @@ class Creature(object):
         modifier = 0
         relevant_modifiers = self._modifiers.get(modifier_type, {})
         if as_dict:
-            return relevant_modifiers
+            dict_of_stuff = dict()
+            for name in relevant_modifiers:
+                try:
+                    dict_of_stuff[name] = int(relevant_modifiers[name])
+                except TypeError:
+                    dict_of_stuff[name] = relevant_modifiers[name](self)
+            return dict_of_stuff
         else:
             for name in relevant_modifiers:
-                modifier += relevant_modifiers.get(name)
+                try:
+                    modifier += relevant_modifiers[name]
+                except TypeError:
+                    modifier += relevant_modifiers[name](self)
             return modifier
 
     def add_ability(self, ability_name):
         # make sure "ability" is actually the Ability object
         ability = get_ability_by_name(ability_name)
         self._abilities[ability_name] = ability
-        ability.apply_effect(self)
+        for modifier in ability.get('modifiers', []):
+            self.add_modifier(
+                modifier.get('modifier_type') or modifier.get('modifier_types'),
+                modifier['value'],
+                modifier.get('modifier_name') or ability_name,
+            )
 
     def get_ability(self, ability_name):
         return self._abilities.get(ability_name)
@@ -341,7 +379,7 @@ class Creature(object):
 
     @property
     def ability_names(self):
-        return self._abilities.keys()
+        return [self.get_ability(name).get('text') or name for name in self._abilities.keys()]
 
     @property
     def feat_names(self):
@@ -388,7 +426,7 @@ class Creature(object):
 
     @property
     def hit_points(self):
-        return self.get_modifiers('hit_points') + ((self.constitution * self.level) / 2)
+        return self.get_modifiers('hit_points') + ((self.constitution / 2) * self.level)
 
     @property
     def base_attack_bonus(self):
@@ -464,7 +502,7 @@ class Creature(object):
     def primary_weapon_damage_die(self):
         if self.primary_weapon is None:
             return None
-        return self.primary_weapon.damage_die
+        return self.primary_weapon.damage_die + self.get_modifiers('primary_weapon_size')
 
     @property
     def secondary_weapon_damage_bonus(self):
@@ -476,7 +514,7 @@ class Creature(object):
     def secondary_weapon_damage_die(self):
         if self.secondary_weapon is None:
             return None
-        return self.secondary_weapon.damage_die
+        return self.secondary_weapon.damage_die + self.get_modifiers('secondary_weapon_size')
 
     @property
     def encumbrance(self):
@@ -523,28 +561,15 @@ class Creature(object):
 
     @property
     def fortitude(self):
-        return sum([
-            self.get_modifiers('fortitude'),
-            self.constitution,
-            (self.strength / 2),
-        ])
+        return self.get_modifiers('fortitude')
 
     @property
     def reflex(self):
-        return sum([
-            self.get_modifiers('reflex'),
-            self.dexterity,
-            (self.wisdom / 2),
-            self.shield_bonus,
-        ])
+        return self.get_modifiers('reflex')
 
     @property
     def will(self):
-        return sum([
-            self.get_modifiers('will'),
-            self.charisma,
-            (self.intelligence / 2),
-        ])
+        return self.get_modifiers('will')
 
     @property
     def attributes(self):
@@ -690,6 +715,14 @@ class Creature(object):
     def has_spells(self):
         return self.casting_attribute is not None
 
+    @property
+    def initiative(self):
+        return self.get_modifiers('initiative')
+
+    @property
+    def physical_damage_reduction(self):
+        return self.get_modifiers('physical_damage_reduction')
+
     def __str__(self):
         return '{0} {1}\n{2}\n{3}\n{4}\n{5}\n{6}'.format(
             self.name,
@@ -702,7 +735,7 @@ class Creature(object):
         )
 
     def _to_string_defenses(self):
-        return "[HP] {0}; [Defs] AD {1}, MD {2}; Fort {3}, Ref {4}, Will {5}".format(
+        text = "[HP] {0}; [Defs] AD {1}, MD {2}; Fort {3}, Ref {4}, Will {5}".format(
             self.hit_points,
             self.armor_defense,
             self.maneuver_defense,
@@ -710,6 +743,12 @@ class Creature(object):
             self.reflex,
             self.will,
         )
+        # special defensive abilities
+        if self.physical_damage_reduction is not 0:
+            text += '\n    [DR] {0}'.format(
+                self.physical_damage_reduction
+            )
+        return text
 
     def _to_string_attacks(self):
         attack_progression = ', '.join([util.mstr(x) for x in self.physical_attack_progression])
@@ -776,7 +815,7 @@ class Creature(object):
         attributes = util.parse_attribute_data(creature_data)
 
         return cls(
-            class_name = creature_data.get('class') or creature_data.get('creature_type'),
+            fundamental_progression = creature_data.get('class') or creature_data.get('creature_type'),
             race = creature_data.get('race'),
             # meta
             name = creature_data.get('name'),

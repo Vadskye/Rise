@@ -115,10 +115,10 @@ warrior:
     dexterity: 2
     constitution: 
       progression: secondary
-      value: 2
+      value: 3
     intelligence: -1
     wisdom: 0
-    charisma: 1
+    charisma: 0
 warrior_dex:
     strength: 
       progression: secondary
