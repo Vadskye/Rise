@@ -24,11 +24,11 @@ def get_creature_data_from_key(key, data):
             raise Exception("Unable to recognize creature '{0}'".format(key))
         if key in classes:
             base_creature = dict(classes[key])
-            apply_variants(base_creature, variant_keys, object_name = key, append_name = True)
+            apply_variants(base_creature, variant_keys, classes.get('generic_variants'), object_name = key, append_name = True)
             return base_creature
         elif key in monsters:
             base_creature = dict(monsters[key])
-            apply_variants(base_creature, variant_keys, object_name = key, append_name = True)
+            apply_variants(base_creature, variant_keys, monsters.get('generic_variants'), object_name = key, append_name = True)
             return base_creature
         else:
             raise Exception("Unable to recognize creature '{0}/{1}'".format(key, variant))
@@ -38,23 +38,26 @@ def split_key_and_variant_keys(key):
     key = variant_keys.pop(0)
     return key, variant_keys
 
-def apply_variants(base_object, variant_keys, object_name = 'object', append_name = False):
-    if 'variants' in base_object:
-        variants = base_object.get('variants')
-        for variant_key in variant_keys:
-            if variant_key in variants:
-                variant = variants.get(variant_key)
-                if variant is not None:
-                    base_object.update(variant)
-                    if append_name and not 'name' in variant:
-                        base_object['name'] += '/{0}'.format(variant_key)
-                    else:
-                        raise Exception("'{0}' does not have variant '{1}'. It has the following variants: {2}".format(
-                            object_name, variant_key, ', '.join(base_object['variants'].keys())))
-        return base_object
-    else:
-        raise Exception("'{0}' does not have variants '{1}', because it has no variants.".format(
-            object_name, ', '.join(variant_keys)))
+def apply_variants(base_object, variant_keys, generic_variants, object_name = 'object', append_name = False):
+    base_variants = base_object.get('variants', {})
+    for variant_key in variant_keys:
+        variant = base_variants.get(variant_key) or generic_variants.get(variant_key)
+        if variant is None:
+            raise Exception( "'{0}' does not have variant '{1}'. It has the following variants: {2}".format(
+                object_name, variant_key, ', '.join(base_object.get('variants', {}).keys())))
+        variant_update(base_object, variant)
+        if append_name and not 'name' in variant:
+            base_object['name'] += '/{0}'.format(variant_key)
+    return base_object
+
+def variant_update(base_object, variant):
+    for key in variant:
+        if key == 'extra_feats':
+            if not base_object.get('feats'):
+                base_object['feats'] = list()
+            base_object['feats'] += variant['extra_feats']
+        else:
+            base_object[key] = variant[key]
 
 class Modifier(object):
 
