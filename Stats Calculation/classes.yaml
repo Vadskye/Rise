@@ -113,6 +113,8 @@ fighter:
       attributes: warrior_dex
       traits:
         - armor discipline (agility)
+      weapons:
+        primary: light_melee
     dex_secondary:
       attributes: warrior_dex_secondary
       traits:

@@ -196,6 +196,7 @@ class Creature(object):
 
         # base modifiers and progressions
         self._modifiers = dict()
+        self._static_modifiers = dict()
         self.set_default_modifiers()
 
         self.base_attack_bonus_progression = base_attack_bonus_progression
@@ -224,12 +225,12 @@ class Creature(object):
         self.shield = shield
 
         # attributes
-        self.add_modifier('strength', 'points', strength)
-        self.add_modifier('dexterity', 'points', dexterity)
-        self.add_modifier('constitution', 'points', constitution)
-        self.add_modifier('intelligence', 'points', intelligence)
-        self.add_modifier('wisdom', 'points', wisdom)
-        self.add_modifier('charisma', 'points', charisma)
+        self.add_modifier('strength', 'points', strength, update_static = False)
+        self.add_modifier('dexterity', 'points', dexterity, update_static = False)
+        self.add_modifier('constitution', 'points', constitution, update_static = False)
+        self.add_modifier('intelligence', 'points', intelligence, update_static = False)
+        self.add_modifier('wisdom', 'points', wisdom, update_static = False)
+        self.add_modifier('charisma', 'points', charisma, update_static = False)
         self.casting_attribute = casting_attribute
         self.special_attack_attribute = special_attack_attribute
 
@@ -238,6 +239,9 @@ class Creature(object):
         self.space = space
         self.reach = reach
         self.speeds = speeds
+
+        # this needs to happen before we can apply abilities
+        self._update_static_modifiers()
 
         # abilities
         self._abilities = dict()
@@ -269,41 +273,46 @@ class Creature(object):
         #self.traits = traits
 
     def set_default_modifiers(self):
-        self.set_modifier('second_physical_attack_bonus', 'base', -5)
-        self.set_modifier('third_physical_attack_bonus', 'base', -10)
-        self.set_modifier('fourth_physical_attack_bonus', 'base', -15)
-        self.set_modifier('fourth_physical_attack_bonus', 'base', -15)
+        self.set_modifier('second_physical_attack_bonus', 'base', -5, update_static = False)
+        self.set_modifier('third_physical_attack_bonus', 'base', -10, update_static = False)
+        self.set_modifier('fourth_physical_attack_bonus', 'base', -15, update_static = False)
+        self.set_modifier('fourth_physical_attack_bonus', 'base', -15, update_static = False)
 
-        self.set_modifier(['physical_defenses', 'special_defenses'], 'base', 10)
+        self.set_modifier(['physical_defenses', 'special_defenses'], 'base', 10, update_static = False)
 
-        self.add_modifier('fortitude', 'constitution', lambda c: c.constitution)
-        self.add_modifier('fortitude', 'strength', lambda c: c.strength / 2)
-        self.add_modifier('reflex', 'dexterity', lambda c: c.dexterity)
-        self.add_modifier('reflex', 'wisdom', lambda c: c.wisdom / 2)
-        self.add_modifier('will', 'charisma', lambda c: c.charisma)
-        self.add_modifier('will', 'intelligence', lambda c: c.intelligence / 2)
+        self.add_modifier('fortitude', 'constitution', lambda c: c.constitution, update_static = False)
+        self.add_modifier('fortitude', 'strength', lambda c: c.strength / 2, update_static = False)
+        self.add_modifier('reflex', 'dexterity', lambda c: c.dexterity, update_static = False)
+        self.add_modifier('reflex', 'wisdom', lambda c: c.wisdom / 2, update_static = False)
+        self.add_modifier('will', 'charisma', lambda c: c.charisma, update_static = False)
+        self.add_modifier('will', 'intelligence', lambda c: c.intelligence / 2, update_static = False)
 
         magic_item_modifiers = get_magic_item_modifiers()
         for modifier_type, value in magic_item_modifiers.items():
-            self.set_modifier(modifier_type, 'enhancement', value)
+            self.set_modifier(modifier_type, 'enhancement', value, update_static = False)
 
-        self.set_modifier('physical_defenses', 'dexterity', lambda c: c.dexterity)
-        self.set_modifier('physical_defenses', 'shield', lambda c: c.shield_bonus)
-        self.set_modifier('armor_defense', 'base attack bonus', lambda c: c.base_attack_bonus/2)
-        self.set_modifier('armor_defense', 'armor', lambda c: c.armor_bonus)
-        self.set_modifier('armor_defense', 'size', lambda c: c.size_modifier)
-        self.set_modifier('maneuver_defense', 'base attack bonus', lambda c: c.base_attack_bonus)
-        self.set_modifier('maneuver_defense', 'strength', lambda c: c.strength)
-        self.set_modifier('maneuver_defense', 'size', lambda c: c.special_size_modifier)
+        # attacks
+        self.add_modifier('physical_attacks', 'base attack bonus', lambda c: c.base_attack_bonus, update_static = False)
+        self.add_modifier('physical_attacks', 'attack attribute', lambda c: c.attack_attribute, update_static = False)
+        self.add_modifier('physical_attacks', 'size', lambda c: c.size_modifier, update_static = False)
 
-        self.set_modifier('physical_defenses', 'overwhelm', -2)
+        self.set_modifier('physical_defenses', 'dexterity', lambda c: c.dexterity, update_static = False)
+        self.set_modifier('physical_defenses', 'shield', lambda c: c.shield_bonus, update_static = False)
+        self.set_modifier('armor_defense', 'base attack bonus', lambda c: c.base_attack_bonus/2, update_static = False)
+        self.set_modifier('armor_defense', 'armor', lambda c: c.armor_bonus, update_static = False)
+        self.set_modifier('armor_defense', 'size', lambda c: c.size_modifier, update_static = False)
+        self.set_modifier('maneuver_defense', 'base attack bonus', lambda c: c.base_attack_bonus, update_static = False)
+        self.set_modifier('maneuver_defense', 'strength', lambda c: c.strength, update_static = False)
+        self.set_modifier('maneuver_defense', 'size', lambda c: c.special_size_modifier, update_static = False)
 
-    def add_modifier(self, modifier_types, name, value, is_penalty = False, replace_existing = False):
+        self.set_modifier('physical_defenses', 'overwhelm', -2, update_static = False)
+
+    def add_modifier(self, modifier_types, name, value, is_penalty = False, replace_existing = False, update_static = True):
         modifier_types = util.ensure_list(modifier_types)
         for modifier_type in modifier_types:
             # recurse if handling mapped modifiers
             if modifier_type in modifier_type_mappings:
-                self.add_modifier(modifier_type_mappings[modifier_type], name, value)
+                self.add_modifier(modifier_type_mappings[modifier_type], name, value, is_penalty, replace_existing, update_static)
             else:
                 if modifier_type not in valid_modifier_types:
                     raise Exception("Can't add invalid modifier type {0}".format(modifier_type))
@@ -325,30 +334,36 @@ class Creature(object):
                         self._modifiers[modifier_type][name] = value
                 else:
                     self._modifiers[modifier_type][name] = value
+        if update_static:
+            self._update_static_modifiers()
 
-    def set_modifier(self, modifier_types, name, value):
-        self.add_modifier(modifier_types, name, value, replace_existing = True)
+    def set_modifier(self, modifier_types, name, value, update_static = False):
+        self.add_modifier(modifier_types, name, value, replace_existing = True, update_static = update_static)
 
-    def get_modifiers(self, modifier_type, as_dict = False):
-        if modifier_type not in valid_modifier_types:
-            raise Exception("Can't get invalid modifier type {0}".format(modifier_type))
-        modifier = 0
-        relevant_modifiers = self._modifiers.get(modifier_type, {})
-        if as_dict:
-            dict_of_stuff = dict()
-            for name in relevant_modifiers:
+    def _update_static_modifiers(self):
+        print "updating static modifiers"
+        for modifier_type in valid_modifier_types:
+            modifier_value = 0
+            for modifier_name in self._modifiers.get(modifier_type, {}):
+                modifier = self._modifiers[modifier_type][modifier_name]
                 try:
-                    dict_of_stuff[name] = int(relevant_modifiers[name])
+                    modifier_value += int(modifier)
                 except TypeError:
-                    dict_of_stuff[name] = relevant_modifiers[name](self)
-            return dict_of_stuff
-        else:
-            for name in relevant_modifiers:
-                try:
-                    modifier += relevant_modifiers[name]
-                except TypeError:
-                    modifier += relevant_modifiers[name](self)
-            return modifier
+                    modifier_value += modifier(self)
+            self._static_modifiers[modifier_type] = modifier_value
+        self._static_modifiers['physical attack progression'] = self._calculate_physical_attack_progression()
+
+    def get_modifiers_as_dict(self, modifier_type):
+        dict_of_stuff = dict()
+        for name in self._static_modifiers.get(modifier_type, {}):
+            dict_of_stuff[name] = int(relevant_modifiers[name])
+        return dict_of_stuff
+
+    def get_modifiers(self, modifier_type):
+        try:
+            return self._static_modifiers[modifier_type]
+        except KeyError:
+            return 0
 
     def add_ability(self, ability_name):
         # make sure "ability" is actually the Ability object
@@ -466,15 +481,14 @@ class Creature(object):
         return self.get_physical_attack_bonus('first')
 
     def get_physical_attack_bonus(self, attack_number):
-        return sum([
-            self.base_attack_bonus,
-            self.attack_attribute,
-            self.get_modifiers(attack_number + '_physical_attack_bonus'),
-            self.size_modifier,
-        ])
+        return self.get_modifiers(attack_number + '_physical_attack_bonus')
 
     @property
     def physical_attack_progression(self):
+        return self.get_modifiers('physical attack progression')
+
+    # this is hacked into _static_modifiers
+    def _calculate_physical_attack_progression(self):
         attack_bonuses = list()
         attacks_from_bab = 1 + max(0, (self.base_attack_bonus - 1) / 5)  
         attack_bonuses.append(self.get_physical_attack_bonus('first'))
@@ -967,3 +981,5 @@ class CreatureGroup(object):
         for creature in self.creatures:
             creature.reset_damage()
         self.active_creatures = self.updated_active_creatures()
+
+    def 
