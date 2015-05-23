@@ -1,1532 +1,969 @@
-from strings import *
-import equipment, util
-from abilities import get_ability_by_name
+import math
+from pprint import pprint, PrettyPrinter
+from abilities import get_ability_by_name, get_fundamental_progression_ability_names
+import equipment
+from dice import Dice
+import util
+from util import d20
+import random
 
-def generate_creature_from_key(key, data, level=None, verbose=False):
-    creature_data = util.parse_creature_data(key, data)
-    try:
-        assert creature_data
-    except AssertionError:
-        raise Exception("Could not find data for " + key)
+modifier_type_mappings = {
+    'physical_defenses': ['armor_defense', 'maneuver_defense', 'reflex'],
+    'special_defenses': ['fortitude', 'will'],
+    'physical_attacks': ['first_physical_attack_bonus', 'second_physical_attack_bonus', 'third_physical_attack_bonus', 'fourth_physical_attack_bonus', 'extra_physical_attack_bonus'],
+    'physical_damage': ['primary_weapon_damage', 'secondary_weapon_damage'],
+    'weapon_size': ['primary_weapon_size', 'secondary_weapon_size'],
+}
 
-    if level is not None:
-        creature_data[LEVEL] = level
-    return generate_creature_from_raw_stats(creature_data, verbose)
-#TODO: handle creature groups
+valid_modifier_types = set(
+    '''armor_defense
+    maneuver_defense
+    reflex
+    fortitude
+    will
+    hit_points
+    strength
+    dexterity
+    constitution
+    intelligence
+    wisdom
+    charisma
+    base_attack_bonus
+    special_attack_bonus
+    spell_attack_bonus
+    caster_level
+    first_physical_attack_bonus
+    second_physical_attack_bonus
+    third_physical_attack_bonus
+    fourth_physical_attack_bonus
+    extra_physical_attack_bonus
+    primary_weapon_damage
+    secondary_weapon_damage
+    primary_weapon_size
+    secondary_weapon_size
+    extra_attacks
+    physical_damage_reduction
+    initiative
+'''.split())
 
-def generate_creature_from_raw_stats(raw_stats, verbose):
-    if CLASS in raw_stats:
-        return generate_creature_from_class_name(raw_stats[CLASS], raw_stats, verbose)
-    if CREATURE_TYPE in raw_stats:
-        return generate_creature_from_creature_type(raw_stats[CREATURE_TYPE], raw_stats, verbose)
-    raise Exception("Could not generate creature from raw stats")
+def add_base_modifier(key, value, modifiers):
+    if key not in modifiers:
+        modifiers[key] = dict()
+    modifiers[key]['base'] = value
 
-def generate_creature_from_class_name(class_name, raw_stats, verbose):
-    try:
-        creature_class = {
-            'barbarian': Barbarian,
-            'cleric': Cleric,
-            'druid': Druid,
-            'fighter': Fighter,
-            'monk': Monk,
-            'paladin': Paladin,
-            'ranger': Ranger,
-            'rogue': Rogue,
-            'spellwarped': Spellwarped,
-            'sorcerer': Sorcerer,
-            'warrior': Warrior,
-            'wizard': Wizard,
-        }[class_name]
-    except KeyError:
-        raise Exception("Class name " + class_name + " not recognized")
-    return creature_class(raw_stats, verbose)
+def set_progression_modifier(key, value, modifiers):
+    if key not in modifiers:
+        modifiers[key] = dict()
+    modifiers[key]['progression'] = value
 
-def generate_creature_from_creature_type(creature_type, raw_stats, verbose): 
+def get_base_progression_modifiers(
+    level, base_attack_bonus_progression,
+    fortitude_progression, reflex_progression, will_progression,
+    hit_value, natural_armor_progression,
+    strength_progression, dexterity_progression, constitution_progression,
+    intelligence_progression, wisdom_progression, charisma_progression,
+):
     return {
-        ABERRATION: Aberration,
-        ANIMAL: Animal,
-        CONSTRUCT: Construct,
-        FEY: Fey,
-        HUMANOID: Humanoid,
-        IDEAL: IdealCreature,
-        MAGICAL_BEAST: MagicalBeast,
-        MONSTROUS_HUMANOID: MonstrousHumanoid,
-        OOZE: Ooze,
-        OUTSIDER: Outsider,
-        PLANT: Plant,
-        UNDEAD: Undead,
-    }[creature_type](raw_stats, verbose)
+        'base_attack_bonus': get_base_attack_bonus_progression_modifier(
+            base_attack_bonus_progression, level
+        ),
+        'fortitude': get_special_defense_progression_modifier(
+            fortitude_progression, level
+        ),
+        'reflex': get_special_defense_progression_modifier(
+            reflex_progression, level
+        ),
+        'will': get_special_defense_progression_modifier(
+            will_progression, level
+        ),
+        'hit_points': level * int(hit_value),
+        'natural_armor': get_natural_armor_progression(natural_armor_progression, level),
+        'strength': get_attribute_progression(strength_progression, level),
+        'dexterity': get_attribute_progression(dexterity_progression, level),
+        'constitution': get_attribute_progression(constitution_progression, level),
+        'intelligence': get_attribute_progression(intelligence_progression, level),
+        'wisdom': get_attribute_progression(wisdom_progression, level),
+        'charisma': get_attribute_progression(charisma_progression, level),
+    }
+
+def get_base_attack_bonus_progression_modifier(progression_type, level):
+    if progression_type == 'good':
+        return level
+    elif progression_type == 'average':
+        return (level * 3) / 4
+    elif progression_type == 'poor':
+        return level / 2
+    else:
+        raise Exception("Unrecognized progression type {0}".format(progression_type))
+
+def get_special_defense_progression_modifier(progression_type, level):
+    if progression_type == 'good':
+        return level + 2
+    elif progression_type == 'average':
+        return (level * 3) / 4 + 1
+    elif progression_type == 'poor':
+        return level / 2
+    else:
+        raise Exception("Unrecognized progression type {0}".format(progression_type))
+
+def get_natural_armor_progression(progression_type, level):
+    if progression_type == 'good':
+        return level / 2 + 6
+    elif progression_type == 'average':
+        return level / 3 + 4
+    elif progression_type == 'poor':
+        return level / 4 + 2
+    elif progression_type is None:
+        return 0
+    else:
+        raise Exception("Unrecognized progression type {0}".format(progression_type))
+
+def get_attribute_progression(progression_type, level):
+    if progression_type == 'primary':
+        return (level+2) / 4
+    elif progression_type == 'secondary':
+        return level / 4
+    elif progression_type == 'extreme':
+        return (level * 3) / 4 + 4
+    elif progression_type == 'good':
+        return level / 2 + 3
+    elif progression_type == 'average':
+        return level / 3 + 2
+    elif progression_type == 'poor':
+        return level / 4 + 1
+    elif progression_type is None:
+        return 0
+    else:
+        raise Exception("Unrecognized progression type {0}".format(progression_type))
+
+def get_magic_item_modifiers():
+    return {
+        'physical_attacks': lambda c: min(5, c.level/3),
+        'physical_damage': lambda c: min(5, c.level/3),
+        'physical_defenses': lambda c: min(5, c.level/3),
+    }
 
 class Creature(object):
-    def __init__(self, raw_stats, verbose):
-        self.attacks = {
-            ATTACK_BONUS: None,
-            MANEUVER_BONUS: None,
-            DAMAGE: {
-                WEAPON_PRIMARY: None,
-                WEAPON_SECONDARY: None,
-            },
-        }
-        self.attributes = {}
-        for attribute_name in ATTRIBUTE_NAMES:
-            self.attributes[attribute_name] = None
-        self._core = {
-            HIT_POINTS: None,
-            INITIATIVE: None,
-            REACH: None,
-            SIZE: SIZE_MEDIUM,
-            SPACE: None,
-            SPEEDS: {},
-        }
-        self._combat = {
-            CURRENT_HIT_POINTS: 0,
-            CRITICAL_DAMAGE: 0,
-        }
-        self._defenses = {
-            AD: None,
-            MD: None,
-            FORTITUDE: None,
-            REFLEX: None,
-            WILL: None,
-            DR: None,
-        }
-        self._progressions = {
-            BAB: None,
-            FORT: None,
-            REF: None,
-            WILL: None,
-            HIT_VALUE: None,
-            NATURAL_ARMOR: None,
-        }
-        self.meta = {
-            ALIGNMENT: 'Neutral',
-            COMBAT_DESCRIPTION: None,
-            DESCRIPTION: None,
-            LEVEL: 1,
-            NAME: None,
-            USE_MAGIC_BONUSES: False,
-            VERBOSE: verbose,
-        }
-        self.items = {
-            ARMOR: None,
-            SHIELD: None,
-            WEAPON_PRIMARY: None,
-            WEAPON_SECONDARY: None,
-        }
-        self.skills = dict()
+    def __init__(self,
+                 fundamental_progression,
+                 race,
+                 # meta
+                 combat_description = None,
+                 description = None,
+                 level = None,
+                 name = 'Unnamed',
+                 # progressions
+                 base_attack_bonus_progression = None,
+                 fortitude_progression = None,
+                 reflex_progression = None,
+                 will_progression = None,
+                 hit_value = None,
+                 natural_armor_progression = None,
+                 strength_progression = None,
+                 dexterity_progression = None,
+                 constitution_progression = None,
+                 intelligence_progression = None,
+                 wisdom_progression = None,
+                 charisma_progression = None,
+                 # items
+                 primary_weapon = None,
+                 secondary_weapon = None,
+                 armor = None,
+                 shield = None,
+                 # attributes
+                 strength = None,
+                 dexterity = None,
+                 constitution = None,
+                 intelligence = None,
+                 wisdom = None,
+                 charisma = None,
+                 casting_attribute = None,
+                 special_attack_attribute = None,
+                 # core
+                 size = None,
+                 space = None,
+                 reach = None,
+                 speeds = None,
+                 # abilities
+                 abilities = None,
+                 templates = None,
+                 feats = None,
+                 traits = None,
+                 ):
 
-        self.abilities = {
-            ACTIVE: list(),
-            INACTIVE: list(),
-        }
-        self.raw_stats = raw_stats
+        self.fundamental_progression = fundamental_progression
+        self.race = race
 
-        self.update()
+        # base modifiers and progressions
+        self._modifiers = dict()
+        self.set_default_modifiers()
 
-    @property
-    def active_abilities(self):
-        return self.abilities[ACTIVE]
+        self.base_attack_bonus_progression = base_attack_bonus_progression
+        self.fortitude_progression = fortitude_progression
+        self.reflex_progression = reflex_progression
+        self.will_progression = will_progression
+        self.hit_value = hit_value
+        self.natural_armor_progression = natural_armor_progression
+        self.strength_progression = strength_progression
+        self.dexterity_progression = dexterity_progression
+        self.constitution_progression = constitution_progression
+        self.intelligence_progression = intelligence_progression
+        self.wisdom_progression = wisdom_progression
+        self.charisma_progression = charisma_progression
 
-    @active_abilities.setter
-    def active_abilities(self, value):
-        self.abilities[ACTIVE] = value
+        # meta 
+        self.combat_description = combat_description
+        self.description = description
+        self.level = level
+        self.name = name
 
-    @property
-    def inactive_abilities(self):
-        return self.abilities[INACTIVE]
+        # equipment
+        self.primary_weapon = primary_weapon
+        self.secondary_weapon = secondary_weapon
+        self.armor = armor
+        self.shield = shield
 
-    @inactive_abilities.setter
-    def inactive_abilities(self, value):
-        self.abilities[INACTIVE] = value
+        # attributes
+        self.add_modifier('strength', 'points', strength)
+        self.add_modifier('dexterity', 'points', dexterity)
+        self.add_modifier('constitution', 'points', constitution)
+        self.add_modifier('intelligence', 'points', intelligence)
+        self.add_modifier('wisdom', 'points', wisdom)
+        self.add_modifier('charisma', 'points', charisma)
+        self.casting_attribute = casting_attribute
+        self.special_attack_attribute = special_attack_attribute
 
-    @property
-    def attack_bonus(self):
-        return self.attacks[ATTACK_BONUS]
+        # core
+        self.size = size or 'medium'
+        self.space = space
+        self.reach = reach
+        self.speeds = speeds
 
-    @attack_bonus.setter
-    def attack_bonus(self, value):
-        self.attacks[ATTACK_BONUS] = value
+        # abilities
+        self._abilities = dict()
+        for ability_name in get_fundamental_progression_ability_names(fundamental_progression, level):
+            self.add_ability(ability_name)
+        if abilities is not None:
+            for ability in abilities:
+                self.add_ability(ability)
+        if feats is not None:
+            for feat in feats:
+                self.add_ability(feat)
+        if traits is not None:
+            for trait in traits:
+                self.add_ability(trait)
+        if templates is not None:
+            for template in templates:
+                self.add_ability(template)
 
-    @property
-    def maneuver_bonus(self):
-        return self.attacks[MANEUVER_BONUS]
+        # combat stuff
+        self.reset_damage()
+        self.used_physical_damage_reduction = 0
 
-    @maneuver_bonus.setter
-    def maneuver_bonus(self, value):
-        self.attacks[MANEUVER_BONUS] = value
+        # stuff with dependencies
+        self.reset_progression_modifiers()
 
-    @property
-    def primary_weapon_damage(self):
-        return self.attacks[DAMAGE][WEAPON_PRIMARY]
+        #self.abilities = abilities
+        #self.feats = feats
+        #self.templates = templates
+        #self.traits = traits
 
-    @primary_weapon_damage.setter
-    def primary_weapon_damage(self, value):
-        self.attacks[DAMAGE][WEAPON_PRIMARY] = value
+    def set_default_modifiers(self):
+        self.set_modifier('second_physical_attack_bonus', 'base', -5)
+        self.set_modifier('third_physical_attack_bonus', 'base', -10)
+        self.set_modifier('fourth_physical_attack_bonus', 'base', -15)
+        self.set_modifier('fourth_physical_attack_bonus', 'base', -15)
 
-    @property
-    def secondary_weapon_damage(self):
-        return self.attacks[DAMAGE][WEAPON_SECONDARY]
+        self.set_modifier(['physical_defenses', 'special_defenses'], 'base', 10)
 
-    @secondary_weapon_damage.setter
-    def secondary_weapon_damage(self, value):
-        self.attacks[DAMAGE][WEAPON_SECONDARY] = value
+        self.add_modifier('fortitude', 'constitution', lambda c: c.constitution)
+        self.add_modifier('fortitude', 'strength', lambda c: c.strength / 2)
+        self.add_modifier('reflex', 'dexterity', lambda c: c.dexterity)
+        self.add_modifier('reflex', 'wisdom', lambda c: c.wisdom / 2)
+        self.add_modifier('will', 'charisma', lambda c: c.charisma)
+        self.add_modifier('will', 'intelligence', lambda c: c.intelligence / 2)
 
-    @property
-    def strength(self):
-        return self.attributes[STRENGTH]
+        magic_item_modifiers = get_magic_item_modifiers()
+        for modifier_type, value in magic_item_modifiers.items():
+            self.set_modifier(modifier_type, 'enhancement', value)
 
-    @strength.setter
-    def strength(self, value):
-        self.attributes[STRENGTH] = value
+        self.set_modifier('physical_defenses', 'dexterity', lambda c: c.dexterity)
+        self.set_modifier('physical_defenses', 'shield', lambda c: c.shield_bonus)
+        self.set_modifier('armor_defense', 'base attack bonus', lambda c: c.base_attack_bonus/2)
+        self.set_modifier('armor_defense', 'armor', lambda c: c.armor_bonus)
+        self.set_modifier('armor_defense', 'size', lambda c: c.size_modifier)
+        self.set_modifier('maneuver_defense', 'base attack bonus', lambda c: c.base_attack_bonus)
+        self.set_modifier('maneuver_defense', 'strength', lambda c: c.strength)
+        self.set_modifier('maneuver_defense', 'size', lambda c: c.special_size_modifier)
 
-    @property
-    def dexterity(self):
-        return self.attributes[DEXTERITY]
+        self.set_modifier('physical_defenses', 'overwhelm', -2)
 
-    @dexterity.setter
-    def dexterity(self, value):
-        self.attributes[DEXTERITY] = value
+    def add_modifier(self, modifier_types, name, value, is_penalty = False, replace_existing = False):
+        modifier_types = util.ensure_list(modifier_types)
+        for modifier_type in modifier_types:
+            # recurse if handling mapped modifiers
+            if modifier_type in modifier_type_mappings:
+                self.add_modifier(modifier_type_mappings[modifier_type], name, value)
+            else:
+                if modifier_type not in valid_modifier_types:
+                    raise Exception("Can't add invalid modifier type {0}".format(modifier_type))
+                self._modifiers[modifier_type] = self._modifiers.get(modifier_type) or dict()
+                
+                # check to see how to combine multiple modifier types
+                if name in self._modifiers[modifier_type] and not replace_existing:
+                    try:
+                        # if the value is simply a number, we can use max to keep the
+                        # higher value
+                        value = int(value)
+                        if is_penalty:
+                            self._modifiers[modifier_type][name] = min(value, self._modifiers[modifier_type][name])
+                        else:
+                            self._modifiers[modifier_type][name] = max(value, self._modifiers[modifier_type][name])
+                    except TypeError:
+                        # if the value is a function, which is common for abilities,
+                        # it should replace any non-function values
+                        self._modifiers[modifier_type][name] = value
+                else:
+                    self._modifiers[modifier_type][name] = value
 
-    @property
-    def constitution(self):
-        return self.attributes[CONSTITUTION]
+    def set_modifier(self, modifier_types, name, value):
+        self.add_modifier(modifier_types, name, value, replace_existing = True)
 
-    @constitution.setter
-    def constitution(self, value):
-        self.attributes[CONSTITUTION] = value
-
-    @property
-    def intelligence(self):
-        return self.attributes[INTELLIGENCE]
-
-    @intelligence.setter
-    def intelligence(self, value):
-        self.attributes[INTELLIGENCE] = value
-
-    @property
-    def wisdom(self):
-        return self.attributes[WISDOM]
-
-    @wisdom.setter
-    def wisdom(self, value):
-        self.attributes[WISDOM] = value
-
-    @property
-    def charisma(self):
-        return self.attributes[CHARISMA]
-
-    @charisma.setter
-    def charisma(self, value):
-        self.attributes[CHARISMA] = value
-
-    def get_attribute(self, attribute_name):
-        try:
-            return self.attributes[attribute_name]
-        except KeyError:
-            raise Exception("Unrecognized attribute name: " + str(attribute_name))
-
-    @property
-    def space(self):
-        return self._core[SPACE]
-
-    @space.setter
-    def space(self, value):
-        self._core[SPACE] = value
-
-    @property
-    def reach(self):
-        return self._core[REACH]
-
-    @reach.setter
-    def reach(self, value):
-        self._core[REACH] = value
-
-    @property
-    def hit_points(self):
-        return self._core[HIT_POINTS]
-
-    @hit_points.setter
-    def hit_points(self, value):
-        self._core[HIT_POINTS] = value
-
-    @property
-    def current_hit_points(self):
-        return self._combat[CURRENT_HIT_POINTS]
-
-    @current_hit_points.setter
-    def current_hit_points(self, value):
-        self._combat[CURRENT_HIT_POINTS] = value
-
-    @property
-    def critical_damage(self):
-        return self._combat[CRITICAL_DAMAGE]
-
-    @critical_damage.setter
-    def critical_damage(self, value):
-        self._combat[CRITICAL_DAMAGE] = value
-
-    @property
-    def initiative(self):
-        return self._core[INITIATIVE]
-
-    @initiative.setter
-    def initiative(self, value):
-        self._core[INITIATIVE] = value
-
-    @property
-    def size(self):
-        return self._core[SIZE]
-
-    @size.setter
-    def size(self, value):
-        self._core[SIZE] = value
-
-    @property
-    def armor_defense(self):
-        return self._defenses[AD]
-
-    @armor_defense.setter
-    def armor_defense(self, value):
-        self._defenses[AD] = value
-
-    @property
-    def maneuver_defense(self):
-        return self._defenses[MD]
-
-    @maneuver_defense.setter
-    def maneuver_defense(self, value):
-        self._defenses[MD] = value
-
-    @property
-    def damage_reduction(self):
-        return self._defenses[DR]
-
-    @damage_reduction.setter
-    def damage_reduction(self, value):
-        self._defenses[DR] = value
-
-    @property
-    def fortitude(self):
-        return self._defenses[FORTITUDE]
-
-    @fortitude.setter
-    def fortitude(self, value):
-        self._defenses[FORTITUDE] = value
-
-    @property
-    def reflex(self):
-        return self._defenses[REFLEX]
-
-    @reflex.setter
-    def reflex(self, value):
-        self._defenses[REFLEX] = value
-
-    @property
-    def will(self):
-        return self._defenses[WILL]
-
-    @will.setter
-    def will(self, value):
-        self._defenses[WILL] = value
-
-    def get_defense(self, defense_type):
-        if defense_type == 'armor':
-            return self.armor_defense
-        elif defense_type == 'maneuver':
-            return self.maneuver_defense
-        elif defense_type == FORTITUDE:
-            return self.fortitude
-        elif defense_type == REFLEX:
-            return self.reflex
-        elif defense_type == WILL:
-            return self.will
+    def get_modifiers(self, modifier_type, as_dict = False):
+        if modifier_type not in valid_modifier_types:
+            raise Exception("Can't get invalid modifier type {0}".format(modifier_type))
+        modifier = 0
+        relevant_modifiers = self._modifiers.get(modifier_type, {})
+        if as_dict:
+            dict_of_stuff = dict()
+            for name in relevant_modifiers:
+                try:
+                    dict_of_stuff[name] = int(relevant_modifiers[name])
+                except TypeError:
+                    dict_of_stuff[name] = relevant_modifiers[name](self)
+            return dict_of_stuff
         else:
-            raise Exception("Unrecognized defense type: " + defense_type)
+            for name in relevant_modifiers:
+                try:
+                    modifier += relevant_modifiers[name]
+                except TypeError:
+                    modifier += relevant_modifiers[name](self)
+            return modifier
 
-    def get_size_modifier(self, is_special_size_modifier = False):
-        return util.get_size_modifier(self.size, is_special_size_modifier)
+    def add_ability(self, ability_name):
+        # make sure "ability" is actually the Ability object
+        ability = get_ability_by_name(ability_name)
+        self._abilities[ability_name] = ability
+        for modifier in ability.get('modifiers', []):
+            self.add_modifier(
+                modifier.get('modifier_type') or modifier.get('modifier_types'),
+                modifier.get('modifier_name') or ability_name,
+                modifier['value'],
+            )
+        for function in ability.get('functions', []):
+            function(self)
 
-    def get_special_size_modifier(self):
-        return self.get_size_modifier(is_special_size_modifier = True)
+    def get_ability(self, ability_name):
+        return self._abilities.get(ability_name)
 
-    @property
-    def speeds(self):
-        return self._core[SPEEDS]
-
-    @speeds.setter
-    def speeds(self, value):
-        self._core[SPEEDS] = value
-
-    @property
-    def land_speed(self):
-        return self._core[SPEEDS][LAND_SPEED]
-
-    @land_speed.setter
-    def land_speed(self, value):
-        self._core[SPEEDS][LAND_SPEED] = value
-
-    @property
-    def speed_modes(self):
-        return self._core[SPEEDS].keys()
-
-    def get_speed(self, speed_mode):
-        try:
-            return self._core[SPEEDS][speed_mode]
-        except KeyError:
-            raise Exception("Unrecognized speed mode " + speed_mode)
-
-    def set_speed(self, speed_mode, speed_value):
-        try:
-            self._core[SPEEDS][speed_mode] = speed_value
-        except KeyError:
-            raise Exception("Unrecognized speed mode " + speed_mode)
-
-    def modify_speed(self, speed_mode, speed_modifier):
-        try:
-            self._core[SPEEDS][speed_mode] += speed_modifier
-        except KeyError:
-            raise Exception("Unrecognized speed mode " + speed_mode)
+    def get_ability_names_by_tag(self, tag):
+        ability_names = list()
+        for ability in self.abilities:
+            if ability.has_tag(tag):
+                ability_names.append(ability)
+        return ability_names
 
     @property
-    def armor(self):
-        return self.items[ARMOR]
-
-    @armor.setter
-    def armor(self, value):
-        self.items[ARMOR] = value
+    def abilities(self):
+        return self._abilities
 
     @property
-    def primary_weapon(self):
-        return self.items[WEAPON_PRIMARY]
-
-    @primary_weapon.setter
-    def primary_weapon(self, value):
-        self.items[WEAPON_PRIMARY] = value
+    def ability_names(self):
+        return [self.get_ability(name).get('text') or name for name in self._abilities.keys()]
 
     @property
-    def secondary_weapon(self):
-        return self.items[WEAPON_SECONDARY]
-
-    @secondary_weapon.setter
-    def secondary_weapon(self, value):
-        self.items[WEAPON_SECONDARY] = value
+    def feat_names(self):
+        return self.get_ability_names_by_tag('feat')
 
     @property
-    def weapons(self):
-        return [self.primary_weapon, self.secondary_weapon]
-
-    @property
-    def shield(self):
-        return self.items[SHIELD]
-
-    @shield.setter
-    def shield(self, value):
-        self.items[SHIELD] = value
-
-    @property
-    def alignment(self):
-        return self.meta[ALIGNMENT]
-
-    @alignment.setter
-    def alignment(self, value):
-        self.meta[ALIGNMENT] = value
-
-    @property
-    def class_progression(self):
-        return self.meta[CLASS_PROGRESSION]
-
-    @class_progression.setter
-    def class_progression(self, value):
-        self.meta[CLASS_PROGRESSION] = value
-
-    @property
-    def combat_description(self):
-        return self.meta[COMBAT_DESCRIPTION]
-
-    @combat_description.setter
-    def combat_description(self, value):
-        self.meta[COMBAT_DESCRIPTION] = value
-
-    @property
-    def description(self):
-        return self.meta[DESCRIPTION]
-
-    @description.setter
-    def description(self, value):
-        self.meta[DESCRIPTION] = value
+    def trait_names(self):
+        return self.get_ability_names_by_tag('trait')
 
     @property
     def level(self):
-        return self.meta[LEVEL]
+        return self._level
 
+    # when we change level, all the default progressions change
     @level.setter
     def level(self, value):
-        self.meta[LEVEL] = value
+        self._level = value
+        self.reset_progression_modifiers()
 
     @property
-    def name(self):
-        return self.meta[NAME]
+    def caster_level(self):
+        return self.get_modifiers('caster_level') + self.level
 
-    @name.setter
-    def name(self, value):
-        self.meta[NAME] = value
-
-    def get_progression(self, progression_type):
-        try:
-            return self._progressions[progression_type]
-        except KeyError:
-            raise Exception("Unrecognized progression type " + progression_type)
-
-    def set_progression(self, progression_type, value):
-        if progression_type not in (BAB, FORT, REF, WILL, HIT_VALUE, NATURAL_ARMOR):
-            raise Exception("Invalid progression type: " + str(progession_type))
-        self._progressions[progression_type] = value
+    def reset_progression_modifiers(self):
+        base_progression_modifiers = get_base_progression_modifiers(
+            self.level, self.base_attack_bonus_progression, self.fortitude_progression,
+            self.reflex_progression, self.will_progression, self.hit_value, self.natural_armor_progression,
+            self.strength_progression, self.dexterity_progression, self.constitution_progression,
+            self.intelligence_progression, self.wisdom_progression, self.charisma_progression,
+        )
+        for progression_type, value in base_progression_modifiers.items():
+            # natural armor is just a particular name of a bonus to armor_defense
+            if progression_type == 'natural_armor':
+                self.set_modifier('armor_defense', progression_type, value)
+            else:
+                self.set_modifier(progression_type, 'progression', value)
 
     @property
-    def bab(self):
-        return self._progressions[BAB]
+    def hit_points(self):
+        return self.get_modifiers('hit_points') + ((self.constitution / 2) * self.level)
+
+    @property
+    def current_hit_points(self):
+        return self.hit_points - self.damage
+
+    def reset_damage(self):
+        self.damage = 0
+        self.critical_damage = 0
+
+    @property
+    def is_active(self):
+        return self.current_hit_points > 0
 
     @property
     def base_attack_bonus(self):
-        return self._progressions[BAB]
+        return self.get_modifiers('base_attack_bonus')
 
     @property
-    def hit_value(self):
-        return self._progressions[HIT_VALUE]
+    def attacks_per_round(self):
+        return sum([
+            1,
+            max(0, (self.base_attack_bonus - 1) / 5),
+            self.get_modifiers('extra_attacks')
+        ])
 
-    @hit_value.setter
-    def hit_value(self, value):
-        self._progressions[HIT_VALUE] = value
+    @property
+    def special_attack_bonus(self):
+        return sum([
+            self.get_modifiers('special_attack_bonus'),
+            self.level,
+            self.special_attack_attribute,
+        ])
 
-    @name.setter
-    def name(self, value):
-        self.meta[NAME] = value
+    @property
+    def spell_attack_bonus(self):
+        return sum([
+            self.get_modifiers('spell_attack_bonus'),
+            self.caster_level / 2,
+            self.casting_attribute,
+        ])
 
-    def update(self):
-        self.reset_objects()
-        self.interpret_raw_stats()
-        self.apply_class_progression()
-        self.calculate_derived_statistics()
-        self.reset_combat()
+    @property
+    def attack_bonus(self):
+        return self.get_physical_attack_bonus('first')
 
-    #a more minimalistic update for combat purposes
-    def reset_combat(self):
-        self.current_hit_points = self.hit_points.get_total()
-        self.critical_damage = 0
-        for attribute in self.attributes:
-            self.attributes[attribute].reset_damage()
+    def get_physical_attack_bonus(self, attack_number):
+        return sum([
+            self.base_attack_bonus,
+            self.attack_attribute,
+            self.get_modifiers(attack_number + '_physical_attack_bonus'),
+            self.size_modifier,
+        ])
 
-    def reset_objects(self):
-        self.attack_bonus = util.AttackBonus()
-        self.maneuver_bonus = util.ManeuverBonus()
-        self.primary_weapon_damage = util.Modifier()
-        self.secondary_weapon_damage = util.Modifier()
-        for attribute_name in ATTRIBUTES:
-            self.attributes[attribute_name] = util.Attribute()
-        self.armor_defense = util.ArmorDefense()
-        self.maneuver_defense = util.Modifier()
-        self.fortitude = util.SpecialDefense()
-        self.reflex = util.SpecialDefense()
-        self.will = util.SpecialDefense()
-        self.damage_reduction = util.DamageReduction()
-        self.hit_points = util.Modifier()
-        self.initiative = util.Modifier()
-        self.active_abilities = list()
-        self.inactive_abilities = list()
+    @property
+    def physical_attack_progression(self):
+        attack_bonuses = list()
+        attacks_from_bab = 1 + max(0, (self.base_attack_bonus - 1) / 5)  
+        attack_bonuses.append(self.get_physical_attack_bonus('first'))
+        if attacks_from_bab > 1:
+            attack_bonuses.append(self.get_physical_attack_bonus('second'))
+        if attacks_from_bab > 2:
+            third = attack_bonuses.append(self.get_physical_attack_bonus('third'))
+        if attacks_from_bab > 3:
+            fourth = attack_bonuses.append(self.get_physical_attack_bonus('fourth'))
+        for i in xrange(self.get_modifiers('extra_attacks')):
+            attack_bonuses.append(self.get_physical_attack_bonus('extra'))
+        return attack_bonuses
 
-    def interpret_raw_stats(self):
-        raw_stats = self.raw_stats
-        #set meta
-        if LEVEL in raw_stats.keys():
-            self.level = int(raw_stats['level'])
-        if 'alignment' in raw_stats.keys():
-            self.alignment = raw_stats['alignment']
-        self.name = raw_stats['name']
-        if DESCRIPTION in raw_stats.keys():
-            self.description = raw_stats[DESCRIPTION]
-        if COMBAT_DESCRIPTION in raw_stats.keys():
-            self.combat_description = raw_stats[COMBAT_DESCRIPTION]
-
-        #Add all the abilities to the character
-        for ability_type in ABILITY_TYPE_GROUPS:
-            if raw_stats.get(ability_type):
-                for ability_name in raw_stats.get(ability_type):
-                    self.add_ability(ability_name)
-
-        #set core
-        if SIZE in raw_stats.keys():
-            self.size = raw_stats['size']
+    @property
+    def attack_attribute(self):
+        if self.primary_weapon is None or self.primary_weapon.encumbrance == 'light':
+            return max(self.strength, self.dexterity)
+        elif self.primary_weapon.encumbrance in ('medium', 'heavy'):
+            return self.strength
         else:
-            self.size = SIZE_MEDIUM
-        self.space, self.reach, self.land_speed = \
-            util.get_size_statistics(self.size)
-        #If the creature lists its speeds explicitly, use those instead
-        if SPEEDS in raw_stats:
-            for speed_mode in raw_stats[SPEEDS]:
-                self.speeds[speed_mode] = raw_stats[SPEEDS][speed_mode]
-        if 'speed' in raw_stats:
-            self.speeds['land'] = raw_stats['speed']
+            raise Exception("Unable to identify attack attribute")
 
-        #set items
-        equipment_set = equipment.EquipmentSet.from_raw_stats(
-            raw_stats)
-        self.primary_weapon = equipment_set.weapon
+    @property
+    def primary_weapon_damage_bonus(self):
+        if self.primary_weapon is None:
+            return None
+        return self.get_modifiers('primary_weapon_damage') + self.strength / 2
+
+    @property
+    def primary_weapon_damage_die(self):
+        if self.primary_weapon is None:
+            return None
+        return self.primary_weapon.damage_die + self.get_modifiers('primary_weapon_size')
+
+    @property
+    def secondary_weapon_damage_bonus(self):
+        if self.secondary_weapon is None:
+            return None
+        return self.get_modifiers('secondary_weapon_damage') + self.strength / 2
+
+    @property
+    def secondary_weapon_damage_die(self):
+        if self.secondary_weapon is None:
+            return None
+        return self.secondary_weapon.damage_die + self.get_modifiers('secondary_weapon_size')
+
+    @property
+    def physical_attack_damage(self):
         if self.primary_weapon is not None:
-            self.primary_weapon.set_size(self.size)
-        self.secondary_weapon = equipment_set.offhand_weapon
+            primary_damage = self.primary_weapon_damage_die.roll() + self.primary_weapon_damage_bonus
+        else:
+            primary_damage = 0
         if self.secondary_weapon is not None:
-            self.secondary_weapon.set_size(self.size)
-        # +1 damage bonus when using a weapon in two hands
-        # for simplicity, assume only applies with heavy weapons here
-        if (self.primary_weapon.encumbrance == ENCUMBRANCE_HEAVY
-                and self.secondary_weapon is None):
-            self.primary_weapon_damage.add_bonus(1, 'two hands')
-        # if dual wielding, -1 per non-light weapon
-        if self.primary_weapon is not None and self.secondary_weapon is not None:
-            two_weapon_fighting_penalty = 0
-            if self.primary_weapon.encumbrance != ENCUMBRANCE_LIGHT:
-                two_weapon_fighting_penalty += 1
-            if self.secondary_weapon.encumbrance != ENCUMBRANCE_LIGHT:
-                two_weapon_fighting_penalty += 1
-            if two_weapon_fighting_penalty:
-                self.attack_bonus.add_bonus(-two_weapon_fighting_penalty, 'two weapon fighting penalty')
-        self.armor = equipment_set.armor
-        self.shield = equipment_set.shield
+            secondary_damage = self.secondary_weapon_damage_die.roll() + self.secondary_weapon_damage_bonus
+        else:
+            secondary_damage = 0
+        return max(primary_damage, secondary_damage)
 
-        #Add attributes
-        for attribute_name in ATTRIBUTE_NAMES:
-            #use try/except to allow missing attributes
-            try:
-                self.parse_attribute(attribute_name,
-                                     raw_stats[attribute_name])
-            except KeyError:
-                self.print_verb('missing attribute: '+attribute_name)
-        if 'primary' in raw_stats:
-            self.get_attribute(raw_stats['primary']).set_progression('primary')
-        if 'secondary' in raw_stats:
-            self.get_attribute(raw_stats['secondary']).set_progression('secondary')
+    @property
+    def encumbrance(self):
+        if self.armor is None:
+            return None
+        else:
+            return self.armor.encumbrance
 
-        self.apply_inactive_abilities()
+    @property
+    def armor_bonus(self):
+        if self.armor is None:
+            return 0
+        else:
+            return self.armor.ac_bonus
 
-    #parse an attribute from raw_stats
-    def parse_attribute(self, attribute_name, raw_attribute):
-        attribute = self.get_attribute(attribute_name)
-        # sometimes attributes are raw numbers (usually for classes)
-        try:
-            attribute.add_bonus(int(raw_attribute), BASE)
-        # otherwise attributes are progressions (usually for monsters)
-        except ValueError:
-            attribute.set_progression(raw_attribute)
-        attribute.set_level(self.level)
+    @property
+    def shield_bonus(self):
+        if self.shield is None:
+            return 0
+        else:
+            return self.shield.ac_bonus
 
-    def apply_inactive_abilities(self):
-        #track abilities to remove from inactive_abilities
-        #since we can't modify the list while iterating over it
-        abilities_to_remove = list()
-        for ability in self.inactive_abilities:
-            if ability.apply_benefit(self):
-                self.active_abilities.append(ability)
-                abilities_to_remove.append(ability)
-            else:
-                self.print_verb('Could not apply ability: ' + str(ability))
-        for ability in abilities_to_remove:
-            self.inactive_abilities.remove(ability)
+    @property
+    def armor_defense(self):
+        return self.get_modifiers('armor_defense')
 
-    def apply_class_progression(self):
-        self.create_progressions()
-        self.apply_inactive_abilities()
-        self.attack_bonus.set_progression(
-            self.get_progression(BAB))
-        for defense_name in SPECIAL_DEFENSE_NAMES:
-            self.get_defense(defense_name).set_progression(
-                self.get_progression(defense_name))
-        if NATURAL_ARMOR in self._progressions:
-            self.armor_defense.set_progression(
-                self.get_progression(NATURAL_ARMOR))
-        self.apply_class_modifications()
+    @property
+    def maneuver_defense(self):
+        return self.get_modifiers('maneuver_defense')
 
-    #This must be overridden
-    def create_progressions(self):
-        raise Exception("No class progression available!");
+    @property
+    def fortitude(self):
+        return self.get_modifiers('fortitude')
 
-    #This can optionally be overridden
-    def apply_class_modifications(self):
-        pass
+    @property
+    def reflex(self):
+        return self.get_modifiers('reflex')
 
-    def add_ability(self, ability, check_prerequisites = False, by_object = False):
-        #abilities are normally added by name, but they can be added as an object instead
-        if not by_object:
-            ability = get_ability_by_name(ability)
-        if check_prerequisites and not self.meets_prerequisites(ability):
-            self.print_verb('Ability prerequisites not met')
-            return False
-        self.inactive_abilities.append(ability)
-        return True
+    @property
+    def will(self):
+        return self.get_modifiers('will')
 
-    def add_abilities(self, abilities, check_prerequisites = False, by_object = False):
-        for ability in abilities:
-            self.add_ability(ability, check_prerequisites, by_object)
+    @property
+    def attributes(self):
+        return [
+            self.strength,
+            self.dexterity,
+            self.constitution,
+            self.intelligence,
+            self.wisdom,
+            self.charisma
+        ]
 
-    def add_special_defense(self, special_defense):
-        self.special_defenses.append(special_defense)
+    @property
+    def strength(self):
+        return self.get_modifiers('strength')
 
-    def meets_prerequisites(self, ability):
-        #TODO: make less confusing
-        return ability.meets_prerequisites(self)
+    @property
+    def dexterity(self):
+        base_dexterity = self.get_modifiers('dexterity')
+        if self.encumbrance in ('medium', 'heavy'):
+            return base_dexterity / 2
+        else:
+            return base_dexterity
 
-    def calculate_derived_statistics(self):
-        self.attack_bonus.set_level(self.level)
-        self.maneuver_bonus.set_level(self.level)
-        for special_defense in SPECIAL_DEFENSE_NAMES:
-            self.get_defense(special_defense).set_level(self.level)
-            self.get_defense(special_defense).add_bonus(10, BASE)
-        self.maneuver_defense.add_bonus(10, BASE)
-        self.armor_defense.add_bonus(10, BASE)
-        self.armor_defense.set_level(self.level)
+    @property
+    def constitution(self):
+        return self.get_modifiers('constitution')
 
-        self.apply_inactive_abilities()
+    @property
+    def intelligence(self):
+        return self.get_modifiers('intelligence')
 
-        dexterity_to_ac = self.dexterity.get_total()
-        if self.armor is not None:
-            self.armor_defense.add_bonus(self.armor.ac_bonus, ARMOR)
-            if self.armor.encumbrance=='medium' or self.armor.encumbrance=='heavy':
-                dexterity_to_ac /=2
-        self.armor_defense.add_bonus(dexterity_to_ac, DEX)
-        self.maneuver_defense.add_bonus(dexterity_to_ac, DEX)
+    @property
+    def wisdom(self):
+        return self.get_modifiers('wisdom')
 
-        if self.shield is not None:
-            self.armor_defense.add_bonus(self.shield.ac_bonus, SHIELD)
-            self.maneuver_defense.add_bonus(self.shield.ac_bonus, SHIELD)
+    @property
+    def charisma(self):
+        return self.get_modifiers('charisma')
 
-        self.calculate_attack_attribute_bonus()
-        self.maneuver_bonus.set_attributes(self.strength,
-                                           self.dexterity)
+    @property
+    def casting_attribute(self):
+        if self._casting_attribute_name is None:
+            return None
+        else:
+            return getattr(self, self._casting_attribute_name)
 
-        #apply size modifiers
-        size_modifier = self.get_size_modifier()
-        special_size_modifier = self.get_special_size_modifier()
-        self.attack_bonus.add_bonus(size_modifier, SIZE)
-        self.maneuver_bonus.add_bonus(special_size_modifier, SIZE)
-        self.armor_defense.add_bonus(size_modifier, SIZE)
-        #stealth will be adjusted here once skills are implemented
+    @casting_attribute.setter
+    def casting_attribute(self, value):
+        self._casting_attribute_name = value
 
-        #set damage for each weapon
+    @property
+    def special_attack_attribute(self):
+        if self._special_attack_attribute_name is None:
+            return None
+        else:
+            return getattr(self, self._special_attack_attribute_name)
+
+    @special_attack_attribute.setter
+    def special_attack_attribute(self, value):
+        self._special_attack_attribute_name = value
+
+    @property
+    def size(self):
+        return self._size
+
+    @size.setter
+    def size(self, value):
+        self._size = value
         if self.primary_weapon is not None:
-            self.primary_weapon_damage.set_die(self.primary_weapon.damage_die)
+            self.primary_weapon.set_size(value)
         if self.secondary_weapon is not None:
-            self.secondary_weapon_damage.set_die(self.secondary_weapon.damage_die)
-        # add strength to damage
-        self.primary_weapon_damage.add_bonus(
-            self.strength.get_total()/2, STR)
-        self.secondary_weapon_damage.add_bonus(
-            self.strength.get_total()/2, STR)
+            self.secondary_weapon.set_size(value)
 
-        self.add_save_attributes()
+    @property
+    def size_modifier(self):
+        return {
+            'fine': 8,
+            'diminuitive': 4,
+            'tiny': 2,
+            'small': 1,
+            'medium': 0,
+            'large': -1,
+            'huge': -2,
+            'gargantuan': -4,
+            'colossal': -8,
+        }[self.size]
 
-        self.armor_defense.add_bonus(
-            util.ifloor(self.attack_bonus.base_attack_bonus/2), BAB)
+    @property
+    def special_size_modifier(self):
+        return {
+            'fine': -16,
+            'diminuitive': -12,
+            'tiny': -8,
+            'small': -4,
+            'medium': 0,
+            'large': 4,
+            'huge': 8,
+            'gargantuan': 12,
+            'colossal': 16,
+        }[self.size]
 
-        self.maneuver_defense.add_bonus(self.attack_bonus.base_attack_bonus, BAB)
-        self.maneuver_defense.add_bonus(self.strength.get_total(), STR)
-
-        self.initiative.add_bonus(self.dexterity.get_total(), DEX)
-        self.initiative.add_bonus(self.wisdom.get_total()/2, WIS)
-
-        self.apply_inactive_abilities()
-
-        self.hit_points.add_bonus(self.hit_value * self.level,
-                                  'hit value')
-        self.hit_points.add_bonus((self.constitution.get_total()/2) * 
-                                  self.level, 'con')
-
-    def calculate_attack_attribute_bonus(self):
-        #we are assuming offhand weapon is no heavier than main weapon
-        if self.primary_weapon.encumbrance =='light' and self.dexterity.get_total() >= self.strength.get_total():
-            self.attack_bonus.add_bonus(
-                self.dexterity.get_total(), DEX)
+    @property
+    def space(self):
+        if self._space is None:
+            return util.default_space(self.size)
         else:
-            self.attack_bonus.add_bonus(
-                self.strength.get_total(), STR)
+            return self._space
 
-    def add_save_attributes(self):
-        self.fortitude.add_bonus(
-            self.constitution.get_total(), CON)
-        self.fortitude.add_bonus(util.ifloor(
-            self.strength.get_total()/2), STR)
-        self.reflex.add_bonus(
-            self.dexterity.get_total(), DEX)
-        self.reflex.add_bonus(util.ifloor(
-            self.wisdom.get_total()/2), WIS)
-        self.will.add_bonus(
-            self.charisma.get_total(), CHA)
-        self.will.add_bonus(util.ifloor(
-            self.intelligence.get_total()/2), INT)
+    @space.setter
+    def space(self, value):
+        self._space = value
 
-    def improve_progression(self, progression):
-        self.change_progression(progression, 1)
-
-    def reduce_progression(self, progression):
-        self.change_progression(progression, -1)
-
-    def change_progression(self, progression_name, steps_to_change, allow_extreme = False):
-        #make sure we're not altering a non-existent progression
-        #(though natural armor is allowed to be None, since it is often unset)
-        if self._progressions[progression_name] is None and not progression_name == NATURAL_ARMOR:
-            raise Exception("progression "+progression_name+" does not exist, so it can't be altered")
-
-        #HIT_VALUE works differently from other progressions
-        if progression_name == HIT_VALUE:
-            self._progressions[progression_name] = util.change_hit_value(self._progressions[progression_name], steps_to_change, allow_extreme)
+    @property
+    def reach(self):
+        if self._reach is None:
+            return util.default_reach(self.size)
         else:
-            self._progressions[progression_name] = util.change_progression(self._progressions[progression_name], steps_to_change, allow_extreme)
+            return self._reach
 
-    @classmethod
-    def from_creature_name(cls, creature_name, level, verbose=False):
-        try:
-            creature_filename = 'data/'+creature_name+'.txt'
-            creature_file = open(creature_filename, 'r')
-        except IOError:
-            creature_filename = 'data/monsters/'+creature_name+'.txt'
-            creature_file = open(creature_filename, 'r')
+    @reach.setter
+    def reach(self, value):
+        self._reach = value
 
-        raw_stats = util.parse_stats_from_file(creature_file)
-        #If the creature is part of a creature group, add the stats for the
-        #creature group to the stats for the creature
-        #but allow the specific creature to take precedence
-        if 'group' in raw_stats.keys():
-            group_file = open('data/monsters/%s.txt' % (''.join(raw_stats['group'])))
-            group_raw_stats = util.parse_stats_from_file(group_file)
-            for key in group_raw_stats.keys():
-                if key not in raw_stats.keys():
-                    raw_stats[key] = group_raw_stats[key]
-        return cls(raw_stats, level, verbose)
+    @property
+    def speeds(self):
+        if self._speeds is None:
+            return {
+                'land': util.default_land_speed(self.size)
+            }
+        else:
+            return self._speeds
 
-    def print_verb(self, message):
-        if self.meta[VERBOSE]:
-            print message
+    @speeds.setter
+    def speeds(self, value):
+        self._speeds = value
+
+    @property
+    def has_special_attacks(self):
+        return self.special_attack_attribute is not None
+
+    @property
+    def has_spells(self):
+        return self.casting_attribute is not None
+
+    @property
+    def initiative(self):
+        return self.get_modifiers('initiative')
+
+    @property
+    def physical_damage_reduction(self):
+        return self.get_modifiers('physical_damage_reduction')
+
+    def apply_damage_reduction(self, damage, damage_type):
+        if damage_type == 'physical':
+            reduction_amount = min(damage, self.physical_damage_reduction - self.used_physical_damage_reduction)
+            damage -= reduction_amount
+            self.used_physical_damage_reduction += reduction_amount
+        return damage
+
+    # define actions the creature can take
+
+    @property
+    def attack_mode(self):
+        return 'physical'
+
+    def attack(self, creature):
+        if self.attack_mode == 'physical':
+            attack_type = 'physical'
+            for attack_bonus in self.physical_attack_progression:
+                attack_result = d20.roll() + attack_bonus
+                if creature.is_hit(attack_result, attack_type):
+                    creature.take_damage(self.physical_attack_damage, attack_type)
+        else:
+            raise Exception("Creature {0} does not have attack mode {1}".format(self.name, self.attack_mode))
+                    
+    def is_hit(self, attack_result, attack_type):
+        return attack_result >= self.get_defense_against_attack(attack_type)
+
+    def get_defense_against_attack(self, attack_type):
+        if attack_type == 'physical':
+            return self.armor_defense
+        elif attack_type == 'maneuver':
+            return self.maneuver_defense
+        else:
+            raise Exception("Creature {0} does not have defense against attack type {1}".format(self.name, attack_type))
+
+    def take_damage(self, damage, damage_type):
+        damage = self.apply_damage_reduction(damage, damage_type)
+        self.damage += damage
+
+    # some effects trigger or reset at the end of a round
+    def end_round(self):
+        self.used_physical_damage_reduction = 0
 
     def __str__(self):
-        full_string = '%s %s' % (self.meta[NAME],
-                                 str(self.level))
-        full_string += '\n'+ self._to_string_defenses() 
-        full_string += '\n' + self._to_string_attacks() 
-        full_string += '\n' + self._to_string_attributes()
-        full_string += '\n' + self._to_string_core()
-        return full_string
+        return '{0} {1}\n{2}\n{3}\n{4}\n{5}\n{6}'.format(
+            self.name,
+            self.level,
+            self._to_string_defenses(),
+            self._to_string_attacks(),
+            self._to_string_attributes(),
+            self._to_string_core(),
+            self._to_string_abilities(),
+        )
 
     def _to_string_defenses(self):
-        defenses = "[HP] {0}; [Defs] AD {1}, MD {2}; Fort {3}, Ref {4}, Will {5}".format(
-            self.hit_points.get_total(),
-            self.armor_defense.get_total(),
-            self.maneuver_defense.get_total(),
-            self.fortitude.get_total(),
-            self.reflex.get_total(),
-            self.will.get_total(),
+        text = "[HP] {0}; [Defs] AD {1}, MD {2}; Fort {3}, Ref {4}, Will {5}".format(
+            self.hit_points,
+            self.armor_defense,
+            self.maneuver_defense,
+            self.fortitude,
+            self.reflex,
+            self.will,
         )
-        return defenses
+        # special defensive abilities
+        if self.physical_damage_reduction is not 0:
+            text += '\n    [DR] {0}'.format(
+                self.physical_damage_reduction
+            )
+        return text
 
     def _to_string_attacks(self):
-        damage = '0'
-        attacks = '[Atk] {0}: {1}'.format(
-            self.get_physical_attack_bonus_progression(as_string = True),
-            self._to_string_weapon_damage())
-        return attacks
+        attack_progression = ', '.join([util.mstr(x) for x in self.physical_attack_progression])
+        text = '[Atk] {0}: {1}'.format(
+            attack_progression,
+            self._to_string_weapon_damage()
+        )
+        if self.has_special_attacks:
+            text += "\n    Special: {0}".format(util.mstr(self.special_attack_bonus))
+        if self.has_spells:
+            text += "\n    Spells: {0}".format(util.mstr(self.spell_attack_bonus))
+        return text
 
     def _to_string_weapon_damage(self):
-        damage_text = ''
+        text = ''
         if self.primary_weapon:
-            die = self.primary_weapon_damage.die
-            damage_text = str(die)
-
-            bonus = self.primary_weapon_damage.get_total(ignore_die=True)
-            if bonus:
-                damage_text += util.mstr(bonus)
+            text += '{0}{1}'.format(
+                self.primary_weapon_damage_die,
+                util.mstr(self.primary_weapon_damage_bonus) or '+0'
+            )
         if self.secondary_weapon:
-            die = str(self.secondary_weapon_damage.die)
-            damage_text += '/' + str(die)
-
-            bonus = self.secondary_weapon_damage.get_total(ignore_die=True)
-            if bonus:
-                damage_text += util.mstr(bonus)
-        return damage_text        
+            text += '/{0}{1}'.format(
+                self.primary_weapon_damage_die,
+                util.mstr(self.primary_weapon_damage_bonus) or '+0'
+            )
+        return text
 
     def _to_string_attributes(self):
-        attributes = '[Attr]'
-        for attribute_name in ATTRIBUTE_NAMES:
-            attributes += ' ' + str(self.attributes[attribute_name].get_total())
-        return attributes
+        text = '[Attr]'
+        for attribute in self.attributes:
+            text += ' ' + str(attribute)
+        return text
 
     def _to_string_core(self):
-        core = '[Space] {0}, [Reach] {1}, [Speed] {2}'.format(
+        return '[Space] {0}, [Reach] {1}, [Speed] {2}'.format(
             self.space,
             self.reach,
             self._to_string_speeds()
         )
-        return core
 
     def _to_string_speeds(self):
-        speeds = ['%s %s' % (s, self.speeds[s]) for s in self.speeds
+        if self.speeds is None:
+            return ''
+        speed_list = ['%s %s' % (s, self.speeds[s]) for s in self.speeds
                   if self.speeds[s]]
-        return ', '.join(speeds)
+        return ', '.join(speed_list)
 
-    def get_text_of_abilities_by_tag(self, tag, prefix = None, joiner = ', ',
-                                     suffix = None):
-        text = ''
-        abilities_with_tag = self.get_abilities_by_tag(tag)
-        if abilities_with_tag:
-            if prefix is not None: text += prefix
-            text += joiner.join([ability.get_text(self)
-                                 for ability in abilities_with_tag])
-            if suffix is not None: text += suffix
+    def _to_string_abilities(self):
+        text = '[Abil] ' + ', '.join([name.title() for name in sorted(self.ability_names)])
         return text
 
-    #Get abilities either with or without a given tag
-    def get_abilities_by_tag(self, tag, with_tag = True, include_inactive = False):
-        valid_abilities = self.abilities['active']
-        if include_inactive:
-            valid_abilities += self.abilities['inactive']
-        if with_tag:
-            return filter(lambda a: a.has_tag(tag), valid_abilities)
-        else:
-            return filter(lambda a: not a.has_tag(tag), valid_abilities)
+    @classmethod
+    def from_raw_stats(cls, raw_stats, creature_key, stats_override = None):
+        if stats_override is not None:
+            raw_stats.update(stats_override)
 
-    def new_round(self):
-        self.damage_reduction.refresh()
-
-    def is_alive(self):
-        if self.critical_damage > self.constitution.get_total():
-            return False
-        for attribute in ATTRIBUTES:
-            if self.attributes[attribute].get_total() <= -10:
-                return False
-        return True
-
-    def attack(self, enemy):
-        defense_type = self.primary_weapon.defense_type
-        return self.standard_physical_attack(enemy, defense_type)
-
-    def magic_attack(self, enemy):
-        #Use highest-level, no optimization, no save spell
-        damage_die = dice.Dice.from_string('{0}d10'.format(max(1,self.level/2)))
-        damage_dealt = damage_die.roll()
-        enemy.take_damage(damage_dealt, ['spell'])
-        return damage_dealt
-
-    #make a standard attack against a foe
-    def standard_physical_attack(self, enemy, defense_type, deal_damage = True):
-        damage_dealt_total = 0
-        hit_count = 0
-        for attack_bonus in self.get_physical_attack_bonus_progression():
-            is_hit, damage_dealt = self.single_attack(enemy, attack_bonus, defense_type, deal_damage)
-            if is_hit:
-                hit_count += 1
-            if damage_dealt:
-                damage_dealt_total += damage_dealt
-        return hit_count, damage_dealt
-
-    #get a list containing the attack bonuses used in a standard physical attack progression
-    def get_physical_attack_bonus_progression(self, as_string = False):
-        attack_bonuses = list()
-        for i in xrange(util.attack_count(self.attack_bonus.base_attack_bonus)):
-            attack_bonuses.append(self.attack_bonus.get_total()-5*i)
-        if as_string:
-            return ', '.join([util.mstr(x) for x in attack_bonuses])
-        else:
-            return attack_bonuses
-
-    #make a single physical attack using the given attack bonus against the enemy
-    #usually the attack bonus is generated by get_physical_attack_bonus_progression
-    def single_attack(self, enemy, attack_bonus = None, defense_type = None, deal_damage = True):
-        #allow "enemy" to be either a Creature or a simple numerical target
+        creature_data = util.parse_creature_data(creature_key, raw_stats)
         try:
-            is_hit = enemy.attack_hits(attack_bonus, defense_type)
-        except AttributeError:
-            is_hit = util.attack_hits(attack_bonus, enemy)
-        damage = self.get_damage(is_hit)
-        damage_types = self.get_damage_types(is_hit)
-        if deal_damage:
-            enemy.take_damage(damage, damage_types)
-        return is_hit, damage
+            assert creature_data
+        except AssertionError:
+            raise Exception("Could not find data for " + key)
+        equipment_set = equipment.EquipmentSet.from_raw_stats(creature_data)
 
-    #allow special defenses and overriding in subclasses?
-    def attack_hits(self, attack_bonus, defense_type):
-        return util.attack_hits(attack_bonus, self.get_defense_total(defense_type))
+        attributes = util.parse_attribute_data(creature_data)
 
-    def get_damage(self, is_hit):
-        damage = 0
-        if is_hit:
-            if self.primary_weapon:
-                damage = self.primary_weapon_damage.get_total(roll=True)
-            if self.secondary_weapon:
-                damage = max(damage, self.secondary_weapon_damage.get_total(roll=True))
-        return damage
-
-    def get_damage_types(self, is_hit):
-        #TODO: include damage types from secondary weapon
-        return self.primary_weapon.damage_types
-
-    def take_damage(self, damage, damage_types):
-        damage = self.damage_reduction.reduce_damage(damage, damage_types)
-        for special_defense in self.special_defenses:
-            damage = special_defense(damage, damage_types)
-        if damage is None:
-            return
-        if DAMAGE_PHYSICAL in damage_types:
-            if self.current_hit_points > 0:
-                self.current_hit_points = max(0, self.current_hit_points - damage)
-            else:
-                self.critical_damage += damage
-        #Are we taking attribute damage?
-        elif any(damage_type in ATTRIBUTES for damage_type in damage_types):
-            for damage_type in [d for d in damage_types if d in ATTRIBUTES]:
-                #in this case the attribute name is passed alone without other types
-                damaged_attribute = damage_type
-                self.attributes[damage_type].take_damage(damage)
-
-    def average_hit_probability(self, enemy, defense_type = None):
-        if defense_type is None:
-            defense_type = self.primary_weapon.defense_type
-        #allow "enemy" to be either a Creature or a simple numerical target
-        try:
-            enemy_defense = enemy.get_defense_total(defense_type)
-        except AttributeError:
-            enemy_defense = enemy
-        attack_bonuses = self.get_physical_attack_bonus_progression()
-        hit_chance_total = 0
-        for attack_bonus in attack_bonuses:
-            hit_chance_total += util.hit_probability(attack_bonus, enemy_defense)
-        return hit_chance_total / len(attack_bonuses)
-
-    def roll_initiative(self):
-        return util.d20.roll()+self.initiative.get_total()
-
-    #to be overridden
-    def special_attack(self, enemy):
-        raise Exception("no special attack defined")
-
-    def to_latex(self):
-        monster_string=''
-        #The string is constructed from a series of function calls
-        #Each call constructs one or more thematically related lines
-        #Each call should end with ENDLINE, so we always start on a new line 
-        horizontal_rule = '\\monlinerule\n'
-        monster_string += self._latex_headers()
-        monster_string += self._latex_senses()
-        monster_string += self._latex_movement()
-        monster_string += horizontal_rule
-
-        monster_string += self._latex_defenses()
-        monster_string += horizontal_rule
-
-        monster_string += self._latex_attacks()
-        monster_string += horizontal_rule
-
-        monster_string += self._latex_attributes()
-        monster_string += self._latex_feats()
-        monster_string += self._latex_skills()
-        monster_string += horizontal_rule
-
-        monster_string += self._latex_fluff()
-
-        """
-        if self.skills['Sense Motive'] is not None:
-        senses += ', Sense Motive {0}'.format(
-        self.skills['Sense Motive'])
-        if self.skills['Spellcraft'] is not None:
-        senses += ', Spellcraft {0}'.format(self.skills['Spellcraft'])
-
-        if self.abilities['aura']:
-        monster_string+='\\par \\textbf{Aura} {0}\n'.format(
-        self.abilities['aura'])
-
-        if self.languages:
-        monster_string+='\\par \\textbf{Languages} {0}\n'.format(
-        self.languages)
-        """
-        monster_string += '\\end{mstatblock}\n'
-
-        return monster_string
-
-    def _latex_headers(self):
-        #Don't use ENDLINE here because LaTeX doesn't like \\ with just \begin
-        header =  '\\subsection{%s}\n\\begin{mstatblock}\n' % self.meta[NAME].title()
-
-        subheader = r'%s %s %s \hfill \textbf{CR} %s' % (
-            self.alignment.title(), self.size.title(),
-            self.name, self.level)
-        subheader += ENDLINE
-        #if self.subtypes:
-        #    types +=' {0}'.format()
-        #if self.archetype:
-        #    types+=' {0}'.format(self.archetype)
-        return header + subheader
-
-    def _latex_senses(self):
-        #TODO: add Perception. Requires skills.
-        senses = r'\textbf{Init} %s; Perception %s' % (
-            self.initiative.mstr(), util.mstr(0))
-        senses += self.get_text_of_abilities_by_tag(TAG_SENSE, prefix=', ')
-        senses += ENDLINE
-        return senses
-
-    #This will be commonly overwritten on a per-monster basis
-    #For now, just use the "normal" values for each size
-    def _latex_movement(self):
-        movement = r'\textbf{Space} %s; \textbf{Reach} %s' % (
-            util.value_in_feet(self.space), 
-            util.value_in_feet(self.reach))
-        movement += r'; \textbf{Speed} '
-        movement += self._to_string_speeds()
-        movement += ENDLINE
-        senses = self.get_text_of_abilities_by_tag(TAG_SENSE, prefix = ', ')
-        if senses:
-            movement += senses
-            movement += ENDLINE
-        return movement
-
-    def _latex_defenses(self):
-        defenses = r'\textbf{AD} %s; \textbf{MC} %s' % (
-            self.armor_defense.get_total(), 
-            self.maneuver_defense.get_total()
+        return cls(
+            fundamental_progression = creature_data.get('class') or creature_data.get('creature_type'),
+            race = creature_data.get('race'),
+            # meta
+            name = creature_data.get('name'),
+            level = int(raw_stats.get('level') or creature_data.get('level') or 1),
+            description = creature_data.get('description'),
+            combat_description = creature_data.get('combat_description'),
+            # progressions
+            base_attack_bonus_progression = creature_data.get('bab'),
+            fortitude_progression = creature_data.get('fortitude'),
+            reflex_progression = creature_data.get('reflex'),
+            will_progression = creature_data.get('will'),
+            hit_value = creature_data.get('hit_value'),
+            natural_armor_progression = creature_data.get('natural_armor'),
+            strength_progression = attributes.get('strength').get('progression'),
+            dexterity_progression = attributes.get('dexterity').get('progression'),
+            constitution_progression = attributes.get('constitution').get('progression'),
+            intelligence_progression = attributes.get('intelligence').get('progression'),
+            wisdom_progression = attributes.get('wisdom').get('progression'),
+            charisma_progression = attributes.get('charisma').get('progression'),
+            # items
+            primary_weapon = equipment_set.weapon,
+            secondary_weapon = equipment_set.offhand_weapon,
+            armor = equipment_set.armor,
+            shield = equipment_set.shield,
+            # attributes
+            strength = attributes.get('strength').get('value'),
+            dexterity = attributes.get('dexterity').get('value'),
+            constitution = attributes.get('constitution').get('value'),
+            intelligence = attributes.get('intelligence').get('value'),
+            wisdom = attributes.get('wisdom').get('value'),
+            charisma = attributes.get('charisma').get('value'),
+            casting_attribute = creature_data.get('casting_attribute'),
+            special_attack_attribute = creature_data.get('special_attack_attribute'),
+            # core
+            size = creature_data.get('size'),
+            space = creature_data.get('space'),
+            reach = creature_data.get('reach'),
+            speeds = creature_data.get('speeds'),
+            # abilities
+            abilities = creature_data.get('abilities'),
+            feats = creature_data.get('feats'),
+            templates = creature_data.get('templates'),
+            traits = creature_data.get('traits'),
         )
-        defenses += self.get_text_of_abilities_by_tag(TAG_MOVE,
-                                                      prefix = '(', suffix = ')')
-        defenses += ENDLINE
-        #Should provide detailed explanation of AD sources here
-        #defenses += '\par (%s)' % self.armor_defense
 
-        #Add HP and damage reduction
-        defenses += r'\textbf{HP} %s (%s HV)' % (self.hit_points.get_total(),
-                                                 self.level)
-        defenses += self.get_text_of_abilities_by_tag(DR, ', ')
-        defenses += ENDLINE
+class CreatureGroup(object):
+    def __init__(self, creatures):
+        self.creatures = creatures
+        self.active_creatures = creatures
+        self.automatically_update_active_creatures = False
+        self.target_mode = None
 
-        #Add any immunities
-        defenses += self.get_text_of_abilities_by_tag(TAG_IMMUNITY,
-                                                      prefix = r'\textbf{Immune} ', suffix = ENDLINE)
+    def __iter__(self):
+        return iter(self.creatures)
 
-        #Add saving throws
-        defenses+=r'\textbf{Saves} Fort %s, Ref %s, Will %s' % (
-            self.fortitude.mstr(), self.reflex.mstr(),
-            self.will.mstr())
-        defenses += self.get_text_of_abilities_by_tag(SPECIAL_DEFENSE,
-                                                      prefix = '; ')
-        defenses += ENDLINE
+    @property
+    def is_active(self):
+        return len(self.active_creatures) > 0
 
-        return defenses
+    @property
+    def active_creatures(self):
+        if self.automatically_update_active_creatures:
+            self.active_creatures = self.updated_active_creatures()
+        return self._active_creatures
 
-    def _latex_attacks(self):
-        attacks = ''
-        if self.primary_weapon is not None:
-            attack_title = r'\textbf{%s}' % self.primary_weapon.attack_range.title()
-            attack_name = self.primary_weapon.name.title()
+    @active_creatures.setter
+    def active_creatures(self, value):
+        self._active_creatures = value
 
-            if self.items[WEAPON_SECONDARY] is not None:
-                attack_name += '/%s' % self.items[WEAPON_SECONDARY].name
+    def updated_active_creatures(self):
+        return [creature for creature in self.creatures if creature.is_active]
 
-            attacks += '{0} {1} {2} ({3})'.format(attack_title, attack_name,
-                                                  self.get_physical_attack_bonus_progression(as_string=True),
-                                                  self._to_string_weapon_damage())
-            attacks += ENDLINE
+    def end_round(self):
+        for creature in self.creatures:
+            creature.end_round()
+        self.active_creatures = self.updated_active_creatures()
 
-        base_maneuver_bonus = self.attack_bonus.base_attack_bonus + util.get_size_modifier(self.size)
-        attacks+= r'\textbf{BAB} %s; \textbf{Maneuvers} %s (Str), %s (Dex)' % (
-            self.attack_bonus.base_attack_bonus,
-            util.mstr(base_maneuver_bonus + self.strength.get_total()),
-            util.mstr(base_maneuver_bonus + self.dexterity.get_total()))
-        attacks += ENDLINE
+    @property
+    def current_hit_points(self):
+        return sum([creature.current_hit_points for creature in self.active_creatures])
 
-        attacks += self.get_text_of_abilities_by_tag(TAG_ATTACK,
-                                                     prefix=r'\textbf{Special} ', suffix=ENDLINE)
-        return attacks
-
-    def _latex_attributes(self):
-        attributes = r'\textbf{Attributes} '
-        attributes += 'Str %s, Dex %s, Con %s, Int %s, Wis %s, Cha %s' % (
-            self.strength.get_total(),
-            self.dexterity.get_total(),
-            self.constitution.get_total(),
-            self.intelligence.get_total(),
-            self.wisdom.get_total(),
-            self.charisma.get_total())
-        attributes += ENDLINE
-        return attributes
-
-    def _latex_feats(self):
-        feats_string = ''
-        feats = self.get_abilities_by_tag('feat')
-        #sort feats by their name
-        feats = sorted(feats, key=lambda x:x.name)
-        if feats:
-            feats_string += r'\textbf{Feats} '
-            feats_string += ', '.join([feat.name.title()
-                                       for feat in feats])
-            feats_string += ENDLINE
-        return feats_string
-
-    #TODO
-    def _latex_skills(self):
-        return ''
-
-    def _latex_fluff(self):
-        fluff = ''
-        fluff += r'\parhead{Description} %s' % self.description
-        fluff += r'\parhead{Combat} %s' % self.combat_description
-        return fluff
-
-    def has_ability(self, ability, by_object = False):
-        if not by_object:
-            ability = get_ability_by_name(ability)
-        return ability in self.abilities
-
-class Character(Creature):
-    def update(self):
-        super(Character, self).update()
-        self.add_automatic_scaling_bonuses()
-
-    def add_automatic_scaling_bonuses(self):
-        scale_factor = self.level/4
-        self.armor_defense.armor.add_enhancement(scale_factor)
-        if self.shield:
-            self.armor_defense.shield.add_enhancement(scale_factor)
-        if self.primary_weapon:
-            self.attack_bonus.add_enhancement(scale_factor)
-            for weapon in WEAPONS:
-                self.attacks[DAMAGE][weapon].add_enhancement(scale_factor)
-        for save in SAVES:
-            self.get_defense(save).add_enhancement(scale_factor)
-
-class Barbarian(Character):
-    def create_progressions(self):
-        self.set_progression(BAB, GOOD)
-        self.set_progression(FORT, GOOD)
-        self.set_progression(REF, AVERAGE)
-        self.set_progression(WILL, POOR)
-        self.set_progression(HIT_VALUE, 7)
-
-    def apply_class_modifications(self):
-        self.add_ability('rage')
-        self.add_ability('barbarian damage reduction')
-        if self.level>=2:
-            self.add_ability('danger sense')
-        if self.level>=7:
-            self.add_ability('larger than life')
-        if self.level>=17:
-            self.add_ability('larger than belief')
-
-class Cleric(Character):
-    def create_progressions(self):
-        self.set_progression(BAB, AVERAGE)
-        self.set_progression(FORT, AVERAGE)
-        self.set_progression(REF, POOR)
-        self.set_progression(WILL, GOOD)
-        self.set_progression(HIT_VALUE, 5)
-
-class Druid(Character):
-    def create_progressions(self):
-        self.set_progression(BAB, AVERAGE)
-        self.set_progression(FORT, GOOD)
-        self.set_progression(REF, POOR)
-        self.set_progression(WILL, AVERAGE)
-        self.set_progression(HIT_VALUE, 5)
-
-class Fighter(Character):
-    def create_progressions(self):
-        self.set_progression(BAB, GOOD)
-        self.set_progression(FORT, GOOD)
-        self.set_progression(REF, POOR)
-        self.set_progression(WILL, AVERAGE)
-        self.set_progression(HIT_VALUE, 6)
-
-    def apply_class_modifications(self):
-        #armor discipline is tracked by a separate ability because it requires a choice. we just set a default value for that choice here
-        if not (self.has_ability('armor discipline (agility)') or self.has_ability('armor discipline (resilience)')):
-            self.add_ability('armor discipline (agility)')
-        #weapon discipline
-        ab = 0
-        ab += 1 if self.level>=3 else 0
-        ab += 1 if self.level>=9 else 0
-        self.attack_bonus.add_bonus(ab, 'weapon discipline')
-        if self.level>=15:
-            pass
-        #add critical changes
-
-class Monk(Character):
-    def create_progressions(self):
-        self.set_progression(BAB, GOOD)
-        self.set_progression(FORT, AVERAGE)
-        self.set_progression(REF, GOOD)
-        self.set_progression(WILL, GOOD)
-        self.set_progression(HIT_VALUE, 5)
-
-    def apply_class_modifications(self):
-        #wisdom is used often, so make it quick to access
-        wisdom = self.wisdom.get_total()
-
-        #enlightened defense
-        if self.armor is None:
-            self.armor_defense.misc.add_bonus(wisdom, WIS)
-            self.maneuver_defense.add_bonus(wisdom, WIS)
-            self.reflex.add_bonus(wisdom, WIS)
+    def get_active_creature(self, target_mode):
+        active_creatures = self.active_creatures
+        if len(active_creatures) == 0:
+            return None
+        elif len(active_creatures) == 1:
+            return active_creatures[0]
+        elif target_mode is None or target_mode == 'random':
+            return random.choice(self.active_creatures)
+        elif target_mode == 'weakest':
+            return sorted(active_creatures, key = lambda c: c.current_hit_points)[0]
+        elif target_mode == 'strongest':
+            return sorted(active_creatures, key = lambda c: c.current_hit_points)[-1]
         else:
-            self.printverb('Monk is wearing armor? %s' %
-                           self.armor)
+            raise Exception("Unrecognized target mode {0}".format(target_mode))
 
-        #unarmed strike
-        if self.primary_weapon is None:
-            unarmed_weapon = equipment.Weapon.from_weapon_name('unarmed')
-            #make the weapon deal monk damage
-            for i in xrange(2):
-                unarmed_weapon.damage_die.increase_size()
-            self.primary_weapon = unarmed_weapon
-            self.secondary_weapon = unarmed_weapon
+    def attack(self, creature_group):
+        for creature in self.active_creatures:
+            target = creature_group.get_active_creature(self.target_mode)
+            if target is not None:
+                creature.attack(target)
 
-        #ki strike
-        ki_strike_bonus = (self.level-1)/3
-        self.attack_bonus.add_enhancement(ki_strike_bonus)
-        for weapon in WEAPONS:
-            self.attacks[DAMAGE][weapon].add_enhancement(ki_strike_bonus)
-        #wholeness of body
-
-        #still mind
-        if self.level >= 5 and wisdom/2 >= self.intelligence.get_total():
-            self.will.remove_bonus(INT)
-            self.will.add_bonus(wisdom/2, WIS)
-
-        #bodily/mental perfection
-        if self.level >= 7:
-            self.strength.add_bonus(1, 'bodily perfection')
-            self.dexterity.add_bonus(1, 'bodily perfection')
-            self.constitution.add_bonus(1, 'bodily perfection')
-        if self.level >= 13:
-            self.intelligence.add_bonus(1, 'bodily perfection')
-            self.wisdom.add_bonus(1, 'bodily perfection')
-            self.charisma.add_bonus(1, 'bodily perfection')
-        if self.level >= 19:
-            self.strength.add_bonus(2, 'bodily perfection')
-            self.dexterity.add_bonus(2, 'bodily perfection')
-            self.constitution.add_bonus(2, 'bodily perfection')
-
-class Paladin(Character):
-    def create_progressions(self):
-        self.set_progression(BAB, GOOD)
-        self.set_progression(FORT, GOOD)
-        self.set_progression(REF, POOR)
-        self.set_progression(WILL, GOOD)
-        self.set_progression(HIT_VALUE, 6)
-
-    def apply_class_modifications(self):
-        if self.level>=5:
-            self.armor_defense.misc.add_bonus(self.charisma.get_total()/2, CHA)
-
-    #assume smite
-    def standard_physical_attack(self, enemy, defense_type, deal_damage = True):
-        damage_dealt_total = 0
-        hit_count = 0
-        for i, attack_bonus in enumerate(self.get_physical_attack_bonus_progression()):
-            #smite on the first attack
-            if i==0:
-                attack_bonus += self.charisma.get_total()
-            is_hit, damage_dealt = self.single_attack(enemy, attack_bonus, defense_type, deal_damage)
-            if is_hit:
-                hit_count += 1
-            if damage_dealt:
-                if i==0:
-                    damage_dealt += self.level
-                damage_dealt_total += damage_dealt
-        return hit_count, damage_dealt
-
-class Ranger(Character):
-    def create_progressions(self):
-        self.set_progression(BAB, GOOD)
-        self.set_progression(FORT, GOOD)
-        self.set_progression(REF, AVERAGE)
-        self.set_progression(WILL, AVERAGE)
-        self.set_progression(HIT_VALUE, 6)
-
-class Rogue(Character):
-    def create_progressions(self):
-        self.set_progression(BAB, AVERAGE)
-        self.set_progression(FORT, POOR)
-        self.set_progression(REF, GOOD)
-        self.set_progression(WILL, AVERAGE)
-        self.set_progression(HIT_VALUE, 5)
-
-    def apply_class_modifications(self):
-        self.add_ability('danger sense')
-
-class Spellwarped(Character):
-    def create_progressions(self):
-        self.set_progression(BAB, AVERAGE)
-        self.set_progression(FORT, AVERAGE)
-        self.set_progression(REF, AVERAGE)
-        self.set_progression(WILL, AVERAGE)
-        self.set_progression(HIT_VALUE, 5)
-
-class Sorcerer(Character):
-    def create_progressions(self):
-        self.set_progression(BAB, POOR)
-        self.set_progression(FORT, POOR)
-        self.set_progression(REF, POOR)
-        self.set_progression(WILL, GOOD)
-        self.set_progression(HIT_VALUE, 4)
-
-class Warrior(Character):
-    def create_progressions(self):
-        self.set_progression(BAB, GOOD)
-        self.set_progression(FORT, GOOD)
-        self.set_progression(REF, POOR)
-        self.set_progression(WILL, POOR)
-        self.set_progression(HIT_VALUE, 6)
-
-class Wizard(Character):
-    def create_progressions(self):
-        self.set_progression(BAB, POOR)
-        self.set_progression(FORT, POOR)
-        self.set_progression(REF, POOR)
-        self.set_progression(WILL, GOOD)
-        self.set_progression(HIT_VALUE, 4)
-
-class Monster(Creature):
-    pass
-
-class Aberration(Monster):
-    def create_progressions(self):
-        self.set_progression(BAB, AVERAGE)
-        self.set_progression(FORT, AVERAGE)
-        self.set_progression(REF, POOR)
-        self.set_progression(WILL, AVERAGE)
-        self.set_progression(HIT_VALUE, 5)
-        self.set_progression(NATURAL_ARMOR, POOR)
-
-    def apply_class_modifications(self):
-        self.add_ability('darkvision')
-
-class Animal(Monster):
-    def create_progressions(self):
-        self.set_progression(BAB, AVERAGE)
-        self.set_progression(FORT, AVERAGE)
-        self.set_progression(REF, POOR)
-        self.set_progression(WILL, AVERAGE)
-        self.set_progression(HIT_VALUE, 5)
-        self.set_progression(NATURAL_ARMOR, POOR)
-
-    def apply_class_modifications(self):
-        self.intelligence.add_bonus(-8, 'animal')
-        self.add_abilities(('low-light vision', 'scent'))
-
-class Construct(Monster):
-    def create_progressions(self):
-        self.set_progression(BAB, AVERAGE)
-        self.set_progression(FORT, AVERAGE)
-        self.set_progression(REF, POOR)
-        self.set_progression(WILL, POOR)
-        self.set_progression(HIT_VALUE, 5)
-        self.set_progression(NATURAL_ARMOR, AVERAGE)
-
-    def apply_class_modifications(self):
-        self.add_abilities(('construct', 'darkvision'))
-
-class Fey(Monster):
-    def create_progressions(self):
-        self.set_progression(BAB, POOR)
-        self.set_progression(FORT, POOR)
-        self.set_progression(REF, AVERAGE)
-        self.set_progression(WILL, AVERAGE)
-        self.set_progression(HIT_VALUE, 4)
-        self.set_progression(NATURAL_ARMOR, POOR)
-
-class Humanoid(Monster):
-    def create_progressions(self):
-        self.set_progression(BAB, AVERAGE)
-        self.set_progression(FORT, POOR)
-        self.set_progression(REF, POOR)
-        self.set_progression(WILL, POOR)
-        self.set_progression(HIT_VALUE, 4)
-
-class MagicalBeast(Monster):
-    def create_progressions(self):
-        self.set_progression(BAB, AVERAGE)
-        self.set_progression(FORT, AVERAGE)
-        self.set_progression(REF, AVERAGE)
-        self.set_progression(WILL, POOR)
-        self.set_progression(HIT_VALUE, 5)
-        self.set_progression(NATURAL_ARMOR, POOR)
-
-    def apply_class_modifications(self):
-        self.add_ability('low-light vision')
-
-class MonstrousHumanoid(Monster):
-    def create_progressions(self):
-        self.set_progression(BAB, AVERAGE)
-        self.set_progression(FORT, AVERAGE)
-        self.set_progression(REF, AVERAGE)
-        self.set_progression(WILL, POOR)
-        self.set_progression(HIT_VALUE, 5)
-        self.set_progression(NATURAL_ARMOR, POOR)
-
-class Ooze(Monster):
-    def create_progressions(self):
-        self.set_progression(BAB, POOR)
-        self.set_progression(FORT, AVERAGE)
-        self.set_progression(REF, POOR)
-        self.set_progression(WILL, POOR)
-        self.set_progression(HIT_VALUE, 6)
-
-    def apply_class_modifications(self):
-        self.add_ability('ooze')
-
-class Outsider(Monster):
-    def create_progressions(self):
-        self.set_progression(BAB, AVERAGE)
-        self.set_progression(FORT, AVERAGE)
-        self.set_progression(REF, AVERAGE)
-        self.set_progression(WILL, AVERAGE)
-        self.set_progression(HIT_VALUE, 5)
-        self.set_progression(NATURAL_ARMOR, POOR)
-
-    def apply_class_modifications(self):
-        self.add_ability('low-light vision')
-
-class Plant(Monster):
-    def create_progressions(self):
-        self.set_progression(BAB, POOR)
-        self.set_progression(FORT, AVERAGE)
-        self.set_progression(REF, POOR)
-        self.set_progression(WILL, POOR)
-        self.set_progression(HIT_VALUE, 5)
-        self.set_progression(NATURAL_ARMOR, POOR)
-
-    def apply_class_modifications(self):
-        self.add_ability('plant')
-
-class Undead(Monster):
-    def create_progressions(self):
-        self.set_progression(BAB, AVERAGE)
-        self.set_progression(FORT, AVERAGE)
-        self.set_progression(REF, POOR)
-        self.set_progression(WILL, AVERAGE)
-        self.set_progression(HIT_VALUE, 5)
-        self.set_progression(NATURAL_ARMOR, POOR)
-
-    def apply_class_modifications(self):
-        self.add_ability('undead')
-
-class IdealCreature(Creature):
-    def create_progressions(self):
-        self.set_progression(BAB, GOOD)
-        self.set_progression(FORT, POOR)
-        self.set_progression(REF, POOR)
-        self.set_progression(WILL, POOR)
-        self.set_progression(HIT_VALUE, 5)
-
-    def apply_class_modifications(self):
-        #compensate for AD bonus from BAB
-        self.armor_defense.add_bonus(-(self.level/2),
-                                     'babfix')
-        #compensate for AD bonus from Dex
-        self.armor_defense.add_bonus(
-            -(self.dexterity.get_total()), 'dexfix')
-        #this overrides the base 10 because it has the same type
-        self.armor_defense.misc.add_bonus(self.level+15,
-                                          BASE)
+    def reset_damage(self):
+        for creature in self.creatures:
+            creature.reset_damage()
+        self.active_creatures = self.updated_active_creatures()
