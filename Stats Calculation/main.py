@@ -4,6 +4,7 @@ from creature import Creature, CreatureGroup
 import util
 import combat
 import cProfile
+import pstats
 from strings import *
 from pprint import pprint, PrettyPrinter
 
@@ -35,6 +36,8 @@ def initialize_argument_parser():
             help='match the levels of all subsequent creatures to the level of the first creature?')
     parser.add_argument('-t', '--test', dest='test', action='store_true',
             help='for one-off tests')
+    parser.add_argument('--profile', dest='profile', action='store_true',
+            help = 'profile performance?')
     return vars(parser.parse_args())
 
 def rounds_survived(attacker, defender):
@@ -156,8 +159,7 @@ def avg(numbers):
         return None
     return float(sum(numbers))/len(numbers)
 
-if __name__ == "__main__":
-    args = initialize_argument_parser()
+def main(args):
     data = util.import_data()
     ally_names = args.get('allies')
     if ally_names is not None and ally_names[0] == 'classes':
@@ -190,8 +192,9 @@ if __name__ == "__main__":
             #print ally#.to_latex()
             #print ally.get_modifiers('maneuver_defense', as_dict = True)
             #print ally.get_modifiers('first_physical_attack_bonus', as_dict = True)
-            print ally.get_modifiers('armor_defense', as_dict = True)
-            print ally.get_modifiers('maneuver_defense', as_dict = True)
+            #print ally.get_modifiers('armor_defense', as_dict = True)
+            #print ally.get_modifiers('armor_defense', as_dict = True)
+            #print ally.get_modifiers('maneuver_defense', as_dict = True)
             #print ally.get_modifiers('reflex', as_dict = True)
             #print ally.get_modifiers('will', as_dict = True)
             #print ally.get_modifiers('primary_weapon_size', as_dict = True)
@@ -268,3 +271,12 @@ if __name__ == "__main__":
             #print i+1, current_char.hp, (i+1)*5.5/2, current_char.hp/((i+1)*5.5/2)
             #print rounds_survived_generic(npc, i)
             #print i+1, current_char.cmd.total(), current_char.armor_class.get_normal()
+
+if __name__ == "__main__":
+    args = initialize_argument_parser()
+    if args['profile']:
+        cProfile.run('main(args)', 'profile.log')
+        stats = pstats.Stats('profile.log')
+        stats.strip_dirs().sort_stats('time').print_stats()
+    else:
+        main(args)
