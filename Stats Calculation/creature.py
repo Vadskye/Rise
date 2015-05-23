@@ -981,5 +981,3 @@ class CreatureGroup(object):
         for creature in self.creatures:
             creature.reset_damage()
         self.active_creatures = self.updated_active_creatures()
-
-    def 
