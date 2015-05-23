@@ -61,13 +61,14 @@ class Dice(object):
         return total
 
     def __add__(self, value):
+        new_die = Dice(self.die_size)
         if value>0:
             for i in xrange(value):
-                self.increase_size()
+                new_die.increase_size()
         elif value < 0:
             for i in xrange(value):
-                self.decrease_size()
-        return self
+                new_die.decrease_size()
+        return new_die
 
     def __str__(self):
         text = ''
