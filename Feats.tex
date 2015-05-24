@@ -311,7 +311,6 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
         \tind \featref{Armor Proficiency (Medium)} & Armor Proficiency (light) & No armor check penalty on physical attacks & Equipment & \featpref{Armor Proficiency (Medium)} \\
         \tind \tind \featref{Armor Proficiency (Heavy)} & Armor Proficiency (medium) & No armor check penalty on physical attacks & Equipment & \featpref{Armor Proficiency (Heavy)} \\
         \featref{Blind-Fight} & \x &  Reroll miss chance for concealment in melee & Awareness & \featpref{Blind-Fight} \\
-        \featref{Diehard} & Con 3 & Halve penalties from critical damage & Defense & \featpref{Diehard} \\
         \featref{Exotic Weapon Proficiency}\fn{1} & \x & Don't provoke when attacking with exotic weapons & Equipment & \featpref{Exotic Weapon Proficiency} \\
         \featref{Far Shot} & \x & Increase range increment & Precision & \featpref{Far Shot} \\
         \featref{Improved Unarmed Strike} & \x &  Considered armed even when unarmed & \x & \featpref{Improved Unarmed Strike} \\
@@ -336,6 +335,7 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
         \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
         \featref{Cleave} & Str 3, base attack bonus \plus2 & Extra melee attack after dropping target & Power & \featpref{Cleave} \\
         \featref{Combat Mobility} & Dex 3, base attack bonus \plus2 & Avoid movement-based attacks of opportunity from foe & Defense, Mobility & \featpref{Combat Mobility} \\
+        \featref{Diehard} & Con 3, base attack bonus \plus2 & Halve penalties from critical damage & Defense & \featpref{Diehard} \\
         \featref{Gang Up} & Base attack bonus \plus2 & Increase overwhelm penalties foes suffer & \x & \featpref{Gang Up} \\
         \featref{Improved Dirty Trick} & Base attack bonus \plus2 & \plus2 bonus to dirty trick attacks; dirty tricks last longer & Finesse, Maneuver & \featpref{Improved Dirty Trick} \\
         \featref{Improved Disarm} & Base attack bonus \plus2 & \plus2 bonus to disarm attacks; knock foe's weapon away after disarming & Finesse, Maneuver & \featpref{Improved Disarm} \\
@@ -391,9 +391,12 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
     \taburowcolors [2] 2{tbrown .. white}
     \begin{longtabu}{>{\lcol}p{10em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{6em} >{\lcol}p{3em}}
         \thead{Style Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
+        \featref{Chargebreaker} & Base attack bonus \plus2 & Trade ability to move for bonuses against approaching foes & Reaction, Style & \featpref{Chargebreaker} \\
+        \featref{Close-Quarters Fighting} & Dex 3, attack bonus \plus2 & No penalty for squeezing or attacking while grappling & Style & \featpref{Close-Quarters Fighting} \\
         \featref{Covering Fire} & Base attack bonus \plus2 & Trade ranged attack bonus to penalize struck foes & Precision, Style & \featpref{Covering Fire} \\
         \featref{Deadly Aim} & Dex 3, base attack bonus \plus2 & Trade ranged attack bonus for damage & Precision, Style & \featpref{Deadly Aim} \\
         \featref{Defensive Fighting} & Base attack bonus \plus2 & Trade attack bonus for defense & Defense, Style & \featpref{Defensive Fighting} \\
+        \featref{Distracting Foe} & Base attack bonus \plus2 & Threatened foes suffer Concentration penalties & Style & \featpref{Distracting Foe} \\
         \featref{Guardian} & Base attack bonus \plus2 & Adjacent allies suffer reduced overwhelm penalties & Defense, Style & \featpref{Guardian} \\
         \featref{Opportunist} & Dex 3, base attack bonus \plus2 & \plus2 to attack and damage on attacks of opportunity & Reaction, Style & \featpref{Opportunist} \\
         \featref{Overpowering Assault} & Str 3, base attack bonus \plus2 & Trade defense for maneuver bonus & Power, Style & \featpref{Overpowering Assault} \\
@@ -401,12 +404,6 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
         \featref{Point Blank Shot} & Base attack bonus \plus2 &  \plus2 bonus to ranged attacks within half range increment. & Precision, Style & \featpref{Point Blank Shot} \\
         \featref{Precise Shot} & Base attack bonus \plus2 & Ignore cover from creatures & Precision, Style & \featpref{Precise Shot} \\
         \featref{Power Attack} & Str 3, base attack bonus \plus2 & Trade melee attack bonus for damage & Power, Style & \featpref{Power Attack} \\
-
-        \midrule
-        \thead{Style Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
-        \featref{Chargebreaker} & Base attack bonus \plus2 & Trade ability to move for bonuses against approaching foes & Reaction, Style & \featpref{Chargebreaker} \\
-        \featref{Close-Quarters Fighting} & Dex 3, attack bonus \plus2 & No penalty for squeezing or attacking while grappling & Style & \featpref{Close-Quarters Fighting} \\
-        \featref{Distracting Foe} & Base attack bonus \plus2 & Threatened foes suffer Concentration penalties & Style & \featpref{Distracting Foe} \\
         \featref{Reveal the Weak Point} & Base attack bonus \plus2 & Sacrifice attack and damage to penalize foe's defenses & Style & \featpref{Reveal the Weak Point} \\
 
         \midrule
@@ -417,6 +414,7 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
         \featref{Intuitive Defense} & Wis 3, base attack bonus \plus6 & Add half Wisdom to defense in place of Dex & Awareness, Defense, Style & \featpref{Intuitive Defense} \\
         \featref{Perfect Shot} & Dex 5, base attack bonus \plus6 & Ignore less than total cover/concealment on ranged attacks & Precision, Style & \featpref{Perfect Shot} \\
         \featref{Predictive Defense} & Int 3, base attack bonus \plus6 & Add half Int to defense in place of Dex & Awareness, Defense, Style & \featpref{Predictive Defense} \\
+        \featref{Reckless Attack} & Base attack bonus \plus6 & Trade ability to defend yourself for damage bonus & Power, Style & \featpref{Reckless Attack} \\
         \featref{Spring Attack} & Dex 3, base attack bonus \plus6, Combat Mobility & Move before and after attacks & Mobility, Style & \featpref{Spring Attack} \\
         \featref{Threatening Fire} & Overwhelming Fire, base attack bonus \plus6 & Threaten adjacent creatures with a ranged weapon & Reaction, Style & \featpref{Threatening Fire} \\
 
@@ -1416,9 +1414,14 @@ If you have three or more Reaction feats, you can draw light and medium weapons 
 \featben You can embody a wild aspect as a swift action. You cannot cast a spell in the same round as you embody a wild aspect in this way.
 \parhead{Normal} You can embody a wild aspect as a standard action.
 
-\feat{Reach Spell}{Metamatic}
+\feat{Reach Spell}{Metamagic}
 \parhead{Prerequisite} Ability to cast 3rd level spells.
 \parhead{Benefit} When casting a reach spell, you can use a spell with a range of touch on a target within \rngclose range. You must succeed on a ranged touch attack. A reach spell uses up a spell slot two levels higher than the spell's actual level.
+
+\feat{Reckless Attack}{Combat, Power, Style}
+\featpre Base attack bonus \plus6.
+\featben While in this style, you are unable to defend yourself normally, causing you to provoke attacks of opportunity each time you attack. In exchange, you gain a \plus3 bonus to physical damage with melee attacks.
+\stylereq Wield a melee weapon. You must take a standard attack or charge action each round.
 
 \feat{Recover Performance}{Performance, Skill}
 \featpre Perform 8 ranks, any other Performance feat.
@@ -1503,7 +1506,7 @@ Only area spells can be shaped. A shaped spell uses a spell slot two levels high
 \feat{Shield Proficiency}{Combat}
 \parhead{Benefit} You can use a shield and take only the standard penalties.
 \parhead{Normal} When you are using a shield with which you are not proficient, you take the shield's armor check penalty on physical attacks and on all checks that involve moving, including Ride checks.
-\parhead{Special} Barbarians, clerics, druids, fighters, paladins, rangers, and spellwarped automatically have Shield Proficiency as a bonus feat. They need not select it.
+\parhead{Special} Barbarians, clerics, druids, fighters, paladins, rangers, and spellwarped autogmatically have Shield Proficiency as a bonus feat. They need not select it.
 
 \feat{Shielded Parry}{Combat, Defense, Reaction}
 \featpres Dexterity 3, shield proficiency, Parry.
