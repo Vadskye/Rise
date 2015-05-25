@@ -41,7 +41,7 @@ creature_types:
     reflex: poor
     will: poor
     hit_value: 4
-  magical_beast:
+  'magical beast':
     bab: average
     fortitude: average
     reflex: average
@@ -50,7 +50,7 @@ creature_types:
     natural_armor: poor
     traits:
       - low-light vision
-  monstrous_humanoid:
+  'monstrous humanoid':
     bab: average
     fortitude: average
     reflex: poor
@@ -573,8 +573,6 @@ troll:
     #meta
     name: troll
     creature_type: monstrous humanoid
-    templates:
-        - warrior
     level: 6
     #items
     weapons:
@@ -592,9 +590,8 @@ troll:
         - low-light vision
         - regeneration
         - scent
-    feats:
-        - power attack
-        - overpowering assault
+    #feats:
+    #- power attack
     #core
     size: large
     languages: Troll

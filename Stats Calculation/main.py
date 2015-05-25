@@ -10,7 +10,10 @@ from pprint import pprint, PrettyPrinter
 
 CREATURE = 'creature'
 COMBAT = 'combat'
-BATTLE_REPEAT_COUNT = 1000
+BATTLE_REPEAT_COUNT = 100
+
+TARGET_MODES = 'active any strongest weakest'.split()
+TARGET_MODE_CHOICES = TARGET_MODES + ['test']
 
 def initialize_argument_parser():
     parser = argparse.ArgumentParser(description='Calculate combat statistics for Rise characters')
@@ -18,24 +21,37 @@ def initialize_argument_parser():
             help='simulate a battle between the creatures?')
     parser.add_argument('-a', '--ally', dest='allies', nargs="*",
             help='allied creature files to load')
-    parser.add_argument('-av', '--allyvariant', dest='allies_variants', nargs="*",
-                        help = 'variant to apply to all allies')
+    parser.add_argument('-ac', '--allycount', dest='ally_count', type=str,
+            help='number of allies to duplicate')
+    parser.add_argument('-al', '--allylevel', dest='ally_level', type=str,
+            help='the level of the ally creatures')
+    parser.add_argument('-at', '--allytargets', dest='ally_targets', type=str,
+            choices = TARGET_MODE_CHOICES,
+            help='how the allies choose targets')
+    parser.add_argument('-av', '--allyvariant', dest='ally_variants', nargs="*",
+            help = 'variant to apply to all allies')
     parser.add_argument('-e', '--enemy', dest='enemies', nargs="*",
             help='enemy creature files to load (for combat purposes)')
-    parser.add_argument('-ev', '--enemyvariant', dest='enemies_variants', nargs="*",
+    parser.add_argument('-ec', '--enemycount', dest='enemy_count', type=str,
+            help='number of enemies to duplicate')
+    parser.add_argument('-el', '--enemylevel', dest='enemy_level', type=str,
+            help='the level of the enemy creatures')
+    parser.add_argument('-et', '--enemytargets', dest='enemy_targets', type=str,
+            choices = TARGET_MODE_CHOICES,
+            help='how the enemies choose targets')
+    parser.add_argument('-ev', '--enemyvariant', dest='enemy_variants', nargs="*",
                         help = 'variant to apply to all enemies')
+    parser.add_argument('-c', '--count', dest='count', type=str,
+                        help = 'number of creatures to duplicate from both sides')
     parser.add_argument('-l', '--level', dest='level', type=str,
             help='the level of the allied creatures')
-    parser.add_argument('-el', '--enemylevel', dest='enemy_level', type=int,
-            help='the level of the enemy creatures (defaults to allied creature level)')
     parser.add_argument('-o', '--output', dest='output',
             help='A file name to store any output in')
-    parser.add_argument('-v', '--verbose', dest='verbose', action='store_true',
-            help='show verbose output?')
-    parser.add_argument('-m', '--matchlevel', dest='match_level', action='store_true',
-            help='match the levels of all subsequent creatures to the level of the first creature?')
-    parser.add_argument('-t', '--test', dest='test', action='store_true',
-            help='for one-off tests')
+    parser.add_argument('-t', '--targets', dest='targets', type=str,
+            choices = TARGET_MODE_CHOICES,
+            help='how creatures choose targets')
+    parser.add_argument('-v', '--variant', dest='variants', nargs="*",
+                        help = 'variants to apply to all creatures')
     parser.add_argument('--profile', dest='profile', action='store_true',
             help = 'profile performance?')
     return vars(parser.parse_args())
@@ -86,7 +102,7 @@ def print_generic_stats(level):
     print "HP %s, Fort %s, Ref %s, Will %s" % (get_generic_hp()[level],
             0, 0, 0)
 
-def generate_creatures(creature_keys, data, level = None, extra_variants = None, verbose = None):
+def generate_creatures(creature_keys, data, level = None, extra_variants = None):
     creatures = list()
     if creature_keys is None:
         return creatures
@@ -118,11 +134,13 @@ def generate_battle_results_old(allies, enemies):
     return battle_results, (average_hit_chance_first, average_hit_chance_second)
 
 def wage_war(allies, enemies):
-    #allies.target_mode = 'weakest'
-    #enemies.target_mode = 'weakest'
     rounds = 0
     ally_victories = 0
+    ally_any_inactive = 0
+    ally_any_dead = 0
     enemy_victories = 0
+    enemy_any_inactive = 0
+    enemy_any_dead = 0
     ties = 0
 
     for i in xrange(BATTLE_REPEAT_COUNT):
@@ -135,13 +153,42 @@ def wage_war(allies, enemies):
             ties += 1
         else:
             raise Exception("Zees ees impossible!")
+
+        if allies.count_inactive_creatures():
+            ally_any_inactive += 1
+        if enemies.count_inactive_creatures():
+            enemy_any_inactive += 1
+
+        if allies.count_dead_creatures() or not allies.is_active:
+            ally_any_dead += 1
+        if enemies.count_dead_creatures() or not enemies.is_active:
+            enemy_any_dead += 1
         allies.reset_damage()
         enemies.reset_damage()
     rounds = float(rounds)/BATTLE_REPEAT_COUNT
     ally_victories = float(ally_victories)/BATTLE_REPEAT_COUNT
+    ally_any_inactive = float(ally_any_inactive)/BATTLE_REPEAT_COUNT
+    ally_any_dead = float(ally_any_dead)/BATTLE_REPEAT_COUNT
     enemy_victories = float(enemy_victories)/BATTLE_REPEAT_COUNT
+    enemy_any_inactive = float(enemy_any_inactive)/BATTLE_REPEAT_COUNT
+    enemy_any_dead = float(enemy_any_dead)/BATTLE_REPEAT_COUNT
     ties = float(ties)/BATTLE_REPEAT_COUNT
-    return rounds, ally_victories, enemy_victories, ties
+    return {
+        'ally': {
+            'any_dead': ally_any_dead,
+            'any_inactive': ally_any_inactive,
+            'avg_hit_chance': allies.avg_hit_chance(enemies),
+            'victories': ally_victories,
+        },
+        'enemy': {
+            'any_dead': enemy_any_dead,
+            'any_inactive': enemy_any_inactive,
+            'avg_hit_chance': enemies.avg_hit_chance(allies),
+            'victories': enemy_victories,
+        },
+        'rounds': rounds,
+        'ties': ties
+    }
 
 def fight_battle(allies, enemies):
     rounds = 0
@@ -154,12 +201,78 @@ def fight_battle(allies, enemies):
 
     return rounds
 
-def avg(numbers):
-    if numbers is None:
-        return None
-    return float(sum(numbers))/len(numbers)
+def inherit_shared_args(args):
+    args['ally_level'] = args.get('ally_level') or args.get('level')
+    args['enemy_level'] = args.get('enemy_level') or args.get('level')
+
+    args['ally_count'] = args.get('ally_count') or args.get('count')
+    args['enemy_count'] = args.get('enemy_count') or args.get('count')
+
+    args['ally_targets'] = args.get('ally_targets') or args.get('targets')
+    args['enemy_targets'] = args.get('enemy_targets') or args.get('targets')
+
+    args['ally_variants'] = args.get('ally_variants') or args.get('variant')
+    args['enemy_variants'] = args.get('enemy_variants') or args.get('variant')
+    return args
+
+def analyze_combined_results(results):
+    pprint(results)
+    print "\nally victories:"
+    pprint(results['ally']['victories'])
+
+    good_victory_chance_tests = list()
+    for i, victory_chance in results['ally']['victories']:
+        if 0.25 <= victory_chance < 0.75:
+            good_victory_chance_tests.append((i, victory_chance))
+    print 'good victory tests:', good_victory_chance_tests
+
+    good_inactive_chance_tests = list()
+    for i, inactive_chance in results['ally']['any_inactive']:
+        if 0.05 <= inactive_chance <= 0.95:
+            good_inactive_chance_tests.append((i, inactive_chance))
+    print 'good inactive tests:', good_inactive_chance_tests
+
+    good_death_chance_tests = list()
+    for i, death_chance in results['ally']['any_dead']:
+        if 0.01 <= death_chance <= 0.2:
+            good_death_chance_tests.append((i, death_chance))
+    print 'good death tests:', good_death_chance_tests
+
+def generate_creature_groups(data, names, count, level, target_mode, variants):
+    creature_groups = list()
+
+    if target_mode == 'test':
+        for target_mode in TARGET_MODES:
+            creature_group = generate_creatures(names, data, level, variants)
+            creature_group.target_mode = target_mode
+            creature_groups.append(creature_group)
+        return creature_groups
+
+    if count == 'test':
+        for test_count in xrange(1,10):
+            test_names = names * test_count
+            creature_groups.append(generate_creatures(test_names, data, level, variants))
+        return creature_groups
+    elif count:
+        names *= int(args['ally_count'])
+
+    if level == 'test':
+        for test_level in xrange(1,21):
+            creature_groups.append(generate_creatures(names, data, test_level, variants))
+        return creature_groups
+    else:
+        creature_groups.append(generate_creatures(names, data, level, variants))
+
+    # at this point, we are just modifying the existing creature_groups
+
+    if target_mode:
+        for creature_group in creature_groups:
+            creature_group.target_mode = target_mode
+
+    return creature_groups
 
 def main(args):
+    args = inherit_shared_args(args)
     data = util.import_data()
     ally_names = args.get('allies')
     if ally_names is not None and ally_names[0] == 'classes':
@@ -167,16 +280,12 @@ def main(args):
     enemy_names = args.get('enemies')
     if enemy_names is not None and enemy_names[0] == 'classes':
         enemy_names = 'barbarian cleric druid fighter monk paladin ranger rogue sorcerer spellwarped wizard'.split()
-    if args['level'] == 'all':
-        raise Exception('not yet implemented')
-        for level in xrange(1,21):
-            allies += generate_creatures(ally_names, data, level, args['verbose'])
-            enemies += generate_creatures(enemy_names, data, level, args['verbose'])
-    else:
-        allies = generate_creatures(ally_names, data, args['level'], args['allies_variants'], args['verbose'])
-        enemies = generate_creatures(enemy_names, data, args['enemy_level'] or args['level'], args['enemies_variants'], args['verbose'])
 
-    if allies:
+    ally_groups = generate_creature_groups(data, ally_names, args['ally_count'], args['ally_level'], args['ally_targets'], args['ally_variants'])
+    enemy_groups = generate_creature_groups(data, enemy_names, args['enemy_count'], args['enemy_level'], args['enemy_targets'], args['enemy_variants'])
+
+    if ally_groups:
+        allies = ally_groups[0]
         print "allies:"
         for i, ally in enumerate(allies):
             print ally#.to_latex()
@@ -191,7 +300,7 @@ def main(args):
             #print i+1, ally.armor_defense - avg(ally.physical_attack_progression), i+16 - avg(ally.physical_attack_progression)
             #print ally#.to_latex()
             #print ally.get_modifiers('maneuver_defense', as_dict = True)
-            #print ally.get_modifiers('first_physical_attack_bonus', as_dict = True)
+            #print ally.get_modifiers_as_dict('primary_weapon_damage')
             #print ally.get_modifiers('armor_defense', as_dict = True)
             #print ally.get_modifiers('armor_defense', as_dict = True)
             #print ally.get_modifiers('maneuver_defense', as_dict = True)
@@ -202,7 +311,8 @@ def main(args):
             #print ally.armor_class.get_details()
             print
 
-    if enemies:
+    if enemy_groups:
+        enemies = enemy_groups[0]
         print "enemies:"
         for enemy in enemies:
             print enemy#.to_latex()
@@ -210,67 +320,59 @@ def main(args):
             print ''
 
     if args['battle']:
-        if allies and enemies:
-            if args['level'] == 'all':
-                print "Level\t%s\t%s\tRounds" % (allies[0][0].name, enemies[0][0].name)
-                for i in xrange(len(allies)):
-                    battle_results, hit_chances = generate_battle_results(allies[i], enemies[i])
-                    print "%s\t\t%.3f\t\t%.3f\t%.3f" % (i+1, battle_results[0], battle_results[1], battle_results[2])
+        if not len(ally_groups) == len(enemy_groups):
+            if len(ally_groups) == 1:
+                ally_groups *= len(enemy_groups)
+            elif len(enemy_groups) == 1:
+                enemy_groups *= len(ally_groups)
             else:
-                print wage_war(allies, enemies)
-        else:
-            raise Exception("Must have both allies and enemies to have a battle")
+                raise Exception("Must have same number of ally groups ({0}) and enemy groups ({1})".format(len(ally_groups), len(enemy_groups)))
+
+        combined_results = {
+            'ally': {
+                'any_dead': list(),
+                'any_inactive': list(),
+                'avg_hit_chance': list(),
+                'victories': list(),
+            },
+            'enemy': {
+                'any_dead': list(),
+                'any_inactive': list(),
+                'avg_hit_chance': list(),
+                'victories': list(),
+            },
+            'rounds': list(),
+            'ties': list(),
+        }
+
+        for i in xrange(len(ally_groups)):
+            allies = ally_groups[i]
+            enemies = enemy_groups[i]
+
+            print "Running test ", i
+            war_results = wage_war(allies, enemies)
+            #pprint(war_results)
+            #print
+
+            combined_results['rounds'].append((i, war_results['rounds']))
+            combined_results['ties'].append((i, war_results['ties']))
+            for key in war_results['ally']:
+                if key == 'avg_hit_chance':
+                    combined_results['ally'][key].append((i+1, war_results['ally'][key][0]))
+                else:
+                    combined_results['ally'][key].append((i+1, war_results['ally'][key]))
+            for key in war_results['enemy']:
+                if key == 'avg_hit_chance':
+                    combined_results['enemy'][key].append((i+1, war_results['enemy'][key][0]))
+                else:
+                    combined_results['enemy'][key].append((i+1, war_results['enemy'][key]))
+
+        analyze_combined_results(combined_results)
 
     if args['output'] is not None:
         latex_string = creatures[0].to_latex()
         output_file = open(args['output'], 'w')
         output_file.write(latex_string)
-
-    if False:
-        print 'Lvl\twin%1\tRounds\thit%1\thit%2'
-        for i in xrange(20):
-            """
-            barbarian = Character.from_creature_name('brb-heavy', i+1)
-            other_barbarian = Character.from_creature_name('brb-heavy', i+1)
-            cleric = Character.from_creature_name('cleric-warrior', i+1)
-            fighter_heavy = Character.from_creature_name('ftr-heavy', i+1)
-            npc = Character.from_creature_name('npc', i+1)
-            npc2 = Character.from_creature_name('npc', i+1)
-            rogue = Character.from_creature_name('rogue-single', i+1)
-            """
-            first_name = args['creature_input']
-            second_name = args['creature_input_2']
-            first = Creature.from_creature_name(first_name, i+1, args['verbose'])
-            first = combat.CombatCreature.from_creature(first)
-            second = Creature.from_creature_name(second_name, i+1, args['verbose'])
-            second = combat.CombatCreature.from_creature(second)
-
-            #print first
-            #print second
-
-            #first.add_ability(abilities['combat expertise'], False)
-            #first.add_ability(abilities['power attack'], False)
-
-            battle = combat.Battle(first, second)
-
-            repeat_count = 500
-            results = run_repeated_battles(battle, repeat_count)
-            print '%s \t%s \t%s' % (i+1, results[0], results[2]),
-            average_hit_chance_first = first.average_hit_probability(second.defenses[AC].normal())
-            average_hit_chance_second = second.average_hit_probability(first.defenses[AC].normal())
-            print '\t%s \t%s' % (average_hit_chance_first, average_hit_chance_second),
-            print '\t%s \t%s' % (first.attacks[DAMAGE][WEAPON_PRIMARY].get_total(),
-                    second.attacks[DAMAGE][WEAPON_PRIMARY].get_total())
-
-            #print npc.armor_class.normal() - generic_ac_real[i]
-
-
-            #print i+1, cleric.damage_per_round(generic_ac_calc[i]), 'vs', npc.dpr(generic_ac_calc[i])
-            #print i+1, compare_ac_to_reflex(barbarian)
-            #print rounds_survived(npc, current_char)
-            #print i+1, current_char.hp, (i+1)*5.5/2, current_char.hp/((i+1)*5.5/2)
-            #print rounds_survived_generic(npc, i)
-            #print i+1, current_char.cmd.total(), current_char.armor_class.get_normal()
 
 if __name__ == "__main__":
     args = initialize_argument_parser()

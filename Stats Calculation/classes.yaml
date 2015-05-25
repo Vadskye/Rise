@@ -29,11 +29,19 @@ generic_variants:
     equipment: heavy
   nofeats:
     feats: ~
+  shield:
+    shield: heavy
+    extra_feats:
+      - shield expertise
+    weapons:
+      secondary: ~
   sobo:
+    shield: heavy
+    extra_feats:
+      - shield expertise
     weapons:
       primary: medium_melee
       secondary: ~
-    shield: heavy
   power_attack:
     extra_feats:
       - power attack
@@ -61,7 +69,7 @@ barbarian:
   special_attack_attribute: charisma
   weapons:
     primary: heavy_melee
-  attributes: warrior_dex
+  attributes: warrior_dex_secondary
   variants:
     defensive:
       equipment: heavy
@@ -167,13 +175,22 @@ ranger:
   name: Ranger
   race: human
   class: ranger
-  equipment: light
+  armor: light
+  weapons:
+    primary: light_melee
+    secondary: light_melee
   attributes: warrior_dex
   bab: good
   fortitude: good
   reflex: good
   will: average
   hit_value: 6
+  feats:
+    - two-weapon fighting
+    - two-weapon defense
+  variants:
+    dex_wis:
+      attributes: warrior_dex_wis
 rogue:
   name: Rogue
   race: human
@@ -225,9 +242,17 @@ warrior:
   reflex: poor
   will: poor
   hit_value: 6
+  feats:
+    - shield expertise
   variants:
     dex:
       attributes: warrior_dex
+      armor: light
+      weapons:
+        primary: light_melee
+        secondary: ~
+    dex_secondary:
+      attributes: warrior_dex_secondary
       armor: light
 wizard:
   name: Wizard

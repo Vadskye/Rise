@@ -141,6 +141,17 @@ warrior_dex_secondary:
     intelligence: 0
     wisdom: 0
     charisma: 0
+warrior_dex_wis:
+    strength: 0
+    dexterity: 
+      progression: primary
+      value: 4
+    constitution: 2
+    intelligence: 0
+    wisdom:
+      progression: secondary
+      value: 3
+    charisma: 0
 wizard:
     strength: 0
     dexterity: 2

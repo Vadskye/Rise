@@ -421,6 +421,11 @@ def is_number(text):
     except:
         return False
 
+def avg(numbers):
+    if numbers is None:
+        return None
+    return float(sum(numbers))/len(numbers)
+
 #Input: string representing die, such as 'd10' or '2d6'
 def die_average(die):
     if not die:

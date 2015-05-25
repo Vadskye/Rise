@@ -44,6 +44,7 @@ valid_modifier_types = set(
     extra_attacks
     physical_damage_reduction
     initiative
+    regeneration
 '''.split())
 
 def add_base_modifier(key, value, modifiers):
@@ -266,6 +267,7 @@ class Creature(object):
 
         # stuff with dependencies
         self.reset_progression_modifiers()
+        self._update_static_modifiers()
 
         #self.abilities = abilities
         #self.feats = feats
@@ -295,6 +297,7 @@ class Creature(object):
         self.add_modifier('physical_attacks', 'base attack bonus', lambda c: c.base_attack_bonus, update_static = False)
         self.add_modifier('physical_attacks', 'attack attribute', lambda c: c.attack_attribute, update_static = False)
         self.add_modifier('physical_attacks', 'size', lambda c: c.size_modifier, update_static = False)
+        self.add_modifier('physical_damage', 'strength', lambda c: c.strength / 2, update_static = False)
 
         self.set_modifier('physical_defenses', 'dexterity', lambda c: c.dexterity, update_static = False)
         self.set_modifier('physical_defenses', 'shield', lambda c: c.shield_bonus, update_static = False)
@@ -341,7 +344,6 @@ class Creature(object):
         self.add_modifier(modifier_types, name, value, replace_existing = True, update_static = update_static)
 
     def _update_static_modifiers(self):
-        print "updating static modifiers"
         for modifier_type in valid_modifier_types:
             modifier_value = 0
             for modifier_name in self._modifiers.get(modifier_type, {}):
@@ -355,8 +357,12 @@ class Creature(object):
 
     def get_modifiers_as_dict(self, modifier_type):
         dict_of_stuff = dict()
-        for name in self._static_modifiers.get(modifier_type, {}):
-            dict_of_stuff[name] = int(relevant_modifiers[name])
+        relevant_modifiers = self._modifiers.get(modifier_type, {})
+        for name in relevant_modifiers:
+            try:
+                dict_of_stuff[name] = int(relevant_modifiers[name])
+            except TypeError:
+                dict_of_stuff[name] = int(relevant_modifiers[name](self))
         return dict_of_stuff
 
     def get_modifiers(self, modifier_type):
@@ -449,6 +455,10 @@ class Creature(object):
         return self.current_hit_points > 0
 
     @property
+    def is_alive(self):
+        return self.current_hit_points > -self.fortitude
+
+    @property
     def base_attack_bonus(self):
         return self.get_modifiers('base_attack_bonus')
 
@@ -515,7 +525,7 @@ class Creature(object):
     def primary_weapon_damage_bonus(self):
         if self.primary_weapon is None:
             return None
-        return self.get_modifiers('primary_weapon_damage') + self.strength / 2
+        return self.get_modifiers('primary_weapon_damage')
 
     @property
     def primary_weapon_damage_die(self):
@@ -527,7 +537,7 @@ class Creature(object):
     def secondary_weapon_damage_bonus(self):
         if self.secondary_weapon is None:
             return None
-        return self.get_modifiers('secondary_weapon_damage') + self.strength / 2
+        return self.get_modifiers('secondary_weapon_damage')
 
     @property
     def secondary_weapon_damage_die(self):
@@ -762,6 +772,15 @@ class Creature(object):
                     creature.take_damage(self.physical_attack_damage, attack_type)
         else:
             raise Exception("Creature {0} does not have attack mode {1}".format(self.name, self.attack_mode))
+
+    def avg_hit_chance(self, target):
+        if self.attack_mode == 'physical':
+            return util.avg(
+                [util.hit_probability(attack_bonus, target.armor_defense)
+                 for attack_bonus in self.physical_attack_progression]
+            )
+        else:
+            raise Exception("Creature {0} does not have attack mode {1}".format(self.name, self.attack_mode))
                     
     def is_hit(self, attack_result, attack_type):
         return attack_result >= self.get_defense_against_attack(attack_type)
@@ -778,9 +797,15 @@ class Creature(object):
         damage = self.apply_damage_reduction(damage, damage_type)
         self.damage += damage
 
+    @property
+    def regeneration(self):
+        return self.get_modifiers('regeneration')
+
     # some effects trigger or reset at the end of a round
     def end_round(self):
         self.used_physical_damage_reduction = 0
+        if self.regeneration:
+            self.damage = max(0, self.damage - self.regeneration)
 
     def __str__(self):
         return '{0} {1}\n{2}\n{3}\n{4}\n{5}\n{6}'.format(
@@ -861,9 +886,6 @@ class Creature(object):
 
     @classmethod
     def from_raw_stats(cls, raw_stats, creature_key, stats_override = None):
-        if stats_override is not None:
-            raw_stats.update(stats_override)
-
         creature_data = util.parse_creature_data(creature_key, raw_stats)
         try:
             assert creature_data
@@ -878,7 +900,7 @@ class Creature(object):
             race = creature_data.get('race'),
             # meta
             name = creature_data.get('name'),
-            level = int(raw_stats.get('level') or creature_data.get('level') or 1),
+            level = int(stats_override.get('level') or creature_data.get('level') or 1),
             description = creature_data.get('description'),
             combat_description = creature_data.get('combat_description'),
             # progressions
@@ -947,6 +969,12 @@ class CreatureGroup(object):
     def updated_active_creatures(self):
         return [creature for creature in self.creatures if creature.is_active]
 
+    def count_inactive_creatures(self):
+        return len(self.creatures) - len(self.active_creatures)
+
+    def count_dead_creatures(self):
+        return len([creature for creature in self.creatures if not creature.is_alive])
+
     def end_round(self):
         for creature in self.creatures:
             creature.end_round()
@@ -956,24 +984,26 @@ class CreatureGroup(object):
     def current_hit_points(self):
         return sum([creature.current_hit_points for creature in self.active_creatures])
 
-    def get_active_creature(self, target_mode):
+    def get_target(self, target_mode):
         active_creatures = self.active_creatures
         if len(active_creatures) == 0:
             return None
         elif len(active_creatures) == 1:
             return active_creatures[0]
-        elif target_mode is None or target_mode == 'random':
+        elif target_mode is None or target_mode == 'active':
             return random.choice(self.active_creatures)
         elif target_mode == 'weakest':
             return sorted(active_creatures, key = lambda c: c.current_hit_points)[0]
         elif target_mode == 'strongest':
             return sorted(active_creatures, key = lambda c: c.current_hit_points)[-1]
+        elif target_mode == 'any':
+            return random.choice(self.creatures)
         else:
             raise Exception("Unrecognized target mode {0}".format(target_mode))
 
     def attack(self, creature_group):
         for creature in self.active_creatures:
-            target = creature_group.get_active_creature(self.target_mode)
+            target = creature_group.get_target(self.target_mode)
             if target is not None:
                 creature.attack(target)
 
@@ -981,3 +1011,20 @@ class CreatureGroup(object):
         for creature in self.creatures:
             creature.reset_damage()
         self.active_creatures = self.updated_active_creatures()
+
+    def avg_hit_chance(self, targets):
+        if len(self.creatures) == len(targets.creatures):
+            hit_chances = list()
+            for i, creature in enumerate(self.creatures):
+                hit_chances.append(
+                    creature.avg_hit_chance(targets.creatures[i])
+                )
+            return hit_chances
+        elif len(self.creatures) == 1:
+            creature = self.creatures[0]
+            return [creature.avg_hit_chance(target) for target in targets.creatures]
+        elif len(targets.creatures) == 1:
+            target = targets.creatures[0]
+            return [creature.avg_hit_chance(target) for creature in self.creatures]
+        else:
+            return 'Unable to calculate average hit chance between arbitrarily sized groups'
