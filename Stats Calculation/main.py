@@ -10,9 +10,9 @@ from pprint import pprint, PrettyPrinter
 
 CREATURE = 'creature'
 COMBAT = 'combat'
-BATTLE_REPEAT_COUNT = 100
+BATTLE_REPEAT_COUNT = 500
 
-TARGET_MODES = 'active any strongest weakest'.split()
+TARGET_MODES = 'active any easiest hardest strongest weakest'.split()
 TARGET_MODE_CHOICES = TARGET_MODES + ['test']
 
 def initialize_argument_parser():
@@ -163,8 +163,8 @@ def wage_war(allies, enemies):
             ally_any_dead += 1
         if enemies.count_dead_creatures() or not enemies.is_active:
             enemy_any_dead += 1
-        allies.reset_damage()
-        enemies.reset_damage()
+        allies.reset_combat()
+        enemies.reset_combat()
     rounds = float(rounds)/BATTLE_REPEAT_COUNT
     ally_victories = float(ally_victories)/BATTLE_REPEAT_COUNT
     ally_any_inactive = float(ally_any_inactive)/BATTLE_REPEAT_COUNT
@@ -254,7 +254,7 @@ def generate_creature_groups(data, names, count, level, target_mode, variants):
             creature_groups.append(generate_creatures(test_names, data, level, variants))
         return creature_groups
     elif count:
-        names *= int(args['ally_count'])
+        names *= int(count)
 
     if level == 'test':
         for test_level in xrange(1,21):
@@ -299,6 +299,9 @@ def main(args):
             #print
             #print i+1, ally.armor_defense - avg(ally.physical_attack_progression), i+16 - avg(ally.physical_attack_progression)
             #print ally#.to_latex()
+            print ally.get_modifiers_as_dict('first_physical_attack_bonus')
+            print ally.get_modifiers_as_dict('armor_defense')
+            print ally.physical_attack_progression
             #print ally.get_modifiers('maneuver_defense', as_dict = True)
             #print ally.get_modifiers_as_dict('primary_weapon_damage')
             #print ally.get_modifiers('armor_defense', as_dict = True)

@@ -351,7 +351,7 @@ def get_fundamental_progression_ability_names(name, level):
         )
     elif name == 'ranger':
         ability_names += (
-            'quarry' if level >= 5 else None,
+            'quarry',
             'improved combat style' if level >= 6 else None,
         )
     elif name == 'ideal':
