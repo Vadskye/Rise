@@ -57,11 +57,21 @@ def get_all_abilities():
             'modifiers': [
                 {
                     'modifier_type': 'physical_attacks',
-                    'value': lambda c: -util.bab_scale(c.level) if c.strength >= 3 else 0,
+                    #'value': lambda c: -util.bab_scale(c.level) if c.strength >= 3 else 0,
+                    'value': -2,
                 },
                 {
                     'modifier_type': 'physical_damage',
-                    'value': power_attack_damage_modifier,
+                    #'value': power_attack_damage_modifier,
+                    'value': 2,
+                },
+            ],
+        },
+        'shield expertise': {
+            'modifiers': [
+                {
+                    'modifier_type': 'physical_defenses',
+                    'value': lambda c: 1 if c.shield is not None else 0,
                 },
             ],
         },
@@ -85,7 +95,7 @@ def get_all_abilities():
             'modifiers': [
                 {
                     'modifier_type': 'physical_defenses',
-                    'value': lambda c: 2 if c.dexterity >= 3
+                    'value': lambda c: 1 if c.dexterity >= 3
                     and c.primary_weapon is not None
                     and c.secondary_weapon is not None
                     else 0
@@ -115,7 +125,7 @@ def get_all_abilities():
             'modifiers': [
                 {
                     'modifier_type': 'physical_damage_reduction',
-                    'value': lambda c: c.level if c.level > 5 else 0,
+                    'value': lambda c: c.level / 2 if c.level > 5 else 0,
                 },
                 {
                     'modifier_name': 'constitution',
@@ -128,7 +138,7 @@ def get_all_abilities():
             'modifiers': [
                 {
                     'modifier_type': 'physical_damage_reduction',
-                    'value': lambda c: c.level,
+                    'value': lambda c: c.level / 2,
                 },
             ],
             'text': 'damage reduction',
@@ -149,9 +159,28 @@ def get_all_abilities():
                 },
             ],
         },
+        'divine presence': {
+            'modifiers': [
+                {
+                    'modifier_name': 'charisma',
+                    'modifier_type': 'physical_defenses',
+                    'value': lambda c: c.charisma / 2,
+                },
+            ],
+        },
+        'improved combat style': {
+            'modifiers': [
+                {
+                    'modifier_name': 'wisdom',
+                    'modifier_type': 'physical_damage',
+                    'value': lambda c: c.wisdom / 2 if c.level >= 5 else 0,
+                },
+            ],
+        },
         'ki strike': {
             'modifiers': [
                 {
+                    'modifier_name': 'enhancement',
                     'modifier_types': ['physical_attacks', 'physical_damage'],
                     'value': lambda c: (c.level-1)/3,
                 },
@@ -178,6 +207,18 @@ def get_all_abilities():
                 {
                     'modifier_type': 'maneuver_defense',
                     'value': 4,
+                },
+            ],
+        },
+        'quarry': {
+            'modifiers': [
+                {
+                    'modifier_type': 'physical_attacks',
+                    'value': lambda c: util.std_scale(c.level),
+                },
+                {
+                    'modifier_type': 'physical_defenses',
+                    'value': lambda c: util.std_scale(c.level) if c.level >= 5 else 0,
                 },
             ],
         },
@@ -249,10 +290,29 @@ def get_all_abilities():
         },
     }
 
+    monster_abilities = {
+        'ideal': {
+            'function': ideal_effect,
+        },
+        'regeneration': {
+            'modifiers': [
+                {
+                    'modifier_type': 'regeneration',
+                    'value': lambda c: c.level/2,
+                },
+            ],
+        },
+    }
+
+    abilities_without_effects = 'darkvision, enslave, low-light vision, mucus cloud, scent, slime'.split(', ')
+
     # the generic "abilities" is the combination of all feats, class features, etc.
     # we just store those separately for ease of use
     abilities = feats
     abilities.update(class_features)
+    abilities.update(monster_abilities)
+    for ability_name in abilities_without_effects:
+        abilities[ability_name] = {}
     return abilities
 
 def get_ability_by_name(ability_name):
@@ -285,6 +345,17 @@ def get_fundamental_progression_ability_names(name, level):
             'bodily perfection' if level >= 7 else None,
             'timeless' if level >= 15 else None,
         )
+    elif name == 'paladin':
+        ability_names += (
+            'divine presence' if level >= 5 else None,
+        )
+    elif name == 'ranger':
+        ability_names += (
+            'quarry' if level >= 5 else None,
+            'improved combat style' if level >= 6 else None,
+        )
+    elif name == 'ideal':
+        ability_names += ('ideal')
     return [name for name in ability_names if name is not None]
 
 def armor_discipline_agility_effect(creature):
@@ -309,13 +380,16 @@ def power_attack_damage_modifier(creature):
     if creature.strength < 3:
         return 0
     elif creature.primary_weapon.encumbrance == 'light':
-        return util.bab_scale(c.level) / 2
+        return util.bab_scale(creature.level) / 2
     else:
-        return util.bab_scale(c.level)
+        return util.bab_scale(creature.level)
 
 ####################
 #MONSTER TRAITS
 ####################
+
+def ideal_effect(creature):
+    pass
 
 def natural_grab_text(creature):
     return 'Natural grab (%s) %s' % (util.decrease_size(creature.size).title(),
