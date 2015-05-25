@@ -3,7 +3,9 @@ cleric_dex:
     dexterity: 
       progression: primary
       value: 3
-    constitution: 2
+    constitution: 
+      progression: tertiary
+      value: 2
     intelligence: 0
     wisdom: 0
     charisma: 
@@ -14,7 +16,9 @@ cleric_warrior:
       progression: primary
       value: 3
     dexterity: 0
-    constitution: 2
+    constitution: 
+      progression: tertiary
+      value: 2
     intelligence: 0
     wisdom: 0
     charisma: 
@@ -22,7 +26,9 @@ cleric_warrior:
       value: 4
 deekin:
     strength: 0
-    dexterity: 1
+    dexterity: 
+      progression: tertiary
+      value: 1
     constitution: 
       progression: secondary
       value: 2
@@ -36,7 +42,9 @@ druid:
     dexterity: 
       progression: secondary
       value: 3
-    constitution: 2
+    constitution: 
+      progression: tertiary
+      value: 2
     intelligence: 0
     wisdom: 
       progression: primary
@@ -46,7 +54,9 @@ garruk:
     strength: 
       progression: primary
       value: 5
-    dexterity: 3
+    dexterity: 
+      progression: tertiary
+      value: 3
     constitution: 2
     intelligence: 0
     wisdom: 
@@ -54,7 +64,9 @@ garruk:
       value: 3
     charisma: -1
 monk:
-    strength: 2
+    strength: 
+      progression: tertiary
+      value: 2
     dexterity: 
       progression: secondary
       value: 3
@@ -69,7 +81,9 @@ muerdoc:
     dexterity: 
       progression: primary
       value: 3
-    constitution: 2
+    constitution: 
+      progression: tertiary
+      value: 2
     intelligence: 0
     wisdom: 
       progression: secondary
@@ -79,7 +93,9 @@ npc_warrior:
     strength: 
       progression: primary
       value: 2
-    dexterity: 1
+    dexterity: 
+      progression: tertiary
+      value: 1
     constitution: 
       progression: secondary
       value: 2
@@ -92,14 +108,18 @@ silk:
       progression: primary
       value: 4
     constitution: 2 
-    intelligence: 4
+    intelligence: 
+      progression: tertiary
+      value: 3
     wisdom: 1
     charisma: 
       progression: secondary
-      value: 3
+      value: 4
 sorcerer:
     strength: 0
-    dexterity: 2
+    dexterity: 
+      progression: tertiary
+      value: 2
     constitution: 
       progression: secondary
       value: 3
@@ -112,7 +132,9 @@ warrior:
     strength:
       progression: primary
       value: 4
-    dexterity: 2
+    dexterity: 
+      progression: tertiary
+      value: 2
     constitution: 
       progression: secondary
       value: 3
@@ -126,7 +148,9 @@ warrior_dex:
     dexterity: 
       progression: primary
       value: 4
-    constitution: 2
+    constitution: 
+      progression: tertiary
+      value: 2
     intelligence: 0
     wisdom: 0
     charisma: 0
@@ -137,12 +161,16 @@ warrior_dex_secondary:
     dexterity: 
       progression: secondary
       value: 3
-    constitution: 2
+    constitution: 
+      progression: tertiary
+      value: 2
     intelligence: 0
     wisdom: 0
     charisma: 0
 warrior_dex_wis:
-    strength: 0
+    strength: 
+      progression: tertiary
+      value: 0
     dexterity: 
       progression: primary
       value: 4
@@ -154,7 +182,9 @@ warrior_dex_wis:
     charisma: 0
 wizard:
     strength: 0
-    dexterity: 2
+    dexterity: 
+      progression: tertiary
+      value: 2
     constitution: 
       progression: secondary
       value: 3
