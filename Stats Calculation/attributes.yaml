@@ -180,6 +180,19 @@ warrior_dex_wis:
       progression: secondary
       value: 3
     charisma: 0
+warrior_int:
+    strength:
+      progression: primary
+      value: 4
+    dexterity:
+      progression: tertiary
+      value: 2
+    constitution: 0
+    intelligence: 
+      progression: secondary
+      value: 3
+    wisdom: 0
+    charisma: 0
 wizard:
     strength: 0
     dexterity: 

@@ -238,6 +238,14 @@ def get_all_abilities():
                 },
             ],
         },
+        'sneak attack': {
+            'modifiers': [
+                {
+                    'modifier_type': 'physical_damage',
+                    'value': lambda c: ((c.level + 1) / 2) * 3.5,
+                },
+            ],
+        },
         'still mind': {
             'modifiers': [
                 {
@@ -354,8 +362,14 @@ def get_fundamental_progression_ability_names(name, level):
             'quarry',
             'improved combat style' if level >= 6 else None,
         )
+    elif name == 'rogue':
+        ability_names += (
+            'sneak attack',
+        )
     elif name == 'ideal':
-        ability_names += ('ideal')
+        ability_names += (
+            'ideal',
+        )
     return [name for name in ability_names if name is not None]
 
 def armor_discipline_agility_effect(creature):
@@ -389,6 +403,9 @@ def power_attack_damage_modifier(creature):
 ####################
 
 def ideal_effect(creature):
+    for modifier_type in creature._modifiers:
+        for modifier_name in creature._modifiers[modifier_type]:
+            creature.remove_modifiers(modifier_name)
     pass
 
 def natural_grab_text(creature):
