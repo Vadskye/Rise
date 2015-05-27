@@ -41,6 +41,12 @@ creature_types:
     reflex: poor
     will: poor
     hit_value: 4
+  ideal:
+    bab: good
+    fortitude: average
+    reflex: average
+    will: average
+    hit_value: 6
   'magical beast':
     bab: average
     fortitude: average

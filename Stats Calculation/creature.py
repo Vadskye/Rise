@@ -378,8 +378,11 @@ class Creature(object):
         if update_static:
             self._update_static_modifiers()
 
-    def set_modifier(self, modifier_types, name, value, update_static = False):
-        self.add_modifier(modifier_types, name, value, replace_existing = True, update_static = update_static)
+    def set_modifier(self, modifier_types, name, value, update_static = None):
+        if update_static is not None:
+            self.add_modifier(modifier_types, name, value, replace_existing = True, update_static = update_static)
+        else:
+            self.add_modifier(modifier_types, name, value, replace_existing = True)
 
     def has_modifier(self, modifier_name):
         for modifier_type in self._modifiers:
@@ -790,7 +793,7 @@ class Creature(object):
 
     @property
     def has_spells(self):
-        return self.casting_attribute is not None
+        return self.caster_level > 0
 
     @property
     def initiative(self):

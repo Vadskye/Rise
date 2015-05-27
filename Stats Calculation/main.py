@@ -10,7 +10,7 @@ from pprint import pprint, PrettyPrinter
 
 CREATURE = 'creature'
 COMBAT = 'combat'
-BATTLE_REPEAT_COUNT = 500
+BATTLE_REPEAT_COUNT = 50
 
 TARGET_MODES = 'active any easiest hardest strongest weakest'.split()
 TARGET_MODE_CHOICES = TARGET_MODES + ['test']
@@ -32,6 +32,8 @@ def initialize_argument_parser():
             help = 'variant to apply to all allies')
     parser.add_argument('-e', '--enemy', dest='enemies', nargs="*",
             help='enemy creature files to load (for combat purposes)')
+    parser.add_argument('-e2', '--enemy2', dest='enemies2', nargs="*",
+            help='other enemy creature files to load (for combat purposes)')
     parser.add_argument('-ec', '--enemycount', dest='enemy_count', type=str,
             help='number of enemies to duplicate')
     parser.add_argument('-el', '--enemylevel', dest='enemy_level', type=str,
@@ -249,7 +251,7 @@ def generate_creature_groups(data, names, count, level, target_mode, variants):
         return creature_groups
 
     if count == 'test':
-        for test_count in xrange(1,10):
+        for test_count in xrange(15,30):
             test_names = names * test_count
             creature_groups.append(generate_creatures(test_names, data, level, variants))
         return creature_groups
@@ -290,9 +292,10 @@ def main(args):
         for i, ally in enumerate(allies):
             print ally#.to_latex()
             #print ally.traits
-            #ally.add_modifier('physical_attacks', 5, 'because')
-            #ally.add_modifier('physical_damage', 5, 'because')
-            #ally.add_modifier('physical_defenses', 5, 'because')
+            #ally.set_modifier('physical_attacks', 'enhancement', util.std_scale(ally.caster_level))
+            #ally.set_modifier('physical_damage', 'enhancement', util.std_scale(ally.caster_level))
+            #ally.set_modifier('physical_defenses', 'enhancement', util.std_scale(ally.caster_level))
+            #ally._update_static_modifiers()
             #ally.add_modifier('extra_attacks', 1, 'because')
             #ally.size = 'large'
             #ally.level = 6
@@ -300,8 +303,8 @@ def main(args):
             #print i+1, ally.armor_defense - avg(ally.physical_attack_progression), i+16 - avg(ally.physical_attack_progression)
             #print ally#.to_latex()
             print ally.get_modifiers_as_dict('first_physical_attack_bonus')
-            print ally.get_modifiers_as_dict('armor_defense')
-            print ally.physical_attack_progression
+            #print ally.get_modifiers_as_dict('armor_defense')
+            #print ally.physical_attack_progression
             #print ally.get_modifiers('maneuver_defense', as_dict = True)
             #print ally.get_modifiers_as_dict('primary_weapon_damage')
             #print ally.get_modifiers('armor_defense', as_dict = True)
@@ -312,6 +315,7 @@ def main(args):
             #print ally.get_modifiers('primary_weapon_size', as_dict = True)
             #print ally.primary_weapon.damage_die
             #print ally.armor_class.get_details()
+            print ally#.to_latex()
             print
 
     if enemy_groups:
