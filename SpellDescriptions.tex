@@ -35,50 +35,48 @@ Spells that are not subject to spell resistance are not affected by \spell{ablat
 \spelldesc{You fire a magical arrow of acid from your hand that speeds to its target.}
 \spellinfo{Conj (Creation) [Acid]}{Arcane}
 \spellrng{\rngmed}
-\spelldur{1 round per two caster levels}
 \spellsr{No}
 \begin{spelltarget}{One creature or object}[Magic vs. Reflex]
-    \spellsuccess 2d8 acid damage immediately, and d8 acid damage at the end of each round after the first.
-    \spellfailure As above, but no lingering damage.
+    \spellsuccess 2d6 acid damage immediately, and 2d6 acid damage at the end of the next round.
+    \spellfailure 2d6 acid damage.
 \end{spelltarget}
-\spellnotes If the target becomes submerged in water or takes at least ten points of cold or fire damage, this spell's effect ends.
+\spellnotes If the target becomes submerged in water or takes at least ten points of cold or fire damage, it takes no secondary damage.
 
 \spellsectioncomma{Acid Arrow}{Greater}{5}
 \spelldesc{You fire a magical arrow of acid from your hand that speeds to its target.}
 \spellinfo{Conj (Creation) [Acid]}{Arcane}
 \spellrng{\rngfar}
-\spelldur{1 round per two caster levels}
 \spellsr{No}
-\begin{spelltarget}{One creature or object}l[Magic vs. Reflex and Fortitude]
-    \spellsuccess[Reflex] 5d8 acid damage immediately, and 2d8 acid damage at the end of each round after the first.
-    \spellfailure[Reflex] As above, but no lingering damage.
-    \spellsuccess[Fortitude] The target is \sickened.
+\begin{spelltarget}{One creature or object}[Magic vs. Reflex]
+    \spelleffect The target takes a \minus3 magic penalty to Armor defense for 5 rounds. This penalty increases by 1 at 14th caster level, and every 6 caster levels thereafter.
+    \spellsuccess[Reflex] 5d6 acid damage immediately, and 5d6 acid damage at the end of the next round.
+    \spellfailure[Reflex] 5d6 acid damage.
 \end{spelltarget}
 \spellnotes As \spell{acid arrow}, except that twenty points of cold or fire damage are required to end the effect.
 
-\spellsection{Acid Fog}{8}
+\spellsection{Acid Fog}{6}
 \spelldesc{A billowing mass of acidic vapors fills the area, slowing creatures down and obscuring sight.}
 \spellinfo{Conj (Creation) [Acid, Fog]}{Arcane, Destruction}
 \spelltwocol{\spellzone{\areamed radius cylinder}}{\spellrng{\rngmed}}
 \spelldur{\durshort}
 \spellsr{No}
 \spellline
-\spelleffect Fog fills the area, as \spell{solid fog}, except that the fog is acidic.
+\spelleffect Fog fills the area, as \spell{fog cloud}, except that the fog is acidic.
 \begin{spelltrigger}{End of every round}
     \begin{spelltarget}*{Everything in the area}[Magic vs. Fortitude]
         \spellsuccess 4d6 acid damage.
         \spellfailure As above, but half damage.
     \end{spelltarget}
 \end{spelltrigger}
-\spellnotes As \spell{solid fog}.
+\spellnotes As \spell{fog cloud}.
 
-\spellsection{Agony}{5}
+\spellsection{Agony}{3}
 \spelldesc{You inflict debilitating pain on your foe, crippling its ability to act.}
 \spellinfo{Necro (Flesh)}{Arcane}
 \spellrng{\rngmed}
 \spelldur{\durshort}
 \begin{spelltarget}{One creature}
-    \spelleffect The target takes a \minus4 penalty to attacks, defenses, and checks.
+    \spelleffect The target takes a \minus2 magic penalty to attacks, defenses, and checks. This penalty increases by 1 at 8th caster level and every 6 caster levels thereafter.
 \end{spelltarget}
 
 \spellsection{Aid}{2}
