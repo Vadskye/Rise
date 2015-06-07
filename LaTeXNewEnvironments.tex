@@ -156,32 +156,34 @@
     %\IfBooleanF{#1}{\spellline}
 }
 
-\DeclareDocumentEnvironment{spelleffects}{s}
-{
-    %\IfBooleanF{#1}{\spellline}
-    \begin{topandbottomborders}
-}
-{
-    \end{topandbottomborders}
-    %\IfBooleanF{#1}{\spellline}
-}
-
-\DeclareDocumentEnvironment{spellsubeffects}{s}
-{
-    %\IfBooleanF{#1}{\spellline}
-}
-{
-    %\IfBooleanF{#1}{\spellline}
-}
-
-\surroundwithmdframed[
-    rightline=false,
-    topline=false,
-    bottomline=true,
+\newmdenv[
+    style=spellcontent,
     leftline=false,
+    topline=true,
+    rightline=false,
+    bottomline=true,
+    style=spellcontent
+]{spellcontent}
+\newmdenv[
+    style=spellcontent,
+    leftline=false,
+    topline=false,
+    rightline=false,
+    bottomline=true,
+    style=spellcontent,
     skipabove=0,
     innertopmargin=1pt,
-]{spellsubeffects}
+]{spellsubcontent}
+
+\newmdenv[
+    style=colorenv,
+    backgroundcolor=LightCyan,
+]{spelltargetinginfo}
+
+\newmdenv[
+    style=colorenv,
+    backgroundcolor=Ivory,
+]{spelleffects}
 
 \DeclareDocumentEnvironment{spellfooter}{s}
 {
