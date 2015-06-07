@@ -58,14 +58,38 @@
 % setup for border frames
 \ExplSyntaxOn
 \mdfsetup{
-    innerleftmargin=2pt,
+    innerleftmargin=0,
     leftmargin=0,
+    innertopmargin=0,
+    skipabove=0,
+    innerrightmargin=0,
+    rightmargin=0,
+    innerbottommargin=0,
+    skipbelow=0,
+}
+
+% for spell content
+\mdfdefinestyle{spellcontent}{
     innertopmargin=2pt,
     skipabove=1pt,
-    innerrightmargin=2pt,
-    rightmargin=0,
     innerbottommargin=2pt,
     skipbelow=1pt,
-    roundcorner=10pt,
 }
+
+% for color-only environments
+\mdfdefinestyle{colorenv}{
+    leftline=false,
+    topline=false,
+    rightline=false,
+    bottomline=false,
+    innerleftmargin=1pt,
+    leftmargin=0,
+    innertopmargin=1pt,
+    skipabove=1pt,
+    innerrightmargin=1pt,
+    rightmargin=1pt,
+    innerbottommargin=1pt,
+    skipbelow=0,
+}
+
 \ExplSyntaxOff
