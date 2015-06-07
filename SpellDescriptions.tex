@@ -11,9 +11,9 @@
 \begin{spellheader}
     \spelldesc{You instantly reduce the force of an incoming blow.}
     \spelltwocol{\spelltime{Immediate action}}{\spellcmp{Verbal only}}
-    \spelltgt{You}
 \end{spellheader}
 \begin{spelleffects}
+    \spelltgt{You}
     \spelleffect You gain physical damage reduction, reducing the physical damage you take each round by 8 \add 1 per caster level above 4th. If you take force damage, you cannot use your damage reduction for 1 round.
     \spelldur{1 round}
 \end{spelleffects}
@@ -28,9 +28,9 @@
 \begin{spellheader}
     \spelldesc{You instantly encase yourself a shimmering field of magical energy, protecting you from hostile magic.}
     \spelltwocol{\spelltime{Immediate action}}{\spellcmp{Verbal only}}
-    \spelltgt{You}
 \end{spellheader}
 \begin{spelleffects}
+    \spelltgt{You}
     \spelleffect You gain spell damage reduction, reducing the damage you take each round from spells by 4 \add 1 per caster level above 2nd. If you take force damage, you cannot use your damage reduction for 1 round.
     \spelldur{1 round}
 \end{spelleffects}
@@ -45,9 +45,9 @@
 \spellsection{Acid Arrow}{2}
 \begin{spellheader}
     \spelldesc{You fire a magical arrow of acid from your hand that speeds to its target.}
-    \spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngmed}}
 \end{spellheader}
 \begin{spelleffects}
+    \spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngmed}}
     \begin{spellattack}{Magic vs. Reflex}
         \spellsuccess 2d6 acid damage immediately, and 2d6 acid damage at the end of the next round.
         \spellfailure 2d6 acid damage.
@@ -63,9 +63,9 @@
 \spellsectioncomma{Acid Arrow}{Greater}{5}
 \begin{spellheader}
     \spelldesc{You fire a magical arrow of acid from your hand that speeds to its target.}
-    \spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngfar}}
 \end{spellheader}
 \begin{spelleffects}
+    \spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngfar}}
     \begin{spellattack}{Magic vs. Reflex}
         \spellsuccess 5d6 acid damage immediately, and 5d6 acid damage at the end of the next round. In addition, the target takes a \minus3 magic penalty to physical defenses and Fortitude for 5 rounds. This penalty increases by 1 at 14th caster level, and every 6 caster levels thereafter.
         \spellfailure 5d6 acid damage.
@@ -80,19 +80,19 @@
 \spellsection{Acid Fog}{6}
 \begin{spellheader}
     \spelldesc{A billowing mass of acidic vapors fills the area, slowing creatures down and obscuring sight.}
-    \spelltwocol{\spelltgts{Everything in the area}}{\spellrng{\rngmed}}
-    \spellzone{\areamed radius cylinder}
 \end{spellheader}
 \begin{spelleffects}
+    \spelltwocol{\spellzone{\areamed radius cylinder}}{\spellrng{\rngmed}}
     \spelleffect Fog fills the area, as \spell{fog cloud}, except that the fog is acidic.
-    \begin{spelltrigger}{End of every round}
-        \begin{spellattack}{Magic vs. Fortitude}
-            \spellsuccess 4d6 acid damage.
-            \spellfailure As above, but half damage.
-        \end{spellattack}
-    \end{spelltrigger}
     \spelldur{\durshort}
 \end{spelleffects}
+\begin{spellsubeffects}
+    \spelltwocol{\spelltgr{End of every round}}{\spelltgts{Everything in the area}}
+    \begin{spellattack}{Magic vs. Fortitude}
+        \spellsuccess 4d6 acid damage.
+        \spellfailure As above, but half damage.
+    \end{spellattack}
+\end{spellsubeffects}
 \begin{spellfooter}
     \spellinfo{Conjuration (Creation) [Acid, Fog \reminder{dispersed by fire and wind}]}*{Arcane, Destruction}
     \spellsr{No}
@@ -323,16 +323,13 @@
 \spellsection{Banishment}{6}
 \begin{spellheader}
     \spelldesc{You force extraplanar creatures back to their home plane.}
-    \spellrng{\rngmed}
-    \spelltgt{One extraplanar creature}
 \end{spellheader}
 \begin{spelleffects}
-    \begin{spelltrigger}{End of every round}
-        \begin{spellattack}{Magic vs. Will}
-            \spellsuccess The target is banished, as \spell{dismissal}.
-        \end{spellattack}
-    \end{spelltrigger}
-    \spelldur{Concentration}
+    \spelltwocol{\spelltgr{End of every round}}{\spelldur{Concentration}}
+    \spelltwocol{\spelltgt{One extraplanar creature}}{\spellrng{\rngmed}}
+    \begin{spellattack}{Magic vs. Will}
+        \spellsuccess The target is banished, as \spell{dismissal}.
+    \end{spellattack}
 \end{spelleffects}
 \begin{spellfooter}
     \spellinfo{Abjuration/Conjuration (Interdiction, Translocation) [Planar, Teleportation]}{Arcane, Divine}
@@ -380,40 +377,42 @@
 
 \spellsection{Black Tentacles}{7}
 \begin{spellheader}
-    \spelltwocol{\spellzone{\areasmall radius}}{\spellrng{\rngmed}}
-    \spelltgts{All creatures in the area within 5 feet of the ground}
+    \spelldesc{You conjure a field of rubbery black tentacles, each 5 feet long. These waving members seem to spring forth from the earth, floor, or whatever surface is underfoot -- including water. They grasp and entwine around creatures that enter the area, holding them fast and crushing them with great strength.}
 \end{spellheader}
 \begin{spelleffects}
-    \spelleffect The area is considered difficult terrain.
-    \begin{spelltrigger}{End of every movement phase}
-        \begin{spellattack}l{Caster level \add casting attribute vs. Maneuver defense (grapple)}
-            \spellsuccess The target is grappled and takes 1d8\plus4 bludgeoning damage. It remains grappled until it escape the tentacle. The tentacle's Maneuver defense is equal to 10 \add your caster level \add your casting attribute.
-        \end{spellattack}
-    \end{spelltrigger}
+    \spelltwocol{\spellzone{\areasmall radius}}{\spellrng{\rngmed}}
+    \spelleffect Ground within the area is considered difficult terrain.
     \spelldur{\durshort \dismissable}
 \end{spelleffects}
+\begin{spellsubeffects}
+    \spelltgr{End of every movement phase}
+    \spelltgts{All creatures in the area within 5 feet of the ground}
+    \begin{spellattack}{Caster level \add casting attribute vs. Maneuver defense (grapple)}
+        \spellsuccess The target is grappled and takes 1d8\plus4 bludgeoning damage. It remains grappled until it escape the tentacle. The tentacle's Maneuver defense is equal to 10 \add your caster level \add your casting attribute.
+    \end{spellattack}
+\end{spellsubeffects}
 \begin{spellfooter}
     \spellinfo{Conjuration/Transmutation (Animation, Creation)}{Arcane}
-    \spelldesc{You conjure a field of rubbery black tentacles, each 5 feet long. These waving members seem to spring forth from the earth, floor, or whatever surface is underfoot -- including water. They grasp and entwine around creatures that enter the area, holding them fast and crushing them with great strength.}
     \spellnotes The tentacles are immune to all forms of attack.
 \end{spellfooter}
 
 \spellsection{Blade Barrier}{6}
 \begin{spellheader}
     \spelldesc{You create an immobile, vertical curtain of whirling blades shaped of pure force.}
-    \spelltwocol{\spellzone{100 ft. wall, 20 ft. high \shapeable}}{\spellrng{\rngmed}}
-    \spelltgt{The creature in the wall}
 \end{spellheader}
 \begin{spelleffects}
-    \spelleffect This spell creates a wall of blades made of force energy. The wall provides active cover (20\% miss chance) against attacks made through it. Attacks that miss in this way harmlessly strike the wall. The wall is considered difficult terrain.
-    \begin{spelltrigger}{A creature passes through the wall}
-        \begin{spellattack}{Magic vs. Reflex}
-            \spellsuccess 6d6 force damage \add d6 per four caster levels above 12th.
-            \spellfailure As above, but half damage.
-        \end{spellattack}
-    \end{spelltrigger}
+    \spelltwocol{\spellzone{100 ft. wall, 20 ft. high \shapeable}}{\spellrng{\rngmed}}
+    \spelleffect This spell creates a wall of blades made of force energy. The wall provides active cover (20\% miss chance) against attacks made through it. Attacks that miss in this way harmlessly strike the wall. Passing through the wall costs twice as much movement as normal.
     \spelldur{\durshort \dismissable}
 \end{spelleffects}
+\begin{spellsubeffects}
+    \spelltgr{A creature passes through the wall}
+    \spelltgt{The triggering creature}
+    \begin{spellattack}{Magic vs. Reflex}
+        \spellsuccess 6d6 force damage \add d6 per four caster levels above 12th.
+        \spellfailure As above, but half damage.
+    \end{spellattack}
+\end{spellsubeffects}
 \begin{spellfooter}
     \spellinfo{Evoc (Energy) [Force, Wall]}{Divine, War}
 
@@ -562,7 +561,7 @@
     \spelltgts{Everything in the area}
 \end{spellheader}
 \begin{spelleffects}
-    \begin{spellattack}l{Magic vs. Reflex and Fortitude}
+    \begin{spellattack}{Magic vs. Reflex and Fortitude}
         \spellsuccess If you beat the target's Reflex defense, it takes 5d8 electricity damage \add d8 per four caster levels above 10th. If you are outdoors in a stormy area, it takes 5d10 electricity damage \add d10 per four caster levels above 10th instead.
 
         If the target is \bloodied after the damage is dealt, and you also beat its Fortitude defense, it is \staggered for 5 rounds.
@@ -714,7 +713,7 @@
 \end{spellheader}
 \begin{spelleffects}
     \spelleffect This spell affects all \bloodied living creatures in the area, starting with the creature with the lowest level, until it affects a total number of levels equal to twice your caster level. Among creatures with equal levels, those closest to the burst's point of origin are affected first. No creature whose level is greater than half your caster level can be affected, and levels that are not sufficient to affect a creature are wasted. Healthy creatures are not affected by this spell, and do not count against its level limit.
-    \begin{spellattack}l{Magic vs. Fortitude}
+    \begin{spellattack}{Magic vs. Fortitude}
         \spellsuccess If the target is bloodied, it is reduced to 0 hit points and takes critical damage equal to your caster level, causing it to begin dying.
     \end{spellattack}
     \spellmat{The powder of a crushed black pearl with a minimum value of 100 gp.}
@@ -766,23 +765,23 @@
 \spellsection{Cloudkill}{7}
 \begin{spellheader}
     \spelldesc{You conjure a yellowish green fog bank that obscures vision and slowly poisons creatures inside.}
-    \spelltwocol{\spellzone{\areamed radius cylinder}}{\spellrng{\rngmed}}
-    \spellsr{No}
-    \spelltgts{Everything in the area}
 \end{spellheader}
 \begin{spelleffects}
+    \spelltwocol{\spellzone{\areamed radius cylinder}}{\spellrng{\rngmed}}
     \spelleffect Fog in the area, as \spell{fog cloud}, except that the fog is mobile and poisonous.
 
     \par The fog moves away from you at 10 feet per round, rolling along the surface of the ground. Figure out the cloud's new area each round based on its new point of origin, which is 10 feet farther away from the point of origin where you cast the spell.
-    \begin{spelltrigger}{End of every round}
-        \begin{spellattack}{Magic vs. Fortitude}
-            \spellsuccess 1d4 Constitution damage.
-        \end{spellattack}
-    \end{spelltrigger}
     \spelldur{\durshort}
+\end{spelleffects}
+\begin{spelleffects}
+    \spelltwocol{\spelltgr{End of every round}}{\spelltgts{Everything in the fog}}
+    \begin{spellattack}{Magic vs. Fortitude}
+        \spellsuccess 1d4 Constitution damage.
+    \end{spellattack}
 \end{spelleffects}
 \begin{spellfooter}
     \spellinfo{Conjuration (Creation) [Fog, Poison]}{Arcane}
+    \spellsr{No}
     \spellnotes As \spell{fog cloud}.
 
     Holding one's breath doesn't help against the poison, but creatures immune to poison are unaffected. Because the vapors are heavier than air, they sink to the lowest level of the land, even pouring down den or sinkhole openings. This spell cannot penetrate liquids, nor can it be cast underwater.
@@ -1220,7 +1219,6 @@
 \begin{spellheader}
     \spelldesc{You infuse an object with the power of the sun, causing it to illuminate a large area.}
     \spellrng{\rngtouch}
-    \spellsr{No}
     \spelltgt{Object touched}
 \end{spellheader}
 \begin{spelleffects}
@@ -1230,6 +1228,7 @@
 \end{spelleffects}
 \begin{spellfooter}
     \spellinfo{Illus (Figment) [Light]}{Divine}
+    \spellsr{No}
     \spellnotes \spell{Daylight} brought into an area of magical darkness (or vice versa) is temporarily negated, so that the otherwise prevailing light conditions exist in the overlapping areas of effect.
 \end{spellfooter}
 
@@ -1406,22 +1405,22 @@
     \spelleffect If the target's level does not exceed your caster level, it is \sickened for 5 rounds.
 
     If the target is also \bloodied when the spell is cast, it also suffers one or more of the following ill effects, depending on its level.
-    \begin{dtable}
-        \begin{tabularx}{\columnwidth}{l >{\lcol}X}
-            \par \thead{Level} & \thead{Effect} \\
-            \par Equal to caster level & Staggered \\
-            \par Up to caster level \minus5 & Stunned, staggered \\
-            \par Up to caster level \minus10 & Paralyzed, stunned, staggered \\
-            \par Up to caster level \minus15 & Killed\fn{1}
-        \end{tabularx}
-        1 Living creatures die. Nonliving creatures are destroyed.
-    \end{dtable}
     \par \subspell{Staggered} The creature is staggered for 5 rounds. It can take a move action or a standard action each round, but not both.
     \par \subspell{Stunned} The creature is stunned for 1 round.
     \par \subspell{Paralyzed} The creature is paralyzed and helpless for 5 rounds.
     \par \subspell{Killed} Living creatures die. Nonliving creatures are destroyed.
     \spelldur{Instantaneous/5 rounds}
 \end{spelleffects}
+\begin{dtable}
+    \begin{tabularx}{\columnwidth}{l >{\lcol}X}
+        \par \thead{Level} & \thead{Effect} \\
+        \par Equal to caster level & Staggered \\
+        \par Up to caster level \minus5 & Stunned, staggered \\
+        \par Up to caster level \minus10 & Paralyzed, stunned, staggered \\
+        \par Up to caster level \minus15 & Killed\fn{1}
+    \end{tabularx}
+    1 Living creatures die. Nonliving creatures are destroyed.
+\end{dtable}
 \begin{spellfooter}
     \spellinfo{Evoc (Channeling) [Lawful]}{Divine, Law}
 
@@ -1597,7 +1596,7 @@
     \end{spellattack}
 
     \spellburst{\areamed radius}
-    \begin{spellattack}l{Caster level vs. Special}
+    \begin{spellattack}{Caster level vs. Special}
         \spelleffect If the attack result beats a DC equal to 10 \add the caster level of the highest level spell on the target, that effect is dispelled. If there are multiple spells of the same level, choose one randomly.
     \end{spellattack}
 
@@ -1622,7 +1621,7 @@
     \spelltgts{All creatures and unattended objects in the area}
 \end{spellheader}
 \begin{spelleffects}
-    \begin{spellattack}l{Caster level vs. Special}
+    \begin{spellattack}{Caster level vs. Special}
         \spelleffect Spells affecting the target are dispelled, as a targeted \spell{dispel magic}.
     \end{spellattack}
 \end{spelleffects}
@@ -1650,13 +1649,14 @@
     \spelldesc{You imbue a weapon with positive energy, making it deadly to undead.}
     \spellrng{\rngclose}
     \spellfocus{One melee weapon}
-    \spelltgt{The bloodied undead creature}
 \end{spellheader}
-\begin{spelltrigger}{The focus weapon strikes a \bloodied undead creature for the first time in a round}
+\begin{spelleffects}
+    \spelltgr{The focus weapon strikes a \bloodied undead creature for the first time in a round}
+    \spelltgt{The struck creature}
     \begin{spellattack}{Magic vs. Fortitude}
         \spellsuccess The target creature is utterly destroyed.
     \end{spellattack}
-\end{spelltrigger}
+\end{spelleffects}
 
 \spellsection{Divine Favor}{1}
 \begin{spellheader}
@@ -1795,30 +1795,25 @@
 
 \spellsection{Earthquake}{8}
 \begin{spellheader}
-    \spelltwocol{\spellzone{\arealarge radius}}{\spellrng{\rngmed}}
-    \spellsr{No}
-    \spelltgt{All creatures in the area}
-    \spelltgt{All buildings and structures in the area}
-    \spelltgt{All creatures in the area}
+    \spelldesc{An intense but highly localized tremor shakes the ground. The shock knocks creatures down and makes fighting or escaping difficult. Eventually, the ground swallows those foolish enough to remain.}
 \end{spellheader}
 \begin{spelleffects}
+    \spelltwocol{\spellzone{Ground within \arealarge radius}}{\spellrng{\rngmed}}
     \spelleffect The area is difficult terrain. Creatures in the area take a \minus2 penalty to physical attacks, defenses, and checks. Casting a spell in the area requires a Concentration check against a DC equal to 10 \add your caster level \add double the level of the spell being cast.
-    \begin{spelltrigger}{End of every round, except the last round}
-        \begin{spellattack}{Magic vs. Reflex}
-            \spellsuccess The target is knocked prone.
-            \spelleffect 8d8 bludgeoning damage \add d8 per four caster levels above 16th.
-        \end{spellattack}
-    \end{spelltrigger}
-    \begin{spelltrigger}{End of the last round}
-        \begin{spellattack}{Magic vs. Reflex}
-            \spelleffect 8d6 bludgeoning damage \add d6 per four caster levels above 16th. In addition, the target is grappled by the ground until it escapes. To escape, it must beat a Maneuver defense equal to 10 \add your caster level \add your casting attribute.
-        \end{spellattack}
-    \end{spelltrigger}
-    \spelldur{5 rounds}
+    \spelldur{5 rounds }
 \end{spelleffects}
+\begin{spellsubeffects}
+    \spelltwocol{\spelltgr{End of every round}}{\spelltgts{Everything in the area}}
+        \begin{spellattack}{Magic vs. Reflex}
+            \spellsuccess 8d6 bludgeoning damage \add d6 per four caster levels above 16th. In addition, the target is knocked prone.
+            
+            If this is the last round of the earthquake, the target is also grappled by the ground. To escape, it must beat a Maneuver defense equal to 10 \add your caster level \add your casting attribute.
+            \spellfailure Half damage, and no effects other than damage.
+        \end{spellattack}
+\end{spellsubeffects}
 \begin{spellfooter}
     \spellinfo{Evoc (Control) [Earth]}{Destruction, Divine, Earth, Nature}
-    \spelldesc{An intense but highly localized tremor shakes the ground. The shock knocks creatures down and makes fighting or escaping difficult. Eventually, the ground swallows those foolish enough to remain.}
+    \spellsr{No}
     \spellnotes In terrain with unusual ground, such as rivers or swamps, this spell may have different effects.
 \end{spellfooter}
 
@@ -1848,7 +1843,7 @@
     \spelltgts{Everything in the area within 10 feet of natural earth or stone}
 \end{spellheader}
 \begin{spelleffects}
-    \begin{spellattack}l{Caster level \add casting attribute vs. Armor defense and Maneuver defense}
+    \begin{spellattack}{Caster level \add casting attribute vs. Armor defense and Maneuver defense}
         \spellsuccess The target is damaged and possibly immobilized, as \spell{earthspike}, except that it takes 6d8 piercing damage \add d8 per four caster levels above 12th.
     \end{spellattack}
 \end{spelleffects}
@@ -1987,42 +1982,44 @@
 \spellsection{Entangle}{1}
 \begin{spellheader}
     \spelldesc{Grasses, weeds, bushes, and even trees ensnare creatures in the area.}
-    \spelltwocol{\spellzone{\areasmall radius}}{\spellrng{\rngmed}}
-    \spellsr{No}
-    \spelltgt{All creatures in the area within 5 feet of plants}
 \end{spellheader}
 \begin{spelleffects}
-    \spelleffect The area is difficult terrain.
-    \begin{spelltrigger}{End of every movement phase}
-        \begin{spellattack}{Magic vs. Reflex}
-            \spellsuccess The target is \entangled and \immobilized. It can break free of the effect as a standard action by making a grapple attack or Escape Artist check that beats your magic attack result.
-        \end{spellattack}
-    \end{spelltrigger}
+    \spelltwocol{\spellzone{\areasmall radius}}{\spellrng{\rngmed}}
+    \spelleffect The ground in the area is difficult terrain.
     \spelldur{\durshort \dismissable}
 \end{spelleffects}
+\begin{spellsubeffects}
+    \spelltgr{End of every movement phase}
+    \spelltgt{All creatures in the area within 5 feet of plants}
+    \begin{spellattack}{Magic vs. Reflex}
+        \spellsuccess The target is \entangled and \immobilized. It can break free of the effect as a standard action by making a grapple attack or Escape Artist check that beats your magic attack result.
+    \end{spellattack}
+\end{spellsubeffects}
 \begin{spellfooter}
     \spellinfo{Transmutation (Animation)}{Nature, Wild}
+    \spellsr{No}
     \spellnotes The effects of this spell may be altered somewhat based on the nature of the plants in the area. If no plants exist in the area, this spell has no effect.
 \end{spellfooter}
 
 \spellsection{Entangling Growth}{4}
 \begin{spellheader}
     \spelldesc{Grasses, weeds, bushes, and even trees grow out of thin air to ensnare creatures in the area.}
-    \spelltwocol{\spellzone{\areamed radius}}{\spellrng{\rngmed}}
-    \spellsr{No}
-    \spelltgt{All creatures in the area within 5 feet of the ground}
 \end{spellheader}
 \begin{spelleffects}
-    \spelleffect The area is difficult terrain. Plants grow in the area, even if the terrain would not normally support plant life. At the end of the spell's duration, the plants recede into the ground, leaving no trace that they were ever there.
-    \begin{spelltrigger}{End of every movement phase}
-        \begin{spellattack}{Magic vs. Reflex}
-            \spellsuccess The target is ensnared, as \spell{entangle}.
-        \end{spellattack}
-    \end{spelltrigger}
+    \spelltwocol{\spellzone{\areasmall radius}}{\spellrng{\rngmed}}
+    \spelleffect The ground in the area is difficult terrain. Plants grow in the area, even if the terrain would not normally support plant life. At the end of the spell's duration, the plants recede into the ground, leaving no trace that they were ever there.
     \spelldur{\durshort \dismissable}
 \end{spelleffects}
+\begin{spellsubeffects}
+    \spelltgr{End of every movement phase}
+    \spelltgt{All creatures in the area within 5 feet of plants}
+    \begin{spellattack}{Magic vs. Reflex}
+        \spellsuccess The target is \entangled and \immobilized. It can break free of the effect as a standard action by making a grapple attack or Escape Artist check that beats your magic attack result.
+    \end{spellattack}
+\end{spellsubeffects}
 \begin{spellfooter}
-    \spellinfo{Transmutation (Alteration, Animation)}{Nature, Wild}
+    \spellinfo{Transmutation (Animation)}{Nature, Wild}
+    \spellsr{No}
     \spellnotes The effects of this spell may be altered somewhat based on the nature of the plants in the area.
 \end{spellfooter}
 
@@ -2212,18 +2209,20 @@
 \spellsection{Fire Shield}{4}
 \begin{spellheader}
     \spelldesc{You appear to immolate yourself in a wreath of flame that lashes out at anyone who tries to harm you.}
-    \spelltwocol{\spelltgt{See text}}{\spellrng{\rngclose}}
 \end{spellheader}
 \begin{spelleffects}
+    \spelltgt{You}
     \spelleffect You gain cold damage reduction, reducing the cold damage you take each round by 16 \add 1 per caster level above 8th. In addition, you radiate light as a torch, and creatures that attack you take damage.
-    \begin{spelltrigger}{Creature within range makes a physical attack against you}
-        \begin{spellattack}{Magic vs. Reflex}
-            \spellsuccess 5d6 fire damage \add d6 per four caster levels above 10th.
-            \spellfailure Half damage.
-        \end{spellattack}
-    \end{spelltrigger}
     \spelldur{\durshort \dismissable}
 \end{spelleffects}
+\begin{spellsubeffects}
+    \spelltgr{Creature within \rngclose range makes a physical attack against you}
+    \spelltgt{The attacking creature}
+    \begin{spellattack}{Magic vs. Reflex}
+        \spellsuccess 5d6 fire damage \add d6 per four caster levels above 10th.
+        \spellfailure Half damage.
+    \end{spellattack}
+\end{spellsubeffects}
 \begin{spellfooter}
     \spellinfo{Abjuration/Evoc (Energy, Shielding) [Fire or Cold]}{Arcane, Fire}
 
@@ -2236,7 +2235,7 @@
     \spelltgts{Everything in the area, except allied creatures}
 \end{spellheader}
 \begin{spelleffects}
-    \begin{spellattack}l{Magic vs. Reflex}
+    \begin{spellattack}{Magic vs. Reflex}
         \spellsuccess 8d6 fire damage \add d6 per four caster levels above 16th.
         \spellfailure As above, but half damage.
     \end{spellattack}
@@ -2657,16 +2656,14 @@
     \spelldesc{You heat your foe's armor, blistering its skin.}
     \spellrng{\rngmed}
     \spellfocus{One metal object}
-    \spelltgts{The focus and everything touching it}
 \end{spellheader}
 \begin{spelleffects}
-    \begin{spelltrigger}{End of every round}
-        \begin{spellattack}l{Magic vs. Fortitude}
-            \spellsuccess The target takes 2d6 fire damage \add d6 per four caster levels above 4th.
-            \spellfailure As above, but half damage.
-        \end{spellattack}
-    \end{spelltrigger}
-    \spelldur{\durshort \dismissable}
+    \spelltwocol{\spelltgr{End of every round}}{\spelldur{\durshort \dismissable}}
+    \spelltgts{The focus and everything touching it}
+    \begin{spellattack}{Magic vs. Fortitude}
+        \spellsuccess The target takes 2d6 fire damage \add d6 per four caster levels above 4th.
+        \spellfailure As above, but half damage.
+    \end{spellattack}
 \end{spelleffects}
 \begin{spellfooter}
     \spellinfo{Evoc (Energy) [Fire]}{Nature}
@@ -2875,19 +2872,16 @@
 \spellsection{Implosion}{9}
 \begin{spellheader}
     \spelldesc{You create a destructive responance in your foe's body that destroys it from the inside out.}
-    \spellrng{\rngclose}
-    \spelltgt{One creature}
 \end{spellheader}
 \begin{spelleffects}
-    \begin{spelltrigger}{End of every round}
-        \begin{spellattack}{Magic vs. Fortitude}
-            \spellsuccess The target is \staggered for 5 rounds.
+    \spelltwocol{\spelltgr{End of every round}}{\spelldur{Concentration (up to 5 rounds)}}
+    \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
+    \begin{spellattack}{Magic vs. Fortitude}
+        \spellsuccess The target is \staggered for 5 rounds.
 
-            If the target is \bloodied, it is instead instantly slain.
-            \spellspecial You cannot target the same creature more than once per casting of this spell.
-        \end{spellattack}
-    \end{spelltrigger}
-    \spelldur{Concentration (up to 5 rounds)}
+        If the target is \bloodied, it is instead instantly slain.
+        \spellspecial You cannot target the same creature more than once per casting of this spell.
+    \end{spellattack}
 \end{spelleffects}
 \begin{spellfooter}
     \spellinfo{Evoc (Control)}{Destruction, Divine}
@@ -3370,7 +3364,7 @@
 \begin{spelleffects}
     \spelldur{\durmed \dismissable}
     \spelleffect You sense the direction of a well-known or clearly visualized creature if it is within the spell's range. You can search for general creatures based on visual characteristics (such as ``pointy ears'' or ``looking human''), in which case you locate the nearest one of its kind if more than one is within the range. Attempting to find a certain creature requires a specific and accurate mental image of a distinguishing visual characteristic, such as its clothes or face; if the image is not close enough to the actual creature, the spell fails.
-\spelldur{\durlong \dismissable}
+    \spelldur{\durlong \dismissable}
 \end{spelleffects}
 \begin{spellfooter}
     \spellinfo{Divination (Awareness) [Detection]}{Arcane, Divine}
@@ -3947,13 +3941,12 @@
 \end{spellheader}
 \begin{spelleffects}
     \spelleffect The target is poisoned. At the end of every round, you make an attack against it to determine the poison's effects.
-    \begin{spelltrigger}{End of every round until the poison is resisted}
-        \begin{spellattack}{Magic vs. Fortitude}
-            \spellsuccess If this is the first successful attack, the target is \sickened. If this is the second successful attack, the target is \staggered. If this is the third successful attack, the target is \paralyzed.
-            \spellfailure If this is the second failed attack, the target resists the poison. No further attacks are made, though the effects of any previous attacks linger until the end of the spell.
-        \end{spellattack}
-    \end{spelltrigger}
-    \spelldur{5 minutes \undispellable}
+    \spelltgr{End of every round until the poison is resisted}
+    \begin{spellattack}{Magic vs. Fortitude}
+        \spellsuccess If this is the first successful attack, the target is \sickened. If this is the second successful attack, the target is \staggered. If this is the third successful attack, the target is \paralyzed.
+        \spellfailure If this is the second failed attack, the target resists the poison. No further attacks are made, though the effects of any previous attacks linger until the end of the spell.
+    \end{spellattack}
+\spelldur{5 minutes \undispellable}
 \end{spelleffects}
 \begin{spellfooter}
     \spellinfo{Necromancy (Flesh) [Poison]}{Death, Divine, Nature}
@@ -4103,22 +4096,22 @@
 \begin{spelleffects}
     \spellspecial The target is struck by a randomly colored beam of light. The beam color determines the effect and the defense used, as shown on \tref{Prismatic Beam Effects}. The damaging effects deal 3d10 damage \add d10 damage per four caster levels above 6th.
 
-    \begin{dtable*}
-        \lcaption{Prismatic Beam Effects}
-        \begin{tabularx}{\textwidth}{l >{\lcol}p{3.6em} l >{\lcol}X l}
-            \thead{1d8} & \thead{Color of Beam} & \thead{Defense} & \thead{Success}\fn{1} & \thead{Failure} \\
-            1 & Red     & Reflex    & Fire damage and ignited for 5 rounds & Half damage \\
-            2 & Orange  & Fortitude & Blinded for 1 round & No effect \\
-            3 & Yellow  & Reflex    & Electricity damage and staggered for 1 round & Half damage, not staggered \\
-            4 & Green   & Fortitude & Acid damage and sickened for 5 rounds & Half damage \\
-            5 & Blue    & Will      & Slowed for 5 rounds & Slowed for 1 round \\
-            6 & Indigo  & Will      & Confused for 1 round & No effect \\
-            7 & Violet  & None & Damage of all energy types (acid, cold, electricity, fire) & \x \\
-            8 & Octarine & \x & Struck by two beams; roll twice more, ignoring any ``8'' results.
-        \end{tabularx}
-        1 See \pcref{Conditions} for a summary of the conditions imposed.
-    \end{dtable*}
 \end{spelleffects}
+\begin{dtable*}
+    \lcaption{Prismatic Beam Effects}
+    \begin{tabularx}{\textwidth}{l >{\lcol}p{3.6em} l >{\lcol}X l}
+        \thead{1d8} & \thead{Color of Beam} & \thead{Defense} & \thead{Success}\fn{1} & \thead{Failure} \\
+        1 & Red     & Reflex    & Fire damage and ignited for 5 rounds & Half damage \\
+        2 & Orange  & Fortitude & Blinded for 1 round & No effect \\
+        3 & Yellow  & Reflex    & Electricity damage and staggered for 1 round & Half damage, not staggered \\
+        4 & Green   & Fortitude & Acid damage and sickened for 5 rounds & Half damage \\
+        5 & Blue    & Will      & Slowed for 5 rounds & Slowed for 1 round \\
+        6 & Indigo  & Will      & Confused for 1 round & No effect \\
+        7 & Violet  & None & Damage of all energy types (acid, cold, electricity, fire) & \x \\
+        8 & Octarine & \x & Struck by two beams; roll twice more, ignoring any ``8'' results.
+    \end{tabularx}
+    1 See \pcref{Conditions} for a summary of the conditions imposed.
+\end{dtable*}
 \begin{spellfooter}
     \spellinfo{Universal [Light]}{Arcane}
 
@@ -4157,18 +4150,18 @@
 
 \spellsection{Prismatic Wall}{5}
 \begin{spellheader}
-    \spelltwocol{\spellzone{\arealarge wall, 20 ft. high}}{\spellrng{\rngclose}}
-    \spelltgt{Creature in wall}
 \end{spellheader}
 \begin{spelleffects}
+    \spelltwocol{\spellzone{\arealarge wall, 20 ft. high}}{\spellrng{\rngclose}}
     \spelleffect This spell creates a shimmering, multicolored plane of light that blocks all sight. It harms any creature that attempts to pass through it.
-    \begin{spelltrigger}{A creature passes through the wall}
-        \begin{spellattack}{Magic vs. Reflex}
-            \spellspecial The target is struck by a randomly colored beam of light. The beam color determines the effect and the defense used, as shown on \tref{Prismatic Beam Effects}. The damaging effects deal 5d6 damage \add d6 damage per four caster levels above 10th.
-        \end{spellattack}
-    \end{spelltrigger}
     \spelldur{\durshort \dismissable}
 \end{spelleffects}
+\begin{spellsubeffects}
+    \spelltwocol{\spelltgr{A creature passes through the wall}}{\spelltgt{Triggering creature}}
+    \begin{spellattack}{Magic vs. Reflex}
+        \spellspecial The target is struck by a randomly colored beam of light. The beam color determines the effect and the defense used, as shown on \tref{Prismatic Beam Effects}. The damaging effects deal 5d6 damage \add d6 damage per four caster levels above 10th.
+    \end{spellattack}
+\end{spellsubeffects}
 \begin{spellfooter}
     \spellinfo{Universal [Light]}{Arcane, Chaos}
     \spellnotes This spell can be made permanent with a \spell{permanency} ritual.
@@ -4176,18 +4169,18 @@
 
 \spellsection{Prohibition}{6}
 \begin{spellheader}
-    \spellemanation{\arealarge radius centered on you}
-    \spelltgt{The creature breaking the rule}
 \end{spellheader}
 \begin{spelleffects}
+    \spellemanation{\arealarge radius centered on you}
     \spelleffect You loudly declare a prohibition on single, specific action which creatures must not take, such as ``Do not use ranged weapons'' or ``Do not lie''. You may choose any action that must be taken intentionally, but not involuntary actions or states of being, such as breathing or wearing armor. If the rule is too complicated, the spell fails.
 
     The spell grants all creatures that enter the area an understanding of the prohibition, even if they were unable to understand the rule as originally stated. If you break the rule, the spell ends -- after you suffer the consequences.
-    \begin{spelltrigger}{A creature breaks the rule}
-        \spelleffect 6d6 damage \add 1d6 per four caster levels above 12th. You know a creature broke the rule, but not which creature.
-    \end{spelltrigger}
-    \spelldur{\durshort}
+\spelldur{\durshort}
 \end{spelleffects}
+\begin{spellsubeffects}
+    \spelltwocol{\spelltgr{A creature breaks the rule}}{\spelltgt{Triggering creature}}
+    \spelleffect 6d6 damage \add 1d6 per four caster levels above 12th. You know a creature broke the rule, but not which creature.
+\end{spellsubeffects}
 \begin{spellfooter}
     \spellinfo{Abjuration/Divination (Communication, Interdiction)}{Abjuration, Law}
     \spellnotes Mindless creatures are given no special insight into the rule. Any individual creature can only take damage for breaking the rule once per round.
@@ -4195,22 +4188,23 @@
 
 \spellsectioncomma{Prohibition}{Greater}{9}
 \begin{spellheader}
-    \spellemanation{\arealarge radius centered on you}
-    \spelltgt{The creature breaking the rule}
 \end{spellheader}
 \begin{spelleffects}
-    \spelleffect You declare a rule that creatures must follow, as \spell{prohibition}.
-    \begin{spelltrigger}{A creature breaks the rule}
-        \begin{spellattack}{Magic vs. Will}
-            \spelleffect 9d6 damage \add 1d6 per four caster levels above 18th. You know a creature broke the rule, but not which creature.
-            \spellsuccess The target fails to take the prohibited action. Instead, it does nothing.
-        \end{spellattack}
-    \end{spelltrigger}
-    \spelldur{\durshort}
+    \spellemanation{\arealarge radius centered on you}
+    \spelleffect You loudly declare a prohibited action, as \spell{prohibition}.
+\spelldur{\durshort}
 \end{spelleffects}
+\begin{spellsubeffects}
+    \spelltwocol{\spelltgr{A creature breaks the rule}}{\spelltgt{Triggering creature}}
+    \begin{spellattack}{Magic vs. Will}
+        \spellsuccess 9d6 damage \add 1d6 per four caster levels above 12th. You know a creature broke the rule, but not which creature.
+        \spellcritical As above, and the creature is \stunned for 1 round, preventing it from completing its action.
+        \spellfailure As above, but half damage.
+    \end{spellattack}
+\end{spellsubeffects}
 \begin{spellfooter}
-    \spellinfo{Abjuration (Interdiction)}{Abjuration, Law}
-    \spellnotes As \spell{prohibition}.
+    \spellinfo{Abjuration/Divination (Communication, Interdiction)}{Abjuration, Law}
+    \spellnotes Mindless creatures are given no special insight into the rule. Any individual creature can only take damage for breaking the rule once per round.
 \end{spellfooter}
 
 \spellsection{Project Image}{6}
@@ -4400,15 +4394,13 @@
 \spellsection{Repulsion}{6}
 \begin{spellheader}
     \spelldesc{An invisible, mobile field surrounds you and prevents creatures from approaching you.}
-    \spellemanation{\arealarge radius centered on you}
-    \spelltgt{The moving creature}
 \end{spellheader}
 \begin{spelleffects}
-    \begin{spelltrigger}{A creature in the area moves towards you}
-        \begin{spellattack}{Magic vs. Will}
-            \spellsuccess The target is unable to move towards you. It can stand still, or alter the direction of its movement to move parallel towards you or away from you.
-        \end{spellattack}
-    \end{spelltrigger}
+    \spellemanation{\arealarge radius centered on you}
+    \spelltwocol{\spelltgr{A creature in the area moves towards you}}{\spelltgt{Triggering creature}}
+    \begin{spellattack}{Magic vs. Will}
+        \spellsuccess The target is unable to move towards you. It can stand still, or alter the direction of its movement to move parallel towards you or away from you.
+    \end{spellattack}
     \spelldur{\durshort \dismissable}
 \end{spelleffects}
 \begin{spellfooter}
@@ -4468,23 +4460,23 @@
 
 \spellsection{Retributive Brilliance}{5}
 \begin{spellheader}
-    \spellrng{\rngclose}
-    \spellfocus{One creature}
-    \spelltgt{The attacking creature}
 \end{spellheader}
 \begin{spelleffects}
-    \begin{spelltrigger}{A creature attacks the focus creature with a melee weapon}
-        \parhead*{Trigger Action} Immediate action by you or the focus creature
-        \spellrng{\rngclose}
-        \begin{spellattack}{Magic vs. Reflex}
-            \spellsuccess The target is \dazzled for 5 rounds.
-
-            If the target is \bloodied, it is also \blinded for 5 rounds.
-            \spellfailure The target is dazzled for 5 rounds.
-        \end{spellattack}
-    \end{spelltrigger}
+    \spelltwocol{\spelltgt{One creature}[Primary]}{\spellrng{\rngclose}}
+    \spelleffect The target is surrounded by a faintly shimmering field. If the target is attacked, the field retaliates.
     \spelldur{\durshort or until discharged}
 \end{spelleffects}
+\begin{spellsubeffects}
+    \spelltgr{A creature attacks the primary target with a melee weapon}
+    \spelltwocol{\spelltgt{The attacking creature}[Secondary]}{\spellrng{\rngclose}}
+    \parhead*{Trigger Action} Immediate action by you or the focus creature
+    \begin{spellattack}{Magic vs. Reflex}
+        \spellsuccess The target is \dazzled for 5 rounds.
+
+        If the target is \bloodied, it is also \blinded for 5 rounds.
+        \spellfailure The target is dazzled for 5 rounds.
+    \end{spellattack}
+\end{spellsubeffects}
 \begin{spellfooter}
     \spellinfo{Abjuration/Illus (Figment, Shielding)}{Arcane}
 
@@ -4621,20 +4613,19 @@
 
 \spellsection{Sanctuary}{1}
 \begin{spellheader}
-    \spellrng{Touch}
-    \spellfocus{One creature}
-    \spellspecial If the focus creature attacks any other creature, this spell immediately ends.
-    \spelltgt{The attacking creature}
 \end{spellheader}
 \begin{spelleffects}
-    \begin{spelltrigger}{The focus creature is attacked}
-        \begin{spellattack}{Magic vs. Will}
-            \spellsuccess The target is unable to attack the focus creature. It can attack a different creature instead.
-        \end{spellattack}
-    \end{spelltrigger}
-
+    \spelltwocol{\spelltgt{One creature}[Primary]}{\spellrng{Touch}}
+    \spelleffect The primary target is protected from attacks. If it makes an attack, this spell immediately ends.
     \spelldur{\durshort or until discharged}
 \end{spelleffects}
+\begin{spellsubeffects}
+    \spelltgr{A creature attacks the primary target}
+    \spelltgt{The attacking creature}[Secondary]
+    \begin{spellattack}{Magic vs. Will}
+        \spellsuccess The secondary target is unable to attack the primary target creature. It can change its action to attack a different creature instead.
+    \end{spellattack}
+\end{spellsubeffects}
 \begin{spellfooter}
     \spellinfo{Abjuration/Ench (Compulsion, Shielding) [Mind-Affecting]}{Arcane, Divine, Protection}
     \spellnotes This is considered a mind-affecting effect on any creature that attempts to attack the target. Creatures immune to mind-affecting effects can attack the target freely.
@@ -5187,21 +5178,21 @@
 \spellsection{Stinking Cloud}{5}
 \begin{spellheader}
     \spelldesc{You create putrid vapors which obscure sight and sicken creatures.}
-    \spelltwocol{\spellzone{\areamed radius cylinder}}{\spellrng{\rngmed}}
-    \spellsr{No}
-    \spelltgt{Everything in the area}
 \end{spellheader}
 \begin{spelleffects}
+    \spelltwocol{\spellzone{\areamed radius cylinder}}{\spellrng{\rngmed}}
     \spelleffect Fog fills the area, as \spell{fog cloud}, except that the fog has a putrid stench.
-    \begin{spelltrigger}{End of every round}
-        \begin{spellattack}{Magic vs. Fortitude}
-            \spellsuccess The target is \sickened for as long as it remains in the cloud, and for 5 rounds after it leaves.
-        \end{spellattack}
-    \end{spelltrigger}
     \spelldur{\durshort}
 \end{spelleffects}
+\begin{spellsubeffects}
+    \spelltwocol{\spelltgr{End of every round}}{\spelltgts{Everything in the area}}
+    \begin{spellattack}{Magic vs. Fortitude}
+        \spellsuccess The target is \sickened for as long as it remains in the cloud, and for 5 rounds after it leaves.
+    \end{spellattack}
+\end{spellsubeffects}
 \begin{spellfooter}
     \spellinfo{Conjuration (Creation)}{Arcane}
+    \spellsr{No}
     \spellnotes This spell can be made permanent with a \spell{permanency} ritual. A permanent \spell{stinking cloud} dispersed by wind reforms in 10 minutes. \fogspellnotes \fogwindspellnotes
 \end{spellfooter}
 
@@ -5230,18 +5221,18 @@
 
     At the end of every round, the storm has an additional effect, as shown on \tref{Storm of Vengeance Effects}. Damaging effects deal 9d6 damage \add d6 per four caster levels above 18th.
 
-    \begin{dtable*}
-        \lcaption{Storm of Vengeance Effects}
-        \begin{tabularx}{\textwidth}{l l l >{\lcol}X l}
-            \thead{Rounds} & \thead{Effect} & \thead{Defense} & \thead{Success} & \thead{Failure} \\
-            Odd (1, 3, 5, 7, 9)   & Lightning  & Reflex    & Electricity damage (foes only) & Half damage \\
-            Even (2, 4, 6, 8, 10) & Thunder    & Fortitude & Deafened for 5 rounds & No effect \\
-            2, 6, 10              & Hail       & Reflex    & Bludgeoning damage & Half damage \\
-            4, 8                  & Acid rain  & None      & Acid damage & \x \\
-        \end{tabularx}
-    \end{dtable*}
     \spelldur{Concentration (maximum 10 rounds)}
 \end{spelleffects}
+\begin{dtable*}
+    \lcaption{Storm of Vengeance Effects}
+    \begin{tabularx}{\textwidth}{l l l >{\lcol}X l}
+        \thead{Rounds} & \thead{Effect} & \thead{Defense} & \thead{Success} & \thead{Failure} \\
+        Odd (1, 3, 5, 7, 9)   & Lightning  & Reflex    & Electricity damage (foes only) & Half damage \\
+        Even (2, 4, 6, 8, 10) & Thunder    & Fortitude & Deafened for 5 rounds & No effect \\
+        2, 6, 10              & Hail       & Reflex    & Bludgeoning damage & Half damage \\
+        4, 8                  & Acid rain  & None      & Acid damage & \x \\
+    \end{tabularx}
+\end{dtable*}
 \begin{spellfooter}
     \spellinfo{Conjuration/Evoc (Energy, Control, Creation)}{Air, Divine, Nature, War, Water}
     \spellnotes When the storm has multiple effects in the same round, roll a single attack and compare the result to all relevant defenses.
@@ -5250,18 +5241,20 @@
 \spellsection{Stormlord}{7}
 \begin{spellheader}
     \spelldesc{You surround yourself in a whirlwind which deflects ranged attacks and batters your foes.} 
-    \spelltwocol{\spelltgt{You}}{\spellrng{\rngclose}}
 \end{spellheader}
 \begin{spelleffects}
+    \spelltwocol{\spelltgt{You}}{\spellrng{\rngclose}}
     \spelleffect You gain physical damage reduction against ranged attacks, reducing the physical damage you take each round from ranged attacks by 35 \add 2 per caster level above 14th.
-    \begin{spelltrigger}{Creature within range makes a physical attack against you}
-        \begin{spellattack}{Magic vs. Fortitude}
-            \spellsuccess 7d6 bludgeoning damage \add d6 per four caster levels above 14th.
-            \spellfailure As above, but half damage.
-        \end{spellattack}
-    \end{spelltrigger}
     \spelldur{\durshort \dismissable}
 \end{spelleffects}
+\begin{spellsubeffects}
+    \spelltgr{Creature within \rngclose range makes a physical attack against you}
+    \spelltgt{Triggering creature}
+    \begin{spellattack}{Magic vs. Fortitude}
+        \spellsuccess 7d6 bludgeoning damage \add d6 per four caster levels above 14th.
+        \spellfailure As above, but half damage.
+    \end{spellattack}
+\end{spellsubeffects}
 \begin{spellfooter}
     \spellinfo{Abjuration/Evoc (Control, Shielding)}{Air, Nature}
 
@@ -5443,62 +5436,62 @@
 \begin{spelleffects}
     \spelleffect This spell functions like \spell{summon monster I}, except that you can summon one creature from the 9th-level list or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 9th-level list or lower on \tref{Summon Monster List}. You can summon those creatures with this or any other \spell{summon monster} spell.
 
-    \begin{dtable!*}
-        \lcaption{Summon Monster List}
-        \begin{tabularx}{\textwidth}{>{\lcol}X c >{\lcol}X c >{\lcol}X c}
-            \thead{1st Level} &  & \thead{4th Level} &  & Fiendish monstrous spider, Huge & CE \\
-            Celestial dog & LG & Archon, lantern & LG & Fiendish snake, giant constrictor & CE \\
-            Celestial owl & LG & Celestial giant owl & LG &  &  \\
-            Celestial giant fire beetle & NG & Celestial giant eagle & CG & \thead{7th Level} &  \\
-            Celestial porpoise\fn{1} & NG & Celestial lion & CG & Celestial elephant & LG \\
-            Celestial badger & CG & Mephit (any)\fn{2} & N & Avoral (guardinal) & NG \\
-            Celestial monkey & CG & Fiendish dire wolf & LE & Celestial baleen whale\fn{1} & NG \\
-            Fiendish dire rat & LE & Fiendish giant wasp & LE & Djinni (genie) & CG \\
-            Fiendish raven & LE & Fiendish giant praying mantis & NE & Elemental, Huge (any)\fn{2} & N \\
-            Fiendish monstrous centipede, Medium & NE & Fiendish shark, Large\fn{1} & NE & Invisible stalker & N \\
-            Fiendish monstrous scorpion, Small & NE & Yeth hound & NE & Devil, bone & LE \\
-            Fiendish hawk & CE & Fiendish monstrous spider, Large & CE & Fiendish megaraptor & LE \\
-            Fiendish monstrous spider, Small & CE & Fiendish snake, Huge viper & CE & Fiendish monstrous scorpion, Huge & \\ NE
-            Fiendish octopus\fn{1} & CE & Howler & CE & Babau (demon) & CE \\
-            Fiendish snake, Small viper & CE &  &  & Fiendish giant octopus\fn{1} & CE \\
-            &  & \thead{5th Level} &  & Fiendish girallon & CE \\
-            \thead{2nd Level} &  & Archon, hound & K &  &  \\
-            Celestial giant bee & LG & Celestial brown bear & LG &  &  \\
-            Celestial giant bombardier beetle & NG & Celestial giant stag beetle & LG & \thead{8th Level} &  \\
-            Celestial riding dog & NG & Celestial sea cat\fn{1} & NG & Celestial dire bear & LG \\
-            Celestial eagle & CG & Celestial griffon & NG & Celestial cachalot whale\fn{1} & NG \\
-            Lemure (devil) & LE & Elemental, Medium (any)\fn{2} & CG & Celestial triceratops & NG \\
-            Fiendish squid\fn{1} & LE & Achaierai & N & Lillend & CG \\
-            Fiendish wolf & LE & Devil, bearded & LE & Elemental, greater (any)\fn{2} & N \\
-            Fiendish monstrous centipede, Large & NE & Fiendish deinonychus & LE & Fiendish giant squid\fn{1} & LE \\
-            Fiendish monstrous scorpion, Medium & NE & Fiendish dire ape & LE & Hellcat & LE \\
-            Fiendish shark, Medium\fn{1} & NE & Fiendish dire boar & LE & Fiendish monstrous centipede, Colossal & NE \\
-            Fiendish monstrous spider, Medium & CE & Fiendish shark, Huge & NE & Fiendish dire tiger & CE \\
-            Fiendish snake, Medium viper & CE & Fiendish monstrous scorpion, Large & NE & Fiendish monstrous spider, Gargantuan & CE \\
-            &  & Shadow mastiff & NE & Fiendish tyrannosaurus & CE \\
-            \thead{3rd Level} &  & Fiendish dire wolverine & NE & Vrock (demon) & CE \\
-            Celestial black bear & LG & Fiendish giant crocodile & CE &  &  \\
-            Celestial bison & NG & Fiendish tiger & CE &  &  \\
-            Celestial dire badger & CG &  &  & \thead{9th Level} &  \\
-            Celestial hippogriff & CG & \thead{6th Level} &  & Couatl & LG \\
-            Elemental, Small (any)\fn{2} & N & Celestial polar bear & LG & Leonal (guardinal) & NG \\
-            Fiendish ape & LE & Celestial orca whale\fn{1} & NG & Celestial roc & CG \\
-            Fiendish dire weasel & LE & Bralani (eladrin) & CG & Elemental, elder (any)\fn{2} & N \\
-            Hell hound & LE & Celestial dire lion & CG & Devil, barbed & LE \\
-            Fiendish snake, constrictor  & LE & Elemental, Large (any)\fn{2} & N & Fiendish dire shark\fn{1} & NE \\
-            Fiendish boar & NE & Janni (genie) & N & Fiendish monstrous scorpion, Gargantuan & NE \\
-            Fiendish dire bat & NE & Chaos beast & CN & Night hag & NE \\
-            Fiendish monstrous centipede, Huge & NE & Devil, chain & LE & Bebilith (demon) & CE \\
-            Fiendish crocodile & CE & Xill & LE & Fiendish monstrous spider, Colossal & CE \\
-            Dretch (demon) & CE & Fiendish monstrous centipede, Gargantuan & NE & Hezrou (demon) & CE \\
-            Fiendish snake, Large viper & CE & Fiendish rhinoceros & NE & & \\
-            Fiendish wolverine & CE & Fiendish elasmosaurus\fn{1} & CE & &
-        \end{tabularx}
-        1 May be summoned only into an aquatic or watery environment. \\
-        2 Each variety must be learned individually.
-    \end{dtable!*}
     \spelldur{\durshort \dismissable}
 \end{spelleffects}
+\begin{dtable!*}
+    \lcaption{Summon Monster List}
+    \begin{tabularx}{\textwidth}{>{\lcol}X c >{\lcol}X c >{\lcol}X c}
+        \thead{1st Level} &  & \thead{4th Level} &  & Fiendish monstrous spider, Huge & CE \\
+        Celestial dog & LG & Archon, lantern & LG & Fiendish snake, giant constrictor & CE \\
+        Celestial owl & LG & Celestial giant owl & LG &  &  \\
+        Celestial giant fire beetle & NG & Celestial giant eagle & CG & \thead{7th Level} &  \\
+        Celestial porpoise\fn{1} & NG & Celestial lion & CG & Celestial elephant & LG \\
+        Celestial badger & CG & Mephit (any)\fn{2} & N & Avoral (guardinal) & NG \\
+        Celestial monkey & CG & Fiendish dire wolf & LE & Celestial baleen whale\fn{1} & NG \\
+        Fiendish dire rat & LE & Fiendish giant wasp & LE & Djinni (genie) & CG \\
+        Fiendish raven & LE & Fiendish giant praying mantis & NE & Elemental, Huge (any)\fn{2} & N \\
+        Fiendish monstrous centipede, Medium & NE & Fiendish shark, Large\fn{1} & NE & Invisible stalker & N \\
+        Fiendish monstrous scorpion, Small & NE & Yeth hound & NE & Devil, bone & LE \\
+        Fiendish hawk & CE & Fiendish monstrous spider, Large & CE & Fiendish megaraptor & LE \\
+        Fiendish monstrous spider, Small & CE & Fiendish snake, Huge viper & CE & Fiendish monstrous scorpion, Huge & \\ NE
+        Fiendish octopus\fn{1} & CE & Howler & CE & Babau (demon) & CE \\
+        Fiendish snake, Small viper & CE &  &  & Fiendish giant octopus\fn{1} & CE \\
+        &  & \thead{5th Level} &  & Fiendish girallon & CE \\
+        \thead{2nd Level} &  & Archon, hound & K &  &  \\
+        Celestial giant bee & LG & Celestial brown bear & LG &  &  \\
+        Celestial giant bombardier beetle & NG & Celestial giant stag beetle & LG & \thead{8th Level} &  \\
+        Celestial riding dog & NG & Celestial sea cat\fn{1} & NG & Celestial dire bear & LG \\
+        Celestial eagle & CG & Celestial griffon & NG & Celestial cachalot whale\fn{1} & NG \\
+        Lemure (devil) & LE & Elemental, Medium (any)\fn{2} & CG & Celestial triceratops & NG \\
+        Fiendish squid\fn{1} & LE & Achaierai & N & Lillend & CG \\
+        Fiendish wolf & LE & Devil, bearded & LE & Elemental, greater (any)\fn{2} & N \\
+        Fiendish monstrous centipede, Large & NE & Fiendish deinonychus & LE & Fiendish giant squid\fn{1} & LE \\
+        Fiendish monstrous scorpion, Medium & NE & Fiendish dire ape & LE & Hellcat & LE \\
+        Fiendish shark, Medium\fn{1} & NE & Fiendish dire boar & LE & Fiendish monstrous centipede, Colossal & NE \\
+        Fiendish monstrous spider, Medium & CE & Fiendish shark, Huge & NE & Fiendish dire tiger & CE \\
+        Fiendish snake, Medium viper & CE & Fiendish monstrous scorpion, Large & NE & Fiendish monstrous spider, Gargantuan & CE \\
+        &  & Shadow mastiff & NE & Fiendish tyrannosaurus & CE \\
+        \thead{3rd Level} &  & Fiendish dire wolverine & NE & Vrock (demon) & CE \\
+        Celestial black bear & LG & Fiendish giant crocodile & CE &  &  \\
+        Celestial bison & NG & Fiendish tiger & CE &  &  \\
+        Celestial dire badger & CG &  &  & \thead{9th Level} &  \\
+        Celestial hippogriff & CG & \thead{6th Level} &  & Couatl & LG \\
+        Elemental, Small (any)\fn{2} & N & Celestial polar bear & LG & Leonal (guardinal) & NG \\
+        Fiendish ape & LE & Celestial orca whale\fn{1} & NG & Celestial roc & CG \\
+        Fiendish dire weasel & LE & Bralani (eladrin) & CG & Elemental, elder (any)\fn{2} & N \\
+        Hell hound & LE & Celestial dire lion & CG & Devil, barbed & LE \\
+        Fiendish snake, constrictor  & LE & Elemental, Large (any)\fn{2} & N & Fiendish dire shark\fn{1} & NE \\
+        Fiendish boar & NE & Janni (genie) & N & Fiendish monstrous scorpion, Gargantuan & NE \\
+        Fiendish dire bat & NE & Chaos beast & CN & Night hag & NE \\
+        Fiendish monstrous centipede, Huge & NE & Devil, chain & LE & Bebilith (demon) & CE \\
+        Fiendish crocodile & CE & Xill & LE & Fiendish monstrous spider, Colossal & CE \\
+        Dretch (demon) & CE & Fiendish monstrous centipede, Gargantuan & NE & Hezrou (demon) & CE \\
+        Fiendish snake, Large viper & CE & Fiendish rhinoceros & NE & & \\
+        Fiendish wolverine & CE & Fiendish elasmosaurus\fn{1} & CE & &
+    \end{tabularx}
+    1 May be summoned only into an aquatic or watery environment. \\
+    2 Each variety must be learned individually.
+\end{dtable!*}
 \begin{spellfooter}
     \spellinfo{Conjuration (Summoning)}{Arcane, Chaos, Divine, Evil, Good, Law}
     \spellsr{No}
@@ -5628,43 +5621,43 @@
 \begin{spelleffects}
     \spelleffect This spell functions like \spellindirect{summon nature's ally i}{summon nature's ally I}, except that you can summon one 9th-level creature or 1d3 creatures of the same kind from a lower-level list. When you learn this spell, you choose two creatures from the 9th-level list or lower on \tref{Summon Nature's Ally List}. You can summon those creatures with this or any other \spell{summon nature's ally} spell.
 
-    \begin{dtable*}
-        \lcaption{Summon Nature's Ally List}
-        \begin{tabularx}{\textwidth}{>{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \thead{1st Level} & Eagle, giant [NG] & \thead{5th Level} & \thead{7th Level} \\
-            Dire rat & Lion & Arrowhawk, adult & Arrowhawk, elder \\
-            Eagle (animal) & Owl, giant [NG] & Bear, polar (animal) & Dire tiger \\
-            Monkey (animal) & Satyr [CN; without pipes] & Dire lion & Elemental, greater (any)\fn{2} \\
-            Octopus\fn{1} (animal) & Shark, Large\fn{1} (animal) & Elasmosaurus\fn{1} (dinosaur) & Djinni (genie) [NG] \\
-            Owl (animal) & Snake, constrictor (animal) & Elemental, Large (any)\fn{2} & Invisible stalker \\
-            Porpoise\fn{1} (animal) & Snake, Large viper (animal) & Griffon & Pixie\fn{3} (sprite) [NG; with sleep arrows] \\
-            Snake, Small viper (animal) & Thoqqua & Janni (genie) & Squid, giant\fn{1} (animal) \\
-            Wolf (animal) &  & Rhinoceros (animal) & Triceratops (dinosaur) \\
-            & \thead{4th Level} & Satyr [CN; with pipes] & Tyrannosaurus (dinosaur) \\
-            \thead{2nd Level} & Arrowhawk, juvenile & Snake, giant constrictor (animal) & Whale, cachalot\fn{1} (animal) \\
-            Bear, black (animal) & Bear, brown (animal) & Nixie (sprite) & Xorn, elder \\
-            Crocodile (animal) & Crocodile, giant (animal) & Tojanida, adult\fn{1} &  \\
-            Dire badger & Deinonychus (dinosaur) & Whale, orca\fn{1} (animal) & \thead{8th Level} \\
-            Dire bat & Dire ape &  & Dire shark\fn{1} \\
-            Elemental, Small (any)\fn{2} & Dire boar & \thead{6th Level} & Roc \\
-            Hippogriff & Dire wolverine & Dire bear & Salamander, noble [NE] \\
-            Shark, Medium\fn{1} (animal) & Elemental, Medium (any)\fn{2} & Elemental, Huge (any)\fn{2} & Tojanida, elder \\
-            Snake, Medium viper (animal) & Salamander, flamebrother [NE] & Elephant (animal) &  \\
-            Squid\fn{1} (animal) & Sea cat\fn{1} & Girallon & \thead{9th Level} \\
-            Wolverine (animal) & Shark, Huge\fn{1} (animal) & Megaraptor (dinosaur) & Elemental, elder \\
-            & Snake, Huge viper (animalo) & Octopus, giant\fn{1} (animal) & Grig [NG; with fiddle] (sprite) \\
-            \thead{3rd Level} & Tiger (animal) & Pixie\fn{3} (sprite) [NG; no special arrows] & Pixie\fn{4} (sprite) [NG; with sleep and memory loss arrows] \\
-            Ape (animal) & Tojanida, juvenile\fn{1} & Salamander, average [NE] & Unicorn, celestial charger \\
-            Dire weasel & Unicorn [CG] & Whale, baleen\fn{1} &  \\
-            Dire wolf & Xorn, minor & Xorn, average & 
-        \end{tabularx}
-        1 May be summoned only into an aquatic or watery environment. \\
-        2 Each variety must be learned individually. \\
-        3 Can't cast irresistible dance \\
-        4 Can cast irresistible dance \\
-    \end{dtable*}
     \spelldur{\durshort \dismissable}
 \end{spelleffects}
+\begin{dtable*}
+    \lcaption{Summon Nature's Ally List}
+    \begin{tabularx}{\textwidth}{>{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+        \thead{1st Level} & Eagle, giant [NG] & \thead{5th Level} & \thead{7th Level} \\
+        Dire rat & Lion & Arrowhawk, adult & Arrowhawk, elder \\
+        Eagle (animal) & Owl, giant [NG] & Bear, polar (animal) & Dire tiger \\
+        Monkey (animal) & Satyr [CN; without pipes] & Dire lion & Elemental, greater (any)\fn{2} \\
+        Octopus\fn{1} (animal) & Shark, Large\fn{1} (animal) & Elasmosaurus\fn{1} (dinosaur) & Djinni (genie) [NG] \\
+        Owl (animal) & Snake, constrictor (animal) & Elemental, Large (any)\fn{2} & Invisible stalker \\
+        Porpoise\fn{1} (animal) & Snake, Large viper (animal) & Griffon & Pixie\fn{3} (sprite) [NG; with sleep arrows] \\
+        Snake, Small viper (animal) & Thoqqua & Janni (genie) & Squid, giant\fn{1} (animal) \\
+        Wolf (animal) &  & Rhinoceros (animal) & Triceratops (dinosaur) \\
+        & \thead{4th Level} & Satyr [CN; with pipes] & Tyrannosaurus (dinosaur) \\
+        \thead{2nd Level} & Arrowhawk, juvenile & Snake, giant constrictor (animal) & Whale, cachalot\fn{1} (animal) \\
+        Bear, black (animal) & Bear, brown (animal) & Nixie (sprite) & Xorn, elder \\
+        Crocodile (animal) & Crocodile, giant (animal) & Tojanida, adult\fn{1} &  \\
+        Dire badger & Deinonychus (dinosaur) & Whale, orca\fn{1} (animal) & \thead{8th Level} \\
+        Dire bat & Dire ape &  & Dire shark\fn{1} \\
+        Elemental, Small (any)\fn{2} & Dire boar & \thead{6th Level} & Roc \\
+        Hippogriff & Dire wolverine & Dire bear & Salamander, noble [NE] \\
+        Shark, Medium\fn{1} (animal) & Elemental, Medium (any)\fn{2} & Elemental, Huge (any)\fn{2} & Tojanida, elder \\
+        Snake, Medium viper (animal) & Salamander, flamebrother [NE] & Elephant (animal) &  \\
+        Squid\fn{1} (animal) & Sea cat\fn{1} & Girallon & \thead{9th Level} \\
+        Wolverine (animal) & Shark, Huge\fn{1} (animal) & Megaraptor (dinosaur) & Elemental, elder \\
+        & Snake, Huge viper (animalo) & Octopus, giant\fn{1} (animal) & Grig [NG; with fiddle] (sprite) \\
+        \thead{3rd Level} & Tiger (animal) & Pixie\fn{3} (sprite) [NG; no special arrows] & Pixie\fn{4} (sprite) [NG; with sleep and memory loss arrows] \\
+        Ape (animal) & Tojanida, juvenile\fn{1} & Salamander, average [NE] & Unicorn, celestial charger \\
+        Dire weasel & Unicorn [CG] & Whale, baleen\fn{1} &  \\
+        Dire wolf & Xorn, minor & Xorn, average & 
+    \end{tabularx}
+    1 May be summoned only into an aquatic or watery environment. \\
+    2 Each variety must be learned individually. \\
+    3 Can't cast irresistible dance \\
+    4 Can cast irresistible dance \\
+\end{dtable*}
 \begin{spellfooter}
     \spellinfo{Conjuration (Summoning) [see text]}{Nature, Wild}
     \spellsr{No}
@@ -5748,16 +5741,13 @@
 
 \spellsection{Telekinetic Force}{4}
 \begin{spellheader}
-    \spellrng{\rngmed}
-    \spelltgt{One creature or object}
 \end{spellheader}
 \begin{spelleffects}
-    \begin{spelltrigger}{End of every round}
-        \begin{spellattack}{Magic vs. Will}
-            \spellsuccess You can take a standard action using the target as if you were holding it in your hands. Your effective Strength is equal to your Charisma, and your effective Dexterity is equal to your Intelligence. You can move the target up to thirty feet per round.
-        \end{spellattack}
-    \end{spelltrigger}
-    \spelldur{Concentration}
+    \spelltwocol{\spelltgr{End of every round}}{\spelldur{Concentration}}
+    \spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngmed}}
+    \begin{spellattack}{Magic vs. Will}
+        \spellsuccess You can take a standard action using the target as if you were holding it in your hands. Your effective Strength is equal to your Charisma, and your effective Dexterity is equal to your Intelligence. You can move the target up to thirty feet per round.
+    \end{spellattack}
 \end{spelleffects}
 \begin{spellfooter}
     \spellinfo{Evoc (Control)}{Evoc}
@@ -5766,17 +5756,14 @@
 
 \spellsection{Telekinetic Maneuver}{3}
 \begin{spellheader}
-    \spellrng{\rngmed}
-    \spelltgt{One creature or object}
 \end{spellheader}
 \begin{spelleffects}
-    \begin{spelltrigger}{End of every round}
-        \spellspecial Choose one of the following combat maneuvers: disarm, dirty trick, grapple, shove, or trip.
-        \begin{spellattack}{Caster level \add casting attribute vs. Maneuver defense}
-            \spellsuccess The target is affected by the chosen maneuver.
-        \end{spellattack}
-    \end{spelltrigger}
-    \spelldur{Concentration}
+    \spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngmed}}
+    \spelltwocol{\spelltgr{End of every round}}{\spelldur{Concentration}}
+    \spellspecial Choose one of the following combat maneuvers: disarm, dirty trick, grapple, shove, or trip.
+    \begin{spellattack}{Caster level \add casting attribute vs. Maneuver defense}
+        \spellsuccess The target is affected by the chosen maneuver.
+    \end{spellattack}
 \end{spelleffects}
 \begin{spellfooter}
     \spellinfo{Evoc (Control)}{Evoc}
@@ -6177,19 +6164,19 @@
 
 \spellsection{Wall of Fire}{4}
 \begin{spellheader}
-    \spelltwocol{\spellzone{100 ft. wall, 10 ft. high \shapeable}}{\spellrng{\rngmed}}
-    \spelltgt{Creature in wall}
 \end{spellheader}
 \begin{spelleffects}
+    \spelltwocol{\spellzone{100 ft. wall, 10 ft. high \shapeable}}{\spellrng{\rngmed}}
     \spelleffect This spell creates a wall made of fire.
-    \begin{spelltrigger}{A creature passes through the wall}
-        \begin{spellattack}{Magic vs. Reflex}
-            \spellsuccess 4d6 fire damage \add d6 per four caster levels above 10th.
-            \spellfailure As above, but half damage.
-        \end{spellattack}
-    \end{spelltrigger}
     \spelldur{\durshort}
 \end{spelleffects}
+\begin{spellsubeffects}
+    \spelltwocol{\spelltgr{A creature passes through the wall}}{\spelltgt{Creature in wall}}
+    \begin{spellattack}{Magic vs. Reflex}
+        \spellsuccess 4d6 fire damage \add d6 per four caster levels above 10th.
+        \spellfailure As above, but half damage.
+    \end{spellattack}
+\end{spellsubeffects}
 \begin{spellfooter}
     \spellinfo{Evoc (Energy) [Fire, Wall]}{Arcane, Nature, Fire}
     \spellnotes Any part of the wall takes 20 cold damage is extinguished.
@@ -6230,18 +6217,18 @@
 
 \spellsection{Wall of Thorns}{5}
 \begin{spellheader}
+\end{spellheader}
+\begin{spelleffects}
     \spelltwocol{\spellzone{100 ft. line, 5 ft. wide, 10 ft. high \shapeable}}{\spellrng{\rngmed}}
     \spelleffect This spell creates a thicket of thorns in the area. A 5-foot cube of wall has 10 hit points per caster level. Moving into or out of a square in the area costs 20 feet of movement. The wall can be created where creatures are.
 
     The wall provides total cover against attacks through the wall. A creature in the wall has cover from attacks on either side of the wall.
-    \spelltgt{The moving creature}
-\end{spellheader}
-\begin{spelleffects}
-    \begin{spelltrigger}{A creature enters or exits a square in the area}
-        \spelleffect 3d6 physical piercing damage.
-    \end{spelltrigger}
     \spelldur{\durlong \dismissable}
 \end{spelleffects}
+\begin{spellsubeffects}
+    \spelltwocol{\spelltgr{A creature enters or exits a square in the area}}{\spelltgt{The moving creature}}
+    \spelleffect 3d6 physical piercing damage.
+\end{spellsubeffects}
 \begin{spellfooter}
     \spellinfo{Conjuration (Creation) [Wall]}{Nature, Wild}
     \spellnotes A \spell{wall of thorn} can be breached by slow work with edged weapons or fire. It has hardness 8 and 30 hit points per square foot of thickness.
@@ -6295,22 +6282,23 @@
 
 \spellsection{Web}{3}
 \begin{spellheader}
-    \spelltwocol{\spellzone{\areamed radius}}{\spellrng{\rngclose}}
-    \spellsr{No}
-    \spelltgt{The moving creature}
+    \spelldesc{You create a many-layered mass of strong, stricky strands that entangle creatures caught within them. The strands are similar to spider webs, but larger and tougher.}
 \end{spellheader}
 \begin{spelleffects}
-    \begin{spelltrigger}{A creature in the area moves}
-        \begin{spellattack}{Magic vs. Reflex}
-            \spellsuccess The target is \entangled. As a standard action, it can make a grapple attack or Escape Artist check. If its result beats your attack result, it is no longer entangled.
-        \end{spellattack}
-    \end{spelltrigger}
+    \spelltwocol{\spellzone{\areamed radius}}{\spellrng{\rngclose}}
+    \spelleffect The area is filled with webs. The webs are thick and strong, but too widely spaced to significantly obscure sight. % info about how to destroy webs
     \spelldur{\durshort \dismissable}
 \end{spelleffects}
+\begin{spellsubeffects}
+    \spelltwocol{\spelltgr{A creature in the area moves}}{\spelltgt{The moving creature}}
+    \begin{spellattack}{Magic vs. Reflex}
+        \spellsuccess The target is \entangled. As a standard action, it can make a grapple attack or Escape Artist check. If its result beats your attack result, it is no longer entangled.
+    \end{spellattack}
+\end{spellsubeffects}
 \begin{spellfooter}
     \spellinfo{Conjuration (Creation)}{Arcane}
-    \spelldesc{You create a many-layered mass of strong, stricky strands that entangle creatures caught within them. The strands are similar to spider webs, but larger and tougher.}
-    \spellnotes The strands are too widely spaced to significantly obscure sight, but are flammable. Any five-foot square that takes 5 points of fire damage is destroyed. A magic flaming sword can slash them away as easily as a hand brushes away cobwebs. Any fire can set the webs alight and burn away 5 square feet in 1 round. All creatures within flaming webs take 2d4 points of fire damage from the flames.
+    \spellsr{No}
+    \spellnotes The strands of web are flammable. Any five-foot square that takes 5 points of fire damage is destroyed. A magic flaming sword can slash them away as easily as a hand brushes away cobwebs. Any fire can set the webs alight and burn away 5 square feet in 1 round. All creatures within flaming webs take 2d4 points of fire damage from the flames.
 
     This spell can be made permanent with a \spell{permanency} ritual. A permanent \spell{web} that is destroyed regrows in 10 minutes.
 \end{spellfooter}
@@ -6419,7 +6407,7 @@
         \item Up to caster level \minus10: The target is also \paralyzed for 5 rounds.
         \item Up to caster level \minus15: A living target loses all its hit points and takes critical damage equal to your caster level, causing it to begin dying. A nonliving target is destroyed.
     \end{itemize}
-\spelldur{See text}
+    \spelldur{See text}
 \end{spelleffects}
 \begin{spellfooter}
     \spellinfo{Evoc (Channeling) [Chaotic]}{Chaos}

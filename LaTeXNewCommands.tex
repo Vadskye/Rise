@@ -145,23 +145,16 @@
 \newcommand{\wilditem}{\addtocounter{enumi}{1} \item}
 \newcommand{\wilditemplus}{\addtocounter{enumi}{3} \item}
 
-\newcommand{\spelldesc}[1]{\par \textit{#1}}
+\newcommand{\spelldesc}[1]{\par\noindent \textit{#1}}
 \newcommand{\spelldmg}[1]{\parhead*{Damage} #1}
 \newcommand{\spellheal}[1]{\parhead*{Healing} #1}
-\newcommand{\spellattack}[1]{\parhead*{Attack} #1}
-\newcommand{\spellattacktarget}[2]{\spelltabularcompressed \thead{Attack:} #1 & \thead{Target:} #2 \\\end{tabularx}}
-\newcommand{\spellattacktargets}[2]{\spelltabularcompressed \thead{Attack:} #1 & \thead{Targets:} #2 \\\end{tabularx}}
-\newcommand{\spellattackseparatetarget}[1]{\parhead{Target} #1}
-\newcommand{\spellattackseparatetargets}[1]{\parhead{Targets} #1}
-
-\newcommand{\spelltargetattack}[2]{\spelltabularcompressed \thead{Target:} #1 & \thead{Attack:} #2 \\\end{tabularx}}
-\newcommand{\spelltargetsattack}[2]{\spelltabularcompressed \thead{Targets:} #1 & \thead{Attack:} #2 \\\end{tabularx}}
+\newcommand{\spellatk}[1]{\parhead*{Attack} #1}
+\newcommand{\spelltgr}[1]{\parhead*{Trigger} #1}
 
 %\newcommand{\spellfocus}[1]{\par\noindent \textit{Focus:} #1}
 \newcommand{\spellmat}[1]{\par\noindent \textit{Material Components:} #1}
 
 \newcommand{\spelltwocol}[2]{\spelltabularcompressed #1 & #2\end{tabularx}}
-\newcommand{\spellinfo}[2]{\spelltwocol{#1}{\thead{Lists:} #2}}
 
 \newcommand{\spellschool}[1]{#1}
 \newcommand{\spelllists}[1]{\parhead*{Lists} #1}
@@ -183,6 +176,7 @@
 \newcommand{\spelltgteffarea}[1]{\parhead*{Target or Area} #1}
 
 \newcommand{\spelldur}[1]{\parhead*{Duration} #1}
+\newcommand{\spelltgrdur}[1]{\parhead*{Trigger Duration} #1}
 \newcommand{\spellfocus}[1]{\parhead*{Focus} #1}
 \newcommand{\spellsr}[1]{\parhead*{Spell Resistance} #1}
 
@@ -200,6 +194,7 @@
 \newcommand{\durmed}{Medium \reminder{5 minutes}\xspace}
 \newcommand{\durlong}{Long \reminder{1 hour}\xspace}
 \newcommand{\durext}{Extreme \reminder{12 hours}\xspace}
+\newcommand{\durperm}{Permanent\xspace}
 
 \newcommand{\confusionexplanation}{Each turn, a confused creature has a random chance to take one of four actions: babble incoherently, flee from the caster as if panicked, attack the nearest creature, or act normally. A confused character who can't carry out the indicated action does nothing but babble incoherently. Any confused character who is attacked automatically attacks its attackers on its next turn, as long as it is still confused when its turn comes.\xspace}
 
@@ -273,7 +268,7 @@
 \newcommand{\norepeatnotes}{You can only affect any individual creature with this ability once per 24 hours.\xspace}
 
 \newcommand{\spelltabular}{\par\noindent\begin{tabularx}{\columnwidth}{>{\lcol}X l}}
-\newcommand{\spelltabularcompressed}{\par\noindent\begin{tabularx}{\linewidth}{@{}>{\lcol}X l}}
+\newcommand{\spelltabularcompressed}{\par\noindent\begin{tabularx}{\linewidth}{@{} >{\lcol}X l @{}}}
 \newcommand{\spelltablecolumns}{>{\lcol}X l}
 
 \newcommand{\spelllevelschool}[2]{\spelllvl{#1} & #2 \\}
@@ -297,10 +292,11 @@
 %\newcommand{\spelleffect}{\parhead*{Effect}}
 %\newcommand{\spellsuccess}{\parhead*{Success}}
 %\newcommand{\spellfailure}{\parhead*{Failure}\xspace}
-\newcommand{\spellnotes}{\spellline\par\noindent\textit{Notes}:\xspace}
+\newcommand{\spellnotes}{\par\noindent\textit{Notes}:\xspace}
 \newcommand{\spellspecial}{\parhead*{Special}}
 \newcommand{\spellcheck}[1]{\parhead*{Check} #1}
 
+\ExplSyntaxOn
 \DeclareDocumentCommand{\spellfailure}{o}
 {
     \IfNoValueTF{#1}
@@ -312,6 +308,12 @@
     \IfNoValueTF{#1}
     {\parhead*{Success}}
     {\parhead*{Success}[#1]}
+}
+\DeclareDocumentCommand{\spellcritical}{o}
+{
+    \IfNoValueTF{#1}
+    {\parhead*{Critical Success}}
+    {\parhead*{Critical Success}[#1]}
 }
 \DeclareDocumentCommand{\spelleffect}{o}
 {
@@ -332,7 +334,6 @@
     {\parhead*{#2 Targets} #1}
 }
 
-\ExplSyntaxOn
 \DeclareDocumentCommand{\ritualcostparser}{m}
 {
     \ifcase#1\relax
@@ -395,4 +396,17 @@
         }
     }:
 }
+
+\DeclareDocumentCommand{\spellinfo}{m s m}
+{
+    \IfBooleanTF{#2}
+    {
+        \noindent#1
+        \parhead*{Lists} #3
+    }
+    {
+        \spelltwocol{#1}{\thead{Lists}:~#3}
+    }
+}
+
 \ExplSyntaxOff

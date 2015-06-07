@@ -1,3 +1,7 @@
+% create bordered frames
+\newmdenv{fullborder}
+\newmdenv[leftline=false,rightline=false]{topandbottomborders}
+
 %Set the spacing of lists
 \newenvironment{enumerate*}
 {\begin{enumerate}
@@ -76,6 +80,7 @@
 {\begin{addmargin}[1em]{0pt}}
 {\end{addmargin}}
 
+\ExplSyntaxOn
 % with a star, don't include \spellline
 \DeclareDocumentEnvironment{spelltarget}{s o m t{l} o}
 {\IfBooleanF{#1}{\spellline}
@@ -84,7 +89,7 @@
     {
         \IfBooleanTF{#4}
         {\spelltgt{#3}[#2]\parhead{Attack} #5}
-        {\spelltwocol{\spelltgt{#3}[#2]}{\spellattack{#5}}}
+        {\spelltwocol{\spelltgt{#3}[#2]}{\spellatk{#5}}}
     }
     \begin{spellmargin}
 }
@@ -100,7 +105,7 @@
     {
         \IfBooleanTF{#4}
         {\spelltgts{#3}[#2]\parhead{Attack} #5}
-        {\spelltwocol{\spelltgts{#3}[#2]}{\spellattack{#5}}}
+        {\spelltwocol{\spelltgts{#3}[#2]}{\spellatk{#5}}}
     }
     \begin{spellmargin}
 }
@@ -108,13 +113,19 @@
     \end{spellmargin}
 }
 
-\DeclareDocumentEnvironment{spelltrigger}{m}
+\DeclareDocumentEnvironment{spelltrigger}{m o}
 {
-    \parhead*{Trigger} #1
-    \begin{spellmargin}
+    \IfValueTF{#2}
+    {
+        \spelltwocol{\parhead{Trigger} #1}{#2}
+    } 
+    {
+        \parhead*{Trigger} #1
+    }
+    %\begin{spellmargin}
 }
 {
-    \end{spellmargin}
+    %\end{spellmargin}
 }
 
 \DeclareDocumentEnvironment{spelltriggers}{m}
@@ -125,3 +136,59 @@
 {
     \end{spellmargin}
 }
+
+% with a star, include \spellline
+\DeclareDocumentEnvironment{spellattack}{s m}
+{
+    \IfBooleanT{#1}{\spellline}
+    \spellatk{#2}
+    \begin{spellmargin}
+}
+{
+    \end{spellmargin}
+}
+
+\DeclareDocumentEnvironment{spellheader}{s}
+{
+    %\IfBooleanF{#1}{\spellline}
+}
+{
+    %\IfBooleanF{#1}{\spellline}
+}
+
+\DeclareDocumentEnvironment{spelleffects}{s}
+{
+    %\IfBooleanF{#1}{\spellline}
+    \begin{topandbottomborders}
+}
+{
+    \end{topandbottomborders}
+    %\IfBooleanF{#1}{\spellline}
+}
+
+\DeclareDocumentEnvironment{spellsubeffects}{s}
+{
+    %\IfBooleanF{#1}{\spellline}
+}
+{
+    %\IfBooleanF{#1}{\spellline}
+}
+
+\surroundwithmdframed[
+    rightline=false,
+    topline=false,
+    bottomline=true,
+    leftline=false,
+    skipabove=0,
+    innertopmargin=1pt,
+]{spellsubeffects}
+
+\DeclareDocumentEnvironment{spellfooter}{s}
+{
+    %\IfBooleanF{#1}{\spellline}
+}
+{
+    %\IfBooleanF{#1}{\spellline}
+}
+
+\ExplSyntaxOff
