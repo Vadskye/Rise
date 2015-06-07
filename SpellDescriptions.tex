@@ -306,16 +306,19 @@
     \spelldesc{You fill your enemies with dismay, impairing their ability to fight.}
     \spellburst{\areamed radius centered on you}
     \spelldur{5 rounds}
+    \spelltgts{All enemies in the area}
 \end{spellheader}
 \begin{spelleffects}
-    \begin{spelltargets}{All enemies in the area}[Magic vs. Will]
+    \begin{spellattack}[Magic vs. Will]
         \spellsuccess \minus2 penalty to physical attacks.
-    \end{spelltargets}
+    \end{spellattack}
 \end{spelleffects}
 \begin{spellfooter}
     \spellinfo{Ench (Emotion) [Mind-Affecting, Morale]}{Divine, Evil, War}
 
 \end{spellfooter}
+
+%/spelltargets.*\[ods{?header€ü\spelltgtsp/spelltargetsrwspellattackn.
 
 \spellsection{Banishment}{6}
 \begin{spellheader}
@@ -556,14 +559,15 @@
     \spelldesc{You repeatedly call intense bolts of lightning that flash down from thin air to smite your foes.}
     \spelltwocol{\spellburst{\arealarge vertical line}}{\spellrng{\rngmed}}
     \spelldur{\durmed or until discharged \dismissable}
+    \spelltgts{Everything in the area}
 \end{spellheader}
 \begin{spelleffects}
-    \begin{spelltargets}{Everything in the area}l[Magic vs. Reflex and Fortitude]
+    \begin{spellattack}l[Magic vs. Reflex and Fortitude]
         \spellsuccess If you beat the target's Reflex defense, it takes 5d8 electricity damage \add d8 per four caster levels above 10th. If you are outdoors in a stormy area, it takes 5d10 electricity damage \add d10 per four caster levels above 10th instead.
 
         If the target is \bloodied after the damage is dealt, and you also beat its Fortitude defense, it is \staggered for 5 rounds.
         \spellfailure As above, but half damage and the target is not staggered.
-    \end{spelltargets}
+    \end{spellattack}
     \spelleffect You may call additional bolts, as \spell{call lightning}.
 \end{spelleffects}
 \begin{spellfooter}
@@ -576,11 +580,12 @@
     \spelldesc{You calm a group of creatures, preventing the situation from getting out of hand.}
     \spelltwocol{\spellburst{\areamed radius}}{\spellrng{\rngmed}}
     \spelldur{Concentration}
+    \spelltgts{All creatures in the area}
 \end{spellheader}
 \begin{spelleffects}
-    \begin{spelltargets}{All creatures in the area}[Magic vs. Will]
+    \begin{spellattack}[Magic vs. Will]
         \spellsuccess The target has its emotions calmed. It cannot take violent actions (although it can defend itself) or do anything destructive.
-    \end{spelltargets}
+    \end{spellattack}
 \end{spelleffects}
 \begin{spellfooter}
     \spellinfo{Ench (Emotion) [Mind-Affecting]}{Arcane}
