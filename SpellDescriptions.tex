@@ -17,8 +17,8 @@
         \spelltgt{You}
     \end{spelltargetinginfo}
     \begin{spelleffects}
-        \spelleffect You gain physical damage reduction, reducing the physical damage you take each round by 8 \add 1 per caster level above 4th. If you take force damage, you cannot use your damage reduction for 1 round.
-        \spelldur{1 round}
+        \spelleffect You gain physical damage reduction, reducing the physical damage you take this round by 8 \add 1 per caster level above 4th. If you take force damage, you lose this damage reduction.
+        \spelldur{Until end of round}
     \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
@@ -38,8 +38,8 @@
         \spelltgt{You}
     \end{spelltargetinginfo}
     \begin{spelleffects}
-        \spelleffect You gain spell damage reduction, reducing the damage you take each round from spells by 4 \add 1 per caster level above 2nd. If you take force damage, you cannot use your damage reduction for 1 round.
-        \spelldur{1 round}
+        \spelleffect You gain spell damage reduction, reducing the damage you take this round from spells by 4 \add 1 per caster level above 2nd. If you take force damage, you lose this damage reduction.
+        \spelldur{Until end of round}
     \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
@@ -60,16 +60,14 @@
     \end{spelltargetinginfo}
     \begin{spelleffects}
         \begin{spellattack}{Magic vs. Reflex}
-            \spellsuccess 2d6 acid damage immediately, and 2d6 acid damage at the end of the next round.
-            \spellfailure 2d6 acid damage.
+            \spellsuccess 2d6 acid damage immediately, and 2d6 acid damage at the end of the next round. The initial and secondary damage increases by 1d6 at 6th caster level and every 4 caster levels thereafter.
         \end{spellattack}
     \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
     \spellinfo{Conjuration (Creation) [Acid]}{Arcane}
-
     \spellsr{No}
-    \spellnotes If the target becomes submerged in water or takes at least ten points of cold or fire damage, it takes no secondary damage.
+    \spellnotes If the target becomes submerged in water or is affected by a cold, fire, or water effect, it takes no secondary damage.
 \end{spellfooter}
 
 \spellsectioncomma{Acid Arrow}{Greater}{5}
@@ -82,15 +80,14 @@
     \end{spelltargetinginfo}
     \begin{spelleffects}
         \begin{spellattack}{Magic vs. Reflex}
-            \spellsuccess 5d6 acid damage immediately, and 5d6 acid damage at the end of the next round. In addition, the target takes a \minus3 magic penalty to physical defenses and Fortitude for 5 rounds. This penalty increases by 1 at 14th caster level, and every 6 caster levels thereafter.
-            \spellfailure 5d6 acid damage.
+            \spellsuccess 5d6 acid damage immediately, and 5d6 acid damage at the end of the next round. In addition, the target takes a magic penalty to physical defenses and Fortitude equal to \minus2 \sub 1 per 6 caster levels. This penalty lasts for 5 rounds.
         \end{spellattack}
     \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
     \spellinfo{Conjuration (Creation) [Acid]}{Arcane}
     \spellsr{No}
-    \spellnotes As \spell{acid arrow}, except that twenty points of cold or fire damage are required to end the effect.
+    \spellnotes As \spell{acid arrow}, except that ten points of cold or fire damage are required to end the effect.
 \end{spellfooter}
 
 \spellsection{Acid Fog}{6}
@@ -118,7 +115,7 @@
     \end{spelleffects}
 \end{spellsubcontent}
 \begin{spellfooter}
-    \spellinfo{Conjuration (Creation) [Acid, Fog \reminder{dispersed by fire and wind}]}*{Arcane, Destruction}
+    \spellinfo{Conjuration (Creation) [Acid, Fog]}{Arcane, Destruction}
     \spellsr{No}
 \end{spellfooter}
 
@@ -131,7 +128,7 @@
         \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
     \end{spelltargetinginfo}
     \begin{spelleffects}
-        \spelleffect The target takes a \minus2 magic penalty to attacks, defenses, and checks. This penalty increases by 1 at 8th caster level and every 6 caster levels thereafter.
+        \spelleffect The target takes a magic penalty to attacks, defenses, and checks equal to \minus2 \sub 1 per 6 caster levels.
         \spelldur{\durshort}
     \end{spelleffects}
 \end{spellcontent}
@@ -148,7 +145,7 @@
         \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
     \end{spelltargetinginfo}
     \begin{spelleffects}
-        \spelleffect The target gains 8 temporary hit points \add 1 per caster level above 4th, and a \plus2 magic bonus to Will defense. This bonus increases by 1 at 8th caster level and every 6 caster levels thereafter.
+        \spelleffect The target gains 8 temporary hit points \add 1 per caster level above 4th. In addition, it gains a magic bonus to Will defense equal to 2 \add 1 per 6 caster levels.
         \spelldur{\durshort}
     \end{spelleffects}
 \end{spellcontent}
@@ -179,19 +176,17 @@
 \spellsection{Align Weapon}{2}
 \begin{spellheader}
     \spelldesc{You enhance a weapon while bringing it closer to your ideals.}
-    \begin{spelltargetinginfo}
-        \spelltgt{One weapon or group of fifty projectiles}
-    \end{spelltargetinginfo}
-    \begin{spelleffects}
-        \spellrng{\rngclose}
-    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
-    \spelleffect The target is enhanced, as \spell{magic weapon}. In addition, the target becomes good, evil, law, or chaos-aligned, as you choose. This allows it to overcome damage reduction of the appropriate type. If the target already had an alignment, it is suppressed for the duration of the spell.
+    \begin{spelltargetinginfo}
+        \spelltwocol{\spelltgt{One weapon or group of fifty projectiles}}{\spellrng{\rngclose}}
+    \end{spelltargetinginfo}
+    \begin{spelleffects}
+        \spelleffect The target is enhanced, as \spell{magic weapon}. In addition, the target becomes good, evil, law, or chaos-aligned, as you choose. This allows it to overcome damage reduction of the appropriate type. If the target already had an alignment, it is suppressed for the duration of the spell.
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
     \spellinfo{Evoc/Transmutation (Augment, Channeling) [see text]}*{Chaos, Evil, Good, Law}
-    \spellsr{No}
     \spellnotes As \spell{magic weapon}. This spell cannot change the alignment of intelligent items.
 
     When you make a weapon good, evil, lawful, or chaotic, this spell is a good, evil, lawful, or chaotic spell, respectively.
