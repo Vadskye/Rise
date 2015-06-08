@@ -222,31 +222,56 @@ Transmutation spells change the properties of creatures and objects. There are s
 \parhead{Temporal} A temporal spell manipulates time itself, speeding or slowing its passage for the subject. \spell{Haste} is a temporal spell.
 
 \subsection{[Descriptor]}
-Appearing on the same line as the school and subschool, when applicable, is a descriptor that further categorizes the spell in some way. Some spells have more than one descriptor.
+Appearing on the same line as the school and subschool, when applicable, is a descriptor that further categorizes the spell in some way. Some spells have more than one descriptor. The list of descriptors and their effects is given in \tref{Spell Descriptors}.
 
-The descriptors are acid, air, charm, chaotic, cold, curse, darkness, death, detection, disease, domination, earth, electricity, evil, fear, fire, fog, force, good, language-dependent, lawful, light, mind-affecting, morale, negative, planar, poison, positive, sight-dependent, size-affecting, sound-dependent, sonic, teleportation, trap, unreal, wall, water.
+The descriptors are negative, planar, poison, positive, sight-dependent, size-affecting, sound-dependent, sonic, teleportation, trap, unreal, wall, water.
 
 Many of these descriptors have no game effect by themselves, but they govern how the spell interacts with other spells, with special abilities, with unusual creatures, with alignment, and so on.
 
-\begin{itemize}
-\item Air spells do not function in environments without air.
-\item Barrier spells cannot be used offensively. If you force the barrier against a force or creature it prohibits, you feel a discernible pressure against the barrier. If you continue to apply pressure, the spell ends.
-\item Curse spells cannot be dispelled by \spell{dispel magic} or similar effects. However, they can be removed with a \spell{break enchantment}, \spell{limited wish},\spell{miracle}, \spell{remove curse}, or \spell{wish} spell.
-\item A detection spell can penetrate barriers, but is always blocked by special materials of some kind. Unless otherwise specified in the spell description, the spell is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.
-\item Fire spells do not function underwater. Unless otherwise noted, a fire spell provides light equivalent to a torch.
-\item Fog spells do not function underwater and can be dispersed by wind or fire. Unless the spell specifies otherwise, a moderate wind (11\add mph) disperses the fog in 5 rounds, and a strong wind (21\add mph) disperses the fog in 1 round. A fire spell or other powerful fire effect burns away the fog in the area into which it dealt damage.
-\item Language-dependent spells use intelligible language as a medium for communication. If the target cannot understand or cannot hear what the caster of a language-dependant spell says, the spell fails.
-\item Mind-affecting spells work only against creatures with an Intelligence score of \minus8 or higher.
-\item Sight-dependent spells use sight as a fundamental component of the spell. If the target cannot see the spell, it has no effect.
-\item Size-affecting spells alter a creature's size. Multiple size increasing or size decreasing effects never stack. If a creature is affected by both size-increasing and size-decreasing effects, they cancel out on a one for one basis, and any remaining effect occurs normally.
-\item Sound-dependent spells use sound as a fundamental component of the spell. If the target cannot hear the spell, it has no effect.
-\item Teleportation spells instantaneously move creatures by travelling through the Astral Plane. Anything that blocks planar travel also blocks teleportation. A teleported creature can bring along equipment and held objects as long as their weight doesn't exceed its maximum load. Any excess items are left behind, in order of their distance from the creature's body.
-\item Trap spells do not have obvious effects immediately. They can be detected with the Perception skill. The DC to detect a trap spell is 25 \add spell level. Most, but not all, traps can be disabled with the Disable Device skill. If it can be disabled, the DC is 25 \add spell level.
-\par No more than one trap spell can be placed on the same object or in the same area. Only the first trap placed has any effect. It must be dispelled or discharged before any new traps can be placed.
-\label{Unreal Spells}\item Unreal spells do not have ``real'' effects and can be disbelieved. A creature observing an unreal spell can recognize it as unreal by making a Perception check against a DC equal to 10 \add half caster level \add casting attribute. A creature gets a \plus10 bonus on this Perception check when using senses which should be present in the figment, but which are missing. Alternately, if the figment has a visual manifestation, physical contact can reveal it as unreal.
+\begin{dtable*}
+    \lcaption{Spell Descriptors}
+    \begin{tabularx}{\textwidth}{l X}
+        \thead{Descriptor} & \thead{Effect} \\
+        Acid & \x \\
+        Air & The spell has effect in environments without air. \\
+        Barrier & If you attempt to move the spell's area towards a force or creature it prohibits, you feel a discernible pressure. If you continue moving, the spell ends. \\
+        Charm & \x \\
+        Chaotic & \x \\
+        Cold & \x \\
+        Curse & The spell cannot be dispelled. It can be removed with \spell{break enchantment} or \spell{remove curse}. \\
+        Death & A creature killed by a death effect cannot be returned to life by \spell{lesser resurrection}. \\
+        Detection & The spell's area can penetrate physical objects. Unless otherwise specified, it is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt. \\
+        Disease & \x \\
+        Earth & \x \\
+        Electricity & \x \\
+        Evil & \x \\
+        Fear & \x \\
+        Fire & The spell has no effect underwater. It provides light as a torch. \\
+        Fog & The spell has effect underwater. If at least 5 points of fire damage are dealt in a square within the spell's area, the fog is destroyed in that area. Unless otherwise specified, a moderate wind (11\add mph) disperses the fog in 5 rounds, and a strong wind (21\add mph) disperses the fog in 1 round. \\
+        Force & If the spell is cast on the Material Plane, it also affects the Ethereal Plane. \\
+        Good & \x \\
+        Language-dependent & The spell be cast using a specific language you know. The spell has no effect on targets that do not understand the language used. \\
+        Lawful & \x \\
+        Light & The spell's effect is blocked by effects that block sight, and can pass through barriers that do not block sight. \\
+        Mind-affecting & The spell has no effect on creatures with an Intelligence of \minus8 or lower. \\
+        Morale & \x \\
+        Negative & \x \\
+        Planar & \x \\
+        Poison & \x \\
+        Positive & \x \\
+        Sight-dependent & Creatures that cannot see the spell's effect are immune to the spell. \\
+        Size-affecting & Multiple size increasing or size decreasing effects never stack. Opposing size modifications cancel each other out on one for one basis, and any remaining effect occurs normally. \\
+        Sonic & \x \\
+        Sound-dependent & Creatures that cannot hear the spell's effect are immune to the spell. \\
+        Teleportation & A teleported creature can bring along equipment and held objects as long as their weight doesn't exceed its maximum load. Any excess items are left behind, in order of their distance from the creature's body. \\
+        Trap & The spell has no immediately obvious effect, but it can be detected with the Perception skill. Unless otherwise noted, it is also possible to disable the spell with the Devices skill before it triggers. The DC to detect and disable the spell is equal to 25 \add spell level.
+        \par No more than one trap spell can be placed on the same object or in the same area. Only the first trap placed has any effect. It must be dispelled or discharged before any new traps can be placed. \\
+        \label{Unreal Spells}Unreal & The spell can be recognized as unreal with a Perception check against a DC equal to 10 \add half your caster level \add your casting attribute. Creatures get a \plus10 bonus on this Perception check when using senses which should be present in the figment, but which are missing. Alternately, if the figment has a visual manifestation, physical contact can reveal it as unreal.
 
-    A creature faced with definitive proof that the figment is unreal can disbelieve it, treating it as if it were not there. Its effects can still be observed if desired, but they are mere shadows of the full effect: visual effects appear translucent outlines, sounds can be heard as ghostly echoes, and so on.
-\end{itemize}
+        A creature faced with definitive proof that the figment is unreal can disbelieve it, treating it as if it were not there. Its effects can still be observed if desired, but they are mere shadows of the full effect: visual effects appear translucent outlines, sounds can be heard as ghostly echoes, and so on. \\
+        Water & \x \\
+    \end{tabularx}
+\end{dtable*}
 
 \subsection{Level}
 The next line of a spell description gives the spell's level, a number between 1 and 9 that defines the spell's relative power. This number is preceded by an abbreviation for the class whose members can cast the spell. The Level entry also indicates whether a spell is a domain spell and, if so, what its domain and its level as a domain spell are.
