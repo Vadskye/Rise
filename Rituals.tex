@@ -18,7 +18,7 @@
 \ritualcost*{1}
 
 \spellsection{Alter Magic Aura}{2}
-\spellinfo{Illusion (Glamer) [Magic]}{Arcane}
+\spellinfo{Illusion (Glamer)}{Arcane}
 \spelltime{1 minute}
 \spellrng{Touch}
 \spelldur{One year \dismissable}
@@ -225,7 +225,7 @@ The magic circle is obvious, but a DC 16 Spellcraft check is required to identif
 \ritualcost*{1}
 
 \spellsection{Break Enchantment}{5}
-\spellinfo{Abjuration (Negation) [Magic]}{Arcane, Divine}
+\spellinfo{Abjuration (Negation)}{Arcane, Divine}
 \spelltime{1 minute}
 \spellrng{\rngclose}
 \spellsr{No}
@@ -368,7 +368,7 @@ Food created by this ritual decays and becomes inedible within 24 hours. The wat
 \ritualcost*{2}
 
 \spellsection{Create Magic Aura}{1}
-\spellinfo{Illusion (Glamer) [Magic]}{Arcane}
+\spellinfo{Illusion (Glamer)}{Arcane}
 \spelltime{1 minute}
 \spellrng{Touch}
 \spelldur{One year \dismissable}
@@ -471,7 +471,7 @@ Food created by this ritual decays and becomes inedible within 24 hours. The wat
 
 \spellsection{Darkness}{2}
 \spelldesc{You create a dark aura around an object of your choosing, keeping light without.}
-\spellinfo{Illusion (Glamer) [Darkness]}{Arcane, Divine}
+\spellinfo{Illusion (Glamer) [Light]}{Arcane, Divine}
 \spelltime{1 minute}
 \spellrng{\rngtouch}
 \spelltgt{One object}
@@ -509,7 +509,7 @@ Food created by this ritual decays and becomes inedible within 24 hours. The wat
 \ritualcost{2}
 
 \spellsection{Detect Scrying}{4}
-\spellinfo{Divination (Awareness) [Magic]}{Arcane}
+\spellinfo{Divination (Awareness)}{Arcane}
 \spelltime{1 minute}
 \spellemanation{\arealarge radius centered on you}
 \spelldur{\durext}
@@ -1430,7 +1430,7 @@ Water weighs about 8 pounds per gallon. One cubic foot of water contains roughly
 \spellinfo{Conjuration/Necromancy (Creation, Soul)}{Nature}
 \spelltime{24 hours}
 \spellrng{Touch}
-\spellattack{None; see text}
+\spellatk{None; see text}
 \begin{spelltarget}{The remains of one dead creature}
     \spelleffect The target returns to life in a new body. It must have been dead for no more than one year, and it must not have died due to old age.
 
@@ -1776,12 +1776,33 @@ Alternately, you can instruct the shambling mounds to guard a specific location.
 \spellspecial This ritual functions like \spell{shape wood}, except that you make a Craft (stone) check, and you shape stone instead of wood.
 \ritualcost{3}
 
+\spellsection{Shape Weapon}{2}
+\spellinfo{Transmutation (Alteration)}{Arcane}
+\spelltime{10 minutes}
+\spellrng{Touch}
+\begin{spelltarget}{One weapon}
+\spelleffect The target transforms into any other weapon from the same weapon group.
+\end{spelltarget}
+\spellnotes This spell has no effect on natural attacks or unarmed strikes.
+\ritualcost{2}
+
+\spellsectioncomma{Shape Weapon}{Greater}{5}
+\spellinfo{Transmutation (Alteration)}{Arcane}
+\spelltime{10 minutes}
+\spellrng{Touch}
+\begin{spelltarget}{One weapon}
+\spelleffect The target transforms into any other manufactured weapon (but not an improvised weapon).
+\end{spelltarget}
+\spellnotes As \spell{shape weapon}.
+\ritualcost{5}
+
+
 \spellsection{Shape Wood}{2}
 \spellinfo{Transmutation (Alteration)}{Arcane, Divine, Nature}
 \spelltime{10 minutes}
 \spellrng{Touch}
 \spellzone{10 cubic feet}
-\begin{spelltarget}{Up to 10 cubic feet of wood}
+\begin{spelltarget}{Up to 10 cubic feet of nonmagical wood}
     \spelleffect When you perform this ritual, you make a Craft (wood) check to change the target's shape. You gain a \plus10 enhancement bonus on the check, and you need no additional tools.
 \end{spelltarget}
 \spellnotes Large wooden objects can be crafted by performing this ritual multiple times.
@@ -1846,7 +1867,7 @@ Alternately, you can instruct the shambling mounds to guard a specific location.
 %no adequate fear spell
 \spellsection{Symbol of Fear}{7}
 \spellinfo{Abjuration/Enchantment (Emotion, Warding) [Fear, Mind-Affecting, Trap]}{Arcane}
-\spellattack{Will negates}
+\spellatk{Will negates}
 \spelleffect This spell functions like \spell{symbol of death}, except that the triggering creature instead suffers the effects of the \spell{terror} spell.
 \spellnotes Magic traps such as \spell{symbol of terror} can be detected with the Perception skill and disabled with the Devices skill. The DC in each case is 25 \add spell level, or 32 for \spell{symbol of terror}.
 \ritualcost*{7}
@@ -1873,7 +1894,7 @@ Alternately, you can instruct the shambling mounds to guard a specific location.
 %this doesn't take into account the medium vs. short range alteration
 \spellsection{Symbol of Sleep}{7}
 \spellinfo{Abjuration/Enchantment (Compulsion, Warding) [Mind-Affecting, Trap]}{Arcane}
-\spellattack{Will negates}
+\spellatk{Will negates}
 \spelleffect This spell functions like \spell{symbol of death}, except that the target instead suffers the effects of the \spell{deep slumber} spell.
 \spellnotes Magic traps such as \spell{symbol of sleep} can be detected with the Perception skill and disabled with the Devices skill. The DC in each case is 25 \add spell level, or 32 for \spell{symbol of sleep}.
 \ritualcost*{7}
