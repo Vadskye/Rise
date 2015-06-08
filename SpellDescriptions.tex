@@ -16,8 +16,10 @@
     \begin{spelltargetinginfo}
         \spelltgt{You}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
         \spelleffect You gain physical damage reduction, reducing the physical damage you take each round by 8 \add 1 per caster level above 4th. If you take force damage, you cannot use your damage reduction for 1 round.
         \spelldur{1 round}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
     \spellinfo{Abjuration (Shielding)}{Abjuration}
@@ -35,8 +37,10 @@
     \begin{spelltargetinginfo}
         \spelltgt{You}
     \end{spelltargetinginfo}
-    \spelleffect You gain spell damage reduction, reducing the damage you take each round from spells by 4 \add 1 per caster level above 2nd. If you take force damage, you cannot use your damage reduction for 1 round.
-    \spelldur{1 round}
+    \begin{spelleffects}
+        \spelleffect You gain spell damage reduction, reducing the damage you take each round from spells by 4 \add 1 per caster level above 2nd. If you take force damage, you cannot use your damage reduction for 1 round.
+        \spelldur{1 round}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
     \spellinfo{Abjuration (Negation)}{Abjuration, Magic}
@@ -54,10 +58,12 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngmed}}
     \end{spelltargetinginfo}
-    \begin{spellattack}{Magic vs. Reflex}
-        \spellsuccess 2d6 acid damage immediately, and 2d6 acid damage at the end of the next round.
-        \spellfailure 2d6 acid damage.
-    \end{spellattack}
+    \begin{spelleffects}
+        \begin{spellattack}{Magic vs. Reflex}
+            \spellsuccess 2d6 acid damage immediately, and 2d6 acid damage at the end of the next round.
+            \spellfailure 2d6 acid damage.
+        \end{spellattack}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
     \spellinfo{Conjuration (Creation) [Acid]}{Arcane}
@@ -74,10 +80,12 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngfar}}
     \end{spelltargetinginfo}
-    \begin{spellattack}{Magic vs. Reflex}
-        \spellsuccess 5d6 acid damage immediately, and 5d6 acid damage at the end of the next round. In addition, the target takes a \minus3 magic penalty to physical defenses and Fortitude for 5 rounds. This penalty increases by 1 at 14th caster level, and every 6 caster levels thereafter.
-        \spellfailure 5d6 acid damage.
-    \end{spellattack}
+    \begin{spelleffects}
+        \begin{spellattack}{Magic vs. Reflex}
+            \spellsuccess 5d6 acid damage immediately, and 5d6 acid damage at the end of the next round. In addition, the target takes a \minus3 magic penalty to physical defenses and Fortitude for 5 rounds. This penalty increases by 1 at 14th caster level, and every 6 caster levels thereafter.
+            \spellfailure 5d6 acid damage.
+        \end{spellattack}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
     \spellinfo{Conjuration (Creation) [Acid]}{Arcane}
@@ -93,17 +101,21 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spellzone{\areamed radius cylinder}}{\spellrng{\rngmed}}
     \end{spelltargetinginfo}
-    \spelleffect Fog fills the area, as \spell{fog cloud}, except that the fog is acidic.
-    \spelldur{\durshort}
+    \begin{spelleffects}
+        \spelleffect Fog fills the area, as \spell{fog cloud}, except that the fog is acidic.
+        \spelldur{\durshort}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellsubcontent}
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgr{End of every round}}{\spelltgts{Everything in the area}}
     \end{spelltargetinginfo}
-    \begin{spellattack}{Magic vs. Fortitude}
-        \spellsuccess 4d6 acid damage.
-        \spellfailure As above, but half damage.
-    \end{spellattack}
+    \begin{spelleffects}
+        \begin{spellattack}{Magic vs. Fortitude}
+            \spellsuccess 4d6 acid damage.
+            \spellfailure As above, but half damage.
+        \end{spellattack}
+    \end{spelleffects}
 \end{spellsubcontent}
 \begin{spellfooter}
     \spellinfo{Conjuration (Creation) [Acid, Fog \reminder{dispersed by fire and wind}]}*{Arcane, Destruction}
@@ -118,8 +130,10 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
     \end{spelltargetinginfo}
-    \spelleffect The target takes a \minus2 magic penalty to attacks, defenses, and checks. This penalty increases by 1 at 8th caster level and every 6 caster levels thereafter.
-    \spelldur{\durshort}
+    \begin{spelleffects}
+        \spelleffect The target takes a \minus2 magic penalty to attacks, defenses, and checks. This penalty increases by 1 at 8th caster level and every 6 caster levels thereafter.
+        \spelldur{\durshort}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
     \spellinfo{Necromancy (Flesh)}{Arcane}
@@ -133,8 +147,10 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
     \end{spelltargetinginfo}
-    \spelleffect The target gains 8 temporary hit points \add 1 per caster level above 4th, and a \plus2 magic bonus to Will defense. This bonus increases by 1 at 8th caster level and every 6 caster levels thereafter.
-    \spelldur{\durshort}
+    \begin{spelleffects}
+        \spelleffect The target gains 8 temporary hit points \add 1 per caster level above 4th, and a \plus2 magic bonus to Will defense. This bonus increases by 1 at 8th caster level and every 6 caster levels thereafter.
+        \spelldur{\durshort}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
     \spellinfo{Ench (Emotion) [Mind-Affecting, Morale]}{Divine}
@@ -149,9 +165,11 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgt{One creature (Gargantuan size or smaller)}}{\spellrng{\rngtouch}}
     \end{spelltargetinginfo}
-    \spelleffect The target can walk on air as if it were solid ground. The magic only affects the target's legs, and does not grant the ability to climb vertically through the air.
-    \par Should the spell end while the target is still aloft, the magic fails slowly. The target floats downward 60 feet per round for 1d6 rounds. If it reaches the ground in that amount of time, it lands safely. If not, it falls the rest of the distance, taking 1d6 damage per 10 feet of fall.
-    \spelldur{\durshort}
+    \begin{spelleffects}
+        \spelleffect The target can walk on air as if it were solid ground. The magic only affects the target's legs, and does not grant the ability to climb vertically through the air.
+        \par Should the spell end while the target is still aloft, the magic fails slowly. The target floats downward 60 feet per round for 1d6 rounds. If it reaches the ground in that amount of time, it lands safely. If not, it falls the rest of the distance, taking 1d6 damage per 10 feet of fall.
+        \spelldur{\durshort}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
     \spellinfo{Transmutation (Imbuement) [Air]}{Air, Divine, Nature, Travel}
@@ -164,7 +182,9 @@
     \begin{spelltargetinginfo}
         \spelltgt{One weapon or group of fifty projectiles}
     \end{spelltargetinginfo}
-    \spellrng{\rngclose}
+    \begin{spelleffects}
+        \spellrng{\rngclose}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target is enhanced, as \spell{magic weapon}. In addition, the target becomes good, evil, law, or chaos-aligned, as you choose. This allows it to overcome damage reduction of the appropriate type. If the target already had an alignment, it is suppressed for the duration of the spell.
@@ -186,9 +206,11 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgt{Five animals}}{\spellrng{\rngmed}}
     \end{spelltargetinginfo}
-    \begin{spellattack}{Magic vs. Fortitude}
-        \spellsuccess The target grows larger, as \spell{enlarge person}.
-    \end{spellattack}
+    \begin{spelleffects}
+        \begin{spellattack}{Magic vs. Fortitude}
+            \spellsuccess The target grows larger, as \spell{enlarge person}.
+        \end{spellattack}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
     \spellinfo{Transmutation (Polymorph) [Size-Affecting]}{Nature, Wild}
@@ -202,6 +224,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{One Small object/level in the area; see text}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect Each animated object immediately attacks whomever or whatever you initially designate. Your control of the objects is limited to simple commands (``Attack,'' ``Defend,'' ``Stop,'' and so forth).
@@ -219,6 +243,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Up to one Small plant/level in the area; see text}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect This spell functions like \spell{animate objects}, except that you animate plants instead of inanimate objects.
@@ -236,6 +262,8 @@
     \begin{spelltargetinginfo}
         \spellzone{\areasmall radius centered on you} 
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect Living creatures cannot enter the spell's area. Nonliving creatures, such as constructs and undead, suffer no ill effect.
@@ -276,10 +304,12 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgt{One weapon}}{\spellrng{\rngtouch}}
     \end{spelltargetinginfo}
-    \begin{spellattack}{Magic vs. Will}
-        \spellsuccess Attacks with the affected weapon are made against Reflex defense instead of Armor defense. However, damage with the weapon is halved, including any bonuses to damage.
-    \end{spellattack}
-    \spelldur{\rngclose}
+    \begin{spelleffects}
+        \begin{spellattack}{Magic vs. Will}
+            \spellsuccess Attacks with the affected weapon are made against Reflex defense instead of Armor defense. However, damage with the weapon is halved, including any bonuses to damage.
+        \end{spellattack}
+        \spelldur{\rngclose}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
     \spellinfo{Transmutation (Alteration) [Water]}{Nature, Water}
@@ -295,13 +325,15 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgt{One living creature}}{\spellrng{\rngclose}}
     \end{spelltargetinginfo}
-    \begin{spellattack}{Magic vs. Fortitude}
-        \spellsuccess 9d10 life damage \add d10 per four caster levels above 18th. If the target has no hit points remaining, it immediately dies, and you are transformed to mimic its appearance for 1 hour. This grants you a \plus10 enhancement bonus on Disguise checks made to appear as that creature.
+    \begin{spelleffects}
+        \begin{spellattack}{Magic vs. Fortitude}
+            \spellsuccess 9d10 life damage \add d10 per four caster levels above 18th. If the target has no hit points remaining, it immediately dies, and you are transformed to mimic its appearance for 1 hour. This grants you a \plus10 enhancement bonus on Disguise checks made to appear as that creature.
 
-        In addition, you gain temporary hit points equal to half the damage you deal, up to a maximum of twice the target's maximum hit points. The temporary hit points disappear after 1 hour. If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
-        \spellfailure As above, but half damage.
-    \end{spellattack}
-    \spelldur{Instantaneous and one hour; see text}
+            In addition, you gain temporary hit points equal to half the damage you deal, up to a maximum of twice the target's maximum hit points. The temporary hit points disappear after 1 hour. If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
+            \spellfailure As above, but half damage.
+        \end{spellattack}
+        \spelldur{Instantaneous and one hour; see text}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
     \spellinfo{Necromancy/Transmutation (Life, Polymorph)}{Arcane, Evil}
@@ -316,13 +348,15 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
     \end{spelltargetinginfo}
-    \begin{spellattack}{Magic vs. Will}
-        \spellsuccess The target feels an aversion to a particular person or object. If the object of the implanted aversion is an individual or a physical object, she will prefer not to approach within 30 feet of it. If it is a word, she will try not to utter it; if it is an action, she will not willingly attempt to perform it; and if it is an event, she will not willingly attend it. The target will take reasonable steps to avoid the object of its aversion, but will not put herself in jeopardy by doing so.
-        \par If the target is unable to avoid the object of her aversion, she takes a \minus4 penalty to attacks, defenses, and checks for 1 round.
-        \spellcritical As above, but the effect is permanent.
-        \spellfailure The target takes a \minus2 magic penalty to Will defense. This penalty increases by 1 at 8th caster level, and every 6 caster levels thereafter.
-    \end{spellattack}
-    \spelldur{\durshort or \durperm}
+    \begin{spelleffects}
+        \begin{spellattack}{Magic vs. Will}
+            \spellsuccess The target feels an aversion to a particular person or object. If the object of the implanted aversion is an individual or a physical object, she will prefer not to approach within 30 feet of it. If it is a word, she will try not to utter it; if it is an action, she will not willingly attempt to perform it; and if it is an event, she will not willingly attend it. The target will take reasonable steps to avoid the object of its aversion, but will not put herself in jeopardy by doing so.
+            \par If the target is unable to avoid the object of her aversion, she takes a \minus4 penalty to attacks, defenses, and checks for 1 round.
+            \spellcritical As above, but the effect is permanent.
+            \spellfailure The target takes a \minus2 magic penalty to Will defense. This penalty increases by 1 at 8th caster level, and every 6 caster levels thereafter.
+        \end{spellattack}
+        \spelldur{\durshort or \durperm}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
     \spellinfo{Ench (Emotion) [Mind-Affecting]}{Ench}
@@ -343,10 +377,12 @@
     \begin{spelltargetinginfo}
         \spelltgts{All enemies in the area}
     \end{spelltargetinginfo}
-    \begin{spellattack}{Magic vs. Will}
-        \spellsuccess \minus2 penalty to physical attacks.
-    \end{spellattack}
-    \spelldur{5 rounds}
+    \begin{spelleffects}
+        \begin{spellattack}{Magic vs. Will}
+            \spellsuccess \minus2 penalty to physical attacks.
+        \end{spellattack}
+        \spelldur{5 rounds}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
     \spellinfo{Ench (Emotion) [Mind-Affecting, Morale]}{Divine, Evil, War}
@@ -362,9 +398,11 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgt{One extraplanar creature}}{\spellrng{\rngmed}}
     \end{spelltargetinginfo}
-    \begin{spellattack}{Magic vs. Will}
-        \spellsuccess The target is banished, as \spell{dismissal}.
-    \end{spellattack}
+    \begin{spelleffects}
+        \begin{spellattack}{Magic vs. Will}
+            \spellsuccess The target is banished, as \spell{dismissal}.
+        \end{spellattack}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
     \spellinfo{Abjuration/Conjuration (Interdiction, Translocation) [Planar, Teleportation]}{Arcane, Divine}
@@ -380,8 +418,10 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgt{One living creature}}{\spellrng{Touch}}
     \end{spelltargetinginfo}
-    \spelleffect The target gains a \plus2 enhancement bonus to its Armor defense. \spellbonusscalingdescription In addition, the target gains physical damage reduction, reducing the physical damage it takes each round by 2 \add 1 per four caster levels above 4th. If it is hit by an adamatine weapon or takes fire damage, it cannot use its damage reduction for 1 round.
-    \spelldur{\durshort}
+    \begin{spelleffects}
+        \spelleffect The target gains a \plus2 enhancement bonus to its Armor defense. \spellbonusscalingdescription In addition, the target gains physical damage reduction, reducing the physical damage it takes each round by 2 \add 1 per four caster levels above 4th. If it is hit by an adamatine weapon or takes fire damage, it cannot use its damage reduction for 1 round.
+        \spelldur{\durshort}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
     \spellinfo{Transmutation (Augment)}{Nature, Wild}
@@ -396,16 +436,18 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
     \end{spelltargetinginfo}
-    \begin{spellattack}{Magic vs. Will}
-        \spellsuccess The target suffers one of the following three effects, chosen by you:
-        \begin{itemize}
-            \item \minus6 penalty to an attribute.
-            \item \minus4 penalty on attacks, defenses, and checks.
-            \item Each turn, the target has a 25\% chance to take no action; otherwise, it acts normally.
-        \end{itemize}
-        \par You may also invent your own curse, but it should be no more powerful than those described above.
-    \end{spellattack}
-    \spelldur{Permanent}
+    \begin{spelleffects}
+        \begin{spellattack}{Magic vs. Will}
+            \spellsuccess The target suffers one of the following three effects, chosen by you:
+            \begin{itemize}
+                \item \minus6 penalty to an attribute.
+                \item \minus4 penalty on attacks, defenses, and checks.
+                \item Each turn, the target has a 25\% chance to take no action; otherwise, it acts normally.
+            \end{itemize}
+            \par You may also invent your own curse, but it should be no more powerful than those described above.
+        \end{spellattack}
+        \spelldur{Permanent}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
     \spellinfo{Necromancy (Life) [Curse]}{Death, Divine, Evil, Necromancy}
@@ -420,17 +462,21 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spellzone{\areasmall radius}}{\spellrng{\rngmed}}
     \end{spelltargetinginfo}
-    \spelleffect Ground within the area is considered difficult terrain.
-    \spelldur{\durshort \dismissable}
+    \begin{spelleffects}
+        \spelleffect Ground within the area is considered difficult terrain.
+        \spelldur{\durshort \dismissable}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellsubcontent}
     \spelltgr{End of every movement phase}
     \begin{spelltargetinginfo}
         \spelltgts{All creatures in the area within 5 feet of the ground}
     \end{spelltargetinginfo}
-    \begin{spellattack}{Caster level \add casting attribute vs. Maneuver defense (grapple)}
-        \spellsuccess The target is grappled and takes 1d8\plus4 bludgeoning damage. It remains grappled until it escape the tentacle. The tentacle's Maneuver defense is equal to 10 \add your caster level \add your casting attribute.
-    \end{spellattack}
+    \begin{spelleffects}
+        \begin{spellattack}{Caster level \add casting attribute vs. Maneuver defense (grapple)}
+            \spellsuccess The target is grappled and takes 1d8\plus4 bludgeoning damage. It remains grappled until it escape the tentacle. The tentacle's Maneuver defense is equal to 10 \add your caster level \add your casting attribute.
+        \end{spellattack}
+    \end{spelleffects}
 \end{spellsubcontent}
 \begin{spellfooter}
     \spellinfo{Conjuration/Transmutation (Animation, Creation)}{Arcane}
@@ -445,18 +491,22 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spellzone{100 ft. wall, 20 ft. high \shapeable}}{\spellrng{\rngmed}}
     \end{spelltargetinginfo}
-    \spelleffect This spell creates a wall of blades made of force energy. The wall provides active cover (20\% miss chance) against attacks made through it. Attacks that miss in this way harmlessly strike the wall. Passing through the wall costs twice as much movement as normal.
-    \spelldur{\durshort \dismissable}
+    \begin{spelleffects}
+        \spelleffect This spell creates a wall of blades made of force energy. The wall provides active cover (20\% miss chance) against attacks made through it. Attacks that miss in this way harmlessly strike the wall. Passing through the wall costs twice as much movement as normal.
+        \spelldur{\durshort \dismissable}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellsubcontent}
     \spelltgr{A creature passes through the wall}
     \begin{spelltargetinginfo}
         \spelltgt{The triggering creature}
     \end{spelltargetinginfo}
-    \begin{spellattack}{Magic vs. Reflex}
-        \spellsuccess 6d6 force damage \add d6 per four caster levels above 12th.
-        \spellfailure As above, but half damage.
-    \end{spellattack}
+    \begin{spelleffects}
+        \begin{spellattack}{Magic vs. Reflex}
+            \spellsuccess 6d6 force damage \add d6 per four caster levels above 12th.
+            \spellfailure As above, but half damage.
+        \end{spellattack}
+    \end{spelleffects}
 \end{spellsubcontent}
 \begin{spellfooter}
     \spellinfo{Evoc (Energy) [Force, Wall]}{Divine, War}
@@ -472,14 +522,16 @@
     \begin{spelltargetinginfo}
         \spelltgts{All nonevil creatures in the area}
     \end{spelltargetinginfo}
-    \spelleffect If the target's level does not exceed your caster level, it is \sickened for 5 rounds.
+    \begin{spelleffects}
+        \spelleffect If the target's level does not exceed your caster level, it is \sickened for 5 rounds.
 
-    If the target is also \bloodied, it also suffers one or more of the following ill effects, depending on its level.
-    \begin{itemize}
-        \item Up to caster level \minus5: The target is also \nauseated for 1 round.
-        \item Up to caster level \minus10: The target is also \paralyzed for 5 rounds.
-        \item Up to caster level \minus15: A living target loses all its hit points and takes critical damage equal to your caster level, causing it to begin dying. A nonliving target is destroyed.
-    \end{itemize}
+        If the target is also \bloodied, it also suffers one or more of the following ill effects, depending on its level.
+        \begin{itemize}
+            \item Up to caster level \minus5: The target is also \nauseated for 1 round.
+            \item Up to caster level \minus10: The target is also \paralyzed for 5 rounds.
+            \item Up to caster level \minus15: A living target loses all its hit points and takes critical damage equal to your caster level, causing it to begin dying. A nonliving target is destroyed.
+        \end{itemize}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
     \spellinfo{Evoc (Channeling) [Evil]}{Divine, Evil}
@@ -496,8 +548,10 @@
     \begin{spelltargetinginfo}
         \spelltgts{All allies in the area}
     \end{spelltargetinginfo}
-    \spelleffect The target gains a \plus2 enhancement bonus to physical attacks. \spellbonusscalingdescription
-    \spelldur{5 rounds}
+    \begin{spelleffects}
+        \spelleffect The target gains a \plus2 enhancement bonus to physical attacks. \spellbonusscalingdescription
+        \spelldur{5 rounds}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
     \spellinfo{Ench (Emotion) [Mind-Affecting, Morale]}{Divine, Good, War}
@@ -511,6 +565,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -532,6 +588,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{You}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect You ``blink" back and forth between the Material Plane and the Ethereal Plane. This has several effects, as follows.
@@ -558,6 +616,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect Other creatures take a \minus2 penalty on sight-based checks and physical attacks against the target, such as on Perception and Sense Motive checks.
@@ -575,6 +635,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Everything in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Reflex}
@@ -599,6 +661,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Everything in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Reflex}
@@ -620,6 +684,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Everything in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Reflex and Fortitude}
@@ -643,6 +709,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{All creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -663,8 +731,10 @@
     \begin{spelltargetinginfo}
         \spelltgts{One primary target and up to five secondary targets in the area}
     \end{spelltargetinginfo}
-    \spellrng{\rngmed}
-    \spelllimit{\areamed radius centered on the primary target}
+    \begin{spelleffects}
+        \spellrng{\rngmed}
+        \spelllimit{\areamed radius centered on the primary target}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Reflex (primary target)}
@@ -689,6 +759,8 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgt{Your touched staff}}{\spellrng{\rngtouch}}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect Your staff turns into a creature that looks and fights just like a treant. The staff-treant defends you and obeys any spoken commands. However, it is by no means a true treant; it cannot converse with actual treants or control trees.
@@ -708,6 +780,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One nonchaotic creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -729,6 +803,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -749,6 +825,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One humanoid creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -771,6 +849,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Up to five humanoid creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spellsuccess This spell functions like \spell{charm person}, except that it affects multiple humanoid creatures.
@@ -787,6 +867,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Several bloodied living creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect This spell affects all \bloodied living creatures in the area, starting with the creature with the lowest level, until it affects a total number of levels equal to twice your caster level. Among creatures with equal levels, those closest to the burst's point of origin are affected first. No creature whose level is greater than half your caster level can be affected, and levels that are not sufficient to affect a creature are wasted. Healthy creatures are not affected by this spell, and do not count against its level limit.
@@ -807,6 +889,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect This spell creates a hand, as \spell{interposing hand}, except that the hand attacks its target instead of protecting you from it.
@@ -831,6 +915,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Up to five creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     The target gains a \plus5 enhancement bonus to its defenses. In addition, it gains spell resistance against lawful spells and spells cast by lawful creatures.
@@ -851,18 +937,22 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spellzone{\areamed radius cylinder}}{\spellrng{\rngmed}}
     \end{spelltargetinginfo}
-    \spelleffect Fog in the area, as \spell{fog cloud}, except that the fog is mobile and poisonous.
+    \begin{spelleffects}
+        \spelleffect Fog in the area, as \spell{fog cloud}, except that the fog is mobile and poisonous.
 
-    \par The fog moves away from you at 10 feet per round, rolling along the surface of the ground. Figure out the cloud's new area each round based on its new point of origin, which is 10 feet farther away from the point of origin where you cast the spell.
-    \spelldur{\durshort}
+        \par The fog moves away from you at 10 feet per round, rolling along the surface of the ground. Figure out the cloud's new area each round based on its new point of origin, which is 10 feet farther away from the point of origin where you cast the spell.
+        \spelldur{\durshort}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellcontent}
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgr{End of every round}}{\spelltgts{Everything in the fog}}
     \end{spelltargetinginfo}
-    \begin{spellattack}{Magic vs. Fortitude}
-        \spellsuccess 1d4 Constitution damage.
-    \end{spellattack}
+    \begin{spelleffects}
+        \begin{spellattack}{Magic vs. Fortitude}
+            \spellsuccess 1d4 Constitution damage.
+        \end{spellattack}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
     \spellinfo{Conjuration (Creation) [Fog, Poison]}{Arcane}
@@ -878,6 +968,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{All creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -898,6 +990,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{You}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect You gain a \plus3 enhancement bonus to Strength, Dexterity, Constitution, and Fortitude defense. This bonus increases to \plus4 at 14th caster level, and to \plus5 at 20th caster level. In addition, you gain proficiency with any weapons you hold (except exotic weapons).
@@ -918,6 +1012,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -947,6 +1043,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{Five creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spellsuccess The target obeys a command, as \spell{command}.
@@ -963,6 +1061,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{Everything in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Reflex}
@@ -983,6 +1083,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{Everything in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Reflex}
@@ -1003,6 +1105,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -1025,6 +1129,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{Five creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -1042,6 +1148,8 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spellzone{One 5 ft. cube/caster level}}{\spellrng{\rngfar}}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect Depending on the version you choose, this spell raises or lowers water.
@@ -1060,6 +1168,8 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spellzone{\areamed radius}}{\spellrng{\rngmed}}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect This spell creates a volume of sound within the area, as determined by you. As a standard action, you can concentrate to alter the sound within the area.
@@ -1095,6 +1205,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -1116,6 +1228,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{All creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     The target is \vulnerable.
@@ -1133,6 +1247,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect This spell creates a hand, as \spell{interposing hand}, except that the hand grapples its target instead of protecting you from it.
@@ -1152,6 +1268,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -1172,6 +1290,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Up to five creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -1193,6 +1313,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -1213,6 +1335,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Up to five creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -1234,6 +1358,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -1253,6 +1379,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Up to five creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -1273,6 +1401,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -1291,6 +1421,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Up to five creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -1334,6 +1466,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target gains the ability to see 60 feet even in total darkness. Beyond 60 feet, the target can see dimly, treating areas of darkness as shadowy illumination. Darkvision does not function if a creature is in an area of bright light or is dazzled. Darkvision is black and white only, but otherwise like normal sight.
@@ -1351,6 +1485,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{Object touched}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The object touched sheds light as bright as full daylight in a \arealarge radius, and dim light for an additional 50 feet beyond that. Creatures that take penalties in bright light also take them while within the radius of this magical light. Despite its name, this spell is not the equivalent of sunlight for the purposes of creatures that are damaged or destroyed by bright light.
@@ -1370,6 +1506,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{Living creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -1389,6 +1527,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One living creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target is immune to all death spells, magical death effects, energy drain, and any negative energy effects.
@@ -1406,6 +1546,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{Five living creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target is protected, as \spell{death ward}.
@@ -1423,6 +1565,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -1443,6 +1587,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{You}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect You gain a \plus2 enhancement bonus to your physical defenses. \spellbonusscalingdescription
@@ -1459,6 +1605,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{You}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect Whenever you take damage, half of the damage (rounded down) is not dealt to you immediately. This damage is tracked separately. At the end of the spell's duration, you take all of the delayed damage at once. For every point of damage dealt in this way in excess of your hit points, you take 1 point of critical damage.
@@ -1476,6 +1624,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target becomes temporarily immune to the effects of poison. Poisons it is exposed to do not make attacks against it. This effect does not prevent the target from becoming poisoned, and any poisons in the target's system when the spell ends will continue their effects normally. 
@@ -1492,6 +1642,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Everything in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect You can delay this spell's attack until up to 5 rounds after the spell is cast. You select the amount of delay upon completing the spell, and that time cannot change once it has been set unless someone touches the bead (see below). For every round that this spell is delayed, your caster level with it increases by 2.
@@ -1514,6 +1666,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -1551,6 +1705,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{All nonlawful creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect If the target's level does not exceed your caster level, it is \sickened for 5 rounds.
@@ -1583,6 +1739,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{You}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect You teleport to a destination within range. You must clearly visualize the destination. After arriving, you cannot act until the next action phase.
@@ -1600,6 +1758,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{Up to five willing creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target teleports to a destination you specify, as \spell{dimension door}.
@@ -1615,6 +1775,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -1633,6 +1795,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -1670,6 +1834,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect You instantly recognize all of the target's vulnerabilities. This grants you a \plus2 bonus to attacks and weapon damage against that creature. In addition, you learn any significant weaknesses the creature has. This includes, but is not limited to, the following information:
@@ -1692,6 +1858,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{All creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -1713,6 +1881,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature or attended object}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Reflex and Fortitude}
@@ -1734,6 +1904,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One extraplanar creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -1753,9 +1925,11 @@
     \begin{spelltargetinginfo}
         \spelltgts{All creatures and unattended objects in the area}
     \end{spelltargetinginfo}
-    \begin{spelltargetinginfo}
-        \spelltgt{One creature or object}
-    \end{spelltargetinginfo}
+    \begin{spelleffects}
+        \begin{spelltargetinginfo}
+            \spelltgt{One creature or object}
+        \end{spelltargetinginfo}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Caster level vs. Special}
@@ -1792,6 +1966,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{All creatures and unattended objects in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Caster level vs. Special}
@@ -1809,6 +1985,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target appears to be about 2 feet away from its true location. Attacks against it have a 50\% miss chance, as if it were invisible. However, unlike invisibility, this spell does not prevent enemies from targeting the creature normally, and it does not allow the creature to hide.
@@ -1830,9 +2008,11 @@
     \begin{spelltargetinginfo}
         \spelltgt{The struck creature}
     \end{spelltargetinginfo}
-    \begin{spellattack}{Magic vs. Fortitude}
-        \spellsuccess The target creature is utterly destroyed.
-    \end{spellattack}
+    \begin{spelleffects}
+        \begin{spellattack}{Magic vs. Fortitude}
+            \spellsuccess The target creature is utterly destroyed.
+        \end{spellattack}
+    \end{spelleffects}
 \end{spellcontent}
 
 \spellsection{Divine Favor}{1}
@@ -1842,6 +2022,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{You}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect \plus2 enhancement bonus on attack and weapon damage rolls. \spellbonusscalingdescription
@@ -1858,6 +2040,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{You}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect As \spell{divine favor}, except that you also gain a \plus2 enhancement bonus to Strength.
@@ -1875,6 +2059,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -1893,6 +2079,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One humanoid creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -1918,6 +2106,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One living creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -1944,6 +2134,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One Large or smaller creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target moves at half speed and takes a \minus2 penalty to physical defenses. If it is flying within 10 feet of the ground, it falls to the ground.
@@ -1974,6 +2166,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target gains the earth glide ability, as an earth elemental. This allows it to glide through stone, dirt, or almost any other sort of earth except metal  as if it were air. It can walk or climb at any angle in the earth. However, the target generally cannot breathe, speak, or hear while gliding. While gliding, the target can remain partially within the earth, granting it cover.
@@ -1992,19 +2186,23 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spellzone{Ground within \arealarge radius}}{\spellrng{\rngmed}}
     \end{spelltargetinginfo}
-    \spelleffect The area is difficult terrain. Creatures in the area take a \minus2 penalty to physical attacks, defenses, and checks. Casting a spell in the area requires a Concentration check against a DC equal to 10 \add your caster level \add double the level of the spell being cast.
-    \spelldur{5 rounds }
+    \begin{spelleffects}
+        \spelleffect The area is difficult terrain. Creatures in the area take a \minus2 penalty to physical attacks, defenses, and checks. Casting a spell in the area requires a Concentration check against a DC equal to 10 \add your caster level \add double the level of the spell being cast.
+        \spelldur{5 rounds }
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellsubcontent}
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgr{End of every round}}{\spelltgts{Everything in the area}}
     \end{spelltargetinginfo}
-    \begin{spellattack}{Magic vs. Reflex}
-        \spellsuccess 8d6 bludgeoning damage \add d6 per four caster levels above 16th. In addition, the target is knocked prone.
+    \begin{spelleffects}
+        \begin{spellattack}{Magic vs. Reflex}
+            \spellsuccess 8d6 bludgeoning damage \add d6 per four caster levels above 16th. In addition, the target is knocked prone.
 
-        If this is the last round of the earthquake, the target is also grappled by the ground. To escape, it must beat a Maneuver defense equal to 10 \add your caster level \add your casting attribute.
-        \spellfailure Half damage, and no effects other than damage.
-    \end{spellattack}
+            If this is the last round of the earthquake, the target is also grappled by the ground. To escape, it must beat a Maneuver defense equal to 10 \add your caster level \add your casting attribute.
+            \spellfailure Half damage, and no effects other than damage.
+        \end{spellattack}
+    \end{spelleffects}
 \end{spellsubcontent}
 \begin{spellfooter}
     \spellinfo{Evoc (Control) [Earth]}{Destruction, Divine, Earth, Nature}
@@ -2020,6 +2218,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature or object within 10 feet of natural earth or stone}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Caster level \add casting attribute vs. Armor defense and Maneuver defense}
@@ -2040,6 +2240,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Everything in the area within 10 feet of natural earth or stone}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Caster level \add casting attribute vs. Armor defense and Maneuver defense}
@@ -2072,6 +2274,8 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgt{See text}}{\spellrng{\rngclose}}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect You resist energy damage, as \spell{greater resist energy}, except that you store up the energy you absorb. As a standard action, you can expend damage of any single energy type you have stored, up to a maximum of three times your caster level. If you do, you can make an attack against anything within range.
@@ -2092,6 +2296,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect If the target is living, it gains six \negativelevels.
@@ -2111,6 +2317,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect If the target is living, it gains three \negativelevels.
@@ -2130,6 +2338,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -2150,6 +2360,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One humanoid creature (Large or smaller)}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -2180,6 +2392,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{Five humanoid creatures in the area (Large or smaller)}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target is enlarged, as \spell{enlarge person}.
@@ -2198,17 +2412,21 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spellzone{\areasmall radius}}{\spellrng{\rngmed}}
     \end{spelltargetinginfo}
-    \spelleffect The ground in the area is difficult terrain.
-    \spelldur{\durshort \dismissable}
+    \begin{spelleffects}
+        \spelleffect The ground in the area is difficult terrain.
+        \spelldur{\durshort \dismissable}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellsubcontent}
     \spelltgr{End of every movement phase}
     \begin{spelltargetinginfo}
         \spelltgt{All creatures in the area within 5 feet of plants}
     \end{spelltargetinginfo}
-    \begin{spellattack}{Magic vs. Reflex}
-        \spellsuccess The target is \entangled and \immobilized. It can break free of the effect as a standard action by making a grapple attack or Escape Artist check that beats your magic attack result.
-    \end{spellattack}
+    \begin{spelleffects}
+        \begin{spellattack}{Magic vs. Reflex}
+            \spellsuccess The target is \entangled and \immobilized. It can break free of the effect as a standard action by making a grapple attack or Escape Artist check that beats your magic attack result.
+        \end{spellattack}
+    \end{spelleffects}
 \end{spellsubcontent}
 \begin{spellfooter}
     \spellinfo{Transmutation (Animation)}{Nature, Wild}
@@ -2224,17 +2442,21 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spellzone{\areasmall radius}}{\spellrng{\rngmed}}
     \end{spelltargetinginfo}
-    \spelleffect The ground in the area is difficult terrain. Plants grow in the area, even if the terrain would not normally support plant life. At the end of the spell's duration, the plants recede into the ground, leaving no trace that they were ever there.
-    \spelldur{\durshort \dismissable}
+    \begin{spelleffects}
+        \spelleffect The ground in the area is difficult terrain. Plants grow in the area, even if the terrain would not normally support plant life. At the end of the spell's duration, the plants recede into the ground, leaving no trace that they were ever there.
+        \spelldur{\durshort \dismissable}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellsubcontent}
     \spelltgr{End of every movement phase}
     \begin{spelltargetinginfo}
         \spelltgt{All creatures in the area within 5 feet of plants}
     \end{spelltargetinginfo}
-    \begin{spellattack}{Magic vs. Reflex}
-        \spellsuccess The target is \entangled and \immobilized. It can break free of the effect as a standard action by making a grapple attack or Escape Artist check that beats your magic attack result.
-    \end{spellattack}
+    \begin{spelleffects}
+        \begin{spellattack}{Magic vs. Reflex}
+            \spellsuccess The target is \entangled and \immobilized. It can break free of the effect as a standard action by making a grapple attack or Escape Artist check that beats your magic attack result.
+        \end{spellattack}
+    \end{spelleffects}
 \end{spellsubcontent}
 \begin{spellfooter}
     \spellinfo{Transmutation (Animation)}{Nature, Wild}
@@ -2248,6 +2470,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect Each physical ranged attack directed at the target has a 50\% miss chance (similar to the effects of active cover). Other attacks that simply work at a distance are not affected.
@@ -2264,6 +2488,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{You}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect You become ethereal, along with your equipment. For the duration of the spell, you are in a place called the Ethereal Plane, which overlaps the normal, physical, Material Plane. When the spell expires, you return to material existence.
@@ -2283,6 +2509,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{You and up to five willing creatures}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target becomes ethereal, as \spell{ethereal jaunt}.
@@ -2298,6 +2526,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target's land speed doubles, to a maximum of a \plus30 foot increase. (This adjustment is treated as an enhancement bonus.) There is no effect on other modes of movement.
@@ -2319,6 +2549,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{Everything in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect A pale glow surrounds and outlines the target, causing it to shed light as a candle. This imposes a \minus20 penalty to Stealth checks, and negates invisibility, concealment, and similar effects. Illusory figments, such as those created by the \spell{silent image} spell, are not outlined, which may reveal their false nature.
@@ -2334,6 +2566,8 @@
     \begin{spelltargetinginfo}
         \spellzone{1 mile radius centered on you}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect A scripted figment of your design appears within the area, as \spell{persistent image}.
@@ -2351,6 +2585,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{All creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -2372,6 +2608,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Up to five freefalling objects or willing creatures in the area (Medium or smaller)}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect This spell changes at which the target falls to a mere 60 feet per round (equivalent to the end of a fall from a few feet). It takes no damage from falling. If it is heavy enough to deal falling damage to other creatures and objects, it deals half its normal falling damage, with no bonus for the height of the drop.
@@ -2390,6 +2628,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -2410,6 +2650,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One living creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -2428,6 +2670,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{Everything in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect You can imbue up to five acorns, holly berries, or other seeds with fiery energy capable of dealing up to 6d6 damage \add d6 per four caster levels above 12th. You may freely decide the distribution of damage between the target berries.
@@ -2455,18 +2699,22 @@
     \begin{spelltargetinginfo}
         \spelltgt{You}
     \end{spelltargetinginfo}
-    \spelleffect You gain cold damage reduction, reducing the cold damage you take each round by 16 \add 1 per caster level above 8th. In addition, you radiate light as a torch, and creatures that attack you take damage.
-    \spelldur{\durshort \dismissable}
+    \begin{spelleffects}
+        \spelleffect You gain cold damage reduction, reducing the cold damage you take each round by 16 \add 1 per caster level above 8th. In addition, you radiate light as a torch, and creatures that attack you take damage.
+        \spelldur{\durshort \dismissable}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellsubcontent}
     \spelltgr{Creature within \rngclose range makes a physical attack against you}
     \begin{spelltargetinginfo}
         \spelltgt{The attacking creature}
     \end{spelltargetinginfo}
-    \begin{spellattack}{Magic vs. Reflex}
-        \spellsuccess 5d6 fire damage \add d6 per four caster levels above 10th.
-        \spellfailure Half damage.
-    \end{spellattack}
+    \begin{spelleffects}
+        \begin{spellattack}{Magic vs. Reflex}
+            \spellsuccess 5d6 fire damage \add d6 per four caster levels above 10th.
+            \spellfailure Half damage.
+        \end{spellattack}
+    \end{spelleffects}
 \end{spellsubcontent}
 \begin{spellfooter}
     \spellinfo{Abjuration/Evoc (Energy, Shielding) [Fire or Cold]}{Arcane, Fire}
@@ -2480,6 +2728,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Everything in the area, except allied creatures}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Reflex}
@@ -2499,6 +2749,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Everything in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Reflex}
@@ -2536,6 +2788,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{Everything in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Reflex}
@@ -2556,6 +2810,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target gains a 30 foot fly speed with good maneuverability.
@@ -2573,6 +2829,8 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spellzone{\areamed radius cylinder}}{\spellrng{\rngmed}}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect Fog blocks sight in the area, causing all creatures within or looking through the area to treat everything they see as if it had \concealment.
@@ -2591,6 +2849,8 @@
         \spellzone{Solid wall in 20-foot cube or 10-foot cube}
         \spelltgt{All creatures adjacent to the prison}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect An immobile, invisible cubical prison appears. You choose whether the walls made of bars of force or perfect sheets of force. A barred prison is a 20-foot cube. The bars are a half-inch wide, with half-inch gaps between them. An unbarred prison is a 10-foot cube.
@@ -2613,6 +2873,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -2632,6 +2894,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target receives instantaneous warnings of impending danger or harm that would befall it. It gains an enhancement bonus to initiative checks equal to your caster level, and a \plus3 enhancement bonus to its physical defenses. This bonus increases to \plus4 at 14th caster level, and to \plus5 at 20th caster level.
@@ -2651,6 +2915,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect As \spell{foresight}, except that the target is also never surprised or unaware.
@@ -2667,6 +2933,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -2685,6 +2953,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target can move and attack normally for the duration of the spell, even under the influence of magic that usually impedes movement, such as paralysis, \spell{solid fog}, \spell{slow}, and \spell{web}. The target gains a \plus20 enhancement bonus to Maneuver Class against grapple attacks, as well as on grapple attacks or Escape Artist checks made to escape a grapple or a pin.
@@ -2702,6 +2972,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Up to five creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target can move freely, as \spell{freedom}.
@@ -2723,6 +2995,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One willing corporeal creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target and all its equipment becomes insubstantial, misty, and translucent. It loses its defense bonus from its armor, though other defense modifiers continue to apply normally. It gains physical damage reduction, reducing the physical damage it takes each round by 12 \add 1 per caster level above 6th. If it takes damage from a spell or magic weapon, it cannot use its damage reduction for 1 round. It becomes immune to critical hits.
@@ -2743,6 +3017,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target gains a 30 foot glide speed.
@@ -2760,6 +3036,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One living creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -2780,6 +3058,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{Up to three vermin in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect You turn three normal-sized centipedes, two normal-sized spiders, or a single normal-sized scorpion into Large-sized forms. Only one type of vermin can be transmuted (so a single casting cannot affect both a centipede and a spider), and all must be grown to the same size.
@@ -2797,6 +3077,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{Everything in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect Golden particles surround and outline the target. This imposes a \minus20 penalty to Stealth checks, and negates invisibility, concealment, and similar effects. Illusory figments, such as those created by the \spell{silent image} spell, are not outlined, which may reveal their false nature.
@@ -2813,6 +3095,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature or object}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect This spell creates a hand, as \spell{interposing hand}, except that the hand grapples its target instead of protecting you from it.
@@ -2832,6 +3116,8 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spellzone{\areasmall radius}}{\spellrng{\rngmed}}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect Any creature moving through the area must make an Acrobatics check to balance. The DC is equal to half your caster level \add your casting attribute. Success means it moves normally (though usually at half speed, because it is balancing). Failure means the creature's movement is wasted. Failure by 10 or more means it also falls prone.
@@ -2853,6 +3139,8 @@
         \spellzone{\arealarge line from you}
         \spelltgt{Everything in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Caster level \add casting attribute vs. Maneuver Defense}
@@ -2878,6 +3166,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -2898,6 +3188,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target is hasted. It doubles all of its movement speeds (to a maximum of an additional 30 feet of movement), and can take an additional attack at a \minus5 penalty when it makes a standard attack. The increase to movement speed is considered an enhancement bonus.
@@ -2915,6 +3207,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Up to five creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target moves and acts more quickly, as \spell{haste}.
@@ -2931,6 +3225,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -2955,10 +3251,12 @@
     \begin{spelltargetinginfo}
         \spelltgts{The focus and everything touching it}
     \end{spelltargetinginfo}
-    \begin{spellattack}{Magic vs. Fortitude}
-        \spellsuccess The target takes 2d6 fire damage \add d6 per four caster levels above 4th.
-        \spellfailure As above, but half damage.
-    \end{spellattack}
+    \begin{spelleffects}
+        \begin{spellattack}{Magic vs. Fortitude}
+            \spellsuccess The target takes 2d6 fire damage \add d6 per four caster levels above 4th.
+            \spellfailure As above, but half damage.
+        \end{spellattack}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
     \spellinfo{Evoc (Energy) [Fire]}{Nature}
@@ -2972,6 +3270,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target gains a \plus2 enhancement bonus on physical attacks, all checks, and special defenses. \spellbonusscalingdescription
@@ -2988,6 +3288,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect As \spell{heroism}, except the target also gains 35 temporary hit points \add 1 per caster level above 14th. In addition, it is immune to hostile morale effects.
@@ -3004,6 +3306,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spellsuccess As \spell{hold person}, except that the target can have any creature type.
@@ -3020,6 +3324,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Up to five creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spellsuccess As \spell{hold person}, except that the target can have any creature type.
@@ -3036,6 +3342,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One humanoid creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -3056,6 +3364,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Up to five creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spellsuccess As \spell{hold person}.
@@ -3072,6 +3382,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Up to five creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     The target gains a \plus5 enhancement bonus to its defenses. In addition, it gains spell resistance against evil spells and spells cast by evil creatures.
@@ -3089,6 +3401,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One nongood creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -3109,6 +3423,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{All nongood creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect If the target's level does not exceed your caster level, it is \deafened for 5 rounds.
@@ -3132,6 +3448,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Up to ten living creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -3151,6 +3469,8 @@
         \spelltwocol{\spellzone{\areasmall radius}}{\spellrng{\rngmed}}
         \spelltgt{All creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -3177,6 +3497,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Everything in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The area is difficult terrain for 1 round.
@@ -3197,12 +3519,14 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
     \end{spelltargetinginfo}
-    \begin{spellattack}{Magic vs. Fortitude}
-        \spellsuccess The target is \staggered for 5 rounds.
+    \begin{spelleffects}
+        \begin{spellattack}{Magic vs. Fortitude}
+            \spellsuccess The target is \staggered for 5 rounds.
 
-        If the target is \bloodied, it is instead instantly slain.
-        \spellspecial You cannot target the same creature more than once per casting of this spell.
-    \end{spellattack}
+            If the target is \bloodied, it is instead instantly slain.
+            \spellspecial You cannot target the same creature more than once per casting of this spell.
+        \end{spellattack}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
     \spellinfo{Evoc (Control)}{Destruction, Divine}
@@ -3216,6 +3540,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature touching the ground}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -3238,6 +3564,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target gains physical damage reduction, reducing the physical damage it takes each round by 4 \add 1 per two caster levels above 4th. If it takes force damage, it cannot use its damage reduction for 1 round.
@@ -3254,6 +3582,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -3273,6 +3603,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Up to five creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -3292,6 +3624,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -3311,6 +3645,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Up to five creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -3331,6 +3667,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -3349,6 +3687,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Up to five creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -3368,6 +3708,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -3387,6 +3729,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Up to five creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -3406,6 +3750,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -3425,6 +3771,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect This spell creates a floating, disembodied hand made of magical force. Each round, as a swift action, you can direct the hand to protect you from a target. If you do not direct the hand, it remains motionless.
@@ -3445,6 +3793,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect All weapons and armor that the target wields gain a \plus3 enhancement bonus for as long as it wields them. This bonus increases to \plus4 at 14th caster level, and to \plus5 at 20th caster level.
@@ -3461,6 +3811,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature or object (Large or smaller)}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target and its equipment become invisible. An invisible creature cannot be seen, even by darkvision. Invisible creatures can be detected with the Perception skill (see \pcref{Perception}).
@@ -3479,6 +3831,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature or object (Large or smaller)}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target becomes invisible, as \spell{invisibility}. At the end of every round, if the target did not attack a creature that round, it becomes invisible again.
@@ -3495,6 +3849,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Up to five creatures or objects in the area (Large or smaller)}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target becomes invisible, as \spell{invisibility}.
@@ -3510,6 +3866,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{You}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect This spell transforms your body into living iron, which grants you several powerful resistances and abilities.
@@ -3531,6 +3889,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target is defenseless and must spend a standard action to do nothing but dance, which provokes attacks of opportunity.
@@ -3553,6 +3913,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One object (Medium or smaller)}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect This spell telekinetically opens stuck, barred, locked, held, or arcane locked objects. If the target object is stuck or held, you can immediately make an Strength check to break it open, using your caster level instead of your Strength. Others can aid you on this check as normal. In addition, if the target object is locked, you can immediately make a Disable Device check to open the lock as if you had rolled a 20 on the check. You get an enhancement bonus on the Disable Device check equal to half your caster level.
@@ -3571,6 +3933,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One object or willing creature (total weight up to 100 lb./caster level)}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect You can telekinetically move the target vertically. A creature must be willing to be levitated, and an object must be unattended or possessed by a willing creature. As a swift action, you can mentally direct the target to move up or down as much as 20 feet each round. You cannot move the recipient horizontally, but the recipient could clamber along the face of a cliff, for example, or push against a ceiling to move laterally (generally at half its land speed).
@@ -3588,6 +3952,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One living creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -3609,6 +3975,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Any number of creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spellspecial You create three missiles \add one missile per four caster levels above 6th. Each missile can deal d10 force damage to a single creature.
@@ -3627,6 +3995,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{Everything in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Reflex}
@@ -3648,19 +4018,21 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgteffarea{See text}}{\spellrng{See text}}
     \end{spelltargetinginfo}
-    \spelleffect A limited wish lets you create nearly any type of effect. For example, a limited wish can do any of the following things.
-    \begin{itemize}
-        \item Duplicate any general sorcerer/wizard spell of 6th level or lower, provided the spell is not of a school prohibited to you.
-        \item Duplicate any general sorcerer/wizard spell of 5th level or lower, even if it's of a prohibited school.
-        \item Duplicate any other spell of 4th level or lower, provided the spell is not of a school prohibited to you.
-        \item Duplicate any other spell of 3rd level or lower, even if it's of a prohibited school.
-        \item Undo the harmful effects of many spells, such as geas/quest or insanity.
-        \item Produce any other effect whose power level is in line with the above effects, such as a single creature automatically hitting on its next attack or taking a \minus5 penalty to its defenses for 5 rounds.
-    \end{itemize}
-    \par When casting a limited wish, you do not specify the exact spell or effect you wish to duplicate. Instead, you make a wish, describing what you want to have happen, and make a DC 15 Wisdom check. If the check fails, your intent is redirected or perverted in some way. For example, a \spell{limited wish} to turn a foe to stone would normally mimic the \spell{flesh to stone} effect of the \spell{transmute flesh and stone} spell. However, if the Wisdom check failed, your foe might gain the benefit of a \spell{stoneskin} spell instead.
-    \par When a limited wish spell duplicates a spell with a material component that costs more than 1,000 gp, you must provide that component (in addition to the 1,000 gp cost for this spell).
-    \spellmat{A diamond worth no less than 1,000 gp (see above).}
-    \spelldur{See text}
+    \begin{spelleffects}
+        \spelleffect A limited wish lets you create nearly any type of effect. For example, a limited wish can do any of the following things.
+        \begin{itemize}
+            \item Duplicate any general sorcerer/wizard spell of 6th level or lower, provided the spell is not of a school prohibited to you.
+            \item Duplicate any general sorcerer/wizard spell of 5th level or lower, even if it's of a prohibited school.
+            \item Duplicate any other spell of 4th level or lower, provided the spell is not of a school prohibited to you.
+            \item Duplicate any other spell of 3rd level or lower, even if it's of a prohibited school.
+            \item Undo the harmful effects of many spells, such as geas/quest or insanity.
+            \item Produce any other effect whose power level is in line with the above effects, such as a single creature automatically hitting on its next attack or taking a \minus5 penalty to its defenses for 5 rounds.
+        \end{itemize}
+        \par When casting a limited wish, you do not specify the exact spell or effect you wish to duplicate. Instead, you make a wish, describing what you want to have happen, and make a DC 15 Wisdom check. If the check fails, your intent is redirected or perverted in some way. For example, a \spell{limited wish} to turn a foe to stone would normally mimic the \spell{flesh to stone} effect of the \spell{transmute flesh and stone} spell. However, if the Wisdom check failed, your foe might gain the benefit of a \spell{stoneskin} spell instead.
+        \par When a limited wish spell duplicates a spell with a material component that costs more than 1,000 gp, you must provide that component (in addition to the 1,000 gp cost for this spell).
+        \spellmat{A diamond worth no less than 1,000 gp (see above).}
+        \spelldur{See text}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
 
@@ -3674,10 +4046,12 @@
     \begin{spelltargetinginfo}
         \spelltgts{Two living creatures in the area}
     \end{spelltargetinginfo}
-    \spellatk{Magic vs. Will}
-    \spellspecial This spell has no effect unless the attack succeeds against both targets.
-    \spellsuccess Whenever one target gains or loses hit points, the other target also gains or loses the same amount of hit points.
-    \spelldur{\durshort}
+    \begin{spelleffects}
+        \spellatk{Magic vs. Will}
+        \spellspecial This spell has no effect unless the attack succeeds against both targets.
+        \spellsuccess Whenever one target gains or loses hit points, the other target also gains or loses the same amount of hit points.
+        \spelldur{\durshort}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
     \spellinfo{Necromancy (Life)}{Necromancy}
@@ -3690,6 +4064,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Up to five living creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spellspecial This spell has no effect unless the attack succeeds against at least two targets.
@@ -3708,9 +4084,11 @@
     \begin{spelltargetinginfo}
         \spelltgt{One willing creature}[Primary]
     \end{spelltargetinginfo}
-    \begin{spelltargetinginfo}
-        \spelltgt{One creature or object}[Secondary]
-    \end{spelltargetinginfo}
+    \begin{spelleffects}
+        \begin{spelltargetinginfo}
+            \spelltgt{One creature or object}[Secondary]
+        \end{spelltargetinginfo}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The primary target is moved adjacent to the secondary target, gains the benefit of the \spell{ablate impact} spell for 1 round, and is knocked prone.
@@ -3796,6 +4174,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{You}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect You gain a \plus10 enhancement bonus to your land speed. This has no effect on other modes of movement, such as burrow, climb, fly, or swim.
@@ -3819,6 +4199,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target gains invisible body armor or a shield of the chosen kind, made of force. The defense bonus granted by the body armor or shield is equal to \plus2. The bonus granted increases to \plus3 at 8th caster level, to \plus4 at 14th caster level, and finally to \plus5 at 20th caster level. 
@@ -3837,6 +4219,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One nonmagical, unattended object weighing up to 5 lb.}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect You point your finger at an object and can lift it and move it in any direction from a distance. By directing the spell as a swift action, you can propel the object as far as 15 feet in any direction each round, though the spell ends if the distance between you and the object ever exceeds the spell's range.
@@ -3852,13 +4236,15 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgtorarea{One magic item or \areamed radius burst}}{\spellrng{\rngmed}}
     \end{spelltargetinginfo}
-    \spellspecial This spell has two versions: an area dispel, and a targetted destruction of a magic item. Its effects depend on which version is chosen.
-    \begin{spelltargetinginfo}
-        \spelltgt{One magic item}
-    \end{spelltargetinginfo}
-    \begin{spelltargetinginfo}
-        \spelltgt{mage's disjunction}
-    \end{spelltargetinginfo}
+    \begin{spelleffects}
+        \spellspecial This spell has two versions: an area dispel, and a targetted destruction of a magic item. Its effects depend on which version is chosen.
+        \begin{spelltargetinginfo}
+            \spelltgt{One magic item}
+        \end{spelltargetinginfo}
+        \begin{spelltargetinginfo}
+            \spelltgt{mage's disjunction}
+        \end{spelltargetinginfo}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spellburst{\areamed radius}
@@ -3887,6 +4273,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{All creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect Summoned creatures which have the chosen alignment cannot enter the area.
@@ -3904,6 +4292,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect One of the target's natural weapons gains a \plus2 enhancement bonus to attack and damage. \spellbonusscalingdescription
@@ -3922,6 +4312,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect All of the target's natural weapons gain a \plus3 enhancement bonus to attack and damage. This bonus increases to \plus4 at 14th caster level, and to \plus5 at 20th caster level.
@@ -3937,6 +4329,8 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgts{See text}}{\spellrng{\rngclose}}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect You strike one target creature with a missile that deals d8 force damage. At 6th level, and every 4 caster levels thereafter, you create an additional missile. You can direct each missile to strike the same or different targets.
@@ -3952,6 +4346,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One suit of armor or shield}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target gains a \plus2 enhancement bonus, increasing the defense bonus it provides. \spellbonusscalingdescription
@@ -3968,6 +4364,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One weapon or fifty projectiles (in a single group)}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target gains a \plus2 enhancement bonus to attack and damage. \spellbonusscalingdescription
@@ -3984,6 +4382,8 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spellzone{\arealarge radius}}{\spellrng{\rngmed}}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect A figment of your design appears within the area, as \spell{silent image}, except that sound, smell, and thermal elements are included.
@@ -4003,6 +4403,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -4024,6 +4426,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -4046,6 +4450,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{You}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect You can meld your body and possessions into a single block of stone. The stone must be large enough to accommodate your body in all three dimensions. When the casting is complete, you and not more than 100 pounds of nonliving gear merge with the stone. If either condition is violated, the spell fails and is wasted.
@@ -4065,6 +4471,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Up to five creatures}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect Whenever you whisper, you may cause any or all of the targets to hear the message as if you were whispering in their ears.
@@ -4082,6 +4490,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Everything in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Reflex}
@@ -4104,6 +4514,8 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spellzone{\areamed radius}}{\spellrng{\rngmed}}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect A figment of your design appears within the area, as \spell{silent image}, except that sound elements are included.
@@ -4123,23 +4535,25 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgteffarea{See text}}{\spellrng{See text}}
     \end{spelltargetinginfo}
-    \spellatk{See text}
-    \spelleffect You don't so much cast a miracle as request one. You state what you would like to have happen and request that your deity (or the power you pray to for spells) intercede.
-    \par A miracle can do any of the following things.
-    \begin{itemize}
-        \item Duplicate any cleric spell of 8th level or lower (including spells to which you have access because of your domains). 
-        \item Duplicate any other spell of 7th level or lower.
-        \item Undo the harmful effects of certain spells, such as feeblemind or insanity.
-        \item Have any effect whose power level is in line with the above effects.
-    \end{itemize}
-    \par Alternatively, a cleric can make a very powerful request. Examples of especially powerful miracles of this sort could include the following.
-    \begin{itemize}
-        \item Swinging the tide of a battle in your favor by raising fallen allies to continue fighting.
-        \item Moving you and your allies, with all your and their gear, from one plane to another through planar barriers to a specific locale with no chance of error.
-        \item Protecting a city from an earthquake, volcanic eruption, flood, or other major natural disaster.
-    \end{itemize}
-    \par In any event, a request that is out of line with the deity's (or alignment's) nature is refused.
-    \spelldur{See text}
+    \begin{spelleffects}
+        \spellatk{See text}
+        \spelleffect You don't so much cast a miracle as request one. You state what you would like to have happen and request that your deity (or the power you pray to for spells) intercede.
+        \par A miracle can do any of the following things.
+        \begin{itemize}
+            \item Duplicate any cleric spell of 8th level or lower (including spells to which you have access because of your domains). 
+            \item Duplicate any other spell of 7th level or lower.
+            \item Undo the harmful effects of certain spells, such as feeblemind or insanity.
+            \item Have any effect whose power level is in line with the above effects.
+        \end{itemize}
+        \par Alternatively, a cleric can make a very powerful request. Examples of especially powerful miracles of this sort could include the following.
+        \begin{itemize}
+            \item Swinging the tide of a battle in your favor by raising fallen allies to continue fighting.
+            \item Moving you and your allies, with all your and their gear, from one plane to another through planar barriers to a specific locale with no chance of error.
+            \item Protecting a city from an earthquake, volcanic eruption, flood, or other major natural disaster.
+        \end{itemize}
+        \par In any event, a request that is out of line with the deity's (or alignment's) nature is refused.
+        \spelldur{See text}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
     \spellnotes If you request a miracle, your deity (or the power you pray to) will expect something of you in return. You must cast \spell{commune}commune to learn what this is within 24 hours, or you will lose the ability to cast any cleric spells other than \spell{commune}. For more moderate miracles, you may be required to offer 25,000gp worth of incense and gems. For especially powerful miracles, or multiple moderate miracles, you may geased with a task to complete.
@@ -4151,6 +4565,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{You}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect Illusory duplicates mirror your every move. You gain four images \add one per four caster levels above 2nd. For each image, you gain a \plus1 bonus to your physical defenses. At the end of each round, you lose one image for each physical attack that missed you that round. If you run out of images, the spell is expended.
@@ -4167,6 +4583,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{You}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect You gain illusory duplicates, as \spell{mirror image}, except that the spell is not expended when you run out of images. At the end of each round, you gain two additional images, up to the number of images created when the spell is first cast.
@@ -4182,6 +4600,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{You}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect You become invisible, as \spell{invisibility}. At the same time, an illusory double of you appears, as \spell{major image}.
@@ -4201,6 +4621,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Any number of creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect 7d4 force damage \add d4 per four caster levels above 14th.
@@ -4216,6 +4638,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{You}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect As \spell{lesser moment of prescience}, except that you also gain a bonus equal to half your caster level on the roll.
@@ -4234,6 +4658,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{You}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect As \spell{moment of prescience}, except that the bonus and extra rolls apply to all of your physical attacks, opposed checks, and defenses until the beginning of your next turn.
@@ -4251,6 +4677,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{You}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect As an immediate action, when you make a single physical attack or opposed check, you can roll twice and take the result you prefer. Once activated once, the spell is discharged.
@@ -4272,6 +4700,8 @@
     \begin{spelltargetinginfo}
         \spellzone{\areamed radius cylinder centered on you}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect Fog blocks sight in the area, as \spell{fog cloud}.
@@ -4289,6 +4719,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One nonlawful creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spellsuccess 4d10 divine damage \add d10 per four caster levels above 8th, and the target is \bewildered for 5 rounds.
@@ -4305,6 +4737,8 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spellzone{\arealarge radius}}{\spellrng{\rngmed}}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect A figment of your design appears within the area, as \spell{silent image}, except that sound, smell, and thermal elements are included. When you cast the spell, you set a script for the figment to follow. It follows that script without you having to concentrate on the spell.
@@ -4321,6 +4755,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will and Fortitude}
@@ -4342,6 +4778,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -4363,6 +4801,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -4383,6 +4823,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target is poisoned. At the end of every round, you make an attack against it to determine the poison's effects.
@@ -4406,6 +4848,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature or object}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Reflex}
@@ -4427,6 +4871,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target is \sickened.
@@ -4446,6 +4892,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target is \bewildered.
@@ -4466,6 +4914,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One living creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target is \sickened.
@@ -4485,6 +4935,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target is \bewildered.
@@ -4504,6 +4956,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{You}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect You gain a \plus2 enhancement bonus to your physical attack and damage rolls. \spellbonusscalingdescription
@@ -4521,6 +4975,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{You}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect You gain a \plus3 enhancement bonus to your physical attack and damage rolls, and all your defenses. This bonus increases to \plus4 at 14th caster level, and to \plus5 at 20th caster level.
@@ -4538,6 +4994,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{You}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect You gain combat bonuses, as \spell{precognition}. In addition, In addition, when making a standard attack, you may make an additional attack at a \minus5 penalty.
@@ -4555,6 +5013,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spellspecial The target is struck by a randomly colored beam of light. The beam color determines the effect and the defense used, as shown on \tref{Prismatic Beam Effects}. The damaging effects deal 3d10 damage \add d10 damage per four caster levels above 6th.
@@ -4586,6 +5046,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{All creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Special}
@@ -4604,6 +5066,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{All creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Special}
@@ -4622,16 +5086,20 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spellzone{\arealarge wall, 20 ft. high}}{\spellrng{\rngclose}}
     \end{spelltargetinginfo}
-    \spelleffect This spell creates a shimmering, multicolored plane of light that blocks all sight. It harms any creature that attempts to pass through it.
-    \spelldur{\durshort \dismissable}
+    \begin{spelleffects}
+        \spelleffect This spell creates a shimmering, multicolored plane of light that blocks all sight. It harms any creature that attempts to pass through it.
+        \spelldur{\durshort \dismissable}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellsubcontent}
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgr{A creature passes through the wall}}{\spelltgt{Triggering creature}}
     \end{spelltargetinginfo}
-    \begin{spellattack}{Magic vs. Reflex}
-        \spellspecial The target is struck by a randomly colored beam of light. The beam color determines the effect and the defense used, as shown on \tref{Prismatic Beam Effects}. The damaging effects deal 5d6 damage \add d6 damage per four caster levels above 10th.
-    \end{spellattack}
+    \begin{spelleffects}
+        \begin{spellattack}{Magic vs. Reflex}
+            \spellspecial The target is struck by a randomly colored beam of light. The beam color determines the effect and the defense used, as shown on \tref{Prismatic Beam Effects}. The damaging effects deal 5d6 damage \add d6 damage per four caster levels above 10th.
+        \end{spellattack}
+    \end{spelleffects}
 \end{spellsubcontent}
 \begin{spellfooter}
     \spellinfo{Universal [Light]}{Arcane, Chaos}
@@ -4652,7 +5120,9 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgr{A creature breaks the rule}}{\spelltgt{Triggering creature}}
     \end{spelltargetinginfo}
-    \spelleffect 6d6 damage \add 1d6 per four caster levels above 12th. You know a creature broke the rule, but not which creature.
+    \begin{spelleffects}
+        \spelleffect 6d6 damage \add 1d6 per four caster levels above 12th. You know a creature broke the rule, but not which creature.
+    \end{spelleffects}
 \end{spellsubcontent}
 \begin{spellfooter}
     \spellinfo{Abjuration/Divination (Communication, Interdiction)}{Abjuration, Law}
@@ -4671,11 +5141,13 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgr{A creature breaks the rule}}{\spelltgt{Triggering creature}}
     \end{spelltargetinginfo}
-    \begin{spellattack}{Magic vs. Will}
-        \spellsuccess 9d6 damage \add 1d6 per four caster levels above 12th. You know a creature broke the rule, but not which creature.
-        \spellcritical As above, and the creature is \stunned for 1 round, preventing it from completing its action.
-        \spellfailure As above, but half damage.
-    \end{spellattack}
+    \begin{spelleffects}
+        \begin{spellattack}{Magic vs. Will}
+            \spellsuccess 9d6 damage \add 1d6 per four caster levels above 12th. You know a creature broke the rule, but not which creature.
+            \spellcritical As above, and the creature is \stunned for 1 round, preventing it from completing its action.
+            \spellfailure As above, but half damage.
+        \end{spellattack}
+    \end{spelleffects}
 \end{spellsubcontent}
 \begin{spellfooter}
     \spellinfo{Abjuration/Divination (Communication, Interdiction)}{Abjuration, Law}
@@ -4713,6 +5185,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target gains a \plus2 enhancement bonus to its special defenses. \spellbonusscalingdescription
@@ -4732,6 +5206,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target becomes immune to damage from the chosen type of energy. When the spell absorbs 10 points per caster level of energy damage, it is discharged.
@@ -4748,6 +5224,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target becomes immune to all energy damage (acid, cold, electriticity, and fire). When this spell absorbs 10 points per caster level of damage in total, regardless of its type, it is discharged.
@@ -4770,6 +5248,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -4789,6 +5269,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -4808,6 +5290,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Up to five creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -4826,6 +5310,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One humanoid creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -4854,6 +5340,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Up to five humanoid creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -4873,6 +5361,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One living creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target automatically heals a number of hit points each round equal to your caster level.
@@ -4893,10 +5383,12 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgr{A creature in the area moves towards you}}{\spelltgt{Triggering creature}}
     \end{spelltargetinginfo}
-    \begin{spellattack}{Magic vs. Will}
-        \spellsuccess The target is unable to move towards you. It can stand still, or alter the direction of its movement to move parallel towards you or away from you.
-    \end{spellattack}
-    \spelldur{\durshort \dismissable}
+    \begin{spelleffects}
+        \begin{spellattack}{Magic vs. Will}
+            \spellsuccess The target is unable to move towards you. It can stand still, or alter the direction of its movement to move parallel towards you or away from you.
+        \end{spellattack}
+        \spelldur{\durshort \dismissable}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
     \spellinfo{Abjuration (Shielding) [Barrier]}{Arcane, Protection, Travel}
@@ -4911,6 +5403,8 @@
         \spellzone{5 ft. radius}
         \spelltgt{Everything in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The area is surrounded by a sphere made of force. The sphere cannot be moved or broken, preventing anything in the area from interacting with anything outside the area.
@@ -4931,6 +5425,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target gains gains damage reduction against a single energy type of your choice (acid, cold, electricity, fire). This reduces the damage it takes each round from that energy type by 8 \add 1 per caster level above 4th.
@@ -4948,6 +5444,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target gains damage reduction against all energy types (acid, cold, electricity, fire). This reduces the energy damage it takes each round by 20 \add 2 per caster level above 8th.
@@ -4966,21 +5464,25 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgt{One creature}[Primary]}{\spellrng{\rngclose}}
     \end{spelltargetinginfo}
-    \spelleffect The target is surrounded by a faintly shimmering field. If the target is attacked, the field retaliates.
-    \spelldur{\durshort or until discharged}
+    \begin{spelleffects}
+        \spelleffect The target is surrounded by a faintly shimmering field. If the target is attacked, the field retaliates.
+        \spelldur{\durshort or until discharged}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellsubcontent}
     \spelltgr{A creature attacks the primary target with a melee weapon}
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgt{The attacking creature}[Secondary]}{\spellrng{\rngclose}}
     \end{spelltargetinginfo}
-    \parhead*{Trigger Action} Immediate action by you or the focus creature
-    \begin{spellattack}{Magic vs. Reflex}
-        \spellsuccess The target is \dazzled for 5 rounds.
+    \begin{spelleffects}
+        \parhead*{Trigger Action} Immediate action by you or the focus creature
+        \begin{spellattack}{Magic vs. Reflex}
+            \spellsuccess The target is \dazzled for 5 rounds.
 
-        If the target is \bloodied, it is also \blinded for 5 rounds.
-        \spellfailure The target is dazzled for 5 rounds.
-    \end{spellattack}
+            If the target is \bloodied, it is also \blinded for 5 rounds.
+            \spellfailure The target is dazzled for 5 rounds.
+        \end{spellattack}
+    \end{spelleffects}
 \end{spellsubcontent}
 \begin{spellfooter}
     \spellinfo{Abjuration/Illus (Figment, Shielding)}{Arcane}
@@ -4993,6 +5495,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target gains physical damage reduction, reducing the physical damage it takes each round by 8 \add 1 per two caster levels above 8th. If it takes life damage, it cannot use its damage reduction for 1 round. In addition, any creature within \rngmed range of the target that deals damage to it takes life damage equal to the damage resisted by this damage reduction.
@@ -5010,6 +5514,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One willing creture}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target teleports into a free space adjacent to you. You must have line of sight and line of effect to both the target and its destination. If you accidentally attempt to teleport the creature into an invalid location, the spell simply fails.
@@ -5026,6 +5532,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One unattended object (Small or smaller)}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -5043,6 +5551,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One object (Medium or smaller)}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -5062,6 +5572,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spellspecial This spell has three versions. Its effects depend on which version is chosen.
@@ -5083,6 +5595,8 @@
         \spelltwocol{\spellzone{\arealarge radius cylinder}}{\spellrng{\rngclose}}
         \spelltgt{Everything in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target falls upwards, reaching the top of the area within 1 round. If the target strikes a solid object, such as a ceiling, it is affected in the same way as it would be during a normal fall. Otherwise, it floats at the top of the area, oscillating slightly. When the spell ends, if the target is still floating, it falls, potentially taking damage for the fall.
@@ -5101,6 +5615,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One dead creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect If the target has been dead for no more than one round per four caster levels, it is restored to life. This functions like \spell{lesser resurrection} ritual, except that the target suffers no negative effects for having died.
@@ -5117,6 +5633,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{You}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spellsuccess You become larger, as \spell{enlarge person}. In addition, you gain physical damage reduction, reducing the physical damage you take each round by 10 \add 1 per caster level above 10th. This damage reduction is overcome by evil attacks if you are good or neutral, and by good attacks if you are evil. If you are hit by an appropraitely aligned attack, you cannot use your damage reduction for 1 round.
@@ -5139,17 +5657,21 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgt{One creature}[Primary]}{\spellrng{Touch}}
     \end{spelltargetinginfo}
-    \spelleffect The primary target is protected from attacks. If it makes an attack, this spell immediately ends.
-    \spelldur{\durshort or until discharged}
+    \begin{spelleffects}
+        \spelleffect The primary target is protected from attacks. If it makes an attack, this spell immediately ends.
+        \spelldur{\durshort or until discharged}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellsubcontent}
     \spelltgr{A creature attacks the primary target}
     \begin{spelltargetinginfo}
         \spelltgt{The attacking creature}[Secondary]
     \end{spelltargetinginfo}
-    \begin{spellattack}{Magic vs. Will}
-        \spellsuccess The secondary target is unable to attack the primary target creature. It can change its action to attack a different creature instead.
-    \end{spellattack}
+    \begin{spelleffects}
+        \begin{spellattack}{Magic vs. Will}
+            \spellsuccess The secondary target is unable to attack the primary target creature. It can change its action to attack a different creature instead.
+        \end{spellattack}
+    \end{spelleffects}
 \end{spellsubcontent}
 \begin{spellfooter}
     \spellinfo{Abjuration/Ench (Compulsion, Shielding) [Mind-Affecting]}{Arcane, Divine, Protection}
@@ -5162,6 +5684,8 @@
         \spellzone{\arealarge radius centered on you}
         \spelltgt{All enemies in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The area is brightly illuminated, and dim illumination extends for an additional 50 feet.
@@ -5181,6 +5705,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature or object}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Reflex}
@@ -5199,6 +5725,8 @@
     \begin{spelltargetinginfo}
         \spellzone{200 ft. radius cylinder centered on you, 50 ft. high}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect Fog fills the area, as \spell{fog cloud}.
@@ -5216,6 +5744,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature or object}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Reflex}
@@ -5235,6 +5765,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target can see any objects or beings that are invisible within its range of vision, as well as any that are ethereal, as if they were normally visible. Such creatures are visible as translucent shapes, allowing the target to easily discern the difference between visible, invisible, and ethereal creatures.
@@ -5252,6 +5784,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{You}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect Your body and all your equipment are subsumed by your shadow. As a living shadow, you blend perfectly into any other shadow and vanish in darkness. You appear as an unattached shadow in areas of full light.
@@ -5288,6 +5822,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect All attacks that would affect the creature, including magical and supernatural attacks, have a 50\% chance to be absorbed by the umbra. Attacks absorbed by the umbra have no effect on the target. The umbra is selective, and does not inhibit beneficial effects.
@@ -5306,7 +5842,9 @@
     \begin{spelltargetinginfo}
         \spelltgts{Two willing creatures}
     \end{spelltargetinginfo}
-    \spellspecial When you cast this spell, you choose which target will be protected.
+    \begin{spelleffects}
+        \spellspecial When you cast this spell, you choose which target will be protected.
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect When the protected creature would take hit point damage, it instead loses half that many hit points (rounded down), and the other target loses hit points equal to the other half of the damage (rounded up).
@@ -5325,7 +5863,9 @@
     \begin{spelltargetinginfo}
         \spelltgts{Two creatures}
     \end{spelltargetinginfo}
-    \spellspecial When you cast this spell, you choose which target will be protected.
+    \begin{spelleffects}
+        \spellspecial When you cast this spell, you choose which target will be protected.
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spellatk{Magic vs. Will}
@@ -5346,6 +5886,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target gains a shield with a \plus2 defense bonus. \spellbonusscalingdescription Unlike a mundane shield, this shield does not require a free hand and has no armor check penalty or arcane spell failure chance.
@@ -5364,6 +5906,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Up to five creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     The target gains a \plus5 enhancement bonus to its defenses. In addition, it gains spell resistance against lawful spells and spells cast by lawful creatures.
@@ -5381,6 +5925,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One nonmagical oak club or quarterstaff}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect As long as you wield it, the target is enhanced, as \spell{magic weapon}. In addition, it deals damage as if it were one size category larger. If you stop wielding the weapon, this spell has no effect on it.
@@ -5398,6 +5944,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature or object}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Reflex and Fortitude}
@@ -5420,6 +5968,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Everything in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spellspecial You gain a \plus5 bonus to attack against brittle or crystalline objects and creatures.
@@ -5438,6 +5988,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Everything in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spellspecial You gain a \plus5 bonus to attack against brittle or crystalline objects and creatures.
@@ -5456,6 +6008,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One nonmagical object (Medium or smaller; see text)}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -5477,6 +6031,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature or object}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -5496,6 +6052,8 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spellzone{\areamed radius}}{\spellrng{\rngmed}}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect This spell creates the visual illusion of an object, creature, or force within the area, as determined by you. The illusion does not create sound, smell, texture, or temperature. As a standard action, you can concentrate to alter the image within the area.
@@ -5518,6 +6076,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Everything in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Reflex}
@@ -5537,6 +6097,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One living creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -5555,6 +6117,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Up to five creatures within the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spellsuccess The target becomes tired, as \spell{spell}.
@@ -5572,6 +6136,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -5591,6 +6157,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Up to five creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target is \slowed.
@@ -5607,6 +6175,8 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spellzone{\areamed radius cylinder}}{\spellrng{\rngmed}}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect Fog blocks sight in the area, as \spell{fog cloud}. In addition to obscuring sight, the fog is so thick that any creature attempting to move through it progresses at a speed of 5 feet, regardless of its normal speed, and it takes a \minus2 penalty on all melee attack and melee damage rolls. The vapors prevent effective ranged weapon attacks (except for magic rays and the like). A creature or object that falls into solid fog is slowed, so that each 10 feet of vapor that it passes through reduces falling damage by 1d6.
@@ -5628,6 +6198,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{Everything in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -5646,6 +6218,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target gains spell resistance equal to 10 \add your caster level.
@@ -5683,6 +6257,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{You}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect If you would be a target of a spell or spell-like ability, the caster is targeted instead. If the spell affects multiple targets, the other targets are affected normally. If the caster is not a valid target, the spell simply has no effect on you.
@@ -5702,6 +6278,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target gains a climb speed of 20 feet. It must use at least one hand to climb in this manner.
@@ -5720,6 +6298,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature or object}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect This spell creates a floating weapon made of magical force. Each round, as a swift action, you can direct the weapon to attack a target. If you do not direct the weapon, it remains motionless.
@@ -5747,6 +6327,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{Everything in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Reflex}
@@ -5768,16 +6350,20 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spellzone{\areamed radius cylinder}}{\spellrng{\rngmed}}
     \end{spelltargetinginfo}
-    \spelleffect Fog fills the area, as \spell{fog cloud}, except that the fog has a putrid stench.
-    \spelldur{\durshort}
+    \begin{spelleffects}
+        \spelleffect Fog fills the area, as \spell{fog cloud}, except that the fog has a putrid stench.
+        \spelldur{\durshort}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellsubcontent}
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgr{End of every round}}{\spelltgts{Everything in the area}}
     \end{spelltargetinginfo}
-    \begin{spellattack}{Magic vs. Fortitude}
-        \spellsuccess The target is \sickened for as long as it remains in the cloud, and for 5 rounds after it leaves.
-    \end{spellattack}
+    \begin{spelleffects}
+        \begin{spellattack}{Magic vs. Fortitude}
+            \spellsuccess The target is \sickened for as long as it remains in the cloud, and for 5 rounds after it leaves.
+        \end{spellattack}
+    \end{spelleffects}
 \end{spellsubcontent}
 \begin{spellfooter}
     \spellinfo{Conjuration (Creation)}{Arcane}
@@ -5792,6 +6378,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target gains a \plus3 enhancement bonus to its Armor defense. This bonus increases to \plus4 at 14th caster level, and to \plus5 at 20th caster level. In addition, it gains physical damage reduction, reducing the damage it takes each round from physical attacks by 8 \add 1 per two caster levels above 8th. If it is hit by an adamantine weapon, it cannot use its damage reduction for 1 round.
@@ -5808,6 +6396,8 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spellzone{500 ft. radius cylinder}}{\spellrng{\rngfar}}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect An enormous storm cloud occupies the top 200 feet of the area, as \spell{fog cloud}. Within the area, lightning strikes and thunder rolls. Sunlight is blocked by the dark cloud. This may cause the area to have shadowy illumination, granting everything in it \concealment.
@@ -5839,18 +6429,22 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgt{You}}{\spellrng{\rngclose}}
     \end{spelltargetinginfo}
-    \spelleffect You gain physical damage reduction against ranged attacks, reducing the physical damage you take each round from ranged attacks by 35 \add 2 per caster level above 14th.
-    \spelldur{\durshort \dismissable}
+    \begin{spelleffects}
+        \spelleffect You gain physical damage reduction against ranged attacks, reducing the physical damage you take each round from ranged attacks by 35 \add 2 per caster level above 14th.
+        \spelldur{\durshort \dismissable}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellsubcontent}
     \spelltgr{Creature within \rngclose range makes a physical attack against you}
     \begin{spelltargetinginfo}
         \spelltgt{Triggering creature}
     \end{spelltargetinginfo}
-    \begin{spellattack}{Magic vs. Fortitude}
-        \spellsuccess 7d6 bludgeoning damage \add d6 per four caster levels above 14th.
-        \spellfailure As above, but half damage.
-    \end{spellattack}
+    \begin{spelleffects}
+        \begin{spellattack}{Magic vs. Fortitude}
+            \spellsuccess 7d6 bludgeoning damage \add d6 per four caster levels above 14th.
+            \spellfailure As above, but half damage.
+        \end{spellattack}
+    \end{spelleffects}
 \end{spellsubcontent}
 \begin{spellfooter}
     \spellinfo{Abjuration/Evoc (Control, Shielding)}{Air, Nature}
@@ -5864,6 +6458,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -5884,6 +6480,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -5905,6 +6503,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Up to five creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -6289,6 +6889,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{Everything in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Reflex}
@@ -6310,6 +6912,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{Everything in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Reflex}
@@ -6354,9 +6958,11 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngmed}}
     \end{spelltargetinginfo}
-    \begin{spellattack}{Magic vs. Will}
-        \spellsuccess You can take a standard action using the target as if you were holding it in your hands. Your effective Strength is equal to your Charisma, and your effective Dexterity is equal to your Intelligence. You can move the target up to thirty feet per round.
-    \end{spellattack}
+    \begin{spelleffects}
+        \begin{spellattack}{Magic vs. Will}
+            \spellsuccess You can take a standard action using the target as if you were holding it in your hands. Your effective Strength is equal to your Charisma, and your effective Dexterity is equal to your Intelligence. You can move the target up to thirty feet per round.
+        \end{spellattack}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
     \spellinfo{Evoc (Control)}{Evoc}
@@ -6370,11 +6976,13 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngmed}}
     \end{spelltargetinginfo}
-    \spelltwocol{\spelltgr{End of every round}}{\spelldur{Concentration}}
-    \spellspecial Choose one of the following combat maneuvers: disarm, dirty trick, grapple, shove, or trip.
-    \begin{spellattack}{Caster level \add casting attribute vs. Maneuver defense}
-        \spellsuccess The target is affected by the chosen maneuver.
-    \end{spellattack}
+    \begin{spelleffects}
+        \spelltwocol{\spelltgr{End of every round}}{\spelldur{Concentration}}
+        \spellspecial Choose one of the following combat maneuvers: disarm, dirty trick, grapple, shove, or trip.
+        \begin{spellattack}{Caster level \add casting attribute vs. Maneuver defense}
+            \spellsuccess The target is affected by the chosen maneuver.
+        \end{spellattack}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
     \spellinfo{Evoc (Control)}{Evoc}
@@ -6387,6 +6995,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature or object}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -6405,6 +7015,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{You}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect You gain telepathy out to a range of 100 feet. This allows you to send mental messages to any creature within range that has a language. Non-telepathic creatures can reply mentally to your messages, but they cannot initiative a telepathic conversation with you.
@@ -6423,6 +7035,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -6456,6 +7070,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target gains a \plus2 enhancement bonus to a mental attribute. The attribute depends on which version is chosen.
@@ -6475,6 +7091,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target's mind improves, as \spell{totemic mind}, except that it gains a \plus4 enhancement bonus. Alternately, you can grant the target a \plus2 enhancement bonus to all its mental attributes.
@@ -6491,6 +7109,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Up to five creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target's mind improves, as \spell{totemic mind}. 
@@ -6507,6 +7127,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target gains a \plus2 enhancement bonus to a physical attribute. The attribute depends on which version is chosen.
@@ -6526,6 +7148,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target's body improves, as \spell{totemic power}, except that it gains a \plus4 enhancement bonus. Alternately, you can grant the target a \plus2 enhancement bonus to all its physical attributes.
@@ -6542,6 +7166,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Up to five creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target's body improves, as \spell{totemic power}. 
@@ -6558,6 +7184,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Reflex and Will}
@@ -6589,9 +7217,11 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature (Huge or smaller)}
     \end{spelltargetinginfo}
-    \begin{spelltargetinginfo}
-        \spelltgt{One petrified creature (Huge or smaller)}
-    \end{spelltargetinginfo}
+    \begin{spelleffects}
+        \begin{spelltargetinginfo}
+            \spelltgt{One petrified creature (Huge or smaller)}
+        \end{spelltargetinginfo}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spellspecial This spell has two versions: transmuting flesh into stone, and transmuting stone into flesh. Its effects depend on which version is chosen.
@@ -6615,6 +7245,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{You}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect You become able to assume the form of a Large living tree or shrub or a Large dead tree trunk with a small number of limbs. The closest inspection cannot reveal that the tree in question is actually a magically concealed creature. To all normal tests you are, in fact, a tree or shrub, although a Spellcraft check can reveal the magical aura on the tree. While in tree form, you can observe all that transpires around you just as if you were in your normal form. You gain a \plus10 enhancement bonus to your Armor defense, but you have an effective Dexterity score of \minus10 and cannot move. You are immune to critical hits while in tree form. All clothing and gear carried or worn changes with you.
@@ -6630,6 +7262,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{You}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect You gain the tremorsense ability with a range of 50 feet. If you are touching a surface, you can automatically pinpoint the location of anything within 50 feet that is in contact with the surface, including inanimate objects.
@@ -6649,6 +7283,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target sees through normal and magical darkness, notices secret doors hidden by magic, sees the truth behind visual figments and glamers, and sees the true form of polymorphed, changed, or transmuted things. In addition, the target can see into the Ethereal Plane (but not into extradimensional spaces). The effect extends out to \rngmed range.
@@ -6669,6 +7305,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target's next physical attack gains a \plus20 enhancement bonus, and ignores all miss chances. 
@@ -6691,6 +7329,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Up to five creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     The target gains a \plus5 enhancement bonus to its defenses. In addition, it gains spell resistance against good spells and spells cast by good creatures.
@@ -6709,6 +7349,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One nonevil creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will}
@@ -6728,6 +7370,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target gains the ability to ``see'' any living creatures and their equipment within 30 feet perfectly, regardless of lighting conditions, physical barriers, invisibility, or any other means of concealment.
@@ -6746,6 +7390,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{You}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect You gain 5 temporary hit points \add 1 per two caster levels above 2nd. If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
@@ -6766,6 +7412,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{You}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect Your voice (or any sound that you can normally make vocally) originates from another location within range. As a swift action, you can change the apparent origin of your voice.
@@ -6783,6 +7431,8 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgt{One nonmagical armor or shield}}{\spellrng{Touch}}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The armor or shield's chance of arcane spell failure decreases by 10\% as long as you are wearing or using it. If any other creature wears the armor, it receives no benefit from this spell.
@@ -6802,9 +7452,11 @@
     \begin{spelltargetinginfo}
         \spelltgts{Living creatures in the area}
     \end{spelltargetinginfo}
-    \begin{spelltargetinginfo}
-        \spelltgts{Bloodied living creatures in the area}
-    \end{spelltargetinginfo}
+    \begin{spelleffects}
+        \begin{spelltargetinginfo}
+            \spelltgts{Bloodied living creatures in the area}
+        \end{spelltargetinginfo}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -6828,17 +7480,21 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spellzone{100 ft. wall, 10 ft. high \shapeable}}{\spellrng{\rngmed}}
     \end{spelltargetinginfo}
-    \spelleffect This spell creates a wall made of fire.
-    \spelldur{\durshort}
+    \begin{spelleffects}
+        \spelleffect This spell creates a wall made of fire.
+        \spelldur{\durshort}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellsubcontent}
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgr{A creature passes through the wall}}{\spelltgt{Creature in wall}}
     \end{spelltargetinginfo}
-    \begin{spellattack}{Magic vs. Reflex}
-        \spellsuccess 4d6 fire damage \add d6 per four caster levels above 10th.
-        \spellfailure As above, but half damage.
-    \end{spellattack}
+    \begin{spelleffects}
+        \begin{spellattack}{Magic vs. Reflex}
+            \spellsuccess 4d6 fire damage \add d6 per four caster levels above 10th.
+            \spellfailure As above, but half damage.
+        \end{spellattack}
+    \end{spelleffects}
 \end{spellsubcontent}
 \begin{spellfooter}
     \spellinfo{Evoc (Energy) [Fire, Wall]}{Arcane, Nature, Fire}
@@ -6852,6 +7508,8 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spellzone{100 ft. solid wall, 10 ft. high}}{\spellrng{\rngmed}}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect This spell creates an invisible wall made of force. A 5-foot square of wall has 5 hit points per caster level, and hardness equal to your caster level.
@@ -6870,6 +7528,8 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spellzone{\arealarge solid wall, 5 ft. high \shapeable}}{\spellrng{\rngmed}}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect This spell creates a wall made of stone atop an existing rock surface. A 5-foot square of wall has 60 hit points, and hardness 8. The wall is four inches thick.
@@ -6889,16 +7549,20 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spellzone{100 ft. line, 5 ft. wide, 10 ft. high \shapeable}}{\spellrng{\rngmed}}
     \end{spelltargetinginfo}
-    \spelleffect This spell creates a thicket of thorns in the area. A 5-foot cube of wall has 10 hit points per caster level. Moving into or out of a square in the area costs 20 feet of movement. The wall can be created where creatures are.
+    \begin{spelleffects}
+        \spelleffect This spell creates a thicket of thorns in the area. A 5-foot cube of wall has 10 hit points per caster level. Moving into or out of a square in the area costs 20 feet of movement. The wall can be created where creatures are.
 
-    The wall provides total cover against attacks through the wall. A creature in the wall has cover from attacks on either side of the wall.
-    \spelldur{\durlong \dismissable}
+        The wall provides total cover against attacks through the wall. A creature in the wall has cover from attacks on either side of the wall.
+        \spelldur{\durlong \dismissable}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellsubcontent}
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgr{A creature enters or exits a square in the area}}{\spelltgt{The moving creature}}
     \end{spelltargetinginfo}
-    \spelleffect 3d6 physical piercing damage.
+    \begin{spelleffects}
+        \spelleffect 3d6 physical piercing damage.
+    \end{spelleffects}
 \end{spellsubcontent}
 \begin{spellfooter}
     \spellinfo{Conjuration (Creation) [Wall]}{Nature, Wild}
@@ -6911,6 +7575,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{Up to five creatures}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target can tread on any liquid as if it were firm ground. Mud, oil, snow, quicksand, running water, ice, and even lava can be traversed easily, since the target's feet hover an inch or two above the surface.
@@ -6928,6 +7594,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{All creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -6947,6 +7615,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{All creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target is \fatigued.
@@ -6965,16 +7635,20 @@
     \begin{spelltargetinginfo}
         \spelltwocol{\spellzone{\areamed radius}}{\spellrng{\rngclose}}
     \end{spelltargetinginfo}
-    \spelleffect The area is filled with webs. The webs are thick and strong, but too widely spaced to significantly obscure sight. % info about how to destroy webs
-    \spelldur{\durshort \dismissable}
+    \begin{spelleffects}
+        \spelleffect The area is filled with webs. The webs are thick and strong, but too widely spaced to significantly obscure sight. % info about how to destroy webs
+        \spelldur{\durshort \dismissable}
+    \end{spelleffects}
 \end{spellcontent}
 \begin{spellsubcontent}
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgr{A creature in the area moves}}{\spelltgt{The moving creature}}
     \end{spelltargetinginfo}
-    \begin{spellattack}{Magic vs. Reflex}
-        \spellsuccess The target is \entangled. As a standard action, it can make a grapple attack or Escape Artist check. If its result beats your attack result, it is no longer entangled.
-    \end{spellattack}
+    \begin{spelleffects}
+        \begin{spellattack}{Magic vs. Reflex}
+            \spellsuccess The target is \entangled. As a standard action, it can make a grapple attack or Escape Artist check. If its result beats your attack result, it is no longer entangled.
+        \end{spellattack}
+    \end{spelleffects}
 \end{spellsubcontent}
 \begin{spellfooter}
     \spellinfo{Conjuration (Creation)}{Arcane}
@@ -6990,6 +7664,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{Five creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Will and Fortitude}
@@ -7010,6 +7686,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature or object}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -7035,6 +7713,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One creature or object}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spellattack}{Magic vs. Fortitude}
@@ -7060,26 +7740,28 @@
 \begin{spelltargetinginfo}
     \spelltwocol{\spelltgteffarea{See text}}{\spellrng{See text}}
 \end{spelltargetinginfo}
-\spellatk{See text}
-\spelleffect This spell is the mightiest spell a wizard or sorcerer can cast. By simply speaking your desires aloud, you can alter reality to better suit you.
-\par Even wish, however, has its limits.
-\par A wish can produce any one of the following effects.
-\begin{itemize}
-    \item Duplicate any general wizard or sorcerer spell of 8th level or lower, provided the spell is not of a school prohibited to you.
-    \item Duplicate any general wizard or sorcerer spell of 7th level or lower even if it's of a prohibited school.
-    \item Duplicate any other spell of 6th level or lower, provided the spell is not of a school prohibited to you.
-    \item Duplicate any other spell of 5th level or lower even if it's of a prohibited school. 
-    \item Undo the harmful effects of many other spells, such as geas/quest or insanity.
-    \item Create a nonmagical item of up to 10,000 gp in value.
-    \item Create a magic item, or add to the powers of an existing magic item.
-    \item Remove injuries and afflictions. A single wish can aid one creature per caster level, and all subjects are cured of the same kind of affliction. For example, you could heal all the damage you and your companions have taken, or remove all poison effects from everyone in the party, but not do both with the same wish. A wish can never restore the experience point loss from casting a spell or the level or Constitution loss from being resurrected.
-    \item Revive the dead. A wish can bring a dead creature back to life by duplicating a resurrection spell. A wish can revive a dead creature whose body has been destroyed, but the task takes two wishes, one to recreate the body and another to infuse the body with life again.
-    \item Transport travelers. A wish can lift one creature per caster level from anywhere on any plane and place those creatures anywhere else on any plane regardless of local conditions. You must make a Will attack to affect unwilling targets.
-    \item Undo misfortune. A wish can undo a single recent event. The wish forces a reroll of any roll made within the last round (including your last turn). Reality reshapes itself to accommodate the new result. For example, a wish could undo a foe's successful critical hit (either the attack roll or the critical roll), a friend's failed attack, and so on. The reroll, however, may be as bad as or worse than the original roll. You must make a Will attack to affect an unwilling target.
-\end{itemize}
-\par When casting a wish, you do not specify the exact spell or effect you wish to duplicate. Instead, you make a wish, describing what you want to have happen, and make a DC 20 Wisdom check. If the check fails, your intent is redirected or perverted in some way. For example, a wish to turn a foe to stone would normally mimic the flesh to stone effect of the transmute flesh and stone spell. However, if the Wisdom check failed, your foe might gain the benefit of a \spell{stoneskin} spell instead.
-\par You may try to use a wish to produce greater effects than these, but doing so is dangerous. The DC of the Wisdom check increases to 25, and the negative consequences for failing the check increase in proportion to the potency of the effect you try to create.
-\spellmat{10,000gp of diamonds. In addition, when a \spell{wish} duplicates a spell with a material component that costs more than 10,000 gp, you must provide that component.}
+\begin{spellcontent}
+    \spellatk{See text}
+    \spelleffect This spell is the mightiest spell a wizard or sorcerer can cast. By simply speaking your desires aloud, you can alter reality to better suit you.
+    \par Even wish, however, has its limits.
+    \par A wish can produce any one of the following effects.
+    \begin{itemize}
+        \item Duplicate any general wizard or sorcerer spell of 8th level or lower, provided the spell is not of a school prohibited to you.
+        \item Duplicate any general wizard or sorcerer spell of 7th level or lower even if it's of a prohibited school.
+        \item Duplicate any other spell of 6th level or lower, provided the spell is not of a school prohibited to you.
+        \item Duplicate any other spell of 5th level or lower even if it's of a prohibited school. 
+        \item Undo the harmful effects of many other spells, such as geas/quest or insanity.
+        \item Create a nonmagical item of up to 10,000 gp in value.
+        \item Create a magic item, or add to the powers of an existing magic item.
+        \item Remove injuries and afflictions. A single wish can aid one creature per caster level, and all subjects are cured of the same kind of affliction. For example, you could heal all the damage you and your companions have taken, or remove all poison effects from everyone in the party, but not do both with the same wish. A wish can never restore the experience point loss from casting a spell or the level or Constitution loss from being resurrected.
+        \item Revive the dead. A wish can bring a dead creature back to life by duplicating a resurrection spell. A wish can revive a dead creature whose body has been destroyed, but the task takes two wishes, one to recreate the body and another to infuse the body with life again.
+        \item Transport travelers. A wish can lift one creature per caster level from anywhere on any plane and place those creatures anywhere else on any plane regardless of local conditions. You must make a Will attack to affect unwilling targets.
+        \item Undo misfortune. A wish can undo a single recent event. The wish forces a reroll of any roll made within the last round (including your last turn). Reality reshapes itself to accommodate the new result. For example, a wish could undo a foe's successful critical hit (either the attack roll or the critical roll), a friend's failed attack, and so on. The reroll, however, may be as bad as or worse than the original roll. You must make a Will attack to affect an unwilling target.
+    \end{itemize}
+    \par When casting a wish, you do not specify the exact spell or effect you wish to duplicate. Instead, you make a wish, describing what you want to have happen, and make a DC 20 Wisdom check. If the check fails, your intent is redirected or perverted in some way. For example, a wish to turn a foe to stone would normally mimic the flesh to stone effect of the transmute flesh and stone spell. However, if the Wisdom check failed, your foe might gain the benefit of a \spell{stoneskin} spell instead.
+    \par You may try to use a wish to produce greater effects than these, but doing so is dangerous. The DC of the Wisdom check increases to 25, and the negative consequences for failing the check increase in proportion to the potency of the effect you try to create.
+    \spellmat{10,000gp of diamonds. In addition, when a \spell{wish} duplicates a spell with a material component that costs more than 10,000 gp, you must provide that component.}
+\end{spellcontent}
 
 \spellsection{Word of Chaos}{7}
 \begin{spellheader}
@@ -7088,6 +7770,8 @@
     \begin{spelltargetinginfo}
         \spelltgts{All nonchaotic creatures in the area}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect If the target's level does not exceed your caster level, it is \bewildered for 5 rounds.
@@ -7113,6 +7797,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{You}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect This spell teleports you instantly back to your sanctuary. You must designate the sanctuary when you ready the spell for the day, and it must be a very familiar place. The actual point of arrival is a designated area no larger than 10 feet by 10 feet. You can be transported any distance within a plane but cannot travel between planes. You can transport, in addition to yourself, any objects you carry, as long as their weight doesn't exceed your maximum load. Exceeding this limit causes the spell to fail.
@@ -7129,6 +7815,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One melee weapon}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target weapon is enhanced, as \spell{magic weapon}. In addition, it also gains an additional five feet of reach, extending the wielder's threatened area. Attacks outside the weapon's normal range deal half damage, but are otherwise treated exactly as if the wielder was attacking with the weapon normally.
@@ -7146,6 +7834,8 @@
     \begin{spelltargetinginfo}
         \spelltgt{One melee weapon}
     \end{spelltargetinginfo}
+    \begin{spelleffects}
+    \end{spelleffects}
 \end{spellheader}
 \begin{spellcontent}
     \spelleffect The target weapon is enhanced and extended, as \spell{zephyr blade}, except that the weapon's rach increases by ten feet, and attacks outside the weapon's normal range deal full damage.
