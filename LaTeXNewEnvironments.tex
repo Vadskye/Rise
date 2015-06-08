@@ -171,6 +171,7 @@
     rightline=false,
     bottomline=true,
     skipabove=0,
+    linecolor=black,
 ]{spellsubcontent}
 
 \newmdenv[
@@ -183,12 +184,9 @@
     backgroundcolor=Lavender,
 ]{spelleffects}
 
-\DeclareDocumentEnvironment{spellfooter}{s}
-{
-    %\IfBooleanF{#1}{\spellline}
-}
-{
-    %\IfBooleanF{#1}{\spellline}
-}
+\newmdenv[
+    style=colorenv,
+    backgroundcolor=Gainsboro,
+]{spellfooter}
 
 \ExplSyntaxOff
