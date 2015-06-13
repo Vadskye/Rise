@@ -1,10 +1,10 @@
 import argparse
-#from creature import generate_creature_from_key
 from creature import Creature, CreatureGroup
 import util
 import combat
 import cProfile
 import pstats
+import tests
 from strings import *
 from pprint import pprint, PrettyPrinter
 
@@ -52,8 +52,10 @@ def initialize_argument_parser():
     parser.add_argument('-t', '--targets', dest='targets', type=str,
             choices = TARGET_MODE_CHOICES,
             help='how creatures choose targets')
+    parser.add_argument('--test', dest='test', type=str,
+            help='A specific test to run')
     parser.add_argument('-v', '--variant', dest='variants', nargs="*",
-                        help = 'variants to apply to all creatures')
+            help = 'variants to apply to all creatures')
     parser.add_argument('--profile', dest='profile', action='store_true',
             help = 'profile performance?')
     return vars(parser.parse_args())
@@ -286,11 +288,21 @@ def main(args):
     ally_groups = generate_creature_groups(data, ally_names, args['ally_count'], args['ally_level'], args['ally_targets'], args['ally_variants'])
     enemy_groups = generate_creature_groups(data, enemy_names, args['enemy_count'], args['enemy_level'], args['enemy_targets'], args['enemy_variants'])
 
+    ideal_creature = Creature.from_raw_stats(
+        raw_stats = data,
+        creature_key = 'ideal',
+        stats_override = {
+            'level': args.get('level', 1)
+        },
+    )
+
     if ally_groups:
         allies = ally_groups[0]
         print "allies:"
         for i, ally in enumerate(allies):
             print ally#.to_latex()
+            print ally.average_hit_chance(ideal_creature)
+            print ally.get_average_damage_per_round(ideal_creature)
             #print ally.traits
             #ally.set_modifier('physical_attacks', 'enhancement', util.std_scale(ally.caster_level))
             #ally.set_modifier('physical_damage', 'enhancement', util.std_scale(ally.caster_level))
@@ -302,7 +314,7 @@ def main(args):
             #print
             #print i+1, ally.armor_defense - avg(ally.physical_attack_progression), i+16 - avg(ally.physical_attack_progression)
             #print ally#.to_latex()
-            print ally.get_modifiers_as_dict('first_physical_attack_bonus')
+            #print ally.get_modifiers_as_dict('first_physical_attack_bonus')
             #print ally.get_modifiers_as_dict('armor_defense')
             #print ally.physical_attack_progression
             #print ally.get_modifiers('maneuver_defense', as_dict = True)
@@ -315,7 +327,7 @@ def main(args):
             #print ally.get_modifiers('primary_weapon_size', as_dict = True)
             #print ally.primary_weapon.damage_die
             #print ally.armor_class.get_details()
-            print ally#.to_latex()
+            #print ally#.to_latex()
             print
 
     if enemy_groups:
@@ -325,6 +337,13 @@ def main(args):
             print enemy#.to_latex()
             #print enemy.armor_class.get_details()
             print ''
+
+    if args['test']:
+        tests.run_test(
+            args['test'],
+            ally_groups,
+            enemy_groups
+        )
 
     if args['battle']:
         if not len(ally_groups) == len(enemy_groups):
