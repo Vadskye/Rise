@@ -231,6 +231,11 @@ spellwarped:
   reflex: average
   will: average
   hit_value: 5
+  variants:
+    alteration:
+      attributes: spellwarped_alteration
+      equipment: heavy
+      special_attack_attribute: intelligence
 warrior:
   name: Warrior
   race: human
