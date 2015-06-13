@@ -300,7 +300,9 @@ def get_all_abilities():
 
     monster_abilities = {
         'ideal': {
-            'function': ideal_effect,
+            'functions': [
+                ideal_effect,
+            ]
         },
         'regeneration': {
             'modifiers': [
@@ -403,10 +405,7 @@ def power_attack_damage_modifier(creature):
 ####################
 
 def ideal_effect(creature):
-    for modifier_type in creature._modifiers:
-        for modifier_name in creature._modifiers[modifier_type]:
-            creature.remove_modifiers(modifier_name)
-    pass
+    creature.armor_defense = lambda c: c.level + 15
 
 def natural_grab_text(creature):
     return 'Natural grab (%s) %s' % (util.decrease_size(creature.size).title(),

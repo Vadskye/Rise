@@ -4,6 +4,8 @@ import dice
 from strings import *
 import os.path
 import yaml
+import copy
+from pprint import pprint, PrettyPrinter
 
 d20 = dice.dx(20)
 
@@ -318,7 +320,7 @@ def import_data():
     }
 
 def parse_creature_data(key, data):
-    creature_data = get_creature_data_from_key(key, data)
+    creature_data = copy.deepcopy(get_creature_data_from_key(key, data))
     if not creature_data:
         return False
     # apply creature type-based effects

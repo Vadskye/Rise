@@ -225,6 +225,9 @@ class Creature(object):
                  attack_mode = None,
                  ):
 
+        # hidden properties for shenanigans
+        self._armor_defense = None
+
         self.fundamental_progression = fundamental_progression
         self.race = race
 
@@ -427,6 +430,7 @@ class Creature(object):
             return 0
 
     def add_ability(self, ability_name):
+
         # make sure "ability" is actually the Ability object
         ability = get_ability_by_name(ability_name)
         self._abilities[ability_name] = ability
@@ -606,12 +610,19 @@ class Creature(object):
 
     @property
     def physical_attack_damage(self):
+        return self.get_physical_attack_damage()
+
+    @property 
+    def average_physical_attack_damage(self):
+        return self.get_physical_attack_damage(use_average = True)
+
+    def get_physical_attack_damage(self, use_average = False):
         if self.primary_weapon is not None:
-            primary_damage = self.primary_weapon_damage_die.roll() + self.primary_weapon_damage_bonus
+            primary_damage = self.primary_weapon_damage_die.roll(use_average) + self.primary_weapon_damage_bonus
         else:
             primary_damage = 0
         if self.secondary_weapon is not None:
-            secondary_damage = self.secondary_weapon_damage_die.roll() + self.secondary_weapon_damage_bonus
+            secondary_damage = self.secondary_weapon_damage_die.roll(use_average) + self.secondary_weapon_damage_bonus
         else:
             secondary_damage = 0
         return max(primary_damage, secondary_damage)
@@ -643,7 +654,15 @@ class Creature(object):
 
     @property
     def armor_defense(self):
-        return self.get_modifiers('armor_defense')
+        if self._armor_defense is not None:
+            return self._armor_defense(self)
+        else:
+            return self.get_modifiers('armor_defense')
+
+    @armor_defense.setter
+    def armor_defense(self, value):
+        print "Warning: overriding armor_defense function"
+        self._armor_defense = value
 
     @property
     def maneuver_defense(self):
@@ -830,7 +849,7 @@ class Creature(object):
         else:
             raise Exception("Creature {0} does not have attack mode {1}".format(self.name, self.attack_mode))
 
-    def avg_hit_chance(self, target):
+    def average_hit_chance(self, target):
         if self.attack_mode == 'physical':
             return util.avg(
                 [util.hit_probability(attack_bonus, target.armor_defense)
@@ -840,7 +859,13 @@ class Creature(object):
             return util.hit_probability(self.spell_attack_bonus, target.fortitude)
         else:
             raise Exception("Creature {0} does not have attack mode {1}".format(self.name, self.attack_mode))
-                    
+
+    def get_average_damage_per_round(self, target):
+        damage = 0
+        for attack_bonus in self.physical_attack_progression:
+            damage += util.hit_probability(attack_bonus, target.armor_defense) * self.average_physical_attack_damage
+        return damage
+
     def is_hit(self, attack_result, attack_type):
         return attack_result >= self.get_defense_against_attack(attack_type)
 
@@ -945,6 +970,9 @@ class Creature(object):
 
     @classmethod
     def from_raw_stats(cls, raw_stats, creature_key, stats_override = None):
+        if stats_override is None:
+            stats_override = dict()
+
         creature_data = util.parse_creature_data(creature_key, raw_stats)
         try:
             assert creature_data
@@ -1078,19 +1106,19 @@ class CreatureGroup(object):
             creature.reset_combat()
         self.active_creatures = self.updated_active_creatures()
 
-    def avg_hit_chance(self, targets):
+    def average_hit_chance(self, targets):
         if len(self.creatures) == len(targets.creatures):
             hit_chances = list()
             for i, creature in enumerate(self.creatures):
                 hit_chances.append(
-                    creature.avg_hit_chance(targets.creatures[i])
+                    creature.average_hit_chance(targets.creatures[i])
                 )
             return hit_chances
         elif len(self.creatures) == 1:
             creature = self.creatures[0]
-            return [creature.avg_hit_chance(target) for target in targets.creatures]
+            return [creature.average_hit_chance(target) for target in targets.creatures]
         elif len(targets.creatures) == 1:
             target = targets.creatures[0]
-            return [creature.avg_hit_chance(target) for creature in self.creatures]
+            return [creature.average_hit_chance(target) for creature in self.creatures]
         else:
             return 'Unable to calculate average hit chance between arbitrarily sized groups'
