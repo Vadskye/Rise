@@ -223,10 +223,13 @@ class Creature(object):
                  traits = None,
                  # combat
                  attack_mode = None,
+                 # misc
+                 ignore_warnings = False,
                  ):
 
-        # hidden properties for shenanigans
+        # misc properties for shenanigans
         self._armor_defense = None
+        self.ignore_warnings = ignore_warnings
 
         self.fundamental_progression = fundamental_progression
         self.race = race
@@ -661,7 +664,8 @@ class Creature(object):
 
     @armor_defense.setter
     def armor_defense(self, value):
-        print "Warning: overriding armor_defense function"
+        if not self.ignore_warnings:
+            print "Warning: overriding armor_defense function"
         self._armor_defense = value
 
     @property
@@ -860,13 +864,19 @@ class Creature(object):
         else:
             raise Exception("Creature {0} does not have attack mode {1}".format(self.name, self.attack_mode))
 
-    def get_average_damage_per_round(self, target):
+    def average_hits_per_round(self, target):
+        hits = 0
+        for attack_bonus in self.physical_attack_progression:
+            hits += util.hit_probability(attack_bonus, target.armor_defense)
+        return hits
+
+    def average_damage_per_round(self, target):
         damage = 0
         for attack_bonus in self.physical_attack_progression:
             damage += util.hit_probability(attack_bonus, target.armor_defense) * self.average_physical_attack_damage
         return damage
 
-    def is_hit(self, attack_result, attack_type):
+    def is_hit(self, attack_result, attack_type = 'physical'):
         return attack_result >= self.get_defense_against_attack(attack_type)
 
     def get_defense_against_attack(self, attack_type):
@@ -969,7 +979,7 @@ class Creature(object):
         return text
 
     @classmethod
-    def from_raw_stats(cls, raw_stats, creature_key, stats_override = None):
+    def from_raw_stats(cls, raw_stats, creature_key, stats_override = None, ignore_warnings = False):
         if stats_override is None:
             stats_override = dict()
 
@@ -1030,6 +1040,19 @@ class Creature(object):
             traits = creature_data.get('traits'),
             # combat
             attack_mode = creature_data.get('attack_mode'),
+            # misc
+            ignore_warnings = ignore_warnings
+        )
+
+    @classmethod
+    def get_ideal_creature(cls, raw_stats, level = 1):
+        return Creature.from_raw_stats(
+            raw_stats = raw_stats,
+            creature_key = 'ideal',
+            stats_override = {
+                'level': level,
+            },
+            ignore_warnings = True
         )
 
 class CreatureGroup(object):
@@ -1041,6 +1064,9 @@ class CreatureGroup(object):
 
     def __iter__(self):
         return iter(self.creatures)
+
+    def __getitem__(self, key):
+        return self.creatures[key]
 
     @property
     def is_active(self):

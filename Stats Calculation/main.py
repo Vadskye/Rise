@@ -49,10 +49,10 @@ def initialize_argument_parser():
             help='the level of the allied creatures')
     parser.add_argument('-o', '--output', dest='output',
             help='A file name to store any output in')
-    parser.add_argument('-t', '--targets', dest='targets', type=str,
+    parser.add_argument('--targets', dest='targets', type=str,
             choices = TARGET_MODE_CHOICES,
             help='how creatures choose targets')
-    parser.add_argument('--test', dest='test', type=str,
+    parser.add_argument('-t', '--test', dest='test', type=str,
             help='A specific test to run')
     parser.add_argument('-v', '--variant', dest='variants', nargs="*",
             help = 'variants to apply to all creatures')
@@ -288,15 +288,19 @@ def main(args):
     ally_groups = generate_creature_groups(data, ally_names, args['ally_count'], args['ally_level'], args['ally_targets'], args['ally_variants'])
     enemy_groups = generate_creature_groups(data, enemy_names, args['enemy_count'], args['enemy_level'], args['enemy_targets'], args['enemy_variants'])
 
-    ideal_creature = Creature.from_raw_stats(
-        raw_stats = data,
-        creature_key = 'ideal',
-        stats_override = {
-            'level': args.get('level', 1)
-        },
-    )
-
-    if ally_groups:
+    if args['test']:
+        ideal_creature = Creature.get_ideal_creature(
+            raw_stats = data,
+            level = args.get('level'),
+        )
+        tests.run_test(
+            args['test'],
+            ally_groups[0],
+            enemy_groups[0],
+            level = int(args.get('level', 1)),
+            ideal_creature = ideal_creature,
+        )
+    else:
         allies = ally_groups[0]
         print "allies:"
         for i, ally in enumerate(allies):
@@ -330,20 +334,12 @@ def main(args):
             #print ally#.to_latex()
             print
 
-    if enemy_groups:
         enemies = enemy_groups[0]
         print "enemies:"
         for enemy in enemies:
             print enemy#.to_latex()
             #print enemy.armor_class.get_details()
             print ''
-
-    if args['test']:
-        tests.run_test(
-            args['test'],
-            ally_groups,
-            enemy_groups
-        )
 
     if args['battle']:
         if not len(ally_groups) == len(enemy_groups):
