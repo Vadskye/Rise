@@ -47,7 +47,10 @@ class Dice(object):
             self.die_size -= 2
         self.average = self._get_average()
 
-    def roll(self):
+    def roll(self, use_average = False):
+        if use_average:
+            return self.average
+
         total = 0
         for i in xrange(self.dice_count):
             die_roll = random.randrange(1, self.die_size+1)
