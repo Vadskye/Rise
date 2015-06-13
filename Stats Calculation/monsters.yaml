@@ -47,6 +47,8 @@ creature_types:
     reflex: average
     will: average
     hit_value: 6
+    traits:
+      - ideal
   'magical beast':
     bab: average
     fortitude: average
