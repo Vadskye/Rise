@@ -128,6 +128,19 @@ sorcerer:
     charisma: 
       progression: primary
       value: 4
+spellwarped_alteration:
+    strength:
+      progression: primary
+      value: 6
+    dexterity: 2
+    constitution:
+      progression: tertiary
+      value: 2
+    intelligence: 
+      progression: secondary
+      value: 3
+    wisdom: 0
+    charisma: 0
 warrior:
     strength:
       progression: primary
