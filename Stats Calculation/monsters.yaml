@@ -461,7 +461,9 @@ ideal:
     name: ideal
     creature_type: ideal
     #attributes
-    strength: good
+    strength:
+      progression: average
+      value: 4
     dexterity: average
     constitution: average
     intelligence: average
