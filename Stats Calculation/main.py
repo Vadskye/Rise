@@ -181,13 +181,13 @@ def wage_war(allies, enemies):
         'ally': {
             'any_dead': ally_any_dead,
             'any_inactive': ally_any_inactive,
-            'avg_hit_chance': allies.avg_hit_chance(enemies),
+            'average_hit_chance': allies.average_hit_chance(enemies),
             'victories': ally_victories,
         },
         'enemy': {
             'any_dead': enemy_any_dead,
             'any_inactive': enemy_any_inactive,
-            'avg_hit_chance': enemies.avg_hit_chance(allies),
+            'average_hit_chance': enemies.average_hit_chance(allies),
             'victories': enemy_victories,
         },
         'rounds': rounds,
@@ -275,6 +275,23 @@ def generate_creature_groups(data, names, count, level, target_mode, variants):
 
     return creature_groups
 
+def add_custom_modifiers(ally_groups, enemy_groups):
+    for ally_group in ally_groups:
+        for ally in ally_group:
+            pass
+            #ally.add_modifier('physical_damage_reduction', 'testing', lambda c: c.level)
+            #ally.add_modifier('extra_attacks', 'testing', 1)
+            #ally.add_modifier('extra_physical_attack_bonus', 'testing', -5)
+            #ally.add_modifier('weapon_size', 'testing', 1)
+            #ally.add_modifier('hit_points', 'testing', lambda c: c.level * 2)
+            #ally.add 
+
+    for enemy_group in enemy_groups:
+        for enemy in enemy_group:
+            pass
+            #enemy.add_modifier('physical_attacks', 'testing', 2)
+            #enemy.add_modifier('hit_points', 'testing', lambda c: (c.hit_value + c.constitution/2) * c.level)
+
 def main(args):
     args = inherit_shared_args(args)
     data = util.import_data()
@@ -287,6 +304,8 @@ def main(args):
 
     ally_groups = generate_creature_groups(data, ally_names, args['ally_count'], args['ally_level'], args['ally_targets'], args['ally_variants'])
     enemy_groups = generate_creature_groups(data, enemy_names, args['enemy_count'], args['enemy_level'], args['enemy_targets'], args['enemy_variants'])
+
+    add_custom_modifiers(ally_groups, enemy_groups)
 
     if args['test']:
         ideal_creature = Creature.get_ideal_creature(
@@ -302,11 +321,11 @@ def main(args):
         )
     else:
         allies = ally_groups[0]
-        print "allies:"
+        print "~~~~ allies:"
         for i, ally in enumerate(allies):
             print ally#.to_latex()
-            print ally.average_hit_chance(ideal_creature)
-            print ally.get_average_damage_per_round(ideal_creature)
+            #print ally.average_hit_chance(ideal_creature)
+            #print ally.get_average_damage_per_round(ideal_creature)
             #print ally.traits
             #ally.set_modifier('physical_attacks', 'enhancement', util.std_scale(ally.caster_level))
             #ally.set_modifier('physical_damage', 'enhancement', util.std_scale(ally.caster_level))
@@ -335,7 +354,8 @@ def main(args):
             print
 
         enemies = enemy_groups[0]
-        print "enemies:"
+        print "~~~~ enemies:"
+        print
         for enemy in enemies:
             print enemy#.to_latex()
             #print enemy.armor_class.get_details()
@@ -354,13 +374,13 @@ def main(args):
             'ally': {
                 'any_dead': list(),
                 'any_inactive': list(),
-                'avg_hit_chance': list(),
+                'average_hit_chance': list(),
                 'victories': list(),
             },
             'enemy': {
                 'any_dead': list(),
                 'any_inactive': list(),
-                'avg_hit_chance': list(),
+                'average_hit_chance': list(),
                 'victories': list(),
             },
             'rounds': list(),
@@ -379,12 +399,12 @@ def main(args):
             combined_results['rounds'].append((i, war_results['rounds']))
             combined_results['ties'].append((i, war_results['ties']))
             for key in war_results['ally']:
-                if key == 'avg_hit_chance':
+                if key == 'average_hit_chance':
                     combined_results['ally'][key].append((i+1, war_results['ally'][key][0]))
                 else:
                     combined_results['ally'][key].append((i+1, war_results['ally'][key]))
             for key in war_results['enemy']:
-                if key == 'avg_hit_chance':
+                if key == 'average_hit_chance':
                     combined_results['enemy'][key].append((i+1, war_results['enemy'][key][0]))
                 else:
                     combined_results['enemy'][key].append((i+1, war_results['enemy'][key]))
