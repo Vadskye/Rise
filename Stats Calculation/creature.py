@@ -288,6 +288,11 @@ class Creature(object):
         # this needs to happen before we can apply abilities
         self._update_static_modifiers()
 
+        # stuff with dependencies
+        self.set_default_modifiers()
+        self.reset_progression_modifiers()
+        self._update_static_modifiers()
+
         # abilities
         self._abilities = dict()
         for ability_name in get_fundamental_progression_ability_names(fundamental_progression, level):
@@ -305,9 +310,6 @@ class Creature(object):
             for template in templates:
                 self.add_ability(template)
 
-        # stuff with dependencies
-        self.set_default_modifiers()
-        self.reset_progression_modifiers()
         self._update_static_modifiers()
 
         #self.abilities = abilities
