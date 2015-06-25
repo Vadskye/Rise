@@ -405,7 +405,8 @@ def power_attack_damage_modifier(creature):
 ####################
 
 def ideal_effect(creature):
-    creature.armor_defense = lambda c: c.level + 15
+    creature.armor_defense = lambda c: c.level + 17
+    creature.remove_modifiers('enhancement')
 
 def natural_grab_text(creature):
     return 'Natural grab (%s) %s' % (util.decrease_size(creature.size).title(),
