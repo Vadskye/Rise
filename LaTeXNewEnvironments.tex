@@ -189,4 +189,14 @@
     backgroundcolor=Gainsboro,
 ]{spellfooter}
 
+\DeclareDocumentEnvironment{dtabularx}{m m}
+{
+    \tabularx{#1}{#2}
+}
+{
+    \endtabularx
+}
+
+\surroundwithmdframed{dtabularx}
+
 \ExplSyntaxOff
