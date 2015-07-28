@@ -7,7 +7,6 @@
 \subsubsection{A}
 \end{comment}
 
-
 \begin{spellsection}{Ablate Impact}{2}
 \begin{spellheader}
     \spelldesc{You instantly reduce the force of an incoming blow.}
@@ -78,7 +77,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Acid Arrow}{Greater}{5}
+\begin{spellsection}{Acid Arrow}[Greater]{5}
 \begin{spellheader}
     \spelldesc{You fire a magical arrow of acid from your hand that speeds to its target.}
 \end{spellheader}
@@ -188,27 +187,6 @@
 \end{spellcontent}
 \begin{spellfooter}
     \spellinfo{Transmutation (Imbuement) [Air]}{Air, Divine, Nature, Travel}
-\end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Animal Growth}{8}
-\begin{spellheader}
-    \spelldesc{You cause a number of animals grow to twice their normal size and eight times their normal weight.}
-\end{spellheader}
-\begin{spellcontent}
-    \begin{spelltargetinginfo}
-        \spelltwocol{\spelltgts{Five animals}}{\spellrng{\rngmed}}
-        \spelltime{Full-round action}
-    \end{spelltargetinginfo}
-    \begin{spelleffects}
-        \begin{spellattack}{Magic vs. Fortitude}
-            \spellsuccess The target grows larger, as \spell{enlarge person}.
-        \end{spellattack}
-    \end{spelleffects}
-\end{spellcontent}
-\begin{spellfooter}
-    \spellinfo{Transmutation (Polymorph) [Sizing]}{Nature, Wild}
-    \spellnotes \sizingspellnotes
 \end{spellfooter}
 \end{spellsection}
 
@@ -343,7 +321,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Bane}{Mass}{4}
+\begin{spellsection}{Bane}[Mass]{4}
 \begin{spellheader}
     %\spelldesc{}
 \end{spellheader}
@@ -479,7 +457,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Bless}{Mass}{4}
+\begin{spellsection}{Bless}[Mass]{4}
 \begin{spellheader}
     \spelldesc{You fill your allies with confidence, improving their prowess in combat.}
 \end{spellheader}
@@ -609,7 +587,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Call Lightning}{Greater}{8}
+\begin{spellsection}{Call Lightning}[Greater]{8}
 \begin{spellheader}
     \spelldesc{You repeatedly call intense bolts of lightning that flash down from thin air to smite your foes.}
 \end{spellheader}
@@ -774,7 +752,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Charm Person}{Mass}{6}
+\begin{spellsection}{Charm Person}[Mass]{6}
 \begin{spellheader}
     \spelldesc{You manipulate the minds of many people so they think of you as a trusted friend and ally.}
 \end{spellheader}
@@ -854,15 +832,7 @@
         \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
     \end{spelltargetinginfo}
     \begin{spelleffects}
-        \spellspecial When you cast this spell, you speak a command of your choice from the following list.
-        \begin{itemize}
-                \item Approach: The target must move toward you as quickly and directly as possible.
-                \item Attack: The target must attack the creature closest to it. (It may choose between equally close creatures.)
-                \item Drop: The target must drop whatever it is holding.
-                \item Fall: The target must fall prone.
-                \item Flee: The target must move away from you as quickly and directly as possible.
-                \item Halt: The target must not move.
-        \end{itemize}
+        \spellspecial When you cast this spell, you speak a single-word command of your choice.
         \begin{spellattack}{Magic vs. Will}
             \spellsuccess The target must obey the command or be \severelyimpaired with all actions.
             \spellcritical The target must obey the command or be \stunned.
@@ -873,11 +843,11 @@
 \end{spellcontent}
 \begin{spellfooter}
     \spellinfo{Ench (Compulsion) [Language-Dependent, Mind-Affecting, Sound-Dependent]}*{Arcane, Divine, Law}
-    \spellnotes If the target can't understand your command, the spell automatically fails.
+    \spellnotes If the target can't understand your command, the spell automatically fails. The target must obey the literal meaning of the commmand given, potentially allowing intelligent targets to subvert your intentions.
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Command}{Mass}{5}
+\begin{spellsection}{Command}[Mass]{5}
 \begin{spellheader}
     \spelldesc{You compel many foes to obey your command.}
     \spellcmp{Verbal only}
@@ -918,7 +888,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Cone of Cold}{Greater}{7}
+\begin{spellsection}{Cone of Cold}[Greater]{7}
 \begin{spellheader}
     \spelldesc{You create a massive area of extreme cold that drains heat from creatures in the area, diminishing their ability to move.}
 \end{spellheader}
@@ -960,7 +930,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Confusion}{Mass}{7}
+\begin{spellsection}{Confusion}[Mass]{7}
 \begin{spellheader}
     \spelldesc{You compel a group of creatures to act randomly, sowing confusion in your foes' ranks.}
 \end{spellheader}
@@ -1045,7 +1015,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Cure Critical Wounds}{Mass}{8}
+\begin{spellsection}{Cure Critical Wounds}[Mass]{8}
 \begin{spellheader}
     \spelldesc{You stretch out your hand and channel positive energy into all of your allies, healing even their most grievous injuries.}
 \end{spellheader}
@@ -1083,7 +1053,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Cure Light Wounds}{Mass}{5}
+\begin{spellsection}{Cure Light Wounds}[Mass]{5}
 \begin{spellheader}
     \spelldesc{You stretch out your hand and channel positive energy into all of your allies, healing some of their wounds.}
 \end{spellheader}
@@ -1121,7 +1091,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Cure Moderate Wounds}{Mass}{6}
+\begin{spellsection}{Cure Moderate Wounds}[Mass]{6}
 \begin{spellheader}
     \spelldesc{You stretch out your hand and channel positive energy into all of your allies, healing their wounds.}
 \end{spellheader}
@@ -1159,7 +1129,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Cure Serious Wounds}{Mass}{7}
+\begin{spellsection}{Cure Serious Wounds}[Mass]{7}
 \begin{spellheader}
     \spelldesc{You stretch out your hand and channel positive energy into all of your allies, healing even serious injuries.}
 \end{spellheader}
@@ -1333,7 +1303,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Death Ward}{Mass}{7}
+\begin{spellsection}{Death Ward}[Mass]{7}
 \begin{spellheader}
     \spelldesc{You shield your allies from deadly spells.}
 \end{spellheader}
@@ -1539,7 +1509,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Dimension Door}{Mass}{8}
+\begin{spellsection}{Dimension Door}[Mass]{8}
 \begin{spellheader}
 \end{spellheader}
 \begin{spellcontent}
@@ -1690,6 +1660,42 @@
 \end{spellfooter}
 \end{spellsection}
 
+\begin{spellsection}{Disjoin Magic}{9}
+\begin{spellheader}
+\end{spellheader}
+\begin{spellcontent}
+    \begin{spelltargetinginfo}
+        \spellspecial This spell has two versions: an area dispel, and a targetted destruction of a magic item. Its effects depend on which version is chosen.
+    \end{spelltargetinginfo}
+\end{spellcontent}
+\begin{spellsubcontent}
+    \begin{spelltargetinginfo}
+        \spelltwocol{\spellburst{\areamed radius burst}}{\spellrng{\rngmed}}
+    \end{spelltargetinginfo}
+    \begin{spelleffects}
+        \spelleffect All spells in the area are dispelled.
+    \end{spelleffects}
+\end{spellsubcontent}
+\begin{spellsubcontent}
+    \begin{spelltargetinginfo}
+        \spelltgt{One magic item}
+    \end{spelltargetinginfo}
+    \begin{spelleffects}
+        \begin{spellattack}{Caster level vs. Special}
+            \spellspecial The attack is made against a DC equal to 10 \add the caster level of the item.
+
+            If the item is an artifact, there is only a 1\% chance per caster level that the spell works. If you destroy an artifact in this way, you permanently lose the ability to cast this spell.
+            \spellsuccess The target item is permanently rendered nonmagical.
+            \spellfailure The target item is suppressed for 5 rounds. A suppressed object loses all its magical abilities, though it is still treated as being a magical object for the purpose of spells and effects.
+        \end{spellattack}
+    \end{spelleffects}
+\end{spellsubcontent}
+\begin{spellfooter}
+    \spellinfo{Abjuration (Negation)}{Arcane, Magic}
+    \spellnotes Destroying artifacts is dangerous, and it is likely to attract the attention of some powerful being who has an interest in or connection with the device.
+\end{spellfooter}
+\end{spellsection}
+
 \begin{spellsection}{Dispel Magic}{3}
 \begin{spellheader}
     \spelldesc{You destroy magical effects}.
@@ -1723,7 +1729,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Dispel Magic}{Greater}{6}
+\begin{spellsection}{Dispel Magic}[Greater]{6}
 \begin{spellheader}
     \spelltwocol{\spellarea{\areamed radius limit}}{\spellrng{\rngmed}}
 \end{spellheader}
@@ -1781,7 +1787,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Divine Favor}{Greater}{5}
+\begin{spellsection}{Divine Favor}[Greater]{5}
 \begin{spellheader}
     \spelldesc{You imbue yourself with great strength and skill in combat by calling upon the divine power of your patron.}
 \end{spellheader}
@@ -1972,7 +1978,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Earthspike}{Mass}{4}
+\begin{spellsection}{Earthspike}[Mass]{4}
 \begin{spellheader}
 \end{spellheader}
 \begin{spellcontent}
@@ -2030,7 +2036,7 @@
         \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
     \end{spelltargetinginfo}
     \begin{spelleffects}
-        \spellsuccess If the target is living, it gains two \conditionlink{negative levels}. This imposes a \minus2 penalty to thet arget's attacks, special defenses, and checks, and a \minus10 penalty to its current and maximum hit points.
+        \spellsuccess If the target is living, it gains two \conditionlink{negative levels}. This imposes a \minus2 penalty to the target's attacks, special defenses, and checks, and a \minus10 penalty to its current and maximum hit points.
 
         If the target is undead, it gains physical damage reduction, reducing the physical damage it takes each round by 8 \add 1 per two caster levels above 8th. If it takes positive damage, it cannot use its damage reduction for 1 round.
     \end{spelleffects}
@@ -2041,7 +2047,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Enervation}{Greater}{8}
+\begin{spellsection}{Enervation}[Greater]{8}
 \begin{spellheader}
     \spelldesc{Your foe's body loses its color momentarily as you drain its life force away.}
 \end{spellheader}
@@ -2053,7 +2059,7 @@
         \spelleffect If the target is undead, it gains physical damage reduction, reducing the physical damage it takes each round by 16 \add 1 per two caster levels above 16th. If it takes positive damage, it cannot use its damage reduction for 1 round.
         \begin{spellattacktriggered}{If the target is living, make a Magic vs. Fortitude attack.}
             \spellsuccess The target gains eight \conditionlink{negative levels}. This imposes a \minus8 penalty to the target's attacks, special defenses, and checks, and a \minus40 penalty to its current and maximum hit points.
-            \spellsuccess The target gains four \conditionlink{negative levels}. This imposes a \minus4 penalty to thet arget's attacks, special defenses, and checks, and a \minus20 penalty to its current and maximum hit points.
+            \spellsuccess The target gains four \conditionlink{negative levels}. This imposes a \minus4 penalty to the target's attacks, special defenses, and checks, and a \minus20 penalty to its current and maximum hit points.
         \end{spellattacktriggered}
     \end{spelleffects}
 \end{spellcontent}
@@ -2063,12 +2069,49 @@
 \end{spellfooter}
 \end{spellsection}
 
+\begin{spellsection}{Enlarge Monster}{4}
+\begin{spellheader}
+\end{spellheader}
+\begin{spellcontent}
+    \begin{spelltargetinginfo}
+        \spelltwocol{\spelltgts{One creature (Large or smaller)}}{\spellrng{\rngclose}}
+        \spelltime{Full-round action}
+    \end{spelltargetinginfo}
+    \begin{spelleffects}
+        \spellspecial This spell functions as \spell{enlarge person}, except that the target can be a creature of any type.
+    \end{spelleffects}
+\end{spellcontent}
+\begin{spellfooter}
+    \spellinfo{Transmutation (Polymorph) [Sizing]}{Nature, Wild}
+    \spellnotes \sizingspellnotes
+\end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Enlarge Monster}[Mass]{7}
+\begin{spellheader}
+\end{spellheader}
+\begin{spellcontent}
+    \begin{spelltargetinginfo}
+        \spelltwocol{\spelltgts{Five creatures (Large or smaller)}}{\spellrng{\rngmed}}
+    \spelltime{Full-round action}
+    \end{spelltargetinginfo}
+    \begin{spelleffects}
+        \spelleffect The target is enlarged, as \spell{enlarge person}.
+        \spelldur \durshort \dismissable
+    \end{spelleffects}
+\end{spellcontent}
+\begin{spellfooter}
+    \spellinfo{Transmutation (Polymorph) [Sizing]}{Strength, Transmutation}
+    \spellnotes \sizingspellnotes
+\end{spellfooter}
+\end{spellsection}
+
 \begin{spellsection}{Enlarge Person}{3}
 \begin{spellheader}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spelltargetinginfo}
-        \spelltwocol{\spelltgt{One humanoid creature (Large or smaller)}}{\spellrng{\rngclose}}
+        \spelltwocol{\spelltgt{One humanoid creature}}{\spellrng{\rngclose}}
     \spelltime{Full-round action}
     \end{spelltargetinginfo}
     \begin{spelleffects}
@@ -2093,12 +2136,12 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Enlarge Person}{Mass}{6}
+\begin{spellsection}{Enlarge Person}[Mass]{6}
 \begin{spellheader}
 \end{spellheader}
 \begin{spellcontent}
     \begin{spelltargetinginfo}
-        \spelltwocol{\spelltgts{Five humanoid creatures (Large or smaller)}}{\spellrng{\rngmed}}
+        \spelltwocol{\spelltgts{Five humanoid creatures}}{\spellrng{\rngmed}}
     \spelltime{Full-round action}
     \end{spelltargetinginfo}
     \begin{spelleffects}
@@ -2136,7 +2179,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Entangle}{Greater}{4}
+\begin{spellsection}{Entangle}[Greater]{4}
 \begin{spellheader}
     \spelldesc{Plants grow out of nowhere and ensnare your foe.}
 \end{spellheader}
@@ -2275,7 +2318,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Fear}{Mass}{6}
+\begin{spellsection}{Fear}[Mass]{6}
 \begin{spellheader}
     \spelldesc{You terrify your foe.}
 \end{spellheader}
@@ -2604,7 +2647,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Foresight}{Greater}{9}
+\begin{spellsection}{Foresight}[Greater]{9}
 \begin{spellheader}
     \spelldesc{You bestow a powerful sixth sense to your ally, giving them clear visions of any imminent danger.}
 \end{spellheader}
@@ -2655,7 +2698,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Freedom}{Mass}{7}
+\begin{spellsection}{Freedom}[Mass]{7}
 \begin{spellheader}
 \end{spellheader}
 \begin{spellcontent}
@@ -2717,7 +2760,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Gentle Descent}{Mass}{4}
+\begin{spellsection}{Gentle Descent}[Mass]{4}
 \begin{spellheader}
     \spelldesc{You grant your ally ephemeral wings which allow him to glide.}
 \end{spellheader}
@@ -2860,7 +2903,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Haste}{Lesser}{1}
+\begin{spellsection}{Haste}[Lesser]{1}
 \begin{spellheader}
 \end{spellheader}
 \begin{spellcontent}
@@ -2897,7 +2940,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Haste}{Mass}{8}
+\begin{spellsection}{Haste}[Mass]{8}
 \begin{spellheader}
     \spelldesc{You accelerate your allies' motions, causing them to move and act more quickly than normal.}
 \end{spellheader}
@@ -2976,7 +3019,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Heroism}{Greater}{8}
+\begin{spellsection}{Heroism}[Greater]{8}
 \begin{spellheader}
 \end{spellheader}
 \begin{spellcontent}
@@ -3009,7 +3052,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Hold Monster}{Mass}{8}
+\begin{spellsection}{Hold Monster}[Mass]{8}
 \begin{spellheader}
 \end{spellheader}
 \begin{spellcontent}
@@ -3043,7 +3086,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Hold Person}{Mass}{6}
+\begin{spellsection}{Hold Person}[Mass]{6}
 \begin{spellheader}
 \end{spellheader}
 \begin{spellcontent}
@@ -3296,7 +3339,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Inflict Critical Wounds}{Mass}{8}
+\begin{spellsection}{Inflict Critical Wounds}[Mass]{8}
 \begin{spellheader}
 \end{spellheader}
 \begin{spellcontent}
@@ -3332,7 +3375,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Inflict Light Wounds}{Mass}{5}
+\begin{spellsection}{Inflict Light Wounds}[Mass]{5}
 \begin{spellheader}
 \end{spellheader}
 \begin{spellcontent}
@@ -3369,7 +3412,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Inflict Moderate Wounds}{Mass}{6}
+\begin{spellsection}{Inflict Moderate Wounds}[Mass]{6}
 \begin{spellheader}
 \end{spellheader}
 \begin{spellcontent}
@@ -3405,7 +3448,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Inflict Serious Wounds}{Mass}{7}
+\begin{spellsection}{Inflict Serious Wounds}[Mass]{7}
 \begin{spellheader}
 \end{spellheader}
 \begin{spellcontent}
@@ -3441,7 +3484,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Invisibility}{Greater}{6}
+\begin{spellsection}{Invisibility}[Greater]{6}
 \begin{spellheader}
 \end{spellheader}
 \begin{spellcontent}
@@ -3458,7 +3501,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Invisibility}{Mass}{7}
+\begin{spellsection}{Invisibility}[Mass]{7}
 \begin{spellheader}
 \end{spellheader}
 \begin{spellcontent}
@@ -3540,10 +3583,10 @@
     \spellinfo{Evocation (Control)}{Evocation}
     \spellnotes If this spell is cast on an \spellindirect{arcane lock}{arcane locked} door, make a caster level check against a DC of 11 \add the caster level of the \spell{arcane lock}. If you succeed, the \spell{arcane lock} is suppressed for 10 minutes. If you fail, you may still bypass the door with the checks above, if possible.
 \end{spellfooter}
+\end{spellsection}
 
 \invocationsection{Lesser (Spell Name)}
 \par Any spell whose name begins with lesser is alphabetized in this chapter according to the second word of the spell name. Thus, the description of a lesser spell appears near the description of the spell on which it is based. Spell chains that have lesser spells in them include those based on the spells cone of cold, dispel magic, moment of prescience, precognition, and spelltheft.
-\end{spellsection}
 
 \begin{spellsection}{Levitate}{3}
 \begin{spellheader}
@@ -3662,42 +3705,6 @@
 \end{spellcontent}
 \begin{spellfooter}
     \spellinfo{Evocation (Control)}{Arcane}
-\end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Mage's Disjunction}{9}
-\begin{spellheader}
-\end{spellheader}
-\begin{spellcontent}
-    \begin{spelltargetinginfo}
-        \spellspecial This spell has two versions: an area dispel, and a targetted destruction of a magic item. Its effects depend on which version is chosen.
-    \end{spelltargetinginfo}
-\end{spellcontent}
-\begin{spellsubcontent}
-    \begin{spelltargetinginfo}
-        \spelltwocol{\spellburst{\areamed radius burst}}{\spellrng{\rngmed}}
-    \end{spelltargetinginfo}
-    \begin{spelleffects}
-        \spelleffect All spells in the area are dispelled.
-    \end{spelleffects}
-\end{spellsubcontent}
-\begin{spellsubcontent}
-    \begin{spelltargetinginfo}
-        \spelltgt{One magic item}
-    \end{spelltargetinginfo}
-    \begin{spelleffects}
-        \begin{spellattack}{Caster level vs. Special}
-            \spellspecial The attack is made against a DC equal to 10 \add the caster level of the item.
-
-            If the item is an artifact, there is only a 1\% chance per caster level that the spell works. If you destroy an artifact in this way, you permanently lose the ability to cast this spell.
-            \spellsuccess The target item is permanently rendered nonmagical.
-            \spellfailure The target item is suppressed for 5 rounds. A suppressed object loses all its magical abilities, though it is still treated as being a magical object for the purpose of spells and effects.
-        \end{spellattack}
-    \end{spelleffects}
-\end{spellsubcontent}
-\begin{spellfooter}
-    \spellinfo{Abjuration (Negation)}{Arcane, Magic}
-    \spellnotes Destroying artifacts is dangerous, and it is likely to attract the attention of some powerful being who has an interest in or connection with the device.
 \end{spellfooter}
 \end{spellsection}
 
@@ -3923,7 +3930,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Mirror Image}{Greater}{5}
+\begin{spellsection}{Mirror Image}[Greater]{5}
 \begin{spellheader}
 \end{spellheader}
 \begin{spellcontent}
@@ -3999,7 +4006,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Moment of Prescience}{Greater}{9}
+\begin{spellsection}{Moment of Prescience}[Greater]{9}
 \begin{spellheader}
 \end{spellheader}
 \begin{spellcontent}
@@ -4018,7 +4025,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Moment of Prescience}{Lesser}{4}
+\begin{spellsection}{Moment of Prescience}[Lesser]{4}
 \begin{spellheader}
     \spelldesc{You gain a powerful sixth sense in relation to yourself.}
 \end{spellheader}
@@ -4187,7 +4194,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Planar Disruption}{Mass}{5}
+\begin{spellsection}{Planar Disruption}[Mass]{5}
 \begin{spellheader}
     \spelldesc{You disrupt the bodies of many creatures by partially thrusting them into another plane.}
 \end{spellheader}
@@ -4335,7 +4342,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Precognition}{Lesser}{2}
+\begin{spellsection}{Precognition}[Lesser]{2}
 \begin{spellheader}
     \spelldesc{You extend your mind a fraction of a second into the future, allowing you to strike at your foes more effectively.}
 \end{spellheader}
@@ -4373,7 +4380,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Precognition}{Greater}{8}
+\begin{spellsection}{Precognition}[Greater]{8}
 \begin{spellheader}
     \spelldesc{You extend your mind a short time into the future, allowing you to strike at your foes more effectively and avoid hostile attacks more easily.}
 \end{spellheader}
@@ -4407,6 +4414,7 @@
 \begin{spellfooter}
     \spellinfo{Universal [Light]}{Arcane}
 \end{spellfooter}
+\end{spellsection}
 \begin{dtable*}
     \lcaption{Prismatic Beam Effects}
     \begin{tabularx}{\textwidth}{l >{\lcol}p{3.6em} l >{\lcol}X l}
@@ -4422,7 +4430,6 @@
     \end{tabularx}
     1 See \pcref{Conditions} for a summary of the conditions imposed.
 \end{dtable*}
-\end{spellsection}
 
 \begin{spellsection}{Prismatic Storm}{9}
 \begin{spellheader}
@@ -4515,7 +4522,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Prohibition}{Greater}{9}
+\begin{spellsection}{Prohibition}[Greater]{9}
 \begin{spellheader}
 \end{spellheader}
 \begin{spellcontent}
@@ -4622,7 +4629,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Read Mind}{Greater}{7}
+\begin{spellsection}{Read Mind}[Greater]{7}
 \begin{spellheader}
     \spellrng{\rngmed}
 \end{spellheader}
@@ -4643,7 +4650,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Read Mind}{Mass}{8}
+\begin{spellsection}{Read Mind}[Mass]{8}
 \begin{spellheader}
 \end{spellheader}
 \begin{spellcontent}
@@ -4693,7 +4700,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Reduce Person}{Mass}{5}
+\begin{spellsection}{Reduce Person}[Mass]{5}
 \begin{spellheader}
 \end{spellheader}
 \begin{spellcontent}
@@ -4796,7 +4803,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Resist Energy}{Greater}{3}
+\begin{spellsection}{Resist Energy}[Greater]{3}
 \begin{spellheader}
 \end{spellheader}
 \begin{spellcontent}
@@ -4900,7 +4907,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Retrieve Object}{Greater}{5}
+\begin{spellsection}{Retrieve Object}[Greater]{5}
 \begin{spellheader}
 \end{spellheader}
 \begin{spellcontent}
@@ -5218,7 +5225,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Share Pain}{Forced}{3}
+\begin{spellsection}{Share Pain}[Forced]{3}
 \begin{spellheader}
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgts{Two creatures}}{\spellrng{\rngmed}}
@@ -5349,7 +5356,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Shout}{Greater}{7}
+\begin{spellsection}{Shout}[Greater]{7}
 \begin{spellheader}
     \spellcmp{Verbal only}
     \spellburst{\arealarge cone}
@@ -5481,7 +5488,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Sleep}{Mass}{4}
+\begin{spellsection}{Sleep}[Mass]{4}
 \begin{spellheader}
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgts{Up to five creatures}}{\spellrng{\rngmed}}
@@ -5518,7 +5525,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Slow}{Mass}{6}
+\begin{spellsection}{Slow}[Mass]{6}
 \begin{spellheader}
     \spelldesc{You decelerate your enemies' motions, causing them to move and act more slowly than normal.}
     \begin{spelltargetinginfo}
@@ -5611,7 +5618,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Spelltheft}{Greater}{8}
+\begin{spellsection}{Spelltheft}[Greater]{8}
 \begin{spellheader}
 \end{spellheader}
 \begin{spellcontent}
@@ -5783,6 +5790,7 @@
 
     \physicalspellnotes
 \end{spellfooter}
+\end{spellsection}
 \begin{dtable*}
     \lcaption{Storm of Vengeance Effects}
     \begin{tabularx}{\textwidth}{l l l >{\lcol}X l}
@@ -5793,7 +5801,6 @@
         4, 8                  & Acid rain  & None      & Acid damage & \x \\
     \end{tabularx}
 \end{dtable*}
-\end{spellsection}
 
 \begin{spellsection}{Stormlord}{7}
 \begin{spellheader}
@@ -5871,7 +5878,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Suggestion}{Mass}{8}
+\begin{spellsection}{Suggestion}[Mass]{8}
 \begin{spellheader}
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgts{Up to five creatures}}{\spellrng{\rngclose}}
@@ -6019,6 +6026,7 @@
     \spellinfo{Conjuration (Summoning)}{Arcane, Chaos, Divine, Evil, Good, Law}
     \spellsr{No}
 \end{spellfooter}
+\end{spellsection}
 \begin{dtable!*}
     \lcaption{Summon Monster List}
     \begin{tabularx}{\textwidth}{>{\lcol}X c >{\lcol}X c >{\lcol}X c}
@@ -6073,7 +6081,6 @@
     1 May be summoned only into an aquatic or watery environment. \\
     2 Each variety must be learned individually.
 \end{dtable!*}
-\end{spellsection}
 
 \begin{spellsection}{Summon Nature's Ally I}{1}\hypertarget{spell:summon nature's ally}{}
 \begin{spellheader}
@@ -6204,6 +6211,7 @@
     \spellinfo{Conjuration (Summoning) [see text]}{Nature, Wild}
     \spellsr{No}
 \end{spellfooter}
+\end{spellsection}
 \begin{dtable*}
     \lcaption{Summon Nature's Ally List}
     \begin{tabularx}{\textwidth}{>{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
@@ -6239,7 +6247,6 @@
     3 Can't cast irresistible dance \\
     4 Can cast irresistible dance \\
 \end{dtable*}
-\end{spellsection}
 
 \begin{spellsection}{Summon Nature's Army}{8}
 \begin{spellheader}
@@ -6458,7 +6465,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Totemic Mind}{Greater}{5}
+\begin{spellsection}{Totemic Mind}[Greater]{5}
 \begin{spellheader}
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngtouch}}
@@ -6475,7 +6482,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Totemic Mind}{Mass}{6}
+\begin{spellsection}{Totemic Mind}[Mass]{6}
 \begin{spellheader}
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgts{Up to five creatures}}{\spellrng{\rngmed}}
@@ -6513,7 +6520,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Totemic Power}{Greater}{5}
+\begin{spellsection}{Totemic Power}[Greater]{5}
 \begin{spellheader}
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngtouch}}
@@ -6530,7 +6537,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Totemic Power}{Mass}{6}
+\begin{spellsection}{Totemic Power}[Mass]{6}
 \begin{spellheader}
     \begin{spelltargetinginfo}
         \spelltwocol{\spelltgts{Up to five creatures}}{\spellrng{\rngmed}}
@@ -7145,7 +7152,7 @@
 \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Zephyr Blade}{Greater}{6}
+\begin{spellsection}{Zephyr Blade}[Greater]{6}
 \begin{spellheader}
     \spelldesc{You imbue a weapon with the full might of the wind, allowing it to shred opponents with nothing but the air itself.}
     \begin{spelltargetinginfo}
@@ -7161,3 +7168,4 @@
 \begin{spellfooter}
     \spellinfo{Evocation/Transmutation (Augment, Control) [Air]}{Air, Nature}
 \end{spellfooter}
+\end{spellsection}
