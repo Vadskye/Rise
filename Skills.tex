@@ -13,6 +13,12 @@ You also gain additional skill points based on your attributes. For each attribu
 \parhead{Skill Ranks}
 Skill ranks represent how capable your character is with a particular skill. Your character automatically gains skill ranks as she increases in level, as shown by \trefnp{Skill Ranks and Skill Training}.
 
+\parhead{Using Skills} To make a skill check, roll 1d20 \add skill rank \add key attribute \add bonuses and penalties.
+
+\subparhead{Key Attribute} The attribute used in a skill check is noted in its description.
+
+\subparhead{Bonuses and Penalties} Miscellaneous modifiers include racial bonuses, armor check penalties, bonuses provided by feats, and more.
+
 \begin{dtable}
 \lcaption{Skill Ranks and Skill Training}
 \begin{tabularx}{\columnwidth}{>{\lcol}p{4.5em} >{\lcol}p{2.5em} >{\lcol}p{6.5em} >{\lcol}X}
@@ -23,12 +29,6 @@ Expert & 2 & 3/4 character level \add 3 & Associated class levels \add 3/4 unass
 \end{tabularx}
 \end{dtable}
 
-\parhead{Using Skills} To make a skill check, roll 1d20 \add skill rank \add key attribute \add bonuses and penalties.
-
-\subparhead{Key Attribute} The attribute used in a skill check is noted in its description.
-
-\subparhead{Bonuses and Penalties} Miscellaneous modifiers include racial bonuses, armor check penalties, bonuses provided by feats, and more.
-
 \section{Using Skills}
 When your character uses a skill, you make a skill check to see how well he or she does. The higher the result of the skill check, the better. Based on the circumstances, your result must match or beat a particular number (a DC or the result of an opposed skill check) for the check to be successful. The harder the task, the higher the number you need to roll.
 
@@ -38,14 +38,14 @@ Circumstances can affect your check. A character who is free to work without dis
 \lcaption{Skills}
 \begin{tabularx}{\textwidth}{>{\lcol}p{12em} *{11}{>{\ccol}X} >{\ccol}p{4em} >{\ccol}p{4em}}
     \thead{Skill}   & \thead{Bbn} & \thead{Clr} & \thead{Drd} & \thead{Ftr} & \thead{Mnk} & \thead{Pal} & \thead{Rgr} & \thead{Rog} & \thead{Sor} & \thead{Spl} & \thead{Wiz} & \thead{Untrained} & \thead{Key Ability} \\
-Athletics       & C  & cc & cc & C  & C  & cc & C  & C  & cc & cc & cc & Yes & Str\footnotetemp{1} \\
-Climb           & C  & cc & cc & C  & C  & cc & C  & C  & cc & cc & cc & Yes & Str\footnotetemp{1} \\
-Swim            & C  & cc & C  & C  & C  & cc & C  & C  & cc & C  & cc & Yes & Str\footnotetemp{2} \\
-Acrobatics      & cc & cc & C  & C  & C  & cc & cc & C  & cc & cc & cc & Yes & Dex\footnotetemp{1} \\
-Escape Artist   & cc & cc & cc & cc & C  & cc & cc & C  & cc & cc & cc & Yes & Dex\footnotetemp{1} \\
+Athletics       & C  & cc & cc & C  & C  & cc & C  & C  & cc & cc & cc & Yes & Str\fn{1} \\
+Climb           & C  & cc & cc & C  & C  & cc & C  & C  & cc & cc & cc & Yes & Str\fn{1} \\
+Swim            & C  & cc & C  & C  & C  & cc & C  & C  & cc & C  & cc & Yes & Str\fn{2} \\
+Acrobatics      & cc & cc & C  & C  & C  & cc & cc & C  & cc & cc & cc & Yes & Dex\fn{1} \\
+Escape Artist   & cc & cc & cc & cc & C  & cc & cc & C  & cc & cc & cc & Yes & Dex\fn{1} \\
 Ride            & cc & cc & cc & C  & cc & C  & cc & cc & cc & C  & cc & Yes & Dex \\
-Sleight of Hand & cc & cc & cc & cc & cc & cc & cc & C  & cc & cc & cc & No & Dex\footnotetemp{1} \\
-Stealth         & cc & cc & cc & cc & C  & cc & C  & C  & cc & cc & cc & Yes & Dex\footnotetemp{1} \\
+Sleight of Hand & cc & cc & cc & cc & cc & cc & cc & C  & cc & cc & cc & No & Dex\fn{1} \\
+Stealth         & cc & cc & cc & cc & C  & cc & C  & C  & cc & cc & cc & Yes & Dex\fn{1} \\
 Craft\fn{3}     & C  & C  & C  & C  & C  & C  & C  & C  & C  & C  & C  & Yes & Int \\
 Devices         & cc & cc & cc & cc & cc & cc & cc & C  & cc & cc & cc & No & Int \\
 Disguise        & cc & cc & cc & cc & cc & cc & cc & C  & cc & cc & cc & Yes & Int \\
@@ -112,7 +112,7 @@ An opposed check is a check whose success or failure is determined by comparing 
 Lie & Bluff (Cha) & Sense Motive (Wis) \\
 Create a forged artwork & Craft (Int) & Craft (Int) or Perception (Wis) \\
 Create a false map & Craft (Int) & Craft (Int) or Knowledge (geography) \\
-Make a bully back down & Intimidate (Cha) & Special\footnotetemp{1} \\
+Make a bully back down & Intimidate (Cha) & Special\fn{1} \\
 Make someone look like someone else & Disguise (Int) & Perception (Wis) \\
 Sneak up on someone & Stealth (Dex) & Perception (Wis) \\
 Steal a coin pouch & Sleight of Hand (Dex) & Perception (Wis) \\
@@ -217,16 +217,18 @@ You can make a DC 20 Acrobatics check while charging to make a single turn of up
 \subsubsection{Balance}
 You can make a Acrobatics check to move safely on a precarious surface. Success means you move along the surface at half speed. Failure means your action is wasted, and you do not move. Failure by 10 or more means you fall prone.
 
-You are \vulnerable while balancing. If you take damage while balancing, you must make another Acrobatics check against the same DC to avoid falling. If you take a \minus5 penalty, you are not vulnerable while balancing. If you take a \minus5 penalty, you can move at full speed while balancing.
+If you take damage while balancing, you must make another Acrobatics check against the same DC to avoid falling. If you take a \minus5 penalty, you can move at full speed while balancing.
 
 The DC varies with the surface, as follows.
 
 \begin{itemize}
-  \item Uneven floor (flagstones, sloped floor): DC 10. This only applise when sprinting or charging. Failure means you lose a move action (and possibly fall), but you can still take a standard action.
-  \item One foot wide (or wider): DC 5. 
-  \item Six inches wide: DC 10.
-  \item Two inches wide: DC 15.
-  \item One inch wide: DC 20. Halving the width of the surface further increases the DC by 5 each time.
+    \item Uneven floor (flagstones, sloped floor): DC 10. This only applies when sprinting or charging. Failure means you lose a move action (and possibly fall), but you can still take a standard action.
+    \item Slippery floor (oil): DC 15.
+    \item At least one foot wide: DC 5. 
+    \item At least six inches wide: DC 10.
+    \item At least two inches wide: DC 15.
+    \item At least one inch wide: DC 20.
+    \item Less than than one inch wide: DC 25.
 \end{itemize}
 
 \subsubsection{Tumble}\label{Tumble}
@@ -388,7 +390,7 @@ The DC of the check depends on the difficulty of the task and the conditions of 
 \begin{dtable}
 \lcaption{Climb Modifiers}
 \begin{tabularx}{\columnwidth}{l X}
-\thead{Climb DC Modifier\footnotetemp{1}} & \thead{Example Surface or Activity} \\
+\thead{Climb DC Modifier\fn{1}} & \thead{Example Surface or Activity} \\
 \minus10 & Climbing a chimney (artificial or natural) or other location where you can brace against two opposite walls \\
 \minus5 & Inclined surface (between 45 and 60 degrees) \\
 \minus5 & Climbing a corner where you can brace against perpendicular walls \\
@@ -459,7 +461,7 @@ To determine the time required to craft an item, consult the table below.
     \lcaption{Craft DCs}
 \begin{tabularx}{\columnwidth}{>{\lcol}X l >{\lcol}p{4em}}
 \thead{Item} & \thead{Craft Skill} & \thead{Craft DC} \\
-Acid & Alchemy\footnotetemp{1} & 15 \\
+Acid & Alchemy\fn{1} & 15 \\
 Alchemist's fire, smokestick, or tindertwig & Alchemy & 20 \\
 Antitoxin, sunrod, tanglefoot bag, or thunderstone & Alchemy & 25 \\
 Armor or shield & Metal or wood & 10 \add AC bonus \\
@@ -590,10 +592,10 @@ The Disguise check is made secretly, so that you can't be sure how good the resu
 \thead{Characteristic} & \thead{Disguise Check Modifier} \\
 Different gender & \minus2 \\
 Different race or subtype & \minus2 \\
-Different age category & \minus2\footnotetemp{1} \\
+Different age category & \minus2\fn{1} \\
 Different creature type & \minus5 \\
 Additional limb & \minus5\fn{2} \\
-Larger size category & \minus20\footnotetemp{3} \\
+Larger size category & \minus20\fn{3} \\
 Smaller size category & \x\fn{4} \\
 \end{tabularx}
 1 Per step of difference between your actual age category and your
@@ -897,7 +899,7 @@ The base DC for a Persuasion check against a group is equal to 10 \add the highe
 \subsubsection{Compel Belief}
 You can make a Persuasion check to cause creatures to believe something you say. If you are lying, you must also make a Bluff check to lie. Success means the group believes what you are saying is true. What they choose to do with that information is up to them, however. Failure by less than 10 means they do not believe you, but they do not react poorly; perhaps they simply want more verification. You may be able to try again, depending on their patientce. Failure by 10 or more means the group reacts poorly, and you may have permanently damaged your credibility with them.
 
-Your check is modified by how believable your argument is, as well as whether the group has has strong feelings about the truth of your story.
+Your check is modified by how believable your argument is, as well as whether the group has strong feelings about the truth of your story.
 
 \begin{dtable}
   \lcaption{Believability Modifiers}
@@ -1192,7 +1194,7 @@ You can make a Swim check to move through water. The DC depends on the turbulenc
 \thead{Water} & \thead{Swim DC} \\
 Calm water & 10 \\
 Rough water & 15 \\
-Stormy water & 20\footnotetemp{1}
+Stormy water & 20\fn{1}
 \end{tabularx}
 1 You can't take 10 on a Swim check in stormy water, even if you aren't otherwise being threatened or distracted.
 \end{dtable}
