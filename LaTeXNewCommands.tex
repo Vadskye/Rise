@@ -35,12 +35,6 @@
 \newcommand{\subcf}[1]{\par \emph{#1}:}    %Italicize sub-class-feature headers
 \newcommand{\subsk}[1]{\par \emph{#1}:}    %Italicize sub-skill headers
 
-\DeclareDocumentCommand{\parhead}{s m o}
-{\par \IfBooleanT{#1}{\noindent}%
-    \IfNoValueTF{#3}
-    {\textbf{#2}:}
-    {\textbf{#2} (#3):}\xspace
-}
 \newcommand{\subparhead}[1]{\par \emph{#1}:}
 \newcommand{\itemhead}[1]{\item \textbf{#1}}
 \newcommand{\thead}[1]{\textbf{#1}}    %Bold the header of tables
@@ -50,7 +44,7 @@
 \newcommand{\rcol}{\raggedleft\arraybackslash}
 \newcommand{\booktitle}[1]{\emph{#1}}
 %\newcommand{\footnotetemp}[1]{\tiny{[#1]}}    %I don't actually know how to make footnotes yet, so placeholder
-\newcommand{\footnotetemp}[1]{\textsuperscript{#1}}
+%\newcommand{\footnotetemp}[1]{\textsuperscript{#1}}
 \newcommand{\fn}[1]{\textsuperscript{#1}}
 \newcommand{\M}{\textsuperscript{M}}
 \newcommand{\F}{\textsuperscript{F}}
@@ -63,7 +57,7 @@
 %\newcommand{\spellheadc}[3][]{\item[#1] \textbf{\hyperlink{spell:#3 #2}{#2, #3}:}}
 %\newcommand{\spellheadrestricted}[1]{\item \textit{\textbf{\hyperlink{spell:#1}{#1}:}}}  %Restricted spell in a spell list
 %\newcommand{\spellheadrestrictedc}[2]{\item \textit{\textbf{\hyperlink{spell:#2 #1}{#1, #2}:}}}  %Restricted spell in a spell list
-\newcommand{\spellsection}[2]{\vspace{1em}\setlength\multicolsep{0pt}\begin{multicols}{2}
+\newcommand{\spellsectionderp}[2]{\vspace{1em}\setlength\multicolsep{0pt}\begin{multicols}{2}
     \lowercase{\hypertarget{spell:#1}{}}\hypertarget{spell:#1}{\subsubsection{#1}}\columnbreak
     \begin{flushright}\large\textbf{\nth{#2} Level}\end{flushright}\end{multicols}
 }
@@ -175,7 +169,7 @@
 \newcommand{\spelltgtorarea}[1]{\parhead*{Target or Area} #1}
 \newcommand{\spelltgteffarea}[1]{\parhead*{Target or Area} #1}
 
-\newcommand{\spelldur}[1]{\parhead*{Duration} #1}
+\newcommand{\spelldur}{\parhead*{Duration}}
 \newcommand{\spelltgrdur}[1]{\parhead*{Trigger Duration} #1}
 \newcommand{\spellfocus}[1]{\parhead*{Focus} #1}
 \newcommand{\spellsr}[1]{\parhead*{Spell Resistance} #1}
@@ -195,6 +189,7 @@
 \newcommand{\durlong}{Long \reminder{1 hour}\xspace}
 \newcommand{\durext}{Extreme \reminder{12 hours}\xspace}
 \newcommand{\durperm}{Permanent\xspace}
+\newcommand{\durpersonallong}{\durlong if you are the target;\\\durshort otherwise}
 
 \newcommand{\confusionexplanation}{Each turn, a confused creature has a random chance to take one of four actions: babble incoherently, flee from the caster as if panicked, attack the nearest creature, or act normally. A confused character who can't carry out the indicated action does nothing but babble incoherently. Any confused character who is attacked automatically attacks its attackers on its next turn, as long as it is still confused when its turn comes.\xspace}
 
@@ -228,26 +223,30 @@
 \newcommand{\bloodied}{\conditionlink{bloodied} \reminder{half hit points}\xspace}
 \newcommand{\confused}{\conditionlink{confused} \reminder{randomly babbles, flees, attacks nearest, or acts normally}\xspace}
 \newcommand{\dazzled}{\conditionlink{dazzled} \reminder{20\% miss chance, \minus4 to visual Perception}\xspace}
+\newcommand{\disoriented}{\conditionlink{disoriented} \reminder{moves randomly}\xspace}
+%\newcommand{\dominated}{\conditionlink{dominated} \reminder{under total mental control}\xspace}
 \newcommand{\exhausted}{\conditionlink{exhausted} \reminder{move at half speed, unable to sprint or charge, \minus4 to physical attacks, defenses, and checks}}
 \newcommand{\entangled}{\conditionlink{entangled} \reminder{move at half speed, unable to sprint or charge, \minus2 to physical attacks, defenses, and checks}\xspace}
 \newcommand{\fascinated}{\conditionlink{fascinated} \reminder{Unable to act unless threatened}}
 \newcommand{\fatigued}{\conditionlink{fatigued} \reminder{unable to sprint or charge, \vulneffect}\xspace}
-\newcommand{\frightened}{\conditionlink{frightened} \reminder{flees, \vulneffect}\xspace}
+\newcommand{\frightened}{\conditionlink{frightened} \reminder{flees if close to its fear}\xspace}
 \newcommand{\dazed}{\conditionlink{dazed} \reminder{unable to act}\xspace}
 \newcommand{\deafened}{\conditionlink{deafened} \reminder{unable to hear}\xspace}
 \newcommand{\helpless}{\conditionlink{helpless} \reminder{physical defenses are 10, vulnerable to coup de grace}\xspace}
 \newcommand{\ignited}{\conditionlink{ignited} \reminder{d6 damage/round, Dex DC 10 to extinguish, \vulneffect}\xspace}
 \newcommand{\immobilized}{\conditionlink{immobilized} \reminder{Unable to leave its location}\xspace}
-\newcommand{\nauseated}{\conditionlink{nauseated} \reminder{unable to act in action phase, \vulneffect}\xspace}
-\newcommand{\negativelevels}{\conditionlink{negative levels} \reminder{\minus1 to attacks, special defenses, and checks, \minus5 hit points, lose spell slot}}
-\newcommand{\panicked}{\conditionlink{panicked} \reminder{flees, \vulneffect}\xspace}
+\newcommand{\nauseated}{\conditionlink{nauseated} \reminder{unable to act in action phase, move at half speed}\xspace}
+\newcommand{\negativelevels}{\conditionlink{negative levels} \reminder{\minus1 to attacks, special defenses, and checks, \minus5 hit points}}
+\newcommand{\panicked}{\conditionlink{panicked} \reminder{flees or cowers from its fear}\xspace}
 \newcommand{\paralyzed}{\conditionlink{paralyzed} \reminder{helpless, unable to move}\xspace}
+\newcommand{\impaired}{\conditionlink{impaired} \reminder{20\% failure}\xspace}
 \newcommand{\prone}{\conditionlink{prone} \reminder{\minus4 to melee attack and defense, \plus4 vs ranged attacks, move action to stand}}
-\newcommand{\shaken}{\conditionlink{shaken} \reminder{\vulneffect}\xspace}
-\newcommand{\sickened}{\conditionlink{sickened} \reminder{\vulneffect}\xspace}
+\newcommand{\severelyimpaired}{\conditionlink{severely impaired} \reminder{50\% failure}\xspace}
+\newcommand{\shaken}{\conditionlink{shaken} \reminder{unable to approach its fear}\xspace}
+\newcommand{\sickened}{\conditionlink{sickened} \reminder{mmove at half speed}\xspace}
 \newcommand{\slowed}{\conditionlink{slowed} \reminder{unable to act in movement phase, \minus2 to physical attacks, defenses, and checks}\xspace}
-\newcommand{\staggered}{\conditionlink{staggered} \reminder{unable to act in movement phase, \vulneffect}\xspace}
-\newcommand{\stunned}{unable to act, \vulneffect\xspace}
+\newcommand{\staggered}{\conditionlink{staggered} \reminder{unable to act in movement phase}\xspace}
+\newcommand{\stunned}{\conditionlink{stunned} \reminder{unable to take actions}}
 \newcommand{\unencumbered}{\conditionlink{unencumbered} \reminder{not carrying a heavy load or wearing medium or heavy armor}\xspace}
 \newcommand{\monkunencumbered}{not wearing armor or encumbered by weight (see \pcref{Encumbrance})\xspace}
 \newcommand{\vulnerable}{\conditionlink{vulnerable} \reminder{\vulneffect}\xspace}
@@ -263,18 +262,18 @@
 \newcommand{\fogspellnotes}{Fog spells do not function underwater and can be dispersed by wind. Localized wind, such as from a \spell{gust of wind} spell, only disperses the fog where it overlaps the fog. A fire spell burns away the fog in the area into which it deals damage.\xspace}
 \newcommand{\fogwindspellnotes}{A moderate wind (11\add mph) disperses the fog in 5 rounds; a strong wind (21\add mph) disperses the fog in 1 round.\xspace}
 \newcommand{\sensorspellnotes}{A magic sensor is a floating, invisible sphere approximately one inch in diameter. It has 1 hit point and an Armor defense of 8. Its special defenses are the same as yours.\xspace}
+\newcommand{\subtlespellnotes}{Subtle spells have no obvious effects. A creature affected by a subtle spell is usually unaware that it is under magical influence. The DC to identify a subtle spell with the Spellcraft skill is 5 higher than normal (see \pcref{Spellcraft})}
 \newcommand{\mobilesensorspellnotes}[1]{\sensorspellnotes The sensor has a #1 foot fly speed with perfect maneuverability. It is unable to enter another plane of existence, even through a \spell{gate} or similar magical portal.}
 \newcommand{\norepeatspellnotes}{You can only affect any individual creature with this spell once per 24 hours.\xspace}
 \newcommand{\norepeatnotes}{You can only affect any individual creature with this ability once per 24 hours.\xspace}
+\newcommand{\physicalspellnotes}{Physical spells cannot be dismissed or dispelled, and do not allow spell resistance.}
+\newcommand{\sizingspellnotes}{Multiple magical effects which change size do not stack. Size increases offset size decreases on a one-for-one basis.}
 
-\newcommand{\spelltabular}{\par\noindent\begin{tabularx}{\columnwidth}{>{\lcol}X l}}
-    \newcommand{\spelltabularcompressed}{\renewcommand{\arraystretch}{0.5}\par\noindent\begin{tabularx}{\linewidth}{@{} >{\lcol}X l @{}}}
 \newcommand{\spelltablecolumns}{>{\lcol}X l}
-
 \newcommand{\spelllevelschool}[2]{\spelllvl{#1} & #2 \\}
 \newcommand{\spelllevelnew}[3]{\thead{\nth{#1} level} #2 & #3 \\}
 
-\newcommand{\dismissable}{(Dismissable)}
+\newcommand{\dismissable}{}
 \newcommand{\shapeable}{(S)}
 \newcommand{\rngunrestricted}{(Unrestricted)}
 \newcommand{\undispellable}{(Undispellable)}
@@ -297,6 +296,14 @@
 \newcommand{\spellcheck}[1]{\parhead*{Check} #1}
 
 \ExplSyntaxOn
+
+\DeclareDocumentCommand{\parhead}{s m o}
+{\par \IfBooleanT{#1}{\noindent}
+    \IfNoValueTF{#3}
+    {\textbf{#2}:}
+    {\textbf{#2}~(#3):}\xspace
+}
+
 \DeclareDocumentCommand{\spellfailure}{o}
 {
     \IfNoValueTF{#1}
@@ -325,13 +332,13 @@
 {
     \IfNoValueTF{#2}
     {\parhead*{Target} #1}
-    {\parhead*{#2 Target} #1}
+    {\parhead*{#2~Target} #1}
 }
 \DeclareDocumentCommand{\spelltgts}{m o}
 {
     \IfNoValueTF{#2}
     {\parhead*{Targets} #1}
-    {\parhead*{#2 Targets} #1}
+    {\parhead*{#2~Targets} #1}
 }
 
 \DeclareDocumentCommand{\ritualcostparser}{m}
@@ -349,9 +356,7 @@
     \else ???
     \fi
 }
-\ExplSyntaxOff
 
-\ExplSyntaxOn
 \DeclareDocumentCommand{\ritualcost}{s m o}
 {
     \IfBooleanF{#1}{\spellline}
@@ -361,18 +366,20 @@
         {in~ritual~components.}
     }
 }
-\ExplSyntaxOff
 
-\ExplSyntaxOn
+% If #1 = #2
+%     print #3.
+% Elseif #4 is provided
+%     print #4
 \DeclareDocumentCommand{\ifstr}{m m m o}
 {
-    \ifnum \pdfstrcmp{#1}{#2}=0 #3
-    \else \IfValueT{#4}{#4}
+    \ifnum 0=\pdfstrcmp{#1}{#2}
+        #3
+    \else
+        \IfValueT{#4}{#4}
     \fi
 }
-\ExplSyntaxOff
 
-\ExplSyntaxOn
 \DeclareDocumentCommand{\spellhead}{o s m o}
 {
     \IfValueTF{#1}
@@ -407,6 +414,45 @@
     {
         \spelltwocol{#1}{\thead{Lists}:~#3}
     }
+}
+
+\DeclareDocumentCommand{\imath}{m}
+{
+    \pgfmathparse{int(round(#1))}\pgfmathresult
+}
+
+\DeclareDocumentCommand{\mathnth}{m}
+{
+    \pgfmathparse{int(round(#1))}\nth{\pgfmathresult}
+}
+
+
+\DeclareDocumentCommand{\spelldamage}{m m o}
+{
+    \IfNoValueTF{#3}
+    {#1d10~#2~damage~\add~d10~per~four~caster~levels~above~\mathnth{2*#1}}
+    {#1#3~#2~damage~\add~#3~per~four~caster~levels~above~\mathnth{2*#1}}
+}
+
+\DeclareDocumentCommand{\spellquicktargeting}{m m}
+{
+    \begin{spelltargetinginfo}
+        \spelltwocol{\spelltgt{#1}}{\spellrng{#2}}
+    \end{spelltargetinginfo}
+}
+
+
+\DeclareDocumentCommand{\spelltabular}{}
+{
+    \par\noindent
+    \begin{tabularx}{\columnwidth}{>{\lcol}X l}
+}
+
+\DeclareDocumentCommand{\spelltabularcompressed}{}
+{
+    \renewcommand{\arraystretch}{0.5}
+    \par\noindent
+    \begin{tabularx}{\linewidth}{@{} >{\lcol}X l @{}}
 }
 
 \ExplSyntaxOff
