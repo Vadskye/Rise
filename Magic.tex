@@ -21,11 +21,11 @@ To make a concentration check, roll d20 \add your character level \add your Cons
 \begin{dtable}
 \lcaption{Concentration Examples}
 \begin{tabularx}{\columnwidth}{>{\lcol}p{6em} >{\lcol}X}
-\thead{Concentration DC\footnotetemp{1}} & \thead{Distraction} \\
+\thead{Concentration DC\fn{1}} & \thead{Distraction} \\
 10 & Casting defensively \\
-10 \add damage dealt & Damaged during the action.\footnotetemp{2} \\
+10 \add damage dealt & Damaged during the action.\fn{2} \\
 10 \add half of continuous & Taking continuous damage during the
-damage last dealt action.\footnotetemp{3} \\
+damage last dealt action.\fn{3} \\
 5 & Vigorous motion (on a moving mount, taking a bouncy wagon ride, in a small boat
 in rough water, belowdecks in a storm-tossed ship). \\
 10 & Violent motion (on a galloping horse, taking a very rough wagon ride, in a small boat in
@@ -137,6 +137,12 @@ Spells that provide bonuses or penalties usually do not stack with themselves. M
 
 \parhead{Instantaneous Effects} Two or more spells with instantaneous durations work cumulatively when they affect the same target.
 
+\section{Standard Spell Assumptions}
+
+\subsection{Dismissing Spells}
+
+As a swift action, you can dismiss any spells you cast that has lasting effects. This requires the same casting components (verbal and somatic) as casting the spell normally. The effects of a dismissed spell immediately end.
+
 \section{Spell Descriptions}
 The description of each spell is presented in a standard format. Each category of information is explained and defined below.
 
@@ -188,7 +194,7 @@ Enchantment spells affect the minds of others, influencing or controlling their 
 \subsubsection{Evocation}
 Evocation spells create and manipulate energy and forces or tap into divine or other powers to produce a desired end. In effect, they create energy or effects, but not physical objects, out of nothing. Many of these spells produce spectacular effects, and evocation spells can deal large amounts of damage. There are three subschools of evocation spells.
 \parhead{Channeling} A channeling spell channels divine or other power. \spellindirect{holy smite}{Holy smite} is a channeling spell.
-\parhead{Control} A control spell manipulates forces and moves inanimate objectss. Powerful control spells can manipulate forces on a large scale, even altering weather patterns. \spellindirect{gust of wind}{Gust of wind} is a control spell.
+\parhead{Control} A control spell manipulates forces and moves inanimate objects. Powerful control spells can manipulate forces on a large scale, even altering weather patterns. \spellindirect{gust of wind}{Gust of wind} is a control spell.
 \parhead{Energy} An energy spell creates or manipulates energy, such as fire or electricity. \spell{Fireball} is an energy spell.
 
 \subsubsection{Illusion}
@@ -263,6 +269,7 @@ Many of these descriptors have no game effect by themselves, but they govern how
         Size-affecting & Multiple size increasing or size decreasing effects never stack. Opposing size modifications cancel each other out on one for one basis, and any remaining effect occurs normally. \\
         Sonic & \x \\
         Sound-dependent & Creatures that cannot hear the spell's effect are immune to the spell. \\
+        Subtle & \subtlespellnotes \\
         Teleportation & A teleported creature can bring along equipment and held objects as long as their weight doesn't exceed its maximum load. Any excess items are left behind, in order of their distance from the creature's body. \\
         Trap & The spell has no immediately obvious effect, but it can be detected with the Perception skill. Unless otherwise noted, it is also possible to disable the spell with the Devices skill before it triggers. The DC to detect and disable the spell is equal to 25 \add spell level.
         \par No more than one trap spell can be placed on the same object or in the same area. Only the first trap placed has any effect. It must be dispelled or discharged before any new traps can be placed. \\
@@ -409,8 +416,6 @@ You can't cast a spell while concentrating on another one. Sometimes a spell las
 Some touch spells allow you to touch multiple targets as part of the spell. You can't hold the charge of such a spell; you must touch all targets of the spell in the same round that you finish casting the spell.
 
 \parhead{Discharge} Occasionally a spells lasts for a set duration or until triggered or discharged.
-
-\parhead{(D) Dismissible} If the Duration line ends with ``(D)," you can dismiss the spell at will. You must be within range of the spell's effect and must speak words of dismissal, which are usually a shortened, modified form of the spell's verbal component. If the spell has no verbal component, you can dismiss the effect with a gesture. Dismissing a spell is a swift action that does not provoke attacks of opportunity. A spell that depends on concentration is dismissible by its very nature, and dismissing it does not take an action, since all you have to do to end the spell is to stop concentrating on your turn.
 
 \subsection{Defenses}\label{Magic Defenses}
 Usually, a harmful spell requires a successful magic attack to have its full effect. The Defenses entry in a spell description defines which type of defenses the spell allows, and what effect the spell has if it is resisted.
