@@ -1,21 +1,25 @@
 \chapter{Combat}\label{Combat}
 
 \section{How Combat Works}
-Combat takes place in a series of ``rounds'', which represent about six seconds of action (see \pcref{The Combat Round}). In combat, creatures attack each other (see \pcref{Attacks}) and defend themselves (see \pcref{Defenses}), while moving around the battlefield (see \pcref{Movement and Positioning}). When your defenses fail, you can get hurt (see \pcref{Injury, Death, and Healing}). In unusual situations, you might become more or less likely to succeed at your actions (see \pcref{Circumstances, Bonuses, and Penalties}).
+Combat takes place in a series of ``rounds'', which represent about six seconds of action. In combat, creatures attack each other (see \pcref{Attacks}) and defend themselves (see \pcref{Defenses}), while moving around the battlefield (see \pcref{Movement and Positioning}). When your defenses fail, you can get hurt (see \pcref{Injury, Death, and Healing}). In unusual situations, you might become more or less likely to succeed at your actions (see \pcref{Circumstances, Bonuses, and Penalties}).
 
-\section{The Combat Round}\label{The Combat Round}
+\subsection{Combat Phases}
 
 Each round of a combat is divided into two phases: a movement phase and an action phase. During each phase, all characters declare their actions simultaneously, and then those actions are resolved simultaneously.
 
-\subsection{The Movement Phase}\label{The Movement Phase}
+\subsubsection{The Movement Phase}\label{The Movement Phase}
 
 Movement takes place first in the round. During the movement phase, all creatures can take move actions (see \pcref{Movement and Positioning}). You can take any number of move actions during the movement phase, as long as all of those actions can be performed simultaneously. For example, you can walk your speed and draw your sword in a single movement phase. However, you cannot draw a sword and equip a shield in the same phase. Equipping a shield takes two hands, leaving you with no free hand to draw your sword.
 
+\parhead{Move Action} A move action is usually used to move from one place to another. You can move a distance up to your base land speed with a move action. It can also be used for other activities that require some effort, such as drawing a weapon, opening a door, or standing up from a prone position. You can take one move action each turn.
+
 Once all creatures are done moving, the action phase begins.
 
-\subsection{The Action Phase}\label{The Action Phase}
+\subsubsection{The Action Phase}\label{The Action Phase}
 
 During the action phase, each creature can take a single standard action.
+
+\parhead{Standard Action} A standard action is the most common type of action. You can use a standard action to attack with a weapon, cast a spell, drink a potion, and do most other things that take concentration and effort. You can take one standard action each turn.
 
 Once all creatures have declared their actions, actions are resolved.
 
@@ -39,24 +43,27 @@ In some situations, actions that should take place at the same time directly con
 Your initiative check is calculated as follows:
 
 \begin{figure}[h]
-    \centering Dexterity \add half Wisdom \add enhancement bonus \add other bonuses and penalties
+    \centering Dexterity or Perception \meh{\add enhancement bonus} \add other bonuses and penalties
 \end{figure}
 
 For example, if two creatures were racing to reach a door, they would both roll initiative. The winner would reach the door and stop in their intended square, and the loser would stop adjacent to their intended square. 
 
-\subsection{Delaying}\label{Delaying}
-In each phase, you can delay your action rather than acting immediately. If you delay, you do nothing until after the actions of all other creatures have been resolved. At that point, you declare your action and it is resolved. If multiple creatures delay, all their actions are declared resolved simultaneously, after the actions of all the creatures that did not delay. You cannot delay more than once in a single phase.
+\subsection{Special Actions}
 
-\subsection{Swift and Immediate Actions}\label{Swift and Immediate Actions}
-Each round, you can take a single swift or immediate action. Swift and immediate actions can be taken in either the movement or action phase. Swift actions must be declared along with any other actions you intend to take during that phase. Immediate actions do not need to be declared ahead of time. Instead, abilities that can be used as immediate actions specify triggering conditions that allow the action to be taken.
+\parhead{Swift and Immediate Actions}\label{Swift and Immediate Actions} Each round, you can take a single swift or immediate action. Swift and immediate actions can be taken in either the movement or action phase. Swift actions must be declared along with any other actions you intend to take during that phase. Immediate actions do not need to be declared ahead of time. Instead, abilities that can be used as immediate actions specify triggering conditions that allow the action to be taken.
 
 Swift and immediate actions are resolved immediately, before any other actions resolve. If multiple swift or immediate actions are taken simultaneously, they are resolved using the normal rules for resolving simultaneous actions.
 
+\parhead{Full-Round Actions} A full-round action requires your character's full attention. Most full-round actions involve a combination of movement and concentrated effort, such as charging to strike a distant foe or running at full speed. Unless otherwise specified, you perform any movement required for the action during the movement phase, and the rest of the action during the action phase.
+
+\parhead{Delaying}\label{Delaying}
+In each phase, you can delay your action rather than acting immediately. If you delay, you do nothing until after the actions of all other creatures have been resolved. At that point, you declare your action and resolve it. If multiple creatures delay, all their actions are declared resolved simultaneously, after the actions of all the creatures that did not delay. You cannot delay more than once in a single phase.
+
 \section{Attacks}\label{Attacks}
-An ``attack'' is anything that affects another creatures in a potentially harmful way. There are two kinds of attacks: physical attacks, which are made with weapons or fists, and special attacks, which are made with magic or supernatural power. All physical attacks, and most special attacks, require making an attack roll against a defense. If the result of the attack roll meets or exceeds the defense, the attack succeeds.
+An \term{attack} is anything that affects another creatures in a potentially harmful way. There are two kinds of attacks: physical attacks, which are made with weapons or fists, and special attacks, which are made with magic or supernatural power. All physical attacks, and most special attacks, require making an attack roll against a defense. If the result of the attack roll meets or exceeds the defense, the attack succeeds.
 
 \subsection{Standard Attack}
-As a standard action, you can try to strike a foe with a weapon you are wielding. To do so, make an attack roll with a weapon you are wielding, adding your attack modifier to the roll. If your result equals or exceeds your foe's Armor defense, your attack hits, and your foe takes damage.
+As a standard action, you can try to strike a foe with a weapon you are wielding. To do so, make an attack roll with a weapon you are wielding, adding your attack modifier to the roll. If your result is at least equal to your foe's Armor defense, your attack hits, and your foe takes damage.
 
 You can also make a single attack as an attack of opportunity. See \pcref{Attacks of Opportunity}. 
 
@@ -64,17 +71,15 @@ You can also make a single attack as an attack of opportunity. See \pcref{Attack
 Your attack modifier is equal to the following:
 
 \begin{figure}[h]
-\centering Base attack bonus \add attack attribute \add enhancement bonus \add size modifier \add other bonuses and penalties
+    \centering Base attack bonus or attack attribute \meh{\add enhancement bonus} \add size modifier \add other bonuses and penalties
 \end{figure}
 
-With medium or heavy weapons, your attack attribute is your Strength. With projectile weapons, your attack attribute is your Dexterity. With light weapons, you can choose between your Strength and Dexterity. 
-
-Your size modifier is described in \tref{Size in Combat}.
+You can use Strength to attack with melee and thrown weapons, Dexterity to attack with melee and thrown weapons that are light, and Perception to attack with projectile weapons. Your size modifier is described in \tref{Size in Combat}.
 
 \subsubsection{Damage}
-If your attack succeeds, you deal damage equal to your weapon's damage die \add half your Strength.
+If your attack succeeds, you deal damage equal to your weapon's damage die \add half your base attack bonus or half your Strength.
 
-\parhead{Dealing Nonlethal Damage} If you take a \minus4 penalty to your attack roll, you can deal nonlethal damage instead of lethal damage when you hit. See \pcref{Nonlethal Damage}.
+\parhead{Dealing Nonlethal Damage} You can attempt to strike nonlethally with any weapon. If you hit, you deal half damage as nonlethal damage. See \pcref{Nonlethal Damage}.
 
 \subsubsection{Multiple Attacks}
 If your base attack bonus is \plus6 or higher, you can make multiple attacks as part of a standard attack. Each attack after the first takes a cumulative \minus5 penalty to hit. This progression is shown on \trefnp{Attacks per Round}.
@@ -82,10 +87,11 @@ If your base attack bonus is \plus6 or higher, you can make multiple attacks as 
     \lcaption{Attacks per Round}
     \begin{tabularx}{\columnwidth}{*{3}{>{\lcol}X}}
         \thead{Base Attack Bonus} & \thead{Attacks per Round} & \thead{Attack Penalties} \\
-        1-5 & 1 & \plus0\\
+        1-5 & 1 & \plus0 \\
         6-10 & 2 & \plus0, \minus5 \\
         11-15 & 3 & \plus0, \minus5, \minus10 \\
-        16-20 & 4 & \plus0, \minus5, \minus10, \minus15\\
+        16-20 & 4 & \plus0, \minus5, \minus10, \minus15 \\
+        21\plus & 5 & \plus0, \minus5, \minus10, \minus15, \minus20 \\
     \end{tabularx}
 \end{dtable}
 
@@ -119,10 +125,10 @@ You can make a number of attacks of opportunity each round equal to 1 \add half 
 \subsection{Special Attacks}
 
 \subsubsection{Feint}\label{Feint}
-Instead of striking to deal damage, you can feint to leave your foe off-balance. You make a melee attack with your weapon as normal, except that you target the creature's Reflex defense instead of its Armor defense. Success means you deal no damage, but you gain a \plus4 bonus to physical attacks against the creature for 1 round. If you fail by 10 or more, you provoke an attack of opportunity from the creature.
+Instead of striking to deal damage, you can feint to leave your foe off-balance. You make an attack with a melee weapon as normal, except that you target the creature's Reflex defense instead of its Armor defense. Success means you deal no damage, but you gain a \plus4 bonus to physical attacks against the creature for 1 round. If you fail by 10 or more, you provoke an attack of opportunity from the creature.
 
 \subsubsection{Touch Attacks}\label{Touch Attacks}
-Instead of striking to deal damage, you can try to just touch your opponent. This is usually done to channel spells that require touching a creature. Touch attacks target Reflex defense instead of Armor defense.
+Instead of striking to deal damage, you can try to just touch your opponent. \meh{This is usually done to channel spells that require touching a creature.} Touch attacks target Reflex defense instead of Armor defense.
 
 \subsection{Combat Maneuvers}\label{Combat Maneuvers}
 A combat maneuver is an attempt to physically hinder your foe with your body, such as by shoving or tripping it. Unless otherwise noted, using a combat maneuver requires a free hand and replaces a physical attack made during a standard attack. You make an attack against a creature within your reach, adding your maneuver modifier to the roll instead of your attack modifier. If your result equals or exceeds your foe's Maneuver defense, your attack hits, and your foe is affected by the maneuver.
@@ -146,7 +152,7 @@ You cannot perform a combat maneuver on an attack of opportunity.
 Your maneuver modifier is equal to the following:
 
 \begin{figure}[h]
-\centering Base attack bonus \add attack attribute \add enhancement bonus \add special size modifier \add other bonuses and penalties
+    \centering Base attack bonus or attack attribute \meh{\add enhancement bonus} \add special size modifier \add other bonuses and penalties
 \end{figure}
 
 Your attack attribute depends on the maneuver you are using, as described in \pcref{Combat Maneuvers}. Your special size modifier is described in \tref{Size in Combat}.
@@ -175,41 +181,35 @@ Usually, when you are attacked, the attacker has to make an attack roll against 
     \item Will defense: Your Will defense protects you from attacks you have to mentally endure or resist, such as terrifying creatures and magical manipulation. Will defense is a special defense.
 \end{itemize}
 
-\subsection{Physical Defenses}
+\subsection{Defense Values}
 
-Each of your physical defenses is the sum of other bonuses and modifiers, as shown on \trefnp{Physical Defense Calculations}. 
+Each of your defenses is calculated in the following way:
+
+\begin{figure}[h]
+    \centering 10 \add Base defense bonus or defense attribute \meh{\add enhancement bonus} \add size modifier \add other bonuses and penalties
+\end{figure}
+
+The attributes and relevant bonuses which apply to each defense are described on \trefnp{Defense Calculations}.
 
 \begin{dtable!*}
-    \lcaption{Physical Defense Calculations}
-    \begin{tabularx}{\textwidth}{l c c c c c c c >{\ccol}X}
-        \thead{Defense Name} & \thead{Base Bonus} & \thead{Str} & \thead{Dex} & \thead{Wis} & \thead{Body Armor Modifier} & \thead{Shield Modifier} & \thead{Size Modifier} \\
-        Armor defense & Half base attack bonus & \x & Yes & \x & Yes & Yes & Yes & Yes \\
-        Maneuver defense & Base attack bonus & Yes & Yes & \x & \x & Yes & Yes & Special \\
-        Reflex defense & Base Reflex bonus & \x & Yes & Half & \x & Yes & Yes & Yes \\
+    \lcaption{Defense Calculations}
+    \begin{tabularx}{\textwidth}{l l l l l >{\lcol}X}
+        \thead{Defense Name} & \thead{Defense Bonus} & \thead{Attributes} & \thead{Body Armor Modifier} & \thead{Shield Modifier} & \thead{Size Modifier} \\
+        Armor defense & Half base attack bonus  & Dex or Con & Yes & Yes & Yes \\
+        Maneuver defense & Base attack bonus    & Str or Dex & No  & Yes & Special \\
+        Fortitude defense & Base Fortitude bonus& Con        & No  & No  & No  \\
+        Reflex defense & Base Reflex bonus      & Dex or Per & No  & Yes & Yes \\
+        Will defense & Base Will bonus          & Wil        & No  & No  & No  \\
     \end{tabularx}
 \end{dtable!*}
 
-\parhead{Base Attack Bonus} Your experience and aptitude in combat affects your ability to defend yourself; experienced warriors know how to recognize and avoid or parry blows that would easily fell novices. As a result, you add half your base attack bonus to your Armor defense. Your fighting experience is even more important when defending against combat maneuvers, so you add your full base attack bonus to your Maneuver defense.
-\parhead{Enhancement Bonus} You can have enhancement bonuses to all physical defenses, or to a specific physical defense. As normal, these enhancement bonuses do not stack with each other; only the highest applicable bonus is used.
+\meh{\parhead{Base Attack Bonus} Your experience and aptitude in combat affects your ability to defend yourself; experienced warriors know how to recognize and avoid or parry blows that would easily fell novices. As a result, you add half your base attack bonus to your Armor defense. Your fighting experience is even more important when defending against combat maneuvers, so you add your full base attack bonus to your Maneuver defense.}
+\meh{\parhead{Enhancement Bonus} You can have enhancement bonuses to all physical defenses, or to a specific physical defense. As normal, these enhancement bonuses do not stack with each other; only the highest applicable bonus is used.}
 \parhead{Natural Armor} Creatures with unusually tough skin or thick hide, including most monsters, gain bonuses to their Armor defense. These bonuses stack with any armor such creatures might wear.
 \parhead{Size Modifiers} Your size modifier and special size modifier are described on \tref{Size in Combat}.
 
-\subsection{Special Defenses}
-
-Your special defenses are simpler to calculate than your physical defenses. Your Fortitude defense is calculated as follows:
-
-\begin{figure}[h]
-\centering Base Fortitude bonus \add Constitution \add half Strength \add enhancement bonus \add other bonuses and penalties
-\end{figure}
-
-Your Will defense is calculated as follows:
-
-\begin{figure}[h]
-\centering Base Will bonus \add Charisma \add half Intelligence \add enhancement bonus \add other bonuses and penalties
-\end{figure}
-\parhead{Base Defense Bonus} Your base Fortitude bonus and base Will bonus come from your classes. See \pcref{Base Defense Progressions}, for more details.
-
 \subsection{Hit Points}
+% move hit point info here?
 Your hit points represent how much punishment you can take. When you run out of hit points, your actions are limited and you might die, as described in \pcref{Injury, Death, and Healing}.
 
 \section{Movement and Positioning}\label{Movement and Positioning}
@@ -223,10 +223,11 @@ Sometimes, movement and distance are represented in squares. A 30-ft. movement i
 
 \parhead{Move} As a move action, you can move up to your speed.
 \parhead{Stand Up} As a move action, you can stand up from being prone. For most creatures, this requires using a hand to help get up.
-\parhead{Withdraw}\label{Withdraw} As a standard action, you can move up to your speed. Before you do so, you can designate one creature who threatens you. This movement does not provoke attacks of opportunity from that creature. At base attack bonus \plus6, \plus11, and \plus16, you may avoid provoking attacks of opportunity from an additional opponent of your choice.
-\parhead{Charge}\label{Charge} As a full-round action, you can move up to twice your speed and make a single attack with a \plus2 bonus to hit at the end of your charge. While charging, and until the start of your next turn, you take a \minus2 penalty to physical defenses.
-\par You must move at least 30 feet to gain the benefit of a charge, and all movement must be in a single straight line. If there are any obstacles in your path which hinder your movement, you cannot charge. If your charge fails or becomes invalid partway through, you move as far as you can and stop.
-\par  At base attack bonus \plus6, the attack you make at the end of a charge deals double damage if you hit by 5 or more. At base attack bonus \plus 11, the attack deals triple damage if you hit by 10 or more. At base attack bonus \plus16, the attack deals quadruple damage if you hit by 15 or more.
+\parhead{Withdraw}\label{Withdraw} As a move action, you can move up to half your speed. Before you do so, you can designate one creature who threatens you. This movement does not provoke attacks of opportunity from that creature. If you can make multiple attacks from a high base attack bonus, you can ignore one additional opponent of your choice per attack you can make.
+\parhead{Charge}\label{Charge} As a full-round action, you can move up to your speed in both the movement and action phase, and make a single attack with a \plus2 bonus to hit at the end of your charge. When you charge, you take a \minus2 penalty to physical defenses until the end of the round.
+\par You must move at least 20 feet to gain the benefit of a charge, and all movement must be in a single straight line. If there are any obstacles in your path which hinder your movement, you cannot charge. If your charge fails or becomes invalid partway through, you move as far as you can and stop.
+
+\par If you can make multiple attacks from a high base attack bonus, you can deal additional damage if your attack hits. For every 5 points by which your attack hits, you deal double damage, up to a maximum multiplier equal to the number of attacks you can make. For example, if your base attack bonus is \plus11 and you hit by 10, your attack would deal triple damage.
 \parhead{Struggle} As a full-round action, you can move five feet, regardless of movement penalties. You can use this to move even if your speed is decreased below five feet by penalties.
 
 \subsection{Measuring Movement}
@@ -235,7 +236,7 @@ For simplicity, all movement is measured in five-foot increments. While it is po
 \parhead{Diagonals} When measuring distance, the first diagonal counts as five feet of movement, and the second counds as ten feet of movement. The third costs five feet, the fourth costs ten feet, and so on.
 
 You can't move diagonally past a corner. You can move diagonally past a creature, even an opponent. You can also move diagonally past other impassable obstacles, such as pits.
-\parhead{Closest Creature} When it's important to determine the closest square or creature to a location, if two squares or creatures are equally close, pick one randomly.
+\parhead{Closest Creature} When it's important to determine the closest square or creature to a location, if multiple squares or creatures are equally close, pick one randomly.
 
 \subsection{Movement Impediments}
 
@@ -293,10 +294,10 @@ When you take lethal damage, you subtract that damage from your hit points.
 When you are above half hit points, you suffer no significant effects from losing hit points. If you take damage, you can become bloodied (see Bloodied, below).
 
 \subsubsection{Bloodied}
-When you drop to half your hit points or below, you are bloodied. This makes you more vulnerable to certain spells and effects, but you suffer no direct penalties. If you take additional damage, you can become staggered.
+When you drop to half your hit points or below, you are bloodied. While bloodied, you take a \minus5 penalty to Fortitude and Will defense. If you take additional damage, you can become staggered.
 
 \subsubsection{Staggered}
-When you take damage that would reduce your hit points to 0, you become staggered. While staggered, you may take a single move action or standard action each round, but not both. You cannot take full-round actions, but you may take swift actions. In addition, you are \vulnerable.
+When you take damage that would reduce your hit points to 0, you become staggered. While staggered, you can only act during the action phase.
 
 If you take additional damage while at 0 hit points, you begin dying (see Dying, below).
 
@@ -341,10 +342,10 @@ Certain effects give a character temporary hit points which act as a protection 
 \section{Circumstances, Bonuses, and Penalties}\label{Circumstances, Bonuses, and Penalties}
 
 \begin{dtable}
-    \lcaption{Attack Roll Bonuses and Penalties}
+    \lcaption{Attack Roll Modifiers}
     \begin{tabularx}{\columnwidth}{l X}
-        \thead{Attacker's Condition} & \thead{Effect} \\
-        Entangled & \minus2 \\
+        \thead{Attacker's Condition} & \thead{Attack Modifier} \\
+        %Entangled & \minus2 \\
         Invisible & \x\fn{1} \\
         Prone & \minus4\fn{2} \\
         Squeezing through a space & \minus4 \\
@@ -355,9 +356,9 @@ Certain effects give a character temporary hit points which act as a protection 
 \end{dtable}
 
 \begin{dtable}
-    \lcaption{Physical Defense Bonuses and Penalties}
+    \lcaption{Physical Defense Modifiers}
     \begin{tabularx}{\columnwidth}{>{\lcol}X >{\ccol}X}
-        \thead{Defender's Condition} & \thead{Effect} \\
+        \thead{Defender's Condition} & \thead{Defense Modifier} \\
         Behind active cover & 20\% miss \\
         Behind passive cover & \plus4 \\
         Blinded & \x\fn{1} \\
@@ -388,7 +389,7 @@ Bonuses and penalties are the most basic way that a roll or numerical statistic 
 \subsection{Stacking Rules}\label{Stacking Rules}
 Usually, modifiers stack with each other, meaning that you add or subtract all of the modifiers to get the final result. However, enhancement bonuses and certain specific kinds of modifiers do not stack with each other. When bonuses don't stack with each other, you only apply the highest bonus. Likewise, when penalties don't stack with each ather, you only apply the highest penalty.
 
-\parhead{Enhancement Bonuses} Enhancement bonuses are always granted by magic or supernatural abilities. Unlike other bonuses, enhancement bonuses do not stack with each other. Each enhancement bonus will specify what it applies to, such as ``physical attacks'' or ``Fortitude defense''. Use only the highest enhancement bonus that applies. If you have an enhancement bonus that affects a broad category of rolls, such as ``all special defenses'', it doesn't stack with more narrow enhancement bonuses, such as ``Fortitude defense''.
+\meh{\parhead{Enhancement Bonuses} Enhancement bonuses are always granted by magic or supernatural abilities. Unlike other bonuses, enhancement bonuses do not stack with each other. Each enhancement bonus will specify what it applies to, such as ``physical attacks'' or ``Fortitude defense''. Use only the highest enhancement bonus that applies. If you have an enhancement bonus that affects a broad category of rolls, such as ``all special defenses'', it doesn't stack with more narrow enhancement bonuses, such as ``Fortitude defense''.}
 
 \parhead{Special Exceptions}
 
