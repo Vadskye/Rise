@@ -51,8 +51,8 @@ class Weapon(object):
                     'd8'),
                 'unarmed': cls('unarmed', ENCUMBRANCE_LIGHT, ATTACK_TYPE_MELEE,
                     [DAMAGE_PHYSICAL], 'd3'),
-                'wisdom drain': cls('wisdom drain', ENCUMBRANCE_LIGHT,
-                    ATTACK_TYPE_MELEE, ['wisdom'], 'd4', defense_type = 'touch'), 'none': None,
+                'perception drain': cls('perception drain', ENCUMBRANCE_LIGHT,
+                    ATTACK_TYPE_MELEE, ['perception'], 'd4', defense_type = 'touch'), 'none': None,
                 'swordfish': cls('swordfish', ENCUMBRANCE_MEDIUM,
                     ATTACK_TYPE_MELEE, [DAMAGE_PHYSICAL, DAMAGE_BLUDGEONING, 'fish'], 'd6'),
                 }[weapon_name]

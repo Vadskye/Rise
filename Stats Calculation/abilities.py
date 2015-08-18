@@ -128,9 +128,9 @@ def get_all_abilities():
                     'value': lambda c: c.level / 2 if c.level > 5 else 0,
                 },
                 {
-                    'modifier_name': 'constitution',
+                    'modifier_name': 'attribute_or_progression',
                     'modifier_type': 'armor_defense',
-                    'value': lambda c: c.constitution / 2 if c.level >=13 else 0,
+                    'value': lambda c: c.constitution if c.level >=13 else 0,
                 },
             ],
         },
@@ -162,18 +162,18 @@ def get_all_abilities():
         'divine presence': {
             'modifiers': [
                 {
-                    'modifier_name': 'charisma',
+                    'modifier_name': 'willpower',
                     'modifier_type': 'physical_defenses',
-                    'value': lambda c: c.charisma / 2,
+                    'value': lambda c: c.willpower / 2,
                 },
             ],
         },
         'improved combat style': {
             'modifiers': [
                 {
-                    'modifier_name': 'wisdom',
+                    'modifier_name': 'perception',
                     'modifier_type': 'physical_damage',
-                    'value': lambda c: c.wisdom / 2 if c.level >= 5 else 0,
+                    'value': lambda c: c.perception / 2 if c.level >= 5 else 0,
                 },
             ],
         },
@@ -225,7 +225,7 @@ def get_all_abilities():
         'rage': {
             'modifiers': [
                 {
-                    'modifier_types': ['strength', 'charisma'],
+                    'modifier_types': ['strength', 'willpower'],
                     'value': lambda c: util.std_scale(c.level),
                 },
                 {
@@ -251,14 +251,14 @@ def get_all_abilities():
                 {
                     'modifier_name': 'intelligence',
                     'modifier_type': 'will',
-                    'value': lambda c: c.wisdom / 2 if c.level >= 5 else 0,
+                    'value': lambda c: c.perception / 2 if c.level >= 5 else 0,
                 },
             ],
         },
         'timeless': {
             'modifiers': [
                 {
-                    'modifier_types': ['intelligence', 'wisdom', 'charisma'],
+                    'modifier_types': ['intelligence', 'perception', 'willpower'],
                     'value': lambda c: 1 if c.level >= 15 else 0,
                 },
             ],
@@ -274,9 +274,9 @@ def get_all_abilities():
         'unfettered defense': {
             'modifiers': [
                 {
-                    'modifier_name': 'wisdom',
+                    'modifier_name': 'perception',
                     'modifier_types': ['physical_defenses','reflex'],
-                    'value': lambda c: c.wisdom,
+                    'value': lambda c: c.perception,
                 },
             ],
         },
@@ -451,7 +451,7 @@ def scout_effect(creature):
 def incorporeal_effect(creature):
     #add Cha to hit points
     creature.hit_points().add_bonus(creature.level *
-                                    creature.charisma, 'cha')
+                                    creature.willpower, 'cha')
     creature.strength.set_inapplicable()
     creature.constitution.set_inapplicable()
     def incorporeal_defense(damage, damage_types):
