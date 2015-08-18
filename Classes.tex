@@ -37,13 +37,67 @@ A high base attack bonus can grant additional attacks, as described in \pcref{Co
 
 \begin{dtable}
     \lcaption{Base Progressions}
-    \begin{dtabularx}{\columnwidth}{l l X}
-        \thead{Progression} & \thead{Attack Bonus} & \thead{Special Defense Bonus} \\
+    \begin{dtabularx}{\columnwidth}{l X}
+        \thead{Progression} & \thead{Base Bonus} \\
         \hline
-        Good & Class level & Class level \add 2 \\
-        Average & Three-quarters class level & Three-quarters class level \add 1 \\
-        Poor & One-half class level & One-half class level \\
+        Good & Class level \add 4 \\
+        Average & Three-quarters class level \add 3 \\
+        Poor & One-half class level \add 2 \\
     \end{dtabularx}
+\end{dtable}
+
+\begin{dtable}
+    \lcaption{Base Defense Progression Bonuses}
+    \begin{tabularx}{\columnwidth}{l X X X}
+        \thead{Level} & \thead{Good} & \thead{Average} & \thead{Poor} \\
+        \allprogressionrow{1} \\
+        \allprogressionrow{2} \\
+        \allprogressionrow{3} \\
+        \allprogressionrow{4} \\
+        \allprogressionrow{5} \\
+        \allprogressionrow{6} \\
+        \allprogressionrow{7} \\
+        \allprogressionrow{8} \\
+        \allprogressionrow{9} \\
+        \allprogressionrow{10} \\
+        \allprogressionrow{11} \\
+        \allprogressionrow{12} \\
+        \allprogressionrow{13} \\
+        \allprogressionrow{14} \\
+        \allprogressionrow{15} \\
+        \allprogressionrow{16} \\
+        \allprogressionrow{17} \\
+        \allprogressionrow{18} \\
+        \allprogressionrow{19} \\
+        \allprogressionrow{20} \\
+    \end{tabularx}
+\end{dtable}
+
+\begin{dtable}
+    \lcaption{Base Attack Progression Bonuses}
+    \begin{tabularx}{\columnwidth}{l X X X}
+        \thead{Level} & \thead{Good} & \thead{Average} & \thead{Poor} \\
+        \allbabprogressionrow{1} \\
+        \allbabprogressionrow{2} \\
+        \allbabprogressionrow{3} \\
+        \allbabprogressionrow{4} \\
+        \allbabprogressionrow{5} \\
+        \allbabprogressionrow{6} \\
+        \allbabprogressionrow{7} \\
+        \allbabprogressionrow{8} \\
+        \allbabprogressionrow{9} \\
+        \allbabprogressionrow{10} \\
+        \allbabprogressionrow{11} \\
+        \allbabprogressionrow{12} \\
+        \allbabprogressionrow{13} \\
+        \allbabprogressionrow{14} \\
+        \allbabprogressionrow{15} \\
+        \allbabprogressionrow{16} \\
+        \allbabprogressionrow{17} \\
+        \allbabprogressionrow{18} \\
+        \allbabprogressionrow{19} \\
+        \allbabprogressionrow{20} \\
+    \end{tabularx}
 \end{dtable}
 
 \parhead{Class Features} The class features that a character gets for being a member of the class.
@@ -51,28 +105,28 @@ A high base attack bonus can grant additional attacks, as described in \pcref{Co
 \section{Barbarian}
 \begin{dtable*}
 \lcaption{The Barbarian}
-\begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\babcolgood}} X}
+\begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\babcolavg}} X}
 \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
-1st & \plus1         & \plus3 & \plus1 & \plus0 & Damage reduction, rage \plus2 \\
-2nd & \plus2         & \plus4 & \plus2 & \plus1 & Endurance, fast movement \\
-3rd & \plus3         & \plus5 & \plus3 & \plus1 & Channeled rage, uncanny dodge \\
-4th & \plus4         & \plus6 & \plus4 & \plus2 & Grit \\
-5th & \plus5         & \plus7 & \plus4 & \plus2 & Improved damage reduction \\
-6th & \plus6/\plus1  & \plus8 & \plus5 & \plus3 & Improved uncanny dodge, channeled rage \\
-7th & \plus7/\plus2  & \plus9 & \plus6 & \plus3 & Larger than life \\
-8th & \plus8/\plus3  & \plus10& \plus7 & \plus4 & Rage \plus3 \\
-9th & \plus9/\plus4  & \plus11& \plus8 & \plus4 & Channeled rage \\
-10th& \plus10/\plus5 & \plus12& \plus8 & \plus5 & Greater uncanny dodge \\
-11th& \plus11/\plus6/\plus1  & \plus13 & \plus9 & \plus5 & Tireless rage \\
-12th& \plus12/\plus7/\plus2  & \plus14 & \plus10& \plus6 & Channeled rage, chaotic rage \\
-13th& \plus13/\plus8/\plus3  & \plus15 & \plus10& \plus6 & Indomitable will \\
-14th& \plus14/\plus9/\plus4  & \plus16 & \plus11& \plus7 & Rage \plus4 \\
-15th& \plus15/\plus10/\plus5 & \plus17 & \plus12& \plus7 & Channeled rage, greater damage reduction \\
-16th& \plus16/\plus11/\plus6/\plus1 & \plus18 & \plus13& \plus8 & Improved grit \\
-17th& \plus17/\plus12/\plus7/\plus2 & \plus19 & \plus13& \plus8 & Larger than belief \\
-18th& \plus18/\plus13/\plus8/\plus3 & \plus20 & \plus14& \plus9 & Channeled rage \\
-19th& \plus19/\plus14/\plus9/\plus4 & \plus21 & \plus15& \plus9 & Deathless rage \\
-20th& \plus20/\plus15/\plus10/\plus5& \plus22 & \plus16 & \plus10 & Rage \plus5
+\barbarianprogressionrow{1} & Damage reduction, rage \plus2 \\
+\barbarianprogressionrow{2} & Endurance, fast movement \\
+\barbarianprogressionrow{3} & Channeled rage, uncanny dodge \\
+\barbarianprogressionrow{4} & Grit \\
+\barbarianprogressionrow{5} & Improved damage reduction \\
+\barbarianprogressionrow{6} & Improved uncanny dodge, channeled rage \\
+\barbarianprogressionrow{7} & Larger than life \\
+\barbarianprogressionrow{8} & Rage \plus3 \\
+\barbarianprogressionrow{9} & Channeled rage \\
+\barbarianprogressionrow{10} & Greater uncanny dodge \\
+\barbarianprogressionrow{11} & Tireless rage \\
+\barbarianprogressionrow{12} & Channeled rage, chaotic rage \\
+\barbarianprogressionrow{13} & Indomitable will \\
+\barbarianprogressionrow{14} & Rage \plus4 \\
+\barbarianprogressionrow{15} & Channeled rage, greater damage reduction \\
+\barbarianprogressionrow{16} & Improved grit \\
+\barbarianprogressionrow{17} & Larger than belief \\
+\barbarianprogressionrow{18} & Channeled rage \\
+\barbarianprogressionrow{19} & Deathless rage \\
+\barbarianprogressionrow{20} & Rage \plus5
 \end{tabularx}
 \end{dtable*}
 
@@ -180,30 +234,30 @@ A barbarian who becomes lawful loses his ability to rage, and cannot gain more l
 
 \section{Cleric}
 \begin{dtable*}
-\lcaption{The Cleric}
-\begin{tabularx}{\textwidth}{>{\ccol}p{2em} >{\ccol}p{7em} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
-1st & \plus0 & \plus1 & \plus0 & \plus3 & Matters of faith, lesser domain aspect \\
-2nd & \plus1 & \plus2 & \plus1 & \plus4         & Channel energy \\
-3rd & \plus2 & \plus3 & \plus1 & \plus5         & Lesser domain aspect \\
-4th & \plus3 & \plus4 & \plus2 & \plus6         & \x \\
-5th & \plus3 & \plus4 & \plus2 & \plus7         & Channeled domain power \\
-6th & \plus4 & \plus5 & \plus3 & \plus8         & \x  \\
-7th & \plus5 & \plus6 & \plus3 & \plus9         & Channeled domain power  \\
-8th & \plus6/\plus1 & \plus7 & \plus4 & \plus10    & \x  \\
-9th & \plus6/\plus1 & \plus7 & \plus4 & \plus11    & Domain aspect  \\
-10th & \plus7/\plus2 & \plus8 & \plus5 & \plus12    & \x  \\
-11th & \plus8/\plus3 & \plus9 & \plus5 & \plus13   & Domain aspect  \\
-12th & \plus9/\plus4 & \plus10& \plus6 & \plus14    & \x  \\
-13th & \plus9/\plus4 & \plus10& \plus6 & \plus15    & Greater channeled domain power  \\
-14th & \plus10/\plus5 & \plus11& \plus7 & \plus16    & \x  \\
-15th & \plus11/\plus6/\plus1 & \plus12& \plus7 & \plus17 & Greater channeled domain power  \\
-16th & \plus12/\plus7/\plus2 & \plus13& \plus8 & \plus18 & \x  \\
-17th & \plus12/\plus7/\plus2 & \plus13& \plus8 & \plus19 & Domain mastery  \\
-18th & \plus13/\plus8/\plus3 & \plus14& \plus9 & \plus20 & \x  \\
-19th & \plus14/\plus9/\plus4 & \plus15& \plus9 & \plus21 & Domain mastery  \\
-20th & \plus15/\plus10/\plus5 & \plus16 & \plus10 & \plus22 & \x  \\
-\end{tabularx}
+    \lcaption{The Cleric}
+    \begin{tabularx}{\textwidth}{>{\ccol}p{2em} >{\ccol}p{7em} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
+        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
+        \clericprogressionrow{1} & Matters of faith, lesser domain aspect \\
+        \clericprogressionrow{2} & Channel energy \\
+        \clericprogressionrow{3} & Lesser domain aspect \\
+        \clericprogressionrow{4} & \x \\
+        \clericprogressionrow{5} & Channeled domain power \\
+        \clericprogressionrow{6} & \x  \\
+        \clericprogressionrow{7} & Channeled domain power  \\
+        \clericprogressionrow{8} & \x  \\
+        \clericprogressionrow{9} & Domain aspect  \\
+        \clericprogressionrow{10} & \x  \\
+        \clericprogressionrow{11} & Domain aspect  \\
+        \clericprogressionrow{12} & \x  \\
+        \clericprogressionrow{13} & Greater channeled domain power  \\
+        \clericprogressionrow{14} & \x  \\
+        \clericprogressionrow{15} & Greater channeled domain power  \\
+        \clericprogressionrow{16} & \x  \\
+        \clericprogressionrow{17} & Domain mastery  \\
+        \clericprogressionrow{18} & \x  \\
+        \clericprogressionrow{19} & Domain mastery  \\
+        \clericprogressionrow{20} & \x  \\
+    \end{tabularx}
 \end{dtable*}
 
 \cd{Alignment} A cleric's alignment must be within one step of his deity's (that is, it may be one step away on either the lawful-chaotic axis or the good-evil axis, but not both). A cleric may not be neutral unless his deity's alignment is also neutral.
@@ -486,30 +540,30 @@ A cleric who grossly violates the code of conduct required by his god loses all 
 
 \section{Druid}
 \begin{dtable}
-\lcaption{The Druid}
-\begin{tabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\centering}p{\babcolavg} *{3}{>{\ccol}p{\savecol}} >{\ccol}X}
-\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
-1st & \plus0 & \plus3 & \plus0 & \plus1 & Nature sense, wild speech \\
-2nd & \plus1 & \plus4 & \plus1 & \plus2 & Woodland stride \\
-3rd & \plus2 & \plus5 & \plus1 & \plus3 & Wild aspect \\
-4th & \plus3 & \plus6 & \plus2 & \plus4 & Venom immunity \\
-5th & \plus3 & \plus7 & \plus2 & \plus4 & Natural casting, wild aspect \\
-6th & \plus4 & \plus8 & \plus3 & \plus5 & Wild speech (plants) \\
-7th & \plus5 & \plus9 & \plus3 & \plus6 & Multiple aspect, wild aspect \\
-8th & \plus6/\plus1 & \plus10& \plus4 & \plus7 & Commanding wild speech \\
-9th & \plus6/\plus1 & \plus11& \plus4 & \plus7 & Wild aspect \\
-10th & \plus7/\plus2 & \plus12& \plus5 & \plus8 & Improved natural casting \\
-11th & \plus8/\plus3 & \plus13 & \plus5 & \plus9  & Natural aspect, multiple aspect \\
-12th & \plus9/\plus4 & \plus14 & \plus6 & \plus10 & A thousand faces \\
-13th & \plus9/\plus4 & \plus15 & \plus6 & \plus10 & Natural aspect \\
-14th & \plus10/\plus5 & \plus16 & \plus7 & \plus11 & Elemental speech, timeless body \\
-15th & \plus11/\plus6/\plus1 & \plus17 & \plus7 & \plus12 & Natural aspect, multiple aspect \\
-16th & \plus12/\plus7/\plus2 & \plus18 & \plus8 & \plus13 & Commanding wild speech\\
-17th & \plus12/\plus7/\plus2 & \plus19 & \plus8 & \plus13 & Natural aspect \\
-18th & \plus13/\plus8/\plus3 & \plus20 & \plus9 & \plus14 & Totemic aspect \\
-19th & \plus14/\plus9/\plus4 & \plus21 & \plus9 & \plus15 & Natural aspect, multiple aspect \\
-20th & \plus15/\plus10/\plus5 & \plus22 & \plus10 & \plus16 & Greater natural casting \\
-\end{tabularx}
+    \lcaption{The Druid}
+    \begin{tabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\centering}p{\babcolavg} *{3}{>{\ccol}p{\savecol}} >{\ccol}X}
+        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
+        \druidprogressionrow{1} & Nature sense, wild speech \\
+        \druidprogressionrow{2} & Woodland stride \\
+        \druidprogressionrow{3} & Wild aspect \\
+        \druidprogressionrow{4} & Venom immunity \\
+        \druidprogressionrow{5} & Natural casting, wild aspect \\
+        \druidprogressionrow{6} & Wild speech (plants) \\
+        \druidprogressionrow{7} & Multiple aspect, wild aspect \\
+        \druidprogressionrow{8} & Commanding wild speech \\
+        \druidprogressionrow{9} & Wild aspect \\
+        \druidprogressionrow{10} & Improved natural casting \\
+        \druidprogressionrow{11} & Natural aspect, multiple aspect \\
+        \druidprogressionrow{12} & A thousand faces \\
+        \druidprogressionrow{13} & Natural aspect \\
+        \druidprogressionrow{14} & Elemental speech, timeless body \\
+        \druidprogressionrow{15} & Natural aspect, multiple aspect \\
+        \druidprogressionrow{16} & Commanding wild speech\\
+        \druidprogressionrow{17} & Natural aspect \\
+        \druidprogressionrow{18} & Totemic aspect \\
+        \druidprogressionrow{19} & Natural aspect, multiple aspect \\
+        \druidprogressionrow{20} & Greater natural casting \\
+    \end{tabularx}
 \end{dtable}
 
 \cd{Alignment} Neutral good, lawful neutral, neutral, chaotic
@@ -697,30 +751,30 @@ A druid who ceases to revere nature, changes to a prohibited alignment, or teach
 
 \section{Fighter}
 \begin{dtable}
-\lcaption{The Fighter}
-\begin{tabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
-1st & \plus1                         & \plus3 & \plus0 & \plus1 & Armor discipline \\
-2nd & \plus2                         & \plus4 & \plus1 & \plus2 & Bonus feat \\
-3rd & \plus3                         & \plus5 & \plus1 & \plus3 & Weapon discipline \\
-4th & \plus4                         & \plus6 & \plus2 & \plus4 & Adaptive style feat \\
-5th & \plus5                         & \plus7 & \plus2 & \plus4 & Combat discipline \\
-6th & \plus6/\plus1                  & \plus8 & \plus3 & \plus5 & Bonus feat \\
-7th & \plus7/\plus2                  & \plus9 & \plus3 & \plus6 & Improved armor discipline \\
-8th & \plus8/\plus3                  & \plus10& \plus4 & \plus7 & Adaptive style feat \\
-9th & \plus9/\plus4                  & \plus11& \plus4 & \plus7 & Improved weapon discipline\\
-10th & \plus10/\plus5                & \plus12& \plus5 & \plus8 & Battlemaster, bonus feat\\
-11th & \plus11/\plus6/\plus1         & \plus13 & \plus5 & \plus9 & Improved combat discipline\\
-12th & \plus12/\plus7/\plus2         & \plus14 & \plus6 & \plus10& Adaptive style feat \\
-13th & \plus13/\plus8/\plus3         & \plus15 & \plus6 & \plus10& Greater armor discipline \\
-14th & \plus14/\plus9/\plus4         & \plus16 & \plus7 & \plus11& Bonus feat, improved adaptive style \\
-15th & \plus15/\plus10/\plus5        & \plus17 & \plus7 & \plus12& Greater weapon discipline\\
-16th & \plus16/\plus11/\plus6/\plus1 & \plus18 & \plus8 & \plus13& Adaptive style feat \\
-17th & \plus17/\plus12/\plus7/\plus2 & \plus19 & \plus8 & \plus13& Greater combat discipline\\
-18th & \plus18/\plus13/\plus8/\plus3 & \plus20 & \plus9 & \plus14& Bonus feat, improved battlemaster\\
-19th & \plus19/\plus14/\plus9/\plus4 & \plus21 & \plus9 & \plus15& True discipline \\
-20th & \plus20/\plus15/\plus10/\plus5& \plus22 & \plus10 & \plus16 & Adaptive style feat, greater adaptive style
-\end{tabularx}
+    \lcaption{The Fighter}
+    \begin{tabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
+        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
+        \fighterprogressionrow{1} & Armor discipline \\
+        \fighterprogressionrow{2} & Bonus feat \\
+        \fighterprogressionrow{3} & Weapon discipline \\
+        \fighterprogressionrow{4} & Adaptive style feat \\
+        \fighterprogressionrow{5} & Combat discipline \\
+        \fighterprogressionrow{6} & Bonus feat \\
+        \fighterprogressionrow{7} & Improved armor discipline \\
+        \fighterprogressionrow{8} & Adaptive style feat \\
+        \fighterprogressionrow{9} & Improved weapon discipline\\
+        \fighterprogressionrow{10} & Battlemaster, bonus feat\\
+        \fighterprogressionrow{11} & Improved combat discipline\\
+        \fighterprogressionrow{12} & Adaptive style feat \\
+        \fighterprogressionrow{13} & Greater armor discipline \\
+        \fighterprogressionrow{14} & Bonus feat, improved adaptive style \\
+        \fighterprogressionrow{15} & Greater weapon discipline\\
+        \fighterprogressionrow{16} & Adaptive style feat \\
+        \fighterprogressionrow{17} & Greater combat discipline\\
+        \fighterprogressionrow{18} & Bonus feat, improved battlemaster\\
+        \fighterprogressionrow{19} & True discipline \\
+        \fighterprogressionrow{20} & Adaptive style feat, greater adaptive style
+    \end{tabularx}
 \end{dtable}
 
 \cd{Alignment} Any.
@@ -817,29 +871,29 @@ If the fighter chose resilience, he applies his damage reduction to all damage, 
 
 \section{Monk}
 \begin{dtable}
-\lcaption{The Monk}
-\begin{tabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolavg} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
-1st & \plus1                    & \plus1 & \plus3 & \plus3    & Enlightened defense, unarmed warrior \\
-2nd & \plus2                    & \plus2 & \plus4 & \plus4    & Fast movement, \Ki power \\
-3rd & \plus3                    & \plus3 & \plus5 & \plus5    & Evasion, uncanny dodge \\
-4th & \plus4                    & \plus4 & \plus6 & \plus6    & \Ki strike, Perfect Health\\
-5th & \plus5                    & \plus4 & \plus7 & \plus7    & \Ki power, still mind \\
-6th & \plus6/\plus1                    & \plus5 & \plus8 & \plus8    & Improved uncanny dodge \\
-7th & \plus7/\plus2                    & \plus6 & \plus9 & \plus9    & Bodily perfection \\
-8th & \plus8/\plus3             & \plus7 & \plus10& \plus10   & \Ki power, perfect speech \\
-9th & \plus9/\plus4             & \plus7 & \plus11& \plus11   & Improved evasion \\
-10th & \plus10/\plus5            & \plus8 & \plus12& \plus12   & Greater uncanny dodge \\
-11th & \plus11/\plus6/\plus1            & \plus9  & \plus13 & \plus13 & \Ki power \\
-12th & \plus12/\plus7/\plus2            & \plus10 & \plus14& \plus14 & Perfect soul \\
-13th & \plus13/\plus8/\plus3            & \plus10 & \plus15 & \plus15 & Improved bodily perfection \\
-14th & \plus14/\plus9/\plus4            & \plus11 & \plus16& \plus16 & \Ki power \\
-15th & \plus15/\plus10/\plus5    & \plus12 & \plus17 & \plus17 & Timeless \\
-16th & \plus16/\plus11/\plus6/\plus1    & \plus13 & \plus18 & \plus18 & Perfect mind \\
-17th & \plus17/\plus12/\plus7/\plus2    & \plus13 & \plus19 & \plus19 & \Ki power \\
-18th & \plus18/\plus13/\plus8/\plus3    & \plus14 & \plus20 & \plus20 & Perfect motion \\
-19th & \plus19/\plus14/\plus9/\plus4    & \plus15 & \plus21 & \plus21 & Greater bodily perfection \\
-20th & \plus20/\plus15/\plus10/\plus5   & \plus16 & \plus22 & \plus22 & True perfection \\
+    \lcaption{The Monk}
+    \begin{tabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolavg} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
+        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
+        \monkprogressionrow{1} & Enlightened defense, unarmed warrior \\
+        \monkprogressionrow{2} & Fast movement, \Ki power \\
+        \monkprogressionrow{3} & Evasion, uncanny dodge \\
+        \monkprogressionrow{4} & \Ki strike, Perfect Health\\
+        \monkprogressionrow{5} & \Ki power, still mind \\
+        \monkprogressionrow{6} & Improved uncanny dodge \\
+        \monkprogressionrow{7} & Bodily perfection \\
+        \monkprogressionrow{8} & \Ki power, perfect speech \\
+        \monkprogressionrow{9} & Improved evasion \\
+        \monkprogressionrow{10} & Greater uncanny dodge \\
+        \monkprogressionrow{11} & \Ki power \\
+        \monkprogressionrow{12} & Perfect soul \\
+        \monkprogressionrow{13} & Improved bodily perfection \\
+        \monkprogressionrow{14} & \Ki power \\
+        \monkprogressionrow{15} & Timeless \\
+        \monkprogressionrow{16} & Perfect mind \\
+        \monkprogressionrow{17} & \Ki power \\
+        \monkprogressionrow{18} & Perfect motion \\
+        \monkprogressionrow{19} & Greater bodily perfection \\
+        \monkprogressionrow{20} & True perfection \\
 \end{tabularx}
 \end{dtable}
 
@@ -934,30 +988,30 @@ A monk who becomes chaotic loses her \ki powers, and cannot gain more levels as 
 
 \section{Paladin}
 \begin{dtable*}
-\lcaption{The Paladin}
-\begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecolpoof}} X}
-\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
-1st  & \plus1                        & \plus3  & \plus0 & \plus3 & Discernment, divine power (smite) \\
-2nd  & \plus2                        & \plus4  & \plus1 & \plus4 & Divine power \\
-3rd  & \plus3                        & \plus5  & \plus1 & \plus5 & Divine gift \\
-4th  & \plus4                        & \plus6  & \plus2 & \plus6 & Discern foe, divine power \\
-5th  & \plus5                        & \plus7  & \plus2 & \plus7 & Divine presence, divine protection\\
-6th  & \plus6/\plus1                 & \plus8  & \plus3 & \plus8 & Divine power \\
-7th  & \plus7/\plus2                 & \plus9  & \plus3 & \plus9 & Divine gift \\
-8th  & \plus8/\plus3                 & \plus10 & \plus4 & \plus10& Divine power \\
-9th  & \plus9/\plus4                 & \plus11 & \plus4 & \plus11& Pass judgment \\
-10th & \plus10/\plus5                & \plus12 & \plus5 & \plus12& Divine power, divine presence \\
-11th & \plus11/\plus6/\plus1         & \plus13 & \plus5 & \plus13& Divine gift \\
-12th & \plus12/\plus7/\plus2         & \plus14 & \plus6 & \plus14& Divine power \\
-13th & \plus13/\plus8/\plus3         & \plus15 & \plus6 & \plus15& \\
-14th & \plus14/\plus9/\plus4         & \plus16 & \plus7 & \plus16& Divine power \\
-15th & \plus15/\plus10/\plus5        & \plus17 & \plus7 & \plus17& Divine gift, divine presence \\
-16th & \plus16/\plus11/\plus6/\plus1 & \plus18 & \plus8 & \plus18& Divine power \\
-17th & \plus17/\plus12/\plus7/\plus2 & \plus19 & \plus8 & \plus19& Martyr's glorious retribution \\
-18th & \plus18/\plus13/\plus8/\plus3 & \plus20 & \plus9 & \plus20& Divine power \\
-19th & \plus19/\plus14/\plus9/\plus4 & \plus21 & \plus9 & \plus21& Divine gift \\
-20th & \plus20/\plus15/\plus10/\plus5& \plus22 &\plus10 &\plus22 & Divine power, divine presence \\
-\end{tabularx}
+    \lcaption{The Paladin}
+    \begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecolpoof}} X}
+        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
+        \paladinprogressionrow{1} & Discernment, divine power (smite) \\
+        \paladinprogressionrow{2} & Divine power \\
+        \paladinprogressionrow{3} & Divine gift \\
+        \paladinprogressionrow{4} & Discern foe, divine power \\
+        \paladinprogressionrow{5} & Divine presence, divine protection\\
+        \paladinprogressionrow{6} & Divine power \\
+        \paladinprogressionrow{7} & Divine gift \\
+        \paladinprogressionrow{8} & Divine power \\
+        \paladinprogressionrow{9} & Pass judgment \\
+        \paladinprogressionrow{10} & Divine power, divine presence \\
+        \paladinprogressionrow{11} & Divine gift \\
+        \paladinprogressionrow{12} & Divine power \\
+        \paladinprogressionrow{13} & \\
+        \paladinprogressionrow{14} & Divine power \\
+        \paladinprogressionrow{15} & Divine gift, divine presence \\
+        \paladinprogressionrow{16} & Divine power \\
+        \paladinprogressionrow{17} & Martyr's glorious retribution \\
+        \paladinprogressionrow{18} & Divine power \\
+        \paladinprogressionrow{19} & Divine gift \\
+        \paladinprogressionrow{20} & Divine power, divine presence \\
+    \end{tabularx}
 \end{dtable*}
 
 \cd{Alignment} Any other than true neutral.
@@ -1121,32 +1175,32 @@ A paladin who ceases to follow her devoted alignment loses all supernatural pala
 
 \section{Ranger}
 
-\begin{dtable}
-\lcaption{The Ranger}
-\begin{tabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
-1st  & \plus1                        & \plus3  & \plus1  & \plus1 & Quarry \plus2, Track, wild speech \\
-2nd  & \plus2                        & \plus4  & \plus2  & \plus2 & Danger sense, favored terrain \\
-3rd  & \plus3                        & \plus5  & \plus3  & \plus3 & Ranger lore \\
-4th  & \plus4                        & \plus6  & \plus4  & \plus4 & Low-light vision, tracking expert \\
-5th  & \plus5                        & \plus7  & \plus4  & \plus4 & Free stride, tenacious hunter \\
-6th  & \plus6/\plus1                 & \plus8  & \plus5  & \plus5 & Favored terrain, ranger lore \\
-7th  & \plus7/\plus2                 & \plus9  & \plus6  & \plus6 & Guide \\
-8th  & \plus8/\plus3                 & \plus10 & \plus7  & \plus7 & Darkvision, quarry \plus3  \\
-9th  & \plus9/\plus4                 & \plus11 & \plus7  & \plus7 & Ranger lore \\
-10th & \plus10/\plus5                & \plus12 & \plus8  & \plus8 & Favored terrain (planar) \\
-11th & \plus11/\plus6/\plus1         & \plus13 & \plus9  & \plus9 & Hidden hunter\\
-12th & \plus12/\plus7/\plus2         & \plus14 & \plus10 & \plus10& Blindsense, ranger lore  \\
-13th & \plus13/\plus8/\plus3         & \plus15 & \plus10 & \plus10& Terrain mastery  \\
-14th & \plus14/\plus9/\plus4         & \plus16 & \plus11 & \plus11& Favored terrain (planar), quarry \plus4 \\
-15th & \plus15/\plus10/\plus5        & \plus17 & \plus12 & \plus12& Ranger lore \\
-16th & \plus16/\plus11/\plus6/\plus1 & \plus18 & \plus13 & \plus13& Blindsight  \\
-17th & \plus17/\plus12/\plus7/\plus2 & \plus19 & \plus13 & \plus14& Terrain mastery, unerring hunter \\
-18th & \plus18/\plus13/\plus8/\plus3 & \plus20 & \plus14 & \plus14& Ranger lore, favored terrain (planar)  \\
-19th & \plus19/\plus14/\plus9/\plus4 & \plus21 & \plus15 & \plus15& Perfect stride  \\
-20th & \plus20/\plus15/\plus10/\plus5& \plus22 & \plus16 & \plus16& Quarry \plus5, truesight
-\end{tabularx}
-\end{dtable}
+\begin{dtable*}
+    \lcaption{The Ranger}
+    \begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\babcolavg}} >{\lcol}X}
+        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
+        \rangerprogressionrow{1} & Quarry \plus2, Track, wild speech \\
+        \rangerprogressionrow{2} & Danger sense, favored terrain \\
+        \rangerprogressionrow{3} & Ranger lore \\
+        \rangerprogressionrow{4} & Low-light vision, tracking expert \\
+        \rangerprogressionrow{5} & Free stride, tenacious hunter \\
+        \rangerprogressionrow{6} & Favored terrain, ranger lore \\
+        \rangerprogressionrow{7} & Guide \\
+        \rangerprogressionrow{8} & Darkvision, quarry \plus3  \\
+        \rangerprogressionrow{9} & Ranger lore \\
+        \rangerprogressionrow{10} & Favored terrain (planar) \\
+        \rangerprogressionrow{11} & Hidden hunter\\
+        \rangerprogressionrow{12} & Blindsense, ranger lore  \\
+        \rangerprogressionrow{13} & Terrain mastery  \\
+        \rangerprogressionrow{14} & Favored terrain (planar), quarry \plus4 \\
+        \rangerprogressionrow{15} & Ranger lore \\
+        \rangerprogressionrow{16} & Blindsight  \\
+        \rangerprogressionrow{17} & Terrain mastery, unerring hunter \\
+        \rangerprogressionrow{18} & Ranger lore, favored terrain (planar)  \\
+        \rangerprogressionrow{19} & Perfect stride  \\
+        \rangerprogressionrow{20} & Quarry \plus5, truesight
+    \end{tabularx}
+\end{dtable*}
 
 \cd{Alignment} Any.
 
@@ -1272,30 +1326,30 @@ If the ranger has the Camouflage ranger lore (see \pcref{Camouflage}), this allo
 
 \section{Rogue}
 \begin{dtable*}
-\lcaption{The Rogue}
-\begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\babcolgood}} X}
-\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
-1st  & \plus0                & \plus0 & \plus3  & \plus1 & Sneak attack \plus1d6 \\
-2nd  & \plus1                & \plus1 & \plus4  & \plus2 & Danger sense, skill talent \\
-3rd  & \plus2                & \plus1 & \plus5  & \plus3 & Sneak attack \plus2d6, uncanny dodge \\
-4th  & \plus3                & \plus2 & \plus6  & \plus4 & Combat trick \\
-5th  & \plus3                & \plus2 & \plus7  & \plus4 & Sneak attack \plus3d6 \\
-6th  & \plus4                & \plus3 & \plus8  & \plus5 & Persistent sneak attack, skill talent \\
-7th  & \plus5                & \plus3 & \plus9  & \plus6 & Skill exemplar, sneak attack \plus4d6 \\
-8th  & \plus6/\plus1         & \plus4 & \plus10 & \plus7 & Combat trick \\
-9th  & \plus6/\plus1         & \plus4 & \plus11 & \plus7 & Sneak attack \plus5d6 \\
-10th & \plus7/\plus2         & \plus5 & \plus12 & \plus8 & Skill talent \\
-11th & \plus8/\plus3         & \plus5 & \plus13 & \plus9 & Sneak attack \plus6d6 \\
-12th & \plus9/\plus4         & \plus6 & \plus14 & \plus10 & Combat trick \\
-13th & \plus9/\plus4         & \plus6 & \plus15 & \plus10 & Skill exemplar, sneak attack \plus7d6 \\
-14th & \plus10/\plus5        & \plus7 & \plus16 & \plus11 & Skill talent \\
-15th & \plus11/\plus6/\plus1 & \plus7 & \plus17 & \plus12 & Sneak attack \plus8d6 \\
-16th & \plus12/\plus7/\plus2 & \plus8 & \plus18 & \plus13 & Combat trick \\
-17th & \plus12/\plus7/\plus2 & \plus8 & \plus19 & \plus13 & Sneak attack \plus9d6 \\
-18th & \plus13/\plus8/\plus3 & \plus9 & \plus20 & \plus14 & Skill talent \\
-19th & \plus14/\plus9/\plus4 & \plus9 & \plus21 & \plus15 & Skill exemplar, sneak attack \plus10d6 \\
-20th & \plus15/\plus10/\plus5& \plus10& \plus22 & \plus16 & Ambush master, combat trick \\
-\end{tabularx}
+    \lcaption{The Rogue}
+    \begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\babcolavg}} X}
+        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
+        \rogueprogressionrow{1} & Sneak attack \plus1d6 \\
+        \rogueprogressionrow{2} & Danger sense, skill talent \\
+        \rogueprogressionrow{3} & Sneak attack \plus2d6, uncanny dodge \\
+        \rogueprogressionrow{4} & Combat trick \\
+        \rogueprogressionrow{5} & Sneak attack \plus3d6 \\
+        \rogueprogressionrow{6} & Persistent sneak attack, skill talent \\
+        \rogueprogressionrow{7} & Skill exemplar, sneak attack \plus4d6 \\
+        \rogueprogressionrow{8} & Combat trick \\
+        \rogueprogressionrow{9} & Sneak attack \plus5d6 \\
+        \rogueprogressionrow{10} & Skill talent \\
+        \rogueprogressionrow{11} & Sneak attack \plus6d6 \\
+        \rogueprogressionrow{12} & Combat trick \\
+        \rogueprogressionrow{13} & Skill exemplar, sneak attack \plus7d6 \\
+        \rogueprogressionrow{14} & Skill talent \\
+        \rogueprogressionrow{15} & Sneak attack \plus8d6 \\
+        \rogueprogressionrow{16} & Combat trick \\
+        \rogueprogressionrow{17} & Sneak attack \plus9d6 \\
+        \rogueprogressionrow{18} & Skill talent \\
+        \rogueprogressionrow{19} & Skill exemplar, sneak attack \plus10d6 \\
+        \rogueprogressionrow{20} & Ambush master, combat trick \\
+    \end{tabularx}
 \end{dtable*}
 
 \cd{Alignment} Any.
@@ -1401,29 +1455,29 @@ The rogue chooses a single combat trick from the list below. At her 8th rogue le
 
 \section{Sorcerer}
 \begin{dtable*}
-\lcaption{The Sorcerer}
-\begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{7em} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
-1st & \plus0 & \plus0 & \plus0 & \plus3 & Arcane invocation \\
-2nd & \plus1 & \plus1 & \plus1 & \plus4     & Arcane invocation, spellsurge \plus2 \\
-3rd & \plus1 & \plus1 & \plus1 & \plus5     & Expanded spell knowledge \\
-4th & \plus2 & \plus2 & \plus2 & \plus6     & Defensive spellblend \\
-5th & \plus2 & \plus2 & \plus2 & \plus7     & Expanded spell knowledge \\
-6th & \plus3 & \plus3 & \plus3 & \plus8     & Spellsurge \\
-7th & \plus3 & \plus3 & \plus3 & \plus9     & Expanded spell knowledge \\
-8th & \plus4 & \plus4 & \plus4 & \plus10    & Offensive spellblend, spellsurge \plus3 \\
-9th & \plus4 & \plus4 & \plus4 & \plus11    & Expanded spell knowledge \\
-10th & \plus5 & \plus5 & \plus5 & \plus12    & Spellsurge, versatile spellcaster \\
-11th & \plus5 & \plus5 & \plus5 & \plus13    & Expanded spell knowledge \\
-12th & \plus6/\plus1 & \plus6 & \plus6 & \plus14& Improved defensive spellblend \\
-13th & \plus6/\plus1 & \plus6 & \plus6 & \plus15& Expanded spell knowledge \\
-14th & \plus7/\plus2 & \plus7 & \plus7 & \plus16& Spellsurge, spellsurge \plus4 \\
-15th & \plus7/\plus2 & \plus7 & \plus7 & \plus17& Expanded spell knowledge \\
-16th & \plus8/\plus3 & \plus8 & \plus8 & \plus18 & Improved offensive spellblend \\
-17th & \plus8/\plus3 & \plus8 & \plus8 & \plus19 & Expanded spell knowledge \\
-18th & \plus9/\plus4 & \plus9 & \plus9 & \plus20 & Endless surge, spellsurge \\
-19th & \plus9/\plus4 & \plus9 & \plus9 & \plus21 & Expanded spell knowledge \\
-20th & \plus10/\plus5 & \plus10& \plus10& \plus22 & Spellsurge \plus5 \\
+    \lcaption{The Sorcerer}
+    \begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{7em} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
+        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
+        \sorcererprogressionrow{1} & Arcane invocation \\
+        \sorcererprogressionrow{2} & Arcane invocation, spellsurge \plus2 \\
+        \sorcererprogressionrow{3} & Expanded spell knowledge \\
+        \sorcererprogressionrow{4} & Defensive spellblend \\
+        \sorcererprogressionrow{5} & Expanded spell knowledge \\
+        \sorcererprogressionrow{6} & Spellsurge \\
+        \sorcererprogressionrow{7} & Expanded spell knowledge \\
+        \sorcererprogressionrow{8} & Offensive spellblend, spellsurge \plus3 \\
+        \sorcererprogressionrow{9} & Expanded spell knowledge \\
+        \sorcererprogressionrow{10} & Spellsurge, versatile spellcaster \\
+        \sorcererprogressionrow{11} & Expanded spell knowledge \\
+        \sorcererprogressionrow{12} & Improved defensive spellblend \\
+        \sorcererprogressionrow{13} & Expanded spell knowledge \\
+        \sorcererprogressionrow{14} & Spellsurge, spellsurge \plus4 \\
+        \sorcererprogressionrow{15} & Expanded spell knowledge \\
+        \sorcererprogressionrow{16} & Improved offensive spellblend \\
+        \sorcererprogressionrow{17} & Expanded spell knowledge \\
+        \sorcererprogressionrow{18} & Endless surge, spellsurge \\
+        \sorcererprogressionrow{19} & Expanded spell knowledge \\
+        \sorcererprogressionrow{20} & Spellsurge \plus5 \\
 \end{tabularx}
 \end{dtable*}
 
@@ -1543,33 +1597,33 @@ At his 6th sorcerer level, and every four sorcerer levels thereafter, the sorcer
 \cflt{Sor}{20th}{Dual Surge}{Ex} The sorcerer may enter two spellsurges at once. He gains the benefits and suffers the consequences of both surges. However, while using two surges at once, he takes a \minus5 penalty to Concentration checks to end a spellsurge.
 
 \section{Spellwarped}
-\begin{dtable}
+\begin{dtable*}
     \lcaption{The Spellwarped}
-    \begin{tabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolavg} *{2}{>{\ccol}p{\savecolpoof}} >{\lcol}X}
+    \begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{2}{>{\ccol}p{\babcolavg}} >{\lcol}X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Good Defense}\fn{1} & \thead{Normal Defenses}\fn{1} & \thead{Special} \\
-        1st & \plus0                    & \plus2  & \plus1  & Innate magic, invoke power, spellwarp pool\\
-        2nd & \plus1                    & \plus3  & \plus2  & Spellwarped body, surge of power \\
-        3rd & \plus2                    & \plus4  & \plus3  & Attuned senses, spellwarped aspect \\
-        4th & \plus3                    & \plus5  & \plus4  & Invoke power, resist magic \\
-        5th & \plus3                    & \plus6  & \plus4  & Manipulate magic \\
-        6th & \plus4                    & \plus7  & \plus5  & Invoke power \\
-        7th & \plus5                    & \plus8  & \plus6  & Spellwarped aspect \\
-        8th & \plus6/\plus1             & \plus9  & \plus7  & Invoke power \\
-        9th & \plus6/\plus1             & \plus10 & \plus7  & Spell resistance\\
-        10th & \plus7/\plus2            & \plus11 & \plus8  & Invoke power \\
-        11th & \plus8/\plus3            & \plus12 & \plus9  & Spellwarped aspect \\
-        12th & \plus9/\plus4            & \plus13 & \plus10 & Invoke power \\
-        13th & \plus9/\plus4            & \plus14 & \plus10 & Improved manipulate magic \\
-        14th & \plus10/\plus5           & \plus15 & \plus11 & Invoke power \\
-        15th & \plus11/\plus6/\plus1    & \plus16 & \plus12 & Spellwarped aspect \\
-        16th & \plus12/\plus7/\plus2    & \plus17 & \plus13 & Invoke power \\
-        17th & \plus12/\plus7/\plus2    & \plus19 & \plus13 & Mass surge of power \\
-        18th & \plus13/\plus8/\plus3    & \plus20 & \plus14 & Invoke power \\
-        19th & \plus14/\plus9/\plus4    & \plus21 & \plus15 & Permanent surge of power, spellwarped aspect \\
-        20th & \plus15/\plus10/\plus5   & \plus22 & \plus16 & Invoke power \\
+        \spellwarpedprogressionrow{1} & Innate magic, invoke power, spellwarp pool\\
+        \spellwarpedprogressionrow{2} & Spellwarped body, surge of power \\
+        \spellwarpedprogressionrow{3} & Attuned senses, spellwarped aspect \\
+        \spellwarpedprogressionrow{4} & Invoke power, resist magic \\
+        \spellwarpedprogressionrow{5} & Manipulate magic \\
+        \spellwarpedprogressionrow{6} & Invoke power \\
+        \spellwarpedprogressionrow{7} & Spellwarped aspect \\
+        \spellwarpedprogressionrow{8} & Invoke power \\
+        \spellwarpedprogressionrow{9} & Spell resistance\\
+        \spellwarpedprogressionrow{10} & Invoke power \\
+        \spellwarpedprogressionrow{11} & Spellwarped aspect \\
+        \spellwarpedprogressionrow{12} & Invoke power \\
+        \spellwarpedprogressionrow{13} & Improved manipulate magic \\
+        \spellwarpedprogressionrow{14} & Invoke power \\
+        \spellwarpedprogressionrow{15} & Spellwarped aspect \\
+        \spellwarpedprogressionrow{16} & Invoke power \\
+        \spellwarpedprogressionrow{17} & Mass surge of power \\
+        \spellwarpedprogressionrow{18} & Invoke power \\
+        \spellwarpedprogressionrow{19} & Permanent surge of power, spellwarped aspect \\
+        \spellwarpedprogressionrow{20} & Invoke power \\
     \end{tabularx}
     1 Each spellwarped has a good defense determined by his choice of innate magic.
-\end{dtable}
+\end{dtable*}
 
 \cd{Alignment} Any.
 
@@ -1745,34 +1799,34 @@ The spellwarped can only affect any individual creature with this ability once p
 \parhead{16th -- Supreme Acceleration} As a standard action, the spellwarped can spend three spellwarp points to accelerate himself so much that he can take an additional round of actions immediately. During this round, all creatures he attacks are treated as helpless, but he cannot perform a coup de grace or similar ability; such an act requires more care and precision than is possible with such immense speed. After using this ability, he must wait 5 rounds before he can use it again.
 \parhead{18th -- Mass Haste} This power functions like the haste power, except that it costs two spellwarp points and affects up to five creatures within \rngclose range of the spellwarped.
 \parhead{18th -- Time Stop} As a standard action, the spellwarped can spend two spellwarp points to step into an alternate timestream, causing him to speed up so greatly that all other creatures seem frozen. He can act for 1d3\plus1 rounds of apparent time. During this time, all objects and creatures are frozen in place and are completely invulnerable to the spellwarped, though he may affect them with spellwarped powers normally. After using this ability, he must wait 5 rounds before he can use it again.
-\parhead{20th -- Temporal Prison, Greater} As a standard action, the spellwarped can spend two spellwarp points to completely stop time for a single creature for 5 rounds. This functions like the temporal prison power, except that no attack is required.
+\parhead{20th -- Temporal Prison, Greater} As a standard action, the spellwarped can spend two spellwarp points to completely stop time for a single creature for 5 rounds. This functions like the temporal prison power, except that no attack is required. \norepeatnotes
 
 \section{Wizard}
 \begin{dtable*}
-\lcaption{The Wizard}
-\begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{7em} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-\thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
-1st & \plus0 & \plus0 & \plus0 & \plus3 & Arcane invocation \\
-2nd & \plus1 & \plus1 & \plus1 & \plus4     & Arcane invocation, magic feat \\
-3rd & \plus1 & \plus1 & \plus1 & \plus5     & Arcane insight \\
-4th & \plus2 & \plus2 & \plus2 & \plus6     & Invocation sequencer \\
-5th & \plus2 & \plus2 & \plus2 & \plus7     & Arcane insight \\
-6th & \plus3 & \plus3 & \plus3 & \plus8     & Magic feat \\
-7th & \plus3 & \plus3 & \plus3 & \plus9     & Arcane insight \\
-8th & \plus4 & \plus4 & \plus4 & \plus10    & Defensive sequencer \\
-9th & \plus4 & \plus4 & \plus4 & \plus11    & Arcane insight \\
-10th & \plus5 & \plus5 & \plus5 & \plus12    & Magic feat \\
-11th & \plus5 & \plus5 & \plus5 & \plus13    & Arcane insight \\
-12th & \plus6/\plus1 & \plus6 & \plus6 & \plus14& Contingency \\
-13th & \plus6/\plus1 & \plus6 & \plus6 & \plus15& Arcane insight \\
-14th & \plus7/\plus2 & \plus7 & \plus7 & \plus16& Magic feat \\
-15th & \plus7/\plus2 & \plus7 & \plus7 & \plus17& Arcane insight \\
-16th & \plus8/\plus3 & \plus8 & \plus8 & \plus18 & Offensive sequencer \\
-17th & \plus8/\plus3 & \plus8 & \plus8 & \plus19 & Arcane insight \\
-18th & \plus9/\plus4 & \plus9 & \plus9 & \plus20& Magic feat \\
-19th & \plus9/\plus4 & \plus9 & \plus9 & \plus21 & Arcane insight \\
-20th & \plus10/\plus5 & \plus10& \plus10& \plus22 & Chain contingency \\
-\end{tabularx}
+    \lcaption{The Wizard}
+    \begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{7em} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
+        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
+        \wizardprogressionrow{1} & Arcane invocation \\
+        \wizardprogressionrow{2} & Arcane invocation, magic feat \\
+        \wizardprogressionrow{3} & Arcane insight \\
+        \wizardprogressionrow{4} & Invocation sequencer \\
+        \wizardprogressionrow{5} & Arcane insight \\
+        \wizardprogressionrow{6} & Magic feat \\
+        \wizardprogressionrow{7} & Arcane insight \\
+        \wizardprogressionrow{8} & Defensive sequencer \\
+        \wizardprogressionrow{9} & Arcane insight \\
+        \wizardprogressionrow{10} & Magic feat \\
+        \wizardprogressionrow{11} & Arcane insight \\
+        \wizardprogressionrow{12} & Contingency \\
+        \wizardprogressionrow{13} & Arcane insight \\
+        \wizardprogressionrow{14} & Magic feat \\
+        \wizardprogressionrow{15} & Arcane insight \\
+        \wizardprogressionrow{16} & Offensive sequencer \\
+        \wizardprogressionrow{17} & Arcane insight \\
+        \wizardprogressionrow{18} & Magic feat \\
+        \wizardprogressionrow{19} & Arcane insight \\
+        \wizardprogressionrow{20} & Chain contingency \\
+    \end{tabularx}
 \end{dtable*}
 
 \cd{Alignment} Any.
