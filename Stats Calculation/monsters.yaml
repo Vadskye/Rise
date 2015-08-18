@@ -114,8 +114,8 @@ aboleth:
     intelligence:
       progression: average
       value: 2
-    wisdom: average
-    charisma: average
+    perception: average
+    willpower: average
     #abilities
     traits:
         - enslave
@@ -152,7 +152,7 @@ achaierai:
     dexterity: good
     constitution: average
     intelligence: poor
-    wisdom: poor
+    perception: poor
     #abilities
     traits:
         - black cloud
@@ -173,16 +173,16 @@ allip:
     level: 6
     #items
     weapons:
-        primary: wisdom drain
+        primary: perception drain
     #attributes
     dexterity: poor
-    wisdom: -4
-    charisma: average
+    perception: -4
+    willpower: average
     #abilities
     traits:
         - babble
         - madness
-        - wisdom drain
+        - perception drain
     feats:
         - lightning reflexes
         - dodge
@@ -214,7 +214,7 @@ animated_object:
             strength: average
             dexterity: poor
             constitution: average
-            wisdom: poor
+            perception: poor
             #core
             size: colossal
         gargantuan:
@@ -229,7 +229,7 @@ animated_object:
             strength: average
             dexterity: poor
             constitution: average
-            wisdom: poor
+            perception: poor
             #core
             size: gargantuan
         huge:
@@ -244,7 +244,7 @@ animated_object:
             strength: average
             dexterity: poor
             constitution: average
-            wisdom: poor
+            perception: poor
             #core
             size: huge
         large:
@@ -259,7 +259,7 @@ animated_object:
             strength: average
             dexterity: poor
             constitution: average
-            wisdom: poor
+            perception: poor
             #core
             size: large
         medium:
@@ -274,7 +274,7 @@ animated_object:
             strength: average
             dexterity: poor
             constitution: average
-            wisdom: poor
+            perception: poor
             #core
             size: medium
         small:
@@ -289,7 +289,7 @@ animated_object:
             strength: average-4
             dexterity: poor+2
             constitution: average
-            wisdom: poor
+            perception: poor
             #core
             size: small
         tiny:
@@ -304,7 +304,7 @@ animated_object:
             strength: average-8
             dexterity: poor+4
             constitution: average
-            wisdom: poor
+            perception: poor
             #core
             size: tiny
 assassin:
@@ -344,7 +344,7 @@ black_bear:
     #attributes
     strength: good
     constitution: good
-    wisdom: average
+    perception: average
     #abilities
     feats:
         - endurance
@@ -362,7 +362,7 @@ brown_bear:
     #attributes
     strength: good
     constitution: good
-    wisdom: average
+    perception: average
     #abilities
     traits:
         - improved natural weapon
@@ -383,7 +383,7 @@ dire_wolf:
     strength: good
     dexterity: good
     constitution: average
-    wisdom: average
+    perception: average
     #abilities
     traits:
         - natural trip
@@ -400,8 +400,8 @@ goblin:
     armor: light
     #attributes
     dexterity: poor+1
-    wisdom: -1
-    charisma: -3
+    perception: -1
+    willpower: -3
     #abilities
     feats:
         - swift
@@ -422,7 +422,7 @@ golem:
     #attributes
     strength: average
     constitution: good
-    charisma: none
+    willpower: none
     #abilities
     #feats: ~
     #core
@@ -453,8 +453,8 @@ heracore:
   dexterity: average
   constitution: poor
   intelligence: -6
-  wisdom: 2
-  charisma: -2
+  perception: 2
+  willpower: -2
   size: large
 ideal:
     #meta
@@ -467,8 +467,8 @@ ideal:
     dexterity: average
     constitution: average
     intelligence: average
-    wisdom: average
-    charisma: average
+    perception: average
+    willpower: average
     weapons:
         primary: medium_melee
     variants:
@@ -517,8 +517,8 @@ new_monster_template:
     dexterity: 
     constitution: 
     intelligence: 
-    wisdom: 
-    charisma: 
+    perception: 
+    willpower: 
     #abilities
     trait: 
     feats:  
@@ -541,7 +541,7 @@ orc:
     dexterity: poor
     constitution: poor
     intelligence: -2
-    wisdom: -1
+    perception: -1
     #abilities
     #feats:
       #- power attack
@@ -571,8 +571,8 @@ stone_giant:
     strength: good
     constitution: good
     intelligence: -2
-    wisdom: poor
-    charisma: poor
+    perception: poor
+    willpower: poor
     #abilities
     #feats:  
 
@@ -593,7 +593,7 @@ troll:
     dexterity: poor
     constitution: extreme
     intelligence: -3
-    wisdom: -1
+    perception: -1
     #abilities
     traits:
         - darkvision
@@ -619,7 +619,7 @@ wolf:
     strength: good
     dexterity: average
     constitution: average
-    wisdom: poor
+    perception: poor
     #abilities
     traits:
         - natural trip

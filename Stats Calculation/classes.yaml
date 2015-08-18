@@ -66,10 +66,10 @@ barbarian:
   reflex: average
   will: poor
   hit_value: 7
-  special_attack_attribute: charisma
+  special_attack_attribute: willpower
   weapons:
     primary: heavy_melee
-  attributes: warrior_dex_secondary
+  attributes: warrior
   variants:
     defensive:
       equipment: heavy
