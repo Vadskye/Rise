@@ -3,9 +3,6 @@
 \small
 
 \pdfbookmark[2]{A}{SpellDescriptionsA}
-\begin{comment}
-\subsubsection{A}
-\end{comment}
 
 \begin{spellsection}{Ablate Impact}{2}
     \begin{spellheader}
@@ -17,8 +14,7 @@
             \spelltwocol{\spelltime{Immediate action}}{\spellcmp{Verbal only}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spellspecial This spell can be cast while you are casting another spell.
-            \spelleffect You gain physical damage reduction, reducing the physical damage you take this round by 8 \add 1 per caster level above 4th. If you take force damage, you lose this damage reduction.
+            \spelleffect You gain damage reduction against physical damage equal to twice your caster level. Force damage ignores this damage reduction and negates it for 1 round.
             \spelldur Until end of round
         \end{spelleffects}
     \end{spellcontent}
@@ -38,10 +34,9 @@
         \begin{spelltargetinginfo}
             \spelltgt{You}
             \spelltwocol{\spelltime{Immediate action}}{\spellcmp{Verbal only}}
-            \spellspecial This spell can be cast while you are casting another spell.
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect You gain spell damage reduction, reducing the damage you take this round from spells by 4 \add 1 per caster level above 2nd. If you take force damage, you lose this damage reduction.
+            \spelleffect You gain damage reduction against spells equal to twice your caster level. Force damage ignores this damage reduction and negates it for 1 round.
             \spelldur Until end of round
         \end{spelleffects}
     \end{spellcontent}
@@ -264,7 +259,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Magic vs. Fortitude}
-                \spellsuccess 9d10 life damage \add d10 per four caster levels above 18th. If the target has no hit points remaining, it immediately dies, and you are transformed to mimic its appearance for 12 hours. This grants you a \plus10 enhancement bonus on Disguise checks made to appear as that creature.
+                \spellsuccess 9d10 life damage \add d10 per four caster levels above 18th. If the target has no hit points remaining, it immediately dies, and you are transformed to mimic its appearance for 12 hours. This grants you a \plus10 bonus on Disguise checks made to appear as that creature.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
             \spelldur \durext; see text
@@ -298,9 +293,6 @@
 \end{spellsection}
 
 \pdfbookmark[2]{B}{SpellDescriptionsB}
-\begin{comment}
-\subsubsection{B}
-\end{comment}
 
 \begin{spellsection}{Bane}{1}
     \begin{spellheader}
@@ -348,7 +340,7 @@
             \spelltwocol{\spelltgt{One living creature}}{\spellrng{Touch}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target gains physical damage reduction, reducing the physical damage it takes each round by 2 \add 1 per four caster levels above 4th. If it is hit by a slashing weapon or takes fire damage, it cannot use its damage reduction for 1 round.
+            \spelleffect The target gains damage reduction against physical damage equal to half your caster level. Slashing weapons and fire damage ignore this damage reduction and negate it for 1 round.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
@@ -533,9 +525,6 @@
 \end{spellsection}
 
 \pdfbookmark[2]{C}{SpellDescriptionsC}
-\begin{comment}
-\subsubsection{C}
-\end{comment}
 
 \begin{spellsection}{Cacaphonic Word}{6}
     \begin{spellheader}
@@ -1214,9 +1203,6 @@
 \end{spellsection}
 
 \pdfbookmark[2]{D}{SpellDescriptionsD}
-\begin{comment}
-\subsubsection{D}
-\end{comment}
 
 \begin{spellsection}{Dancing Lights}{1}
     \begin{spellheader}
@@ -1868,9 +1854,6 @@
 \end{spellsection}
 
 \pdfbookmark[2]{E}{SpellDescriptionsE}
-\begin{comment}
-\subsubsection{E}
-\end{comment}
 
 \begin{spellsection}{Earth's Pull}{1}
     \begin{spellheader}
@@ -2001,7 +1984,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelleffects}
-            \spelleffect You gain damage reduction against all energy types (acid, cold, electricity, fire). The value of the damage reduced each round is equal to 32 \add 1 per caster level above 16th.
+            \spelleffect You gain damage reduction against all energy types (acid, cold, electricity, fire) equal to twice your caster level.
 
             If you absorb damage with this spell from a single energy type that exceeds your caster level, you gain a charge for that energy type. You can store up to 3 charges of any combination of energy types. Additional charges replace existing charges of your choice.
             \spelldur \durlong
@@ -2033,9 +2016,9 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spellsuccess If the target is living, it gains two \conditionlink{negative levels}. This imposes a \minus2 penalty to the target's attacks, special defenses, and checks, and a \minus10 penalty to its current and maximum hit points.
+            \spelleffect If the target is living, it gains two \conditionlink{negative levels}. This imposes a \minus2 penalty to the target's attacks, special defenses, and checks, and a \minus10 penalty to its current and maximum hit points.
 
-            If the target is undead, it gains physical damage reduction, reducing the physical damage it takes each round by 8 \add 1 per two caster levels above 8th. If it takes positive damage, it cannot use its damage reduction for 1 round.
+            If the target is undead, it gains damage reduction against physical damage equal to your caster level. Positive damage ignores this damage reduction and negates it for 1 round.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -2053,7 +2036,7 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect If the target is undead, it gains physical damage reduction, reducing the physical damage it takes each round by 16 \add 1 per two caster levels above 16th. If it takes positive damage, it cannot use its damage reduction for 1 round.
+            \spelleffect If the target is undead, it gains a legend point for physical attacks and damage reduction against physical damage equal to your caster level. Positive damage ignores this damage reduction and negates it for 1 round.
             \begin{spellattacktriggered}{If the target is living, make a Magic vs. Fortitude attack.}
                 \spellsuccess The target gains eight \conditionlink{negative levels}. This imposes a \minus8 penalty to the target's attacks, special defenses, and checks, and a \minus40 penalty to its current and maximum hit points.
                 \spellsuccess The target gains four \conditionlink{negative levels}. This imposes a \minus4 penalty to the target's attacks, special defenses, and checks, and a \minus20 penalty to its current and maximum hit points.
@@ -2268,9 +2251,6 @@
 \end{spellsection}
 
 \pdfbookmark[2]{F}{SpellDescriptionsF}
-\begin{comment}
-\subsubsection{F}
-\end{comment}
 
 \begin{spellsection}{Faerie Fire}{1}
     \begin{spellheader}
@@ -2454,7 +2434,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelleffects}
-            \spelleffect You gain cold damage reduction, reducing the cold damage you take each round by 16 \add 1 per caster level above 8th. In addition, you radiate light as a torch.
+            \spelleffect You gain damage reduction against cold damage equal to twice your caster level. In addition, you radiate light as a torch.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
@@ -2721,7 +2701,7 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngtouch}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target is immune to effects that restrict its mobility, such as \spell{slow} or \spell{web}. It suffers no penalties for acting underwater. In addition, it gains a \plus20 enhancement bonus to Maneuver defense against grapple attacks, as well as on grapple attacks or Escape Artist checks made to escape a grapple or a pin.
+            \spelleffect The target is immune to effects that restrict its mobility, such as \spell{slow} or \spell{web}. It suffers no penalties for acting underwater. In addition, it gains a \plus20 bonus to Maneuver defense against grapple attacks, as well as on grapple attacks or Escape Artist checks made to escape a grapple or a pin.
             \spelldur \durpersonallong
         \end{spelleffects}
     \end{spellcontent}
@@ -2748,9 +2728,6 @@
 \end{spellsection}
 
 \pdfbookmark[2]{G}{SpellDescriptionsG}
-\begin{comment}
-\subsubsection{G}
-\end{comment}
 
 \begin{spellsection}{Gaseous Form}{3}
     \begin{spellheader}
@@ -2910,9 +2887,6 @@
 \end{spellsection}
 
 \pdfbookmark[2]{H}{SpellDescriptionsH}
-\begin{comment}
-\subsubsection{H}
-\end{comment}
 
 \begin{spellsection}{Harm}{6}
     \begin{spellheader}
@@ -2943,13 +2917,13 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target gains a \plus30 foot enhancement bonus to its speed in all its movement modes, up to a maximum of double its original speed.
+            \spelleffect The target gains a \plus30 foot bonus to its speed in all its movement modes, up to a maximum of double its original speed.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation (Temporal)}{Transmutation}
-        \spellnotes As with any effect that increases your speed, this effect affects your ability to jump (see \pcref{Athletics}).
+        \spellnotes As with any effect that increases your speed, this effect affects your ability to jump (see \pcref{Jump}).
     \end{spellfooter}
 \end{spellsection}
 
@@ -2962,7 +2936,7 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target's speed increases, as \spell{lesser haste}. In addition, if it can make multiple attacks from a high base attack bonus, it gains a \plus5 bonus on its last attack. Otherwise, it gains the ability to make an additional attack at a \minus5 penalty when it takes a standard attack action.
+            \spelleffect The target's speed increases, as \spell{lesser haste}. In addition, it the ability to make an additional attack at a \minus5 penalty when it takes a standard attack action.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
@@ -3284,9 +3258,6 @@
 \end{spellsection}
 
 \pdfbookmark[2]{I}{SpellDescriptionsI}
-\begin{comment}
-\subsubsection{I}
-\end{comment}
 
 \begin{spellsection}{Ice Storm}{4}
     \begin{spellheader}
@@ -3370,7 +3341,7 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngtouch}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target gains physical damage reduction, reducing the physical damage it takes each round by 4 \add 1 per two caster levels above 4th. If it takes force damage, it cannot use its damage reduction for 1 round.
+            \spelleffect The target gains damage reduction against physical damage equal to your caster level. Force damage ignores this damage reduction and negates it for 1 round.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
@@ -3531,7 +3502,7 @@
             \spelltwocol{\spelltgt{One creature or object (Large or smaller)}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target and its equipment become invisible. An invisible creature cannot be seen, even by darkvision. Invisible creatures can be detected with the Perception skill (see \pcref{Perception}).
+            \spelleffect The target and its equipment become invisible. An invisible creature cannot be seen, even by darkvision. Invisible creatures can be detected with the Awareness skill (see \pcref{Awareness}).
 
             If the target attacks any creature, such as by casting any spell that affects an unwilling creature, it becomes visible.
             \spelldur \durshort \dismissable
@@ -3586,7 +3557,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect This spell transforms your body into living iron, which grants you several powerful resistances and abilities.
-            \par You gain physical damage reduction, reducing the physical damage you take each round by 16 \add 1 per two caster levels above 16th. If you are hit by an adamantine weapon, you cannot use your damage reduction for 1 round.
+            \par You gain damage reduction against physical damage equal to your caster level. Adamantine weapons ignore this damage reduction and negate it for 1 round.
             \par You are immune to blindness, critical hits, attribute damage, deafness, disease, drowning, electricity, poison, stunning, and all spells or attacks that affect your physiology or respiration, because you have no physiology or respiration while this spell is in effect.
             \par Your move at half speed, and take a \minus8 armor check penalty. You cannot drink (and thus can't use potions) or play wind instruments.
             \par Your unarmed attacks deal damage equal to a warhammer sized for you (1d6 for Small characters or 1d8 for Medium characters), and you are considered armed when making unarmed attacks.
@@ -3621,9 +3592,6 @@
 \end{spellsection}
 
 \pdfbookmark[2]{J-L}{SpellDescriptionsJ-L}
-\begin{comment}
-\subsubsection{J-L}
-\end{comment}
 
 \begin{spellsection}{Knock}{2}
     \begin{spellheader}
@@ -3635,7 +3603,7 @@
         \begin{spelleffects}
             \spelleffect This spell telekinetically opens stuck, barred, locked, held, or arcane locked objects. If the target object is stuck or held, you can immediately make an Strength check to break it open, using your caster level instead of your Strength. Others can aid you on this check as normal.
 
-            In addition, if the target object is locked, you can immediately make a Disable Device check to open the lock as if you had rolled a 20 on the check. You get an enhancement bonus on the Disable Device check equal to half your caster level.
+            In addition, if the target object is locked, you can immediately make a Disable Device check to open the lock as if you had rolled a 20 on the check. You get a bonus on the Disable Device check equal to half your caster level.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -3713,7 +3681,7 @@
             \spelltgt{You}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect You gain a \plus30 foot enhancement bonus to your speed in all your movement modes, up to a maximum of double your original speed.
+            \spelleffect You gain a \plus30 foot bonus to your speed in all your movement modes, up to a maximum of double your original speed.
             \spelldur \durlong \dismissable
         \end{spelleffects}
     \end{spellcontent}
@@ -3723,9 +3691,6 @@
 \end{spellsection}
 
 \pdfbookmark[2]{M}{SpellDescriptionsM}
-\begin{comment}
-\subsubsection{M}
-\end{comment}
 
 \begin{spellsection}{Mage Armor}{1}
     \begin{spellheader}
@@ -4110,9 +4075,6 @@
 \end{spellsection}
 
 \pdfbookmark[2]{O-P}{SpellDescriptionsO-P}
-\begin{comment}
-\subsubsection{O-P}
-\end{comment}
 
 \begin{spellsection}{Order's Wrath}{3}
     \begin{spellheader}
@@ -4598,9 +4560,6 @@
 \end{spellsection}
 
 \pdfbookmark[2]{Q-R}{SpellDescriptionsQR}
-\begin{comment}
-\subsubsection{Q-R}
-\end{comment}
 
 \begin{spellsection}{Read Mind}{3}
     \begin{spellheader}
@@ -4779,7 +4738,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spellspecial Choose a type of energy (acid, cold, electricity, fire).
-            \spelleffect The target gains damage reduction against the chosen energy type. The value of the damage reduced each round is equal to 4 \add 1 per caster level above 2nd.
+            \spelleffect The target gains damage reduction against the chosen energy type equal to twice your caster level.
             \spelldur \durpersonallong
         \end{spelleffects}
     \end{spellcontent}
@@ -4797,7 +4756,7 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{Touch}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target gains damage reduction against all energy types (acid, cold, electricity, fire). The value of the damage reduced each round is equal to 12 \add 1 per caster level above 6th.
+            \spelleffect The target gains damage reduction against all energy types (acid, cold, electricity, fire) equal to twice your caster level.
             \spelldur \durpersonallong
         \end{spelleffects}
     \end{spellcontent}
@@ -4815,7 +4774,9 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target gains physical damage reduction, reducing the physical damage it takes each round by 8 \add 1 per two caster levels above 8th. If it takes life damage, it cannot use its damage reduction for 1 round. In addition, any creature within \rngmed range of the target that deals damage to it takes life damage equal to the damage resisted by this damage reduction.
+            \spelleffect The target gains damage reduction against physical damage equal to your caster level. Life damage ignores this damage reduction and negates it for 1 round.
+            
+            \par Any creature within \rngmed range of the target that deals damage to it takes life damage equal to the damage resisted by this damage reduction.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
@@ -4948,7 +4909,7 @@
             \spelltgt{You}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spellsuccess You become larger, as \spell{enlarge person}. In addition, you gain physical damage reduction, reducing the physical damage you take each round by 12 \add 1 per caster level above 12th. This damage reduction is overcome by evil attacks if you are good or neutral, and by good attacks if you are evil. If you are hit by an appropriately aligned attack, you cannot use your damage reduction for 1 round.
+            \spellsuccess You become larger, as \spell{enlarge person}. In addition, you gain damage reduction against physical damage equal to your caster level. Appropriately aligned damage ignores this damage reduction and negates it for 1 round. Evil attacks fldkjsfsdklf damage reduction is overcome by evil attacks if you are good or neutral, and by good attacks if you are evil. If you are hit by an appropriately aligned attack, you cannot use your damage reduction for 1 round.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
@@ -4959,9 +4920,6 @@
 \end{spellsection}
 
 \pdfbookmark[2]{S}{SpellDescriptionsS}
-\begin{comment}
-\subsubsection{S}
-\end{comment}
 
 \begin{spellsection}{Sanctuary}{1}
     \begin{spellheader}
@@ -5320,7 +5278,7 @@
     \begin{spellfooter}
         \spellinfo{Illus (Figment) [Unreal]}{Illus}
         \spellsr{No}
-        \spellnotes Creatures can recognize the figment as unreal by interacting with it physically, or by making a Perception check against a DC equal to 10 \add half your caster level \add your casting attribute. A creature gets a \plus10 bonus on this Perception check when using senses which should be present in the figment, but which are missing.
+        \spellnotes Creatures can recognize the figment as unreal by interacting with it physically, or by making a Awareness check against a DC equal to 10 \add half your caster level \add your casting attribute. A creature gets a \plus10 bonus on this Awareness check when using senses which should be present in the figment, but which are missing.
 
         A creature faced with definitive proof that the figment is unreal can disbelieve it, treating it as if it were not there.
     \end{spellfooter}
@@ -6244,9 +6202,6 @@
 \end{spellsection}
 
 \pdfbookmark[2]{T}{SpellDescriptionsT}
-\begin{comment}
-\subsubsection{T}
-\end{comment}
 
 \begin{spellsection}{Telepathy}{5}
     \begin{spellheader}
@@ -6427,7 +6382,7 @@
             \spelltwocol{\spelltime{1 swift action}}{\spellcmp{Verbal only}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target's next physical attack gains a \plus20 enhancement bonus, and ignores all miss chances. 
+            \spelleffect The target's next physical attack gains a \plus20 bonus, and ignores all miss chances. 
             \spelldur 1 round or until discharged
         \end{spelleffects}
     \end{spellcontent}
@@ -6439,9 +6394,6 @@
 \end{spellsection}
 
 \pdfbookmark[2]{U-Z}{SpellDescriptionsU-Z}
-\begin{comment}
-\subsubsection{U-Z}
-\end{comment}
 
 \begin{spellsection}{Unholy Aura}{8}
     \begin{spellheader}
@@ -6761,7 +6713,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Waves of Fatigue}[Lesser]4}
+\begin{spellsection}{Waves of Fatigue}[Lesser]{4}
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
