@@ -106,7 +106,9 @@ You can make a number of attacks of opportunity each round equal to 1 \add half 
 
 \parhead{Move} As a move action, you can move up to your speed.
 \parhead{Stand Up} As a move action, you can stand up from being prone. For most creatures, this requires using a hand to help get up.
-\parhead{Withdraw}\label{Withdraw} As a move action, you can move up to half your speed. Before you do so, you can designate one creature who threatens you. This movement does not provoke attacks of opportunity from that creature. If you can make multiple attacks from a high base attack bonus, you can ignore one additional opponent of your choice per attack you can make.
+\parhead{Follow} As a move action, you can designate a target creature or object to follow, and the maximum distance you want to follow at. When you do, you immediately move such that your distance to the target is no greater than your desired follow distance. For the rest of the round, whenever that creature or object moves, you move with it to stay within that follow distance. You can follow the target as far as your movement speed allows; if the target continues beyond that point, you remain stationary where your movement ended.
+\parhead{Withdraw} As a move action, you can designate a target creature or object to withdraw from, and the minimum distance you want to maintain between you and the creature. This functions like following the creature, except that you specify a minimum distance between you and the target instead of a maximum distance.
+
 \parhead{Charge}\label{Charge} As a full-round action, you can move up to your speed in both the movement and action phase, and make a single attack with a \plus2 bonus to hit at the end of your charge. When you charge, you take a \minus2 penalty to physical defenses until the end of the round.
 \par You must move at least 20 feet to gain the benefit of a charge, and all movement must be in a single straight line. If there are any obstacles in your path which hinder your movement, you cannot charge. If your charge fails or becomes invalid partway through, you move as far as you can and stop.
 
@@ -114,6 +116,8 @@ You can make a number of attacks of opportunity each round equal to 1 \add half 
 \parhead{Struggle} As a full-round action, you can move five feet, regardless of movement penalties. You can use this to move even if your speed is decreased below five feet by penalties.
 
 \subsection{Movement Impediments}
+
+\subsubsection{Threatening Foes}
 
 \subsubsection{Difficult Terrain}
 Some terrain is hard to move through, like thick bushes or a swamp. If a square is difficult terrain, it doubles the movement cost required to move through the square. That generally means it takes ten feet of movement, or fifteen feet if you are moving diagonally. If a square is considered difficult terrain for multiple reasons, the cost increases stack. For example, a square in a swamp that also has thick bushes blocking your passage would take twenty feet of movement, or thirty feet to move diagonally!
