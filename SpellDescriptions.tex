@@ -57,7 +57,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Magic vs. Reflex}
-                \spellsuccess 2d6 acid damage immediately, and 2d6 acid damage at the end of the next round. The initial and secondary damage increases by 1d6 per 4 caster levels above 4th.
+                \spellsuccess 1d6 acid damage per caster level immediately, and again at the end of the next round.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -74,15 +74,7 @@
         \spelldesc{You fire a magical arrow of acid from your hand that speeds to its target.}
     \end{spellheader}
     \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngfar}}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Magic vs. Reflex and Fortitude}
-                \spellsuccess[Reflex] 5d6 acid damage immediately, and 5d6 acid damage at the end of the next round. The initial and secondary damage increases by 1d6 per 4 caster levels above 10th.
-                \spellsuccess[Reflex and Fortitude] As above, and target is \staggered for 1 round each time it takes damage from this spell.
-            \end{spellattack}
-        \end{spelleffects}
+        \spellspecial This spell functions like \spell{acid arrow}, except that the target is \staggered for 1 round each time it takes damage.
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Acid, Creation, Physical]}{Arcane}
@@ -151,7 +143,7 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{Touch}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target gains 12 temporary hit points \add 1 per caster level above 6th. In addition, it is immune to fear effects.
+            \spelleffect The target gains temporary hit points equal to your caster level. In addition, it is immune to fear effects.
             \spelldur \durpersonallong
         \end{spelleffects}
     \end{spellcontent}
@@ -253,7 +245,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Magic vs. Fortitude}
-                \spellsuccess 9d10 life damage \add d10 per four caster levels above 18th. If the target has no hit points remaining, it immediately dies, and you are transformed to mimic its appearance for 12 hours. This grants you a \plus10 bonus on Disguise checks made to appear as that creature.
+                \spellsuccess 1d10 life damage per two caster levels. If the target has no hit points remaining, it immediately dies, and you are transformed to mimic its appearance for 12 hours. This grants you a \plus10 bonus on Disguise checks made to appear as that creature.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
             \spelldur \durext; see text
@@ -297,7 +289,7 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The next time the target takes damage, it takes an additional 1d10 divine damage \add d10 per four caster levels above 2nd.
+            \spelleffect The next time the target takes damage, it takes an additional 1d10 divine damage per two caster levels.
 
             \spelldur \durshort or until discharged \dismissable
         \end{spelleffects}
@@ -316,7 +308,7 @@
             \spelltwocol{\spelltgts{Up to five creatures}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The next time the target takes damage, it takes an additional 4d6 divine damage \add d6 per four caster levels above 8th.
+            \spelleffect The next time the target takes damage, it takes an additional 1d6 divine damage per two caster levels.
             \spelldur \durshort or until discharged \dismissable
         \end{spelleffects}
     \end{spellcontent}
@@ -1249,7 +1241,7 @@
             \begin{spellattack}{Magic vs. Fortitude}
                 \spellsuccess \spelldamage{6}{life}. In addition, for 5 rounds, the target automatically dies if it has no hit points remaining.
 
-                If the target dies in this way, you gain 12 temporary hit points \add 1 per caster level above 6th. These temporary hit points last for 1 round per level the target had.
+                If the target dies in this way, you gain temporary hit points equal to your caster level. These temporary hit points last for 1 round per level the target had.
 
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
@@ -1933,7 +1925,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Caster level \add casting attribute vs. Armor defense}
-                \spellsuccess 2d6 piercing damage \add d6 per two caster levels above 2nd.
+                \spellsuccess 1d6 piercing damage per caster level.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -1952,7 +1944,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Caster level \add casting attribute vs. Armor defense}
-                \spellsuccess 8d6 piercing damage \add d6 per two caster levels above 8th.
+                \spellsuccess 1d6 piercing damage per two caster levels.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -2873,7 +2865,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Magic vs. Fortitude}
-                \spelleffect If the target is undead, it is healed for 6d10 damage \add d10 per four caster levels above 12th.
+                \spelleffect If the target is undead, it is healed for 1d10 damage per two caster levels.
                 \spellsuccess If the target is not undead, it takes that much negative energy damage, as well as four points of Constitution damage.
                 \spellfailure As above, but both the negative energy damage and constitution damage is halved.
             \end{spellattack}
@@ -2970,7 +2962,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Magic vs. Will}
                 \spellspecial This attack succeeds automatically against unattended objects.
-                \spellsuccess The target and everything touching it takes 2d6 fire damage immediately, and 2d6 fire damage at the end of the next round. The initial and secondary damage increases by 1d6 per 4 caster levels above 4th.
+                \spellsuccess The target and everything touching it takes 1d6 fire damage per two caster levels immediately, and again at the end of the next round.
 
                 A creature wearing or holding the target object is \dazed each round it takes damage from the object.
             \end{spellattack}
@@ -2991,7 +2983,7 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target becomes immune to fear and gains 16 temporary hit points \add 1 per caster level above 8th. In addition, it gains a legend point for attacks.
+            \spelleffect The target becomes immune to fear and gains temporary hit points equal to your caster level. In addition, it gains a legend point for attacks.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
@@ -3008,7 +3000,7 @@
             \spelltwocol{\spelltgts{Up to five creatures}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spellspecial This spell functions as \spell{heroism}, except that it affects multiple targets, and each target gains 32 temporary hit points \add 1 per caster level above 16th.
+            \spellspecial This spell functions as \spell{heroism}, except that it affects multiple targets, and each target gains temporary hit points equal to your caster level.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -3616,7 +3608,7 @@
             \spelltwocol{\spelltgts{Any number of creatures}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spellspecial You create three missiles \add one missile per four caster levels above 6th. Each missile can deal d10 force damage to a single creature.
+            \spellspecial You create one missile per two caster levels. Each missile can deal d10 force damage to a single creature.
 
             Any missiles you do not explicitly target will automatically strike a living creature within the area. The missiles are able to unerringly strike creatures you cannot see or are not aware of, including invisible or concealed creatures. You can direct the missiles to avoid specific targets, allowing you to strike a hidden foe among your allies.
             \spelleffect The target is struck by as many missiles as you choose.
@@ -3920,7 +3912,7 @@
             \spelltgt{You}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect You gain two images \add one per four caster levels above 2nd. As long as you have images remaining, targeted attacks against you have a 50\% miss chance. If you run out of images, the spell is expended.
+            \spelleffect You gain one image per two caster levels. As long as you have images remaining, targeted attacks against you have a 50\% miss chance. If you run out of images, the spell is expended.
             \spelldur \durshort or until expended \dismissable
         \end{spelleffects}
     \end{spellcontent}
@@ -4643,7 +4635,7 @@
             \spelltwocol{\spelltgt{One living creature}}{\spellrng{Touch}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect At the end of every round, the target regains 2 hit points \add 1 per two caster levels above 2nd.
+            \spelleffect At the end of every round, the target regains one hit point per caster level.
             \spelldur 5 rounds.
         \end{spelleffects}
     \end{spellcontent}
@@ -4661,7 +4653,7 @@
             \spelltwocol{\spelltgt{One living creature}}{\spellrng{Touch}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect At the end of every round, the target regains 14 hit points \add 1 per two caster levels above 14th. In addition, the target is immune to being sickened, nauseated, staggered, or poisoned.
+            \spelleffect At the end of every round, the target regains one hit point per caster level. In addition, the target is immune to being sickened, nauseated, staggered, or poisoned.
 
             \par You can also use this spell to regrow lost portions of the target's body and to reattach severed limbs or body parts, if both you and the target do nothing but concentrate on regrowing the lost body part or reattaching the severed limb for the spell's duration.
             \spelldur 5 rounds.
@@ -4944,7 +4936,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Magic vs. Reflex}
-                \spellsuccess 3d10 divine damage \add d10 per four caster levels above 6th.
+                \spellsuccess \spelldmg{3}{divine}.
                 \spellfailure As above, but half damage.
                 \spelleffect If the target is undead or particularly vulnerable to bright light, it is also \dazzled for 5 rounds.
             \end{spellattack}
@@ -5444,7 +5436,7 @@
         \begin{spelleffects}
             \spelleffect Whenever a creature targets you with a spell or spell-like ability, it targets itself instead. If the spell affects multiple targets, the other targets are affected normally. If the caster is not a valid target, the spell simply has no effect on you.
 
-            After three spells have been reflected in this way, the spell ends. You can reflect one additional spell per 7 caster levels above 14th.
+            After you reflect one spell per five caster levels, the spell ends.
             \spelldur \durlong or until expended
         \end{spelleffects}
     \end{spellcontent}
@@ -5535,7 +5527,7 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{Touch}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target gains physical damage reduction, reducing the damage it takes each round from physical attacks by 8 \add 1 per two caster levels above 8th. If it is hit by an adamantine weapon, it cannot use its damage reduction for 1 round.
+            \spelleffect The target gains damage reduction against physical damage equal to half your caster level. Adamantine weapons ignore this damage reduction and negate it for 1 round.
             \spelldur \durpersonallong
         \end{spelleffects}
     \end{spellcontent}
@@ -6413,7 +6405,7 @@
             \spelltgt{You}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect You gain 8 temporary hit points \add 1 per two caster levels above 4th. If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
+            \spelleffect You gain temporary hit points equal to your caster level. If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
 
             In addition, you are treated as being undead for the purpose of spells or abilities which affect undead. This can cause some unintelligent undead, such as skeletons and zombies, to avoid attacking you.
             \spelldur \durlong
@@ -6754,7 +6746,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Magic vs. Fortitude}
                 \begin{spellmargin}
-                    \spellsuccess 5d10 bludgeoning damage \add d10 per four caster levels above 10th.
+                    \spellsuccess \spelldmg{5}{bludgeoning}.
                     \spellfailure Half damage.
                 \end{spellmargin}
                 \spellatk Caster level \add casting attribute \add 12 vs. Maneuver defense (shove)
