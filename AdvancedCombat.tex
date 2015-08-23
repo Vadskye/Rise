@@ -16,21 +16,18 @@ If your base attack bonus is \plus6 or higher, you can make multiple attacks as 
     \end{tabularx}
 \end{dtable}
 
-Some special abilities, such as the \spell{haste} spell, also grant you the ability to make multiple attacks. In all cases, making multiple attacks requires using a standard action to make a standard attack. You cannot take multiple attacks on an attack of opportunity. Additionally, any penalties imposed by taking multiple attacks do not affect any other attacks you make, such as attacks of opportunity.
-
+Some special abilities, such as the \spell{haste} spell, also grant you the ability to make multiple attacks. In all cases, making multiple attacks requires using a standard action to make a standard attack. Additionally, any penalties imposed by taking multiple attacks do not affect any other attacks you make.
 
 \subsection{Special Attacks}
 
 \subsubsection{Feint}\label{Feint}
-Instead of striking to deal damage, you can feint to leave your foe off-balance. You make an attack with a melee weapon as normal, except that you target the creature's Reflex defense instead of its Armor defense. Success means you deal no damage, but you gain a \plus4 bonus to physical attacks against the creature for 1 round. If you fail by 10 or more, you provoke an attack of opportunity from the creature.
+Instead of striking to deal damage, you can feint to leave your foe off-balance. You make an attack with a melee weapon as normal, except that you target the creature's Reflex defense instead of its Armor defense. Success means you deal no damage, but you gain a \plus5 bonus to physical attacks against the creature for 1 round.
 
 \subsubsection{Touch Attacks}\label{Touch Attacks}
 Instead of striking to deal damage, you can try to just touch your opponent. \meh{This is usually done to channel spells that require touching a creature.} Touch attacks target Reflex defense instead of Armor defense.
 
 \subsection{Combat Maneuvers}\label{Combat Maneuvers}
 A combat maneuver is an attempt to physically hinder your foe with your body, such as by shoving or tripping it. Unless otherwise noted, using a combat maneuver requires a free hand and replaces a physical attack made during a standard attack. You make an attack against a creature within your reach, adding your maneuver modifier to the roll instead of your attack modifier. If your result equals or exceeds your foe's Maneuver defense, your attack hits, and your foe is affected by the maneuver.
-
-You cannot perform a combat maneuver on an attack of opportunity.
 
 \begin{dtable}
     \lcaption{Combat Maneuvers}
@@ -78,36 +75,17 @@ Usually, when you are attacked, the attacker has to make an attack roll against 
     \item Will defense: Your Will defense protects you from attacks you have to mentally endure or resist, such as terrifying creatures and magical manipulation. Will defense is a special defense.
 \end{itemize}
 
-\subsection{Attacks of Opportunity}\label{Attacks of Opportunity}
-Sometimes a combatant in a melee lets her guard down. In this case, combatants near her can take advantage of her lapse in defense to attack her for free. These free attacks are called attacks of opportunity.
-
-\subsubsection{Provoking Attacks of Opportunity}
-You can provoke attacks of opportunity in two ways.
-
-\parhead{Being Defenseless}\label{Being Defenseless} Whenever you take an action, if you are unable to defend yourself at any point during the action, you provoke an attack of opportunity. You can be defenseless for several reasons. Some examples are given below.
-
-\begin{itemize}
-    \item If you can't use a weapon or shield to defend yourself, you are defenseless. This can happen if you are trying to wield a heavy weapon in one hand, if you aren't proficient with your only weapon, or if you have no weapons at all. 
-    \item If you are busy doing something else that requires your full attention (such as casting a spell), you are defenseless.
-\end{itemize}
-
-\parhead{Leaving the Battle} You provoke an attack of opportunity if you move farther away from an opponent who threatens you. This can be mitigated with the withdraw action, which allows you to avoid provoking from specific opponents (see \pcref{Withdraw}).
-
-\parhead{Forced Movement} You never provoke attacks of opportunity for movement you didn't take intentionally, such as from a shove (see \pcref{Shove}).
-
-\subsubsection{Taking Attacks of Opportunity}
-If a creature within your threatened area provokes an attack of opportunity, you can immediately make a single melee attack against that creature. The attack of opportunity ``interrupts'' anything else the creature was been doing. The creature can continue its turn after your attack of opportunity is resolved.
-
-You can make a number of attacks of opportunity each round equal to 1 \add half your Dexterity, but never more than one per round against a particular creature. You don't have to make an attack of opportunity if you don't want to.
-
 \section{Movement and Positioning}
 
 \subsection{Special Move Actions}
 
 \parhead{Move} As a move action, you can move up to your speed.
 \parhead{Stand Up} As a move action, you can stand up from being prone. For most creatures, this requires using a hand to help get up.
-\parhead{Follow} As a move action, you can designate a target creature or object to follow, and the maximum distance you want to follow at. When you do, you immediately move such that your distance to the target is no greater than your desired follow distance. For the rest of the round, whenever that creature or object moves, you move with it to stay within that follow distance. You can follow the target as far as your movement speed allows; if the target continues beyond that point, you remain stationary where your movement ended.
+\parhead{Follow} As a move action, you can designate a target creature or object to follow, and the maximum distance you want to follow at. When you do, you immediately move such that your distance to the target is no greater than your desired follow distance. For the rest of the round, whenever that creature or object moves, you move with it to stay within that follow distance.
+
+You can follow the target as far as your movement speed allows; if the target continues beyond that point, you remain stationary where your movement ended. If the target takes an action that makes it impossible to follow, such as teleporting or using certain abilities, you cannot follow it for the rest of the round.
 \parhead{Withdraw} As a move action, you can designate a target creature or object to withdraw from, and the minimum distance you want to maintain between you and the creature. This functions like following the creature, except that you specify a minimum distance between you and the target instead of a maximum distance.
+\parhead{Block} As a move action, you can remain stationary to block the movement of nearby foes. You are \immobilized for the rest of the round, but all squares you threaten are considered \difficultterrain.
 
 \parhead{Charge}\label{Charge} As a full-round action, you can move up to your speed in both the movement and action phase, and make a single attack with a \plus2 bonus to hit at the end of your charge. When you charge, you take a \minus2 penalty to physical defenses until the end of the round.
 \par You must move at least 20 feet to gain the benefit of a charge, and all movement must be in a single straight line. If there are any obstacles in your path which hinder your movement, you cannot charge. If your charge fails or becomes invalid partway through, you move as far as you can and stop.
@@ -172,7 +150,7 @@ While in the air, a creature with a glide speed can control its fall as a move a
         Squeezing through a space & \minus4 \\
         Vulnerable & \minus2 \\
     \end{tabularx}
-    1 The defender is defenseless, causing it to provoke attacks of opportunity for all its actions. \\
+    1 The defender is \defenseless. \\
     2 Most ranged weapons can't be used while the attacker is prone, but you can use a crossbow or shuriken while prone at no penalty.
 \end{dtable}
 
@@ -199,7 +177,7 @@ While in the air, a creature with a glide speed can control its fall as a move a
         Total defense & \plus4 \\
         Vulnerable & \minus2 \\
     \end{tabularx}
-    1 The defender is defenseless, causing it to provoke attacks of opportunity for all its actions. \\
+    1 The defender is \defenseless. \\
     2 Treat as a bonus against ranged attacks, instead of a penalty \\
     3 The defender's physical defenses are equal to 10 \add size modifier. \\
     4 The creature suffers a penalty equal to the number of creatures threatening it. \\
@@ -246,7 +224,6 @@ If the obstacle is active and mobile, such as a creature or tree branches blowin
 If the obstacle is stationary, such as a tree trunk or wall, the defender has passive cover. A creature with passive cover relative to you has a \plus4 bonus to physical defenses.
 
 \parhead{Small Obstacles} A low obstacle (such as a wall no higher than half your height) provides passive cover, but only to creatures within 30 feet (6 squares) of it. The attacker can ignore the cover if he's closer to the obstacle than his target. If two creatures are equally distant from the wall, it grants cover to both of them.
-\parhead{Attacks of Opportunity} You can't execute an attack of opportunity against an opponent with passive cover relative to you.
 \parhead{Stealth Checks} You can use passive cover to make a Stealth check to hide, but not active cover.
 \parhead{Total Cover} If you don't have line of effect to your target, he is considered to have total cover from you. You can't make an attack against a target that has total cover.
 
@@ -293,7 +270,7 @@ A helpless creature is completely at an opponent's mercy. Its physical defenses 
 
 \parhead{Coup de Grace}\label{Coup de Grace} As a full-round action, you can deliver a coup de grace to a helpless opponent adjacent to you. You automatically hit with your weapon and score a critical hit. If the damage exceeds the struck creature's Fortitude defense, it immediately dies.
 
-Delivering a coup de grace requires focused concentration and methodical action. This leaves you defenseless, causing you to provoke attacks of opportunity. If you take damage in excess of your Fortitude defense while delivering a coup de grace, your attempt fails.
+Delivering a coup de grace requires focused concentration and methodical action. This leaves you \defenseless. If you take damage in excess of your Fortitude defense while delivering a coup de grace, your attempt fails.
 
 A coup de grace attempt requires physical contact, which alerts your target to your action during the movement phase. If your target stops being helpless during your coup de grace attempt for any reason, the attempt automatically fails.
 
@@ -301,8 +278,6 @@ You can't deliver a coup de grace against a creature that is immune to critical 
 
 \subsection{Invisibility}
 If it is impossible to see your target, you can't attack him normally. However, you can attack a square that you think he occupies. An attack into a square occupied by an invisible enemy has a 50\% miss chance. If an adjacent invisible creature strikes you, you can automatically identify the square he occupied when he struck you.
-
-You can't execute an attack of opportunity against an invisible opponent, even if you know what square or squares the opponent occupies.
 
 \subsection{Surprise Attacks}\label{Surprise Attacks}
 Sometimes, creatures are not aware that combat is taking place when the combat starts. This most commonly happens with ambushes. Any creature that is not aware of the combat continues taking whatever actions it would normally be taking until it becomes aware of the combat. It is \condition{unaware} until that point.
@@ -328,7 +303,7 @@ If you double any in-game value twice, it becomes three times as large. An addit
 \subsubsection{Very Small Creatures}
 \parhead{Space} If a creature takes up less than a single square of space, you can fit multiple creatures in that square. You can fit four Tiny creatures in a square, twenty-five Diminuitive creatures, or 100 Fine creatures.
 
-\parhead{Reach} Creatures that take up less than 1 square of space typically have a natural reach of 0 feet, meaning they can't reach into adjacent squares. They must enter an opponent's square to attack in melee. This provokes an attack of opportunity from the opponent. You can attack into your own square if you need to, so you can attack such creatures normally. Since they have no natural reach, they do not threaten the squares around them, allowing you to move past them without provoking attacks of opportunity.
+\parhead{Reach} Creatures that take up less than 1 square of space typically have a natural reach of 0 feet, meaning they can't reach into adjacent squares. They must enter an opponent's square to attack in melee. You can attack into your own square if you need to, so you can attack such creatures normally. Since they have no natural reach, they do not threaten the squares around them.
 
 If a creature without a natural reach uses a reach weapon, it gains no benefits or penalties.
 
