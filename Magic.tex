@@ -101,8 +101,6 @@ Spells also fail if your concentration is broken and might fail if you're wearin
 Once you know which creatures (or objects or areas) are affected, you can apply whatever results a spell entails.
 
 \subsection{Special Spell Effects}
-Many special spell effects are handled according to the school or subschool of the
-spells in question. Certain other special spell features are found across spell schools.
 
 \parhead{Attacks} Some spell descriptions refer to attacking. All offensive combat actions and special abilities, even those that don't damage opponents, are considered attacks. All spells that affect any unwilling creatures are considered attacks. If all creatures affected by a spell are willing, the spell is not considered an attack. Spells that damage objects or summon allies are not attacks because the spells themselves don't harm anyone.
 
@@ -143,6 +141,12 @@ Spells that provide bonuses or penalties usually do not stack with themselves. M
 
 As a swift action, you can dismiss any spells you cast that has lasting effects. This requires the same casting components (verbal and somatic) as casting the spell normally. The effects of a dismissed spell immediately end.
 
+\subsection{Valid Target Locations}
+
+\parhead{Midair Locations} A creature or object brought into being or transported to your location by a spell cannot appear floating in an empty space. It must arrive in an open location on a surface capable of supporting it.
+
+\parhead{Targeting Inside Creatures} Creatures block line of effect to the inside of their own bodies. As a result, you cannot cast a spell that takes effect inside a creature unless you are also inside the creature. This restriction applies even if there is no physical barrier to the inside of the creature; you cannot detonate a \spell{fireball} inside a creature's mouth, even if it has its mouth open at the time.
+
 \section{Spell Descriptions}
 The description of each spell is presented in a standard format. Each category of information is explained and defined below.
 
@@ -152,122 +156,99 @@ The first line of every spell description gives the name by which the spell is g
 \subsection{Description}
 Beneath the spell name is a brief description of the spell's effect. This description has no mechanical significance, and simply describes how the spell usually appears or is used.
 
-\subsection{School/Schools (Subschool)}
-The next line describes the schools and subschools of magic that the spell belongs to. Almost every spell belongs to at least one of eight schools of magic. A school of magic is a group of related spells that work in similar ways. They are described below.
+\subsection{School/Schools}
+The next line describes the schools of magic that the spell belongs to. Almost every spell belongs to at least one of eight schools of magic. A school of magic is a group of related spells that work in similar ways. They are described below.
 
 Some spells belong to more than one school of magic. Treat these spells for all purposes as if they were a member of both schools simultaneously. If you are prohibited from casting spells from a certain school, you cannot cast a spell which belongs to that school, even if it also belongs to another school. Likewise, any benefits which apply to casting spells from a specific school apply normally. If you have abilities which apply when casting spells from both schools that make up a spell, the abilities do not stack.
 
 A small number of spells (\spell{limited wish}, \spell{permanency}, \spell{prestidigitation}, and \spell{wish}) are universal, belonging to no school.
 
 \subsubsection{Abjuration}
-Abjuration spells manipulate the raw essence of magic to protect allies or ward off foes. There are four subschools of abjuration spells.
-\parhead{Interdiction} An interdiction spell hedges out creatures or forces of an opposing alignment or type. \spellindirect{protection from evil}{Protection from evil} is an interdiction spell.
-\parhead{Negating} A negating spell negates magical effects. \spell{Dispel magic} is a negating spell.
-\parhead{Shielding} A shielding spell protects creatures or objects from harm. \spell{Shield} is a shielding spell.
-\parhead{Warding} A warding spell protects an area from intrusion. If one warding spell is active within 10 feet of another for 24 hours or more, the magical fields interfere with each other and create barely visible energy fluctuations. The DC to find such spells with the Perception skill drops by 4. The DC drops by an additional 2 for each additional warding spell beyond the second. \spellindirect{glyph of warding}{Glyph of warding} is a warding spell.
+Abjuration spells manipulate the raw essence of magic. They often protect allies or ward off foes. Many abjurations spells also belong to another school of magic.
 
 \subsubsection{Conjuration}
-Conjuration spells transport and create objects and creatures to aid you. A creature or object brought into being or transported to your location by a conjuration spell cannot appear inside another creature or object, nor can it appear floating in an empty space. It must arrive in an open location on a surface capable of supporting it. The creature or object must appear within the spell's range, but it does not have to remain within the range. There are three subschools of conjuration spells.
-\parhead{Creation} A creation spell manipulates matter to create an object or creature in the place the spellcaster designates (subject to the limits noted above). If the spell has a duration other than instantaneous, magic holds the creation together, and when the spell ends, the conjured creature or object vanishes without a trace. If the spell has an instantaneous duration, the created object or creature is merely assembled through magic. It lasts indefinitely and does not depend on magic for its existence. \spell{Acid arrow} is a creation spell.
-\parhead{Summoning} A summoning spell instantly brings a manifestation of a creature or object to a place you designate. When the spell ends or is dispelled, the manifestation disappears. A summoned creature also disappears if it is killed or if its hit points drop to 0 or lower. Because summoning spells do not physically transport the actual creature or object, even if the manifestation is injured or destroyed, the original is unharmed. However, it takes 24 hours for the manifestation to reform, during which time it can't be summoned again. Most summoning spells, including the \spell{summon monster} and \spell{summon nature's ally} spells, will automatically summon a different creature of the same type should this occur.
-\par When the spell that summoned a creature ends and the creature disappears, all the spells it has cast expire. A summoned creature cannot use any summoning abilities it may have.
-\par \spell{Summon monster I} is a summoning spell.
-\parhead{Translocation} A translocation spell transports one or more creatures or objects a great distance. The most powerful of these spells can cross planar boundaries. Unlike summoning spells, the transportation is (unless otherwise noted) one-way and not dispellable. Many translocation effects involve teleportation (see Descriptors, below). \spell{Dimension door} is a translocation spell.
+Conjuration spells transport and create objects and creatures to aid you. They can also transport you and your allies elsewhere.
 
 \subsubsection{Divination}
-Divination spells enable you to predict the future, gain or share knowledge, find hidden things, and foil deceptive spells. There are four subschools of divination spells.
-
-\parhead{Awareness} A awareness spell reveals objects, creatures, or effects within an area. Some awareness spells have cone-shaped areas. These move with you and extend in the direction you look. The cone defines the area that you can examine each round. If you study the same area for multiple rounds, you can often gain additional information, as noted in the descriptive text for the spell. \spellindirect{detect evil}{Detect evil} is an awareness spell.
-\parhead{Communication} A communication spell magically enhances communication between creatures, often by transcending linguistic barriers or distance. \spellindirect{comprehend languages}{Comprehend languages} is a communication spell.
-\parhead{Knowledge} A knowledge spell grants the recipient information. Most knowledge spells give knowledge about the present, but some can reveal information about the future as well. \spell{Augury} is a knowledge spell.
-\parhead{Scrying} A scrying spell creates an invisible magical sensor that sends you information. Unless noted otherwise, the sensor has the same powers of sensory acuity that you possess. This level of acuity includes any spells or effects that target you, but not spells or effects that emanate from you. However, the sensor is treated as a separate, independent sensory organ of yours, and thus it functions normally even if you have been blinded, deafened, or otherwise suffered sensory impairment.
-\par Any creature trained in Spellcraft can notice the sensor by making a DC 20 Spellcraft check. The sensor can be dispelled as if it were an active spell. Lead sheeting or magical protection blocks a scrying spell, and you sense that the spell is so blocked.
-\par \spell{Scrying} is a scrying spell.
+Divination spells enable you to predict the future, gain or share knowledge, find hidden things, and foil deceptive spells.
 
 \subsubsection{Enchantment}
-Enchantment spells affect the minds of others, influencing or controlling their behavior or mental capabilities. Almost all enchantment spells are mental spells. There are four subschools of enchantment spells.
-\parhead{Beguilement} A beguilement spell influences the subject's opinions. Beguilement spells are the most subtle form of mental control, and a creature affected by such a spell usually does not realize that it is being manipulated until after the spell wears off -- if it does at all. \spellindirect{charm person}{Charm person} is a beguilement spell.
-\parhead{Compulsion} A compulsion spell compels the subject to act in a particular way. Especially powerful compulsions can give you complete control over the subject. \spell{Sleep} is a compulsion spell.
-\parhead{Emotion} An emotion spell influences the subject's emotions. \spell{Attraction} is an emotion spell.
-\parhead{Inhibition} An inhibition spell prevents the subject's mind from working normally, typically preventing the target from acting. \spellindirect{hold person}{Hold person} is an inhibition spell.
+Enchantment spells affect the minds of others, influencing or controlling their behavior or mental capabilities. Almost all enchantment spells are Mental spells, and many of them are Subtle as well.
 
 \subsubsection{Evocation}
-Evocation spells create and manipulate energy and forces or tap into divine or other powers to produce a desired end. In effect, they create energy or effects, but not physical objects, out of nothing. Many of these spells produce spectacular effects, and evocation spells can deal large amounts of damage. There are three subschools of evocation spells.
-\parhead{Channeling} A channeling spell channels divine or other power. \spellindirect{holy smite}{Holy smite} is a channeling spell.
-\parhead{Control} A control spell manipulates forces and moves inanimate objects. Powerful control spells can manipulate forces on a large scale, even altering weather patterns. \spellindirect{gust of wind}{Gust of wind} is a control spell.
-\parhead{Energy} An energy spell creates or manipulates energy, such as fire or electricity. \spell{Fireball} is an energy spell.
+Evocation spells create and manipulate energy and forces or tap into divine or other powers to produce a desired end. In effect, they create energy or effects, but not physical objects, out of nothing. Many of these spells produce spectacular effects.
 
 \subsubsection{Illusion}
-Illusion spells deceive the senses of others. They conceal things that exist or cause people to perceive things that do not exist. There are four subschools of illusion spells.
-
-\parhead{Figment} A figment spell creates a false sensation. Those who perceive the figment perceive the same thing, not their own slightly different versions of the figment. (It is not a personalized mental impression.) Figments cannot make something seem to be something else. A figment that includes audible effects cannot duplicate intelligible speech unless the spell description specifically says it can. If intelligible speech is possible, it must be in a language you can speak. If you try to duplicate a language you cannot speak, the image produces gibberish, unless you prescribe exactly which sounds to make. Likewise, you cannot make a visual copy of something unless you know what it looks like.
-\par A figment's AC is equal to 10 \add its size modifier.
-\par \spell{Silent image} is a figment spell.
-\parhead{Glamer} A glamer spell changes a subject's sensory qualities, making it look, feel, taste, smell, or sound like something else, or even seem to disappear. \spell{Invisibility} is a glamer spell.
-\parhead{Phantasm} A phantasm spell manipulates the subject's senses to create images or sensations that are not real. It creates personalized sensations, and no one else can observe the effect. \spellindirect{phantasmal killer}{Phantasmal killer} is a phantasm spell.
-\parhead{Shadow} A shadow spell creates something that is partially real from extradimensional energy. Such illusions can have real effects. Damage dealt by a shadow illusion is real.
-
-\parhead{Unreal Effects} Some figments and glamers are unreal (see Descriptors, below), which means that they can be disbelieved.
+Illusion spells deceive the senses of others. They conceal things that exist or cause people to perceive things that do not exist.
 
 \subsubsection{Necromancy}
-Necromancy spells manipulate the power of life and death, as well as souls. Spells involving positive and negative energy belong to this school. There are four subschools of necromancy spells.
-
-\parhead{Flesh} A flesh spell affects the home of a creature's life energy: its body. Many flesh spells inflict or remove physical disabilities. \spell{Enfeeblement} is a flesh spell.
-\parhead{Life} A life spell manipulates a creature's life force directly. \spellindirect{crush life}{Crush life} is a life spell.
-\parhead{Soul} A soul spell manipulates the subject's soul, either restoring it to its proper place or fragmenting it for terrible purposes. \spellindirect{resurrection}{Resurrection} is a soul spell.
-\parhead{Vitalism} A vitalism spell channels positive or negative energy. This can be used to enhance or destroy a subject's life energy, or to manipulate creatures powered by negative energy. \spellindirect{cure light wounds}{Cure light wounds} is a vitalism spell.
+Necromancy spells manipulate the power of life and death, as well as souls. Spells involving positive and negative energy belong to this school.
 
 \subsubsection{Transmutation}
-Transmutation spells change the properties of creatures and objects. There are six subschools of transmutation spells.
-
-\parhead{Animation} An animation spell grants motion and a semblance of life to an affected object. \spellindirect{animate objects}{Animate objects} is an animation spell.
-\parhead{Alteration} An alteration spell changes the physical shape or state of anything with a material form. \spellindirect{shape stone}{Shape stone} is an alteration spell.
-\parhead{Augment} An augment spell enhances the existing physical or mental abilities of an object or creature. \spellindirect{totemic power}{Totemic power} is an augment spell.
-\parhead{Imbuement} An imbuement spell infuses an object or creature with magic, granting it new abilities. \spell{Fly} is an imbuement spell.
-\parhead{Polymorph} A polymorph spell changes a creature's body into a new form. \spellindirect{reduce person}{Reduce person} is a polymorph spell.
-\parhead{Temporal} A temporal spell manipulates time itself, speeding or slowing its passage for the subject. \spell{Haste} is a temporal spell.
+Transmutation spells change the properties of creatures and objects. They can grant new abilities, enhance existing abilities, change a target's form, or even alter the flow of time itself.
 
 \subsection{[Descriptor]}
-Appearing on the same line as the school and subschool, when applicable, is a descriptor that further categorizes the spell in some way. Some spells have more than one descriptor. The list of descriptors and their effects is given in \tref{Spell Descriptors}.
+Appearing on the same line as the school, when applicable, is a descriptor that further categorizes the spell in some way. Some spells have more than one descriptor. The list of descriptors and their effects is given in \tref{Spell Descriptors}.
 
 Many of these descriptors have no game effect by themselves, but they govern how the spell interacts with other spells, with special abilities, with unusual creatures, with alignment, and so on.
 
-\begin{dtable*}
-    \lcaption{Spell Descriptors}
-    \begin{tabularx}{\textwidth}{l X}
+{
+    \onecolumn
+    \taburowcolors [2] 2{tbrown .. white}
+    \begin{longtabu}{l X}
+        \lcaption{Spell Descriptors} \\
         \thead{Descriptor} & \thead{Effect} \\
         Acid & \x \\
         Air & The spell has effect in environments without air. \\
+        Alteration & \x \\
+        Antimagic & The spell attacks magic itself. It does not allow spell resistance. \\
         Auditory & Creatures that cannot hear the spell's effect are immune to the spell. \\
+        Augment & \x \\
         Barrier & If you attempt to move the spell's area towards a force or creature it prohibits, you feel a discernible pressure. If you continue moving, the spell ends. \\
         Charm & \x \\
         Chaotic & \x \\
         Cold & \x \\
+        Compulsion & The spell forcibly alters a creature's actions, but does not necessarily affect its opinions or personality. \\
+        Creation & The spell creates a physical object. \\
         Curse & The spell cannot be dispelled. It can be removed with \spell{break enchantment} or \spell{remove curse}. \\
-        Death & A creature killed by a death effect cannot be returned to life by \spell{lesser resurrection}. \\
+        Death & The spell only affects living creatures. A creature killed by a death effect cannot be returned to life by \spell{lesser resurrection}. \\
+        Delusion & The spell alters a creature's opinions or personality, but does not necessarily affect its actions. \\
         Detection & The spell's area can penetrate physical objects. Unless otherwise specified, it is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt. \\
         Disease & \x \\
         Earth & \x \\
         Electricity & \x \\
         Evil & \x \\
         Fear & \x \\
+        Figment & The spell creates a false sensation shared by everyone viewing or otherwise perceiving the figment. Figments cannot remove real sensations present in their area, but they can add additional false sensations. You can only create figments of sensations you understand; for example, you cannot create a figment which speaks in a language you do not understand.
+        \par A figment's physical defenses are equal to 10 \add its size modifier. \\
         Fire & The spell has no effect underwater. It provides light as a torch. \\
+        Flesh & The spell has no effect on creatures without flesh, such as ghosts or oozes. \\
         Fog & The spell has effect underwater. If at least 5 points of fire damage are dealt in a square within the spell's area, the fog is destroyed in that area. Unless otherwise specified, a moderate wind (11\add mph) disperses the fog in 5 rounds, and a strong wind (21\add mph) disperses the fog in 1 round. \\
         Force & If the spell is cast on the Material Plane, it also affects the Ethereal Plane. \\
+        Glamer & \x \\
         Good & \x \\
+        Instantaneous & The spell instantly causes some change which is thereafter nonmagical. It cannot be dispelled or dismissed. \\
         Lawful & \x \\
+        Life & The spell only affects living creatures. \\
         Light & The spell's effect is blocked by effects that block sight, and can pass through barriers that do not block sight. \\
         Mental & The spell has no effect on creatures with an Intelligence of \minus8 or lower. \\
         Morale & \x \\
         Negative & \x \\
+        Physical & The spell creates or modifies physical objects rather than using a direct magical effect. The spell does not allow spell resistance. \\
         Planar & \x \\
         Poison & \x \\
         Positive & \x \\
+        Scrying & The spell creates an invisible magical sensor that sends you information. Unless noted otherwise, the sensor has the same powers of sensory acuity that you possess. This level of acuity includes any spells or effects that target you, but not spells or effects that emanate from you. However, the sensor is treated as a separate, independent sensory organ of yours, and thus it functions normally even if you have been blinded, deafened, or otherwise suffered sensory impairment.
+        Any creature trained in Spellcraft can notice the sensor by making a DC 20 Spellcraft check. The sensor can be dispelled as if it were an active spell. Lead sheeting or magical protection blocks a scrying spell, and you sense that the spell is so blocked. \\
+        Shielding & \x \\
         Sizing & Multiple size increasing or size decreasing effects never stack. Opposing size modifications cancel each other out on one for one basis, and any remaining effect occurs normally. \\
         Sonic & \x \\
         Speech & The spell be cast using a specific language you know. The spell has no effect on targets that do not understand the language used. \\
         Subtle & \subtlespellnotes \\
+        Summoning & The spell manifests a creature from another plane. The manifestation immediately disappears when it dies, its hit points reach 0, or the spell's duration ends. Damage to the manifestation does not affect the original creature. Summoned creatures cannot use summoning abilities. Summoned creatures must be summoned within the spell's range, but can travel beyond that range freely. \\
+        Telekinesis & \x \\
         Teleportation & A teleported creature can bring along equipment and held objects as long as their weight doesn't exceed its maximum load. Any excess items are left behind, in order of their distance from the creature's body. \\
+        Temporal & \x \\
         Trap & The spell has no immediately obvious effect, but it can be detected with the Perception skill. Unless otherwise noted, it is also possible to disable the spell with the Devices skill before it triggers. The DC to detect and disable the spell is equal to 25 \add spell level.
         \par No more than one trap spell can be placed on the same object or in the same area. Only the first trap placed has any effect. It must be dispelled or discharged before any new traps can be placed. \\
         \label{Unreal Spells}Unreal & The spell can be recognized as unreal with a Perception check against a DC equal to 10 \add half your caster level \add your casting attribute. Creatures get a \plus10 bonus on this Perception check when using senses which should be present in the figment, but which are missing. Alternately, if the figment has a visual manifestation, physical contact can reveal it as unreal.
@@ -275,8 +256,9 @@ Many of these descriptors have no game effect by themselves, but they govern how
         A creature faced with definitive proof that the figment is unreal can disbelieve it, treating it as if it were not there. Its effects can still be observed if desired, but they are mere shadows of the full effect: visual effects appear translucent outlines, sounds can be heard as ghostly echoes, and so on. \\
         Visual & Creatures that cannot see the spell's effect are immune to the spell. \\
         Water & \x \\
-    \end{tabularx}
-\end{dtable*}
+    \end{longtabu}
+    \twocolumn
+}
 
 \subsection{Level}
 The next line of a spell description gives the spell's level, a number between 1 and 9 that defines the spell's relative power. This number is preceded by an abbreviation for the class whose members can cast the spell. The Level entry also indicates whether a spell is a domain spell and, if so, what its domain and its level as a domain spell are.
@@ -432,11 +414,11 @@ To beat a creature's defenses, you make a magic attack. Your magic attack bonus 
 \subsubsection{Not Resisting a Spell} A creature can voluntarily forego its defenses and willingly accept a spell's result. However, a character with a special resistance to magical effects cannot suppress that quality.
 
 \subsection{Spell Resistance}
-Spell resistance is like an additional defense against spells and spell-like abilities. Unless otherwise noted in a spell's description, all spells can be resisted by a creature or object with spell resistance.
+Spell resistance is like an additional defense against spells and spell-like abilities. When you cast a spell or use a spell-like ability that directly affects a creature or object with spell resistance, you must make a special attack with a bonus equal to your caster level. If that attack beats a target's spell resistance, the spell or spell-like ability works normally on that target. Otherwise, it has no effect on the target. This does not prevent the spell from having its normal effect on other creatures or objects.
 
-When you cast a spell or use a spell-like ability that affects a creature or object with spell resistance, you must make a special attack with a bonus equal to your caster level. If that attack beats a target's spell resistance, the spell or spell-like ability works normally on that target. Otherwise, it has no effect on the target. This does not prevent the spell from having its normal effect on other creatures or objects.
+Spells which do not directly affect targets, such as \spell{summon monster I} or \spell{silent image}, do not allow spell resistance. In addition, Antimagic and Physical spells do not allow spell resistance.
 
-Most creatures with spell resistance can willingly allow spells through their resistance if they desire. Some creatures cannot control their spell resistance, so an attack is always necessary to affect them. This is specified in the description of the creature's spell resistance.
+Normally, creatures with spell resistance can choose to allow spells through their resistance. Some creatures cannot control their spell resistance, so an attack is always necessary to affect them. This is specified in the description of the creature's spell resistance.
 
 \subsection{Effect}
 This portion of a spell description details what the spell does and how it works. If one of the previous entries in the description included ``see text,'' this is where the explanation is found. There are several key parts of a spell which are also contained here.
@@ -487,7 +469,7 @@ To decipher an magical writing (such as a single spell in written form on a scro
 Once a character deciphers a particular magical writing, she does not need to decipher it again. Deciphering a magical writing allows the reader to identify the spell and gives some idea of its effects (as explained in the spell description). If the magical writing was a scroll and the reader can cast spells of the appropriate type, she can attempt to use
 the scroll.
 
-\section{Special Abilities }
+\section{Special Abilities}
 
 \parhead{Spell-Like Abilities} Usually, a spell-like ability works just like the spell of that name. A few spell-like abilities are unique; these are explained in the text where they are described.
 
