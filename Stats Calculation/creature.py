@@ -113,11 +113,11 @@ def get_caster_level_progression_modifier(progression_type, level):
 
 def get_special_defense_progression_modifier(progression_type, level):
     if progression_type == 'good':
-        return level + 4
+        return level + 3
     elif progression_type == 'average':
-        return (level * 4) / 5 + 3
+        return (level * 3) / 4 + 3
     elif progression_type == 'poor':
-        return (level * 2) / 3 + 2
+        return (level * 1) / 2 + 1
     else:
         raise Exception("Unrecognized progression type {0}".format(progression_type))
 
@@ -336,6 +336,11 @@ class Creature(object):
         self.add_modifier('maneuver_defense', 'attribute_or_progression', lambda c: c.strength, update_static = False)
         self.add_modifier('maneuver_defense', 'size', lambda c: c.special_size_modifier, update_static = False)
 
+        #self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.constitution / 2) * c.level, update_static = False)
+        #self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.willpower / 2) * c.level, update_static = False)
+        self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.fortitude / 2) * c.level, update_static = False)
+        self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.willpower / 2) * c.level, update_static = False)
+
         self.add_modifier('physical_defenses', 'overwhelm', -2, update_static = False)
 
     def add_modifier(self, modifier_types, name, value, is_penalty = False, replace_existing = False, update_static = True):
@@ -406,7 +411,7 @@ class Creature(object):
         self._static_modifiers['physical defense attribute']   = self._calculate_physical_defense_attribute()
         if self.attack_mode in ('damage_spells', 'condition_spells'):
             dice_count = max(1, self.level / 2 + ((self.caster_level - self.level) / 4) - 1)
-            print "dice count", dice_count
+            #print "dice count", dice_count
             self.spell_attack_die = Dice(8, dice_count)
 
     def get_modifiers_as_dict(self, modifier_type):
@@ -498,12 +503,15 @@ class Creature(object):
             # natural armor is just a particular name of a bonus to armor_defense
             if progression_type == 'natural_armor':
                 self.set_modifier('armor_defense', 'natural_armor', value, update_static = False)
+            elif progression_type == 'hit_points':
+                pass
+                #self.set_modifier('hit_points', 'hit_value', value, update_static = False)
             else:
                 self.set_modifier(progression_type, 'attribute_or_progression', value, update_static = False)
 
     @property
     def hit_points(self):
-        return self.get_modifiers('hit_points') + ((self.constitution / 2) * self.level)
+        return self.get_modifiers('hit_points')
 
     @property
     def current_hit_points(self):

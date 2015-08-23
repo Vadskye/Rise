@@ -271,7 +271,7 @@ wizard:
   reflex: poor
   will: good
   hit_value: 4
-  attack_mode: condition_spells
+  attack_mode: damage_spells
   is_spellcaster: True
   variants:
     condition:
