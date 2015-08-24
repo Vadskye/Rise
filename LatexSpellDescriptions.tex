@@ -1,0 +1,861 @@
+\ExplSyntaxOn
+
+\newcommand{\tempderp}{''}
+
+\def\replace#1#2#3{%
+ \def\tmp##1#2{##1#3\tmp}%
+   \tmp#1\stopreplace#2\stopreplace}
+\def\stopreplace#1\stopreplace{}
+
+\DeclareDocumentCommand{\createspell}{m m o m}
+{
+    \DeclareDocumentCommand{#1}{s o}
+    {
+        \IfBooleanTF{##1}
+        {
+            \spellhead[##2]*{#2}[#3]~#4
+        }
+        {
+            \spellhead[##2]{#2}[#3]~#4
+        }
+    }
+}
+
+\newcommand{\makemacro}[2]
+{
+    \lowercase{
+        \expandafter
+        \newcommand\csname#1\endcsname
+    }{#1:~#2}
+}
+
+\ExplSyntaxOff
+
+\createspell{\SLablateimpact}{Ablate Impact}
+    {Immediately reduce damage from physical attacks.}
+\createspell{\SLablativeshield}{Ablative Shield}
+    {Immediately reduce damage from spells.}
+\createspell{\SLacidarrowgreater}{Acid Arrow}[Greater]
+    {Fling acid to deal lingering damage and stagger.}
+\createspell{\SLacidarrow}{Acid Arrow}
+    {Fling acid to deal lingering damage}
+\createspell{\SLacidfog}{Acid Fog}
+    {Acidic fog deals damage each round.}
+\createspell{\SLagony}{Agony}
+    {Creature suffers penalties due to debilitating pain.}
+\createspell{\SLaid}{Aid}
+    {Grant ally temporary hit points and immunity to fear.}
+\createspell{\SLairwalk}{Air Walk}
+    {Ally treads on air as if solid.}
+\createspell{\SLalignweapon}{Align Weapon}
+    {Weapon becomes \plus2 and chaotic.}
+\createspell{\SLalignweapon}{Align Weapon}
+    {Weapon becomes \plus2 and evil.}
+\createspell{\SLalignweapon}{Align Weapon}
+    {Weapon becomes \plus2 and good.}
+\createspell{\SLalignweapon}{Align Weapon}
+    {Weapon becomes \plus2 and lawful.}
+\createspell{\SLanimalgrowth}{Animal Growth}
+    {Enlarges multiple animals.}
+\createspell{\SLantilifeshell}{Antilife Shell}
+    {Zone blocks living creatures from entering.}
+\createspell{\SLantimagicfield}{Antimagic Field}
+    {Emanation negates magic.}
+\createspell{\SLaqueousblade}{Aqueous Blade}
+    {Weapon transforms to attack Reflex defense.}
+\createspell{\SLassimilate}{Assimilate}
+    {Foe is absorbed into your body.}
+\createspell{\SLassimilate}{Assimilate}
+    {Incorporate creature into your own body.}
+\createspell{\SLaversion}{Aversion}
+    {Compel creature to avoid something.}
+\createspell{\SLbane}{Bane}
+    {Foe is impaired.}
+\createspell{\SLbane}{Bane}
+    {Nearby enemies take \minus2 to attack.}
+\createspell{\SLbanishment}{Banishment}
+    {Banish multiple extraplanar creatures. }
+\createspell{\SLbarkskin}{Barkskin}
+    {Grants \plus2 bonus to AC and DR 2/adamantine.}
+\createspell{\SLbestowcurse}{Bestow Curse}
+    {\minus6 to an attribute score; \minus4 on attack rolls, saves, and checks; or 25\% chance of losing each action.}
+\createspell{\SLbestowcurse}{Bestow Curse}
+    {\minus6 to an attribute; \minus4 on attack rolls, saves, checks, and AC; or 25\% chance of losing each action.}
+\createspell{\SLblacktentacles}{Black Tentacles}
+    {Tentacles grapple all within small spread.}
+\createspell{\SLbladebarrier}{Blade Barrier}
+    {Wall of blades deals 6d6 damage.}
+\createspell{\SLblasphemy}{Blasphemy}
+    {Kills, paralyzes, nauseatees, or sickens nonevil subjects in large radius.}
+\createspell{\SLbless}{Bless}
+    {Nearby allies gain \plus2 to attack.}
+\createspell{\SLblindnessdeafness}{Blindness/Deafness}
+    {Creature is blinded or deafened.}
+\createspell{\SLblink}{Blink}
+    {You randomly vanish and reappear for short duration.}
+\createspell{\SLblur}{Blur}
+    {Subject is harder to see.}
+\createspell{\SLburninghands}{Burning Hands}
+    {1d6 fire damage in medium cone.}
+\createspell{\SLburninghands}{Burning Hands}
+    {1d6 fire damage in small cone.}
+\createspell{\SLcalllightninggreater}{Call Lightning}[Greater]
+    {As \spell{call lightning}, but 5d8 damage per bolt.}
+\createspell{\SLcalllightninggreater}{Call Lightning}[Greater]
+    {As call lightning, but 5d8 damage per bolt.}
+\createspell{\SLcalllightning}{Call Lightning}
+    {Calls down lightning bolts (3d8 per bolt) from sky.}
+\createspell{\SLcalmemotions}{Calm Emotions}
+    {Calms creatures, negating emotion effects.}
+\createspell{\SLchainlightning}{Chain Lightning}
+    {5d10 damage; secondary targets take half damage.}
+\createspell{\SLchangestaff}{Changestaff}
+    {Your staff becomes a treant on command.}
+\createspell{\SLchaoshammer}{Chaos Hammer}
+    {Bewilders, deals 8d6 damage to nonchaotic creature.}
+\createspell{\SLcharmmonster}{Charm Monster}
+    {Makes monster believe it is your ally.}
+\createspell{\SLcharmpersonmass}{Charm Person}[Mass]
+    {As \spell{charm person}, but affects multiple creatures.}
+\createspell{\SLcharmperson}{Charm Person}
+    {Makes one person your friend.}
+\createspell{\SLclenchedfist}{Clenched Fist}
+    {Large hand provides cover or attacks your foes.}
+\createspell{\SLcloakofchaos}{Cloak of Chaos}
+    {Protect multiple creatures against lawful foes. }
+\createspell{\SLcloakofchaos}{Cloak of Chaos}
+    {Protect multiple creatures against lawful foes.}
+\createspell{\SLcloudkill}{Cloudkill}
+    {Fog deals Con damage each round.}
+\createspell{\SLcolorspray}{Color Spray}
+    {Creatures in medium cone are bewildered.}
+\createspell{\SLcombattransformation}{Combat Transformation}
+    {You gain combat bonuses.}
+\createspell{\SLcommandmass}{Command}[Mass]
+    {As \spell{command}, but affects multiple creatures.}
+\createspell{\SLcommand}{Command}
+    {One subject obeys selected command for 1 round.}
+\createspell{\SLconeofcoldgreater}{Cone of Cold}[Greater]
+    {8d6 cold damage and fatigue in large cone.}
+\createspell{\SLconeofcold}{Cone of Cold}
+    {5d6 cold damage and fatigue in medium cone.}
+\createspell{\SLconfusionmass}{Confusion}[Mass]
+    {Multiple creatures act randomly.}
+\createspell{\SLconfusion}{Confusion}
+    {Subject acts randomly.}
+\createspell{\SLcontrolwater}{Control Water}
+    {Raises or lowers bodies of water.}
+\createspell{\SLcreatesound}{Create Sound}
+    {Figment sounds.}
+\createspell{\SLcreepingdoom}{Creeping Doom}
+    {Swarms of centipedes attack at your command.}
+\createspell{\SLcripple}{Cripple}
+    {Subject cannot use its limbs.}
+\createspell{\SLcrushingdespair}{Crushing Despair}
+    {Subjects in medium cone are demoralized.}
+\createspell{\SLcrushinghand}{Crushing Hand}
+    {Large hand provides cover or crushes your foes.}
+\createspell{\SLcurecriticalwoundsmass}{Cure Critical Wounds}[Mass]
+    {Cures 8d6 damage for many creatures.}
+\createspell{\SLcurecriticalwounds}{Cure Critical Wounds}
+    {Cures 6d6 damage.}
+\createspell{\SLcurecriticalwounds}{Cure Critical Wounds}
+    {Cures 6d8 damage.}
+\createspell{\SLcurelightwoundsmass}{Cure Light Wounds}[Mass]
+    {Cures 5d6 damage for many creatures.}
+\createspell{\SLcurelightwounds}{Cure Light Wounds}
+    {Cures 2d6 damage.}
+\createspell{\SLcuremoderatewoundsmass}{Cure Moderate Wounds}[Mass]
+    {Cures 6d6 damage for many creatures.}
+\createspell{\SLcuremoderatewounds}{Cure Moderate Wounds}
+    {Cures 4d6 damage.}
+\createspell{\SLcureseriouswoundsmass}{Cure Serious Wounds}[Mass]
+    {Cures 7d6 damage for many creatures.}
+\createspell{\SLcureseriouswounds}{Cure Serious Wounds}
+    {Cures 6d6 damage.}
+\createspell{\SLdancinglights}{Dancing Lights}
+    {Creates torches or other lights.}
+\createspell{\SLdarkvision}{Darkvision}
+    {See 60 ft. in total darkness.}
+\createspell{\SLdaylight}{Daylight}
+    {Large radius of bright light.}
+\createspell{\SLdeathknell}{Death Knell}
+    {Gain temporary HP when subject dies.}
+\createspell{\SLdeathknell}{Death Knell}
+    {Kill dying creature and gain temporary hp, more for killing powerful creatures.}
+\createspell{\SLdeathwardmass}{Death Ward}[Mass]
+    {As \spell{death ward}, but affects multiple creatures.}
+\createspell{\SLdeathward}{Death Ward}
+    {Grants immunity to death spells and negative energy effects.}
+\createspell{\SLdeepslumber}{Deep Slumber}
+    {Subject falls asleep for a long time.}
+\createspell{\SLdeflection}{Deflection}
+    {Gain \plus2 to physical defenses.}
+\createspell{\SLdelaydamage}{Delay Damage}
+    {Take half damage now and half later. }
+\createspell{\SLdelayedblastfireball}{Delayed Blast Fireball}
+    {6d6 fire damage in medium radius; you can postpone blast for 5 rounds.}
+\createspell{\SLdelaypoison}{Delay Poison}
+    {Quickly stops poison from harming subject.}
+\createspell{\SLdestruction}{Destruction}
+    {Kills subject and destroys remains.}
+\createspell{\SLdetectalignment}{Detect Alignment}
+    {Reveals creatures, spells, or objects of selected alignment.}
+\createspell{\SLdictum}{Dictum}
+    {Kills, paralyzes, stuns, or staggers nonlawful subjects in 40 ft. cube.}
+\createspell{\SLdimensionalanchor}{Dimensional Anchor}
+    {Bars extradimensional movement.}
+\createspell{\SLdimensiondoormass}{Dimension Door}[Mass]
+    {Teleport you and multiple allies within 1,000 feet.}
+\createspell{\SLdimensiondoor}{Dimension Door}
+    {Teleports you within 1,000 feet.}
+\createspell{\SLdimensionslide}{Dimension Slide}
+    {Teleports nearby creature short distance.}
+\createspell{\SLdiscernlies}{Discern Lies}
+    {Reveals deliberate falsehoods.}
+\createspell{\SLdiscernvulnerability}{Discern Vulnerability}
+    {Quickly find weaknesses in foe's defenses.}
+\createspell{\SLdiscordantsong}{Discordant Song}
+    {Confuse creatures with sustained music.}
+\createspell{\SLdisintegrate}{Disintegrate}
+    {Deals 12d8 damage, leaving only dust.}
+\createspell{\SLdismissal}{Dismissal}
+    {Forces a creature to return to native plane.}
+\createspell{\SLdispelmagicgreater}{Dispel Magic}[Greater]
+    {As dispel magic, but up to \plus20 on check.}
+\createspell{\SLdispelmagic}{Dispel Magic}
+    {Cancels magical spells and effects.}
+\createspell{\SLdispelmagic}{Dispel Magic}
+    {Cancels spells and magical effects.}
+\createspell{\SLdisplacement}{Displacement}
+    {Attacks miss subject 50\% of the time.}
+\createspell{\SLdisruptingweapon}{Disrupting Weapon}
+    {Melee weapon destroys undead.}
+\createspell{\SLdivinefavorgreater}{Divine Favor}[Greater]
+    {You gain \plus2 Str and attack and damage bonus.}
+\createspell{\SLdivinefavor}{Divine Favor}
+    {You gain \plus2 on attack and damage rolls.}
+\createspell{\SLdominatemonster}{Dominate Monster}
+    {As dominate person, but any creature.}
+\createspell{\SLdominateperson}{Dominate Person}
+    {Controls humanoid telepathically.}
+\createspell{\SLdrainlife}{Drain Life}
+    {Deals 10d6 damage and steals life.}
+\createspell{\SLearthenblade}{Earthen Blade}
+    {Create magical weapon from the ground.}
+\createspell{\SLearthglide}{Earth Glide}
+    {Creature glides through earth. }
+\createspell{\SLearthquake}{Earthquake}
+    {Intense tremor shakes large radius.}
+\createspell{\SLearthspikemass}{Earthspike}[Mass]
+    {Spikes from the ground impale multiple targets.}
+\createspell{\SLearthspike}{Earthspike}
+    {Spike from the ground deals damage. }
+\createspell{\SLearthspike}{Earthspike}
+    {Spike from the ground impales target.}
+\createspell{\SLearthspike}{Earthspike}
+    {[Mass] Spikes from the ground deal damage to multiple targets.}
+\createspell{\SLearthspull}{Earth's Pull}
+    {Subject feels gravity more strongly.}
+\createspell{\SLelementalswarm}{Elemental Swarm}
+    {Summons multiple elementals.}
+\createspell{\SLenergyconversion}{Energy Conversion}
+    {As \spell{greater resist energy}, plus you can fire rays of absorbed energy.}
+\createspell{\SLenergydrain}{Energy Drain}
+    {Subject gains six negative levels.}
+\createspell{\SLenervation}{Enervation}
+    {Inflict three negative levels.}
+\createspell{\SLenfeeblement}{Enfeeblement}
+    {Inflicts \minus4 penalty to physical attribute.}
+\createspell{\SLenfeeblement}{Enfeeblement}
+    {Target takes \minus4 to physical attribute.}
+\createspell{\SLenlargepersonmass}{Enlarge Person}[Mass]
+    {Multiple humanoid creatures double in size.}
+\createspell{\SLenlargeperson}{Enlarge Person}
+    {Humanoid creature doubles in size.}
+\createspell{\SLentangle}{Entangle}
+    {Plants entangle everyone in small spread.}
+\createspell{\SLentanglinggrowth}{Entangling Growth}
+    {New plants grow and entangle everyone in medium spread.}
+\createspell{\SLentropicshield}{Entropic Shield}
+    {Ranged attacks against subject have 50\% miss chance.}
+\createspell{\SLetherealjaunt}{Ethereal Jaunt}
+    {You become ethereal for short duration.}
+\createspell{\SLetherealness}{Etherealness}
+    {Travel to Ethereal Plane with companions.}
+\createspell{\SLexpeditiousretreat}{Expeditious Retreat}
+    {Your speed doubles.}
+\createspell{\SLfaeriefire}{Faerie Fire}
+    {Outlines subjects in small radius with light, canceling concealment, invisibility, and the like.}
+\createspell{\SLfalsereality}{False Reality}
+    {As \spell{persistent image}, but affects massive area.}
+\createspell{\SLfear}{Fear}
+    {Subjects within medium cone flee for short duration.}
+\createspell{\SLfeatherfall}{Feather Fall}
+    {Objects or creatures fall slowly.}
+\createspell{\SLfeeblemind}{Feeblemind}
+    {Subject's Intelligence drops to \minus9.}
+\createspell{\SLfingerofdeath}{Finger of Death}
+    {Kills one subject.}
+\createspell{\SLfireball}{Fireball}
+    {Small radius of fire deals 3d6 damage.}
+\createspell{\SLfireseeds}{Fire Seeds}
+    {Acorns and berries become grenades and bombs.}
+\createspell{\SLfireshield}{Fire Shield}
+    {Creatures attacking you take damage; you're protected from cold.}
+\createspell{\SLfireshield}{Fire Shield}
+    {Creatures attacking you take damage; you're protected from heat or cold.  \spellhead{Resist Energy}[Greater] As \spell{resist energy}, but all energy types.}
+\createspell{\SLfireshield}{Fire Shield}
+    {Creatures attacking you take damage; you're protected from heat or cold.}
+\createspell{\SLfirestorm}{Fire Storm}
+    {Deals 8d6 fire damage to enemies in large spread.}
+\createspell{\SLflameblade}{Flame Blade}
+    {Wield fire as scimitar.}
+\createspell{\SLflamestrike}{Flame Strike}
+    {Smite foes with divine fire for 5d6 damage.}
+\createspell{\SLfly}{Fly}
+    {Subject flies at speed of 30 ft.}
+\createspell{\SLfogcloud}{Fog Cloud}
+    {Medium cylinder of fog obscures vision.}
+\createspell{\SLforcecage}{Forcecage}
+    {Cube or cage of force imprisons all inside.}
+\createspell{\SLforeseeprobability}{Foresee Probability}
+    {Know creature's next die results.}
+\createspell{\SLforesightgreater}{Foresight}[Greater]
+    {Powerful ``sixth sense'' warns of impending danger.}
+\createspell{\SLforesight}{Foresight}
+    {Powerful ``sixth sense'' warns of impending danger.}
+\createspell{\SLforesight}{Foresight}
+    {``Sixth sense'' warns of impending danger.}
+\createspell{\SLforget}{Forget}
+    {A creature forgets something.}
+\createspell{\SLfreedommass}{Freedom}[Mass]
+    {As \spell{freedom}, but affects multiple creatures.}
+\createspell{\SLfreedom}{Freedom}
+    {Subject moves normally despite impediments.}
+\createspell{\SLfreezingsphere}{Freezing Sphere}
+    {Freezes water or deals cold damage.}
+\createspell{\SLgaseousform}{Gaseous Form}
+    {Subject becomes insubstantial and can fly slowly.}
+\createspell{\SLgate}{Gate}
+    {Connects two planes for travel.}
+\createspell{\SLgentledescent}{Gentle Descent}
+    {Subject can glide.}
+\createspell{\SLghoultouch}{Ghoul Touch}
+    {Sicken or nauseate creauture.}
+\createspell{\SLgiantvermin}{Giant Vermin}
+    {Turns centipedes, scorpions, or spiders into giant vermin.}
+\createspell{\SLglitterdust}{Glitterdust}
+    {Outlines concealed and invisible creatures in small radius.}
+\createspell{\SLgraspinghand}{Grasping Hand}
+    {Hand provides cover, pushes, or grapples.}
+\createspell{\SLgrease}{Grease}
+    {Makes 10 ft. square or one object slippery.}
+\createspell{\SLgreateracidarrow}{Greater Acid Arrow}
+    {Fling acid to deal lingering damage and stagger}
+\createspell{\SLgustofwind}{Gust of Wind}
+    {Blows away or knocks down smaller creatures in large line.}
+\createspell{\SLharm}{Harm}
+    {Touch deals 12d8 damage and 4 Con damage.}
+\createspell{\SLhastemass}{Haste}[Mass]
+    {Many subjects move faster, get extra attack.}
+\createspell{\SLhaste}{Haste}
+    {Subject moves faster, gets extra attack.}
+\createspell{\SLheal}{Heal}
+    {Cures 12d8 damage, all diseases and mental conditions.}
+\createspell{\SLheatmetal}{Heat Metal}
+    {Make metal so hot it damages those who touch it.}
+\createspell{\SLheroismgreater}{Heroism}[Greater]
+    {Gives combat bonuses, temporary hit points.}
+\createspell{\SLheroism}{Heroism}
+    {Gives \plus2 on attacks, checks, and saves.}
+\createspell{\SLholdmonster}{Hold Monster}
+    {As \spell{hold person}, but any creature.}
+\createspell{\SLholdmonster}{Hold Monster}
+    {As hold person, but any creature.}
+\createspell{\SLholdmonster}{Hold Monster}
+    {[Mass] As \spell{hold monster}, but affects multiple creatures.}
+\createspell{\SLholdpersonmass}{Hold Person}[Mass]
+    {As \spell{hold person}, but affects multiple creatures.}
+\createspell{\SLholdperson}{Hold Person}
+    {Paralyzes one humanoid for short duration.}
+\createspell{\SLholyaura}{Holy Aura}
+    {Protect multiple creatures against evil foes. }
+\createspell{\SLholysmite}{Holy Smite}
+    {Blinds and deals 8d6 damage to nongood creature.}
+\createspell{\SLholyword}{Holy Word}
+    {Kills, paralyzes, blinds, or deafens nongood subjects in large radius.}
+\createspell{\SLholyword}{Holy Word}
+    {Kills, paralyzes, slows, or deafens nongood subjects in large radius.}
+\createspell{\SLhorridwilting}{Horrid Wilting}
+    {Deals 8d6 damage to many foes.}
+\createspell{\SLhypnoticpattern}{Hypnotic Pattern}
+    {Fascinates creatures in small radius.}
+\createspell{\SLicestorm}{Ice Storm}
+    {Hail deals 3d4 damage in small cylinder.}
+\createspell{\SLicestorm}{Ice Storm}
+    {Hail deals 4d4 damage in small cylinder.}
+\createspell{\SLimplosion}{Implosion}
+    {Kills one creature/round.}
+\createspell{\SLimprisonment}{Imprisonment}
+    {Entombs subject beneath the earth.}
+\createspell{\SLinertialshield}{Inertial Shield}
+    {Subject gains damage reduction.}
+\createspell{\SLinflictcriticalwoundsmass}{Inflict Critical Wounds}[Mass]
+    {Deals 8d6 damage to many creatures.}
+\createspell{\SLinflictcriticalwounds}{Inflict Critical Wounds}
+    {Deals 8d6 damage.}
+\createspell{\SLinflictcriticalwounds}{Inflict Critical Wounds}
+    {[Mass] Deals 8d6 damage to many creatures.}
+\createspell{\SLinflictlightwoundsmass}{Inflict Light Wounds}[Mass]
+    {Deals 5d6 damage to many creatures.}
+\createspell{\SLinflictlightwounds}{Inflict Light Wounds}
+    {Deals 2d6 damage.}
+\createspell{\SLinflictlightwounds}{Inflict Light Wounds}
+    {[Mass] Deals 5d6 damage to many creatures.}
+\createspell{\SLinflictmoderatewoundsmass}{Inflict Moderate Wounds}[Mass]
+    {Deals 6d6 damage to many creatures.}
+\createspell{\SLinflictmoderatewounds}{Inflict Moderate Wounds}
+    {Deals 4d6 damage.}
+\createspell{\SLinflictseriouswoundsmass}{Inflict Serious Wounds}[Mass]
+    {Deals 7d6 damage to many creatures.}
+\createspell{\SLinflictseriouswounds}{Inflict Serious Wounds}
+    {Deals 6d6 damage.}
+\createspell{\SLinsanity}{Insanity}
+    {Subject indefinitely acts randomly.}
+\createspell{\SLinterposinghand}{Interposing Hand}
+    {Hand provides cover against one opponent at a time.}
+\createspell{\SLinvestmagic}{Invest Magic}
+    {All of subject's equipment is magical.}
+\createspell{\SLinvisibilitygreater}{Invisibility}[Greater]
+    {As \spell{invisibility}, but subject can attack and stay invisible.}
+\createspell{\SLinvisibilitymass}{Invisibility}[Mass]
+    {As \spell{invisibility}, but affects multiple creatures.}
+\createspell{\SLinvisibility}{Invisibility}
+    {Subject invisible until it attacks.}
+\createspell{\SLinvisibility}{Invisibility}
+    {Subject is invisible until it attacks.}
+\createspell{\SLironbody}{Iron Body}
+    {Your body becomes living iron.}
+\createspell{\SLirresistibledance}{Irresistible Dance}
+    {Forces subject to dance.}
+\createspell{\SLknock}{Knock}
+    {Opens locked or magically sealed door.}
+\createspell{\SLlevitate}{Levitate}
+    {Subject moves up and down at your direction.}
+\createspell{\SLlifebreakercurse}{Lifebreaker Curse}
+    {Target takes permanent damage.}
+\createspell{\SLlifeseekingmissile}{Lifeseeking Missile}
+    {Homing missiles deal 3d10 damage.}
+\createspell{\SLlifeseekingmissile}{Lifeseeking Missile}
+    {Homing missiles unerringly deal 3d10 damage.}
+\createspell{\SLlightningbolt}{Lightning Bolt}
+    {Large line of electricity deals 3d6 damage.}
+\createspell{\SLlightningbolt}{Lightning Bolt}
+    {Large line of electricity deals 3d8 damage.}
+\createspell{\SLlinkvitality}{Link Vitality}
+    {Two targets share each others' damage and healing.}
+\createspell{\SLlocatecreaturegreater}{Locate Creature}[Greater]
+    {Senses direction toward distant visualized creatures.}
+\createspell{\SLlocatecreature}{Locate Creature}
+    {Senses direction toward visualized creature.}
+\createspell{\SLlocatecreature}{Locate Creature}
+    {[Greater] Senses direction toward distant visualized creatures.}
+\createspell{\SLlocateentity}{Locate Entity}
+    {Locates creatures or objects within 1 mile.}
+\createspell{\SLlocateobjectgreater}{Locate Object}[Greater]
+    {Senses direction toward distant visualized objects.}
+\createspell{\SLlocateobjectlesser}{Locate Object}[Lesser]
+    {Senses direction toward visualized object.}
+\createspell{\SLlocateobject}{Locate Object}
+    {Senses direction toward visualized object.}
+\createspell{\SLlongstrider}{Longstrider}
+    {Increases your speed.}
+\createspell{\SLlongstrider}{Longstrider}
+    {Your speed increases by 10 ft.}
+\createspell{\SLmagearmor}{Mage Armor}
+    {Armor made of magical force gives \plus2 AC.}
+\createspell{\SLmagehand}{Mage Hand}
+    {5-pound telekinesis.}
+\createspell{\SLmagesdisjunction}{Mage's Disjunction}
+    {Dispels all magic.}
+\createspell{\SLmagiccircleagainstchaos}{Magic Circle against Chaos}
+    {Protect allies in a \areamed radius and hedge out opposing outsiders.}
+\createspell{\SLmagiccircleagainstevil}{Magic Circle against Evil}
+    {Protect allies in a \areamed radius and hedge out opposing outsiders.}
+\createspell{\SLmagiccircleagainstgood}{Magic Circle against Good}
+    {Protect allies in a \areamed radius and hedge out opposing outsiders.}
+\createspell{\SLmagicfanggreater}{Magic Fang}[Greater]
+    {All subject's natural weapons get \plus2 bonus.}
+\createspell{\SLmagicfang}{Magic Fang}
+    {One natural weapon of subject creature becomes \plus2 weapon.}
+\createspell{\SLmagicmissile}{Magic Missile}
+    {Force missiles unerringly deal 2d4 damage.}
+\createspell{\SLmagicvestment}{Magic Vestment}
+    {Armor or shield becomes \plus2.}
+\createspell{\SLmagicweapon}{Magic Weapon}
+    {Weapon becomes \plus2.}
+\createspell{\SLmajorimage}{Major Image}
+    {As silent image, plus sound, smell and thermal effects.}
+\createspell{\SLmanipulateprobability}{Manipulate Probability}
+    {Control creature's next die results.}
+\createspell{\SLmaze}{Maze}
+    {Traps subject in extradimensional maze.}
+\createspell{\SLmeldintostone}{Meld into Stone}
+    {You and your gear merge with stone.}
+\createspell{\SLmeteorswarm}{Meteor Swarm}
+    {Massive hail of meteors deals 9d8 damage.}
+\createspell{\SLminorimage}{Minor Image}
+    {As \spell{silent image}, plus some sound.}
+\createspell{\SLmirrorimagegreater}{Mirror Image}[Greater]
+    {Creates regenerating decoy duplicates of you.}
+\createspell{\SLmirrorimage}{Mirror Image}
+    {Creates decoy duplicates of you.}
+\createspell{\SLmislead}{Mislead}
+    {Turns you invisible and creates illusory double.}
+\createspell{\SLmissilestorm}{Missile Storm}
+    {Swarm of missiles strike many creatures.}
+\createspell{\SLmomentofpresciencegreater}{Moment of Prescience}[Greater]
+    {Roll twice with large bonus for single attack, save, or opposed check.}
+\createspell{\SLmomentofpresciencelesser}{Moment of Prescience}[Lesser]
+    {Roll twice for single attack, save, or opposed check.}
+\createspell{\SLmomentofprescience}{Moment of Prescience}
+    {Roll twice with bonus for single attack, save, or opposed check.}
+\createspell{\SLmomentofprescience}{Moment of Prescience}
+    {[Lesser] Roll twice for single attack, save, or opposed check.}
+\createspell{\SLobscuringmist}{Obscuring Mist}
+    {Fog surrounds you.}
+\createspell{\SLorderswrath}{Order's Wrath}
+    {Bewilders and deals 8d6 damage to nonlawful creature.}
+\createspell{\SLpersistentimage}{Persistent Image}
+    {As \spell{major image}, but no concentration required.}
+\createspell{\SLphantasmalkiller}{Phantasmal Killer}
+    {Fearsome illusion can frighten target to death.}
+\createspell{\SLphantasmalmaze}{Phantasmal Maze}
+    {Subject acts as if affected by \spell{maze}.}
+\createspell{\SLphantasmalwound}{Phantasmal Wound}
+    {Subject believes it is grievously wounded.}
+\createspell{\SLphantasmalwound}{Phantasmal Wound}
+    {Subject believes it is near death.}
+\createspell{\SLphasedoor}{Phase Door}
+    {Creates an invisible passage through wood or stone.}
+\createspell{\SLpoison}{Poison}
+    {Touch deals 1d6 Con damage repeatedly.}
+\createspell{\SLpolarray}{Polar Ray}
+    {Ranged touch attack slows and deals 16d6 cold damage.}
+\createspell{\SLpowerwordblind}{Power Word Blind}
+    {Blinds bloodied creature.}
+\createspell{\SLpowerwordconfuse}{Power Word Confuse}
+    {Bloodied subject acts randomly.}
+\createspell{\SLpowerwordkill}{Power Word Kill}
+    {Kills bloodied creature.}
+\createspell{\SLpowerwordkill}{Power Word Kill}
+    {Kills one bloodied creature.}
+\createspell{\SLpowerwordstun}{Power Word Stun}
+    {Stuns a creature.}
+\createspell{\SLpowerwordstun}{Power Word Stun}
+    {Stuns bloodied creature.}
+\createspell{\SLprecognitiongreater}{Precognition}[Greater]
+    {See into the future to gain combat bonuses and extra attack.}
+\createspell{\SLprecognitionlesser}{Precognition}[Lesser]
+    {See into the future to gain attack and damage bonus.}
+\createspell{\SLprecognition}{Precognition}
+    {See into the future to gain combat bonuses.}
+\createspell{\SLprismaticbeam}{Prismatic Beam}
+    {Beam of multicolored light has random effects.}
+\createspell{\SLprismaticspray}{Prismatic Spray}
+    {Cone of multicolored light has random effects.}
+\createspell{\SLprismaticspray}{Prismatic Spray}
+    {Rays hit subjects with a variety of effects.}
+\createspell{\SLprismaticstorm}{Prismatic Storm}
+    {Sphere of multicolored light has random effects.}
+\createspell{\SLprismaticwall}{Prismatic Wall}
+    {Multicolored wall has random effects.}
+\createspell{\SLprismaticwall}{Prismatic Wall}
+    {}
+\createspell{\SLprohibitiongreater}{Prohibition}[Greater]
+    {Forcibly prevent creatures from taking specific action.}
+\createspell{\SLprohibition}{Prohibition}
+    {Punish creatures that take specific action.}
+\createspell{\SLprohibition}{Prohibition}
+    {[Greater] Forcibly prevent creatures from taking specific action.}
+\createspell{\SLprojectimage}{Project Image}
+    {Illusory double can talk and cast spells.}
+\createspell{\SLprotectionfromalignment}{Protection from Alignment}
+    {\plus2 to special defenses, \plus4 against chosen alignment.}
+\createspell{\SLprotectionfromenergygreater}{Protection from Energy}[Greater]
+    {As \spell{protection from energy}, but against all energy types.}
+\createspell{\SLprotectionfromenergy}{Protection from Energy}
+    {Reduce damage from one kind of energy.}
+\createspell{\SLreadmindgreater}{Read Mind}[Greater]
+    {Unavoidably learn a creature's surface thoughts.}
+\createspell{\SLreadmindmass}{Read Mind}[Mass]
+    {Learn surface thoughts from multiple creatures.}
+\createspell{\SLreadmind}{Read Mind}
+    {Learn a creature's surface thoughts.}
+\createspell{\SLreducepersonmass}{Reduce Person}[Mass]
+    {Reduces several creatures.}
+\createspell{\SLreduceperson}{Reduce Person}
+    {Humanoid creature halves in size.}
+\createspell{\SLregenerate}{Regenerate}
+    {Touched creature heals 10 hit points/round.}
+\createspell{\SLrepelmetalorstone}{Repel Metal or Stone}
+    {Pushes away metal and stone in large line.}
+\createspell{\SLrepulsion}{Repulsion}
+    {Creatures can't approach you.}
+\createspell{\SLresilientsphere}{Resilient Sphere}
+    {Force globe protects but traps one creature or object.}
+\createspell{\SLresistenergygreater}{Resist Energy}[Greater]
+    {As \spell{resist energy}, but all energy types.}
+\createspell{\SLresistenergy}{Resist Energy}
+    {Ignores 10 (or more) points of damage/attack from specified energy type.}
+\createspell{\SLresistenergy}{Resist Energy}
+    {Ignores first 10 (or more) points of damage/attack from specified energy type.}
+\createspell{\SLretributivebrilliance}{Retributive Brilliance}
+    {Subject can dazzle or blind attacker once.}
+\createspell{\SLretributiveshield}{Retributive Shield}
+    {Grant DR 8 that reflects damage at foes.}
+\createspell{\SLretributiveshield}{Retributive Shield}
+    {Grants DR 8 that reflects damage at foes.}
+\createspell{\SLretrieveally}{Retrieve Ally}
+    {Teleport willing creature next to you.}
+\createspell{\SLretrievegreater}{Retrieve}[Greater]
+    {Teleport an item you can see to your hand.}
+\createspell{\SLretrieveobject}{Retrieve Object}
+    {Teleport an unattended item you can see to your hand.}
+\createspell{\SLrevelation}{Revelation}
+    {Grant target vision of one of three futures.}
+\createspell{\SLreversegravity}{Reverse Gravity}
+    {Objects and creatures fall upward.}
+\createspell{\SLrevivify}{Revivify}
+    {Restores recently dead body to life.}
+\createspell{\SLrighteousmight}{Righteous Might}
+    {Your size increases, and you gain combat bonuses.}
+\createspell{\SLsanctuary}{Sanctuary}
+    {Opponents can't attack subject until it attacks.}
+\createspell{\SLscintillatingpattern}{Scintillating Pattern}
+    {Twisting colors bewilder foes.}
+\createspell{\SLscorchingray}{Scorching Ray}
+    {Ray (or rays) deal 4d6 fire damage.}
+\createspell{\SLseaoffog}{Sea of Fog}
+    {200 ft. radius of fog obscures vision.}
+\createspell{\SLseaoffog}{Sea of Fog}
+    {500 ft. cylinder of fog obscures vision.}
+\createspell{\SLsearinglight}{Searing Light}
+    {Ray deals 6d6 damage and blinds, more against undead.}
+\createspell{\SLseeinvisibility}{See Invisibility}
+    {Reveals invisible creatures or objects.}
+\createspell{\SLshadowbody}{Shadow Body}
+    {You become a living shadow.}
+\createspell{\SLshadowpuppet}{Shadow Puppet}
+    {Step into Plane of Shadow and create shadow duplicate in your stead.}
+\createspell{\SLshadowumbra}{Shadow Umbra}
+    {Shadowy aura has a 50\% chance to absorb attacks. }
+\createspell{\SLsharepain}{Share Pain}
+    {Split damage with willing subject.}
+\createspell{\SLshieldoffaith}{Shield of Faith}
+    {Grants \plus2 or higher shield bonus.}
+\createspell{\SLshieldoflaw}{Shield of Law}
+    {Protect multiple creatures against chaotic foes. }
+\createspell{\SLshieldoflaw}{Shield of Law}
+    {Protect multiple creatures against lawful foes.}
+\createspell{\SLshillelagh}{Shillelagh}
+    {Cudgel or quarterstaff becomes \plus2 weapon.}
+\createspell{\SLshockinggrasp}{Shocking Grasp}
+    {Touch deals 2d6 electricity damage.}
+\createspell{\SLshockinggrasp}{Shocking Grasp}
+    {Touch delivers 2d6 electricity damage.}
+\createspell{\SLshoutgreater}{Shout}[Greater]
+    {Yell deals 7d6 sonic damage in large cone; stuns creatures, damages objects.}
+\createspell{\SLshout}{Shout}
+    {Deafens all within medium cone and deals 4d6 sonic damage.}
+\createspell{\SLshrinkitem}{Shrink Item}
+    {Object shrinks to one-sixteenth size.}
+\createspell{\SLsilence}{Silence}
+    {Subject cannot make sound.}
+\createspell{\SLsilentimage}{Silent Image}
+    {Creates minor illusion of your design.}
+\createspell{\SLskysmite}{Skysmite}
+    {Unerring lightning deals 12d6 damage.}
+\createspell{\SLskysmite}{Skysmite}
+    {Unerring lightning deals 6d6 damage.}
+\createspell{\SLsleepmass}{Sleep}[Mass]
+    {Tire multiple creatures, possibly putting them to sleep.}
+\createspell{\SLsleep}{Sleep}
+    {Tire a creature, possibly putting it to sleep.}
+\createspell{\SLslowmass}{Slow}[Mass]
+    {Many subjects take only one action/round.}
+\createspell{\SLslow}{Slow}
+    {Subject takes only one action/round.}
+\createspell{\SLsolidfog}{Solid Fog}
+    {Fog blocks vision and slows movement.}
+\createspell{\SLsoundburst}{Sound Burst}
+    {2d6 sonic damage in a small radius.}
+\createspell{\SLspellmessage}{Message}
+    {Whispered conversation at distance.}
+\createspell{\SLspellresistance}{Spell Resistance}
+    {Subject gains spell resistance.}
+\createspell{\SLspelltheftgreater}{Spelltheft}[Greater]
+    {As \spell{greater dispel magic}, but you gain the effects of dispelled spells.}
+\createspell{\SLspelltheft}{Spelltheft}
+    {As \spell{dispel magic}, but you gain the effects of dispelled spells.}
+\createspell{\SLspellturning}{Spell Turning}
+    {Reflect 1d4\plus6 spell levels back at caster.}
+\createspell{\SLspiderclimb}{Spider Climb}
+    {Grants ability to walk on walls and ceilings.}
+\createspell{\SLspiritualweapon}{Spiritual Weapon}
+    {Magic weapon attacks on its own.}
+\createspell{\SLspiritualweapon}{Spiritual Weapon}
+    {Magical weapon attacks on its own.}
+\createspell{\SLstampede}{Stampede}
+    {Summon bison to trample foes.}
+\createspell{\SLstinkingcloud}{Stinking Cloud}
+    {Fog nauseates creatures inside.}
+\createspell{\SLstoneskin}{Stoneskin}
+    {\plus3 AC, ignore 8 damage per round.}
+\createspell{\SLstormlord}{Stormlord}
+    {Air protects you from attacks. }
+\createspell{\SLstormofvengeance}{Storm of Vengeance}
+    {Storm rains acid, lightning, and hail.}
+\createspell{\SLstriptheflesh}{Strip the Flesh}
+    {Rend foe's skin from its body.}
+\createspell{\SLsuggestionmass}{Suggestion}[Mass]
+    {As \spell{suggestion}, but shorter and affects multiple creatures.}
+\createspell{\SLsuggestion}{Suggestion}
+    {Compels subject to follow stated course of action.}
+\createspell{\SLsummonmonsteriii}{Summon Monster III}
+    {Calls extraplanar creature to fight for you.}
+\createspell{\SLsummonmonsterii}{Summon Monster II}
+    {Calls extraplanar creature to fight for you.}
+\createspell{\SLsummonmonsteriv}{Summon Monster IV}
+    {Calls extraplanar creature to fight for you.}
+\createspell{\SLsummonmonsterix}{Summon Monster IX}
+    {Calls extraplanar creature to fight for you.}
+\createspell{\SLsummonmonsteri}{Summon Monster I}
+    {Calls extraplanar creature to fight for you.}
+\createspell{\SLsummonmonsterviii}{Summon Monster VIII}
+    {Calls extraplanar creature to fight for you.}
+\createspell{\SLsummonmonstervii}{Summon Monster VII}
+    {Calls extraplanar creature to fight for you.}
+\createspell{\SLsummonmonstervi}{Summon Monster VI}
+    {Calls extraplanar creature to fight for you.}
+\createspell{\SLsummonmonsterv}{Summon Monster V}
+    {Calls extraplanar creature to fight for you.}
+\createspell{\SLsummonnaturesallyiii}{Summon Nature's Ally III}
+    {Calls creature to fight.}
+\createspell{\SLsummonnaturesallyii}{Summon Nature's Ally II}
+    {Calls creature to fight.}
+\createspell{\SLsummonnaturesallyiv}{Summon Nature's Ally IV}
+    {Calls creature to fight.}
+\createspell{\SLsummonnaturesallyix}{Summon Nature's Ally IX}
+    {Calls creature to fight.}
+\createspell{\SLsummonnaturesallyi}{Summon Nature's Ally I}
+    {Calls creature to fight.}
+\createspell{\SLsummonnaturesallyviii}{Summon Nature's Ally VIII}
+    {Calls creature to fight.}
+\createspell{\SLsummonnaturesallyvii}{Summon Nature's Ally VII}
+    {Calls creature to fight.}
+\createspell{\SLsummonnaturesallyvi}{Summon Nature's Ally VI}
+    {Calls creature to fight.}
+\createspell{\SLsummonnaturesallyv}{Summon Nature's Ally V}
+    {Calls creature to fight.}
+\createspell{\SLsummonnaturesarmy}{Summon Nature's Army}
+    {Calls one creature/level to fight.}
+\createspell{\SLsummonswarm}{Summon Swarm}
+    {Summons swarm of bats, rats, or spiders.}
+\createspell{\SLsunbeam}{Sunbeam}
+    {Beam dazzles and deals 5d6 damage.}
+\createspell{\SLsunburst}{Sunburst}
+    {Blinds all within large radius, deals 8d8 damage.}
+\createspell{\SLtelekinesis}{Telekinesis}
+    {Moves object, attacks creature, or hurls object or creature.}
+\createspell{\SLtelekineticforce}{Telekinetic Force}
+    {Move things with your mind.}
+\createspell{\SLtelekineticmaneuver}{Telekinetic Maneuver}
+    {Telekinetically dirty trick, disarm, grapple, shove, trip your target.}
+\createspell{\SLtelekineticthrust}{Telekinetic Thrust}
+    {Hurl objects with the force of your mind.}
+\createspell{\SLtelepathy}{Telepathy}
+    {Grants ability to communicate mentally. }
+\createspell{\SLtemporalstasis}{Temporal Stasis}
+    {Puts subject into suspended animation.}
+\createspell{\SLtimestop}{Time Stop}
+    {You act freely for 1d3\plus1 rounds.}
+\createspell{\SLtotemicmindgreater}{Totemic Mind}[Greater]
+    {Subject gains \plus4 to Int, Wis, or Cha.}
+\createspell{\SLtotemicmindmass}{Totemic Mind}[Mass]
+    {As \spell{totemic mind}, but affects multiple creatures.}
+\createspell{\SLtotemicmind}{Totemic Mind}
+    {Subject gains \plus2 to Int, Wis, or Cha.}
+\createspell{\SLtotemicpowergreater}{Totemic Power}[Greater]
+    {Subject gains \plus4 to Str, Dex, or Con.}
+\createspell{\SLtotemicpowermass}{Totemic Power}[Mass]
+    {As \spell{totemic power}, but affects multiple creatures.}
+\createspell{\SLtotemicpower}{Totemic Power}
+    {Subject gains \plus2 to Str, Dex, or Con.}
+\createspell{\SLtouchofidiocy}{Touch of Idiocy}
+    {Subject takes \minus4 penalty to Int, Wis, and Cha.}
+\createspell{\SLtransmuteanyobject}{Transmute Any Object}
+    {Transforms objects into new forms.}
+\createspell{\SLtransmutefleshandstone}{Transmute Flesh and Stone}
+    {Turns subject creature into statue, or restores petrified creature.}
+\createspell{\SLtreeshape}{Tree Shape}
+    {You look exactly like a tree for extended duration.}
+\createspell{\SLtremorsense}{Tremorsense}
+    {``See'' through the ground by concentrating.}
+\createspell{\SLtrueseeing}{True Seeing}
+    {Lets you see all things as they really are.}
+\createspell{\SLtrueseeing}{True Seeing}
+    {\M Lets you see all things as they really are.}
+\createspell{\SLtruestrike}{True Strike}
+    {\plus20 on your next attack roll.}
+\createspell{\SLunholyaura}{Unholy Aura}
+    {Protect multiple creatures against good foes. }
+\createspell{\SLunholyblight}{Unholy Blight}
+    {Sickens and deals 8d6 damage to good creature.}
+\createspell{\SLunlivingeyes}{Unliving Eyes}
+    {Grants lifesight ability.}
+\createspell{\SLunlivingheart}{Unliving Heart}
+    {Gain 5 temporary HP, treated as undead.}
+\createspell{\SLventriloquism}{Ventriloquism}
+    {Throws voice for medium duration.}
+\createspell{\SLwailofthebanshee}{Wail of the Banshee}
+    {Kills many creatures.}
+\createspell{\SLwailofthebanshee}{Wail of the Banshee}
+    {Scream kills many creatures. }
+\createspell{\SLwalloffire}{Wall of Fire}
+    {Passing through wall deals 4d6 damage.}
+\createspell{\SLwalloffire}{Wall of Fire}
+    {Passing through wall deals 5d6 fire damage.}
+\createspell{\SLwallofforce}{Wall of Force}
+    {Wall is immune to damage.}
+\createspell{\SLwallofstone}{Wall of Stone}
+    {Creates a stone wall that can be shaped.}
+\createspell{\SLwallofthorns}{Wall of Thorns}
+    {Thorns damage anyone who tries to pass.}
+\createspell{\SLwaterwalk}{Water Walk}
+    {Subject treads on water as if solid.}
+\createspell{\SLwavesofexhaustion}{Waves of Exhaustion}
+    {Creatures in medium cone become exhausted.  }
+\createspell{\SLwavesofexhaustion}{Waves of Exhaustion}
+    {Creatures in medium cone become exhausted.}
+\createspell{\SLwavesoffatigue}{Waves of Fatigue}
+    {Creatures in large cone become fatigued.}
+\createspell{\SLweb}{Web}
+    {Fills medium radius spread with sticky spiderwebs.}
+\createspell{\SLweird}{Weird}
+    {As \spell{phantasmal killer}, but affects multiple creatures.}
+\createspell{\SLweird}{Weird}
+    {As \spell{phantasmal killer}, but affects multiple creatures}
+\createspell{\SLwindstrikegreater}{Windstrike}[Greater]
+    {Wind moves and bludgeons target for 10d6 damage.}
+\createspell{\SLwindstrike}{Windstrike}
+    {Wind bludgeons target for 4d6 damage.}
+\createspell{\SLwordofchaos}{Word of Chaos}
+    {Kills, confuses, stuns, or deafens nonchaotic subjects in large radius.}
+\createspell{\SLwordofrecall}{Word of Recall}
+    {Teleports you back to designated place.}
+\createspell{\SLzephyrbladegreater}{Zephyr Blade}[Greater]
+    {Melee weapon can strike from a distance for full damage.}
+\createspell{\SLzephyrblade}{Zephyr Blade}
+    {Melee weapon can strike from a short distance for half damage.}
