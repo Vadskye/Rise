@@ -28,9 +28,8 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLsummonmonsteri
     \SLretrieveobject*
 
-    \spellhead[Div]{}
-    \SLlocateobjectlesser
-    \SLspellmessage
+    \SLlocateobjectlesser[Div]
+    \SLmessage
     \SLprecognitionlesser*
 
     \SLcommand
@@ -150,7 +149,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
     \SLgaseousform[Trans]
     \SLshrinkitem
-    \spellhead*{}
 
     \SLprismaticbeam[Univ]
 \end{swspelllist}
@@ -159,7 +157,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \begin{swspelllist}
 
     \SLdismissal[Abjur]
-    \spellhead{}
     \SLretributiveshield
     \SLspellresistance*
 
@@ -219,7 +216,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLmanipulateprobability*
 
     \SLfear[Ench]
-    \spellhead{}
     \SLphantasmalmaze
     \SLcharmmonster*
 
@@ -232,7 +228,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLmirrorimagegreater[Illus]
     \SLphantasmalmaze
     \SLretributivebrilliance
-    \spellhead*{}
 
     \SLinflictlightwounds[Necro]
     \SLwavesoffatigue
@@ -325,7 +320,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLinvisibilitymass[Illus]
     \SLprojectimage
     \SLshadowbody
-    \spellhead*{}
 
     \SLfingerofdeath[Necro]
     \SLinflictseriouswounds
@@ -336,7 +330,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLblacktentacles[Trans]
     \SLcombattransformation
     \SLshadowbody
-    \spellhead*{}
 
     \SLprismaticspray[Univ]
 \end{swspelllist}
@@ -362,14 +355,12 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
     \SLconeofcoldgreater[Evoc]
     \SLpolarray
-    \spellhead{}
     \SLcrushinghand*
 
     \SLscintillatingpattern[Illus]
     \SLshadowumbra
-    \spellhead*{}
 
-    \SLenergydrain[Necro]
+    \SLenervationgreater[Necro]
     \SLinflictcriticalwounds
     \SLwavesofexhaustion
     \SLhorridwilting*
@@ -401,7 +392,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLdominatemonster*
 
     \SLmeteorswarm[Evoc]
-    \spellhead{}
     \SLclenchedfist*
 
     \SLshadowpuppet[Illus]
@@ -730,12 +720,12 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLcloakofchaos
     \SLcurecriticalwoundsmass
     \SLearthquake
-    \SLenergydrain
+    \SLenervationgreater
     \SLfreedommass
     \SLholdpersonmass
     \SLholyaura
     \SLinflictcriticalwoundsmass
-    \SLregenerate
+    \SLregeneration
     \SLshieldoflaw
     \SLsummonmonsterviii
     \SLunholyaura
@@ -838,7 +828,7 @@ Summoning spells summon chaotic creatures only.
     \SLharm[6]
     \SLdeathwardmass[7]
     \SLfingerofdeath[7]
-    \SLenergydrain[8]
+    \SLenervationgreater[8]
     \SLwavesofexhaustion[8]
     \SLpowerwordkill[9]
     \SLwailofthebanshee[9]
@@ -873,7 +863,6 @@ Summoning spells summon chaotic creatures only.
 \begin{spelllist}
     \spellhead[1]{Burning Hands}\fn{1} 1d6 fire damage.
     \spellhead[1]{Command} One subject obeys selected command for 1 round.
-    \spellhead[2]{}
     \spellhead[2]{Locate Object} Senses direction toward object (specific or type).
     \spellhead[3]{Lightning Bolt}\fn{1} Large line of electricity deals 3d8 damage.
     \spellhead[4]{Fly} Subject flies at speed of 60 ft.
@@ -887,7 +876,6 @@ Summoning spells summon chaotic creatures only.
     \spellhead[8]{Power Word Stun} Stuns bloodied creature.
     \spellhead[8]{Suggestion}[Mass] As \spell{suggestion}, but shorter and affects multiple creatures.
     \spellhead[9]{Power Word Kill} Kills bloodied creature.
-    \spellhead[9]{}
 \end{spelllist}
 1 Used as a breath attack, requiring no somatic components.
 \end{comment}
@@ -929,7 +917,7 @@ Summoning spells summon earth elementals only.
     \SLblasphemy[6]
     \SLharm[6]
     \SLsummonmonstervi[6]
-    \SLenergydrain[8]
+    \SLenervationgreater[8]
     \SLunholyaura[8]
     \SLassimilate[9]
     \SLsummonmonsterix[9]
@@ -1438,7 +1426,7 @@ Summoning spells summon water elementals or aquatic creatures only.
     \SLearthquake
     \SLfirestorm
     \SLfreedom
-    \SLregenerate
+    \SLregeneration
     \SLrepelmetalorstone
     \SLseaoffog
     \SLsummonnaturesallyviii
