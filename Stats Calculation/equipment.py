@@ -26,6 +26,9 @@ class Weapon(object):
     def increase_size(self):
         self.set_size(util.increase_size(self.size))
 
+    def __str__(self):
+        return self.name
+
     @classmethod
     def from_weapon_name(cls, weapon_name):
         if weapon_name is None:

@@ -286,3 +286,5 @@ wizard:
       weapons:
         primary: medium_melee
         secondary: ~
+    will:
+      attributes: wizard_will
