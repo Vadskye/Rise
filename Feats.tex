@@ -99,20 +99,20 @@ Most combat style feats have requirements. If a style requires specific equipmen
 \subsection{Strike Feats}\label{Strike Feats}
 Strike feats grant a character the ability to make unusual physical attacks, called strikes. Most strikes modify a single physical attack you would normally make, but some strikes completely change how you make physical attacks. You cannot make more than one strike each round.
 
-\onecolumn
 \section{Feat Table}
+\onecolumn
 
 {\small
 \taburowcolors [2] 2{tbrown .. white}
 \begin{longtabu}{>{\lcol}p{10em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{3em}}
     \thead{General Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
     \featref{Endurance} & Con 3 & Fight normally without hit points & \featpref{Endurance} \\
-    \featref{Deathless} & Con 5 or base Fortitude defense \plus10 & Immune to death effects & \featpref{Deathless} \\
-    \featref{Fearless} & Cha 5 or base Will defense \plus10 & Immune to fear and hostile morale effects & \featpref{Fearless} \\
-    \featref{Great Fortitude} & \x &  \plus2 bonus to Fortitude defense & \featpref{Great Fortitude} \\
+    \featref{Deathless} & Con 10 & Immune to death effects & \featpref{Deathless} \\
+    \featref{Fearless} & Wil 10 & Immune to fear effects & \featpref{Fearless} \\
+    \featref{Great Fortitude} & \x & \plus2 bonus to Fortitude defense & \featpref{Great Fortitude} \\
     \featref{Iron Will} & \x & \plus2 bonus to Will defense & \featpref{Iron Will} \\
     \featref{Lightning Reflexes} & \x &  \plus2 bonus to Reflex defense & \featpref{Lightning Reflexes} \\
-    \featref{Mental Fortress} & Cha 9 or base Will defense \plus18 & Immune to hostile mind-affecting effects & \featpref{Mental Fortress} \\
+    \featref{Mental Fortress} & Wil 20 & Immune to hostile mind-affecting effects & \featpref{Mental Fortress} \\
     \featref{Perfect Health} & Con 3 or base Fortitude defense \plus6 & Immune to disease, later poison & \featpref{Perfect Health} \\
     \featref{Swift} & \x & Increase speed by 5 feet & \featpref{Swift} \\
     \featref{Toughness} & \x &  \plus3 hit points \plus1 per level above 3 & \featpref{Toughness} \\
@@ -173,7 +173,7 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
     \thead{Item Creation Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
     \featref{Imbue Magic} & Caster level 2nd or Craft (any) 5 ranks & Create magic items & \featpref{Imbue Magic} \\
     \featref{Imbuement Admixture} & 2nd level spells, 6th & Combine multiple spells to create items & \featpref{Imbuement Admixture} \\
-    \featref{Versatile Crafter} & Craft (any) 8 ranks & Craft items from many subschools of magic & \featpref{Versatile Crafter} \\
+    \featref{Versatile Crafter} & Craft (any) 8 ranks & Craft items from many schools of magic & \featpref{Versatile Crafter} \\
 
     \midrule
     \thead{Magic Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
@@ -303,7 +303,7 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
         \tind \featref{Armor Proficiency (Medium)} & Armor Proficiency (light) & No armor check penalty on physical attacks & Equipment & \featpref{Armor Proficiency (Medium)} \\
         \tind \tind \featref{Armor Proficiency (Heavy)} & Armor Proficiency (medium) & No armor check penalty on physical attacks & Equipment & \featpref{Armor Proficiency (Heavy)} \\
         \featref{Blind-Fight} & \x &  Reroll miss chance for concealment in melee & Awareness & \featpref{Blind-Fight} \\
-        \featref{Exotic Weapon Proficiency}\fn{1} & \x & Don't provoke when attacking with exotic weapons & Equipment & \featpref{Exotic Weapon Proficiency} \\
+        \featref{Exotic Weapon Proficiency}\fn{1} & \x & Gain ability to use exotic weapons & Equipment & \featpref{Exotic Weapon Proficiency} \\
         \featref{Far Shot} & \x & Increase range increment & Precision & \featpref{Far Shot} \\
         \featref{Improved Unarmed Strike} & \x &  Considered armed even when unarmed & \x & \featpref{Improved Unarmed Strike} \\
         \tind \featref{Deflect Arrows} & Dex 3, Improved Unarmed Strike & Deflect one ranged attacks with your bare hands & Finesse, Reaction & \featpref{Deflect Arrows} \\
@@ -321,7 +321,7 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
         \tind \featref{Tower Shield Proficiency} & Shield Proficiency & No armor check penalty on physical attacks & Equipment & \featpref{Tower Shield Proficiency} \\
         \featref{Two-Weapon Fighting} & Dex 3 & Gain \plus2 bonus when attacking with two weapons & Finesse & \featpref{Two-Weapon Fighting} \\
         \tind \featref{Two-Weapon Defense} & Two-Weapon Fighting & \plus1 bonus to physical defenses while using two weapons & Defense, Finesse & \featpref{Two-Weapon Defense} \\
-        \featref{Weapon Proficiency}\fn{1} & \x &  Don't provoke when attacking with weapon group & Equipment & \featpref{Weapon Proficiency} \\
+        \featref{Weapon Proficiency}\fn{1} & \x & Gain ability to use weapon group & Equipment & \featpref{Weapon Proficiency} \\
 
         \midrule
         \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
@@ -337,7 +337,7 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
         \featref{Improved Shove} & Base attack bonus \plus2 & \plus2 bonus to shove attacks; move target away from you & Maneuver, Power & \featpref{Improved Shove} \\
         \featref{Improved Trip} & Base attack bonus \plus2 & \plus2 bonus to trip attacks; free attack against tripped foe & Finesse, Maneuver & \featpref{Improved Trip} \\
         \featref{Knockdown} & Str 3, base attack bonus \plus2 & Shoved foe can be knocked prone & Maneuver, Power & \featpref{Knockdown} \\
-        \featref{Riposte} & Dex 3, base attack bonus \plus2, Parry & Foes provoke if you parry very well & Reaction & \featpref{Riposte} \\
+        \featref{Riposte} & Dex 3, base attack bonus \plus2, Parry & Foes are defenseless if you parry very well & Reaction & \featpref{Riposte} \\
         \featref{Tactical Analysis} & Int 3, Base attack bonus \plus2 & Identify foe's strengths and weaknesses & Awareness & \featpref{Tactical Analysis} \\
         \featref{Weapon Focus} & Base attack bonus \plus2 & Special ability with weapon group & Equipment & \featpref{Weapon Focus} \\
 
@@ -357,7 +357,7 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
         \featref{Legendary Awareness} & Base attack bonus \plus10, any three Awareness feats & Immune to being overwhelmed & Awareness & \featpref{Legendary Awareness} \\
         \featref{Legendary Defense} & Base attack bonus \plus10, any three Defense feats & \plus2 to all defenses & Defense & \featpref{Legendary Defense} \\
         \featref{Legendary Finesse} & Base attack bonus \plus10, any three Finesse feats & Roll maximum damage again & Finesse & \featpref{Legendary Finesse} \\
-        \featref{Legendary Maneuver Master} & Base attack bonus \plus10, any three Maneuver feats & Never provoke, deal damage with very successful maneuvers & Maneuver & \featpref{Legendary Maneuver Master} \\
+        \featref{Legendary Maneuver Master} & Base attack bonus \plus10, any three Maneuver feats & Deal damage with very successful maneuvers & Maneuver & \featpref{Legendary Maneuver Master} \\
         \featref{Legendary Mobility} & Base attack bonus \plus10, any three Mobility feats & Blocking foes do not affect you & Mobility& \featpref{Legendary Mobility} \\
         \featref{Legendary Mounted Warrior} & Base attack bonus \plus10, any three Mounted feats & Share damage with mount & Mounted& \featpref{Legendary Mounted Warrior} \\
         \featref{Legendary Power} & Base attack bonus \plus10, any three Power feats & Wield weapons as if they were less encumbering & Power& \featpref{Legendary Power} \\
@@ -397,7 +397,7 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
 
         \midrule
         \thead{Style Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
-        \featref{Feign Weakness} & Base attack bonus \plus6 & Provoke attack to gain bonus to hit & Style & \featpref{Feign Weakness} \\
+        \featref{Feign Weakness} & Base attack bonus \plus6 & Lower defenses to gain damage bonus & Style & \featpref{Feign Weakness} \\
         \featref{Heartseeker} & Base attack bonus \plus6 & Trade attack bonus to double critical threat range & Precision, Style & \featpref{Heartseeker} \\
         \featref{Inescapable Bulwark} & Dex 3, Base attack bonus \plus6 & Enemies you are blocking cannot move & Reaction, Style & \featpref{Inescapable Bulwark} \\
         \featref{Insightful Defense} & Wis 3, base attack bonus \plus6 & Add half Perception to defense & Awareness, Defense, Style & \featpref{Insightful Defense} \\
@@ -414,7 +414,7 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
 
         \midrule
         \thead{Style Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
-        \featref{Counterstorm} & Base attack bonus \plus14 & Foes that miss you provoke & Reaction, Style& \featpref{Counterstorm} \\
+        \featref{Counterstorm} & Base attack bonus \plus14 & Gain bonuses against foes that miss & Reaction, Style& \featpref{Counterstorm} \\
     \end{longtabu}
 }%end of small text
 
@@ -601,7 +601,7 @@ Contingent actions depend on a trigger condition. If the trigger condition occur
 
 \feat{Counterstorm}{Combat, Reaction, Style}
 \featpre Base attack bonus \plus14.
-\featben Whenever a foe misses you with a melee attack, you gain a cumulative \plus2 bonus to damage on your next physical melee attack against that creature. In exchange, you cannot take the block action.
+\featben Whenever a foe misses you with a melee attack, you gain a cumulative \plus2 bonus to damage on your next physical melee attack against that creature. If this bonus is not used within 1 round, it is lost. In exchange, you cannot take the block action.
 \stylereq Wield a melee weapon. You must take a standard attack or charge action each round.
 
 \feat{Craftcaster}{Magic}
@@ -828,11 +828,11 @@ You can use any combination of performance feats you possess a number of times p
 
 \feat{Fearless}{General}
 \featpre Willpower 10 or base Will defense \plus10.
-\featben You are immune to fear effects and hostile morale effects.
+\featben You are immune to fear effects.
 
 \feat{Fearless Rage}{Class}
 \featpre Rage ability.
-\featben You are immune to fear effects and hostile morale effects while raging.
+\featben You are immune to fear effects while raging.
 
 \feat{Feign Weakness}{Combat, Style}
 \featpre Base attack bonus \plus6.
@@ -882,9 +882,9 @@ You can use any combination of performance feats you possess a number of times p
 
 \feat{Imbue Magic}{Item Creation}
 \parhead{Prerequisite} Caster level 2nd or Craft (any) 6 ranks.
-\parhead{Benefit} You can imbue items with magic using your spells or crafting ability. Imbuing an item with magic takes time and material components, as described in the magic item rules found in Rise Advanced.
+\parhead{Benefit} You can imbue items with magic using your spells or crafting ability. Imbuing an item with magic takes time and material components, as described in \pcref{Magic Item Creation}.
 
-When you take this feat, you choose one subschool of magic for every 5 ranks that you have in each Craft skill. You can craft items from those subschools. If you later gain additional Craft ranks, you gain new subschools appropriately.
+When you take this feat, you choose one school of magic for every 5 ranks that you have in each Craft skill. You can craft items from those schools. If you later gain additional Craft ranks, you gain new schools appropriately.
 
 You can also mend a broken magic item if it is one that you could make. Doing so costs a tenth of the raw materials and a quarter of the time it would take to craft that item in the first place. You cannot mend a destroyed magic item.
 
@@ -1655,8 +1655,8 @@ You can fight with a weapon in each hand more effectively.
 
 \feat{Versatile Crafter}{Item Creation}
 \parhead{Prerequisite} Craft (any) 10 ranks.
-\parhead{Benefit} You learn how to make items from one subschool for every two ranks you have in each Craft skill. See the Craft skill description for details.
-\parhead{Normal} You learn how to make items from one subschool for every five ranks you have in each Craft skill.
+\parhead{Benefit} You learn how to make items from any school of magic, including universal spells. See the Craft skill, \pref{Craft}, for details.
+\parhead{Normal} You learn how to make items from one school for every five ranks you have in each Craft skill.
 
 \feat{Veteran's Experience}{Skill}
 \featpre Base attack bonus \plus6.
