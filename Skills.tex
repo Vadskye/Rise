@@ -2,16 +2,7 @@
 \section{Skills Summary}
 A character's skills describe the myriad of talents that people have.
 
-\skill{herp}{derp}
-
 \parhead{Skill Points} At 1st level, your character gains a certain number of skill points. Skill points represent your training in a particular area. You get a base allotment of 5, 10, or 15 skill points, depending on your character's class. These skill points can only be spent on skills associated with your class, called \term{class skills}. You also gain additional skill points equal to half your Intelligence. If your Intelligence is negative, it subtracts from your skill points (to a minimum of 0 skill points). These skill points can be spent on any skills.
-
-\skill{
-    herp
-}
-{
-    derp
-}
 
 \parhead{Spending Skill Points} If you place one skill point in a skill, you become trained in that skill. If you place two points in a skill, you become an expert in that skill. Your level of training in a skill determines how many skill ranks you have in that skill. Some skills can only be used if you are trained in them.
 
@@ -36,9 +27,9 @@ Your bonus with skill checks is calculated as follows:
     \lcaption{Skill Ranks and Skill Training}
     \begin{tabularx}{\columnwidth}{>{\lcol}p{4.5em} >{\lcol}p{2.5em} >{\lcol}p{6.5em} >{\lcol}X}
         \thead{Skill Training Level} & \thead{Skill Points Spent} & \thead{Skill Ranks} & \thead{Attribute Modifier} \\
-        Untrained & 0 & 0 & Half attribute \\
-        Trained & 1 & 1/2 character level \add 2 & Full attribute \\
-        Mastered & 2 & Character level \add 5 & Full attribute \add 5 \\
+        Untrained & 0 & 0                          & Half attribute        \\
+        Trained   & 1 & 1/2 character level \add 2 & Full attribute        \\
+        Mastered  & 2 & Character level \add 5     & Full attribute \add 5 \\
     \end{tabularx}
 \end{dtable}
 
@@ -51,33 +42,33 @@ Circumstances can affect your check. A character who is free to work without dis
 \lcaption{Skills}
 \begin{tabularx}{\textwidth}{>{\lcol}p{12em} *{11}{>{\ccol}X} >{\ccol}p{4em} >{\ccol}p{4em}}
     \thead{Skill}   & \thead{Bbn} & \thead{Clr} & \thead{Drd} & \thead{Ftr} & \thead{Mnk} & \thead{Pal} & \thead{Rgr} & \thead{Rog} & \thead{Sor} & \thead{Spl} & \thead{Wiz} & \thead{Untrained} & \thead{Key Ability} \\
-Climb           & C  & cc & C  & C  & C  & cc & C  & C  & cc & cc & cc & Yes & Str\fn{1} \\
-Jump            & C  & cc & C  & C  & C  & cc & C  & C  & cc & cc & cc & Yes & Str\fn{1} \\
-Sprint          & C  & cc & C  & C  & C  & cc & C  & C  & cc & cc & cc & Yes & Str\fn{1} \\
-Swim            & C  & cc & C  & C  & C  & cc & C  & C  & cc & C  & cc & Yes & Str\fn{2} \\
-Balance         & C  & cc & C  & C  & C  & cc & C  & C  & cc & cc & cc & Yes & Dex\fn{1} \\
-Escape Artist   & cc & cc & cc & C  & C  & cc & cc & C  & cc & cc & cc & Yes & Dex\fn{1} \\
-Ride            & cc & cc & cc & C  & cc & C  & cc & cc & cc & C  & cc & Yes & Dex \\
-Sleight of Hand & cc & cc & cc & cc & cc & cc & cc & C  & cc & cc & cc & No  & Dex\fn{1} \\
-Stealth         & cc & cc & cc & cc & C  & cc & C  & C  & cc & cc & cc & Yes & Dex\fn{1} \\
-Tumble          & C  & cc & cc & C  & C  & cc & C  & C  & cc & cc & cc & Yes & Dex\fn{1} \\
-Craft\fn{3}     & C  & C  & C  & C  & C  & C  & C  & C  & C  & C  & C  & Yes & Int \\
-Devices         & cc & cc & cc & cc & cc & cc & cc & C  & cc & cc & cc & No  & Int \\
-Disguise        & cc & cc & cc & cc & cc & cc & cc & C  & cc & cc & cc & Yes & Int \\
-Heal            & cc & C  & C  & cc & C  & C  & C  & cc & cc & cc & cc & Yes & Int \\
-Knowledge       & cc & C  & cc & cc & C  & cc & cc & cc & C  & C  & C  & No  & Int \\
-Linguistics     & cc & C  & cc & cc & cc & cc & cc & C  & cc & cc & C  & No  & Int \\
-\thead{Skill}   & \thead{Bbn} & \thead{Clr} & \thead{Drd} & \thead{Ftr} & \thead{Mnk} & \thead{Pal} & \thead{Rgr} & \thead{Rog} & \thead{Sor} & \thead{Spl} & \thead{Wiz} & \thead{Untrained} & \thead{Key Ability} \\
-Awareness      & C  & cc & C  & C  & C  & C  & C  & C  & cc & cc & cc & Yes  & Per \\
-Creature Handling   & C  & cc & C  & cc & cc & C  & C  & cc & cc & cc & cc   & No & Per \\
-Sense Motive    & cc & C  & cc & cc & cc & C  & cc & C  & cc & cc & cc & Yes & Per \\
-Spellcraft      & cc & C  & C  & cc & C  & cc & cc & cc & C  &  C & C  & No  & Per \\
-Survival        & C  & cc & C  & cc & C  & cc & C  & cc & cc & cc & cc & Yes & Per \\
-Intimidate      & C  & cc & cc & C  & cc & cc & cc & C  & C  &  C & cc & Yes & Varies\fn{4} \\
-Perform         & cc & cc & cc & cc & C  & cc & cc & C  & cc & cc & cc & Yes & Varies\fn{4} \\
-Profession\fn{3}& C  & C  & C  & C  & C  & C  & C  & C  & C  & C  & C  & No  & Varies\fn{4} \\
-Bluff           & cc & cc & cc & cc & cc & cc & cc & C  & cc & cc & cc & Yes & \x\fn{5} \\
-Persuasion      & cc & C  & C  & cc & cc & C  & cc & C  & cc & cc & cc & Yes & \x\fn{5} \\
+    Climb             & C  & cc & C  & C  & C  & cc & C  & C  & cc & cc & cc & Yes & Str\fn{1}    \\
+    Jump              & C  & cc & C  & C  & C  & cc & C  & C  & cc & cc & cc & Yes & Str\fn{1}    \\
+    Sprint            & C  & cc & C  & C  & C  & cc & C  & C  & cc & cc & cc & Yes & Str\fn{1}    \\
+    Swim              & C  & cc & C  & C  & C  & cc & C  & C  & cc & C  & cc & Yes & Str\fn{2}    \\
+    Balance           & C  & cc & C  & C  & C  & cc & C  & C  & cc & cc & cc & Yes & Dex\fn{1}    \\
+    Escape Artist     & cc & cc & cc & C  & C  & cc & cc & C  & cc & cc & cc & Yes & Dex\fn{1}    \\
+    Ride              & cc & cc & cc & C  & cc & C  & cc & cc & cc & C  & cc & Yes & Dex          \\
+    Sleight of Hand   & cc & cc & cc & cc & cc & cc & cc & C  & cc & cc & cc & No  & Dex\fn{1}    \\
+    Stealth           & cc & cc & cc & cc & C  & cc & C  & C  & cc & cc & cc & Yes & Dex\fn{1}    \\
+    Tumble            & C  & cc & cc & C  & C  & cc & C  & C  & cc & cc & cc & Yes & Dex\fn{1}    \\
+    \thead{Skill}   & \thead{Bbn} & \thead{Clr} & \thead{Drd} & \thead{Ftr} & \thead{Mnk} & \thead{Pal} & \thead{Rgr} & \thead{Rog} & \thead{Sor} & \thead{Spl} & \thead{Wiz} & \thead{Untrained} & \thead{Key Ability} \\
+    Craft\fn{3}       & C  & C  & C  & C  & C  & C  & C  & C  & C  & C  & C  & Yes & Int          \\
+    Devices           & cc & cc & cc & cc & cc & cc & cc & C  & cc & cc & cc & No  & Int          \\
+    Disguise          & cc & cc & cc & cc & cc & cc & cc & C  & cc & cc & cc & Yes & Int          \\
+    Heal              & cc & C  & C  & cc & C  & C  & C  & cc & cc & cc & cc & Yes & Int          \\
+    Knowledge         & cc & C  & cc & cc & C  & cc & cc & cc & C  & C  & C  & No  & Int          \\
+    Linguistics       & cc & C  & cc & cc & cc & cc & cc & C  & cc & cc & C  & No  & Int          \\
+    Awareness         & C  & cc & C  & C  & C  & C  & C  & C  & cc & cc & cc & Yes & Per          \\
+    Creature Handling & C  & cc & C  & cc & cc & C  & C  & cc & cc & cc & cc & No  & Per          \\
+    Sense Motive      & cc & C  & cc & cc & cc & C  & cc & C  & cc & cc & cc & Yes & Per          \\
+    Spellcraft        & cc & C  & C  & cc & C  & cc & cc & cc & C  & C  & C  & No  & Per          \\
+    Survival          & C  & cc & C  & cc & C  & cc & C  & cc & cc & cc & cc & Yes & Per          \\
+    Intimidate        & C  & cc & cc & C  & cc & cc & cc & C  & C  & C  & cc & Yes & Varies\fn{4} \\
+    Perform           & cc & cc & cc & cc & C  & cc & cc & C  & cc & cc & cc & Yes & Varies\fn{4} \\
+    Profession\fn{3}  & C  & C  & C  & C  & C  & C  & C  & C  & C  & C  & C  & No  & Varies\fn{4} \\
+    Bluff             & cc & cc & cc & cc & cc & cc & cc & C  & cc & cc & cc & Yes & \x\fn{5}     \\
+    Persuasion        & cc & C  & C  & cc & cc & C  & cc & C  & cc & cc & cc & Yes & \x\fn{5}     \\
 \end{tabularx}
 C: class skill
 cc: crossclass skill \\
@@ -92,38 +83,38 @@ cc: crossclass skill \\
 Some checks are made against a Difficulty Class (DC). The DC is a number (set using the skill rules as a guideline) that you must score as a result on your skill check in order to succeed.
 
 \begin{dtable}
-\lcaption{Difficulty Class Examples}
-\begin{tabularx}{\columnwidth}{p{8em} X}
-Difficulty (DC) & Example (Skill Used) \\
-Very easy (0) & Notice something in plain sight (Awareness) \\
-Easy (5) & Hear a conversation from 50 feet away (Awareness) \\
-Average (10) & Palm a coin-sided object (Sleight of Hand) \\
-Tough (15) & Rig a wagon wheel to fall off (Disable Device) \\
-Challenging (20) & Swim in stormy water (Swim) \\
-Formidable (25) & Climb a natural rock wall with no equipment (Climb) \\
-Heroic (30) & Leap across a 30-foot chasm with a running start (Jump) \\
-Nearly impossible (40) & Track a squad of orcs across hard ground after 24 hours of rainfall (Survival) \\
-\end{tabularx}
+    \lcaption{Difficulty Class Examples}
+    \begin{tabularx}{\columnwidth}{p{8em} X}
+        Difficulty (DC) & Example (Skill Used) \\
+        Very easy (0) & Notice something in plain sight (Awareness) \\
+        Easy (5) & Hear a conversation from 50 feet away (Awareness) \\
+        Average (10) & Palm a coin-sided object (Sleight of Hand) \\
+        Tough (15) & Rig a wagon wheel to fall off (Disable Device) \\
+        Challenging (20) & Swim in stormy water (Swim) \\
+        Formidable (25) & Climb a natural rock wall with no equipment (Climb) \\
+        Heroic (30) & Leap across a 30-foot chasm with a running start (Jump) \\
+        Nearly impossible (40) & Track a squad of orcs across hard ground after 24 hours of rainfall (Survival) \\
+    \end{tabularx}
 \end{dtable}
 
 \subsection{Opposed Checks}
 An opposed check is a check whose success or failure is determined by comparing the check result to another character's check result. In an opposed check, the higher result succeeds, while the lower result fails. In case of a tie, the higher skill modifier wins. If these scores are the same, roll again to break the tie.
 
 \begin{dtable}
-\lcaption{Example Opposed Checks}
-\begin{tabularx}{\columnwidth}{*{3}{>{\lcol}X}}
-\thead{Task} & \thead{Skill (Key Ability)} & \thead{Opposing Skill (Key Ability)} \\
-Lie & Bluff (Cha) & Sense Motive (Wis) \\
-Create a forged artwork & Craft (Int) & Craft (Int) or Awareness (Wis) \\
-Create a false map & Craft (Int) & Craft (Int) or Knowledge (geography) \\
-Make a bully back down & Intimidate (Cha) & Special\fn{1} \\
-Make someone look like someone else & Disguise (Int) & Awareness (Wis) \\
-Sneak up on someone & Stealth (Dex) & Awareness (Wis) \\
-Steal a coin pouch & Sleight of Hand (Dex) & Awareness (Wis) \\
-Tie a prisoner securely & Devices (Int)\fn{2} & Escape Artist (Dex) \\
-\end{tabularx}
-1 An Intimidate check is opposed by the target's Will defense, not a skill check. See the Intimidate skill description for more information. \\
-2 You can also tie a prisoner with a grapple attack. See \pcref{Grapple}. \\
+    \lcaption{Example Opposed Checks}
+    \begin{tabularx}{\columnwidth}{*{3}{>{\lcol}X}}
+        \thead{Task} & \thead{Skill (Key Ability)} & \thead{Opposing Skill (Key Ability)} \\
+        Lie & Bluff (Cha) & Sense Motive (Wis) \\
+        Create a forged artwork & Craft (Int) & Craft (Int) or Awareness (Wis) \\
+        Create a false map & Craft (Int) & Craft (Int) or Knowledge (geography) \\
+        Make a bully back down & Intimidate (Cha) & Special\fn{1} \\
+        Make someone look like someone else & Disguise (Int) & Awareness (Wis) \\
+        Sneak up on someone & Stealth (Dex) & Awareness (Wis) \\
+        Steal a coin pouch & Sleight of Hand (Dex) & Awareness (Wis) \\
+        Tie a prisoner securely & Devices (Int)\fn{2} & Escape Artist (Dex) \\
+    \end{tabularx}
+    1 An Intimidate check is opposed by the target's Will defense, not a skill check. See the Intimidate skill description for more information. \\
+    2 You can also tie a prisoner with a grapple attack. See \pcref{Grapple}. \\
 \end{dtable}
 
 \subsubsection{Trying Again}
@@ -227,16 +218,16 @@ The DC of Balance checks varies with the surface, as described in \trefnp{Balanc
     \lcaption{Balance DCs}
     \begin{tabularx}{\columnwidth}{l X}
         \thead{Narrow Surface} & \thead{Balance DC} \\
-        At least one foot wide & DC 5 \\
-        At least six inches wide & DC 10 \\
-        At least two inches wide & DC 15 \\
-        At least one inch wide & DC 20 \\
-        Less than than one inch wide & DC 25 \\
-        \thead{Precarious Surface} & \thead{Balance DC} \\
-        Water covered & DC 10 \\
-        Slightly mobile (rope bridge) & DC 10 \\
-        Ice or oil covered & DC 15 \\
-        Very mobile (slack rope) & DC 20 \\
+        At least one foot wide        & DC 5               \\
+        At least six inches wide      & DC 10              \\
+        At least two inches wide      & DC 15              \\
+        At least one inch wide        & DC 20              \\
+        Less than than one inch wide  & DC 25              \\
+        \thead{Precarious Surface}    & \thead{Balance DC} \\
+        Water covered                 & DC 10              \\
+        Slightly mobile (rope bridge) & DC 10              \\
+        Ice or oil covered            & DC 15              \\
+        Very mobile (slack rope)      & DC 20              \\
     \end{tabularx}
 \end{dtable}
 
