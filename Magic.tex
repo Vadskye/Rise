@@ -1,111 +1,93 @@
 \chapter{Magic}\label{Magic}
-Magic comes in many forms, but it is most commonly wielded with spells. A spell is a one-time magical effect. There are three types of spells: arcane (cast by sorcerers and wizards), divine (cast by clerics), and nature (cast by druids). Cutting across these categories are the eight schools of magic. Each of the eight schools represents a different type of mastery over the world, based on fundamentally distinct principles. All spellcasters select their spells from a limited list of spells known, casting them spontaneously as the need arises.
+Magic comes in many forms, but it is most commonly wielded with spells. A spell is a one-time magical effect. There are three types of spells: arcane (cast by sorcerers and wizards), divine (cast by clerics), and nature (cast by druids). Cutting across these categories are the eight schools of magic. Each of the eight schools represents a different type of mastery over the world, based on fundamentally distinct principles.
 
 \section{Casting Spells}\label{Casting Spells}
 Whether a spell is arcane, divine, or natural, casting a spell works the same way.
 
-\subsection{Choosing a Spell}
-First, you must choose a spell that you know. If a spell has multiple versions, you choose which version to use when you cast it.
+\subsection{Casting Process}
 
-To cast a spell, you must be able to speak (if the spell has a verbal component), gesture with a free hand (if it has a somatic component), and manipulate the material components or focus (if any). Additionally, you must concentrate to cast a spell.
+\begin{itemize}
+    \itemhead{Choose spell}: You must choose which spell to cast from among the spells you know. If a spell has multiple versions, you choose which version to use when you cast it.
+    \itemhead{Pay spell slot}: You must expend a spell slot of the spell's level or higher. If you do not have spells slots to spend, your attempt to cast the spell fails.
+    \itemhead{Perform spell components}: Almost all spells have verbal and somatic components.
+        \begin{itemize}
+            \itemhead{Verbal components}\label{Verbal Components} involve speaking the spell's incantation loudly and clearly.
+            \itemhead{Somatic components}\label{Somatic Components} involve using at least one hand to make gestures with magical significance.
+        \end{itemize}
+    \itemhead{Concentrate}: You must concentrate to cast spells. If you take damage or are otherwise distracted during a phase in which you attempt to cast a spell, the spell may fail. See \pcref{Concentration}, for details.
+    \itemhead{Choose effects}: You make choices about the spell's effects as you finish casting the spell. This includes deciding which creatures to target, where the spell takes effect, and so on.
+    \itemhead{Roll dice}: Finally, after making any necessary decisions about the spell's effects, you roll any dice required to determine how successful the spell is. This includes attack rolls, damage rolls, and so on.
+\end{itemize}
 
-\subsection{Concentration}
-To cast a spell, you must concentrate. While casting a spell, you can't focus on anything else, making you \defenseless.
+\subsection{Concentration}\label{Concentration}
 
-If something interrupts your concentration while you're casting, you must make a Concentration check or lose the spell. The more distracting the interruption and the higher the level of the spell you are trying to cast, the higher the DC is. If you fail the check, the spell has no effect, but you still spend the spell slot.
+\parhead{Concentration Tests}\label{Concentration Tests} To test concentration, roll d20 \add (half the damage you have taken during the current round) \add (twice the level of the spell you are casting) \add (overwhelm penalties). If the result equals or exceeds your Will defense, the test fails, and your concentration has been broken. Otherwise, the test succeeds.
 
-\subsubsection{Making Concentration Checks}
+\parhead{Casting a Spell} You must concentrate to cast spells. When you finish casting a spell, if you took any damage while casting it, make a Concentration test. Failure means the spell fails and has no effect, but you still lose the spell slot used to cast it.
 
-To make a concentration check, roll d20 \add your character level \add your Constitution. Any condition which grants a bonus or penalty to checks affects Concentration checks. In addition, you apply your overwhelm penalty (if any) to your Concentration checks.
+\parhead{Concentrating on Existing Spells} Many spells also allow you to concentrate to extend their effects. At the end of every round, if you took any damage, make a Concentration test. Failure means you stop concentrating on the spell, but it may continue to have effects, as indicated in the spell description. Most spells do not allow you to resume concentrating on them after your concentration is broken.
 
-\begin{dtable}
-\lcaption{Concentration Examples}
-\begin{tabularx}{\columnwidth}{>{\lcol}p{6em} >{\lcol}X}
-\thead{Concentration DC\fn{1}} & \thead{Distraction} \\
-10 & Casting defensively \\
-10 \add damage dealt & Damaged during the action.\fn{2} \\
-10 \add half of continuous & Taking continuous damage during the
-damage last dealt action.\fn{3} \\
-5 & Vigorous motion (on a moving mount, taking a bouncy wagon ride, in a small boat
-in rough water, belowdecks in a storm-tossed ship). \\
-10 & Violent motion (on a galloping horse, taking a very rough wagon ride, in a small boat in
-rapids, on the deck of a storm-tossed ship). \\
-20 & Extraordinarily violent motion (earthquake). \\
-10 & Entangled. \\
-15 & Grappling.\fn{4} \\
-5 & Weather is a high wind carrying blinding
-rain or sleet. \\
-10 & Weather is wind-driven hail, dust, or debris. \\
-\end{tabularx}
-1 If you are trying to cast, concentrate on, or direct a spell when the distraction occurs, add double the level of the spell to the indicated DC. \\
-2 If you take damage from multiple sources at the same time, add up the damage taken and make a single Concentration check, rather than one check for each source. \\
-3 Such as from \spell{acid arrow}. \\
-4 You can cast only spells without somatic components for which you have any required material component in hand. \\
-\end{dtable}
+\parhead{Performing Rituals} You must concentrate to perform rituals. At the end of every round, if you took any damage, make a Concentration test. Failure means the ritual fails and has no effect. When a ritual fails, half of the ritual components are usually consumed during the ritual, the but remainder can be salvaged.
 
-\subsection{Defending Yourself While Concentrating}
-Concentrating does not prevent you from defending yourself normally. However, some actions that require concentration prevent you from defending yourself, such as casting spells.
-You can make a Concentration check while casting a spell to multi-task, allowing you to defend yourself normally while casting the spell. The DC is equal to 10 \add double the level of the spell you're casting. Success means you can defend yourself normally. Failure means you are unable to maintain concentration on both things at once, and you must choose whether to lose the spell or lose the ability to defend yourself.
+\parhead{Distracting Circumstances} In some circumstances, you need to test Concentration to cast spells or concentrate even if you haven't taken damage. Examples include being on a galloping horse, in a storm-tossed ship, or in an earthquake.
 
-\subsubsection{Taking Damage}
-If you take damage while casting a spell, you must make a Concentration check to maintain the spell. The DC is equal to 10 \add damage taken while casting the spell \add double the level of the spell you're casting. Success means you can continue casting the spell. Failure means you lose the spell without effect. If you take damage multiple times while casting a spell, roll once per source of damage, but add the total damage taken together to determine the DC of each successive check.
+\parhead{Concentration Limits} Concentrating on a spell is mentally tiring. You can concentrate on a spell for up to 5 minutes without penalty. After 5 minutes, and every minute thereafter, you must test Concentration even if you haven't taken damage. If you fail, you lose your concentration on the spell and become fatigued. The difficulty of the test increases by 2 for every additional minute of concentration.
 
-If you are taking continuous damage each round, half the damage is considered to take place while you are casting a spell. You must make a Concentration check (DC 10 \add 1/2 the damage that the continuous source last dealt \add double the level of the spell you're casting). If the last damage dealt was the last damage that the effect could deal, then the damage is over, and it does not distract you.
+\subsection{Dismissing Spells}
 
-Repeated damage does not count as continuous damage.
+As a swift action, you can dismiss any spells you cast that has lasting effects. This requires the same casting components (verbal and somatic) as casting the spell normally. The effects of a dismissed spell immediately end.
 
-\subsubsection{Grappling or Pinned}
+\subsection{Impossible Spell Effects}
+If you try to cast a spell in circumstances that make the spell's effect impossible, the spell fails and has no effect. You still lose the spell slot used to cast it.
 
-The only spells you can cast while grappling or pinned are those without somatic components and whose material components (if any) you have in hand. Even so, you must make a Concentration check (DC 15 \add double the level of the spell you're casting) or lose the spell.
-
-\subsubsection{Entangled}
-If you want to cast a spell while entangled in a net or by a tanglefoot bag or while you're affected by a spell with similar effects, you must make a DC 10 \add double the level of the spell you're casting Concentration check to cast the spell. You lose the spell if you fail.
-
-\subsubsection{Environmental Distractions}
-
-\parhead{Vigorous Motion} If you are riding on a moving mount, taking a bouncy ride in a wagon, on a small boat in rough water, below-decks in a storm-tossed ship, or simply being jostled in a similar fashion, you must make a Concentration check (DC 5 \add double the level of the spell you're casting) or lose the spell.
-
-\parhead{Violent Motion} If you are on a galloping horse, taking a very rough ride in a wagon, on a small boat in rapids or in a storm, on deck in a storm-tossed ship, or being tossed roughly about in a similar fashion, you must make a Concentration check (DC 10 \add double the level of the spell you're casting) or lose the spell.
-
-\parhead{Violent Weather} You must make a Concentration check if you try to cast a spell in violent weather. If you are in a high wind carrying blinding rain or sleet, the DC is 5 \add double the level of the spell you're casting. If you are in wind-driven hail, dust, or debris, the DC is 10 \add double the level of the spell you're casting. In either case, you lose the spell if you fail the Concentration check. If the weather is caused by a spell, use the rules in the Spell subsection above.
-
-\subsubsection{Extended Concentration}
-Concentrating on a spell is mentally tiring. You can concentrate on a spell for up to 5 minutes without penalty. After 5 minutes, and every minute thereafter, you must make a Concentration check (DC 15 \add double the level of the spell). If you fail, you lose your concentration on the spell and become fatigued. The DC of the check increases by 2 for every additional minute.
-
-\subsection{Counterspells}
-It is possible to cast any spell as a counterspell. By doing so, you are using the spell's energy to disrupt the casting of the same spell by another character. Counterspelling works even if one spell is divine and the other arcane.
-
-\parhead{How Counterspells Work} To use a counterspell, you must select an opponent as the target of the counterspell. You do this by choosing the ready action. In doing so, you elect to wait to complete your action until your opponent tries to cast a spell. (You may still move your speed, since ready is a standard action.)
-
-If the target of your counterspell tries to cast a spell, make a Spellcraft check (DC 15 \add the spell's level). This check is a free action. If the check succeeds, you correctly identify the opponent's spell and can attempt to counter it. If the check fails, you can't do either of these things.
-
-To complete the action, you must then cast the correct spell. As a general rule, a spell can only counter itself. If you are able to cast the same spell and you have it prepared (if you prepare spells), you cast it, altering it slightly to create a counterspell effect. If the target is within range, both spells automatically negate each other with no other results.
-
-\parhead{Counterspelling Metamagic Spels} Metamagic feats are not taken into account when determining whether a spell can be countered.
-
-\parhead{Specific Exceptions} Some spells specifically counter each other, especially when they have diametrically opposed effects.
-
-\parhead{\spell{Dispel Magic} as a Counterspell} You can use \spell{dispel magic} to counterspell another spellcaster, and you don't need to identify the spell he or she is casting. However, \spell{dispel magic} doesn't always work as a counterspell (see the spell description).
+\section{Determining Spell Effects}
 
 \subsection{Caster Level}
-A spell's power often depends on its caster level, which depends on the number of levels you have in your spellcasting class. Some magic items and feats also increase your caster level. Effects that increase caster level never increase a character's spells per day or spells known. Only a character's class levels affect those values.
 
-You can cast a spell at a lower caster level than normal, but the caster level you choose must be high enough for you to cast the spell in question, and all level-dependent features must be based on the same caster level.
+Both your attack bonus with spells and your spellpower can be affected by your caster level. Your caster level is equal to the number of levels you have in your spellcasting class. Some abilities can increase your caster level. Effects that increase caster level never increase spells per day or spells known. Only your class levels affect those values.
 
-\subsection{Spell Failure}
-If you ever try to cast a spell in conditions where the characteristics of the spell cannot be made to conform, the casting fails and the spell is wasted.
+\parhead{Multiple Casting Classes} If you have levels in more than one spellcasting class, use the caster level appropriate to the class that you are casting the spell from.
 
-Spells also fail if your concentration is broken and might fail if you're wearing armor while casting a spell with somatic components.
+\subsection{Magic Attacks}
 
-\subsection{The Spell's Effect}
-Once you know which creatures (or objects or areas) are affected, you can apply whatever results a spell entails.
+To affect an unwilling creature with a spell, you must make a magic attack. Your magic attack bonus is equal to the following:
+
+\begin{figure}[h]
+    \centering Caster level or casting attribute \meh{\add enhancement bonus} \add other bonuses and penalties
+\end{figure}
+
+\parhead{Casting Attribute} Your casting attribute depends on your class. Wizards use Intelligence, druids use Perception, and clerics and sorcerers use Willpower.
+
+\subsubsection{Resisting a Spell} A creature that successfully resists a spell that has no obvious physical effects feels a hostile force or a tingle, but cannot deduce the exact nature of the attack without the use of the Spellcraft skill (see \pcref{Spellcraft}).
+
+\subsubsection{Not Resisting a Spell} A creature can voluntarily forego its defenses and willingly accept a spell's result. However, a character with a special resistance to magical effects cannot suppress that quality.
+
+\subsection{Spellpower}
+
+The power of some spells is determined by your spellpower. Your spellpower is determined as follows:
+
+\begin{figure}[h]
+    \centering Caster level or Willpower \meh{\add enhancement bonus} \add other bonuses and penalties
+\end{figure}
+
+\parhead{Reducing Spellpower} You can voluntarily reduce the power of the spells you cast by using a lower spellpower. However, you cannot use a spellpower lower than the minimum caster level required to cast the spell, which is equal to twice the spell's level.
+
+\parhead{Spell Resistance} Some creatures have spell resistance, which is a special ability which allows them to resist spells. You can overcome spell resistance by making an attack with a bonus equal to your spellpower. See \pcref{Spell Resistance}, for details.
+
+\subsection{Targeting Spells}
+
+\parhead{Midair Locations} A creature or object brought into being or transported to your location by a spell cannot appear floating in an empty space. It must arrive in an open location on a surface capable of supporting it.
+
+\parhead{Targeting Inside Creatures} Creatures block line of effect to the inside of their own bodies. As a result, you cannot cast a spell that takes effect inside a creature unless you are also inside the creature. This restriction applies even if there is no physical barrier to the inside of the creature; you cannot detonate a \spell{fireball} inside a creature's mouth, even if it has its mouth open at the time.
 
 \subsection{Special Spell Effects}
 
-\parhead{Attacks} Some spell descriptions refer to attacking. All offensive combat actions and special abilities, even those that don't damage opponents, are considered attacks. All spells that affect any unwilling creatures are considered attacks. If all creatures affected by a spell are willing, the spell is not considered an attack. Spells that damage objects or summon allies are not attacks because the spells themselves don't harm anyone.
+\subsubsection{Attacks}
+Some spell descriptions refer to attacking. All offensive combat actions and special abilities, even those that don't damage opponents, are considered attacks. All spells that affect any unwilling creatures are considered attacks. If all creatures affected by a spell are willing, the spell is not considered an attack. Spells that damage objects or summon allies are not attacks because the spells themselves don't harm anyone.
 
-\label{Bringing Back the Dead}
-\parhead{Bringing Back the Dead} Several spells have the power to restore slain characters to life.
+\subsubsection{Resurrecting the Dead}\label{Resurrecting the Dead}
+
+Several spells have the power to restore slain characters to life.
 
 When a living creature dies, its soul departs its body, leaves the Material Plane, travels through the Astral Plane, and goes to abide on the plane where the creature's deity resides. If the creature did not worship a deity, its soul departs to the plane corresponding to its alignment. Bringing someone back from the dead means retrieving his or her soul and returning it to his or her body.
 
@@ -115,12 +97,13 @@ When a living creature dies, its soul departs its body, leaves the Material Plan
 
 \subparhead{Revivification against One's Will} A soul cannot be returned to life if it does not wish to be. A soul infallibly knows the name, alignment, and patron deity (if any) of the character attempting to revive it and may refuse to return on that basis.
 
-\section{Combining Effects}
+
+\subsection{Combining Effects}
 Spells or magical effects usually work as described, no matter how many other spells or magical effects happen to be operating in the same area or on the same recipient. Except in special cases, a spell does not affect the way another spell operates. Whenever a spell has a specific effect on other spells, the spell description explains that effect.
 
 However, spells, feats, class features, and other effects that have very similar effects may not both help the subject. A character can only be increased so far beyond his or her normal limits; even layered with powerful magical effects, a commoner is no serious threat to a giant. The limitations on these effects are provided by the stacking rules described below.
 
-\subsection{Stacking Effects}
+\subsubsection{Stacking Effects}
 Spells that provide bonuses or penalties usually do not stack with themselves. More generally, two enhancement bonuses don't stack even if they come from different spells; see \pcref{Stacking Rules}, for more details.
 
 \parhead{Same Effect More than Once in Different Strengths} In cases when two or more identical spells are operating in the same area or on the same target, but at different strengths, only the best one applies. This is called overlapping.
@@ -131,21 +114,9 @@ Spells that provide bonuses or penalties usually do not stack with themselves. M
 
 \parhead{Multiple Mental Control Effects} Sometimes magical effects that establish mental control render each other irrelevant, such as a spell that removes the subject's ability to act. Mental controls that don't remove the recipient's ability to act usually do not interfere with each other. If a creature is under the mental control of two or more creatures, it tends to obey each to the best of its ability, and to the extent of the control each effect allows. If the controlled creature receives conflicting orders simultaneously, the competing controllers must make opposed Charisma checks to determine which one the creature obeys.
 
-\parhead{Spells with Opposite Effects} Spells with opposite effects apply normally, with all bonuses, penalties, or changes accruing in the order that they apply. Some spells negate or counter each other. This is a special effect that is noted in a spell's description. If a spell negates another spell, it immediately dispels the other spell without a caster level check if cast on the same targets or in the same area, but does not itself take effect on those targets or in that area.
+\parhead{Spells with Opposite Effects} Spells with opposite effects apply normally, with all bonuses, penalties, or changes accruing in the order that they apply.
 
 \parhead{Instantaneous Effects} Two or more spells with instantaneous durations work cumulatively when they affect the same target.
-
-\section{Standard Spell Assumptions}
-
-\subsection{Dismissing Spells}
-
-As a swift action, you can dismiss any spells you cast that has lasting effects. This requires the same casting components (verbal and somatic) as casting the spell normally. The effects of a dismissed spell immediately end.
-
-\subsection{Valid Target Locations}
-
-\parhead{Midair Locations} A creature or object brought into being or transported to your location by a spell cannot appear floating in an empty space. It must arrive in an open location on a surface capable of supporting it.
-
-\parhead{Targeting Inside Creatures} Creatures block line of effect to the inside of their own bodies. As a result, you cannot cast a spell that takes effect inside a creature unless you are also inside the creature. This restriction applies even if there is no physical barrier to the inside of the creature; you cannot detonate a \spell{fireball} inside a creature's mouth, even if it has its mouth open at the time.
 
 \section{Spell Descriptions}
 The description of each spell is presented in a standard format. Each category of information is explained and defined below.
@@ -187,78 +158,8 @@ Necromancy spells manipulate the power of life and death, as well as souls. Spel
 \subsubsection{Transmutation}
 Transmutation spells change the properties of creatures and objects. They can grant new abilities, enhance existing abilities, change a target's form, or even alter the flow of time itself.
 
-\subsection{[Descriptor]}
-Appearing on the same line as the school, when applicable, is a descriptor that further categorizes the spell in some way. Some spells have more than one descriptor. The list of descriptors and their effects is given in \tref{Spell Descriptors}.
-
-Many of these descriptors have no game effect by themselves, but they govern how the spell interacts with other spells, with special abilities, with unusual creatures, with alignment, and so on.
-
-{
-    \onecolumn
-    \taburowcolors [2] 2{tbrown .. white}
-    \begin{longtabu}{l X}
-        \lcaption{Spell Descriptors} \\
-        \thead{Descriptor} & \thead{Effect} \\
-        Acid & \x \\
-        Air & The spell has effect in environments without air. \\
-        Alteration & \x \\
-        Antimagic & The spell attacks magic itself. It does not allow spell resistance. \\
-        Auditory & Creatures that cannot hear the spell's effect are immune to the spell. \\
-        Augment & \x \\
-        Barrier & If you attempt to move the spell's area towards a force or creature it prohibits, you feel a discernible pressure. If you continue moving, the spell ends. \\
-        Charm & \x \\
-        Chaotic & \x \\
-        Cold & \x \\
-        Compulsion & The spell forcibly alters a creature's actions, but does not necessarily affect its opinions or personality. \\
-        Creation & The spell creates a physical object. \\
-        Curse & The spell cannot be dispelled. It can be removed with \spell{break enchantment} or \spell{remove curse}. \\
-        Death & The spell only affects living creatures. A creature killed by a death effect cannot be returned to life by \spell{lesser resurrection}. \\
-        Delusion & The spell alters a creature's opinions or personality, but does not necessarily affect its actions. \\
-        Detection & The spell's area can penetrate physical objects. Unless otherwise specified, it is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt. \\
-        Disease & \x \\
-        Earth & \x \\
-        Electricity & \x \\
-        Evil & \x \\
-        Fear & \x \\
-        Figment & The spell creates a false sensation shared by everyone viewing or otherwise perceiving the figment. Figments cannot remove real sensations present in their area, but they can add additional false sensations. You can only create figments of sensations you understand; for example, you cannot create a figment which speaks in a language you do not understand.
-        \par A figment's physical defenses are equal to 10 \add its size modifier. \\
-        Fire & The spell has no effect underwater. It provides light as a torch. \\
-        Flesh & The spell has no effect on creatures without flesh, such as ghosts or oozes. \\
-        Fog & The spell has effect underwater. If at least 5 points of fire damage are dealt in a square within the spell's area, the fog is destroyed in that area. Unless otherwise specified, a moderate wind (11\add mph) disperses the fog in 5 rounds, and a strong wind (21\add mph) disperses the fog in 1 round. \\
-        Force & If the spell is cast on the Material Plane, it also affects the Ethereal Plane. \\
-        Glamer & \x \\
-        Good & \x \\
-        Instantaneous & The spell instantly causes some change which is thereafter nonmagical. It cannot be dispelled or dismissed. \\
-        Lawful & \x \\
-        Life & The spell only affects living creatures. \\
-        Light & The spell's effect is blocked by effects that block sight, and can pass through barriers that do not block sight. \\
-        Mental & The spell has no effect on creatures with an Intelligence of \minus8 or lower. \\
-        Morale & \x \\
-        Negative & \x \\
-        Physical & The spell creates or modifies physical objects rather than using a direct magical effect. The spell does not allow spell resistance. \\
-        Planar & \x \\
-        Poison & \x \\
-        Positive & \x \\
-        Scrying & The spell creates an invisible magical sensor that sends you information. Unless noted otherwise, the sensor has the same powers of sensory acuity that you possess. This level of acuity includes any spells or effects that target you, but not spells or effects that emanate from you. However, the sensor is treated as a separate, independent sensory organ of yours, and thus it functions normally even if you have been blinded, deafened, or otherwise suffered sensory impairment.
-        Any creature trained in Spellcraft can notice the sensor by making a DC 20 Spellcraft check. The sensor can be dispelled as if it were an active spell. Lead sheeting or magical protection blocks a scrying spell, and you sense that the spell is so blocked. \\
-        Shielding & \x \\
-        Sizing & Multiple size increasing or size decreasing effects never stack. Opposing size modifications cancel each other out on one for one basis, and any remaining effect occurs normally. \\
-        Sonic & \x \\
-        Speech & The spell be cast using a specific language you know. The spell has no effect on targets that do not understand the language used. \\
-        Subtle & \subtlespellnotes \\
-        Summoning & The spell manifests a creature from another plane. The manifestation immediately disappears when it dies, its hit points reach 0, or the spell's duration ends. Damage to the manifestation does not affect the original creature. Summoned creatures cannot use summoning abilities. Summoned creatures must be summoned within the spell's range, but can travel beyond that range freely. \\
-        Telekinesis & \x \\
-        Teleportation & A teleported creature can bring along equipment and held objects as long as their weight doesn't exceed its maximum load. Any excess items are left behind, in order of their distance from the creature's body. \\
-        Temporal & \x \\
-        Trap & The spell has no immediately obvious effect, but it can be detected with the Perception skill. Unless otherwise noted, it is also possible to disable the spell with the Devices skill before it triggers. The DC to detect and disable the spell is equal to 25 \add spell level.
-        \par No more than one trap spell can be placed on the same object or in the same area. Only the first trap placed has any effect. It must be dispelled or discharged before any new traps can be placed. \\
-        \label{Unreal Spells}Unreal & The spell can be recognized as unreal with a Perception check against a DC equal to 10 \add half your caster level \add your casting attribute. Creatures get a \plus10 bonus on this Perception check when using senses which should be present in the figment, but which are missing. Alternately, if the figment has a visual manifestation, physical contact can reveal it as unreal.
-
-        A creature faced with definitive proof that the figment is unreal can disbelieve it, treating it as if it were not there. Its effects can still be observed if desired, but they are mere shadows of the full effect: visual effects appear translucent outlines, sounds can be heard as ghostly echoes, and so on. \\
-        Visual & Creatures that cannot see the spell's effect are immune to the spell. \\
-        Water & \x \\
-    \end{longtabu}
-    \twocolumn
-}
+\subsection{[Tags]}
+Appearing on the same line as the school, when applicable, are tags which further categorizes the spell in some way. Some spells have more than one descriptor. Spell tags are described at \pcref{Spell Tags}.
 
 \subsection{Level}
 The next line of a spell description gives the spell's level, a number between 1 and 9 that defines the spell's relative power. This number is preceded by an abbreviation for the class whose members can cast the spell. The Level entry also indicates whether a spell is a domain spell and, if so, what its domain and its level as a domain spell are.
@@ -372,9 +273,6 @@ A burst, cone, cylinder, or emanation spell affects only an area, creatures, or 
 
 An otherwise solid barrier with a hole of at least 1 square foot through it does not block a spell's line of effect. Such an opening means that the 5-foot length of wall containing the hole is no longer considered a barrier for purposes of a spell's line of effect.
 
-\subsection{Focus}
-Some spells have a focus. A focus is like a target, except that spells do not directly affect the focus; instead, the focus is used to determine triggers, the spell's area, and so on.
-
 \subsection{Duration}
 A spell's Duration entry tells you how long the magical energy of the spell lasts.
 \parhead{Concentration} The spell lasts as long as you concentrate on it. Concentrating to maintain a spell is a standard action. Anything that could break your concentration when casting a spell can also break your concentration while you're maintaining one, causing the spell to end.
@@ -397,24 +295,8 @@ Some touch spells allow you to touch multiple targets as part of the spell. You 
 
 \parhead{Discharge} Occasionally a spells lasts for a set duration or until triggered or discharged.
 
-\subsection{Defenses}\label{Magic Defenses}
-Usually, a harmful spell requires a successful magic attack to have its full effect. The Defenses entry in a spell description defines which type of defenses the spell allows, and what effect the spell has if it is resisted.
-\parhead{Negates} A failed attack means the spell has no effect.
-\parhead{Partial} A failed attack means the spell still has a partial effect.
-\parhead{Half} A failed attack means the spell deals half damage.
-\parhead{None} No attack is required.
-\parhead{Disbelief} The spell can be disbelieved ( \pcref{Unreal Spells}).
-\parhead{(object)} The spell can be cast on objects, which have defenses only if they are magical or if they are attended (held, worn, grasped, or the like) by a creature resisting the spell, in which case the object uses the creature's defenses unless its own are greater. (This notation does not mean that a spell can be cast only on objects. Most spells of this sort can be cast on creatures or objects.) A magic item's special defenses are each equal to 12 \add one-half the item's caster level.
-
-\subsubsection{Magic Attack Bonus}\label{Magic Attack Bonus}
-To beat a creature's defenses, you make a magic attack. Your magic attack bonus is equal to half your caster level \add your casting attribute (Intelligence for a wizard, Perception for a druid, and Willpower for a sorcerer, and cleric). If you have more than one caster level, use the caster level appropriate to the class that you are casting the spell from, including any modifiers specific to that spell (such as from \featref{Spell Focus}).
-
-\subsubsection{Resisting a Spell} A creature that successfully resists a spell that has no obvious physical effects feels a hostile force or a tingle, but cannot deduce the exact nature of the attack without the use of the Spellcraft skill (see \pcref{Spellcraft}).
-
-\subsubsection{Not Resisting a Spell} A creature can voluntarily forego its defenses and willingly accept a spell's result. However, a character with a special resistance to magical effects cannot suppress that quality.
-
 \subsection{Spell Resistance}
-Spell resistance is like an additional defense against spells and spell-like abilities. When you cast a spell or use a spell-like ability that directly affects a creature or object with spell resistance, you must make a special attack with a bonus equal to your caster level. If that attack beats a target's spell resistance, the spell or spell-like ability works normally on that target. Otherwise, it has no effect on the target. This does not prevent the spell from having its normal effect on other creatures or objects.
+Spell resistance is like an additional defense against spells and spell-like abilities. When you cast a spell or use a spell-like ability that directly affects a creature or object with spell resistance, you must make a special attack with a bonus equal to your spellpower. If that attack beats a target's spell resistance, the spell or spell-like ability works normally on that target. Otherwise, it has no effect on the target. This does not prevent the spell from having its normal effect on other creatures or objects.
 
 Spells which do not directly affect targets, such as \spell{summon monster I} or \spell{silent image}, do not allow spell resistance. In addition, Antimagic and Physical spells do not allow spell resistance.
 
@@ -438,6 +320,79 @@ This is the effect a spell has on a healthy subject (above half hit points remai
 
 \subsubsection{Bloodied Effect}
 This is the effect a spell has on a bloodied subject (at or below half hit points remaining). If the spell has a duration, and a healthy creature becomes bloodied during the duration of the spell, it immediately suffers the bloodied effect of the spell. If the spell does not have a duration, any damage the subject takes after being affected by the spell does not change which effect the spell has.
+
+
+\section{Spell Tags}\label{Spell Tags}
+
+Most spells have tags that describe the spell's effects or nature. Many of these tags have no game effect by themselves, but they govern how the spell interacts with other spells, with special abilities, with unusual creatures, with alignment, and so on. They are described on \trefnp{Spell Tags}.
+
+{
+    \onecolumn
+    \taburowcolors [2] 2{tbrown .. white}
+    \begin{longtabu}{l X}
+        \lcaption{Spell Tags} \\
+        \thead{Tag} & \thead{Effect} \\
+        Acid & \x \\
+        Air & The spell has effect in environments without air. \\
+        Alteration & \x \\
+        Antimagic & The spell attacks magic itself. It does not allow spell resistance. \\
+        Auditory & Creatures that cannot hear the spell's effect are immune to the spell. \\
+        Augment & \x \\
+        Barrier & If you attempt to move the spell's area towards a force or creature it prohibits, you feel a discernible pressure. If you continue moving, the spell ends. \\
+        Charm & \x \\
+        Chaotic & \x \\
+        Cold & \x \\
+        Compulsion & The spell forcibly alters a creature's actions, but does not necessarily affect its opinions or personality. \\
+        Creation & The spell creates a physical object. \\
+        Curse & The spell cannot be dispelled. It can be removed with \spell{break enchantment} or \spell{remove curse}. \\
+        Death & The spell only affects living creatures. A creature killed by a death effect cannot be returned to life by \spell{lesser resurrection}. \\
+        Delusion & The spell alters a creature's opinions or personality, but does not necessarily affect its actions. \\
+        Detection & The spell's area can penetrate physical objects. Unless otherwise specified, it is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt. \\
+        Disease & \x \\
+        Earth & \x \\
+        Electricity & \x \\
+        Evil & \x \\
+        Fear & \x \\
+        Figment & The spell creates a false sensation shared by everyone viewing or otherwise perceiving the figment. Figments cannot remove real sensations present in their area, but they can add additional false sensations. You can only create figments of sensations you understand; for example, you cannot create a figment which speaks in a language you do not understand.
+        \par A figment's physical defenses are equal to 10 \add its size modifier. \\
+        Fire & The spell has no effect underwater. It provides light as a torch. \\
+        Flesh & The spell has no effect on creatures without flesh, such as ghosts or oozes. \\
+        Fog & The spell has effect underwater. If at least 5 points of fire damage are dealt in a square within the spell's area, the fog is destroyed in that area. Unless otherwise specified, a moderate wind (11\add mph) disperses the fog in 5 rounds, and a strong wind (21\add mph) disperses the fog in 1 round. \\
+        Force & If the spell is cast on the Material Plane, it also affects the Ethereal Plane. \\
+        Glamer & \x \\
+        Good & \x \\
+        Instantaneous & The spell instantly causes some change which is thereafter nonmagical. It cannot be dispelled or dismissed. \\
+        Lawful & \x \\
+        Life & The spell only affects living creatures. \\
+        Light & The spell's effect is blocked by effects that block sight, and can pass through barriers that do not block sight. \\
+        Mental & The spell has no effect on creatures with an Intelligence of \minus8 or lower. \\
+        Morale & \x \\
+        Negative & \x \\
+        Physical & The spell creates or modifies physical objects rather than using a direct magical effect. The spell does not allow spell resistance. \\
+        Planar & \x \\
+        Poison & \x \\
+        Positive & \x \\
+        Scrying & The spell creates an invisible magical sensor that sends you information. Unless noted otherwise, the sensor has the same powers of sensory acuity that you possess. This level of acuity includes any spells or effects that target you, but not spells or effects that emanate from you. However, the sensor is treated as a separate, independent sensory organ of yours, and thus it functions normally even if you have been blinded, deafened, or otherwise suffered sensory impairment.
+        Any creature trained in Spellcraft can notice the sensor by making a DC 20 Spellcraft check. The sensor can be dispelled as if it were an active spell. Lead sheeting or magical protection blocks a scrying spell, and you sense that the spell is so blocked. \\
+        Shielding & \x \\
+        Sizing & Multiple size increasing or size decreasing effects never stack. Opposing size modifications cancel each other out on one for one basis, and any remaining effect occurs normally. \\
+        Sonic & \x \\
+        Speech & The spell be cast using a specific language you know. The spell has no effect on targets that do not understand the language used. \\
+        Subtle & \subtlespellnotes \\
+        Summoning & The spell manifests a creature from another plane. The manifestation immediately disappears when it dies, its hit points reach 0, or the spell's duration ends. Damage to the manifestation does not affect the original creature. Summoned creatures cannot use summoning abilities. Summoned creatures must be summoned within the spell's range, but can travel beyond that range freely. \\
+        Telekinesis & \x \\
+        Teleportation & A teleported creature can bring along equipment and held objects as long as their weight doesn't exceed its maximum load. Any excess items are left behind, in order of their distance from the creature's body. \\
+        Temporal & \x \\
+        Trap & The spell has no immediately obvious effect, but it can be detected with the Perception skill. Unless otherwise noted, it is also possible to disable the spell with the Devices skill before it triggers. The DC to detect and disable the spell is equal to 25 \add spell level.
+        \par No more than one trap spell can be placed on the same object or in the same area. Only the first trap placed has any effect. It must be dispelled or discharged before any new traps can be placed. \\
+        \label{Unreal Spells}Unreal & The spell can be recognized as unreal with a Perception check against a DC equal to 10 \add half your spellpower \add your casting attribute. Creatures get a \plus10 bonus on this Perception check when using senses which should be present in the figment, but which are missing. Alternately, if the figment has a visual manifestation, physical contact can reveal it as unreal.
+
+        A creature faced with definitive proof that the figment is unreal can disbelieve it, treating it as if it were not there. Its effects can still be observed if desired, but they are mere shadows of the full effect: visual effects appear translucent outlines, sounds can be heard as ghostly echoes, and so on. \\
+        Visual & Creatures that cannot see the spell's effect are immune to the spell. \\
+        Water & \x \\
+    \end{longtabu}
+    \twocolumn
+}
 
 \section{Arcane, Divine, and Nature Spells}
 Wizards and sorcerers cast arcane spells, which involve the direct manipulation of mystic energies. These manipulations require natural talent and strength of will (in the case of sorcerers) or long study (in the case of wizards).
@@ -470,24 +425,6 @@ To decipher an magical writing (such as a single spell in written form on a scro
 
 Once a character deciphers a particular magical writing, she does not need to decipher it again. Deciphering a magical writing allows the reader to identify the spell and gives some idea of its effects (as explained in the spell description). If the magical writing was a scroll and the reader can cast spells of the appropriate type, she can attempt to use
 the scroll.
-
-\section{Special Abilities}
-
-\parhead{Spell-Like Abilities} Usually, a spell-like ability works just like the spell of that name. A few spell-like abilities are unique; these are explained in the text where they are described.
-
-A spell-like ability has no verbal, somatic, or material component, nor does it require a focus or have an XP cost. The user activates it mentally. Armor never affects a spell-like ability's use, even if the ability resembles an arcane spell with a somatic component.
-
-A spell-like ability has the casting time of the spell it mimics unless noted otherwise in the ability description. In all other ways, a spell-like ability functions just like a spell.
-
-Spell-like abilities are subject to spell resistance and to being dispelled by \spell{dispel magic}. They do not function in areas where magic is suppressed or negated. Spell-like abilities cannot be used to counterspell, nor can they be counterspelled.
-
-Some creatures are actually sorcerers of a sort. They cast arcane spells as sorcerers do, using components when required. In fact, an individual creature could have some spell-like abilities and also cast other spells as a sorcerer.
-
-\parhead{Supernatural Abilities} These abilities do not require concentration and cannot be disrupted in combat, as spells can. Supernatural abilities are not subject to spell resistance, counterspells, or to being dispelled by dispel magic, and do not function in areas where magic is suppressed or negated.
-
-\parhead{Extraordinary Abilities} These abilities do not require concentration and cannot be disrupted in combat, as spells can. Effects or areas that negate or disrupt magic have no effect on extraordinary abilities. They are not subject to dispelling, and they function normally in an \spell{antimagic field}. Indeed, extraordinary abilities do not qualify as magical, though they may break the laws of physics.
-
-\parhead{Natural Abilities} This category includes abilities a creature has because of its physical nature. Natural abilities are those not otherwise designated as extraordinary, supernatural, or spell-like.
 
 \section{Arcane Invocations}\label{Arcane Invocations}
 Arcane invocations are special spell-like abilities that arcane casters can use at will. Unlike other spell-like abilities, they have verbal and somatic components and are subject to arcane spell failure. All arcane invocations take a standard action to cast unless specified otherwise in the description. Arcane invocations are considered to be 0th level for the purpose of spells and abilities which reference spell level. They are described at the end of Chapter 12.
@@ -522,3 +459,21 @@ The costs to scribe and perform rituals are described on \trefnp{Ritual Costs}.
 \subsection{Performing Rituals}
 \par To perform a ritual, you must have a ritual book containing the ritual and the material components required for the ritual. If you are distracted during the ritual, you must make a Concentration check, just as if you were casting a spell of the ritual's level. If you fail, the ritual is ruined and you must start from the beginning. You can generally recover half the material components from an interrupted ritual.
 \par Performing a ritual and casting a ritual mean the same thing.
+\section{Types of Magical Abilities}
+
+\parhead{Spell-Like Abilities} Usually, a spell-like ability works just like the spell of that name. A few spell-like abilities are unique; these are explained in the text where they are described.
+
+A spell-like ability has no verbal, somatic, or material component, nor does it require a focus or have an XP cost. The user activates it mentally. Armor never affects a spell-like ability's use, even if the ability resembles an arcane spell with a somatic component.
+
+A spell-like ability has the casting time of the spell it mimics unless noted otherwise in the ability description. In all other ways, a spell-like ability functions just like a spell.
+
+Spell-like abilities are subject to spell resistance and to being dispelled by \spell{dispel magic}. They do not function in areas where magic is suppressed or negated. Spell-like abilities cannot be used to counterspell, nor can they be counterspelled.
+
+Some creatures are actually sorcerers of a sort. They cast arcane spells as sorcerers do, using components when required. In fact, an individual creature could have some spell-like abilities and also cast other spells as a sorcerer.
+
+\parhead{Supernatural Abilities} These abilities do not require concentration and cannot be disrupted in combat, as spells can. Supernatural abilities are not subject to spell resistance, counterspells, or to being dispelled by dispel magic, and do not function in areas where magic is suppressed or negated.
+
+\parhead{Extraordinary Abilities} These abilities do not require concentration and cannot be disrupted in combat, as spells can. Effects or areas that negate or disrupt magic have no effect on extraordinary abilities. They are not subject to dispelling, and they function normally in an \spell{antimagic field}. Indeed, extraordinary abilities do not qualify as magical, though they may break the laws of physics.
+
+\parhead{Natural Abilities} This category includes abilities a creature has because of its physical nature. Natural abilities are those not otherwise designated as extraordinary, supernatural, or spell-like.
+
