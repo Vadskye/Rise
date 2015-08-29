@@ -197,7 +197,7 @@
 \newcommand{\confusionexplanation}{A confused creature cannot take actions normally. If it is attacked, it automatically attacks a random attacker. Otherwise, at the beginning of each round, it randomly decides to take one of four actions that round: babble incoherently, flee from the caster as if panicked, attack the nearest creature, or act normally. A confused character who can't carry out the indicated action does nothing but babble incoherently.\xspace}
 
 \newcommand{\bonusscalingdescription}{This bonus increases to \plus3 at 8th level, to \plus4 at 14th level, and finally to \plus5 at 20th level.\xspace}
-\newcommand{\spellbonusscalingdescription}{This bonus increases to \plus3 at 8th caster level, to \plus4 at 14th caster level, and finally to \plus5 at 20th caster level.\xspace}
+\newcommand{\spellbonusscalingdescription}{This bonus increases to \plus3 at spellpower 8, to \plus4 at spellpower 14, and finally to \plus5 at spellpower 20.\xspace}
 \newcommand{\babscalingdescription}{This bonus increases to \plus3 at base attack bonus \plus8, to \plus4 at base attack bonus \plus12, and finally to \plus5 at base attack bonus \plus16.\xspace}
 
 \newcommand{\feat}[2]{\hypertarget{feat:#1}{\sssecfakehref{ft:#1}{#1 [#2]}}\label{feat:#1}}
@@ -637,10 +637,9 @@
 
 \DeclareDocumentCommand{\spelldamage}{m m o}
 {
-    1d6~#2~damage~per~two~caster~levels
-    %\IfNoValueTF{#3}
-    %{#1d10~#2~damage~\add~d10~per~four~caster~levels~above~\mathnth{2*#1}}
-    %{#1#3~#2~damage~\add~#3~per~four~caster~levels~above~\mathnth{2*#1}}
+    \IfNoValueTF{#3}
+    {#1d10~#2~damage~\add~d10~per~two~spellpower}
+    {#1#3~#2~damage~\add~#3~per~two~spellpower}
 }
 
 \DeclareDocumentCommand{\spellquicktargeting}{m m}
@@ -664,6 +663,15 @@
     \begin{tabularx}{\linewidth}{@{} >{\lcol}X l @{}}
 }
 
+\DeclareDocumentCommand{\spellmiscast}{
+{
+    \par\noindent\textit{Miscast}:\xspace}
+}
+
 \ExplSyntaxOff
+
+\newcommand{\miscastexplode}{\spellmiscast The spell's energy explodes, dealing 1d6 damage per two spellpower to you and all creatures adjacent to you.}
+\newcommand{\miscastrandom}{\spellmiscast The spell targets a random valid target within range (including yourself, if applicable).}
+\newcommand{\miscastyou}{\spellmiscast The spell targets you, or originates from your location, instead of its intended location.}
 
 \newcommand{\meh}[1]{\hypertarget{suspicious}{}#1}
