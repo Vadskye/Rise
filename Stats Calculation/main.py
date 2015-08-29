@@ -172,6 +172,7 @@ def wage_war(allies, enemies):
             enemy_any_dead += 1
         allies.reset_combat()
         enemies.reset_combat()
+
     rounds = float(rounds)/BATTLE_REPEAT_COUNT
     ally_victories = float(ally_victories)/BATTLE_REPEAT_COUNT
     ally_any_inactive = float(ally_any_inactive)/BATTLE_REPEAT_COUNT
@@ -185,12 +186,14 @@ def wage_war(allies, enemies):
             'any_dead': ally_any_dead,
             'any_inactive': ally_any_inactive,
             'average_hit_chance': allies.average_hit_chance(enemies),
+            'average_damage_dealt_per_round': allies.average_damage_dealt_per_round(),
             'victories': ally_victories,
         },
         'enemy': {
             'any_dead': enemy_any_dead,
             'any_inactive': enemy_any_inactive,
             'average_hit_chance': enemies.average_hit_chance(allies),
+            'average_damage_dealt_per_round': enemies.average_damage_dealt_per_round(),
             'victories': enemy_victories,
         },
         'rounds': rounds,
@@ -410,12 +413,14 @@ def main(args):
                 'any_dead': list(),
                 'any_inactive': list(),
                 'average_hit_chance': list(),
+                'average_damage_dealt_per_round': list(),
                 'victories': list(),
             },
             'enemy': {
                 'any_dead': list(),
                 'any_inactive': list(),
                 'average_hit_chance': list(),
+                'average_damage_dealt_per_round': list(),
                 'victories': list(),
             },
             'rounds': list(),
@@ -434,15 +439,9 @@ def main(args):
             combined_results['rounds'].append((i, war_results['rounds']))
             combined_results['ties'].append((i, war_results['ties']))
             for key in war_results['ally']:
-                if key == 'average_hit_chance':
-                    combined_results['ally'][key].append((i+1, war_results['ally'][key][0]))
-                else:
-                    combined_results['ally'][key].append((i+1, war_results['ally'][key]))
+                combined_results['ally'][key].append((i+1, war_results['ally'][key]))
             for key in war_results['enemy']:
-                if key == 'average_hit_chance':
-                    combined_results['enemy'][key].append((i+1, war_results['enemy'][key][0]))
-                else:
-                    combined_results['enemy'][key].append((i+1, war_results['enemy'][key]))
+                combined_results['enemy'][key].append((i+1, war_results['enemy'][key]))
 
         analyze_combined_results(combined_results)
 

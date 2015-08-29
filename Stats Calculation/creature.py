@@ -34,7 +34,7 @@ valid_modifier_types = set(
     special_attack_bonus
     spell_attack_bonus
     caster_level
-    spell_attack_bonus
+    spellpower
     first_physical_attack_bonus
     second_physical_attack_bonus
     third_physical_attack_bonus
@@ -49,7 +49,6 @@ valid_modifier_types = set(
     physical_damage_reduction
     initiative
     regeneration
-    caster_level
 '''.split())
 
 def add_base_modifier(key, value, modifiers):
@@ -64,8 +63,9 @@ def set_progression_modifier(key, value, modifiers):
 
 def get_base_progression_modifiers(
     level, base_attack_bonus_progression, caster_level_progression,
+    spellpower_progression,
     fortitude_progression, reflex_progression, will_progression,
-    hit_value, natural_armor_progression,
+    natural_armor_progression,
     strength_progression, dexterity_progression, constitution_progression,
     intelligence_progression, perception_progression, willpower_progression,
 ):
@@ -76,6 +76,9 @@ def get_base_progression_modifiers(
         'caster_level': get_caster_level_progression_modifier(
             caster_level_progression, level
         ),
+        'spellpower': get_spellpower_progression_modifier(
+            spellpower_progression, level
+        ),
         'fortitude': get_special_defense_progression_modifier(
             fortitude_progression, level
         ),
@@ -85,7 +88,6 @@ def get_base_progression_modifiers(
         'will': get_special_defense_progression_modifier(
             will_progression, level
         ),
-        'hit_points': level * int(hit_value),
         'natural_armor': get_natural_armor_progression(natural_armor_progression, level),
         'strength': get_attribute_progression(strength_progression, level),
         'dexterity': get_attribute_progression(dexterity_progression, level),
@@ -97,11 +99,11 @@ def get_base_progression_modifiers(
 
 def get_base_attack_bonus_progression_modifier(progression_type, level):
     if progression_type == 'good':
-        return level + 4
+        return level + 3
     elif progression_type == 'average':
-        return (level * 4) / 5 + 3
+        return (level * 4) / 5 + 2
     elif progression_type == 'poor':
-        return (level * 2) / 3 + 2
+        return (level * 2) / 3 + 1
     else:
         raise Exception("Unrecognized progression type {0}".format(progression_type))
 
@@ -111,13 +113,19 @@ def get_caster_level_progression_modifier(progression_type, level):
     else:
         return 0
 
+def get_spellpower_progression_modifier(progression_type, level):
+    if progression_type:
+        return level
+    else:
+        return 0
+
 def get_special_defense_progression_modifier(progression_type, level):
     if progression_type == 'good':
-        return level + 3
+        return (level * 5) / 4 + 4
     elif progression_type == 'average':
-        return (level * 3) / 4 + 3
+        return level + 3
     elif progression_type == 'poor':
-        return (level * 1) / 2 + 1
+        return (level * 3) / 4 + 1
     else:
         raise Exception("Unrecognized progression type {0}".format(progression_type))
 
@@ -165,10 +173,10 @@ class Creature(object):
                  # progressions
                  base_attack_bonus_progression = None,
                  caster_level_progression = None,
+                 spellpower_progression = None,
                  fortitude_progression = None,
                  reflex_progression = None,
                  will_progression = None,
-                 hit_value = None,
                  natural_armor_progression = None,
                  strength_progression = None,
                  dexterity_progression = None,
@@ -209,6 +217,8 @@ class Creature(object):
         # misc properties for shenanigans
         self._armor_defense = None
         self.ignore_warnings = ignore_warnings
+        self.damage_dealt_each_round = list()
+        self.damage_dealt_this_round = 0
 
         self.fundamental_progression = fundamental_progression
         self.race = race
@@ -219,10 +229,10 @@ class Creature(object):
 
         self.base_attack_bonus_progression = base_attack_bonus_progression
         self.caster_level_progression = caster_level_progression
+        self.spellpower_progression = spellpower_progression
         self.fortitude_progression = fortitude_progression
         self.reflex_progression = reflex_progression
         self.will_progression = will_progression
-        self.hit_value = hit_value
         self.natural_armor_progression = natural_armor_progression
         self.strength_progression = strength_progression
         self.dexterity_progression = dexterity_progression
@@ -269,7 +279,7 @@ class Creature(object):
 
         # stuff with dependencies
         self.set_default_modifiers()
-        self.reset_progression_modifiers()
+        self.set_base_progression_modifiers()
         self._update_static_modifiers()
 
         # abilities
@@ -290,6 +300,7 @@ class Creature(object):
                 self.add_ability(template)
 
         self._update_static_modifiers()
+        self._update_static_modifiers()
 
         #self.abilities = abilities
         #self.feats = feats
@@ -297,51 +308,60 @@ class Creature(object):
         #self.traits = traits
 
     def set_default_modifiers(self):
-        self.add_modifier('physical_attacks', 'equipment', 2, update_static = False)
-        #self.set_modifier('second_physical_attack_bonus', 'base', -5, update_static = False)
-        #self.set_modifier('third_physical_attack_bonus', 'base', -10, update_static = False)
-        #self.set_modifier('fourth_physical_attack_bonus', 'base', -15, update_static = False)
-        #self.set_modifier('fourth_physical_attack_bonus', 'base', -15, update_static = False)
+        self.add_modifier('physical_attacks', 'equipment', 2, update_static = True)
+        #self.set_modifier('second_physical_attack_bonus', 'base', -5, update_static = True)
+        #self.set_modifier('third_physical_attack_bonus', 'base', -10, update_static = True)
+        #self.set_modifier('fourth_physical_attack_bonus', 'base', -15, update_static = True)
+        #self.set_modifier('fourth_physical_attack_bonus', 'base', -15, update_static = True)
 
-        self.set_modifier(['physical_defenses', 'special_defenses'], 'base', 10, update_static = False)
+        self.set_modifier(['physical_defenses', 'special_defenses'], 'base', 10, update_static = True)
 
-        self.add_modifier('fortitude', 'attribute_or_progression', lambda c: c.constitution, update_static = False)
-        #self.add_modifier('fortitude', 'strength', lambda c: c.strength / 2, update_static = False)
-        self.add_modifier('reflex', 'attribute_or_progression', lambda c: c.dexterity, update_static = False)
-        #self.add_modifier('reflex', 'perception', lambda c: c.perception / 2, update_static = False)
-        self.add_modifier('will', 'attribute_or_progression', lambda c: c.willpower, update_static = False)
-        #self.add_modifier('will', 'intelligence', lambda c: c.intelligence / 2, update_static = False)
+        self.add_modifier('fortitude', 'attribute_or_progression', lambda c: c.constitution + c.strength/2, update_static = True)
+        #self.add_modifier('fortitude', 'strength', lambda c: c.strength / 2, update_static = True)
+        self.add_modifier('reflex', 'attribute_or_progression', lambda c: c.dexterity + c.perception / 2, update_static = True)
+        #self.add_modifier('reflex', 'perception', lambda c: c.perception / 2, update_static = True)
+        self.add_modifier('will', 'attribute_or_progression', lambda c: c.willpower + c.intelligence / 2, update_static = True)
+        #self.add_modifier('will', 'intelligence', lambda c: c.intelligence / 2, update_static = True)
 
         #magic_item_modifiers = get_magic_item_modifiers()
         #for modifier_type, value in magic_item_modifiers.items():
-            #self.set_modifier(modifier_type, 'enhancement', value, update_static = False)
+            #self.set_modifier(modifier_type, 'enhancement', value, update_static = True)
 
         # attacks
-        self.add_modifier('physical_attacks', 'attribute_or_progression', lambda c: c.base_attack_bonus, update_static = False)
-        self.add_modifier('physical_attacks', 'attribute_or_progression', lambda c: c.physical_attack_attribute, update_static = False)
-        self.add_modifier('physical_attacks', 'size', lambda c: c.size_modifier, update_static = False)
-        self.add_modifier('physical_damage', 'attribute_or_progression', lambda c: c.base_attack_bonus / 2, update_static = False)
-        self.add_modifier('physical_damage', 'attribute_or_progression', lambda c: c.strength / 2, update_static = False)
+        self.add_modifier('physical_attacks', 'attribute_or_progression', lambda c: c.base_attack_bonus, update_static = True)
+        self.add_modifier('physical_attacks', 'attribute_or_progression', lambda c: c.physical_attack_attribute, update_static = True)
+        self.add_modifier('physical_attacks', 'size', lambda c: c.size_modifier, update_static = True)
+        self.add_modifier('physical_damage', 'attribute_or_progression', lambda c: c.base_attack_bonus / 2, update_static = True)
+        self.add_modifier('physical_damage', 'attribute_or_progression', lambda c: c.strength / 2, update_static = True)
 
-        self.add_modifier('spell_attack_bonus', 'caster level', lambda c: c.caster_level / 2, update_static = False)
-        self.add_modifier('spell_attack_bonus', 'attack attribute', lambda c: c.casting_attribute, update_static = False)
+        self.add_modifier('spell_attack_bonus', 'attribute_or_progression', lambda c: c.caster_level, update_static = True)
+        self.add_modifier('spell_attack_bonus', 'attribute_or_progression', lambda c: c.casting_attribute, update_static = True)
+        self.add_modifier('spellpower', 'attribute_or_progression', lambda c: c.willpower, update_static = True)
 
-        self.add_modifier('physical_defenses', 'attribute_or_progression', lambda c: c.dexterity, update_static = False)
-        self.add_modifier('physical_defenses', 'attribute_or_progression', lambda c: c.constitution, update_static = False)
-        self.add_modifier('physical_defenses', 'shield', lambda c: c.shield_bonus, update_static = False)
-        self.add_modifier('armor_defense', 'attribute_or_progression', lambda c: c.base_attack_bonus/2, update_static = False)
-        self.add_modifier('armor_defense', 'armor', lambda c: c.armor_bonus, update_static = False)
-        self.add_modifier('armor_defense', 'size', lambda c: c.size_modifier, update_static = False)
-        self.add_modifier('maneuver_defense', 'attribute_or_progression', lambda c: c.base_attack_bonus, update_static = False)
-        self.add_modifier('maneuver_defense', 'attribute_or_progression', lambda c: c.strength, update_static = False)
-        self.add_modifier('maneuver_defense', 'size', lambda c: c.special_size_modifier, update_static = False)
+        self.add_modifier('physical_defenses', 'attribute_or_progression', lambda c: c.dexterity, update_static = True)
+        self.add_modifier('physical_defenses', 'attribute_or_progression', lambda c: c.constitution, update_static = True)
+        self.add_modifier('physical_defenses', 'shield', lambda c: c.shield_bonus, update_static = True)
+        self.add_modifier('armor_defense', 'attribute_or_progression', lambda c: c.base_attack_bonus, update_static = True)
+        self.add_modifier('armor_defense', 'armor', lambda c: c.armor_bonus, update_static = True)
+        self.add_modifier('armor_defense', 'size', lambda c: c.size_modifier, update_static = True)
+        self.add_modifier('maneuver_defense', 'attribute_or_progression', lambda c: c.base_attack_bonus, update_static = True)
+        self.add_modifier('maneuver_defense', 'attribute_or_progression', lambda c: c.strength, update_static = True)
+        self.add_modifier('maneuver_defense', 'size', lambda c: c.special_size_modifier, update_static = True)
 
-        #self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.constitution / 2) * c.level, update_static = False)
-        #self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.willpower / 2) * c.level, update_static = False)
-        self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.fortitude / 2) * c.level, update_static = False)
-        self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.willpower / 2) * c.level, update_static = False)
+        #self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.constitution / 2) * c.level, update_static = True)
+        #self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.willpower / 2) * c.level, update_static = True)
+        self.add_modifier('hit_points', 'attribute_or_progression', lambda c: ((c.fortitude-10) / 2) * c.level, update_static = True)
+        self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.willpower / 2) * c.level, update_static = True)
 
-        self.add_modifier('physical_defenses', 'overwhelm', -2, update_static = False)
+        # all stats increase every 5 levels
+        self.add_modifier('strength',     'tiers', lambda c: c.level / 5, update_static = True)
+        self.add_modifier('dexterity',    'tiers', lambda c: c.level / 5, update_static = True)
+        self.add_modifier('constitution', 'tiers', lambda c: c.level / 5, update_static = True)
+        self.add_modifier('intelligence', 'tiers', lambda c: c.level / 5, update_static = True)
+        self.add_modifier('perception',   'tiers', lambda c: c.level / 5, update_static = True)
+        self.add_modifier('willpower',    'tiers', lambda c: c.level / 5, update_static = True)
+
+        self.add_modifier('physical_defenses', 'overwhelm', -2, update_static = True)
 
     def add_modifier(self, modifier_types, name, value, is_penalty = False, replace_existing = False, update_static = True):
         modifier_types = util.ensure_list(modifier_types)
@@ -410,9 +430,9 @@ class Creature(object):
         self._static_modifiers['physical attack attribute']   = self._calculate_physical_attack_attribute()
         self._static_modifiers['physical defense attribute']   = self._calculate_physical_defense_attribute()
         if self.attack_mode in ('damage_spells', 'condition_spells'):
-            dice_count = max(1, self.level / 2 + ((self.caster_level - self.level) / 4) - 1)
+            dice_count = max(1, self.spellpower/2)
             #print "dice count", dice_count
-            self.spell_attack_die = Dice(8, dice_count)
+            self.spell_damage_dice = Dice(10, dice_count)
 
     def get_modifiers_as_dict(self, modifier_type):
         dict_of_stuff = dict()
@@ -485,29 +505,30 @@ class Creature(object):
     @level.setter
     def level(self, value):
         self._level = value
-        self.reset_progression_modifiers()
 
     @property
     def caster_level(self):
         return self.get_modifiers('caster_level')
 
-    def reset_progression_modifiers(self):
+    @property
+    def spellpower(self):
+        return self.get_modifiers('spellpower')
+
+    def set_base_progression_modifiers(self):
         base_progression_modifiers = get_base_progression_modifiers(
             self.level, self.base_attack_bonus_progression, self.caster_level_progression,
+            self.spellpower_progression,
             self.fortitude_progression, self.reflex_progression, self.will_progression, 
-            self.hit_value, self.natural_armor_progression,
+            self.natural_armor_progression,
             self.strength_progression, self.dexterity_progression, self.constitution_progression,
             self.intelligence_progression, self.perception_progression, self.willpower_progression,
         )
         for progression_type, value in base_progression_modifiers.items():
             # natural armor is just a particular name of a bonus to armor_defense
             if progression_type == 'natural_armor':
-                self.set_modifier('armor_defense', 'natural_armor', value, update_static = False)
-            elif progression_type == 'hit_points':
-                pass
-                #self.set_modifier('hit_points', 'hit_value', value, update_static = False)
+                self.add_modifier('armor_defense', 'natural_armor', value, update_static = False)
             else:
-                self.set_modifier(progression_type, 'attribute_or_progression', value, update_static = False)
+                self.add_modifier(progression_type, 'attribute_or_progression', value, update_static = False)
 
     @property
     def hit_points(self):
@@ -656,7 +677,7 @@ class Creature(object):
 
     @property
     def spell_attack_damage(self):
-        return self.spell_attack_die.roll()
+        return self.spell_damage_dice.roll()
 
     @property
     def encumbrance(self):
@@ -864,18 +885,25 @@ class Creature(object):
             attack_type = 'physical'
             for attack_bonus in self.physical_attack_progression:
                 attack_result = d20.roll() + attack_bonus
-                if creature.is_hit(attack_result, attack_type):
-                    creature.take_damage(self.physical_attack_damage, attack_type)
+                if creature.is_hit_by_attack(attack_result, attack_type):
+                    attack_damage = self.physical_attack_damage
+                    creature.take_damage(attack_damage, attack_type)
+                    self.damage_dealt_this_round += attack_damage
         elif self.attack_mode == 'damage_spells':
-            creature.take_damage(self.spell_attack_damage, 'spell')
+            attack_result = d20.roll() + self.spell_attack_bonus
+            if creature.is_hit_by_attack(attack_result, 'spell'):
+                attack_damage = self.spell_attack_damage
+                creature.take_damage(attack_damage, 'spell')
+                self.damage_dealt_this_round += attack_damage
         elif self.attack_mode == 'condition_spells':
             if creature.has_modifier('magic_penalty'):
                 creature.take_damage(self.spell_attack_damage, 'spell')
             else:
-                creature.add_modifier(['attacks', 'defenses'], 'magic_penalty', -util.std_scale(self.caster_level))
+                creature.add_modifier(['attacks', 'defenses'], 'magic_penalty', -util.std_scale(self.spellpower))
                # creature.add_modifier(['attacks', 'defenses'], 'magic_penalty', -2)
         else:
             raise Exception("Creature {0} does not have attack mode {1}".format(self.name, self.attack_mode))
+        self.attacked_this_round = 1
 
     def average_hit_chance(self, target):
         if self.attack_mode == 'physical':
@@ -884,7 +912,7 @@ class Creature(object):
                  for attack_bonus in self.physical_attack_progression]
             )
         elif self.attack_mode in ('damage_spells', 'condition_spells'):
-            return util.hit_probability(self.spell_attack_bonus, target.fortitude)
+            return util.hit_probability(self.spell_attack_bonus, target.get_defense_against_attack('spell'))
         else:
             raise Exception("Creature {0} does not have attack mode {1}".format(self.name, self.attack_mode))
 
@@ -894,13 +922,16 @@ class Creature(object):
             hits += util.hit_probability(attack_bonus, target.armor_defense)
         return hits
 
-    def average_damage_per_round(self, target):
+    def estimate_average_damage_per_round(self, target):
         damage = 0
         for attack_bonus in self.physical_attack_progression:
             damage += util.hit_probability(attack_bonus, target.armor_defense) * self.average_physical_attack_damage
         return damage
 
-    def is_hit(self, attack_result, attack_type = 'physical'):
+    def average_damage_dealt_per_round(self):
+        return round(float(sum(self.damage_dealt_each_round)) / len(self.damage_dealt_each_round), 2)
+
+    def is_hit_by_attack(self, attack_result, attack_type = 'physical'):
         return attack_result >= self.get_defense_against_attack(attack_type)
 
     def get_defense_against_attack(self, attack_type):
@@ -908,6 +939,8 @@ class Creature(object):
             return self.armor_defense
         elif attack_type == 'maneuver':
             return self.maneuver_defense
+        elif attack_type == 'spell':
+            return min(self.fortitude, self.reflex, self.will)
         else:
             raise Exception("Creature {0} does not have defense against attack type {1}".format(self.name, attack_type))
 
@@ -924,6 +957,10 @@ class Creature(object):
         self.used_physical_damage_reduction = 0
         if self.regeneration:
             self.damage = max(0, self.damage - self.regeneration)
+        if self.attacked_this_round:
+            self.damage_dealt_each_round.append(self.damage_dealt_this_round)
+        self.damage_dealt_this_round = 0
+        self.attacked_this_round = 0
 
     def __str__(self):
         return '{0} {1}\n{2}\n{3}\n{4}\n{5}\n{6}'.format(
@@ -961,7 +998,7 @@ class Creature(object):
         if self.has_special_attacks:
             text += "\n    Special: {0}".format(util.mstr(self.special_attack_bonus))
         if self.has_spells:
-            text += "\n    Spells: {0}".format(util.mstr(self.spell_attack_bonus))
+            text += "\n    Spells: {0}: {1}".format(util.mstr(self.spell_attack_bonus), self.spell_damage_dice)
         return text
 
     def _to_string_weapon_damage(self):
@@ -1027,10 +1064,10 @@ class Creature(object):
             # progressions
             base_attack_bonus_progression = creature_data.get('bab'),
             caster_level_progression = creature_data.get('is_spellcaster'),
+            spellpower_progression = creature_data.get('is_spellcaster'),
             fortitude_progression = creature_data.get('fortitude'),
             reflex_progression = creature_data.get('reflex'),
             will_progression = creature_data.get('will'),
-            hit_value = creature_data.get('hit_value'),
             natural_armor_progression = creature_data.get('natural_armor'),
             strength_progression = attributes.get('strength').get('progression'),
             dexterity_progression = attributes.get('dexterity').get('progression'),
@@ -1172,3 +1209,6 @@ class CreatureGroup(object):
             return [creature.average_hit_chance(target) for creature in self.creatures]
         else:
             return 'Unable to calculate average hit chance between arbitrarily sized groups'
+
+    def average_damage_dealt_per_round(self):
+        return [creature.average_damage_dealt_per_round() for creature in self.creatures]

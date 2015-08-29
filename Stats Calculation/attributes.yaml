@@ -219,3 +219,17 @@ wizard:
       value: 4
     perception: 0
     willpower: 0
+wizard_will:
+    strength: 0
+    dexterity: 
+      value: 0
+    constitution: 
+      progression: tertiary
+      value: 2
+    intelligence: 
+      progression: primary
+      value: 4
+    perception: 0
+    willpower:
+      progression: secondary
+      value: 3
