@@ -55,8 +55,6 @@ Not all metamagic feats cannot be used with all spells. See the specific feat de
 
 \parhead{Magic Items and Metamagic Spells} With the right item creation feat, you can store a metamagic version of a spell in a scroll, potion, or wand. Level limits for potions and wands apply to the spell's higher spell level (after the application of the metamagic feat). A character doesn't need the metamagic feat to activate an item storing a metamagic version of a spell.
 
-\parhead{Counterspelling Metamagic Spells} Whether or not a spell has been enhanced by a metamagic feat does not affect its vulnerability to counterspelling or its ability to counterspell another spell.
-
 \subsection{Performance Feats}
 Performance feats allow a character to use the Perform skill to create magical effects. All Performance feats are also Skill feats.
 
@@ -181,8 +179,10 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
     \featref{Bardic Spellpower} & Arcane spellcasting ability & Fighter and rogue levels improve some spells & \featpref{Bardic Spellpower} \\
     \featref{Battlecaster} & Proficiency with light armor & Reduce arcane spell failure by 10\% & \featpref{Battlecaster} \\
     \featref{Combat Casting} & \x &  \plus2 bonus to Concentration checks to cast spells, reroll 1/day & \featpref{Combat Casting} \\
+    \featref{Counterspell} & Spellcraft 8 ranks, 2nd level spells & Counter spells cast by foe & \featpref{Counterspell} \\
+    \tind\featref{Flexible Counterspell} & Counterspell & Use any spell to counterspell & \featpref{Flexible Counterspell} \\
+    \tind\featref{Mass Counterspell} & Spellcraft 13 ranks, 4th level spells, Counterspell & Counter spells cast by multiple foes & \featpref{Mass Counterspell} \\
     \featref{Craftcaster} & Craft (any) 8 ranks, 2nd level spells & Increase caster level when creating, transforming objects & \featpref{Craftcaster} \\
-    \featref{Improved Counterspell} & \x &  Counterspell with spell of same school & \featpref{Improved Counterspell} \\
     \featref{Legendary Magic} & 5th level spells & Weak creatures are always considered bloodied & \featpref{Legendary Magic} \\
     \featref{Magical Synthesis} & Levels in two magical classes & Increase spellcasting ability in two magical classes at once & \featpref{Magical Synthesis} \\
     \featref{Mass Transporter} & 5th level Conjuration (Translocation) spell & Transport many creatures at once & \featpref{Mass Transporter} \\
@@ -193,7 +193,6 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
     \featref{Residual Beguilement} & 3rd level Enchantment (Beguilement) spell & Gain Persuasion bonus after casting a spell & \featpref{Residual Beguilement} \\
     \featref{Residual Shield} & Abjuration (Shielding) spell & Gain benefits of spell briefly after casting on another creature & \featpref{Residual Shield} \\
     \featref{Resilient Magic} & 2nd level Abjuration (Negation) spell & Spells persist for 1 round after being dispelled & \featpref{Resilient Magic} \\
-    \featref{Retributive Counterspell} &  4th level spells & Countered spells rebound on original caster & \featpref{Retributive Counterspell} \\
     \featref{Ritual Caster} & Int 3 & Gain ability to perform rituals & \featpref{Ritual Caster} \\
     \featref{Spell Focus}\fn{1} & 2nd level spells &  \plus2 caster level with specific type of magic & \featpref{Spell Focus} \\
     \tind \featref{Spell Specialization} & 4th level spells, Spell Focus &  \plus2 caster level with specific type of magic, \minus2 penalty with other types. & \featpref{Spell Specialization} \\
@@ -599,6 +598,14 @@ Contingent actions depend on a trigger condition. If the trigger condition occur
 \parhead{Benefit} While in this style, if you hit a creature with a physical ranged attack, it takes a \minus2 penalty to physical attacks for 1 round. In exchange, you take a \minus2 penalty to damage rolls with physical ranged attacks.
 \stylereq Wield a ranged weapon. You must take a standard attack action each round.
 
+\feat{Counterspell}{Magic}
+\featpre 2nd level spells, Spellcraft 8 ranks.
+\featben As a standard action, you can attempt to counterspell a creature within \rngmed range of you. If that creature casts a spell during the same phase, you can make a Spellcraft check to identify the spell as normal (see \pcref{Spellcraft}).
+
+After attempting to identify the spell, you may cast any spell you know as a counterspell. That spell's normal effect does not occur. Instead, if you cast the same spell as your target, the target miscasts its spell. If you cast a different spell, but one from the same spell school and of the same spell level or higher, you and your target make opposed caster level checks. If you win, the target miscasts its spell. If you fail the caster level check, if your spell is of a different spell school, or if your spell is lower level, the target's spell takes effect normally.
+
+\parhead{Special} Metamagic feats and similar spell augmentations are ignored for the purpose of countering spells. The \spell{dispel magic} spell can be used to counter any spell, even higher level spells.
+
 \feat{Counterstorm}{Combat, Reaction, Style}
 \featpre Base attack bonus \plus14.
 \featben Whenever a foe misses you with a melee attack, you gain a cumulative \plus2 bonus to damage on your next physical melee attack against that creature. If this bonus is not used within 1 round, it is lost. In exchange, you cannot take the block action.
@@ -839,6 +846,10 @@ You can use any combination of performance feats you possess a number of times p
 \featben While in this style, during the movement phase, you may choose to be \defenseless against one opponent threatening you. If the creature attacks you that round, you gain a \plus3 bonus to damage on your next physical attack against it. If you do not strike the creature within 1 round, the bonus is lost.
 \stylereq Wield a melee weapon. You must take a standard attack action each round.
 
+\feat{Flexible Counterspell}{Magic}
+\featpre Spellcraft 8 ranks, Counterspell.
+\parhead{Benefit} When counterspelling, you may attempt to counter spells of any school, regardless of which spell you cast.
+
 \feat{Focused Mind}{Racial}
 \parhead{Prerequisite} Elf.
 \parhead{Benefit} You gain a \plus2 bonus to Will defense. In addition, you can use your Intelligence instead of your Constitution on Concentration checks, such as when you cast spells.
@@ -905,10 +916,6 @@ Only spells which affect a single target and have a casting time no shorter than
 \feat{Improved Shove}{Combat, Maneuver}
 \parhead{Prerequisites} Base attack bonus \plus2.
 \parhead{Benefit} When you shove a creature, you can move it outside of your reach. You also gain a \plus2 bonus to shove attacks.
-
-\feat{Improved Counterspell}{Magic}
-\parhead{Benefit} When counterspelling, you may use any spell of the same school with a spell level at least as high as the target spell.
-\parhead{Normal} Without this feat, you may counter a spell only with the same spell or with a spell specifically designated as countering the target spell.
 
 \feat{Improved Dirty Trick}{Combat, Maneuver}
 \parhead{Prerequisites} Base attack bonus \plus2.
@@ -1238,6 +1245,10 @@ Choose two magical classes you possess.
 \parhead{Prerequisites} Dex 5, base attack bonus \plus10.
 \parhead{Benefit} While in this style, when you attack with a light thrown weapon or projectile weapon, you may attack with two projectiles or weapons at once. If the attack hits, you roll damage twice and take the higher of the two roll, as with two-weapon fighting (see \pcref{Two-Weapon Fighting}). Taking advantage of this style requires having multiple weapons in hand or loading two projectiles at once, which may be difficult if you reload slowly.
 \stylereq Wield a ranged weapon. You must take a standard attack action each round.
+
+\feat{Mass Counterspell}{Magic}
+\featpre Spellcraft 13 ranks, 4th level spells, Counterspell.
+\featben When you use the Counterspell feat, you may counter up to five creatures within \rngmed range of you. You may still cast only one spell, but it is used to counter the spells cast by all of your targets.
 
 \feat{Mass Transporter}{Magic}
 \featpre Ability to cast a Conjuration (Translocation) spell of at least 5th level.
