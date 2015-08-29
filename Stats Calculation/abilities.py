@@ -162,9 +162,9 @@ def get_all_abilities():
         'divine presence': {
             'modifiers': [
                 {
-                    'modifier_name': 'willpower',
+                    'modifier_name': 'attribute_or_progression',
                     'modifier_type': 'physical_defenses',
-                    'value': lambda c: c.willpower / 2,
+                    'value': lambda c: c.willpower,
                 },
             ],
         },
