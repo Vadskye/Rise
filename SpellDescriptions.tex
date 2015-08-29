@@ -14,13 +14,14 @@
             \spelltwocol{\spelltime{Immediate action}}{\spellcmp{Verbal only}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect You gain damage reduction against physical damage equal to twice your caster level. Force damage ignores this damage reduction and negates it for 1 round.
+            \spelleffect You gain damage reduction against physical damage equal to twice your spellpower. Force damage ignores this damage reduction and negates it for 1 round.
             \spelldur Until end of round
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Abjuration [Shielding]}{Abjuration}
         \spellnotes After casting this spell, you cannot cast it again for 5 rounds. You can cast this spell in response to an opponent attacking you, before the attack is rolled.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -35,7 +36,7 @@
             \spelltwocol{\spelltime{Immediate action}}{\spellcmp{Verbal only}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect You gain damage reduction against spells equal to twice your caster level. Force damage ignores this damage reduction and negates it for 1 round.
+            \spelleffect You gain damage reduction against spells equal to twice your spellpower. Force damage ignores this damage reduction and negates it for 1 round.
             \spelldur Until end of round
         \end{spelleffects}
     \end{spellcontent}
@@ -44,6 +45,7 @@
         \spellnotes After casting this spell, you cannot cast it again for 5 rounds. You can cast this spell in response to an opponent attacking you, before the attack is rolled.
 
         Spells that are not subject to spell resistance are not affected by \spell{ablative shield}.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -57,7 +59,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Magic vs. Reflex}
-                \spellsuccess 1d6 acid damage per caster level immediately, and again at the end of the next round.
+                \spellsuccess 1d6 acid damage per spellpower immediately, and again at the end of the next round.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -66,6 +68,7 @@
         \spellnotes If the target becomes submerged in water or is affected by a cold, fire, or water effect, it takes no secondary damage.
 
         \physicalspellnotes
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -79,6 +82,7 @@
     \begin{spellfooter}
         \spellinfo{Conjuration [Acid, Creation, Physical]}{Arcane}
         \spellnotes As \spell{acid arrow}, except that ten points of cold or fire damage are required to end the effect.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -102,7 +106,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Magic vs. Fortitude}
-                \spellsuccess 1d6 acid damage per four caster levels.
+                \spellsuccess 1d6 acid damage per four spellpower.
                 \spellfailure Half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -110,6 +114,7 @@
     \begin{spellfooter}
         \spellinfo{Conjuration [Acid, Creation, Fog, Physical]}{Arcane, Destruction}
         \spellnotes \physicalspellnotes
+        \miscastyou
     \end{spellfooter}
 \end{spellsection}
 
@@ -131,6 +136,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Delusion, Mental]}{Arcane}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -143,13 +149,14 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{Touch}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target gains temporary hit points equal to your caster level. In addition, it is immune to fear effects.
+            \spelleffect The target gains temporary hit points equal to your spellpower. In addition, it is immune to fear effects.
             \spelldur \durpersonallong
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Mental, Morale]}{Divine}
         \spellnotes If the target takes life damage, it loses all temporary hit points provided by this spell before applying the damage.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -169,6 +176,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Air, Augment]}{Air, Divine, Nature, Travel}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -188,6 +196,7 @@
     \begin{spellfooter}
         \spellinfo{Abjuration [Barrier]}{Divine, Nature, Wild}
         \spellnotes Barrier spells may be used only defensively, not aggressively. Creatures in the area at the time that the spell is cast are unaffected by the spell.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -212,6 +221,7 @@
         \par \spell{Dispel magic} and similar magic has no effect on an \spell{antimagic field}. Two or more \spellindirect{antimagicfield}{antimagic fields} sharing any of the same space have no effect on each other.
     %\par Any part of a creature that lies outside the field is unaffected by the field.
         \par Artifacts and deities are unaffected by mortal magic such as this.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -232,6 +242,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Alteration, Water]}{Nature, Water}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -245,7 +256,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Magic vs. Fortitude}
-                \spellsuccess 1d10 life damage per two caster levels. If the target has no hit points remaining, it immediately dies, and you are transformed to mimic its appearance for 12 hours. This grants you a \plus10 bonus on Disguise checks made to appear as that creature.
+                \spellsuccess 1d10 life damage per two spellpower. If the target has no hit points remaining, it immediately dies, and you are transformed to mimic its appearance for 12 hours. This grants you a \plus10 bonus on Disguise checks made to appear as that creature.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
             \spelldur \durext; see text
@@ -253,6 +264,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy/Transmutation [Alteration]}{Arcane, Evil}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -275,6 +287,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Mental]}{Enchantment}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -296,6 +309,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Compulsion, Mental]}{Divine, Evil, War}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -313,6 +327,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Compulsion, Mental]}{Divine, Evil, War}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -325,12 +340,13 @@
             \spelltwocol{\spelltgt{One living creature}}{\spellrng{Touch}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target gains damage reduction against physical damage equal to half your caster level. Slashing weapons and fire damage ignore this damage reduction and negate it for 1 round.
+            \spelleffect The target gains damage reduction against physical damage equal to half your spellpower. Slashing weapons and fire damage ignore this damage reduction and negate it for 1 round.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Augment]}{Nature, Wild}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -353,14 +369,15 @@
             \spelltgts{All creatures in the area within 5 feet of the ground.}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \begin{spellattack}{Caster level \add casting attribute vs. Maneuver defense}
-                \spellsuccess The target is grappled and takes 1d8\plus4 bludgeoning damage. It remains grappled until it escapes the tentacle. The DC to escape the grapple is equal to 10 \add your caster level \add your casting attribute.
+            \begin{spellattack}{Spellpower \add casting attribute vs. Maneuver defense}
+                \spellsuccess The target is grappled and takes 1d8\plus4 bludgeoning damage. It remains grappled until it escapes the tentacle. The DC to escape the grapple is equal to 10 \add your spellpower \add your casting attribute.
             \end{spellattack}
         \end{spelleffects}
     \end{spellsubcontent}
     \begin{spellfooter}
         \spellinfo{Evocation}{Arcane}
         \spellnotes The tentacles are immune to all forms of attack.
+        \miscastyou
     \end{spellfooter}
 \end{spellsection}
 
@@ -390,6 +407,7 @@
     \end{spellsubcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Force, Wall]}{Divine, War}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -413,6 +431,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Evil]}{Divine, Evil}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -431,6 +450,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Mental, Morale]}{Divine, Good, War}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -449,6 +469,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Mental, Morale]}{Divine, Good, War}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -468,6 +489,7 @@
     \begin{spellfooter}
         \spellinfo{Conjuration [Planar]}{Arcane}
         \spellnotes If you are on the Astral Plane when you cast this spell, it has no effect.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -486,6 +508,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Illusion [Glamer]}{Arcane}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -506,6 +529,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Destructive, Fire]}{Arcane, Destruction, Nature, Fire}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -531,6 +555,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Chaotic]}{Chaos, Divine}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -550,13 +575,14 @@
                 If you are outdoors in cloudy or stormy weather, roll d10s instead of d8s for damage.
                 \spellfailure Half damage.
             \end{spellattack}
-            \spelleffect You can concentrate as a standard action to call down another bolt of lightning. You may call a total number of bolts equal to your caster level before the spell is discharged.
+            \spelleffect You can concentrate as a standard action to call down another bolt of lightning. You may call a total number of bolts equal to your spellpower before the spell is discharged.
             \spelldur \durmed or until discharged \dismissable
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Destructive, Electricity]}{Air, Nature}
         \spellnotes This spell functions indoors or underground, but not underwater. \destructivespellnotes
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -576,6 +602,7 @@
     \begin{spellfooter}
         \spellinfo{Evocation [Destructive, Electricity]}{Air, Nature}
         \spellnotes As \spell{call lightning}.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -600,6 +627,7 @@
         \spellnotes Any aggressive action against or damage dealt to a calmed creature immediately breaks the spell on all calmed creatures.
 
         This spell automatically suppresses (but does not dispel) any effects of spells or abilities that affect or require emotions, including all other enchantment (emotion) spells.
+        \miscastyou
     \end{spellfooter}
 \end{spellsection}
 
@@ -623,6 +651,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Destructive, Electricity]}{Arcane, Destruction, Nature}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -645,6 +674,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Chaotic]}{Chaos}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -663,6 +693,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Delusion, Mental, Subtle]}{Enchantment}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -681,6 +712,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Delusion, Mental, Subtle]}{Enchantment}
+        \miscastyou
     \end{spellfooter}
 \end{spellsection}
 
@@ -709,6 +741,7 @@
         \subtlespellnotes
 
         \norepeatspellnotes
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -726,6 +759,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Charm, Mental, Subtle]}{Enchantment}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -756,6 +790,7 @@
     \end{spellsubcontent}
     \begin{spellfooter}
         \spellinfo{Abjuration [Chaotic]}{Chaos, Divine}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -779,6 +814,7 @@
         \spellinfo{Illusion [Figment, Light, Visual]}{Arcane}
         \spelldesc{You project a vivid cone of clashing colors from your outstretched hand, striking creatures in front of you.}
         \spellnotes Creatures who cannot see the light are not affected by this spell. Merely closing one's eyes is insufficient protection, however.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -804,6 +840,7 @@
     \begin{spellfooter}
         \spellinfo{Enchantment [Auditory, Compulsion, Mental, Speech]}*{Arcane, Divine, Law}
         \spellnotes If the target can't understand your command, the spell automatically fails. The target must obey the literal meaning of the commmand given, potentially allowing intelligent targets to subvert your intentions.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -822,6 +859,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Auditory, Compulsion, Mental, Speech]}{Divine, Law}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -844,6 +882,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Cold]}{Arcane, Nature}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -865,6 +904,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Cold]}{Arcane, Nature}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -886,6 +926,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Compulsion, Mental]}{Arcane, Chaos, Trickery}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -906,6 +947,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Compulsion, Mental]}{Arcane, Trickery}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -918,13 +960,14 @@
             \spellrng{\rngmed}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect You create sound from a location within range. The sound can be of any kind, but can be no louder than the sound that could be created by one human per caster level. You can create understandable speech, but the sound is not precise enough to trigger magical effects activated by command words.
+            \spelleffect You create sound from a location within range. The sound can be of any kind, but can be no louder than the sound that could be created by one human per spellpower. You can create understandable speech, but the sound is not precise enough to trigger magical effects activated by command words.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Illusion [Figment, Unreal]}{Illusion}
         \spellnotes Creatures can identify the illusion, as \spell{silent image}. This spell can be made permanent with a \spell{permanency} ritual.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -949,6 +992,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy [Flesh]}{Arcane}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -966,6 +1010,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy [Positive]}{Divine, Nature, Vitality}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -983,6 +1028,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy [Positive]}{Divine, Nature, Vitality}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -1004,6 +1050,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy [Positive]}{Divine, Nature}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -1021,6 +1068,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy [Positive]}{Divine, Nature, Vitality}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -1038,6 +1086,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy [Positive]}{Divine, Nature, Vitality}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -1055,6 +1104,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy [Positive]}{Divine, Nature, Vitality}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -1072,6 +1122,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy [Positive]}{Divine, Nature, Vitality}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -1089,6 +1140,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy [Positive]}{Divine, Nature, Vitality}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -1112,6 +1164,7 @@
     \begin{spellfooter}
         \spellinfo{Necromancy [Curse, Flesh]}{Death, Divine, Evil, Necromancy}
         \spellnotes \cursespellnotes
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -1134,6 +1187,7 @@
     \begin{spellfooter}
         \spellinfo{Necromancy [Curse, Flesh]}{Necromancy, Death}
         \spellnotes This spell cannot reduce an attribute below \minus9. \cursespellnotes
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -1156,6 +1210,7 @@
     \begin{spellfooter}
         \spellinfo{Necromancy [Curse]}{Arcane}
         \spellnotes \cursespellnotes
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -1179,6 +1234,7 @@
     \begin{spellfooter}
         \spellinfo{Illusion [Figment, Light]}{Arcane}
         \spellnotes This spell can be made permanent with a \spell{permanency} ritual.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -1198,6 +1254,7 @@
     \begin{spellfooter}
         \spellinfo{Transmutation [Augment]}{Arcane}
         \spellnotes This spell does not grant the ability to see in magical darkness. It can be made permanent with a \spell{permanency} ritual.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -1213,7 +1270,7 @@
             \begin{spellattack}{Magic vs. Fortitude}
                 \spellsuccess \spelldamage{6}{life}. In addition, for 5 rounds, the target automatically dies if it has no hit points remaining.
 
-                If the target dies in this way, you gain temporary hit points equal to your caster level. These temporary hit points last for 1 round per level the target had.
+                If the target dies in this way, you gain temporary hit points equal to your spellpower. These temporary hit points last for 1 round per level the target had.
 
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
@@ -1223,6 +1280,7 @@
     \begin{spellfooter}
         \spellinfo{Necromancy [Death]}{Death, Evil, Necromancy}
         \spellnotes If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -1242,6 +1300,7 @@
     \begin{spellfooter}
         \spellinfo{Abjuration/Necromancy [Positive, Shielding]}*{Death, Divine, Good, Protection}
         \spellnotes This spell doesn't remove negative levels that the target has already gained. It does not protect against other sorts of attacks, even if those attacks might be lethal.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -1260,6 +1319,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Abjuration/Necromancy [Positive, Shielding]}*{Death, Divine}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -1283,6 +1343,7 @@
     \begin{spellfooter}
         \spellinfo{Enchantment [Compulsion, Mental]}{Arcane}
         \spellnotes Creatures unable to sleep, such as elves, are immune to all effects of this spell.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -1301,6 +1362,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Abjuration [Shielding]}{Abjuration}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -1319,6 +1381,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Abjuration/Transmutation [Shielding, Temporal]}{\spelllists{Arcane}}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -1338,6 +1401,7 @@
     \begin{spellfooter}
         \spellinfo{Necromancy [Flesh]}{Divine, Nature}
         \spellnotes This spell does not cure any damage that poison may have already done.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -1350,7 +1414,7 @@
             \spelltgts{Everything in the area}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spellspecial You can delay this spell's attack until up to 5 rounds after the spell is cast. You select the amount of delay upon completing the spell, and that time cannot change once it has been set unless someone touches the bead (see below). For every round that this spell is delayed, your caster level with it increases by 2.
+            \spellspecial You can delay this spell's attack until up to 5 rounds after the spell is cast. You select the amount of delay upon completing the spell, and that time cannot change once it has been set unless someone touches the bead (see below). For every round that this spell is delayed, your spellpower with it increases by 2.
 
             If you choose a delay, a glowing bead of fire sits at the point of origin, shedding light as a torch, until it detonates. It cannot be physically harmed or moved, but it can be dispelled, which prevents it from detonating.
             \begin{spellattack}{Magic vs. Reflex}
@@ -1363,6 +1427,7 @@
     \begin{spellfooter}
         \spellinfo{Evocation [Destructive, Fire]}{Arcane, Fire}
         \spellnotes As \spell{fireball}.
+        \miscastyou
     \end{spellfooter}
 \end{spellsection}
 
@@ -1385,6 +1450,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy [Death, Flesh]}{Destruction, Divine}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -1406,6 +1472,7 @@
     \begin{spellfooter}
         \spellinfo{Divination [Detection]}{Divine}
         \spellnotes Each round, you can turn to detect objects in a new area. A detection spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -1429,6 +1496,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Lawful]}{Divine, Law}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -1447,6 +1515,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Teleportation]}{Arcane, Travel}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -1465,6 +1534,7 @@
     \begin{spellfooter}
         \spellinfo{Conjuration [Teleportation]}{Conjuration, Travel}
         \spellnotes You can choose the destinations for each target independently, within the range of the spell. 
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -1483,6 +1553,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Teleportation]}{Conjuration, Travel}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -1506,6 +1577,7 @@
         \spellnotes This spell cannot be dispelled. It can only be removed by physically travelling to the Astral Plane, such as through a planar rift or the gate created by the \spell{gate} ritual.
 
         This spell does not interfere with the movement of creatures already in ethereal or astral form when the spell is cast, nor does it block extradimensional perception or attack forms, such as summoning monsters. Also, it does not prevent summoned creatures from disappearing at the end of a summoning spell.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -1525,6 +1597,7 @@
     \begin{spellfooter}
         \spellinfo{Divination [Detection]}{Divine, Law}
         \spellnotes Each round, you can turn to discern lies in a new area. A detection spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -1549,6 +1622,7 @@
     \begin{spellfooter}
         \spellinfo{Divination}{Arcane}
         \spellnotes This spell gives no information about a creature's strengths or abilities -- only its weaknesses.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -1572,6 +1646,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Auditory, Compulsion, Mental]}{Arcane, Chaos}
+        \miscastyou
     \end{spellfooter}
 \end{spellsection}
 
@@ -1594,6 +1669,7 @@
     \begin{spellfooter}
         \spellinfo{Transmutation [Alteration]}{Arcane, Destruction}
         \spellnotes This spell affects even objects constructed entirely of force, such as \spell{wall of force}, but not magical effects such as an \spell{antimagic field}.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -1618,16 +1694,17 @@
             \spelltgt{One magic item}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \begin{spellattack}{Caster level vs. 10 \add the caster level of the target object}
+            \begin{spellattack}{Spellpower vs. 10 \add the spellpower of the target object}
                 \spellsuccess The target item is permanently rendered nonmagical.
                 \spellfailure The target item is suppressed for 5 rounds. A suppressed object loses all its magical abilities, though it is still treated as being a magical object for the purpose of spells and effects.
-                \spellspecial If the item is an artifact, there is only a 1\% chance per caster level that the spell works. If you destroy an artifact in this way, you permanently lose the ability to cast this spell.
+                \spellspecial If the item is an artifact, there is only a 1\% chance per spellpower that the spell works. If you destroy an artifact in this way, you permanently lose the ability to cast this spell.
             \end{spellattack}
         \end{spelleffects}
     \end{spellsubcontent}
     \begin{spellfooter}
         \spellinfo{Abjuration [Shielding]}{Arcane, Magic}
         \spellnotes Destroying artifacts is dangerous, and it is likely to attract the attention of some powerful being who has an interest in or connection with the device.
+        \miscastyou
     \end{spellfooter}
 \end{spellsection}
 
@@ -1640,12 +1717,12 @@
             \spelltwocol{\spelltgts{One creature, object, or location}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \begin{spellattack}{Caster level vs. Special}
-                \spelleffect For every spell affecting the target, if the attack result beats a DC equal to 10 \add the caster level of the spell, the spell is dispelled.
+            \begin{spellattack}{Spellpower vs. Special}
+                \spelleffect For every spell affecting the target, if the attack result beats a DC equal to 10 \add the spellpower of the spell, the spell is dispelled.
 
-                If the target is an object, and the attack result beats a DC equal to 10 \add the caster level of the object, the object is suppressed for 5 rounds. A suppressed object loses all its magical abilities, though it is still treated as being a magical object for the purpose of spells and effects.
+                If the target is an object, and the attack result beats a DC equal to 10 \add the spellpower of the object, the object is suppressed for 5 rounds. A suppressed object loses all its magical abilities, though it is still treated as being a magical object for the purpose of spells and effects.
 
-                If the target is an effect of an ongoing spell (such as a summoned creature), and the attack result beats a DC equal to 10 \add the caster level of the spell, the target is treated as if the spell that created it was dispelled. This usually causes the target to disappear.
+                If the target is an effect of an ongoing spell (such as a summoned creature), and the attack result beats a DC equal to 10 \add the spellpower of the spell, the target is treated as if the spell that created it was dispelled. This usually causes the target to disappear.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -1660,6 +1737,7 @@
         Spell-like abilities are treated like spells, and this spell affects them in the same way it affects spells.
 
         Artifacts and deities are unaffected by mortal magic such as this.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -1672,7 +1750,7 @@
             \spelltgts{All creatures and unattended objects in the area}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \begin{spellattack}{Caster level vs. Special}
+            \begin{spellattack}{Spellpower vs. Special}
                 \spelleffect Spells affecting the target are dispelled, as \spell{dispel magic}.
             \end{spellattack}
         \end{spelleffects}
@@ -1680,6 +1758,7 @@
     \begin{spellfooter}
         \spellinfo{Abjuration [Antimagic]}{Arcane, Divine, Magic, Nature}
         \spellnotes As \spell{dispel magic}.
+        \miscastyou
     \end{spellfooter}
 \end{spellsection}
 
@@ -1698,6 +1777,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Illusion [Glamer]}{Arcane}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -1717,6 +1797,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Augment]}{Divine, Strength, War}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -1735,6 +1816,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Augment]}{Divine, Strength, War}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -1753,6 +1835,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Compulsion, Mental]}{Enchantment}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -1780,6 +1863,7 @@
     \begin{spellfooter}
         \spellinfo{Enchantment [Compulsion, Mental, Subtle]}{Enchantment}
         \spellnotes This spell gives you no special ability to communicate with the target, except as noted above. Rituals such as \spell{telepathic bond} can be used to exert influence over a dominated creature from a distance.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -1800,6 +1884,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy [Life]}{Arcane}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -1825,6 +1910,7 @@
     \begin{spellfooter}
         \spellinfo{Evocation [Earth]}{Earth, Nature, Wild}
         \spellnotes If the target gets farther than 10 feet from the ground, the spell's effect is broken.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -1842,6 +1928,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Alteration, Augment, Earth]}{Earth, Nature}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -1860,6 +1947,7 @@
     \begin{spellfooter}
         \spellinfo{Transmutation [Augment, Earth]}{Earth, Nature}
         \spellnotes The target's burrowing leaves behind no tunnel or hole, nor does it create any ripple or other signs of its presence.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -1874,7 +1962,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Magic vs. Reflex}
-                \spellsuccess The target is knocked prone and trapped in a crack in the ground, causing it to be \immobilized. It can escape with a grapple or Escape Artist check against a DC equal to 10 \add your caster level \add your casting attribute.
+                \spellsuccess The target is knocked prone and trapped in a crack in the ground, causing it to be \immobilized. It can escape with a grapple or Escape Artist check against a DC equal to 10 \add your spellpower \add your casting attribute.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -1883,6 +1971,7 @@
         \spellnotes In terrain with unusual ground, such as rivers or swamps, this spell may have different effects.
 
         \physicalspellnotes
+        \miscastyou
     \end{spellfooter}
 \end{spellsection}
 
@@ -1896,13 +1985,14 @@
             \spelltgt{One creature or object within 10 feet of natural earth or stone}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \begin{spellattack}{Caster level \add casting attribute vs. Armor defense}
-                \spellsuccess 1d6 piercing damage per caster level.
+            \begin{spellattack}{Spellpower \add casting attribute vs. Armor defense}
+                \spellsuccess 1d6 piercing damage per spellpower.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Alteration, Earth, Physical]}{Earth, Nature}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -1915,14 +2005,15 @@
             \spelltgts{Everything in the area within 10 feet of natural earth or stone}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \begin{spellattack}{Caster level \add casting attribute vs. Armor defense}
-                \spellsuccess 1d6 piercing damage per two caster levels.
+            \begin{spellattack}{Spellpower \add casting attribute vs. Armor defense}
+                \spellsuccess 1d6 piercing damage per two spellpower.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Alteration, Earth, Physical]}{Earth, Nature}
         \spellnotes This spell cannot attack more than one target within a single 5-ft. square.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -1931,9 +2022,9 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelleffects}
-            \spelleffect You gain damage reduction against all energy types (acid, cold, electricity, fire) equal to twice your caster level.
+            \spelleffect You gain damage reduction against all energy types (acid, cold, electricity, fire) equal to twice your spellpower.
 
-            If you absorb damage with this spell from a single energy type that exceeds your caster level, you gain a charge for that energy type. You can store up to 3 charges of any combination of energy types. Additional charges replace existing charges of your choice.
+            If you absorb damage with this spell from a single energy type that exceeds your spellpower, you gain a charge for that energy type. You can store up to 3 charges of any combination of energy types. Additional charges replace existing charges of your choice.
             \spelldur \durlong
         \end{spelleffects}
     \end{spellcontent}
@@ -1951,6 +2042,7 @@
     \end{spellsubcontent}
     \begin{spellfooter}
         \spellinfo{Abjuration/Evocation [Shielding]}{Arcane, Protection}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -1965,12 +2057,13 @@
         \begin{spelleffects}
             \spelleffect If the target is living, it gains two \conditionlink{negative levels}. This imposes a \minus2 penalty to the target's attacks, special defenses, and checks, and a \minus10 penalty to its current and maximum hit points.
 
-            If the target is undead, it gains damage reduction against physical damage equal to your caster level. Positive damage ignores this damage reduction and negates it for 1 round.
+            If the target is undead, it gains damage reduction against physical damage equal to your spellpower. Positive damage ignores this damage reduction and negates it for 1 round.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy [Negative]}{Arcane, Death, Divine, Evil}
         \spellnotes These negative levels do not stack with other negative levels the target has, if any.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -1983,7 +2076,7 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect If the target is undead, it gains a legend point for physical attacks and damage reduction against physical damage equal to your caster level. Positive damage ignores this damage reduction and negates it for 1 round.
+            \spelleffect If the target is undead, it gains a legend point for physical attacks and damage reduction against physical damage equal to your spellpower. Positive damage ignores this damage reduction and negates it for 1 round.
             \begin{spellattacktriggered}{If the target is living, make a Magic vs. Fortitude attack.}
                 \spellsuccess The target gains eight \conditionlink{negative levels}. This imposes a \minus8 penalty to the target's attacks, special defenses, and checks, and a \minus40 penalty to its current and maximum hit points.
                 \spellsuccess The target gains four \conditionlink{negative levels}. This imposes a \minus4 penalty to the target's attacks, special defenses, and checks, and a \minus20 penalty to its current and maximum hit points.
@@ -1993,6 +2086,7 @@
     \begin{spellfooter}
         \spellinfo{Necromancy [Negative]}{Arcane, Death, Divine, Evil}
         \spellnotes These negative levels do not stack with other negative levels the target has, if any.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -2011,6 +2105,7 @@
     \begin{spellfooter}
         \spellinfo{Transmutation [Alteration, Sizing]}{Nature, Strength, Wild}
         \spellnotes \sizingspellnotes
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -2030,6 +2125,7 @@
     \begin{spellfooter}
         \spellinfo{Transmutation [Alteration, Sizing]}{Strength, Transmutation}
         \spellnotes \sizingspellnotes
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -2062,6 +2158,7 @@
         \spellnotes A typical humanoid creature whose size increases to Large has a space of 10 feet and a natural reach of 10 feet. \sizingspellnotes
 
         This spell can be made permanent with a \spell{permanency} ritual.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -2081,6 +2178,7 @@
     \begin{spellfooter}
         \spellinfo{Transmutation [Alteration, Sizing]}{Strength, Transmutation}
         \spellnotes \sizingspellnotes
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -2096,7 +2194,7 @@
             \begin{spellattack}{Magic vs. Reflex}
                 \spellsuccess The target is \immobilized.
                 \spellfailure The target moves at half speed.
-                \spellspecial The target can break this spell's effect with a grapple or Escape Artist check against a DC equal to 10 \add your caster level \add your casting attribute.
+                \spellspecial The target can break this spell's effect with a grapple or Escape Artist check against a DC equal to 10 \add your spellpower \add your casting attribute.
             \end{spellattack}
             \spelldur \durshort
         \end{spelleffects}
@@ -2104,6 +2202,7 @@
     \begin{spellfooter}
         \spellinfo{Transmutation [Alteration, Physical]}{Nature, Wild}
         \spellnotes The effects of this spell may be altered somewhat based on the nature of the plants in the area. If no plants exist in the area, this spell has no effect.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -2122,6 +2221,7 @@
     \begin{spellfooter}
         \spellinfo{Transmutation [Alteration, Physical]}{Nature, Wild}
         \spellnotes The effects of this spell may be altered somewhat based on the nature of the plants in the area.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -2140,6 +2240,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Abjuration [Shielding]}{Chaos, Divine}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -2161,6 +2262,7 @@
     \begin{spellfooter}
         \spellinfo{Conjuration [Planar]}{Arcane, Travel}
         \spellnotes If you are not on the Material Plane when you cast this spell, it has no effect.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -2178,6 +2280,7 @@
     \begin{spellfooter}
         \spellinfo{Conjuration [Planar]}{Arcane, Travel}
         \spellnotes If you are not on the Material Plane when you cast this spell, it has no effect. When the spell expires, all affected creatures on the Ethereal Plane return to the Material Plane.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -2193,6 +2296,7 @@
     \begin{spellfooter}
         \spellinfo{Necromancy [Flesh]}{Arcane}
         \spellnotes This spell has no effect on creatures without eyes.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -2214,6 +2318,7 @@
     \begin{spellfooter}
         \spellinfo{Illusion [Figment, Light]}{Nature}
         \spellnotes Illusory figments, such as those created by the \spell{silent image} spell, are not outlined, which may reveal their false nature. The lights continue illuminating creatures after they leave the area.
+        \miscastyou
     \end{spellfooter}
 \end{spellsection}
 
@@ -2232,6 +2337,7 @@
     \begin{spellfooter}
         \spellinfo{Illusion [Figment, Unreal]}{Illusion}
         \spellnotes Creatures can identify the illusion, as \spell{silent image}.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -2254,6 +2360,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Fear, Mental]}{Arcane}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -2276,6 +2383,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Fear, Mental]}{Arcane}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -2284,7 +2392,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spellrng{\rngmed}}{One freefalling object or willing creature (Medium or smaller)}
+            \spelltwocol{One freefalling object or willing creature (Medium or smaller)}{\spellrng{\rngmed}}
             \spelltwocol{\spelltime{1 swift action}}{\spellcmp{Verbal only}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
@@ -2295,6 +2403,7 @@
     \begin{spellfooter}
         \spellinfo{Evocation [Air]}{Air, Arcane, Travel}
         \spellnotes This spell works only upon free-falling objects and creatures. It no special effect on ranged weapons or projectiles unless they are falling an extraordinary distance.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -2315,6 +2424,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Delusion, Mental]}{Arcane}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -2335,6 +2445,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy [Death]}{Arcane, Death}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -2370,6 +2481,7 @@
     \begin{spellfooter}
         \spellinfo{Evocation/Transmutation [Destructive, Fire]}{Fire, Nature, Wild}
         \spellnotes You can only have one \spell{fire seeds} spell active at any time.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -2379,7 +2491,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelleffects}
-            \spelleffect You gain damage reduction against cold damage equal to twice your caster level. In addition, you radiate light as a torch.
+            \spelleffect You gain damage reduction against cold damage equal to twice your spellpower. In addition, you radiate light as a torch.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
@@ -2397,6 +2509,7 @@
     \end{spellsubcontent}
     \begin{spellfooter}
         \spellinfo{Abjuration/Evocation [Fire, Shielding]}{Arcane, Fire}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -2418,6 +2531,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Destructive, Fire]}{Destruction, Fire, Nature, War}
+        \miscastyou
     \end{spellfooter}
 \end{spellsection}
 
@@ -2442,6 +2556,7 @@
         \spellnotes \destructivespellnotes
 
         \firespellnotes
+        \miscastyou
     \end{spellfooter}
 \end{spellsection}
 
@@ -2462,6 +2577,7 @@
         \spellinfo{Evocation [Fire]}{Nature, Fire}
         \spellnotes Spell resistance applies when a foe is struck by the weapon, but not when the blade is created.
         \firespellnotes
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -2486,6 +2602,7 @@
         \spellnotes \destructivespellnotes
 
         \firespellnotes
+        \miscastyou
     \end{spellfooter}
 \end{spellsection}
 
@@ -2504,6 +2621,7 @@
     \begin{spellfooter}
         \spellinfo{Transmutation [Augment]}{Arcane}
         \spellnotes An unencumbered creature with a fly speed can fly through the air. See \pcref{Flying}, for more details.
+        \miscastexplode
     \end{spellfooter}%priced as buff spell for range
 \end{spellsection}
 
@@ -2525,6 +2643,7 @@
         \spellnotes \fogspellnotes \fogwindspellnotes
 
         \physicalspellnotes
+        \miscastyou
     \end{spellfooter}
 \end{spellsection}
 
@@ -2544,6 +2663,7 @@
         \spellnotes \fogspellnotes A severe wind disperses the fog within 1 minute, a windstorm disperses it within 5 rounds, and a hurricane disperses it within a round.
 
         \physicalspellnotes
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -2563,6 +2683,7 @@
     \begin{spellfooter}
         \spellinfo{Abjuration/Conjuration [Creation, Fog, Physical]}{Arcane, Divine, Nature, Water}
         \spellnotes \fogspellnotes \fogwindspellnotes
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -2583,6 +2704,7 @@
     \begin{spellfooter}
         \spellinfo{Evocation [Force, Physical]}{Evocation}
         \spellnotes As \spell{wall of force}.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -2597,6 +2719,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Divination}{Divination, Knowledge}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -2612,6 +2735,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Divination}{Arcane, Knowledge}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -2631,6 +2755,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Delusion]}{Chaos, Enchantment}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -2648,6 +2773,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Augment]}{Divine, Nature, Travel}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -2665,6 +2791,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Augment]}{Divine, Nature, Travel}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -2688,6 +2815,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Alteration]}{Arcane, Air, Travel}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -2707,6 +2835,7 @@
     \begin{spellfooter}
         \spellinfo{Transmutation [Air, Augment]}{Air, Nature}
         \spellnotes A creature with a glide speed can glide through the air at the indicated speed (see \pcref{Gliding}).
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -2726,6 +2855,7 @@
     \begin{spellfooter}
         \spellinfo{Transmutation [Air, Augment]}{Air, Nature}
         \spellnotes A creature with a glide speed can glide through the air at the indicated speed (see \pcref{Gliding}).
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -2747,6 +2877,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy [Flesh]}{Arcane}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -2767,6 +2898,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Creation, Physical]}{Arcane}
+        \miscastyou
     \end{spellfooter}
 \end{spellsection}
 
@@ -2795,6 +2927,7 @@
     \begin{spellfooter}
         \spellinfo{Conjuration [Creation, Physical]}{Arcane}
         \spellnotes \physicalspellnotes
+        \miscastyou
     \end{spellfooter}
 \end{spellsection}
 
@@ -2811,7 +2944,7 @@
             \spelltgts{Everything in the area}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \begin{spellattack}{Caster level \add casting attribute vs. Maneuver Defense}
+            \begin{spellattack}{Spellpower \add casting attribute vs. Maneuver Defense}
                 \spellsuccess The target is affected by a shove attack, pushing it back by 5 feet \add 5 feet per 5 points by which your attack exceeded its defense. If it is pushed outside the spell's area, it is not pushed farther.
             \end{spellattack}
         \end{spelleffects}
@@ -2821,6 +2954,7 @@
         \spellnotes In addition to the effect noted, a \spell{gust of wind} can do anything that a sudden blast of wind would be expected to do. It can extinguish open flames, create a stinging spray of sand or dust, fan a large fire, overturn delicate awnings or hangings, heel over a small boat, and blow gases or vapors to the edge of its range.
 
         This spell can be made permanent with a \spell{permanency} ritual.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -2836,7 +2970,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Magic vs. Fortitude}
-                \spelleffect If the target is undead, it is healed for 1d10 damage per two caster levels.
+                \spelleffect If the target is undead, it is healed for 1d10 damage per two spellpower.
                 \spellsuccess If the target is not undead, it takes that much negative energy damage, as well as four points of Constitution damage.
                 \spellfailure As above, but both the negative energy damage and constitution damage is halved.
             \end{spellattack}
@@ -2844,6 +2978,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy [Negative]}{Arcane, Death, Divine, Evil, Vitality}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -2862,6 +2997,7 @@
     \begin{spellfooter}
         \spellinfo{Transmutation [Temporal]}{Transmutation}
         \spellnotes As with any effect that increases your speed, this effect affects your ability to jump (see \pcref{Jump}).
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -2881,6 +3017,7 @@
     \begin{spellfooter}
         \spellinfo{Transmutation [Temporal]}{Transmutation}
         \spellnotes As \spell{lesser haste}. The extra attack granted does not stack with similar effects.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -2898,6 +3035,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Temporal]}{Arcane}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -2919,6 +3057,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy [Positive]}{Divine, Good, Nature, Vitality}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -2932,7 +3071,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Magic vs. Will}
-                \spellsuccess The target and everything touching it takes 1d6 fire damage per two caster levels immediately, and again at the end of the next round.
+                \spellsuccess The target and everything touching it takes 1d6 fire damage per two spellpower immediately, and again at the end of the next round.
 
                 A creature wearing or holding the target object is \dazed each round it takes damage from the object.
             \end{spellattack}
@@ -2943,6 +3082,7 @@
         \spellnotes This spell's attack automatically succeeds against unattended objects.
 
         If the target is underwater, this spell deals half damage, and boils the surrounding water. Any cold intense enough to damage the creature negates fire damage from the spell (and vice versa) on a point-for-point basis.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -2955,12 +3095,13 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target becomes immune to fear and gains temporary hit points equal to your caster level. In addition, it gains a legend point for attacks.
+            \spelleffect The target becomes immune to fear and gains temporary hit points equal to your spellpower. In addition, it gains a legend point for attacks.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Mental, Morale]}{Arcane}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -2977,6 +3118,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Mental, Morale]}{Arcane}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -2994,6 +3136,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Compulsion, Mental]}{Arcane, Law}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -3011,6 +3154,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Compulsion, Mental]}{Arcane, Law}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -3028,6 +3172,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Compulsion, Mental]}{Arcane, Divine, Law, War}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -3045,6 +3190,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Compulsion, Mental]}{Arcane, Divine, Law}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -3074,6 +3220,7 @@
     \end{spellsubcontent}
     \begin{spellfooter}
         \spellinfo{Abjuration [Good, Shielding]}{Divine, Good}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -3094,6 +3241,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Good]}{Good}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -3115,6 +3263,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Good]}{Good, Divine}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -3137,6 +3286,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy [Flesh]}{Arcane, Water}
+        \miscastyou
     \end{spellfooter}
 \end{spellsection}
 
@@ -3165,6 +3315,7 @@
     \end{spellsubcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment/Illusion [Compulsion, Figment, Light, Mental, Visual]}*{Arcane}
+        \miscastyou
     \end{spellfooter}
 \end{spellsection}
 
@@ -3193,6 +3344,7 @@
     \end{spellsubcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment/Illusion [Compulsion, Figment, Light, Mental, Visual]}*{Arcane}
+        \miscastyou
     \end{spellfooter}
 \end{spellsection}
 
@@ -3222,6 +3374,7 @@
         \spellinfo{Conjuration/Evocation [Cold, Creation, Destructive]}*{Arcane, Destruction, Nature, Water}
         \spellnotes \destructivespellnotes
     % SR only applies to cold?
+        \miscastyou
     \end{spellfooter}
 \end{spellsection}
 
@@ -3246,6 +3399,7 @@
     \begin{spellfooter}
         \spellinfo{Evocation/Transmutation [Alteration]}{Destruction, Divine}
         \spellnotes This spell has no effect on creatures in \spell{gaseous form} or on incorporeal creatures.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -3268,6 +3422,7 @@
     \begin{spellfooter}
         \spellinfo{Conjuration/Transmutation [Teleportation, Temporal]}{Arcane, Earth, Law}
         \spellnotes If the target becomes imprisoned beneath the earth, it is very difficult to find. Magical search by a crystal ball, a \spell{locate creature} spell, or some other similar divination does not reveal the fact that a creature is imprisoned, but \spell{discern location} does. A \spell{wish} or \spell{miracle} spell will not free the recipient, but will reveal where it is entombed.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -3280,12 +3435,13 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngtouch}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target gains damage reduction against physical damage equal to your caster level. Force damage ignores this damage reduction and negates it for 1 round.
+            \spelleffect The target gains damage reduction against physical damage equal to your spellpower. Force damage ignores this damage reduction and negates it for 1 round.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Abjuration [Shielding]}{Arcane}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -3306,6 +3462,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy [Negative]}{Arcane, Divine}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -3322,6 +3479,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy [Negative]}{Arcane, Divine}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -3342,6 +3500,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy [Negative]}{Arcane, Divine}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -3358,6 +3517,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy [Negative]}{Arcane, Divine}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -3378,6 +3538,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy [Negative]}{Arcane, Divine}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -3394,6 +3555,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy [Negative]}{Arcane, Divine}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -3414,6 +3576,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy [Negative]}{Arcane, Divine}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -3430,6 +3593,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy [Negative]}{Arcane, Divine}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -3450,6 +3614,7 @@
     \begin{spellfooter}
         \spellinfo{Illusion [Glamer]}{Arcane, Trickery}
         \spellnotes This spell can be made permanent (on objects only) with a \spell{permanency} ritual.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -3467,6 +3632,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Illusion [Glamer]}{Illusion}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -3484,6 +3650,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Illusion [Glamer]}{Arcane, Trickery}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -3496,7 +3663,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect This spell transforms your body into living iron, which grants you several powerful resistances and abilities.
-            \par You gain damage reduction against physical damage equal to your caster level. Adamantine weapons ignore this damage reduction and negate it for 1 round.
+            \par You gain damage reduction against physical damage equal to your spellpower. Adamantine weapons ignore this damage reduction and negate it for 1 round.
             \par You are immune to blindness, critical hits, attribute damage, deafness, disease, drowning, electricity, poison, stunning, and all spells or attacks that affect your physiology or respiration, because you have no physiology or respiration while this spell is in effect.
             \par Your move at half speed, and take a \minus8 armor check penalty. You cannot drink (and thus can't use potions) or play wind instruments.
             \par Your unarmed attacks deal damage equal to a warhammer sized for you (1d6 for Small characters or 1d8 for Medium characters), and you are considered armed when making unarmed attacks.
@@ -3506,6 +3673,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Alteration, Augment]}{Arcane, Earth, Strength}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -3527,6 +3695,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Compulsion, Mental]}{Arcane, Chaos}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -3540,14 +3709,15 @@
             \spelltwocol{\spelltgt{One object (Medium or smaller)}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect This spell telekinetically opens stuck, barred, locked, held, or arcane locked objects. If the target object is stuck or held, you can immediately make an Strength check to break it open, using your caster level instead of your Strength. Others can aid you on this check as normal.
+            \spelleffect This spell telekinetically opens stuck, barred, locked, held, or arcane locked objects. If the target object is stuck or held, you can immediately make an Strength check to break it open, using your spellpower instead of your Strength. Others can aid you on this check as normal.
 
-            In addition, if the target object is locked, you can immediately make a Disable Device check to open the lock as if you had rolled a 20 on the check. You get a bonus on the Disable Device check equal to half your caster level.
+            In addition, if the target object is locked, you can immediately make a Disable Device check to open the lock as if you had rolled a 20 on the check. You get a bonus on the Disable Device check equal to half your spellpower.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Telekinesis]}{Arcane}
-        \spellnotes If this spell is cast on an \spellindirect{arcane lock}{arcane locked} door, make a caster level check against a DC of 11 \add the caster level of the \spell{arcane lock}. If you succeed, the \spell{arcane lock} is suppressed for 10 minutes. If you fail, you may still bypass the door with the checks above, if possible.
+        \spellnotes If this spell is cast on an \spellindirect{arcane lock}{arcane locked} door, make a spellpower check against a DC of 11 \add the spellpower of the \spell{arcane lock}. If you succeed, the \spell{arcane lock} is suppressed for 10 minutes. If you fail, you may still bypass the door with the checks above, if possible.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -3569,6 +3739,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Telekinesis]}{Evocation}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -3580,7 +3751,7 @@
             \spelltwocol{\spelltgts{Any number of creatures}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spellspecial You create one missile per two caster levels. Each missile can deal d10 force damage to a single creature.
+            \spellspecial You create one missile per two spellpower. Each missile can deal d10 force damage to a single creature.
 
             Any missiles you do not explicitly target will automatically strike a living creature within the area. The missiles are able to unerringly strike creatures you cannot see or are not aware of, including invisible or concealed creatures. You can direct the missiles to avoid specific targets, allowing you to strike a hidden foe among your allies.
             \spelleffect The target is struck by as many missiles as you choose.
@@ -3588,6 +3759,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation/Necromancy [Force, Life]}{Arcane}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -3609,6 +3781,7 @@
     \begin{spellfooter}
         \spellinfo{Evocation [Destructive, Electricity]}{Arcane, Destruction, Nature}
         \spellnotes \destructivespellnotes
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -3626,6 +3799,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Augment]}{Nature, Travel}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -3649,6 +3823,7 @@
     \begin{spellfooter}
         \spellinfo{Abjuration [Force]}{Arcane}
         \spellnotes If you cast this spell twice, you can gain both body armor and a shield. The armor created by this spell is treated as a separate piece or armor from any other armor the creature is wearing, so it does not stack with any existing bonuses. Since this armor is made of force, incorporeal creatures can't bypass it the way they do normal armor.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -3668,6 +3843,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Telekinesis]}{Evocation}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -3679,12 +3855,13 @@
             \spelltwocol{\spelltgts{See text}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect You strike one target creature with a missile that deals d8 force damage. At 6th level, and every 4 caster levels thereafter, you create an additional missile. You can direct each missile to strike the same or different targets.
+            \spelleffect You strike one target creature with a missile that deals d8 force damage. At 6th level, and every 4 spellpower thereafter, you create an additional missile. You can direct each missile to strike the same or different targets.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Force]}{Arcane}
         \spellnotes \forcespellnotes
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -3703,6 +3880,7 @@
     \begin{spellfooter}
         \spellinfo{Illusion [Figment, Unreal]}{Illusion}
         \spellnotes Creatures can identify the illusion, as \spell{silent image}.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -3714,7 +3892,7 @@
             \spelltgt{You}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect When you cast this spell, you roll a d20 twice. Store the results in order. At 5th caster level, and every 5 caster levels thereafter, you roll an additional die.
+            \spelleffect When you cast this spell, you roll a d20 twice. Store the results in order. At 5th spellpower, and every 5 spellpower thereafter, you roll an additional die.
 
             Each time you would roll a d20, you instead use a die result you rolled. The die results are used in the same order you rolled them. When all the die results have been used, the spell is expended.
             \spelldur \durshort or until expended
@@ -3723,6 +3901,7 @@
     \begin{spellfooter}
         \spellinfo{Divination}{Divination, Knowledge}
         \spellnotes Any die results unused when the spell duration expires are discarded.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -3734,7 +3913,7 @@
             \spelltgt{You}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect When you cast this spell, you roll a d20 four times. Store the results in order. At 15th caster level, and every 5 caster levels thereafter, you roll an additional die.
+            \spelleffect When you cast this spell, you roll a d20 four times. Store the results in order. At 15th spellpower, and every 5 spellpower thereafter, you roll an additional die.
 
             Each time you would roll a d20, you may instead use a die result you rolled. The die results can be used in any order, and you may choose to roll instead of using a stored die result. When all the die results have been used, the spell is expended.
             \spelldur \durshort or until expended
@@ -3743,6 +3922,7 @@
     \begin{spellfooter}
         \spellinfo{Divination}{Divination, Knowledge}
         \spellnotes Any die results unused when the spell duration expires are discarded.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -3770,6 +3950,7 @@
         When leaving the maze, the target reappears where it had been when the maze spell was cast. If this location is filled with a solid object, the target appears in the nearest open space.
 
         \norepeatspellnotes
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -3786,6 +3967,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Alteration]}{Nature, Wild}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -3808,6 +3990,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Alteration, Earth]}{Earth, Nature}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -3827,6 +4010,7 @@
     \begin{spellfooter}
         \spellinfo{Divination}{Arcane}
         \spellnotes This is not telepathic communication, and observers can still read your lips. Very close observers may also hear the message.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -3854,6 +4038,7 @@
         \spellnotes \firespellnotes
 
         \destructivespellnotes
+        \miscastyou
     \end{spellfooter}
 \end{spellsection}
 
@@ -3872,6 +4057,7 @@
     \begin{spellfooter}
         \spellinfo{Illusion [Figment, Unreal]}{Illusion}
         \spellnotes Creatures can identify the illusion, as \spell{silent image}.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -3884,13 +4070,14 @@
             \spelltgt{You}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect You gain one image per two caster levels. As long as you have images remaining, targeted attacks against you have a 50\% miss chance. If you run out of images, the spell is expended.
+            \spelleffect You gain one image per two spellpower. As long as you have images remaining, targeted attacks against you have a 50\% miss chance. If you run out of images, the spell is expended.
             \spelldur \durshort or until expended \dismissable
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Illusion [Figment, Visual]}{Arcane}
         \spellnotes This spell offers no defense against creatures unable to see you or your images.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -3909,6 +4096,7 @@
     \begin{spellfooter}
         \spellinfo{Illusion [Figment, Visual]}{Arcane}
         \spellnotes As \spell{mirror image}.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -3928,6 +4116,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Illusion [Figment, Glamer, Unreal]}{Arcane, Trickery}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -3946,6 +4135,7 @@
     \begin{spellfooter}
         \spellinfo{Evocation [Force]}{Arcane}
         \spellnotes \forcespellnotes
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -3965,6 +4155,7 @@
     \begin{spellfooter}
         \spellinfo{Evocation [Force]}{Arcane}
         \spellnotes \forcespellnotes
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -3986,6 +4177,7 @@
     \begin{spellfooter}
         \spellinfo{Divination}{Divination, Knowledge}
         \spellnotes After using this spell, you cannot cast any \spell{moment of prescience} spell for 1 hour.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -4006,6 +4198,7 @@
     \begin{spellfooter}
         \spellinfo{Divination}{Arcane, Divination, Knowledge}
         \spellnotes After using this spell, you cannot cast any \spell{moment of prescience} spell for 1 hour.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -4028,6 +4221,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Lawful]}{Law}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -4046,6 +4240,7 @@
     \begin{spellfooter}
         \spellinfo{Illusion [Figment]}{Illusion}
         \spellnotes Creatures can identify the illusion, as \spell{silent image}.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -4067,6 +4262,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment/Illusion [Death, Fear, Mental]}*{Arcane, Trickery}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -4083,6 +4279,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment/Illusion [Death, Fear, Mental, Unreal]}{Arcane, Trickery}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -4104,6 +4301,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Planar, Teleportation]}{Arcane, Divine}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -4125,6 +4323,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Planar, Teleportation]}*{Arcane, Divine}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -4147,6 +4346,7 @@
     \begin{spellfooter}
         \spellinfo{Necromancy [Flesh, Physical, Poison]}{Death, Divine, Nature}
         \spellnotes \physicalspellnotes
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -4167,6 +4367,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Cold]}{Arcane, Water}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -4187,6 +4388,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy [Flesh]}{Arcane}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -4207,6 +4409,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Compulsion, Mental]}{Arcane}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -4226,6 +4429,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Compulsion, Mental]}{Arcane}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -4246,6 +4450,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Compulsion, Mental]}{Arcane}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -4268,6 +4473,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Compulsion, Mental]}{Arcane}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -4286,6 +4492,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Divination}{Arcane, Divination}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -4303,6 +4510,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Divination}{Arcane, Divination}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -4320,6 +4528,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Divination}{Arcane, Divination}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -4336,6 +4545,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Universal [Light]}{Arcane}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 \begin{dtable*}
@@ -4369,6 +4579,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Universal [Light]}{Arcane}
+        \miscastyou
     \end{spellfooter}
 \end{spellsection}
 
@@ -4389,6 +4600,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Universal [Light]}{Arcane, Chaos}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -4417,6 +4629,7 @@
     \begin{spellfooter}
         \spellinfo{Universal [Light]}{Arcane, Chaos}
         \spellnotes This spell can be made permanent with a \spell{permanency} ritual.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -4445,6 +4658,7 @@
     \begin{spellfooter}
         \spellinfo{Abjuration/Divination}*{Abjuration, Law}
         \spellnotes Mindless creatures are given no special insight into the rule. Any individual creature can only take damage for breaking the rule once per round.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -4474,6 +4688,7 @@
         \spellnotes You must maintain line of effect to the projected image at all times. If your line of effect is obstructed, the spell ends. If you teleport or use a similar effect that breaks your line of effect, even momentarily, the spell ends.
 
         Since the image is not a creature, it is difficult to disrupt, and many spells have no effect on it.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -4504,6 +4719,7 @@
     \begin{spellfooter}
         \spellinfo{Abjuration [Shielding]}{Arcane, Chaos, Divine, Evil, Good, Law}
         \spellnotes This spell has the subtype of the alignment opposed to the chosen alignment.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -4525,6 +4741,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Divination [Mental]}{Arcane, Knowledge}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -4542,6 +4759,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Divination [Mental]}{Arcane, Knowledge}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -4558,6 +4776,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Divination [Mental]}{Arcane, Knowledge}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -4589,6 +4808,7 @@
         \spellnotes A Small humanoid creature whose size decreases to Tiny has a space of 2-1/2 feet and a natural reach of 0 feet (meaning that it must enter an opponent's square to attack).
 
         \sizingspellnotes This spell can be made permanent with a \spell{permanency} ritual.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -4609,6 +4829,7 @@
     \begin{spellfooter}
         \spellinfo{Transmutation [Alteration, Sizing]}{Transmutation}
         \spellnotes As \spell{reduce person}.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -4621,12 +4842,13 @@
             \spelltwocol{\spelltgt{One living creature}}{\spellrng{Touch}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect At the end of every round, the target regains one hit point per caster level.
+            \spelleffect At the end of every round, the target regains one hit point per spellpower.
             \spelldur 5 rounds.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Augment]}{Divine, Nature}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -4639,7 +4861,7 @@
             \spelltwocol{\spelltgt{One living creature}}{\spellrng{Touch}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect At the end of every round, the target regains one hit point per caster level. In addition, the target is immune to being sickened, nauseated, staggered, or poisoned.
+            \spelleffect At the end of every round, the target regains one hit point per spellpower. In addition, the target is immune to being sickened, nauseated, staggered, or poisoned.
 
             \par You can also use this spell to regrow lost portions of the target's body and to reattach severed limbs or body parts, if both you and the target do nothing but concentrate on regrowing the lost body part or reattaching the severed limb for the spell's duration.
             \spelldur 5 rounds.
@@ -4647,6 +4869,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Augment]}{Divine, Nature}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -4669,6 +4892,7 @@
     \begin{spellfooter}
         \spellinfo{Abjuration [Barrier]}{Arcane, Protection, Travel}
         \spellnotes Unlike most barrier spells, this spell does not collapse if you move towards a creature held at bay by the barrier. The spell continues to prevent that creature from approaching you, but the creature suffers no other ill effect.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -4681,13 +4905,14 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spellspecial Choose a type of energy (acid, cold, electricity, fire).
-            \spelleffect The target gains damage reduction against the chosen energy type equal to twice your caster level.
+            \spelleffect The target gains damage reduction against the chosen energy type equal to twice your spellpower.
             \spelldur \durpersonallong
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Abjuration [Shielding]}{Arcane, Divine, Nature, Protection}
         \spellnotes A character can only be affected by one \spell{resist energy} spell at once.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -4699,13 +4924,14 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{Touch}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target gains damage reduction against all energy types (acid, cold, electricity, fire) equal to twice your caster level.
+            \spelleffect The target gains damage reduction against all energy types (acid, cold, electricity, fire) equal to twice your spellpower.
             \spelldur \durpersonallong
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Abjuration [Shielding]}{Arcane, Divine, Nature, Protection}
         \spellnotes A character can only be affected by one \spell{resist energy} spell at once.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -4717,7 +4943,7 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target gains damage reduction against physical damage equal to your caster level. Life damage ignores this damage reduction and negates it for 1 round.
+            \spelleffect The target gains damage reduction against physical damage equal to your spellpower. Life damage ignores this damage reduction and negates it for 1 round.
             
             \par Any creature within \rngmed range of the target that deals damage to it takes life damage equal to the damage resisted by this damage reduction.
             \spelldur \durshort
@@ -4725,6 +4951,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Abjuration/Necromancy [Life, Shielding]}{Arcane}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -4743,6 +4970,7 @@
     \begin{spellfooter}
         \spellinfo{Conjuration [Teleportation]}{Conjuration}
         \spellnotes This spell has no effect on attended objects or intelligent items.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -4762,6 +4990,7 @@
     \begin{spellfooter}
         \spellinfo{Conjuration [Teleportation]}{Conjuration}
         \spellnotes As \spell{retrieve object}.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -4784,6 +5013,7 @@
     \begin{spellfooter}
         \spellinfo{Divination}{Arcane, Knowledge}
         \spellnotes Creatures without an Intelligence are not affected by this spell.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -4804,6 +5034,7 @@
     \begin{spellfooter}
         \spellinfo{Transmutation}{Air, Transmutation, Trickery}
         \spellnotes Creatures who can fly or levitate can keep themselves from falling, though the shift in gravity can be disorienting.
+        \miscastyou
     \end{spellfooter}
 \end{spellsection}
 
@@ -4817,12 +5048,13 @@
             \spellcmp{Verbal, Somatic, and Material}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect If the target has been dead for no more than one round per four caster levels, it is restored to life. This functions like \spell{lesser resurrection} ritual, except that the target suffers no negative effects for having died.
+            \spelleffect If the target has been dead for no more than one round per four spellpower, it is restored to life. This functions like \spell{lesser resurrection} ritual, except that the target suffers no negative effects for having died.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy [Life]}{Divine}
         \spellmat{Diamonds worth at least 500 gp.}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -4834,13 +5066,14 @@
             \spelltgt{You}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spellsuccess You become larger, as \spell{enlarge person}. In addition, you gain damage reduction against physical damage equal to your caster level. Appropriately aligned damage ignores this damage reduction and negates it for 1 round. Evil attacks ovvercome your damage reduction if you are good or neutral, and good attacks overcome your damage reduction if you are evil.
+            \spellsuccess You become larger, as \spell{enlarge person}. In addition, you gain damage reduction against physical damage equal to your spellpower. Appropriately aligned damage ignores this damage reduction and negates it for 1 round. Evil attacks ovvercome your damage reduction if you are good or neutral, and good attacks overcome your damage reduction if you are evil.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Alteration, Augment, Sizing]}*{Divine, Good, Strength}
         \spellnotes \sizingspellnotes
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -4872,6 +5105,7 @@
     \begin{spellfooter}
         \spellinfo{Abjuration/Enchantment [Compulsion, Mental, Shielding]}{Arcane, Divine, Protection}
         \spellnotes This is considered a mental effect on any creature that attempts to attack the target. Creatures immune to mental effects can attack the target freely.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -4892,6 +5126,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Destructive, Fire]}{Arcane, Destruction, Fire}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -4913,6 +5148,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Light]}{Divine}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -4933,6 +5169,7 @@
         \spellnotes The spell does not reveal the method used to obtain invisibility. It does not reveal illusions other than invisibility. It does not reveal creatures who are simply hiding, concealed, or otherwise hard to see.
 
         This spell can be made permanent with a \spell{permanency} ritual.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -4952,6 +5189,7 @@
     \begin{spellfooter}
         \spellinfo{Divination/Transmutation [Augment]}{Arcane}
         \spellnotes As \spell{see invisibility}.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -4967,6 +5205,7 @@
         \spellnotes If the image moves farther than \rnglong range away from where it was originally created, or if you leave the Plane of Shadow, the image ceases to exist.
 
         If you are not on the Material Plane when you cast this spell, it has no effect.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -4988,6 +5227,7 @@
     \begin{spellfooter}
         \spellinfo{Abjuration/Illusion [Glamer, Planar, Shielding]}{Arcane}
         \spellnotes If you are not on the Material Plane or Plane of Shadow when you cast this spell, it has no effect.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -5009,6 +5249,7 @@
     \begin{spellfooter}
         \spellinfo{Abjuration/Necromancy [Life, Shielding]}{Arcane, Divine, Protection}
         \spellnotes The loss of hit points caused by this spell is not damage, and is not affected by damage reduction or other abilities which affect damage.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5027,6 +5268,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Abjuration [Shielding]}{Divine, Protection}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5057,6 +5299,7 @@
     \end{spellsubcontent}
     \begin{spellfooter}
         \spellinfo{Abjuration [Lawful, Shielding]}{Divine, Law}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5079,6 +5322,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Electricity]}{Arcane, Destruction}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5100,6 +5344,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Destructive, Sonic]}{Arcane, Destruction, Strength}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5120,6 +5365,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Destructive, Sonic]}{Arcane, Destruction, Strength}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5129,7 +5375,7 @@
     \begin{spellcontent}
         \begin{spelltargetinginfo}
             \spellquicktargeting{One nonmagical object (Medium or smaller)}{\rngclose}
-            \spellspecial You can target a Large object at 10th caster level, a Huge object at 16th caster level, or a Gargantuan object at 24th caster level.
+            \spellspecial You can target a Large object at 10th spellpower, a Huge object at 16th spellpower, or a Gargantuan object at 24th spellpower.
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spellspecial As you cast this spell, choose a command word.
@@ -5146,6 +5392,7 @@
         \spellnotes  If you recast this spell each day on an object, you can keep it at its small size indefinitely.
 
         This spell can be made permanent with a \spell{permanency} ritual, in which case the affected object can be shrunk and expanded an indefinite number of times, but only by the original caster.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -5168,6 +5415,7 @@
     \begin{spellfooter}
         \spellinfo{Illusion [Glamer]}{Divine, Trickery}
         \spellnotes Spellcasters unable to hear themselves cast are treated as deafened, and suffer a 20\% chance of spell failure when casting spells with verbal components.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -5185,6 +5433,7 @@
     \begin{spellfooter}
         \spellinfo{Illusion [Glamer]}{Divine, Trickery}
         \spellnotes As \spell{silence}.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5202,9 +5451,10 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Illusion [Figment, Unreal]}{Illusion}
-        \spellnotes Creatures can recognize the figment as unreal by interacting with it physically, or by making a Awareness check against a DC equal to 10 \add half your caster level \add your casting attribute. A creature gets a \plus10 bonus on this Awareness check when using senses which should be present in the figment, but which are missing.
+        \spellnotes Creatures can recognize the figment as unreal by interacting with it physically, or by making a Awareness check against a DC equal to 10 \add half your spellpower \add your casting attribute. A creature gets a \plus10 bonus on this Awareness check when using senses which should be present in the figment, but which are missing.
 
         A creature faced with definitive proof that the figment is unreal can disbelieve it, treating it as if it were not there.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5230,6 +5480,7 @@
     \begin{spellfooter}
         \spellinfo{Evocation [Destructive, Electricity]}{Air, Arcane, Destruction, Nature}
         \spellnotes The lightning can unerringly identify invisible and concealed creatures, but it does not differentiate between friend, foe, and inanimate object.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5251,6 +5502,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Delusion, Mental, Sleep]}{Arcane}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -5267,6 +5519,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Delusion, Mental, Sleep]}{Arcane}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5288,6 +5541,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Temporal]}{Arcane}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -5305,6 +5559,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Temporal]}{Arcane}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5328,6 +5583,7 @@
         \physicalspellnotes
 
         This spell can be made permanent with a \spell{permanency} ritual. A permanent solid fog dispersed by wind reforms in 10 minutes.
+        \miscastyou
     \end{spellfooter}
 \end{spellsection}
 
@@ -5349,6 +5605,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Destructive, Sonic]}{Arcane, Destruction}
+        \miscastyou
     \end{spellfooter}
 \end{spellsection}
 
@@ -5360,13 +5617,14 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target gains spell resistance equal to 10 \add your caster level.
+            \spelleffect The target gains spell resistance equal to 10 \add your spellpower.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Abjuration [Shielding]}{Abjuration, Magic, Protection}
-        \spellnotes To affect a creature with spell resistance with a spell, a caster must make an attack with its caster level. If the attack beats the creature's spell resistance, the spell works normally. Otherwise, the spell has no effect on the creature.
+        \spellnotes To affect a creature with spell resistance with a spell, a caster must make an attack with its spellpower. If the attack beats the creature's spell resistance, the spell works normally. Otherwise, the spell has no effect on the creature.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -5378,6 +5636,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Abjuration [Antimagic]}{Abjuration, Magic}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -5389,6 +5648,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Abjuration [Antimagic]}{Abjuration, Magic}
+        \miscastyou
     \end{spellfooter}
 \end{spellsection}
 
@@ -5402,12 +5662,13 @@
         \begin{spelleffects}
             \spelleffect Whenever a creature targets you with a spell or spell-like ability, it targets itself instead. If the spell affects multiple targets, the other targets are affected normally. If the caster is not a valid target, the spell simply has no effect on you.
 
-            After you reflect one spell per five caster levels, the spell ends.
+            After you reflect one spell per five spellpower, the spell ends.
             \spelldur \durlong or until expended
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Abjuration [Shielding]}{Arcane, Magic, Protection}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5427,6 +5688,7 @@
     \begin{spellfooter}
         \spellinfo{Transmutation [Augment]}{Arcane, Nature, Travel}
         \spellnotes See \pcref{Climbing}, for more details.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5452,7 +5714,7 @@
             \spelltgt{One creature adjacent to the weapon}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \begin{spellattack}{Caster level \add casting attribute vs. Armor defense}
+            \begin{spellattack}{Spellpower \add casting attribute vs. Armor defense}
                 \spellsuccess \spelldamage{3}{force}[d6]
             \end{spellattack}
         \end{spelleffects}
@@ -5460,6 +5722,7 @@
     \begin{spellfooter}
         \spellinfo{Evocation [Force]}{Divine, War}
         \spellnotes Since the weapon is directed by you, its ability to interact with invisible or concealed creatures is no better than yours. Its special defenses are the same as your special defenses. If the weapon goes out of range of you, the spell ends.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5481,6 +5744,7 @@
         \spellnotes This spell can be made permanent with a \spell{permanency} ritual. A permanent \spell{stinking cloud} dispersed by wind reforms in 10 minutes. \fogspellnotes \fogwindspellnotes
 
         \physicalspellnotes
+        \miscastyou
     \end{spellfooter}
 \end{spellsection}
 
@@ -5493,12 +5757,13 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{Touch}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target gains damage reduction against physical damage equal to half your caster level. Adamantine weapons ignore this damage reduction and negate it for 1 round.
+            \spelleffect The target gains damage reduction against physical damage equal to half your spellpower. Adamantine weapons ignore this damage reduction and negate it for 1 round.
             \spelldur \durpersonallong
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Augment, Earth]}{Arcane, Earth, Nature, Protection}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5523,6 +5788,7 @@
         \spellnotes When the storm has multiple effects in the same round, roll a single attack and compare the result to all relevant defenses.
 
         \physicalspellnotes
+        \miscastyou
     \end{spellfooter}
 \end{spellsection}
 \begin{dtable*}
@@ -5542,7 +5808,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{You}}{\spellrng{\rngclose}}
+            \spelltgt{You}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect Physical ranged attacks against you have a 50\% miss chance. Other attacks that simply work at a distance are not affected.
@@ -5563,6 +5829,7 @@
     \end{spellsubcontent}
     \begin{spellfooter}
         \spellinfo{Abjuration/Evocation [Air, Electricity, Shielding]}{Air, Nature}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5584,9 +5851,10 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy [Flesh, Physical]}{Arcane}
-        \spellnotes The doubling of damage can be negated by a Heal check against a DC equal to 10 \add your caster level.
+        \spellnotes The doubling of damage can be negated by a Heal check against a DC equal to 10 \add your spellpower.
 
         \physicalspellnotes
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -5611,6 +5879,7 @@
         \spellnotes A very reasonable suggestion can grant a \plus2 or greater bonus on the magic attack.
 
         \norepeatspellnotes
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -5628,6 +5897,7 @@
     \begin{spellfooter}
         \spellinfo{Enchantment [Auditory, Delusion, Mental, Speech, Subtle]}{Enchantment}
         \spellnotes As \spell{suggestion}. All targets must receive the same suggestion.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5648,6 +5918,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Summoning, see text]}{Arcane, Divine}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5665,6 +5936,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Summoning, see text]}{Arcane, Divine}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5682,6 +5954,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Summoning, see text]}{Arcane, Chaos, Divine, Evil, Good, Law}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5699,6 +5972,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Summoning, see text]}{Arcane, Divine}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5716,6 +5990,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Summoning, see text]}{Air, Arcane, Divine, Earth, Fire, Water}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5733,6 +6008,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Summoning, see text]}{Arcane, Chaos, Divine, Evil, Good, Law}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5750,6 +6026,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Summoning, see text]}{Arcane, Divine}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5767,6 +6044,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Summoning, see text]}{Air, Arcane, Divine, Earth, Fire, Water}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5785,6 +6063,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Summoning, see text]}{Arcane, Chaos, Divine, Evil, Good, Law}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5861,6 +6140,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Summoning]}{Nature}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5878,6 +6158,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Summoning]}{Nature}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5895,6 +6176,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Summoning]}{Nature, Wild}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5912,6 +6194,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Summoning, see text]}{Nature}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5929,6 +6212,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Summoning, see text]}{Nature}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5946,6 +6230,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Summoning, see text]}{Nature, Wild}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5963,6 +6248,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Summoning, see text]}{Nature}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5980,6 +6266,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Summoning, see text]}{Nature}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5998,6 +6285,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Summoning, see text]}{Nature, Wild}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -6045,13 +6333,14 @@
             \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spellspecial This spell functions like \spellindirect{summon nature's ally i}{summon nature's ally I}, except that you can summon up to one creature per caster level from the 4th-level list or lower.
+            \spellspecial This spell functions like \spellindirect{summon nature's ally i}{summon nature's ally I}, except that you can summon up to one creature per spellpower from the 4th-level list or lower.
             \par When you learn this spell, you choose a creature from the 4th-level list or lower on the Summon Nature's Ally table. That is the only creature you can summon with this spell.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Summoning]}{Nature, Wild}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -6076,6 +6365,7 @@
     \begin{spellfooter}
         \spellinfo{Evocation [Light]}{Nature}
         \spellnotes This light is considered natural sunlight for the purpose of effects which depend on sunlight.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -6100,6 +6390,7 @@
     \begin{spellfooter}
         \spellinfo{Evocation [Light]}{Nature}
         \spellnotes This light is considered natural sunlight for the purpose of effects which depend on sunlight.
+        \miscastyou
     \end{spellfooter}
 \end{spellsection}
 
@@ -6121,6 +6412,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Divination/Transmutation [Augment]}{Arcane}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -6141,6 +6433,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Temporal]}{Arcane}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -6166,6 +6459,7 @@
         You cannot enter an area protected by an \spell{antimagic field} while under the effect of this spell.
 
         Most spellcasters use the additional time to improve their defenses or flee from combat. 
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -6182,6 +6476,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Alteration]}{Arcane}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -6215,6 +6510,7 @@
     \end{spellsubcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Alteration]}{Arcane, Earth}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -6233,6 +6529,7 @@
     \begin{spellfooter}
         \spellinfo{Transmutation [Alteration]}{Nature}
         \spellnotes You can sleep comfortably in this form.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -6251,6 +6548,7 @@
     \begin{spellfooter}
         \spellinfo{Transmutation [Augment]}{Nature, Earth}
         \spellnotes Tremorsense functions on surfaces of any kind, regardless of lighting conditions.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -6270,6 +6568,7 @@
     \begin{spellfooter}
         \spellinfo{Divination/Transmutation [Augment]}{Arcane, Divine, Knowledge}
         \spellnotes This spell does not negate concealment, including that caused by fog and the like. It does not help against mundane disguises or concealed objects or creatures. In addition, the spell's effects cannot be further enhanced with known magic, so the benefits do not apply when seeing through a scrying effect or similar vision enhancements.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -6290,6 +6589,7 @@
     \begin{spellfooter}
         \spellinfo{Divination}{Arcane}
         \spellnotes After casting this spell, you cannot cast it again for 5 rounds.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -6322,6 +6622,7 @@
     \end{spellsubcontent}
     \begin{spellfooter}
         \spellinfo{Abjuration [Evil, Shielding]}{Divine, Evil}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -6342,6 +6643,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Evil]}{Evil}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -6361,6 +6663,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy/Transmutation [Augment, Life]}{Arcane}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -6373,7 +6676,7 @@
             \spelltgt{You}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect You gain temporary hit points equal to your caster level. If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
+            \spelleffect You gain temporary hit points equal to your spellpower. If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
 
             In addition, you are treated as being undead for the purpose of spells or abilities which affect undead. This can cause some unintelligent undead, such as skeletons and zombies, to avoid attacking you.
             \spelldur \durlong
@@ -6381,6 +6684,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy [Life]}{Death, Necromancy}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -6399,6 +6703,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Illusion [Figment]}{Arcane, Trickery}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -6420,6 +6725,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy [Auditory, Death]}{Death, Necromancy}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -6451,6 +6757,7 @@
         \spellnotes Any part of the wall takes 5 cold damage in a single round is extinguished.
 
         This spell can be made permanent with a \spell{permanency} ritual. A permanent \spell{wall of fire} that is extinguished by cold damage becomes inactive for 10 minutes, then reforms at normal strength.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -6471,6 +6778,7 @@
         \spellnotes Any part of the wall takes 10 cold damage in a single round is extinguished.
 
         This spell can be made permanent with a \spell{permanency} ritual. A permanent \spell{greater wall of fire} that is extinguished by cold damage becomes inactive for 10 minutes, then reforms at normal strength.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -6482,7 +6790,7 @@
             \spelltwocol{\spellzone{100 ft. solid wall, 10 ft. high}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect This spell creates an invisible wall made of force. A 5-foot square of wall has 5 hit points per caster level, and hardness equal to your caster level.
+            \spelleffect This spell creates an invisible wall made of force. A 5-foot square of wall has 5 hit points per spellpower, and hardness equal to your spellpower.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
@@ -6491,6 +6799,7 @@
         \spellnotes \forcespellnotes
 
         This spell can be made permanent with a \spell{permanency} ritual.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -6502,7 +6811,7 @@
             \spelltwocol{\spellzone{20 ft. line, 5 ft. wide, 10 ft. high \shapeable}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect This spell creates a thicket of thorns in the area. A 5-foot cube of wall has 10 hit points per caster level. Moving into or out of a square in the area costs 20 feet of movement. The wall can be created where creatures are.
+            \spelleffect This spell creates a thicket of thorns in the area. A 5-foot cube of wall has 10 hit points per spellpower. Moving into or out of a square in the area costs 20 feet of movement. The wall can be created where creatures are.
 
             The wall provides total cover against attacks through the wall. A creature in the wall has cover from attacks on either side of the wall.
             \spelldur \durshort
@@ -6523,6 +6832,7 @@
         \spellnotes A \spell{wall of thorns} can be breached by slow work with edged weapons or fire. It has hardness 8 and 30 hit points per square foot of thickness.
 
         \physicalspellnotes
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -6553,6 +6863,7 @@
         \spellnotes A \spell{wall of thorns} can be breached by slow work with edged weapons or fire. It has hardness 8 and 30 hit points per square foot of thickness.
 
         \physicalspellnotes
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -6571,6 +6882,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Augment, Water]}{Nature, Water}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -6588,6 +6900,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy [Flesh]}{Arcane, Death}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -6608,6 +6921,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy [Flesh]}{Arcane, Death}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -6625,6 +6939,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Necromancy [Flesh]}{Arcane, Death, War}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -6658,6 +6973,7 @@
         \physicalspellnotes
 
         This spell can be made permanent with a \spell{permanency} ritual. A permanent \spell{web} that is destroyed regrows in 10 minutes.
+        \miscastyou
     \end{spellfooter}
 \end{spellsection}
 
@@ -6674,13 +6990,14 @@
                 \spellsuccess \spelldamage{2}{bludgeoning}.
                 \spellfailure Half damage.
             \end{spellattack}
-            \begin{spellattack}{Caster level \add casting attribute vs. Maneuver defense (shove)}
+            \begin{spellattack}{Spellpower \add casting attribute vs. Maneuver defense (shove)}
                 \spellsuccess You shove the target in any direction -- even vertically. Moving the target up takes twice as much movement as moving the target horizontally.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Air]}{Air, Nature}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -6698,7 +7015,7 @@
                     \spellsuccess \spelldmg{5}{bludgeoning}.
                     \spellfailure Half damage.
                 \end{spellmargin}
-                \spellatk Caster level \add casting attribute \add 12 vs. Maneuver defense (shove)
+                \spellatk Spellpower \add casting attribute \add 12 vs. Maneuver defense (shove)
                 \begin{spellmargin}
                     \spellsuccess You shove the target in any direction -- even vertically.
                 \end{spellmargin}
@@ -6707,6 +7024,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Air]}{Air, Nature}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -6724,6 +7042,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Teleportation]}{Divine, Travel}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -6743,6 +7062,7 @@
     \begin{spellfooter}
         \spellinfo{Evocation/Transmutation [Air, Augment]}{Air, Nature}
         \spellnotes Despite the name of the spell, it can affect melee weapons of any type, even reach weapons. The weapon's extended reach is visible, and opponents can defend themselves normally against the attacks.
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -6761,5 +7081,6 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation/Transmutation [Air, Augment]}{Air, Nature}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
