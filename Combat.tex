@@ -82,12 +82,22 @@ If your attack succeeds, you deal damage equal to your weapon's damage die \add 
 \subsection{Reach}\label{Reach}
 Normally, you can attack anyone within five feet of you. The range at which you can attack is called your ``reach'', and the area that you can attack into is called your ``threatened area''. Reach for larger and smaller creatures is determined by size, as shown on \trefnp{Size in Combat}.
 
+\section{Defenses}\label{Defenses}
+Usually, when you are attacked, the attacker has to make an attack roll against a specific defense. If the attack roll is at least as high as that defense, the attack succeeds. There are three physical defenses and two special defenses.
+\begin{itemize}
+    \item Armor defense (AD): Your Armor defense protects you from normal physical attacks, such as attempts to stab you with a sword. It is the most commonly used defense. Armor defense is a physical defense.
+    \item Maneuver defense: Your Maneuver defense protects you from unusual physical attacks, such as attempts to trip or disarm you. Maneuver defense is a physical defense.
+    \item Reflex defense: Your Reflex protects you from attacks you have to avoid, such as explosions or falling rocks. Reflex defense is a physical defense.
+    \item Fortitude defense: Your Fortitude defense protects you from attacks you have to physically endure or resist, such as poisons and deadly spells. Fortitude defense is a special defense. 
+    \item Will defense: Your Will defense protects you from attacks you have to mentally endure or resist, such as terrifying creatures and magical manipulation. Will defense is a special defense.
+\end{itemize}
+
 \subsection{Defense Values}
 
 Each of your defenses is calculated in the following way:
 
 \begin{figure}[h]
-    \centering 10 \add Base defense bonus or defense attribute \meh{\add enhancement bonus} \add size modifier \add other bonuses and penalties
+    \centering 10 \add Base defense bonus or defense attribute(s) \meh{\add enhancement bonus} \add size modifier \add other bonuses and penalties
 \end{figure}
 
 The attributes and relevant bonuses which apply to each defense are described on \trefnp{Defense Calculations}.
@@ -96,11 +106,11 @@ The attributes and relevant bonuses which apply to each defense are described on
     \lcaption{Defense Calculations}
     \begin{tabularx}{\textwidth}{l l l l l >{\lcol}X}
         \thead{Defense Name} & \thead{Defense Bonus} & \thead{Attributes} & \thead{Body Armor Modifier} & \thead{Shield Modifier} & \thead{Size Modifier} \\
-        Armor defense & Half base attack bonus  & Dex or Con & Yes & Yes & Yes \\
-        Maneuver defense & Base attack bonus    & Str or Dex & No  & Yes & Special \\
-        Fortitude defense & Base Fortitude bonus& Con        & No  & No  & No  \\
-        Reflex defense & Base Reflex bonus      & Dex or Per & No  & Yes & Yes \\
-        Will defense & Base Will bonus          & Wil        & No  & No  & No  \\
+        Armor defense     & Base attack bonus    & Dex or Con        & Yes & Yes & Yes     \\
+        Maneuver defense  & Base attack bonus    & Str or Dex        & No  & Yes & Special \\
+        Fortitude defense & Base Fortitude bonus & Con \add half Str & No  & No  & No      \\
+        Reflex defense    & Base Reflex bonus    & Dex \add half Per & No  & Yes & Yes     \\
+        Will defense      & Base Will bonus      & Wil \add half Int & No  & No  & No      \\
     \end{tabularx}
 \end{dtable!*}
 
@@ -108,12 +118,6 @@ The attributes and relevant bonuses which apply to each defense are described on
 \meh{\parhead{Enhancement Bonus} You can have enhancement bonuses to all physical defenses, or to a specific physical defense. As normal, these enhancement bonuses do not stack with each other; only the highest applicable bonus is used.}
 \parhead{Natural Armor} Creatures with unusually tough skin or thick hide, including most monsters, gain bonuses to their Armor defense. These bonuses stack with any armor such creatures might wear.
 \parhead{Size Modifiers} Your size modifier and special size modifier are described on \tref{Size in Combat}.
-
-\subsection{Hit Points}
-% move hit point info here?
-Your hit points represent how much punishment you can take. When you run out of hit points, your actions are limited and you might die, as described in \pcref{Injury, Death, and Healing}.
-
-Your hit points are equal to your \term{hit value} \mtimes your level. Your hit value is equal to half your Constitution, half your Willpower, or half your base Fortitude bonus, whichever is higher. Your base Fortitude bonus is simply your Fortitude bonus from class levels, and is not affected by spells or other temporary effects which can modify your defenses.
 
 \section{Movement and Positioning}\label{Movement and Positioning}
 
@@ -135,6 +139,12 @@ You can't move diagonally past a corner. You can move diagonally past a creature
 
 \section{Injury, Death, and Healing}\label{Injury, Death, and Healing}
 Your hit points measure how hard you are to kill. No matter how many hit points you lose, your character isn't significantly hindered until your hit points drop to 0.
+
+\subsection{Hit Points}
+Your hit points represent how much punishment you can take. When you run out of hit points, your actions are limited and you might die.
+
+Your hit points are equal to your \term{hit value} \mtimes your level. Your hit value is equal to half your Constitution, half your Willpower, or half your base Fortitude bonus, whichever is higher. Your base Fortitude bonus is simply your Fortitude bonus from class levels, and is not affected by spells or other temporary effects which can modify your defenses.
+
 
 \subsection{Losing Hit Points}
 When you take lethal damage, you subtract that damage from your hit points.
@@ -206,19 +216,19 @@ Size affects your space and reach in combat. In addition, your physical attacks 
     \lcaption{Size in Combat}
     \begin{tabularx}{\textwidth}{l l l l l X}
         \thead{Size} & \thead{Space\fn{1}} & \thead{Reach\fn{1}} & \thead{Size Modifier\fn{2}} & \thead{Special Size Modifier\fn{3}} & \thead{Example Creature} \\
-        Fine & 1/2 ft. & 0 & \plus8 & \minus16 & Fly\\
-        Diminutive & 1 ft. & 0 & \plus4 & \minus12 & Toad \\
-        Tiny & 2-1/2 ft. & 0 & \plus2 & \minus8 & Cat \\
-        Small & 5 ft. & 5 ft. & \plus1 & \minus4 & Halfling \\
-        Medium & 5 ft. & 5 ft. & \plus0 & \plus0 & Human \\
-        Large (tall) & 10 ft. & 10 ft. & \minus1 & \plus4 & Ogre \\
-        Large (long) & 10 ft. & 5 ft. & \minus1 & \plus4 & Horse \\
-        Huge (tall) & 15 ft. & 15 ft. & \minus2 & \plus8 & Cloud giant \\
-        Huge (long) & 15 ft. & 10 ft. & \minus2 & \plus8 & Bulette \\
-        Gargantuan (tall) & 20 ft. & 20 ft. & \minus4 & \plus12 & 50-ft. animated statue \\
-        Gargantuan (long) & 20 ft. & 15 ft. & \minus4 & \plus12 & Kraken \\
-        Colossal (tall) & 30\add ft. & 30\add ft. & \minus8 & \plus16 & Colossal animated object \\
-        Colossal (long) & 30\add ft. & 20\add ft. & \minus8 & \plus16 & Great wyrm red dragon \\
+        Fine              & 1/2 ft.    & 0          & \plus8  & \minus16 & Fly                      \\
+        Diminutive        & 1 ft.      & 0          & \plus4  & \minus12 & Toad                     \\
+        Tiny              & 2-1/2 ft.  & 0          & \plus2  & \minus8  & Cat                      \\
+        Small             & 5 ft.      & 5 ft.      & \plus1  & \minus4  & Halfling                 \\
+        Medium            & 5 ft.      & 5 ft.      & \plus0  & \plus0   & Human                    \\
+        Large (tall)      & 10 ft.     & 10 ft.     & \minus1 & \plus4   & Ogre                     \\
+        Large (long)      & 10 ft.     & 5 ft.      & \minus1 & \plus4   & Horse                    \\
+        Huge (tall)       & 15 ft.     & 15 ft.     & \minus2 & \plus8   & Cloud giant              \\
+        Huge (long)       & 15 ft.     & 10 ft.     & \minus2 & \plus8   & Bulette                  \\
+        Gargantuan (tall) & 20 ft.     & 20 ft.     & \minus4 & \plus12  & 50-ft. animated statue   \\
+        Gargantuan (long) & 20 ft.     & 15 ft.     & \minus4 & \plus12  & Kraken                   \\
+        Colossal (tall)   & 30\add ft. & 30\add ft. & \minus8 & \plus16  & Colossal animated object \\
+        Colossal (long)   & 30\add ft. & 20\add ft. & \minus8 & \plus16  & Great wyrm red dragon    \\
     \end{tabularx}
     1 Creatures can vary in space and reach. These are simply typical values. \\
     2 Modifies physical attacks and defenses, except for maneuvers \\
@@ -238,7 +248,7 @@ A natural 1 (the d20 comes up 1) on an attack roll is treated as rolling a \minu
 \subsubsection{Critical Hits}\label{Critical Hits}
 When you roll a natural 20 on an attack roll and hit, you have scored a critical threat. Roll another attack roll at the same attack bonus. If that attack also hits, you deal double damage.
 
-Keen weapons threaten a critical hit on a 19 or 20, while impact weapons deal triple damage when they score a critical hit.
+%Keen weapons threaten a critical hit on a 19 or 20, while impact weapons deal triple damage when they score a critical hit.
 
 \subsection{Unarmed Combat}\label{Unarmed Combat}
 Every creature can attack with its body using an unarmed strike. You cannot defend yourself with an unarmed strike, so you are \defenseless while unarmed. You are only considered to have one unarmed strike, so you cannot two-weapon fight with only your unarmed strike (but see the unarmed warrior monk ability, \pref{Mnk:Unarmed Warrior}).
