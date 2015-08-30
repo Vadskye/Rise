@@ -1469,68 +1469,15 @@ The sorcerer's class skills (and the key attribute for each skill) are Knowledge
 \sssecfake{Class Features}
 All of the following are class features of the sorcerer.
 
- \cf{Sor}{Weapon and Armor Proficiency}  Sorcerers are proficient with simple weapons  and one other weapon group.  They are not proficient with any type of armor or shield. Armor of any type interferes with a sorcerer's arcane gestures, which can cause his spells with somatic components to fail.
+\cf{Sor}{Weapon and Armor Proficiency}  Sorcerers are proficient with simple weapons  and one other weapon group.  They are not proficient with any type of armor or shield. Armor of any type interferes with a sorcerer's arcane gestures, which can cause his spells with somatic components to fail.
 
-\cf{Sor}{Spells} A sorcerer casts arcane spells using his Willpower.  To learn or cast a spell, a sorcerer must have a Willpower at least equal to the spell's level. A sorcerer's magic attack bonus equals half his caster level \add his Willpower.
+\cf{Sor}{Spells} A sorcerer casts arcane spells using his Willpower.  To learn or cast a spell, a sorcerer must have a Willpower at least equal to the spell's level. A sorcerer's magic attack bonus is equal to his caster level or his Willpower, whichever is higher.
 
-Like other spellcasters, the number of spells a sorcerer knows and can cast each day is limited. These limitations are given below on \trefnp{Sorcerer Spells per Day} and \trefnp{Sorcerer Spells Known}. A sorcerer's spells are drawn from the common spells on the arcane spell list (see \pcref{Arcane Spells}). Sorcerers need to rest for eight hours in order to regain spells.
+At 1st level, the sorcerer knows one 1st level spell. At every level thereafter, the sorcerer learns one additional spell. The spell can be of any level, up to a maximum of half the sorcerer's class level. A sorcerer's spells are drawn from the unrestricted spells on the arcane spell list (see \pcref{Arcane Spells}).
 
-\begin{dtable}
-    \lcaption{Sorcerer Spells per Day}
-    \centering
-    \begin{tabularx}{\columnwidth}{>{\ccol}X *{9}{>{\ccol}p{\spellcol}}}
-        & \multicolumn{9}{c}{\thead{---{}---{}---{}---{}---{}---{}---{}---Spell Level---{}---{}---{}---{}---{}---{}---{}---}} \\
-        \thead{Level} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} & \thead{5th} & \thead{6th} & \thead{7th} & \thead{8th} & \thead{9th} \\
-        1st & 3 & \x & \x & \x & \x & \x & \x & \x & \x \\
-        2nd & 4 & \x & \x & \x & \x & \x & \x & \x & \x \\
-        3rd & 5 & \x & \x & \x & \x & \x & \x & \x & \x \\
-        4th & 6 & 3 & \x & \x & \x & \x & \x & \x & \x \\
-        5th & 6 & 4 & \x & \x & \x & \x & \x & \x & \x \\
-        6th & 6 & 5 & 3 & \x & \x & \x & \x & \x & \x \\
-        7th & 6 & 6 & 4 & \x & \x & \x & \x & \x & \x \\
-        8th & 6 & 6 & 5 & 3 & \x & \x & \x & \x & \x \\
-        9th & 6 & 6 & 6 & 4 & \x & \x & \x & \x & \x \\
-        10th & 6 & 6 & 6 & 5 & 3 & \x & \x & \x & \x \\
-        11th & 6 & 6 & 6 & 6 & 4 & \x & \x & \x & \x \\
-        12th & 6 & 6 & 6 & 6 & 5 & 3 & \x & \x & \x \\
-        13th & 6 & 6 & 6 & 6 & 6 & 4 & \x & \x & \x \\
-        14th & 6 & 6 & 6 & 6 & 6 & 5 & 3 & \x & \x \\
-        15th & 6 & 6 & 6 & 6 & 6 & 6 & 4 & \x & \x \\
-        16th & 6 & 6 & 6 & 6 & 6 & 6 & 5 & 3 & \x \\
-        17th & 6 & 6 & 6 & 6 & 6 & 6 & 6 & 4 & \x \\
-        18th & 6 & 6 & 6 & 6 & 6 & 6 & 6 & 5 & 3 \\
-        19th & 6 & 6 & 6 & 6 & 6 & 6 & 6 & 6 & 4 \\
-        20th & 6 & 6 & 6 & 6 & 6 & 6 & 6 & 6 & 6 \\
-    \end{tabularx}
-\end{dtable}
+Sorcerers do not have a limit on the number of spells they can cast each day. Their ability to cast spells is limited by their lack of control over their magic. See Wild Magic, below, for details.
 
-\begin{dtable}
-    \lcaption{Sorcerer Spells Known}
-    \begin{tabularx}{\columnwidth}{>{\ccol}X *{9}{>{\ccol}p{\spellcol}}}
-        & \multicolumn{9}{c}{\thead{---{}---{}---{}---{}---{}---{}---{}---Spell Level---{}---{}---{}---{}---{}---{}---{}---}} \\
-        \thead{Level} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} & \thead{5th} & \thead{6th} & \thead{7th} & \thead{8th} & \thead{9th} \\
-        1st  & 1 & \x & \x & \x & \x & \x & \x & \x & \x \\
-        2nd  & 2 & \x & \x & \x & \x & \x & \x & \x & \x \\
-        3rd  & 3 & \x & \x & \x & \x & \x & \x & \x & \x \\
-        4th  & 3 & 1 & \x & \x & \x & \x & \x & \x & \x \\
-        5th  & 4 & 2 & \x & \x & \x & \x & \x & \x & \x \\
-        6th  & 4 & 2 & 1 & \x & \x & \x & \x & \x & \x \\
-        7th  & 4 & 3 & 2 & \x & \x & \x & \x & \x & \x \\
-        8th  & 4 & 3 & 2 & 1 & \x & \x & \x & \x & \x \\
-        9th  & 4 & 3 & 3 & 2 & \x & \x & \x & \x & \x \\
-        10th & 4 & 3 & 3 & 2 & 1 & \x & \x & \x & \x \\
-        11th & 4 & 3 & 3 & 3 & 2 & \x & \x & \x & \x \\
-        12th & 4 & 3 & 3 & 3 & 2 & 1 & \x & \x & \x \\
-        13th & 4 & 3 & 3 & 3 & 3 & 2 & \x & \x & \x \\
-        14th & 4 & 3 & 3 & 3 & 3 & 2 & 1 & \x & \x \\
-        15th & 4 & 3 & 3 & 3 & 3 & 3 & 2 & \x & \x \\
-        16th & 4 & 3 & 3 & 3 & 3 & 3 & 2 & 1 & \x \\
-        17th & 4 & 3 & 3 & 3 & 3 & 3 & 2 & 2 & \x \\
-        18th & 4 & 3 & 3 & 3 & 3 & 3 & 2 & 2 & 1 \\
-        19th & 4 & 3 & 3 & 3 & 3 & 3 & 2 & 2 & 2 \\
-        20th & 4 & 3 & 3 & 3 & 3 & 3 & 2 & 2 & 2
-    \end{tabularx}
-\end{dtable}
+\cf{Sor}{Wild Magic} Every time a sorcerer casts a spell, roll d6 before determining the spell's effects and add the spell's level. On a 6, the sorcerer miscasts the spell (see \pcref{Miscasting}). After miscasting a spell in this way, the sorcerer cannot cast spells of the same level as the miscast spell for 10 minutes per spell level.
 
 \cf{Sor}{Rituals} Sorcerers, like other spellcasters, can perform rituals to create unique magical effects (see \pcref{Rituals}). A sorcerer begins play with a ritual book containing one arcane ritual of his choice (see \pcref{Arcane Rituals}).
 
@@ -1538,24 +1485,24 @@ Like other spellcasters, the number of spells a sorcerer knows and can cast each
 
 At his 2nd sorcerer level, the sorcerer learns a second arcane invocation of his choice.
 
-\cfl{Sor}{2nd}{Spellsurge} The sorcerer learns how to alter how he casts spells by initiating a spellsurge. He can initiate a spellsurge as a swift action. While in a spellsurge, he gains bonuses with some types of magic or aspects of spellcasting, but takes penalties to others. A spellsurge lasts for 5 rounds. A sorcerer can attempt to end a spellsurge as a swift action by making a Concentration check against a DC equal to 10 \add his caster level (including any bonuses or penalties from the spellsurge that affect all spells). Success means he ends the spellsurge, and failure means he is unable to return to normal.
+\cfl{Sor}{2nd}{Spellsurge} The sorcerer learns how to alter how he casts spells by initiating a spellsurge. He can initiate a spellsurge as a swift action. While in a spellsurge, he gains bonuses with some types of magic or aspects of spellcasting, but takes penalties to others. A spellsurge lasts for 5 rounds. A sorcerer can attempt to end a spellsurge as a swift action by testing Will defense against a test bonus equal to 10 \add his spellpower (including any bonuses or penalties from the spellsurge that affect all spells). Success means he ends the spellsurge, and failure means his attempt has no effect.
 
-The value of the numerical bonuses and penalties granted by a spellsurge is called a sorcerer's spellsurge bonus. Initially, his spellsurge bonus is \plus2, granting him \plus2 bonuses and inflicting \minus2 penalties. A sorcerer can initiate a spellsurge a number of times per day equal to his spellsurge bonus. His spellsurge bonus improves to \plus3 at his 8th sorcerer level, to \plus4 at 14th sorcerer level, and finally to \plus5 at 20th sorcerer level.
+The value of the numerical bonuses and penalties granted by a sorcerer's spellsurge is called his spellsurge bonus. Initially, his spellsurge bonus is \plus2, granting him \plus2 bonuses and inflicting \minus2 penalties. A sorcerer can initiate a spellsurge a number of times per day equal to his spellsurge bonus. His spellsurge bonus improves to \plus3 at his 8th sorcerer level, to \plus4 at 14th sorcerer level, and finally to \plus5 at 20th sorcerer level.
 
 At his 6th sorcerer level, and every four sorcerer levels thereafter, the sorcerer learns an additional spellsurge. Some spellsurges have minimum sorcerer levels, as indicated in the title of the ability. The list of spellsurges is given below. All spellsurges are extraordinary abilities unless otherwise specified.
 
-\subcf{Brilliant Surge} The sorcerer gains a bonus to his caster level with light spells, but takes a penalty to his caster level with Illusion spells.
-\subcf{Empathic Surge} The sorcerer gains a bonus to caster level with mind-affecting spells, but takes a penalty to Will defense and to caster level with spells that deal damage.
-\subcf{Energetic Surge} The sorcerer gains a bonus to caster level with acid, cold, electricity, and fire spells, but takes a penalty to his caster level with other spells.
-\subcf{6th -- Focused Surge} The sorcerer gains a bonus to his concentration checks, but takes a penalty to his caster level with all spells.
-\subcf{6th -- Patient Surge} The sorcerer gains a bonus to his caster level with all spells, but all spells he casts require at least a full-round action to cast. This does not increase the casting time of spells with a casting time of a full-round action or longer.
-\subcf{10th -- Extending Surge} The sorcerer doubles the range on all his spells, but takes a penalty to his caster level with all spells.
-\subcf{10th -- Silent Surge} The sorcerer can cast spells as if they did not have verbal components, but takes a penalty to his caster level with all spells.
-\subcf{10th -- Stilled Surge} The sorcerer can cast spells as if they did not have somatic components, but takes a penalty to his caster level with all spells. 
-\subcf{14th -- Lifebound Surge} The sorcerer gains a bonus to his caster level with all spells, but takes 1 point of Constitution damage each time he casts a spell.
-\subcf{14th -- Lingering Surge} The sorcerer gains a bonus to his caster level with spells that have a non-instantaneous duration, but takes a penalty to caster level with spells that are instantaneous.
-\subcf{14th -- Resistant Surge} Whenever the sorcerer casts a spell, he gains spell resistance equal to 10 \add sorcerer level \add spellsurge bonus for 1 round. However, he takes a penalty to his caster level with all spells. To affect the sorcerer with a spell, a caster must make an attack with its caster level. If the attack beats the sorcerer's spell resistance, the spell works normally. Otherwise, the spell has no effect on the sorcerer.
-\subcf{18th -- Widening Surge} The sorcerer doubles the area affected by his spells that affect an area, but takes a penalty to his caster level with all spells.
+\subcf{Brilliant Surge} The sorcerer gains a bonus to his spellpower with light spells, but takes a penalty to his spellpower with Illusion spells.
+\subcf{Empathic Surge} The sorcerer gains a bonus to spellpower with mind-affecting spells, but takes a penalty to Will defense and to spellpower with spells that deal damage.
+\subcf{Energetic Surge} The sorcerer gains a bonus to spellpower with acid, cold, electricity, and fire spells, but takes a penalty to his spellpower with other spells.
+\subcf{6th -- Focused Surge} The sorcerer gains a bonus to his concentration checks, but takes a penalty to his spellpower with all spells.
+\subcf{6th -- Patient Surge} The sorcerer gains a bonus to his spellpower with all spells, but all spells he casts require at least a full-round action to cast. This does not increase the casting time of spells with a casting time of a full-round action or longer.
+\subcf{10th -- Extending Surge} The sorcerer doubles the range on all his spells, but takes a penalty to his spellpower with all spells.
+\subcf{10th -- Silent Surge} The sorcerer can cast spells as if they did not have verbal components, but takes a penalty to his spellpower with all spells.
+\subcf{10th -- Stilled Surge} The sorcerer can cast spells as if they did not have somatic components, but takes a penalty to his spellpower with all spells. 
+\subcf{14th -- Lifebound Surge} The sorcerer gains a bonus to his spellpower with all spells, but takes 1 point of Constitution damage each time he casts a spell.
+\subcf{14th -- Lingering Surge} The sorcerer gains a bonus to his spellpower with spells that have a non-instantaneous duration, but takes a penalty to spellpower with spells that are instantaneous.
+\subcf{14th -- Resistant Surge} Whenever the sorcerer casts a spell, he gains spell resistance equal to 10 \add sorcerer level \add spellsurge bonus for 1 round. However, he takes a penalty to his spellpower with all spells. To affect the sorcerer with a spell, a caster must make an attack with its spellpower. If the attack beats the sorcerer's spell resistance, the spell works normally. Otherwise, the spell has no effect on the sorcerer.
+\subcf{18th -- Widening Surge} The sorcerer doubles the area affected by his spells that affect an area, but takes a penalty to his spellpower with all spells.
 
 \cflt{Sor}{3rd}{Expanded Spell Knowledge}{Ex} The sorcerer learns how to cast a particularly esoteric spell. He may choose a restricted spell from the arcane spell list with a spell level of no more than half his sorcerer level (normally, the highest level spell he can cast) and add it to his spell list. He must still use a spell known to learn it, as normal. At his 5th sorcerer level, and every odd sorcerer level thereafter, he can gain access to an additional restricted spell.
 
@@ -1654,7 +1601,7 @@ At his 4th spellwarped level, and every two spellwarped levels thereafter, he ga
 At his 7th spellwarped level, and every four spellwarped levels thereafter, the spellwarped gains an additional spellwarped aspect. Some aspects require a minimum spellwarped level, as indicated in the title of the ability. The full list of spellwarped aspects is given below.
 
 \parhead{General}
-\subcf{Spell Conduit} The spellwarped may use his character level in place of his spellwarped level to determine the effects of his spellwarped abilities, including the damage dealt and the special attack bonus. This does not affect the number of spellwarp points he has available. In addition, if he has the ability to cast spells, he may use his character level in place of his caster level.
+\subcf{Spell Conduit} The spellwarped may use his character level in place of his spellwarped level to determine the effects of his spellwarped abilities, including the damage dealt and the special attack bonus. This does not affect the number of spellwarp points he has available. In addition, if he has the ability to cast spells, he may use his character level as his spellpower with spells.
 \subcf{7th -- Expanded Senses} The range of the spellwarped's attuned senses ability doubles.
 \subcf{11th -- Accelerated Recovery} The spellwarped regains spellwarp points once per 10 minutes, rather than once per hour.
 \subcf{11th -- Rapid Senses} The spellwarped can constantly gain the benefit of his attuned senses ability. He can toggle his enhanced senses on or off as a swift action. If the ability does not have a duration, such as the temporal attuned senses ability, this aspect has no effect.
