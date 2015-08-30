@@ -268,26 +268,28 @@ All of the following are class features of the cleric.
 
 \cf{Clr}{Bonus Languages} A cleric's bonus language options include Celestial, Abyssal, and Infernal (the languages of good, chaotic evil, and lawful evil outsiders, respectively). These choices are in addition to the bonus languages available to the character because of his race.
 
-\cf{Clr}{Domains} A cleric chooses two domains, which represent his personal spiritual inclinations. If he has a deity, he must choose his domains from among those his deity offers. A cleric's choice of domains has broad effects on the cleric's spellcasting and supernatural abilities. Each domain has an associated domain attribute which is used for the domain's abilities. The domains and their attributes are listed below. If a domain offers a choice of multiple attributes, the cleric must choose which attribute to use when he gains the domain, and that choice cannot normally be changed.
+\cf{Clr}{Domains} A cleric chooses two domains, which represent his personal spiritual inclinations. If he has a deity, he must choose his domains from among those his deity offers. A cleric's choice of domains has broad effects on the cleric's spellcasting and supernatural abilities. The domains are listed below.
 
-\subcf{Air} Dexterity or Perception
-\subcf{Chaos} Willpower
-\subcf{Death} Constitution
-\subcf{Destruction} Strength or Willpower
-\subcf{Earth} Constitution or Willpower
-\subcf{Evil} Strength or Willpower
-\subcf{Fire} Dexterity or Constitution
-\subcf{Good} Perception or Willpower
-\subcf{Knowledge} Intelligence
-\subcf{Law} Perception or Willpower
-\subcf{Magic} Intelligence
-\subcf{Protection} Constitution or Willpower
-\subcf{Strength} Strength
-\subcf{Travel} Any physical attribute
-\subcf{Trickery} Dexterity or Intelligence
-\subcf{Vitality} Constitution
-\subcf{War} Any 
-\subcf{Water} Dexterity or Perception
+\begin{itemize}
+    \item{Air} 
+    \item{Chaos}
+    \item{Death}
+    \item{Destruction} 
+    \item{Earth}
+    \item{Evil}
+    \item{Fire}
+    \item{Good}
+    \item{Knowledge}
+    \item{Law}
+    \item{Magic}
+    \item{Protection}
+    \item{Strength}
+    \item{Travel}
+    \item{Trickery}
+    \item{Vitality}
+    \item{War}
+    \item{Water}
+\end{itemize}
 
 \cf{Clr}{Spells} A cleric casts divine spells using his devotion. A cleric's magic attack bonus is normally equal to his caster level. However, see the Devotion ability, below.
 
@@ -389,7 +391,7 @@ A cleric can't cast spells of an alignment opposed to his own or his deity's (if
 
 Each time the cleric casts a non-domain spell, he loses one point from his devotion pool. He also loses a point from his devotion pool if he acts against his deity or other spiritual inclinations. The cleric can refill his devotion pool by spending an hour in prayer, supplication, or contemplation. In addition, whenever the cleric performs a significant service to his deity or other spiritual inclinations, he may regain one devotion point. Extraordinary services may allow the cleric to regain more devotion points.
 
-If the cleric's devotion pool is empty, he takes a \minus5 penalty to caster level. If it has at least 5 points in it, the cleric gains a \plus5 bonus to caster level.
+If the cleric's devotion pool has at least 5 points in it, the cleric gains a \plus5 bonus to his cleric level when determining his caster level, spellpower, and the effects of his abilities. If his devotion pool is empty, he takes a \minus5 penalty to his cleric level for the same purposes.
 
 \cf{Clr}{Rituals} Clerics, like other spellcasters, can perform rituals to create unique magical effects (see \pcref{Rituals}). A cleric begins play with a ritual book containing one divine ritual of his choice (see \pcref{Divine Rituals}).
 
@@ -401,11 +403,13 @@ At his 2nd cleric level, the cleric gains an additional lesser domain aspect fro
 
 \cflt{Clr}{2nd}{Channel Energy}{Su} By channeling the power of his faith through his holy (or unholy) symbol, a cleric can act as a powerful conduit of divine energy. He must choose whether to channel positive or negative energy. Once this choice is made, it cannot be reversed.
 
-When a cleric channels energy, he affects all creatures in a \areamed radius burst centered on him, including himself if he desires. The cleric may choose to exclude a number of other creatures from the effect equal to 1 \add half his Perception. The amount of damage dealt (if negative energy is channeled) or healed (if positive energy is channeled) is equal to 1d6 damage per two cleric levels. The cleric must make a special attack vs. Fortitude against unwilling targets. The energy burst deals or heals half damage if the attack fails.
+When a cleric channels energy, he affects all creatures in a \areamed radius burst centered on him, including himself if he desires. The cleric may choose to exclude a number of other creatures from the effect equal to 1 \add half his Perception. The amount of damage dealt (if negative energy is channeled) or healed (if positive energy is channeled) is equal to 1d6 damage per two cleric levels. The cleric must make a special attack vs. Fortitude against unwilling targets, with a bonus equal to his cleric level or his Willpower. The energy burst heals or inflicts half damage if the attack fails.
 
-Channeling energy is a standard action. A cleric can channel energy a number of times per day equal to 3 \add half his Willpower. A cleric must be able to present his holy symbol to use this ability. The abilities used 
+Channeling energy is a standard action that costs one devotion point. A cleric must be able to present his holy symbol to use this ability.
 
-\cflt{Clr}{5th}{Channeled Domain Power}{Su} The cleric gains a channeled domain power from one of his domains. Unless otherwise stated, using a channelled domain power is identical to using channel energy and consumes a use of the cleric's channel energy ability. Instead of channeling positive or negative energy, the cleric instead gains the effect of the channelled domain power. If a channeled domain power deals damage, it functions like channeling negative energy unless otherwise noted. If a channeled domain power heals damage, it functions like channeling postive energy unless otherwise noted. His attack bonus with a channeled domain power is equal to his cleric level \add his domain attribute. The channeled domain powers are described at \pcref{Channeled Domain Powers}.
+\cflt{Clr}{5th}{Channeled Domain Power}{Su} The cleric gains a channeled domain power from one of his domains. Unless otherwise stated, using a channelled domain power is identical to using channel energy, and consumes a devotion point. Instead of channeling positive or negative energy, the cleric instead gains the effect of the channelled domain power.
+
+If a channeled domain power deals damage, it functions like channeling negative energy unless otherwise noted. If a channeled domain power heals damage, it functions like channeling postive energy unless otherwise noted. The cleric's attack bonus with a channeled domain power is equal to his cleric level or Willpower, as he chooses. The channeled domain powers are described at \pcref{Channeled Domain Powers}.
 
 At his 7th cleric level, the cleric gains an additional channeled domain power from one of his domains.
 
@@ -413,7 +417,7 @@ At his 7th cleric level, the cleric gains an additional channeled domain power f
 
 At his 11th cleric level, the cleric gains an additional domain aspect from one of his domains.
 
-\cflt{Clr}{13th}{Greater Channeled Domain Power}{Su} The cleric gains a greater channeled domain power from one of his domains. Using a greater channeled domain power consumes two uses of the cleric's channel energy ability. Instead of channeling positive or negative energy, the cleric instead gains the effect of the greater channeled domain power. Options for greater channeled domain powers are listed at \pcref{Greater Channeled Domain Powers}.
+\cflt{Clr}{13th}{Greater Channeled Domain Power}{Su} The cleric gains a greater channeled domain power from one of his domains. Using a greater channeled domain power costs two devotion points. Instead of channeling positive or negative energy, the cleric instead gains the effect of the greater channeled domain power. Options for greater channeled domain powers are listed at \pcref{Greater Channeled Domain Powers}.
 
 At his 15th cleric level, the cleric gains an additional greater channeled domain power from one of his domains.
 
