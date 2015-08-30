@@ -1,6 +1,112 @@
-\chapter{Combat}\label{Combat}
+\chapter{Basic Mechanics}
 
-\section{How Combat Works}\label{How Combat Works}
+\section{Attributes}
+Each character has six attributes: Strength (Str), Dexterity (Dex), Constitution (Con), Intelligence (Int), Perception (Per), and Willpower (Wil). Each attribute represents a character's raw talent in that area. A 0 in an attribute represents average human capacity. That doesn't mean that every commoner has a 0 in every attribute; not everyone is average, after all.
+
+\subsection{Attribute Descriptions}
+
+\subsubsection{Strength (Str)}
+Strength measures muscle and physical power.
+\begin{itemize}
+    \item Strength determines how much a character can carry (see \tref{Weight Limits}.
+    \item Strength can be used to attack with melee and thrown weapons.
+    \item Strength can be used for Maneuver defense.
+    \item Strength can be used for Climb, Jump, Sprint, and Swim checks.
+    \item Half Strength is added to Fortitude defense.
+\end{itemize}
+
+\subsubsection{Dexterity (Dex)}
+Dexterity measures hand-eye coordination, agility, and reflexes.
+\begin{itemize}
+    \item Dexterity can be used to attack with melee and thrown weapons that are light.
+    \item Dexterity can be used for all physical defenses (Armor, Maneuver, and Reflex).
+    \item Dexterity can be used for Balance, Escape Artist, Ride, Sleight of Hand, Stealth, and Tumble checks.
+\end{itemize}
+
+\subsubsection{Constitution (Con)}
+Constitution represents your character's health and stamina.
+\begin{itemize}
+    \item Constitution can be used for Armor and Fortitude defense.
+    \item Constitution can increase the hit points gained at each level.
+\end{itemize}
+
+\subsubsection{Intelligence (Int)}
+Intelligence determines how well your character learns and reasons. It affects your character's knowledge in many areas.
+
+\begin{itemize}
+    \item Intelligence is added to Craft, Disguise, Heal, Knowledge, and Linguistics checks.
+    \item Half Intelligence is added to the number of skill points a character gets.
+    \item Half Intelligence is added to Will defense.
+\end{itemize}
+
+\par An animal has an Intelligence score of \minus6 or lower. A creature of humanlike intelligence has a score of at least a \minus5 Intelligence.
+
+\subsubsection{Perception (Per)}
+Perception describes a character's ability to observe and be aware of one's surroundings.
+\begin{itemize}
+    \item Perception can be used to attack with projectile weapons.
+    %\item Perception can be used for Reflex defense.
+    \item Perception can be used for Awareness, Creature Handling, Sense Motive, Spellcraft, and Survival checks.
+    \item Half Perception is added to Reflex defense.
+\end{itemize}
+
+\subsubsection{Willpower (Wil)}
+Willpower measures a character's ability to endure mental hardships.
+\begin{itemize}
+    \item Willpower can be used for Will defense.
+    \item Willpower can be used to increase the hit points gained at each level.
+    \item 
+\end{itemize}
+
+\subsection{Using Attributes}
+
+\subsubsection{Choosing Attributes to Use}
+In many cases, multiple attributes can be used for the same thing. For example, both Strength and Dexterity can be used to attack with light weapons such as daggers. Whenever more than one attribute could be used, you must choose which one to use (usually, the higher attribute).
+
+\subsubsection{Attributes and Spellcasting}
+Using magic requires a strong mind. In order to cast spells, you must have a high Intelligence, Perception, or Willpower, depending on your class. Intelligence is required for wizards, Perception is required for druids, and Willpower is required for clerics and sorcerers. For more details, see \pcref{Casting Spells}.
+
+\subsubsection{Changing Attributes}
+
+Your attributes increase as you gain levels (see \pcref{Character Advancement}), and some special abilities can also increase your attributes, either permanently or for a brief period of time. Usually, when you change an attribute, you also alter your skill points, hit points, and all other effects of the attribute appropriately. However, temporary bonuses and penalties to attributes, such as from spells and magic items, do not affect your skill points.
+
+\subsubsection{Determining Attributes}
+There are several options for how to determine attribute scores.
+
+\subsubsection{Predefined Attribute Scores}
+This is the simplest method. Simply take the following set of attribute scores and distribute them as you choose among your character's abilities:
+
+4, 3, 2, 1, 0, \minus1
+
+This set of attribute scores is called the ``elite array''. For more extreme characters, you may use the ``savant array'':
+
+5, 2, 1, 0, 0, \minus2.
+
+Finally, for more well-balanced characters, you may use the ``balanced array'':
+
+3, 3, 2, 1, 1, 0
+
+\subsubsection{Point Buy}
+With this method, you can fully control your character's attribute scores to match what you want your character to be. All your character's attribute scores start at 0. You get 10 points to distribute among your character's attribute scores. Attribute scores can be bought according to the costs on \trefnp{Attribute Score Point Costs}.
+
+\begin{dtable}
+\lcaption{Attribute Score Point Costs}
+\begin{tabularx}{\columnwidth}{X X X X}
+\thead{Attribute Score} & \thead{Point Cost} \\
+\hline
+\minus2 & \minus2\fn{1} \\
+\minus1 & \minus1\fn{1} \\
+0 & 0 \\
+1 & 1 \\
+2 & 2 \\
+3 & 3 \\
+4 & 5 \\
+5 & 8 \\
+\end{tabularx}
+1 No more than two attribute scores can be reduced below 0 in this way.
+\end{dtable}
+\section{Combat Overview}\label{Combat Overview}
+
 Combat takes place in a series of ``rounds'', which represent about six seconds of action. In combat, creatures attack each other (see \pcref{Attacks}) and defend themselves (see \pcref{Defenses}), while moving around the battlefield (see \pcref{Movement and Positioning}). When your defenses fail, you can get hurt (see \pcref{Injury, Death, and Healing}). In unusual situations, you might become more or less likely to succeed at your actions (see \pcref{Circumstances, Bonuses, and Penalties}).
 
 \subsection{Combat Phases}
@@ -59,10 +165,10 @@ Swift and immediate actions are resolved immediately, before any other actions r
 \parhead{Delaying}\label{Delaying}
 In each phase, you can delay your action rather than acting immediately. If you delay, you do nothing until after the actions of all other creatures have been resolved. At that point, you declare your action and resolve it. If multiple creatures delay, all their actions are declared resolved simultaneously, after the actions of all the creatures that did not delay. You cannot delay more than once in a single phase.
 
-\section{Attacks}\label{Attacks}
+\subsection{Attacks}\label{Attacks}
 An \term{attack} is anything that affects another creatures in a potentially harmful way. There are two kinds of attacks: physical attacks, which are made with weapons or fists, and special attacks, which are made with magic or supernatural power. All physical attacks, and most special attacks, require making an attack roll against a defense. If the result of the attack roll meets or exceeds the defense, the attack succeeds.
 
-\subsection{Standard Attack}
+\subsubsection{Standard Attack}
 As a standard action, you can try to strike a foe with a weapon you are wielding. To do so, make an attack roll with a weapon you are wielding, adding your attack modifier to the roll. If your result is at least equal to your foe's Armor defense, your attack hits, and your foe takes damage.
 
 \subsubsection{Attack Modifier}
@@ -79,10 +185,10 @@ If your attack succeeds, you deal damage equal to your weapon's damage die \add 
 
 \parhead{Dealing Nonlethal Damage} You can attempt to strike nonlethally with any weapon. If you hit, you deal half damage as nonlethal damage. See \pcref{Nonlethal Damage}.
 
-\subsection{Reach}\label{Reach}
+\subsubsection{Reach}\label{Reach}
 Normally, you can attack anyone within five feet of you. The range at which you can attack is called your ``reach'', and the area that you can attack into is called your ``threatened area''. Reach for larger and smaller creatures is determined by size, as shown on \trefnp{Size in Combat}.
 
-\section{Defenses}\label{Defenses}
+\subsection{Defenses}\label{Defenses}
 Usually, when you are attacked, the attacker has to make an attack roll against a specific defense. If the attack roll is at least as high as that defense, the attack succeeds. There are three physical defenses and two special defenses.
 \begin{itemize}
     \item Armor defense (AD): Your Armor defense protects you from normal physical attacks, such as attempts to stab you with a sword. It is the most commonly used defense. Armor defense is a physical defense.
@@ -92,7 +198,7 @@ Usually, when you are attacked, the attacker has to make an attack roll against 
     \item Will defense: Your Will defense protects you from attacks you have to mentally endure or resist, such as terrifying creatures and magical manipulation. Will defense is a special defense.
 \end{itemize}
 
-\subsection{Defense Values}
+\subsubsection{Defense Values}
 
 Each of your defenses is calculated in the following way:
 
@@ -119,69 +225,64 @@ The attributes and relevant bonuses which apply to each defense are described on
 \parhead{Natural Armor} Creatures with unusually tough skin or thick hide, including most monsters, gain bonuses to their Armor defense. These bonuses stack with any armor such creatures might wear.
 \parhead{Size Modifiers} Your size modifier and special size modifier are described on \tref{Size in Combat}.
 
-\section{Movement and Positioning}\label{Movement and Positioning}
+\subsection{Movement and Positioning}\label{Movement and Positioning}
 
-\subsection{Taking up Space}
+\subsubsection{Taking up Space}
 A typical human takes up a 5-ft. by 5-ft. space in combat. For convenience, this is often called a ``square''. Differently sized creatures can take up more or less space, as indicated on \tref{Size in Combat}. Normally, other creatures can't be in any squares you occupy.
 
 Sometimes, movement and distance are represented in squares. A 30-ft. movement is the same thing as moving six squares.
 
-\subsection{Moving}
+\subsubsection{Moving}
 
 When you move, you can travel a number of feet up to your speed in any direction. For simplicity, all movement is measured in five-foot increments. While it is possible to be more precise than that, it's generally not worth the complexity.
 
-\subsection{Measuring Movement}
+\subsubsection{Measuring Movement}
 
 \parhead{Diagonals} When measuring distance, the first diagonal counts as five feet of movement, and the second counds as ten feet of movement. The third costs five feet, the fourth costs ten feet, and so on.
 
 You can't move diagonally past a corner. You can move diagonally past a creature, even an opponent. You can also move diagonally past other impassable obstacles, such as pits.
 \parhead{Closest Creature} When it's important to determine the closest square or creature to a location, if multiple squares or creatures are equally close, pick one randomly.
 
-\section{Injury, Death, and Healing}\label{Injury, Death, and Healing}
+\subsection{Injury, Death, and Healing}\label{Injury, Death, and Healing}
 Your hit points measure how hard you are to kill. No matter how many hit points you lose, your character isn't significantly hindered until your hit points drop to 0.
 
-\subsection{Hit Points}
+\subsubsection{Hit Points}
 Your hit points represent how much punishment you can take. When you run out of hit points, your actions are limited and you might die.
 
 Your hit points are equal to your \term{hit value} \mtimes your level. Your hit value is equal to half your Constitution, half your Willpower, or half your base Fortitude bonus, whichever is higher. Your base Fortitude bonus is simply your Fortitude bonus from class levels, and is not affected by spells or other temporary effects which can modify your defenses.
 
-
-\subsection{Losing Hit Points}
+\subsubsection{Losing Hit Points}
 When you take lethal damage, you subtract that damage from your hit points.
 \parhead{What Hit Points Represent} Hit points represent a combination of durability, luck, divine providence, and sheer determination, depending on the nature of your character. When you take 10 damage from an orc with a greataxe, the axe did not literally carve into your skin without affecting your ability to fight. Instead, you avoided the worst of the blow, but it bruised you through your armor, the effort to dodge the blow fatigued your character, or it barely nicked you through sheer luck -- and everyone's luck runs out eventually.
-
-\subsection{Stages of Injury}
-
-\subsubsection{Healthy} 
-When you are above half hit points, you suffer no significant effects from losing hit points. If you take damage, you can become bloodied (see Bloodied, below).
-
-\subsubsection{Bloodied}
-When you drop to half your hit points or below, you are bloodied. While bloodied, you take a \minus5 penalty to Fortitude and Will defense. If you take additional damage, you can become staggered.
-
-\subsubsection{Staggered}
-When you take damage that would reduce your hit points to 0, you become staggered. While staggered, you can only act during the action phase. You are also still bloodied, and continue to take the \minus5 penalty to Fortitude and Will defense.
-
-If you take additional damage while at 0 hit points, you begin dying (see Dying, below).
 
 \subsubsection{Critical Damage}\label{Critical Damage}
 When you take damage while you have no hit points remaining, that damage represents serious physical injury to your body. This is called critical damage. You suffer a penalty to attacks, checks, and defenses equal to the amount of critical damage you have.
 
 While you have critical damage, magical healing which would normally restore hit points cannot restore your hit points, though it can stabilize you, preventing you from dying. In addition, if you take damage that would reduce your hit points to 0 while you have any critical damage, any excess damage from the attack is dealt directly as critical damage.
 
-\subsubsection{Dying}\label{Dying}
-While you are dying, you must make an attack against your own Fortitude defense at the end of every round. No bonuses or penalties apply to the attack roll, but critical damage can penalize your Fortitude defense. If this attack succeeds once, you fall unconscious. If it succeeds three times, you die. If this attack fails three times, you stabilize.
+\subsubsection{Overkill Damage}
+Normally, when you take damage that would reduce your hit points to 0, any excess damage from the attack is wasted. However, some attacks deal such massive damage that you begin dying immediately, rather than just becoming staggered. If the damage dealt by an attack exceeds your maximum hit points (not current hit points), any damage past what would reduce your hit points to 0 is dealt as critical damage rather than being wasted.
+
+\subsubsection{Stages of Injury}
+
+\parhead{Healthy} When you are above half hit points, you suffer no significant effects from losing hit points. If you take damage, you can become bloodied (see Bloodied, below).
+
+\parhead{Bloodied} When you drop to half your hit points or below, you are bloodied. While bloodied, you take a \minus5 penalty to Fortitude and Will defense. If you take additional damage, you can become staggered.
+
+\parhead{Staggered} When you take damage that would reduce your hit points to 0, you become staggered. While staggered, you can only act during the action phase. You are also still bloodied, and continue to take the \minus5 penalty to Fortitude and Will defense.
+
+If you take additional damage while at 0 hit points, you begin dying (see Dying, below).
+
+\parhead{Dying}\label{Dying} While you are dying, you must make an attack against your own Fortitude defense at the end of every round. No bonuses or penalties apply to the attack roll, but critical damage can penalize your Fortitude defense. If this attack succeeds once, you fall unconscious. If it succeeds three times, you die. If this attack fails three times, you stabilize.
 
 If you receive magical healing of any kind while dying, you become partially stabilized. While partially stabilized, you must make an attack against your Fortitude once per minute, instead of once per round.
 
 An ally can make a Heal check to tend to you while you are dying. The Heal check result can be used in place of your Fortitude defense, although the critical damage you have taken applies as a penalty to the Heal check result as well.
 
-\subsubsection{Stable}\label{Stable}
+\parhead{Stable}\label{Stable}
 If you have taken critical damage but managed to stave off death, you become stable. As long as you have critical damage, magical healing has no effect on your hit points, though some magical effects can heal critical damage. If you became unconscious while dying, you regain consciousness as soon as you have hit points.
 
-\subsubsection{Overkill Damage}
-Normally, when you take damage that would reduce your hit points to 0, any excess damage from the attack is wasted. However, some attacks deal such massive damage that you begin dying immediately, rather than just becoming staggered. If the damage dealt by an attack exceeds your maximum hit points (not current hit points), any damage past what would reduce your hit points to 0 is dealt as critical damage rather than being wasted.
-
-\subsection{Healing}
+\subsubsection{Healing}
 After taking damage, you can recover hit points through natural healing or through magical healing. In any case, you can't regain hit points past your full normal hit point total.
 
 \parhead{Natural Healing} With 8 hours of rest, you recover half your hit points. Any significant interruption (such as combat or the like) during your rest prevents you from healing. If you rest for an entire day (16 hours), you recover all your hit points.
@@ -192,24 +293,24 @@ After taking damage, you can recover hit points through natural healing or throu
 
 \parhead{Healing Critical Damage} Critical damage takes much longer to heal than hit point damage. Resting for 1 week restores an amount of critical damage equal to 1 \add half the character's Constitution (minimum 1). A character can have both hit points and critical damage. As long as a character has critical damage, he is staggered, even if he is at full hit points.
 
-\subsection{Nonlethal Damage}\label{Nonlethal Damage}
+\subsubsection{Nonlethal Damage}\label{Nonlethal Damage}
 Some attacks and environmental effects deal nonlethal damage. Nonlethal damage is not subtracted from your hit points. Instead, it is tracked separately. If your nonlethal damage exceeds your hit points, you become staggered, just as if you were at 0 hit points. If you take additional damage while staggered, you fall unconscious. However, you do not begin dying unless your hit points are actually below 0. 
 
-\subsubsection{Healing Nonlethal Damage}
+\parhead{Healing Nonlethal Damage}
 You heal half your hit points in nonlethal damage with 1 hour of rest. When a spell or a magical ability cures hit point damage, it also removes an equal amount of nonlethal damage.
 
 \subsection{Temporary Hit Points}\label{Temporary Hit Points}
 Certain effects give a character temporary hit points which act as a protection against damage. Whenever a character takes damage, if he has temporary hit points, the damage is applied to his temporary hit points first. Any excess damage is then applied to his hit points as normal. Temporary hit points are not ``real'' hit points, and cannot be healed. If a character has temporary hit points from multiple effects, only the highest value is used.
 
-\section{Circumstances, Bonuses, and Penalties}
+\subsection{Circumstances, Bonuses, and Penalties}
 
-\subsection{Overwhelm}\label{Overwhelm}
+\subsubsection{Overwhelm}\label{Overwhelm}
 When a creature is being attacked by multiple foes at once, it is less able to defend itself. A creature is considered overwhelmed if it is being threatened by more than one creature. Multiple creatures occupying the same square count as a single creature when determining overwhelm penalties. If a creature is overwhelmed, it takes a penalty to physical defenses equal to the number of creatures threatening it.
 
-\subsection{Range Increments}
+\subsubsection{Range Increments}
 When using a ranged weapon, you take a \minus2 penalty per range increment between you and your target. For example, when using a longbow with a range increment of 100 feet against a target 170 feet away, you take a \minus2 penalty to attack rolls.
 
-\subsection{Size in Combat}\label{Size in Combat}
+\subsubsection{Size in Combat}\label{Size in Combat}
 Size affects your space and reach in combat. In addition, your physical attacks and defefenses are affected by your size modifier. These effects are shown on \trefnp{Size in Combat}. 
 
 \begin{dtable*}
@@ -237,12 +338,12 @@ Size affects your space and reach in combat. In addition, your physical attacks 
 
 Unusually large or small creatures also have other special rules apply to them, as described in \pcref{Special Size Rules}.
 
-\subsection{Total Defense}\label{Total Defense}
+\subsubsection{Total Defense}\label{Total Defense}
 As a standard action, you can focus entirely on defense, granting you a \plus4 bonus to your physical defenses for 1 round.
 
-\section{Special Rules}\label{Special Rules}
+\subsection{Special Rules}\label{Special Rules}
 
-\subsection{Critical Success and Failure}\label{Critical Success and Failure}
+\subsubsection{Critical Success and Failure}\label{Critical Success and Failure}
 A natural 1 (the d20 comes up 1) on an attack roll is treated as rolling a \minus10. A natural 20 (the d20 comes up 20) is treated as rolling a 30. Under normal circumstances, a natural 1 automatically misses, and a natural 20 automatically hits.
 
 \subsubsection{Critical Hits}\label{Critical Hits}
@@ -250,7 +351,7 @@ When you roll a natural 20 on an attack roll and hit, you have scored a critical
 
 %Keen weapons threaten a critical hit on a 19 or 20, while impact weapons deal triple damage when they score a critical hit.
 
-\subsection{Unarmed Combat}\label{Unarmed Combat}
+\subsubsection{Unarmed Combat}\label{Unarmed Combat}
 Every creature can attack with its body using an unarmed strike. You cannot defend yourself with an unarmed strike, so you are \defenseless while unarmed. You are only considered to have one unarmed strike, so you cannot two-weapon fight with only your unarmed strike (but see the unarmed warrior monk ability, \pref{Mnk:Unarmed Warrior}).
 
 If you have the Improved Unarmed Strike feat, you treat your unarmed strike as if it were a lethal weapon. This allows you to defend yourself while unarmed, just as if you were using another melee weapon.
