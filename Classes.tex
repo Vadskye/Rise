@@ -254,7 +254,7 @@ A barbarian who becomes lawful loses his ability to rage, and cannot gain more l
     \end{tabularx}
 \end{dtable*}
 
-\cd{Alignment} A cleric's alignment must be within one step of his deity's (that is, it may be one step away on either the lawful-chaotic axis or the good-evil axis, but not both). A cleric may not be neutral unless his deity's alignment is also neutral.
+\cd{Alignment} If the cleric worships a deity, his alignment must be within one step of his deity's (that is, it may be one step away on either the lawful-chaotic axis or the good-evil axis, but not both). He may not be neutral unless his deity's alignment is also neutral.
 
 \sssecfake{Class Skills}
 The cleric's class skills (and the key attribute for each skill) are Heal (Int), Knowledge (arcana) (Int), Knowledge (local) (Int), Knowledge (religion) (Int), Knowledge (the planes) (Int), Sense Motive (Per), Spellcraft (Per), Intimidate (Varies), and Persuasion (\x).
@@ -289,16 +289,18 @@ All of the following are class features of the cleric.
 \subcf{War} Any 
 \subcf{Water} Dexterity or Perception
 
-\cf{Clr}{Spells} A cleric casts divine spells using his Willpower. To learn or cast a spell, a cleric must have a Willpower at least equal to half the spell's level. A cleric's magic attack bonus equals half his caster level \add his Willpower.
+\cf{Clr}{Spells} A cleric casts divine spells using his devotion. A cleric's magic attack bonus is normally equal to his caster level. However, see the Devotion ability, below.
 
-Like other spellcasters, the number of spells a cleric knows and can cast each day is limited. These limitations are given below on \trefnp{Cleric Spells per Day} and \trefnp{Cleric Spells Known}. A cleric's spells are drawn from the divine spell list (\pcref{Divine Spells}), as well as from his domains (\pcref{Cleric Domains}). Two spells at every spell level must be drawn from the cleric's domains; sometimes these spells are normal spells on the cleric's spell list, but often they are only accessible by the domain. A cleric may also choose spells from his domain lists with his normal spells known.
+The number of spells a cleric knows is given on \trefnp{Cleric Spells Known}. The first number is the number of spells the cleric knows from the divine spell list (see \pcref{Divine Spells}). The second number is the minimum number of spells the cleric knows from his domains (see \pcref{Cleric Domains}). Sometimes these domain spells are spells on normally available on the divine spell list, but often they are only accessible by the domain. A cleric may also choose spells from his domain lists with his normal spells known.
 
-Clerics meditate or pray for their spells. Each cleric must choose a time at which he must spend 1 hour each day performing a ritual, worshipping, or quietly contemplating to regain his daily allotment of spells. They do not need to rest to regain spells.
+The number of spells a cleric can cast per day is given on \trefnp{Cleric Spell Slots}.
+
+In order to regain his spell slots for the day, the cleric must spend 1 hour performing a ritual, worshipping, or quietly contemplating. The cleric cannot regain spell slots in this way more than once per day.
 
 A cleric can't cast spells of an alignment opposed to his own or his deity's (if he has one). Spells associated with particular alignments are indicated by the chaos, evil, good, and law descriptors in their spell descriptions.
 
 \begin{dtable}
-    \lcaption{Cleric Spells per Day} 
+    \lcaption{Cleric Spell Slots} 
     \centering
     \begin{tabularx}{\columnwidth}{>{\ccol}X *{9}{>{\ccol}p{\spellcol}}}
         & \multicolumn{9}{c}{\thead{---{}---{}---{}---{}---{}---{}---{}---Spell Level---{}---{}---{}---{}---{}---{}---{}---}} \\
@@ -327,61 +329,67 @@ A cleric can't cast spells of an alignment opposed to his own or his deity's (if
 \end{dtable}
 
 \begin{dtable}
-\lcaption{Cleric Spells Known}
-\centering
-\begin{tabularx}{\columnwidth}{>{\ccol}X *{9}{>{\ccol}p{\spellcol}}}
-& \multicolumn{9}{c}{\thead{---{}---{}---{}---{}---{}---{}---{}---Spell Level---{}---{}---{}---{}---{}---{}---{}---}} \\
-\thead{Level} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} & \thead{5th} & \thead{6th} & \thead{7th} & \thead{8th} & \thead{9th} \\
-1st  & 0\plus 2 & \x & \x & \x & \x & \x & \x & \x & \x \\
-2nd  & 1\plus 2 & \x & \x & \x & \x & \x & \x & \x & \x \\
-3rd  & 2\plus 2 & \x & \x & \x & \x & \x & \x & \x & \x \\
-4th  & 2\plus 2 & 0\plus 2 & \x & \x & \x & \x & \x & \x & \x \\
-5th  & 3\plus 2 & 1\plus 2 & \x & \x & \x & \x & \x & \x & \x \\
-6th  & 3\plus 2 & 1\plus 2 & 0\plus 2 & \x & \x & \x & \x & \x & \x \\
-7th  & 3\plus 2 & 2\plus 2 & 1\plus 2 & \x & \x & \x & \x & \x & \x \\
-8th  & 3\plus 2 & 2\plus 2 & 1\plus 2 & 0\plus 2 & \x & \x & \x & \x & \x \\
-9th  & 3\plus 2 & 2\plus 2 & 2\plus 2 & 1\plus 2 & \x & \x & \x & \x & \x \\
-10th & 3\plus 2 & 2\plus 2 & 2\plus 2 & 1\plus 2 & 0\plus 2 & \x & \x & \x & \x \\
-11th & 3\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 1\plus 2 & \x & \x & \x & \x \\
-12th & 3\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 1\plus 2 & 0\plus 2 & \x & \x & \x \\
-13th & 3\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 1\plus 2 & \x & \x & \x \\
-14th & 3\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 1\plus 2 & 0\plus 2 & \x & \x \\
-15th & 3\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 1\plus 2 & \x & \x \\
-16th & 3\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 1\plus 2 & 0\plus 2 & \x \\
-17th & 3\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 1\plus 2 & 1\plus 2 & \x \\
-18th & 3\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 1\plus 2 & 1\plus 2 & 0\plus 2 \\
-19th & 3\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 1\plus 2 & 1\plus 2 & 1\plus 2 \\
-20th & 3\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 1\plus 2 & 1\plus 2 & 1\plus 2
-\end{tabularx}
+    \lcaption{Cleric Spells Known}
+    \centering
+    \begin{tabularx}{\columnwidth}{>{\ccol}X *{9}{>{\ccol}p{\spellcol}}}
+        & \multicolumn{9}{c}{\thead{---{}---{}---{}---{}---{}---{}---{}---Spell Level---{}---{}---{}---{}---{}---{}---{}---}} \\
+        \thead{Level} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} & \thead{5th} & \thead{6th} & \thead{7th} & \thead{8th} & \thead{9th} \\
+        1st  & 0\plus 2 & \x & \x & \x & \x & \x & \x & \x & \x \\
+        2nd  & 1\plus 2 & \x & \x & \x & \x & \x & \x & \x & \x \\
+        3rd  & 2\plus 2 & \x & \x & \x & \x & \x & \x & \x & \x \\
+        4th  & 2\plus 2 & 0\plus 2 & \x & \x & \x & \x & \x & \x & \x \\
+        5th  & 3\plus 2 & 1\plus 2 & \x & \x & \x & \x & \x & \x & \x \\
+        6th  & 3\plus 2 & 1\plus 2 & 0\plus 2 & \x & \x & \x & \x & \x & \x \\
+        7th  & 3\plus 2 & 2\plus 2 & 1\plus 2 & \x & \x & \x & \x & \x & \x \\
+        8th  & 3\plus 2 & 2\plus 2 & 1\plus 2 & 0\plus 2 & \x & \x & \x & \x & \x \\
+        9th  & 3\plus 2 & 2\plus 2 & 2\plus 2 & 1\plus 2 & \x & \x & \x & \x & \x \\
+        10th & 3\plus 2 & 2\plus 2 & 2\plus 2 & 1\plus 2 & 0\plus 2 & \x & \x & \x & \x \\
+        11th & 3\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 1\plus 2 & \x & \x & \x & \x \\
+        12th & 3\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 1\plus 2 & 0\plus 2 & \x & \x & \x \\
+        13th & 3\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 1\plus 2 & \x & \x & \x \\
+        14th & 3\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 1\plus 2 & 0\plus 2 & \x & \x \\
+        15th & 3\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 1\plus 2 & \x & \x \\
+        16th & 3\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 1\plus 2 & 0\plus 2 & \x \\
+        17th & 3\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 1\plus 2 & 1\plus 2 & \x \\
+        18th & 3\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 1\plus 2 & 1\plus 2 & 0\plus 2 \\
+        19th & 3\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 1\plus 2 & 1\plus 2 & 1\plus 2 \\
+        20th & 3\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 2\plus 2 & 1\plus 2 & 1\plus 2 & 1\plus 2
+    \end{tabularx}
 \end{dtable}
 
 \begin{dtable!*}
-\lcaption{Deities}
-\begin{tabularx}{\textwidth}{X l X}
-\thead{Deity} & \thead{Alignment} & \thead{Domains} \\
-Guftas, horse god of justice & Lawful good & Good, Law, Strength, Travel \\
-Lucied, paladin god of justice & Lawful good & Destruction, Good, Leadership, War \\
-Simor, fighter god of protection & Lawful good & Good, Protection, Strength, Vitality \\
-Rucks, monk god of pragmatism & Neutral good & Good, Law, Protection, Travel \\
-Vanya, centaur god of nature & Neutral good & Good, Strength, Travel, Wild \\
-Brushtwig, pixie god of creativity & Chaotic good & Chaos, Good, Trickery, Wild \\
-Chavi, god of stories & Chaotic good & Chaos, Knowledge, Leadership, Trickery \\
-Ivan Ivanovitch, bear god of strength & Chaotic good & Chaos, Strength, War, Wild \\
-Krunch, barbarian god of destruction & Chaotic good & Destruction, Good, Strength, War \\
-Sir Cakes, dwarf god of freedom & Chaotic good & Chaos, Good, Strength, Vitality \\
-Raphael, monk god of retribution & Lawful neutral & Death, Law, Protection, Travel \\
+    \lcaption{Deities}
+    \begin{tabularx}{\textwidth}{X l X}
+        \thead{Deity} & \thead{Alignment} & \thead{Domains} \\
+        Guftas, horse god of justice & Lawful good & Good, Law, Strength, Travel \\
+        Lucied, paladin god of justice & Lawful good & Destruction, Good, Leadership, War \\
+        Simor, fighter god of protection & Lawful good & Good, Protection, Strength, Vitality \\
+        Rucks, monk god of pragmatism & Neutral good & Good, Law, Protection, Travel \\
+        Vanya, centaur god of nature & Neutral good & Good, Strength, Travel, Wild \\
+        Brushtwig, pixie god of creativity & Chaotic good & Chaos, Good, Trickery, Wild \\
+        Chavi, god of stories & Chaotic good & Chaos, Knowledge, Leadership, Trickery \\
+        Ivan Ivanovitch, bear god of strength & Chaotic good & Chaos, Strength, War, Wild \\
+        Krunch, barbarian god of destruction & Chaotic good & Destruction, Good, Strength, War \\
+        Sir Cakes, dwarf god of freedom & Chaotic good & Chaos, Good, Strength, Vitality \\
+        Raphael, monk god of retribution & Lawful neutral & Death, Law, Protection, Travel \\
 %Atana, halfling god of ???
-Declan, god of fire & True neutral & Destruction, Fire, Knowledge, Magic \\
+        Declan, god of fire & True neutral & Destruction, Fire, Knowledge, Magic \\
 %Kalten, half-orc god of smiths
-Kurai, shaman god of nature & True neutral & Air, Earth, Fire, Water \\
-Clockwork, elf god of time & Chaotic neutral & Chaos, Magic, Trickery, Travel \\
-Murdoc, god of mercenaries & Chaotic neutral & Destruction, Knowledge, Leadership, War\\
-Tak, orc god of war & Lawful evil & Law, Strength, War \\
-Theodolus, sorcerer god of ambition & Neutral evil & Evil, Knowledge, Magic, Trickery \\
-Daeghul, demon god of slaughter & Chaotic evil & Destruction, Evil, Magic, War \\
+        Kurai, shaman god of nature & True neutral & Air, Earth, Fire, Water \\
+        Clockwork, elf god of time & Chaotic neutral & Chaos, Magic, Trickery, Travel \\
+        Murdoc, god of mercenaries & Chaotic neutral & Destruction, Knowledge, Leadership, War\\
+        Tak, orc god of war & Lawful evil & Law, Strength, War \\
+        Theodolus, sorcerer god of ambition & Neutral evil & Evil, Knowledge, Magic, Trickery \\
+        Daeghul, demon god of slaughter & Chaotic evil & Destruction, Evil, Magic, War \\
 %Ribo, halfling god of trickery & Chaotic neutral & Chaos, Trickery, Water
-\end{tabularx}
+    \end{tabularx}
 \end{dtable!*}
+
+\cf{Clr}{Devotion} A cleric's spells wax and wane in power with the strength of their devotion, and the extent to which they call on that devotion to create effects. Each cleric has a devotion pool with 10 devotion points in it. After regaining spells for the day, a cleric's devotion pool is full.
+
+Each time the cleric casts a non-domain spell, he loses one point from his devotion pool. He also loses a point from his devotion pool if he acts against his deity or other spiritual inclinations. The cleric can refill his devotion pool by spending an hour in prayer, supplication, or contemplation. In addition, whenever the cleric performs a significant service to his deity or other spiritual inclinations, he may regain one devotion point. Extraordinary services may allow the cleric to regain more devotion points.
+
+If the cleric's devotion pool is empty, he takes a \minus5 penalty to caster level. If it has at least 5 points in it, the cleric gains a \plus5 bonus to caster level.
 
 \cf{Clr}{Rituals} Clerics, like other spellcasters, can perform rituals to create unique magical effects (see \pcref{Rituals}). A cleric begins play with a ritual book containing one divine ritual of his choice (see \pcref{Divine Rituals}).
 
