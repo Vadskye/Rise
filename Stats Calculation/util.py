@@ -367,7 +367,7 @@ def parse_creature_data(key, data):
 # }
 def parse_attribute_data(creature_data):
     attributes = dict()
-    for attribute_name in 'strength dexterity constitution intelligence wisdom charisma'.split():
+    for attribute_name in 'strength dexterity constitution intelligence perception willpower'.split():
         # normally, if an attribute is missing, it means it is 0
         attribute_data = creature_data.get(attribute_name, 'attribute not found')
         if attribute_data == 'attribute not found':

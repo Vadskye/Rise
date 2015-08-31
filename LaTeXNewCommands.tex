@@ -1,3 +1,6 @@
+%\newcommand{\Variable}{0}
+%\newcommand{\storevalue}[1]{\renewcommand{\Variable}{#1}}
+
 \newcommand{\lcaption}[1]{\caption{#1}\label{cap:#1}}
 \newcommand{\lsec}[1]{\MakeUppercase{#1}\label{#1}}
 \newcommand{\lssec}[1]{\MakeUppercase{#1}\label{#1}}
@@ -191,10 +194,10 @@
 \newcommand{\durperm}{Permanent\xspace}
 \newcommand{\durpersonallong}{\durlong if you are the target;\\\durshort otherwise}
 
-\newcommand{\confusionexplanation}{Each turn, a confused creature has a random chance to take one of four actions: babble incoherently, flee from the caster as if panicked, attack the nearest creature, or act normally. A confused character who can't carry out the indicated action does nothing but babble incoherently. Any confused character who is attacked automatically attacks its attackers on its next turn, as long as it is still confused when its turn comes.\xspace}
+\newcommand{\confusionexplanation}{A confused creature cannot take actions normally. If it is attacked, it automatically attacks a random attacker. Otherwise, at the beginning of each round, it randomly decides to take one of four actions that round: babble incoherently, flee from the caster as if panicked, attack the nearest creature, or act normally. A confused character who can't carry out the indicated action does nothing but babble incoherently.\xspace}
 
 \newcommand{\bonusscalingdescription}{This bonus increases to \plus3 at 8th level, to \plus4 at 14th level, and finally to \plus5 at 20th level.\xspace}
-\newcommand{\spellbonusscalingdescription}{This bonus increases to \plus3 at 8th caster level, to \plus4 at 14th caster level, and finally to \plus5 at 20th caster level.\xspace}
+\newcommand{\spellbonusscalingdescription}{This bonus increases to \plus3 at spellpower 8, to \plus4 at spellpower 14, and finally to \plus5 at spellpower 20.\xspace}
 \newcommand{\babscalingdescription}{This bonus increases to \plus3 at base attack bonus \plus8, to \plus4 at base attack bonus \plus12, and finally to \plus5 at base attack bonus \plus16.\xspace}
 
 \newcommand{\feat}[2]{\hypertarget{feat:#1}{\sssecfakehref{ft:#1}{#1 [#2]}}\label{feat:#1}}
@@ -217,14 +220,19 @@
 
 \newcommand{\vulnerableexplanation}{A vulnerable creature takes a \minus2 penalty to attacks, defenses, and checks.\xspace}
 \newcommand{\vulneffect}{\minus2 to attacks, defenses, and checks\xspace}
+
 \newcommand{\conditionlink}[1]{\hyperlink{condition:#1}{#1}\xspace}
+\newcommand{\glossarylink}[1]{\hyperlink{glossary:#1}{#1}\xspace}
+
 \newcommand{\bewildered}{\conditionlink{bewildered} \reminder{\vulneffect}\xspace}
 \newcommand{\blinded}{\conditionlink{blinded} \reminder{unable to see, moves at half speed, defenseless}\xspace}
 \newcommand{\bloodied}{\conditionlink{bloodied} \reminder{half hit points}\xspace}
 \newcommand{\confused}{\conditionlink{confused} \reminder{randomly babbles, flees, attacks nearest, or acts normally}\xspace}
 \newcommand{\dazzled}{\conditionlink{dazzled} \reminder{20\% miss chance, \minus4 to visual Perception}\xspace}
+\newcommand{\defenseless}{\conditionlink{defenseless} \reminder{\minus5 defense vs. melee}\xspace}
 \newcommand{\disoriented}{\conditionlink{disoriented} \reminder{moves randomly}\xspace}
 %\newcommand{\dominated}{\conditionlink{dominated} \reminder{under total mental control}\xspace}
+\newcommand{\engaged}{\conditionlink{engaged} \reminder{move at half speed}\xspace}
 \newcommand{\exhausted}{\conditionlink{exhausted} \reminder{move at half speed, unable to sprint or charge, \minus4 to physical attacks, defenses, and checks}}
 \newcommand{\entangled}{\conditionlink{entangled} \reminder{move at half speed, unable to sprint or charge, \minus2 to physical attacks, defenses, and checks}\xspace}
 \newcommand{\fascinated}{\conditionlink{fascinated} \reminder{Unable to act unless threatened}}
@@ -233,25 +241,33 @@
 \newcommand{\dazed}{\conditionlink{dazed} \reminder{unable to act}\xspace}
 \newcommand{\deafened}{\conditionlink{deafened} \reminder{unable to hear}\xspace}
 \newcommand{\helpless}{\conditionlink{helpless} \reminder{physical defenses are 10, vulnerable to coup de grace}\xspace}
-\newcommand{\ignited}{\conditionlink{ignited} \reminder{d6 damage/round, Dex DC 10 to extinguish, \vulneffect}\xspace}
+\newcommand{\ignited}{\conditionlink{ignited} \reminder{d6 damage/round, 20\% failure, Dex DC 15 to extinguish}\xspace}
 \newcommand{\immobilized}{\conditionlink{immobilized} \reminder{Unable to leave its location}\xspace}
 \newcommand{\nauseated}{\conditionlink{nauseated} \reminder{unable to act in action phase, move at half speed}\xspace}
 \newcommand{\negativelevels}{\conditionlink{negative levels} \reminder{\minus1 to attacks, special defenses, and checks, \minus5 hit points}}
 \newcommand{\panicked}{\conditionlink{panicked} \reminder{flees or cowers from its fear}\xspace}
 \newcommand{\paralyzed}{\conditionlink{paralyzed} \reminder{helpless, unable to move}\xspace}
+\newcommand{\petrified}{\conditionlink{petrified} \reminder{turned to stone}\xspace}
 \newcommand{\impaired}{\conditionlink{impaired} \reminder{20\% failure}\xspace}
 \newcommand{\prone}{\conditionlink{prone} \reminder{\minus4 to melee attack and defense, \plus4 vs ranged attacks, move action to stand}}
 \newcommand{\severelyimpaired}{\conditionlink{severely impaired} \reminder{50\% failure}\xspace}
 \newcommand{\shaken}{\conditionlink{shaken} \reminder{unable to approach its fear}\xspace}
-\newcommand{\sickened}{\conditionlink{sickened} \reminder{mmove at half speed}\xspace}
+\newcommand{\sickened}{\conditionlink{sickened} \reminder{move at half speed}\xspace}
 \newcommand{\slowed}{\conditionlink{slowed} \reminder{unable to act in movement phase, \minus2 to physical attacks, defenses, and checks}\xspace}
 \newcommand{\staggered}{\conditionlink{staggered} \reminder{unable to act in movement phase}\xspace}
-\newcommand{\stunned}{\conditionlink{stunned} \reminder{unable to take actions}}
+\newcommand{\stunned}{\conditionlink{stunned} \reminder{unable to take actions}\xspace}
+\newcommand{\taunted}{\conditionlink{taunted} \reminder{unable to flee}\xspace}
+\newcommand{\unaware}{\conditionlink{unaware} \reminder{critically threatened on every attack}}
 \newcommand{\unencumbered}{\conditionlink{unencumbered} \reminder{not carrying a heavy load or wearing medium or heavy armor}\xspace}
 \newcommand{\monkunencumbered}{not wearing armor or encumbered by weight (see \pcref{Encumbrance})\xspace}
 \newcommand{\vulnerable}{\conditionlink{vulnerable} \reminder{\vulneffect}\xspace}
 
+\newcommand{\difficultterrain}{\glossarylink{difficult terrain} \reminder{half movement speed}\xspace}
+
 \newcommand{\condition}[1]{\parhead{#1}\label{#1}\hypertarget{condition:#1}{}}
+\newcommand{\glossaryterm}[1]{\parhead{#1}\label{#1}\hypertarget{glossary:#1}{}}
+
+\newcommand{\term}[1]{\textbf{#1}}
 
 \newcommand{\concealment}{concealment \reminder{\plus4 to physical defenses}}
 
@@ -296,6 +312,29 @@
 \newcommand{\spellcheck}[1]{\parhead*{Check} #1}
 
 \ExplSyntaxOn
+
+\DeclareDocumentCommand{\Create}{m}
+{
+    \newcounter{#1}
+    \setcounter{#1}{0}
+}
+
+\DeclareDocumentCommand{\Set}{m m}
+{
+    \setcounter{#1}{#2}
+}
+
+\DeclareDocumentCommand{\Get}{m}
+{
+    \arabic{#1}
+}
+
+\DeclareDocumentCommand{\GetValue}{m}
+{
+    \value{#1}
+}
+
+\newcommand{\TempVar}{0}
 
 \DeclareDocumentCommand{\parhead}{s m o}
 {\par \IfBooleanT{#1}{\noindent}
@@ -380,6 +419,9 @@
     \fi
 }
 
+% args:
+%   pre-spell header, whether spell is restricted,
+%   spell name, spell name modifier (Greater, etc.)
 \DeclareDocumentCommand{\spellhead}{o s m o}
 {
     \IfValueTF{#1}
@@ -390,16 +432,28 @@
         \textit{
             \textbf{
                 \IfValueTF{#4}
-                {\hyperlink{spell:#4~#3}{#3,~#4}}
-                {\hyperlink{spell:#3}{#3}}
+                {
+                    \hyperlink{spell:#4~#3}{#3,~#4}
+                    \pageref{spell:#4~#3}
+                }
+                {
+                    \hyperlink{spell:#3}{#3}
+                    \pageref{spell:#3}
+                }
             }
         }
     }
     {
         \textbf{
             \IfValueTF{#4}
-            {\hyperlink{spell:#4~#3}{#3,~#4}}
-            {\hyperlink{spell:#3}{#3}}
+            {
+                \hyperlink{spell:#4~#3}{#3,~#4}
+                \pageref{spell:#4~#3}
+            }
+            {
+                \hyperlink{spell:#3}{#3}
+                \pageref{spell:#3}
+            }
         }
     }:
 }
@@ -418,20 +472,174 @@
 
 \DeclareDocumentCommand{\imath}{m}
 {
-    \pgfmathparse{int(round(#1))}\pgfmathresult
+    %\pgfmathparse{int(floor(#1))}\pgfmathresult
+    \pgfmathsetmacro{\TempVar}{int(floor(#1))}
+    \TempVar
+}
+
+\DeclareDocumentCommand{\imathparse}{m}
+{
+    \pgfmathsetmacro{\TempVar}{int(floor(#1))}
+}
+
+\DeclareDocumentCommand{\imathresult}{}
+{
+    \TempVar
 }
 
 \DeclareDocumentCommand{\mathnth}{m}
 {
-    \pgfmathparse{int(round(#1))}\nth{\pgfmathresult}
+    \pgfmathparse{int(floor(#1))}\nth{\pgfmathresult}
 }
 
+\DeclareDocumentCommand{\good}{m}
+{
+    \plus \imath{(#1*5/4)+4}
+}
+
+\DeclareDocumentCommand{\avg}{m}
+{
+    \plus \imath{(#1*1/1)+3}
+}
+
+\DeclareDocumentCommand{\poor}{m}
+{
+    \plus \imath{(#1*3/4)+1}
+}
+
+\DeclareDocumentCommand{\babold}{m}
+{
+    \imathparse{int(floor((#1-1)/5+1))}
+
+    \ifcase\imathresult \relax \or
+        \plus #1 % case 0
+    \or
+        \plus #1 / \plus \imath{#1-5} % case 1
+    \or
+        \plus #1 / \plus \imath{#1-5} / \plus \imath{#1-10} % case 2
+    \or
+        \plus #1 / \plus \imath{#1-5} / \plus \imath{#1-10} / \plus \imath{#1-15} % case 3
+    \or 
+        \plus #1 / \plus \imath{#1-5} / \plus \imath{#1-10} / \plus \imath{#1-15} / \plus \imath{#1-20} % case 3
+    \fi
+}
+
+\DeclareDocumentCommand{\bab}{m o}
+{
+    \IfValueTF{#2}
+    {
+        \imathparse{int(floor((#1-1)/#2+1))}
+    }
+    {
+        \imathparse{int(floor((#1-1)/5+1))}
+    }
+
+    \ifcase\imathresult \relax \or
+        \plus #1 % case 0
+    \or
+        \plus #1 / \plus #1 % case 1
+    \or
+        \plus #1 / \plus #1 / \plus #1 % case 2
+    \or
+        \plus #1 / \plus #1 / \plus #1 / \plus #1 % case 3
+    \or 
+        \plus #1 / \plus #1 / \plus #1 / \plus #1 / \plus #1 % case 3
+    \fi
+}
+
+\DeclareDocumentCommand{\goodbab}{m}
+{
+    \pgfmathparse{int(floor(#1+3))}
+    \bab{\pgfmathresult}
+}
+
+\DeclareDocumentCommand{\avgbab}{m}
+{
+    %\pgfmathparse{int(floor((#1*3)/4+1))}
+    \pgfmathparse{int(floor((#1*4/5)+2))}
+    %\pgfmathparse{int(floor(#1+3))}
+    \bab{\pgfmathresult}
+}
+
+\DeclareDocumentCommand{\poorbab}{m}
+{
+    %\pgfmathparse{int(floor((#1*1/2)))}
+    \pgfmathparse{int(floor((#1*2/3)+1))}
+    %\pgfmathparse{int(floor(#1+3))}
+    \bab{\pgfmathresult}
+}
+
+\DeclareDocumentCommand{\allprogressionrow}{m}
+{
+    \nth{#1} & \good{#1} & \avg{#1} & \poor{#1}
+}
+
+\DeclareDocumentCommand{\allbabprogressionrow}{m}
+{
+    \nth{#1} & \goodbab{#1} & \avgbab{#1} & \poorbab{#1}
+}
+
+\DeclareDocumentCommand{\barbarianprogressionrow}{m}
+{
+    \nth{#1} & \goodbab{#1} & \good{#1} & \avg{#1} & \poor{#1}
+}
+
+\DeclareDocumentCommand{\clericprogressionrow}{m}
+{
+    \nth{#1} & \avgbab{#1} & \avg{#1} & \poor{#1} & \good{#1}
+}
+
+\DeclareDocumentCommand{\druidprogressionrow}{m}
+{
+    \nth{#1} & \avgbab{#1} & \good{#1} & \poor{#1} & \avg{#1}
+}
+
+\DeclareDocumentCommand{\fighterprogressionrow}{m}
+{
+    \nth{#1} & \goodbab{#1} & \good{#1} & \poor{#1} & \avg{#1}
+}
+
+\DeclareDocumentCommand{\monkprogressionrow}{m}
+{
+    \nth{#1} & \goodbab{#1} & \avg{#1} & \good{#1} & \good{#1}
+}
+
+\DeclareDocumentCommand{\paladinprogressionrow}{m}
+{
+    \nth{#1} & \goodbab{#1} & \good{#1} & \poor{#1} & \good{#1}
+}
+
+\DeclareDocumentCommand{\rangerprogressionrow}{m}
+{
+    \nth{#1} & \goodbab{#1} & \good{#1} & \good{#1} & \avg{#1}
+}
+
+\DeclareDocumentCommand{\rogueprogressionrow}{m}
+{
+    \nth{#1} & \avgbab{#1} & \poor{#1} & \good{#1} & \avg{#1}
+}
+
+\DeclareDocumentCommand{\sorcererprogressionrow}{m}
+{
+    \nth{#1} & \poorbab{#1} & \poor{#1} & \poor{#1} & \good{#1}
+}
+
+\DeclareDocumentCommand{\spellwarpedprogressionrow}{m}
+{
+    % spellwarped uses different table structure
+    \nth{#1} & \goodbab{#1} & \good{#1} & \avg{#1}
+}
+
+\DeclareDocumentCommand{\wizardprogressionrow}{m}
+{
+    \nth{#1} & \poorbab{#1} & \poor{#1} & \poor{#1} & \good{#1}
+}
 
 \DeclareDocumentCommand{\spelldamage}{m m o}
 {
     \IfNoValueTF{#3}
-    {#1d10~#2~damage~\add~d10~per~four~caster~levels~above~\mathnth{2*#1}}
-    {#1#3~#2~damage~\add~#3~per~four~caster~levels~above~\mathnth{2*#1}}
+    {#1d10~#2~damage~\add~d10~per~two~spellpower}
+    {#1#3~#2~damage~\add~#3~per~two~spellpower}
 }
 
 \DeclareDocumentCommand{\spellquicktargeting}{m m}
@@ -455,4 +663,15 @@
     \begin{tabularx}{\linewidth}{@{} >{\lcol}X l @{}}
 }
 
+\DeclareDocumentCommand{\spellmiscast}{}
+{
+    \par\noindent\textit{Miscast}:\xspace
+}
+
 \ExplSyntaxOff
+
+\newcommand{\miscastexplode}{\spellmiscast The spell does not have its normal effect. Instead, the magical energy explodes, dealing 1d6 damage per two spellpower to you and all creatures adjacent to you.}
+\newcommand{\miscastrandom}{\spellmiscast The spell targets a random valid target within range (including yourself, if applicable).}
+\newcommand{\miscastyou}{\spellmiscast The spell targets you, or originates from your location, instead of its intended location.}
+
+\newcommand{\meh}[1]{\hypertarget{suspicious}{}#1}

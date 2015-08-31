@@ -7,8 +7,8 @@ cleric_dex:
       progression: tertiary
       value: 2
     intelligence: 0
-    wisdom: 0
-    charisma: 
+    perception: 0
+    willpower: 
       progression: secondary
       value: 3
 cleric_warrior:
@@ -20,8 +20,8 @@ cleric_warrior:
       progression: tertiary
       value: 2
     intelligence: 0
-    wisdom: 0
-    charisma: 
+    perception: 0
+    willpower: 
       progression: secondary
       value: 4
 deekin:
@@ -35,8 +35,8 @@ deekin:
     intelligence: 
       progression: primary
       value: 5
-    wisdom: 0
-    charisma: -1
+    perception: 0
+    willpower: -1
 druid:
     strength: 2
     dexterity: 
@@ -46,10 +46,10 @@ druid:
       progression: tertiary
       value: 2
     intelligence: 0
-    wisdom: 
+    perception: 
       progression: primary
       value: 3
-    charisma: 0
+    willpower: 0
 garruk:
     strength: 
       progression: primary
@@ -59,10 +59,10 @@ garruk:
       value: 3
     constitution: 2
     intelligence: 0
-    wisdom: 
+    perception: 
       progression: secondary
       value: 3
-    charisma: -1
+    willpower: -1
 monk:
     strength: 
       progression: tertiary
@@ -72,10 +72,10 @@ monk:
       value: 3
     constitution: 2
     intelligence: 0
-    wisdom: 
+    perception: 
       progression: primary
       value: 4
-    charisma: -2
+    willpower: -2
 muerdoc:
     strength: 1
     dexterity: 
@@ -85,10 +85,10 @@ muerdoc:
       progression: tertiary
       value: 2
     intelligence: 0
-    wisdom: 
+    perception: 
       progression: secondary
       value: 4
-    charisma: -1
+    willpower: -1
 npc_warrior:
     strength: 
       progression: primary
@@ -100,8 +100,8 @@ npc_warrior:
       progression: secondary
       value: 2
     intelligence: 0
-    wisdom: 0
-    charisma: 0
+    perception: 0
+    willpower: 0
 silk:
     strength: 2
     dexterity: 
@@ -111,8 +111,8 @@ silk:
     intelligence: 
       progression: tertiary
       value: 3
-    wisdom: 1
-    charisma: 
+    perception: 1
+    willpower: 
       progression: secondary
       value: 4
 sorcerer:
@@ -124,8 +124,8 @@ sorcerer:
       progression: secondary
       value: 3
     intelligence: 0
-    wisdom: 0
-    charisma: 
+    perception: 0
+    willpower: 
       progression: primary
       value: 4
 spellwarped_alteration:
@@ -139,8 +139,8 @@ spellwarped_alteration:
     intelligence: 
       progression: secondary
       value: 3
-    wisdom: 0
-    charisma: 0
+    perception: 0
+    willpower: 0
 warrior:
     strength:
       progression: primary
@@ -152,8 +152,8 @@ warrior:
       progression: secondary
       value: 3
     intelligence: -1
-    wisdom: 0
-    charisma: 0
+    perception: 0
+    willpower: 0
 warrior_dex:
     strength: 
       progression: secondary
@@ -165,8 +165,8 @@ warrior_dex:
       progression: tertiary
       value: 2
     intelligence: 0
-    wisdom: 0
-    charisma: 0
+    perception: 0
+    willpower: 0
 warrior_dex_secondary:
     strength: 
       progression: primary
@@ -178,8 +178,8 @@ warrior_dex_secondary:
       progression: tertiary
       value: 2
     intelligence: 0
-    wisdom: 0
-    charisma: 0
+    perception: 0
+    willpower: 0
 warrior_dex_wis:
     strength: 
       progression: tertiary
@@ -189,10 +189,10 @@ warrior_dex_wis:
       value: 4
     constitution: 2
     intelligence: 0
-    wisdom:
+    perception:
       progression: secondary
       value: 3
-    charisma: 0
+    willpower: 0
 warrior_int:
     strength:
       progression: primary
@@ -204,8 +204,8 @@ warrior_int:
     intelligence: 
       progression: secondary
       value: 3
-    wisdom: 0
-    charisma: 0
+    perception: 0
+    willpower: 0
 wizard:
     strength: 0
     dexterity: 
@@ -217,5 +217,19 @@ wizard:
     intelligence: 
       progression: primary
       value: 4
-    wisdom: 0
-    charisma: 0
+    perception: 0
+    willpower: 0
+wizard_will:
+    strength: 0
+    dexterity: 
+      value: 0
+    constitution: 
+      progression: tertiary
+      value: 2
+    intelligence: 
+      progression: primary
+      value: 4
+    perception: 0
+    willpower:
+      progression: secondary
+      value: 3

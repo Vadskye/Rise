@@ -5,9 +5,7 @@ An \M{} or \F{} appearing at the end of a spell's name in the spell lists denote
 \parhead{Order of Presentation} In the spell lists and the spell descriptions that follow them, the spells are presented in alphabetical order by name except for those belonging to certain spell chains.
 When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell description is alphabetized under the second word of the spell name instead.
 
-\parhead{Hit Values} The term ``Hit Values'' is used synonymously with ``character levels'' for effects that affect a number of Hit Values of creatures. Creatures with Hit Values only from their race, not from classes, have character levels equal to their Hit Values.
-
-\parhead{Caster Level} A spell's power often depends on caster level. Every spellcaster has a caster level which is primarily determined by its class level. A creature who uses spells without class levels has a caster level equal to its Hit Values unless otherwise specified. The word ``level'' in the spell lists that follow always refers to caster level.
+\parhead{Caster Level} A spell's power often depends on caster level. Every spellcaster has a caster level which is primarily determined by its class level. A creature who uses spells without class levels has a caster level equal to its level unless otherwise specified. The word ``level'' in the spell lists that follow always refers to caster level.
 
 \parhead{Enhancement Bonuses} If a spell or magical effect provides a numerical bonus, it is an enhancement bonus unless otherwise stated. Enhancement bonuses do not stack with each other; only the highest bonus applies.
 
@@ -20,405 +18,349 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \subsection{Arcane Spells}\label{Arcane Spells}
 \subsubsection{1st-level Arcane Spells}
 \begin{swspelllist}
-    \spellhead[Abjur]{Mage Armor} Armor made of magical force gives \plus2 AC.
-    \spellhead{Protection from Alignment} \plus2 to special defenses, \plus4 against chosen alignment.
-    \spellhead{Sanctuary} Opponents can't attack subject until it attacks.
-    \spellhead*{Ablative Shield} Immediately reduce damage from foes' spells.
+    \SLmagearmor[Abjur]
+    \SLresistenergy
+    \SLsanctuary
+    \SLablativeshield*
 
-    \spellhead[Conj]{Grease} Makes 10 ft. square or one object slippery.
-    \spellhead{Obscuring Mist} Fog surrounds you.
-    \spellhead{Summon Monster I} Calls extraplanar creature to fight for you.
-    \spellhead*{Retrieve Object} Teleport an unattended item you can see to your hand.
+    \SLfogcloud[Conj]
+    \SLgrease
+    \SLsummonmonsteri
+    \SLretrieveobject*
 
-    \spellhead[Div]{}
-    \spellhead{Locate Object} Senses direction toward visualized object.
-    \spellhead{Message} Whispered conversation at distance.
-    \spellhead*{Precognition}[Lesser] See into the future to gain attack and damage bonus.
+    \SLmanipulateprobabilitylesser[Div]
+    \SLmessage
+    \SLseeinvisibility
+    \SLprecognitionlesser*
 
-    \spellhead[Ench]{Command} One subject obeys selected command for 1 round.
-    \spellhead{Sanctuary} Opponents can't attack subject until it attacks.
-    \spellhead{Sleep} Tire a creature, possibly putting it to sleep.
-    \spellhead*{Forget} A creature forgets something.
+    \SLcommand[Ench]
+    \SLsanctuary
+    \SLsleep
+    \SLforget*
 
-    \spellhead[Evoc]{Burning Hands} 1d6 fire damage in medium cone.
-    \spellhead{Mage Hand} 5-pound telekinesis.
-    \spellhead{Magic Missile} Force missiles unerringly deal 2d4 damage.
-    \spellhead{Shocking Grasp} Touch deals 2d6 electricity damage.
-    \spellhead*{Feather Fall} Objects or creatures fall slowly.
+    \SLburninghands[Evoc]
+    \SLfeatherfall
+    \SLmagicmissile
+    \SLshockinggrasp
+    \SLmagehand*
   %\spellhead*{Gust of Wind} Blows away or knocks down smaller creatures in large line.
 
-    \spellhead[Illus]{Color Spray} Creatures in medium cone are bewildered.
-    \spellhead{Dancing Lights} Creates torches or other lights.
-    \spellhead{Ventriloquism} Throws voice for medium duration.
-    \spellhead*{Create Sound} Figment sounds.
+    \SLcolorspray[Illus]
+    \SLdancinglights
+    \SLventriloquism
+    \SLcreatesound*
 
-    \spellhead[Necro]{Enfeeblement} Inflicts \minus4 penalty to physical attribute.
-    \spellhead{Ghoul Touch} Sicken or nauseate creauture.
-    \spellhead{Inflict Light Wounds} Deals 2d6 damage.
-    \spellhead*{Unliving Heart} Gain 5 temporary HP, treated as undead.
+    \SLinflictlightwounds[Necro]
+    \SLwavesoffatiguelesser
+    \SLunlivingheart*
 
-    \spellhead[Trans]{Alter Weapon} Change weapon into similar weapon.
-    \spellhead{Expeditious Retreat} Your speed doubles.
-    \spellhead{Magic Vestment} Armor or shield becomes \plus2.
-    \spellhead*{Reduce Person} Humanoid creature halves in size.
+    \SLhastelesser[Trans]
+    \SLseeinvisibility
+    \SLreduceperson*
 \end{swspelllist}
 
 \subsubsection{2nd-level Arcane Spells} 
 \begin{swspelllist}
-    \spellhead[Abjur]{Inertial Shield} Subject gains damage reduction.
-    \spellhead{Resist Energy} Ignores first 10 (or more) points of damage/attack from specified energy type.
-    \spellhead{Share Pain} Split damage with willing subject.
-    \spellhead*{Ablate Impact} Immediately reduce damage from physical attacks.
+    \SLdelaydamage[Abjur]
+    \SLinertialshield
+    \SLprotectionfromalignment
+    \SLsharepain
+    \SLablateimpact*
 
-    \spellhead[Conj]{Acid Arrow} Ranged touch attack deals 2d8 damage, more over time.
-    \spellhead{Fog Cloud} Medium cylinder of fog obscures vision.
-    \spellhead{Glitterdust} Outlines concealed and invisible creatures in small radius.
-    \spellhead{Summon Monster II} Calls extraplanar creature to fight for you.
-    \spellhead*{Retrieve Ally} Teleport willing creature next to you.
+    \SLacidarrow[Conj]
+    \SLglitterdust
+    \SLplanardisruption
+    \SLsummonmonsterii
+    \SLdimensionslide*
 
-    \spellhead[Div]{Darkvision} See 60 ft. in total darkness.
-    \spellhead{Locate Creature} Senses direction toward visualized creature.
-    \spellhead{Precognition}[Lesser] See into the future to gain attack and damage bonus.
-    \spellhead{See Invisibility} Reveals invisible creatures or objects.
-    \spellhead*{Foresee Probability} Know creature's next die results.
+    \SLreadmind[Div]
+    \SLtruestrike
 
-    \spellhead[Ench]{Calm Emotions} Calms creatures, negating emotion effects.
-    \spellhead{Hold Person} Paralyzes one humanoid for short duration.
-    \spellhead{Touch of Idiocy} Subject takes \minus4 penalty to Int, Wis, and Cha.
-    \spellhead*{Charm Person} Makes one person your friend.
+    \SLagony[Ench]
+    \SLfear
+    \SLholdperson
+    \SLhypnoticpattern
+    \SLpowerworddaze
+    \SLcharmperson*
 
-    \spellhead[Evoc]{Scorching Ray} Ray (or rays) deal 4d6 fire damage.
-    \spellhead{Interposing Hand} Hand provides cover against one opponent at a time.
-    \spellhead{Sound Burst} 2d6 sonic damage in a small radius.
-    \spellhead*{Knock} Opens locked or magically sealed door.
+    \SLknock[Evoc]
+    \SLsoundburst
+    \SLwalloffire*
 
-    \spellhead[Illus]{Blur} Subject is harder to see.
-    \spellhead{Mirror Image} Creates decoy duplicates of you.
-    \spellhead{Phantasmal Wound} Subject believes it is grievously wounded.
-    \spellhead*{Silent Image} Creates minor illusion of your design.
+    \SLblur[Illus]
+    \SLmirrorimage
+    \SLsilentimage*
 
-    \spellhead[Necro]{Blindness/Deafness} Creature is blinded or deafened.
-    \spellhead{Inflict Moderate Wounds} Deals 4d6 damage.
-    \spellhead{Share Pain} Split damage with willing subject.
-    \spellhead*{Death Knell} Gain temporary HP when subject dies.
+    \SLghoultouch[Necro]
+    \SLinflictmoderatewounds
+    \SLsharepain
 
-    \spellhead[Trans]{Magic Weapon} Weapon becomes \plus2.
-    \spellhead{Spider Climb} Grants ability to walk on walls and ceilings.
-    \spellhead{Totemic Mind} Subject gains \plus2 to Int, Wis, or Cha.
-    \spellhead{Totemic Power} Subject gains \plus2 to Str, Dex, or Con.
-    \spellhead*{Slow} Subject takes only one action/round.
+    \SLdarkvision[Trans]
+    \SLslow
+    \SLspiderclimb
 \end{swspelllist}
 
 \subsubsection{3rd-level Arcane Spells} 
 \begin{swspelllist}
-    \spellhead[Abjur]{Dimensional Anchor} Bars extradimensional movement.
-    \spellhead{Dispel Magic} Cancels magical spells and effects.
-    \spellhead{Protection from Energy} Reduce damage from one kind of energy.
-    \spellhead{Share Pain}[Forced] Split damage with unwilling subject.
-    \spellhead*{Deflection} Gain \plus2 to physical defenses.
 
-    \spellhead[Conj]{Dimensional Anchor} Bars extradimensional movement.
-    \spellhead{Summon Monster III} Calls extraplanar creature to fight for you.
-    \spellhead{Web} Fills medium radius spread with sticky spiderwebs.
-    \spellhead*{Dimension Slide} Teleports nearby creature short distance.
+    \SLdimensionalanchor[Abjur]
+    \SLdispelmagic
+    \SLfireshield
+    \SLspellresistance
+    \SLdeflection*
 
-    \spellhead[Div]{Locate Object}[Greater] Senses direction toward distant visualized objects.
-    \spellhead{Read Mind} Learn a creature's surface thoughts.
-    \spellhead{Unliving Eyes} Grants lifesight ability.
-    \spellhead*{Moment of Prescience}[Lesser] Roll twice for single attack, save, or opposed check.
+    \SLsummonmonsteriii[Conj]
 
-    \spellhead[Ench]{Confusion} Subject acts randomly.
-    \spellhead{Crushing Despair} Subjects in medium cone are demoralized.
-    \spellhead{Heroism} Gives \plus2 on attacks, checks, and saves.
-    \spellhead{Hypnotic Pattern} Fascinates creatures in small radius.
-    \spellhead*{Aversion} Subject has aversion you specify.
+    \SLdiscernvulnerability[Div]
+    \SLforesight*
 
-    \spellhead[Evoc]{Fireball} Small radius of fire deals 3d6 damage.
-    \spellhead{Lifeseeking Missile} Homing missiles unerringly deal 3d10 damage.
-    \spellhead{Lightning Bolt} Large line of electricity deals 3d6 damage.
-    \spellhead{Levitate} Subject moves up and down at your direction.
-    \spellhead*{Telekinetic Maneuver} Telekinetically dirty trick, disarm, grapple, shove, trip your target.
+    \SLcalmemotions[Ench]
+    \SLconfusion
+    \SLaversion*
 
-    \spellhead[Illus]{Hypnotic Pattern} Fascinates creatures in small radius.
-    \spellhead{Invisibility} Subject is invisible until it attacks.
-    \spellhead*{Minor Image} As \spell{silent image}, plus some sound.
+    \SLfireball[Evoc]
+    \SLfireshield
+    \SLlifeseekingmissile
+    \SLlightningbolt
+    \SLscorchingray
+    \SLshout
+    \SLlevitate*
 
-    \spellhead[Necro]{Agony} Creature suffers penalties due to debilitating pain.
-    \spellhead{Inflict Serious Wounds} Deals 6d6 damage.
-    \spellhead{Lifeseeking Missile} Homing missiles deal 3d10 damage.
-  %\spellhead{Ray of Exhaustion} Ray makes subject exhausted.
-    \spellhead{Share Pain}[Forced] Split damage with unwilling subject.
-    \spellhead{Unliving Eyes} Grants lifesight ability.
-    \spellhead*{Link Vitality} Two targets share each others' damage and healing.
+    \SLdisplacement[Illus]
+    \SLinvisibility
+    \SLminorimage*
 
-    \spellhead[Trans]{Gaseous Form} Subject becomes insubstantial and can fly slowly.
-    \spellhead{Shrink Item} Object shrinks to one-sixteenth size.
-    \spellhead*{Enlarge Person} Humanoid creature doubles in size.
+    \SLinflictseriouswounds[Necro]
+    \SLlifeseekingmissile
+    \SLcurseofbloodandbone*
 
-    \spellhead[Univ]{Prismatic Beam} Beam of multicolored light has random effects.
+    \SLgaseousform[Trans]
+    \SLshrinkitem
+
+    \SLprismaticbeam[Univ]
 \end{swspelllist}
 
 \subsubsection{4th-level Arcane Spells} 
 \begin{swspelllist}
-    \spellhead[Abjur]{Dismissal} Forces a creature to return to native plane.
-    \spellhead{}
-    \spellhead{Retributive Shield} Grant DR 8 that reflects damage at foes.
-    \spellhead*{Spell Resistance} Subject gains spell resistance.
 
-    \spellhead[Conj]{Blink} You randomly vanish and reappear for short duration.
-    \spellhead{Dismissal} Forces a creature to return to native plane.
-    \spellhead{Ice Storm} Hail deals 4d4 damage in small cylinder.
-    \spellhead{Summon Monster IV} Calls extraplanar creature to fight for you.
-    \spellhead*{Dimension Door} Teleports you within 1,000 feet.
+    % empty Abjur
 
-    \spellhead[Div]{Discern Vulnerability} Quickly find weaknesses in foe's defenses.
-    \spellhead{Locate Creature}[Greater] Senses direction toward distant visualized creatures.
-    \spellhead{Moment of Prescience}[Lesser] Roll twice for single attack, save, or opposed check.
-    \spellhead*{Precognition} See into the future to gain combat bonuses.
+    \SLicestorm[Conj]
+    \SLretrieveobjectgreater
+    \SLweb
+    \SLdimensiondoor*
 
-    \spellhead[Ench]{Hold Monster} As hold person, but any creature.
-    \spellhead{Phantasmal Killer} Fearsome illusion can frighten target to death.
-    \spellhead{Sleep}[Mass] Tire multiple creatures, possibly putting them to sleep.
-    \spellhead*{Suggestion} Compels subject to follow stated course of action.
+    \SLmomentofprescience*
 
-    \spellhead[Evoc]{Ice Storm} Hail deals 4d4 damage in small cylinder.
-    \spellhead{Shout} Deafens all within medium cone and deals 4d6 sonic damage.
-    \spellhead{Wall of Fire} Passing through wall deals 4d6 damage.
-    \spellhead*{Telekinetic Force} Move things with your your mind.
+    \SLheroism[Ench]
+    \SLholdmonster
+    \SLphantasmalkiller
+    \SLsleepmass
+    \SLcharmmonster*
 
-    \spellhead[Illus]{Displacement} Attacks miss subject 50\% of the time.
-    \spellhead{Phantasmal Killer} Fearsome illusion can frighten target to death.
-    \spellhead{}
-    \spellhead*{Major Image} As silent image, plus sound, smell and thermal effects.
+    \SLicestorm[Evoc]
+    \SLmissilestorm
 
-    \spellhead[Necro]{Enervation} Inflict three negative levels.
-    \spellhead{Inflict Critical Wounds} Deals 8d6 damage.
-    \spellhead{Retributive Shield} Grants DR 8 that reflects damage at foes.
-    \spellhead*{Bestow Curse} \minus6 to an attribute; \minus4 on attack rolls, saves, checks, and AC; or 25\% chance of losing each action.
+    \SLphantasmalkiller
+    \SLmajorimage*
 
-    \spellhead[Trans]{Alter Weapon}[Greater] Change weapon dramatically.
-    \spellhead{Fly} Subject flies at speed of 30 ft.
-    \spellhead{Invest Magic} All of subject's equipment is magical.
-    \spellhead{Stoneskin} \plus3 AC, ignore 8 damage per round.
-    \spellhead*{Haste} Subject moves faster, gets extra attack.
+    \SLenervation[Necro]
+    \SLeyebite
+    \SLinflictcriticalwounds
+    \SLwavesoffatigue
+    \SLcurseofenfeeblement*
+
+    \SLfly[Trans]
+    \SLhaste
+    \SLstoneskin
+    \SLreducepersonmass*
 \end{swspelllist}
 
 \subsubsection{5th-level Arcane Spells} 
 \begin{swspelllist}
-    \spellhead[Abjur]{Delay Damage} Take half damage now and half later. 
-    \spellhead{Fire Shield} Creatures attacking you take damage; you're protected from heat or cold.  \spellhead{Resist Energy}[Greater] As \spell{resist energy}, but all energy types.
-    \spellhead{Magic Circle against Chaos/Evil/Good/Law} Protect allies in a \areamed radius and hedge out opposing outsiders.
-    \spellhead{Retributive Brilliance} Subject can dazzle or blind attacker once.
-    \spellhead*{Spelltheft} As \spell{dispel magic}, but you gain the effects of dispelled spells.
 
-    \spellhead[Conj]{Acid Arrow}[Greater] As acid arrow, but 5d8 damage initially and more over time.
-    \spellhead{Stinking Cloud} Fog nauseates creatures inside.
-    \spellhead{Summon Monster V} Calls extraplanar creature to fight for you.
-    \spellhead{Wall of Stone} Creates a stone wall that can be shaped.
-    \spellhead*{Retrieve}[Greater] Teleport an item you can see to your hand.
+    \SLfogshield[Abjur]
+    \SLretributiveshield
+    \SLrepulsion
+    \SLspelltheft*
 
-    \spellhead[Div]{Precognition} See into the future to gain combat bonuses.
-    \spellhead{Foresight} ``Sixth sense'' warns of impending danger.
-    \spellhead{Telepathy} Grants ability to communicate mentally. 
-    \spellhead*{Manipulate Probability} Control creature's next die results.
+    \SLplanardisruptionmass[Conj]
+    \SLsummonmonsterv
+    \SLblink*
 
-    \spellhead[Ench]{Fear} Subjects within medium cone flee for short duration.
-    \spellhead{}
-    \spellhead{Phantasmal Maze} Subject acts as if affected by \spell{maze}.
-    \spellhead*{Charm Monster} Makes monster believe it is your ally.
+    \SLprecognition[Div]
+    \SLtelepathy
+    \SLmanipulateprobability*
 
-    \spellhead[Evoc]{Chain Lightning} 5d10 damage; secondary targets take half damage.
-    \spellhead{Cone of Cold} 5d6 cold damage and fatigue in medium cone.
-    \spellhead{Fire Shield} Creatures attacking you take damage; you're protected from cold.
-    \spellhead{Resilient Sphere} Force globe protects but traps one creature or object.
-    \spellhead*{Telekinetic Thrust} Hurl objects with the force of your mind.
+    \SLpowerwordimpair
+    \SLdominateperson*
 
-    \spellhead[Illus]{Mirror Image}[Greater] Creates regenerating decoy duplicates of you.
-    \spellhead{Phantasmal Maze} Subject acts as if affected by \spell{maze}.
-    \spellhead{Retributive Brilliance} Subject can dazzle or blind attacker once.
-    \spellhead*{}
+    \SLblacktentacles[Evoc]
+    \SLforcecage
+    \SLwalloffiregreater*
 
-    \spellhead[Necro]{Inflict Light Wounds}[Mass] Deals 5d6 damage to many creatures.
-    \spellhead{Waves of Fatigue} Creatures in large cone become fatigued.
-    \spellhead*{Drain Life} Deals 10d6 damage and steals life.
+    \SLmirrorimagegreater[Illus]
 
-    \spellhead[Trans]{Delay Damage} Take half damage now and half later. 
-    \spellhead{Totemic Mind}[Greater] Subject gains \plus4 to Int, Wis, or Cha.
-    \spellhead{Totemic Power}[Greater] Subject gains \plus4 to Str, Dex, or Con.
-    \spellhead{Wall of Stone} Creates a stone wall that can be shaped.
-  %\spellhead*{Animate Objects} Objects attack your foes.
-    \spellhead*{Reduce Person}[Mass] Reduces several creatures.
+    \SLdrainlife[Necro]
+    \SLinflictlightwoundsmass
+    \SLunlivingeyes*
 
-    \spellhead[Univ]{Prismatic Wall} Multicolored wall has random effects.
+    \SLtelepathy[Trans]
+
+    \SLprismaticwall[Univ]
 \end{swspelllist}
 
 \subsubsection{6th-level Arcane Spells} 
 \begin{swspelllist}
-    \spellhead[Abjur]{Banishment} Banish multiple extraplanar creatures. 
-    \spellhead{Dispel Magic}[Greater] As dispel magic, but up to \plus20 on check.
-    \spellhead{Protection from Energy}[Greater] As \spell{protection from energy}, but against all energy types.
-    \spellhead{Repulsion} Creatures can't approach you.
-    \spellhead*{Prohibition} Punish creatures that take specific action.
 
-    \spellhead[Conj]{Acid Fog} Acidic solid fog deals damage each round.
-    \spellhead{Banishment} Banish multiple extraplanar creatures. 
-    \spellhead{Solid Fog} Fog blocks vision and slows movement.
-    \spellhead{Summon Monster VI} Calls extraplanar creature to fight for you.
-    \spellhead*{Ethereal Jaunt} You become ethereal for short duration.
+    \SLdispelmagicgreater[Abjur]
+    \SLshadowumbra
+    \SLprohibition*
 
-    \spellhead[Div]{Locate Entity} Locates creatures or objects within 1 mile.
-    \spellhead{True Seeing}\M Lets you see all things as they really are.
-    \spellhead{True Strike} \plus20 on your next attack roll.
-    \spellhead*{Moment of Prescience} Roll twice with bonus for single attack, save, or opposed check.
+    \SLacidarrowgreater[Conj]
+    \SLsolidfog
+    \SLprojectimage
+    \SLsummonmonstervi
+    \SLetherealjaunt*
 
-    \spellhead[Ench]{Insanity} Subject indefinitely acts randomly.
-    \spellhead{Power Word Confuse} Bloodied subject acts randomly.
-    \spellhead{Discordant Song} Confuse creatures with sustained music.
-    \spellhead*{Charm Person}[Mass] As \spell{charm person}, but affects multiple creatures.
+    \SLprohibition[Div]
+    \SLreadmindgreater
+    \SLseeinvisibilitymass
 
-    \spellhead[Evoc]{Delayed Blast Fireball} 6d6 fire damage in medium radius; you can postpone blast for 5 rounds.
-    \spellhead{Grasping Hand} Hand provides cover, pushes, or grapples.
-    \spellhead{Wall of Force} Wall is immune to damage.
-    \spellhead*{Telekinesis} Moves object, attacks creature, or hurls object or creature.
+    \SLconfusionmass[Ench]
+    \SLfearmass
+    \SLholdpersonmass
+    \SLhypnoticpatterngreater
+    \SLpowerwordstun
+    \SLcharmpersonmass*
+    \SLsuggestion*
 
-    \spellhead[Illus]{Mislead} Turns you invisible and creates illusory double.
-    \spellhead{Invisibility}[Greater] As \spell{invisibility}, but subject can attack and stay invisible.
-    \spellhead*{Persistent Image} As \spell{major image}, but no concentration required.
+    \SLchainlightning[Evoc]
+    \SLpolarray
+    \SLshoutgreater
+    \SLwallofforce*
 
-    \spellhead[Necro]{Cripple} Subject cannot use its limbs. 
-    \spellhead{Harm} Touch deals 12d8 damage and 4 Con damage.
-    \spellhead{Inflict Moderate Wounds}[Mass] Deals 6d6 damage to many creatures.
-    \spellhead*{Link Vitality}[Mass] As \spell{link vitality}, but affects one creature/level.
+    \SLinvisibilitygreater[Illus]
+    \SLmislead
+    \SLprojectimage
+    \SLshadowumbra
+    \SLpersistentimage*
 
-    \spellhead[Trans]{Disintegrate} Deals 12d8 damage, leaving only dust.
-    \spellhead{Totemic Mind}[Mass] As \spell{totemic mind}, but affects multiple creatures.
-    \spellhead{Totemic Power}[Mass] As \spell{totemic power}, but affects multiple creatures.
-    \spellhead{Transmute Flesh and Stone} Turns subject creature into statue, or restores petrified creature.
-    \spellhead*{Slow}[Mass] Many subjects take only one action/round.
+    \SLharm[Necro]
+    \SLinflictmoderatewoundsmass
+    \SLstriptheflesh
+    \SLdeathknell*
+
+    \SLdisintegrate[Trans]
+    \SLseeinvisibilitymass
+    \SLslowmass
+    \SLtransmutefleshandstone
+    \SLenlargepersonmass*
+
+    \SLprismaticspray[Univ]
+
 \end{swspelllist}
 
 \subsubsection{7th-level Arcane Spells}
 \begin{swspelllist}
-    \spellhead[Abjur]{Energy Conversion} As \spell{greater resist energy}, plus you can fire rays of absorbed energy.
-    \spellhead{Spell Turning} Reflect 1d4\plus6 spell levels back at caster.
-    \spellhead*{Antimagic Field} Negates magic in small emanation from you.
 
-    \spellhead[Conj]{Black Tentacles} Tentacles grapple all within small spread.
-    \spellhead{Cloudkill} Fog deals Con damage each round.
-    \spellhead{Summon Monster VII} Calls extraplanar creature to fight for you.
-    \spellhead*{Dimension Door}[Mass] Teleport you and multiple allies within 1,000 feet.
+    \SLspellturning[Abjur]
+    \SLantimagicfield*
 
-    \spellhead[Div]{Moment of Prescience} Roll twice with bonus for single attack, save, or opposed check.
-    \spellhead{Read Mind}[Greater] Unavoidably learn a creature's surface thoughts.
-    \spellhead*{Precognition}[Greater] See into the future to gain combat bonuses and extra attack.
+    \SLacidfog[Conj]
+    \SLfogsea
+    \SLsummonmonstervii
 
-    \spellhead[Ench]{Confusion}[Mass] Multiple creatures act randomly.
-    \spellhead{Deep Slumber} Subject falls asleep for a long time.
-    \spellhead{Feeblemind} Subject's Intelligence drops to \minus9.
-    \spellhead{Heroism}[Greater] Gives combat bonuses, temporary hit points.
-    \spellhead*{Dominate Person} Controls humanoid telepathically.
+    \SLtrueseeing[Div]
 
-    \spellhead[Evoc]{Energy Conversion} As \spell{greater resist energy}, plus you can fire rays of absorbed energy.
-    \spellhead{Missile Storm} Swarm of missiles strike many creatures.
-    \spellhead{Shout}[Greater] Yell deals 7d6 sonic damage in large cone; stuns creatures, damages objects.
-    \spellhead*{Forcecage}\M Cube or cage of force imprisons all inside.
+    \SLconfusionmass[Ench]
+    \SLdeepslumber
+    \SLfeeblemind
+    \SLdominateperson*
 
-    \spellhead[Illus]{Invisibility}[Mass] As \spell{invisibility}, but affects multiple creatures.
-    \spellhead{Project Image} Illusory double can talk and cast spells.
-    \spellhead{Shadow Body} You become a living shadow.
-    \spellhead*{}
+    \SLdominatemonster*[Ench]
 
-    \spellhead[Necro]{Finger of Death} Kills one subject.
-    \spellhead{Inflict Serious Wounds}[Mass] Deals 7d6 damage to many creatures.
-    \spellhead{Power Word Blind} Blinds bloodied creature.
-    \spellhead{Strip the Flesh} Rend foe's skin from its body.
-    \spellhead*{Lifebreaker Curse} Target takes permanent damage.
+    \SLinvisibilitymass[Illus]
 
-    \spellhead[Trans]{Black Tentacles} Tentacles grapple all within small spread.
-    \spellhead{Combat Transformation}\M You gain combat bonuses.
-    \spellhead{Shadow Body} You become a living shadow.
-    \spellhead*{Enlarge Person}[Mass] Multiple humanoid creatures double in size.
+    \SLfingerofdeath[Necro]
+    \SLinflictseriouswounds
+    \SLwavesoffatiguegreater
 
-    \spellhead[Univ]{Prismatic Spray} Cone of multicolored light has random effects.
-    \spellhead[Univ]{Limited Wish}\M Alters reality -- within spell limits.
+    \SLtemporalstasis[Trans]
+    \SLtrueseeing
+    \SLenlargemonstermass*
+
 \end{swspelllist}
 
 \subsubsection{8th-level Arcane Spells} 
 \begin{swspelllist}
-    \spellhead[Abjur]{Shadow Umbra} Shadowy aura has a 50\% chance to absorb attacks. 
-    \spellhead*{Spelltheft}[Greater] As \spell{greater dispel magic}, but you gain the effects of dispelled spells.
 
-    \spellhead[Conj]{Sea of Fog} 200 ft. radius of fog obscures vision.
-    \spellhead{Summon Monster VIII} Calls extraplanar creature to fight for you.
-    \spellhead*{Maze} Traps subject in extradimensional maze.
+    \SLenergyconversion[Abjur]
+    \SLspelltheftgreater*
 
-    \spellhead[Div]{Precognition}[Greater] See into the future to gain combat bonuses and extra attack.
-    \spellhead{Read Mind}[Mass] Learn surface thoughts from multiple creatures.
-    \spellhead*{Revelation} Grant target vision of one of three futures.
+    \SLimprisonment[Conj]
+    \SLdimensiondoormass*
+    \SLmaze*
 
-    \spellhead[Ench]{Hold Person}[Mass] As \spell{hold person}, but affects multiple creatures.
-    \spellhead{Scintillating Pattern} Twisting colors bewilder foes.
-    \spellhead{Power Word Stun} Stuns a creature.
-    \spellhead*{Suggestion}[Mass] As \spell{suggestion}, but shorter and affects multiple creatures.
+    \SLreadmindmass[Div]
+    \SLmomentofpresciencegreater*
 
-    \spellhead[Evoc]{Cone of Cold}[Greater] 8d6 cold damage and fatigue in large cone.
-    \spellhead{Polar Ray} Ranged touch attack slows and deals 16d6 cold damage.
-    \spellhead{}
-    \spellhead*{Crushing Hand} Large hand provides cover or crushes your foes.
+    \SLdiscordantsong[Ench]
+    \SLfeeblemind
+    \SLheroismgreater
+    \SLholdmonstermass
+    \SLphantasmalkillermass
+    \SLpowerwordconfuse
+    \SLcharmmonstermass*
 
-    \spellhead[Illus]{Scintillating Pattern} Twisting colors bewilder foes.
-    \spellhead{Shadow Umbra} Shadowy aura has a 50\% chance to absorb attacks. 
-    \spellhead*{}
+    \SLmissilestormgreater[Evoc]
 
-    \spellhead[Necro]{Energy Drain} Subject gains six negative levels.
-    \spellhead{Inflict Critical Wounds}[Mass] Deals 8d6 damage to many creatures.
-    \spellhead{Waves of Exhaustion} Creatures in medium cone become exhausted.
-    \spellhead*{Horrid Wilting} Deals 8d6 damage to many foes.
+    \SLphantasmalkillermass[Illus]
 
-    \spellhead[Trans]{Iron Body} Your body becomes living iron.
-    \spellhead{Reverse Gravity} Objects and creatures fall upward.
-    \spellhead{Temporal Stasis}\M Puts subject into suspended animation.
-    \spellhead*{Haste}[Mass] Many subjects move faster, get extra attack.
+    \SLenervationgreater[Necro]
+    \SLinflictcriticalwoundsmass
+    \SLcurseofthewaywardmind*
+
+    \SLhastemass[Trans]
+    \SLimprisonment
+    \SLironbody
+    \SLtemporalstasis
+    \SLreversegravity*
 \end{swspelllist}
 
 \subsubsection{9th-level Arcane Spells} 
 \begin{swspelllist}
-    \spellhead[Abjur]{Mage's Disjunction} Dispels all magic.
-    \spellhead*{Prohibition}[Greater] Forcibly prevent creatures from taking specific action.
 
-    \spellhead[Conj]{Imprisonment} Entombs subject beneath the earth.
-    \spellhead{Shadow Puppet} Step into Plane of Shadow and create shadow duplicate in your stead.
-    \spellhead{Summon Monster IX} Calls extraplanar creature to fight for you.
-    \spellhead*{Etherealness} Travel to Ethereal Plane with companions.
+    \SLdisjoinmagic[Abjur]
 
-    \spellhead[Div]{Foresight}[Greater] Powerful ``sixth sense'' warns of impending danger.
-    \spellhead{Revelation} Grant target vision of one of three futures.
-    \spellhead*{Moment of Prescience}[Greater] Roll twice with large bonus for single attack, save, or opposed check.
+    \SLshadowpuppet
+    \SLsummonmonsterix
+    \SLetherealness*
 
-    \spellhead[Ench]{Hold Monster}[Mass] As \spell{hold monster}, but affects multiple creatures.
-    \spellhead{Irresistible Dance} Forces subject to dance.
-    \spellhead{Weird} As \spell{phantasmal killer}, but affects multiple creatures.
-    \spellhead*{Dominate Monster} As dominate person, but any creature.
+    \SLforesightgreater[Div]
+    \SLrevelation
+    \SLprecognitiongreater*
 
-    \spellhead[Evoc]{Meteor Swarm} Massive hail of meteors deals 9d8 damage.
-    \spellhead{}
-    \spellhead*{Clenched Fist} Large hand provides cover or attacks your foes.
+    \SLdeepslumber[Ench]
+    \SLirresistibledance
+    \SLsuggestionmass*
 
-    \spellhead[Illus]{Shadow Puppet} Step into Plane of Shadow and create shadow duplicate in your stead.
-    \spellhead{Weird} As \spell{phantasmal killer}, but affects multiple creatures
-    \spellhead*{False Reality} As \spell{persistent image}, but affects massive area.
+    \SLmeteorswarm[Evoc]
 
-    \spellhead[Necro]{Assimilate} Incorporate creature into your own body.
-    \spellhead{Power Word Kill} Kills one bloodied creature.
-    \spellhead*{Wail of the Banshee} Kills many creatures.
+    \SLshadowpuppet[Illus]
+    \SLfalsereality*
 
-    \spellhead[Trans]{Assimilate} Incorporate creature into your own body.
-    \spellhead{Transmute Any Object} Transforms objects into new forms.
-    \spellhead{Imprisonment} Entombs subject beneath the earth.
-    \spellhead*{Time Stop} You act freely for 1d3\plus1 rounds.
+    \SLassimilate[Necro]
+    \SLcripple
+    \SLhorridwilting
+    \SLpowerwordblind
+    \SLwailofthebanshee*
 
-    \spellhead[Univ]{Prismatic Storm} Sphere of multicolored light has random effects.
-    \spellhead[Univ]{Wish}\M As \spell{limited wish}, but with fewer limits.
+    \SLassimilate[Trans]
+    \SLtransmuteanyobject
+    \SLtimestop*
+
+    \SLprismaticstorm[Univ]
 \end{swspelllist}
 
 \subsection{Arcane Invocation List}
@@ -475,6 +417,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \spellhead{Magic Mouth} Speaks once when triggered.
     \spellhead[Trans]{Enhance Armor} Increase enhancement bonus of armor.
     \spellhead{Enhance Weapon} Increase enhancement bonus of weapon.
+    \spellhead{Shape Weapon} Change weapon into similar weapon.
     \spellhead{Shape Wood} Sculpt wood into any shape.
     \spellhead{Gentle Repose} Preserves one corpse.
 \end{rituallist}
@@ -541,6 +484,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \spellhead[Trans]{Fabricate} Transforms raw materials into finished items.
     \spellhead{Passwall} Creates passage through wood or stone wall.
     \spellhead{Sending} Delivers short message anywhere, instantly.
+    \spellhead{Shape Weapon}[Greater] Change weapon into any other weapon.
     \spellhead[Univ]{Permanency} Makes certain spells permanent.
 \end{rituallist}
 
@@ -609,144 +553,127 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
 \subsubsection{1st-level Divine Spells}
 \begin{spelllist}
-    \spellhead{Bane} Nearby enemies take \minus2 to attack.
-    \spellhead{Command} One subject obeys selected command for 1 round.
-    \spellhead{Cure Light Wounds} Cures 2d6 damage.
-    \spellhead{Delay Poison} Quickly stops poison from harming subject.
-    \spellhead{Divine Favor} You gain \plus2 on attack and damage rolls.
-    \spellhead{Inflict Light Wounds} Deals 2d6 damage.
-    \spellhead{Locate Object} Senses direction toward visualized object.
-    \spellhead{Magic Vestment} Armor or shield becomes \plus2.
-    \spellhead{Obscuring Mist} Fog surrounds you.
-    \spellhead{Protection from Alignment} \plus2 to special defenses, \plus4 against chosen alignment.
-    \spellhead{Sanctuary} Opponents can't attack subject until it attacks.
-    \spellhead{Shield of Faith} Grants \plus2 or higher shield bonus.
-    \spellhead{Summon Monster I} Calls extraplanar creature to fight for you.
+    \SLbane
+    \SLbless
+    \SLcommand
+    \SLcurelightwounds
+    \SLdivinefavor
+    \SLentropicshield
+    \SLinflictlightwounds
+    \SLregenerationlesser
+    \SLresistenergy
+    \SLsanctuary
+    \SLsummonmonsteri
 \end{spelllist}
 
 \subsubsection{2nd-level Divine Spells}
 \begin{spelllist}
-    \spellhead{Aid} Ally gains 10 temporary hit points.
-    \spellhead{Bless} Nearby allies gain \plus2 to attack.
-    \spellhead{Blindness/Deafness} Creature is blinded or deafened.
-    \spellhead{Cure Moderate Wounds} Cures 4d6 damage.
-    \spellhead{Daylight} Large radius of bright light.
-    \spellhead{Entropic Shield} Ranged attacks against subject have 50\% miss chance.
-    \spellhead{Hold Person} Paralyzes one humanoid for short duration.
-    \spellhead{Inflict Moderate Wounds} Deals 4d6 damage.
-    \spellhead{Locate Creature} Senses direction toward visualized creature.
-    \spellhead{Magic Weapon} Weapon becomes \plus2.
-    \spellhead{Resist Energy} Ignores 10 (or more) points of damage/attack from specified energy type.
-    \spellhead{Share Pain}  Split damage with willing subject.
-    \spellhead{Silence} Subject cannot make sound.
-    \spellhead{Spiritual Weapon} Magic weapon attacks on its own.
-    \spellhead{Summon Monster II} Calls extraplanar creature to fight for you.
-    \spellhead{Totemic Mind} Subject gains \plus2 to Int, Wis, or Cha.
-    \spellhead{Totemic Power} Subject gains \plus2 to Str, Dex, or Con.
+    \SLcuremoderatewounds
+    \SLdelaypoison
+    \SLdetectalignment
+    \SLholdperson
+    \SLinflictmoderatewounds
+    \SLplanardisruption
+    \SLprotectionfromalignment
+    \SLsharepain
+    \SLshieldoffaith
+    \SLsilence
+    \SLsummonmonsterii
 \end{spelllist}
 
 \subsubsection{3rd-level Divine Spells}
 \begin{spelllist}
-    \spellhead{Cure Serious Wounds} Cures 6d6 damage.
-    \spellhead{Death Ward} Grants immunity to death spells and negative energy effects.
-    \spellhead{Detect Alignment} Reveals creatures, spells, or objects of selected alignment.
-    \spellhead{Dimensional Anchor} Bars extradimensional movement.
-    \spellhead{Discern Lies} Reveals deliberate falsehoods.
-    \spellhead{Dispel Magic} Cancels spells and magical effects.
-    \spellhead{Inflict Serious Wounds} Deals 6d6 damage.
-    \spellhead{Locate Object}[Greater] Senses direction toward distant visualized objects.
-    \spellhead{Protection from Energy} Reduce damage from one kind of energy.
-    \spellhead{Searing Light} Ray deals 6d6 damage and blinds, more against undead.
-    \spellhead{Share Pain}[Forced]  Split damage with unwilling subject.
-    \spellhead{Summon Monster III} Calls extraplanar creature to fight for you.
+    \SLaid
+    \SLcureseriouswounds
+    \SLcurseofbloodandbone
+    \SLdeathward
+    \SLdimensionalanchor
+    \SLdispelmagic
+    \SLfreedom
+    \SLinflictseriouswounds
+    \SLresistenergygreater
+    \SLsearinglight
+    \SLspiritualweapon
+    \SLsummonmonsteriii
 \end{spelllist}
 
 \subsubsection{4th-level Divine Spells}
 \begin{spelllist}
-    \spellhead{Air Walk} Subject treads on air as if solid (climb at 45-degree angle).
-    \spellhead{Cure Critical Wounds} Cures 6d6 damage.
-    \spellhead{Dismissal} Forces a creature to return to native plane.
-    \spellhead{Disrupting Weapon} Melee weapon destroys undead.
-    \spellhead{Divine Favor}[Greater] You gain \plus2 Str and attack and damage bonus.
-    \spellhead{Enervation} Inflict three negative levels.
-    \spellhead{Freedom} Subject moves normally despite impediments.
-    \spellhead{Inflict Critical Wounds} Deals 8d6 damage.
-    \spellhead{Invest Magic} All of subject's equipment is magical.
-    \spellhead{Locate Creature}[Greater] Senses direction toward distant visualized creatures.
-    \spellhead{Poison} Touch deals 1d6 Con damage repeatedly.
-    \spellhead{Resist Energy}[Greater] As \spell{resist energy}, but all energy types.
-    \spellhead{Summon Monster IV} Calls extraplanar creature to fight for you.
+    \SLairwalk
+    \SLbladebarrier
+    \SLblessmass
+    \SLcommandmass
+    \SLcurecriticalwounds
+    \SLdiscernlies
+    \SLdivinefavorgreater
+    \SLenervation
+    \SLinflictcriticalwounds
+    \SLpoison
+    \SLsummonmonsteriv
 \end{spelllist}
 
 \subsubsection{5th-level Divine Spells}
 \begin{spelllist}
-    \spellhead{Bestow Curse} \minus6 to an attribute score; \minus4 on attack rolls, saves, and checks; or 25\% chance of losing each action.
-    \spellhead{Command}[Mass] As \spell{command}, but affects multiple creatures.
-    \spellhead{Cure Light Wounds}[Mass] Cures 5d6 damage for many creatures.
-    \spellhead{Flame Strike} Smite foes with divine fire for 5d6 damage.
-    \spellhead{Inflict Light Wounds}[Mass] Deals 5d6 damage to many creatures.
-    \spellhead{Magic Circle against Chaos/Evil/Good/Law} Protect allies in a \areamed radius and hedge out opposing outsiders.
-    \spellhead{Righteous Might} Your size increases, and you gain combat bonuses.
-    \spellhead{Revivify} Restores recently dead body to life.
-    \spellhead{Summon Monster V} Calls extraplanar creature to fight for you.
-    \spellhead{Totemic Mind}[Greater] Subject gains \plus4 to Int, Wis, or Cha.
-    \spellhead{Totemic Power}[Greater] Subject gains \plus4 to Str, Dex, or Con.
+    \SLbanemass
+    \SLcurelightwoundsmass
+    \SLflamestrike
+    \SLinflictlightwoundsmass
+    \SLplanardisruptionmass
+    \SLrevivify
+    \SLsummonmonsterv
+    \SLsilencemass
 \end{spelllist}
 
 \subsubsection{6th-level Divine Spells}
 \begin{spelllist}
-    \spellhead{Banishment} Banish multiple extraplanar creatures. 
-    \spellhead{Blade Barrier} Wall of blades deals 6d6 damage.
-    \spellhead{Cure Moderate Wounds}[Mass] Cures 6d6 damage for many creatures.
-    \spellhead{Dispel Magic}[Greater] As dispel magic, but up to \plus20 on check.
-    \spellhead{Harm} Touch deals 12d8 damage and 4 Con damage.
-    \spellhead{Heal} Cures 12d8 damage, all diseases and mental conditions.
-    \spellhead{Inflict Moderate Wounds}[Mass] Deals 6d6 damage to many creatures.
-    \spellhead{Protection from Energy}[Greater] As \spell{protection from energy}, but against all energy types.
-    \spellhead{Summon Monster VI} Calls extraplanar creature to fight for you.
-    \spellhead{Totemic Mind}[Mass] As \spell{Totemic mind}, but affects multiple creatures.
-    \spellhead{Totemic Power}[Mass] As \spell{Totemic power}, but affects multiple creatures.
-    \spellhead{True Seeing}\M Lets you see all things as they really are.
-    \spellhead{Word of Recall} Teleports you back to designated place.
+    \SLblasphemy
+    \SLcacaphonicword
+    \SLcuremoderatewoundsmass
+    \SLdictum
+    \SLdispelmagicgreater
+    \SLharm
+    \SLheal
+    \SLholdpersonmass
+    \SLholyword
+    \SLinflictmoderatewoundsmass
+    \SLrighteousmight
+    \SLsummonmonstervi
+    \SLwordofrecall
 \end{spelllist}
 
 \subsubsection{7th-level Divine Spells}
 \begin{spelllist}
-    \spellhead{Antilife Shell} Small, immobile emanation hedges out living creatures.
-    \spellhead{Blasphemy} Kills, paralyzes, nauseatees, or sickens nonevil subjects in large radius.
-    \spellhead{Cure Serious Wounds}[Mass] Cures 7d6 damage for many creatures.
-    \spellhead{Death Ward}[Mass] As \spell{death ward}, but affects multiple creatures.
-    \spellhead{Destruction}\F Kills subject and destroys remains.
-    \spellhead{Dictum} Kills, paralyzes, stuns, or staggers nonlawful subjects in 40 ft. cube.
-    \spellhead{Holy Word} Kills, paralyzes, blinds, or deafens nongood subjects in large radius.
-    \spellhead{Inflict Serious Wounds}[Mass] Deals 7d6 damage to many creatures.
-    \spellhead{Summon Monster VII} Calls extraplanar creature to fight for you.
-    \spellhead{Word of Chaos} Kills, confuses, stuns, or deafens nonchaotic subjects in large radius.
+    \SLantimagicfield
+    \SLantilifeshell
+    \SLcureseriouswoundsmass
+    \SLdeathwardmass
+    \SLdestruction
+    \SLdictum
+    \SLholyword
+    \SLinflictseriouswoundsmass
+    \SLregeneration
+    \SLsummonmonstervii
+    \SLtrueseeing
 \end{spelllist}
 
 \subsubsection{8th-level Divine Spells}
 \begin{spelllist}
-    \spellhead{Antimagic Field} Negates magic in small emanation from you.
-    \spellhead{Cloak of Chaos}\F Protect multiple creatures against lawful foes. 
-    \spellhead{Cure Critical Wounds}[Mass] Cures 8d6 damage for many creatures.
-    \spellhead{Earthquake} Intense tremor shakes large radius.
-    \spellhead{Energy Drain} Subject gains six negative levels.
-    \spellhead{Freedom}[Mass] As \spell{freedom}, but affects multiple creatures.
-    \spellhead{Hold Person}[Mass] As \spell{hold person}, but affects multiple creatures.
-    \spellhead{Holy Aura}\F Protect multiple creatures against evil foes. 
-    \spellhead{Inflict Critical Wounds}[Mass] Deals 8d6 damage to many creatures.
-    \spellhead{Regenerate} Touched creature heals 10 hit points/round.
-    \spellhead{Shield of Law}\F Protect multiple creatures against chaotic foes. 
-    \spellhead{Summon Monster VIII} Calls extraplanar creature to fight for you.
-    \spellhead{Unholy Aura}\F Protect multiple creatures against good foes. 
+    \SLcloakofchaos
+    \SLcurecriticalwoundsmass
+    \SLearthquake
+    \SLenervationgreater
+    \SLholyaura
+    \SLinflictcriticalwoundsmass
+    \SLshieldoflaw
+    \SLsummonmonsterviii
+    \SLunholyaura
 \end{spelllist}
 
 \subsubsection{9th-level Divine Spells}
 \begin{spelllist}
-    \spellhead{Implosion} Kills one creature/round.
-    \spellhead{Miracle}\M Requests a deity's intercession.
-    \spellhead{Storm of Vengeance} Storm rains acid, lightning, and hail.
-    \spellhead{Summon Monster IX} Calls extraplanar creature to fight for you.
+    \SLimplosion
+    \SLstormofvengeance
+    \SLsummonmonsterix
 \end{spelllist}
 
 \subsection{Cleric Domains}\label{Cleric Domains}
@@ -783,93 +710,88 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \subsubsection{Air Domain Spells}
 
 \begin{spelllist}
-    \spellhead[1]{Feather Fall} Objects or creatures fall slowly.
-    \spellhead[1]{Gust of Wind} Blows away or knocks down smaller creatures in large line.
-    \spellhead[2]{Gentle Descent} Subject can glide.
-    \spellhead[2]{Windstrike} Wind bludgeons target for 4d6 damage.
-    \spellhead[3]{Call Lightning} Calls down lightning bolts (3d8 per bolt) from sky.
-    \spellhead[3]{Zephyr Blade} Melee weapon can strike from a short distance for half damage.
-    \spellhead[4]{Air Walk} Subject treads on air as if solid (climb at 45-degree angle).
-    \spellhead[4]{Summon Monster V*} Calls creature to fight.
-    \spellhead[5]{Call Lightning}[Greater] As \spell{call lightning}, but 5d8 damage per bolt.
-    \spellhead[5]{Windstrike}[Greater] Wind moves and bludgeons target for 10d6 damage.
-    \spellhead[6]{Skysmite} Unerring lightning deals 6d6 damage.
-    \spellhead[6]{Zephyr Blade}[Greater] Melee weapon can strike from a distance for full damage.
-    \spellhead[7]{Stormlord} Air protects you from attacks. 
-    \spellhead[7]{Summon Monster VIII*} Calls creature to fight.
-    \spellhead[8]{Reverse Gravity} Objects and creatures fall upward.
-    \spellhead[9]{Elemental Swarm*} Summons multiple elementals.
-    \spellhead[9]{Storm of Vengeance} Storm rains acid, lightning, and hail.
+    \SLfeatherfall[1]
+    \SLgentledescent[1]
+    \SLgentledescent[2]
+    \SLwindstrike[2]
+    \SLzephyrblade[2]
+    \SLgaseousform[3]
+    \SLairwalk[4]
+    \SLcalllightning[4]
+    \SLgentledescentmass[4]
+    \SLsummonmonsterv[4]
+    \SLwindstrikegreater[5]
+    \SLzephyrbladegreater[5]
+    \SLskysmite[6]
+    \SLstormlord[6]
+    \SLsummonmonsterviii[7]
+    \SLcalllightninggreater[8]
+    \SLreversegravity[8]
+    \SLstormofvengeance[9]
 \end{spelllist}
-*Summons air elementals only
+Summoning spells summon air elementals only.
 
 \subsubsection{Chaos Domain Spells}
 
 \begin{spelllist}
-    \spellhead[1]{Forget} A creature forgets something.
-    \spellhead[1]{Protection from Alignment} \plus2 to special defenses, \plus4 against chosen alignment.
-    \spellhead[2]{Align Weapon} Weapon becomes \plus2 and chaotic.
-    \spellhead[2]{Entropic Shield} Ranged attacks against subject have 50\% miss chance.
-    \spellhead[3]{Confusion} Subject acts randomly.
-    \spellhead[3]{Summon Monster III*} Calls extraplanar creature to fight for you.
-    \spellhead[4]{Chaos Hammer} Bewilders, deals 8d6 damage to nonchaotic creature.
-    \spellhead[5]{Prismatic Wall}
-    \spellhead[5]{Magic Circle against Law} Protect allies in a \areamed radius.
-    \spellhead[6]{Discordant Song} Confuse creatures with sustained music.
-    \spellhead[6]{Summon Monster VI*} Calls extraplanar creature to fight for you.
-    \spellhead[7]{Prismatic Spray} Rays hit subjects with a variety of effects.
-    \spellhead[7]{Word of Chaos} Kills, confuses, stuns, or deafens nonchaotic subjects in large radius.
-    \spellhead[8]{Cloak of Chaos}\F Protect multiple creatures against lawful foes. 
-    \spellhead[8]{}
-    \spellhead[9]{Irresistible Dance} Forces subject to dance.
-    \spellhead[9]{Summon Monster IX*} Calls extraplanar creature to fight for you.
+    \SLentropicshield[1]
+    \SLforget[1]
+    \SLprotectionfromalignment[2]
+    \SLconfusion[3]
+    \SLsummonmonsteriii[3]
+    \SLchaoshammer[3]
+    \SLprismaticwall[5]
+    \SLcacaphonicword[6]
+    \SLsummonmonstervi[6]
+    \SLprismaticspray[6]
+    \SLcloakofchaos[8]
+    \SLdiscordantsong[8]
+    \SLirresistibledance[9]
+    \SLsummonmonsterix[9]
 \end{spelllist}
-*Summon chaotic creatures only
+Summoning spells summon chaotic creatures only.
 
 \subsubsection{Death Domain Spells}
 
 \begin{spelllist}
-    \spellhead[1]{Enfeeblement} Target takes \minus4 to physical attribute.
-    \spellhead[1]{Unliving Heart} Gain 5 temporary HP, treated as undead.
-    \spellhead[2]{Death Knell} Kill dying creature and gain temporary hp, more for killing powerful creatures.
-    \spellhead[2]{Blindness/Deafness} Creature is blinded or deafened.
-    \spellhead[3]{Death Ward} Grants immunity to death spells and negative energy effects.
-    \spellhead[3]{}
-    \spellhead[4]{Enervation} Inflict three negative levels.
-    \spellhead[4]{Poison} Touch deals 1d6 Con damage repeatedly.
-    \spellhead[5]{Bestow Curse} \minus6 to an attribute; \minus4 on attack rolls, saves, checks, and AC; or 25\% chance of losing each action.
-    \spellhead[5]{Waves of Fatigue} Creatures in large cone become fatigued.
-    \spellhead[6]{}
-    \spellhead[6]{Harm} Touch deals 12d8 damage and 4 Con damage.
-    \spellhead[7]{Death Ward}[Mass] As \spell{death ward}, but affects multiple creatures.
-    \spellhead[7]{Finger of Death} Kills one subject.
-    \spellhead[8]{Energy Drain} Subject gains six negative levels.
-    \spellhead[8]{Waves of Exhaustion} Creatures in medium cone become exhausted.
-    \spellhead[9]{Power Word Kill} Kills bloodied creature.
-    \spellhead[9]{Wail of the Banshee} Scream kills many creatures. 
+    \SLunlivingheart[1]
+    \SLwavesoffatiguelesser[1]
+    \SLdeathward[3]
+    \SLcurseofbloodandbone[3]
+    \SLcurseofenfeeblement[4]
+    \SLenervation[4]
+    \SLpoison[4]
+    \SLwavesoffatigue[4]
+    \SLdeathknell[6]
+    \SLharm[6]
+    \SLdeathwardmass[7]
+    \SLfingerofdeath[7]
+    \SLwavesoffatiguegreater[7]
+    \SLenervationgreater[8]
+    \SLwailofthebanshee[9]
 \end{spelllist}
 
 \subsubsection{Destruction Domain Spells}
 
 \begin{spelllist}
-    \spellhead[1]{Burning Hands} 1d6 fire damage in small cone.
-    \spellhead[1]{Shocking Grasp} Touch delivers 2d6 electricity damage.
-    \spellhead[2]{Sound Burst} 2d6 sonic damage in a small radius.
-    \spellhead[2]{Scorching Ray} Ray (or rays) deal 4d6 fire damage.
-    \spellhead[3]{Fireball} Small radius of fire deals 3d6 damage.
-    \spellhead[3]{Lightning Bolt} Large line of electricity deals 3d8 damage.
-    \spellhead[4]{Ice Storm} Hail deals 4d4 damage in small cylinder.
-    \spellhead[4]{Shout} Deafens all within medium cone and deals 4d6 sonic damage.
-    \spellhead[5]{Chain Lightning} 5d10 damage; secondary targets take half damage.
-    \spellhead[5]{Flame Strike} Smite foes with divine fire for 5d6 damage.
-    \spellhead[6]{Disintegrate} Deals 12d8 damage, leaving only dust.
-    \spellhead[6]{Skysmite} Unerring lightning deals 6d6 damage.
-    \spellhead[7]{Destruction}\F Kills subject and destroys remains.
-    \spellhead[7]{Shout}[Greater] Yell deals 7d6 sonic damage in large cone; stuns creatures, damages objects.
-    \spellhead[8]{Earthquake} Intense tremor shakes large radius.
-    \spellhead[8]{Fire Storm} Deals 8d6 fire damage to enemies in large spread.
-    \spellhead[9]{Implosion} Kills one creature/round.
-    \spellhead[9]{Meteor Swarm} Massive hail of meteors deals 9d8 damage.
+    \SLburninghands[1]
+    \SLshockinggrasp[1]
+    \SLsoundburst[2]
+    \SLlightningbolt[3]
+    \SLscorchingray[3]
+    \SLshout[3]
+    \SLicestorm[4]
+    \SLflamestrike[5]
+    \SLchainlightning[6]
+    \SLdisintegrate[6]
+    \SLshoutgreater[6]
+    \SLskysmite[6]
+    \SLacidfog[7]
+    \SLdestruction[7]
+    \SLearthquake[8]
+    \SLfirestorm[8]
+    \SLimplosion[9]
+    \SLmeteorswarm[9]
 \end{spelllist}
 
 \begin{comment}
@@ -878,7 +800,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \begin{spelllist}
     \spellhead[1]{Burning Hands}\fn{1} 1d6 fire damage.
     \spellhead[1]{Command} One subject obeys selected command for 1 round.
-    \spellhead[2]{}
     \spellhead[2]{Locate Object} Senses direction toward object (specific or type).
     \spellhead[3]{Lightning Bolt}\fn{1} Large line of electricity deals 3d8 damage.
     \spellhead[4]{Fly} Subject flies at speed of 60 ft.
@@ -892,7 +813,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \spellhead[8]{Power Word Stun} Stuns bloodied creature.
     \spellhead[8]{Suggestion}[Mass] As \spell{suggestion}, but shorter and affects multiple creatures.
     \spellhead[9]{Power Word Kill} Kills bloodied creature.
-    \spellhead[9]{}
 \end{spelllist}
 1 Used as a breath attack, requiring no somatic components.
 \end{comment}
@@ -900,213 +820,165 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \subsubsection{Earth Domain Spells}
 
 \begin{spelllist}
-    \spellhead[1]{Earth's Pull} Subject feels gravity more strongly.
-    \spellhead[1]{Tremorsense} ``See'' through the ground by concentrating.
-    \spellhead[2]{Earthen Blade} Create magical weapon from the ground.
-    \spellhead[2]{}
-    \spellhead[3]{Meld into Stone} You and your gear merge with stone.
-    \spellhead[3]{Earthspike} Spike from the ground deals damage. 
-    \spellhead[4]{Stoneskin} \plus3 AC, ignore 8 damage per round.
-    \spellhead[4]{Summon Monster V*} Calls extraplanar creature to fight for you.
-    \spellhead[5]{Earth Glide} Creature glides through earth. 
-    \spellhead[5]{Wall of Stone} Creates a stone wall that can be shaped.
-    \spellhead[6]{Earthspike}[Mass] Spikes from the ground deal damage to multiple targets.
-    \spellhead[6]{Transmute Flesh and Stone} Turns subject creature into statue, or restores petrified creature.
-    \spellhead[7]{}
-    \spellhead[7]{Summon Monster VIII*} Calls extraplanar creature to fight for you.
-    \spellhead[8]{Earthquake} Intense tremor shakes large radius.
-    \spellhead[8]{Iron Body} Your body becomes living iron.
-    \spellhead[9]{Elemental Swarm*} Summons multiple elementals.
-    \spellhead[9]{Imprisonment} Entombs subject beneath the earth.
+    \SLearthspull[1]
+    \SLearthspike[1]
+    \SLtremorsense[1]
+    \SLearthenblade[2]
+    \SLmeldintostone[2]
+    \SLearthglide[4]
+    \SLearthspikemass[4]
+    \SLstoneskin[4]
+    \SLsummonmonsterv[4]
+    \SLtransmutefleshandstone[6]
+    \SLsummonmonsterviii[7]
+    \SLearthquake[8]
+    \SLimprisonment[8]
+    \SLironbody[8]
 \end{spelllist}
-*Summons earth elementals only.
+Summoning spells summon earth elementals only.
 
 \subsubsection{Evil Domain Spells}
 
 \begin{spelllist}
-    \spellhead[1]{Bane} Nearby enemies take \minus2 to attack.
-    \spellhead[1]{Protection from Alignment} \plus2 to special defenses, \plus4 against chosen alignment.
-    \spellhead[2]{Align Weapon} Weapon becomes \plus2 and evil.
-    \spellhead[2]{Death Knell} Kill dying creature and gain temporary hp, more for killing powerful creatures.
-    \spellhead[3]{Share Pain}[Forced] Split damage with unwilling subject.
-    \spellhead[3]{Summon Monster III*} Calls extraplanar creature to fight for you.
-    \spellhead[4]{Enervation} Inflict three negative levels.
-    \spellhead[4]{Unholy Blight} Sickens and deals 8d6 damage to good creature.
-    \spellhead[5]{Bestow Curse} \minus6 to an attribute score; \minus4 on attack rolls, saves, and checks; or 25\% chance of losing each action.
-    \spellhead[5]{Magic Circle against Good} Protect allies in a \areamed radius and hedge out opposing outsiders.
-    \spellhead[6]{Harm} Touch deals 12d8 damage and 4 Con damage.
-    \spellhead[6]{Summon Monster VI*} Calls extraplanar creature to fight for you.
-    \spellhead[7]{Blasphemy} Kills, paralyzes, nauseatees, or sickens nonevil subjects in large radius.
-    \spellhead[7]{}
-    \spellhead[8]{Energy Drain} Subject gains six negative levels.
-    \spellhead[8]{Unholy Aura}\F Protect multiple creatures against good foes. 
-    \spellhead[9]{Assimilate} Incorporate creature into your own body.
-    \spellhead[9]{Summon Monster IX*} Calls extraplanar creature to fight for you.
+    \SLbane[1]
+    \SLprotectionfromalignment[2]
+    \SLsummonmonsteriii[3]
+    \SLunholyblight[3]
+    \SLenervation[4]
+    \SLbanemass[5]
+    \SLblasphemy[6]
+    \SLdeathknell[6]
+    \SLharm[6]
+    \SLsummonmonstervi[6]
+    \SLenervationgreater[8]
+    \SLunholyaura[8]
+    \SLassimilate[9]
+    \SLsummonmonsterix[9]
 \end{spelllist}
-*Summons evil creatures only
+Summoning spells summon evil creatures only
 
 \subsubsection{Fire Domain Spells}
 
 \begin{spelllist}
-    \spellhead[1]{Burning Hands} 1d6 fire damage in medium cone.
-    \spellhead[1]{}
-    \spellhead[2]{Flame Blade} Wield fire as scimitar.
-    \spellhead[2]{Scorching Ray} Ray (or rays) deal 4d6 fire damage.
-    \spellhead[3]{}
-    \spellhead[3]{Fireball} Small radius of fire deals 3d6 damage.
-    \spellhead[4]{Summon Monster V*} Calls extraplanar creature to fight for you.
-    \spellhead[4]{Wall of Fire} Passing through wall deals 5d6 fire damage.
-    \spellhead[5]{Fire Shield} Creatures attacking you take damage; you're protected from heat or cold.
-    \spellhead[5]{Flame Strike} Smite foes with divine fire for 5d6 damage.
-    \spellhead[6]{Delayed Blast Fireball} 6d6 fire damage in medium radius; you can postpone blast for 5 rounds.
-    \spellhead[6]{Fire Seeds} Acorns and berries become grenades and bombs.
-    \spellhead[7]{}
-    \spellhead[7]{Summon Monster VIII*} Calls extraplanar creature to fight for you.
-    \spellhead[8]{Fire Storm} Deals 8d6 fire damage to enemies in large spread.
-    \spellhead[9]{Elemental Swarm**} Summons multiple elementals.
-    \spellhead[9]{Meteor Swarm} Massive hail of meteors deals 9d8 damage.
+    \SLburninghands[1]
+    \SLflameblade[2]
+    \SLwalloffire[2]
+    \SLfireball[3]
+    \SLfireshield[3]
+    \SLscorchingray[3]
+    \SLsummonmonsterv[4]
+    \SLflamestrike[5]
+    \SLwalloffiregreater[5]
+    \SLfireseeds[6]
+    \SLdelayedblastfireball[7]
+    \SLsummonmonsterviii[7]
+    \SLfirestorm[8]
+    \SLmeteorswarm[9]
 \end{spelllist}
-*Summons fire elementals only.
+Summoning spells summon fire elementals only.
 
 \subsubsection{Good Domain Spells}
 
 \begin{spelllist}
-    \spellhead[1]{}
-    \spellhead[1]{Protection from Alignment} \plus2 to special defenses, \plus4 against chosen alignment.
-    \spellhead[2]{Align Weapon} Weapon becomes \plus2 and good.
-    \spellhead[2]{Bless} Nearby allies gain \plus2 to attack.
-    \spellhead[3]{Death Ward} Grants immunity to death spells and negative energy effects.
-    \spellhead[3]{Summon Monster III*} Calls extraplanar creature to fight for you.
-    \spellhead[4]{}
-    \spellhead[4]{Holy Smite} Blinds and deals 8d6 damage to nongood creature.
-    \spellhead[5]{Magic Circle against Evil} Protect allies in a \areamed radius and hedge out opposing outsiders.
-    \spellhead[5]{Righteous Might} Your size increases, and you gain combat bonuses.
-    \spellhead[6]{Heal} Cures 12d8 damage, all diseases and mental conditions.
-    \spellhead[6]{Summon Monster VI*} Calls extraplanar creature to fight for you.
-    \spellhead[7]{Holy Word}\F Kills, paralyzes, slows, or deafens nongood subjects in large radius.
-    \spellhead[7]{}
-    \spellhead[8]{}
-    \spellhead[8]{Holy Aura} Protect multiple creatures against evil foes. 
-    \spellhead[9]{}
-    \spellhead[9]{Summon Monster IX*} Calls extraplanar creature to fight for you.
+    \SLbless[1]
+    \SLprotectionfromalignment[2]
+    \SLdeathward[3]
+    \SLsummonmonsteriii[3]
+    \SLholysmite[3]
+    \SLblessmass[4]
+    \SLheal[6]
+    \SLholyword[6]
+    \SLrighteousmight[6]
+    \SLsummonmonstervi[6]
+    \SLholyaura[8]
+    \SLsummonmonsterix[9]
 \end{spelllist}
-*Summons good creatures only.
+Summoning spells summon good creatures only.
 
 \subsubsection{Knowledge Domain Spells}
 
 \begin{spelllist}
-    \spellhead[1]{Locate Object} Senses direction toward visualized object.
-    \spellhead[1]{}
-    \spellhead[2]{Locate Creature} Senses direction toward visualized creature.
-    \spellhead[2]{}
-    \spellhead[3]{Locate Object}[Greater] Senses direction toward distant visualized objects.
-    \spellhead[3]{Read Mind} Learn a creature's surface thoughts.
-    \spellhead[4]{Locate Creature}[Greater] Senses direction toward distant visualized creatures.
-    \spellhead[4]{Moment of Prescience}[Lesser] Roll twice for single attack, save, or opposed check.
-    \spellhead[5]{Foresight} ``Sixth sense'' warns of impending danger.
-    \spellhead[5]{}
-    \spellhead[6]{True Seeing}
-    \spellhead[6]{Locate Entity} Locates creatures or objects within 1 mile.
-    \spellhead[7]{}
-    \spellhead[7]{Moment of Prescience} Roll twice with bonus for single attack, save, or opposed check.
-    \spellhead[8]{}
-    \spellhead[8]{}
-    \spellhead[9]{Foresight} Powerful ``sixth sense'' warns of impending danger.
-    \spellhead[9]{Revelation}
+    \SLmanipulateprobabilitylesser[1]
+    \SLreadmind[2]
+    \SLforesight[3]
+    \SLmomentofprescience[4]
+    \SLmanipulateprobability[5]
+    \SLreadmindgreater[6]
+    \SLtrueseeing[7]
+    \SLmomentofpresciencegreater[8]
+    \SLreadmindmass[8]
+    \SLforesightgreater[9]
+    \SLrevelation[9]
 \end{spelllist}
 
 \subsubsection{Law Domain Spells}
 
 \begin{spelllist}
-    \spellhead[1]{Command} One subject obeys selected command for 1 round.
-    \spellhead[1]{Protection from Alignment} \plus2 to special defenses, \plus4 against chosen alignment.
-    \spellhead[2]{Align Weapon} Weapon becomes \plus2 and lawful.
-    \spellhead[2]{Hold Person} Paralyzes one humanoid for short duration.
-    \spellhead[3]{Discern Lies} Reveals deliberate falsehoods.
-    \spellhead[3]{Summon Monster III*} Calls extraplanar creature to fight for you.
-    \spellhead[4]{Hold Monster} As \spell{hold person}, but any creature.
-    \spellhead[4]{Order's Wrath} Bewilders and deals 8d6 damage to nonlawful creature.
-    \spellhead[5]{Command}[Mass] As \spell{command}, but affects multiple creatures.
-    \spellhead[5]{Magic Circle against Chaos} Protect allies in a \areamed radius and hedge out opposing outsiders.
-    \spellhead[6]{Prohibition} Punish creatures that take specific action.
-    \spellhead[6]{Summon Monster VI*} Calls extraplanar creature to fight for you.
-    \spellhead[7]{Dictum} Kills, paralyzes, stuns, or staggers nonlawful subjects in 40 ft. cube.
-    \spellhead[7]{}
-    \spellhead[8]{Power Word Stun} Stuns bloodied creature.
-    \spellhead[8]{Shield of Law}\F Protect multiple creatures against lawful foes.
-    \spellhead[9]{Prohibition}[Greater] Forcibly prevent creatures from taking specific action.
-  %\spellhead[9]{Imprisonment} Entombs subject beneath the earth.
-    \spellhead[9]{Summon Monster IX*} Calls extraplanar creature to fight for you.
+    \SLcommand[1]
+    \SLholdperson[2]
+    \SLprotectionfromalignment[2]
+    \SLorderswrath[3]
+    \SLsummonmonsteriii[3]
+    \SLcommandmass[4]
+    \SLdiscernlies[4]
+    \SLholdmonster[4]
+    \SLholdpersonmass[6]
+    \SLprohibition[6]
+    \SLdictum[6]
+    \SLsummonmonstervi[6]
+    \SLholdmonstermass[8]
+    \SLimprisonment[8]
+    \SLshieldoflaw[8]
+    \SLprohibition[9]
+  %\spellhead[9]{I[9]mprisonment} Entombs subject beneath the earth.
+    \SLsummonmonsterix[9]
 \end{spelllist}
-*Summons lawful creatures only.
+Summoning spells summon lawful creatures only.
 
 \subsubsection{Magic Domain Spells}
 
 \begin{spelllist}
-    \spellhead[1]{Ablative Shield} Immediately reduce damage from foes' spells.
-    \spellhead[1]{}
-    \spellhead[2]{}
-    \spellhead[2]{}
-    \spellhead[3]{Dispel Magic} Cancels magical spells and effects.
-    \spellhead[3]{Ablative Fortress} Immediately reduce damage from foes' spells in area.
-    \spellhead[4]{}
-    \spellhead[4]{Spell Resistance} Subject gains spell resistance.
-    \spellhead[5]{}
-    \spellhead[5]{Spelltheft} As \spell{dispel magic}, but you gain the effects of dispelled spells.
-    \spellhead[6]{}
-    \spellhead[6]{Dispel Magic}[Greater] As dispel magic, but up to \plus20 on check.
-    \spellhead[7]{Antimagic Field} Negates magic in small emanation from you.
-    \spellhead[7]{Spell Turning} Reflect 1d4\plus6 spell levels back at caster.
-    \spellhead[8]{}
-    \spellhead[8]{}
-    \spellhead[9]{Mage's Disjunction} Dispels all magic.
-    \spellhead[9]{}
+    \SLablativeshield[1]
+    \SLdimensionalanchor[3]
+    \SLdispelmagic[3]
+    \SLspellresistance[3]
+    \SLspelltheft[5]
+    \SLdispelmagicgreater[6]
+    \SLantimagicfield[7]
+    \SLspellturning[7]
+    \SLspelltheftgreater[8]
+    \SLdisjoinmagic[9]
 \end{spelllist}
 
 \subsubsection{Protection Domain Spells}
 
 \begin{spelllist}
-    \spellhead[1]{Sanctuary} Opponents can't attack subject until it attacks.
-    \spellhead[1]{Shield of Faith} Grants \plus2 or higher shield bonus.
-    \spellhead[2]{Resist Energy} Ignores 10 (or more) points of damage/attack from specified energy type.
-    \spellhead[2]{Retrieve Ally} Teleport willing creature next to you.
-    \spellhead[3]{Protection from Energy} Reduce damage from one kind of energy.
-    \spellhead[3]{}
-    \spellhead[4]{Spell Resistance} Subject gains spell resistance.
-    \spellhead[4]{Stoneskin} \plus3 AC, ignore 8 damage per round.
-    \spellhead[5]{}
-    \spellhead[5]{Foresight} ``Sixth sense'' warns of impending danger.
-    \spellhead[6]{Protection from Energy}[Greater] As \spell{protection from energy}, but against all energy types.
-    \spellhead[6]{Repulsion} Creatures can't approach you.
-    \spellhead[7]{Energy Conversion} As \spell{greater resist energy}, plus you can fire rays of absorbed energy.
-    \spellhead[7]{Spell Turning} Reflect 1d4\plus6 spell levels back at caster.
-    \spellhead[8]{}
-    \spellhead[8]{}
-    \spellhead[9]{Foresight} Powerful ``sixth sense'' warns of impending danger.
-    \spellhead[9]{}
+    \SLresistenergy[1]
+    \SLsanctuary[1]
+    \SLsharepain[2]
+    \SLshieldoffaith[2]
+    \SLdeathward[3]
+    \SLresistenergygreater[3]
+    \SLspellresistance[3]
+    \SLstoneskin[4]
+    \SLrepulsion[5]
+    \SLspellturning[7]
+    \SLenergyconversion[8]
 \end{spelllist}
 
 \subsubsection{Strength Domain Spells}
 
 \begin{spelllist}
-    \spellhead[1]{Divine Favor} You gain \plus2 on attack and damage rolls.
-    \spellhead[1]{Longstrider} Increases your speed.
-    \spellhead[2]{Totemic Power} Subject gains \plus2 to Str, Dex, or Con.
-    \spellhead[2]{}
-    \spellhead[3]{Enlarge Person} Humanoid creature doubles in size.
-    \spellhead[3]{}
-    \spellhead[4]{Divine Favor}[Greater] You gain \plus2 Str and attack and damage bonus.
-    \spellhead[4]{Shout} Deafens all within medium cone and deals 4d6 sonic damage.
-    \spellhead[5]{Righteous Might} Your size increases, and you gain combat bonuses.
-    \spellhead[5]{Totemic Power}[Greater] Subject gains \plus4 to Str, Dex, or Con.
-    \spellhead[6]{Totemic Power}[Mass] As \spell{totemic power}, but affects multiple creatures.
-    \spellhead[6]{}
-    \spellhead[7]{Enlarge Person}[Mass] Enlarges several creatures.
-    \spellhead[7]{Shout}[Greater] Yell deals 7d6 sonic damage in large cone; stuns creatures, damages objects.
-    \spellhead[8]{Iron Body} Your body becomes living iron.
-    \spellhead[8]{}
-    \spellhead[9]{}
-    \spellhead[9]{} 
+    \SLdivinefavor[1]
+    \SLenlargeperson[3]
+    \SLshout[3]
+    \SLdivinefavorgreater[4]
+    \SLenlargemonster[4]
+    \SLenlargepersonmass[6]
+    \SLshoutgreater[6]
+    \SLrighteousmight[6]
+    \SLenlargemonstermass[7]
+    \SLironbody[8]
 \end{spelllist}
 
 \begin{comment}
@@ -1137,142 +1009,112 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \subsubsection{Travel Domain Spells}
 
 \begin{spelllist}
-    \spellhead[1]{Feather Fall} Objects or creatures fall slowly.
-    \spellhead[1]{Longstrider} Increases your speed.
-    \spellhead[2]{Retrieve Ally} Teleport willing creature next to you.
-    \spellhead[2]{Spider Climb} Grants ability to walk on walls and ceilings.
-    \spellhead[3]{Dimension Slide} Teleports nearby creature short distance.
-    \spellhead[3]{Gaseous Form} Subject becomes insubstantial and can fly slowly.
-    \spellhead[4]{Air Walk} Subject treads on air as if solid (climb at 45-degree angle).
-    \spellhead[4]{Freedom} Subject moves normally despite impediments.
-    \spellhead[5]{}
-    \spellhead[5]{}
-    \spellhead[6]{Repulsion} Creatures can't approach you.
-    \spellhead[6]{Word of Recall} Teleports you back to designated place.
-    \spellhead[7]{Ethereal Jaunt} You become ethereal for short duration.
-    \spellhead[7]{Phase Door} Creates an invisible passage through wood or stone.
-    \spellhead[8]{Freedom}[Mass] As \spell{freedom}, but affects multiple creatures.
-    \spellhead[8]{Dimension Door}[Mass] Teleport you and multiple allies within 1,000 feet.
-    \spellhead[9]{Etherealness} Travel to Ethereal Plane with companions.
-    \spellhead[9]{Gate} Connects two planes for travel.
+    \SLfeatherfall[1]
+    \SLlongstrider[1]
+    \SLdimensionslide[2]
+    \SLspiderclimb[2]
+    \SLfreedom[3]
+    \SLgaseousform[3]
+    \SLairwalk[4]
+    \SLdimensiondoor[4]
+    \SLrepulsion[5]
+    \SLetherealjaunt[6]
+    \SLwordofrecall[6]
+    \SLfreedommass[7]
+    \SLdimensiondoormass[8]
+    \SLetherealness[9]
 \end{spelllist}
 
 \subsubsection{Trickery Domain Spells}
 
 \begin{spelllist}
-    \spellhead[1]{}
-    \spellhead[1]{Ventriloquism} Throws voice for medium duration.
-    \spellhead[2]{Phantasmal Wound} Subject believes it is near death.
-    \spellhead[2]{Silence} Subject cannot make sound.
-    \spellhead[3]{Confusion} Subject acts randomly.
-    \spellhead[3]{Invisibility} Subject invisible until it attacks.
-    \spellhead[4]{}
-    \spellhead[4]{Phantasmal Killer} Fearsome illusion can frighten target to death.
-    \spellhead[5]{}
-    \spellhead[5]{Phantasmal Maze} Subject acts as if affected by \spell{maze}.
-    \spellhead[6]{Mislead} Turns you invisible and creates illusory double.
-    \spellhead[6]{}
-    \spellhead[7]{Invisibility}[Mass] As \spell{invisibility}, but affects multiple creatures.
-    \spellhead[7]{Confusion}[Mass] Multiple subjects act randomly.
-    \spellhead[8]{}
-    \spellhead[8]{Reverse Gravity} Objects and creatures fall upward.
-    \spellhead[9]{Maze} Traps subject in extradimensional maze.
-    \spellhead[9]{Weird} As \spell{phantasmal killer}, but affects multiple creatures
+    \SLventriloquism[1]
+    \SLsilence[2]
+    \SLconfusion[3]
+    \SLinvisibility[3]
+    \SLphantasmalkiller[4]
+    \SLsilencemass[5]
+    \SLconfusionmass[6]
+    \SLmislead[6]
+    \SLinvisibilitymass[7]
+    \SLphantasmalkillermass[8]
+    \SLreversegravity[8]
+    \SLmaze[8]
 \end{spelllist}
 
 \subsubsection{Vitality Domain Spells}
 
 \begin{spelllist}
-    \spellhead[1]{Cure Light Wounds} Cures 2d6 damage.
-    \spellhead[1]{Inflict Light Wounds} Deals 2d6 damage.
-    \spellhead[2]{Cure Moderate Wounds} Cures 4d6 damage.
-    \spellhead[2]{Inflict Moderate Wounds} Deals 4d6 damage.
-    \spellhead[3]{Cure Serious Wounds} Cures 6d6 damage.
-    \spellhead[3]{Inflict Serious Wounds} Deals 6d6 damage.
-    \spellhead[4]{Cure Critical Wounds} Cures 8d6 damage.
-    \spellhead[4]{Inflict Critical Wounds} Deals 8d6 damage.
-    \spellhead[5]{Cure Light Wounds}[Mass] Cures 5d6 damage for many creatures.
-    \spellhead[5]{Inflict Light Wounds}[Mass] Inflicts 5d6 damage to many creatures.
-    \spellhead[6]{Heal} Cures 12d8 damage, all diseases and mental conditions.
-    \spellhead[6]{Harm} Touch deals 12d8 damage and 4 Con damage.
-    \spellhead[7]{Cure Serious Wounds}[Mass] Cures 7d6 damage for many creatures.
-    \spellhead[7]{Inflict Serious Wounds}[Mass] Inflicts 7d6 damage to many creatures.
-    \spellhead[8]{Cure Critical Wounds}[Mass] Cures 8d6 damage for many creatures.
-    \spellhead[8]{Inflict Critical Wounds}[Mass] Inflicts 8d6 damage to many creatures.
-    \spellhead[9]{}
-    \spellhead[9]{}
+    \SLcurelightwounds[1]
+    \SLinflictlightwounds[1]
+    \SLcuremoderatewounds[2]
+    \SLinflictmoderatewounds[2]
+    \SLcureseriouswounds[3]
+    \SLinflictseriouswounds[3]
+    \SLcurecriticalwounds[4]
+    \SLinflictcriticalwounds[4]
+    \SLcurelightwoundsmass[5]
+    \SLinflictlightwoundsmass[5]
+    \SLheal[6]
+    \SLharm[6]
+    \SLcureseriouswoundsmass[7]
+    \SLinflictseriouswoundsmass[7]
+    \SLcurecriticalwoundsmass[8]
+    \SLinflictcriticalwoundsmass[8]
 \end{spelllist}
 
 \subsubsection{War Domain Spells}
 
 \begin{spelllist}
-    \spellhead[1]{Bane} Nearby enemies take \minus2 to attack.
-    \spellhead[1]{Divine Favor} You gain \plus2 on attack and damage rolls.
-    \spellhead[2]{Bless} Nearby allies gain \plus2 to attack.
-    \spellhead[2]{Spiritual Weapon} Magical weapon attacks on its own.
-    \spellhead[3]{}
-    \spellhead[3]{}
-    \spellhead[4]{Invest Magic} All of subject's equipment is magical.
-    \spellhead[4]{Divine Favor}[Greater] You gain \plus2 Str and attack and damage bonus.
-    \spellhead[5]{Flame Strike} Smite foes with divine fire for 5d6 damage.
-    \spellhead[5]{Waves of Fatigue} Creatures in large cone become fatigued.
-    \spellhead[6]{Blade Barrier} Wall of blades deals 6d6 damage.
-    \spellhead[6]{}
-    \spellhead[7]{}
-    \spellhead[7]{}
-    \spellhead[8]{Fire Storm} Deals 8d6 fire damage to enemies in large spread.
-    \spellhead[8]{Waves of Exhaustion} Creatures in medium cone become exhausted.  
-    \spellhead[9]{}
-    \spellhead[9]{Storm of Vengeance} Storm rains acid, lightning, and hail.
+    \SLbane[1]
+    \SLbless[1]
+    \SLdivinefavor[1]
+    \SLholdperson[2]
+    \SLspiritualweapon[3]
+    \SLblessmass[4]
+    \SLbladebarrier[4]
+    \SLdivinefavorgreater[4]
+    \SLbanemass[5]
+    \SLflamestrike[5]
+    \SLfirestorm[8]
+    \SLstormofvengeance[9]
 \end{spelllist}
 
 \subsubsection{Water Domain Spells}
 
 \begin{spelllist}
-    \spellhead[1]{Obscuring Mist} Fog surrounds you.
-    \spellhead[1]{}
-    \spellhead[2]{Aqueous Blade} Weapon makes touch attacks. 
-    \spellhead[2]{Control Water} Raises or lowers bodies of water.
-    \spellhead[2]{Fog Cloud} Medium cylinder of fog obscures vision.
-    \spellhead[3]{}
-    \spellhead[3]{Water Walk} Subject treads on water as if solid.
-    \spellhead[4]{Ice Storm} Hail deals 4d4 damage in small cylinder.
-    \spellhead[4]{Summon Nature's Ally IV*} Calls creature to fight.
-    \spellhead[5]{}
-    \spellhead[5]{}
-    \spellhead[6]{Freezing Sphere} Freezes water or deals cold damage.
-    \spellhead[6]{Solid Fog} Fog blocks vision and slows movement.
-    \spellhead[7]{}
-    \spellhead[7]{Summon Nature's Ally VII*} Calls creature to fight.
-    \spellhead[8]{Horrid Wilting} Deals 8d6 damage to many foes.
-    \spellhead[8]{Polar Ray} Ranged touch attack slows and deals 16d6 cold damage.
-    \spellhead[9]{Elemental Swarm*} Summons multiple elementals.
-    \spellhead[9]{Storm of Vengeance} Storm rains acid, lightning, and hail.
+    \SLfogcloud[1]
+    \SLaqueousblade[2]
+    \SLwaterwalk[3]
+    \SLicestorm[4]
+    \SLsummonnaturesallyiv[4]
+    \SLfogshield[5]
+    \SLsolidfog[6]
+    \SLpolarray[6]
+    \SLsummonnaturesallyvii[7]
+    \SLhorridwilting[9]
+    \SLstormofvengeance[9]
 \end{spelllist}
-*Summons water elementals or aquatic creatures only.
+Summoning spells summon water elementals or aquatic creatures only.
 
 \subsubsection{Wild Domain Spells}
 
 \begin{spelllist}
-    \spellhead[1]{Earth's Pull} Subject feels gravity more strongly.
-    \spellhead[1]{Entangle} Plants entangle everyone in small spread.
-    \spellhead[2]{Barkskin} Grants \plus2 bonus to AC and DR 2/adamantine.
-    \spellhead[2]{}
-    \spellhead[3]{}
-    \spellhead[3]{Summon Nature's Ally III} Calls creature to fight.
-    \spellhead[4]{Giant Vermin} Turns centipedes, scorpions, or spiders into giant vermin.
-    \spellhead[4]{Entangling Growth} New plants grow and entangle everyone in medium spread.
-  %\spellhead[5]{Animate Plants} Plants animate and fight for you.
-    \spellhead[5]{}
-    \spellhead[5]{Wall of Thorns} Thorns damage anyone who tries to pass.
-    \spellhead[6]{Fire Seeds} Acorns and berries become grenades and bombs.
-    \spellhead[6]{Summon Nature's Ally VI} Calls creature to fight.
-    \spellhead[7]{Antilife Shell} Small stationary emanation hedges out living creatures.
-    \spellhead[7]{Animal Growth} Enlarges multiple animals.
-    \spellhead[8]{Changestaff} Your staff becomes a treant on command.
-    \spellhead[8]{Summon Nature's Army} Calls one creature/level to fight.
-    \spellhead[9]{Stampede} Summon bison to trample foes.
-    \spellhead[9]{Summon Nature's Ally IX} Calls creature to fight.
+    \SLearthspull[1]
+    \SLentangle[1]
+    \SLbarkskin[2]
+    \SLmeldintoplants[3]
+    \SLsummonnaturesallyiii[3]
+    \SLwallofthorns[3]
+    \SLenlargemonster[4]
+    \SLentanglegreater[4]
+  %\spellhead[5]{Animat[4]e Plants} Plants animate and fight for you.
+    \SLwallofthornsgreater[6]
+    \SLfireseeds[6]
+    \SLsummonnaturesallyvi[6]
+    \SLantilifeshell[7]
+    \SLsummonnaturesarmy[8]
+    \SLsummonnaturesallyix[9]
 \end{spelllist}
 
 \subsection{Divine Rituals}\label{Divine Rituals}
@@ -1290,7 +1132,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
 \subsubsection{2nd-level Divine Rituals}
 \begin{rituallist}
-    \spellhead{Augury}\M\F Learns whether an action will be good or bad.
+    \spellhead{Augury} Learns whether an action will be good or bad.
     \spellhead{Comprehend Languages} You understand all spoken and written languages.
     \spellhead{Consecrate} Fills area with positive energy, making undead weaker.
     \spellhead{Continual Flame} Makes a permanent, heatless torch.
@@ -1389,138 +1231,120 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
 \subsubsection{1st-level Nature Spells}
 \begin{spelllist}
-    \spellhead{Burning Hands} 1d6 fire damage in medium cone.
-    \spellhead{Cure Light Wounds} Cures 2d6 damage.
-    \spellhead{Delay Poison} Quickly stops poison from harming subject.
-    \spellhead{Earth's Pull} Subject feels gravity more strongly.
-    \spellhead{Entangle} Plants entangle everyone in small spread.
-    \spellhead{Faerie Fire} Outlines subjects in small radius with light, canceling concealment, invisibility, and the like.
-    \spellhead{Gust of Wind} Blows away or knocks down smaller creatures in large line.
-    \spellhead{Longstrider} Your speed increases by 10 ft.
-    \spellhead{Obscuring Mist} Fog surrounds you.
-    \spellhead{Shillelagh} Cudgel or quarterstaff becomes \plus2 weapon.
-    \spellhead{Summon Nature's Ally I} Calls creature to fight.
-    \spellhead{Tremorsense} ``See'' through the ground by concentrating.
+    \SLburninghands
+    \SLcurelightwounds
+    \SLearthspull
+    \SLearthspike
+    \SLentangle
+    \SLfogcloud
+    \SLgentledescent
+    \SLlongstrider
+    \SLregenerationlesser
+    \SLresistenergy
+    \SLsummonnaturesallyi
+    \SLtremorsense
 \end{spelllist}
 
 \subsubsection{2nd-level Nature Spells}
 \begin{spelllist}
-    \spellhead{Aqueous Blade} Weapon makes touch attacks. 
-    \spellhead{Barkskin} Grants \plus2 bonus to AC and DR 2/adamantine.
-    \spellhead{Control Water} Raises or lowers bodies of water.
-    \spellhead{Cure Moderate Wounds} Cures 4d6 damage.
-    \spellhead{Earthen Blade} Create magical weapon from the ground.
-    \spellhead{Flame Blade} Wield fire as scimitar.
-    \spellhead{Fog Cloud} Medium cylinder of fog obscures vision.
-    \spellhead{Gentle Descent} Subject can glide.
-    \spellhead{Heat Metal} Make metal so hot it damages those who touch it.
-    \spellhead{Magic Fang} One natural weapon of subject creature becomes \plus2 weapon.
-    \spellhead{Resist Energy} Ignores 10 (or more) points of damage/attack from specified energy type.
-    \spellhead{Spider Climb} Grants ability to walk on walls and ceilings.
-    \spellhead{Summon Nature's Ally II} Calls creature to fight.
-    \spellhead{Summon Swarm} Summons swarm of bats, rats, or spiders.
-    \spellhead{Totemic Mind} Subject gains \plus2 to Int, Wis, or Cha.
-    \spellhead{Totemic Power} Subject gains \plus2 to Str, Dex, or Con.
-    \spellhead{Tree Shape} You look exactly like a tree for extended duration.
-    \spellhead{Windstrike} Wind bludgeons target for 4d6 damage.
+    \SLaqueousblade
+    \SLbarkskin
+    \SLcuremoderatewounds
+    \SLearthenblade
+    \SLfaeriefire
+    \SLflameblade
+    \SLgustofwind
+    \SLheatmetal
+    \SLmeldintostone
+    \SLspiderclimb
+    \SLsummonnaturesallyii
+    \SLtreeshape
+    \SLwalloffire
+    \SLwindstrike
+    \SLzephyrblade
 \end{spelllist}
 
 \subsubsection{3rd-level Nature Spells}
 \begin{spelllist}
-    \spellhead{Call Lightning} Calls down lightning bolts (3d8 per bolt) from sky.
-    \spellhead{Cure Serious Wounds} Cures 6d6 damage.
-    \spellhead{Earthspike} Spike from the ground impales target.
-    \spellhead{Lightning Bolt} Large line of electricity deals 3d6 damage.
-    \spellhead{Meld into Stone} You and your gear merge with stone.
-    \spellhead{Poison} Touch deals 1d6 Con damage repeatedly.
-    \spellhead{Protection from Energy} Reduce damage from one kind of energy.
-    \spellhead{Summon Nature's Ally III} Calls creature to fight.
-    \spellhead{Water Walk} Subject treads on water as if solid.
-    \spellhead{Zephyr Blade} Melee weapon can strike from a short distance for half damage.
+    \SLcureseriouswounds
+    \SLdispelmagic
+    \SLfreedom
+    \SLlightningbolt
+    \SLmeldintoplants
+    \SLresistenergygreater
+    \SLsummonnaturesallyiii
+    \SLwallofthorns
+    \SLwaterwalk
 \end{spelllist}
 
 \subsubsection{4th-level Nature Spells}
 \begin{spelllist}
-    \spellhead{Air Walk} Subject treads on air as if solid (climb at 45-degree angle).
-    \spellhead{Cure Critical Wounds} Cures 6d8 damage.
-    \spellhead{Dispel Magic} Cancels spells and magical effects.
-    \spellhead{Entangling Growth} New plants grow and entangle everyone in medium spread.
-    \spellhead{Freedom} Subject moves normally despite impediments.
-    \spellhead{Giant Vermin} Turns centipedes, scorpions, or spiders into giant vermin.
-    \spellhead{Ice Storm} Hail deals 4d4 damage in small cylinder.
-    \spellhead{Magic Fang}[Greater] All subject's natural weapons get \plus2 bonus.
-    \spellhead{Resist Energy}[Greater] As \spell{resist energy}, but all energy types.
-    \spellhead{Stoneskin} \plus3 AC, ignore 8 damage per round.
-    \spellhead{Summon Nature's Ally IV} Calls creature to fight.
-    \spellhead{Wall of Fire} Passing through wall deals 4d6 damage.
+    \SLairwalk
+    \SLcalllightning
+    \SLconeofcold
+    \SLcurecriticalwounds
+    \SLearthglide
+    \SLearthspikemass
+    \SLenlargemonster
+    \SLentanglegreater
+    \SLgentledescentmass
+    \SLicestorm
+    \SLpoison
+    \SLstoneskin
+    \SLsummonnaturesallyiv
+    \SLsunbeam
 \end{spelllist}
 
 \subsubsection{5th-level Nature Spells}
 \begin{spelllist}
   %\spellhead{Animate Plants} Plants animate and fight for you.
-    \spellhead{Call Lightning}[Greater] As call lightning, but 5d8 damage per bolt.
-    \spellhead{Chain Lightning} 5d10 damage; secondary targets take half damage.
-    \spellhead{Cone of Cold} 5d6 cold damage and fatigue in medium cone.
-    \spellhead{Cure Light Wounds}[Mass] Cures 5d6 damage for many creatures.
-    \spellhead{Earth Glide} Creature glides through earth. 
-    \spellhead{Summon Nature's Ally V} Calls creature to fight.
-    \spellhead{Sunbeam} Beam dazzles and deals 5d6 damage.
-    \spellhead{Totemic Mind}[Greater] Subject gains \plus4 to Int, Wis, or Cha.
-    \spellhead{Totemic Power}[Greater] Subject gains \plus4 to Str, Dex, or Con.
-    \spellhead{Wall of Stone} Creates a stone wall that can be shaped.
-    \spellhead{Wall of Thorns} Thorns damage anyone who tries to pass.
-    \spellhead{Windstrike}[Greater] Wind moves and bludgeons target for 10d6 damage.
+    \SLcurelightwoundsmass
+    \SLfogshield
+    \SLsummonnaturesallyv
+    \SLwalloffiregreater
+    \SLwindstrikegreater
+    \SLzephyrbladegreater
 \end{spelllist}
 
 \subsubsection{6th-level Nature Spells}
 \begin{spelllist}
-    \spellhead{Antilife Shell} Small radius emanation hedges out living creatures.
-    \spellhead{Cure Moderate Wounds}[Mass] Cures 5d6 damage for many creatures.
-    \spellhead{Dispel Magic}[Greater] As dispel magic, but up to \plus20 on check.
-    \spellhead{Earthspike}[Mass] Spikes from the ground impale multiple targets.
-    \spellhead{Fire Seeds} Acorns and berries become grenades and bombs.
-%\spellhead{Liveoak} Oak becomes treant guardian.
-    \spellhead{Protection from Energy}[Greater] As \spell{protection from energy}, but against all energy types.
-    \spellhead{Skysmite} Unerring lightning deals 12d6 damage.
-    \spellhead{Solid Fog} Fog blocks vision and slows movement.
-    \spellhead{Summon Nature's Ally VI} Calls creature to fight.
-    \spellhead{Totemic Mind}[Mass] As \spell{totemic mind}, but affects multiple creatures.
-    \spellhead{Totemic Power}[Mass] As \spell{totemic power}, but affects multiple creatures.
-    \spellhead{Zephyr Blade}[Greater] Melee weapon can strike from a distance for full damage.
+    \SLchainlightning
+    \SLcuremoderatewoundsmass
+    \SLdispelmagicgreater
+    \SLfireseeds
+    \SLheal
+    \SLskysmite
+    \SLsolidfog
+    \SLstormlord
+    \SLsummonnaturesallyvi
+    \SLsunburst
+    \SLwallofthornsgreater
 \end{spelllist}
 
 \subsubsection{7th-level Nature Spells}
 \begin{spelllist}
-    \spellhead{Animal Growth} Enlarges multiple animals.
-    \spellhead{Changestaff} Your staff becomes a treant on command.
-    \spellhead{Creeping Doom} Swarms of centipedes attack at your command.
-    \spellhead{Cure Serious Wounds}[Mass] Cures 7d6 damage for many creatures.
-    \spellhead{Heal} Cures 12d8 damage, all diseases and mental conditions.
-    \spellhead{Stormlord} Air protects you from attacks. 
-    \spellhead{Summon Nature's Ally VII} Calls creature to fight.
+    \SLantilifeshell
+    \SLconeofcoldgreater
+    \SLcureseriouswoundsmass
+    \SLfogsea
+    \SLfreedommass
+    \SLregeneration
+    \SLsummonnaturesallyvii
 \end{spelllist}
 
 \subsubsection{8th-level Nature Spells}
 \begin{spelllist}
-    \spellhead{Cone of Cold}[Greater] 8d6 cold damage and fatigue in large cone.
-    \spellhead{Cure Critical Wounds}[Mass] Cures 8d6 damage for many creatures.
-    \spellhead{Earthquake} Intense tremor shakes large radius.
-    \spellhead{Fire Storm} Deals 8d6 fire damage to enemies in large spread.
-    \spellhead{Freedom}[Mass] As \spell{freedom}, but affects multiple creatures.
-    \spellhead{Regenerate} Touched creature heals 10 hit points/round.
-    \spellhead{Repel Metal or Stone} Pushes away metal and stone in large line.
-    \spellhead{Sea of Fog} 500 ft. cylinder of fog obscures vision.
-    \spellhead{Summon Nature's Ally VIII} Calls creature to fight.
-    \spellhead{Summon Nature's Army} Calls one creature/level to fight.
-    \spellhead{Sunburst} Blinds all within large radius, deals 8d8 damage.
+    \SLcalllightninggreater
+    \SLcurecriticalwoundsmass
+    \SLearthquake
+    \SLfirestorm
+    \SLsummonnaturesallyviii
+    \SLsummonnaturesarmy
 \end{spelllist}
 
 \subsubsection{9th-level Nature Spells}
 \begin{spelllist}
-    \spellhead{Elemental Swarm} Summons multiple elementals.
-    \spellhead{Stampede} Summon bison to trample foes.
-    \spellhead{Storm of Vengeance} Storm rains acid, lightning, and hail.
-    \spellhead{Summon Nature's Ally IX} Calls creature to fight.
+    \SLstormofvengeance
 \end{spelllist}
 
 \subsection{Nature Rituals}\label{Nature Rituals}

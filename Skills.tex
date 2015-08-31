@@ -2,31 +2,35 @@
 \section{Skills Summary}
 A character's skills describe the myriad of talents that people have.
 
-\parhead{Skill Points} At 1st level, your character gains a certain number of skill points. Skill points represent your training in a particular area. You get a base allotment of 2, 4, 6, or 8 skill points, depending on your character's class. You also gain additional skill points equal your Intelligence. If your Intelligence is negative, it subtracts from your skill points (to a minimum of 0 skill points). These skill points can be spent on any skills.
-
-You also gain additional skill points based on your attributes. For each attribute except Constitution and Intelligence, you gain a number of skill points equal to half your attribute. These skill points can only be spent on skills from the relevant attribute.
-
-\par If your character's attributes increase, she may immediately gain a skill point which can be spent on skills with that key attribute. However, temporary bonuses and penalties to attributes, such as from spells, magic items, and circumstances, do not affect your skill points. If she gains a level in a new class that has more skill points than any class she previously had, the character immediately gains skill points equal to the difference between the skill points provided by the two classes. These skill points can be spent on any skill.
+\parhead{Skill Points} At 1st level, your character gains a certain number of skill points. Skill points represent your training in a particular area. You get a base allotment of 5, 10, or 15 skill points, depending on your character's class. These skill points can only be spent on skills associated with your class, called \term{class skills}. You also gain additional skill points equal to half your Intelligence. If your Intelligence is negative, it subtracts from your skill points (to a minimum of 0 skill points). These skill points can be spent on any skills.
 
 \parhead{Spending Skill Points} If you place one skill point in a skill, you become trained in that skill. If you place two points in a skill, you become an expert in that skill. Your level of training in a skill determines how many skill ranks you have in that skill. Some skills can only be used if you are trained in them.
 
-\parhead{Skill Ranks}
+\parhead{Gaining Additional Skill Points} If your character's Intelligence increases, she may immediately gain a skill point to spend. However, temporary bonuses and penalties to Intelligence, such as from spells, magic items, and circumstances, do not affect your skill points. If your character gains a level in a new class that has more skill points than any class she previously had, the character immediately gains skill points equal to the difference between the skill points provided by the two classes. These skill points can be spent on any skill.
+
+\subsection{Skill Ranks}
 Skill ranks represent how capable your character is with a particular skill. Your character automatically gains skill ranks as she increases in level, as shown by \trefnp{Skill Ranks and Skill Training}.
 
-\parhead{Using Skills} To make a skill check, roll 1d20 \add skill rank \add key attribute \add bonuses and penalties.
+\subsection{Skill Checks}
 
-\subparhead{Key Attribute} The attribute used in a skill check is noted in its description.
+Your bonus with skill checks is calculated as follows:
+
+\begin{figure}[h]
+    \centering Skill rank or key attribute modifier \meh{\add enhancement bonus} \add other bonuses and penalties
+\end{figure}
+
+\subparhead{Key Attribute} The attribute used in a skill check is noted in its description. Training can affect the attribute modifier you add to skill checks, as noted in \trefnp{Skill Ranks and Skill Training}.
 
 \subparhead{Bonuses and Penalties} Miscellaneous modifiers include racial bonuses, armor check penalties, bonuses provided by feats, and more.
 
 \begin{dtable}
-\lcaption{Skill Ranks and Skill Training}
-\begin{tabularx}{\columnwidth}{>{\lcol}p{4.5em} >{\lcol}p{2.5em} >{\lcol}p{6.5em} >{\lcol}X}
-\thead{Skill Training Level} & \thead{Skill Points Spent} & \thead{Cross-Class Skill Ranks} & \thead{Class Skill Ranks} \\
-Untrained & 0 & \x & \x \\
-Trained & 1 & 1/2 character level \add 1 & 1/2 character level \add 2 \\
-Expert & 2 & 3/4 character level \add 3 & Associated class levels \add 3/4 unassociated class levels \add 3 \\
-\end{tabularx}
+    \lcaption{Skill Ranks and Skill Training}
+    \begin{tabularx}{\columnwidth}{>{\lcol}p{4.5em} >{\lcol}p{2.5em} >{\lcol}p{6.5em} >{\lcol}X}
+        \thead{Skill Training Level} & \thead{Skill Points Spent} & \thead{Skill Ranks} & \thead{Attribute Modifier} \\
+        Untrained & 0 & 0                          & Half attribute        \\
+        Trained   & 1 & 1/2 character level \add 2 & Full attribute        \\
+        Mastered  & 2 & Character level \add 5     & Full attribute \add 5 \\
+    \end{tabularx}
 \end{dtable}
 
 \section{Using Skills}
@@ -38,88 +42,79 @@ Circumstances can affect your check. A character who is free to work without dis
 \lcaption{Skills}
 \begin{tabularx}{\textwidth}{>{\lcol}p{12em} *{11}{>{\ccol}X} >{\ccol}p{4em} >{\ccol}p{4em}}
     \thead{Skill}   & \thead{Bbn} & \thead{Clr} & \thead{Drd} & \thead{Ftr} & \thead{Mnk} & \thead{Pal} & \thead{Rgr} & \thead{Rog} & \thead{Sor} & \thead{Spl} & \thead{Wiz} & \thead{Untrained} & \thead{Key Ability} \\
-Athletics       & C  & cc & cc & C  & C  & cc & C  & C  & cc & cc & cc & Yes & Str\fn{1} \\
-Climb           & C  & cc & cc & C  & C  & cc & C  & C  & cc & cc & cc & Yes & Str\fn{1} \\
-Swim            & C  & cc & C  & C  & C  & cc & C  & C  & cc & C  & cc & Yes & Str\fn{2} \\
-Acrobatics      & cc & cc & C  & C  & C  & cc & cc & C  & cc & cc & cc & Yes & Dex\fn{1} \\
-Escape Artist   & cc & cc & cc & cc & C  & cc & cc & C  & cc & cc & cc & Yes & Dex\fn{1} \\
-Ride            & cc & cc & cc & C  & cc & C  & cc & cc & cc & C  & cc & Yes & Dex \\
-Sleight of Hand & cc & cc & cc & cc & cc & cc & cc & C  & cc & cc & cc & No & Dex\fn{1} \\
-Stealth         & cc & cc & cc & cc & C  & cc & C  & C  & cc & cc & cc & Yes & Dex\fn{1} \\
-Craft\fn{3}     & C  & C  & C  & C  & C  & C  & C  & C  & C  & C  & C  & Yes & Int \\
-Devices         & cc & cc & cc & cc & cc & cc & cc & C  & cc & cc & cc & No & Int \\
-Disguise        & cc & cc & cc & cc & cc & cc & cc & C  & cc & cc & cc & Yes & Int \\
-Knowledge (arcana)          & cc & C  & cc & cc & C  & cc & cc & cc & C  & C  & C  & No & Int \\
-Knowledge (dungeoneering)   & cc & cc & cc & cc & cc & cc & C  & C  & cc & cc & C  & No & Int \\
-Knowledge (engineering)     & cc & cc & cc & cc & cc & cc & cc & cc & cc & cc & C  & No & Int \\
-Knowledge (geography)       & cc & cc & cc & cc & cc & cc & C  & cc & cc & cc & C  & No & Int \\
-Knowledge (local)           & cc & cc & cc & cc & cc & cc & cc & C  & cc & cc & C  & No & Int \\
-Knowledge (nature)          & cc & cc & C  & cc & cc & cc & C  & cc & cc & cc & C  & No & Int \\
-Knowledge (planes)          & cc & C  & cc & cc & cc & cc & cc & cc & C  & cc & C  & No & Int \\
-Knowledge (religion)        & cc & C  & cc & cc & C  & C  & cc & cc & cc & cc & C  & No & Int \\
-Linguistics     & cc & C  & cc & cc & cc & cc & cc & C  & cc & cc & C  & No & Int \\
-\thead{Skill}   & \thead{Bbn} & \thead{Clr} & \thead{Drd} & \thead{Ftr} & \thead{Mnk} & \thead{Pal} & \thead{Rgr} & \thead{Rog} & \thead{Sor} & \thead{Spl} & \thead{Wiz} & \thead{Untrained} & \thead{Key Ability} \\
-Heal            & cc & C  & C  & cc & C  & C  & C  & cc & cc & cc & cc & Yes & Wis \\
-Perception      & C  & cc & C  & C  & C  & C  & C  & C  & cc & cc & cc & Yes & Wis \\
-Profession\fn{3}& C  & C  & C  & C  & C  & C  & C  & C  & C  & C  & C  & No & Wis\fn{4} \\
-Sense Motive    & cc & C  & cc & cc & cc & C  & cc & C  & cc & cc & cc & Yes & Wis \\
-Spellcraft      & cc & C  & C  & cc & cc & cc & cc & cc & C  &  C & C  & No & Wis \\
-Survival        & C  & cc & C  & cc & C  & cc & C  & cc & cc & cc & cc & Yes & Wis \\
-Bluff           & cc & cc & cc & cc & cc & cc & cc & C  & cc & cc & cc & Yes & Cha \\
-Creature Handling   & C  & cc & C  & cc & cc & C  & C  & cc & cc & cc & cc & No & Cha \\
-Intimidate      & C  & cc & cc & C  & cc & cc & cc & C  & C  &  C & cc & Yes & Cha \\
-Perform         & cc & cc & cc & cc & C  & cc & cc & C  & cc & cc & cc & Yes & Cha \\
-Persuasion      & cc & C  & C  & cc & cc & C  & cc & C  & cc & cc & cc & Yes & Cha \\
+    Climb             & C  & cc & C  & C  & C  & cc & C  & C  & cc & cc & cc & Yes & Str\fn{1}    \\
+    Jump              & C  & cc & C  & C  & C  & cc & C  & C  & cc & cc & cc & Yes & Str\fn{1}    \\
+    Sprint            & C  & cc & C  & C  & C  & cc & C  & C  & cc & cc & cc & Yes & Str\fn{1}    \\
+    Swim              & C  & cc & C  & C  & C  & cc & C  & C  & cc & C  & cc & Yes & Str\fn{2}    \\
+    Balance           & C  & cc & C  & C  & C  & cc & C  & C  & cc & cc & cc & Yes & Dex\fn{1}    \\
+    Escape Artist     & cc & cc & cc & C  & C  & cc & cc & C  & cc & cc & cc & Yes & Dex\fn{1}    \\
+    Ride              & cc & cc & cc & C  & cc & C  & cc & cc & cc & C  & cc & Yes & Dex          \\
+    Sleight of Hand   & cc & cc & cc & cc & cc & cc & cc & C  & cc & cc & cc & No  & Dex\fn{1}    \\
+    Stealth           & cc & cc & cc & cc & C  & cc & C  & C  & cc & cc & cc & Yes & Dex\fn{1}    \\
+    Tumble            & C  & cc & cc & C  & C  & cc & C  & C  & cc & cc & cc & Yes & Dex\fn{1}    \\
+    \thead{Skill}   & \thead{Bbn} & \thead{Clr} & \thead{Drd} & \thead{Ftr} & \thead{Mnk} & \thead{Pal} & \thead{Rgr} & \thead{Rog} & \thead{Sor} & \thead{Spl} & \thead{Wiz} & \thead{Untrained} & \thead{Key Ability} \\
+    Craft\fn{3}       & C  & C  & C  & C  & C  & C  & C  & C  & C  & C  & C  & Yes & Int          \\
+    Devices           & cc & cc & cc & cc & cc & cc & cc & C  & cc & cc & cc & No  & Int          \\
+    Disguise          & cc & cc & cc & cc & cc & cc & cc & C  & cc & cc & cc & Yes & Int          \\
+    Heal              & cc & C  & C  & cc & C  & C  & C  & cc & cc & cc & cc & Yes & Int          \\
+    Knowledge         & cc & C  & cc & cc & C  & cc & cc & cc & C  & C  & C  & No  & Int          \\
+    Linguistics       & cc & C  & cc & cc & cc & cc & cc & C  & cc & cc & C  & No  & Int          \\
+    Awareness         & C  & cc & C  & C  & C  & C  & C  & C  & cc & cc & cc & Yes & Per          \\
+    Creature Handling & C  & cc & C  & cc & cc & C  & C  & cc & cc & cc & cc & No  & Per          \\
+    Sense Motive      & cc & C  & cc & cc & cc & C  & cc & C  & cc & cc & cc & Yes & Per          \\
+    Spellcraft        & cc & C  & C  & cc & C  & cc & cc & cc & C  & C  & C  & No  & Per          \\
+    Survival          & C  & cc & C  & cc & C  & cc & C  & cc & cc & cc & cc & Yes & Per          \\
+    Intimidate        & C  & cc & cc & C  & cc & cc & cc & C  & C  & C  & cc & Yes & Varies\fn{4} \\
+    Perform           & cc & cc & cc & cc & C  & cc & cc & C  & cc & cc & cc & Yes & Varies\fn{4} \\
+    Profession\fn{3}  & C  & C  & C  & C  & C  & C  & C  & C  & C  & C  & C  & No  & Varies\fn{4} \\
+    Bluff             & cc & cc & cc & cc & cc & cc & cc & C  & cc & cc & cc & Yes & \x\fn{5}     \\
+    Persuasion        & cc & C  & C  & cc & cc & C  & cc & C  & cc & cc & cc & Yes & \x\fn{5}     \\
 \end{tabularx}
 C: class skill
 cc: crossclass skill \\
 1. Armor check penalty applies \\
 2. Double armor check penalty applies \\
 3. Always treated as a class skill \\
-4. Varies depending on profession
+4. Attribute varies depending on skill usage \\
+5. No attribute applies \\
 \end{dtable!*}
 
-\subsection{Skill Checks}
-A skill check takes into account a character's training (skill rank), natural talent (attribute), and luck (the die roll). It may also take into account his or her race's knack for doing certain things (racial bonus) or what armor he or she is wearing (armor check penalty), or a certain feat the character possesses, among other things.
-
-To make a skill check, roll 1d20 and add your character's skill modifier for that skill. The skill modifier incorporates the character's ranks in that skill and the attribute for that skill's key attribute, plus any other miscellaneous modifiers that may apply, including racial bonuses and armor check penalties. The higher the result, the better. Unlike with attack rolls, a natural roll of 20 on the d20 is not an overwhelming success, and a natural roll of 1 is not an overwhelming failure.
-
-\subsubsection{Difficulty Class}
+\subsection{Difficulty Class}
 Some checks are made against a Difficulty Class (DC). The DC is a number (set using the skill rules as a guideline) that you must score as a result on your skill check in order to succeed.
 
 \begin{dtable}
-\lcaption{Difficulty Class Examples}
-\begin{tabularx}{\columnwidth}{p{8em} X}
-Difficulty (DC) & Example (Skill Used) \\
-Very easy (0) & Notice something in plain sight (Perception) \\
-Easy (5) & Hear a conversation from 50 feet away (Perception) \\
-Average (10) & Palm a coin-sided object (Sleight of Hand) \\
-Tough (15) & Rig a wagon wheel to fall off (Disable Device) \\
-Challenging (20) & Swim in stormy water (Swim) \\
-Formidable (25) & Climb a natural rock wall with no equipment (Climb) \\
-Heroic (30) & Leap across a 30-foot chasm with a running start (Athletics) \\
-Nearly impossible (40) & Track a squad of orcs across hard ground after 24 hours of rainfall (Survival) \\
-\end{tabularx}
+    \lcaption{Difficulty Class Examples}
+    \begin{tabularx}{\columnwidth}{p{8em} X}
+        Difficulty (DC) & Example (Skill Used) \\
+        Very easy (0) & Notice something in plain sight (Awareness) \\
+        Easy (5) & Hear a conversation from 50 feet away (Awareness) \\
+        Average (10) & Palm a coin-sided object (Sleight of Hand) \\
+        Tough (15) & Rig a wagon wheel to fall off (Disable Device) \\
+        Challenging (20) & Swim in stormy water (Swim) \\
+        Formidable (25) & Climb a natural rock wall with no equipment (Climb) \\
+        Heroic (30) & Leap across a 30-foot chasm with a running start (Jump) \\
+        Nearly impossible (40) & Track a squad of orcs across hard ground after 24 hours of rainfall (Survival) \\
+    \end{tabularx}
 \end{dtable}
 
-\subsubsection{Opposed Checks}
+\subsection{Opposed Checks}
 An opposed check is a check whose success or failure is determined by comparing the check result to another character's check result. In an opposed check, the higher result succeeds, while the lower result fails. In case of a tie, the higher skill modifier wins. If these scores are the same, roll again to break the tie.
 
 \begin{dtable}
-\lcaption{Example Opposed Checks}
-\begin{tabularx}{\columnwidth}{*{3}{>{\lcol}X}}
-\thead{Task} & \thead{Skill (Key Ability)} & \thead{Opposing Skill (Key Ability)} \\
-Lie & Bluff (Cha) & Sense Motive (Wis) \\
-Create a forged artwork & Craft (Int) & Craft (Int) or Perception (Wis) \\
-Create a false map & Craft (Int) & Craft (Int) or Knowledge (geography) \\
-Make a bully back down & Intimidate (Cha) & Special\fn{1} \\
-Make someone look like someone else & Disguise (Int) & Perception (Wis) \\
-Sneak up on someone & Stealth (Dex) & Perception (Wis) \\
-Steal a coin pouch & Sleight of Hand (Dex) & Perception (Wis) \\
-Tie a prisoner securely & Devices (Int)\fn{2} & Escape Artist (Dex) \\
-\end{tabularx}
-1 An Intimidate check is opposed by the target's Will defense, not a skill check. See the Intimidate skill description for more information. \\
-2 You can also tie a prisoner with a grapple attack. See \pcref{Grapple}. \\
+    \lcaption{Example Opposed Checks}
+    \begin{tabularx}{\columnwidth}{*{3}{>{\lcol}X}}
+        \thead{Task} & \thead{Skill (Key Ability)} & \thead{Opposing Skill (Key Ability)} \\
+        Lie & Bluff (Cha) & Sense Motive (Wis) \\
+        Create a forged artwork & Craft (Int) & Craft (Int) or Awareness (Wis) \\
+        Create a false map & Craft (Int) & Craft (Int) or Knowledge (geography) \\
+        Make a bully back down & Intimidate (Cha) & Special\fn{1} \\
+        Make someone look like someone else & Disguise (Int) & Awareness (Wis) \\
+        Sneak up on someone & Stealth (Dex) & Awareness (Wis) \\
+        Steal a coin pouch & Sleight of Hand (Dex) & Awareness (Wis) \\
+        Tie a prisoner securely & Devices (Int)\fn{2} & Escape Artist (Dex) \\
+    \end{tabularx}
+    1 An Intimidate check is opposed by the target's Will defense, not a skill check. See the Intimidate skill description for more information. \\
+    2 You can also tie a prisoner with a grapple attack. See \pcref{Grapple}. \\
 \end{dtable}
 
 \subsubsection{Trying Again}
@@ -157,7 +152,7 @@ You can take 10 even when a skill would have some consequences for failure. Gene
 
 Taking 20 means you are trying until you get it right, and it assumes that you fail many times before succeeding. Taking 20 takes twenty times as long as making a single check would take. If the check takes a variable amount of time, assume it took the average amount of time required to make a check.
 
-Since taking 20 assumes that the character will fail many times before succeeding, if you did attempt to take 20 on a skill that carries penalties for failure, your character would automatically incur those penalties before he or she could complete the task. Common ``take 20'' tasks include Escape Artist checks to escape, Disable Device checks to manipulate locks, and Perception checks to search an area.
+Since taking 20 assumes that the character will fail many times before succeeding, if you did attempt to take 20 on a skill that carries penalties for failure, your character would automatically incur those penalties before he or she could complete the task. Common ``take 20'' tasks include Escape Artist checks to escape, Disable Device checks to manipulate locks, and Awareness checks to search an area.
 
 \parhead{Other Types of Checks} The normal automatic success and take 20 rules apply for ability checks. Neither rule applies to caster level checks.
 
@@ -178,17 +173,17 @@ When making a collective check, the group simply uses the highest result from an
 
 \parhead{Making Group Skill Checks} A group skill check is not always possible. If the whole group is leaping over a chasm at once to escape a dragon, there is not enough time to designate a leader and have them aid the others to make a collaborative check. In general, a group skill check is only possible if the group has at least five rounds to work together, though this time may vary widely depending on the situation and the skill being used. 
 
-\subsection{Ability Checks}
-Sometimes a character tries to do something to which no specific skill really applies. In these cases, you make an ability check. An ability check is a roll of 1d20 plus the appropriate attribute. Essentially, you're making an untrained skill check.
+\meh{\subsection{Ability Checks}
+Sometimes a character tries to do something to which no specific skill really applies. In these cases, you make an ability check. An ability check is a roll of 1d20 plus the appropriate attribute. Essentially, you're making an untrained skill check.}
 
-In some cases, an action is a straight test of one's ability with no luck involved. Just as you wouldn't make a height check to see who is taller, you don't make a Strength check to see who is stronger.
+\meh{In some cases, an action is a straight test of one's ability with no luck involved. Just as you wouldn't make a height check to see who is taller, you don't make a Strength check to see who is stronger.}
 
 \section{Skill Descriptions}
 This section describes each skill, including common uses and typical modifiers. Characters can sometimes use skills for purposes other than those noted here.
 
 Here is the format for skill descriptions.
 
-\subsection*{Skill Name}
+\ssecfake{Skill Name}
 The skill name line includes (in addition to the name of the skill) the following information.
 \parhead{Key Ability} The abbreviation of the ability whose modifier applies to the skill check.
 \parhead{Trained Only} If this notation is included in the skill name line, you must have at least 1 rank in the skill to use it. If it is omitted, the skill can be used untrained (with a rank of 0). If any special notes apply to trained or untrained use, they are covered in the Untrained section (see below).
@@ -208,132 +203,47 @@ The skill name line includes (in addition to the name of the skill) the followin
 
 \parhead{Untrained} This entry indicates what a character without at least 1 skill point in the skill can do with it. If this entry doesn't appear, it means that the skill functions normally for untrained characters (if it can be used untrained) or that an untrained character can't attempt checks with this skill (for skills that are designated as ``Trained Only'').
 
-\skill{Acrobatics}{Dex; Armor Check Penalty}
-Acrobatics represents your agility and coordination. All Acrobatics checks are made as part of movement, so they require no special action to perform.
+\skill{Balance}{Dex; Armor Check Penalty}
+Balance represents your physical steadiness and poise. All Balance checks are made as part of movement, so they require no special action to perform.
 
-\subsubsection{Agile Movement}
-You can make a DC 20 Acrobatics check while charging to make a single turn of up to 90 degrees in the middle of the moveent. Failure indicates that you can't change direction, though you can continue your movement or stop. Failure by 10 or more indicates that you stop where you tried to change direction and fall prone.
+\subsubsection{Balancing on Difficult Surfaces}
 
-\subsubsection{Balance}
-You can make a Acrobatics check to move safely on a precarious surface. Success means you move along the surface at half speed. Failure means your action is wasted, and you do not move. Failure by 10 or more means you fall prone.
+When you are on a slippery or narrow surface, you must make a Balance check to move. Success means you move along the surface at half speed. Failure means your action is wasted, and you do not move. Failure by 10 or more means you fall off the edge. If you take a \minus5 penalty, you can move at full speed while balancing.
 
-If you take damage while balancing, you must make another Acrobatics check against the same DC to avoid falling. If you take a \minus5 penalty, you can move at full speed while balancing.
+In addition, if you take damage while on a slippery or narrow surface, you must make a Balance check to avoid falling.
 
-The DC varies with the surface, as follows.
-
-\begin{itemize}
-    \item Uneven floor (flagstones, sloped floor): DC 10. This only applies when sprinting or charging. Failure means you lose a move action (and possibly fall), but you can still take a standard action.
-    \item Slippery floor (oil): DC 15.
-    \item At least one foot wide: DC 5. 
-    \item At least six inches wide: DC 10.
-    \item At least two inches wide: DC 15.
-    \item At least one inch wide: DC 20.
-    \item Less than than one inch wide: DC 25.
-\end{itemize}
-
-\subsubsection{Tumble}\label{Tumble}
-If you are trained in Acrobatics, you can tumble past opponents in combat to reduce your odds of being hit. You can tumble as part of normal movement. If you do, you move at half speed and make an Acrobatics check. You may treat your check result as your Armor Class against attacks of opportunity provoked by the movement. If your Acrobatics check is at least 25, you can also move through spaces occupied by enemies.
-
-If you accept a \minus10 penalty, you can move at full speed while tumbling. If you accept a \minus20 penalty, you can tumble while sprinting or charging.
-
-\subsubsection{Mitigate Fall}
-As you hit the ground after a fall, you can make an Acrobatics check to reduce falling damage. A DC 15 check allows you to treat a fall as if it were 10 feet shorter. For every 10 by which you beat that DC, you can reduce the falling damage by 10 additional feet.
-
-\subsubsection{Rapid Stand}
-You can make a DC 20 Acrobatics check to stand up as a swift action. Success means you regain your feet. Failure means you must spend a move action to stand up. You cannot attempt this check unless you can spend a move action to stand up. 
-
-\subsubsection{Acrobatics Modifiers}
-Obstructed or otherwise treacherous surfaces, such as natural cavern floors or undergrowth, are tough to balance or tumble through. The DC for any Acrobatics check in such a square (except checks to mitigate falling damage) is modified as indicated below.
-\begin{dtable}
-\lcaption{Acrobatics Modifiers}
-\begin{tabularx}{\columnwidth}{>{\lcol}X c}
-\thead{Surface Is} & \thead{DC Modifier} \\
-Lightly obstructed (scree, light rubble, shallow bog, light undergrowth)  & \plus2 \\
-Lightly slippery (wet floor)  & \plus2 \\
-Sloped or angled  & \plus2 \\
-Slightly mobile (rope bridge) & \plus2 \\
-Severely obstructed (dense rubble, dense undergrowth)  & \plus5 \\
-Severely slippery (ice sheet, oiled floor)  & \plus5 \\
-Very mobile (slack rope) & \plus5 \\
-\end{tabularx}
-\end{dtable}
-
-\skill{Athletics}{Str; Armor Check Penalty}
-Athletics includes jumping, sprinting, and general athleticism. All Athletics checks are made as part of movement, so they take no special action to perform. Distance moved with Athletics checks, such as checks to jump, is counted against your normal maximum movement in a round. 
-
-\subsubsection{Long Jump}
-You can make an Athletics check while moving to jump forward. When you make a long jump, choose a DC. If you have a running start, you jump forward by a number of feet equal to your check result, to a maximum of the DC you chose. At the midpoint of the jump, you achieve a height equal to a quarter of that distance. If you fail by 10 or more, you fall prone after making the jump. If a failed jump would cause you to fall into a gap, you can make a DC 20 Climb check to catch the edge of the gap, provided you can reach it.
-
-If you do not have a running start, jumping is more difficult (see \pcref{Running Start}).
-
-\subsubsection{High Jump}
-You can make an Athletics check while moving to jump up. When you make a high jump, choose a DC. If you have a running start, you move forward by an amount to a quarter of your check result, to a maximum of a quarter of the DC. At the midpoint of the jump, you gain a height equal to that distance. If you fail by 10 or more, you land prone after making the jump.
-
-If you do not have a running start, jumping is more difficult (see \pcref{Running Start}).
-
-If you jumped up to grab something, success means you reached the desired height. If you wish to pull yourself up, you can do so with a move action and a DC 15 Climb check. If you fail the Athletics check, you do not reach the height, and you land on your feet in the same spot from which you jumped. As with a long jump, the DC is doubled if you do not get a running start of at least 20 feet.
-
-Obviously, the difficulty of reaching a given height varies according to the size of the character or creature. The maximum vertical reach (height the creature can reach without jumping) for an average creature of a given size is shown on the table below. (As a Medium creature, a typical human can reach 8 feet without jumping.) The maximum vertical reach for an individual creature is usually given by the 1 and 1/2 times the creature's height.
-
-Quadrupedal creatures don't have the same vertical reach as a bipedal creature; treat them as being one size category smaller.
-
+The DC of Balance checks varies with the surface, as described in \trefnp{Balance DCs}.
 
 \begin{dtable}
-\begin{tabularx}{\columnwidth}{>{\lcol}X >{\lcol}X}
-    \thead{Creature Size}  & \thead{Vertical Reach} \\
-Colossal  & 128 ft. \\
-Gargantuan  & 64 ft. \\
-Huge  & 32 ft. \\
-Large  & 16 ft. \\
-Medium  & 8 ft. \\
-Small  & 4 ft. \\
-Tiny  & 2 ft. \\
-Diminutive  & 1 ft. \\
-Fine  & 1/2 ft.
-\end{tabularx}
-\end{dtable}
-
-\subsubsection{Rebounding Jump}\label{Rebounding Jump}
-While in midair, if you make contact with a solid object that can support your weight, you can jump off of that object. You are not considered to have a running start, so your check result is halved. In addition, you take a \minus10 penalty to the check (after the halving), because rebounding off of an object in midair is difficult. You must travel at least 10 feet between each rebounding jump.
-
-\subsubsection{Jump Modifiers}
-
-\parhead{Running Start}\label{Running Start} If you move at least twenty feet before jumping, you have a running start. Jumping without a running start is difficult, and your check result is halved.
-
-\parhead{Land Speed} For every 5 feet by which your land speed is slower than 30 feet, you take a \minus3 penalty to Athletics checks to jump. If you jump with a running start, for every 5 feet by which your land speed exceeds 30 feet, you gain a \plus2 bonus to your Athletics check to jump.
-
-\subsubsection{Hop Up}
-You can make a DC 10 Athletics check while moving to jump up onto an object as tall as your waist, such as a table or small boulder. Doing so counts as 5 feet of movement. Success indicates that you land on top of the object and can continue your movement. Failure indicates you stop your movement where you are. You do not need to get a running start to hop up.
-
-\subsubsection{Jump Down}
-You can make a DC 15 Athletics check while moving to intentionally jump down from a height to reduce your falling damage. Success means you take damage as if you had dropped 10 fewer feet than you actually did. Failure means you take the normal falling damage.
-
-\subsubsection{Sprint}\label{Sprint}
-You can make an Athletics check as part of movement to move faster. For every 10 points by which you beat DC 0, you double your speed during that action, as shown on \trefnp{Sprinting}. You can sprint for a number of rounds equal to 5 \add your Constitution.
-
-\begin{dtable}
-    \lcaption{Sprinting}
+    \lcaption{Balance DCs}
     \begin{tabularx}{\columnwidth}{l X}
-        \thead{Athletics Result} & \thead{Speed Multiplier} \\
-        0 & 1x \\
-        10 & 2x \\
-        20 & 3x \\
-        30 & 4x \\
+        \thead{Narrow Surface} & \thead{Balance DC} \\
+        At least one foot wide        & DC 5               \\
+        At least six inches wide      & DC 10              \\
+        At least two inches wide      & DC 15              \\
+        At least one inch wide        & DC 20              \\
+        Less than than one inch wide  & DC 25              \\
+        \thead{Precarious Surface}    & \thead{Balance DC} \\
+        Water covered                 & DC 10              \\
+        Slightly mobile (rope bridge) & DC 10              \\
+        Ice or oil covered            & DC 15              \\
+        Very mobile (slack rope)      & DC 20              \\
     \end{tabularx}
 \end{dtable}
 
-After you finish sprinting, you are fatigued for a number of rounds equal to the number of rounds you spent sprinting, making you \vulnerable and preventing you from sprinting again. You can sprint in any movement mode that you can use.
+\subsubsection{Agile Movement}
+You can make a DC 20 Balance check while charging to make a single turn of up to 90 degrees in the middle of the moveent. Failure indicates that you can't change direction, though you can continue your movement or stop. Failure by 10 or more indicates that you stop where you tried to change direction and fall prone.
 
 \skill{Bluff}{Cha}
 Bluff represents your ability to mislead people with your words. It is usually used when you are lying. Using a Bluff check is part of conversation or other actions, so it requires no special action to perform. You cannot normally take 10 or take 20 on Bluff checks.
 
 \subsubsection{Blend In}
-You can make a Bluff check to blend in with a crowd. Your Bluff check is opposed by the Perception checks of anyone looking for you. Success means you remain unobserved. Failure means the person looking for you found you.
+You can make a Bluff check to blend in with a crowd. Your Bluff check is opposed by the Awareness checks of anyone looking for you. Success means you remain unobserved. Failure means the person looking for you found you.
 
-If you act differently from the crowd you are trying to blend in with, anyone observing you gets a \plus5 bonus to find you. You may need to make Perception or Sense Motive checks to figure out how to act, depending on the situation. If you are extremely dissimilar from the crowd, such as a naked person in church or a human among halflings, anyone observing you may gain a \plus10 or greater bonus to find you. 
+If you act differently from the crowd you are trying to blend in with, anyone observing you gets a \plus5 bonus to find you. You may need to make Awareness or Sense Motive checks to figure out how to act, depending on the situation. If you are extremely dissimilar from the crowd, such as a naked person in church or a human among halflings, anyone observing you may gain a \plus10 or greater bonus to find you. 
 
 \subsubsection{Distract}
-You can make a Bluff check to distract a creature or group of creatures you are talking with. Your Bluff check is opposed by your target's Sense Motive check. Success means it takes a \minus5 penalty to Perception checks for 1 round, as you distract them. Failure means they take no penalty. Failure by 10 or more means it realizes you were trying to distract it.
+You can make a Bluff check to distract a creature or group of creatures you are talking with. Your Bluff check is opposed by your target's Sense Motive check. Success means it takes a \minus5 penalty to Awareness checks for 1 round, as you distract them. Failure means they take no penalty. Failure by 10 or more means it realizes you were trying to distract it.
 
 If you successfully distract a creature, you can attempt to hide from that creature as if you were not being observed.
 
@@ -491,7 +401,7 @@ After you appraise an item, you can't appraise it again with any skill until you
 \subsubsection{Create Forgery}
 You can use the Craft skill to create false or defective versions of objects. For example, you may wish to forge official-looking documents with Craft (manuscripts), or you may need to make items in a rush to satisfy an employer. This functions like crafting the item from scratch, except that the Craft DC is 5 lower than normal, and you use one-half the item's price to determine the price of raw materials and the crafting time.
 
-Forgeries which have a function, such as a weapon, are always defective in some way which makes them unsuitable for use. A forgery can be detected with the Identify Forgery uses of the Craft and Perception skills.
+Forgeries which have a function, such as a weapon, are always defective in some way which makes them unsuitable for use. A forgery can be detected with the Identify Forgery uses of the Craft and Awareness skills.
 
 \subsubsection{Identify Forgery}
 You can make a Craft check as a full-round action to evaluate whether an item is a forgery. The DC to identify a forgery is equal to the Craft check used to make the item. Success means you correctly identify whether the item is a forgery or not. Failure indicates that you are unsure. Failure by more than 10 means you identify the item as genuine. The check is made secretly, so you can't be sure how good the result is.
@@ -531,7 +441,7 @@ If you are trained in Creature Handling, you can use it to train a creature. Suc
 \subsk{Track (DC 20)} The creature tracks the scent presented to it. (This requires the creature to have the scent ability)
 \subsk{Work (DC 15)} The creature pulls or pushes a medium or heavy load.
 
-\parhead{Rear a Wild Creature} To rear a creature means to raise a wild creature from infancy so that it becomes domesticated. The time required depends on the creature in question. The DC for this check is equal to 15 \add the Hit Values of the creature. You can rear as many as three creatures of the same kind at once without penalty. You can rear additional creatures, but you take a cumulative \minus2 penalty to checks you make to rear all of the animals. A successfully domesticated creature can be taught tricks at the same time it's being raised, or it can be taught as a domesticated creature later.
+\parhead{Rear a Wild Creature} To rear a creature means to raise a wild creature from infancy so that it becomes domesticated. The time required depends on the creature in question. The DC for this check is equal to 15 \add the number of levels the creature has. You can rear as many as three creatures of the same kind at once without penalty. You can rear additional creatures, but you take a cumulative \minus2 penalty to checks you make to rear all of the animals. A successfully domesticated creature can be taught tricks at the same time it's being raised, or it can be taught as a domesticated creature later.
 
 \skill{Devices}{Int; Trained Only}
 You can use this skill to manipulate mechanical devices such as locks, traps, and other contraptions. With enough skill, you can even manipulate magical devices.
@@ -570,7 +480,7 @@ Once you have disabled a device, you can attempt to recover it for later use if 
 
 \subsubsection{Special Circumstances}
 
-You can attempt to leave no trace of your tampering while making a Devices check to activate or subvert a device. This increases the Devices DC by 5, but increases the Perception DC to notice the tampering by 10.
+You can attempt to leave no trace of your tampering while making a Devices check to activate or subvert a device. This increases the Devices DC by 5, but increases the Awareness DC to notice the tampering by 10.
 
 When dealing with traps, you are always considered to be ``threatened'' by the trap, preventing you from taking 10.
 
@@ -578,14 +488,14 @@ When dealing with traps, you are always considered to be ``threatened'' by the t
 Disguise represents your ability to create disguises to conceal the appearance of creatures or objects. This skill does not help you act appropriately while disguised; see Perform (acting) and Bluff.
 
 \subsubsection{Conceal Object}
-You can make a Disguise check as a standard action to conceal an item on your person. The object must be at least two size categories smaller than you are. Your Disguise check is opposed by the Perception check of anyone observing you. Success means they fail to notice the item. A creature directly interacting you to search for the object, such as by frisking you, gains a \plus5 bonus to its Perception check.
+You can make a Disguise check as a standard action to conceal an item on your person. The object must be at least two size categories smaller than you are. Your Disguise check is opposed by the Awareness check of anyone observing you. Success means they fail to notice the item. A creature directly interacting you to search for the object, such as by frisking you, gains a \plus5 bonus to its Awareness check.
 
 \subsubsection{Disguise Creature}
-You can make a Disguise check to change the appearance of a creature using makeup, costumes, and so forth. An observer can perceive the presence of a disguise with a Disguise or Perception check to identify a disguise that is higher than your Disguise check. The effectiveness of a disguise depends in part on how much you're attempting to change the creature's appearance, as shown on the table below. The modifiers are cumulative; use any that apply.
+You can make a Disguise check to change the appearance of a creature using makeup, costumes, and so forth. An observer can perceive the presence of a disguise with a Disguise or Awareness check to identify a disguise that is higher than your Disguise check. The effectiveness of a disguise depends in part on how much you're attempting to change the creature's appearance, as shown on the table below. The modifiers are cumulative; use any that apply.
 
 Creating a disguise takes 1d4 \mtimes 10 minutes. You can take a \minus10 penalty to reduce the time to 1d4 minutes, or a \minus20 penalty to reduce the time to 1d4 rounds.
 
-The Disguise check is made secretly, so that you can't be sure how good the result is. However, you can attempt to judge its effectiveness with an identify disguise check using either Disguise or Perception. 
+The Disguise check is made secretly, so that you can't be sure how good the result is. However, you can attempt to judge its effectiveness with an identify disguise check using either Disguise or Awareness. 
 
 \begin{dtable}
 \begin{tabularx}{\columnwidth}{l >{\ccol}X}
@@ -607,7 +517,7 @@ adulthood), adulthood, middle age, old, and venerable. \\
 \end{dtable}
 
 \subsubsection{Emulate Creature}
-You can make a Disguise check to make a creature look like another creature you have previously observed. This functions like a disguise creature check, but the result of your Disguise check can't exceed the result of a Perception check you have made to observe the creature. People viewing the disguise who know what that person looks like get a \plus5 bonus on their Spot checks to identify the disguise.
+You can make a Disguise check to make a creature look like another creature you have previously observed. This functions like a disguise creature check, but the result of your Disguise check can't exceed the result of a Awareness check you have made to observe the creature. People viewing the disguise who know what that person looks like get a \plus5 bonus on their Spot checks to identify the disguise.
 
 \subsubsection{Identify Disguise}
 You can make a Disguise check to identify a disguise on another creature. The DC is equal to the Disguise check used to create the disguise. Success means you know that the creature is disguised. If you succeed by 10 or more, Success means you know that the creature is disguised. If you succeed by 10 or more, you can also discern the creature's true appearance beneath the disguise. You can make an identify disguise check against any individual creature once per hour.
@@ -666,6 +576,71 @@ You can make an Intimidate check to convince a creature to do what you want. Thi
 
 \subsubsection{Demoralize}\label{Demoralize}
 As a standard action, you can make an Intimidate check against a creature within \rngmed range of you. Your check is opposed by its Will defense. If you succeed, the creature is \shaken for 5 rounds.
+
+\skill{Jump}{Str; Armor Check Penalty}
+Jump allows you to jump. All Jump checks are made as part of movement, so they take no special action to perform. Distance moved with Jump checks is counted against your normal maximum movement in a round. 
+
+\subsubsection{Long Jump}
+You can make an Athletics check while moving to jump forward. When you make a long jump, choose a DC. If you have a running start, you jump forward by a number of feet equal to your check result, to a maximum of the DC you chose. At the midpoint of the jump, you achieve a height equal to a quarter of that distance. If you fail by 10 or more, you fall prone after making the jump. If a failed jump would cause you to fall into a gap, you can make a DC 20 Climb check to catch the edge of the gap, provided you can reach it.
+
+If you do not have a running start, jumping is more difficult (see \pcref{Running Start}).
+
+\subsubsection{High Jump}
+You can make an Athletics check while moving to jump up. When you make a high jump, choose a DC. If you have a running start, you move forward by an amount to a quarter of your check result, to a maximum of a quarter of the DC. At the midpoint of the jump, you gain a height equal to that distance. If you fail by 10 or more, you land prone after making the jump.
+
+If you do not have a running start, jumping is more difficult (see \pcref{Running Start}).
+
+If you jumped up to grab something, success means you reached the desired height. If you wish to pull yourself up, you can do so with a move action and a DC 15 Climb check. If you fail the Athletics check, you do not reach the height, and you land on your feet in the same spot from which you jumped. As with a long jump, the DC is doubled if you do not get a running start of at least 20 feet.
+
+Obviously, the difficulty of reaching a given height varies according to the size of the character or creature. The maximum vertical reach (height the creature can reach without jumping) for an average creature of a given size is shown on the table below. (As a Medium creature, a typical human can reach 8 feet without jumping.) The maximum vertical reach for an individual creature is usually given by the 1 and 1/2 times the creature's height.
+
+Quadrupedal creatures don't have the same vertical reach as a bipedal creature; treat them as being one size category smaller.
+
+\begin{dtable}
+\begin{tabularx}{\columnwidth}{>{\lcol}X >{\lcol}X}
+    \thead{Creature Size}  & \thead{Vertical Reach} \\
+Colossal  & 128 ft. \\
+Gargantuan  & 64 ft. \\
+Huge  & 32 ft. \\
+Large  & 16 ft. \\
+Medium  & 8 ft. \\
+Small  & 4 ft. \\
+Tiny  & 2 ft. \\
+Diminutive  & 1 ft. \\
+Fine  & 1/2 ft.
+\end{tabularx}
+\end{dtable}
+
+\subsubsection{Rebounding Jump}\label{Rebounding Jump}
+While in midair, if you make contact with a solid object that can support your weight, you can jump off of that object. You are not considered to have a running start, so your check result is halved. In addition, you take a \minus10 penalty to the check (after the halving), because rebounding off of an object in midair is difficult. You must travel at least 10 feet between each rebounding jump.
+
+\subsubsection{Jump Modifiers}
+
+\parhead{Running Start}\label{Running Start} If you move at least twenty feet before jumping, you have a running start. Jumping without a running start is difficult, and your check result is halved.
+
+\parhead{Land Speed} For every 5 feet by which your land speed is slower than 30 feet, you take a \minus3 penalty to Athletics checks to jump. If you jump with a running start, for every 5 feet by which your land speed exceeds 30 feet, you gain a \plus2 bonus to your Athletics check to jump.
+
+\subsubsection{Hop Up}
+You can make a DC 10 Jump check while moving to jump up onto an object as tall as your waist, such as a table or small boulder. Doing so counts as 5 feet of movement. Success indicates that you land on top of the object and can continue your movement. Failure indicates you stop your movement where you are. You do not need to get a running start to hop up.
+
+\subsubsection{Jump Down}
+You can make a DC 15 Athletics check while moving to intentionally jump down from a height to reduce your falling damage. Success means you take damage as if you had dropped 10 fewer feet than you actually did. Failure means you take the normal falling damage.
+
+\skill{Sprint}{Str; Armor Check Penalty}
+You can make an Sprint check as part of movement to move faster. For every 10 points by which you beat DC 0, you double your speed during that action, as shown on \trefnp{Sprinting}. You can sprint for a number of rounds equal to 5 \add your Constitution.
+
+\begin{dtable}
+    \lcaption{Sprinting}
+    \begin{tabularx}{\columnwidth}{l X}
+        \thead{Athletics Result} & \thead{Speed Multiplier} \\
+        0 & 1x \\
+        10 & 2x \\
+        20 & 3x \\
+        30 & 4x \\
+    \end{tabularx}
+\end{dtable}
+
+After you finish sprinting, you are fatigued for a number of rounds equal to the number of rounds you spent sprinting, making you \vulnerable and preventing you from sprinting again. You can sprint in any movement mode that you can use.
 
 \skill{Knowledge (Int; Trained Only)}
 Like the Craft, Profession, and Perform skills, Knowledge actually encompasses a number of unrelated skills. Knowledge represents a study of some body of lore, possibly an academic or even scientific discipline. Below are listed typical fields of study.
@@ -742,17 +717,17 @@ Undercommon  & Drow & Elven
 \end{tabularx}
 \end{dtable}
 
-\skill{Perception}{Wis}
-Perception represents your ability to observe things which you might otherwise fail to notice. It can be used to spot concealed things, to correctly identify sounds, or to smell the distinctive rotting flesh smell that accompanies undead.
+\skill{Awareness}{Wis}
+Awareness represents your ability to observe things which you might otherwise fail to notice. It can be used to spot concealed things, to correctly identify sounds, or to smell the distinctive rotting flesh smell that accompanies undead.
 
-Each creature has a variety of senses. The Perception skill governs the use of every sense. It is most commonly used with sight, hearing, and smell, though other uses are possible. Often, bonuses or penalites will apply only to certain senses. For example, it is extremely difficult to see when there is no light, but that has no effect on how difficult it is for you to hear sounds. In such cases, you only roll one Perception check, and you apply the modifiers separately for each sense. 
+Each creature has a variety of senses. The Awareness skill governs the use of every sense. It is most commonly used with sight, hearing, and smell, though other uses are possible. Often, bonuses or penalites will apply only to certain senses. For example, it is extremely difficult to see when there is no light, but that has no effect on how difficult it is for you to hear sounds. In such cases, you only roll one Awareness check, and you apply the modifiers separately for each sense. 
 
-While sleeping, you take a \minus10 penalty to Perception.
+While sleeping, you take a \minus10 penalty to Awareness.
 
-\subsubsection{Passive and Active Attention}\label{Perception:Passive and Active Attention}
-You automatically notice some things about your environment, even when you're distracted or focusing on other tasks (such as combat). At all times, you are considered to be ``taking 0'' on a Perception check, allowing you to notice anything with a DC up to your Perception modifier, including all applicable bonuses and penalties. You can only passively perform tasks which do not require a specific action to perform.
+\subsubsection{Passive and Active Attention}\label{Awareness-Passive and Active Attention}
+You automatically notice some things about your environment, even when you're distracted or focusing on other tasks (such as combat). At all times, you are considered to be ``taking 0'' on a Awareness check, allowing you to notice anything with a DC up to your Awareness modifier, including all applicable bonuses and penalties. You can only passively perform tasks which do not require a specific action to perform.
 
-You can make a conscious effort to pay attention to events around you. This allows you to make Perception checks to notice events, rather than simply using your modifier. This is tiring to do over long periods of time: if (10 \add twice the number of hours you have spent being actively attentive) exceeds your Fortitude defense, you become fatigued.
+You can make a conscious effort to pay attention to events around you. This allows you to make Awareness checks to notice events, rather than simply using your modifier. This is tiring to do over long periods of time: if (10 \add twice the number of hours you have spent being actively attentive) exceeds your Fortitude defense, you become fatigued.
 
 \subsubsection{Discern Illusion}
 You can notice inconsistencies in illusion spells. The DC is equal to the spellcaster's check result when casting the spell. Success means you have interacted with the illusion, allowing you to use your Will defense to disbelieve it. Failure means you don't notice anything amiss.
@@ -771,14 +746,14 @@ You can notice creatures and events around you. The DC depends on the sense used
 This can be used to determine the precise location of a creature or object, even if you can't see it. The DC to identify the location is equal to the DC to notice the creature or object using the appropriate sense \add 5 (since you need to learn an additional piece of information).
 
 \subsubsection{Read Lips}
-You can make a DC 15 sight-based Perception check to read a creature's lips. You must be able to understand the language spoken. Success means you can understand the general content of the message, but not the exact words. Success by 5 or more means you understand the exact words. Failure means you don't understand the message. Failure by 10 or more means you draw an incorrect conclusion about the message.
+You can make a DC 15 sight-based Awareness check to read a creature's lips. You must be able to understand the language spoken. Success means you can understand the general content of the message, but not the exact words. Success by 5 or more means you understand the exact words. Failure means you don't understand the message. Failure by 10 or more means you draw an incorrect conclusion about the message.
 
 \subsubsection{Search}\label{Search}
-You can spend a full-round action to make a Perception check to notice things in a single 5-ft. square within 10 feet of you. While doing so, you ignore size penalties that would affect the DC to notice anything within the square.
+You can spend a full-round action to make a Awareness check to notice things in a single 5-ft. square within 10 feet of you. While doing so, you ignore size penalties that would affect the DC to notice anything within the square.
 
 \subsubsection{Senses}
 
-\parhead{Sight} The DC to see something depends on the obviousness of the sight, as shown on \trefnp{Sight-based DCs}, and other modifiers given at \trefnp{Perception DC Modifiers}.
+\parhead{Sight} The DC to see something depends on the obviousness of the sight, as shown on \trefnp{Sight-based DCs}, and other modifiers given at \trefnp{Awareness DC Modifiers}.
 
 The DC to notice an invisible creature with sight is 20 higher than normal. Noticing an invisible creature makes you aware of its presence, but doesn't let you see it perfectly.
 
@@ -791,11 +766,11 @@ The DC to notice an invisible creature with sight is 20 higher than normal. Noti
         Hidden trap, secret door, or mechanism & Craft or Devices check result \\
         Magic trap & 25 \add double level of spell used to create trap\fn{2} \\
     \end{tabularx}
-    1 Always add any appropriate modifiers from \tref{Perception DC Modifiers} \\
+    1 Always add any appropriate modifiers from \tref{Awareness DC Modifiers} \\
     2 Don't add size-based DC modifiers.
 \end{dtable}
 
-\parhead{Sound} The DC to hear a sound depends on the intensity of the sound, as shown on \trefnp{Sound-based DCs}, and other modifiers given at \trefnp{Perception DC Modifiers}.
+\parhead{Sound} The DC to hear a sound depends on the intensity of the sound, as shown on \trefnp{Sound-based DCs}, and other modifiers given at \trefnp{Awareness DC Modifiers}.
 
 Background noise can make it more difficult to notice sounds. If there is significant background noise of a similar intensity to the sound to be detected, the DC increases by 5. If there is significant background noise of a much greater intensity than the sound to be detected, the DC increases by 10.
 
@@ -809,13 +784,13 @@ Background noise can make it more difficult to notice sounds. If there is signif
         Creature standing still & 15 \\
         Creature trying to be quiet & Stealth check result\fn{2} \\ 
     \end{tabularx}
-    1 Always add any appropriate modifiers from \tref{Perception DC Modifiers} \\
+    1 Always add any appropriate modifiers from \tref{Awareness DC Modifiers} \\
     2 Don't add size-based DC modifiers.
 \end{dtable}
 
-\parhead{Scent} The DC to smell something depends on the intensity of the scent, as shown on \trefnp{Scent-based DCs}, and other modifiers given at \trefnp{Perception DC Modifiers}.
+\parhead{Scent} The DC to smell something depends on the intensity of the scent, as shown on \trefnp{Scent-based DCs}, and other modifiers given at \trefnp{Awareness DC Modifiers}.
 
-The DCs given are for a creature with an ordinary sense of smell, like a human. A creature with the scent ability, like most animals, gains a \plus10 bonus to scent-based Perception checks. Some creatures with extraordinary smelling abilities, such as dogs, gain a \plus20 bonus to scent-based Perception checks.
+The DCs given are for a creature with an ordinary sense of smell, like a human. A creature with the scent ability, like most animals, gains a \plus10 bonus to scent-based Awareness checks. Some creatures with extraordinary smelling abilities, such as dogs, gain a \plus20 bonus to scent-based Awareness checks.
 
 Smell intensity can vary widely depending on the circumstances. In general, an unusually strong smell, such as a creature wearing perfume, has a DC which is 5 lower. An unusually weak smell, such as a creature who has just taken an unscented bath, has a DC which is 5 higher.
 
@@ -829,16 +804,16 @@ Smells dissipate quickly with distance. Double the normal distance modifiers for
         Moderate scent (fresh food) & 5 \\
         Living creature & 10 \\
     \end{tabularx}
-    1 Always add any appropriate modifiers from \tref{Perception DC Modifiers} \\
+    1 Always add any appropriate modifiers from \tref{Awareness DC Modifiers} \\
 \end{dtable}
 
-\parhead{Other Senses} Other senses can exist, and creatures can make Perception checks to use those other senses appropriately.
+\parhead{Other Senses} Other senses can exist, and creatures can make Awareness checks to use those other senses appropriately.
 
 \subsubsection{Modifiers}
-All Perception checks share the same set of modifiers, in addition to certain modifiers which depend on the sense. These are noted on \trefnp{Perception DC Modifiers}.
+All Awareness checks share the same set of modifiers, in addition to certain modifiers which depend on the sense. These are noted on \trefnp{Awareness DC Modifiers}.
 
 \begin{dtable}
-    \lcaption{Perception DC Modifiers}
+    \lcaption{Awareness DC Modifiers}
     \begin{tabularx}{\columnwidth}{X l}
         \thead{Distance} & \thead{DC Modifier\fn{1}} \\
         Less than five feet away & \plus0 \\
@@ -865,7 +840,7 @@ All Perception checks share the same set of modifiers, in addition to certain mo
         Gargantuan & \minus12 \\
         Colossal & \minus16 \\
     \end{tabularx}
-    1 Doubled for scent-based Perception checks.
+    1 Doubled for scent-based Awareness checks.
 \end{dtable}
 
 \skill{Perform}{Cha}
@@ -894,7 +869,7 @@ You can use Persuasion to convince people to do or think what you want. Dependin
 
 Persuasion checks are usually made against a group. For the purposes of a Persuasion check, a ``group'' consists of creatures who consider themselves to be allies. For example, in a king's court, you cannot simply influence the king alone; his trusted advisors are also part of the same group. It is possible to influence one group without influencing another. For example, the king and his advisors may be unpersuaded, but the prince may find your arguments compelling. Groups can also consist of a single creature. The DM decides what the groups are.
 
-The base DC for a Persuasion check against a group is equal to 10 \add the highest level of any character in the group \add the highest Wisdom of any character in the group.
+The base DC for a Persuasion check against a group is equal to 10 \add the highest level of any character in the group \add the highest Awareness of any character in the group.
 
 \subsubsection{Compel Belief}
 You can make a Persuasion check to cause creatures to believe something you say. If you are lying, you must also make a Bluff check to lie. Success means the group believes what you are saying is true. What they choose to do with that information is up to them, however. Failure by less than 10 means they do not believe you, but they do not react poorly; perhaps they simply want more verification. You may be able to try again, depending on their patientce. Failure by 10 or more means the group reacts poorly, and you may have permanently damaged your credibility with them.
@@ -1063,34 +1038,34 @@ You can attempt Sleight of Hand checks untrained, but your check result can't ex
 \end{dtable}
 
 \subsubsection{Conceal Action}
-You can make a Sleight of Hand check to conceal an action you take, preventing observers from noticing that you took the action. You can conceal any physical action that only requires the use of your hands and arms. Your check is opposed by the Perception check of any observers. Success means your action is unnoticed. Failure means they are able to notice your action normally.
+You can make a Sleight of Hand check to conceal an action you take, preventing observers from noticing that you took the action. You can conceal any physical action that only requires the use of your hands and arms. Your check is opposed by the Awareness check of any observers. Success means your action is unnoticed. Failure means they are able to notice your action normally.
 
 The space required to perform the action is the size of the action, and applies a bonus or penalty as noted above. For example, winking only requires moving your eye, so you gain a \plus8 bonus to conceal the action. Firing a longbow requires manipulating an object as large as you are, so you take a \minus8 penalty to conceal the action.
 
-Observers that you touch as part of the action gain a \plus10 bonus to their Perception check. If you strike them hard, as with an attack, the bonus increases to a \plus20 bonus.
+Observers that you touch as part of the action gain a \plus10 bonus to their Awareness check. If you strike them hard, as with an attack, the bonus increases to a \plus20 bonus.
 
 If you successfully conceal a ranged attack, the attack is treated as if it were an attack from an invisible creature. The target may be unaware of the attack, making it helpless. If the target is hit, it can tell the direction the attack came from, but not that you made the attack.
 
 Nonhumanoid creatures without hands and arms may conceal actions using different parts of their body. Large movements can never be concealed with this ability; see the Stealth skill.
 
 \subsubsection{Conceal Object}
-You can make a Sleight of Hand check as a standard action to conceal an item on your person. The object must be at least two size categories smaller than you are. Your Sleight of Hand check is opposed by the Perception check of anyone observing you. Success means they fail to notice the item. A creature directly interacting you to search for the object, such as by frisking you, gains a \plus5 bonus to its Perception check.
+You can make a Sleight of Hand check as a standard action to conceal an item on your person. The object must be at least two size categories smaller than you are. Your Sleight of Hand check is opposed by the Awareness check of anyone observing you. Success means they fail to notice the item. A creature directly interacting you to search for the object, such as by frisking you, gains a \plus5 bonus to its Awareness check.
 
 \subsubsection{Pickpocket}
-You can make a Sleight of Hand check as a standard action to steal an object from another creature. The object must be loose and accessible, such as in a pocket. The DC depends on whether the creature notices your attempt using Perception. If the creature's Perception check exceeds your Sleight of Hand check, the creature notices your attempt and the DC is equal to the creature's Combat Maneuver Defense. Otherwise, the creature does not notice your attempt, and the DC is 20. Success means you successfully steal the object. Failure means you do not steal the object.
+You can make a Sleight of Hand check as a standard action to steal an object from another creature. The object must be loose and accessible, such as in a pocket. The DC depends on whether the creature notices your attempt using Awareness. If the creature's Awareness check exceeds your Sleight of Hand check, the creature notices your attempt and the DC is equal to the creature's Combat Maneuver Defense. Otherwise, the creature does not notice your attempt, and the DC is 20. Success means you successfully steal the object. Failure means you do not steal the object.
 
 \skill{Spellcraft}{Wis; Trained Only}
 Spellcraft represents your ability to notice and understand spells and magical effects.
 
 While sleeping, you take a \minus10 penalty to Spellcraft.
 
-\subsubsection{Passive and Active Attention}\label{Spellcraft:Passive and Active Attention}
-Like the Perception skill, Spellcraft allows you to automatically notice spells and magical effects in your environment, even when you're distracted or focusing on other tasks. At all times, you are considered to be ``taking 0'' on a Spellcraft check, allowing you to notice anything with a DC up to your Spellcraft modifier, including all applicable bonuses and penalties. You can only passively perform tasks which do not require a specific action to perform.
+\subsubsection{Passive and Active Attention}\label{Spellcraft-Passive and Active Attention}
+Like the Awareness skill, Spellcraft allows you to automatically notice spells and magical effects in your environment, even when you're distracted or focusing on other tasks. At all times, you are considered to be ``taking 0'' on a Spellcraft check, allowing you to notice anything with a DC up to your Spellcraft modifier, including all applicable bonuses and penalties. You can only passively perform tasks which do not require a specific action to perform.
 
 As a swift action, you can make a conscious effort to pay attention to spells and magical effects around you. This allows you to make Spellcraft checks to notice events, rather than simply using your modifier. This is mentally tiring to do over long periods of time: if (10 \add twice the number of hours you have spent being actively attentive) exceeds your Will defense, you become fatigued.
 
 \subsubsection{Notice Magic Auras}
-You can notice the presence of magic within 100 feet of you with a DC 10 Spellcraft check. Success means you notice that magic exists. Success by 5 or more means you know the number of magical auras, and the strength and direction to each aura. Success by 10 or more means you notice the location of each aura and their precise nature, including strength, school, subschool, and descriptors. Failure means you don't notice any magic.
+You can notice the presence of magic within 100 feet of you with a DC 10 Spellcraft check. Success means you notice that magic exists. Success by 5 or more means you know the number of magical auras, and the strength and direction to each aura. Success by 10 or more means you notice the location of each aura and their precise nature, including strength, school, and descriptors. Failure means you don't notice any magic.
 
 Aura strengths are described in \trefnp{Aura Strengths}. With practice, you can ignore auras that you are commonly surrounded by, such as magic items on you and your companions. In general, it takes a day of frequent exposure to become accustomed to an aura. Once you are accustomed to an aura, you can freely choose to notice or ignore it.
 
@@ -1127,14 +1102,14 @@ You can make a DC 20 Spellcraft check as a move action to learn information abou
 Stealth represents your ability to escape detection while moving or hiding. All Stealth checks are made as part of movement or other actions, so they require no special action to perform. If you have been noticed by a creature, you automatically fail all Stealth checks against that creature until you can escape its notice, such as by disappearing out of sight.
 
 \subsubsection{Blend In}
-You can make a Stealth check to blend in with a crowd. Your Stealth check is opposed by the Perception checks of anyone looking for you. Success means you remain unobserved. Failure means the person looking for you found you.
+You can make a Stealth check to blend in with a crowd. Your Stealth check is opposed by the Awareness checks of anyone looking for you. Success means you remain unobserved. Failure means the person looking for you found you.
 
-If you act differently from the crowd you are trying to blend in with, anyone observing you gets a \plus5 bonus to find you. You may need to make Perception or Sense Motive checks to figure out how to act, depending on the situation. If you are extremely dissimilar from the crowd, such as a naked person in church or a human among halflings, anyone observing you may gain a \plus10 or greater bonus to find you. 
+If you act differently from the crowd you are trying to blend in with, anyone observing you gets a \plus5 bonus to find you. You may need to make Awareness or Sense Motive checks to figure out how to act, depending on the situation. If you are extremely dissimilar from the crowd, such as a naked person in church or a human among halflings, anyone observing you may gain a \plus10 or greater bonus to find you. 
 
 \subsubsection{Hide}
-You can make a Stealth check to hide so people can't see you. Your Stealth check is opposed by the Perception checks of any observers. Success means that you can't be seen, heard, or detected in any way, effectively making you invisible. Failure means that the observer notices you. The more senses the observer notices you with, the more they learn about your location, as appropriate to the sense. 
+You can make a Stealth check to hide so people can't see you. Your Stealth check is opposed by the Awareness checks of any observers. Success means that you can't be seen, heard, or detected in any way, effectively making you invisible. Failure means that the observer notices you. The more senses the observer notices you with, the more they learn about your location, as appropriate to the sense. 
 
-If you do not have passive cover or concealment from a creature (see \pcref{Cover} and \pcref{Concealment}), your Stealth check is automatically treated as a 0 against sight-based Perception checks that creature makes, regardless of your modifiers. For this purpose, do not consider any cover that would be hidden as a result of a successful check.
+If you do not have passive cover or concealment from a creature (see \pcref{Cover} and \pcref{Concealment}), your Stealth check is automatically treated as a 0 against sight-based Awareness checks that creature makes, regardless of your modifiers. For this purpose, do not consider any cover that would be hidden as a result of a successful check.
 
 If you move at up to half your speed during your turn, you take a \minus5 penalty to Stealth checks. If you move at up to your full speed during your turn, you take a \minus10 penalty to Stealth checks. It's practically impossible (\minus20 penalty) to remain unobserved while attacking, sprinting, or charging.
 
@@ -1185,7 +1160,7 @@ You can also make a Survival check in place of a ranged attack to set a grapplin
 \skill{Swim}{Str; Armor Check Penalty}
 Swim represents your ability to swim. Swim checks are subject to double the normal armor check penalty and encumbrance penalty.
 
-\subsubsection{Swim}
+\subsubsection{Swimming}
 You can make a Swim check to move through water. The DC depends on the turbulence of the water, as shown on \trefnp{Swim DCs}. Success means you move forward by up to one-half your speed (as a full-round action) or at one-quarter your speed (as a move action). Success by 10 or more means you move twice as fast. Failure means you make no progress through the water. Failure by 10 or more means you make no progress and sink five feet underwater.
 
 \begin{dtable}
@@ -1204,3 +1179,38 @@ You can swim underwater just like you can above water. If you are underwater, ei
 
 \subsubsection{Swimming with a Swim Speed}
 A creature with a swim speed can move through water at its indicated speed without making Swim checks. It gains a \plus5 bonus on any Swim check to perform a special action or avoid a hazard. The creature can always take 10 on a Swim check, even if distracted or endangered when swimming.
+
+\skill{Tumble}
+Tumble represents your ability to roll and tumble. All Tumble checks are made as part of movement, so they require no special action to perform.
+
+\subsubsection{Tumbling}
+
+If you are trained in Tumble, you can tumble past opponents in combat to reduce your odds of being hit. You can tumble as part of normal movement. If you do, you move at half speed and make a Tumble check. You may use your check result in place of your Armor defense and Reflex defense against physical melee attacks by creatures that did not threaten you at the start of the round. If your Tumble check is at least 25, you can also move through spaces occupied by enemies.
+
+If you accept a \minus10 penalty, you can move at full speed while tumbling. If you accept a \minus20 penalty, you can tumble while sprinting or charging.
+
+\subsubsection{Agile Movement}
+You can make a DC 20 Balance check while charging to make a single turn of up to 90 degrees in the middle of the moveent. Failure indicates that you can't change direction, though you can continue your movement or stop. Failure by 10 or more indicates that you stop where you tried to change direction and fall prone.
+
+\subsubsection{Mitigate Fall}
+As you hit the ground after a fall, you can make an Tumble check to reduce falling damage. A DC 15 check allows you to treat a fall as if it were 10 feet shorter. For every 10 by which you beat that DC, you can reduce the falling damage by 10 additional feet.
+
+\subsubsection{Rapid Stand}
+You can make a DC 20 Tumble check to stand up as a swift action. Success means you regain your feet. Failure means you must spend a move action to stand up. You cannot attempt this check unless you can spend a move action to stand up.
+
+\subsubsection{Tumble Modifiers}
+Obstructed or otherwise treacherous surfaces, such as natural cavern floors or undergrowth, are tough to tumble through. The DC for any Tumble check in such a square (except checks to mitigate falling damage) is modified as indicated below.
+
+\begin{dtable}
+    \lcaption{Tumble Modifiers}
+    \begin{tabularx}{\columnwidth}{>{\lcol}X c}
+        \thead{Surface Is} & \thead{DC Modifier} \\
+        Lightly obstructed (scree, light rubble, shallow bog, light undergrowth)  & \plus2 \\
+        Lightly slippery (wet floor)  & \plus2 \\
+        Sloped or angled  & \plus2 \\
+        Slightly mobile (rope bridge) & \plus2 \\
+        Severely obstructed (dense rubble, dense undergrowth)  & \plus5 \\
+        Severely slippery (ice sheet, oiled floor)  & \plus5 \\
+        Very mobile (slack rope) & \plus5 \\
+    \end{tabularx}
+\end{dtable}
