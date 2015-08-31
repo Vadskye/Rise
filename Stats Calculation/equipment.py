@@ -26,6 +26,9 @@ class Weapon(object):
     def increase_size(self):
         self.set_size(util.increase_size(self.size))
 
+    def __str__(self):
+        return self.name
+
     @classmethod
     def from_weapon_name(cls, weapon_name):
         if weapon_name is None:
@@ -51,8 +54,8 @@ class Weapon(object):
                     'd8'),
                 'unarmed': cls('unarmed', ENCUMBRANCE_LIGHT, ATTACK_TYPE_MELEE,
                     [DAMAGE_PHYSICAL], 'd3'),
-                'wisdom drain': cls('wisdom drain', ENCUMBRANCE_LIGHT,
-                    ATTACK_TYPE_MELEE, ['wisdom'], 'd4', defense_type = 'touch'), 'none': None,
+                'perception drain': cls('perception drain', ENCUMBRANCE_LIGHT,
+                    ATTACK_TYPE_MELEE, ['perception'], 'd4', defense_type = 'touch'), 'none': None,
                 'swordfish': cls('swordfish', ENCUMBRANCE_MEDIUM,
                     ATTACK_TYPE_MELEE, [DAMAGE_PHYSICAL, DAMAGE_BLUDGEONING, 'fish'], 'd6'),
                 }[weapon_name]

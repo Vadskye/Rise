@@ -49,15 +49,11 @@ As a spellcaster's knowledge of magic grows, she can learn to cast spells in way
 
 The modifications made by these feats only apply to spells cast directly by the feat user. A spellcaster can't use a metamagic feat to alter spell-like abilities, spells cast from magic items, or other external sources of magic.
 
-Metamagic feats that eliminate components of a spell don't eliminate the attack of opportunity provoked by casting a spell while threatened. However, casting a spell modified by Quicken Spell does not provoke an attack of opportunity (see \pcref{Quicken Spell}).
-
 Not all metamagic feats cannot be used with all spells. See the specific feat descriptions for the spells that a particular feat can't modify.
 
 \parhead{Multiple Metamagic Feats on a Spell} A spellcaster can apply multiple metamagic feats to a single spell. Changes to its level are cumulative. You can't apply the same metamagic feat more than once to a single spell.
 
 \parhead{Magic Items and Metamagic Spells} With the right item creation feat, you can store a metamagic version of a spell in a scroll, potion, or wand. Level limits for potions and wands apply to the spell's higher spell level (after the application of the metamagic feat). A character doesn't need the metamagic feat to activate an item storing a metamagic version of a spell.
-
-\parhead{Counterspelling Metamagic Spells} Whether or not a spell has been enhanced by a metamagic feat does not affect its vulnerability to counterspelling or its ability to counterspell another spell.
 
 \subsection{Performance Feats}
 Performance feats allow a character to use the Perform skill to create magical effects. All Performance feats are also Skill feats.
@@ -66,7 +62,7 @@ Each performance has an effect when it is used. Some performances can also be su
 
 To be affected by a performance feat, a creature must be able to either see or hear the creature giving the performance, depending on whether the performance is visual or auditory. The Perform skill being used determines whether the performance is visual or auditory.
 
-You can use any combination of performance feats you possess a number of times per day equal to the number of performance feats you have \add half your Charisma. If you fail the Perform check, the use of the ability is wasted.
+You can use any combination of performance feats you possess a number of times per day equal to twice the number of performance feats you have. If you fail the Perform check, the use of the ability is wasted.
 
 \subsection{Racial Feats}\label{Racial Feats}
 Racial feats improve a character's racial abilities or grant new abilities unique to the character's race.
@@ -75,9 +71,9 @@ Racial feats improve a character's racial abilities or grant new abilities uniqu
 Skill feats always affect a character's ability to use skills. Rogues can gain skill feats with their skill trick class feature.
 
 \subsection{Spellgift Feats}
-Spellgift feats grant limited spell-like abilities. They may represent the fruits of eldritch pacts, unusual heritage, the exposure to powerful magic, or a particular expression of innate magical ability. You can use any combination of spell-like abilities gained from spellgift feats a number of times per day equal to the number of spellgift feats you possess. The number of spellgift feats you have cannot exceed your Charisma.
+Spellgift feats grant limited spell-like abilities. They may represent the fruits of eldritch pacts, unusual heritage, the exposure to powerful magic, or a particular expression of innate magical ability. You can use any combination of spell-like abilities gained from spellgift feats a number of times per day equal to the number of spellgift feats you possess. The number of spellgift feats you have cannot exceed your Willpower.
 
-If your Charisma is lowered below the number of spellgift feats you have, you are treated as not possessing the feats you do not qualify for, as normal for feat prerequisites. You lose access to the spellgift feats in order by when you acquired them, starting with the most recent feat.
+If your Willpower is lowered below the number of spellgift feats you have, you are treated as not possessing the feats you do not qualify for, as normal for feat prerequisites. You lose access to the spellgift feats in order by when you acquired them, starting with the most recent feat.
 
 %Design guidelines: effective CL = 1/2 HD, min ability score = effective CL-1
 %Uses/day: 3/day for single use abilities, normal duration for buffs (splitting
@@ -101,26 +97,20 @@ Most combat style feats have requirements. If a style requires specific equipmen
 \subsection{Strike Feats}\label{Strike Feats}
 Strike feats grant a character the ability to make unusual physical attacks, called strikes. Most strikes modify a single physical attack you would normally make, but some strikes completely change how you make physical attacks. You cannot make more than one strike each round.
 
-\onecolumn
 \section{Feat Table}
+\onecolumn
 
 {\small
 \taburowcolors [2] 2{tbrown .. white}
 \begin{longtabu}{>{\lcol}p{10em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{3em}}
     \thead{General Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
     \featref{Endurance} & Con 3 & Fight normally without hit points & \featpref{Endurance} \\
-    \featref{Deathless} & Con 5 or base Fortitude defense \plus10 & Immune to death effects & \featpref{Deathless} \\
-    \featref{Fearless} & Cha 5 or base Will defense \plus10 & Immune to fear and hostile morale effects & \featpref{Fearless} \\
-    \featref{Great Fortitude} & \x &  \plus2 bonus to Fortitude defense & \featpref{Great Fortitude} \\
+    \featref{Deathless} & Con 10 & Immune to death effects & \featpref{Deathless} \\
+    \featref{Fearless} & Wil 10 & Immune to fear effects & \featpref{Fearless} \\
+    \featref{Great Fortitude} & \x & \plus2 bonus to Fortitude defense & \featpref{Great Fortitude} \\
     \featref{Iron Will} & \x & \plus2 bonus to Will defense & \featpref{Iron Will} \\
-    \featref{Legendary Charisma} & 11th level, Cha 6 & \plus5 to Charisma for some purposes & \featpref{Legendary Charisma} \\
-    \featref{Legendary Constitution} & 11th level, Con 6 & \plus5 to Constitution for some purposes & \featpref{Legendary Constitution} \\
-    \featref{Legendary Dexterity} & 11th level, Dex 6 & \plus5 to Dexterity for some purposes & \featpref{Legendary Dexterity} \\
-    \featref{Legendary Intelligence} & 11th level, Int 6 & \plus5 to Intelligence for some purposes & \featpref{Legendary Intelligence} \\
-    \featref{Legendary Strength} & 11th level, Str 6 & \plus5 to Strength for some purposes & \featpref{Legendary Strength} \\
-    \featref{Legendary Wisdom} & 11th level, Wis 6 & \plus5 to Wisdom for some purposes & \featpref{Legendary Wisdom} \\
     \featref{Lightning Reflexes} & \x &  \plus2 bonus to Reflex defense & \featpref{Lightning Reflexes} \\
-    \featref{Mental Fortress} & Cha 9 or base Will defense \plus18 & Immune to hostile mind-affecting effects & \featpref{Mental Fortress} \\
+    \featref{Mental Fortress} & Wil 20 & Immune to hostile mind-affecting effects & \featpref{Mental Fortress} \\
     \featref{Perfect Health} & Con 3 or base Fortitude defense \plus6 & Immune to disease, later poison & \featpref{Perfect Health} \\
     \featref{Swift} & \x & Increase speed by 5 feet & \featpref{Swift} \\
     \featref{Toughness} & \x &  \plus3 hit points \plus1 per level above 3 & \featpref{Toughness} \\
@@ -167,11 +157,10 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
     \featref{Extra Wild Aspect} & Wild aspect ability & Can use wild aspects 3 more times per day & \featpref{Extra Wild Aspect} \\
     \featref{Fearless Rage} & Rage ability & Immune to fear while raging & \featpref{Fearless Rage} \\
     \featref{Intense Channeling} & Channel energy 3d6 & \plus1d6 damage or healing with channel energy & \featpref{Intense Channeling} \\
-    \featref{Intuitive Fighter} & Adaptive style ability & Use Wisdom for adaptive style (and battlemaster) & \featpref{Intuitive Fighter} \\
-    \featref{Mental Discipline} & Combat discipline ability & Use Charisma for combat discipline & \featpref{Mental Discipline} \\
+    \featref{Insightful Fighter} & Adaptive style ability & Use Perception for adaptive style (and battlemaster) & \featpref{Insightful Fighter} \\
+    \featref{Insightful Rogue} & Combat trick ability & Use Perception for combat tricks & \featpref{Insightful Rogue} \\
     \featref{Rapid Wild Aspect} & Wild aspect ability & Activate wild aspect as a swift action & \featpref{Rapid Wild Aspect} \\
     \featref{Resist Maneuver} & Fighter, base attack bonus \plus2 & \plus5 to resist chosen maneuver & \featpref{Resist Maneuver} \\
-    \featref{Savvy Rogue} & Combat trick ability & Use Charisma for combat tricks & \featpref{Savvy Rogue} \\
     \featref{Selective Channeling} & Channel energy ability & Can exclude two additional creatures & \featpref{Selective Channeling} \\
     \featref{Shield Discipline} & Armor discipline ability & Apply armor discipline with shields \\
     \featref{Spellwarped Ritualist} & Spellwarped & Gain to perform rituals using spellwarped powers \\
@@ -182,7 +171,7 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
     \thead{Item Creation Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
     \featref{Imbue Magic} & Caster level 2nd or Craft (any) 5 ranks & Create magic items & \featpref{Imbue Magic} \\
     \featref{Imbuement Admixture} & 2nd level spells, 6th & Combine multiple spells to create items & \featpref{Imbuement Admixture} \\
-    \featref{Versatile Crafter} & Craft (any) 8 ranks & Craft items from many subschools of magic & \featpref{Versatile Crafter} \\
+    \featref{Versatile Crafter} & Craft (any) 8 ranks & Craft items from many schools of magic & \featpref{Versatile Crafter} \\
 
     \midrule
     \thead{Magic Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
@@ -190,8 +179,10 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
     \featref{Bardic Spellpower} & Arcane spellcasting ability & Fighter and rogue levels improve some spells & \featpref{Bardic Spellpower} \\
     \featref{Battlecaster} & Proficiency with light armor & Reduce arcane spell failure by 10\% & \featpref{Battlecaster} \\
     \featref{Combat Casting} & \x &  \plus2 bonus to Concentration checks to cast spells, reroll 1/day & \featpref{Combat Casting} \\
+    \featref{Counterspell} & Spellcraft 8 ranks, 2nd level spells & Counter spells cast by foe & \featpref{Counterspell} \\
+    \tind\featref{Flexible Counterspell} & Counterspell & Use any spell to counterspell & \featpref{Flexible Counterspell} \\
+    \tind\featref{Mass Counterspell} & Spellcraft 13 ranks, 4th level spells, Counterspell & Counter spells cast by multiple foes & \featpref{Mass Counterspell} \\
     \featref{Craftcaster} & Craft (any) 8 ranks, 2nd level spells & Increase caster level when creating, transforming objects & \featpref{Craftcaster} \\
-    \featref{Improved Counterspell} & \x &  Counterspell with spell of same school & \featpref{Improved Counterspell} \\
     \featref{Legendary Magic} & 5th level spells & Weak creatures are always considered bloodied & \featpref{Legendary Magic} \\
     \featref{Magical Synthesis} & Levels in two magical classes & Increase spellcasting ability in two magical classes at once & \featpref{Magical Synthesis} \\
     \featref{Mass Transporter} & 5th level Conjuration (Translocation) spell & Transport many creatures at once & \featpref{Mass Transporter} \\
@@ -202,7 +193,6 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
     \featref{Residual Beguilement} & 3rd level Enchantment (Beguilement) spell & Gain Persuasion bonus after casting a spell & \featpref{Residual Beguilement} \\
     \featref{Residual Shield} & Abjuration (Shielding) spell & Gain benefits of spell briefly after casting on another creature & \featpref{Residual Shield} \\
     \featref{Resilient Magic} & 2nd level Abjuration (Negation) spell & Spells persist for 1 round after being dispelled & \featpref{Resilient Magic} \\
-    \featref{Retributive Counterspell} &  4th level spells & Countered spells rebound on original caster & \featpref{Retributive Counterspell} \\
     \featref{Ritual Caster} & Int 3 & Gain ability to perform rituals & \featpref{Ritual Caster} \\
     \featref{Spell Focus}\fn{1} & 2nd level spells &  \plus2 caster level with specific type of magic & \featpref{Spell Focus} \\
     \tind \featref{Spell Specialization} & 4th level spells, Spell Focus &  \plus2 caster level with specific type of magic, \minus2 penalty with other types. & \featpref{Spell Specialization} \\
@@ -312,7 +302,7 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
         \tind \featref{Armor Proficiency (Medium)} & Armor Proficiency (light) & No armor check penalty on physical attacks & Equipment & \featpref{Armor Proficiency (Medium)} \\
         \tind \tind \featref{Armor Proficiency (Heavy)} & Armor Proficiency (medium) & No armor check penalty on physical attacks & Equipment & \featpref{Armor Proficiency (Heavy)} \\
         \featref{Blind-Fight} & \x &  Reroll miss chance for concealment in melee & Awareness & \featpref{Blind-Fight} \\
-        \featref{Exotic Weapon Proficiency}\fn{1} & \x & Don't provoke when attacking with exotic weapons & Equipment & \featpref{Exotic Weapon Proficiency} \\
+        \featref{Exotic Weapon Proficiency}\fn{1} & \x & Gain ability to use exotic weapons & Equipment & \featpref{Exotic Weapon Proficiency} \\
         \featref{Far Shot} & \x & Increase range increment & Precision & \featpref{Far Shot} \\
         \featref{Improved Unarmed Strike} & \x &  Considered armed even when unarmed & \x & \featpref{Improved Unarmed Strike} \\
         \tind \featref{Deflect Arrows} & Dex 3, Improved Unarmed Strike & Deflect one ranged attacks with your bare hands & Finesse, Reaction & \featpref{Deflect Arrows} \\
@@ -330,12 +320,12 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
         \tind \featref{Tower Shield Proficiency} & Shield Proficiency & No armor check penalty on physical attacks & Equipment & \featpref{Tower Shield Proficiency} \\
         \featref{Two-Weapon Fighting} & Dex 3 & Gain \plus2 bonus when attacking with two weapons & Finesse & \featpref{Two-Weapon Fighting} \\
         \tind \featref{Two-Weapon Defense} & Two-Weapon Fighting & \plus1 bonus to physical defenses while using two weapons & Defense, Finesse & \featpref{Two-Weapon Defense} \\
-        \featref{Weapon Proficiency}\fn{1} & \x &  Don't provoke when attacking with weapon group & Equipment & \featpref{Weapon Proficiency} \\
+        \featref{Weapon Proficiency}\fn{1} & \x & Gain ability to use weapon group & Equipment & \featpref{Weapon Proficiency} \\
 
         \midrule
         \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
         \featref{Cleave} & Str 3, base attack bonus \plus2 & Extra melee attack after dropping target & Power & \featpref{Cleave} \\
-        \featref{Combat Mobility} & Dex 3, base attack bonus \plus2 & Avoid movement-based attacks of opportunity from foe & Defense, Mobility & \featpref{Combat Mobility} \\
+        \featref{Combat Mobility} & Dex 3, base attack bonus \plus2 & Ignore engagement from foe & Defense, Mobility & \featpref{Combat Mobility} \\
         \featref{Diehard} & Con 3, base attack bonus \plus2 & Halve penalties from critical damage & Defense & \featpref{Diehard} \\
         \featref{Gang Up} & Base attack bonus \plus2 & Increase overwhelm penalties foes suffer & \x & \featpref{Gang Up} \\
         \featref{Improved Dirty Trick} & Base attack bonus \plus2 & \plus2 bonus to dirty trick attacks; dirty tricks last longer & Finesse, Maneuver & \featpref{Improved Dirty Trick} \\
@@ -344,10 +334,9 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
         \featref{Improved Grapple} & Base attack bonus \plus2 & \plus2 bonus to grapple attacks; not vulnerable while grappling & Maneuver, Power & \featpref{Improved Grapple} \\
         \featref{Improved Overrun} & Base attack bonus \plus2 & \plus2 bonus to overrun attacks; target can't avoid & Maneuver, Power & \featpref{Improved Overrun} \\
         \featref{Improved Shove} & Base attack bonus \plus2 & \plus2 bonus to shove attacks; move target away from you & Maneuver, Power & \featpref{Improved Shove} \\
-        \featref{Improved Trip} & Base attack bonus \plus2 & \plus2 bonus to trip attacks; tripped foe provokes attacks of opportunity & Finesse, Maneuver & \featpref{Improved Trip} \\
-        \featref{Intuitive Reaction} & Wis 3, base attack bonus \plus2 & Add half Wisdom to number of attacks of opportunity each round & Reaction & \featpref{Intuitive Reaction} \\
+        \featref{Improved Trip} & Base attack bonus \plus2 & \plus2 bonus to trip attacks; free attack against tripped foe & Finesse, Maneuver & \featpref{Improved Trip} \\
         \featref{Knockdown} & Str 3, base attack bonus \plus2 & Shoved foe can be knocked prone & Maneuver, Power & \featpref{Knockdown} \\
-        \featref{Riposte} & Dex 3, base attack bonus \plus2, Parry & Foes provoke if you parry very well & Reaction & \featpref{Riposte} \\
+        \featref{Riposte} & Dex 3, base attack bonus \plus2, Parry & Foes are defenseless if you parry very well & Reaction & \featpref{Riposte} \\
         \featref{Tactical Analysis} & Int 3, Base attack bonus \plus2 & Identify foe's strengths and weaknesses & Awareness & \featpref{Tactical Analysis} \\
         \featref{Weapon Focus} & Base attack bonus \plus2 & Special ability with weapon group & Equipment & \featpref{Weapon Focus} \\
 
@@ -367,8 +356,8 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
         \featref{Legendary Awareness} & Base attack bonus \plus10, any three Awareness feats & Immune to being overwhelmed & Awareness & \featpref{Legendary Awareness} \\
         \featref{Legendary Defense} & Base attack bonus \plus10, any three Defense feats & \plus2 to all defenses & Defense & \featpref{Legendary Defense} \\
         \featref{Legendary Finesse} & Base attack bonus \plus10, any three Finesse feats & Roll maximum damage again & Finesse & \featpref{Legendary Finesse} \\
-        \featref{Legendary Maneuver Master} & Base attack bonus \plus10, any three Maneuver feats & Never provoke, deal damage with very successful maneuvers & Maneuver & \featpref{Legendary Maneuver Master} \\
-        \featref{Legendary Mobility} & Base attack bonus \plus10, any three Mobility feats & Movement does not provoke & Mobility& \featpref{Legendary Mobility} \\
+        \featref{Legendary Maneuver Master} & Base attack bonus \plus10, any three Maneuver feats & Deal damage with very successful maneuvers & Maneuver & \featpref{Legendary Maneuver Master} \\
+        \featref{Legendary Mobility} & Base attack bonus \plus10, any three Mobility feats & Blocking foes do not affect you & Mobility& \featpref{Legendary Mobility} \\
         \featref{Legendary Mounted Warrior} & Base attack bonus \plus10, any three Mounted feats & Share damage with mount & Mounted& \featpref{Legendary Mounted Warrior} \\
         \featref{Legendary Power} & Base attack bonus \plus10, any three Power feats & Wield weapons as if they were less encumbering & Power& \featpref{Legendary Power} \\
         \featref{Legendary Precision} & Base attack bonus \plus10, any three Precision feats & Very accurate hits deal maximum damage & Precision & \featpref{Legendary Precision} \\
@@ -398,7 +387,6 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
         \featref{Defensive Fighting} & Base attack bonus \plus2 & Trade attack bonus for defense & Defense, Style & \featpref{Defensive Fighting} \\
         \featref{Distracting Foe} & Base attack bonus \plus2 & Threatened foes suffer Concentration penalties & Style & \featpref{Distracting Foe} \\
         \featref{Guardian} & Base attack bonus \plus2 & Adjacent allies suffer reduced overwhelm penalties & Defense, Style & \featpref{Guardian} \\
-        \featref{Opportunist} & Dex 3, base attack bonus \plus2 & \plus2 to attack and damage on attacks of opportunity & Reaction, Style & \featpref{Opportunist} \\
         \featref{Overpowering Assault} & Str 3, base attack bonus \plus2 & Trade defense for maneuver bonus & Power, Style & \featpref{Overpowering Assault} \\
         \featref{Overwhelming Fire} & Base attack bonus \plus2 & Help overwhelm foes with ranged weapons & Reaction, Style & \featpref{Overwhelming Fire} \\
         \featref{Point Blank Shot} & Base attack bonus \plus2 &  \plus2 bonus to ranged attacks within half range increment. & Precision, Style & \featpref{Point Blank Shot} \\
@@ -408,10 +396,10 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
 
         \midrule
         \thead{Style Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
-        \featref{Feign Weakness} & Base attack bonus \plus6 & Provoke attack to gain bonus to hit & Style & \featpref{Feign Weakness} \\
+        \featref{Feign Weakness} & Base attack bonus \plus6 & Lower defenses to gain damage bonus & Style & \featpref{Feign Weakness} \\
         \featref{Heartseeker} & Base attack bonus \plus6 & Trade attack bonus to double critical threat range & Precision, Style & \featpref{Heartseeker} \\
-        \featref{Inescapable Bulwark} & Dex 3, Base attack bonus \plus6 & Withdrawing enemies cannot avoid provoking attacks of opportunity & Reaction, Style & \featpref{Inescapable Bulwark} \\
-        \featref{Intuitive Defense} & Wis 3, base attack bonus \plus6 & Add half Wisdom to defense in place of Dex & Awareness, Defense, Style & \featpref{Intuitive Defense} \\
+        \featref{Inescapable Bulwark} & Dex 3, Base attack bonus \plus6 & Enemies you are blocking cannot move & Reaction, Style & \featpref{Inescapable Bulwark} \\
+        \featref{Insightful Defense} & Wis 3, base attack bonus \plus6 & Add half Perception to defense & Awareness, Defense, Style & \featpref{Insightful Defense} \\
         \featref{Perfect Shot} & Dex 5, base attack bonus \plus6 & Ignore less than total cover/concealment on ranged attacks & Precision, Style & \featpref{Perfect Shot} \\
         \featref{Predictive Defense} & Int 3, base attack bonus \plus6 & Add half Int to defense in place of Dex & Awareness, Defense, Style & \featpref{Predictive Defense} \\
         \featref{Reckless Attack} & Base attack bonus \plus6 & Trade ability to defend yourself for damage bonus & Power, Style & \featpref{Reckless Attack} \\
@@ -425,7 +413,7 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
 
         \midrule
         \thead{Style Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
-        \featref{Counterstorm} & Base attack bonus \plus14 & Foes that miss you provoke & Reaction, Style& \featpref{Counterstorm} \\
+        \featref{Counterstorm} & Base attack bonus \plus14 & Gain bonuses against foes that miss & Reaction, Style& \featpref{Counterstorm} \\
     \end{longtabu}
 }%end of small text
 
@@ -475,16 +463,12 @@ Here is the format for feat descriptions.
 \featpre 16th level, Dex 7.
 \featben You may gain the benefits of the \spell{haste} spell for up to 5 rounds each day. Activating this ability is a swift action, and it lasts until you will it to stop (a free action) or until the duration expires.
 
-\feat{Analytical Performer}{Skill}
-\featpre Perform 4 ranks.
-\featben You can treat your Intelligence as your key attribute for the purpose of the Perform skill in place of your Charisma. This allows you to apply your Intelligence to Perform checks in place of your Charisma, and lets you spend Intelligence skill points to gain training in the Perform skill.
-
 \feat{Arcane Spellgift}{Spellgift}
 \featpre 2nd level, Cha 1.
-\featben You gain the ability to use a non-restricted arcane spell as a spell-like ability once per day. You choose which spell when you gain this feat, and that choice cannot thereafter be changed. Your caster level is equal to your level \add the number of spellgift feats you have, and you use your Charisma as your casting attribute.
+\featben You gain the ability to use a non-restricted arcane spell as a spell-like ability once per day. You choose which spell when you gain this feat, and that choice cannot thereafter be changed. Your caster level is equal to your level \add the number of spellgift feats you have, and you use your Willpower as your casting attribute.
 
-The spell's level must be no greater than half of your total levels in non-casting classes. In addition, its level cannot exceed your Charisma.
-\parhead{Special} You may take this feat multiple times. Each time, you choose a new spell to gain as a spell-like ability. You may use any combination of the spells a number of times per day equal to the number of spellgift feats you have. The number of spellgift feats you have cannot exceed your Charisma.
+The spell's level must be no greater than half of your total levels in non-casting classes. In addition, its level cannot exceed your Willpower.
+\parhead{Special} You may take this feat multiple times. Each time, you choose a new spell to gain as a spell-like ability. You may use any combination of the spells a number of times per day equal to the number of spellgift feats you have. The number of spellgift feats you have cannot exceed your Willpower.
 
 \feat{Armor Familiarity}{Combat}
 Choose one category of armor: light, medium, heavy, or shields.
@@ -523,7 +507,7 @@ Choose one category of armor: light, medium, heavy, or shields.
 
 \feat{Battletrance}{Class}
 \featpre Rage ability.
-\featben When you use your rage ability, you can enter a trance instead of getting angry. in place of the normal benefits and drawbacks from raging, you add your rage bonus to your Constitution, Wisdom, and Will defense. Any other abilities, such as channeled rages, function normally.
+\featben When you use your rage ability, you can enter a trance instead of getting angry. in place of the normal benefits and drawbacks from raging, you add your rage bonus to your Constitution, Perception, and Will defense. Any other abilities, such as channeled rages, function normally.
 
 \feat{Bewildering Strike}{Combat, Strike}
 \featpre Base attack bonus \plus6.
@@ -550,7 +534,7 @@ If you have four or more celestial bloodline feats, your damage reduction increa
 
 \feat{Celestial Smiting}{Bloodline, Celestial}
 \parhead{Prerequisites} Nonevil alignment, Celestial Heritage.
-\parhead{Benefit} Your smite attacks with your Celestial Heritage ability gain an attack bonus equal to the number of celestial bloodline feats you possess. In addition, you can use that ability a number of times per day equal to the number of celestial bloodline feats you have \add your Charisma.
+\parhead{Benefit} Your smite attacks with your Celestial Heritage ability gain an attack bonus equal to the number of celestial bloodline feats you possess. In addition, you can use that ability a number of times per day equal to the number of celestial bloodline feats you have \add your Willpower.
 
 \feat{Celestial Soul}{Bloodline, Celestial}
 \parhead{Prerequisites} Nonevil alignment, any three celestial feats.
@@ -566,14 +550,14 @@ If you have four or more celestial bloodline feats, your damage reduction increa
 
 If you are 6th level, you can use the wings to glide at a rate equal to your base land speed. While gliding, you move forward each round at a rate equal to your base land speed, and you descend at a rate of 10 feet per round.
 
-If you are 12th level, you gain a fly speed equal to your land speed with average maneuverability. See \pcref{Flying}, for more details. You can only fly for a number of rounds equal to 3 \add half your Charisma. After that limit is reached, you must rest for 5 minutes before flying again.
+If you are 12th level, you gain a fly speed equal to your land speed with average maneuverability. See \pcref{Flying}, for more details. You can only fly for a number of rounds equal to 3 \add half your Willpower. After that limit is reached, you must rest for 5 minutes before flying again.
 
-If you are 18th level, you can fly for a number of minutes equal to 3 \add half your Charisma before resting.
+If you are 18th level, you can fly for a number of minutes equal to 3 \add half your Willpower before resting.
 
 \feat{Chargebreaker}{Combat, Style}
 \parhead{Prerequisites} Base attack bonus \plus2.
 \parhead{Benefit} While in this style, you gain a \plus2 bonus to physical attack and damage against creatures that moved towards you during the current round. In exchange, you are \immobilized.
-\stylereq Wield a melee weapon. You must take a standard attack action each round.
+\stylereq Wield a melee weapon. You must take a full attack action each round.
 
 \feat{Cleave}{Combat, Power}
 \parhead{Prerequisites} Str 3, base attack bonus \plus2.
@@ -582,7 +566,7 @@ If you are 18th level, you can fly for a number of minutes equal to 3 \add half 
 \feat{Close-Quarters Fighting}{Combat, Style}
 \featpre Dex 3, base attack bonus \plus2.
 \featben You reduce your penalties for squeezing or attacking with non-light weapons in a grapple by 2. In exchange, you take a \minus2 penalty to physical defenses against creatures you don't threaten.
-\stylereq Wield a melee weapon. You must take a standard attack, charge, or total defense action each round.
+\stylereq Wield a melee weapon. You must take a full attack, charge, or total defense action each round.
 
 \feat{Combat Casting}{Magic}
 \parhead{Benefit} You gain a \plus2 bonus to Concentration checks made to cast a spell or use a spell-like ability. In addition, once per day you may reroll a Concentration check made to cast a spell.
@@ -607,17 +591,25 @@ Contingent actions depend on a trigger condition. If the trigger condition occur
 
 \feat{Combat Mobility}{Combat}
 \parhead{Prerequisites} Dex 3, base attack bonus \plus2.
-\parhead{Benefit} As a free action, you may choose a creature you can see. When you move, you do not provoke attacks of opportunity from that creature.
+\parhead{Benefit} At the start of each phase, you may choose a creature you can see. You ignore that creature when determining whether you are \engaged in combat.
 
 \feat{Covering Fire}{Combat, Style}
 \featpre Base attack bonus \plus2.
 \parhead{Benefit} While in this style, if you hit a creature with a physical ranged attack, it takes a \minus2 penalty to physical attacks for 1 round. In exchange, you take a \minus2 penalty to damage rolls with physical ranged attacks.
-\stylereq Wield a ranged weapon. You must take a standard attack action each round.
+\stylereq Wield a ranged weapon. You must take a full attack action each round.
+
+\feat{Counterspell}{Magic}
+\featpre 2nd level spells, Spellcraft 8 ranks.
+\featben As a standard action, you can attempt to counterspell a creature within \rngmed range of you. If that creature casts a spell during the same phase, you can make a Spellcraft check to identify the spell as normal (see \pcref{Spellcraft}).
+
+After attempting to identify the spell, you may cast any spell you know as a counterspell. That spell's normal effect does not occur. Instead, if you cast the same spell as your target, the target miscasts its spell. If you cast a different spell, but one from the same spell school and of the same spell level or higher, you and your target make opposed caster level checks. If you win, the target miscasts its spell. If you fail the caster level check, if your spell is of a different spell school, or if your spell is lower level, the target's spell takes effect normally.
+
+\parhead{Special} Metamagic feats and similar spell augmentations are ignored for the purpose of countering spells. The \spell{dispel magic} spell can be used to counter any spell, even higher level spells.
 
 \feat{Counterstorm}{Combat, Reaction, Style}
 \featpre Base attack bonus \plus14.
-\featben Whenever an opponent misses you with a melee attack, it provokes an attack of opportunity from you. In exchange, you cannot take attacks of opportunity for any other reason.
-\stylereq Wield a melee weapon. You must take a standard attack or charge action each round.
+\featben Whenever a foe misses you with a melee attack, you gain a cumulative \plus2 bonus to damage on your next physical melee attack against that creature. If this bonus is not used within 1 round, it is lost. In exchange, you cannot take the block action.
+\stylereq Wield a melee weapon. You must take a full attack or charge action each round.
 
 \feat{Craftcaster}{Magic}
 \featpres Craft (any) 8 ranks, ability to cast 2nd level spells.
@@ -626,7 +618,7 @@ Contingent actions depend on a trigger condition. If the trigger condition occur
 \feat{Deadly Aim}{Combat, Style}
 \parhead{Prerequisites} Dex 3, base attack bonus \plus2.
 \parhead{Benefit} While in this style, you gain a \plus2 bonus to physical ranged damage rolls. In exchange, you take a \minus2 penalty on physical ranged attacks.
-\stylereq Wield a ranged weapon. You must take a standard attack action each round.
+\stylereq Wield a ranged weapon. You must take a full attack action each round.
 
 \feat{Deathless}{General}
 \featpre Constitution 5 or base Fortitude defense \plus10.
@@ -639,7 +631,7 @@ Contingent actions depend on a trigger condition. If the trigger condition occur
 \feat{Defensive Fighting}{Combat, Style}
 \featpre Base attack bonus \plus2.
 \parhead{Benefit} While in this style, you gain a \plus2 bonus to your physical defenses. In exchange, you take a \minus2 penalty to physical attacks.
-\stylereq Wield a melee weapon. You must take a standard attack or total defense action each round.
+\stylereq Wield a melee weapon. You must take a full attack or total defense action each round.
 
 \feat{Deflect Arrows}{Combat, Finesse, Reaction}
 \parhead{Prerequisites} Dex 3, Improved Unarmed Strike.
@@ -662,14 +654,14 @@ Contingent actions depend on a trigger condition. If the trigger condition occur
 \feat{Distracting Foe}{Combat, Style}
 \parhead{Prerequisites} Base attack bonus \plus2.
 \parhead{Benefit} While in this style, foes you threaten take a \minus4 penalty to Concentration checks. In exchange, you take a \minus2 penalty to physical defenses against melee attacks.
-\stylereq Wield a melee weapon. You must take a standard attack or charge action each round.
+\stylereq Wield a melee weapon. You must take a full attack or charge action each round.
 
 \feat{Divine Spellgift}{Spellgift}
 \featpre 2nd level, Cha 1.
-\featben You gain the ability to use a divine spell as a spell-like ability once per day. You choose which spell when you gain this feat, and that choice cannot thereafter be changed. Your caster level is equal to your level \add the number of spellgift feats you have, and you use your Charisma as your casting attribute.
+\featben You gain the ability to use a divine spell as a spell-like ability once per day. You choose which spell when you gain this feat, and that choice cannot thereafter be changed. Your caster level is equal to your level \add the number of spellgift feats you have, and you use your Willpower as your casting attribute.
 
-The spell's level must be no greater than half of your total levels in non-casting classes. In addition, its level cannot exceed your Charisma.
-\parhead{Special} You may take this feat multiple times. Each time, you choose a new spell to gain as a spell-like ability. You may use any combination of the spells a number of times per day equal to the number of spellgift feats you have. The number of spellgift feats you have cannot exceed your Charisma.
+The spell's level must be no greater than half of your total levels in non-casting classes. In addition, its level cannot exceed your Willpower.
+\parhead{Special} You may take this feat multiple times. Each time, you choose a new spell to gain as a spell-like ability. You may use any combination of the spells a number of times per day equal to the number of spellgift feats you have. The number of spellgift feats you have cannot exceed your Willpower.
 
 \feat{Domain Devotion}{Class}
 Choose a cleric domain.
@@ -708,7 +700,7 @@ When you use your breath weapon, you make a Reflex attack to deal damage to ever
 
 \feat{Draconic Mind}{Bloodline, Dragon}
 \featpre Any three dragon bloodline feats.
-\featben Choose a mental attribute: Intelligence, Wisdom, or Charisma. You gain a \plus1 bonus to that attribute.
+\featben Choose a mental attribute: Intelligence, Perception, or Willpower. You gain a \plus1 bonus to that attribute.
 
 \feat{Draconic Scales}{Bloodline, Dragon}
 \parhead{Prerequisite} Draconic Heritage.
@@ -747,7 +739,7 @@ If you are 18th level, you can fly for a number of minutes equal to 3 \add half 
 
 \feat{Driving Assault}{Combat, Maneuver, Power}
 \featpre Str 5, base attack bonus \plus6.
-\featben When you make a shove attack, if you succeed, your opponent provokes an attack of opportunity from you.
+\featben When you successfully shove a foe, you get a free melee attack against it. This attack is made as the creature is being shoved, so you can make the attack even if you are shoving it beyond your reach.
 
 \feat{Dwarven Resilience}{Racial}
 \parhead{Prerequisite} Dwarf.
@@ -783,7 +775,6 @@ If you are 18th level, you can fly for a number of minutes equal to 3 \add half 
 In addition, wearing medium armor does not make you encumbered. This allows you to sleep in medium armor without penalty, and affects any class features which only function while you are unencumbered.
 
 \parhead{Normal} A character without this feat who has no hit points remaining is staggered. In addition, a character without this feat who sleeps in medium or heavier armor is automatically fatigued the next day.
-\parhead{Special} A barbarian automatically gains Endurance as a bonus feat at 2nd level. He need not select it.
 
 \feat{Energetic Substitution}{Metamagic}
 \parhead{Prerequisite} Ability to cast 2nd level spells.
@@ -791,7 +782,7 @@ In addition, wearing medium armor does not make you encumbered. This allows you 
 
 \feat{Executioner}{Combat, Reaction}
 \parhead{Prerequisites} Base attack bonus \plus14, any three Reaction feats.
-\parhead{Benefit} Whenever a foe you threaten becomes staggered by dropping to 0 hit points, it provokes an attack of opportunity from you.
+\parhead{Benefit} At the end of every round, you can make a free physical melee attack against all creatures you threaten that have no hit points remaining.
 
 \feat{Extend Spell}{Metamagic}
 \parhead{Prerequisite} Ability to cast 2nd level spells.
@@ -809,7 +800,6 @@ You understand how to use exotic weapons in combat.
 \feat{Extra Channeling}{Class}
 \parhead{Prerequisite} Ability to channel energy.
 \parhead{Benefit} You can channel energy three more times per day.
-\parhead{Normal} Without this feat, a character can channel energy a number of times per day equal to 3 \add half his or her Charisma.
 
 \feat{Extra Invocation}{Class}
 \parhead{Prerequisite} Ability to use an arcane invocation.
@@ -840,20 +830,24 @@ You understand how to use exotic weapons in combat.
 
 A fascinated creature is sits quietly and observes your performance, taking no other actions, for as long as you play. While fascinated, it takes a \minus4 penalty on checks made as reactions, such as Perception checks and initiative checks. If the creature notices any obvious threat, such as someone aiming a ranged weapon at it, drawing a weapon, or casting a spell, it is no longer fascinated. A fascinated creature's ally may shake it free of the spell as a standard action.
 
-You can use any combination of performance feats you possess a number of times per day equal to the number of performance feats you have \add half your Charisma. If you fail the Perform check, the use of the ability is wasted. This is an enchantment (compulsion), mind-affecting ability.
+You can use any combination of performance feats you possess a number of times per day equal to twice the number of performance feats you have. If you fail the Perform check, the use of the ability is wasted. This is an enchantment (compulsion), mind-affecting ability.
 
 \feat{Fearless}{General}
-\featpre Charisma 5 or base Will defense \plus10.
-\featben You are immune to fear effects and hostile morale effects.
+\featpre Willpower 10 or base Will defense \plus10.
+\featben You are immune to fear effects.
 
 \feat{Fearless Rage}{Class}
 \featpre Rage ability.
-\featben You are immune to fear effects and hostile morale effects while raging.
+\featben You are immune to fear effects while raging.
 
 \feat{Feign Weakness}{Combat, Style}
 \featpre Base attack bonus \plus6.
-\featben While in this style, as part of a standard attack, you may provoke an attack of opportunity from one opponent threatening you. You gain a \plus3 bonus to physical defenses against this attack. Unless the creature hits you on the attack of opportunity, you gain a \plus3 bonus to your next attack against it, provided the attack is made within 1 round. At base attack bonus \plus6, and every 4 base attack bonus thereafter, these bonuses increase by 1.
-\stylereq Wield a melee weapon. You must take a standard attack action each round.
+\featben While in this style, during the movement phase, you may choose to be \defenseless against one opponent threatening you. If the creature attacks you that round, you gain a \plus3 bonus to damage on your next physical attack against it. If you do not strike the creature within 1 round, the bonus is lost.
+\stylereq Wield a melee weapon. You must take a full attack action each round.
+
+\feat{Flexible Counterspell}{Magic}
+\featpre Spellcraft 8 ranks, Counterspell.
+\parhead{Benefit} When counterspelling, you may attempt to counter spells of any school, regardless of which spell you cast.
 
 \feat{Focused Mind}{Racial}
 \parhead{Prerequisite} Elf.
@@ -881,7 +875,7 @@ You can use any combination of performance feats you possess a number of times p
 \feat{Guardian}{Combat, Defense, Style}
 \featpre Base attack bonus \plus2.
 \featben Allies adjacent to you reduce their overwhelm penalties by 2. In exchange, you take a \minus2 penalty to physical defenses against melee attacks. If this effect reduces an ally's overwhelm penalty to 0, the ally is not considered to be overwhelmed.
-\stylereq Wield a melee weapon. You must take a standard attack or total defense action each round.
+\stylereq Wield a melee weapon. You must take a full attack or total defense action each round.
 
 \feat{Healing Surge}{Surge}
 \featpre 8th level, Con 3.
@@ -890,7 +884,7 @@ You can use any combination of performance feats you possess a number of times p
 \feat{Heartseeker}{Combat, Style}
 \parhead{Prerequisite} Base attack bonus \plus6.
 \parhead{Benefit} While in this style, you double your critical threat range with any weapon you wield. In exchange, you take a \minus4 penalty to all physical attacks which are not critical threats or threat confirmations. This does not stack with any other effects which increase threat range.
-\stylereq Wield a weapon. You must take a standard attack or charge action each round.
+\stylereq Wield a weapon. You must take a full attack or charge action each round.
 
 \feat{Hurricane Strike}{Combat, Strike}
 \featpres Dex 7, Whirlwind Strike, base attack bonus \plus14.
@@ -898,9 +892,9 @@ You can use any combination of performance feats you possess a number of times p
 
 \feat{Imbue Magic}{Item Creation}
 \parhead{Prerequisite} Caster level 2nd or Craft (any) 6 ranks.
-\parhead{Benefit} You can imbue items with magic using your spells or crafting ability. Imbuing an item with magic takes time and material components, as described in the magic item rules found in Rise Advanced.
+\parhead{Benefit} You can imbue items with magic using your spells or crafting ability. Imbuing an item with magic takes time and material components, as described in \pcref{Magic Item Creation}.
 
-When you take this feat, you choose one subschool of magic for every 5 ranks that you have in each Craft skill. You can craft items from those subschools. If you later gain additional Craft ranks, you gain new subschools appropriately.
+When you take this feat, you choose one school of magic for every 5 ranks that you have in each Craft skill. You can craft items from those schools. If you later gain additional Craft ranks, you gain new schools appropriately.
 
 You can also mend a broken magic item if it is one that you could make. Doing so costs a tenth of the raw materials and a quarter of the time it would take to craft that item in the first place. You cannot mend a destroyed magic item.
 
@@ -921,10 +915,6 @@ Only spells which affect a single target and have a casting time no shorter than
 \feat{Improved Shove}{Combat, Maneuver}
 \parhead{Prerequisites} Base attack bonus \plus2.
 \parhead{Benefit} When you shove a creature, you can move it outside of your reach. You also gain a \plus2 bonus to shove attacks.
-
-\feat{Improved Counterspell}{Magic}
-\parhead{Benefit} When counterspelling, you may use any spell of the same school with a spell level at least as high as the target spell.
-\parhead{Normal} Without this feat, you may counter a spell only with the same spell or with a spell specifically designated as countering the target spell.
 
 \feat{Improved Dirty Trick}{Combat, Maneuver}
 \parhead{Prerequisites} Base attack bonus \plus2.
@@ -956,10 +946,10 @@ An improved imbued spellstrike spell uses up a spell slot two levels higher than
 
 \feat{Improved Trip}{Combat, Maneuver}
 \parhead{Prerequisites} Base attack bonus \plus2.
-\parhead{Benefit} When you successfully trip a foe, it immediately provokes an attack of opportunity from everyone threatening it, including you. These attacks are made as the creature is being tripped, so it does not have penalties for being prone. You also gain a \plus2 bonus to trip attacks.
+\parhead{Benefit} When you successfully trip a foe, you get a free melee attack against it. This attack is made as the creature is being tripped, so it does not have penalties for being prone. You also gain a \plus2 bonus to trip attacks.
 
 \feat{Improved Unarmed Strike}{Combat}
-\parhead{Benefit} You treat your unarmed strike as if it were a lethal weapon. This allows you to defend yourself and takes attacks of opportunity while unarmed, just as if you were using another melee weapon.
+\parhead{Benefit} You treat your unarmed strike as if it were a lethal weapon. This allows you to defend yourself while unarmed, just as if you were using another melee weapon.
 
 In addition, your unarmed strikes can deal lethal or nonlethal damage as you choose.
 \parhead{Normal} Attacking unarmed is difficult. See \pcref{Unarmed Combat}.
@@ -967,26 +957,38 @@ In addition, your unarmed strikes can deal lethal or nonlethal damage as you cho
 
 \feat{Inescapable Bulwark}{Combat, Style}
 \featpre Base attack bonus \plus6.
-\featben While in this style, foes that take a withdraw action to move away from you still provoke attacks of opportunity from you. In exchange, you take a \minus4 penalty to physical defenses against attacks of opportunity you provoke by moving.
-\stylereq Wield a melee weapon. You must take a standard attack or charge action each round.
+\featben While in this style, enemies you threaten when you take the block action are \immobilized during that phase. This can interrupt their movement during the same phase. In exchange, you take a \minus4 penalty to physical defenses against ranged attacks.
+\stylereq Wield a melee weapon. You must take a full attack or charge action each round.
+
+\feat{Insightful Defense}{Combat, Defense, Style}
+\featpre Per 3, two attacks per round.
+\featben You can use your Perception to determine your physical defenses (Armor, Maneuver, and Reflex) instead of your Dexterity or Constitution.
+
+\feat{Insightful Fighter}{Class}
+\featpre Adaptive style ability.
+\featben You can use Perception in place of Intelligence for your adaptive style feat pool. You can also use Perception in place of Intelligence for the battlemaster ability, if you have that ability.
+
+\feat{Insightful Rogue}{Class}
+\featpre Combat trick ability.
+\featben You can use Perception in place of Intelligence for combat tricks that depend on Intelligence, and for your special attack bonus with combat tricks.
 
 \feat{Inspire Competence}{Performance, Skill}
 \featpre Perform 4 ranks.
 \featben As a standard action, you can make a DC 8 Perform check to inspire competence in allies within \rngmed range of you. You can affect one creature per two Perform ranks you have. You cannot affect yourself with this performance. An affected creature gains a \plus2 enhancement bonus to skill checks made with a particular skill. This bonus increases by 1 at 8 Perform ranks and every 6 Perform ranks thereafter. You can sustain the performance as a swift action.
 
-You can use any combination of performance feats you possess a number of times per day equal to the number of performance feats you have \add half your Charisma. If you fail the Perform check, the use of the ability is wasted. This is a mind-affecting ability.
+You can use any combination of performance feats you possess a number of times per day equal to twice the number of performance feats you have. If you fail the Perform check, the use of the ability is wasted. This is a mind-affecting ability.
 
 \feat{Inspire Courage}{Performance, Skill}
 \featpre Perform 6 ranks.
 \featben As a standard action, you can make a DC 12 Perform check to inspire courage in allies within \rngmed range of you, including yourself. You can affect one creature per two Perform ranks you have. An affected creatures gains a \plus2 enhancement bonus to physical attacks and defenses against fear. This bonus increases by 1 at 8 Perform ranks and every 6 Perform ranks thereafter. You can sustain the performance as a swift action.
 
-You can use any combination of performance feats you possess a number of times per day equal to the number of performance feats you have \add half your Charisma. If you fail the Perform check, the use of the ability is wasted. This is a mind-affecting ability.
+You can use any combination of performance feats you possess a number of times per day equal to twice the number of performance feats you have. If you fail the Perform check, the use of the ability is wasted. This is a mind-affecting ability.
 
 \feat{Inspire Greatness}{Performance, Skill}
 \featpre Perform 12 ranks.
 \featben As a standard action, you can make a DC 24 Perform check to inspire greatness in allies within \rngmed range of you, including yourself. You can affect one creature per two Perform ranks you have. The affected creatures gain a \plus4 enhancement bonus to defenses. This bonus increases to \plus5 at 20 Perform ranks.
 
-You can use any combination of performance feats you possess a number of times per day equal to the number of performance feats you have \add half your Charisma. If you fail the Perform check, the use of the ability is wasted. This is a mind-affecting ability.
+You can use any combination of performance feats you possess a number of times per day equal to twice the number of performance feats you have. If you fail the Perform check, the use of the ability is wasted. This is a mind-affecting ability.
 
 \feat{Inspire Heroics}{Performance, Skill}
 \featpre Perform 18 ranks.
@@ -996,7 +998,7 @@ You can use any combination of performance feats you possess a number of times p
 \featpre Perform 8 ranks.
 \featben As a standard action, you can make a DC 16 Perform check to inspire spellpower in allies within \rngmed range of you, including yourself. You can affect one creature per two Perform ranks you have. All affected creatures gain a \plus3 enhancement bonus to their caster level with spells and spell-like abilities. This bonus increases by 1 at 14 Perform ranks and every 6 Perform ranks thereafter. You can sustain the performance as a swift action.
 
-You can use any combination of performance feats you possess a number of times per day equal to the number of performance feats you have \add half your Charisma. If you fail the Perform check, the use of the ability is wasted.
+You can use any combination of performance feats you possess a number of times per day equal to twice the number of performance feats you have. If you fail the Perform check, the use of the ability is wasted.
 
 \feat{Intense Channeling}{Class}
 \parhead{Prerequisite} Channel energy 3d6.
@@ -1005,20 +1007,6 @@ You can use any combination of performance feats you possess a number of times p
 \feat{Intimidating Strike}{Combat, Strike}
 \featpres Base attack bonus \plus6, Intimidate 8 ranks.
 \featben When you make a physical attack, you may take a penalty to hit of \minus4 or greater. If you deal damage and the struck creature is within \rngmed range, you may make an Intimidate check as an immediate action to demoralize it (see \pcref{Demoralize}). You gain a bonus to your Intimidate check equal to the penalty you took to hit. You cannot make more than one strike each round.
-
-\feat{Intuitive Defense}{Combat, Defense, Style}
-\featpre Wis 3, base attack bonus \plus6.
-\featben While in this style, can add half your Wisdom to your Armor and Maneuver defenses in place of your Dexterity. You also apply your full Wisdom to your Reflex defense instead of your Dexterity. Effects which penalize Dexterity, such as wearing medium or heavy armor, do not reduce this bonus.
-\stylereq Wield a melee weapon. You must take a standard attack, charge, or total defense action each round.
-
-\feat{Intuitive Fighter}{Class}
-\featpre Adaptive style ability.
-\featben You can use Wisdom in place of Intelligence for your adaptive style feat pool. You can also use Wisdom in place of Intelligence for the battlemaster ability, if you have that ability.
-
-\feat{Intuitive Reaction}{Combat, Reaction}
-\featpres Wisdom 3, base attack bonus \plus2.
-\featben You may add half your Wisdom to the number of attacks of opportunity you may make each round.
-\parhead{Normal} Without this feat, you may make a number of attacks of opportunity each round equal to 1 \add half your Dexterity.
 
 \feat{Iron Will}{General}
 \parhead{Benefit} You gain a \plus2 bonus to your Will defense.
@@ -1043,10 +1031,6 @@ You can use any combination of performance feats you possess a number of times p
 \feat{Legendary Balance}{Skill}
 \featpre Acrobatics 13 ranks.
 \featben You can balance on surfaces that cannot support your weight. The DC is 30 for liquids such as water, 40 for dense gases and raw energy, and 50 for ordinary air. While balancing in this way, you must take a move action each round to continue moving; you cannot remain in the same place in consecutive rounds, or you will fall. The DC increases by 2 for each consecutive round that you spend balancing in this way. You gain a \plus4 bonus on this check per size category smaller than Medium, or a \minus4 penalty per size category larger than Medium.
-
-\feat{Legendary Charisma}{General}
-\featpre 11th level, Charisma 6.
-\featben You gain a \plus5 bonus to Charisma-based checks.
 
 \feat{Legendary Climber}{Skill}
 \featpre Climb 13 ranks.
@@ -1151,11 +1135,11 @@ You can use this ability three times per day.
 
 \feat{Legendary Maneuver Master}{Combat}
 \featpre Base attack bonus \plus10, any three Maneuver feats.
-\featben You never provoke an attack of opportunity for failing a combat maneuver. In addition, if you succeed at a combat maneuver attack by 10 or more, you deal normal damage with the weapon used to perform the maneuver in addition to gaining the successful effects of the maneuver. If the maneuver was performed without a weapon, you deal damage equivalent to an unarmed attack.
+\featben If you succeed at a combat maneuver attack by 10 or more, you deal normal damage with the weapon used to perform the maneuver in addition to gaining the successful effects of the maneuver. If the maneuver was performed without a weapon, you deal damage equivalent to an unarmed attack.
 
 \feat{Legendary Mobility}{Combat, Mobility}
 \featpre Base attack bonus \plus10, any three Mobility feats.
-\featben You do not provoke attacks of opportunity when you move.
+\featben You are never considered \engaged in combat.
 
 \feat{Legendary Mounted Warrior}{Combat, Mounted}
 \featpre Base attack bonus \plus10, any three Mounted feats, Ride 10 ranks.
@@ -1246,11 +1230,7 @@ When swimming, if your check result is 30 or higher, you do not suffer any penal
 
 \feat{Legendary Tumbler}{Skill}
 \featpre Acrobatics 13 ranks.
-\featben When tumbling, if your check result is 30 or higher, you gain two benefits. First, you do not provoke attacks of opportunity for that movement. Second, you can tumble through areas occupied by enemies as if they were unoccupied.
-
-\feat{Legendary Wisdom}{General}
-\featpre 11th level, Wisdom 6.
-\featben You gain a \plus5 bonus to Wisdom-based checks. In addition, once per day you can receive a prophetic insight into future events, as the \spell{divination} ritual.
+\featben When tumbling, if your check result is 30 or higher, you can move through squares occupied by foes or threatened by blocking foes without penalty.
 
 \feat{Lightning Reflexes}{General}
 \parhead{Benefit} You gain a \plus2 bonus to your Reflex defense.
@@ -1263,19 +1243,18 @@ Choose two magical classes you possess.
 \feat{Manyshot}{Combat, Style}
 \parhead{Prerequisites} Dex 5, base attack bonus \plus10.
 \parhead{Benefit} While in this style, when you attack with a light thrown weapon or projectile weapon, you may attack with two projectiles or weapons at once. If the attack hits, you roll damage twice and take the higher of the two roll, as with two-weapon fighting (see \pcref{Two-Weapon Fighting}). Taking advantage of this style requires having multiple weapons in hand or loading two projectiles at once, which may be difficult if you reload slowly.
-\stylereq Wield a ranged weapon. You must take a standard attack action each round.
+\stylereq Wield a ranged weapon. You must take a full attack action each round.
+
+\feat{Mass Counterspell}{Magic}
+\featpre Spellcraft 13 ranks, 4th level spells, Counterspell.
+\featben When you use the Counterspell feat, you may counter up to five creatures within \rngmed range of you. You may still cast only one spell, but it is used to counter the spells cast by all of your targets.
 
 \feat{Mass Transporter}{Magic}
 \featpre Ability to cast a Conjuration (Translocation) spell of at least 5th level.
 \featben When casting Conjuration (Translocation) spells and rituals which affect multiple creatures, you can affect a number of creatures equal to your caster level.
 
-\feat{Mental Discipline}{Class}
-\featpre Combat discipline class feature.
-\featben You may use your Charisma in place of your Constitution to determine the number of times per day you can use your combat discipline ability.
-\parhead{Normal} You may use your combat discipline class feature a number of times per day equal to 3 \add his Constitution.
-
 \feat{Mental Fortress}{General}
-\featpre Charisma 9 or base Will defense \plus18.
+\featpre Willpower 18 or base Will defense \plus18.
 \featben You become immune to hostile mind-affecting effects.
 
 \feat{Mighty Summons}{Magic}
@@ -1304,10 +1283,10 @@ Choose two magical classes you possess.
 
 \feat{Natural Spellgift}{Spellgift}
 \featpre 2nd level, Cha 1.
-\featben You gain the ability to use a natural spell as a spell-like ability once per day. You choose which spell when you gain this feat, and that choice cannot thereafter be changed. Your caster level is equal to your level \add the number of spellgift feats you have, and you use your Charisma as your casting attribute.
+\featben You gain the ability to use a natural spell as a spell-like ability once per day. You choose which spell when you gain this feat, and that choice cannot thereafter be changed. Your caster level is equal to your level \add the number of spellgift feats you have, and you use your Willpower as your casting attribute.
 
-The spell's level must be no greater than half of your total levels in non-casting classes. In addition, its level cannot exceed your Charisma.
-\parhead{Special} You may take this feat multiple times. Each time, you choose a new spell to gain as a spell-like ability. You may use any combination of the spells a number of times per day equal to the number of spellgift feats you have. The number of spellgift feats you have cannot exceed your Charisma.
+The spell's level must be no greater than half of your total levels in non-casting classes. In addition, its level cannot exceed your Willpower.
+\parhead{Special} You may take this feat multiple times. Each time, you choose a new spell to gain as a spell-like ability. You may use any combination of the spells a number of times per day equal to the number of spellgift feats you have. The number of spellgift feats you have cannot exceed your Willpower.
 
 \feat{Nauseating Strike}{Combat, Strike}
 \featpre Base attack bonus \plus10.
@@ -1316,27 +1295,22 @@ The spell's level must be no greater than half of your total levels in non-casti
 \feat{Open Minded}{Skill}
 \parhead{Benefit} You gain two skill points. You may spend these skill points immediately.
 
-\feat{Opportunist}{Combat, Reaction, Style}
-\parhead{Prerequisite} Dex 3, base attack bonus \plus2.
-\parhead{Benefit} While in this style, you gain a \plus2 bonus to attack and damage on attacks of opportunity. In exchange, you take a \minus2 penalty to physical attacks that are not attacks of opportunity.
-\stylereq Wield a melee weapon. You must take a standard attack or charge action each round.
-
 \feat{Overpowering Assault}{Combat, Style}
 \featpres Str 3, base attack bonus \plus2.
 \parhead{Benefit} While in this style, you gain a \plus2 bonus to maneuver attacks. In exchange, you take a \minus2 penalty to physical defenses.
-\stylereq Wield a melee weapon. You must take a standard attack or charge action each round.
+\stylereq Wield a melee weapon. You must take a full attack or charge action each round.
 
 \feat{Overwhelming Fire}{Combat, Reaction, Style}
 \featpre Base attack bonus \plus2.
 \parhead{Benefit} While in this style, you contribute to overwhelm penalties against all creatures within a single range increment of you. You do not contribute to overwhelm penalties against creatures with cover from you. In exchange, you take a \minus2 penalty to your physical defenses.
-\stylereq Wield a ranged weapon. You must take a standard attack action each round.
+\stylereq Wield a ranged weapon. You must take a full attack action each round.
 
 \feat{Parry}{Combat, Defense, Reaction, Style}
 \featpre Dexterity 3.
 \featben While in this style, whenever you are attacked and you are aware of the attack, you may make an attack roll to attempt to parry the attack. You may treat the result of your attack roll as your physical defense against that attack if it would be higher. You can normally make one parry attempt each round. If your base attack bonus is high enough to grant you multiple attacks, you may also make multiple parry attempts. Each parry attempt after the first takes a cumulative \minus5 penalty, just like your attack rolls do.
 
 In exchange, you take a \minus4 penalty to all physical attacks not made to parry.
-\stylereq Wield a melee weapon. You must take a standard attack, charge, or total defense action each round.
+\stylereq Wield a melee weapon. You must take a full attack, charge, or total defense action each round.
 
 \feat{Penetrating Strike}{Combat, Strike}
 \featpre Base attack bonus \plus10.
@@ -1348,8 +1322,8 @@ In exchange, you take a \minus4 penalty to all physical attacks not made to parr
 
 \feat{Perfect Shot}{Combat, Style}
 \parhead{Prerequisites} Dex 5, Precise Shot, base attack bonus \plus6.
-\parhead{Benefit} While in this style, your ranged attacks ignore cover and concealment, except total cover and total concealment. In addition, when you shoot or throw ranged weapons at a grappling opponent, you automatically strike at the opponent you have chosen. In exchange, you must spend a full-round action to make a standard attack.
-\stylereq Wield a ranged weapon. You must take a standard attack action each round.
+\parhead{Benefit} While in this style, your ranged attacks ignore cover and concealment, except total cover and total concealment. In addition, when you shoot or throw ranged weapons at a grappling opponent, you automatically strike at the opponent you have chosen. In exchange, you must spend a full-round action to make a full attack.
+\stylereq Wield a ranged weapon. You must take a full attack action each round.
 
 \feat{Pierce Wings}{Combat, Strike}
 \featpre Base attack bonus \plus6.
@@ -1362,7 +1336,7 @@ In exchange, you take a \minus4 penalty to all physical attacks not made to parr
 \feat{Point Blank Shot}{Combat, Style}
 \featpre Base attack bonus \plus2.
 \parhead{Benefit} While in this style, you gain a \plus2 bonus to physical attack rolls with ranged weapons when attacking targets within half of your range increment. In exchange, you are unable to attack targets beyond your range increment.
-\stylereq Wield a ranged weapon. You must take a standard attack action each round.
+\stylereq Wield a ranged weapon. You must take a full attack action each round.
 
 \feat{Poison Expert}{Skill}
 \featpre Intelligence 3, Craft (poison) 8 ranks.
@@ -1371,17 +1345,17 @@ In exchange, you take a \minus4 penalty to all physical attacks not made to parr
 \feat{Power Attack}{Combat, Style}
 \featpres Str 3, base attack bonus \plus2.
 \parhead{Benefit} While in this style, you gain a \plus2 bonus to physical melee damage rolls. In exchange, you take a \minus2 penalty to physical melee attacks. The bonus damage and penalty do not apply to maneuvers or touch attacks.
-\stylereq Wield a melee weapon and use Strength to attack. You must take a standard attack or charge action each round.
+\stylereq Wield a melee weapon and use Strength to attack. You must take a full attack or charge action each round.
 
 \feat{Precise Shot}{Combat, Style}
 \featpre Base attack bonus \plus2.
-\parhead{Benefit} While in this style, you can ignore a number of creatures equal to your Wisdom (minimum 1) when determining whether targets have active cover from you when making ranged attacks. In exchange, you must spend a full-round action to make a standard attack.
-\stylereq Wield a ranged weapon. You must take a standard attack action each round.
+\parhead{Benefit} While in this style, you can ignore a number of creatures equal to your Perception (minimum 1) when determining whether targets have active cover from you when making ranged attacks. In exchange, you must spend a full-round action to make a full attack.
+\stylereq Wield a ranged weapon. You must take a full attack action each round.
 
 \feat{Predictive Defense}{Combat, Defense, Style}
 \featpre Intelligence 3, base attack bonus \plus6.
 \featben While in this style, you can add half your Intelligence to your physical defenses in place of your Dexterity. Effects which penalize Dexterity, such as wearing medium or heavy armor, do not reduce this bonus.
-\stylereq Wield a melee weapon. You must take a standard attack, charge, or total defense action each round.
+\stylereq Wield a melee weapon. You must take a full attack, charge, or total defense action each round.
 
 \feat{Quick Draw}{Combat}
 \parhead{Benefit} You can draw light weapons as a free action and medium weapons as a swift action. You can draw heavy weapons and hidden weapons of any type (see the Sleight of Hand skill) as a move action.
@@ -1392,7 +1366,7 @@ If you have three or more Reaction feats, you can draw light and medium weapons 
 
 \feat{Quicken Spell}{Metamagic}\label{Quicken Spell}
 \parhead{Prerequisite} Ability to cast 3rd level spells.
-\parhead{Benefit} Casting a quickened spell is a swift action. You can perform another action, even casting another spell, in the same round as you cast a quickened spell. However, casting a quickened spell is mentally exhausting. In the turn after you cast it, you lose your standard action. You may cast only one quickened spell per round. A spell whose casting time is more than 1 standard action cannot be quickened. A quickened spell uses up a spell slot two levels higher than the spell's actual level. Casting a quickened spell doesn't provoke an attack of opportunity.
+\parhead{Benefit} Casting a quickened spell is a swift action. You can perform another action, even casting another spell, in the same round as you cast a quickened spell. However, casting a quickened spell is mentally exhausting. In the turn after you cast it, you lose your standard action. You may cast only one quickened spell per round. A spell whose casting time is more than 1 standard action cannot be quickened. A quickened spell uses up a spell slot two levels higher than the spell's actual level.
 \parhead{Special} All spellcasters cast a quickened spell as a swift action, even if they would normally increase the casting time of spells with metamagic applied. This is an exception to the general rule that applying metamagic increases the casting time of a spell.
 
 \feat{Racial Acclimation}{Racial}\label{Racial Acclimation}
@@ -1424,8 +1398,8 @@ If you have three or more Reaction feats, you can draw light and medium weapons 
 
 \feat{Reckless Attack}{Combat, Power, Style}
 \featpre Base attack bonus \plus6.
-\featben While in this style, you are unable to defend yourself normally, causing you to provoke attacks of opportunity each time you attack. In exchange, you gain a \plus3 bonus to physical damage with melee attacks.
-\stylereq Wield a melee weapon. You must take a standard attack or charge action each round.
+\featben While in this style, you are \defenseless. In exchange, you gain a \plus3 bonus to physical damage with melee attacks.
+\stylereq Wield a melee weapon. You must take a full attack or charge action each round.
 
 \feat{Recover Performance}{Performance, Skill}
 \featpre Perform 8 ranks, any other Performance feat.
@@ -1462,23 +1436,19 @@ If you have three or more Reaction feats, you can draw light and medium weapons 
 \feat{Reveal the Weak Point}{Combat, Style}
 \featpre Base attack bonus \plus2.
 \parhead{Benefit} While in this style, any creature you deal damage to with a physical attack takes a \minus2 penalty to physical defenses for 1 round. In exchange, you take a \minus2 penalty to physical attacks and damage.
-\stylereq Wield a weapon. You must take a standard attack or charge action each round.
+\stylereq Wield a weapon. You must take a full attack or charge action each round.
 
 \feat{Ride-By Attack}{Combat}
 \featpre Ride 8 ranks.
-\parhead{Benefit} When you are mounted and use the charge action, you may move and attack as if with a standard charge and then move again (continuing the straight line of the charge). You do not need to attack from the closest possible space when making a ride-by attack. Your total movement for the round can't exceed the distance you could normally move on a mounted charge. You and your mount do not provoke an attack of opportunity from the opponent that you attack.
+\parhead{Benefit} When you are mounted and use the charge action, you may move and attack as if with a standard charge and then move again (continuing the straight line of the charge). You do not need to attack from the closest possible space when making a ride-by attack. Your total movement for the round can't exceed the distance you could normally move on a mounted charge.
 
 \feat{Riposte}{Combat, Reaction}
 \featpre Dexterity 3, base attack bonus \plus2, Parry.
-\featben When you successfully parry an attack from a foe you threaten, if your parry attempt exceeds your opponent's attack roll by 5 or more, your foe provokes an attack of opportunity from you.
+\featben When you successfully parry an attack from a foe you threaten, if your parry attempt exceeds your opponent's attack roll by 10 or more, your foe is \defenseless against you for 1 round.
 
 \feat{Ritual Caster}{Magic}
 \featpre Intelligence 3.
 \featben You can learn and perform rituals as if you were an arcane caster with a caster level equal to your character level. The maximum level of ritual that you can learn or perform is equal to half your character level or your Intelligence, whichever is lower.
-
-\feat{Savvy Rogue}{Class}
-\featpre Combat trick ability.
-\featben You can use Charisma in place of Intelligence for combat tricks that depend on Intelligence, and for your special attack bonus with combat tricks.
 
 \feat{Scale the Beast}{Skill}
 \featpre Climb 8 ranks.
@@ -1487,7 +1457,7 @@ If you have three or more Reaction feats, you can draw light and medium weapons 
 \feat{Selective Channeling}{Class}
 \parhead{Prerequisites} Ability to channel energy.
 \parhead{Benefit} You can exclude up to two additional creatures from the effect when you channel energy.
-\parhead{Normal} Without this feat, you can exclude a number of creatures from the effect equal to 1 \add half your Wisdom.
+\parhead{Normal} Without this feat, you can exclude a number of creatures from the effect equal to 1 \add half your Perception.
 
 \feat{Shape Spell}{Metamagic}
 \parhead{Prerequisite} Ability to cast 3rd level spells.
@@ -1571,7 +1541,7 @@ In addition, you gain a special ability based on which type of spellwarped you a
 
 \feat{Spring Attack}{Combat}
 \parhead{Prerequisites} Dex 3, Mobility, base attack bonus \plus6.
-\parhead{Benefit} As a full-round action, you can move up to your speed and make your standard attack. You must move at least 5 feet after each attack you make before you can make another attack. You can only use this style while \unencumbered.
+\parhead{Benefit} As a full-round action, you can move up to your speed and make your full attack. You must move at least 5 feet after each attack you make before you can make another attack. You can only use this style while \unencumbered.
 
 \feat{Still Spell}{Metamagic}
 \parhead{Prerequisite} Ability to cast 2nd level spells.
@@ -1585,7 +1555,7 @@ In addition, you gain a special ability based on which type of spellwarped you a
 \featpre Perform 10 ranks, Fascinating Performance.
 \featben As a swift action, you can make a DC 20 Perform check to suggest an action to a single creature you are currently fascinating with the Fascinating Performance feat. This functions as the \spell{suggestion} spell, with an attack bonus equal to your Perform modifier. You can affect an additional creature at 12 Perform ranks and every 2 Perform ranks thereafter.
 
-You can use any combination of performance feats you possess a number of times per day equal to the number of performance feats you have \add half your Charisma. If you fail the Perform check, the use of the ability is wasted.
+You can use any combination of performance feats you possess a number of times per day equal to twice the number of performance feats you have. If you fail the Perform check, the use of the ability is wasted.
 
 \feat{Surge of Speed}{Surge}
 \featpre 8th level, Dex 3.
@@ -1608,8 +1578,8 @@ You can use any combination of performance feats you possess a number of times p
 
 \feat{Threatening Fire}{Combat, Reaction, Style}
 \featpre Overwhelming Fire, base attack bonus \plus6.
-\featben While in this style, you threaten creatures within your natural reach, allowing you to take attacks of opportunity and contribute to overwhelm penalties. (A Medium creature would threaten adjacent creatures). This does not remove any other penalties for fighting at close range, such as the danger of provoking attacks of opportunity. In exchange, you cannot make ranged attacks against creatures beyond half of your range increment.
-\stylereq Wield a ranged weapon. You must take a standard attack action each round.
+\featben While in this style, you threaten creatures within your natural reach as if you were wielding a melee weapon, allowing you to contribute to overwhelm penalties and take the block action. (A Medium creature would threaten adjacent creatures). This does not remove any other penalties for fighting at close range, such as the danger of being \defenseless. In exchange, you cannot make ranged attacks against creatures beyond half of your range increment.
+\stylereq Wield a ranged weapon. You must take a full attack action each round.
 
 \feat{Trapfinder}{Skill}
 \featpre Perception 5 ranks.
@@ -1695,8 +1665,8 @@ You can fight with a weapon in each hand more effectively.
 
 \feat{Versatile Crafter}{Item Creation}
 \parhead{Prerequisite} Craft (any) 10 ranks.
-\parhead{Benefit} You learn how to make items from one subschool for every two ranks you have in each Craft skill. See the Craft skill description for details.
-\parhead{Normal} You learn how to make items from one subschool for every five ranks you have in each Craft skill.
+\parhead{Benefit} You learn how to make items from any school of magic, including universal spells. See the Craft skill, \pref{Craft}, for details.
+\parhead{Normal} You learn how to make items from one school for every five ranks you have in each Craft skill.
 
 \feat{Veteran's Experience}{Skill}
 \featpre Base attack bonus \plus6.
@@ -1704,7 +1674,7 @@ You can fight with a weapon in each hand more effectively.
 
 \feat{Wall Slam}{Combat, Maneuver, Power}
 \featpre Str 5, base attack bonus \plus6.
-\featben If you shove an opponent into a wall or other solid object, he takes d6 damage \add half your Strength and provokes attacks of opportunity from all threatening creatures, including you.
+\featben If you shove an opponent into a wall or other solid object, it takes d6 damage \add half your Strength.
 
 \feat{Wardwalker}{Magic}
 \featpre Ability to cast an Abjuration (Warding) spell of at least 3rd level.
@@ -1721,13 +1691,13 @@ Choose one weapon group.
     \item Blades, light: If you draw a light blade and attack with it in the same round, you gain a \plus2 bonus to attack. The creature you attack is unaffected by this ability for the rest of the encounter.
     \item Blunt weapons: When you deal damage to a creature, it takes a \minus2 penalty to Will defense for 1 round. This penalty is not cumulative with itself.
     \item Bows: You can ignore cover (but not total cover) provided by creatures and objects that are at least ten feet away from both you and your target.
-    \item Crossbows: The time required for you to reload crossbows is reduced to a free action (for a hand or light crossbow) or a move action (for a heavy crossbow). Reloading a heavy crossbow still provokes an attack of opportunity, but reloading hand and light crossbows does not.
+    \item Crossbows: The time required for you to reload crossbows is reduced to a free action (for a hand or light crossbow) or a move action (for a heavy crossbow).
     \item Flexible weapons: You gain a \plus2 bonus to physical attacks against creatures using a shield.
     \item Headed weapons: You gain a \plus2 bonus to physical attacks against creatures wearing medium or heavy armor.
     \item Monk weapons: You gain a \plus2 bonus to maneuver attacks.
     \item Polearms: You can switch grips to short haft or stop short hafting a polearm as a swift action, and you take no penalty while short hafting it.
-    \item Spears: If a creature charges you, it provokes an attack of opportunity from you when it enters your threatened area.
-    \item Thrown weapons: You can defend yourself with a thrown weapon as you throw it, which can prevent you from taking attacks of opportunity for throwing weapons in melee (see \pcref{Thrown Weapons in Melee}).
+    \item Spears: If a creature charges you, you gain a \plus5 attack bonus against it until the end of the round.
+    \item Thrown weapons: You can defend yourself with a thrown weapon as you throw it, preventing you from being \defenseless (see \pcref{Thrown Weapons in Melee}).
 \end{itemize}
 \parhead{Special} You cannot choose simple weapons when you take this feat.
 
