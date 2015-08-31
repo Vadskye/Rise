@@ -60,7 +60,7 @@ barbarian:
   name: Barbarian
   race: human
   class: barbarian
-  armor: light
+  armor: medium
   bab: good
   fortitude: good
   reflex: average

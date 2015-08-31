@@ -333,6 +333,7 @@ class Creature(object):
         self.add_modifier('physical_attacks', 'size', lambda c: c.size_modifier, update_static = True)
         self.add_modifier('physical_damage', 'attribute_or_progression', lambda c: c.base_attack_bonus / 2, update_static = True)
         self.add_modifier('physical_damage', 'attribute_or_progression', lambda c: c.strength / 2, update_static = True)
+        self.add_modifier('physical_damage', 'heavy', lambda c: 1 if c.primary_weapon.encumbrance == 'heavy' else 0, update_static = True)
 
         self.add_modifier('spell_attack_bonus', 'attribute_or_progression', lambda c: c.caster_level, update_static = True)
         self.add_modifier('spell_attack_bonus', 'attribute_or_progression', lambda c: c.casting_attribute, update_static = True)
@@ -536,7 +537,7 @@ class Creature(object):
 
     @property
     def current_hit_points(self):
-        return self.hit_points - self.damage
+        return max(0, self.hit_points - self.damage)
 
     def reset_combat(self):
         self.damage = 0
@@ -1212,3 +1213,15 @@ class CreatureGroup(object):
 
     def average_damage_dealt_per_round(self):
         return [creature.average_damage_dealt_per_round() for creature in self.creatures]
+
+    @property
+    def total_current_hit_points(self):
+        return sum([creature.current_hit_points for creature in self.creatures])
+
+    @property
+    def total_hit_points(self):
+        return sum([creature.hit_points for creature in self.creatures])
+
+    @property
+    def total_hit_point_pct(self):
+        return round(float(self.total_current_hit_points) / self.total_hit_points, 2)
