@@ -180,7 +180,7 @@ At his 6th barbarian level, and every three barbarian levels thereafter, the bar
 
 \subcf{Willful Rage} The barbarian adds his rage bonus to his Will defense.
 
-\subcf{6th -- Destructive Rage} When attacking objects, the barbarian ignores an amount of hardness equal to his barbarian level.
+\subcf{6th -- Destructive Rage} When attacking, the barbarian ignores an amount of hardness equal to his barbarian level.
 
 \subcf{6th -- Stylish Rage} The barbarian can initiate or change combat styles as part of the swift action he uses to sustain his rage.
 
@@ -439,25 +439,26 @@ At his 19th cleric level, the cleric gains an additional domain mastery from one
 \ssecfake{Cleric Domain Abilities}
 
 \subsubsection{Lesser Domain Aspects}\label{Lesser Domain Aspects}
+If a lesser domain aspect involves an attack, the attack bonus is equal to the cleric's level or the cleric's Willpower, whichever is higher.
 
-\subcf{Air} The cleric adds Athletics to his cleric class skill list. In addition, he gains a bonus equal to half his cleric level on Athletics checks made to jump.
-\subcf{Chaos} Any lawful creature the cleric touches is \bewildered for 5 rounds.
-\subcf{Death} The cleric adds half his cleric level to the maximum amount of critical damage he can take without dying.
-\subcf{Destruction} The cleric can ignore half of the hardness of any object or creature he damages, whether with spells or weapons.
+\subcf{Air} The cleric adds Jump to his cleric class skill list. In addition, he gains a bonus equal to half his cleric level on Jump checks.
+\subcf{Chaos} As a standard action, the cleric can attack the Will of a creature within \rngclose range. If the attack succeeds, and creature is lawful, it is \disoriented for 5 rounds. If the creature is chaotic, the cleric loses one devotion point. \norepeatnotes
+\subcf{Death} As a standard action, the cleric can attack the Fortitude of a creature within \rngclose range. If the attack succeeds, and the creature has no hit points remaining, it immediately dies. This is a death effect.
+\subcf{Destruction} When attacking, the cleric ignores an amount of hardness equal to his cleric level.
 \subcf{Earth} The cleric gains Endurance as a bonus feat.
-\subcf{Evil} Any good creature the cleric touches is \sickened for 5 rounds.
-\subcf{Fire} The cleric gains fire and cold damage reduction equal to twice his cleric level. This damage reduction allows him to ignore the first points of fire or cold damage he would take each round.
-\subcf{Good} Any evil creature the cleric touches is \shaken for 5 rounds.
+\subcf{Evil} As a standard action, the cleric can attack the Will of a creature within \rngclose range. If the attack succeeds, and the creature is good, it is \staggered for 5 rounds. If the creature is evil, the cleric loses one devotion point. \norepeatnotes
+\subcf{Fire} The cleric gains damage reduction against fire and cold damage equal to twice his cleric level. This damage reduction allows him to ignore the first points of fire or cold damage he would take each round.
+\subcf{Good} As a standard action, the cleric can attack the Will of a creature within \rngclose range. If the attack succeeds, and the creature is evil, it is \dazed for 5 rounds. If the creature is good, the cleric loses one devotion point. \norepeatnotes
 \subcf{Knowledge} The cleric adds all Knowledge skills to his cleric class skill list.
-\subcf{Law} Any chaotic creature the cleric touches is \vulnerable for 5 rounds.
+\subcf{Law} As a standard action, the cleric can attack the Will of a creature within \rngclose range. If the attack succeeds, and the creature is chaotic, it is \staggered for 5 rounds. If the creature is lawful, the cleric loses one devotion point. \norepeatnotes
 \subcf{Magic} The cleric gains an additional spell slot at his highest level of spells.
 \subcf{Protection} The cleric gains his choice of Covering Fire or Guardian as a bonus feat.
-\subcf{Strength} The cleric adds Athletics, Climb, and Swim to his cleric class skill list.
-\subcf{Travel} The cleric adds Knowledge (geography) and Survival to his cleric class skill list.
-\subcf{Trickery} The cleric adds Bluff and Disguise to his cleric class skill list.
+\subcf{Strength} The cleric adds Athletics, Climb, Sprint, and Swim to his cleric class skill list.
+\subcf{Travel} The cleric adds Knowledge (geography), Sprint, and Survival to his cleric class skill list.
+\subcf{Trickery} The cleric adds Bluff, Disguise, and Stealth to his cleric class skill list.
 \subcf{Vitality} The cleric gains a bonus equal to half his cleric level on Heal checks.
 \subcf{War} The cleric gains Weapon Focus with his deity's favored weapon group as a bonus feat. If he does not have a deity, he gains it in a weapon group related to his alignment or ideals.
-\subcf{Water} The cleric adds Swim to his cleric class skill list and halves the penalties he takes for fighting underwater.
+\subcf{Water} The cleric adds Swim to his cleric class skill list, gains a bonus equal to half his cleric level on Swim checks, and halves the penalties he takes for fighting underwater.
 \subcf{Wild} The cleric adds Creature Handling, Knowledge (nature), and Survival to his cleric class skill list.
 
 \subsubsection{Channeled Domain Powers}\label{Channeled Domain Powers}
@@ -484,18 +485,18 @@ At his 19th cleric level, the cleric gains an additional domain mastery from one
 \subsubsection{Domain Aspects}\label{Domain Aspects}
 
 \subcf{Air -- Glide} The cleric gains a glide speed equal to his land speed. See \pcref{Gliding}, for more details.
-\subcf{Chaos -- Uncertain Fate} Whenever the cleric would take 10, he instead rolls 2d20 and uses whichever roll he prefers.
-\subcf{Death -- Lifedrinker} Whenever the cleric kills a creature with a death effect other than \spell{death knell}, he automatically gains the benefits of a \spell{death knell} spell as if it was cast on the creature he killed.
-\subcf{Destruction -- }
-\subcf{Earth -- Anchored} The cleric gains a \plus4 bonus to maneuver defense against overrun, shove, and trip attempts while standing on solid ground.
-\subcf{Evil -- Unholy Aura} Good creaures are \sickened as long as they are adjacent to the cleric.
+\subcf{Chaos -- Chaotic Retribution} Whenever a lawful creature within 30 feet of you attacks you, make an attack against its Will. Success means it takes 1d6 damage per cleric level.
+\subcf{Death -- Lifedrinker} Whenever the cleric kills a creature with a death effect, he gains temporary hit points equal to his cleric level for a number of rounds equal to the creature's level.
+\subcf{Destruction -- Beacon of Destruction} All creatures within a \areamed emanation of the cleric have their damage reduction and hardness (if any) reduced by an amount equal to half the cleric's level.
+\subcf{Earth -- Anchored} The cleric gains a \plus4 bonus to Maneuver defense while standing on solid ground.
+\subcf{Evil -- Unholy Retribution} Whenever a good creature within 30 feet of you attacks you, make an attack against its Will. Success means it takes 1d6 damage per cleric level.
 \subcf{Fire -- Friendly Fire} All of the cleric's fire spells and abilities deal only half damage to his allies.
-\subcf{Good -- Purifying Aura} Evil creatures are \shaken as long as they are adjacent to the cleric.
+\subcf{Good -- Holy Retribution} Whenever an evil creature within 30 feet of you attacks you, make an attack against its Will. Success means it takes 1d6 damage per cleric level.
 \subcf{Knowledge -- Knowledge Mastery} The cleric may choose a number of Knowledge skills equal to his Intelligence (minimum 1). He may take 10 with those skills if he is not in danger or rushed.
-\subcf{Law -- Certain Triumph} Whenever the cleric would take 10, he may instead take 12, treating any roll lower than a 12 as if it had been a 12.
+\subcf{Law -- Certain Retribution} Whenever an chaotic creature within 30 feet of you attacks you, make an attack against its Will. Success means it takes 1d6 damage per cleric level.
 \subcf{Magic -- Magic Feat} The cleric gains a bonus magic feat or metamagic feat.
-\subcf{Protection -- Faithful Shield} The cleric may maintain concentration on Abjuration (Shielding) effects as a swift action.
-\subcf{Strength -- Legendary Strength} The cleric gains Legendary Strength as a bonus feat, even if he does not meet the prerequisites.
+\subcf{Protection -- Faithful Shield} The cleric may maintain concentration on Shielding spells as a swift action.
+\subcf{Strength -- Strength of Will} The cleric may use his Strength to determine his spellpower instead of his Willpower.
 \subcf{Travel -- Rapid Traveller} The cleric gains a \plus10 foot bonus to his base land speed.
 \subcf{Trickery -- Legendary Liar} The cleric gains Legendary Liar as a bonus feat, even if he does not meet the prerequisites.
 \subcf{Vitality -- }
