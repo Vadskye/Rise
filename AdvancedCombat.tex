@@ -1,0 +1,350 @@
+\chapter{Advanced Combat}
+
+\section{Attacks}
+
+\subsection{Multiple Attacks}\label{Multiple Attacks}
+If your base attack bonus is \plus6 or higher, you can make multiple attacks as part of a full attack.This progression is shown on \trefnp{Attacks per Round}.
+\begin{dtable}
+    \lcaption{Attacks per Round}
+    \begin{tabularx}{\columnwidth}{*{3}{>{\lcol}X}}
+        \thead{Base Attack Bonus} & \thead{Attacks per Round} \\
+        1-5     & 1 \\
+        6-10    & 2 \\
+        11-15   & 3 \\
+        16-20   & 4 \\
+        21\plus & 5 \\
+    \end{tabularx}
+\end{dtable}
+
+Some special abilities, such as the \spell{haste} spell, also grant you the ability to make multiple attacks. In all cases, making multiple attacks requires using a standard action to make a full attack. Additionally, any penalties imposed by taking multiple attacks do not affect any other attacks you make.
+
+\subsection{Special Attacks}
+
+\subsubsection{Feint}\label{Feint}
+Instead of striking to deal damage, you can feint to leave your foe off-balance. You make an attack with a melee weapon as normal, except that you target the creature's Reflex defense instead of its Armor defense. Success means you deal no damage, but you gain a \plus5 bonus to physical attacks against the creature for 1 round.
+
+\subsubsection{Touch Attacks}\label{Touch Attacks}
+Instead of striking to deal damage, you can try to just touch your opponent. \meh{This is usually done to channel spells that require touching a creature.} Touch attacks target Reflex defense instead of Armor defense.
+
+\subsection{Combat Maneuvers}\label{Combat Maneuvers}
+A combat maneuver is an attempt to physically hinder your foe with your body, such as by shoving or tripping it. Unless otherwise noted, using a combat maneuver requires a free hand and replaces a physical attack made during a full attack. You make an attack against a creature within your reach, adding your maneuver modifier to the roll instead of your attack modifier. If your result equals or exceeds your foe's Maneuver defense, your attack hits, and your foe is affected by the maneuver.
+
+\begin{dtable}
+    \lcaption{Combat Maneuvers}
+    \begin{tabularx}{\columnwidth}{l l l X}
+        \thead{Maneuver}  & \thead{Action} & \thead{Attribute} & \thead{Brief Description} \\
+        Dirty Trick & Attack & Str or Dex & Impose penalty on a foe \\
+        Disarm & Attack & Str or Dex & Force foe to drop item \\
+        Grapple & Attack & Str & Wrestle with a foe \\
+        Overrun & Move & Str & Move through a foe \\
+        Shove & Attack & Str &  Move a foe \\
+        Trip & Attack & Str or Dex & Trip a foe \\
+    \end{tabularx}
+\end{dtable}
+
+\subsubsection{Maneuver Modifier}
+Your maneuver modifier is equal to the following:
+
+\begin{figure}[h]
+    \centering Base attack bonus or attack attribute \meh{\add enhancement bonus} \add special size modifier \add other bonuses and penalties
+\end{figure}
+
+Your attack attribute depends on the maneuver you are using, as described in \pcref{Combat Maneuvers}. Your special size modifier is described in \tref{Size in Combat}.
+
+\subsubsection{Maneuver Descriptions}
+
+\parhead{Dirty Trick}\label{Dirty Trick} You strike your foe in a sensitive spot, pull its pants down, or creatively use your environment to attack. Success means the creature is \vulnerable for 1 round. For every 5 points by which you succeed, the creature is vulnerable for an additional round. You can perform a dirty trick with either Str or Dexterity.
+
+\parhead{Disarm}\label{Disarm} You can strike an item your foe is wearing or holding. Success means you hold the item instead of your foe. You take a penalty of up to \minus20 if you disarm a well-secured item, such as a ring or body armor. You can perform a disarm with either Strength or Dexterity. You can also with any weapon, rather than using a free hand. If you disarm with a weapon, the item falls to the ground in the creature's square.
+
+\parhead{Grapple}\label{Grapple} You physically grab and restrain your foe. Success means you and the creature become grappled, which limits your ability to act. See \pcref{Grappling} for more details.
+
+\parhead{Overrun}\label{Overrun} As part of a move action, you move directly through creatures in your way. Each creature in your way can choose to avoid you, allowing you to pass through its square unhindered. Each time you encounter a creature in your way that didn't avoid you, you make an overrun attack. Success means you can move through the creature's space, though it is considered difficult terrain. Success by 10 or more means the creature is knocked prone, and the area is not considered difficult terrain. Failure means you end your movement immediately. You can only overrun a creature with Strength.
+
+\parhead{Shove}\label{Shove} You shove your foe where you want it to go. Success means you move the creature 5 feet in a direction of your choice. For every 5 points by which you succeed, you can move it an additional 5 feet. You cannot normally move the creature further after moving it outside of your reach. If the creature encounters a solid object or creature, you must stop shoving it. You can only shove a creature with Strength.
+
+\parhead{Trip}\label{Trip} You try to trip your foe. Success means the creature falls prone, causing it to take a \minus4 penalty to physical attacks and defenses. It can stand up as a move action. You can trip a creature with Strength or Dexterity.
+
+
+\section{Movement and Positioning}
+
+\subsection{Special Move Actions}
+
+\parhead{Move} As a move action, you can move up to your speed.
+\parhead{Stand Up} As a move action, you can stand up from being prone. For most creatures, this requires using a hand to help get up.
+\parhead{Follow} As a move action, you can designate a target creature or object to follow, and the maximum distance you want to follow at. When you do, you immediately move such that your distance to the target is no greater than your desired follow distance. For the rest of the round, whenever that creature or object moves, you move with it to stay within that follow distance.
+
+You can follow the target as far as your movement speed allows; if the target continues beyond that point, you remain stationary where your movement ended. If the target takes an action that makes it impossible to follow, such as teleporting or using certain abilities, you cannot follow it for the rest of the round.
+\parhead{Withdraw} As a move action, you can designate a target creature or object to withdraw from, and the minimum distance you want to maintain between you and the creature. This functions like following the creature, except that you specify a minimum distance between you and the target instead of a maximum distance.
+\parhead{Block} As a move action, you can remain stationary to impede the movement of nearby foes. All squares you threaten are considered \difficultterrain to your foes.
+
+\parhead{Charge}\label{Charge} As a full-round action, you can move up to your speed in both the movement and action phase, and make a single attack with a \plus2 bonus to hit at the end of your charge. When you charge, you take a \minus2 penalty to physical defenses until the end of the round.
+\par You must move at least 20 feet to gain the benefit of a charge, and all movement must be in a single straight line. If there are any obstacles in your path which hinder your movement, you cannot charge. If your charge fails or becomes invalid partway through, you move as far as you can and stop.
+
+\par If you can make multiple attacks from a high base attack bonus, you can deal additional damage if your attack hits. For every 5 points by which your attack hits, you deal double damage, up to a maximum multiplier equal to the number of attacks you can make. For example, if your base attack bonus is \plus11 and you hit by 10, your attack would deal triple damage.
+\parhead{Struggle} As a full-round action, you can move five feet, regardless of movement penalties. You can use this to move even if your speed is decreased below five feet by penalties.
+
+\subsection{Movement Impediments}
+
+\subsubsection{Combat Engagement}
+
+At the start of each phase, if you are threatened by any enemies, you are engaged in combat until the end of the phase. While engaged in combat, you move at half speed.
+
+\subsubsection{Difficult Terrain}
+Some terrain is hard to move through, like thick bushes or a swamp. If a square is difficult terrain, it doubles the movement cost required to move through the square. That generally means it takes ten feet of movement, or fifteen feet if you are moving diagonally. If a square is considered difficult terrain for multiple reasons, the cost increases stack. For example, a square in a swamp that also has thick bushes blocking your passage would take twenty feet of movement, or thirty feet to move diagonally!
+
+\subsubsection{Obstacles}
+An obstacle is anything that gets in your way. Enemies and large solid objects like walls are blocking obstacles: they completely block your movement. If you can get past an obstacle, like a low wall, that square is treated as difficult terrain. Some obstacles require a skill check to bypass.
+
+\subsubsection{Squeezing}
+
+In some cases, you may have to squeeze into or through an area that isn't as wide as the space you take up. You can squeeze through or into a space that is at least half as wide as your normal space. While squeezing, you move half as fast, and you take a \minus4 penalty on physical attacks and defenses. You can squeeze into tighter spaces with the Escape Artist skill.
+
+Creatures that take up multiple squares take up half their normal number of squares while squeezing. For example, a Large creature who normally takes up four spaces takes up two spaces while squeezing.
+
+\parhead{Accidentally Squeezing} Sometimes a character ends its movement while moving through a space where it's not normally allowed to stop. When that happens, the character is squeezing in the space until it can move. If squeezing is impossible, the creature immediately moves to the closest available space. Try not to do this.
+
+\subsection{Special Movement Modes}\label{Special Movement Modes}
+Some spells and abilities grant creatures the ability to move in unusual ways. These forms of movement are described here.
+
+\subsubsection{Burrowing}\label{Burrowing}
+A creature with a burrow speed can move through the ground at the indicated speed in any direction, even vertically. Unless otherwise noted, the creature can only burrow through dirt and loose earth, not rock or harder substances. It does not leave behind a usable tunnel for other creatures. 
+
+\subsubsection{Climbing}\label{Climbing}
+A creature with a climb speed can move at the indicated speed while climbing. In addition, it has a \plus5 bonus to Climb checks (see \pcref{Climb}). It can always choose to take 10 on Climb checks, even if rushed or threatened. It cannot make an accelerated climb. 
+
+\subsubsection{Flying}\label{Flying}
+A creature with a fly speed can fly through the air at the indicated speed. It must be unencumbered (see \pcref{Encumbrance}). If a creature with a fly speed is encumbered, it is treated as having a glide speed instead (see \pcref{Gliding}), which it can use to glide even though it is encumbered.
+
+Each creature with a fly speed also has a maneuverability: good, average, poor, or special. Normally, a flying creature must move forward by at least half its fly speed each round. If it does not, it falls. Turning by 90 degrees costs 5 feet of movement, and it can't turn in the same place by more than 90 degrees. It can move up by only one square vertically per square traveled horizontally, but it can fly directly down if it chooses. The creature can fly up at half speed, but can fly down twice as fast.
+
+\parhead{Good Maneuverability} A flying creature with good maneuverability need not move forward to maintain its flight, allowing it to hover or fly directly up if it chooses. It must spend a move action each round to move, even if it simply hovers in place. In addition, turning does not cost movement, and it can freely turn in place.
+
+\parhead{Poor Maneuverability} A flying creature with poor maneuverability must spend five feet of movement to turn by 45 degrees, and it can't turn in the same place by more than 45 degrees. In addition, it can only descend by up to one square vertically per square traveled horizontally without falling.
+
+\parhead{Special Maneuverability} A flying creature with special maneuverability does not experience gravity like other creatures. In addition to the effects of good maneuverability, it moves up and down at the same speed as it moves horizontally. It can also hover in place without spending a move action.
+
+\parhead{Falling} If a flying creature loses control, usually by failing to maintain its minimum forward speed, or loses the ability to fly, it falls. While falling, a flying creature can attempt to recover by making a DC 15 Dexterity check as a move action. If it succeeds, it can begin flying as normal. Otherwise, it continues falling for another round.
+
+\subsection{Gliding}\label{Gliding}
+A creature with a glide speed can glide through the air at the indicated speed. It must be unencumbered (see \pcref{Encumbrance}).
+
+While in the air, a creature with a glide speed can control its fall as a move action. This allows it to move up to its speed horizontally in a direction of its choice while moving only five feet down. If it desires, it can move half as far horizontally and fall down twice as fast. It takes no falling damage if it touches the ground while gliding.
+
+\section{Circumstances, Bonuses, and Penalties}\label{Circumstances, Bonuses, and Penalties}
+
+\begin{dtable}
+    \lcaption{Attack Roll Modifiers}
+    \begin{tabularx}{\columnwidth}{l X}
+        \thead{Attacker's Condition} & \thead{Attack Modifier} \\
+        %Entangled & \minus2 \\
+        Invisible & \x\fn{1} \\
+        Prone & \minus4\fn{2} \\
+        Squeezing through a space & \minus4 \\
+        Vulnerable & \minus2 \\
+    \end{tabularx}
+    1 The defender is \defenseless. \\
+    2 Most ranged weapons can't be used while the attacker is prone, but you can use a crossbow or shuriken while prone at no penalty.
+\end{dtable}
+
+\begin{dtable}
+    \lcaption{Physical Defense Modifiers}
+    \begin{tabularx}{\columnwidth}{>{\lcol}X >{\ccol}X}
+        \thead{Defender's Condition} & \thead{Defense Modifier} \\
+        Behind active cover & 20\% miss \\
+        Behind passive cover & \plus4 \\
+        Blinded & \x\fn{1} \\
+        Concealed & \plus4 \\
+        Cowering & \minus2 \\
+        Crouching or kneeling & \minus2\fn{2} \\
+        Entangled & \minus2 \\
+        Grappling (but attacker is not) & \minus2 \\
+        Helpless (such as paralyzed, sleeping, or bound) & \x\fn{3} \\
+        Invisible & see Invisibility \\
+        Overwhelmed & special\fn{4} \\
+        Pinned & \x\fn{3} \\
+        Prone & \minus4\fn{2} \\
+        Squeezing through a space & \minus4 \\
+        Stunned & \minus2\fn{1} \\
+        Unaware of attacker & \fn{5} \\
+        Total defense & \plus4 \\
+        Vulnerable & \minus2 \\
+    \end{tabularx}
+    1 The defender is \defenseless. \\
+    2 Treat as a bonus against ranged attacks, instead of a penalty \\
+    3 The defender's physical defenses are equal to 10 \add size modifier. \\
+    4 The creature suffers a penalty equal to the number of creatures threatening it. \\
+    5 Successful physical attacks automatically threaten critical hits. \\
+\end{dtable}
+
+Bonuses and penalties are the most basic way that a roll or numerical statistic can be modified. A bonus increases the roll or statistic, and a penalty decreases it. Bonuses and penalties are also called modifiers.
+
+\subsection{Stacking Rules}\label{Stacking Rules}
+Usually, modifiers stack with each other, meaning that you add or subtract all of the modifiers to get the final result. However, enhancement bonuses and certain specific kinds of modifiers do not stack with each other. When bonuses don't stack with each other, you only apply the highest bonus. Likewise, when penalties don't stack with each ather, you only apply the highest penalty.
+
+\meh{\parhead{Enhancement Bonuses} Enhancement bonuses are always granted by magic or supernatural abilities. Unlike other bonuses, enhancement bonuses do not stack with each other. Each enhancement bonus will specify what it applies to, such as ``physical attacks'' or ``Fortitude defense''. Use only the highest enhancement bonus that applies. If you have an enhancement bonus that affects a broad category of rolls, such as ``all special defenses'', it doesn't stack with more narrow enhancement bonuses, such as ``Fortitude defense''.}
+
+\parhead{Special Exceptions}
+
+\begin{itemize}
+    \item Effects from the same source do not stack. Any spell or ability with the same name has the same source. 
+    \item Magical effects that increase size do not stack.
+    \item Damage reduction does not stack. Only the best value applicable to the attack applies.
+    \item Effects that grant extra attacks (such as the \spell{haste} spell) do not stack.
+    \item Temporary hit points do not stack.
+    \item If a character has two separate abilities which let him add the same attribute to a given roll or numerical attribute, the attribute is still only added once.
+    \item Effects that reduce the effective spell level of a spell affected by metamagic can never reduce a spell below its original level.
+\end{itemize}
+
+\subsection{Cover}\label{Cover}
+
+Cover represents any obstacle that physically prevents you from striking your target, such as a tree or intervening creature. A creature with cover is more difficult to attack.
+
+\parhead{Determining Cover} When making a melee attack against an adjacent target, your target has cover if any line from your square to the target's square goes through a wall (including a low wall) or other similar solid obstacle. If you occupy multiple squares, choose one square you occupy for this purpose.
+
+When making an attack against a target that is not adjacent to you, choose a corner of any square you occupy. In addition, choose a square the target occupies. If any line from this corner to any corner of the target square passes through a square or border that blocks line of effect or provides cover, or through a square occupied by a creature, the target has cover.
+
+There are two types of cover: active cover and passive cover.
+
+\subsubsection{Active Cover}
+
+If the obstacle is active and mobile, such as a creature or tree branches blowing in the wind, the defender has active cover. Any attacks against a creature with active cover relative to you have a 20\% miss chance. After rolling the attack, the attacker must make a miss chance percentile roll to see if the attack misses due to active cover. If an attack misses due to active cover, the attack is made against the intervening obstacle instead. If the attack is successful, the obstacle takes any damage from the attack normally. 
+
+\parhead{Small Obstacles} Generally, an obstacle smaller than you are does not provide active cover (so a halfling does not provide active cover to a human). 
+
+\subsubsection{Passive Cover}
+
+If the obstacle is stationary, such as a tree trunk or wall, the defender has passive cover. A creature with passive cover relative to you has a \plus4 bonus to physical defenses.
+
+\parhead{Small Obstacles} A low obstacle (such as a wall no higher than half your height) provides passive cover, but only to creatures within 30 feet (6 squares) of it. The attacker can ignore the cover if he's closer to the obstacle than his target. If two creatures are equally distant from the wall, it grants cover to both of them.
+\parhead{Stealth Checks} You can use passive cover to make a Stealth check to hide, but not active cover.
+\parhead{Total Cover} If you don't have line of effect to your target, he is considered to have total cover from you. You can't make an attack against a target that has total cover.
+
+\subsubsection{Improved Cover}
+
+A creature can benefit from both passive and active cover. However, cover of the same type generally doesn't stack; a creature behind two trees is not substantially more protected than a creature behind a single tree. In some cases, cover may stack. In that case, each additional obstacle increases the miss chance by 10\% or grants an additional \plus2 bonus to defenses, as appropritae.
+
+Exceptionally well covered opponents, such as a creature behind an arrow slit in a castle, may receive additional benefits. For example, it might gain improved evasion, and there may be limitations on what kind of attacks are possible.
+
+\subsection{Concealment}\label{Concealment}
+Concealment represents anything which makes it more difficult to see your target, such as dim lighting. A creature with concealment from you gains a \plus4 bonus to physical defenses. Concealment bonuses do not apply if you can't see your opponent (such as if you close your eyes).
+
+\parhead{Determining Concealment} When making a melee attack against an adjacent target, your target has concealment if his space is entirely within an effect that grants concealment.
+
+Deterining concealment for making an attack against a target that is not adjacent to you works exactly like determining cover for ranged attacks.
+
+In addition, some magical effects provide concealment against all attacks, regardless of whether any intervening concealment exists.
+
+\parhead{Concealment and Stealth Checks} You can use concealment to make a Stealth check to hide.
+
+\subsection{Grappling}\label{Grappling}
+Grappling creatures are physically struggling with each other. While grappled, you suffer certain penalties and restrictions, as described below. 
+
+\subsubsection{Being In A Grapple}
+While grappling, you suffer certain penalties and restrictions, as described below. Other than these restrictions, you can act normally. You can also take certain actions in a grapple, as described in \pcref{Grapple Actions} 
+\begin{itemize}
+    \item You must use a free hand (or equivalent limbs) to grapple, preventing you from taking any actions which would require having two free hands. If you cannot free a hand, you suffer a \minus10 penalty to all physical attacks, including grapple attacks, until you have a free hand.
+    \item You are \vulnerable against creatures you are not grappling with.
+    \item You take a \minus4 penalty to attack rolls made with weapons that are not light, since they are too large and cumbersome to be used effectively in a grapple.
+    \item Spellcasting is extremely difficult. You cannot cast spells with somatic components. Using a spell-like ability or casting a spell without somatic components requires a Concentration check with a DC equal to 20 \add double spell level.
+    \item You cannot move normally (but see Move the Grapple, below).
+\end{itemize}
+
+\subsubsection{Grapple Actions}\label{Grapple Actions}
+While grappled, you can take four special actions to try to affect the grapple.
+
+\parhead{Bind Foe} As a standard action, you can make a grapple attack to bind your foe with ropes or other restraints. You must have the restraints in hand (in addition to the free hand required to grapple). Apply the result against the Maneuver defense of a creature grappling you. Success means the creature is bound, rendering it helpless and effectively paralyzed. The only physical action a bound creature can take is to escape the bindings, which requires a grapple attack or Escape Artist check which beats the grapple attack made to bind it. If you have the time, you can take 20 on your grapple attack to secure bindings on a helpless foe, including a foe rendered helpless through this attack.
+\parhead{Escape the Grapple} As a standard action, you can make a grapple attack or Escape Artist check to escape from the grapple. Apply the result against the Maneuver defense of each creature grappling you. Success against an individual creature means you are no longer grappling that creature.
+\parhead{Move the Grapple} As a move action, you can make a grapple attack to move the grapple. Apply the result against the MC of each creature grappling you. If you beat every creature's MC, you can move yourself and all other creatures in the grapple up to half your speed. At the end of your movement, you choose which spaces creatures grappling you are in, as long as they stay adjacent to you.
+\parhead{Pin} As a standard action, you can make a grapple attack to pin a foe. If you succeed, that creature becomes pinned (in addition to being grappled), while you remain only grappled. The only physical action a pinned creature can take is to escape the grapple, though it can take mental actions. At your discretion, you can cover the mouth of a pinned creature to prevent it from speaking. 
+
+\subsection{Helpless Defenders}
+A helpless creature is completely at an opponent's mercy. Its physical defenses are equal to 10 \add its size modifier. Paralyzed, bound, and unconscious creatures are helpless.
+
+\parhead{Coup de Grace}\label{Coup de Grace} As a full-round action, you can deliver a coup de grace to a helpless opponent adjacent to you. You automatically hit with your weapon and score a critical hit. If the damage exceeds the struck creature's Fortitude defense, it immediately dies.
+
+Delivering a coup de grace requires focused concentration and methodical action. This leaves you \defenseless. If you take damage in excess of your Fortitude defense while delivering a coup de grace, your attempt fails.
+
+A coup de grace attempt requires physical contact, which alerts your target to your action during the movement phase. If your target stops being helpless during your coup de grace attempt for any reason, the attempt automatically fails.
+
+You can't deliver a coup de grace against a creature that is immune to critical hits. You can deliver a coup de grace against a creature with total concealment, but doing this requires two consecutive full-round actions (one to ``find'' the creature once you've determined what square it's in, and one to deliver the coup de grace).
+
+\subsection{Invisibility}
+If it is impossible to see your target, you can't attack him normally. However, you can attack a square that you think he occupies. An attack into a square occupied by an invisible enemy has a 50\% miss chance. If an adjacent invisible creature strikes you, you can automatically identify the square he occupied when he struck you.
+
+\subsection{Surprise Attacks}\label{Surprise Attacks}
+Sometimes, creatures are not aware that combat is taking place when the combat starts. This most commonly happens with ambushes. Any creature that is not aware of the combat continues taking whatever actions it would normally be taking until it becomes aware of the combat. It is \condition{unaware} until that point.
+
+\section{Special Actions}
+
+\subsection{Partial Actions}
+
+If you are restricted to only taking a move or standard action, but not both, you can spend a standard action to perform a partial version of a full-round action. For most actions, you spend the first round starting the action, and use a second standard action to complete it. Some full-round actions have specific partial versions described below which you take instead. You can only take these partial actions when you cannot take full-round actions. 
+
+\subsubsection{Partial Charge}
+As a standard action, you can move up to your speed and make a single attack against a foe. You must move in a straight line, and your movement must not be impeded in any way. In addition, you take a \minus2 penalty to physical defenses until the start of your next turn. An interrupted partial charge becomes a move action.
+
+\section{Special Rules}
+
+\subsection{Doubling}\label{Doubling}
+If you double any in-game value twice, it becomes three times as large. An additional doubling would make it four times as large, and so on. For example, if you make an attack that deals double damage and you get a critical hit, you deal triple damage.
+
+\parhead{Real-World Values} Values that are ``real'', such as movement and distance, are an exception. If you double a real-world value twice, it becomes four times as large. 
+
+\subsection{Extraordinary Size Differences}\label{Special Size Rules}
+
+\subsubsection{Very Small Creatures}
+\parhead{Space} If a creature takes up less than a single square of space, you can fit multiple creatures in that square. You can fit four Tiny creatures in a square, twenty-five Diminuitive creatures, or 100 Fine creatures.
+
+\parhead{Reach} Creatures that take up less than 1 square of space typically have a natural reach of 0 feet, meaning they can't reach into adjacent squares. They must enter an opponent's square to attack in melee. You can attack into your own square if you need to, so you can attack such creatures normally. Since they have no natural reach, they do not threaten the squares around them.
+
+If a creature without a natural reach uses a reach weapon, it gains no benefits or penalties.
+
+\parhead{Movement} Creatures three size categories smaller than you are not considered obstacles and do not hinder your movement.
+
+\parhead{Stealth} Small creatures gain a bonus to Stealth checks equal to their special size modifier.
+
+\subsubsection{Very Large Creatures}
+\parhead{Space} Very large creatures take up multiple squares. Anything which affects a single square the creature occupies affects the creature. 
+
+\parhead{Reach} Creatures that take up more than 1 square typically have a natural reach of 10 feet or more, meaning that they can reach targets even if they aren't in adjacent squares. Creatures with a large natural reach can attack anyone within their reach, including adjacent foes.
+
+Creatures with a large natural reach using reach weapons can strike at up to double their natural reach but can't strike at their natural reach or less, just like Medium sized creatures.
+
+\parhead{Movement} Creatures three size categories larger than you are not considered obstacles and do not hinder your movement.
+
+\parhead{Stealth} Large creatures take a penalty to Stealth checks equal to their special size modifier.
+
+\parhead{Immunities} Creatures at least three size categories larger than you are difficult to fight. You cannot score critical hits or contribute to overwhelm penalties against such creatures. If you can reach a vulnerable point on the creature, such as by flying or by using ranged weapons, you can score critical hits, but you still do not contribute to overwhelm penalties.
+
+\subsection{Mounted Combat}\label{Mounted Combat}
+\parhead{Horses in Combat} Warhorses and warponies can serve readily as combat steeds. Light horses, ponies, and heavy horses, however, are frightened by combat. If you don't dismount, you must make a DC 20 Ride check each round as a move action to control such a horse. If you succeed, you can perform a standard action after the move action. If you fail, you can't do anything else until your next turn.
+
+Your mount acts on your initiative count as you direct it. You move at its speed, but the mount uses its action to move.
+
+\parhead{Space} A horse (not a pony) is a Large creature, and thus takes up a space 10 feet (2 squares) across. While mounted, you share your mount's space completely. Anyone threatening your mount can attack either you or your mount. However, your reach is still that of a creature of your normal size. Thus, a Medium paladin would threaten all squares adjacent to his Large horse with a longsword, and all squares 10 feet away from his mount with a lance.
+
+In the case of abnormally large mounts (two or more size categories larger than you), you may not completely share space. Such situations should be handled on a case-by-case basis, depending on the nature of the mount.
+
+\parhead{Combat while Mounted} With a DC 5 Ride check, you can guide your mount with your knees so as to use both hands to attack or defend yourself. This is a free action.
+
+If your mount moves more than its normal speed when charging, you also take the physical defense penalty associated with a charge. If you make an attack at the end of such a charge, you receive the bonus gained from the charge. When charging on horse-back, you deal double damage with a lance (see \pcref{Charge}).
+
+You can use ranged weapons while your mount is taking a double move, but at a \minus4 penalty on the attack roll. You can use ranged weapons while your mount is sprinting, but at a \minus8 penalty (see \pcref{Sprint}). In either case, you make the attack roll when your mount has completed half its movement. You can make a full attack with a ranged weapon while your mount is moving. Likewise, you can take move actions normally.
+
+\parhead{Casting Spells while Mounted} You can cast a spell normally if your mount moves up to a normal move (its speed) either before or after you cast. If you have your mount move both before and after you cast a spell, then you're casting the spell while the mount is moving, and you have to make a Concentration check due to the vigorous motion (DC 10 \add double spell level) or lose the spell. If the mount is sprinting, your Concentration check is more difficult due to the violent motion (DC 15 \add double spell level).
+
+\parhead{If Your Mount Falls in Battle} If your mount falls, you have to succeed on a DC 15 Ride check to make a soft fall and take no damage. If the check fails, you take 1d6 points of damage.
+
+\parhead{If You Are Dropped} If you are knocked unconscious, you have a 50\% chance to stay in the saddle (or 75\% if you're in a military saddle). Otherwise you fall and take 1d6 points of damage. Without you to guide it, most mounts avoid combat.
+\subsection{Two-Weapon Fighting}\label{Two-Weapon Fighting}
+If you are wielding two weapons at once, you can attack with both weapons whenever you attack. Roll a single attack roll for both weapons. If you hit, roll damage for both weapons seperately, including all damage modifiers that apply to attacks with that weapon. You deal damage equal to the higher of the two results. This is treated as a single attack, so damage reduction, sneak attack damage, and other effects are only applied once.
+
+\parhead{Critical Hits} Normally, when you score a critical hit, you roll damage separately for each weapon and use the higher of the two results when dealing the bonus damage. If your weapons have different critical threat ranges, it is possible to only score a critical hit with one of the two weapons. In that case, only use that weapon's attack and damage bonuses when confirming the critical threat and dealing extra damage.
+
+\parhead{Weapon Size} Fighting with two weapons is easiest with light weapons. You take a \minus1 penalty to attack if you use a non-light weapon while fighting with two weapons, or a \minus2 penalty if neither weapon is light. This penalty does not apply if you alternate attacks between your weapons, instead of attacking with both at once.
+
+\parhead{Unarmed Attacks} Normally, you can't make unarmed attacks as if fighting with two weapons. However, monks and other characters who have the special ability to treat multiple parts of their body as weapons can use two-weapon fighting with unarmed attacks.
+
+\parhead{Example} Felix the 1st-level fighter is wielding two short swords against an evil goblin. The goblin has an Armor defense of 15. Felix has a Strength of 3 and a base attack bonus of \plus4. This means his attack bonus is \plus4. If he attacks with both weapons at once, he takes no penalty to his attack roll, because both weapons are light. If he rolls an 11 or higher, he hits the goblin. His damage bonus is \plus1 from his Strength, so he rolls 1d6\plus1 for each weapon. If he rolls a 4 and a 2, he would keep the 4, dealing a total of 5 damage.
+

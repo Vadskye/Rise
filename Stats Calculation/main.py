@@ -10,7 +10,7 @@ from pprint import pprint, PrettyPrinter
 
 CREATURE = 'creature'
 COMBAT = 'combat'
-BATTLE_REPEAT_COUNT = 50
+BATTLE_REPEAT_COUNT = 500
 
 TARGET_MODES = 'active any easiest hardest strongest weakest'.split()
 TARGET_MODE_CHOICES = TARGET_MODES + ['test']
@@ -49,6 +49,10 @@ def initialize_argument_parser():
             help='the level of the allied creatures')
     parser.add_argument('-o', '--output', dest='output',
             help='A file name to store any output in')
+    parser.add_argument('-p', '--printattribute', dest='print_attribute',
+                        nargs="*", help = 'attribute to print for comparison')
+    parser.add_argument('-m', '--printmodifier', dest='print_modifier',
+                        nargs="*", help = 'modifier to print for comparison')
     parser.add_argument('--targets', dest='targets', type=str,
             choices = TARGET_MODE_CHOICES,
             help='how creatures choose targets')
@@ -69,10 +73,6 @@ def rounds_survived_generic(creature, i):
     return combat.rounds_survived(creature.attack_bonus.total(),
             generic_ac_calc[i], creature.base_attack_bonus,
             creature.attack_damage.total(), generic_hp[i])
-
-def single_battle(battle):
-    victor, round_count = battle.determine_victor()
-    print victor.name, victor.current_hit_points, victor.max_hit_points, round_count
 
 def identify_effect_of_bonuses(creature):
     print i+1, current_char.damage_per_round(generic_ac_calc[i]), current_char.damage_per_round(
@@ -142,9 +142,11 @@ def wage_war(allies, enemies):
     ally_victories = 0
     ally_any_inactive = 0
     ally_any_dead = 0
+    ally_hit_point_pct = 0
     enemy_victories = 0
     enemy_any_inactive = 0
     enemy_any_dead = 0
+    enemy_hit_point_pct = 0
     ties = 0
 
     for i in xrange(BATTLE_REPEAT_COUNT):
@@ -155,8 +157,14 @@ def wage_war(allies, enemies):
             enemy_victories += 1
         elif (not allies.is_active) and (not enemies.is_active):
             ties += 1
+            # make the victories
+            ally_victories += 0.5
+            enemy_victories += 0.5
         else:
             raise Exception("Zees ees impossible!")
+
+        ally_hit_point_pct += allies.total_hit_point_pct
+        enemy_hit_point_pct += enemies.total_hit_point_pct
 
         if allies.count_inactive_creatures():
             ally_any_inactive += 1
@@ -169,25 +177,32 @@ def wage_war(allies, enemies):
             enemy_any_dead += 1
         allies.reset_combat()
         enemies.reset_combat()
+
     rounds = float(rounds)/BATTLE_REPEAT_COUNT
     ally_victories = float(ally_victories)/BATTLE_REPEAT_COUNT
     ally_any_inactive = float(ally_any_inactive)/BATTLE_REPEAT_COUNT
     ally_any_dead = float(ally_any_dead)/BATTLE_REPEAT_COUNT
+    ally_hit_point_pct = round(float(ally_hit_point_pct)/BATTLE_REPEAT_COUNT, 2)
     enemy_victories = float(enemy_victories)/BATTLE_REPEAT_COUNT
     enemy_any_inactive = float(enemy_any_inactive)/BATTLE_REPEAT_COUNT
     enemy_any_dead = float(enemy_any_dead)/BATTLE_REPEAT_COUNT
+    enemy_hit_point_pct = round(float(enemy_hit_point_pct)/BATTLE_REPEAT_COUNT, 2)
     ties = float(ties)/BATTLE_REPEAT_COUNT
     return {
         'ally': {
             'any_dead': ally_any_dead,
             'any_inactive': ally_any_inactive,
             'average_hit_chance': allies.average_hit_chance(enemies),
+            'average_damage_dealt_per_round': allies.average_damage_dealt_per_round(),
+            'hit_point_pct': ally_hit_point_pct,
             'victories': ally_victories,
         },
         'enemy': {
             'any_dead': enemy_any_dead,
             'any_inactive': enemy_any_inactive,
             'average_hit_chance': enemies.average_hit_chance(allies),
+            'average_damage_dealt_per_round': enemies.average_damage_dealt_per_round(),
+            'hit_point_pct': enemy_hit_point_pct,
             'victories': enemy_victories,
         },
         'rounds': rounds,
@@ -278,19 +293,143 @@ def generate_creature_groups(data, names, count, level, target_mode, variants):
 def add_custom_modifiers(ally_groups, enemy_groups):
     for ally_group in ally_groups:
         for ally in ally_group:
-            pass
+            #ally.add_modifier('hit_points', 'testing', lambda c: c.level)
+            """
+            if len(ally.physical_attack_progression) == 1:
+                ally.add_modifier('extra_attacks', 'testing', 1)
+                ally.add_modifier('extra_physical_attack_bonus', 'testing', -5)
+            elif len(ally.physical_attack_progression) == 2:
+                ally.add_modifier('second_physical_attack_bonus', 'testing', 5)
+            elif len(ally.physical_attack_progression) == 3:
+                ally.add_modifier('third_physical_attack_bonus', 'testing', 5)
+            else:
+                ally.add_modifier('fourth_physical_attack_bonus', 'testing', 5)
+            """
+            #ally.add_modifier('physical_attacks', 'testing', 2)
+            #ally.add_modifier('extra_attacks', 'testing', 1)
+            #ally.add_modifier('extra_physical_attack_bonus', 'testing', -5)
             #ally.add_modifier('physical_damage_reduction', 'testing', lambda c: c.level)
             #ally.add_modifier('extra_attacks', 'testing', 1)
             #ally.add_modifier('extra_physical_attack_bonus', 'testing', -5)
             #ally.add_modifier('weapon_size', 'testing', 1)
             #ally.add_modifier('hit_points', 'testing', lambda c: c.level * 2)
             #ally.add 
+            pass
 
     for enemy_group in enemy_groups:
         for enemy in enemy_group:
+            #enemy.add_modifier('physical_damage_reduction', 'testing', lambda c: c.level / 2)
+            #enemy.add_modifier('extra_attacks', 'testing', 1)
+            #enemy.add_modifier('extra_physical_attack_bonus', 'testing', -5)
             pass
             #enemy.add_modifier('physical_attacks', 'testing', 2)
             #enemy.add_modifier('hit_points', 'testing', lambda c: (c.hit_value + c.constitution/2) * c.level)
+
+def print_creature_groups(ally_groups, enemy_groups):
+    allies = ally_groups[0]
+    print "~~~~ allies:"
+    for i, ally in enumerate(allies):
+        print ally#.to_latex()
+        if args.get('print_attribute'):
+            for attribute in args.get('print_attribute'):
+                print getattr(ally, attribute)
+        if args.get('print_modifier'):
+            for modifier in args.get('print_modifier'):
+                print ally.get_modifiers_as_dict(modifier)
+        #pprint(ally._modifiers)
+        #print
+        #print ally.average_hit_chance(ideal_creature)
+        #print ally.get_average_damage_per_round(ideal_creature)
+        #print ally.traits
+        #ally.set_modifier('physical_attacks', 'enhancement', util.std_scale(ally.caster_level))
+        #ally.set_modifier('physical_damage', 'enhancement', util.std_scale(ally.caster_level))
+        #ally.set_modifier('physical_defenses', 'enhancement', util.std_scale(ally.caster_level))
+        #ally._update_static_modifiers()
+        #ally.add_modifier('extra_attacks', 1, 'because')
+        #ally.size = 'large'
+        #ally.level = 6
+        #print
+        #print i+1, ally.armor_defense - avg(ally.physical_attack_progression), i+16 - avg(ally.physical_attack_progression)
+        #print ally#.to_latex()
+        #print ally.get_modifiers_as_dict('first_physical_attack_bonus')
+        #print ally.get_modifiers_as_dict('armor_defense')
+        #print ally.physical_attack_progression
+        #print ally.get_modifiers('maneuver_defense', as_dict = True)
+        #print ally.get_modifiers_as_dict('primary_weapon_damage')
+        #print ally.get_modifiers('armor_defense', as_dict = True)
+        #print ally.get_modifiers('armor_defense', as_dict = True)
+        #print ally.get_modifiers('maneuver_defense', as_dict = True)
+        #print ally.get_modifiers('reflex', as_dict = True)
+        #print ally.get_modifiers('will', as_dict = True)
+        #print ally.get_modifiers('primary_weapon_size', as_dict = True)
+        #print ally.primary_weapon.damage_die
+        #print ally.armor_class.get_details()
+        #print ally#.to_latex()
+        print
+
+    enemies = enemy_groups[0]
+    print "~~~~ enemies:"
+    print
+    for enemy in enemies:
+        print enemy#.to_latex()
+        if args.get('print_attribute'):
+            for attribute in args.get('print_attribute'):
+                print getattr(enemy, attribute)
+        if args.get('print_modifier'):
+            for modifier in args.get('print_modifier'):
+                print enemy.get_modifiers_as_dict(modifier)
+        #print enemy.armor_class.get_details()
+        #print enemy.get_modifiers_as_dict('armor_defense')
+        #pprint(enemy._modifiers)
+        print
+
+def run_battle_between_creature_groups(ally_groups, enemy_groups):
+    if not len(ally_groups) == len(enemy_groups):
+        if len(ally_groups) == 1:
+            ally_groups *= len(enemy_groups)
+        elif len(enemy_groups) == 1:
+            enemy_groups *= len(ally_groups)
+        else:
+            raise Exception("Must have same number of ally groups ({0}) and enemy groups ({1})".format(len(ally_groups), len(enemy_groups)))
+
+    combined_results = {
+        'ally': {
+            'any_dead': list(),
+            'any_inactive': list(),
+            'average_hit_chance': list(),
+            'average_damage_dealt_per_round': list(),
+            'hit_point_pct': list(),
+            'victories': list(),
+        },
+        'enemy': {
+            'any_dead': list(),
+            'any_inactive': list(),
+            'average_hit_chance': list(),
+            'average_damage_dealt_per_round': list(),
+            'hit_point_pct': list(),
+            'victories': list(),
+        },
+        'rounds': list(),
+        'ties': list(),
+    }
+
+    for i in xrange(len(ally_groups)):
+        allies = ally_groups[i]
+        enemies = enemy_groups[i]
+
+        print "Running test ", i
+        war_results = wage_war(allies, enemies)
+        #pprint(war_results)
+        #print
+
+        combined_results['rounds'].append((i, war_results['rounds']))
+        combined_results['ties'].append((i, war_results['ties']))
+        for key in war_results['ally']:
+            combined_results['ally'][key].append((i+1, war_results['ally'][key]))
+        for key in war_results['enemy']:
+            combined_results['enemy'][key].append((i+1, war_results['enemy'][key]))
+
+    analyze_combined_results(combined_results)
 
 def main(args):
     args = inherit_shared_args(args)
@@ -320,96 +459,10 @@ def main(args):
             ideal_creature = ideal_creature,
         )
     else:
-        allies = ally_groups[0]
-        print "~~~~ allies:"
-        for i, ally in enumerate(allies):
-            print ally#.to_latex()
-            #print ally.average_hit_chance(ideal_creature)
-            #print ally.get_average_damage_per_round(ideal_creature)
-            #print ally.traits
-            #ally.set_modifier('physical_attacks', 'enhancement', util.std_scale(ally.caster_level))
-            #ally.set_modifier('physical_damage', 'enhancement', util.std_scale(ally.caster_level))
-            #ally.set_modifier('physical_defenses', 'enhancement', util.std_scale(ally.caster_level))
-            #ally._update_static_modifiers()
-            #ally.add_modifier('extra_attacks', 1, 'because')
-            #ally.size = 'large'
-            #ally.level = 6
-            #print
-            #print i+1, ally.armor_defense - avg(ally.physical_attack_progression), i+16 - avg(ally.physical_attack_progression)
-            #print ally#.to_latex()
-            #print ally.get_modifiers_as_dict('first_physical_attack_bonus')
-            #print ally.get_modifiers_as_dict('armor_defense')
-            #print ally.physical_attack_progression
-            #print ally.get_modifiers('maneuver_defense', as_dict = True)
-            #print ally.get_modifiers_as_dict('primary_weapon_damage')
-            #print ally.get_modifiers('armor_defense', as_dict = True)
-            #print ally.get_modifiers('armor_defense', as_dict = True)
-            #print ally.get_modifiers('maneuver_defense', as_dict = True)
-            #print ally.get_modifiers('reflex', as_dict = True)
-            #print ally.get_modifiers('will', as_dict = True)
-            #print ally.get_modifiers('primary_weapon_size', as_dict = True)
-            #print ally.primary_weapon.damage_die
-            #print ally.armor_class.get_details()
-            #print ally#.to_latex()
-            print
-
-        enemies = enemy_groups[0]
-        print "~~~~ enemies:"
-        print
-        for enemy in enemies:
-            print enemy#.to_latex()
-            #print enemy.armor_class.get_details()
-            print ''
+        print_creature_groups(ally_groups, enemy_groups)
 
     if args['battle']:
-        if not len(ally_groups) == len(enemy_groups):
-            if len(ally_groups) == 1:
-                ally_groups *= len(enemy_groups)
-            elif len(enemy_groups) == 1:
-                enemy_groups *= len(ally_groups)
-            else:
-                raise Exception("Must have same number of ally groups ({0}) and enemy groups ({1})".format(len(ally_groups), len(enemy_groups)))
-
-        combined_results = {
-            'ally': {
-                'any_dead': list(),
-                'any_inactive': list(),
-                'average_hit_chance': list(),
-                'victories': list(),
-            },
-            'enemy': {
-                'any_dead': list(),
-                'any_inactive': list(),
-                'average_hit_chance': list(),
-                'victories': list(),
-            },
-            'rounds': list(),
-            'ties': list(),
-        }
-
-        for i in xrange(len(ally_groups)):
-            allies = ally_groups[i]
-            enemies = enemy_groups[i]
-
-            print "Running test ", i
-            war_results = wage_war(allies, enemies)
-            #pprint(war_results)
-            #print
-
-            combined_results['rounds'].append((i, war_results['rounds']))
-            combined_results['ties'].append((i, war_results['ties']))
-            for key in war_results['ally']:
-                if key == 'average_hit_chance':
-                    combined_results['ally'][key].append((i+1, war_results['ally'][key][0]))
-                else:
-                    combined_results['ally'][key].append((i+1, war_results['ally'][key]))
-            for key in war_results['enemy']:
-                if key == 'average_hit_chance':
-                    combined_results['enemy'][key].append((i+1, war_results['enemy'][key][0]))
-                else:
-                    combined_results['enemy'][key].append((i+1, war_results['enemy'][key]))
-
-        analyze_combined_results(combined_results)
+        run_battle_between_creature_groups(ally_groups, enemy_groups)
 
     if args['output'] is not None:
         latex_string = creatures[0].to_latex()
