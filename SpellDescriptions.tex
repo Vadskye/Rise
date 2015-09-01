@@ -140,7 +140,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Aid}{3}
+\begin{spellsection}{Aid}{2}
     \begin{spellheader}
         \spelldesc{You fill your ally with confidence, improving its resilience in combat.}
     \end{spellheader}
@@ -190,7 +190,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect Living creatures cannot enter the spell's area. Nonliving creatures, such as constructs and undead, suffer no ill effect.
-            \spelldur \durlong \dismissable
+            \spelldur \durmed \dismissable
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -337,11 +337,11 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One living creature}}{\spellrng{Touch}}
+            \spelltwocol{\spelltgt{One living creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target gains damage reduction against physical damage equal to half your spellpower. Slashing weapons and fire damage ignore this damage reduction and negate it for 1 round.
-            \spelldur \durshort
+            \spelldur \durpersonallong
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -1366,7 +1366,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Delay Damage}{2}
+\begin{spellsection}{Delay Damage}{3}
     \begin{spellheader}
         \spelldesc{You partially shift yourself into the future, delaying the impact of attacks against you.}
     \end{spellheader}
@@ -1377,10 +1377,6 @@
         \begin{spelleffects}
             \spelleffect Whenever you take damage, half of the damage (rounded down) is not dealt to you immediately. This damage is tracked separately. At the end of the spell's duration, you take all of the delayed damage at once. When this happens, any damage in excess of your hit points is dealt as critical damage.
             \spelldur \durmed
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Abjuration/Transmutation [Shielding, Temporal]}{\spelllists{Arcane}}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -1801,7 +1797,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Divine Favor}[Greater]{4}
+\begin{spellsection}{Divine Favor}[Greater]{5}
     \begin{spellheader}
         \spelldesc{You imbue yourself with great strength and skill in combat by calling upon the divine power of your patron.}
     \end{spellheader}
@@ -2570,7 +2566,7 @@
 
             Alternately, you can hurl flames from the weapon up to \rngmed range as if it were a thrown weapon.
 
-            \spelldur \durlong \dismissable
+            \spelldur \durmed \dismissable
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -2714,7 +2710,7 @@
     \begin{spellcontent}
         \begin{spelleffects}
             \spelleffect You cannot be caught \unaware.
-            \spelldur \durext
+            \spelldur \durlong
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -2730,7 +2726,7 @@
     \begin{spellcontent}
         \begin{spelleffects}
             \spelleffect You cannot be caught \unaware, and gain a \plus30 bonus to initiative checks.
-            \spelldur \durext
+            \spelldur \durlong
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -3785,7 +3781,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Longstrider}{1}
+\begin{spellsection}{Longstrider}{2}
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -4901,7 +4897,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature}{Touch}
+            \spellquicktargeting{One creature}{\rngclose}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spellspecial Choose a type of energy (acid, cold, electricity, fire).
@@ -4921,7 +4917,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{Touch}}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target gains damage reduction against all energy types (acid, cold, electricity, fire) equal to twice your spellpower.
@@ -5253,7 +5249,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Shield of Faith}{2}
+\begin{spellsection}{Shield of Faith}{1}
     \begin{spellheader}
         \spelldesc{You create a shimmmering, magical shield that protects you.}
     \end{spellheader}
@@ -5754,7 +5750,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{Touch}}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target gains damage reduction against physical damage equal to half your spellpower. Adamantine weapons ignore this damage reduction and negate it for 1 round.
@@ -7046,7 +7042,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Zephyr Blade}{2}
+\begin{spellsection}{Zephyr Blade}{1}
     \begin{spellheader}
         \spelldesc{You imbue a weapon with the power of the wind, allowing it to manipulate air currents as it strikes.}
     \end{spellheader}
@@ -7066,7 +7062,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Zephyr Blade}[Greater]{5}
+\begin{spellsection}{Zephyr Blade}[Greater]{4}
     \begin{spellheader}
         \spelldesc{You imbue a weapon with the full might of the wind, allowing it to shred opponents with nothing but the air itself.}
     \end{spellheader}
