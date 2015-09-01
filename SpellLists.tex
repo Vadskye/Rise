@@ -61,8 +61,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
 \subsubsection{2nd-level Arcane Spells} 
 \begin{swspelllist}
-    \SLdelaydamage[Abjur]
-    \SLinertialshield
+    \SLinertialshield[Abjur]
     \SLprotectionfromalignment
     \SLsharepain
     \SLablateimpact*
@@ -103,7 +102,8 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \subsubsection{3rd-level Arcane Spells} 
 \begin{swspelllist}
 
-    \SLdimensionalanchor[Abjur]
+    \SLdelaydamage[Abjur]
+    \SLdimensionalanchor
     \SLdispelmagic
     \SLfireshield
     \SLspellresistance
@@ -134,7 +134,8 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLlifeseekingmissile
     \SLcurseofbloodandbone*
 
-    \SLgaseousform[Trans]
+    \SLdelaydamage[Trans]
+    \SLgaseousform
     \SLshrinkitem
 
     \SLprismaticbeam[Univ]
@@ -295,8 +296,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \subsubsection{8th-level Arcane Spells} 
 \begin{swspelllist}
 
-    \SLenergyconversion[Abjur]
-    \SLspelltheftgreater*
+    \SLspelltheftgreater*[Abjur]
 
     \SLimprisonment[Conj]
     \SLdimensiondoormass*
@@ -332,6 +332,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \begin{swspelllist}
 
     \SLdisjoinmagic[Abjur]
+    \SLenergyconversion
 
     \SLshadowpuppet
     \SLsummonmonsterix
@@ -345,7 +346,8 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLirresistibledance
     \SLsuggestionmass*
 
-    \SLmeteorswarm[Evoc]
+    \SLenergyconversion[Evoc]
+    \SLmeteorswarm
 
     \SLshadowpuppet[Illus]
     \SLfalsereality*
@@ -563,11 +565,13 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLregenerationlesser
     \SLresistenergy
     \SLsanctuary
+    \SLshieldoffaith
     \SLsummonmonsteri
 \end{spelllist}
 
 \subsubsection{2nd-level Divine Spells}
 \begin{spelllist}
+    \SLaid
     \SLcuremoderatewounds
     \SLdelaypoison
     \SLdetectalignment
@@ -576,14 +580,12 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLplanardisruption
     \SLprotectionfromalignment
     \SLsharepain
-    \SLshieldoffaith
     \SLsilence
     \SLsummonmonsterii
 \end{spelllist}
 
 \subsubsection{3rd-level Divine Spells}
 \begin{spelllist}
-    \SLaid
     \SLcureseriouswounds
     \SLcurseofbloodandbone
     \SLdeathward
@@ -605,7 +607,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLcommandmass
     \SLcurecriticalwounds
     \SLdiscernlies
-    \SLdivinefavorgreater
     \SLenervation
     \SLinflictcriticalwounds
     \SLpoison
@@ -616,6 +617,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \begin{spelllist}
     \SLbanemass
     \SLcurelightwoundsmass
+    \SLdivinefavorgreater
     \SLflamestrike
     \SLinflictlightwoundsmass
     \SLplanardisruptionmass
@@ -712,16 +714,16 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \begin{spelllist}
     \SLfeatherfall[1]
     \SLgentledescent[1]
+    \SLzephyrblade[1]
     \SLgentledescent[2]
     \SLwindstrike[2]
-    \SLzephyrblade[2]
     \SLgaseousform[3]
     \SLairwalk[4]
     \SLcalllightning[4]
     \SLgentledescentmass[4]
     \SLsummonmonsterv[4]
+    \SLzephyrbladegreater[4]
     \SLwindstrikegreater[5]
-    \SLzephyrbladegreater[5]
     \SLskysmite[6]
     \SLstormlord[6]
     \SLsummonmonsterviii[7]
@@ -955,15 +957,15 @@ Summoning spells summon lawful creatures only.
 \begin{spelllist}
     \SLresistenergy[1]
     \SLsanctuary[1]
+    \SLshieldoffaith[1]
     \SLsharepain[2]
-    \SLshieldoffaith[2]
     \SLdeathward[3]
     \SLresistenergygreater[3]
     \SLspellresistance[3]
     \SLstoneskin[4]
     \SLrepulsion[5]
     \SLspellturning[7]
-    \SLenergyconversion[8]
+    \SLenergyconversion[9]
 \end{spelllist}
 
 \subsubsection{Strength Domain Spells}
@@ -972,8 +974,8 @@ Summoning spells summon lawful creatures only.
     \SLdivinefavor[1]
     \SLenlargeperson[3]
     \SLshout[3]
-    \SLdivinefavorgreater[4]
     \SLenlargemonster[4]
+    \SLdivinefavorgreater[5]
     \SLenlargepersonmass[6]
     \SLshoutgreater[6]
     \SLrighteousmight[6]
@@ -1010,8 +1012,8 @@ Summoning spells summon lawful creatures only.
 
 \begin{spelllist}
     \SLfeatherfall[1]
-    \SLlongstrider[1]
     \SLdimensionslide[2]
+    \SLlongstrider[2]
     \SLspiderclimb[2]
     \SLfreedom[3]
     \SLgaseousform[3]
@@ -1073,8 +1075,8 @@ Summoning spells summon lawful creatures only.
     \SLspiritualweapon[3]
     \SLblessmass[4]
     \SLbladebarrier[4]
-    \SLdivinefavorgreater[4]
     \SLbanemass[5]
+    \SLdivinefavorgreater[5]
     \SLflamestrike[5]
     \SLfirestorm[8]
     \SLstormofvengeance[9]
@@ -1238,11 +1240,11 @@ Summoning spells summon water elementals or aquatic creatures only.
     \SLentangle
     \SLfogcloud
     \SLgentledescent
-    \SLlongstrider
     \SLregenerationlesser
     \SLresistenergy
     \SLsummonnaturesallyi
     \SLtremorsense
+    \SLzephyrblade
 \end{spelllist}
 
 \subsubsection{2nd-level Nature Spells}
@@ -1255,13 +1257,13 @@ Summoning spells summon water elementals or aquatic creatures only.
     \SLflameblade
     \SLgustofwind
     \SLheatmetal
+    \SLlongstrider
     \SLmeldintostone
     \SLspiderclimb
     \SLsummonnaturesallyii
     \SLtreeshape
     \SLwalloffire
     \SLwindstrike
-    \SLzephyrblade
 \end{spelllist}
 
 \subsubsection{3rd-level Nature Spells}
@@ -1293,6 +1295,7 @@ Summoning spells summon water elementals or aquatic creatures only.
     \SLstoneskin
     \SLsummonnaturesallyiv
     \SLsunbeam
+    \SLzephyrbladegreater
 \end{spelllist}
 
 \subsubsection{5th-level Nature Spells}
@@ -1303,7 +1306,6 @@ Summoning spells summon water elementals or aquatic creatures only.
     \SLsummonnaturesallyv
     \SLwalloffiregreater
     \SLwindstrikegreater
-    \SLzephyrbladegreater
 \end{spelllist}
 
 \subsubsection{6th-level Nature Spells}
