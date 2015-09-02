@@ -27,6 +27,7 @@ Your bonus with skill checks is calculated as follows:
     \lcaption{Skill Ranks and Skill Training}
     \begin{dtabularx}{\columnwidth}{>{\lcol}p{4.5em} >{\lcol}p{2.5em} >{\lcol}p{6.5em} >{\lcol}X}
         \thead{Skill Training Level} & \thead{Skill Points Spent} & \thead{Skill Ranks} & \thead{Attribute Modifier} \\
+        \hline
         Untrained & 0 & 0                          & Half attribute        \\
         Trained   & 1 & 1/2 character level \add 2 & Full attribute        \\
         Mastered  & 2 & Character level \add 5     & Full attribute \add 5 \\
@@ -42,6 +43,7 @@ Circumstances can affect your check. A character who is free to work without dis
 \lcaption{Skills}
 \begin{dtabularx}{\textwidth}{>{\lcol}p{12em} *{11}{>{\ccol}X} >{\ccol}p{4em} >{\ccol}p{4em}}
     \thead{Skill}   & \thead{Bbn} & \thead{Clr} & \thead{Drd} & \thead{Ftr} & \thead{Mnk} & \thead{Pal} & \thead{Rgr} & \thead{Rog} & \thead{Sor} & \thead{Spl} & \thead{Wiz} & \thead{Untrained} & \thead{Key Ability} \\
+\hline
     Climb             & C  & cc & C  & C  & C  & cc & C  & C  & cc & cc & cc & Yes & Str\fn{1}    \\
     Jump              & C  & cc & C  & C  & C  & cc & C  & C  & cc & cc & cc & Yes & Str\fn{1}    \\
     Sprint            & C  & cc & C  & C  & C  & cc & C  & C  & cc & cc & cc & Yes & Str\fn{1}    \\
@@ -53,6 +55,7 @@ Circumstances can affect your check. A character who is free to work without dis
     Stealth           & cc & cc & cc & cc & C  & cc & C  & C  & cc & cc & cc & Yes & Dex\fn{1}    \\
     Tumble            & C  & cc & cc & C  & C  & cc & C  & C  & cc & cc & cc & Yes & Dex\fn{1}    \\
     \thead{Skill}   & \thead{Bbn} & \thead{Clr} & \thead{Drd} & \thead{Ftr} & \thead{Mnk} & \thead{Pal} & \thead{Rgr} & \thead{Rog} & \thead{Sor} & \thead{Spl} & \thead{Wiz} & \thead{Untrained} & \thead{Key Ability} \\
+    \hline
     Craft\fn{3}       & C  & C  & C  & C  & C  & C  & C  & C  & C  & C  & C  & Yes & Int          \\
     Devices           & cc & cc & cc & cc & cc & cc & cc & C  & cc & cc & cc & No  & Int          \\
     Disguise          & cc & cc & cc & cc & cc & cc & cc & C  & cc & cc & cc & Yes & Int          \\
@@ -85,7 +88,8 @@ Some checks are made against a Difficulty Class (DC). The DC is a number (set us
 \begin{dtable}
     \lcaption{Difficulty Class Examples}
     \begin{dtabularx}{\columnwidth}{p{8em} X}
-        Difficulty (DC) & Example (Skill Used) \\
+        \thead{Difficulty (DC)} & \thead{Example (Skill Used)} \\
+\hline
         Very easy (0) & Notice something in plain sight (Awareness) \\
         Easy (5) & Hear a conversation from 50 feet away (Awareness) \\
         Average (10) & Palm a coin-sided object (Sleight of Hand) \\
@@ -104,6 +108,7 @@ An opposed check is a check whose success or failure is determined by comparing 
     \lcaption{Example Opposed Checks}
     \begin{dtabularx}{\columnwidth}{*{3}{>{\lcol}X}}
         \thead{Task} & \thead{Skill (Key Ability)} & \thead{Opposing Skill (Key Ability)} \\
+\hline
         Lie & Bluff (Cha) & Sense Motive (Wis) \\
         Create a forged artwork & Craft (Int) & Craft (Int) or Awareness (Wis) \\
         Create a false map & Craft (Int) & Craft (Int) or Knowledge (geography) \\
@@ -218,6 +223,7 @@ The DC of Balance checks varies with the surface, as described in \trefnp{Balanc
     \lcaption{Balance DCs}
     \begin{dtabularx}{\columnwidth}{l X}
         \thead{Narrow Surface} & \thead{Balance DC} \\
+\hline
         At least one foot wide        & DC 5               \\
         At least six inches wide      & DC 10              \\
         At least two inches wide      & DC 15              \\
@@ -271,6 +277,7 @@ You need both hands free to climb, but you may cling to a wall with one hand whi
 \lcaption{Climb Speeds}
 \begin{dtabularx}{\columnwidth}{l X l X}
   \thead{Size} & \thead{Speed} & \thead{Size} & \thead{Speed} \\
+\hline
   Medium & 5 ft. && \\
   Small & 5 ft. & Large & 10 ft. \\
   Tiny & 2-1/2 ft. & Huge & 15 ft. \\
@@ -285,6 +292,7 @@ The DC of the check depends on the difficulty of the task and the conditions of 
 \lcaption{Climb DCs}
 \begin{dtabularx}{\textwidth}{l X l}
     \thead{Climb DC} & \thead{Surface or Activity} & \thead{Example} \\
+\hline
     10 & Surface with large hand and holds to stand on & Very rough rocks, ship's rigging \\
     15 & Surface with some hand and foot holds & Knotted rope, surface with pitons or carved holes, rough wall \\
     15 & Surface with only large hand holds & Pulling yourself up by your hands while dangling \\
@@ -301,6 +309,7 @@ The DC of the check depends on the difficulty of the task and the conditions of 
 \lcaption{Climb Modifiers}
 \begin{dtabularx}{\columnwidth}{l X}
 \thead{Climb DC Modifier\fn{1}} & \thead{Example Surface or Activity} \\
+\hline
 \minus10 & Climbing a chimney (artificial or natural) or other location where you can brace against two opposite walls \\
 \minus5 & Inclined surface (between 45 and 60 degrees) \\
 \minus5 & Climbing a corner where you can brace against perpendicular walls \\
@@ -358,6 +367,7 @@ To determine the time required to craft an item, consult the table below.
   \lcaption{Crafting Time}
   \begin{dtabularx}{\columnwidth}{l X}
     \thead{Item Price} & \thead{Crafting Time} \\
+\hline
     1gp or less & One hour \\
     10gp or less & Eight hours \\
     100gp or less & One week\fn{1} \\
@@ -371,6 +381,7 @@ To determine the time required to craft an item, consult the table below.
     \lcaption{Craft DCs}
 \begin{dtabularx}{\columnwidth}{>{\lcol}X l >{\lcol}p{4em}}
 \thead{Item} & \thead{Craft Skill} & \thead{Craft DC} \\
+\hline
 Acid & Alchemy\fn{1} & 15 \\
 Alchemist's fire, smokestick, or tindertwig & Alchemy & 20 \\
 Antitoxin, sunrod, tanglefoot bag, or thunderstone & Alchemy & 25 \\
@@ -452,6 +463,7 @@ The DC of a Devices check depends on the device being manipulated. In addition, 
 \lcaption{Devices DCs}
 \begin{dtabularx}{\columnwidth}{>{\lcol}X c}
 \thead{Device Type} & \thead{Base DC} \\
+\hline
 Simple device (wagon wheel, typical knot) & 10 \\
 Average device (door hinge, complex knot) & 15 \\
 Challenging device (typical lock or trap) & 20 \\
@@ -500,6 +512,7 @@ The Disguise check is made secretly, so that you can't be sure how good the resu
 \begin{dtable}
 \begin{dtabularx}{\columnwidth}{l >{\ccol}X}
 \thead{Characteristic} & \thead{Disguise Check Modifier} \\
+\hline
 Different gender & \minus2 \\
 Different race or subtype & \minus2 \\
 Different age category & \minus2\fn{1} \\
@@ -531,6 +544,7 @@ You can make an Escape Artist check as a standard action to escape bindings and 
 \begin{dtable}
 \begin{dtabularx}{\columnwidth}{>{\lcol}X l}
 \thead{Restraint}  & \thead{Escape Artist DC} \\
+\hline
 Ropes & Binder's grapple or Devices check \\
 Net & 20 \\
 Manacles  & 30 \\
@@ -599,6 +613,7 @@ Quadrupedal creatures don't have the same vertical reach as a bipedal creature; 
 \begin{dtable}
 \begin{dtabularx}{\columnwidth}{>{\lcol}X >{\lcol}X}
     \thead{Creature Size}  & \thead{Vertical Reach} \\
+\hline
 Colossal  & 128 ft. \\
 Gargantuan  & 64 ft. \\
 Huge  & 32 ft. \\
@@ -633,6 +648,7 @@ You can make an Sprint check as part of movement to move faster. For every 10 po
     \lcaption{Sprinting}
     \begin{dtabularx}{\columnwidth}{l X}
         \thead{Athletics Result} & \thead{Speed Multiplier} \\
+\hline
         0 & 1x \\
         10 & 2x \\
         20 & 3x \\
@@ -694,6 +710,7 @@ For every two ranks in Linguistics that you have, you may learn a new language, 
     \lcaption{Languages}
 \begin{dtabularx}{\columnwidth}{l >{\lcol}X l}
 \thead{Language}  & \thead{Typical Speakers}  & \thead{Alphabet} \\
+\hline
 Abyssal  & Demons, chaotic evil outsiders  & Infernal \\
 Aquan  & Water-based creatures  & Elven \\
 Auran  & Air-based creatures  & Draconic \\
@@ -761,6 +778,7 @@ The DC to notice an invisible creature with sight is 20 higher than normal. Noti
     \lcaption{Sight-based DCs}
     \begin{dtabularx}{\columnwidth}{X l}
         \thead{Situation} & \thead{Base DC\fn{1}} \\
+\hline
         Creature or object & 0 \\
         Creature trying to hide & Stealth check result\fn{2} \\ 
         Hidden trap, secret door, or mechanism & Craft or Devices check result \\
@@ -778,6 +796,7 @@ Background noise can make it more difficult to notice sounds. If there is signif
     \lcaption{Sound-based DCs}
     \begin{dtabularx}{\columnwidth}{X l}
         \thead{Situation} & \thead{Base DC\fn{1}} \\
+\hline
         Creature shouting & \minus5\fn{1} \\
         Creature talking normally or fighting & 0 \\ 
         Creature whispering & 10 \\
@@ -800,6 +819,7 @@ Smells dissipate quickly with distance. Double the normal distance modifiers for
     \lcaption{Scent-based DCs}
     \begin{dtabularx}{\columnwidth}{X l}
         \thead{Situation} & \thead{Base DC\fn{1}} \\
+\hline
         Strong scent (rotting flesh, pungent spices) & 0 \\
         Moderate scent (fresh food) & 5 \\
         Living creature & 10 \\
@@ -816,6 +836,7 @@ All Awareness checks share the same set of modifiers, in addition to certain mod
     \lcaption{Awareness DC Modifiers}
     \begin{dtabularx}{\columnwidth}{X l}
         \thead{Distance} & \thead{DC Modifier\fn{1}} \\
+\hline
         Less than five feet away & \plus0 \\
         Five feet away & \plus2 \\
         Twenty feet away & \plus5 \\
@@ -880,6 +901,7 @@ Your check is modified by how believable your argument is, as well as whether th
   \lcaption{Believability Modifiers}
   \begin{dtabularx}{\columnwidth}{X l}
     \thead{Description} & \thead{DC Modifier}  \\
+\hline
     Expected to be true (``Nothing interesting happened while I was on patrol'') & \minus5 \\
     Plausible (``The mayor is too busy to see you now.'') & \plus0 \\
     Unlikely (``The north gate is under attack!'') & \plus5 \\
@@ -894,6 +916,7 @@ Your check is modified by how believable your argument is, as well as whether th
   \lcaption{Motivation Modifiers}
   \begin{dtabularx}{\columnwidth}{X l}
     \thead{Description} & \thead{DC Modifier} \\
+\hline
     Target wants to believe (``That dress looks lovely on you.'') & \minus5 \\
     Target does not have strong feelings (``I'm busy.'') & \plus0 \\
     Target doesn't want the story to be true (``Your brother is a murderer.'') & \plus5 \\
@@ -910,6 +933,7 @@ Your check is modified by your relationship with the group and how favorable the
 \begin{dtable}
 \begin{dtabularx}{\columnwidth}{>{\lcol}X r}
 \thead{Relationship} & \thead{Modifier} \\
+\hline
 Intimate: Someone who with whom you have an implicit trust.
 Example: A lover or spouse. & \minus15 \\
 Friend: Someone with whom you have a regularly positive personal relationship.
@@ -930,6 +954,7 @@ Nemesis: Someone who has sworn to do you, personally, harm. Example: The brother
 \begin{dtable*}
 \begin{dtabularx}{\textwidth}{>{\lcol}X r}
 \thead{Risk vs. Reward Judgement (Persuasion)} & \thead{Modifier} \\
+\hline
 Fantastic: The reward for accepting the deal is very worthwhile; the risk is either acceptable or extremely unlikely. The best-case scenario is a virtual guarantee. Example: An offer to pay a lot of gold for information that isn't important to the character. & \minus15 \\
 Good: The reward is good and the risk is minimal. The subject is very likely to profit from the deal. Example: An offer to pay someone twice their normal daily wage to spend their evening in a seedy tavern with a reputation for vicious brawls and later report on everyone they saw there. & \minus10\\
 Favorable: The reward is appealing, but there's risk involved. If all goes according to plan, though, the deal will end up benefiting the subject. Example: A request for a mercenary to aid the party in battle against a weak goblin tribe in return for a cut of the money and first pick of the magic items. & \minus5\\
@@ -1025,6 +1050,7 @@ You can attempt Sleight of Hand checks untrained, but your check result can't ex
     \lcaption{Sleight of Hand Modifiers}
     \begin{dtabularx}{\columnwidth}{X l}
         \thead{Size} & {Check Modifier} \\
+\hline
         Fine & \plus8 \\
         Diminuitive & \plus4 \\
         Tiny & \plus0 \\
@@ -1075,6 +1101,7 @@ A magical aura can linger after its original source dissipates (in the case of a
 \lcaption{Aura Strengths}
 \begin{dtabularx}{\textwidth}{>{\lcol}X *{4}{>{\lcol}p{9em}}}
 & \multicolumn{4}{c}{\thead{---{}---{}---Aura Power---{}---{}---}} \\
+\hline
 \thead{Spell or Object} & \thead{Faint} & \thead{Moderate} & \thead{Strong} & \thead{Overwhelming} \\
 Functioning spell (spell level) & 3rd or lower & 4th--6th & 7th--9th & 10th\add (deity-level) \\
 Magic item (caster level) & 6th or lower & 7th--12th & 13th--20th & 21st\add (artifact) \\
@@ -1136,6 +1163,7 @@ This check is made once every 8 hours you spend travelling overland. You can't t
     \lcaption{Terrain DCs}
     \begin{dtabularx}{\columnwidth}{X l l}
         \thead{Terrain} & \thead{Navigation DC} & \thead{Sustinence DC} \\
+\hline
         Desert & 20 & 30 \\
         Forest & 15 & 15 \\
         Jungle & 15 & 10 \\
@@ -1167,6 +1195,7 @@ You can make a Swim check to move through water. The DC depends on the turbulenc
     \lcaption{Swim DCs}
 \begin{dtabularx}{\columnwidth}{>{\lcol}X >{\lcol}X}
 \thead{Water} & \thead{Swim DC} \\
+\hline
 Calm water & 10 \\
 Rough water & 15 \\
 Stormy water & 20\fn{1}
@@ -1205,6 +1234,7 @@ Obstructed or otherwise treacherous surfaces, such as natural cavern floors or u
     \lcaption{Tumble Modifiers}
     \begin{dtabularx}{\columnwidth}{>{\lcol}X c}
         \thead{Surface Is} & \thead{DC Modifier} \\
+\hline
         Lightly obstructed (scree, light rubble, shallow bog, light undergrowth)  & \plus2 \\
         Lightly slippery (wet floor)  & \plus2 \\
         Sloped or angled  & \plus2 \\
