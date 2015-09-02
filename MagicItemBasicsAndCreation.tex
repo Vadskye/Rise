@@ -11,12 +11,12 @@ When \spell{detect magic} identifies a magic item's school of magic, this inform
 If more than one spell is given as a prerequisite, use the highest-level spell. If no spells are included in the prerequisites, use the following default guidelines.
 
 \begin{dtable}
-\begin{tabularx}{\columnwidth}{>{\ccol}X >{\ccol}X}
+\begin{dtabularx}{\columnwidth}{>{\ccol}X >{\ccol}X}
 \thead{Item Nature} & \thead{School} \\
 Armor and protection items & Abjuration \\
 Weapons or offensive items & Transmutation \\
 Bonus to attribute score, on skill check, etc. & Transmutation
-\end{tabularx}
+\end{dtabularx}
 \end{dtable}
 
 \subsection{Magic Item Rarity}
@@ -78,7 +78,7 @@ The secrets of creating artifacts are long lost.
 
 \begin{dtable!*}
 \lcaption{Summary of Magic Item Creation Costs}
-\begin{tabularx}{\textwidth}{*{6}{>{\lcol}X}}
+\begin{dtabularx}{\textwidth}{*{6}{>{\lcol}X}}
 \thead{Magic Item}  & \thead{Feat}  & \thead{Item Cost}  & \thead{Material Components\fn{2}} & \thead{Magic Supplies Cost}  & \thead{Base Price} \\
 Armor  & Craft Magic Arms and Armor & Armor  & Cost \mtimes 50 (usually none) & 1/2 the value on Table: Armor and Shields & Value on Table: Armor and Shields \\
 Shield   & Craft Magic Arms and Armor & Shield  & \mtimes 50 (usually none) & 1/2 the value on Table: Armor and Shields & Value on Table: Armor and Shields \\
@@ -90,7 +90,7 @@ Scroll  & Scribe Scroll  &  -   & Cost (usually none) & 1/2 \mtimes 12.5 \mtimes
 Staff  & Craft Staff  & Quarterstaff (0 gp) & \mtimes 50 / (\# of charges used to activate spell) & See Creating Staffs, below  & See Creating Staffs, below \\
 Wand  & Craft Wand  &  -   & \mtimes 50  &  1/2 \mtimes 375 \mtimes level of spell \mtimes level of caster   & 375 \mtimes level of spell \mtimes level of caster \\
 Wondrous Item  & Craft Wondrous Item  & -  & \mtimes 50 (usually none) & Special, see Table: Estimating Magic Item Gold Price Values, below & Special, see Table: Estimating Magic Item Gold Price Values, below \\
-\end{tabularx}
+\end{dtabularx}
 1 Rods usable as weapons must include the weapon cost. \\
 2 This cost is only for spells activated by the item that have costly material components. Having a spell with a costly component as a prerequisite does not automatically incur this cost if the item doesn't actually cast the spell.  \\
 An item's market price is the sum of the item cost, spell component costs, and the base price.
@@ -98,7 +98,7 @@ An item's market price is the sum of the item cost, spell component costs, and t
 
 \begin{dtable!*}
 \lcaption{Estimating Magic Item Gold Piece Values}
-\begin{tabularx}{\textwidth}{*{3}{>{\lcol}X}}
+\begin{dtabularx}{\textwidth}{*{3}{>{\lcol}X}}
 \thead{Effect}  & \thead{Base Price}  & \thead{Example} \\
 Ability bonus  & Bonus squared  \mtimes 2,000 gp  & Gloves of Dexterity \plus2 \\
 Armor bonus  & Bonus squared  \mtimes 1,000 gp  & \plus1 chainmail \\
@@ -136,7 +136,7 @@ Charged (25 charges)  & 1/2 unlimited use base price  & Ring of the ram \\
 \thead{Component}  & \thead{Extra Cost}  & \thead{Example} \\
 Armor, shield, or weapon  & Add cost of item  & \plus1 composite longbow \\
 Spell has material component cost  & Add directly into price of item per charge\fn{7}  & Wand of stoneskin \\
-\end{tabularx}
+\end{dtabularx}
 \parhead{Spell Level} A 0-level spell is half the value of a 1st-level spell for determining price.
 \parhead{Caster Level} A 1st-level spell is considered to have a caster level of 2 for determining price. \\
 1 If the activation time is a swift action, multiply the cost by 2. If it is an immediate action, multiply the cost by 3. Ignore these modifiers if the spell being emulated originally had a swift or immediate casting time. If the item bestows an effect on its user, the cost is calculated differently. If the effect has a duration measured in rounds, multiply the cost by 1.5. If the effect has a duration measured in minutes or longer, price it as a continuous item instead of as an activated item. If the effect has a duration of 10 minutes/level or more, the cost cannot be reduced by giving the item limited charges per day. \\
@@ -150,14 +150,14 @@ Spell has material component cost  & Add directly into price of item per charge\
 
 \begin{dtable}
 \lcaption{Limited Use Price Modifiers}
-\begin{tabularx}{\columnwidth}{>{\ccol}X >{\ccol}X}
+\begin{dtabularx}{\columnwidth}{>{\ccol}X >{\ccol}X}
 \thead{Charges} & \thead{Cost Modifier} \\
 1/week & Divide by 5 \\
 1/day & Divide by 4 \\
 2/day & Divide by 3 \\
 3/day & Divide by 2 \\
 5/day & Divide by 1.5 \\
-\end{tabularx}
+\end{dtabularx}
 \end{dtable}
 
 \subsection{Magic Item Gold Piece Values}
@@ -185,7 +185,7 @@ Not all items adhere to these formulas directly. The reasons for this are severa
 The caster level of a magic item is both a measure of how powerful the item is and a requirement for how powerful a character must be to create it. The caster level of an item is generally based on the minimum caster level of the spell (or spells) required to forge the item, but several modifiers apply to the caster level. These are listed below. As always, discretion is necessary when creating items, and these guidelines are not always followed exactly.
 \begin{dtable}
 \lcaption{Item Caster Level Modifiers}
-\begin{tabularx}{\columnwidth}{>{\lcol}X l}
+\begin{dtabularx}{\columnwidth}{>{\lcol}X l}
 \thead{Condition} & \thead{CL Modifier} \\
 Item effect is significantly weaker than prerequisite spell & \minus2 CL \\
 Item effect is significantly stronger than prerequisite spell & \plus2 CL \\
@@ -195,7 +195,7 @@ Item effect has \mult1.5 cost multipler & \plus2 CL \\
 Item effect is unlimited use or continuous & \plus4 CL \\
 Item effect is a more powerful part of an increasingly powerful sequence of effects (such as light, moderate, and heavy fortification) & \plus4 CL \\
 Item effect has \mult2 cost multipler & \plus4 CL
-\end{tabularx}
+\end{dtabularx}
 \end{dtable}
 
 \subsection{Masterwork Items}
@@ -554,7 +554,7 @@ You can use the affinities in the list below to guide your decisions on which ma
 Some body slots have different affinities for different specific items.
 
 \begin{dtable}
-\begin{tabularx}{\columnwidth}{>{\lcol}X >{\lcol}X}
+\begin{dtabularx}{\columnwidth}{>{\lcol}X >{\lcol}X}
 \thead{Body Slot} & \thead{Affinity} \\
 Amulet & Physical protection \\
 Belt & Physical improvement \\
@@ -573,7 +573,7 @@ Phylactery & Morale, alignment \\
 Robe  & Multiple effects \\
 Shirt  & Physical improvement \\
 Vest, vestment  & Class ability improvement \\
-\end{tabularx}
+\end{dtabularx}
 \end{dtable}
 
 Wondrous items that don't match the affinity for a particular body slot should cost 50\% more than wondrous items that match the affinity.

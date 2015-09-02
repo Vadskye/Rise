@@ -91,7 +91,7 @@ With this method, you can fully control your character's attribute scores to mat
 
 \begin{dtable}
     \lcaption{Attribute Score Point Costs}
-    \begin{tabularx}{\columnwidth}{X X X X}
+    \begin{dtabularx}{\columnwidth}{X X X X}
         \thead{Attribute Score} & \thead{Point Cost} \\
         \hline
         \minus2 & \minus2\fn{1} \\
@@ -102,7 +102,7 @@ With this method, you can fully control your character's attribute scores to mat
         3 & 3 \\
         4 & 5 \\
         5 & 8 \\
-    \end{tabularx}
+    \end{dtabularx}
     1 No more than two attribute scores can be reduced below 0 in this way.
 \end{dtable}
 
@@ -211,14 +211,14 @@ The attributes and relevant bonuses which apply to each defense are described on
 
 \begin{dtable!*}
     \lcaption{Defense Calculations}
-    \begin{tabularx}{\textwidth}{l l l l l >{\lcol}X}
+    \begin{dtabularx}{\textwidth}{l l l l l >{\lcol}X}
         \thead{Defense Name} & \thead{Defense Bonus} & \thead{Attributes} & \thead{Body Armor Modifier} & \thead{Shield Modifier} & \thead{Size Modifier} \\
         Armor defense     & Base attack bonus    & Dex or Con        & Yes & Yes & Yes     \\
         Maneuver defense  & Base attack bonus    & Str or Dex        & No  & Yes & Special \\
         Fortitude defense & Base Fortitude bonus & Con \add half Str & No  & No  & No      \\
         Reflex defense    & Base Reflex bonus    & Dex \add half Per & No  & Yes & Yes     \\
         Will defense      & Base Will bonus      & Wil \add half Int & No  & No  & No      \\
-    \end{tabularx}
+    \end{dtabularx}
 \end{dtable!*}
 
 \meh{\parhead{Base Attack Bonus} Your experience and aptitude in combat affects your ability to defend yourself; experienced warriors know how to recognize and avoid or parry blows that would easily fell novices. As a result, you add half your base attack bonus to your Armor defense. Your fighting experience is even more important when defending against combat maneuvers, so you add your full base attack bonus to your Maneuver defense.}
@@ -316,7 +316,7 @@ Size affects your space and reach in combat. In addition, your physical attacks 
 
 \begin{dtable*}
     \lcaption{Size in Combat}
-    \begin{tabularx}{\textwidth}{l l l l l X}
+    \begin{dtabularx}{\textwidth}{l l l l l X}
         \thead{Size} & \thead{Space\fn{1}} & \thead{Reach\fn{1}} & \thead{Size Modifier\fn{2}} & \thead{Special Size Modifier\fn{3}} & \thead{Example Creature} \\
         Fine              & 1/2 ft.    & 0          & \plus8  & \minus16 & Fly                      \\
         Diminutive        & 1 ft.      & 0          & \plus4  & \minus12 & Toad                     \\
@@ -331,7 +331,7 @@ Size affects your space and reach in combat. In addition, your physical attacks 
         Gargantuan (long) & 20 ft.     & 15 ft.     & \minus4 & \plus12  & Kraken                   \\
         Colossal (tall)   & 30\add ft. & 30\add ft. & \minus8 & \plus16  & Colossal animated object \\
         Colossal (long)   & 30\add ft. & 20\add ft. & \minus8 & \plus16  & Great wyrm red dragon    \\
-    \end{tabularx}
+    \end{dtabularx}
     1 Creatures can vary in space and reach. These are simply typical values. \\
     2 Modifies physical attacks and defenses, except for maneuvers \\
     3 Modifies maneuver attack and defense. The opposite modifier applies to Stealth. \\
