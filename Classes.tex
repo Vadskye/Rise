@@ -52,6 +52,7 @@ The effects of each progression are described on \trefnp{Base Progressions}.
 
 \begin{dtable}
     \lcaption{Base Progressions}
+    \setlength\tabcolsep{0.45em}%
     \begin{dtabularx}{\columnwidth}{l l X}
         \thead{Progression} & \thead{Base Attack Bonus} & \thead{Base Defense Bonus}        \\
         \hline
@@ -63,7 +64,7 @@ The effects of each progression are described on \trefnp{Base Progressions}.
 
 \begin{dtable}
     \lcaption{Base Defense Progression Bonuses}
-    \begin{tabularx}{\columnwidth}{l X X X}
+    \begin{dtabularx}{\columnwidth}{l X X X}
         \thead{Level} & \thead{Good} & \thead{Average} & \thead{Poor} \\
         \alldefenseprogressionrow{1}  \\
         \alldefenseprogressionrow{2}  \\
@@ -85,12 +86,12 @@ The effects of each progression are described on \trefnp{Base Progressions}.
         \alldefenseprogressionrow{18} \\
         \alldefenseprogressionrow{19} \\
         \alldefenseprogressionrow{20} \\
-    \end{tabularx}
+    \end{dtabularx}
 \end{dtable}
 
 \begin{dtable}
     \lcaption{Base Attack Progression Bonuses}
-    \begin{tabularx}{\columnwidth}{l l X X}
+    \begin{dtabularx}{\columnwidth}{l l X X}
         \thead{Level} & \thead{Good} & \thead{Average} & \thead{Poor} \\
         \allbabprogressionrow{1}  \\
         \allbabprogressionrow{2}  \\
@@ -112,7 +113,7 @@ The effects of each progression are described on \trefnp{Base Progressions}.
         \allbabprogressionrow{18} \\
         \allbabprogressionrow{19} \\
         \allbabprogressionrow{20} \\
-    \end{tabularx}
+    \end{dtabularx}
 \end{dtable}
 
 \parhead{Class Features}
@@ -121,7 +122,7 @@ The class features that a character gets for being a member of the class.
 \section{Barbarian}
 \begin{dtable*}
     \lcaption{The Barbarian}
-    \begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\babcolavg}} X}
+    \begin{dtabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\babcolavg}} X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
         \barbarianprogressionrow{1}  & Rage \plus2                        \\
         \barbarianprogressionrow{2}  & Damage reduction, fast movement    \\
@@ -143,7 +144,7 @@ The class features that a character gets for being a member of the class.
         \barbarianprogressionrow{18} & Channeled rage                     \\
         \barbarianprogressionrow{19} & Deathless rage                     \\
         \barbarianprogressionrow{20} & Rage \plus5
-    \end{tabularx}
+    \end{dtabularx}
 \end{dtable*}
 
 \cd{Alignment} Any nonlawful.
@@ -330,7 +331,7 @@ If he stops being lawful, he regains his ability to rage and take barbarian leve
 \section{Cleric}
 \begin{dtable*}
     \lcaption{The Cleric}
-    \begin{tabularx}{\textwidth}{>{\ccol}p{2em} >{\ccol}p{7em} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
+    \begin{dtabularx}{\textwidth}{>{\ccol}p{2em} >{\ccol}p{7em} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
         \clericprogressionrow{1}  & Devotion, lesser domain aspect, spells \\
         \clericprogressionrow{2}  & Channel energy                         \\
@@ -352,7 +353,7 @@ If he stops being lawful, he regains his ability to rage and take barbarian leve
         \clericprogressionrow{18} & \x                                     \\
         \clericprogressionrow{19} & Domain mastery                         \\
         \clericprogressionrow{20} & Supreme Devotion                       \\
-    \end{tabularx}
+    \end{dtabularx}
 \end{dtable*}
 
 \cd{Alignment} If the cleric worships a deity, his alignment must be within one step of his deity's (that is, it may be one step away on either the lawful-chaotic axis or the good-evil axis, but not both).
@@ -420,7 +421,7 @@ Spells associated with particular alignments are indicated by the chaos, evil, g
 
 \begin{dtable}
     \lcaption{Cleric Spell Slots}
-    \begin{tabularx}{\columnwidth}{>{\ccol}X *{9}{>{\ccol}p{\spellcol}}}
+    \begin{dtabularx}{\columnwidth}{>{\ccol}X *{9}{>{\ccol}p{\spellcol}}}
         & \multicolumn{9}{c}{\thead{---{}---{}---{}---{}---{}---{}---{}---Spell Level---{}---{}---{}---{}---{}---{}---{}---}} \\
         \thead{Level} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} & \thead{5th} & \thead{6th} & \thead{7th} & \thead{8th} & \thead{9th} \\
         1st  & 3 & \x & \x & \x & \x & \x & \x & \x & \x \\
@@ -443,13 +444,13 @@ Spells associated with particular alignments are indicated by the chaos, evil, g
         18th & 6 & 6  & 6  & 6  & 6  & 6  & 6  & 5  & 3  \\
         19th & 6 & 6  & 6  & 6  & 6  & 6  & 6  & 6  & 4  \\
         20th & 6 & 6  & 6  & 6  & 6  & 6  & 6  & 6  & 6  \\
-    \end{tabularx}
+    \end{dtabularx}
 \end{dtable}
 
 \begin{dtable}
     \lcaption{Cleric Spells Known}
     \centering
-    \begin{tabularx}{\columnwidth}{>{\ccol}X *{9}{>{\ccol}p{\spellcol}}}
+    \begin{dtabularx}{\columnwidth}{>{\ccol}X *{9}{>{\ccol}p{\spellcol}}}
         & \multicolumn{9}{c}{\thead{---{}---{}---{}---{}---{}---{}---{}---Spell Level---{}---{}---{}---{}---{}---{}---{}---}} \\
         \thead{Level} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} & \thead{5th} & \thead{6th} & \thead{7th} & \thead{8th} & \thead{9th} \\
         1st  & 1 & \x & \x & \x & \x & \x & \x & \x & \x \\
@@ -472,12 +473,12 @@ Spells associated with particular alignments are indicated by the chaos, evil, g
         18th & 4 & 3 & 3 & 3 & 3 & 3 & 2 & 2 & 1 \\
         19th & 4 & 3 & 3 & 3 & 3 & 3 & 2 & 2 & 2 \\
         20th & 4 & 3 & 3 & 3 & 3 & 3 & 2 & 2 & 2
-    \end{tabularx}
+    \end{dtabularx}
 \end{dtable}
 
 \begin{dtable!*}
     \lcaption{Deities}
-    \begin{tabularx}{\textwidth}{X l X}
+    \begin{dtabularx}{\textwidth}{X l X}
         \thead{Deity} & \thead{Alignment} & \thead{Domains} \\
         Guftas, horse god of justice & Lawful good & Good, Law, Strength, Travel \\
         Lucied, paladin god of justice & Lawful good & Destruction, Good, Leadership, War \\
@@ -500,7 +501,7 @@ Spells associated with particular alignments are indicated by the chaos, evil, g
         Theodolus, sorcerer god of ambition & Neutral evil & Evil, Knowledge, Magic, Trickery \\
         Daeghul, demon god of slaughter & Chaotic evil & Destruction, Evil, Magic, War \\
 %Ribo, halfling god of trickery & Chaotic neutral & Chaos, Trickery, Water
-    \end{tabularx}
+    \end{dtabularx}
 \end{dtable!*}
 
 \cft{Clr}{Devotion}{Su}
@@ -893,7 +894,7 @@ He cannot thereafter gain levels as a cleric of that god until he atones (see th
 \section{Druid}
 \begin{dtable}
     \lcaption{The Druid}
-    \begin{tabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\centering}p{\babcolavg} *{3}{>{\ccol}p{\savecol}} >{\ccol}X}
+    \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\centering}p{\babcolavg} *{3}{>{\ccol}p{\savecol}} >{\ccol}X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
         \druidprogressionrow{1}  & Rituals, spells, wild speech     \\
         \druidprogressionrow{2}  & Natural casting, woodland stride \\
@@ -915,7 +916,7 @@ He cannot thereafter gain levels as a cleric of that god until he atones (see th
         \druidprogressionrow{18} & Totemic aspect                   \\
         \druidprogressionrow{19} & Natural aspect, multiple aspect  \\
         \druidprogressionrow{20} & Greater natural casting          \\
-    \end{tabularx}
+    \end{dtabularx}
 \end{dtable}
 
 \cd{Alignment} Neutral good, lawful neutral, neutral, chaotic
@@ -963,7 +964,7 @@ Attuning to a natural environment for an hour, as described above, restores all 
 \begin{dtable}
     \lcaption{Druid Spell Slots}
     \centering
-    \begin{tabularx}{\columnwidth}{>{\ccol}X *{9}{>{\ccol}p{\spellcol}}}
+    \begin{dtabularx}{\columnwidth}{>{\ccol}X *{9}{>{\ccol}p{\spellcol}}}
         & \multicolumn{9}{c}{\thead{---{}---{}---{}---{}---{}---{}---{}---Spell Level---{}---{}---{}---{}---{}---{}---{}---}} \\
         \thead{Level} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} & \thead{5th} & \thead{6th} & \thead{7th} & \thead{8th} & \thead{9th} \\
         1st  & 1 & \x & \x & \x & \x & \x & \x & \x & \x \\
@@ -986,7 +987,7 @@ Attuning to a natural environment for an hour, as described above, restores all 
         18th & 3 & 3  & 3  & 3  & 3  & 3  & 3  & 3  & 2  \\
         19th & 3 & 3  & 3  & 3  & 3  & 3  & 3  & 3  & 3  \\
         20th & 3 & 3  & 3  & 3  & 3  & 3  & 3  & 3  & 3  \\
-    \end{tabularx}
+    \end{dtabularx}
 \end{dtable}
 
 \cf{Drd}{Rituals}
@@ -1258,7 +1259,7 @@ She cannot thereafter gain levels as a druid until she atones (see the \spell{at
 \section{Fighter}
 \begin{dtable}
     \lcaption{The Fighter}
-    \begin{tabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
+    \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
         \fighterprogressionrow{1}  & Armor discipline                    \\
         \fighterprogressionrow{2}  & Bonus feat                          \\
@@ -1280,7 +1281,7 @@ She cannot thereafter gain levels as a druid until she atones (see the \spell{at
         \fighterprogressionrow{18} & Bonus feat, improved battlemaster   \\
         \fighterprogressionrow{19} & True discipline                     \\
         \fighterprogressionrow{20} & Adaptive style feat, greater adaptive style
-    \end{tabularx}
+    \end{dtabularx}
 \end{dtable}
 
 \cd{Alignment} Any.
@@ -1342,7 +1343,7 @@ If the fighter attempts to mitigate a new condition, the old condition takes its
 
 \begin{dtable}
     \lcaption{Combat Discipline Conditions}
-    \begin{tabularx}{\columnwidth}{*{4}{>{\lcol}X}}
+    \begin{dtabularx}{\columnwidth}{*{4}{>{\lcol}X}}
         \thead{Original Condition} & \thead{Mitigated Condition} & \thead{Mitigated Condition} & \thead{Mitigated Condition} \\
         Panicked & Frightened & Shaken & None  \\
         Petrified  & Paralyzed & Slowed & None \\
@@ -1360,7 +1361,7 @@ If the fighter attempts to mitigate a new condition, the old condition takes its
         Immobilized & None & \x & \x \\
         Negative level\fn{3} & None & \x & \x \\
         Vulnerable & None & \x & \x \\
-    \end{tabularx}
+    \end{dtabularx}
     1.
     Allows the fighter to mitigate up to half his fighter level in ability damage or penalties per use of combat discipline.
     \\
@@ -1467,7 +1468,7 @@ He need only spend a swift action to exchange an adaptive style feat.
 \section{Monk}
 \begin{dtable}
     \lcaption{The Monk}
-    \begin{tabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolavg} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
+    \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolavg} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
         \monkprogressionrow{1}  & Enlightened defense, unarmed warrior \\
         \monkprogressionrow{2}  & Fast movement, \Ki power             \\
@@ -1489,7 +1490,7 @@ He need only spend a swift action to exchange an adaptive style feat.
         \monkprogressionrow{18} & Perfect motion                       \\
         \monkprogressionrow{19} & Greater bodily perfection            \\
         \monkprogressionrow{20} & True perfection                      \\
-    \end{tabularx}
+    \end{dtabularx}
 \end{dtable}
 
 \cd{Alignment} Any nonchaotic.
@@ -1679,7 +1680,7 @@ If she stops being chaotic, she regains her \ki powers and ability to take monk 
 \section{Paladin}
 \begin{dtable*}
     \lcaption{The Paladin}
-    \begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecolpoof}} X}
+    \begin{dtabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecolpoof}} X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
         \paladinprogressionrow{1}  & Discernment, divine power (smite)  \\
         \paladinprogressionrow{2}  & Divine power                       \\
@@ -1701,7 +1702,7 @@ If she stops being chaotic, she regains her \ki powers and ability to take monk 
         \paladinprogressionrow{18} & Divine power                       \\
         \paladinprogressionrow{19} & Divine gift                        \\
         \paladinprogressionrow{20} & Divine power, divine presence      \\
-    \end{tabularx}
+    \end{dtabularx}
 \end{dtable*}
 
 \cd{Alignment} Any other than true neutral.
@@ -2051,7 +2052,7 @@ She regains her abilities and advancement potential if she atones for her violat
 
 \begin{dtable*}
     \lcaption{The Ranger}
-    \begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\babcolavg}} >{\lcol}X}
+    \begin{dtabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\babcolavg}} >{\lcol}X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
         \rangerprogressionrow{1}  & Quarry \plus2, Track                    \\
         \rangerprogressionrow{2}  & Favored terrain, wild speech            \\
@@ -2073,7 +2074,7 @@ She regains her abilities and advancement potential if she atones for her violat
         \rangerprogressionrow{18} & Ranger lore, favored terrain (planar)   \\
         \rangerprogressionrow{19} & Perfect stride                          \\
         \rangerprogressionrow{20} & Quarry \plus5, truesight
-    \end{tabularx}
+    \end{dtabularx}
 \end{dtable*}
 
 \cd{Alignment} Any.
@@ -2171,13 +2172,13 @@ The ranger may select this lore multiple times, choosing a different favored ene
 
 \begin{dtable}
     \lcaption{Favored Enemy Options}
-    \begin{tabularx}{\columnwidth}{X X}
+    \begin{dtabularx}{\columnwidth}{X X}
         Animals and vermin & Humanoids (uncivilized) \\
         Dragons & Oozes and plants \\
         Fey & Outsiders (inner planes) \\
         Giants and monstrous humanoids & Outsiders (outer planes) \\
         Humanoids (civilized)  & Undead and constructs \\
-    \end{tabularx}
+    \end{dtabularx}
 \end{dtable}
 
 \subcf{Master of the Hunt}
@@ -2327,7 +2328,7 @@ He gains the ability to see all things as they actually are, as the \spell{true 
 \section{Rogue}
 \begin{dtable*}
     \lcaption{The Rogue}
-    \begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\babcolavg}} X}
+    \begin{dtabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\babcolavg}} X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
         \rogueprogressionrow{1}  & Sneak attack \plus1d6                  \\
         \rogueprogressionrow{2}  & Skill talent                           \\
@@ -2349,7 +2350,7 @@ He gains the ability to see all things as they actually are, as the \spell{true 
         \rogueprogressionrow{18} & Skill talent                           \\
         \rogueprogressionrow{19} & Skill exemplar, sneak attack \plus10d6 \\
         \rogueprogressionrow{20} & Ambush master, combat trick            \\
-    \end{tabularx}
+    \end{dtabularx}
 \end{dtable*}
 
 \cd{Alignment} Any.
@@ -2538,7 +2539,7 @@ The rogue deals full sneak attack damage on her first successful sneak each roun
 \section{Sorcerer}
 \begin{dtable*}
     \lcaption{The Sorcerer}
-    \begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{7em} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
+    \begin{dtabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{7em} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
         \sorcererprogressionrow{1}  & Arcane invocation, spells, wild magic \\
         \sorcererprogressionrow{2}  & Arcane invocation, spellsurge \plus2  \\
@@ -2560,7 +2561,7 @@ The rogue deals full sneak attack damage on her first successful sneak each roun
         \sorcererprogressionrow{18} & Spellsurge                            \\
         \sorcererprogressionrow{19} & Endless surge,                        \\
         \sorcererprogressionrow{20} & Greater wild magic, spellsurge \plus5 \\
-    \end{tabularx}
+    \end{dtabularx}
 \end{dtable*}
 
 \cd{Alignment} Any.
@@ -2711,7 +2712,7 @@ When the sorcerer miscasts a spell or spellblend with his wild magic ability, th
 \section{Spellwarped}
 \begin{dtable*}
     \lcaption{The Spellwarped}
-    \begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{2}{>{\ccol}p{\babcolavg}} >{\lcol}X}
+    \begin{dtabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{2}{>{\ccol}p{\babcolavg}} >{\lcol}X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Good Defense}\fn{1} & \thead{Normal Defenses}\fn{1} & \thead{Special} \\
         \spellwarpedprogressionrow{1}  & Innate magic, invoke power, spellwarp pool   \\
         \spellwarpedprogressionrow{2}  & Spellwarped body, surge of power             \\
@@ -2733,7 +2734,7 @@ When the sorcerer miscasts a spell or spellblend with his wild magic ability, th
         \spellwarpedprogressionrow{18} & Invoke power                                 \\
         \spellwarpedprogressionrow{19} & Permanent surge of power, spellwarped aspect \\
         \spellwarpedprogressionrow{20} & Invoke power                                 \\
-    \end{tabularx}
+    \end{dtabularx}
     1 Each spellwarped has a good defense determined by his choice of innate magic.
 \end{dtable*}
 
@@ -3212,7 +3213,7 @@ This functions like the temporal prison power, except that no attack is required
 \section{Wizard}
 \begin{dtable*}
     \lcaption{The Wizard}
-    \begin{tabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{7em} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
+    \begin{dtabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{7em} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
         \wizardprogressionrow{1}  & Arcane invocation, spells, rituals \\
         \wizardprogressionrow{2}  & Arcane invocation, magic feat      \\
@@ -3234,7 +3235,7 @@ This functions like the temporal prison power, except that no attack is required
         \wizardprogressionrow{18} & Magic feat                         \\
         \wizardprogressionrow{19} & Arcane insight                     \\
         \wizardprogressionrow{20} & Chain contingency                  \\
-    \end{tabularx}
+    \end{dtabularx}
 \end{dtable*}
 
 \cd{Alignment} Any.
@@ -3275,7 +3276,7 @@ This rest does not have to involve sleep, but most wizards get this rest when th
 \begin{dtable}
     \lcaption{Wizard Spell Slots} 
     \centering
-    \begin{tabularx}{\columnwidth}{>{\ccol}X *{9}{>{\ccol}p{\spellcol}}}
+    \begin{dtabularx}{\columnwidth}{>{\ccol}X *{9}{>{\ccol}p{\spellcol}}}
         & \multicolumn{9}{c}{\thead{---{}---{}---{}---{}---{}---{}---{}---Spell Level---{}---{}---{}---{}---{}---{}---{}---}} \\
         \thead{Level} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} & \thead{5th} & \thead{6th} & \thead{7th} & \thead{8th} & \thead{9th} \\
         1st & 3 & \x & \x & \x & \x & \x & \x & \x & \x \\
@@ -3298,12 +3299,12 @@ This rest does not have to involve sleep, but most wizards get this rest when th
         18th & 6 & 6 & 6 & 6 & 6 & 6 & 6 & 5 & 3 \\
         19th & 6 & 6 & 6 & 6 & 6 & 6 & 6 & 6 & 4 \\
         20th & 6 & 6 & 6 & 6 & 6 & 6 & 6 & 6 & 6 \\
-    \end{tabularx}
+    \end{dtabularx}
 \end{dtable}
 
 \begin{dtable}
     \lcaption{Wizard Spells Known}
-    \begin{tabularx}{\columnwidth}{>{\ccol}X *{9}{>{\ccol}p{\spellcol}}}
+    \begin{dtabularx}{\columnwidth}{>{\ccol}X *{9}{>{\ccol}p{\spellcol}}}
         & \multicolumn{9}{c}{\thead{---{}---{}---{}---{}---{}---{}---{}---Spell Level---{}---{}---{}---{}---{}---{}---{}---}} \\
         \thead{Level} & \thead{1st} & \thead{2nd} & \thead{3rd} & \thead{4th} & \thead{5th} & \thead{6th} & \thead{7th} & \thead{8th} & \thead{9th} \\
         1st  & 1 & \x & \x & \x & \x & \x & \x & \x & \x \\
@@ -3326,7 +3327,7 @@ This rest does not have to involve sleep, but most wizards get this rest when th
         18th & 4 & 3 & 3 & 3 & 3 & 3 & 2 & 2 & 1 \\
         19th & 4 & 3 & 3 & 3 & 3 & 3 & 2 & 2 & 2 \\
         20th & 4 & 3 & 3 & 3 & 3 & 3 & 2 & 2 & 2
-    \end{tabularx}
+    \end{dtabularx}
 \end{dtable}
 
 \cf{Wiz}{Rituals}
@@ -3424,7 +3425,7 @@ The experience required to reach a level, and the benefits gained at each level,
 
 \begin{dtable}
     \lcaption{Character Advancement}
-    \begin{tabularx}{\columnwidth}{*{4}{>{\ccol}X}}
+    \begin{dtabularx}{\columnwidth}{*{4}{>{\ccol}X}}
         \thead{Character level} & \thead{XP} & \thead{Feats} & \thead{Attribute Increases} \\
         1st  & 0         & 1st  & \x                           \\
         2nd  & 2,000     & \x   & \plus1 to two\fn{1}          \\
@@ -3446,7 +3447,7 @@ The experience required to reach a level, and the benefits gained at each level,
         18th & 1,800,000 & \x   & \plus1 to two                \\
         19th & 2,550,000 & 10th & \plus1 to two                \\
         20th & 3,600,000 & \x   & \plus1 to two, \plus1 to all
-    \end{tabularx}
+    \end{dtabularx}
     1.
     The same attribute cannot be increased with both increases.
 \end{dtable}

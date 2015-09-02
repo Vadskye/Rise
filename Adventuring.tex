@@ -12,7 +12,7 @@ If your character is weak or carrying a lot of gear, however, then you'll need t
 \begin{dtable}
     \lcaption{Weight Limits}
     \setlength{\tabcolsep}{4pt}
-    \begin{tabularx}{\columnwidth}{X l l l l}
+    \begin{dtabularx}{\columnwidth}{X l l l l}
          \thead{Strength} & \thead{Unencumbered} & \thead{Maximum} & \thead{Overloaded} & \thead{Push/Drag} \\
         -9 & 2 lb. & 4 lb.  & 6 lb. & 20 lb. \\
         -8 & 3     & 6      & 9 & 30 \\
@@ -45,7 +45,7 @@ If your character is weak or carrying a lot of gear, however, then you'll need t
         19 & 36,000 & 72,000  & 108,000 & 360,000 \\
         20 & 51,000 & 102,000 & 153,000 & 510,000 \\
         11\plus\fn{1} & \x & \x & \x & \x \\
-    \end{tabularx}
+    \end{dtabularx}
     1 To calculate weight limits for a creature with epic Strength, double its carrying capacity every 2 Strength.
 \end{dtable}
 
@@ -68,7 +68,7 @@ Quadrupeds can carry heavier loads than characters can. Instead of the multiplie
 
 \begin{dtable}
 \lcaption{Movement and Distance}
-\begin{tabularx}{\columnwidth}{>{\lcol}X c c c c}
+\begin{dtabularx}{\columnwidth}{>{\lcol}X c c c c}
  & \multicolumn{4}{c}{\x\x\x Speed \x\x\x} \\
  & 15 feet & 20 feet & 30 feet & 40 feet \\
 One Round (Tactical)1 &  &  &  &  \\
@@ -83,18 +83,18 @@ Hustle & 3 miles & 4 miles & 6 miles & 8 miles \\
 One Day (Overland) &  &  &  &  \\
 Walk & 15 miles & 20 miles & 30 miles & 40 miles \\
 Hustle & \x & \x & \x & \x \\
-\end{tabularx}
+\end{dtabularx}
 \end{dtable}
 
 \begin{dtable}
 \lcaption{Hampered Movement}
-\begin{tabularx}{\columnwidth}{l >{\lcol}X >{\ccol}p{8em}}
+\begin{dtabularx}{\columnwidth}{l >{\lcol}X >{\ccol}p{8em}}
 Condition & Example Extra Movement Cost \\
 Difficult terrain & Rubble, undergrowth, steep slope, ice, cracked and pitted surface, uneven floor & \mult2 \\
 Obstacle\fn{1} & Low wall, deadfall, broken pillar & \mult2 \\
 Poor visibility & Darkness or fog & \mult2 \\
 Impassable & Floor-to-ceiling wall, closed door, blocked passage & \x \\
-\end{tabularx}
+\end{dtabularx}
 1 May require a skill check
 \end{dtable}
 
@@ -134,7 +134,7 @@ Characters exploring an area use local movement, measured in feet per minute.
 
 \begin{dtable}
 \lcaption{Terrain and Overland Movement}
-\begin{tabularx}{\columnwidth}{>{\lcol}X c c c}
+\begin{dtabularx}{\columnwidth}{>{\lcol}X c c c}
 \thead{Terrain}  & \thead{Highway} & \thead{Road or Trail} & \thead{Trackless} \\
 Desert, sandy & \mult1 & \mult1/2 & \mult1/2 \\
 Forest & \mult1 & \mult1 & \mult1/2 \\
@@ -145,12 +145,12 @@ Mountains & \mult3/4 & \mult3/4 & \mult1/2 \\
 Plains & \mult1 & \mult1 & \mult3/4 \\
 Swamp & \mult1 & \mult3/4 & \mult1/2 \\
 Tundra, frozen & \mult1 & \mult3/4 & \mult3/4
-\end{tabularx}
+\end{dtabularx}
 \end{dtable}
 
 \begin{dtable}
 \lcaption{Mounts and Vehicles}
-\begin{tabularx}{\columnwidth}{>{\lcol}X l l}
+\begin{dtabularx}{\columnwidth}{>{\lcol}X l l}
 \thead{Mount/Vehicle} & \thead{Per Hour} & \thead{Per Day} \\
 Mount (carrying load) &  &  \\
 \tind Light horse or light warhorse & 6 miles & 60 miles \\
@@ -176,7 +176,7 @@ Mount (carrying load) &  &  \\
 \tind Warship (sailed and rowed) & 2-1/2 miles & 60 miles \\
 \tind Longship (sailed and rowed) & 3 miles & 72 miles \\
 \tind Galley (rowed and sailed) & 4 miles & 96 miles \\
-\end{tabularx}
+\end{dtabularx}
 1 Quadrupeds, such as horses, can carry heavier loads than characters can. See \trefnp{Weight Limits}, above, for more information. \\
 2 Rafts, barges, keelboats, and rowboats are used on lakes and rivers.
 If going downstream, add the speed of the current (typically 3 miles per hour) to the speed of the vehicle. In addition to 10 hours of being rowed, the vehicle can also float an additional 14 hours, if someone can guide it, so add an additional 42 miles to the daily distance traveled. These vehicles can't be rowed against any significant current, but they can be pulled upstream by draft animals on the shores.
@@ -265,13 +265,13 @@ The standard coin weighs about a third of an ounce (fifty to the pound).
 
 \begin{dtable}
 \lcaption{Coin Exchange Values}
-\begin{tabularx}{\columnwidth}{l c *{4}{>{\ccol}X}}
+\begin{dtabularx}{\columnwidth}{l c *{4}{>{\ccol}X}}
 & & \thead{CP} & \thead{SP} & \thead{GP} & \thead{PP} \\
 Copper piece (cp) & = & 1 & 1/10 & 1/100 & 1/1,000 \\
 Silver piece (sp) & = & 10 & 1 & 1/10 & 1/100 \\
 Gold piece (gp) & = & 100 & 10 & 1 & 1/10 \\
 Platinum piece (pp) & = & 1,000 & 100 & 10 & 1
-\end{tabularx}
+\end{dtabularx}
 \end{dtable}
 
 \subsection{Wealth Other Than Coins}
@@ -279,7 +279,7 @@ Merchants commonly exchange trade goods without using currency. As a means of co
 
 \begin{dtable}
 \lcaption{Trade Goods}
-\begin{tabularx}{\columnwidth}{l >{\lcol}X}
+\begin{dtabularx}{\columnwidth}{l >{\lcol}X}
 \thead{Cost} & \thead{Item} \\
 1 cp & One pound of wheat \\
 2 cp & One pound of flour \\
@@ -294,7 +294,7 @@ Merchants commonly exchange trade goods without using currency. As a means of co
 15 gp & One pound of saffron or cloves, or one ox \\
 50 gp & One pound of gold \\
 500 gp & One pound of platinum
-\end{tabularx}
+\end{dtabularx}
 \end{dtable}
 
 \subsection{Selling Loot}
@@ -306,7 +306,7 @@ Trade goods are the exception to the half-price rule. A trade good, in this sens
 
 \begin{dtable!*}
 \lcaption{Goods and Services}
-\begin{tabularx}{\textwidth}{>{\lcol}X c c >{\lcol}X c c >{\lcol}X c c}
+\begin{dtabularx}{\textwidth}{>{\lcol}X c c >{\lcol}X c c >{\lcol}X c c}
 \thead{Item} & \thead{Cost} & \thead{Weight} & \thead{Item} & \thead{Cost} & \thead{Weight} & \thead{Item} & \thead{Cost} & \thead{Weight} \\
 \multicolumn{3}{>{\columncolor{tbrown}}c}{\thead{Adventuring Gear}} & \tind Average & 40 gp & 1 lb. & \multicolumn{3}{>{\columncolor{tbrown}}c}{\thead{Special Substances and Items}} \\
 Backpack (empty) & 2 gp & 2 lb.\fn{1} & \tind Good & 80 gp & 1 lb. & Acid (flask) & 5 gp & 1 lb. \\
@@ -342,13 +342,13 @@ Lantern, bullseye & 12 gp & 3 lb. & Torch & 1 cp & 1 lb. & Thieves' tools, maste
 Lantern, hooded & 7 gp & 2 lb. & Vial, ink or potion & 1 gp & 1/10 lb. & Tool, masterwork & 50 gp & 1 lb. \\
 Lock &   & 1 lb. & Waterskin & 1 gp & 4 lb.\fn{1} & Water clock & 1,000 gp & 200 lb. \\
 \tind Very simple & 20 gp & 1 lb. & Whetstone & 2 cp & 1 lb. &  &  &  \\
-\end{tabularx}
+\end{dtabularx}
 1 These items weigh one-quarter this amount when made for Small characters. Containers for Small characters also carry one-quarter the normal amount. \\
 \x No weight, or no weight worth noting.	
 \end{dtable!*}
 
 \begin{dtable!*}
-\begin{tabularx}{\textwidth}{>{\lcol}X c c >{\lcol}X c c >{\lcol}X c c}
+\begin{dtabularx}{\textwidth}{>{\lcol}X c c >{\lcol}X c c >{\lcol}X c c}
 \thead{Clothing} &  &  & \thead{Mounts and Related Gear} &  &  & \thead{Transport} &  & \\
 \thead{Item} & \thead{Cost} & \thead{Weight} & \thead{Item} & \thead{Cost} & \thead{Weight} & \thead{Item} & \thead{Cost} & \thead{Weight} \\
 Artisan's outfit & 1 gp & 4 lb. & Barding &  &  & Carriage & 100 gp & 600 lb. \\
@@ -383,7 +383,7 @@ Meat, chunk of & 3 sp & 1/2 lb. & &  &  & Spell, 9th-level & \multicolumn{2}{l}{
 Wine &  &  & &  &  &  &  & \\
 \tind Common (pitcher) & 2 sp & 6 lb. & &  &  &  &  & \\
 \tind Fine (bottle) & 10 gp & 1-1/2 lb. & & & & & & \\
-\end{tabularx}
+\end{dtabularx}
 1 See spell description for additional costs. If the additional costs put the spell's total cost above 2,000 gp, that spell is not generally available. \\
 2 Relative to normal armor of the same type
 \end{dtable!*}
@@ -481,12 +481,12 @@ boots. This outfit grants a \plus5 bonus to Fortitude defenses against exposure 
 \par Armor for a horse (a Large nonhumanoid creature) costs four times as much as armor for a human (a Medium humanoid creature) and also weighs twice as much as the armor found on Table: Armor and Shields (see \pref{Armor for Unusual Creatures}). If the barding is for a pony or other Medium mount, the cost is only double, and the weight is the same as for Medium armor worn by a humanoid. Medium or heavy barding slows a mount that wears it, as shown on the table below.
 
 \begin{dtable}
-\begin{tabularx}{\columnwidth}{>{\lcol}X *{3}{>{\ccol}X}}
+\begin{dtabularx}{\columnwidth}{>{\lcol}X *{3}{>{\ccol}X}}
  & \multicolumn{3}{c}{\x\x\x Base Speed\x\x\x} \\
 Barding & (40 ft.) & (50 ft.) & (60 ft.) \\
 Medium & 30 ft. & 35 ft. & 40 ft. \\
 Heavy & 30 ft.\fn{1} & 35 ft.\fn{1} & 40 ft.\fn{1} \\
-\end{tabularx}
+\end{dtabularx}
 1 A mount wearing heavy armor moves at only triple its normal speed when running instead of quadruple.	
 \end{dtable}
 
