@@ -354,13 +354,15 @@ class Creature(object):
         self.add_modifier('hit_points', 'attribute_or_progression', lambda c: ((c.fortitude-10) / 2) * c.level, update_static = True)
         self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.willpower / 2) * c.level, update_static = True)
 
-        # all stats increase every 5 levels
-        self.add_modifier('strength',     'tiers', lambda c: c.level / 5, update_static = True)
-        self.add_modifier('dexterity',    'tiers', lambda c: c.level / 5, update_static = True)
-        self.add_modifier('constitution', 'tiers', lambda c: c.level / 5, update_static = True)
-        self.add_modifier('intelligence', 'tiers', lambda c: c.level / 5, update_static = True)
-        self.add_modifier('perception',   'tiers', lambda c: c.level / 5, update_static = True)
-        self.add_modifier('willpower',    'tiers', lambda c: c.level / 5, update_static = True)
+        # all attributes increase every 5 levels
+        # this doesn't stack with the primary/secondary/tertiary bonuses, so use
+        # 'attribute_or_progression' type
+        self.add_modifier('strength',     'attribute_or_progression', lambda c: c.level / 5, update_static = True)
+        self.add_modifier('dexterity',    'attribute_or_progression', lambda c: c.level / 5, update_static = True)
+        self.add_modifier('constitution', 'attribute_or_progression', lambda c: c.level / 5, update_static = True)
+        self.add_modifier('intelligence', 'attribute_or_progression', lambda c: c.level / 5, update_static = True)
+        self.add_modifier('perception',   'attribute_or_progression', lambda c: c.level / 5, update_static = True)
+        self.add_modifier('willpower',    'attribute_or_progression', lambda c: c.level / 5, update_static = True)
 
         self.add_modifier('physical_defenses', 'overwhelm', -2, update_static = True)
 
