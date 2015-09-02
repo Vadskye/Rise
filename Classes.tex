@@ -1274,23 +1274,23 @@ She cannot thereafter gain levels as a druid until she atones (see the \spell{at
         \fighterprogressionrow{1}  & Armor discipline                    \\
         \fighterprogressionrow{2}  & Bonus feat                          \\
         \fighterprogressionrow{3}  & Weapon discipline                   \\
-        \fighterprogressionrow{4}  & Adaptive style feat                 \\
+        \fighterprogressionrow{4}  & Adaptive combat feat                 \\
         \fighterprogressionrow{5}  & Combat discipline                   \\
         \fighterprogressionrow{6}  & Bonus feat                          \\
         \fighterprogressionrow{7}  & Improved armor discipline           \\
-        \fighterprogressionrow{8}  & Adaptive style feat                 \\
+        \fighterprogressionrow{8}  & Adaptive combat feat                 \\
         \fighterprogressionrow{9}  & Improved weapon discipline          \\
         \fighterprogressionrow{10} & Battlemaster, bonus feat            \\
         \fighterprogressionrow{11} & Improved combat discipline          \\
-        \fighterprogressionrow{12} & Adaptive style feat                 \\
+        \fighterprogressionrow{12} & Adaptive combat feat                 \\
         \fighterprogressionrow{13} & Greater armor discipline            \\
-        \fighterprogressionrow{14} & Bonus feat, improved adaptive style \\
+        \fighterprogressionrow{14} & Bonus feat, improved adaptive combat \\
         \fighterprogressionrow{15} & Greater weapon discipline           \\
-        \fighterprogressionrow{16} & Adaptive style feat                 \\
+        \fighterprogressionrow{16} & Adaptive combat feat                 \\
         \fighterprogressionrow{17} & Greater combat discipline           \\
         \fighterprogressionrow{18} & Bonus feat, improved battlemaster   \\
         \fighterprogressionrow{19} & True discipline                     \\
-        \fighterprogressionrow{20} & Adaptive style feat, greater adaptive style
+        \fighterprogressionrow{20} & Adaptive combat feat, greater adaptive combat \\
     \end{dtabularx}
 \end{dtable}
 
@@ -1324,17 +1324,17 @@ The fighter gains an additional bonus feat at his 6th fighter level and every fo
 The fighter's training grants him additional capability when using his weapons.
 He may choose a weapon group, or he may choose to train equally with all weapons.
 If he chooses a weapon group, he gains a \plus1 bonus to physical attacks with weapons from that group.
-\par If he chooses not to focus on a specific group of weapons, he gains the ability to become proficient with any weapon group if he spends 8 hours training with a weapon from that group.
+
+If he chooses not to focus on a specific group of weapons, he gains the ability to become proficient with any weapon group if he spends 1 hour training with a weapon from that group.
 He may only keep this proficiency with one weapon group at a time; if he trains with a new weapon group, he loses his proficiency in the previous group.
 
-\cfl{Ftr}{4th}{Adaptive Style Feats}
-The fighter gains a flexible bonus feat which he can change each day.
-The fighter chooses a number of combat feats equal to half his fighter level \add his Intelligence.
-These feats comprise his adaptive style feat pool.
-He gains any one feat from the pool as a bonus feat (for which he must still meet the normal prerequisites).
-At the start of each day, the fighter may train for an hour.
-If he does so, he may choose to change his current adaptive style feat to one of the other feats in his adaptive style feat pool, assuming he meets the prerequisites for the feat.
-The fighter gains an additional adaptive style feat at his 8th fighter level and every four fighter levels thereafter (8th, 12th, 16th, and 20th).
+\cfl{Ftr}{4th}{Adaptive Combat Feats}
+The fighter gains a flexible bonus feat which he can change periodically.
+The fighter chooses a number of combat feats equal to half his fighter level or half his Intelligence, whichever is higher.
+These feats comprise his adaptive feat pool.
+The fighter gains one of the feats from his adaptive feat pool as a bonus feat.
+By training for an hour, the fighter can change his current adapative combat feat to one of the other feats in his adaptive style feat pool.
+He must meet the prerequisites for the new feat.
 
 \par An adaptive style feat may be used normally as prerequisites for other feats or abilities.
 However, if an adaptive style feat is used as a prerequisite, it cannot be changed until the fighter no longer needs to use it as a prerequisite, such as might happen if the fighter takes the feat as a normal feat or bonus feat.
@@ -1342,49 +1342,49 @@ However, if an adaptive style feat is used as a prerequisite, it cannot be chang
 \par In order to gain an adaptive style feat, it must be reasonably possible to do training related to the new feat.
 For example, a fighter could not gain Weapon Focus in axes without at least one axe available to train with.
 
+The fighter gains an additional adaptive combat feat at his 8th fighter level and every four fighter levels thereafter (8th, 12th, 16th, and 20th).
+He may change all of his adaptive combat feats at once when he trains.
+
 \cfl{Ftr}{5th}{Combat Discipline}
 The fighter can use his superior training and focus to keep fighting in the face of debilitating effects.
 When a fighter is initially affected by one of the conditions listed on \trefnp{Combat Discipline Conditions}, he may use his combat discipline ability to instead suffer the mitigated condition one column to the right.
-This lasts until the end of the original condition or for one round per two fighter levels, at which point he suffers the effects of the original condition unless he uses his combat discipline ability again.
+He can suppress the condition up to 5 rounds.
+
 \par Using combat discipline takes no action, and can be done at any time, even when it isn't the fighter's turn.
-A fighter may use this ability a number of times per day equal to half his fighter level \add his Willpower.
+A fighter may use this ability a number of times per day equal to his Willpower or half his fighter level, whichever is higher.
 However, he cannot mitigate more than one condition at a time.
-If the fighter attempts to mitigate a new condition, the old condition takes its full effect.
+If the fighter attempts to mitigate a new condition, the old condition resumes its normal effect immediately.
 
 \begin{dtable}
     \lcaption{Combat Discipline Conditions}
-    \begin{dtabularx}{\columnwidth}{*{4}{>{\lcol}X}}
+    \begin{dtabularx}{\columnwidth}{l *{3}{>{\lcol}X}}
         \thead{Original Condition} & \thead{Mitigated Condition} & \thead{Mitigated Condition} & \thead{Mitigated Condition} \\
-\hline
-        Panicked & Frightened & Shaken & None  \\
-        Petrified  & Paralyzed & Slowed & None \\
-        Stunned       & Dazed & Staggered & None \\
-        Blinded & Dazzled & None  & \x \\
-        Confused & Bewildered & None & \x \\
-        Exhausted & Fatigued & None & \x \\
-        Nauseated & Sickened & None & \x \\
-        Ability damage\fn{1} & None & \x & \x \\
-        Ability penalty\fn{1} & None & \x & \x \\
-        Entangled & None & \x & \x \\
-        Deafened & None & \x & \x \\
-        Fascinated & None & \x & \x \\
-        Ignited\fn{2} & None & \x & \x \\
-        Immobilized & None & \x & \x \\
-        Negative level\fn{3} & None & \x & \x \\
-        Vulnerable & None & \x & \x \\
+        \hline
+        Panicked              & Frightened        & Shaken & None \\
+        Petrified             & Paralyzed         & Slowed & None \\
+        Blinded               & Visually impaired & None   & \x   \\
+        Confused              & Disoriented       & None   & \x   \\
+        Exhausted             & Fatigued          & None   & \x   \\
+        Nauseated             & Sickened          & None   & \x   \\
+        Stunned               & Dazed             & None   & \x   \\
+        Ability damage\fn{1}  & None              & \x     & \x   \\
+        Ability penalty\fn{1} & None              & \x     & \x   \\
+        %Entangled             & None              & \x     & \x   \\
+        Deafened              & None              & \x     & \x   \\
+        Fascinated            & None              & \x     & \x   \\
+        Ignited\fn{2}         & None              & \x     & \x   \\
+        Immobilized           & None              & \x     & \x   \\
+        Negative level\fn{3}  & None              & \x     & \x   \\
+        Slowed                & None              & \x     & \x   \\
+        Vulnerable            & None              & \x     & \x   \\
     \end{dtabularx}
-    1.
-    Allows the fighter to mitigate up to half his fighter level in ability damage or penalties per use of combat discipline.
-    \\
-    2.
-    Mitigates the penalties, but does not prevent the fighter from taking d6 fire damage per round until the fire is put out.
-    \\
-    3.
-    Allows the fighter to ignore a single negative level per use of combat discipline.
+    1.  Mitigate up to half fighter level or half Constitution, whichever is greater. \\
+    2.  Mitigates the impairment, but does not prevent the fighter from taking d6 fire damage per round until the fire is put out.  \\
+    3.  Mitigate a single negative level. \\
 \end{dtable}
 
-\par A fighter cannot use this ability more than once against a single source.
-For example, if a fighter is exhausted by a \spell{ray of exhaustion} spell, he can use this ability to downgrade the exhaustion to fatigue, but he can't then expend a second use to negate the fatigue.
+\par A fighter can never use this ability more than once against a single source.
+For example, if a fighter is confused by a \spell{confusion} spell, he can use this ability to become disoriented instead of confused, but he can't then expend a second use to stop being disoriented.
 The lesser condition that this ability imposes may be cured or removed normally, but doing so does not affect the resurgence of the condition the fighter was originally afflicted with.
 If a fighter uses this ability to mitigate or negate a condition which he must suffer as a sacrifice or cost to gain some benefit, he automatically forfeits the benefit he would have gained.
 
@@ -1398,23 +1398,23 @@ This can remove the halving of the fighter's Dexterity bonus, if appropriate for
 This allows the fighter to qualify for class features using the reduced armor encumbrance category.
 For example, a fighter 9 / wizard 2 who reduces his encumbrance in light armor could cast spells without any arcane spell failure in light armor.
 
-If the fighter chose resilience, his damage reduction from armor discipline applies against all physical damage.
+If the fighter chose resilience, he gains damage reduction against physical damage equal to half his fighter level. This allows him to ignore the first points of damage he would take each round.
 
 \cfl{Ftr}{9th}{Improved Weapon Discipline}
 The fighter's training in his chosen weapons improves.
 He gains a \plus4 bonus to resist disarm attempts against using his chosen weapons.
-If he chose a specific weapon group, he gains a \plus1 bonus to physical attacks with weapons from that group.
-This bonus stacks with the bonus from weapon discipline.
-If he did not, he can apply all weapon group-specific feats he has to any weapon group that he trains with for 8 hours.
+If he chose a specific weapon group, he gains a \plus2 bonus to physical attacks with weapons from that group.
+This does not stack with effects of weapon discipline.
+If he did not, he can apply all weapon group-specific feats he has to any weapon group that he trains with for 1 hour.
 He retains this benefit for one week after the training.
 
 \cfl{Ftr}{10th}{Battlemaster}
 The fighter can improve his allies' combat abilities.
-As a standard action, he may grant the use of one of his combat feats to allies within \rngclose range of him who can see and hear him.
-He can affect a number of allies equal to 1 \add his Intelligence (minimum 1).
-Affected allies must meet base attack bonus prerequisites for the granted feat, though they can ignore all other prerequisites.
+As a standard action, he may grant the use of one of his combat feats to allies within \rngmed range of him who can see and hear him.
+He can affect a number of allies equal to half his Intelligence (minimum 1).
+Affected allies must meet base attack bonus prerequisites for the granted feat, but they can ignore all other prerequisites.
 The effect lasts as long as the fighter spends a standard action to maintain the effect, and for 5 rounds thereafter.
-The fighter can use this ability a number of times per day equal to 3 \add his Willpower.
+The fighter can use this ability a number of times per day equal to his Intelligence or half his fighter level, whichever is higher.
 
 \cfl{Ftr}{11th}{Improved Combat Discipline}
 The fighter's ability to keep fighting despite negative influence improves.
@@ -1429,13 +1429,11 @@ If he chose agility, he reduces his armor check penalty by 6 and decreases his a
 In addition, he treats all armor as if it were two encumbrance categories lighter than it actually is whenever doing so would be beneficial to him.
 This does not stack with the benefits of armor discipline or improved armor discipline.
 
-If the fighter chose resilience, he adds half his Constutition to his Armor defense while wearing armor of any kind.
-He loses this bonus when he is helpless or unarmored.
+If the fighter chose resilience, he may apply his damage reduction against all damage, including from magical attacks.
 
-\cfl{Ftr}{14th}{Improved Adaptive Style}
+\cfl{Ftr}{14th}{Improved Adaptive Combat}
 The fighter's ability to adapt to situations improves.
-He need only spend 1 minute training to change a single adaptive style feat.
-He may continue training as he wishes, changing one adaptive style feat per minute.
+He need only spend 1 minute training to change his adaptive combat feats.
 
 \cfl{Ftr}{15th}{Greater Weapon Discipline}
 The fighter's training in his chosen weapons becomes still greater.
@@ -1446,7 +1444,7 @@ Thus, a fighter using the Heartseeker combat style (see Heartseeker, page \featp
 \cfl{Ftr}{17th}{Greater Combat Discipline}
 The fighter's ability to keep fighting despite influence becomes still greater.
 When using combat discipline, he may ignore any condition listed on the combat discipline chart.
-In addition, he may use combat discipline to be \dazed rather than suffer any non-damaging condition not listed on the chart.
+In addition, he may use combat discipline to be \severelyimpaired with all actions rather than suffer any non-damaging condition not listed on the chart.
 
 \par The fighter may also mitigate up to three conditions at once.
 
@@ -1460,21 +1458,22 @@ The fighter's discipline in his chosen area is beyond equal.
 He must choose either weapon discipline, armor discipline, or combat discipline.
 Depending on which discipline he chooses, he gains a different bonus.
 \subcf{True Weapon Discipline}
-The fighter can take 10 on the first attack he makes each round and automatically confirms all critical threats while using his chosen weapons.
+When the fighter makes a full attack, he can make an additional attack.
+This does not stack with any other effects which grant extra attacks.
 \subcf{True Armor Discipline}
 If the fighter chose agility, he no longer suffers armor check penalties or arcane spell failure with any armor.
 He ignores the encumbrance of all armor, causing him to be treated as unarmored whenever doing so is beneficial to him.
 In addition, he applies the defense bonus from any body armor he wears to his Reflex defense.
 
-If the fighter chose resilience, he applies his damage reduction to all damage, including from magical attacks.
+If the fighter chose resilience, he may apply his Constutition to his Reflex defense in place of his Dexterity while wearing armor of any kind.
 In addition, he applies the defense bonus from any body armor he wears to his Fortitude defense.
 \subcf{True Combat Discipline}
-The fighter can use combat discipline to be staggered instead of suffering any nondamaging negative effect with a duration.
+The fighter can use combat discipline to be \impaired with all actions instead of suffering any nondamaging negative effect with a duration.
 He may also mitigate up to four conditions at once.
 
-\cfl{Ftr}{20th}{Greater Adaptive Style}
+\cfl{Ftr}{20th}{Greater Adaptive Combat}
 The fighter's ability to react to situations is unparalleled.
-He need only spend a swift action to exchange an adaptive style feat.
+As a swift action, he can exchange a single adaptive combat feat from his adapative feat pool.
 
 \section{Monk}
 \begin{dtable}
@@ -2387,7 +2386,7 @@ Rogues are proficient with simple weapons, any two weapon groups, light armor, a
 They are also proficient with saps.
 
 \cf{Rog}{Sneak Attack}
-If a rogue can catch an opponent when he is unable to defend himself effectively from her attack, she can strike a vital spot for extra damage.
+If a rogue can catch an opponent when it is unable to defend himself effectively from her attack, she can strike a vital spot for extra damage.
 She can choose to deal 1d6 points of extra damage if the target is unaware or is suffering overwhelm penalties from being surrounded by enemies (see \pcref{Overwhelm}).
 
 This extra damage is only dealt the first time that the rogue makes a successful sneak attack against that particular creature in the encounter.
