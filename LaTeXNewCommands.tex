@@ -492,17 +492,17 @@
     \pgfmathparse{int(floor(#1))}\nth{\pgfmathresult}
 }
 
-\DeclareDocumentCommand{\good}{m}
+\DeclareDocumentCommand{\gooddefense}{m}
 {
-    \plus \imath{(#1*5/4)+4}
+    \plus \imath{(#1*5/4)+3}
 }
 
-\DeclareDocumentCommand{\avg}{m}
+\DeclareDocumentCommand{\avgdefense}{m}
 {
-    \plus \imath{(#1*1/1)+3}
+    \plus \imath{(#1*1/1)+2}
 }
 
-\DeclareDocumentCommand{\poor}{m}
+\DeclareDocumentCommand{\poordefense}{m}
 {
     \plus \imath{(#1*3/4)+1}
 }
@@ -537,19 +537,19 @@
     \ifcase\imathresult \relax \or
         \plus #1 % case 0
     \or
-        \plus #1 / \plus #1 % case 1
+        \plus #1~(\mult2) % case 1
     \or
-        \plus #1 / \plus #1 / \plus #1 % case 2
+        \plus #1~(\mult3) % case 2
     \or
-        \plus #1 / \plus #1 / \plus #1 / \plus #1 % case 3
+        \plus #1~(\mult4) % case 3
     \or 
-        \plus #1 / \plus #1 / \plus #1 / \plus #1 / \plus #1 % case 3
+        \plus #1~(\mult5) % case 3
     \fi
 }
 
 \DeclareDocumentCommand{\goodbab}{m}
 {
-    \pgfmathparse{int(floor(#1+3))}
+    \pgfmathparse{int(floor(#1+2))}
     \bab{\pgfmathresult}
 }
 
@@ -569,9 +569,9 @@
     \bab{\pgfmathresult}
 }
 
-\DeclareDocumentCommand{\allprogressionrow}{m}
+\DeclareDocumentCommand{\alldefenseprogressionrow}{m}
 {
-    \nth{#1} & \good{#1} & \avg{#1} & \poor{#1}
+    \nth{#1} & \gooddefense{#1} & \avgdefense{#1} & \poordefense{#1}
 }
 
 \DeclareDocumentCommand{\allbabprogressionrow}{m}
@@ -581,58 +581,58 @@
 
 \DeclareDocumentCommand{\barbarianprogressionrow}{m}
 {
-    \nth{#1} & \goodbab{#1} & \good{#1} & \avg{#1} & \poor{#1}
+    \nth{#1} & \goodbab{#1} & \gooddefense{#1} & \avgdefense{#1} & \poordefense{#1}
 }
 
 \DeclareDocumentCommand{\clericprogressionrow}{m}
 {
-    \nth{#1} & \avgbab{#1} & \avg{#1} & \poor{#1} & \good{#1}
+    \nth{#1} & \avgbab{#1} & \avgdefense{#1} & \poordefense{#1} & \gooddefense{#1}
 }
 
 \DeclareDocumentCommand{\druidprogressionrow}{m}
 {
-    \nth{#1} & \avgbab{#1} & \good{#1} & \poor{#1} & \avg{#1}
+    \nth{#1} & \avgbab{#1} & \gooddefense{#1} & \poordefense{#1} & \avgdefense{#1}
 }
 
 \DeclareDocumentCommand{\fighterprogressionrow}{m}
 {
-    \nth{#1} & \goodbab{#1} & \good{#1} & \poor{#1} & \avg{#1}
+    \nth{#1} & \goodbab{#1} & \gooddefense{#1} & \poordefense{#1} & \avgdefense{#1}
 }
 
 \DeclareDocumentCommand{\monkprogressionrow}{m}
 {
-    \nth{#1} & \goodbab{#1} & \avg{#1} & \good{#1} & \good{#1}
+    \nth{#1} & \goodbab{#1} & \avgdefense{#1} & \gooddefense{#1} & \gooddefense{#1}
 }
 
 \DeclareDocumentCommand{\paladinprogressionrow}{m}
 {
-    \nth{#1} & \goodbab{#1} & \good{#1} & \poor{#1} & \good{#1}
+    \nth{#1} & \goodbab{#1} & \gooddefense{#1} & \poordefense{#1} & \gooddefense{#1}
 }
 
 \DeclareDocumentCommand{\rangerprogressionrow}{m}
 {
-    \nth{#1} & \goodbab{#1} & \good{#1} & \good{#1} & \avg{#1}
+    \nth{#1} & \goodbab{#1} & \gooddefense{#1} & \gooddefense{#1} & \avgdefense{#1}
 }
 
 \DeclareDocumentCommand{\rogueprogressionrow}{m}
 {
-    \nth{#1} & \avgbab{#1} & \poor{#1} & \good{#1} & \avg{#1}
+    \nth{#1} & \avgbab{#1} & \poordefense{#1} & \gooddefense{#1} & \avgdefense{#1}
 }
 
 \DeclareDocumentCommand{\sorcererprogressionrow}{m}
 {
-    \nth{#1} & \poorbab{#1} & \poor{#1} & \poor{#1} & \good{#1}
+    \nth{#1} & \poorbab{#1} & \poordefense{#1} & \poordefense{#1} & \gooddefense{#1}
 }
 
 \DeclareDocumentCommand{\spellwarpedprogressionrow}{m}
 {
     % spellwarped uses different table structure
-    \nth{#1} & \goodbab{#1} & \good{#1} & \avg{#1}
+    \nth{#1} & \goodbab{#1} & \gooddefense{#1} & \avgdefense{#1}
 }
 
 \DeclareDocumentCommand{\wizardprogressionrow}{m}
 {
-    \nth{#1} & \poorbab{#1} & \poor{#1} & \poor{#1} & \good{#1}
+    \nth{#1} & \poorbab{#1} & \poordefense{#1} & \poordefense{#1} & \gooddefense{#1}
 }
 
 \DeclareDocumentCommand{\spelldamage}{m m o}
