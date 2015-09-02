@@ -1247,7 +1247,7 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngtouch}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target gains the ability to see 60 feet even in total darkness. Beyond 60 feet, the target can see dimly, treating areas of darkness as shadowy illumination. Darkvision does not function if a creature is in an area of bright light or is dazzled. Darkvision is black and white only, but otherwise like normal sight.
+            \spelleffect The target gains the ability to see 50 feet even in total darkness. Beyond 60 feet, the target can see dimly, treating areas of darkness as shadowy illumination. Darkvision does not function if a creature is in an area of bright light or is dazzled. Darkvision is black and white only, but otherwise like normal sight.
             \spelldur \durlong
         \end{spelleffects}
     \end{spellcontent}
@@ -2253,7 +2253,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect You become ethereal, along with your equipment. For the duration of the spell, you are in a place called the Ethereal Plane, which overlaps the normal, physical, Material Plane. When the spell expires, you return to material existence.
-            \par An ethereal creature is invisible, insubstantial, and capable of moving in any direction, even up or down, albeit at half normal speed. As an insubstantial creature, you can move through solid objects, including living creatures. An ethereal creature can see and hear on the Material Plane, but everything looks gray and ephemeral. Sight and hearing onto the Material Plane are limited to 60 feet.
+            \par An ethereal creature is invisible, insubstantial, and capable of moving in any direction, even up or down, albeit at half normal speed. As an insubstantial creature, you can move through solid objects, including living creatures. An ethereal creature can see and hear on the Material Plane, but everything looks gray and ephemeral. Sight and hearing onto the Material Plane are limited to 50 feet.
             \par Force effects and abjurations affect an ethereal creature normally. Their effects extend onto the Ethereal Plane from the Material Plane, but not vice versa. An ethereal creature can't attack material creatures, and spells you cast while ethereal affect only other ethereal things. Certain material creatures or objects have attacks or effects that work on the Ethereal Plane (such as a basilisk's gaze attack). Treat other ethereal creatures and ethereal objects as if they were material. 
             \par If you end the spell and become material while inside a material object (such as a solid wall), you are shunted off to the nearest open space and take 1d6 damage per 5 feet that you so travel.
             \spelldur \durshort \dismissable
@@ -3010,7 +3010,7 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target's speed increases, as \spell{lesser haste}. In addition, it the ability to make an additional attack at a \minus5 penalty when it takes a standard attack action.
+            \spelleffect The target's speed increases, as \spell{lesser haste}. In addition, when it takes a full attack action, it may make an additional attack at a \minus5 penalty.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
@@ -6463,6 +6463,114 @@
     \end{spellfooter}
 \end{spellsection}
 
+\begin{spellsection}{Totemic Mind}{2}
+    \begin{spellheader}
+        \spelldesc{You grant your ally the mental prowess of a totem animal.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngtouch}}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect The target gains a \plus2 enhancement bonus to a mental attribute: Intelligence, Perception, or Willpower. This bonus cannot increase the target's attribute above your spellpower.
+            \spelldur \durpersonallong
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Transmutation (Augment)}{Arcane, Divine, Nature}
+        \spellnotes Hit points gained by a temporary increase in Willpower are not temporary hit points. They go away when the target's Willpower drops back to normal, and are not lost first as temporary hit points are.
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Totemic Mind}[Greater]{5}
+    \begin{spellheader}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngtouch}}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect The target's mind improves, as \spell{totemic mind}, except that it gains a \plus4 enhancement bonus. Alternately, you can grant the target a \plus2 enhancement bonus to all its mental attributes.
+            \spelldur \durpersonallong
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Transmutation (Augment)}{Arcane, Divine, Nature}
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Totemic Mind}[Mass]{4}
+    \begin{spellheader}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltwocol{\spelltgts{Up to five creatures}}{\spellrng{\rngmed}}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spellspecial This spell functions like \spell{totemic mind}, except that it affects multiple creatures.
+            \spelldur \durshort
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Transmutation (Augment)}{Arcane, Divine, Nature}
+        \spellnotes All affected creatures must gain a bonus to the same attribute.
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Totemic Power}{2}
+    \begin{spellheader}
+        \spelldesc{You grant your ally the physical prowess of a totem animal.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngtouch}}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect The target gains a \plus2 enhancement bonus to a physical attribute: Strength, Dexterity, or Constitution. This bonus cannot increase the target's attribute above your spellpower.
+            \spelldur \durpersonallong
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Transmutation (Augment)}{Arcane, Divine, Nature, Strength}
+        \spellnotes Hit points gained by a temporary increase in Constitution are not temporary hit points. They go away when the target's Constitution drops back to normal, and are not lost first as temporary hit points are.
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Totemic Power}[Greater]{5}
+    \begin{spellheader}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngtouch}}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect The target's body improves, as \spell{totemic power}, except that it gains a \plus4 enhancement bonus. Alternately, you can grant the target a \plus2 enhancement bonus to all its physical attributes.
+            \spelldur \durpersonallong
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Transmutation (Augment)}{Arcane, Divine, Nature, Strength}
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Totemic Power}[Mass]{4}
+    \begin{spellheader}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltwocol{\spelltgts{Up to five creatures}}{\spellrng{\rngmed}}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spellspecial This spell functions like \spell{totemic power}, except that it affects multiple creatures.
+            \spelldur \durshort
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Transmutation (Augment)}{Arcane, Divine, Nature}
+        \spellnotes All affected creatures must gain a bonus to the same attribute.
+    \end{spellfooter}
+\end{spellsection}
+
 \begin{spellsection}{Transmute Any Object}{9}
     \begin{spellheader}
     \end{spellheader}
@@ -6657,7 +6765,7 @@
         \begin{spelleffects}
             \spelleffect The target gains the ability to ``see'' any living creatures and their equipment within 30 feet perfectly, regardless of lighting conditions, invisibility, or any other means of concealment. This cannot detect living creatures through solid walls, however.
 
-            If the target is undead, the range of the vision is doubled to 60 feet.
+            If the target is undead, the range of the vision is increased to 50 feet.
             \spelldur \durpersonallong
         \end{spelleffects}
     \end{spellcontent}
