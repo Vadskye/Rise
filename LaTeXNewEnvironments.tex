@@ -244,7 +244,8 @@
 
 \DeclareDocumentEnvironment{dtabularx}{m m}
 {
-    \tabularx{#1}{#2}
+    \setlength\tabcolsep{0.4em}%
+    \tabularx{#1}{#2}%
 }
 {
     \endtabularx
