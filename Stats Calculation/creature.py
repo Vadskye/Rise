@@ -99,7 +99,7 @@ def get_base_progression_modifiers(
 
 def get_base_attack_bonus_progression_modifier(progression_type, level):
     if progression_type == 'good':
-        return level + 3
+        return level + 2
     elif progression_type == 'average':
         return (level * 4) / 5 + 2
     elif progression_type == 'poor':
@@ -121,9 +121,9 @@ def get_spellpower_progression_modifier(progression_type, level):
 
 def get_special_defense_progression_modifier(progression_type, level):
     if progression_type == 'good':
-        return (level * 5) / 4 + 4
+        return (level * 5) / 4 + 3
     elif progression_type == 'average':
-        return level + 3
+        return level + 2
     elif progression_type == 'poor':
         return (level * 3) / 4 + 1
     else:
