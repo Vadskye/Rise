@@ -309,7 +309,6 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
         \featref{Diehard} & Con 3 & Halve penalties from critical damage & Defense & \featpref{Diehard} \\
         \featref{Exotic Weapon Proficiency} & \x & Become proficient with exotic weapons & Equipment & \featpref{Exotic Weapon Proficiency} \\
         \featref{Far Shot} & \x & Increase range increment & Precision & \featpref{Far Shot} \\
-        \featref{Gang Up} & \x & Increase overwhelm penalties foes suffer & \x & \featpref{Gang Up} \\
         \featref{Improved Dirty Trick} & \x & \plus2 bonus to dirty trick attacks; dirty tricks last longer & Finesse, Maneuver & \featpref{Improved Dirty Trick} \\
         \featref{Improved Disarm} & \x & \plus2 bonus to disarm attacks; knock foe's weapon away after disarming & Finesse, Maneuver & \featpref{Improved Disarm} \\
         \featref{Improved Feint} & \x & \plus2 bonus to feint attacks; feint lasts longer & Finesse, Maneuver & \featpref{Improved Feint} \\
@@ -343,10 +342,11 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
         \featref{Contingent Counter} & Int 3, base attack bonus \plus6 & Prepare to attack when attack misses you & Reaction & \featpref{Contingent Counter} \\
         \featref{Driving Assault} & Str 5, base attack bonus \plus6 & Shoved foe provokes attack from you & Power, Maneuver & \featpref{Driving Assault} \\
         \featref{Eye of the Storm} & Base attack bonus \plus6 & Reduce overwhelm penalties by 1 & Awareness, Defense & \featpref{Eye of the Storm} \\
+        \featref{Gang Up} & Two attacks & Increase overwhelm penalties foes suffer & \x & \featpref{Gang Up} \\
+        \featref{Mobile Whirlwind} & Dex 5, Whirlwind Strike, base attack bonus \plus6 & Use whirlwind strike as standard action & Mobility & \featpref{Mobile Whirlwind} \\
         \featref{Tactical Prediction} & Int 3, Base attack bonus \plus6 & Predict foe's next action & Awareness & \featpref{Tactical Prediction} \\
         \featref{Two-Weapon Rend} & Str 5, base attack bonus \plus6, Two-Weapon Fighting & Deal Strength damage with both weapons & Power & \featpref{Two-Weapon Rend} \\
         \featref{Wall Slam} & Str 5, base attack bonus \plus6 & Slam opponent into wall to deal bonus damage & Maneuver, Power & \featpref{Wall Slam} \\
-        \featref{Mobile Whirlwind} & Dex 5, Whirlwind Strike, base attack bonus \plus6 & Use whirlwind strike as standard action & Mobility & \featpref{Mobile Whirlwind} \\
 
         \midrule
         \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
@@ -614,7 +614,6 @@ After attempting to identify the spell, you may cast any spell you know as a cou
 \featben You may gain the benefits of the \spell{death ward} spell for up to 5 rounds each day. Activating this ability is a swift action, and it lasts until you will it to stop (a free action) or until the duration expires.
 
 \feat{Defensive Fighting}{Combat, Style}
-\featpre Base attack bonus \plus2.
 \parhead{Benefit} While in this style, you gain a \plus2 bonus to your physical defenses. In exchange, you take a \minus2 penalty to physical attacks.
 \stylereq Wield a melee weapon. You must take a full attack or total defense action each round.
 
@@ -641,7 +640,6 @@ After attempting to identify the spell, you may cast any spell you know as a cou
 \parhead{Benefit} Choose a number of Knowledge skills equal to your Intelligence. You are treated as trained in those skills, even if you possess no ranks, allowing you to make Knowledge checks in those areas. If your Intelligence increases after taking this feat, you may choose additional Knowledge skills.
 
 \feat{Distracting Foe}{Combat, Style}
-\parhead{Prerequisites} Base attack bonus \plus2.
 \parhead{Benefit} While in this style, foes you threaten take a \minus4 penalty to Concentration checks. In exchange, you take a \minus2 penalty to physical defenses against melee attacks.
 \stylereq Wield a melee weapon. You must take a full attack or charge action each round.
 
@@ -853,7 +851,7 @@ You can use any combination of performance feats you possess a number of times p
 \featben You may gain the benefits of the \spell{freedom} spell for up to 5 rounds each day. Activating this ability is a swift action, and it lasts until you will it to stop (a free action) or until the duration expires.
 
 \feat{Gang Up}{Combat}
-\featpre Base attack bonus \plus2.
+\featpre Two attacks.
 \featben You count as one additional creature for the purpose of determining overwhelm penalties. This does not allow you to overwhelm a creature by yourself.
 
 \feat{Giantfighter}{Racial}
@@ -864,7 +862,6 @@ You can use any combination of performance feats you possess a number of times p
 \parhead{Benefit} You gain a \plus2 bonus to your Fortitude defense.
 
 \feat{Guardian}{Combat, Defense, Style}
-\featpre Base attack bonus \plus2.
 \featben Allies adjacent to you reduce their overwhelm penalties by 2. In exchange, you take a \minus2 penalty to physical defenses against melee attacks. If this effect reduces an ally's overwhelm penalty to 0, the ally is not considered to be overwhelmed.
 \stylereq Wield a melee weapon. You must take a full attack or total defense action each round.
 
@@ -904,19 +901,15 @@ Only spells which affect a single target and have a casting time no shorter than
 \featben When you make a physical attack, you may take a \minus4 penalty to hit. If you deal damage, you make a Fortitude attack against the struck foe to halve its movement speed for 5 rounds. Your attack bonus is equal to your base attack bonus \add your physical attack attribute (Strength or Dexterity). An immobilized creature can defend itself and attack normally, but it cannot move from its current location. Flying creatures must immediately land, but do not crash. You cannot make more than one strike each round.
 
 \feat{Improved Shove}{Combat, Maneuver}
-\parhead{Prerequisites} Base attack bonus \plus2.
 \parhead{Benefit} When you shove a creature, you can move it outside of your reach. You also gain a \plus2 bonus to shove attacks.
 
 \feat{Improved Dirty Trick}{Combat, Maneuver}
-\parhead{Prerequisites} Base attack bonus \plus2.
 \parhead{Benefit} When you perform a dirty trick on a cretaure successfully, the creature is \vulnerable for 1d4 rounds. You also gain a \plus2 bonus to dirty trick attacks.
 
 \feat{Improved Disarm}{Combat, Finesse}
-\parhead{Prerequisites} Base attack bonus \plus2.
 \parhead{Benefit} When you disarm a creature, you can make the disarmed item land up to 15 feet away in a random direction. You also gain a \plus2 bonus to disarm attacks.
 
 \feat{Improved Feint}{Combat, Finesse}
-\parhead{Prerequisites} Base attack bonus \plus2.
 \parhead{Benefit} When you feint against a creature, if you beat its Armor defense by 5 or more, you deal damage with your weapon normally. You also gain a \plus2 bonus to feint attacks.
 
 \feat{Improved Imbued Spellstrike}{Metamagic}
@@ -926,17 +919,14 @@ Only spells which affect a single target and have a casting time no shorter than
 An improved imbued spellstrike spell uses up a spell slot two levels higher than the spell's actual level.
 
 \feat{Improved Grapple}{Combat, Maneuver}
-\parhead{Prerequisites} Base attack bonus \plus2.
 \parhead{Benefit} Grappling does not make you \vulnerable against other creatures. You also gain a \plus2 bonus to grapple attacks.
 \parhead{Normal} While grappling, you are vulnerable against all creatures except the ones you are grappling.
 
 \feat{Improved Overrun}{Combat, Maneuver}
-\parhead{Prerequisites} Base attack bonus \plus2.
 \parhead{Benefit} When you attempt to overrun a foe, the creature may not choose to avoid you unless you let it. You also gain a \plus2 bonus to overrun attacks.
 \parhead{Normal} Without this feat, the target of an overrun can choose to avoid you or to block you.
 
 \feat{Improved Trip}{Combat, Maneuver}
-\parhead{Prerequisites} Base attack bonus \plus2.
 \parhead{Benefit} When you successfully trip a foe, you get a free melee attack against it. This attack is made as the creature is being tripped, so it does not have penalties for being prone. You also gain a \plus2 bonus to trip attacks.
 
 \feat{Improved Unarmed Strike}{Combat}
@@ -1288,7 +1278,6 @@ The spell's level must be no greater than half of your total levels in non-casti
 \stylereq Wield a melee weapon. You must take a full attack or charge action each round.
 
 \feat{Overwhelming Fire}{Combat, Reaction, Style}
-\featpre Base attack bonus \plus2.
 \parhead{Benefit} While in this style, you contribute to overwhelm penalties against all creatures within a single range increment of you. You do not contribute to overwhelm penalties against creatures with cover from you. In exchange, you take a \minus2 penalty to your physical defenses.
 \stylereq Wield a ranged weapon. You must take a full attack action each round.
 
@@ -1325,7 +1314,6 @@ In exchange, you take a \minus4 penalty to all physical attacks not made to parr
 \featben Three times per day, you may roll twice on any single physical attack or opposed check. You must decide to use this ability before making the roll. Activating this ability is an immediate action.
 
 \feat{Point Blank Shot}{Combat, Style}
-\featpre Base attack bonus \plus2.
 \parhead{Benefit} While in this style, you gain a \plus2 bonus to physical attack rolls with ranged weapons when attacking targets within half of your range increment. In exchange, you are unable to attack targets beyond your range increment.
 \stylereq Wield a ranged weapon. You must take a full attack action each round.
 
@@ -1339,7 +1327,6 @@ In exchange, you take a \minus4 penalty to all physical attacks not made to parr
 \stylereq Wield a melee weapon and use Strength to attack. You must take a full attack or charge action each round.
 
 \feat{Precise Shot}{Combat, Style}
-\featpre Base attack bonus \plus2.
 \parhead{Benefit} While in this style, you can ignore a number of creatures equal to your Perception (minimum 1) when determining whether targets have active cover from you when making ranged attacks. In exchange, you must spend a full-round action to make a full attack.
 \stylereq Wield a ranged weapon. You must take a full attack action each round.
 
@@ -1425,7 +1412,6 @@ If you have three or more Reaction feats, you can draw light and medium weapons 
 \parhead{Benefit} As part of the action to counter a spell, you may expend an Abjuration (Negation) spell of 4th level or higher. If you do, the counterspelled spell is turned back on the caster as if it were affected by the \spell{spell turning} spell. If it cannot be affected by \spell{spell turning}, such as if it is a spell that only affects the caster, it is simply countered as normal.
 
 \feat{Reveal the Weak Point}{Combat, Style}
-\featpre Base attack bonus \plus2.
 \parhead{Benefit} While in this style, any creature you deal damage to with a physical attack takes a \minus2 penalty to physical defenses for 1 round. In exchange, you take a \minus2 penalty to physical attacks and damage.
 \stylereq Wield a weapon. You must take a full attack or charge action each round.
 
@@ -1673,7 +1659,7 @@ You can fight with a weapon in each hand more effectively.
 
 \feat{Weapon Focus}{Combat}
 Choose one weapon group.
-\parhead{Prerequisites} Base attack bonus \plus2, proficiency with selected weapon group.
+\parhead{Prerequisites} Proficiency with selected weapon group.
 \parhead{Benefit} You gain a special ability based on the weapon group chosen. These special abilities only function when you are making attacks with weapons from your chosen weapon group.
 \begin{itemize}
     \item Armor weapons: When you perform a shield bash, you still benefit from the shield's defense bonus. In addition, armor spikes no longer impose a penalty to your physical defenses.
