@@ -163,7 +163,7 @@ Climb (Str), Jump (Str), Sprint (Str), Swim (Str), Balance (Dex), Ride (Dex), Tu
 
 All of the following are class features of the barbarian.
 \cf{Bbn}{Weapon and Armor Proficiency}
- A barbarian is proficient with simple weapons, any four other weapon groups, light armor, medium armor, and shields (except tower shields).
+ A barbarian is proficient with simple weapons, any four other weapon groups, light armor, medium armor, and shields.
 
 \cf{Bbn}{Rage}[Ex]
 A barbarian can fly into a rage as a free action.
@@ -373,7 +373,7 @@ The cleric's class skills (and the key attribute for each skill) are Heal (Int),
 All of the following are class features of the cleric.
 
 \cf{Clr}{Weapon and Armor Proficiency}
- Clerics are proficient with simple weapons, any two other weapon groups, light and medium armor, and shields (except tower shields).
+ Clerics are proficient with simple weapons, any two other weapon groups, light and medium armor, and shields.
 
 \cf{Clr}{Bonus Languages}
 A cleric's bonus language options include Celestial, Abyssal, and Infernal (the languages of good, chaotic evil, and lawful evil outsiders, respectively).
@@ -943,7 +943,7 @@ All of the following are class features of the druid.
 Druids are proficient with simple weapons, any one other weapon group, scimitars, sickles, and slings.
 \par Druids are proficient with light and medium armor, but are prohibited from wearing metal armor; thus, they may wear only padded, leather, or hide armor.
 (A druid may also wear wooden armor that has been altered by the \spell{ironwood} spell so that it functions as though it were steel.
-See the \spell{ironwood} ritual description.) Druids are proficient with shields (except tower shields) but must use only wooden ones.
+See the \spell{ironwood} ritual description.) Druids are proficient with shields, but must use only wooden ones.
 \par A druid who wears prohibited armor or carries a prohibited shield is unable to cast druid spells or use any of her supernatural class abilities while doing so and for 24 hours thereafter.
 
 \cf{Drd}{Bonus Languages}
@@ -1306,7 +1306,7 @@ The fighter's class skills (and the key attribute for each skill) are Climb (Str
 \sssecfake{Class Features}
 All of the following are class features of the fighter.
 \cf{Ftr}{Weapon and Armor Proficiency}
- A fighter is proficient with simple weapons, any four other weapon groups,  all armor (heavy, medium, and light) and shields (including tower shields).
+ A fighter is proficient with simple weapons, any four other weapon groups,  all armor (heavy, medium, and light) and shields.
 
 \cf{Ftr}{Armor Discipline}
 A fighter's training grants him additional capability in armor.
@@ -1521,8 +1521,8 @@ Monks are not proficient with any armor or shields.
 When wearing armor, using a shield, or carrying a medium or heavy load, a monk loses the benefit of her enlightened defense, fast movement, and \ki abilities.
 
 \cf{Mnk}{Enlightened Defense}[Ex]
-A monk knows how to react intuitively to avoid blows.
-When \monkunencumbered, the monk may use Perception in place of Dexterity to determine her physical defenses (Armor, Manuever, and Reflex).
+A monk's \ki shields her body from attacks.
+When \monkunencumbered, she gains a \plus3 bonus to Armor defense.
 She loses this bonus when she is helpless.
 
 \begin{comment}  %Made AC too high
@@ -1534,23 +1534,14 @@ This bonus increases by 1 for every two monk levels thereafter (\plus2 at 4th, \
 immobilized or helpless, when she wears any armor, when she carries a shield, or when she carries a medium or heavy load.
 \end{comment}
 
-\cf{Mnk}{Improved Unarmed Strike}
-A monk gains Improved Unarmed Strike as a bonus feat.
-She is treated as armed even while unarmed, and her unarmed strikes can deal lethal damage if she desires.
-
 \cf{Mnk}{Unarmed Warrior}[Ex]
 A monk's unarmed attacks are exceptionally deadly.
-She deals damage with her unarmed strikes as if she were two size categories larger (1d6 for a Medium creature, or 1d4 for a small creature).
-
-A monk's attacks may be with either fist interchangeably or even from elbows, knees, and feet.
-This means that a monk may even make unarmed strikes with her hands full.
-A monk's unarmed strike can be treated as a manufactured weapon, natural weapon, or both for the purpose of spells and effects, whichever is more beneficial for the monk.
-This allows monks to make unarmed strikes as if they were fighting with two weapons at once (see \pcref{Two-Weapon Fighting}).
-Monks can also use gauntlets, including enchanted gauntlets.
-The damage dealt by gauntlets is the same as the damage dealt by the monk's normal unarmed strike.
+She gains the Improved Unarmed Strike feat as a bonus feat.
+In addition, she deals damage with her unarmed strikes as if she were two size categories larger than her actual size (1d6 for a Medium creature, or 1d4 for a small creature).
+For details about how to fight while unarmed, see \pcref{Unarmed Combat}.
 
 \cf{Mnk}[2nd]{Fast Movement}[Ex]
-The monk increases her land speed by 10 feet while \unencumbered.
+The monk increases her land speed by 10 feet while \monkunencumbered.
 
 \cf{Mnk}[2nd]{Ki Power}[Su]
 The monk gains the ability to channel her \ki energy to temporarily enhance her abilities.
@@ -1559,16 +1550,12 @@ This ability can be used a number of times per day equal to her Willpower or hal
 
 Some \ki powers have minimum monk levels, as indicated in the title of the power.
 All \ki powers are supernatural abilities unless otherwise noted.
-The monk's special attack bonus with \ki powers is equal to her monk level \add her Willpower.
+The monk's special attack bonus with \ki powers is equal to her monk level or her Willpower, whichever is higher.
 At her 5th monk level, and every three monk levels thereafter, the monk learns an additional \ki power.
 
 \subcf{Flurry of Blows}
 As a swift action, the monk can make a physical attack at a \minus5 penalty.
 This is in addition to any attacks she makes as part of a full attack.
-\subcf{Stunning Fist}
-As part of an unarmed attack, the monk can strike a weak point to interfere with her foe's \ki.
-If the attack deals damage, the monk makes a special attack vs. Fortitude to make the struck creature \staggered for 1 round.
-If the creature is \bloodied, it is \stunned for 1 round instead.
 \subcf{Surpass Limits}
 As a swift action, the monk can surpass the physical limitations of her body.
 Until the start of her next turn, she may use Willpower to determine her Strength and Dexterity checks.
@@ -1576,6 +1563,10 @@ This does not affect checks based on multiple attributes, such as initiative che
 \subcf{5th -- Speed Boost}
 As a swift action, the monk can force her muscles to strain beyond their normal limits.
 Until the end of her turn, she gains increases her land speed by 20 feet, and a gains \plus2 bonus to her physical defenses.
+\subcf{5th -- Stunning Fist}
+As a swift action, the monk can imbue the next unarmed attack she makes that round with the ability to disrupt her foe's \ki.
+If the attack deals damage, the monk makes a special attack vs. Fortitude to make the struck creature \staggered for 1 round.
+If the creature is \bloodied, it is \stunned for 1 round instead.
 \subcf{5th -- Wholeness of Body}
 As a standard action, the monk can correct the flow of energy within her body.
 She heals 1d10 points of damage per two monk levels.
@@ -1730,7 +1721,7 @@ The paladin's class skills (and the key attribute for each skill) are Ride (Dex)
 \sssecfake{Class Features}
 All of the following are class features of the paladin.
 \cf{Pal}{Weapon and Armor Proficiency}
- Paladins are proficient with simple weapons,  any two other weapon groups,  all types of armor (heavy, medium, and light), and with  shields (including tower shields).
+ Paladins are proficient with simple weapons,  any two other weapon groups,  all types of armor (heavy, medium, and light), and with shields.
 A paladin is also proficient with the favored weapon group of her deity.
 If she does not follow a deity, she is proficient with any other weapon group of her choice.
 
@@ -2105,7 +2096,7 @@ The ranger's class skills (and the key attribute for each skill) are Climb (Str)
 All of the following are class features of the ranger.
 
 \cf{Rgr}{Weapon and Armor Proficiency}
- A ranger is proficient with simple weapons, any two weapon groups, light and medium armor, and shields (except tower shields).
+ A ranger is proficient with simple weapons, any two weapon groups, light and medium armor, and shields.
 He is also proficient with his choice of bows, crossbows, or thrown weapons.
 
 \cf{Rgr}{Quarry}[Ex]
@@ -2771,7 +2762,7 @@ He gains additional class skills based on his choice of innate magic.
 All of the following are class features of the spellwarped.
 
 \cf{Spl}{Weapon and Armor Proficiency}
-A spellwarped is proficient with simple weapons, any two weapon groups, light and medium armor, and shields (except tower shields).
+A spellwarped is proficient with simple weapons, any two weapon groups, light and medium armor, and shields.
 
 \cf{Spl}{Innate Magic}[Ex]
 Each spellwarped draws his power from a particular kind of magic.
@@ -3445,37 +3436,41 @@ When you gain a level, you can increase your character's level in your current c
 Rules for taking levels in multiple classes are described in \pref{Multiclass Characters}, below.
 
 A character that increases in level gains additional benefits.
-Every odd level, including 1st level, she gains a feat (see \pcref{Feats}).
-Every 5th level, she increases all of her attributes by one.
-At all other levels, she increases two different attributes of her choice by one.
+\begin{itemize}
+    \item Every odd level, including 1st level, you a feat (see \pcref{Feats}).
+    \item Every 5th level, you increases all of your attributes by one.
+    \item At all other levels after 1st, you increase two different attributes of your choice by one.
+    \item At 4th level, and every 4 levels thereafter, you gain a legend point.
+\end{itemize}
+
 If a character has multiple classes, these benefits are gained based on the total character level, not based on class level.
 The experience required to reach a level, and the benefits gained at each level, are shown on \trefnp{Character Advancement}.
 
 \begin{dtable}
     \lcaption{Character Advancement}
-    \begin{dtabularx}{\columnwidth}{*{3}{>{\lcol}l} >{\lcol}X}
-        \thead{Character level} & \thead{XP} & \thead{Feats} & \thead{Attribute Increases} \\
-\hline
-        1st  & 0         & 1st  & \x              \\
-        2nd  & 2,000     & \x   & \plus1 to two   \\
-        3rd  & 5,000     & 2nd  & \plus1 to two   \\
-        4th  & 9,000     & \x   & \plus1 to two   \\
-        5th  & 15,000    & 3rd  & All gain \plus1 \\
-        6th  & 23,000    & \x   & \plus1 to two   \\
-        7th  & 35,000    & 4th  & \plus1 to two   \\
-        8th  & 51,000    & \x   & \plus1 to two   \\
-        9th  & 75,000    & 5th  & \plus1 to two   \\
-        10th & 105,000   & \x   & All gain \plus1 \\
-        11th & 155,000   & 6th  & \plus1 to two   \\
-        12th & 220,000   & \x   & \plus1 to two   \\
-        13th & 315,000   & 7th  & \plus1 to two   \\
-        14th & 445,000   & \x   & \plus1 to two   \\
-        15th & 635,000   & 8th  & All gain \plus1 \\
-        16th & 890,000   & \x   & \plus1 to two   \\
-        17th & 1,300,000 & 9th  & \plus1 to two   \\
-        18th & 1,800,000 & \x   & \plus1 to two   \\
-        19th & 2,550,000 & 10th & \plus1 to two   \\
-        20th & 3,600,000 & \x   & All gain \plus1
+    \begin{dtabularx}{\columnwidth}{*{4}{>{\lcol}l} >{\lcol}X}
+        \thead{Level} & \thead{XP} & \thead{Feats} & \thead{Attribute Increases} & \thead{Legend Points} \\
+        \hline
+        1st  & 0         & 1st  & \x              & \x  \\
+        2nd  & 2,000     & \x   & \plus1 to two   & \x  \\
+        3rd  & 5,000     & 2nd  & \plus1 to two   & \x  \\
+        4th  & 9,000     & \x   & \plus1 to two   & 1st \\
+        5th  & 15,000    & 3rd  & All gain \plus1 & \x  \\
+        6th  & 23,000    & \x   & \plus1 to two   & \x  \\
+        7th  & 35,000    & 4th  & \plus1 to two   & \x  \\
+        8th  & 51,000    & \x   & \plus1 to two   & 2nd \\
+        9th  & 75,000    & 5th  & \plus1 to two   & \x  \\
+        10th & 105,000   & \x   & All gain \plus1 & \x  \\
+        11th & 155,000   & 6th  & \plus1 to two   & \x  \\
+        12th & 220,000   & \x   & \plus1 to two   & 3rd \\
+        13th & 315,000   & 7th  & \plus1 to two   & \x  \\
+        14th & 445,000   & \x   & \plus1 to two   & \x  \\
+        15th & 635,000   & 8th  & All gain \plus1 & \x  \\
+        16th & 890,000   & \x   & \plus1 to two   & 4th \\
+        17th & 1,300,000 & 9th  & \plus1 to two   & \x  \\
+        18th & 1,800,000 & \x   & \plus1 to two   & \x  \\
+        19th & 2,550,000 & 10th & \plus1 to two   & \x  \\
+        20th & 3,600,000 & \x   & All gain \plus1 & 5th \\
     \end{dtabularx}
 \end{dtable}
 
