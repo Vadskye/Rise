@@ -510,11 +510,10 @@ The table of combat feats is organized according to the number of physical attac
 Here is the format for feat descriptions.
 
 \ssecfake{Feat Name [Type of Feat]}
-\parhead{Prerequisite}
-A minimum attribute score, another feat or feats, a minimum base attack bonus, a minimum number of ranks in one or more skills, or a class level that a character must have in order to acquire this feat.
+\featpre A minimum attribute score, another feat or feats, a minimum base attack bonus, a minimum number of ranks in one or more skills, or a class level that a character must have in order to acquire this feat.
 This entry is absent if a feat has no prerequisite.
 A feat may have more than one prerequisite.
-\parhead{Benefit}
+\featben
 What the feat enables the character (``you'' in the feat description) to do.
 If a character has the same feat more than once, its benefits do not stack unless indicated otherwise in the description.
 \par In general, characters cannot gain the same feat twice.
@@ -550,9 +549,8 @@ The number of spellgift feats you have cannot exceed your Willpower.
 
 \feat{Armor Familiarity}{Combat}
 Choose one category of armor: light, medium, heavy, or shields.
-\parhead{Prerequisite}
-Proficiency with the chosen armor category.
-\parhead{Benefit}
+\featpre Proficiency with the chosen armor category.
+\featben
 You reduce your armor check penalty by 2 and your arcane spell failure by 5\% when using your chosen armor.
 This effect cannot reduce those penalties below 0.
 
@@ -591,7 +589,7 @@ Your attack bonus is equal to your base attack bonus \add your physical attack a
 You cannot make more than one strike each round.
 
 \feat{Blind-Fight}{Combat}
-\parhead{Benefit}
+\featben
 In melee, every time you miss because of being unable to see your opponent, you can reroll your miss chance one time to see if you actually hit.
 In addition, you are not defenseless against invisible attackers.
 \par In addition, if you have 10 ranks in Awareness, you can automatically pinpoint the location of any invisible creature adjacent to you.
@@ -599,17 +597,17 @@ In addition, you are not defenseless against invisible attackers.
 You have a 50\% chance to miss opponents you can't see, and you are defenseless against them.
 
 \feat{Celestial Blessing}{Bloodline, Celestial}
-\parhead{Prerequisites}
+\featpres
 Nonevil alignment, Celestial Heritage.
-\parhead{Benefit}
+\featben
 As a standard action, you can bless your allies, as the \spell{bless}
 spell.
 You can use this ability a number of times per day equal to the number of celestial bloodline feats you have.
 
 \feat{Celestial Body}{Bloodline, Celestial}
-\parhead{Prerequisites}
+\featpres
 Nonevil alignment, Celestial Heritage.
-\parhead{Benefit}
+\featben
 You gain physical damage reduction 2/evil.
 This damage reduction allows you to ignore the first two points of damage you take each round.
 If you are hit by an evil-aligned attack, you cannot use your damage reduction for 1 round.
@@ -617,39 +615,37 @@ If you are hit by an evil-aligned attack, you cannot use your damage reduction f
 If you have four or more celestial bloodline feats, your damage reduction increases to half your level (if that would be greater).
 
 \feat{Celestial Heritage}{Bloodline, Celestial}
-\parhead{Prerequisite}
-Nonevil alignment.
-\parhead{Benefit}
+\featpre Nonevil alignment.
+\featben
 You have the blood of a celestial creature in your veins.
 As a swift action, you can declare the next physical attack you make to be a smite.
 If you smite an evil creature, you gain a damage bonus equal to your level.
 You can use this ability a number of times per day equal to the number of celestial bloodline feats you possess.
 
 \feat{Celestial Smiting}{Bloodline, Celestial}
-\parhead{Prerequisites}
+\featpres
 Nonevil alignment, Celestial Heritage.
-\parhead{Benefit}
+\featben
 Your smite attacks with your Celestial Heritage ability gain an attack bonus equal to the number of celestial bloodline feats you possess.
 In addition, you can use that ability a number of times per day equal to the number of celestial bloodline feats you have \add your Willpower.
 
 \feat{Celestial Soul}{Bloodline, Celestial}
-\parhead{Prerequisites}
+\featpres
 Nonevil alignment, any three celestial feats.
-\parhead{Benefit}
+\featben
 You gain spell resistance against evil spells and spells cast by evil creatures.
 Your spell resistance is equal to 10 \add your level \add the number of celestial heritage feats you have.
 
 \feat{Celestial Spell Conduit}{Bloodline, Celestial}
-\parhead{Prerequisites}
+\featpres
 Nonevil alignment, Celestial Heritage.
-\parhead{Benefit}
+\featben
 You gain a \plus2 bonus to caster level with Evocation (Channeling) spells and spells from the Good domain.
 If you have four or more celestial bloodline feats, this bonus increases to \plus4.
 
 \feat{Celestial Wings}{Bloodline, Celestial}
-\parhead{Prerequisite}
-Any three celestial bloodline feats.
-\parhead{Benefit}
+\featpre Any three celestial bloodline feats.
+\featben
 You gain feathery wings that sprout from your back.
 These allow you to slow your fall so you fall no more than 60 feet per round, preventing you from taking falling damage.
 
@@ -664,16 +660,16 @@ After that limit is reached, you must rest for 5 minutes before flying again.
 If you are 18th level, you can fly for a number of minutes equal to 3 \add half your Willpower before resting.
 
 \feat{Chargebreaker}{Combat, Style}
-\parhead{Benefit}
+\featben
 While in this style, you gain a \plus2 bonus to physical attack and damage against creatures that moved towards you during the current round.
 In exchange, you are \immobilized.
 \stylereq Wield a melee weapon.
 You must take a full attack action each round.
 
 \feat{Cleave}{Combat, Power}
-\parhead{Prerequisites}
+\featpres
 Str 3.
-\parhead{Benefit}
+\featben
 If you make a melee attack that knocks a creature unconscious or kills it, you can immediately make an extra melee attack against another creature you threaten.
 The extra attack must be made with the same weapon, and uses the same attack bonus, but it is otherwise treated as being a different attack.
 You cannot move before making this extra attack.
@@ -687,7 +683,7 @@ In exchange, you take a \minus2 penalty to physical defenses against creatures y
 You must take a full attack, charge, or total defense action each round.
 
 \feat{Combat Casting}{Magic}
-\parhead{Benefit}
+\featben
 You gain a \plus2 bonus to Concentration checks made to cast a spell or use a spell-like ability.
 In addition, once per day you may reroll a Concentration check made to cast a spell.
 
@@ -723,14 +719,14 @@ You may only have one contingent action prepared at a time.
 If you prepare a new contingent action, it replaces the old action.
 
 \feat{Combat Mobility}{Combat}
-\parhead{Prerequisites}
+\featpres
 Dex 3.
-\parhead{Benefit}
+\featben
 At the start of each phase, you may choose a creature you can see.
 You ignore that creature when determining whether you are \engaged in combat.
 
 \feat{Covering Fire}{Combat, Style}
-\parhead{Benefit}
+\featben
 While in this style, if you hit a creature with a physical ranged attack, it takes a \minus2 penalty to physical attacks for 1 round.
 In exchange, you take a \minus2 penalty to damage rolls with physical ranged attacks.
 \stylereq Wield a ranged weapon.
@@ -766,9 +762,9 @@ You must take a full attack or charge action each round.
 \featben When casting spells which create or transform a physical substance that you are trained to craft, you gain a \plus1 bonus to your caster level per 5 ranks you have in the appropriate Craft skill.
 
 \feat{Deadly Aim}{Combat, Style}
-\parhead{Prerequisites}
+\featpres
 Dex 3.
-\parhead{Benefit}
+\featben
 While in this style, you gain a \plus2 bonus to physical ranged damage rolls.
 In exchange, you take a \minus2 penalty on physical ranged attacks.
 \stylereq Wield a ranged weapon.
@@ -785,16 +781,16 @@ spell for up to 5 rounds each day.
 Activating this ability is a swift action, and it lasts until you will it to stop (a free action) or until the duration expires.
 
 \feat{Defensive Fighting}{Combat, Style}
-\parhead{Benefit}
+\featben
 While in this style, you gain a \plus2 bonus to your physical defenses.
 In exchange, you take a \minus2 penalty to physical attacks.
 \stylereq Wield a melee weapon.
 You must take a full attack or total defense action each round.
 
 \feat{Deflect Arrows}{Combat, Finesse, Reaction}
-\parhead{Prerequisites}
+\featpres
 Dex 3, Improved Unarmed Strike.
-\parhead{Benefit}
+\featben
 You must have at least one hand free (holding nothing) to use this feat.
 Once per round when you would normally be hit with a ranged weapon, you may deflect it so that you take no damage from it.
 You must be aware of the attack and not flatfooted.
@@ -813,24 +809,22 @@ You cannot make more than one strike each round.
 \featben You gain a \plus5 bonus to Strength checks made to break, bend, or crush objects.
 
 \feat{Diehard}{Combat, Defense}
-\parhead{Prerequisite}
-Constitution 3.
-\parhead{Benefit}
+\featpre Constitution 3.
+\featben
 When you have critical damage, you suffer a penalty to attacks, checks, and defenses equal to half the amount of critical damage you have.
 See \pcref{Dying}, for details.
 \parhead{Normal}
 A character without this feat suffers a penalty to attacks, checks, and defenses equal to the critical damage it has.
 
 \feat{Dilettante}{Skill}
-\parhead{Prerequisite}
-Int 3.
-\parhead{Benefit}
+\featpre Int 3.
+\featben
 Choose a number of Knowledge skills equal to your Intelligence.
 You are treated as trained in those skills, even if you possess no ranks, allowing you to make Knowledge checks in those areas.
 If your Intelligence increases after taking this feat, you may choose additional Knowledge skills.
 
 \feat{Distracting Foe}{Combat, Style}
-\parhead{Benefit}
+\featben
 While in this style, foes you threaten take a \minus4 penalty to Concentration checks.
 In exchange, you take a \minus2 penalty to physical defenses against melee attacks.
 \stylereq Wield a melee weapon.
@@ -857,9 +851,9 @@ Choose a cleric domain.
 In addition, you gain a \plus1 bonus to caster level with spells from the chosen domain.
 
 \feat{Draconic Breath}{Bloodline, Dragon}
-\parhead{Prerequisites}
+\featpres
 Con 3, any three dragon bloodline feats.
-\parhead{Benefit}
+\featben
 You gain a breath weapon based on the type of dragon you chose for the Draconic Heritage feat.
 The shape of the breath weapon is given on \trefnp{Dragon Types}: either a \arealarge, 5 ft.
 wide line or a \areamed cone.
@@ -874,7 +868,7 @@ Your attack bonus is equal to your level \add your Constitution.
 After using your breath weapon, you must wait 1d4 rounds before you can use it again.
 
 \feat{Draconic Heritage}{Bloodline, Dragon}
-\parhead{Benefit}
+\featben
 You have the blood of a dragon in your veins.
 When you take this feat, choose a type of dragon.
 You gain damage reduction against the damage type that dragon's breath weapon deals.
@@ -910,45 +904,39 @@ You gain a \plus1 bonus to that attribute.
 You gain a \plus1 bonus to that attribute.
 
 \feat{Draconic Scales}{Bloodline, Dragon}
-\parhead{Prerequisite}
-Draconic Heritage.
-\parhead{Benefit}
+\featpre Draconic Heritage.
+\featben
 You gain a \plus1 bonus to your Armor defense.
 
 \feat{Draconic Senses}{Bloodline, Dragon}
-\parhead{Prerequisite}
-Draconic Heritage.
+\featpre Draconic Heritage.
 She treats sources of light as if they had double their normal illumination range.
-\parhead{Benefit}
+\featben
 You gain low-light vision, allowing you to treat sources of light as if they had double their normal illumination range.
 If you already have low-light vision, you double the benefit, allowing you to quadruple the illumination range of light sources.
 If you have four or more dragon bloodline feats, you gain darkvision with a 50 foot range, or the range of your darkvision increases by 50 feet.
 
 \feat{Draconic Spellpower}{Bloodline, Dragon}
-\parhead{Prerequisite}
-Draconic Heritage.
-\parhead{Benefit}
+\featpre Draconic Heritage.
+\featben
 You gain a \plus1 bonus to caster level with all spells and spell-like abilities.
 If you have four or more dragon bloodline feats, this bonus increases to \plus2.
 
 \feat{Draconic Voice}{Bloodline, Dragon}
-\parhead{Prerequisite}
-Draconic Heritage.
-\parhead{Benefit}
+\featpre Draconic Heritage.
+\featben
 You gain a \plus2 bonus to Intimidate and Persuasion checks.
 If you have four or more dragon bloodline feats, this bonus increases to \plus4.
 
 \feat{Draconic Weapons}{Bloodline, Dragon}
-\parhead{Prerequisite}
-Draconic Heritage.
-\parhead{Benefit}
+\featpre Draconic Heritage.
+\featben
 You gain a bite natural attack that deals d8 damage for a Medium creature.
 If you have four or more dragon bloodline feats, you also gain a claw natural attack for each hand that deals d6 damage for a Medium creatures.
 
 \feat{Draconic Wings}{Bloodline, Dragon}
-\parhead{Prerequisite}
-Any three dragon bloodline feats.
-\parhead{Benefit}
+\featpre Any three dragon bloodline feats.
+\featben
 You gain leathery wings that sprout from your back.
 These allow you to slow your fall so you fall no more than 60 feet per round, preventing you from taking falling damage.
 
@@ -973,9 +961,8 @@ If you are 18th level, you can fly for a number of minutes equal to 3 \add half 
 This attack is made as the creature is being shoved, so you can make the attack even if you are shoving it beyond your reach.
 
 \feat{Dwarven Resilience}{Racial}
-\parhead{Prerequisite}
-Dwarf.
-\parhead{Benefit}
+\featpre Dwarf.
+\featben
 You gain a \plus2 bonus to defenses against poisons, spells, and spell-like effects.
 
 \feat{Elemental Body}{Bloodline, Elemental}
@@ -1013,16 +1000,15 @@ Fire increases your land speed by 5 feet.
 Water gives you a swim speed equal to your base land speed.
 
 \feat{Empower Spell}{Metamagic}
-\parhead{Prerequisite}
-Ability to cast 2nd level spells.
-\parhead{Benefit}
+\featpre Ability to cast 2nd level spells.
+\featben
 When casting a heightened spell, you gain a \plus2 bonus to caster level.
 A heightened spell uses up a spell slot one level higher than the spell's actual level.
 Unlike other metamagic feats, you can apply this metamagic feat any number of times, increasing your caster level by 2 each time.
 
 \feat{Endurance}{General}
 \featpre Con 3.
-\parhead{Benefit}
+\featben
 You are not staggered when you have no hit points remaining.
 You still take critical damage and risk death if you are damaged when you have no hit points.
 
@@ -1034,36 +1020,33 @@ A character without this feat who has no hit points remaining is staggered.
 In addition, a character without this feat who sleeps in medium or heavier armor is automatically fatigued the next day.
 
 \feat{Energetic Substitution}{Metamagic}
-\parhead{Prerequisite}
-Ability to cast 2nd level spells.
-\parhead{Benefit}
+\featpre Ability to cast 2nd level spells.
+\featben
 When casting a substituted spell, you can choose what kind of energy damage it deals: cold, fire, or electricity.
 This can only be applied to spells that originally dealt cold, fire, or electricity damage.
 A substituted spell uses up a spell slot one level higher than the spell's actual level.
 
 \feat{Executioner}{Combat, Reaction}
-\parhead{Prerequisites}
+\featpres
 Four attacks, any three Reaction feats.
-\parhead{Benefit}
+\featben
 At the end of every round, you can make a free physical melee attack against all creatures you threaten that have no hit points remaining.
 
 \feat{Extend Spell}{Metamagic}
-\parhead{Prerequisite}
-Ability to cast 2nd level spells.
-\parhead{Benefit}
+\featpre Ability to cast 2nd level spells.
+\featben
 An extended spell has its range doubled.
 This metamagic can only be applied to spells with a range of \rngclose, \rngmed, or \rnglong.
 An extended spell uses up a spell slot one level higher than the spell's actual level.
 
 \feat{Eye of the Storm}{Awareness, Combat, Defense}
-\parhead{Prerequisite}
-Two attacks.
-\parhead{Benefit}
+\featpre Two attacks.
+\featben
 You reduce your overwhelm penalties by 1.
 
 \feat{Exotic Weapon Proficiency}{Combat}
 You understand how to use exotic weapons in combat.
-\parhead{Benefit}
+\featben
 You are proficient with exotic weapons from weapon groups that you are otherwise proficient with.
 This allows you to defend yourself normally with melee weapons, and to attack with exotic ranged weapons without penalty.
 \parhead{Normal}
@@ -1071,28 +1054,24 @@ You are not normally proficient with exotic weapons.
 You cannot defend yourself with melee weapons you are not proficient with, and you take a \minus4 penalty to physical attacks with ranged weapons you are not proficient with.
 
 \feat{Extra Channeling}{Class}
-\parhead{Prerequisite}
-Ability to channel energy.
-\parhead{Benefit}
+\featpre Ability to channel energy.
+\featben
 You can channel energy three more times per day.
 
 \feat{Extra Invocation}{Class}
-\parhead{Prerequisite}
-Ability to use an arcane invocation.
-\parhead{Benefit}
+\featpre Ability to use an arcane invocation.
+\featben
 You learn a new arcane invocation.
 You cannot learn invocations from your prohibited schools, if any, with this feat.
 
 \feat{Extra Rage}{Class}
-\parhead{Prerequisite}
-Ability to rage.
-\parhead{Benefit}
+\featpre Ability to rage.
+\featben
 You can rage one more time per day.
 
 \feat{Extra Smiting}{Class}
-\parhead{Prerequisite}
-Smite ability.
-\parhead{Benefit}
+\featpre Smite ability.
+\featben
 You can smite three more times per day.
 If you have more than one smite ability, you choose which ability this applies to.
 \parhead{Special}
@@ -1101,9 +1080,8 @@ Its effects do not stack.
 Each time you take the feat, you choose a different smite ability you have and apply the effects to that ability.
 
 \feat{Extra Wild Aspect}{Class}
-\parhead{Prerequisite}
-Wild aspect ability.
-\parhead{Benefit}
+\featpre Wild aspect ability.
+\featben
 You gain three extra uses of your wild aspect ability.
 
 \feat{Fae Heritage}{Bloodline}
@@ -1114,7 +1092,7 @@ Your caster level is equal to your level \add the number of fae bloodline feats 
 You can use this ability once per day per fae bloodline feat you have.
 
 \feat{Far Shot}{Combat}
-\parhead{Benefit}
+\featben
 When you use a projectile weapon, such as a bow, its range increment increases by one-half (multiply by 1-1/2).
 When you use a thrown weapon, its range increment is doubled.
 
@@ -1153,13 +1131,12 @@ You must take a full attack action each round.
 
 \feat{Flexible Counterspell}{Magic}
 \featpre Spellcraft 8 ranks, Counterspell.
-\parhead{Benefit}
+\featben
 When counterspelling, you may attempt to counter spells of any school, regardless of which spell you cast.
 
 \feat{Focused Mind}{Racial}
-\parhead{Prerequisite}
-Elf.
-\parhead{Benefit}
+\featpre Elf.
+\featben
 You gain a \plus2 bonus to Will defense.
 In addition, you can use your Intelligence instead of your Constitution on Concentration checks, such as when you cast spells.
 
@@ -1181,13 +1158,12 @@ Activating this ability is a swift action, and it lasts until you will it to sto
 This does not allow you to overwhelm a creature by yourself.
 
 \feat{Giantfighter}{Racial}
-\parhead{Prerequisite}
-Dwarf, gnome, or halfling.
-\parhead{Benefit}
+\featpre Dwarf, gnome, or halfling.
+\featben
 You gain a \plus2 bonus to physical defenses against creatures of size Large or larger.
 
 \feat{Great Fortitude}{General}
-\parhead{Benefit}
+\featben
 You gain a \plus2 bonus to your Fortitude defense.
 
 \feat{Guardian}{Combat, Defense, Style}
@@ -1204,9 +1180,8 @@ This healing increases by 1d6 at 12th level and every 4 levels thereafter.
 After using this ability, you cannot use it again for 5 rounds.
 
 \feat{Heartseeker}{Combat, Style}
-\parhead{Prerequisite}
-Two attacks.
-\parhead{Benefit}
+\featpre Two attacks.
+\featben
 While in this style, you double your critical threat range with any weapon you wield.
 In exchange, you take a \minus4 penalty to all physical attacks which are not critical threats or threat confirmations.
 This does not stack with any other effects which increase threat range.
@@ -1219,9 +1194,8 @@ You must take a full attack or charge action each round.
 The second attack has a \minus10 penalty.
 
 \feat{Imbue Magic}{Item Creation}
-\parhead{Prerequisite}
-Caster level 2nd or Craft (any) 6 ranks.
-\parhead{Benefit}
+\featpre Caster level 2nd or Craft (any) 6 ranks.
+\featben
 You can imbue items with magic using your spells or crafting ability.
 Imbuing an item with magic takes time and material components, as described in \pcref{Magic Item Creation}.
 
@@ -1234,9 +1208,8 @@ Doing so costs a tenth of the raw materials and a quarter of the time it would t
 You cannot mend a destroyed magic item.
 
 \feat{Imbued Spellstrike}{Metamagic}
-\parhead{Prerequisite}
-Ability to cast 2nd level spells.
-\parhead{Benefit}
+\featpre Ability to cast 2nd level spells.
+\featben
 As part of casting an imbued spellstrike spell, you can make a single attack with a weapon in your hand.
 If the attack hits, the struck creature is affected by the spell, as if it had been the target, in addition to taking damage from the weapon.
 The imbuement fades away without effect after 1 round (at the end of your next turn) if you have not struck a foe.
@@ -1245,9 +1218,8 @@ Only spells which affect a single target and have a casting time no shorter than
 An imbued spellstrike uses up a spell slot one level higher than the spell's actual level.
 
 \feat{Imbuement Admixture}{Item Creation}
-\parhead{Prerequisite}
-3rd level spells.
-\parhead{Benefit}
+\featpre 3rd level spells.
+\featben
 You can blend two spells together to create magic items.
 This allows you to meet item crafting prerequisites that you could not meet with a single spell.
 
@@ -1261,56 +1233,55 @@ Flying creatures must immediately land, but do not crash.
 You cannot make more than one strike each round.
 
 \feat{Improved Shove}{Combat, Maneuver}
-\parhead{Benefit}
+\featben
 When you shove a creature, you can move it outside of your reach.
 You also gain a \plus2 bonus to shove attacks.
 
 \feat{Improved Dirty Trick}{Combat, Maneuver}
-\parhead{Benefit}
+\featben
 When you perform a dirty trick on a cretaure successfully, the creature is \vulnerable for 1d4 rounds.
 You also gain a \plus2 bonus to dirty trick attacks.
 
 \feat{Improved Disarm}{Combat, Finesse}
-\parhead{Benefit}
+\featben
 When you disarm a creature, you can make the disarmed item land up to 15 feet away in a random direction.
 You also gain a \plus2 bonus to disarm attacks.
 
 \feat{Improved Feint}{Combat, Finesse}
-\parhead{Benefit}
+\featben
 When you feint against a creature, if you beat its Armor defense by 5 or more, you deal damage with your weapon normally.
 You also gain a \plus2 bonus to feint attacks.
 
 \feat{Improved Imbued Spellstrike}{Metamagic}
-\parhead{Prerequisite}
-Ability to cast 3rd level spells, Imbued Spellstrike.
-\parhead{Benefit}
+\featpre Ability to cast 3rd level spells, Imbued Spellstrike.
+\featben
 This metamagic functions like Imbued Spellstrike, except that the imbuement lasts for 5 minutes if you have not struck a foe.
 If the weapon leaves your hands or if you cast another spell, the imbuement fades away without effect.
 
 An improved imbued spellstrike spell uses up a spell slot two levels higher than the spell's actual level.
 
 \feat{Improved Grapple}{Combat, Maneuver}
-\parhead{Benefit}
+\featben
 Grappling does not make you \vulnerable against other creatures.
 You also gain a \plus2 bonus to grapple attacks.
 \parhead{Normal}
 While grappling, you are vulnerable against all creatures except the ones you are grappling.
 
 \feat{Improved Overrun}{Combat, Maneuver}
-\parhead{Benefit}
+\featben
 When you attempt to overrun a foe, the creature may not choose to avoid you unless you let it.
 You also gain a \plus2 bonus to overrun attacks.
 \parhead{Normal}
 Without this feat, the target of an overrun can choose to avoid you or to block you.
 
 \feat{Improved Trip}{Combat, Maneuver}
-\parhead{Benefit}
+\featben
 When you successfully trip a foe, you get a free melee attack against it.
 This attack is made as the creature is being tripped, so it does not have penalties for being prone.
 You also gain a \plus2 bonus to trip attacks.
 
 \feat{Improved Unarmed Strike}{Combat}
-\parhead{Benefit}
+\featben
 You treat your unarmed strike as if it were a lethal weapon.
 This allows you to defend yourself while unarmed, just as if you were using another melee weapon.
 
@@ -1399,9 +1370,8 @@ You can use any combination of performance feats you possess a number of times p
 If you fail the Perform check, the use of the ability is wasted.
 
 \feat{Intense Channeling}{Class}
-\parhead{Prerequisite}
-Channel energy 3d6.
-\parhead{Benefit}
+\featpre Channel energy 3d6.
+\featben
 You increase the damage dealt or healed by your channel energy ability by 1d6.
 
 \feat{Intimidating Strike}{Combat, Strike}
@@ -1412,7 +1382,7 @@ You gain a bonus to your Intimidate check equal to the penalty you took to hit.
 You cannot make more than one strike each round.
 
 \feat{Iron Will}{General}
-\parhead{Benefit}
+\featben
 You gain a \plus2 bonus to your Will defense.
 
 \feat{Killing Blow}{Combat, Strike}
@@ -1704,21 +1674,21 @@ You can make a Swim check as a swift action to gain this benefit in a round when
 \featben When tumbling, if your check result is 30 or higher, you can move through squares occupied by foes or threatened by blocking foes without penalty.
 
 \feat{Lightning Reflexes}{General}
-\parhead{Benefit}
+\featben
 You gain a \plus2 bonus to your Reflex defense.
 
 \feat{Magical Synthesis}{Magic}
 Choose two magical classes you possess.
-\parhead{Prerequisites}
+\featpres
 Levels in two magical classes.
-\parhead{Benefit}
+\featben
 When gaining levels in either of your chosen classes, you increase your spellcasting ability with the other class as if your class was nonmagical.
 See \pcref{Spellcasters and Multiclassing}.
 
 \feat{Manyshot}{Combat, Style}
-\parhead{Prerequisites}
+\featpres
 Dex 5, three attacks.
-\parhead{Benefit}
+\featben
 While in this style, when you attack with a light thrown weapon or projectile weapon, you may attack with two projectiles or weapons at once.
 If the attack hits, you roll damage twice and take the higher of the two roll, as with two-weapon fighting (see \pcref{Two-Weapon Fighting}).
 Taking advantage of this style requires having multiple weapons in hand or loading two projectiles at once, which may be difficult if you reload slowly.
@@ -1735,9 +1705,8 @@ You may still cast only one spell, but it is used to counter the spells cast by 
 \featben When casting Conjuration (Translocation) spells and rituals which affect multiple creatures, you can affect a number of creatures equal to your caster level.
 
 \feat{Mighty Summons}{Magic}
-\parhead{Prerequisite}
-Ability to cast a Conjuration (Summoning) spell of at least 2nd level.
-\parhead{Benefit}
+\featpre Ability to cast a Conjuration (Summoning) spell of at least 2nd level.
+\featben
 Each creature you conjure with a summoning spell gains a \plus2 enhancement bonus to Strength and Constitution for the duration of the spell that summoned it.
 
 \feat{Mobile Hurricane}{Combat, Mobility}
@@ -1750,21 +1719,20 @@ Each creature you conjure with a summoning spell gains a \plus2 enhancement bonu
 
 \feat{Mounted Archery}{Combat}
 \featpre Ride 1 rank.
-\parhead{Benefit}
+\featben
 The penalty you take when using a ranged weapon while mounted is decreased by 4: \minus0 instead of \minus4 if your mount is taking a double move, and \minus4 instead of \minus8 if your mount is running.
 
 \feat{Mounted Combat}{Combat}
-\parhead{Prerequisite}
-Ride 1 rank.
-\parhead{Benefit}
+\featpre Ride 1 rank.
+\featben
 Once per round when your mount is hit in combat, you may attempt a Ride check as an immediate action to negate the hit.
 Your check result is used in place of the mount's physical defenses, if it is higher.
 If that would make the attack fail, the attack fails.
 
 \feat{Mounted Trample}{Combat}
-\parhead{Prerequisites}
+\featpres
 Ride 8 ranks.
-\parhead{Benefit}
+\featben
 When you attempt to overrun an opponent while mounted, your target may not choose to avoid you.
 Your mount may make one attack with an appropriate natural weapon (hoof, claw, or other leg-based attack) against any target you knock down, gaining the normal \plus4 bonus to physical melee attacks against prone targets.
 
@@ -1791,20 +1759,20 @@ A nauseated creature can only take a single move action each round.
 You cannot make more than one strike each round.
 
 \feat{Open Minded}{Skill}
-\parhead{Benefit}
+\featben
 You gain two skill points.
 You may spend these skill points immediately.
 
 \feat{Overpowering Assault}{Combat, Style}
 \featpres Str 3.
-\parhead{Benefit}
+\featben
 While in this style, you gain a \plus2 bonus to maneuver attacks.
 In exchange, you take a \minus2 penalty to physical defenses.
 \stylereq Wield a melee weapon.
 You must take a full attack or charge action each round.
 
 \feat{Overwhelming Fire}{Combat, Reaction, Style}
-\parhead{Benefit}
+\featben
 While in this style, you contribute to overwhelm penalties against all creatures within a single range increment of you.
 You do not contribute to overwhelm penalties against creatures with cover from you.
 In exchange, you take a \minus2 penalty to your physical defenses.
@@ -1837,9 +1805,9 @@ You cannot make more than one strike each round.
 If your Constitution is 10, you are also immune to poison and supernatural diseases.
 
 \feat{Perfect Shot}{Combat, Style}
-\parhead{Prerequisites}
+\featpres
 Dex 5, Precise Shot, two attacks.
-\parhead{Benefit}
+\featben
 While in this style, your ranged attacks ignore cover and concealment, except total cover and total concealment.
 In addition, when you shoot or throw ranged weapons at a grappling opponent, you automatically strike at the opponent you have chosen.
 In exchange, you must spend a full-round action to make a full attack.
@@ -1866,7 +1834,7 @@ You must decide to use this ability before making the roll.
 Activating this ability is an immediate action.
 
 \feat{Point Blank Shot}{Combat, Style}
-\parhead{Benefit}
+\featben
 While in this style, you gain a \plus2 bonus to physical attack rolls with ranged weapons when attacking targets within half of your range increment.
 In exchange, you are unable to attack targets beyond your range increment.
 \stylereq Wield a ranged weapon.
@@ -1879,7 +1847,7 @@ In addition, you cannot accidentally poison yourself while applying poison to an
 
 \feat{Power Attack}{Combat, Style}
 \featpres Str 3.
-\parhead{Benefit}
+\featben
 While in this style, you gain a \plus2 bonus to physical melee damage rolls.
 In exchange, you take a \minus2 penalty to physical melee attacks.
 The bonus damage and penalty do not apply to maneuvers or touch attacks.
@@ -1887,7 +1855,7 @@ The bonus damage and penalty do not apply to maneuvers or touch attacks.
 You must take a full attack or charge action each round.
 
 \feat{Precise Shot}{Combat, Style}
-\parhead{Benefit}
+\featben
 While in this style, you can ignore a number of creatures equal to your Perception (minimum 1) when determining whether targets have active cover from you when making ranged attacks.
 In exchange, you must spend a full-round action to make a full attack.
 \stylereq Wield a ranged weapon.
@@ -1901,7 +1869,7 @@ Effects which penalize Dexterity, such as wearing medium or heavy armor, do not 
 You must take a full attack, charge, or total defense action each round.
 
 \feat{Quick Draw}{Combat}
-\parhead{Benefit}
+\featben
 You can draw light weapons as a free action and medium weapons as a swift action.
 You can draw heavy weapons and hidden weapons of any type (see the Sleight of Hand skill) as a move action.
 \par A character who has selected this feat may throw light weapons at his full normal rate of attacks (much like a character with a bow).
@@ -1911,9 +1879,8 @@ If you have three or more Reaction feats, you can draw light and medium weapons 
 Without this feat, you may draw light weapons as a swift action, medium and heavy weapons as a move action, and hidden weapons as a standard action.
 
 \feat{Quicken Spell}{Metamagic}\label{Quicken Spell}
-\parhead{Prerequisite}
-Ability to cast 3rd level spells.
-\parhead{Benefit}
+\featpre Ability to cast 3rd level spells.
+\featben
 Casting a quickened spell is a swift action.
 You can perform another action, even casting another spell, in the same round as you cast a quickened spell.
 However, casting a quickened spell is mentally exhausting.
@@ -1933,15 +1900,14 @@ For example, this would remove the negative level for being \spellindirect{reinc
 This feat can be retrained using normal retraining rules if you return to your original race.
 
 \feat{Ranged Legerdemain}{Skill}
-\parhead{Prerequisite}
-Ability to cast 2nd level spells.
-\parhead{Benefit}
+\featpre Ability to cast 2nd level spells.
+\featben
 By expending an Evocation (Control) spell of 2nd level or higher, you can use the Disable Device or Sleight of Hand skills at \rngclose range for a number of rounds equal to half the level of the spell slot.
 
 \feat{Rapid Metamagic}{Magic}
-\parhead{Prerequisites}
+\featpres
 Spellcraft 8 ranks, ability to cast spells, one metamagic feat.
-\parhead{Benefit}
+\featben
 When you apply a metamagic feat to a spell, the spell only takes its normal casting time.
 \parhead{Normal}
 Without this feat, applying metamagic takes a standard action (if the spell normally requires less than a standard action), a full-round action (if the spell normally requires a standard action), or an additional full-round action (if the spell takes 1 full round or longer to cast).
@@ -1958,9 +1924,8 @@ You cannot cast a spell in the same round as you embody a wild aspect in this wa
 You can embody a wild aspect as a standard action.
 
 \feat{Reach Spell}{Metamagic}
-\parhead{Prerequisite}
-Ability to cast 3rd level spells.
-\parhead{Benefit}
+\featpre Ability to cast 3rd level spells.
+\featben
 When casting a reach spell, you can use a spell with a range of touch on a target within \rngclose range.
 You must succeed on a ranged touch attack.
 A reach spell uses up a spell slot two levels higher than the spell's actual level.
@@ -2003,16 +1968,16 @@ If the initial performance was done with the Rapid Performance feat, you take th
 You gain a \plus5 bonus to Maneuver Defense against that maneuver.
 
 \feat{Retributive Counterspell}{Magic}
-\parhead{Prerequisites}
+\featpres
 Ability to cast 4th level spells.
-\parhead{Benefit}
+\featben
 As part of the action to counter a spell, you may expend an Abjuration (Negation) spell of 4th level or higher.
 If you do, the counterspelled spell is turned back on the caster as if it were affected by the \spell{spell turning}
 spell.
 If it cannot be affected by \spell{spell turning}, such as if it is a spell that only affects the caster, it is simply countered as normal.
 
 \feat{Reveal the Weak Point}{Combat, Style}
-\parhead{Benefit}
+\featben
 While in this style, any creature you deal damage to with a physical attack takes a \minus2 penalty to physical defenses for 1 round.
 In exchange, you take a \minus2 penalty to physical attacks and damage.
 \stylereq Wield a weapon.
@@ -2020,7 +1985,7 @@ You must take a full attack or charge action each round.
 
 \feat{Ride-By Attack}{Combat}
 \featpre Ride 8 ranks.
-\parhead{Benefit}
+\featben
 When you are mounted and use the charge action, you may move and attack as if with a standard charge and then move again (continuing the straight line of the charge).
 You do not need to attack from the closest possible space when making a ride-by attack.
 Your total movement for the round can't exceed the distance you could normally move on a mounted charge.
@@ -2044,17 +2009,16 @@ The creature takes a \minus4 penalty to physical attacks against you, but is not
 It can attempt to remove you by attacking you, or with an appropriate maneuver, such as grappling or shoving.
 
 \feat{Selective Channeling}{Class}
-\parhead{Prerequisites}
+\featpres
 Ability to channel energy.
-\parhead{Benefit}
+\featben
 You can exclude up to two additional creatures from the effect when you channel energy.
 \parhead{Normal}
 Without this feat, you can exclude a number of creatures from the effect equal to 1 \add half your Perception.
 
 \feat{Shape Spell}{Metamagic}
-\parhead{Prerequisite}
-Ability to cast 3rd level spells.
-\parhead{Benefit}
+\featpre Ability to cast 3rd level spells.
+\featben
 When casting a shaped spell, you can exclude any number of 5-foot cubes within the spell's area.
 This allows you to prevent the spell from affecting your allies, while still allowing it to affect your enemies.
 The area affected by the spell must be contiguous.
@@ -2080,7 +2044,7 @@ As normal, if you use your shield hand for something other than defending yourse
 \featben You gain a \plus1 bonus to physical defenses while using a shield.
 
 \feat{Shield Proficiency}{Combat}
-\parhead{Benefit}
+\featben
 You can use a shield and take only the standard penalties.
 \parhead{Normal}
 When you are using a shield with which you are not proficient, you take the shield's armor check penalty on physical attacks and on all checks that involve moving, including Ride checks.
@@ -2100,16 +2064,15 @@ Your attack bonus is equal to your base attack bonus \add your physical attack a
 You cannot make more than one strike each round.
 
 \feat{Silent Spell}{Metamagic}
-\parhead{Prerequisite}
-Ability to cast 2nd level spells.
-\parhead{Benefit}
+\featpre Ability to cast 2nd level spells.
+\featben
 A silent spell can be cast with no verbal components.
 Spells without verbal components are not affected.
 A silent spell uses up a spell slot one level higher than the spell's actual level.
 
 \feat{Skill Focus}{Skill}
 Choose a skill.
-\parhead{Benefit}
+\featben
 You gain a \plus3 bonus to all checks involving that skill.
 In addition, once per day you may reroll a skill check made with that skill.
 \parhead{Special}
@@ -2129,9 +2092,9 @@ Its effects do not stack.
 Each time you take the feat, it applies to a new skill.
 
 \feat{Snatch Arrows}{Combat, Finesse, Reaction}
-\parhead{Prerequisites}
+\featpres
 Dex 5, Deflect Arrows, Improved Unarmed Strike.
-\parhead{Benefit}
+\featben
 When using the Deflect Arrows feat, you may catch the weapon instead of just deflecting it.
 As an immediate action, you can throw a caught weapon back at the original attacker.
 If you have an appropriate projectile weapon available, you can also fire caught ammunition.
@@ -2139,9 +2102,8 @@ If you have an appropriate projectile weapon available, you can also fire caught
 
 \feat{Spell Focus}{Magic}
 Choose a school of magic or a spell descriptor.
-\parhead{Prerequisite}
-2nd level spells.
-\parhead{Benefit}
+\featpre 2nd level spells.
+\featben
 You get a \plus2 bonus to your caster level when casting spells and using spell-like abilities from the school of magic or with the spell descriptor you select.
 \parhead{Special}
 You can gain this feat multiple times.
@@ -2175,31 +2137,29 @@ You perform rituals twice as quickly.
 The Spellcraft DC to identify those spells as they are cast increases by 10, as the performance disguises the magic.
 
 \feat{Spirited Charge}{Combat}
-\parhead{Prerequisites}
+\featpres
 Ride 1 rank, Ride-By Attack.
-\parhead{Benefit}
+\featben
 When mounted and using the charge action, you deal double damage with a melee weapon (or triple damage with a lance) on your attack at the end of the charge.%Spirited Charge
 
 \feat{Spring Attack}{Combat}
-\parhead{Prerequisites}
+\featpres
 Dex 3, Mobility, two attacks.
-\parhead{Benefit}
+\featben
 As a full-round action, you can move up to your speed and make your full attack.
 You must move at least 5 feet after each attack you make before you can make another attack.
 You can only use this style while \unencumbered.
 
 \feat{Still Spell}{Metamagic}
-\parhead{Prerequisite}
-Ability to cast 2nd level spells.
-\parhead{Benefit}
+\featpre Ability to cast 2nd level spells.
+\featben
 A stilled spell can be cast with no somatic components.
 Spells without somatic components are not affected.
 A stilled spell uses up a spell slot one level higher than the spell's actual level.
 
 \feat{Stonecunning}{Racial}
-\parhead{Prerequisite}
-Dwarf.
-\parhead{Benefit}
+\featpre Dwarf.
+\featben
 You gain a \plus2 bonus to Craft and Awareness checks related to stone or metal.
 In addition, if you come within 10 feet of unusual stonework, you can make a Awareness check to notice it as if you were actively searching.
 Finally, you can also intuit depth, sensing your approximate depth underground as naturally as a human can sense which way is up.
@@ -2232,22 +2192,21 @@ This only affects spell duration, and has no effect on spells with special effec
 A sustained spell uses up a spell slot one level higher than the spell's actual level.
 
 \feat{Swift}{General}
-\parhead{Benefit}
+\featben
 You increase your land speed by 5 feet.
 
 \feat{Tactical Analysis}{Combat}
-\parhead{Prerequisite}
-Intelligence 3.
-\parhead{Benefit}
+\featpre Intelligence 3.
+\featben
 You can attempt to identify the strengths and weaknesses of creatures based on your combat experience.
 As a swift action, you can make a special check with a bonus equal to your base attack bonus \add your Intelligence \add 2 per round you have seen the creature fight.
 The DC is equal to 10 \add the creature's CR.
 If you succeed, you learn about the monster's combat abilities as if you had made a successful Knowledge check.
 
 \feat{Tactical Prediction}{Combat}
-\parhead{Prerequisites}
+\featpres
 Intelligence 3, two attacks.
-\parhead{Benefit}
+\featben
 You can attempt to predict what your opponent will do.
 As a swift action, you can make a special check with a bonus equal to your base attack bonus \add your Intelligence \add 2 per round you have seen the creature fight.
 The DC is equal to 15 \add the creature's CR.
@@ -2269,11 +2228,11 @@ You must take a full attack action each round.
 If you detect a trap partway through your movement, you may immediately stop moving.
 
 \feat{Toughness}{General}
-\parhead{Benefit}
+\featben
 You gain \plus3 hit points, \plus1 per level above 3.
 
 \feat{Track}{Skill}
-\parhead{Benefit}
+\featben
 To find tracks or to follow them for 1 mile requires a successful Survival check.
 You must make another Survival check every time the tracks become difficult to follow.
 You move at half your normal speed (or at your normal speed with a \minus5 penalty on the check, or at up to twice your normal speed with a \minus20 penalty on the check).
@@ -2345,22 +2304,21 @@ He need not select it.
 This check should be made secretly, so you do not know whether you failed to notice a trap.
 
 \feat{Two-Weapon Defense}{Combat}
-\parhead{Prerequisites}
+\featpres
 Dex 3, Two-Weapon Fighting.
-\parhead{Benefit}
+\featben
 When wielding a weapon in both hands, you gain a \plus1 bonus to physical defenses.
 
 \feat{Two-Weapon Fighting}{Combat}
 You can fight with a weapon in each hand more effectively.
-\parhead{Prerequisite}
-Dex 3.
-\parhead{Benefit}
+\featpre Dex 3.
+\featben
 You gain a \plus2 attack bonus when attacking with two weapons at once.
 
 \feat{Two-Weapon Rend}{Combat, Power}
-\parhead{Prerequisites}
+\featpres
 Str 5, Two-Weapon Fighting, two attacks.
-\parhead{Benefit}
+\featben
 When fighting with two weapons at once, you gain a \plus1 bonus to physical damage.
 
 \feat{Versatility}{Class}
@@ -2369,9 +2327,8 @@ When fighting with two weapons at once, you gain a \plus1 bonus to physical dama
 This can increase the power of abilities you already have, but it does not affect the rate at which you gain new abilities.
 
 \feat{Versatile Crafter}{Item Creation}
-\parhead{Prerequisite}
-Craft (any) 10 ranks.
-\parhead{Benefit}
+\featpre Craft (any) 10 ranks.
+\featben
 You learn how to make items from any school of magic, including universal spells.
 See the Craft skill, \pref{Craft}, for details.
 \parhead{Normal}
@@ -2393,9 +2350,9 @@ A successful check gives you the same information as a Knowledge check would.
 
 \feat{Weapon Focus}{Combat}
 Choose one weapon group.
-\parhead{Prerequisites}
+\featpres
 Proficiency with selected weapon group.
-\parhead{Benefit}
+\featben
 You gain a special ability based on the weapon group chosen.
 These special abilities only function when you are making attacks with weapons from your chosen weapon group.
 \begin{itemize}
@@ -2421,7 +2378,7 @@ You cannot choose simple weapons when you take this feat.
 
 \feat{Weapon Proficiency}{Combat}
 Choose one weapon group.
-\parhead{Benefit}
+\featben
 You are proficient with weapons from your chosen weapon group.
 This allows you to defend yourself normally with melee weapons, and to attack with exotic ranged weapons without penalty.
 \parhead{Normal}
@@ -2432,19 +2389,16 @@ Each time you take the feat, it applies to a new weapon group.
 You cannot choose simple weapons.
 
 \feat{Widen Spell}{Metamagic}
-\parhead{Prerequisite}
-Ability to cast 4th level spells.
-\parhead{Benefit}
-You can alter a burst, emanation, line, or spread shaped spell to increase its area.
+\featpre Ability to cast 4th level spells.
+\featben You can alter a burst, emanation, line, or spread shaped spell to increase its area.
 Any numeric measurements of the spell's area increase by 100\%.
 A widened spell uses up a spell slot three levels higher than the spell's actual level.
 \par Spells that do not have an area of one of these four sorts are not affected by this feat.
 
 \feat{Whirlwind Strike}{Combat, Strike}
-\parhead{Prerequisites}
+\featpres
 Dex 5, two attacks.
-\parhead{Benefit}
-As a full-round action, you can make a single melee attack against each opponent you threaten.
+\featben As a full-round action, you can make a single melee attack against each opponent you threaten.
 You cannot make more than one strike each round.
 
 \section{Other Feat Rules}
