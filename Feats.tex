@@ -150,9 +150,10 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
 Most strikes modify a single physical attack you would normally make, but some strikes completely change how you make physical attacks.
 You cannot make more than one strike each round.
 
-\section{Feat Table}
+\section{Feat Tables}
 \onecolumn
 
+\subsection{General Feats}
 % Feat names must follow ``have'', ``are (a)'', or ``can''.
 {\small
     \taburowcolors [2] 2{tbrown ..
@@ -163,14 +164,15 @@ You cannot make more than one strike each round.
         \featref{Deathless} & Con 10 & Immune to death effects & \featpref{Deathless} \\
         \featref{Destructive} & Str 3 & Gain \plus5 to break things & \featpref{Destructive} \\
         \featref{Fearless} & Wil 10 & Immune to fear effects & \featpref{Fearless} \\
-        \featref{Great Fortitude} & \x & \plus2 bonus to Fortitude defense & \featpref{Great Fortitude} \\
-        \featref{Iron Will} & \x & \plus2 bonus to Will defense & \featpref{Iron Will} \\
-        \featref{Lightning Reflexes} & \x &  \plus2 bonus to Reflex defense & \featpref{Lightning Reflexes} \\
+        \featref{Great Fortitude} & Con 3 & \plus2 bonus to Fortitude defense & \featpref{Great Fortitude} \\
+        \featref{Iron Will} & Wil 3 & \plus2 bonus to Will defense & \featpref{Iron Will} \\
+        \featref{Lightning Reflexes} & Dex 3 &  \plus2 bonus to Reflex defense & \featpref{Lightning Reflexes} \\
+        \featref{Mental Resilience} & Wil 3 & Gain bonus hit points & \featpref{Mental Resilience} \\
         \featref{Perfect Health} & Con 3 & Immune to disease, later poison & \featpref{Perfect Health} \\
         \featref{Pierce Delusions} & Per 10 & Immune to delusion effects & \featpref{Pierce Delusions} \\
         \featref{Stubborn} & Wil 10 & Immune to compulsion effects & \featpref{Stubborn} \\
         \featref{Swift} & \x & Increase speed by 5 feet & \featpref{Swift} \\
-        \featref{Toughness} & \x &  \plus3 hit points \plus1 per level above 3 & \featpref{Toughness} \\
+        \featref{Toughness} & Con 3 & Gain bonus hit points & \featpref{Toughness} \\
 
         \midrule
         \thead{Bane Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
@@ -366,6 +368,7 @@ The table of combat feats is organized according to the number of physical attac
         \featref{Armor Proficiency} & Proficiency with lighter armor & Become proficient with type of armor & Equipment & \featpref{Armor Proficiency} \\
         \featref{Blind-Fight} & Perception 3 & Reroll miss chance for concealment in melee & Awareness & \featpref{Blind-Fight} \\
         \featref{Cleave} & Str 3 & Extra melee attack after dropping target & Power & \featpref{Cleave} \\
+        \featref{Close-Quarters Fighting} & Dex 3, attack bonus \plus2 & No penalty for squeezing or attacking while grappling & Defense & \featpref{Close-Quarters Fighting} \\
         \featref{Combat Mobility} & Dex 3 & Ignore engagement from foe & Defense, Mobility & \featpref{Combat Mobility} \\
         \featref{Diehard} & Con 3 & Halve penalties from critical damage & Defense & \featpref{Diehard} \\
         \featref{Exotic Weapon Proficiency} & \x & Become proficient with exotic weapons & Equipment & \featpref{Exotic Weapon Proficiency} \\
@@ -384,9 +387,6 @@ The table of combat feats is organized according to the number of physical attac
         \featref{Mounted Archery} & Ride 1 rank & Reduced penalty for ranged attacks while mounted by 4 & Mounted, Precision & \featpref{Mounted Archery} \\
         \featref{Mounted Combat} & Ride 1 rank & Negate hits on mount with Ride check & Defense, Mounted & \featpref{Mounted Combat} \\
         \featref{Mounted Trample} & Ride 8 ranks & Target cannot avoid mounted overrun & Mobility, Mounted & \featpref{Mounted Trample} \\
-        \featref{Parry} & Dex 3 & Ready yourself to parry incoming blows & Defense, Reaction & \featpref{Parry} \\
-        \tind \featref{Shielded Parry} & Dex 3, shield proficiency, Parry & Add shield bonus to parry attempts & Defense, Reaction & \featpref{Shielded Parry} \\
-        \tind \featref{Riposte} & Dex 3, Parry & Foes are defenseless if you parry very well & Reaction & \featpref{Riposte} \\
         \featref{Quick Draw} & \x & Draw weapon as swift action & Reaction & \featpref{Quick Draw} \\
         \featref{Ride-By Attack} & Ride 8 ranks & Move before and after a mounted charge & Mobility, Mounted & \featpref{Ride-By Attack} \\
         \tind \featref{Spirited Charge} & Ride-By Attack & Double damage with mounted charge & Mounted, Power & \featpref{Spirited Charge} \\
@@ -401,13 +401,19 @@ The table of combat feats is organized according to the number of physical attac
         \midrule
         \thead{Combat Feats} & \thead{Prerequisites (two attacks)} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
         \featref{Contingent Counter} & Int 5, two attacks & Prepare to attack when attack misses you & Reaction & \featpref{Contingent Counter} \\
+        \featref{Deadly Aim} & Per 5, two attacks & Gain bonus damage with ranged weapons & Precision & \featpref{Deadly Aim} \\
         \featref{Driving Assault} & Str 5, two attacks & Shoved foe provokes attack from you & Power, Maneuver & \featpref{Driving Assault} \\
         \featref{Eye of the Storm} & Two attacks & Reduce overwhelm penalties by 1 & Awareness, Defense & \featpref{Eye of the Storm} \\
         \featref{Gang Up} & Two attacks & Increase overwhelm penalties foes suffer & \x & \featpref{Gang Up} \\
+        \featref{Insightful Defense} & Per 5, two attacks & Use Perception for defenses & Awareness, Defense & \featpref{Insightful Defense} \\
+        \featref{Mighty Blows} & Str 5, two attacks & Gain bonus damage with melee weapons & Power & \featpref{Mighty Blows} \\
+        \featref{Mighty Shot} & Str 5, two attacks & Gain bonus damage with ranged weapons & Power & \featpref{Mighty Shot} \\
         \featref{Mobile Whirlwind} & Dex 5, Whirlwind Strike, two attacks & Use whirlwind strike as standard action & Mobility & \featpref{Mobile Whirlwind} \\
+        \featref{Predictive Defense} & Int 5, two attacks & Use Intelligence for defenses & Awareness, Defense & \featpref{Predictive Defense} \\
         \featref{Tactical Prediction} & Int 5, Two attacks & Predict foe's next action & Awareness & \featpref{Tactical Prediction} \\
         \featref{Two-Weapon Rend} & Str 5, two attacks, Two-Weapon Fighting & Deal Strength damage with both weapons & Power & \featpref{Two-Weapon Rend} \\
         \featref{Wall Slam} & Str 5, two attacks & Slam opponent into wall to deal bonus damage & Maneuver, Power & \featpref{Wall Slam} \\
+        \featref{Weapon Finesse} & Dex 5, two attacks & Gain bonus damage with light weapons & Finesse & \featpref{Weapon Finesse} \\
 
         \midrule
         \thead{Combat Feats} & \thead{Prerequisites (three attacks)} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
@@ -421,6 +427,7 @@ The table of combat feats is organized according to the number of physical attac
         \featref{Legendary Power} & Three attacks, any three Power feats & Wield weapons as if they were less encumbering & Power& \featpref{Legendary Power} \\
         \featref{Legendary Precision} & Three attacks, any three Precision feats & Very accurate hits deal maximum damage & Precision & \featpref{Legendary Precision} \\
         \featref{Legendary Reaction} & Three attacks, any three Reaction feats & \plus10 to initiative checks & Combat, Reaction & \featpref{Legendary Reaction} \\
+        \featref{Manyshot} & Dex 10, three attacks & Shoot two projectiles simultaneously & Finesse & \featpref{Manyshot} \\
 
         \midrule
         \thead{Combat Feats} & \thead{Prerequisites (four attacks)} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
@@ -440,41 +447,35 @@ The table of combat feats is organized according to the number of physical attac
     \taburowcolors [2] 2{tbrown .. white}
     \begin{longtabu}{>{\lcol}p{10em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{6em} >{\lcol}p{3em}}
         \thead{Style Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
-        \featref{Chargebreaker} & \x & Trade ability to move for bonuses against approaching foes & Reaction, Style & \featpref{Chargebreaker} \\
-        \featref{Close-Quarters Fighting} & Dex 3, attack bonus \plus2 & No penalty for squeezing or attacking while grappling & Style & \featpref{Close-Quarters Fighting} \\
-        \featref{Covering Fire} & \x & Trade ranged attack bonus to penalize struck foes & Precision, Style & \featpref{Covering Fire} \\
-        \featref{Deadly Aim} & Dex 3 & Trade ranged attack bonus for damage & Precision, Style & \featpref{Deadly Aim} \\
-        \featref{Defensive Fighting} & \x & Trade attack bonus for defense & Defense, Style & \featpref{Defensive Fighting} \\
-        \featref{Distracting Foe} & \x & Threatened foes suffer Concentration penalties & Style & \featpref{Distracting Foe} \\
+        \featref{Chargebreaker} & \x & Gain bonuses against approaching foes & Reaction, Style & \featpref{Chargebreaker} \\
+        \featref{Defensive Fighting} & \x & Gain bonus to physical defenses & Defense, Style & \featpref{Defensive Fighting} \\
+        \featref{Distracting Foe} & \x & Threatened foes suffer Concentration penalties & Reaction, Style & \featpref{Distracting Foe} \\
         \featref{Guardian} & \x & Adjacent allies suffer reduced overwhelm penalties & Defense, Style & \featpref{Guardian} \\
         \featref{Overpowering Assault} & Str 3 & Trade defense for maneuver bonus & Power, Style & \featpref{Overpowering Assault} \\
-        \featref{Overwhelming Fire} & \x & Help overwhelm foes with ranged weapons & Reaction, Style & \featpref{Overwhelming Fire} \\
-        \featref{Point Blank Shot} & \x &  \plus2 bonus to ranged attacks within half range increment.
-        & Precision, Style & \featpref{Point Blank Shot} \\
-        \featref{Precise Shot} & \x & Ignore cover from creatures & Precision, Style & \featpref{Precise Shot} \\
-        \featref{Power Attack} & Str 3 & Trade melee attack bonus for damage & Power, Style & \featpref{Power Attack} \\
-        \featref{Reveal the Weak Point} & \x & Sacrifice attack and damage to penalize foe's defenses & Style & \featpref{Reveal the Weak Point} \\
-
+        \featref{Overwhelming Fire} & Dex 3 & Overwhelm foes with ranged weapons & Style & \featpref{Overwhelming Fire} \\
+        \featref{Parry} & Dex 3 & Ready yourself to parry incoming blows & Defense, Reaction, Style & \featpref{Parry} \\
+        \tind \featref{Shielded Parry} & Dex 3, shield proficiency, Parry & Add shield bonus to parry attempts & Defense, Reaction & \featpref{Shielded Parry} \\
+        \tind \featref{Riposte} & Dex 3, Parry & Foes are defenseless if you parry very well & Reaction & \featpref{Riposte} \\
+        \featref{Point Blank Shot} & \x &  \plus2 bonus to ranged attacks within half range increment. & Precision, Style & \featpref{Point Blank Shot} \\
+        \featref{Power Attack} & Str 3 & Gain bonus damage with melee weapons & Power, Style & \featpref{Power Attack} \\
+        \featref{Power Shot} & Str 3 & Gain bonus damage with ranged weapons & Power, Style & \featpref{Power Shot} \\
         \midrule
-        \thead{Style Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
-        \featref{Feign Weakness} & Two attacks & Lower defenses to gain damage bonus & Style & \featpref{Feign Weakness} \\
-        \featref{Heartseeker} & Two attacks & Trade attack bonus to double critical threat range & Precision, Style & \featpref{Heartseeker} \\
-        \featref{Inescapable Bulwark} & Dex 3, Two attacks & Enemies you are blocking cannot move & Reaction, Style & \featpref{Inescapable Bulwark} \\
-        \featref{Insightful Defense} & Wis 3, two attacks & Add half Perception to defense & Awareness, Defense, Style & \featpref{Insightful Defense} \\
-        \featref{Perfect Shot} & Dex 5, two attacks & Ignore less than total cover/concealment on ranged attacks & Precision, Style & \featpref{Perfect Shot} \\
-        \featref{Predictive Defense} & Int 3, two attacks & Add half Int to defense in place of Dex & Awareness, Defense, Style & \featpref{Predictive Defense} \\
+        \thead{Style Feats} & \thead{Prerequisites (two attacks)} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
+        \featref{Covering Fire} & Per 5, two attacks & Impair struck foes & Precision, Style & \featpref{Covering Fire} \\
+        \featref{Heartseeker} & Two attacks & Double critical threat range & Precision, Style & \featpref{Heartseeker} \\
+        \featref{Inescapable Bulwark} & Dex 3, two attacks & Enemies you are blocking cannot move & Reaction, Style & \featpref{Inescapable Bulwark} \\
+        \featref{Precise Shot} & Per 5, two attacks & Ignore less than perfect cover and concealment & Precision, Style & \featpref{Precise Shot} \\
         \featref{Reckless Attack} & Two attacks & Trade ability to defend yourself for damage bonus & Power, Style & \featpref{Reckless Attack} \\
-        \featref{Spring Attack} & Dex 3, two attacks, Combat Mobility & Move before and after attacks & Mobility, Style & \featpref{Spring Attack} \\
-        \featref{Threatening Fire} & Overwhelming Fire, two attacks & Threaten adjacent creatures with a ranged weapon & Reaction, Style & \featpref{Threatening Fire} \\
+        \featref{Spring Attack} & Dex 5, two attacks, Combat Mobility & Move before and after attacks & Mobility, Style & \featpref{Spring Attack} \\
+        \featref{Threatening Fire} & Dex 5, Overwhelming Fire, two attacks & Threaten adjacent creatures with a ranged weapon & Reaction, Style & \featpref{Threatening Fire} \\
 
         \midrule
-        \thead{Style Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
+        \thead{Style Feats} & \thead{Prerequisites (three attacks)} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
         \featref{Legendary Style} & Three attacks, any three Style feats & Use two styles at once & \x & \featpref{Legendary Style} \\
-        \featref{Manyshot} & Dex 5, three attacks & Shoot two projectiles simultaneously & Precision, Style & \featpref{Manyshot} \\
 
         \midrule
-        \thead{Style Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
-        \featref{Counterstorm} & Four attacks & Gain bonuses against foes that miss & Reaction, Style& \featpref{Counterstorm} \\
+        \thead{Style Feats} & \thead{Prerequisites (four attacks)} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
+        \featref{Counterstorm} & Per 15, four attacks & Gain bonuses against foes that miss you & Awareness, Reaction, Style & \featpref{Counterstorm} \\
     \end{longtabu}
 }%end of small text
 
@@ -586,12 +587,13 @@ If you deal damage, you make a Will attack against the struck foe to make it \be
 Your attack bonus is equal to your base attack bonus \add your physical attack attribute (Strength or Dexterity).
 You cannot make more than one strike each round.
 
-\feat{Blind-Fight}{Combat}
+\feat{Blind-Fight}{Awareness, Combat}
+\featpre Perception 3.
 \featben In melee, every time you miss because of being unable to see your opponent, you can reroll your miss chance one time to see if you actually hit.
 In addition, you are not defenseless against invisible attackers.
-\par In addition, if you have 10 ranks in Awareness, you can automatically pinpoint the location of any invisible creature adjacent to you.
+\par If your Perception is 10, you can automatically pinpoint the location of any invisible creature adjacent to you.
 \parhead{Normal}
-You have a 50\% chance to miss opponents you can't see, and you are defenseless against them.
+You have a 50\% chance to miss opponents you can't see, and you are \defenseless against them.
 
 \feat{Celestial Blessing}{Bloodline, Celestial}
 \featpres
@@ -649,11 +651,11 @@ After that limit is reached, you must rest for 5 minutes before flying again.
 
 If you are 18th level, you can fly for a number of minutes equal to 3 \add half your Willpower before resting.
 
-\feat{Chargebreaker}{Combat, Style}
-\featben While in this style, you gain a \plus2 bonus to physical attack and damage against creatures that moved towards you during the current round.
-In exchange, you are \immobilized.
+\feat{Chargebreaker}{Combat, Reaction, Style}
+\featben While in this style, you gain a \plus4 bonus to damage with melee attacks against creatures that move towards you during the current round.
+This style provides no benefit against creatures that moved towards you before you initiated the style.
+This bonus increases by \plus2 for each physical attack you can make per round beyond the first.
 \stylereq Wield a melee weapon.
-You must take a full attack action each round.
 
 \feat{Cleave}{Combat, Power}
 \featpres
@@ -663,11 +665,9 @@ The extra attack must be made with the same weapon, and uses the same attack bon
 You cannot move before making this extra attack.
 There is no limit to the number of times you can use this feat per round.
 
-\feat{Close-Quarters Fighting}{Combat, Style}
+\feat{Close-Quarters Fighting}{Combat, Defense}
 \featpre Dex 3.
 \featben You reduce your penalties for squeezing or attacking with non-light weapons in a grapple by 2.
-In exchange, you take a \minus2 penalty to physical defenses against creatures you don't threaten.
-\stylereq Wield a melee weapon.
 You must take a full attack, charge, or total defense action each round.
 
 \feat{Combat Casting}{Magic}
@@ -712,10 +712,9 @@ Dex 3.
 You ignore that creature when determining whether you are \engaged in combat.
 
 \feat{Covering Fire}{Combat, Style}
-\featben While in this style, if you hit a creature with a physical ranged attack, it takes a \minus2 penalty to physical attacks for 1 round.
-In exchange, you take a \minus2 penalty to damage rolls with physical ranged attacks.
+\featpres Perception 5, two attacks.
+\featben While in this style, if you hit a creature with a physical ranged attack, it is \impaired with physical attacks for 1 round.
 \stylereq Wield a ranged weapon.
-You must take a full attack action each round.
 
 \feat{Counterspell}{Magic}
 \featpre 2nd level spells, Spellcraft 8 ranks.
@@ -734,25 +733,20 @@ Metamagic feats and similar spell augmentations are ignored for the purpose of c
 The \spell{dispel magic}
 spell can be used to counter any spell, even higher level spells.
 
-\feat{Counterstorm}{Combat, Reaction, Style}
-\featpre Four attacks.
-\featben Whenever a foe misses you with a melee attack, you gain a cumulative \plus2 bonus to damage on your next physical melee attack against that creature.
+\feat{Counterstorm}{Awareness, Combat, Reaction, Style}
+\featpre Perception 15, four attacks.
+\featben Whenever a foe misses you with a melee attack, you gain a cumulative \plus2 bonus to attack and damage on your next melee attack against that creature.
 If this bonus is not used within 1 round, it is lost.
-In exchange, you cannot take the block action.
 \stylereq Wield a melee weapon.
-You must take a full attack or charge action each round.
 
 \feat{Craftcaster}{Magic}
 \featpres Craft (any) 8 ranks, ability to cast 2nd level spells.
 \featben When casting spells which create or transform a physical substance that you are trained to craft, you gain a \plus1 bonus to your caster level per 5 ranks you have in the appropriate Craft skill.
 
-\feat{Deadly Aim}{Combat, Style}
-\featpres
-Dex 3.
-\featben While in this style, you gain a \plus2 bonus to physical ranged damage rolls.
-In exchange, you take a \minus2 penalty on physical ranged attacks.
-\stylereq Wield a ranged weapon.
-You must take a full attack action each round.
+\feat{Deadly Aim}{Combat, Precision}
+\featpres Per 5, two attacks.
+\featben You gain a \plus1 bonus to physical ranged damage rolls.
+This bonus increases to \plus2 at Perception 10, and to \plus3 at Perception 20.
 
 \feat{Deathless}{General}
 \featpre Constitution 5 or base Fortitude defense \plus10.
@@ -764,11 +758,9 @@ You must take a full attack action each round.
 spell for up to 5 rounds each day.
 Activating this ability is a swift action, and it lasts until you will it to stop (a free action) or until the duration expires.
 
-\feat{Defensive Fighting}{Combat, Style}
+\feat{Defensive Fighting}{Combat, Defense, Style}
 \featben While in this style, you gain a \plus2 bonus to your physical defenses.
-In exchange, you take a \minus2 penalty to physical attacks.
-\stylereq Wield a melee weapon.
-You must take a full attack or total defense action each round.
+\stylereq Wield a melee weapon. You must make a melee attack or take the total defense action each round.
 
 \feat{Deflect Arrows}{Combat, Finesse, Reaction}
 \featpres
@@ -803,11 +795,10 @@ A character without this feat suffers a penalty to attacks, checks, and defenses
 You are treated as trained in those skills, even if you possess no ranks, allowing you to make Knowledge checks in those areas.
 If your Intelligence increases after taking this feat, you may choose additional Knowledge skills.
 
-\feat{Distracting Foe}{Combat, Style}
+\feat{Distracting Foe}{Combat, Reaction, Style}
 \featben While in this style, foes you threaten take a \minus4 penalty to Concentration checks.
-In exchange, you take a \minus2 penalty to physical defenses against melee attacks.
-\stylereq Wield a melee weapon.
-You must take a full attack or charge action each round.
+This bonus increases by \plus2 for each physical attack you can make per round beyond the first.
+\stylereq Wield a melee weapon. You must make a melee attack each round.
 
 \feat{Divine Spellgift}{Spellgift}
 \featpre 2nd level, Wil 1.
@@ -1078,14 +1069,6 @@ This is an enchantment (compulsion), mind-affecting ability.
 \featpre Rage ability.
 \featben You are immune to fear effects while raging.
 
-\feat{Feign Weakness}{Combat, Style}
-\featpre Two attacks.
-\featben While in this style, during the movement phase, you may choose to be \defenseless against one opponent threatening you.
-If the creature attacks you that round, you gain a \plus3 bonus to damage on your next physical attack against it.
-If you do not strike the creature within 1 round, the bonus is lost.
-\stylereq Wield a melee weapon.
-You must take a full attack action each round.
-
 \feat{Flexible Counterspell}{Magic}
 \featpre Spellcraft 8 ranks, Counterspell.
 \featben When counterspelling, you may attempt to counter spells of any school, regardless of which spell you cast.
@@ -1117,14 +1100,16 @@ This does not allow you to overwhelm a creature by yourself.
 \featben You gain a \plus2 bonus to physical defenses against creatures of size Large or larger.
 
 \feat{Great Fortitude}{General}
+\featpre Constitution 3.
 \featben You gain a \plus2 bonus to your Fortitude defense.
+This bonus increases to \plus4 at Constitution 10, and to \plus6 at Constitution 20.
 
 \feat{Guardian}{Combat, Defense, Style}
 \featben Allies adjacent to you reduce their overwhelm penalties by 2.
-In exchange, you take a \minus2 penalty to physical defenses against melee attacks.
 If this effect reduces an ally's overwhelm penalty to 0, the ally is not considered to be overwhelmed.
+This penalty reduction increases by \plus1 for each physical attack you can make per round beyond the first.
 \stylereq Wield a melee weapon.
-You must take a full attack or total defense action each round.
+You must make a melee attack each round.
 
 \feat{Healing Surge}{Surge}
 \featpre 8th level, Con 3.
@@ -1135,10 +1120,7 @@ After using this ability, you cannot use it again for 5 rounds.
 \feat{Heartseeker}{Combat, Style}
 \featpre Two attacks.
 \featben While in this style, you double your critical threat range with any weapon you wield.
-In exchange, you take a \minus4 penalty to all physical attacks which are not critical threats or threat confirmations.
-This does not stack with any other effects which increase threat range.
 \stylereq Wield a weapon.
-You must take a full attack or charge action each round.
 
 \feat{Hurricane Strike}{Combat, Strike}
 \featpres Dex 15, Whirlwind Strike, four attacks.
@@ -1235,15 +1217,14 @@ She need not select it.
 
 \feat{Inescapable Bulwark}{Combat, Style}
 \featpre Two attacks.
-\featben While in this style, enemies you threaten when you take the block action are \immobilized during that phase.
-This can interrupt their movement during the same phase.
-In exchange, you take a \minus4 penalty to physical defenses against ranged attacks.
+\featben While in this style, if you take the block action, all enemies you threaten are \immobilized during the current phase (see \pcref{Block}).
+This effect can interrupt and prevent their movement during that phase.
 \stylereq Wield a melee weapon.
-You must take a full attack or charge action each round.
+You must make a melee attack each round.
 
-\feat{Insightful Defense}{Combat, Defense, Style}
-\featpre Per 3, two attacks per round.
-\featben You can use your Perception to determine your physical defenses (Armor, Maneuver, and Reflex) in place of your Dexterity or Constitution.
+\feat{Insightful Defense}{Awareness, Combat, Defense}
+\featpre Perception 5, two attacks per round.
+\featben You can use your Perception to determine your Armor and Maneuver defenses in place of your Dexterity or Constitution.
 
 \feat{Insightful Fighter}{Class}
 \featpre Adaptive style ability.
@@ -1321,7 +1302,9 @@ You gain a bonus to your Intimidate check equal to the penalty you took to hit.
 You cannot make more than one strike each round.
 
 \feat{Iron Will}{General}
+\featpre Willpower 3.
 \featben You gain a \plus2 bonus to your Will defense.
+This bonus increases to \plus4 at Willpower 10, and to \plus6 at Willpower 20.
 
 \feat{Killing Blow}{Combat, Strike}
 \featpre Four attacks.
@@ -1585,6 +1568,7 @@ You cannot use more than one Strike feat on a particular attack.
 \featpre Three attacks, any three Style feats.
 \featben You may have two styles active at once.
 Both styles can be initiated or changed as part of the same swift action.
+You may sustain this ability for a number of rounds each day equal to the number of Style feats you have.
 
 \feat{Legendary Survival}{Skill}
 \featpre Survival 13 ranks.
@@ -1612,7 +1596,9 @@ You can make a Swim check as a swift action to gain this benefit in a round when
 \featben When tumbling, if your check result is 30 or higher, you can move through squares occupied by foes or threatened by blocking foes without penalty.
 
 \feat{Lightning Reflexes}{General}
+\featpre Dexterity 3.
 \featben You gain a \plus2 bonus to your Reflex defense.
+This bonus increases to \plus4 at Dexterity 10, and to \plus6 at Dexterity 20.
 
 \feat{Magical Synthesis}{Magic}
 Choose two magical classes you possess.
@@ -1621,14 +1607,12 @@ Levels in two magical classes.
 \featben When gaining levels in either of your chosen classes, you increase your spellcasting ability with the other class as if your class was nonmagical.
 See \pcref{Spellcasters and Multiclassing}.
 
-\feat{Manyshot}{Combat, Style}
-\featpres
-Dex 5, three attacks.
-\featben While in this style, when you attack with a light thrown weapon or projectile weapon, you may attack with two projectiles or weapons at once.
+\feat{Manyshot}{Combat, Finesse}
+\featpres Dex 10, three attacks.
+\featben When you attack with a light thrown weapon or projectile weapon, you may attack with two projectiles or weapons at once.
 If the attack hits, you roll damage twice and take the higher of the two roll, as with two-weapon fighting (see \pcref{Two-Weapon Fighting}).
 Taking advantage of this style requires having multiple weapons in hand or loading two projectiles at once, which may be difficult if you reload slowly.
 \stylereq Wield a ranged weapon.
-You must take a full attack action each round.
 
 \feat{Mass Counterspell}{Magic}
 \featpre Spellcraft 13 ranks, 4th level spells, Counterspell.
@@ -1638,6 +1622,21 @@ You may still cast only one spell, but it is used to counter the spells cast by 
 \feat{Mass Transporter}{Magic}
 \featpre Ability to cast a Conjuration (Translocation) spell of at least 5th level.
 \featben When casting Conjuration (Translocation) spells and rituals which affect multiple creatures, you can affect a number of creatures equal to your caster level.
+
+\feat{Mighty Blows}{Combat, Power}
+\featpres Str 5, two attacks.
+\featben You gain a \plus2 bonus to physical melee damage rolls.
+This bonus increases to \plus4 at Strength 10, and to \plus6 at Strength 20.
+
+\feat{Mighty Shot}
+\featpres Str 5, two attacks.
+\featben You gain a \plus2 bonus to physical ranged damage rolls.
+This bonus increases to \plus4 at Strength 10, and to \plus6 at Strength 20.
+
+\feat{Mental Resilience}{General}
+\featpre Willpower 3.
+\featben You gain 1 bonus hit point per level.
+This bonus increases to 2 hit points per level at Willpower 10, and to 3 hit points per level at Willpower 20.
 
 \feat{Mighty Summons}{Magic}
 \featpre Ability to cast a Conjuration (Summoning) spell of at least 2nd level.
@@ -1693,31 +1692,28 @@ You cannot make more than one strike each round.
 \featben You gain two skill points.
 You may spend these skill points immediately.
 
-\feat{Overpowering Assault}{Combat, Style}
-\featpres Str 3.
+\feat{Overpowering Assault}{Combat, Power, Style}
+\featpre Str 3.
 \featben While in this style, you gain a \plus2 bonus to maneuver attacks.
-In exchange, you take a \minus2 penalty to physical defenses.
-\stylereq Wield a melee weapon.
-You must take a full attack or charge action each round.
+This bonus increases by \plus1 for each physical attack you can make per round beyond the first.
+\stylereq You must make a melee attack each round.
 
-\feat{Overwhelming Fire}{Combat, Reaction, Style}
+\feat{Overwhelming Fire}{Combat, Style}
+\featpre Dex 3.
 \featben While in this style, you contribute to overwhelm penalties against all creatures within a single range increment of you.
 You do not contribute to overwhelm penalties against creatures with cover from you.
-In exchange, you take a \minus2 penalty to your physical defenses.
+For each physical attack you can make per round beyond the first, you threaten creatures an additional range increment away.
 \stylereq Wield a ranged weapon.
-You must take a full attack action each round.
+You must make a physical ranged attack each round.
 
 \feat{Parry}{Combat, Defense, Reaction, Style}
 \featpre Dexterity 3.
 \featben While in this style, whenever you are attacked and you are aware of the attack, you may make an attack roll to attempt to parry the attack.
 You may treat the result of your attack roll as your physical defense against that attack if it would be higher.
-You can normally make one parry attempt each round.
-If your base attack bonus is high enough to grant you multiple attacks, you may also make multiple parry attempts.
-Each parry attempt after the first takes a cumulative \minus5 penalty, just like your attack rolls do.
+You can make a maximum number of parry attempts per round equal to the number of attacks you can make.
 
-In exchange, you take a \minus4 penalty to all physical attacks not made to parry.
 \stylereq Wield a melee weapon.
-You must take a full attack, charge, or total defense action each round.
+You must make a melee attack or take the total defense action each round.
 
 \feat{Penetrating Strike}{Combat, Strike}
 \featpre Three attacks.
@@ -1731,15 +1727,6 @@ You cannot make more than one strike each round.
 \featpre Constitution 3.
 \featben You become immune to disease, except supernatural diseases such as mummy rot.
 If your Constitution is 10, you are also immune to poison and supernatural diseases.
-
-\feat{Perfect Shot}{Combat, Style}
-\featpres
-Dex 5, Precise Shot, two attacks.
-\featben While in this style, your ranged attacks ignore cover and concealment, except total cover and total concealment.
-In addition, when you shoot or throw ranged weapons at a grappling opponent, you automatically strike at the opponent you have chosen.
-In exchange, you must spend a full-round action to make a full attack.
-\stylereq Wield a ranged weapon.
-You must take a full attack action each round.
 
 \feat{Pierce Delusions}
 \featpre Perception 10.
@@ -1760,37 +1747,24 @@ You cannot make more than one strike each round.
 You must decide to use this ability before making the roll.
 Activating this ability is an immediate action.
 
-\feat{Point Blank Shot}{Combat, Style}
-\featben While in this style, you gain a \plus2 bonus to physical attack rolls with ranged weapons when attacking targets within half of your range increment.
-In exchange, you are unable to attack targets beyond your range increment.
+\feat{Point Blank Shot}{Combat, Precision, Style}
+\featben While in this style, you gain a \plus2 bonus to physical ranged attacks when attacking targets within half of your range increment.
 \stylereq Wield a ranged weapon.
-You must take a full attack action each round.
 
 \feat{Poison Expert}{Skill}
 \featpre Intelligence 3, Craft (poison) 8 ranks.
 \featben Whenever you use poisons, you can use your level \add your Intelligence in place of the poison's normal attack bonus.
 In addition, you cannot accidentally poison yourself while applying poison to an object.
 
-\feat{Power Attack}{Combat, Style}
-\featpres Str 3.
-\featben While in this style, you gain a \plus2 bonus to physical melee damage rolls.
-In exchange, you take a \minus2 penalty to physical melee attacks.
-The bonus damage and penalty do not apply to maneuvers or touch attacks.
-\stylereq Wield a melee weapon and use Strength to attack.
-You must take a full attack or charge action each round.
-
-\feat{Precise Shot}{Combat, Style}
-\featben While in this style, you can ignore a number of creatures equal to your Perception (minimum 1) when determining whether targets have active cover from you when making ranged attacks.
-In exchange, you must spend a full-round action to make a full attack.
+\feat{Precise Shot}{Combat, Precision, Style}
+\featpres Perception 5, two attacks.
+\featben While in this style, your ranged attacks ignore cover and concealment, except total cover and total concealment.
+In addition, when you shoot or throw ranged weapons at a grappling opponent, you automatically strike at the opponent you have chosen.
 \stylereq Wield a ranged weapon.
-You must take a full attack action each round.
 
-\feat{Predictive Defense}{Combat, Defense, Style}
-\featpre Intelligence 3, two attacks.
-\featben While in this style, you can add half your Intelligence to your physical defenses in place of your Dexterity.
-Effects which penalize Dexterity, such as wearing medium or heavy armor, do not reduce this bonus.
-\stylereq Wield a melee weapon.
-You must take a full attack, charge, or total defense action each round.
+\feat{Predictive Defense}{Awareness, Combat, Defense}
+\featpre Intelligence 5, two attacks.
+\featben You can use your Perception to determine your Armor and Maneuver defenses in place of your Dexterity or Constitution.
 
 \feat{Quick Draw}{Combat}
 \featben You can draw light weapons as a free action and medium weapons as a swift action.
@@ -1852,9 +1826,9 @@ A reach spell uses up a spell slot two levels higher than the spell's actual lev
 \feat{Reckless Attack}{Combat, Power, Style}
 \featpre Two attacks.
 \featben While in this style, you are \defenseless.
-In exchange, you gain a \plus3 bonus to physical damage with melee attacks.
+In exchange, you gain a \plus2 bonus to damage with melee attacks.
+This bonus increases by \plus1 for each physical attack you can make per round beyond the first.
 \stylereq Wield a melee weapon.
-You must take a full attack or charge action each round.
 
 \feat{Recover Performance}{Performance, Skill}
 \featpre Perform 8 ranks, any other Performance feat.
@@ -1893,12 +1867,6 @@ Ability to cast 4th level spells.
 If you do, the counterspelled spell is turned back on the caster as if it were affected by the \spell{spell turning}
 spell.
 If it cannot be affected by \spell{spell turning}, such as if it is a spell that only affects the caster, it is simply countered as normal.
-
-\feat{Reveal the Weak Point}{Combat, Style}
-\featben While in this style, any creature you deal damage to with a physical attack takes a \minus2 penalty to physical defenses for 1 round.
-In exchange, you take a \minus2 penalty to physical attacks and damage.
-\stylereq Wield a weapon.
-You must take a full attack or charge action each round.
 
 \feat{Ride-By Attack}{Combat}
 \featpre Ride 8 ranks.
@@ -2051,8 +2019,7 @@ Ride 1 rank, Ride-By Attack.
 \featben When mounted and using the charge action, you deal double damage with a melee weapon (or triple damage with a lance) on your attack at the end of the charge.%Spirited Charge
 
 \feat{Spring Attack}{Combat}
-\featpres
-Dex 3, Mobility, two attacks.
+\featpres Dex 5, Mobility, two attacks.
 \featben As a full-round action, you can move up to your speed and make your full attack.
 You must move at least 5 feet after each attack you make before you can make another attack.
 You can only use this style while \unencumbered.
@@ -2116,13 +2083,13 @@ If you succeed, you learn what the creature is planning to do during its next tu
 Of course, it can change its plans, particularly if it hears you tell your allies what it will do.
 
 \feat{Threatening Fire}{Combat, Reaction, Style}
-\featpre Overwhelming Fire, two attacks.
+\featpre Dexterity 5, Overwhelming Fire, two attacks.
 \featben While in this style, you threaten creatures within your natural reach as if you were wielding a melee weapon, allowing you to contribute to overwhelm penalties and take the block action.
 (A Medium creature would threaten adjacent creatures).
-This does not remove any other penalties for fighting at close range, such as the danger of being \defenseless.
-In exchange, you cannot make ranged attacks against creatures beyond half of your range increment.
+In addition, you do not take a \minus4 penalty for using ranged weapons against adjacent creatures.
+However, you still cannot used your ranged weapon to defend yourself, which can cause you to be \defenseless.
 \stylereq Wield a ranged weapon.
-You must take a full attack action each round.
+You must make a physical ranged attack each round.
 
 \feat{Trapfinder}{Skill}
 \featpre Awareness 5 ranks.
@@ -2130,7 +2097,9 @@ You must take a full attack action each round.
 If you detect a trap partway through your movement, you may immediately stop moving.
 
 \feat{Toughness}{General}
-\featben You gain \plus3 hit points, \plus1 per level above 3.
+\featpre Constitution 3.
+\featben You gain 1 bonus hit point per level.
+This bonus increases to 2 hit points per level at Constitution 10, and to 3 hit points per level at Constitution 20.
 
 \feat{Track}{Skill}
 \featben To find tracks or to follow them for 1 mile requires a successful Survival check.
@@ -2270,6 +2239,11 @@ These special abilities only function when you are making attacks with weapons f
 \end{itemize}
 \parhead{Special}
 You cannot choose simple weapons when you take this feat.
+
+\feat{Weapon Finesse}{Combat, Finesse}
+\featpres Dexterity 5, two attacks.
+\featben You gain a \plus1 bonus to physical damage with light weapons.
+This bonus increases to \plus2 at Dexterity 10, and to \plus3 at Dexterity 20.
 
 \feat{Weapon Proficiency}{Combat}
 Choose one weapon group.
