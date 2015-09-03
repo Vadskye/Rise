@@ -100,18 +100,21 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
 \section{Feat Table}
 \onecolumn
 
+% Feat names must follow ``have'', ``are (a)'', or ``can''.
 {\small
 \taburowcolors [2] 2{tbrown .. white}
 \begin{longtabu}{>{\lcol}p{10em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{3em}}
     \thead{General Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
     \featref{Endurance} & Con 3 & Fight normally without hit points & \featpref{Endurance} \\
     \featref{Deathless} & Con 10 & Immune to death effects & \featpref{Deathless} \\
+    \featref{Destructive} & Str 3 & Gain \plus5 to break things & \featpref{Destructive} \\
     \featref{Fearless} & Wil 10 & Immune to fear effects & \featpref{Fearless} \\
     \featref{Great Fortitude} & \x & \plus2 bonus to Fortitude defense & \featpref{Great Fortitude} \\
     \featref{Iron Will} & \x & \plus2 bonus to Will defense & \featpref{Iron Will} \\
     \featref{Lightning Reflexes} & \x &  \plus2 bonus to Reflex defense & \featpref{Lightning Reflexes} \\
-    \featref{Mental Fortress} & Wil 20 & Immune to hostile mind-affecting effects & \featpref{Mental Fortress} \\
-    \featref{Perfect Health} & Con 3 or base Fortitude defense \plus6 & Immune to disease, later poison & \featpref{Perfect Health} \\
+    \featref{Perfect Health} & Con 3 & Immune to disease, later poison & \featpref{Perfect Health} \\
+    \featref{Pierce Delusions} & Per 10 & Immune to delusion effects & \featpref{Truthseer} \\
+    \featref{Stubborn} & Wil 10 & Immune to compulsion effects & \featpref{Stubborn} \\
     \featref{Swift} & \x & Increase speed by 5 feet & \featpref{Swift} \\
     \featref{Toughness} & \x &  \plus3 hit points \plus1 per level above 3 & \featpref{Toughness} \\
 
@@ -160,10 +163,10 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
     \featref{Insightful Fighter} & Adaptive style ability & Use Perception for adaptive style (and battlemaster) & \featpref{Insightful Fighter} \\
     \featref{Insightful Rogue} & Combat trick ability & Use Perception for combat tricks & \featpref{Insightful Rogue} \\
     \featref{Rapid Wild Aspect} & Wild aspect ability & Activate wild aspect as a swift action & \featpref{Rapid Wild Aspect} \\
-    \featref{Resist Maneuver} & Fighter, base attack bonus \plus2 & \plus5 to resist chosen maneuver & \featpref{Resist Maneuver} \\
+    \featref{Resist Maneuver} & Fighter & \plus5 to resist chosen maneuver & \featpref{Resist Maneuver} \\
     \featref{Selective Channeling} & Channel energy ability & Can exclude two additional creatures & \featpref{Selective Channeling} \\
     \featref{Shield Discipline} & Armor discipline ability & Apply armor discipline with shields \\
-    \featref{Spellwarped Ritualist} & Spellwarped & Gain to perform rituals using spellwarped powers \\
+    \featref{Spellwarped Ritualist} & Spellwarped & Gain ability to perform rituals using spellwarped powers \\
     \featref{Versatility} & Levels in two different classes & Increase effective class level with abilities \\
 
     \midrule
@@ -253,9 +256,9 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
     \featref{Legendary Legerdemain} & Sleight of Hand 13 ranks & Hide objects in pocket dimension & \featpref{Legendary Legerdemain} \\
     \featref{Legendary Liar} & Bluff 13 ranks & Lies appear to alter reality & \featpref{Legendary Liar} \\
     \featref{Legendary Linguist} & Linguistics 13 ranks & Speak all languages & \featpref{Legendary Liar} \\
-    \featref{Legendary Perception} & Perception 13 ranks & Gain extrasensory perception & \featpref{Legendary Perception} \\
+    \featref{Legendary Awareness} & Awareness 13 ranks & Gain extrasensory perception & \featpref{Legendary Awareness} \\
     \featref{Legendary Persuasion} & Persuasion 13 ranks & Compel listener to obey & \featpref{Legendary Persuasion} \\
-    \featref{Legendary Profession} & Profession (any) 13 ranks & Become famous for mastery of your profession & \featpref{Legendary Perception} \\
+    \featref{Legendary Profession} & Profession (any) 13 ranks & Become famous for mastery of your profession & \featpref{Legendary Profession} \\
     \featref{Legendary Rider} & Ride 13 ranks & Ride unwilling creatures & \featpref{Legendary Rider} \\
     \featref{Legendary Sense Motive} & Sense Motive 13 ranks & Read creature's mind & \featpref{Legendary Sense Motive} \\
     \featref{Legendary Spellcraft} & Spellcraft 13 ranks & Gain \plus2 against spells you identify & \featpref{Legendary Spellcraft} \\
@@ -269,27 +272,28 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
     \featref{Scale the Beast} & Climb 8 ranks & Climb on massive creatures & \featpref{Scale the Beast} \\
     \featref{Skill Focus}\fn{1} & \x &  \plus3 bonus to checks with selected skill, reroll 1/day & \featpref{Skill Focus} \\
     \featref{Skill Mastery}\fn{1} & Any skill 10 ranks & Always take 10 on skill checks & \featpref{Skill Mastery} \\
-    \featref{Trapfinder} & Perception 5 ranks & Find traps faster & \featpref{Trapfinder} \\
+    \featref{Trapfinder} & Awareness 5 ranks & Find traps faster & \featpref{Trapfinder} \\
     \featref{Trap Sense} & Awareness 8 ranks & Automatically detect traps & \featpref{Trap Sense} \\
     \featref{Track} & \x &  Use Survival skill to track & \featpref{Track} \\
     \featref{Veteran's Experience} & Base attack bonus \plus8 & Identify monsters without Knowledge & \featpref{Veteran's Experience} \\
 
     \midrule
     \thead{Spellgift Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
-    \featref{Arcane Spellgift} & 2nd level, Cha 1 & Gain arcane spell as spell-like ability & \featpref{Arcane Spellgift} \\
-    \featref{Divine Spellgift} & 2nd level, Cha 1 & Gain divine spell as spell-like ability & \featpref{Divine Spellgift} \\
-    \featref{Natural Spellgift} & 2nd level, Cha 1 & Gain natural spell as spell-like ability & \featpref{Natural Spellgift} \\
+    \featref{Arcane Spellgift} & 2nd level, Wil 1 & Gain arcane spell as spell-like ability & \featpref{Arcane Spellgift} \\
+    \featref{Divine Spellgift} & 2nd level, Wil 1 & Gain divine spell as spell-like ability & \featpref{Divine Spellgift} \\
+    \featref{Natural Spellgift} & 2nd level, Wil 1 & Gain natural spell as spell-like ability & \featpref{Natural Spellgift} \\
 
     \midrule
     \thead{Surge Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
     \featref{Alacritous Surge} & 16th level, Dex 7 & Briefly gain effects of \spell{haste} & \featpref{Alacritous Surge} \\
-    \featref{Deathless Surge} & 12th level, Cha 5 & Briefly gain effects of \spell{death ward} & \featpref{Deathless Surge} \\
+    \featref{Deathless Surge} & 12th level, Wil 5 & Briefly gain effects of \spell{death ward} & \featpref{Deathless Surge} \\
     \featref{Freeing Surge} & 16th level, Dex 7 & Briefly gain effects of \spell{freedom} & \featpref{Freeing Surge} \\
     \featref{Healing Surge} & 8th level, Con 3 & Heal damage three times per day & \featpref{Healing Surge} \\
     \featref{Prescient Surge} & 12th level, Wis 5 & Roll twice, three times per day & \featpref{Prescient Surge} \\
     \featref{Shattering Surge} & 8th level, Str 3 & \spell{Shatter} struck object three times per day & \featpref{Shattering Surge} \\
     \featref{Surge of Speed} & 8th level, Dex 3 & Briefly gain effects of \spell{expeditious retreat} & \featpref{Surge of Speed} \\
-\end{longtabu}}
+\end{longtabu}
+}%end of small text
 
 \subsection{Combat Feat Table}\label{cap:Combat Feats}
 
@@ -298,47 +302,41 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
     \begin{longtabu}{>{\lcol}p{10em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{6em} >{\lcol}p{3em}}
         \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
         \featref{Armor Familiarity} & Proficiency with armor & Reduce penalties from wearing armor & Equipment & \featpref{Armor Familiarity} \\
-        \featref{Armor Proficiency (Light)} & \x &  No armor check penalty on physical attacks & Equipment & \featpref{Armor Proficiency (Light)} \\
-        \tind \featref{Armor Proficiency (Medium)} & Armor Proficiency (light) & No armor check penalty on physical attacks & Equipment & \featpref{Armor Proficiency (Medium)} \\
-        \tind \tind \featref{Armor Proficiency (Heavy)} & Armor Proficiency (medium) & No armor check penalty on physical attacks & Equipment & \featpref{Armor Proficiency (Heavy)} \\
-        \featref{Blind-Fight} & \x &  Reroll miss chance for concealment in melee & Awareness & \featpref{Blind-Fight} \\
-        \featref{Exotic Weapon Proficiency}\fn{1} & \x & Gain ability to use exotic weapons & Equipment & \featpref{Exotic Weapon Proficiency} \\
+        \featref{Armor Proficiency} & Proficiency with lighter armor & Become proficient with type of armor & Equipment & \featpref{Armor Proficiency} \\
+        \featref{Blind-Fight} & Perception 3 & Reroll miss chance for concealment in melee & Awareness & \featpref{Blind-Fight} \\
+        \featref{Cleave} & Str 3 & Extra melee attack after dropping target & Power & \featpref{Cleave} \\
+        \featref{Combat Mobility} & Dex 3 & Ignore engagement from foe & Defense, Mobility & \featpref{Combat Mobility} \\
+        \featref{Diehard} & Con 3 & Halve penalties from critical damage & Defense & \featpref{Diehard} \\
+        \featref{Exotic Weapon Proficiency} & \x & Become proficient with exotic weapons & Equipment & \featpref{Exotic Weapon Proficiency} \\
         \featref{Far Shot} & \x & Increase range increment & Precision & \featpref{Far Shot} \\
+        \featref{Gang Up} & \x & Increase overwhelm penalties foes suffer & \x & \featpref{Gang Up} \\
+        \featref{Improved Dirty Trick} & \x & \plus2 bonus to dirty trick attacks; dirty tricks last longer & Finesse, Maneuver & \featpref{Improved Dirty Trick} \\
+        \featref{Improved Disarm} & \x & \plus2 bonus to disarm attacks; knock foe's weapon away after disarming & Finesse, Maneuver & \featpref{Improved Disarm} \\
+        \featref{Improved Feint} & \x & \plus2 bonus to feint attacks; feint lasts longer & Finesse, Maneuver & \featpref{Improved Feint} \\
+        \featref{Improved Grapple} & \x & \plus2 bonus to grapple attacks; not vulnerable while grappling & Maneuver, Power & \featpref{Improved Grapple} \\
+        \featref{Improved Shove} & \x & \plus2 bonus to shove attacks; move target away from you & Maneuver, Power & \featpref{Improved Shove} \\
+        \featref{Improved Trip} & \x & \plus2 bonus to trip attacks; free attack against tripped foe & Finesse, Maneuver & \featpref{Improved Trip} \\
+        \featref{Improved Overrun} & \x & \plus2 bonus to overrun attacks; target can't avoid & Maneuver, Power & \featpref{Improved Overrun} \\
         \featref{Improved Unarmed Strike} & \x &  Considered armed even when unarmed & \x & \featpref{Improved Unarmed Strike} \\
-        \tind \featref{Deflect Arrows} & Dex 3, Improved Unarmed Strike & Deflect one ranged attacks with your bare hands & Finesse, Reaction & \featpref{Deflect Arrows} \\
+        \tind \featref{Deflect Arrows} & Dex 3, Improved Unarmed Strike & Deflect ranged attacks with your bare hands & Finesse, Reaction & \featpref{Deflect Arrows} \\
         \tind \tind \featref{Snatch Arrows} & Dex 5, Deflect Arrows, Improved Unarmed Strike & Catch a deflected ranged attack & Finesse, Reaction & \featpref{Snatch Arrows} \\
+        \featref{Knockdown} & Str 3 & Shoved foe can be knocked prone & Maneuver, Power & \featpref{Knockdown} \\
         \featref{Mounted Archery} & Ride 1 rank & Reduced penalty for ranged attacks while mounted by 4 & Mounted, Precision & \featpref{Mounted Archery} \\
         \featref{Mounted Combat} & Ride 1 rank & Negate hits on mount with Ride check & Defense, Mounted & \featpref{Mounted Combat} \\
         \featref{Mounted Trample} & Ride 8 ranks & Target cannot avoid mounted overrun & Mobility, Mounted & \featpref{Mounted Trample} \\
         \featref{Parry} & Dex 3 & Ready yourself to parry incoming blows & Defense, Reaction & \featpref{Parry} \\
-        \tind \featref{Shielded Parry} & Dex 3, shield proficiency, Parry & Add shield modifier to parry attempts & Defense, Reaction & \featpref{Shielded Parry} \\
+        \tind \featref{Shielded Parry} & Dex 3, shield proficiency, Parry & Add shield bonus to parry attempts & Defense, Reaction & \featpref{Shielded Parry} \\
+        \tind \featref{Riposte} & Dex 3, Parry & Foes are defenseless if you parry very well & Reaction & \featpref{Riposte} \\
         \featref{Quick Draw} & \x & Draw weapon as swift action & Reaction & \featpref{Quick Draw} \\
         \featref{Ride-By Attack} & Ride 8 ranks & Move before and after a mounted charge & Mobility, Mounted & \featpref{Ride-By Attack} \\
         \tind \featref{Spirited Charge} & Ride-By Attack & Double damage with mounted charge & Mounted, Power & \featpref{Spirited Charge} \\
-        \featref{Shield Proficiency} & \x &  No armor check penalty on physical attacks & Equipment & \featpref{Shield Proficiency} \\
+        \featref{Shield Proficiency} & \x & Become proficient with shields & Equipment & \featpref{Shield Proficiency} \\
         \tind \featref{Shield Expertise} & Shield Proficiency & \plus1 bonus to physical defenses while using a shield & Defense & \featpref{Shield Expertise} \\
-        \tind \featref{Tower Shield Proficiency} & Shield Proficiency & No armor check penalty on physical attacks & Equipment & \featpref{Tower Shield Proficiency} \\
+        \featref{Tactical Analysis} & Int 3 & Identify foe's strengths and weaknesses & Awareness & \featpref{Tactical Analysis} \\
         \featref{Two-Weapon Fighting} & Dex 3 & Gain \plus2 bonus when attacking with two weapons & Finesse & \featpref{Two-Weapon Fighting} \\
         \tind \featref{Two-Weapon Defense} & Two-Weapon Fighting & \plus1 bonus to physical defenses while using two weapons & Defense, Finesse & \featpref{Two-Weapon Defense} \\
-        \featref{Weapon Proficiency}\fn{1} & \x & Gain ability to use weapon group & Equipment & \featpref{Weapon Proficiency} \\
-
-        \midrule
-        \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
-        \featref{Cleave} & Str 3, base attack bonus \plus2 & Extra melee attack after dropping target & Power & \featpref{Cleave} \\
-        \featref{Combat Mobility} & Dex 3, base attack bonus \plus2 & Ignore engagement from foe & Defense, Mobility & \featpref{Combat Mobility} \\
-        \featref{Diehard} & Con 3, base attack bonus \plus2 & Halve penalties from critical damage & Defense & \featpref{Diehard} \\
-        \featref{Gang Up} & Base attack bonus \plus2 & Increase overwhelm penalties foes suffer & \x & \featpref{Gang Up} \\
-        \featref{Improved Dirty Trick} & Base attack bonus \plus2 & \plus2 bonus to dirty trick attacks; dirty tricks last longer & Finesse, Maneuver & \featpref{Improved Dirty Trick} \\
-        \featref{Improved Disarm} & Base attack bonus \plus2 & \plus2 bonus to disarm attacks; knock foe's weapon away after disarming & Finesse, Maneuver & \featpref{Improved Disarm} \\
-        \featref{Improved Feint} & Base attack bonus \plus2 & \plus2 bonus to feint attacks; feint lasts longer & Finesse, Maneuver & \featpref{Improved Feint} \\
-        \featref{Improved Grapple} & Base attack bonus \plus2 & \plus2 bonus to grapple attacks; not vulnerable while grappling & Maneuver, Power & \featpref{Improved Grapple} \\
-        \featref{Improved Overrun} & Base attack bonus \plus2 & \plus2 bonus to overrun attacks; target can't avoid & Maneuver, Power & \featpref{Improved Overrun} \\
-        \featref{Improved Shove} & Base attack bonus \plus2 & \plus2 bonus to shove attacks; move target away from you & Maneuver, Power & \featpref{Improved Shove} \\
-        \featref{Improved Trip} & Base attack bonus \plus2 & \plus2 bonus to trip attacks; free attack against tripped foe & Finesse, Maneuver & \featpref{Improved Trip} \\
-        \featref{Knockdown} & Str 3, base attack bonus \plus2 & Shoved foe can be knocked prone & Maneuver, Power & \featpref{Knockdown} \\
-        \featref{Riposte} & Dex 3, base attack bonus \plus2, Parry & Foes are defenseless if you parry very well & Reaction & \featpref{Riposte} \\
-        \featref{Tactical Analysis} & Int 3, Base attack bonus \plus2 & Identify foe's strengths and weaknesses & Awareness & \featpref{Tactical Analysis} \\
-        \featref{Weapon Focus} & Base attack bonus \plus2 & Special ability with weapon group & Equipment & \featpref{Weapon Focus} \\
+        \featref{Weapon Proficiency}\fn{1} & \x & Gain proficienty with weapon group & Equipment & \featpref{Weapon Proficiency} \\
+        \featref{Weapon Focus} & Proficiency with weapon group & Special ability with weapon group & Equipment & \featpref{Weapon Focus} \\
 
         \midrule
         \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
@@ -380,19 +378,19 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
     \taburowcolors [2] 2{tbrown .. white}
     \begin{longtabu}{>{\lcol}p{10em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{6em} >{\lcol}p{3em}}
         \thead{Style Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
-        \featref{Chargebreaker} & Base attack bonus \plus2 & Trade ability to move for bonuses against approaching foes & Reaction, Style & \featpref{Chargebreaker} \\
+        \featref{Chargebreaker} & \x & Trade ability to move for bonuses against approaching foes & Reaction, Style & \featpref{Chargebreaker} \\
         \featref{Close-Quarters Fighting} & Dex 3, attack bonus \plus2 & No penalty for squeezing or attacking while grappling & Style & \featpref{Close-Quarters Fighting} \\
-        \featref{Covering Fire} & Base attack bonus \plus2 & Trade ranged attack bonus to penalize struck foes & Precision, Style & \featpref{Covering Fire} \\
-        \featref{Deadly Aim} & Dex 3, base attack bonus \plus2 & Trade ranged attack bonus for damage & Precision, Style & \featpref{Deadly Aim} \\
-        \featref{Defensive Fighting} & Base attack bonus \plus2 & Trade attack bonus for defense & Defense, Style & \featpref{Defensive Fighting} \\
-        \featref{Distracting Foe} & Base attack bonus \plus2 & Threatened foes suffer Concentration penalties & Style & \featpref{Distracting Foe} \\
-        \featref{Guardian} & Base attack bonus \plus2 & Adjacent allies suffer reduced overwhelm penalties & Defense, Style & \featpref{Guardian} \\
-        \featref{Overpowering Assault} & Str 3, base attack bonus \plus2 & Trade defense for maneuver bonus & Power, Style & \featpref{Overpowering Assault} \\
-        \featref{Overwhelming Fire} & Base attack bonus \plus2 & Help overwhelm foes with ranged weapons & Reaction, Style & \featpref{Overwhelming Fire} \\
-        \featref{Point Blank Shot} & Base attack bonus \plus2 &  \plus2 bonus to ranged attacks within half range increment. & Precision, Style & \featpref{Point Blank Shot} \\
-        \featref{Precise Shot} & Base attack bonus \plus2 & Ignore cover from creatures & Precision, Style & \featpref{Precise Shot} \\
-        \featref{Power Attack} & Str 3, base attack bonus \plus2 & Trade melee attack bonus for damage & Power, Style & \featpref{Power Attack} \\
-        \featref{Reveal the Weak Point} & Base attack bonus \plus2 & Sacrifice attack and damage to penalize foe's defenses & Style & \featpref{Reveal the Weak Point} \\
+        \featref{Covering Fire} & \x & Trade ranged attack bonus to penalize struck foes & Precision, Style & \featpref{Covering Fire} \\
+        \featref{Deadly Aim} & Dex 3 & Trade ranged attack bonus for damage & Precision, Style & \featpref{Deadly Aim} \\
+        \featref{Defensive Fighting} & \x & Trade attack bonus for defense & Defense, Style & \featpref{Defensive Fighting} \\
+        \featref{Distracting Foe} & \x & Threatened foes suffer Concentration penalties & Style & \featpref{Distracting Foe} \\
+        \featref{Guardian} & \x & Adjacent allies suffer reduced overwhelm penalties & Defense, Style & \featpref{Guardian} \\
+        \featref{Overpowering Assault} & Str 3 & Trade defense for maneuver bonus & Power, Style & \featpref{Overpowering Assault} \\
+        \featref{Overwhelming Fire} & \x & Help overwhelm foes with ranged weapons & Reaction, Style & \featpref{Overwhelming Fire} \\
+        \featref{Point Blank Shot} & \x &  \plus2 bonus to ranged attacks within half range increment. & Precision, Style & \featpref{Point Blank Shot} \\
+        \featref{Precise Shot} & \x & Ignore cover from creatures & Precision, Style & \featpref{Precise Shot} \\
+        \featref{Power Attack} & Str 3 & Trade melee attack bonus for damage & Power, Style & \featpref{Power Attack} \\
+        \featref{Reveal the Weak Point} & \x & Sacrifice attack and damage to penalize foe's defenses & Style & \featpref{Reveal the Weak Point} \\
 
         \midrule
         \thead{Style Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
@@ -464,7 +462,7 @@ Here is the format for feat descriptions.
 \featben You may gain the benefits of the \spell{haste} spell for up to 5 rounds each day. Activating this ability is a swift action, and it lasts until you will it to stop (a free action) or until the duration expires.
 
 \feat{Arcane Spellgift}{Spellgift}
-\featpre 2nd level, Cha 1.
+\featpre 2nd level, Wil 1.
 \featben You gain the ability to use a non-restricted arcane spell as a spell-like ability once per day. You choose which spell when you gain this feat, and that choice cannot thereafter be changed. Your caster level is equal to your level \add the number of spellgift feats you have, and you use your Willpower as your casting attribute.
 
 The spell's level must be no greater than half of your total levels in non-casting classes. In addition, its level cannot exceed your Willpower.
@@ -475,22 +473,11 @@ Choose one category of armor: light, medium, heavy, or shields.
 \parhead{Prerequisite} Proficiency with the chosen armor category.
 \parhead{Benefit} You reduce your armor check penalty by 2 and your arcane spell failure by 5\% when using your chosen armor. This effect cannot reduce those penalties below 0.
 
-\feat{Armor Proficiency (Heavy)}{Combat}
-\parhead{Prerequisites} Armor Proficiency (light), Armor Proficiency (medium).
-\parhead{Benefit} See Armor Proficiency (light).
-\parhead{Normal} See Armor Proficiency (light).
-\parhead{Special} Fighters, paladins, and clerics automatically have Armor Proficiency (heavy) as a bonus feat. They need not select it.
-
-\feat{Armor Proficiency (Light)}{Combat}
-\parhead{Benefit} When you wear a type of armor with which you are proficient, the armor check penalty for that armor applies only to Acrobatics, Climb, Escape Artist, Jump, and Sleight of Hand, and Swim checks. You suffer the armor's normal arcane spell failure.
+\feat{Armor Proficiency}{Combat}
+Choose a category of body armor: light, medium, or heavy.
+\featpre Proficiency with all lighter types of body armor.
+\featben You gain proficiency with your chosen armor type.
 \parhead{Normal} A character who is wearing armor with which she is not proficient applies its armor check penalty to physical attacks and to all checks that involve moving, including Ride. The character also suffers double the normal arcane spell failure chance for wearing the armor.
-\parhead{Special} All characters except wizards, sorcerers, and monks automatically have Armor Proficiency (light) as a bonus feat. They need not select it.
-
-\feat{Armor Proficiency (Medium)}{Combat}
-\parhead{Prerequisite} Armor Proficiency (light).
-\parhead{Benefit} See Armor Proficiency (light).
-\parhead{Normal} See Armor Proficiency (light).
-\parhead{Special} Fighters, barbarians, paladins, clerics, druids, and spellwarped automatically have Armor Proficiency (medium) as a bonus feat. They need not select it.
 
 \feat{Bane of the Weak Minded}{Bane, Magic}
 \featpre Ability to cast an Enchantment spell of 2nd level or higher.
@@ -515,7 +502,7 @@ Choose one category of armor: light, medium, heavy, or shields.
 
 \feat{Blind-Fight}{Combat}
 \parhead{Benefit} In melee, every time you miss because of being unable to see your opponent, you can reroll your miss chance one time to see if you actually hit. In addition, you are not defenseless against invisible attackers.
-\par In addition, if you have 10 ranks in Perception, you can automatically pinpoint the location of any invisible creature adjacent to you.
+\par In addition, if you have 10 ranks in Awareness, you can automatically pinpoint the location of any invisible creature adjacent to you.
 \parhead{Normal} You have a 50\% chance to miss opponents you can't see, and you are defenseless against them.
 
 \feat{Celestial Blessing}{Bloodline, Celestial}
@@ -555,16 +542,15 @@ If you are 12th level, you gain a fly speed equal to your land speed with averag
 If you are 18th level, you can fly for a number of minutes equal to 3 \add half your Willpower before resting.
 
 \feat{Chargebreaker}{Combat, Style}
-\parhead{Prerequisites} Base attack bonus \plus2.
 \parhead{Benefit} While in this style, you gain a \plus2 bonus to physical attack and damage against creatures that moved towards you during the current round. In exchange, you are \immobilized.
 \stylereq Wield a melee weapon. You must take a full attack action each round.
 
 \feat{Cleave}{Combat, Power}
-\parhead{Prerequisites} Str 3, base attack bonus \plus2.
+\parhead{Prerequisites} Str 3.
 \parhead{Benefit} If you make a melee attack that knocks a creature unconscious or kills it, you can immediately make an extra melee attack against another creature you threaten. The extra attack must be made with the same weapon, and uses the same attack bonus, but it is otherwise treated as being a different attack. You cannot move before making this extra attack. There is no limit to the number of times you can use this feat per round.
 
 \feat{Close-Quarters Fighting}{Combat, Style}
-\featpre Dex 3, base attack bonus \plus2.
+\featpre Dex 3.
 \featben You reduce your penalties for squeezing or attacking with non-light weapons in a grapple by 2. In exchange, you take a \minus2 penalty to physical defenses against creatures you don't threaten.
 \stylereq Wield a melee weapon. You must take a full attack, charge, or total defense action each round.
 
@@ -590,11 +576,10 @@ Contingent actions depend on a trigger condition. If the trigger condition occur
 Contingent actions depend on a trigger condition. If the trigger condition occurs and you have a contingent action prepared, you may take the contingent action as an immediate action. A contingent action remains prepared until you rest. You may only have one contingent action prepared at a time. If you prepare a new contingent action, it replaces the old action.
 
 \feat{Combat Mobility}{Combat}
-\parhead{Prerequisites} Dex 3, base attack bonus \plus2.
+\parhead{Prerequisites} Dex 3.
 \parhead{Benefit} At the start of each phase, you may choose a creature you can see. You ignore that creature when determining whether you are \engaged in combat.
 
 \feat{Covering Fire}{Combat, Style}
-\featpre Base attack bonus \plus2.
 \parhead{Benefit} While in this style, if you hit a creature with a physical ranged attack, it takes a \minus2 penalty to physical attacks for 1 round. In exchange, you take a \minus2 penalty to damage rolls with physical ranged attacks.
 \stylereq Wield a ranged weapon. You must take a full attack action each round.
 
@@ -616,7 +601,7 @@ After attempting to identify the spell, you may cast any spell you know as a cou
 \featben When casting spells which create or transform a physical substance that you are trained to craft, you gain a \plus1 bonus to your caster level per 5 ranks you have in the appropriate Craft skill.
 
 \feat{Deadly Aim}{Combat, Style}
-\parhead{Prerequisites} Dex 3, base attack bonus \plus2.
+\parhead{Prerequisites} Dex 3.
 \parhead{Benefit} While in this style, you gain a \plus2 bonus to physical ranged damage rolls. In exchange, you take a \minus2 penalty on physical ranged attacks.
 \stylereq Wield a ranged weapon. You must take a full attack action each round.
 
@@ -625,7 +610,7 @@ After attempting to identify the spell, you may cast any spell you know as a cou
 \featben You become immune to death effects.
 
 \feat{Deathless Surge}{Surge}
-\featpre 12th level, Cha 5.
+\featpre 12th level, Wil 5.
 \featben You may gain the benefits of the \spell{death ward} spell for up to 5 rounds each day. Activating this ability is a swift action, and it lasts until you will it to stop (a free action) or until the duration expires.
 
 \feat{Defensive Fighting}{Combat, Style}
@@ -642,6 +627,10 @@ After attempting to identify the spell, you may cast any spell you know as a cou
 \featpre Base attack bonus \plus14.
 \featben When you make a physical attack, you may take a \minus8 penalty to hit. If you hit, you deal double damage. You cannot make more than one strike each round.
 
+\feat{Destructive}{General}
+\featpre Strength 3.
+\featben You gain a \plus5 bonus to Strength checks made to break, bend, or crush objects.
+
 \feat{Diehard}{Combat, Defense}
 \parhead{Prerequisite} Constitution 3.
 \parhead{Benefit} When you have critical damage, you suffer a penalty to attacks, checks, and defenses equal to half the amount of critical damage you have. See \pcref{Dying}, for details.
@@ -657,7 +646,7 @@ After attempting to identify the spell, you may cast any spell you know as a cou
 \stylereq Wield a melee weapon. You must take a full attack or charge action each round.
 
 \feat{Divine Spellgift}{Spellgift}
-\featpre 2nd level, Cha 1.
+\featpre 2nd level, Wil 1.
 \featben You gain the ability to use a divine spell as a spell-like ability once per day. You choose which spell when you gain this feat, and that choice cannot thereafter be changed. Your caster level is equal to your level \add the number of spellgift feats you have, and you use your Willpower as your casting attribute.
 
 The spell's level must be no greater than half of your total levels in non-casting classes. In addition, its level cannot exceed your Willpower.
@@ -830,7 +819,7 @@ You understand how to use exotic weapons in combat.
 \featpre Perform 4 ranks.
 \featben As a standard action, you can make a DC 8 Perform check to fascinate creatures within \rngmed range of you. You can affect one creature per Perform rank you have. Your Perform check is opposed by a creature's Will defense. If you fail against a creature, it is not fascinated. You can sustain the performance as a standard action.
 
-A fascinated creature is sits quietly and observes your performance, taking no other actions, for as long as you play. While fascinated, it takes a \minus4 penalty on checks made as reactions, such as Perception checks and initiative checks. If the creature notices any obvious threat, such as someone aiming a ranged weapon at it, drawing a weapon, or casting a spell, it is no longer fascinated. A fascinated creature's ally may shake it free of the spell as a standard action.
+A fascinated creature is sits quietly and observes your performance, taking no other actions, for as long as you play. While fascinated, it takes a \minus4 penalty on checks made as reactions, such as Awareness checks and initiative checks. If the creature notices any obvious threat, such as someone aiming a ranged weapon at it, drawing a weapon, or casting a spell, it is no longer fascinated. A fascinated creature's ally may shake it free of the spell as a standard action.
 
 You can use any combination of performance feats you possess a number of times per day equal to twice the number of performance feats you have. If you fail the Perform check, the use of the ability is wasted. This is an enchantment (compulsion), mind-affecting ability.
 
@@ -964,7 +953,7 @@ In addition, your unarmed strikes can deal lethal or nonlethal damage as you cho
 
 \feat{Insightful Defense}{Combat, Defense, Style}
 \featpre Per 3, two attacks per round.
-\featben You can use your Perception to determine your physical defenses (Armor, Maneuver, and Reflex) instead of your Dexterity or Constitution.
+\featben You can use your Perception to determine your physical defenses (Armor, Maneuver, and Reflex) in place of your Dexterity or Constitution.
 
 \feat{Insightful Fighter}{Class}
 \featpre Adaptive style ability.
@@ -1018,7 +1007,7 @@ You can use any combination of performance feats you possess a number of times p
 \featben When you make a physical attack, you may take a \minus8 penalty to hit. If you deal damage, and the struck creature has no hit points remaining after your damage, it dies immediately. This is a death effect. You cannot make more than one strike each round.
 
 \feat{Knockdown}{Combat, Maneuver, Power}
-\featpres Strength 3, base attack bonus \plus2.
+\featpres Strength 3.
 \featben When you successfully shove an opponent, you can choose to reduce the distance they travel by 5 feet to leave them prone after they are moved.
 
 \feat{Ledgewalker}{Skill}
@@ -1149,7 +1138,7 @@ You can use this ability three times per day.
 
 \feat{Legendary Perception}{Skill}
 \featpre Perception 13 ranks.
-\featben You gain one of the following senses: blindsense (30 ft.), darkvision (50 ft.), scent, or tremorsense (30 ft.). If you choose a sense you already possess, its range doubles.
+\featben You gain one of the following senses: blindsense (20 ft.), darkvision (50 ft.), scent, or tremorsense (20 ft.). If you choose a sense you already possess, its range doubles.
 
 \feat{Legendary Performance}{Performance, Skill}
 \featpres Perform 13 ranks, any three Performance feats.
@@ -1255,10 +1244,6 @@ Choose two magical classes you possess.
 \featpre Ability to cast a Conjuration (Translocation) spell of at least 5th level.
 \featben When casting Conjuration (Translocation) spells and rituals which affect multiple creatures, you can affect a number of creatures equal to your caster level.
 
-\feat{Mental Fortress}{General}
-\featpre Willpower 18 or base Will defense \plus18.
-\featben You become immune to hostile mind-affecting effects.
-
 \feat{Mighty Summons}{Magic}
 \parhead{Prerequisite} Ability to cast a Conjuration (Summoning) spell of at least 2nd level.
 \parhead{Benefit} Each creature you conjure with a summoning spell gains a \plus2 enhancement bonus to Strength and Constitution for the duration of the spell that summoned it.
@@ -1284,7 +1269,7 @@ Choose two magical classes you possess.
 \parhead{Benefit} When you attempt to overrun an opponent while mounted, your target may not choose to avoid you. Your mount may make one attack with an appropriate natural weapon (hoof, claw, or other leg-based attack) against any target you knock down, gaining the normal \plus4 bonus to physical melee attacks against prone targets.
 
 \feat{Natural Spellgift}{Spellgift}
-\featpre 2nd level, Cha 1.
+\featpre 2nd level, Wil 1.
 \featben You gain the ability to use a natural spell as a spell-like ability once per day. You choose which spell when you gain this feat, and that choice cannot thereafter be changed. Your caster level is equal to your level \add the number of spellgift feats you have, and you use your Willpower as your casting attribute.
 
 The spell's level must be no greater than half of your total levels in non-casting classes. In addition, its level cannot exceed your Willpower.
@@ -1298,7 +1283,7 @@ The spell's level must be no greater than half of your total levels in non-casti
 \parhead{Benefit} You gain two skill points. You may spend these skill points immediately.
 
 \feat{Overpowering Assault}{Combat, Style}
-\featpres Str 3, base attack bonus \plus2.
+\featpres Str 3.
 \parhead{Benefit} While in this style, you gain a \plus2 bonus to maneuver attacks. In exchange, you take a \minus2 penalty to physical defenses.
 \stylereq Wield a melee weapon. You must take a full attack or charge action each round.
 
@@ -1319,13 +1304,17 @@ In exchange, you take a \minus4 penalty to all physical attacks not made to parr
 \featben When you make a physical attack, you may take a \minus6 penalty to hit. If you deal damage, you make a Fortitude attack against the struck creature. If your attack succeeds, it loses its damage reduction for 5 rounds. Your attack bonus is equal to your base attack bonus \add your physical attack attribute (Strength or Dexterity). You cannot make more than one strike each round.
 
 \feat{Perfect Health}{General}
-\featpre Constitution 3 or base Fortitude defense \plus6.
-\featben You become immune to disease, except supernatural diseases such as mummy rot. If you have a Constitution of 7 or a base Fortitude defense of \plus14, you also become immune to poison and supernatural diseases.
+\featpre Constitution 3.
+\featben You become immune to disease, except supernatural diseases such as mummy rot. If your Constitution is 10, you are also immune to poison and supernatural diseases.
 
 \feat{Perfect Shot}{Combat, Style}
 \parhead{Prerequisites} Dex 5, Precise Shot, base attack bonus \plus6.
 \parhead{Benefit} While in this style, your ranged attacks ignore cover and concealment, except total cover and total concealment. In addition, when you shoot or throw ranged weapons at a grappling opponent, you automatically strike at the opponent you have chosen. In exchange, you must spend a full-round action to make a full attack.
 \stylereq Wield a ranged weapon. You must take a full attack action each round.
+
+\feat{Pierce Delusions}
+\featpre Perception 10.
+\featben You are immune to hostile delusion effects.
 
 \feat{Pierce Wings}{Combat, Strike}
 \featpre Base attack bonus \plus6.
@@ -1345,7 +1334,7 @@ In exchange, you take a \minus4 penalty to all physical attacks not made to parr
 \featben Whenever you use poisons, you can use your level \add your Intelligence in place of the poison's normal attack bonus. In addition, you cannot accidentally poison yourself while applying poison to an object.
 
 \feat{Power Attack}{Combat, Style}
-\featpres Str 3, base attack bonus \plus2.
+\featpres Str 3.
 \parhead{Benefit} While in this style, you gain a \plus2 bonus to physical melee damage rolls. In exchange, you take a \minus2 penalty to physical melee attacks. The bonus damage and penalty do not apply to maneuvers or touch attacks.
 \stylereq Wield a melee weapon and use Strength to attack. You must take a full attack or charge action each round.
 
@@ -1409,7 +1398,7 @@ If you have three or more Reaction feats, you can draw light and medium weapons 
 
 \feat{Residual Awareness}{Magic}
 \featpre Ability to cast a Divination (Awareness) spell.
-\featben Whenever you cast a Divination (Awareness) spell, you gain an enhancement bonus to Perception checks equal to the level of the spell for 5 rounds.
+\featben Whenever you cast a Divination (Awareness) spell, you gain an enhancement bonus to Awareness checks equal to the level of the spell for 5 rounds.
 
 \feat{Residual Beguilement}{Magic}
 \featpre Ability to cast an Enchantment (Beguilement) spell of at least 3rd level.
@@ -1428,7 +1417,7 @@ If you have three or more Reaction feats, you can draw light and medium weapons 
 \featben Your spells persist for 1 round after being dispelled if they still have time remaining in their duration.
 
 \feat{Resist Maneuver}{Class, Fighter}
-\featpre Fighter, base attack bonus \plus2.
+\featpre Fighter.
 \featben Choose a combat maneuver. You gain a \plus5 bonus to Maneuver Defense against that maneuver.
 
 \feat{Retributive Counterspell}{Magic}
@@ -1445,7 +1434,7 @@ If you have three or more Reaction feats, you can draw light and medium weapons 
 \parhead{Benefit} When you are mounted and use the charge action, you may move and attack as if with a standard charge and then move again (continuing the straight line of the charge). You do not need to attack from the closest possible space when making a ride-by attack. Your total movement for the round can't exceed the distance you could normally move on a mounted charge.
 
 \feat{Riposte}{Combat, Reaction}
-\featpre Dexterity 3, base attack bonus \plus2, Parry.
+\featpre Dexterity 3, Parry.
 \featben When you successfully parry an attack from a foe you threaten, if your parry attempt exceeds your opponent's attack roll by 10 or more, your foe is \defenseless against you for 1 round.
 
 \feat{Ritual Caster}{Magic}
@@ -1551,7 +1540,11 @@ In addition, you gain a special ability based on which type of spellwarped you a
 
 \feat{Stonecunning}{Racial}
 \parhead{Prerequisite} Dwarf.
-\parhead{Benefit} You gain a \plus2 bonus to Craft and Perception checks related to stone or metal. In addition, if you come within 10 feet of unusual stonework, you can make a Perception check to notice it as if you were actively searching. Finally, you can also intuit depth, sensing your approximate depth underground as naturally as a human can sense which way is up.
+\parhead{Benefit} You gain a \plus2 bonus to Craft and Awareness checks related to stone or metal. In addition, if you come within 10 feet of unusual stonework, you can make a Awareness check to notice it as if you were actively searching. Finally, you can also intuit depth, sensing your approximate depth underground as naturally as a human can sense which way is up.
+
+\feat{Stubborn}{General}
+\featpre Willpower 10.
+\featben You are immune to hostile compulsion effects.
 
 \feat{Suggestive Performance}{Performance, Skill}
 \featpre Perform 10 ranks, Fascinating Performance.
@@ -1571,7 +1564,7 @@ You can use any combination of performance feats you possess a number of times p
 \parhead{Benefit} You increase your land speed by 5 feet.
 
 \feat{Tactical Analysis}{Combat}
-\parhead{Prerequisite} Intelligence 3, Base attack bonus \plus2.
+\parhead{Prerequisite} Intelligence 3.
 \parhead{Benefit} You can attempt to identify the strengths and weaknesses of creatures based on your combat experience. As a swift action, you can make a special check with a bonus equal to your base attack bonus \add your Intelligence \add 2 per round you have seen the creature fight. The DC is equal to 10 \add the creature's CR. If you succeed, you learn about the monster's combat abilities as if you had made a successful Knowledge check.
 
 \feat{Tactical Prediction}{Combat}
@@ -1584,14 +1577,8 @@ You can use any combination of performance feats you possess a number of times p
 \stylereq Wield a ranged weapon. You must take a full attack action each round.
 
 \feat{Trapfinder}{Skill}
-\featpre Perception 5 ranks.
-\featben As a full-round action, you can move up to 10 feet while searching every square within 10 feet of you for traps with the Perception skill (see \pcref{Search}). If you detect a trap partway through your movement, you may immediately stop moving.
-
-\feat{Tower Shield Proficiency}{Combat}
-\parhead{Prerequisite} Shield Proficiency.
-\parhead{Benefit} You can use a tower shield and suffer only the standard penalties.
-\parhead{Normal} A character who is using a shield with which he or she is not proficient takes the shield's armor check penalty on physical attacks and on all checks that involve moving, including Ride checks.
-\parhead{Special} Fighters and paladins are automatically proficient with tower shields.
+\featpre Awareness 5 ranks.
+\featben As a full-round action, you can move up to 10 feet while searching every square within 10 feet of you for traps with the Awareness skill (see \pcref{Search}). If you detect a trap partway through your movement, you may immediately stop moving.
 
 \feat{Toughness}{General}
 \parhead{Benefit} You gain \plus3 hit points, \plus1 per level above 3.
@@ -1648,7 +1635,7 @@ If you fail a Survival check, you can retry after 1 hour (outdoors) or 10 minute
 
 \feat{Trap Sense}{Skill}
 \featpre Awareness 8 ranks.
-\featben Whenever you come within 10 feet of a trap, you receive an immediate Perception check to notice the trap. This check should be made secretly, so you do not know whether you failed to notice a trap.
+\featben Whenever you come within 10 feet of a trap, you receive an immediate Awareness check to notice the trap. This check should be made secretly, so you do not know whether you failed to notice a trap.
 
 \feat{Two-Weapon Defense}{Combat}
 \parhead{Prerequisites} Dex 3, Two-Weapon Fighting.
