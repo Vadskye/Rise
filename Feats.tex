@@ -113,7 +113,7 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
     \featref{Iron Will} & \x & \plus2 bonus to Will defense & \featpref{Iron Will} \\
     \featref{Lightning Reflexes} & \x &  \plus2 bonus to Reflex defense & \featpref{Lightning Reflexes} \\
     \featref{Perfect Health} & Con 3 & Immune to disease, later poison & \featpref{Perfect Health} \\
-    \featref{Pierce Delusions} & Per 10 & Immune to delusion effects & \featpref{Truthseer} \\
+    \featref{Pierce Delusions} & Per 10 & Immune to delusion effects & \featpref{Pierce Delusions} \\
     \featref{Stubborn} & Wil 10 & Immune to compulsion effects & \featpref{Stubborn} \\
     \featref{Swift} & \x & Increase speed by 5 feet & \featpref{Swift} \\
     \featref{Toughness} & \x &  \plus3 hit points \plus1 per level above 3 & \featpref{Toughness} \\
@@ -297,6 +297,10 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
 
 \subsection{Combat Feat Table}\label{cap:Combat Feats}
 
+Many combat feats require a specific number of physical attacks.\\
+Only physical attacks that come from having a high base attack bonus count towards these prerequisites.\\
+The table of combat feats is organized according to the number of physical attacks each feat requires.\\
+
 {\small
     \taburowcolors [2] 2{tbrown .. white}
     \begin{longtabu}{>{\lcol}p{10em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{6em} >{\lcol}p{3em}}
@@ -334,23 +338,23 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
         \featref{Tactical Analysis} & Int 3 & Identify foe's strengths and weaknesses & Awareness & \featpref{Tactical Analysis} \\
         \featref{Two-Weapon Fighting} & Dex 3 & Gain \plus2 bonus when attacking with two weapons & Finesse & \featpref{Two-Weapon Fighting} \\
         \tind \featref{Two-Weapon Defense} & Two-Weapon Fighting & \plus1 bonus to physical defenses while using two weapons & Defense, Finesse & \featpref{Two-Weapon Defense} \\
-        \featref{Weapon Proficiency}\fn{1} & \x & Gain proficienty with weapon group & Equipment & \featpref{Weapon Proficiency} \\
+        \featref{Weapon Proficiency}\fn{1} & \x & Gain proficiency with weapon group & Equipment & \featpref{Weapon Proficiency} \\
         \featref{Weapon Focus} & Proficiency with weapon group & Special ability with weapon group & Equipment & \featpref{Weapon Focus} \\
 
         \midrule
         \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
-        \featref{Contingent Counter} & Int 3, two attacks & Prepare to attack when attack misses you & Reaction & \featpref{Contingent Counter} \\
+        \featref{Contingent Counter} & Int 5, two attacks & Prepare to attack when attack misses you & Reaction & \featpref{Contingent Counter} \\
         \featref{Driving Assault} & Str 5, two attacks & Shoved foe provokes attack from you & Power, Maneuver & \featpref{Driving Assault} \\
         \featref{Eye of the Storm} & Two attacks & Reduce overwhelm penalties by 1 & Awareness, Defense & \featpref{Eye of the Storm} \\
         \featref{Gang Up} & Two attacks & Increase overwhelm penalties foes suffer & \x & \featpref{Gang Up} \\
         \featref{Mobile Whirlwind} & Dex 5, Whirlwind Strike, two attacks & Use whirlwind strike as standard action & Mobility & \featpref{Mobile Whirlwind} \\
-        \featref{Tactical Prediction} & Int 3, Two attacks & Predict foe's next action & Awareness & \featpref{Tactical Prediction} \\
+        \featref{Tactical Prediction} & Int 5, Two attacks & Predict foe's next action & Awareness & \featpref{Tactical Prediction} \\
         \featref{Two-Weapon Rend} & Str 5, two attacks, Two-Weapon Fighting & Deal Strength damage with both weapons & Power & \featpref{Two-Weapon Rend} \\
         \featref{Wall Slam} & Str 5, two attacks & Slam opponent into wall to deal bonus damage & Maneuver, Power & \featpref{Wall Slam} \\
 
         \midrule
         \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
-        \featref{Contingent Attack} & Int 5, three attacks & Prepare to attack as immediate action & Reaction & \featpref{Contingent Attack} \\
+        \featref{Contingent Attack} & Int 10, three attacks & Prepare to attack as immediate action & Reaction & \featpref{Contingent Attack} \\
         \featref{Legendary Awareness} & Three attacks, any three Awareness feats & Immune to being overwhelmed & Awareness & \featpref{Legendary Awareness} \\
         \featref{Legendary Defense} & Three attacks, any three Defense feats & \plus2 to all defenses & Defense & \featpref{Legendary Defense} \\
         \featref{Legendary Finesse} & Three attacks, any three Finesse feats & Roll maximum damage again & Finesse & \featpref{Legendary Finesse} \\
@@ -364,8 +368,8 @@ Strike feats grant a character the ability to make unusual physical attacks, cal
         \midrule
         \thead{Combat Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
         \featref{Executioner} & Four attacks, any three Reaction feats & Gain free attacks against foes near death & Reaction & \featpref{Executioner} \\
-        \featref{Hurricane Strike} & Dex 7, Whirlwind Strike, four attacks & Two melee attacks against all threatened foes & Strike & \featpref{Hurricane Strike} \\
-        \tind \featref{Mobile Hurricane} & Dex 7, Hurricane Strike, Mobile Whirlwind, Whirlwind Strike, four attacks & Use hurricane strike as standard action & Mobility & \featpref{Hurricane Strike} \\
+        \featref{Hurricane Strike} & Dex 15, Whirlwind Strike, four attacks & Two melee attacks against all threatened foes & Strike & \featpref{Hurricane Strike} \\
+        \tind \featref{Mobile Hurricane} & Dex 15, Hurricane Strike, Mobile Whirlwind, Whirlwind Strike, four attacks & Use hurricane strike as standard action & Mobility & \featpref{Hurricane Strike} \\
     \end{longtabu}
     \begin{enumerate*}
         \item You can gain this feat multiple times. Each time you do, it has a different effect.
@@ -564,7 +568,7 @@ If you are 18th level, you can fly for a number of minutes equal to 3 \add half 
 A foe confused by this effect does not automatically attack you on its next turn, even though you attacked it. You cannot make more than one strike each round.
 
 \feat{Contingent Attack}{Combat, Reaction}
-\featpre Int 5, three attacks.
+\featpre Int 10, three attacks.
 \featben As a full-round action, you may concentrate to prepare a single attack as a contingent action. You may choose any trigger for the contingent action.
 
 Contingent actions depend on a trigger condition. If the trigger condition occurs and you have a contingent action prepared, you may take the contingent action as an immediate action. A contingent action remains prepared until you rest. You may only have one contingent action prepared at a time. If you prepare a new contingent action, it replaces the old action.
@@ -875,7 +879,7 @@ You can use any combination of performance feats you possess a number of times p
 \stylereq Wield a weapon. You must take a full attack or charge action each round.
 
 \feat{Hurricane Strike}{Combat, Strike}
-\featpres Dex 7, Whirlwind Strike, four attacks.
+\featpres Dex 15, Whirlwind Strike, four attacks.
 \featben As a full-round action, you can make two melee attacks against each opponent you threaten. The second attack has a \minus10 penalty.
 
 \feat{Imbue Magic}{Item Creation}
@@ -1239,8 +1243,8 @@ Choose two magical classes you possess.
 \parhead{Benefit} Each creature you conjure with a summoning spell gains a \plus2 enhancement bonus to Strength and Constitution for the duration of the spell that summoned it.
 
 \feat{Mobile Hurricane}{Combat, Mobility}
-\featpres Dex 5, Hurricane Attack, Mobile Whirlwind, Whirlwind Attack, two attacks.
-\featben You can make a hurricane attack as a standard action.
+\featpres Dex 15, Hurricane Strike, Mobile Whirlwind, Whirlwind Attack, two attacks.
+\featben You can make a hurricane strike as a standard action.
 
 \feat{Mobile Whirlwind}{Combat, Mobility}
 \featpres Dex 5, Whirlwind Strike, two attacks.
