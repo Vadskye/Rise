@@ -166,7 +166,7 @@ Some strike feats instead require a specific action to use.
         \featref{Destructive} & Str 3 & Gain \plus5 to break things & \featpref{Destructive} \\
         \featref{Fearless} & Wil 10 & Immune to fear effects & \featpref{Fearless} \\
         \featref{Great Fortitude} & Con 3 & \plus2 bonus to Fortitude defense & \featpref{Great Fortitude} \\
-        \featref{Iron Will} & Wil 3 & \plus2 bonus to Will defense & \featpref{Iron Will} \\
+        \featref{Iron Will} & Wil 3 & \plus2 bonus to Mental defense & \featpref{Iron Will} \\
         \featref{Lightning Reflexes} & Dex 3 &  \plus2 bonus to Reflex defense & \featpref{Lightning Reflexes} \\
         \featref{Mental Resilience} & Wil 3 & Gain bonus hit points & \featpref{Mental Resilience} \\
         \featref{Perfect Health} & Con 3 & Immune to disease, later poison & \featpref{Perfect Health} \\
@@ -581,7 +581,7 @@ The character also suffers double the normal arcane spell failure chance for wea
 \feat{Battletrance}{Class}
 \featpre Rage ability.
 \featben When you use your rage ability, you can enter a trance instead of getting angry.
-in place of the normal benefits and drawbacks from raging, you add your rage bonus to your Constitution, Perception, and Will defense.
+in place of the normal benefits and drawbacks from raging, you add your rage bonus to your Constitution, Perception, and Mental defense.
 Any other abilities, such as channeled rages, function normally.
 
 \feat{Blind-Fight}{Awareness, Combat, Style}
@@ -769,7 +769,7 @@ If your Intelligence increases after taking this feat, you may choose additional
 \featpre Two attacks.
 \featben In place of two attacks, you can make a physical attack.
 If you hit, you deal damage normally.
-If your attack result also beats the foe's Will defense, it is \disoriented for 5 rounds.
+If your attack result also beats the foe's Mental defense, it is \disoriented for 5 rounds.
 
 \feat{Distracting Foe}{Combat, Reaction, Style}
 \featben While in this style, foes you threaten take a \minus4 penalty to Concentration checks.
@@ -1033,7 +1033,7 @@ When you use a thrown weapon, its range increment is doubled.
 \featpre Perform 4 ranks.
 \featben As a standard action, you can make a DC 8 Perform check to fascinate creatures within \rngmed range of you.
 You can affect one creature per Perform rank you have.
-Your Perform check is opposed by a creature's Will defense.
+Your Perform check is opposed by a creature's Mental defense.
 If you fail against a creature, it is not fascinated.
 You can sustain the performance as a standard action.
 
@@ -1047,7 +1047,7 @@ If you fail the Perform check, the use of the ability is wasted.
 This is an enchantment (compulsion), mind-affecting ability.
 
 \feat{Fearless}{General}
-\featpre Willpower 10 or base Will defense \plus10.
+\featpre Willpower 10 or base Mental defense \plus10.
 \featben You are immune to fear effects.
 
 \feat{Fearless Rage}{Class}
@@ -1060,7 +1060,7 @@ This is an enchantment (compulsion), mind-affecting ability.
 
 \feat{Focused Mind}{Racial}
 \featpre Elf.
-\featben You gain a \plus2 bonus to Will defense.
+\featben You gain a \plus2 bonus to Mental defense.
 In addition, you can use your Intelligence instead of your Constitution on Concentration checks, such as when you cast spells.
 
 \feat{Focused Strike}{Combat, Precision, Strike}
@@ -1291,7 +1291,7 @@ If you hit, you deal damage normally, and you can make an Intimidate check again
 
 \feat{Iron Will}{General}
 \featpre Willpower 3.
-\featben You gain a \plus2 bonus to your Will defense.
+\featben You gain a \plus2 bonus to your Mental defense.
 This bonus increases to \plus4 at Willpower 10, and to \plus6 at Willpower 20.
 
 \feat{Killing Blow}{Combat, Precision, Strike}
@@ -1446,7 +1446,7 @@ You may only have up to three items hidden in this way, none of which can be lar
 
 \feat{Legendary Liar}{Skill}
 \featpre Bluff 13 ranks.
-\featben When you make a Bluff check, if the result is 30 or higher, you may treat it as an attack against the Will defense of one creature that understands you.
+\featben When you make a Bluff check, if the result is 30 or higher, you may treat it as an attack against the Mental defense of one creature that understands you.
 If your attack succeeds against that creature, its sight, smell, hearing, and sense of temperature are altered so it perceives the world as you described it, as \spell{major image}.
 This cannot remove things that do exist, but it can create new sensations where none existed.
 
@@ -1488,7 +1488,7 @@ You take a \minus10 penalty to other Perform checks while sustaining two perform
 
 \feat{Legendary Persuasion}{Skill}
 \featpre Persuasion 13 ranks.
-\featben When you make a Persuasion check, if the result is 30 or higher, you may treat it as an attack against the Will defense of one creature that understands you.
+\featben When you make a Persuasion check, if the result is 30 or higher, you may treat it as an attack against the Mental defense of one creature that understands you.
 If your attack succeeds against that creature, it is compelled to obey you, as \spell{suggestion}.
 
 You can use this ability three times per day.
@@ -1522,7 +1522,7 @@ To ride an unwilling creature, you must beat its Maneuver defense with a Ride ch
 
 \feat{Legendary Sense Motive}{Skill}
 \featpre Sense Motive 13 ranks.
-\featben When you make a Sense Motive check, if the result is 30 or higher, you may treat it as an attack against the Will defense of one creature that you can see.
+\featben When you make a Sense Motive check, if the result is 30 or higher, you may treat it as an attack against the Mental defense of one creature that you can see.
 If your attack succeeds against that creature, you read its mind, as \spell{read mind}.
 
 You can use this ability three times per day.
@@ -2221,7 +2221,7 @@ These special abilities only function when you are making attacks with weapons f
     \item Blades, heavy: You gain a \plus2 bonus to physical attacks against creatures not wearing medium or heavy armor.
     \item Blades, light: If you draw a light blade and attack with it in the same round, you gain a \plus2 bonus to attack.
         The creature you attack is unaffected by this ability for the rest of the encounter.
-    \item Blunt weapons: When you deal damage to a creature, it takes a \minus2 penalty to Will defense for 1 round.
+    \item Blunt weapons: When you deal damage to a creature, it takes a \minus2 penalty to Mental defense for 1 round.
         This penalty is not cumulative with itself.
     \item Bows: You can ignore cover (but not total cover) provided by creatures and objects that are at least ten feet away from both you and your target.
     \item Crossbows: The time required for you to reload crossbows is reduced to a free action (for a hand or light crossbow) or a move action (for a heavy crossbow).

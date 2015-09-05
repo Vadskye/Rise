@@ -46,7 +46,7 @@ This measures how resistant members of the class are to unusual kinds of attacks
 There are three kinds of special defenses.
 Your Fortitude defense represents your ability to resist attacks to your body, like poisons and diseases.
 Your Reflex defense represents your ability to avoid attacks, such as pit traps or explosions.
-Your Will defense represents your ability to resist mental influence, like fearsome creatures and enchantment spells.
+Your Mental defense represents your ability to resist mental influence, like fearsome creatures and enchantment spells.
 There are three progressions: Good, Average, or Poor.
 The effects of each progression are described on \trefnp{Base Progressions}.
 
@@ -125,7 +125,7 @@ The class features that a character gets for being a member of the class.
 \begin{dtable}
     \lcaption{The Barbarian}
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
+        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
 \hline
         \barbarianprogressionrow{1}  & Rage \plus2                        \\
         \barbarianprogressionrow{2}  & Damage reduction, fast movement    \\
@@ -231,7 +231,7 @@ The barbarian gains the unarmed warrior ability (see Unarmed Warrior, \pref{Mnk:
 The barbarian only suffers a \minus1 penalty to physical defenses for raging.
 
 \subcf{Willful Rage}
-The barbarian adds his rage bonus to his Will defense.
+The barbarian adds his rage bonus to his Mental defense.
 
 \subcf{6th -- Destructive Rage}
 When attacking, the barbarian ignores an amount of hardness equal to his barbarian level.
@@ -240,7 +240,7 @@ When attacking, the barbarian ignores an amount of hardness equal to his barbari
 The barbarian can initiate or change combat styles as part of the swift action he uses to sustain his rage.
 
 \subcf{6th -- Terrifying Rage}
-Whenever the barbarian makes a physical melee attack, he may also make a special attack vs. Will against the target of the attack.
+Whenever the barbarian makes a physical melee attack, he may also make a special attack against the target's Mental defense.
 If the special attack succeeds, the target is \shaken for 5 rounds.
 \norepeatnotes
 
@@ -254,7 +254,7 @@ The barbarian adds his rage bonus to his maneuver attacks.
 This does not allow him to overwhelm a creature by himself.
 
 \subcf{9th -- Taunting Rage}
-Once per round, the barbarian can make a special attack vs. Will against a foe within \rngmed range of him.
+Once per round, the barbarian can make a special attack against the Mental defense of a foe within \rngmed range of him.
 If the attack succeeds, the foe is \taunted for 5 rounds.
 \norepeatnotes.
 
@@ -286,7 +286,7 @@ The barbarian doubles his damage reduction.
 This replaces his rage bonus to Strength.
 
 \cf{Bbn}[4th]{Mighty Will}[Ex]
-The barbarian gains a \plus5 bonus to Will defense against compulsion effects.
+The barbarian gains a \plus5 bonus to Mental defense against compulsion effects.
 
 \cf{Bbn}[5th]{Improved Damage Reduction}[Ex]
 The barbarian can apply his damage reduction against any attack which deals damage, including magical and supernatural attacks.
@@ -335,7 +335,7 @@ If he stops being lawful, he regains his ability to rage and take barbarian leve
 \begin{dtable}
     \lcaption{The Cleric}
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{2em} >{\ccol}p{\babcolavg} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
+        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
         \clericprogressionrow{1}  & Devotion, lesser domain aspect, spells, rituals \\
         \clericprogressionrow{2}  & Channel energy                         \\
@@ -602,7 +602,7 @@ If a lesser domain aspect involves an attack, the attack bonus is equal to the c
 The cleric adds Jump to his cleric class skill list.
 In addition, he gains a bonus equal to half his cleric level on Jump checks.
 \subcf{Chaos}
-As a standard action, the cleric can attack the Will of a creature within \rngclose range.
+As a standard action, the cleric can attack the Mental defense of a creature within \rngclose range.
 If the attack succeeds, and creature is lawful, it is \disoriented for 5 rounds.
 If the creature is chaotic, the cleric loses one devotion point.
 \norepeatnotes
@@ -615,7 +615,7 @@ When attacking, the cleric ignores an amount of hardness equal to his cleric lev
 \subcf{Earth}
 The cleric gains a \plus4 bonus to Maneuver defense while standing on solid ground.
 \subcf{Evil}
-As a standard action, the cleric can attack the Will of a creature within \rngclose range.
+As a standard action, the cleric can attack the Mental defense of a creature within \rngclose range.
 If the attack succeeds, and the creature is good, it is \staggered for 5 rounds.
 If the creature is evil, the cleric loses one devotion point.
 \norepeatnotes
@@ -623,14 +623,14 @@ If the creature is evil, the cleric loses one devotion point.
 The cleric gains damage reduction against fire and cold damage equal to twice his cleric level.
 This damage reduction allows him to ignore the first points of fire or cold damage he would take each round.
 \subcf{Good}
-As a standard action, the cleric can attack the Will of a creature within \rngclose range.
+As a standard action, the cleric can attack the Mental defense of a creature within \rngclose range.
 If the attack succeeds, and the creature is evil, it is \dazed for 5 rounds.
 If the creature is good, the cleric loses one devotion point.
 \norepeatnotes
 \subcf{Knowledge}
 The cleric adds all Knowledge skills to his cleric class skill list.
 \subcf{Law}
-As a standard action, the cleric can attack the Will of a creature within \rngclose range.
+As a standard action, the cleric can attack the Mental defense of a creature within \rngclose range.
 If the attack succeeds, and the creature is chaotic, it is \staggered for 5 rounds.
 If the creature is lawful, the cleric loses one devotion point.
 \norepeatnotes
@@ -686,7 +686,7 @@ The cleric channels insight from knowledge.
 Each subject is not healed or damaged, but it gains an enhancement bonus equal to half the cleric's level on the next physical attack or check that it makes.
 If this bonus is not used within 5 rounds, it is wasted.
 \subcf{Law}
-The cleric channels axiomatic energy, making an attack vs. Will to deal damage to all creatures within a 40 ft.
+The cleric channels axiomatic energy, making an attack vs. Mental defense to deal damage to all creatures within a 40 ft.
 cube centered on the cleric.
 The attack deals 4 damage per two cleric levels.
 A failed attack deals half damage.
@@ -706,7 +706,7 @@ At 8th, 14th, and 20th cleric level, this bonus increases by \plus1.
 The cleric channels positive energy.
 All subjects gain a \plus10 foot enhancement bonus to movement speed for 1 round.
 \subcf{Trickery}
-The cleric channels trickery and confusion, making an attack vs. Will against each creature in the area.
+The cleric channels trickery and confusion, making an attack vs. Mental defense against each creature in the area.
 A successful attack deals and heals no damage, but makes the creature \bewildered for 5 rounds.
 This is a mind-affecting effect.
 \subcf{Vitality}
@@ -722,7 +722,7 @@ The cleric channels positive energy, except that the cleric can decide whether i
 The cleric gains a glide speed equal to his land speed.
 See \pcref{Gliding}, for more details.
 \subcf{Chaos -- Chaotic Retribution}
-Whenever a lawful creature within 30 feet of you attacks you, make an attack against its Will.
+Whenever a lawful creature within 30 feet of you attacks you, make an attack against its Mental defense.
 Success means it takes 1d6 damage per cleric level.
 \subcf{Death -- Lifedrinker}
 Whenever the cleric kills a creature with a death effect, he gains temporary hit points equal to his cleric level for a number of rounds equal to the creature's level.
@@ -732,18 +732,18 @@ All creatures within a \areamed emanation of the cleric have their damage reduct
 The cleric gains the tremorsense ability with a range of 50 feet.
 If he is touching a surface, he can automatically pinpoint the location of anything within 50 feet that is in contact with the surface, including inanimate objects.
 \subcf{Evil -- Unholy Retribution}
-Whenever a good creature within 30 feet of you attacks you, make an attack against its Will.
+Whenever a good creature within 30 feet of you attacks you, make an attack against its Mental defense.
 Success means it takes 1d6 damage per cleric level.
 \subcf{Fire -- Friendly Fire}
 All of the cleric's fire spells and abilities deal only half damage to his allies.
 \subcf{Good -- Holy Retribution}
-Whenever an evil creature within 30 feet of you attacks you, make an attack against its Will.
+Whenever an evil creature within 30 feet of you attacks you, make an attack against its Mental defense.
 Success means it takes 1d6 damage per cleric level.
 \subcf{Knowledge -- Knowledge Mastery}
 The cleric may choose a number of Knowledge skills equal to his Intelligence (minimum 1).
 He may take 10 with those skills if he is not in danger or rushed.
 \subcf{Law -- Certain Retribution}
-Whenever an chaotic creature within 30 feet of you attacks you, make an attack against its Will.
+Whenever an chaotic creature within 30 feet of you attacks you, make an attack against its Mental defense.
 Success means it takes 1d6 damage per cleric level.
 \subcf{Magic -- Magic Feat}
 The cleric gains a bonus magic feat or metamagic feat.
@@ -902,7 +902,7 @@ He cannot thereafter gain levels as a cleric of that god until he atones (see th
 \begin{dtable}
     \lcaption{The Druid}
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\centering}p{\babcolavg} *{3}{>{\ccol}p{\savecol}} >{\ccol}X}
-        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
+        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
 \hline
         \druidprogressionrow{1}  & Rituals, spells, wild speech     \\
         \druidprogressionrow{2}  & Natural casting, woodland stride \\
@@ -1150,7 +1150,7 @@ At 13th level, the druid can assume three aspects at once. At 19th level, she ma
 
 \cf{Drd}[8th]{Commanding Wild Speech}[Su]
 As a standard action that consumes a use of her wild speech ability, the druid can attempt to charm a creature she is speaking with using her wild speech ability.
-If she succeeds at a special attack vs. Will, the target is charmed.
+If she succeeds at a special attack vs. Mental defense, the target is charmed.
 The effect lasts for the duration of the conversation, and for 1 hour thereafter.
 This ability is not mind-affecting, and can affect creatures or even objects of any kind that the druid can use her wild speech to converse with.
 The attack automatically succeeds against non-intelligent objects.
@@ -1270,7 +1270,7 @@ She cannot thereafter gain levels as a druid until she atones (see the \spell{at
 \begin{dtable}
     \lcaption{The Fighter}
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
+        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
 \hline
         \fighterprogressionrow{1}  & Armor discipline                    \\
         \fighterprogressionrow{2}  & Bonus feat                          \\
@@ -1480,7 +1480,7 @@ As a swift action, he can exchange a single adaptive combat feat from his adapat
 \begin{dtable}
     \lcaption{The Monk}
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolavg} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
+        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
         \monkprogressionrow{1}  & Enlightened defense, unarmed warrior \\
         \monkprogressionrow{2}  & Fast movement, \Ki power             \\
@@ -1685,7 +1685,7 @@ If she stops being chaotic, she regains her \ki powers and ability to take monk 
 \begin{dtable}
     \lcaption{The Paladin}
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
+        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
         \paladinprogressionrow{1}  & Discernment, divine power (smite)  \\
         \paladinprogressionrow{2}  & Divine power                       \\
@@ -1808,7 +1808,7 @@ The paladin's smite cannot be turned aside by mortal defenses.
 The smite attack is made against the enemy's Reflex defense.
 \subcf{16th -- Coercing Smite*}
 The paladin's smite compels her foe to briefly join her cause.
-If she succeeds on a special attack vs. Will, the struck creature must obey a \spell{suggestion}, as the spell, of the paladin's choice.
+If she succeeds on a special attack vs. Mental defense, the struck creature must obey a \spell{suggestion}, as the spell, of the paladin's choice.
 The paladin must speak the suggestion aloud, but she need not speak in a language the subject understands.
 The effect lasts for 5 rounds.
 \subcf{18th -- Immobilizing Smite*}
@@ -1816,7 +1816,7 @@ The paladin's smite roots her foe in place.
 The struck creature is \immobilized for 5 rounds.
 \subcf{20th -- Converting Smite*}
 The paladin's smite shows her foe the error of its ways.
-If the struck creature is \bloodied after the damage from the smite, and the paladin succeeds at a special attack vs. Will, the struck creature's alignment changes.
+If the struck creature is \bloodied after the damage from the smite, and the paladin succeeds at a special attack vs. Mental defense, the struck creature's alignment changes.
 It gains the paladin's devoted alignment for 1 week.
 After that time, it can choose to return to its original alignment, or keep its new alignment permanently.
 \subcf{20th -- Terrifying Smite*}
@@ -1921,13 +1921,13 @@ The paladin is immune to poison and disease.
 \subcf{Unbending Dedication}
 The paladin is immune to charm and domination effects.
 \subcf{6th -- Divine Grace}
-If the paladin resists an attack against her Fortitude, Reflex, or Will that normally deals half damage when resisted, she instead takes no damage.
+If the paladin resists an attack against her Fortitude, Reflex, or Mental defenses that normally deals half damage when resisted, she instead takes no damage.
 \subcf{6th -- Shielded Senses}
 The paladin is immune to visual and auditory effects, whenever that is beneficial to her.
 \subcf{9th -- Implacable Resolve}
 The paladin is immune to compulsion and inhibition effects.
 \subcf{12th -- Improved Divine Grace}
-If the paladin resists an attack against her Fortitude, Reflex, or Will that has any partial effect when resisted, she instead suffers no effect.
+If the paladin resists an attack against her Fortitude, Reflex, or Mental defenses that has any partial effect when resisted, she instead suffers no effect.
 The paladin must have the divine grace gift in order to select this gift.
 
 \parhead{Chaotic Divine Gifts}
@@ -1984,7 +1984,7 @@ If a divine power emulates a spell, the paladin's effective caster level is equa
 
 \parhead{Any Alignment}
 \subcf{Bolstering Aura}
-Allies in the area gain a \plus2 bonus to Will defense.
+Allies in the area gain a \plus2 bonus to Mental defense.
 \subcf{Resilient Aura}
 Allies in the area gain a \plus2 bonus to Fortitude defense.
 \subcf{15th -- Magic Circle} The paladin continuously radiates a \spell{magic circle against alignment}
@@ -2058,7 +2058,7 @@ She regains her abilities and advancement potential if she atones for her violat
 \begin{dtable}
     \lcaption{The Ranger}
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
+        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
         \rangerprogressionrow{1}  & Quarry \plus2, Track                    \\
         \rangerprogressionrow{2}  & Favored terrain, wild speech            \\
@@ -2337,7 +2337,7 @@ He gains the ability to see all things as they actually are, as the \spell{true 
 \begin{dtable}
     \lcaption{The Rogue}
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
+        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
         \rogueprogressionrow{1}  & Sneak attack \plus1d6                  \\
         \rogueprogressionrow{2}  & Skill talent                           \\
@@ -2480,7 +2480,7 @@ If she make a melee sneak attack against that target within 1 round, her attack 
 If the target becomes aware of her presence before she attacks, this ability has no benefit.
 
 \subcf{12th -- Confusing Ambush*}
-The rogue makes a special attack vs. Will to confuse or bewilder the struck creature for 1 round.
+The rogue makes a special attack vs. Mental defense to confuse or bewilder the struck creature for 1 round.
 A healthy creature is \bewildered, while a creature \bloodied after the damage from this attack is \confused.
 A foe confused by this effect does not automatically attack the rogue on its next turn, even though she attacked it.
 This is an ambush attack, and only works once per creature, regardless of the result of the attack.
@@ -2549,7 +2549,7 @@ The rogue deals full sneak attack damage on her first successful sneak each roun
 \begin{dtable}
     \lcaption{The Sorcerer}
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolpoor} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
+        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
         \sorcererprogressionrow{1}  & Arcane invocation, spells, wild magic \\
         \sorcererprogressionrow{2}  & Arcane invocation, spellsurge \plus2  \\
@@ -2627,7 +2627,7 @@ The sorcerer learns how to alter how he casts spells by initiating a spellsurge.
 He can initiate a spellsurge as a swift action.
 While in a spellsurge, he gains bonuses with some types of magic or aspects of spellcasting, but takes penalties to others.
 A spellsurge lasts for 5 rounds.
-A sorcerer can attempt to end a spellsurge as a swift action by testing Will defense against a test bonus equal to 10 \add his spellpower (including any bonuses or penalties from the spellsurge that affect all spells).
+A sorcerer can attempt to end a spellsurge as a swift action by testing Mental defense against a test bonus equal to 10 \add his spellpower (including any bonuses or penalties from the spellsurge that affect all spells).
 Success means he ends the spellsurge, and failure means his attempt has no effect.
 
 The value of the numerical bonuses and penalties granted by a sorcerer's spellsurge is called his spellsurge bonus.
@@ -2643,7 +2643,7 @@ All spellsurges are extraordinary abilities unless otherwise specified.
 \subcf{Brilliant Surge}
 The sorcerer gains a bonus to his spellpower with light spells, but takes a penalty to his spellpower with Illusion spells.
 \subcf{Empathic Surge}
-The sorcerer gains a bonus to spellpower with mind-affecting spells, but takes a penalty to Will defense and to spellpower with spells that deal damage.
+The sorcerer gains a bonus to spellpower with mind-affecting spells, but takes a penalty to Mental defense and to spellpower with spells that deal damage.
 \subcf{Energetic Surge}
 The sorcerer gains a bonus to spellpower with acid, cold, electricity, and fire spells, but takes a penalty to his spellpower with other spells.
 \subcf{6th -- Focused Surge}
@@ -2774,11 +2774,11 @@ His good defense is Fortitude, his key attribute is Intelligence, and he treats 
 An alteration spellwarped may be called an alterer, bodywarper, or shifter.
 \subcf{Pyromancy}
 The spellwarped can manipulate fire and heat.
-His good defense is Will, his key attribute is Willpower, and he treats Jump, Perform, and Tumble as class skills.
+His good defense is Mental, his key attribute is Willpower, and he treats Jump, Perform, and Tumble as class skills.
 A pyromancy spellwarped may be called a pyromancer.
 \subcf{Telekinesis}
 The spellwarped can manipulate objects and creatures with his mind.
-His good defense is Will, his key attribute is Intelligence, and he treats Craft, Devices, and Sleight of Hand as class skills.
+His good defense is Mental, his key attribute is Intelligence, and he treats Craft, Devices, and Sleight of Hand as class skills.
 A telekinesis spellwarped may be called a telekine.
 \subcf{Temporal}
 The spellwarped can manipulate time.
@@ -2969,7 +2969,7 @@ As an immediate action, when the spellwarped is affected by a spell or spell-lik
 Creatures within a \areasmall radius of the spellwarped take fire damage equal to his spellwarped level.
 The spell still has its normal effect on the spellwarped.
 \subcf{Telekinesis -- Mind over Matter}
-As an immediate action, when the spellwarped is subject to an attack against his Fortitude from a spell or spell-like ability, he may use his Will defense instead.
+As an immediate action, when the spellwarped is subject to an attack against his Fortitude from a spell or spell-like ability, he may use his Mental defense instead.
 \subcf{Temporal -- Accelerate Magic}
 As a swift action, the spellwarped can halve the duration of any spell or spell-like ability affecting him.
 This can end the effect immediately if it has less than one round remaining.
@@ -3158,10 +3158,10 @@ This power functions like the strangle power, except that it costs three spellwa
 \subsubsection{Temporal Powers}
 \parhead{1st -- Lesser Timetheft}
 As a standard action, the spellwarped can attempt to steal time.
-He makes a special attack vs. Will against an adjacent creature to force it to skip an action.
+He makes a special attack against the Mental defense of an adjacent creature to force it to skip an action.
 If it is \bloodied, it skips a standard action, while if it is healthy, it skips a move action.
 \parhead{4th -- Slow}
-As a standard action, the spellwarped makes a special attack vs. Will against a creature within \rngclose range, making it \slowed for 5 rounds.
+As a standard action, the spellwarped makes a special attack against the Mental defense of a creature within \rngclose range, making it \slowed for 5 rounds.
 \parhead{4th -- Timetheft}
 This power functions like lesser timetheft, except that the spellwarped regains a spellwarp point if the attack is successful.
 \parhead{6th -- Flashstep}
@@ -3176,7 +3176,7 @@ If the attack succeeds, the creature takes a \minus4 penalty to attacks, defense
 \parhead{8th -- Haste} This power functions like the \spell{haste}
 spell.
 \parhead{8th -- Temporal Prison}
-As a standard action, the spellwarped makes a special attack vs. Will against a single creature within \rngclose range to completely stop time for it for 5 rounds.
+As a standard action, the spellwarped makes a special attack against the Mental defense of a single creature within \rngclose range to completely stop time for it for 5 rounds.
 The affected creature can take no actions and cannot be moved, damaged, or even affected in any way until the effect ends.
 The spellwarped may dismiss the effect as a swift action.
 
@@ -3201,7 +3201,7 @@ During this time, he cannot be followed or withdrawn from, can move through squa
 This power functions like the slow power, except that it costs two spellwarp points and affects up to five creatures within \rngclose range of the spellwarped.
 \parhead{16th -- Time Reversal}
 As a swift action, the spellwarped can spend a spellwarp point to create a ``time lock.'' The time lock persists for one round.
-As a standard action, he can make a special attack vs. Will against a creature within \rngmed range to bring it backwards through time to the point at which the time lock was created.
+As a standard action, he can make a special attack against the Mental defense of a creature within \rngmed range to bring it backwards through time to the point at which the time lock was created.
 An affected creature is perfectly restored to the point immediately after the time lock was created.
 The effects of any actions that the creature took in the intervening time are undone, any damage it dealt or took is removed, it is restored to its original location, and the creature is restored in all other ways, just as if the intervening time had never occured.
 The spellwarped cannot reverse time for himself in this way.
@@ -3226,7 +3226,7 @@ This functions like the temporal prison power, except that no attack is required
 \begin{dtable}
     \lcaption{The Wizard}
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolpoor} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Will} & \thead{Special} \\
+        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
         \wizardprogressionrow{1}  & Arcane invocation, spells, rituals \\
         \wizardprogressionrow{2}  & Arcane invocation, magic feat      \\
@@ -3508,7 +3508,7 @@ In contrast, a 2nd-level rogue/2nd-level cleric would have a \plus3 base attack 
 \parhead{Defenses}
 Add your character's levels in classes that grant the same base defense bonus progressions together, then sum those base defense bonuses to find your total base defense bonus.
 
-\par For example, a 3rd-level rogue/2nd-level ranger has a base Fortitude bonus of \plus5 (\plus1 from 3 levels in a class with a poor Fortitude defense and \plus4 from two levels in a class with a good Fortitude defense), a base Reflex bonus of \plus7 (from five levels in classes with good Reflex defenses), and a base Will bonus of \plus2 (from five levels in classes with poor Will defenses).
+\par For example, a 3rd-level rogue/2nd-level ranger has a base Fortitude bonus of \plus5 (\plus1 from 3 levels in a class with a poor Fortitude defense and \plus4 from two levels in a class with a good Fortitude defense), a base Reflex bonus of \plus7 (from five levels in classes with good Reflex defenses), and a base Mental defense bonus of \plus2 (from five levels in classes with poor Mental defenses).
 
 \parhead{Skills}
 When taking the first level in a class, if that class gives more skill points than the most skill points the character already received from a class, the character immediately gets skill points equal to the difference.
