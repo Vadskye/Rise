@@ -3,34 +3,28 @@ cleric_dex:
     dexterity: 
       progression: primary
       value: 3
-    constitution: 
-      progression: tertiary
-      value: 2
+    constitution: 2
     intelligence: 0
     perception: 0
     willpower: 
-      progression: secondary
+      progression: primary
       value: 3
 cleric_warrior:
     strength: 
       progression: primary
       value: 3
     dexterity: 0
-    constitution: 
-      progression: tertiary
-      value: 2
+    constitution: 2
     intelligence: 0
     perception: 0
     willpower: 
-      progression: secondary
+      progression: primary
       value: 4
 deekin:
     strength: 0
-    dexterity: 
-      progression: tertiary
-      value: 1
+    dexterity: 1
     constitution: 
-      progression: secondary
+      progression: primary
       value: 2
     intelligence: 
       progression: primary
@@ -39,12 +33,10 @@ deekin:
     willpower: -1
 druid:
     strength: 2
-    dexterity: 
-      progression: secondary
-      value: 3
+    dexterity: 2
     constitution: 
-      progression: tertiary
-      value: 2
+      progression: primary
+      value: 3
     intelligence: 0
     perception: 
       progression: primary
@@ -54,21 +46,17 @@ garruk:
     strength: 
       progression: primary
       value: 5
-    dexterity: 
-      progression: tertiary
-      value: 3
+    dexterity: 3
     constitution: 2
     intelligence: 0
     perception: 
-      progression: secondary
+      progression: primary
       value: 3
     willpower: -1
 monk:
-    strength: 
-      progression: tertiary
-      value: 2
+    strength: 2
     dexterity: 
-      progression: secondary
+      progression: primary
       value: 3
     constitution: 2
     intelligence: 0
@@ -81,23 +69,19 @@ muerdoc:
     dexterity: 
       progression: primary
       value: 3
-    constitution: 
-      progression: tertiary
-      value: 2
+    constitution: 2
     intelligence: 0
     perception: 
-      progression: secondary
+      progression: primary
       value: 4
     willpower: -1
 npc_warrior:
     strength: 
       progression: primary
       value: 2
-    dexterity: 
-      progression: tertiary
-      value: 1
+    dexterity: 1
     constitution: 
-      progression: secondary
+      progression: primary
       value: 2
     intelligence: 0
     perception: 0
@@ -117,11 +101,9 @@ silk:
       value: 4
 sorcerer:
     strength: 0
-    dexterity: 
-      progression: tertiary
-      value: 2
+    dexterity: 2
     constitution: 
-      progression: secondary
+      progression: primary
       value: 3
     intelligence: 0
     perception: 0
@@ -133,11 +115,9 @@ spellwarped_alteration:
       progression: primary
       value: 6
     dexterity: 2
-    constitution:
-      progression: tertiary
-      value: 2
+    constitution: 2
     intelligence: 
-      progression: secondary
+      progression: primary
       value: 3
     perception: 0
     willpower: 0
@@ -145,74 +125,62 @@ warrior:
     strength:
       progression: primary
       value: 4
-    dexterity: 
-      progression: tertiary
-      value: 2
+    dexterity: 0
     constitution: 
-      progression: secondary
+      progression: primary
       value: 3
     intelligence: -1
     perception: 0
-    willpower: 0
+    willpower: 2
 warrior_dex:
-    strength: 
-      progression: secondary
-      value: 3
+    strength: 2
     dexterity: 
       progression: primary
       value: 4
     constitution: 
-      progression: tertiary
-      value: 2
+      progression: primary
+      value: 3
     intelligence: 0
     perception: 0
     willpower: 0
-warrior_dex_secondary:
+warrior_str_dex:
     strength: 
       progression: primary
       value: 4
     dexterity: 
-      progression: secondary
+      progression: primary
       value: 3
-    constitution: 
-      progression: tertiary
-      value: 2
+    constitution: 2
     intelligence: 0
     perception: 0
     willpower: 0
 warrior_dex_wis:
-    strength: 
-      progression: tertiary
-      value: 0
+    strength: 0
     dexterity: 
       progression: primary
       value: 4
     constitution: 2
     intelligence: 0
     perception:
-      progression: secondary
+      progression: primary
       value: 3
     willpower: 0
 warrior_int:
     strength:
       progression: primary
       value: 4
-    dexterity:
-      progression: tertiary
-      value: 2
+    dexterity: 2
     constitution: 0
     intelligence: 
-      progression: secondary
+      progression: primary
       value: 3
     perception: 0
     willpower: 0
 wizard:
     strength: 0
-    dexterity: 
-      progression: tertiary
-      value: 2
+    dexterity: 2
     constitution: 
-      progression: secondary
+      progression: primary
       value: 3
     intelligence: 
       progression: primary
@@ -223,13 +191,11 @@ wizard_will:
     strength: 0
     dexterity: 
       value: 0
-    constitution: 
-      progression: tertiary
-      value: 2
+    constitution: 2
     intelligence: 
       progression: primary
       value: 4
     perception: 0
     willpower:
-      progression: secondary
+      progression: primary
       value: 3

@@ -20,6 +20,16 @@ generic_variants:
     extra_feats:
       - two-weapon fighting
       - two-weapon defense
+  feats:
+    extra_feats:
+      - mighty blows
+      - deadly aim
+      - dodge
+      - mighty shot
+      - weapon finesse
+      - toughness
+      - predictive defense
+      - intuitive defense
   finesse:
     weapons:
       primary: light_melee
@@ -123,8 +133,14 @@ fighter:
         - armor discipline (agility)
       weapons:
         primary: light_melee
-    dex_secondary:
-      attributes: warrior_dex_secondary
+    dex_resilience:
+      attributes: warrior_dex
+      traits:
+        - armor discipline (resilience)
+      weapons:
+        primary: light_melee
+    str_dex:
+      attributes: warrior_str_dex
       traits:
         - armor discipline (agility)
 monk:
@@ -256,8 +272,8 @@ warrior:
       weapons:
         primary: light_melee
         secondary: ~
-    dex_secondary:
-      attributes: warrior_dex_secondary
+    str_dex:
+      attributes: warrior_str_dex
       armor: light
 wizard:
   name: Wizard
@@ -278,6 +294,8 @@ wizard:
       attack_mode: condition_spells
     damage:
       attack_mode: damage_spells
+    physical:
+      attack_mode: physical
     deekin:
       name: Deekin
       attributes: deekin

@@ -487,6 +487,26 @@ def std_scale(level):
 def bab_scale(base_attack_bonus):
     return 2+base_attack_bonus/4
 
+def attribute_scale(attribute):
+    if attribute >= 20:
+        return 6
+    elif attribute >= 10:
+        return 4
+    elif attribute >= 3:
+        return 2
+    else:
+        return 0
+
+def attribute_scale_combat(attribute):
+    if attribute >= 20:
+        return 6
+    elif attribute >= 10:
+        return 4
+    elif attribute >= 5:
+        return 2
+    else:
+        return 0
+
 def default_space(size, in_feet = False):
     space, reach, land_speed = get_size_statistics(size, in_feet)
     return space
