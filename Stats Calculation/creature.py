@@ -254,12 +254,12 @@ class Creature(object):
         self.shield = shield
 
         # attributes
-        self.add_modifier('strength', 'points', strength, update_static = False)
-        self.add_modifier('dexterity', 'points', dexterity, update_static = False)
-        self.add_modifier('constitution', 'points', constitution, update_static = False)
-        self.add_modifier('intelligence', 'points', intelligence, update_static = False)
-        self.add_modifier('perception', 'points', perception, update_static = False)
-        self.add_modifier('willpower', 'points', willpower, update_static = False)
+        self.add_modifier('strength', 'points', strength, update_static = True)
+        self.add_modifier('dexterity', 'points', dexterity, update_static = True)
+        self.add_modifier('constitution', 'points', constitution, update_static = True)
+        self.add_modifier('intelligence', 'points', intelligence, update_static = True)
+        self.add_modifier('perception', 'points', perception, update_static = True)
+        self.add_modifier('willpower', 'points', willpower, update_static = True)
         self.casting_attribute_name = casting_attribute_name
         self.special_attack_attribute_name = special_attack_attribute_name
 
@@ -308,7 +308,7 @@ class Creature(object):
         #self.traits = traits
 
     def set_default_modifiers(self):
-        self.add_modifier('physical_attacks', 'equipment', 2, update_static = True)
+        self.add_modifier('physical_attacks', 'proficiency', 4, update_static = True)
         #self.set_modifier('second_physical_attack_bonus', 'base', -5, update_static = True)
         #self.set_modifier('third_physical_attack_bonus', 'base', -10, update_static = True)
         #self.set_modifier('fourth_physical_attack_bonus', 'base', -15, update_static = True)
@@ -317,11 +317,8 @@ class Creature(object):
         self.set_modifier(['physical_defenses', 'special_defenses'], 'base', 10, update_static = True)
 
         self.add_modifier('fortitude', 'attribute_or_progression', lambda c: c.constitution + c.strength/2, update_static = True)
-        #self.add_modifier('fortitude', 'strength', lambda c: c.strength / 2, update_static = True)
         self.add_modifier('reflex', 'attribute_or_progression', lambda c: c.dexterity + c.perception / 2, update_static = True)
-        #self.add_modifier('reflex', 'perception', lambda c: c.perception / 2, update_static = True)
         self.add_modifier('will', 'attribute_or_progression', lambda c: c.willpower + c.intelligence / 2, update_static = True)
-        #self.add_modifier('will', 'intelligence', lambda c: c.intelligence / 2, update_static = True)
 
         #magic_item_modifiers = get_magic_item_modifiers()
         #for modifier_type, value in magic_item_modifiers.items():
@@ -340,9 +337,9 @@ class Creature(object):
         self.add_modifier('spellpower', 'attribute_or_progression', lambda c: c.willpower, update_static = True)
 
         self.add_modifier('physical_defenses', 'attribute_or_progression', lambda c: c.dexterity, update_static = True)
-        self.add_modifier('physical_defenses', 'attribute_or_progression', lambda c: c.constitution, update_static = True)
         self.add_modifier('physical_defenses', 'shield', lambda c: c.shield_bonus, update_static = True)
         self.add_modifier('armor_defense', 'attribute_or_progression', lambda c: c.base_attack_bonus, update_static = True)
+        self.add_modifier('armor_defense', 'attribute_or_progression', lambda c: c.constitution, update_static = True)
         self.add_modifier('armor_defense', 'armor', lambda c: c.armor_bonus, update_static = True)
         self.add_modifier('armor_defense', 'size', lambda c: c.size_modifier, update_static = True)
         self.add_modifier('maneuver_defense', 'attribute_or_progression', lambda c: c.base_attack_bonus, update_static = True)
@@ -351,8 +348,12 @@ class Creature(object):
 
         #self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.constitution / 2) * c.level, update_static = True)
         #self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.willpower / 2) * c.level, update_static = True)
-        self.add_modifier('hit_points', 'attribute_or_progression', lambda c: ((c.fortitude-10) / 2) * c.level, update_static = True)
-        self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.willpower / 2) * c.level, update_static = True)
+        self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.fortitude / 2) * c.level, update_static = True)
+        self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.will / 2) * c.level, update_static = True)
+        #self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.constitution + 5) * c.level, update_static = True)
+        #self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.strength/2 + 5) * c.level, update_static = True)
+
+        #self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.will / 2) * c.level, update_static = True)
 
         # all attributes increase every 5 levels
         # this doesn't stack with the primary/secondary/tertiary bonuses, so use
@@ -432,7 +433,8 @@ class Creature(object):
         self._static_modifiers['physical attack progression'] = self._calculate_physical_attack_progression()
         self._static_modifiers['physical attack attribute']   = self._calculate_physical_attack_attribute()
         self._static_modifiers['physical defense attribute']   = self._calculate_physical_defense_attribute()
-        if self.attack_mode in ('damage_spells', 'condition_spells'):
+        #if self.attack_mode in ('damage_spells', 'condition_spells'):
+        if self.has_spells:
             dice_count = max(1, self.spellpower/2)
             #print "dice count", dice_count
             self.spell_damage_dice = Dice(10, dice_count)
@@ -629,6 +631,10 @@ class Creature(object):
             return self.strength
 
     @property
+    def physical_attack_range(self):
+        return self.primary_weapon.attack_range
+
+    @property
     def physical_defense_attribute(self):
         return self.get_modifiers('physical defense attribute')
 
@@ -688,6 +694,10 @@ class Creature(object):
             return None
         else:
             return self.armor.encumbrance
+
+    @property
+    def is_encumbered(self):
+        return self.encumbrance is None or self.encumbrance == 'light'
 
     @property
     def armor_bonus(self):

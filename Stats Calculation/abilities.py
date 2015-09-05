@@ -8,24 +8,26 @@ def get_all_abilities():
         'deadly aim': {
             'modifiers': [
                 {
-                    'modifier_type': 'physical_attacks',
-                    'value': lambda c: -util.bab_scale(c.level) if c.strength >= 3 else 0,
-                },
-                {
                     'modifier_type': 'physical_damage',
-                    'value': lambda c: util.bab_scale(c.level) if c.dexterity >= 3 else 0,
+                    'value': lambda c: util.attribute_scale_combat(c.perception)/2
+                        if c.base_attack_bonus >= 6
+                        else 0,
                 },
             ],
         },
         'defensive fighting': {
             'modifiers': [
                 {
-                    'modifier_type': 'physical_attacks',
-                    'value': lambda c: -util.bab_scale(c.level),
-                },
-                {
                     'modifier_type': 'armor_defense',
-                    'value': lambda c: util.bab_scale(c.level),
+                    'value': 2,
+                },
+            ],
+        },
+        'dodge': {
+            'modifiers': [
+                {
+                    'modifier_type': 'physical_defenses',
+                    'value': dodge_modifier,
                 },
             ],
         },
@@ -34,6 +36,15 @@ def get_all_abilities():
                 {
                     'modifier_type': 'fortitude',
                     'value': 2,
+                },
+            ],
+        },
+        'intuitive defense': {
+            'modifiers': [
+                {
+                    'modifier_type': 'physical_defenses',
+                    'modifier_name': 'attribute_or_progression',
+                    'value': lambda c: c.perception,
                 },
             ],
         },
@@ -53,17 +64,32 @@ def get_all_abilities():
                 },
             ],
         },
-        'power attack': {
+        'mighty blows': {
             'modifiers': [
                 {
-                    'modifier_type': 'physical_attacks',
-                    #'value': lambda c: -util.bab_scale(c.level) if c.strength >= 3 else 0,
-                    'value': -2,
+                    'modifier_type': 'physical_damage',
+                    'value': lambda c: util.attribute_scale_combat(c.strength)
+                        if c.base_attack_bonus >= 6 and c.physical_attack_range == 'melee'
+                        else 0,
                 },
+            ],
+        },
+        'mighty shot': {
+            'modifiers': [
                 {
                     'modifier_type': 'physical_damage',
-                    #'value': power_attack_damage_modifier,
-                    'value': 2,
+                    'value': lambda c: util.attribute_scale_combat(c.strength)
+                        if c.base_attack_bonus >= 6 and c.physical_attack_range == 'ranged'
+                        else 0,
+                },
+            ],
+        },
+        'predictive defense': {
+            'modifiers': [
+                {
+                    'modifier_type': 'physical_defenses',
+                    'modifier_name': 'attribute_or_progression',
+                    'value': lambda c: c.intelligence,
                 },
             ],
         },
@@ -87,7 +113,7 @@ def get_all_abilities():
             'modifiers': [
                 {
                     'modifier_type': 'hit_points',
-                    'value': lambda c: max(3, c.level)
+                    'value': lambda c: (util.attribute_scale(c.constitution)/2) * c.level,
                 },
             ],
         },
@@ -113,6 +139,16 @@ def get_all_abilities():
                 },
             ],
         },
+        'weapon finesse': {
+            'modifiers': [
+                {
+                    'modifier_type': 'physical_damage',
+                    'value': lambda c: util.attribute_scale_combat(c.dexterity)/2
+                        if c.base_attack_bonus >= 6
+                        else 0,
+                },
+            ],
+        },
     }
 
     class_features = {
@@ -126,11 +162,6 @@ def get_all_abilities():
                 {
                     'modifier_type': 'physical_damage_reduction',
                     'value': lambda c: c.level / 2 if c.level > 5 else 0,
-                },
-                {
-                    'modifier_name': 'attribute_or_progression',
-                    'modifier_type': 'armor_defense',
-                    'value': lambda c: c.constitution if c.level >=13 else 0,
                 },
             ],
         },
@@ -391,6 +422,15 @@ def armor_discipline_agility_effect(creature):
 ####################
 #FEATS
 ####################
+
+def dodge_modifier(creature):
+    if creature.base_attack_bonus < 6:
+        return 0
+    base_modifier = util.attribute_scale_combat(creature.dexterity)
+    if creature.is_encumbered:
+        return base_modifier
+    else:
+        return base_modifier / 2
 
 def power_attack_damage_modifier(creature):
     if creature.strength < 3:
