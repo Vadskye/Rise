@@ -75,10 +75,11 @@ When an attribute changes, abilities and modifiers based on the attribute change
     \begin{dtabularx}{\textwidth}{l >{\lcol}p{10em} X}
         \thead{Effect Type} & \thead{Timing of Change} & \thead{Example} \\
         \hline
-        Numerical modifiers & Immediately & A barbarian enters a rage. His attack bonus increases immediately. \\
+        Numerical modifiers   & Immediately & A barbarian enters a rage. His attack bonus increases immediately. \\
+        Hit points            & Immediately & A wizard casts \spell{totemic power} to increase his Constitution. His maximum and current hit points immediately increase for the duration of the spell, then drop to their original values when the spell ends. \\
         Ability prerequisites & Immediately & A paladin's Strength is drained by a ghost. She loses the benefits of her Power Attack feat immediately. \\
-        Ability use limits & When ability uses are regained & A fighter puts on a magic item that grants additional Willpower. He gains additional daily uses of his combat discipline ability after resting for the night. \\
-        Skill points & On level up\fn{1} & A wizard reads an ancient magical tome that increases her Intelligence. Her skill points increase when she gains a level. \\
+        Ability use limits    & When ability uses are regained & A fighter puts on a magic item that grants additional Willpower. He gains additional daily uses of his combat discipline ability after resting for the night. \\
+        Skill points          & On level up\fn{1} & A wizard reads an ancient magical tome that increases her Intelligence. Her skill points increase when she gains a level. \\
     \end{dtabularx}
     1. Skill points are never affected by spells, worn magic items, or other temporary effects.
 \end{dtable*}
@@ -190,10 +191,12 @@ As a standard action, you can try to strike a foe with a weapon you are wielding
 Your attack modifier is equal to the following:
 
 \begin{figure}[h]
-    \centering Base attack bonus or attack attribute \meh{\add enhancement bonus} \add size modifier \add other bonuses and penalties
+    \centering Base attack bonus or attack attribute \add proficiency bonus \meh{\add enhancement bonus} \add size modifier \add other bonuses and penalties
 \end{figure}
 
-You can use Strength to attack with melee and thrown weapons, Dexterity to attack with melee and thrown weapons that are light, and Perception to attack with projectile weapons. Your size modifier is described in \tref{Size in Combat}.
+\parhead{Attack Attribute} You can use Strength to attack with melee and thrown weapons, Dexterity to attack with melee and thrown weapons that are light, and Perception to attack with projectile weapons. 
+\parhead{Proficiency Bonus} You gain a \plus4 attack bonus when using a weapon you are proficient with.
+\parhead{Size Modifier} Your size modifier is described in \tref{Size in Combat}.
 
 \subsubsection{Damage}
 If your attack succeeds, you deal damage equal to your weapon's damage die \add half your base attack bonus or half your Strength.
@@ -259,13 +262,23 @@ When you move, you can travel a number of feet up to your speed in any direction
 You can't move diagonally past a corner. You can move diagonally past a creature, even an opponent. You can also move diagonally past other impassable obstacles, such as pits.
 \parhead{Closest Creature} When it's important to determine the closest square or creature to a location, if multiple squares or creatures are equally close, pick one randomly.
 
+
+\subsubsection{Combat Engagement}
+
+At the start of each phase, if you are threatened by any enemies, you are engaged in combat until the end of the phase. While engaged in combat, you move at half speed.
 \subsection{Injury, Death, and Healing}\label{Injury, Death, and Healing}
 Your hit points measure how hard you are to kill. No matter how many hit points you lose, your character isn't significantly hindered until your hit points drop to 0.
 
 \subsubsection{Hit Points}
 Your hit points represent how much punishment you can take. When you run out of hit points, your actions are limited and you might die.
 
-Your hit points are equal to your \term{hit value} \mtimes your level. Your hit value is equal to half your Constitution, half your Willpower, or half your base Fortitude bonus, whichever is higher. Your base Fortitude bonus is simply your Fortitude bonus from class levels, and is not affected by spells or other temporary effects which can modify your defenses.
+Your hit points are equal to your \term{hit value} \mtimes your level. Your hit value is calculated as follows:
+
+\begin{figure}[h]
+    \centering Constitution or half base Fortitude bonus \add 5 \add other bonuses or penalties
+\end{figure}
+
+Your base Fortitude bonus is simply your Fortitude bonus from class levels, and is not affected by spells or other temporary effects which can modify your defenses.
 
 \subsubsection{Losing Hit Points}
 When you take lethal damage, you subtract that damage from your hit points.
@@ -369,11 +382,11 @@ When you roll a natural 20 on an attack roll and hit, you have scored a critical
 %Keen weapons threaten a critical hit on a 19 or 20, while impact weapons deal triple damage when they score a critical hit.
 
 \subsubsection{Unarmed Combat}\label{Unarmed Combat}
-Every creature can attack with its body using an unarmed strike. You cannot defend yourself with an unarmed strike, so you are \defenseless while unarmed. You may use any appropriate part of your body to make an unarmed strike - fists, feet, elbows, and so on. However, you only have one unarmed strike attack. You cannot dual-wield unarmed strikes as if you were fighting with two weapons at once.
+Every creature can attack with its body using an unarmed attack. You are not proficient with your unarmed attack, so you are usually \defenseless while unarmed. In addition, an unarmed attack always deals nonlethal damage. You may use any appropriate part of your body to make an unarmed strike - fists, feet, elbows, and so on. However, you only have one unarmed strike attack. You cannot dual-wield unarmed attacks as if you were fighting with two weapons at once (see \pcref{Two-Weapon Fighting}).
 
-An unarmed strike is a type of natural weapon. Spells and abilities that affect natural weapons can affect your unarmed strike. Gauntlets can also be worn to increase the power of an unarmed strike (see \pcref{Unarmed Weapons}).
+An unarmed attack is a type of natural weapon. Spells and abilities that affect natural weapons can affect your unarmed attack. Gauntlets can also be worn to increase the power of an unarmed attack (see \pcref{Unarmed Weapons}).
 
-If you have the Improved Unarmed Strike feat, you treat your unarmed strike as if it were a lethal weapon. This allows you to defend yourself while unarmed, just as if you were using another melee weapon.
+If you have the Improved Unarmed Combat feat, you become proficient with your unarmed attack, and can deal lethal damage with it (see Improved Unarmed Combat, \pref{feat:Improved Unarmed Combat}).
 \section{Legend Points}\label{Legend Points}
 
 As your character gains levels, she may gain legend points. Legend points allow you to change fate to ensure your character succeeds. Certain abilities can also grant offensive or defensive legend points.
