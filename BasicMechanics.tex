@@ -12,7 +12,7 @@ Strength measures muscle and physical power.
     \item Strength can be used to attack with melee and thrown weapons.
     \item Strength can be used for Maneuver defense.
     \item Strength can be used for Climb, Jump, Sprint, and Swim checks.
-    \item Half Strength is added to Fortitude defense.
+    \item Half Strength is added to Fortitude defense, which can affect your hit points.
 \end{itemize}
 
 \subsubsection{Dexterity (Dex)}
@@ -26,8 +26,8 @@ Dexterity measures hand-eye coordination, agility, and reflexes.
 \subsubsection{Constitution (Con)}
 Constitution represents your character's health and stamina.
 \begin{itemize}
-    \item Constitution can be used for Armor and Fortitude defense.
-    \item Constitution can increase the hit points gained at each level.
+    \item Constitution can be used for Armor defense.
+    \item Constitution is added to Fortitude defense, which can affect your hit points.
 \end{itemize}
 
 \subsubsection{Intelligence (Int)}
@@ -36,7 +36,7 @@ Intelligence determines how well your character learns and reasons. It affects y
 \begin{itemize}
     \item Intelligence is added to Craft, Disguise, Heal, Knowledge, and Linguistics checks.
     \item Half Intelligence is added to the number of skill points a character gets.
-    \item Half Intelligence is added to Will defense.
+    \item Half Intelligence is added to Will defense, which can affect your hit points.
 \end{itemize}
 
 \par An animal has an Intelligence score of \minus6 or lower. A creature of humanlike intelligence has a score of at least a \minus5 Intelligence.
@@ -53,8 +53,7 @@ Perception describes a character's ability to observe and be aware of one's surr
 \subsubsection{Willpower (Wil)}
 Willpower measures a character's ability to endure mental hardships.
 \begin{itemize}
-    \item Willpower can be used for Will defense.
-    \item Willpower can be used to increase the hit points gained at each level.
+    \item Willpower can be used for Will defense, which can affect your hit points.
 \end{itemize}
 
 \subsection{Using Attributes}
@@ -269,16 +268,18 @@ At the start of each phase, if you are threatened by any enemies, you are engage
 \subsection{Injury, Death, and Healing}\label{Injury, Death, and Healing}
 Your hit points measure how hard you are to kill. No matter how many hit points you lose, your character isn't significantly hindered until your hit points drop to 0.
 
-\subsubsection{Hit Points}
+\subsubsection{Hit Points}\label{Hit Points}
 Your hit points represent how much punishment you can take. When you run out of hit points, your actions are limited and you might die.
 
 Your hit points are equal to your \term{hit value} \mtimes your level. Your hit value is calculated as follows:
 
 \begin{figure}[h]
-    \centering Constitution or half base Fortitude bonus \add 5 \add other bonuses or penalties
+    \centering Half Fortitude defense or half Will defense \add other bonuses or penalties
 \end{figure}
 
-Your base Fortitude bonus is simply your Fortitude bonus from class levels, and is not affected by spells or other temporary effects which can modify your defenses.
+\parhead{Temporary Modifiers} Temporary effects which alter your Fortitude or Will defenses, including changes to your Constitution or Willpower, do not alter your maximum or current hit points.
+Your maximum number of hit points is determined when you gain a level, and generally does not change between levels.
+Some effects specifically modify your maximum hit points, such as the \spell{curse of blood and bone} spell.
 
 \subsubsection{Losing Hit Points}
 When you take lethal damage, you subtract that damage from your hit points.
