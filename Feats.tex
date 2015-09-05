@@ -165,7 +165,6 @@ Some strike feats instead require a specific action to use.
         \featref{Deathless} & Con 10 & Immune to death effects & \featpref{Deathless} \\
         \featref{Destructive} & Str 3 & Gain \plus5 to break things & \featpref{Destructive} \\
         \featref{Fearless} & Wil 10 & Immune to fear effects & \featpref{Fearless} \\
-        \featref{Great Fortitude} & Con 3 & \plus2 bonus to Fortitude defense & \featpref{Great Fortitude} \\
         \featref{Iron Will} & Wil 3 & \plus2 bonus to Mental defense & \featpref{Iron Will} \\
         \featref{Lightning Reflexes} & Dex 3 &  \plus2 bonus to Reflex defense & \featpref{Lightning Reflexes} \\
         \featref{Mental Resilience} & Wil 3 & Gain bonus hit points & \featpref{Mental Resilience} \\
@@ -173,7 +172,7 @@ Some strike feats instead require a specific action to use.
         \featref{Pierce Delusions} & Per 10 & Immune to delusion effects & \featpref{Pierce Delusions} \\
         \featref{Stubborn} & Wil 10 & Immune to compulsion effects & \featpref{Stubborn} \\
         \featref{Swift} & \x & Increase speed by 5 feet & \featpref{Swift} \\
-        \featref{Toughness} & Con 3 & Gain bonus hit points & \featpref{Toughness} \\
+        \featref{Toughness} & Con 3 & \plus2 to Fortitude defense & \featpref{Toughness} \\
 
         \midrule
         \thead{Bane Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
@@ -1091,11 +1090,6 @@ This does not allow you to overwhelm a creature by yourself.
 \featpres Dwarf, gnome, or halfling.
 \featben You gain a \plus2 bonus to physical defenses against creatures of size Large or larger.
 
-\feat{Great Fortitude}{General}
-\featpre Constitution 3.
-\featben You gain a \plus2 bonus to your Fortitude defense.
-This bonus increases to \plus4 at Constitution 10, and to \plus6 at Constitution 20.
-
 \feat{Guardian}{Combat, Defense, Style}
 \featben Allies adjacent to you reduce their overwhelm penalties by 2.
 If this effect reduces an ally's overwhelm penalty to 0, the ally is not considered to be overwhelmed.
@@ -1293,6 +1287,7 @@ If you hit, you deal damage normally, and you can make an Intimidate check again
 \featpre Willpower 3.
 \featben You gain a \plus2 bonus to your Mental defense.
 This bonus increases to \plus4 at Willpower 10, and to \plus6 at Willpower 20.
+This bonus can increase your hit points (see \pcref{Hit Points}).
 
 \feat{Killing Blow}{Combat, Precision, Strike}
 \featpre Intelligence 10, three attacks.
@@ -1612,13 +1607,13 @@ You may still cast only one spell, but it is used to counter the spells cast by 
 
 \feat{Mighty Blows}{Combat, Power}
 \featpres Str 5, two attacks.
-\featben You gain a \plus2 bonus to physical melee damage rolls.
-This bonus increases to \plus4 at Strength 10, and to \plus6 at Strength 20.
+\featben You increase the size of your weapon damage die with melee attacks by one size (see \tref{Weapon Damage and Size}).
+You increase the size of the damage die by two sizes at Strength 10, and by three sizes at Strength 20.
 
 \feat{Mighty Shot}
 \featpres Str 5, two attacks.
-\featben You gain a \plus2 bonus to physical ranged damage rolls.
-This bonus increases to \plus4 at Strength 10, and to \plus6 at Strength 20.
+\featben You increase the size of your weapon damage die with ranged attacks by one size (see \tref{Weapon Damage and Size}).
+You increase the size of the damage die by two sizes at Strength 10, and by three sizes at Strength 20.
 
 \feat{Mental Resilience}{General}
 \featpre Willpower 3.
@@ -2092,8 +2087,9 @@ If you detect a trap partway through your movement, you may immediately stop mov
 
 \feat{Toughness}{General}
 \featpre Constitution 3.
-\featben You gain 1 bonus hit point per level.
-This bonus increases to 2 hit points per level at Constitution 10, and to 3 hit points per level at Constitution 20.
+\featben You gain a \plus2 bonus to your Fortitude defense.
+This bonus increases to \plus4 at Constitution 10, and to \plus6 at Constitution 20.
+This bonus can increase your hit points (see \pcref{Hit Points}).
 
 \feat{Track}{Skill}
 \featben To find tracks or to follow them for 1 mile requires a successful Survival check.
