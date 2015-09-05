@@ -103,7 +103,7 @@ def normalize_ac(creature):
 def print_generic_stats(level):
     print "Generic stats for comparison"
     print "AC %s, MC %s" % (get_generic_ac_real()[level], 0)
-    print "HP %s, Fort %s, Ref %s, Will %s" % (get_generic_hp()[level],
+    print "HP %s, Fort %s, Ref %s, Ment %s" % (get_generic_hp()[level],
             0, 0, 0)
 
 def generate_creatures(creature_keys, data, level = None, extra_variants = None):
@@ -360,7 +360,7 @@ def print_creature_groups(ally_groups, enemy_groups):
         #print ally.get_modifiers('armor_defense', as_dict = True)
         #print ally.get_modifiers('maneuver_defense', as_dict = True)
         #print ally.get_modifiers('reflex', as_dict = True)
-        #print ally.get_modifiers('will', as_dict = True)
+        #print ally.get_modifiers('mental', as_dict = True)
         #print ally.get_modifiers('primary_weapon_size', as_dict = True)
         #print ally.primary_weapon.damage_die
         #print ally.armor_class.get_details()

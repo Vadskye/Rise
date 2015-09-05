@@ -74,7 +74,7 @@ barbarian:
   bab: good
   fortitude: good
   reflex: average
-  will: poor
+  mental: poor
   hit_value: 7
   special_attack_attribute: willpower
   weapons:
@@ -93,7 +93,7 @@ cleric:
   bab: average
   fortitude: average
   reflex: poor
-  will: good
+  mental: good
   hit_value: 5
 druid:
   name: Druid
@@ -104,7 +104,7 @@ druid:
   bab: average
   fortitude: good
   reflex: poor
-  will: average
+  mental: average
   hit_value: 5
   variants:
     garruk:
@@ -122,7 +122,7 @@ fighter:
   bab: good
   fortitude: good
   reflex: poor
-  will: average
+  mental: average
   hit_value: 6
   traits:
     - armor discipline (resilience)
@@ -151,7 +151,7 @@ monk:
   bab: good
   fortitude: average
   reflex: good
-  will: good
+  mental: good
   hit_value: 5
   weapons:
     primary: unarmed
@@ -173,7 +173,7 @@ paladin:
   bab: good
   fortitude: good
   reflex: poor
-  will: good
+  mental: good
   hit_value: 6
   variants:
     2wf:
@@ -199,7 +199,7 @@ ranger:
   bab: good
   fortitude: good
   reflex: good
-  will: average
+  mental: average
   hit_value: 6
   feats:
     - two-weapon fighting
@@ -216,7 +216,7 @@ rogue:
   bab: average
   fortitude: poor
   reflex: good
-  will: average
+  mental: average
   hit_value: 5
   variants:
     silk:
@@ -234,7 +234,7 @@ sorcerer:
   bab: poor
   fortitude: poor
   reflex: poor
-  will: good
+  mental: good
   hit_value: 4
 spellwarped:
   name: Spellwarped
@@ -245,7 +245,7 @@ spellwarped:
   bab: good
   fortitude: good
   reflex: average
-  will: average
+  mental: average
   hit_value: 5
   variants:
     alteration:
@@ -261,7 +261,7 @@ warrior:
   bab: good
   fortitude: good
   reflex: poor
-  will: poor
+  mental: poor
   hit_value: 6
   feats:
     - shield expertise
@@ -285,7 +285,7 @@ wizard:
   bab: poor
   fortitude: poor
   reflex: poor
-  will: good
+  mental: good
   hit_value: 4
   attack_mode: damage_spells
   is_spellcaster: True
@@ -304,5 +304,5 @@ wizard:
       weapons:
         primary: medium_melee
         secondary: ~
-    will:
+    mental:
       attributes: wizard_will
