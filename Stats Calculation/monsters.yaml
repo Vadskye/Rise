@@ -3,7 +3,7 @@ creature_types:
     bab: average
     fortitude: average
     reflex: poor
-    will: good
+    mental: good
     hit_value: 5
     natural_armor: poor
     traits:
@@ -12,7 +12,7 @@ creature_types:
     bab: average
     fortitude: good
     reflex: average
-    will: poor
+    mental: poor
     hit_value: 5
     natural_armor: poor
     traits:
@@ -22,7 +22,7 @@ creature_types:
     bab: average
     fortitude: poor
     reflex: poor
-    will: poor
+    mental: poor
     hit_value: 5
     natural_armor: average
     traits:
@@ -32,20 +32,20 @@ creature_types:
     bab: poor
     fortitude: poor
     reflex: average
-    will: average
+    mental: average
     hit_value: 4
     natural_armor: poor
   humanoid:
     bab: poor
     fortitude: poor
     reflex: poor
-    will: poor
+    mental: poor
     hit_value: 4
   ideal:
     bab: good
     fortitude: average
     reflex: average
-    will: average
+    mental: average
     hit_value: 6
     traits:
       - ideal
@@ -53,7 +53,7 @@ creature_types:
     bab: average
     fortitude: average
     reflex: average
-    will: poor
+    mental: poor
     hit_value: 5
     natural_armor: poor
     traits:
@@ -62,14 +62,14 @@ creature_types:
     bab: average
     fortitude: average
     reflex: poor
-    will: poor
+    mental: poor
     hit_value: 5
     natural_armor: poor
   ooze:
     bab: poor
     fortitude: average
     reflex: poor
-    will: poor
+    mental: poor
     hit_value: 6
     traits:
       - ooze
@@ -77,7 +77,7 @@ creature_types:
     bab: average
     fortitude: average
     reflex: average
-    will: average
+    mental: average
     hit_value: 5
     natural_armor: poor
     traits:
@@ -86,7 +86,7 @@ creature_types:
     bab: poor
     fortitude: average
     reflex: poor
-    will: poor
+    mental: poor
     hit_value: 5
     natural_armor: poor
     traits:
@@ -95,7 +95,7 @@ creature_types:
     bab: poor
     fortitude: poor
     reflex: poor
-    will: average
+    mental: average
     hit_value: 5
     natural_armor: poor
     traits:
@@ -550,7 +550,7 @@ orc:
     languages: Orc
     #fluff
     description: Orcs usually have black hair, lupine ears and reddish eyes. They prefer wearing vivid colors that many humans would consider unpleasant, such as blood red, mustard yellow, yellow-green, and deep purple. Their equipment is dirty and unkempt. An adult male orc is about six and a half feet tall and weighs about 250 pounds.  Females are slightly smaller. The language an orc speaks varies slightly from tribe to tribe, but any orc is understandable by someone else who speaks Orc. Some orcs know Goblin or Giant as well. Most orcs encountered away from their homes are warriors.
-    combat: Orcs tend towards larger weapons, preferring those that cause the most damage in the least time. Though they will freely take advantage of any advantage afforded them in battle, orcs are honorable in victory or defeat. They willingly take prisoners and always spare noncombatants -- it is dishonorable for an orc to fight someone unable or unwilling to fight back.
+    combat: Orcs tend towards larger weapons, preferring those that cause the most damage in the least time. Though they mental freely take advantage of any advantage afforded them in battle, orcs are honorable in victory or defeat. They willingly take prisoners and always spare noncombatants -- it is dishonorable for an orc to fight someone unable or unwilling to fight back.
     variants:
       warrior:
         templates:

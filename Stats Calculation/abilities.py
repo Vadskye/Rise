@@ -51,7 +51,7 @@ def get_all_abilities():
         'iron will': {
             'modifiers': [
                 {
-                    'modifier_type': 'will',
+                    'modifier_type': 'mental',
                     'value': 2,
                 },
             ],
@@ -281,7 +281,7 @@ def get_all_abilities():
             'modifiers': [
                 {
                     'modifier_name': 'intelligence',
-                    'modifier_type': 'will',
+                    'modifier_type': 'mental',
                     'value': lambda c: c.perception / 2 if c.level >= 5 else 0,
                 },
             ],

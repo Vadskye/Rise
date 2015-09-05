@@ -9,7 +9,7 @@ import random
 
 modifier_type_mappings = {
     'physical_defenses': ['armor_defense', 'maneuver_defense', 'reflex'],
-    'special_defenses': ['fortitude', 'will'],
+    'special_defenses': ['fortitude', 'mental'],
     'defenses': ['physical_defenses', 'special_defenses'],
     'physical_attacks': ['first_physical_attack_bonus', 'second_physical_attack_bonus', 'third_physical_attack_bonus', 'fourth_physical_attack_bonus', 'fifth_physical_attack_bonus', 'extra_physical_attack_bonus'],
     'attacks': ['physical_attacks', 'spell_attack_bonus', 'special_attack_bonus'],
@@ -22,7 +22,7 @@ valid_modifier_types = set(
     maneuver_defense
     reflex
     fortitude
-    will
+    mental
     hit_points
     strength
     dexterity
@@ -85,7 +85,7 @@ def get_base_progression_modifiers(
         'reflex': get_special_defense_progression_modifier(
             reflex_progression, level
         ),
-        'will': get_special_defense_progression_modifier(
+        'mental': get_special_defense_progression_modifier(
             will_progression, level
         ),
         'natural_armor': get_natural_armor_progression(natural_armor_progression, level),
@@ -318,7 +318,7 @@ class Creature(object):
 
         self.add_modifier('fortitude', 'attribute_or_progression', lambda c: c.constitution + c.strength/2, update_static = True)
         self.add_modifier('reflex', 'attribute_or_progression', lambda c: c.dexterity + c.perception / 2, update_static = True)
-        self.add_modifier('will', 'attribute_or_progression', lambda c: c.willpower + c.intelligence / 2, update_static = True)
+        self.add_modifier('mental', 'attribute_or_progression', lambda c: c.willpower + c.intelligence / 2, update_static = True)
 
         #magic_item_modifiers = get_magic_item_modifiers()
         #for modifier_type, value in magic_item_modifiers.items():
@@ -349,11 +349,11 @@ class Creature(object):
         #self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.constitution / 2) * c.level, update_static = True)
         #self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.willpower / 2) * c.level, update_static = True)
         self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.fortitude / 2) * c.level, update_static = True)
-        self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.will / 2) * c.level, update_static = True)
+        self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.mental / 2) * c.level, update_static = True)
         #self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.constitution + 5) * c.level, update_static = True)
         #self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.strength/2 + 5) * c.level, update_static = True)
 
-        #self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.will / 2) * c.level, update_static = True)
+        #self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.mental / 2) * c.level, update_static = True)
 
         # all attributes increase every 5 levels
         # this doesn't stack with the primary/secondary/tertiary bonuses, so use
@@ -739,8 +739,8 @@ class Creature(object):
         return self.get_modifiers('reflex')
 
     @property
-    def will(self):
-        return self.get_modifiers('will')
+    def mental(self):
+        return self.get_modifiers('mental')
 
     @property
     def attributes(self):
@@ -953,7 +953,7 @@ class Creature(object):
         elif attack_type == 'maneuver':
             return self.maneuver_defense
         elif attack_type == 'spell':
-            return min(self.fortitude, self.reflex, self.will)
+            return min(self.fortitude, self.reflex, self.mental)
         else:
             raise Exception("Creature {0} does not have defense against attack type {1}".format(self.name, attack_type))
 
@@ -987,13 +987,13 @@ class Creature(object):
         )
 
     def _to_string_defenses(self):
-        text = "[HP] {0}; [Defs] AD {1}, MD {2}; Fort {3}, Ref {4}, Will {5}".format(
+        text = "[HP] {0}; [Defs] AD {1}, MD {2}; Fort {3}, Ref {4}, Ment {5}".format(
             self.hit_points,
             self.armor_defense,
             self.maneuver_defense,
             self.fortitude,
             self.reflex,
-            self.will,
+            self.mental,
         )
         # special defensive abilities
         if self.physical_damage_reduction is not 0:
@@ -1080,7 +1080,7 @@ class Creature(object):
             spellpower_progression = creature_data.get('is_spellcaster'),
             fortitude_progression = creature_data.get('fortitude'),
             reflex_progression = creature_data.get('reflex'),
-            will_progression = creature_data.get('will'),
+            will_progression = creature_data.get('mental'),
             natural_armor_progression = creature_data.get('natural_armor'),
             strength_progression = attributes.get('strength').get('progression'),
             dexterity_progression = attributes.get('dexterity').get('progression'),
