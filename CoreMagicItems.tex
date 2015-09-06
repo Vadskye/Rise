@@ -102,9 +102,9 @@ Items with full descriptions have their powers detailed, and each of the followi
 \begin{itemize}
 \itemhead{Aura:} Most of the time, a Spellcraft check will reveal the school of magic associated with a magic item and the strength of the aura an item emits. This information (when applicable) is given at the beginning of the item's notational entry. See the Spellcraft skill for details.
 
-\itemhead{Caster Level:} The next item in a notational entry gives the caster level of the item, indicating its relative power. The caster level determines the item's special defenses, as well as other level-dependent aspects of the powers of the item (if variable). It also determines the level that must be contended with should the item come under the effect of a dispel magic spell or similar situation. This information is given in the form ``CL x,'' where ``CL'' is an abbreviation for caster level and ``x'' is a number representing the caster level itself.
+\itemhead{Spellpower:} The next item in a notational entry gives the spellpower of the item, indicating its relative power. The spellpower determines the item's special defenses, as well as other level-dependent aspects of the powers of the item (if variable). It also determines the level that must be contended with should the item come under the effect of a dispel magic spell or similar situation. This information is given in the form ``CL x,'' where ``CL'' is an abbreviation for spellpower and ``x'' is a number representing the spellpower itself.
 
-For potions, scrolls, and wands, the creator can set the caster level of an item at any number high enough to cast the stored spell and not higher than her own caster level. For other magic items, the caster level is determined by the item itself. In this case, the creator's caster level must be as high as the item's caster level (and prerequisites may effectively put a higher minimum on the creator's level).
+For potions, scrolls, and wands, the creator can set the spellpower of an item at any number high enough to cast the stored spell and not higher than her own spellpower. For other magic items, the spellpower is determined by the item itself. In this case, the creator's spellpower must be as high as the item's spellpower (and prerequisites may effectively put a higher minimum on the creator's level).
 
 \itemhead{Requirements:} The qualifications that must be met to create the item, %described in \pcref{Creating Magic Items}.
 
@@ -203,7 +203,7 @@ The prices of enhancement bonuses to armor are listed in \trefnp{Magic Armor and
     \end{dtabularx}
 \end{dtable}
 
-\parhead{Caster Level for Armor and Shields} The caster level of a magic shield or magic armor with a special ability is given in the item description. For an item with only an enhancement bonus, the caster level is three times the enhancement bonus. If an item has both an enhancement bonus and a special ability, the higher of the two caster level requirements must be met.
+\parhead{Spellpower for Armor and Shields} The spellpower of a magic shield or magic armor with a special ability is given in the item description. For an item with only an enhancement bonus, the spellpower is three times the enhancement bonus. If an item has both an enhancement bonus and a special ability, the higher of the two spellpower requirements must be met.
 
 \parhead{Shields} Shield enhancement bonuses do not act as attack or damage bonuses when the shield is used in a bash. However, a shield can be enhanced as a weapon.
 
@@ -281,7 +281,7 @@ Feather armor reduces the armor check penalty of the armor it is on. The price o
     \end{dtabularx}
 \end{dtable}
 
-The caster level is equal to three times the item's penalty reduction. To craft the item, you must have a number of ranks in the relevant Craft skill equal to the item's caster level \add 4.
+The spellpower is equal to three times the item's penalty reduction. To craft the item, you must have a number of ranks in the relevant Craft skill equal to the item's spellpower \add 4.
 
 \mitemreq{Transmutation}{Augment}{1}{varies}{Craft (as armor) varies}
 
@@ -322,7 +322,7 @@ To affect a creature with spell resistance using a spell or spell-like ability, 
     \end{dtabularx}
 \end{dtable}
 
-The caster level is equal to three times the item's enhancement bonus. To craft the item, you must have a number of ranks in Craft (leather or metal) equal to the item's caster level \add 4.
+The spellpower is equal to three times the item's enhancement bonus. To craft the item, you must have a number of ranks in Craft (leather or metal) equal to the item's spellpower \add 4.
 
 \mitemreq{Transmutation}{Augment}{1}{varies}{Craft (leather or metal) varies}
 
@@ -341,7 +341,7 @@ The caster level is equal to three times the item's enhancement bonus. To craft 
     \end{dtabularx}
 \end{dtable}
 
-The caster level is equal to three times the item's bonus. To craft the item, you must have a number of ranks in Craft (leather or metal) equal to the item's caster level \add 4.
+The spellpower is equal to three times the item's bonus. To craft the item, you must have a number of ranks in Craft (leather or metal) equal to the item's spellpower \add 4.
 
 \mitemreqdesc{Abjuration}{Shielding}{Force}{1}{varies}{Craft (leather or metal) varies}
 
@@ -498,7 +498,7 @@ A ring of protection grants an enhancement bonus to your special defenses while 
     \end{dtabularx}
 \end{dtable}
 
-The caster level is equal to three times the item's enhancement bonus. To craft the item, you must have a number of ranks in Craft (jewelry) equal to the item's caster level \add 4.
+The spellpower is equal to three times the item's enhancement bonus. To craft the item, you must have a number of ranks in Craft (jewelry) equal to the item's spellpower \add 4.
 
 \mitemreq{Abjuration}{Shielding}{1}{varies}{Craft (jewelry) varies}
 
@@ -519,7 +519,7 @@ The caster level is equal to three times the item's enhancement bonus. To craft 
     \end{dtabularx}
 \end{dtable}
 
-The caster level is equal to three times the item's enhancement bonus. To craft the item, you must have a number of ranks in Craft (jewelry) equal to the item's caster level \add 4.
+The spellpower is equal to three times the item's enhancement bonus. To craft the item, you must have a number of ranks in Craft (jewelry) equal to the item's spellpower \add 4.
 
 \mitemreq{Transmutation}{Augment}{1}{varies}{Craft (jewelry) varies}
 
@@ -527,7 +527,7 @@ The caster level is equal to three times the item's enhancement bonus. To craft 
 
 \mitemreqdesc{Conjuration}{Translocation}{Planar}{6}{12th}{Craft (jewelry) 16}
 
-\appdescription{Amulet of Nondetection}{5,000}{10th}{Torso}{Moderate Abjuration (Shielding)}{8th}{\x} While you wear this silver amulet, it protects you from divination effects as the \ritual{nondetection} ritual. If a divination is attempted against you, the caster must make a caster level check against a DC equal to 15 \add your level (minimum DC 23).
+\appdescription{Amulet of Nondetection}{5,000}{10th}{Torso}{Moderate Abjuration (Shielding)}{8th}{\x} While you wear this silver amulet, it protects you from divination effects as the \ritual{nondetection} ritual. If a divination is attempted against you, the caster must make a spellpower check against a DC equal to 15 \add your level (minimum DC 23).
 
 \mitemreq{Abjuration}{Shielding}{3}{8th}{Craft (jewelry) 10}
 
@@ -552,7 +552,7 @@ The caster level is equal to three times the item's enhancement bonus. To craft 
 
 \mitemreq{Transmutation}{Augment}{5}{12th}{Craft (textiles) 16}
 
-\appdescription{Healing Belt}{200}{3rd}{Torso}{Faint Necromancy (Vitalism) [Positive]}{2nd}{Standard (specific action)} By grabbing the belt in one hand and touching a creature in the other (a standard action), you can heal the touched 2d6 or more points of damage, as the \spell{cure light wounds} spell. As normal for magic items, your caster level is equal to your level. If you heal yourself, you only need one hand free to grab the belt.
+\appdescription{Healing Belt}{200}{3rd}{Torso}{Faint Necromancy (Vitalism) [Positive]}{2nd}{Standard (specific action)} By grabbing the belt in one hand and touching a creature in the other (a standard action), you can heal the touched 2d6 or more points of damage, as the \spell{cure light wounds} spell. As normal for magic items, your spellpower is equal to your level. If you heal yourself, you only need one hand free to grab the belt.
 
 \mitemreqdesc{Necromancy}{Vitalism}{Positive}{1}{2nd}{Craft (textiles}
 
@@ -587,7 +587,7 @@ Magic weapons improve a character's combat abilities. They always provide an enh
 
 \parhead{Special Ability Limitations} The number of special abilities on the weapon cannot exceed the enhancement bonus of the weapon. Additionally, the price of all special abilities cannot exceed twice the price of the enhancement bonus on the weapon.
 
-\parhead{Caster Level for Weapons} The caster level of a magic weapon with a special ability is given in the item description. For an item with only an enhancement bonus, the caster level is three times the enhancement bonus. If an item has both an enhancement bonus and a special ability, the higher of the two caster level requirements must be met.
+\parhead{Spellpower for Weapons} The spellpower of a magic weapon with a special ability is given in the item description. For an item with only an enhancement bonus, the spellpower is three times the enhancement bonus. If an item has both an enhancement bonus and a special ability, the higher of the two spellpower requirements must be met.
 
 \parhead{Hardness and Hit Points} Each \plus1 of enhancement bonus adds 2 to a weapon's hardness and \plus10 to its hit points.
 
@@ -630,7 +630,7 @@ Magic ammunition loses its magic after being fired, whether it hits or misses.
     \end{dtabularx}
 \end{dtable*}
 
-\subsubsection{Bane} \parhead{Price (Level)} Special \parhead{Aura, Caster Level} Special \par
+\subsubsection{Bane} \parhead{Price (Level)} Special \parhead{Aura, Spellpower} Special \par
 A bane weapon excels at attacking a specific type of creature. Any weapon special ability can be designated as a ``bane'' ability, causing it to only function against a specific kind of creature. In exchange, the ability costs half the normal price in raw materials to add to the weapon. A list of possible foes is described on the following table.
 
 \begin{dtable}
@@ -848,7 +848,7 @@ Many holy symbols are designed to be worn as an amulet in addition to being held
 
 \subsection{Wands}
 
-A wand is a thin baton that enhances a spellcaster's power. Wands always provide an enhancement bonus to caster level with a particular school of magic. In addition to an enhancement bonus, wands may have special abilities or be made of an unusual material.
+A wand is a thin baton that enhances a spellcaster's power. Wands always provide an enhancement bonus to spellpower with a particular school of magic. In addition to an enhancement bonus, wands may have special abilities or be made of an unusual material.
 
 \parhead{Wand Prices} The prices of enhancement bonuses to wands are listed in \trefnp{Magic Wands}, and the prices of special abilities are listed on \trefnp{Wand Special Abilities}. If a wand has a special ability, the price of the special ability is added to the price of the wand.
 
@@ -932,12 +932,12 @@ Deciphering a scroll to determine its contents does not activate its magic unles
 
 To have any chance of activating a spell scroll, the scroll user must meet the following requirements.
 \begin{itemize}
-    \item The user's caster level must be at least equal to the scroll's caster level.
+    \item The user's spellpower must be at least equal to the scroll's spellpower.
     \item The user must have the spell on his or her spell list. The spell list must be of the same magic type as the scroll (arcane, divine, or nature).
     \item The user must have the minimum casting attribute required to cast spells of the scroll's spell level. For arcane magic, the minimum attribute is equal to the spell's level. For divine and nature magic, the minimum attribute is equal to half the spell's level.
 \end{itemize}
 
-\parhead{Determine Effect} A spell successfully activated from a scroll works exactly like a spell cast the normal way. The caster level of a spell cast from a scroll is equal to twice the spell's level.
+\parhead{Determine Effect} A spell successfully activated from a scroll works exactly like a spell cast the normal way. The spellpower of a spell cast from a scroll is equal to twice the spell's level.
 
 Once a scroll has been activated, the writing disappears from it, leaving behind only faint traces with no magical power.
 
@@ -989,9 +989,9 @@ Any corporeal creature can imbibe a potion. The potion must be swallowed, or in 
 
 A character can carefully administer a potion to an unconscious creature as a full-round action, trickling the liquid down the creature's throat. Likewise, it takes a full-round action to apply an oil to an unconscious creature. Exceptionally large objects or creatures require a greater time expenditure.
 
-\parhead{Potion Descriptions} The caster level for a standard potion is equal to twice the spell level of the spell in the potion. Common potions refer to potions of spells on the unrestricted arcane, divine, and nature lists. Any other spells, such as cleric domain spells and restricted arcane spells, are considered ``uncommon''.
+\parhead{Potion Descriptions} The spellpower for a standard potion is equal to twice the spell level of the spell in the potion. Common potions refer to potions of spells on the unrestricted arcane, divine, and nature lists. Any other spells, such as cleric domain spells and restricted arcane spells, are considered ``uncommon''.
 
-\parhead{Potion Mishaps} Extraordinarily powerful potions can be dangerous to imbibe. Whenever you use a potion, if the caster level of the potion exceeds your level, roll 1d20 and subtract the difference between your level and the potion's caster level. Compare the result to \trefnp{Potion Mishaps}.
+\parhead{Potion Mishaps} Extraordinarily powerful potions can be dangerous to imbibe. Whenever you use a potion, if the spellpower of the potion exceeds your level, roll 1d20 and subtract the difference between your level and the potion's spellpower. Compare the result to \trefnp{Potion Mishaps}.
 
 \begin{dtable}
     \lcaption{Potion Mishaps}
@@ -999,7 +999,7 @@ A character can carefully administer a potion to an unconscious creature as a fu
         \thead{Mishap Result} & \thead{Mishap Effect} \\
 \hline
         11\plus & No additional effects \\
-        6--10 & User also takes damage equal to the potion's caster level \\
+        6--10 & User also takes damage equal to the potion's spellpower \\
         1--5 & As above, and the user is nauseated for 1 round \\
         0 or below & As above, and the potion does not have its normal effect \\
     \end{dtabularx}
@@ -1212,7 +1212,7 @@ Magic items radiate magical auras which can be detected with the Spellcraft skil
 
 \subsection{Damaging Magic Items}
 
-A magic item is normally unharmed by attacks unless it is unattended or is specifically targeted by an effect. A magic item's special defenses are all equal to 10 \add the caster level of the item. The only exceptions to this are intelligent magic items, which apply their Charisma and Intelligence to their Mental defense.
+A magic item is normally unharmed by attacks unless it is unattended or is specifically targeted by an effect. A magic item's special defenses are all equal to 10 \add the spellpower of the item. The only exceptions to this are intelligent magic items, which apply their Charisma and Intelligence to their Mental defense.
 
 Magic items, unless otherwise noted, take damage as nonmagical items of the same sort. A damaged magic item continues to function, but if it is broken, its magic ceases to function until it is repaired. If it is destroyed, all its magical power is lost.
 
