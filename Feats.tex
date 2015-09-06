@@ -176,7 +176,7 @@ Some strike feats instead require a specific action to use.
         \midrule
         \thead{Bane Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
         \featref{Bane of the Weak Minded} & 2nd level Enchantment spell & Gain \plus1 against bewildered foes & \featpref{Bane of the Weak Minded} \\
-        \featref{Dragonbane} & Fought a dragon & Gain \plus2 against dragons & \featpref{Dragonbane} \\
+        \featref{Dragonbane} & Fight a dragon & Gain \plus2 against dragons & \featpref{Dragonbane} \\
 
         \midrule
         \thead{Bloodline Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
@@ -374,12 +374,10 @@ The table of combat feats is organized according to the number of physical attac
         \featref{Improved Unarmed Combat} & \x &  Considered armed even when unarmed & \x & \featpref{Improved Unarmed Combat} \\
         \tind \featref{Deflect Arrows} & Dex 3, Improved Unarmed Combat & Deflect ranged attacks with your bare hands & Finesse, Reaction & \featpref{Deflect Arrows} \\
         \tind \tind \featref{Snatch Arrows} & Dex 5, Deflect Arrows, Improved Unarmed Combat & Catch a deflected ranged attack & Finesse, Reaction & \featpref{Snatch Arrows} \\
-        \featref{Mounted Archery} & Ride 1 rank & Reduced penalty for ranged attacks while mounted by 4 & Mounted, Precision & \featpref{Mounted Archery} \\
-        \featref{Mounted Combat} & Ride 1 rank & Negate hits on mount with Ride check & Defense, Mounted & \featpref{Mounted Combat} \\
-        \featref{Mounted Trample} & Ride 8 ranks & Target cannot avoid mounted overrun & Mobility, Mounted & \featpref{Mounted Trample} \\
+        \featref{Mounted Archery} & Ride training & Reduced penalty for ranged attacks while mounted by 4 & Mounted, Precision & \featpref{Mounted Archery} \\
+        \featref{Mounted Defense} & Ride training & Negate hits on mount with Ride check & Defense, Mounted & \featpref{Mounted Defense} \\
+        \featref{Mounted Trample} & Ride 8 ranks & Target cannot avoid mounted overrun & Maneuver, Mounted & \featpref{Mounted Trample} \\
         \featref{Quick Draw} & \x & Draw weapon as swift action & Reaction & \featpref{Quick Draw} \\
-        \featref{Ride-By Attack} & Ride 8 ranks & Move before and after a mounted charge & Mobility, Mounted & \featpref{Ride-By Attack} \\
-        \tind \featref{Spirited Charge} & Ride-By Attack & Double damage with mounted charge & Mounted, Power & \featpref{Spirited Charge} \\
         \featref{Shield Proficiency} & \x & Become proficient with shields & Equipment & \featpref{Shield Proficiency} \\
         \tind \featref{Shield Expertise} & Shield Proficiency & \plus1 bonus to physical defenses while using a shield & Defense & \featpref{Shield Expertise} \\
         \featref{Tactical Analysis} & Int 3 & Identify foe's strengths and weaknesses & Awareness & \featpref{Tactical Analysis} \\
@@ -404,6 +402,7 @@ The table of combat feats is organized according to the number of physical attac
         \featref{Insightful Defense} & Per 5 & Use Perception for defenses & Awareness, Defense & \featpref{Insightful Defense} \\
         \featref{Mighty Blows} & Str 5 & Gain bonus damage with melee weapons & Power & \featpref{Mighty Blows} \\
         \featref{Mighty Shot} & Str 5 & Gain bonus damage with ranged weapons & Power & \featpref{Mighty Shot} \\
+        \featref{Mounted Charge} & Ride 8 ranks & Gain bonus damage with mounted charge & Mounted, Power & \featpref{Mounted Charge} \\
         \featref{Predictive Defense} & Int 5 & Use Intelligence for defenses & Awareness, Defense & \featpref{Predictive Defense} \\
         \featref{Tactical Prediction} & Int 5 & Predict foe's next action & Awareness & \featpref{Tactical Prediction} \\
         \featref{Two-Weapon Rend} & Str 5, Two-Weapon Fighting & Gain bonus damage when fighting with two weapons & Power & \featpref{Two-Weapon Rend} \\
@@ -606,43 +605,44 @@ If the target makes a physical attack against you during the current phase, this
 \feat{Celestial Blessing}{Bloodline, Celestial}
 \featpres
 Nonevil alignment, Celestial Heritage.
-\featben As a standard action, you can bless your allies, as the \spell{bless}
-spell.
-You can use this ability a number of times per day equal to the number of celestial bloodline feats you have.
+\featben As a standard action, you can spend a celestial point to bless your allies, as the \spell{bless} spell.
+If your celestial power is at least 10, this ability functions as \spell{mass bless} instead.
 
 \feat{Celestial Body}{Bloodline, Celestial}
 \featpres
 Nonevil alignment, Celestial Heritage.
-\featben You gain physical damage reduction 2/evil.
-This damage reduction allows you to ignore the first two points of damage you take each round.
-If you are hit by an evil-aligned attack, you cannot use your damage reduction for 1 round.
-
-If you have four or more celestial bloodline feats, your damage reduction increases to half your level (if that would be greater).
+\featben As a standard action, you can spend a celestial point to imbue your body with celestial resilience for a \durshort duration.
+You gain damage reduction against physical attacks equal to half your celestial power.
+This damage reduction allows you to ignore the first points of damage you take each round.
+Evil-aligned attacks ignore this damage reduction and negate it for 1 round.
 
 \feat{Celestial Heritage}{Bloodline, Celestial}
 \featpre Nonevil alignment.
-\featben You have the blood of a celestial creature in your veins.
-As a swift action, you can declare the next physical attack you make to be a smite.
-If you smite an evil creature, you gain a damage bonus equal to your level.
-You can use this ability a number of times per day equal to the number of celestial bloodline feats you possess.
+\featben You have the blood of a celestial creature in your veins, granting you celestial power.
+Your celestial power is equal to your Willpower, or your level \add the number of celestial bloodline feats you possess, whichever is higher.
+You have a pool with a number of celestial points equal to the number of celestial bloodline feats you possess.
+
+As a standard action, you can spend a celestial point to surround yourself in an aura of good for a \durshort duration.
+During that time, whenever an evil creature within \rngclose range of you attacks you, make an attack against its Mental defense.
+Your attack bonus is equal to your celestial power.
+Success means the attacking creature takes 1d6 damage per celestial power.
+
+If you have five or more celestial feats, this ability becomes permanent.
 
 \feat{Celestial Smiting}{Bloodline, Celestial}
-\featpres
-Nonevil alignment, Celestial Heritage.
-\featben Your smite attacks with your Celestial Heritage ability gain an attack bonus equal to the number of celestial bloodline feats you possess.
-In addition, you can use that ability a number of times per day equal to the number of celestial bloodline feats you have \add your Willpower.
+\featpres Nonevil alignment, Celestial Heritage.
+\featben As a swift action, you can spend a celestial point to make your next physical attack a smite attack.
+If your smite targets an evil creature, you gain an attack bonus equal to the number of celestial bloodline feats you possess, and a damage bonus equal to your celestial power.
 
 \feat{Celestial Soul}{Bloodline, Celestial}
-\featpres
-Nonevil alignment, any three celestial feats.
+\featpres Nonevil alignment, any three celestial feats.
 \featben You gain spell resistance against evil spells and spells cast by evil creatures.
-Your spell resistance is equal to 10 \add your level \add the number of celestial heritage feats you have.
+Your spell resistance is equal to 10 \add your celestial power.
 
 \feat{Celestial Spell Conduit}{Bloodline, Celestial}
-\featpres
-Nonevil alignment, Celestial Heritage.
-\featben You gain a \plus2 bonus to caster level with Evocation (Channeling) spells and spells from the Good domain.
-If you have four or more celestial bloodline feats, this bonus increases to \plus4.
+\featpres Nonevil alignment, Celestial Heritage.
+\featben You gain a \plus2 bonus to spellpower with Evocation (Channeling) spells and spells from the Good domain.
+If you have three or more celestial bloodline feats, this bonus increases to \plus4.
 
 \feat{Celestial Wings}{Bloodline, Celestial}
 \featpre Any three celestial bloodline feats.
@@ -1626,19 +1626,23 @@ This bonus increases to \plus4 at Strength 10, and to \plus6 at Strength 20.
 \featpres Dex 5, Whirlwind Strike, two attacks.
 \featben You can make a whirlwind strike as a standard action.
 
-\feat{Mounted Archery}{Combat}
-\featpre Ride 1 rank.
+\feat{Mounted Archery}{Combat, Mounted}
+\featpre Training in Ride.
 \featben The penalty you take when using a ranged weapon while mounted is decreased by 4: \minus0 instead of \minus4 if your mount is taking a double move, and \minus4 instead of \minus8 if your mount is running.
 
-\feat{Mounted Combat}{Combat}
-\featpre Ride 1 rank.
+\feat{Mounted Charge}{Combat, Mounted}
+\featpre Ride 8 ranks.
+\featben When you charge a creature with your mount, your weapon's damage die size increases by one per size category that your mount is larger than you (minimum one die size increase).
+For example, a Medium human charging on a Large horse would increase his weapon's damage die by one size.
+
+\feat{Mounted Defense}{Combat, Defense, Mounted}
+\featpre Training in Ride.
 \featben Once per round when your mount is hit in combat, you may attempt a Ride check as an immediate action to negate the hit.
 Your check result is used in place of the mount's physical defenses, if it is higher.
 If that would make the attack fail, the attack fails.
 
-\feat{Mounted Trample}{Combat}
-\featpres
-Ride 8 ranks.
+\feat{Mounted Trample}{Combat, Mounted, Maneuver}
+\featpre Ride 8 ranks.
 \featben When you attempt to overrun an opponent while mounted, your target may not choose to avoid you.
 Your mount may make one attack with an appropriate natural weapon (hoof, claw, or other leg-based attack) against any target you knock down, gaining the normal \plus4 bonus to physical melee attacks against prone targets.
 
@@ -1853,12 +1857,6 @@ If you do, the counterspelled spell is turned back on the caster as if it were a
 spell.
 If it cannot be affected by \spell{spell turning}, such as if it is a spell that only affects the caster, it is simply countered as normal.
 
-\feat{Ride-By Attack}{Combat}
-\featpre Ride 8 ranks.
-\featben When you are mounted and use the charge action, you may move and attack as if with a standard charge and then move again (continuing the straight line of the charge).
-You do not need to attack from the closest possible space when making a ride-by attack.
-Your total movement for the round can't exceed the distance you could normally move on a mounted charge.
-
 \feat{Riposte}{Combat, Reaction}
 \featpres Dexterity 3, Parry.
 \featben When you successfully parry an attack from a foe you threaten, if your parry attempt exceeds your opponent's attack roll by 10 or more, your foe is \defenseless against you for 1 round.
@@ -1996,11 +1994,6 @@ You perform rituals twice as quickly.
 \featpres Ability to cast spells, Perform 8 ranks, any other Performance feat.
 \featben You can cast enchantment and illusion spells while sustaining a performance.
 The Spellcraft DC to identify those spells as they are cast increases by 10, as the performance disguises the magic.
-
-\feat{Spirited Charge}{Combat}
-\featpres
-Ride 1 rank, Ride-By Attack.
-\featben When mounted and using the charge action, you deal double damage with a melee weapon (or triple damage with a lance) on your attack at the end of the charge.%Spirited Charge
 
 \feat{Spring Attack}{Combat}
 \featpres Dex 5, Mobility, two attacks.
