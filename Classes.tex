@@ -260,7 +260,7 @@ If the attack succeeds, the foe is \taunted for 5 rounds.
 
 \subcf{12th -- Spellbreaker Rage (Su)}
 The barbarian gains spell resistance equal to 10 \add barbarian level or Constitution.
-To affect the barbarian with a spell, a caster must make an attack with its caster level.
+To affect the barbarian with a spell, a caster must make an attack with its spellpower.
 If the attack beats the barbarian's spell resistance, the spell works normally.
 Otherwise, the spell has no effect on the barbarian.
 
@@ -408,7 +408,7 @@ The domains are listed below.
 
 \cf{Clr}{Spells}
 A cleric casts divine spells using his devotion.
-A cleric's magic attack bonus is normally equal to his caster level.
+A cleric's spellpower is normally equal to his cleric level.
 However, see the Devotion ability, below.
 
 The number of spells a cleric knows is given on \trefnp{Cleric Spells Known}.
@@ -522,7 +522,7 @@ The cleric can refill his devotion pool by spending an hour in prayer, supplicat
 In addition, whenever the cleric performs a significant service to his deity or other spiritual inclinations, he may regain one devotion point.
 Extraordinary services may allow the cleric to regain more devotion points.
 
-If the cleric's devotion pool is at least half full, the cleric gains a \plus5 bonus to his cleric level when determining his caster level, spellpower, and the effects of his abilities.
+If the cleric's devotion pool is at least half full, the cleric gains a \plus5 bonus to his cleric level when determining his spellpower and the effects of his abilities.
 If his devotion pool is empty, he takes a \minus5 penalty to his cleric level for the same purposes.
 
 In addition, a cleric gains a \plus10 bonus to Knowledge (religion) checks made concerning his faith, such as questions about his deity or philosophy, religious rites, holy sites, and so on.
@@ -791,7 +791,7 @@ The cleric channels negative energy, except that it heals evil creatures.
 
 \subcf{Fire -- Mantle of Fire}
 As a swift action, the cleric can surround himself in a mantle of fire for 5 rounds.
-He gains the effect of a \spell{fire shield} spell, with a caster level equal to his cleric level \add half his domain attribute.
+He gains the effect of a \spell{fire shield} spell, with a spellpower equal to his cleric level.
 \subcf{Good -- Invoke Good}
 The cleric channels positive energy, except that it deals divine damage to evil creatures.
 
@@ -847,13 +847,13 @@ The cleric's attacks and spells ignore all damage reduction and hardness (but no
 \subcf{Earth -- Earth Glide}
 The cleric gains the earth glide ability, as an earth elemental.
 \subcf{Evil -- Avatar of Evil} The cleric continuously gains the benefits of the \spell{protection from good}
-spell, with a caster level equal to his cleric level \add half his domain attribute.
+spell, with a spellpower equal to his cleric level.
 If the effect is dispelled or suppressed, he can resume it as a swift action.
 \subcf{Fire -- Flaming Soul}
 The cleric gains the fire subtype, making him immune to fire but giving him a 50\% vulnerability to cold damage.
 In addition, whenever he deals fire damage to a creature, the creature is \ignited for 5 rounds.
 \subcf{Good -- Avatar of Good} The cleric continuously gains the benefits of the \spell{protection from evil}
-spell, with a caster level equal to his cleric level \add half his domain attribute.
+spell, with a spellpower equal to his cleric level.
 If the effect is dispelled or suppressed, he can resume it as a swift action.
 \subcf{Knowledge -- Combat Insight}
 The cleric gains a \plus2 bonus to physical attacks, checks, and special defenses against creatures he has identified with a successful Knowledge check.
@@ -861,8 +861,8 @@ The cleric gains a \plus2 bonus to physical attacks, checks, and special defense
 Once per round, if the cleric rolls less than a 10 on a d20, he may treat the result as if it were a 10, potentially causing him to succeed where he would have failed.
 You must declare the use of this ability before any additional effects from the roll are resolved.
 \subcf{Magic -- Spellfeeder}
-The cleric gains spell resistance equal to 10 \add cleric level \add Intelligence.
-To affect the cleric with a spell, a caster must make an attack with its caster level.
+The cleric gains spell resistance equal to 10 \add cleric level or Intelligence.
+To affect the cleric with a spell, a caster must make an attack with its spellpower.
 If the attack beats the cleric's spell resistance, the spell works normally.
 Otherwise, the spell has no effect on the cleric.
 
@@ -876,11 +876,11 @@ The cleric gains the larger than life ability, as the barbarian class feature (s
 The cleric gains perfect stride, as the ranger class feature.
 He constantly acts as if he were under the effect of a \spell{freedom} spell, except that it does not allow him to act normally underwater.
 \subcf{Trickery -- Exemplar of Deceit} The cleric continuously gains the benefits of the \spell{nondetection}
-spell, with a caster level equal to his cleric level \add half his domain attribute, except that it also protects him from any spells or effects which would prevent him from lying or reveal his lies.
+spell, with a spellpower equal to his cleric level, except that it also protects him from any spells or effects which would prevent him from lying or reveal his lies.
 If the effect is dispelled or suppressed, he can resume it as a swift action.
 \subcf{Vitality -- }
 \subcf{War -- Warmaster's Power} The cleric continuously gains the benefits of the \spell{greater divine favor}
-spell, with a caster level equal to his cleric level \add half his domain attribute.
+spell, with a spellpower equal to his cleric level.
 If the effect is dispelled or suppressed, he can resume it as a swift action.
 \subcf{Water -- Water's Flow}
 As a swift action, the cleric can transform himself into a rushing flow of water with a volume roughly equal to his normal volume until the end of his turn.
@@ -892,7 +892,7 @@ He may return to his normal form as a free action.
 If not even an ounce of water exists contiguously, his body reforms from the largest available parts of water, cut into pieces of appropriate size.
 This usually causes the cleric to die.
 \subcf{Wild -- Natural Power}
-Whenever the cleric is in natural terrain, he gains a \plus2 bonus to caster level and the improved natural casting ability, as the druid class feature (see Improved Natural Casting, \pref{Drd:Improved Natural Casting}).
+Whenever the cleric is in a natural environment, he gains the improved natural casting ability, as the druid class feature (see Improved Natural Casting, \pref{Drd:Improved Natural Casting}).
 
 \subsubsection{Ex-Clerics}
 A cleric who grossly violates the code of conduct required by his god loses all spells and supernatural cleric class features.
@@ -957,9 +957,8 @@ Druidic has its own alphabet.
 
 \cf{Drd}{Spells}
 A druid casts nature spells using her attunement with nature.
-A druid's magic attack bonus is normally equal to her caster level.
-Whenever she is in a natural environment, she may dismiss all her active spells and spend one hour attuning to the natural world.
-If she does so, she gains a \plus5 bonus to her caster level for as long as she stays in a natural environment, and for five minutes after leaving a natural environment.
+A druid's spellpower is normally equal to her druid level.
+However, see the Attunement ability, below.
 
 At 1st level, the druid knows one 1st level spell.
 At every level theareafter, she learns one additional spell.
@@ -1002,6 +1001,10 @@ Attuning to a natural environment for an hour, as described above, restores all 
 \cf{Drd}{Rituals}
 Druids can perform rituals to create unique magical effects (see \pcref{Rituals}).
 A druid begins play with a ritual book containing one nature ritual of her choice (see \pcref{Nature Rituals}).
+
+\cf{Drd}{Attunement}[Su]
+Whenever the druid is in a natural environment, she may dismiss all her active spells and spend one hour attuning to the natural world.
+If she does so, she regains all her spell slots. In addition, she gains a \plus5 bonus to her spellpower for as long as she stays in a natural environment, and for five minutes after leaving a natural environment.
 
 \cf{Drd}{Wild Speech}[Su]
 One of the first lessons a druid learns is how to communicate with animals.
@@ -1180,15 +1183,15 @@ She adds the options below to the list of abilities she can gain with her wild a
 and similar effects.
 In addition, she falls at half speed and takes no falling damage.
 \subcf{Heart of Earth} The druid gains the effects of the \spell{stoneskin}
-spell, with a caster level equal to her druid level \add half her Constitution.
+spell, with a spellpower equal to her druid level or Constitution.
 \subcf{Heart of Fire} The druid gains the effects of the warm version of the \spell{fire shield}
-spell, with a caster level equal to her druid level \add half her Constitution.
+spell, with a spellpower equal to her druid level or Constitution.
 \subcf{Heart of the Sun}
 The druid constantly radiates bright light out to a 100 foot radius (and shadowy illumination for an additional 100 feet).
 The illumination is so bright that she becomes hard to look at.
 Any creature attacking her from within the radius of bright light becomes dazzled for 5 rounds after the attack.
 \subcf{Heart of Oak} The druid gains the effects of the \spell{stoneskin}
-spell, with a caster level equal to her druid level \add half her Constitution, except that the damage reduction is overcome by fire instead of adamantine weapons.
+spell, with a spellpower equal to her druid level or Constitution, except that the damage reduction is overcome by fire instead of adamantine weapons.
 \subcf{Heart of Water} The druid gains the effects of the \spell{freedom}
 spell.
 \subcf{15th -- Air Mantle}
@@ -1649,7 +1652,7 @@ If her overwhelm penalty is reduced to 0, she is not considered to be overwhelme
 
 \cf{Mnk}[12th]{Perfect Soul}[Ex]
 The monk gains spell resistance equal to 10 \add monk level or Willpower.
-To affect the monk with a spell, a caster must make an attack with its caster level.
+To affect the monk with a spell, a caster must make an attack with its spellpower.
 If the attack beats the monk's spell resistance, the spell works normally.
 Otherwise, the spell has no effect on the monk.
 
@@ -1748,8 +1751,8 @@ At 2nd level, and every even level thereafter, the paladin gains an additional d
 Most divine powers have minimum paladin levels, as indicated in the title of the ability.
 Some divine powers are also restricted to paladins with specific devoted alignments.
 All divine powers are supernatural abilities unless otherwise noted.
-The paladin's special attack bonus with divine powers is equal to her paladin level \add her Willpower.
-If a divine power emulates a spell, her effective caster level is equal to her paladin level \add half her Willpower.
+The paladin's special attack bonus with divine powers is equal to her paladin level or her Willpower.
+If a divine power emulates a spell, her effective spellpower is equal to her paladin level or Willpower.
 
 Divine powers marked with an asterisk are called smite powers.
 Smite powers function like the smite divine power, except that they also have additional effects.
@@ -1831,7 +1834,7 @@ spell.
 \subcf{8th -- Break the Chains}
 As a standard action, the paladin can break all shackles, bindings, and locks within a \arealarge radius of her.
 Nonmagical objects are automatically broken.
-To break magical objects, the paladin must make a special attack against a DC of 10 \add the object's caster level.
+To break magical objects, the paladin must make a special attack against a DC equal to 10 \add the object's spellpower.
 \subcf{8th -- Freedom} This power functions like the \spell{freedom}
 spell.
 \subcf{10th -- Free the Mind}
@@ -1980,7 +1983,7 @@ At 10th level, and every 5 levels thereafter, the paladin gains an additional di
 She may have multiple divine presences active simultaneously, and suppress or resume them individually.
 Most divine presences have minimum paladin levels, as indicated in the title of the ability.
 All divine presences are supernatural abilities unless otherwise noted.
-If a divine power emulates a spell, the paladin's effective caster level is equal to her paladin level \add half her Willpower.
+If a divine power emulates a spell, the paladin's effective spellpower is equal to her paladin level or her Willpower.
 
 \parhead{Any Alignment}
 \subcf{Bolstering Aura}
@@ -2272,7 +2275,7 @@ In addition, he gains a \plus2 bonus to Knowledge checks relating to the plane a
 The ranger becomes even more difficult for his quarry to detect.
 He adds his quarry bonus to his Stealth checks against his quarry.
 In addition, he continuously benefits from the effect of the \spell{nondectection} spell against all attempts that his quarry makes to detect him magically.
-The effect uses a caster level equal to his ranger level \add half his perception.
+The effect uses a spellpower equal to his ranger level or Perception.
 
 \cf{Rgr}[12th]{Blindsense}[Ex]
 The ranger's perceptions are so finely honed that he can sense his enemies without seeing them.
@@ -2491,7 +2494,7 @@ This is an ambush attack, and only works once per creature.
 
 \subcf{12th -- Dispelling Ambush (Su)*}
 A creature damaged by this sneak attack is affected by a targeted \spell{dispel magic}.
-The caster level for this ability is equal to her rogue level \add half her Intelligence.
+The spellpower for this ability is equal to her rogue level or her Intelligence.
 This is an ambush attack, and only works once per creature.
 
 \subcf{12th -- Improved Evasion}
@@ -2593,7 +2596,7 @@ Armor of any type interferes with a sorcerer's arcane gestures, which can cause 
 \cf{Sor}{Spells}
 A sorcerer casts arcane spells using his Willpower.
 To learn or cast a spell, a sorcerer must have a Willpower at least equal to the spell's level.
-A sorcerer's magic attack bonus is equal to his caster level or his Willpower, whichever is higher.
+A sorcerer's spellpower is equal to his sorcerer level or Willpower, whichever is higher.
 
 At 1st level, the sorcerer knows one 1st level spell.
 At every level thereafter, the sorcerer learns one additional spell.
@@ -2703,7 +2706,7 @@ The level of the higher level spell is used to determine the bonus to the sorcer
 \cf{Sor}[13th]{Spell Resistance}[Ex]
 Repeated exposure to magic grants the sorcerer resistance to magical effects.
 The sorcerer gains spell resistance equal to 10 \add sorcerer level or Constitution.
-To affect the sorcerer with a spell, a caster must make an attack with its caster level.
+To affect the sorcerer with a spell, a caster must make an attack with its spellpower.
 If the attack beats the sorcerer's spell resistance, the spell works normally.
 Otherwise, the spell has no effect on the sorcerer.
 
@@ -2977,7 +2980,7 @@ If this would reduce the duration by more than one day, the duration is instead 
 
 \cf{Spl}[9th]{Spell Resistance}[Ex]
 The magic within the spellwarped allows him to completely ignore other magic, granting him spell resistance equal to 10 \add spellwarped level \add Constitution.
-To affect the spellwarped with a spell, a caster must make an attack with its caster level.
+To affect the spellwarped with a spell, a caster must make an attack with its spellpower.
 If the attack beats the spellwarped's spell resistance, the spell works normally.
 Otherwise, the spell has no effect on the spellwarped.
 
@@ -3275,11 +3278,10 @@ Many ancient tomes of magic are written in Draconic, and apprentice wizards ofte
 \cf{Wiz}{Spells}
 A wizard casts arcane spells using her Intelligence.
 To learn or cast a spell, a wizard must have an Intelligence at least equal to the spell's level.
-A wizard's magic attack bonus equals her caster level or her Intelligence, whichever is higher.
+A wizard's spellpower equals her wizard level or Intelligence, whichever is higher.
 
 The number of spells a wizard knows is given on \trefnp{Wizard Spells Known}.
 A wizard's spells are drawn from the common spells on the arcane spell list (see \pcref{Arcane Spells}).
-
 
 The number of spells a wizard can cast per day is given on \trefnp{Wizard Spell Slots}.
 
@@ -3544,14 +3546,14 @@ However, if a class grants proficiency with a specific weapon, it is not counted
 For example, a rogue/fighter gains proficiency with four weapon groups of his choice, and is additionally proficient with saps.
 
 \subsection{Spellcasters and Multiclassing}\label{Spellcasters and Multiclassing}
-The character gains spells from all of his or her spellcasting classes separately and tracks his spells per day, spells known, and caster level separately with each class.
+The character gains spells from all of his or her spellcasting classes separately and tracks his spells per day, spells known, and spellpower separately with each class.
 
 Characters with magical ability gain a special benefit when multiclassing.
 Such a character must choose a specific spellcasting class he has.
 For every two levels that a character has in nonmagical classes, up to the number of levels he has in his chosen spellcasting class, he increases his spellcasting ability with that class.
-This increases his spells per day, spells known, and caster level as if he had gained a level in his chosen spellcasting class.
+This increases his spells per day, spells known, and spellpower as if he had gained a level in his chosen spellcasting class.
 No class features or other abilities can be gained in this way.
 
 
-For example, Gish, a 2nd level fighter / 2th level wizard, would have the spells per day, spells known, and caster level of a 3rd level wizard.
+For example, Gish, a 2nd level fighter / 2th level wizard, would have the spells per day, spells known, and spellpower of a 3rd level wizard.
 If he gained two more fighter levels, his spellcasting ability would not increase.

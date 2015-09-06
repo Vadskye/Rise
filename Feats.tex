@@ -192,7 +192,7 @@ Some strike feats instead require a specific action to use.
         \tind \featref{Draconic Mind} & Any three dragon bloodline feats & Gain \plus1 to mental attribute & \featpref{Draconic Mind} \\
         \tind \featref{Draconic Scales} & Draconic Heritage & Gain natural armor & \featpref{Draconic Scales} \\
         \tind \featref{Draconic Senses} & Draconic Heritage & Gain low-light vision, possibly darkvision & \featpref{Draconic Senses} \\
-        \tind \featref{Draconic Spellpower} & Draconic Heritage & Gain bonus to caster level & \featpref{Draconic Spellpower} \\
+        \tind \featref{Draconic Spellpower} & Draconic Heritage & Gain bonus to spellpower & \featpref{Draconic Spellpower} \\
         \tind \featref{Draconic Voice} & Draconic Heritage & Gain bonus to Intimidate and Persuasion checks & \featpref{Draconic Voice} \\
         \tind \featref{Draconic Weapons} & Draconic Heritage & Gain bite attack, possibly claws & \featpref{Draconic Weapons} \\
         \tind \featref{Draconic Wings} & Any three dragon bloodline feats & Gain wings to slow falls, glide, eventually fly & \featpref{Draconic Wings} \\
@@ -226,7 +226,7 @@ Some strike feats instead require a specific action to use.
 
         \midrule
         \thead{Item Creation Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
-        \featref{Imbue Magic} & Caster level 2nd or Craft (any) 5 ranks & Create magic items & \featpref{Imbue Magic} \\
+        \featref{Imbue Magic} & Spellpower 2 or Craft (any) 5 ranks & Create magic items & \featpref{Imbue Magic} \\
         \featref{Imbuement Admixture} & 2nd level spells, 6th & Combine multiple spells to create items & \featpref{Imbuement Admixture} \\
         \featref{Versatile Crafter} & Craft (any) 10 ranks & Craft items from many schools of magic & \featpref{Versatile Crafter} \\
 
@@ -239,7 +239,7 @@ Some strike feats instead require a specific action to use.
         \featref{Counterspell} & Spellcraft 10 ranks, 2nd level spells & Counter spells cast by foe & \featpref{Counterspell} \\
         \tind\featref{Flexible Counterspell} & Counterspell & Use any spell to counterspell & \featpref{Flexible Counterspell} \\
         \tind\featref{Mass Counterspell} & Spellcraft 13 ranks, 4th level spells, Counterspell & Counter spells cast by multiple foes & \featpref{Mass Counterspell} \\
-        \featref{Craftcaster} & Craft (any) 10 ranks, 2nd level spells & Increase caster level when creating, transforming objects & \featpref{Craftcaster} \\
+        \featref{Craftcaster} & Craft (any) 10 ranks, 2nd level spells & Increase spellpower when creating, transforming objects & \featpref{Craftcaster} \\
         \featref{Legendary Magic} & 5th level spells & Weak creatures are always considered bloodied & \featpref{Legendary Magic} \\
         \featref{Magical Synthesis} & Levels in two magical classes & Increase spellcasting ability in two magical classes at once & \featpref{Magical Synthesis} \\
         \featref{Mass Transporter} & 5th level Conjuration (Translocation) spell & Transport many creatures at once & \featpref{Mass Transporter} \\
@@ -251,8 +251,8 @@ Some strike feats instead require a specific action to use.
         \featref{Residual Shield} & Abjuration (Shielding) spell & Gain benefits of spell briefly after casting on another creature & \featpref{Residual Shield} \\
         \featref{Resilient Magic} & 2nd level Abjuration (Negation) spell & Spells persist for 1 round after being dispelled & \featpref{Resilient Magic} \\
         \featref{Ritual Caster} & Int 3 & Gain ability to perform rituals & \featpref{Ritual Caster} \\
-        \featref{Spell Focus}\fn{1} & 2nd level spells &  \plus2 caster level with specific type of magic & \featpref{Spell Focus} \\
-        \tind \featref{Spell Specialization} & 4th level spells, Spell Focus &  \plus2 caster level with specific type of magic, \minus2 penalty with other types.
+        \featref{Spell Focus}\fn{1} & 2nd level spells &  \plus2 spellpower with specific type of magic & \featpref{Spell Focus} \\
+        \tind \featref{Spell Specialization} & 4th level spells, Spell Focus &  \plus2 spellpower with specific type of magic, \minus2 with other types.
         & \featpref{Spell Specialization} \\
         \featref{Wardwalker} & 3rd level Abjuration (Warding) spell & Wards you encounter trigger one round late & \featpref{Wardwalker} \\
 
@@ -280,7 +280,7 @@ Some strike feats instead require a specific action to use.
         \featref{Inspire Courage} & Perform 6 ranks  & Grant allies bonuses to physical attacks and defenses against fear & \featpref{Inspire Courage} \\
         \featref{Inspire Greatness} & Perform 12 ranks  & Grant allies bonuses to defenses & \featpref{Inspire Greatness} \\
         \featref{Inspire Heroics} & Perform 20 ranks  & Grant allies temporary hit points and extra attack & \featpref{Inspire Heroics} \\
-        \featref{Inspire Spellpower} & Perform 10 ranks  & Grant allies bonus to caster level & \featpref{Inspire Spellpower} \\
+        \featref{Inspire Spellpower} & Perform 10 ranks  & Grant allies bonus to spellpower & \featpref{Inspire Spellpower} \\
         \featref{Legendary Performance} & Perform 13 ranks, any three Performance feats & Sustain two performances at once & \featpref{Legendary Performance} \\
         \featref{Rapid Performance} & Perform 14 ranks, any three Performance feats & Perform as a swift action & \featpref{Rapid Performance} \\
         \featref{Recover Performance} & Perform 10 ranks, any other Performance feat & Reroll failed performance attempt & \featpref{Recover Performance} \\
@@ -536,16 +536,18 @@ Activating this ability is a swift action, and it lasts until you will it to sto
 
 \feat{Arcane Spellgift}{Spellgift}
 \featpres 2nd level, Wil 1.
-\featben You gain the ability to use a non-restricted arcane spell as a spell-like ability once per day.
-You choose which spell when you gain this feat, and that choice cannot thereafter be changed.
-Your caster level is equal to your level \add the number of spellgift feats you have, and you use your Willpower as your casting attribute.
+\featben You have inherent magic in your body, granting you spellgifts.
+Your spellpower with spellgifts is equal to your Willpower, or your level \add the number of fae bloodline feats you possess, whichever is higher.
+You have a pool with a number of spellgift points equal to the number of spellgift feats you possess.
 
-The spell's level must be no greater than half of your total levels in non-casting classes.
+When you gain this feat, you choose a non-restricted arcane spell.
+The spell's level must be no greater than half your total levels in classes that cannot cast spells.
 In addition, its level cannot exceed your Willpower.
+You can spend a spellgift point to use that spell as a spell-like ability.
 \parhead{Special}
 You may take this feat multiple times.
 Each time, you choose a new spell to gain as a spell-like ability.
-You may use any combination of the spells a number of times per day equal to the number of spellgift feats you have.
+All spellgift feats you have use the same pool of spellgift points.
 The number of spellgift feats you have cannot exceed your Willpower.
 
 \feat{Armor Familiarity}{Combat}
@@ -569,7 +571,7 @@ The character also suffers double the normal arcane spell failure chance for wea
 
 \feat{Bardic Spellpower}{Magic}
 \featpre Ability to cast arcane spells.
-\featben You can treat your fighter and rogue levels as magical classes when determining your caster level with enchantment and illusion arcane spells.
+\featben You can treat your fighter and rogue levels as magical classes when determining your spellpower with enchantment and illusion arcane spells.
 
 \feat{Battlecaster}{Magic}
 \featpre Proficiency with light armor.
@@ -699,9 +701,9 @@ If that creature casts a spell during the same phase, you can make a Spellcraft 
 After attempting to identify the spell, you may cast any spell you know as a counterspell.
 That spell's normal effect does not occur.
 Instead, if you cast the same spell as your target, the target miscasts its spell.
-If you cast a different spell, but one from the same spell school and of the same spell level or higher, you and your target make opposed caster level checks.
+If you cast a different spell, but one from the same spell school and of the same spell level or higher, you and your target make opposed spellpower checks.
 If you win, the target miscasts its spell.
-If you fail the caster level check, if your spell is of a different spell school, or if your spell is lower level, the target's spell takes effect normally.
+If you fail the spellpower check, if your spell is of a different spell school, or if your spell is lower level, the target's spell takes effect normally.
 
 \parhead{Special}
 Metamagic feats and similar spell augmentations are ignored for the purpose of countering spells.
@@ -716,7 +718,7 @@ If this bonus is not used within 1 round, it is lost.
 
 \feat{Craftcaster}{Magic}
 \featpres Craft (any) 10 ranks, ability to cast 2nd level spells.
-\featben When casting spells which create or transform a physical substance that you are trained to craft, you gain a \plus1 bonus to your caster level per 5 ranks you have in the appropriate Craft skill.
+\featben When casting spells which create or transform a physical substance that you are trained to craft, you gain a \plus1 bonus to your spellpower per 5 ranks you have in the appropriate Craft skill.
 
 \feat{Deadly Aim}{Combat, Precision}
 \featpres Per 5, two attacks.
@@ -776,16 +778,18 @@ This bonus increases by \plus2 for each physical attack you can make per round b
 
 \feat{Divine Spellgift}{Spellgift}
 \featpres 2nd level, Wil 1.
-\featben You gain the ability to use a divine spell as a spell-like ability once per day.
-You choose which spell when you gain this feat, and that choice cannot thereafter be changed.
-Your caster level is equal to your level \add the number of spellgift feats you have, and you use your Willpower as your casting attribute.
+\featben You have inherent magic in your body, granting you spellgifts.
+Your spellpower with spellgifts is equal to your Willpower, or your level \add the number of fae bloodline feats you possess, whichever is higher.
+You have a pool with a number of spellgift points equal to the number of spellgift feats you possess.
 
-The spell's level must be no greater than half of your total levels in non-casting classes.
+When you gain this feat, you choose a non-restricted arcane spell.
+The spell's level must be no greater than half your total levels in classes that cannot cast spells.
 In addition, its level cannot exceed your Willpower.
+You can spend a spellgift point to use that spell as a spell-like ability.
 \parhead{Special}
 You may take this feat multiple times.
 Each time, you choose a new spell to gain as a spell-like ability.
-You may use any combination of the spells a number of times per day equal to the number of spellgift feats you have.
+All spellgift feats you have use the same pool of spellgift points.
 The number of spellgift feats you have cannot exceed your Willpower.
 
 \feat{Dodge}{Combat, Defense, Reaction}
@@ -799,7 +803,7 @@ If you are \unencumbered, this bonus is doubled.
 Choose a cleric domain.
 \featpre Domain aspect from the chosen domain.
 \featben You may use the domain attribute from the chosen domain as your casting attribute when determining your magic attack bonus for all spells.
-In addition, you gain a \plus1 bonus to caster level with spells from the chosen domain.
+In addition, you gain a \plus1 bonus to spellpower with spells from the chosen domain.
 
 \feat{Draconic Breath}{Bloodline, Dragon}
 \featpres
@@ -865,7 +869,7 @@ If you have four or more dragon bloodline feats, you gain darkvision with a 50 f
 
 \feat{Draconic Spellpower}{Bloodline, Dragon}
 \featpre Draconic Heritage.
-\featben You gain a \plus1 bonus to caster level with all spells and spell-like abilities.
+\featben You gain a \plus1 bonus to spellpower with all spells and spell-like abilities.
 If you have four or more dragon bloodline feats, this bonus increases to \plus2.
 
 \feat{Draconic Voice}{Bloodline, Dragon}
@@ -943,9 +947,9 @@ Water gives you a swim speed equal to your base land speed.
 
 \feat{Empower Spell}{Metamagic}
 \featpre Ability to cast 2nd level spells.
-\featben When casting a heightened spell, you gain a \plus2 bonus to caster level.
+\featben When casting a heightened spell, you gain a \plus2 bonus to spellpower.
 A heightened spell uses up a spell slot one level higher than the spell's actual level.
-Unlike other metamagic feats, you can apply this metamagic feat any number of times, increasing your caster level by 2 each time.
+Unlike other metamagic feats, you can apply this metamagic feat any number of times, increasing your spellpower by 2 each time.
 
 \feat{Endurance}{General}
 \featpre Con 3.
@@ -1016,11 +1020,12 @@ Each time you take the feat, you choose a different smite ability you have and a
 \featben You gain three extra uses of your wild aspect ability.
 
 \feat{Fae Heritage}{Bloodline}
-\featben As a standard action, you can create sound or light, as the \spell{create sound}
-or \spell{dancing light}
-spells.
-Your caster level is equal to your level \add the number of fae bloodline feats you have.
-You can use this ability once per day per fae bloodline feat you have.
+\featben You have the blood of a fae creature in your veins, granting you fae power.
+Your fae power is equal to your Willpower, or your level \add the number of fae bloodline feats you possess, whichever is higher.
+You have a pool with a number of fae points equal to the number of fae bloodline feats you possess.
+
+As a standard action, you can spend a fae point to create sound or light, as the \spell{create sound} or \spell{dancing light} spells.
+Your spellpower is equal to your fae power.
 
 \feat{Far Shot}{Combat, Power}
 \featpre Str 3.
@@ -1072,7 +1077,7 @@ For each attack you trade, you gain an additional \plus5 attack bonus.
 \featpre Perform 12 ranks.
 \featben By spending a minute performing continuously, you can make a DC 28 Perform check to free an ally within \rngmed range from hostile magic.
 This creates an effect similar to the \spell{break enchantment}
-spell, with a caster level equal to your Perform ranks.
+spell, with a spellpower equal to your Perform ranks.
 
 \feat{Freeing Surge}{Surge}
 \featpres 16th level, Dexterity 7.
@@ -1112,7 +1117,7 @@ After using this ability, you cannot use it again for 5 rounds.
 \featben As a full-round action, you can make two melee attacks against each foe you threaten. You cannot convert these attacks into strikes.
 
 \feat{Imbue Magic}{Item Creation}
-\featpre Caster level 2nd or Craft (any) 6 ranks.
+\featpre Spellpower 2 or Craft (any) 6 ranks.
 \featben You can imbue items with magic using your spells or crafting ability.
 Imbuing an item with magic takes time and material components, as described in \pcref{Magic Item Creation}.
 
@@ -1266,7 +1271,7 @@ You can sustain the performance as a swift action.
 \featpre Perform 10 ranks.
 \featben As a standard action, you can make a DC 16 Perform check to inspire spellpower in allies within \rngmed range of you, including yourself.
 You can affect one creature per two Perform ranks you have.
-All affected creatures gain a \plus3 enhancement bonus to their caster level with spells and spell-like abilities.
+All affected creatures gain a \plus3 enhancement bonus to their spellpower with spells and spell-like abilities.
 This bonus increases by 1 at 14 Perform ranks and every 6 Perform ranks thereafter.
 You can sustain the performance as a swift action.
 
@@ -1352,7 +1357,7 @@ This feat does not affect the material components required to craft magical item
 \featben You can disable spell effects on objects or areas as if they were merely complex devices.
 You can make a Devices check against an active spell effect within 5 feet of you.
 If your check result is 30 or higher, it may dispel the effect.
-The DC to dispel the effect is equal to 20 \add the spell's caster level.
+The DC to dispel the effect is equal to 20 \add the spell's spellpower.
 Failure indicates that the spell is not dispelled.
 
 You must be aware of a spell to disable it, either through the Spellcraft skill or because the effect is noticeable.
@@ -1369,7 +1374,7 @@ When you make a Disguise check, if the result is 30 or higher, you can decide ho
 For example, you could cause all of its equipment to appear nonmagical, or you could cause it to have a strong aura of good when examined with \spell{detect good}.
 You cannot create an aura of overwhelming strength with this skill.
 
-Anyone using divination magic on the creature must make a caster level check with a DC equal to your Disguise check in order to perceive the truth.
+Anyone using divination magic on the creature must make a spellpower check with a DC equal to your Disguise check in order to perceive the truth.
 Regardless of the result of the check, the caster is not aware that the check was made.
 
 \feat{Legendary Defense}{Combat, Defense}
@@ -1381,7 +1386,7 @@ Regardless of the result of the check, the caster is not aware that the check wa
 \featben You can attempt to escape from magic itself, slipping hostile spells off of your body so they dissipate harmlessly.
 As a standard action, you can make an Escape Artist check to throw off magical effects on you.
 If the result is 30 or higher, it may dispel the effect.
-The DC to dispel the effect is equal to 20 \add the effect's caster level.
+The DC to dispel the effect is equal to 20 \add the effect's spellpower.
 Failure indicates that the spell is not dispelled.
 
 You must be aware of a spell to disable it, either through the Spellcraft skill or because the effect is noticeable.
@@ -1454,7 +1459,7 @@ Certain extremely obscure languages may be beyond your knowledge.
 
 \feat{Legendary Magic}{Magic}
 \featpre 5th level spells.
-\featben If your caster level with a spell is at least twice a creature's level, it is treated as \bloodied for the purpose of determining the effects of that spell.
+\featben If your spellpower with a spell is at least twice a creature's level, it is treated as \bloodied for the purpose of determining the effects of that spell.
 
 \feat{Legendary Maneuver Master}{Combat}
 \featpres Three attacks, any three Maneuver feats.
@@ -1602,7 +1607,7 @@ You may still cast only one spell, but it is used to counter the spells cast by 
 
 \feat{Mass Transporter}{Magic}
 \featpre Ability to cast a Conjuration (Translocation) spell of at least 5th level.
-\featben When casting Conjuration (Translocation) spells and rituals which affect multiple creatures, you can affect a number of creatures equal to your caster level.
+\featben When casting Conjuration (Translocation) spells and rituals which affect multiple creatures, you can affect a number of creatures equal to your spellpower.
 
 \feat{Mighty Blows}{Combat, Power}
 \featpres Str 5, two attacks.
@@ -1648,18 +1653,19 @@ Your mount may make one attack with an appropriate natural weapon (hoof, claw, o
 
 \feat{Natural Spellgift}{Spellgift}
 \featpres 2nd level, Wil 1.
-\featben You gain the ability to use a natural spell as a spell-like ability once per day.
-You choose which spell when you gain this feat, and that choice cannot thereafter be changed.
-Your caster level is equal to your level \add the number of spellgift feats you have, and you use your Willpower as your casting attribute.
+\featben You have inherent magic in your body, granting you spellgifts.
+Your spellpower with spellgifts is equal to your Willpower, or your level \add the number of fae bloodline feats you possess, whichever is higher.
+You have a pool with a number of spellgift points equal to the number of spellgift feats you possess.
 
-The spell's level must be no greater than half of your total levels in non-casting classes.
+When you gain this feat, you choose a non-restricted arcane spell.
+The spell's level must be no greater than half your total levels in classes that cannot cast spells.
 In addition, its level cannot exceed your Willpower.
+You can spend a spellgift point to use that spell as a spell-like ability.
 \parhead{Special}
 You may take this feat multiple times.
 Each time, you choose a new spell to gain as a spell-like ability.
 You may use any combination of the spells a number of times per day equal to the number of spellgift feats you have.
 The number of spellgift feats you have cannot exceed your Willpower.
-
 
 \feat{Open Minded}{Skill}
 \featben You gain two skill points.
@@ -1863,7 +1869,7 @@ If it cannot be affected by \spell{spell turning}, such as if it is a spell that
 
 \feat{Ritual Caster}{Magic}
 \featpre Intelligence 3.
-\featben You can learn and perform rituals as if you were an arcane caster with a caster level equal to your character level.
+\featben You can learn and perform rituals as if you were an arcane caster with a spellpower equal to your level.
 The maximum level of ritual that you can learn or perform is equal to half your character level or your Intelligence, whichever is lower.
 
 \feat{Scale the Beast}{Skill}
@@ -1893,8 +1899,7 @@ A shaped spell uses a spell slot two levels higher than the spell's original lev
 
 \feat{Shattering Surge}{Power, Surge}
 \featpres 8th level, Strength 3.
-\featben Three times per day, when you successfully attempt to disarm an object, you may cause it to be affected as if by the targeted version of the \spell{shatter}
-spell with a caster level equal to your level.
+\featben Three times per day, when you successfully attempt to disarm an object, you may cause it to be affected as if by the targeted version of the \spell{shatter} spell with a spellpower equal to your level.
 Activating this ability is an immediate action.
 
 \feat{Shield Discipline}{Class, Defense, Combat}
@@ -1963,7 +1968,7 @@ If you have an appropriate projectile weapon available, you can also fire caught
 \feat{Spell Focus}{Magic}
 Choose a school of magic or a spell descriptor.
 \featpre 2nd level spells.
-\featben You get a \plus2 bonus to your caster level when casting spells and using spell-like abilities from the school of magic or with the spell descriptor you select.
+\featben You get a \plus2 bonus to your spellpower when casting spells and using spell-like abilities from the school of magic or with the spell descriptor you select.
 \parhead{Special}
 You can gain this feat multiple times.
 Its effects do not stack.
@@ -1972,12 +1977,12 @@ Each time you take the feat, it applies to a new school of magic.
 \feat{Spell Specialization}{Magic}
 Choose a school of magic or a spell descriptor to which you already have applied the Spell Focus feat.
 \featpres 4th level spells, Spell Focus.
-\featben You gain a \plus2 bonus to your caster level when casting spells and using spell-like abilities from the school of magic or with the spell descriptor you select.
-In exchange, you take a \minus2 penalty to caster level with all other spells and spell-like abilities.
+\featben You gain a \plus2 bonus to your spellpower when casting spells and using spell-like abilities from the school of magic or with the spell descriptor you select.
+In exchange, you take a \minus2 penalty to spellpower with all other spells and spell-like abilities.
 
 \feat{Spellwarped Ritualist}{Magic}
-\featben You can learn and perform rituals as if you were an arcane caster with a caster level equal to your spellwarped level \add your spellwarped key attribute.
-The maximum level of ritual that you can learn or perform is equal to half your spellwarped level or your spellwarped key attribute, whichever is lower.
+\featben You can learn and perform rituals as if you were an arcane caster with a spellpower equal to your spellwarped level or your spellwarped key attribute, whichever is higher.
+The maximum level of ritual that you can learn or perform is equal to half your spellwarped level or half your spellwarped key attribute, whichever is lower.
 
 In addition, you gain a special ability based on which type of spellwarped you are.
 
