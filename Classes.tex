@@ -203,17 +203,14 @@ A barbarian can react to danger before his senses would normally allow him to do
 He is not \unaware when attacked by surprise.
 
 \cf{Bbn}[3rd]{Channeled Rage}
-The barbarian gains the ability to enter a channeled rage whenever he rages.
-Each channeled rage grants the barbarian additional abilities while in that rage or changes the nature of his rage.
-All bonuses granted by channeled rages apply only while the barbarian is in that channeled rage.
-
-A barbarian can only be in one channeled rage at a time.
-By spending an additional use of his rage ability, he can change which channeled rage he is in without exiting the rage, but this does not extend the duration of the rage.
+The barbarian gains the ability to channel his rage to gain new abilities.
+Whenever the barbarian enters a rage, he may gain the benefits of one channeled rage he knows.
+Some channeled rages depend on the barbarian's rage power.
+A barbarian's rage power is equal to his Willpower or his barbarian level, whichever is higher.
 
 At his 6th barbarian level, and every three barbarian levels thereafter, the barbarian gains an additional channeled rage.
 Some channeled rages require a minimum barbarian level, as indicated before the name of the ability.
 All channeled rages are extraordinary abilities unless otherwise noted.
-The barbarian's special attack bonus with channeled rage abilities is equal to his barbarian level \add his Willpower.
 
 \subcf{Athletic Rage}
 The barbarian adds his rage bonus to his Climb, Jump, Sprint, and Swim checks.
@@ -234,32 +231,34 @@ The barbarian only suffers a \minus1 penalty to physical defenses for raging.
 The barbarian adds his rage bonus to his Mental defense.
 
 \subcf{6th -- Destructive Rage}
-When attacking, the barbarian ignores an amount of hardness equal to his barbarian level.
+When attacking, the barbarian ignores an amount of hardness equal to his rage power.
+
+\subcf{6th -- Overwhelming Rage}
+Overwhelmed foes the barbarian threatens increase their overwhelm penalties by 1.
 
 \subcf{6th -- Stylish Rage}
 The barbarian can initiate or change combat styles as part of the swift action he uses to sustain his rage.
 
 \subcf{6th -- Terrifying Rage}
 Whenever the barbarian makes a physical melee attack, he may also make a special attack against the target's Mental defense.
-If the special attack succeeds, the target is \shaken for 5 rounds.
+His attack bonus is equal to his rage power.
+Success means the target is \shaken for 5 rounds.
 \norepeatnotes
 
 \subcf{9th -- Critical Rage}
-Whenever the barbarian scores a critical hit while raging, he extends his rage by 2 rounds and gains temporary hit points equal to his barbarian level.
+Whenever the barbarian scores a critical hit while raging, he extends his rage by 2 rounds and gains temporary hit points equal to his rage power.
 
 \subcf{9th -- Overpowering Rage}
 The barbarian adds his rage bonus to his maneuver attacks.
 
-%\subcf{9th -- Overwhelming Rage} The barbarian counts as one additional creature for the purpose of determining overwhelm penalties.
-This does not allow him to overwhelm a creature by himself.
-
 \subcf{9th -- Taunting Rage}
 Once per round, the barbarian can make a special attack against the Mental defense of a foe within \rngmed range of him.
+His attack bonus is equal to his rage power.
 If the attack succeeds, the foe is \taunted for 5 rounds.
 \norepeatnotes.
 
 \subcf{12th -- Spellbreaker Rage (Su)}
-The barbarian gains spell resistance equal to 10 \add barbarian level or Constitution.
+The barbarian gains spell resistance equal to 10 \add his rage power.
 To affect the barbarian with a spell, a caster must make an attack with its spellpower.
 If the attack beats the barbarian's spell resistance, the spell works normally.
 Otherwise, the spell has no effect on the barbarian.
@@ -269,7 +268,7 @@ This channeled rage functions like terrifying rage, except that it affects all f
 The barbarian must have the terrifying rage ability to choose this ability.
 
 \subcf{12th -- Whirlwind Rage}
-The barbarian gains a damage bonus with physical melee attacks equal to half the number of foes he threatens, up to a maximum bonus equal to his rage bonus.
+Whenever the barbarian is threatened by at least five creatures, he gains a physical damage bonus equal to his rage bonus.
 
 \subcf{15th -- Mindless Rage}
 The barbarian becomes immune to mind-affecting spells and effects.
@@ -279,11 +278,11 @@ This channeled rage functions like taunting rage, except that it affects all foe
 The barbarian must have the taunting rage rage ability to choose this ability.
 
 %\subcf{18th -- Hurricane Rage} This channeled rage functions like whirlwind rage, except that the damage bonus is equal to the number of foes the barbarian threatens, up to a maximum bonus equal to twice his rage bonus.
-The barbarian must have the whirlwind rage ability to choose this ability.
+%The barbarian must have the whirlwind rage ability to choose this ability.
 
 \subcf{18th -- Invulnerable Rage}
 The barbarian doubles his damage reduction.
-This replaces his rage bonus to Strength.
+%This replaces his rage bonus to Strength.
 
 \cf{Bbn}[4th]{Mighty Will}[Ex]
 The barbarian gains a \plus5 bonus to Mental defense against compulsion effects.
@@ -408,8 +407,8 @@ The domains are listed below.
 
 \cf{Clr}{Spells}
 A cleric casts divine spells using his devotion.
-A cleric's spellpower is normally equal to his cleric level.
-However, see the Devotion ability, below.
+A cleric's spellpower is normally equal to his divine power.
+See the Devotion ability, below.
 
 The number of spells a cleric knows is given on \trefnp{Cleric Spells Known}.
 The cleric may learn spells from both the divine spell list (see \pcref{Divine Spells}) and his domain spell lists (see \pcref{Cleric Domains}).
@@ -511,22 +510,21 @@ Spells associated with particular alignments are indicated by the chaos, evil, g
     \end{dtabularx}
 \end{dtable!*}
 
-\cf{Clr}{Devotion}[Su]
-A cleric's spells wax and wane in power with the strength of his devotion, and the extent to which he calls on that devotion to create effects.
+\cf{Clr}{Divine Power}[Su]
+The strength of a cleric's spells and abilities are determined by his divine power.
+His divine power varies depending on the extent to which he calls on his devotion to create effects.
 A cleric has a devotion pool with a maximum of 10 devotion points in it.
-After regaining spells for the day, a cleric's devotion pool is full.
+Normally, a cleric's divine power is equal to his cleric level.
+If the cleric's devotion pool is at least three-quarters full, he gains a \plus5 bonus to his divine power.
+If the cleric's devotion pool has no points remaining, he takes a \minus5 penalty to his divine power (minimum 1).
 
+After regaining spells for the day, a cleric's devotion pool is full.
 Each time the cleric casts a non-domain spell, he loses one point from his devotion pool.
 He also loses a point from his devotion pool if he acts against his deity or other spiritual inclinations.
+
 The cleric can refill his devotion pool by spending an hour in prayer, supplication, or contemplation.
 In addition, whenever the cleric performs a significant service to his deity or other spiritual inclinations, he may regain one devotion point.
 Extraordinary services may allow the cleric to regain more devotion points.
-
-If the cleric's devotion pool is at least half full, the cleric gains a \plus5 bonus to his cleric level when determining his spellpower and the effects of his abilities.
-If his devotion pool is empty, he takes a \minus5 penalty to his cleric level for the same purposes.
-
-In addition, a cleric gains a \plus10 bonus to Knowledge (religion) checks made concerning his faith, such as questions about his deity or philosophy, religious rites, holy sites, and so on.
-Further, he is treated as being trained in Knowledge (religion) when making such checks, whether or not he actually is.
 
 \cf{Clr}{Rituals}
 Clerics, can perform rituals to create unique magical effects (see \pcref{Rituals}).
@@ -541,7 +539,7 @@ Options for domain aspects are listed at \pcref{Lesser Domain Aspects}.
 At his 2nd cleric level, the cleric gains an additional lesser domain aspect from one of his domains.
 
 \cf{Clr}[2nd]{Channel Energy}[Su]
-By channeling the power of his faith through his holy (or unholy) symbol, a cleric can act as a powerful conduit of divine energy.
+By channeling his devotion through his holy (or unholy) symbol, a cleric can act as a powerful conduit of divine energy.
 He must choose whether to channel positive or negative energy.
 Once this choice is made, it cannot be reversed.
 
@@ -554,17 +552,14 @@ The energy burst heals or inflicts half damage if the attack fails.
 Channeling energy is a standard action that costs one devotion point.
 A cleric must be able to present his holy symbol to use this ability.
 
-\cf{Clr}[5th]{Channeled Domain Power}[Su]
-The cleric gains a channeled domain power from one of his domains.
-Unless otherwise stated, using a channelled domain power is identical to using channel energy, and consumes a devotion point.
-Instead of channeling positive or negative energy, the cleric instead gains the effect of the channelled domain power.
+\cf{Clr}[5th]{Channel Domain}[Su]
+The cleric gains the ability to channel the power of one of his domains.
+Unless otherwise stated, channeling a domain functions like channeling energy, and consumes a devotion point.
+Channeling a domain heals or inflicts 1d6 damage per two divine power.
+A cleric's special attack bonus when channeling a domain is equal to his divine power.
+Channeled domain powers are described at \pcref{Channeled Domain Powers}.
 
-If a channeled domain power deals damage, it functions like channeling negative energy unless otherwise noted.
-If a channeled domain power heals damage, it functions like channeling postive energy unless otherwise noted.
-The cleric's attack bonus with a channeled domain power is equal to his cleric level or Willpower, as he chooses.
-The channeled domain powers are described at \pcref{Channeled Domain Powers}.
-
-At his 7th cleric level, the cleric gains an additional channeled domain power from one of his domains.
+At his 7th cleric level, the cleric gains the ability to channel a different one of his domains.
 
 \cf{Clr}[9th]{Domain Aspect}[Su]
 The cleric gains a domain aspect from one of his domains.
@@ -574,13 +569,13 @@ Options for domain aspects are listed at \pcref{Domain Aspects}.
 At his 11th cleric level, the cleric gains an additional domain aspect from one of his domains.
 
 \cf{Clr}[10th]{Improved Devotion}[Su]
-The cleric's devotion pool stores a maximum of fifteen devotion points.
+The cleric's devotion pool stores a maximum of ten devotion points.
 
-\cf{Clr}[13th]{Greater Channeled Domain Power}[Su]
-The cleric gains a greater channeled domain power from one of his domains.
-Using a greater channeled domain power costs two devotion points.
-Instead of channeling positive or negative energy, the cleric instead gains the effect of the greater channeled domain power.
-Options for greater channeled domain powers are listed at \pcref{Greater Channeled Domain Powers}.
+\cf{Clr}[13th]{Greater Channel Domain}[Su]
+The cleric gains the ability to channel the power of one of his domains even more effectively.
+This consumes two devotion points.
+A cleric's special attack bonus when channeling a greater domain is equal to his divine power.
+Greater channeled domain abilities are described at \pcref{Greater Channeled Domains}.
 
 At his 15th cleric level, the cleric gains an additional greater channeled domain power from one of his domains.
 
@@ -654,7 +649,7 @@ The cleric adds Swim to his cleric class skill list, gains a bonus equal to half
 \subcf{Wild}
 The cleric adds Creature Handling, Knowledge (nature), and Survival to his cleric class skill list.
 
-\subsubsection{Channeled Domain Powers}\label{Channeled Domain Powers}
+\subsubsection{Channeled Domains}\label{Channeled Domains}
 
 \subcf{Air}
 The cleric channels electrical energy.
@@ -765,7 +760,7 @@ He also takes no penalties to melee attacks underwater.
 \subcf{Wild -- Favored Terrain}
 The cleric gains a favored terrain, as the ranger class feature (see \pcref{Rgr:Favored Terrain}).
 
-\subsubsection{Greater Channeled Domain Powers}\label{Greater Channeled Domain Powers}
+\subsubsection{Greater Channeled Domains}\label{Greater Channeled Domains}
 
 \subcf{Air -- Mantle of Air}
 As a swift action, the cleric can surround himself in a mantle of air for 5 rounds.
@@ -879,7 +874,7 @@ He constantly acts as if he were under the effect of a \spell{freedom} spell, ex
 spell, with a spellpower equal to his cleric level, except that it also protects him from any spells or effects which would prevent him from lying or reveal his lies.
 If the effect is dispelled or suppressed, he can resume it as a swift action.
 \subcf{Vitality -- }
-\subcf{War -- Warmaster's Power} The cleric continuously gains the benefits of the \spell{greater divine favor}
+\subcf{War -- Warmaster's Favor} The cleric continuously gains the benefits of the \spell{greater divine favor}
 spell, with a spellpower equal to his cleric level.
 If the effect is dispelled or suppressed, he can resume it as a swift action.
 \subcf{Water -- Water's Flow}
@@ -891,7 +886,7 @@ He may return to his normal form as a free action.
 \par If the water is split, he may reform from anywhere the water has reached, to as little as a single ounce of water.
 If not even an ounce of water exists contiguously, his body reforms from the largest available parts of water, cut into pieces of appropriate size.
 This usually causes the cleric to die.
-\subcf{Wild -- Natural Power}
+\subcf{Wild -- Natural Casting}
 Whenever the cleric is in a natural environment, he gains the improved natural casting ability, as the druid class feature (see Improved Natural Casting, \pref{Drd:Improved Natural Casting}).
 
 \subsubsection{Ex-Clerics}
@@ -904,9 +899,9 @@ He cannot thereafter gain levels as a cleric of that god until he atones (see th
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\centering}p{\babcolavg} *{3}{>{\ccol}p{\savecol}} >{\ccol}X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
 \hline
-        \druidprogressionrow{1}  & Rituals, spells, wild speech     \\
-        \druidprogressionrow{2}  & Natural casting, woodland stride \\
-        \druidprogressionrow{3}  & Wild aspect                      \\
+        \druidprogressionrow{1}  & Attunement, rituals, spells      \\
+        \druidprogressionrow{2}  & Natural casting, wild speech \\
+        \druidprogressionrow{3}  & Wild aspect, woodland stride                      \\
         \druidprogressionrow{4}  & Venom immunity                   \\
         \druidprogressionrow{5}  & Natural casting, wild aspect     \\
         \druidprogressionrow{6}  & Wild speech (plants)             \\
@@ -919,7 +914,7 @@ He cannot thereafter gain levels as a cleric of that god until he atones (see th
         \druidprogressionrow{13} & Natural aspect                   \\
         \druidprogressionrow{14} & Elemental speech, timeless body  \\
         \druidprogressionrow{15} & Natural aspect, multiple aspect  \\
-        \druidprogressionrow{16} & Commanding wild speech           \\
+        \druidprogressionrow{16} & Dominating wild speech           \\
         \druidprogressionrow{17} & Natural aspect                   \\
         \druidprogressionrow{18} & Totemic aspect                   \\
         \druidprogressionrow{19} & Natural aspect, multiple aspect  \\
@@ -1006,11 +1001,11 @@ A druid begins play with a ritual book containing one nature ritual of her choic
 Whenever the druid is in a natural environment, she may dismiss all her active spells and spend one hour attuning to the natural world.
 If she does so, she regains all her spell slots. In addition, she gains a \plus5 bonus to her spellpower for as long as she stays in a natural environment, and for five minutes after leaving a natural environment.
 
-\cf{Drd}{Wild Speech}[Su]
-One of the first lessons a druid learns is how to communicate with animals.
+\cf{Drd}[2nd]{Wild Speech}[Su]
+The druid learns how to communicate with animals.
 As a standard action, the druid can choose a type of animal, such as owl or wolf.
 She gains the ability to speak to and understand animals of that type for 5 minutes.
-This ability can be used a number of times per day equal to her Perception or half her druid level (minimum 1), whichever is higher.
+A druid can use this ability a number of times per day equal to her Perception or half her druid level, whichever is higher.
 
 This ability doesn't make the animals any more friendly or cooperative than normal.
 Furthermore, wary and cunning animals are likely to be terse and evasive, while the more stupid ones make inane comments.
@@ -1024,10 +1019,6 @@ For example, a druid casting \spell{gust of wind} could create a line of wind or
 The line would extend 50 feet out from that point, as normal.
 If the druid cause the line of wind to blow to the left, she could potentially be affected by the wind.
 
-\cf{Drd}[2nd]{Woodland Stride}[Ex]
-The druid may move through any sort of undergrowth (such as natural thorns, briars, overgrown areas, and similar terrain) at her normal speed and without taking damage or suffering any other impairment.
-However, plants magically manipulated to impede motion still affect her.
-
 \cf{Drd}[3rd]{Wild Aspect}[Su]
 The druid gains the ability to embody an aspect of an animal.
 Unless otherwise noted, embodying a wild aspect is a swift action.
@@ -1037,8 +1028,9 @@ A wild aspect normally lasts for a number of rounds equal to 5 \add the druid's 
 If the druid embodies an additional wild aspect, the first aspect ends at the end of the round.
 All wild aspects can be dismissed as a swift action.
 
-At her 5th druid level, and every odd druid level thereafter, the druid gains an additional wild aspect.
+The druid chooses one wild aspect from the list below.
 Some wild aspects have minimum druid levels, as indicated in the title of the aspect.
+At her 5th druid level, and every odd druid level thereafter, the druid gains an additional wild aspect.
 The list of wild aspects is given below.
 All wild aspects are supernatural abilities unless otherwise noted.
 
@@ -1136,6 +1128,10 @@ If the attack succeeds, the creature takes 1d6 physical damage per two druid lev
 The poison lasts until the druid fails the attack twice.
 %TODO poison stacking rules
 
+\cf{Drd}[3rd]{Woodland Stride}[Ex]
+The druid may move through any sort of undergrowth (such as natural thorns, briars, overgrown areas, and similar terrain) at her normal speed and without taking damage or suffering any other impairment.
+However, plants magically manipulated to impede motion still affect her.
+
 \cf{Drd}[4th]{Venom Immunity}[Ex]
 The druid gains immunity to all poisons.
 
@@ -1178,7 +1174,7 @@ She adds the options below to the list of abilities she can gain with her wild a
 
 %\subcf{Earthen Combat} The druid gains a \plus2 bonus to physical attacks with melee attacks while both she and her target are touching natural earth or stone.
 %\subcf{Fiery Combat} The druid gains a \plus2 bonus to physical attacks while she or her target is ignited.
-%\subcf{Earthen Power} The druid gains a \plus2 bonus to caster level while she is touching natural earth or stone.
+%\subcf{Earthen Might} The druid gains a \plus2 bonus to caster level while she is touching natural earth or stone.
 \subcf{Heart of Air} The druid can breathe in any environment, and is immune to \spell{sickening cloud}
 and similar effects.
 In addition, she falls at half speed and takes no falling damage.
@@ -1485,26 +1481,26 @@ As a swift action, he can exchange a single adaptive combat feat from his adapat
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolavg} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
-        \monkprogressionrow{1}  & Enlightened defense, unarmed warrior \\
-        \monkprogressionrow{2}  & Fast movement, \Ki power             \\
-        \monkprogressionrow{3}  & Evasion, uncanny dodge               \\
-        \monkprogressionrow{4}  & \Ki strike, Perfect Health           \\
-        \monkprogressionrow{5}  & \Ki power, still mind                \\
-        \monkprogressionrow{6}  &                                      \\
-        \monkprogressionrow{7}  & Bodily perfection                    \\
-        \monkprogressionrow{8}  & \Ki power, perfect speech            \\
-        \monkprogressionrow{9}  & Improved evasion                     \\
-        \monkprogressionrow{10} & Improved uncanny dodge               \\
-        \monkprogressionrow{11} & \Ki power                            \\
-        \monkprogressionrow{12} & Perfect soul                         \\
-        \monkprogressionrow{13} & Improved bodily perfection           \\
-        \monkprogressionrow{14} & \Ki power                            \\
-        \monkprogressionrow{15} & Timeless                             \\
-        \monkprogressionrow{16} & Perfect mind                         \\
-        \monkprogressionrow{17} & \Ki power                            \\
-        \monkprogressionrow{18} & Perfect motion                       \\
-        \monkprogressionrow{19} & Greater bodily perfection            \\
-        \monkprogressionrow{20} & True perfection                      \\
+        \monkprogressionrow{1}  & Enlightened defense, \ki power, unarmed warrior \\
+        \monkprogressionrow{2}  & Channel \ki                                     \\
+        \monkprogressionrow{3}  & Uncanny dodge                                   \\
+        \monkprogressionrow{4}  & Flurry of blows                                 \\
+        \monkprogressionrow{5}  & Channel \ki                                     \\
+        \monkprogressionrow{6}  & \Ki augmentation                                \\
+        \monkprogressionrow{7}  & Bodily perfection                               \\
+        \monkprogressionrow{8}  & Channel \ki                                     \\
+        \monkprogressionrow{9}  & Improved evasion                                \\
+        \monkprogressionrow{10} & Improved uncanny dodge                          \\
+        \monkprogressionrow{11} & Channel \ki                                     \\
+        \monkprogressionrow{12} & \Ki augmentation                                \\
+        \monkprogressionrow{13} & Improved bodily perfection                      \\
+        \monkprogressionrow{14} & Channel \ki                                     \\
+        \monkprogressionrow{15} & Timeless                                        \\
+        \monkprogressionrow{16} & Perfect mind                                    \\
+        \monkprogressionrow{17} & Channel \ki                                     \\
+        \monkprogressionrow{18} & \Ki augmentation                                \\
+        \monkprogressionrow{19} & Greater bodily perfection                       \\
+        \monkprogressionrow{20} & Channel \ki, true perfection                    \\
     \end{dtabularx}
 \end{dtable}
 
@@ -1522,6 +1518,10 @@ All of the following are class features of the monk.
 Monks are proficient with simple weapons, monk weapons, and any one other weapon group.
 Monks are not proficient with any armor or shields.
 When wearing armor, using a shield, or carrying a medium or heavy load, a monk loses the benefit of her enlightened defense, fast movement, and \ki abilities.
+
+\cf{Mnk}{Ki Power}[Su]
+Many of a monk's abilities depend on her \ki power.
+A monk's \ki power is equal to her Willpower or her monk level, whichever is higher.
 
 \cf{Mnk}{Enlightened Defense}[Ex]
 A monk's \ki shields her body from attacks.
@@ -1543,36 +1543,41 @@ She gains the Improved Unarmed Strike feat as a bonus feat.
 In addition, she deals damage with her unarmed strikes as if she were two size categories larger than her actual size (1d6 for a Medium creature, or 1d4 for a small creature).
 For details about how to fight while unarmed, see \pcref{Unarmed Combat}.
 
-\cf{Mnk}[2nd]{Fast Movement}[Ex]
-The monk increases her land speed by 10 feet while \monkunencumbered.
-
-\cf{Mnk}[2nd]{Ki Power}[Su]
+\cf{Mnk}[2nd]{Manifest Ki}[Su]
 The monk gains the ability to channel her \ki energy to temporarily enhance her abilities.
-She chooses one \ki power from the list below.
 This ability can be used a number of times per day equal to her Willpower or half her monk level, whichever is higher.
 
-Some \ki powers have minimum monk levels, as indicated in the title of the power.
-All \ki powers are supernatural abilities unless otherwise noted.
-The monk's special attack bonus with \ki powers is equal to her monk level or her Willpower, whichever is higher.
-At her 5th monk level, and every three monk levels thereafter, the monk learns an additional \ki power.
+She chooses one ability from the list below.
+Some \ki manifestations have minimum monk levels, as indicated in the title of the power.
+At her 5th monk level, and every three monk levels thereafter, the monk learns an additional \ki manifestation.
 
-\subcf{Flurry of Blows}
-As a swift action, the monk can make a physical attack at a \minus5 penalty.
-This is in addition to any attacks she makes as part of a full attack.
+Some \ki manifestations function like spells.
+Unless otherwise noted, the monk's effective spellpower with these abilities is equal to her \ki power.
+All \ki manifestations are supernatural abilities unless otherwise noted.
+
+\subcf{Distant Blows}
+As a swift action, the monk can empower her unarmed attacks with \ki, allowing her to strike distant foes.
+Until the end of the round, she gains an additional five feet of reach with her unarmed attacks, extending her threatened area.
+\subcf{Slow Fall}
+As an immediate action, the monk can gain the benefits of the \spell{feather fall} spell.
+She must be within reach of a solid object to use this ability.
 \subcf{Surpass Limits}
 As a swift action, the monk can surpass the physical limitations of her body.
-Until the start of her next turn, she may use Willpower to determine her Strength and Dexterity checks.
-This does not affect checks based on multiple attributes, such as initiative checks.
+Until the start of her next turn, she may use her \ki power in place of her Strength or Dexterity when making skill and ability checks.
+\subcf{Wholeness of Body}
+As a standard action, the monk can correct the flow of energy within her body.
+She heals hit points equal to half her \ki power in d10s.
+\subcf{5th -- Resist Energy}
+As a standard action, the monk can gain the benefits of the \spell{greater resist energy} spell for 5 minutes.
 \subcf{5th -- Speed Boost}
-As a swift action, the monk can force her muscles to strain beyond their normal limits.
-Until the end of her turn, she gains increases her land speed by 20 feet, and a gains \plus2 bonus to her physical defenses.
+As a swift action, the monk can gain the benefits of the \spell{lesser haste} spell for 1 round.
 \subcf{5th -- Stunning Fist}
 As a swift action, the monk can imbue the next unarmed attack she makes that round with the ability to disrupt her foe's \ki.
-If the attack deals damage, the monk makes a special attack vs. Fortitude to make the struck creature \staggered for 1 round.
-If the creature is \bloodied, it is \stunned for 1 round instead.
-\subcf{5th -- Wholeness of Body}
-As a standard action, the monk can correct the flow of energy within her body.
-She heals 1d10 points of damage per two monk levels.
+If the attack deals damage, the monk makes a special attack against the Fortitude of the struck creature.
+Her attack bonus is equal to her \ki power.
+Success means the target is \staggered for 1 round.
+A critical success means the target is \stunned for 1 round instead.
+\norepeatnotes
 \subcf{8th -- Rapid Step}
 As a move action, the monk can move up to her speed.
 She cannot be followed or withdrawn from during this movement.
@@ -1580,17 +1585,13 @@ She cannot be followed or withdrawn from during this movement.
 As an immediate action, when a foe misses the monk with a melee attack, the monk can redirect the attack.
 Both the foe and the monk must threaten a third creature.
 If the monk redirects the attack, the foe rolls the same attack against the third creature.
-\subcf{8th -- Slow Fall}
-As a swift action while falling, the monk can slow the rate at which she falls to 60 feet per round, which is too slow to hurt her if she hits the ground.
-She must be touching a solid object to use this ability.
-The effect lasts until the end of her turn.
 \subcf{11th -- Diamond Fists}
-As a swift action, the monk can empower her unarmed strike with incredible force.
-Until the start of her next turn, she adds half her Willpower to damage and treats her unarmed strike as if it were an adamantine weapon for the purpose of overcoming damage reduction and hardness.
+As a swift action, the monk can empower her unarmed attacks with incredible force.
+Until the end of the round, she may use her \ki power in place of her normal modifiers to physical damage with her unarmed attacks.
+In addition, she treats her unarmed strike as if it were an adamantine weapon for the purpose of overcoming damage reduction and hardness.
 \subcf{11th -- Flash Step}
 As a move action, the monk can slip between spaces, allowing her to teleport to anywhere she can see within 30 feet.
 If her line of effect is blocked, even by an invisible barrier, or if this would somehow place her inside a solid object, the ability fails.
-
 \subcf{14th -- Empty Step} As a swift action, the monk can step into the Ethereal Plane until the end of her turn, as the \spell{ethereal jaunt}
 spell.
 She may return as a free action.
@@ -1618,43 +1619,59 @@ A helpless monk does not gain the benefit of evasion.
 The monk can react to danger before her senses would normally allow her to do so.
 She is not \unaware when attacked by surprise.
 
-\cf{Mnk}[4th]{Ki Strike}[Su]
-The monk's attacks are empowered with \ki.
-While \monkunencumbered, she treats all weapons she wields, including her unarmed strike, as if they were \plus1 weapons, gaining a \plus1 enhancement bonus to attack and damage.
-This also grants her a \plus1 enhancement bonus with maneuvers.
-At her 7th monk level, and every three monk levels thereafter, the bonus granted by the monk's \ki strike ability improves by 1.
-
-
-\cf{Mnk}[4th]{Perfect Health}
-The monk gains the Perfect Health feat as a bonus feat, making her immune to diseases of all kinds.
-If she already has the feat, she gains another feat of her choice for which she qualifies.
+\cf{Mnk}[4th]{Flurry of Blows}
+When attacking unarmed, the monk can attack with multiple parts of her body simultaneously.
+This allows her gain the benefits of dual wielding with her unarmed strike (see \pcref{Dual Wielding}).
 
 %\cf{Mnk}[5th]{Still Mind}{Ex} The monk may add half her Perception to he]
 %cf defense in place of half her Intelligence]
-If she has an Intelligence penalty, that penalty still applies.
+%If she has an Intelligence penalty, that penalty still applies.
+
+\cf{Mnk}[6th]{Ki Augmentation}[Su]
+The monk's control over her \ki improves, allowing her to permanently improve her abilities.
+She chooses one \ki augmentation from the list below.
+Some \ki manifestations have minimum monk levels, as indicated in the title of the power.
+At her 12th and 18th monk levels, she gains an additional \ki augmentation.
+
+\subcf{Distant \Ki}
+The monk gains an additional five feet of reach with her unarmed attacks, extending her threatened area.
+\subcf{Gentle \Ki}
+The monk may choose to grant any weapon she wields the Nonlethal weapon property.
+This can cause all damage she deals to be nonlethal.
+\subcf{Forceful \Ki}
+All weapons the monk wields gain the Forceful weapon property.
+She can use any weapon to perform a shove attack, and gains a \plus2 bonus with shove attacks.
+\subcf{Impactful \Ki}
+All weapons the monk wields gain the Impact weapon property.
+Whenever she scores a critical hit, all damage dealt in excess of the target's hit points is dealt as critical damage.
+\subcf{Perfect Sight}
+The monk continuously gains the benefits of the \spell{see invisibility} spell.
+\subcf{Perfect Speech}
+The monk gains the ability to speak with and understand the speech of any creature.
+This grants her no special ability to speak to or understand creatures that do not speak, such as animals, or to understand writing.
+\subcf{Sharpened \Ki}
+All weapons the monk wields gain the Keen weapon property.
+She gains a \plus4 bonus to confirm critical threats.
+\subcf{12th -- Perfect Motion}
+The monk continuously gains the benefits of the \spell{freedom} spell.
+\subcf{12th -- Perfect Soul}
+The monk gains spell resistance equal to 10 \add her \ki power.
+To affect the monk with a spell, a caster must make an attack with its spellpower.
+If the attack beats the monk's spell resistance, the spell works normally.
+Otherwise, the spell has no effect on the monk.
 
 \cf{Mnk}[7th]{Bodily Perfection}[Ex]
 The monk gains a \plus1 bonus to her Strength, Dexterity, and Constitution.
 
-\cf{Mnk}[8th]{Perfect Speech}[Ex]
-The monk gains the ability to speak with and understand the speech of any creature.
-This grants her no special ability to speak to or understand creatures that do not speak, such as animals, or to understand writing.
-
 \cf{Mnk}[9th]{Improved Evasion}[Ex]
 The monk's evasion ability improves.
-If she is affected by Reflex attack that would deal half damage when resisted, she takes only half damage from the attack, even if the attack succeeds.
+If she is affected by an attack against her Reflex defense that would deal half damage when resisted, she takes only half damage from the attack, even if the attack succeeds.
 Like evasion, improved evasion can be used only if a monk is \unencumbered.
 A helpless monk does not gain the benefit of improved evasion.
 
 \cf{Mnk}[10th]{Improved Uncanny Dodge}[Ex]
  The monk reduces her overwhelm penalties by 2.
 If her overwhelm penalty is reduced to 0, she is not considered to be overwhelmed.
-
-\cf{Mnk}[12th]{Perfect Soul}[Ex]
-The monk gains spell resistance equal to 10 \add monk level or Willpower.
-To affect the monk with a spell, a caster must make an attack with its spellpower.
-If the attack beats the monk's spell resistance, the spell works normally.
-Otherwise, the spell has no effect on the monk.
 
 \cf{Mnk}[13th]{Improved Bodily Perfection}
 The bonus granted by the monk's bodily perfection ability increases to \plus2.
@@ -1667,9 +1684,6 @@ The monk still dies of old age when her time is up.
 
 \cf{Mnk}[16th]{Perfect Mind}[Ex]
 The monk becomes immune to hostile mind-affecting effects.
-
-\cf{Mnk}[18th]{Perfect Motion}{Su} The monk continuously gains the benefits of the \spell[freedom]
-spell.
 
 \cf{Mnk}[19th]{Greater Bodily Perfection}
 The bonus granted by the monk's bodily perfection ability increases to \plus3.
@@ -2064,8 +2078,8 @@ She regains her abilities and advancement potential if she atones for her violat
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
         \rangerprogressionrow{1}  & Quarry \plus2, Track                    \\
-        \rangerprogressionrow{2}  & Favored terrain, wild speech            \\
-        \rangerprogressionrow{3}  & Ranger lore                             \\
+        \rangerprogressionrow{2}  & Favored terrain            \\
+        \rangerprogressionrow{3}  & Ranger lore, wild speech                             \\
         \rangerprogressionrow{4}  & Low-light vision, tracking expert       \\
         \rangerprogressionrow{5}  & Free stride, tenacious hunter           \\
         \rangerprogressionrow{6}  & Favored terrain, ranger lore            \\
@@ -2149,10 +2163,10 @@ The ranger gains Blind-Fight as a bonus feat.
 \subcf{Urban}
 The ranger gains Skill Focus (Persuasion) as a bonus feat.
 
-\cf{Rgr}[2nd]{Wild Speech}[Su]
-A ranger has the ability to communicate with animals.
+\cf{Rgr}[3rd]{Wild Speech}[Su]
+The ranger learns how to communicate with animals.
 This ability functions like the druid ability of the same name (see Wild Speech, \pref{Drd:Wild Speech}).
-A ranger can use this ability a number of times per day equal to half his ranger level \add his Willpower.
+A ranger can use this ability a number of times per day equal to his Perception or half his ranger level, whichever is higher.
 
 \cf{Rgr}[3rd]{Ranger Lore}
 The ranger gains an ability drawn from ancient ranger lore.
