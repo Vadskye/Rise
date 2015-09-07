@@ -1704,7 +1704,7 @@ If she stops being chaotic, she regains her \ki powers and ability to take monk 
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
-        \paladinprogressionrow{1}  & Discernment, divine power (smite)  \\
+        \paladinprogressionrow{1}  & Discernment, divine power, smite  \\
         \paladinprogressionrow{2}  & Divine power                       \\
         \paladinprogressionrow{3}  & Divine gift                        \\
         \paladinprogressionrow{4}  & Discern foe, divine power          \\
@@ -2568,10 +2568,10 @@ The rogue deals full sneak attack damage on her first successful sneak each roun
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolpoor} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
-        \sorcererprogressionrow{1}  & Arcane invocation, spells, wild magic \\
-        \sorcererprogressionrow{2}  & Arcane invocation, spellsurge \plus2  \\
+        \sorcererprogressionrow{1}  & Cantrip, spells, wild magic \\
+        \sorcererprogressionrow{2}  & Cantrip, spellsurge \plus2  \\
         \sorcererprogressionrow{3}  & Defensive spellblend                  \\
-        \sorcererprogressionrow{4}  &                                       \\
+        \sorcererprogressionrow{4}  & \x                                    \\
         \sorcererprogressionrow{5}  & Improved wild magic                   \\
         \sorcererprogressionrow{6}  & Spellsurge                            \\
         \sorcererprogressionrow{7}  & Offensive spellblend                  \\
@@ -2580,11 +2580,11 @@ The rogue deals full sneak attack damage on her first successful sneak each roun
         \sorcererprogressionrow{10} & Spellsurge                            \\
         \sorcererprogressionrow{11} & Improved defensive spellblend         \\
         \sorcererprogressionrow{12} & Spell resistance                      \\
-        \sorcererprogressionrow{13} &                                       \\
+        \sorcererprogressionrow{13} & \x                                    \\
         \sorcererprogressionrow{14} & Spellsurge, spellsurge \plus4         \\
         \sorcererprogressionrow{15} & Improved offensive spellblend         \\
-        \sorcererprogressionrow{16} &                                       \\
-        \sorcererprogressionrow{17} &                                       \\
+        \sorcererprogressionrow{16} & \x                                    \\
+        \sorcererprogressionrow{17} & \x                                    \\
         \sorcererprogressionrow{18} & Spellsurge                            \\
         \sorcererprogressionrow{19} & Endless surge,                        \\
         \sorcererprogressionrow{20} & Greater wild magic, spellsurge \plus5 \\
@@ -2632,12 +2632,13 @@ If the sorcerer miscasts a spell with this ability, he cannot cast spells of the
 This roll is not an attack or check, and is not modified by abilities that affect attacks or checks.
 On a natural 20, the spell is always miscast, regardless of other modifiers.
 
-\cf{Sor}{Arcane Invocation}
-All sorcerers master at least one arcane invocation.
-An arcane invocation allows a sorcerer to exert magical influence without expending the effort required to cast a spell.
-The sorcerer may choose to learn one invocation of her choice from the list of arcane invocations described in Chapter 11: Spells.
+\cf{Sor}{Cantrip}
+Cantrips are minor spell-like abilities which do not require effort to use.
+A sorcerer chooses one cantrip from the list of cantrips on \pref{Cantrip List}.
+He may use the cantrip at will.
+Cantrips cannot be miscast, and are not affected by the sorcerer's wild magic ability.
 
-At his 2nd sorcerer level, the sorcerer learns a second arcane invocation of his choice.
+At his 2nd sorcerer level, the sorcerer learns a second cantrip of his choice.
 
 \cf{Sor}[2nd]{Spellsurge}
 The sorcerer learns how to alter how he casts spells by initiating a spellsurge.
@@ -2689,13 +2690,14 @@ Otherwise, the spell has no effect on the sorcerer.
 The sorcerer doubles the area affected by his spells that affect an area, but takes a penalty to his spellpower with all spells.
 
 \cf{Sor}[3rd]{Defensive Spellblend}[Ex]
-The sorcerer may combine his arcane invocations with his spells.
+The sorcerer may combine his cantrips with his spells.
 As a full-round action, the sorcerer may cast a spell that affects only himself.
 The spell must have a casting time of 1 standard action or less.
-If he does, he may also use an arcane invocation as part of the same action.
-The arcane invocation need not target the sorcerer.
+If he does, he may also use a cantrip as part of the same action.
+The cantrip need not target the sorcerer.
 In exchange, he gains a \plus5 bonus to his wild magic roll.
 The spell's level is used to determine the bonus to the sorcerer's wild magic roll.
+If the sorcerer miscasts the spellblend with his wild magic ability, the cantrip still takes effect normally.
 
 \cf{Sor}[5th]{Improved Wild Magic}[Ex]
 When the sorcerer miscasts a spell or spellblend with his wild magic ability, the normal effects of the spell take place in addition to any miscast effects.
@@ -3245,10 +3247,10 @@ This functions like the temporal prison power, except that no attack is required
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolpoor} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
-        \wizardprogressionrow{1}  & Arcane invocation, spells, rituals \\
-        \wizardprogressionrow{2}  & Arcane invocation, magic feat      \\
+        \wizardprogressionrow{1}  & Cantrip, spells, rituals \\
+        \wizardprogressionrow{2}  & Cantrip, magic feat      \\
         \wizardprogressionrow{3}  & Arcane insight                     \\
-        \wizardprogressionrow{4}  & Invocation sequencer               \\
+        \wizardprogressionrow{4}  & Cantrip sequencer               \\
         \wizardprogressionrow{5}  & Arcane insight                     \\
         \wizardprogressionrow{6}  & Magic feat                         \\
         \wizardprogressionrow{7}  & Arcane insight                     \\
@@ -3372,13 +3374,14 @@ However, they can never access restricted spells from other schools, and must ch
 A specialist wizard can never learn or cast spells or rituals from their banned schools.
 Divination cannot be chosen as a banned school.
 
-\cf{Wiz}{Arcane Invocation}
-All wizards master at least one arcane invocation.
-An arcane invocation allows the wizard to exert magical influence without expending the effort required to cast a spell.
-The wizard may choose to learn one invocation of her choice from the list of arcane invocations described in Chapter 11: Spells.
-Specialist wizards must choose one of the invocations granted by their specialist school.
+\cf{Wiz}{Cantrip}
+Cantrips are minor spell-like abilities which do not require effort to use.
+A wizard chooses one cantrip from the list of cantrips on \pref{Cantrip List}.
+She may use the cantrip at will.
+Cantrips cannot be miscast.
+Specialist wizards must choose one of the cantrips granted by their specialist school.
 
-At her 2nd wizard level, the wizard gains a second arcane invocation, which can be chosen from any non-prohibited school.
+At her 2nd wizard level, the wizard gains a second cantrip, which can be chosen from any non-prohibited school.
 
 \cf{Wiz}[2nd]{Magic Feat}
 The wizard gains a bonus magic feat or metamagic feat of her choice.
@@ -3396,12 +3399,12 @@ The spell must be from her chosen school, including restricted spells.
 In either case, the spell's level cannot exceed half her wizard level -- normally, the highest level of spells that she can cast.
 At her 5th wizard level, and every odd wizard level thereafter, the wizard gains a new arcane insight.
 
-\cf{Wiz}[4th]{Invocation Sequencer}[Ex]
-The wizard gains the ability to create a sequence of a spell and invocation which she can cast together later.
-To create an invocation sequencer, the wizard must cast a spell which affects only herself and an arcane invocation, which may affect any target.
+\cf{Wiz}[4th]{Cantrip Sequencer}[Ex]
+The wizard gains the ability to create a sequence of a spell and cantrip which she can cast together later.
+To create an cantrip sequencer, the wizard must cast a spell which affects only herself and a cantrip, which may affect any target.
 The spell must have a casting time of 1 standard action or less.
 Neither has any effect immediately.
-The wizard may later use a full-round action to cast both the spell and the invocation at once, choosing the target of the invocation at that time.
+The wizard may later use a full-round action to cast both the spell and the cantrip at once, choosing the target of the cantrip at that time.
 \par The wizard may initially have only one sequencer active at any time.
 At her 8th wizard level, and every 4 wizard levels thereafter, she may keep an additional sequencer active at once.
 If she creates a new sequencer, it replaces one of her previous sequencers.
@@ -3413,7 +3416,7 @@ To create a defensive sequencer, the wizard must cast two spells, one of which a
 The spells must be at least three levels apart, and both must have a casting time of 1 standard action or less.
 Neither has any effect immediately.
 The wizard may later use a full-round action to cast both spells at once, resolving their effects separately.
-The number of sequencers a wizard may have active at once is limited, as described in the invocation sequencer ability.
+The number of sequencers a wizard may have active at once is limited, as described in the cantrip sequencer ability.
 
 \cf{Wiz}[12th]{Contingency}[Ex]
 The wizard gains the ability to prepare a spell so it takes effect automatically if specific circumstances arise.
@@ -3438,7 +3441,7 @@ The spells must be at least three levels apart, and both must have a casting tim
 One spell must be a damaging spell, and the other must not.
 Neither has any effect immediately.
 The wizard may later use a full-round action to cast both spells at once, resolving their effects separately.
-The number of sequencers a wizard may have active at once is limited, as described in the invocation sequencer ability.
+The number of sequencers a wizard may have active at once is limited, as described in the cantrip sequencer ability.
 
 \cf{Wiz}[20th]{Chain Contingency}[Ex]
 The wizard may ready a sequencer in her contingency instead of a single spell.
