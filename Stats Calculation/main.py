@@ -95,17 +95,6 @@ def get_generic_ac_real():
 def get_generic_hp():
     return [i*7 for i in range(21)]
 
-#set a creature's AC to match generic AC
-def normalize_ac(creature):
-    creature.armor_class.misc.add_circumstance(
-            get_generic_ac_calc()[creature.level] - creature.armor_class.normal())
-
-def print_generic_stats(level):
-    print "Generic stats for comparison"
-    print "AC %s, MC %s" % (get_generic_ac_real()[level], 0)
-    print "HP %s, Fort %s, Ref %s, Ment %s" % (get_generic_hp()[level],
-            0, 0, 0)
-
 def generate_creatures(creature_keys, data, level = None, extra_variants = None):
     creatures = list()
     if creature_keys is None:
@@ -230,8 +219,8 @@ def inherit_shared_args(args):
     args['ally_targets'] = args.get('ally_targets') or args.get('targets')
     args['enemy_targets'] = args.get('enemy_targets') or args.get('targets')
 
-    args['ally_variants'] = args.get('ally_variants') or args.get('variant')
-    args['enemy_variants'] = args.get('enemy_variants') or args.get('variant')
+    args['ally_variants'] = args.get('ally_variants') or args.get('variants')
+    args['enemy_variants'] = args.get('enemy_variants') or args.get('variants')
     return args
 
 def analyze_combined_results(results):

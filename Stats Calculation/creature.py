@@ -403,9 +403,10 @@ class Creature(object):
                 return True
         return False
 
-    def remove_modifiers(self, modifier_name):
+    def remove_modifiers(self, modifier_name, limit_modifier_type = None):
         for modifier_type in self._modifiers:
-            self._modifiers[modifier_type].pop(modifier_name, None)
+            if limit_modifier_type is None or modifier_type == limit_modifier_type:
+                self._modifiers[modifier_type].pop(modifier_name, None)
 
     def _update_static_modifiers(self):
         for modifier_type in valid_modifier_types:
