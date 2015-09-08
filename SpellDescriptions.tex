@@ -790,7 +790,7 @@
         \end{spelleffects}
     \end{spellsubcontent}
     \begin{spellfooter}
-        \spellinfo{Abjuration [Chaotic]}{Chaos, Divine}
+        \spellinfo{Abjuration [Chaotic, Retributive]}{Chaos, Divine}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -1772,7 +1772,7 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect Targeted attacks against the target have a 50\% miss chance. 
+            \spelleffect Targeted physical attacks against the target have a 50\% miss chance. Spells and other special attacks suffer no miss chance.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
@@ -2509,7 +2509,7 @@
         \end{spelleffects}
     \end{spellsubcontent}
     \begin{spellfooter}
-        \spellinfo{Abjuration/Evocation [Fire, Shielding]}{Arcane, Fire}
+        \spellinfo{Abjuration/Evocation [Fire, Retributive, Shielding]}{Arcane, Fire}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -3220,7 +3220,7 @@
         \end{spelleffects}
     \end{spellsubcontent}
     \begin{spellfooter}
-        \spellinfo{Abjuration [Good, Shielding]}{Divine, Good}
+        \spellinfo{Abjuration [Good, Retributive, Shielding]}{Divine, Good}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -3886,7 +3886,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}[Lesser]{Manipulate Probability}[1]
+\begin{spellsection}[Lesser]{Manipulate Probability}[2]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -3894,7 +3894,7 @@
             \spelltgt{You}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect When you cast this spell, you roll a d20 twice. Store the results in order. At 5th spellpower, and every 5 spellpower thereafter, you roll an additional die.
+            \spelleffect When you cast this spell, you roll a d20 twice. Store the results in order. At spellpower 5, and every 5 spellpower thereafter, you roll an additional die.
 
             Each time you would roll a d20, you instead use a die result you rolled. The die results are used in the same order you rolled them. When all the die results have been used, the spell is expended.
             \spelldur \durshort or until expended
@@ -4721,7 +4721,7 @@
         \end{spelleffects}
     \end{spellsubcontent}
     \begin{spellfooter}
-        \spellinfo{Abjuration [Shielding]}{Arcane, Chaos, Divine, Evil, Good, Law}
+        \spellinfo{Abjuration [Retributive, Shielding]}{Arcane, Chaos, Divine, Evil, Good, Law}
         \spellnotes This spell has the subtype of the alignment opposed to the chosen alignment.
         \miscastrandom
     \end{spellfooter}
@@ -5301,7 +5301,7 @@
         \end{spelleffects}
     \end{spellsubcontent}
     \begin{spellfooter}
-        \spellinfo{Abjuration [Lawful, Shielding]}{Divine, Law}
+        \spellinfo{Abjuration [Lawful, Retributive, Shielding]}{Divine, Law}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -6686,14 +6686,13 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{True Strike}[2]
+\begin{spellsection}{True Strike}[1]
     \begin{spellheader}
         \spelldesc{You grant your ally a temporary, intuitive insight into the immediate future during their next attack.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature}{\rngclose}
-            \spelltime{1 swift action}
+            \spellquicktargeting{One creature}{\rngmed}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target gains an offensive legend point.
@@ -6734,7 +6733,7 @@
         \end{spelleffects}
     \end{spellsubcontent}
     \begin{spellfooter}
-        \spellinfo{Abjuration [Evil, Shielding]}{Divine, Evil}
+        \spellinfo{Abjuration [Evil, Retributive, Shielding]}{Divine, Evil}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
