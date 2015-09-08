@@ -271,11 +271,16 @@
             \hypertarget{spell:#2}
                 {\subsubsection{#2}}
         }
-        \IfValueT{#3}
+        \IfValueTF{#3}
         {
             \columnbreak
             \begin{flushright}
                 \large\textbf{\nth{#3}~Level}
+            \end{flushright}
+        }
+        {
+            \columnbreak
+            \begin{flushright}
             \end{flushright}
         }
     \end{multicols}
