@@ -66,6 +66,9 @@ class Armor:
         self.encumbrance = encumbrance
         self.armor_type = armor_type
 
+    def __str__(self):
+        return "Armor: " + self.encumbrance
+
     @classmethod
     def from_armor_name(cls, armor_name):
         if armor_name is None:

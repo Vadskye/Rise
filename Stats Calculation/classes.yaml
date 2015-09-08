@@ -27,6 +27,7 @@ generic_variants:
       - dodge
       - mighty shot
       - weapon finesse
+      - iron will
       - toughness
       - predictive defense
       - intuitive defense
@@ -70,12 +71,11 @@ barbarian:
   name: Barbarian
   race: human
   class: barbarian
-  armor: medium
+  equipment: medium
   bab: good
   fortitude: good
   reflex: average
   mental: poor
-  hit_value: 7
   special_attack_attribute: willpower
   weapons:
     primary: heavy_melee
@@ -84,6 +84,14 @@ barbarian:
     defensive:
       equipment: heavy
       attributes: warrior
+    dex:
+      equipment: light
+      attributes: warrior_dex
+      traits:
+        - agile rage
+    str_dex:
+      armor: light
+      attributes: warrior_str_dex
 cleric:
   name: Cleric
   race: human
@@ -94,7 +102,6 @@ cleric:
   fortitude: average
   reflex: poor
   mental: good
-  hit_value: 5
 druid:
   name: Druid
   race: human
@@ -105,7 +112,6 @@ druid:
   fortitude: good
   reflex: poor
   mental: average
-  hit_value: 5
   variants:
     garruk:
       weapons:
@@ -123,7 +129,6 @@ fighter:
   fortitude: good
   reflex: poor
   mental: average
-  hit_value: 6
   traits:
     - armor discipline (resilience)
   variants:
@@ -152,7 +157,6 @@ monk:
   fortitude: average
   reflex: good
   mental: good
-  hit_value: 5
   weapons:
     primary: unarmed
     secondary: unarmed
@@ -174,7 +178,6 @@ paladin:
   fortitude: good
   reflex: poor
   mental: good
-  hit_value: 6
   variants:
     2wf:
       weapons:
@@ -200,7 +203,6 @@ ranger:
   fortitude: good
   reflex: good
   mental: average
-  hit_value: 6
   feats:
     - two-weapon fighting
     - two-weapon defense
@@ -217,7 +219,6 @@ rogue:
   fortitude: poor
   reflex: good
   mental: average
-  hit_value: 5
   variants:
     silk:
       name: Silk
@@ -235,7 +236,6 @@ sorcerer:
   fortitude: poor
   reflex: poor
   mental: good
-  hit_value: 4
 spellwarped:
   name: Spellwarped
   race: human
@@ -246,7 +246,6 @@ spellwarped:
   fortitude: good
   reflex: average
   mental: average
-  hit_value: 5
   variants:
     alteration:
       attributes: spellwarped_alteration
@@ -262,7 +261,6 @@ warrior:
   fortitude: good
   reflex: poor
   mental: poor
-  hit_value: 6
   feats:
     - shield expertise
   variants:
@@ -286,7 +284,6 @@ wizard:
   fortitude: poor
   reflex: poor
   mental: good
-  hit_value: 4
   attack_mode: damage_spells
   is_spellcaster: True
   variants:
