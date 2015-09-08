@@ -5,6 +5,20 @@ from strings import *
 
 def get_all_abilities():
     feats = {
+        'agile rage': {
+            'functions': [
+                lambda c: c.remove_modifiers(
+                    modifier_name = 'rage',
+                    limit_modifier_type = 'strength',
+                )
+            ],
+            'modifiers': [
+                {
+                    'modifier_type': 'dexterity',
+                    'value': lambda c: util.std_scale(c.level),
+                },
+            ],
+        },
         'deadly aim': {
             'modifiers': [
                 {
@@ -52,7 +66,7 @@ def get_all_abilities():
             'modifiers': [
                 {
                     'modifier_type': 'mental',
-                    'value': 2,
+                    'value': lambda c: util.attribute_scale(c.willpower),
                 },
             ],
         },
@@ -60,7 +74,7 @@ def get_all_abilities():
             'modifiers': [
                 {
                     'modifier_type': 'reflex',
-                    'value': 2,
+                    'value': lambda c: util.attribute_scale(c.dexterity),
                 },
             ],
         },
@@ -112,8 +126,8 @@ def get_all_abilities():
         'toughness': {
             'modifiers': [
                 {
-                    'modifier_type': 'hit_points',
-                    'value': lambda c: (util.attribute_scale(c.constitution)/2) * c.level,
+                    'modifier_type': 'fortitude',
+                    'value': lambda c: util.attribute_scale(c.constitution),
                 },
             ],
         },
