@@ -336,26 +336,26 @@ If he stops being lawful, he regains his ability to rage and take barbarian leve
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{2em} >{\ccol}p{\babcolavg} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
-        \clericprogressionrow{1}  & Devotion, lesser domain aspect, spells, rituals \\
-        \clericprogressionrow{2}  & Channel energy                         \\
-        \clericprogressionrow{3}  & Lesser domain aspect                   \\
-        \clericprogressionrow{4}  & \x                                     \\
-        \clericprogressionrow{5}  & Channeled domain power                 \\
-        \clericprogressionrow{6}  & \x                                     \\
-        \clericprogressionrow{7}  & Channeled domain power                 \\
-        \clericprogressionrow{8}  & \x                                     \\
-        \clericprogressionrow{9}  & Domain aspect                          \\
-        \clericprogressionrow{10} & Great devotion                         \\
-        \clericprogressionrow{11} & Domain aspect                          \\
-        \clericprogressionrow{12} & \x                                     \\
-        \clericprogressionrow{13} & Greater channeled domain power         \\
-        \clericprogressionrow{14} & \x                                     \\
-        \clericprogressionrow{15} & Greater channeled domain power         \\
-        \clericprogressionrow{16} & \x                                     \\
-        \clericprogressionrow{17} & Domain mastery                         \\
-        \clericprogressionrow{18} & \x                                     \\
-        \clericprogressionrow{19} & Domain mastery                         \\
-        \clericprogressionrow{20} & Supreme devotion                       \\
+        \clericprogressionrow{1}  & Domain gifts, spells, rituals \\
+        \clericprogressionrow{2}  & Devotion                      \\
+        \clericprogressionrow{3}  & Domain invocations            \\
+        \clericprogressionrow{4}  & \x                            \\
+        \clericprogressionrow{5}  & Improved devotion              \\
+        \clericprogressionrow{6}  & \x                            \\
+        \clericprogressionrow{7}  & Domain aspect                 \\
+        \clericprogressionrow{8}  & \x                            \\
+        \clericprogressionrow{9}  & Domain aspect                 \\
+        \clericprogressionrow{10} & Expanded devotion                \\
+        \clericprogressionrow{11} & Greater domain invocation     \\
+        \clericprogressionrow{12} & \x                            \\
+        \clericprogressionrow{13} & Greater domain invocation     \\
+        \clericprogressionrow{14} & \x                            \\
+        \clericprogressionrow{15} & Greater devotion \\
+        \clericprogressionrow{16} & \x                            \\
+        \clericprogressionrow{17} & Domain mastery                \\
+        \clericprogressionrow{18} & \x                            \\
+        \clericprogressionrow{19} & Domain mastery                \\
+        \clericprogressionrow{20} & Endless devotion              \\
     \end{dtabularx}
 \end{dtable}
 
@@ -408,7 +408,7 @@ The domains are listed below.
 \cf{Clr}{Spells}
 A cleric casts divine spells using his devotion.
 A cleric's spellpower is normally equal to his divine power.
-See the Devotion ability, below.
+See the Divine Power ability, below.
 
 The number of spells a cleric knows is given on \trefnp{Cleric Spells Known}.
 The cleric may learn spells from both the divine spell list (see \pcref{Divine Spells}) and his domain spell lists (see \pcref{Cleric Domains}).
@@ -512,9 +512,21 @@ Spells associated with particular alignments are indicated by the chaos, evil, g
 
 \cf{Clr}{Divine Power}[Su]
 The strength of a cleric's spells and abilities are determined by his divine power.
-His divine power varies depending on the extent to which he calls on his devotion to create effects.
-A cleric has a devotion pool with a maximum of 10 devotion points in it.
-Normally, a cleric's divine power is equal to his cleric level.
+Normally, his divine power is equal to his cleric level.
+
+\cf{Clr}{Rituals}
+Clerics, can perform rituals to create unique magical effects (see \pcref{Rituals}).
+A cleric begins play with a ritual book containing one divine ritual of his choice (see \pcref{Divine Rituals}).
+
+\cf{Clr}{Domain Gifts}[Su]
+A cleric's abilities are shaped by his domains.
+He gains the domain gifts of both of his domains.
+Domain gifts are not activated.
+The gifts offered by each domain are listed at \pcref{Domain Gifts}.
+
+\cf{Clr}[2nd]{Devotion}[Su]
+A cleric's divine power varies depending on the extent to which he calls on his devotion to create effects.
+A cleric has a devotion pool with a maximum of five devotion points in it.
 If the cleric's devotion pool is at least three-quarters full, he gains a \plus5 bonus to his divine power.
 If the cleric's devotion pool has no points remaining, he takes a \minus5 penalty to his divine power (minimum 1).
 
@@ -526,49 +538,25 @@ The cleric can refill his devotion pool by spending an hour in prayer, supplicat
 In addition, whenever the cleric performs a significant service to his deity or other spiritual inclinations, he may regain one devotion point.
 Extraordinary services may allow the cleric to regain more devotion points.
 
-\cf{Clr}{Rituals}
-Clerics, can perform rituals to create unique magical effects (see \pcref{Rituals}).
-A cleric begins play with a ritual book containing one divine ritual of his choice (see \pcref{Divine Rituals}).
+\cf{Clr}[3rd]{Domain Invocations}[Su]
+As a standard action, a cleric can invoke divine power using his devotion.
+He gains the domain invocation offered by both of his domains.
+All domain invocations affect a single creature within \rngmed range and require a special attack against a defense.
+The cleric's attack bonus is equal to his divine power.
+If the attack succeeds, a domain invocation heals or inflicts 1d10 damage per two divine power.
+If the attack fails, the invocation heals or inflicts half damage.
 
-\cf{Clr}{Lesser Domain Aspect}[Su]
-A cleric's abilities are shaped by his domains.
-Each domain grants a lesser domain aspect.
-Lesser domain aspects are not activated.
-Options for domain aspects are listed at \pcref{Lesser Domain Aspects}.
+\cf{Clr}[5th]{Improved Devotion}[Su]
+When the cleric's devotion pool is at least three-quarters full, he gains a \plus1 bonus to all attacks, checks, and defenses.
 
-At his 2nd cleric level, the cleric gains an additional lesser domain aspect from one of his domains.
-
-\cf{Clr}[2nd]{Channel Energy}[Su]
-By channeling his devotion through his holy (or unholy) symbol, a cleric can act as a powerful conduit of divine energy.
-He must choose whether to channel positive or negative energy.
-Once this choice is made, it cannot be reversed.
-
-When a cleric channels energy, he affects all creatures in a \areamed radius burst centered on him, including himself if he desires.
-The cleric may choose to exclude a number of other creatures from the effect equal to 1 \add half his Perception.
-The amount of damage dealt (if negative energy is channeled) or healed (if positive energy is channeled) is equal to 1d6 damage per two cleric levels.
-The cleric must make a special attack vs. Fortitude against unwilling targets, with a bonus equal to his cleric level or his Willpower.
-The energy burst heals or inflicts half damage if the attack fails.
-
-Channeling energy is a standard action that costs one devotion point.
-A cleric must be able to present his holy symbol to use this ability.
-
-\cf{Clr}[5th]{Channel Domain}[Su]
-The cleric gains the ability to channel the power of one of his domains.
-Unless otherwise stated, channeling a domain functions like channeling energy, and consumes a devotion point.
-Channeling a domain heals or inflicts 1d6 damage per two divine power.
-A cleric's special attack bonus when channeling a domain is equal to his divine power.
-Channeled domain powers are described at \pcref{Channeled Domain Powers}.
-
-At his 7th cleric level, the cleric gains the ability to channel a different one of his domains.
-
-\cf{Clr}[9th]{Domain Aspect}[Su]
+\cf{Clr}[7th]{Domain Aspect}[Su]
 The cleric gains a domain aspect from one of his domains.
 Domain aspects do not require an action to activate.
 Options for domain aspects are listed at \pcref{Domain Aspects}.
 
-At his 11th cleric level, the cleric gains an additional domain aspect from one of his domains.
+At his 9th cleric level, the cleric gains an additional domain aspect from one of his domains.
 
-\cf{Clr}[10th]{Improved Devotion}[Su]
+\cf{Clr}[10th]{Expanded Devotion}[Su]
 The cleric's devotion pool stores a maximum of ten devotion points.
 
 \cf{Clr}[13th]{Greater Channel Domain}[Su]
@@ -579,56 +567,46 @@ Greater channeled domain abilities are described at \pcref{Greater Channeled Dom
 
 At his 15th cleric level, the cleric gains an additional greater channeled domain power from one of his domains.
 
+\cf{Clr}[15th]{Greater Devotion}[Su]
+When the cleric's devotion pool is at least three-quarters full, he gains a \plus2 bonus to all attacks, checks, and defenses.
+This does not stack with the bonus from his improved devotion ability.
+
 \cf{Clr}[17th]{Domain Mastery}[Su]
 The cleric gains a domain mastery from one of his domains.
 Options for domain masteries are listed at \pcref{Domain Masteries}.
 
 At his 19th cleric level, the cleric gains an additional domain mastery from one of his domains.
 
-\cf{Clr}[20th]{Supreme Devotion}[Su]
+\cf{Clr}[20th]{Endless Devotion}[Su]
 The cleric's devotion pool stores a maximum of twenty devotion points.
 
 \ssecfake{Cleric Domain Abilities}
 
-\subsubsection{Lesser Domain Aspects}\label{Lesser Domain Aspects}
-If a lesser domain aspect involves an attack, the attack bonus is equal to the cleric's level or the cleric's Willpower, whichever is higher.
+\subsubsection{Domain Gifts}\label{Domain Gifts}
+If a domain gift involves an attack, the attack bonus is equal to the cleric's divine power.
 
 \subcf{Air}
 The cleric adds Jump to his cleric class skill list.
-In addition, he gains a bonus equal to half his cleric level on Jump checks.
+In addition, he gains a bonus equal to half his divine power on Jump checks.
 \subcf{Chaos}
-As a standard action, the cleric can attack the Mental defense of a creature within \rngclose range.
-If the attack succeeds, and creature is lawful, it is \disoriented for 5 rounds.
-If the creature is chaotic, the cleric loses one devotion point.
-\norepeatnotes
+The cleric gains a \plus5 bonus to Mental defense against compulsions.
 \subcf{Death}
-As a standard action, the cleric can attack the Fortitude of a creature within \rngclose range.
-If the attack succeeds, and the creature has no hit points remaining, it immediately dies.
-This is a death effect.
+The cleric gains the Diehard feat as a bonus feat, even if he does not meet the prerequisites.
 \subcf{Destruction}
-When attacking, the cleric ignores an amount of hardness equal to his cleric level.
+When attacking, the cleric ignores an amount of hardness equal to his divine power.
 \subcf{Earth}
 The cleric gains a \plus4 bonus to Maneuver defense while standing on solid ground.
 \subcf{Evil}
-As a standard action, the cleric can attack the Mental defense of a creature within \rngclose range.
-If the attack succeeds, and the creature is good, it is \staggered for 5 rounds.
-If the creature is evil, the cleric loses one devotion point.
-\norepeatnotes
+\x
 \subcf{Fire}
-The cleric gains damage reduction against fire and cold damage equal to twice his cleric level.
+The cleric gains damage reduction against fire and cold damage equal to twice his divine power.
 This damage reduction allows him to ignore the first points of fire or cold damage he would take each round.
 \subcf{Good}
-As a standard action, the cleric can attack the Mental defense of a creature within \rngclose range.
-If the attack succeeds, and the creature is evil, it is \dazed for 5 rounds.
-If the creature is good, the cleric loses one devotion point.
-\norepeatnotes
+\x
 \subcf{Knowledge}
 The cleric adds all Knowledge skills to his cleric class skill list.
 \subcf{Law}
-As a standard action, the cleric can attack the Mental defense of a creature within \rngclose range.
-If the attack succeeds, and the creature is chaotic, it is \staggered for 5 rounds.
-If the creature is lawful, the cleric loses one devotion point.
-\norepeatnotes
+The cleric gains a \plus5 bonus to Mental defense against delusions.
 \subcf{Magic}
 The cleric gains an additional spell slot at his highest level of spells.
 \subcf{Protection}
@@ -640,76 +618,76 @@ The cleric adds Knowledge (geography), Sprint, and Survival to his cleric class 
 \subcf{Trickery}
 The cleric adds Bluff, Disguise, and Stealth to his cleric class skill list.
 \subcf{Vitality}
-The cleric gains a bonus equal to half his cleric level on Heal checks.
+The cleric gains a bonus equal to half his divine power on Heal checks.
 \subcf{War}
 The cleric gains Weapon Focus with his deity's favored weapon group as a bonus feat.
 If he does not have a deity, he gains it in a weapon group related to his alignment or ideals.
 \subcf{Water}
-The cleric adds Swim to his cleric class skill list, gains a bonus equal to half his cleric level on Swim checks, and halves the penalties he takes for fighting underwater.
+The cleric adds Swim to his cleric class skill list, gains a bonus equal to half his divine power on Swim checks, and halves the penalties he takes for fighting underwater.
 \subcf{Wild}
 The cleric adds Creature Handling, Knowledge (nature), and Survival to his cleric class skill list.
 
-\subsubsection{Channeled Domains}\label{Channeled Domains}
+\subsubsection{Domain Invocations}\label{Domain Invocations}
 
-\subcf{Air}
-The cleric channels electrical energy.
-This deals electricity damage and heals creatures with the air subtype.
-A failed attack deals half damage.
-\subcf{Chaos}
-The cleric channels anarchic energy.
-Roll randomly each time this power is used to determine whether it functions as channeling negative energy or channeling positive energy, except that it always heals chaotic creatures and harms lawful creatures.
-The cleric may choose which creatures to exclude from the effect after determining which effect is generated.
-\subcf{Death}
-The cleric channels negative energy, except that any creatures dealt critical damage by this power are instantly killed.
+\subcf{Air -- Reflex}
+The target takes elecricity damage.
+\subcf{Chaos -- Mental}
+This invocation randomly heals or inflicts damage.
+The cleric chooses the target after rolling to determine the effect.
+\subcf{Death -- Fortitude}
+The target takes divine damage.
+If this attack deals critical damage, the target is instantly killed.
 This is a death effect.
-\subcf{Destruction}
-The cleric channels destructive energy.
-This functions like channeling negative energy, except that it deals sonic damage.
-\subcf{Earth}
-The cleric channels seismic energy, making a Reflex attack to deal physical bludgeoning damage to all creatures in the area on the ground.
-A failed attack deals half damage.
-\subcf{Evil}
-The cleric channels negative energy, except that it has no effect on evil creatures.
-\subcf{Fire}
-The cleric channels fiery energy, making a Reflex attack to deal fire damage to all creatures in the area.
-Creatures with the fire subtype are healed instead.
-A failed attack deals half damage.
-\subcf{Good}
-The cleric channels positive energy, except that it has no effect on evil creatures.
-\subcf{Knowledge}
-The cleric channels insight from knowledge.
-Each subject is not healed or damaged, but it gains an enhancement bonus equal to half the cleric's level on the next physical attack or check that it makes.
-If this bonus is not used within 5 rounds, it is wasted.
-\subcf{Law}
-The cleric channels axiomatic energy, making an attack vs. Mental defense to deal damage to all creatures within a 40 ft.
-cube centered on the cleric.
-The attack deals 4 damage per two cleric levels.
-A failed attack deals half damage.
-This has no effect on lawful creatures.
-\subcf{Magic}
-The cleric channels magical energy.
-This heals creatures who can cast spells and deals damage to creatures who cannot.
-\subcf{Protection}
-The cleric grants each subject temporary hit points equal to half the amount that channeling positive energy would have healed.
-Undead gain temporary hit points as well.
-The temporary hit points last for 5 rounds.
-\subcf{Strength}
-The cleric channels energy as normal, except that he also gains a \plus2 enhancement bonus to Strength for 1 round.
-At 8th, 14th, and 20th cleric level, this bonus increases by \plus1.
-
-\subcf{Travel}
-The cleric channels positive energy.
-All subjects gain a \plus10 foot enhancement bonus to movement speed for 1 round.
-\subcf{Trickery}
-The cleric channels trickery and confusion, making an attack vs. Mental defense against each creature in the area.
-A successful attack deals and heals no damage, but makes the creature \bewildered for 5 rounds.
-This is a mind-affecting effect.
-\subcf{Vitality}
-The cleric channels energy as normal, except that he deals or heals an extra 1d6 damage.
-\subcf{War}
-The cleric channels energy as normal, except that he can exclude two additional creatures from the effect.
-\subcf{Wild}
-The cleric channels positive energy, except that the cleric can decide whether it acts as positive or negative energy to animals and plants.
+\subcf{Destruction -- Fortitude}
+The target takes sonic damage.
+\subcf{Earth -- Reflex}
+The target takes bludgeoning damage if it is on the ground.
+\subcf{Evil -- Mental}
+This invocation does not heal or inflict damage.
+If the attack succeeds, and the target is good, it is \staggered for 5 rounds.
+\subcf{Fire -- Reflex}
+The target takes fire damage.
+\subcf{Good -- Mental}
+This invocation does not heal or inflict damage.
+If the attack succeeds, and the target is evil, it is \dazed for 5 rounds.
+\subcf{Knowledge -- Special}
+The target must make a Knowledge check.
+If its check result beats your attack result, it is healed.
+Otherwise, it takes damage.
+This invocation heals or inflicts 1d8 damage per two divine power instead of the normal value.
+\subcf{Law -- Mental}
+This invocation does not heal or inflict damage.
+If the attack succeeds, and the target is chaotic, it is \immobilized for 5 rounds.
+\subcf{Magic -- Mental}
+If the target can cast spells, it is healed.
+Otherwise, it takes divine damage.
+This invocation heals or inflicts 1d8 damage per two divine power instead of the normal value.
+\subcf{Protection -- Fortitude}
+This invocation does not heal or inflict damage.
+The target gains 1d10 temporary hit points per two divine power.
+\subcf{Strength -- Special}
+The target must make a Strength check.
+If its check result beats your attack result, it is healed.
+Otherwise, it takes divine damage.
+This invocation heals or inflicts 1d8 damage per two divine power instead of the normal value.
+\subcf{Travel -- Reflex}
+The target is healed.
+In addition, it gains a \plus10 foot bonus to its movement speed for 1 round.
+This invocation heals 1d8 damage per two divine power instead of the normal value.
+\subcf{Trickery -- Mental}
+If the attack succeeds, the target is \disoriented for 1 round.
+\subcf{Vitality -- Fortitude}
+The target takes divine damage or is healed, as you choose.
+\subcf{War -- Fortitude}
+This invocation affects all creatures within a \areasmall radius of you instead of the normal target.
+The targets take divine damage.
+This invocation heals 1d6 damage per two divine power instead of the normal value.
+\subcf{Water -- Fortitude}
+The target takes nonlethal physical damage from water in its mouth and lungs.
+In addition, if the attack succeeds, the target is unable to speak for 1 round.
+\subcf{Wild -- Fortitude}
+The target takes divine damage.
+If the target is an animal or plant, the cleric may choose to heal it instead.
 
 \subsubsection{Domain Aspects}\label{Domain Aspects}
 
@@ -718,9 +696,9 @@ The cleric gains a glide speed equal to his land speed.
 See \pcref{Gliding}, for more details.
 \subcf{Chaos -- Chaotic Retribution}
 Whenever a lawful creature within 30 feet of you attacks you, make an attack against its Mental defense.
-Success means it takes 1d6 damage per cleric level.
+Success means it takes 1d6 damage per two divine power.
 \subcf{Death -- Lifedrinker}
-Whenever the cleric kills a creature with a death effect, he gains temporary hit points equal to his cleric level for a number of rounds equal to the creature's level.
+Whenever the cleric kills a creature with a death effect, he gains temporary hit points equal to his divine power for a number of rounds equal to the creature's level.
 \subcf{Destruction -- Beacon of Destruction}
 All creatures within a \areamed emanation of the cleric have their damage reduction and hardness (if any) reduced by an amount equal to half the cleric's level.
 \subcf{Earth -- Tremorsense}
@@ -728,30 +706,30 @@ The cleric gains the tremorsense ability with a range of 50 feet.
 If he is touching a surface, he can automatically pinpoint the location of anything within 50 feet that is in contact with the surface, including inanimate objects.
 \subcf{Evil -- Unholy Retribution}
 Whenever a good creature within 30 feet of you attacks you, make an attack against its Mental defense.
-Success means it takes 1d6 damage per cleric level.
+Success means it takes 1d6 damage per two divine power.
 \subcf{Fire -- Friendly Fire}
 All of the cleric's fire spells and abilities deal only half damage to his allies.
 \subcf{Good -- Holy Retribution}
 Whenever an evil creature within 30 feet of you attacks you, make an attack against its Mental defense.
-Success means it takes 1d6 damage per cleric level.
+Success means it takes 1d6 damage per two divine power.
 \subcf{Knowledge -- Knowledge Mastery}
 The cleric may choose a number of Knowledge skills equal to his Intelligence (minimum 1).
 He may take 10 with those skills if he is not in danger or rushed.
 \subcf{Law -- Certain Retribution}
 Whenever an chaotic creature within 30 feet of you attacks you, make an attack against its Mental defense.
-Success means it takes 1d6 damage per cleric level.
+Success means it takes 1d6 damage per two divine power.
 \subcf{Magic -- Magic Feat}
 The cleric gains a bonus magic feat or metamagic feat.
 \subcf{Protection -- Faithful Shield}
 The cleric may maintain concentration on Shielding spells as a swift action.
 \subcf{Strength -- Strength of Will}
-The cleric may use his Strength to determine his spellpower instead of his Willpower.
+The cleric may use his Strength in place of his cleric level to determine his divine power.
 \subcf{Travel -- Rapid Traveller}
 The cleric gains a \plus30 foot bonus to his speed in all movement modes, up to a maximum of double his original speed.
 \subcf{Trickery -- Legendary Liar}
 The cleric gains Legendary Liar as a bonus feat, even if he does not meet the prerequisites.
 \subcf{Vitality -- Vital Spirit}
-The cleric reduces his critical damage penalties by an amount equal to his cleric level.
+The cleric reduces his critical damage penalties by an amount equal to his divine power.
 \subcf{War -- Combat Feat}
 The cleric gains a combat feat of his choice.
 \subcf{Water -- Water Breathing} The cleric may breathe and speak normally while underwater, as the \spell{water breathing}
@@ -760,7 +738,7 @@ He also takes no penalties to melee attacks underwater.
 \subcf{Wild -- Favored Terrain}
 The cleric gains a favored terrain, as the ranger class feature (see \pcref{Rgr:Favored Terrain}).
 
-\subsubsection{Greater Channeled Domains}\label{Greater Channeled Domains}
+\subsubsection{Greater Domain Invocations}\label{Greater Domain Invocations}
 
 \subcf{Air -- Mantle of Air}
 As a swift action, the cleric can surround himself in a mantle of air for 5 rounds.
