@@ -1,6 +1,7 @@
 from cgi_simple import *
 
 ATTRIBUTES = 'strength dexterity constitution intelligence perception willpower'.split()
+DEFENSES = 'Armor Maneuver Fortitude Reflex Mental'.split()
 
 def main(fh):
     w('<!DOCTYPE html>')
@@ -8,77 +9,92 @@ def main(fh):
 
     html = '\n'.join([
         boring_stuff(),
-        attributes_and_skills(),
-        core_statistics(),
-        defenses(),
-        conditional_effects(),
+        div({'class': 'sheet-4colrow'}, [
+            col(attributes_and_skills()),
+            col(defenses()),
+            col([core_statistics(), conditional_effects()], 2),
+        ]),
         attacks(),
     ])
 
     w(debug_html_wrapper(html))
 
 def boring_stuff():
-    return card({'id': 'boring-stuff'}, [
-        labeled_text_input('Character name', 'character-name'),
-        labeled_text_input('Player name', 'player-name'),
-        labeled_text_input('Class and level', 'class-and-level'),
-        labeled_text_input('Race and background', 'race-and-background'),
-        labeled_text_input('Concept', 'concept'),
-        labeled_text_input('Alignment and deity', 'alignment-and-deity'),
-        labeled_text_input('Appearance', 'appearance'),
+    return div({'id': 'boring-stuff'}, [
+        row(3, [
+            labeled_text_input('Character name', 'character-name'),
+            labeled_text_input('Player name', 'player-name'),
+            labeled_text_input('Class and level', 'class-and-level'),
+        ]),
+        row(4, [
+            labeled_text_input('Race and background', 'race-and-background'),
+            labeled_text_input('Concept', 'concept'),
+            labeled_text_input('Alignment and deity', 'alignment-and-deity'),
+            labeled_text_input('Appearance', 'appearance'),
+        ]),
     ])
 
 def attributes_and_skills():
-    return div({'class': 'attributes-and-skills'}, [
-        attribute_card(attribute) for attribute in ATTRIBUTES
+    return div({'id': 'attributes-and-skills'}, [
+        attribute_section(attribute) for attribute in ATTRIBUTES
     ])
 
-def attribute_card(attribute):
+def attribute_section(attribute):
     return {
-        'strength': strength_card,
-        'dexterity': dexterity_card,
-        'constitution': constitution_card,
-        'intelligence': intelligence_card,
-        'perception': perception_card,
-        'willpower': willpower_card,
+        'strength': strength_section,
+        'dexterity': dexterity_section,
+        'constitution': constitution_section,
+        'intelligence': intelligence_section,
+        'perception': perception_section,
+        'willpower': willpower_section,
     }[attribute]()
 
-def strength_card():
-    return card({'id': 'strength-card'}, [
-        attribute_header('Strength', 'STR'),
-    ] + [skill_box(skill) for skill in 'Climb Jump Sprint Swim'.split()]
-    + [
-        div({'class': 'attribute-ability-separator'}, ''),
-        labeled_dual_input('Ability', 'strength-ability-name', 'strength-ability-value'),
-        labeled_dual_input('Ability', 'strength-ability-name', 'strength-ability-value'),
-        labeled_dual_input('Ability', 'strength-ability-name', 'strength-ability-value'),
-    ])
+def strength_section():
+    return div({'id': 'strength-section', 'class': 'attribute-section'},
+               [attribute_header('Strength')]
+               + [skill_box(skill) for skill in 'Climb Jump Sprint Swim'.split()]
+    )
 
-def dexterity_card():
-    return card({'id': 'dexterity-card'}, [
-        attribute_header('Dexterity', 'DEX')
-    ] + [skill_box(skill) for skill in ['Balance', 'Escape Artist', 'Ride', 'Sleight of Hand', 'Tumble', 'Stealth']]
-    + [
-        div({'class': 'attribute-ability-separator'}, ''),
-        labeled_dual_input('Ability', 'dexterity-ability-name', 'dexterity-ability-value'),
-        labeled_dual_input('Ability', 'dexterity-ability-name', 'dexterity-ability-value'),
-    ])
+def dexterity_section():
+    return div({'id': 'dexterity-section', 'class': 'attribute-section'},
+               [attribute_header('Dexterity')]
+               + [skill_box(skill) for skill in ['Balance', 'Escape Artist', 'Ride', 'Sleight of Hand', 'Tumble', 'Stealth']]
+    )
 
-def constitution_card():
-    return attribute_header('Constitution', 'CON')
+def constitution_section():
+    return div({'id': 'constitution-section', 'class': 'attribute-section'},
+               [attribute_header('Constitution')],
+    )
 
-def intelligence_card():
-    return attribute_header('Intelligence', 'INT')
+def intelligence_section():
+    return div({'id': 'intelligence-section', 'class': 'attribute-section'},
+               [attribute_header('Intelligence')]
+               + [skill_box(skill) for skill in ['Craft', 'Devices', 'Disguise', 'Knowledge', 'Linguistics']]
+    )
 
-def perception_card():
-    return attribute_header('Perception', 'PER')
+def perception_section():
+    return div({'id': 'perception-section', 'class': 'attribute-section'},
+               [attribute_header('Perception')]
+               + [skill_box(skill) for skill in ['Awareness', 'Heal', 'Sense Motive', 'Spellcraft', 'Survival']]
+    )
 
-def willpower_card():
-    return attribute_header('Willpower', 'WIL')
+def willpower_section():
+    return div({'id': 'willpower-section', 'class': 'attribute-section'},
+               [attribute_header('Willpower')]
+    )
 
-def attribute_header(name, shorthand):
+def attribute_header(name):
     return div({'class': 'attribute-header labeled_number_input'}, [
         span({'class': 'attribute-name number-label'}, name),
+        number_input({
+            'name': name,
+            'class': 'number-input boxed-input',
+        }),
+    ])
+
+def defense_header(name):
+    return div({'class': 'defense-header labeled_number_input'}, [
+        span({'class': 'defense-name number-label'}, name),
         number_input({
             'name': name,
             'class': 'number-input boxed-input',
@@ -101,7 +117,9 @@ def core_statistics():
     return ''
 
 def defenses():
-    return ''
+    return div({'id': 'defenses'}, [
+        defense_header(defense) for defense in DEFENSES
+    ])
 
 def conditional_effects():
     return ''
@@ -115,9 +133,9 @@ def row(column_count, contents):
         [col(stuff) for stuff in contents]
     )
 
-def col(contents):
+def col(contents, column_count = None):
     return div(
-        {'class': 'my-col'},
+        {'class': 'my-{0}col'.format(column_count or '')},
         contents
     )
 
