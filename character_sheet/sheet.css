@@ -15,11 +15,16 @@ body {
     padding: 0;
 }
 
+.sheet-4colrow {
+    display: block;
+    clear: both;
+}
+
 #main-title {
     font-family: "Old English";
 }
 
-.my-col {
+.my-col, .my-2col, .my-3col {
     display: inline-block;
     vertical-align: top;
 }
@@ -32,7 +37,27 @@ body {
     width: calc(33% - 5px);
 }
 
+.sheet-3colrow .my-2col {
+    width: calc(66% - 5px);
+}
+
+.sheet-4colrow .my-col {
+    width: calc(25% - 5px);
+}
+
+.sheet-4colrow .my-2col {
+    width: calc(50% - 5px);
+}
+
+.sheet-4colrow .my-3col {
+    width: calc(75% - 5px);
+}
+
 .labeled-text-input {
+    width: auto;
+}
+
+.labeled-number-input {
     width: auto;
 }
 
@@ -43,11 +68,11 @@ body {
 }
 
 .number-label {
-    float: left;
+    display: inline-block;
 }
 
 .number-input {
-    float: right;
+    display: inline-block;
 }
 
 .text-label {
@@ -82,20 +107,27 @@ body {
     width: 2in;
 }
 
-.attribute-header {
-    overflow: auto;
-    text-align: center;
+.attribute-section {
+    text-align: right;
     margin-bottom: 0.2em;
 }
 
-.attribute-name {
-    font-size: 1.5em;
-    padding-left: 1px;
+.attribute-header, .defense-header {
+    overflow: auto;
+    text-align: center;
 }
 
-.attribute-header .number-input {
-    margin-top: 5px;
+.attribute-name, .defense-name {
+    font-size: 1.5em;
+    padding-left: 1px;
+    text-align: left;
+}
+
+.attribute-header .number-input, .defense-header .number-input {
+    margin-top: 2px;
     height: 2em !important;
+    float: right;
+    box-shadow: 0 0 2px 1px inset;
 }
 
 /* input styling */

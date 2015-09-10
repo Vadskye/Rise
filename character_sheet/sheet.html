@@ -5,43 +5,59 @@
 </head>
 <div style="display: block; height: 11in; width: 8in;" class="dialog characterdialog ui-dialog ui-dialog-content ui-widget-content">
   <div id="root" class="charsheet tab-pane">
-  <div id="boring-stuff" class="card">
+  <div id="boring-stuff">
+  <div class="sheet-3colrow">
+  <div class="my-col">
   <div class="labeled-text-input">
   <input type="text" name="character-name" class="text-input underlined-input" />
   <span class="text-label">
   Character name
 </span>
 </div>
+</div>
+  <div class="my-col">
   <div class="labeled-text-input">
   <input type="text" name="player-name" class="text-input underlined-input" />
   <span class="text-label">
   Player name
 </span>
 </div>
+</div>
+  <div class="my-col">
   <div class="labeled-text-input">
   <input type="text" name="class-and-level" class="text-input underlined-input" />
   <span class="text-label">
   Class and level
 </span>
 </div>
+</div>
+</div>
+  <div class="sheet-4colrow">
+  <div class="my-col">
   <div class="labeled-text-input">
   <input type="text" name="race-and-background" class="text-input underlined-input" />
   <span class="text-label">
   Race and background
 </span>
 </div>
+</div>
+  <div class="my-col">
   <div class="labeled-text-input">
   <input type="text" name="concept" class="text-input underlined-input" />
   <span class="text-label">
   Concept
 </span>
 </div>
+</div>
+  <div class="my-col">
   <div class="labeled-text-input">
   <input type="text" name="alignment-and-deity" class="text-input underlined-input" />
   <span class="text-label">
   Alignment and deity
 </span>
 </div>
+</div>
+  <div class="my-col">
   <div class="labeled-text-input">
   <input type="text" name="appearance" class="text-input underlined-input" />
   <span class="text-label">
@@ -49,8 +65,12 @@
 </span>
 </div>
 </div>
-<div class="attributes-and-skills">
-  <div id="strength-card" class="card">
+</div>
+</div>
+<div class="sheet-4colrow">
+  <div class="my-col">
+  <div id="attributes-and-skills">
+  <div id="strength-section" class="attribute-section">
   <div class="attribute-header labeled_number_input">
   <span class="attribute-name number-label">
   Strength
@@ -81,38 +101,8 @@
 </span>
   <input type="number" name="swim" class="number-input boxed-input" />
 </div>
-  <div class="attribute-ability-separator">
-  
 </div>
-  <div class="labeled-dual-input">
-  <div class="labeled-text-input">
-  <input type="text" name="strength-ability-name" class="text-input underlined-input" />
-  <span class="text-label">
-  Ability
-</span>
-</div>
-  <input type="number" name="strength-ability-value" class="number-input boxed-input" />
-</div>
-  <div class="labeled-dual-input">
-  <div class="labeled-text-input">
-  <input type="text" name="strength-ability-name" class="text-input underlined-input" />
-  <span class="text-label">
-  Ability
-</span>
-</div>
-  <input type="number" name="strength-ability-value" class="number-input boxed-input" />
-</div>
-  <div class="labeled-dual-input">
-  <div class="labeled-text-input">
-  <input type="text" name="strength-ability-name" class="text-input underlined-input" />
-  <span class="text-label">
-  Ability
-</span>
-</div>
-  <input type="number" name="strength-ability-value" class="number-input boxed-input" />
-</div>
-</div>
-  <div id="dexterity-card" class="card">
+  <div id="dexterity-section" class="attribute-section">
   <div class="attribute-header labeled_number_input">
   <span class="attribute-name number-label">
   Dexterity
@@ -155,46 +145,92 @@
 </span>
   <input type="number" name="stealth" class="number-input boxed-input" />
 </div>
-  <div class="attribute-ability-separator">
-  
 </div>
-  <div class="labeled-dual-input">
-  <div class="labeled-text-input">
-  <input type="text" name="dexterity-ability-name" class="text-input underlined-input" />
-  <span class="text-label">
-  Ability
-</span>
-</div>
-  <input type="number" name="dexterity-ability-value" class="number-input boxed-input" />
-</div>
-  <div class="labeled-dual-input">
-  <div class="labeled-text-input">
-  <input type="text" name="dexterity-ability-name" class="text-input underlined-input" />
-  <span class="text-label">
-  Ability
-</span>
-</div>
-  <input type="number" name="dexterity-ability-value" class="number-input boxed-input" />
-</div>
-</div>
+  <div id="constitution-section" class="attribute-section">
   <div class="attribute-header labeled_number_input">
   <span class="attribute-name number-label">
   Constitution
 </span>
   <input type="number" name="Constitution" class="number-input boxed-input" />
 </div>
+</div>
+  <div id="intelligence-section" class="attribute-section">
   <div class="attribute-header labeled_number_input">
   <span class="attribute-name number-label">
   Intelligence
 </span>
   <input type="number" name="Intelligence" class="number-input boxed-input" />
 </div>
+  <div class="skill-box">
+  <span class="number-label">
+  Craft
+</span>
+  <input type="number" name="craft" class="number-input boxed-input" />
+</div>
+  <div class="skill-box">
+  <span class="number-label">
+  Devices
+</span>
+  <input type="number" name="devices" class="number-input boxed-input" />
+</div>
+  <div class="skill-box">
+  <span class="number-label">
+  Disguise
+</span>
+  <input type="number" name="disguise" class="number-input boxed-input" />
+</div>
+  <div class="skill-box">
+  <span class="number-label">
+  Knowledge
+</span>
+  <input type="number" name="knowledge" class="number-input boxed-input" />
+</div>
+  <div class="skill-box">
+  <span class="number-label">
+  Linguistics
+</span>
+  <input type="number" name="linguistics" class="number-input boxed-input" />
+</div>
+</div>
+  <div id="perception-section" class="attribute-section">
   <div class="attribute-header labeled_number_input">
   <span class="attribute-name number-label">
   Perception
 </span>
   <input type="number" name="Perception" class="number-input boxed-input" />
 </div>
+  <div class="skill-box">
+  <span class="number-label">
+  Awareness
+</span>
+  <input type="number" name="awareness" class="number-input boxed-input" />
+</div>
+  <div class="skill-box">
+  <span class="number-label">
+  Heal
+</span>
+  <input type="number" name="heal" class="number-input boxed-input" />
+</div>
+  <div class="skill-box">
+  <span class="number-label">
+  Sense Motive
+</span>
+  <input type="number" name="sense motive" class="number-input boxed-input" />
+</div>
+  <div class="skill-box">
+  <span class="number-label">
+  Spellcraft
+</span>
+  <input type="number" name="spellcraft" class="number-input boxed-input" />
+</div>
+  <div class="skill-box">
+  <span class="number-label">
+  Survival
+</span>
+  <input type="number" name="survival" class="number-input boxed-input" />
+</div>
+</div>
+  <div id="willpower-section" class="attribute-section">
   <div class="attribute-header labeled_number_input">
   <span class="attribute-name number-label">
   Willpower
@@ -202,9 +238,47 @@
   <input type="number" name="Willpower" class="number-input boxed-input" />
 </div>
 </div>
-
-
-
+</div>
+</div>
+  <div class="my-col">
+  <div id="defenses">
+  <div class="defense-header labeled_number_input">
+  <span class="defense-name number-label">
+  Armor
+</span>
+  <input type="number" name="Armor" class="number-input boxed-input" />
+</div>
+  <div class="defense-header labeled_number_input">
+  <span class="defense-name number-label">
+  Maneuver
+</span>
+  <input type="number" name="Maneuver" class="number-input boxed-input" />
+</div>
+  <div class="defense-header labeled_number_input">
+  <span class="defense-name number-label">
+  Fortitude
+</span>
+  <input type="number" name="Fortitude" class="number-input boxed-input" />
+</div>
+  <div class="defense-header labeled_number_input">
+  <span class="defense-name number-label">
+  Reflex
+</span>
+  <input type="number" name="Reflex" class="number-input boxed-input" />
+</div>
+  <div class="defense-header labeled_number_input">
+  <span class="defense-name number-label">
+  Mental
+</span>
+  <input type="number" name="Mental" class="number-input boxed-input" />
+</div>
+</div>
+</div>
+  <div class="my-2col">
+  
+  
+</div>
+</div>
 
 </div>
 </div>
