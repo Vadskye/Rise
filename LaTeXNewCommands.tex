@@ -632,9 +632,9 @@
 
 \DeclareDocumentCommand{\spelldamage}{m m o}
 {
-    \IfNoValueTF{#3}
-    {#1d10~#2~damage~\add~d10~per~two~spellpower}
-    {#1#3~#2~damage~\add~#3~per~two~spellpower}
+    \IfValueTF{#3}
+    {1#3~#2~damage~per~two~spellpower}
+    {1d10~#2~damage~per~two~spellpower}
 }
 
 \DeclareDocumentCommand{\spellquicktargeting}{m m}
