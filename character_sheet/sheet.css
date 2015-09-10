@@ -1,0 +1,109 @@
+body {
+    height: 11in;
+    width: 8in;
+    font-size: 16px;
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+}
+
+.ui-dialog.ui-dialog-content {
+    position: relative !important;
+}
+
+#root {
+    padding: 0;
+}
+
+#main-title {
+    font-family: "Old English";
+}
+
+.my-col {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.sheet-2colrow .my-col {
+    width: calc(50% - 5px);
+}
+
+.sheet-3colrow .my-col {
+    width: calc(33% - 5px);
+}
+
+.labeled-text-input {
+    width: auto;
+}
+
+.skill-box {
+    overflow: auto;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.number-label {
+    float: left;
+}
+
+.number-input {
+    float: right;
+}
+
+.text-label {
+    font-size: 0.9em;
+    position: relative;
+    top: -0.2em;
+    height: 0.5em;
+}
+
+.text-input {
+    display: block;
+    width: 100%;
+    font-size: 1.1em;
+}
+
+.labeled-dual-input .labeled-text-input {
+    width: 70%;
+    float: left;
+}
+
+.attribute-ability-separator {
+    height: 5px;
+}
+
+/* 3 cards per 8x11 paper, so 3.5x2.25 inches/card in theory
+ * Use 3.25x2.1 inches/card for safety */
+.card {
+    border: 1px black solid;
+    padding: 0.05in;
+    margin: 5px;
+    height: 3.15in;
+    width: 2in;
+}
+
+.attribute-header {
+    overflow: auto;
+    text-align: center;
+    margin-bottom: 0.2em;
+}
+
+.attribute-name {
+    font-size: 1.5em;
+    padding-left: 1px;
+}
+
+.attribute-header .number-input {
+    margin-top: 5px;
+    height: 2em !important;
+}
+
+/* input styling */
+
+input[type=number] {
+    text-align: center;
+}
+
+.underlined-input {
+    box-shadow: 0px -2px 0px 0px #000000 inset;
+}
