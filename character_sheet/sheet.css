@@ -44,7 +44,7 @@ body {
 }
 
 .flex-col > div, .flex-col > span {
-    margin-bottom: 0.25em;
+    margin-bottom: 0.5em;
 }
 
 .flex-col > div {
@@ -83,8 +83,8 @@ input[type=number] {
 }
 
 .skill-box input[type=number] {
-    box-shadow: 0 0 1px 0px inset;
-    height: 1.5em;
+    box-shadow: 0 0 2px 1px #999 inset;
+    height: 1.75em;
 }
 
 .skill-box .number-label {
@@ -115,6 +115,7 @@ input[type=number] {
 
 #boring-stuff .flex-row > span {
     flex-grow: 1;
+    flex-basis: 20%;
 }
 
 .section-header {
@@ -161,4 +162,39 @@ input[type=text].passive-ability {
 
 .active-ability-effect, .attack-effect {
     flex-grow: 1;
+}
+
+.flex-col.attribute-section {
+    margin-bottom: 0.75em;
+}
+
+.flex-row.skill-box {
+    margin-bottom: -1px;
+}
+
+.attribute .number-label {
+    font-weight: bold;
+}
+
+#constitution {
+    margin-bottom: 0.25em;
+}
+
+#willpower {
+    margin-bottom: 0;
+}
+
+#rise-title {
+    font-family: "Old English Text MT";
+    text-align: center;
+    font-size: 3.5em;
+    margin-bottom: 0;
+}
+
+#sidebar {
+    margin-left: 1px;
+}
+
+#main-sheet-body {
+    margin-right: 1px;
 }

@@ -1,4 +1,26 @@
 body {
     height: 11in;
     width: 8in;
+    padding: 0.5in;
+}
+
+/*
+.ui-dialog {
+    box-shadow: 0 0 2px 1px inset;
+}
+*/
+
+input[type=number] {
+    border: 2px solid black;
+    box-shadow: none;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    height: 2.2em;
+}
+
+.skill-box input[type=number] {
+    box-shadow: none;
+    border: 1px solid #AAA;
+    height: 1.9em;
 }

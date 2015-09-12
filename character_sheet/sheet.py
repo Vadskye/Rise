@@ -18,10 +18,14 @@ def main(fh):
     w(debug_stylesheets())
 
     html = '\n'.join([
-        boring_stuff(),
         flex_row([
-            attributes_and_skills(),
+            flex_col({'id': 'sidebar'}, [
+                rise_title(),
+                attributes_and_skills(),
+                resources(),
+            ]),
             flex_col({'id': 'main-sheet-body'}, [
+                boring_stuff(),
                 core_statistics(),
                 active_abilities(),
                 attacks(),
@@ -38,13 +42,13 @@ def boring_stuff():
         flex_row([
             labeled_text_input('Character name', 'character-name'),
             labeled_text_input('Player name', 'player-name'),
-            labeled_text_input('Class and level', 'class-and-level'),
+            labeled_text_input('Concept', 'concept'),
         ]),
         flex_row([
+            labeled_text_input('Class and level', 'class-and-level'),
             labeled_text_input('Race and background', 'race-and-background'),
             labeled_text_input('Alignment and deity', 'alignment-and-deity'),
             labeled_text_input('Appearance', 'appearance'),
-            labeled_text_input('Concept', 'concept'),
         ]),
     ])
 
@@ -55,7 +59,7 @@ def attributes_and_skills():
     ])
 
 def attribute_section(attribute):
-    return flex_col({'class': 'attribute-section'}, [
+    return flex_col({'id': attribute.lower(), 'class': 'attribute-section'}, [
         labeled_number_input(attribute, attribute.lower(), {'class': 'attribute'}),
         ''.join([skill_box(skill) for skill in ATTRIBUTE_SKILLS[attribute.lower()]])
     ])
@@ -69,6 +73,14 @@ def skill_box(name):
         number_input({
             'name': name.lower(),
         }),
+    ])
+
+def resources():
+    return flex_col({'id': 'resources'}, [
+        div(div({'class': 'section-header'}, 'Resources')),
+        unlabeled_number_input(),
+        unlabeled_number_input(),
+        unlabeled_number_input(),
     ])
 
 def core_statistics():
@@ -107,10 +119,7 @@ def movement():
             labeled_number_input(movement_type)
             for movement_type in 'Speed Climb Fly Swim'.split()
         ]),
-        flex_row({'class': 'unlabeled-number-input'}, [
-            text_input(),
-            number_input(),
-        ]),
+        unlabeled_number_input(),
     ])
 
 def passive_abilities():
@@ -139,7 +148,7 @@ def abilities():
 def active_abilities():
     return flex_col({'id': 'active-abilities'}, [
         div(div({'class': 'section-header'}, 'Abilities')),
-        "".join([active_ability(i) for i in range(5)]),
+        "".join([active_ability(i) for i in range(6)]),
     ])
 
 def active_ability(ability_number = None):
@@ -155,7 +164,7 @@ def active_ability(ability_number = None):
             {'class': 'active-ability-bonus'}
         ),
         labeled_text_input(
-            'Damage/Effect',
+            'Effect',
             'active-ability{0}-effect'.format(ability_number),
             {'class': 'active-ability-effect'}
         ),
@@ -197,8 +206,8 @@ def flex_col(attributes = None, contents = None):
     return div(attributes, contents)
 
 def rise_title():
-    return h1(
-        {'id': 'main-title'},
+    return div(
+        {'id': 'rise-title'},
         'Rise'
     )
 
@@ -228,6 +237,14 @@ def labeled_number_input(label_name, input_name = None, attributes = None):
         number_input({
             'name': input_name,
         }),
+    ])
+
+def unlabeled_number_input(attributes = None):
+    attributes = attributes or dict()
+    attributes['class'] = 'unlabeled-number-input ' + attributes.get('class', '')
+    return flex_row(attributes, [
+        text_input(),
+        number_input(),
     ])
 
 def underlabeled_number_input(label_name, input_name, attributes = None):
