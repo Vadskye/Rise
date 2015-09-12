@@ -1,15 +1,29 @@
+is_pretty = False
+
+def set_pretty(new_pretty):
+    is_pretty = new_pretty
+
+def html_separator():
+    return '\n' if is_pretty else ''
+
 # we're going to get really fancy and assert that attributes should always
-# be a dict, and contents should always be iterable.
+# be a dict, and contents should always be in an array or None.
 # If we get a non-dict attributes, those are actually attributes.
 # This allows quickly nesting html tags
-def html_tag(tag_name, attributes = None, contents = None):
+def ensure_valid_attributes_and_contents(attributes = None, contents = None):
     if type(attributes) != type(dict()):
         if contents is None:
             contents = attributes
-            attributes = None
+            attributes = dict()
         else:
             # if we have both contents and attributes, something has gone wrong
             raise Exception("Both attributes ({0}) and contents ({1}) are defined".format(attributes, contents))
+    if not (contents is None or isinstance(contents, basestring)):
+        contents = html_separator().join(contents)
+    return attributes, contents
+
+def html_tag(tag_name, attributes = None, contents = None):
+    attributes, contents = ensure_valid_attributes_and_contents(attributes, contents)
     if contents is None:
         return '<{0}{1} />'.format(
             tag_name,
@@ -17,11 +31,12 @@ def html_tag(tag_name, attributes = None, contents = None):
         )
     else:
         try:
-            return '<{0}{1}>\n  {2}\n</{0}>'.format(
+            return '<{0}{1}>{2}{3}{4}</{0}>'.format(
                 tag_name,
                 convert_html_attributes(attributes),
-                contents if isinstance(contents, basestring)
-                    else '\n  '.join(contents)
+                html_separator(),
+                contents,
+                html_separator(),
             )
         except TypeError as e:
             print '{0}\n\tAttributes: {1}\n\tContents: {2}'.format(
@@ -68,6 +83,29 @@ def span(attributes = None, contents = None):
 def style(attributes = None, contents = None):
     return html_tag('style', attributes, contents)
 
+# input:
+# [
+#   [
+#     col_attributes, col_content
+#   ],
+#   [
+#     col_attributes, col_content
+#   ],
+#   ...
+# ],
+def table(attributes = None, contents = None):
+    inner_html = ''
+    for row in contents:
+        inner_html += tr([td(col) for col in row])
+
+    return html_tag('table', attributes, inner_html)
+
+def td(attributes = None, contents = None):
+    return html_tag('td', attributes, contents)
+
+def tr(attributes = None, contents = None):
+    return html_tag('tr', attributes, contents)
+
 def card(attributes, contents):
     if attributes.has_key('class'):
         attributes['class'] += 'card'
@@ -75,10 +113,13 @@ def card(attributes, contents):
         attributes['class'] = 'card'
     return div(attributes, contents)
 
-def text_input(attributes):
+def text_input(attributes = None):
+    attributes = attributes or dict()
     attributes['type'] = 'text'
+    attributes['size'] = attributes.get('size', '1')
     return input(attributes)
 
-def number_input(attributes):
+def number_input(attributes = None):
+    attributes = attributes or dict()
     attributes['type'] = 'number'
     return input(attributes)
