@@ -123,3 +123,76 @@ def number_input(attributes = None):
     attributes = attributes or dict()
     attributes['type'] = 'number'
     return input(attributes)
+
+# less simple
+
+def flex_row(attributes = None, contents = None):
+    attributes, contents = ensure_valid_attributes_and_contents(attributes, contents)
+    attributes['class'] = 'flex-row ' + attributes.get('class', '')
+    return div(attributes, contents)
+
+def flex_col(attributes = None, contents = None):
+    attributes, contents = ensure_valid_attributes_and_contents(attributes, contents)
+    attributes['class'] = 'flex-col ' + attributes.get('class', '')
+    return div(attributes, contents)
+
+def labeled_text_input(label_name, input_name, attributes = None):
+    attributes = attributes or dict()
+    attributes['class'] = 'labeled-text-input ' + attributes.get('class', '')
+    return span(attributes, [
+        text_input({
+            'name': input_name,
+        }),
+        span(
+            {'class': 'under-label'},
+            label_name
+        ),
+    ])
+
+def labeled_number_input(label_name, input_name = None, attributes = None):
+    attributes = attributes or dict()
+    attributes['class'] = 'labeled-number-input ' + attributes.get('class', '')
+    input_name = input_name or label_name.lower()
+
+    return flex_row(attributes, [
+        span(
+            {'class': 'number-label'},
+            label_name
+        ),
+        number_input({
+            'name': input_name,
+        }),
+    ])
+
+def unlabeled_number_input(attributes = None):
+    attributes = attributes or dict()
+    attributes['class'] = 'unlabeled-number-input ' + attributes.get('class', '')
+    return flex_row(attributes, [
+        text_input(),
+        number_input(),
+    ])
+
+def underlabeled_number_input(label_name, input_name, attributes = None):
+    attributes = attributes or dict()
+    if attributes.has_key('class'):
+        attributes['class'] += ' underlabeled-number-input'
+    else:
+        attributes['class'] = 'underlabeled-number-input'
+
+    return div(attributes, [
+        number_input({
+            'name': input_name,
+        }),
+        span(
+            {'class': 'under-label'},
+            label_name
+        ),
+    ])
+
+def labeled_dual_input(label_name, text_input_name, number_input_name):
+    return div({'class': 'labeled-dual-input'}, [
+        labeled_text_input(label_name, text_input_name),
+        number_input({
+            'name': number_input_name,
+        }),
+    ])
