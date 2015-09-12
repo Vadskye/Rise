@@ -1,0 +1,133 @@
+/* paper formatting */
+
+body {
+    height: 11in;
+    width: 8in;
+    font-size: 16px;
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+    font-family: Calibri;
+}
+
+#root {
+    border: 1px solid black;
+}
+
+/* roll20 corrections
+
+.ui-dialog.ui-dialog-content {
+    position: relative !important;
+}
+
+#root {
+    padding: 0;
+}
+
+*/
+
+/* row/col system */
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+.flex-row > div, .flex-row > span {
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+}
+
+.flex-col > div, .flex-col > span {
+    margin-bottom: 0.25em;
+}
+
+.flex-col > div {
+    width: 100%;
+}
+
+/* text and input formatting */
+
+.labeled-number-input, .skill-box {
+    width: 100%;
+    align-items: center;
+}
+
+.number-label {
+    flex-grow: 1;
+    text-align: right;
+}
+
+input[type=text] {
+    display: block;
+    width: 100%;
+    height: 2em;
+    border: 0;
+    box-shadow: 0px -2px 1px -2px #000000 inset;
+}
+
+input[type=number] {
+    width: 3em;
+    height: 2em;
+    border: 0;
+    box-shadow: 0 0 2px 1px inset;
+    text-align: center;
+}
+
+.skill-box input[type=number] {
+    box-shadow: 0 0 1px 0px inset;
+    height: 1.5em;
+}
+
+.underlabeled-number-input input[type=number] {
+    display: block;
+    height: 2em;
+}
+
+.under-label {
+    font-size: 0.9em;
+    position: relative;
+    top: -0.2em;
+    height: 0.5em;
+}
+
+.attribute .number-label, .defense .number-label {
+    font-size: 1.25em;
+    text-align: center;
+}
+
+/* section-specific formatting */
+
+#boring-stuff .flex-row > span {
+    flex-grow: 1;
+}
+
+.section-header {
+    font-size: 1.25em;
+    font-weight: bold;
+    text-align: center;
+    background-color: lightgray;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+}
+
+#attacks {
+    flex-grow: 1;
+}
+
+.attack-effect {
+    flex-grow: 1;
+}
