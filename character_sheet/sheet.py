@@ -1,5 +1,7 @@
 from cgi_simple import *
 
+DESTINATION = 'paper'
+
 ATTRIBUTES = 'Strength Dexterity Constitution Intelligence Perception Willpower'.split()
 DEFENSES = 'Armor Maneuver Fortitude Reflex Mental'.split()
 ATTRIBUTE_SKILLS = {
@@ -19,12 +21,13 @@ def main(fh):
         boring_stuff(),
         flex_row([
             attributes_and_skills(),
-            flex_col([
-                defenses(),
+            flex_col({'id': 'main-sheet-body'}, [
                 core_statistics(),
+                active_abilities(),
+                attacks(),
+                #defenses(),
             ]),
-            conditional_effects(),
-            attacks(),
+            #conditional_effects(),
         ]),
     ])
 
@@ -47,7 +50,7 @@ def boring_stuff():
 
 def attributes_and_skills():
     return flex_col({'id': 'attributes-and-skills'}, [
-        div(div({'class': 'section-header'}, 'Attributes and Skills')),
+        div(div({'class': 'section-header'}, 'Attributes<br>and Skills')),
         ''.join([attribute_section(attribute) for attribute in ATTRIBUTES]),
     ])
 
@@ -69,37 +72,118 @@ def skill_box(name):
     ])
 
 def core_statistics():
-    return flex_col({'id': 'core-statistics'}, [
-        div(div({'class': 'section-header'}, 'Core Statistics')),
-        hit_points(),
+    return ''.join([
+        div({'id': 'core-statistics-header'},
+            div({'class': 'section-header'}, 'Core Statistics'),
+        ),
+        flex_row({'id': 'core-statistics'}, [
+            defenses(),
+            movement(),
+            passive_abilities(),
+            hit_points(),
+            #labeled_number_input('Hit Points', 'hit-points')
+        ])
     ])
 
 def defenses():
     return flex_col({'id': 'defenses'}, [
         div(div({'class': 'section-header'}, 'Defenses')),
-        "".join([labeled_defense_input(defense) for defense in DEFENSES]),
+        "".join([labeled_number_input(defense) for defense in DEFENSES]),
     ])
 
-def labeled_defense_input(defense_name):
-    return labeled_number_input(defense_name, defense_name.lower(), {'class': 'defense'})
-
 def hit_points():
-    return labeled_number_input('Hit Points', 'hit-points', {'class': 'defense'})
+    return flex_col({'id': 'hit-points'}, [
+        div(div({'class': 'section-header'}, 'Hit Points')),
+        "".join([
+            labeled_number_input(hp_type)
+            for hp_type in 'Maximum Bloodied Temporary Nonlethal Critical'.split()
+        ]),
+    ])
+
+def movement():
+    return flex_col({'id': 'movement'}, [
+        div(div({'class': 'section-header'}, 'Movement')),
+        "".join([
+            labeled_number_input(movement_type)
+            for movement_type in 'Speed Climb Fly Swim'.split()
+        ]),
+        flex_row({'class': 'unlabeled-number-input'}, [
+            text_input(),
+            number_input(),
+        ]),
+    ])
+
+def passive_abilities():
+    return flex_col({'id': 'passive-abilities'}, [
+        div(div({'class': 'section-header'}, 'Passive Abilities')),
+        "".join([
+            passive_ability(i)
+            for i in range(5)
+        ]),
+    ])
+
+def passive_ability(ability_number):
+    return text_input({'class': 'passive-ability'})
+
+    return flex_row({'class': 'passive-ability'}, [
+        labeled_text_input('Ability', 'passive{0}-name'.format(ability_number), {'class': 'passive-name'}),
+        labeled_text_input('Effect', 'passive{0}-effect'.format(ability_number), {'class': 'passive-effect'}),
+    ])
 
 def conditional_effects():
     return ''
 
+def abilities():
+    return ''
+
+def active_abilities():
+    return flex_col({'id': 'active-abilities'}, [
+        div(div({'class': 'section-header'}, 'Abilities')),
+        "".join([active_ability(i) for i in range(5)]),
+    ])
+
+def active_ability(ability_number = None):
+    return flex_row({'class': 'active-ability'}, [
+        labeled_text_input(
+            'Ability',
+            'active-ability{0}-name'.format(ability_number),
+            {'class': 'active-ability-name'}
+        ),
+        underlabeled_number_input(
+            'Bonus',
+            'active-ability{0}-bonus'.format(ability_number),
+            {'class': 'active-ability-bonus'}
+        ),
+        labeled_text_input(
+            'Damage/Effect',
+            'active-ability{0}-effect'.format(ability_number),
+            {'class': 'active-ability-effect'}
+        ),
+    ])
+
 def attacks():
     return flex_col({'id': 'attacks'}, [
         div(div({'class': 'section-header'}, 'Attacks')),
-        "".join([attack(i) for i in range(4)]),
+        "".join([attack(i) for i in range(5)]),
     ])
 
 def attack(attack_number = None):
-    return flex_row({'class': 'single-attack'}, [
-        labeled_text_input('Attack', 'attack{0}-name'.format(attack_number), {'class': 'attack-name'}),
-        underlabeled_number_input('Bonus', 'attack{0}-bonus'.format(attack_number), {'class': 'attack-bonus'}),
-        labeled_text_input('Damage/Effect', 'attack{0}-effect'.format(attack_number), {'class': 'attack-effect'}),
+    return flex_row({'class': 'attack'}, [
+        labeled_text_input(
+            'Attack',
+            'attack{0}-name'.format(attack_number),
+            {'class': 'attack-name'}
+        ),
+        underlabeled_number_input(
+            'Bonus',
+            'attack{0}-bonus'.format(attack_number),
+            {'class': 'attack-bonus'}
+        ),
+        labeled_text_input(
+            'Damage/Effect',
+            'attack{0}-effect'.format(attack_number),
+            {'class': 'attack-effect'}
+        ),
     ])
 
 def flex_row(attributes = None, contents = None):
@@ -131,9 +215,10 @@ def labeled_text_input(label_name, input_name, attributes = None):
         ),
     ])
 
-def labeled_number_input(label_name, input_name, attributes = None):
+def labeled_number_input(label_name, input_name = None, attributes = None):
     attributes = attributes or dict()
     attributes['class'] = 'labeled-number-input ' + attributes.get('class', '')
+    input_name = input_name or label_name.lower()
 
     return flex_row(attributes, [
         span(
@@ -184,7 +269,11 @@ def debug_stylesheets():
         #}),
         link({
             'rel': 'stylesheet',
-            'href': 'paper_sheet.css',
+            'href': 'sheet.css',
+        }),
+        link({
+            'rel': 'stylesheet',
+            'href': DESTINATION + '_sheet.css',
         }),
     ])
 
@@ -192,7 +281,6 @@ def debug_html_wrapper(html):
     return div(
         {
             'class': 'dialog characterdialog ui-dialog ui-dialog-content ui-widget-content',
-            'style': 'display: block; height: 11in; width: 8in;',
         },
         div(
             {'id': 'root', 'class': 'charsheet tab-pane'},

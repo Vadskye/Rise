@@ -1,0 +1,164 @@
+body {
+    font-size: 16px;
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+    font-family: Calibri;
+}
+
+/* roll20 corrections
+
+.ui-dialog.ui-dialog-content {
+    position: relative !important;
+}
+
+#root {
+    padding: 0;
+}
+
+*/
+
+/* row/col system */
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+.flex-row > div, .flex-row > span {
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+}
+
+.flex-col > div, .flex-col > span {
+    margin-bottom: 0.25em;
+}
+
+.flex-col > div {
+    width: 100%;
+}
+
+/* text and input formatting */
+
+.labeled-number-input, .unlabeled-number-input, .skill-box {
+    width: 100%;
+    align-items: center;
+}
+
+.number-label {
+    flex-grow: 1;
+    font-size: 1.25em;
+    text-align: center;
+}
+
+input[type=text] {
+    display: block;
+    height: 2em;
+    border: 0;
+    box-shadow: 0px -2px 1px -2px #000000 inset;
+    width: 100%;
+    background-color: inherit;
+}
+
+input[type=number] {
+    width: 3em;
+    height: 2em;
+    border: 0;
+    box-shadow: 0 0 2px 1px inset;
+    text-align: center;
+    margin-right: 0.25em;
+}
+
+.skill-box input[type=number] {
+    box-shadow: 0 0 1px 0px inset;
+    height: 1.5em;
+}
+
+.skill-box .number-label {
+    font-size: 1em;
+    text-align: right;
+}
+
+.underlabeled-number-input input[type=number] {
+    display: block;
+    height: 2em;
+}
+
+.unlabeled-number-input input[type=text] {
+    flex-grow: 1;
+    width: auto;
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+}
+
+.under-label {
+    font-size: 0.9em;
+    position: relative;
+    top: -0.2em;
+    height: 0.5em;
+}
+
+/* section-specific formatting */
+
+#boring-stuff .flex-row > span {
+    flex-grow: 1;
+}
+
+.section-header {
+    font-size: 1.25em;
+    font-weight: bold;
+    text-align: center;
+    background-color: #FFF0C8;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+    border-radius: 0.5em;
+}
+
+#attacks, #main-sheet-body, #passive-abilities {
+    flex-grow: 1;
+}
+
+#core-statistics-header {
+    margin-bottom: 0;
+}
+
+#core-statistics-header .section-header {
+    border-radius: 0.5em 0.5em 0 0;
+}
+
+#core-statistics .section-header {
+    border-radius: 0 0 0.5em 0.5em;
+}
+
+input[type=text].passive-ability {
+    height: 2.25em;
+}
+
+#defenses {
+    margin-left: 0;
+}
+
+#hit-points {
+    margin-right: 0;
+}
+
+.active-ability-name, .attack-name {
+    width: 25%;
+}
+
+.active-ability-effect, .attack-effect {
+    flex-grow: 1;
+}
