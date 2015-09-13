@@ -82,7 +82,6 @@ input[type=number] {
     border: 0;
     box-shadow: 0 0 2px 1px inset;
     text-align: center;
-    margin-right: 0.25em;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -90,6 +89,10 @@ input[type=number] {
 
 .labeled-text-input input[type=text] {
     width: 100%;
+}
+
+.underlabeled-number-input {
+    align-items: center;
 }
 
 .underlabeled-number-input input[type=number] {
@@ -106,7 +109,25 @@ input[type=number] {
 
 .under-label {
     font-size: 0.9em;
-    position: relative;
-    top: -0.2em;
-    height: 0.5em;
+    margin-bottom: 0 !important;
+    text-align: center;
+}
+
+/* Rise-specific formatting */
+
+.section-header {
+    font-size: 1.25em;
+    font-weight: bold;
+    text-align: center;
+    background-color: #FFF0C8;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+    border-radius: 0.5em;
+}
+
+#rise-title {
+    font-family: "Old English Text MT";
+    text-align: center;
+    font-size: 3.5em;
+    margin-bottom: 0;
 }
