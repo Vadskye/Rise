@@ -18,8 +18,10 @@ def ensure_valid_attributes_and_contents(attributes = None, contents = None):
         else:
             # if we have both contents and attributes, something has gone wrong
             raise Exception("Both attributes ({0}) and contents ({1}) are defined".format(attributes, contents))
-    if not (contents is None or isinstance(contents, basestring)):
-        contents = html_separator().join(contents)
+    if contents is None:
+        contents = list()
+    if isinstance(contents, basestring):
+        contents = [contents]
     return attributes, contents
 
 def html_tag(tag_name, attributes = None, contents = None):
@@ -35,7 +37,7 @@ def html_tag(tag_name, attributes = None, contents = None):
                 tag_name,
                 convert_html_attributes(attributes),
                 html_separator(),
-                contents,
+                html_separator().join(contents),
                 html_separator(),
             )
         except TypeError as e:
@@ -70,9 +72,6 @@ def h2(attributes = None, contents = None):
 
 def head(attributes = None, contents = None):
     return html_tag('head', attributes, contents)
-
-def input(attributes = None, contents = None):
-    return html_tag('input', attributes, contents)
 
 def link(attributes = None, contents = None):
     return html_tag('link', attributes, contents)
@@ -117,12 +116,12 @@ def text_input(attributes = None):
     attributes = attributes or dict()
     attributes['type'] = 'text'
     attributes['size'] = attributes.get('size', '1')
-    return input(attributes)
+    return html_tag('input', attributes)
 
 def number_input(attributes = None):
     attributes = attributes or dict()
     attributes['type'] = 'number'
-    return input(attributes)
+    return html_tag('input', attributes)
 
 # less simple
 
@@ -136,10 +135,15 @@ def flex_col(attributes = None, contents = None):
     attributes['class'] = 'flex-col ' + attributes.get('class', '')
     return div(attributes, contents)
 
+def flex_wrapper(attributes = None, contents = None):
+    attributes, contents = ensure_valid_attributes_and_contents(attributes, contents)
+    attributes['class'] = 'flex-wrapper ' + attributes.get('class', '')
+    return div(attributes, contents)
+
 def labeled_text_input(label_name, input_name, attributes = None):
     attributes = attributes or dict()
     attributes['class'] = 'labeled-text-input ' + attributes.get('class', '')
-    return span(attributes, [
+    return div(attributes, flex_col([
         text_input({
             'name': input_name,
         }),
@@ -147,7 +151,7 @@ def labeled_text_input(label_name, input_name, attributes = None):
             {'class': 'under-label'},
             label_name
         ),
-    ])
+    ]))
 
 def labeled_number_input(label_name, input_name = None, attributes = None):
     attributes = attributes or dict()
@@ -179,11 +183,11 @@ def underlabeled_number_input(label_name, input_name, attributes = None):
     else:
         attributes['class'] = 'underlabeled-number-input'
 
-    return div(attributes, [
+    return flex_col(attributes, [
         number_input({
             'name': input_name,
         }),
-        span(
+        div(
             {'class': 'under-label'},
             label_name
         ),
