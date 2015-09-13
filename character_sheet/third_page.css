@@ -1,0 +1,54 @@
+.subsection-header {
+    /*align-items: center;*/
+    font-weight: bold;
+    font-size: 1.25em;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    height: 1.6em; /* 2em / 1.25em */
+    width: 3em;
+}
+
+.equipment-name {
+    width: 20%;
+}
+
+.equipment-special {
+    flex-grow: 1;
+}
+
+#adventuring > div {
+    flex-grow: 1;
+}
+
+#proficiencies {
+    margin-left: 0;
+}
+
+#misc {
+    margin-right: 0;
+}
+
+#weight-limits {
+    margin-bottom: 2.05em;
+}
+
+#weight-limits .labeled-text-input {
+    flex-grow: 1;
+}
+
+#wealth-and-xp .flex-col {
+    flex-grow: 1;
+}
+
+#wealth-and-xp input {
+    width: 100%;
+}
+
+.inventory-col {
+    flex-grow: 1;
+}
+
+.inventory-col input {
+    width: 100%;
+}
