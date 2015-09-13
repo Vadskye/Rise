@@ -88,12 +88,18 @@ input[type=text] {
     flex-wrap: nowrap;
 }
 
+#calc-attributes {
+    margin-bottom: 0 !important;
+}
+
 .calc-attribute-header {
     align-items: center;
     font-weight: bold;
     text-align: center;
     font-size: 1.25em;
     margin-bottom: 0em !important;
+    margin-top: 0.2em !important;
+
 }
 
 .calc-attribute-header .number-label {
