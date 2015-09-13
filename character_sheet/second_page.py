@@ -51,6 +51,7 @@ def calc_attribute(attribute_name):
             underlabeled_number_input('Base', 'attribute-base', {'class': 'eq-base'}),
             plus(),
             underlabeled_number_input('Level', 'attribute-level', {'class': 'eq-level'}),
+            misc_spacer(),
             plus(),
             underlabeled_number_input('Misc', 'attribute-misc', {'class': 'eq-misc'}),
         ])
@@ -106,6 +107,7 @@ def calc_hit_points():
             ]),
             plus(),
             underlabeled_number_input('Con', 'hp-con'),
+            misc_spacer(),
             plus(),
             underlabeled_number_input('Misc', 'attacks-misc', {'class': 'eq-misc'}),
         ]),
@@ -137,6 +139,7 @@ def calc_melee():
             ]),
             plus(),
             underlabeled_number_input('Prof', 'attacks-prof'),
+            misc_spacer(),
             plus(),
             underlabeled_number_input('Misc', 'attacks-misc', {'class': 'eq-misc'}),
         ]),
@@ -152,6 +155,7 @@ def calc_ranged():
             ]),
             plus(),
             underlabeled_number_input('Prof', 'attacks-prof'),
+            misc_spacer(),
             plus(),
             underlabeled_number_input('Misc', 'attacks-misc', {'class': 'eq-misc'}),
         ]),
@@ -160,7 +164,7 @@ def calc_ranged():
 def base_10():
     return flex_col([
         html_tag('input', {'type': 'number', 'value': '10'}),
-        div({'class': 'under-label'}, 'Base'),
+        div({'class': 'under-label'}, ''),
     ])
 
 def calc_armor():
@@ -178,10 +182,15 @@ def calc_armor():
             underlabeled_number_input('Armor', 'armor-armor'),
             plus(),
             underlabeled_number_input('Shield', 'armor-shield'),
+            misc_spacer(),
             plus(),
+            #misc_spacer(),
             underlabeled_number_input('Misc', 'attacks-misc', {'class': 'eq-misc'}),
         ]),
     ])
+
+def misc_spacer():
+    return div({'class': 'misc-spacer'}, '')
 
 def calc_maneuver():
     return flex_row([
@@ -196,7 +205,9 @@ def calc_maneuver():
             ]),
             plus(),
             underlabeled_number_input('Shield', 'armor-shield'),
+            misc_spacer(),
             plus(),
+            #misc_spacer(),
             underlabeled_number_input('Misc', 'maneuver-misc', {'class': 'eq-misc'}),
         ]),
     ])
@@ -215,7 +226,9 @@ def calc_fort():
                 ]),
                 underlabeled_number_input('Base', 'fort-base'),
             ]),
+            misc_spacer(),
             plus(),
+            #misc_spacer(),
             underlabeled_number_input('Misc', 'fort-misc', {'class': 'eq-misc'}),
         ]),
     ])
@@ -236,7 +249,9 @@ def calc_ref():
             ]),
             plus(),
             underlabeled_number_input('Shield', 'ref-shield'),
+            misc_spacer(),
             plus(),
+            #misc_spacer(),
             underlabeled_number_input('Misc', 'ref-misc', {'class': 'eq-misc'}),
         ]),
     ])
@@ -255,7 +270,9 @@ def calc_will():
                 ]),
                 underlabeled_number_input('Base', 'ment-base'),
             ]),
+            misc_spacer(),
             plus(),
+            #misc_spacer(),
             underlabeled_number_input('Misc', 'ment-misc', {'class': 'eq-misc'}),
         ]),
     ])
