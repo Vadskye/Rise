@@ -60,6 +60,7 @@ input[type=text] {
 .equation {
     margin-left: 0 !important;
     margin-right: 0 !important;
+    flex-grow: 1;
 }
 
 .equation input, .equation div {
@@ -127,4 +128,9 @@ input[type=text] {
 
 .half {
     font-size: 0.9em;
+}
+
+.misc-spacer {
+    display: inline-block;
+    flex-grow: 1;
 }
