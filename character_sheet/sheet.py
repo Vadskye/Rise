@@ -1,6 +1,7 @@
 from cgi_simple import *
 import first_page
 import second_page
+import third_page
 
 DESTINATION = 'paper'
 
@@ -16,6 +17,12 @@ def main():
             '<!DOCTYPE html>',
             debug_stylesheets('second_page'),
             debug_html_wrapper(second_page.create_page()),
+        ]) + '\n')
+    with open('third_page.html', 'w') as fh:
+        fh.write(''.join([
+            '<!DOCTYPE html>',
+            debug_stylesheets('third_page'),
+            debug_html_wrapper(third_page.create_page()),
         ]) + '\n')
 
 def debug_stylesheets(page_name):
