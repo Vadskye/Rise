@@ -5,7 +5,7 @@ from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS
 def create_page():
     return flex_col([
         flex_row([
-            flex_col([
+            flex_col({'id': 'sidebar'}, [
                 rise_title(),
                 calc_attributes(),
             ]),
