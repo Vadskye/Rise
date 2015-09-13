@@ -162,10 +162,7 @@ def calc_ranged():
     ])
 
 def base_10():
-    return flex_col([
-        html_tag('input', {'type': 'number', 'value': '10'}),
-        div({'class': 'under-label'}, ''),
-    ])
+    return number_input({'value': '10'})
 
 def calc_armor():
     return flex_row([
