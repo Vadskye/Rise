@@ -85,6 +85,10 @@ input[type=text] {
     font-size: 1.25em;
 }
 
+#calcs {
+    margin-right: 0;
+}
+
 #calcs > .flex-row {
     flex-wrap: nowrap;
 }
@@ -133,4 +137,8 @@ input[type=text] {
 .misc-spacer {
     display: inline-block;
     flex-grow: 1;
+}
+
+#sidebar {
+    margin-left: 0;
 }
