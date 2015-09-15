@@ -414,7 +414,7 @@ The domains are listed below.
 \cf{Clr}{Spells}
 A cleric casts divine spells using his devotion.
 A cleric's spellpower is normally equal to his divine power.
-See the Divine Power ability, below.
+See the Divine Power and Devotion abilities, below.
 
 The number of spells a cleric knows is given on \trefnp{Cleric Spells Known}.
 The cleric may learn spells from both the divine spell list (see \pcref{Divine Spells}) and his domain spell lists (see \pcref{Cleric Domains}).
@@ -939,8 +939,8 @@ Druidic has its own alphabet.
 
 \cf{Drd}{Spells}
 A druid casts nature spells using her attunement with nature.
-A druid's spellpower is normally equal to her druid level.
-However, see the Attunement ability, below.
+A druid's spellpower is normally equal to her natural power.
+See the Natural Power and Attunement abilities, below.
 
 At 1st level, the druid knows one 1st level spell.
 At every level theareafter, she learns one additional spell.
@@ -984,9 +984,15 @@ Attuning to a natural environment for an hour, as described above, restores all 
 Druids can perform rituals to create unique magical effects (see \pcref{Rituals}).
 A druid begins play with a ritual book containing one nature ritual of her choice (see \pcref{Nature Rituals}).
 
+\cf{Drd}{Natural Power}{Su}
+The strength of a druid's spells and abilities are determined by her connection to nature.
+Normally, her nature power is equal to her druid level.
+Attuning to nature can increase a druid's nature power -- see the Attunement ability below.
+
 \cf{Drd}{Attunement}[Su]
 Whenever the druid is in a natural environment, she may dismiss all her active spells and spend one hour attuning to the natural world.
-If she does so, she regains all her spell slots. In addition, she gains a \plus5 bonus to her spellpower for as long as she stays in a natural environment, and for five minutes after leaving a natural environment.
+If she does so, she regains all her spell slots.
+In addition, she gains a \plus5 bonus to her spellpower for as long as she stays in a natural environment, and for five minutes after leaving a natural environment.
 
 \cf{Drd}[2nd]{Wild Speech}[Su]
 The druid learns how to communicate with animals.
@@ -1002,23 +1008,22 @@ If an animal is friendly toward the druid, she may be able to convince it to do 
 Whenever the druid casts a nature spell with an area that originate from her, such as most cone or line spells, she may cause the spell to originate from any location within 10 feet of her.
 All other aspects of the spell are unchanged.
 
-For example, a druid casting \spell{gust of wind} could create a line of wind originating from 10 feet to her right.
-The line would extend 50 feet out from that point, as normal.
-If the druid cause the line of wind to blow to the left, she could potentially be affected by the wind.
+For example, a druid casting \spell{burning hands} could create a cone of fire originating from 10 feet to her right.
+The cone would extend 20 feet out from that point, as normal.
+If the druid directed the cone back towards her, she could potentially be affected by the spell.
 
 \cf{Drd}[3rd]{Wild Aspect}[Su]
 The druid gains the ability to embody an aspect of an animal.
+She chooses one wild aspect from the list below.
+Some wild aspects have minimum druid levels, as indicated in the title of the aspect.
+At her 5th druid level, and every odd druid level thereafter, the druid gains an additional wild aspect.
+
 Unless otherwise noted, embodying a wild aspect is a swift action.
 The druid can embody a wild aspect a number of times per day equal to her Constitution or half her druid level, whichever is higher.
-
-A wild aspect normally lasts for a number of rounds equal to 5 \add the druid's Constitution.
+A wild aspect normally lasts for 5 rounds.
 If the druid embodies an additional wild aspect, the first aspect ends at the end of the round.
 All wild aspects can be dismissed as a swift action.
 
-The druid chooses one wild aspect from the list below.
-Some wild aspects have minimum druid levels, as indicated in the title of the aspect.
-At her 5th druid level, and every odd druid level thereafter, the druid gains an additional wild aspect.
-The list of wild aspects is given below.
 All wild aspects are supernatural abilities unless otherwise noted.
 
 The descriptions below describe the effects of the aspect.
@@ -1050,29 +1055,31 @@ The druid gains low-light vision.
 She treats sources of light as if they had double their normal illumination range.
 \subcf{Talons}
 The druid's feet transform, allowing her to perform a talon attack.
+The attack deals 1d6 damage for a Medium druid.
+(See \pcref{Natural Weapons}, for details about natural weapons.)
 \subcf{5th -- Bear's Endurance}
 The druid gains a \plus2 bonus to Constitution.
-This cannot increase her Constitution above her druid level.
+This cannot increase her Constitution above her nature power.
 \subcf{5th -- Bull's Strength}
 The druid gains a \plus2 enhancement bonus to Strength.
-This cannot increase her Strength above her druid level.
+This cannot increase her Strength above her nature power.
 \subcf{5th -- Cat's Grace}
 The druid gains a \plus2 enhancement bonus to Dexterity.
-This cannot increase her Dexterity above her druid level.
+This cannot increase her Dexterity above her nature power.
 \subcf{5th -- Climb}
 The druid gains a climb speed equal to her base land speed.
 \subcf{5th -- Fox's Cunning}
 The druid gains a \plus2 enhancement bonus to Intelligence.
-This cannot increase her Intelligence above her druid level.
+This cannot increase her Intelligence above her nature power.
 \subcf{5th -- Glide}
 The druid grows wings, granting her a glide speed equal to her land speed.
 See \pcref{Gliding}, for more details.
 \subcf{5th -- Mule's Tenacity}
 The druid gains a \plus2 enhancement bonus to Willpower.
-This cannot increase her Willpower above her druid level.
+This cannot increase her Willpower above her nature power.
 \subcf{5th -- Owl's Insight}
 The druid gains a \plus2 enhancement bonus to Perception.
-This cannot increase her Perception above her druid level.
+This cannot increase her Perception above her nature power.
 \subcf{5th -- Shrink}
 As a full-round action, the druid can shrink by a size category.
 This functions like the \spell{reduce person} spell, except that it only affects the druid.
@@ -2661,10 +2668,11 @@ Some spellsurges have minimum sorcerer levels, as indicated in the title of the 
 The list of spellsurges is given below.
 All spellsurges are extraordinary abilities unless otherwise specified.
 
-\subcf{Brilliant Surge}
-The sorcerer gains a bonus to his spellpower with light spells, but takes a penalty to his spellpower with Illusion spells.
+\subcf{Brutal Surge}
+Whenever the sorcerer makes a successful physical attack, he gains a bonus to spellpower with all spells.
+At all other times, he takes a penalty to spellpower with all spells.
 \subcf{Empathic Surge}
-The sorcerer gains a bonus to spellpower with mind-affecting spells, but takes a penalty to Mental defense and to spellpower with spells that deal damage.
+The sorcerer gains a bonus to spellpower with Mind spells, but takes a penalty to Mental defense and to spellpower with spells that deal damage.
 \subcf{Energetic Surge}
 The sorcerer gains a bonus to spellpower with acid, cold, electricity, and fire spells, but takes a penalty to his spellpower with other spells.
 \subcf{6th -- Focused Surge}
