@@ -206,12 +206,14 @@ In addition, he is not \unaware when attacked by surprise.
 
 \cf{Bbn}[3rd]{Channeled Rage}
 The barbarian gains the ability to channel his rage to gain new abilities.
+He chooses a single channeled rage from the list below.
 Whenever the barbarian enters a rage, he may gain the benefits of one channeled rage he knows.
+Some channeled rages require a minimum barbarian level, as indicated before the name of the ability.
+At his 6th barbarian level, and every three barbarian levels thereafter, the barbarian gains an additional channeled rage.
+
 Some channeled rages depend on the barbarian's rage power.
 A barbarian's rage power is equal to his Willpower or his barbarian level, whichever is higher.
 
-At his 6th barbarian level, and every three barbarian levels thereafter, the barbarian gains an additional channeled rage.
-Some channeled rages require a minimum barbarian level, as indicated before the name of the ability.
 All channeled rages are extraordinary abilities unless otherwise noted.
 
 \subcf{Athletic Rage}
@@ -251,7 +253,8 @@ Success means the target is \shaken for 5 rounds.
 Whenever the barbarian scores a critical hit while raging, he extends his rage by 2 rounds and gains temporary hit points equal to his rage power.
 
 \subcf{9th -- Overpowering Rage}
-The barbarian adds his rage bonus to his maneuver attacks.
+The barbarian adds his rage bonus to his attack bonus with combat maneuvers.
+Once per round, when the barbarian successfully performs a combat maneuver, he gains temporary hit points equal to his rage power.
 
 \subcf{9th -- Taunting Rage}
 Once per round, the barbarian can make a special attack against the Mental defense of a foe within \rngmed range of him.
@@ -343,17 +346,17 @@ If he stops being lawful, he regains his ability to rage and take barbarian leve
         \clericprogressionrow{2}  & Devotion                      \\
         \clericprogressionrow{3}  & Domain invocations            \\
         \clericprogressionrow{4}  & \x                            \\
-        \clericprogressionrow{5}  & Improved devotion              \\
+        \clericprogressionrow{5}  & Devotion feat                 \\
         \clericprogressionrow{6}  & \x                            \\
         \clericprogressionrow{7}  & Domain aspect                 \\
         \clericprogressionrow{8}  & \x                            \\
         \clericprogressionrow{9}  & Domain aspect                 \\
-        \clericprogressionrow{10} & Expanded devotion                \\
+        \clericprogressionrow{10} & Expanded devotion             \\
         \clericprogressionrow{11} & Greater domain invocation     \\
         \clericprogressionrow{12} & \x                            \\
         \clericprogressionrow{13} & Greater domain invocation     \\
         \clericprogressionrow{14} & \x                            \\
-        \clericprogressionrow{15} & Greater devotion \\
+        \clericprogressionrow{15} & Devotion feat                 \\
         \clericprogressionrow{16} & \x                            \\
         \clericprogressionrow{17} & Domain mastery                \\
         \clericprogressionrow{18} & \x                            \\
@@ -516,6 +519,7 @@ Spells associated with particular alignments are indicated by the chaos, evil, g
 \cf{Clr}{Divine Power}[Su]
 The strength of a cleric's spells and abilities are determined by his divine power.
 Normally, his divine power is equal to his cleric level.
+A cleric's devotion can increase his divine power -- see the Devotion ability below.
 
 \cf{Clr}{Rituals}
 Clerics, can perform rituals to create unique magical effects (see \pcref{Rituals}).
@@ -529,7 +533,7 @@ The gifts offered by each domain are listed at \pcref{Domain Gifts}.
 
 \cf{Clr}[2nd]{Devotion}[Su]
 A cleric's divine power varies depending on the extent to which he calls on his devotion to create effects.
-A cleric has a devotion pool with a maximum of five devotion points in it.
+A cleric has a devotion pool with a maximum of eight devotion points in it.
 If the cleric's devotion pool is at least three-quarters full, he gains a \plus5 bonus to his divine power.
 If the cleric's devotion pool has no points remaining, he takes a \minus5 penalty to his divine power (minimum 1).
 
@@ -549,8 +553,14 @@ The cleric's attack bonus is equal to his divine power.
 If the attack succeeds, a domain invocation heals or inflicts 1d10 damage per two divine power.
 If the attack fails, the invocation heals or inflicts half damage.
 
-\cf{Clr}[5th]{Improved Devotion}[Su]
-When the cleric's devotion pool is at least three-quarters full, he gains a \plus1 bonus to all attacks, checks, and defenses.
+\cf{Clr}[5th]{Devotion Feat}[Su]
+The cleric chooses a feat that he meets the prerequisites for.
+As long as his devotion pool is at least half full, he gains that feat as a bonus feat.
+At each level, the cleric may change this feat to a different feat he qualifies for.
+
+At 15th level, the cleric gains a second devotion feat.
+The cleric may not normally use these devotion feats as prerequisites for other feats or abilities.
+However, he he may use one devotion feat to meet a prerequiste for his second devotion feet.
 
 \cf{Clr}[7th]{Domain Aspect}[Su]
 The cleric gains a domain aspect from one of his domains.
@@ -569,10 +579,6 @@ A cleric's special attack bonus when invoking a greater domain is equal to his d
 Greater domain invocations are described at \pcref{Greater Domain Invocations}.
 
 At his 15th cleric level, the cleric gains an additional greater domain invocation from one of his domains.
-
-\cf{Clr}[15th]{Greater Devotion}[Su]
-When the cleric's devotion pool is at least three-quarters full, he gains a \plus2 bonus to all attacks, checks, and defenses.
-This does not stack with the bonus from his improved devotion ability.
 
 \cf{Clr}[17th]{Domain Mastery}[Su]
 The cleric gains a domain mastery from one of his domains.
