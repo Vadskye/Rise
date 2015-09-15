@@ -200,7 +200,9 @@ A barbarian increases his land speed by 10 feet while \unencumbered.
 
 \cf{Bbn}[3rd]{Uncanny Dodge}[Ex]
 A barbarian can react to danger before his senses would normally allow him to do so.
-He is not \unaware when attacked by surprise.
+He reduces his overwhelm penalties by 1.
+If his overwhelm penalty is reduced to 0, he is not considered to be overwhelmed.
+In addition, he is not \unaware when attacked by surprise.
 
 \cf{Bbn}[3rd]{Channeled Rage}
 The barbarian gains the ability to channel his rage to gain new abilities.
@@ -299,6 +301,7 @@ The benefits of this class feature stack with the effects of spells and abilitie
 
 \cf{Bbn}[10th]{Improved Uncanny Dodge}[Ex]
 The barbarian reduces his overwhelm penalties by 2.
+This does not stack with the effects of uncanny dodge.
 If his overwhelm penalty is reduced to 0, he is not considered to be overwhelmed.
 
 \cf{Bbn}[11th]{Tireless Rage}[Ex]
@@ -1595,7 +1598,9 @@ A helpless monk does not gain the benefit of evasion.
 
 \cf{Mnk}[3rd]{Uncanny Dodge}[Ex]
 The monk can react to danger before her senses would normally allow her to do so.
-She is not \unaware when attacked by surprise.
+The monk reduces her overwhelm penalties by 1.
+If her overwhelm penalty is reduced to 0, she is not considered to be overwhelmed.
+In addition, she is not \unaware when attacked by surprise.
 
 \cf{Mnk}[4th]{Flurry of Blows}
 When attacking unarmed, the monk can attack with multiple parts of her body simultaneously.
@@ -1643,12 +1648,13 @@ The monk gains a \plus1 bonus to her Strength, Dexterity, and Constitution.
 
 \cf{Mnk}[9th]{Improved Evasion}[Ex]
 The monk's evasion ability improves.
-If she is affected by an attack against her Reflex defense that would deal half damage when resisted, she takes only half damage from the attack, even if the attack succeeds.
+If the monk resists an attack against her Reflex defense, she ignores all effects of the attack, even if it would normally have effects on a miss.
 Like evasion, improved evasion can be used only if a monk is \unencumbered.
 A helpless monk does not gain the benefit of improved evasion.
 
 \cf{Mnk}[10th]{Improved Uncanny Dodge}[Ex]
- The monk reduces her overwhelm penalties by 2.
+The monk reduces her overwhelm penalties by 2.
+This does not stack with the effects of uncanny dodge.
 If her overwhelm penalty is reduced to 0, she is not considered to be overwhelmed.
 
 \cf{Mnk}[13th]{Improved Bodily Perfection}
@@ -1767,7 +1773,7 @@ A failed attack heals or inflicts half damage.
 \subcf{2nd -- Resounding Smite*}
 The creature struck by this smite is knocked prone.
 \subcf{4th -- Dispelling Smite*}
-The creature struck by this smite is affected by a targeted \spell{dispel magic}.
+The creature struck by this smite is affected by \spell{dispel magic}.
 \subcf{4th -- Penetrating Smite*}
 The paladin makes a special attack against the Fortitude of the creature struck by this smite.
 If the special attack succeeds, the struck creature loses its damage reduction for 5 rounds, including against this smite.
@@ -2212,10 +2218,10 @@ He must have the improved combat style lore to choose this lore.
 The benefits of this lore only apply if the ranger is \unencumbered.
 
 \subcf{12th -- Improved Evasion}
-The ranger's ability to avoid damage improves.
-If he is affected by Reflex attack that would deal half damage when resisted, he takes only half damage from the attack, even if the attack succeeds.
+If the ranger resists an attack against his Reflex defense, he ignores all effects of the attack, even if it would normally have effects on a miss.
 Like evasion, improved evasion can be used only if a ranger is \unencumbered.
 A helpless ranger does not gain the benefit of improved evasion.
+The ranger must have the evasion lore to choose this lore.
 
 \subcf{15th -- Combat Style Mastery}
 The ranger's abilities with traditional ranger combat styles reach their peak.
@@ -2331,23 +2337,23 @@ He gains the ability to see all things as they actually are, as the \spell{true 
         \hline
         \rogueprogressionrow{1}  & Sneak attack \plus1d6                  \\
         \rogueprogressionrow{2}  & Skill talent                           \\
-        \rogueprogressionrow{3}  & Sneak attack \plus2d6, uncanny dodge   \\
+        \rogueprogressionrow{3}  & Sneak attack \plus2d6, survival trick   \\
         \rogueprogressionrow{4}  & Combat trick                           \\
-        \rogueprogressionrow{5}  & Sneak attack \plus3d6                  \\
+        \rogueprogressionrow{5}  & Skill exemplar, sneak attack \plus3d6  \\
         \rogueprogressionrow{6}  & Persistent sneak attack, skill talent  \\
-        \rogueprogressionrow{7}  & Skill exemplar, sneak attack \plus4d6  \\
+        \rogueprogressionrow{7}  & Sneak attack \plus4d6, survival trick  \\
         \rogueprogressionrow{8}  & Combat trick                           \\
-        \rogueprogressionrow{9}  & Sneak attack \plus5d6                  \\
+        \rogueprogressionrow{9}  & Skill exemplar, Sneak attack \plus5d6  \\
         \rogueprogressionrow{10} & Improved uncanny dodge, skill talent   \\
-        \rogueprogressionrow{11} & Sneak attack \plus6d6                  \\
+        \rogueprogressionrow{11} & Sneak attack \plus6d6, survival trick  \\
         \rogueprogressionrow{12} & Combat trick                           \\
         \rogueprogressionrow{13} & Skill exemplar, sneak attack \plus7d6  \\
         \rogueprogressionrow{14} & Skill talent                           \\
-        \rogueprogressionrow{15} & Sneak attack \plus8d6                  \\
+        \rogueprogressionrow{15} & Sneak attack \plus8d6, survival trick  \\
         \rogueprogressionrow{16} & Combat trick                           \\
-        \rogueprogressionrow{17} & Sneak attack \plus9d6                  \\
+        \rogueprogressionrow{17} & Skill exemplar, sneak attack \plus9d6  \\
         \rogueprogressionrow{18} & Skill talent                           \\
-        \rogueprogressionrow{19} & Skill exemplar, sneak attack \plus10d6 \\
+        \rogueprogressionrow{19} & Sneak attack \plus10d6, survival trick \\
         \rogueprogressionrow{20} & Ambush master, combat trick            \\
     \end{dtabularx}
 \end{dtable}
@@ -2394,21 +2400,60 @@ The rogue's skills improve.
 She gains an additional skill point, which she can place in any skill, and a bonus skill feat for which she qualifies.
 At her 6th rogue level, and every four rogue levels thereafter, she gains an additional skill point and skill feat.
 
-\cf{Rog}[3rd]{Uncanny Dodge}[Ex]
+\cf{Rog}[3rd]{Survival Trick}
+The rogue gains a trick to help her survive.
+She chooses a single survival trick from the list below.
+Some survival tricks have minimum rogue levels, as indicated in the title of the ability.
+At her 7th rogue level, and every four rogue levels thereafter, the rogue gains an additional survival trick.
+
+All survival tricks are extraordinary abilities unless otherwise noted.
+
+\subcf{Evasion}
+If the rogue resists an attack against her Reflex defense that normally deals half damage when resisted, she instead takes no damage.
+Evasion can be used only if a rogue is \unencumbered.
+A helpless rogue does not gain the benefit of evasion.
+
+\subcf{Uncanny Dodge}
 The rogue can react to danger before her senses would normally allow her to do so.
-She is not \unaware when attacked by surprise.
+The rogue reduces her overwhelm penalties by 1.
+If her overwhelm penalty is reduced to 0, she is not considered to be overwhelmed.
+In addition, she is not \unaware when attacked by surprise.
+
+\subcf{7th -- Defensive Roll}
+As an immediate action, whenever the rogue takes damage from a physical attack, she can attempt to roll with the blow.
+If the damage dealt is less than her Reflex defense, she takes half damage from the attack, and the damage is nonlethal.
+This applies after all other effects that reduce damage, such as damage reduction.
+However, the rogue also falls \prone.
+The rogue must be aware of the attack to use this ability.
+
+\subcf{7th -- Slippery Mind}
+Whenever an attack for a Mind spell or effect beats the rogue's Mental defense by less than 5, she is affected normally at first.
+One round later, the rogue is instead affected as if the attack had failed.
+This does not help against instantaneous effects.
+
+\subcf{11th -- Improved Evasion}
+If the rogue resists an attack against her Reflex defense, she ignores all effects of the attack, even if it would normally have effects on a miss.
+Like evasion, improved evasion can be used only if a rogue is \unencumbered.
+A helpless rogue does not gain the benefit of improved evasion.
+The rogue must have the evasion survival trick to choose this survival trick.
+
+\subcf{11th -- Improved Uncanny Dodge}
+The rogue reduces her overwhelm penalties by 2.
+This does not stack with the effects of uncanny dodge.
+If her overwhelm penalty is reduced to 0, she is not considered to be overwhelmed.
+The rogue must have the uncanny dodge survival trick to choose this survival trick.
 
 \cf{Rog}[4th]{Combat Tricks}
 The rogue gains a combat trick to aid her and confound her foes.
-Her special attack bonus and some effects of her combat tricks depend on her trick power.
+She chooses a single combat trick from the list below.
+Some combat tricks have minimum rogue levels, as indicated in the title of the ability.
+At her 8th rogue level, and every four rogue levels thereafter, the rogue gains an additional combat trick.
+
+Some combat tricks depend on a rogue's trick power.
 A rogue's trick power is equal to her Intelligence or her rogue level, whichever is higher.
 
-The rogue chooses a single combat trick from the list below.
-At her 8th rogue level, and every four rogue levels thereafter, the rogue gains an additional combat trick.
-Some combat tricks have minimum rogue levels, as indicated in the title of the ability.
-
-Tricks marked with an asterisk are called ambush tricks.
-Ambush tricks only function on the first sneak attack the rogue makes against a particular creature in an encounter.
+Tricks marked with an asterisk are called ambush attacks.
+Ambush attacks only function on the first sneak attack the rogue makes against a particular creature in an encounter.
 
 All combat tricks are extraordinary abilities unless otherwise noted.
 
@@ -2417,108 +2462,81 @@ The rogue gains a combat feat for which she qualifies (see Feats).
 This trick can be selected multiple times.
 
 \subcf{Distracting Attack}
-A creature damaged by the rogue's sneak attack takes a penalty on its Concentration checks equal to number of sneak attack dice the rogue rolls.
-This penalty lasts for 5 rounds.
+Whenever the rogue successfully sneak attacks a creature, the struck creature takes a penalty to Concentration checks until the end of the round.
+The penalty is equal to the number of sneak attack dice the rogue rolled on the attack.
+This penalty does not stack with itself.
 
-\subcf{Evasion}
-If the rogue resists a Reflex attack that normally deals half damage when resisted, she instead takes no damage.
-Evasion can be used only if a rogue is \unencumbered.
-A helpless rogue does not gain the benefit of evasion.
+\subcf{Dispelling Ambush (Su)*}
+A creature damaged by this ambush attack is affected by \spell{dispel magic}.
+The rogue's spellpower for this ability is equal to her trick power.
+This is an ambush attack, and only works once per creature.
 
 \subcf{Distant Precision}
 The rogue can make sneak attacks from up to 100 feet away.
 
+\subcf{Hamstring*}
+A creature damaged by this ambush attack has its land speed halved for 5 rounds.
+Despite the name, this can be used on creatures who do not have hamstrings.
+
 \subcf{Merciful Blows}
 The rogue suffers no penalty to physical attacks when attacking for nonlethal damage, and can deal her full sneak attack damage when attacking nonlethally.
 
-\subcf{Staggering Ambush*}
-The rogue makes a special attack against the Fortitude defense of the creature struck by this ambush attack.
-Her attack bonus is equal to her trick power.
-If the special attack succeeds, the struck creature is \staggered for 5 rounds.
-
-\subcf{Swift Poisoner}
-The rogue can apply poison to a weapon she is holding as a swift action.
+%\subcf{Swift Poisoner}
+%The rogue can apply poison to a weapon she is holding as a swift action.
 
 \subcf{Tricky Maneuver}
 When performing a maneuver against a creature she would be able to sneak attack, the rogue gains a bonus to attack equal to the number of sneak attack dice she would roll.
 The benefits of this trick apply even against creatures immune to critical hits.
 
-\subcf{8th -- Bewildering Ambush*}
-A creature damaged by this sneak attack is \bewildered for 5 rounds.
-This is an ambush attack, and only functions once per creature.
-
 \subcf{8th -- Brutal Ambush*}
-The rogue rolls d8s instead of d6s for her sneak attack dice.
-This is an ambush attack, and only functions once per creature.
+The rogue rolls d8s instead of d6s for her sneak attack dice on this ambush attack.
 
-\subcf{8th -- Defensive Roll}
-When the rogue would take physical damage, she can attempt to roll with the blow to reduce the damage as an immediate action.
-If the damage dealt is less than her Reflex defense, she takes half damage, and the damage is nonlethal.
-She must be aware of the attack to use this ability.
-This ability can be used number of times per day equal to 1 \add half the rogue's Constitution (minimum 1).
+\subcf{8th -- Spellstealing Ambush*}
+A creature damaged by this ambush attack is affected by \spell{spelltheft}.
+The rogue's spellpower for this ability is equal to her trick power.
 
-\subcf{8th -- Hamstring*}
-A creature damaged by this sneak attack has its land speed halved for 5 rounds.
-Despite the name, this can be used on creatures who do not have hamstrings.
-This is an ambush attack, and only works once per creature.
-
-\subcf{8th -- Slippery Mind}
-Whenever an attack for a mind-affecting spell or effect succeeds against the rogue by less than 5, she is affected normally at first.
-One round later, the rogue is instead affected as if the attack had failed.
-This does not help against instantaneous effects.
-
-\subcf{12th -- Ambush Strike*}
-If the rogue uses a Strike feat (see \pcref{Strike Feats}) on this sneak attack, she may add her Intelligence to the special attack for the strike.
-This is an ambush attack, and only works once per creature.
-The benefits of this trick apply even against creatures immune to critical hits.
+\subcf{8th -- Staggering Ambush*}
+The rogue makes a special attack against the Fortitude defense of the creature struck by this ambush attack.
+Her attack bonus is equal to her trick power.
+If the special attack succeeds, the struck creature is \staggered for 5 rounds.
 
 \subcf{12th -- Assassination}
-To use this ability, the rogue must spend a full round studying a creature within 30 feet of her that has not noticed her and who is not in combat.
+To use this ability, the rogue must spend a full round studying a creature within 100 feet of her who has not noticed her and who is not in combat.
 If she make a melee sneak attack against that target within 1 round, her attack deals maximum damage, including her sneak attack damage.
 If the target becomes aware of her presence before she attacks, this ability has no benefit.
 
 \subcf{12th -- Confusing Ambush*}
-The rogue makes a special attack vs. Mental defense to confuse or bewilder the struck creature for 1 round.
-A healthy creature is \bewildered, while a creature \bloodied after the damage from this attack is \confused.
-A foe confused by this effect does not automatically attack the rogue on its next turn, even though she attacked it.
-This is an ambush attack, and only works once per creature, regardless of the result of the attack.
-
-\subcf{12th -- Crippling Ambush*}
-A creature damaged by this sneak attack takes Strength damage equal to the rogue's Intelligence.
-This is an ambush attack, and only works once per creature.
-
-\subcf{12th -- Dispelling Ambush (Su)*}
-A creature damaged by this sneak attack is affected by a targeted \spell{dispel magic}.
-The spellpower for this ability is equal to her rogue level or her Intelligence.
-This is an ambush attack, and only works once per creature.
-
-\subcf{12th -- Improved Evasion}
-If the rogue is affected by Reflex attack that would deal half damage when resisted, she takes only half damage from the attack, even if the attack succeeds.
-Like evasion, improved evasion can be used only if a rogue is \unencumbered.
-A helpless rogue does not gain the benefit of improved evasion.
+The rogue makes a special attack against the Mental defense of the creature struck by this ambush attack.
+Her attack bonus is equal to her trick power.
+If the special attack succeeds, the struck creature is \disoriented for 5 rounds.
+If it critically succeeds, the struck creature is instead \confused for 5 rounds.
 
 \subcf{12th -- Perfect Precision}
 The rogue has no range limit on her sneak attacks.
 She must have the distant precision combat trick to gain this trick.
 
-\subcf{16th -- Deadly Ambush*}
-The rogue makes a special attack vs. Fortitude against the struck creature.
-If the attack succeeds, and the creature is \bloodied after the damage dealt by this attack, it loses all its hit points and takes 9 critical damage, causing it to begin dying.
-If the creature is not bloodied, it suffers no ill effect.
-This is an ambush attack, and only works once per creature, regardless of the result of the attack.
+\subcf{12th -- Spellreaving Ambush (Su)*}
+All spells and magical effects on the creature struck by this ambush attack are dispelled.
+Spells and effects that cannot be removed by \spell{dispel magic} are unaffected.
+The rogue must have the dispelling ambush combat trick to choose this combat trick.
 
-\subcf{16th -- Hide in Plain Sight}
-The rogue can use the Stealth skill to hide even while being observed, taking a \minus5 penalty to the Stealth check.
-She still needs cover or concealment to hide.
+\subcf{16th -- Dazing Ambush*}
+A creature damaged by this ambush attack is \dazed for 5 rounds.
+
+\subcf{16th -- Deadly Ambush*}
+The rogue makes a special attack against the Fortitude defense of the creature struck by this ambush attack.
+Her attack bonus is equal to her trick power.
+If the special attack succeeds, the struck creature is \staggered for 5 rounds.
+If it critically succeeds, the struck creature immediately dies.
 
 \subcf{16th -- Paralyzing Ambush*}
-The rogue makes a special attack vs. Fortitude against the struck creature.
-If the attack succeeds, and the creature is \bloodied after the damage dealt by this attack, it is paralyzed for 5 rounds.
-If the creature is not bloodied, it suffers no ill effect.
-This is an ambush attack, and only works once per creature, regardless of the result of the attack.
+The rogue makes a special attack against the Fortitude defense of the creature struck by this ambush attack.
+Her attack bonus is equal to her trick power.
+If the special attack succeeds, the struck creature is \staggered for 5 rounds.
+If it critically succeeds, the struck creature is \paralyzed for 5 rounds.
 
 %\subcf{16th -- Opportunist} Once per round, the rogue can make an attack of opportunity against a creature that has just taken physical damage from another creature's attack.
-This attack counts as one of the rogue's attacks of opportunity for that round.
+%This attack counts as one of the rogue's attacks of opportunity for that round.
 
 \subcf{20th -- Dual Ambush}
 The rogue can apply the benefits of two ambush attacks to a single sneak attack.
@@ -2527,21 +2545,19 @@ The rogue can apply the benefits of two ambush attacks to a single sneak attack.
 The effects of the rogue's ambush attacks last ten times longer than normal.
 This has no effect on ambush attacks that have no duration.
 
+\cf{Rog}[5th]{Skill Exemplar}[Ex]
+The rogue gains a \plus5 bonus with a single skill of her choice.
+At her 9th rogue level, and every four rogue levels thereafter, she may gain this bonus with an additional skill.
+
 \cf{Rog}[6th]{Persistent Sneak Attack}[Ex]
 The rogue learns how to strike vital spots more consistently.
 She gains half her sneak attack dice (rounded down) when making sneak attacks against a creature she has already successfully dealt sneak attack damage to in the encounter.
 For example, a 6th level rogue would deal 3d6 points of extra damage on her first sneak attack against a creature, and 1d6 points of damage on every subsequent sneak attack against the same creature.
-
-\cf{Rog}[7th]{Skill Exemplar}[Ex]
-The rogue gains a \plus5 bonus with a single skill of her choice.
-At her 13th and 19th rogue levels, she may gain this bonus with an additional skill.
-
-\cf{Rog}[10th]{Improved Uncanny Dodge}[Ex]
-The rogue reduces her overwhelm penalties by 2.
-If her overwhelm penalty is reduced to 0, she is not considered to be overwhelmed.
+This does not allow her to deliver ambush attacks to the same creature multiple times.
 
 \cf{Rog}[20th]{Endless Sneak Attack}[Ex]
 The rogue deals full sneak attack damage on her first successful sneak each round against the same creature, rather than only on her first sneak attack in the encounter against that creature.
+This does not allow her to deliver ambush attacks to the same creature multiple times.
 
 \section{Sorcerer}
 \begin{dtable}
