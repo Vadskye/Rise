@@ -24,19 +24,22 @@ To cast a spell of a given level, most spellcasters must spend a spell slot of t
 
 Sorcerers do not use spell slots, and do not need to spend spell slots to cast spells.
 
-\subsection{Concentration}\label{Concentration}
+\subsection{Focusing and Concentration}\label{Concentration}\label{Focus}\label{Focusing and Concentration}
+
+Some actions require focusing, such as casting spells.
+If you are damaged or distracted while taking an action that requires focus, your concentration may be broken.
 
 \parhead{Concentration Tests}\label{Concentration Tests} To test concentration, roll d20 \add (half the damage you have taken during the current round) \add (twice the level of the spell you are casting) \add (overwhelm penalties). If the result equals or exceeds your Mental defense, the test fails, and your concentration has been broken. Otherwise, the test succeeds.
 
 \parhead{Casting a Spell} You must concentrate to cast spells. When you finish casting a spell, if you took any damage while casting it, make a Concentration test. Failure means you miscast the spell (see \pcref{Miscasting}), but you still lose the spell slot used to cast it.
 
-\parhead{Concentrating on Existing Spells} Many spells also allow you to concentrate to extend their effects. At the end of every round, if you took any damage, make a Concentration test. Failure means you stop concentrating on the spell, but it may continue to have effects, as indicated in the spell description. Most spells do not allow you to resume concentrating on them after your concentration is broken.
+\parhead{Focusing on Existing Spells} Many spells allow you to spend a standard action focusing to extend their effects. At the end of every round you focus, if you took any damage, make a Concentration test. Failure means your focus ends, but the spell may continue to have effects, as indicated in the spell description. Most spells do not allow you to resume focusing on them after your concentration is broken.
 
-\parhead{Performing Rituals} You must concentrate to perform rituals. At the end of every round, if you took any damage, make a Concentration test. Failure means the ritual fails and has no effect. When a ritual fails, half of the ritual components are usually consumed during the ritual, the but remainder can be salvaged.
+\parhead{Performing Rituals} You must focus to perform rituals. At the end of every round, if you took any damage, make a Concentration test. Failure means the ritual fails and has no effect. When a ritual fails, half of the ritual components are usually consumed during the ritual, the but remainder can be salvaged.
 
 \parhead{Distracting Circumstances} In some circumstances, you need to test Concentration to cast spells or concentrate even if you haven't taken damage. Examples include being on a galloping horse, in a storm-tossed ship, or in an earthquake.
 
-\parhead{Concentration Limits} Concentrating on a spell is mentally tiring. You can concentrate on a spell for up to 5 minutes without penalty. After 5 minutes, and every minute thereafter, you must test Concentration even if you haven't taken damage. If you fail, you lose your concentration on the spell and become fatigued. The difficulty of the test increases by 2 for every additional minute of concentration.
+\parhead{Focus Limits} Focusing on a spell is mentally tiring. You can focus on a spell for up to 5 minutes without penalty. After 5 minutes, and every minute thereafter, you must test Concentration even if you haven't taken damage. If you fail, you lose your focus on the spell and become fatigued. The difficulty of the test increases by 2 for every additional minute of focus.
 
 \subsection{Miscasting}\label{Miscasting}
 
@@ -277,24 +280,25 @@ A burst, cone, cylinder, or emanation spell affects only an area, creatures, or 
 An otherwise solid barrier with a hole of at least 1 square foot through it does not block a spell's line of effect. Such an opening means that the 5-foot length of wall containing the hole is no longer considered a barrier for purposes of a spell's line of effect.
 
 \subsection{Duration}
-A spell's Duration entry tells you how long the magical energy of the spell lasts.
-\parhead{Concentration} The spell lasts as long as you concentrate on it. Concentrating to maintain a spell is a standard action. Anything that could break your concentration when casting a spell can also break your concentration while you're maintaining one, causing the spell to end.
 
-You can't cast a spell while concentrating on another one. Sometimes a spell lasts for a short time after you cease concentrating.
-\parhead{Timed Durations} Many durations are measured in rounds, minutes, hours, or some other increment. When the time is up, the magic goes away and the spell ends at the end of your turn. For example, a spell that lasts 1 round ends at the end of your next turn. If a spell's duration is variable, the duration is rolled secretly (the caster doesn't know how long the spell will last).
-\subparhead{Short} The spell lasts for as long as you concentrate, plus 5 additional rounds.
+A spell's Duration entry tells you how long the magical energy of the spell lasts.
+
+\parhead{Focus} The spell lasts as long as you focus on it. Focusing to maintain a spell is a standard action. Anything that could break your concentration when casting a spell can also break your concentration while you're maintaining one, causing your focus to end. You can't cast a spell while focusing on another one.
+\parhead{Timed Durations} Many durations are measured in rounds, minutes, hours, or some other increment. When the time is up, the magic goes away and the spell ends at the end of your turn.
+
+Spells end after the given length of time has completely elapsed. For example, a spell that lasts 1 round ends at the end of the next round after it is cast, not at the end of the round in which it is cast.
+
+If a spell's duration is variable, the duration is rolled secretly (the caster doesn't know how long the spell will last).
+\subparhead{Short} The spell lasts for as long as you focus, plus 5 additional rounds.
 \subparhead{Medium} The spell lasts for 5 minutes.
 \subparhead{Long} The spell lasts for 1 hour.
 \subparhead{Extreme} The spell lasts for 12 hours.
 \subparhead{Other} Some spells, such as long-lasting rituals, last for a specific amount of time specified in the spell description.
-\parhead{Instantaneous} The spell energy comes and goes the instant the spell is cast, though the consequences might be long-lasting.
 \parhead{Permanent} The energy remains as long as the effect does. This means the spell is vulnerable to \spell{dispel magic}.
 
+\parhead{Instantaneous} Spells without a listed duration are instantaneous. spell energy comes and goes the instant the spell is cast, though the consequences might be long-lasting.
+
 \parhead{Subjects, Effects, and Areas} If the spell affects creatures directly, the result travels with the subjects for the spell's duration. If the spell creates or summons objects or creatures, they last for the duration, and are capable of moving outside the spell's initial area. Such effects can sometimes be destroyed prior to when its duration ends. If the spell creates an emanation, then the spell stays with that area for its duration. Creatures become subject to the spell when they enter the emanation and are no longer subject to it when they leave.
-
-\parhead{Touch Spells and Holding the Charge} In most cases, if you don't discharge a touch spell on the round you cast it, you can hold the charge (postpone the discharge of the spell) indefinitely. You can make touch attacks round after round. If you cast another spell, the touch spell dissipates.
-
-Some touch spells allow you to touch multiple targets as part of the spell. You can't hold the charge of such a spell; you must touch all targets of the spell in the same round that you finish casting the spell.
 
 \parhead{Discharge} Occasionally a spells lasts for a set duration or until triggered or discharged.
 
@@ -430,7 +434,7 @@ The costs to scribe and perform rituals are described on \trefnp{Ritual Costs}.
 \end{dtable}
 
 \subsection{Performing Rituals}
-\par To perform a ritual, you must have a ritual book containing the ritual and the material components required for the ritual. If you are distracted during the ritual, you must make a Concentration check, just as if you were casting a spell of the ritual's level. If you fail, the ritual is ruined and you must start from the beginning. You can generally recover half the material components from an interrupted ritual.
+\par To perform a ritual, you must have a ritual book containing the ritual and the material components required for the ritual. If you are distracted during the ritual, you must make a Concentration test, just as if you were casting a spell of the ritual's level. If you fail, the ritual is ruined and you must start from the beginning. You can generally recover half the material components from an interrupted ritual.
 \par Performing a ritual and casting a ritual mean the same thing.
 \subsection{Magical Writings}
 To record a spell in written form, a character uses complex notation that describes the magical forces involved in the spell. The notation constitutes a universal language that spellcasters have discovered, not invented. The writer uses the same system no matter what her native language or culture. However, each character uses the system in her own way. Another person's magical writing remains incomprehensible to even the most powerful spellcaster until she takes time to study and decipher it.
