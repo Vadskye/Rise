@@ -473,6 +473,7 @@ The table of combat feats is organized according to the number of physical attac
     \taburowcolors [2] 2{tbrown .. white}
     \begin{longtabu}{>{\lcol}p{10em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{6em} >{\lcol}p{3em}}
         \thead{Strike Feats} & \thead{Prerequisites (two attacks)} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
+        \featref{Armor Piercing Strike} & Per 5 & Attack targets Reflex defense & Precision, Strike & \featpref{Armor Piercing Strike} \\
         \featref{Calculated Strike} & Int 5 & Attack can deal critical damage & Precision, Strike & \featpref{Calculated Strike} \\
         \featref{Countering Strike} & Int 5 & Bonus damage if you are attacked & Reaction, Strike & \featpref{Countering Strike} \\
         \featref{Disorienting Strike} & \x & Attack disorients foe & Power, Strike & \featpref{Disorienting Strike} \\
@@ -552,6 +553,12 @@ Choose one category of armor: light, medium, heavy, or shields.
 \featpre Proficiency with the chosen armor category.
 \featben You reduce your armor check penalty by 2 and your arcane spell failure by 5\% when using your chosen armor.
 This effect cannot reduce those penalties below 0.
+
+\feat{Armor Piercing Strike}{Combat, Precision}
+\featpre Per 5, two attacks.
+\featben In place of two attacks, you can make a physical attack.
+If you beat the target's Reflex defense, you deal damage normally.
+If you also beat its Armor defense, you deal double damage.
 
 \feat{Armor Proficiency}{Combat}
 Choose a category of body armor: light, medium, or heavy.
