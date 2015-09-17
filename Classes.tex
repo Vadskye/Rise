@@ -2110,11 +2110,15 @@ He is also proficient with his choice of bows, crossbows, or thrown weapons.
 \cf{Rgr}{Quarry}[Ex]
 A ranger is a deadly hunter.
 As a swift action, a ranger may designate any foe he sees as his quarry.
-A ranger gains a \plus2 bonus to physical attacks, Awareness checks, and Survival checks against his quarry.
-However, while a ranger is pursuing a quarry, he takes a \minus2 penalty on the same rolls against any target other than his quarry.
+A ranger gains a \plus2 bonus to physical attacks and Awareness, Stealth, and Survival checks against his quarry.
+However, while a ranger has designated a quarry, he takes a \minus2 penalty on the same rolls against any target other than his quarry.
+
 A ranger may give up pursuing a quarry as a free action.
-He may not have more than one quarry at once; if he designates a new quarry, the old target is no longer considered his quarry.
+He may not have more than one quarry at once.
+If he designates a new quarry, the old target is no longer considered his quarry.
 If the ranger does not see his quarry for more than a week, it is no longer considered his quarry.
+Some special abilities allow the ranger to designate multiple creatures as a quarry.
+Abilities which designate multiple creatures as a quarry always last for a specific amount of time.
 
 \par The amount by which a ranger's physical attacks and skill checks increase against his quarry is called his quarry bonus.
 A ranger can designate a quarry a number of times per day equal to his quarry bonus.
@@ -2124,11 +2128,15 @@ His penalties against targets other than his quarry remains the same.
 \cf{Rgr}{Track}
 A ranger gains Track as a bonus feat (see \featref{Track}).
 
+\cf{Rgr}[2nd]{Fast Movement}[Ex]
+The ranger increases his movement speed by 10 feet when \unencumbered.
+
 \cf{Rgr}[2nd]{Favored Terrain}[Ex]
 The ranger becomes particularly attuned to certain kinds of terrain.
 He chooses one kind of terrain to select as a favored terrain from the list below.
 Usually, rangers favor their home terrain, but a ranger may choose any kind of terrain that he has personally experienced at least once.
 At his 6th ranger level, and every four ranger levels thereafter, the ranger gains an additional favored terrain.
+
 \par While in a favored terrain, a ranger gains a \plus2 bonus to Awareness, Stealth, and Survival checks.
 If he desires, he may leave no trace of his passage, causing attempts to track him to take a \minus20 penalty.
 In addition, his experience with his favored terrain grants the ranger a single ability, regardless of whether he is currently in that terrain or not.
@@ -2161,23 +2169,23 @@ A ranger can use this ability a number of times per day equal to his Perception 
 
 \cf{Rgr}[3rd]{Ranger Lore}
 The ranger gains an ability drawn from ancient ranger lore.
-At his 6th ranger level, and every three ranger levels thereafter, the ranger gains an additional ranger lore ability.
+He chooses a single ranger lore from the list below.
 Some ranger lores have minimum ranger levels, as indicated in the title of the ability.
-The list of ranger lores is given below.
+At his 6th ranger level, and every three ranger levels thereafter, the ranger gains an additional ranger lore.
+
+Some range lores depend on the ranger's lore power.
+A ranger's lore power is equal to his Perception or his ranger level, whichever is higher.
+
 All ranger lore abilities are extraordinary abilities unless otherwise noted.
 
-\subcf{Combat Style}
-The ranger is skilled with the traditional ranger combat styles.
-He gains the Precise Shot and Two-Weapon Fighting feats if he meets the prerequisites.
-However, the benefits of this lore apply only when the ranger is \unencumbered.
+\subcf{Combat Feat}
+The ranger gains a combat feat for which he qualifies (see Feats).
+This lore can be selected multiple times.
 
 \subcf{Evasion}
 If the ranger resists a Reflex attack that normally deals half damage when resisted, he instead takes no damage.
 Evasion can be used only if a ranger is \unencumbered.
 A helpless ranger does not gain the benefit of evasion.
-
-\subcf{Fast Movement}
-The ranger increases his movement speed by 10 feet when \unencumbered.
 
 \subcf{Favored Enemy}
 The ranger increases his quarry bonus by \plus2 against creatures of a particular kind.
@@ -2187,8 +2195,8 @@ The ranger may select this lore multiple times, choosing a different favored ene
 \begin{dtable}
     \lcaption{Favored Enemy Options}
     \begin{dtabularx}{\columnwidth}{X X}
+        \hline
         Animals and vermin & Humanoids (uncivilized) \\
-\hline
         Dragons & Oozes and plants \\
         Fey & Outsiders (inner planes) \\
         Giants and monstrous humanoids & Outsiders (outer planes) \\
@@ -2196,44 +2204,84 @@ The ranger may select this lore multiple times, choosing a different favored ene
     \end{dtabularx}
 \end{dtable}
 
-\subcf{Master of the Hunt}
-The ranger may use a standard action to share the benefits of his quarry ability with all allies who can see and hear him for 5 rounds.
-The bonus his allies get is considered an enhancement bonus, and they do not suffer penalties against targets other than the quarry.
+\subcf{Rapid Healing}
+The ranger naturally heals four times faster than normal.
+He requires only two hours of rest to heal half his hit points.
+This stacks with the benefits of accelerating recoveryy with the Heal skill (see \pcref{Accelerate Recovery}).
 
 \subcf{Scent}
-The ranger gains scent.
+The ranger gains the scent ability (see \pcref{Scent}).
 
+\subcf{Survivalist}
+The ranger gains a Survival-based feat for which he qualifies as a bonus feat.
 
-\subcf{6th -- Improved Combat Style}
-The ranger increases his skill in the traditional ranger combat styles.
-He can add half his Perception to damage in place of half Strength when using ranged attacks or when attacking with two weapons at once.
-Natural weapons qualify for this purpose if the ranger attacks with two natural weapons at once.
+\subcf{Undead Destroyer}
+The ranger may designate undead as a quarry.
+If he does, he gains his quarry bonus against all undead for 5 minutes.
+In addition, non-intelligent undead treat him as if he were undead.
 
-The ranger must have the combat style lore to select this lore.
-The benefits of this lore apply only when the ranger is \unencumbered.
+\subcf{6th -- Barkskin}
+The ranger gains a \plus1 bonus to Armor defense.
 
-\subcf{9th -- Hail of Arrows}
-A number of times per day equal to 1 \add half the ranger's Constitution, he may take a full-round action to fire a single projectile at every enemy within a \areamed radius.
-All enemies must be within one range increment of the ranger.
-This lore can be used with any projectile weapon that the ranger can reload as a free action.
+\subcf{6th -- Aberrant Hunter}
+The ranger may designate aberrations as a quarry.
+If he does, he gains his quarry bonus against all aberrations for 5 minutes.
+In addition, he becomes immune to Mind effects from aberrations.
 
-\subcf{9th -- Storm of Blades}
-A number of times per day equal to 1 \add half the ranger's Constitution, he may take a standard action to make a single melee attack against every enemy he threatens.
+\subcf{6th -- Energy Adaptation}
+The ranger continuously gains the benefits of the \spell{resist energy} spell, with a spellpower equal to his lore power.
+
+\subcf{6th -- Fey Stalker}
+The ranger may designate fey as a quarry.
+If he does, he gains his quarry bonus against all fey.
+In addition, he becomes immune to Mind effects from fey.
+
+\subcf{6th -- Giantslayer}
+The ranger may designate monstrous humanoids as a quarry.
+If he does, he gains his quarry bonus against all monstrous humanoids for 5 minutes.
+In addition, he gains a \plus8 bonus to Maneuver defense against attacks that would move him.
+
+\subcf{6th -- Ooze Hunter}
+The ranger may designate oozes as a quarry.
+If he does, he gains his quarry bonus against all oozes for 5 minutes.
+In addition, he becomes immune to the slime and engulf effects of oozes.
+
+\subcf{9th -- Dragonslayer}
+The ranger may designate dragons as a quarry.
+If he does, he gains his quarry bonus against all dragons for 5 minutes.
+In addition, he becomes immune to the breath attacks of dragons.
+
+\subcf{9th -- Golem Breaker}
+The ranger may designate constructs as a quarry.
+If he does, he gains his quarry bonus against all constructs for 5 minutes.
+In addition, his attacks ignore the hardness and damage reduction of constructs, and negate it for 1 round.
+
+\subcf{9th -- Mageslayer}
+The ranger may designate arcane spellcasters as a quarry.
+If he does, he gains his quarry bonus against all arcane spellcasters for 5 minutes.
+In addition, he gains spell resistance against arcane spells equal to 10 \add his lore power.
+
+To affect the ranger with a spell, a caster must make an attack with its spellpower.
+If the attack beats the ranger's spell resistance, the spell works normally.
+Otherwise, the spell has no effect on the ranger.
+
+\subcf{9th -- Master of the Hunt}
+The ranger may use a standard action to share the benefits of his quarry ability with all allies who can see and hear him for 5 rounds.
+His allies do not suffer penalties against targets other than the quarry.
 
 \subcf{12th -- Camouflage}\label{Camouflage}
 The ranger can use the Stealth skill to hide in any of his favored terrains, even if the terrain does not grant cover or concealment.
-
-\subcf{12th -- Greater Combat Style}
-The ranger's abilities with traditional ranger combat styles improves again.
-He gains the Two-Weapon Rend and Manyshot feats if he meets the prerequisites (see \featref{Two-Weapon Rend} and \featref{Manyshot}).
-He must have the improved combat style lore to choose this lore.
-The benefits of this lore only apply if the ranger is \unencumbered.
 
 \subcf{12th -- Improved Evasion}
 If the ranger resists an attack against his Reflex defense, he ignores all effects of the attack, even if it would normally have effects on a miss.
 Like evasion, improved evasion can be used only if a ranger is \unencumbered.
 A helpless ranger does not gain the benefit of improved evasion.
 The ranger must have the evasion lore to choose this lore.
+
+\subcf{12th -- Wild Aspect}
+The ranger chooses any wild aspect from the list of wild aspects available to druids (see \pcref{Wild Aspect}).
+He continuously gains the benefits of that aspect.
+His effective nature power for this ability is equal to his lore power.
 
 \subcf{15th -- Combat Style Mastery}
 The ranger's abilities with traditional ranger combat styles reach their peak.
