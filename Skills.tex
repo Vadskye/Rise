@@ -1,31 +1,34 @@
 \chapter{Skills}
-\section{Skills Summary}
+
 A character's skills describe the myriad of talents that people have.
 
-\parhead{Skill Points} At 1st level, your character gains a certain number of skill points. Skill points represent your training in a particular area. You get a base allotment of 5, 10, or 15 skill points, depending on your character's class. These skill points can only be spent on skills associated with your class, called \term{class skills}. You also gain additional skill points equal to half your Intelligence. If your Intelligence is negative, it subtracts from your skill points (to a minimum of 0 skill points). These skill points can be spent on any skills.
+\section{Acquiring Skills}
 
-\parhead{Spending Skill Points} If you place one skill point in a skill, you become trained in that skill. If you place two points in a skill, you become an expert in that skill. Your level of training in a skill determines how many skill ranks you have in that skill. Some skills can only be used if you are trained in them.
+\subsection{Skill Points}
 
-\parhead{Gaining Additional Skill Points} If your character's Intelligence increases, she may immediately gain a skill point to spend. However, temporary bonuses and penalties to Intelligence, such as from spells, magic items, and circumstances, do not affect your skill points. If your character gains a level in a new class that has more skill points than any class she previously had, the character immediately gains skill points equal to the difference between the skill points provided by the two classes. These skill points can be spent on any skill.
+At 1st level, you gain a certain number of skill points. Skill points can be spent to improve your abilities with particular skills (see \pcref{Skill Training}).
 
-\subsection{Skill Ranks}
-Skill ranks represent how capable your character is with a particular skill. Your character automatically gains skill ranks as she increases in level, as shown by \trefnp{Skill Ranks and Skill Training}.
+\subsubsection{Class Skill Points}
 
-\subsection{Skill Checks}
+You get a base allotment of 5, 10, or 15 skill points, depending on your character's class. These skill points can only be spent on skills associated with your class, called \term{class skills}.
 
-Your bonus with skill checks is calculated as follows:
+\parhead{Taking Multiple Classes} If you take a level in a class that grants more skill points than your previous class, you immediately gain skill points equal to the difference between the skill points provided by the two classes. You may combine the class skill lists from both classes to determine the list of skills which are class skills for you.
 
-\begin{figure}[h]
-    \centering Skill rank or key attribute modifier \meh{\add enhancement bonus} \add other bonuses and penalties
-\end{figure}
+\subsubsection{Other Skill Points}
 
-\subparhead{Key Attribute} The attribute used in a skill check is noted in its description. Training can affect the attribute modifier you add to skill checks, as noted in \trefnp{Skill Ranks and Skill Training}.
+You gain additional skill points equal to half your Intelligence (minimum 0).  Some other abilities, such as the Open Minded feat (page \featpref{Open Minded}), can also grant additional skill points. Unless otherwise noted, these skill points can be spent on any skills.
 
-\subparhead{Bonuses and Penalties} Miscellaneous modifiers include racial bonuses, armor check penalties, bonuses provided by feats, and more.
+\parhead{Intelligence Penalties} If your Intelligence is negative, you lose class skill points equal to your Intelligence.
+
+\parhead{Changing Intelligence} If your Intelligence permanently increases or decreases, you gain or lose skill points when you level up. If you gain additional skill points, you may immediately spend them to improve your skill training. If you lose skill points, you must reduce your skill training in skills you possess. You must lose training from free skill points before removing training from class skill points.
+
+\subsection{Skill Training and Ranks}\label{Skill Training}\label{Skill Ranks}\label{Skill Training and Ranks}
+
+You can spend one skill point to become trained in a skill, or two skill points to master a skill. Your training determines your skill ranks, as well as your attribute modifier for that skill. See \trefnp{Skill Ranks and Training}, below, for details.
 
 \begin{dtable}
-    \lcaption{Skill Ranks and Skill Training}
-    \begin{dtabularx}{\columnwidth}{>{\lcol}p{4.5em} >{\lcol}p{2.5em} >{\lcol}p{6.5em} >{\lcol}X}
+    \lcaption{Skill Training and Ranks}
+    \begin{dtabularx}{\columnwidth}{>{\lcol}p{4.5em} >{\lcol}p{3em} >{\lcol}X l}
         \thead{Skill Training Level} & \thead{Skill Points Spent} & \thead{Skill Ranks} & \thead{Attribute Modifier} \\
         \hline
         Untrained & 0 & 0                          & Half attribute        \\
@@ -34,13 +37,13 @@ Your bonus with skill checks is calculated as follows:
     \end{dtabularx}
 \end{dtable}
 
-\section{Using Skills}
-When your character uses a skill, you make a skill check to see how well he or she does. The higher the result of the skill check, the better. Based on the circumstances, your result must match or beat a particular number (a DC or the result of an opposed skill check) for the check to be successful. The harder the task, the higher the number you need to roll.
 
-Circumstances can affect your check. A character who is free to work without distractions can make a careful attempt and avoid simple mistakes. A character who has lots of time can try over and over again, thereby assuring the best outcome. If others help, the character may succeed where otherwise he or she would fail.
 
+\subsection{Class Skills}
+
+The class skills for each class are summarized on \trefnp{Class Skills}.
 \begin{dtable!*}
-\lcaption{Skills}
+\lcaption{Class Skills}
 \begin{dtabularx}{\textwidth}{>{\lcol}p{12em} *{11}{>{\ccol}X} >{\ccol}p{4em} >{\ccol}p{4em}}
     \thead{Skill}   & \thead{Bbn} & \thead{Clr} & \thead{Drd} & \thead{Ftr} & \thead{Mnk} & \thead{Pal} & \thead{Rgr} & \thead{Rog} & \thead{Sor} & \thead{Spl} & \thead{Wiz} & \thead{Untrained} & \thead{Key Ability} \\
 \hline
@@ -81,15 +84,28 @@ cc: crossclass skill \\
 4. Attribute varies depending on skill usage \\
 5. No attribute applies \\
 \end{dtable!*}
+\section{Using Skills}
 
-\subsection{Difficulty Class}
-Some checks are made against a Difficulty Class (DC). The DC is a number (set using the skill rules as a guideline) that you must score as a result on your skill check in order to succeed.
+When your character uses a skill, you make a skill check to see how well he or she does. A skill check means rolling 1d20 and adding your bonus with the relevant skill. Your skill check result is compared to the number you to beat. Usually, this is a Difficulty Class (DC) representing the difficulty of the challenge. Typical DCs are described on \tref{Difficulty Class Examples}. If your check result equals or exceeds the DC, you succeed. Otherwise, you fail. The consequences of success and failure are defined in the individual descriptions of each skill.
+
+\subsection{Skill Check Bonus}
+
+Your bonus with skill checks is calculated as follows:
+
+\begin{figure}[h]
+    \centering Skill ranks or key attribute modifier \add other bonuses and penalties
+\end{figure}
+
+\subparhead{Key Attribute} The attribute used in a skill check is noted in its description. Training can affect the attribute modifier you add to skill checks, as noted in \trefnp{Skill training and Ranks}.
+
+\subparhead{Bonuses and Penalties} Miscellaneous modifiers include racial bonuses, armor check penalties, bonuses provided by feats, and more.
+
 
 \begin{dtable}
     \lcaption{Difficulty Class Examples}
     \begin{dtabularx}{\columnwidth}{p{8em} X}
         \thead{Difficulty (DC)} & \thead{Example (Skill Used)} \\
-\hline
+        \hline
         Very easy (0) & Notice something in plain sight (Awareness) \\
         Easy (5) & Hear a conversation from 50 feet away (Awareness) \\
         Average (10) & Palm a coin-sided object (Sleight of Hand) \\
@@ -101,14 +117,22 @@ Some checks are made against a Difficulty Class (DC). The DC is a number (set us
     \end{dtabularx}
 \end{dtable}
 
+\subsection{Circumstance Modifiers}
+
+Circumstances frequently modify your odds of success when using skills. Minor circumstances, such as balancing on wet ground, modify the DC or skill check result by 2. Major circumstances, such as balancing on grease, modify the DC or skill check result by up to 5. Extraordinary circumstances can potentially have greater modifiers.
+
+\parhead{DC Modifiers} Circumstances can make tasks more or less difficult. For example, it is more difficult to balance on ice than on a typical solid surface. Circumstances that change the difficulty of the task change the DC of the skill check.
+
+\parhead{Check Modifiers} Circumstances can also make skills easier or harder to use. For example, delivering a stirring speech to rally the city militia is more difficult if your voice is hoarse. Circumstances that change the difficulty of using the skill provide bonuses or penalties on the skill check.
+
 \subsection{Opposed Checks}
-An opposed check is a check whose success or failure is determined by comparing the check result to another character's check result. In an opposed check, the higher result succeeds, while the lower result fails. In case of a tie, the higher skill modifier wins. If these scores are the same, roll again to break the tie.
+An opposed check is a check whose success or failure is determined by comparing the check result to another character's check result. In an opposed check, the higher result succeeds, while the lower result fails. In case of a tie, the higher check modifier wins. If these scores are the same, roll again to break the tie. Typical opposed checks are described in \trefnp{Example Opposed Checks}
 
 \begin{dtable}
     \lcaption{Example Opposed Checks}
     \begin{dtabularx}{\columnwidth}{*{3}{>{\lcol}X}}
         \thead{Task} & \thead{Skill (Key Ability)} & \thead{Opposing Skill (Key Ability)} \\
-\hline
+        \hline
         Lie & Bluff (Cha) & Sense Motive (Wis) \\
         Create a forged artwork & Craft (Int) & Craft (Int) or Awareness (Wis) \\
         Create a false map & Craft (Int) & Craft (Int) or Knowledge (geography) \\
@@ -122,31 +146,18 @@ An opposed check is a check whose success or failure is determined by comparing 
     2 You can also tie a prisoner with a grapple attack. See \pcref{Grapple}. \\
 \end{dtable}
 
-\subsubsection{Trying Again}
+\subsection{Trying Again}
 In general, you can try a skill check again if you fail, and you can keep trying indefinitely. Some skills, however, have consequences of failure that must be taken into account. A few skills are virtually useless once a check has failed on an attempt to accomplish a particular task. For most skills, when a character has succeeded once at a given task, additional successes are meaningless.
 
-\subsubsection{Untrained Skill Checks}
+\subsection{Untrained Skill Checks}
 Generally, if your character attempts to use a skill he or she does not possess, you make a skill check as normal. The skill modifier doesn't have a skill rank added in because the character has no ranks in the skill. Any other applicable modifiers, such as the modifier for the skill's key attribute, are applied to the check.
 
 Many skills can be used only by someone who is trained in them.
 
-\subsubsection{Favorable and Unfavorable Conditions}
-Some situations may make a skill easier or harder to use, resulting in a bonus or penalty to the skill modifier for a skill check or a change to the DC of the skill check.
-
-The chance of success can be altered in four ways to take into account exceptional circumstances.
-\begin{enumerate*}
-\item You may get a \plus2 bonus in circumstances that improve performance, such as having the perfect tool for the job, getting help from another character (see Combining Skill Attempts), or possessing unusually accurate information.
-\item You may take a \minus2 penalty in circumstances that hamper performance, such as being forced to use improvised tools or having misleading information.
-\item The DC may be reduced by 2 in circumstances that make the task easier, such as having a friendly audience or doing work that can be subpar.
-\item  The DC may be increased by 2 in circumstances that make the task harder, such as having an uncooperative audience or doing work that must be flawless.
-\end{enumerate*}
-
-Conditions that affect your character's ability to perform the skill change the skill modifier. Conditions that modify how well the character has to perform the skill to succeed change the DC. A bonus to the skill modifier and a reduction in the check's DC have the same result: They create a better chance of success. But they represent different circumstances, and sometimes that difference is important.
-
-\subsubsection{Time and Skill Checks}
+\subsection{Time and Skill Checks}
 Using a skill might take a round, take no time, or take several rounds or even longer. Most skill uses are standard actions, move actions, or full-round actions. Types of actions define how long activities take to perform within the framework of a combat round (6 seconds) and how movement is treated with respect to the activity. Some skill checks are instant and represent reactions to an event, or are included as part of an action. These skill checks are not actions. Other skill checks represent part of movement.
 
-\subsubsection{Checks without Rolls}
+\subsection{Checks without Rolls}
 A skill check represents an attempt to accomplish some goal, usually while under some sort of time pressure or distraction. Sometimes, though, a character can use a skill under more favorable conditions and eliminate the luck factor.
 
 \parhead{Taking 10}\label{Taking 10} When your character is not being threatened, distracted, or opposed, you can automatically succeed on checks without rolling. If your modifier \add 10 (just as if you rolled a 10) would succeed at the check, you automatically succeed without rolling. Some checks, such as disarming traps and any opposed checks, cannot be done automatically -- you must always roll.
@@ -179,9 +190,9 @@ When making a collective check, the group simply uses the highest result from an
 \parhead{Making Group Skill Checks} A group skill check is not always possible. If the whole group is leaping over a chasm at once to escape a dragon, there is not enough time to designate a leader and have them aid the others to make a collaborative check. In general, a group skill check is only possible if the group has at least five rounds to work together, though this time may vary widely depending on the situation and the skill being used. 
 
 \meh{\subsection{Ability Checks}
-Sometimes a character tries to do something to which no specific skill really applies. In these cases, you make an ability check. An ability check is a roll of 1d20 plus the appropriate attribute. Essentially, you're making an untrained skill check.}
+Sometimes a character tries to do something to which no specific skill really applies. In these cases, you make an ability check. An ability check is a roll of 1d20 plus the appropriate attribute.}
 
-\meh{In some cases, an action is a straight test of one's ability with no luck involved. Just as you wouldn't make a height check to see who is taller, you don't make a Strength check to see who is stronger.}
+%\meh{In some cases, an action is a straight test of one's ability with no luck involved. Just as you wouldn't make a height check to see who is taller, you don't make a Strength check to see who is stronger.}
 
 \section{Skill Descriptions}
 This section describes each skill, including common uses and typical modifiers. Characters can sometimes use skills for purposes other than those noted here.
