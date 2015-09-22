@@ -2848,17 +2848,17 @@ All of the following are class features of the spellwarped.
 \cf{Spl}{Weapon and Armor Proficiency}
 A spellwarped is proficient with simple weapons, any two weapon groups, light and medium armor, and shields.
 
-\cf{Spl}{Innate Magic}[Ex]
-Each spellwarped draws his power from a particular kind of magic.
+\cf{Spl}{Innate Magic}[Su]
+Each spellwarped draws his magical power from a particular kind of magic.
 This is a choice made when the first level of the class is taken, and it cannot thereafter be changed.
 The choices are listed below.
 \subcf{Alteration}
 The spellwarped can manipulate the physical forms of creatures.
-His good defense is Fortitude, his key attribute is Intelligence, and he treats Disguise, Escape Artist, and Jump as class skills.
+His good defense is Fortitude, his key attribute is Willpower, and he treats Disguise, Escape Artist, and Jump as class skills.
 An alteration spellwarped may be called an alterer, bodywarper, or shifter.
 \subcf{Pyromancy}
 The spellwarped can manipulate fire and heat.
-His good defense is Mental, his key attribute is Willpower, and he treats Jump, Perform, and Tumble as class skills.
+His good defense is Fortitude, his key attribute is Willpower, and he treats Jump, Perform, and Tumble as class skills.
 A pyromancy spellwarped may be called a pyromancer.
 \subcf{Telekinesis}
 The spellwarped can manipulate objects and creatures with his mind.
@@ -2871,9 +2871,10 @@ A temporal spellwarped may be called a temporalist or timewarper.
 
 \cf{Spl}{Spellwarp Pool}[Su]
 A spellwarped has the ability to tap into the latent magic within his body to generate magical effects.
-He has a maximum number of spellwarp points equal to half his spellwarped level \add his Constitution (minimum 1 point).
-Each hour, he regains a number of spellwarp points equal to half his key attribute (minimum 1).
-As long as he has at least one spellwarp point remaining, he gains a minor ability based on his choice of magic.
+He has a maximum number of spellwarp points equal to his Constitution or half his spellwarped level (minimum 1), whichever is higher.
+Once per hour, he regains half of his spellwarp points.
+
+As long as the spellwarped has at least one spellwarp point remaining, he gains a minor ability based on his choice of magic.
 \subcf{Alteration -- Alter Appearance}
 The spellwarped can change minor aspects of his appearance at will -- removing a mole or lengthening his beard slightly.
 This can grant him a \plus2 bonus to Disguise checks.
@@ -2890,15 +2891,20 @@ This level of control is insufficient to make skill checks or wield a weapon or 
 \subcf{Temporal -- Time Awareness}
 The spellwarped always knows exactly what time it is, and can track the passage of time precisely without effort.
 
-\cf{Spl}{Invoke Power}
-A spellwarped can invoke his innate magic to generate powerful effects by spending a spellwarp point.
-He chooses a single power at 1st level from those available based on his choice of innate magic.
+\cf{Spl}{Spellpower}[Su]
+The strength of a spellwarped's spells and abilities are determined by his spellpower.
+His spellpower is equal to his key attribute or his spellwarped level, whichever is higher.
 
-At his 4th spellwarped level, and every two spellwarped levels thereafter, he gains an additional power.
-Some powers have minimum spellwarped levels, as indicated in the title of the ability.
-The list of powers is given at \pcref{Spellwarped Powers}.
-All spellwarped powers are supernatural abilities unless otherwise noted.
-The spellwarped's special attack bonus with spellwarped powers is equal to his spellwarped level \add his key attribute.
+\cf{Spl}{Spellwarped Invocation}
+A spellwarped can invoke his innate magic to generate powerful effects by spending a spellwarp point.
+He chooses a single invocation at 1st level from those available based on his choice of innate magic.
+
+At his 4th spellwarped level, and every two spellwarped levels thereafter, he gains an additional invocation.
+Some invocations have minimum spellwarped levels, as indicated in the title of the ability.
+The list of invocations is given at \pcref{Spellwarped Invocations}.
+
+All spellwarped invocations are supernatural abilities unless otherwise noted.
+The spellwarped's special attack bonus with spellwarped invocations is equal to his spellpower.
 
 \cf{Spl}[2nd]{Surge of Power}[Su]
 The spellwarped can invoke a surge of magical power that allows him to embody his innate magic more fully for 5 rounds.
@@ -2908,35 +2914,37 @@ The effect of his surge depends on his choice of innate magic, as described belo
 The spellwarped enhances his physical ability.
 He gains a \plus2 enhancement bonus to a physical attribute of his choice.
 This bonus increases by 1 at 8th, 14th, and 20th spellwarped level.
+This effect cannot increase the attribute higher than his spellpower.
 \subcf{Pyromancy -- Flame Aura}
 The spellwarped emanates an aura of fire for 5 rounds.
 At the start of each of his turns, creatures adjacent to him take one point of fire damage per spellwarped level.
 \subcf{Telekinesis -- Kinetic Deflection}
-The spellwarped reflexibly deflects attacks away with his mind.
-He gains a \plus2 enhancement bonus to his physical defenses.
-At 8th, 14th, and 20th spellwarped level, the bonus increases by 1.
+The spellwarped reflexively deflects attacks away with his mind.
+He gains a \plus2 bonus to his physical defenses (Armor, Maneuver, Reflex).
+In addition, he may use his Intelligence to determine his physical defenses in place of his Dexterity or Constitution.
 \subcf{Temporal -- Accelerate Movement}
 The spellwarped accelerates his movement and reactions.
-He gains a \plus2 enhancement bonus to his physical defenses and a \plus10 foot enhancement bonus to his movement speed.
-He also gains a bonus on his Athletics checks to sprint equal to his spellwarped level.
+He gains a \plus2 bonus to his Reflex defense and a \plus10 foot enhancement bonus to his movement speed.
+He also gains a bonus on his Sprint checks equal to his spellpower.
 At 8th, 14th, and 20th spellwarped level, the defense bonus increases by 1 and the speed bonus increases by 10 feet.
 
 \cf{Spl}[2nd]{Spellwarped Body}[Ex]
 The spellwarped's body is fundamentally altered by exposure to magic.
 He shows signs of the magic coursing through his body: strangely or inconsistently colored hair, natural skin markings which often resemble runes, and so on.
 Anyone observing the spellwarped can make an Awareness or Spellcraft check with a DC equal to 20 \sub his spellwarped level to recognize that the character is a spellwarped.
+Beating this DC by 10 allows the observer to determine the type of innate magic the spellwarped has.
 In addition, the spellwarped gains an ability based on his innate magic.
 \subcf{Alteration -- Augment Skin}
 The spellwarped gains a \plus1 bonus to his Armor defense.
 This bonus increases by 1 at his 10th and 20th spellwarped levels.
 \subcf{Pyromancy -- Energy Resistance}
-The spellwarped gains cold and fire damage reduction equal to twice his spellwarped level, allowing him to ignore the first points of cold or fire damage he takes each round.
+The spellwarped gains cold and fire damage reduction equal to twice his spellpower, allowing him to ignore the first points of cold or fire damage he takes each round.
 \subcf{Telekinesis -- Tactile Telekinesis}
-The spellwarped gains a \plus1 bonus to Strength and Dexterity-based skill checks.
-This bonus increases by 1 at his 5th spellwarped level and every 5 spellwarped levels thereafter.
-\subcf{Temporal -- Accelerate Reaction}
-The spellwarped gains a \plus2 bonus to initiative checks.
-This bonus increases by 1 at his 5th spellwarped level and every 3 spellwarped levels thereafter.
+The spellwarped gains a \plus1 bonus to Strength and Dexterity-based checks.
+This bonus increases by 1 at spellpower 5 and every 5 spellpower thereafter.
+\subcf{Temporal -- Accelerate Mind}
+The spellwarped gains a \plus2 bonus to Intelligence and Perception-based checks.
+This bonus increases by 1 at spellpower 5 and every 5 spellpower thereafter.
 
 \cf{Spl}[3rd]{Attuned Senses}[Su]
 The spellwarped learns to recognize the telltale signs of his chosen magic.
@@ -2965,9 +2973,8 @@ The full list of spellwarped aspects is given below.
 
 \parhead{General}
 \subcf{Spell Conduit}
-The spellwarped may use his character level in place of his spellwarped level to determine the effects of his spellwarped abilities, including the damage dealt and the special attack bonus.
-This does not affect the number of spellwarp points he has available.
-In addition, if he has the ability to cast spells, he may use his character level as his spellpower with spells.
+The spellwarped may use his character level in place of his spellwarped level to determine his spellpower.
+In addition, if he has the ability to cast spells, he may use his spellwarped spellpower in place of his normal spellpower from his casting class if it would be higher.
 \subcf{7th -- Expanded Senses}
 The range of the spellwarped's attuned senses ability doubles.
 \subcf{11th -- Accelerated Recovery}
@@ -2979,8 +2986,8 @@ If the ability does not have a duration, such as the temporal attuned senses abi
 
 \parhead{Alteration}
 \subcf{Damage Reduction}
-The spellwarped gains physical damage reduction against his choice of piercing, slashing, or bludgeoning damage.
-The amount of damage resisted is equal to half his spellwarped level, allowing him to ignore the first points of damage he takes each round.
+The spellwarped gains damage reduction against his choice of piercing, slashing, or bludgeoning damage.
+The amount of damage resisted is equal to half his spellpower, allowing him to ignore the first points of damage he takes each round.
 If he is hit by an adamantine weapon, he cannot use his damage reduction for 1 round.
 \subcf{7th -- Improved Damage Reduction}
 The spellwarped's damage reduction applies against all forms of physical damage.
@@ -2991,9 +2998,9 @@ He may select this aspect multiple times, choosing a different bonus feat each t
 \subcf{11th -- Alter Size}
 When the spellwarped uses his surge of power, he can increase or decrease by a size category, as he chooses.
 The size alteration lasts as long as his surge of power does.
-This is a size-affecting effect, and does not stack with other size-affecting effects.
+This is a sizing effect, and does not stack with other sizing effects.
 \subcf{15th -- Fast Healing}
-While his surge of power is active, the spellwarped gains fast healing equal to half his spellwarped level, allowing him to heal damage each round.
+While his surge of power is active, the spellwarped gains fast healing equal to half his spellpower, allowing him to heal damage each round.
 This does not affect critical damage.
 
 \parhead{Pyromancy}
@@ -3002,13 +3009,13 @@ When the spellwarped uses his ember ability, he can strengthen the fire so that 
 He can also throw the ember up to 100 feet.
 It burns for up to 5 rounds on its own before becoming extinguished.
 \subcf{Intense Flames}
-The spellwarped's attacks can ignore an amount of fire damage reduction equal to his spellwarped level or his Willpower.
+The spellwarped's attacks can ignore an amount of fire damage reduction equal to his spellpower.
 \subcf{7th -- Flame Eater}
 When the spellwarped resists fire damage with his spellwarped body ability, he gains temporary hit points equal to the damage resisted for 5 minutes.
 
 \parhead{Telekinesis}
 \subcf{Improved Object Manipulation}
-When the spellwarped uses his object manipulation ability, he can affect objects within 10 feet, with a weight limit of up to two pounds per spellwarped level.
+When the spellwarped uses his object manipulation ability, he can affect objects within 10 feet, with a weight limit of up to two pounds per spellpower.
 He has enough control to make checks with a DC of up to 10.
 \subcf{7th -- Shieldbearer}
 The spellwarped may wield shields, except tower shields, telekinetically.
@@ -3050,7 +3057,7 @@ As an immediate action, when the spellwarped makes successfully resists an attac
 The spell has no effect on him, even if it would normally have an effect on a failed attack.
 \subcf{Pyromancy -- Fuel the Flame}
 As an immediate action, when the spellwarped is affected by a spell or spell-like ability, he may channel its energy into a burst of flame around him.
-Creatures within a \areasmall radius of the spellwarped take fire damage equal to his spellwarped level.
+Creatures within a \areasmall radius of the spellwarped take fire damage equal to his spellpower.
 The spell still has its normal effect on the spellwarped.
 \subcf{Telekinesis -- Mind over Matter}
 As an immediate action, when the spellwarped is subject to an attack against his Fortitude from a spell or spell-like ability, he may use his Mental defense instead.
@@ -3060,7 +3067,7 @@ This can end the effect immediately if it has less than one round remaining.
 If this would reduce the duration by more than one day, the duration is instead reduced by one day.
 
 \cf{Spl}[9th]{Spell Resistance}[Ex]
-The magic within the spellwarped allows him to completely ignore other magic, granting him spell resistance equal to 10 \add spellwarped level \add Constitution.
+The magic within the spellwarped allows him to completely ignore other magic, granting him spell resistance equal to 10 \add his Constitution or spellwarped level, whichever is higher.
 To affect the spellwarped with a spell, a caster must make an attack with its spellpower.
 If the attack beats the spellwarped's spell resistance, the spell works normally.
 Otherwise, the spell has no effect on the spellwarped.
@@ -3078,9 +3085,9 @@ He can gain the effects of his surge of power indefinitely.
 He may toggle the ability on or off as a swift action at will, without expending spellwarp points.
 This does not allow him to activate his mass surge of power ability at will, and his allies only gain the benefits for 5 rounds.
 
-\ssecfake{Spellwarped Powers}\label{Spellwarped Powers}
+\ssecfake{Spellwarped Invocations}\label{Spellwarped Invocations}
 
-\subsubsection{Alteration Powers}
+\subsubsection{Alteration Invocations}
 \parhead{1st -- Lesser Reduction}
 The spellwarped makes an special attack vs. Fortitude against a creature within \rngclose range.
 A successful attack causes the creature to become one size category smaller for 2 rounds.
@@ -3094,7 +3101,7 @@ This has the following effects:
 \end{itemize}
 This is a size-affecting effect.
 \parhead{4th -- Reduction}
-This power functions like the lesser reduction power, except that the foe is reduced for 5 rounds.
+This invocation functions like the lesser reduction invocation, except that the foe is reduced for 5 rounds.
 \parhead{6th -- Purge}
 The spellwarped can end any single effect or condition on him which requires a successful attack against his Fortitude.
 If he identify the effects on him, such as with a Spellcraft check, he may freely choose which effect to end.
@@ -3103,10 +3110,10 @@ If he cannot differentiate the effects, choose the effect ended randomly.
 The spellwarped elongates and distorts a part of his body and strikes a foe with it.
 The foe must be within his reach, as if he were wielding a reach weapon.
 He must make a physical attack with that part of his body.
-If he hits, he deals 1d10 bludgeoning damage per two spellwarped levels \add his Strength.
+If he hits, he deals 1d10 bludgeoning damage per two spellpower \add half his Strength.
 In addition, whether he hits or misses, he may make a shove attack against the creature.
 He need not move with the creature to push it back.
-\parhead{8th -- Enlargement} This power functions like the \spell{enlarge person}
+\parhead{8th -- Enlargement} This invocation functions like the \spell{enlarge person}
 spell, except that it can affect creatures of any type.
 \parhead{10th -- Amorphous Body}
 The spellwarped transforms his body into an amorphous form for 1 round.
@@ -3114,7 +3121,7 @@ In this form, he gains several benefits.
 He gains a \plus20 bonus against grapple attacks, is immune to critical hits, takes no penalties for squeezing, and can move through spaces that are no more than two inches in width, though doing so forces him to move at half speed.
 \parhead{10th -- Heal Wounds}
 As a standard action, the spellwarped can spend two spellwarp points to remove his own injuries by transforming himself into a healthier version of his body.
-He heals 1d10 points of damage per two spellwarped levels.
+He heals 1d10 points of damage per two spellpower.
 This also removes any of the following conditions: blinded, diseased, exhausted, fatigued, nauseated, sickened, and poisoned.
 \parhead{12th -- Baleful Polymorph} This attack functions like the \spell{baleful polymorph}
 spell.
@@ -3125,50 +3132,48 @@ See \pcref{Flying}, for more details.
 At the end of the duration, the wings are subsumed back into his body.
 This ability is draining to use, and the spellwarped must wait for five minutes after using it before he can use it again.
 \parhead{14th -- Greater Amorphous Body}
-This power functions like the amorphous form power, except that it costs two spellwarp points and lasts for 5 rounds.
+This invocation functions like the amorphous form invocation, except that it costs two spellwarp points and lasts for 5 rounds.
 \parhead{16th -- Bludgeon the Horde}
 This attack functions like the body bludgeon attack, except that he may attack all foes within his reach, as if he were wielding a reach weapon.
-He deals 1d6 bludgeoning damage per two spellwarped levels \add his Strength to each foe.
+He deals 1d6 bludgeoning damage per two spellpower \add half his Strength to each foe.
 \parhead{18th -- }
 \parhead{20th -- }
 
-\subsubsection{Pyromancy Powers}
+\subsubsection{Pyromancy Invocations}
 \parhead{1st -- Lesser Ignite}
 As a standard action, the spellwarped makes a Reflex attack to deal damage to a foe within \rngclose range.
-This attack deals 1d6 points of fire damage \add 1 per spellwarped level.
+This attack deals 1d6 points of fire damage \add 1 per spellpower.
 A failed attack deals half damage.
 \parhead{1st -- Weapon of Flame}
 As a swift action, the spellwarped can create a weapon made of flame that lasts for 5 rounds.
 The weapon is sized appropriately for him, and may take the form of any weapon he is proficient with.
 He can attack with the weapon as if it were a normal weapon of its type, except that he adds half his Willpower to damage in place of half his Strength, and all damage dealt with the weapon is fire damage.
-\par The flame weapon gains a \plus1 enhancement bonus to attack and damage at 4th spellwarped level.
-At his 7th level, and every 3 spellwarped levels thereafter, the bonus increases by 1.
-If it leaves his hand, it is extinguished 1 round later.
+\par If the flame weapon leaves his hand, it is extinguished 1 round later.
 \parhead{4th -- Ignite}
-This attack functions like the lesser ignite attack, except that it deals 1d10 points of fire damage per two spellwarped levels, and a successful attack also makes the target \ignited.
+This attack functions like the lesser ignite attack, except that it deals 1d10 points of fire damage per two spellpower, and a successful attack also makes the target \ignited.
 \parhead{6th -- Ignite Weapon}
 As a swift action, the spellwarped can set one of his weapon on fire for 5 rounds.
 During this time, the spellwarped can add half his Willpower to damage with the weapon he wields in place of half his Strength.
 This bonus damage is fire damage.
-%If ignites a weapon created using his weapon of flame power, he adds his full Charisma to damage with the weapon instead of half his Charisma.
+%If ignites a weapon created using his weapon of flame invocation, he adds his full Charisma to damage with the weapon instead of half his Charisma.
 \parhead{6th -- Fiery Protection}
-As a standard action, the spellwarped can bestow fire and cold damage reduction equal to twice his spellwarped level on a creature within 30 feet of him.
+As a standard action, the spellwarped can bestow fire and cold damage reduction equal to twice his spellpower on a creature within 30 feet of him.
 The protection lasts for 1 hour.
 \parhead{8th -- Conflagration}
 As a standard action, the spellwarped can release a powerful explosion of flame.
-He makes a Reflex attack to deal damage to all enemies and objects within a \areamed radius spread of him.
-This attack deals 1d6 fire damage per two spellwarped levels.
+He makes an attack against the Reflex defense of all enemies and objects within a \areamed radius spread of him.
+If the attack succeeds against a target, it deals 1d6 fire damage per two spellpower.
 A failed attack deals half damage.
 \parhead{10th -- Fire Shield}
 As a standard action, the spellwarped can wreath himself in flame for 5 rounds.
-Any creature that hits him with its body or a melee weapon takes 1d6 fire damage per two spellwarped levels.
+Any creature that hits him with its body or a melee weapon takes 1d6 fire damage per two spellpower.
 Each individual creature can take this damage only once per round.
 \parhead{10th -- Flameheart}
 As a standard action, the spellwarped can become a being of pure fire for 1 round.
 In this form, he is immune to physical damage and can pass through openings as small as one inch at no movement penalty.
 However, he cannot attack normally or use any of his items, as they meld into his body.
-He may invoke any of his spellwarped powers normally.
-In this form, he can make a touch attack as a standard action to deal 1d6 points of fire damage per spellwarped level.
+He may invoke any of his spellwarped invocations normally.
+In this form, he can make a touch attack as a standard action to deal 1d6 points of fire damage per spellpower.
 \parhead{12th -- Firestride}
 As a move action, the spellwarped can may teleport to any active flame of at least Tiny size within \rngmed range.
 When he does so, he immolates himself and disappears into a pile of ash before stepping out from the flame unharmed.
@@ -3180,7 +3185,7 @@ See \pcref{Flying}, for more details.
 At the end of the duration, the wings are extinguished.
 This ability is draining to use, and the spellwarped must wait for five minutes after using it before he can use it again.
 \parhead{14th -- Greater Flameheart}
-This power functions like the flameheart power, except that it lasts for 5 rounds.
+This invocation functions like the flameheart invocation, except that it lasts for 5 rounds.
 \parhead{16th -- }
 
 \parhead{18th -- Phoenix Revival}
@@ -3193,13 +3198,14 @@ The ash cannot be harmed by fire damage, and if the pile of ash would take at le
 The spellwarped may take his normal actions immediately after being restored.
 \parhead{20th -- Immolate}
 As a standard action, the spellwarped makes a special attack vs. Fortitude against a foe within \rngclose range to consume it in flames from the inside out.
-This attack deals 1d10 points of fire damage per two spellwarped levels, and if the creature is \bloodied after it takes this damage, it immediately dies.
-A failed attack deals half damage and leaves a bloodied creature with 0 hit points.
+Success deals 1d10 points of fire damage per two spellpower.
+Critical success kills the target instantly.
+Failure deals half damage and leaves a bloodied creature with 0 hit points.
 
-\subsubsection{Telekinesis Powers}
+\subsubsection{Telekinesis Invocations}
 \parhead{1st -- Lesser Crush}
 As a standard action, the spellwarped makes a special attack vs. Fortitude against a creature within \rngclose range.
-If his attack succeeds, he crushes it with telekinetic force for 1d6 points of physical damage \add 1 per spellwarped level.
+If his attack succeeds, he crushes it with telekinetic force for 1d6 points of physical damage \add 1 per spellpower.
 A failed attack deals half damage.
 \parhead{1st -- Mind Blade}
 As a swift action, the spellwarped can telekinetically wield an unattended weapon within \rngclose range for 5 rounds.
@@ -3210,36 +3216,36 @@ The weapon floats in midair and threatens all squares adjacent to it.
 As a move action, he may move the weapon up to 30 feet in any direction, even vertically.
 If the weapon goes outside of \rngclose range, he loses control of it and it falls to the ground.
 \parhead{4th -- Crush}
-This power functions like the lesser crush attack, except that it deals 1d10 points of physical damage per two spellwarped levels.
+This invocation functions like the lesser crush attack, except that it deals 1d10 points of physical damage per two spellpower.
 In addition, if his attack succeeds, the target is also \sickened for 5 rounds.
 \parhead{4th -- Mighty Mind Blade}
-This power functions like the mind blade power, except that the spellwarped may also use a heavy weapon appropriate for his size, allowing him to attack with it just as if he were holding it in two hands.
-The spellwarped must have the mind blade power to select this power.
+This invocation functions like the mind blade invocation, except that the spellwarped may also use a heavy weapon appropriate for his size, allowing him to attack with it just as if he were holding it in two hands.
+The spellwarped must have the mind blade invocation to select this invocation.
 \parhead{6th -- Distant Manipulation}
 As a standard action, the spellwarped can mentally exert influence at up to \rngclose range.
 This allows him to take any standard action which he could normally take with his hands, using his Intelligence in place of his Strength or Dexterity, as appropriate.
 He may take actions that require more than a standard action to complete by spending the same amount of time concentrating, spending one spellwarp point per two rounds that he spends concentrating.
 \subcf{6th -- Dual Mind Blade}
-This power functions like his mind blade power, except that the spellwarped may wield two weapons at once.
+This invocation functions like his mind blade invocation, except that the spellwarped may wield two weapons at once.
 They must stay in the same space, and he may make two-weapon fighting attacks with the weapons, just as if he was wielding them with two hands.
-The spellwarped must have the mind blade power to select this power.
+The spellwarped must have the mind blade invocation to select this invocation.
 \parhead{8th -- }
-\parhead{10th -- Telekinetic Force} This power functions like the \spell{telekinetic force}
+\parhead{10th -- Telekinetic Force} This invocation functions like the \spell{telekinetic force}
 spell, using his Intelligence as his casting attribute.
 \parhead{12th -- Strangle}
 As a standard action, the spellwarped can make a special attack vs. Fortitude against a creature within \rngclose range to crush its windpipe.
-This attack deals 1d10 damage per two spellwarped levels.
+This attack deals 1d10 damage per two spellpower.
 If the target is \bloodied after the damage is dealt, it is nauseated for 1 round.
 A failed attack deals half damage, and prevents the foe from being nauseated.
-This power costs two spellwarp points.
+This invocation costs two spellwarp points.
 \parhead{14th -- }
 \parhead{16th -- }
 
 \parhead{18th -- }
 \parhead{20th -- Mass Strangle}
-This power functions like the strangle power, except that it costs three spellwarp points and the spellwarped can affect any creatures within a \areasmall radius.
+This invocation functions like the strangle invocation, except that it costs three spellwarp points and the spellwarped can affect any creatures within a \areasmall radius.
 
-\subsubsection{Temporal Powers}
+\subsubsection{Temporal Invocations}
 \parhead{1st -- Lesser Timetheft}
 As a standard action, the spellwarped can attempt to steal time.
 He makes a special attack against the Mental defense of an adjacent creature to force it to skip an action.
@@ -3247,17 +3253,17 @@ If it is \bloodied, it skips a standard action, while if it is healthy, it skips
 \parhead{4th -- Slow}
 As a standard action, the spellwarped makes a special attack against the Mental defense of a creature within \rngclose range, making it \slowed for 5 rounds.
 \parhead{4th -- Timetheft}
-This power functions like lesser timetheft, except that the spellwarped regains a spellwarp point if the attack is successful.
+This invocation functions like lesser timetheft, except that the spellwarped regains a spellwarp point if the attack is successful.
 \parhead{6th -- Flashstep}
 As a standard action, the spellwarped can accelerate a creature within \rngclose range so much that he can seem to pause time for everyone but the subject.
 This allows the target to immediately take a single move action.
 During this move action, the target cannot be followed or withdrawn from, and may move through squares occupied by creatures or threatened by blocking enemies without penalty.
 The target still suffers the effects of any environmental hazards.
-If the spellwarped uses this power on himself, it only requires a move action to activate.
+If the spellwarped uses this invocation on himself, it only requires a move action to activate.
 \parhead{6th -- Disjointed Time}
 As a standard action, the spellwarped makes a special attack vs. Fortitude against a single creature within \rngmed range to chaotically disrupt its local flow of time.
 If the attack succeeds, the creature takes a \minus4 penalty to attacks, defenses, and checks for 5 rounds.
-\parhead{8th -- Haste} This power functions like the \spell{haste}
+\parhead{8th -- Haste} This invocation functions like the \spell{haste}
 spell.
 \parhead{8th -- Temporal Prison}
 As a standard action, the spellwarped makes a special attack against the Mental defense of a single creature within \rngclose range to completely stop time for it for 5 rounds.
@@ -3268,10 +3274,10 @@ The spellwarped can only affect any individual creature with this ability once p
 \parhead{10th -- Slow, Greater}
 As a standard action, the spellwarped can spend two spellwarp points to make a creature within \rngmed range \slowed.
 \parhead{10th -- Flashstep, Greater}
-This power functions like the flashstep power, except that it costs two spellwarp points and can be used as a move action.
-If the spellwarped uses this power on himself, it only requires a swift action to activate.
+This invocation functions like the flashstep invocation, except that it costs two spellwarp points and can be used as a move action.
+If the spellwarped uses this invocation on himself, it only requires a swift action to activate.
 \parhead{12th -- Timetheft, Greater}
-This power functions like the timetheft power, except that it costs two spellwarp points and does not require a special attack.
+This invocation functions like the timetheft invocation, except that it costs two spellwarp points and does not require a special attack.
 \parhead{12th -- Timestream}
 The spellwarped manipulates time in a \arealarge, 10 ft.
 wide line that extends out from him for 5 rounds.
@@ -3282,7 +3288,7 @@ The timestream is virtually invisible, requiring a DC 30 Awareness check to noti
 As a move action, the spellwarped can accelerate himself to immense speed, allowing him to move up to five times his speed.
 During this time, he cannot be followed or withdrawn from, can move through squares occupied by enemies or threatened by blocking enemies without penalty, and can treat liquids as if they were solid ground.
 \parhead{14th -- Mass Slow}
-This power functions like the slow power, except that it costs two spellwarp points and affects up to five creatures within \rngclose range of the spellwarped.
+This invocation functions like the slow invocation, except that it costs two spellwarp points and affects up to five creatures within \rngclose range of the spellwarped.
 \parhead{16th -- Time Reversal}
 As a swift action, the spellwarped can spend a spellwarp point to create a ``time lock.'' The time lock persists for one round.
 As a standard action, he can make a special attack against the Mental defense of a creature within \rngmed range to bring it backwards through time to the point at which the time lock was created.
@@ -3294,15 +3300,15 @@ As a standard action, the spellwarped can spend three spellwarp points to accele
 During this round, all creatures he attacks are treated as helpless, but he cannot perform a coup de grace or similar ability; such an act requires more care and precision than is possible with such immense speed.
 After using this ability, he must wait 5 rounds before he can use it again.
 \parhead{18th -- Mass Haste}
-This power functions like the haste power, except that it costs two spellwarp points and affects up to five creatures within \rngclose range of the spellwarped.
+This invocation functions like the haste invocation, except that it costs two spellwarp points and affects up to five creatures within \rngclose range of the spellwarped.
 \parhead{18th -- Time Stop}
 As a standard action, the spellwarped can spend two spellwarp points to step into an alternate timestream, causing him to speed up so greatly that all other creatures seem frozen.
 He can act for 1d3\plus1 rounds of apparent time.
-During this time, all objects and creatures are frozen in place and are completely invulnerable to the spellwarped, though he may affect them with spellwarped powers normally.
+During this time, all objects and creatures are frozen in place and are completely invulnerable to the spellwarped, though he may affect them with spellwarped invocations normally.
 After using this ability, he must wait 5 rounds before he can use it again.
 \parhead{20th -- Temporal Prison, Greater}
 As a standard action, the spellwarped can spend two spellwarp points to completely stop time for a single creature for 5 rounds.
-This functions like the temporal prison power, except that no attack is required.
+This functions like the temporal prison invocation, except that no attack is required.
 \norepeatnotes
 
 \section{Wizard}
