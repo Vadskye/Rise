@@ -219,6 +219,136 @@ The skill name line includes (in addition to the name of the skill) the followin
 
 \parhead{Untrained} This entry indicates what a character without at least 1 skill point in the skill can do with it. If this entry doesn't appear, it means that the skill functions normally for untrained characters (if it can be used untrained) or that an untrained character can't attempt checks with this skill (for skills that are designated as ``Trained Only'').
 
+\skill{Awareness}{Wis}
+Awareness represents your ability to observe things which you might otherwise fail to notice. It can be used to spot concealed things, to correctly identify sounds, or to smell the distinctive rotting flesh smell that accompanies undead.
+
+Each creature has a variety of senses. The Awareness skill governs the use of every sense. It is most commonly used with sight, hearing, and smell, though other uses are possible. Often, bonuses or penalites will apply only to certain senses. For example, it is extremely difficult to see when there is no light, but that has no effect on how difficult it is for you to hear sounds. In such cases, you only roll one Awareness check, and you apply the modifiers separately for each sense. 
+
+While sleeping, you take a \minus10 penalty to Awareness.
+
+\subsubsection{Passive and Active Attention}\label{Awareness-Passive and Active Attention}
+You automatically notice some things about your environment, even when you're distracted or focusing on other tasks (such as combat). At all times, you are considered to be ``taking 0'' on a Awareness check, allowing you to notice anything with a DC up to your Awareness modifier, including all applicable bonuses and penalties. You can only passively perform tasks which do not require a specific action to perform.
+
+You can make a conscious effort to pay attention to events around you. This allows you to make Awareness checks to notice events, rather than simply using your modifier. This is tiring to do over long periods of time: if (10 \add twice the number of hours you have spent being actively attentive) exceeds your Fortitude defense, you become fatigued.
+
+\subsubsection{Discern Illusion}
+You can notice inconsistencies in illusion spells. The DC is equal to the spellcaster's check result when casting the spell. Success means you have interacted with the illusion, allowing you to use your Mental defense to disbelieve it. Failure means you don't notice anything amiss.
+
+If the illusion is completely missing a sense that should logically be present, such as a \spell{silent image} of people in armor, the DC to interact with the illusion with that sense is lowered by 10.
+
+\subsubsection{Identify Disguise}
+You can identify disguises on other creatures. The DC is equal to the Disguise check result used to create the disguise. Success means you know that the creature is disguised. If you succeed by 10 or more, you can also discern the creature's true appearance beneath the disguise. After making a check to identify a disguise on a particular creature, you cannot make another check to identify the same disguise on that creature for one hour.
+
+\subsubsection{Identify Forgery}
+You can identify forgeries. The DC to identify a forgery is equal to the Craft check result used to make the item. Success indicates that you correctly identify whether the item is a forgery or not. Failure indicates that you are unsure. Failure by more than 10 indicates that you incorrectly identify the item, concluding that a forgery is genuine or a genuine item is a forgery. The check is made secretly, so you can't be sure how good the result is.
+
+\subsubsection{Notice Creatures and Events}
+You can notice creatures and events around you. The DC depends on the sense used and the obviousness of the event, as described on tables below. Success means you notice something, but you don't know any details -- only its general direction. For every 5 points by which you beat the DC, you learn an additional piece of information, such as what caused the event or the location of the creature. Failure means you don't notice anything.
+
+This can be used to determine the precise location of a creature or object, even if you can't see it. The DC to identify the location is equal to the DC to notice the creature or object using the appropriate sense \add 5 (since you need to learn an additional piece of information).
+
+\subsubsection{Read Lips}
+You can make a DC 15 sight-based Awareness check to read a creature's lips. You must be able to understand the language spoken. Success means you can understand the general content of the message, but not the exact words. Success by 5 or more means you understand the exact words. Failure means you don't understand the message. Failure by 10 or more means you draw an incorrect conclusion about the message.
+
+\subsubsection{Search}\label{Search}
+You can spend a full-round action to make a Awareness check to notice things in a single 5-ft. square within 10 feet of you. While doing so, you ignore size penalties that would affect the DC to notice anything within the square.
+
+\subsubsection{Senses}
+
+\parhead{Sight} The DC to see something depends on the obviousness of the sight, as shown on \trefnp{Sight-based DCs}, and other modifiers given at \trefnp{Awareness DC Modifiers}.
+
+The DC to notice an invisible creature with sight is 20 higher than normal. Noticing an invisible creature makes you aware of its presence, but doesn't let you see it perfectly.
+
+\begin{dtable}
+    \lcaption{Sight-based DCs}
+    \begin{dtabularx}{\columnwidth}{X l}
+        \thead{Situation} & \thead{Base DC\fn{1}} \\
+\hline
+        Creature or object & 0 \\
+        Creature trying to hide & Stealth check result\fn{2} \\ 
+        Hidden trap, secret door, or mechanism & Craft or Devices check result \\
+        Magic trap & 25 \add double level of spell used to create trap\fn{2} \\
+    \end{dtabularx}
+    1 Always add any appropriate modifiers from \tref{Awareness DC Modifiers} \\
+    2 Don't add size-based DC modifiers.
+\end{dtable}
+
+\parhead{Sound} The DC to hear a sound depends on the intensity of the sound, as shown on \trefnp{Sound-based DCs}, and other modifiers given at \trefnp{Awareness DC Modifiers}.
+
+Background noise can make it more difficult to notice sounds. If there is significant background noise of a similar intensity to the sound to be detected, the DC increases by 5. If there is significant background noise of a much greater intensity than the sound to be detected, the DC increases by 10.
+
+\begin{dtable}
+    \lcaption{Sound-based DCs}
+    \begin{dtabularx}{\columnwidth}{X l}
+        \thead{Situation} & \thead{Base DC\fn{1}} \\
+\hline
+        Creature shouting & \minus5\fn{1} \\
+        Creature talking normally or fighting & 0 \\ 
+        Creature whispering & 10 \\
+        Creature standing still & 15 \\
+        Creature trying to be quiet & Stealth check result\fn{2} \\ 
+    \end{dtabularx}
+    1 Always add any appropriate modifiers from \tref{Awareness DC Modifiers} \\
+    2 Don't add size-based DC modifiers.
+\end{dtable}
+
+\parhead{Scent} The DC to smell something depends on the intensity of the scent, as shown on \trefnp{Scent-based DCs}, and other modifiers given at \trefnp{Awareness DC Modifiers}.
+
+The DCs given are for a creature with an ordinary sense of smell, like a human. A creature with the scent ability, like most animals, gains a \plus10 bonus to scent-based Awareness checks. Some creatures with extraordinary smelling abilities, such as dogs, gain a \plus20 bonus to scent-based Awareness checks.
+
+Smell intensity can vary widely depending on the circumstances. In general, an unusually strong smell, such as a creature wearing perfume, has a DC which is 5 lower. An unusually weak smell, such as a creature who has just taken an unscented bath, has a DC which is 5 higher.
+
+Smells dissipate quickly with distance. Double the normal distance modifiers for scent-based perception checks.
+
+\begin{dtable}
+    \lcaption{Scent-based DCs}
+    \begin{dtabularx}{\columnwidth}{X l}
+        \thead{Situation} & \thead{Base DC\fn{1}} \\
+\hline
+        Strong scent (rotting flesh, pungent spices) & 0 \\
+        Moderate scent (fresh food) & 5 \\
+        Living creature & 10 \\
+    \end{dtabularx}
+    1 Always add any appropriate modifiers from \tref{Awareness DC Modifiers} \\
+\end{dtable}
+
+\parhead{Other Senses} Other senses can exist, and creatures can make Awareness checks to use those other senses appropriately.
+
+\subsubsection{Modifiers}
+All Awareness checks share the same set of modifiers, in addition to certain modifiers which depend on the sense. These are noted on \trefnp{Awareness DC Modifiers}.
+
+\begin{dtable}
+    \lcaption{Awareness DC Modifiers}
+    \begin{dtabularx}{\columnwidth}{X l}
+        \thead{Distance} & \thead{DC Modifier\fn{1}} \\
+\hline
+        Less than five feet away & \plus0 \\
+        Five feet away & \plus2 \\
+        Twenty feet away & \plus5 \\
+        A hundred feet away & \plus10 \\
+        Five hundred feet away & \plus15 \\
+        Half a mile away & \plus20 \\
+        \thead{Number} & \thead{DC Modifier} \\
+        One creature or object & \plus0 \\
+        Two creatures or objects & \plus2 \\
+        Five creatures or objects & \plus5 \\
+        Twenty creatures or objects & \plus10 \\
+        A hundred creatures or objects & \plus15 \\
+        Five hundred creatures or objects & \plus20 \\
+        \thead{Size} & \thead{DC Modifier} \\
+        Fine & \plus16 \\
+        Diminuitive & \plus12 \\
+        Tiny & \plus8 \\
+        Small & \plus4 \\
+        Medium & \plus \\
+        Large & \minus4 \\
+        Huge & \minus8 \\
+        Gargantuan & \minus12 \\
+        Colossal & \minus16 \\
+    \end{dtabularx}
+    1 Doubled for scent-based Awareness checks.
+\end{dtable}
+
 \skill{Balance}{Dex; Armor Check Penalty}
 Balance represents your physical steadiness and poise. All Balance checks are made as part of movement, so they require no special action to perform.
 
@@ -652,23 +782,6 @@ You can make a DC 10 Jump check while moving to jump up onto an object as tall a
 \subsubsection{Jump Down}
 You can make a DC 15 Athletics check while moving to intentionally jump down from a height to reduce your falling damage. Success means you take damage as if you had dropped 10 fewer feet than you actually did. Failure means you take the normal falling damage.
 
-\skill{Sprint}{Str; Armor Check Penalty}
-You can make an Sprint check as part of movement to move faster. For every 10 points by which you beat DC 0, you double your speed during that action, as shown on \trefnp{Sprinting}. You can sprint for a number of rounds equal to 5 \add your Constitution.
-
-\begin{dtable}
-    \lcaption{Sprinting}
-    \begin{dtabularx}{\columnwidth}{l X}
-        \thead{Athletics Result} & \thead{Speed Multiplier} \\
-\hline
-        0 & 1x \\
-        10 & 2x \\
-        20 & 3x \\
-        30 & 4x \\
-    \end{dtabularx}
-\end{dtable}
-
-After you finish sprinting, you are fatigued for a number of rounds equal to the number of rounds you spent sprinting, making you \vulnerable and preventing you from sprinting again. You can sprint in any movement mode that you can use.
-
 \skill{Knowledge (Int; Trained Only)}
 Like the Craft, Profession, and Perform skills, Knowledge actually encompasses a number of unrelated skills. Knowledge represents a study of some body of lore, possibly an academic or even scientific discipline. Below are listed typical fields of study.
 \begin{itemize}
@@ -743,136 +856,6 @@ Sylvan  & Dryads, brownies, leprechauns  & Elven \\
 Terran  & Xorns and other earth-based creatures & Dwarven \\
 Undercommon  & Drow & Elven
 \end{dtabularx}
-\end{dtable}
-
-\skill{Awareness}{Wis}
-Awareness represents your ability to observe things which you might otherwise fail to notice. It can be used to spot concealed things, to correctly identify sounds, or to smell the distinctive rotting flesh smell that accompanies undead.
-
-Each creature has a variety of senses. The Awareness skill governs the use of every sense. It is most commonly used with sight, hearing, and smell, though other uses are possible. Often, bonuses or penalites will apply only to certain senses. For example, it is extremely difficult to see when there is no light, but that has no effect on how difficult it is for you to hear sounds. In such cases, you only roll one Awareness check, and you apply the modifiers separately for each sense. 
-
-While sleeping, you take a \minus10 penalty to Awareness.
-
-\subsubsection{Passive and Active Attention}\label{Awareness-Passive and Active Attention}
-You automatically notice some things about your environment, even when you're distracted or focusing on other tasks (such as combat). At all times, you are considered to be ``taking 0'' on a Awareness check, allowing you to notice anything with a DC up to your Awareness modifier, including all applicable bonuses and penalties. You can only passively perform tasks which do not require a specific action to perform.
-
-You can make a conscious effort to pay attention to events around you. This allows you to make Awareness checks to notice events, rather than simply using your modifier. This is tiring to do over long periods of time: if (10 \add twice the number of hours you have spent being actively attentive) exceeds your Fortitude defense, you become fatigued.
-
-\subsubsection{Discern Illusion}
-You can notice inconsistencies in illusion spells. The DC is equal to the spellcaster's check result when casting the spell. Success means you have interacted with the illusion, allowing you to use your Mental defense to disbelieve it. Failure means you don't notice anything amiss.
-
-If the illusion is completely missing a sense that should logically be present, such as a \spell{silent image} of people in armor, the DC to interact with the illusion with that sense is lowered by 10.
-
-\subsubsection{Identify Disguise}
-You can identify disguises on other creatures. The DC is equal to the Disguise check result used to create the disguise. Success means you know that the creature is disguised. If you succeed by 10 or more, you can also discern the creature's true appearance beneath the disguise. After making a check to identify a disguise on a particular creature, you cannot make another check to identify the same disguise on that creature for one hour.
-
-\subsubsection{Identify Forgery}
-You can identify forgeries. The DC to identify a forgery is equal to the Craft check result used to make the item. Success indicates that you correctly identify whether the item is a forgery or not. Failure indicates that you are unsure. Failure by more than 10 indicates that you incorrectly identify the item, concluding that a forgery is genuine or a genuine item is a forgery. The check is made secretly, so you can't be sure how good the result is.
-
-\subsubsection{Notice Creatures and Events}
-You can notice creatures and events around you. The DC depends on the sense used and the obviousness of the event, as described on tables below. Success means you notice something, but you don't know any details -- only its general direction. For every 5 points by which you beat the DC, you learn an additional piece of information, such as what caused the event or the location of the creature. Failure means you don't notice anything.
-
-This can be used to determine the precise location of a creature or object, even if you can't see it. The DC to identify the location is equal to the DC to notice the creature or object using the appropriate sense \add 5 (since you need to learn an additional piece of information).
-
-\subsubsection{Read Lips}
-You can make a DC 15 sight-based Awareness check to read a creature's lips. You must be able to understand the language spoken. Success means you can understand the general content of the message, but not the exact words. Success by 5 or more means you understand the exact words. Failure means you don't understand the message. Failure by 10 or more means you draw an incorrect conclusion about the message.
-
-\subsubsection{Search}\label{Search}
-You can spend a full-round action to make a Awareness check to notice things in a single 5-ft. square within 10 feet of you. While doing so, you ignore size penalties that would affect the DC to notice anything within the square.
-
-\subsubsection{Senses}
-
-\parhead{Sight} The DC to see something depends on the obviousness of the sight, as shown on \trefnp{Sight-based DCs}, and other modifiers given at \trefnp{Awareness DC Modifiers}.
-
-The DC to notice an invisible creature with sight is 20 higher than normal. Noticing an invisible creature makes you aware of its presence, but doesn't let you see it perfectly.
-
-\begin{dtable}
-    \lcaption{Sight-based DCs}
-    \begin{dtabularx}{\columnwidth}{X l}
-        \thead{Situation} & \thead{Base DC\fn{1}} \\
-\hline
-        Creature or object & 0 \\
-        Creature trying to hide & Stealth check result\fn{2} \\ 
-        Hidden trap, secret door, or mechanism & Craft or Devices check result \\
-        Magic trap & 25 \add double level of spell used to create trap\fn{2} \\
-    \end{dtabularx}
-    1 Always add any appropriate modifiers from \tref{Awareness DC Modifiers} \\
-    2 Don't add size-based DC modifiers.
-\end{dtable}
-
-\parhead{Sound} The DC to hear a sound depends on the intensity of the sound, as shown on \trefnp{Sound-based DCs}, and other modifiers given at \trefnp{Awareness DC Modifiers}.
-
-Background noise can make it more difficult to notice sounds. If there is significant background noise of a similar intensity to the sound to be detected, the DC increases by 5. If there is significant background noise of a much greater intensity than the sound to be detected, the DC increases by 10.
-
-\begin{dtable}
-    \lcaption{Sound-based DCs}
-    \begin{dtabularx}{\columnwidth}{X l}
-        \thead{Situation} & \thead{Base DC\fn{1}} \\
-\hline
-        Creature shouting & \minus5\fn{1} \\
-        Creature talking normally or fighting & 0 \\ 
-        Creature whispering & 10 \\
-        Creature standing still & 15 \\
-        Creature trying to be quiet & Stealth check result\fn{2} \\ 
-    \end{dtabularx}
-    1 Always add any appropriate modifiers from \tref{Awareness DC Modifiers} \\
-    2 Don't add size-based DC modifiers.
-\end{dtable}
-
-\parhead{Scent} The DC to smell something depends on the intensity of the scent, as shown on \trefnp{Scent-based DCs}, and other modifiers given at \trefnp{Awareness DC Modifiers}.
-
-The DCs given are for a creature with an ordinary sense of smell, like a human. A creature with the scent ability, like most animals, gains a \plus10 bonus to scent-based Awareness checks. Some creatures with extraordinary smelling abilities, such as dogs, gain a \plus20 bonus to scent-based Awareness checks.
-
-Smell intensity can vary widely depending on the circumstances. In general, an unusually strong smell, such as a creature wearing perfume, has a DC which is 5 lower. An unusually weak smell, such as a creature who has just taken an unscented bath, has a DC which is 5 higher.
-
-Smells dissipate quickly with distance. Double the normal distance modifiers for scent-based perception checks.
-
-\begin{dtable}
-    \lcaption{Scent-based DCs}
-    \begin{dtabularx}{\columnwidth}{X l}
-        \thead{Situation} & \thead{Base DC\fn{1}} \\
-\hline
-        Strong scent (rotting flesh, pungent spices) & 0 \\
-        Moderate scent (fresh food) & 5 \\
-        Living creature & 10 \\
-    \end{dtabularx}
-    1 Always add any appropriate modifiers from \tref{Awareness DC Modifiers} \\
-\end{dtable}
-
-\parhead{Other Senses} Other senses can exist, and creatures can make Awareness checks to use those other senses appropriately.
-
-\subsubsection{Modifiers}
-All Awareness checks share the same set of modifiers, in addition to certain modifiers which depend on the sense. These are noted on \trefnp{Awareness DC Modifiers}.
-
-\begin{dtable}
-    \lcaption{Awareness DC Modifiers}
-    \begin{dtabularx}{\columnwidth}{X l}
-        \thead{Distance} & \thead{DC Modifier\fn{1}} \\
-\hline
-        Less than five feet away & \plus0 \\
-        Five feet away & \plus2 \\
-        Twenty feet away & \plus5 \\
-        A hundred feet away & \plus10 \\
-        Five hundred feet away & \plus15 \\
-        Half a mile away & \plus20 \\
-        \thead{Number} & \thead{DC Modifier} \\
-        One creature or object & \plus0 \\
-        Two creatures or objects & \plus2 \\
-        Five creatures or objects & \plus5 \\
-        Twenty creatures or objects & \plus10 \\
-        A hundred creatures or objects & \plus15 \\
-        Five hundred creatures or objects & \plus20 \\
-        \thead{Size} & \thead{DC Modifier} \\
-        Fine & \plus16 \\
-        Diminuitive & \plus12 \\
-        Tiny & \plus8 \\
-        Small & \plus4 \\
-        Medium & \plus \\
-        Large & \minus4 \\
-        Huge & \minus8 \\
-        Gargantuan & \minus12 \\
-        Colossal & \minus16 \\
-    \end{dtabularx}
-    1 Doubled for scent-based Awareness checks.
 \end{dtable}
 
 \skill{Perform}{Cha}
@@ -1135,6 +1118,23 @@ You can make a Spellcraft check as a standard action to identify a scroll or sim
 
 \subsubsection{Teleport Trace}
 You can make a DC 20 Spellcraft check as a move action to learn information about a teleportation that happened recently. You must have noticed the magic aura left by the teleportation effect. Success means you identify the direction of the teleportation. Success by 10 or more means you also identify the distance. Failure means you learn no information about the teleportation. The DC of this check increases by 5 for every minute that has passed since the teleportation happened.
+
+\skill{Sprint}{Str; Armor Check Penalty}
+You can make an Sprint check as part of movement to move faster. For every 10 points by which you beat DC 0, you double your speed during that action, as shown on \trefnp{Sprinting}. You can sprint for a number of rounds equal to 5 \add your Constitution.
+
+\begin{dtable}
+    \lcaption{Sprinting}
+    \begin{dtabularx}{\columnwidth}{l X}
+        \thead{Athletics Result} & \thead{Speed Multiplier} \\
+\hline
+        0 & 1x \\
+        10 & 2x \\
+        20 & 3x \\
+        30 & 4x \\
+    \end{dtabularx}
+\end{dtable}
+
+After you finish sprinting, you are fatigued for a number of rounds equal to the number of rounds you spent sprinting, making you \vulnerable and preventing you from sprinting again. You can sprint in any movement mode that you can use.
 
 \skill{Stealth}{Dex; Armor Check Penalty}
 Stealth represents your ability to escape detection while moving or hiding. All Stealth checks are made as part of movement or other actions, so they require no special action to perform. If you have been noticed by a creature, you automatically fail all Stealth checks against that creature until you can escape its notice, such as by disappearing out of sight.
