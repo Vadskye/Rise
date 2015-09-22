@@ -123,10 +123,10 @@ The class features that a character gets for being a member of the class.
 
 \section{Barbarian}
 \begin{dtable}
-    \lcaption{The Barbarian}
+    \lcaption{Barbarian Progression}
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
-\hline
+        \hline
         \barbarianprogressionrow{1}  & Rage \plus2                        \\
         \barbarianprogressionrow{2}  & Damage reduction, fast movement    \\
         \barbarianprogressionrow{3}  & Channeled rage, uncanny dodge      \\
@@ -150,16 +150,21 @@ The class features that a character gets for being a member of the class.
     \end{dtabularx}
 \end{dtable}
 
-\cd{Alignment} Any nonlawful.
+\subsection{Basics}
 
-\sssecfake{Class Skills}
-The barbarian's class skills (and the key attribute for each skill) are
-Climb (Str), Jump (Str), Sprint (Str), Swim (Str), Balance (Dex), Ride (Dex), Tumble (Dex), Awareness (Per), Survival (Per), Creature Handling (Per), and Intimidate (Varies).
+\classbasics{Alignment} Any nonlawful.
 
-\cf{Bbn}{Skill Points}
-10.
+\classbasics{Class Skills}
+\begin{itemize}
+    \item \subparhead{Strength} Climb, Jump, Sprint, Swim.
+    \item \subparhead{Dexterity} Balance, Ride, Tumble.
+    \item \subparhead{Perception} Awareness, Creature Handling, Survival.
+    \item \subparhead{Other} Intimidate.
+\end{itemize}
 
-\sssecfake{Class Features}
+\classbasics{Skill Points} 10.
+
+\subsection{Class Features}
 
 All of the following are class features of the barbarian.
 \cf{Bbn}{Weapon and Armor Proficiency}
@@ -338,7 +343,7 @@ If he stops being lawful, he regains his ability to rage and take barbarian leve
 
 \section{Cleric}
 \begin{dtable}
-    \lcaption{The Cleric}
+    \lcaption{Cleric Progression}
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{2em} >{\ccol}p{\babcolavg} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
@@ -365,16 +370,19 @@ If he stops being lawful, he regains his ability to rage and take barbarian leve
     \end{dtabularx}
 \end{dtable}
 
-\cd{Alignment} If the cleric worships a deity, his alignment must be within one step of his deity's (that is, it may be one step away on either the lawful-chaotic axis or the good-evil axis, but not both).
+\subsection{Basics}
+
+\classbasics{Alignment} If the cleric worships a deity, his alignment must be within one step of his deity's (that is, it may be one step away on either the lawful-chaotic axis or the good-evil axis, but not both).
 He may not be neutral unless his deity's alignment is also neutral.
 
-\sssecfake{Class Skills}
-The cleric's class skills (and the key attribute for each skill) are Heal (Int), Knowledge (arcana) (Int), Knowledge (local) (Int), Knowledge (religion) (Int), Knowledge (the planes) (Int), Sense Motive (Per), Spellcraft (Per), Intimidate (Varies), Bluff (\x), and Persuasion (\x).
+\classbasics{Class Skills}
+\subparhead{Intelligence} Heal, Knowledge (arcana, local, religion, the planes).
+\subparhead{Perception} Sense Motive, Spellcraft.
+\subparhead{Other} Bluff, Intimidate, Persuasion.
 
-\cf{Clr}{Skill Points}
-5.
+\classbasics{Skill Points} 5.
 
-\sssecfake{Class Features}
+\subsection{Class Features}
 All of the following are class features of the cleric.
 
 \cf{Clr}{Weapon and Armor Proficiency}
@@ -589,7 +597,7 @@ At his 19th cleric level, the cleric gains an additional domain mastery from one
 \cf{Clr}[20th]{Endless Devotion}[Su]
 The cleric's devotion pool stores a maximum of twenty devotion points.
 
-\ssecfake{Cleric Domain Abilities}
+\subsection{Cleric Domain Abilities}
 
 \subsubsection{Domain Gifts}\label{Domain Gifts}
 If a domain gift involves an attack, the attack bonus is equal to the cleric's divine power.
@@ -882,7 +890,7 @@ He cannot thereafter gain levels as a cleric of that god until he atones (see th
 
 \section{Druid}
 \begin{dtable}
-    \lcaption{The Druid}
+    \lcaption{Druid Progression}
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\centering}p{\babcolavg} *{3}{>{\ccol}p{\savecol}} >{\ccol}X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
@@ -909,16 +917,22 @@ He cannot thereafter gain levels as a cleric of that god until he atones (see th
     \end{dtabularx}
 \end{dtable}
 
-\cd{Alignment} Neutral good, lawful neutral, neutral, chaotic
+\subsection{Basics}
+
+\classbasics{Alignment} Neutral good, lawful neutral, neutral, chaotic
 neutral, or neutral evil.
 
-\sssecfake{Class Skills}
-The druid's class skills (and the key attribute for each skill) are Climb (Str), Jump (Str), Sprint (Str), Swim (Str), Balance (Dex), Ride (Dex), Stealth (Dex), Heal (Int), Knowledge (geography), Knowledge (nature) (Int), Awareness (Per), Creature Handling (Per), Survival (Per), and Intimidate (Varies).
+\classbasics{Class Skills}
+\subparhead{Strength} Climb, Jump, Sprint, Swim.
+\subparhead{Dexterity} Balance, Ride, Stealth.
+\subparhead{Intelligence} Heal, Knowledge (geography, nature).
+\subparhead{Perception} Awareness, Creature Handling, Survival. 
+\subparhead{Other} Intimidate.
 
-\cf{Drd}{Skill Points}
+\classbasics{Skill Points}
 10.
 
-\sssecfake{Class Features}
+\subsection{Class Features}
 All of the following are class features of the druid.
 
 \cf{Drd}{Weapon and Armor Proficiency}
@@ -1259,9 +1273,12 @@ The druid may cause area spells to originate from any point within \rngmed range
 A druid who ceases to revere nature, changes to a prohibited alignment, or teaches the Druidic language to a nondruid loses all spells and supernatural druid class features.
 She cannot thereafter gain levels as a druid until she atones (see the \spell{atonement} ritual).
 
+\subsubsection{Alternate Druids}
+
+
 \section{Fighter}
 \begin{dtable}
-    \lcaption{The Fighter}
+    \lcaption{Fighter Progression}
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
 \hline
@@ -1288,15 +1305,19 @@ She cannot thereafter gain levels as a druid until she atones (see the \spell{at
     \end{dtabularx}
 \end{dtable}
 
-\cd{Alignment} Any.
+\subsection{Basics}
 
-\sssecfake{Class Skills}
-The fighter's class skills (and the key attribute for each skill) are Climb (Str), Jump (Str), Sprint (Str), Swim (Str), Balance (Dex), Escape Artist (Dex), Ride (Dex), Tumble (Dex), Awareness (Per), Intimidate (Varies), Bluff (\x), and Persuasion (\x).
+\classbasics{Alignment} Any.
 
-\cf{Ftr}{Skill Points}
-5.
+\classbasics{Class Skills}
+\subparhead{Strength} Climb, Jump, Sprint, Swim.
+\subparhead{Dexterity} Balance, Escape Artist, Ride, Tumble.
+\subparhead{Perception} Awareness.
+\subparhead{Other} Bluff, Intimidate, Persuasion.
 
-\sssecfake{Class Features}
+\classbasics{Skill Points} 5.
+
+\subsection{Class Features}
 All of the following are class features of the fighter.
 \cf{Ftr}{Weapon and Armor Proficiency}
  A fighter is proficient with simple weapons, any four other weapon groups,  all armor (heavy, medium, and light) and shields.
@@ -1471,7 +1492,7 @@ As a swift action, he can exchange a single adaptive combat feat from his adapat
 
 \section{Monk}
 \begin{dtable}
-    \lcaption{The Monk}
+    \lcaption{Monk Progression}
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolavg} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
@@ -1498,15 +1519,20 @@ As a swift action, he can exchange a single adaptive combat feat from his adapat
     \end{dtabularx}
 \end{dtable}
 
-\cd{Alignment} Any nonchaotic.
+\subsection{Basics}
 
-\sssecfake{Class Skills}
-The monk's class skills (and the key attribute for each skill) are Climb (Str), Jump (Str), Sprint (Str), Swim (Str), Balance (Dex), Escape Artist (Dex), Stealth (Dex), Tumble (Dex), Heal (Int), Awareness (Per), Spellcraft (Per), Survival (Per), Intimidate (Varies), Bluff (\x), Perform (\x), and Persuasion (\x).
+\classbasics{Alignment} Any nonchaotic.
 
-\cf{Mnk}{Skill Points}
-10.
+\classbasics{Class Skills}
+\subparhead{Strength} Climb, Jump, Sprint, Swim.
+\subparhead{Dexterity} Balance, Escape Artist, Ride, Stealth, Tumble.
+\subparhead{Intelligenc} Heal.
+\subparhead{Perception} Awareness, Spellcraft, Survival.
+\subparhead{Other} Bluff, Intimidate, Perform, Persuasion.
 
-\sssecfake{Class Features}
+\classbasics{Skill Points} 10.
+
+\subsection{Class Features}
 All of the following are class features of the monk.
 \cf{Mnk}{Weapon and Armor Proficiency}
 Monks are proficient with simple weapons, monk weapons, and any one other weapon group.
@@ -1697,7 +1723,7 @@ If she stops being chaotic, she regains her \ki powers and ability to take monk 
 
 \section{Paladin}
 \begin{dtable}
-    \lcaption{The Paladin}
+    \lcaption{Paladin Progression}
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
@@ -1724,15 +1750,19 @@ If she stops being chaotic, she regains her \ki powers and ability to take monk 
     \end{dtabularx}
 \end{dtable}
 
-\cd{Alignment} Any other than true neutral.
+\subsection{Basics}
 
-\sssecfake{Class Skills}
-The paladin's class skills (and the key attribute for each skill) are Ride (Dex), Heal (Int), Knowledge (local) (Int), Knowledge (religion) (Int), Awareness (Per), Sense Motive (Per), Intimidate (Varies), Bluff (\x), and Persuasion (\x).
+\classbasics{Alignment} Any other than true neutral.
 
-\cf{Pal}{Skill Points}
-5.
+\classbasics{Class Skills}
+\subparhead{Dexterity} Ride.
+\subparhead{Intelligence} Heal, Knowledge (local, religion).
+\subparhead{Perception} Awareness, Intimidate, Sense Motive.
+\subparhead{Other} Bluff, Intimidate, Persuasion.
 
-\sssecfake{Class Features}
+\classbasics{Skill Points} 5.
+
+\subsection{Class Features}
 All of the following are class features of the paladin.
 \cf{Pal}{Weapon and Armor Proficiency}
  Paladins are proficient with simple weapons,  any two other weapon groups,  all types of armor (heavy, medium, and light), and with shields.
@@ -2064,7 +2094,7 @@ She regains her abilities and advancement potential if she atones for her violat
 \section{Ranger}
 
 \begin{dtable}
-    \lcaption{The Ranger}
+    \lcaption{Ranger Progression}
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
@@ -2091,15 +2121,20 @@ She regains her abilities and advancement potential if she atones for her violat
     \end{dtabularx}
 \end{dtable}
 
-\cd{Alignment} Any.
+\subsection{Basics}
 
-\sssecfake{Class Skills}
-The ranger's class skills (and the key attribute for each skill) are Climb (Str), Jump (Str), Sprint (Str), Swim (Str), Balance (Dex), Escape Artist (Dex), Ride (Dex), Stealth (Dex), Tumble (Dex), Heal (Int), Knowledge (dungeoneering) (Int), Knowledge (geography) (Int), Knowledge (nature) (Int), Awareness (Per), Creature Handling (Per), Survival (Per), Intimidate (Varies), Bluff (\x), and Persuasion (\x).
+\classbasics{Alignment} Any.
 
-\cf{Rgr}{Skill Points}
-15.
+\classbasics{Class Skills}
+\subparhead{Strength} Climb, Jump, Sprint, Swim.
+\subparhead{Dexterity} Balance, Escape Artist, Ride, Stealth, Tumble.
+\subparhead{Intelligence} Heal, Knowledge (dungeoneering, geography, nature).
+\subparhead{Perception} Awareness, Creature Handling, Survival.
+\subparhead{Other} Bluff, Intimidate, Persuasion.
 
-\sssecfake{Class Features}
+\classbasics{Skill Points} 15.
+
+\subsection{Class Features}
 
 All of the following are class features of the ranger.
 
@@ -2391,7 +2426,7 @@ He gains the ability to see all things as they actually are, as the \spell{true 
 \section{Rogue}
 
 \begin{dtable}
-    \lcaption{The Rogue}
+    \lcaption{Rogue Progression}
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
@@ -2418,16 +2453,20 @@ He gains the ability to see all things as they actually are, as the \spell{true 
     \end{dtabularx}
 \end{dtable}
 
-\cd{Alignment} Any.
+\subsection{Basics}
 
-\sssecfake{Class Skills}
-The rogue's class skills (and the key attribute for each skill) are
-Climb (Str), Jump (Str), Sprint (Str), Swim (Str), Balance (Dex), Escape Artist (Dex),  Sleight of Hand (Dex), Stealth (Dex), Tumble (Dex), Craft (Int), Devices (Int), Disguise (Int), Knowledge (dungeoneering), Knowledge (local) (Int), Linguistics (Int), Awareness (Per), Sense Motive (Per), Intimidate (Varies), Bluff (\x), Persuasion (\x), and Perform (\x).
+\classbasics{Alignment} Any.
 
-\cf{Rog}{Skill Points}
-15.
+\classbasics{Class Skills}
+\subparhead{Strength} Climb, Jump, Sprint, Swim.
+\subparhead{Dexterity} Balance, Escape Artist, Sleight of Hand, Stealth, Tumble.
+\subparhead{Intelligence} Devices, Disguise, Knowledge (dungeoneering, local), Linguistics.
+\subparhead{Perception} Awareness, Sense Motive.
+\subparhead{Other} Bluff, Intimidate, Perform, Persuasion.
 
-\sssecfake{Class Features}
+\classbasics{Skill Points} 15.
+
+\subsection{Class Features}
 All of the following are class features of the rogue.
 
 \cf{Rog}{Weapon and Armor Proficiency}
@@ -2621,7 +2660,7 @@ This does not allow her to deliver ambush attacks to the same creature multiple 
 
 \section{Sorcerer}
 \begin{dtable}
-    \lcaption{The Sorcerer}
+    \lcaption{Sorcerer Progression}
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolpoor} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
@@ -2648,15 +2687,18 @@ This does not allow her to deliver ambush attacks to the same creature multiple 
     \end{dtabularx}
 \end{dtable}
 
-\cd{Alignment} Any.
+\subsection{Basics}
 
-\sssecfake{Class Skills}
-The sorcerer's class skills (and the key attribute for each skill) are Knowledge (arcana) (Int), Knowledge (the planes), Spellcraft (Per), Intimidate (Varies), Bluff (\x), and Persuasion (\x).
+\classbasics{Alignment} Any.
 
-\cf{Sor}{Skill Points}
-5.
+\classbasics{Class Skills}
+\subparhead{Intelligence} Knowledge (arcana, the planes).
+\subparhead{Perception} Spellcraft.
+\subparhead{Other} Bluff, Intimidate, Persuasion.
 
-\sssecfake{Class Features}
+\classbasics{Skill Points} 5.
+
+\subsection{Class Features}
 All of the following are class features of the sorcerer.
 
 \cf{Sor}{Weapon and Armor Proficiency}
@@ -2805,7 +2847,7 @@ When the sorcerer miscasts a spell or spellblend with his wild magic ability, th
 
 \section{Spellwarped}
 \begin{dtable*}
-    \lcaption{The Spellwarped}
+    \lcaption{Spellwarped Progression}
     \begin{dtabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{2}{>{\ccol}p{4.5em}} >{\lcol}X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Good Defense}\fn{1} & \thead{Normal Defenses}\fn{1} & \thead{Special} \\
 \hline
@@ -2833,16 +2875,25 @@ When the sorcerer miscasts a spell or spellblend with his wild magic ability, th
     1 Each spellwarped has a good defense determined by his choice of innate magic.
 \end{dtable*}
 
-\cd{Alignment} Any.
+\subsection{Basics}
 
-\ssecfake{Class Skills}
-The spellwarped's class skills (and the key attribute for each skill) are Swim (Str), Ride (Dex), Knowledge (arcana) (Int), Spellcraft (Per), Intimidate (Varies), Bluff (\x), and Persuasion (\x).
-He gains additional class skills based on his choice of innate magic.
+\classbasics{Alignment} Any.
 
-\cf{Spl}{Skill Points}
-5.
+\classbasics{Class Skills}
+\subparhead{Intelligence} Knowledge (arcana).
+\subparhead{Perception} Spellcraft.
+\subparhead{Other} Bluff, Intimidate, Persuasion.
 
-\sssecfake{Class Features}
+\classbasics{Special Class Skills}
+A spellwarped gains additional class skills based on his choice of innate magic.
+\subparhead{Alteration} Disguise, Escape Artist, Jump.
+\subparhead{Pyromancy} Jump, Perform, Tumble.
+\subparhead{Telekinesis} Climb, Devices, Sleight of Hand.
+\subparhead{Temporal} Awareness, Sleight of Hand, Tumble.
+
+\parhead{Skill Points} 5.
+
+\subsection{Class Features}
 All of the following are class features of the spellwarped.
 
 \cf{Spl}{Weapon and Armor Proficiency}
@@ -3085,7 +3136,7 @@ He can gain the effects of his surge of power indefinitely.
 He may toggle the ability on or off as a swift action at will, without expending spellwarp points.
 This does not allow him to activate his mass surge of power ability at will, and his allies only gain the benefits for 5 rounds.
 
-\ssecfake{Spellwarped Invocations}\label{Spellwarped Invocations}
+\subsection{Spellwarped Invocations}\label{Spellwarped Invocations}
 
 \subsubsection{Alteration Invocations}
 \parhead{1st -- Lesser Reduction}
@@ -3314,7 +3365,7 @@ This functions like the temporal prison invocation, except that no attack is req
 \section{Wizard}
 
 \begin{dtable}
-    \lcaption{The Wizard}
+    \lcaption{Wizard Progression}
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolpoor} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
@@ -3341,16 +3392,17 @@ This functions like the temporal prison invocation, except that no attack is req
     \end{dtabularx}
 \end{dtable}
 
-\cd{Alignment} Any.
+\subsection{Basics}
 
-\sssecfake{Class Skills}
-The wizard's class skills (and the key attribute for each skill) are
-Knowledge (all skills, taken individually) (Int), Linguistics (Int), and Spellcraft (Per).
+\classbasics{Alignment} Any.
 
-\cf{Wiz}{Skill Points}
-5.
+\classbasics{Class Skills}
+\subparhead{Intelligence} Knowledge (all kinds, taken individually), Linguistics.
+\subparhead{Perception} Spellcraft.
 
-\sssecfake{Class Features}
+\classbasics{Skill Points} 5.
+
+\subsection{Class Features}
 
 All of the following are class features of the wizard.
 
