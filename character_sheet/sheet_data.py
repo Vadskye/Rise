@@ -5,6 +5,6 @@ ATTRIBUTE_SKILLS = {
     'dexterity': ['Balance', 'Escape Artist', 'Ride', 'Sleight of Hand', 'Tumble', 'Stealth'],
     'constitution': [],
     'intelligence': ['Craft', 'Devices', 'Disguise', 'Knowledge', 'Linguistics'],
-    'perception': ['Awareness', 'Heal', 'Sense Motive', 'Spellcraft', 'Survival'],
+    'perception': ['Awareness', 'Creature Handling', 'Heal', 'Sense Motive', 'Spellcraft', 'Survival'],
     'willpower': [],
 }

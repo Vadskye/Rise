@@ -28,6 +28,10 @@
     flex-grow: 1;
 }
 
+#main-sheet-body > div {
+    margin-bottom: 0.25em;
+}
+
 input[type=text].passive-ability {
     width: 100%;
     margin-bottom: 0.5em;
@@ -50,7 +54,7 @@ input[type=text].passive-ability {
 }
 
 .flex-col.attribute-section {
-    margin-bottom: 0.75em;
+    margin-bottom: 1em;
 }
 
 .flex-row.skill-box {
@@ -59,6 +63,12 @@ input[type=text].passive-ability {
 
 .attribute .number-label {
     font-weight: bold;
+}
+
+#other-skills .attribute {
+    font-weight: bold;
+    font-size: 1.25em;
+    text-align: center;
 }
 
 #constitution {
@@ -79,4 +89,8 @@ input[type=text].passive-ability {
 
 .active-ability, .attack {
     margin-bottom: 0.1em !important;
+}
+
+.resource-row div {
+    flex-grow: 1;
 }
