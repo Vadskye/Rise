@@ -26,7 +26,7 @@ The categories are given below:
     \item Performance feats allow a character to create magical effects through skilled performances.
     \item Skill feats affect a character's mastery of his or her skills.
     \item Spellgift feats grant a non-spellcasting character a limited ability to use spells.
-    \item Surge feats allow a character to temporarily gain supernatural abilities.
+    %\item Surge feats allow a character to temporarily gain supernatural abilities.
     \item Combat feats affect a character's prowess in combat.
     \item Combat maneuver feats are combat feats which grant a character particular talent with specific maneuvers.
     \item Combat strike feats allow a character to impose special effects when they strike a foe.
@@ -119,9 +119,9 @@ You lose access to the spellgift feats in order by when you acquired them, start
 %duration is already good?)
 %Personal range penalizes spell level, but shouldn't make these cheaper.
 %Treat personal range spells as one higher level.
-\subsection{Surge Feats}
-Surge feats grant a character to temporarily increase their abilities to supernatural levels.
-Each surge feat grants a supernatural ability which can be used a certain number of times per day.
+%\subsection{Surge Feats}
+%Surge feats grant a character to temporarily increase their abilities to supernatural levels.
+%Each surge feat grants a supernatural ability which can be used a certain number of times per day.
 
 \subsection{Combat Feats}
 Combat feats affect a character's combat abilities.
@@ -329,16 +329,6 @@ Some strike feats instead require a specific action to use.
         \featref{Divine Spellgift} & 2nd level, Wil 1 & Gain divine spell as spell-like ability & \featpref{Divine Spellgift} \\
         \featref{Natural Spellgift} & 2nd level, Wil 1 & Gain natural spell as spell-like ability & \featpref{Natural Spellgift} \\
 
-        \midrule
-        \thead{Surge Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
-        \featref{Alacritous Surge} & 16th level, Dex 7 & Briefly gain effects of \spell{haste} & \featpref{Alacritous Surge} \\
-        \featref{Deathless Surge} & 12th level, Wil 5 & Briefly gain effects of \spell{death ward} & \featpref{Deathless Surge} \\
-        \featref{Freeing Surge} & 16th level, Dex 7 & Briefly gain effects of \spell{freedom} & \featpref{Freeing Surge} \\
-        \featref{Healing Surge} & 8th level, Con 3 & Heal damage three times per day & \featpref{Healing Surge} \\
-        \featref{Prescient Surge} & 12th level, Wis 5 & Roll twice, three times per day & \featpref{Prescient Surge} \\
-        \featref{Shattering Surge} & 8th level, Str 3 & \spell{Shatter}
-        struck object three times per day & \featpref{Shattering Surge} \\
-        \featref{Surge of Speed} & 8th level, Dex 3 & Briefly gain effects of \spell{expeditious retreat} & \featpref{Surge of Speed} \\
     \end{longtabu}
 }%end of small text
 
@@ -524,12 +514,6 @@ Additional facts about the feat that may be helpful when you decide whether to a
 \feat{Agile Rage}{Class}
 \featpre Rage ability.
 \featben When you rage, you may choose to apply your rage bonus to your Dexterity instead of your Strength.
-
-\feat{Alacritous Surge}{Surge}
-\featpres 16th level, Dex 7.
-\featben You may gain the benefits of the \spell{haste}
-spell for up to 5 rounds each day.
-Activating this ability is a swift action, and it lasts until you will it to stop (a free action) or until the duration expires.
 
 \feat{Arcane Spellgift}{Spellgift}
 \featpres 2nd level, Wil 1.
@@ -731,12 +715,6 @@ This bonus increases to \plus2 at Perception 10, and to \plus3 at Perception 20.
 \feat{Deathless}{General}
 \featpre Constitution 5 or base Fortitude defense \plus10.
 \featben You become immune to death effects.
-
-\feat{Deathless Surge}{Surge}
-\featpres 12th level, Wil 5.
-\featben You may gain the benefits of the \spell{death ward}
-spell for up to 5 rounds each day.
-Activating this ability is a swift action, and it lasts until you will it to stop (a free action) or until the duration expires.
 
 \feat{Defensive Fighting}{Combat, Defense, Style}
 \featben While in this style, you gain a \plus2 bonus to your physical defenses.
@@ -1042,12 +1020,6 @@ For each attack you trade, you gain an additional \plus5 attack bonus.
 This creates an effect similar to the \spell{break enchantment}
 spell, with a spellpower equal to your Perform ranks.
 
-\feat{Freeing Surge}{Surge}
-\featpres 16th level, Dexterity 7.
-\featben You may gain the benefits of the \spell{freedom}
-spell for up to 5 rounds each day.
-Activating this ability is a swift action, and it lasts until you will it to stop (a free action) or until the duration expires.
-
 \feat{Gang Up}{Combat}
 \featpre Base attack bonus \plus4.
 \featben You count as one additional creature for the purpose of determining overwhelm penalties.
@@ -1063,12 +1035,6 @@ If this effect reduces an ally's overwhelm penalty to 0, the ally is not conside
 This penalty reduction increases by \plus1 for each physical attack you can make per round beyond the first.
 \stylereq Wield a melee weapon.
 You must make a melee attack each round.
-
-\feat{Healing Surge}{Surge}
-\featpres 8th level, Constitution 3.
-\featben Three times per day, you may heal 4d6 points of damage as a swift action.
-This healing increases by 1d6 at 12th level and every 4 levels thereafter.
-After using this ability, you cannot use it again for 5 rounds.
 
 \feat{Heartseeker}{Combat, Style}
 \featpre Base attack bonus \plus8.
@@ -1709,12 +1675,6 @@ If you hit, you deal damage normally.
 If the foe takes the type of action you predicted, your attack deals quintuple damage.
 If the foe takes an action that fits into multiple action types, use all that apply.
 
-\feat{Prescient Surge}{Awareness, Surge}
-\featpres 12th level, Wisdom 5.
-\featben Three times per day, you may roll twice on any single physical attack or opposed check.
-You must decide to use this ability before making the roll.
-Activating this ability is an immediate action.
-
 \feat{Point Blank Shot}{Combat, Precision, Style}
 \featben While in this style, you gain a \plus2 bonus to physical ranged attacks when attacking targets within half of your range increment.
 \stylereq Wield a ranged weapon.
@@ -1872,11 +1832,6 @@ The area affected by the spell must be contiguous.
 Only area spells can be shaped.
 A shaped spell uses a spell slot two levels higher than the spell's original level.
 
-\feat{Shattering Surge}{Power, Surge}
-\featpres 8th level, Strength 3.
-\featben Three times per day, when you successfully attempt to disarm an object, you may cause it to be affected as if by the targeted version of the \spell{shatter} spell with a spellpower equal to your level.
-Activating this ability is an immediate action.
-
 \feat{Shield Discipline}{Class, Defense, Combat}
 \featpre Armor discipline ability.
 \featben You apply the benefits of your armor discipline ability while using shields, as well as while wearing armor.
@@ -2006,12 +1961,6 @@ You can affect an additional creature at 12 Perform ranks and every 2 Perform ra
 
 You can use any combination of performance feats you possess a number of times per day equal to twice the number of performance feats you have.
 If you fail the Perform check, the use of the ability is wasted.
-
-\feat{Surge of Speed}{Surge}
-\featpres 8th level, Dexterity 3.
-\featben You may gain the benefits of the \spell{expeditious retreat}
-spell for up to 5 rounds each day.
-Activating this ability is a swift action, and it lasts until you will it to stop (a free action) or until the duration expires.
 
 \feat{Sustained Spell}{Metamagic}
 \featpre Ability to cast 2nd level spells.
