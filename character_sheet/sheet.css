@@ -74,6 +74,9 @@ input[type=text] {
     border: 0;
     box-shadow: 0px -2px 1px -2px #000000 inset;
     background-color: inherit;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 
 input[type=number] {
