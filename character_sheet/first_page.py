@@ -38,7 +38,7 @@ def attributes_and_skills():
         ''.join([attribute_section(attribute) for attribute in ATTRIBUTES]),
         flex_col({'id': 'other-skills', 'class': 'attribute-section'}, [
             div({'class': 'attribute'}, 'Other Skills'),
-            ''.join([skill_box(skill) for skill in 'Bluff Intimidate Persuasion'.split()]),
+            ''.join([skill_box(skill) for skill in 'Bluff Intimidate Perform Persuasion'.split()]),
         ]),
     ])
 

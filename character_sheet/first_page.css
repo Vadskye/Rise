@@ -54,7 +54,7 @@ input[type=text].passive-ability {
 }
 
 .flex-col.attribute-section {
-    margin-bottom: 1em;
+    margin-bottom: 0.625em;
 }
 
 .flex-row.skill-box {
@@ -89,6 +89,10 @@ input[type=text].passive-ability {
 
 .active-ability, .attack {
     margin-bottom: 0.1em !important;
+}
+
+#other-skills .attribute {
+    margin-bottom: 0;
 }
 
 .resource-row div {
