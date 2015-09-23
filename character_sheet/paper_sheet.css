@@ -10,13 +10,22 @@ body {
     height: 100%;
 }
 
+input[type=text] {
+    box-shadow: none !important;
+    border-bottom: 2px solid black;
+}
+
 input[type=number] {
     border: 2px solid black;
     box-shadow: none !important;
 }
 
+.flex-row.skill-box {
+    margin-bottom: -2px;
+}
+
 .skill-box input[type=number], #level-chart input[type=number], .eq-misc input[type=number] {
-    border: 1px solid #AAA;
+    border: 2px solid #AAA;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
