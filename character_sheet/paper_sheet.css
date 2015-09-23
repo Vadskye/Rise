@@ -12,7 +12,7 @@ body {
 
 input[type=text] {
     box-shadow: none !important;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
 }
 
 input[type=number] {
@@ -20,12 +20,8 @@ input[type=number] {
     box-shadow: none !important;
 }
 
-.flex-row.skill-box {
-    margin-bottom: -2px;
-}
-
 .skill-box input[type=number], #level-chart input[type=number], .eq-misc input[type=number] {
-    border: 2px solid #AAA;
+    border: 1px solid #AAA;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
