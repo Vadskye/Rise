@@ -2306,6 +2306,34 @@
     \end{spellfooter}
 \end{spellsection}
 
+\begin{spellsection}{Excrete Slime}[1]
+    \begin{spellheader}
+        \spelldesc{You coat yourself in a sheen of acidic slime that damages your attackers.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltgt{You}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect You are coated in slime.
+            \spelldur \durshort
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellsubcontent}
+        \begin{spelltargetinginfo}
+            \spelltgr{A creature hits you with a melee attack}
+            \spelltgt{The attacking creature}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect \spelldamage{1}{acid}.
+        \end{spelleffects}
+    \end{spellsubcontent}
+    \begin{spellfooter}
+        \spellinfo{Transmutation [Augment]}{Nature}
+        \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
+
 \begin{spellsection}{Eyebite}[4]
     \begin{spellcontent}
         \begin{spelltargetinginfo}
@@ -5080,6 +5108,29 @@
     \begin{spellfooter}
         \spellinfo{Vivimancy [Life]}{Divine}
         \spellmat{Diamonds worth at least 500 gp.}
+        \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Rock Blast}[1]
+    \begin{spellheader}
+        \spelldesc{You create a blast of rocks that damages everything in its path.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spellburst{\areamed line, 10 ft. wide}
+            \spelltgts{Everything in the area}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \begin{spellattack}{Spellpower vs. Fortitude}
+                \spellsuccess \spelldamage{1}{bludgeoning}
+                \spellfailure Half damage.
+            \end{spellattack}
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Conjuration [Destructive, Earth]}{Nature}
+        \spellnotes \destructivespellnotes
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
