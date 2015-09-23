@@ -7,13 +7,13 @@ def create_page():
         flex_col({'id': 'sidebar'}, [
             rise_title(),
             attributes_and_skills(),
-            resources(),
         ]),
         flex_col({'id': 'main-sheet-body'}, [
             boring_stuff(),
             core_statistics(),
             active_abilities(),
             attacks(),
+            resources(),
         ]),
     ])
 
@@ -36,6 +36,10 @@ def attributes_and_skills():
     return flex_col({'id': 'attributes-and-skills'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Attributes<br>and Skills')),
         ''.join([attribute_section(attribute) for attribute in ATTRIBUTES]),
+        flex_col({'id': 'other-skills', 'class': 'attribute-section'}, [
+            div({'class': 'attribute'}, 'Other Skills'),
+            ''.join([skill_box(skill) for skill in 'Bluff Intimidate Persuasion'.split()]),
+        ]),
     ])
 
 def attribute_section(attribute):
@@ -58,9 +62,11 @@ def skill_box(name):
 def resources():
     return flex_col({'id': 'resources'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Resources')),
-        unlabeled_number_input(),
-        unlabeled_number_input(),
-        unlabeled_number_input(),
+        ''.join([
+            flex_row({'class': 'resource-row'}, [
+                unlabeled_number_input()
+            ] * 3),
+        ] * 2),
     ])
 
 def core_statistics():
@@ -85,7 +91,7 @@ def hit_points():
         flex_wrapper(div({'class': 'section-header'}, 'Hit Points')),
         "".join([
             labeled_number_input(hp_type)
-            for hp_type in 'Maximum Bloodied Temporary Nonlethal Critical'.split()
+            for hp_type in 'Max Bloodied Temp Nonlethal Critical'.split()
         ]),
     ])
 
@@ -125,7 +131,7 @@ def abilities():
 def active_abilities():
     return flex_col({'id': 'active-abilities'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Abilities')),
-        "".join([active_ability(i) for i in range(6)]),
+        "".join([active_ability(i) for i in range(5)]),
     ])
 
 def active_ability(ability_number = None):
@@ -150,7 +156,7 @@ def active_ability(ability_number = None):
 def attacks():
     return flex_col({'id': 'attacks'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Attacks')),
-        "".join([attack(i) for i in range(6)]),
+        "".join([attack(i) for i in range(5)]),
     ])
 
 def attack(attack_number = None):
