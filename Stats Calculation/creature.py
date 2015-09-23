@@ -334,7 +334,7 @@ class Creature(object):
 
         self.add_modifier('spell_attack_bonus', 'attribute_or_progression', lambda c: c.caster_level, update_static = True)
         self.add_modifier('spell_attack_bonus', 'attribute_or_progression', lambda c: c.casting_attribute, update_static = True)
-        self.add_modifier('spellpower', 'attribute_or_progression', lambda c: c.willpower, update_static = True)
+        self.add_modifier('spellpower', 'attribute_or_progression', lambda c: c.casting_attribute, update_static = True)
 
         self.add_modifier('physical_defenses', 'attribute_or_progression', lambda c: c.dexterity, update_static = True)
         self.add_modifier('physical_defenses', 'shield', lambda c: c.shield_bonus, update_static = True)
@@ -350,6 +350,7 @@ class Creature(object):
         #self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.willpower / 2) * c.level, update_static = True)
         self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.fortitude / 2) * c.level, update_static = True)
         self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.mental / 2) * c.level, update_static = True)
+        self.add_modifier('hit_points', 'constitution', lambda c: (c.constitution / 2) * c.level, update_static = True)
         #self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.constitution + 5) * c.level, update_static = True)
         #self.add_modifier('hit_points', 'attribute_or_progression', lambda c: (c.strength/2 + 5) * c.level, update_static = True)
 

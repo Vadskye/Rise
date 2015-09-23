@@ -102,6 +102,9 @@ cleric:
   fortitude: average
   reflex: poor
   mental: good
+  variants:
+    warrior:
+      attributes: warrior
 druid:
   name: Druid
   race: human
