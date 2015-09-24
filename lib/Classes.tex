@@ -501,12 +501,12 @@ Spells associated with particular alignments are indicated by the chaos, evil, g
         \thead{Deity} & \thead{Alignment} & \thead{Domains} \\
 \hline
         Guftas, horse god of justice & Lawful good & Good, Law, Strength, Travel \\
-        Lucied, paladin god of justice & Lawful good & Destruction, Good, Leadership, War \\
+        Lucied, paladin god of justice & Lawful good & Destruction, Good, Protection, War \\
         Simor, fighter god of protection & Lawful good & Good, Protection, Strength, Vitality \\
         Rucks, monk god of pragmatism & Neutral good & Good, Law, Protection, Travel \\
         Vanya, centaur god of nature & Neutral good & Good, Strength, Travel, Wild \\
         Brushtwig, pixie god of creativity & Chaotic good & Chaos, Good, Trickery, Wild \\
-        Chavi, god of stories & Chaotic good & Chaos, Knowledge, Leadership, Trickery \\
+        Chavi, god of stories & Chaotic good & Chaos, Knowledge, Trickery, Travel \\
         Ivan Ivanovitch, bear god of strength & Chaotic good & Chaos, Strength, War, Wild \\
         Krunch, barbarian god of destruction & Chaotic good & Destruction, Good, Strength, War \\
         Sir Cakes, dwarf god of freedom & Chaotic good & Chaos, Good, Strength, Vitality \\
@@ -516,8 +516,8 @@ Spells associated with particular alignments are indicated by the chaos, evil, g
 %Kalten, half-orc god of smiths
         Kurai, shaman god of nature & True neutral & Air, Earth, Fire, Water \\
         Clockwork, elf god of time & Chaotic neutral & Chaos, Magic, Trickery, Travel \\
-        Murdoc, god of mercenaries & Chaotic neutral & Destruction, Knowledge, Leadership, War\\
-        Tak, orc god of war & Lawful evil & Law, Strength, War \\
+        Murdoc, god of mercenaries & Chaotic neutral & Destruction, Knowledge, Travel, War\\
+        Tak, orc god of war & Lawful evil & Law, Strength, Trickery, War \\
         Theodolus, sorcerer god of ambition & Neutral evil & Evil, Knowledge, Magic, Trickery \\
         Daeghul, demon god of slaughter & Chaotic evil & Destruction, Evil, Magic, War \\
 %Ribo, halfling god of trickery & Chaotic neutral & Chaos, Trickery, Water
@@ -699,7 +699,7 @@ The target takes divine damage or is healed, as you choose.
 \subcf{War -- Fortitude}
 This invocation affects all creatures within a \areasmall radius of you instead of the normal target.
 The targets take divine damage.
-This invocation heals 1d6 damage per two divine power instead of the normal value.
+This invocation deals 1d6 damage per two divine power instead of the normal value.
 \subcf{Water -- Fortitude}
 The target takes nonlethal physical damage from water in its mouth and lungs.
 In addition, if the attack succeeds, the target is unable to speak for 1 round.
@@ -1274,7 +1274,7 @@ The druid may cause area spells to originate from any point within \rngmed range
 A druid who ceases to revere nature, changes to a prohibited alignment, or teaches the Druidic language to a nondruid loses all spells and supernatural druid class features.
 She cannot thereafter gain levels as a druid until she atones (see the \spell{atonement} ritual).
 
-\subsection{Alternate Druids}
+\subsection{Variant Druids}
 
 \subsubsection{Blighter}
 
@@ -1282,12 +1282,12 @@ Blighters draw power from nature, as do other druids. However, while other druid
 
 \altcf{Attunement} As normal, except that when a blighter attunes to a natural environment, the terrain within a 100 foot radius is blighted.
 This has several effects, all of which slowly take place over the course of the attunement process.
-Every living thing in the area other than the druid takes damage equal to the druid's level once per ten minutes.
+Every living thing in the area other than the blighter takes damage equal to the blighter's level once per ten minutes.
 All inanimate plants of Huge size or smaller wither and die.
 The earth becomes cracked and infertile, and any nutrients from the soil are destroyed.
 This ability has no effect on artificial environments or materials, such as metal or worked stone.
 
-In addition, the druid's bonus to spellpower from attuning lasts for 1 hour, regardless of whether she is in a natural environment.
+In addition, the blighter's bonus to spellpower from attuning lasts for 1 hour, regardless of whether she is in a natural environment.
 
 \altcf{Spells} As normal, except that a blighter adds all general Vivimancy arcane spells to her spell list.
 
@@ -2070,8 +2070,8 @@ spell.
 \parhead{Evil Divine Presences}
 \subcf{Executioner's Aura}
 Bloodied foes within the area take a \minus2 penalty to defenses.
-\subcf{10th -- Debilitating Aura}
-All other creatures within the area are \vulnerable.
+%\subcf{10th -- Debilitating Aura}
+%All other creatures within the area are \vulnerable.
 
 \parhead{Good Divine Presences}
 \subcf{Defender's Aura}
@@ -2086,9 +2086,9 @@ Whenever an ally within the area rolls a 10 on an attack roll, it gets a \plus10
 %\subcf{Surestrike Aura} Allies within the area automatically confirm critical hits.
 \subcf{10th -- Aura of Certain Failure}
 Whenever a foe within the area rolls a 10 on an attack roll, it takes a \minus10 penalty to hit on that attack.
-\subcf{10th -- Enforcer's Aura}
-Any creature within the area that breaks the law is \vulnerable as long as it remains in the aura.
-The paladin must be aware of the creature's transgression for it to suffer the penalty.
+%\subcf{10th -- Enforcer's Aura}
+%Any creature within the area that breaks the law is \vulnerable as long as it remains in the aura.
+%The paladin must be aware of the creature's transgression for it to suffer the penalty.
 \subcf{15th -- Aura of Truth}
 All illusory figments and glamers are suppressed in the area.
 
@@ -2913,10 +2913,10 @@ When the sorcerer miscasts a spell or spellblend with his wild magic ability, th
 
 \classbasics{Special Class Skills}
 A spellwarped gains additional class skills based on his choice of innate magic.
-\subparhead{Alteration} Disguise, Escape Artist, Jump.
-\subparhead{Pyromancy} Jump, Perform, Tumble.
-\subparhead{Telekinesis} Climb, Devices, Sleight of Hand.
-\subparhead{Temporal} Awareness, Sleight of Hand, Tumble.
+\subparhead{Alteration} Disguise, Escape Artist, Jump, Swim.
+\subparhead{Pyromancy} Jump, Perform, Sprint, Tumble.
+\subparhead{Telekinesis} Climb, Escape Artist, Devices, Sleight of Hand.
+\subparhead{Temporal} Awareness, Sleight of Hand, Sprint, Tumble.
 
 \parhead{Skill Points} 5.
 
@@ -2995,7 +2995,7 @@ This bonus increases by 1 at 8th, 14th, and 20th spellwarped level.
 This effect cannot increase the attribute higher than his spellpower.
 \subcf{Pyromancy -- Flame Aura}
 The spellwarped emanates an aura of fire for 5 rounds.
-At the start of each of his turns, creatures adjacent to him take one point of fire damage per spellwarped level.
+At the end of each round, creatures adjacent to him take one point of fire damage per spellwarped level.
 \subcf{Telekinesis -- Kinetic Deflection}
 The spellwarped reflexively deflects attacks away with his mind.
 He gains a \plus2 bonus to his physical defenses (Armor, Maneuver, Reflex).
