@@ -11,9 +11,9 @@ def create_page():
         flex_col({'id': 'main-sheet-body'}, [
             boring_stuff(),
             core_statistics(),
+            passive_abilities(),
             active_abilities(),
             attacks(),
-            resources(),
         ]),
     ])
 
@@ -63,10 +63,10 @@ def resources():
     return flex_col({'id': 'resources'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Resources')),
         ''.join([
-            flex_row({'class': 'resource-row'}, [
+            #flex_row({'class': 'resource-row'}, [
                 unlabeled_number_input()
-            ] * 3),
-        ] * 2),
+            #] * 3),
+        ] * 5),
     ])
 
 def core_statistics():
@@ -74,7 +74,7 @@ def core_statistics():
         flex_row({'id': 'core-statistics'}, [
             defenses(),
             movement(),
-            passive_abilities(),
+            resources(),
             hit_points(),
             #labeled_number_input('Hit Points', 'hit-points')
         ])
@@ -109,16 +109,18 @@ def passive_abilities():
     return flex_col({'id': 'passive-abilities'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Passive Abilities')),
         "".join([
-            passive_ability(i)
-            for i in range(5)
+            flex_row({'class': 'passive-ability-row'}, [
+                passive_ability(i)
+            ] * 2)
+            for i in range(4)
         ]),
     ])
 
 def passive_ability(ability_number):
-    return text_input({'class': 'passive-ability'})
+    return div(text_input({'class': 'passive-ability'}))
 
     return flex_row({'class': 'passive-ability'}, [
-        labeled_text_input('Ability', 'passive{0}-name'.format(ability_number), {'class': 'passive-name'}),
+        labeled_text_input('Name', 'passive{0}-name'.format(ability_number), {'class': 'passive-name'}),
         labeled_text_input('Effect', 'passive{0}-effect'.format(ability_number), {'class': 'passive-effect'}),
     ])
 
@@ -131,7 +133,7 @@ def abilities():
 def active_abilities():
     return flex_col({'id': 'active-abilities'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Abilities')),
-        "".join([active_ability(i) for i in range(5)]),
+        "".join([active_ability(i) for i in range(4)]),
     ])
 
 def active_ability(ability_number = None):
@@ -156,13 +158,13 @@ def active_ability(ability_number = None):
 def attacks():
     return flex_col({'id': 'attacks'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Attacks')),
-        "".join([attack(i) for i in range(5)]),
+        "".join([attack(i) for i in range(4)]),
     ])
 
 def attack(attack_number = None):
     return flex_row({'class': 'attack'}, [
         labeled_text_input(
-            'Attack',
+            'Name',
             'attack{0}-name'.format(attack_number),
             {'class': 'attack-name'}
         ),
