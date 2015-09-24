@@ -24,17 +24,21 @@
     flex-basis: 20%;
 }
 
-#attacks, #main-sheet-body, #passive-abilities {
+#attacks, #main-sheet-body, #resources {
     flex-grow: 1;
 }
 
 #main-sheet-body > div {
-    margin-bottom: 0.25em;
+    margin-bottom: 0.52em;
 }
 
 input[type=text].passive-ability {
     width: 100%;
-    margin-bottom: 0.5em;
+    /*margin-bottom: 0.5em;*/
+}
+
+.passive-ability-row > div {
+    flex-grow: 1;
 }
 
 #defenses {
@@ -59,6 +63,10 @@ input[type=text].passive-ability {
 
 .flex-row.skill-box {
     margin-bottom: -1px;
+}
+
+.attribute {
+    align-items: center;
 }
 
 .attribute .number-label {
