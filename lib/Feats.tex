@@ -1228,7 +1228,7 @@ If you fail the Perform check, the use of the ability is wasted.
 \feat{Intimidating Strike}{Combat, Strike}
 \featpres Two attacks, Intimidate 10 ranks.
 \featben In place of two attacks, you can make a single physical attack.
-If you hit, you deal damage normally, and you can make an Intimidate check against the target to demoralize it (see \pcref{Demoralize}).
+If you hit, you deal damage normally, and you can make an Intimidate check against the target to make it \shaken.
 
 \feat{Iron Will}{General}
 \featpre Willpower 3.
@@ -2008,37 +2008,29 @@ This bonus increases to \plus4 at Constitution 10, and to \plus6 at Constitution
 This bonus can increase your hit points (see \pcref{Hit Points}).
 
 \feat{Track}{Skill}
-\featben To find tracks or to follow them for 1 mile requires a successful Survival check.
-You must make another Survival check every time the tracks become difficult to follow.
-You move at half your normal speed (or at your normal speed with a \minus5 penalty on the check, or at up to twice your normal speed with a \minus20 penalty on the check).
+\featben You can use the Survival skill to find or follow tracks.
+Following tracks requires a successful Survival check.
+The DC of the check depends on how easy the tracks are to notice, as shown on \trefnp{Track DCs} and \trefnp{Track Modifiers}.
+You must make another Survival check after following the trail for 1 mile, or if it becomes especially difficult to follow.
+While tracking, you move at half your normal speed (or at your normal speed with a \minus5 penalty on the check, or at up to twice your normal speed with a \minus20 penalty on the check).
 The DC depends on the surface and the prevailing conditions, as given on the table below:
 
 \begin{dtable}
+    \lcaption{Track DCs}
     \begin{dtabularx}{\columnwidth}{>{\lcol}X c >{\lcol}X c}
-        \thead{Surface} & \thead{Survival DC}
-        & \thead{Surface} & \thead{Survival DC} \\
+        \thead{Surface} & \thead{Description} & \thead{Survival DC} \\
         \hline
-        Very soft ground  & 5  & Firm ground  & 15 \\
-        Soft ground  & 10  & Hard ground  & 20
+        Very soft ground & Any surface (fresh snow, thick dust, wet mud) that holds deep, clear impressions of footprints. & 5 \\
+        Soft ground & Any surface soft enough to yield to pressure, but firmer than wet mud or fresh snow, in which a creature leaves frequent but shallow footprints & 10 \\
+        Firm ground & Most normal outdoor surfaces (such as lawns, fields, woods, and the like) or exceptionally soft or dirty indoor surfaces (thick rugs and very dirty or dusty floors) & 15 \\
+        Hard ground & Any surface that doesn't hold footprints at all, such as bare rock or a strembed & 20
     \end{dtabularx}
 \end{dtable}
-\par \emph{Very Soft Ground:}
-Any surface (fresh snow, thick dust, wet mud) that holds deep, clear impressions of footprints.
-\par \emph{Soft Ground:}
-Any surface soft enough to yield to pressure, but firmer than wet mud or fresh snow, in which a creature leaves frequent but shallow footprints.
-\par \emph{Firm Ground:}
-Most normal outdoor surfaces (such as lawns, fields, woods, and the like) or exceptionally soft or dirty indoor surfaces (thick rugs and very dirty or dusty floors).
-The creature might leave some traces (broken branches or tufts of hair), but it leaves only occasional or partial footprints.
-\par \emph{Hard Ground:}
-Any surface that doesn't hold footprints at all, such as bare rock or an indoor floor.
-Most streambeds fall into this category, since any footprints left behind are obscured or washed away.
-The creature leaves only traces (scuff marks or displaced pebbles).
-\par Several modifiers may apply to the Survival check, as given on the table below.
 
 \begin{dtable}
+    \lcaption{Track Modifiers}
     \begin{dtabularx}{\columnwidth}{>{\lcol}X >{\rcol}p{6em}}
-        \thead{Condition}
-        & \thead{Survival DC Modifier} \\
+        \thead{Condition} & \thead{DC Modifier} \\
         \hline
         Every three creatures in the group being tracked  & \minus1 \\
         Size of creature or creatures being tracked:\fn{1} &  \\
@@ -2060,18 +2052,14 @@ The creature leaves only traces (scuff marks or displaced pebbles).
         Fog or precipitation  & \plus3 \\
         Tracked party hides trail (and moves at half speed)  & \plus5
     \end{dtabularx}
-    1 For a group of mixed sizes, apply only the modifier for the largest size category.
-    \\
-    2 Apply only the largest modifier from this category.
+    1 For a group of mixed sizes, apply only the modifier for the largest size category. \\
+    2 Apply only the largest modifier from this category. \\
 \end{dtable}
 
-If you fail a Survival check, you can retry after 1 hour (outdoors) or 10 minutes (indoors) of searching.
+If you fail a Survival check to track, you can retry after 1 hour (outdoors) or 10 minutes (indoors) of searching.
 \parhead{Normal}
 Without this feat, you can use the Survival skill to find tracks, but you can follow them only if the DC for the task is 10 or lower.
-Alternatively, you can use the Search skill to find a footprint or similar sign of a creature's passage using the DCs given above, but you can't use Search to follow tracks, even if someone else has already found them.
-\parhead{Special}
-A ranger automatically has Track as a bonus feat.
-He need not select it.
+Alternatively, you can use the Awareness skill to find a footprint or similar sign of a creature's passage using the DCs given above, but you can't use Awareness to follow tracks, even if someone else has already found them.
 
 \feat{Trap Sense}{Skill}
 \featpre Awareness 10 ranks.
