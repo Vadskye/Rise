@@ -32,9 +32,9 @@ The categories are given below:
     \item Combat strike feats allow a character to impose special effects when they strike a foe.
     \item Combat style feats change the way a character fights.
         A character can only use one style at a time.
-    \item Bane feats provide characters with bonuses against specific kinds of foes.
-        You can only gain the benefits of a single Bane feat against a particular creature.
-        If more than such feat applies, choose which one to gain the benefits from.
+    %\item Bane feats provide characters with bonuses against specific kinds of foes.
+        %You can only gain the benefits of a single Bane feat against a particular creature.
+        %If more than such feat applies, choose which one to gain the benefits from.
 \end{itemize}
 
 \subsection{Bloodline Feats}
@@ -144,7 +144,7 @@ Some strike feats instead require a specific action to use.
     \begin{longtabu}{>{\lcol}p{10em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{3em}}
         \thead{General Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
         \featref{Deathless} & Con 10 & Immune to death effects & \featpref{Deathless} \\
-        \featref{Destructive} & Str 3 & Gain \plus5 to break things & \featpref{Destructive} \\
+        \featref{Destructive} & Str 3 & Gain \plus5 to breaking things & \featpref{Destructive} \\
         \featref{Fearless} & Wil 10 & Immune to fear effects & \featpref{Fearless} \\
         \featref{Iron Will} & Wil 3 & \plus2 bonus to Mental defense & \featpref{Iron Will} \\
         \featref{Lightning Reflexes} & Dex 3 &  \plus2 bonus to Reflex defense & \featpref{Lightning Reflexes} \\
@@ -153,11 +153,6 @@ Some strike feats instead require a specific action to use.
         \featref{Stubborn} & Wil 10 & Immune to compulsion effects & \featpref{Stubborn} \\
         \featref{Swift} & \x & Increase speed by 5 feet & \featpref{Swift} \\
         \featref{Toughness} & Con 3 & \plus2 to Fortitude defense & \featpref{Toughness} \\
-
-        \midrule
-        \thead{Bane Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
-        \featref{Bane of the Weak Minded} & 2nd level Enchantment spell & Gain \plus1 against bewildered foes & \featpref{Bane of the Weak Minded} \\
-        \featref{Dragonbane} & Fight a dragon & Gain \plus2 against dragons & \featpref{Dragonbane} \\
 
         \midrule
         \thead{Bloodline Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
@@ -208,7 +203,6 @@ Some strike feats instead require a specific action to use.
 
         \midrule
         \thead{Magic Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
-        \featrefnt{Bane of the Weak Minded} & 2nd level Enchantment spell & Gain \plus1 against bewildered foes & \featpref{Bane of the Weak Minded} \\
         \featref{Bardic Spellpower} & Arcane spellcasting ability & Fighter and rogue levels improve some spells & \featpref{Bardic Spellpower} \\
         \featref{Battlecaster} & Proficiency with light armor & Reduce arcane spell failure by 10\% & \featpref{Battlecaster} \\
         \featref{Combat Casting} & \x &  \plus2 bonus to Concentration checks to cast spells, reroll 1/day & \featpref{Combat Casting} \\
@@ -535,10 +529,6 @@ Choose a category of body armor: light, medium, or heavy.
 A character who is wearing armor with which she is not proficient applies its armor check penalty to physical attacks and to all checks that involve moving, including Ride.
 The character also suffers double the normal arcane spell failure chance for wearing the armor.
 
-\feat{Bane of the Weak Minded}{Bane, Magic}
-\featpre Ability to cast an Enchantment spell of 2nd level or higher.
-\featben You gain a \plus1 bonus to attacks and defenses against \disoriented creatures.
-\featspecial \featbanenotes
 
 \feat{Bardic Spellpower}{Magic}
 \featpre Ability to cast arcane spells.
@@ -860,11 +850,6 @@ You can only fly for a number of rounds equal to 3 \add half your Constitution.
 After that limit is reached, you must rest for 5 minutes before flying again.
 
 If you are 18th level, you can fly for a number of minutes equal to 3 \add half your Constitution before resting.
-
-\feat{Dragonbane}{Bane}
-\featpre Fought a dragon.
-\featben You gain a \plus2 bonus to attacks and defenses against dragons.
-\featspecial \featbanenotes
 
 \feat{Driving Assault}{Combat, Maneuver, Power, Strike}
 \featpres Str 5, two attacks.
