@@ -829,7 +829,7 @@
             \spellcmp{Verbal only}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spellspecial When you cast this spell, you speak a single-word command of your choice.
+            \spellspecial When you cast this spell, you speak a command. The command must be a single word or short phrase.
             \begin{spellattack}{Spellpower vs. Mental}
                 \spellsuccess The target must obey the command or be \severelyimpaired with all actions.
                 \spellcritical The target must obey the command or be \stunned.
@@ -4122,7 +4122,7 @@
             \spelltgt{You}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect You gain one image per two spellpower. As long as you have images remaining, targeted attacks against you have a 50\% miss chance. If you run out of images, the spell is expended.
+            \spelleffect You gain one image per two spellpower. As long as you have images remaining, targeted attacks against you have a 50\% miss chance. Whenever an attack misses in this way, it strikes an image, destroying it. If you run out of images, the spell is expended.
             \spelldur \durshort or until expended \dismissable
         \end{spelleffects}
     \end{spellcontent}
@@ -5042,7 +5042,6 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Teleportation]}{Conjuration}
-        \spellnotes As \spell{retrieve object}.
         \miscastrandom
     \end{spellfooter}
 \end{spellsection}
