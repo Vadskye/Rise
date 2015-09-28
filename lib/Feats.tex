@@ -178,13 +178,7 @@ Some strike feats instead require a specific action to use.
         \thead{Class Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
         \featref{Agile Rage} & Rage ability & Rage increases Dexterity instead of Strength & \featpref{Agile Rage} \\
         \featref{Battletrance} & Rage ability & Enter trance instead of angry rage & \featpref{Battletrance} \\
-        \featref{Domain Devotion} & Domain mastery ability & Use domain attribute for all spells, \plus1 with domain spells & \featpref{Domain Devotion} \\
-        \featref{Extra Channeling} & Ability to channel energy & Can channel energy 3 more times per day & \featpref{Extra Channeling} \\
-        \featref{Extra Invocation} & Ability to use an arcane invocation & Learn a new arcane invocation & \featpref{Extra Invocation} \\
-        \featref{Extra Rage} & Rage ability & Can rage 1 more time per day & \featpref{Extra Rage} \\
-        \featref{Extra Smiting}\fn{1} & Smite ability & Can smite 3 more times per day & \featpref{Extra Smiting} \\
-        \featref{Extra Wild Aspect} & Wild aspect ability & Can use wild aspects 3 more times per day & \featpref{Extra Wild Aspect} \\
-        \featref{Fearless Rage} & Rage ability & Immune to fear while raging & \featpref{Fearless Rage} \\
+        \featref{Extra Ability} & Class feature with limited uses & Gain additional uses of class feature & \featpref{Extra Ability} \\
         \featref{Intense Channeling} & Channel energy 3d6 & \plus1d6 damage or healing with channel energy & \featpref{Intense Channeling} \\
         \featref{Insightful Fighter} & Adaptive style ability & Use Perception for adaptive style (and battlemaster) & \featpref{Insightful Fighter} \\
         \featref{Insightful Rogue} & Combat trick ability & Use Perception for combat tricks & \featpref{Insightful Rogue} \\
@@ -896,31 +890,29 @@ This allows you to defend yourself normally with melee weapons, and to attack wi
 You are not normally proficient with exotic weapons.
 You cannot defend yourself with melee weapons you are not proficient with, and you take a \minus4 penalty to physical attacks with ranged weapons you are not proficient with.
 
-\feat{Extra Channeling}{Class}
-\featpre Ability to channel energy.
-\featben You can channel energy three more times per day.
-
-\feat{Extra Invocation}{Class}
-\featpre Ability to use an arcane invocation.
-\featben You learn a new arcane invocation.
-You cannot learn invocations from your prohibited schools, if any, with this feat.
-
-\feat{Extra Rage}{Class}
-\featpre Ability to rage.
-\featben You can rage one more time per day.
-
-\feat{Extra Smiting}{Class}
-\featpre Smite ability.
-\featben You can smite three more times per day.
-If you have more than one smite ability, you choose which ability this applies to.
-\parhead{Special}
-You can take more this once if you have more than one smite ability.
-Its effects do not stack.
-Each time you take the feat, you choose a different smite ability you have and apply the effects to that ability.
-
-\feat{Extra Wild Aspect}{Class}
-\featpre Wild aspect ability.
-\featben You gain three extra uses of your wild aspect ability.
+\feat{Extra Ability}{Class}
+Choose a class feature with limited uses.
+\featpre The chosen class feature.
+\featben You gain additional uses of your chosen class feature. The number of uses you gain depends on the class feature chosen, as shown on \trefnp{Extra Ability Uses}.
+\begin{dtable}
+    \lcaption{Extra Ability Uses}
+    \begin{dtabularx}{\columnwidth}{l l X}
+        \thead{Class} & \thead{Ability} & \thead{Effect} \\
+        Barbarian & Rage & \plus1 use per day \\
+        Cleric & Devotion & \plus4 devotion points \\
+        Druid & Wild aspect & \plus2 uses per day \\
+        Druid & Wild speech & \plus2 uses per day \\
+        Fighter & Combat discipline & \plus2 uses per day \\
+        Fighter & Battlemaster & \plus2 uses per day \\
+        Monk & Channel \ki & \plus2 uses per day \\
+        Paladin & Divine invocation & \plus2 uses per day \\
+        Ranger & Quarry & \plus1 use per day \\
+        Ranger & Wild speech & \plus2 uses per day \\
+        Sorcerer & Spellsurge & \plus1 use per day \\
+        Spellwarped & Spellwarped invocation & \plus2 uses per day \\
+        Wizard & Cantrip sequencer & \plus1 active sequencer \\
+    \end{dtabularx}
+\end{dtable}
 
 \feat{Fae Heritage}{Bloodline}
 \featben You have the blood of a fae creature in your veins, granting you fae power.
@@ -955,10 +947,6 @@ This is an enchantment (compulsion), mind-affecting ability.
 \feat{Fearless}{General}
 \featpre Willpower 10 or base Mental defense \plus10.
 \featben You are immune to fear effects.
-
-\feat{Fearless Rage}{Class}
-\featpre Rage ability.
-\featben You are immune to fear effects while raging.
 
 \feat{Flexible Counterspell}{Magic}
 \featpres Spellcraft 10 ranks, Counterspell.
