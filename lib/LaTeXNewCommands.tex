@@ -34,7 +34,6 @@
 \newcommand{\subsk}[1]{\par \emph{#1}:}    %Italicize sub-skill headers
 
 \newcommand{\subparhead}[1]{\par\emph{#1}:}
-\newcommand{\itemhead}[1]{\item \textbf{#1}}
 \newcommand{\thead}[1]{\textbf{#1}}    %Bold the header of tables
 \newcommand{\x}{\hskip 0.1em---}    %A null entry in a table
 \newcommand{\ccol}{\centering\arraybackslash}    %Center columns
@@ -200,10 +199,11 @@
 \newcommand{\featpres}{\parhead{Prerequisites} }
 \newcommand{\featben}{\parhead{Benefit} }
 \newcommand{\featspecial}{\parhead{Special} }
-\newcommand{\featref}[1]{\hyperlink{feat:#1}{\hypertarget{ft:#1}{#1}}}
 %featref no target
 \newcommand{\featrefnt}[1]{\hyperlink{feat:#1}{#1}}
 \newcommand{\featpref}[1]{\pageref{feat:#1}}
+\newcommand{\featpcref}[1]{#1, page \pageref{feat:#1}}
+\newcommand{\featpdref}[1]{#1 (page \pageref{feat:#1})}
 %\newcommand{\featref}[1]{}
 \newcommand{\stylereq}{\parhead{Style Requirement}}
 
@@ -684,9 +684,30 @@
     }
 }
 
+\DeclareDocumentCommand{\itemhead}{s m}
+{
+    \item
+    \IfValueTF{#1}
+    {
+        \textit{#2}
+    }
+    {
+        \textbf{#2}
+    }
+}
+
 \DeclareDocumentCommand{\altcf}{o m o}
 {
     \cf*{}[#1]{#2}[#3]
+}
+
+\DeclareDocumentCommand{\featref}{s m}
+{
+    \IfValueF{#1}
+    {
+        \hyperlink{feat:#2}
+    }
+    \hypertarget{ft:#2}{#2}
 }
 
 \ExplSyntaxOff
