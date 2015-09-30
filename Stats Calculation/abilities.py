@@ -1,6 +1,7 @@
 import equipment
 import util
 import dice
+import types
 from strings import *
 
 def get_all_abilities():
@@ -41,7 +42,9 @@ def get_all_abilities():
             'modifiers': [
                 {
                     'modifier_type': 'physical_defenses',
-                    'value': dodge_modifier,
+                    'value': lambda c: util.attribute_scale_combat(c.dexterity)/2
+                        if c.base_attack_bonus >= 6
+                        else 0,
                 },
             ],
         },
@@ -284,11 +287,8 @@ def get_all_abilities():
             ],
         },
         'sneak attack': {
-            'modifiers': [
-                {
-                    'modifier_type': 'physical_damage',
-                    'value': lambda c: ((c.level + 1) / 2) * 3.5,
-                },
+            'functions': [
+                set_sneak_attack_damage,
             ],
         },
         'still mind': {
@@ -453,6 +453,37 @@ def power_attack_damage_modifier(creature):
         return util.bab_scale(creature.level) / 2
     else:
         return util.bab_scale(creature.level)
+
+def set_sneak_attack_damage(creature):
+    creature.get_physical_attack_damage = types.MethodType(get_physical_attack_damage_with_sneak_attack, creature)
+    sneak_attack_dice_count = (creature.level + 1) / 2
+    creature.add_special_attack_text(
+        'Sneak attack: +{0}d6 ({1})'.format(
+            sneak_attack_dice_count,
+            sneak_attack_dice_count * 3.5,
+        )
+    )
+
+def get_sneak_attack_damage(level, attack_number = 0):
+    if attack_number == 0:
+        return ((level + 1) / 2) * 3.5
+    elif level >= 5:
+        return ((level + 1) / 4) * 3.5
+    else:
+        return 0
+
+def get_physical_attack_damage_with_sneak_attack(self, attack_number, use_average = False):
+    if self.primary_weapon is not None:
+        primary_damage = self.primary_weapon_damage_die.roll(use_average) + self.primary_weapon_damage_bonus
+    else:
+        primary_damage = 0
+    if self.secondary_weapon is not None:
+        secondary_damage = self.secondary_weapon_damage_die.roll(use_average) + self.secondary_weapon_damage_bonus
+    else:
+        secondary_damage = 0
+    total_damage = max(primary_damage, secondary_damage)
+    total_damage += get_sneak_attack_damage(self.level, attack_number)
+    return total_damage
 
 ####################
 #MONSTER TRAITS
