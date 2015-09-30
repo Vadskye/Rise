@@ -710,6 +710,9 @@
     \parhead{#1}
 }
 
+% args:
+%   #1: reference name of term, if different from display name
+%   #2: display name of term
 \DeclareDocumentCommand{\glossterm}{o m}
 {
     \IfValueTF{#1}
@@ -721,16 +724,19 @@
     }
 }
 
-\DeclareDocumentCommand{\glossdef}{o m}
+% args:
+%   #1: name of term
+%   #2: alternate name of term, only used for labels/targets
+\DeclareDocumentCommand{\glossdef}{m o}
 {
-    \IfValueT{#1}
+    \IfValueT{#2}
     {
-        \label{#1}
-        \hypertarget{gloss:#1}{}
+        \label{#2}
+        \hypertarget{gloss:#2}{}
     }
-    \label{#2}
-    \hypertarget{gloss:#2}{}
-    \parhead{#2}
+    \label{#1}
+    \hypertarget{gloss:#1}{}
+    \parhead{#1}
 }
 
 \DeclareDocumentCommand{\pcref}{o m}
