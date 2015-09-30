@@ -11,7 +11,6 @@
 \newcommand{\sssecfakehref}[2]{\par \vspace{0.5em}{}{\large\bfseries\raggedright \hyperlink{#1}{#2}} \vspace{0.5em} \par}
 \newcommand{\pref}[1]{page \pageref{#1}}
 \newcommand{\pdref}[1]{#1 (page \pageref{#1})}
-\newcommand{\pcref}[1]{#1, page \pageref{#1}}
 \newcommand{\tref}[1]{Table \ref{cap:#1}: #1 (\pref{cap:#1})}
 \newcommand{\trefnp}[1]{Table \ref{cap:#1}: #1}
 \newcommand{\trefcp}[1]{Table \ref{cap:#1}: #1, \pref{cap:#1}}
@@ -217,7 +216,6 @@
 %\newcommand{\vulneffect}{\minus2 to attacks, defenses, and checks\xspace}
 
 \newcommand{\conditionlink}[1]{\hyperlink{condition:#1}{#1}\xspace}
-\newcommand{\glossarylink}[1]{\hyperlink{glossary:#1}{#1}\xspace}
 
 %\newcommand{\bewildered}{\conditionlink{bewildered} \reminder{\vulneffect}\xspace}
 \newcommand{\blinded}{\conditionlink{blinded} \reminder{unable to see, moves at half speed, defenseless}\xspace}
@@ -257,12 +255,9 @@
 \newcommand{\monkunencumbered}{not wearing armor or encumbered by weight (see \pcref{Encumbrance})\xspace}
 %\newcommand{\vulnerable}{\conditionlink{vulnerable} \reminder{\vulneffect}\xspace}
 
-\newcommand{\difficultterrain}{\glossarylink{difficult terrain} \reminder{half movement speed}\xspace}
+\newcommand{\difficultterrain}{\glossterm{difficult terrain} \reminder{half movement speed}\xspace}
 
 \newcommand{\condition}[1]{\parhead{#1}\label{#1}\hypertarget{condition:#1}{}}
-\newcommand{\glossaryterm}[1]{\parhead{#1}\label{#1}\hypertarget{glossary:#1}{}}
-
-\newcommand{\term}[1]{\textbf{#1}}
 
 \newcommand{\concealment}{concealment \reminder{\plus4 to physical defenses}}
 
@@ -703,11 +698,50 @@
 
 \DeclareDocumentCommand{\featref}{s m}
 {
-    \IfValueF{#1}
+    \IfBooleanF{#1}
     {
         \hyperlink{feat:#2}
     }
     \hypertarget{ft:#2}{#2}
+}
+
+\DeclareDocumentCommand{\term}{m}
+{
+    \parhead{#1}
+}
+
+\DeclareDocumentCommand{\glossterm}{o m}
+{
+    \IfValueTF{#1}
+    {
+        \hyperlink{gloss:#1}{\textbf{#2}}
+    }
+    {
+        \hyperlink{gloss:#2}{\textbf{#2}}
+    }
+}
+
+\DeclareDocumentCommand{\glossdef}{o m}
+{
+    \IfValueT{#1}
+    {
+        \label{#1}
+        \hypertarget{gloss:#1}{}
+    }
+    \label{#2}
+    \hypertarget{gloss:#2}{}
+    \parhead{#2}
+}
+
+\DeclareDocumentCommand{\pcref}{o m}
+{
+    \IfValueTF{#1}
+    {
+        #2,~page~\pageref{#1}
+    }
+    {
+        #2,~page~\pageref{#2}
+    }
 }
 
 \ExplSyntaxOff
