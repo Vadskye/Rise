@@ -169,8 +169,8 @@ warrior_int:
     strength:
       progression: primary
       value: 4
-    dexterity: 2
-    constitution: 0
+    dexterity: 0
+    constitution: 2
     intelligence: 
       progression: primary
       value: 3

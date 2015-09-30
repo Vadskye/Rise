@@ -151,6 +151,10 @@ fighter:
       attributes: warrior_str_dex
       traits:
         - armor discipline (agility)
+    str_int:
+      attributes: warrior_int
+      traits:
+        - armor discipline (resilience)
 monk:
   name: Monk
   race: human

@@ -219,6 +219,7 @@ class Creature(object):
         self.ignore_warnings = ignore_warnings
         self.damage_dealt_each_round = list()
         self.damage_dealt_this_round = 0
+        self.special_attack_text = ""
 
         self.fundamental_progression = fundamental_progression
         self.race = race
@@ -669,13 +670,13 @@ class Creature(object):
 
     @property
     def physical_attack_damage(self):
-        return self.get_physical_attack_damage()
+        return self.get_physical_attack_damage(attack_number = 0)
 
     @property 
     def average_physical_attack_damage(self):
         return self.get_physical_attack_damage(use_average = True)
 
-    def get_physical_attack_damage(self, use_average = False):
+    def get_physical_attack_damage(self, attack_number, use_average = False):
         if self.primary_weapon is not None:
             primary_damage = self.primary_weapon_damage_die.roll(use_average) + self.primary_weapon_damage_bonus
         else:
@@ -898,10 +899,10 @@ class Creature(object):
     def attack(self, creature):
         if self.attack_mode == 'physical':
             attack_type = 'physical'
-            for attack_bonus in self.physical_attack_progression:
+            for attack_number, attack_bonus in enumerate(self.physical_attack_progression):
                 attack_result = d20.roll() + attack_bonus
                 if creature.is_hit_by_attack(attack_result, attack_type):
-                    attack_damage = self.physical_attack_damage
+                    attack_damage = self.get_physical_attack_damage(attack_number = attack_number)
                     creature.take_damage(attack_damage, attack_type)
                     self.damage_dealt_this_round += attack_damage
         elif self.attack_mode == 'damage_spells':
@@ -977,6 +978,9 @@ class Creature(object):
         self.damage_dealt_this_round = 0
         self.attacked_this_round = 0
 
+    def add_special_attack_text(self, text):
+        self.special_attack_text += "\n    " + text
+
     def __str__(self):
         return '{0} {1}\n{2}\n{3}\n{4}\n{5}\n{6}'.format(
             self.name,
@@ -1010,6 +1014,8 @@ class Creature(object):
             attack_progression,
             self._to_string_weapon_damage()
         )
+        if self.special_attack_text:
+            text += self.special_attack_text
         if self.has_special_attacks:
             text += "\n    Special: {0}".format(util.mstr(self.special_attack_bonus))
         if self.has_spells:
