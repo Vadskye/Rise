@@ -48,7 +48,7 @@ A combat maneuver is an attempt to physically hinder your foe with your body, su
 Your maneuver modifier is equal to the following:
 
 \begin{figure}[h]
-    \centering Base attack bonus or attack attribute \meh{\add enhancement bonus} \add special size modifier \add other bonuses and penalties
+    \centering Base attack bonus or attack attribute \add special size modifier \add other bonuses and penalties
 \end{figure}
 
 Your attack attribute depends on the maneuver you are using, as described in \pcref{Combat Maneuvers}. Your special size modifier is described in \tref{Size in Combat}.
@@ -180,19 +180,17 @@ While in the air, a creature with a glide speed can control its fall as a move a
 Bonuses and penalties are the most basic way that a roll or numerical statistic can be modified. A bonus increases the roll or statistic, and a penalty decreases it. Bonuses and penalties are also called modifiers.
 
 \subsection{Stacking Rules}\label{Stacking Rules}
-Usually, modifiers stack with each other, meaning that you add or subtract all of the modifiers to get the final result. However, enhancement bonuses and certain specific kinds of modifiers do not stack with each other. When bonuses don't stack with each other, you only apply the highest bonus. Likewise, when penalties don't stack with each ather, you only apply the highest penalty.
-
-\meh{\parhead{Enhancement Bonuses} Enhancement bonuses are always granted by magic or supernatural abilities. Unlike other bonuses, enhancement bonuses do not stack with each other. Each enhancement bonus will specify what it applies to, such as ``physical attacks'' or ``Fortitude defense''. Use only the highest enhancement bonus that applies. If you have an enhancement bonus that affects a broad category of rolls, such as ``all special defenses'', it doesn't stack with more narrow enhancement bonuses, such as ``Fortitude defense''.}
+Usually, modifiers stack with each other, meaning that you add or subtract all of the modifiers to get the final result. However, some modifiers do not stack with each other, as described below. When bonuses don't stack with each other, you only apply the largest bonus. Likewise, when penalties don't stack with each ather, you only apply the largest penalty.
 
 \parhead{Special Exceptions}
 
 \begin{itemize}
-    \item Effects from the same source do not stack. Any spell or ability with the same name has the same source. 
-    \item Magical effects that increase size do not stack.
-    \item Damage reduction does not stack. Only the best value applicable to the attack applies.
+    \item Effects from the same source do not stack. Any spell or ability with the same name has the same source.
+    \item Magical effects that alter size do not stack. If multiple effects both increase and decrease size, size increases offset size decreases on a one-for-one basis to determine the creature's final size.
+    %\item Damage reduction does not stack. Only the best value applicable to the attack applies.
     \item Effects that grant extra attacks (such as the \spell{haste} spell) do not stack.
     \item Temporary hit points do not stack.
-    \item If a character has two separate abilities which let him add the same attribute to a given roll or numerical attribute, the attribute is still only added once.
+    \item If a character has two separate abilities which let him add the same attribute to a given roll or statistic, the attribute is still only added once.
     \item Effects that reduce the effective spell level of a spell affected by metamagic can never reduce a spell below its original level.
 \end{itemize}
 
