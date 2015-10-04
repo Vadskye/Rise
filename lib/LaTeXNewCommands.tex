@@ -698,11 +698,11 @@
 
 \DeclareDocumentCommand{\featref}{s m}
 {
+    \hyperlink{feat:#2}{#2}
     \IfBooleanF{#1}
     {
-        \hyperlink{feat:#2}
+        \hypertarget{ft:#2}{}
     }
-    \hypertarget{ft:#2}{#2}
 }
 
 \DeclareDocumentCommand{\term}{m}
