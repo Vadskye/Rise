@@ -652,7 +652,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Destructive, Electricity]}{Arcane, Destruction, Nature}
+        \spellinfo{Evocation [Destructive, Electricity]}{Arcane, Nature}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -2841,6 +2841,28 @@
     \end{spellfooter}
 \end{spellsection}
 
+\begin{spellsection}{Fungal Growth}[2]
+    \begin{spellheader}
+        \spelldesc{You create fungus all over your foe's body.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect The target becomes covered in living fungus. It is \sickened, and after every 5 rounds it takes physical damage equal to your spellpower.
+
+            The fungus can be removed as a full-round action. The creature removing the fungus must make a Heal check against a DC equal to 10 \add your spellpower. If it fails, the target takes additional physical damage equal to your spellpower.
+            
+            If the target takes fire or cold damage equal to your spellpower, the fungus is destroyed.
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Conjuration/Vivimancy [Creation, Flesh]}{Nature}
+        \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
+
 \pdfbookmark[2]{G}{SpellDescriptionsG}
 
 \begin{spellsection}{Gaseous Form}[3]
@@ -3826,7 +3848,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Destructive, Electricity]}{Arcane, Destruction, Nature}
+        \spellinfo{Evocation [Destructive, Electricity]}{Arcane, Nature}
         \spellnotes \destructivespellnotes
         \miscastexplode
     \end{spellfooter}
@@ -5128,6 +5150,67 @@
     \end{spellfooter}
 \end{spellsection}
 
+\begin{spellsection}{Rotburst}[3]
+    \begin{spellheader}
+        \spelldesc{You rot the flesh of nearby foes.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spellburst{\areasmall radius centered on you} 
+            \spelltgts{Everything in the area}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \begin{spellattack}{Spellpower vs. Fortitude}
+                \spellsuccess For the next 5 rounds, the target takes physical damage equal to your spellpower at the end of each round.
+            \end{spellattack}
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Vivimancy [Flesh]}{Destruction, Nature}
+        \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}[Greater]{Rotburst}[7]
+    \begin{spellheader}
+        \spelldesc{You rot the flesh of many nearby foes.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spellburst{\arealarge radius centered on you} 
+            \spelltgts{Everything in the area}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spellspecial This spell functions like \spell{rotburst}, except that it affects a larger area.
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Vivimancy [Flesh]}{Destruction, Nature}
+        \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Rotting Grasp}[1]
+    \begin{spellheader}
+        \spelldesc{You rot your foe's flesh with a touch.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltwocol{\spelltgt{One creature or object}}{\spellrng{5 ft.}}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \begin{spellattack}{Spellpower vs. Fortitude}
+                \spellsuccess For the next 5 rounds, the target takes physical damage equal to your spellpower at the end of each round.
+                \spellfailure As above, except that the effect lasts for 2 rounds.
+            \end{spellattack}
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Vivimancy [Flesh]}{Destruction, Nature}
+        \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
+
 \pdfbookmark[2]{S}{SpellDescriptionsS}
 
 \begin{spellsection}{Sanctuary}[1]
@@ -5392,7 +5475,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Destructive, Sonic]}{Arcane, Destruction, Strength}
+        \spellinfo{Evocation [Destructive, Sonic]}{Arcane, Strength}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -5413,7 +5496,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Destructive, Sonic]}{Arcane, Destruction, Strength}
+        \spellinfo{Evocation [Destructive, Sonic]}{Arcane, Strength}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
