@@ -4768,27 +4768,16 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{Touch}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spellspecial Choose an alignment other than neutral (chaotic, good, evil, lawful).
-            \spelleffect The target is protected from attacks by creatures of the chosen alignment.
+            \spelleffect The target gains damage reduction equal to your spellpower against attacks with the chosen alignment, and attacks made by creatures with the chosen alignment.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
-    \begin{spellsubcontent}
-        \begin{spelltargetinginfo}
-            \spelltgr{The target is attacked by a creature of the chosen alignment}
-            \spelltgt{The attacking creature}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess \spelldamage{2}{divine}[d6]
-            \end{spellattack}
-        \end{spelleffects}
-    \end{spellsubcontent}
     \begin{spellfooter}
-        \spellinfo{Abjuration [Retributive, Shielding]}{Arcane, Chaos, Divine, Evil, Good, Law}
+        \spellinfo{Abjuration [Shielding]}{Arcane, Chaos, Divine, Evil, Good, Law}
         \spellnotes This spell has the subtype of the alignment opposed to the chosen alignment.
         \miscastrandom
     \end{spellfooter}
@@ -6523,6 +6512,28 @@
     \begin{spellfooter}
         \spellinfo{Evocation [Light]}{Nature}
         \spellnotes This light is considered natural sunlight for the purpose of effects which depend on sunlight.
+        \miscastyou
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Swarm of Bats}[1]
+    \begin{spellheader}
+        \spelldesc{You summon a swarm of bats that attack the eyes of your foes.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spellburst{\areamed cone}
+            \spelltgts{All enemies in the area}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \begin{spellattack}{Spellpower vs. Fortitude}
+                \spellsuccess The target's vision is \impaired. This affects all sight-related actions, including physical attacks and targeted spells.
+            \end{spellattack}
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Conjuration [Summoning]}{Arcane, Nature}
+        \spellnotes The bats disappear after 1 round.
         \miscastyou
     \end{spellfooter}
 \end{spellsection}
