@@ -124,7 +124,7 @@ Combat takes place in a series of ``rounds'', which represent about six seconds 
 
 \subsection{Combat Phases}
 
-Each round of a combat is divided into two phases: a movement phase and an action phase. During each phase, all characters declare their actions simultaneously, and then those actions are resolved simultaneously.
+Each round of a combat is divided into two phases: a movement phase and an action phase. During each phase, all characters declare their actions simultaneously, and then those actions are resolved simultaneously. After both phases are complete, the round ends.
 
 \subsubsection{The Movement Phase}\label{The Movement Phase}
 
@@ -144,7 +144,7 @@ Once all creatures have declared their actions, actions are resolved.
 
 \subsection{Resolving Actions}\label{Resolving Actions}
 
-The actions of all creatures are simultaneously resolved in the following order.
+Within each phase, actions of all creatures are simultaneously resolved in the following order.
 
 \begin{enumerate*}
     \item Determine affected targets.
@@ -284,7 +284,7 @@ When you take lethal damage, you subtract that damage from your hit points.
 \parhead{What Hit Points Represent} Hit points represent a combination of durability, luck, divine providence, and sheer determination, depending on the nature of your character. When you take 10 damage from an orc with a greataxe, the axe did not literally carve into your skin without affecting your ability to fight. Instead, you avoided the worst of the blow, but it bruised you through your armor, the effort to dodge the blow fatigued your character, or it barely nicked you through sheer luck -- and everyone's luck runs out eventually.
 
 \subsubsection{Critical Damage}\label{Critical Damage}
-When you take damage while you have no hit points remaining, that damage represents serious physical injury to your body. This is called critical damage. You suffer a penalty to attacks, checks, and defenses equal to the amount of critical damage you have.
+When you take damage while you are disabled (see \pcref{Disabled}), that damage represents serious physical injury to your body. This is called critical damage. You suffer a penalty to attacks, checks, and defenses equal to the amount of critical damage you have.
 
 While you have critical damage, magical healing which would normally restore hit points cannot restore your hit points, though it can stabilize you, preventing you from dying. In addition, if you take damage that would reduce your hit points to 0 while you have any critical damage, any excess damage from the attack is dealt directly as critical damage.
 
@@ -297,9 +297,9 @@ Normally, when you take damage that would reduce your hit points to 0, any exces
 
 \parhead{Bloodied} When you drop to half your hit points or below, you are \bloodied. If you take additional damage, you can become disabled (see Disabled, below).
 
-\parhead{Disabled} When you have no hit points remaining, you are disabled. While disabled, you are \staggered. In addition, you  You are also still bloodied, and continue to take the \minus5 penalty to Fortitude and Mental defenses.
+\parhead{Disabled} At the end of each round, if you have no hit points remaining after resolving all other effects in the round, you become disabled. While disabled, you are \staggered. In addition, you  You are also still bloodied, and continue to take the \minus5 penalty to Fortitude and Mental defenses.
 
-If you take additional damage while at 0 hit points, you begin dying (see Dying, below).
+At the end of the round, after all other effects have been resolved, if your hit point total is positive, you stop being disabled. If you take additional damage while disabled, that damage is critical damage and causes you to begin dying (see Dying, below).
 
 \parhead{Dying}\label{Dying} While you are dying, you must make an attack against your own Fortitude defense at the end of every round. No bonuses or penalties apply to the attack roll, but critical damage can penalize your Fortitude defense. If this attack succeeds once, you fall unconscious. If it succeeds three times, you die. If this attack fails three times, you stabilize.
 
@@ -318,6 +318,8 @@ After taking damage, you can recover hit points through natural healing or throu
 \parhead{Magical Healing} Various abilities and spells can restore hit points. However, only certain spells can heal critical damage, as specified in the spell description. Unless a spell says it can cure critical damage, it cannot -- though it can still stabilize dying characters. Magical healing has no effect on the hit points of creatures with critical damage.
 
 \parhead{Healing Ability Damage} Ability damage is temporary, just as hit point damage is. Ability damage returns at the rate of 1 point per 8 hours of rest for each affected attribute score.
+
+\parhead{Healing While Disabled} While you are disabled, any healing you receive cancels out damage you receive in the same phase on a one-for-one basis. This can prevent you from taking critical damage if you are damaged while disabled.
 
 \parhead{Healing Critical Damage} Critical damage takes much longer to heal than hit point damage. Resting for 1 week restores an amount of critical damage equal to 1 \add half the character's Constitution (minimum 1). A character can have both hit points and critical damage. As long as a character has critical damage, he is staggered, even if he is at full hit points.
 
