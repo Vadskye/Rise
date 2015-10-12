@@ -72,7 +72,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}[Greater]{Acid Arrow}[6]
+\begin{spellsection}[Greater]{Acid Arrow}[5]
     \begin{spellheader}
         \spelldesc{You fire a magical arrow of acid from your hand that speeds to its target.}
     \end{spellheader}
@@ -88,7 +88,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Acid Fog}[7]
+\begin{spellsection}{Acid Fog}[6]
     \begin{spellheader}
         \spelldesc{A billowing mass of acidic vapors fills the area, slowing creatures down and obscuring sight.}
     \end{spellheader}
@@ -109,7 +109,6 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
                 \spellsuccess 1d6 acid damage per four spellpower.
-                \spellfailure Half damage.
             \end{spellattack}
         \end{spelleffects}
     \end{spellsubcontent}
@@ -362,7 +361,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect Ground within the area is considered difficult terrain.
-            \spelldur Focus
+            \spelldur 5 rounds.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellsubcontent}
@@ -372,7 +371,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Maneuver defense}
-                \spellsuccess The target is grappled and takes 1d8\plus4 bludgeoning damage. It remains grappled until it escapes the tentacle. The DC to escape the grapple is equal to 10 \add your spellpower.
+                \spellsuccess The target takes bludgeoning damage equal to 1d8 \add half your spellpower. In addition, it is \immobilized for the duration of the spell.
             \end{spellattack}
         \end{spelleffects}
     \end{spellsubcontent}
@@ -561,7 +560,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Call Lightning}[4]
+\begin{spellsection}{Call Lightning}[3]
     \begin{spellheader}
         \spelldesc{You repeatedly call bolts of lightning that flash down from thin air to smite your foes.}
     \end{spellheader}
@@ -588,7 +587,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}[Greater]{Call Lightning}[8]
+\begin{spellsection}[Greater]{Call Lightning}[6]
     \begin{spellheader}
         \spelldesc{You repeatedly call intense bolts of lightning that flash down from thin air to smite your foes.}
     \end{spellheader}
@@ -864,7 +863,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Cone of Cold}[4]
+\begin{spellsection}{Cone of Cold}[3]
     \begin{spellheader}
         \spelldesc{You create an area of extreme cold that drains heat from creatures in the area, diminishing their ability to move.}
     \end{spellheader}
@@ -887,7 +886,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}[Greater]{Cone of Cold}[7]
+\begin{spellsection}[Greater]{Cone of Cold}[6]
     \begin{spellheader}
         \spelldesc{You create a massive area of extreme cold that drains heat from creatures in the area, diminishing their ability to move.}
     \end{spellheader}
@@ -1145,7 +1144,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Curse of Blood and Bone}[3]
+\begin{spellsection}{Curse of Blood and Bone}[2]
     \begin{spellheader}
         \spelldesc{You curse your foe's body, leaving it vulnerable to attacks.}
     \end{spellheader}
@@ -1437,7 +1436,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
@@ -1892,7 +1891,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One living creature}}{\spellrng{\rngclose}}
+            \spelltwocol{\spelltgt{One living creature}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
@@ -2329,7 +2328,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Eyebite}[4]
+\begin{spellsection}{Eyebite}[3]
     \begin{spellcontent}
         \begin{spelltargetinginfo}
             \spellquicktargeting{One creature}{\rngmed}
@@ -2480,7 +2479,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One living creature}}{\spellrng{\rngclose}}
+            \spelltwocol{\spelltgt{One living creature}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
@@ -2496,7 +2495,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Fire Seeds}[6]
+\begin{spellsection}{Fire Seeds}[5]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -3038,11 +3037,11 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Fortitude}
-                \spelleffect If the target is undead, it is healed for 1d10 damage per two spellpower.
-                \spellsuccess If the target is not undead, it takes that much negative energy damage, as well as four points of Constitution damage.
-                \spellfailure As above, but both the negative energy damage and constitution damage is halved.
-            \end{spellattack}
+            \spelleffect If the target is undead, it is healed for \spelldamage{4}{}.
+            \begin{spellattacktriggered}{If the target is living, make a Spellpower vs. Fortitude attack.}
+                \spellsuccess \spelldamage{4}{negative}. All damage dealt in excess of the target's hit points is dealt as critical damage.
+                \spellfailure Half damage.
+            \end{spellattacktriggered}
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -3117,9 +3116,9 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect If the target is living, it is healed for \spelldamage{6}{}. For every 2 points of healing granted by this spell, it can instead cure 1 point of critical damage. In addition, all of the following conditions are also removed from the target: ability damage, blinded, confused, dazed, deafened, diseased, exhausted, fatigued, nauseated, sickened, stunned, and poisoned.
+            \spelleffect If the target is living, it is healed for \spelldamage{1}{}. For every point of healing granted by this spell, it can instead cure 1 point of critical damage.
             \begin{spellattacktriggered}{If the target is undead, make a Spellpower vs. Fortitude attack.}
-                \spellsuccess \spelldamage{6}{positive}.
+                \spellsuccess \spelldamage{1}{positive}.
                 \spellfailure Half damage.
             \end{spellattacktriggered}
         \end{spelleffects}
@@ -3130,7 +3129,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Heat Metal}[2]
+\begin{spellsection}{Heat Metal}[1]
     \begin{spellheader}
         \spelldesc{You heat your foe's armor, blistering its skin.}
     \end{spellheader}
@@ -3453,7 +3452,7 @@
     \begin{spellcontent}
         \begin{spelltargetinginfo}
             \spelltgr{At the end of every round}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
             \spellspecial You cannot target the same creature more than once per casting of this spell.
         \end{spelltargetinginfo}
         \begin{spelleffects}
@@ -3500,7 +3499,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngtouch}}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target gains damage reduction against physical damage equal to your spellpower. Force damage ignores this damage reduction and negates it for 1 round.
@@ -4420,7 +4419,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Polar Ray}[6]
+\begin{spellsection}{Polar Ray}[5]
     \begin{spellheader}
         \spelldesc{You fire a blue-white ray of frigid air and ice, freezing your foe in place.}
     \end{spellheader}
@@ -4911,7 +4910,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Regeneration}[7]
+\begin{spellsection}{Regeneration}[6]
     \begin{spellheader}
         \spelldesc{You grant an ally's body the ability to heal itself rapidly.}
     \end{spellheader}
@@ -5232,7 +5231,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Scorching Ray}[3]
+\begin{spellsection}{Scorching Ray}[2]
     \begin{spellheader}
         \spelldesc{You blast your foe with a fiery ray.}
     \end{spellheader}
@@ -5253,7 +5252,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Searing Light}[3]
+\begin{spellsection}{Searing Light}[2]
     \begin{spellheader}
         \spelldesc{You fire a blast of light that strikes your foe.}
     \end{spellheader}
@@ -5618,7 +5617,7 @@
                 \spellsuccess The target is \fatigued and attempts to go to sleep as soon as possible, though it will not stop fighting to do so. Awakening a creature put to sleep by this spell is difficult, and requires a standard action.
                 \spellcritical As above, except that the target is \exhausted instead of \fatigued.
             \end{spellattack}
-            \spelldur \durshort
+            \spelldur \durmed
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -5965,7 +5964,6 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
                 \spellsuccess \spelldamage{6}{slashing}. In addition, all damage the target takes is doubled for 5 rounds. This does not apply to the initial damage dealt by this spell.
-                \spellcritical As above, except that the doubling of damage lasts for 1 year.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
         \end{spelleffects}
@@ -6729,7 +6727,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Transmute Flesh and Stone}[6]
+\begin{spellsection}{Transmute Flesh and Stone}[5]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -6739,7 +6737,7 @@
     \end{spellcontent}
     \begin{spellsubcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature (Huge or smaller)}}{\spellrng{\rngmed}}
+            \spelltwocol{\spelltgt{One creature (Huge or smaller)}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spellspecial If the target is not made of flesh (such as a golem), it is unaffected.
@@ -6751,7 +6749,7 @@
     \end{spellsubcontent}
     \begin{spellsubcontent}
         \begin{spelltargetinginfo}
-            \spelltgt{One petrified creature (Huge or smaller)}
+            \spelltwocol{\spelltgt{One creature (Huge or smaller)}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target is restored to its normal state, including its equipment. Stone which was not originally a petrified creature is unaffected.
@@ -7050,7 +7048,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Wall of Thorns}[3]
+\begin{spellsection}{Wall of Thorns}[2]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -7083,7 +7081,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}[Greater]{Wall of Thorns}[6]
+\begin{spellsection}[Greater]{Wall of Thorns}[5]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -7254,7 +7252,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rnglong}}
+            \spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngext}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
