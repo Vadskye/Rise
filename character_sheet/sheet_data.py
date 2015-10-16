@@ -4,7 +4,7 @@ ATTRIBUTE_SKILLS = {
     'strength':  'Climb Jump Sprint Swim'.split(),
     'dexterity': ['Balance', 'Escape Artist', 'Ride', 'Sleight of Hand', 'Stealth', 'Tumble'],
     'constitution': [],
-    'intelligence': ['Craft', 'Devices', 'Disguise', 'Knowledge', 'Knowledge', 'Linguistics'],
-    'perception': ['Awareness', 'Creature Handling', 'Heal', 'Sense Motive', 'Spellcraft', 'Survival'],
+    'intelligence': ['Craft', 'Devices', 'Disguise', 'Heal', 'Knowledge', 'Knowledge', 'Linguistics'],
+    'perception': ['Awareness', 'Creature Handling', 'Sense Motive', 'Spellcraft', 'Survival'],
     'willpower': [],
 }

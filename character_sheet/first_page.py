@@ -8,7 +8,7 @@ def create_page():
             rise_title(),
             attributes_and_skills(),
         ]),
-        flex_col({'id': 'main-sheet-body'}, [
+        flex_col({'id': 'main-body'}, [
             boring_stuff(),
             core_statistics(),
             passive_abilities(),
