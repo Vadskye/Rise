@@ -24,7 +24,15 @@
     flex-basis: 20%;
 }
 
-#attacks, #main-sheet-body, #resources {
+#attacks, #resources {
+    flex-grow: 1;
+}
+
+#sheet-main-body {
+    flex-grow: 1;
+}
+
+#resources {
     flex-grow: 1;
 }
 

@@ -20,15 +20,15 @@ def create_page():
             ]),
         ]),
         flex_row({'id': 'level-chart'}, [
-            level_numbers(),
             #bab(),
             #fort(),
             #ref(),
             #ment(),
             #attribute_bonuses(),
-            abilities(),
-            level_numbers(),
-            abilities(),
+            level_numbers('l'),
+            abilities('l'),
+            level_numbers('r'),
+            abilities('r'),
         ]),
     ])
 
@@ -48,20 +48,20 @@ def calc_attribute(attribute_name):
         #),
         #flex_row({'class': 'equation'}, [
         equation([
-            underlabeled_number_input('Base', 'attribute-base', {'class': 'eq-base'}),
+            underlabeled_number_input('Base', '_calc-'+attribute_name+'-base', {'class': 'eq-base'}),
             plus(),
-            underlabeled_number_input('Level', 'attribute-level', {'class': 'eq-level'}),
+            underlabeled_number_input('Level', '_calc-'+attribute_name+'-level', {'class': 'eq-level'}),
             misc_spacer(),
             plus(),
-            underlabeled_number_input('Misc', 'attribute-misc', {'class': 'eq-misc'}),
-        ])
+            underlabeled_number_input('Misc', '_calc-'+attribute_name+'-misc', {'class': 'eq-misc'}),
+        ], result_name = attribute_name.lower())
     ])
 
-def level_numbers():
+def level_numbers(name_prefix):
     return flex_col({'id': 'level-numbers'}, [
         flex_wrapper(div({'id': 'level-number-header', 'class': 'chart-header'}, 'Lvl')),
         ''.join([
-            text_input()
+            text_input({'name': 'ability-level-' + name_prefix + '-' + str(level)})
             #flex_row({'class': 'level-number-wrapper level'+str(level)}, div({'class': 'level-number'}, str(level)))
             for level in range(1,14)
         ]),
@@ -79,10 +79,10 @@ def attribute_bonuses():
         ''.join([text_input({'class': 'level'+str(level)}) for level in range(1,21)]),
     ])
 
-def abilities():
+def abilities(name_prefix):
     return flex_col({'id': 'abilities'}, [
         flex_wrapper(div({'id': 'ability-header', 'class': 'chart-header'}, 'Feats and Abilities')),
-        ''.join([text_input({'class': 'level'+str(level)}) for level in range(1, 14)]),
+        ''.join([text_input({'class': 'level'+str(level), 'name': 'ability-name-'+name_prefix+'-'+str(level)}) for level in range(1, 14)]),
     ])
 
 def calc_bab():
@@ -94,7 +94,7 @@ def calc_bab():
             underlabeled_number_input('Avg', 'bab-avg'),
             plus(),
             underlabeled_number_input('Poor', 'bab-poor'),
-        ]),
+        ], result_name = 'bab'),
     ])
 
 def calc_hit_points():
@@ -110,7 +110,7 @@ def calc_hit_points():
             misc_spacer(),
             plus(),
             underlabeled_number_input('Misc', 'attacks-misc', {'class': 'eq-misc'}),
-        ]),
+        ], result_name = 'hit-points'),
     ])
 
 def calc_attacks():
@@ -142,7 +142,7 @@ def calc_melee():
             misc_spacer(),
             plus(),
             underlabeled_number_input('Misc', 'attacks-misc', {'class': 'eq-misc'}),
-        ]),
+        ], result_name = 'melee'),
     ])
 
 def calc_ranged():
@@ -151,14 +151,14 @@ def calc_ranged():
         equation([
             this_or_that([
                 underlabeled_number_input('BAB', 'attacks-bab'),
-                underlabeled_number_input('Per', 'attacks-str'),
+                underlabeled_number_input('Per', 'attacks-per'),
             ]),
             plus(),
             underlabeled_number_input('Prof', 'attacks-prof'),
             misc_spacer(),
             plus(),
             underlabeled_number_input('Misc', 'attacks-misc', {'class': 'eq-misc'}),
-        ]),
+        ], result_name = 'ranged'),
     ])
 
 def base_10():
@@ -183,7 +183,7 @@ def calc_armor():
             plus(),
             #misc_spacer(),
             underlabeled_number_input('Misc', 'attacks-misc', {'class': 'eq-misc'}),
-        ]),
+        ], result_name = 'armor'),
     ])
 
 def misc_spacer():
@@ -206,7 +206,7 @@ def calc_maneuver():
             plus(),
             #misc_spacer(),
             underlabeled_number_input('Misc', 'maneuver-misc', {'class': 'eq-misc'}),
-        ]),
+        ], result_name = 'maneuver'),
     ])
 
 def calc_fort():
@@ -227,7 +227,7 @@ def calc_fort():
             plus(),
             #misc_spacer(),
             underlabeled_number_input('Misc', 'fort-misc', {'class': 'eq-misc'}),
-        ]),
+        ], result_name = 'fortitude'),
     ])
 
 def calc_ref():
@@ -250,7 +250,7 @@ def calc_ref():
             plus(),
             #misc_spacer(),
             underlabeled_number_input('Misc', 'ref-misc', {'class': 'eq-misc'}),
-        ]),
+        ], result_name = 'reflex'),
     ])
 
 def calc_will():
@@ -271,22 +271,24 @@ def calc_will():
             plus(),
             #misc_spacer(),
             underlabeled_number_input('Misc', 'ment-misc', {'class': 'eq-misc'}),
-        ]),
+        ], result_name = 'mental'),
     ])
 
-def equation(attributes = None, contents = None):
+def equation(attributes = None, contents = None, result_name = None):
     attributes, contents = ensure_valid_attributes_and_contents(attributes, contents)
     attributes['class'] = 'equation ' + attributes.get('class', '')
 
+    result_name = result_name or 'eq-total'
+
     return flex_row(attributes, [
-        underlabeled_number_input('Total', 'hp-total'),
+        underlabeled_number_input('Total', result_name),
         equals(),
         ''.join(contents),
     ])
 
 def this_or_that(options):
     return flex_row(
-        {'class': 'this-or-that'},
+        {'class': 'two-choices'},
         flex_col({'class': 'equation-glue'}, 'or').join(options)
     )
 

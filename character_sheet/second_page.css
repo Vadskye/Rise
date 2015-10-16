@@ -68,7 +68,7 @@ input[type=text] {
     margin: 0;
 }
 
-.this-or-that input[type=number] {
+.two-choices input[type=number] {
     background-color: #EEE;
 }
 
