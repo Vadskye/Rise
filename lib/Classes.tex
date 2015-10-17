@@ -1098,7 +1098,7 @@ This cannot increase her Willpower above her nature power.
 The druid gains a \plus2 bonus to Perception.
 This cannot increase her Perception above her nature power.
 \subcf{5th -- Shrink}
-As a full-round action, the druid can shrink by a size category.
+As a standard action, the druid can shrink by a size category.
 This functions like the \spell{reduce person} spell, except that it only affects the druid.
 This is a sizing effect.
 \subcf{5th -- Slither}
@@ -1118,7 +1118,7 @@ The druid gains the scent ability, granting her a \plus10 bonus to scent-based A
 \subcf{7th -- Wolfpack}
 Overwhelmed foes the druid threatens increase their overwhelm penalties by 1.
 \subcf{9th -- Grow}
-As a full-round action, the druid can grow by a size category.
+As a standard action, the druid can grow by a size category.
 This functions as the \spell{enlarge person} spell, except that it only affects the druid.
 This is a sizing effect.
 \subcf{9th -- Limited Flight}
@@ -2800,10 +2800,11 @@ This roll is not an attack or check, and is not modified by abilities that affec
 On a natural 20, the spell is always miscast, regardless of other modifiers.
 
 \cf{Sor}{Cantrip}
-Cantrips are minor spell-like abilities which do not require effort to use.
+Cantrips are minor spells which do not require effort to use.
 A sorcerer chooses one cantrip from the list of cantrips on \pref{Cantrip List}.
 He may use the cantrip at will.
 Cantrips cannot be miscast, and are not affected by the sorcerer's wild magic ability.
+For all other purposes, cantrips are treated as 0th level spells.
 
 At his 2nd sorcerer level, the sorcerer learns a second cantrip of his choice.
 
@@ -2862,7 +2863,7 @@ The sorcerer gains a bonus to his spellpower with spells that have a non-instant
 The sorcerer can focus on spells with a spell level up to his surge bonus as a swift action, and can cast other spells while focusing on such spells.
 He gains a bonus to his wild surges with all spells.
 \subcf{18th -- Widening Surge}
-The sorcerer doubles the area affected by his area spells with a spell level up to his sruge bonus, but he gains a bonus to his wild surges with all spells.
+The sorcerer doubles the area affected by his area spells with a spell level up to his surge bonus, but he gains a bonus to his wild surges with all spells.
 
 \cf{Sor}[3rd]{Improved Wild Magic}[Ex]
 When the sorcerer miscasts a spell or spellblend with his wild magic ability, the normal effects of the spell (or spells) take place in addition to any miscast effects.
@@ -2876,8 +2877,6 @@ If he does, he may also use a cantrip as part of the same action.
 The cantrip need not target the sorcerer.
 In exchange, he gains a \plus5 bonus to his wild magic roll.
 The spell's level is used to determine the bonus to the sorcerer's wild magic roll.
-If the sorcerer miscasts the spellblend with his wild magic ability, the cantrip still takes effect normally.
-
 
 \cf{Sor}[7th]{Arcane Resilience}[Ex]
 The sorcerer gains damage reduction equal to his sorcerer level or Constitution against arcane spells.
@@ -2889,7 +2888,7 @@ This ability functions like defensive spellblend, except that the spell need not
 
 \cf{Sor}[11th]{Spell Resistance}[Ex]
 Repeated exposure to magic grants the sorcerer resistance to magical effects.
-The sorcerer gains spell resistance equal to 10 \add sorcerer level or Constitution.
+The sorcerer gains spell resistance equal to 10 \add either sorcerer level or Constitution.
 To affect the sorcerer with a spell, a caster must make an attack with its spellpower.
 If the attack beats the sorcerer's spell resistance, the spell works normally.
 Otherwise, the spell has no effect on the sorcerer.
@@ -3585,10 +3584,11 @@ A specialist wizard can never learn or cast spells or rituals from their banned 
 Divination cannot be chosen as a banned school.
 
 \cf{Wiz}{Cantrip}
-Cantrips are minor spell-like abilities which do not require effort to use.
+Cantrips are minor spells which do not require effort to use.
 A wizard chooses one cantrip from the list of cantrips on \pref{Cantrip List}.
 She may use the cantrip at will.
 Cantrips cannot be miscast.
+For all other purposes, cantrips are treated as 0th level spells.
 Specialist wizards must choose one of the cantrips granted by their specialist school.
 
 At her 2nd wizard level, the wizard gains a second cantrip, which can be chosen from any non-prohibited school.
