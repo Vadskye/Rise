@@ -198,6 +198,7 @@ Some strike feats instead require a specific action to use.
         \featref{Battlecaster} & Proficiency with light armor & Reduce arcane spell failure by 10\% & \featpref{Battlecaster} \\
         \featref{Combat Casting} & \x &  \plus3 bonus to Concentration checks to cast spells, reroll 1/day & \featpref{Combat Casting} \\
         \featref{Counterspell} & Spellcraft 10 ranks, 2nd level spells & Counter spells cast by foe & \featpref{Counterspell} \\
+        \featref{Dynamo} & [Electricity] spell & Gain speed boost from electricity spells & \featpref{Dynamo} \\
         \tind\featref{Flexible Counterspell} & Counterspell & Use any spell to counterspell & \featpref{Flexible Counterspell} \\
         \tind\featref{Mass Counterspell} & Spellcraft 15 ranks, 4th level spells, Counterspell & Counter spells cast by multiple foes & \featpref{Mass Counterspell} \\
         \featref{Craftcaster} & Craft (any) 10 ranks, 2nd level spells & Increase spellpower when creating, transforming objects & \featpref{Craftcaster} \\
@@ -1554,9 +1555,11 @@ You must make a physical ranged attack each round.
 
 \feat{Parry}{Combat, Defense, Reaction, Style}
 \featpre Dexterity 3.
-\featben While in this style, whenever you are attacked and you are aware of the attack, you may make an attack roll to attempt to parry the attack.
-You may treat the result of your attack roll as your physical defense against that attack if it would be higher.
+\featben While in this style, whenever a physical melee attack is made against you that you are aware of, you may make an attack roll to attempt to parry the attack.
+You may use your attack result in place of any or all physical defenses against the parried attack.
 You can make a maximum number of parry attempts per round equal to the number of attacks you can make.
+
+In exchange, you take a \minus2 penalty to physical attacks.
 
 \stylereq Wield a melee weapon.
 You must make a melee attack or take the total defense action each round.
@@ -1642,9 +1645,6 @@ In the turn after you cast it, you lose your standard action.
 You may cast only one quickened spell per round.
 A spell whose casting time is more than 1 standard action cannot be quickened.
 A quickened spell uses up a spell slot two levels higher than the spell's actual level.
-\parhead{Special}
-All spellcasters cast a quickened spell as a swift action, even if they would normally increase the casting time of spells with metamagic applied.
-This is an exception to the general rule that applying metamagic increases the casting time of a spell.
 
 \feat{Racial Acclimation}{Racial}\label{Racial Acclimation}
 \featpre Have a race other than your original race, such as by \spellindirect{reincarnate}{reincarnating}.
@@ -1839,7 +1839,7 @@ The Spellcraft DC to identify those spells as they are cast increases by 10, as 
 
 \feat{Spring Attack}{Combat}
 \featpres Dex 5, Mobility, base attack bonus \plus8.
-\featben As a full-round action, you can move up to your speed and make your full attack.
+\featben As a standard action, you can move up to your speed and make a full attack.
 You must move at least 5 feet after each attack you make before you can make another attack.
 You can only use this style while \unencumbered.
 
