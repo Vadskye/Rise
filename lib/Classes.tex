@@ -2733,8 +2733,8 @@ This does not allow her to deliver ambush attacks to the same creature multiple 
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
         \sorcererprogressionrow{1}  & Cantrip, spells, wild magic           \\
-        \sorcererprogressionrow{2}  & Cantrip, spellsurge \plus2            \\
-        \sorcererprogressionrow{3}  & Improved wild magic                   \\
+        \sorcererprogressionrow{2}  & Cantrip, focused casting              \\
+        \sorcererprogressionrow{3}  & Spellsurge \plus2                     \\
         \sorcererprogressionrow{4}  & \x                                    \\
         \sorcererprogressionrow{5}  & Defensive spellblend                  \\
         \sorcererprogressionrow{6}  & Spellsurge                            \\
@@ -2789,15 +2789,15 @@ Their ability to cast spells is limited by their lack of control over their magi
 See Wild Magic, below, for details.
 
 \cf{Sor}{Wild Magic}[Ex]
-Every time a sorcerer casts a spell, he must make a wild magic roll.
-To make a wild magic roll, roll d20 and add the spell's level.
-The DC of the roll is equal to 10 \add 1 per two sorcerer levels.
-Failure means the spell is cast normally.
-Success means the sorcerer miscasts the spell (see \pcref{Miscasting}).
-
-If the sorcerer miscasts a spell with this ability, he cannot cast spells of the same level as the miscast spell for 10 minutes per spell level.
+Every time a sorcerer casts a spell, except cantrips, he must make a wild magic roll.
+To make a wild magic roll, roll d20 \add 1 per two sorcerer levels.
+The DC of the roll is equal to 10 \add the spell's level.
 This roll is not an attack or check, and is not modified by abilities that affect attacks or checks.
-On a natural 20, the spell is always miscast, regardless of other modifiers.
+On a natural 1, the spell is always miscast, regardless of other modifiers.
+
+If the wild magic roll succeeds, the spell is cast normally.
+Failure means the spell's miscast effect occurs in addition to the spell's normal effect (see \pcref{Miscasting}).
+In addition, if the sorcerer fails a wild magic roll, he cannot cast spells of the same level as the miscast spell for 10 minutes per spell level.
 
 \cf{Sor}{Cantrip}
 Cantrips are minor spells which do not require effort to use.
@@ -2808,22 +2808,22 @@ For all other purposes, cantrips are treated as 0th level spells.
 
 At his 2nd sorcerer level, the sorcerer learns a second cantrip of his choice.
 
-\cf{Sor}[2nd]{Spellsurge}
+\cf{Sor}[2nd]{Focused Casting}[Ex]
+If the sorcerer spends one minute focusing on casting a spell, he does not need to make a wild magic roll.
+If his concentration is broken while casting a spell in this way, the sorcerer automatically miscasts the spell and suffers consequences as if he had failed a wild magic roll.
+
+\cf{Sor}[3rd]{Spellsurge}
 The sorcerer learns how to alter how he casts spells by initiating a spellsurge.
 He chooses a single spellsurge from the list below.
 Some spellsurges require a minimum sorcerer level, as indicated in the title of the ability.
 At his 6th sorcerer level, and every four sorcerer levels thereafter, the sorcerer learns an additional type of spellsurge.
 
-A sorcerer can initiate a spellsurge as a swift action.
-While in a spellsurge, he gains bonuses to spellpower with some types of magic or aspects of spellcasting, but also applies that bonus to his wild magic roll with types of magic.
+A sorcerer can initiate or end a spellsurge as a swift action.
 A spellsurge normally lasts for 5 rounds.
-A sorcerer can attempt to end a spellsurge as a swift action.
-To do so, he rolls 1d20 and adds his spellpower (including any bonuses from the spellsurge that affect all spells).
-If the result beats his Mental defense, he fails to end the spellsurge.
-If the result fails to beat his Mental defense, the spellsurge ends.
+While in a spellsurge, the sorcerer gains bonuses or penalties with some types of magic or aspects of spellcasting, as defined in the ability description.
 
-The value of the bonus granted by a sorcerer's spellsurge is called his spellsurge bonus.
-Initially, his spellsurge bonus is \plus2, giving him a \plus2 bonus to spellpower and wild magic rolls.
+All spellsurges grant bonuses or penalties based on the sorcerer's spellsurge bonus.
+Initially, his spellsurge bonus is \plus2.
 A sorcerer can initiate a spellsurge a number of times per day equal to his spellsurge bonus.
 His spellsurge bonus improves to \plus3 at his 8th sorcerer level, to \plus4 at 14th sorcerer level, and finally to \plus5 at 20th sorcerer level.
 
@@ -2831,43 +2831,48 @@ All spellsurges are extraordinary abilities unless otherwise specified.
 
 \subcf{Brutal Surge}
 Whenever the sorcerer makes a successful physical attack, he gains a bonus to spellpower with all spells for 1 round.
-At all other times, he gains a bonus to wild magic with all spells.
+At all other times, he gains a penalty to wild magic rolls with all spells.
 \subcf{Energetic Surge}
-The sorcerer gains a bonus to spellpower with acid, cold, electricity, and fire spells, but gains a bonus to his wild magic with all other spells.
+The sorcerer gains a bonus to spellpower with acid, cold, electricity, and fire spells.
+In exchange, he takes a penalty to his wild magic rolls with all other spells.
 \subcf{Focused Surge}
-The sorcerer gains a bonus to his concentration checks, but all spells he casts require at least a full-round action to cast.
+The sorcerer gains a bonus to his concentration checks.
+In exchange, all spells he casts require at least a full-round action to cast.
 This does not increase the casting time of spells with a casting time of a full-round action or longer.
 \subcf{Retributive Surge}
 Whenever the sorcerer takes damage, he gains a bonus to spellpower with all spells for 1 round.
-At all other times, he gains a bonus to wild surges with all spells.
+At all other times, he takes a penalty to wild magic rolls with all spells.
 \subcf{6th -- Empathic Surge}
-The sorcerer gains a bonus to spellpower with Mind spells, but gains a bonus to his magic surges with spells that deal damage.
-He also takes a penalty to his Mental defense equal to his spellsurge bonus.
+The sorcerer gains a bonus to spellpower with Mind spells.
+In exchange, he takes a penalty to his Mental defense, and to his wild magic rolls with spells that deal damage.
 \subcf{6th -- Passive Surge}
 The sorcerer gains a bonus to spellpower with all spells.
-If he takes damage, he loses this bonus and gains a bonus to his wild surges for  1 round.
+If he takes damage, he loses this bonus and takes a penalty to his wild magic rolls for  1 round.
 \subcf{6th -- Patient Surge}
-The sorcerer gains a bonus to his spellpower with all spells, but all spells he casts require at least a full-round action to cast.
+The sorcerer gains a bonus to his spellpower with all spells.
+In exchange, all spells he casts require at least a full-round action to cast.
 This does not increase the casting time of spells with a casting time of a full-round action or longer.
 \subcf{10th -- Extending Surge}
-The sorcerer doubles the range of his spells with a spell level up to his surge bonus, but he gains a bonus to his wild surges with all spells.
+The sorcerer doubles the range of his spells with a spell level up to his surge bonus.
+In exchange, he takes a penalty to his wild magic rolls with all spells.
 \subcf{10th -- Silent Surge}
-The sorcerer can cast spells with a spell level up to his surge bonus as if they did not have verbal components, but he gains a bonus to his wild surges with all spells.
+The sorcerer can cast spells with a spell level up to his surge bonus as if they did not have verbal components.
+In exchange, he takes a penalty to his wild magic rolls with all spells.
 \subcf{10th -- Stilled Surge}
-The sorcerer can cast spells with a spell level up to his surge bonus as if they did not have somatic components, but he gains a bonus to his wild surges with all spells.
-\subcf{14th -- Lifebound Surge}%too powerful
-The sorcerer gains a bonus to his spellpower with all spells, but takes damage equal to his spellpower whenever he casts a spell.
+The sorcerer can cast spells with a spell level up to his surge bonus as if they did not have somatic components.
+In exchange, he takes a penalty to his wild surges with all spells.
+\subcf{14th -- Lifebound Surge}
+The sorcerer gains a bonus to his spellpower with all spells.
+In exchange, he takes a penalty to his Fortitude defense, and takes damage equal to his spellpower whenever he casts a spell.
 \subcf{14th -- Lingering Surge}
-The sorcerer gains a bonus to his spellpower with spells that have a non-instantaneous duration, but gains a bonus to his wild surges with spells that are instantaneous.
+The sorcerer gains a bonus to his spellpower with spells that have a non-instantaneous duration.
+In exchange, he takes a penalty to his wild magic rolls with spells that are instantaneous.
 \subcf{18th -- Othermind Surge}
 The sorcerer can focus on spells with a spell level up to his surge bonus as a swift action, and can cast other spells while focusing on such spells.
-He gains a bonus to his wild surges with all spells.
+In exchange, he takes a penalty to his wild magic rolls with all spells.
 \subcf{18th -- Widening Surge}
-The sorcerer doubles the area affected by his area spells with a spell level up to his surge bonus, but he gains a bonus to his wild surges with all spells.
-
-\cf{Sor}[3rd]{Improved Wild Magic}[Ex]
-When the sorcerer miscasts a spell or spellblend with his wild magic ability, the normal effects of the spell (or spells) take place in addition to any miscast effects.
-This does not affect spells the sorcerer miscasts for other reasons, such as if his concentration is broken.
+The sorcerer doubles the area affected by his area spells with a spell level up to his surge bonus.
+In exchange, he takes a penalty to his wild surges with all spells.
 
 \cf{Sor}[5th]{Defensive Spellblend}[Ex]
 The sorcerer may combine his cantrips with his spells.
