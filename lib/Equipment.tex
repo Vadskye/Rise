@@ -511,3 +511,89 @@ Colossal & \mult16 & \mult12 & \mult32 & \mult12 \\
 \subsection{Special Materials}
 Armor and shields can be made from special materials, which can alter the properties of the item. The most common special material is ironwood, which is made from wood magically treated using the \spell{ironwood} ritual to be as strong as steel. Ironwood armor functions exactly like  armor of the same type, except that it is made of wood. This causes it to weigh half the normal weight, and allows druids to wear it without penalty. However, it costs twice as much as armor of the same type would normally cost, to a minimum of an additional 200 gp.
 
+\section{Consumable Items}\label{Consumable Items}
+
+Many substances exist that can aid adventurers.
+
+\subsection{Poisons}\label{Poisons}
+
+\begin{dtable*}
+    \lcaption{Typical Poisons}\pdfbookmark[3]{Typical Poisons}{}
+    \begin{dtabularx}{\textwidth}{l l l l l X l}
+        \tb{Poison}         & \tb{Transmission} & \tb{Form} & \tb{Potency} & \tb{Primary Effect}            & \tb{Terminal Effect}                              & \tb{Price} \\
+        Nitharit            & Contact           & Powder    & 3            & Sickened                       & Nauseated for 1 round                             &            \\
+        Sassone leaf        & Contact           & Powder    & 6            & 1d6 damage per round           & 1d6 damage per two potency                        &            \\
+        Dragon bile         & Contact           & Liquid    & 10           & Sickened, 1d8 damage per round & 1d8 damage per two potency, nauseated for 1 round &            \\
+        Black lotus extract & Contact           & Liquid    & 15           & 1d10 damage per round          & 1d10 damage per two potency                       &            \\
+        Arsenic             & Ingestion         & Powder    & 5            & 1d6 damage per round           & 1d6 damage per two potency                        &            \\
+        Insanity mist       & Ingestion         & Gas       & 10           & Disoriented                    & Confused for 1 round                              &            \\
+    \end{dtabularx}
+\end{dtable*}
+
+Poisons can deal damage, weaken creatures, or even kill them.
+Some effects which are not literally poisonous, such as animal venom or fungal spores, are considered poisons.
+
+\subsubsection{Poison Transmission}\label{Poison Transmission}\label{Transmission}
+
+There are three ways that poisons can be contracted.
+
+\parhead{Contact} A contact poison affects any creature that touches it with bare skin.
+\parhead{Ingestion} An ingestion poison affects any creature that eats, drinks, or breathes it, depending on the type of poison.
+Ingestion poisons have no effect when used to coat weapons.
+\parhead{Injury} An injury poison affects any creature injured by something carrying the poison.
+Almost all injury poisons take liquid form, and are typically used to coat weapons.
+An attack that deals no damage cannot transmit injury poisons.
+
+\subsubsection{Poison Forms}\label{Poison Forms}
+
+There are four forms of poison.
+
+\parhead{Gas} Gaseous poisons are difficult to store, but 
+\parhead{Liquid} Liquid poisons are the most common type of poison.
+Liquid poisons can be used to coat weapons, slipped into food, or simply thrown at foes.
+\parhead{Pellet} Some rare poisons come in small, solid pellets or cubes.
+Typically, these pellets contain a powerful liquid poison that becomes inert quickly after being exposed.
+Pellet poisons cannot be used to coat weapons or thrown at foes, but can be slipped into food.
+\parhead{Powder} Poison in powder form cannot be used to coat weapons, but can be slipped into food or thrown at foes.
+
+\subsubsection{Poison Effects}\label{Poison Effects}
+
+Poisons can have a wide variety of effects, as determined by the type of poison used.
+However, most poison share certain common properties.
+
+\parhead{Poison Attacks}\label{Potency}\label{Poison Potency}
+All poisons have a potency.
+Unless otherwise noted, a poison's attack bonus is equal to its potency.
+At the end of each round, the poison makes an attack roll against the Fortitude defense of the poisoned creature.
+Success means the creature suffers the effect of the poison, and gets closer to the poison's terminal effect (see Terminal Effects, below).
+For every 10 points by which the attack succeeds, it counts as an additional successful attack for the purpose of reaching the poison's terminal effect.
+If the attack fails, the creature does not suffect the effect of the poison that round, and gets closer to resisting the poison (see Resisting Poisons, below).
+For every 10 points by which the attack fails, it counts as an additional failed attack for the purpose of resisting the poison.
+
+\parhead{Resisting Poisons}
+If a poisoned creature resists a poison three times, the creature stops being poisoned by that poison.
+Unless otherwise noted, this removes any lingering effects from the poison.
+
+\parhead{Primary Effects}
+Most poisons have primary effects.
+If the poison successfully attacks a poisoned creature, the creature suffers the poison's primary effect as long as the creature remains poisoned.
+Repeated primary effects, such as damage per round, occur at the end of each round.
+This includes the round in which the creature is initially affected, but not the round it stops being poisoned.
+
+\parhead{Terminal Effects}
+Most poisons have a terminal effect based on the type of the poison.
+If the poison successfully attacks a poisoned creature three times, the creature suffers the poison's terminal effect.
+Unless otherwise noted, the terminal effect occurs in addition to the poison's normal effect that round.
+Once a creature suffers a poison's terminal effect, it stops being poisoned.
+This does not remove any lingering effects from the poison, but prevents the creature's condition from worsening.
+
+\parhead{Multiple Doses}
+A creature can be affected by multiple doses of the same poison.
+This does not cause the same effect to occur multiple times, but each extra dose increases the potency of the poison by 1.
+
+A poison is considered the same if it has the same name and comes from the same source.
+For example, a creature bitten multiple times by the same giant spider suffers multiple doses of the same poison.
+A creature bitten multiple times by different giant spiders considers each spider's poison separately.
+
+\parhead{Poison Quality} Some poisons are unusually high or low quality. 
+
