@@ -16,7 +16,7 @@ body {
     position: relative !important;
 }
 
-#sheet-root {
+.sheet-root {
     padding: 0;
 }
 
@@ -132,7 +132,7 @@ input[type=number] {
     border-radius: 0.5em;
 }
 
-#sheet-rise-title {
+.sheet-rise-title {
     font-family: "Old English Text MT";
     text-align: center;
     font-size: 3.5em;
@@ -160,20 +160,20 @@ input[type=number] {
 
 /* section-specific formatting */
 
-#sheet-boring-stuff {
+.sheet-boring-stuff {
     margin-top: 0.25em;
 }
 
-#sheet-boring-stuff .sheet-labeled-text-input {
+.sheet-boring-stuff .sheet-labeled-text-input {
     flex-grow: 1;
     flex-basis: 20%;
 }
 
-#sheet-attacks, #sheet-main-sheet-body, #sheet-resources {
+.sheet-attacks, .sheet-main-body, .sheet-resources {
     flex-grow: 1;
 }
 
-#sheet-main-sheet-body > div {
+.sheet-main-body > div {
     margin-bottom: 0.52em;
 }
 
@@ -186,11 +186,11 @@ input[type=text].passive-ability {
     flex-grow: 1;
 }
 
-#sheet-defenses {
+.sheet-defenses {
     margin-left: 0;
 }
 
-#sheet-hit-points {
+.sheet-hit-points {
     margin-right: 0;
 }
 
@@ -218,25 +218,25 @@ input[type=text].passive-ability {
     font-weight: bold;
 }
 
-#sheet-other-skills .sheet-attribute {
+.sheet-other-skills .sheet-attribute {
     font-weight: bold;
     font-size: 1.25em;
     text-align: center;
 }
 
-#sheet-constitution {
+.sheet-constitution {
     margin-bottom: 0.25em;
 }
 
-#sheet-willpower {
+.sheet-willpower {
     margin-bottom: 0;
 }
 
-#sheet-sidebar {
+.sheet-sidebar {
     margin-left: 1px;
 }
 
-#sheet-main-sheet-body {
+.sheet-main-sheet-body {
     margin-right: 1px;
 }
 
@@ -244,7 +244,7 @@ input[type=text].passive-ability {
     margin-bottom: 0.1em !important;
 }
 
-#sheet-other-skills .sheet-attribute {
+.sheet-other-skills .sheet-attribute {
     margin-bottom: 0;
 }
 
@@ -256,7 +256,7 @@ input[type=text].passive-ability {
  * SECOND PAGE
  * */
 
-#sheet-level-chart, #sheet-abilities, #sheet-calcs {
+.sheet-level-chart, .sheet-abilities, .sheet-calcs {
     flex-grow: 1;
 }
 
@@ -269,7 +269,7 @@ input[type=text] {
     justify-content: center;
 }
 
-.sheet-flex-row.level-number-wrapper, #sheet-level-chart input {
+.sheet-flex-row.level-number-wrapper, .sheet-level-chart input {
     height: 2em;
     /* overlap the number borders */
     margin-top: -1px;
@@ -280,11 +280,11 @@ input[type=text] {
     font-size: 1.5em;
 }
 
-#sheet-level-chart input[type=number], .sheet-eq-misc input[type=number] {
+.sheet-level-chart input[type=number], .sheet-eq-misc input[type=number] {
     box-shadow: 0 0 2px 0px #999 inset;
 }
 
-#sheet-bab, #sheet-fort, #sheet-ref, #sheet-ment {
+.sheet-bab, .sheet-fort, .sheet-ref, .sheet-ment {
     align-items: center;
 }
 
@@ -303,15 +303,15 @@ input[type=text] {
     */
 }
 
-#sheet-level-numbers .sheet-chart-header {
+.sheet-level-numbers .sheet-chart-header {
     border-radius: 0.5em 0 0 0.5em;
 }
 
-#sheet-level-numbers input {
+.sheet-level-numbers input {
     width: 2em;
 }
 
-#sheet-abilities .sheet-chart-header {
+.sheet-abilities .sheet-chart-header {
     border-radius: 0 0.5em 0.5em 0;
 }
 
@@ -326,8 +326,11 @@ input[type=text] {
     margin: 0;
 }
 
-.sheet-two-choices input[type=number] {
-    background-color: #EEE;
+.sheet-two-choices input[type=number]:disabled {
+    background-color: #ABD;
+}
+.sheet-two-choices input[type=number]:enabled {
+    background-color: #CDF;
 }
 
 .sheet-equation-glue {
@@ -343,15 +346,15 @@ input[type=text] {
     font-size: 1.25em;
 }
 
-#sheet-calcs {
+.sheet-calcs {
     margin-right: 0;
 }
 
-#sheet-calcs > .sheet-flex-row {
+.sheet-calcs > .sheet-flex-row {
     flex-wrap: nowrap;
 }
 
-#sheet-calc-attributes {
+.sheet-calc-attributes {
     margin-bottom: 0 !important;
 }
 
@@ -397,7 +400,7 @@ input[type=text] {
     flex-grow: 1;
 }
 
-#sheet-sidebar {
+.sheet-sidebar {
     margin-left: 0;
 }
 
@@ -424,31 +427,31 @@ input[type=text] {
     flex-grow: 1;
 }
 
-#sheet-adventuring > div {
+.sheet-adventuring > div {
     flex-grow: 1;
 }
 
-#sheet-proficiencies {
+.sheet-proficiencies {
     margin-left: 0;
 }
 
-#sheet-misc {
+.sheet-misc {
     margin-right: 0;
 }
 
-#sheet-weight-limits {
+.sheet-weight-limits {
     margin-bottom: 2.05em;
 }
 
-#sheet-weight-limits .sheet-labeled-text-input {
+.sheet-weight-limits .sheet-labeled-text-input {
     flex-grow: 1;
 }
 
-#sheet-wealth-and-xp .sheet-flex-col {
+.sheet-wealth-and-xp .sheet-flex-col {
     flex-grow: 1;
 }
 
-#sheet-wealth-and-xp input {
+.sheet-wealth-and-xp input {
     width: 100%;
 }
 
