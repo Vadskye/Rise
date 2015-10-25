@@ -1,7 +1,5 @@
 is_pretty = False
-
-def set_pretty(new_pretty):
-    is_pretty = new_pretty
+input_name_prefix = None
 
 def html_separator():
     return '\n' if is_pretty else ''
@@ -26,6 +24,10 @@ def ensure_valid_attributes_and_contents(attributes = None, contents = None):
 
 def html_tag(tag_name, attributes = None, contents = None):
     attributes, contents = ensure_valid_attributes_and_contents(attributes, contents)
+
+    if input_name_prefix and attributes.get('name'):
+        attributes['name'] = input_name_prefix + attributes['name']
+
     if contents is None:
         return '<{0}{1} />'.format(
             tag_name,
@@ -57,6 +59,9 @@ def convert_html_attributes(attributes = None):
             attributes.get(attribute_name)
         )
     return attributes_text
+
+def button(attributes = None, contents = None):
+    return html_tag('button', attributes, contents)
 
 def div(attributes = None, contents = None):
     return html_tag('div', attributes, contents)
@@ -112,37 +117,50 @@ def card(attributes, contents):
         attributes['class'] = 'card'
     return div(attributes, contents)
 
+def hidden_input(attributes = None):
+    attributes = attributes or dict()
+    attributes['type'] = 'hidden'
+    return html_tag('input', attributes)
+
+def number_input(attributes = None):
+    attributes = attributes or dict()
+    attributes['type'] = 'number'
+    if not attributes.has_key('value'):
+        attributes['value'] = '0'
+    return html_tag('input', attributes)
+
 def text_input(attributes = None):
     attributes = attributes or dict()
     attributes['type'] = 'text'
     attributes['size'] = attributes.get('size', '1')
     return html_tag('input', attributes)
 
-def number_input(attributes = None):
-    attributes = attributes or dict()
-    attributes['type'] = 'number'
-    return html_tag('input', attributes)
-
 # less simple
+
+def space_join(values):
+    return ' '.join(filter(None, values))
+
+def space_append(dictionary, key, value):
+    dictionary[key] = space_join([value, dictionary.get(key)])
 
 def flex_row(attributes = None, contents = None):
     attributes, contents = ensure_valid_attributes_and_contents(attributes, contents)
-    attributes['class'] = 'flex-row ' + attributes.get('class', '')
+    space_append(attributes, 'class', 'flex-row')
     return div(attributes, contents)
 
 def flex_col(attributes = None, contents = None):
     attributes, contents = ensure_valid_attributes_and_contents(attributes, contents)
-    attributes['class'] = 'flex-col ' + attributes.get('class', '')
+    space_append(attributes, 'class', 'flex-col')
     return div(attributes, contents)
 
 def flex_wrapper(attributes = None, contents = None):
     attributes, contents = ensure_valid_attributes_and_contents(attributes, contents)
-    attributes['class'] = 'flex-wrapper ' + attributes.get('class', '')
+    space_append(attributes, 'class', 'flex-wrapper')
     return div(attributes, contents)
 
 def labeled_text_input(label_name, input_name, attributes = None):
     attributes = attributes or dict()
-    attributes['class'] = 'labeled-text-input ' + attributes.get('class', '')
+    space_append(attributes, 'class', 'labeled-text-input')
     return div(attributes, flex_col([
         text_input({
             'name': input_name,
@@ -153,40 +171,43 @@ def labeled_text_input(label_name, input_name, attributes = None):
         ),
     ]))
 
-def labeled_number_input(label_name, input_name = None, attributes = None):
+def labeled_number_input(label_name, input_name = None, attributes = None, input_attributes = None):
     attributes = attributes or dict()
-    attributes['class'] = 'labeled-number-input ' + attributes.get('class', '')
+    space_append(attributes, 'class', 'labeled-number-input')
     input_name = input_name or label_name.lower()
+
+    if input_attributes is None:
+        input_attributes = {'name': input_name}
+    else:
+        input_attributes['name'] = input_attributes.get('name') or input_name
 
     return flex_row(attributes, [
         span(
             {'class': 'number-label'},
             label_name
         ),
-        number_input({
-            'name': input_name,
-        }),
+        number_input(input_attributes),
     ])
 
-def unlabeled_number_input(attributes = None):
+def unlabeled_number_input(attributes = None, number_input_attributes = None, text_input_attributes = None):
     attributes = attributes or dict()
-    attributes['class'] = 'unlabeled-number-input ' + attributes.get('class', '')
+    space_append(attributes, 'class', 'unlabeled-number-input')
     return flex_row(attributes, [
-        text_input(),
-        number_input(),
+        text_input(attributes = text_input_attributes),
+        number_input(attributes = number_input_attributes),
     ])
 
-def underlabeled_number_input(label_name, input_name, attributes = None):
+def underlabeled_number_input(label_name, input_name = None, attributes = None, input_attributes = None):
     attributes = attributes or dict()
-    if attributes.has_key('class'):
-        attributes['class'] += ' underlabeled-number-input'
+    space_append(attributes, 'class', 'underlabeled-number-input')
+
+    if input_attributes is None:
+        input_attributes = {'name': input_name}
     else:
-        attributes['class'] = 'underlabeled-number-input'
+        input_attributes['name'] = input_attributes.get('name') or input_name
 
     return flex_col(attributes, [
-        number_input({
-            'name': input_name,
-        }),
+        number_input(input_attributes),
         div(
             {'class': 'under-label'},
             label_name
@@ -200,3 +221,6 @@ def labeled_dual_input(label_name, text_input_name, number_input_name):
             'name': number_input_name,
         }),
     ])
+
+def value_sum(values):
+    return '(' + '+'.join(['@{'+value+'}' for value in values]) + ')'

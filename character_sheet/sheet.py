@@ -1,9 +1,20 @@
+import cgi_simple
 from cgi_simple import *
 import first_page
 import second_page
 import third_page
+import sys
 
 DESTINATION = 'roll20'
+
+try:
+    if sys.argv[1] == 'pretty':
+        cgi_simple.is_pretty = True
+except IndexError:
+    pass
+
+if DESTINATION == 'roll20':
+    cgi_simple.input_name_prefix = 'attr_'
 
 def main():
     with open('first_page.html', 'w') as fh:
@@ -11,11 +22,13 @@ def main():
             debug_stylesheets('first_page'),
             debug_html_wrapper(first_page.create_page()),
         ]) + '\n')
+
     with open('second_page.html', 'w') as fh:
         fh.write(''.join([
             debug_stylesheets('second_page'),
             debug_html_wrapper(second_page.create_page()),
         ]) + '\n')
+
     with open('third_page.html', 'w') as fh:
         fh.write(''.join([
             debug_stylesheets('third_page'),
