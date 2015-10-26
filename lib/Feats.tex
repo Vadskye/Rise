@@ -196,6 +196,7 @@ Some strike feats instead require a specific action to use.
         \thead{Magic Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
         \featref{Bardic Spellpower} & Arcane spellcasting ability & Fighter and rogue levels improve some spells & \featpref{Bardic Spellpower} \\
         \featref{Battlecaster} & Proficiency with light armor & Reduce arcane spell failure by 10\% & \featpref{Battlecaster} \\
+        \featref{Brutal Magic} & Base attack bonus \plus4, 1st level spells & Gain spellpower bonus after making physical attack & \featpref{Brutal Magic} \\
         \featref{Combat Casting} & \x &  \plus3 bonus to Concentration checks to cast spells, reroll 1/day & \featpref{Combat Casting} \\
         \featref{Counterspell} & Spellcraft 10 ranks, 2nd level spells & Counter spells cast by foe & \featpref{Counterspell} \\
         \tind\featref{Flexible Counterspell} & Counterspell & Use any spell to counterspell & \featpref{Flexible Counterspell} \\
@@ -204,11 +205,13 @@ Some strike feats instead require a specific action to use.
         \featref{Magical Synthesis} & Levels in two magical classes & Increase spellcasting ability in two magical classes at once & \featpref{Magical Synthesis} \\
         \featref{Mass Transporter} & 5th level Conjuration (Translocation) spell & Transport many creatures at once & \featpref{Mass Transporter} \\
         \featref{Mighty Summons} & 2nd level summoning spell & Summoned creatures gain \plus2 Str, \plus2 Con & \featpref{Mighty Summons} \\
+        \featref{Peaceful Magic} & 2nd level spells & Gain spellpower bonus after not taking damage & \featpref{Peaceful Magic} \\
         \featref{Residual Awareness} & Divination (Awareness) spell & Gain brief Perception bonus after casting a spell & \featpref{Residual Awareness} \\
         \featref{Residual Knowledge} & Divination (Knowledge) spell & Gain brief Knowledge bonus after casting a spell & \featpref{Residual Knowledge} \\
         \featref{Residual Beguilement} & 3rd level Enchantment (Beguilement) spell & Gain Persuasion bonus after casting a spell & \featpref{Residual Beguilement} \\
         \featref{Residual Shield} & Abjuration (Shielding) spell & Gain benefits of spell briefly after casting on another creature & \featpref{Residual Shield} \\
-        \featref{Resilient Magic} & 2nd level Abjuration (Negation) spell & Spells persist for 1 round after being dispelled & \featpref{Resilient Magic} \\
+        \featref{Resilient Magic} & 2nd level Abjuration spell & Spells persist for 1 round after being dispelled & \featpref{Resilient Magic} \\
+        \featref{Retributive Magic} & 1st level Abjuration spell & Gain spellpower bonus after taking damage & \featpref{Retributive Magic} \\
         \featref{Ritual Caster} & Int 3 & Gain ability to perform rituals & \featpref{Ritual Caster} \\
         \featref{Spell Focus}\fn{1} & 2nd level spells &  \plus2 spellpower with specific type of magic & \featpref{Spell Focus} \\
         \tind \featref{Spell Specialization} & 4th level spells, Spell Focus &  \plus2 spellpower with specific type of magic, \minus2 with other types.
@@ -222,6 +225,7 @@ Some strike feats instead require a specific action to use.
         \featref{Imbued Spellstrike} & 2nd level spells & Combine spell with weapon attack (\plus1) & \featpref{Imbued Spellstrike} \\
         \tind \featref{Improved Imbued Spellstrike} & 3rd level spells, Imbued Spellstrike & Imbue weapon with spell's power up to 5 minutes (\plus2) & \featpref{Improved Imbued Spellstrike} \\
         \featref{Quicken Spell} & 3rd level spells & Cast spell as swift action, but lose next action (\plus2) & \featpref{Quicken Spell} \\
+        \featref{Patient Spell} & 2nd level spells & Cast spell slowly for spellpower bonus & \featpref{Patient Spell} \\
         \featref{Reach Spell} & 3rd level spells & Cast touch spell at Close range (\plus2) & \featpref{Reach Spell} \\
         \featref{Shape Spell} & 3rd level spells & Exclude areas within spell's area (\plus2) & \featpref{Shape Spell} \\
         \featref{Silent Spell} & 2nd level spells & Cast spell without verbal components (\plus1) & \featpref{Silent Spell} \\
@@ -542,6 +546,11 @@ Any other abilities, such as channeled rages, function normally.
 \par If your Perception is 20, you gain blindsight into adjacent squares, allowing you to see invisible or concealed creatures perfectly.
 \parhead{Normal}
 You have a 50\% chance to miss opponents you can't see, and you are \defenseless against them.
+
+\feat{Brutal Magic}{Combat, Magic}
+\featpres Base attack bonus \plus4, 1st level spells.
+\featben If you deal lethal damage in excess of your spellpower with physical attacks during a single round, you gain a \plus2 bonus to spellpower for 1 round.
+This bonus does not stack with itself.
 
 \feat{Calculated Strike}{Combat, Precision, Strike}
 \featpre Intelligence 5, two attacks.
@@ -1567,11 +1576,21 @@ In exchange, you take a \minus2 penalty to physical attacks.
 \stylereq Wield a melee weapon.
 You must make a melee attack or take the total defense action each round.
 
+\feat{Patient Spell}{Metamagic}
+\featpre Ability to cast 2nd level spells.
+\featben A patient spell requires a full-round action to cast.
+In exchange, you gain a \plus2 bonus to spellpower with the spell.
+A patient spell uses up a spell slot one level higher than the spell's actual level.
+
 \feat{Patient Strike}{Reaction, Strike}
 \featpre Intelligence 10, three attacks.
 \featben In place of three attacks, you can make a physical attack.
 If you hit, you deal damage normally.
 If the target does not make a physical attack against you during the current phase, this attack deals quadruple damage.
+
+\feat{Peaceful Magic}{Magic}
+\featpre Ability to cast 2nd level spells.
+\featben If you have not taken damage within the past 5 rounds, you gain a \plus2 bonus to spellpower.
 
 \feat{Penetrating Strike}{Combat, Strike}
 \featpre Three attacks.
@@ -1699,7 +1718,7 @@ If the initial performance was done with the Rapid Performance feat, you take th
 \featben Whenever you cast an Abjuration (Shielding) spell with a duration of \durshort or longer on another creature, you gain the benefits on yourself for 1 round.
 
 \feat{Resilient Magic}{Magic}
-\featpre Ability to cast an Abjuration (Negation) spell of at least 2nd level.
+\featpre Ability to cast an Abjuration spell of at least 2nd level.
 \featben Your spells persist for 1 round after being dispelled if they still have time remaining in their duration.
 
 \feat{Resist Maneuver}{Class, Fighter}
@@ -1714,6 +1733,11 @@ Ability to cast 4th level spells.
 If you do, the counterspelled spell is turned back on the caster as if it were affected by the \spell{spell turning}
 spell.
 If it cannot be affected by \spell{spell turning}, such as if it is a spell that only affects the caster, it is simply countered as normal.
+
+\feat{Retributive Magic}{Magic}
+\featpre Ability to cast an Abjuration spell of at least 1st level.
+\featben If you take lethal damage in excess of your spellpower during a single round, you gain a \plus2 bonus to spellpower for 1 round.
+This bonus does not stack with itself.
 
 \feat{Riposte}{Combat, Reaction}
 \featpres Dexterity 3, Parry.
