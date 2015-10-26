@@ -651,9 +651,9 @@
     \begin{tabularx}{\linewidth}{@{} >{\lcol}X l @{}}
 }
 
-\DeclareDocumentCommand{\spellmiscast}{}
+\DeclareDocumentCommand{\spellmiscast}{m}
 {
-    \par\noindent\textit{Miscast}:\xspace
+    \par\noindent\textit{#1 Miscast}:\xspace
 }
 
 % args:
@@ -753,9 +753,9 @@
 
 \ExplSyntaxOff
 
-\newcommand{\miscastexplode}{\spellmiscast The spell does not have its normal effect. Instead, the magical energy explodes, dealing 1d6 damage per spell level to you and all creatures adjacent to you.}
-\newcommand{\miscastrandom}{\spellmiscast The spell targets a random valid target within range (including yourself, if applicable).}
-\newcommand{\miscastyou}{\spellmiscast The spell targets you, or originates from your location, instead of its intended location. In addition, it only extends out 5 feet from your location, rather than its normal area.}
+\newcommand{\miscastexplode}{\spellmiscast{Explosive} The spell does not have its normal effect. Instead, the magical energy explodes, dealing 1d6 damage per spell level to you and all creatures adjacent to you.}
+\newcommand{\miscastrandom}{\spellmiscast{Retargeting} The spell targets a random valid target within range (including yourself, if applicable).}
+\newcommand{\miscastyou}{\spellmiscast{Localized} The spell targets you, or originates from your location, instead of its intended location. In addition, it only extends out 5 feet from your location, rather than its normal area.}
 
 \newcommand{\classbasics}[1]{\par\noindent\textbf{#1}:}
 
