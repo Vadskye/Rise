@@ -2277,7 +2277,7 @@ He chooses a single ranger lore from the list below.
 Some ranger lores have minimum ranger levels, as indicated in the title of the ability.
 At his 6th ranger level, and every three ranger levels thereafter, the ranger gains an additional ranger lore.
 
-Some range lores depend on the ranger's lore power.
+Some ranger lores depend on the ranger's lore power.
 A ranger's lore power is equal to his Perception or his ranger level, whichever is higher.
 
 All ranger lore abilities are extraordinary abilities unless otherwise noted.
@@ -2732,26 +2732,26 @@ This does not allow her to deliver ambush attacks to the same creature multiple 
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolpoor} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
-        \sorcererprogressionrow{1}  & Cantrip, spells, wild magic           \\
-        \sorcererprogressionrow{2}  & Cantrip, focused casting              \\
-        \sorcererprogressionrow{3}  & Spellsurge \plus2                     \\
-        \sorcererprogressionrow{4}  & \x                                    \\
-        \sorcererprogressionrow{5}  & Defensive spellblend                  \\
-        \sorcererprogressionrow{6}  & Spellsurge                            \\
-        \sorcererprogressionrow{7}  & Arcane resilience                     \\
-        \sorcererprogressionrow{8}  & Spellsurge \plus3                     \\
-        \sorcererprogressionrow{9}  & Offensive spellblend                  \\
-        \sorcererprogressionrow{10} & Spellsurge                            \\
-        \sorcererprogressionrow{11} & Spell resistance                      \\
-        \sorcererprogressionrow{12} & \x                                    \\
-        \sorcererprogressionrow{13} & Improved defensive spellblend         \\
-        \sorcererprogressionrow{14} & Spellsurge, spellsurge \plus4         \\
-        \sorcererprogressionrow{15} & \x                                    \\
-        \sorcererprogressionrow{16} & \x                                    \\
-        \sorcererprogressionrow{17} & Improved offensive spellblend         \\
-        \sorcererprogressionrow{18} & Spellsurge                            \\
-        \sorcererprogressionrow{19} & Endless surge,                        \\
-        \sorcererprogressionrow{20} & Greater wild magic, spellsurge \plus5 \\
+        \sorcererprogressionrow{1}  & Cantrip, spells, wild magic \plus2      \\
+        \sorcererprogressionrow{2}  & Cantrip, focused casting \\
+        \sorcererprogressionrow{3}  & Arcane adaptation                       \\
+        \sorcererprogressionrow{4}  &                                         \\
+        \sorcererprogressionrow{5}  & Defensive spellblend, wild magic \plus3 \\
+        \sorcererprogressionrow{6}  &                                         \\
+        \sorcererprogressionrow{7}  & Arcane adaptation                       \\
+        \sorcererprogressionrow{8}  &                                         \\
+        \sorcererprogressionrow{9}  & Offensive spellblend                    \\
+        \sorcererprogressionrow{10} & Wild magic \plus4                       \\
+        \sorcererprogressionrow{11} & Arcane adaptation                       \\
+        \sorcererprogressionrow{12} &                                         \\
+        \sorcererprogressionrow{13} & Improved defensive spellblend           \\
+        \sorcererprogressionrow{14} &                                         \\
+        \sorcererprogressionrow{15} & Arcane adaptation, wild magic \plus5    \\
+        \sorcererprogressionrow{16} &                                         \\
+        \sorcererprogressionrow{17} & Improved offensive spellblend           \\
+        \sorcererprogressionrow{18} &                                         \\
+        \sorcererprogressionrow{19} & Arcane adaptation                       \\
+        \sorcererprogressionrow{20} & Greater wild magic, wild magic \plus6   \\
     \end{dtabularx}
 \end{dtable}
 
@@ -2777,7 +2777,8 @@ Armor of any type interferes with a sorcerer's arcane gestures, which can cause 
 \cf{Sor}{Spells}
 A sorcerer casts arcane spells using his Willpower.
 The maximum spell level a sorcerer can learn or cast is equal to half his sorcerer level (minimum 1) or his Willpower, whichever is lower.
-A sorcerer's spellpower is equal to his sorcerer level or Willpower, whichever is higher.
+A sorcerer's spellpower is normally equal to his sorcerer level.
+See the Wild Magic ability, below.
 
 At 1st level, the sorcerer knows one 1st level spell.
 At every level thereafter, the sorcerer learns one additional spell.
@@ -2789,15 +2790,17 @@ Their ability to cast spells is limited by their lack of control over their magi
 See Wild Magic, below, for details.
 
 \cf{Sor}{Wild Magic}[Ex]
-Every time a sorcerer casts a spell, except cantrips, he must make a wild magic roll.
-To make a wild magic roll, roll d20 \add 1 per two sorcerer levels.
+Every time a sorcerer casts a spell, except cantrips, he must make a \glossterm{wild magic roll}.
+To make a wild magic roll, roll d20 \add half sorcerer level or half Willpower, whichever is higher.
 The DC of the roll is equal to 10 \add the spell's level.
 This roll is not an attack or check, and is not modified by abilities that affect attacks or checks.
 On a natural 1, the spell is always miscast, regardless of other modifiers.
 
-If the wild magic roll succeeds, the spell is cast normally.
+If the wild magic roll succeeds, the spell is cast with a \plus2 bonus to spellpower.
 Failure means the spell's miscast effect occurs in addition to the spell's normal effect (see \pcref{Miscasting}).
 In addition, if the sorcerer fails a wild magic roll, he cannot cast spells of the same level as the miscast spell for 10 minutes per spell level.
+
+At 5th level, and every 5 levels thereafter, the spellpower bonus from succeeding on a wild magic roll increases by \plus1.
 
 \cf{Sor}{Cantrip}
 Cantrips are minor spells which do not require effort to use.
@@ -2810,69 +2813,56 @@ At his 2nd sorcerer level, the sorcerer learns a second cantrip of his choice.
 
 \cf{Sor}[2nd]{Focused Casting}[Ex]
 If the sorcerer spends one minute focusing on casting a spell, he does not need to make a wild magic roll.
+This prevents him from gaining the bonus to spellpower from succeeding on a wild magic roll, but also prevents him from miscasting the spell.
 If his concentration is broken while casting a spell in this way, the sorcerer automatically miscasts the spell and suffers consequences as if he had failed a wild magic roll.
 
-\cf{Sor}[3rd]{Spellsurge}
-The sorcerer learns how to alter how he casts spells by initiating a spellsurge.
-He chooses a single spellsurge from the list below.
-Some spellsurges require a minimum sorcerer level, as indicated in the title of the ability.
-At his 6th sorcerer level, and every four sorcerer levels thereafter, the sorcerer learns an additional type of spellsurge.
+\cf{Sor}[3rd]{Arcane Adaptation}
+The sorcerer gains a new ability as he adapts to the magic that flows through him.
+He chooses a single arcane adaptation from the list below.
+Some arcane adaptations have minimum sorcerer levels, as indicated in the title of the ability.
+At his 7th sorcerer level, and every four sorcerer levels thereafter, the sorcerer gains an additional arcane adaptation.
 
-A sorcerer can initiate or end a spellsurge as a swift action.
-A spellsurge normally lasts for 5 rounds.
-While in a spellsurge, the sorcerer gains bonuses or penalties with some types of magic or aspects of spellcasting, as defined in the ability description.
+All arcane adaptations are extraordinary abilities unless otherwise noted.
 
-All spellsurges grant bonuses or penalties based on the sorcerer's spellsurge bonus.
-Initially, his spellsurge bonus is \plus2.
-A sorcerer can initiate a spellsurge a number of times per day equal to his spellsurge bonus.
-His spellsurge bonus improves to \plus3 at his 8th sorcerer level, to \plus4 at 14th sorcerer level, and finally to \plus5 at 20th sorcerer level.
+\subcf{Arcane Bloodline}
+The sorcerer gains a bloodline feat of his choice.
+This arcane adaptation can be taken multiple times.
+Each time, the sorcerer chooses a different feat.
+\subcf{Cautious Magic}
+When the sorcerer fails a wild magic roll, he may choose to supress the magical energy released.
+If he does, neither the spell nor its miscast effect occurs.
+This does not prevent the sorcerer from losing the ability to cast spells of the same level temporarily.
+\subcf{Rapid Recovery}
+When the sorcerer fails a wild magic roll to cast a spell, the time required to regain the ability to cast spells of the spell's level is reduced by 5 minutes.
+\subcf{Ritual Caster}
+The sorcerer gains the Ritual Caster feat, even if he does not meet the prerequisites.
+\subcf{7th -- Arcane Resilience}
+The sorcerer gains damage reduction against arcane spells equal to his sorcerer level or Constitution, whichever is higher.
+This allows him to ignore the first points of damage he takes each round.
+This ability applies against the sorcerer's own miscast effects.
+\subcf{7th -- Improved Focused Casting}
+When the sorcerer casts a spell using his focused casting ability, he gains a bonus to spellpower with the spell as if he had succeeded on a wild magic roll.
+\subcf{7th -- Wild Retargeting}
+When the sorcerer targets a random creature with a spell's miscast effect, he may roll twice to determine which creature is affected.
+He chooses which result is used.
+\subcf{11th -- Spell Resistance}
+The sorcerer gains spell resistance equal to 10 \add his sorcerer level or Constitution, whichever is higher.
+To affect the sorcerer with a spell, a caster must make an attack with its spellpower.
+If the attack beats the sorcerer's spell resistance, the spell works normally.
+Otherwise, the spell has no effect on the sorcerer.
 
-All spellsurges are extraordinary abilities unless otherwise specified.
-
-\subcf{Brutal Surge}
-Whenever the sorcerer makes a successful physical attack, he gains a bonus to spellpower with all spells for 1 round.
-At all other times, he gains a penalty to wild magic rolls with all spells.
-\subcf{Energetic Surge}
-The sorcerer gains a bonus to spellpower with acid, cold, electricity, and fire spells.
-In exchange, he takes a penalty to his wild magic rolls with all other spells.
-\subcf{Focused Surge}
-The sorcerer gains a bonus to his concentration checks.
-In exchange, all spells he casts require at least a full-round action to cast.
-This does not increase the casting time of spells with a casting time of a full-round action or longer.
-\subcf{Retributive Surge}
-Whenever the sorcerer takes damage, he gains a bonus to spellpower with all spells for 1 round.
-At all other times, he takes a penalty to wild magic rolls with all spells.
-\subcf{6th -- Empathic Surge}
-The sorcerer gains a bonus to spellpower with Mind spells.
-In exchange, he takes a penalty to his Mental defense, and to his wild magic rolls with spells that deal damage.
-\subcf{6th -- Passive Surge}
-The sorcerer gains a bonus to spellpower with all spells.
-If he takes damage, he loses this bonus and takes a penalty to his wild magic rolls for  1 round.
-\subcf{6th -- Patient Surge}
-The sorcerer gains a bonus to his spellpower with all spells.
-In exchange, all spells he casts require at least a full-round action to cast.
-This does not increase the casting time of spells with a casting time of a full-round action or longer.
-\subcf{10th -- Extending Surge}
-The sorcerer doubles the range of his spells with a spell level up to his surge bonus.
-In exchange, he takes a penalty to his wild magic rolls with all spells.
-\subcf{10th -- Silent Surge}
-The sorcerer can cast spells with a spell level up to his surge bonus as if they did not have verbal components.
-In exchange, he takes a penalty to his wild magic rolls with all spells.
-\subcf{10th -- Stilled Surge}
-The sorcerer can cast spells with a spell level up to his surge bonus as if they did not have somatic components.
-In exchange, he takes a penalty to his wild surges with all spells.
-\subcf{14th -- Lifebound Surge}
-The sorcerer gains a bonus to his spellpower with all spells.
-In exchange, he takes a penalty to his Fortitude defense, and takes damage equal to his spellpower whenever he casts a spell.
-\subcf{14th -- Lingering Surge}
-The sorcerer gains a bonus to his spellpower with spells that have a non-instantaneous duration.
-In exchange, he takes a penalty to his wild magic rolls with spells that are instantaneous.
-\subcf{18th -- Othermind Surge}
-The sorcerer can focus on spells with a spell level up to his surge bonus as a swift action, and can cast other spells while focusing on such spells.
-In exchange, he takes a penalty to his wild magic rolls with all spells.
-\subcf{18th -- Widening Surge}
-The sorcerer doubles the area affected by his area spells with a spell level up to his surge bonus.
-In exchange, he takes a penalty to his wild surges with all spells.
+This ability does not protect the sorcerer from his own miscast effects.
+\subcf{11th -- Wild Explosion}
+When the sorcerer miscasts a spell that explodes when miscast, the damage affects the sorcerer and enemies within a \areasmall radius of the sorcerer.
+It does not affect the sorcerer's allies within that area (other than himself).
+\subcf{15th -- Certain Magic}
+The sorcerer becomes unable to miscast for any reason except failing a wild magic roll.
+If he would miscast a spell, such as if his concentration is broken while casting, the spell simply fails to take effect.
+\subcf{19th -- Miscast Immunity}
+The sorcerer becomes immune to explosive and retargeting miscast effects from spells he casts and spells cast by other creatures.
+He no longer takes any damage from explosive miscasts.
+He may choose to be unaffected by retargeting miscast effects that target him.
+This does not protect him from localized miscasts.
 
 \cf{Sor}[5th]{Defensive Spellblend}[Ex]
 The sorcerer may combine his cantrips with his spells.
@@ -2883,22 +2873,8 @@ The cantrip need not target the sorcerer.
 In exchange, he gains a \plus5 bonus to his wild magic roll.
 The spell's level is used to determine the bonus to the sorcerer's wild magic roll.
 
-\cf{Sor}[7th]{Arcane Resilience}[Ex]
-The sorcerer gains damage reduction equal to his sorcerer level or Constitution against arcane spells.
-This allows him to ignore the first points of physical damage he takes each round.
-This ability applies against the sorcerer's own miscast effects.
-
 \cf{Sor}[9th]{Offensive Spellblend}[Ex]
 This ability functions like defensive spellblend, except that the spell need not only affect the sorcerer.
-
-\cf{Sor}[11th]{Spell Resistance}[Ex]
-Repeated exposure to magic grants the sorcerer resistance to magical effects.
-The sorcerer gains spell resistance equal to 10 \add either sorcerer level or Constitution.
-To affect the sorcerer with a spell, a caster must make an attack with its spellpower.
-If the attack beats the sorcerer's spell resistance, the spell works normally.
-Otherwise, the spell has no effect on the sorcerer.
-
-This ability does not affect the sorcerer's own miscast effects.
 
 \cf{Sor}[13th]{Improved Defensive Spellblend}[Ex]
 The sorcerer may combine two spells together.
@@ -2911,13 +2887,8 @@ The level of the higher level spell is used to determine the bonus to the sorcer
 \cf{Sor}[17th]{Improved Offensive Spellblend}[Ex]
 This ability functions like improved defensive spellblend, except that neither spell need only affect the sorcerer.
 
-\cf{Sor}[19th]{Endless Surge}[Ex]
-There is no limit to the duration of a sorcerer's spellsurge ability.
-If a spellsurge lasts longer than 5 rounds, he automatically succeeds on any Concentration check he makes to end the surge.
-
 \cf{Sor}[20th]{Greater Wild Magic}[Ex]
 When the sorcerer miscasts a spell or spellblend with his wild magic ability, the normal effects of the spell or spellblend take place twice, as if he had cast it twice.
-
 
 \subsection{Variant Sorcerer}
 
