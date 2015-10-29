@@ -399,10 +399,10 @@ A cleric's choice of domains has broad effects on the cleric's spellcasting and 
 The domains are listed below.
 
 \begin{itemize}
-    \item{Air} 
+    \item{Air}
     \item{Chaos}
     \item{Death}
-    \item{Destruction} 
+    \item{Destruction}
     \item{Earth}
     \item{Evil}
     \item{Fire}
@@ -928,7 +928,7 @@ neutral, or neutral evil.
 \subparhead{Strength} Climb, Jump, Sprint, Swim.
 \subparhead{Dexterity} Balance, Ride, Stealth.
 \subparhead{Intelligence} Heal, Knowledge (geography, nature).
-\subparhead{Perception} Awareness, Creature Handling, Survival. 
+\subparhead{Perception} Awareness, Creature Handling, Survival.
 \subparhead{Other} Intimidate.
 
 \classbasics{Skill Points}
@@ -2783,7 +2783,7 @@ See the Wild Magic ability, below.
 At 1st level, the sorcerer knows one 1st level spell.
 At every level thereafter, the sorcerer learns one additional spell.
 The spell can be of any level, up to a maximum of half the sorcerer's class level.
-A sorcerer's spells are drawn from the unrestricted spells on the arcane spell list (see \pcref{Arcane Spells}).
+A sorcerer's spells are drawn from the \glossterm{unrestricted spells} on the arcane spell list (see \pcref{Arcane Spells}).
 
 Sorcerers do not have a limit on the number of spells they can cast each day.
 Their ability to cast spells is limited by their lack of control over their magic.
@@ -2831,7 +2831,7 @@ Each time, the sorcerer chooses a different feat.
 \subcf{Cautious Magic}
 When the sorcerer fails a wild magic roll, he may choose to supress the magical energy released.
 If he does, neither the spell nor its miscast effect occurs.
-This does not prevent the sorcerer from losing the ability to cast spells of the same level temporarily.
+In addition, he loses the ability to cast spells of the same level for half as long as he normally would.
 \subcf{Rapid Recovery}
 When the sorcerer fails a wild magic roll to cast a spell, the time required to regain the ability to cast spells of the spell's level is reduced by 5 minutes.
 \subcf{Ritual Caster}
@@ -3205,7 +3205,7 @@ This does not allow him to activate his mass surge of power ability at will, and
 The spellwarped makes an special attack vs. Fortitude against a creature within \rngclose range.
 A successful attack causes the creature to become one size category smaller for 2 rounds.
 This has the following effects:
-\begin{itemize} 
+\begin{itemize}
     \item \minus10 ft.
         penalty to movement speed.
     \item \minus4 penalty to maneuver attack and defense.
@@ -3431,26 +3431,26 @@ This functions like the temporal prison invocation, except that no attack is req
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolpoor} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
-        \wizardprogressionrow{1}  & Cantrip, spells, rituals \\
-        \wizardprogressionrow{2}  & Cantrip, magic feat      \\
-        \wizardprogressionrow{3}  & Arcane insight                     \\
-        \wizardprogressionrow{4}  & Cantrip sequencer               \\
-        \wizardprogressionrow{5}  & Arcane insight                     \\
-        \wizardprogressionrow{6}  & Magic feat                         \\
-        \wizardprogressionrow{7}  & Arcane insight                     \\
-        \wizardprogressionrow{8}  & Defensive sequencer                \\
-        \wizardprogressionrow{9}  & Arcane insight                     \\
-        \wizardprogressionrow{10} & Magic feat                         \\
-        \wizardprogressionrow{11} & Arcane insight                     \\
-        \wizardprogressionrow{12} & Contingency                        \\
-        \wizardprogressionrow{13} & Arcane insight                     \\
-        \wizardprogressionrow{14} & Magic feat                         \\
-        \wizardprogressionrow{15} & Arcane insight                     \\
-        \wizardprogressionrow{16} & Offensive sequencer                \\
-        \wizardprogressionrow{17} & Arcane insight                     \\
-        \wizardprogressionrow{18} & Magic feat                         \\
-        \wizardprogressionrow{19} & Arcane insight                     \\
-        \wizardprogressionrow{20} & Chain contingency                  \\
+        \wizardprogressionrow{1}  & Cantrip, rituals, spells, prepared spells \plus2 \\
+        \wizardprogressionrow{2}  & Cantrip, magic feat, specialization              \\
+        \wizardprogressionrow{3}  & Arcane insight                                   \\
+        \wizardprogressionrow{4}  & Cantrip sequencer                                \\
+        \wizardprogressionrow{5}  & Arcane insight, prepared spells \plus3           \\
+        \wizardprogressionrow{6}  & Magic feat                                       \\
+        \wizardprogressionrow{7}  & Arcane insight                                   \\
+        \wizardprogressionrow{8}  & Defensive sequencer                              \\
+        \wizardprogressionrow{9}  & Arcane insight                                   \\
+        \wizardprogressionrow{10} & Magic feat, prepared spells \plus4               \\
+        \wizardprogressionrow{11} & Arcane insight                                   \\
+        \wizardprogressionrow{12} & Contingency                                      \\
+        \wizardprogressionrow{13} & Arcane insight                                   \\
+        \wizardprogressionrow{14} & Magic feat                                       \\
+        \wizardprogressionrow{15} & Arcane insight, prepared spells \plus5           \\
+        \wizardprogressionrow{16} & Offensive sequencer                              \\
+        \wizardprogressionrow{17} & Arcane insight                                   \\
+        \wizardprogressionrow{18} & Magic feat                                       \\
+        \wizardprogressionrow{19} & Arcane insight                                   \\
+        \wizardprogressionrow{20} & Chain contingency, prepared spells \plus6        \\
     \end{dtabularx}
 \end{dtable}
 
@@ -3478,11 +3478,12 @@ Many ancient tomes of magic are written in Draconic, and apprentice wizards ofte
 
 \cf{Wiz}{Spells}
 A wizard casts arcane spells using her Intelligence.
-To learn or cast a spell, a wizard must have an Intelligence at least equal to the spell's level.
-A wizard's spellpower equals her wizard level or Intelligence, whichever is higher.
+The maximum spell level a wizard can learn or cast is equal to half her wizard level (minimum 1) or her Intelligence, whichever is lower.
+A wizard's spellpower is normally equal to her wizard level.
+See the Prepared Spellcasting ability, below.
 
 The number of spells a wizard knows is given on \trefnp{Wizard Spells Known}.
-A wizard's spells are drawn from the common spells on the arcane spell list (see \pcref{Arcane Spells}).
+A wizard's spells are drawn from the \glossterm{unrestricted spells} on the arcane spell list (see \pcref{Arcane Spells}).
 
 The number of spells a wizard can cast per day is given on \trefnp{Wizard Spell Slots}.
 
@@ -3490,7 +3491,7 @@ In order to regain her spells for the day, a wizard must dismiss all her active 
 This rest does not have to involve sleep, but most wizards get this rest when they sleep for the night.
 
 \begin{dtable}
-    \lcaption{Wizard Spell Slots} 
+    \lcaption{Wizard Spell Slots}
     \centering
     \begin{dtabularx}{\columnwidth}{>{\ccol}X *{9}{>{\ccol}p{\spellcol}}}
         & \multicolumn{9}{c}{\thead{---{}---{}---{}---{}---{}---{}---{}---Spell Level---{}---{}---{}---{}---{}---{}---{}---}} \\
@@ -3552,13 +3553,6 @@ This rest does not have to involve sleep, but most wizards get this rest when th
 Wizards can perform rituals to create unique magical effects (see \pcref{Rituals}).
 A wizard begins play with a ritual book containing two arcane rituals of her choice (see \pcref{Arcane Rituals}).
 
-\cf{Wiz}{Specialization}
-Some wizards choose to specialize in a particular school of magic.
-Specialist wizards are able to learn all restricted spells from their chosen school, and gain additional spells known.
-However, they can never access restricted spells from other schools, and must choose two other spell schools to ban.
-A specialist wizard can never learn or cast spells or rituals from their banned schools.
-Divination cannot be chosen as a banned school.
-
 \cf{Wiz}{Cantrip}
 Cantrips are minor spells which do not require effort to use.
 A wizard chooses one cantrip from the list of cantrips on \pref{Cantrip List}.
@@ -3569,10 +3563,33 @@ Specialist wizards must choose one of the cantrips granted by their specialist s
 
 At her 2nd wizard level, the wizard gains a second cantrip, which can be chosen from any non-prohibited school.
 
+\cf{Wiz}{Prepared Spellcasting}
+A wizard may prepare specific spells ahead of time so they can be cast more powerfully.
+After regaining spells for the day, a wizard may prepare a number of spell slots equal to half her Wizard level (minimum 1) or half her Intelligence, whichever is higher.
+She must choose a single spell to assign to each prepared spell slot.
+Once assigned in this way, the prepared spell slot can only be used to cast the chosen spell.
+The spells cast using these prepared spell slots are called the wizard's prepared spells.
+Whenever a wizard casts a prepared spell, she gains a \plus2 bonus to spellpower.
+
+A wizard may prepare spells of any level, up to the maximum level of spells she is able to cast.
+She may only prepare spell slots that she actually possesses.
+If a wizard has two spell slots at a given level, she cannot prepare three spell slots at that level.
+However, she may use higher level spell slots to prepare lower level spells if she desires.
+
+At 5th level, and every 5 levels thereafter, the spellpower bonus a wizard gains with her prepared spells increases by 1.
+
 \cf{Wiz}[2nd]{Magic Feat}
 The wizard gains a bonus magic feat or metamagic feat of her choice.
 She must meet the prerequisites for the feat as normal.
 At her 6th wizard level, and every 4 wizard levels thereafter, she gains an additional magic feat or metamagic feat.
+
+
+\cf{Wiz}[2nd]{Specialization}
+The wizard may choose to specialize in a particular school of magic.
+Specialist wizards are able to learn all restricted spells from their chosen school, and gain additional spells known.
+However, they can never access restricted spells from other schools, and must choose two other spell schools to ban.
+A specialist wizard can never learn or cast spells or rituals from their banned schools.
+Divination cannot be chosen as a banned school.
 
 \cf{Wiz}[3rd]{Arcane Insight}[Ex]
 The wizard gains a greater understanding of magic.
