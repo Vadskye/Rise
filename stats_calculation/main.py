@@ -16,63 +16,139 @@ TARGET_MODES = 'active any easiest hardest strongest weakest'.split()
 TARGET_MODE_CHOICES = TARGET_MODES + ['test']
 
 def initialize_argument_parser():
-    parser = argparse.ArgumentParser(description='Calculate combat statistics for Rise characters')
-    parser.add_argument('-b', '--battle', dest='battle', action='store_true',
-            help='simulate a battle between the creatures?')
-    parser.add_argument('-a', '--ally', dest='allies', nargs="*",
-            help='allied creature files to load')
-    parser.add_argument('-ac', '--allycount', dest='ally_count', type=str,
-            help='number of allies to duplicate')
-    parser.add_argument('-al', '--allylevel', dest='ally_level', type=str,
-            help='the level of the ally creatures')
-    parser.add_argument('-at', '--allytargets', dest='ally_targets', type=str,
-            choices = TARGET_MODE_CHOICES,
-            help='how the allies choose targets')
-    parser.add_argument('-av', '--allyvariant', dest='ally_variants', nargs="*",
-            help = 'variant to apply to all allies')
-    parser.add_argument('-e', '--enemy', dest='enemies', nargs="*",
-            help='enemy creature files to load (for combat purposes)')
-    parser.add_argument('-e2', '--enemy2', dest='enemies2', nargs="*",
-            help='other enemy creature files to load (for combat purposes)')
-    parser.add_argument('-ec', '--enemycount', dest='enemy_count', type=str,
-            help='number of enemies to duplicate')
-    parser.add_argument('-el', '--enemylevel', dest='enemy_level', type=str,
-            help='the level of the enemy creatures')
-    parser.add_argument('-et', '--enemytargets', dest='enemy_targets', type=str,
-            choices = TARGET_MODE_CHOICES,
-            help='how the enemies choose targets')
-    parser.add_argument('-ev', '--enemyvariant', dest='enemy_variants', nargs="*",
-                        help = 'variant to apply to all enemies')
-    parser.add_argument('-c', '--count', dest='count', type=str,
-                        help = 'number of creatures to duplicate from both sides')
-    parser.add_argument('-l', '--level', dest='level', type=str,
-            help='the level of the allied creatures')
-    parser.add_argument('-o', '--output', dest='output',
-            help='A file name to store any output in')
-    parser.add_argument('-p', '--printattribute', dest='print_attribute',
-                        nargs="*", help = 'attribute to print for comparison')
-    parser.add_argument('-m', '--printmodifier', dest='print_modifier',
-                        nargs="*", help = 'modifier to print for comparison')
-    parser.add_argument('--targets', dest='targets', type=str,
-            choices = TARGET_MODE_CHOICES,
-            help='how creatures choose targets')
-    parser.add_argument('-t', '--test', dest='test', type=str,
-            help='A specific test to run')
-    parser.add_argument('-v', '--variant', dest='variants', nargs="*",
-            help = 'variants to apply to all creatures')
-    parser.add_argument('--profile', dest='profile', action='store_true',
-            help = 'profile performance?')
+    parser = argparse.ArgumentParser(
+        description='Calculate combat statistics for Rise characters',
+    )
+    parser.add_argument(
+        '-b', '--battle',
+        dest='battle',
+        action='store_true',
+        help='simulate a battle between the creatures?'
+    )
+    parser.add_argument(
+        '-a', '--ally',
+        dest='allies',
+        nargs="*",
+        help='allied creature files to load'
+    )
+    parser.add_argument(
+        '-ac',
+        '--allycount',
+        dest='ally_count',
+        type=str,
+        help='number of allies to duplicate'
+    )
+    parser.add_argument(
+        '-al', '--allylevel',
+        dest='ally_level',
+        type=str,
+        help='the level of the ally creatures'
+    )
+    parser.add_argument(
+        '-at', '--allytargets',
+        dest='ally_targets',
+        type=str,
+        choices = TARGET_MODE_CHOICES,
+        help='how the allies choose targets',
+    )
+    parser.add_argument(
+        '-av', '--allyvariant',
+        dest='ally_variants',
+        nargs="*",
+        help = 'variant to apply to all allies',
+    )
+    parser.add_argument(
+        '-e', '--enemy',
+        dest='enemies',
+        nargs="*",
+        help='enemy creature files to load (for combat purposes)',
+    )
+    parser.add_argument(
+        '-e2', '--enemy2',
+        dest='enemies2',
+        nargs="*",
+        help='other enemy creature files to load (for combat purposes)',
+    )
+    parser.add_argument(
+        '-ec', '--enemycount',
+        dest='enemy_count',
+        type=str,
+        help='number of enemies to duplicate',
+    )
+    parser.add_argument(
+        '-el', '--enemylevel',
+        dest='enemy_level',
+        type=str,
+        help='the level of the enemy creatures',
+    )
+    parser.add_argument(
+        '-et', '--enemytargets',
+        dest='enemy_targets',
+        type=str,
+        choices = TARGET_MODE_CHOICES,
+        help='how the enemies choose targets',
+    )
+    parser.add_argument(
+        '-ev', '--enemyvariant',
+        dest='enemy_variants',
+        nargs="*",
+        help = 'variant to apply to all enemies',
+    )
+    parser.add_argument(
+        '-c', '--count',
+        dest='count',
+        type=str,
+        help = 'number of creatures to duplicate from both sides',
+    )
+    parser.add_argument(
+        '-l', '--level',
+        dest='level',
+        type=str,
+        help='the level of the allied creatures',
+    )
+    parser.add_argument(
+        '-o', '--output',
+        dest='output',
+        help='A file name to store any output in',
+    )
+    parser.add_argument(
+        '-p', '--printattribute',
+        dest='print_attribute',
+        nargs="*",
+        help = 'attribute to print for comparison',
+    )
+    parser.add_argument(
+        '-m', '--printmodifier',
+        dest='print_modifier',
+        nargs="*",
+        help = 'modifier to print for comparison',
+    )
+    parser.add_argument(
+        '--targets',
+        dest='targets',
+        type=str,
+        choices = TARGET_MODE_CHOICES,
+        help='how creatures choose targets',
+    )
+    parser.add_argument(
+        '-t', '--test',
+        dest='test',
+        type=str,
+        help='A specific test to run',
+    )
+    parser.add_argument(
+        '-v', '--variant',
+        dest='variants',
+        nargs="*",
+        help = 'variants to apply to all creatures',
+    )
+    parser.add_argument(
+        '--profile',
+        dest='profile',
+        action='store_true',
+        help = 'profile performance?',
+    )
     return vars(parser.parse_args())
-
-def rounds_survived(attacker, defender):
-    return combat.rounds_survived(attacker.attack_bonus.total(),
-            defender.armor_class.get_normal(), attacker.base_attack_bonus,
-            attacker.attack_damage.total(), defender.hp)
-
-def rounds_survived_generic(creature, i):
-    return combat.rounds_survived(creature.attack_bonus.total(),
-            generic_ac_calc[i], creature.base_attack_bonus,
-            creature.attack_damage.total(), generic_hp[i])
 
 def identify_effect_of_bonuses(creature):
     print i+1, current_char.damage_per_round(generic_ac_calc[i]), current_char.damage_per_round(
@@ -86,7 +162,7 @@ def identify_effect_of_bonuses(creature):
 
 #this is the generic AC we assume for attack calculations
 #correct AC is level + 15
-#note that we assume overwhelm 2 since overwhelm penalties are so common 
+#note that we assume overwhelm 2 since overwhelm penalties are so common
 #so actual character AC should be two higher
 def get_generic_ac_calc():
     return [i+13 for i in range(21)]
@@ -96,6 +172,18 @@ def get_generic_hp():
     return [i*7 for i in range(21)]
 
 def generate_creatures(creature_keys, data, level = None, extra_variants = None):
+    """Generate a CreatureGroup containing Creatures
+
+    Args:
+        creature_keys (list): The names of the creatures to create
+        level (Optional[int]): level of the creatures to generate.
+            If not specified, use the creature's default level, or 1.
+        extra_variants (Optional[list]): The names of any variants applied to all creatures generated
+
+    Yields:
+        CreatureGroup: the 
+    """
+
     creatures = list()
     if creature_keys is None:
         return creatures
@@ -108,25 +196,23 @@ def generate_creatures(creature_keys, data, level = None, extra_variants = None)
             creature_key += '/' + '/'.join(extra_variants)
         creature = Creature.from_raw_stats(
             raw_stats = data,
-            creature_key = creature_key, 
+            creature_key = creature_key,
             stats_override = stats_override
         )
         creatures.append(creature)
     return CreatureGroup(creatures)
 
-def generate_battle_results_old(allies, enemies):
-    # for now, just have the two first creatures fight
-    # later on, simulate multi-creature battles
-    first = allies[0]
-    second = enemies[0]
-    battle = combat.Battle(first, second)
-    battle_results = battle.iterated_battles(BATTLE_REPEAT_COUNT)
-
-    average_hit_chance_first = first.average_hit_probability(second)
-    average_hit_chance_second = second.average_hit_probability(first)
-    return battle_results, (average_hit_chance_first, average_hit_chance_second)
-
 def wage_war(allies, enemies):
+    """Given two CreatureGroups, have them fight
+    
+    Args:
+        allies (list): List of CreatureGroups
+        enemies (list): List of CreatureGroups
+    
+    Yields:
+        dict: A dictionary containing the results of battle
+    """
+
     rounds = 0
     ally_victories = 0
     ally_any_inactive = 0
@@ -177,6 +263,7 @@ def wage_war(allies, enemies):
     enemy_any_dead = float(enemy_any_dead)/BATTLE_REPEAT_COUNT
     enemy_hit_point_pct = round(float(enemy_hit_point_pct)/BATTLE_REPEAT_COUNT, 2)
     ties = float(ties)/BATTLE_REPEAT_COUNT
+
     return {
         'ally': {
             'any_dead': ally_any_dead,
@@ -199,6 +286,16 @@ def wage_war(allies, enemies):
     }
 
 def fight_battle(allies, enemies):
+    """Given two CreatureGroups, have them fight each other until one is defeated
+    
+    Args:
+        allies (CreatureGroup): Group of Creatures
+        enemies (CreatureGroup): Group of Creatures
+    
+    Yields:
+        int: Duration of combat in rounds
+    """
+
     rounds = 0
     while allies.is_active and enemies.is_active:
         allies.attack(enemies)
@@ -210,6 +307,18 @@ def fight_battle(allies, enemies):
     return rounds
 
 def inherit_shared_args(args):
+    """Some arguments should use a shared "inheritance" structure,
+    with the "level" argument functioning as a default value for both the 
+    "ally_level" and "enemy_level" arguments.
+    This modifies the "args" dict in place
+
+    Args:
+        args (dict): Arguments from the command line
+
+    Yields:
+        dict: Modified args
+    """
+
     args['ally_level'] = args.get('ally_level') or args.get('level')
     args['enemy_level'] = args.get('enemy_level') or args.get('level')
 
@@ -221,9 +330,16 @@ def inherit_shared_args(args):
 
     args['ally_variants'] = args.get('ally_variants') or args.get('variants')
     args['enemy_variants'] = args.get('enemy_variants') or args.get('variants')
+
     return args
 
 def analyze_combined_results(results):
+    """Print raw battle results, along with contextual analysis about the results
+
+    Args:
+        results (dict): Raw battle results from wage_war
+    """
+
     pprint(results)
     print "\nally victories:"
     pprint(results['ally']['victories'])
@@ -247,6 +363,15 @@ def analyze_combined_results(results):
     print 'good death tests:', good_death_chance_tests
 
 def generate_creature_groups(data, names, count, level, target_mode, variants):
+    """Generate two CreatureGroups based on the names of creatures
+
+    Args:
+        data (dict): Explanation
+
+    Yields:
+        type: Explanation
+    """
+
     creature_groups = list()
 
     if target_mode == 'test':
@@ -280,6 +405,12 @@ def generate_creature_groups(data, names, count, level, target_mode, variants):
     return creature_groups
 
 def add_custom_modifiers(ally_groups, enemy_groups):
+    """Easily add user-defined creature modifiers
+
+    Args:
+        ally_groups (list): list of CreatureGroup objects
+    """
+
     for ally_group in ally_groups:
         for ally in ally_group:
             #ally.add_modifier('hit_points', 'testing', lambda c: c.level)
@@ -302,7 +433,6 @@ def add_custom_modifiers(ally_groups, enemy_groups):
             #ally.add_modifier('extra_physical_attack_bonus', 'testing', -5)
             #ally.add_modifier('weapon_size', 'testing', 1)
             #ally.add_modifier('hit_points', 'testing', lambda c: c.level * 2)
-            #ally.add 
             pass
 
     for enemy_group in enemy_groups:
@@ -373,6 +503,7 @@ def print_creature_groups(ally_groups, enemy_groups):
         print
 
 def run_battle_between_creature_groups(ally_groups, enemy_groups):
+
     if not len(ally_groups) == len(enemy_groups):
         if len(ally_groups) == 1:
             ally_groups *= len(enemy_groups)
@@ -421,17 +552,30 @@ def run_battle_between_creature_groups(ally_groups, enemy_groups):
     analyze_combined_results(combined_results)
 
 def main(args):
-    args = inherit_shared_args(args)
+    ally_args, enemy_args = split_args(args)
     data = util.import_data()
-    ally_names = args.get('allies')
-    if ally_names is not None and ally_names[0] == 'classes':
-        ally_names = 'barbarian cleric druid fighter monk paladin ranger rogue sorcerer spellwarped wizard'.split()
-    enemy_names = args.get('enemies')
-    if enemy_names is not None and enemy_names[0] == 'classes':
-        enemy_names = 'barbarian cleric druid fighter monk paladin ranger rogue sorcerer spellwarped wizard'.split()
 
-    ally_groups = generate_creature_groups(data, ally_names, args['ally_count'], args['ally_level'], args['ally_targets'], args['ally_variants'])
-    enemy_groups = generate_creature_groups(data, enemy_names, args['enemy_count'], args['enemy_level'], args['enemy_targets'], args['enemy_variants'])
+    if len(ally_args['names']) and ally_args['names'][0] == 'classes':
+        ally_args['names'] = 'barbarian cleric druid fighter monk paladin ranger rogue sorcerer spellwarped wizard'.split()
+    if len(enemy_args['names']) and enemy_args['names'][0] == 'classes':
+        enemy_args['names'] = 'barbarian cleric druid fighter monk paladin ranger rogue sorcerer spellwarped wizard'.split()
+
+    ally_groups = generate_creature_groups(
+        data,
+        names = ally_args['names'],
+        count = ally_args['count'],
+        level = ally_args['level'],
+        target_mode = ally_args['target_mode'],
+        variants = ally_args['variants'],
+    )
+    enemy_groups = generate_creature_groups(
+        data,
+        names = enemy_args['names'],
+        count = enemy_args['count'],
+        level = enemy_args['level'],
+        target_mode = enemy_args['target_mode'],
+        variants = enemy_args['variants'],
+    )
 
     add_custom_modifiers(ally_groups, enemy_groups)
 
@@ -457,6 +601,34 @@ def main(args):
         latex_string = creatures[0].to_latex()
         output_file = open(args['output'], 'w')
         output_file.write(latex_string)
+
+def split_args(args):
+    """Split the args given on the command line into two dictionaries: one for
+    allies, and one for enemies
+
+    Args:
+        args (dict): The args given on the command line, processed by argparse
+
+    Yields:
+        dict: Arguments corresponding to the allies
+        dict: Arguments corresponding to the enemies
+    """
+
+    ally_args = {
+        'count': args.get('ally_count') or args.get('count'),
+        'level': args.get('ally_level') or args.get('level'),
+        'names': args.get('allies') or list(),
+        'target_mode': args.get('ally_targets') or args.get('targets'),
+        'variants': args.get('ally_variants') or args.get('variants'),
+    }
+    enemy_args = {
+        'count': args.get('enemy_count') or args.get('count'),
+        'level': args.get('enemy_level') or args.get('level'),
+        'names': args.get('enemies') or list(),
+        'target_mode': args.get('enemy_targets') or args.get('targets'),
+        'variants': args.get('enemy_variants') or args.get('variants'),
+    }
+    return ally_args, enemy_args
 
 if __name__ == "__main__":
     args = initialize_argument_parser()
