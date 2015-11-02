@@ -2022,7 +2022,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Armor defense}
-                \spellsuccess 1d6 piercing damage per two spellpower.
+                \spellsuccess 1d8 piercing damage per two spellpower.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -2071,7 +2071,7 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect If the target is living, it gains two \conditionlink{negative levels}. This imposes a \minus2 penalty to the target's attacks, special defenses, and checks, and a \minus10 penalty to its current and maximum hit points.
+            \spelleffect If the target is living, it gains two \conditionlink{negative levels}. This imposes a \minus2 penalty to the target's attacks, special defenses, and checks, and a penalty to its current and maximum hit points equal to twice its level.
 
             If the target is undead, it gains damage reduction against physical damage equal to your spellpower. Positive damage ignores this damage reduction and negates it for 1 round.
         \end{spelleffects}
@@ -2094,8 +2094,8 @@
         \begin{spelleffects}
             \spelleffect If the target is undead, it gains an offensive legend point and damage reduction against physical damage equal to your spellpower. Positive damage ignores this damage reduction and negates it for 1 round.
             \begin{spellattacktriggered}{If the target is living, make a Spellpower vs. Fortitude attack.}
-                \spellsuccess The target gains eight \conditionlink{negative levels}. This imposes a \minus8 penalty to the target's attacks, special defenses, and checks, and a \minus40 penalty to its current and maximum hit points.
-                \spellsuccess The target gains four \conditionlink{negative levels}. This imposes a \minus4 penalty to the target's attacks, special defenses, and checks, and a \minus20 penalty to its current and maximum hit points.
+                \spellsuccess The target gains eight \conditionlink{negative levels}. This imposes a \minus8 penalty to the target's attacks, special defenses, and checks, and a penalty to its current and maximum hit points equal to eight times the creature's level.
+                \spellsuccess The target gains four \conditionlink{negative levels}. This imposes a \minus4 penalty to the target's attacks, special defenses, and checks, and a penalty to its current and maximum hit points equal to four times the creature's level.
             \end{spellattacktriggered}
         \end{spelleffects}
     \end{spellcontent}
@@ -2118,7 +2118,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Alteration, Sizing]}{Nature, Strength, Wild}
+        \spellinfo{Transmutation [Alteration, Sizing]}{Arcane, Nature, Strength, Wild}
         \spellnotes \sizingspellnotes
         \miscastrandom
     \end{spellfooter}
@@ -2137,7 +2137,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Alteration, Sizing]}{Strength, Transmutation}
+        \spellinfo{Transmutation [Alteration, Sizing]}{Arcane, Nature, Strength, Wild}
         \spellnotes \sizingspellnotes
         \miscastexplode
     \end{spellfooter}
@@ -7050,7 +7050,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spellzone{20 ft. line, 5 ft. wide, 10 ft. high \shapeable}}{\spellrng{\rngmed}}
+            \spelltwocol{\spellzone{20 ft. line, 5 ft. wide, 10 ft. high}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect This spell creates a thicket of thorns in the area. A 5-foot cube of wall has 10 hit points per spellpower. Moving into or out of a square in the area costs 20 feet of movement. The wall can be created where creatures are.
