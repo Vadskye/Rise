@@ -242,7 +242,7 @@ class Creature(object):
         self.perception_progression = perception_progression
         self.willpower_progression = willpower_progression
 
-        # meta 
+        # meta
         self.combat_description = combat_description
         self.description = description
         self.level = level
@@ -379,7 +379,7 @@ class Creature(object):
                 if modifier_type not in valid_modifier_types:
                     raise Exception("Can't add invalid modifier type {0}".format(modifier_type))
                 self._modifiers[modifier_type] = self._modifiers.get(modifier_type) or dict()
-                
+
                 # check to see how to combine multiple modifier types
                 if name in self._modifiers[modifier_type] and not replace_existing:
                     # try to append it to the list of modifiers with the given name
@@ -526,7 +526,7 @@ class Creature(object):
         base_progression_modifiers = get_base_progression_modifiers(
             self.level, self.base_attack_bonus_progression, self.caster_level_progression,
             self.spellpower_progression,
-            self.fortitude_progression, self.reflex_progression, self.will_progression, 
+            self.fortitude_progression, self.reflex_progression, self.will_progression,
             self.natural_armor_progression,
             self.strength_progression, self.dexterity_progression, self.constitution_progression,
             self.intelligence_progression, self.perception_progression, self.willpower_progression,
@@ -600,7 +600,7 @@ class Creature(object):
     # this is hacked into _static_modifiers
     def _calculate_physical_attack_progression(self):
         attack_bonuses = list()
-        attacks_from_bab = 1 + max(0, (self.base_attack_bonus - 1) / 5)  
+        attacks_from_bab = 1 + max(0, (self.base_attack_bonus - 1) / 5)
         attack_bonuses.append(self.get_physical_attack_bonus('first'))
         if attacks_from_bab >= 2:
             attack_bonuses.append(self.get_physical_attack_bonus('second'))
@@ -672,7 +672,7 @@ class Creature(object):
     def physical_attack_damage(self):
         return self.get_physical_attack_damage(attack_number = 0)
 
-    @property 
+    @property
     def average_physical_attack_damage(self):
         return self.get_physical_attack_damage(use_average = True)
 
