@@ -3159,8 +3159,10 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target is \immobilized.
-            \spelldur \durshort
+            \begin{spellattack}{Spellpower vs. Mental}
+                \spellsuccess The target is \immobilized for 5 rounds.
+                \spellfailure The target moves at one-quarter speed for 5 rounds.
+            \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -3177,8 +3179,10 @@
             \spelltwocol{\spelltgts{Up to five creatures}}{\spellrng{\rnglong}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target is \immobilized.
-            \spelldur \durshort
+            \begin{spellattack}{Spellpower vs. Mental}
+                \spellsuccess The target is \immobilized for 5 rounds.
+                \spellfailure The target moves at one-quarter speed for 5 rounds.
+            \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -3195,8 +3199,10 @@
             \spelltwocol{\spelltgt{One humanoid creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spellsuccess The target is \immobilized for 5 rounds.
-            \spellfailure The target moves at one-quarter speed for 5 rounds.
+            \begin{spellattack}{Spellpower vs. Mental}
+                \spellsuccess The target is \immobilized for 5 rounds.
+                \spellfailure The target moves at one-quarter speed for 5 rounds.
+            \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -3213,8 +3219,10 @@
             \spelltwocol{\spelltgts{Up to five creatures}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target is \immobilized.
-            \spelldur \durshort
+            \begin{spellattack}{Spellpower vs. Mental}
+                \spellsuccess The target is \immobilized for 5 rounds.
+                \spellfailure The target moves at one-quarter speed for 5 rounds.
+            \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -6998,13 +7006,15 @@
             \spelltwocol{\spellzone{100 ft. solid wall, 10 ft. high}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect This spell creates an invisible wall made of force. A 5-foot square of wall has 5 hit points per spellpower, and hardness equal to your spellpower.
+            \spelleffect This spell creates an invisible wall made of force. Nothing can pass through the wall.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Force, Physical, Wall]}{Evocation}
-        \spellnotes \forcespellnotes
+        \spellnotes The wall can be destroyed. A 5-foot square of wall has hit points equal to five times your spellpower, and hardness equal to your spellpower.
+
+        \forcespellnotes
 
         This spell can be made permanent with a \spell{permanency} ritual.
         \miscastexplode
@@ -7016,10 +7026,11 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spellzone{20 ft. line, 5 ft. wide, 10 ft. high}}{\spellrng{\rngmed}}
+            \spelltwocol{\spellzone{20 ft. line, 5 ft. wide, 5 ft. high}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect This spell creates a thicket of thorns in the area. A 5-foot cube of wall has 10 hit points per spellpower. Moving into or out of a square in the area costs 20 feet of movement. The wall can be created where creatures are.
+            \spelleffect This spell creates a thicket of thorns in the area. Moving into a square with thorns in it costs 20 feet of movement. The wall can be created where creatures are.
+
 
             The wall provides total cover against attacks through the wall. A creature in the wall has cover from attacks on either side of the wall.
             \spelldur \durshort
@@ -7030,15 +7041,12 @@
             \spelltwocol{\spelltgr{A creature enters or exits a square in the area}}{\spelltgt{The moving creature}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess \spelldamage{2}{piercing}[d6]
-            \end{spellattack}
+            \spelleffect The target takes piercing damage equal to your spellpower.
         \end{spelleffects}
     \end{spellsubcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Creation, Physical, Wall]}{Nature, Wild}
-        \spellnotes A \spell{wall of thorns} can be breached by slow work with edged weapons or fire. It has hardness 8 and 30 hit points per square foot of thickness.
-
+        \spellnotes A \spell{wall of thorns} can be destroyed. A 5-foot cube of wall has hit points equal to twice your spellpower, is vulnerable to fire damage, and ignores piercing damage.
         \physicalspellnotes
         \miscastexplode
     \end{spellfooter}
@@ -7049,10 +7057,10 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spellzone{100 ft. line, 5 ft. wide, 20 ft. high \shapeable}}{\spellrng{\rngmed}}
+            \spelltwocol{\spellzone{100 ft. line, 5 ft. wide, 5 ft. high \shapeable}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spellspecial This spell functions like \spell{wall of thorns}, except that it is larger and can be shaped. The damage dealt to a creature passing through the wall is \spelldamage{6}{piercing}[d6].
+            \spellspecial This spell functions like \spell{wall of thorns}, except that it is larger and can be shaped.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
@@ -7061,9 +7069,7 @@
             \spelltwocol{\spelltgr{A creature enters or exits a square in the area}}{\spelltgt{The moving creature}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess \spelldamage{2}{piercing}[d6]
-            \end{spellattack}
+            \spelleffect The target takes piercing damage equal to your spellpower.
         \end{spelleffects}
     \end{spellsubcontent}
     \begin{spellfooter}
@@ -7177,7 +7183,7 @@
     \end{spellsubcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Creation, Physical]}{Arcane}
-        \spellnotes The strands of web can be destroyed. Any five-foot square that takes fire damage equal to your spellpower, or twice your spellpower in slashing or bludgeoning damage, is destroyed. A magic flaming sword can slash them away as easily as a hand brushes away cobwebs. Any fire can set the webs alight and burn away 5 square feet in 1 round. All creatures within flaming webs is \ignited from the flames.
+        \spellnotes The webs can be destroyed. A 5-foot cube of webs has hit points equal to twice your spellpower, is vulnerable to fire damage, and ignores piercing damage. Any fire can set the webs alight and burn away 5 square feet over the course of 2 rounds. All creatures within flaming webs are \ignited by the flames.
 
         \physicalspellnotes
 
