@@ -11,56 +11,13 @@ Magic items are divided into three broad categories:
         A \mitem{bag of holding} is a tool.
 \end{itemize}
 
-\parhead{Apparel} There are a wide variety of magic items, but there is a limit to how many apparel items a character can wear at any given time.
-For humanoid-shaped creatures, there are four core areas on the body that can hold magic items: the arms, the head, the torso, and the legs.
-A creature can wear only one item in the hands, arms, and legs, but it can use two torso items, provided that they are not identical (such as two belts).
-In addition, it can wear a suit of armor and two magic rings (one on each hand), for a total of eight item slots.
-Any additional items worn do not function.
-
-Creatures with non-humanoid body structures may have different arrangement of items.
-For example, a wolf would be able to wear items on its head, its torso, and on two different sets of legs.
-Regardless of body shape or size, most creatures may not have more than eight item slots, and many have fewer.
-A list of common items and their placement on the body is given below.
-
-\begin{itemize}
-    \item Arm items:
-        \begin{itemize}
-            \item Bracers, bracelets, gauntlets, and gloves.
-        \end{itemize}
-    \item Armor
-    \item Head items:
-        \begin{itemize}
-            \item Hats, headbands, and helmets
-        \end{itemize}
-    \item Leg items:
-        \begin{itemize}
-            \item Boots and shoes.
-        \end{itemize}
-    \item Rings
-    \item Torso items:
-        \begin{itemize}
-            \item Amulets, belts, cloaks, mantles, necklaces, robes, shirts, and vests.
-        \end{itemize}
-\end{itemize}
-
-Of course, a character may carry or possess as many items of the same type as he wishes.
-However, additional equipped items beyond those listed above have no effect.
-
-A rare few apparel items can be ``worn'' without taking up space on a character's body.
-The description of an item indicates when it has this property.
-
-\parhead{Implements} The most common implements are weapons and shields.
-Spellcasters also often use wands and staves to enhance their power.
-
-\parhead{Tools} Tools can come in many varieties.
-
 \section{Using Magic Items}
 
 To use a magic item, it must be activated, although sometimes activation simply means wearing or holding the item.
 
 \subsection{Daily Item Activations}
-In general, you can activate any combination of magic items you possess a number of times per day equal to your level.
-Once you have used up your activations for the day, you can't activate any more magic items until the next day, though you can continue to use items that don't require activation (such as weapons) normally.
+In general, you can activate any combination of magic items you possess a number of times per day half your level or half your Willpower, whichever is higher.
+Once you have used up your activations for the day, you can't activate any more magic items until the next day, though you can continue to use items that don't require activation (such as most magic weapons) normally.
 
 \subsection{Activation Methods}
 Magic items can be activated in one of four ways:
@@ -86,7 +43,7 @@ Unless otherwise stated, activating a specific action magic item is a standard a
 Unless otherwise stated, activating a spell completion magic item is a standard action.
 Both verbal and somatic components may be required, as appropriate to the spell to be completed.
 
-In order to activate a spell completion item, a character must be able to cast spells of that level and he must have that spell on his spell list.
+In order to activate a spell completion item, a character must be able to cast spells of that level and she must have that spell on his spell list.
 
 \parhead{Triggered} A creature must fulfill some triggering condition defined by the item to activate it.
 For example, a triggered magic item might activate when a character strikes a foe, is damaged, or is affected by a particular kind of magic.
@@ -107,27 +64,13 @@ Items which are consumed when used or which do not affect their user are unaffec
 If a magic item requires a successful special attack to have its full effect, the attack bonus is listed in the item's description.
 Typically, the attack bonus is equal to the level of the item's wielder \add the spell level of the item's effect.
 
-\begin{comment}
-\subsection{Charges, Doses, and Multiple Uses}
-
-Many items, particularly wands and staffs, are limited in power by the number of charges they hold.
-Normally, charged items have 50 charges at most.
-If such an item is found as a random part of a treasure, roll d\% and divide by 2 to determine the number of charges left (round down, minimum 1).
-If the item has a maximum number of charges other than 50, roll randomly to determine how many charges are left.
-
-Prices listed are always for fully charged items.
-(When an item is created, it is fully charged.) An item with no charges left is worth half the price of a fully charged item.
-For an item that's worthless when its charges run out (which is the case for almost all charged items), the value of the partially used item is proportional to the number of charges left.
-For an item that has usefulness in addition to its charges, only part of the item's value is based on the number of charges left.
-\end{comment}
-
-\section{Magic Item Description Format}
+\section{Item Description Format}
 
 Each general type of magic item gets an overall description, followed by descriptions of specific items.
 
 General descriptions include notes on activation, random generation, and other material.
-The AC, hardness, hit points, and break DC are given for typical examples of some magic items.
-The AC assumes that the item is unattended and includes a \minus10 penalty for the item's effective Dexterity of \minus10.
+The AD, hardness, hit points, and break DC are given for typical examples of some magic items.
+The AD assumes that the item is unattended and includes a \minus10 penalty for the item's effective Dexterity of \minus10.
 If a creature holds the item, use the creature's Dexterity in place of the \minus10 penalty.
 
 Some individual items, notably those that simply store spells and nothing else, don't get full-blown descriptions.
@@ -166,32 +109,48 @@ When a weight figure is not given, the item has no weight worth noting (for purp
 
 \section{Apparel}
 
-\begin{dtable}
-    \lcaption{Armor and Shield Special Abilities}
-    \begin{dtabularx}{\columnwidth}{>{\lcol}X l l l}
-        \thead{Special Ability} & \thead{Cost} & \thead{Item Level} & \thead{Location}\\
-        \hline
-        Feather \minus1 & 100 gp & 2nd & Armor, Shield \\
-        Bashing, Lesser & 200 gp & 3rd & Shield \\
-        Energy Resistance, Lesser & 200 gp & 3rd & Armor\\
-        Feather \minus2 & 500 gp & 4th & Armor, Shield \\
-        Flaming Burst & 800 gp & 5th & Armor, Shield \\
-        Freezing Burst & 800 gp & 5th & Armor, Shield \\
-        Glamered & 800 gp & 5th & Armor \\
-        Bashing & 1,000 gp & 6th & Shield \\
-        Ghost Touch & 1,000 gp & 7th & Armor, Shield \\
-        Energy Resistance & 2,000 gp & 8th & Armor\\
-        Shocking Burst & 2,000 gp & 8th & Armor, Shield \\
-        Invulnerability & 2,000 gp & 12th & Armor \\
-        Feather \minus3 & 2,500 gp & 8th & Armor, Shield \\
-        Bashing, Greater & 5,000 gp & 10th & Shield \\
-        Spell Resistance & 5,000 gp & 10th & Armor \\
-        Feather \minus4 & 12,500 gp & 12th & Armor, Shield \\
-        Invulnerability, Greater & 30,000 gp & 14th & Armor \\
-        Spell Reflecting & 60,000 gp & 16th & Shield \\
-        Feather \minus5 & 62,500 gp & 16th & Armor, Shield \\
-    \end{dtabularx}
-\end{dtable}
+\subsection{Apparel Item Limitations}
+
+There are a wide variety of magic items, but there is a limit to how many apparel items a character can wear at any given time.
+For humanoid-shaped creatures, there are four core areas on the body that can hold magic items: the arms, the head, the torso, and the legs.
+A creature can wear only one item in the hands, arms, and legs, but it can use two torso items, provided that they are not identical (such as two belts).
+In addition, it can wear a suit of armor and two magic rings (one on each hand), for a total of eight item slots.
+Any additional items worn do not function.
+
+Creatures with non-humanoid body structures may have different arrangement of items.
+For example, a wolf would be able to wear items on its head, its torso, and on two different sets of legs.
+Regardless of body shape or size, most creatures may not have more than eight item slots, and many have fewer.
+A list of common items and their placement on the body is given below.
+
+\begin{itemize}
+    \item Arm items:
+        \begin{itemize}
+            \item Bracers, bracelets, gauntlets, and gloves.
+        \end{itemize}
+    \item Armor:
+        \begin{itemize}
+            \item Body armor, shields
+        \end{itemize}
+    \item Head items:
+        \begin{itemize}
+            \item Hats, headbands, and helmets
+        \end{itemize}
+    \item Leg items:
+        \begin{itemize}
+            \item Boots and shoes.
+        \end{itemize}
+    \item Rings
+    \item Torso items:
+        \begin{itemize}
+            \item Amulets, belts, cloaks, mantles, necklaces, robes, shirts, and vests.
+        \end{itemize}
+\end{itemize}
+
+Of course, a character may carry or possess as many items of the same type as he wishes.
+However, additional equipped items beyond those listed above have no effect.
+
+A rare few apparel items can be ``worn'' without taking up space on a character's body.
+The description of an item indicates when it has this property.
 
 \begin{dtable}
     \lcaption{Other Apparel Special Abilities}
@@ -224,37 +183,40 @@ When a weight figure is not given, the item has no weight worth noting (for purp
     \end{dtabularx}
 \end{dtable}
 
-\subsection{Armor and Shields}
+\subsection{Armor Overview}
 
 Magic body armor and shields protect the wearer to a greater extent than their nonmagical equivalents.
-All magic armor provides an enhancement bonus to improve your defensive abilities.
-In addition to an enhancement bonus, armor may have special abilities or be made of an unusual material.
+All magic armor has an enhancement bonus to improve your hit points and ability to resist attacks.
+In addition to an enhancement bonus, magic armor may have special abilities or be made of an unusual material.
 
 Body armor is always created so that even if the type of armor comes with boots or gauntlets, these pieces can be switched for other magic boots or gauntlets.
 
-\subsubsection{Enhancement Bonuses}\label{Armor Enhancement Bonuses}
+\subsubsection{Armor Enhancement Bonuses}\label{Armor Enhancement Bonuses}
 
-Body armor provides an enhancement bonus to your Armor defense.
-Shields provide an enhancement bonus to all physical defenses.
-These enhancement bonuses do not stack with each other.
-If you have both magic armor and a magic shield, use the highest applicable bonus.
+Magic armor can have enhancement bonuses ranging from \plus1 to \plus5.
+Each \plus1 of enhancement bonus grants temporary hit points equal the item's power, and grants you an additional defensive legend point each day.
+If you stop using the armor, you lose the temporary hit points and the legend points.
+
+These bonuses can only be gained once per day, regardless of the number of items you use.
+If you use both magic body armor and a magic shield, or change between different pieces of armor, use only the highest bonus that applies.
+If you change from a weaker magical item to a stronger magical item, you gain bonuses equal to the difference between the two items.
 
 \subsubsection{Prices}\label{Armor Prices}
-The prices of enhancement bonuses to armor are listed in \trefnp{Magic Armor and Shields}.
+The prices of enhancement bonuses to armor are listed in \trefnp{Magic Armor and Shields}, and the prices of special abilities are listed on \trefnp{Armor Special Abilities}.
 If armor has a special ability, the price of the special ability is added to the price of the armor.
 The number of special abilities on the armor cannot exceed the enhancement bonus of the armor.
 Additionally, the price of all special abilities cannot exceed twice the price of the enhancement bonus on the armor.
 
 \begin{dtable}
-    \lcaption{Magic Armor and Shields}
+    \lcaption{Magic Armor Prices}
     \begin{dtabularx}{\columnwidth} {>{\ccol}X c c}
-        \thead{Enhancement Bonus} & \thead{Base Price} & \thead{Item Level}\\
+        \tb{Enhancement Bonus} & \tb{Base Price} & \tb{Item Level} \\
         \hline
-        \plus1 armor/shield & 100 gp & 2nd \\
-        \plus2 armor/shield & 500 gp & 4th \\
-        \plus3 armor/shield & 2,500 gp & 8th \\
-        \plus4 armor/shield & 12,500 gp & 12th \\
-        \plus5 armor/shield & 62,500 gp & 16th\\
+        \plus1 armor/shield       & 100 gp             & 2nd                \\
+        \plus2 armor/shield       & 500 gp             & 4th                \\
+        \plus3 armor/shield       & 2,500 gp           & 8th                \\
+        \plus4 armor/shield       & 12,500 gp          & 12th               \\
+        \plus5 armor/shield       & 62,500 gp          & 16th               \\
     \end{dtabularx}
 \end{dtable}
 
@@ -270,7 +232,34 @@ However, a shield can be enhanced as a weapon.
 \parhead{Activation} A character benefits from magic armor and shields in exactly the way a character benefits from nonmagical armor and shields - by wearing them.
 Special abilities on body armor are usually activated if the character is struck or damaged, while special abilities on shields are usually activated if the character avoids an attack.
 
-\subsubsection{Special Ability Descriptions}
+\subsection{Armor Special Abilities}
+
+\begin{dtable}
+    \lcaption{Magic Armor Special Abilities}
+    \begin{dtabularx}{\columnwidth}{>{\lcol}X l l l}
+        \thead{Special Ability} & \thead{Cost} & \thead{Item Level} & \thead{Location}\\
+        \hline
+        Feather \minus1 & 100 gp & 2nd & Body, Shield \\
+        Bashing, Lesser & 200 gp & 3rd & Shield \\
+        Energy Resistance, Lesser & 200 gp & 3rd & Armor\\
+        Feather \minus2 & 500 gp & 4th & Body, Shield \\
+        Flaming Burst & 800 gp & 5th & Body, Shield \\
+        Freezing Burst & 800 gp & 5th & Body, Shield \\
+        Glamered & 800 gp & 5th & Armor \\
+        Bashing & 1,000 gp & 6th & Shield \\
+        Ghost Touch & 1,000 gp & 7th & Body, Shield \\
+        Energy Resistance & 2,000 gp & 8th & Armor\\
+        Shocking Burst & 2,000 gp & 8th & Body, Shield \\
+        Invulnerability & 2,000 gp & 12th & Armor \\
+        Feather \minus3 & 2,500 gp & 8th & Body, Shield \\
+        Bashing, Greater & 5,000 gp & 10th & Shield \\
+        Spell Resistance & 5,000 gp & 10th & Armor \\
+        Feather \minus4 & 12,500 gp & 12th & Body, Shield \\
+        Invulnerability, Greater & 30,000 gp & 14th & Armor \\
+        Spell Reflecting & 60,000 gp & 16th & Shield \\
+        Feather \minus5 & 62,500 gp & 16th & Body, Shield \\
+    \end{dtabularx}
+\end{dtable}
 
 \appdescription{Bashing, Lesser}{200}{3rd}{Shield}{Faint Transmutation (Augment)}{4th}{\x} When a shield with this ability is used to perform a shield bash, it deals damage as if it were one size category larger (so a Medium light shield deals 1d4 damage, and a Medium heavy shield deals 1d6 damage).
 This is considered an enhancement bonus, and does not stack with similar abilities.
@@ -287,18 +276,18 @@ In addition, you gain a \plus2 bonus to your physical defenses for 1 round again
 
 \mitemreq{Transmutation}{Augment}{5}{10th}{Craft (as shield) 14}
 
-\appdescription{Energy Resistance, Lesser}{200}{3rd}{Armor}{Faint Abjuration (Shielding)}{2nd}{Immediate (triggered)} When you take energy damage, you can activate this armor to reduce the damage by 5 \add half your level.
+\appdescription{Energy Resistance, Lesser}{200}{3rd}{Body}{Faint Abjuration (Shielding)}{2nd}{Immediate (triggered)} When you take energy damage, you can activate this armor to reduce the damage by 5 \add half your level.
 
 \mitemreq{Abjuration}{Shielding}{1}{2nd}{Craft (as armor) 6}
 
-\appdescription{Energy Resistance}{2,000}{8th}{Armor}{Moderate Abjuration (Shielding)}{6th}{Immediate (triggered)} When you take energy damage, you can activate this armor to gain damage reduction equal to 10 \add half your level against that type of energy damage.
+\appdescription{Energy Resistance}{2,000}{8th}{Body}{Moderate Abjuration (Shielding)}{6th}{Immediate (triggered)} When you take energy damage, you can activate this armor to gain damage reduction equal to 10 \add half your level against that type of energy damage.
 In addition, the armor casts light as a torch.
 The color of the light depends on the energy damage resisted: green for acid, blue for cold, yellow for electricity, and red for fire.
 Both effects lasts for 5 rounds, during which time you cannot activate the item's abilities.
 
 \mitemreq{Abjuration}{Shielding}{3}{6th}{Craft (as armor) 10}
 
-\appdescription{Flaming Burst}{800}{5th}{Armor, Shield}{Faint Evocation (Energy) [Fire]}{4th}{Immediate (triggered)} When you are struck or missed by a melee attack, you can trigger a burst of flames which sear the foe that attacked you.
+\appdescription{Flaming Burst}{800}{5th}{Body, Shield}{Faint Evocation (Energy) [Fire]}{4th}{Immediate (triggered)} When you are struck or missed by a melee attack, you can trigger a burst of flames which sear the foe that attacked you.
 Body armor triggers if the attack hits, and shields trigger if the attack misses.
 
 If you activate the item, you deal 1d6 fire damage \add d6 per four levels to your attacker.
@@ -314,7 +303,7 @@ This effect lasts for 5 rounds, during which time you cannot activate the item's
 
 \mitemreqdesc{Evocation}{Energy}{Fire}{2}{4th}{Craft (as armor) 8}
 
-\appdescription{Freezing Burst}{800}{5th}{Armor, Shield}{Faint Evocation (Energy) [Cold]}{4th}{Immediate (triggered)} When you are struck or missed by a melee attack, you can trigger a frigid burst against the foe that attacked you.
+\appdescription{Freezing Burst}{800}{5th}{Body, Shield}{Faint Evocation (Energy) [Cold]}{4th}{Immediate (triggered)} When you are struck or missed by a melee attack, you can trigger a frigid burst against the foe that attacked you.
 Body armor triggers if the attack hits, and shields trigger if the attack misses.
 
 If you activate the item, you deal 1d6 cold damage \add d6 per four levels to your attacker.
@@ -326,14 +315,14 @@ This effect lasts for 5 rounds, during which time you cannot activate the item's
 
 \mitemreqdesc{Evocation}{Energy}{Cold}{2}{4th}{Craft (as armor) 8}
 
-\appdescription{Ghost Touch}{1,000}{6th}{Armor, Shield}{Faint Conjuration (Translocation) [Planar]}{6th}{\x} This armor or shield seems almost translucent.
+\appdescription{Ghost Touch}{1,000}{6th}{Body, Shield}{Faint Conjuration (Translocation) [Planar]}{6th}{\x} This armor or shield seems almost translucent.
 You apply the full bonus granted by this armor or shield, including its enhancement bonus, against the attacks of incorporeal creatures.
 It can be picked up, moved, and worn by incorporeal creatures at any time.
 Incorporeal creatures gain the armor or shield's enhancement bonus against both corporeal and incorporeal attacks, and they can still pass freely through solid objects.
 
 \mitemreqdesc{Conjuration}{Translocation}{Planar}{3}{6th}{Craft (as armor) 10}
 
-\appdescription{Glamered}{800}{5th}{Armor}{Faint Illusion (Glamer)}{4th}{Standard (specific action)} If you trace the symbol of a mask on your chest (a standard action), this armor appears to change shape and form to assume the appearance of a normal set of clothing.
+\appdescription{Glamered}{800}{5th}{Body}{Faint Illusion (Glamer)}{4th}{Standard (specific action)} If you trace the symbol of a mask on your chest (a standard action), this armor appears to change shape and form to assume the appearance of a normal set of clothing.
 You may choose the design of the clothing.
 The armor retains all its properties (including weight and sound) when glamered.
 Only a \spell{true seeing} spell or similar magic reveals the true nature of the armor when disguised.
@@ -341,24 +330,24 @@ The armor remains disguised until you trace the symbol of the mask in the revers
 
 \mitemreq{Illusion}{Glamer}{2}{4th}{Craft (as armor) 8}
 
-\appdescription{Invulnerability}{2,000}{8th}{Armor}{Moderate Abjuration (Shielding)}{8th}{Standard (specific action)} If you strike your chest with a weapon or other hard object (a standard action), this armor grants you physical damage reduction equal to half your level for 5 rounds.
+\appdescription{Invulnerability}{2,000}{8th}{Body}{Moderate Abjuration (Shielding)}{8th}{Standard (specific action)} If you strike your chest with a weapon or other hard object (a standard action), this armor grants you physical damage reduction equal to half your level for 5 rounds.
 This allows you to ignore the first points of physical damage you take each round.
 If you are hit by an adamantine weapon, you cannot use your damage reduction for 1 round.
 
 \mitemreq{Abjuration}{Shielding}{3}{6th}{Craft (as armor) 10}
 
-\appdescription{Invulnerability, Greater}{30,000}{14th}{Armor}{Moderate Abjuration (Shielding)}{12th}{\x} This armor functions like \magicitem{invulnerability} armor, except that the damage reduction lasts for 12 hours.
+\appdescription{Invulnerability, Greater}{30,000}{14th}{Body}{Moderate Abjuration (Shielding)}{12th}{\x} This armor functions like \magicitem{invulnerability} armor, except that the damage reduction lasts for 12 hours.
 
 \mitemreq{Abjuration}{Shielding}{6}{12th}{Craft (as armor) 16}
 
-\appdescription{Feather}{Varies}{see text}{Armor, Shield}{Varied Transmutation (Augment)}{}{\x}
+\appdescription{Feather}{Varies}{see text}{Body, Shield}{Varied Transmutation (Augment)}{}{\x}
 Feather armor reduces the armor check penalty of the armor it is on.
 The price of the bonus depends on its penalty reduction, as shown in the table below.
 
 \begin{dtable}
     \lcaption{Feather Armor}
     \begin{dtabularx}{\columnwidth} {l X X}
-        \thead{Bonus} & \thead{Base Price} & \thead{Item Level} \\
+        \tb{Bonus} & \tb{Base Price} & \tb{Item Level} \\
         \hline
         \minus1 & 100 gp & 2nd \\
         \minus2 & 500 gp & 4th \\
@@ -373,7 +362,7 @@ To craft the item, you must have a number of ranks in the relevant Craft skill e
 
 \mitemreq{Transmutation}{Augment}{1}{varies}{Craft (as armor) varies}
 
-\appdescriptiondc{Shocking Burst}{2,000}{8th}{Armor, Shield}{Faint Evocation (Energy) [Electricity]}{6th}{Immediate (triggered)}{Fortitude (level \add 3)} When you are struck or missed by a melee attack, you can trigger a powerful jolt of electricity that zaps the foe that attacked you.
+\appdescriptiondc{Shocking Burst}{2,000}{8th}{Body, Shield}{Faint Evocation (Energy) [Electricity]}{6th}{Immediate (triggered)}{Fortitude (level \add 3)} When you are struck or missed by a melee attack, you can trigger a powerful jolt of electricity that zaps the foe that attacked you.
 Body armor triggers if the attack hits, and shields trigger if the attack misses.
 
 If you activate the item, you deal 1d6 electricity damage \add d6 per four levels to your attacker.
@@ -395,7 +384,7 @@ This effect lasts for 5 rounds, during which time you cannot activate the item's
 
 \mitemreqdesc{Abjuration}{Shielding}{Magic}{7}{14th}{Craft (as armor) 18}
 
-\appdescription{Spell Resistance}{5,000}{10th}{Armor}{Moderate Abjuration (Shielding) [Magic]}{8th}{Standard (specific action)} If you crouch low and strike the ground with your fist (a standard action), this armor grants you spell resistance.
+\appdescription{Spell Resistance}{5,000}{10th}{Body}{Moderate Abjuration (Shielding) [Magic]}{8th}{Standard (specific action)} If you crouch low and strike the ground with your fist (a standard action), this armor grants you spell resistance.
 The spell resistance lasts as long as you remain crouching, and for 5 rounds thereafter (maximum 5 minutes).
 You can move at half speed while crouching.
 
@@ -413,7 +402,7 @@ The price of the amulet depends on its enhancement bonus, as shown in the table 
 \begin{dtable}
     \lcaption{Bracers of Archery}
     \begin{dtabularx}{\columnwidth}{l X X}
-        \thead{Bonus} & \thead{Base Price} & \thead{Item Level} \\
+        \tb{Bonus} & \tb{Base Price} & \tb{Item Level} \\
         \hline
         \plus1 & 100 gp & 2nd \\
         \plus2 & 500 gp & 4th \\
@@ -436,7 +425,7 @@ Armor from the bracers is considered a separate piece of armor from any body arm
 \begin{dtable}
     \lcaption{Bracers of Armor}
     \begin{dtabularx}{\columnwidth}{l X X}
-        \thead{Bonus} & \thead{Base Price} & \thead{Item Level} \\
+        \tb{Bonus} & \tb{Base Price} & \tb{Item Level} \\
         \hline
         \plus1 & 100 gp & 2nd \\
         \plus2 & 500 gp & 4th \\
@@ -617,7 +606,7 @@ The price of the ring depends on its enhancement bonus, as shown in the table be
 \begin{dtable}
     \lcaption{Ring of Protection}
     \begin{dtabularx}{\columnwidth} {l X X}
-        \thead{Bonus} & \thead{Base Price} & \thead{Item Level} \\
+        \tb{Bonus} & \tb{Base Price} & \tb{Item Level} \\
         \hline
         \plus1 & 100 gp & 2nd \\
         \plus2 & 500 gp & 4th \\
@@ -640,7 +629,7 @@ The price of the amulet depends on its enhancement bonus, as shown in the table 
 \begin{dtable}
     \lcaption{Amulet of Mighty Fists}
     \begin{dtabularx}{\columnwidth}{l X X}
-        \thead{Bonus} & \thead{Base Price} & \thead{Item Level} \\
+        \tb{Bonus} & \tb{Base Price} & \tb{Item Level} \\
         \hline
         \plus1 & 200 gp & 3rd \\
         \plus2 & 1000 gp & 6th \\
@@ -709,31 +698,43 @@ This can allow you to hide unobserved.
 \mitemreqdesc{Conjuration}{Creation, Translocation}{Fog, Teleportation}{4}{10th}{Craft (leather or textiles) 14}
 
 \section{Implements}
+Magical implements must be wielded to gain their effects.
 
-\subsection{Weapons}
+\subsection{Weapons Overview}
 
 Magic weapons improve a character's combat abilities.
+All magic weapons have an enhancement bonus to improve your damage and ability to hit.
 They always provide an enhancement bonus to a character's attack and damage with attacks using the weapon.
-In addition to an enhancement bonus, weapons may have special abilities or be made of an unusual material.
+In addition to an enhancement bonus, magic weapons may have special abilities or be made of an unusual material.
 
-\parhead{Weapon Prices} The prices of enhancement bonuses to weapons are listed in \trefnp{Magic Weapons}, and the prices of special abilities are listed on \trefnp{Weapon Special Abilities}.
+\subsubsection{Weapon Enhancement Bonuses}\label{Weapon Enhancement Bonuses}
+
+Magic weapons can have enhancement bonuses ranging from \plus1 to \plus5.
+You gain a bonus to damage on physical attacks using a magic weapon equal to the weapon's enhancement bonus.
+In addition, each \plus1 of enhancement bonus grants you an additional offensive legend point each day.
+
+These legend points can only be gained once per day, regardless of the number of weapons you use.
+If you use multiple weapons at once, or change between different weapons, use only the highest number of legend points that applies.
+If you change from a weaker magical weapon to a stronger magical weapon, you gain legend points equal to the difference between the two enhancement bonuses.
+
+\subsubsection{Weapon Prices}\label{Weapon Prices}
+The prices of enhancement bonuses to weapons are listed in \trefnp{Magic Weapons}, and the prices of special abilities are listed on \trefnp{Weapon Special Abilities}.
 If a weapon has a special ability, the price of the special ability is added to the price of the weapon.
+The number of special abilities on the weapon cannot exceed the enhancement bonus of the weapon.
+Additionally, the price of all special abilities cannot exceed twice the price of the enhancement bonus on the weapon.
 
 \begin{dtable}
-    \lcaption{Magic Weapons}
+    \lcaption{Magic Weapon Prices}
     \begin{dtabularx}{\columnwidth} {>{\ccol}X c c}
-        \thead{Enhancement Bonus} & \thead{Base Price} & \thead{Item Level}\\
+        \tb{Enhancement Bonus} & \tb{Base Price} & \tb{Item Level} \\
         \hline
-        \plus1 weapon & 200 gp & 3rd \\
-        \plus2 weapon & 1,000 gp & 6th \\
-        \plus3 weapon & 5,000 gp & 10th \\
-        \plus4 weapon & 25,000 gp & 13th \\
-        \plus5 weapon & 125,000 gp & 17th \\
+        \plus1 weapon          & 200 gp          & 3rd             \\
+        \plus2 weapon          & 1,000 gp        & 6th             \\
+        \plus3 weapon          & 5,000 gp        & 10th            \\
+        \plus4 weapon          & 25,000 gp       & 13th            \\
+        \plus5 weapon          & 125,000 gp      & 17th            \\
     \end{dtabularx}
 \end{dtable}
-
-\parhead{Special Ability Limitations} The number of special abilities on the weapon cannot exceed the enhancement bonus of the weapon.
-Additionally, the price of all special abilities cannot exceed twice the price of the enhancement bonus on the weapon.
 
 \parhead{Spellpower for Weapons} The spellpower of a magic weapon with a special ability is given in the item description.
 For an item with only an enhancement bonus, the spellpower is three times the enhancement bonus.
@@ -761,10 +762,12 @@ These special effects function against creatures not subject to critical hits.
 When fighting against such creatures, roll for critical hits as you would against any other creature subject to critical hits.
 On a successful critical roll, apply the special effect, but do not multiply the weapon's regular damage.
 
+\subsection{Weapon Special Abilities}
+
 \begin{dtable*}
-    \lcaption{Weapon Special Abilities}
+    \lcaption{Magic Weapon Special Abilities}
     \begin{dtabularx}{\textwidth}{l >{\lcol}X l l}
-        \thead{Special Ability} & \thead{Description} & \thead{Cost} & \thead{Item Level} \\
+        \tb{Special Ability} & \tb{Description} & \tb{Cost} & \tb{Item Level} \\
         \hline
         Bane & Add special ability that only functions against certain creatures & Special & Special \\
         Morphing & Weapon transforms into similar weapon & 200 gp & 3rd \\
@@ -798,7 +801,7 @@ A list of possible foes is described on the following table.
 
 \begin{dtable}
     \begin{dtabularx}{\columnwidth}{>{\lcol}X >{\lcol}X}
-        \thead{Designated Foe} & \thead{Designated Foe}\\
+        \tb{Designated Foe} & \tb{Designated Foe}\\
         \hline
         Aberrations & Animals \\
         Constructs & Dragons \\
@@ -1023,7 +1026,7 @@ Staffs function exactly like wands (see below), except that they enhance all sch
 \begin{dtable}
     \caption{Staff Prices}
     \begin{dtabularx}{\columnwidth} {>{\ccol}X c c}
-        \thead{Enhancement Bonus} & \thead{Base Price} & \thead{Item Level}\\
+        \tb{Enhancement Bonus} & \tb{Base Price} & \tb{Item Level}\\
         \hline
         \plus1 staff & 150 gp & 3rd \\
         \plus2 staff & 750 gp & 5th \\
@@ -1051,7 +1054,7 @@ Holy symbols function exactly like wands (see below), except that they enhance a
 \begin{dtable}
     \caption{Holy Symbol Prices}
     \begin{dtabularx}{\columnwidth} {>{\ccol}X c c}
-        \thead{Enhancement Bonus} & \thead{Base Price} & \thead{Item Level}\\
+        \tb{Enhancement Bonus} & \tb{Base Price} & \tb{Item Level}\\
         \hline
         \plus1 holy symbol & 150 gp & 3rd \\
         \plus2 holy symbol & 750 gp & 5th \\
@@ -1071,7 +1074,7 @@ When worn in this way, the holy symbol occupies a torso body slot.
 
 \begin{dtable}
     \begin{dtabularx}{\columnwidth}{X l l}
-        \thead{Special Ability} & \thead{Cost} & \thead{Item Level} \\
+        \tb{Special Ability} & \tb{Cost} & \tb{Item Level} \\
         \hline
         Channeling & 2,000 & 6th \\
         Channeling, Greater & 8,000 & 12th \\
@@ -1106,7 +1109,7 @@ A wand cannot provide an enhancement bonus to more than two schools.
 \begin{dtable}
     \lcaption{Magic Wands}
     \begin{dtabularx}{\columnwidth} {>{\ccol}X c c}
-        \thead{Enhancement Bonus} & \thead{Base Price} & \thead{Item Level}\\
+        \tb{Enhancement Bonus} & \tb{Base Price} & \tb{Item Level}\\
         \hline
         \plus1 wand & 50 gp & 1st \\
         \plus2 wand & 250 gp & 3rd \\
@@ -1125,7 +1128,7 @@ A typical wand has AC 7, 5 hit points, hardness 5, and a break DC of 16.
 \begin{dtable}
     \lcaption{Wand Special Abilities}
     \begin{dtabularx}{\columnwidth}{>{\lcol}X l l}
-        \thead{Special Ability} & \thead{Cost} & \thead{Item Level} \\
+        \tb{Special Ability} & \tb{Cost} & \tb{Item Level} \\
         \hline
         Enlarging & 400 gp & 4th \\
         Flaming & 400 gp & 4th \\
@@ -1235,7 +1238,7 @@ Use the entry on the table appropriate to the scribing of each individual scroll
 \begin{dtable}
     \lcaption{Scrolls and Potions}
     \begin{dtabularx}{\columnwidth}{X l l}
-        \thead{Common Spells\fn{1}} & \thead{Market Price} & \thead{Item Level} \\
+        \tb{Common Spells\fn{1}} & \tb{Market Price} & \tb{Item Level} \\
         \hline
         1st-Level & 10 gp & 1st \\
         2nd-Level & 40 gp & 1st \\
@@ -1246,7 +1249,7 @@ Use the entry on the table appropriate to the scribing of each individual scroll
         7th-Level & 3000 gp & 9th \\
         8th-Level & 7000 gp & 11th \\
         9th-Level & 15000 gp & 12th \\
-        \thead{Paladin Spells} & \thead{Market Price\fn{2}} & \thead{Item Level} \\
+        \tb{Paladin Spells} & \tb{Market Price\fn{2}} & \tb{Item Level} \\
         1st-Level & 40 gp & 1st \\
         2nd-Level & 100 gp & 2nd \\
         3rd-Level & 250 gp & 3rd \\
@@ -1308,7 +1311,7 @@ Compare the result to \trefnp{Potion Mishaps}.
 \begin{dtable}
     \lcaption{Potion Mishaps}
     \begin{dtabularx}{\columnwidth}{l X}
-        \thead{Mishap Result} & \thead{Mishap Effect} \\
+        \tb{Mishap Result} & \tb{Mishap Effect} \\
         \hline
         11\plus & No additional effects \\
         6--10 & User also takes damage equal to the potion's spellpower \\
@@ -1322,7 +1325,7 @@ Compare the result to \trefnp{Potion Mishaps}.
 \begin{dtable}
     \caption{Ritual Costs}
     \begin{dtabularx}{\columnwidth}{X l l l }
-        \thead{Ritual Level} & \thead{Cost to Perform} & \thead{Cost to Scribe} & \thead{Item Level} \\
+        \tb{Ritual Level} & \tb{Cost to Perform} & \tb{Cost to Scribe} & \tb{Item Level} \\
         \hline
         1st-Level & 5 gp & 50 gp & 1st \\
         2nd-Level & 20 gp & 200 gp & 3rd \\
@@ -1358,7 +1361,7 @@ This weight, and the limits in weight and volume of the bag's contents, depend o
 
 \begin{dtable*}
     \begin{dtabularx}{\textwidth}{l l X X X X}
-        \thead{Bag} & \thead{Bag Weight} & \thead{Weight Limit} & \thead{Space Limit} & \thead{Base Price} & \thead{Item Level}\\
+        \tb{Bag} & \tb{Bag Weight} & \tb{Weight Limit} & \tb{Space Limit} & \tb{Base Price} & \tb{Item Level}\\
         \hline
         Type I & 15 lb.
         & 250 lb.
@@ -1404,7 +1407,7 @@ If a new animal is drawn from the bag, the previous animal is immediately unsumm
 \begin{dtable}
     \lcaption{Bag of Tricks Types}
     \begin{dtabularx}{\columnwidth}{l X X}
-        \thead{Bag Type} & \thead{Base Price} & \thead{Item Level}\\
+        \tb{Bag Type} & \tb{Base Price} & \tb{Item Level}\\
         \hline
         Gray & 200 gp & 3rd \\
         Rust & 2,000 gp & 8th \\
@@ -1415,7 +1418,7 @@ If a new animal is drawn from the bag, the previous animal is immediately unsumm
 \begin{dtable}
     \lcaption{Bag of Tricks Animals}
     \begin{dtabularx}{\columnwidth}{l X X X}
-        \thead{Roll} & \thead{Gray Bag} & \thead{Rust Bag} & \thead{Tan Bag} \\
+        \tb{Roll} & \tb{Gray Bag} & \tb{Rust Bag} & \tb{Tan Bag} \\
         \hline
         1-20   & Dire rat   & Dire weasel   & Snake, giant constrictor \\
         21-40  & Cat        & Lion          & Dire lion \\
@@ -1496,7 +1499,7 @@ For example, the material type for a weapon is generally determined by its strik
 \begin{dtable}
     \lcaption{Special Materials}
     \begin{dtabularx}{\columnwidth}{l l X l}
-        \thead{Material Name} & \thead{Material Type} & \thead{Effect} & \thead{Price} \\
+        \tb{Material Name} & \tb{Material Type} & \tb{Effect} & \tb{Price} \\
         \hline
         Adamantine & Metal & Grant or overcome physical damage reduction & \\
         Cold Iron & Metal & Effective against supernatural creatures & \\
