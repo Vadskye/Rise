@@ -1091,3 +1091,40 @@
         \spellinfo{Conjuration [Teleportation]}{Conjuration}
     \end{spellfooter}
 \end{spellsection}
+
+\begin{spellsection}[Mass]{Charm Monster}[8]
+    \begin{spellheader}
+        \spelldesc{You manipulate the minds of creatures so they think of you as a trusted friend and ally.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltwocol{\spelltgt{Up to five creatures}}{\spellrng{\rngmed}}
+            \spellcmp{Somatic only}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spellspecial This spell functions like \spell{charm person}, except that it affects multiple creatures of any type.
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Enchantment [Delusion, Mind, Subtle]}{Enchantment}
+        \miscastyou
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}[Mass]{Charm Person}[6]
+    \begin{spellheader}
+        \spelldesc{You manipulate the minds of many people so they think of you as a trusted friend and ally.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltwocol{\spelltgts{Up to five humanoid creatures}}{\spellrng{\rngmed}}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spellspecial This spell functions like \spell{charm person}, except that it affects multiple creatures.
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Enchantment [Charm, Mind, Subtle]}{Enchantment}
+        \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
