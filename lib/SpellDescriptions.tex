@@ -119,7 +119,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Agony}[2]
+\begin{spellsection}{Agony}[5]
     \begin{spellheader}
         \spelldesc{You inflict debilitating pain on your foe.}
     \end{spellheader}
@@ -357,7 +357,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spellzone{\areasmall radius}}{\spellrng{\rngmed}}
+            \spelltwocol{\spellzone{\areamed radius}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect Ground within the area is considered difficult terrain.
@@ -371,7 +371,8 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Maneuver defense}
-                \spellsuccess The target takes bludgeoning damage equal to 1d8 \add half your spellpower. In addition, it is \immobilized for the duration of the spell.
+                \spellsuccess The target takes 1d6 bludgeoning damage per two spellpower.
+                \spellcritical The target is \immobilized for the duration of the spell. It can escape with a grapple or Escape Artist check against a DC equal to 10 \add your spellpower.
             \end{spellattack}
         \end{spelleffects}
     \end{spellsubcontent}
@@ -698,32 +699,13 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}[Mass]{Charm Monster}[8]
-    \begin{spellheader}
-        \spelldesc{You manipulate the minds of creatures so they think of you as a trusted friend and ally.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{Up to five creatures}}{\spellrng{\rngmed}}
-            \spellcmp{Somatic only}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spellspecial This spell functions like \spell{charm person}, except that it affects multiple creatures of any type.
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Enchantment [Delusion, Mind, Subtle]}{Enchantment}
-        \miscastyou
-    \end{spellfooter}
-\end{spellsection}
-
 \begin{spellsection}{Charm Person}[2]
     \begin{spellheader}
         \spelldesc{You manipulate a person's mind so he thinks of you as a trusted friend and ally.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One humanoid creature}}{\spellrng{\rngmed}}
+            \spelltwocol{\spelltgt{One humanoid creature}}{\spellrng{\rngclose}}
             \spellcmp{Somatic only}
         \end{spelltargetinginfo}
         \begin{spelleffects}
@@ -743,24 +725,6 @@
 
         \norepeatspellnotes
         \miscastrandom
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}[Mass]{Charm Person}[6]
-    \begin{spellheader}
-        \spelldesc{You manipulate the minds of many people so they think of you as a trusted friend and ally.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgts{Up to five humanoid creatures}}{\spellrng{\rngmed}}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spellspecial This spell functions like \spell{charm person}, except that it affects multiple creatures.
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Enchantment [Charm, Mind, Subtle]}{Enchantment}
-        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -1487,7 +1451,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
                 \spellsuccess \spelldamage{6}{divine}[d6].
-                \spellcritical As above, and the target is \immobilized for 5 rounds.
+                \spellcritical As above, and the target is \slowed for 5 rounds.
                 \spellfailure Half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -1836,7 +1800,7 @@
 \end{spellsection}
 
 
-\begin{spellsection}{Dominate Monster}[7]
+\begin{spellsection}{Dominate Monster}[9]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -1855,12 +1819,12 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Dominate Person}[5]
+\begin{spellsection}{Dominate Person}[7]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One humanoid creature}}{\spellrng{\rngmed}}
+            \spelltwocol{\spelltgt{One humanoid creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
@@ -1906,7 +1870,7 @@
 
 \pdfbookmark[2]{E}{SpellDescriptionsE}
 
-\begin{spellsection}{Earth's Pull}[1]
+\begin{spellsection}{Earth's Pull}[4]
     \begin{spellheader}
         \spelldesc{You intensify the pull of gravity on your foe, causing it to feel much heavier and making its movements sluggish.}
     \end{spellheader}
@@ -1917,7 +1881,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess The target is \immobilized. If it is flying, it crashes to the ground.
+                \spellsuccess The target is \slowed. However, it gains a \plus5 bonus to Climb checks.
                 \spellfailure The target moves at half speed.
             \end{spellattack}
             \spelldur 5 rounds
@@ -1967,7 +1931,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Earthquake}[8]
+\begin{spellsection}{Earthquake}[9]
     \begin{spellheader}
         \spelldesc{An intense but highly localized tremor shakes the ground. The shock knocks creatures down, and rifts open in the earth to trap unwary creatures.}
     \end{spellheader}
@@ -1978,7 +1942,8 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess The target is knocked prone and trapped in a crack in the ground, causing it to be \immobilized. It can escape with a grapple or Escape Artist check against a DC equal to 10 \add your spellpower.
+                \spelleffect The target is knocked prone.
+                \spellsuccess The target is trapped in a crack in the ground, causing it to be \immobilized. It can escape with a grapple or Escape Artist check against a DC equal to 10 \add your spellpower.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -2204,7 +2169,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess The target is \immobilized.
+                \spellsuccess The target is \slowed.
                 \spellfailure The target moves at half speed.
                 \spellspecial The target can break this spell's effect with a grapple or Escape Artist check against a DC equal to 10 \add your spellpower.
             \end{spellattack}
@@ -2465,7 +2430,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Enchantment [Delusion, Mind]}{Arcane}
+        \spellinfo{Enchantment [Delusion, Mind]}{Enchantment}
         \miscastrandom
     \end{spellfooter}
 \end{spellsection}
@@ -3186,12 +3151,12 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Hold Monster}[4]
+\begin{spellsection}{Hold Monster}[5]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target is \immobilized.
@@ -3199,17 +3164,17 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Enchantment [Compulsion, Mind]}{Arcane, Law}
+        \spellinfo{Enchantment [Compulsion, Mind]}{Arcane, Divine, Law}
         \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}[Mass]{Hold Monster}[8]
+\begin{spellsection}[Mass]{Hold Monster}[9]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgts{Up to five creatures}}{\spellrng{\rngclose}}
+            \spelltwocol{\spelltgts{Up to five creatures}}{\spellrng{\rnglong}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target is \immobilized.
@@ -3217,12 +3182,12 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Enchantment [Compulsion, Mind]}{Arcane, Law}
+        \spellinfo{Enchantment [Compulsion, Mind]}{Arcane, Divine, Law}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Hold Person}[2]
+\begin{spellsection}{Hold Person}[3]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -3230,8 +3195,8 @@
             \spelltwocol{\spelltgt{One humanoid creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target is \immobilized.
-            \spelldur \durshort
+            \spellsuccess The target is \immobilized for 5 rounds.
+            \spellfailure The target moves at one-quarter speed for 5 rounds.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -3240,7 +3205,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}[Mass]{Hold Person}[6]
+\begin{spellsection}[Mass]{Hold Person}[7]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -4011,7 +3976,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Conjuration [Planar, Teleportation]}*{Conjuration, Trickery}
+        \spellinfo{Conjuration [Planar, Teleportation]}*{Arcane, Trickery}
         \spellnotes Spells and abilities that move a creature within a plane, such as \spell{teleport} and \spell{dimension door}, do not help a creature escape a \spell{maze} spell, although a \spell{plane shift} spell allows it to exit to whatever plane is designated in that spell. Minotaurs can escape the spell automatically.
 
         When leaving the maze, the target reappears where it had been when the maze spell was cast. If this location is filled with a solid object, the target appears in the nearest open space.
@@ -4281,7 +4246,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
                 \spellsuccess \spelldamage{3}{divine}.
-                \spellcritical As above, and the target is \immobilized for 5 rounds.
+                \spellcritical As above, and the target is \slowed for 5 rounds.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
         \end{spelleffects}
@@ -5074,21 +5039,22 @@
 
 \begin{spellsection}{Reverse Gravity}[8]
     \begin{spellheader}
+        \spelldesc{You reverse gravity an area, causing everything within it to fall upwards.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
             \spelltwocol{\spellzone{\areamed radius cylinder, 50 ft. high}}{\spellrng{\rngmed}}
+            \spelltgts{Everything in the area}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect Gravity is reversed in the area. Everything inside falls upwards, reaching the top of the area within 1 round. If a ``falling'' object or creature strikes a solid object, such as a ceiling, it is affected in the same way as it would be during a normal fall. Otherwise, it floats at the top of the area, oscillating slightly.
+            \spellsuccess Gravity in the area is reversed for the target. It falls upwards, reaching the top of the area within 1 round. if it strikes a solid object, such as a ceiling, it is affected in the same way as it would be during a normal fall. Otherwise, it floats at the top of the area, oscillating slightly.
 
-            When the spell ends, everything still floating falls, potentially taking damage for the fall.
             \spelldur Focus (up to 5 rounds)
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation}{Air, Transmutation, Trickery}
-        \spellnotes Creatures who can fly or levitate can keep themselves from falling, though the shift in gravity can be disorienting.
+        \spellnotes Creatures who can fly or levitate can keep themselves from falling, though the shift in gravity can be disorienting. When the spell ends, everything still floating falls, potentially taking damage for the fall.
         \miscastyou
     \end{spellfooter}
 \end{spellsection}
@@ -7185,13 +7151,14 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Web}[4]
+\begin{spellsection}{Web}[8]
     \begin{spellheader}
         \spelldesc{You create a many-layered mass of strong, stricky strands that trap creatures caught within them. The strands are similar to spider webs, but larger and tougher.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spellzone{\areamed radius}}{\spellrng{\rngclose}}
+            \spelltwocol{\spellzone{40 foot cube}}{\spellrng{\rngmed}}
+            \spellspecial The area must border two solid objects on opposing sides. For example, this spell can be cast between two opposing walls, or between a floor and a ceiling, but not in empty space.
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The area is filled with webs, causing it to be treated as difficult terrain. The webs are thick and strong, but too widely spaced to significantly obscure sight. % info about how to destroy webs
@@ -7204,13 +7171,13 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess The target is \immobilized. As a standard action, it can make a grapple attack or Escape Artist check. If its result beats your attack result, it is no longer entangled.
+                \spellsuccess The target is \immobilized. It can escape with a grapple or Escape Artist check against a DC equal to 10 \add your spellpower.
             \end{spellattack}
         \end{spelleffects}
     \end{spellsubcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Creation, Physical]}{Arcane}
-        \spellnotes The strands of web are flammable. Any five-foot square that takes 5 points of fire damage is destroyed. A magic flaming sword can slash them away as easily as a hand brushes away cobwebs. Any fire can set the webs alight and burn away 5 square feet in 1 round. All creatures within flaming webs take 1d6 points of fire damage from the flames.
+        \spellnotes The strands of web can be destroyed. Any five-foot square that takes fire damage equal to your spellpower, or twice your spellpower in slashing or bludgeoning damage, is destroyed. A magic flaming sword can slash them away as easily as a hand brushes away cobwebs. Any fire can set the webs alight and burn away 5 square feet in 1 round. All creatures within flaming webs is \ignited from the flames.
 
         \physicalspellnotes
 
