@@ -196,7 +196,7 @@ Some strike feats instead require a specific action to use.
         \featref{Bardic Spellpower} & Arcane spellcasting ability & Fighter and rogue levels improve some spells & \featpref{Bardic Spellpower} \\
         \featref{Battlecaster} & Proficiency with light armor & Reduce arcane spell failure by 10\% & \featpref{Battlecaster} \\
         \featref{Brutal Magic} & Base attack bonus \plus4, 1st level spells & Gain spellpower bonus after making physical attack & \featpref{Brutal Magic} \\
-        \featref{Combat Casting} & \x &  \plus3 bonus to Concentration checks to cast spells, reroll 1/day & \featpref{Combat Casting} \\
+        \featref{Combat Casting} & \x &  \plus3 bonus to Concentration checks to cast spells & \featpref{Combat Casting} \\
         \featref{Counterspell} & Spellcraft 10 ranks, 2nd level spells & Counter spells cast by foe & \featpref{Counterspell} \\
         \tind\featref{Flexible Counterspell} & Counterspell & Use any spell to counterspell & \featpref{Flexible Counterspell} \\
         \tind\featref{Mass Counterspell} & Spellcraft 15 ranks, 4th level spells, Counterspell & Counter spells cast by multiple foes & \featpref{Mass Counterspell} \\
@@ -288,7 +288,7 @@ Some strike feats instead require a specific action to use.
         \featref{Poison Expert} & Int 3, Craft (poison) 10 ranks & Apply poisons more effectively & \featpref{Poison Expert} \\
         \featref{Ranged Legerdemain} &  2nd level spells & Use Disable Device or Sleight of Hand at range & \featpref{Ranged Legerdemain} \\
         \featref{Scale the Beast} & Climb 10 ranks & Climb on massive creatures & \featpref{Scale the Beast} \\
-        \featref{Skill Focus}\fn{1} & \x &  \plus3 bonus to checks with selected skill, reroll 1/day & \featpref{Skill Focus} \\
+        \featref{Skill Focus}\fn{1} & \x &  \plus3 bonus to checks with selected skill & \featpref{Skill Focus} \\
         \featref{Skill Mastery}\fn{1} & Any skill 10 ranks & Always take 10 on skill checks & \featpref{Skill Mastery} \\
         \featref{Trapfinder} & Awareness 5 ranks & Find traps faster & \featpref{Trapfinder} \\
         \featref{Trap Sense} & Awareness 10 ranks & Automatically detect traps & \featpref{Trap Sense} \\
@@ -640,8 +640,7 @@ There is no limit to the number of times you can use this feat per round.
 \featben You reduce your penalties for squeezing by 2. In addition, you reduce your penalty for attacking with non-light weapons in a grapple by 2.
 
 \feat{Combat Casting}{Magic}
-\featben You gain a \plus3 bonus to Concentration checks made to cast a spell or use a spell-like ability.
-In addition, once per day you may reroll a Concentration check made to cast a spell.
+\featben You gain a \plus3 bonus to Concentration checks made to cast spells or use spell-like abilities.
 
 \feat{Combat Mobility}{Combat}
 \featpre Dex 3.
@@ -1186,7 +1185,8 @@ If the target took damage from this strike and has no hit points remaining at th
 \feat{Knockdown}{Combat, Maneuver, Power, Strike}
 \featpre Strength 5, two attacks.
 \featben In place of two attacks, you can attempt to shove an opponent.
-If you succeed, it is knocked prone at the end of its movement.
+If you succeed, it is knocked prone at the end of its movement, and you can make an extra melee attack against it if you still threaten it.
+The free attack gains the normal bonus for striking a prone target (\minus4 to physical defenses).
 
 \feat{Ledgewalker}{Skill}
 \featpre Acrobatics 5 ranks.
@@ -1803,7 +1803,6 @@ A silent spell uses up a spell slot one level higher than the spell's actual lev
 \feat{Skill Focus}{Skill}
 Choose a skill.
 \featben You gain a \plus3 bonus to all checks involving that skill.
-In addition, once per day you may reroll a skill check made with that skill.
 \parhead{Special}
 You can gain this feat multiple times.
 Its effects do not stack.
