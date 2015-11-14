@@ -751,6 +751,47 @@
     }
 }
 
+% args:
+%   item price
+\DeclareDocumentCommand{\magicitemitemlevel}{m}
+{
+    \x
+}
+
+% args:
+%   effective spell level
+\DeclareDocumentCommand{\magicitemaurastrength}{m}
+{
+    \ifcase#1\relax
+    \or Faint    %1
+    \or Faint   %2
+    \or Faint   %3
+    \or Moderate  %4
+    \or Moderate  %5
+    \or Moderate  %6
+    \or Strong %7
+    \or Strong %8
+    \or Strong %9
+    \or Overwhelming %10
+    \else \x
+    \fi
+}
+
+% args:
+%   star: if true, return spellpower with ``nth''
+%   effective spell level
+\DeclareDocumentCommand{\magicitemspellpower}{s m}
+{
+    \imathparse{#2*2}
+    \IfBooleanTF{#1}
+    {
+        \nth{\imathresult}
+    }
+    {
+        \imathresult
+    }
+}
+
 \ExplSyntaxOff
 
 \newcommand{\miscastexplode}{\spellmiscast{Explosive} The spell does not have its normal effect. Instead, the magical energy explodes, dealing 1d6 damage per two spellpower to you and all creatures adjacent to you.}
