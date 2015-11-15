@@ -305,38 +305,49 @@
 %   school and descriptors
 %   [activation]
 %   crafting skill
-\DeclareDocumentEnvironment{magicitemdef}{m o m o m o m}
+%   fluff text
+\DeclareDocumentEnvironment{magicitemdef}{m o m o m o m o}
 {
+    \begin{thesamepage}
     \subsubsection{#1}
 
-    \IfValueTF{#2}
-    {
-        \parhead{Price~(Level)} \num{#2}~gp~(\magicitemitemlevel{#2})
-    }
-    {
-        \x
-        %\parhead{Price (Level)} \magicitemprice{#3}{#6} \magicitemitemlevel{\TempVar}
-    }
+    \begin{spellcontent}
+    \begin{spelltargetinginfo}
+        \IfValueTF{#2}
+        {
+            \magicitempricetext{#2}{#3}
+        }
+        {
+            %\parhead{Price (Level)} \magicitemprice{#3}{#6} \magicitemitemlevel{\TempVar}
+        }
 
-    \IfValueT{#4}
-    {
-        \parhead{Body~Location} #4
-    }
+        \parhead*{Base~Power} \magicitemspellpower{#3}
 
-    \parhead{Aura,~Spellpower} \magicitemaurastrength{#3}~#5,~\magicitemspellpower*{#3}
+        \IfValueT{#4}
+        {
+            \parhead*{Location} #4
+        }
 
-    \IfValueT{#6}
-    {
-        \parhead{Activation} #6
-    }
-    \par
+        \parhead*{Aura} \magicitemaurastrength{#3}~#5
+
+        \IfValueT{#6}
+        {
+            \parhead*{Activation} #6
+        }
+        \par
+    \end{spelltargetinginfo}
+    \begin{spelleffects}
 }
 {
-    \par \textit{Creation~Requirements:}~#5~#3;~
-    spellpower~\magicitemspellpower*{#3}~
-    or~Craft~(#7)~\imath{#3*2+4}
+    \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \par\noindent \textit{Creation~Requirements:}~#5~\nth{#3}~level;~
+        spellpower~\magicitemspellpower{#3}~
+        or~Craft~(#7)~\imath{#3*2+4}
+    \end{spellfooter}
+    \end{thesamepage}
 }
-
 
 \DeclareDocumentEnvironment{thesamepage}{}
 {
@@ -347,6 +358,5 @@
     \par\xdef\tpd{\the\prevdepth}\egroup
     \prevdepth=\tpd
 }
-
 
 \ExplSyntaxOff
