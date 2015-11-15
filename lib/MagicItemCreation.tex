@@ -44,15 +44,15 @@ Items which give simple scaling bonuses are easy to price. Each bonus has a fixe
 \begin{dtable*}
     \lcaption{Scaling Item Costs}
     \begin{dtabularx}{\textwidth}{X l l l l l}
-        \thead{Item Effect} & \thead{\plus1 Bonus} & \thead{\plus2 Bonus} & \thead{\plus3 Bonus} & \thead{\plus4 Bonus} & \thead{\plus5 Bonus} \\
-\hline
+        \tb{Item Effect} & \tb{\plus1 Bonus} & \tb{\plus2 Bonus} & \tb{\plus3 Bonus} & \tb{\plus4 Bonus} & \tb{\plus5 Bonus} \\
+        \hline
         Attack and damage & 200 gp & 1,000 gp & 5,000 gp & 25,000 gp & 125,000 gp \\
         Armor class & 100 gp & 500 gp & 2,500 gp & 12,500 gp & 62,500 gp \\
         Caster level (single school) & 50 gp & 250 gp & 1,250 gp & 6,250 gp & 31,250 gp \\
         Caster level (all schools) & 150 gp & 750 gp & 3,750 gp & 18,750 gp & 93,750 gp \\
         Saving throw (single) & 50 gp & 250 gp & 1,250 gp & 6,250 gp & 31,250 gp \\
         Saving throws (all) & 100 gp & 500 gp & 2,500 gp & 12,500 gp & 62,500 gp \\
-        \thead{Item Effect} & \thead{\plus2 Bonus} & \thead{\plus4 Bonus} & \thead{\plus6 Bonus} & \thead{\plus8 Bonus} & \thead{\plus10 Bonus} \\
+        \tb{Item Effect} & \tb{\plus2 Bonus} & \tb{\plus4 Bonus} & \tb{\plus6 Bonus} & \tb{\plus8 Bonus} & \tb{\plus10 Bonus} \\
         Skill (single) & 100 gp & 500 gp & 2,500 gp & 12,500 gp & 62,500 gp \\
     \end{dtabularx}
 \end{dtable*}
@@ -62,9 +62,11 @@ Items which give simple scaling bonuses are easy to price. Each bonus has a fixe
 Abilities more complicated than a simple bonus are more difficult to price. However, there are still consistent principles which can be followed. To assign a price to a special ability, follow the steps below.
 \begin{enumerate*}
     \item Assign an effective spell level to the ability based on its power.
+        \begin{itemize}
+            \item Apparel items with abilities that affect the wearer are treated as having Close range when determining the level of the ability.
+        \end{itemize}
     \item Decide how the ability will be activated.
-    \item Determine the price for an item which can be used once per day, using \tref{Item Prices by Activation Method}.
-    %\item Increase the price if the item can be used multiple times per day, using \tref{Multiple Use Item Prices}.
+    \item Determine the price, using \tref{Item Prices by Activation Method}.
 \end{enumerate*}
 
 %Patterns: Easy trigger is almost an item of 4 levels higher than when the
@@ -75,25 +77,22 @@ Abilities more complicated than a simple bonus are more difficult to price. Howe
 \begin{dtable*}
     \lcaption{Item Prices by Activation Method}
     \begin{dtabularx}{\textwidth}{l X X X X}
-        \thead{Spell Level} & \thead{Specific Action\fn{1} (Item Level)} & \thead{Difficult Trigger\fn{2} (Item Level)} & \thead{Easy Trigger\fn{3} (Item Level)} & \thead{Continuous\fn{4} (Item Level)} \\
-\hline
-        Cantrip\fn{5} & 100 gp (2nd) & 100 gp (3rd) & 200 gp (3rd) & 200 gp (3rd) \\
-        1st & 200 gp (3rd) & 200 gp (3rd) & 400 gp (4th) & 800 gp (5th) \\
-        2nd & 800 gp (5th) & 800 gp (5th) & 1,600 gp (7th) & 2,000 gp (8th) \\
-        3rd & 2,000 gp (8th) & 2,000 gp (8th) & 4,000 gp (9th) & 5,000 gp (10th) \\
-        4th & 5,000 gp (10th) & 5,000 gp (10th) & 10,000 gp (11th) & 12,000 gp (12th) \\
-        5th & 12,000 gp (12th) & 12,000 gp (12th) & 24,000 gp (13th) & 30,000 gp (14th) \\
-        6th & 30,000 gp (14th) & 30,000 gp (14th) & 60,000 gp (16th) & 60,000 gp (16th) \\
-        7th & 60,000 gp (16th) & 60,000 gp (16th) & 120,000 gp (17th) & 140,000 gp (18th) \\
-        8th & 140,000 gp (18th) & 140,000 gp (18th) & 280,000 gp (19th) & 300,000 gp (20th) \\
-        9th & 300,000 gp (20th) & 300,000 gp (20th) & 600,000 gp (\x) & 700,000 gp (\x) \\
+        \tb{Spell Level} & \tb{Specific Action\fn{1} (Item Level)} & \tb{Difficult Trigger\fn{2} (Item Level)} & \tb{Easy Trigger\fn{3} (Item Level)} & \tb{Continuous\fn{4} (Item Level)} \\
+        \hline
+        Cantrip\fn{5} & 100 gp (2nd)      & 100 gp (3rd)      & 200 gp (3rd)      & 200 gp (3rd)      \\
+        1st           & 200 gp (3rd)      & 200 gp (3rd)      & 400 gp (4th)      & 800 gp (5th)      \\
+        2nd           & 800 gp (5th)      & 800 gp (5th)      & 1,600 gp (7th)    & 2,000 gp (8th)    \\
+        3rd           & 2,000 gp (8th)    & 2,000 gp (8th)    & 4,000 gp (9th)    & 5,000 gp (10th)   \\
+        4th           & 5,000 gp (10th)   & 5,000 gp (10th)   & 10,000 gp (11th)  & 12,000 gp (12th)  \\
+        5th           & 12,000 gp (12th)  & 12,000 gp (12th)  & 24,000 gp (13th)  & 30,000 gp (14th)  \\
+        6th           & 30,000 gp (14th)  & 30,000 gp (14th)  & 60,000 gp (16th)  & 60,000 gp (16th)  \\
+        7th           & 60,000 gp (16th)  & 60,000 gp (16th)  & 120,000 gp (17th) & 140,000 gp (18th) \\
+        8th           & 140,000 gp (18th) & 140,000 gp (18th) & 280,000 gp (19th) & 300,000 gp (20th) \\
+        9th           & 300,000 gp (20th) & 300,000 gp (20th) & 600,000 gp (\x)   & 700,000 gp (\x)   \\
     \end{dtabularx}
     1 Actiated with a time-consuming action, such as making a gesture or drinking a potion. \\
     2 Triggered by an unusual circumstance, such as getting a critical hit, or an action beyond your control, such as an enemy's attack. Triggered effects should only modify existing actions, rather than constituting new actions, and should not have beneficial effects that last longer than the current round. \\
     3 Triggered by a common cicumstance, such as a successful attack, or activated by a trivial action, such as snapping your fingers. Triggered effects should only modify existing actions, rather than constituting new actions, and should not have beneficial effects that last longer than the current round. \\
-    4 For effects with \durext duration. Increase the effective spell level by 1 for each duration category shorter than Extreme, to a minimum duration of \durshort. \\
+    4 For effects with \durext duration. Effects with shorter durations must have the spell level increased to have Extreme duration. \\
     5 Or other effects weaker than a 1st level spell. \\
 \end{dtable*}
-
-\subsection{Continuous Effects}
-To price an item that grants a continuous effect, use the spell level of spell with a duration of Permanent and a specific action trigger. In most cases, the item only grants its bonus to the wielder, so use a range of \rngpers.

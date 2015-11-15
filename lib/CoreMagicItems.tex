@@ -5,11 +5,11 @@ Magic items are objects that have been imbued with magical energy. They can take
 \section{Magic Item Types}
 Magic items are divided into three broad categories:
 \begin{itemize}
-    \item Apparel items provide access to their powers while worn.
+    \item Apparel items provide access to their abilities while worn.
         A \mitem{flaming burst full plate} and a \mitem{ring of protection} are apparel items.
-    \item Implements provide access to their powers when wielded.
+    \item Implements provide access to their abilities when wielded.
         A \mitem{flaming longsword} and a \mitem{wand of fire} are implements.
-    \item Tools provide access to their powers when used in some way.
+    \item Tools provide access to their abilities when used in some way.
         A \mitem{bag of holding} is a tool.
 \end{itemize}
 
@@ -79,20 +79,18 @@ Some individual items, notably those that simply store spells and nothing else, 
 Reference the spell's description for details, modified by the form of the item (potion, scroll, wand, and so on).
 Assume that the spell is cast at the minimum level required to cast it.
 
-Items with full descriptions have their powers detailed, and each of the following topics is covered in notational form at the end of the description.
+Items with full descriptions have their abilities detailed, and each of the following topics is covered in notational form at the end of the description.
+
+\parhead{Base Power} The next item in a notational entry gives the base power of the item.
+An item's power can affect how strong its abilities are, as well as its special defenses when unattended and its effective spellpower for the purpose of effects like \spell{dispel magic}.
+An item's power is equal to its base power or the level of the creature using it, whichever is higher.
+
+For potions and scrolls, the item's base power must be at least twice the level of the spell contained.
+Generally, an item's base power is the same as the minimum spellpower required to create the item.
 
 \parhead{Aura} Most of the time, a Spellcraft check will reveal the school of magic associated with a magic item and the strength of the aura an item emits.
 This information (when applicable) is given at the beginning of the item's notational entry.
 See the Spellcraft skill for details.
-
-\parhead{Spellpower} The next item in a notational entry gives the spellpower of the item, indicating its relative power.
-The spellpower determines the item's special defenses, as well as other level-dependent aspects of the powers of the item (if variable).
-It also determines the level that must be contended with should the item come under the effect of a dispel magic spell or similar situation.
-This information is given in the form ``CL x,'' where ``CL'' is an abbreviation for spellpower and ``x'' is a number representing the spellpower itself.
-
-For potions, scrolls, and wands, the creator can set the spellpower of an item at any number high enough to cast the stored spell and not higher than her own spellpower.
-For other magic items, the spellpower is determined by the item itself.
-In this case, the creator's spellpower must be as high as the item's spellpower (and prerequisites may effectively put a higher minimum on the creator's level).
 
 \parhead{Requirements} The qualifications that must be met to create the item, %described in \pcref{Creating Magic Items}.
 
@@ -155,33 +153,34 @@ A rare few apparel items can be ``worn'' without taking up space on a character'
 The description of an item indicates when it has this property.
 
 \begin{dtable}
-    \lcaption{Other Apparel Special Abilities}
+    \lcaption{General Apparel Items}
     \begin{dtabularx}{\columnwidth}{>{\lcol}X l l l}
-        \tb{Special Ability} & \tb{Cost} & \tb{Item Level} & \tb{Location}\\
+        \tb{Special Ability}              & \tb{Cost} & \tb{Item Level} & \tb{Location} \\
         \hline
-        Ring of Protection \plus1 & 100 gp & 2nd & Ring \\
-        Ring of Energy Resistance, Lesser & 200 gp & 3rd & Ring \\
-        Boots of Elvenkind & 300 gp & 5th & Legs \\
-        Ring of Protection \plus2 & 500 gp & 4th & Ring \\
-        Belt of Constitution & 2,000 gp & 8th & Torso \\
-        Circlet of Wisdom & 2,000 gp & 8th & Head \\
-        Cloak of Charisma & 2,000 gp & 8th & Torso \\
-        Gauntlets of Strength & 2,000 gp & 8th & Arms \\
-        Gloves of Dexterity & 2,000 gp & 8th & Arms \\
-        Headband of Intellect & 2,000 gp & 8th & Head \\
-        Boots of Mobility & 1,000 gp & 6th & Legs \\
-        Ring of Sustenance & 1,000 gp & 6th & Ring \\
-        Ring of Energy Resistance & 2,000 gp & 8th & Ring \\
-        Ring of Protection \plus3 & 2,500 gp & 8th & Ring \\
-        Boots of Speed & 5,000 gp & 10th & Legs \\
-        Belt of Constitution, Greater & 12,000 gp & 12th & Torso \\
-        Circlet of Wisdom, Greater & 12,000 gp & 12th & Head \\
-        Cloak of Charisma, Greater & 12,000 gp & 12th & Torso \\
-        Gauntlets of Strength, Greater & 12,000 gp & 12th & Arms \\
-        Gloves of Dexterity, Greater & 12,000 gp & 12th & Arms \\
-        Headband of Intellect, Greater & 12,000 gp & 12th & Head \\
-        Ring of Protection \plus4 & 12,500 gp & 12th & Ring \\
-        Ring of Protection \plus5 & 62,500 gp & 16th & Ring \\
+        Ring of Protection \plus1         & 100 gp    & 2nd             & Ring          \\
+        Ring of Energy Resistance, Lesser & 200 gp    & 3rd             & Ring          \\
+        Boots of Elvenkind                & 500 gp    & 4th             & Legs          \\
+        Ring of Protection \plus2         & 500 gp    & 4th             & Ring          \\
+        Belt of Constitution              & 2,000 gp  & 8th             & Torso         \\
+        Circlet of Wisdom                 & 2,000 gp  & 8th             & Head          \\
+        Cloak of Charisma                 & 2,000 gp  & 8th             & Torso         \\
+        Gauntlets of Strength             & 2,000 gp  & 8th             & Arms          \\
+        Gloves of Dexterity               & 2,000 gp  & 8th             & Arms          \\
+        Headband of Intellect             & 2,000 gp  & 8th             & Head          \\
+        Boots of Mobility                 & 1,000 gp  & 6th             & Legs          \\
+        Ring of Sustenance                & 1,000 gp  & 6th             & Ring          \\
+        Ring of Energy Resistance         & 2,000 gp  & 8th             & Ring          \\
+        Ring of Protection \plus3         & 2,500 gp  & 8th             & Ring          \\
+        Boots of Speed                    & 5,000 gp  & 10th            & Legs          \\
+        Belt of Constitution, Greater     & 12,000 gp & 12th            & Torso         \\
+        Circlet of Wisdom, Greater        & 12,000 gp & 12th            & Head          \\
+        Cloak of Charisma, Greater        & 12,000 gp & 12th            & Torso         \\
+        Gauntlets of Strength, Greater    & 12,000 gp & 12th            & Arms          \\
+        Gloves of Dexterity, Greater      & 12,000 gp & 12th            & Arms          \\
+        Headband of Intellect, Greater    & 12,000 gp & 12th            & Head          \\
+        Ring of Protection \plus4         & 12,500 gp & 12th            & Ring          \\
+        Boots of Teleportation, Greater   & 60,000 gp & 16th            & Legs          \\
+        Ring of Protection \plus5         & 62,500 gp & 16th            & Ring          \\
     \end{dtabularx}
 \end{dtable}
 
@@ -222,9 +221,9 @@ Additionally, the price of all special abilities cannot exceed twice the price o
     \end{dtabularx}
 \end{dtable}
 
-\parhead{Spellpower for Armor and Shields} The spellpower of a magic shield or magic armor with a special ability is given in the item description.
-For an item with only an enhancement bonus, the spellpower is three times the enhancement bonus.
-If an item has both an enhancement bonus and a special ability, the higher of the two spellpower requirements must be met.
+\parhead{Base Power for Armor and Shields} The base power of a magic shield or magic armor with a special ability is given in the item description.
+For an item with only an enhancement bonus, the base power is equal to three times the enhancement bonus.
+If an item has both an enhancement bonus and a special ability, the higher of the two base powers must be met.
 
 \parhead{Shields} Shield enhancement bonuses do not act as attack or damage bonuses when the shield is used in a bash.
 However, a shield can be enhanced as a weapon.
@@ -239,321 +238,282 @@ Special abilities on body armor are usually activated if the character is struck
 \begin{dtable}
     \lcaption{Magic Armor Special Abilities}
     \begin{dtabularx}{\columnwidth}{>{\lcol}X l l l}
-        \tb{Special Ability}      & \tb{Cost} & \tb{Item Level} & \tb{Location} \\
+        \tb{Special Ability}      & \tb{Cost}  & \tb{Item Level} & \tb{Location} \\
         \hline
-        Feather \minus1           & 100 gp    & 2nd             & Body, Shield  \\
-        Bashing, Lesser           & 200 gp    & 3rd             & Shield        \\
-        Energy Resistance, Lesser & 200 gp    & 3rd             & Armor         \\
-        Feather \minus2           & 500 gp    & 4th             & Body, Shield  \\
-        Flaming Burst             & 800 gp    & 5th             & Body, Shield  \\
-        Freezing Burst            & 800 gp    & 5th             & Body, Shield  \\
-        Glamered                  & 800 gp    & 5th             & Armor         \\
-        Bashing                   & 1,000 gp  & 6th             & Shield        \\
-        Ghost Touch               & 1,000 gp  & 7th             & Body, Shield  \\
-        Energy Resistance         & 2,000 gp  & 8th             & Armor         \\
-        Shocking Burst            & 2,000 gp  & 8th             & Body, Shield  \\
-        Invulnerability           & 2,000 gp  & 12th            & Armor         \\
-        Feather \minus3           & 2,500 gp  & 8th             & Body, Shield  \\
-        Bashing, Greater          & 5,000 gp  & 10th            & Shield        \\
-        Spell Resistance          & 5,000 gp  & 10th            & Armor         \\
-        Feather \minus4           & 12,500 gp & 12th            & Body, Shield  \\
-        Invulnerability, Greater  & 30,000 gp & 14th            & Armor         \\
-        Spell Reflecting          & 60,000 gp & 16th            & Shield        \\
-        Feather \minus5           & 62,500 gp & 16th            & Body, Shield  \\
+        Feather \minus1           & 100 gp     & 2nd             & Body, Shield  \\
+        Energy Resistance, Lesser & 200 gp     & 3rd             & Armor         \\
+        Invulnerability, Lesser   & 200 gp     & 3rd             & Armor         \\
+        Feather \minus2           & 500 gp     & 4th             & Body, Shield  \\
+        Bashing                   & 800 gp     & 5th             & Shield        \\
+        Flaming Burst             & 800 gp     & 5th             & Body, Shield  \\
+        Freezing Burst            & 800 gp     & 5th             & Body, Shield  \\
+        Glamered                  & 800 gp     & 5th             & Armor         \\
+        Shocking Burst            & 800 gp     & 5th             & Body, Shield  \\
+        Ghost Touch               & 2,000 gp   & 8th             & Body, Shield  \\
+        Energy Resistance         & 2,000 gp   & 8th             & Armor         \\
+        Feather \minus3           & 2,500 gp   & 8th             & Body, Shield  \\
+        Bashing, Greater          & 2,800 gp   & 9th            & Shield        \\
+        Spell Resistance          & 5,000 gp   & 10th            & Armor         \\
+        Feather \minus4           & 12,500 gp  & 12th            & Body, Shield  \\
+        Invulnerability           & 30,000 gp  & 14th            & Armor         \\
+        Spell Reflecting          & 60,000 gp  & 16th            & Shield        \\
+        Feather \minus5           & 62,500 gp  & 16th            & Body, Shield  \\
+        Invulnerability, Greater  & 140,000 gp & 18th            & Armor         \\
     \end{dtabularx}
 \end{dtable}
 
-\begin{magicitemdef}{Bashing, Lesser}[200]{2}[Shield]{Transmutation [Augment]}[\x]{as shield}
-When a shield with this ability is used to perform a shield bash, it deals damage as if it were one size category larger (so a Medium light shield deals 1d4 damage, and a Medium heavy shield deals 1d6 damage).
-
+\begin{magicitemdef}{Bashing}[Passive]{1}[Shield]{Transmutation [Augment]}{as shield}
+    \magicitemability{Passive} This shield deals damage with shield bash attacks as if it was two size categories larger than normal (so a Medium-sized light shield deals 1d6 damage, and a Medium-sized heavy shield deals 1d8 damage).
 \end{magicitemdef}
 
-\begin{magicitemdef}{Bashing}[1000]{3}[Shield]{Transmutation [Augment]}[\x]{as shield}
-    When a shield with this ability is used to perform a shield bash, it deals damage as if it were two size categories larger (so a Medium light shield deals 1d6 damage, and a Medium heavy shield deals 1d8 damage).
+\begin{magicitemdef}{Bashing, Greater}[2800]{3}[Shield]{Transmutation [Augment]}{as shield}
+    \magicitemability{Passive} This shield functions like a \magicitem{bashing} shield.
+    \magicitemability{Triggered}[Immediate action] When you successfully shield bash a foe, you can activate this item. If you do, you gain a \plus2 bonus to your physical defenses against that foe for 5 rounds.
+
+    After being activated, the shield is lighter and seems to move of its own volition to block attacks.
+    This effect lasts for 5 rounds, during which time you cannot activate this ability again.
 \end{magicitemdef}
 
-\appdescription{Bashing, Greater}{5,000}{10th}{Shield}{Faint Transmutation (Augment)}{10th}{\x} This shield functions like a \magicitem{bashing} shield.
-In addition, you gain a \plus2 bonus to your physical defenses for 1 round against any creature you successfully shield bash with this shield.
+\begin{magicitemdef}{Energy Resistance, Lesser}[Active]{1}[Body]{Abjuration [Shielding]}{as armor}
+    \magicitemability{Triggered}[Immediate action] When you take \glossterm{energy damage}, you can activate this item. If you do, you reduce the damage by an amount equal to the item's power.
 
-\mitemreq{Transmutation}{Augment}{5}{10th}{Craft (as shield) 14}
+    After being activated, the armor sheds light as a torch.
+    The color of the light depends on the energy damage resisted: green for acid, blue for cold, yellow for electricity, and red for fire.
+    The light lasts for 5 rounds, during which time you cannot activate this ability again.
+\end{magicitemdef}
 
-\appdescription{Energy Resistance, Lesser}{200}{3rd}{Body}{Faint Abjuration (Shielding)}{2nd}{Immediate (triggered)} When you take energy damage, you can activate this armor to reduce the damage by 5 \add half your level.
+\begin{magicitemdef}{Energy Resistance}[Passive]{3}[Body]{Abjuration [Shielding]}{as armor}
+    \magicitemability{Passive} You have damage reduction against \glossterm{energy damage} equal to the item's power.
+    Whenever you resist energy with this item, it sheds light as a torch for 5 rounds.
+    The color of the light depends on the energy damage resisted: green for acid, blue for cold, yellow for electricity, and red for fire.
+\end{magicitemdef}
 
-\mitemreq{Abjuration}{Shielding}{1}{2nd}{Craft (as armor) 6}
+\begin{magicitemdef}{Feather}{1}[Body, Shield]{Transmutation (Augment)}{as armor}
+    \magicitemability{Passive} This armor has a reduced armor check penalty.
+    The price depends on the penalty reduction, as shown in the table below.
 
-\appdescription{Energy Resistance}{2,000}{8th}{Body}{Moderate Abjuration (Shielding)}{6th}{Immediate (triggered)} When you take energy damage, you can activate this armor to gain damage reduction equal to 10 \add half your level against that type of energy damage.
-In addition, the armor casts light as a torch.
-The color of the light depends on the energy damage resisted: green for acid, blue for cold, yellow for electricity, and red for fire.
-Both effects lasts for 5 rounds, during which time you cannot activate the item's abilities.
-
-\mitemreq{Abjuration}{Shielding}{3}{6th}{Craft (as armor) 10}
-
-\appdescription{Flaming Burst}{800}{5th}{Body, Shield}{Faint Evocation (Energy) [Fire]}{4th}{Immediate (triggered)} When you are struck or missed by a melee attack, you can trigger a burst of flames which sear the foe that attacked you.
-Body armor triggers if the attack hits, and shields trigger if the attack misses.
-
-If you activate the item, you deal 1d6 fire damage \add d6 per four levels to your attacker.
-In addition, it is ignited for 5 rounds.
-An ignited creature is vulnerable, causing it to take a \minus2 penalty to attacks, defenses, and checks.
-In addition, at the end of each of its turns, it takes d6 damage from the fire.
-If the creature takes a move action, it can attempt a DC 10 Dexterity check to put out the flames.
-This action requires a free hand.
-Dropping prone as part of the action gives a \plus5 bonus on this check.
-
-When you activate this ability, you are wreathed in flame, causing you to cast light as a torch.
-This effect lasts for 5 rounds, during which time you cannot activate the item's abilities.
-
-\mitemreqdesc{Evocation}{Energy}{Fire}{2}{4th}{Craft (as armor) 8}
-
-\appdescription{Freezing Burst}{800}{5th}{Body, Shield}{Faint Evocation (Energy) [Cold]}{4th}{Immediate (triggered)} When you are struck or missed by a melee attack, you can trigger a frigid burst against the foe that attacked you.
-Body armor triggers if the attack hits, and shields trigger if the attack misses.
-
-If you activate the item, you deal 1d6 cold damage \add d6 per four levels to your attacker.
-In addition, it is fatigued for 5 rounds.
-A fatigued character can neither sprint nor charge and is vulnerable, giving it a \minus2 penalty to attacks, defenses, and checks.
-
-When you activate this ability, you radiate frigid cold, causing you to snuff out torches and other small fires within a 5 foot radius of you.
-This effect lasts for 5 rounds, during which time you cannot activate the item's abilities.
-
-\mitemreqdesc{Evocation}{Energy}{Cold}{2}{4th}{Craft (as armor) 8}
-
-\appdescription{Ghost Touch}{1,000}{6th}{Body, Shield}{Faint Conjuration (Translocation) [Planar]}{6th}{\x} This armor or shield seems almost translucent.
-You apply the full bonus granted by this armor or shield, including its enhancement bonus, against the attacks of incorporeal creatures.
-It can be picked up, moved, and worn by incorporeal creatures at any time.
-Incorporeal creatures gain the armor or shield's enhancement bonus against both corporeal and incorporeal attacks, and they can still pass freely through solid objects.
-
-\mitemreqdesc{Conjuration}{Translocation}{Planar}{3}{6th}{Craft (as armor) 10}
-
-\appdescription{Glamered}{800}{5th}{Body}{Faint Illusion (Glamer)}{4th}{Standard (specific action)} If you trace the symbol of a mask on your chest (a standard action), this armor appears to change shape and form to assume the appearance of a normal set of clothing.
-You may choose the design of the clothing.
-The armor retains all its properties (including weight and sound) when glamered.
-Only a \spell{true seeing} spell or similar magic reveals the true nature of the armor when disguised.
-The armor remains disguised until you trace the symbol of the mask in the reverse direction, at which point it regains its normal appearance.
-
-\mitemreq{Illusion}{Glamer}{2}{4th}{Craft (as armor) 8}
-
-\appdescription{Invulnerability}{2,000}{8th}{Body}{Moderate Abjuration (Shielding)}{8th}{Standard (specific action)} If you strike your chest with a weapon or other hard object (a standard action), this armor grants you physical damage reduction equal to half your level for 5 rounds.
-This allows you to ignore the first points of physical damage you take each round.
-If you are hit by an adamantine weapon, you cannot use your damage reduction for 1 round.
-
-\mitemreq{Abjuration}{Shielding}{3}{6th}{Craft (as armor) 10}
-
-\appdescription{Invulnerability, Greater}{30,000}{14th}{Body}{Moderate Abjuration (Shielding)}{12th}{\x} This armor functions like \magicitem{invulnerability} armor, except that the damage reduction lasts for 12 hours.
-
-\mitemreq{Abjuration}{Shielding}{6}{12th}{Craft (as armor) 16}
-
-\appdescription{Feather}{Varies}{see text}{Body, Shield}{Varied Transmutation (Augment)}{}{\x}
-Feather armor reduces the armor check penalty of the armor it is on.
-The price of the bonus depends on its penalty reduction, as shown in the table below.
+    The spellpower is equal to three times the item's penalty reduction.
+    To craft the item, you must have a number of ranks in the relevant Craft skill equal to the item's spellpower \add 4.
+\end{magicitemdef}
 
 \begin{dtable}
     \lcaption{Feather Armor}
     \begin{dtabularx}{\columnwidth} {l X X}
         \tb{Bonus} & \tb{Base Price} & \tb{Item Level} \\
         \hline
-        \minus1 & 100 gp & 2nd \\
-        \minus2 & 500 gp & 4th \\
-        \minus3 & 2,500 gp & 8th \\
-        \minus4 & 12,500 gp & 12th \\
-        \minus5 & 62,500 gp & 16th \\
+        \minus1    & 100 gp          & 2nd             \\
+        \minus2    & 500 gp          & 4th             \\
+        \minus3    & 2,500 gp        & 8th             \\
+        \minus4    & 12,500 gp       & 12th            \\
+        \minus5    & 62,500 gp       & 16th            \\
     \end{dtabularx}
 \end{dtable}
 
-The spellpower is equal to three times the item's penalty reduction.
-To craft the item, you must have a number of ranks in the relevant Craft skill equal to the item's spellpower \add 4.
+%\mitemreq{Transmutation}{Augment}{1}{varies}{Craft (as armor) varies}
 
-\mitemreq{Transmutation}{Augment}{1}{varies}{Craft (as armor) varies}
 
-\appdescriptiondc{Shocking Burst}{2,000}{8th}{Body, Shield}{Faint Evocation (Energy) [Electricity]}{6th}{Immediate (triggered)}{Fortitude (level \add 3)} When you are struck or missed by a melee attack, you can trigger a powerful jolt of electricity that zaps the foe that attacked you.
-Body armor triggers if the attack hits, and shields trigger if the attack misses.
+\begin{magicitemdef}{Flaming Burst}[Active]{3}[Body, Shield]{Evocation [Fire]}{as armor}
+    \magicitemability{Triggered}[Immediate action] When you are hit or missed by a melee attack, you can activate this item.
+    Body armor triggers if the attack hits, and shields trigger if the attack misses.
+    If you activate the item, the attacking creature takes 1d6 fire damage per two item power.
 
-If you activate the item, you deal 1d6 electricity damage \add d6 per four levels to your attacker.
-In addition, if you succeed at a Fortitude attack, it is staggered for 5 rounds.
-A staggered character may take a single move action or standard action each round, but not both.
-She cannot take full-round actions, but she may take swift actions.
-In addition, she is vulnerable, causing her to take a \minus2 penalty on attacks, defenses, and checks.
+    After being activated, the item is wreathed in flame, causing it to shed light as a torch.
+    This effect lasts for 5 rounds, during which time you cannot activate this ability again.
+\end{magicitemdef}
 
-When you activate this ability, you crackle with electrical energy, causing you to radiate flashing light as a torch.
-This effect lasts for 5 rounds, during which time you cannot activate the item's abilities.
+\begin{magicitemdef}{Freezing Burst}[Active]{3}[Body, Shield]{Evocation [Cold]}{as armor}
+    \magicitemability{Triggered}[Immediate action] When you are struck or missed by a melee attack, you can activate this item.
+    Body armor triggers if the attack hits, and shields trigger if the attack misses.
+    If you activate the item, the attacking creature takes 1d6 cold damage per two item power.
 
-\mitemreqdesc{Evocation}{Energy}{Electricity}{3}{6th}{Craft (as armor) 10}
+    After being activated, the item radiates frigid cold, causing it to snuff out torches and other small fires within a 5 foot radius.
+    This effect lasts for 5 rounds, during which time you cannot activate this ability again.
+\end{magicitemdef}
 
-\appdescription{Spell Reflecting}{60,000}{16th}{Shield}{Strong Abjuration (Shielding) [Magic]}{14th}{Immediate (triggered)} This shield's surface is completely reflective, allowing it to act as a mirror.
-When you are targeted by a spell or spell-like ability, you can activate the shield to reflect the spell back at its caster exactly like the \spell{spell turning} spell.
+\begin{magicitemdef}{Ghost Touch}[Passive]{2}[Body, Shield]{Conjuration [Teleportation]}{as armor}[This armor seems almost translucent.]
+    \magicitemability{Passive} You apply the full bonus granted by this armor against the attacks of incorporeal creatures.
+    It can be picked up, moved, and worn by incorporeal creatures at any time.
+    Incorporeal creatures gain this armor's bonus against both corporeal and incorporeal attacks, and they can still pass freely through solid objects.
+\end{magicitemdef}
 
-After you activate this ability, the shield's surface becomes dully metallic instead of reflective.
-This effect lasts for 5 rounds, during which time you cannot activate the item's abilities.
+\begin{magicitemdef}{Glamered}[Active]{2}[Body]{Illusion [Glamer]}{as armor}
+    \magicitemability{Active}[Standard action] If you trace the symbol of a mask on your chest, this armor appears to change shape and form to assume the appearance of a normal set of clothing.
+    You may choose the design of the clothing.
+    The armor retains all its properties (including weight and sound) when glamered.
 
-\mitemreqdesc{Abjuration}{Shielding}{Magic}{7}{14th}{Craft (as armor) 18}
+    The armor remains disguised until you trace the symbol of the mask in the reverse direction, at which point it regains its normal appearance.
+\end{magicitemdef}
 
-\appdescription{Spell Resistance}{5,000}{10th}{Body}{Moderate Abjuration (Shielding) [Magic]}{8th}{Standard (specific action)} If you crouch low and strike the ground with your fist (a standard action), this armor grants you spell resistance.
-The spell resistance lasts as long as you remain crouching, and for 5 rounds thereafter (maximum 5 minutes).
-You can move at half speed while crouching.
+\begin{magicitemdef}{Invulnerability, Lesser}[Active]{2}[Body]{Abjuration [Shielding]}{as armor}
+    \magicitemability{Active}[Standard action] If you strike your chest with a weapon or other hard object, you gain physical damage reduction equal to the item's power for 5 rounds.
+    This allows you to ignore the first points of physical damage you take each round.
+    Adamantine weapons ignore this damage reduction and negate it for 1 round.
+\end{magicitemdef}
 
-To affect a creature with spell resistance using a spell or spell-like ability, a special attack is always required.
-The defense used against the attack is indicated by the spell.
-If the attack fails, the spell has no effect.
+\begin{magicitemdef}{Invulnerability}[Passive]{4}[Body]{Abjuration [Shielding]}{as armor}
+    \magicitemability{Passive} You have physical damage reduction equal to the item's power.
+    This allows you to ignore the first points of physical damage you take each round.
+    Adamantine weapons ignore this damage reduction and negate it for 1 round.
+\end{magicitemdef}
 
-\mitemreqdesc{Abjuration}{Shielding}{Magic}{4}{8th}{Craft (as armor) 12}
+\begin{magicitemdef}{Invulnerability, Greater}[Passive]{6}[Body]{Abjuration [Shielding]}{as armor}
+    \magicitemability{Passive} You have damage reduction against all attacks equal to the item's power.
+    This allows you to ignore the first points of damage you take each round.
+\end{magicitemdef}
+
+\begin{magicitemdef}{Shocking Burst}[Active]{3}[Body, Shield]{Evocation [Electricity]}{as armor}
+    \magicitemability{Triggered}[Immediate action] When you are struck or missed by a melee attack, you can activate this item.
+    Body armor triggers if the attack hits, and shields trigger if the attack misses.
+    If you activate the item, the attacking creature takes 1d6 electricity damage per two item power.
+
+    After being activated, the item crackles with electrical energy, causing you to radiate flashing light as a torch.
+    This effect lasts for 5 rounds, during which time you cannot activate this ability again.
+\end{magicitemdef}
+
+\begin{magicitemdef}{Spell Reflecting}[Active]{7}[Shield]{Abjuration [Shielding]}{as armor}[This shield's surface is completely reflective, allowing it to act as a mirror.]
+    \magicitemability{Triggered}[Immediate action] When you are targeted by a spell or spell-like ability, you can activate this shield to reflect the spell back at its caster exactly like the \spell{spell turning} spell.
+
+    After you activate this ability, the shield's surface becomes dully metallic instead of reflective.
+    This effect lasts for 5 rounds, during which time you cannot activate this ability again.
+\end{magicitemdef}
+
+\begin{magicitemdef}{Spell Resistance}[Active]{3}[Body]{Abjuration [Shielding]}{as armor}
+    \magicitemability{Active}[Standard action] If you crouch low and strike the ground with your fist, you gain spell resistance equal to 10 \add the item's power.
+    This spell resistance lasts as long as you remain crouching, and for 5 rounds thereafter (maximum 5 minutes).
+    You can move at half speed while crouching.
+
+    To affect a creature with spell resistance using a spell or spell-like ability, a special attack is always required.
+    The defense used against the attack is indicated by the spell.
+    If the attack fails, the spell has no effect.
+\end{magicitemdef}
 
 \subsection{Arms}
 
-\appdescription{Bracers of Archery}{Varies}{see text}{Arms}{Varied Transmutation (Augment)}{}{\x} While you wear these bracers, you gain an enhancement bonus to physical attacks with bows and crossbows.
-The price of the amulet depends on its enhancement bonus, as shown in the table below.
+\begin{magicitemdef}{Bracers of Archery}[Passive]{2}[Arms]{Transmutation (Augment)}{leather or metal}
+    \magicitemability{Passive} You are proficient with bows and crossbows.
+\end{magicitemdef}
 
-\begin{dtable}
-    \lcaption{Bracers of Archery}
-    \begin{dtabularx}{\columnwidth}{l X X}
-        \tb{Bonus} & \tb{Base Price} & \tb{Item Level} \\
-        \hline
-        \plus1 & 100 gp & 2nd \\
-        \plus2 & 500 gp & 4th \\
-        \plus3 & 2,500 gp & 8th \\
-        \plus4 & 12,500 gp & 12th \\
-        \plus5 & 62,500 gp & 16th \\
-    \end{dtabularx}
-\end{dtable}
+\begin{magicitemdef}{Bracers of Armor}[Passive]{1}[Arms]{Abjuration [Shielding]}{leather or metal}
+    \magicitemability{Passive} You gain a \plus2 bonus to Armor defense.
+    The protection from these bracers is treated as body armor, and does not stack with any other body armor you wear.
+    Since this armor is made of magical force, incorporeal creatures can't bypass it the way they do normal armor.
+\end{magicitemdef}
 
-The spellpower is equal to three times the item's enhancement bonus.
-To craft the item, you must have a number of ranks in Craft (leather or metal) equal to the item's spellpower \add 4.
+\begin{magicitemdef}{Gloves of Dexterity}[Passive]{2}[Arms]{Transmutation [Augment]}{leather or textiles}
+    \magicitemability{Passive} You gain a \plus2 bonus to Dexterity, up to a maximum Dexterity equal to the item's power.
+\end{magicitemdef}
 
-\mitemreq{Transmutation}{Augment}{1}{varies}{Craft (leather or metal) varies}
+\begin{magicitemdef}{Gloves of Dexterity, Greater}[Passive]{4}[Arms]{Transmutation [Augment]}{leather or textiles}
+    \magicitemability{Passive} You gain a \plus4 bonus to Dexterity, up to a maximum Dexterity equal to the item's power.
+\end{magicitemdef}
 
-\appdescription{Bracers of Armor}{Varies}{see text}{Arms}{Abjuration (Shielding) [Force]}{}{\x} While you wear these bracers, you gain an invisible but tangible field of force that acts as armor.
-The armor bonus provided by the bracers depends on its bonus, as shown on the table below.
-Since this armor is made of magical force, incorporeal creatures can't bypass it the way they do normal armor.
-Armor from the bracers is considered a separate piece of armor from any body armor you wear, so they do not stack; use the higher of the two values.
+\begin{magicitemdef}{Gauntlets of Strength}[Passive]{2}[Arms]{Transmutation [Augment]}{leather or textiles}
+    \magicitemability{Passive} You gain a \plus2 bonus to Strength, up to a maximum Strength equal to the item's power.
+\end{magicitemdef}
 
-\begin{dtable}
-    \lcaption{Bracers of Armor}
-    \begin{dtabularx}{\columnwidth}{l X X}
-        \tb{Bonus} & \tb{Base Price} & \tb{Item Level} \\
-        \hline
-        \plus1 & 100 gp & 2nd \\
-        \plus2 & 500 gp & 4th \\
-        \plus3 & 2,500 gp & 8th \\
-        \plus4 & 12,500 gp & 12th \\
-        \plus5 & 62,500 gp & 16th \\
-    \end{dtabularx}
-\end{dtable}
+\begin{magicitemdef}{Gauntlets of Strength, Greater}[Passive]{4}[Arms]{Transmutation [Augment]}{leather or textiles}
+    \magicitemability{Passive} You gain a \plus4 bonus to Strength, up to a maximum Strength equal to the item's power.
+\end{magicitemdef}
 
-The spellpower is equal to three times the item's bonus.
-To craft the item, you must have a number of ranks in Craft (leather or metal) equal to the item's spellpower \add 4.
+\begin{magicitemdef}{Gauntlet of the Ram}[Active]{2}[Arms]{Evocation [Telekinesis]}{metal}
+    \magicitemability{Triggered}[Immediate action] When you make a successful unarmed attack with this gauntlet against a foe, you can activate it to immediately make a shove attack against the struck foe.
+    You gain a bonus on the shove attack equal to the damage you dealt.
+    In addition, you do not need to move with the foe to push it backwards.
 
-\mitemreqdesc{Abjuration}{Shielding}{Force}{1}{varies}{Craft (leather or metal) varies}
+    After you activate this ability, the gauntlet grows small ram horns.
+    This effect lasts for 5 rounds, during which time you cannot activate this ability again.
+\end{magicitemdef}
 
-\appdescription{Gloves of Dexterity}{2,000}{8th}{Arms}{Faint Transmutation (Augment)}{6th}{\x} While wearing these gloves, you gain a \plus2 bonus to Dexterity, to a maximum Dexterity of 5.
+\begin{magicitemdef}{Puppeteer's Glove}[Passive]{2}[Arms]{Illusion [Figment]}{leather or textiles}
+    \magicitemability{Triggered}[Immediate action] When you cast a Figment spell or use an Figment spell-like ability, you can activate this glove.
+    If you do, you can concentrate on the spell or spell-like ability as a swift action by controlling the figment with your glove.
+    If you are unable to control the figment with the glove, such as if you use the gloved hand for any other purpose, you lose your concentration on the figment.
+    You must retain line of sight and line of effect to the figment to control it.
 
-\mitemreq{Transmutation}{Augment}{2}{6th}{Craft (leather or textiles) 10}
+    After you activate this ability, the tips of the glove grow faintly visible strings.
+    The strings extend four inches from the glove before vanishing into nothingness.
+    This effect lasts for five rounds, during which time you cannot activate this ability again.
+\end{magicitemdef}
 
-\appdescription{Gloves of Dexterity, Greater}{12,000}{12th}{Arms}{Moderate Transmutation (Augment)}{12th}{Standard (specific action)} These gloves function like \magicitem{gloves of dexterity}, except the maximum Dexterity is 10 instead.
-
-\mitemreq{Transmutation}{Augment}{5}{12th}{\x}
-
-\appdescription{Gauntlets of Strength}{2,000}{8th}{Arms}{Faint Transmutation (Augment)}{6th}{\x} While wearing these gauntlets, you gain a \plus2 bonus to Strength, to a maximum Strength of 5.
-
-\mitemreq{Transmutation}{Augment}{2}{6th}{Craft (metal) 10}
-
-\appdescription{Gauntlets of Strength, Greater}{12,000}{12th}{Arms}{Moderate Transmutation (Augment)}{8th}{Standard (specific action)} These gauntlets function like \magicitem{gauntlets of ogre strength}, except the maximum Strength is 10 instead.
-
-\mitemreq{Transmutation}{Augment}{5}{12th}{Craft (metal) 16}
-
-\appdescription{Gauntlet of the Ram}{400}{3rd}{Arms}{Faint Evocation (Control)}{2nd}{Immediate (triggered)} When you strike a foe with an unarmed attack using the hand wearing this gauntlet, you can activate it to immediately make a shove attack against the struck foe.
-You gain a bonus on the shove attack equal to the your damage dealt.
-In addition, you do not need to move with the foe to push it backwards.
-
-When you activate this ability, the gauntlet grows small ram horns.
-This effect lasts for 5 rounds, during which time you cannot activate the item's abilities.
-
-\mitemreq{Evocation}{Control}{1}{2nd}{Craft (metal) 6}
-
-\appdescription{Puppeteer's Glove}{800}{5th}{Arms}{Faint Illusion (Figment)}{4th}{Immediate (triggered)} When you cast an Illusion (Figment) spell or use an Illusion (figment) spell-like ability, you can activate these gloves.
-If you do, you can concentrate on the effect as a swift action by controlling the figment with your glove.
-If you are unable to control the figment with the glove, such as if you use the gloved hand for any other purpose, you lose your concentration on the figment.
-You must retain line of sight and line of effect to the figment to control it.
-
-When you activate this ability, the tips of the glove grow faintly visible strings.
-The strings extend four inches from the glove before vanishing into nothingness.
-This effect lasts for five rounds, during which time you cannot activate the item.
-
-\mitemreq{Illusion}{Figment}{2}{4th}{Craft (leather or textiles) 8}
-
-\appdescription{Throwing Gloves}{200}{3rd}{Arms}{Faint Transmutation (Augment)}{2nd}{Immediate (triggered)} When you throw an item, you can activate these gauntlets to gain a \plus2 bonus to the attack.
-In addition, the item is treated as a thrown weapon, so you do not take the normal \minus4 penalty for throwing an item not designed to be thrown.
-
-\mitemreq{Transmutation}{Augment}{1}{2nd}{Craft (leather or textiles) 6}
+\begin{magicitemdef}{Throwing Gloves}[Passive]{2}[Arms]{Transmutation [Augment]}{leather or textiles}
+    \magicitemability{Passive} You can throw any item as if it was designed to be thrown, granting you a \plus4 proficiency bonus with the attack.
+    This does not improve your ability to throw items already designed to be thrown, such as darts.
+\end{magicitemdef}
 
 \subsection{Head}
 
-\appdescription{Circlet of Wisdom}{2,000}{8th}{Head}{Faint Transmutation (Augment)}{6th}{\x} While wearing this circlet, you gain a \plus2 bonus to Wisdom, to a maximum Wisdom of 5.
+\begin{magicitemdef}{Circlet of Perception}[Passive]{2}[Head]{Transmutation [Augment]}{metal}
+    \magicitemability{Passive} You gain a \plus2 bonus to Perception, up to a maximum Perception equal to the item's power.
+\end{magicitemdef}
 
-\mitemreq{Transmutation}{Augment}{2}{6th}{Craft (metal) 10}
+\begin{magicitemdef}{Circlet of Perception, Greater}[Passive]{4}[Head]{Transmutation [Augment]}{metal}
+    \magicitemability{Passive} You gain a \plus4 bonus to Perception, up to a maximum Perception equal to the item's power.
+\end{magicitemdef}
 
-\appdescription{Circlet of Wisdom, Greater}{12,000}{10th}{Head}{Moderate Transmutation (Augment)}{12th}{Standard (specific action) 1/day} This circlet functions like a \magicitem{circlet of wisdom}, except the maximum Wisdom is 10 instead.
+\begin{magicitemdef}{Headband of Intellect}[Passive]{2}[Head]{Transmutation [Augment]}{metal}
+    \magicitemability{Passive} You gain a \plus2 bonus to Intelligence, up to a maximum Intelligence equal to the item's power.
+\end{magicitemdef}
 
-\mitemreq{Transmutation}{Augment}{5}{12th}{Craft (metal) 16}
-
-\appdescription{Headband of Intellect}{2,000}{8th}{Head}{Faint Transmutation (Augment)}{6th}{\x} While wearing this headband, you gain a \plus2 bonus to Intelligence, to a maximum Intelligence of 5.
-
-\mitemreq{Transmutation}{Augment}{2}{6th}{Craft (metal) 10}
-
-\appdescription{Headband of Intellect, Greater}{12,000}{10th}{Head}{Moderate Transmutation (Augment)}{12th}{Standard (specific action)} This headband functions like a \magicitem{headband of intellect}, except the maximum Intelligence is 10 instead.
-
-\mitemreq{Transmutation}{Augment}{5}{12th}{Craft (metal) 16}
+\begin{magicitemdef}{Headband of Intellect, Greater}[Passive]{4}[Head]{Transmutation [Augment]}{metal}
+    \magicitemability{Passive} You gain a \plus4 bonus to Intelligence, up to a maximum Intelligence equal to the item's power.
+\end{magicitemdef}
 
 \subsection{Legs}
 
-\appdescription{Boots of Elvenkind}{500}{4th}{Legs}{Faint Transmutation (Augment)}{2nd}{\x} While wearing these boots, you gain a \plus4 enhancement bonus to Stealth checks.
+\begin{magicitemdef}{Boots of Elvenkind}[500]{1}[Legs]{Transmutation [Augment]}{leather or textiles}
+    \magicitemability{Passive} You gain a \plus4 bonus to Stealth checks.
+\end{magicitemdef}
 
-\mitemreq{Transmutation}{Augment}{1}{2nd}{Craft (leather or textiles) 6}
+\begin{magicitemdef}{Boots of Levitation}[Active]{3}[Legs]{Evocation [Telekinesis]}{leather or textiles}
+    \magicitemability{Active}[Standard action] By lifting and planting one leg in mid-air, as if climbing an invisible stair, you can gain the benefit of the \spell{levitate} spell on yourself for 5 rounds.
+\end{magicitemdef}
 
-\appdescription{Boots of Levitation}{2,000}{8th}{Legs}{Faint Evocation (Control)}{6th}{Standard (specific action)} By lifting and planting one leg in mid-air, as if climbing an invisible stair (a standard action), you can gain the benefit of the \spell{levitate} spell on yourself for 5 rounds.
+\begin{magicitemdef}{Boots of Mobility}[1000]{1}[Legs]{Transmutation [Augment]}{leather or textiles}
+    \magicitemability{Passive} You gain a \plus4 bonus to Acrobatics and Athletics checks.
+\end{magicitemdef}
 
-\mitemreq{Evocation}{Control}{3}{6th}{Craft (leather or textiles) 10}
+\begin{magicitemdef}{Boots of Speed}[Active]{4}[Legs]{Transmutation [Temporal]}{leather or textiles}
+    \magicitemability{Active}[Standard action] If you stomp your foot on the ground three times, you gain the effects of the \spell{haste} spell.
+    This benefit lasts as long as you move continuously without taking any other action, and for 5 rounds thereafter (maximum 5 minutes).
+\end{magicitemdef}
 
-\appdescription{Boots of Mobility}{1,000}{6th}{Legs}{Faint Transmutation (Augment)}{4th}{\x} While wearing these boots, you gain a \plus4 enhancement bonus to Acrobatics and Athletics checks.
+\begin{magicitemdef}{Boots of Striding and Springing}[Passive]{2}[Legs]{Transmutation [Augment], Transmutation [Augment]}{leather or textiles}
+    \magicitemability{Passive} You gain a \plus10 foot bonus to your land speed.
+    A high land speed increases your ability to jump, as described in \pcref{Jump Modifiers}.
+\end{magicitemdef}
 
-\mitemreq{Transmutation}{Augment}{1}{4th}{Craft (leather or textiles) 8}
+\begin{magicitemdef}{Boots of Teleportation, Lesser}[Active]{2}[Legs]{Conjuration [Teleportation]}{leather or textiles}
+    \magicitemability{Active}[Standard action] If you click your heels together three times, you can teleport up to 100 feet to a location you can see, as the \spell{dimension slide} spell.
+\end{magicitemdef}
 
-\appdescription{Boots of Speed}{5,000}{10th}{Legs}{Moderate Transmutation (Temporal)}{8th}{Standard (specific action)} If you stomp your foot on the ground three times (a standard action), you gain the effects of the \spell{haste} spell.
-This benefit lasts as long as you move continuously without taking any other action, and for 5 rounds thereafter (maximum 5 minutes).
+\begin{magicitemdef}{Boots of Teleportation}[Active]{5}[Legs]{Conjuration [Teleportation]}{leather or textiles}
+    \magicitemability{Active}[Standard action] If you click your heels together three times, you can teleport up to 1,000 feet to a location you can specify, as the \spell{dimension door} spell.
+\end{magicitemdef}
 
-\mitemreq{Transmutation}{Temporal}{4}{8th}{Craft (leather or textiles) 12}
-
-\appdescription{Boots of Striding and Springing}{2,500}{6th}{Legs}{Faint Transmutation (Augment)}{4th}{\x} While wearing these boots, you gain a \plus10 foot enhancement bonus to your land speed.
-In addition, you gain a \plus4 enhancement bonus to Jump checks.
-
-\mitemreq{Transmutation}{Augment}{2}{4th}{Craft (leather or textiles) 8}
-
-\appdescription{Boots of Teleportation, Lesser}{2,000}{8th}{Legs}{Faint Conjuration (Translocation) [Teleportation]}{6th}{Standard (specific action)} By clicking your heels together three times (a standard action), you can teleport up to 30 feet to a location you can see, as the \spell{dimension slide} spell.
-
-\mitemreqdesc{Conjuration}{Translocation}{Teleportation}{3}{6th}{Craft (leather or textiles) 10}
-
-\appdescription{Boots of Teleportation}{5,000}{10th}{Legs}{Moderate Conjuration (Translocation) [Teleportation]}{8th}{Standard (specific action)} These boots function like \magicitem{lesser boots of teleportation}, except that you can teleport up to 1000 feet to a location you can specify, as the \spell{dimension door} spell.
-
-\mitemreqdesc{Conjuration}{Translocation}{Teleportation}{4}{8th}{Craft (leather or textiles) 12}
-
-\appdescription{Boots of Teleportation, Greater}{30,000}{14th}{Legs}{Moderate Conjuration (Translocation) [Teleportation]}{12th}{Standard (specific action)} These boots function like \magicitem{lesser boots of teleportation}, except that you can teleport up to 100 miles to a location you can specify, as the \spell{teleport} ritual.
-
-\mitemreqdesc{Conjuration}{Translocation}{Teleportation}{6}{12th}{Craft (leather or textiles) 16}
+% teleport, +2 level for minute -> standard
+\begin{magicitemdef}{Boots of Teleportation, Greater}[Active]{8}[Legs]{Conjuration [Teleportation]}{leather or textiles}
+    \magicitemability{Active}[Standard action] If you click your heels together three times, you can teleport up to 100 miles to a location you can specify, as the \spell{teleport} ritual.
+\end{magicitemdef}
 
 %800 for endure elements, *3/4 for warming only, +800 for snow+ice travelling
 %(like 1st level ritual?)
-\appdescription{Boots of the Winterlands}{1,400}{7th}{Legs}{Faint Evocation/Transmutation(Augment, Control)}{4th}{\x} While wearing these boots, you can travel across snow and ice without slipping or suffering movement penalties for the terrain.
-In addition, the boots keep you warm, protecting you in conditions as cold as \minus50 Fahrenheit.
+\begin{magicitemdef}{Boots of the Winterlands}[1400]{2}[Legs]{Evocation/Transmutation [Augment]}{leather or textiles}
+    \magicitemability{Passive} You can travel across snow and ice without slipping or suffering movement penalties for the terrain.
+    In addition, the boots keep you warm, protecting you in conditions as cold as \minus50 Fahrenheit.
+\end{magicitemdef}
 
-\mitemreq{Evocation/Transmutation}{Augment, Control}{2}{4th}{Craft (leather or textiles) 8}
-
-\appdescription{Winged Boots}{5,000}{10th}{Legs}{Moderate Transmutation (Imbuement)}{8th}{Standard (specific action)} By touching the sides of both of these boots simultaneously (a standard action), you can cause wings to sprout from them.
-If you are unencumbered, you can fly with a 30 foot speed and average maneuverability, as the \spell{fly} spell, for 5 rounds.
-See \pcref{Flying}, for more details.
-
-\mitemreq{Transmutation}{Imbuement}{4}{8th}{Craft (leather or textiles) 12}
+\begin{magicitemdef}{Winged Boots}[Active]{4}[Legs]{Transmutation [Augment]}{leather or textiles}
+    \magicitemability{Active}[Standard action] If you tap your boots together in midair, you can cause wings to sprout from them.
+    If you are unencumbered, you can fly with a 30 foot speed and average maneuverability, as the \spell{fly} spell.
+    See \pcref{Flying}, for more details.
+    This effect lasts for 5 rounds.
+\end{magicitemdef}
 
 \subsection{Rings}
 
 \parhead{Physical Description} Rings have no appreciable weight.
 Although exceptions exist that are crafted from glass or bone, the vast majority of rings are forged from metal - usually precious metals such as gold, silver, and platinum.
-A ring has AC 13, 2 hit points, hardness 10, and a break DC of 25.
+A typical ring has AD 13, 10 hit points, hardness 10, and a break DC of 25.
 
 \begin{comment}
 \begin{dtable}
@@ -582,50 +542,77 @@ A ring has AC 13, 2 hit points, hardness 10, and a break DC of 25.
 \end{dtable}
 \end{comment}
 
-\appdescription{Energy Resistance, Lesser}{200}{3rd}{Ring}{Faint Abjuration (Shielding)}{2nd}{Immediate (triggered)} When you take energy damage, you can activate this ring to reduce the damage by 5 \add half your level.
+\begin{magicitemdef}{Energy Resistance, Lesser}[Active]{1}[Ring]{Abjuration [Shielding]}{bone, metal, or jewelry}
+    \magicitemability{Triggered}[Immediate action] When you take \glossterm{energy damage}, you can activate this item. If you do, you reduce the damage by an amount equal to the item's power.
 
-\mitemreq{Abjuration}{Shielding}{1}{2nd}{Craft (metal) 6}
+    After being activated, the ring sheds light as a torch.
+    The color of the light depends on the energy damage resisted: green for acid, blue for cold, yellow for electricity, and red for fire.
+    The light lasts for 5 rounds, during which time you cannot activate this ability again.
+\end{magicitemdef}
 
-\appdescription{Energy Resistance}{2,000}{8th}{Ring}{Moderate Abjuration (Shielding)}{6th}{Immediate (triggered)} When you take energy damage, you can activate this ring to gain damage reduction equal to 10 \add half your level against that type of energy damage for 5 rounds.
-During this time, the ring casts light as a torch.
-The color of the light depends on the energy damage resisted: green for acid, blue for cold, yellow for electricity, and red for fire.
+\begin{magicitemdef}{Energy Resistance}[Passive]{3}[Ring]{Abjuration [Shielding]}{as armor}
+    \magicitemability{Passive} You have damage reduction against \glossterm{energy damage} equal to the item's power.
+    Whenever you resist energy with this item, it sheds light as a torch for 5 rounds.
+    The color of the light depends on the energy damage resisted: green for acid, blue for cold, yellow for electricity, and red for fire.
+\end{magicitemdef}
 
-\mitemreq{Abjuration}{Shielding}{3}{6th}{Craft (metal) 10}
+\begin{magicitemdef}{Sustenance, Lesser}[Passive]{1}[Ring]{Conjuration/Transmutation [Creation, Temporal]}{bone, metal, or jewelry}
+    \magicitemability{Passive} You continuously gain nourishment, and no longer need to eat or drink.
+    The ring must be worn for 24 hours before it begins to work.
+\end{magicitemdef}
 
-\appdescription{Sustenance}{1,000}{6th}{Ring}{Faint Conjuration/Transmutation (Creation, Temporal)}{4th}{\x} This ring continually provides its wearer with life-sustaining nourishment.
-The ring also refreshes the body and mind, so that its wearer needs only sleep 2 hours per day to gain the benefit of 8 hours of sleep.
-This does not affect how much rest the wearer must get to regain spells.
-The ring must be worn for a full week before it begins to work.
-If it is removed, the owner must wear it for another week to reattune it to himself.
+\begin{magicitemdef}{Sustenance}[Passive]{3}[Ring]{Conjuration/Transmutation [Creation, Temporal]}{bone, metal, or jewelry}
+    \magicitemability{Passive} You continuously gain nourishment, and no longer need to eat or drink.
+    In addition, you need only one-quarter your normal amount of sleep (or similar activity, such as elven trance) each day.
 
-\mitemreq{Conjuration/Transmutation}{Creation, Temporal}{2}{4th}{Craft (metal) 8}
+    The ring must be worn for 24 hours before it begins to work.
+\end{magicitemdef}
 
-\appdescription{Protection}{Varies}{see text}{Ring}{Varied Abjuration (Shielding)}{}{\x}
-A ring of protection grants an enhancement bonus to your special defenses while worn.
-The price of the ring depends on its enhancement bonus, as shown in the table below.
+\begin{magicitemdef}{Protection}{1}[Ring]{Abjuration [Shielding]}{bone, metal, or jewelry}
+    \magicitemability{Passive} This ring has an enhancement bonus to improve your defenses.
+    Each \plus1 of enhancement bonus grants temporary hit points equal the item's power, and grants you an additional defensive legend point each day.
+    If you stop using the ring, you lose the temporary hit points and the legend points.
+    The benefits of this ring function in the same way as enhancement bonuses on magic armor, and they not stack with those bonuses.
+
+    These bonuses can only be gained once per day, regardless of the number of items you use.
+    If you wear two rings, or change between different rings, use only the highest bonus that applies.
+    If you change from a weaker magical item to a stronger magical item, you gain bonuses equal to the difference between the two items.
+
+    \spellspecial The price of the ring depends on its enhancement bonus, as shown in the table below.
+    Its base power is equal to three times its enhancement bonus.
+    To craft the item, you must have a number of ranks in Craft (bone, metal, or jewelry) equal to the item's base power \add 4.
+\end{magicitemdef}
 
 \begin{dtable}
     \lcaption{Ring of Protection}
     \begin{dtabularx}{\columnwidth} {l X X}
         \tb{Bonus} & \tb{Base Price} & \tb{Item Level} \\
         \hline
-        \plus1 & 100 gp & 2nd \\
-        \plus2 & 500 gp & 4th \\
-        \plus3 & 2,500 gp & 8th \\
+        \plus1 & 100 gp    & 2nd  \\
+        \plus2 & 500 gp    & 4th  \\
+        \plus3 & 2,500 gp  & 8th  \\
         \plus4 & 12,500 gp & 12th \\
         \plus5 & 62,500 gp & 16th \\
     \end{dtabularx}
 \end{dtable}
 
-The spellpower is equal to three times the item's enhancement bonus.
-To craft the item, you must have a number of ranks in Craft (jewelry) equal to the item's spellpower \add 4.
-
-\mitemreq{Abjuration}{Shielding}{1}{varies}{Craft (jewelry) varies}
-
 \subsection{Torso}
 
-\appdescription{Amulet of Mighty Fists}{Varies}{see text}{Torso}{Varied Transmutation (Augment)}{}{\x} While wearing this amulet, you gain an enhancement bonus to physical attack and damage with natural weapons, including unarmed attacks.
-The price of the amulet depends on its enhancement bonus, as shown in the table below.
+\begin{magicitemdef}{Amulet of Mighty Fists}{1}[Torso]{Transmutation [Augment]}{bone or jewelry}
+    \magicitemability{Passive} This amulet has an enhancement bonus to improve your natural attacks and unarmed strikes.
+    You gain a bonus to damage on natural attacks and unarmed strikes equal to this amulet's enhancement bonus.
+    In addition, each \plus1 of enhancement bonus grants you an additional offensive legend point each day.
+    If you stop using the amulet, you lose the damage bonus and legend points.
+    The benefits of this ring function in the same way as enhancement bonuses on magic weapons, and they not stack with those bonuses.
+
+    These legend points can only be gained once per day, regardless of the number of items you use.
+    If you both wear an amulet and wield a magic weapon, or change between different amulets, use only the highest bonus that applies.
+    If you change from a weaker magical item to a stronger magical item, you gain bonuses equal to the difference between the two items.
+
+    \spellspecial The price of the amulet depends on its enhancement bonus, as shown in the table below.
+    Its base power is equal to three times its enhancement bonus.
+    To craft the item, you must have a number of ranks in Craft (jewelry) equal to the item's base power \add 4.
+\end{magicitemdef}
 
 \begin{dtable}
     \lcaption{Amulet of Mighty Fists}
@@ -640,63 +627,62 @@ The price of the amulet depends on its enhancement bonus, as shown in the table 
     \end{dtabularx}
 \end{dtable}
 
-The spellpower is equal to three times the item's enhancement bonus.
-To craft the item, you must have a number of ranks in Craft (jewelry) equal to the item's spellpower \add 4.
+\begin{magicitemdef}{Amulet of the Planes}[Active]{6}[Torso]{Conjuration [Teleportation, Planar]}{bone, jewelry}
+    By holding this amulet in one hand and concentrating on a specific plane for 1 minute, you can create the effects of a \ritual{plane shift} ritual.
+    Activating the item successfully requires a DC 15 Knowledge (planes) check.
+    If you fail, your activation of the amulet has no effect (but still consumes an item use).
+    If you roll a 1 and fail, you and any creatures with you are transported to a random plane.
+    Each time you successfully activate this item in the same day, the DC of the check increases by 5.
+\end{magicitemdef}
 
-\mitemreq{Transmutation}{Augment}{1}{varies}{Craft (jewelry) varies}
+\begin{magicitemdef}{Amulet of Nondetection}[Passive]{3}[Torso]{Abjuration [Shielding]}{bone, jewelry}
+    \magicitemability{Passive} You gain the benefits of the \spell{nondetection} ritual.
+    If a divination is attempted against you, the caster must make a spellpower check against a DC equal to 15 \add the item's power.
+\end{magicitemdef}
 
-\appdescription{Amulet of the Planes}{30,000}{14th}{Torso}{Moderate Conjuration (Translocation) [Planar]}{12th}{1 minute (specific action)} By holding this amulet in one hand and concentrating on a specific plane for 1 minute, you can create the effects of a \ritual{plane shift} ritual.
-Activating the item successfully requires a DC 15 Knowledge (planes) check.
-If you fail, your activation of the amulet has no effect.
-If you fail by 10 or more, you and any creatures with you are transported to a random plane.
-Each time you activate this item in the same day, the DC of the check increases by 5.
+\begin{magicitemdef}{Belt of Constitution}[Passive]{2}[Torso]{Transmutation [Augment]}{leather or textiles}
+    \magicitemability{Passive} You gain a \plus2 bonus to Constitution, up to a maximum Constitution equal to the item's power.
+\end{magicitemdef}
 
-\mitemreqdesc{Conjuration}{Translocation}{Planar}{6}{12th}{Craft (jewelry) 16}
+\begin{magicitemdef}{Belt of Constitution, Greater}[Passive]{4}[Torso]{Transmutation [Augment]}{leather or textiles}
+    \magicitemability{Passive} You gain a \plus4 bonus to Constitution, up to a maximum Constitution equal to the item's power.
+\end{magicitemdef}
 
-\appdescription{Amulet of Nondetection}{5,000}{10th}{Torso}{Moderate Abjuration (Shielding)}{8th}{\x} While you wear this silver amulet, it protects you from divination effects as the \ritual{nondetection} ritual.
-If a divination is attempted against you, the caster must make a spellpower check against a DC equal to 15 \add your level (minimum DC 23).
+\begin{magicitemdef}{Belt of Dwarvenkind}[Passive]{3}[Torso]{Divination/Transmutation [Augment]}{leather or textiles}
+    \magicitemability{Passive} You gain a \plus2 bonus to Constitution, up to a maximum Constitution equal to the item's power.
+    In addition, you gain dwarven characteristics.
+    You gain a \plus4 bonus to social checks when dealing with dwarves, but take a \minus2 penalty with all other creatures.
+    You also gain the benefits of the Stonecunning feat, regardless of whether you meet the prerequisites.
+\end{magicitemdef}
 
-\mitemreq{Abjuration}{Shielding}{3}{8th}{Craft (jewelry) 10}
+\begin{magicitemdef}{Healing Belt}[Active]{1}[Torso]{Vivimancy [Positive]}{leather or textiles}
+    \magicitemability{Active}[Standard action] If you grab this belt in one hand and touch a creature with the other, the touched creature is healed for 1d10 damage per two item power, as \spell{cure light wounds}.
+    If you heal yourself, you only need one hand free to grab the belt.
+\end{magicitemdef}
 
-\appdescription{Belt of Constitution}{2,000}{8th}{Torso}{Faint Transmutation (Augment)}{6th}{\x} While wearing this belt, you gain a \plus2 bonus to Constitution, to a maximum Constitution of 5.
+\begin{magicitemdef}{Torc of Willpower}[Passive]{2}[Torso]{Transmutation [Augment]}{metal or jewelry}
+    \magicitemability{Passive} You gain a \plus2 bonus to Willpower, up to a maximum Willpower equal to the item's power.
+\end{magicitemdef}
 
-\mitemreq{Transmutation}{Augment}{2}{6th}{Craft (textiles) 10}
+\begin{magicitemdef}{Torc of Willpower, Greater}[Passive]{4}[Torso]{Transmutation [Augment]}{metal or jewelry}
+    \magicitemability{Passive} You gain a \plus4 bonus to Willpower, up to a maximum Willpower equal to the item's power.
+\end{magicitemdef}
 
-\appdescription{Belt of Constitution, Greater}{12,000}{12th}{Torso}{Moderate Transmutation (Augment)}{12th}{Standard (specific action)} This belt functions like a \magicitem{belt of constitution}, except the maximum Constitution is 10 instead.
+% +1 level for extra thick fog in the first round
+\begin{magicitemdef}{Vanishing Cloak}[Active]{2}[Torso]{Conjuration [Creation, Fog]}{textiles}
+    \magicitemability{Active}[Standard action] If you wrap this cloak around yourself with one hand, you can create a cloud of fog centered on you, as the \spell{fog cloud} spell.
+    The effect lasts for 5 rounds.
+    For the first round of the effect, the fog is unusually thick, blocking all sight beyond 10 feet.
+    This can allow you to hide unobserved.
+\end{magicitemdef}
 
-\mitemreq{Transmutation}{Augment}{5}{12th}{Craft (textiles) 16}
-
-%priced as +3rd level activated, since stonecunning is so situational
-\appdescription{Belt of Dwarvenkind}{4,000}{7th}{Torso}{Faint Divination/Transmutation (Augment, Awareness)}{6th}{Standard (specific action)} This belt functions like a \magicitem{belt of constitution}.
-In addition, you gain dwarven characteristics while wearing it.
-You gain a \plus4 bonus to social checks when dealing with dwarves, but take a \minus2 penalty with all other creatures.
-You also gain the benefits of the Stonecunning feat, regardless of whether you meet the prerequisites.
-
-\mitemreq{Divination/Transmutation}{Augment, Awareness}{3}{6th}{Craft (textiles) 10}
-
-\appdescription{Cloak of Charisma}{2,000}{8th}{Torso}{Faint Transmutation (Augment)}{6th}{\x} While wearing this cloak, you gain a \plus2 bonus to Charisma, to a maximum Charisma of 5.
-
-\mitemreq{Transmutation}{Augment}{2}{6th}{Craft (textiles) 10}
-
-\appdescription{Cloak of Charisma, Greater}{12,000}{12th}{Torso}{Moderate Transmutation (Augment)}{12th}{Standard (specific action)} This cloak functions like a \magicitem{cloak of charisma}, except the maximum Charisma is 10 instead.
-
-\mitemreq{Transmutation}{Augment}{5}{12th}{Craft (textiles) 16}
-
-\appdescription{Healing Belt}{200}{3rd}{Torso}{Faint Necromancy (Vitalism) [Positive]}{2nd}{Standard (specific action)} By grabbing the belt in one hand and touching a creature in the other (a standard action), you can heal the touched 2d6 or more points of damage, as the \spell{cure light wounds} spell.
-As normal for magic items, your spellpower is equal to your level.
-If you heal yourself, you only need one hand free to grab the belt.
-
-\mitemreqdesc{Necromancy}{Vitalism}{Positive}{1}{2nd}{Craft (textiles}
-
-\appdescription{Vanishing Cloak, Lesser}{800}{5th}{Torso}{Faint Conjuration (Creation) [Fog]}{4th}{Standard (specific action)} By wrapping this cloak around yourself with one hand (a standard action), you can conjure a cloud of fog centered on you, as the \spell{obscuring mist} spell.
-For the first round of the effect, the fog is unusually thick, blocking all sight beyond 10 feet.
-This can allow you to hide unobserved.
-
-\mitemreqdesc{Conjuration}{Creation}{Fog}{2}{4nd}{Craft (textiles) 8}
-
-\appdescription{Vanishing Cloak}{12,000}{12th}{Torso}{Moderate Conjuration (Translocation) [Teleportation]}{10th}{Standard (specific action)} This cloak functions like a \magicitem{lesser vanishing cloak}, except that you can also teleport up to 1000 feet to a location you can specify, as the \spell{dimension door} spell.
-
-\mitemreqdesc{Conjuration}{Creation, Translocation}{Fog, Teleportation}{4}{10th}{Craft (leather or textiles) 14}
+\begin{magicitemdef}{Vanishing Cloak, Greater}[Active]{4}[Torso]{Conjuration [Creation, Fog, Teleportation]}{textiles}
+    \magicitemability{Active}[Standard action] If you wrap this cloak around yourself with one hand, you can teleport up to 100 feet away to a location you can see, as the \spell{dimension slide} spell.
+    In addition, you create a cloud of fog centered on you, as the \spell{fog cloud} spell.
+    You can choose whether the cloud appears at your original location, or at your location after teleporting.
+    For the first round of the effect, the fog is unusually thick, blocking all sight beyond 10 feet.
+    This can allow you to hide unobserved.
+\end{magicitemdef}
 
 \section{Implements}
 Magical implements must be wielded to gain their effects.

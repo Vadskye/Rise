@@ -35,7 +35,7 @@
 \newcommand{\subparhead}[1]{\par\emph{#1}:}
 \newcommand{\thead}[1]{\textbf{#1}}    %Bold the header of tables
 \newcommand{\tb}[1]{\textbf{#1}}    %Bold the header of tables
-\newcommand{\x}{\hskip 0.1em---}    %A null entry in a table
+\newcommand{\x}{\hskip 0.1em---\xspace}    %A null entry in a table
 \newcommand{\ccol}{\centering\arraybackslash}    %Center columns
 \newcommand{\lcol}{\raggedright\arraybackslash}
 \newcommand{\rcol}{\raggedleft\arraybackslash}
@@ -326,6 +326,7 @@
 }
 
 \newcommand{\TempVar}{0}
+\newcommand{\TempVarTwo}{0}
 
 \DeclareDocumentCommand{\parhead}{s m o}
 {\par \IfBooleanT{#1}{\noindent}
@@ -394,6 +395,83 @@
         \IfValueTF{#3}
         {#3}
         {in~ritual~components.}
+    }
+}
+
+% args:
+%   magic item price or type of price
+%   effective spell level
+\DeclareDocumentCommand{\magicitempricetext}{m m}
+{
+    \IfSubStr{#1}{Passive}
+    {
+        %\renewcommand{\TempVarTwo}{\magicitempricepassive{#2}}
+        \magicitempricepassive{#2}
+    }
+    {
+        \IfSubStr{#1}{Active}
+        {
+            \magicitempriceactive{#2}
+        }
+        {
+            \renewcommand{\TempVarTwo}{#1}
+        }
+    }
+
+    \StrLen{\TempVarTwo}[\TempVar]
+    \pgfmathparse{\TempVar > 4}
+    \ifcase\pgfmathresult
+        % handle normal magic items
+        \parhead*{Price~(Level)} \num{\TempVarTwo}~gp~(\magicitemitemlevel{\TempVarTwo})
+    \or
+        % handle very expensive magic items
+        % by passing the number with the right three digits removed
+        \StrGobbleRight{\TempVarTwo}{3}[\TempVar]
+        \parhead*{Price~(Level)} \num{\TempVarTwo}~gp~(
+            \magicitemexpensiveitemlevel{\TempVar}
+        )
+    \fi
+}
+
+% args:
+%    spell level
+\DeclareDocumentCommand{\magicitempriceactive}{m}
+{
+    \renewcommand{\TempVarTwo}{
+        \ifcase#1~
+        100    %0
+        \or 200   %1
+        \or 800   %2
+        \or 2000  %3
+        \or 5000  %4
+        \or 12000  %5
+        \or 30000 %6
+        \or 60000 %7
+        \or 140000 %8
+        \or 300000 %9
+        \else 0
+        \fi
+    }
+}
+
+% args:
+%    spell level
+\DeclareDocumentCommand{\magicitempricepassive}{m}
+{
+    \renewcommand{\TempVarTwo}{
+        \ifcase#1~
+        200   %0
+        \or 800   %1
+        \or 2000  %2
+        \or 5000  %3
+        \or 12000  %4
+        \or 30000 %5
+        \or 60000 %6
+        \or 140000 %7
+        \or 300000 %8
+        \or 700000 %9
+        \else 0
+        \fi
     }
 }
 
@@ -755,26 +833,76 @@
 %   item price
 \DeclareDocumentCommand{\magicitemitemlevel}{m}
 {
-    \x
+    % construct a statement that returns 0-20, incrementing by 1 for each
+    % category of item level the item falls into
+    \pgfmathparse{
+        #1 <= 10 ? 0 : (
+            #1 <= 50 ? 1 : (
+                #1 <= 100 ? 2 : (
+                    #1 <= 250 ? 3 : (
+                        #1 <= 500 ? 4 : (
+                            #1 <= 800 ? 5 : (
+                                #1 <= 1200 ? 6 : (
+                                    #1 <= 1800 ? 7 : (
+                                        #1 <= 2750 ? 8 : (
+                                            #1 <= 4000 ? 9 : (
+                                                #1 <= 6500 ? 10 : (
+                                                    #1 <= 10000 ? 11 : 12
+                                                )
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+            )
+        )
+    }
+    \ifstr{\pgfmathresult}{0}{1/2}[\nth{\pgfmathresult}]
+}
+
+\DeclareDocumentCommand{\magicitemexpensiveitemlevel}{m}
+{
+    \pgfmathparse{
+        #1 <= 10 ? 11 : (
+            #1 <= 16 ? 12 : (
+                #1 <= 25 ? 13 : (
+                    #1 <= 37 ? 14 : (
+                        #1 <= 55 ? 15 : (
+                            #1 <= 85 ? 16 : (
+                                #1 <= 125 ? 17 : (
+                                    #1 <= 190 ? 18 : (
+                                        #1 <= 280 ? 19 : (
+                                            #1 <= 400 ? 20 : 21
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+            )
+        )
+    }
+    \nth{\pgfmathresult}
 }
 
 % args:
 %   effective spell level
 \DeclareDocumentCommand{\magicitemaurastrength}{m}
 {
-    \ifcase#1\relax
-    \or Faint    %1
-    \or Faint   %2
-    \or Faint   %3
-    \or Moderate  %4
-    \or Moderate  %5
-    \or Moderate  %6
-    \or Strong %7
-    \or Strong %8
-    \or Strong %9
-    \or Overwhelming %10
-    \else \x
-    \fi
+    \pgfmathparse{
+        #1 > 9 ? "Overwhelming" : (
+            #1 > 6 ? "Strong" : (
+                #1 > 3 ? "Moderate" : (
+                    #1 >= 0 ? "Faint" : 0
+                )
+            )
+        )
+    }
+    \pgfmathresult
 }
 
 % args:
@@ -782,7 +910,7 @@
 %   effective spell level
 \DeclareDocumentCommand{\magicitemspellpower}{s m}
 {
-    \imathparse{#2*2}
+    \imathparse{max(#2*2,1)}
     \IfBooleanTF{#1}
     {
         \nth{\imathresult}
@@ -790,6 +918,16 @@
     {
         \imathresult
     }
+}
+
+\DeclareDocumentCommand{\magicitemeffect}{o}
+{
+    \spelleffect[#1]
+}
+
+\DeclareDocumentCommand{\magicitemability}{m o}
+{
+    \parhead*{#1~Ability}[#2]
 }
 
 \ExplSyntaxOff
