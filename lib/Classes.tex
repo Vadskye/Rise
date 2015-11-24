@@ -130,26 +130,26 @@ The class features that a character gets for being a member of the class.
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
-        \barbarianprogressionrow{1}  & Rage \plus2, damage reduction      \\
-        \barbarianprogressionrow{2}  & Fast movement    \\
-        \barbarianprogressionrow{3}  & Channeled rage, uncanny dodge      \\
-        \barbarianprogressionrow{4}  & Mighty will                        \\
-        \barbarianprogressionrow{5}  & Improved damage reduction          \\
-        \barbarianprogressionrow{6}  & Channeled rage                     \\
-        \barbarianprogressionrow{7}  & Larger than life                   \\
-        \barbarianprogressionrow{8}  & Rage \plus3                        \\
-        \barbarianprogressionrow{9}  & Channeled rage                     \\
-        \barbarianprogressionrow{10} & Improved uncanny dodge             \\
-        \barbarianprogressionrow{11} & Tireless rage                      \\
-        \barbarianprogressionrow{12} & Channeled rage, chaotic rage       \\
-        \barbarianprogressionrow{13} & Indomitable will                   \\
-        \barbarianprogressionrow{14} & Rage \plus4                        \\
-        \barbarianprogressionrow{15} & Channeled rage, damage retaliation \\
-        \barbarianprogressionrow{16} & Grit                               \\
-        \barbarianprogressionrow{17} & Larger than belief                 \\
-        \barbarianprogressionrow{18} & Channeled rage                     \\
-        \barbarianprogressionrow{19} & Deathless rage                     \\
-        \barbarianprogressionrow{20} & Rage \plus5
+        \barbarianprogressionrow{1}  & Rage \plus2, damage reduction \\
+        \barbarianprogressionrow{2}  & Channeled rage                \\
+        \barbarianprogressionrow{3}  & Uncanny dodge                 \\
+        \barbarianprogressionrow{4}  & Fast movement                 \\
+        \barbarianprogressionrow{5}  & Rage \plus3                   \\
+        \barbarianprogressionrow{6}  & Channeled rage                \\
+        \barbarianprogressionrow{7}  & Grit                          \\
+        \barbarianprogressionrow{8}  & Larger than life              \\
+        \barbarianprogressionrow{9}  & Improved uncanny dodge        \\
+        \barbarianprogressionrow{10} & Channeled rage, rage \plus4   \\
+        \barbarianprogressionrow{11} & Tireless rage                 \\
+        \barbarianprogressionrow{12} & Chaotic rage                  \\
+        \barbarianprogressionrow{13} & Indomitable will              \\
+        \barbarianprogressionrow{14} & Channeled rage                \\
+        \barbarianprogressionrow{15} & Rage \plus5                   \\
+        \barbarianprogressionrow{16} & Larger than belief            \\
+        \barbarianprogressionrow{17} & Mighty resilience             \\
+        \barbarianprogressionrow{18} & Channeled rage                \\
+        \barbarianprogressionrow{19} & Deathless rage                \\
+        \barbarianprogressionrow{20} & Rage \plus6
     \end{dtabularx}
 \end{dtable}
 
@@ -167,68 +167,57 @@ The class features that a character gets for being a member of the class.
 
 \classbasics{Skill Points} 10.
 
-\subsection{Class Features}
+\subsection{Base Class Features}
+A character with barbarian as a base class gains the following abilities.
 
-All of the following are class features of the barbarian.
 \cf{Bbn}{Weapon and Armor Proficiency}
- A barbarian is proficient with simple weapons, any four other weapon groups, light armor, medium armor, and shields.
+A barbarian is proficient with simple weapons, any four other weapon groups, light armor, medium armor, and shields.
 
 \cf{Bbn}{Damage Reduction}[Ex]
 A barbarian has the ability to shrug off some amount of injury from attacks.
 He has damage reduction against physical damage equal to his barbarian level.
 This allows him to ignore the first points of physical damage he takes each round.
 
+\subsection{Class Features}
+All barbarians have the following abilities.
+
 \cf{Bbn}{Rage}[Ex]
-A barbarian can fly into a rage as a free action.
+Twice per day, a barbarian can fly into a rage as a free action.
 Raging has the following benefits and drawbacks:
 \begin{itemize}
-    \item \plus2 bonus to Strength.
-    \item \plus2 bonus to Willpower.
-    \item 2 temporary hit points per barbarian level.
+    \item \plus2 bonus to damage with physical attacks.
+    \item \plus2 bonus to Fortitude and Mental defense.
+    \item 2 temporary hit points per Willpower.
         These extra hit points gained from raging are lost before any other hit points (see \pcref{Temporary Hit Points}).
-    \item \minus2 to physical defenses.
+    \item \minus2 to physical defenses (Armor, Maneuver, Reflex).
     \item Unable to take any action that requires patience or concentration, such as casting spells.
-    \item If the barbarian does not spend a swift round to sustain the rage, the rage ends at the end of the round.
+    \item If the barbarian does not spend a swift round to sustain the rage, it ends at the end of the round.
     \item At the end of each round, if the barbarian did not attack a creature or object, he takes nonlethal damage equal to his barbarian level.
 \end{itemize}
 
-A rage lasts for a number of rounds equal to 3 \add the barbarian's (newly increased) Willpower.
-At the end of the rage, the barbarian takes nonlethal damage equal to the number of temporary hit points he gained by raging.
+A rage typically lasts for up to 5 rounds.
+At the end of the rage, the barbarian takes nonlethal damage equal to his barbarian level.
 If the barbarian has any temporary hit points remaining at the end of his rage, the nonlethal damage is dealt to those hit points before they go away.
 In addition, he becomes \fatigued until he rests for 5 minutes.
 The barbarian cannot enter a rage while he is fatigued from his previous rage.
 
-The amount by which the barbarian's attributes increase, and the number of temporary hit points gained per barbarian level, is called the barbarian's rage bonus.
-A barbarian can fly into a rage a number of times per day equal to his rage bonus.
-The barbarian's rage bonus improves to \plus3 at 8th barbarian level, to \plus4 at 14th barbarian level, and finally to \plus5 at 20th barbarian level.
+The bonuses granted by a barbarian's rage increase with level.
+This is called the barbarian's rage bonus.
+At 5th level, and every 5 levels thereafter, the bonus to physical damage and the bonus toFortitude and Mental defenses increases by \plus1.
+In addition, the number of hit points gained per Willpower increases by 1, and he can use his rage one additional time per day.
 His penalty to physical defenses while raging remains the same.
 
-\cf{Bbn}[2nd]{Fast Movement}[Ex]
-A barbarian increases his land speed by 10 feet while \unencumbered.
-
-\cf{Bbn}[3rd]{Uncanny Dodge}[Ex]
-A barbarian can react to danger before his senses would normally allow him to do so.
-He reduces his overwhelm penalties by 1.
-If his overwhelm penalty is reduced to 0, he is not considered to be overwhelmed.
-In addition, he is not \unaware when attacked by surprise.
-
-\cf{Bbn}[3rd]{Channeled Rage}
+\cf{Bbn}[2nd]{Channeled Rage}
 The barbarian gains the ability to channel his rage to gain new abilities.
 He chooses a single channeled rage from the list below.
 Whenever the barbarian enters a rage, he may gain the benefits of one channeled rage he knows.
 Some channeled rages require a minimum barbarian level, as indicated before the name of the ability.
-At his 6th barbarian level, and every three barbarian levels thereafter, the barbarian gains an additional channeled rage.
-
-Some channeled rages depend on the barbarian's rage power.
-A barbarian's rage power is equal to his Willpower or his barbarian level, whichever is higher.
+At his 6th barbarian level, and every four barbarian levels thereafter, the barbarian gains an additional channeled rage.
 
 All channeled rages are extraordinary abilities unless otherwise noted.
 
 \subcf{Athletic Rage}
 The barbarian adds his rage bonus to his Climb, Jump, Sprint, and Swim checks.
-
-\subcf{Endless Rage}
-The barbarian's rage lasts for an additional 5 rounds.
 
 \subcf{Rapid Rage}
 The barbarian gains a \plus10 foot bonus to land speed.
@@ -243,52 +232,55 @@ The barbarian only suffers a \minus1 penalty to physical defenses for raging.
 The barbarian adds his rage bonus to his Mental defense.
 
 \subcf{6th -- Destructive Rage}
-When attacking, the barbarian ignores an amount of hardness equal to his rage power.
+When attacking, the barbarian ignores an amount of hardness equal to his Strength.
+
+\subcf{6th -- Furious Styles}
+The barbarian can initiate or change combat styles as part of the swift action he uses to sustain his rage.
 
 \subcf{6th -- Overwhelming Rage}
 Overwhelmed foes the barbarian threatens increase their overwhelm penalties by 1.
 
-\subcf{6th -- Stylish Rage}
-The barbarian can initiate or change combat styles as part of the swift action he uses to sustain his rage.
-
 \subcf{6th -- Terrifying Rage}
 Whenever the barbarian makes a physical melee attack, he may also make a special attack against the target's Mental defense.
-His attack bonus is equal to his rage power.
+His attack bonus is equal to his Willpower.
 Success means the target is \shaken for 5 rounds.
 \norepeatnotes
 
-\subcf{9th -- Critical Rage}
-Whenever the barbarian scores a critical hit while raging, he extends his rage by 2 rounds and gains temporary hit points equal to his rage power.
+\subcf{10th -- Critical Rage}
+The barbarian gains a bonus equal to his Perception on attacks made to confirm critical hits. Whenever the barbarian scores a critical hit while raging, he extends his rage by 2 rounds.
 
-\subcf{9th -- Overpowering Rage}
+\subcf{10th -- Overpowering Rage}
 The barbarian adds his rage bonus to his attack bonus with combat maneuvers.
-Once per round, when the barbarian successfully performs a combat maneuver, he gains temporary hit points equal to his rage power.
+Once per round, when the barbarian successfully performs a combat maneuver, he gains temporary hit points equal to his Willpower.
 
-\subcf{9th -- Taunting Rage}
+\subcf{10th -- Taunting Rage}
 Once per round, the barbarian can make a special attack against the Mental defense of a foe within \rngmed range of him.
-His attack bonus is equal to his rage power.
+His attack bonus is equal to his Willpower.
 If the attack succeeds, the foe is \taunted for 5 rounds.
 \norepeatnotes.
 
-\subcf{12th -- Spellbreaker Rage (Su)}
-The barbarian gains spell resistance equal to 10 \add his rage power.
+\subcf{10th -- Endless Rage}
+The barbarian's rage lasts for an additional 5 rounds.
+
+\subcf{10th -- Terrifying Rage, Improved}
+This channeled rage functions like terrifying rage, except that it affects all foes the barbarians threatens.
+The barbarian must have the terrifying rage ability to choose this ability.
+
+\subcf{14th -- Spellbreaker Rage (Su)}
+The barbarian gains spell resistance equal to 10 \add his Constitution.
 To affect the barbarian with a spell, a caster must make an attack with its spellpower.
 If the attack beats the barbarian's spell resistance, the spell works normally.
 Otherwise, the spell has no effect on the barbarian.
 
-\subcf{12th -- Terrifying Rage, Improved}
-This channeled rage functions like terrifying rage, except that it affects all foes the barbarians threatens.
-The barbarian must have the terrifying rage ability to choose this ability.
-
-\subcf{12th -- Whirlwind Rage}
-Whenever the barbarian is threatened by at least five creatures, he gains a physical damage bonus equal to his rage bonus.
-
-\subcf{15th -- Mindless Rage}
-The barbarian becomes immune to mind-affecting spells and effects.
-
-\subcf{15th -- Taunting Rage, Improved}
+\subcf{14th -- Taunting Rage, Improved}
 This channeled rage functions like taunting rage, except that it affects all foes the barbarians threatens.
 The barbarian must have the taunting rage rage ability to choose this ability.
+
+\subcf{14th -- Whirlwind Rage}
+Whenever the barbarian is threatened by at least five creatures, he gains a physical damage bonus equal to his rage bonus.
+
+\subcf{18th -- Endless Rage}
+If the barbarian takes damage and does not receive healing during a given round, that round does not count against the duration of his rage.
 
 %\subcf{18th -- Hurricane Rage} This channeled rage functions like whirlwind rage, except that the damage bonus is equal to the number of foes the barbarian threatens, up to a maximum bonus equal to twice his rage bonus.
 %The barbarian must have the whirlwind rage ability to choose this ability.
@@ -297,26 +289,36 @@ The barbarian must have the taunting rage rage ability to choose this ability.
 The barbarian doubles his damage reduction.
 %This replaces his rage bonus to Strength.
 
-\cf{Bbn}[4th]{Mighty Will}[Ex]
-The barbarian gains a \plus5 bonus to Mental defense against compulsion effects.
+\subcf{18th -- Mindless Rage}
+The barbarian becomes immune to mind-affecting spells and effects.
 
-\cf{Bbn}[5th]{Improved Damage Reduction}[Ex]
-The barbarian can apply his damage reduction against any attack which deals damage, including magical and supernatural attacks.
-This counts against his total damage reduced that round.
+\cf{Bbn}[3rd]{Uncanny Dodge}[Ex]
+A barbarian can react to danger before his senses would normally allow him to do so.
+He reduces his overwhelm penalties by 1.
+If his overwhelm penalty is reduced to 0, he is not considered to be overwhelmed.
+In addition, he is not \unaware when attacked by surprise.
 
-\cf{Bbn}[7th]{Larger than Life}[Ex]
+\cf{Bbn}[4th]{Fast Movement}[Ex]
+The barbarian increases his land speed by 10 feet while \unencumbered.
+
+\cf{Bbn}[7th]{Grit}[Ex]
+The barbarian ignores \glossterm{critical damage penalties} for the purpose of his physical attacks and checks, and can choose not to fall unconscious from critical damage.
+This does not prevent him from dying from critical damage.
+
+\cf{Bbn}[8th]{Larger than Life}[Ex]
 A barbarian holds the strength of a giant in the body of a man (or woman).
 The barbarian is treated as being one size category larger than he actually is for all purposes except his physical space and reach, and the weapons he wields.
 Although he uses weapons of the same size as normal, his weapons deal damage as if they were one size category larger, including natural weapons and unarmed strikes.
 The benefits of this class feature stack with the effects of spells and abilities that increase the barbarian's size category.
 
-\cf{Bbn}[10th]{Improved Uncanny Dodge}[Ex]
+\cf{Bbn}[9th]{Improved Uncanny Dodge}[Ex]
 The barbarian reduces his overwhelm penalties by 2.
 This does not stack with the effects of uncanny dodge.
 If his overwhelm penalty is reduced to 0, he is not considered to be overwhelmed.
 
 \cf{Bbn}[11th]{Tireless Rage}[Ex]
-The barbarian no longer becomes fatigued at the end of his rage.
+The barbarian does not take damage when his rage ends, and is not \fatigued at the end of his rage.
+This can allow him to rage multiple times without resting.
 
 \cf{Bbn}[12th]{Chaotic Rage}[Ex]
 The barbarian gains the ability to change channeled rage abilities at will, without consuming an additional use of his rage ability.
@@ -325,19 +327,18 @@ He may not change channeled rages in this way more than once per round.
 \cf{Bbn}[13th]{Indomitable Will}[Ex]
 The barbarian becomes immune to compulsion spells and effects.
 
-\cf{Bbn}[15th]{Damage Retaliation}[Ex]
-At the end of each round, if the barbarian's damage reduction is fully exhausted, he gains a \plus2 damage bonus during the next round.
-
-\cf{Bbn}[16th]{Grit}[Ex]
-The barbarian's fortitude knows no bounds.
-If he resists an attack against his Fortitude, it has no effect on him, even if it would normally have an effect on a failed attack.
-
-\cf{Bbn}[17th]{Larger than Belief}[Ex]
+\cf{Bbn}[16th]{Larger than Belief}[Ex]
 The barbarian's larger than life ability improves.
 He is treated as being two size categories larger than he actually is.
 
+\cf{Bbn}[17th]{Mighty Resilience}[Ex]
+The barbarian cannot take more than half his maximum hit points in damage during a single round.
+Any excess damage is ignored.
+
 \cf{Bbn}[19th]{Deathless Rage}[Ex]
-While raging, the barbarian ignores penalties from critical damage and does not fall unconscious due to critical damage.
+While raging, the barbarian ignores all penalties from critical damage.
+This can prevent him from dying from critical damage.
+However, if his critical damage exceeds twice his maximum hit points, the barbarian immediately dies.
 
 \subsubsection{Ex-Barbarians}
 A barbarian who becomes lawful loses his ability to rage, and cannot gain more levels as a barbarian.
