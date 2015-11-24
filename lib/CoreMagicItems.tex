@@ -270,14 +270,14 @@ Special abilities on body armor are usually activated if the character is struck
     \magicitemability{Passive} This shield functions like a \magicitem{bashing} shield.
     \magicitemability{Triggered}[Immediate action] When you successfully shield bash a foe, you can activate this item. If you do, you gain a \plus2 bonus to your physical defenses against that foe for 5 rounds.
 
-    After being activated, the shield is lighter and seems to move of its own volition to block attacks.
+    After you activate this ability, the shield is lighter and seems to move of its own volition to block attacks.
     This effect lasts for 5 rounds, during which time you cannot activate this ability again.
 \end{magicitemdef}
 
 \begin{magicitemdef}{Energy Resistance, Lesser}[Active]{1}[Body]{Abjuration [Shielding]}{as armor}
     \magicitemability{Triggered}[Immediate action] When you take \glossterm{energy damage}, you can activate this item. If you do, you reduce the damage by an amount equal to the item's power.
 
-    After being activated, the armor sheds light as a torch.
+    After you activate this ability, the armor sheds light as a torch.
     The color of the light depends on the energy damage resisted: green for acid, blue for cold, yellow for electricity, and red for fire.
     The light lasts for 5 rounds, during which time you cannot activate this ability again.
 \end{magicitemdef}
@@ -292,8 +292,8 @@ Special abilities on body armor are usually activated if the character is struck
     \magicitemability{Passive} This armor has a reduced armor check penalty.
     The price depends on the penalty reduction, as shown in the table below.
 
-    The spellpower is equal to three times the item's penalty reduction.
-    To craft the item, you must have a number of ranks in the relevant Craft skill equal to the item's spellpower \add 4.
+    Its base power is equal to three times the item's penalty reduction.
+    To craft the item, you must have a number of ranks in the relevant Craft skill equal to the item's base power \add 4.
 \end{magicitemdef}
 
 \begin{dtable}
@@ -315,18 +315,18 @@ Special abilities on body armor are usually activated if the character is struck
 \begin{magicitemdef}{Flaming Burst}[Active]{3}[Body, Shield]{Evocation [Fire]}{as armor}
     \magicitemability{Triggered}[Immediate action] When you are hit or missed by a melee attack, you can activate this item.
     Body armor triggers if the attack hits, and shields trigger if the attack misses.
-    If you activate the item, the attacking creature takes 1d6 fire damage per two item power.
+    If you activate the item, the attacking creature takes 1d8 fire damage per two item power.
 
-    After being activated, the item is wreathed in flame, causing it to shed light as a torch.
+    After you activate this ability, the item is wreathed in flame, causing it to shed light as a torch.
     This effect lasts for 5 rounds, during which time you cannot activate this ability again.
 \end{magicitemdef}
 
 \begin{magicitemdef}{Freezing Burst}[Active]{3}[Body, Shield]{Evocation [Cold]}{as armor}
     \magicitemability{Triggered}[Immediate action] When you are struck or missed by a melee attack, you can activate this item.
     Body armor triggers if the attack hits, and shields trigger if the attack misses.
-    If you activate the item, the attacking creature takes 1d6 cold damage per two item power.
+    If you activate the item, the attacking creature takes 1d8 cold damage per two item power.
 
-    After being activated, the item radiates frigid cold, causing it to snuff out torches and other small fires within a 5 foot radius.
+    After you activate this ability, the item radiates frigid cold, causing it to snuff out torches and other small fires within a 5 foot radius.
     This effect lasts for 5 rounds, during which time you cannot activate this ability again.
 \end{magicitemdef}
 
@@ -364,9 +364,9 @@ Special abilities on body armor are usually activated if the character is struck
 \begin{magicitemdef}{Shocking Burst}[Active]{3}[Body, Shield]{Evocation [Electricity]}{as armor}
     \magicitemability{Triggered}[Immediate action] When you are struck or missed by a melee attack, you can activate this item.
     Body armor triggers if the attack hits, and shields trigger if the attack misses.
-    If you activate the item, the attacking creature takes 1d6 electricity damage per two item power.
+    If you activate the item, the attacking creature takes 1d8 electricity damage per two item power.
 
-    After being activated, the item crackles with electrical energy, causing you to radiate flashing light as a torch.
+    After you activate this ability, the item crackles with electrical energy, causing you to radiate flashing light as a torch.
     This effect lasts for 5 rounds, during which time you cannot activate this ability again.
 \end{magicitemdef}
 
@@ -545,7 +545,7 @@ A typical ring has AD 13, 10 hit points, hardness 10, and a break DC of 25.
 \begin{magicitemdef}{Energy Resistance, Lesser}[Active]{1}[Ring]{Abjuration [Shielding]}{bone, metal, or jewelry}
     \magicitemability{Triggered}[Immediate action] When you take \glossterm{energy damage}, you can activate this item. If you do, you reduce the damage by an amount equal to the item's power.
 
-    After being activated, the ring sheds light as a torch.
+    After you activate this ability, the ring sheds light as a torch.
     The color of the light depends on the energy damage resisted: green for acid, blue for cold, yellow for electricity, and red for fire.
     The light lasts for 5 rounds, during which time you cannot activate this ability again.
 \end{magicitemdef}
@@ -723,9 +723,9 @@ Additionally, the price of all special abilities cannot exceed twice the price o
     \end{dtabularx}
 \end{dtable}
 
-\parhead{Spellpower for Weapons} The spellpower of a magic weapon with a special ability is given in the item description.
-For an item with only an enhancement bonus, the spellpower is three times the enhancement bonus.
-If an item has both an enhancement bonus and a special ability, the higher of the two spellpower requirements must be met.
+\parhead{Base Power for Weapons} The base power of a magic weapon with a special ability is given in the item description.
+For an item with only an enhancement bonus, the base power is three times the enhancement bonus.
+If an item has both an enhancement bonus and a special ability, the higher of the two base powers is used.
 
 \parhead{Hardness and Hit Points} Each \plus1 of enhancement bonus adds 2 to a weapon's hardness and \plus10 to its hit points.
 
@@ -737,8 +737,7 @@ If conflicting special abilities exist, the special ability on the ammunition ta
 Magic ammunition loses its magic after being fired, whether it hits or misses.
 
 \parhead{Light Generation} Some magic weapons shed light equivalent to a light spell (bright light in a 20-foot radius, shadowy light in a 40-foot radius).
-These glowing weapons are quite obviously magical.
-Such a weapon can't be concealed when drawn, nor can its light be shut off.
+The light on such weapons cannot normally be shut off.
 Some of the specific weapons detailed below always or never glow, as defined in their descriptions.
 
 \parhead{Activation} Usually, a character benefits from a magic weapon in the same way a character benefits from a mundane weapon - by attacking with it.
@@ -756,72 +755,81 @@ On a successful critical roll, apply the special effect, but do not multiply the
     \begin{dtabularx}{\textwidth}{l >{\lcol}X l l}
         \tb{Special Ability} & \tb{Description} & \tb{Cost} & \tb{Item Level} \\
         \hline
-        Bane & Add special ability that only functions against certain creatures & Special & Special \\
-        Morphing & Weapon transforms into similar weapon & 200 gp & 3rd \\
-        Entangling & Entangle struck foe & 400 gp & 4th \\
-        Flaming & Ignite struck foe & 400 gp & 4th \\
-        Forceful & Knock back struck foe &  400 gp & 4th \\
-        Thundering & Deafen struck foe and those nearby & 400 gp & 4th \\
-        Freezing & Fatigue struck foe & 400 gp & 4th \\
-        Surestrike, Lesser & Roll critical confirmation twice & 400 gp & 4th \\
-        Defending & Trade attack and damage for AC & 500 gp & 4th \\
-        Cleaving & Extra attack after dropping foe & 800 gp & 5th \\
-        Returning & Weapon returns after being thrown &  1,000 gp & 6th \\
-        Poisoning & Quickly coat weapon in duplicated poison & 1,600 gp & 7th \\
-        Shocking & Stagger struck foe & 1,600 gp & 7th \\
-        Vampiric & Lick weapon to regain hit points &  1,600 gp & 7th \\
-        Surestrike & Reroll missed attacks &  4,000 gp & 9th \\
-        Thieving & Absorb struck objects into weapon & 4,000 gp & 9th \\
-        Returning, Greater & Weapon returns immediately after being thrown & 5,000 gp & 10th \\
-        Heartseeking & Automatically score critical hit after striking target repeatedly &  12,000 gp & 12th \\
-        Poisoning, Greater & Quickly coat weapon in potent duplicated poison & 24,000 gp & 13th \\
-        Soulreaving & Weapon strikes the soul for delayed damage instead of normal damage &  60,000 gp & 16th \\
-        Vorpal & Sever foe's head in a single blow & 140,000 gp & 18th \\
+        Bane               & Add special ability that only functions against certain creatures   & Special    & Special \\
+        Morphing           & Weapon transforms into similar weapon                               & 200 gp     & 3rd     \\
+        Entangling         & Entangle struck foe                                                 & 400 gp     & 4th     \\
+        Flaming            & Ignite struck foe                                                   & 400 gp     & 4th     \\
+        Forceful           & Knock back struck foe                                               & 400 gp     & 4th     \\
+        Thundering         & Deafen struck foe and those nearby                                  & 400 gp     & 4th     \\
+        Freezing           & Fatigue struck foe                                                  & 400 gp     & 4th     \\
+        Surestrike, Lesser & Roll critical confirmation twice                                    & 400 gp     & 4th     \\
+        Defending          & Trade attack and damage for AC                                      & 500 gp     & 4th     \\
+        Cleaving           & Extra attack after dropping foe                                     & 800 gp     & 5th     \\
+        Returning          & Weapon returns after being thrown                                   & 1,000 gp   & 6th     \\
+        Poisoning          & Quickly coat weapon in duplicated poison                            & 1,600 gp   & 7th     \\
+        Shocking           & Stagger struck foe                                                  & 1,600 gp   & 7th     \\
+        Vampiric           & Lick weapon to regain hit points                                    & 1,600 gp   & 7th     \\
+        Surestrike         & Reroll missed attacks                                               & 4,000 gp   & 9th     \\
+        Thieving           & Absorb struck objects into weapon                                   & 4,000 gp   & 9th     \\
+        Returning, Greater & Weapon returns immediately after being thrown                       & 5,000 gp   & 10th    \\
+        Heartseeking       & Automatically score critical hit after striking target repeatedly   & 12,000 gp  & 12th    \\
+        Poisoning, Greater & Quickly coat weapon in potent duplicated poison                     & 24,000 gp  & 13th    \\
+        Soulreaving        & Weapon strikes the soul for delayed damage instead of normal damage & 60,000 gp  & 16th    \\
+        Vorpal             & Sever foe's head in a single blow                                   & 140,000 gp & 18th    \\
     \end{dtabularx}
 \end{dtable*}
 
-\subsubsection{Bane} \parhead{Price (Level)} Special \parhead{Aura, Spellpower} Special \par
-A bane weapon excels at attacking a specific type of creature.
-Any weapon special ability can be designated as a ``bane'' ability, causing it to only function against a specific kind of creature.
-In exchange, the ability costs half the normal price in raw materials to add to the weapon.
-A list of possible foes is described on the following table.
+\begin{magicitemdef}{Bane}{2}{Transmutation [Augment]}{as weapon}
+    \spellspecial A bane weapon excels at attacking a specific type of creature.
+    Any weapon special ability can be designated as a ``bane'' ability, causing it to only function against a specific kind of creature.
+    In exchange, the ability costs half the normal price in raw materials to add to the weapon.
+    A list of possible foes is described on the following table.
+\end{magicitemdef}
 
 \begin{dtable}
+    \lcaption{Bane Creature Types}
     \begin{dtabularx}{\columnwidth}{>{\lcol}X >{\lcol}X}
-        \tb{Designated Foe} & \tb{Designated Foe}\\
+        \tb{Designated Foe}     & \tb{Designated Foe}     \\
         \hline
-        Aberrations & Animals \\
-        Constructs & Dragons \\
-        Elementals & Fey \\
-        Giants & Humanoids, civilized \\
-        Humanoids, savage & Magical beasts \\
-        Monstrous humanoids & Oozes \\
+        Aberrations             & Animals                 \\
+        Constructs              & Dragons                 \\
+        Elementals              & Fey                     \\
+        Giants                  & Humanoids, civilized    \\
+        Humanoids, savage       & Magical beasts          \\
+        Monstrous humanoids     & Oozes                   \\
         Outsiders, inner planes & Outsiders, outer planes \\
-        Plants & Undead \\
-        Vermin & \\
+        Plants                  & Undead                  \\
+        Vermin                  &                         \\
     \end{dtabularx}
 \end{dtable}
 
-\mitemreq{Transmutation}{Augment}{2}{4th}{Craft (as weapon) 8}
+\begin{magicitemdef}{Cleaving}[Active]{1}[Melee]{Transmutation [Augment]}{as weapon}
+    \magicitemability{Triggered}[Immediate action] When you make a melee attack with this weapon that knocks a creature unconscious or kills it, you can activate this weapon to take an extra attack, as the Cleave feat (\featpcref{Cleave}).
+    If you already have the Cleave feat, activating this weapon instead grants a \plus5 bonus to attack and damage on your cleave attack.
 
-\impdescription{Cleaving}{800}{5th}{Faint Abjuration (Shielding)}{4th}{Immediate (triggered)} If you make a melee attack that knocks a creature unconscious or kills it, you can activate this weapon to take an extra attack, as the Cleave feat (\featpcref{Cleave}).
-If you already have the Cleave feat, activating this weapon instead grants a \plus5 bonus to attack and damage on your cleave attack.
+    After you activate this ability, the weapon sheds blood red light as a torch.
+    This effect lasts for 5 rounds, during which time you cannot activate this ability again.
+\end{magicitemdef}
 
-\mitemreq{Transmutation}{Augment}{2}{4th}{Craft (as weapon) 8}
+\begin{magicitemdef}{Defending}[Passive]{2}[Melee]{Abjuration [Shielding]}{as weapon}
+    \magicitemability{Passive} You can use the legend points granted by this weapon's enhancement bonus as defensive legend points, in addition to using them as offensive legend points.
+    This stacks with any defensive legend points granted by armor, but not with other offensive legend points granted by weapons.
+\end{magicitemdef}
 
-\impdescription{Defending}{500}{4th}{Faint Abjuration (Shielding)}{4th}{Move (specific action)} If you spin this weapon in your hands in a complete revolution clockwise, you do not apply its enhancement bonus to attack and damage.
-However, you add its enhancement bonus to your physical defenses for 1 round whenever you make a full attack or take the total defense action.
-If you spin the weapon counter-clockwise, the weapon instead applies its bonus to your attack and damage, as normal.
+\begin{magicitemdef}{Disorienting}[Active]{4}[Melee, Ranged]{Enchantment [Compulsion]}{as weapon}
+    \magicitemability{Triggered}[Immediate action] When you strike a foe with this weapon, you can activate it to make the struck creature \disoriented for 5 rounds.
+    This is a Mind effect.
 
-\mitemreq{Abjuration}{Shielding}{2}{4th}{Craft (as weapon) 8}
+    After you activate this ability, the weapon cackles gleefully.
+    It cackles again every time you strike a foe with it.
+    This effect lasts for 5 rounds, during which time you cannot activate this ability again.
+\end{magicitemdef}
 
-\impdescription{Entangling}{400}{4th}{Faint Conjuration (Creation)}{2nd}{Immediate (triggered)} When you strike a foe with this weapon, you can cause webbing to spring into existence, entangling the struck foe for 5 rounds.
-The foe can break out of the webbing with a grapple or Escape Artist check against a DC equal to 15 \add your level.
+\begin{magicitemdef}{Flaming}[Active]{2}[Melee, Ranged]{Evocation [Fire]}{as weapon}
+    \magicitemability{Active}[Standard action] If you speak a command word, you can ignite this weapon in flames and make a single attack with it. If this attack hits, the target takes 1d8 fire damage per two item power in addition to the damage from your attack.
 
-An entangled creature moves at half speed, cannot run or charge, and takes a \minus2 penalty to physical attacks and defenses, as well as Strength and Dexterity-based checks.
-An entangled character who attempts to cast a spell must make a Concentration check (DC 10 \add double the spell's level) or lose the spell.
-
-\mitemreq{Conjuration}{Creation}{1}{2nd}{Craft (as weapon) 6}
+    If the attack misses, the weapon continues to flame for up to 5 rounds.
+\end{magicitemdef}
 
 \impdescription{Flaming}{400}{4th}{Faint Evocation (Energy) [Fire]}{2nd}{Immediate (triggered)} When you strike a foe with this weapon, you can engulf the struck creature in flames.
 If you do, it is ignited for 5 rounds.
@@ -1015,9 +1023,9 @@ Staffs function exactly like wands (see below), except that they enhance all sch
     \begin{dtabularx}{\columnwidth} {>{\ccol}X c c}
         \tb{Enhancement Bonus} & \tb{Base Price} & \tb{Item Level}\\
         \hline
-        \plus1 staff & 150 gp & 3rd \\
-        \plus2 staff & 750 gp & 5th \\
-        \plus3 staff & 3,750 gp & 9th \\
+        \plus1 staff & 150 gp    & 3rd  \\
+        \plus2 staff & 750 gp    & 5th  \\
+        \plus3 staff & 3,750 gp  & 9th  \\
         \plus4 staff & 18,750 gp & 13th \\
         \plus5 staff & 93,750 gp & 17th \\
     \end{dtabularx}
