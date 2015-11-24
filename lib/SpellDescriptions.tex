@@ -2492,19 +2492,22 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Fire Shield}[3]
+\begin{spellsection}{Fire Shield}[4]
     \begin{spellheader}
         \spelldesc{You appear to immolate yourself in a wreath of flame that lashes out at anyone who tries to harm you.}
     \end{spellheader}
     \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spellquicktargeting{One creature}{\rngclose}
+        \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect You gain damage reduction against cold damage equal to twice your spellpower. In addition, you radiate light as a torch.
+            \spelleffect The target gains damage reduction against cold damage equal to twice your spellpower. In addition, it radiates light as a torch.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellsubcontent}
         \begin{spelltargetinginfo}
-            \spelltgr{A creature within 30 feet of you attacks you}
+            \spelltgr{A creature makes a melee attack against the shielded creature}
             \spelltgt{The attacking creature}
         \end{spelltargetinginfo}
         \begin{spelleffects}
@@ -4379,13 +4382,13 @@
         \begin{spelleffects}
             \begin{spellattacktriggered}{At the end of every round, you make a Spellpower vs. Fortitude against the target.}
                 \spellsuccess If this is the first successful attack, the target is \sickened. If this is the second successful attack, the target is \nauseated. If this is the third successful attack, the target is \paralyzed.
-                \spellfailure If this is the second failed attack, the target resists the poison. No further attacks are made, though the effects of any previous attacks linger until the end of the spell.
+                \spellfailure If this is the third failed attack, the target resists the poison. No further attacks are made, though the effects of any previous attacks linger until the end of the spell.
             \end{spellattacktriggered}
             \spelldur 5 minutes
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Vivimancy [Flesh, Physical, Poison]}{Death, Divine, Nature}
+        \spellinfo{Vivimancy [Flesh, Physical, Poison]}{Death, Destruction, Divine, Nature}
         \spellnotes \physicalspellnotes
         \miscastrandom
     \end{spellfooter}
