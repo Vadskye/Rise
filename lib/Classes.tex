@@ -165,10 +165,10 @@ The class features that a character gets for being a member of the class.
     \item \subparhead{Other} Intimidate.
 \end{itemize}
 
-\classbasics{Skill Points} 10.
-
 \subsection{Base Class Features}
 A character with barbarian as a base class gains the following abilities.
+
+\classbasics{Skill Points} 10.
 
 \cf{Bbn}{Weapon and Armor Proficiency}
 A barbarian is proficient with simple weapons, any four other weapon groups, light armor, medium armor, and shields.
@@ -351,26 +351,26 @@ If he stops being lawful, he regains his ability to rage and take barbarian leve
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{2em} >{\ccol}p{\babcolavg} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
         \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
-        \clericprogressionrow{1}  & Domain gifts, spells, rituals \\
-        \clericprogressionrow{2}  & Devotion \plus2               \\
-        \clericprogressionrow{3}  & Domain invocations            \\
-        \clericprogressionrow{4}  & \x                            \\
-        \clericprogressionrow{5}  & Devotion feat, devotion \plus3 \\
-        \clericprogressionrow{6}  & \x                            \\
-        \clericprogressionrow{7}  & Domain aspect                 \\
-        \clericprogressionrow{8}  & \x                            \\
-        \clericprogressionrow{9}  & Domain aspect                 \\
-        \clericprogressionrow{10} & Expanded devotion, devotion \plus4 \\
-        \clericprogressionrow{11} & Greater domain invocation     \\
-        \clericprogressionrow{12} & \x                            \\
-        \clericprogressionrow{13} & Greater domain invocation     \\
-        \clericprogressionrow{14} & \x                            \\
-        \clericprogressionrow{15} & Devotion feat, devotion \plus5 \\
-        \clericprogressionrow{16} & \x                            \\
-        \clericprogressionrow{17} & Domain mastery                \\
-        \clericprogressionrow{18} & \x                            \\
-        \clericprogressionrow{19} & Domain mastery                \\
-        \clericprogressionrow{20} & Devotion \plus6, endless devotion              \\
+        \clericprogressionrow{1}  & Devotion \plus2, domain gifts, spells, rituals \\
+        \clericprogressionrow{2}  & Domain invocation                          \\
+        \clericprogressionrow{3}  & Domain invocation                          \\
+        \clericprogressionrow{4}  & Devotion feat                              \\
+        \clericprogressionrow{5}  & Devotion \plus3                            \\
+        \clericprogressionrow{6}  & Domain aspect                              \\
+        \clericprogressionrow{7}  & \x                                         \\
+        \clericprogressionrow{8}  & Domain aspect                              \\
+        \clericprogressionrow{9}  & Expanded devotion                          \\
+        \clericprogressionrow{10} & Devotion \plus4, greater domain invocation \\
+        \clericprogressionrow{11} & \x                                         \\
+        \clericprogressionrow{12} & Greater domain invocation                  \\
+        \clericprogressionrow{13} & \x                                         \\
+        \clericprogressionrow{14} & Devotion feat                              \\
+        \clericprogressionrow{15} & Devotion \plus5                            \\
+        \clericprogressionrow{16} & Domain mastery                             \\
+        \clericprogressionrow{17} & \x                                         \\
+        \clericprogressionrow{18} & Domain mastery                             \\
+        \clericprogressionrow{19} & Endless devotion                           \\
+        \clericprogressionrow{20} & Devotion \plus6                            \\
     \end{dtabularx}
 \end{dtable}
 
@@ -384,17 +384,26 @@ He may not be neutral unless his deity's alignment is also neutral.
 \subparhead{Perception} Sense Motive, Spellcraft.
 \subparhead{Other} Bluff, Intimidate, Persuasion.
 
-\classbasics{Skill Points} 5.
+\subsection{Base Class Features}
+A character with cleric as a base class gains the following abilities.
 
-\subsection{Class Features}
-All of the following are class features of the cleric.
+\classbasics{Skill Points} 5.
 
 \cf{Clr}{Weapon and Armor Proficiency}
  Clerics are proficient with simple weapons, any two other weapon groups, light and medium armor, and shields.
 
-\cf{Clr}{Bonus Languages}
-A cleric's bonus language options include Celestial, Abyssal, and Infernal (the languages of good, chaotic evil, and lawful evil outsiders, respectively).
-These choices are in addition to the bonus languages available to the character because of his race.
+\cf{Clr}{Rituals}
+Clerics can perform rituals to create unique magical effects (see \pcref{Rituals}).
+A cleric begins play with a ritual book containing one divine ritual of his choice (see \pcref{Divine Rituals}).
+
+\cf{Clr}{Domain Gifts}[Su]
+A cleric's abilities are shaped by his domains.
+He gains the domain gifts of both of his domains.
+Domain gifts are not activated.
+The gifts offered by each domain are listed at \pcref{Domain Gifts}.
+
+\subsection{Class Features}
+All clerics have the following abilities.
 
 \cf{Clr}{Domains}
 A cleric chooses two domains, which represent his personal spiritual inclinations.
@@ -503,7 +512,7 @@ Spells associated with particular alignments are indicated by the chaos, evil, g
     \lcaption{Deities}
     \begin{dtabularx}{\textwidth}{X l X}
         \thead{Deity} & \thead{Alignment} & \thead{Domains} \\
-\hline
+        \hline
         Guftas, horse god of justice & Lawful good & Good, Law, Strength, Travel \\
         Lucied, paladin god of justice & Lawful good & Destruction, Good, Protection, War \\
         Simor, fighter god of protection & Lawful good & Good, Protection, Strength, Vitality \\
@@ -533,17 +542,7 @@ The strength of a cleric's spells and abilities are determined by his divine pow
 Normally, his divine power is equal to his cleric level.
 A cleric's devotion can increase his divine power -- see the Devotion ability below.
 
-\cf{Clr}{Rituals}
-Clerics, can perform rituals to create unique magical effects (see \pcref{Rituals}).
-A cleric begins play with a ritual book containing one divine ritual of his choice (see \pcref{Divine Rituals}).
-
-\cf{Clr}{Domain Gifts}[Su]
-A cleric's abilities are shaped by his domains.
-He gains the domain gifts of both of his domains.
-Domain gifts are not activated.
-The gifts offered by each domain are listed at \pcref{Domain Gifts}.
-
-\cf{Clr}[2nd]{Devotion}[Su]
+\cf{Clr}{Devotion}[Su]
 A cleric's divine power varies depending on the extent to which he calls on his devotion to create effects.
 A cleric has a devotion pool with a maximum of eight devotion points in it.
 If the cleric's devotion pool is at least three-quarters full, he gains a \plus2 bonus to his divine power.
@@ -558,49 +557,50 @@ The cleric can refill his devotion pool by spending an hour in prayer, supplicat
 In addition, whenever the cleric performs a significant service to his deity or other spiritual inclinations, he may regain one devotion point.
 Extraordinary services may allow the cleric to regain more devotion points.
 
-\cf{Clr}[3rd]{Domain Invocations}[Su]
+\cf{Clr}[2nd]{Domain Invocation}[Su]
 As a standard action, a cleric can spend a devotion point to invoke divine power.
-He gains the domain invocations offered by both of his domains.
+He gains the domain invocations offered by one of his domains.
+At 3rd level, he gains a domain invocation offered by another one of his domains.
 
 All domain invocations affect a single creature within \rngmed range and require a special attack against a defense.
 The cleric's attack bonus with domain invocations is equal to his divine power.
 If the attack succeeds, a domain invocation heals or inflicts 1d10 damage per two divine power.
 If the attack fails, the invocation heals or inflicts half damage.
 
-\cf{Clr}[5th]{Devotion Feat}[Su]
+\cf{Clr}[4th]{Devotion Feat}[Su]
 The cleric chooses a feat that he meets the prerequisites for.
 As long as his devotion pool is at least half full, he gains that feat as a bonus feat.
 At each level, the cleric may change this feat to a different feat he qualifies for.
 
-At 15th level, the cleric gains a second devotion feat.
+At 14th level, the cleric gains a second devotion feat.
 The cleric may not normally use these devotion feats as prerequisites for other feats or abilities.
-However, he he may use one devotion feat to meet a prerequiste for his second devotion feet.
+However, he he may use one devotion feat to meet a prerequiste for his second devotion feat.
 
-\cf{Clr}[7th]{Domain Aspect}[Su]
+\cf{Clr}[6th]{Domain Aspect}[Su]
 The cleric gains a domain aspect from one of his domains.
 Domain aspects do not require an action to activate.
 Options for domain aspects are listed at \pcref{Domain Aspects}.
 
-At his 9th cleric level, the cleric gains an additional domain aspect from one of his domains.
+At his 8th cleric level, the cleric gains an additional domain aspect from one of his domains.
 
-\cf{Clr}[10th]{Expanded Devotion}[Su]
+\cf{Clr}[9th]{Expanded Devotion}[Su]
 The cleric's devotion pool stores a maximum of twelve devotion points.
 
-\cf{Clr}[13th]{Greater Domain Invocations}[Su]
+\cf{Clr}[12th]{Greater Domain Invocations}[Su]
 The cleric gains the ability to invoke the power of one of his domains even more effectively.
 This consumes two devotion points.
 A cleric's special attack bonus when invoking a greater domain is equal to his divine power.
 Greater domain invocations are described at \pcref{Greater Domain Invocations}.
 
-At his 15th cleric level, the cleric gains an additional greater domain invocation from one of his domains.
+At his 14th cleric level, the cleric gains an additional greater domain invocation from one of his domains.
 
-\cf{Clr}[17th]{Domain Mastery}[Su]
+\cf{Clr}[16th]{Domain Mastery}[Su]
 The cleric gains a domain mastery from one of his domains.
 Options for domain masteries are listed at \pcref{Domain Masteries}.
 
-At his 19th cleric level, the cleric gains an additional domain mastery from one of his domains.
+At his 18th cleric level, the cleric gains an additional domain mastery from one of his domains.
 
-\cf{Clr}[20th]{Endless Devotion}[Su]
+\cf{Clr}[19th]{Endless Devotion}[Su]
 The cleric's devotion pool stores a maximum of twenty devotion points.
 
 \subsection{Cleric Domain Abilities}
