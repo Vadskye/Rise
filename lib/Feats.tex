@@ -364,15 +364,15 @@ The table of combat feats is organized according to the number of physical attac
 
         \midrule
         \thead{Combat Feats} & \thead{Prerequisites (BAB \plus12)} & \thead{Benefit} & \thead{Feat Types} & \thead{Page} \\
-        \featref{Legendary Awareness} & Any three Awareness feats & Immune to being overwhelmed & Awareness & \featpref{Legendary Awareness} \\
+        \featref{Legendary Combat Awareness} & Per 10, any three Awareness feats & Immune to being overwhelmed & Awareness & \featpref{Legendary Combat Awareness} \\
         \featref{Legendary Defense} & Any three Defense feats & \plus2 to all defenses & Defense & \featpref{Legendary Defense} \\
-        \featref{Legendary Finesse} & Any three Finesse feats & Roll maximum damage again & Finesse & \featpref{Legendary Finesse} \\
+        \featref{Legendary Finesse} & Dex 10, any three Finesse feats & Roll maximum damage again & Finesse & \featpref{Legendary Finesse} \\
         \featref{Legendary Maneuver Master} & Any three Maneuver feats & Deal damage with very successful maneuvers & Maneuver & \featpref{Legendary Maneuver Master} \\
-        \featref{Legendary Mobility} & Any three Mobility feats & Blocking foes do not affect you & Mobility& \featpref{Legendary Mobility} \\
+        \featref{Legendary Mobility} & Dex 10, any three Mobility feats & Blocking foes do not affect you & Mobility& \featpref{Legendary Mobility} \\
         \featref{Legendary Mounted Warrior} & Any three Mounted feats & Share damage with mount & Mounted& \featpref{Legendary Mounted Warrior} \\
-        \featref{Legendary Power} & Any three Power feats & Wield weapons as if they were less encumbering & Power& \featpref{Legendary Power} \\
-        \featref{Legendary Precision} & Any three Precision feats & Very accurate hits deal maximum damage & Precision & \featpref{Legendary Precision} \\
-        \featref{Legendary Reaction} & Any three Reaction feats & \plus10 to initiative checks & Combat, Reaction & \featpref{Legendary Reaction} \\
+        \featref{Legendary Power} & Str 10, any three Power feats & Wield weapons as if they were less encumbering & Power& \featpref{Legendary Power} \\
+        \featref{Legendary Precision} & Per 10, any three Precision feats & Very accurate hits deal maximum damage & Precision & \featpref{Legendary Precision} \\
+        \featref{Legendary Reaction} & Dex 10, any three Reaction feats & Extra immediate actions & Combat, Reaction & \featpref{Legendary Reaction} \\
         \featref{Manyshot} & Dex 10 & Shoot two projectiles simultaneously & Finesse & \featpref{Manyshot} \\
 
         \midrule
@@ -1211,10 +1211,10 @@ The free attack gains the normal bonus for striking a prone target (\minus4 to p
 \parhead{Normal}
 You move at half speed while balancing on precarious surfaces.
 
-\feat{Legendary Awareness}{Awareness, Combat}
-\featpres Perception 10, three attacks, any three Awareness feats.
-\featben You cannot be overwhelmed, and never suffer overwhelm penalties.
-This ability can prevent rogues from sneak attacking you.
+\feat{Legendary Awareness}{Skill}
+\featpre Awareness 15 ranks.
+\featben You gain one of the following senses: blindsense (20 ft.), darkvision (50 ft.), scent, or tremorsense (20 ft.).
+If you choose a sense you already possess, its range doubles.
 
 \feat{Legendary Balance}{Skill}
 \featpre Acrobatics 15 ranks.
@@ -1237,6 +1237,11 @@ This grants several benefits.
 In addition, you can now climb surfaces that are perfectly smooth.
 The DC is 30 for perfectly smooth vertical surfaces, and 40 to climb on a perfectly smooth ceiling.
 You can also wallrun on ceilings.
+
+\feat{Legendary Combat Awareness}{Awareness, Combat}
+\featpres Perception 10, three attacks, any three Awareness feats.
+\featben You cannot be overwhelmed, and never suffer overwhelm penalties.
+This ability can prevent rogues from sneak attacking you.
 
 \feat{Legendary Constitution}{General}
 \featpres 11th level, Constitution 6.
@@ -1294,7 +1299,7 @@ You can only dispel spell effects which target you directly, not area effects wh
 If a spell targets multiple creatures, you can only remove its effects on you.
 
 \feat{Legendary Finesse}{Combat, Finesse}
-\featpres Three attacks, any three Finesse feats.
+\featpres Dexterity 10, three attacks, any three Finesse feats.
 \featben When you roll the maximum amount of damage with a weapon, you roll the weapon's damage die (or dice) again and add the result to your damage dealt.
 There is no limit to the number of times a weapon's die can add to damage in this way.
 
@@ -1363,18 +1368,13 @@ Certain extremely obscure languages may be beyond your knowledge.
 If the maneuver was performed without a weapon, you deal damage equivalent to an unarmed attack.
 
 \feat{Legendary Mobility}{Combat, Mobility}
-\featpres Three attacks, any three Mobility feats.
+\featpres Dexterity 10, three attacks, any three Mobility feats.
 \featben You are never considered \engaged in combat.
 
 \feat{Legendary Mounted Warrior}{Combat, Mounted}
 \featpres Three attacks, any three Mounted feats, Ride 10 ranks.
 \featben When you take damage, you may choose to have your mount suffer half the damage instead of you (rounded down).
 Likewise, when your mount takes damage, you may choose to suffer half of that damage instead of your mount (rounded down).
-
-\feat{Legendary Perception}{Skill}
-\featpre Perception 15 ranks.
-\featben You gain one of the following senses: blindsense (20 ft.), darkvision (50 ft.), scent, or tremorsense (20 ft.).
-If you choose a sense you already possess, its range doubles.
 
 \feat{Legendary Performance}{Performance, Skill}
 \featpres Perform 15 ranks, any three Performance feats.
@@ -1389,7 +1389,7 @@ If your attack succeeds against that creature, it is compelled to obey you, as \
 You can use this ability three times per day.
 
 \feat{Legendary Power}{Combat, Power}
-\featpres Three attacks, any three Power feats.
+\featpres Strength 10, three attacks, any three Power feats.
 \featben You can use weapons as if they were one category less encumbering than they actually are.
 The weapon encumbrance categories are light, medium, and heavy.
 For example, you can use a greatsword as a medium weapon, allowing you to wield it in one hand without suffering any penalties.
@@ -1397,7 +1397,7 @@ For example, you can use a greatsword as a medium weapon, allowing you to wield 
 In addition, you increase your damage dice with unarmed attacks and natural weapons by one size category.
 
 \feat{Legendary Precision}{Combat, Precison}
-\featpres Three attacks, any three Precision feats.
+\featpres Perception 10, three attacks, any three Precision feats.
 \featben When you make a physical attack, if you hit by 5 or more, you deal maximum damage with your weapon.
 When you get a critical hit, if the threat confirmation hits by 5 or more, all damage from the critical hit is maximized.
 
@@ -1406,8 +1406,10 @@ When you get a critical hit, if the threat confirmation hits by 5 or more, all d
 \featben You are well-known for being an unparalleled master of your chosen profession.
 
 \feat{Legendary Reaction}{Combat, Reaction}
-\featpres Three attacks, any three Reaction feats.
-\featben You gain a \plus10 bonus to initiative checks.
+\featpres Dexterity 10, three attacks, any three Reaction feats.
+\featben The first immediate action you take each round does not count against your actions that round.
+This allows you to use two immediate actions in the same round, or to use both an immediate action and a swift action.
+However, you still cannot use two immediate actions in response to the same triggering action.
 
 \feat{Legendary Rider}{Skill}
 \featpre Ride 15 ranks.
