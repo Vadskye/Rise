@@ -173,8 +173,7 @@
 
         \par The fog moves away from you at 10 feet per round, rolling along the surface of the ground. Figure out the cloud's new area each round based on its new point of origin, which is 10 feet farther away from the point of origin where you cast the spell.
         \begin{spelltriggeredattack}{At the end of every round, make a Magic vs. Fortitude attack against everything in the area.}
-            \spellsuccess 
-        \end{spellattacktriggered}
+        \end{spelltriggeredattack}
     \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
@@ -194,7 +193,6 @@
         \spelltgt{You}
     \end{spelltargetinginfo}
     \begin{spelleffects}
-        \spelleffect You gain 
         \spelleffect You gain a \plus3 enhancement bonus to Strength, Dexterity, Constitution, and Fortitude defense. This bonus increases to \plus4 at 14th caster level, and to \plus5 at 20th caster level. In addition, you gain proficiency with any weapons you hold (except exotic weapons).
         \spelldur{\durshort \dismissable}
     \end{spelleffects}
@@ -588,7 +586,7 @@
 \end{spellheader}
 \begin{spellcontent}
     \spellsr{No}
-    \spelleffect This spell functions like \spell{locate object}, except that it detects objects within \rngext range. In addition, you detect all appropriate objects within the range, rather than only the nearest object. 
+    \spelleffect This spell functions like \spell{locate object}, except that it detects objects within \rngext range. In addition, you detect all appropriate objects within the range, rather than only the nearest object.
     \spelldur \durmed \dismissable
 \end{spellcontent}
 \begin{spellfooter}
@@ -933,7 +931,7 @@
             \item Duplicate any general wizard or sorcerer spell of 8th level or lower, provided the spell is not of a school prohibited to you.
             \item Duplicate any general wizard or sorcerer spell of 7th level or lower even if it's of a prohibited school.
             \item Duplicate any other spell of 6th level or lower, provided the spell is not of a school prohibited to you.
-            \item Duplicate any other spell of 5th level or lower even if it's of a prohibited school. 
+            \item Duplicate any other spell of 5th level or lower even if it's of a prohibited school.
             \item Undo the harmful effects of many other spells, such as geas/quest or insanity.
             \item Create a nonmagical item of up to 10,000 gp in value.
             \item Create a magic item, or add to the powers of an existing magic item.
@@ -1128,3 +1126,49 @@
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
+
+
+\begin{spellsection}[Lesser]{Manipulate Probability}[2]
+    \begin{spellheader}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltgt{You}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect When you cast this spell, you roll a d20 twice. Store the results in order. At spellpower 5, and every 5 spellpower thereafter, you roll an additional die.
+
+            Each time you would roll a d20, you may instead use a die result you rolled. The die results are used in the same order you rolled them. When all the die results have been used, the spell is expended.
+
+            As a swift action, you may take a minor action which has no significant effect, but which uses up one of the stored dice.
+            \spelldur \durshort or until expended
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Divination}{Divination, Knowledge}
+        \spellnotes Any die results unused when the spell duration expires are discarded.
+        \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Manipulate Probability}[5]
+    \begin{spellheader}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltgt{You}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect When you cast this spell, you roll a d20 four times. Store the results in order. At 15th spellpower, and every 5 spellpower thereafter, you roll an additional die.
+
+            Each time you would roll a d20, you may instead use a die result you rolled. The die results can be used in any order, and you may choose to roll instead of using a stored die result. When all the die results have been used, the spell is expended.
+            \spelldur \durshort or until expended
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Divination}{Divination, Knowledge}
+        \spellnotes Any die results unused when the spell duration expires are discarded.
+        \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
+
