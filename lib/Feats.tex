@@ -251,6 +251,7 @@ Some strike feats instead require a specific action to use.
         \midrule
         \thead{Racial Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
         \featref{Dwarven Resilience} & Dwarf & \plus2 to defenses against spells & \featpref{Dwarven Resilience} \\
+        \featref{Focused Mind} & Elf, Int 3 & Use Intelligence to concentrate instead of Constitution & \featpref{Focused Mind} \\
         \featref{Giantfighter} & Dwarf, gnome, or halfling & \plus2 to physical defenses against Large or larger creatures & \featpref{Giantfighter} \\
         \featref{Racial Acclimation} & Have a race other than your original race & Lose penalties for being in new body & \featpref{Racial Acclimation} \\
         \featref{Stonecunning} & Dwarf & Gain a sixth sense about stonework & \featpref{Stonecunning} \\
@@ -841,8 +842,9 @@ If you are 18th level, you can fly for a number of minutes equal to 3 \add half 
 
 \feat{Driving Assault}{Combat, Maneuver, Power, Strike}
 \featpres Str 5, two attacks.
-\featben In place of two attacks, you can attempt to shove a creature.
-If you succeed, you may take a full attack action against it.
+\featben In place of two attacks, you can make a single melee attack.
+If hit, you deal double damage.
+If your attack result also beats the foe's Maneuver defense, you can shove the creature using that attack result.
 
 \feat{Dwarven Resilience}{Racial}
 \featpre Dwarf.
@@ -939,6 +941,11 @@ This is an enchantment (compulsion), mind-affecting ability.
 \featpres Spellcraft 10 ranks, Counterspell.
 \featben When counterspelling, you may attempt to counter spells of any school, regardless of which spell you cast.
 
+\feat{Focused Mind}{Racial}
+\featpre Elf, Int 3.
+\featben You gain a \plus2 bonus to Mental defense.
+In addition, you can use your Intelligence instead of your Constitution on Concentration checks, such as when you cast spells.
+
 \feat{Focused Strike}{Combat, Precision, Strike}
 \featpre Two attacks.
 \featben In place of two attacks, you can make a physical attack with a \plus5 attack bonus.
@@ -1018,8 +1025,9 @@ You cannot mend a destroyed magic item.
 \feat{Imbued Spellstrike}{Metamagic}
 \featpre Ability to cast 2nd level spells.
 \featben As part of casting an imbued spellstrike spell, you can make a single attack with a weapon in your hand.
-If the attack hits, the struck creature is affected by the spell, as if it had been the target, in addition to taking damage from the weapon.
-The imbuement fades away without effect after 1 round (at the end of your next turn) if you have not struck a foe.
+If the attack hits, and you maintain concentration on the spell, the spell takes effect.
+The spell must target the struck creature, but otherwise functions as if it has been cast normally.
+The imbuement fades away without effect at the end of the next round if you have not struck a foe.
 
 Only spells which affect a single target and have a casting time no shorter than 1 standard action can be channeled in this way.
 An imbued spellstrike uses up a spell slot one level higher than the spell's actual level.
@@ -1202,7 +1210,7 @@ The free attack gains the normal bonus for striking a prone target (\minus4 to p
 You move at half speed while balancing on precarious surfaces.
 
 \feat{Legendary Awareness}{Awareness, Combat}
-\featpres Three attacks, any three Awareness feats.
+\featpres Perception 10, three attacks, any three Awareness feats.
 \featben You cannot be overwhelmed, and never suffer overwhelm penalties.
 This ability can prevent rogues from sneak attacking you.
 
