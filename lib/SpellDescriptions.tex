@@ -1639,7 +1639,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellspecial This spell has two versions: an area dispel, and a targetted destruction of a magic item. Its effects depend on which version is chosen.
+            \spellspecial This spell has two versions: an area dispel, and a targeted destruction of a magic item. Its effects depend on which version is chosen.
         \end{spelltargetinginfo}
     \end{spellcontent}
     \begin{spellsubcontent}
@@ -2912,21 +2912,41 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Glitterdust}[2]
+\begin{spellsection}{Glitterdust}[3]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spellburst{\areasmall radius}}{\spellrng{\rngmed}}
+            \spellspecial This spell has two versions: an area burst to scatter dust widely, and a targeted blinding flurry of dust. Its effects depend on which version is chosen.
+        \end{spelltargetinginfo}
+    \end{spellcontent}
+    \begin{spellsubcontent}
+        \begin{spelltargetinginfo}
+            \spelltwocol{\spellburst{\areamed radius}}{\spellrng{\rngmed}}
             \spelltgts{Everything in the area}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect Golden particles surround and outline the target. This imposes a \minus20 penalty to Stealth checks, and negates invisibility, concealment, and similar effects. Illusory figments, such as those created by the \spell{silent image} spell, are not outlined, which may reveal their false nature.
 
-            The dust can be removed from the target by drenching it with water or a similar liquid, or by dealing 5 points of acid or fire damage.
-            \spelldur \durshort
+            The dust can be removed from the target by drenching it with water or a similar liquid, or by dealing 10 points of acid or fire damage.
+            \spelldur 5 rounds.
         \end{spelleffects}
-    \end{spellcontent}
+    \end{spellsubcontent}
+    \begin{spellsubcontent}
+        \begin{spelltargetinginfo}
+            \spellquicktargeting{One creature or object}{\spellrng{\rngmed}}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect A flurry of golden particles swarm around the target. This imposes a \minus20 penalty to Stealth checks, and negates invisibility, concealment, and similar effects. Illusory figments, such as those created by the \spell{silent image} spell, are not outlined, which may reveal their false nature. In addition, you make an attack.
+            \begin{spellattack}{Spellpower vs. Reflex}
+                \spellsuccess The target's vision is \impaired. This affects all sight-related actions, including physical attacks and targeted spells.
+                \spellcritical The target's vision is \severelyimpaired. This affects all sight-related actions, including physical attacks and targeted spells.
+            \end{spellattack}
+
+            The dust can be removed from the target by drenching it with water or a similar liquid, or by dealing 10 points of acid or fire damage.
+            \spelldur 5 rounds.
+        \end{spelleffects}
+    \end{spellsubcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Creation, Physical]}{Arcane}
         \miscastyou
@@ -3826,6 +3846,24 @@
     \end{spellfooter}
 \end{spellsection}
 
+\begin{spellsection}{Longeye}[2]
+    \begin{spellheader}
+        \spelldesc{You see your distant foe clearly, allowing you to strike it accurately.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltime{Swift action}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect You reduce your \glossterm{range increment} penalties by an amount equal to your spellpower until the end of the round.
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Divination}{Arcane, Nature}
+        \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
+
 \begin{spellsection}{Longstrider}[1]
     \begin{spellheader}
     \end{spellheader}
@@ -3925,47 +3963,60 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}[Lesser]{Manipulate Probability}[2]
+\begin{spellsection}{Mark of Scrying}[4]
     \begin{spellheader}
+        \spelldesc{You create a mark that allows you to scry on your target.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltgt{You}
+            \spellquicktargeting{One creature or object}{\rngmed}
+            \spellcmp{Somatic only}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect When you cast this spell, you roll a d20 twice. Store the results in order. At spellpower 5, and every 5 spellpower thereafter, you roll an additional die.
+            \spelleffect The target gains an invisible mark on its forehead (or similarly prominent feature).
+            As long as the mark remains, you can focus on the mark (a standard action) to see and hear as if you were where the target is.
+            Your sight is limited, and you can only see within a 20 foot radius of the target.
+            Special abilities which improve your senses, such as darkvision, do not apply when scrying through the mark.
 
-            Each time you would roll a d20, you may instead use a die result you rolled. The die results are used in the same order you rolled them. When all the die results have been used, the spell is expended.
-
-            As a swift action, you may take a minor action which has no significant effect, but which uses up one of the stored dice.
-            \spelldur \durshort or until expended
+            While you are scrying through the mark, it becomes visible.
+            A DC 10 Awareness check is sufficient to notice the mark once it is visible, though the target usually cannot see its own mark due to the mark's location.
+            \spelldur \durlong
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Divination}{Divination, Knowledge}
-        \spellnotes Any die results unused when the spell duration expires are discarded.
-        \miscastexplode
+        \spellinfo{Divination [Scrying]}{Arcane, Divine, Nature}
+        \spellnotes The mark's shape is the Draconic word for ``sight''.
+        Although it is invisible, the mark can be detected with \spell{see invisibility} or a DC 30 Awareness check, if the mark is not covered by armor or other clothing.
+
+        The mark can be removed by scrubbing it away, which usually takes a minute of work, or by dispelling it with \spell{dispel magic} or similar effects.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Manipulate Probability}[5]
+\begin{spellsection}{Mark of Tracking}[2]
     \begin{spellheader}
+        \spelldesc{You create an invisible mark which allows you to follow your target anywhere.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltgt{You}
+            \spellquicktargeting{One creature or object}{\rngmed}
+            \spellcmp{Somatic only}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect When you cast this spell, you roll a d20 four times. Store the results in order. At 15th spellpower, and every 5 spellpower thereafter, you roll an additional die.
-
-            Each time you would roll a d20, you may instead use a die result you rolled. The die results can be used in any order, and you may choose to roll instead of using a stored die result. When all the die results have been used, the spell is expended.
-            \spelldur \durshort or until expended
+            \spelleffect The target gains an invisible mark on its forehead (or similarly prominent feature).
+            As long as the mark remains, you know the approximate direction and distance to the target.
+            If the target is farther than 10 miles away from you, or is on another plane, you do not gain the benefits of this spell.
+            \spelldur \durlong
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Divination}{Divination, Knowledge}
-        \spellnotes Any die results unused when the spell duration expires are discarded.
-        \miscastexplode
+        \spellinfo{Divination [Knowledge]}{Arcane, Divine, Nature}
+        \spellnotes The mark's shape is the Draconic word for ``tracking''.
+        It appears on the target's forehead or other similarly prominent body feature.
+        Although it is invisible, the mark can be detected with \spell{see invisibility} or a DC 30 Awareness check, if the mark is not covered by armor or other clothing.
+
+        The mark can be removed by scrubbing it away, which usually takes a minute of work, or by dispelling it with \spell{dispel magic} or similar effects.
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -4774,7 +4825,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Divination [Mind]}{Arcane, Knowledge}
+        \spellinfo{Divination [Mind]}{Divination, Knowledge}
         \miscastrandom
     \end{spellfooter}
 \end{spellsection}
@@ -4792,7 +4843,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Divination [Mind]}{Arcane, Knowledge}
+        \spellinfo{Divination [Mind]}{Divination, Knowledge}
         \miscastrandom
     \end{spellfooter}
 \end{spellsection}
@@ -5225,6 +5276,21 @@
     \begin{spellfooter}
         \spellinfo{Evocation [Destructive, Fire]}{Arcane, Destruction, Fire}
         \miscastrandom
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Search}[1]
+    \begin{spellheader}
+        \spelldesc{You quickly scan your surroundings for hidden dangers.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelleffects}
+            \spelleffect You make an Awareness check to search a 10 foot radius around you simultaneously (see \pcref{Awareness}).
+            You gain a bonus on the Awareness check equal to your spellpower.
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Divination}{Arcane, Nature}
     \end{spellfooter}
 \end{spellsection}
 
@@ -6795,7 +6861,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{True Strike}[1]
+\begin{spellsection}{True Strike}[2]
     \begin{spellheader}
         \spelldesc{You grant your ally a temporary, intuitive insight into the immediate future during their next attack.}
     \end{spellheader}
@@ -6804,8 +6870,8 @@
             \spellquicktargeting{One creature}{\rngmed}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target gains an offensive legend point.
-            \spelldur 1 round
+            \spelleffect The target gains an offensive \glossterm{legend point}. It is automatically lost at the end of the spell's duration if not used.
+            \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
