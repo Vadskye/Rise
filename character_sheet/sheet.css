@@ -12,7 +12,7 @@ body {
     position: relative !important;
 }
 
-#root {
+.root {
     padding: 0;
 }
 
@@ -128,9 +128,333 @@ input[type=number] {
     border-radius: 0.5em;
 }
 
-#rise-title {
+.rise-title {
     font-family: "Old English Text MT";
     text-align: center;
     font-size: 3.5em;
     margin-bottom: 0;
+}
+
+/*
+ * FIRST PAGE
+ * */
+
+.skill-box {
+    width: 100%;
+    align-items: center;
+}
+
+.skill-box input[type=number] {
+    box-shadow: 0 0 2px 1px #999 inset;
+    height: 1.5em;
+}
+
+.skill-box .number-label {
+    font-size: 1em;
+    text-align: right;
+}
+
+/* section-specific formatting */
+
+.boring-stuff {
+    margin-top: 0.25em;
+}
+
+.boring-stuff .labeled-text-input {
+    flex-grow: 1;
+    flex-basis: 20%;
+}
+
+.attacks, .main-body, .resources {
+    flex-grow: 1;
+}
+
+.main-body > div {
+    margin-bottom: 0.52em;
+}
+
+input[type=text].passive-ability {
+    width: 100%;
+    /*margin-bottom: 0.5em;*/
+}
+
+.passive-ability-row > div {
+    flex-grow: 1;
+}
+
+.defenses {
+    margin-left: 0;
+}
+
+.hit-points {
+    margin-right: 0;
+}
+
+.active-ability-name, .attack-name {
+    width: 25%;
+}
+
+.active-ability-effect, .attack-effect {
+    flex-grow: 1;
+}
+
+.flex-col.attribute-section {
+    margin-bottom: 0.625em;
+}
+
+.flex-row.skill-box {
+    margin-bottom: -1px;
+}
+
+.attribute {
+    align-items: center;
+}
+
+.attribute .number-label {
+    font-weight: bold;
+}
+
+.other-skills .attribute {
+    font-weight: bold;
+    font-size: 1.25em;
+    text-align: center;
+}
+
+.constitution {
+    margin-bottom: 0.25em;
+}
+
+.willpower {
+    margin-bottom: 0;
+}
+
+.sidebar {
+    margin-left: 1px;
+}
+
+.main-body {
+    margin-right: 1px;
+}
+
+.active-ability, .attack {
+    margin-bottom: 0.1em !important;
+}
+
+.other-skills .attribute {
+    margin-bottom: 0;
+}
+
+.resource-row div {
+    flex-grow: 1;
+}
+
+/*
+ * SECOND PAGE
+ * */
+
+.level-chart, .abilities, .calcs {
+    flex-grow: 1;
+}
+
+input[type=text] {
+    width: 100%;
+}
+
+.flex-row.level-number-wrapper {
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-row.level-number-wrapper, .level-chart input {
+    height: 2em;
+    /* overlap the number borders */
+    margin-top: -1px;
+    margin-bottom: -1px;
+}
+
+.level-number {
+    font-size: 1.5em;
+}
+
+.level-chart input[type=number], .eq-misc input[type=number] {
+    box-shadow: 0 0 2px 0px #999 inset;
+}
+
+.bab, .fort, .ref, .ment {
+    align-items: center;
+}
+
+.chart-header {
+    font-size: 1.25em;
+    font-weight: bold;
+    text-align: center;
+    background-color: #FFF0C8;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+    position: relative;
+    left: -0.25em;
+    width: 100%;
+    /*
+    border-radius: 0.5em;
+    */
+}
+
+.level-numbers .chart-header {
+    border-radius: 0.5em 0 0 0.5em;
+}
+
+.level-numbers input {
+    width: 2em;
+}
+
+.abilities .chart-header {
+    border-radius: 0 0.5em 0.5em 0;
+}
+
+.equation {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    flex-grow: 1;
+}
+
+.equation input, .equation div {
+    /* use the equation-glue for margins */
+    margin: 0;
+}
+
+.two-choices input[type=number]:disabled {
+    background-color: #ABD;
+}
+.two-choices input[type=number]:enabled {
+    background-color: #CDF;
+}
+
+.equation-glue {
+    margin-left: 0.25em !important;
+    margin-right: 0.25em !important;
+    width: 0.6em;
+    height: 2em;
+    align-items: center;
+    justify-content: center;
+}
+
+.equation-math {
+    font-size: 1.25em;
+}
+
+.calcs {
+    margin-right: 0;
+}
+
+.calcs > .flex-row {
+    flex-wrap: nowrap;
+}
+
+.calc-attributes {
+    margin-bottom: 0 !important;
+}
+
+.calc-attribute-header {
+    align-items: center;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.25em;
+    margin-bottom: 0em !important;
+    margin-top: 0.2em !important;
+
+}
+
+.calc-attribute-header .number-label {
+    font-weight: bold;
+}
+
+.calc-header {
+    font-size: 1.25em;
+    font-weight: bold;
+    text-align: center;
+    /*
+    background-color: #FFF0C8;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+    border-radius: 0.5em;
+    */
+    width: 4.25em;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    height: 1.6em; /* 2em / 1.25em */
+}
+
+.half {
+    font-size: 0.9em;
+}
+
+.misc-spacer {
+    display: inline-block;
+    flex-grow: 1;
+}
+
+.sidebar {
+    margin-left: 0;
+}
+
+/*
+ * THIRD PAGE
+ * */
+
+.subsection-header {
+    /*align-items: center;*/
+    font-weight: bold;
+    font-size: 1.25em;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    height: 1.6em; /* 2em / 1.25em */
+    width: 3em;
+}
+
+.equipment-name {
+    width: 20%;
+}
+
+.equipment-special {
+    flex-grow: 1;
+}
+
+.adventuring > div {
+    flex-grow: 1;
+}
+
+.proficiencies {
+    margin-left: 0;
+}
+
+.misc {
+    margin-right: 0;
+}
+
+.weight-limits {
+    margin-bottom: 2.05em;
+}
+
+.weight-limits .labeled-text-input {
+    flex-grow: 1;
+}
+
+.wealth-and-xp .flex-col {
+    flex-grow: 1;
+}
+
+.wealth-and-xp input {
+    width: 100%;
+}
+
+.inventory-col {
+    flex-grow: 1;
+}
+
+.inventory-col input {
+    width: 100%;
 }

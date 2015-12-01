@@ -5,7 +5,7 @@ import second_page
 import third_page
 import sys
 
-DESTINATION = 'roll20'
+DESTINATION = 'paper'
 
 try:
     if sys.argv[1] == 'pretty':
