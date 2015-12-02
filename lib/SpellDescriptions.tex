@@ -2280,7 +2280,9 @@
             \spelltgt{The attacking creature}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect \spelldamage{1}{acid}.
+            \begin{spellattack}{Spellpower vs. Reflex}
+                \spellsuccess \spelldamage{1}{acid}[d6].
+            \end{spellattack}
         \end{spelleffects}
     \end{spellsubcontent}
     \begin{spellfooter}
