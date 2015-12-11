@@ -240,25 +240,25 @@ Special abilities on body armor are usually activated if the character is struck
     \begin{dtabularx}{\columnwidth}{>{\lcol}X l l l}
         \tb{Special Ability}      & \tb{Cost}  & \tb{Item Level} & \tb{Location} \\
         \hline
-        Feather \minus1           & 100 gp     & 2nd             & Body, Shield  \\
-        Energy Resistance, Lesser & 200 gp     & 3rd             & Armor         \\
-        Invulnerability, Lesser   & 200 gp     & 3rd             & Armor         \\
-        Feather \minus2           & 500 gp     & 4th             & Body, Shield  \\
-        Bashing                   & 800 gp     & 5th             & Shield        \\
-        Flaming Burst             & 800 gp     & 5th             & Body, Shield  \\
-        Freezing Burst            & 800 gp     & 5th             & Body, Shield  \\
-        Glamered                  & 800 gp     & 5th             & Armor         \\
-        Shocking Burst            & 800 gp     & 5th             & Body, Shield  \\
-        Ghost Touch               & 2,000 gp   & 8th             & Body, Shield  \\
-        Energy Resistance         & 2,000 gp   & 8th             & Armor         \\
-        Feather \minus3           & 2,500 gp   & 8th             & Body, Shield  \\
-        Bashing, Greater          & 2,800 gp   & 9th            & Shield        \\
-        Spell Resistance          & 5,000 gp   & 10th            & Armor         \\
-        Feather \minus4           & 12,500 gp  & 12th            & Body, Shield  \\
-        Invulnerability           & 30,000 gp  & 14th            & Armor         \\
-        Spell Reflecting          & 60,000 gp  & 16th            & Shield        \\
-        Feather \minus5           & 62,500 gp  & 16th            & Body, Shield  \\
-        Invulnerability, Greater  & 140,000 gp & 18th            & Armor         \\
+        Feather \minus1           & 100 gp     & 2nd  & Body, Shield \\
+        Energy Resistance, Lesser & 200 gp     & 3rd  & Armor        \\
+        Invulnerability, Lesser   & 200 gp     & 3rd  & Armor        \\
+        Feather \minus2           & 500 gp     & 4th  & Body, Shield \\
+        Bashing                   & 800 gp     & 5th  & Shield       \\
+        Flaming Burst             & 800 gp     & 5th  & Body, Shield \\
+        Freezing Burst            & 800 gp     & 5th  & Body, Shield \\
+        Glamered                  & 800 gp     & 5th  & Armor        \\
+        Shocking Burst            & 800 gp     & 5th  & Body, Shield \\
+        Ghost Touch               & 2,000 gp   & 8th  & Body, Shield \\
+        Energy Resistance         & 2,000 gp   & 8th  & Armor        \\
+        Feather \minus3           & 2,500 gp   & 8th  & Body, Shield \\
+        Bashing, Greater          & 2,800 gp   & 9th  & Shield       \\
+        Spell Resistance          & 5,000 gp   & 10th & Armor        \\
+        Feather \minus4           & 12,500 gp  & 12th & Body, Shield \\
+        Invulnerability           & 30,000 gp  & 14th & Armor        \\
+        Spell Reflecting          & 60,000 gp  & 16th & Shield       \\
+        Feather \minus5           & 62,500 gp  & 16th & Body, Shield \\
+        Invulnerability, Greater  & 140,000 gp & 18th & Armor        \\
     \end{dtabularx}
 \end{dtable}
 
@@ -399,6 +399,32 @@ Special abilities on body armor are usually activated if the character is struck
     Since this armor is made of magical force, incorporeal creatures can't bypass it the way they do normal armor.
 \end{magicitemdef}
 
+\begin{magicitemdef}{Bracers of Repulsion}[Active]{2}[Arms]{Evocation [Telekinesis]}{leather or metal}
+    \magicitemability{Triggered}[Immediate action] When a foe damages you with a melee attack, you can activate this item.
+    If you do, you can make a shove attack against the attacking creature at the end of the round.
+    Your attack bonus is equal to the item's power \add the damage its attack dealt to you.
+
+    After you activate this item, barely visible fields of telekinetic energy surround the bracers.
+    This effect lasts for 5 rounds, during which time you cannot activate this ability again.
+\end{magicitemdef}
+
+\begin{magicitemdef}{Gauntlets of Strength}[Passive]{2}[Arms]{Transmutation [Augment]}{bone or metal}
+    \magicitemability{Passive} You gain a \plus2 bonus to Strength, up to a maximum Strength equal to the item's power \add 2.
+\end{magicitemdef}
+
+\begin{magicitemdef}{Gauntlets of Strength, Greater}[Passive]{4}[Arms]{Transmutation [Augment]}{bone or metal}
+    \magicitemability{Passive} You gain a \plus4 bonus to Strength, up to a maximum Strength equal to the item's power \add 4.
+\end{magicitemdef}
+
+\begin{magicitemdef}{Gauntlet of the Ram}[Active]{2}[Arms]{Evocation [Telekinesis]}{bone or metal}
+    \magicitemability{Triggered}[Immediate action] When you make a successful unarmed attack with this gauntlet against a foe, you can activate it to immediately make a shove attack against the struck foe.
+    You gain a bonus on the shove attack equal to the damage you dealt.
+    In addition, you do not need to move with the foe to push it backwards.
+
+    After you activate this ability, the gauntlet grows small ram horns.
+    This effect lasts for 5 rounds, during which time you cannot activate this ability again.
+\end{magicitemdef}
+
 \begin{magicitemdef}{Gloves of Dexterity}[Passive]{2}[Arms]{Transmutation [Augment]}{leather or textiles}
     \magicitemability{Passive} You gain a \plus2 bonus to Dexterity, up to a maximum Dexterity equal to the item's power \add 2.
 \end{magicitemdef}
@@ -407,20 +433,18 @@ Special abilities on body armor are usually activated if the character is struck
     \magicitemability{Passive} You gain a \plus4 bonus to Dexterity, up to a maximum Dexterity equal to the item's power \add 4.
 \end{magicitemdef}
 
-\begin{magicitemdef}{Gauntlets of Strength}[Passive]{2}[Arms]{Transmutation [Augment]}{leather or textiles}
-    \magicitemability{Passive} You gain a \plus2 bonus to Strength, up to a maximum Strength equal to the item's power \add 2.
+\begin{magicitemdef}{Gloves of the Flame}[Active]{1}[Arms]{Evocation [Fire]}{leather or textiles}
+    \magicitemability{Active}[Standard action] By flicking your fingers, you can create fire in your hand.
+    You can immediately throw this fire at a creature or object within \rngclose range.
+    If you do, you make an attack with a bonus equal to the item's power against the target's Reflex defense.
+    If the attack succeeds, the target takes 1d10 fire damage per two item power.
+    A failed attack deals half damage.
 \end{magicitemdef}
 
-\begin{magicitemdef}{Gauntlets of Strength, Greater}[Passive]{4}[Arms]{Transmutation [Augment]}{leather or textiles}
-    \magicitemability{Passive} You gain a \plus4 bonus to Strength, up to a maximum Strength equal to the item's power \add 4.
-\end{magicitemdef}
+\begin{magicitemdef}{Greatreach Bracers}[Active]{1}[Arms]{Transmutation [Augment}{bone or metal}
+    \magicitemability{Active}[Swift action] You can activate this item to increase your \glossterm{reach} by 5 feet for 1 round.
 
-\begin{magicitemdef}{Gauntlet of the Ram}[Active]{2}[Arms]{Evocation [Telekinesis]}{metal}
-    \magicitemability{Triggered}[Immediate action] When you make a successful unarmed attack with this gauntlet against a foe, you can activate it to immediately make a shove attack against the struck foe.
-    You gain a bonus on the shove attack equal to the damage you dealt.
-    In addition, you do not need to move with the foe to push it backwards.
-
-    After you activate this ability, the gauntlet grows small ram horns.
+    After you activate this ability, the bracers visually grow in size, though not in weight or encumbrance.
     This effect lasts for 5 rounds, during which time you cannot activate this ability again.
 \end{magicitemdef}
 
@@ -454,11 +478,30 @@ Special abilities on body armor are usually activated if the character is struck
     \magicitemability{Passive} You gain a \plus2 bonus to Intelligence, up to a maximum Intelligence equal to the item's power \add 2.
 \end{magicitemdef}
 
+\begin{magicitemdef}{Hat of Disguise}[Active]{2}[Head]{Illusion [Glamer]}{textiles}
+    \magicitemability{Active}[Standard action] If you spin this hat on your head once, you can change your appearance for 1 hour.
+    This functions as the \spell{disguise self} ritual.
+\end{magicitemdef}
+
 \begin{magicitemdef}{Headband of Intellect, Greater}[Passive]{4}[Head]{Transmutation [Augment]}{metal}
     \magicitemability{Passive} You gain a \plus4 bonus to Intelligence, up to a maximum Intelligence equal to the item's power \add 4.
 \end{magicitemdef}
 
+\begin{magicitemdef}{Mask of Water Breathing}[Active]{2}[Head]{Transmutation [Augment]}{textiles}
+    \magicitemability{Active}[Standard action] If you speak a command word while wearing this mask, you gain the ability to breathe water for 1 hour.
+    This does not prevent you from breathing air, and does not grant you the ability to breathe other liquids.
+\end{magicitemdef}
+
 \subsection{Legs}
+
+\begin{magicitemdef}{Boots of Earth's Embrace}[Active]{3}[legs]{Transmutation [Augment]}{leather or textiles}
+    \magicitemability{Triggered}[Immediate action] When you are affected by a forced movement effect (such as a shove attack) while standing on solid ground, you can activate these boots.
+    If you do, you are not subject to the forced movement.
+    This does not prevent any other effects from the attack, such as damage.
+
+    After you activate this ability, the boots appear to be made from solid rock.
+    This effect lasts for 5 rounds, during which time you cannot activate this ability again.
+\end{magicitemdef}
 
 \begin{magicitemdef}{Boots of Elvenkind}[500]{1}[Legs]{Transmutation [Augment]}{leather or textiles}
     \magicitemability{Passive} You gain a \plus4 bonus to Stealth checks.
@@ -482,8 +525,8 @@ Special abilities on body armor are usually activated if the character is struck
     A high land speed increases your ability to jump, as described in \pcref{Jump Modifiers}.
 \end{magicitemdef}
 
-\begin{magicitemdef}{Boots of Teleportation, Lesser}[Active]{2}[Legs]{Conjuration [Teleportation]}{leather or textiles}
-    \magicitemability{Active}[Standard action] If you click your heels together three times, you can teleport up to 100 feet to a location you can see, as the \spell{dimension slide} spell.
+\begin{magicitemdef}{Boots of Swift Passage}[Active]{3}[Legs]{Conjuration [Teleportation]}{leather or textiles}
+    \magicitemability{Active}[Move action] If you take three rapid steps in the shape of a triangle, you can teleport up to 30 feet to a location you can see, as the \spell{dimension slide} spell.
 \end{magicitemdef}
 
 \begin{magicitemdef}{Boots of Teleportation}[Active]{5}[Legs]{Conjuration [Teleportation]}{leather or textiles}
@@ -500,6 +543,10 @@ Special abilities on body armor are usually activated if the character is struck
 \begin{magicitemdef}{Boots of the Winterlands}[1400]{2}[Legs]{Evocation/Transmutation [Augment]}{leather or textiles}
     \magicitemability{Passive} You can travel across snow and ice without slipping or suffering movement penalties for the terrain.
     In addition, the boots keep you warm, protecting you in conditions as cold as \minus50 Fahrenheit.
+\end{magicitemdef}
+
+\begin{magicitemdef}{Sandals of Sprinting}[500]{1}[Legs]{Transmutation [Augment]}{leather or textiles}
+    \magicitemability{Passive} You gain a \plus4 bonus to Sprint checks.
 \end{magicitemdef}
 
 \begin{magicitemdef}{Winged Boots}[Active]{4}[Legs]{Transmutation [Augment]}{leather or textiles}
@@ -550,10 +597,14 @@ A typical ring has AD 13, 10 hit points, hardness 10, and a break DC of 25.
     The light lasts for 5 rounds, during which time you cannot activate this ability again.
 \end{magicitemdef}
 
-\begin{magicitemdef}{Energy Resistance}[Passive]{3}[Ring]{Abjuration [Shielding]}{as armor}
+\begin{magicitemdef}{Energy Resistance}[Passive]{3}[Ring]{Abjuration [Shielding]}{bone, metal, or jewelry}
     \magicitemability{Passive} You have damage reduction against \glossterm{energy damage} equal to the item's power.
     Whenever you resist energy with this item, it sheds light as a torch for 5 rounds.
     The color of the light depends on the energy damage resisted: green for acid, blue for cold, yellow for electricity, and red for fire.
+\end{magicitemdef}
+
+\begin{magicitemdef}{Heroic Vengeance}[Active]{3}[Ring]{Abjuration [Retributive]}{bone, metal, or jewelry}
+    \magicitemability{Triggered}[Immediate action] When a foe within \rngmed range rolls a natural 20 on an attack against you, you can activate this item. If you do, the attacking creature takes 1d8 divine damage per item power.
 \end{magicitemdef}
 
 \begin{magicitemdef}{Sustenance, Lesser}[Passive]{1}[Ring]{Conjuration/Transmutation [Creation, Temporal]}{bone, metal, or jewelry}
@@ -656,8 +707,12 @@ A typical ring has AD 13, 10 hit points, hardness 10, and a break DC of 25.
 \end{magicitemdef}
 
 \begin{magicitemdef}{Healing Belt}[Active]{1}[Torso]{Vivimancy [Positive]}{leather or textiles}
-    \magicitemability{Active}[Standard action] If you grab this belt in one hand and touch a creature with the other, the touched creature is healed for 1d10 damage per two item power, as \spell{cure light wounds}.
+    \magicitemability{Active}[Standard action] If you grab this belt in one hand and touch a creature with the other, the touched creature is healed for 1d10 damage per two item power.
     If you heal yourself, you only need one hand free to grab the belt.
+\end{magicitemdef}
+
+\begin{magicitemdef}{Heroic Recovery}[Active]{1}[Torso]{Abjuration/Vivimancy [Positive]}{leather or textiles}
+    \magicitemability{Triggered}[Immediate action] When you roll a natural 20 on an attack roll, you can activate this item. If you do, you heal 1d10 damage per two item power.
 \end{magicitemdef}
 
 \begin{magicitemdef}{Torc of Willpower}[Passive]{2}[Torso]{Transmutation [Augment]}{metal or jewelry}
