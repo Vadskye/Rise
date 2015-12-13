@@ -194,29 +194,35 @@ Some strike feats instead require a specific action to use.
 
         \midrule
         \thead{Magic Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
+        \featref{Abjurant Shield} & 2nd level Shielding spell & \plus1 to physical defenses & \featpref{Abjurant Shield} \\
         \featref{Bardic Spellpower} & Arcane spellcasting ability & Fighter and rogue levels improve some spells & \featpref{Bardic Spellpower} \\
         \featref{Battlecaster} & Proficiency with light armor & Reduce arcane spell failure by 10\% & \featpref{Battlecaster} \\
-        \featref{Brutal Magic} & Base attack bonus \plus4, 1st level spells & Gain spellpower bonus after making physical attack & \featpref{Brutal Magic} \\
         \featref{Combat Casting} & \x &  \plus3 bonus to Concentration checks to cast spells & \featpref{Combat Casting} \\
+        \featref{Commanding Presence} & 1st level Compulsion spell & \plus2 to Intimidate and Persuasion, later \plus4 & \featpref{name} \\
         \featref{Counterspell} & Spellcraft 10 ranks, 2nd level spells & Counter spells cast by foe & \featpref{Counterspell} \\
         \tind\featref{Flexible Counterspell} & Counterspell & Use any spell to counterspell & \featpref{Flexible Counterspell} \\
         \tind\featref{Mass Counterspell} & Spellcraft 15 ranks, 4th level spells, Counterspell & Counter spells cast by multiple foes & \featpref{Mass Counterspell} \\
-        \featref{Craftcaster} & Craft (any) 10 ranks, 2nd level spells & Increase spellpower when creating, transforming objects & \featpref{Craftcaster} \\
+        \featref{Delusive Guise} & 1st level Delusion spell & \plus2 to Bluff and Disguise, later \plus4 & \featpref{Delusive Guise} \\
+        \featref{Enhanced Senses} & 1st level Awareness spell & \plus2 to Awareness and Sense Motive, later \plus4 & \featpref{Enhanced Senses} \\
+        \featref{Frigid Forge} & 2nd level Cold spell & Form ice into weapons and armor & \featpref{Frigid Forge} \\
         \featref{Magical Synthesis} & Levels in two magical classes & Increase spellcasting ability in two magical classes at once & \featpref{Magical Synthesis} \\
         \featref{Mass Transporter} & 5th level Conjuration (Translocation) spell & Transport many creatures at once & \featpref{Mass Transporter} \\
-        \featref{Mighty Summons} & 2nd level summoning spell & Summoned creatures gain \plus2 Str, \plus2 Con & \featpref{Mighty Summons} \\
-        \featref{Peaceful Magic} & 2nd level spells & Gain spellpower bonus after not taking damage & \featpref{Peaceful Magic} \\
-        \featref{Residual Awareness} & Divination (Awareness) spell & Gain brief Perception bonus after casting a spell & \featpref{Residual Awareness} \\
-        \featref{Residual Knowledge} & Divination (Knowledge) spell & Gain brief Knowledge bonus after casting a spell & \featpref{Residual Knowledge} \\
-        \featref{Residual Beguilement} & 3rd level Enchantment (Beguilement) spell & Gain Persuasion bonus after casting a spell & \featpref{Residual Beguilement} \\
-        \featref{Residual Shield} & Abjuration (Shielding) spell & Gain benefits of spell briefly after casting on another creature & \featpref{Residual Shield} \\
-        \featref{Resilient Magic} & 2nd level Abjuration spell & Spells persist for 1 round after being dispelled & \featpref{Resilient Magic} \\
-        \featref{Retributive Magic} & 1st level Abjuration spell & Gain spellpower bonus after taking damage & \featpref{Retributive Magic} \\
+        \featref{Resilient Magic} & 3rd level Antimagic spell & Spells persist after being dispelled, later cannot be dispelled & \featpref{Resilient Magic} \\
         \featref{Ritual Caster} & Int 3 & Gain ability to perform rituals & \featpref{Ritual Caster} \\
-        \featref{Spell Focus}\fn{1} & 2nd level spells &  \plus2 spellpower with specific type of magic & \featpref{Spell Focus} \\
-        \tind \featref{Spell Specialization} & 4th level spells, Spell Focus &  \plus2 spellpower with specific type of magic, \minus2 with other types.
+        \featref{Spell Focus}\fn{1} & 2nd level spells &  \plus2 spellpower with specific school of magic & \featpref{Spell Focus} \\
+        \tind \featref{Spell Specialization} & 4th level spells, Spell Focus &  \plus2 spellpower with specific school of magic, \minus2 with other types.
         & \featpref{Spell Specialization} \\
+        \featref{Unfettered Knowledge} & 2nd level Knowledge spell & \plus2 to all Knowledge checks, later \plus4 & \featpref{Unfettered Knowledge} \\
+        \featref{Vital Flow} & 2nd level Positive spell & Automatically heal every round & \featpref{Vital Flow} \\
         \featref{Wardwalker} & 3rd level Abjuration (Warding) spell & Wards you encounter trigger one round late & \featpref{Wardwalker} \\
+        \featref{Wired} & 1st level Electricity spell & Increase speed by 5 feet, later 10 feet & \featpref{name} \\
+
+        \midrule
+        \thead{Magic Style Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
+        \featref{Brutal Magic} & Base attack bonus \plus4, 1st level spells & Gain spellpower bonus after making physical attack & \featpref{Brutal Magic} \\
+        \featref{Craftcaster} & Craft (any) 10 ranks, 2nd level spells & Increase spellpower when creating, transforming objects & \featpref{Craftcaster} \\
+        \featref{Peaceful Magic} & 2nd level spells & Gain spellpower bonus after not taking damage & \featpref{Peaceful Magic} \\
+        \featref{Retributive Magic} & 1st level Abjuration spell & Gain spellpower bonus after taking damage & \featpref{Retributive Magic} \\
 
         \midrule
         \thead{Metamagic Feats} & \thead{Prerequisites} & \thead{Benefit (Level Adjustment)} & \thead{Page} \\
@@ -483,8 +489,12 @@ If not having the feat causes no particular drawback, this entry is absent.
 \parhead{Special}
 Additional facts about the feat that may be helpful when you decide whether to acquire the feat.
 
+\feat{Abjurant Shield}{Magic}
+\featpre 2nd level or higher Shielding spell known.
+\featben You gain a \plus1 bonus to physical defenses.
+
 \feat{Arcane Spellgift}{Spellgift}
-\featpres 2nd level, Wil 1.
+\featpres 2nd level, Willpower 1.
 \featben You have inherent magic in your body, granting you spellgifts.
 Your spellpower with spellgifts is equal to your Willpower, or your level \add the number of fae bloodline feats you possess, whichever is higher.
 You have a pool with a number of spellgift points equal to the number of spellgift feats you possess.
@@ -521,7 +531,7 @@ The character also suffers double the normal arcane spell failure chance for wea
 
 
 \feat{Bardic Spellpower}{Magic}
-\featpre Ability to cast arcane spells.
+\featpre Any arcane spell known.
 \featben You can treat your fighter and rogue levels as magical classes when determining your spellpower with enchantment and illusion arcane spells.
 
 \feat{Battlecaster}{Magic}
@@ -544,10 +554,9 @@ Any other abilities, such as channeled rages, function normally.
 \parhead{Normal}
 You have a 50\% chance to miss opponents you can't see, and you are \defenseless against them.
 
-\feat{Brutal Magic}{Combat, Magic}
+\feat{Brutal Magic}{Magic, Style}
 \featpres Base attack bonus \plus4, 1st level spells.
-\featben If you deal lethal damage in excess of your spellpower with physical attacks during a single round, you gain a \plus2 bonus to spellpower for 1 round.
-This bonus does not stack with itself.
+\featben At the end of each round, if you dealt lethal damage in excess of your spellpower with physical attacks that round, you gain a \plus2 bonus to spellpower during the next round.
 
 \feat{Calculated Strike}{Combat, Precision, Strike}
 \featpre Intelligence 5, two attacks.
@@ -555,6 +564,11 @@ This bonus does not stack with itself.
 If you hit, you deal damage normally.
 If your attack result also beats the foe's Fortitude defense, until the end of the round, any damage the creature takes in excess of the creature's hit points is dealt as critical damage.
 This effect applies to all damage dealt to the creature during the current phase.
+
+\feat{Commanding Presence}{Magic}
+\featpre 1st level or higher \glossterm{Compulsion} spell known.
+\featben You gain a \plus2 bonus to Intimidate and Persuasion checks.
+If you know an additional Compulsion spell of 5th level or higher, this bonus increases to \plus4.
 
 \feat{Countering Strike}{Reaction, Strike}
 \featpre Intelligence 5, two attacks.
@@ -602,8 +616,8 @@ Your spell resistance is equal to 10 \add your celestial power.
 
 \feat{Celestial Spell Conduit}{Bloodline, Celestial}
 \featpres Nonevil alignment, Celestial Heritage.
-\featben You gain a \plus2 bonus to spellpower with Evocation (Channeling) spells and spells from the Good domain.
-If you have three or more celestial bloodline feats, this bonus increases to \plus4.
+\featben You gain a \plus1 bonus to spellpower with Evocation (Channeling) spells and spells from the Good domain.
+If you have three or more celestial bloodline feats, this bonus increases to \plus2.
 
 \feat{Celestial Wings}{Bloodline, Celestial}
 \featpre Any three celestial bloodline feats.
@@ -675,11 +689,11 @@ If this bonus is not used within 1 round, it is lost.
 \stylereq Wield a melee weapon.
 
 \feat{Craftcaster}{Magic}
-\featpres Craft (any) 10 ranks, ability to cast 2nd level spells.
+\featpres Craft (any) 10 ranks, 2nd level spell known.
 \featben When casting spells which create or transform a physical substance that you are trained to craft, you gain a \plus1 bonus to your spellpower per 5 ranks you have in the appropriate Craft skill.
 
 \feat{Deadly Aim}{Combat, Precision}
-\featpres Per 5, base attack bonus \plus4.
+\featpres Perception 5, base attack bonus \plus4.
 \featben You gain a \plus1 bonus to physical ranged damage rolls.
 This bonus increases to \plus2 at Perception 10, and to \plus3 at Perception 20.
 
@@ -701,6 +715,11 @@ You must be aware of the attack and not flatfooted.
 You can deflect one additional attack at base attack bonus \plus5, \plus10, \plus15, and \plus20, to a maximum number of arrows equal to your Dexterity.
 \par Attempting to deflect a ranged weapon doesn't count as an action.
 Unusually massive ranged weapons and ranged attacks generated by spell effects can't be deflected.
+
+\feat{Delusive Guise}{Magic}
+\featpre 1st level or higher \glossterm{Delusion} spell known.
+\featben You gain a \plus2 bonus to Bluff and Disguise checks.
+If you know an additional Delusion spell of 5th level or higher, this bonus increases to \plus4.
 
 \feat{Destructive}{General}
 \featpre Strength 3.
@@ -815,7 +834,7 @@ If you have three or more dragon bloodline feats, you gain darkvision with a 50 
 \feat{Draconic Spellpower}{Bloodline, Dragon}
 \featpre Draconic Heritage.
 \featben You gain a \plus1 bonus to spellpower with all spells and spell-like abilities.
-If you have three or more dragon bloodline feats, this bonus increases to \plus2.
+If you have five or more dragon bloodline feats, this bonus increases to \plus2.
 
 \feat{Draconic Voice}{Bloodline, Dragon}
 \featpre Draconic Heritage.
@@ -853,17 +872,22 @@ You gain a bonus on the shove attack equal to the damage dealt.
 \featben You gain a \plus2 bonus to defenses against poisons, spells, and spell-like effects.
 
 \feat{Energetic Substitution}{Metamagic}
-\featpre Ability to cast 2nd level spells.
+\featpre 2nd level spell known.
 \featben When casting a substituted spell, you can choose what kind of energy damage it deals: cold, fire, or electricity.
 This can only be applied to spells that originally dealt cold, fire, or electricity damage.
 A substituted spell uses up a spell slot one level higher than the spell's actual level.
+
+\feat{Enhanced Senses}{Magic}
+\featpre 1st level or higher \glossterm{Awareness} spell known.
+\featben You gain a \plus2 bonus to Awareness and Sense Motive checks.
+If you know an additional Divination spell of 5th level or higher, this bonus increases to \plus4.
 
 \feat{Executioner}{Combat, Reaction}
 \featpres Four attacks, any three Reaction feats.
 \featben At the end of every round, you can make a free physical melee attack against all creatures you threaten that have no hit points remaining.
 
 \feat{Extend Spell}{Metamagic}
-\featpre Ability to cast 2nd level spells.
+\featpre 2nd level spell known.
 \featben An extended spell has its range doubled.
 This metamagic can only be applied to spells with a range of \rngclose, \rngmed, or \rnglong.
 An extended spell uses up a spell slot one level higher than the spell's actual level.
@@ -897,7 +921,6 @@ Choose a class feature with limited uses.
         Fighter & Battlemaster & \plus2 uses per day \\
         Monk & Channel \ki & \plus2 uses per day \\
         Paladin & Divine invocation & \plus2 uses per day \\
-        Ranger & Quarry & \plus1 use per day \\
         Ranger & Wild speech & \plus2 uses per day \\
         Sorcerer & Spellsurge & \plus1 use per day \\
         Spellwarped & Spellwarped invocation & \plus2 uses per day \\
@@ -936,7 +959,7 @@ If you fail the Perform check, the use of the ability is wasted.
 This is an enchantment (compulsion), mind-affecting ability.
 
 \feat{Fearless}{General}
-\featpre Willpower 10 or base Mental defense \plus10.
+\featpre Willpower 10.
 \featben You are immune to fear effects.
 
 \feat{Flexible Counterspell}{Magic}
@@ -965,6 +988,16 @@ spell, with a spellpower equal to your Perform ranks.
 \featpre Rage ability.
 \featben When you rage, you can enter an energetic frenzy instead of getting angry. In a frenzy, you do not increase your Fortitude or Mental defense, and you take no penalty to physical defenses.
 Any other abilities, such as channeled rages, function normally.
+
+\feat{Frigid Forge}{Magic}
+\featpre 2nd level or higher Cold spell known.
+\featben You can use ice as a crafting material in place of bone, ceramics, metal, or stone.
+Items created in this way follow the normal rules for crafting items (see \pcref{Craft}), with three exceptions.
+First, these items melt if they leave your possession after approximately one hour, depending on the ambient temperature.
+Second, creating items in this way requires water or ice in place of the normal equipment and materials (such as a forge).
+Third, you gain a bonus on the Craft check equal to your spellpower with Cold spells.
+
+If water enhanced with the \spell{enhance component} ritual is used, the item created will have an enhancement bonus.
 
 \feat{Fungal Poisoner}
 \featpre Survival 5 ranks.
@@ -1025,7 +1058,7 @@ Doing so costs a tenth of the raw materials and a quarter of the time it would t
 You cannot mend a destroyed magic item.
 
 \feat{Imbued Spellstrike}{Metamagic}
-\featpre Ability to cast 2nd level spells.
+\featpre 2nd level spell known.
 \featben As part of casting an imbued spellstrike spell, you can make a single attack with a weapon in your hand.
 If the attack hits, and you maintain concentration on the spell, the spell takes effect.
 The spell must target the struck creature, but otherwise functions as if it has been cast normally.
@@ -1066,7 +1099,7 @@ You also gain a \plus2 bonus to disarm attacks.
 You also gain a \plus2 bonus to feint attacks.
 
 \feat{Improved Imbued Spellstrike}{Metamagic}
-\featpres Ability to cast 3rd level spells, Imbued Spellstrike.
+\featpres 3rd level spell known, Imbued Spellstrike.
 \featben This metamagic functions like Imbued Spellstrike, except that the imbuement lasts for 5 minutes if you have not struck a foe.
 If the weapon leaves your hands or if you cast another spell, the imbuement fades away without effect.
 
@@ -1107,8 +1140,7 @@ In addition, your unarmed attacks can deal lethal or nonlethal damage as you cho
 
 \feat{Inescapable Bulwark}{Combat, Style}
 \featpre Base attack bonus \plus8.
-\featben While in this style, if you take the block action, all enemies you threaten are \immobilized during the current phase (see \pcref{Block}).
-This effect can interrupt and prevent their movement during that phase.
+\featben While in this style, all squares you threaten cost four times the normal movement cost to move into or out of.
 \stylereq Wield a melee weapon.
 You must make a melee attack each round.
 
@@ -1504,7 +1536,7 @@ Taking advantage of this style requires having multiple weapons in hand or loadi
 You may still cast only one spell, but it is used to counter the spells cast by all of your targets.
 
 \feat{Mass Transporter}{Magic}
-\featpre Ability to cast a Conjuration (Translocation) spell of at least 5th level.
+\featpre 5th level or higher \glossterm{Teleportation} spell known.
 \featben When casting Conjuration (Translocation) spells and rituals which affect multiple creatures, you can affect a number of creatures equal to your spellpower.
 
 \feat{Mighty Blows}{Combat, Power}
@@ -1516,10 +1548,6 @@ This bonus increases to \plus4 at Strength 10, and to \plus6 at Strength 20.
 \featpres Str 5, base attack bonus \plus4.
 \featben You gain a \plus2 bonus to physical ranged damage rolls.
 This bonus increases to \plus4 at Strength 10, and to \plus6 at Strength 20.
-
-\feat{Mighty Summons}{Magic}
-\featpre Ability to cast a Conjuration (Summoning) spell of at least 2nd level.
-\featben Each creature you conjure with a summoning spell gains a \plus2 bonus to Strength and Constitution for the duration of the spell that summoned it.
 
 \feat{Mobile Hurricane}{Combat, Mobility}
 \featpres Dex 15, Hurricane Strike, Mobile Whirlwind, Whirlwind Attack, four attacks.
@@ -1595,7 +1623,7 @@ In exchange, you take a \minus2 penalty to physical attacks.
 You must make a melee attack or take the total defense action each round.
 
 \feat{Patient Spell}{Metamagic}
-\featpre Ability to cast 2nd level spells.
+\featpre 2nd level spell known.
 \featben A patient spell requires a full-round action to cast.
 In exchange, you gain a \plus2 bonus to spellpower with the spell.
 A patient spell uses up a spell slot one level higher than the spell's actual level.
@@ -1606,8 +1634,8 @@ A patient spell uses up a spell slot one level higher than the spell's actual le
 If you hit, you deal damage normally.
 If the target does not make a physical attack against you during the current phase, this attack deals quadruple damage.
 
-\feat{Peaceful Magic}{Magic}
-\featpre Ability to cast 2nd level spells.
+\feat{Peaceful Magic}{Magic, Style}
+\featpre 2nd level spell known.
 \featben If you have not taken damage within the past 5 rounds, you gain a \plus2 bonus to spellpower.
 
 \feat{Penetrating Strike}{Combat, Strike}
@@ -1677,7 +1705,7 @@ If you have three or more Reaction feats, you can draw light and medium weapons 
 Without this feat, you may draw light weapons as a swift action, medium and heavy weapons as a move action, and hidden weapons as a standard action.
 
 \feat{Quicken Spell}{Metamagic}\label{Quicken Spell}
-\featpre Ability to cast 3rd level spells.
+\featpre 3rd level spell known.
 \featben Casting a quickened spell is a swift action.
 You can perform another action, even casting another spell, in the same round as you cast a quickened spell.
 However, casting a quickened spell is mentally exhausting.
@@ -1694,7 +1722,7 @@ For example, this would remove the negative level for being \spellindirect{reinc
 This feat can be retrained using normal retraining rules if you return to your original race.
 
 \feat{Ranged Legerdemain}{Skill}
-\featpre Ability to cast 2nd level spells.
+\featpre 2nd level spell known.
 \featben By expending an Evocation (Control) spell of 2nd level or higher, you can use the Disable Device or Sleight of Hand skills at \rngclose range for a number of rounds equal to half the level of the spell slot.
 
 \feat{Rapid Performance}{Performance, Skill}
@@ -1702,7 +1730,7 @@ This feat can be retrained using normal retraining rules if you return to your o
 \featben You can use performance feats as a swift action by taking a \minus5 penalty on the Perform check to activate the feat.
 
 \feat{Reach Spell}{Metamagic}
-\featpre Ability to cast 3rd level spells.
+\featpre 3rd level spell known.
 \featben When casting a reach spell, you can use a spell with a range of touch on a target within \rngclose range.
 You must succeed on a ranged touch attack.
 A reach spell uses up a spell slot two levels higher than the spell's actual level.
@@ -1719,25 +1747,10 @@ This bonus increases by \plus1 for each physical attack you can make per round b
 \featben If you fail the Perform check to use a Performance feat, you can take a move action to reroll the Perform check.
 If the initial performance was done with the Rapid Performance feat, you take the same \minus5 penalty on the reroll.
 
-\feat{Residual Awareness}{Magic}
-\featpre Ability to cast a Divination (Awareness) spell.
-\featben Whenever you cast a Divination (Awareness) spell, you gain an enhancement bonus to Awareness checks equal to the level of the spell for 5 rounds.
-
-\feat{Residual Beguilement}{Magic}
-\featpre Ability to cast an Enchantment (Beguilement) spell of at least 3rd level.
-\featben Whenever you cast a Enchantment (Beguilement) spell, you gain an enhancement bonus to Persuasion checks equal to the level of the spell for 5 minutes.
-
-\feat{Residual Knowledge}{Magic}
-\featpre Ability to cast a Divination (Knowledge) spell.
-\featben Whenever you cast a Divination (Knowledge) spell, you gain an enhancement bonus to Knowledge checks equal to the level of the spell for 5 rounds.
-
-\feat{Residual Shield}{Magic}
-\featpre Ability to cast an Abjuration (Shielding) spell.
-\featben Whenever you cast an Abjuration (Shielding) spell with a duration of \durshort or longer on another creature, you gain the benefits on yourself for 1 round.
-
 \feat{Resilient Magic}{Magic}
-\featpre Ability to cast an Abjuration spell of at least 2nd level.
-\featben Your spells persist for 1 round after being dispelled if they still have time remaining in their duration.
+\featpre 3rd level or higher Antimagic spell known.
+\featben Your spells persist for up to 5 rounds after being dispelled if they still have time remaining in their duration.
+If you know an additional Antimagic spell of 7th level or higher, your spells cannot be dispelled by any means short of the \spell{disjoin magic} spell, or other effects of similar power.
 
 \feat{Resist Maneuver}{Class, Fighter}
 \featpre Fighter.
@@ -1745,16 +1758,15 @@ If the initial performance was done with the Rapid Performance feat, you take th
 You gain a \plus5 bonus to Maneuver Defense against that maneuver.
 
 \feat{Retributive Counterspell}{Magic}
-\featpres
-Ability to cast 4th level spells.
+\featpre 4th level spell known.
 \featben As part of the action to counter a spell, you may expend an Abjuration (Negation) spell of 4th level or higher.
 If you do, the counterspelled spell is turned back on the caster as if it were affected by the \spell{spell turning}
 spell.
 If it cannot be affected by \spell{spell turning}, such as if it is a spell that only affects the caster, it is simply countered as normal.
 
-\feat{Retributive Magic}{Magic}
-\featpre Ability to cast an Abjuration spell of at least 1st level.
-\featben If you take lethal damage in excess of your spellpower during a single round, you gain a \plus2 bonus to spellpower for 1 round.
+\feat{Retributive Magic}{Magic, Style}
+\featpre 1st level or higher Abjuration spell known.
+\featben At the end of each round, if you took lethal damage in excess of your spellpower during that round, you gain a \plus2 bonus to spellpower during the next round.
 This bonus does not stack with itself.
 
 \feat{Riposte}{Combat, Reaction}
@@ -1776,7 +1788,7 @@ The creature takes a \minus4 penalty to physical attacks against you, but is not
 It can attempt to remove you by attacking you, or with an appropriate maneuver, such as grappling or shoving.
 
 \feat{Shape Spell}{Metamagic}
-\featpre Ability to cast 3rd level spells.
+\featpre 3rd level spell known.
 \featben When casting a shaped spell, you can exclude any number of 5-foot cubes within the spell's area.
 This allows you to prevent the spell from affecting your allies, while still allowing it to affect your enemies.
 The area affected by the spell must be contiguous.
@@ -1814,7 +1826,7 @@ If you hit, you deal damage normally.
 If your attack result also beats the foe's Fortitude defense, it is \staggered for 5 rounds.
 
 \feat{Silent Spell}{Metamagic}
-\featpre Ability to cast 2nd level spells.
+\featpre 2nd level spell known.
 \featben A silent spell can be cast with no verbal components.
 Spells without verbal components are not affected.
 A silent spell uses up a spell slot one level higher than the spell's actual level.
@@ -1847,18 +1859,18 @@ If you have an appropriate projectile weapon available, you can also fire caught
 \par You must have at least one hand free (holding nothing) to use this feat.
 
 \feat{Spell Focus}{Magic}
-Choose a school of magic or a spell descriptor.
+Choose a school of magic.
 \featpre 2nd level spells.
-\featben You get a \plus2 bonus to your spellpower when casting spells and using spell-like abilities from the school of magic or with the spell descriptor you select.
+\featben You get a \plus2 bonus to your spellpower when casting spells and using spell-like abilities from the chosen school of magic.
 \parhead{Special}
 You can gain this feat multiple times.
 Its effects do not stack.
 Each time you take the feat, it applies to a new school of magic.
 
 \feat{Spell Specialization}{Magic}
-Choose a school of magic or a spell descriptor to which you already have applied the Spell Focus feat.
-\featpres 4th level spells, Spell Focus.
-\featben You gain a \plus2 bonus to your spellpower when casting spells and using spell-like abilities from the school of magic or with the spell descriptor you select.
+Choose a school of magic.
+\featpres 4th level spells, Spell Focus in the chosen school.
+\featben You gain a \plus2 bonus to your spellpower when casting spells and using spell-like abilities from the chosen school of magic.
 In exchange, you take a \minus2 penalty to spellpower with all other spells and spell-like abilities.
 
 \feat{Spellwarped Ritualist}{Magic}
@@ -1877,7 +1889,7 @@ You can perform rituals from up to 30 feet away from the ritual components.
 You perform rituals twice as quickly.
 
 \feat{Spellwoven Performance}{Performance, Skill}
-\featpres Ability to cast spells, Perform 10 ranks, any other Performance feat.
+\featpres Any spell known, Perform 10 ranks, any other Performance feat.
 \featben You can cast enchantment and illusion spells while sustaining a performance.
 The Spellcraft DC to identify those spells as they are cast increases by 10, as the performance disguises the magic.
 
@@ -1888,7 +1900,7 @@ You must move at least 5 feet after each attack you make before you can make ano
 You can only use this style while \unencumbered.
 
 \feat{Still Spell}{Metamagic}
-\featpre Ability to cast 2nd level spells.
+\featpre 2nd level spell known.
 \featben A stilled spell can be cast with no somatic components.
 Spells without somatic components are not affected.
 A stilled spell uses up a spell slot one level higher than the spell's actual level.
@@ -1914,7 +1926,7 @@ You can use any combination of performance feats you possess a number of times p
 If you fail the Perform check, the use of the ability is wasted.
 
 \feat{Sustained Spell}{Metamagic}
-\featpre Ability to cast 2nd level spells.
+\featpre 2nd level spell known.
 \featben You can maintain focus on a sustained spell as a swift action instead of as a standard action.
 The spell must target you or only affect you.
 If you cast any other spell, you lose the ability to sustain the spell.
@@ -1940,7 +1952,7 @@ Of course, it can change its plans, particularly if it hears you tell your allie
 
 \feat{Threatening Fire}{Combat, Reaction, Style}
 \featpres Dexterity 5, Overwhelming Fire, base attack bonus \plus8.
-\featben While in this style, you threaten creatures within your natural reach as if you were wielding a melee weapon, allowing you to contribute to overwhelm penalties and take the block action.
+\featben While in this style, you threaten creatures within your natural reach as if you were wielding a melee weapon, allowing you to contribute to overwhelm penalties and block the movement of other creatures.
 (A Medium creature would threaten adjacent creatures).
 In addition, you do not take a \minus4 penalty for using ranged weapons against adjacent creatures.
 However, you still cannot used your ranged weapon to defend yourself, which can cause you to be \defenseless.
@@ -2031,6 +2043,11 @@ You can fight with a weapon in each hand more effectively.
 \featben When fighting with two weapons at once, you gain a \plus1 bonus to physical damage.
 This bonus increases to \plus2 at Strength 10, and to \plus3 at Strength 20.
 
+\feat{Unfettered Knowledge}{Magic}
+\featpre 2nd level or higher \glossterm{Knowledge} spell known.
+\featben You gain a \plus2 bonus to all Knowledge checks.
+If you know an additional Knowledge spell of 6th level or higher, this bonus increases to \plus4.
+
 \feat{Versatility}{Class}
 \featpre Levels in two different classes.
 \featben For the purpose of abilities based on your class level, you treat your class level as being equal to your total level.
@@ -2049,6 +2066,11 @@ You learn how to make items from one school for every five ranks you have in eac
 When attempting to identify a monster, you may roll your base attack bonus \add your Intelligence.
 A successful check gives you the same information as a Knowledge check would.
 
+\feat{Vital Flow}{Magic}
+\featpre 2nd level or higher Positive spell known.
+\featben You gain \glossterm{fast healing} equal to the level of your highest level Positive spell known.
+If you know an additional Positive spell of 6th level or higher, this fast healing increases to be equal to your spellpower with Positive spells.
+
 \feat{Wallpuncher}{Skill}
 \featpres Strength 5, Climb 10.
 \featben You can punch holes in walls as you climb.
@@ -2062,8 +2084,8 @@ This ability works on any wall with hardness no greater than your Strength.
 If you succeed, the creature takes 1d10 bludgeoning damage per two Strength.
 
 \feat{Wardwalker}{Magic}
-\featpre Ability to cast an Abjuration (Warding) spell of at least 3rd level.
-\featben When you trigger an Abjuration (Warding) spell, it does not take effect until one round after you triggered it, giving you time to escape.
+\featpre 3rd level or higher \glossterm{Warding} spell known.
+\featben When you trigger a Warding spell, it does not take effect until one round after you triggered it. This can give you time to escape the spell's effects.
 
 \feat{Weapon Focus}{Combat}
 Choose one weapon group.
@@ -2108,11 +2130,16 @@ Each time you take the feat, it applies to a new weapon group.
 You cannot choose simple weapons.
 
 \feat{Widen Spell}{Metamagic}
-\featpre Ability to cast 4th level spells.
+\featpre 4th level spell known.
 \featben You can alter a burst, emanation, line, or spread shaped spell to increase its area.
 Any numeric measurements of the spell's area increase by 100\%.
 A widened spell uses up a spell slot three levels higher than the spell's actual level.
 \par Spells that do not have an area of one of these four sorts are not affected by this feat.
+
+\feat{Wired}{Magic}
+\featpre 1st level or higher Electricity spell known
+\featben You increase your speed with all forms of movement by 5 feet.
+If you know an additional Electricity spell of 5th level or higher, this bonus increases to \plus10 feet.
 
 \feat{Whirlwind Strike}{Combat, Strike}
 \featpres Dex 5, two attacks.
