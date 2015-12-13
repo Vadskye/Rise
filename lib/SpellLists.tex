@@ -268,7 +268,8 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \subsubsection{7th-level Arcane Spells}
 \begin{swspelllist}
 
-    \SLspellturning[Abjur]
+    \SLenergyconversion[Abjur]
+    \SLspellturning
     \SLantimagicfield*
 
     \SLfogsea[Conj]
@@ -281,6 +282,8 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLfeeblemind
     \SLholdpersonmass
     \SLdominateperson*
+
+    \SLenergyconversion[Evoc]
 
     \SLinvisibilitymass[Illus]
 
@@ -333,7 +336,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \begin{swspelllist}
 
     \SLdisjoinmagic[Abjur]
-    \SLenergyconversion
 
     \SLshadowpuppet
     \SLsummonmonsterix
@@ -347,8 +349,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLirresistibledance
     \SLdominatemonster*
 
-    \SLenergyconversion[Evoc]
-    \SLmeteorswarm
+    \SLmeteorswarm[Evoc]
 
     \SLshadowpuppet[Illus]
     \SLfalsereality*
@@ -596,7 +597,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLfreedom
     \SLholdperson
     \SLinflictseriouswounds
-    \SLresistenergygreater
     \SLspiritualweapon
     \SLsummonmonsteriii
 \end{spelllist}
@@ -830,13 +830,13 @@ Summoning spells summon chaotic creatures only.
 \subsubsection{Earth Domain Spells}
 
 \begin{spelllist}
-    \SLearthspull[1]
     \SLearthspike[1]
     \SLtremorsense[1]
     \SLearthenblade[2]
     \SLmeldintostone[2]
     \SLearthglide[4]
     \SLearthspikemass[4]
+    \SLearthspull[4]
     \SLstoneskin[4]
     \SLsummonmonsterv[4]
     \SLtransmutefleshandstone[5]
@@ -965,7 +965,6 @@ Summoning spells summon lawful creatures only.
     \SLshieldoffaith[1]
     \SLsharepain[2]
     \SLdeathward[3]
-    \SLresistenergygreater[3]
     \SLspellresistance[3]
     \SLstoneskin[4]
     \SLrepulsion[5]
@@ -1110,12 +1109,12 @@ Summoning spells summon water elementals or aquatic creatures only.
 \subsubsection{Wild Domain Spells}
 
 \begin{spelllist}
-    \SLearthspull[1]
     \SLentangle[1]
     \SLbarkskin[2]
     \SLwallofthorns[2]
     \SLmeldintoplants[3]
     \SLsummonnaturesallyiii[3]
+    \SLearthspull[4]
     \SLenlargemonster[4]
     \SLentanglegreater[4]
   %\spellhead[5]{Animat[4]e Plants} Plants animate and fight for you.
@@ -1243,7 +1242,6 @@ Summoning spells summon water elementals or aquatic creatures only.
 \begin{spelllist}
     \SLburninghands
     \SLcurelightwounds
-    \SLearthspull
     \SLearthspike
     \SLentangle
     \SLexcreteslime
@@ -1293,7 +1291,6 @@ Summoning spells summon water elementals or aquatic creatures only.
     \SLfreedom
     \SLlightningbolt
     \SLmeldintoplants
-    \SLresistenergygreater
     \SLrotburst
     \SLsummonnaturesallyiii
     \SLwaterwalk
@@ -1305,6 +1302,7 @@ Summoning spells summon water elementals or aquatic creatures only.
     \SLcurecriticalwounds
     \SLearthglide
     \SLearthspikemass
+    \SLearthspull
     \SLenlargemonster
     \SLentanglegreater
     \SLgentledescentmass
