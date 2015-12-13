@@ -157,42 +157,38 @@ After both phases are complete, the round ends.
 \subsubsection{The Movement Phase}\label{The Movement Phase}
 
 The movement phase takes place first in the round.
-During the movement phase, all creatures can move (see \pcref{Movement and Positioning}).
+During the movement phase, all creatures can move a distance equal to their speed (see \pcref{Movement and Positioning}).
+In addition to moving, creatures can take minor actions that require motion, such as drawing a weapon.
+These actions are called \glossterm{move actions}.
+
 You can take any number of move actions during the movement phase, as long as all of those actions can be performed simultaneously.
 For example, you can walk your speed and draw your sword in a single movement phase.
 However, you cannot draw a sword and equip a shield in the same phase.
 Equipping a shield takes two hands, leaving you with no free hand to draw your sword.
 
-\parhead{Move Action} A move action is usually used to move from one place to another.
-You can move a distance up to your base land speed with a move action.
-It can also be used for other activities that require some effort, such as drawing a weapon, opening a door, or standing up from a prone position.
-You can take one move action each turn.
-
 Once all creatures are done moving, the action phase begins.
 
 \subsubsection{The Action Phase}\label{The Action Phase}
 
-During the action phase, each creature can take a single standard action.
+During the action phase, each creature can take a single \glossterm{standard action}.
 
-\parhead{Standard Action} A standard action is the most common type of action.
-You can use a standard action to attack with a weapon, cast a spell, drink a potion, and do most other things that take concentration and effort.
-You can take one standard action each turn.
-
-Once all creatures have declared their actions, actions are resolved.
+\parhead{Standard Action} You can use a standard action to attack with a weapon, cast a spell, drink a potion, and do most other things that take concentration and effort.
 
 \subsection{Resolving Actions}\label{Resolving Actions}
 
 Within each phase, actions of all creatures are simultaneously resolved in the following order.
 
 \begin{enumerate*}
+    \item Choose actions.
     \item Determine affected targets.
+    \item \textit{Resolve swift actions}.
     \item Check action success.
         Example: Making attack rolls.
     \item Determine action results.
         Example: Making damage rolls.
     \item Apply non-spell action results.
         Examples: Reducing hit points, moving character locations, and applying penalties.
-    \item Make Concentration checks to maintain focus on spells.
+    \item \textit{Make Concentration checks to maintain focus on spells}.
     \item Apply spell results.
 \end{enumerate*}
 
@@ -202,8 +198,11 @@ The order of resolution matters when taking actions that can significantly chang
 
 \subsubsection{Conflicting Actions}\label{Conflicting Actions}
 
-In some situations, actions that should take place at the same time directly conflict with each other.
-This most commonly happens with movement.
+Sometimes, actions that occur within the same resolution step can conflict with each other.
+There are two main methods for resolving these conflicts.
+
+\parhead{Mutually Exclusive Actions} Sometimes, actions that should take place at the same time directly conflict with each other.
+This most commonly happens when two creatures move to the same place.
 In this case, each involved character rolls initiative.
 The creature with the highest initiative result succeeds.
 All other creatures come as close as possible to completing their intended action.
@@ -217,6 +216,12 @@ Your initiative check is calculated as follows:
 For example, if two creatures were racing to reach a door, they would both roll initiative.
 The winner would reach the door and stop in their intended square, and the loser would stop adjacent to their intended square.
 
+\parhead{Conditionally Impossible Actions} In rare cases, one action may make another action impossible if the first action succeeds.
+However, unlike with mutually exclusive actions, the second action would not make the first action impossible.
+This usually happens if a creature moves during the action phase while being attacked.
+If the attack trips or deals enough damage to kill the moving creature, its movement becomes impossible.
+In this case, the second action is negated, and the creature takes no action during that action phase.
+
 \subsection{Special Actions}
 
 \parhead{Swift and Immediate Actions}\label{Swift and Immediate Actions} Each round, you can take a single swift or immediate action.
@@ -225,7 +230,7 @@ Swift actions must be declared along with any other actions you intend to take d
 Immediate actions do not need to be declared ahead of time.
 Instead, abilities that can be used as immediate actions specify triggering conditions that allow the action to be taken.
 
-Swift and immediate actions are resolved immediately, before any other actions resolve.
+Swift and immediate actions are resolved early in the phase, before other actions resolve.
 If multiple swift or immediate actions are taken simultaneously, they are resolved using the normal rules for resolving simultaneous actions.
 
 \parhead{Full-Round Actions} A full-round action requires your character's full attention.
@@ -236,7 +241,7 @@ Unless otherwise specified, you perform any movement required for the action dur
 In each phase, you can delay your action rather than acting immediately.
 If you delay, you do nothing until after the actions of all other creatures have been resolved.
 At that point, you declare your action and resolve it.
-If multiple creatures delay, all their actions are declared resolved simultaneously, after the actions of all the creatures that did not delay.
+If multiple creatures delay, all their actions are declared and resolved simultaneously, after the actions of all the creatures that did not delay.
 You cannot delay more than once in a single phase.
 
 \subsection{Attacks}\label{Attacks}
@@ -265,12 +270,11 @@ Your attack modifier is equal to the following:
 If your attack succeeds, you deal damage equal to your weapon's damage die \add half your base attack bonus or half your Strength.
 
 \parhead{Dealing Nonlethal Damage} You can attempt to strike nonlethally with any weapon.
-If you hit, you deal half damage as nonlethal damage.
-See \pcref{Nonlethal Damage}.
+If you hit, you deal half damage as \glossterm{nonlethal damage} (see \pcref{Nonlethal Damage}).
 
 \subsubsection{Reach}\label{Reach}
-Normally, you can attack anyone within five feet of you.
-The range at which you can attack is called your ``reach'', and the area that you can attack into is called your ``threatened area''.
+Normally, you can make a melee attack against anyone within five feet of you.
+The range at which you can make melee attacks is called your \glossterm{reach}, and the area that you can attack into is called your \glossterm{threatened area}.
 Reach for larger and smaller creatures is determined by size, as shown on \trefnp{Size in Combat}.
 
 \subsection{Defenses}\label{Defenses}
@@ -278,7 +282,7 @@ Usually, when you are attacked, the attacker has to make an attack roll against 
 If the attack roll is at least as high as that defense, the attack succeeds.
 There are three physical defenses and two special defenses.
 \begin{itemize}
-    \item Armor defense (AD): Your Armor defense protects you from normal physical attacks, such as attempts to stab you with a sword.
+    \item Armor defense (AD): Your Armor defense protects you from normal physical attacks, such as attempts to hit you with a sword.
         It is the most commonly used defense.
         Armor defense is a physical defense.
     \item Maneuver defense: Your Maneuver defense protects you from unusual physical attacks, such as attempts to trip or disarm you.
@@ -314,11 +318,6 @@ The attributes and relevant bonuses which apply to each defense are described on
     \end{dtabularx}
 \end{dtable!*}
 
-\meh{\parhead{Base Attack Bonus} Your experience and aptitude in combat affects your ability to defend yourself; experienced warriors know how to recognize and avoid or parry blows that would easily fell novices.
-As a result, you add your base attack bonus to your Armor defense.
-Your fighting experience is even more important when defending against combat maneuvers, so you add your full base attack bonus to your Maneuver defense.}
-\meh{\parhead{Enhancement Bonus} You can have enhancement bonuses to all physical defenses, or to a specific physical defense.
-As normal, these enhancement bonuses do not stack with each other; only the highest applicable bonus is used.}
 \parhead{Natural Armor} Creatures with unusually tough skin or thick hide, including most monsters, gain bonuses to their Armor defense.
 These bonuses stack with any armor such creatures might wear.
 \parhead{Size Modifiers} Your size modifier and special size modifier are described on \tref{Size in Combat}.
@@ -327,7 +326,7 @@ These bonuses stack with any armor such creatures might wear.
 
 \subsubsection{Taking up Space}
 A typical human takes up a 5-ft. by 5-ft.  space in combat.
-For convenience, this is often called a ``square''.
+For convenience, this is often called a \glossterm{square}.
 Differently sized creatures can take up more or less space, as indicated on \tref{Size in Combat}.
 Normally, other creatures can't be in any squares you occupy.
 
@@ -344,11 +343,7 @@ While it is possible to be more precise than that, it's generally not worth the 
 
 \parhead{Diagonals} When measuring distance, the first diagonal counts as five feet of movement, and the second counds as ten feet of movement.
 The third costs five feet, the fourth costs ten feet, and so on.
-
-You can't move diagonally past a corner.
-You can move diagonally past a creature, even an opponent.
-You can also move diagonally past other impassable obstacles, such as pits.
-\parhead{Closest Creature} When it's important to determine the closest square or creature to a location, if multiple squares or creatures are equally close, pick one randomly.
+You can move diagonally past corners and enemies.
 
 \subsubsection{Threatening Foes}
 All squares threatened by any foes cost double the normal movement cost to move into or out of.
