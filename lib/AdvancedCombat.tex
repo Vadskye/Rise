@@ -3,12 +3,12 @@
 \section{Attacks}
 
 \subsection{Multiple Attacks}\label{Multiple Attacks}
-If your base attack bonus is \plus6 or higher, you can make multiple attacks as part of a full attack.This progression is shown on \trefnp{Attacks per Round}.
+If your base attack bonus is \plus6 or higher, you can make multiple attacks as part of a full attack. This progression is shown on \trefnp{Attacks per Round}.
 \begin{dtable}
     \lcaption{Attacks per Round}
     \begin{dtabularx}{\columnwidth}{*{3}{>{\lcol}X}}
         \thead{Base Attack Bonus} & \thead{Attacks per Round} \\
-\hline
+        \hline
         1-5     & 1 \\
         6-10    & 2 \\
         11-15   & 3 \\
@@ -17,15 +17,15 @@ If your base attack bonus is \plus6 or higher, you can make multiple attacks as 
     \end{dtabularx}
 \end{dtable}
 
-Some special abilities, such as the \spell{haste} spell, also grant you the ability to make multiple attacks. In all cases, making multiple attacks requires using a standard action to make a full attack. Additionally, any penalties imposed by taking multiple attacks do not affect any other attacks you make.
+Some special abilities, such as the \spell{haste} spell, also grant you the ability to make multiple attacks. In all cases, making multiple attacks requires using a standard action to make a full attack.
 
 \subsection{Special Attacks}
 
 \subsubsection{Feint}\label{Feint}
-Instead of striking to deal damage, you can feint to leave your foe off-balance. You make an attack with a melee weapon as normal, except that you target the creature's Reflex defense instead of its Armor defense. Success means you deal no damage, but you gain a \plus5 bonus to physical attacks against the creature for 1 round.
+Instead of striking to deal damage, you can feint to leave your foe off-balance. You make an attack with a melee weapon as normal, except that you target your target's Reflex defense instead of its Armor defense. Success means you deal no damage, but you gain a \plus5 bonus to melee attacks against the creature during the next round.
 
 \subsubsection{Touch Attacks}\label{Touch Attacks}
-Instead of striking to deal damage, you can try to just touch your opponent. \meh{This is usually done to channel spells that require touching a creature.} Touch attacks target Reflex defense instead of Armor defense.
+Instead of striking to deal damage, you can try to just touch your opponent. Touch attacks target Reflex defense instead of Armor defense, but deal no damage.
 
 \subsection{Combat Maneuvers}\label{Combat Maneuvers}
 A combat maneuver is an attempt to physically hinder your foe with your body, such as by shoving or tripping it. Unless otherwise noted, using a combat maneuver requires a free hand and replaces a physical attack made during a full attack. You make an attack against a creature within your reach, adding your maneuver modifier to the roll instead of your attack modifier. If your result equals or exceeds your foe's Maneuver defense, your attack hits, and your foe is affected by the maneuver.
@@ -34,13 +34,13 @@ A combat maneuver is an attempt to physically hinder your foe with your body, su
     \lcaption{Combat Maneuvers}
     \begin{dtabularx}{\columnwidth}{l l l X}
         \thead{Maneuver}  & \thead{Action} & \thead{Attribute} & \thead{Brief Description} \\
-\hline
+        \hline
         Dirty Trick & Attack & Str or Dex & Impose penalty on a foe \\
-        Disarm & Attack & Str or Dex & Force foe to drop item \\
-        Grapple & Attack & Str & Wrestle with a foe \\
-        Overrun & Move & Str & Move through a foe \\
-        Shove & Attack & Str &  Move a foe \\
-        Trip & Attack & Str or Dex & Trip a foe \\
+        Disarm      & Attack & Str or Dex & Force foe to drop item  \\
+        Grapple     & Attack & Str        & Wrestle with a foe      \\
+        Overrun     & Move   & Str        & Move through a foe      \\
+        Shove       & Attack & Str        & Move a foe              \\
+        Trip        & Attack & Str or Dex & Trip a foe              \\
     \end{dtabularx}
 \end{dtable}
 
@@ -55,17 +55,17 @@ Your attack attribute depends on the maneuver you are using, as described in \pc
 
 \subsubsection{Maneuver Descriptions}
 
-\parhead{Dirty Trick}\label{Dirty Trick} You strike your foe in a sensitive spot, pull its pants down, or creatively use your environment to attack. Success means the creature is \impaired with relevant actions for 1 round. For every 5 points by which you succeed, the creature is vulnerable for an additional round. You can perform a dirty trick with either Str or Dexterity.
+\parhead{Dirty Trick}\label{Dirty Trick} You strike your foe in a sensitive spot, pull its pants down, or creatively use your environment to attack. Success means the creature is \impaired with relevant actions for 1 round. For every 5 points by which you succeed, the creature is impaired for an additional round. You can perform a dirty trick with either Strength or Dexterity.
 
-\parhead{Disarm}\label{Disarm} You can strike an item your foe is wearing or holding. Success means you hit the object, and can choose whether or not to deal damage to it. If the item is not well secured, the item falls to the ground in the foe's square. If you take a foe's item using your bare hand, you can hold it rather than letting it fall to the ground. You can choose whether or not to deal damage to the object.
+\parhead{Disarm}\label{Disarm} You can strike an item your foe is wearing or holding. Success means you hit the object, and can choose whether or not to deal damage to it. If the item is not well secured, the item falls to the ground in the foe's square. If you take a foe's item using your bare hand, you can hold it rather than letting it fall to the ground.
 
-You can perform a disarm with any melee weapon, using either Strength or Dexterity.
+You can perform a disarm attack with any melee weapon, using either Strength or Dexterity.
 
 \parhead{Grapple}\label{Grapple} You physically grab and restrain your foe. Success means you and the creature become grappled, which limits your ability to act. See \pcref{Grappling} for more details.
 
-\parhead{Overrun}\label{Overrun} As part of a move action, you move directly through creatures in your way. Each creature in your way can choose to avoid you, allowing you to pass through its square unhindered. Each time you encounter a creature in your way that didn't avoid you, you make an overrun attack. Success means you can move through the creature's space, though it is considered difficult terrain. Success by 10 or more means the creature is knocked prone, and the area is not considered difficult terrain. Failure means you end your movement immediately. You can only overrun a creature with Strength.
+\parhead{Overrun}\label{Overrun} As part of a move action, you move directly through creatures in your way. Each creature in your way can choose to avoid you, allowing you to pass through its square unhindered. Each time you encounter a creature in your way that didn't avoid you, you make an overrun attack. Success means you can move through the creature's space, though it is considered difficult terrain. Success by 10 or more means the creature is knocked prone, and the area is not considered difficult terrain. Failure means you end your movement immediately. Failure by 10 or more means you end your movement and fall prone. You can only overrun a creature with Strength.
 
-\parhead{Shove}\label{Shove} You shove your foe where you want it to go. Success means you move the creature 5 feet in a direction of your choice. For every 5 points by which you succeed, you can move it an additional 5 feet. You cannot normally move the creature further after moving it outside of your reach. If the creature encounters a solid object or creature, you must stop shoving it. You can only shove a creature with Strength.
+\parhead{Shove}\label{Shove} You shove your foe where you want it to go. Success means you move the creature 5 feet in a direction of your choice. For every 5 points by which you succeed, you can move it an additional 5 feet. You cannot normally move the creature further after moving it outside of your reach. If you have movement remaining in the round, you can move with the creature in order to shove it farther. If the creature encounters a solid object or creature, you must stop shoving it. You can only shove a creature with Strength.
 
 \parhead{Trip}\label{Trip} You try to trip your foe. Success means the creature falls prone, causing it to take a \minus4 penalty to physical attacks and defenses. It can stand up as a move action. You can trip a creature with Strength or Dexterity.
 
@@ -80,7 +80,6 @@ You can perform a disarm with any melee weapon, using either Strength or Dexteri
 
 You can follow the target as far as your movement speed allows; if the target continues beyond that point, you remain stationary where your movement ended. If the target takes an action that makes it impossible to follow, such as teleporting or using certain abilities, you cannot follow it for the rest of the round.
 \parhead{Withdraw} As a move action, you can designate a target creature or object to withdraw from, and the minimum distance you want to maintain between you and the creature. This functions like following the creature, except that you specify a minimum distance between you and the target instead of a maximum distance.
-\parhead{Block}\label{Block} As a move action, you can remain stationary to impede the movement of nearby foes. All squares you threaten are considered \difficultterrain to your foes.
 
 \parhead{Charge}\label{Charge} As a full-round action, you can move up to your speed in both the movement and action phase, and make a single attack with a \plus2 bonus to hit at the end of your charge. When you charge, you take a \minus2 penalty to physical defenses until the end of the round.
 \par You must move at least 20 feet to gain the benefit of a charge, and all movement must be in a single straight line. If there are any obstacles in your path which hinder your movement, you cannot charge. If your charge fails or becomes invalid partway through, you move as far as you can and stop.
@@ -108,10 +107,10 @@ Creatures that take up multiple squares take up half their normal number of squa
 Some spells and abilities grant creatures the ability to move in unusual ways. These forms of movement are described here.
 
 \subsubsection{Burrowing}\label{Burrowing}
-A creature with a burrow speed can move through the ground at the indicated speed in any direction, even vertically. Unless otherwise noted, the creature can only burrow through dirt and loose earth, not rock or harder substances. It does not leave behind a usable tunnel for other creatures. 
+A creature with a burrow speed can move through the ground at the indicated speed in any direction, even vertically. Unless otherwise noted, the creature can only burrow through dirt and loose earth, not rock or harder substances. It does not leave behind a usable tunnel for other creatures.
 
 \subsubsection{Climbing}\label{Climbing}
-A creature with a climb speed can move at the indicated speed while climbing. In addition, it has a \plus5 bonus to Climb checks (see \pcref{Climb}). It can always choose to take 10 on Climb checks, even if rushed or threatened. It cannot make an accelerated climb. 
+A creature with a climb speed can move at the indicated speed while climbing. In addition, it has a \plus5 bonus to Climb checks (see \pcref{Climb}). It can always choose to take 10 on Climb checks, even if rushed or threatened. It cannot make an accelerated climb.
 
 \subsubsection{Flying}\label{Flying}
 A creature with a fly speed can fly through the air at the indicated speed. It must be unencumbered (see \pcref{Encumbrance}). If a creature with a fly speed is encumbered, it is treated as having a glide speed instead (see \pcref{Gliding}), which it can use to glide even though it is encumbered.
@@ -208,9 +207,9 @@ There are two types of cover: active cover and passive cover.
 
 \subsubsection{Active Cover}
 
-If the obstacle is active and mobile, such as a creature or tree branches blowing in the wind, the defender has active cover. Any attacks against a creature with active cover relative to you have a 20\% miss chance. After rolling the attack, the attacker must make a miss chance percentile roll to see if the attack misses due to active cover. If an attack misses due to active cover, the attack is made against the intervening obstacle instead. If the attack is successful, the obstacle takes any damage from the attack normally. 
+If the obstacle is active and mobile, such as a creature or tree branches blowing in the wind, the defender has active cover. Any attacks against a creature with active cover relative to you have a 20\% miss chance. After rolling the attack, the attacker must make a miss chance percentile roll to see if the attack misses due to active cover. If an attack misses due to active cover, the attack is made against the intervening obstacle instead. If the attack is successful, the obstacle takes any damage from the attack normally.
 
-\parhead{Small Obstacles} Generally, an obstacle smaller than you are does not provide active cover (so a halfling does not provide active cover to a human). 
+\parhead{Small Obstacles} Generally, an obstacle smaller than you are does not provide active cover (so a halfling does not provide active cover to a human).
 
 \subsubsection{Passive Cover}
 
@@ -238,10 +237,10 @@ In addition, some magical effects provide concealment against all attacks, regar
 \parhead{Concealment and Stealth Checks} You can use concealment to make a Stealth check to hide.
 
 \subsection{Grappling}\label{Grappling}
-Grappling creatures are physically struggling with each other. While grappled, you suffer certain penalties and restrictions, as described below. 
+Grappling creatures are physically struggling with each other. While grappled, you suffer certain penalties and restrictions, as described below.
 
 \subsubsection{Being In A Grapple}
-While grappling, you suffer certain penalties and restrictions, as described below. Other than these restrictions, you can act normally. You can also take certain actions in a grapple, as described in \pcref{Grapple Actions} 
+While grappling, you suffer certain penalties and restrictions, as described below. Other than these restrictions, you can act normally. You can also take certain actions in a grapple, as described in \pcref{Grapple Actions}
 \begin{itemize}
     \item You must use a free hand (or equivalent limbs) to grapple, preventing you from taking any actions which would require having two free hands. If you cannot free a hand, you suffer a \minus10 penalty to all physical attacks, including grapple attacks, until you have a free hand.
     \item You are \defenseless against creatures you are not grappling with.
@@ -256,7 +255,7 @@ While grappled, you can take four special actions to try to affect the grapple.
 \parhead{Bind Foe} As a standard action, you can make a grapple attack to bind your foe with ropes or other restraints. You must have the restraints in hand (in addition to the free hand required to grapple). Apply the result against the Maneuver defense of a creature grappling you. Success means the creature is bound, rendering it helpless and effectively paralyzed. The only physical actions a bound creature can take are to esccape or break the bindings. Escaping the bindings requires a grapple attack or Escape Artist check which beats the grapple attack made to bind the creature. Breaking the bindings requires making a Strength check sufficient to break the item used to bind the creature. If you have the time, you can take 20 on your grapple attack to secure bindings on a helpless foe, including a foe rendered helpless through this attack.
 \parhead{Escape the Grapple} As a standard action, you can make a grapple attack or Escape Artist check to escape from the grapple. Apply the result against the Maneuver defense of each creature grappling you. Success against an individual creature means you are no longer grappling that creature.
 \parhead{Move the Grapple} As a move action, you can make a grapple attack to move the grapple. Apply the result against the Maneuver defense of each creature grappling you. If you beat every creature's Maneuver defense, you can move yourself and all other creatures in the grapple up to half your speed. At the end of your movement, you choose which spaces creatures grappling you are in, as long as they stay adjacent to you.
-\parhead{Pin} As a standard action, you can make a grapple attack to pin a foe. If you succeed, that creature becomes pinned (in addition to being grappled), while you remain only grappled. The only physical action a pinned creature can take is to escape the grapple, though it can take mental actions. At your discretion, you can cover the mouth of a pinned creature to prevent it from speaking. 
+\parhead{Pin} As a standard action, you can make a grapple attack to pin a foe. If you succeed, that creature becomes pinned (in addition to being grappled), while you remain only grappled. The only physical action a pinned creature can take is to escape the grapple, though it can take mental actions. At your discretion, you can cover the mouth of a pinned creature to prevent it from speaking.
 
 \subsection{Helpless Defenders}
 A helpless creature is completely at an opponent's mercy. Its physical defenses are equal to 10 \add its size modifier. Paralyzed, bound, and unconscious creatures are helpless.
@@ -279,7 +278,7 @@ Sometimes, creatures are not aware that combat is taking place when the combat s
 
 \subsection{Partial Actions}
 
-If you are restricted to only taking a move or standard action, but not both, you can spend a standard action to perform a partial version of a full-round action. For most actions, you spend the first round starting the action, and use a second standard action to complete it. Some full-round actions have specific partial versions described below which you take instead. You can only take these partial actions when you cannot take full-round actions. 
+If you are restricted to only taking a move or standard action, but not both, you can spend a standard action to perform a partial version of a full-round action. For most actions, you spend the first round starting the action, and use a second standard action to complete it. Some full-round actions have specific partial versions described below which you take instead. You can only take these partial actions when you cannot take full-round actions.
 
 \subsubsection{Partial Charge}
 As a standard action, you can move up to your speed and make a single attack against a foe. You must move in a straight line, and your movement must not be impeded in any way. In addition, you take a \minus2 penalty to physical defenses until the start of your next turn. An interrupted partial charge becomes a move action.
@@ -297,7 +296,7 @@ If a bonus with a maximum value is applied to a value that already exceeds the m
 \subsection{Doubling}\label{Doubling}
 If you double any in-game value twice, it becomes three times as large. An additional doubling would make it four times as large, and so on. For example, if you make an attack that deals double damage and you get a critical hit, you deal triple damage.
 
-\parhead{Real-World Values} Values that are ``real'', such as movement and distance, are an exception. If you double a real-world value twice, it becomes four times as large. 
+\parhead{Real-World Values} Values that are ``real'', such as movement and distance, are an exception. If you double a real-world value twice, it becomes four times as large.
 
 \subsection{Extraordinary Size Differences}\label{Special Size Rules}
 
@@ -313,7 +312,7 @@ If a creature without a natural reach uses a reach weapon, it gains no benefits 
 \parhead{Stealth} Small creatures gain a bonus to Stealth checks equal to their special size modifier.
 
 \subsubsection{Very Large Creatures}
-\parhead{Space} Very large creatures take up multiple squares. Anything which affects a single square the creature occupies affects the creature. 
+\parhead{Space} Very large creatures take up multiple squares. Anything which affects a single square the creature occupies affects the creature.
 
 \parhead{Reach} Creatures that take up more than 1 square typically have a natural reach of 10 feet or more, meaning that they can reach targets even if they aren't in adjacent squares. Creatures with a large natural reach can attack anyone within their reach, including adjacent foes.
 
