@@ -13,7 +13,7 @@ If your character is weak or carrying a lot of gear, however, then you'll need t
     \lcaption{Weight Limits}
     \setlength{\tabcolsep}{4pt}
     \begin{dtabularx}{\columnwidth}{X l l l l}
-         \thead{Strength} & \thead{Unencumbered} & \thead{Maximum} & \thead{Overloaded} & \thead{Push/Drag} \\
+         \tb{Strength} & \tb{Unencumbered} & \tb{Maximum} & \tb{Overloaded} & \tb{Push/Drag} \\
          \hline
         -9 & 2 lb.  & 4 lb.   & 6 lb.   & 20 lb.  \\
         -8 & 3      & 6       & 9       & 30      \\
@@ -138,7 +138,7 @@ Characters exploring an area use local movement, measured in feet per minute.
 \begin{dtable}
 \lcaption{Terrain and Overland Movement}
 \begin{dtabularx}{\columnwidth}{>{\lcol}X c c c}
-\thead{Terrain}  & \thead{Highway} & \thead{Road or Trail} & \thead{Trackless} \\
+\tb{Terrain}  & \tb{Highway} & \tb{Road or Trail} & \tb{Trackless} \\
 \hline
 Desert, sandy & \mult1 & \mult1/2 & \mult1/2 \\
 Forest & \mult1 & \mult1 & \mult1/2 \\
@@ -155,7 +155,7 @@ Tundra, frozen & \mult1 & \mult3/4 & \mult3/4
 \begin{dtable}
 \lcaption{Mounts and Vehicles}
 \begin{dtabularx}{\columnwidth}{>{\lcol}X l l}
-\thead{Mount/Vehicle} & \thead{Per Hour} & \thead{Per Day} \\
+\tb{Mount/Vehicle} & \tb{Per Hour} & \tb{Per Day} \\
 \hline
 Mount (carrying load) &  &  \\
 \tind Light horse or light warhorse & 6 miles & 60 miles \\
@@ -173,7 +173,7 @@ Mount (carrying load) &  &  \\
 \tind Dog, riding & 4 miles & 40 miles \\
 \tind Dog, riding (101-300 lb.)\fn{1} & 3 miles & 30 miles \\
 \tind Cart or wagon & 2 miles & 20 miles \\
-\thead{Ship} &  &  \\
+\tb{Ship} &  &  \\
 \tind Raft or barge (poled or towed)\fn{2} & 1/2 mile & 5 miles \\
 \tind Keelboat (rowed)\fn{2} & 1 mile & 10 miles \\
 \tind Rowboat (rowed)\fn{2} & 1-1/2 miles & 15 miles \\
@@ -271,7 +271,7 @@ The standard coin weighs about a third of an ounce (fifty to the pound).
 \begin{dtable}
 \lcaption{Coin Exchange Values}
 \begin{dtabularx}{\columnwidth}{l c *{4}{>{\ccol}X}}
-& & \thead{CP} & \thead{SP} & \thead{GP} & \thead{PP} \\
+& & \tb{CP} & \tb{SP} & \tb{GP} & \tb{PP} \\
 \hline
 Copper piece (cp) & = & 1 & 1/10 & 1/100 & 1/1,000 \\
 Silver piece (sp) & = & 10 & 1 & 1/10 & 1/100 \\
@@ -286,7 +286,7 @@ Merchants commonly exchange trade goods without using currency. As a means of co
 \begin{dtable}
 \lcaption{Trade Goods}
 \begin{dtabularx}{\columnwidth}{l >{\lcol}X}
-\thead{Cost} & \thead{Item} \\
+\tb{Cost} & \tb{Item} \\
 \hline
 1 cp & One pound of wheat \\
 2 cp & One pound of flour \\
@@ -314,9 +314,9 @@ Trade goods are the exception to the half-price rule. A trade good, in this sens
 \begin{dtable!*}
 \lcaption{Goods and Services}
 \begin{dtabularx}{\textwidth}{>{\lcol}X c c >{\lcol}X c c >{\lcol}X c c}
-\thead{Item} & \thead{Cost} & \thead{Weight} & \thead{Item} & \thead{Cost} & \thead{Weight} & \thead{Item} & \thead{Cost} & \thead{Weight} \\
+\tb{Item} & \tb{Cost} & \tb{Weight} & \tb{Item} & \tb{Cost} & \tb{Weight} & \tb{Item} & \tb{Cost} & \tb{Weight} \\
 \hline
-\multicolumn{3}{>{\columncolor{tbrown}}c}{\thead{Adventuring Gear}} & \tind Average & 40 gp & 1 lb. & \multicolumn{3}{>{\columncolor{tbrown}}c}{\thead{Special Substances and Items}} \\
+\multicolumn{3}{>{\columncolor{tbrown}}c}{\tb{Adventuring Gear}} & \tind Average & 40 gp & 1 lb. & \multicolumn{3}{>{\columncolor{tbrown}}c}{\tb{Special Substances and Items}} \\
 Backpack (empty) & 2 gp & 2 lb.\fn{1} & \tind Good & 80 gp & 1 lb. & Acid (flask) & 5 gp & 1 lb. \\
 Barrel (empty) & 2 gp & 30 lb. & \tind Amazing & 150 gp & 1 lb. & Alchemist's fire (flask) & 5 gp & 1 lb. \\
 Basket (empty) & 4 sp & 1 lb. & Manacles & 15 gp & 2 lb. & Antitoxin (vial) & 10 gp & \x \\
@@ -327,7 +327,7 @@ Block and tackle & 5 gp & 5 lb. & Oil (1-pint flask) & 1 sp & 1 lb. & Sunrod & 2
 Bottle, wine, glass & 2 gp & \x & Paper (sheet) & 4 sp & \x & Tanglefoot bag & 15 gp & 4 lb. \\
 Bucket (empty) & 5 sp & 2 lb. & Parchment (sheet) & 2 sp & \x & Thunderstone & 10 gp & 1 lb. \\
 Caltrops & 1 gp & 2 lb. & Pick, miner's & 3 gp & 10 lb. & Tindertwig & 5 sp & \x \\
-Candle & 1 cp & \x & Pitcher, clay & 2 cp & 5 lb. & \multicolumn{3}{c}{\thead{Tools and Skill Kits}}  \\
+Candle & 1 cp & \x & Pitcher, clay & 2 cp & 5 lb. & \multicolumn{3}{c}{\tb{Tools and Skill Kits}}  \\
 Canvas (sq. yd.) & 1 sp & 1 lb. & Piton & 1 sp & 1/2 lb. & Item & Cost & Weight \\
 Case, map or scroll & 1 gp & 1/2 lb. & Pole, 10 foot & 5 cp & 8 lb. & Alchemist's lab & 500 gp & 40 lb. \\
 Chain (10 ft.) & 30 gp & 2 lb. & Pot, iron & 5 sp & 10 lb. & Artisan's tools & 5 gp & 5 lb. \\
@@ -357,9 +357,9 @@ Lock &   & 1 lb. & Waterskin & 1 gp & 4 lb.\fn{1} & Water clock & 1,000 gp & 200
 
 \begin{dtable!*}
 \begin{dtabularx}{\textwidth}{>{\lcol}X c c >{\lcol}X c c >{\lcol}X c c}
-\thead{Clothing} &  &  & \thead{Mounts and Related Gear} &  &  & \thead{Transport} &  & \\
+\tb{Clothing} &  &  & \tb{Mounts and Related Gear} &  &  & \tb{Transport} &  & \\
 \hline
-\thead{Item} & \thead{Cost} & \thead{Weight} & \thead{Item} & \thead{Cost} & \thead{Weight} & \thead{Item} & \thead{Cost} & \thead{Weight} \\
+\tb{Item} & \tb{Cost} & \tb{Weight} & \tb{Item} & \tb{Cost} & \tb{Weight} & \tb{Item} & \tb{Cost} & \tb{Weight} \\
 Artisan's outfit & 1 gp & 4 lb. & Barding &  &  & Carriage & 100 gp & 600 lb. \\
 Cleric's vestments & 5 gp & 6 lb. & \tind Medium creature & \mult2\fn{2} & \mult1\fn{2}  & Cart & 15 gp & 200 lb. \\
 Cold weather outfit & 8 gp & 7 lb. & \tind Large creature & \mult4\fn{2} & \mult2\fn{2}  & Galley & 30,000 gp & \x \\
@@ -371,15 +371,15 @@ Noble's outfit & 75 gp & 10 lb. & Feed (per day) & 5 cp & 10 lb. & Sailing ship 
 Peasant's outfit & 1 sp & 2 lb. & Horse &  &  & Sled & 20 gp & 300 lb. \\
 Royal outfit & 200 gp & 15 lb. & \tind Horse, heavy & 200 gp & \x & Wagon & 35 gp & 400 lb. \\
 Scholar's outfit & 5 gp & 6 lb. & \tind Horse, light & 75 gp & \x & Warship & 25,000 gp & \x \\
-Traveler's outfit & 1 gp & 5 lb. & \tind Pony & 30 gp & \x & \thead{Spellcasting and Services} &  &  \\
-\thead{Food, Drink, and Lodging} &  &  & \tind Warhorse, heavy & 400 gp & \x & Service & \multicolumn{2}{l}{Cost} \\
+Traveler's outfit & 1 gp & 5 lb. & \tind Pony & 30 gp & \x & \tb{Spellcasting and Services} &  &  \\
+\tb{Food, Drink, and Lodging} &  &  & \tind Warhorse, heavy & 400 gp & \x & Service & \multicolumn{2}{l}{Cost} \\
 Item & Cost & Weight & \tind Warhorse, light & 150 gp & \x & Coach cab & \multicolumn{2}{l}{3 cp per mile} \\
 Ale &  &  & \tind Warpony & 100 gp & \x & Hireling, trained & \multicolumn{2}{l}{3 sp per day} \\
 \tind Gallon & 2 sp & 8 lb. & Saddle &  &  & Hireling, untrained & \multicolumn{2}{l}{1 sp per day} \\
 \tind Mug & 4 cp & 1 lb. & \tind Military & 20 gp & 30 lb. & Messenger & \multicolumn{2}{l}{2 cp per mile} \\
 Banquet (per person) & 10 gp & \x & \tind Pack & 5 gp & 15 lb. & Road or gate toll & \multicolumn{2}{l}{1 cp} \\
 Bread, per loaf & 2 cp & 1/2 lb. & \tind Riding & 10 gp & 25 lb. & Ship's passage & \multicolumn{2}{l}{1 sp per mile} \\
-Cheese, hunk of & 1 sp & 1/2 lb. & \thead{Saddle, Exotic} &  &  &  & & \\
+Cheese, hunk of & 1 sp & 1/2 lb. & \tb{Saddle, Exotic} &  &  &  & & \\
 Inn stay (per day) &  &  & \tind Military & 60 gp & 40 lb. & Spell, 1st-level & \multicolumn{2}{l}{Spellpower x 10 gp\fn{1}} \\
 \tind Good & 2 gp & \x & \tind Pack & 15 gp & 20 lb. & Spell, 2nd-level & \multicolumn{2}{l}{Spellpower x 20 gp\fn{1}} \\
 \tind Common & 5 sp & \x & \tind Riding & 30 gp & 30 lb. & Spell, 3rd-level & \multicolumn{2}{l}{Spellpower x 30 gp\fn{1}} \\
