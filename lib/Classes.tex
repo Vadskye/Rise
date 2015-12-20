@@ -32,7 +32,8 @@ These are skills that members of this class are typically good at (see \pcref{Sk
 \subsubsection{Base Class Features}
 
 Abilities contained within this heading only apply to characters with the current class as a base class.
-A character can have only one base class (but see the 
+A character can normally have only one base class.
+Except in unusual circumstances, a character's base class is the class that the character took at 1st level.
 
 \parhead{Skill Points}
 This is the number of skill points that members of this class get.
@@ -42,11 +43,11 @@ These are the types of equipment that members of this class are trained in using
 
 \parhead{Base Attack Progression}
 This measures how skilled a character is in combat.
-A character adds his base attack bonus to all physical attacks he makes, and half his base attack bonus to his physical defenses, which represents how hard he is to hit.
+A character can use his combat prowess to determine his Armor and Maneuver defenses, and his attack bonus with physical attacks.
 There are three progressions: Good, Average, or Poor.
 The effects of each progression are described on \trefnp{Base Progressions}.
 
-A high base attack bonus can grant additional attacks, as described in \pcref{Multiple Attacks}.
+A high combat prowess can grant additional attacks, as described in \pcref{Multiple Attacks}.
 
 \parhead{Base Defense Progressions}\label{Base Defense Progressions}
 This measures how resistant members of the class are to unusual kinds of attacks.
@@ -61,7 +62,7 @@ The effects of each progression are described on \trefnp{Base Progressions}.
     \lcaption{Base Progressions}
     \setlength\tabcolsep{0.45em}%
     \begin{dtabularx}{\columnwidth}{l l X}
-        \thead{Progression} & \thead{Base Attack Bonus} & \thead{Base Defense Bonus}        \\
+        \thead{Progression} & \thead{Combat Prowess} & \thead{Base Defense Bonus}        \\
         \hline
         Good                & Class level \add 2             & Five-quarters class level \add 3  \\
         Average             & Four-fifths class level \add 2 & Class level \add 2                \\
@@ -133,7 +134,7 @@ The class features that a character gets for being a member of the class.
 \begin{dtable}
     \lcaption{Barbarian Progression}
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
+        \thead{Level} & \thead{Combat Prowess} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
         \barbarianprogressionrow{1}  & Rage \plus2, damage reduction, grit \\
         \barbarianprogressionrow{2}  & Channeled rage                \\
@@ -354,7 +355,7 @@ If he stops being lawful, he regains his ability to rage and take barbarian leve
 \begin{dtable}
     \lcaption{Cleric Progression}
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{2em} >{\ccol}p{\babcolavg} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
+        \thead{Level} & \thead{Combat Prowess} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
         \clericprogressionrow{1}  & Devotion \plus2, domain gifts, spells, rituals \\
         \clericprogressionrow{2}  & Domain invocation                          \\
@@ -906,7 +907,7 @@ He cannot thereafter gain levels as a cleric of that god until he atones (see th
 \begin{dtable}
     \lcaption{Druid Progression}
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\centering}p{\babcolavg} *{3}{>{\ccol}p{\savecol}} >{\ccol}X}
-        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
+        \thead{Level} & \thead{Combat Prowess} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
         \druidprogressionrow{1}  & Attunement \plus2, natural casting, rituals, spells \\
         \druidprogressionrow{2}  & Wild aspect                             \\
@@ -1349,7 +1350,7 @@ This bonus increases by 1 at her 7th druid level, and every 4 druid levels there
 \begin{dtable}
     \lcaption{Fighter Progression}
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
+        \thead{Level} & \thead{Combat Prowess} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
         \fighterprogressionrow{1}   & Advanced training, armor discipline   \\
         \fighterprogressionrow{2}   & Bonus feat                           \\
@@ -1392,7 +1393,7 @@ A character with fighter as a base class gains the following abilities.
  A fighter is proficient with simple weapons, any four other weapon groups,  all armor (heavy, medium, and light) and shields.
 
 \cf{Ftr}{Advanced Training}[Ex]
-A fighter treats his base attack bonus as if it were 2 points higher than it actually is for the purpose of meeting feat prerequisites.
+A fighter treats his combat prowess as if it were 2 points higher than it actually is for the purpose of meeting feat prerequisites.
 
 \subsection{Class Features}
 All fighters have the following abilities.
@@ -1407,7 +1408,7 @@ If he improves his resilience, he gains a \plus1 bonus to Armor defense while we
 \cf{Ftr}[2nd]{Bonus Feat}
 The fighter gets a bonus combat-oriented feat.
 This bonus feat must be drawn from the feats noted as combat feats on \tref{Combat Feats}.
-A fighter must still meet all prerequisites for a bonus feat, including attribute score and base attack bonus minimums.
+A fighter must still meet all prerequisites for a bonus feat, including attribute and combat prowess minimums.
 The fighter gains an additional bonus feat at his 6th fighter level and every four fighter levels thereafter (6th, 10th, 14th, and 18th).
 
 \cf{Ftr}[3rd]{Weapon Discipline}
@@ -1503,7 +1504,7 @@ He retains this benefit for one week after the training.
 The fighter can improve his allies' combat abilities.
 As a standard action, he may grant the use of one of his combat feats to allies within \rngmed range of him who can see and hear him.
 He can affect a number of allies equal to half his Intelligence (minimum 1).
-Affected allies must meet base attack bonus prerequisites for the granted feat, but they can ignore all other prerequisites.
+Affected allies must meet combat prowess prerequisites for the granted feat, but they can ignore all other prerequisites.
 The effect lasts as long as the fighter spends a standard action to maintain the effect, and for 5 rounds thereafter.
 The fighter can use this ability a number of times per day equal to his Intelligence or half his fighter level, whichever is higher.
 
@@ -1570,7 +1571,7 @@ As a swift action, he can exchange a single adaptive combat feat from his adapat
 \begin{dtable}
     \lcaption{Monk Progression}
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolavg} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
+        \thead{Level} & \thead{Combat Prowess} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
         \monkprogressionrow{1}  & \Ki strike \plus1, \ki ward, unarmed warrior  \\
         \monkprogressionrow{2}  & Channel \ki                                   \\
@@ -1797,7 +1798,7 @@ If she stops being chaotic, she regains her \ki powers and ability to take monk 
 \begin{dtable}
     \lcaption{Paladin Progression}
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
+        \thead{Level} & \thead{Combat Prowess} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
         \paladinprogressionrow{1}  & Divine invocation (smite), divine protection \\
         \paladinprogressionrow{2}  & Divine invocation                            \\
@@ -2164,7 +2165,7 @@ She regains her abilities and advancement potential if she atones for her violat
 \begin{dtable}
     \lcaption{Ranger Progression}
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
+        \thead{Level} & \thead{Combat Prowess} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
         \rangerprogressionrow{1}  & Quarry \plus2, tenacious hunter, Track   \\
         \rangerprogressionrow{2}  & Fast movement, ranger lore               \\
@@ -2487,7 +2488,7 @@ He gains the ability to see all things as they actually are, as the \spell{true 
 \begin{dtable}
     \lcaption{Rogue Progression}
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
+        \thead{Level} & \thead{Combat Prowess} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
         \rogueprogressionrow{1}  & Advanced training, sneak attack \plus1d6                  \\
         \rogueprogressionrow{2}  & Skill talent                           \\
@@ -2724,7 +2725,7 @@ This does not allow her to deliver ambush attacks to the same creature multiple 
 \begin{dtable}
     \lcaption{Sorcerer Progression}
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolpoor} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
+        \thead{Level} & \thead{Combat Prowess} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
         \sorcererprogressionrow{1}  & Cantrip, spells, wild magic \plus2, wild tolerance    \\
         \sorcererprogressionrow{2}  & Arcane adaptation, cantrip            \\
@@ -2910,7 +2911,7 @@ Success means that the warlock's pact backfires, allowing the dark entities whic
 \begin{dtable*}
     \lcaption{Spellwarped Progression}
     \begin{dtabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{2}{>{\ccol}p{4.5em}} >{\lcol}X}
-        \thead{Level} & \thead{Base Attack Bonus} & \thead{Good Defense}\fn{1} & \thead{Normal Defenses}\fn{1} & \thead{Special} \\
+        \thead{Level} & \thead{Combat Prowess} & \thead{Good Defense}\fn{1} & \thead{Normal Defenses}\fn{1} & \thead{Special} \\
         \hline
         \spellwarpedprogressionrow{1}  & Innate magic, spellwarped invocation, pool regeneration, spellwarp pool  \\
         \spellwarpedprogressionrow{2}  & Spellwarped body, surge of power                     \\
@@ -3431,7 +3432,7 @@ This functions like the temporal prison invocation, except that no attack is req
 \begin{dtable}
     \lcaption{Wizard Progression}
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolpoor} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-        \thead{Level} & \thead{Base Attack Bonus} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
+        \thead{Level} & \thead{Combat Prowess} & \thead{Fort} & \thead{Ref} & \thead{Ment} & \thead{Special} \\
         \hline
         \wizardprogressionrow{1}  & Cantrip, rituals, spells, prepared spells \plus2 \\
         \wizardprogressionrow{2}  & Cantrip, magic feat, specialization              \\
