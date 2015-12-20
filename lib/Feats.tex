@@ -9,7 +9,7 @@ Classes can sometimes grant bonus feats as well, which are in addition to these 
 
 \subsection{Prerequisites}
 Some feats have prerequisites.
-Your character must have the indicated attribute score, class feature, feat, skill, base attack bonus, or other quality designated in order to select or use that feat.
+Your character must have the indicated attribute score, class feature, feat, skill, combat prowess, or other quality designated in order to select or use that feat.
 A character can gain a feat at the same level at which he or she gains the prerequisite.
 
 A character can't use a feat if he or she has lost a prerequisite.
@@ -112,7 +112,7 @@ You lose access to the spellgift feats in order by when you acquired them, start
 
 \subsection{Combat Feats}
 Combat feats affect a character's combat abilities.
-Many combat feats require a minimum base attack bonus to acquire.
+Many combat feats require a minimum combat prowess to acquire.
 
 \subsection{Combat Maneuver Feats}
 Combat maneuver feats are combat feats which specifically deal with maneuvers -- pushing opponents around, grappling them, tripping them, or other unusual attacks.
@@ -220,7 +220,7 @@ Some strike feats instead require a specific action to use.
 
         \midrule
         \thead{Magic Style Feats} & \thead{Prerequisites} & \thead{Benefit} & \thead{Page} \\
-        \featref{Brutal Magic} & Base attack bonus \plus4, 1st level spells & Gain spellpower bonus after making physical attack & \featpref{Brutal Magic} \\
+        \featref{Brutal Magic} & Combat prowess 4, 1st level spells & Gain spellpower bonus after making physical attack & \featpref{Brutal Magic} \\
         \featref{Craftcaster} & Craft (any) 10 ranks, 2nd level spells & Increase spellpower when creating, transforming objects & \featpref{Craftcaster} \\
         \featref{Peaceful Magic} & 2nd level spells & Gain spellpower bonus after not taking damage & \featpref{Peaceful Magic} \\
         \featref{Retributive Magic} & 1st level Abjuration spell & Gain spellpower bonus after taking damage & \featpref{Retributive Magic} \\
@@ -302,7 +302,7 @@ Some strike feats instead require a specific action to use.
         \featref{Trapfinder} & Awareness 5 ranks & Find traps faster & \featpref{Trapfinder} \\
         \featref{Trap Sense} & Awareness 10 ranks & Automatically detect traps & \featpref{Trap Sense} \\
         \featref{Track} & \x &  Use Survival skill to track & \featpref{Track} \\
-        \featref{Veteran's Experience} & Base attack bonus \plus8 & Identify monsters without Knowledge & \featpref{Veteran's Experience} \\
+        \featref{Veteran's Experience} & Combat prowess 8 & Identify monsters without Knowledge & \featpref{Veteran's Experience} \\
         \featref{Wallpuncher} & Strength 5, Climb 10 & Punch walls to create handholds & \featpref{Wallpuncher} \\
 
         \midrule
@@ -316,9 +316,9 @@ Some strike feats instead require a specific action to use.
 
 \subsection{Combat Feat Table}\label{cap:Combat Feats}
 
-Many combat feats require a specific number of physical attacks.\\
-Only physical attacks that come from having a high base attack bonus count towards these prerequisites.\\
-The table of combat feats is organized according to the number of physical attacks each feat requires.\\
+Some combat feats require a specific number of physical attacks.\\
+Only physical attacks that come from having a high combat prowess count towards these prerequisites.\\
+The table of combat feats is organized according to the combat prowess each feat requires.\\
 
 \begin{longtabuwrapper}
     \begin{longtabu}{>{\lcol}p{10em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{6em} >{\lcol}p{3em}}
@@ -478,7 +478,7 @@ The table of combat feats is organized according to the number of physical attac
 Here is the format for feat descriptions.
 
 \ssecfake{Feat Name [Type of Feat]}
-\featpre A minimum attribute score, another feat or feats, a minimum base attack bonus, a minimum number of ranks in one or more skills, or a class level that a character must have in order to acquire this feat.
+\featpre A minimum attribute score, another feat or feats, a minimum combat prowess, a minimum number of ranks in one or more skills, or a class level that a character must have in order to acquire this feat.
 This entry is absent if a feat has no prerequisite.
 A feat may have more than one prerequisite.
 \featben What the feat enables the character (``you'' in the feat description) to do.
@@ -556,7 +556,7 @@ Any other abilities, such as channeled rages, function normally.
 You have a 50\% chance to miss opponents you can't see, and you are \defenseless against them.
 
 \feat{Brutal Magic}{Magic, Style}
-\featpres Base attack bonus \plus4, 1st level spells.
+\featpres Combat prowess 4, 1st level spells.
 \featben At the end of each round, if you dealt lethal damage in excess of your spellpower with physical attacks that round, you gain a \plus2 bonus to spellpower during the next round.
 
 \feat{Calculated Strike}{Combat, Precision, Strike}
@@ -662,7 +662,7 @@ There is no limit to the number of times you can use this feat per round.
 You ignore that creature when determining whether you are \engaged in combat.
 
 \feat{Covering Fire}{Combat, Style}
-\featpres Perception 5, base attack bonus \plus4.
+\featpres Perception 5, combat prowess 4.
 \featben While in this style, if you hit a creature with a physical ranged attack, it is \impaired with physical attacks for 1 round.
 \stylereq Wield a ranged weapon.
 
@@ -694,7 +694,7 @@ If this bonus is not used within 1 round, it is lost.
 \featben When casting spells which create or transform a physical substance that you are trained to craft, you gain a \plus1 bonus to your spellpower per 5 ranks you have in the appropriate Craft skill.
 
 \feat{Deadly Aim}{Combat, Precision}
-\featpres Perception 5, base attack bonus \plus4.
+\featpres Perception 5, combat prowess 4.
 \featben You gain a \plus1 bonus to physical ranged damage rolls.
 This bonus increases to \plus2 at Perception 10, and to \plus3 at Perception 20.
 
@@ -713,7 +713,7 @@ If your Intelligence is at least 5, you take no penalty to attack bonus.
 \featben You must have at least one hand free (holding nothing) to use this feat.
 Once per round when you would normally be hit with a ranged weapon, you may deflect it so that you take no damage from it.
 You must be aware of the attack and not flatfooted.
-You can deflect one additional attack at base attack bonus \plus5, \plus10, \plus15, and \plus20, to a maximum number of arrows equal to your Dexterity.
+You can deflect a number of arrows equal to the number of attacks you can make.
 \par Attempting to deflect a ranged weapon doesn't count as an action.
 Unusually massive ranged weapons and ranged attacks generated by spell effects can't be deflected.
 
@@ -767,7 +767,7 @@ All spellgift feats you have use the same pool of spellgift points.
 The number of spellgift feats you have cannot exceed your Willpower.
 
 \feat{Dodge}{Combat, Defense, Reaction}
-\featpre Dexterity 5, base attack bonus \plus4.
+\featpre Dexterity 5, combat prowess 4.
 \featben You gain a \plus1 bonus to physical defenses (Armor, Manuever, Reflex).
 This bonus increases to \plus2 at Dexterity 10, and to \plus3 at Dexterity 20.
 
@@ -894,7 +894,7 @@ This metamagic can only be applied to spells with a range of \rngclose, \rngmed,
 An extended spell uses up a spell slot one level higher than the spell's actual level.
 
 \feat{Eye of the Storm}{Awareness, Combat, Defense}
-\featpre Perception 5, base attack bonus \plus4.
+\featpre Perception 5, combat prowess 4.
 \featben You reduce your overwhelm penalties by 1.
 This penalty reduction increases to 2 at Perception 10, and to 3 at Perception 20.
 If your overwhelm penalty is reduced to 0, you are not considered to be overwhelmed.
@@ -1009,7 +1009,7 @@ In addition, you can use Survival in place of Craft (poison) for the purposes of
 If you do, those feats and abilities only affect fungal poisons.
 
 \feat{Gang Up}{Combat}
-\featpre Base attack bonus \plus4.
+\featpre Combat prowess 4.
 \featben You count as one additional creature for the purpose of determining overwhelm penalties.
 This does not allow you to overwhelm a creature by yourself.
 
@@ -1025,7 +1025,7 @@ This penalty reduction increases by \plus1 for each physical attack you can make
 You must make a melee attack each round.
 
 \feat{Heartseeker}{Combat, Style}
-\featpre Base attack bonus \plus8.
+\featpre Combat prowess 8.
 \featben While in this style, you double your critical threat range with any weapon you wield.
 \stylereq Wield a weapon.
 
@@ -1085,17 +1085,17 @@ If your attack result also beats the foe's Fortitude defense, it is \immobilized
 This counts against your total damage reduced that round.
 
 \feat{Improved Dirty Trick}{Combat, Maneuver}
-\featpre Base attack bonus \plus4.
+\featpre Combat prowess 4.
 \featben When you perform a dirty trick on a cretaure successfully, the creature is \impaired for 1d4 rounds.
 You also gain a \plus2 bonus to dirty trick attacks.
 
 \feat{Improved Disarm}{Combat, Finesse}
-\featpre Base attack bonus \plus4.
+\featpre Combat prowess 4.
 \featben When you disarm a creature, you can make the disarmed item land up to 15 feet away in a random direction.
 You also gain a \plus2 bonus to disarm attacks.
 
 \feat{Improved Feint}{Combat, Finesse}
-\featpre Base attack bonus \plus4.
+\featpre Combat prowess 4.
 \featben When you feint against a creature, if you beat its Armor defense by 5 or more, you deal damage with your weapon normally.
 You also gain a \plus2 bonus to feint attacks.
 
@@ -1107,7 +1107,7 @@ If the weapon leaves your hands or if you cast another spell, the imbuement fade
 An improved imbued spellstrike spell uses up a spell slot two levels higher than the spell's actual level.
 
 \feat{Improved Grapple}{Combat, Maneuver}
-\featpre Base attack bonus \plus4.
+\featpre Combat prowess 4.
 \featben Grappling does not make you \defenseless against other creatures.
 You also gain a \plus2 bonus to grapple attacks.
 This does not prevent you from being defenseless if you have no hands free to defend yourself with.
@@ -1115,19 +1115,19 @@ This does not prevent you from being defenseless if you have no hands free to de
 While grappling, you are defenseless against all creatures except the ones you are grappling.
 
 \feat{Improved Overrun}{Combat, Maneuver}
-\featpre Base attack bonus \plus4.
+\featpre Combat prowess 4.
 \featben When you attempt to overrun a foe, the creature may not choose to avoid you unless you let it.
 You also gain a \plus2 bonus to overrun attacks.
 \parhead{Normal}
 Without this feat, the target of an overrun can choose to avoid you or to block you.
 
 \feat{Improved Shove}{Combat, Maneuver}
-\featpre Base attack bonus \plus4.
+\featpre Combat prowess 4.
 \featben When you shove a creature, you can move it outside of your reach.
 You also gain a \plus2 bonus to shove attacks.
 
 \feat{Improved Trip}{Combat, Maneuver}
-\featpre Base attack bonus \plus4.
+\featpre Combat prowess 4.
 \featben When you successfully trip a foe, you get a free melee attack against it.
 This attack is made as the creature is being tripped, so it does not have penalties for being prone.
 You also gain a \plus2 bonus to trip attacks.
@@ -1145,13 +1145,13 @@ In addition, your unarmed attacks can deal lethal or nonlethal damage as you cho
 This allows you to gain the base class features of multiple classes.
 
 \feat{Inescapable Bulwark}{Combat, Style}
-\featpre Base attack bonus \plus8.
+\featpre Combat prowess 8.
 \featben While in this style, all squares you threaten cost four times the normal movement cost to move into or out of.
 \stylereq Wield a melee weapon.
 You must make a melee attack each round.
 
 \feat{Insightful Defense}{Awareness, Combat, Defense, Style}
-\featpres Perception 5, base attack bonus \plus4.
+\featpres Perception 5, combat prowess 4.
 \featben You can use your Perception to determine your Armor and Maneuver defenses in place of your Dexterity or Constitution.
 \stylereq Wield a melee weapon.
 You must make a physical attack or take the total defense action each round.
@@ -1546,12 +1546,12 @@ You may still cast only one spell, but it is used to counter the spells cast by 
 \featben When casting Conjuration (Translocation) spells and rituals which affect multiple creatures, you can affect a number of creatures equal to your spellpower.
 
 \feat{Mighty Blows}{Combat, Power}
-\featpres Str 5, base attack bonus \plus4.
+\featpres Str 5, combat prowess 4.
 \featben You gain a \plus2 bonus to physical melee damage rolls.
 This bonus increases to \plus4 at Strength 10, and to \plus6 at Strength 20.
 
 \feat{Mighty Shot}
-\featpres Str 5, base attack bonus \plus4.
+\featpres Str 5, combat prowess 4.
 \featben You gain a \plus2 bonus to physical ranged damage rolls.
 This bonus increases to \plus4 at Strength 10, and to \plus6 at Strength 20.
 
@@ -1690,13 +1690,13 @@ If the foe takes an action that fits into multiple action types, use all that ap
 In addition, you cannot accidentally poison yourself while applying poison to an object.
 
 \feat{Precise Shot}{Combat, Precision, Style}
-\featpres Perception 5, base attack bonus \plus4.
+\featpres Perception 5, combat prowess 4.
 \featben While in this style, your ranged attacks ignore cover and concealment, except total cover and total concealment.
 In addition, when you shoot or throw ranged weapons at a grappling opponent, you automatically strike at the opponent you have chosen.
 \stylereq Wield a ranged weapon.
 
 \feat{Predictive Defense}{Awareness, Combat, Defense, Style}
-\featpres Intelligence 5, base attack bonus \plus4.
+\featpres Intelligence 5, combat prowess 4.
 \featben You can use your Perception to determine your Armor and Maneuver defenses in place of your Dexterity or Constitution.
 \stylereq Wield a melee weapon.
 You must make a physical attack or take the total defense action each round.
@@ -1742,7 +1742,7 @@ You must succeed on a ranged touch attack.
 A reach spell uses up a spell slot two levels higher than the spell's actual level.
 
 \feat{Reckless Attack}{Combat, Power, Style}
-\featpre Base attack bonus \plus4.
+\featpre Combat prowess 4.
 \featben While in this style, you are \defenseless.
 In exchange, you gain a \plus2 bonus to damage with melee attacks.
 This bonus increases by \plus1 for each physical attack you can make per round beyond the first.
@@ -1900,7 +1900,7 @@ You perform rituals twice as quickly.
 The Spellcraft DC to identify those spells as they are cast increases by 10, as the performance disguises the magic.
 
 \feat{Spring Attack}{Combat}
-\featpres Dex 5, Mobility, base attack bonus \plus8.
+\featpres Dex 5, Mobility, combat prowess 8.
 \featben As a standard action, you can move up to your speed and make a full attack.
 You must move at least 5 feet after each attack you make before you can make another attack.
 You can only use this style while \unencumbered.
@@ -1944,20 +1944,20 @@ A sustained spell uses up a spell slot one level higher than the spell's actual 
 \feat{Tactical Analysis}{Combat}
 \featpre Intelligence 3.
 \featben You can attempt to identify the strengths and weaknesses of creatures based on your combat experience.
-As a swift action, you can make a special check with a bonus equal to your base attack bonus \add your Intelligence \add 2 per round you have seen the creature fight.
+As a swift action, you can make a special check with a bonus equal to your combat prowess or your Intelligence (whichever is higher) \add 2 per round you have seen the creature fight.
 The DC is equal to 10 \add the creature's CR.
 If you succeed, you learn about the monster's combat abilities as if you had made a successful Knowledge check.
 
 \feat{Tactical Prediction}{Combat}
-\featpres Intelligence 5, base attack bonus \plus4.
+\featpres Intelligence 5, combat prowess 4.
 \featben You can attempt to predict what your opponent will do.
-As a swift action, you can make a special check with a bonus equal to your base attack bonus or your Intelligence \add 2 per round you have seen the creature fight.
+As a swift action, you can make a special check with a bonus equal to your combat prowess or your Intelligence (whichever is higher) \add 2 per round you have seen the creature fight.
 The DC is equal to 15 \add the creature's CR.
 If you succeed, you learn what the creature is planning to do during the next phase.
 Of course, it can change its plans, particularly if it hears you tell your allies what it will do.
 
 \feat{Threatening Fire}{Combat, Reaction, Style}
-\featpres Dexterity 5, Overwhelming Fire, base attack bonus \plus8.
+\featpres Dexterity 5, Overwhelming Fire, combat prowess 8.
 \featben While in this style, you threaten creatures within your natural reach as if you were wielding a melee weapon, allowing you to contribute to overwhelm penalties and block the movement of other creatures.
 (A Medium creature would threaten adjacent creatures).
 In addition, you do not take a \minus4 penalty for using ranged weapons against adjacent creatures.
@@ -2045,7 +2045,7 @@ You can fight with a weapon in each hand more effectively.
 \featben You gain a \plus2 bonus to attack when attacking with two weapons at once (see \pcref{Two-Weapon Fighting}).
 
 \feat{Two-Weapon Rend}{Combat, Power}
-\featpres Str 5, Mighty Blows, Two-Weapon Fighting, base attack bonus \plus8.
+\featpres Str 5, Mighty Blows, Two-Weapon Fighting, combat prowess 8.
 \featben When fighting with two weapons at once, you gain a \plus1 bonus to physical damage.
 This bonus increases to \plus2 at Strength 10, and to \plus3 at Strength 20.
 
@@ -2067,9 +2067,9 @@ See the Craft skill, \pref{Craft}, for details.
 You learn how to make items from one school for every five ranks you have in each Craft skill.
 
 \feat{Veteran's Experience}{Skill}
-\featpre Base attack bonus \plus8.
+\featpre Combat prowess 8.
 \featben You can use your battlefield experience in place of learned knowledge to identify monsters.
-When attempting to identify a monster, you may roll your base attack bonus \add your Intelligence.
+When attempting to identify a monster, you may make a check with a bonus equal to your combat prowess or your Intelligence (whichever is higher).
 A successful check gives you the same information as a Knowledge check would.
 
 \feat{Vital Flow}{Magic}
@@ -2120,7 +2120,7 @@ These special abilities only function when you are making attacks with weapons f
 You cannot choose simple weapons when you take this feat.
 
 \feat{Weapon Finesse}{Combat, Finesse}
-\featpres Dexterity 5, base attack bonus \plus4.
+\featpres Dexterity 5, combat prowess 4.
 \featben You gain a \plus1 bonus to physical damage with light weapons.
 This bonus increases to \plus2 at Dexterity 10, and to \plus3 at Dexterity 20.
 
