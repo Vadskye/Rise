@@ -41,7 +41,11 @@ This is the number of skill points that members of this class get.
 \parhead{Weapon and Armor Proficiencies}
 These are the types of equipment that members of this class are trained in using.
 
-\parhead{Base Attack Progression}
+\subsection{Base Progressions}
+
+The tables summarizing the abilities granted by each class contain information about the combat prowess and defenses that each class provides.
+
+\parhead{Combat Prowess}
 This measures how skilled a character is in combat.
 A character can use his combat prowess to determine his Armor and Maneuver defenses, and his attack bonus with physical attacks.
 There are three progressions: Good, Average, or Poor.
@@ -49,7 +53,7 @@ The effects of each progression are described on \trefnp{Base Progressions}.
 
 A high combat prowess can grant additional attacks, as described in \pcref{Multiple Attacks}.
 
-\parhead{Base Defense Progressions}\label{Base Defense Progressions}
+\parhead{Base Defense}\label{Base Defense Progressions}
 This measures how resistant members of the class are to unusual kinds of attacks.
 There are three kinds of special defenses.
 Your Fortitude defense represents your ability to resist attacks to your body, like poisons and diseases.
@@ -99,7 +103,7 @@ The effects of each progression are described on \trefnp{Base Progressions}.
 \end{dtable}
 
 \begin{dtable}
-    \lcaption{Base Attack Progression Bonuses}
+    \lcaption{Combat Prowess Progression Bonuses}
     \begin{dtabularx}{\columnwidth}{l l X X}
         \thead{Level} & \thead{Good} & \thead{Average} & \thead{Poor} \\
         \hline
@@ -3713,33 +3717,48 @@ Whenever a creature's ``level'' is specified, without reference to a particular 
 \par ``Class level'' is a character's level in a particular class.
 For a character whose levels are all in the same class, character level and class level are the same.
 
-%TODO
 \parhead{Hit Points}
-A character gains hit points from each class as his or her class level increases, adding the new hit points to the previous total.
+The normal rules for determining hit points apply to multiclass characters.
 
-\parhead{Base Attack Bonus}
-Add your character's levels in classes that grant the same base attack bonus progressions together, then sum those base attack bonuses to find your total base attack bonus.
-If a character would have a higher base attack bonus by treating a level with an average base attack bonus progression as a level with a poor base attack bonus progression, he or she may do so.
-For example, a rogue 1 / wizard 1 would have a base attack bonus of 1.
+\parhead{Combat Prowess}
 
-\par For example, a 2nd-level rogue/2nd-level wizard would have a \plus2 base attack bonus.
-She would get a \plus1 base attack bonus from two levels in a class with average base attack bonus progression (rogue) and a \plus1 base attack bonus from two levels in a class with poor base attack bonus progression (wizard).
-That gives a total base attack bonus of 1 \add 1, or \plus2.
-In contrast, a 2nd-level rogue/2nd-level cleric would have a \plus3 base attack bonus, because she would have four levels in classes with average base attack bonus progression.
+\begin{enumerate}
+    \item For each type of combat prowess progression the character has, sum the character's level in classes with that combat prowess progression.
+    \item Determine the character's fastest type of combat prowess progression. Good is faster than Average, which is faster than Poor.
+    \item Add (levels in Good progression) + (four-fifths levels in Average progression) + (two-thirds levels in Poor progression). Each part of this calculation rounded down separately.
+    \item If the character's fastest combat prowess progression is Good or Average, add 2 to the result. If it is Poor, add 1.
+    \item The result is the character's combat prowess.
+\end{enumerate}
+
+\parhead{Example}
+Wissy, a 2nd-level rogue/2nd-level wizard, would have a combat prowess of 4.
+\begin{enumerate}
+    \item Wissy has 2 levels in the Average progression, and 2 levels in the Poor progression.
+    \item Wissy's fastest progression type is Average.
+    \item Four-fifths of 2 is 1, and two-thirds of 2 is 1, so the total is 2.
+    \item Wissy's Average progression type adds 2 to the result, for a total of 4.
+    \item Wissy's combat prowess is therefore 4.
+\end{enumerate}
 
 \parhead{Defenses}
-Add your character's levels in classes that grant the same base defense bonus progressions together, then sum those base defense bonuses to find your total base defense bonus.
 
-\par For example, a 3rd-level rogue/2nd-level ranger has a base Fortitude bonus of \plus5 (\plus1 from 3 levels in a class with a poor Fortitude defense and \plus4 from two levels in a class with a good Fortitude defense), a base Reflex bonus of \plus7 (from five levels in classes with good Reflex defenses), and a base Mental defense bonus of \plus2 (from five levels in classes with poor Mental defenses).
+Determining defenses works in the same way as determining combat prowess, except that the level multipliers are different.
+
+\begin{enumerate}
+    \item For each type of defense progression the character has, sum the character's level in classes with that defense progression.
+    \item Determine the character's fastest type of defense progression. Good is faster than Average, which is faster than Poor.
+    \item Add (five-quarters levels in Good progression) + (levels in Average progression) + (three-quarters levels in Poor progression). Each part of this calculation rounded down separately.
+    \item If the character's fastest defense progression is Good, add 3 to the result. If it is Average, add 2. If it is Poor, add 1.
+    \item The result is the character's base defense bonus.
+\end{enumerate}
 
 \parhead{Skills}
-When taking the first level in a class, if that class gives more skill points than the most skill points the character already received from a class, the character immediately gets skill points equal to the difference.
-For example, if a fighter took a level in rogue, he would immediately gain the difference between the rogue's 10 skill points and the fighter's 4 skill points, for a total of 6 new skill points.
+A multiclass character gains all class skills from all of his classes.
+However, only the character's base class grants skill points.
+If a character has multiple base classes, he must choose which base class grants skill points.
 
 \parhead{Class Features}
-A multiclass character gets all the class features
-of all his or her classes but must also suffer the consequences of the
-special restrictions of all his or her classes.
+A multiclass character gets all the class features of all his or her classes, but must also suffer the consequences of the special restrictions of all his or her classes.
 
 \par In some cases, two classes can have virtually identical abilities.
 Use the following guidelines to determine how abilities stack.
@@ -3751,19 +3770,15 @@ Use the following guidelines to determine how abilities stack.
 \end{itemize}
 These are some examples of how to use these guidelines.
 \begin{itemize}
-    \item Both a druid and a ranger gain wild speech
+    \item Both a druid and a ranger gain wild speech.
         A druid/ranger who has wild speech from both classes has the same wild speech ability as a druid or ranger would.
     \item Both a barbarian and a rogue get uncanny dodge and improved uncanny dodge at the same level.
         A barbarian/rogue adds his barbarian and rogue levels together to determine when he acquires improved uncanny dodge.
 \end{itemize}
 
 \parhead{Weapon and Armor Proficiency}
-A character uses only the highest number of weapon proficiencies granted by her classes.
-If a class grants proficiency with specific weapon groups, that is counted as a chosen weapon group for the purpose of the number of weapon proficiencies the character may choose.
-For example, a fighter/paladin would have three weapon groups of her choice, plus the weapon group of her favored deity.
-
-However, if a class grants proficiency with a specific weapon, it is not counted against the number of weapon groups the character gains from that class.
-For example, a rogue/fighter gains proficiency with four weapon groups of his choice, and is additionally proficient with saps.
+Only a character's base class grants weapon and armor proficiencies.
+If a character has multiple base classes, she must choose which base class grants weapon and armor profiencies.
 
 \subsection{Spellcasters and Multiclassing}\label{Spellcasters and Multiclassing}
 The character gains spells from all of his or her spellcasting classes separately and tracks his spells per day, spells known, and spellpower separately with each class.
