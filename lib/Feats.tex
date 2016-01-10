@@ -409,12 +409,12 @@ The table of combat feats is organized according to the combat prowess each feat
         \midrule
         \tb{Style Feats} & \tb{Prerequisites (Prowess 4)} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
         \featref{Covering Fire} & \x & Impair struck foes & Precision, Style & \featpref{Covering Fire} \\
-        \featref{Deadly Aim} & Per 5 & Trade attack bonus for ranged damage & Precision & \featpref{Deadly Aim} \\
+        \featref{Deadly Aim} & Per 5 & Trade accuracy for ranged damage & Precision & \featpref{Deadly Aim} \\
         \featref{Insightful Defense} & Per 5 & Use Perception for defenses & Awareness, Defense, Style & \featpref{Insightful Defense} \\
-        \featref{Power Attack} & Str 5 & Trade attack bonus for melee damage & Power & \featpref{Power Attack} \\
+        \featref{Power Attack} & Str 5 & Trade acccuracy for melee damage & Power & \featpref{Power Attack} \\
         \featref{Precise Shot} & Per 5 & Ignore less than perfect cover and concealment & Precision, Style & \featpref{Precise Shot} \\
         \featref{Predictive Defense} & Int 5 & Use Intelligence for defenses & Awareness, Defense, Style & \featpref{Predictive Defense} \\
-        \featref{Reckless Attack} & \x & Trade ability to defend yourself for damage bonus & Power, Style & \featpref{Reckless Attack} \\
+        \featref{Reckless Attack} & \x & Trade ability to defend yourself for damage & Power, Style & \featpref{Reckless Attack} \\
 
         \midrule
         \tb{Style Feats} & \tb{Prerequisites (Prowess 8)} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
@@ -443,7 +443,7 @@ The table of combat feats is organized according to the combat prowess each feat
         \featref{Countering Strike} & Int 5 & Bonus damage if you are attacked & Reaction, Strike & \featpref{Countering Strike} \\
         \featref{Disorienting Strike} & \x & Attack disorients foe & Power, Strike & \featpref{Disorienting Strike} \\
         \featref{Driving Assault} & Str 5 & Attack shoves creature  & Power, Maneuver, Strike & \featpref{Driving Assault} \\
-        \featref{Focused Strike} & \x & Trade attacks for attack bonus & Precision, Strike & \featpref{Focused Strike} \\
+        \featref{Focused Strike} & \x & Trade attacks for accuracy & Precision, Strike & \featpref{Focused Strike} \\
         \featref{Intimidating Strike} & Intimidate 10 ranks & Melee attack intimidates foe & Strike & \featpref{Intimidating Strike} \\
         \featref{Knockdown} & Str 5 & Shove foe and knock prone & Maneuver, Power, Strike & \featpref{Knockdown} \\
         \featref{Pierce Wings} & Per 5 & Ranged attack removes foe's ability to fly & Precision, Strike & \featpref{Pierce Wings} \\
@@ -539,7 +539,7 @@ The character also suffers double the normal arcane spell failure chance for wea
 \feat{Battletrance}{Class}
 \featpre Rage ability.
 \featben When you use your rage ability, you can enter a trance instead of getting angry.
-In place of the normal benefits and drawbacks from raging, you can use your Perception to determing your attack and damage with light weapons.
+In place of the normal benefits and drawbacks from raging, you can use your Perception to determine your damage with light weapons.
 In addition, you add your rage bonus to your Fortitude and Mental defenses.
 If you do not spend a swift round to sustain the battletrance, it ends at the end of the round.
 Any other abilities, such as channeled rages, function normally.
@@ -597,7 +597,7 @@ You have a pool with a number of celestial points equal to the number of celesti
 
 As a standard action, you can spend a celestial point to surround yourself in an aura of good for a \durshort duration.
 During that time, whenever an evil creature within \rngclose range of you attacks you, make an attack against its Mental defense.
-Your attack bonus is equal to your celestial power.
+Your accuracy is equal to your celestial power.
 Success means the attacking creature takes 1d6 damage per two celestial power.
 
 If you have five or more celestial feats, this ability becomes permanent.
@@ -605,7 +605,7 @@ If you have five or more celestial feats, this ability becomes permanent.
 \feat{Celestial Smiting}{Bloodline, Celestial}
 \featpres Nonevil alignment, Celestial Heritage.
 \featben As a swift action, you can spend a celestial point to make your next physical attack a smite attack.
-If your smite targets an evil creature, you gain an attack bonus equal to the number of celestial bloodline feats you possess, and a damage bonus equal to your celestial power.
+If your smite targets an evil creature, you gain a bonus to accuracy equal to the number of celestial bloodline feats you possess, and a damage bonus equal to your celestial power.
 
 \feat{Celestial Soul}{Bloodline, Celestial}
 \featpres Nonevil alignment, any three celestial feats.
@@ -639,8 +639,7 @@ This bonus increases by \plus2 for each physical attack you can make per round b
 \stylereq Wield a melee weapon.
 
 \feat{Cleave}{Combat, Power}
-\featpres
-Str 3.
+\featpre Str 3.
 \featben If you make a melee attack that knocks a creature unconscious or kills it, you can immediately make an extra melee attack against another creature you threaten.
 The extra attack must be made with the same weapon, and uses the same attack bonus, but it is otherwise treated as being a different attack.
 You cannot move before making this extra attack.
@@ -682,7 +681,7 @@ spell can be used to counter any spell, even higher level spells.
 
 \feat{Counterstorm}{Awareness, Combat, Reaction, Style}
 \featpres Perception 15, four attacks.
-\featben Whenever a foe misses you with a melee attack, you gain a cumulative \plus2 bonus to attack and damage on your next melee attack against that creature.
+\featben Whenever a foe misses you with a melee attack, you gain a cumulative \plus2 bonus to accuracy and damage on your next melee attack against that creature.
 If this bonus is not used within 1 round, it is lost.
 \stylereq Wield a melee weapon.
 
@@ -693,7 +692,7 @@ If this bonus is not used within 1 round, it is lost.
 \feat{Deadly Aim}{Combat, Precision, Style}
 \featpres Perception 5, combat prowess 4.
 \featben You gain a \plus2 bonus to physical ranged damage rolls.
-In exchange, you take a \minus2 penalty to attack with physical ranged attacks.
+In exchange, you take a \minus2 penalty to accuracy with physical ranged attacks.
 This bonus increases by \plus1 for each physical attack you can make per round beyond the first.
 
 \feat{Deathless}{General}
@@ -702,8 +701,8 @@ This bonus increases by \plus1 for each physical attack you can make per round b
 
 \feat{Defensive Fighting}{Combat, Defense, Style}
 \featben While in this style, you gain a \plus2 bonus to your physical defenses.
-In exchange, you take a \minus2 penalty to your attack bonus.
-If your Intelligence is at least 5, you take no penalty to attack bonus.
+In exchange, you take a \minus2 penalty to your accuracy.
+If your Intelligence is at least 5, you take no penalty to accuracy.
 \stylereq Wield a melee weapon. You must make a melee attack or take the total defense action each round.
 
 \feat{Deflect Arrows}{Combat, Finesse, Reaction}
@@ -773,7 +772,7 @@ At 11th level, the size increases to a 100 ft. long, 10 ft. wide line or a \area
 When you use your breath weapon, you make a Reflex attack to deal damage to everything in the area.
 It deals 1d6 damage per two levels.
 A failed attack deals half damage.
-Your attack bonus is equal to your level or your Constitution, whichever is higher.
+Your accuracy is equal to your level or your Constitution, whichever is higher.
 After using your breath weapon, you must wait 1d4 rounds before you can use it again.
 
 \feat{Draconic Heritage}{Bloodline, Dragon}
@@ -963,10 +962,10 @@ In addition, you can use your Intelligence instead of your Constitution on Conce
 
 \feat{Focused Strike}{Combat, Precision, Strike}
 \featpre Two attacks.
-\featben In place of two attacks, you can make a physical attack with a \plus5 bonus.
+\featben In place of two attacks, you can make a physical attack with a \plus5 bonus to accuracy.
 If you hit, you deal damage normally.
 You may trade additional attacks to make this strike.
-For each attack you trade, you gain an additional \plus5 bonus.
+For each attack you trade, you gain an additional \plus5 bonus to accuracy.
 
 \feat{Freeing Performance}{Performance, Skill}
 \featpre Perform 12 ranks.
@@ -1153,7 +1152,7 @@ You can also use Perception in place of Intelligence for the battlemaster abilit
 
 \feat{Insightful Rogue}{Class}
 \featpre Combat trick ability.
-\featben You can use Perception in place of Intelligence for combat tricks that depend on Intelligence, and for your special attack bonus with combat tricks.
+\featben You can use Perception in place of Intelligence for combat tricks that depend on Intelligence, and for your accuracy with combat tricks.
 
 \feat{Inspire Competence}{Performance, Skill}
 \featpre Perform 4 ranks.
@@ -1231,7 +1230,7 @@ If the target took damage from this strike and has no hit points remaining at th
 \featpre Strength 5, two attacks.
 \featben In place of two attacks, you can attempt to shove an opponent.
 If you succeed, it is knocked prone at the end of its movement, and you can make an extra melee attack against it if you still threaten it.
-The free attack gains the normal bonus for striking a prone target (\minus4 to physical defenses).
+The free attack gains the normal benefit for striking a prone target (\minus4 to physical defenses).
 
 \feat{Ledgewalker}{Skill}
 \featpre Acrobatics 5 ranks.
@@ -1474,7 +1473,7 @@ In addition, you treat your Strength as being 5 higher for the purpose of determ
 
 \feat{Legendary Strike}{Combat}
 \featpres Three attacks, any three Strike feats.
-\featben You gain a \plus2 bonus to attack with strikes.
+\featben You gain a \plus2 bonus to accuracy with strikes.
 
 \feat{Legendary Style}{Combat}
 \featpres Three attacks, any three Style feats.
@@ -1566,7 +1565,7 @@ If that would make the attack fail, the attack fails.
 \feat{Mounted Trample}{Combat, Mounted, Maneuver}
 \featpre Ride 10 ranks.
 \featben When you attempt to overrun an opponent while mounted, your target may not choose to avoid you.
-Your mount may make one attack with an appropriate natural weapon (hoof, claw, or other leg-based attack) against any target you knock down, gaining the normal \plus4 bonus to physical melee attacks against prone targets.
+Your mount may make one attack with an appropriate natural weapon (hoof, claw, or other leg-based attack) against any target you knock down, gaining the normal \plus4 bonus to accuracy against prone targets.
 
 \feat{Natural Spellgift}{Spellgift}
 \featpres 2nd level, Wil 1.
@@ -1590,7 +1589,7 @@ You may spend these skill points immediately.
 
 \feat{Overpowering Assault}{Combat, Power, Style}
 \featpre Str 3.
-\featben While in this style, you gain a \plus2 bonus to maneuver attacks.
+\featben While in this style, you gain a \plus2 bonus to accuracy with maneuvers.
 This bonus increases by \plus1 for each physical attack you can make per round beyond the first.
 \stylereq You must make a melee attack each round.
 
@@ -1608,7 +1607,7 @@ You must make a physical ranged attack each round.
 You may use your attack result in place of any or all physical defenses against the parried attack.
 You can make a maximum number of parry attempts per round equal to the number of attacks you can make.
 
-In exchange, you take a \minus2 penalty to physical attacks.
+In exchange, you take a \minus2 penalty to accuracy with physical attacks.
 
 \stylereq Wield a melee weapon.
 You must make a melee attack or take the total defense action each round.
@@ -1677,7 +1676,7 @@ In addition, you cannot accidentally poison yourself while applying poison to an
 \feat{Power Attack}{Combat, Power, Style}
 \featpres Str 5, combat prowess 4.
 \featben You gain a \plus2 bonus to physical melee damage rolls.
-In exchange, you take a \minus2 penalty to attack with physical melee attacks.
+In exchange, you take a \minus2 penalty to accuracy with physical melee attacks.
 This bonus increases by \plus1 for each physical attack you can make per round beyond the first.
 
 \feat{Precise Shot}{Combat, Precision, Style}
@@ -1915,8 +1914,7 @@ Finally, you can also intuit depth, sensing your approximate depth underground a
 \feat{Suggestive Performance}{Performance, Skill}
 \featpres Perform 10 ranks, Fascinating Performance.
 \featben As a swift action, you can make a DC 20 Perform check to suggest an action to a single creature you are currently fascinating with the Fascinating Performance feat.
-This functions as the \spell{suggestion}
-spell, with an attack bonus equal to your Perform modifier.
+This functions as the \spell{suggestion} spell, with an accuracy equal to your Perform modifier.
 You can affect an additional creature at 12 Perform ranks and every 2 Perform ranks thereafter.
 
 You can use any combination of performance feats you possess a number of times per day equal to twice the number of performance feats you have.
@@ -2033,7 +2031,7 @@ This check should be made secretly, so you do not know whether you failed to not
 \feat{Two-Weapon Fighting}{Combat}
 You can fight with a weapon in each hand more effectively.
 \featpre Dex 3.
-\featben You gain a \plus2 bonus to attack when attacking with two weapons at once (see \pcref{Two-Weapon Fighting}).
+\featben You gain a \plus2 bonus to accuracy when attacking with two weapons at once (see \pcref{Two-Weapon Fighting}).
 
 \feat{Two-Weapon Rend}{Combat, Power}
 \featpres Str 5, Mighty Blows, Two-Weapon Fighting, combat prowess 8.
@@ -2094,7 +2092,7 @@ These special abilities only function when you are making attacks with weapons f
         In addition, armor spikes no longer impose a penalty to your physical defenses.
     \item Axes: You gain a \plus2 bonus to physical attacks against creatures not wearing medium or heavy armor.
     \item Blades, heavy: You gain a \plus2 bonus to physical attacks against creatures not wearing medium or heavy armor.
-    \item Blades, light: If you draw a light blade and attack with it in the same round, you gain a \plus2 bonus to attack.
+    \item Blades, light: If you draw a light blade and attack with it in the same round, you gain a \plus2 bonus to accuracy.
         The creature you attack is unaffected by this ability for the rest of the encounter.
     \item Blunt weapons: When you deal damage to a creature, it takes a \minus2 penalty to Mental defense for 1 round.
         This penalty is not cumulative with itself.

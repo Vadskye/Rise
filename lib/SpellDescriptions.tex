@@ -710,7 +710,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
-                \spellspecial If the target thinks that you or your allies are threatening it, you take a \minus5 penalty on the attack.
+                \spellspecial If the target thinks that you or your allies are threatening it, you take a \minus5 penalty to accuracy on the attack.
                 \spellsuccess The target sees your words and actions in the most favorable way, as a close friend or trusted ally. You cannot control it like an automaton, but you can persuade it to take particular actions with the Persuasion skill (see \pcref{Persuasion}). The target is treated as a friend (a \plus10 relationship modifier) for the purpose of Persuasion checks you make.
                 \spellcritical As above, but the effect is permanent.
             \end{spellattack}
@@ -2122,7 +2122,7 @@
                 \spellsuccess The target and its equipment instantly grows, doubling its height and multiplying its weight by 8. This changes the creature's size category to the next larger one. This has several effects.
                 \begin{itemize}
                     \item \plus10 ft. bonus to movement speed.
-                    \item \plus4 bonus to maneuver attack and defense.
+                    \item \plus4 bonus to maneuver accuracy and defense.
                     \item \minus1 penalty to other physical attacks and defenses.
                     \item \minus4 penalty to Stealth checks.
                     \item Melee weapons increase damage die size by one.
@@ -3050,7 +3050,7 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target's speed increases, as \spell{lesser haste}. In addition, when it takes a full attack action, it may make an additional attack at a \minus5 penalty.
+            \spelleffect The target's speed increases, as \spell{lesser haste}. In addition, when it takes a full attack action, it may make an additional attack with a \minus5 penalty to accuracy.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
@@ -3326,7 +3326,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
-                \spellspecial You gain a \plus5 bonus to attack against plants and creatures with the water subtype.
+                \spellspecial You gain a \plus5 bonus to accuracy against plants and creatures with the water subtype.
                 \spellsuccess \spelldamage{9}{physical}[d6]
                 \spellfailure Half damage.
             \end{spellattack}
@@ -4866,7 +4866,7 @@
                 \spellsuccess The target and its equipment instantly shrinks, halving its height and dividing its weight by 8. This changes the creature's size category to the next smaller one. This has several effects.
                 \begin{itemize}
                     \item \minus10 ft. penalty to movement speed.
-                    \item \minus4 penalty to maneuver attack and defense.
+                    \item \minus4 penalty to maneuver accuracy and defense.
                     \item \plus1 bonus to other physical attacks and defenses.
                     \item \plus4 bonus to Stealth checks.
                     \item Melee weapons decrease damage die size by one.
@@ -5274,7 +5274,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellspecial You gain a \plus5 bonus to attack against creatures vulnerable to bright light.
+                \spellspecial You gain a \plus5 bonus to accuracy against creatures vulnerable to bright light.
                 \spellsuccess \spelldmg{3}{solar}. In addition, the target's vision is \impaired for 5 rounds. This affects all sight-related actions, including physical attacks and targeted spells.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
@@ -5445,7 +5445,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellspecial You gain a \plus5 bonus to attack if the target is wearing metal armor or otherwise has a significant quantity of metal.
+                \spellspecial You gain a \plus5 bonus to accuracy if the target is wearing metal armor or otherwise has a significant quantity of metal.
                 \spellsuccess \spelldamage{1}{electricity}.
                 \spellcritical The target is \staggered for 5 rounds.
                 \spellfailure Half damage, and no additional effects.
@@ -5469,7 +5469,7 @@
             \spellcmp{Verbal only}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spellspecial You gain a \plus5 bonus to attack against brittle or crystalline objects and creatures.
+            \spellspecial You gain a \plus5 bonus to accuracy against brittle or crystalline objects and creatures.
             \spellsuccess \spelldamage{3}{sonic}[d6]. In addition, the target is \deafened for 5 rounds.
             \spellfailure Half damage, and no additional effects.
         \end{spelleffects}
@@ -5490,7 +5490,7 @@
             \spellcmp{Verbal only}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spellspecial You gain a \plus5 bonus to attack against brittle or crystalline objects and creatures.
+            \spellspecial You gain a \plus5 bonus to accuracy against brittle or crystalline objects and creatures.
             \spellsuccess \spelldamage{6}{sonic}[d6]. In addition, the target is \deafened for 5 rounds.
             \spellfailure Half damage, and no additional effects.
         \end{spelleffects}
@@ -5755,7 +5755,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Abjuration [Shielding]}{Abjuration, Magic, Protection}
-        \spellnotes To affect a creature with spell resistance with a spell, a caster must make an attack with its spellpower. If the attack beats the creature's spell resistance, the spell works normally. Otherwise, the spell has no effect on the creature.
+        \spellnotes To affect a creature with spell resistance with a spell, a caster must make an attack with an accuracy equal to its spellpower. If the attack beats the creature's spell resistance, the spell works normally. Otherwise, the spell has no effect on the creature.
         \miscastrandom
     \end{spellfooter}
 \end{spellsection}
@@ -5999,7 +5999,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
-                \spellspecial You suggest a course of action that the target could take. The suggestion must not be longer than a couple of sentences. It must be worded in such a manner as to make the activity sound reasonable. Asking the creature to do some obviously harmful act makes the spell fail automatically. You take a \minus5 penalty to the attack roll if the target thinks it is threatened.
+                \spellspecial You suggest a course of action that the target could take. The suggestion must not be longer than a couple of sentences. It must be worded in such a manner as to make the activity sound reasonable. Asking the creature to do some obviously harmful act makes the spell fail automatically. You take a \minus5 penalty to accuracy if the target thinks it is threatened. A very reasonable suggestion can grant a \plus2 or greater bonus to accuracy.
                 \spellsuccess For 5 rounds, the target is compelled to obey your suggestion. If the suggested activity is completed during that time, the spell's effect ends.
                 \spellcritical As above, except that the target will obey the suggestion indefinitely, until it completes its task.
             \end{spellattack}
@@ -6007,8 +6007,6 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Auditory, Delusion, Mind, Speech, Subtle]}{Enchantment}
-        \spellnotes A very reasonable suggestion can grant a \plus2 or greater bonus on the magic attack.
-
         \norepeatspellnotes
         \miscastrandom
     \end{spellfooter}
@@ -6496,7 +6494,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellspecial You gain a \plus5 bonus to attack against creatures vulnerable to sunlight.
+                \spellspecial You gain a \plus5 bonus to accuracy against creatures vulnerable to sunlight.
                 \spellsuccess \spelldamage{4}{solar}[d6]
                 \spellcritical If the target is vulnerable to sunlight, it is also \blinded for 5 rounds.
                 \spellfailure Half damage, and no additional effects.
@@ -6521,7 +6519,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellspecial You gain a \plus5 bonus to attack against creatures vulnerable to sunlight.
+                \spellspecial You gain a \plus5 bonus to accuracy against creatures vulnerable to sunlight.
                 \spellsuccess \spelldamage{6}{solar}[d6]
                 \spellcritical If the target is vulnerable to sunlight, it is also \blinded for 5 rounds.
                 \spellfailure Half damage, and no additional effects.

@@ -610,7 +610,7 @@
         \begin{spelleffects}
 
             \begin{spellattack}{Magic vs. Fortitude}
-                \spellsuccess The target contracts a disease selected from the table below, which strikes immediately (no incubation period). The disease's attack bonus for the initial and subsequent incubation periods is equal to your magic attack bonus.
+                \spellsuccess The target contracts a disease selected from the table below, which strikes immediately (no incubation period). The disease's accuracy for the initial and subsequent incubation periods is equal to your spellpower.
 
             \end{spellattack}
         \end{spelleffects}
@@ -2258,7 +2258,7 @@
             \begin{spellattack}{Magic vs. Will}
                 \spelleffect You send the target a dream, as \spell{dream}, except that the dream is a nightmare.
                 \spellsuccess The target is unable to sleep restfully. It regains no hit points for resting, and is \fatigued when it wakes up. It can still regain the use of its spells and other abilities.
-                \spellspecial Your attack is modified based on how well you know the subject and what sort of physical connection (if any) you have to that creature, as shown on \tref{Scrying Modifiers}.
+                \spellspecial Your accuracy is modified based on how well you know the subject and what sort of physical connection (if any) you have to that creature, as shown on \tref{Scrying Modifiers}.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -2978,7 +2978,7 @@
                 \spellsuccess A scrying sensor appears in the target's space, allowing you to see as if you were in its location. The sensor moves with the target at a speed of up to 150 feet. If the sensor is separated from the target, the sensor disappears.
                 \spellfailure No scrying sensor appears, and the target is immune to any further attempts you make for 24 hours.
 
-                \spellspecial Your attack is modified based on how well you know the subject and what sort of physical connection (if any) you have to that creature, as shown on \tref{Scrying Modifiers}.
+                \spellspecial Your accuracy is modified based on how well you know the subject and what sort of physical connection (if any) you have to that creature, as shown on \tref{Scrying Modifiers}.
             \end{spellattack}
             \spelldur \durmed \dismissable
         \end{spelleffects}
@@ -2993,17 +2993,17 @@
 \begin{dtable}
     \lcaption{Scrying Modifiers}
     \begin{dtabularx}{\columnwidth}{>{\lcol}X >{\lcol}p{4em}}
-        \tb{Knowledge} & \tb{Attack Modifier} \\
+        \tb{Knowledge} & \tb{Accuracy Modifier} \\
         \hline
         None\fn{1} & \minus10 \\
         Secondhand (you have heard of the subject) & \minus5 \\
         Firsthand (you have met the subject) & \plus0 \\
         Familiar (you know the subject well) & \plus5 \\
-        \tb{Connection} & \tb{Attack Modifier} \\
+        \tb{Connection} & \tb{Accuracy Modifier} \\
         Likeness or picture & \plus2 \\
         Possession or garment & \plus4 \\
         Body part, lock of hair, bit of nail, etc. & \plus10 \\
-        \tb{Location} & \tb{Attack Modifier} \\
+        \tb{Location} & \tb{Accuracy Modifier} \\
         Same plane & \plus0 \\
         Adjacent or overlapping planes\fn{2} & \minus5 \\
         Disconnected planes\fn{3} & \minus10 \\
