@@ -348,8 +348,6 @@ The table of combat feats is organized according to the combat prowess each feat
 
         \midrule
         \tb{Combat Feats} & \tb{Prerequisites (Prowess 4)} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
-        \featref{Deadly Aim} & Per 5 & Gain bonus damage with ranged weapons & Precision & \featpref{Deadly Aim} \\
-        \featref{Dodge} & Dex 5 & Gain bonus to physical defenses & Defense, Reaction & \featpref{Dodge} \\
         \featref{Eye of the Storm} & Per 5 & Reduce overwhelm penalties & Awareness, Defense & \featpref{Eye of the Storm} \\
         \featref{Gang Up} & \x & Increase overwhelm penalties foes suffer & \x & \featpref{Gang Up} \\
         \featref{Improved Dirty Trick} & \x & \plus2 to dirty trick attacks; dirty tricks last longer & Finesse, Maneuver & \featpref{Improved Dirty Trick} \\
@@ -359,7 +357,6 @@ The table of combat feats is organized according to the combat prowess each feat
         \featref{Improved Overrun} & \x & \plus2 to overrun attacks; target can't avoid & Maneuver, Power & \featpref{Improved Overrun} \\
         \featref{Improved Shove} & \x & \plus2 to shove attacks; move target away from you & Maneuver, Power & \featpref{Improved Shove} \\
         \featref{Improved Trip} & \x & \plus2 to trip attacks; free attack against tripped foe & Finesse, Maneuver & \featpref{Improved Trip} \\
-        \featref{Mighty Blows} & Str 5 & Gain bonus damage with melee weapons & Power & \featpref{Mighty Blows} \\
         \featref{Mighty Shot} & Str 5 & Gain bonus damage with ranged weapons & Power & \featpref{Mighty Shot} \\
         \featref{Mounted Charge} & Ride 10 ranks & Gain bonus damage with mounted charge & Mounted, Power & \featpref{Mounted Charge} \\
         \featref{Tactical Prediction} & Int 5 & Predict foe's next action & Awareness & \featpref{Tactical Prediction} \\
@@ -408,13 +405,13 @@ The table of combat feats is organized according to the combat prowess each feat
         \tind \featref{Shielded Parry} & Dex 3, shield proficiency, Parry & Add shield bonus to parry attempts & Defense, Reaction & \featpref{Shielded Parry} \\
         \tind \featref{Riposte} & Dex 3, Parry & Foes are defenseless if you parry very well & Reaction & \featpref{Riposte} \\
         \featref{Point Blank Shot} & \x &  \plus2 bonus to ranged attacks within half range increment. & Precision, Style & \featpref{Point Blank Shot} \\
-        %\featref{Power Attack} & Str 3 & Gain bonus damage with melee weapons & Power, Style & \featpref{Power Attack} \\
-        %\featref{Power Shot} & Str 3 & Gain bonus damage with ranged weapons & Power, Style & \featpref{Power Shot} \\
 
         \midrule
         \tb{Style Feats} & \tb{Prerequisites (Prowess 4)} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
-        \featref{Covering Fire} & Per 5 & Impair struck foes & Precision, Style & \featpref{Covering Fire} \\
+        \featref{Covering Fire} & \x & Impair struck foes & Precision, Style & \featpref{Covering Fire} \\
+        \featref{Deadly Aim} & Per 5 & Trade attack bonus for ranged damage & Precision & \featpref{Deadly Aim} \\
         \featref{Insightful Defense} & Per 5 & Use Perception for defenses & Awareness, Defense, Style & \featpref{Insightful Defense} \\
+        \featref{Power Attack} & Str 5 & Trade attack bonus for melee damage & Power & \featpref{Power Attack} \\
         \featref{Precise Shot} & Per 5 & Ignore less than perfect cover and concealment & Precision, Style & \featpref{Precise Shot} \\
         \featref{Predictive Defense} & Int 5 & Use Intelligence for defenses & Awareness, Defense, Style & \featpref{Predictive Defense} \\
         \featref{Reckless Attack} & \x & Trade ability to defend yourself for damage bonus & Power, Style & \featpref{Reckless Attack} \\
@@ -662,7 +659,7 @@ There is no limit to the number of times you can use this feat per round.
 You ignore that creature when determining whether you are \engaged in combat.
 
 \feat{Covering Fire}{Combat, Style}
-\featpres Perception 5, combat prowess 4.
+\featpres Combat prowess 4.
 \featben While in this style, if you hit a creature with a physical ranged attack, it is \impaired with physical attacks for 1 round.
 \stylereq Wield a ranged weapon.
 
@@ -693,10 +690,11 @@ If this bonus is not used within 1 round, it is lost.
 \featpres Craft (any) 10 ranks, 2nd level spell known.
 \featben When casting spells which create or transform a physical substance that you are trained to craft, you gain a \plus1 bonus to your spellpower per 5 ranks you have in the appropriate Craft skill.
 
-\feat{Deadly Aim}{Combat, Precision}
+\feat{Deadly Aim}{Combat, Precision, Style}
 \featpres Perception 5, combat prowess 4.
-\featben You gain a \plus1 bonus to physical ranged damage rolls.
-This bonus increases to \plus2 at Perception 10, and to \plus3 at Perception 20.
+\featben You gain a \plus2 bonus to physical ranged damage rolls.
+In exchange, you take a \minus2 penalty to attack with physical ranged attacks.
+This bonus increases by \plus1 for each physical attack you can make per round beyond the first.
 
 \feat{Deathless}{General}
 \featpre Constitution 5 or base Fortitude defense \plus10.
@@ -766,25 +764,16 @@ Each time, you choose a new spell to gain as a spell-like ability.
 All spellgift feats you have use the same pool of spellgift points.
 The number of spellgift feats you have cannot exceed your Willpower.
 
-\feat{Dodge}{Combat, Defense, Reaction}
-\featpre Dexterity 5, combat prowess 4.
-\featben You gain a \plus1 bonus to physical defenses (Armor, Manuever, Reflex).
-This bonus increases to \plus2 at Dexterity 10, and to \plus3 at Dexterity 20.
-
 \feat{Draconic Breath}{Bloodline, Dragon}
-\featpres
-Con 3, any three dragon bloodline feats.
+\featpres Con 3, any three dragon bloodline feats.
 \featben You gain a breath weapon based on the type of dragon you chose for the Draconic Heritage feat.
-The shape of the breath weapon is given on \trefnp{Dragon Types}: either a \arealarge, 5 ft.
-wide line or a \areamed cone.
-At 11th level, the size increases to a 100 ft.
-long, 10 ft.
-wide line or a \arealarge cone.
+The shape of the breath weapon is given on \trefnp{Dragon Types}: either a \arealarge, 5 ft. wide line or a \areamed cone.
+At 11th level, the size increases to a 100 ft. long, 10 ft. wide line or a \arealarge cone.
 
 When you use your breath weapon, you make a Reflex attack to deal damage to everything in the area.
 It deals 1d6 damage per two levels.
 A failed attack deals half damage.
-Your attack bonus is equal to your level \add your Constitution.
+Your attack bonus is equal to your level or your Constitution, whichever is higher.
 After using your breath weapon, you must wait 1d4 rounds before you can use it again.
 
 \feat{Draconic Heritage}{Bloodline, Dragon}
@@ -1546,11 +1535,6 @@ You may still cast only one spell, but it is used to counter the spells cast by 
 \featpre 5th level or higher \glossterm{Teleportation} spell known.
 \featben When casting Conjuration (Translocation) spells and rituals which affect multiple creatures, you can affect a number of creatures equal to your spellpower.
 
-\feat{Mighty Blows}{Combat, Power}
-\featpres Str 5, combat prowess 4.
-\featben You gain a \plus2 bonus to physical melee damage rolls.
-This bonus increases to \plus4 at Strength 10, and to \plus6 at Strength 20.
-
 \feat{Mighty Shot}
 \featpres Str 5, combat prowess 4.
 \featben You gain a \plus2 bonus to physical ranged damage rolls.
@@ -1689,6 +1673,12 @@ If the foe takes an action that fits into multiple action types, use all that ap
 \featpres Intelligence 3, Craft (poison) 10 ranks.
 \featben Whenever you use poisons, you can use your level \add your Intelligence in place of the poison's normal potency.
 In addition, you cannot accidentally poison yourself while applying poison to an object.
+
+\feat{Power Attack}{Combat, Power, Style}
+\featpres Str 5, combat prowess 4.
+\featben You gain a \plus2 bonus to physical melee damage rolls.
+In exchange, you take a \minus2 penalty to attack with physical melee attacks.
+This bonus increases by \plus1 for each physical attack you can make per round beyond the first.
 
 \feat{Precise Shot}{Combat, Precision, Style}
 \featpres Perception 5, combat prowess 4.
