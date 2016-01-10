@@ -13,9 +13,10 @@ Strength measures muscle and physical power.
 \begin{itemize}
     \item Strength determines how much a character can carry, as described in \tref{Weight Limits}.
     \item Strength can be used to attack with melee and thrown weapons.
-    \item Strength can be used for Maneuver defense.
+    \item Strength can be used to deal damage with all physical attacks.
+    \item Strength can be used for Maneuver and Fortitude defenses.
     \item Strength can be used for Climb, Jump, Sprint, and Swim checks.
-    \item Half Strength can be added to Fortitude defense, which can affect your hit points.
+    \item For every 5 Strength you have, you gain a \plus1 bonus to damage with physical attacks. If your Strength is negative, you take a penalty to damage with physical attacks equal to your Strength.
 \end{itemize}
 
 \subsubsection{Dexterity (Dex)}\label{Dexterity}
@@ -24,14 +25,14 @@ Dexterity measures hand-eye coordination, agility, and reflexes.
     \item Dexterity can be used to attack with light melee and thrown weapons.
     \item Dexterity can be used for all physical defenses (Armor, Maneuver, and Reflex).
     \item Dexterity can be used for Balance, Escape Artist, Ride, Sleight of Hand, Stealth, and Tumble checks.
+    \item For every 5 Dexterity you have, you gain a \plus1 bonus to physical defenses (Armor, Maneuver, Reflex). If your Dexterity is negative, you take a penalty to your physical defenses equal to your Dexterity.
 \end{itemize}
 
 \subsubsection{Constitution (Con)}\label{Constitution}
 Constitution represents your character's health and stamina.
 \begin{itemize}
-    \item Constitution can be used for Armor defense.
-    \item Constitution can be added to Fortitude defense, which can affect your hit points.
-    \item Half Constitution is added to your hit points at each level.
+    \item Constitution can be used for Armor and Fortitude defenses.
+    \item For every 2 Constitution you have, you gain a \plus1 bonus to Fortitude defense. If your Constitution is negative, you take a penalty to Fortitude defense equal to your Constitution.
 \end{itemize}
 
 \subsubsection{Intelligence (Int)}\label{Intelligence}
@@ -40,9 +41,9 @@ It affects your character's knowledge in many areas.
 
 \begin{itemize}
     \item Intelligence is added to Craft, Disguise, Heal, Knowledge, and Linguistics checks.
-    \item Half Intelligence is added to the number of skill points a character gets.
-    \item Half Intelligence can be added to Mental defense, which can affect your hit points.
+    \item Intelligence can be used for to Mental defense.
     \item You gain bonus languages on character creation equal to your starting Intelligence.
+    \item For every 2 Intelligence you have, you gain an extra skill point. If your Intelligence is negative, you take a penalty to your skill points equal to your Intelligence.
 \end{itemize}
 
 \par An animal has an Intelligence score of \minus6 or lower.
@@ -53,14 +54,16 @@ Perception describes a character's ability to observe and be aware of one's surr
 \begin{itemize}
     \item Perception can be used to attack with projectile weapons.
     \item Perception can be used for Awareness, Creature Handling, Sense Motive, Spellcraft, and Survival checks.
-    \item Half Perception can be added to Reflex defense.
+    \item Perception can be used for Reflex defense.
+    \item For every 5 Perception you have, you gain a \plus1 bonus to attack with physical attacks. If your Perception is negative, you take a penalty to attack with physical attacks equal to your Perception.
 \end{itemize}
 
 \subsubsection{Willpower (Wil)}\label{Willpower}
 Willpower measures a character's ability to endure mental hardships.
 \begin{itemize}
-    \item Willpower can be added to Mental defense, which can affect your hit points.
+    \item Willpower can be used for Mental defense.
     \item Many special abilities are based on Willpower.
+    \item For every 5 Willpower you have, you gain a \plus1 bonus to Mental defense. If your Willpower is negative, you take a penalty to Mental defense equal to your Willpower.
 \end{itemize}
 
 \subsection{Using Attributes}
@@ -121,24 +124,13 @@ When an attribute changes, abilities and modifiers based on the attribute change
     \begin{dtabularx}{\textwidth}{l >{\lcol}p{10em} X}
         \tb{Effect Type} & \tb{Timing of Change} & \tb{Example} \\
         \hline
-        Numerical modifiers   & Immediately & A barbarian enters a rage.
-        His attack bonus increases immediately.
-        \\
-        Ability prerequisites & Immediately & A paladin's Strength is drained by a ghost.
-        She loses the benefits of her Power Attack feat immediately.
-        \\
-        Ability use limits    & When ability uses are regained & A fighter puts on a magic item that grants additional Willpower.
-        He gains additional daily uses of his combat discipline ability after resting for the night.
-        \\
-        Hit points            & On level up\fn{1} & A druid casts \spell{totemic power} to increase his Constitution.
-        His hit points do not change.
-        \\
-        Skill points          & On level up\fn{1} & A wizard reads an ancient magical tome that increases her Intelligence.
-        Her skill points increase when she gains a level.
-        \\
+        Numerical modifiers   & Immediately & A barbarian enters a rage.  His attack bonus increases immediately.  \\
+        Ability prerequisites & Immediately & A paladin's Strength is drained by a ghost.  She loses the benefits of her Power Attack feat immediately.  \\
+        Ability use limits    & When ability uses are regained & A fighter puts on a magic item that grants additional Willpower.  He gains additional daily uses of his combat discipline ability after resting for the night.  \\
+        Hit points            & On level up\fn{1} & A druid casts \spell{totemic power} to increase his Constitution. His hit points do not change. \\
+        Skill points          & On level up\fn{1} & A wizard reads an ancient magical tome that increases her Intelligence. Her skill points increase when she gains a level. \\
     \end{dtabularx}
-    1.
-    Hit points and skill points are not normally affected by spells, worn magic items, or other temporary effects.
+    1. Hit points and skill points are not normally affected by spells, worn magic items, or other temporary effects.
 \end{dtable*}
 
 \section{Combat Overview}\label{Combat Overview}
@@ -349,18 +341,17 @@ You can move diagonally past corners and enemies.
 All squares threatened by any foes cost double the normal movement cost to move out of.
 
 \subsection{Injury, Death, and Healing}\label{Injury, Death, and Healing}
-Your hit points measure how hard you are to kill.
-No matter how many hit points you lose, your character isn't significantly hindered until your hit points drop to 0.
 
 \subsubsection{Hit Points}\label{Hit Points}
-Your hit points represent how much punishment you can take.
+Your hit points measure how hard you are to kill.
+No matter how many hit points you lose, your character isn't significantly hindered until your hit points drop to 0.
 When you run out of hit points, your actions are limited and you might die.
 
 Your hit points are equal to your \term{hit value} \mtimes your level.
 Your hit value is calculated as follows:
 
 \begin{figure}[h]
-    \centering Half Fortitude defense or half Mental defense \add half Constitution \add other bonuses or penalties
+    \centering Half Fortitude defense or half Mental defense \add other bonuses or penalties
 \end{figure}
 
 \parhead{Temporary Modifiers} Temporary effects which alter your Fortitude or Mental defenses, including changes to your Constitution or Willpower, do not alter your maximum or current hit points.

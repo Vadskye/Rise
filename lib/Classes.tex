@@ -38,6 +38,15 @@ Except in unusual circumstances, a character's base class is the class that the 
 \parhead{Skill Points}
 This is the number of skill points that members of this class get.
 
+\parhead{Defenses}
+Each class grants bonuses to defenses the class specializes in.
+If the class has a good base defense progression, it grants a \plus4 bonus to that defense.
+If the class has an average base defense progression, it grants a \plus2 bonus to that defense.
+These bonuses apply regardless of the attribute or base progression used to determine the defense.
+
+These bonuses do not stack with other defense bonuses granted by base classes.
+If a character has multiple base classes, use the highest bonuses that apply to each defense.
+
 \parhead{Weapon and Armor Proficiencies}
 These are the types of equipment that members of this class are trained in using.
 
@@ -68,9 +77,9 @@ The effects of each progression are described on \trefnp{Base Progressions}.
     \begin{dtabularx}{\columnwidth}{l l X}
         \tb{Progression} & \tb{Combat Prowess} & \tb{Base Defense Bonus}        \\
         \hline
-        Good                & Class level \add 2             & Five-quarters class level \add 3  \\
-        Average             & Four-fifths class level \add 2 & Class level \add 2                \\
-        Poor                & Two-thirds class level \add 1  & Three-quarters class level \add 1 \\
+        Good                & Class level \add 2             & Five-quarters class level  \\
+        Average             & Four-fifths class level \add 2 & Class level                \\
+        Poor                & Two-thirds class level \add 1  & Three-quarters class level \\
     \end{dtabularx}
 \end{dtable}
 
@@ -177,6 +186,8 @@ The class features that a character gets for being a member of the class.
 A character with barbarian as a base class gains the following abilities.
 
 \classbasics{Skill Points} 10.
+
+\classbasics{Defenses} \plus4 Fortitude, \plus2 Reflex.
 
 \cf{Bbn}{Weapon and Armor Proficiency}
 A barbarian is proficient with simple weapons, any four other weapon groups, light armor, medium armor, and shields.
@@ -396,6 +407,8 @@ He may not be neutral unless his deity's alignment is also neutral.
 A character with cleric as a base class gains the following abilities.
 
 \classbasics{Skill Points} 5.
+
+\classbasics{Defenses} \plus2 Fortitude, \plus4 Mental.
 
 \cf{Clr}{Weapon and Armor Proficiency}
  Clerics are proficient with simple weapons, any two other weapon groups, light and medium armor, and shields.
@@ -951,6 +964,8 @@ A character with druid as a base class gains the following abilities.
 
 \classbasics{Skill Points} 10.
 
+\classbasics{Defenses} \plus4 Fortitude, \plus2 Mental.
+
 \cf{Drd}{Weapon and Armor Proficiency}
 Druids are proficient with simple weapons, any one other weapon group, scimitars, sickles, and slings.
 In addition, druids are proficient with light armor, medium armor and shields.
@@ -1394,6 +1409,8 @@ A character with fighter as a base class gains the following abilities.
 
 \classbasics{Skill Points} 5.
 
+\classbasics{Defenses} \plus4 Fortitude, \plus2 Mental.
+
 \cf{Ftr}{Weapon and Armor Proficiency}
  A fighter is proficient with simple weapons, any four other weapon groups,  all armor (heavy, medium, and light) and shields.
 
@@ -1614,6 +1631,8 @@ As a swift action, he can exchange a single adaptive combat feat from his adapat
 A character with monk as a base class gains the following abilities.
 
 \classbasics{Skill Points} 10.
+
+\classbasics{Defenses} \plus2 Fortitude, \plus4 Reflex, \plus4 Mental.
 
 \cf{Mnk}{Weapon and Armor Proficiency}
 Monks are proficient with simple weapons, monk weapons, and any one other weapon group.
@@ -1841,6 +1860,8 @@ If she stops being chaotic, she regains her \ki powers and ability to take monk 
 A character with paladin as a base class gains the following abilities.
 
 \classbasics{Skill Points} 5.
+
+\classbasics{Defenses} \plus4 Fortitude, \plus4 Mental.
 
 \cf{Pal}{Weapon and Armor Proficiency}
  Paladins are proficient with simple weapons,  any two other weapon groups,  all types of armor (heavy, medium, and light), and with shields.
@@ -2210,6 +2231,8 @@ A character with ranger as a base class gains the following abilities.
 
 \classbasics{Skill Points} 15.
 
+\classbasics{Defenses} \plus4 Fortitude, \plus4 Reflex, \plus2 Mental.
+
 \cf{Rgr}{Weapon and Armor Proficiency}
  A ranger is proficient with simple weapons, any two weapon groups, light and medium armor, and shields.
 He is also proficient with his choice of bows, crossbows, or thrown weapons.
@@ -2533,6 +2556,8 @@ A character with rogue as a base class gains the following abilities.
 
 \classbasics{Skill Points} 15.
 
+\classbasics{Defenses} \plus4 Reflex, \plus2 Mental.
+
 \cf{Rog}{Weapon and Armor Proficiency}
 Rogues are proficient with simple weapons, any two weapon groups, light armor, and bucklers.
 They are also proficient with saps.
@@ -2768,6 +2793,8 @@ A character with sorcerer as a base class gains the following abilities.
 
 \classbasics{Skill Points} 5.
 
+\classbasics{Defenses} \plus4 Mental.
+
 \cf{Sor}{Weapon and Armor Proficiency}
 Sorcerers are proficient with simple weapons  and one other weapon group.
 They are not proficient with any type of armor or shield.
@@ -2960,7 +2987,9 @@ A spellwarped gains additional class skills based on his choice of innate magic.
 \subsection{Base Class Features}
 A character with spellwarped as a base class gains the following abilities.
 
-\parhead{Skill Points} 5.
+\classbasics{Skill Points} 5.
+
+\classbasics{Defenses} \plus4 good defense, \plus2 other defenses.
 
 \cf{Spl}{Weapon and Armor Proficiency}
 A spellwarped is proficient with simple weapons, any two weapon groups, light and medium armor, and shields.
@@ -3474,6 +3503,8 @@ A character with wizard as a base class gains the following abilities.
 
 \classbasics{Skill Points} 5.
 
+\classbasics{Defenses} \plus4 Mental
+
 \cf{Wiz}{Weapon and Armor Proficiency}
 Wizards are proficient with simple weapons, but not with any type of armor or shield.
 Armor of any type interferes with a wizard's movements, which can cause her spells with somatic components to fail.
@@ -3744,15 +3775,8 @@ Wissy, a 2nd-level rogue/2nd-level wizard, would have a combat prowess of 4.
 
 \parhead{Defenses}
 
-Determining defenses works in the same way as determining combat prowess, except that the level multipliers are different.
-
-\begin{enumerate}
-    \item For each type of defense progression the character has, sum the character's level in classes with that defense progression.
-    \item Determine the character's fastest type of defense progression. Good is faster than Average, which is faster than Poor.
-    \item Add (five-quarters levels in Good progression) + (levels in Average progression) + (three-quarters levels in Poor progression). Each part of this calculation rounded down separately.
-    \item If the character's fastest defense progression is Good, add 3 to the result. If it is Average, add 2. If it is Poor, add 1.
-    \item The result is the character's base defense bonus.
-\end{enumerate}
+For each defense, add the base defense bonuses granted by each class together.
+The result is the character's total base defense bonus for that defense.
 
 \parhead{Skills}
 A multiclass character gains all class skills from all of his classes.
