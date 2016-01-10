@@ -28,7 +28,7 @@ Instead of striking to deal damage, you can feint to leave your foe off-balance.
 Instead of striking to deal damage, you can try to just touch your opponent. Touch attacks target Reflex defense instead of Armor defense, but deal no damage.
 
 \subsection{Combat Maneuvers}\label{Combat Maneuvers}
-A combat maneuver is an attempt to physically hinder your foe with your body, such as by shoving or tripping it. Unless otherwise noted, using a combat maneuver requires a free hand and replaces a physical attack made during a full attack. You make an attack against a creature within your reach, adding your maneuver modifier to the roll instead of your attack modifier. If your result equals or exceeds your foe's Maneuver defense, your attack hits, and your foe is affected by the maneuver.
+A combat maneuver is an attempt to physically hinder your foe with your body, such as by shoving or tripping it. Unless otherwise noted, using a combat maneuver requires a free hand and replaces a physical attack made during a full attack. You make an attack against a creature within your reach, using your maneuver accuracy instead of your accuracy with your weapon. If your result equals or exceeds your foe's Maneuver defense, your attack hits, and your foe is affected by the maneuver.
 
 \begin{dtable}
     \lcaption{Combat Maneuvers}
@@ -44,8 +44,8 @@ A combat maneuver is an attempt to physically hinder your foe with your body, su
     \end{dtabularx}
 \end{dtable}
 
-\subsubsection{Maneuver Modifier}
-Your maneuver modifier is equal to the following:
+\subsubsection{Maneuver Accuracy}
+Your maneuver accuracy is equal to the following:
 
 \begin{figure}[h]
     \centering Combat prowess or attack attribute \add special size modifier \add other bonuses and penalties
@@ -55,20 +55,19 @@ Your attack attribute depends on the maneuver you are using, as described in \pc
 
 \subsubsection{Maneuver Descriptions}
 
-\parhead{Dirty Trick}\label{Dirty Trick} You strike your foe in a sensitive spot, pull its pants down, or creatively use your environment to attack. Success means the creature is \impaired with relevant actions for 1 round. For every 5 points by which you succeed, the creature is impaired for an additional round. You can perform a dirty trick with either Strength or Dexterity.
+\parhead{Dirty Trick}\label{Dirty Trick} You strike your foe in a sensitive spot, pull its pants down, or creatively use your environment to attack. Success means the creature is \impaired with relevant actions for 1 round. For every 5 points by which you succeed, the creature is impaired for an additional round. You can perform a dirty trick with a free hand, using either Strength or Dexterity.
 
-\parhead{Disarm}\label{Disarm} You can strike an item your foe is wearing or holding. Success means you hit the object, and can choose whether or not to deal damage to it. If the item is not well secured, the item falls to the ground in the foe's square. If you take a foe's item using your bare hand, you can hold it rather than letting it fall to the ground.
+\parhead{Disarm}\label{Disarm} You can strike an item your foe is wearing or holding. Success means you hit the object, and can choose whether or not to deal damage to it. If the item is not well secured, the item falls to the ground in the foe's square. If you disarm a foe using your bare hand, you can hold the item rather than letting it fall to the ground.
 
-You can perform a disarm attack with any melee weapon, using either Strength or Dexterity.
+You can perform a disarm attack with a free hand or any melee weapon, using either Strength or Dexterity.
 
-\parhead{Grapple}\label{Grapple} You physically grab and restrain your foe. Success means you and the creature become grappled, which limits your ability to act. See \pcref{Grappling} for more details.
+\parhead{Grapple}\label{Grapple} You physically grab and restrain your foe. Success means you and the creature become grappled, which limits your ability to act. You can perform a grapple with a free hand, using Strength. See \pcref{Grappling} for more details.
 
-\parhead{Overrun}\label{Overrun} As part of a move action, you move directly through creatures in your way. Each creature in your way can choose to avoid you, allowing you to pass through its square unhindered. Each time you encounter a creature in your way that didn't avoid you, you make an overrun attack. Success means you can move through the creature's space, though it is considered difficult terrain. Success by 10 or more means the creature is knocked prone, and the area is not considered difficult terrain. Failure means you end your movement immediately. Failure by 10 or more means you end your movement and fall prone. You can only overrun a creature with Strength.
+\parhead{Overrun}\label{Overrun} As part of a move action, you move directly through creatures in your way. Each creature in your way can choose to avoid you, allowing you to pass through its square unhindered. Each time you encounter a creature in your way that didn't avoid you, you make an overrun attack. Success means you can move through the creature's space, though it is considered difficult terrain. Success by 10 or more means the creature is knocked prone, and the area is not considered difficult terrain. Failure means you end your movement immediately. Failure by 10 or more means you end your movement and fall prone. You must use your Strength to overrun a creature, but you do not need a free hand.
 
-\parhead{Shove}\label{Shove} You shove your foe where you want it to go. Success means you move the creature 5 feet in a direction of your choice. For every 5 points by which you succeed, you can move it an additional 5 feet. You cannot normally move the creature further after moving it outside of your reach. If you have movement remaining in the round, you can move with the creature in order to shove it farther. If the creature encounters a solid object or creature, you must stop shoving it. You can only shove a creature with Strength.
+\parhead{Shove}\label{Shove} You shove your foe where you want it to go. Success means you move the creature 5 feet in a direction of your choice. For every 5 points by which you succeed, you can move it an additional 5 feet. You cannot normally move the creature further after moving it outside of your reach. If you have movement remaining in the round, you can move with the creature in order to shove it farther. If the creature encounters a solid object or creature, you must stop shoving it. You can perform a shove with a free hand, using Strength.
 
-\parhead{Trip}\label{Trip} You try to trip your foe. Success means the creature falls prone, causing it to take a \minus4 penalty to physical attacks and defenses. It can stand up as a move action. You can trip a creature with Strength or Dexterity.
-
+\parhead{Trip}\label{Trip} You try to trip your foe. Success means the creature falls prone, causing it to take a \minus4 penalty to physical accuracy and defenses. It can stand up as a move action. You perform a trip with a free hand, using either Strength or Dexterity.
 
 \section{Movement and Positioning}
 
@@ -81,7 +80,7 @@ You can perform a disarm attack with any melee weapon, using either Strength or 
 You can follow the target as far as your movement speed allows; if the target continues beyond that point, you remain stationary where your movement ended. If the target takes an action that makes it impossible to follow, such as teleporting or using certain abilities, you cannot follow it for the rest of the round.
 \parhead{Withdraw} As a move action, you can designate a target creature or object to withdraw from, and the minimum distance you want to maintain between you and the creature. This functions like following the creature, except that you specify a minimum distance between you and the target instead of a maximum distance.
 
-\parhead{Charge}\label{Charge} As a full-round action, you can move up to your speed in both the movement and action phase, and make a single attack with a \plus2 bonus to hit at the end of your charge. When you charge, you take a \minus2 penalty to physical defenses until the end of the round.
+\parhead{Charge}\label{Charge} As a full-round action, you can move up to your speed in both the movement and action phase, and make a single attack with a \plus2 bonus to accuracy at the end of your charge. When you charge, you take a \minus2 penalty to physical defenses until the end of the round.
 \par You must move at least 20 feet to gain the benefit of a charge, and all movement must be in a single straight line. If there are any obstacles in your path which hinder your movement, you cannot charge. If your charge fails or becomes invalid partway through, you move as far as you can and stop.
 
 \par If your combat prowess is high enough to grant you multiple attacks, your charge attack deals double damage for each additional attack granted by your combat prowess.
@@ -134,10 +133,10 @@ While in the air, a creature with a glide speed can control its fall as a move a
 \section{Circumstances, Bonuses, and Penalties}\label{Circumstances, Bonuses, and Penalties}
 
 \begin{dtable}
-    \lcaption{Attack Roll Modifiers}
+    \lcaption{Accuracy Modifiers}
     \begin{dtabularx}{\columnwidth}{l X}
-        \tb{Attacker's Condition} & \tb{Attack Modifier} \\
-\hline
+        \tb{Attacker's Condition} & \tb{Accuracy Modifier} \\
+        \hline
         %Entangled & \minus2 \\
         Invisible & \x\fn{1} \\
         Prone & \minus4\fn{2} \\
@@ -218,7 +217,7 @@ If the obstacle is stationary, such as a tree trunk or wall, the defender has pa
 
 \parhead{Small Obstacles} A low obstacle (such as a wall no higher than half your height) provides passive cover, but only to creatures within 30 feet (6 squares) of it. The attacker can ignore the cover if he's closer to the obstacle than his target. If two creatures are equally distant from the wall, it grants cover to both of them.
 \parhead{Stealth Checks} You can use passive cover to make a Stealth check to hide, but not active cover.
-\parhead{Total Cover} If you don't have line of effect to your target, he is considered to have total cover from you. You can't make an attack against a target that has total cover.
+\parhead{Total Cover} If you don't have line of effect to your target, it is considered to have total cover from you. You can't make an attack against a target that has total cover.
 
 \subsubsection{Improved Cover}
 
@@ -229,7 +228,7 @@ Exceptionally well covered opponents, such as a creature behind an arrow slit in
 \subsection{Concealment}\label{Concealment}
 Concealment represents anything which makes it more difficult to see your target, such as dim lighting. A creature with concealment from you gains a \plus4 bonus to physical defenses. Concealment bonuses do not apply if you can't see your opponent (such as if you close your eyes).
 
-\parhead{Determining Concealment} When making a melee attack against an adjacent target, your target has concealment if his space is entirely within an effect that grants concealment.
+\parhead{Determining Concealment} When making a melee attack against an adjacent target, your target has concealment if its space is entirely within an effect that grants concealment.
 
 Deterining concealment for making an attack against a target that is not adjacent to you works exactly like determining cover for ranged attacks.
 
@@ -245,7 +244,7 @@ While grappling, you suffer certain penalties and restrictions, as described bel
 \begin{itemize}
     \item You must use a free hand (or equivalent limbs) to grapple, preventing you from taking any actions which would require having two free hands. If you cannot free a hand, you suffer a \minus10 penalty to all physical attacks, including grapple attacks, until you have a free hand.
     \item You are \defenseless against creatures you are not grappling with.
-    \item You take a \minus4 penalty to attack rolls made with weapons that are not light, since they are too large and cumbersome to be used effectively in a grapple.
+    \item You take a \minus4 penalty to accuracy with weapons that are not light, since they are too large and cumbersome to be used effectively in a grapple.
     \item Spellcasting is extremely difficult. You cannot cast spells with somatic components. Using a spell-like ability or casting a spell without somatic components requires a Concentration check with a DC equal to 20 \add double spell level.
     \item You cannot move normally (but see Move the Grapple, below).
 \end{itemize}
@@ -338,7 +337,7 @@ In the case of abnormally large mounts (two or more size categories larger than 
 
 If your mount moves more than its normal speed when charging, you also take the physical defense penalty associated with a charge. If you make an attack at the end of such a charge, you receive the bonus gained from the charge. When charging on horse-back, you deal double damage with a lance (see \pcref{Charge}).
 
-You can use ranged weapons while your mount is taking a double move, but at a \minus4 penalty on the attack roll. You can use ranged weapons while your mount is sprinting, but at a \minus8 penalty (see \pcref{Sprint}). In either case, you make the attack roll when your mount has completed half its movement. You can make a full attack with a ranged weapon while your mount is moving. Likewise, you can take move actions normally.
+You can use ranged weapons while your mount is taking a double move, but at a \minus4 penalty to accuracy. You can use ranged weapons while your mount is sprinting, but at a \minus8 penalty (see \pcref{Sprint}). In either case, you make the attack roll when your mount has completed half its movement. You can make a full attack with a ranged weapon while your mount is moving. Likewise, you can take move actions normally.
 
 \parhead{Casting Spells while Mounted} You can cast a spell normally if your mount moves up to a normal move (its speed) either before or after you cast. If you have your mount move both before and after you cast a spell, then you're casting the spell while the mount is moving, and you have to make a Concentration check due to the vigorous motion (DC 10 \add double spell level) or lose the spell. If the mount is sprinting, your Concentration check is more difficult due to the violent motion (DC 15 \add double spell level).
 
@@ -346,13 +345,13 @@ You can use ranged weapons while your mount is taking a double move, but at a \m
 
 \parhead{If You Are Dropped} If you are knocked unconscious, you have a 50\% chance to stay in the saddle (or 75\% if you're in a military saddle). Otherwise you fall and take 1d6 points of damage. Without you to guide it, most mounts avoid combat.
 \subsection{Dual Wielding}\label{Dual Wielding}
-If you are wielding two weapons at once, you can attack with both weapons whenever you attack. This is called dual wielding. Roll a single attack roll for both weapons. If you hit, roll damage for both weapons seperately, including all damage modifiers that apply to attacks with that weapon. You deal damage equal to the higher of the two results. This is treated as a single attack, so damage reduction, sneak attack damage, and other effects are only applied once.
+If you are wielding two weapons at once, you can attack with both weapons whenever you attack. This is called dual wielding. Roll a single attack roll for both weapons. If you hit, roll damage for both weapons seperately, including all damage modifiers that apply to attacks with that weapon. You deal damage equal to the higher of the two results. This is treated as a single attack, so damage reduction, bonus damage from Strength, and other effects are only applied once.
 
-\parhead{Critical Hits} Normally, when you score a critical hit, you roll damage separately for each weapon and use the higher of the two results when dealing the bonus damage. If your weapons have different critical threat ranges, it is possible to only score a critical hit with one of the two weapons. In that case, only use that weapon's attack and damage bonuses when confirming the critical threat and dealing extra damage.
+\parhead{Critical Hits} Normally, when you score a critical hit, you roll damage separately for each weapon and use the higher of the two results when dealing the bonus damage. If your weapons have different critical threat ranges, it is possible to only score a critical hit with one of the two weapons. In that case, only use that weapon's accuracy and damage bonuses when confirming the critical threat and dealing extra damage.
 
-\parhead{Weapon Size} Dual wielding is easiest with light weapons. You take a \minus1 penalty to attack if you use a non-light weapon while fighting with two weapons, or a \minus2 penalty if neither weapon is light. This penalty does not apply if you alternate attacks between your weapons, instead of attacking with both at once.
+\parhead{Weapon Size} Dual wielding is easiest with light weapons. You take a \minus1 penalty to accuracy if you use a non-light weapon while fighting with two weapons, or a \minus2 penalty if neither weapon is light. This penalty does not apply if you alternate attacks between your weapons, instead of attacking with both at once.
 
 \parhead{Unarmed Attacks} Normally, you can't make unarmed attacks as if fighting with two weapons. However, monks and other characters who have the special ability to treat multiple parts of their body as weapons can use two-weapon fighting with unarmed attacks.
 
-\parhead{Example} Felix the 1st-level fighter is wielding two short swords against an evil goblin. The goblin has an Armor defense of 15. Felix has a Strength of 3 and a combat prowess of 4. This means his attack bonus is \plus4. If he attacks with both weapons at once, he takes no penalty to his attack roll, because both weapons are light. If he rolls an 11 or higher, he hits the goblin. His damage bonus is \plus1 from his Strength, so he rolls 1d6\plus1 for each weapon. If he rolls a 4 and a 2, he would keep the 4, dealing a total of 5 damage.
+\parhead{Example} Felix the 1st-level fighter is wielding two short swords against an evil goblin. The goblin has an Armor defense of 15. Felix has a Strength of 3 and a combat prowess of 4. This means his accuracy is \plus4. If he attacks with both weapons at once, he takes no penalty to his accuracy, because both weapons are light. If he rolls an 11 or higher, he hits the goblin. His damage bonus is \plus1 from his Strength, so he rolls 1d6\plus1 for each weapon. If he rolls a 4 and a 2, he would keep the 4, dealing a total of 5 damage.
 

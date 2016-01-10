@@ -55,7 +55,7 @@ Perception describes a character's ability to observe and be aware of one's surr
     \item Perception can be used to attack with projectile weapons.
     \item Perception can be used for Awareness, Creature Handling, Sense Motive, Spellcraft, and Survival checks.
     \item Perception can be used for Reflex defense.
-    \item For every 5 Perception you have, you gain a \plus1 bonus to attack with physical attacks. If your Perception is negative, you take a penalty to attack with physical attacks equal to your Perception.
+    \item For every 5 Perception you have, you gain a \plus1 bonus to accuracy with physical attacks. If your Perception is negative, you take a penalty to accuracy with physical attacks equal to your Perception.
 \end{itemize}
 
 \subsubsection{Willpower (Wil)}\label{Willpower}
@@ -124,7 +124,7 @@ When an attribute changes, abilities and modifiers based on the attribute change
     \begin{dtabularx}{\textwidth}{l >{\lcol}p{10em} X}
         \tb{Effect Type} & \tb{Timing of Change} & \tb{Example} \\
         \hline
-        Numerical modifiers   & Immediately & A barbarian enters a rage.  His attack bonus increases immediately.  \\
+        Numerical modifiers   & Immediately & A barbarian enters a rage.  His physical damage increases immediately.  \\
         Ability prerequisites & Immediately & A paladin's Strength is drained by a ghost.  She loses the benefits of her Power Attack feat immediately.  \\
         Ability use limits    & When ability uses are regained & A fighter puts on a magic item that grants additional Willpower.  He gains additional daily uses of his combat discipline ability after resting for the night.  \\
         Hit points            & On level up\fn{1} & A druid casts \spell{totemic power} to increase his Constitution. His hit points do not change. \\
@@ -186,7 +186,7 @@ Within each phase, actions of all creatures are simultaneously resolved in the f
 
 In the vast majority of cases, there is no need to go through this order explicitly.
 Combats will run much faster if attack and damage rolls are generally made and announced at the same time as the actions are chosen, even before all characters have explicitly stated their actions.
-The order of resolution matters when taking actions that can significantly change the situation, such as grappling an enemy or casting complex spells.
+The order of resolution matters when creatures take actions that directly conflict with each other.
 
 \subsubsection{Conflicting Actions}\label{Conflicting Actions}
 
@@ -240,15 +240,18 @@ You cannot delay more than once in a single phase.
 An \glossterm{attack} is anything that affects another creatures in a potentially harmful way.
 There are two kinds of attacks: physical attacks, which are made with weapons or fists, and special attacks, which are made with magic or supernatural power.
 All physical attacks, and most special attacks, require making an \glossterm{attack roll} against a \glossterm{defense}.
+To make an attack roll, you roll 1d20, adding your \glossterm{accuracy} with the attack to the roll.
 If the result of the attack roll equals or exceeds the defense, the attack succeeds.
 
 \subsubsection{Full Attack}\label{Full Attack}
-As a standard action, you can try to strike a foe with a weapon you are wielding.
-To do so, make an attack roll with a weapon you are wielding, adding your attack modifier to the roll.
-If your result is at least equal to your foe's Armor defense, your attack hits, and your foe takes damage.
+As a standard action, you can make an attack roll with a weapon you are wielding against an enemy.
+If you're using a melee weapon, you must \glossterm{threaten} your target.
+If you're using a ranged weapon, the target must be within the weapon's maximum \glossterm{range}.
 
-\subsubsection{Attack Modifier}
-Your attack modifier is equal to the following:
+If your attack roll beats the target's Armor defense, your foe takes damage.
+
+\subsubsection{Accuracy}
+Your accuracy with physical attacks is equal to the following:
 
 \begin{figure}[h]
     \centering Combat prowess or attack attribute \add proficiency bonus \add size modifier \add other bonuses and penalties
@@ -461,7 +464,7 @@ If a creature is overwhelmed, it takes a penalty to physical defenses equal to t
 
 \subsubsection{Range Increments}
 When using a ranged weapon, you take a \minus2 penalty per range increment between you and your target.
-For example, when using a longbow with a range increment of 100 feet against a target 170 feet away, you take a \minus2 penalty to attack rolls.
+For example, when using a longbow with a range increment of 100 feet against a target 170 feet away, you take a \minus2 penalty to accuracy.
 
 \subsubsection{Size in Combat}\label{Size in Combat}
 Size affects your space and reach in combat.
@@ -489,7 +492,7 @@ These effects are shown on \trefnp{Size in Combat}.
     \end{dtabularx}
     1 Creatures can vary in space and reach.  These are simply typical values.  \\
     2 Modifies physical attacks and defenses, except for maneuvers. \\
-    3 Modifies maneuver attack and defense. The opposite modifier applies to Stealth.  \\
+    3 Modifies maneuver accuracy and defense. The opposite modifier applies to Stealth.  \\
 \end{dtable*}
 
 Unusually large or small creatures also have other special rules apply to them, as described in \pcref{Special Size Rules}.
@@ -508,8 +511,6 @@ Under normal circumstances, a natural 1 automatically misses, and a natural 20 a
 When you roll a natural 20 on an attack roll and hit, you have scored a critical threat.
 Roll another attack roll at the same attack bonus.
 If that attack also hits, you deal double damage.
-
-%Keen weapons threaten a critical hit on a 19 or 20, while impact weapons deal triple damage when they score a critical hit.
 
 \subsubsection{Unarmed Combat}\label{Unarmed Combat}
 Every creature can attack with its body using an unarmed attack.
@@ -532,22 +533,15 @@ Certain abilities can also grant offensive or defensive legend points.
 
 \subsection{Using Legend Points}
 
-Offensive legend points can be used for one of two things:
-\begin{itemize}
-    \item Reroll any attack or check your character made.
-        You may choose to reroll after knowing whether the roll succeeded or failed.
-    \item Treat a successful physical attack your character made as if it were a critical threat.
-\end{itemize}
+Offensive legend points can be used to reroll any attack or check your character makes.
+You may choose to reroll after knowing whether the roll succeeded or failed.
 
-Defensive legend points can be used for one of two things:
-\begin{itemize}
-    \item Reroll any attack or check made against your character.
-        You may choose to reroll after knowing whether the roll succeeded or failed.
-    \item Treat a critical threat against your character as if it were an ordinary success.
-\end{itemize}
+Defensive legend points can be used to reroll any attack or check made against your character.
+You may choose to reroll after knowing whether the roll succeeded or failed.
 
-Legend points which are not specifically offensive or defensive can be used for any of these four abilities.
+Legend points which are not specifically offensive or defensive can be used for either purpose.
 Using a legend point is not an action, and can be done at any time.
+You cannot use more than one legend point for any single roll.
 
 \subsection{Gaining Legend Points}
 
