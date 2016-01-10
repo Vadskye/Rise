@@ -32,12 +32,12 @@ Weapons are organized into thematically related categories called weapon groups.
 \end{dtable!*}
 
 \subsubsection{Weapon Proficiency}
-Each character is proficient with different weapon groups. These indicate the weapons that you can use effectively. You gain a \plus4 bonus to attack when using a weapon you are proficient with. You can wield weapons you are not proficient with, but you cannot use them to defend yourself, which can cause you to be \defenseless.
+Each character is proficient with different weapon groups. These indicate the weapons that you can use effectively. You gain a \plus4 bonus to accuracy with a weapon you are proficient with. You can wield weapons you are not proficient with, but you cannot use them to defend yourself, which can cause you to be \defenseless.
 
 \subsection{Weapon Encumbrance}
 This is a measure of how much effort it takes to wield a weapon in combat. A weapon's encumbrance indicates whether a melee weapon, when wielded by a character of the weapon's size category, is considered a light weapon, a medium weapon, or a heavy weapon.
 
-\parhead{Light} A light weapon can be used with more finesse than a medium weapon. The wielder can add either his Dexterity or his Strength to attack rolls with light weapons, whichever he prefers. In addition, light weapons are easier to use in the off-hand or while grappling.
+\parhead{Light} A light weapon can be used with more finesse than a medium weapon. The wielder can use Dexterity to attack with the weapon (in place of Strength and combat prowess). In addition, light weapons are easier to use in the off-hand or while grappling.
 
 \parhead{Medium} A medium weapon can be used in one hand. It is difficult, but possible, to wield a medium weapon in your off-hand. You can also hold a medium weapon in two hands. Changing grips to hold it in one hand or two hands can be done as a move action.
 
@@ -52,7 +52,7 @@ Melee weapons are used for making melee attacks against foes within your reach (
 \subsection{Ranged Weapons}
 Ranged weapons are used to make attacks against distant foes within the range of your weapon. There are two kinds of ranged weapons: projectile weapons and thrown weapons.
 
-\subsubsection{Range Increments}\label{Range Increment} All ranged weapons have a ``range increment'', which indicates the distance at which you can effectively attack with the weapon. Any attack against a target within your range increment takes no penalty. For each range increment by which the target is distant from you, you take a cumulative \minus2 penalty to your attack roll. A thrown weapon has a maximum range of five range increments. A projectile weapon can shoot out to ten range increments.
+\subsubsection{Range Increments}\label{Range Increment} All ranged weapons have a ``range increment'', which indicates the distance at which you can effectively attack with the weapon. Any attack against a target within your range increment takes no penalty. For each range increment by which the target is distant from you, you take a cumulative \minus2 penalty to your accuracy. A thrown weapon has a maximum range of five range increments. A projectile weapon can shoot out to ten range increments.
 
 \subsubsection{Projectile Weapons} Projectile weapons fire ammunition at a target to deal damage. The ammunition generally breaks when used.
 
@@ -64,7 +64,7 @@ Ranged weapons are used to make attacks against distant foes within the range of
 
 \subsubsection{Ranged Weapons in Melee}
 
-You take a \minus4 penalty to attack with medium and large ranged weapons against creatures adjacent to you. In addition, you are usually \defenseless while using ranged weapons.
+You take a \minus4 penalty to accuracy with medium and large ranged weapons against creatures adjacent to you. In addition, you are usually \defenseless while using ranged weapons.
 
 \parhead{Thrown Weapons in Melee}\label{Thrown Weapons in Melee} You cannot defend yourself with a weapon you are throwing, which can cause you to be \defenseless. To avoid this, you can attempt to use the weapon as a melee weapon. Some thrown weapon are not designed for use in melee, such as shurikens. When using such a weapon, you are always treated as nonproficient with it, which means you cannot defend yourself with it and do not gain the \plus4 bonus for being proficient with your weapon.
 
@@ -308,7 +308,7 @@ Some weapons found on \trefnp{Weapons} have special properties. The list of spec
 \parhead{Double} This weapon has more than one striking surface. You can fight with both ends simultaneously, just like dual wielding (see \pcref{Dual Wielding}). Alternately, you can attack with one end at a time. If you have the ability to use a double weapon in one hand, you can only fight with one end at a time, not both.
 \parhead{Exotic Grip} If you have proficiency with exotic weapons, you can use this in one hand. While wielding it in one hand, you do not gain the \plus1 bonus to damage from wielding the weapon in two hands.
 \parhead{Finesse} You apply your Dexterity instead of your Strength to physical attacks with this weapon, even if it isn't a light weapon for you.
-\parhead{Forceful} You can use this weapon to make shove attacks to push people away from you. This allows you to add the weapon's proficiency bonus to the shove attack.
+\parhead{Forceful} You can use this weapon to make shove attacks to push people away from you. This allows you to add the weapon's proficiency bonus to accuracy with the shove attack.
 \parhead{Grappling} You gain a \plus2 bonus to physical attacks with this weapon in a grapple.
 \parhead{Impact} When this weapon scores a critical hit, all damage dealt in excess of the target's hit points is dealt as critical damage.
 \parhead{Keen} You gain a \plus4 bonus to confirm critical threats with this weapon.
@@ -317,7 +317,7 @@ Some weapons found on \trefnp{Weapons} have special properties. The list of spec
 \parhead{Projectile} This weapon fires projectiles at range. Projectile weapons have a range increment listed in their description, which indicates the distance they can be easily fired. Projectile weapons must be reloaded. The time required to reload a projectile weapon is given in the weapon description.
 \parhead{Reach} This weapon strikes at double your natural reach (so 10 feet for a typical Small or Medium creature). However, it cannot attack a creature within your natural reach.
 
-Reach weapons can held using a different grip to strike nearby foes. This is called ``short hafting''. While short hafting a reach weapon, you ignore the weapon's reach property, but you take a \minus4 penalty to physical attacks with it.
+Reach weapons can held using a different grip to strike nearby foes. This is called ``short hafting''. While short hafting a reach weapon, you ignore the weapon's reach property, but you take a \minus4 penalty to accuracy with it.
 \parhead{Small} This weapon is unusually small. It is one size category smaller than normal for a light weapon (that is, three size categories smaller than the creature it is intended for). This makes it easier to conceal (see \pcref{Sleight of Hand}).
 \parhead{Throwing} This weapon is designed to be thrown. Throwing weapons have a range increment listed in their description, which indicates the distance they can be easily thrown. See \pcref{Thrown Weapons}.
 \parhead{Tripping} You can use this weapon to make trip attacks. You gain a \plus2 bonus on such attacks.
@@ -337,17 +337,17 @@ Some weapons in \trefnp{Weapons} have unique special abilities, which are descri
 \par You can fire a crossbow from a prone position without penalty.
 \parhead{Hammer, Gnome Hooked} This weapon has a hammer head which deals 1d8 points of damage, and a hook which deals 1d6 points of damage. The hook is a tripping weapon.
 \parhead{Longbow} You need both hands to fire a bow, regardless of its size. One hand is free when not firing the bow. Loading a bow is a free action that requires both hands. A longbow is too unwieldy to use while you are mounted.
-\par When attacking with a bow, you take a \minus4 penalty against creatures that threaten you.
+\par When attacking with a bow, you take a \minus4 penalty to accuracy against creatures that threaten you.
 \parhead{Net} A net is used to entangle enemies. When you throw a net, you make a ranged touch attack against your target. If you hit, the target is entangled. An entangled creature moves at half speed, cannot run or charge, and takes a \minus2 penalty to physical attacks and defenses, as well as Strength and Dexterity-based checks. If you control the trailing rope by succeeding on an opposed Strength check while holding it, the entangled creature can move only within the limits that the rope allows. If the entangled creature attempts to cast a spell, it must make a DC 15 \add double spell level Concentration check or be unable to cast the spell.
 \par An entangled creature can escape with a DC 20 Escape Artist check (a full-round action). The net has 5 hit points and can be burst with a DC 20 Strength check (also a full-round action).
 \par A net is useful only against creatures within one size category of you.
-\par A net must be folded to be thrown effectively. The first time you throw your net in a fight, you make a normal ranged touch attack roll. After the net is unfolded, you take a \minus4 penalty on attack rolls with it. It takes 2 full-round actions for a proficient user to fold a net and twice that long for a nonproficient one to do so.
+\par A net must be folded to be thrown effectively. The first time you throw your net in a fight, you make a normal ranged touch attack roll. After the net is unfolded, you take a \minus4 penalty on accuracy with it. It takes 2 full-round actions for a proficient user to fold a net and twice that long for a nonproficient one to do so.
 \parhead{Rapier} A rapier is difficult to use in the off-hand. It is treated as a medium weapon if it is used as a secondary weapon when fighting with two weapons at once.
 \parhead{Shield, Heavy or Light} You can bash with a shield instead of using it for defense. See Armor for details.
 \parhead{Shortbow} You need both hands to fire a bow, regardless of its size. One hand is free when not firing the bow. Loading a bow is a free action that requires both hands.
 \par When attacking with a bow, you take a \minus4 penalty against creatures that threaten you.
 \parhead{Sling} You can fire, but not load, a sling with one hand. Loading a sling is a free action that requires both hands.
-\par You can hurl ordinary stones with a sling, but stones are not as dense or as round as bullets. You take a \minus1 penalty to attack and damage rolls when using ordinary stones.
+\par You can hurl ordinary stones with a sling, but stones are not as dense or as round as bullets. You take a \minus1 penalty to accuracy and damage with ordinary stones.
 \parhead{Spiked Armor} You can outfit your armor with spikes, which can deal damage in a grapple. See Armor for details.
 \parhead{Spiked Shield, Heavy or Light} You can bash with a spiked shield instead of using it for defense. See Armor for details.
 
@@ -375,7 +375,7 @@ Your character's encumbrance (the amount of gear he or she carries) may also aff
 \subparhead{Shields} Most shields do not affect a character's Dexterity. However, a tower shield halves a character's Dexterity. This is not cumulative with the halving from wearing medium or heavy armor.
 \parhead{Armor Check Penalty} Any armor heavier than leather hurts a character's ability to use some skills. An armor check penalty number is the penalty that applies to Balance, Climb, Escape Artist, Jump, Sleight of Hand, Sprint, Stealth, and Tumble checks by a character wearing a certain kind of armor. Double the normal armor check penalty is applied to Swim checks. A character's encumbrance (the amount of gear carried, including armor) may also apply an armor check penalty.
 \subparhead{Shields} If a character is wearing armor and using a shield, both armor check penalties apply.
-\subparhead{Nonproficient with Armor Worn} A character who wears armor and/or uses a shield with which he or she is not proficient takes the armor's (and/or shield's) armor check penalty on attack rolls and on all Strength-based and Dexterity-based ability and skill checks. The penalty for nonproficiency with armor stacks with the penalty for nonproficiency with shields.
+\subparhead{Nonproficient with Armor Worn} A character who wears armor and/or uses a shield with which he or she is not proficient takes the armor's (and/or shield's) armor check penalty to accuracy with physical attacks and on all Strength-based and Dexterity-based ability and skill checks. The penalty for nonproficiency with armor stacks with the penalty for nonproficiency with shields.
 
 \subparhead{Sleeping in Armor} A character who sleeps overnight in medium or heavy body armor is automatically fatigued the next day. He or she takes a \minus2 penalty on Strength and Dexterity and can't charge or run. Sleeping in light armor does not cause fatigue.
 \parhead{Arcane Spell Failure} Armor interferes with the gestures that a spellcaster must make to cast an arcane spell that has a somatic component. Arcane spellcasters face the possibility of arcane spell failure if they're wearing armor.
@@ -450,7 +450,7 @@ Extras 						&  &  &  &  &  &  &  & \\
 
 \subsection{Armor Descriptions}
 Any special benefits or accessories to the types of armor found on \trefnp{Armor and Shields} are described below.
-\parhead{Armor Spikes} You can have spikes added to your armor, which allow you to deal extra piercing damage (see Table: Weapons) on a successful grapple or overrun attack. If you are not proficient with the spikes, you only deal the damage if you succeed at the attack by 10 or more.
+\parhead{Armor Spikes} You can have spikes added to your armor, which allow you to deal extra piercing damage (see \tref{Weapons}) on a successful grapple or overrun attack. If you are not proficient with the spikes, you only deal the damage if you succeed at the attack by 10 or more.
 \par Magical abilities on a suit of armor does not improve the spikes' effectiveness, but the spikes can be made into magic weapons in their own right.
 \parhead{Banded Mail} The suit includes gauntlets.
 \parhead{Breastplate} It comes with a helmet and greaves.
@@ -474,7 +474,7 @@ Like a normal gauntlet, a locked gauntlet lets you deal lethal damage rather tha
 \subparhead{Wooden or Steel} Wooden and steel shields offer the same basic protection, though they respond differently to special attacks.
 \parhead{Shield, Tower} This massive wooden shield is nearly as tall as an average human. In most situations, a tower shield provides the indicated bonus to your physical defenses. However, when you take the total defense action with a tower shield, you can treat the shield as a wall along one edge of your square, providing you with total cover. The shield does not, however, provide cover against targeted spells; a spellcaster can cast a spell on you by targeting the shield you are holding. You cannot bash with a tower shield, nor can you use your shield hand for anything else.
 
-When employing a tower shield in combat, you take a \minus2 penalty on attack rolls because of the shield's encumbrance.
+When employing a tower shield in combat, you take a \minus2 penalty to accuracy with physical attacks because of the shield's encumbrance.
 \parhead{Shield Spikes} When added to your shield, these spikes turn it into a piercing weapon that increases the damage dealt by a shield bash as if the shield were designed for a creature one size category larger than you. You can't put spikes on a buckler or a tower shield. Otherwise, attacking with a spiked shield is like making a shield bash attack (see above).
 \parhead{Splint Mail} The suit includes gauntlets.
 \parhead{Studded Leather} Only the studs on studded leather are made of metal. If the studs are made from a special material, only the studs are affected, not the whole armor. For example, ironwood studded leather weighs 17.5 pounds, since the weight of the studs is halved.
@@ -553,7 +553,7 @@ However, most poison share certain common properties.
 
 \parhead{Poison Attacks}\label{Potency}\label{Poison Potency}
 All poisons have a potency.
-Unless otherwise noted, a poison's attack bonus is equal to its potency.
+Unless otherwise noted, a poison's accuracy is equal to its potency.
 At the end of each round, the poison makes an attack roll against the Fortitude defense of the poisoned creature.
 Success means the creature suffers the effect of the poison, and gets closer to the poison's terminal effect (see Terminal Effects, below).
 For every 10 points by which the attack succeeds, it counts as an additional successful attack for the purpose of reaching the poison's terminal effect.
