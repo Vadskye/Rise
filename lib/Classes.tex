@@ -877,7 +877,7 @@ In addition, whenever he deals fire damage to a creature, the creature is \ignit
 spell, with a spellpower equal to his cleric level.
 If the effect is dispelled or suppressed, he can resume it as a swift action.
 \subcf{Knowledge -- Combat Insight}
-The cleric gains a \plus2 bonus to physical attacks, checks, and special defenses against creatures he has identified with a successful Knowledge check.
+The cleric gains a \plus2 bonus to accuracy, checks, and special defenses against non-humanoid creatures he has identified with a successful Knowledge check.
 \subcf{Law -- Avatar of Order}
 Once per round, if the cleric rolls less than a 10 on a d20, he may treat the result as if it were a 10, potentially causing him to succeed where he would have failed.
 You must declare the use of this ability before any additional effects from the roll are resolved.
@@ -1436,7 +1436,7 @@ The fighter gains an additional bonus feat at his 6th fighter level and every fo
 \cf{Ftr}[3rd]{Weapon Discipline}
 The fighter's training grants him additional capability when using his weapons.
 He may choose a weapon group, or he may choose to train equally with all weapons.
-If he chooses a weapon group, he gains a \plus1 bonus to physical attacks with weapons from that group.
+If he chooses a weapon group, he gains a \plus1 bonus to accuracy with weapons from that group.
 
 If he chooses not to focus on a specific group of weapons, he gains the ability to become proficient with any weapon group if he spends 1 hour training with a weapon from that group.
 He may only keep this proficiency with one weapon group at a time; if he trains with a new weapon group, he loses his proficiency in the previous group.
@@ -1517,7 +1517,7 @@ If the fighter chose resilience, he gains damage reduction against physical dama
 \cf{Ftr}[9th]{Improved Weapon Discipline}
 The fighter's training in his chosen weapons improves.
 He gains a \plus4 bonus to resist disarm attempts against using his chosen weapons.
-If he chose a specific weapon group, he gains a \plus2 bonus to physical attacks with weapons from that group.
+If he chose a specific weapon group, he gains a \plus2 bonus to accuracy with weapons from that group.
 This does not stack with effects of weapon discipline.
 If he did not, he can apply all weapon group-specific feats he has to any weapon group that he trains with for 1 hour.
 He retains this benefit for one week after the training.
@@ -1534,7 +1534,7 @@ The fighter can use this ability a number of times per day equal to his Intellig
 The fighter's ability to keep fighting despite negative influence improves.
 He can reduce conditions by two steps instead of one when using combat discipline.
 For example, a stunned fighter who used combat discipline would instead be staggered.
-\par In addition, a fighter may use combat discipline to reduce any penalties he suffers to his attacks, damage, checks, or defenses by 2, even if the source of the penalty is not listed on the combat discipline chart.
+\par In addition, a fighter may use combat discipline to reduce any penalties he suffers to his accuracy, damage, checks, or defenses by 2, even if the source of the penalty is not listed on the combat discipline chart.
 \par The fighter may also mitigate up to two conditions at once.
 
 \cf{Ftr}[13th]{Greater Armor Discipline}
@@ -1648,7 +1648,7 @@ All monks have the following abilities.
 
 \cf{Mnk}{Enlightened Defense}[Ex]
 A monk's \ki shields her body from attacks.
-When \monkunencumbered, she gains a \plus3 bonus to Armor defense.
+When \monkunencumbered, she gains a \plus2 bonus to Armor defense.
 She loses this bonus when she is helpless.
 
 \cf{Mnk}{Ki Power}[Su]
@@ -1760,7 +1760,7 @@ The monk may choose to grant any weapon she wields the Nonlethal weapon property
 This can cause all damage she deals to be nonlethal.
 \subcf{Forceful \Ki}
 All weapons the monk wields gain the Forceful weapon property.
-She can use any weapon to perform a shove attack, and gains a \plus2 bonus with shove attacks.
+She can use any weapon to perform a shove attack, and gains a \plus2 bonus to accuracy with shove attacks.
 \subcf{Impactful \Ki}
 All weapons the monk wields gain the Impact weapon property.
 Whenever she scores a critical hit, all damage dealt in excess of the target's hit points is dealt as critical damage.
@@ -1991,7 +1991,7 @@ spell.
 \parhead{Good Divine Invocations}
 \subcf{4th -- Challenging Smite*}
 The paladin's smite compels her foe's attention.
-For 5 rounds, the struck creature takes a \minus2 penalty on all attacks that do not include the paladin as a target.
+For 5 rounds, the struck creature takes a \minus2 penalty to accuracy on attacks that do not include the paladin as a target.
 \subcf{4th -- Shield Other} As a standard action, the paladin can choose to take half the damage that an ally within \rngmed range will take, as the \spell{share pain}
 spell.
 \subcf{6th -- Martyr's Shield}
@@ -3247,7 +3247,7 @@ This has the following effects:
     \item \minus10 ft.
         penalty to movement speed.
     \item \minus4 penalty to maneuver accuracy and defense.
-    \item \plus1 bonus to other physical attacks and defenses.
+    \item \plus1 bonus to other physical accuracy and defenses.
     \item \plus4 bonus to Stealth.
 \end{itemize}
 This is a size-affecting effect.
@@ -3412,10 +3412,9 @@ During this move action, the target cannot be followed or withdrawn from, and ma
 The target still suffers the effects of any environmental hazards.
 If the spellwarped uses this invocation on himself, it only requires a move action to activate.
 \parhead{6th -- Disjointed Time}
-As a standard action, the spellwarped makes a special attack vs. Fortitude against a single creature within \rngmed range to chaotically disrupt its local flow of time.
-If the attack succeeds, the creature takes a \minus4 penalty to attacks, defenses, and checks for 5 rounds.
-\parhead{8th -- Haste} This invocation functions like the \spell{haste}
-spell.
+As a standard action, the spellwarped chaotically disrupt its local flow of time of a creature within \rngmed range.
+The creature is \impaired with all actions for 5 rounds.
+\parhead{8th -- Haste} This invocation functions like the \spell{haste} spell.
 \parhead{8th -- Temporal Prison}
 As a standard action, the spellwarped makes a special attack against the Mental defense of a single creature within \rngclose range to completely stop time for it for 5 rounds.
 The affected creature can take no actions and cannot be moved, damaged, or even affected in any way until the effect ends.
@@ -3448,7 +3447,7 @@ The effects of any actions that the creature took in the intervening time are un
 The spellwarped cannot reverse time for himself in this way.
 \parhead{16th -- Supreme Acceleration}
 As a standard action, the spellwarped can spend three spellwarp points to accelerate himself so much that he can take an additional round of actions immediately.
-During this round, all creatures he attacks are treated as helpless, but he cannot perform a coup de grace or similar ability; such an act requires more care and precision than is possible with such immense speed.
+During this round, all creatures he attacks are treated as \helpless, but he cannot perform a coup de grace or similar ability; such an act requires more care and precision than is possible with such immense speed.
 After using this ability, he must wait 5 rounds before he can use it again.
 \parhead{18th -- Mass Haste}
 This invocation functions like the haste invocation, except that it costs two spellwarp points and affects up to five creatures within \rngclose range of the spellwarped.
