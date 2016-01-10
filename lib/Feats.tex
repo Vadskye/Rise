@@ -246,7 +246,7 @@ Some strike feats instead require a specific action to use.
         \tind \featref{Suggestive Performance} & Perform 10 ranks, Fascinating Performance & Suggest action to fascinated creatures & \featpref{Suggestive Performance} \\
         \featref{Freeing Performance} & Perform 12 ranks  & Dispel magical effects on ally & \featpref{Freeing Performance} \\
         \featref{Inspire Competence} & Perform 4 ranks  & Grant allies bonuses to skill checks & \featpref{Inspire Competence} \\
-        \featref{Inspire Courage} & Perform 6 ranks  & Grant allies bonuses to physical attacks and defenses against fear & \featpref{Inspire Courage} \\
+        \featref{Inspire Courage} & Perform 6 ranks  & Grant allies bonuses to accuracy and defenses against fear & \featpref{Inspire Courage} \\
         \featref{Inspire Greatness} & Perform 12 ranks  & Grant allies bonuses to defenses & \featpref{Inspire Greatness} \\
         \featref{Inspire Heroics} & Perform 20 ranks  & Grant allies temporary hit points and extra attack & \featpref{Inspire Heroics} \\
         \featref{Inspire Spellpower} & Perform 10 ranks  & Grant allies bonus to spellpower & \featpref{Inspire Spellpower} \\
@@ -404,7 +404,7 @@ The table of combat feats is organized according to the combat prowess each feat
         \featref{Parry} & Dex 3 & Ready yourself to parry incoming blows & Defense, Reaction, Style & \featpref{Parry} \\
         \tind \featref{Shielded Parry} & Dex 3, shield proficiency, Parry & Add shield bonus to parry attempts & Defense, Reaction & \featpref{Shielded Parry} \\
         \tind \featref{Riposte} & Dex 3, Parry & Foes are defenseless if you parry very well & Reaction & \featpref{Riposte} \\
-        \featref{Point Blank Shot} & \x &  \plus2 bonus to ranged attacks within half range increment. & Precision, Style & \featpref{Point Blank Shot} \\
+        \featref{Point Blank Shot} & \x &  \plus2 bonus to ranged attacks within half range increment & Precision, Style & \featpref{Point Blank Shot} \\
 
         \midrule
         \tb{Style Feats} & \tb{Prerequisites (Prowess 4)} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
@@ -893,7 +893,7 @@ You understand how to use exotic weapons in combat.
 This allows you to defend yourself normally with melee weapons, and to attack with exotic ranged weapons without penalty.
 \parhead{Normal}
 You are not normally proficient with exotic weapons.
-You cannot defend yourself with melee weapons you are not proficient with, and you take a \minus4 penalty to physical attacks with ranged weapons you are not proficient with.
+You cannot defend yourself with melee weapons you are not proficient with, and you take a \minus4 penalty to accuracy with ranged weapons you are not proficient with.
 
 \feat{Extra Ability}{Class}
 Choose a class feature with limited uses.
@@ -1075,17 +1075,17 @@ This counts against your total damage reduced that round.
 \feat{Improved Dirty Trick}{Combat, Maneuver}
 \featpre Combat prowess 4.
 \featben When you perform a dirty trick on a cretaure successfully, the creature is \impaired for 1d4 rounds.
-You also gain a \plus2 bonus to dirty trick attacks.
+You also gain a \plus2 bonus to accuracy on dirty trick attacks.
 
 \feat{Improved Disarm}{Combat, Finesse}
 \featpre Combat prowess 4.
 \featben When you disarm a creature, you can make the disarmed item land up to 15 feet away in a random direction.
-You also gain a \plus2 bonus to disarm attacks.
+You also gain a \plus2 bonus to accuracy on disarm attacks.
 
 \feat{Improved Feint}{Combat, Finesse}
 \featpre Combat prowess 4.
 \featben When you feint against a creature, if you beat its Armor defense by 5 or more, you deal damage with your weapon normally.
-You also gain a \plus2 bonus to feint attacks.
+You also gain a \plus2 bonus to accuracy on feint attacks.
 
 \feat{Improved Imbued Spellstrike}{Metamagic}
 \featpres 3rd level spell known, Imbued Spellstrike.
@@ -1097,7 +1097,7 @@ An improved imbued spellstrike spell uses up a spell slot two levels higher than
 \feat{Improved Grapple}{Combat, Maneuver}
 \featpre Combat prowess 4.
 \featben Grappling does not make you \defenseless against other creatures.
-You also gain a \plus2 bonus to grapple attacks.
+You also gain a \plus2 bonus to accuracy on grapple attacks.
 This does not prevent you from being defenseless if you have no hands free to defend yourself with.
 \parhead{Normal}
 While grappling, you are defenseless against all creatures except the ones you are grappling.
@@ -1105,24 +1105,24 @@ While grappling, you are defenseless against all creatures except the ones you a
 \feat{Improved Overrun}{Combat, Maneuver}
 \featpre Combat prowess 4.
 \featben When you attempt to overrun a foe, the creature may not choose to avoid you unless you let it.
-You also gain a \plus2 bonus to overrun attacks.
+You also gain a \plus2 bonus to accuracy on overrun attacks.
 \parhead{Normal}
 Without this feat, the target of an overrun can choose to avoid you or to block you.
 
 \feat{Improved Shove}{Combat, Maneuver}
 \featpre Combat prowess 4.
 \featben When you shove a creature, you can move it outside of your reach.
-You also gain a \plus2 bonus to shove attacks.
+You also gain a \plus2 bonus to accuracy on shove attacks.
 
 \feat{Improved Trip}{Combat, Maneuver}
 \featpre Combat prowess 4.
 \featben When you successfully trip a foe, you get a free melee attack against it.
 This attack is made as the creature is being tripped, so it does not have penalties for being prone.
-You also gain a \plus2 bonus to trip attacks.
+You also gain a \plus2 bonus to accuracy on trip attacks.
 
 \feat{Improved Unarmed Combat}{Combat}
 \featben You gain proficiency with your unarmed attack.
-This grants you a \plus4 bonus to attacks with the weapon and allows you to defend yourself with it, just as if you were using another melee weapon you are proficient with.
+This grants you a \plus4 bonus to accuracy with the weapon and allows you to defend yourself with it, just as if you were using another melee weapon you are proficient with.
 
 In addition, your unarmed attacks can deal lethal or nonlethal damage as you choose.
 \parhead{Normal} You are not proficient with your unarmed attack, and it deals nonlethal damage. See \pcref{Unarmed Combat}.
@@ -1171,7 +1171,7 @@ This is a mind-affecting ability.
 \featpre Perform 6 ranks.
 \featben As a standard action, you can make a DC 12 Perform check to inspire courage in allies within \rngmed range of you, including yourself.
 You can affect one creature per two Perform ranks you have.
-An affected creatures gains a \plus2 enhancement bonus to physical attacks and defenses against fear.
+An affected creatures gains a \plus2 enhancement bonus to accuracy on physical attacks and defenses against fear.
 This bonus increases by 1 at 8 Perform ranks and every 6 Perform ranks thereafter.
 You can sustain the performance as a swift action.
 
@@ -1363,7 +1363,7 @@ You can use this ability three times per day.
 
 \feat{Legendary Knowledge}{Skill}
 \featpre Knowledge (any) 15 ranks.
-\featben You gain a \plus2 bonus on attacks, checks, and defenses against creatures you identify with a successful Knowledge check.
+\featben You gain a \plus2 bonus on accuracy, checks, and defenses against non-humanoid creatures you identify with a successful Knowledge check.
 
 \feat{Legendary Leaper}{Skill}
 \featpre Athletics 15 ranks.
@@ -1453,7 +1453,7 @@ You can use this ability three times per day.
 
 \feat{Legendary Spellcraft}{Skill}
 \featpre Spellcraft 15 ranks.
-\featben You gain a \plus2 bonus on attacks, checks, and defenses against spells and magical effects you identify with a successful Spellcraft check.
+\featben You gain a \plus2 bonus on accuracy, checks, and defenses against spells and magical effects you identify with a successful Spellcraft check.
 
 \feat{Legendary Sprinter}{Skill}
 \featpre Athletics 15 ranks.
@@ -1665,7 +1665,7 @@ If the foe takes the type of action you predicted, your attack deals quintuple d
 If the foe takes an action that fits into multiple action types, use all that apply.
 
 \feat{Point Blank Shot}{Combat, Precision, Style}
-\featben While in this style, you gain a \plus2 bonus to physical ranged attacks when attacking targets within half of your range increment.
+\featben While in this style, you gain a \plus2 bonus to accuracy with physical ranged attacks when attacking targets within half of your range increment.
 \stylereq Wield a ranged weapon.
 
 \feat{Poison Expert}{Skill}
@@ -1780,7 +1780,7 @@ The maximum level of ritual that you can learn or perform is equal to half your 
 The creature must be three or more size categories larger than you.
 You gain a \plus4 bonus to the check for every size category by which it exceeds your own.
 If you succeed, you can climb the creature as if it were a solid object with a Climb DC equal to its Maneuver Class.
-The creature takes a \minus4 penalty to physical attacks against you, but is not otherwise encumbered by your presence unless it cannot support your weight.
+The creature takes a \minus4 penalty to accuracy on physical attacks against you, but is not otherwise encumbered by your presence unless it cannot support your weight.
 It can attempt to remove you by attacking you, or with an appropriate maneuver, such as grappling or shoving.
 
 \feat{Shape Spell}{Metamagic}
@@ -1796,7 +1796,7 @@ A shaped spell uses a spell slot two levels higher than the spell's original lev
 \featpre Armor discipline ability.
 \featben You apply the benefits of your armor discipline ability while using shields, as well as while wearing armor.
 If you reduce the encumbrance category of body armor you wear, you also reduce the encumbrance category of shields you use by the same amount.
-Reducing a shield's encumbrance category causes tower shields to be treated as heavy shields (and no longer impose a \minus2 penalty to physical attacks), heavy shields to be treated as light shields, and both light shields and bucklers to be treated as being unarmored (allowing you to freely use other items in that hand).
+Reducing a shield's encumbrance category causes tower shields to be treated as heavy shields (and no longer impose a \minus2 penalty to accuracy), heavy shields to be treated as light shields, and both light shields and bucklers to be treated as being unarmored (allowing you to freely use other items in that hand).
 As normal, if you use your shield hand for something other than defending yourself with your shield, you do not gain your shield's bonus to physical defenses that round.
 
 \feat{Shield Expertise}{Defense, Combat}
@@ -2090,19 +2090,19 @@ These special abilities only function when you are making attacks with weapons f
 \begin{itemize}
     \item Armor weapons: When you perform a shield bash, you still benefit from the shield's defense bonus.
         In addition, armor spikes no longer impose a penalty to your physical defenses.
-    \item Axes: You gain a \plus2 bonus to physical attacks against creatures not wearing medium or heavy armor.
-    \item Blades, heavy: You gain a \plus2 bonus to physical attacks against creatures not wearing medium or heavy armor.
+    \item Axes: You gain a \plus2 bonus to accuracy against creatures not wearing medium or heavy armor.
+    \item Blades, heavy: You gain a \plus2 bonus to accuracy against creatures not wearing medium or heavy armor.
     \item Blades, light: If you draw a light blade and attack with it in the same round, you gain a \plus2 bonus to accuracy.
         The creature you attack is unaffected by this ability for the rest of the encounter.
     \item Blunt weapons: When you deal damage to a creature, it takes a \minus2 penalty to Mental defense for 1 round.
         This penalty is not cumulative with itself.
     \item Bows: You can ignore cover (but not total cover) provided by creatures and objects that are at least ten feet away from both you and your target.
     \item Crossbows: The time required for you to reload crossbows is reduced to a free action (for a hand or light crossbow) or a move action (for a heavy crossbow).
-    \item Flexible weapons: You gain a \plus2 bonus to physical attacks against creatures using a shield.
-    \item Headed weapons: You gain a \plus2 bonus to physical attacks against creatures wearing medium or heavy armor.
-    \item Monk weapons: You gain a \plus2 bonus to maneuver attacks.
+    \item Flexible weapons: You gain a \plus2 bonus to accuracy against creatures using a shield.
+    \item Headed weapons: You gain a \plus2 bonus to accuracy against creatures wearing medium or heavy armor.
+    \item Monk weapons: You gain a \plus2 bonus to accuracy against creatures using manufactured weapons (but not unarmed strikes or natural weapons).
     \item Polearms: You can switch grips to short haft or stop short hafting a polearm as a swift action, and you take no penalty while short hafting it.
-    \item Spears: If a creature charges you, you gain a \plus5 bonus to physical attacks against it until the end of the round.
+    \item Spears: If a creature charges you, you gain a \plus5 bonus to accuracy against it until the end of the round.
     \item Thrown weapons: You can defend yourself with a thrown weapon as you throw it, preventing you from being \defenseless (see \pcref{Thrown Weapons in Melee}).
 \end{itemize}
 \parhead{Special}
@@ -2118,7 +2118,7 @@ Choose one weapon group.
 \featben You are proficient with weapons from your chosen weapon group.
 This allows you to defend yourself normally with melee weapons, and to attack with exotic ranged weapons without penalty.
 \parhead{Normal}
-You cannot defend yourself with melee weapons you are not proficient with, and you take a \minus4 penalty to physical attacks with ranged weapons you are not proficient with.
+You cannot defend yourself with melee weapons you are not proficient with, and you take a \minus4 penalty to accuracy with ranged weapons you are not proficient with.
 \parhead{Special}
 You can gain Weapon Proficiency multiple times.
 Each time you take the feat, it applies to a new weapon group.
