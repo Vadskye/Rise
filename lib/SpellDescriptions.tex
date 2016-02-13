@@ -98,20 +98,11 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect Fog fills the area, as \spell{fog cloud}, except that the fog is acidic.
+
+            At the end of every round, make a Spellpower vs. Fortitude attack against everything in the fog. Success against a target means it takes 1d6 acid damage per four spellpower.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
-    \begin{spellsubcontent}
-        \begin{spelltargetinginfo}
-            \spelltgr{At the end of every round}
-            \spelltgts{Everything in the fog}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Fortitude}
-                \spellsuccess 1d6 acid damage per four spellpower.
-            \end{spellattack}
-        \end{spelleffects}
-    \end{spellsubcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Acid, Creation, Fog, Physical]}{Arcane, Destruction}
         \spellnotes \physicalspellnotes
@@ -223,6 +214,39 @@
     %\par Any part of a creature that lies outside the field is unaffected by the field.
         \par Artifacts and deities are unaffected by mortal magic such as this.
         \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Animate Corpse}[1]
+    \begin{spellheader}
+        \spelldesc{You infuse a recently deceased corse with negative energy, giving it a semblance of life.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spellquicktargeting{One Large or smaller corpse}{\rngclose}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect The target corpse animates and fights for you.
+            It does not have any special abilities the creature had in life, with the exception of its natural weapons.
+            The creature is only capable of making unarmed attacks, or attacking with its natural weapons.
+
+            Most of the corpse's defenses and attributes are equal to the creature's original defenses and attributes.
+            However, its Strength is equal to your spellpower, and it has no Intelligence or Willpower.
+            In addition, its Mental defense is 0.
+            The corpse's hit points are based on its defenses and level, as normal.
+
+            At the start of each round, you must spend a swift action to control the animated corpse.
+            If you do, you control its actions that round.
+            You can mentally command it to attack your enemies, follow you, or stay in place.
+            More complex commands are not possible.
+            If you do not control the creature, it falls prone and is inanimate that round.
+
+            \spelldur \durshort \dismissable
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Vivimancy [Negative, Soul]}{Arcane}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -360,22 +384,9 @@
             \spelltwocol{\spellzone{\areamed radius}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect Ground within the area is considered difficult terrain.
-            \spelldur 5 rounds.
+            \spelleffect Ground within the area is considered difficult terrain. At the end of every round, make a Spellpower vs. Maneuver defense against all creatures in the area that are within 5 feet of the ground. Success against a creature means it takes \spelldamage{5}{bludgeoning}[d6]. A critical success causes the target to be \immobilized for the duration of the spell. It can escape with a grapple or Escape Artist check against a DC equal to 10 \add your spellpower.
         \end{spelleffects}
     \end{spellcontent}
-    \begin{spellsubcontent}
-        \begin{spelltargetinginfo}
-            \spelltgr{At the end of every round}
-            \spelltgts{All creatures in the area within 5 feet of the ground.}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Maneuver defense}
-                \spellsuccess The target takes 1d6 bludgeoning damage per two spellpower.
-                \spellcritical The target is \immobilized for the duration of the spell. It can escape with a grapple or Escape Artist check against a DC equal to 10 \add your spellpower.
-            \end{spellattack}
-        \end{spelleffects}
-    \end{spellsubcontent}
     \begin{spellfooter}
         \spellinfo{Evocation}{Arcane}
         \spellnotes The tentacles are immune to all forms of attack.
@@ -393,20 +404,11 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect This spell creates a wall of blades made of force energy. The wall provides active cover (20\% miss chance) against attacks made through it. Attacks that miss in this way harmlessly strike the wall. Passing through the wall costs twice as much movement as normal.
+
+            Whenever a creature passes through the wall, make a Spellpower vs. Reflex attack against it. Success means the creature takes \spelldamage{4}{force}[d6]. Failure means it takes half damage.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
-    \begin{spellsubcontent}
-        \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgr{A creature passes through the wall}}{\spelltgt{The moving creature}}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess \spelldamage{4}{force}[d6].
-                \spellfailure Half damage.
-            \end{spellattack}
-        \end{spelleffects}
-    \end{spellsubcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Force, Wall]}{Divine, War}
         \miscastexplode
@@ -434,6 +436,27 @@
     \begin{spellfooter}
         \spellinfo{Evocation [Evil]}{Divine, Evil}
         \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Bleed}[5]
+    \begin{spellheader}
+        \spelldesc{You carve a wound into your foe's flesh.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltwocol{\spelltgts{One creature}}{\spellrng{\rngclose}}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \begin{spellattack}{Spellpower vs. Fortitude}
+                \spellsuccess \spelldamage{5}{slashing}. In addition, the target takes one point of critical damage after this damage is dealt, regardless of its current hit points.
+                \spellfailure Half damage, and no additional effects.
+            \end{spellattack}
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Vivimancy [Flesh]}{Vivimancy}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -738,20 +761,11 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target gains spell resistance against lawful spells and spells cast by lawful creatures.
+
+            In addition, whenever a lawful creature within 30 feet of the target makes a physical attack against it, you make a Spellpower vs. Mental attack against the attacking creature. Success means the creature takes \spelldamage{9}{divine}[d6].
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
-    \begin{spellsubcontent}
-        \begin{spelltargetinginfo}
-            \spelltgr{Whenever a lawful creature within 30 feet of the target makes a physical attack against it}
-            \spelltgt{The attacking creature}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess \spelldamage{9}{divine}[d6].
-            \end{spellattack}
-        \end{spelleffects}
-    \end{spellsubcontent}
     \begin{spellfooter}
         \spellinfo{Abjuration [Chaotic, Retributive]}{Chaos, Divine}
         \miscastexplode
@@ -2008,21 +2022,10 @@
             \spelleffect You gain damage reduction against all energy types (acid, cold, electricity, fire) equal to twice your spellpower.
 
             If you absorb damage with this spell from a single energy type that exceeds your spellpower, you gain a charge for that energy type. You can store up to 3 charges of any combination of energy types. Additional charges replace existing charges of your choice.
-            \spelldur \durlong
+
+            As a standard action, you can expend a charge to fire a bolt of energy at a creature or object within \rngclose range of you. If you do, make a Spellpower vs. Reflex attack against the target. Success means it takes \spelldamage{7}{energy}[d8]. The damage type is the same as the type of the charge expended.
         \end{spelleffects}
     \end{spellcontent}
-    \begin{spellsubcontent}
-        \begin{spelltargetinginfo}
-            \spellspecial As a standard action, you can expend a charge to fire a bolt of energy.
-            \spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngclose}}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess \spelldamage{8}{energy}[d8]. The damage type is the same as the type of the charge expended.
-                \spellfailure Half damage.
-            \end{spellattack}
-        \end{spelleffects}
-    \end{spellsubcontent}
     \begin{spellfooter}
         \spellinfo{Abjuration/Evocation [Shielding]}{Arcane, Protection}
         \miscastexplode
@@ -2272,21 +2275,10 @@
             \spelltgt{You}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect You are coated in slime.
+            \spelleffect You are coated in slime. Whenever a creature hits you with a melee attack, make a Spellpower vs. Reflex attack against the attacking creature. Success means the creature takes \spelldamage{1}{acid}[d6].
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
-    \begin{spellsubcontent}
-        \begin{spelltargetinginfo}
-            \spelltgr{A creature hits you with a melee attack}
-            \spelltgt{The attacking creature}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess \spelldamage{1}{acid}[d6].
-            \end{spellattack}
-        \end{spelleffects}
-    \end{spellsubcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Augment]}{Nature}
         \miscastexplode
@@ -2471,6 +2463,8 @@
             \spelleffect The targets are imbued with fiery energy capable of dealing up to \spelldamage{6}{fire}[d6]. You may freely decide the distribution of dice between the target berries.
 
             You must also specify at least one command word used to detonate the seeds. You can specify different command words to detonate different combinations of seeds.
+
+            As a standard action, any creature can say one of your defined command words to detonate the relevant seeds with \rngmed range of them. Any seed that detonates affects all creatures within an \areasmall radius around the seed.
             \spelldur \durext or until discharged
         \end{spelleffects}
     \end{spellcontent}
@@ -3831,6 +3825,29 @@
     \begin{spellfooter}
         \spellinfo{Evocation [Destructive, Electricity]}{Arcane, Nature}
         \spellnotes \destructivespellnotes
+        \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Living Missile}[4]
+    \begin{spellheader}
+        \spelldesc{You telekinetically throw an ally at a distant foe with great force.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spellquicktargeting{One creature, object, or location}{\rngmed}
+            \spelltwocol{\spelltgt{One willing ally}[Secondary]}{\rngtouch}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect You throw a willing ally at the target. The ally gains damage reduction against physical damage equal to twice your spellpower for 1 round.
+            \begin{spellattack}{Spellpower vs. Reflex}
+                \spellsuccess The target takes 1d10 bludgeoning damage per two spellpower. The ally takes half this damage.
+                \spellfailure The target takes half damage. This does not reduce the damage taken by the ally.
+            \end{spellattack}
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Abjuration/Evocation}{Arcane}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -6925,7 +6942,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation/Vivimancy [Augment, Life]}{Arcane}
+        \spellinfo{Vivimancy [Life]}{Arcane}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
