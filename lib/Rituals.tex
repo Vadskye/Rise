@@ -632,7 +632,7 @@
         Shakes & 1d6 Dex \\
         Slimy doom & 1d6 Con
     \end{dtabularx}
-    1 Each time a victim takes 3 or more Strength damage from blinding sickness, he or she must make another Fortitude save or be permanently blinded.	 
+    1 Each time a victim takes 3 or more Strength damage from blinding sickness, he or she must make another Fortitude save or be permanently blinded.
 \end{dtable}
 
 \begin{spellsection}{Continual Flame}[2]
@@ -880,7 +880,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
 
-            \spelleffect The target becomes unholy water. 
+            \spelleffect The target becomes unholy water.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -1088,7 +1088,7 @@
         \begin{spelleffects}
 
             \spellline
-            \spelleffect When you perform this ritual, you ask a question concerning a specific goal, event, or activity that is to occur within one week. You receive a useful piece of advice in reply to your question. The advice can be as simple as a short phrase, or it might take the form of a cryptic rhyme or omen. 
+            \spelleffect When you perform this ritual, you ask a question concerning a specific goal, event, or activity that is to occur within one week. You receive a useful piece of advice in reply to your question. The advice can be as simple as a short phrase, or it might take the form of a cryptic rhyme or omen.
 
             This ritual does not describe the future with certainty. It provides advice which is likely to be correct. The more unambiguous the question, the more likely the ritual is to be correct.
         \end{spelleffects}
@@ -1315,7 +1315,7 @@
             \begin{spelltargets}{One or more nonmagical objects; see text}
                 \spelleffect When you perform this ritual, you make a Craft check to transform the targets into a new item (or items) made of the same materials. You gain a \plus10 enhancement bonus on the check, and you require none of the tools or time expenditure that would normally be necessary.
 
-                The total size of all targets combined must be Large size or smaller. 
+                The total size of all targets combined must be Large size or smaller.
             \end{spelltargets}
         \end{spelleffects}
     \end{spellcontent}
@@ -1523,7 +1523,7 @@
             \spelleffect This ritual creates an interdimensional connection between your plane of existence and a plane you specify, allowing travel between those two planes in either direction.
             \par The gate itself is a circular disk between 5 and 20 feet in diameter, oriented in the direction you desire when it comes into existence (typically vertical and facing you). It is a two-dimensional window looking into the plane you specified when casting the spell, and anyone or anything that moves through is shunted instantly to the other side.
             \par The \spell{gate} has a front and a back. Creatures moving through the gate from the front are transported to the other plane; creatures moving through it from the back are not.
-            \par A \spell{gate} spell functions much like a \spell{plane shift} spell, except that the gate opens precisely at the point you desire (a creation effect). 
+            \par A \spell{gate} spell functions much like a \spell{plane shift} spell, except that the gate opens precisely at the point you desire (a creation effect).
             \spelldur Concentration (up to 5 rounds); see text
         \end{spelleffects}
     \end{spellcontent}
@@ -1571,7 +1571,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{Nonmagical object touched}{}
+            \spellquicktargeting{One nonmagical object}{Touch}
             \spelltime{10 minutes}
             \spellrng{Touch}
         \end{spelltargetinginfo}
@@ -1584,6 +1584,30 @@
     \begin{spellfooter}
         \spellinfo{Transmutation (Temporal)}{Arcane, Divine, Nature}
         \ritualcost{2}
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Soulbound Repose}[4]
+    \begin{spellheader}
+        \spelldesc{You bind the soul of a creature into its remains so they do not decay.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spellquicktargeting{One corpse}{Touch}
+            \spelltime{10 minutes}
+            \spellrng{Touch}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect This spell functions like \spell{gentle repose}, except that you also bind the target's soul into its remains. While its soul is bound, the remains cannot be used for \spell{raise dead}, \spell{animate dead}, and similar effects.
+
+            A creature attempting to use such effects on the remains must make a spellpower check against a DC equal to 15 \add your spellpower. Success means that the creature's spell or ritual succeeds, and this spell is dispelled. Failure means the creature's spell or ritual fails, and any spell slots or components are wasted.
+
+            \spelldur One year \dismissable
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Transmutation/Vivimancy (Soul, Temporal)}{Arcane, Divine}
+        \ritualcost{4}
     \end{spellfooter}
 \end{spellsection}
 
@@ -2123,12 +2147,12 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
 
-            \spelleffect The target is healed for 2d6 damage \add d6 per two spellpower above 2nd. 
+            \spelleffect The target is healed for 2d6 damage \add d6 per two spellpower above 2nd.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation (Alteration)}{Arcane, Divine, Nature}
-        \spellnotes This ritual has no effect on broken or destroyed items. 
+        \spellnotes This ritual has no effect on broken or destroyed items.
         \ritualcost*{1}
     \end{spellfooter}
 \end{spellsection}
@@ -2209,7 +2233,7 @@
 
             \spellzone{Up to ten 10-foot cubes, none more than 10 feet below the ground}
             \spellline
-            \spelleffect This ritual moves dirt, clay, loam, and sand in the area. This can collapse embankments, move hillocks, shift dunes, and so forth. However, it cannot move rock formations. 
+            \spelleffect This ritual moves dirt, clay, loam, and sand in the area. This can collapse embankments, move hillocks, shift dunes, and so forth. However, it cannot move rock formations.
 
             This ritual does not violently break the surface of the ground. The terrain begins moving as soon as the ritual is started, and finishes moving when the ritual is complete. It moves in wavelike crests and troughs, with the earth reacting with glacierlike fluidity until the desired result is achieved. Trees, structures, rock formations, and such are mostly unaffected except for changes in elevation and relative topography.
         \end{spelleffects}
@@ -2475,7 +2499,7 @@
         \begin{spelleffects}
 
             \spellline
-            \spelleffect This ritual creates a Large, horselike creature that can only be ridden by you or one person you designate. On its body, it bears what seems to be a saddle, bit, and bridle sized perfectly for its intended rider. 
+            \spelleffect This ritual creates a Large, horselike creature that can only be ridden by you or one person you designate. On its body, it bears what seems to be a saddle, bit, and bridle sized perfectly for its intended rider.
             It moves at a speed of 10 feet per two spellpower. It can bear its rider's weight plus up to 10 pounds per spellpower.
 
             The phantom steed cannot fight. Its physical defenses are all equal to 10 \add half your spellpower, and it has 10 hit points \add 1 per spellpower. If it loses all its hit points, the phantom steed disappears.
@@ -2898,7 +2922,7 @@
 
             \spelleffect The target returns to life. It must have been dead for no more than one year per spellpower, and it must not have died due to old age.
 
-            The condition of the remains is not a factor. So long as some small portion of the creature's body still exists, it can be resurrected, but the target portion must have been part of the creature's body at the time of death. 
+            The condition of the remains is not a factor. So long as some small portion of the creature's body still exists, it can be resurrected, but the target portion must have been part of the creature's body at the time of death.
 
             The resurrected creature has 0 hit points, and all negative effects are removed, even curses and missing body parts.
 
@@ -3297,7 +3321,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
 
-            \spellspecial This ritual functions like \spell{shape wood}, except that you make a Craft (metal) check, and you shape metal instead of wood. 
+            \spellspecial This ritual functions like \spell{shape wood}, except that you make a Craft (metal) check, and you shape metal instead of wood.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -3632,7 +3656,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Divination/Transmutation (Communication, Imbuement)}{Arcane}
-        \spellnotes This ritual can be made permanent with a \spell{permanency} ritual. If you perform this ritual multiple times, you may link each casting of the ritual together such that all targets may telepathically communicate with each other. 
+        \spellnotes This ritual can be made permanent with a \spell{permanency} ritual. If you perform this ritual multiple times, you may link each casting of the ritual together such that all targets may telepathically communicate with each other.
         \ritualcost*{6}
     \end{spellfooter}
 \end{spellsection}
@@ -3797,7 +3821,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Divination (Communication)}{Arcane, Divine, Nature}
-        \spellnotes This ritual does not grant the ability to communicate with creatures that do not have a language. It may be unable to translate dead or extremely obscure languages. 
+        \spellnotes This ritual does not grant the ability to communicate with creatures that do not have a language. It may be unable to translate dead or extremely obscure languages.
 
         This ritual can be made permanent with a \spell{permanency} ritual.
         \ritualcost*{4}
@@ -3923,7 +3947,7 @@
 
             \spellspecial Divide the duration evenly among all targets.
             \begin{spelltargets}{Up to five creatures}
-                \spelleffect The target can breathe water freely. 
+                \spelleffect The target can breathe water freely.
             \end{spelltargets}
             \spelldur \durext \dismissable; see text
         \end{spelleffects}
