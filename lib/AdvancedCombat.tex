@@ -3,11 +3,11 @@
 \section{Attacks}
 
 \subsection{Multiple Attacks}\label{Multiple Attacks}
-If your combat prowess is at least 6, you can make multiple attacks as part of a full attack. This progression is shown on \trefnp{Attacks per Round}.
+If your combat prowess is at least 6, you can make multiple \glossterm{strikes} as part of a \glossterm{standard attack}. This progression is shown on \trefnp{Strikes per Round}.
 \begin{dtable}
-    \lcaption{Attacks per Round}
+    \lcaption{Strikes per Round}
     \begin{dtabularx}{\columnwidth}{*{3}{>{\lcol}X}}
-        \tb{Combat Prowess} & \tb{Attacks per Round} \\
+        \tb{Combat Prowess} & \tb{Strikes per Round} \\
         \hline
         1-5     & 1 \\
         6-10    & 2 \\
@@ -17,30 +17,31 @@ If your combat prowess is at least 6, you can make multiple attacks as part of a
     \end{dtabularx}
 \end{dtable}
 
-Some special abilities, such as the \spell{haste} spell, also grant you the ability to make multiple attacks. In all cases, making multiple attacks requires using a standard action to make a full attack.
+Some special abilities, such as the \spell{haste} spell, also grant you the ability to make multiple attacks. In all cases, making multiple strikes requires making a standard attack.
 
 \subsection{Special Attacks}
 
 \subsubsection{Feint}\label{Feint}
-Instead of striking to deal damage, you can feint to leave your foe off-balance. You make an attack with a melee weapon as normal, except that you target your target's Reflex defense instead of its Armor defense. Success means you deal no damage, but you gain a \plus5 bonus to accuracy with melee attacks against the creature during the next round.
+In place of a \glossterm{strike}, you can feint to leave your foe off-balance. You make an attack roll with a melee weapon as normal, except that you target your target's Reflex defense instead of its Armor defense. Success means you deal no damage, but you gain a \plus5 bonus to accuracy with melee attacks against the creature during the next round.
 
 \subsubsection{Touch Attacks}\label{Touch Attacks}
-Instead of striking to deal damage, you can try to just touch your opponent. Touch attacks target Reflex defense instead of Armor defense, but deal no damage.
+In place of a \glossterm{strike}, you can try to just touch your opponent.
+Touch attacks target Reflex defense instead of Armor defense, but deal no damage.
 
 \subsection{Combat Maneuvers}\label{Combat Maneuvers}
-A combat maneuver is an attempt to physically hinder your foe with your body, such as by shoving or tripping it. Unless otherwise noted, using a combat maneuver requires a free hand and replaces a physical attack made during a full attack. You make an attack against a creature within your reach, using your maneuver accuracy instead of your accuracy with your weapon. If your result equals or exceeds your foe's Maneuver defense, your attack hits, and your foe is affected by the maneuver.
+A combat maneuver is an attempt to physically hinder your foe with your body, such as by shoving or tripping it. Unless otherwise noted, using a combat maneuver requires a free hand and replaces a \glossterm{strike} made during a standard attack. You make an attack roll against a creature within your reach, using your maneuver accuracy instead of your accuracy with your weapon. If your result equals or exceeds your foe's Maneuver defense, your attack hits, and your foe is affected by the maneuver.
 
 \begin{dtable}
     \lcaption{Combat Maneuvers}
     \begin{dtabularx}{\columnwidth}{l l l X}
         \tb{Maneuver}  & \tb{Action} & \tb{Attribute} & \tb{Brief Description} \\
         \hline
-        Dirty Trick & Attack & Str or Dex & Impose penalty on a foe \\
-        Disarm      & Attack & Str or Dex & Force foe to drop item  \\
-        Grapple     & Attack & Str        & Wrestle with a foe      \\
+        Dirty Trick & Strike & Str or Dex & Impose penalty on a foe \\
+        Disarm      & Strike & Str or Dex & Force foe to drop item  \\
+        Grapple     & Strike & Str        & Wrestle with a foe      \\
         Overrun     & Move   & Str        & Move through a foe      \\
-        Shove       & Attack & Str        & Move a foe              \\
-        Trip        & Attack & Str or Dex & Trip a foe              \\
+        Shove       & Strike & Str        & Move a foe              \\
+        Trip        & Strike & Str or Dex & Trip a foe              \\
     \end{dtabularx}
 \end{dtable}
 
@@ -80,10 +81,10 @@ You can perform a disarm attack with a free hand or any melee weapon, using eith
 You can follow the target as far as your movement speed allows; if the target continues beyond that point, you remain stationary where your movement ended. If the target takes an action that makes it impossible to follow, such as teleporting or using certain abilities, you cannot follow it for the rest of the round.
 \parhead{Withdraw} As a move action, you can designate a target creature or object to withdraw from, and the minimum distance you want to maintain between you and the creature. This functions like following the creature, except that you specify a minimum distance between you and the target instead of a maximum distance.
 
-\parhead{Charge}\label{Charge} As a full-round action, you can move up to your speed in both the movement and action phase, and make a single attack with a \plus2 bonus to accuracy at the end of your charge. When you charge, you take a \minus2 penalty to physical defenses until the end of the round.
+\parhead{Charge}\label{Charge} As a full-round action, you can move up to your speed in both the movement and action phase, and make a single strike with a \plus2 bonus to accuracy at the end of your charge. When you charge, you take a \minus2 penalty to physical defenses until the end of the round.
 \par You must move at least 20 feet to gain the benefit of a charge, and all movement must be in a single straight line. If there are any obstacles in your path which hinder your movement, you cannot charge. If your charge fails or becomes invalid partway through, you move as far as you can and stop.
 
-\par If your combat prowess is high enough to grant you multiple attacks, your charge attack deals double damage for each additional attack granted by your combat prowess.
+\par If your combat prowess is high enough to grant you multiple strikes, the strike at the end of your charge deals double damage for each additional strike granted by your combat prowess.
 
 \parhead{Struggle} As a full-round action, you can move five feet, regardless of movement penalties. You can use this to move even if your speed is decreased below five feet by penalties.
 
@@ -175,7 +176,7 @@ While in the air, a creature with a glide speed can control its fall as a move a
     2 Treat as a bonus against ranged attacks, instead of a penalty \\
     3 The defender's physical defenses are equal to 10 \add size modifier. \\
     4 The creature suffers a penalty equal to the number of creatures threatening it. \\
-    5 Successful physical attacks automatically threaten critical hits. \\
+    5 Successful physical strikes automatically threaten critical hits. \\
 \end{dtable}
 
 Bonuses and penalties are the most basic way that a roll or numerical statistic can be modified. A bonus increases the roll or statistic, and a penalty decreases it. Bonuses and penalties are also called modifiers.
@@ -189,7 +190,7 @@ Usually, modifiers stack with each other, meaning that you add or subtract all o
     \item Effects from the same source do not stack. Any spell or ability with the same name has the same source.
     \item Magical effects that alter size do not stack. If multiple effects both increase and decrease size, size increases offset size decreases on a one-for-one basis to determine the creature's final size.
     %\item Damage reduction does not stack. Only the best value applicable to the attack applies.
-    \item Effects that grant extra attacks (such as the \spell{haste} spell) do not stack.
+    \item Effects that grant extra strikes (such as the \spell{haste} spell) do not stack.
     \item Temporary hit points do not stack.
     \item If a character has two separate abilities which let him add the same attribute to a given roll or statistic, the attribute is still only added once.
     \item Effects that reduce the effective spell level of a spell affected by metamagic can never reduce a spell below its original level.
@@ -281,7 +282,7 @@ Sometimes, creatures are not aware that combat is taking place when the combat s
 If you are restricted to only taking a move or standard action, but not both, you can spend a standard action to perform a partial version of a full-round action. For most actions, you spend the first round starting the action, and use a second standard action to complete it. Some full-round actions have specific partial versions described below which you take instead. You can only take these partial actions when you cannot take full-round actions.
 
 \subsubsection{Partial Charge}
-As a standard action, you can move up to your speed and make a single attack against a foe. You must move in a straight line, and your movement must not be impeded in any way. In addition, you take a \minus2 penalty to physical defenses until the start of your next turn. An interrupted partial charge becomes a move action.
+As a standard action, you can move up to your speed and make a single strike against a foe. You must move in a straight line, and your movement must not be impeded in any way. In addition, you take a \minus2 penalty to physical defenses until the start of your next turn. An interrupted partial charge becomes a move action.
 
 \section{Special Rules}
 
@@ -337,7 +338,7 @@ In the case of abnormally large mounts (two or more size categories larger than 
 
 If your mount moves more than its normal speed when charging, you also take the physical defense penalty associated with a charge. If you make an attack at the end of such a charge, you receive the bonus gained from the charge. When charging on horse-back, you deal double damage with a lance (see \pcref{Charge}).
 
-You can use ranged weapons while your mount is taking a double move, but at a \minus4 penalty to accuracy. You can use ranged weapons while your mount is sprinting, but at a \minus8 penalty (see \pcref{Sprint}). In either case, you make the attack roll when your mount has completed half its movement. You can make a full attack with a ranged weapon while your mount is moving. Likewise, you can take move actions normally.
+You can use ranged weapons while your mount is taking a double move, but at a \minus4 penalty to accuracy. You can use ranged weapons while your mount is sprinting, but at a \minus8 penalty (see \pcref{Sprint}). In either case, you make the attack roll when your mount has completed half its movement. You can make a standard attack with a ranged weapon while your mount is moving. Likewise, you can take move actions normally.
 
 \parhead{Casting Spells while Mounted} You can cast a spell normally if your mount moves up to a normal move (its speed) either before or after you cast. If you have your mount move both before and after you cast a spell, then you're casting the spell while the mount is moving, and you have to make a Concentration check due to the vigorous motion (DC 10 \add double spell level) or lose the spell. If the mount is sprinting, your Concentration check is more difficult due to the violent motion (DC 15 \add double spell level).
 
