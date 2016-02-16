@@ -3,6 +3,7 @@ from cgi_simple import *
 import first_page
 import second_page
 import third_page
+import ability_cards
 import sys
 
 DESTINATION = 'paper'
@@ -33,6 +34,12 @@ def main():
         fh.write(''.join([
             debug_stylesheets('third_page'),
             debug_html_wrapper(third_page.create_page()),
+        ]) + '\n')
+
+    with open('ability_cards.html', 'w') as fh:
+        fh.write(''.join([
+            debug_stylesheets('ability_cards'),
+            debug_html_wrapper(ability_cards.create_page()),
         ]) + '\n')
 
 def debug_stylesheets(page_name):

@@ -1,6 +1,8 @@
 is_pretty = False
 input_name_prefix = None
 
+DESTINATION = 'paper'
+
 def html_separator():
     return '\n' if is_pretty else ''
 
@@ -125,7 +127,7 @@ def hidden_input(attributes = None):
 def number_input(attributes = None):
     attributes = attributes or dict()
     attributes['type'] = 'number'
-    if not attributes.has_key('value'):
+    if DESTINATION == 'roll20' and not attributes.has_key('value'):
         attributes['value'] = '0'
     return html_tag('input', attributes)
 
@@ -224,3 +226,38 @@ def labeled_dual_input(label_name, text_input_name, number_input_name):
 
 def value_sum(values):
     return '(' + '+'.join(['@{'+value+'}' for value in values]) + ')'
+
+def equation(attributes = None, contents = None, result_attributes = None):
+    attributes, contents = ensure_valid_attributes_and_contents(attributes, contents)
+    space_append(attributes, 'class', 'equation')
+    result_attributes = result_attributes or {'name': 'eq-total'}
+
+    return flex_row(attributes, [
+        underlabeled_number_input(
+            'Total',
+            input_attributes = result_attributes
+        ),
+        equals(),
+        ''.join(contents),
+    ])
+
+def this_or_that(options):
+    return flex_row(
+        {'class': 'two-choices'},
+        flex_col({'class': 'equation-glue'}, 'or').join(options)
+    )
+
+def equals():
+    return flex_col({'class': 'equation-glue'}, div({'class': 'equation-math'}, '='))
+
+def plus():
+    return flex_col({'class': 'equation-glue'}, div({'class': 'equation-math'}, '+'))
+
+def half(text):
+    return span({'class': 'half'}, '1/2 ') + text
+
+def rise_title():
+    return div(
+        {'class': 'rise-title'},
+        'Rise'
+    )
