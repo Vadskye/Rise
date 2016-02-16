@@ -7,13 +7,14 @@ button {
 }
 
 body {
-    height: 11in;
-    width: 8in;
+    height: 1800px;
+    width: 1315px;
     padding: 0.5in;
+    font-size: 20pt;
+    /*box-shadow: 0 0 2px 1px inset;*/
 }
 
 .ui-dialog {
-    box-shadow: 0 0 2px 1px inset;
     width: 100%;
     height: 100%;
 }
@@ -32,8 +33,8 @@ input[type=number] {
     border: 1px solid #AAA;
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     display: none;
     margin: 0;
