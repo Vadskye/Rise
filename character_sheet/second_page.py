@@ -151,7 +151,10 @@ def calc_hit_points():
                     input_attributes = {
                         'disabled': 'true',
                         'name': 'hp-con',
-                        'value': 'floor(('+ROLL20_CALC['attribute']('constitution')+')/2)',
+                        'value': (
+                            'floor((' +
+                            ROLL20_CALC['attribute']('constitution')+')/2)'
+                        ),
                     },
                 ),
                 misc_spacer(),
@@ -532,38 +535,3 @@ def calc_will():
             },
         ),
     ])
-
-def equation(attributes = None, contents = None, result_attributes = None):
-    attributes, contents = ensure_valid_attributes_and_contents(attributes, contents)
-    space_append(attributes, 'class', 'equation')
-    result_attributes = result_attributes or {'name': 'eq-total'}
-
-    return flex_row(attributes, [
-        underlabeled_number_input(
-            'Total',
-            input_attributes = result_attributes
-        ),
-        equals(),
-        ''.join(contents),
-    ])
-
-def this_or_that(options):
-    return flex_row(
-        {'class': 'two-choices'},
-        flex_col({'class': 'equation-glue'}, 'or').join(options)
-    )
-
-def equals():
-    return flex_col({'class': 'equation-glue'}, div({'class': 'equation-math'}, '='))
-
-def plus():
-    return flex_col({'class': 'equation-glue'}, div({'class': 'equation-math'}, '+'))
-
-def half(text):
-    return span({'class': 'half'}, '1/2 ') + text
-
-def rise_title():
-    return div(
-        {'class': 'rise-title'},
-        'Rise'
-    )
