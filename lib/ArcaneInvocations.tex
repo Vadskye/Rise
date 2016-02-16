@@ -10,7 +10,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess 1d6 acid damage \add 1 per two spellpower.
+                \spellsuccess \spelldamage{1}{acid}[d6].
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -30,7 +30,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The next time the target makes a physical attack, the attack deals bonus damage if it hits.
-            The bonus damage is equal to 1d6 damage \add 1 per two spellpower.
+            The bonus damage is equal to \spelldamage{1}{}[d6].
             \spelldur 1 round.
         \end{spelleffects}
     \end{spellcontent}
@@ -51,7 +51,7 @@
             \spelltime{Swift action}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect You can use the target weapon to telekinetically attack from its location.
+            \spelleffect You can use the target weapon to attack from its location.
             This functions as if you were attacking with the weapon in your hands, except that you must use your spellpower to determine your attack and damage bonus.
             You cannot use your Strength, Dexterity, or combat prowess to attack with the target weapon.
             In addition, you cannot use any magical properties of the weapon.
@@ -103,7 +103,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Armor defense}
-                \spellsuccess 1d6 piercing damage \add 1 per two spellpower.
+                \spellsuccess \spelldamage{1}{piercing}[d6]
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -142,8 +142,8 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
-                \spellsuccess 1d6 damage \add 1 per spellpower. You gain temporary hit points equal to half the damage you deal. You can't gain more hit points than the target had.
-                
+                \spellsuccess \spelldamage{1}{life}[d6]. You gain temporary hit points equal to half the damage you deal. You can't gain more hit points than the target had.
+
                 The temporary hit points disappear after 5 rounds. If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
             \end{spellattack}
         \end{spelleffects}
@@ -240,7 +240,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess 1d6 force damage \add 1 per two spellpower.
+                \spellsuccess \spelldamage{1}{force}[d6].
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
