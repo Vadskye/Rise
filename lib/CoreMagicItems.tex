@@ -880,53 +880,49 @@ On a successful critical roll, apply the special effect, but do not multiply the
 \end{magicitemdef}
 
 \begin{magicitemdef}{Flaming}[Active]{2}[Melee, Ranged]{Evocation [Fire]}{as weapon}
-    \magicitemability{Active}[Standard action] If you speak a command word, you can ignite this weapon in flames and make a single attack with it. If this attack hits, the target takes 1d8 fire damage per two item power in addition to the damage from your attack.
-
+    \magicitemability{Active}[Standard action] If you speak a command word, you can ignite this weapon in flames and make a single attack with it. The next time you hit with the weapon, the target takes 1d8 fire damage per two item power in addition to the damage from your attack.
+    
     If the attack misses, the weapon continues to flame for up to 5 rounds.
 \end{magicitemdef}
 
-\impdescription{Flaming}{400}{4th}{Faint Evocation (Energy) [Fire]}{2nd}{Immediate (triggered)} When you strike a foe with this weapon, you can engulf the struck creature in flames.
-If you do, it is \ignited for 5 rounds.
+\begin{magicitemdef}{Freezing}[Active]{2}[Melee, Ranged]{Evocation [Cold]}{as weapon}
+    \magicitemability{Active}[Standard action] If you speak a command word, you can surround this weapon in bitter cold and make a single attack with it. If this attack hits, the target takes 1d8 cold damage per two item power in addition to the damage from your attack.
 
-When you activate this ability, the weapon is wreathed in flames, causing damage you deal with it to be treated as fire damage in addition to its other types.
-This effect lasts for 5 rounds, during which time you cannot activate the item's abilities.
+    If the attack misses, the weapon continues to radiate cold for up to 5 rounds.
+\end{magicitemdef}
 
-\mitemreqdesc{Evocation}{Energy}{Fire}{1}{2nd}{Craft (as weapon) 6}
+\begin{magicitemdef}{Forceful}[Active]{2}[Melee, Ranged]{Evocation [Telekinesis]}{as weapon}
+    \magicitemability{Active}[Standard action] If you speak a command word, you can surround this weapon in telekinetic force and make a single attack with it. The next time you hit with the weapon, you immediately make a shove attack against your target with a circumstance bonus equal to the damage dealt on the attack. You do not have to move with your foe to knock it back the full distance.
 
-\impdescription{Freezing}{400}{4th}{Faint Evocation (Energy) [Cold]}{2nd}{Immediate (triggered)} When you strike a foe with this weapon, you can unleash an icy blast from the weapon.
-If you do, your foe is \fatigued for 5 rounds.
+    If the attack misses, the weapon continues to be surrounded with telekinetic force for up to 5 rounds.
+\end{magicitemdef}
 
-When you activate this ability, the weapon radiates chilling cold, causing damage you deal with it to be treated as cold damage in addition to its other types.
-This effect lasts for 5 rounds, during which time you cannot activate the item's abilities.
+\begin{magicitemdef}{Fixating}[Active]{5}[Melee]{Divination}{as weapon}
+    \magicitemability{Triggered}[Immediate action] If you strike the same foe with this weapon for three consecutive rounds, you can activate this weapon.
+    If you do, your next attack with this weapon against the same target becomes a confirmed critical hit.
+    This attack must be made within 1 round, or the benefit is lost.
 
-\mitemreqdesc{Evocation}{Energy}{Cold}{1}{2nd}{Craft (as weapon) 6}
+    After you activate this ability, the weapon twists slightly in your hand to point towards the target, if it is nearby and visible.
+    This effect lasts for 5 rounds, during which time you cannot activate this ability again.
+\end{magicitemdef}
 
-\impdescription{Forceful}{400}{4th}{Faint Evocation (Control)}{4th}{Immediate (triggered)} When you strike a foe with this weapon, you can activate the weapon to immediately make a shove attempt with a circumstance bonus equal to the damage you dealt with the attack.
-You do not have to move with your foe to knock it back the full distance.
+\begin{magicitemdef}{Morphing}[Active]{1}[Melee, Ranged]{Transmutation}{as weapon}
+    \magicitemability{Active}[Standard action] If you grab this weapon with both hands and strike it against your knee or another hard object while visualizing a different weapon type, this weapon transforms into the visualized weapon type.
+    The new weapon type must be from the same weapon group as the weapon's original type.
+    This weapon remains transformed until you transform it again.
+\end{magicitemdef}
 
-After you activate this ability, the weapon feels heavier in your hands.
-This effect lasts for 5 rounds, during which time you cannot activate the item's abilities.
+\begin{magicitemdef}{Morphing, Greater}[Active]{3}[Melee, Ranged]{Transmutation}{as weapon}
+    \magicitemability{Active}[Standard action] This weapon functions like a \magicitem{morphing} weapon, except that the weapon's new type may be from any weapon group.
+\end{magicitemdef}
 
-\mitemreq{Evocation}{Control}{1}{2nd}{Craft (as weapon) 6}
+\begin{magicitemdef}{Poisoning}[Active]{2}[Melee]{Conjuration/Transmutation [Creation, Temporal]}{as weapon}
+    \magicitemability{Active}[Standard action] If you place a poison into a small slot in the hilt (or similar gripping surface) of this weapon, that poison can be used to quickly coat the weapon's striking surface in battle.
+    \magicitemability{Active}[Swift action] If you press a small button on the hilt (or similar gripping surface) of this weapon, the weapon's striking surface becomes coated in the poison stored in the slot.
 
-%As 5th level spell because it feels right.
-Based losely on Discern
-%Vulnerability, although this feels like Awareness, so True Seeing?
-\impdescription{Heartseeking}{12,000}{12th}{Moderate Divination (Awareness)}{10th}{Immediate (triggered)} When you strike the same foe with this weapon for multiple rounds in a row, you can suddenly perceive a critical weakness in your foe's defenses.
-You must strike the foe for a number of consecutive rounds equal to the critical multiplier of the weapon you are using.
-If you activate the item, the final hit automatically becomes a confirmed critical hit.
-This has no effect on creatures immune to critical hits.
-
-When you activate this ability, you gain a \plus4 bonus to confirm critical hits.
-This effect lasts for 5 rounds, during which time you cannot activate the item's abilities.
-
-\mitemreq{Divination}{Awareness}{5}{10th}{Craft (as weapon) 14}
-
-\impdescription{Morphing}{200}{6th}{Faint Transmutation (Alteration)}{4th}{Standard (specific action)} A morphing weapon can transform into any other weapon from its weapon group.
-To transform a morphing weapon, you must grab it with both hands and strike it against your knee or other hard object, as if breaking it, while visualizing its new form (a standard action).
-It remains transformed until you transform it again.
-
-\mitemreq{Transmutation}{Alteration}{1}{2nd}{Craft (as weapon) 6}
+    After you activate this ability, it takes 5 rounds for the weapon to create more poins.
+    During this time, you cannot activate this ability again.
+\end{magicitemdef}
 
 %price as 2nd level spell?
 \impdescription{Poisoning}{1,600}{7th}{Faint Conjuration/Transmutation (Creation, Temporal)}{4th}{Swift (specific action) and standard (specific action)} A poisoning weapon can conjure poisons to cover the striking surface of the weapon.
