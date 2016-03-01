@@ -1802,7 +1802,7 @@
             \spelltgt{You}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spellsuccess You become larger, as \spell{enlarge person}. In addition, you gain damage reduction against physical damage equal to your spellpower. Appropriately aligned damage ignores this damage reduction and negates it for 1 round. Evil attacks overcome your damage reduction if you are good or neutral, and good attacks overcome your damage reduction if you are evil.
+            \spellsuccess You become larger, as \spell{enlarge}. In addition, you gain damage reduction against physical damage equal to your spellpower. Appropriately aligned damage ignores this damage reduction and negates it for 1 round. Evil attacks overcome your damage reduction if you are good or neutral, and good attacks overcome your damage reduction if you are evil.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
@@ -2074,49 +2074,12 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Enlarge Monster}[4]
+\begin{spellsection}{Enlarge}[2]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgts{One creature (Large or smaller)}}{\spellrng{\rngmed}}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spellspecial This spell functions like \spell{enlarge person}, except that the target can be a creature of any type.
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Transmutation [Alteration, Sizing]}{Arcane, Nature, Strength, Wild}
-        \spellnotes \sizingspellnotes
-        \miscastrandom
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}[Mass]{Enlarge Monster}[7]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgts{Five creatures (Large or smaller)}}{\spellrng{\rngmed}}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect The target is enlarged, as \spell{enlarge person}.
-            \spelldur \durshort \dismissable
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Transmutation [Alteration, Sizing]}{Arcane, Nature, Strength, Wild}
-        \spellnotes \sizingspellnotes
-        \miscastexplode
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Enlarge Person}[3]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One humanoid creature}}{\spellrng{\rngmed}}
+            \spelltwocol{\spelltgt{One creature (Large or smaller)}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
@@ -2126,7 +2089,7 @@
                     \item \plus4 bonus to maneuver accuracy and defense.
                     \item \minus1 penalty to other physical accuracy and defenses.
                     \item \minus4 penalty to Stealth checks.
-                    \item Melee weapons increase damage die size by one.
+                    \item Weapons increase damage die size (see \tref{Weapon Damage and Size}).
                 \end{itemize}
                 \par If insufficient room is available for the desired growth, the creature attains the maximum possible size and may make a Strength check (using its increased Strength) to burst any enclosures in the process. If it fails, it is constrained without harm by the materials enclosing it -- the spell cannot be used to crush a creature by increasing its size.
                 \par Equipment that leaves the target's possession returns to its original size.
@@ -2135,7 +2098,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Alteration, Sizing]}{Strength, Transmutation}
+        \spellinfo{Transmutation [Alteration, Sizing]}{Nature, Strength, Transmutation, Wild}
         \spellnotes A typical humanoid creature whose size increases to Large has a space of 10 feet and a natural reach of 10 feet. \sizingspellnotes
 
         This spell can be made permanent with a \spell{permanency} ritual.
@@ -2143,20 +2106,20 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}[Mass]{Enlarge Person}[6]
+\begin{spellsection}[Mass]{Enlarge}[5]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgts{Five humanoid creatures}}{\spellrng{\rngmed}}
+            \spelltwocol{\spelltgts{Five creatures (Large or smaller)}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target is enlarged, as \spell{enlarge person}.
+            \spelleffect The target is enlarged, as \spell{enlarge}.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Alteration, Sizing]}{Strength, Transmutation}
+        \spellinfo{Transmutation [Alteration, Sizing]}{Nature, Strength, Transmutation, Wild}
         \spellnotes \sizingspellnotes
         \miscastexplode
     \end{spellfooter}
@@ -4026,7 +3989,7 @@
 \end{spellsection}
 
 \begin{spellsection}{Mass (Spell Name)}
-    \par Any spell whose name begins with mass is alphabetized in this chapter according to the second word of the spell name. Thus, the description of a mass spell appears near the description of the spell on which it is based. Spell chains that have mass spells in them include those based on the spells charm monster, cure critical wounds, cure light wounds, cure moderate wounds, cure serious wounds, enlarge person, heal, hold monster, hold person, inflict critical wounds, inflict light wounds, inflict moderate wounds, inflict serious wounds, invisibility, reduce person, suggestion, totemic mind, and totemic power.
+    \par Any spell whose name begins with mass is alphabetized in this chapter according to the second word of the spell name. Thus, the description of a mass spell appears near the description of the spell on which it is based. Spell chains that have mass spells in them include those based on the spells charm monster, cure critical wounds, cure light wounds, cure moderate wounds, cure serious wounds, enlarge, heal, hold monster, hold person, inflict critical wounds, inflict light wounds, inflict moderate wounds, inflict serious wounds, invisibility, shrink, suggestion, totemic mind, and totemic power.
 \end{spellsection}
 
 \begin{spellsection}{Maze}[8]
@@ -4870,58 +4833,6 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Reduce Person}[1]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One humanoid creature}}{\spellrng{\rngmed}}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Fortitude}
-                \spellsuccess The target and its equipment instantly shrinks, halving its height and dividing its weight by 8. This changes the creature's size category to the next smaller one. This has several effects.
-                \begin{itemize}
-                    \item \minus10 ft. penalty to movement speed.
-                    \item \minus4 penalty to maneuver accuracy and defense.
-                    \item \plus1 bonus to other physical attacks and defenses.
-                    \item \plus4 bonus to Stealth checks.
-                    \item Melee weapons decrease damage die size by one.
-                \end{itemize}
-                \par Equipment that leaves the target's possession returns to its original size.
-            \end{spellattack}
-            \spelldur \durshort \dismissable
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Transmutation [Alteration, Sizing]}{Transmutation}
-        \spellnotes A Small humanoid creature whose size decreases to Tiny has a space of 2-1/2 feet and a natural reach of 0 feet (meaning that it must enter an opponent's square to attack).
-
-        \sizingspellnotes This spell can be made permanent with a \spell{permanency} ritual.
-        \miscastrandom
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}[Mass]{Reduce Person}[4]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgts{Up to five humanoid creatures}}{\spellrng{\rngmed}}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Fortitude}
-                \spellsuccess The target shrinks, as \spell{reduce person}.
-            \end{spellattack}
-            \spelldur \durshort \dismissable
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Transmutation [Alteration, Sizing]}{Transmutation}
-        \spellnotes As \spell{reduce person}.
-        \miscastexplode
-    \end{spellfooter}
-\end{spellsection}
-
 \begin{spellsection}[Lesser]{Regeneration}[1]
     \begin{spellheader}
         \spelldesc{You grant an ally's body the ability to heal itself rapidly.}
@@ -5513,6 +5424,58 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Destructive, Sonic]}{Arcane, Strength}
+        \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Shrink}[1]
+    \begin{spellheader}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltwocol{\spelltgt{One creature (Small or larger)}}{\spellrng{\rngclose}}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \begin{spellattack}{Spellpower vs. Fortitude}
+                \spellsuccess The target and its equipment instantly shrinks, halving its height and dividing its weight by 8. This changes the creature's size category to the next smaller one. This has several effects.
+                \begin{itemize}
+                    \item \minus10 ft. penalty to movement speed.
+                    \item \minus4 penalty to maneuver accuracy and defense.
+                    \item \plus1 bonus to other physical attacks and defenses.
+                    \item \plus4 bonus to Stealth checks.
+                    \item Weapons decrease damage die size (see \tref{Weapon Damage and Size}).
+                \end{itemize}
+                \par Equipment that leaves the target's possession returns to its original size.
+            \end{spellattack}
+            \spelldur \durshort \dismissable
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Transmutation [Alteration, Sizing]}{Nature, Transmutation}
+        \spellnotes A Small humanoid creature whose size decreases to Tiny has a space of 2-1/2 feet and a natural reach of 0 feet (meaning that it must enter an opponent's square to attack).
+
+        \sizingspellnotes This spell can be made permanent with a \spell{permanency} ritual.
+        \miscastrandom
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}[Mass]{Shrink}[4]
+    \begin{spellheader}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltwocol{\spelltgts{Up to five creatures (Small or larger)}}{\spellrng{\rngmed}}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \begin{spellattack}{Spellpower vs. Fortitude}
+                \spellsuccess The target shrinks, as \spell{shrink}.
+            \end{spellattack}
+            \spelldur \durshort \dismissable
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Transmutation [Alteration, Sizing]}{Nature, Transmutation}
+        \spellnotes As \spell{shrink}.
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
