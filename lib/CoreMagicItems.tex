@@ -881,7 +881,7 @@ On a successful critical roll, apply the special effect, but do not multiply the
 
 \begin{magicitemdef}{Flaming}[Active]{2}[Melee, Ranged]{Evocation [Fire]}{as weapon}
     \magicitemability{Active}[Standard action] If you speak a command word, you can ignite this weapon in flames and make a single attack with it. The next time you hit with the weapon, the target takes 1d8 fire damage per two item power in addition to the damage from your attack.
-    
+
     If the attack misses, the weapon continues to flame for up to 5 rounds.
 \end{magicitemdef}
 
@@ -916,26 +916,19 @@ On a successful critical roll, apply the special effect, but do not multiply the
     \magicitemability{Active}[Standard action] This weapon functions like a \magicitem{morphing} weapon, except that the weapon's new type may be from any weapon group.
 \end{magicitemdef}
 
-\begin{magicitemdef}{Poisoning}[Active]{2}[Melee]{Conjuration/Transmutation [Creation, Temporal]}{as weapon}
-    \magicitemability{Active}[Standard action] If you place a poison into a small slot in the hilt (or similar gripping surface) of this weapon, that poison can be used to quickly coat the weapon's striking surface in battle.
-    \magicitemability{Active}[Swift action] If you press a small button on the hilt (or similar gripping surface) of this weapon, the weapon's striking surface becomes coated in the poison stored in the slot.
+\begin{magicitemdef}{Poisoning}[Active]{3}[Melee]{Conjuration/Transmutation [Creation, Temporal]}{as weapon}
+    \magicitemability{Passive} This weapon has a small slot in its hilt (or similar gripping surface). Up to one ounce of liquid can be placed in the slot or removed as a standard action. A nonmagical liquid placed in this slot is kept fresh, decaying at a rate of one minute per day. In addition, a non-magical liquid worth less than 100gp can be quickly duplicated to coat the weapon's surface.
+    \magicitemability{Active}[Swift action] If you press a small button on the hilt (or similar gripping surface) of this weapon, the weapon's striking surface becomes coated in the liquid stored in the weapon's slot.
 
-    After you activate this ability, it takes 5 rounds for the weapon to create more poins.
+    After you activate this ability, it takes 5 rounds for the weapon to create more liquid.
     During this time, you cannot activate this ability again.
 \end{magicitemdef}
 
-%price as 2nd level spell?
-\impdescription{Poisoning}{1,600}{7th}{Faint Conjuration/Transmutation (Creation, Temporal)}{4th}{Swift (specific action) and standard (specific action)} A poisoning weapon can conjure poisons to cover the striking surface of the weapon.
-The poison must first be inserted into a small slot in the hilt of the weapon (a standard action).
-Once a poison is present in the slot, you can coat the weapon with a dose of the poison by pressing a small button on the hilt (a swift action).
-After a poison has been used, it takes 5 rounds for the weapon to create more poison, during which time the weapon cannot be activated.
-Only liquid poisons worth 100 gp per dose or less can be duplicated in this way.
-
-The poison within the weapon is kept fresh magically, decaying at a rate of one minute per day.
-The weapon can be emptied by pressing a second button to open its slot and pouring the poison out (a standard action).
-You can freely insert and remove poison from the weapon, but coating the weapon in poison costs an activation.
-
-\mitemreq{Conjuration, Transmutation}{2}{4th}{Craft (as weapon) 8}
+\begin{magicitemdef}{Poisoning, Greater}[Active]{6}[Melee]{Conjuration/Transmutation [Creation, Temporal]}{as weapon}
+    \magicitemability{Passive} This item functions like a \magicitem{poisoning} weapon, except that it can duplicate nonmagical liquids worth up to 1,000 gp.
+    In addition, up to five different poisons can be stored within the weapon.
+    When you coat the weapon with poison, you may choose which poison to use.
+\end{magicitemdef}
 
 %price as 5th level spell? similar to 20 uses of a one-shot item worth 1000 gp, so sure
 \impdescription{Poisoning, Greater}{24,000}{13th}{Moderate Conjuration/Transmutation (Creation, Temporal)}{10th}{Swift (specific action) and standard (specific action)} This ability functions like the \magicitem{poisoning} weapon ability, except that it can duplicate liquid poisons of up to 1,000 gp per dose.
