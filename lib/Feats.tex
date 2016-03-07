@@ -347,7 +347,6 @@ The table of combat feats is organized according to the combat prowess each feat
         \midrule
         \tb{Combat Feats} & \tb{Prerequisites (Prowess 4)} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
         \featref{Combat Mobility} & Dex 5 & Move through foe & Defense, Mobility & \featpref{Combat Mobility} \\
-        \featref{Eye of the Storm} & Per 5 & Reduce overwhelm penalties & Awareness, Defense & \featpref{Eye of the Storm} \\
         \featref{Gang Up} & \x & Increase overwhelm penalties foes suffer & \x & \featpref{Gang Up} \\
         \featref{Improved Dirty Trick} & \x & \plus2 to dirty trick accuracy; dirty tricks last longer & Finesse, Maneuver & \featpref{Improved Dirty Trick} \\
         \featref{Improved Disarm} & \x & \plus2 to disarm accuracy; knock foe's weapon away after disarming & Finesse, Maneuver & \featpref{Improved Disarm} \\
@@ -394,6 +393,7 @@ The table of combat feats is organized according to the combat prowess each feat
         \featref{Blind-Fight} & Perception 3 & Fight better when unable to see & Awareness & \featpref{Blind-Fight} \\
         \featref{Defensive Fighting} & \x & Gain bonus to physical defenses & Defense, Style & \featpref{Defensive Fighting} \\
         \featref{Distracting Foe} & \x & Threatened foes suffer Concentration penalties & Reaction, Style & \featpref{Distracting Foe} \\
+        \featref{Eye of the Storm} & Per 5 & Reduce overwhelm penalties & Awareness, Defense, Style & \featpref{Eye of the Storm} \\
         \featref{Guardian} & \x & Adjacent allies suffer reduced overwhelm penalties & Defense, Style & \featpref{Guardian} \\
         \featref{Overpowering Assault} & Str 3 & Trade defense for maneuver bonus & Power, Style & \featpref{Overpowering Assault} \\
         \featref{Overwhelming Fire} & Dex 3 & Overwhelm foes with ranged weapons & Style & \featpref{Overwhelming Fire} \\
@@ -732,7 +732,7 @@ If your attack result also beats the foe's Mental defense, it is \disoriented fo
 
 \feat{Distracting Foe}{Combat, Reaction, Style}
 \featben While in this style, foes you threaten take a \minus4 penalty to Concentration checks.
-This penalty increases by 2 for each physical attack you can make per round beyond the first.
+This penalty increases by 2 for each strike you can make per round beyond the first.
 \stylereq Wield a melee weapon. You must make a melee attack each round.
 
 \feat{Divine Spellgift}{Spellgift}
@@ -870,11 +870,12 @@ If you know an additional Divination spell of 5th level or higher, this bonus in
 This metamagic can only be applied to spells with a range of \rngclose, \rngmed, or \rnglong.
 An extended spell uses up a spell slot one level higher than the spell's actual level.
 
-\feat{Eye of the Storm}{Awareness, Combat, Defense}
+\feat{Eye of the Storm}{Awareness, Combat, Defense, Style}
 \featpre Perception 5, combat prowess 4.
 \featben You reduce your overwhelm penalties by 1.
 This penalty reduction increases to 2 at Perception 10, and to 3 at Perception 20.
 If your overwhelm penalty is reduced to 0, you are not considered to be overwhelmed.
+\featpre Wield a melee weapon.
 
 \feat{Exotic Weapon Proficiency}{Combat}
 You understand how to use exotic weapons in combat.
