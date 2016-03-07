@@ -143,6 +143,7 @@ Some strike feats instead require a specific action to use.
         \tb{General Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Page} \\
         \featref{Deathless} & Con 10 & Immune to death effects & \featpref{Deathless} \\
         \featref{Destructive} & Str 3 & Gain \plus5 to breaking things & \featpref{Destructive} \\
+        \featref{Diehard} & Con 10 & Halve penalties from critical damage & \featpref{Diehard} \\
         \featref{Fearless} & Wil 10 & Immune to fear effects & \featpref{Fearless} \\
         \featref{Iron Will} & Int 3 or Wil 3 & \plus2 bonus to Mental defense & \featpref{Iron Will} \\
         \featref{Lightning Reflexes} & Dex 3 or Per 3 &  \plus2 bonus to Reflex defense & \featpref{Lightning Reflexes} \\
@@ -219,7 +220,7 @@ Some strike feats instead require a specific action to use.
 
         \midrule
         \tb{Magic Style Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Page} \\
-        \featref{Brutal Magic} & Combat prowess 4, 1st level spells & Gain spellpower bonus after making physical attack & \featpref{Brutal Magic} \\
+        \featref{Brutal Magic} & Combat prowess 4, 1st level spells & Gain spellpower bonus after making physical strike & \featpref{Brutal Magic} \\
         \featref{Craftcaster} & Craft (any) 10 ranks, 2nd level spells & Increase spellpower when creating, transforming objects & \featpref{Craftcaster} \\
         \featref{Peaceful Magic} & 2nd level spells & Gain spellpower bonus after not taking damage & \featpref{Peaceful Magic} \\
         \featref{Retributive Magic} & 1st level Abjuration spell & Gain spellpower bonus after taking damage & \featpref{Retributive Magic} \\
@@ -228,7 +229,7 @@ Some strike feats instead require a specific action to use.
         \tb{Metamagic Feats} & \tb{Prerequisites} & \tb{Benefit (Level Adjustment)} & \tb{Page} \\
         \featref{Energetic Substitution} & 2nd level spells & Change spell's energy type (\plus1) & \featpref{Energetic Substitution} \\
         \featref{Extend Spell} & 2nd level spells & Double spell's range (\plus1) & \featpref{Extend Spell} \\
-        \featref{Imbued Spellstrike} & 2nd level spells & Combine spell with weapon attack (\plus1) & \featpref{Imbued Spellstrike} \\
+        \featref{Imbued Spellstrike} & 2nd level spells & Combine spell with weapon strike (\plus1) & \featpref{Imbued Spellstrike} \\
         \tind \featref{Improved Imbued Spellstrike} & 3rd level spells, Imbued Spellstrike & Imbue weapon with spell's power up to 5 minutes (\plus2) & \featpref{Improved Imbued Spellstrike} \\
         \featref{Quicken Spell} & 3rd level spells & Cast spell as swift action, but lose next action (\plus2) & \featpref{Quicken Spell} \\
         \featref{Patient Spell} & 2nd level spells & Cast spell slowly for spellpower bonus & \featpref{Patient Spell} \\
@@ -326,14 +327,12 @@ The table of combat feats is organized according to the combat prowess each feat
         \featref{Armor Proficiency} & Proficiency with lighter armor & Become proficient with type of armor & Equipment & \featpref{Armor Proficiency} \\
         \featref{Cleave} & Str 3 & Extra melee strike after dropping target & Power & \featpref{Cleave} \\
         \featref{Close-Quarters Fighting} & Dex 3 & No penalty for squeezing or attacking while grappling & Defense & \featpref{Close-Quarters Fighting} \\
-        \featref{Diehard} & Con 3 & Fight normally without hit points & Defense & \featpref{Diehard} \\
         \featref{Exotic Weapon Proficiency} & \x & Become proficient with exotic weapons & Equipment & \featpref{Exotic Weapon Proficiency} \\
         \featref{Far Shot} & Str 3 & Increase range increment & Power & \featpref{Far Shot} \\
         \featref{Improved Unarmed Combat} & \x &  Considered armed even when unarmed & \x & \featpref{Improved Unarmed Combat} \\
         \tind \featref{Deflect Arrows} & Dex 3, Improved Unarmed Combat & Deflect ranged attacks with your bare hands & Finesse, Reaction & \featpref{Deflect Arrows} \\
-        \tind \tind \featref{Snatch Arrows} & Dex 5, Deflect Arrows, Improved Unarmed Combat & Catch a deflected ranged attack & Finesse, Reaction & \featpref{Snatch Arrows} \\
         \featref{Mighty Blows} & Str 3 & \plus1 to physical damage & Power & \featpref{Mighty Blows} \\
-        \featref{Mounted Archery} & Ride training & Reduced penalty for ranged attacks while mounted by 4 & Mounted, Precision & \featpref{Mounted Archery} \\
+        \featref{Mounted Archery} & Ride training & Reduce penalty for ranged accuracy while mounted & Mounted, Precision & \featpref{Mounted Archery} \\
         \featref{Mounted Defense} & Ride training & Negate hits on mount with Ride check & Defense, Mounted & \featpref{Mounted Defense} \\
         \featref{Mounted Trample} & Ride 10 ranks & Target cannot avoid mounted overrun & Maneuver, Mounted & \featpref{Mounted Trample} \\
         \featref{Quick Draw} & \x & Draw weapon as swift action & Reaction & \featpref{Quick Draw} \\
@@ -351,13 +350,13 @@ The table of combat feats is organized according to the combat prowess each feat
         \featref{Combat Mobility} & Dex 5 & Move through foe & Defense, Mobility & \featpref{Combat Mobility} \\
         \featref{Eye of the Storm} & Per 5 & Reduce overwhelm penalties & Awareness, Defense & \featpref{Eye of the Storm} \\
         \featref{Gang Up} & \x & Increase overwhelm penalties foes suffer & \x & \featpref{Gang Up} \\
-        \featref{Improved Dirty Trick} & \x & \plus2 to dirty trick attacks; dirty tricks last longer & Finesse, Maneuver & \featpref{Improved Dirty Trick} \\
-        \featref{Improved Disarm} & \x & \plus2 to disarm attacks; knock foe's weapon away after disarming & Finesse, Maneuver & \featpref{Improved Disarm} \\
-        \featref{Improved Feint} & \x & \plus2 to feint attacks; feint lasts longer & Finesse, Maneuver & \featpref{Improved Feint} \\
-        \featref{Improved Grapple} & \x & \plus2 to grapple attacks; not defenseless while grappling & Maneuver, Power & \featpref{Improved Grapple} \\
-        \featref{Improved Overrun} & \x & \plus2 to overrun attacks; target can't avoid & Maneuver, Power & \featpref{Improved Overrun} \\
-        \featref{Improved Shove} & \x & \plus2 to shove attacks; move target away from you & Maneuver, Power & \featpref{Improved Shove} \\
-        \featref{Improved Trip} & \x & \plus2 to trip attacks; free attack against tripped foe & Finesse, Maneuver & \featpref{Improved Trip} \\
+        \featref{Improved Dirty Trick} & \x & \plus2 to dirty trick accuracy; dirty tricks last longer & Finesse, Maneuver & \featpref{Improved Dirty Trick} \\
+        \featref{Improved Disarm} & \x & \plus2 to disarm accuracy; knock foe's weapon away after disarming & Finesse, Maneuver & \featpref{Improved Disarm} \\
+        \featref{Improved Feint} & \x & \plus2 to feint accuracy; feint lasts longer & Finesse, Maneuver & \featpref{Improved Feint} \\
+        \featref{Improved Grapple} & \x & \plus2 to grapple accuracy; not defenseless while grappling & Maneuver, Power & \featpref{Improved Grapple} \\
+        \featref{Improved Overrun} & \x & \plus2 to overrun accuracy; target can't avoid & Maneuver, Power & \featpref{Improved Overrun} \\
+        \featref{Improved Shove} & \x & \plus2 to shove accuracy; move target away from you & Maneuver, Power & \featpref{Improved Shove} \\
+        \featref{Improved Trip} & \x & \plus2 to trip accuracy; free strike against tripped foe & Finesse, Maneuver & \featpref{Improved Trip} \\
         \featref{Mounted Charge} & Ride 10 ranks & Gain bonus damage with mounted charge & Mounted, Power & \featpref{Mounted Charge} \\
         \featref{Tactical Prediction} & Int 5 & Predict foe's next action & Awareness & \featpref{Tactical Prediction} \\
 
@@ -380,7 +379,7 @@ The table of combat feats is organized according to the combat prowess each feat
 
         \midrule
         \tb{Combat Feats} & \tb{Prerequisites (Prowess 18)} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
-        \featref{Executioner} & Any three Reaction feats & Gain free attacks against foes near death & Reaction & \featpref{Executioner} \\
+        \featref{Executioner} & Any three Reaction feats & Gain free strikes against foes near death & Reaction & \featpref{Executioner} \\
     \end{longtabu}
     \begin{enumerate*}
         \item You can gain this feat multiple times.
@@ -403,7 +402,7 @@ The table of combat feats is organized according to the combat prowess each feat
         \featref{Parry} & Dex 3 & Ready yourself to parry incoming blows & Defense, Reaction, Style & \featpref{Parry} \\
         \tind \featref{Shielded Parry} & Dex 3, shield proficiency, Parry & Add shield bonus to parry attempts & Defense, Reaction & \featpref{Shielded Parry} \\
         \tind \featref{Riposte} & Dex 3, Parry & Foes are defenseless if you parry very well & Reaction & \featpref{Riposte} \\
-        \featref{Point Blank Shot} & \x &  \plus2 bonus to ranged attacks within half range increment & Precision, Style & \featpref{Point Blank Shot} \\
+        \featref{Point Blank Shot} & \x &  \plus2 bonus to ranged accuracy within half range increment & Precision, Style & \featpref{Point Blank Shot} \\
 
         \midrule
         \tb{Style Feats} & \tb{Prerequisites (Prowess 4)} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
@@ -436,23 +435,23 @@ The table of combat feats is organized according to the combat prowess each feat
 
 \begin{longtabuwrapper}
     \begin{longtabu}{>{\lcol}p{10em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{6em} >{\lcol}p{3em}}
-        \tb{Strike Feats} & \tb{Prerequisites (two attacks)} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
+        \tb{Strike Feats} & \tb{Prerequisites (two strikes)} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
         \featref{Armor Piercing Strike} & Per 5 & Attack targets Reflex defense & Precision, Strike & \featpref{Armor Piercing Strike} \\
         \featref{Calculated Strike} & Int 5 & Attack can deal critical damage & Precision, Strike & \featpref{Calculated Strike} \\
         \featref{Countering Strike} & Int 5 & Bonus damage if you are attacked & Reaction, Strike & \featpref{Countering Strike} \\
         \featref{Disorienting Strike} & \x & Attack disorients foe & Power, Strike & \featpref{Disorienting Strike} \\
         \featref{Driving Assault} & Str 5 & Attack shoves creature  & Power, Maneuver, Strike & \featpref{Driving Assault} \\
-        \featref{Focused Strike} & \x & Trade attacks for accuracy & Precision, Strike & \featpref{Focused Strike} \\
+        \featref{Focused Strike} & \x & Trade strikes for accuracy & Precision, Strike & \featpref{Focused Strike} \\
         \featref{Intimidating Strike} & Intimidate 10 ranks & Melee attack intimidates foe & Strike & \featpref{Intimidating Strike} \\
         \featref{Knockdown} & Str 5 & Shove foe and knock prone & Maneuver, Power, Strike & \featpref{Knockdown} \\
         \featref{Pierce Wings} & Per 5 & Ranged attack removes foe's ability to fly & Precision, Strike & \featpref{Pierce Wings} \\
         \featref{Staggering Strike} & \x & Attack staggers foe & Strike & \featpref{Staggering Strike} \\
         \featref{Wall Slam} & Str 5 & Slam opponent into wall to deal bonus damage & Maneuver, Power, Strike & \featpref{Wall Slam} \\
-        \featref{Whirlwind Strike} & Dex 5 & One melee attack against each threatened opponent & Strike & \featpref{Whirlwind Strike} \\
+        \featref{Whirlwind Strike} & Dex 5 & One melee strike against each threatened opponent & Strike & \featpref{Whirlwind Strike} \\
         \tind \featref{Mobile Whirlwind} & Dex 5, Whirlwind Strike & Use whirlwind strike as standard action & Mobility & \featpref{Mobile Whirlwind} \\
 
         \midrule
-        \tb{Strike Feats} & \tb{Prerequisites (three attacks)} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
+        \tb{Strike Feats} & \tb{Prerequisites (three strikes)} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
         \featref{Killing Blow} & Int 10 & Attack instantly kills foe without hit points & Precision, Strike & \featpref{Killing Blow} \\
         \featref{Hydra Strike} & Str 5, Dex 5, Con 5 & Attack all defenses for bonus damage & \x & \featpref{Hydra Strike} \\
         \featref{Legendary Strike} & Any three Strike feats & \plus2 to hit with strikes & \x & \featpref{Legendary Strike} \\
@@ -460,8 +459,8 @@ The table of combat feats is organized according to the combat prowess each feat
         \featref{Penetrating Strike} & \x & Attack removes foe's damage reduction & Strike & \featpref{Penetrating Strike} \\
 
         \midrule
-        \tb{Strike Feats} & \tb{Prerequisites (four attacks)} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
-        \featref{Hurricane Strike} & Dex 15, Whirlwind Strike & Two melee attacks against all threatened foes & Strike & \featpref{Hurricane Strike} \\
+        \tb{Strike Feats} & \tb{Prerequisites (four strikes)} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
+        \featref{Hurricane Strike} & Dex 15, Whirlwind Strike & Two melee strikes against all threatened foes & Strike & \featpref{Hurricane Strike} \\
         \tind \featref{Mobile Hurricane} & Dex 15, Hurricane Strike, Mobile Whirlwind, Whirlwind Strike & Use hurricane strike as standard action & Mobility & \featpref{Hurricane Strike} \\
         \featref{Immobilizing Strike} & \x & Melee attack immobilizes foe & Strike & \featpref{Immobilizing Strike} \\
         \featref{Predictive Strike} & Int 15 & Bonus damage if foe takes predicted action & Reaction, Strike & \featpref{Predictive Strike} \\
@@ -514,8 +513,8 @@ Choose one category of armor: light, medium, heavy, or shields.
 This effect cannot reduce those penalties below 0.
 
 \feat{Armor Piercing Strike}{Combat, Precision}
-\featpre Per 5, two attacks.
-\featben In place of two attacks, you can make a physical attack.
+\featpre Per 5, two strikes.
+\featben In place of two strikes, you can make a physical attack.
 If you beat the target's Reflex defense, you deal damage normally.
 If you also beat its Armor defense, you deal double damage.
 
@@ -524,7 +523,7 @@ Choose a category of body armor: light, medium, or heavy.
 \featpre Proficiency with all lighter types of body armor.
 \featben You gain proficiency with your chosen armor type.
 \parhead{Normal}
-A character who is wearing armor with which she is not proficient applies its armor check penalty to physical attacks and to all checks that involve moving, including Ride.
+A character who is wearing armor with which she is not proficient applies its armor check penalty to physical accuracy and to all checks that involve moving, including Ride.
 The character also suffers double the normal arcane spell failure chance for wearing the armor.
 
 
@@ -557,8 +556,8 @@ You have a 50\% chance to miss opponents you can't see, and you are \defenseless
 \featben At the end of each round, if you dealt lethal damage in excess of your spellpower with physical attacks that round, you gain a \plus2 bonus to spellpower during the next round.
 
 \feat{Calculated Strike}{Combat, Precision, Strike}
-\featpre Intelligence 5, two attacks.
-\featben In place of two attacks, you can make a physical attack.
+\featpre Intelligence 5, two strikes.
+\featben In place of two strikes, you can make a physical attack.
 If you hit, you deal damage normally.
 If your attack result also beats the foe's Fortitude defense, until the end of the round, any damage the creature takes in excess of the creature's hit points is dealt as critical damage.
 This effect applies to all damage dealt to the creature during the current phase.
@@ -569,8 +568,8 @@ This effect applies to all damage dealt to the creature during the current phase
 If you know an additional Compulsion spell of 5th level or higher, this bonus increases to \plus4.
 
 \feat{Countering Strike}{Reaction, Strike}
-\featpre Intelligence 5, two attacks.
-\featben In place of two attacks, you can make a physical attack.
+\featpre Intelligence 5, two strikes.
+\featben In place of two strikes, you can make a physical attack.
 If you hit, you deal damage normally.
 If the target makes a physical attack against you during the current phase, this attack deals triple damage.
 
@@ -584,7 +583,7 @@ If your celestial power is at least 10, this ability functions as \spell{mass bl
 \featpres
 Nonevil alignment, Celestial Heritage.
 \featben As a standard action, you can spend a celestial point to imbue your body with celestial resilience for a \durshort duration.
-You gain damage reduction against physical attacks equal to your celestial power.
+You gain damage reduction against physical damage equal to your celestial power.
 This damage reduction allows you to ignore the first points of damage you take each round.
 Evil-aligned attacks ignore this damage reduction and negate it for 1 round.
 If you have five or more celestial feats, this ability becomes permanent.
@@ -598,13 +597,13 @@ You have a pool with a number of celestial points equal to the number of celesti
 As a standard action, you can spend a celestial point to surround yourself in an aura of good for a \durshort duration.
 During that time, whenever an evil creature within \rngclose range of you attacks you, make an attack against its Mental defense.
 Your accuracy is equal to your celestial power.
-Success means the attacking creature takes 1d6 damage per two celestial power.
+Success means the attacking creature takes 1d6 divine damage per two celestial power.
 
 If you have five or more celestial feats, this ability becomes permanent.
 
 \feat{Celestial Smiting}{Bloodline, Celestial}
 \featpres Nonevil alignment, Celestial Heritage.
-\featben As a swift action, you can spend a celestial point to make your next physical attack a smite attack.
+\featben As a swift action, you can spend a celestial point to make your next physical strike a smite.
 If your smite targets an evil creature, you gain a bonus to accuracy equal to the number of celestial bloodline feats you possess, and a damage bonus equal to your celestial power.
 
 \feat{Celestial Soul}{Bloodline, Celestial}
@@ -635,13 +634,13 @@ If you are 18th level, you can fly for a number of minutes equal to 3 \add half 
 \feat{Chargebreaker}{Combat, Reaction, Style}
 \featben While in this style, you gain a \plus4 bonus to damage with melee attacks against creatures that move towards you during the current round.
 This style provides no benefit against creatures that moved towards you before you initiated the style.
-This bonus increases by \plus2 for each physical attack you can make per round beyond the first.
+This bonus increases by \plus2 for each strike you can make per round beyond the first.
 \stylereq Wield a melee weapon.
 
 \feat{Cleave}{Combat, Power}
 \featpre Str 3.
 \featben If you make a melee strike that knocks a creature unconscious or kills it, you can immediately make an extra melee strike against another creature you threaten.
-The extra strike must be made with the same weapon, and uses the same attack bonus, but it is otherwise treated as being a different attack.
+The extra strike must be made with the same weapon, and uses the same accuracy, but it is otherwise treated as being a different attack.
 You cannot move before making this extra strike.
 There is no limit to the number of times you can use this feat per round.
 
@@ -680,7 +679,7 @@ Metamagic feats and similar spell augmentations are ignored for the purpose of c
 The \spell{dispel magic} spell can be used to counter any spell, even higher level spells.
 
 \feat{Counterstorm}{Awareness, Combat, Reaction, Style}
-\featpres Perception 15, four attacks.
+\featpres Perception 15, four strikes.
 \featben Whenever a foe misses you with a melee attack, you gain a cumulative \plus2 bonus to accuracy and damage on your next melee attack against that creature.
 If this bonus is not used within 1 round, it is lost.
 \stylereq Wield a melee weapon.
@@ -692,8 +691,8 @@ If this bonus is not used within 1 round, it is lost.
 \feat{Deadly Aim}{Combat, Precision, Style}
 \featpres Perception 5, combat prowess 4.
 \featben You gain a \plus2 bonus to physical ranged damage rolls.
-In exchange, you take a \minus2 penalty to accuracy with physical ranged attacks.
-This bonus increases by \plus1 for each physical attack you can make per round beyond the first.
+In exchange, you take a \minus2 penalty to physical ranged accuracy.
+This bonus increases by \plus1 for each strike you can make per round beyond the first.
 
 \feat{Deathless}{General}
 \featpre Constitution 5 or base Fortitude defense \plus10.
@@ -710,9 +709,11 @@ If your Intelligence is at least 5, you take no penalty to accuracy.
 \featben You must have at least one hand free (holding nothing) to use this feat.
 Once per round when you would normally be hit with a ranged weapon, you may deflect it so that you take no damage from it.
 You must be aware of the attack and not flatfooted.
-You can deflect a number of arrows equal to the number of attacks you can make.
+You can deflect a number of arrows equal to the number of strikes you can make.
 \par Attempting to deflect a ranged weapon doesn't count as an action.
 Unusually massive ranged weapons and ranged attacks generated by spell effects can't be deflected.
+\par If your Dexterity is at least 10, you can catch the weapon instead of deflecting it.
+As an immediate action, you can throw a caught weapon back at the original attacker.
 
 \feat{Delusive Guise}{Magic}
 \featpre 1st level or higher \glossterm{Delusion} spell known.
@@ -724,11 +725,8 @@ If you know an additional Delusion spell of 5th level or higher, this bonus incr
 \featben You gain a \plus5 bonus to Strength checks made to break, bend, or crush objects.
 
 \feat{Diehard}{General}
-\featpre Con 3.
-\featben You are not staggered when you have no hit points remaining.
-You still take critical damage and risk death if you are damaged when you have no hit points.
-
-If your Constitution is at least 10, you also halve the penalties you take from having critical damage (see \pcref{Critical Damage}).
+\featpre Con 10.
+\featben You halve the penalties you take from having critical damage (see \pcref{Critical Damage}).
 
 \feat{Dilettante}{Skill}
 \featpre Int 3.
@@ -737,8 +735,8 @@ You are treated as trained in those skills, even if you possess no ranks, allowi
 If your Intelligence increases after taking this feat, you may choose additional Knowledge skills.
 
 \feat{Disorienting Strike}{Combat, Strike}
-\featpre Two attacks.
-\featben In place of two attacks, you can make a physical attack.
+\featpre Two strikes.
+\featben In place of two strikes, you can make a physical attack.
 If you hit, you deal damage normally.
 If your attack result also beats the foe's Mental defense, it is \disoriented for 5 rounds.
 
@@ -852,8 +850,8 @@ After that limit is reached, you must rest for 5 minutes before flying again.
 If you are 18th level, you can fly for a number of minutes equal to 3 \add half your Constitution before resting.
 
 \feat{Driving Assault}{Combat, Maneuver, Power, Strike}
-\featpres Str 5, two attacks.
-\featben In place of two attacks, you can make a single melee attack.
+\featpres Str 5, two strikes.
+\featben In place of two strikes, you can make a single melee attack.
 If hit, you deal damage normally, and you can make an immediate shove attack against the struck foe.
 You gain a bonus on the shove attack equal to the damage dealt.
 
@@ -873,7 +871,7 @@ A substituted spell uses up a spell slot one level higher than the spell's actua
 If you know an additional Divination spell of 5th level or higher, this bonus increases to \plus4.
 
 \feat{Executioner}{Combat, Reaction}
-\featpres Four attacks, any three Reaction feats.
+\featpres Four strikes, any three Reaction feats.
 \featben At the end of every round, you can make a free melee \glossterm{strike} against all creatures you threaten that have no hit points remaining.
 
 \feat{Extend Spell}{Metamagic}
@@ -964,8 +962,8 @@ This is an enchantment (compulsion), mind-affecting ability.
 In addition, you can use your Intelligence instead of your Constitution on Concentration checks, such as when you cast spells.
 
 \feat{Focused Strike}{Combat, Precision, Strike}
-\featpre Two attacks.
-\featben In place of two attacks, you can make a physical attack with a \plus5 bonus to accuracy.
+\featpre Two strikes.
+\featben In place of two strikes, you can make a physical attack with a \plus5 bonus to accuracy.
 If you hit, you deal damage normally.
 You may trade additional attacks to make this strike.
 For each attack you trade, you gain an additional \plus5 bonus to accuracy.
@@ -1026,12 +1024,12 @@ You must make a melee attack each round.
 You still need cover or concealment to hide.
 
 \feat{Hurricane Strike}{Combat, Strike}
-\featpres Dex 15, Whirlwind Strike, four attacks.
+\featpres Dex 15, Whirlwind Strike, four strikes.
 \featben As a full-round action, you can make two melee attacks against each foe you threaten. You cannot convert these attacks into strikes.
 
 \feat{Hydra Strike}{Combat, Strike}
-\featpre Three attacks, Strength 5, Dexterity 5, Constitution 5.
-\featben In place of three attacks, you can make a physical attack.
+\featpre Three strikes, Strength 5, Dexterity 5, Constitution 5.
+\featben In place of three strikes, you can make a physical attack.
 If you hit, you deal damage normally.
 You deal double damage for each additional defense you beat (Maneuver, Reflex, Fortitude, and Mental), up to a maximum of five times your normal damage.
 After you use this strike, you cannot use it again for 3 rounds.
@@ -1065,8 +1063,8 @@ An imbued spellstrike uses up a spell slot one level higher than the spell's act
 This allows you to meet item crafting prerequisites that you could not meet with a single spell.
 
 \feat{Immobilizing Strike}{Combat, Strike}
-\featpre Four attacks.
-\featben In place of four attacks, you can make a single melee attack.
+\featpre Four strikes.
+\featben In place of four strikes, you can make a single melee attack.
 If you hit, you deal damage normally.
 If your attack result also beats the foe's Fortitude defense, it is \immobilized for 5 rounds.
 
@@ -1213,8 +1211,8 @@ You can use any combination of performance feats you possess a number of times p
 If you fail the Perform check, the use of the ability is wasted.
 
 \feat{Intimidating Strike}{Combat, Strike}
-\featpres Two attacks, Intimidate 10 ranks.
-\featben In place of two attacks, you can make a single physical attack.
+\featpres Two strikes, Intimidate 10 ranks.
+\featben In place of two strikes, you can make a single physical attack.
 If you hit, you deal damage normally, and you can make an Intimidate check against the target to make it \shaken.
 
 \feat{Iron Will}{General}
@@ -1223,14 +1221,14 @@ If you hit, you deal damage normally, and you can make an Intimidate check again
 This bonus can increase your hit points (see \pcref{Hit Points}).
 
 \feat{Killing Blow}{Combat, Precision, Strike}
-\featpre Intelligence 10, three attacks.
-\featben In place of three attacks, you can make a single physical attack.
+\featpre Intelligence 10, three strikes.
+\featben In place of three strikes, you can make a single physical attack.
 If you hit, you deal damage normally.
 If the target took damage from this strike and has no hit points remaining at the end of the current phase, it dies.
 
 \feat{Knockdown}{Combat, Maneuver, Power, Strike}
-\featpre Strength 5, two attacks.
-\featben In place of two attacks, you can attempt to shove an opponent.
+\featpre Strength 5, two strikes.
+\featben In place of two strikes, you can attempt to shove an opponent.
 If you succeed, it is knocked prone at the end of its movement, and you can make an extra melee attack against it if you still threaten it.
 The free attack gains the normal benefit for striking a prone target (\minus4 to physical defenses).
 
@@ -1268,7 +1266,7 @@ The DC is 30 for perfectly smooth vertical surfaces, and 40 to climb on a perfec
 You can also wallrun on ceilings.
 
 \feat{Legendary Combat Awareness}{Awareness, Combat}
-\featpres Perception 10, three attacks, any three Awareness feats.
+\featpres Perception 10, three strikes, any three Awareness feats.
 \featben You cannot be overwhelmed, and never suffer overwhelm penalties.
 This ability can prevent rogues from sneak attacking you.
 
@@ -1312,7 +1310,7 @@ Anyone using divination magic on the creature must make a spellpower check with 
 Regardless of the result of the check, the caster is not aware that the check was made.
 
 \feat{Legendary Defense}{Combat, Defense}
-\featpres Three attacks, any three Defense feats.
+\featpres Three strikes, any three Defense feats.
 \featben You gain a \plus2 bonus to physical defenses.
 
 \feat{Legendary Escapist}{Skill}
@@ -1328,7 +1326,7 @@ You can only dispel spell effects which target you directly, not area effects wh
 If a spell targets multiple creatures, you can only remove its effects on you.
 
 \feat{Legendary Finesse}{Combat, Finesse}
-\featpres Dexterity 10, three attacks, any three Finesse feats.
+\featpres Dexterity 10, three strikes, any three Finesse feats.
 \featben When you roll the maximum amount of damage with a weapon, you roll the weapon's damage die (or dice) again and add the result to your damage dealt.
 There is no limit to the number of times a weapon's die can add to damage in this way.
 
@@ -1392,17 +1390,17 @@ This does not allow you to speak with creatures that lack a language.
 Certain extremely obscure languages may be beyond your knowledge.
 
 \feat{Legendary Maneuver Master}{Combat}
-\featpres Three attacks, any three Maneuver feats.
+\featpres Three strikes, any three Maneuver feats.
 \featben If you succeed at a combat maneuver attack by 10 or more, you deal normal damage with the weapon used to perform the maneuver in addition to gaining the successful effects of the maneuver.
 If the maneuver was performed without a weapon, you deal damage equivalent to an unarmed attack.
 
 \feat{Legendary Mobility}{Combat, Mobility}
-\featpres Dexterity 10, three attacks, any three Mobility feats.
+\featpres Dexterity 10, three strikes, any three Mobility feats.
 \featben You can move through spaces occupied by your foes.
 You treat spaces occupied by foes as difficult terrain.
 
 \feat{Legendary Mounted Warrior}{Combat, Mounted}
-\featpres Three attacks, any three Mounted feats, Ride 10 ranks.
+\featpres Three strikes, any three Mounted feats, Ride 10 ranks.
 \featben When you take damage, you may choose to have your mount suffer half the damage instead of you (rounded down).
 Likewise, when your mount takes damage, you may choose to suffer half of that damage instead of your mount (rounded down).
 
@@ -1419,7 +1417,7 @@ If your attack succeeds against that creature, it is compelled to obey you, as \
 You can use this ability three times per day.
 
 \feat{Legendary Power}{Combat, Power}
-\featpres Strength 10, three attacks, any three Power feats.
+\featpres Strength 10, three strikes, any three Power feats.
 \featben You can use weapons as if they were one category less encumbering than they actually are.
 The weapon encumbrance categories are light, medium, and heavy.
 For example, you can use a greatsword as a medium weapon, allowing you to wield it in one hand without suffering any penalties.
@@ -1427,7 +1425,7 @@ For example, you can use a greatsword as a medium weapon, allowing you to wield 
 In addition, you increase your damage dice with unarmed attacks and natural weapons by one size category.
 
 \feat{Legendary Precision}{Combat, Precison}
-\featpres Perception 10, three attacks, any three Precision feats.
+\featpres Perception 10, three strikes, any three Precision feats.
 \featben When you make a physical attack, if you hit by 5 or more, you deal maximum damage with your weapon.
 When you get a critical hit, if the threat confirmation hits by 5 or more, all damage from the critical hit is maximized.
 
@@ -1436,7 +1434,7 @@ When you get a critical hit, if the threat confirmation hits by 5 or more, all d
 \featben You are well-known for being an unparalleled master of your chosen profession.
 
 \feat{Legendary Reaction}{Combat, Reaction}
-\featpres Dexterity 10, three attacks, any three Reaction feats.
+\featpres Dexterity 10, three strikes, any three Reaction feats.
 \featben The first immediate action you take each round does not count against your actions that round.
 This allows you to use two immediate actions in the same round, or to use both an immediate action and a swift action.
 However, you still cannot use two immediate actions in response to the same triggering action.
@@ -1475,11 +1473,11 @@ For every 5 points by which your check result exceeds 30, you can hide from an a
 In addition, you treat your Strength as being 5 higher for the purpose of determining your carrying and lifting capacity.
 
 \feat{Legendary Strike}{Combat}
-\featpres Three attacks, any three Strike feats.
+\featpres Three strikes, any three Strike feats.
 \featben You gain a \plus2 bonus to accuracy with strikes.
 
 \feat{Legendary Style}{Combat}
-\featpres Three attacks, any three Style feats.
+\featpres Three strikes, any three Style feats.
 \featben You may have two styles active at once.
 Both styles can be initiated or changed as part of the same swift action.
 You may sustain this ability for a number of rounds each day equal to the number of Style feats you have.
@@ -1521,7 +1519,7 @@ Levels in two magical classes.
 See \pcref{Spellcasters and Multiclassing}.
 
 \feat{Manyshot}{Combat, Finesse}
-\featpres Dex 10, three attacks.
+\featpres Dex 10, three strikes.
 \featben When you attack with a light thrown weapon or projectile weapon, you may attack with two projectiles or weapons at once.
 This allows you to gain the benefits of dual-wielding (see \pcref{Dual Wielding}).
 Taking advantage of this style requires having multiple weapons in hand or loading two projectiles at once, which may be difficult if you reload slowly.
@@ -1541,11 +1539,11 @@ You may still cast only one spell, but it is used to counter the spells cast by 
 \featben You gain a \plus1 bonus to physical damage rolls.
 
 \feat{Mobile Hurricane}{Combat, Mobility}
-\featpres Dex 15, Hurricane Strike, Mobile Whirlwind, Whirlwind Attack, four attacks.
+\featpres Dex 15, Hurricane Strike, Mobile Whirlwind, Whirlwind Attack, four strikes.
 \featben You can make a hurricane strike as a standard action.
 
 \feat{Mobile Whirlwind}{Combat, Mobility}
-\featpres Dex 5, Whirlwind Strike, two attacks.
+\featpres Dex 5, Whirlwind Strike, two strikes.
 \featben You can make a whirlwind strike as a standard action.
 
 \feat{Mounted Archery}{Combat, Mounted}
@@ -1621,8 +1619,8 @@ In exchange, you gain a \plus2 bonus to spellpower with the spell.
 A patient spell uses up a spell slot one level higher than the spell's actual level.
 
 \feat{Patient Strike}{Reaction, Strike}
-\featpre Intelligence 10, three attacks.
-\featben In place of three attacks, you can make a physical attack.
+\featpre Intelligence 10, three strikes.
+\featben In place of three strikes, you can make a physical attack.
 If you hit, you deal damage normally.
 If the target does not make a physical attack against you during the current phase, this attack deals quadruple damage.
 
@@ -1631,8 +1629,8 @@ If the target does not make a physical attack against you during the current pha
 \featben If you have not taken damage within the past 5 rounds, you gain a \plus2 bonus to spellpower.
 
 \feat{Penetrating Strike}{Combat, Strike}
-\featpre Three attacks.
-\featben In place of three attacks, you can make a physical attack.
+\featpre Three strikes.
+\featben In place of three strikes, you can make a physical attack.
 If you hit, you deal damage normally.
 If your attack result also beats the foe's Fortitude defense, it loses any damage reduction it has for 5 rounds.
 
@@ -1646,15 +1644,15 @@ If your Constitution is 10, you are also immune to poison and supernatural disea
 \featben You are immune to hostile delusion effects.
 
 \feat{Pierce Wings}{Combat, Precision, Strike}
-\featpre Perception 5, two attacks.
-\featben In place of two attacks, you can make a physical ranged attack.
+\featpre Perception 5, two strikes.
+\featben In place of two strikes, you can make a physical ranged attack.
 If you hit, you deal damage normally.
 If your attack result also beats the target's Fortitude defense, it loses its ability to fly for 5 rounds.
 This only affects creatures who use wings or other physical means to fly, and has no effect on creatures with magical or supernatural flight.
 
 \feat{Predictive Strike}{Reaction, Strike}
-\featpre Intelligence 15, four attacks.
-\featben In place of four attacks, you can make a physical attack.
+\featpre Intelligence 15, four strikes.
+\featben In place of four strikes, you can make a physical attack.
 You also predict the type of action the foe will take during the current phase:
 \begin{itemize}
     \item Physically attack
@@ -1817,8 +1815,8 @@ They need not select it.
 \featben When readying yourself to parry incoming blows and using a shield, you may add your shield's defense bonus to your attack roll made to parry.
 
 \feat{Staggering Strike}{Combat, Strike}
-\featpre Two attacks.
-\featben In place of two attacks, you can make a physical attack.
+\featpre Two strikes.
+\featben In place of two strikes, you can make a physical attack.
 If you hit, you deal damage normally.
 If your attack result also beats the foe's Fortitude defense, it is \staggered for 5 rounds.
 
@@ -1846,14 +1844,6 @@ See \pcref{Taking 10}.
 You can gain this feat multiple times.
 Its effects do not stack.
 Each time you take the feat, it applies to a new skill.
-
-\feat{Snatch Arrows}{Combat, Finesse, Reaction}
-\featpres
-Dex 5, Deflect Arrows, Improved Unarmed Combat.
-\featben When using the Deflect Arrows feat, you may catch the weapon instead of just deflecting it.
-As an immediate action, you can throw a caught weapon back at the original attacker.
-If you have an appropriate projectile weapon available, you can also fire caught ammunition.
-\par You must have at least one hand free (holding nothing) to use this feat.
 
 \feat{Spell Focus}{Magic}
 Choose a school of magic.
@@ -2074,7 +2064,7 @@ This does not slow your climbing, but you must have both hands free to climb in 
 This ability works on any wall with hardness no greater than your Strength.
 
 \feat{Wall Slam}{Combat, Maneuver, Power, Strike}
-\featpres Strength 5, two attacks.
+\featpres Strength 5, two strikes.
 \featben As a standard action, you can attempt to shove an opponent into a solid obstacle.
 If you succeed, the creature takes 1d10 bludgeoning damage per two Strength.
 
@@ -2136,8 +2126,8 @@ A widened spell uses up a spell slot three levels higher than the spell's actual
 If you know an additional Electricity spell of 5th level or higher, this bonus increases to \plus10 feet.
 
 \feat{Whirlwind Strike}{Combat, Strike}
-\featpres Dex 5, two attacks.
-\featben As a full-round action, you can make a single melee attack against each opponent you threaten.
+\featpres Dex 5, two strikes.
+\featben As a full-round action, you can make a single melee strike against each opponent you threaten.
 
 \section{Other Feat Rules}
 
