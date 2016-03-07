@@ -393,7 +393,6 @@ The table of combat feats is organized according to the combat prowess each feat
     \begin{longtabu}{>{\lcol}p{10em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{6em} >{\lcol}p{3em}}
         \tb{Style Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
         \featref{Blind-Fight} & Perception 3 & Fight better when unable to see & Awareness & \featpref{Blind-Fight} \\
-        \featref{Chargebreaker} & \x & Gain bonuses against approaching foes & Reaction, Style & \featpref{Chargebreaker} \\
         \featref{Defensive Fighting} & \x & Gain bonus to physical defenses & Defense, Style & \featpref{Defensive Fighting} \\
         \featref{Distracting Foe} & \x & Threatened foes suffer Concentration penalties & Reaction, Style & \featpref{Distracting Foe} \\
         \featref{Guardian} & \x & Adjacent allies suffer reduced overwhelm penalties & Defense, Style & \featpref{Guardian} \\
@@ -439,6 +438,7 @@ The table of combat feats is organized according to the combat prowess each feat
         \featref{Armor Piercing Strike} & Per 5 & Attack targets Reflex defense & Precision, Strike & \featpref{Armor Piercing Strike} \\
         \featref{Calculated Strike} & Int 5 & Attack can deal critical damage & Precision, Strike & \featpref{Calculated Strike} \\
         \featref{Countering Strike} & Int 5 & Bonus damage if you are attacked & Reaction, Strike & \featpref{Countering Strike} \\
+        \featref{Chargebreaker} & Dex 5 & Bonus damage if target approached you & Reaction, Style & \featpref{Chargebreaker} \\
         \featref{Disorienting Strike} & \x & Attack disorients foe & Power, Strike & \featpref{Disorienting Strike} \\
         \featref{Driving Assault} & Str 5 & Attack shoves creature  & Power, Maneuver, Strike & \featpref{Driving Assault} \\
         \featref{Focused Strike} & \x & Trade strikes for accuracy & Precision, Strike & \featpref{Focused Strike} \\
@@ -558,8 +558,8 @@ You have a 50\% chance to miss opponents you can't see, and you are \defenseless
 \featpre Intelligence 5, two strikes.
 \featben In place of two strikes, you can make a physical attack.
 If you hit, you deal damage normally.
-If your attack result also beats the foe's Fortitude defense, until the end of the round, any damage the creature takes in excess of the creature's hit points is dealt as critical damage.
-This effect applies to all damage dealt to the creature during the current phase.
+If your attack result also beats the target's Fortitude defense, any damage it takes this round in excess of its hit points is dealt as critical damage.
+% clarify: healing magic offsets this, as normal. ``net'' damage?
 
 \feat{Commanding Presence}{Magic}
 \featpre 1st level or higher \glossterm{Compulsion} spell known.
@@ -567,20 +567,18 @@ This effect applies to all damage dealt to the creature during the current phase
 If you know an additional Compulsion spell of 5th level or higher, this bonus increases to \plus4.
 
 \feat{Countering Strike}{Reaction, Strike}
-\featpre Intelligence 5, two strikes.
+\featpres Intelligence 5, two strikes.
 \featben In place of two strikes, you can make a physical attack.
 If you hit, you deal damage normally.
 If the target makes a physical attack against you during the current phase, this attack deals triple damage.
 
 \feat{Celestial Blessing}{Bloodline, Celestial}
-\featpres
-Nonevil alignment, Celestial Heritage.
-\featben As a standard action, you can spend a celestial point to bless your allies, as the \spell{bless} spell.
+\featpres Nonevil alignment, Celestial Heritage.
+\featben As a standard action, you can spend a celestial point to bless an ally, as the \spell{bless} spell.
 If your celestial power is at least 10, this ability functions as \spell{mass bless} instead.
 
 \feat{Celestial Body}{Bloodline, Celestial}
-\featpres
-Nonevil alignment, Celestial Heritage.
+\featpres Nonevil alignment, Celestial Heritage.
 \featben As a standard action, you can spend a celestial point to imbue your body with celestial resilience for a \durshort duration.
 You gain damage reduction against physical damage equal to your celestial power.
 This damage reduction allows you to ignore the first points of damage you take each round.
@@ -598,11 +596,11 @@ During that time, whenever an evil creature within \rngclose range of you attack
 Your accuracy is equal to your celestial power.
 Success means the attacking creature takes 1d6 divine damage per two celestial power.
 
-If you have five or more celestial feats, this ability becomes permanent.
+If you have five or more celestial bloodline feats, this ability becomes permanent.
 
 \feat{Celestial Smiting}{Bloodline, Celestial}
 \featpres Nonevil alignment, Celestial Heritage.
-\featben As a swift action, you can spend a celestial point to make your next physical strike a smite.
+\featben As a swift action, you can spend a celestial point to make your next physical attack a smite.
 If your smite targets an evil creature, you gain a bonus to accuracy equal to the number of celestial bloodline feats you possess, and a damage bonus equal to your celestial power.
 
 \feat{Celestial Soul}{Bloodline, Celestial}
@@ -612,8 +610,8 @@ Your spell resistance is equal to 10 \add your celestial power.
 
 \feat{Celestial Spell Conduit}{Bloodline, Celestial}
 \featpres Nonevil alignment, Celestial Heritage.
-\featben You gain a \plus1 bonus to spellpower with Evocation (Channeling) spells and spells from the Good domain.
-If you have three or more celestial bloodline feats, this bonus increases to \plus2.
+\featben Whenever you cast a spell, you can heal an ally within \rngclose range for 1d6 hit points per level of the spell cast.
+If you have five or more celestial bloodline feats, this healing increases to 1d8 hit points per level of the spell cast.
 
 \feat{Celestial Wings}{Bloodline, Celestial}
 \featpre Any three celestial bloodline feats.
@@ -630,11 +628,11 @@ After that limit is reached, you must rest for 5 minutes before flying again.
 
 If you are 18th level, you can fly for a number of minutes equal to 3 \add half your Willpower before resting.
 
-\feat{Chargebreaker}{Combat, Reaction, Style}
-\featben While in this style, you gain a \plus4 bonus to damage with melee attacks against creatures that move towards you during the current round.
-This style provides no benefit against creatures that moved towards you before you initiated the style.
-This bonus increases by \plus2 for each strike you can make per round beyond the first.
-\stylereq Wield a melee weapon.
+\feat{Chargebreaker}{Combat, Reaction, Strike}
+\featpre Dex 5, two strikes.
+\featben In place of two strikes, you can make a physical attack.
+If you hit, you deal damage normally.
+If the target moved towards you during the current round, this attack deals triple damage.
 
 \feat{Cleave}{Combat, Power}
 \featpre Str 3.
