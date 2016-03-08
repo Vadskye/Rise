@@ -439,7 +439,6 @@ The table of combat feats is organized according to the combat prowess each feat
         \featref{Intimidating Strike} & Intimidate 10 ranks & Melee attack intimidates foe & Strike & \featpref{Intimidating Strike} \\
         \featref{Knockdown} & Str 5 & Shove foe and knock prone & Maneuver, Power, Strike & \featpref{Knockdown} \\
         \featref{Pierce Wings} & Per 5 & Ranged attack removes foe's ability to fly & Precision, Strike & \featpref{Pierce Wings} \\
-        \featref{Staggering Strike} & \x & Attack staggers foe & Strike & \featpref{Staggering Strike} \\
         \featref{Wall Slam} & Str 5 & Slam opponent into wall to deal bonus damage & Maneuver, Power, Strike & \featpref{Wall Slam} \\
         \featref{Whirlwind Strike} & Dex 5 & One melee strike against each threatened opponent & Strike & \featpref{Whirlwind Strike} \\
 
@@ -451,6 +450,7 @@ The table of combat feats is organized according to the combat prowess each feat
         \featref{Legendary Strike} & Any three Strike feats & \plus2 to hit with strikes & \x & \featpref{Legendary Strike} \\
         \featref{Patient Strike} & Int 10 & Bonus damage if you are not attacked & Reaction, Strike & \featpref{Patient Strike} \\
         \featref{Penetrating Strike} & \x & Attack removes foe's damage reduction & Strike & \featpref{Penetrating Strike} \\
+        \featref{Staggering Strike} & \x & Attack staggers foe & Strike & \featpref{Staggering Strike} \\
 
         \midrule
         \tb{Strike Feats} & \tb{Prerequisites (four strikes)} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
@@ -1746,10 +1746,10 @@ The maximum level of ritual that you can learn or perform is equal to half your 
 
 \feat{Scale the Beast}{Skill}
 \featpre Climb 10 ranks.
-\featben As a standard action, you can make a Climb check against the Maneuver Class of a creature adjacent to you.
+\featben As a standard action, you can make a Climb check against the Maneuver defense of a creature adjacent to you.
 The creature must be three or more size categories larger than you.
 You gain a \plus4 bonus to the check for every size category by which it exceeds your own.
-If you succeed, you can climb the creature as if it were a solid object with a Climb DC equal to its Maneuver Class.
+If you succeed, you can climb the creature as if it were a solid object with a Climb DC equal to its Maneuver defense.
 The creature takes a \minus4 penalty to accuracy on physical attacks against you, but is not otherwise encumbered by your presence unless it cannot support your weight.
 It can attempt to remove you by attacking you, or with an appropriate maneuver, such as grappling or shoving.
 
@@ -1786,7 +1786,7 @@ They need not select it.
 \featben When readying yourself to parry incoming blows and using a shield, you may add your shield's defense bonus to your attack roll made to parry.
 
 \feat{Staggering Strike}{Combat, Strike}
-\featpre Two strikes.
+\featpre Three strikes.
 \featben In place of two strikes, you can make a physical attack.
 If you hit, you deal damage normally.
 If your attack result also beats the foe's Fortitude defense, it is \staggered for 5 rounds.
