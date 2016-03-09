@@ -691,13 +691,12 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spellburst{\arealarge vertical line}}{\spellrng{\rngmed}}
+            \spelltwocol{\spellburst{\arealarge vertical line, 5 ft. wide}}{\spellrng{\rngmed}}
             \spelltgts{Everything in the area}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
                 \spellsuccess \spelldamage{4}{electricity}[d8].
-
                 If you are outdoors in cloudy or stormy weather, roll d10s instead of d8s for damage.
                 \spellfailure Half damage.
             \end{spellattack}
@@ -718,7 +717,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spellburst{\arealarge vertical line}}{\spellrng{\rngmed}}
+            \spelltwocol{\spellburst{\arealarge vertical line, 5 ft. wid}}{\spellrng{\rngmed}}
             \spelltgts{Everything in the area}
         \end{spelltargetinginfo}
         \begin{spelleffects}
@@ -1025,6 +1024,44 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Compulsion, Mind]}{Arcane, Trickery}
+        \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Create Ballista}[3]
+    \begin{spellheader}
+        \spelldesc{You create a ballista which fires at your foes.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spellquicktargeting{Location}{\rngclose}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect This spell creates a fully functional Large ballista.
+            Immediately after being created, the ballista fires at a foe of your choice within \rnglong range.
+            It automatically reloads itself during the movement phase.
+
+            At the beginning of each round, you may spend a swift action to control the ballista.
+            If you do, it fires at a target you designate during the action phase.
+            Otherwise, another creature may spend a standard action action to manually fire the ballista.
+
+            When the ballista fires, you make a Spellpower vs. Armor defense attack against the target.
+            Success means the target takes \spelldamage{3}{piercing}[d6].
+            Failure means the bolt misses, and the target takes no damage.
+
+            The ballista has hit points equal to three times your spellpower.
+            In all other respects, it is treated as an ordinary ballista.
+            \spelldur \durshort
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Conjuration/Transmutation [Creation]}{Arcane}
+        \spellnotes The ballista must be created on solid, stable ground, or the spell automatically fails.
+
+        You can learn and cast spell without the Transmutation school.
+        If you do, the ballista does not fire automatically or reload itself.
+        However, it can still be loaded and fired manually, like an ordinary ballista.
+        If it is fired manually, you still use your spellpower to determine the accuracy and damage of the ballista bolt.
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -2889,7 +2926,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Alteration]}{Arcane, Air, Travel}
+        \spellinfo{Transmutation [Alteration]}{Air, Transmutation, Travel}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -2956,29 +2993,14 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Glitterdust}[3]
+\begin{spellsection}{Glitterdust}[4]
     \begin{spellheader}
+        \spelldesc{You create a flurry of glittering dust which reveals hidden foes and blinds creatures.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellspecial This spell has two versions: an area burst to scatter dust widely, and a targeted blinding flurry of dust. Its effects depend on which version is chosen.
-        \end{spelltargetinginfo}
-    \end{spellcontent}
-    \begin{spellsubcontent}
-        \begin{spelltargetinginfo}
-            \spelltwocol{\spellburst{\areamed radius}}{\spellrng{\rngmed}}
+            \spelltwocol{\spellburst{\areasmall radius}}{\spellrng{\rngmed}}
             \spelltgts{Everything in the area}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect Golden particles surround and outline the target. This imposes a \minus20 penalty to Stealth checks, and negates invisibility, concealment, and similar effects. Illusory figments, such as those created by the \spell{silent image} spell, are not outlined, which may reveal their false nature.
-
-            The dust can be removed from the target by drenching it with water or a similar liquid, or by dealing 10 points of acid or fire damage.
-            \spelldur 5 rounds.
-        \end{spelleffects}
-    \end{spellsubcontent}
-    \begin{spellsubcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature or object}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect A flurry of golden particles swarm around the target. This imposes a \minus20 penalty to Stealth checks, and negates invisibility, concealment, and similar effects. Illusory figments, such as those created by the \spell{silent image} spell, are not outlined, which may reveal their false nature. In addition, you make an attack.
@@ -2986,13 +3008,11 @@
                 \spellsuccess The target's vision is \impaired. This affects all sight-related actions, including physical attacks and targeted spells.
                 \spellcritical The target's vision is \severelyimpaired. This affects all sight-related actions, including physical attacks and targeted spells.
             \end{spellattack}
-
-            The dust can be removed from the target by drenching it with water or a similar liquid, or by dealing 10 points of acid or fire damage.
-            \spelldur 5 rounds.
+            \spelldur 5 rounds
         \end{spelleffects}
-    \end{spellsubcontent}
+    \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Conjuration [Creation, Physical]}{Arcane}
+        \spellinfo{Conjuration [Creation]}{Arcane}
         \miscastyou
     \end{spellfooter}
 \end{spellsection}
@@ -3455,13 +3475,13 @@
 
 \pdfbookmark[2]{I}{SpellDescriptionsI}
 
-\begin{spellsection}{Ice Storm}[4]
+\begin{spellsection}{Ice Storm}[6]
     \begin{spellheader}
         \spelldesc{You conjure magical hailstones that pound down, smashing and chilling creatures in their path.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spellburst{\areasmall radius cylinder, 20 ft. high}}{\spellrng{\rngmed}}
+            \spelltwocol{\spellburst{\areamed radius cylinder, 20 ft. high}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The ground in the area is covered in ice for 5 rounds, making it slippery. A DC 15 Balance check is usually required to move on icy surfaces. See \pcref{Balance}, for more details.
@@ -3472,7 +3492,7 @@
             \spelltgts{Everything in the area}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect \spelldamage{4}{cold and bludgeoning}[d4]
+            \spelleffect \spelldamage{6}{cold and bludgeoning}[d4]
         \end{spelleffects}
     \end{spellsubcontent}
     \begin{spellfooter}
@@ -3721,6 +3741,47 @@
         \spellinfo{Illusion [Glamer]}{Arcane, Trickery}
         \spellnotes This spell can be made permanent (on objects only) with a \spell{permanency} ritual.
         \miscastrandom
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}[Lesser]{Invulnerability}[4]
+    \begin{spellheader}
+        \spelldesc{You become nearly invulnerable to damage.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltgt{You}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spellspecial When you cast this spell, choose a type of energy (acid, cold, electricity, or fire).
+            \spelleffect You gain damage reduction against all damage equal to your spellpower.
+            Damage of the chosen energy type ignores this damage reduction and negates it for 1 round.
+            \spelldur \durlong
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Abjuration [Shielding]}{Abjuration}
+        \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Invulnerability}[9]
+    \begin{spellheader}
+        \spelldesc{You become nearly invulnerable to attacks of all kinds.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltgt{You}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect You gain damage reduction against all damage equal to your spellpower.
+            In addition, you gain spell resistance equal to 10 \add your spellpower.
+            \spelldur \durlong
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Abjuration [Shielding]}{Abjuration}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5039,6 +5100,27 @@
     \end{spellfooter}
 \end{spellsection}
 
+\begin{spellsection}{Resist Magic}[4]
+    \begin{spellheader}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect The target gains spell resistance equal to 10 \add your spellpower.
+            It can freely choose which spells to allow through this spell resistance.
+            \spelldur \durshort
+            \spellspecial This spell cannot be dispelled.
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Abjuration [Shielding]}{Abjuration, Magic, Protection}
+        \spellnotes To affect a creature with spell resistance with a spell, a caster must make an attack with an accuracy equal to its spellpower. If the attack beats the creature's spell resistance, the spell works normally. Otherwise, the spell has no effect on the creature.
+        \miscastrandom
+    \end{spellfooter}
+\end{spellsection}
+
 \begin{spellsection}{Retributive Shield}[5]
     \begin{spellheader}
     \end{spellheader}
@@ -5825,25 +5907,6 @@
     \begin{spellfooter}
         \spellinfo{Evocation [Destructive, Sonic]}{Arcane, Destruction}
         \miscastyou
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Spell Resistance}[3]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect The target gains spell resistance equal to 10 \add your spellpower.
-            \spelldur \durshort
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Abjuration [Shielding]}{Abjuration, Magic, Protection}
-        \spellnotes To affect a creature with spell resistance with a spell, a caster must make an attack with an accuracy equal to its spellpower. If the attack beats the creature's spell resistance, the spell works normally. Otherwise, the spell has no effect on the creature.
-        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -6661,7 +6724,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Divination/Transmutation [Augment]}{Arcane}
+        \spellinfo{Divination}{Divination}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
