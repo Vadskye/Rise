@@ -24,8 +24,8 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLsummonmonsteri
     \SLretrieveobject*
 
-    \SLmessage[Div]
-    \SLsearch
+    \SLboonofawareness[Div]
+    \SLmessage
     \SLseeinvisibility
     \SLprecognitionlesser*
 
@@ -45,7 +45,8 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLventriloquism
     \SLcreatesound*
 
-    \SLseeinvisibility[Trans]
+    \SLdarkvision[Trans]
+    \SLseeinvisibility
     \SLshrink*
 
     \SLanimatecorpse[Vivi]
@@ -67,7 +68,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLsummonmonsterii
     \SLdimensionslide*
 
-    \SLlongeye[Div]
+    \SLboonofawareness[Div]
     \SLmarkoftracking
     \SLtruestrike
     \SLreadmind*
@@ -86,9 +87,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLmirrorimage
     \SLsilentimage*
 
-    \SLdarkvision[Trans]
-    \SLhastelesser
-    \SLslow
+    \SLhastelesser[Trans]
     \SLspiderclimb
     \SLtotemicmind
     \SLtotemicpower
@@ -112,9 +111,10 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
     \SLglitterdust[Conj]
     \SLsummonmonsteriii
+    \SLrapidreversal*
 
-    \SLdiscernvulnerability[Div]
-    \SLforesight*
+    \SLboonoffarsight[Div]
+    \SLdiscernvulnerability
 
     \SLcalmemotions[Ench]
     \SLconfusion
@@ -134,6 +134,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLdelaydamage[Trans]
     \SLgaseousform
     \SLshrinkitem
+    \SLslow
 
     \SLdrainlife[Vivi]
     \SLeyebite
@@ -152,7 +153,8 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLretrieveobjectgreater
     \SLdimensiondoor*
 
-    \SLmarkofscrying[Div]
+    \SLboonofmanyeyes[Div]
+    \SLmarkofscrying
     \SLmomentofprescience*
 
     \SLheroism[Ench]
@@ -206,8 +208,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
     \SLmirrorimagegreater[Illus]
 
-    \SLhaste[Trans]
-    \SLtelepathy
+    \SLtelepathy[Trans]
     \SLtotemicmindgreater
     \SLtotemicpowergreater
     \SLtransmutefleshandstone
@@ -233,7 +234,8 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLsummonmonstervi
     \SLetherealjaunt*
 
-    \SLprohibition[Div]
+    \SLboonofprecision[Div]
+    \SLprohibition
     \SLseeinvisibilitymass
     \SLreadmindgreater*
 
@@ -255,6 +257,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLpersistentimage*
 
     \SLdisintegrate[Trans]
+    \SLhaste
     \SLseeinvisibilitymass
     \SLslowmass
 
@@ -321,8 +324,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
     \SLphantasmalkillermass[Illus]
 
-    \SLhastemass[Trans]
-    \SLimprisonment
+    \SLimprisonment[Trans]
     \SLironbody
     \SLtemporalstasis
     \SLreversegravity*
@@ -356,6 +358,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLfalsereality*
 
     \SLassimilate[Trans]
+    \SLhastemass
     \SLtransmuteanyobject
     \SLtimestop*
 
@@ -911,9 +914,13 @@ Summoning spells summon good creatures only.
 \subsubsection{Knowledge Domain Spells}
 
 \begin{spelllist}
+    \SLboonofawareness[1]
+    \SLboonofknowledge[2]
     \SLreadmind[2]
-    \SLforesight[3]
+    \SLboonoffarsight[3]
+    \SLboonofmanyeyes[4]
     \SLmomentofprescience[4]
+    \SLboonofprecision[6]
     \SLreadmindgreater[6]
     \SLtrueseeing[7]
     \SLmomentofpresciencegreater[8]
@@ -1255,7 +1262,6 @@ Summoning spells summon water elementals or aquatic creatures only.
     \SLregenerationlesser
     \SLresistenergy
     \SLrottinggrasp
-    \SLsearch
     \SLsummonnaturesallyi
     \SLtremorsense
     \SLzephyrblade
