@@ -537,6 +537,107 @@
     \end{spellfooter}
 \end{spellsection}
 
+\begin{spellsection}{Boon of Awareness}[1]
+    \begin{spellheader}
+        \spelldesc{Your ally becomes acutely awareness of his surroundings.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spellquicktargeting{One willing creature}{\rngclose}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect The target gains a bonus to Awareness checks equal to your spellpower, up to a maximum modifier equal to twice your spellpower.
+            \spelldur \durshort
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Divination [Awareness]}{Arcane, Knowledge}
+        \miscastrandom
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Boon of Farsight}[3]
+    \begin{spellheader}
+        \spelldesc{Your ally becomes able to see and fight well at great distances.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spellquicktargeting{One willing creature}{\rngclose}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect The target reduces its \glossterm{range increment} penalties by an amount equal to your spellpower.
+            In addition, it reduces its Awareness penalties for seeing at great distances by the same amount.
+            \durshort
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Divination [Awareness]}{Arcane, Knowledge}
+        \miscastrandom
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Boon of Knowledge}[2]
+    \begin{spellheader}
+        \spelldesc{Your ally becomes deeply knowledgeable.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spellquicktargeting{One willing creature}{\rngclose}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect Choose a Knowledge skill.
+            The target gains a bonus to checks with that skill equal to your spellpower, up to a maximum modifier equal to twice your spellpower.
+            In addition, it is treated as being trained in that skill.
+            \spelldur \durshort
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Divination [Knowledge]}{Arcane, Knowledge}
+        \miscastrandom
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Boon of Many Eyes}[4]
+    \begin{spellheader}
+        \spelldesc{Your ally becomes able to fight foes on all sides with equal skill.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spellquicktargeting{One willing creature}{\rngclose}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect The target reduces its \glossterm{overwhelm penalties} by an amount equal to half your spellpower.
+            If this effect reduces the target's overwhelm penalty to 0, it is not considered to be overwhelmed.
+            \spelldur \durshort
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Divination [Awareness]}{Arcane, Knowledge}
+        \miscastrandom
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Boon of Precision}[6]
+    \begin{spellheader}
+        \spelldesc{Your ally gains the ability to see the weak points of creatures she fights.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spellquicktargeting{One willing creature}{\rngclose}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect The target increases its critical range and critical multiplier with physical attacks by 1.
+
+            If it scores a number of critical hits equal to one quarter of your spellpower, the spell is expended.
+            \spelldur \durshort or until expended
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Divination [Awareness]}{Arcane, Knowledge}
+        \miscastrandom
+    \end{spellfooter}
+\end{spellsection}
+
 \begin{spellsection}{Burning Hands}[1]
     \begin{spellheader}
         \spelldesc{You expel a cone of searing flame shoots from your fingertips, searing creatures in front of you.}
@@ -1214,7 +1315,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Darkvision}[2]
+\begin{spellsection}{Darkvision}[1]
     \begin{spellheader}
         \spelldesc{You grant an ally the ability to see in complete darkness.}
     \end{spellheader}
@@ -1224,7 +1325,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target gains the ability to see 50 feet even in total darkness. Beyond 60 feet, the target can see dimly, treating areas of darkness as shadowy illumination. Darkvision does not function if a creature is in an area of bright light or is dazzled. Darkvision is black and white only, but otherwise like normal sight.
-            \spelldur \durlong
+            \spelldur \durmed
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -2996,7 +3097,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Haste}[5]
+\begin{spellsection}{Haste}[6]
     \begin{spellheader}
         \spelldesc{You accelerate your ally's motions, causing her to move and act more quickly than normal.}
     \end{spellheader}
@@ -4778,6 +4879,28 @@
 
 \pdfbookmark[2]{Q-R}{SpellDescriptionsQR}
 
+\begin{spellsection}{Rapid Reversal}[3]
+    \begin{spellheader}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
+            \spelltime{Swift action}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \begin{spellattack}{Spellpower vs. Mental}
+                \spellsuccess The target teleports back to the location it occupied at the beginning of the round.
+                If that location is out of range, or is currently occupied, this spell automatically fails.
+            \end{spellattack}
+            \spellspecial After casting this spell, you cannot cast it again for 5 rounds.
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Conjuration [Teleportation]}{Conjuration}
+        \miscastrandom
+    \end{spellfooter}
+\end{spellsection}
+
 \begin{spellsection}{Read Mind}[2]
     \begin{spellheader}
     \end{spellheader}
@@ -5173,21 +5296,6 @@
     \begin{spellfooter}
         \spellinfo{Evocation [Destructive, Fire]}{Arcane, Destruction, Fire}
         \miscastrandom
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Search}[1]
-    \begin{spellheader}
-        \spelldesc{You quickly scan your surroundings for hidden dangers.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelleffects}
-            \spelleffect You make an Awareness check to search a 10 foot radius around you simultaneously (see \pcref{Awareness}).
-            You gain a bonus on the Awareness check equal to your spellpower.
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Divination}{Arcane, Nature}
     \end{spellfooter}
 \end{spellsection}
 
@@ -5634,13 +5742,13 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Slow}[2]
+\begin{spellsection}{Slow}[3]
     \begin{spellheader}
         \spelldesc{You decelerate your enemy's motions, causing it to move and act more slowly than normal.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
