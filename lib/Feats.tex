@@ -203,6 +203,7 @@ Some strike feats instead require a specific action to use.
         \tind\featref{Mass Counterspell} & Spellcraft 15 ranks, 4th level spells, Counterspell & Counter spells cast by multiple foes & \featpref{Mass Counterspell} \\
         \featref{Delusive Guise} & 1st level Delusion spell & \plus2 to Bluff and Disguise, later \plus4 & \featpref{Delusive Guise} \\
         \featref{Enhanced Senses} & 1st level Awareness spell & \plus2 to Awareness and Sense Motive, later \plus4 & \featpref{Enhanced Senses} \\
+        \featref{Foresight} & 3rd level Divination spell & Cannot be caught unaware & \featpref{Foresight} \\
         \featref{Frigid Forge} & 2nd level Cold spell & Form ice into weapons and armor & \featpref{Frigid Forge} \\
         \featref{Magical Synthesis} & Levels in two magical classes & Increase spellcasting ability in two magical classes at once & \featpref{Magical Synthesis} \\
         \featref{Mass Transporter} & 5th level Conjuration (Translocation) spell & Transport many creatures at once & \featpref{Mass Transporter} \\
@@ -410,7 +411,7 @@ The table of combat feats is organized according to the combat prowess each feat
 
         \midrule
         \tb{Style Feats} & \tb{Prerequisites (Prowess 8)} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
-        \featref{Heartseeker} & \x & Double critical threat range & Precision, Style & \featpref{Heartseeker} \\
+        \featref{Heartseeker} & \x & Increase critical range & Precision, Style & \featpref{Heartseeker} \\
         \featref{Inescapable} & \x & Enemies you are blocking cannot move & Reaction, Style & \featpref{Inescapable Bulwark} \\
         \featref{Spring Attack} & Dex 5, Combat Mobility & Move before and after attacks & Mobility, Style & \featpref{Spring Attack} \\
         \featref{Threatening Fire} & Dex 5, Overwhelming Fire & Threaten adjacent creatures with a ranged weapon & Reaction, Style & \featpref{Threatening Fire} \\
@@ -949,6 +950,12 @@ If you hit, you deal damage normally.
 You may trade additional strikes to make this attack.
 For each strike you trade, you gain an additional \plus5 bonus to accuracy.
 
+\feat{Foresight}{Magic}
+\featpre 3rd level or higher Divination spell.
+\featben You receive instant, intuitive warnings of incoming attacks, even attacks you can't see or detect.
+As a result, you are normally never \unaware.
+Some creatures immune to Divination spells may still catch you unaware.
+
 \feat{Freeing Performance}{Performance, Skill}
 \featpre Perform 12 ranks.
 \featben By spending a minute performing continuously, you can make a DC 28 Perform check to free an ally within \rngmed range from hostile magic.
@@ -996,7 +1003,7 @@ You must make a melee attack each round.
 
 \feat{Heartseeker}{Combat, Style}
 \featpre Combat prowess 8.
-\featben While in this style, you increase your critical threat range with any weapon you wield by 1.
+\featben While in this style, you increase your critical range with any weapon you wield by 1.
 \stylereq Wield a weapon.
 
 \feat{Hide in Plain Sight}{Skill}
@@ -1392,7 +1399,6 @@ In addition, you increase your damage dice with unarmed attacks and natural weap
 \feat{Legendary Precision}{Combat, Precison}
 \featpres Perception 10, combat prowess 12, any three Precision feats.
 \featben When you make a physical attack, if you hit by 5 or more, you deal maximum damage with your weapon.
-When you get a critical hit, if the threat confirmation hits by 5 or more, all damage from the critical hit is maximized.
 
 \feat{Legendary Profession}{Skill}
 \featpre Profession (any) 15 ranks.
