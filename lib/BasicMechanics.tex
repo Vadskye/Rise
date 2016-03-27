@@ -63,7 +63,7 @@ Willpower measures a character's ability to endure mental hardships.
 \begin{itemize}
     \item Willpower can be used for Mental defense.
     \item Many special abilities are based on Willpower.
-    \item For every 5 Willpower you have, you gain a \plus1 bonus to Mental defense. If your Willpower is negative, you take a penalty to Mental defense equal to your Willpower.
+    \item For every 2 Willpower you have, you gain a \plus1 bonus to Mental defense. If your Willpower is negative, you take a penalty to Mental defense equal to your Willpower.
 \end{itemize}
 
 \subsection{Using Attributes}
@@ -169,6 +169,7 @@ During the action phase, each creature can take a single \glossterm{standard act
 \subsection{Resolving Actions}\label{Resolving Actions}
 
 Within each phase, actions of all creatures are simultaneously resolved in the following order.
+Italicized steps are less common, and can usually be skipped.
 
 \begin{enumerate*}
     \item Choose actions.
@@ -182,6 +183,7 @@ Within each phase, actions of all creatures are simultaneously resolved in the f
         Examples: Reducing hit points, moving character locations, and applying penalties.
     \item \textit{Make Concentration checks to maintain focus on spells}.
     \item Apply spell results.
+    \item \textit{Declare and resolve delayed actions}.
 \end{enumerate*}
 
 In the vast majority of cases, there is no need to go through this order explicitly.
@@ -232,14 +234,8 @@ Unless otherwise specified, you perform any movement required for the action dur
 \parhead{Delaying}\label{Delaying}
 During a phase, you can delay your action instead of acting immediately.
 If you delay, you do nothing until after the actions of all other creatures have been resolved.
-At that point, you can choose to continue delaying in the next phase, or you can declare and resolve an action.
+At that point, you can declare and resolve your actions for the phase.
 If multiple creatures delay, all their actions are declared and resolved in the normal action resolution order, as if they were part of a shared ``delay phase''.
-After taking a delayed action, you do not act during the next phase.
-
-For example, if you delay during the movement phase, you can move after all other actions have been declared and resolved.
-You can continue delaying to see what actions are taken during the action phase.
-At the end of the action phase, you could take actions for your own ``action phase''.
-In exchange, you would skip the following movement phase, and could only act again during the next action phase.
 
 \subsection{Attacks}\label{Attacks}
 An \glossterm{attack} is anything that affects another creatures in a potentially harmful way.
@@ -394,11 +390,12 @@ If you take damage, you can become bloodied (see Bloodied, below).
 \parhead{Bloodied} When you drop to half your hit points or below, you are \bloodied.
 If you take additional damage, you can become disabled (see Disabled, below).
 
-\parhead{Disabled}\label{Disabled} At the end of each round, if you have no hit points remaining after resolving all other effects in the round, you become disabled.
-While disabled, you are both \staggered and bloodied.
+\parhead{Disabled}\label{Disabled} At the end of each round, if you have no hit points remaining after resolving all other effects in the round, you become \disabled.
+While disabled, you are \staggered, and you are vulnerable to taking critical damage.
 
-At the end of the round, after all other effects have been resolved, if your hit point total is positive, you stop being disabled.
-If you take additional damage while disabled, that damage is critical damage and causes you to begin dying (see Dying, below).
+At the end of each round you are disabled, if you have received more damage than healing, that damage becomes critical damage.
+This causes you to begin dying (see Dying, below).
+If you have received more healing than damage, you stop being disabled.
 
 \parhead{Dying}\label{Dying} While you are dying, you must make an attack against your own Fortitude defense at the end of every round.
 No bonuses or penalties apply to the attack roll, but \glossterm{critical damage} can penalize your Fortitude defense.
@@ -437,7 +434,7 @@ Ability damage returns at the rate of 1 point per 8 hours of rest for each affec
 This can prevent you from taking critical damage if you are damaged while disabled.
 
 \parhead{Healing Critical Damage} Critical damage takes much longer to heal than hit point damage.
-Resting for 1 week restores an amount of critical damage equal to 1 \add half the character's Constitution (minimum 1).
+Resting for 8 hours restores an amount of critical damage equal to 1 \add half the character's Constitution (minimum 1).
 A character can have both hit points and critical damage.
 As long as a character has critical damage, he is staggered, even if he is at full hit points.
 
