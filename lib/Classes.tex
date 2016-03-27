@@ -474,7 +474,7 @@ Spells associated with particular alignments are indicated by the chaos, evil, g
     \lcaption{Cleric Spell Slots}
     \begin{dtabularx}{\columnwidth}{>{\ccol}X *{9}{>{\ccol}p{\spellcol}}}
         & \multicolumn{9}{c}{\tb{---{}---{}---{}---{}---{}---{}---{}---Spell Level---{}---{}---{}---{}---{}---{}---{}---}} \\
-\hline
+        \hline
         \tb{Level} & \tb{1st} & \tb{2nd} & \tb{3rd} & \tb{4th} & \tb{5th} & \tb{6th} & \tb{7th} & \tb{8th} & \tb{9th} \\
         1st  & 3 & \x & \x & \x & \x & \x & \x & \x & \x \\
         2nd  & 4 & \x & \x & \x & \x & \x & \x & \x & \x \\
@@ -561,21 +561,19 @@ Spells associated with particular alignments are indicated by the chaos, evil, g
 \cf{Clr}{Divine Power}[Su]
 The strength of a cleric's spells and abilities are determined by his divine power.
 Normally, his divine power is equal to his cleric level.
-A cleric's devotion can increase his divine power -- see the Devotion ability below.
 
 \cf{Clr}{Devotion}[Su]
-A cleric's divine power varies depending on the extent to which he calls on his devotion to create effects.
-A cleric has a devotion pool with a maximum of eight devotion points in it.
-If the cleric's devotion pool is at least three-quarters full, he gains a \plus2 bonus to his divine power.
-This bonus increases by \plus1 at his 5th cleric level and every 5 cleric levels thereafter.
-If the cleric's devotion pool has no points remaining, he takes a \minus5 penalty to his divine power (minimum 1).
+A cleric has a devotion pool with a maximum of four devotion points in it.
+Before making an attack or check, the cleric may spend a devotion point to gain a \plus2 bonus to the attack or check.
+The bonus granted by spending a devotion point increases by \plus1 at 5th level and every 5 levels thereafter.
 
 After regaining spells for the day, a cleric's devotion pool is full.
-Each time the cleric casts a non-domain spell, he loses one point from his devotion pool.
-He also loses a point from his devotion pool if he acts against his deity or other spiritual inclinations.
+He loses a point from his devotion pool if he acts against his deity or other spiritual inclinations.
+Each time the cleric casts a domain spell, he regains one point in his devotion pool.
+If the cleric's devotion pool has no points remaining, he takes a \minus2 penalty to his attacks, checks, and defenses.
 
 The cleric can refill his devotion pool by spending an hour in prayer, supplication, or contemplation.
-In addition, whenever the cleric performs a significant service to his deity or other spiritual inclinations, he may regain one devotion point.
+In addition, whenever the cleric performs a significant service to his deity or other spiritual inclinations, he may regain a devotion point.
 Extraordinary services may allow the cleric to regain more devotion points.
 
 \cf{Clr}[2nd]{Domain Invocation}[Su]
@@ -605,7 +603,7 @@ Options for domain aspects are listed at \pcref{Domain Aspects}.
 At his 8th cleric level, the cleric gains an additional domain aspect from one of his domains.
 
 \cf{Clr}[9th]{Expanded Devotion}[Su]
-The cleric's devotion pool stores a maximum of twelve devotion points.
+The cleric's devotion pool stores a maximum of eight devotion points.
 
 \cf{Clr}[12th]{Greater Domain Invocations}[Su]
 The cleric gains the ability to invoke the power of one of his domains even more effectively.
@@ -622,7 +620,7 @@ Options for domain masteries are listed at \pcref{Domain Masteries}.
 At his 18th cleric level, the cleric gains an additional domain mastery from one of his domains.
 
 \cf{Clr}[19th]{Endless Devotion}[Su]
-The cleric's devotion pool stores a maximum of twenty devotion points.
+The cleric's devotion pool stores a maximum of twelve devotion points.
 
 \subsection{Cleric Domain Abilities}
 
@@ -926,26 +924,26 @@ He cannot thereafter gain levels as a cleric of that god until he atones (see th
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\centering}p{\babcolavg} *{3}{>{\ccol}p{\savecol}} >{\ccol}X}
         \tb{Level} & \tb{Combat Prowess} & \tb{Fort} & \tb{Ref} & \tb{Ment} & \tb{Special} \\
         \hline
-        \druidprogressionrow{1}  & Attunement \plus2, natural casting, rituals, spells \\
-        \druidprogressionrow{2}  & Wild aspect                             \\
-        \druidprogressionrow{3}  & Wild speech                             \\
-        \druidprogressionrow{4}  & Wild aspect                             \\
-        \druidprogressionrow{5}  & Attunement \plus3, wild speech (plants) \\
-        \druidprogressionrow{6}  & Wild aspect (x2)                        \\
-        \druidprogressionrow{7}  & Charming wild speech                    \\
-        \druidprogressionrow{8}  & Wild aspect                             \\
-        \druidprogressionrow{9}  & Natural casting (Close)                 \\
-        \druidprogressionrow{10} & Attunement \plus4                       \\
-        \druidprogressionrow{11} & Wild speech (elements)                  \\
-        \druidprogressionrow{12} & Natural aspect (x3)                     \\
-        \druidprogressionrow{13} & A thousand faces                        \\
-        \druidprogressionrow{14} & Natural aspect, timeless body           \\
-        \druidprogressionrow{15} & Attunement \plus5                       \\
-        \druidprogressionrow{16} & Natural aspect                          \\
-        \druidprogressionrow{17} & Dominating wild speech                  \\
-        \druidprogressionrow{18} & Natural aspect (x4)                     \\
-        \druidprogressionrow{19} & Natural casting (Medium)                \\
-        \druidprogressionrow{20} & Attunement \plus6, natural aspect       \\
+        \druidprogressionrow{1}  & Natural casting, rituals, spells \\
+        \druidprogressionrow{2}  & Wild aspect                      \\
+        \druidprogressionrow{3}  & Wild speech                      \\
+        \druidprogressionrow{4}  & Wild aspect                      \\
+        \druidprogressionrow{5}  & Wild speech (plants)             \\
+        \druidprogressionrow{6}  & Wild aspect (x2)                 \\
+        \druidprogressionrow{7}  & Charming wild speech             \\
+        \druidprogressionrow{8}  & Wild aspect                      \\
+        \druidprogressionrow{9}  & Natural casting (Close)          \\
+        \druidprogressionrow{10} & Wild aspect (x3)                 \\
+        \druidprogressionrow{11} & Wild speech (elements)           \\
+        \druidprogressionrow{12} & Natural aspect                   \\
+        \druidprogressionrow{13} & A thousand faces                 \\
+        \druidprogressionrow{14} & Natural aspect (x4)              \\
+        \druidprogressionrow{15} & Timeless body                    \\
+        \druidprogressionrow{16} & Natural aspect                   \\
+        \druidprogressionrow{17} & Dominating wild speech           \\
+        \druidprogressionrow{18} & Natural aspect (x5)              \\
+        \druidprogressionrow{19} & Natural casting (Medium)         \\
+        \druidprogressionrow{20} & Natural aspect                   \\
     \end{dtabularx}
 \end{dtable}
 
@@ -1002,7 +1000,6 @@ A druid who wears prohibited armor or carries a prohibited shield is unable to c
 \cf{Drd}{Spells}
 A druid casts nature spells using her attunement with nature.
 A druid's spellpower is normally equal to her nature power.
-See the Nature Power and Attunement abilities, below.
 
 At 1st level, the druid knows one 1st level spell.
 At every level theareafter, she learns one additional spell.
@@ -1045,12 +1042,10 @@ Attuning to a natural environment for an hour, as described above, restores all 
 \cf{Drd}{Nature Power}[Su]
 The strength of a druid's spells and abilities are determined by her connection to nature.
 Normally, her nature power is equal to her druid level.
-Attuning to nature can increase a druid's nature power -- see the Attunement ability below.
 
 \cf{Drd}{Attunement}[Su]
 Whenever the druid is in a natural environment, she may dismiss all her active spells and spend one hour attuning to the natural world.
 If she does so, she regains all her spell slots.
-In addition, she gains a \plus2 bonus to her spellpower for as long as she stays in a natural environment, and for five minutes after leaving a natural environment. This bonus increases by \plus1 at her 5th druid level and every 5 druid levels thereafter.
 
 \cf{Drd}[2nd]{Wild Speech}[Su]
 The druid learns how to communicate with animals.
@@ -1151,6 +1146,8 @@ She does not need to use her hands to climb in this way.
 See \pcref{Climbing}, for more details.
 \subcf{6th -- Venom Immunity}
 The druid gains immunity to all poisons.
+\subcf{6th -- Wolfpack}
+Overwhelmed foes the druid threatens increase their overwhelm penalties by 1.
 \subcf{8th -- Natural Grab}
 If the druid hits with a natural attack, she may attempt to grapple her foe as an immediate action.
 \subcf{8th -- Natural Knockback}
@@ -1161,22 +1158,20 @@ If the druid hits with a natural attack, she may attempt to trip her foe as an i
 See \pcref{Trip}, for more details.
 \subcf{8th -- Scent}
 The druid gains the scent ability, granting her a \plus10 bonus to scent-based Awareness checks (see \pcref{Awareness}).
-\subcf{8th -- Wolfpack}
-Overwhelmed foes the druid threatens increase their overwhelm penalties by 1.
+\subcf{8th -- Swiftstrike}
+The druid's attack speed increases.
+When she makes a standard attack, she may make an additional strike.
+This strike must be made with a natural weapon.
+This effect does not stack with similar effects that grant extra strikes.
 \subcf{10th -- Grow}
 The druid increases in size by one size category.
-This functions as the \spell{enlarge person} spell.
+This functions as the \spell{enlarge} spell.
 This is a sizing effect.
 \subcf{10th -- Limited Flight}
 The druid grows wings, granting her a fly speed equal to her land speed with average maneuverability.
 See \pcref{Flying}, for more details.
 She can only fly for a number of rounds equal to 3 \add half her Constitution.
 After that limit is reached, she must rest for 5 minutes.
-\subcf{10th -- Swiftstrike}
-The druid's attack speed increases.
-When she makes a standard attack, she may make an additional strike.
-This strike must be made with a natural weapon.
-This effect does not stack with similar effects that grant extra strikes.
 \subcf{10th -- Venom}
 When the druid embodies this aspect, she transforms one of her natural weapons to become poisonous.
 If she hits with that natural attack, she may inject poison into the struck creature as an immediate action.
@@ -1284,7 +1279,7 @@ spell.
 This affects the druid's body, but not her possessions.
 It is not an illusory effect, but a minor physical alteration of the druid's appearance, within the limits described for the spell.
 
-\cf{Drd}[14th]{Timeless Body}[Ex]
+\cf{Drd}[15th]{Timeless Body}[Ex]
 The druid no longer takes attribute penalties for aging and cannot be magically aged.
 Any penalties she may have already incurred, however, remain in place.
 Bonuses still accrue, and the druid still dies of old age when her time is up.
@@ -2746,26 +2741,26 @@ This does not allow her to deliver ambush attacks to the same creature multiple 
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolpoor} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
         \tb{Level} & \tb{Combat Prowess} & \tb{Fort} & \tb{Ref} & \tb{Ment} & \tb{Special} \\
         \hline
-        \sorcererprogressionrow{1}  & Cantrip, spells, wild magic \plus2, wild tolerance    \\
-        \sorcererprogressionrow{2}  & Arcane adaptation, cantrip            \\
-        \sorcererprogressionrow{3}  & Focused casting                       \\
-        \sorcererprogressionrow{4}  & Defensive spellblend                  \\
-        \sorcererprogressionrow{5}  & Wild magic \plus3                     \\
-        \sorcererprogressionrow{6}  & Arcane adaptation                     \\
-        \sorcererprogressionrow{7}  &                                       \\
-        \sorcererprogressionrow{8}  & Offensive spellblend                  \\
-        \sorcererprogressionrow{9}  &                                       \\
-        \sorcererprogressionrow{10} & Arcane adaptation, wild magic \plus4  \\
-        \sorcererprogressionrow{11} &                                       \\
-        \sorcererprogressionrow{12} & Improved defensive spellblend         \\
-        \sorcererprogressionrow{13} &                                       \\
-        \sorcererprogressionrow{14} & Arcane adaptation                     \\
-        \sorcererprogressionrow{15} & Wild magic \plus5                     \\
-        \sorcererprogressionrow{16} & Improved offensive spellblend         \\
-        \sorcererprogressionrow{17} &                                       \\
-        \sorcererprogressionrow{18} & Arcane adaptation                     \\
-        \sorcererprogressionrow{19} &                                       \\
-        \sorcererprogressionrow{20} & Spellblend mastery, wild magic \plus6 \\
+        \sorcererprogressionrow{1}  & Cantrip, spells, wild magic, wild tolerance \\
+        \sorcererprogressionrow{2}  & Arcane adaptation, cantrip                  \\
+        \sorcererprogressionrow{3}  & Focused casting                             \\
+        \sorcererprogressionrow{4}  & Defensive spellblend                        \\
+        \sorcererprogressionrow{5}  & \x                                          \\
+        \sorcererprogressionrow{6}  & Arcane adaptation                           \\
+        \sorcererprogressionrow{7}  & \x                                          \\
+        \sorcererprogressionrow{8}  & Offensive spellblend                        \\
+        \sorcererprogressionrow{9}  & \x                                          \\
+        \sorcererprogressionrow{10} & Arcane adaptation                           \\
+        \sorcererprogressionrow{11} & \x                                          \\
+        \sorcererprogressionrow{12} & Improved defensive spellblend               \\
+        \sorcererprogressionrow{13} & \x                                          \\
+        \sorcererprogressionrow{14} & Arcane adaptation                           \\
+        \sorcererprogressionrow{15} & \x                                          \\
+        \sorcererprogressionrow{16} & Improved offensive spellblend               \\
+        \sorcererprogressionrow{17} &                                             \\
+        \sorcererprogressionrow{18} & Arcane adaptation                           \\
+        \sorcererprogressionrow{19} &                                             \\
+        \sorcererprogressionrow{20} & Spellblend mastery                          \\
     \end{dtabularx}
 \end{dtable}
 
@@ -2799,7 +2794,6 @@ All sorcerers have the following abilities.
 A sorcerer casts arcane spells using his Willpower.
 The maximum spell level a sorcerer can learn or cast is equal to half his sorcerer level (minimum 1) or his Willpower, whichever is lower.
 A sorcerer's spellpower is normally equal to his sorcerer level.
-See the Wild Magic ability, below.
 
 At 1st level, the sorcerer knows one 1st level spell.
 At every level thereafter, the sorcerer learns one additional spell.
@@ -2817,11 +2811,9 @@ The DC of the roll is equal to 10 \add the spell's level.
 This roll is not an attack or check, and is not modified by abilities that affect attacks or checks.
 On a natural 1, this roll always fails, regardless of other modifiers.
 
-If the wild magic roll succeeds, the spell is cast with a \plus2 bonus to spellpower.
+If the wild magic roll succeeds, the spell is cast normally.
 Failure means the spell is miscast instead (see \pcref{Miscasting}).
 In addition, if the sorcerer fails a wild magic roll, he cannot cast spells of the same level as the miscast spell for 10 minutes per spell level.
-
-At 5th level, and every 5 levels thereafter, the spellpower bonus from succeeding on a wild magic roll increases by \plus1.
 
 \cf{Sor}{Cantrip}
 Cantrips are minor spells which do not require effort to use.
@@ -2856,8 +2848,6 @@ The sorcerer gains the Ritual Caster feat, even if he does not meet the prerequi
 The sorcerer gains damage reduction against arcane spells equal to his sorcerer level or Constitution, whichever is higher.
 This allows him to ignore the first points of damage he takes each round.
 This ability applies against the sorcerer's own miscast effects.
-\subcf{6th -- Improved Focused Casting}
-When the sorcerer casts a spell using his focused casting ability, he gains a bonus to spellpower with the spell as if he had succeeded on a wild magic roll.
 \subcf{6th -- Wild Retargeting}
 When the sorcerer targets a random creature with a spell's miscast effect, he may roll twice to determine which creature is affected.
 He chooses which result is used.
@@ -2882,7 +2872,7 @@ This does not protect him from localized miscasts.
 
 \cf{Sor}[3rd]{Focused Casting}[Ex]
 If the sorcerer spends one minute focusing on casting a spell, he does not need to make a wild magic roll.
-This prevents him from gaining the bonus to spellpower from succeeding on a wild magic roll, but also prevents him from miscasting the spell.
+This prevents him from miscasting the spell due to wild magic.
 If his concentration is broken while casting a spell in this way, the sorcerer automatically miscasts the spell and suffers consequences as if he had failed a wild magic roll.
 
 \cf{Sor}[4th]{Defensive Spellblend}[Ex]
@@ -3456,26 +3446,26 @@ This functions like the temporal prison invocation, except that no attack is req
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolpoor} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
         \tb{Level} & \tb{Combat Prowess} & \tb{Fort} & \tb{Ref} & \tb{Ment} & \tb{Special} \\
         \hline
-        \wizardprogressionrow{1}  & Cantrip, rituals, spells, prepared spells \plus2 \\
-        \wizardprogressionrow{2}  & Cantrip, magic feat, specialization              \\
-        \wizardprogressionrow{3}  & Arcane insight                                   \\
-        \wizardprogressionrow{4}  & Cantrip sequencer                                \\
-        \wizardprogressionrow{5}  & Arcane insight, prepared spells \plus3           \\
-        \wizardprogressionrow{6}  & Magic feat                                       \\
-        \wizardprogressionrow{7}  & Arcane insight                                   \\
-        \wizardprogressionrow{8}  & Defensive sequencer                              \\
-        \wizardprogressionrow{9}  & Arcane insight                                   \\
-        \wizardprogressionrow{10} & Magic feat, prepared spells \plus4               \\
-        \wizardprogressionrow{11} & Arcane insight                                   \\
-        \wizardprogressionrow{12} & Contingency                                      \\
-        \wizardprogressionrow{13} & Arcane insight                                   \\
-        \wizardprogressionrow{14} & Magic feat                                       \\
-        \wizardprogressionrow{15} & Arcane insight, prepared spells \plus5           \\
-        \wizardprogressionrow{16} & Offensive sequencer                              \\
-        \wizardprogressionrow{17} & Arcane insight                                   \\
-        \wizardprogressionrow{18} & Magic feat                                       \\
-        \wizardprogressionrow{19} & Arcane insight                                   \\
-        \wizardprogressionrow{20} & Chain contingency, prepared spells \plus6        \\
+        \wizardprogressionrow{1}  & Cantrip, rituals, spells            \\
+        \wizardprogressionrow{2}  & Cantrip, magic feat, specialization \\
+        \wizardprogressionrow{3}  & Arcane insight                      \\
+        \wizardprogressionrow{4}  & Cantrip sequencer                   \\
+        \wizardprogressionrow{5}  & Arcane insight                      \\
+        \wizardprogressionrow{6}  & Magic feat                          \\
+        \wizardprogressionrow{7}  & Arcane insight                      \\
+        \wizardprogressionrow{8}  & Defensive sequencer                 \\
+        \wizardprogressionrow{9}  & Arcane insight                      \\
+        \wizardprogressionrow{10} & Magic feat,                         \\
+        \wizardprogressionrow{11} & Arcane insight                      \\
+        \wizardprogressionrow{12} & Contingency                         \\
+        \wizardprogressionrow{13} & Arcane insight                      \\
+        \wizardprogressionrow{14} & Magic feat                          \\
+        \wizardprogressionrow{15} & Arcane insight                      \\
+        \wizardprogressionrow{16} & Offensive sequencer                 \\
+        \wizardprogressionrow{17} & Arcane insight                      \\
+        \wizardprogressionrow{18} & Magic feat                          \\
+        \wizardprogressionrow{19} & Arcane insight                      \\
+        \wizardprogressionrow{20} & Chain contingency                   \\
     \end{dtabularx}
 \end{dtable}
 
@@ -3500,22 +3490,8 @@ Armor of any type interferes with a wizard's movements, which can cause her spel
 Wizards can perform rituals to create unique magical effects (see \pcref{Rituals}).
 A wizard begins play with a ritual book containing two arcane rituals of her choice (see \pcref{Arcane Rituals}).
 
-\cf{Wiz}{Prepared Spellcasting}
-A wizard may prepare specific spells ahead of time so they can be cast more powerfully.
-After regaining spells for the day, a wizard may prepare a number of spell slots equal to half her Wizard level (minimum 1) or half her Intelligence, whichever is higher.
-She must choose a single spell to assign to each prepared spell slot.
-Once assigned in this way, the prepared spell slot can only be used to cast the chosen spell.
-The spells cast using these prepared spell slots are called the wizard's prepared spells.
-Whenever a wizard casts a prepared spell, she gains a \plus2 bonus to spellpower with that spell.
-
-By resting and concentrating for 1 hour, a wizard may prepare spells again.
-She may convert prepared spell slots into regular spell slots, or prepare more spell slots after casting prepared spells earlier in the day.
-
-A wizard may prepare spells of any level, up to the maximum level of spells she is able to cast.
-She may only prepare spell slots that she actually possesses.
-However, she may use higher level spell slots to prepare lower level spells if she desires.
-
-At 5th level, and every 5 levels thereafter, the spellpower bonus a wizard gains with her prepared spells increases by 1.
+\cf{Wiz}{Advanced Training}
+A wizard treats her spells as if they were 1 level higher than they actually are for the purpose of meeting feat prerequisites.
 
 \subsection{Class Features}
 All wizards have the following abilities.
@@ -3524,7 +3500,6 @@ All wizards have the following abilities.
 A wizard casts arcane spells using her Intelligence.
 The maximum spell level a wizard can learn or cast is equal to half her wizard level (minimum 1) or her Intelligence, whichever is lower.
 A wizard's spellpower is normally equal to her wizard level.
-See the Prepared Spellcasting ability, below.
 
 The number of spells a wizard knows is given on \trefnp{Wizard Spells Known}.
 A wizard's spells are drawn from the \glossterm{unrestricted spells} on the arcane spell list (see \pcref{Arcane Spells}).
