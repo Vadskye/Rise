@@ -138,7 +138,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{Touch}}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target gains temporary hit points equal to twice your spellpower. In addition, it is immune to fear effects.
@@ -365,7 +365,7 @@
             \spelltwocol{\spelltgt{One living creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target gains damage reduction against physical damage equal to your spellpower. Slashing weapons and fire damage ignore this damage reduction and negate it for 1 round.
+            \spelleffect The target gains damage reduction against physical damage equal to your spellpower. Fire damage ignores this damage reduction and negates it for 1 round.
             \spelldur \durpersonallong
         \end{spelleffects}
     \end{spellcontent}
@@ -1940,7 +1940,7 @@
             \spelltgt{You}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spellsuccess You become larger, as \spell{enlarge}. In addition, you gain damage reduction against physical damage equal to your spellpower. Appropriately aligned damage ignores this damage reduction and negates it for 1 round. Evil attacks overcome your damage reduction if you are good or neutral, and good attacks overcome your damage reduction if you are evil.
+            \spelleffect You become larger, as \spell{enlarge}. In addition, you gain damage reduction against physical damage equal to your spellpower. Appropriately aligned damage ignores this damage reduction and negates it for 1 round. Evil attacks overcome your damage reduction if you are good or neutral, and good attacks overcome your damage reduction if you are evil.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
@@ -2390,9 +2390,11 @@
             \spellquicktargeting{One creature}{\rngmed}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spellsuccess \spelldamage{4}{life}. In addition, the target's vision is \impaired. This affects all sight-related actions, including physical attacks and targeted spells.
-            \spellcritical As above, except that the target's vision is \severelyimpaired.
-            \spellfailure Half damage, and no additional effects.
+            \begin{spellattack}{Spellpower vs. Fortitude}
+                \spellsuccess \spelldamage{4}{life}. In addition, the target's vision is \impaired. This affects all sight-related actions, including physical attacks and targeted spells.
+                \spellcritical As above, except that the target's vision is \severelyimpaired.
+                \spellfailure Half damage, and no additional effects.
+            \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -2503,7 +2505,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Air]}{Air, Arcane, Travel}
+        \spellinfo{Evocation [Air]}{Arcane, Travel}
         \spellnotes This spell works only upon free-falling objects and creatures. It no special effect on ranged weapons or projectiles unless they are falling an extraordinary distance.
         \miscastrandom
     \end{spellfooter}
@@ -3050,7 +3052,7 @@
     \par Any spell whose name begins with greater is alphabetized in this chapter according to the second word of the spell name. Thus, the description of a greater spell appears near the description of the spell on which it is based. Spell chains that have greater spells in them include those based on the spells command, dispel magic, invisibility, magic fang, restoration, scrying, shadow conjuration, shadow evocation, shout, and teleport.
 \end{spellsection}
 
-\begin{spellsection}{Gust of Wind}[2]
+\begin{spellsection}{Gust of Wind}[1]
     \begin{spellheader}
         \spelldesc{You create a severe blast of air that knocks your foes flying.}
     \end{spellheader}
@@ -5212,7 +5214,9 @@
             \spelltgts{Everything in the area}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spellsuccess Gravity in the area is reversed for the target. It falls upwards, reaching the top of the area within 1 round. if it strikes a solid object, such as a ceiling, it is affected in the same way as it would be during a normal fall. Otherwise, it floats at the top of the area, oscillating slightly.
+            \begin{spellattack}{Spellpower vs. Mental}
+                \spellsuccess Gravity in the area is reversed for the target. It falls upwards, reaching the top of the area within 1 round. if it strikes a solid object, such as a ceiling, it is affected in the same way as it would be during a normal fall. Otherwise, it floats at the top of the area, oscillating slightly.
+            \end{spellattack}
 
             \spelldur Focus (up to 5 rounds)
         \end{spelleffects}
@@ -5408,7 +5412,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{Touch}}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target can see any objects or beings that are invisible within its range of vision, as well as any that are ethereal, as if they were normally visible. Such creatures are visible as translucent shapes, allowing the target to easily discern the difference between visible, invisible, and ethereal creatures.
@@ -5509,7 +5513,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngtouch}}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target gains a floating shield with a \plus2 defense bonus. Unlike a mundane shield, this shield does not require a free hand and has no armor check penalty or arcane spell failure chance.
@@ -5586,9 +5590,11 @@
             \spellcmp{Verbal only}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spellspecial You gain a \plus5 bonus to accuracy against brittle or crystalline objects and creatures.
-            \spellsuccess \spelldamage{3}{sonic}[d6]. In addition, the target is \deafened for 5 rounds.
-            \spellfailure Half damage, and no additional effects.
+            \begin{spellattack}{Spellpower vs. Fortitude}
+                \spellspecial You gain a \plus5 bonus to accuracy against brittle or crystalline objects and creatures.
+                \spellsuccess \spelldamage{3}{sonic}[d6]. In addition, the target is \deafened for 5 rounds.
+                \spellfailure Half damage, and no additional effects.
+            \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -5607,9 +5613,11 @@
             \spellcmp{Verbal only}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spellspecial You gain a \plus5 bonus to accuracy against brittle or crystalline objects and creatures.
-            \spellsuccess \spelldamage{6}{sonic}[d6]. In addition, the target is \deafened for 5 rounds.
-            \spellfailure Half damage, and no additional effects.
+            \begin{spellattack}{Spellpower vs. Fortitude}
+                \spellspecial You gain a \plus5 bonus to accuracy against brittle or crystalline objects and creatures.
+                \spellsuccess \spelldamage{6}{sonic}[d6]. In addition, the target is \deafened for 5 rounds.
+                \spellfailure Half damage, and no additional effects.
+            \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -6709,6 +6717,57 @@
 
 \pdfbookmark[2]{T}{SpellDescriptionsT}
 
+\begin{spellsection}{Telekinetic Blast}[5]
+    \begin{spellheader}
+        \spelldesc{You blast your foes away from you.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spellburst{\areamed radius}
+            \spelltgts{Enemies in the area}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \begin{spellattack}{Spellpower vs. Mental}
+                \spellsuccess \spelldamage{5}{bludgeoning}[d6].
+                In addition, the target is forcibly moved away from you to the edge of the area.
+                If it encounters an occupied space or other obstacle, it stops at the obstacle.
+                \spellfailure Half damage.
+            \end{spellattack}
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Evocation [Telekinesis]}{Evocation}
+        \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
+
+
+\begin{spellsection}{Telekinetic Shove}[2]
+    \begin{spellheader}
+        \spelldesc{You push and pull your foes around the battlefield with your mind.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltgt{You}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect When you cast this spell, you can make a shove attack against a creature within \rngclose range.
+            This functions like a normal shove attack, except that your accuracy is equal to your spellpower, and you do not need to move with the target to move it.
+            However, you cannot move it beyond \rngclose range.
+
+            At the beginning of each round, you may spend a swift action to focus your mind.
+            If you do, you can use this spell to shove a target during the action phase.
+            You can shove the same target, or a different target, as you choose.
+            \spelldur \durshort
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Evocation [Telekinesis}{Evocation}
+        \spellnotes You can shove yourself with this spell.
+        \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
+
 \begin{spellsection}{Telepathy}[5]
     \begin{spellheader}
     \end{spellheader}
@@ -6779,7 +6838,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngtouch}}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target gains a \plus2 bonus to a mental attribute: Intelligence, Perception, or Willpower. This bonus cannot increase the target's attribute above your spellpower.
@@ -6797,7 +6856,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngtouch}}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target's mind improves, as \spell{totemic mind}, except that it gains a \plus4 enhancement bonus. Alternately, you can grant the target a \plus2 enhancement bonus to all its mental attributes.
@@ -6833,7 +6892,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngtouch}}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target gains a \plus2 bonus to a physical attribute: Strength, Dexterity, or Constitution. This bonus cannot increase the target's attribute above your spellpower.
@@ -6956,7 +7015,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature}{\rngtouch}
+            \spellquicktargeting{One creature}{\rngclose}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target gains the tremorsense ability with a range of 50 feet. If it is touching a surface, it can automatically pinpoint the location of anything within 50 feet that is in contact with the surface, including inanimate objects.
@@ -7067,7 +7126,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{Touch}}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target gains the ability to ``see'' any living creatures and their equipment within 30 feet perfectly, regardless of lighting conditions, invisibility, or any other means of concealment. This cannot detect living creatures through solid walls, however.
@@ -7168,7 +7227,7 @@
         \end{spelleffects}
     \end{spellsubcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Destructive, Fire, Wall]}{Evocation,  Fire, Nature}
+        \spellinfo{Evocation [Destructive, Fire, Wall]}{Arcane, Fire, Nature}
         \spellnotes Any part of the wall takes 5 cold damage in a single round is extinguished.
 
         This spell can be made permanent with a \spell{permanency} ritual. A permanent \spell{wall of fire} that is extinguished by cold damage becomes inactive for 10 minutes, then reforms at normal strength.
@@ -7400,12 +7459,10 @@
             \spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Fortitude}
-                \spellsuccess \spelldamage{2}{bludgeoning}.
-                \spellfailure Half damage.
-            \end{spellattack}
-            \begin{spellattack}{Spellpower vs. Maneuver defense (shove)}
-                \spellsuccess You shove the target in any direction -- even vertically. Moving the target up takes twice as much movement as moving the target horizontally.
+            \begin{spellattack}{Spellpower vs. Fortitude and Maneuver defense (shove)}
+                \spellsuccess[Fortitude] \spelldamage{2}{bludgeoning}.
+                \spellsuccess[Maneuver] You shove the target in any direction -- even vertically. Moving the target up takes twice as much movement as moving the target horizontally.
+                \spellfailure[Fortitude] Half damage.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -7424,16 +7481,7 @@
             \spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngext}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Fortitude}
-                \begin{spellmargin}
-                    \spellsuccess \spelldamage{5}{bludgeoning}.
-                    \spellfailure Half damage.
-                \end{spellmargin}
-                \spellatk Spellpower \add 10 vs. Maneuver defense (shove)
-                \begin{spellmargin}
-                    \spellsuccess You shove the target in any direction -- even vertically.
-                \end{spellmargin}
-            \end{spellattack}
+            \spellspecial This spell functions like \spell{windstrike}, except that it functions at longer range, and you gain a \plus10 bonus to accuracy with the shove attack.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -7466,7 +7514,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One melee weapon}}{\spellrng{Touch}}
+            \spelltwocol{\spelltgt{One melee weapon}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target weapon gains an additional five feet of reach, extending the wielder's threatened area.
@@ -7486,7 +7534,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One melee weapon}}{\spellrng{Touch}}
+            \spelltwocol{\spelltgt{One melee weapon}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spellspecial This spell functions like \spell{zephyr blade}, except that the damage at range is not halved.
