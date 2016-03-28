@@ -195,24 +195,32 @@ Some strike feats instead require a specific action to use.
         \midrule
         \tb{Magic Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Page} \\
         \featref{Abjurant Shield} & 2nd level Shielding spell & \plus1 to physical defenses & \featpref{Abjurant Shield} \\
+        \featref{Augment Summoning} & 2nd level Summoning spell & \plus2 to spellpower with Summoning spells & \featpref{Augment Summoning} \\
         \featref{Bardic Spellpower} & Arcane spellcasting ability & Fighter and rogue levels improve some spells & \featpref{Bardic Spellpower} \\
         \featref{Battlecaster} & Proficiency with light armor & Reduce arcane spell failure by 10\% & \featpref{Battlecaster} \\
         \featref{Combat Casting} & \x &  \plus3 bonus to Concentration checks to cast spells & \featpref{Combat Casting} \\
         \featref{Commanding Presence} & 1st level Compulsion spell & \plus2 to Intimidate and Persuasion, later \plus4 & \featpref{Commanding Presence} \\
         \featref{Counterspell} & Spellcraft 10 ranks, 2nd level spells & Counter spells cast by foe & \featpref{Counterspell} \\
-        \tind\featref{Flexible Counterspell} & Counterspell & Use any spell to counterspell & \featpref{Flexible Counterspell} \\
+        \tind\featref{Improved Counterspell} & Counterspell & Counter spells more easily & \featpref{Improved Counterspell} \\
         \tind\featref{Mass Counterspell} & Spellcraft 15 ranks, 4th level spells, Counterspell & Counter spells cast by multiple foes & \featpref{Mass Counterspell} \\
+        \featref{Craftcaster} & Craft (any) 10 ranks, 2nd level spells & Increase spellpower when creating, transforming objects & \featpref{Craftcaster} \\
         \featref{Delusive Guise} & 1st level Delusion spell & \plus2 to Bluff and Disguise, later \plus4 & \featpref{Delusive Guise} \\
+        \featref{Dispel Mastery} & 3rd level Antimagic spell & Dispel more effectively & \featpref{Dispel Mastery} \\
         \featref{Enhanced Senses} & 1st level Awareness spell & \plus2 to Awareness and Sense Motive, later \plus4 & \featpref{Enhanced Senses} \\
+        \featref{Fire Mastery} & 3rd level Fire spell & Fire spells can ignite foes & \featpref{Fire Mastery} \\
         \featref{Foresight} & 3rd level Divination spell & Cannot be caught unaware & \featpref{Foresight} \\
         \featref{Frigid Forge} & 2nd level Cold spell & Form ice into weapons and armor & \featpref{Frigid Forge} \\
         \featref{Magical Synthesis} & Levels in two magical classes & Increase spellcasting ability in two magical classes at once & \featpref{Magical Synthesis} \\
         \featref{Mass Transporter} & 5th level Conjuration (Translocation) spell & Transport many creatures at once & \featpref{Mass Transporter} \\
+        \featref{Personal Magic} & \x & Personalized magic grants various benefits & \featref{Personal Magic} \\
         \featref{Resilient Magic} & 3rd level Antimagic spell & Spells persist after being dispelled, later cannot be dispelled & \featpref{Resilient Magic} \\
         \featref{Ritual Caster} & Int 3 & Gain ability to perform rituals & \featpref{Ritual Caster} \\
         \featref{Spell Focus}\fn{1} & 2nd level spells &  \plus2 spellpower with specific school of magic & \featpref{Spell Focus} \\
         \tind \featref{Spell Specialization} & 4th level spells, Spell Focus &  \plus2 spellpower with specific school of magic, \minus2 with other types.
         & \featpref{Spell Specialization} \\
+        \featref{Somatic Strike} & Combat prowess 8, 4th level spells & Make strike in place of somatic components & \featpref{Somatic Strike} \\
+        \featref{Summoning Mastery} & 4th level Summoning spell & Maintain one Summoning spell indefinitely with no effort & \featpref{Summoning Mastery} \\
+        \featref{Sympathetic Resistance} & 2nd level Abjuration spell & Casting damaging spells grants brief damage reduction & \featpref{Sympathetic Resistance} \\
         \featref{Unfettered Knowledge} & 2nd level Knowledge spell & \plus2 to all Knowledge checks, later \plus4 & \featpref{Unfettered Knowledge} \\
         \featref{Vital Flow} & 2nd level Positive spell & Automatically heal every round & \featpref{Vital Flow} \\
         \featref{Wardwalker} & 3rd level Abjuration (Warding) spell & Wards you encounter trigger one round late & \featpref{Wardwalker} \\
@@ -221,9 +229,10 @@ Some strike feats instead require a specific action to use.
         \midrule
         \tb{Magic Style Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Page} \\
         \featref{Brutal Magic} & Combat prowess 4, 1st level spells & Gain spellpower bonus after making physical strike & \featpref{Brutal Magic} \\
-        \featref{Craftcaster} & Craft (any) 10 ranks, 2nd level spells & Increase spellpower when creating, transforming objects & \featpref{Craftcaster} \\
+        \featref{Creative Magic} & 4th level spells & Gain spellpower bonus with spells not cast recently & \\
         \featref{Peaceful Magic} & 3rd level Abjuration spell & Gain spellpower bonus after not taking damage & \featpref{Peaceful Magic} \\
         \featref{Retributive Magic} & 1st level Abjuration spell & Gain spellpower bonus after taking damage & \featpref{Retributive Magic} \\
+        \featref{Unliving Conduit} & 2nd level Vivimancy spell & Gan spellpower bonus when undead are near & \featpref{Unliving Conduit} \\
 
         \midrule
         \tb{Metamagic Feats} & \tb{Prerequisites} & \tb{Benefit (Level Adjustment)} & \tb{Page} \\
@@ -521,6 +530,10 @@ Choose a category of body armor: light, medium, or heavy.
 A character who is wearing armor with which she is not proficient applies its armor check penalty to physical accuracy and to all checks that involve moving, including Ride.
 The character also suffers double the normal arcane spell failure chance for wearing the armor.
 
+\feat{Augment Summoning}{Magic}
+\featpre 2nd level or higher \glossterm{Summoning} spell known.
+\featben You gain a \plus2 bonus to spellpower with Summoning spells.
+
 \feat{Bardic Spellpower}{Magic}
 \featpre Any arcane spell known.
 \featben You can treat your fighter and rogue levels as magical classes when determining your spellpower with enchantment and illusion arcane spells.
@@ -680,6 +693,10 @@ If this bonus is not used within 1 round, it is lost.
 \featpres Craft (any) 10 ranks, 2nd level spell known.
 \featben When casting spells which create or transform a physical substance that you are trained to craft, you gain a \plus2 bonus to your spellpower.
 
+\feat{Creative Magic}{Magic, Style}
+\featpre 4th level spell known.
+\featben You gain a \plus2 bonus to spellpower with all spells that you have not cast within the past 5 rounds.
+
 \feat{Deadly Aim}{Combat, Precision, Style}
 \featpres Perception 5, combat prowess 4.
 \featben You gain a \plus2 bonus to physical ranged damage rolls.
@@ -719,6 +736,10 @@ If you know an additional Delusion spell of 5th level or higher, this bonus incr
 \feat{Diehard}{General}
 \featpre Con 10.
 \featben You halve the penalties you take from having critical damage (see \pcref{Critical Damage}).
+
+\feat{Dispel Mastery}{Magic}
+\featpre 3rd level or higher \glossterm{Antimagic} spell known.
+\featben You gain a \plus4 bonus to spellpower when dispelling effects and countering spells with \spell{dispel magic} and similar spells.
 
 \feat{Disorienting Strike}{Combat, Strike}
 \featpre Three strikes.
@@ -940,10 +961,9 @@ This is an enchantment (compulsion), mind-affecting ability.
 \featpre Willpower 10.
 \featben You are immune to fear effects.
 
-\feat{Flexible Counterspell}{Magic}
-\featpres Spellcraft 10 ranks, Counterspell.
-\featben When counterspelling, you may attempt to counter spells of any school, regardless of which spell you cast.
-In addition, your spells are treated as being one higher level than normal for the purpose of determining what spells they can counter.
+\feat{Fire Mastery}{Magic}
+\featpre 3rd level or higher \glossterm{Fire} spell known.
+\featben Whenever you get a critical success with a Fire spell, the target of the spell is \ignited for 5 rounds.
 
 \feat{Focused Strike}{Combat, Precision, Strike}
 \featpre Two strikes.
@@ -1058,6 +1078,11 @@ This allows you to meet item crafting prerequisites that you could not meet with
 \featben In place of four strikes, you can make a single melee attack.
 If you hit, you deal damage normally.
 If your attack result also beats the foe's Fortitude defense, it is \immobilized for 5 rounds.
+
+\feat{Improved Counterspell}{Magic}
+\featpres Spellcraft 10 ranks, Counterspell.
+\featben When counterspelling, you may attempt to counter spells of any school, regardless of which spell you cast.
+In addition, your spells are treated as being one higher level than normal for the purpose of determining what spells they can counter.
 
 \feat{Improved Dirty Trick}{Combat, Maneuver}
 \featpre Combat prowess 4.
@@ -1613,6 +1638,16 @@ If the target does not attack you during the current phase, this attack deals qu
 If you hit, you deal damage normally.
 If your attack result also beats the foe's Fortitude defense, it loses any damage reduction it has for 5 rounds.
 
+\feat{Personal Magic}{Magic}
+\featben You have created or discovered a unique style of magic, with subtle differences from the magic most people have studied.
+This has several benefits, which are described below.
+\begin{itemize}
+    \item You gain a \plus2 bonus to Concentration checks to cast spells and rituals.
+    \item The DC to identify your spells and rituals with Spellcraft is increased by 10 (see \pcref{Spellcraft}).
+    \item The cost for scribing rituals in your ritual book is halved, but the time required is doubled.
+        This does not alter the cost to perform rituals.
+\end{itemize}
+
 \feat{Perfect Health}{General}
 \featpre Constitution 3.
 \featben You become immune to disease, except supernatural diseases such as mummy rot.
@@ -1824,6 +1859,12 @@ You can gain this feat multiple times.
 Its effects do not stack.
 Each time you take the feat, it applies to a new skill.
 
+\feat{Somatic Strike}{Magic}
+\featpre Combat prowess 8, 4th level spell known.
+\featben When you cast spells, you can make a single strike with a melee weapon in place of the somatic components for the spell.
+The spell is otherwise cast as normal, regardless of whether the strike hits or misses.
+This cannot be used in combination with other abilities that let you attack as part of casting a spell, such as Imbued Spellstrike.
+
 \feat{Spell Focus}{Magic}
 Choose a school of magic.
 \featpre 2nd level spells.
@@ -1890,6 +1931,13 @@ You can affect an additional creature at 12 Perform ranks and every 2 Perform ra
 You can use any combination of performance feats you possess a number of times per day equal to twice the number of performance feats you have.
 If you fail the Perform check, the use of the ability is wasted.
 
+\feat{Summoning Mastery}{Magic}
+\featpre 4th level or higher \glossterm{Summoning} spell.
+\featben As you cast a Summoning spell, you can attune to it, allowing you to maintain focus on it indefinitely without expending effort.
+This allows you to control the summoned creatures without spending an action, and can extend the duration indefinitely if the spell has \durshort duration.
+However, you can only exercise this control as long as all summoned creatures remain within \rnglong range of you, ignoring intervening obstacles.
+If this distance is exceeded, or if you become unconscious, you lose your attunement to the spell.
+
 \feat{Sustained Spell}{Metamagic}
 \featpre 2nd level spell known.
 \featben You can maintain focus on a sustained spell as a swift action instead of as a standard action.
@@ -1899,6 +1947,11 @@ A sustained spell uses up a spell slot one level higher than the spell's actual 
 
 \feat{Swift}{General}
 \featben You increase your land speed by 5 feet.
+
+\feat{Sympathetic Resistance}{Magic}
+\featpre 2nd level or higher Abjuration spell.
+\featben Whenever you cast a spell of at least 1st level that deals damage with a non-physical type, you gain damage reduction equal to your spellpower against damage of that type for 1 round.
+If a spell deals multiple types of damage, you gain damage reduction that applies against all of those types.
 
 \feat{Tactical Analysis}{Combat}
 \featpre Intelligence 3.
@@ -2011,6 +2064,11 @@ This bonus increases to \plus2 at Strength 10, and to \plus3 at Strength 20.
 \featpre 2nd level or higher \glossterm{Knowledge} spell known.
 \featben You gain a \plus2 bonus to all Knowledge checks.
 If you know an additional Knowledge spell of 6th level or higher, this bonus increases to \plus4.
+
+\feat{Unliving Conduit}{Magic, Style}
+\featpre 2nd level or higher \glossterm{Vivimancy} spell known.
+\featben As long as you are within \rngclose range of an undead creature (other than yourself), you gain a \plus2 bonus to spellpower with Vivimancy spells.
+If the undead creature is under your control, this bonus applies to all spells you cast.
 
 \feat{Versatility}{Class}
 \featpre Levels in two different classes.
