@@ -1280,14 +1280,13 @@
             \spellrng{Touch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
             \spellfocus{One object with writing on it (Small or smaller)}
             \spellline
             \begin{spelltrigger}{A creature reads the focus object while within 5 feet of it}
                 \spellburst{\areasmall radius centered on the focus}
-                \begin{spelltargets}*{Everything in the area}l[Magic vs. Reflex]
-                    \spellsuccess 3d6 force damage \add d6 per four spellpower above 6th.
-                    \spellfailure As above, but half damage.
+                \begin{spelltargets}*{Everything in the area}[Magic vs. Reflex]
+                    \spellsuccess \spelldamage{force}[d8]
+                    \spellfailure Half damage.
                 \end{spelltargets}
             \end{spelltrigger}
             \spelldur Thirty days or until discharged \dismissable
@@ -1438,8 +1437,8 @@
             \begin{spelltrigger}{A creature opens the focus object without saying the password}
                 \spellburst{\areasmall radius centered on the focus}
                 \begin{spelltargets}{Everything within the area}l[Magic vs. Reflex]
-                    \spellsuccess 3d6 fire damage \add d6 per four levels after 6th
-                    \spellfailure As above, but half damage.
+                    \spellsuccess \spelldamage{fire}[d8]
+                    \spellfailure Half damage.
                 \end{spelltargets}
             \end{spelltrigger}
             \spelldur Thirty days or until discharged \dismissable
@@ -1495,7 +1494,7 @@
             \spelleffect Extraplanar travel within the area is forbidden, as \spell{dimensional lock}.
             \begin{spelltrigger}{A creature of the chosen alignment enters the area without saying the password}
                 \begin{spelltarget}*[Magic vs. Will]
-                    \spellsuccess 8d6 divine damage \add d6 per spellpower above 16th.
+                    \spellsuccess \spelldamage{divine}[d8]
                 \end{spelltarget}
             \end{spelltrigger}
             \spelldur One year
@@ -1628,8 +1627,8 @@
             \spelleffect An invisible, intangible glyph floats in the air at the center of the area. A creature that can see invisible objects can perceive the glyph, which is takes up approximately one square foot. If the creature can read magic, such as with the \ritual{read magic} ritual, it can identify the energy type of the glyph.
             \begin{spelltrigger}{A creature enters the area without speaking the password}
                 \begin{spelltargets}*{Everything in the area}[Magic vs. Reflex]
-                    \spellsuccess 3d6 damage \add d6 per four spellpower after 6th. The damage is of the energy type chosen when the ritual was performed.
-                    \spellfailure As above, but half damage.
+                    \spellsuccess \spelldamage[d8]. The damage is of the energy type chosen when the ritual was performed.
+                    \spellfailure Half damage.
                 \end{spelltargets}
             \end{spelltrigger}
             \spelldur Thirty days or until discharged
@@ -1658,8 +1657,8 @@
             \spelleffect This spell creates an invisible glyph, as \spell{glyph of warding}.
             \begin{spelltrigger}{A creature enters the area without speaking the password}
                 \begin{spelltargets}*{Everything in the area}[Magic vs. Reflex]
-                    \spellsuccess 6d6 damage \add d6 per four spellpower after 12th. The damage is of the energy type chosen when the ritual was performed.
-                    \spellfailure As above, but half damage.
+                    \spellsuccess \spelldamage[d8] The damage is of the energy type chosen when the ritual was performed.
+                    \spellfailure Half damage.
                 \end{spelltargets}
             \end{spelltrigger}
         \end{spelleffects}
@@ -2146,8 +2145,7 @@
             \spellrng{Touch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
-            \spelleffect The target is healed for 2d6 damage \add d6 per two spellpower above 2nd.
+            \spelleffect The target is healed for \spelldamage{}.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -2167,8 +2165,7 @@
             \spellrng{Touch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
-            \spelleffect The target is healed for 6d6 damage \add d6 per two spellpower above 2nd. For every 10 points of healing granted by this ritual, it can instead cure 1 point of critical damage.
+            \spelleffect The target is healed for \spelldamage{}. For every 5 points of healing granted by this ritual, it can instead cure 1 point of critical damage.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
