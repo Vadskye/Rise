@@ -705,11 +705,11 @@
     \nth{#1} & \poorbab{#1} & \poordefense{#1} & \poordefense{#1} & \gooddefense{#1}
 }
 
-\DeclareDocumentCommand{\spelldamage}{m m o}
+\DeclareDocumentCommand{\spelldamage}{m o}
 {
-    \IfValueTF{#3}
-    {1#3~#2~damage~per~two~spellpower}
-    {1d10~#2~damage~per~two~spellpower}
+    \IfValueTF{#2}
+    {1#2~#1~damage~per~two~spellpower}
+    {1d10~#1~damage~per~two~spellpower}
 }
 
 \DeclareDocumentCommand{\spellquicktargeting}{m m}
