@@ -59,7 +59,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess 1d6 acid damage per two spellpower immediately, and again at the end of the next round.
+                \spellsuccess 1d8 acid damage per two spellpower immediately, and again at the end of the next round.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -99,7 +99,7 @@
         \begin{spelleffects}
             \spelleffect Fog fills the area, as \spell{fog cloud}, except that the fog is acidic.
 
-            At the end of every round, make a Spellpower vs. Fortitude attack against everything in the fog. Success against a target means it takes 1d6 acid damage per four spellpower.
+            At the end of every round, make a Spellpower vs. Fortitude attack against everything in the fog. Success against a target means it takes 1d8 acid damage per four spellpower.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
@@ -281,7 +281,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
-                \spellsuccess 1d10 life damage per two spellpower. If the target has no hit points remaining, it immediately dies, and you are transformed to mimic its appearance for 12 hours. This grants you a \plus10 bonus on Disguise checks made to appear as that creature.
+                \spellsuccess \spelldamage{life}. If the target has no hit points remaining, it immediately dies, and you are transformed to mimic its appearance for 12 hours. This grants you a \plus10 bonus on Disguise checks made to appear as that creature.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
             \spelldur \durext; see text
@@ -384,7 +384,7 @@
             \spelltwocol{\spellzone{\areamed radius}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect Ground within the area is considered difficult terrain. At the end of every round, make a Spellpower vs. Maneuver defense against all creatures in the area that are within 5 feet of the ground. Success against a creature means it takes \spelldamage{bludgeoning}[d6]. A critical success causes the target to be \immobilized for the duration of the spell. It can escape with a grapple or Escape Artist check against a DC equal to 10 \add your spellpower.
+            \spelleffect Ground within the area is considered difficult terrain. At the end of every round, make a Spellpower vs. Maneuver defense against all creatures in the area that are within 5 feet of the ground. Success against a creature means it takes \spelldamage{bludgeoning}[d8]. A critical success causes the target to be \immobilized for the duration of the spell. It can escape with a grapple or Escape Artist check against a DC equal to 10 \add your spellpower.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -405,7 +405,7 @@
         \begin{spelleffects}
             \spelleffect This spell creates a wall of blades made of force energy. The wall provides active cover (20\% miss chance) against attacks made through it. Attacks that miss in this way harmlessly strike the wall. Passing through the wall costs twice as much movement as normal.
 
-            Whenever a creature passes through the wall, make a Spellpower vs. Reflex attack against it. Success means the creature takes \spelldamage{force}[d6]. Failure means it takes half damage.
+            Whenever a creature passes through the wall, make a Spellpower vs. Reflex attack against it. Success means the creature takes \spelldamage{force}[d8]. Failure means it takes half damage.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
@@ -427,7 +427,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess \spelldamage{divine}[d6].
+                \spellsuccess \spelldamage{divine}[d8].
                 \spellcritical As above, and the target is \staggered for 5 rounds.
                 \spellfailure Half damage.
             \end{spellattack}
@@ -648,7 +648,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess \spelldamage{fire}[d6]
+                \spellsuccess \spelldamage{fire}[d8]
                 \spellfailure Half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -673,7 +673,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess \spelldamage{divine}[d6].
+                \spellsuccess \spelldamage{divine}[d8].
                 \spellcritical As above, and the target is \disoriented for 5 rounds.
                 \spellfailure Half damage.
             \end{spellattack}
@@ -696,8 +696,8 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess \spelldamage{electricity}[d8].
-                If you are outdoors in cloudy or stormy weather, roll d10s instead of d8s for damage.
+                \spellsuccess \spelldamage{electricity}[d10].
+                If you are outdoors in cloudy or stormy weather, each bolt instead deals \spelldamage{electricity}.
                 \spellfailure Half damage.
             \end{spellattack}
             \spelleffect You can concentrate as a standard action to call down another bolt of lightning. You may call a total number of bolts equal to your spellpower before the spell is discharged.
@@ -768,7 +768,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess \spelldamage{electricity}[d6].
+                \spellsuccess \spelldamage{electricity}[d8].
                 \spellfailure Half damage.
                 \spellspecial This attack automatically succeeds against the primary target.
             \end{spellattack}
@@ -862,7 +862,7 @@
         \begin{spelleffects}
             \spelleffect The target gains spell resistance against lawful spells and spells cast by lawful creatures.
 
-            In addition, whenever a lawful creature within 30 feet of the target makes a physical attack against it, you make a Spellpower vs. Mental attack against the attacking creature. Success means the creature takes \spelldamage{divine}[d6].
+            In addition, whenever a lawful creature within 30 feet of the target makes a physical attack against it, you make a Spellpower vs. Mental attack against the attacking creature. Success means the creature takes \spelldamage{divine}[d8].
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
@@ -952,7 +952,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess \spelldamage{cold}[d6]. In addition, the target moves at half speed for 5 rounds.
+                \spellsuccess \spelldamage{cold}[d8]. In addition, the target moves at half speed for 5 rounds.
                 \spellfailure As above, but half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -974,7 +974,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess \spelldamage{cold}[d6]. In addition, the target moves at half speed.
+                \spellsuccess \spelldamage{cold}[d8]. In addition, the target moves at half speed.
                 \spellfailure As above, but half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -1046,7 +1046,7 @@
             Otherwise, another creature may spend a standard action action to manually fire the ballista.
 
             When the ballista fires, you make a Spellpower vs. Armor defense attack against the target.
-            Success means the target takes \spelldamage{piercing}[d6].
+            Success means the target takes \spelldamage{piercing}[d8].
             Failure means the bolt misses, and the target takes no damage.
 
             The ballista has hit points equal to three times your spellpower.
@@ -1532,7 +1532,7 @@
 
             If you choose a delay, a glowing bead of fire sits at the point of origin, shedding light as a torch, until it detonates. It cannot be physically harmed or moved, but it can be dispelled, which prevents it from detonating.
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess \spelldamage{fire}[d6]
+                \spellsuccess \spelldamage{fire}[d8]
                 \spellfailure Half damage.
             \end{spellattack}
             \spelldur 5 rounds or less; see text
@@ -1602,7 +1602,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess \spelldamage{divine}[d6].
+                \spellsuccess \spelldamage{divine}[d8].
                 \spellcritical As above, and the target is \slowed for 5 rounds.
                 \spellfailure Half damage.
             \end{spellattack}
@@ -2119,7 +2119,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Armor defense}
-                \spellsuccess 1d6 piercing damage per spellpower.
+                \spellsuccess 1d8 piercing damage per spellpower.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -2139,7 +2139,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Armor defense}
-                \spellsuccess 1d8 piercing damage per two spellpower.
+                \spellsuccess \spelldamage{piercing}[d10]
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -2159,7 +2159,7 @@
 
             If you absorb damage with this spell from a single energy type that exceeds your spellpower, you gain a charge for that energy type. You can store up to 3 charges of any combination of energy types. Additional charges replace existing charges of your choice.
 
-            As a standard action, you can expend a charge to fire a bolt of energy at a creature or object within \rngclose range of you. If you do, make a Spellpower vs. Reflex attack against the target. Success means it takes \spelldamage{energy}[d8]. The damage type is the same as the type of the charge expended.
+            As a standard action, you can expend a charge to fire a bolt of energy at a creature or object within \rngclose range of you. If you do, make a Spellpower vs. Reflex attack against the target. Success means it takes \spelldamage{energy}[d10]. The damage type is the same as the type of the charge expended.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -2374,7 +2374,7 @@
             \spelltgt{You}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect You are coated in slime. Whenever a creature hits you with a melee attack, make a Spellpower vs. Reflex attack against the attacking creature. Success means the creature takes \spelldamage{acid}[d6].
+            \spelleffect You are coated in slime. Whenever a creature hits you with a melee attack, make a Spellpower vs. Reflex attack against the attacking creature. Success means the creature takes \spelldamage{acid}[d8].
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
@@ -2561,7 +2561,7 @@
             \spelltgts{Up to five acorns or berries}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The targets are imbued with fiery energy capable of dealing up to \spelldamage{fire}[d6]. You may freely decide the distribution of dice between the target berries.
+            \spelleffect The targets are imbued with fiery energy capable of dealing up to \spelldamage{fire}[d8]. You may freely decide the distribution of dice between the target berries.
 
             You must also specify at least one command word used to detonate the seeds. You can specify different command words to detonate different combinations of seeds.
 
@@ -2611,7 +2611,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess \spelldamage{fire}[d6]
+                \spellsuccess \spelldamage{fire}[d8]
             \end{spellattack}
         \end{spelleffects}
     \end{spellsubcontent}
@@ -2632,7 +2632,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess \spelldamage{fire}[d6]
+                \spellsuccess \spelldamage{fire}[d8]
                 \spellfailure Half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -2654,7 +2654,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess \spelldamage{fire}[d6]
+                \spellsuccess \spelldamage{fire}[d8]
                 \spellfailure Half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -2700,7 +2700,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess \spelldamage{fire and divine}[d6]
+                \spellsuccess \spelldamage{fire and divine}[d8]
                 \spellfailure Half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -3190,7 +3190,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess The target and everything touching it takes 1d6 fire damage per two spellpower immediately, and again at the end of the next round.
+                \spellsuccess The target and everything touching it takes \spelldamage{fire}[d8] immediately, and again at the end of the next round.
 
                 A creature wearing or holding the target object is \dazed each round it takes damage from the object.
             \end{spellattack}
@@ -3340,7 +3340,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess \spelldamage{divine}[d6]
+                \spellsuccess \spelldamage{divine}[d8]
             \end{spellattack}
         \end{spelleffects}
     \end{spellsubcontent}
@@ -3382,7 +3382,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess \spelldamage{divine}[d6].
+                \spellsuccess \spelldamage{divine}[d8].
                 \spellcritical As above, and the target is \dazed for 5 rounds.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
@@ -3406,7 +3406,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
                 \spellspecial You gain a \plus5 bonus to accuracy against plants and creatures with the water subtype.
-                \spellsuccess \spelldamage{physical}[d6]
+                \spellsuccess \spelldamage{physical}[d8]
                 \spellfailure Half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -3494,7 +3494,7 @@
             \spelltgts{Everything in the area}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect \spelldamage{cold and bludgeoning}[d4]
+            \spelleffect \spelldamage{cold and bludgeoning}[d6]
         \end{spelleffects}
     \end{spellsubcontent}
     \begin{spellfooter}
@@ -3602,7 +3602,7 @@
             \spelltwocol{\spelltgts{Up to five creatures}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spellspecial This spell functions like \spell{inflict critical wounds}, except that it heals or inflicts \spelldamage{}[d6].
+            \spellspecial This spell functions like \spell{inflict critical wounds}, except that it heals or inflicts \spelldamage{}[d8].
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -3640,7 +3640,7 @@
             \spelltwocol{\spelltgts{Up to five creatures}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spellspecial This spell functions like \spell{inflict light wounds}, except that it heals or inflicts \spelldamage{}[d6].
+            \spellspecial This spell functions like \spell{inflict light wounds}, except that it heals or inflicts \spelldamage{}[d8].
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -3678,7 +3678,7 @@
             \spelltwocol{\spelltgts{Up to five creatures}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spellspecial This spell functions like \spell{inflict moderate wounds}, except that it heals or inflicts \spelldamage{}[d6].
+            \spellspecial This spell functions like \spell{inflict moderate wounds}, except that it heals or inflicts \spelldamage{}[d8].
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -3716,7 +3716,7 @@
             \spelltwocol{\spelltgts{Up to five creatures}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spellspecial This spell functions like \spell{inflict serious wounds}, except that it heals or inflicts \spelldamage{}[d6].
+            \spellspecial This spell functions like \spell{inflict serious wounds}, except that it heals or inflicts \spelldamage{}[d8].
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -3921,7 +3921,7 @@
             \spelltwocol{\spelltgts{Any number of creatures}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spellspecial You create one missile per two spellpower. Each missile can deal d8 force damage to a single creature.
+            \spellspecial You create one missile per two spellpower. Each missile can deal 1d10 force damage to a single creature.
 
             Any missiles you do not explicitly target will automatically strike a living creature within the range. The missiles are able to unerringly strike creatures you cannot see or are not aware of, including invisible or concealed creatures. It can even strike creatures behind total cover, as long as there is a path to the target that lies entirely within the spell's range. You can direct the missiles to avoid specific targets, allowing you to strike a hidden foe among your allies.
             \spelleffect The target is struck by as many missiles as you choose.
@@ -3943,7 +3943,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess \spelldamage{electricity}[d6]
+                \spellsuccess \spelldamage{electricity}[d8]
                 \spellfailure Half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -3967,7 +3967,7 @@
         \begin{spelleffects}
             \spelleffect You throw a willing ally at the target. The ally gains damage reduction against physical damage equal to twice your spellpower for 1 round.
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess The target takes 1d10 bludgeoning damage per two spellpower. The ally takes half this damage.
+                \spellsuccess The target takes \spelldamage{bludgeoning}. The ally takes half this damage.
                 \spellfailure The target takes half damage. This does not reduce the damage taken by the ally.
             \end{spellattack}
         \end{spelleffects}
@@ -4066,7 +4066,7 @@
             \spelltwocol{\spelltgts{See text}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect You create a number of missiles equal to half your spellpower. Each missile strikes one target creature for d8 force damage. You can direct each missile to strike the same or different targets.
+            \spelleffect You create a number of missiles equal to half your spellpower. Each missile strikes one target creature for 1d10 force damage. You can direct each missile to strike the same or different targets.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -4253,7 +4253,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess \spelldamage{fire}[d6].
+                \spellsuccess \spelldamage{fire}[d8].
 
                 If the target is on the ground, it falls prone. If the target is in the air, and is Gargantuan or smaller, it is driven to the ground. It takes falling damage as appropriate for the distance descended.
                 \spellfailure Half damage, and no additional effects.
@@ -4356,7 +4356,7 @@
             \spelltwocol{\spelltgts{Up to five creatures}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect \spelldamage{force}[d4]
+            \spelleffect \spelldamage{force}[d6]
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -4376,7 +4376,7 @@
             \spelltgts{All enemies in the area}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect \spelldamage{force}[d4]
+            \spelleffect \spelldamage{force}[d6]
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -4801,7 +4801,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Special}
-                \spellspecial The target is struck by a randomly colored beam of light. The beam color determines the effect and the defense used, as shown on \tref{Prismatic Beam Effects}. The damaging effects deal \spelldamage{}[d6].
+                \spellspecial The target is struck by a randomly colored beam of light. The beam color determines the effect and the defense used, as shown on \tref{Prismatic Beam Effects}. The damaging effects deal \spelldamage{}[d8].
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -4822,7 +4822,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Special}
-                \spellspecial The target is struck by a randomly colored beam of light. The beam color determines the effect and the defense used, as shown on \tref{Prismatic Beam Effects}. The damaging effects deal \spelldamage{}[d6]
+                \spellspecial The target is struck by a randomly colored beam of light. The beam color determines the effect and the defense used, as shown on \tref{Prismatic Beam Effects}. The damaging effects deal \spelldamage{}[d8]
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -4850,7 +4850,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellspecial The target is struck by a randomly colored beam of light. The beam color determines the effect and the defense used, as shown on \tref{Prismatic Beam Effects}. The damaging effects deal \spelldamage{}[d6]
+                \spellspecial The target is struck by a randomly colored beam of light. The beam color determines the effect and the defense used, as shown on \tref{Prismatic Beam Effects}. The damaging effects deal \spelldamage{}[d8]
             \end{spellattack}
         \end{spelleffects}
     \end{spellsubcontent}
@@ -4880,7 +4880,7 @@
             \spelltwocol{\spelltgr{A creature breaks the rule}}{\spelltgt{Triggering creature}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect \spelldamage{}[d6]. You know a creature broke the rule, but not which creature.
+            \spelleffect \spelldamage{}[d8]. You know a creature broke the rule, but not which creature.
         \end{spelleffects}
     \end{spellsubcontent}
     \begin{spellfooter}
@@ -5259,7 +5259,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
-                \spellsuccess \spelldamage{bludgeoning}[d6]
+                \spellsuccess \spelldamage{bludgeoning}[d8]
                 \spellfailure Half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -5546,7 +5546,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess \spelldamage{divine}[d6]
+                \spellsuccess \spelldamage{divine}[d8]
             \end{spellattack}
         \end{spelleffects}
     \end{spellsubcontent}
@@ -5592,7 +5592,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
                 \spellspecial You gain a \plus5 bonus to accuracy against brittle or crystalline objects and creatures.
-                \spellsuccess \spelldamage{sonic}[d6]. In addition, the target is \deafened for 5 rounds.
+                \spellsuccess \spelldamage{sonic}[d8]. In addition, the target is \deafened for 5 rounds.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
         \end{spelleffects}
@@ -5615,7 +5615,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
                 \spellspecial You gain a \plus5 bonus to accuracy against brittle or crystalline objects and creatures.
-                \spellsuccess \spelldamage{sonic}[d6]. In addition, the target is \deafened for 5 rounds.
+                \spellsuccess \spelldamage{sonic}[d8]. In addition, the target is \deafened for 5 rounds.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
         \end{spelleffects}
@@ -5907,7 +5907,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
-                \spellsuccess \spelldamage{sonic}[d6].
+                \spellsuccess \spelldamage{sonic}[d8].
                 \spellfailure Half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -6005,7 +6005,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Armor defense}
-                \spellsuccess \spelldamage{force}[d6]
+                \spellsuccess \spelldamage{force}[d8]
             \end{spellattack}
         \end{spelleffects}
     \end{spellsubcontent}
@@ -6069,7 +6069,7 @@
         \begin{spelleffects}
             \spelleffect An enormous storm cloud occupies the top 200 feet of the area, as \spell{fog cloud}. Within the area, lightning strikes and thunder rolls. Sunlight is blocked by the dark cloud. This may cause the area to have shadowy illumination, granting everything in it \concealment.
 
-            At the end of every round, the storm has an additional effect, as shown on \tref{Storm of Vengeance Effects}. Damaging effects deal \spelldamage{}[d6].
+            At the end of every round, the storm has an additional effect, as shown on \tref{Storm of Vengeance Effects}. Damaging effects deal \spelldamage{}[d8].
 
             \spelldur Focus (maximum 10 rounds)
         \end{spelleffects}
@@ -6114,7 +6114,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
-                \spellsuccess \spelldamage{bludgeoning}[d6].
+                \spellsuccess \spelldamage{bludgeoning}[d8].
                 \spellfailure Half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -6655,7 +6655,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
                 \spellspecial You gain a \plus5 bonus to accuracy against creatures vulnerable to sunlight.
-                \spellsuccess \spelldamage{solar}[d6]
+                \spellsuccess \spelldamage{solar}[d8]
                 \spellcritical If the target is vulnerable to sunlight, it is also \blinded for 5 rounds.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
@@ -6680,7 +6680,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
                 \spellspecial You gain a \plus5 bonus to accuracy against creatures vulnerable to sunlight.
-                \spellsuccess \spelldamage{solar}[d6]
+                \spellsuccess \spelldamage{solar}[d8]
                 \spellcritical If the target is vulnerable to sunlight, it is also \blinded for 5 rounds.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
@@ -6728,7 +6728,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess \spelldamage{bludgeoning}[d6].
+                \spellsuccess \spelldamage{bludgeoning}[d8].
                 In addition, the target is forcibly moved away from you to the edge of the area.
                 If it encounters an occupied space or other obstacle, it stops at the obstacle.
                 \spellfailure Half damage.
@@ -7090,7 +7090,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess \spelldamage{divine}[d6]
+                \spellsuccess \spelldamage{divine}[d8]
             \end{spellattack}
         \end{spelleffects}
     \end{spellsubcontent}
@@ -7193,7 +7193,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
-                \spellsuccess \spelldamage{sonic}[d6]. If the target is living and has no hit points remaining, it dies.
+                \spellsuccess \spelldamage{sonic}[d8]. If the target is living and has no hit points remaining, it dies.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -7221,7 +7221,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess \spelldamage{fire}[d6].
+                \spellsuccess \spelldamage{fire}[d8].
                 \spellfailure Half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -7243,7 +7243,7 @@
             \spelltwocol{\spellzone{100 ft. wall, 20 ft. high \shapeable}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spellspecial This spell functions like \spell{wall of fire}, except that it is larger and can be shaped. The damage dealt to a creature passing through the wall is \spelldamage{fire}[d6].
+            \spellspecial This spell functions like \spell{wall of fire}, except that it is larger and can be shaped. The damage dealt to a creature passing through the wall is \spelldamage{fire}[d8].
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
