@@ -879,7 +879,7 @@ On a successful critical roll, apply the special effect, but do not multiply the
 \end{magicitemdef}
 
 \begin{magicitemdef}{Flaming}[Active]{2}[Melee, Ranged]{Evocation [Fire]}{as weapon}
-    \magicitemability{Active}[Standard action] If you speak a command word, you can ignite this weapon in flames and make a single attack with it. The next time you hit with the weapon, the target takes 1d8 fire damage per two item power in addition to the damage from your attack.
+    \magicitemability{Active}[Standard action] If you speak a command word, you can ignite this weapon in flames and make a single strike with it. The next time you hit with the weapon, the target takes 1d8 fire damage per two item power in addition to the damage from your attack.
 
     If the attack misses, the weapon continues to flame for up to 5 rounds.
 \end{magicitemdef}
@@ -923,101 +923,90 @@ On a successful critical roll, apply the special effect, but do not multiply the
     During this time, you cannot activate this ability again.
 \end{magicitemdef}
 
+%price as 6th level spell? similar to 20 uses of a one-shot item worth 1000 gp
 \begin{magicitemdef}{Poisoning, Greater}[Active]{6}[Melee]{Conjuration/Transmutation [Creation, Temporal]}{as weapon}
-    \magicitemability{Passive} This item functions like a \magicitem{poisoning} weapon, except that it can duplicate nonmagical liquids worth up to 1,000 gp.
+    \magicitemability{Passive} This weapon functions like a \magicitem{poisoning} weapon, except that it can duplicate nonmagical liquids worth up to 1,000 gp.
     In addition, up to five different poisons can be stored within the weapon.
     When you coat the weapon with poison, you may choose which poison to use.
 \end{magicitemdef}
 
-%price as 5th level spell? similar to 20 uses of a one-shot item worth 1000 gp, so sure
-\impdescription{Poisoning, Greater}{24,000}{13th}{Moderate Conjuration/Transmutation (Creation, Temporal)}{10th}{Swift (specific action) and standard (specific action)} This ability functions like the \magicitem{poisoning} weapon ability, except that it can duplicate liquid poisons of up to 1,000 gp per dose.
-In addition, up to five different poisons can be stored within the weapon.
-When you coat the weapon with poison, you may choose which poison to use.
+\begin{magicitemdef}{Returning}[Passive]{1}[Melee]{Conjuration [Teleportation]}{as weapon}
+    \magicitemability{Passive} After being thrown or fired, a returning weapon teleports back to the creature that threw or fired it.
+    It returns to the thrower just before the creature's next turn (and is therefore ready to use again in that turn).
 
-\mitemreq{Conjuration, Transmutation}{5}{10th}{Craft (as weapon) 14}
+    Catching a returning weapon when it comes back is a free action.
+    If you can't catch it, the weapon drops to the ground in the square from which it was thrown.
+\end{magicitemdef}
 
-\impdescription{Returning}{1,000}{6th}{Faint Conjuration (Translocation) [Teleportation]}{4th}{\x} After being thrown or fired, a returning weapon teleports back to the creature that threw or fired it.
-It returns to the thrower just before the creature's next turn (and is therefore ready to use again in that turn).
+\begin{magicitemdef}{Returning, Greater}[Passive]{3}[Melee]{Conjuration [Teleportation]}{as weapon}
+    \magicitemability{Passive} This weapon functions like a \magicitem{returning} weapon, except that the weapon teleports back to the creature that threw or fired it immediately after the attack is resolved, allowing the creature to make multiple attacks in the same round with the same thrown weapon.
+\end{magicitemdef}
 
-Catching a returning weapon when it comes back is a free action.
-If you can't catch it, the weapon drops to the ground in the square from which it was thrown.
+% As 7th level spell? I have no idea.
+% There aren't actually any spells this can be based on.
+\begin{magicitemdef}{Soulreaving}[Passive]{7}[Melee, Ranged]{Necromancy [Soul]}{as weapon}
+    \magicitemability{Passive} It ignores all damage reduction, but it does not deal hit point damage.
+    In fact, a creature struck by the weapon does not feel the attack at all.
+    Damage that would be dealt by the weapon can be delayed indefinitely.
+    While the damage is delayed, it cannot be cured or dispelled.
 
-\mitemreqdesc{Conjuration}{Translocation}{Teleportation}{2}{4th}{Craft (as weapon) 8}
+    A soulreaver weapon has no effect on objects or constructs.
+    While wielded, it has physical form only for its wielder, making it impossible to disarm.
+    While not in use, it can be picked up and touched normally.
 
-\impdescription{Returning, Greater}{5,000}{10th}{Faint Conjuration (Translocation) [Teleportation]}{6th}{\x} This ability functions like the \magicitem{returning} ability, except that the weapon teleports back to the creature that threw or fired it immediately after the attack is resolved, allowing the creature to make multiple attacks in the same round with the same thrown weapon.
+    \magicitemability{Active}[Standard action] The wielder can strike themselves in the heart with the weapon to convert the delayed damage into real damage.
+    This deals no damage to the wielder, but any creatures that have been dealt damage by the weapon immediately take damage equal to the delayed damage the weapon has stored up for them.
+    Any such damage dealt in excess of the creature's hit points is converted directly into critical damage.
+\end{magicitemdef}
 
-\mitemreqdesc{Conjuration}{Translocation}{Teleportation}{3}{6th}{Craft (as weapon) 10}
+\begin{magicitemdef}{Shocking}[Active]{2}[Melee, Ranged]{Evocation [Electricity]}{as weapon}
+    \magicitemability{Active}[Standard action] If you speak a command word, you can charge this weapon with electricity and make a single strike with it.
+    The next time you hit with the weapon, the target takes 1d8 electricity damage per two item power in addition to the damage from your attack.
 
-%As 7th level spell? I have no idea.
-There aren't actually any spells this can be based on.
-\impdescription{Soulreaving}{60,000}{16th}{Strong Necromancy (Soul)}{16th}{\x and standard (specific action)} This ghostly, translucent weapon strikes directly at the target's soul.
-It ignores all damage reduction, but it does not deal hit point damage.
-In fact, a creature struck by the weapon does not feel the attack at all.
-Damage that would be dealt by the weapon can be delayed indefinitely.
-While the damage is delayed, it cannot be cured or dispelled.
+    If the attack misses, the weapon maintains its charge for up to 5 rounds.
+\end{magicitemdef}
 
-In order to convert the delayed damage into real damage, the wielder must stab themselves through the heart with the weapon as a standard action.
-This deals no damage to the wielder, but any creatures that have been dealt damage by the weapon immediately take lethal damage equal to the delayed damage the weapon has stored up for them.
-Any such damage dealt in excess of the creature's hit points is converted directly into critical damage.
+\begin{magicitemdef}{Surestrike}[Active]{3}[Melee, Ranged]{Divination [Knowledge]}{as weapon}
+    \magicitemability{Triggered}[Immediate action] When you miss an attack with this weapon, you can activate it to reroll the attack roll.
+    You must take the second result.
 
-A soulreaver weapon has no effect on objects or constructs.
-While wielded, it has physical form only for its wielder, making it impossible to disarm.
-While not in use, it can be picked up and touched normally.
+    After you activate this ability, you see shadowy glimpses of alternate futures superimposed over objects and creatures you see.
+    This effect lasts for 5 rounds, during which time you cannot activate this ability again.
+\end{magicitemdef}
 
-\mitemreq{Necromancy}{Soul}{7}{14th}{Craft (as weapon) 18}
+\begin{magicitemdef}{Thieving}[Active]{3}[Melee]{Transmutation [Alteration, Sizing]}{as weapon}
+    \magicitemability{Triggered}[Immediate action] When you strike an unattended object with this weapon, if the object is at least one size category smaller than the weapon, you may activate the weapon.
+    If you do, the object is absorbed into the weapon, leaving no trace that it ever existed.
+    If you use this weapon to make a successful disarm attempt, the disarmed object is considered unattended, allowing you to activate the weapon to absorb the object.
 
-\impdescriptiondc{Shocking}{1,600}{7th}{Faint Evocation (Energy) [Electricity]}{4th}{Immediate (triggered)}{Fortitude (level \add 2)} When you strike a foe with this weapon, you can unleash an powerful electrical jolt from the weapon.
-If you do, make a Fortitude attack.
-If you succeed, your foe is \staggered for 5 rounds.
+    \magicitemability{Passive} Items absorbed by the weapon remain stored in the weapon indefinitely.
+    As a standard action, you can run your hand along the length of the striking surface of the weapon.
+    If you do, the last item absorbed by the weapon appears in your hand.
 
-When you activate this ability, the weapon crackles with electrical energy, causing damage you deal with it to be treated as electrical damage in addition to its other types.
-This effect lasts for 5 rounds, during which time you cannot activate the item's abilities.
+    The weapon can hold no more than three objects at once.
+    If you attempt to absorb an object while the weapon is full, the attempt fails.
+\end{magicitemdef}
 
-\mitemreqdesc{Evocation}{Energy}{Electricity}{2}{4th}{Craft (as weapon) 8}
+\begin{magicitemdef}{Thundering}[Active]{2}[Melee, Ranged]{Evocation [Sonic]}{as weapon}
+    \magicitemability{Active}[Standard action] If you speak a command word, you can imbue this weapon with a rumbling sonic energy and make a single strike with it.
+    The next time you hit with the weapon, it emits a deafening thundering noise.
+    When it does, you make a special attack vs. Fortitude against all creatures within 10 feet of the struck creature (excluding yourself).
+    Success means a target is \deafened.
 
-\impdescription{Surestrike}{4,000}{9th}{Faint Divination (Knowledge)}{8th}{Immediate (triggered)} When you miss an attack with this weapon, you can activate it to reroll the attack roll.
-You must take the second result.
+    If the attack misses, the weapon continues to rumble threateningly for up to 5 rounds.
+\end{magicitemdef}
 
-When you activate this ability, you see shadowy glimpses of alternate futures superimposed over objects and creatures you see.
-This effect lasts for 5 rounds, during which time you cannot activate the item's abilities.
+\begin{magicitemdef}{Vampiric}[Active]{3}[Melee]{Necromancy [Life]}{as weapon}
+    \magicitemability{Active}[Move action] If you lick the striking part of this weapon, you regain hit points equal to the damage dealt by the weapon on its last successful attack.
+    If the weapon has not dealt damage in the past round, you regain no hit points.
+\end{magicitemdef}
 
-\mitemreq{Divination}{Knowledge}{3}{6th}{Craft (as weapon) 10}
-
-\impdescription{Thieving}{4,000}{9th}{Faint Transmutation (Alteration)}{4th}{Immediate (trigger) and standard (specific action)} When you strike an object with this weapon, if the object is at least one size category smaller than the weapon, you may activate the weapon.
-If you do, the object is absorbed into the weapon, leaving no trace that it ever existed.
-Striking an attended object requires a successful disarm attempt.
-
-You can retrieve objects from the weapon by running your hand along the length of the striking surface of the weapon (a standard action).
-If you do, the last item absorbed by the weapon appears in your hand.
-You may freely retrieve objects from within the weapon, but absorbing objects costs an activation.
-
-The weapon can hold no more than three objects at once.
-If you attempt to absorb an object while the weapon is full, the attempt fails.
-
-\mitemreq{Transmutation}{Alteration}{2}{4th}{Craft (as weapon) 8}
-
-\impdescriptiondc{Thundering}{400}{4th}{Faint Evocation (Energy) [Sonic]}{2nd}{Immediate (triggered)}{Fortitude (level \add 1)} When you strike a foe with this weapon in melee, you can detonate a deafening roll of thunder.
-If you do, make a Fortitude attack against the struck foe and all other creatures within a \areasmall radius of you.
-A successful attack deafens a creature for 5 rounds.
-You are immune to the deafening effect.
-
-After you activate this ability, the weapon emits non-damaging thunderous echoes whenever it strikes a solid object or creature.
-This effect lasts for 5 rounds, during which time you cannot activate the item's abilities.
-
-\mitemreqdesc{Evocation}{Energy}{Sonic}{4}{8th}{Craft (as weapon) 8}
-
-\impdescription{Vampiric}{1,600}{7th}{Faint Necromancy (Life)}{4th}{Move (specific action)} If you lick the striking part of this weapon (a move action), you regain hit points equal to the damage dealt by the weapon on its last successful attack.
-If the weapon has not dealt damage in the past round, you regain no hit points.
-
-\mitemreq{Necromancy}{Life}{2}{4th}{Craft (as weapon) 8}
-
-%8th level - 9th level for Power Word Kill, down to 8th because the trigger is
-%so hard to pull off
-\impdescription{Vorpal}{140,000}{18th}{Strong Transmutation (Augment)}{18th}{Immediate (triggered)} If you roll a 20 with this weapon and confirm the critical hit, you can instantly decapitate your foe.
-If you do, it dies immediately.
-This has no effect on creatures without a discernable head, creatures unaffected by the loss of a single head, or creatures whose head you cannot reach.
-
-\mitemreq{Transmutation}{Augment}{9}{18th}{Craft (as weapon) 22}
+\begin{magicitemdef}{Vorpal}[Passive]{8}[Melee]{Transmutation [Augment]}{as weapon}
+    \magicitemability{Passive} When you roll a natural 20 with this weapon, you deliver a vorpal blow.
+    You immediately make any number of additional strikes against the struck creature until you miss a strike or hit with 10 successful strikes.
+    All damage dealt in this way is considered to come from a single attack.
+    This efffect replaces the normal benefits of delivering a critical hit.
+\end{magicitemdef}
 
 \begin{comment}
 \subsection{Rods}
