@@ -707,9 +707,17 @@
 
 \DeclareDocumentCommand{\spelldamage}{m o}
 {
-    \IfValueTF{#2}
-    {1#2~#1~damage~per~two~spellpower}
-    {1d6~#2~damage~per~spellpower}
+    \ifstr{#1}{}
+    {
+        \IfValueTF{#2}
+        {1#2~damage~per~two~spellpower}
+        {1d6~damage~per~spellpower}
+    }
+    {
+        \IfValueTF{#2}
+        {1#2~#1~damage~per~two~spellpower}
+        {1d6~#1~damage~per~spellpower}
+    }
 }
 
 \DeclareDocumentCommand{\spellquicktargeting}{m m}
