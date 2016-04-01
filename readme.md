@@ -1,1 +1,1 @@
-[Rise PDF](github.com/Vadskye/misc/raw/master/Rise/Rise.pdf)
+[Rise PDF](https://github.com/Vadskye/Rise/raw/master/Rise.pdf)
