@@ -375,7 +375,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Black Tentacles}[5]
+\begin{spellsection}{Black Tentacles}[4]
     \begin{spellheader}
         \spelldesc{You create a field of rubbery black tentacles, each 5 feet long. These waving members seem to spring forth from the earth, floor, or whatever surface is underfoot -- including water. They grasp and entwine around creatures that enter the area, holding them fast and crushing them with great strength.}
     \end{spellheader}
@@ -469,7 +469,7 @@
             \spelltwocol{\spelltgts{One creature}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target gains an offensive legend point.
+            \spelleffect The target gains a legend point.
             \spelldur \durshort or until expended
         \end{spelleffects}
     \end{spellcontent}
@@ -498,16 +498,17 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Blink}[5]
+\begin{spellsection}{Blink}[6]
     \begin{spellheader}
-        \spelldesc{You rapidly blink in and out of reality, confounding your foes and protecting you from their attacks.}
+        \spelldesc{You cause your ally to rapidly blink in and out of reality, confounding his foes and protecting him from their attacks.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltgt{You}
+            \spellquicktargeting{One willing creature}{\rngclose}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect You spend half your time on the Astral Plane. All attacks against you have a 50\% chance to fail.
+            \spelleffect The target spends half its time on the Astral Plane.
+            All attacks against it have a 50\% chance to fail.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
@@ -515,64 +516,6 @@
         \spellinfo{Conjuration [Planar]}{Arcane}
         \spellnotes If you are on the Astral Plane when you cast this spell, it has no effect.
         \miscastexplode
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Blur}[2]
-    \begin{spellheader}
-        \spelldesc{You distort an ally's outline so it appears blurred, shifting, and wavering.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect The target gains a \plus5 bonus to Stealth checks, and is always treated as having concealment for the purpose of making Stealth checks.
-            \spelldur \durpersonallong
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Illusion [Glamer]}{Arcane}
-        \miscastrandom
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Boon of Awareness}[1]
-    \begin{spellheader}
-        \spelldesc{Your ally becomes acutely awareness of his surroundings.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{One willing creature}{\rngclose}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect The target gains a bonus to Awareness checks equal to your spellpower, up to a maximum modifier equal to twice your spellpower.
-            \spelldur \durshort
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Divination [Awareness]}{Arcane, Knowledge}
-        \miscastrandom
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Boon of Farsight}[3]
-    \begin{spellheader}
-        \spelldesc{Your ally becomes able to see and fight well at great distances.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{One willing creature}{\rngclose}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect The target reduces its \glossterm{range increment} penalties by an amount equal to your spellpower.
-            In addition, it reduces its Awareness penalties for seeing at great distances by the same amount.
-            \durshort
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Divination [Awareness]}{Arcane, Knowledge}
-        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -585,14 +528,15 @@
             \spellquicktargeting{One willing creature}{\rngclose}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect Choose a Knowledge skill.
-            The target gains a bonus to checks with that skill equal to your spellpower, up to a maximum modifier equal to twice your spellpower.
-            In addition, it is treated as being trained in that skill.
+            \spelleffect The target gains a \plus5 bonus to Knowledge checks.
+            In addition, it is treated as being trained in all Knowledge skills, allowing it to make any Knowledge check.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Divination [Knowledge]}{Arcane, Knowledge}
+        \spellnotes A creature who has already tried to use a Knowledge skill about a topic may retry the attempt under the effects of this spell, because its Knowledge modifier changed.
+        However, repeated castings of this spell do not grant additional attempts to recall information about a topic.
         \miscastrandom
     \end{spellfooter}
 \end{spellsection}
@@ -606,7 +550,8 @@
             \spellquicktargeting{One willing creature}{\rngclose}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target reduces its \glossterm{overwhelm penalties} by an amount equal to half your spellpower.
+            \spelleffect The target gains a \plus5 bonus to Awareness checks.
+            In addition, it reduces its \glossterm{overwhelm penalties} by 5 (to a minimum of 0).
             If this effect reduces the target's overwhelm penalty to 0, it is not considered to be overwhelmed.
             \spelldur \durshort
         \end{spelleffects}
@@ -617,7 +562,64 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Boon of Precision}[6]
+\begin{spellsection}{Boon of Mastery}[3]
+    \begin{spellheader}
+        \spelldesc{Your ally becomes skilled in all things.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spellquicktargeting{One willing creature}{\rngclose}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect The target gains a \plus5 bonus to all skills.
+            \spelldur \durshort
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Divination [Knowledge]}{Arcane, Knowledge}
+        \miscastrandom
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}[Greater]{Boon of Mastery}[6]
+    \begin{spellheader}
+        \spelldesc{Your ally becomes greatly skilled in all things.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spellquicktargeting{One willing creature}{\rngclose}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect The target gains a \plus10 bonus to all skills.
+            \spelldur \durshort
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Divination [Knowledge]}{Arcane, Knowledge}
+        \miscastrandom
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Boon of Perception}[1]
+    \begin{spellheader}
+        \spelldesc{Your ally becomes acutely aware of their surroundings.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spellquicktargeting{One willing creature}{\rngclose}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect The target gains a \plus5 bonus to Awareness, Sense Motive, and Spellcraft checks.
+            \spelldur \durshort
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Divination [Awareness]}{Arcane, Knowledge}
+        \miscastrandom
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Boon of Precision}[5]
     \begin{spellheader}
         \spelldesc{Your ally gains the ability to see the weak points of creatures she fights.}
     \end{spellheader}
@@ -1362,7 +1364,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target gains the ability to see 50 feet even in total darkness. Beyond 60 feet, the target can see dimly, treating areas of darkness as shadowy illumination. Darkvision does not function if a creature is in an area of bright light or is dazzled. Darkvision is black and white only, but otherwise like normal sight.
-            \spelldur \durmed
+            \spelldur \durlong
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -1398,41 +1400,22 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Death Ward}[3]
+\begin{spellsection}{Death Ward}[4]
     \begin{spellheader}
-        \spelldesc{You shield an ally from deadly spells.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One living creature}}{\spellrng{\rngclose}}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect The target is immune to all death spells, magical death effects, energy drain, and any negative energy effects.
-            \spelldur \durshort
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Abjuration/Vivimancy [Positive, Shielding]}*{Death, Divine, Good, Protection}
-        \spellnotes This spell doesn't remove negative levels that the target has already gained. It does not protect against other sorts of attacks, even if those attacks might be lethal.
-        \miscastrandom
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}[Mass]{Death Ward}[7]
-    \begin{spellheader}
-        \spelldesc{You shield your allies from deadly spells.}
+        \spelldesc{You shield your allies from deadly spells and abilities.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
             \spelltwocol{\spelltgts{Five living creatures}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target is protected, as \spell{death ward}.
+            \spelleffect The target is immune to \glossterm{Death} effects and negative energy effects.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Abjuration/Vivimancy [Positive, Shielding]}*{Death, Divine}
+        \spellinfo{Abjuration/Vivimancy [Positive, Shielding]}*{Death, Divine, Good, Protection}
+        \spellnotes This does not prevent the target from dying by means other than Death effects, such as by taking critical damage.
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -1461,7 +1444,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Deflection}[3]
+\begin{spellsection}{Deflection}[2]
     \begin{spellheader}
         \spelldesc{You shield yourself from enemy attacks, causing them to deflect away from you harmlessly.}
     \end{spellheader}
@@ -1499,7 +1482,7 @@
     \end{spellcontent}
 \end{spellsection}
 
-\begin{spellsection}{Delay Poison}[2]
+\begin{spellsection}{Delay Poison}[1]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -1580,7 +1563,7 @@
             \spelleffect As you cast this spell, you choose an alignment: good, evil, lawful, or chaotic. Anything within the spell's area that has the chosen alignment has a faint aura, visible only to you.
 
             As a swift action, you can concentrate on an aura to determine the strength of the aura. Most aligned creatures and magic items have a faint aura. Creatures that embody the alignment, such as outsiders with the appropriate subtype and undead,  have a moderate aura. Creatures that act directly on behalf of the alignment, such as paladins, have a strong aura. Extraordinary magical objects or effects, such as artifacts, can also have a strong aura.
-            \spelldur Focus
+            \spelldur 5 rounds
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -1657,11 +1640,12 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
+            \spelltime Standard action. If you cast this spell on yourself, you can cast it as a move action instead.
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
-                \spelleffect The target teleports to a destination in range. The destination must be an unoccupied space on stable ground. If the destination is invalid, the spell fails.
+                \spelleffect The target teleports to a destination up to 100 feet away from its original location. The destination must be an unoccupied space on stable ground. If the destination is invalid, the spell fails.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -1913,16 +1897,18 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}[Greater]{Divine Favor}[5]
+\begin{spellsection}{Divine Favor}[3]
     \begin{spellheader}
-        \spelldesc{You imbue yourself with great strength and skill in combat by calling upon the divine power of your patron.}
+        \spelldesc{You imbue yourself with divine fortune by calling on your patron.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
             \spelltgt{You}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect You gain a legend point. If you spend it, you get another legend point 5 rounds later.
+            \spelleffect You gain an legend point.
+            This legend point can only be spent on physical actions, such as strikes with your weapon.
+            If you spend it, you get another legend point 5 rounds later.
             \spelldur \durlong \dismissable
         \end{spelleffects}
     \end{spellcontent}
@@ -1932,7 +1918,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Divine Might}[6]
+\begin{spellsection}{Divine Might}[5]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -2007,7 +1993,7 @@
             \begin{spellattack}{Spellpower vs. Fortitude}
                 \spellsuccess \spelldamage{life}. You gain temporary hit points equal to half the damage you deal. You can't gain more hit points than the target had.
 
-                The temporary hit points disappear after 5 minutes. If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
+                The temporary hit points disappear after 5 rounds. If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
                 \spellfailure Half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -2150,7 +2136,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Energy Conversion}[7]
+\begin{spellsection}{Energy Conversion}[6]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -2325,7 +2311,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Ethereal Jaunt}[6]
+\begin{spellsection}{Ethereal Jaunt}[5]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -2668,7 +2654,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Flame Blade}[2]
+\begin{spellsection}{Flame Blade}[1]
     \begin{spellheader}
         \spelldesc{You create a 3 foot long beam of red-hot fire to serve you as a weapon.}
     \end{spellheader}
@@ -2677,7 +2663,6 @@
             \spelleffect A scimitar-like weapon appears in your hand. You can attack with it as a light melee weapon, except that you use your spellpower in place of your Strength for damage, and it deals both fire and slashing damage.
 
             Alternately, you can hurl flames from the weapon up to \rngmed range as if it were a thrown weapon.
-
             \spelldur \durmed \dismissable
         \end{spelleffects}
     \end{spellcontent}
@@ -2816,21 +2801,6 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Foresight}[3]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelleffects}
-            \spelleffect You cannot be caught \unaware.
-            \spelldur \durlong
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Divination}{Divination, Knowledge}
-        \miscastexplode
-    \end{spellfooter}
-\end{spellsection}
-
 \begin{spellsection}{Forget}[1]
     \begin{spellheader}
     \end{spellheader}
@@ -2851,7 +2821,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Freedom}[3]
+\begin{spellsection}{Freedom}[2]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -2869,7 +2839,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}[Mass]{Freedom}[7]
+\begin{spellsection}[Mass]{Freedom}[5]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -2918,7 +2888,6 @@
     \begin{spellcontent}
         \begin{spelltargetinginfo}
             \spelltwocol{\spelltgt{One willing corporeal creature}}{\spellrng{\rngtouch}}
-            \spellcmp{Somatic only}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target becomes a cloud of mist. All its equipment melds into its new form, though magical equipment retains its effects. Its Armor defense becomes 10, but it is immune to physical damage and critical hits.
@@ -3100,7 +3069,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}[Lesser]{Haste}[2]
+\begin{spellsection}[Lesser]{Haste}[1]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -3119,7 +3088,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Haste}[6]
+\begin{spellsection}{Haste}[5]
     \begin{spellheader}
         \spelldesc{You accelerate your ally's motions, causing her to move and act more quickly than normal.}
     \end{spellheader}
@@ -3214,7 +3183,9 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target becomes immune to fear and gains temporary hit points equal to twice your spellpower. In addition, it gains an offensive legend point.
+            \spelleffect The target becomes immune to fear and gains temporary hit points equal to twice your spellpower.
+            In addition, it gains a legend point.
+            This legend point can only be spent on physical actions, such as strikes with its weapon.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
@@ -4386,7 +4357,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Moment of Prescience}[4]
+\begin{spellsection}{Moment of Prescience}[3]
     \begin{spellheader}
         \spelldesc{You extend your mind a fraction of a second into the future, allowing you to succeed where you would have failed.}
     \end{spellheader}
@@ -4403,27 +4374,6 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Divination}{Divination, Knowledge}
-        \spellnotes After using this spell, you cannot cast any \spell{moment of prescience} spell for 1 hour.
-        \miscastexplode
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}[Greater]{Moment of Prescience}[8]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltgt{You}
-            \spelltime{Immediate action}
-            \spellspecial You can cast this spell any time you could use a legend point, even while casting another spell.
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect You gain two legend points.
-            \spelldur Until the end of the round
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Divination}{Arcane, Divination, Knowledge}
         \spellnotes After using this spell, you cannot cast any \spell{moment of prescience} spell for 1 hour.
         \miscastexplode
     \end{spellfooter}
@@ -4704,39 +4654,38 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Precognition}[5]
+\begin{spellsection}{Precognition}[4]
     \begin{spellheader}
-        \spelldesc{You gain a sixth sense in relation to yourself.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltgt{You}
+            \spellquicktargeting{One creature}{\rngclose}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect You gain two legend points.
+            \spelleffect The target gains two legend points.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Divination}{Arcane, Divination}
+        \spellinfo{Divination}{Divination}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}[Greater]{Precognition}[9]
+\begin{spellsection}[Greater]{Precognition}[7]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltgt{You}
+            \spellquicktargeting{One creature}{\rngclose}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect You gain three legend points.
+            \spelleffect The target gains three legend points.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Divination}{Arcane, Divination}
+        \spellinfo{Divination}{Divination}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -4746,15 +4695,15 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltgt{You}
+            \spellquicktargeting{One creature}{\rngclose}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect You gain a legend point.
+            \spelleffect The target gains a legend point.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Divination}{Arcane, Divination}
+        \spellinfo{Divination}{Divination}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -4925,7 +4874,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{Touch}}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spellspecial Choose an alignment other than neutral (chaotic, good, evil, lawful).
@@ -5090,14 +5039,12 @@
             \spellquicktargeting{One creature}{\rngclose}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spellspecial Choose a type of energy (acid, cold, electricity, fire).
-            \spelleffect The target gains damage reduction against the chosen energy type equal to twice your spellpower.
-            \spelldur \durpersonallong
+            \spelleffect The target gains damage reduction against energy damage (acid, cold, electricity, fire) equal to your spellpower.
+            \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Abjuration [Shielding]}{Arcane, Divine, Nature, Protection}
-        \spellnotes A character can only be affected by one \spell{resist energy} spell at once.
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -5192,7 +5139,7 @@
         \begin{spelleffects}
             \spellspecial This spell has three versions. Its effects depend on which version is chosen.
             \spelleffect[\subspell{Revelation of Destruction}] You inflict a vision of a terrible future upon the target. It is \severelyimpaired with all actions as it struggles to avoid the certainty of its own doom.
-            \spelleffect[\subspell{Revelation of Prowess}] You show the target a vision of its success in the combat to come. It gains the benefits of a \spell{precognition} spell.
+            \spelleffect[\subspell{Revelation of Prowess}] You show the target a vision of its success in the combat to come. It gains the benefits of a \spell{greater precognition} spell.
             \spelleffect[\subspell{Revelation of Truth}] You show the target the truth of the world around it. It gains the benefits of a \spell{true seeing} spell.
             \spelldur \durshort
         \end{spelleffects}
@@ -5428,16 +5375,16 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}[Mass]{See Invisibility}[6]
+\begin{spellsection}[Mass]{See Invisibility}[4]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{Up to five creatures}}{\spellrng{Touch}}
+            \spelltwocol{\spelltgt{Up to five creatures}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target can invisible things, as \spell{see invisibility}.
-            \spelldur \durlong
+            \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -5463,7 +5410,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Shadow Umbra}[6]
+\begin{spellsection}{Shadow Umbra}[7]
     \begin{spellheader}
         \spelldesc{You shield your ally with a dark umbra that connects directly to the Plane of Shadow.}
     \end{spellheader}
@@ -5968,7 +5915,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{Touch}}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target gains a climb speed of 20 feet. It must use at least one hand to climb in this manner.
@@ -6094,7 +6041,7 @@
     \end{dtabularx}
 \end{dtable*}
 
-\begin{spellsection}{Stormlord}[6]
+\begin{spellsection}{Stormlord}[5]
     \begin{spellheader}
         \spelldesc{You surround yourself in a whirlwind which deflects ranged attacks and batters your foes.}
     \end{spellheader}
@@ -7029,7 +6976,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{True Seeing}[7]
+\begin{spellsection}{True Seeing}[6]
     \begin{spellheader}
         \spelldesc{You grant your ally the ability to see all things as they actually are.}
     \end{spellheader}
@@ -7121,7 +7068,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Unliving Eyes}[5]
+\begin{spellsection}{Unliving Eyes}[4]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -7344,7 +7291,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgts{One creature}}{\spellrng{Touch}}
+            \spelltwocol{\spelltgts{Five creatures}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target can tread on any liquid as if it were firm ground. Mud, oil, snow, quicksand, running water, ice, and even lava can be traversed easily, since the target's feet hover an inch or two above the surface.
@@ -7508,9 +7455,9 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Zephyr Blade}[1]
+\begin{spellsection}{Zephyr Blade}[2]
     \begin{spellheader}
-        \spelldesc{You imbue a weapon with the power of the wind, allowing it to manipulate air currents as it strikes.}
+        \spelldesc{You imbue a weapon with the power of the wind, allowing it to strike opponents with nothing but the air itself.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
@@ -7518,33 +7465,14 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target weapon gains an additional five feet of reach, extending the wielder's threatened area.
+
+            In addition, the weapon can also be used to attack as a ranged weapon by expelling blasts of wind. This functions like attacking with the weapon normally, using the wielder's normal attack and damage bonuses, except that the attack is a ranged attack against any creature within \rngclose range. All damage dealt when attacking in this way is bludgeoning damage instead of the attack's normal damage types. This effect does not increase the wielder's threatened area.
             \spelldur \durpersonallong
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation/Transmutation [Air, Augment]}{Air, Nature}
         \spellnotes Despite the name of the spell, it can affect melee weapons of any type, even reach weapons. The weapon's extended reach is visible, and opponents can defend themselves normally against the attacks.
-        \miscastexplode
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}[Greater]{Zephyr Blade}[4]
-    \begin{spellheader}
-        \spelldesc{You imbue a weapon with the full might of the wind, allowing it to shred opponents with nothing but the air itself.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One melee weapon}}{\spellrng{\rngclose}}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spellspecial This spell functions like \spell{zephyr blade}, except that the damage at range is not halved.
-
-            In addition, the weapon can also be used to attack as a ranged weapon by expelling blasts of wind. This functions like attacking with the weapon normally, using the wielder's normal attack and damage bonuses, except that the attack is a ranged attack against any creature within 30 feet. All damage dealt when attacking in this way is bludgeoning damage instead of the attack's normal damage types. This effect does not increase the wielder's threatened area.
-            \spelldur \durpersonallong
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Evocation/Transmutation [Air, Augment]}{Air, Nature}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
