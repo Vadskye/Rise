@@ -1243,3 +1243,79 @@
     \end{spellfooter}
 \end{spellsection}
 
+\begin{spellsection}{Blur}[2]
+    \begin{spellheader}
+        \spelldesc{You distort an ally's outline so it appears blurred, shifting, and wavering.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect The target gains a \plus5 bonus to Stealth checks, and is always treated as having concealment for the purpose of making Stealth checks.
+            \spelldur \durpersonallong
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Illusion [Glamer]}{Arcane}
+        \miscastrandom
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Boon of Farsight}[3]
+    \begin{spellheader}
+        \spelldesc{Your ally becomes able to see and fight well at great distances.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spellquicktargeting{One willing creature}{\rngclose}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect The target reduces its \glossterm{range increment} penalties by an amount equal to your spellpower.
+            In addition, it reduces its Awareness penalties for seeing at great distances by the same amount.
+            \durshort
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Divination [Awareness]}{Arcane, Knowledge}
+        \miscastrandom
+    \end{spellfooter}
+\end{spellsection}
+
+
+\begin{spellsection}[Greater]{Moment of Prescience}[8]
+    \begin{spellheader}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltgt{You}
+            \spelltime{Immediate action}
+            \spellspecial You can cast this spell any time you could use a legend point, even while casting another spell.
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect You gain two legend points.
+            \spelldur Until the end of the round
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Divination}{Arcane, Divination, Knowledge}
+        \spellnotes After using this spell, you cannot cast any \spell{moment of prescience} spell for 1 hour.
+        \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Foresight}[3]
+    \begin{spellheader}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelleffects}
+            \spelleffect You cannot be caught \unaware.
+            \spelldur \durlong
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Divination}{Divination, Knowledge}
+        \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
+
