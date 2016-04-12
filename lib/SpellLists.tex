@@ -19,7 +19,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLsanctuary
     \SLablativespellshield*
 
-    \SLfogcloud[Conj]
+    \SLacidsplash[Conj]
     \SLgrease
     \SLsummonmonsteri
     \SLretrieveobject*
@@ -29,7 +29,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLseeinvisibility
     \SLprecognitionlesser*
 
-    \SLcommand[Ench]
+    \SLholdperson[Ench]
     \SLsanctuary
     \SLsleep
     \SLforget*
@@ -52,19 +52,20 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
     \SLanimatecorpse[Vivi]
     \SLinflictlightwounds
-    \SLwavesoffatiguelesser
+    \SLpowerwordstagger
     \SLunlivingheart*
 
 \end{swspelllist}
 
 \subsubsection{2nd-level Arcane Spells}
 \begin{swspelllist}
-    \SLinertialshield[Abjur]
+    \SLdimensionalanchor[Abjur]
+    \SLinertialshield
     \SLprotectionfromalignment
     \SLsharepain
     \SLablateimpact*
 
-    \SLacidarrow[Conj]
+    \SLfogcloud[Conj]
     \SLplanardisruption
     \SLsummonmonsterii
     \SLdimensionslide*
@@ -74,18 +75,16 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLtruestrike
     \SLreadmind*
 
-    \SLfear[Ench]
-    \SLhypnoticpattern
-    \SLpowerworddaze
+    \SLconfusion[Ench]
+    \SLfear
     \SLcharmperson*
 
-    \SLknock[Evoc]
-    \SLscorchingray
+    \SLconeofcold[Evoc]
+    \SLknock
     \SLsoundburst
     \SLwalloffire
     \SLtelekineticshove*
 
-    \SLmirrorimage[Illus]
     \SLsilentimage*
 
     \SLspiderclimb[Trans]
@@ -93,8 +92,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLtotemicpower
     \SLenlarge*
 
-    \SLghoultouch[Vivi]
-    \SLinflictmoderatewounds
+    \SLinflictmoderatewounds[Vivi]
     \SLsharepain
     \SLcurseofbloodandbone*
 
@@ -104,12 +102,13 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \begin{swspelllist}
 
     \SLdelaydamage[Abjur]
-    \SLdimensionalanchor
     \SLdispelmagic
     \SLresistmagic
     \SLdeflection*
 
-    \SLcreateballista[Conj]
+    \SLacidarrow[Conj]
+    \SLcreateballista
+    \SLglitterdust
     \SLsummonmonsteriii
     \SLrapidreversal*
 
@@ -117,17 +116,19 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLdiscernvulnerability
     \SLmomentofprescience*
 
-    \SLcalmemotions[Ench]
-    \SLconfusion
-    \SLholdperson
+    \SLagony[Ench]
+    \SLcalmemotions
+    \SLcommand
+    \SLholdmonster
     \SLaversion*
 
     \SLfireball[Evoc]
     \SLlifeseekingmissile
     \SLlightningbolt
+    \SLscorchingray
     \SLlevitate*
 
-    \SLdisplacement[Illus]
+    \SLmirrorimage[Illus]
     \SLinvisibility
     \SLminorimage*
 
@@ -138,9 +139,12 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLgaseousform*
 
     \SLdrainlife[Vivi]
+    \SLghoultouch
     \SLeyebite
     \SLinflictseriouswounds
     \SLlifeseekingmissile
+    \SLwavesoffatigue
+    \SLdeathknell*
 
     \SLprismaticbeam[Univ]
 \end{swspelllist}
@@ -151,8 +155,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLfireshield[Abjur]
     \SLinvulnerabilitylesser*
 
-    \SLglitterdust[Conj]
-    \SLretrieveobjectgreater
+    \SLretrieveobjectgreater[Conj]
     \SLdimensiondoor*
 
     \SLboonofmanyeyes[Div]
@@ -160,12 +163,13 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLprecognition*
 
     \SLheroism[Ench]
+    \SLhypnoticpattern
     \SLphantasmalkiller
+    \SLpowerwordimpair
     \SLsleepmass
-    \SLcharmmonster*
+    \SLsuggestion*
 
-    \SLblacktentacles[Evoc]
-    \SLfireshield
+    \SLfireshield[Evoc]
     \SLmissilestorm
     \SLshout
 
@@ -180,8 +184,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
     \SLenervation[Vivi]
     \SLinflictcriticalwounds
-    \SLwavesoffatigue
-    \SLcurseofenfeeblement*
+    \SLcurseofthewaywardmind*
     \SLunlivingeyes*
 
 \end{swspelllist}
@@ -194,24 +197,27 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLrepulsion
     \SLspelltheft*
 
-    \SLacidarrowgreater[Conj]
-    \SLplanardisruptionmass
+    \SLplanardisruptionmass[Conj]
+    \SLsolidfog
     \SLsummonmonsterv
+    \SLweb
     \SLetherealjaunt*
 
     \SLboonofprecision[Div]
     \SLtelepathy*
 
-    \SLagony[Ench]
-    \SLholdmonster
-    \SLpowerwordimpair
+    \SLdiscordantsong[Ench]
+    \SLholdpersonmass
+    \SLcharmmonster*
 
-    \SLforcecage[Evoc]
-    \SLpolarray
+    \SLblacktentacles[Evoc]
+    \SLconeofcoldgreater
+    \SLforcecage
     \SLwalloffiregreater
+    \SLwallofforce
     \SLtelekineticblast*
 
-    \SLmirrorimagegreater[Illus]
+    \SLdisplacement[Illus]
 
     \SLhaste[Trans]
     \SLtotemicmindgreater
@@ -232,10 +238,9 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLenergyconversion
     \SLprohibition*
 
-    \SLacidfog[Conj]
-    \SLicestorm
+    \SLacidarrowgreater[Conj]
+    \SLacidfog
     \SLprojectimage
-    \SLsolidfog
     \SLsummonmonstervi
     \SLblink*
 
@@ -247,28 +252,28 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
     \SLconfusionmass[Ench]
     \SLfearmass
-    \SLhypnoticpatterngreater
-    \SLpowerwordstun
-    \SLsuggestion*
+    \SLpowerwordconfuse
+    \SLdominateperson*
 
     \SLchainlightning[Evoc]
     \SLenergyconversion
-    \SLicestorm
-    \SLwallofforce*
+    \SLpolarray
 
     \SLinvisibilitygreater[Illus]
+    \SLmirrorimagegreater
     \SLmislead
     \SLprojectimage
     \SLpersistentimage*
 
     \SLdisintegrate[Trans]
     \SLseeinvisibilitymass
-    \SLslowmass
+    \SLtemporalstasis
 
-    \SLharm[Vivi]
+    \SLfingerofdeath[Vivi]
+    \SLharm
     \SLinflictmoderatewoundsmass
     \SLstriptheflesh
-    \SLdeathknell*
+    \SLwavesofexhaustion
 
     \SLprismaticspray[Univ]
 
@@ -277,32 +282,30 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \subsubsection{7th-level Arcane Spells}
 \begin{swspelllist}
 
-    \SLshadowumbra[Abjur]
-    \SLspellturning
+    \SLspellturning[Abjur]
     \SLantimagicfield*
 
     \SLfogsea[Conj]
+    \SLicestorm
     \SLsummonmonstervii
 
     \SLprecognitiongreater*[Div]
 
     \SLconfusionmass[Ench]
     \SLdeepslumber
-    \SLfeeblemind
-    \SLholdpersonmass
-    \SLdominateperson*
+    \SLholdmonstermass
+    \SLfeeblemind*
 
-    \SLshoutgreater[Evoc]
+    \SLicestorm[Evoc]
+    \SLshoutgreater
 
     \SLinvisibilitymass[Illus]
-    \SLshadowumbra
 
-    \SLtemporalstasis[Trans]
+    \SLslowmass[Trans]
     \SLtrueseeing
 
-    \SLfingerofdeath[Vivi]
-    \SLinflictseriouswounds
-    \SLwavesoffatiguegreater
+    \SLinflictseriouswounds[Vivi]
+    \SLpowerwordblind
 
 \end{swspelllist}
 
@@ -313,17 +316,15 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
     \SLimprisonment[Conj]
     \SLmaze
-    \SLweb
     \SLdimensiondoormass*
 
     \SLreadmindmass[Div]
     \SLmomentofpresciencegreater*
 
-    \SLdiscordantsong[Ench]
-    \SLheroismgreater
+    \SLheroismgreater[Ench]
+    \SLhypnoticpatterngreater
     \SLphantasmalkillermass
-    \SLpowerwordconfuse
-    \SLfeeblemind*
+    \SLsuggestionmass*
 
     \SLmissilestormgreater[Evoc]
 
@@ -332,12 +333,10 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLhastemass[Trans]
     \SLimprisonment
     \SLironbody
-    \SLtemporalstasis
     \SLreversegravity*
 
     \SLenervationgreater[Vivi]
     \SLinflictcriticalwoundsmass
-    \SLcurseofthewaywardmind*
 
 \end{swspelllist}
 
@@ -345,6 +344,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \begin{swspelllist}
 
     \SLdisjoinmagic[Abjur]
+    \SLshadowumbra
     \SLinvulnerability*
 
     \SLshadowpuppet
@@ -354,13 +354,13 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLrevelation[Div]
 
     \SLdeepslumber[Ench]
-    \SLholdmonstermass
     \SLirresistibledance
     \SLdominatemonster*
 
     \SLmeteorswarm[Evoc]
 
     \SLshadowpuppet[Illus]
+    \SLshadowumbra
     \SLfalsereality*
 
     \SLassimilate[Trans]
@@ -370,7 +370,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLassimilate[Vivi]
     \SLcripple
     \SLhorridwilting
-    \SLpowerwordblind
     \SLwailofthebanshee*
 
     \SLprismaticstorm[Univ]
@@ -568,10 +567,10 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \begin{spelllist}
     \SLbane
     \SLbless
-    \SLcommand
     \SLcurelightwounds
     \SLdelaypoison
     \SLentropicshield
+    \SLholdperson
     \SLinflictlightwounds
     \SLregenerationlesser
     \SLresistenergy
@@ -585,6 +584,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLaid
     \SLcuremoderatewounds
     \SLdetectalignment
+    \SLdimensionalanchor
     \SLfreedom
     \SLinflictmoderatewounds
     \SLmarkoftracking
@@ -600,12 +600,12 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
 \subsubsection{3rd-level Divine Spells}
 \begin{spelllist}
+    \SLcommand
     \SLcureseriouswounds
     \SLcurseofbloodandbone
-    \SLdimensionalanchor
     \SLdispelmagic
     \SLdivinefavor
-    \SLholdperson
+    \SLholdmonster
     \SLinflictseriouswounds
     \SLspiritualweapon
     \SLsummonmonsteriii
@@ -614,9 +614,9 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \subsubsection{4th-level Divine Spells}
 \begin{spelllist}
     \SLairwalk
+    \SLbanemass
     \SLbladebarrier
     \SLblessmass
-    \SLcommandmass
     \SLcurecriticalwounds
     \SLdeathward
     \SLdiscernlies
@@ -631,11 +631,13 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
 \subsubsection{5th-level Divine Spells}
 \begin{spelllist}
-    \SLbanemass
+    \SLblasphemy
     \SLcurelightwoundsmass
+    \SLdictum
     \SLdivinemight
     \SLflamestrike
-    \SLholdmonster
+    \SLholdpersonmass
+    \SLholyword
     \SLinflictlightwoundsmass
     \SLplanardisruptionmass
     \SLrevivify
@@ -647,14 +649,13 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
 \subsubsection{6th-level Divine Spells}
 \begin{spelllist}
-    \SLblasphemy
     \SLcacaphonicword
+    \SLcommandmass
     \SLcuremoderatewoundsmass
-    \SLdictum
+    \SLdestruction
     \SLdispelmagicgreater
     \SLharm
     \SLheal
-    \SLholyword
     \SLinflictmoderatewoundsmass
     \SLregeneration
     \SLsummonmonstervi
@@ -666,10 +667,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLantimagicfield
     \SLantilifeshell
     \SLcureseriouswoundsmass
-    \SLdestruction
-    \SLdictum
-    \SLholdpersonmass
-    \SLholyword
+    \SLholdmonstermass
     \SLinflictseriouswoundsmass
     \SLsummonmonstervii
     \SLtrueseeing
@@ -679,6 +677,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \begin{spelllist}
     \SLcloakofchaos
     \SLcurecriticalwoundsmass
+    \SLearthquake
     \SLenervationgreater
     \SLholyaura
     \SLinflictcriticalwoundsmass
@@ -689,8 +688,6 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
 \subsubsection{9th-level Divine Spells}
 \begin{spelllist}
-    \SLearthquake
-    \SLholdmonstermass
     \SLimplosion
     \SLstormofvengeance
     \SLsummonmonsterix
@@ -754,9 +751,9 @@ Summoning spells summon air elementals only.
     \SLentropicshield[1]
     \SLforget[1]
     \SLprotectionfromalignment[2]
+    \SLchaoshammer[2]
     \SLconfusion[3]
     \SLsummonmonsteriii[3]
-    \SLchaoshammer[3]
     \SLprismaticwall[5]
     \SLcacaphonicword[6]
     \SLsummonmonstervi[6]
@@ -772,17 +769,15 @@ Summoning spells summon chaotic creatures only.
 
 \begin{spelllist}
     \SLunlivingheart[1]
-    \SLwavesoffatiguelesser[1]
     \SLcurseofbloodandbone[3]
-    \SLcurseofenfeeblement[4]
+    \SLwavesoffatigue[3]
     \SLdeathward[4]
     \SLenervation[4]
     \SLpoison[4]
-    \SLwavesoffatigue[4]
     \SLdeathknell[6]
+    \SLfingerofdeath[6]
     \SLharm[6]
-    \SLfingerofdeath[7]
-    \SLwavesoffatiguegreater[7]
+    \SLwavesofexhaustion[6]
     \SLenervationgreater[8]
     \SLwailofthebanshee[9]
 \end{spelllist}
@@ -800,14 +795,12 @@ Summoning spells summon chaotic creatures only.
     \SLshout[4]
     \SLflamestrike[5]
     \SLpolarray[5]
+    \SLdestruction[6]
     \SLdisintegrate[6]
-    \SLicestorm[6]
-    \SLskysmite[6]
-    \SLdestruction[7]
     \SLrotburstgreater[7]
     \SLshoutgreater[7]
+    \SLearthquake[8]
     \SLfirestorm[8]
-    \SLearthquake[9]
     \SLimplosion[9]
     \SLmeteorswarm[9]
 \end{spelllist}
@@ -849,9 +842,9 @@ Summoning spells summon chaotic creatures only.
     \SLsummonmonsterv[4]
     \SLtransmutefleshandstone[5]
     \SLsummonmonsterviii[7]
+    \SLearthquake[8]
     \SLimprisonment[8]
     \SLironbody[8]
-    \SLearthquake[9]
 \end{spelllist}
 Summoning spells summon earth elementals only.
 
@@ -860,11 +853,11 @@ Summoning spells summon earth elementals only.
 \begin{spelllist}
     \SLbane[1]
     \SLprotectionfromalignment[2]
+    \SLunholyblight[2]
     \SLsummonmonsteriii[3]
-    \SLunholyblight[3]
+    \SLbanemass[4]
     \SLenervation[4]
-    \SLbanemass[5]
-    \SLblasphemy[6]
+    \SLblasphemy[5]
     \SLdeathknell[6]
     \SLharm[6]
     \SLsummonmonstervi[6]
@@ -899,14 +892,14 @@ Summoning spells summon fire elementals only.
 
 \begin{spelllist}
     \SLbless[1]
+    \SLholysmite[2]
     \SLprotectionfromalignment[2]
     \SLsummonmonsteriii[3]
-    \SLholysmite[3]
     \SLblessmass[4]
     \SLdeathward[4]
     \SLdivinemight[5]
+    \SLholyword[5]
     \SLheal[6]
-    \SLholyword[6]
     \SLsummonmonstervi[6]
     \SLholyaura[8]
     \SLsummonmonsterix[9]
@@ -933,21 +926,21 @@ Summoning spells summon good creatures only.
 \subsubsection{Law Domain Spells}
 
 \begin{spelllist}
-    \SLcommand[1]
+    \SLholdperson[1]
+    \SLorderswrath[2]
     \SLprotectionfromalignment[2]
-    \SLholdperson[3]
-    \SLorderswrath[3]
+    \SLcommand[3]
+    \SLholdmonster[3]
     \SLsummonmonsteriii[3]
-    \SLcommandmass[4]
     \SLdiscernlies[4]
-    \SLholdmonster[5]
+    \SLdictum[5]
+    \SLholdpersonmass[5]
+    \SLcommandmass[6]
     \SLprohibition[6]
-    \SLdictum[6]
     \SLsummonmonstervi[6]
-    \SLholdpersonmass[7]
+    \SLholdmonstermass[7]
     \SLimprisonment[8]
     \SLshieldoflaw[8]
-    \SLholdmonstermass[9]
     \SLprohibition[9]
   %\spellhead[9]{I[9]mprisonment} Entombs subject beneath the earth.
     \SLsummonmonsterix[9]
@@ -958,7 +951,7 @@ Summoning spells summon lawful creatures only.
 
 \begin{spelllist}
     \SLablativespellshield[1]
-    \SLdimensionalanchor[3]
+    \SLdimensionalanchor[2]
     \SLdispelmagic[3]
     \SLresistmagic[3]
     \SLspelltheft[5]
@@ -1056,8 +1049,8 @@ Summoning spells summon lawful creatures only.
     \SLmislead[6]
     \SLinvisibilitymass[7]
     \SLphantasmalkillermass[8]
-    \SLreversegravity[8]
     \SLmaze[8]
+    \SLreversegravity[8]
 \end{spelllist}
 
 \subsubsection{Vitality Domain Spells}
@@ -1087,11 +1080,10 @@ Summoning spells summon lawful creatures only.
     \SLbane[1]
     \SLbless[1]
     \SLdivinefavor[3]
-    \SLholdperson[3]
     \SLspiritualweapon[3]
+    \SLbanemass[4]
     \SLblessmass[4]
     \SLbladebarrier[4]
-    \SLbanemass[5]
     \SLflamestrike[5]
     \SLfirestorm[8]
     \SLstormofvengeance[9]
@@ -1100,14 +1092,14 @@ Summoning spells summon lawful creatures only.
 \subsubsection{Water Domain Spells}
 
 \begin{spelllist}
-    \SLfogcloud[1]
     \SLaqueousblade[2]
+    \SLfogcloud[2]
     \SLwaterwalk[3]
     \SLsummonnaturesallyiv[4]
     \SLfogshield[5]
-    \SLpolarray[5]
+    \SLsolidfog[5]
     \SLicestorm[6]
-    \SLsolidfog[6]
+    \SLpolarray[6]
     \SLsummonnaturesallyvii[7]
     \SLhorridwilting[9]
     \SLstormofvengeance[9]
@@ -1127,8 +1119,8 @@ Summoning spells summon water elementals or aquatic creatures only.
     \SLentanglegreater[4]
     \SLenlargemass[5]
     \SLfireseeds[5]
-    \SLwallofthornsgreater[5]
     \SLsummonnaturesallyvi[6]
+    \SLwallofthornsgreater[6]
     \SLantilifeshell[7]
     \SLsummonnaturesarmy[8]
     \SLsummonnaturesallyix[9]
@@ -1257,7 +1249,6 @@ Summoning spells summon water elementals or aquatic creatures only.
     \SLexcreteslime
     \SLfaeriefire
     \SLflameblade
-    \SLfogcloud
     \SLgentledescent
     \SLgustofwind
     \SLheatmetal
@@ -1273,11 +1264,12 @@ Summoning spells summon water elementals or aquatic creatures only.
 \begin{spelllist}
     \SLaqueousblade
     \SLbarkskin
+    \SLconeofcold
     \SLcuremoderatewounds
     \SLearthenblade
     \SLenlarge
+    \SLfogcloud
     \SLfreedom
-    \SLfungalgrowth
     \SLlongeye
     \SLmarkoftracking
     \SLmeldintostone
@@ -1296,9 +1288,9 @@ Summoning spells summon water elementals or aquatic creatures only.
 \subsubsection{3rd-level Nature Spells}
 \begin{spelllist}
     \SLcalllightning
-    \SLconeofcold
     \SLcureseriouswounds
     \SLdispelmagic
+    \SLfungalgrowth
     \SLlightningbolt
     \SLmeldintoplants
     \SLrotburst
@@ -1319,7 +1311,6 @@ Summoning spells summon water elementals or aquatic creatures only.
     \SLpoison
     \SLstoneskin
     \SLsummonnaturesallyiv
-    \SLsunbeam
     \SLtotemicmindmass
     \SLtotemicpowermass
 \end{spelllist}
@@ -1327,13 +1318,16 @@ Summoning spells summon water elementals or aquatic creatures only.
 \subsubsection{5th-level Nature Spells}
 \begin{spelllist}
   %\spellhead{Animate Plants} Plants animate and fight for you.
+    \SLconeofcoldgreater
     \SLcurelightwoundsmass
     \SLenlargemass
     \SLfireseeds
     \SLfogshield
     \SLfreedommass
+    \SLsolidfog
     \SLstormlord
     \SLsummonnaturesallyv
+    \SLsunbeam
     \SLtotemicmindgreater
     \SLtotemicpowergreater
     \SLwalloffiregreater
@@ -1344,16 +1338,13 @@ Summoning spells summon water elementals or aquatic creatures only.
 \begin{spelllist}
     \SLcalllightninggreater
     \SLchainlightning
-    \SLconeofcoldgreater
     \SLcuremoderatewoundsmass
     \SLdispelmagicgreater
     \SLheal
     \SLicestorm
     \SLregeneration
     \SLskysmite
-    \SLsolidfog
     \SLsummonnaturesallyvi
-    \SLsunburst
     \SLwallofthornsgreater
 \end{spelllist}
 
@@ -1369,6 +1360,7 @@ Summoning spells summon water elementals or aquatic creatures only.
 \subsubsection{8th-level Nature Spells}
 \begin{spelllist}
     \SLcurecriticalwoundsmass
+    \SLearthquake
     \SLfirestorm
     \SLsummonnaturesallyviii
     \SLsummonnaturesarmy
@@ -1376,8 +1368,8 @@ Summoning spells summon water elementals or aquatic creatures only.
 
 \subsubsection{9th-level Nature Spells}
 \begin{spelllist}
-    \SLearthquake
     \SLstormofvengeance
+    \SLsunburst
 \end{spelllist}
 
 \subsection{Nature Rituals}\label{Nature Rituals}
