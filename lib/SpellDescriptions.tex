@@ -49,13 +49,13 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Acid Arrow}[2]
+\begin{spellsection}{Acid Arrow}[3]
     \begin{spellheader}
         \spelldesc{You fire a magical arrow of acid from your hand that speeds to its target.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngmed}}
+            \spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rnglong}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
@@ -72,11 +72,14 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}[Greater]{Acid Arrow}[5]
+\begin{spellsection}[Greater]{Acid Arrow}[6]
     \begin{spellheader}
         \spelldesc{You fire a magical arrow of acid from your hand that speeds to its target.}
     \end{spellheader}
     \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rnglong}}
+        \end{spelltargetinginfo}
         \begin{spelleffects}
             \spellspecial This spell functions like \spell{acid arrow}, except that the target is \staggered for 1 round each time it takes damage.
         \end{spelleffects}
@@ -99,7 +102,7 @@
         \begin{spelleffects}
             \spelleffect Fog fills the area, as \spell{fog cloud}, except that the fog is acidic.
 
-            At the end of every round, make a Spellpower vs. Fortitude attack against everything in the fog. Success against a target means it takes 1d8 acid damage per four spellpower.
+            At the end of every round, make a Spellpower vs. Fortitude attack against everything in the fog. Success against a target means it takes 1d10 acid damage per four spellpower.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
@@ -110,7 +113,29 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Agony}[5]
+\begin{spellsection}{Acid Splash}[1]
+    \begin{spellheader}
+        \spelldesc{You throw a magical sphere of acid from your hand that speeds to its target.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngclose}}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \begin{spellattack}{Spellpower vs. Reflex}
+                \spellsuccess \spelldamage{acid}
+                \spellfailure Half damage.
+            \end{spellattack}
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Conjuration [Acid, Creation, Physical]}{Arcane}
+        \spellnotes \physicalspellnotes
+        \miscastrandom
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Agony}[3]
     \begin{spellheader}
         \spelldesc{You inflict debilitating pain on your foe.}
     \end{spellheader}
@@ -123,7 +148,7 @@
                 \spellsuccess The target takes double damage from all physical damage.
                 \spellfailure The target takes double damage the next time it takes physical damage.
             \end{spellattack}
-            \spelldur 5 rounds
+            \spelldur \durbrief
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -203,7 +228,7 @@
         \begin{spelleffects}
             \spelleffect All spells, spell-like abilities, and magic items fail to function in the area. They cannot be activated from within the field, and any existing effects brought into or cast into the area are suppressed. Time spent within an \spell{antimagic field} counts against a suppressed spell's duration.
             \par Creatures within an \spell{antimagic field} cannot concentrate on or dismiss spells. However, you can concentrate on and dismiss your own \spell{antimagic field}.
-            \spelldur \durlong \dismissable
+            \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -303,8 +328,8 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess The target feels an aversion to a particular person or object. If the object of the implanted aversion is an individual or a physical object, she will prefer not to approach within 30 feet of it. If it is a word, she will try not to utter it; if it is an action, she will not willingly attempt to perform it; and if it is an event, she will not willingly attend it. The target will take reasonable steps to avoid the object of its aversion, but will not put herself in jeopardy by doing so.
-                \par If the target is unable to avoid the object of her aversion, she takes a \minus4 penalty to accuracy, defenses, and checks as long as she is close to it.
+                \spellsuccess The target feels an aversion to a particular person or object for 5 rounds. If the object of the implanted aversion is an individual or a physical object, she will prefer not to approach within 30 feet of it. If it is a word, she will try not to utter it; if it is an action, she will not willingly attempt to perform it; and if it is an event, she will not willingly attend it. The target will take reasonable steps to avoid the object of its aversion, but will not put herself in jeopardy by doing so.
+                \par If the target is unable to avoid the object of her aversion, she is \severelyimpaired as long as she is close to it (or similarly engaged with the object of her aversion, if the aversion is not a location).
                 \spellcritical As above, but the effect is permanent.
             \end{spellattack}
             \spelldur 5 rounds or \durperm
@@ -338,13 +363,13 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}[Mass]{Bane}[5]
+\begin{spellsection}[Mass]{Bane}[4]
     \begin{spellheader}
     %\spelldesc{}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgts{Up to five creatures}}{\spellrng{\rngmed}}
+            \spelltwocol{\spelltgts{Up to five creatures}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spellspecial This spell functions like \spell{bane}, except that it affects multiple creatures.
@@ -375,7 +400,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Black Tentacles}[4]
+\begin{spellsection}{Black Tentacles}[5]
     \begin{spellheader}
         \spelldesc{You create a field of rubbery black tentacles, each 5 feet long. These waving members seem to spring forth from the earth, floor, or whatever surface is underfoot -- including water. They grasp and entwine around creatures that enter the area, holding them fast and crushing them with great strength.}
     \end{spellheader}
@@ -384,7 +409,8 @@
             \spelltwocol{\spellzone{\areamed radius}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect Ground within the area is considered difficult terrain. At the end of every round, make a Spellpower vs. Maneuver defense against all creatures in the area that are within 5 feet of the ground. Success against a creature means it takes \spelldamage{bludgeoning}[d8]. A critical success causes the target to be \immobilized for the duration of the spell. It can escape with a grapple or Escape Artist check against a DC equal to 10 \add your spellpower.
+            \spelleffect Ground within the area is considered difficult terrain. At the end of every round, make a Spellpower vs. Maneuver defense against all creatures in the area that are within 5 feet of the ground. Success against a creature means it takes \spelldamage{bludgeoning}[d8]. A critical success causes the target to be \immobilized for the duration of the spell.
+            \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -400,7 +426,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spellzone{100 ft. wall, 20 ft. high \shapeable}}{\spellrng{\rngmed}}
+            \spelltwocol{\spellzone{20 ft. high wall: line up to 100 ft. long or 20 ft. radius}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect This spell creates a wall of blades made of force energy. The wall provides active cover (20\% miss chance) against attacks made through it. Attacks that miss in this way harmlessly strike the wall. Passing through the wall costs twice as much movement as normal.
@@ -415,7 +441,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Blasphemy}[6]
+\begin{spellsection}{Blasphemy}[5]
     \begin{spellheader}
         \spelldesc{You speak an unholy utterance of great power, afflicting all those nearby who do not share your allegiance to evil.}
     \end{spellheader}
@@ -504,11 +530,11 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One willing creature}{\rngclose}
+            \spelltgt{You}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target spends half its time on the Astral Plane.
-            All attacks against it have a 50\% chance to fail.
+            \spelleffect You target spend half your time on the Astral Plane.
+            All attacks against you have a 50\% chance to fail.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
@@ -723,7 +749,7 @@
             \spelltgts{Everything in the area}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spellspecial This spell functions like \spell{call lightning}, except that creatures struck are also \staggered for 5 rounds if the attack succeeds.
+            \spellspecial This spell functions like \spell{call lightning}, except that creatures struck are also \staggered for 2 rounds if the attack succeeds.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -782,7 +808,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Chaos Hammer}[3]
+\begin{spellsection}{Chaos Hammer}[2]
     \begin{spellheader}
         \spelldesc{You unleash a multicolored explosion of leaping, ricocheting energy to smite your foe.}
     \end{spellheader}
@@ -805,7 +831,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Charm Monster}[4]
+\begin{spellsection}{Charm Monster}[5]
     \begin{spellheader}
         \spelldesc{You manipulate a creature's mind so it thinks of you as a trusted friend and ally.}
     \end{spellheader}
@@ -883,11 +909,8 @@
             \spelltgts{All creatures in the area}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess The target's vision is \impaired. This affects all sight-related actions, including physical attacks and targeted spells.
-                \spellcritical The target's vision is \severelyimpaired. This affects all sight-related actions, including physical attacks and targeted spells.
-            \end{spellattack}
-            \spelldur 5 rounds
+            \spelleffect The target's vision is \impaired. This affects all sight-related actions, including physical attacks and targeted spells.
+            \spelldur 2 rounds
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -898,7 +921,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Command}[1]
+\begin{spellsection}{Command}[3]
     \begin{spellheader}
         \spelldesc{You compel a foe to obey a single command of your choice.}
     \end{spellheader}
@@ -908,13 +931,17 @@
             \spellcmp{Verbal only}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spellspecial When you cast this spell, you speak a command. The command must be a single word or short phrase.
+            \spellspecial When you cast this spell, you speak a command.
+            The command must be a single word or short, simple phrase.
+            You must command the creature to perform a movement that can be completed during the movement phase.
+            For example, you could command a creature to ``flee'' or ``grovel'', but not to ``attack'' or ``betray allies''.
             \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess The target must obey the command or be \severelyimpaired with all actions.
-                \spellcritical The target must obey the command or be \stunned.
+                \spellsuccess The target must obey the command during the movement phase.
+                It can act normally during the action phase.
+                \spellcritical The target must obey the command during both the movement phase and the action phase.
                 \spellfailure The target must obey the command or be \impaired with all actions.
             \end{spellattack}
-            \spelldur 1 round
+            \spelldur \durbrief
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -924,7 +951,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}[Mass]{Command}[4]
+\begin{spellsection}[Mass]{Command}[6]
     \begin{spellheader}
         \spelldesc{You compel many foes to obey your command.}
     \end{spellheader}
@@ -935,6 +962,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spellspecial This spell functions like \spell{command}, except that it affects multiple creatures.
+            All affected creatures must receive the same command.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -943,7 +971,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Cone of Cold}[3]
+\begin{spellsection}{Cone of Cold}[2]
     \begin{spellheader}
         \spelldesc{You create an area of extreme cold that drains heat from creatures in the area, diminishing their ability to move.}
     \end{spellheader}
@@ -954,7 +982,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess \spelldamage{cold}[d8]. In addition, the target moves at half speed for 5 rounds.
+                \spellsuccess \spelldamage{cold}[d8]. In addition, the target moves at half speed for 2 rounds.
                 \spellfailure As above, but half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -965,7 +993,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}[Greater]{Cone of Cold}[6]
+\begin{spellsection}[Greater]{Cone of Cold}[5]
     \begin{spellheader}
         \spelldesc{You create a massive area of extreme cold that drains heat from creatures in the area, diminishing their ability to move.}
     \end{spellheader}
@@ -989,28 +1017,6 @@
 
 \begin{spellsection}{Confusion}[3]
     \begin{spellheader}
-        \spelldesc{You compel a creature to act randomly, sowing confusion in your foes' ranks.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess The target is \disoriented.
-                \spellcritical The target is \confused.
-            \end{spellattack}
-            \spelldur 5 rounds
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Enchantment [Compulsion, Mind]}{Arcane, Chaos, Trickery}
-        \miscastrandom
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}[Mass]{Confusion}[6]
-    \begin{spellheader}
         \spelldesc{You compel a group of creatures to act randomly, sowing confusion in your foes' ranks.}
     \end{spellheader}
     \begin{spellcontent}
@@ -1022,11 +1028,12 @@
                 \spellsuccess The target is \disoriented.
                 \spellcritical The target is \confused.
             \end{spellattack}
+            \spelldur \durbrief
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Enchantment [Compulsion, Mind]}{Arcane, Trickery}
-        \miscastexplode
+        \spellinfo{Enchantment [Compulsion, Mind]}{Arcane, Chaos, Trickery}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -1088,7 +1095,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Cripple}[9]
+\begin{spellsection}{Cripple}[4]
     \begin{spellheader}
         \spelldesc{You render your foe's limbs useless.}
     \end{spellheader}
@@ -1098,7 +1105,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
-                \spellsuccess \spelldamage{life}. In addition, the target is \staggered for 5 rounds.
+                \spellsuccess \spelldamage{life}. In addition, the target is \staggered for 2 rounds.
 
                 \spellcritical As above, but instead of being staggered, the target is unable to move its limbs, including any wings. Generally, that means it is \paralyzed, except that it can move its head and mouth.
 
@@ -1271,7 +1278,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
                 \spellsuccess \spelldamage{life}. In addition, the target's maximum hit points are reduced by the amount of damage it takes from this effect, to a minimum of 1 hit point, for 5 rounds.
-                \spellcritical As above, but the hit point reduction lasts for 1 year.
+                \spellcritical As above, but the hit point reduction is permanent.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
             \spelldur 5 rounds or 1 year
@@ -1284,43 +1291,19 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Curse of Enfeeblement}[4]
-    \begin{spellheader}
-%\spelldesc{You fire a coruscating ray from your hand. When it strikes your foe, he becomes weaker.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Fortitude}
-                \spellsuccess The target takes a \minus4 penalty to your choice of Strength or Dexterity.
-                \spellfailure As above, but the penalty is halved.
-            \end{spellattack}
-            \spelldur One year
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Vivimancy [Curse, Flesh]}{Vivimancy, Death}
-        \spellnotes This spell cannot reduce an attribute below \minus9. \cursespellnotes
-        \miscastrandom
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Curse of the Wayward Mind}[8]
+\begin{spellsection}{Curse of the Wayward Mind}[4]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess The target is \disoriented.
-                \spellcritical The target is \confused.
-                \spellfailure The target is \disoriented for 5 rounds.
+                \spellsuccess The target is \disoriented for 5 minutes.
+                \spellcritical The target is \disoriented permanently.
+                \spellfailure The target is \impaired with all actions for 5 rounds.
             \end{spellattack}
-            \spelldur One year
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -1374,23 +1357,22 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Death Knell}[6]
+\begin{spellsection}{Death Knell}[4]
     \begin{spellheader}
         \spelldesc{You draw forth the ebbing life force of a creature and use it to fuel your own power.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{Living creature}}{\spellrng{\rngmed}}
+            \spelltwocol{\spelltgt{Living creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
-                \spellsuccess \spelldamage{life}. In addition, for 5 rounds, the target automatically dies if it has no hit points remaining.
+                \spellsuccess \spelldamage{life}. In addition, for 2 rounds, the target automatically dies if it takes critical damage while it has no hit points remaining.
 
                 If the target dies in this way, you gain temporary hit points equal to twice your spellpower. These temporary hit points last for 1 round per level the target had.
 
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
-            \spelldur See text
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -1422,17 +1404,17 @@
 
 \begin{spellsection}{Deep Slumber}[9]
     \begin{spellheader}
-        \spelldesc{You fill your foe with an overpowering urge to sleep, inevitably rendering it comatose.}
+        \spelldesc{You fill your foes with an overpowering urge to sleep, rendering them comatose.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
+            \spelltwocol{\spelltgt{Five creatures}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess The target is \blinded for 5 rounds.
-                \spellcritical The target falls asleep. It cannot be awakened by any means for 5 rounds. After that time, it can be awoken by other creatures, but if left undisturbed, it will sleep until it dies.
-                \spellfailure The target is \dazed for 5 rounds.
+                \spellsuccess The target is \blinded for 2 rounds.
+                \spellcritical The target falls asleep. It cannot be awakened by any means for 2 rounds. After that time, it can be awoken by other creatures, but if left undisturbed, it will sleep until it dies.
+                \spellfailure The target is \dazed for 2 rounds.
             \end{spellattack}
             \spelldur See text
         \end{spelleffects}
@@ -1528,7 +1510,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Destruction}[7]
+\begin{spellsection}{Destruction}[6]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -1655,7 +1637,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Dimensional Anchor}[3]
+\begin{spellsection}{Dimensional Anchor}[2]
     \begin{spellheader}
         \spelldesc{You sever your foe's connection to the Astral Plane, trapping it where it is.}
     \end{spellheader}
@@ -1723,7 +1705,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Discordant Song}[8]
+\begin{spellsection}{Discordant Song}[5]
     \begin{spellheader}
         \spelldesc{Magical music fills the air, sowing confusion among your foes.}
     \end{spellheader}
@@ -1738,7 +1720,7 @@
 
                 \spellcritical The target is \confused.
             \end{spellattack}
-            \spelldur 5 rounds
+            \spelldur \durbrief
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -1859,7 +1841,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Displacement}[3]
+\begin{spellsection}{Displacement}[5]
     \begin{spellheader}
         \spelldesc{You shift your ally's image, causing it to appear to be about 2 feet away from its true location.}
     \end{spellheader}
@@ -1868,7 +1850,7 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect Targeted physical attacks against the target have a 50\% miss chance. Spells and other special attacks suffer no miss chance.
+            \spelleffect Targeted physical attacks against the target have a 50\% miss chance. Spells and other non-physical attacks suffer no miss chance.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
@@ -1943,7 +1925,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rnglong}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spellspecial This spell functions like \spell{dominate person}, except that the effect does not depend on creature type.
@@ -1955,7 +1937,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Dominate Person}[7]
+\begin{spellsection}{Dominate Person}[6]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -2016,10 +1998,7 @@
             \spelltgt{One Large or smaller creature within 10 feet of solid ground}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess The target is \slowed. However, it gains a \plus5 bonus to Climb checks.
-                \spellfailure The target moves at half speed.
-            \end{spellattack}
+            \spelleffect The target is \slowed.
             \spelldur 5 rounds
         \end{spelleffects}
     \end{spellcontent}
@@ -2075,7 +2054,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spellzone{\arealarge radius}}{\spellrng{\rngmed}}
+            \spelltwocol{\spellburst{\arealarge radius}}{\spellrng{\rngmed}}
             \spelltgts{All creatures on the ground in the area}
         \end{spelltargetinginfo}
         \begin{spelleffects}
@@ -2255,15 +2234,12 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature within 5 feet of plants}}{\spellrng{\rngmed}}
+            \spelltwocol{\spelltgt{One creature within 5 feet of plants}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess The target is \slowed.
-                \spellfailure The target moves at half speed.
-                \spellspecial The target can break this spell's effect with a grapple or Escape Artist check against a DC equal to 10 \add your spellpower.
-            \end{spellattack}
-            \spelldur 5 rounds or until escaped
+            \spelleffect The target is \entangled.
+            It can break this effect with a grapple or Escape Artist check against a DC equal to 10 \add your spellpower.
+            \spelldur \durbrief
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -2279,10 +2255,10 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rnglong}}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spellspecial This spell functions like \spell{entangle}, except that the target does not need to be near plants.
+            \spellspecial This spell functions like \spell{entangle}, except that the target does not need to be near plants, and the effect lasts for 5 rounds.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -2298,7 +2274,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngtouch}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect Each physical ranged attack directed at the target has a 50\% miss chance. Other attacks that simply work at a distance are not affected.
@@ -2377,8 +2353,8 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
-                \spellsuccess \spelldamage{life}. In addition, the target's vision is \impaired. This affects all sight-related actions, including physical attacks and targeted spells.
-                \spellcritical As above, except that the target's vision is \severelyimpaired.
+                \spellsuccess \spelldamage{life}. In addition, the target is \partiallyblinded.
+                \spellcritical As above, except that the target is \blinded.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
         \end{spelleffects}
@@ -2402,7 +2378,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect A pale glow surrounds and outlines the target, causing it to shed light as a candle. This imposes a \minus20 penalty to Stealth checks, and negates invisibility, concealment, and similar effects.
-            \spelldur \durshort \dismissable
+            \spelldur \durbrief
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -2445,7 +2421,7 @@
                 \spellcritical The target is \panicked by you.
                 \spellfailure The target is \shaken by you.
             \end{spellattack}
-            \spelldur 5 rounds
+            \spelldur \durbrief
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -2497,7 +2473,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Feeblemind}[8]
+\begin{spellsection}{Feeblemind}[7]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -2518,7 +2494,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Finger of Death}[7]
+\begin{spellsection}{Finger of Death}[6]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -2718,7 +2694,7 @@
     \end{spellfooter}%priced as buff spell for range
 \end{spellsection}
 
-\begin{spellsection}{Fog Cloud}[1]
+\begin{spellsection}{Fog Cloud}[2]
     \begin{spellheader}
         \spelldesc{You conjure a bank of fog, concealing those inside.}
     \end{spellheader}
@@ -2791,7 +2767,7 @@
             \begin{spellattack}{Spellpower vs. Reflex}
                 \spellsuccess An immobile, invisible prison appears around the target. The prison can be a perfect sphere, a perfect cube, or a barred cage. The cage bars are an inch wide, with one inch gaps between them.
             \end{spellattack}
-            \spelldur \durshort \dismissable
+            \spelldur 5 rounds
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -2857,7 +2833,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Fungal Growth}[2]
+\begin{spellsection}{Fungal Growth}[3]
     \begin{spellheader}
         \spelldesc{You create fungus all over your foe's body.}
     \end{spellheader}
@@ -2942,7 +2918,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Ghoul Touch}[2]
+\begin{spellsection}{Ghoul Touch}[3]
     \begin{spellheader}
         \spelldesc{Your foe feels the touch of a ghoul's undead hand against its flesh.}
     \end{spellheader}
@@ -2952,10 +2928,11 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
-                \spellsuccess The target is \staggered.
-                \spellfailure The target is \sickened.
+                \spellsuccess The target is \staggered and \impaired with all actions.
+                \spellcritical The target is \paralyzed.
+                \spellfailure The target is \impaired with all actions.
             \end{spellattack}
-            \spelldur 5 rounds
+            \spelldur \durbrief
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -2964,7 +2941,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Glitterdust}[4]
+\begin{spellsection}{Glitterdust}[3]
     \begin{spellheader}
         \spelldesc{You create a flurry of glittering dust which reveals hidden foes and blinds creatures.}
     \end{spellheader}
@@ -2976,10 +2953,10 @@
         \begin{spelleffects}
             \spelleffect A flurry of golden particles swarm around the target. This imposes a \minus20 penalty to Stealth checks, and negates invisibility, concealment, and similar effects. Illusory figments, such as those created by the \spell{silent image} spell, are not outlined, which may reveal their false nature. In addition, you make an attack.
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess The target's vision is \impaired. This affects all sight-related actions, including physical attacks and targeted spells.
-                \spellcritical The target's vision is \severelyimpaired. This affects all sight-related actions, including physical attacks and targeted spells.
+                \spellsuccess The target is \partiallyblinded.
+                \spellcritical The target is \blinded.
             \end{spellattack}
-            \spelldur 5 rounds
+            \spelldur \durbrief
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -3000,16 +2977,6 @@
             \spelleffect The ground in the area is covered in grease for 5 rounds, making it slippery. A DC 15 Balance check is usually required to move on oily surfaces. See \pcref{Balance}, for more details.
         \end{spelleffects}
     \end{spellcontent}
-    \begin{spellsubcontent}
-        \begin{spelltargetinginfo}
-            \spelltgts{All creatures in the area}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess The target falls prone.
-            \end{spellattack}
-        \end{spelleffects}
-    \end{spellsubcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Creation, Physical]}{Arcane}
         \spellnotes \physicalspellnotes
@@ -3027,7 +2994,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellzone{\arealarge line from you}
+            \spellburst{\arealarge line from you}
             \spelltgts{Everything in the area}
         \end{spelltargetinginfo}
         \begin{spelleffects}
@@ -3252,7 +3219,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Hold Person}[3]
+\begin{spellsection}{Hold Person}[1]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -3267,7 +3234,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Enchantment [Compulsion, Mind]}{Arcane, Divine, Law, War}
+        \spellinfo{Enchantment [Compulsion, Mind]}{Arcane, Divine, Law}
         \miscastrandom
     \end{spellfooter}
 \end{spellsection}
@@ -3388,7 +3355,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Hypnotic Pattern}[2]
+\begin{spellsection}{Hypnotic Pattern}[4]
     \begin{spellheader}
         \spelldesc{You create a twisting pattern of subtle, shifting colors that weaves through the air, fascinating creatures within it.}
     \end{spellheader}
@@ -3417,7 +3384,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}[Greater]{Hypnotic Pattern}[6]
+\begin{spellsection}[Greater]{Hypnotic Pattern}[8]
     \begin{spellheader}
         \spelldesc{You create a twisting pattern of subtle, shifting colors that weaves through the air, fascinating creatures within it and leading them astray.}
     \end{spellheader}
@@ -3448,7 +3415,7 @@
 
 \pdfbookmark[2]{I}{SpellDescriptionsI}
 
-\begin{spellsection}{Ice Storm}[6]
+\begin{spellsection}{Ice Storm}[7]
     \begin{spellheader}
         \spelldesc{You conjure magical hailstones that pound down, smashing and chilling creatures in their path.}
     \end{spellheader}
@@ -3469,7 +3436,7 @@
         \end{spelleffects}
     \end{spellsubcontent}
     \begin{spellfooter}
-        \spellinfo{Conjuration/Evocation [Cold, Creation, Destructive]}*{Arcane, Destruction, Nature, Water}
+        \spellinfo{Conjuration/Evocation [Cold, Creation, Destructive]}*{Arcane, Nature, Water}
         \spellnotes \destructivespellnotes
     % SR only applies to cold?
         \miscastyou
@@ -3483,7 +3450,7 @@
     \begin{spellcontent}
         \begin{spelltargetinginfo}
             \spelltgr{At the end of every round}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rnglong}}
             \spellspecial You cannot target the same creature more than once per casting of this spell.
             \spelldur Focus (maximum 5 rounds)
         \end{spelltargetinginfo}
@@ -3508,19 +3475,21 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature touching the ground}}{\spellrng{\rngmed}}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
                 \spellsuccess \spelldamage{physical}. In addition, the target is \slowed for 5 rounds.
+                \spellfailure As above, but half damage.
                 \spellcritical The target becomes permanently entombed in a state of suspended animation (as the \spell{temporal stasis} spell) in a small sphere far beneath the surface of the earth. It remains there until an \spell{emancipation} spell is cast at the location where the imprisonment took place.
-                \spellfailure Half damage, and the target moves at half speed for 5 rounds.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration/Transmutation [Teleportation, Temporal]}{Arcane, Earth, Law}
         \spellnotes If the target becomes imprisoned beneath the earth, it is very difficult to find. Magical search by a crystal ball, a \spell{locate creature} spell, or some other similar divination does not reveal the fact that a creature is imprisoned, but \spell{discern location} does. A \spell{wish} or \spell{miracle} spell will not free the recipient, but will reveal where it is entombed.
+
+        On planes that have no earth to imprison the target, a critical success has the same effect as an ordinary success.
         \miscastrandom
     \end{spellfooter}
 \end{spellsection}
@@ -3823,14 +3792,15 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
                 \spellsuccess The target must spend a standard action each round to do nothing but dance.
                 \spellfailure The target must spend a move action each round to dance.
+                    In addition, the struggle to resist dancing makes it \impaired with all actions.
             \end{spellattack}
-            \spelldur 5 rounds
+            \spelldur \durbrief
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -4259,7 +4229,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Mirror Image}[2]
+\begin{spellsection}{Mirror Image}[3]
     \begin{spellheader}
         \spelldesc{You create illusory duplicates of yourself that mirror your every move, making it difficult for enemies to know which image to attack.}
     \end{spellheader}
@@ -4269,6 +4239,8 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect You gain one image per two spellpower. As long as you have images remaining, targeted attacks against you have a 50\% miss chance. Whenever an attack misses in this way, it strikes an image, destroying it. If you run out of images, the spell is expended.
+
+            Each image is considered a separate creature for the purpose of attacks and effects which can target multiple creatures. All images are considered to exist within your space for the purposes of targeting, though they visually drift into nearby spaces.
             \spelldur \durshort or until expended \dismissable
         \end{spelleffects}
     \end{spellcontent}
@@ -4279,7 +4251,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}[Greater]{Mirror Image}[5]
+\begin{spellsection}[Greater]{Mirror Image}[6]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -4287,7 +4259,8 @@
             \spelltgt{You}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect You gain illusory duplicates, as \spell{mirror image}, except that the spell is not expended when you run out of images. At the end of each round, you gain two additional images, up to the number of images created when the spell was first cast.
+            \spelleffect You gain illusory duplicates, as \spell{mirror image}, except that a new image is created whenever an image is destroyed, preventing you from running out of images.
+            Attacks that target you and all existing images simultaneously will still hit you without a miss chance.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
@@ -4381,7 +4354,7 @@
 
 \pdfbookmark[2]{O-P}{SpellDescriptionsO-P}
 
-\begin{spellsection}{Order's Wrath}[3]
+\begin{spellsection}{Order's Wrath}[2]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -4466,7 +4439,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
@@ -4527,7 +4500,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Polar Ray}[5]
+\begin{spellsection}{Polar Ray}[6]
     \begin{spellheader}
         \spelldesc{You fire a blue-white ray of frigid air and ice, freezing your foe in place.}
     \end{spellheader}
@@ -4538,7 +4511,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
                 \spellsuccess \spelldamage{cold}. In addition, the target is \slowed for 5 rounds.
-                \spellfailure Half damage, and the target moves at half speed for 5 rounds.
+                \spellfailure As above, but half damage.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -4548,7 +4521,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Power Word Blind}[9]
+\begin{spellsection}{Power Word Blind}[7]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -4558,9 +4531,10 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
-                \spellsuccess The target is \blinded for 5 rounds.
-                \spellfailure The target's vision is \impaired for 5 rounds. This affects all sight-related actions, including physical attacks and targeted spells.
+                \spellsuccess The target is \blinded.
+                \spellfailure The target is \partiallyblinded.
             \end{spellattack}
+            \spelldur \durbrief
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -4569,7 +4543,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Power Word Confuse}[8]
+\begin{spellsection}{Power Word Confuse}[6]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -4579,29 +4553,10 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess The target is \confused for 5 rounds.
-                \spellfailure The target is \disoriented for 5 rounds.
+                \spellsuccess The target is \confused.
+                \spellfailure The target is \disoriented.
             \end{spellattack}
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Enchantment [Compulsion, Mind]}{Arcane}
-        \miscastrandom
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Power Word Daze}[2]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
-            \spellcmp{Verbal only}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess The target is \dazed for 5 rounds.
-            \end{spellattack}
+            \spelldur \durbrief
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -4620,9 +4575,10 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess The target is \severelyimpaired with all actions for 5 rounds.
-                \spellfailure The target is \impaired with all actions for 5 rounds.
+                \spellsuccess The target is \severelyimpaired with all actions.
+                \spellfailure The target is \impaired with all actions.
             \end{spellattack}
+            \spelldur \durbrief
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -4631,9 +4587,8 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Power Word Stun}[6]
+\begin{spellsection}{Power Word Stagger}[2]
     \begin{spellheader}
-        \spelldesc{You utter a single word of power that instantly causes your foe to become stunned, whether the creature can hear the word or not.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
@@ -4641,15 +4596,14 @@
             \spellcmp{Verbal only}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess The target is \dazed and moves at half speed for 5 rounds.
-                \spellcritical The target is \stunned for 5 rounds.
-                \spellfailure The target moves at half speed for 5 rounds.
+            \begin{spellattack}{Spellpower vs. Fortitude}
+                \spellsuccess The target is \staggered.
             \end{spellattack}
+            \spelldur \durbrief
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Enchantment [Compulsion, Mind]}{Arcane}
+        \spellinfo{Vivimancy [Flesh]}{Arcane}
         \miscastrandom
     \end{spellfooter}
 \end{spellsection}
@@ -4729,12 +4683,12 @@
     \begin{dtabularx}{\textwidth}{l >{\lcol}p{3.6em} l >{\lcol}X l}
         \tb{1d8} & \tb{Color of Beam} & \tb{Defense} & \tb{Success}\fn{1} & \tb{Failure} \\
         \hline
-        1 & Red      & Reflex    & Fire damage and ignited for 5 rounds                       & Half damage, not ignited   \\
-        2 & Orange   & Fortitude & Blinded for 1 round                                        & No effect                  \\
-        3 & Yellow   & Reflex    & Electricity damage and staggered for 1 round               & Half damage, not staggered \\
-        4 & Green    & Fortitude & Acid damage and sickened for 5 rounds                      & Half damage, sickened      \\
-        5 & Blue     & Mental    & Slowed for 5 rounds                                        & Half speed for 5 rounds    \\
-        6 & Indigo   & Mental    & Confused for 1 round                                       & No effect                  \\
+        1 & Red      & Reflex    & Fire damage and ignited for 2 rounds                       & Half damage, ignited       \\
+        2 & Orange   & Mental    & Frightened by you for 2 rounds                             & Shaken by you for 2 rounds \\
+        3 & Yellow   & Reflex    & Electricity damage and partially blinded for 2 rounds      & Half damage, not blinded   \\
+        4 & Green    & \x        & Staggered for 2 rounds                                     & \x                         \\
+        5 & Blue     & Fortitude & Cold damage and slowed for 2 rounds                        & Half damage, not slowed    \\
+        6 & Indigo   & \x        & Disoriented for 2 rounds                                   & \x                         \\
         7 & Violet   & None      & Damage of all energy types (acid, cold, electricity, fire) & \x                         \\
         8 & Octarine & \x        & Struck by two beams; roll twice more, ignoring any ``8'' results.
     \end{dtabularx}
@@ -4786,7 +4740,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spellzone{\arealarge wall, 20 ft. high}}{\spellrng{\rngmed}}
+            \spelltwocol{\spellzone{\areahuge wall, 20 ft. high}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect This spell creates a shimmering, multicolored plane of light that blocks all sight.
@@ -5049,7 +5003,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Resist Magic}[4]
+\begin{spellsection}{Resist Magic}[3]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -5134,7 +5088,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature}{\rngclose}
+            \spellquicktargeting{One creature}{\rngmed}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spellspecial This spell has three versions. Its effects depend on which version is chosen.
@@ -5161,11 +5115,8 @@
             \spelltgts{Everything in the area}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess Gravity in the area is reversed for the target. It falls upwards, reaching the top of the area within 1 round. if it strikes a solid object, such as a ceiling, it is affected in the same way as it would be during a normal fall. Otherwise, it floats at the top of the area, oscillating slightly.
-            \end{spellattack}
-
-            \spelldur Focus (up to 5 rounds)
+            \spelleffect Gravity in the area is reversed for the target. It falls upwards, reaching the top of the area within 1 round. if it strikes a solid object, such as a ceiling, it is affected in the same way as it would be during a normal fall. Otherwise, it floats at the top of the area, oscillating slightly.
+            \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -5224,7 +5175,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellburst{\areasmall radius centered on you}
+            \spelltwocol{\spellburst{\areasmall radius}}{\spellrng{\rngmed}}
             \spelltgts{Everything in the area}
         \end{spelltargetinginfo}
         \begin{spelleffects}
@@ -5245,7 +5196,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellburst{\arealarge radius centered on you}
+            \spelltwocol{\spellburst{\arealarge radius}}{\spelltgt{\rngmed}}
             \spelltgts{Everything in the area}
         \end{spelltargetinginfo}
         \begin{spelleffects}
@@ -5264,7 +5215,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature or object}}{\spellrng{5 ft.}}
+            \spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
@@ -5311,7 +5262,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Scorching Ray}[2]
+\begin{spellsection}{Scorching Ray}[3]
     \begin{spellheader}
         \spelldesc{You blast your foe with a fiery ray.}
     \end{spellheader}
@@ -5321,8 +5272,8 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess \spelldamage{fire}. In addition, the target is \ignited for 5 rounds.
-                \spellfailure Half damage, and no additional effects.
+                \spellsuccess \spelldamage{fire}. In addition, the target is \ignited for 2 rounds.
+                \spellfailure As above, but half damage.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -5342,8 +5293,9 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellspecial You gain a \plus5 bonus to accuracy against creatures vulnerable to bright light.
-                \spellsuccess \spelldmg{3}{solar}. In addition, the target's vision is \impaired for 5 rounds. This affects all sight-related actions, including physical attacks and targeted spells.
+                \spellspecial You gain a \plus5 bonus to accuracy against creatures vulnerable to sunlight.
+                \spellsuccess \spelldmg{solar}. In addition, the target is \partiallyblinded for 2 rounds.
+                \spellcritical As above, except that the target is \blinded instead of partially blinded.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
         \end{spelleffects}
@@ -5410,7 +5362,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Shadow Umbra}[7]
+\begin{spellsection}{Shadow Umbra}[9]
     \begin{spellheader}
         \spelldesc{You shield your ally with a dark umbra that connects directly to the Plane of Shadow.}
     \end{spellheader}
@@ -5734,7 +5686,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Destructive, Electricity]}{Air, Arcane, Destruction, Nature}
+        \spellinfo{Evocation [Destructive, Electricity]}{Air, Arcane, Nature}
         \spellnotes The lightning can unerringly identify invisible and concealed creatures, but it does not differentiate between friend, foe, and inanimate object.
         \miscastexplode
     \end{spellfooter}
@@ -5751,7 +5703,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
                 \spellsuccess The target is \fatigued and attempts to go to sleep as soon as possible, though it will not stop fighting to do so. Awakening a creature put to sleep by this spell is difficult, and requires a standard action.
-                \spellcritical As above, except that the target is \exhausted instead of \fatigued.
+                \spellcritical As above, except that the target is \exhausted instead of \fatigued. In addition, if the creature goes to sleep, it cannot be awoken by nonmagical means during the spell's duration.
             \end{spellattack}
             \spelldur \durmed
         \end{spelleffects}
@@ -5785,14 +5737,11 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess The target is \slowed.
-                \spellfailure The target moves at half speed.
-            \end{spellattack}
-            \spelldur \durshort
+            \spelleffect The target is \slowed.
+            \spelldur \durbrief
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -5801,7 +5750,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}[Mass]{Slow}[6]
+\begin{spellsection}[Mass]{Slow}[7]
     \begin{spellheader}
         \spelldesc{You decelerate your enemies' motions, causing them to move and act more slowly than normal.}
     \end{spellheader}
@@ -5819,7 +5768,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Solid Fog}[6]
+\begin{spellsection}{Solid Fog}[5]
     \begin{spellheader}
         \spelldesc{You conjure a bank of immensely thick fog, concealing those inside.}
     \end{spellheader}
@@ -6096,17 +6045,19 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Suggestion}[6]
+\begin{spellsection}{Suggestion}[4]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
-            \spellcmp{Verbal only}
+            \spellcmp{Verbal only. The only verbal component is the stated suggestion.}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
-                \spellspecial You suggest a course of action that the target could take. The suggestion must not be longer than a couple of sentences. It must be worded in such a manner as to make the activity sound reasonable. Asking the creature to do some obviously harmful act makes the spell fail automatically. You take a \minus5 penalty to accuracy if the target thinks it is threatened. A very reasonable suggestion can grant a \plus2 or greater bonus to accuracy.
+                \spellspecial You suggest a course of action that the target could take. The suggestion must not be longer than a couple of sentences. It must be worded in a way that makes the activity sound reasonable. Asking the creature to do some obviously harmful act makes the spell fail automatically.
+
+                You take a \minus5 penalty to accuracy if the target thinks it is threatened. A very reasonable suggestion can grant a \plus2 or greater bonus to accuracy.
                 \spellsuccess For 5 rounds, the target is compelled to obey your suggestion. If the suggested activity is completed during that time, the spell's effect ends.
                 \spellcritical As above, except that the target will obey the suggestion indefinitely, until it completes its task.
             \end{spellattack}
@@ -6119,7 +6070,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}[Mass]{Suggestion}[9]
+\begin{spellsection}[Mass]{Suggestion}[8]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -6590,7 +6541,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Sunbeam}[4]
+\begin{spellsection}{Sunbeam}[5]
     \begin{spellheader}
         \spelldesc{You evoke a dazzling beam of intense light, blinding your foes with the power of the sun itself.}
     \end{spellheader}
@@ -6602,8 +6553,8 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
                 \spellspecial You gain a \plus5 bonus to accuracy against creatures vulnerable to sunlight.
-                \spellsuccess \spelldamage{solar}[d8]
-                \spellcritical If the target is vulnerable to sunlight, it is also \blinded for 5 rounds.
+                \spellsuccess \spelldamage{solar}[d8]. In addition, the target is \partiallyblinded for 2 rounds.
+                \spellcritical As above, except that the target is \blinded instead of partially blinded.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
         \end{spelleffects}
@@ -6615,20 +6566,20 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Sunburst}[6]
+\begin{spellsection}{Sunburst}[9]
     \begin{spellheader}
         \spelldesc{You cause a globe of searing radiance to explode silently from a point you select.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spellburst{\areamed radius}}{\spellrng{\rngmed}}
-            \spelltgts{Everything in the area}
+            \spellburst{\arealarge radius}
+            \spelltgts{Enemies in the area}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
                 \spellspecial You gain a \plus5 bonus to accuracy against creatures vulnerable to sunlight.
-                \spellsuccess \spelldamage{solar}[d8]
-                \spellcritical If the target is vulnerable to sunlight, it is also \blinded for 5 rounds.
+                \spellsuccess \spelldamage{solar}[d8]. In addition, the target is \partiallyblinded for 2 rounds.
+                \spellcritical As above, except that the target is \blinded instead of partially blinded.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
         \end{spelleffects}
@@ -6735,7 +6686,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Temporal Stasis}[7]
+\begin{spellsection}{Temporal Stasis}[6]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -6746,7 +6697,7 @@
             \begin{spellattack}{Spellpower vs. Mental}
                 \spellsuccess The target is placed in a state of suspended animation for 5 rounds. Time ceases to flow for it, and it cannot be altered or moved by any effect.
                 \spellcritical As above, except that the effect is permanent.
-                \spellfailure The targes moves at half speed for 5 rounds.
+                \spellfailure The targes moves at one-quarter speed for 5 rounds.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -7047,7 +6998,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Unholy Blight}[3]
+\begin{spellsection}{Unholy Blight}[2]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -7159,20 +7110,15 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect This spell creates a wall made of fire.
+            When the spell is cast, you choose which sides of the wall radiate heat.
+            At the end of each round, all creatures within 10 feet of a side radiating heat take 1d8 fire damage per four spellpower.
+
+            In addition, whenever a creature passes through the wall, make a spellpower vs. Reflex attack against it.
+            Success deals \spelldamage{fire}[d6] to the creature.
+            Failure deals half damage.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
-    \begin{spellsubcontent}
-        \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgr{A creature passes through the wall}}{\spelltgt{The moving creature}}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess \spelldamage{fire}[d8].
-                \spellfailure Half damage.
-            \end{spellattack}
-        \end{spelleffects}
-    \end{spellsubcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Destructive, Fire, Wall]}{Arcane, Fire, Nature}
         \spellnotes Any part of the wall takes 5 cold damage in a single round is extinguished.
@@ -7187,23 +7133,23 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spellzone{100 ft. wall, 20 ft. high \shapeable}}{\spellrng{\rngmed}}
+            \spelltwocol{\spellzone{20 ft. high wall: line up to 100 ft. long or 20 ft. radius}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spellspecial This spell functions like \spell{wall of fire}, except that it is larger and can be shaped. The damage dealt to a creature passing through the wall is \spelldamage{fire}[d8].
+            \spellspecial This spell functions like \spell{wall of fire}, except that it is larger and can take a different shape.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Destructive, Fire, Wall]}{Arcane, Nature, Fire}
-        \spellnotes Any part of the wall takes 10 cold damage in a single round is extinguished.
+        \spellnotes Any part of the wall takes 15 cold damage in a single round is extinguished.
 
         This spell can be made permanent with a \spell{permanency} ritual. A permanent \spell{greater wall of fire} that is extinguished by cold damage becomes inactive for 10 minutes, then reforms at normal strength.
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Wall of Force}[6]
+\begin{spellsection}{Wall of Force}[5]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -7216,7 +7162,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Force, Physical, Wall]}{Evocation}
+        \spellinfo{Evocation [Force, Physical, Wall]}{Arcane}
         \spellnotes The wall can be destroyed. A 5-foot square of wall has hit points equal to five times your spellpower, and hardness equal to your spellpower.
 
         \forcespellnotes
@@ -7231,7 +7177,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spellzone{20 ft. line, 5 ft. wide, 5 ft. high}}{\spellrng{\rngmed}}
+            \spelltwocol{\spellzone{50 ft. line, 5 ft. wide, 5 ft. high}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect This spell creates a thicket of thorns in the area. Moving out of a square with thorns in it costs 20 feet of movement. The wall can be created where creatures are.
@@ -7243,7 +7189,7 @@
     \end{spellcontent}
     \begin{spellsubcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgr{A creature enters or exits a square in the area}}{\spelltgt{The moving creature}}
+            \spelltwocol{\spelltgr{A creature exits a square in the area}}{\spelltgt{The moving creature}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target takes piercing damage equal to your spellpower.
@@ -7257,7 +7203,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}[Greater]{Wall of Thorns}[5]
+\begin{spellsection}[Greater]{Wall of Thorns}[6]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -7271,7 +7217,7 @@
     \end{spellcontent}
     \begin{spellsubcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgr{A creature enters or exits a square in the area}}{\spelltgt{The moving creature}}
+            \spelltwocol{\spelltgr{A creature exits a square in the area}}{\spelltgt{The moving creature}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target takes piercing damage equal to your spellpower.
@@ -7305,7 +7251,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Waves of Fatigue}[4]
+\begin{spellsection}{Waves of Fatigue}[3]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -7314,7 +7260,7 @@
             \spelltgts{All creatures in the area}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target is \fatigued for 5 rounds.
+            \spelleffect The target is \fatigued for 2 rounds.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -7323,7 +7269,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}[Greater]{Waves of Fatigue}[7]
+\begin{spellsection}{Waves of Exhaustion}[6]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -7332,10 +7278,7 @@
             \spelltgts{All creatures in the area}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Fortitude}
-                \spellsuccess The target is \exhausted for 5 rounds.
-                \spellfailure The target is \fatigued for 5 rounds.
-            \end{spellattack}
+            \spelleffect The target is \exhausted for 2 rounds.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -7344,25 +7287,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}[Lesser]{Waves of Fatigue}[1]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellburst{\areamed cone}
-            \spelltgts{All creatures in the area}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect The target is \fatigued for 5 rounds.
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Vivimancy [Flesh]}{Arcane, Death, War}
-        \miscastexplode
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Web}[8]
+\begin{spellsection}{Web}[5]
     \begin{spellheader}
         \spelldesc{You create a many-layered mass of strong, stricky strands that trap creatures caught within them. The strands are similar to spider webs, but larger and tougher.}
     \end{spellheader}
@@ -7382,7 +7307,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess The target is \immobilized. It can escape with a grapple or Escape Artist check against a DC equal to 10 \add your spellpower.
+                \spellsuccess The target is \immobilized. It can escape by destroying the webs in its space, or with a grapple or Escape Artist check against a DC equal to 10 \add your spellpower.
             \end{spellattack}
         \end{spelleffects}
     \end{spellsubcontent}

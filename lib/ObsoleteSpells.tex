@@ -1319,3 +1319,49 @@
     \end{spellfooter}
 \end{spellsection}
 
+\begin{spellsection}{Curse of Enfeeblement}[4]
+    \begin{spellheader}
+%\spelldesc{You fire a coruscating ray from your hand. When it strikes your foe, he becomes weaker.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \begin{spellattack}{Spellpower vs. Fortitude}
+                \spellsuccess The target takes a \minus4 penalty to your choice of Strength or Dexterity.
+                \spellfailure As above, but the penalty is halved.
+            \end{spellattack}
+            \spelldur One year
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Vivimancy [Curse, Flesh]}{Vivimancy, Death}
+        \spellnotes This spell cannot reduce an attribute below \minus9. \cursespellnotes
+        \miscastrandom
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Power Word Stun}[9]
+    \begin{spellheader}
+        \spelldesc{You utter a single word of power that instantly causes your foe to become stunned, whether the creature can hear the word or not.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
+            \spellcmp{Verbal only}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \begin{spellattack}{Spellpower vs. Mental}
+                \spellsuccess The target is \dazed and moves at half speed for 5 rounds.
+                \spellcritical The target is \stunned for 5 rounds.
+                \spellfailure The target moves at half speed for 5 rounds.
+            \end{spellattack}
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Enchantment [Compulsion, Mind]}{Arcane}
+        \miscastrandom
+    \end{spellfooter}
+\end{spellsection}
+
