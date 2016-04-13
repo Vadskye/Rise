@@ -60,6 +60,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
                 \spellsuccess 1d8 acid damage per two spellpower immediately, and again at the end of the next round.
+                \spellcritical As above, except that the acid persists for 5 rounds, and the target is \sickened for 1 round each time it takes damage.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -86,7 +87,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Acid, Creation, Physical]}{Arcane}
-        \spellnotes As \spell{acid arrow}, except that ten points of cold or fire damage are required to end the effect.
+        \spellnotes As \spell{acid arrow}, except that fifteen points of cold or fire damage are required to end the effect.
         \miscastrandom
     \end{spellfooter}
 \end{spellsection}
@@ -146,7 +147,8 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
                 \spellsuccess The target takes double damage from all physical damage.
-                \spellfailure The target takes double damage the next time it takes physical damage.
+                \spellcritical As above, and the target immediately takes \spelldamage{physical}. This damage is doubled like other physical damage.
+                \spellfailure The target is \sickened.
             \end{spellattack}
             \spelldur \durbrief
         \end{spelleffects}
@@ -476,6 +478,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
                 \spellsuccess \spelldamage{slashing}. In addition, the target takes one point of critical damage after this damage is dealt, regardless of its current hit points.
+                \spellcritical As above, except the target takes critical damage equal to your spellpower.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
         \end{spelleffects}
@@ -542,6 +545,26 @@
         \spellinfo{Conjuration [Planar]}{Arcane}
         \spellnotes If you are on the Astral Plane when you cast this spell, it has no effect.
         \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Blur}[2]
+    \begin{spellheader}
+        \spelldesc{You distort an ally's outline so it appears blurred, shifting, and wavering.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect Targeted physical attacks against the target have a 20\% miss chance.
+            Spells and other non-physical attacks suffer no miss chance.
+            \spelldur \durshort
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Illusion [Glamer]}{Arcane}
+        \miscastrandom
     \end{spellfooter}
 \end{spellsection}
 
@@ -771,15 +794,15 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
                 \spellsuccess The target has its emotions calmed. It cannot take violent actions (although it can defend itself) or do anything destructive.
+                If an aggressive action is taken against a nearby creature, this effect is broken.
+                \spellcritical As above, except that nearby violence does not break the effect, and the effect lasts for 5 rounds after you stop concentrating on the spell.
             \end{spellattack}
             \spelldur Focus
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Mind, Subtle]}{Arcane}
-        \spellnotes Any aggressive action against or damage dealt to a nearby creature immediately breaks the spell on all calmed creatures.
-
-        This spell automatically suppresses (but does not dispel) any effects of spells or abilities that affect or require emotions, including all other enchantment (emotion) spells.
+        \spellnotes This spell automatically suppresses (but does not dispel) any effects of spells or abilities that affect or require emotions, including all other enchantment (emotion) spells.
         \miscastyou
     \end{spellfooter}
 \end{spellsection}
@@ -1015,7 +1038,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Confusion}[3]
+\begin{spellsection}{Confusion}[2]
     \begin{spellheader}
         \spelldesc{You compel a group of creatures to act randomly, sowing confusion in your foes' ranks.}
     \end{spellheader}
@@ -1370,6 +1393,8 @@
                 \spellsuccess \spelldamage{life}. In addition, for 2 rounds, the target automatically dies if it takes critical damage while it has no hit points remaining.
 
                 If the target dies in this way, you gain temporary hit points equal to twice your spellpower. These temporary hit points last for 1 round per level the target had.
+
+                \spellcritical As above, except that the temporary hit points are also granted to all allies within a \arealarge radius of the dead creature.
 
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
@@ -2061,6 +2086,7 @@
             \begin{spellattack}{Spellpower vs. Reflex}
                 \spelleffect The target is knocked prone.
                 \spellsuccess The target is trapped in a crack in the ground, causing it to be \immobilized. It can escape with a grapple or Escape Artist check against a DC equal to 10 \add your spellpower.
+                \spellcritical As above, except that the target is \grappled by the earth instead of immobilized.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -2167,6 +2193,7 @@
             \begin{spellattacktriggered}{If the target is living, make a Spellpower vs. Fortitude attack.}
                 \spellsuccess The target gains eight \conditionlink{negative levels}. This imposes a \minus8 penalty to the target's accuracy, defenses, and checks, and a penalty to its current and maximum hit points equal to eight times the creature's level.
                 \spellfailure The target gains four \conditionlink{negative levels}. This imposes a \minus4 penalty to the target's accuracy, defenses, and checks, and a penalty to its current and maximum hit points equal to four times the creature's level.
+                \spellcritical The target gains enough negative levels to reduce its effective level to 1, regardless of its level.
             \end{spellattacktriggered}
         \end{spelleffects}
     \end{spellcontent}
@@ -2274,7 +2301,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngtouch}}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect Each physical ranged attack directed at the target has a 50\% miss chance. Other attacks that simply work at a distance are not affected.
@@ -2756,7 +2783,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Forcecage}[5]
+\begin{spellsection}{Forcecage}[8]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -2764,9 +2791,7 @@
             \spelltwocol{\spelltgt{One creature or object (Large or smaller)}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess An immobile, invisible prison appears around the target. The prison can be a perfect sphere, a perfect cube, or a barred cage. The cage bars are an inch wide, with one inch gaps between them.
-            \end{spellattack}
+            \spelleffect An immobile, invisible prison appears around the target. The prison can be a perfect sphere, a perfect cube, or a barred cage. The cage bars are an inch wide, with one inch gaps between them.
             \spelldur 5 rounds
         \end{spelleffects}
     \end{spellcontent}
@@ -3122,13 +3147,15 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One metal object (Medium or smaller)}}{\spellrng{\rngmed}}
+            \spelltwocol{\spelltgt{One metal object (Medium or smaller)}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
                 \spellsuccess The target and everything touching it takes \spelldamage{fire}[d8] immediately, and again at the end of the next round.
 
                 A creature wearing or holding the target object is \dazed each round it takes damage from the object.
+                \spellcritical As above, except that the damage lasts for 5 rounds.
+                \spellfailure Half damage, and no additional effects.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -3797,10 +3824,11 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
                 \spellsuccess The target must spend a standard action each round to do nothing but dance.
+                \spellcritical As above, except that the effect lasts for one year.
                 \spellfailure The target must spend a move action each round to dance.
                     In addition, the struggle to resist dancing makes it \impaired with all actions.
             \end{spellattack}
-            \spelldur \durbrief
+            \spelldur \durbrief or one year
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -4093,6 +4121,25 @@
     \end{spellfooter}
 \end{spellsection}
 
+\begin{spellsection}{Mask of the Deceiver}[1]
+    \begin{spellheader}
+        \spelldesc{You create a trustworthy facade for your ally, making their words feel genuine and true.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spellquicktargeting{One willing creature}{\rngclose}
+            \spellcmp{Somatic only}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect The target gains a \plus5 bonus to Bluff and Persuasion checks.
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Illusion}{Arcane}
+        \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
+
 \begin{spellsection}{Mass (Spell Name)}
     \par Any spell whose name begins with mass is alphabetized in this chapter according to the second word of the spell name. Thus, the description of a mass spell appears near the description of the spell on which it is based. Spell chains that have mass spells in them include those based on the spells charm monster, cure critical wounds, cure light wounds, cure moderate wounds, cure serious wounds, enlarge, heal, hold monster, hold person, inflict critical wounds, inflict light wounds, inflict moderate wounds, inflict serious wounds, invisibility, shrink, suggestion, totemic mind, and totemic power.
 \end{spellsection}
@@ -4267,26 +4314,6 @@
     \begin{spellfooter}
         \spellinfo{Illusion [Figment, Visual]}{Arcane}
         \spellnotes As \spell{mirror image}.
-        \miscastexplode
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Mislead}[6]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltgt{You}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect You become invisible, as \spell{invisibility}. At the same time, an illusory double of you appears, as \spell{major image}.
-
-            You can control the image of yourself as you would control any other figment with \spell{major image}. If not directed, it remains stationary.
-            \spelldur \durshort \dismissable
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Illusion [Figment, Glamer, Unreal]}{Arcane, Trickery}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -4531,10 +4558,11 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
-                \spellsuccess The target is \blinded.
-                \spellfailure The target is \partiallyblinded.
+                \spellsuccess The target is \blinded for 2 rounds.
+                \spellcritical The target is \blinded for one year.
+                \spellfailure The target is \partiallyblinded for 2 rounds.
             \end{spellattack}
-            \spelldur \durbrief
+            \spelldur \durbrief or one year
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -4553,10 +4581,11 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess The target is \confused.
-                \spellfailure The target is \disoriented.
+                \spellsuccess The target is \confused for 2 rounds.
+                \spellcritical The target is \confused for one year.
+                \spellfailure The target is \disoriented for 2 rounds.
             \end{spellattack}
-            \spelldur \durbrief
+            \spelldur \durbrief or one year
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -4575,10 +4604,11 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess The target is \severelyimpaired with all actions.
-                \spellfailure The target is \impaired with all actions.
+                \spellsuccess The target is \severelyimpaired with all actions for 2 rounds.
+                \spellcritical The target is \severelyimpaired with all actions for one year.
+                \spellfailure The target is \impaired with all actions for 2 rounds.
             \end{spellattack}
-            \spelldur \durbrief
+            \spelldur \durbrief or one year
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -4597,9 +4627,10 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
-                \spellsuccess The target is \staggered.
+                \spellsuccess The target is \staggered for 2 rounds.
+                \spellsuccess The target is \staggered for one year.
             \end{spellattack}
-            \spelldur \durbrief
+            \spelldur \durbrief or one year.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -4793,36 +4824,6 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Project Image}[6]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellrng{\rngmed}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect You tap energy from the Plane of Shadow to create a quasi-real version of yourself. The projected image looks, sounds, and smells like you, but is intangible. Normally, it mimics your actions perfectly, including speech.
-            \par As a swift action, you can attune to the projected image. This has several effects.
-            \begin{itemize}
-                \item You see and hear from the image's location, rather from where your body is.
-                \item Any spells you cast originate from the image instead of from you. This causes you to measure range, line of effect, and so on from the image's location, rather than from your location.
-                \item You can control the image's actions independently from your own actions. Each round, it can move up to 100 feet in any direction, including vertically.
-            \end{itemize}
-
-            As a free action, you can stop attuning to the projected image, restoring your perceptions and spells to your original body.
-
-            \spelldur \durmed \dismissable
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Conjuration/Illusion [Planar, Unreal]}{Arcane}
-        \spellnotes You must maintain line of effect to the projected image at all times. If your line of effect is obstructed, the spell ends. If you teleport or use a similar effect that breaks your line of effect, even momentarily, the spell ends.
-
-        Since the image is not a creature, it is difficult to disrupt, and many spells have no effect on it.
-        \miscastexplode
-    \end{spellfooter}
-\end{spellsection}
-
 \begin{spellsection}{Protection from Alignment}[2]
     \begin{spellheader}
     \end{spellheader}
@@ -4974,6 +4975,8 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
                 \spellsuccess The target is unable to move towards you. It can stand still, or alter the direction of its movement to move parallel towards you or away from you.
+                \spellcritical The target's movement is cancelled, and it is shoved backwards to the edge of the area.
+                If it encounters an obstacle, it stops moving.
             \end{spellattack}
             \spelldur \durshort \dismissable
         \end{spelleffects}
@@ -5346,41 +5349,145 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Shadow Puppet}[9]
+\begin{spellsection}{Shadow Duplicate}[8]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
-        \spelleffect You step into the Plane of Shadow, as \spell{shadow walk}. At the same time, you create a quasi-real version of yourself, as \spell{project image}. The duplicate image appears superimposed over your body so that observers don't notice an image appearing and you disappearing. You can then control the image and cast spells through it even though you are on a different plane.
-        \spelldur \durshort
+        \begin{spelltargetinginfo}
+            \spellrng{\rngmed}
+            \spellcmp{Somatic only}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect You create an illusory duplicate of yourself. The duplicate looks, sounds, and smells like you, but is intangible. Normally, it mimics your actions perfectly, including speech.
+            \par As a swift action, you can attune to the projected image. This has several effects.
+            \begin{itemize}
+                \item You see and hear from the image's location, rather from where your body is.
+                \item You can control the image's actions independently from your own actions. Each round, it can move up to 100 feet in any direction, including vertically.
+                \item If you have line of effect to the image, you may have any spells you cast originate from the image instead of from you.
+                    This causes you to measure range, line of effect, and so on from the image's location, rather than from your location.
+            \end{itemize}
+
+            As a free action, you can stop attuning to the projected image, restoring your perceptions and spells to your original body.
+
+            \spelldur \durlong \dismissable
+        \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Conjuration/Illusion [Planar, Unreal]}{Illusion}
-        \spellnotes If the image moves farther than \rnglong range away from where it was originally created, or if you leave the Plane of Shadow, the image ceases to exist.
-
-        If you are not on the Material Plane when you cast this spell, it has no effect.
+        \spellinfo{Divination/Illusion [Figment, Scrying, Unreal]}{Arcane}
+        \spellnotes Creatures can identify the duplicate as an illusion, as \spell{silent image}.
+        Since the image is not a creature, it is difficult to disrupt, and many spells have no effect on it.
+        However, the image is treated as a scrying sensor for the purpose of abilities that affect scrying sensors.
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Shadow Umbra}[9]
+\begin{spellsection}{Shadow Wall}[6]
     \begin{spellheader}
-        \spelldesc{You shield your ally with a dark umbra that connects directly to the Plane of Shadow.}
+        \spelldesc{You create a wall that blocks your foes and allows your allies through.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltwocol{\spellarea{\arealarge solid wall, 10 ft. high}}{\spellrng{\rngmed}}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect This spell creates an illusion of a wall or similar physical barricade.
+            In the same position, this spell creates a powerful barrier that blocks the passage of most objects and creatures.
+            However, your allies and their equipment can pass through the barrier unimpeded.
+            The wall blocks all spell effects, including those of your allies.
+
+            \spelldur 5 rounds
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Abjuration/Illusion [Barrier, Figment, Unreal]}{lists}
+        \spellnotes Creatures can identify that the wall is an illusion, as \spell{silent image}.
+        This can allow creatures to see through the wall, but does not allow them to pass through it.
+        \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Shadowbolt}[2]
+    \begin{spellheader}
+        \spelldesc{You fire an invisible bolt of energy at your foe.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spellquicktargeting{One creature or object}{\rngclose}
+            \spellcmp{Somatic only}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect \spelldamage{cold}[d10]
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Evocation/Illusion [Energy, Subtle]}{Arcane}
+        \spellnotes \subtlespellnotes
+        \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Shadowshield}[9]
+    \begin{spellheader}
+        \spelldesc{You shield your ally with an invisible force that negates attacks without alerting foes to its presence.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect All attacks that would affect the creature, including magical and supernatural attacks, have a 50\% chance to be absorbed by the umbra. Attacks absorbed by the umbra have no effect on the target. The umbra is selective, and does not inhibit beneficial effects.
+            \spelleffect All attacks that would affect the creature, including magical and supernatural attacks, have a 50\% chance to fail. The shield is selective, and does not inhibit beneficial effects.
 
-            Whenever the umbra absorbs an attack, it alters the creature's appearance (including smell, sound, and other senses, as appropriate) with a glamer. This causes the creature to seem as if were affected by the attack. Outside observers have no way of knowing which attacks were absorbed by the umbra unless they can recognize the illusion. The spell does not attempt to mimic the effects of extraordinary attacks which cannot be disguised, such as attacks which would destroy the creature's body.
+            Whenever the shield negates an attack, it alters the creature's appearance (including smell, sound, and other senses, as appropriate) with a glamer. This causes the creature to seem as if were affected by the attack. Outside observers have no way of knowing which attacks were absorbed by the umbra unless they can recognize the illusion. The spell does not attempt to mimic the effects of extraordinary attacks which cannot be disguised, such as attacks which would destroy the creature's body.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Abjuration/Illusion [Glamer, Planar, Shielding]}{Arcane}
+        \spellinfo{Abjuration/Illusion [Glamer, Shielding, Subtle]}{Arcane}
         \spellnotes If you are not on the Material Plane or Plane of Shadow when you cast this spell, it has no effect.
         \miscastrandom
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Shadowstep}[5]
+    \begin{spellheader}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltgt{You}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect This spell has three simultaneous effects.
+            First, you become invisible for 5 rounds, as \spell{invisibility}.
+            Second, you teleport up to 100 feet, as \spell{dimension slide}.
+            Third, an illusory duplicate of you appears in your original location for 5 rounds, as \spell{major image}.
+            The image appears superimposed over your original position, preventing onlookers from noticing your disappearance.
+
+            You can control the image of yourself as you would control any other figment with \spell{major image}. If not directed, it remains stationary.
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Conjuration/Illusion [Figment, Glamer, Teleportation, Unreal]}*{Arcane, Trickery}
+        \spellnotes Creatures can identify the duplicate as illusory, as \spell{silent image}.
+        \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Shadowstorm}[7]
+    \begin{spellheader}
+        \spelldesc{You create an invisible storm of energy that damages your foes.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltwocol{\spellarea{\areamed radius zone}}{\spellrng{\rngmed}}
+            \spellcmp{Somatic only}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect At the end of every round, all enemies in the area take 1d8 cold damage per four spellpower.
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Evocation/Illusion [Energy, Subtle]}{Arcane}
+        \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
@@ -5613,16 +5720,19 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
-                \spelleffect The target becomes unable to make noise. Any noises it makes are inaudible to other creatures. When you cast the spell, you may choose whether the target can still hear itself normally, potentially causing it to be unaware of the effect of the spell.
+                \spellsuccess The target becomes unable to make noise. Any noises it makes are inaudible to other creatures. When you cast the spell, you may choose whether the target can still hear itself normally, potentially causing it to be unaware of the effect of the spell.
 
                 Extraordinarily loud noises, such as the yell of a giant, are merely muffled by the spell rather than completely silenced. The DC to hear such sounds produced by the target is increased by 40. Sonic attacks function normally.
+
+                Spellcasters can still cast spells with verbal components while silenced, but suffer a 20\% chance of spell failure.
+
+                \spellcritical As above, except that the silence is absolute. Even extraordinarily loud noises are utterly silenced, and spellcasters are unable to cast spells with verbal components.
             \end{spellattack}
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Illusion [Glamer]}{Divine, Trickery}
-        \spellnotes Spellcasters unable to hear themselves cast are treated as deafened, and suffer a 20\% chance of spell failure when casting spells with verbal components.
         \miscastrandom
     \end{spellfooter}
 \end{spellsection}
@@ -5653,7 +5763,7 @@
             \spelltwocol{\spellzone{\areamed radius}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect This spell creates the visual illusion of an object, creature, or force within the area, as determined by you. The illusion does not create sound, smell, texture, or temperature. As a standard action, you can concentrate to alter the image within the area.
+            \spelleffect This spell creates the visual illusion of an object, creature, or force within the area, as determined by you. The illusion does not create sound, smell, texture, or temperature. If you concentrate as a swift action, you can alter and control the image for the rest of the round.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
@@ -6031,16 +6141,17 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
-                \spellsuccess \spelldamage{slashing}. In addition, all damage the target takes is doubled for 5 rounds. This does not apply to the initial damage dealt by this spell.
+                \spellsuccess \spelldamage{slashing}. In addition, all damage the target takes is doubled for 2 rounds.
+                This does not apply to the initial damage dealt by this spell.
+                \spellcritical As above, except that the doubling of damage lasts for one month.
+                Effects which accelerate natural healing, such as the Heal skill, also reduce the duration of this effect.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Vivimancy [Flesh, Physical]}{Arcane}
-        \spellnotes The doubling of damage can be negated by a Heal check against a DC equal to 10 \add your spellpower.
-
-        \physicalspellnotes
+        \spellnotes \physicalspellnotes
         \miscastrandom
     \end{spellfooter}
 \end{spellsection}
@@ -6871,6 +6982,7 @@
             \spellspecial If the target is not made of flesh (such as a golem), it is unaffected.
             \begin{spellattack}{Spellpower vs. Fortitude}
                 \spellsuccess \spelldamage{physical}. For the next 5 rounds, if the target has no hit points remaining at the end of the round, it becomes \petrified along with its equipment.
+                \spellcritical The target is immediately \petrified along with its equipment.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
         \end{spelleffects}
