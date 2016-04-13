@@ -42,6 +42,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
     \SLcolorspray[Illus]
     \SLdancinglights
+    \SLmaskofthedeceiver
     \SLventriloquism
     \SLcreatesound*
 
@@ -81,11 +82,14 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
     \SLconeofcold[Evoc]
     \SLknock
+    \SLshadowbolt
     \SLsoundburst
     \SLwalloffire
     \SLtelekineticshove*
 
-    \SLsilentimage*
+    \SLblur
+    \SLshadowbolt
+    \SLsilentimage*[Illus]
 
     \SLspiderclimb[Trans]
     \SLtotemicmind
@@ -198,6 +202,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLspelltheft*
 
     \SLplanardisruptionmass[Conj]
+    \SLshadowstep
     \SLsolidfog
     \SLsummonmonsterv
     \SLweb
@@ -212,12 +217,12 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
     \SLblacktentacles[Evoc]
     \SLconeofcoldgreater
-    \SLforcecage
     \SLwalloffiregreater
     \SLwallofforce
     \SLtelekineticblast*
 
     \SLdisplacement[Illus]
+    \SLshadowstep
 
     \SLhaste[Trans]
     \SLtotemicmindgreater
@@ -236,11 +241,11 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
     \SLdispelmagicgreater[Abjur]
     \SLenergyconversion
+    \SLshadowwall
     \SLprohibition*
 
     \SLacidarrowgreater[Conj]
     \SLacidfog
-    \SLprojectimage
     \SLsummonmonstervi
     \SLblink*
 
@@ -250,8 +255,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLtrueseeing
     \SLreadmindgreater*
 
-    \SLconfusionmass[Ench]
-    \SLfearmass
+    \SLfearmass[Ench]
     \SLpowerwordconfuse
     \SLdominateperson*
 
@@ -261,8 +265,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
     \SLinvisibilitygreater[Illus]
     \SLmirrorimagegreater
-    \SLmislead
-    \SLprojectimage
+    \SLshadowwall
     \SLpersistentimage*
 
     \SLdisintegrate[Trans]
@@ -291,15 +294,16 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
     \SLprecognitiongreater*[Div]
 
-    \SLconfusionmass[Ench]
-    \SLdeepslumber
+    \SLdeepslumber[Ench]
     \SLholdmonstermass
     \SLfeeblemind*
 
     \SLicestorm[Evoc]
+    \SLshadowstorm
     \SLshoutgreater
 
     \SLinvisibilitymass[Illus]
+    \SLshadowstorm
 
     \SLslowmass[Trans]
     \SLtrueseeing
@@ -319,6 +323,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLdimensiondoormass*
 
     \SLreadmindmass[Div]
+    \SLshadowduplicate
     \SLmomentofpresciencegreater*
 
     \SLheroismgreater[Ench]
@@ -326,9 +331,11 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
     \SLphantasmalkillermass
     \SLsuggestionmass*
 
-    \SLmissilestormgreater[Evoc]
+    \SLforcecage[Evoc]
+    \SLmissilestormgreater
 
     \SLphantasmalkillermass[Illus]
+    \SLshadowduplicate
 
     \SLhastemass[Trans]
     \SLimprisonment
@@ -344,11 +351,10 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 \begin{swspelllist}
 
     \SLdisjoinmagic[Abjur]
-    \SLshadowumbra
+    \SLshadowshield
     \SLinvulnerability*
 
-    \SLshadowpuppet
-    \SLsummonmonsterix
+    \SLsummonmonsterix[Conj]
     \SLetherealness*
 
     \SLrevelation[Div]
@@ -359,8 +365,7 @@ When a spell's name begins with ``lesser,'' ``greater,'' or ``mass,'' the spell 
 
     \SLmeteorswarm[Evoc]
 
-    \SLshadowpuppet[Illus]
-    \SLshadowumbra
+    \SLshadowshield[Illus]
     \SLfalsereality*
 
     \SLassimilate[Trans]
@@ -1039,14 +1044,15 @@ Summoning spells summon lawful creatures only.
 \subsubsection{Trickery Domain Spells}
 
 \begin{spelllist}
+    \SLmaskofthedeceiver[1]
     \SLventriloquism[1]
     \SLsilence[2]
     \SLconfusion[3]
     \SLinvisibility[3]
     \SLphantasmalkiller[4]
+    \SLshadowstep[5]
     \SLsilencemass[5]
     \SLconfusionmass[6]
-    \SLmislead[6]
     \SLinvisibilitymass[7]
     \SLphantasmalkillermass[8]
     \SLmaze[8]

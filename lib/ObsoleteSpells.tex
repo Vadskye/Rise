@@ -1243,25 +1243,6 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Blur}[2]
-    \begin{spellheader}
-        \spelldesc{You distort an ally's outline so it appears blurred, shifting, and wavering.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect The target gains a \plus5 bonus to Stealth checks, and is always treated as having concealment for the purpose of making Stealth checks.
-            \spelldur \durpersonallong
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Illusion [Glamer]}{Arcane}
-        \miscastrandom
-    \end{spellfooter}
-\end{spellsection}
-
 \begin{spellsection}{Boon of Farsight}[3]
     \begin{spellheader}
         \spelldesc{Your ally becomes able to see and fight well at great distances.}
@@ -1365,3 +1346,24 @@
     \end{spellfooter}
 \end{spellsection}
 
+\begin{spellsection}{Shadow Puppet}[9]
+    \begin{spellheader}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spellrng{\rngmed}
+            \spellcmp{Somatic only}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect You step into the Plane of Shadow, as \spell{shadow walk}. At the same time, you create a quasi-real version of yourself, as \spell{shadow duplicate}, except that you do not need line of effect to cast spells through the image. The duplicate image appears superimposed over your body so that observers don't notice an image appearing and you disappearing.
+            \spelldur \durshort
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Conjuration/Illusion [Planar, Unreal]}{Illusion}
+        \spellnotes If the image moves farther than \rnglong range away from where it was originally created, or if you leave the Plane of Shadow, the image ceases to exist.
+
+        If you are not on the Material Plane when you cast this spell, it has no effect.
+        \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
