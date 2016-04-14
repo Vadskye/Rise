@@ -599,7 +599,7 @@
             \spellquicktargeting{One willing creature}{\rngclose}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target gains a \plus5 bonus to Awareness checks.
+            \spelleffect Whenever the target makes Awareness checks, it rolls twice and takes the higher result.
             In addition, it reduces its \glossterm{overwhelm penalties} by 5 (to a minimum of 0).
             If this effect reduces the target's overwhelm penalty to 0, it is not considered to be overwhelmed.
             \spelldur \durshort
@@ -620,7 +620,7 @@
             \spellquicktargeting{One willing creature}{\rngclose}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target gains a \plus5 bonus to all skills.
+            \spelleffect Whenever the target makes a skill check, it rolls twice and takes the higher result.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
@@ -630,7 +630,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}[Greater]{Boon of Mastery}[6]
+\begin{spellsection}[Greater]{Boon of Mastery}[7]
     \begin{spellheader}
         \spelldesc{Your ally becomes greatly skilled in all things.}
     \end{spellheader}
@@ -639,7 +639,8 @@
             \spellquicktargeting{One willing creature}{\rngclose}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target gains a \plus10 bonus to all skills.
+            \spelleffect Whenever the target makes a skill check, it rolls twice and takes the higher result.
+            In addition, it gains a \plus5 bonus to all skills.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
@@ -658,7 +659,7 @@
             \spellquicktargeting{One willing creature}{\rngclose}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target gains a \plus5 bonus to Awareness, Sense Motive, and Spellcraft checks.
+            \spelleffect Whenever the target makes Awareness, Sense Motive, and Spellcraft checks, it rolls twice and takes the higher result.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
@@ -2069,6 +2070,9 @@
     \begin{spellfooter}
         \spellinfo{Transmutation [Augment, Earth]}{Earth, Nature}
         \spellnotes The target's burrowing leaves behind no tunnel or hole, nor does it create any ripple or other signs of its presence.
+        This spell does not grant the target the ability to breathe earth, and it may suffocate if it remains within earth for a prolonged period of time.
+
+        If this spell ends while the target is inside solid earth, it is shunted to the nearest open space large enough to fit it, taking 1d6 physical damage per 5 feet moved.
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -2216,6 +2220,7 @@
                 \spellsuccess The target and its equipment instantly grows, doubling its height and multiplying its weight by 8. This changes the creature's size category to the next larger one. This has several effects.
                 \begin{itemize}
                     \item \plus10 ft. bonus to movement speed.
+                    \item \plus4 bonus to Fortitude defense.
                     \item \plus4 bonus to maneuver accuracy and defense.
                     \item \minus1 penalty to other physical accuracy and defenses.
                     \item \minus4 penalty to Stealth checks.
@@ -4131,7 +4136,7 @@
             \spellcmp{Somatic only}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target gains a \plus5 bonus to Bluff and Persuasion checks.
+            \spelleffect Whenever the target makes Bluff and Persuasion checks, it rolls twice and takes the higher result.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -5644,6 +5649,7 @@
                 \spellsuccess The target and its equipment instantly shrinks, halving its height and dividing its weight by 8. This changes the creature's size category to the next smaller one. This has several effects.
                 \begin{itemize}
                     \item \minus10 ft. penalty to movement speed.
+                    \item \minus4 penalty to Fortitude defense.
                     \item \minus4 penalty to maneuver accuracy and defense.
                     \item \plus1 bonus to other physical attacks and defenses.
                     \item \plus4 bonus to Stealth checks.
