@@ -305,8 +305,8 @@ Some strike feats instead require a specific action to use.
         \featref{Poison Expert} & Int 3, Craft (poison) 10 ranks & Apply poisons more effectively & \featpref{Poison Expert} \\
         \featref{Ranged Legerdemain} &  2nd level Telekinesis spell & Use Disable Device or Sleight of Hand at range & \featpref{Ranged Legerdemain} \\
         \featref{Scale the Beast} & Climb 10 ranks & Climb on massive creatures & \featpref{Scale the Beast} \\
-        \featref{Skill Focus}\fn{1} & \x &  \plus4 bonus to checks with selected skill & \featpref{Skill Focus} \\
-        \featref{Skill Mastery}\fn{1} & Any skill 10 ranks & Always take 10 on skill checks & \featpref{Skill Mastery} \\
+        \featref{Skill Mastery}\fn{1} & Any skill 5 ranks & Roll twice for checks with selected skill & \featpref{Skill Mastery} \\
+        \tind \featref{Skill Specialization}\fn{1} & Any skill 10 ranks, Skill Mastery with skill & \plus5 to skill & \featpref{Skill Specialization} \\
         \featref{Trapfinder} & Awareness 5 ranks & Find traps faster & \featpref{Trapfinder} \\
         \featref{Trap Sense} & Awareness 10 ranks & Automatically detect traps & \featpref{Trap Sense} \\
         \featref{Track} & \x &  Use Survival skill to track & \featpref{Track} \\
@@ -858,10 +858,10 @@ While gliding, you move forward each round at a rate equal to your base land spe
 
 If you are 12th level, you gain a fly speed equal to your land speed with average maneuverability.
 See \pcref{Flying}, for more details.
-You can only fly for a number of rounds equal to 3 \add half your Constitution.
+You can only fly for up to 5 rounds.
 After that limit is reached, you must rest for 5 minutes before flying again.
 
-If you are 18th level, you can fly for a number of minutes equal to 3 \add half your Constitution before resting.
+If you are 18th level, you can fly for up to 5 minutes before resting.
 
 \feat{Driving Assault}{Combat, Maneuver, Power, Strike}
 \featpres Str 5, two strikes.
@@ -1846,20 +1846,19 @@ If your attack result also beats the foe's Fortitude defense, it is \staggered f
 Spells without verbal components are not affected.
 A silent spell uses up a spell slot one level higher than the spell's actual level.
 
-\feat{Skill Focus}{Skill}
+\feat{Skill Mastery}{Skill}
 Choose a skill.
-\featben You gain a \plus4 bonus to all checks involving that skill.
+\featpre 5 ranks in the chosen skill.
+\featben Whenever you make a check with the chosen skill, you may roll twice and take the higher result.
 \parhead{Special}
 You can gain this feat multiple times.
 Its effects do not stack.
 Each time you take the feat, it applies to a new skill.
 
-\feat{Skill Mastery}{Skill}
+\feat{Skill Specialization}{Skill}
 Choose a skill.
-\featpre 10 ranks in the chosen skill.
-\featben When making a skill check with your chosen skill, stress and distraction do not prevent you from taking 10, allowing you to automatically succeed.
-You still cannot take 10 when opposed.
-See \pcref{Taking 10}.
+\featpre 10 ranks in the chosen skill, Skill Mastery in the chosen skill.
+\featben You gain a \plus5 bonus to all checks involving that skill.
 \parhead{Special}
 You can gain this feat multiple times.
 Its effects do not stack.
