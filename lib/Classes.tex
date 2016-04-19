@@ -367,24 +367,24 @@ If he stops being lawful, he regains his ability to rage and take barbarian leve
         \tb{Level} & \tb{Combat Prowess} & \tb{Fort} & \tb{Ref} & \tb{Ment} & \tb{Special} \\
         \hline
         \clericprogressionrow{1}  & Devotion \plus2, domain gifts, spells, rituals \\
-        \clericprogressionrow{2}  & Domain invocation                              \\
-        \clericprogressionrow{3}  & Domain invocation                              \\
+        \clericprogressionrow{2}  & Domain invocations                             \\
+        \clericprogressionrow{3}  & Domain spell                                   \\
         \clericprogressionrow{4}  & Devotion feat                                  \\
-        \clericprogressionrow{5}  & Devotion \plus3                                \\
+        \clericprogressionrow{5}  & Devotion \plus3, domain spell                  \\
         \clericprogressionrow{6}  & Domain aspect                                  \\
-        \clericprogressionrow{7}  & \x                                             \\
+        \clericprogressionrow{7}  & Domain spell                                   \\
         \clericprogressionrow{8}  & Domain aspect                                  \\
-        \clericprogressionrow{9}  & \x                                             \\
+        \clericprogressionrow{9}  & Domain spell                                   \\
         \clericprogressionrow{10} & Devotion \plus4, greater domain invocation     \\
-        \clericprogressionrow{11} & \x                                             \\
+        \clericprogressionrow{11} & Domain spell                                   \\
         \clericprogressionrow{12} & Greater domain invocation                      \\
-        \clericprogressionrow{13} & \x                                             \\
+        \clericprogressionrow{13} & Domain spell                                   \\
         \clericprogressionrow{14} & Devotion feat                                  \\
-        \clericprogressionrow{15} & Devotion \plus5                                \\
+        \clericprogressionrow{15} & Devotion \plus5, domain spell                  \\
         \clericprogressionrow{16} & Domain mastery                                 \\
-        \clericprogressionrow{17} & \x                                             \\
+        \clericprogressionrow{17} & Domain spell                                   \\
         \clericprogressionrow{18} & Domain mastery                                 \\
-        \clericprogressionrow{19} & Endless devotion                               \\
+        \clericprogressionrow{19} & Endless devotion, domain spell                 \\
         \clericprogressionrow{20} & Devotion \plus6                                \\
     \end{dtabularx}
 \end{dtable}
@@ -453,9 +453,9 @@ The maximum spell level a cleric can learn or cast is equal to half his cleric l
 A cleric's spellpower is normally equal to his divine power.
 See the Divine Power ability below.
 
-A cleric knows a number of spells equal to his Willpower or his cleric level, whichever is higher.
+A cleric knows a number of spells equal to his cleric level.
 The spells may be of any spell level he has access to.
-Each time he gains a level, he may trade one of his existing spells for a different spell known, in addition to any new spells learned by increasing his Willpower or cleric level.
+Each time he gains a level, he may trade one of his existing spells for a different spell known, in addition to the new spell learned by increasing his cleric level.
 He may learn spells from both the divine spell list (see \pcref{Divine Spells}) and his domain spell lists (see \pcref{Cleric Domains}).
 Sometimes these domain spells are spells that are normally available on the divine spell list, but often they are only accessible by the domain.
 
@@ -539,15 +539,21 @@ The cleric can refill his devotion pool by spending an hour in prayer, supplicat
 In addition, whenever the cleric performs a significant service to his deity or other spiritual inclinations, he may regain a devotion point.
 Extraordinary services may allow the cleric to regain more devotion points.
 
-\cf{Clr}[2nd]{Domain Invocation}[Su]
+\cf{Clr}[2nd]{Domain Invocations}[Su]
 As a standard action, a cleric can spend a devotion point to invoke divine power.
-He gains the domain invocations offered by one of his domains.
-At 3rd level, he gains a domain invocation offered by another one of his domains.
+He gains the domain invocations offered by two of his domains.
 
 All domain invocations affect a single creature within \rngmed range and require a special attack against a defense.
 The cleric's accuracy with domain invocations is equal to his divine power.
 If the attack succeeds, a domain invocation heals or inflicts 1d6 damage per divine power.
 If the attack fails, the invocation heals or inflicts half damage.
+
+\cf{Clr}[3rd]{Domain Spell}
+The cleric chooses a spell from one of his domains.
+The spell's level cannot exceed half the cleric's level.
+If he knows that spell, he may spend a devotion point to cast it in place of a spell slot.
+
+At 5th level, and every odd level theareafter, the cleric gains an additional domain spell.
 
 \cf{Clr}[4th]{Devotion Feat}[Su]
 The cleric chooses a feat that he meets the prerequisites for.
@@ -755,66 +761,59 @@ He can spend a devotion point as a swift action to embody that wild aspect for 1
 \subsubsection{Greater Domain Invocations}\label{Greater Domain Invocations}
 
 \subcf{Air -- Mantle of Air}
-As a swift action, the cleric can surround himself in a mantle of air for 5 rounds.
-Thrown and projectile weapons have a 50\% chance to miss him while this effect is active.
-Unusually large weapons, such as a giant's boulders, may suffer a decreased miss chance as appropriate to their size.
-\subcf{Chaos -- Invoke Chaos}
-This power functions like the Chaos channeled domain power, except that it randomly generates negative energy, positive energy, or both.
-If both effects are generated, the cleric may exclude creatures separately from each effect.
-
+As a swift action, the cleric can surround himself in a mantle of whirling air for 5 rounds.
+Physical attacks have a 50\% chance to miss him while this effect is active.
+\subcf{Chaos -- Maw of Chaos}
+This power functions like the Chaos channeled domain power, except that it affects all number of creatures within a \arealarge radius burst of the cleric.
+He may freely exclude any creatures he sees from the effect after determining whether positive or negative energy is channeled.
 \subcf{Death -- Invoke Death}
-This power functions like the Death channeled domain power, except that any creature brought to 0 hit points by this effect immediately dies.
+This power functions like the Death channeled domain power, except that if the target has no hit points remaining after taking damage from this effect, it immediately dies.
 This is a death effect.
 \subcf{Destruction -- Tide of Destruction}
 The cleric channels destructive energy as the Destruction channeled domain power, except that any creature damaged by the effect is also filled with a destructive resonance for 5 rounds.
 The first time each round that each subject takes damage, that damage is increased by half the cleric's level.
 \subcf{Earth -- Mantle of Earth}
 As a swift action, the cleric can surround himself in a mantle of earth for 5 rounds.
-The mantle grants him physical damage reduction equal to his cleric level.
-This allows him to ignore the first points of damage he would take each round.
-If he is struck by an adamantine weapon, he cannot use his damage reduction for 1 round.
+He gains the effect of the \spell{stoneskin} spell, with a spellpower equal to his divine power.
 \subcf{Evil -- Invoke Evil}
-The cleric channels negative energy, except that it heals evil creatures.
-
-\subcf{Fire -- Mantle of Fire}
-As a swift action, the cleric can surround himself in a mantle of fire for 5 rounds.
-He gains the effect of a \spell{fire shield} spell, with a spellpower equal to his cleric level.
+All nonevil creatures within an \arealarge radius burst of the cleric are \staggered for 2 rounds.
+\subcf{Fire -- Blazing Inferno}
+The cleric makes a divine power vs. Reflex attack against all enemies within an \arealarge radius burst of him.
+Success deals \spelldamage{fire}[d8].
+Failure deals half damage.
 \subcf{Good -- Invoke Good}
-The cleric channels positive energy, except that it deals divine damage to evil creatures.
-
-\subcf{Knowledge -- See the Truth} As a swift action, the cleric can gain the benefit of the \spell{true seeing}
-spell until the end of his turn.
+All nonevil creatures within an \arealarge radius burst of the cleric are \dazed for 2 rounds.
+\subcf{Knowledge -- See the Truth}
+As a swift action, the cleric can gain the benefit of the \spell{true seeing} spell until the end of the round.
 \subcf{Law -- Invoke Law}
-This power functions like the Law channeled domain power, except that the attack automatically succeeds against chaotic creatures.
-\subcf{Magic -- Invoke Magic}
-This power functions like the Magic channeled domain power, except that affected spellcasters receive a \plus5 bonus to spellpower on the next spell they cast.
-If this bonus is not used within 5 rounds, it is wasted.
-
-\subcf{Protection -- Invoke Sanctuary} This power functions like the Protection channeled domain power, except that each subject also receives the benefit of a \spell{sanctuary}
-spell for 5 rounds.
-If a subject attacks, the \spell{sanctuary} is broken for that creature, but not for any other subject.
-
+All nonlawful creatures within an \arealarge radius burst of the cleric are \immobilized for 2 rounds.
+\subcf{Magic -- Font of Magic}
+This power functions like the Magic channeled domain power, except it affects all creatures within an \arealarge radius of the cleric.
+The cleric may freely exclude any creatures he can see from the effect.
+\subcf{Protection -- Divine Shield}
+All allies within an \arealarge burst of the cleric gain damage reduction against all damage equal to the cleric's divine power for 5 rounds.
 \subcf{Strength -- Titanic Strength}
-This power functions like the \spell{enlarge} spell, except that it increases the target's size by two size categories.
+This invocation functions like the \spell{enlarge} spell, except that it increases the target's size by two size categories.
 \subcf{Travel -- Invoke Speed}
-As a swift action, the cleric can double his movement speed with all forms of movement until the end of the round.
+As a swift action, the cleric can quadruple his movement speed with all forms of movement until the end of the round.
 In addition, he can move through squares occupied by enemies without penalty, and does not treat threatened squares as difficult terrain.
 \subcf{Trickery -- Swift Invisibility} As a swift action, the cleric can gain the benefit of the \spell{invisibility}
 spell until the end of the round.
-\subcf{Vitality -- }
+\subcf{Vitality -- Endless Life}
+Target creature within \rngmed range heals \spelldamage{}.
+In addition, for 5 rounds, the target heals hit points equal to the cleric's divine power at the end of each round.
 \subcf{War -- Warmaster's Boon}
 The cleric can use this power as part of casting a spell that affects a single creature other than himself.
 The spell also affects the cleric.
-This lasts for the normal duration of the spell or for a number of rounds equal to the cleric's domain attribute, whichever is shorter.
+This lasts for the normal duration of the spell or for 5 rounds, whichever is shorter.
 \subcf{Water -- Aquatic Globe}
-The cleric creates water out of thin air in an immobile \areamed radius spread centered on his original location for 5 rounds.
+The cleric creates water out of thin air in an immobile \areahuge radius zone centered on his original location for 5 rounds.
 Everything within the area is underwater.
-After 1 round, the sphere grows to fill an \arealarge radius spread.
 At the end of the duration, the water evaporates, leaving no trace that it was ever there.
-\subcf{Wild -- Wild Aspect}
-When the cleric gains this ability, he chooses one wild aspect ability, as if he were a were a druid of a level equal to his cleric level (see Wild Aspect, \pref{Drd:Wild Aspect}).
-When he uses this ability, he may embody that wild aspect.
-This effect lasts as long as that wild aspect would normally last.
+\subcf{Wild -- Nature Rises}
+All enemies within an \arealarge radius burst of the cleric, and who are within 10 feet of the ground, are attacked by animated plants that grow from nowhere.
+The plants deal \spelldamage{bludgeoning}[d6].
+In addition, the ground in the area is \difficultterrain for 5 rounds for the cleric's enemies, as the plants impede their motion.
 
 \subsubsection{Domain Masteries}\label{Domain Masteries}
 
@@ -2764,7 +2763,7 @@ A sorcerer casts arcane spells using his Willpower.
 The maximum spell level a sorcerer can learn or cast is equal to half his sorcerer level (minimum 1) or his Willpower, whichever is lower.
 A sorcerer's spellpower is normally equal to his sorcerer level.
 
-A sorcerer knows a number of spells equal to his level.
+A sorcerer knows a number of spells equal to his sorcerer hlevel.
 The spells may be of any spell level he has access to.
 Each time he gains a level, he may trade one of his existing spells for a different spell known, in addition to the new spell learned by increasing his sorcerer level.
 A sorcerer's spells are drawn from the \glossterm{unrestricted spells} on the arcane spell list (see \pcref{Arcane Spells}).
@@ -3415,26 +3414,26 @@ This functions like the temporal prison invocation, except that no attack is req
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolpoor} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
         \tb{Level} & \tb{Combat Prowess} & \tb{Fort} & \tb{Ref} & \tb{Ment} & \tb{Special} \\
         \hline
-        \wizardprogressionrow{1}  & Cantrip, rituals, spells            \\
-        \wizardprogressionrow{2}  & Cantrip, magic feat, specialization \\
-        \wizardprogressionrow{3}  & Arcane insight                      \\
-        \wizardprogressionrow{4}  & Cantrip sequencer                   \\
-        \wizardprogressionrow{5}  & Arcane insight                      \\
-        \wizardprogressionrow{6}  & Magic feat                          \\
-        \wizardprogressionrow{7}  & Arcane insight                      \\
-        \wizardprogressionrow{8}  & Defensive sequencer                 \\
-        \wizardprogressionrow{9}  & Arcane insight                      \\
-        \wizardprogressionrow{10} & Magic feat,                         \\
-        \wizardprogressionrow{11} & Arcane insight                      \\
-        \wizardprogressionrow{12} & Contingency                         \\
-        \wizardprogressionrow{13} & Arcane insight                      \\
-        \wizardprogressionrow{14} & Magic feat                          \\
-        \wizardprogressionrow{15} & Arcane insight                      \\
-        \wizardprogressionrow{16} & Offensive sequencer                 \\
-        \wizardprogressionrow{17} & Arcane insight                      \\
-        \wizardprogressionrow{18} & Magic feat                          \\
-        \wizardprogressionrow{19} & Arcane insight                      \\
-        \wizardprogressionrow{20} & Chain contingency                   \\
+        \wizardprogressionrow{1}  & Cantrip, rituals, spells       \\
+        \wizardprogressionrow{2}  & Cantrip, magic feat            \\
+        \wizardprogressionrow{3}  & Arcane insight, specialization \\
+        \wizardprogressionrow{4}  & Cantrip sequencer              \\
+        \wizardprogressionrow{5}  & Arcane insight                 \\
+        \wizardprogressionrow{6}  & Magic feat                     \\
+        \wizardprogressionrow{7}  & Arcane insight                 \\
+        \wizardprogressionrow{8}  & Defensive sequencer            \\
+        \wizardprogressionrow{9}  & Arcane insight                 \\
+        \wizardprogressionrow{10} & Magic feat,                    \\
+        \wizardprogressionrow{11} & Arcane insight                 \\
+        \wizardprogressionrow{12} & Contingency                    \\
+        \wizardprogressionrow{13} & Arcane insight                 \\
+        \wizardprogressionrow{14} & Magic feat                     \\
+        \wizardprogressionrow{15} & Arcane insight                 \\
+        \wizardprogressionrow{16} & Offensive sequencer            \\
+        \wizardprogressionrow{17} & Arcane insight                 \\
+        \wizardprogressionrow{18} & Magic feat                     \\
+        \wizardprogressionrow{19} & Arcane insight                 \\
+        \wizardprogressionrow{20} & Chain contingency              \\
     \end{dtabularx}
 \end{dtable}
 
@@ -3470,9 +3469,9 @@ A wizard casts arcane spells using her Intelligence.
 The maximum spell level a wizard can learn or cast is equal to half her wizard level (minimum 1) or her Intelligence, whichever is lower.
 A wizard's spellpower is normally equal to her wizard level.
 
-A wizard knows a number of spells equal to her Intelligence or wizard level, whichever is higher.
+A wizard normally knows a number of spells equal to her wizard level.
 The spells may be of any spell level she has access to.
-Each time she gains a level, she may trade one of her existing spells for a different spell known, in addition to any new spells learned by increasing her Intelligence or wizard level.
+Each time she gains a level, she may trade one of her existing spells for a different spell known, in addition to the new spell learned by increasing her wizard level.
 A wizard's spells are drawn from the \glossterm{unrestricted spells} on the arcane spell list (see \pcref{Arcane Spells}).
 
 The number of spells a wizard can cast per day is given on \trefnp{Wizard Spell Slots}.
@@ -3525,22 +3524,31 @@ The wizard gains a bonus magic feat or metamagic feat of her choice.
 She must meet the prerequisites for the feat as normal.
 At her 6th wizard level, and every 4 wizard levels thereafter, she gains an additional magic feat or metamagic feat.
 
-\cf{Wiz}[2nd]{Specialization}
-The wizard may choose to specialize in a particular school of magic.
-Specialist wizards are able to learn all restricted spells from their chosen school, and gain additional spells known.
-However, they can never access restricted spells from other schools, and must choose two other spell schools to ban.
+\cf{Wiz}[3rd]{Specialization}
+The wizard may choose to specialize in a particular school of magic, or she may be a generalist.
+Generalist wizards may learn \glossterm{restricted spells} on the arcane spell list as if they were not restricted.
+In addition, they learn additional rituals for free.
+
+Specialist wizards must choose a school of magic to specialize in.
+They may learn restricted spells from that school as if they were not restricted.
+In addition, they gain additional spells known.
+However, specialist wizards must choose two spell schools to ban.
 A specialist wizard can never learn or cast spells or rituals from their banned schools.
 Divination cannot be chosen as a banned school.
 
+Specialist wizards are able to learn all restricted spells from their chosen school, and gain additional spells known.
+However, they can never access restricted spells from other schools, and must choose two other spell schools to ban.
+
 \cf{Wiz}[3rd]{Arcane Insight}[Ex]\label{Arcane Insight}
-The wizard gains a greater understanding of magic.
-A generalist wizard adds a restricted spell to her personal spell list.
-The spell may be of any school, but she must still spend a spell known to learn it.
+The wizard gains a greater understanding of magic, depending on whether she is a generalist or a specialist.
+A generalist wizard learns an additional ritual.
+She pays no cost to scribe it into her ritual book.
 
 A specialist wizard gains an additional spell known.
 The spell must be from her chosen school, including restricted spells.
+If she trades her knowledge of this spell when she gains a level, she may only trade it for knowledge of another spell from her chosen school.
 
-In either case, the spell's level cannot exceed half her wizard level -- normally, the highest level of spells that she can cast.
+In either case, the spell or ritual's level cannot exceed half her wizard level -- normally, the highest level of spells that she can cast.
 At her 5th wizard level, and every odd wizard level thereafter, the wizard gains a new arcane insight.
 
 \cf{Wiz}[4th]{Cantrip Sequencer}[Ex]
