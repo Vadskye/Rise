@@ -595,14 +595,13 @@ Whenever the cleric casts a domain spell, if he did not spend any devotion point
 
 \subcf{Air}
 The cleric adds the Jump skill (see \pcref{Jump}) to his cleric class skill list, and gains a \plus5 bonus to Jump checks.
-In addition, he does not take \glossterm{falling damage}.
 \subcf{Chaos}
 The cleric rolls twice for all \glossterm{random effects} and chooses his preferred result.
 \subcf{Death}
 The cleric halves all critical damage he takes (to a minimum of 1 damage).
 In addition, he is immune to \glossterm{Death} effects.
 \subcf{Destruction}
-When making physical attacks, the cleric ignores an amount of hardness and damage reduction equal to his divine power.
+When making physical attacks, the cleric ignores an amount of hardness and damage reduction equal to half his divine power.
 \subcf{Earth}
 The cleric gains the tremorsense ability with a range of 50 feet.
 If he is touching a surface, he can automatically pinpoint the location of anything within 50 feet that is in contact with the surface, including inanimate objects.
@@ -614,18 +613,18 @@ The cleric gains \glossterm{damage reduction} against fire and cold damage equal
 The cleric gains \glossterm{damage reduction} against physical damage from non-good sources equal to half his divine power.
 \subcf{Knowledge}
 The cleric adds all Knowledge skills to his cleric class skill list.
-In addition, he gains four skill points which must be spent on Knowledge skills.
+In addition, he gains two skill points which must be spent on Knowledge skills.
 \subcf{Law}
-The cleric is immune to \glossterm{Compulsion} and \glossterm{Delusion} effects.
+The cleric is immune to \glossterm{Delusion} effects.
 \subcf{Magic}
-The cleric may spend a devotion point in place of any spell slot to cast spells granted by this domain.
+The cleric gains a \plus1 bonus to spellpower with divine spells.
 \subcf{Protection}
-Allies adjacent to the cleric gain damage reduction against physical damage equal to half his divine power.
+As an immediate action, when an ally adjacent to the cleric takes damage, the cleric can take half that damage instead of the ally.
 \subcf{Strength}
 The cleric adds Athletics, Climb, Sprint, and Swim to his cleric class skill list.
 In addition, he gains two skill points which must be spent on Strength-based skills.
 \subcf{Travel}
-The cleric adds Knowledge (geography), Sprint, and Survival to his cleric class skill list.
+The cleric adds Knowledge (geography) and Survival to his cleric class skill list.
 In addition, he gains a \plus10 foot bonus to his land speed.
 \subcf{Trickery}
 The cleric adds Bluff, Disguise, and Stealth to his cleric class skill list.
@@ -707,21 +706,20 @@ If the target is an animal or plant, the cleric may choose to heal it instead.
 \subsubsection{Domain Aspects}\label{Domain Aspects}
 
 \subcf{Air -- Limited Flight}
-The cleric gains a fly speed equal to his land speed.
-See \pcref{Flying}, for more details.
-He can only fly for up to 5 rounds.
-After that limit is reached, he must rest for 5 minutes before flying again.
+The cleric gains a glide speed equal to his land speed.
+See \pcref{Gliding}, for more details.
+In addition, as a swift action, he can spend a devotion point to treat air as if it was solid ground until the end of the round.
+He can only do this once before touching solid ground again.
 \subcf{Chaos -- Chaotic Retribution}
 Whenever a lawful creature within 30 feet of you attacks you, make an attack against its Mental defense.
 Success means it takes 1d8 damage per two divine power.
 \subcf{Death -- Lifedrinker}
 Whenever the cleric kills a creature, he gains temporary hit points equal to his divine power for a number of rounds equal to the creature's level.
 \subcf{Destruction -- Beacon of Destruction}
-All enemies within a \areamed emanation of the cleric have their damage reduction and hardness (if any) reduced by an amount equal to half the cleric's divine power.
-\subcf{Earth -- Tremorsense}
-The cleric gains the earth glide ability, as the \spell{earth glide} spell.
-He can only glide through earth for up to 5 rounds.
-After that limit is reached, he must rest for 5 minutes before gliding through earth again.
+All enemies within a \areamed radius emanation of the cleric have their damage reduction and hardness (if any) reduced by an amount equal to half the cleric's divine power.
+\subcf{Earth -- Hardened Skin}
+The cleric gains damage reduction against physical damage equal to his divine power.
+Adamantine weapons ignore this damage reduction and negate it for 1 round.
 \subcf{Evil -- Unholy Retribution}
 Whenever a good creature within 30 feet of you attacks you, make an attack against its Mental defense.
 Success means it takes 1d8 damage per two divine power.
@@ -745,10 +743,10 @@ The cleric may use his Strength in place of his cleric level to determine his di
 \subcf{Travel -- Rapid Traveller}
 The cleric gains a \plus30 foot bonus to his speed in all movement modes, up to a maximum of double his original speed.
 In addition, whenever he makes a Sprint check, he rolls twice and takes the higher result.
-\subcf{Trickery -- Legendary Liar}
+\subcf{Trickery -- Legendary Trickster}
 The cleric gains his choice of Legendary Disguise, Legendary Liar, or Legendary Stealth as a bonus feat, even if he does not meet the prerequisites.
-\subcf{Vitality -- Vital Spirit}
-The cleric heals hit points equal to half his divine power at the end of every round.
+\subcf{Vitality -- Critical Healer}
+All of the cleric's healing spells and abilities cure critical damage as easily as they cure hit points.
 \subcf{War -- Combat Feat}
 The cleric gains a combat feat of his choice.
 \subcf{Water -- Water Breathing} The cleric may breathe and speak normally while underwater, as the \spell{water breathing}
@@ -1045,107 +1043,103 @@ Different druids change in different ways.
 For example, one druid might gain unusually large eyes when embodying the low-light vision aspect, while another might change her irises into slits, like a cat, when embodying the same aspect.
 The changes made are up to the druid, but cannot be used to gain an additional substantive benefit beyond the effects given in the description of the aspect.
 
+Many wild aspects grant natural weapons.
+See \pcref{Natural Weapons}, for details about natural weapons.
+
 At 6th level, and every 4 levels thereafter, the druid gains the ability to embody an additional wild aspect at the same time.
 
 \subcf{Animal Affinity}
-The druid gains a \plus2 bonus to Creature Handling and Ride checks.
+The druid gains a \plus5 bonus to Creature Handling and Ride checks.
 \subcf{Armaments of the Bear}
 The druid's mouth and hands transform, allowing her to perform bite and claw attacks.
 The bite attack deals 1d8 damage for a Medium druid, and the claws deal 1d6 damage.
-(See \pcref{Natural Weapons}, for details about natural weapons.)
-\subcf{Constrict}
-The druid's body transforms, allowing her to perform a constrict attack.
-The attack deals 1d10 damage for a Medium druid, but it can only be used against a foe she is grappling with.
-(See \pcref{Natural Weapons}, for details about natural weapons).
+\subcf{Climb}
+The druid gains a climb speed equal to her base land speed.
 \subcf{Gore}
-The druid's head transforms, allowing it to perform a gore attack.
+The druid's head transforms, allowing her to perform a gore attack.
 The attack deals 1d8 damage for a Medium druid.
-(See \pcref{Natural Weapons}, for details about natural weapons.)
+In addition, if the druid hits with a natural attack, she may attempt to shove her foe as an immediate action.
 \subcf{Lope}
 The druid gains the ability to move on all four limbs.
-When doing so, she increases her speed by 20 feet, but she cannot use her hands for anything except moving.
-When not moving on four legs, her ability to use her hands is unchanged.
-\subcf{Low-light Vision}
-The druid gains low-light vision.
+When doing so, she gains a \plus30 foot bonus to her land speed, up to a maximum of double her original speed.
+When not using her hands to move, her ability to use her hands is unchanged.
+\subcf{Senses}
+The druid, gains low-light vision.
 She treats sources of light as if they had double their normal illumination range.
-\subcf{Talons}
-The druid's feet transform, allowing her to perform a talon attack.
-The attack deals 1d6 damage for a Medium druid.
-(See \pcref{Natural Weapons}, for details about natural weapons.)
+In addition, she gains \glossterm{darkvision} out to 50 feet, allowing her to see in complete darkness.
+If she already has darkvision, she increases its range by 50 feet.
 \subcf{Woodland Stride}
 The druid may move through any sort of undergrowth (such as natural thorns, briars, overgrown areas, and similar terrain) at her normal speed and without taking damage or suffering any other impairment.
 However, plants magically manipulated to impede motion still affect her.
-\subcf{4th -- Bear's Endurance}
-The druid gains a \plus2 bonus to Constitution.
-This cannot increase her Constitution above her nature power.
-\subcf{4th -- Bull's Strength}
-The druid gains a \plus2 bonus to Strength.
-This cannot increase her Strength above her nature power.
-\subcf{4th -- Cat's Grace}
-The druid gains a \plus2 bonus to Dexterity.
-This cannot increase her Dexterity above her nature power.
-\subcf{4th -- Fox's Cunning}
-The druid gains a \plus2 bonus to Intelligence.
-This cannot increase her Intelligence above her nature power.
-\subcf{4th -- Mule's Tenacity}
-The druid gains a \plus2 bonus to Willpower.
-This cannot increase her Willpower above her nature power.
-\subcf{4th -- Owl's Insight}
-The druid gains a \plus2 bonus to Perception.
-This cannot increase her Perception above her nature power.
-\subcf{6th -- Climb}
-The druid gains a climb speed equal to her base land speed.
-\subcf{6th -- Darkvision}
-The druid gains \glossterm{darkvision} out to 50 feet, allowing her to see in complete darkness.
-If she already has darkvision, she increases its range by 50 feet.
-\subcf{6th -- Enhanced Natural Weapons}
-The druid's natural weapons gain a \glossterm{enhancement bonus} equal to one quarter of her nature power.
-This functions like an enhancement bonus on a weapon, increasing her damage and offensive legend points per day (see \pcref{Weapon Enhancement Bonuses}).
-\subcf{6th -- Glide}
+
+\subcf{4th -- Hawk}
 The druid grows wings, granting her a glide speed equal to her land speed.
 See \pcref{Gliding}, for more details.
-\subcf{6th -- Shrink}
+In addition, her feet transform, allowing her to perform a talon attack.
+The attack deals 1d6 damage for a Medium druid.
+\subcf{4th -- Scent}
+The druid gains the scent ability, granting her a \plus10 bonus to scent-based Awareness checks (see \pcref{Awareness}).
+\subcf{4th -- Shrink}
 The druid shrinks by a size category.
 This functions like the \spell{reduce person} spell.
 This is a sizing effect.
-\subcf{6th -- Slither}
-The druid gains a climb speed equal to half her base land speed.
+\subcf{4th -- Slither}
+The druid gains a climb speed equal to her base land speed.
 She does not need to use her hands to climb in this way.
 See \pcref{Climbing}, for more details.
-\subcf{6th -- Venom Immunity}
-The druid gains immunity to all poisons.
-\subcf{6th -- Wolfpack}
-Overwhelmed foes the druid threatens increase their overwhelm penalties by 1.
+In addition, she gains a bite attack that deals 1d8 damage for a Medium druid.
+\subcf{4th -- Totemic Mind}
+The druid gains a \plus2 bonus to her choice of Intelligence, Perception, or Willpower.
+This cannot increase the chosen attribute to be higher than her highest physical attribute.
+\subcf{4th -- Totemic Power}
+The druid gains a \plus2 bonus to her choice of Strength, Dexterity, or Constitution.
+This cannot increase the chosen attribute to be higher than her highest mental attribute.
+
+\subcf{6th -- Constrict}
+The druid's body transforms, improving her grappling abilities.
+She gains a \plus5 bonus to accuracy with grapple attacks when grappling with her bare hands.
+In addition, she gains a constrict attack.
+This attack deals 1d10 damage for a Medium druid, but it can only be used against a foe she is grappling with.
+\subcf{6th -- Enhanced Natural Weapons}
+The druid's natural weapons gain a \glossterm{enhancement bonus} equal to one third of her nature power.
+This functions like an enhancement bonus on a weapon, increasing her damage and offensive legend points per day (see \pcref{Weapon Enhancement Bonuses}).
+\subcf{6th -- Venom}
+If the druid hits with a natural attack, she may inject poison into her foe as an immediate action.
+At the end of every round, the druid makes a nature power vs. Fortitude attack against all creatures she has poisoned.
+The effects of the poison are described below.
+\begin{itemize}
+    \item First success: the target is \sickened.
+    \item Second success: the target is \staggered.
+    \item Third success: the target is \nauseated.
+    \item Third failure: the target is no longer poisoned, and any lingering effects from the poison end.
+\end{itemize}
+\par In addition, the druid gains a bite attack that deals 1d8 damage for a Medium druid.
+
+\subcf{8th -- Grow}
+The druid increases in size by one size category.
+This functions as the \spell{enlarge} spell.
+This is a sizing effect, and does not stack with other sizing effects.
 \subcf{8th -- Natural Grab}
 If the druid hits with a natural attack, she may attempt to grapple her foe as an immediate action.
-\subcf{8th -- Natural Knockback}
-If the druid hits with a natural attack, she may attempt to shove her foe as an immediate action.
-She cannot move with the struck creature to push it back farther.
+In addition, the druid's hands transform, granting her two claw attacks that deal 1d6 damage for a Medium druid.
 \subcf{8th -- Natural Trip}
 If the druid hits with a natural attack, she may attempt to trip her foe as an immediate action.
-See \pcref{Trip}, for more details.
-\subcf{8th -- Scent}
-The druid gains the scent ability, granting her a \plus10 bonus to scent-based Awareness checks (see \pcref{Awareness}).
-\subcf{8th -- Swiftstrike}
+In addition, the druid gains a bite attack that deals 1d8 damage for a Medium druid.
+\subcf{8th -- Wolfpack}
+Overwhelmed foes the druid threatens increase their overwhelm penalties by 2.
+
+\subcf{10th -- Natural Renewal}
+At the end of each round, the druid heals hit points equal to her nature power.
+\subcf{10th -- Swiftstrike}
 The druid's attack speed increases.
 When she makes a standard attack, she may make an additional strike.
 This strike must be made with a natural weapon.
 This effect does not stack with similar effects that grant extra strikes.
-\subcf{10th -- Grow}
-The druid increases in size by one size category.
-This functions as the \spell{enlarge} spell.
-This is a sizing effect, and does not stack with other sizing effects.
-\subcf{10th -- Limited Flight}
+\subcf{10th -- Wings}
 The druid grows wings, granting her a fly speed equal to her land speed with average maneuverability.
 See \pcref{Flying}, for more details.
 She can only fly for a number of rounds equal to 3 \add half her Constitution.
 After that limit is reached, she must rest for 5 minutes.
-\subcf{10th -- Venom}
-When the druid embodies this aspect, she transforms one of her natural weapons to become poisonous.
-If she hits with that natural attack, she may inject poison into the struck creature as an immediate action.
-At the end of each round, the druid makes a special attack vs. Fortitude against all creatures she has poisoned with this ability.
-If the attack succeeds, the creature takes 1d8 physical damage per two druid levels and is \sickened for 5 rounds.
-The poison lasts until the druid fails the attack twice.
 %TODO poison stacking rules
 
 \cf{Drd}[6th]{Wild Speech (Plants)}[Ex]
@@ -1174,6 +1168,26 @@ That choice cannot thereafter be changed.
 \cf{Drd}[12th]{Natural Aspect}[Su]
 The druid gains the ability to embody aspects of the natural world, including the elements, in addition to those of animals.
 She adds the options below to the list of abilities she can gain with her wild aspect ability.
+
+\subcf{Fire Shield} The druid gains the effects of the warm version of the \spell{fire shield} spell.
+Its spellpower is equal to her nature power or her Willpower, whichever is higher.
+\subcf{Fluid Motion} The druid gains the effects of the \spell{freedom} spell.
+Its spellpower is equal to her nature power or her Dexterity, whichever is higher.
+In addition, she can move through her enemies, treating their space as difficult terrain.
+\subcf{Stoneskin} The druid gains the effects of the \spell{stoneskin} spell.
+Its spellpower is equal to her nature power or her Constitution, whichever is higher.
+\subcf{14th -- Flight} The druid gains a fly speed equal to her base land speed.
+See \pcref{Flying}, for details.
+She can only fly for up to 5 rounds.
+After that limit is reached, she must rest for 5 minutes before flying again.
+\subcf{14th -- Earth Glide}
+The druid gains the earth glide ability, as the \spell{earth glide} spell.
+She can only glide through earth for up to 5 rounds.
+After that limit is reached, she must rest for 5 minutes before gliding through earth again.
+\subcf{16th -- Solar Radiance}
+The druid continuously radiates bright light out to a 500 foot radius (and shadowy illumination for an additional 500 feet).
+The illumination is so bright that she becomes hard to look at.
+Any creature attacking her from within the radius of bright light becomes \partiallyblinded for 5 rounds after the attack.
 
 \begin{comment}
 
@@ -1520,7 +1534,7 @@ Thus, a fighter using the Heartseeker combat style (see \featpcref{Heartseeker})
 \cf{Ftr}[17th]{Greater Combat Discipline}
 The fighter's ability to keep fighting despite influence becomes still greater.
 When using combat discipline, he may ignore any condition listed on the combat discipline chart.
-In addition, he may use combat discipline to be \severelyimpaired with all actions rather than suffer any non-damaging condition not listed on the chart.
+In addition, he may use combat discipline to be \severelyimpaired with attacks and checks rather than suffer any non-damaging condition not listed on the chart.
 
 \par The fighter may also mitigate up to three conditions at once.
 
@@ -1544,7 +1558,7 @@ In addition, he applies the defense bonus from any body armor he wears to his Re
 If the fighter chose resilience, he may apply his Constutition to his Reflex defense in place of his Dexterity while wearing armor of any kind.
 In addition, he applies the defense bonus from any body armor he wears to his Fortitude defense.
 \subcf{True Combat Discipline}
-The fighter can use combat discipline to be \impaired with all actions instead of suffering any nondamaging negative effect with a duration.
+The fighter can use combat discipline to be \impaired with attacks and checks instead of suffering any nondamaging negative effect with a duration.
 He may also mitigate up to four conditions at once.
 
 \cf{Ftr}[20th]{Greater Adaptive Combat}
@@ -3359,7 +3373,7 @@ The target still suffers the effects of any environmental hazards.
 If the spellwarped uses this invocation on himself, it only requires a move action to activate.
 \parhead{6th -- Disjointed Time}
 As a standard action, the spellwarped chaotically disrupt its local flow of time of a creature within \rngmed range.
-The creature is \impaired with all actions for 5 rounds.
+The creature is \impaired with attacks and checks for 5 rounds.
 \parhead{8th -- Haste} This invocation functions like the \spell{haste} spell.
 \parhead{8th -- Temporal Prison}
 As a standard action, the spellwarped makes a special attack against the Mental defense of a single creature within \rngclose range to completely stop time for it for 5 rounds.
