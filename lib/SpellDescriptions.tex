@@ -331,7 +331,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
                 \spellsuccess The target feels an aversion to a particular person or object for 5 rounds. If the object of the implanted aversion is an individual or a physical object, she will prefer not to approach within 30 feet of it. If it is a word, she will try not to utter it; if it is an action, she will not willingly attempt to perform it; and if it is an event, she will not willingly attend it. The target will take reasonable steps to avoid the object of its aversion, but will not put herself in jeopardy by doing so.
-                \par If the target is unable to avoid the object of her aversion, she is \severelyimpaired as long as she is close to it (or similarly engaged with the object of her aversion, if the aversion is not a location).
+                \par If the target is unable to avoid the object of her aversion, she is \severelyimpaired with attacks and checks as long as she is close to it (or similarly engaged with the object of her aversion, if the aversion is not a location).
                 \spellcritical As above, but the effect is permanent.
             \end{spellattack}
             \spelldur 5 rounds or \durperm
@@ -354,7 +354,7 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target is \impaired with all actions.
+            \spelleffect The target is \impaired with attacks and checks.
 
             \spelldur 5 rounds
         \end{spelleffects}
@@ -933,7 +933,7 @@
             \spelltgts{All creatures in the area}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target's vision is \impaired. This affects all sight-related actions, including physical attacks and targeted spells.
+            \spelleffect The target is \impaired with sight-related attacks and checks.
             \spelldur 2 rounds
         \end{spelleffects}
     \end{spellcontent}
@@ -945,13 +945,13 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Command}[3]
+\begin{spellsection}{Command}[2]
     \begin{spellheader}
         \spelldesc{You compel a foe to obey a single command of your choice.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
             \spellcmp{Verbal only}
         \end{spelltargetinginfo}
         \begin{spelleffects}
@@ -963,7 +963,7 @@
                 \spellsuccess The target must obey the command during the movement phase.
                 It can act normally during the action phase.
                 \spellcritical The target must obey the command during both the movement phase and the action phase.
-                \spellfailure The target must obey the command or be \impaired with all actions.
+                \spellfailure The target must obey the command or be \impaired with attacks and checks.
             \end{spellattack}
             \spelldur \durbrief
         \end{spelleffects}
@@ -1315,7 +1315,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Curse of the Wayward Mind}[4]
+\begin{spellsection}{Curse of the Wayward Mind}[5]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -1324,9 +1324,9 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess The target is \disoriented for 5 minutes.
+                \spellsuccess The target is \disoriented for one hour.
                 \spellcritical The target is \disoriented permanently.
-                \spellfailure The target is \impaired with all actions for 5 rounds.
+                \spellfailure The target is \disoriented for 2 rounds.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -1428,13 +1428,13 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Deep Slumber}[9]
+\begin{spellsection}{Deep Slumber}[7]
     \begin{spellheader}
         \spelldesc{You fill your foes with an overpowering urge to sleep, rendering them comatose.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{Five creatures}}{\spellrng{\rngmed}}
+            \spelltwocol{\spelltgt{Five creatures}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
@@ -2378,7 +2378,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Eyebite}[3]
+\begin{spellsection}{Eyebite}[2]
     \begin{spellcontent}
         \begin{spelltargetinginfo}
             \spellquicktargeting{One creature}{\rngmed}
@@ -2948,19 +2948,19 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Ghoul Touch}[3]
+\begin{spellsection}{Ghoul Touch}[4]
     \begin{spellheader}
         \spelldesc{Your foe feels the touch of a ghoul's undead hand against its flesh.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One living creature}}{\spellrng{\rngclose}}
+            \spelltwocol{\spelltgt{One living creature}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
-                \spellsuccess The target is \staggered and \impaired with all actions.
+                \spellsuccess The target is \staggered and \impaired with attacks and checks.
                 \spellcritical The target is \paralyzed.
-                \spellfailure The target is \impaired with all actions.
+                \spellfailure The target is \impaired with attacks and checks.
             \end{spellattack}
             \spelldur \durbrief
         \end{spelleffects}
@@ -2971,7 +2971,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Glitterdust}[3]
+\begin{spellsection}{Glitterdust}[2]
     \begin{spellheader}
         \spelldesc{You create a flurry of glittering dust which reveals hidden foes and blinds creatures.}
     \end{spellheader}
@@ -3831,7 +3831,7 @@
                 \spellsuccess The target must spend a standard action each round to do nothing but dance.
                 \spellcritical As above, except that the effect lasts for one year.
                 \spellfailure The target must spend a move action each round to dance.
-                    In addition, the struggle to resist dancing makes it \impaired with all actions.
+                    In addition, the struggle to resist dancing makes it \impaired with attacks and checks.
             \end{spellattack}
             \spelldur \durbrief or one year
         \end{spelleffects}
@@ -4553,7 +4553,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Power Word Blind}[7]
+\begin{spellsection}{Power Word Blind}[6]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -4576,7 +4576,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Power Word Confuse}[6]
+\begin{spellsection}{Power Word Fear}[3]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -4586,9 +4586,9 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess The target is \confused for 2 rounds.
-                \spellcritical The target is \confused for one year.
-                \spellfailure The target is \disoriented for 2 rounds.
+                \spellsuccess The target is \frightened by you for 2 rounds.
+                \spellcritical The target is \frightened by you for one year.
+                \spellfailure The target is \shaken by you for 2 rounds.
             \end{spellattack}
             \spelldur \durbrief or one year
         \end{spelleffects}
@@ -4599,7 +4599,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Power Word Impair}[5]
+\begin{spellsection}{Power Word Impair}[4]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -4609,9 +4609,9 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess The target is \severelyimpaired with all actions for 2 rounds.
-                \spellcritical The target is \severelyimpaired with all actions for one year.
-                \spellfailure The target is \impaired with all actions for 2 rounds.
+                \spellsuccess The target is \severelyimpaired with attacks and checks for 2 rounds.
+                \spellcritical The target is \severelyimpaired with attacks and checks for one year.
+                \spellfailure The target is \impaired with attacks and checks for 2 rounds.
             \end{spellattack}
             \spelldur \durbrief or one year
         \end{spelleffects}
@@ -4622,7 +4622,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Power Word Stagger}[2]
+\begin{spellsection}{Power Word Stagger}[1]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -4633,7 +4633,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
                 \spellsuccess The target is \staggered for 2 rounds.
-                \spellsuccess The target is \staggered for one year.
+                \spellcritical The target is \staggered for one year.
             \end{spellattack}
             \spelldur \durbrief or one year.
         \end{spelleffects}
@@ -4719,13 +4719,13 @@
     \begin{dtabularx}{\textwidth}{l >{\lcol}p{3.6em} l >{\lcol}X l}
         \tb{1d8} & \tb{Color of Beam} & \tb{Defense} & \tb{Success}\fn{1} & \tb{Failure} \\
         \hline
-        1 & Red      & Reflex    & Fire damage and ignited for 2 rounds                       & Half damage, ignited       \\
-        2 & Orange   & Mental    & Frightened by you for 2 rounds                             & Shaken by you for 2 rounds \\
-        3 & Yellow   & Reflex    & Electricity damage and partially blinded for 2 rounds      & Half damage, not blinded   \\
-        4 & Green    & \x        & Staggered for 2 rounds                                     & \x                         \\
-        5 & Blue     & Fortitude & Cold damage and slowed for 2 rounds                        & Half damage, not slowed    \\
-        6 & Indigo   & \x        & Disoriented for 2 rounds                                   & \x                         \\
-        7 & Violet   & None      & Damage of all energy types (acid, cold, electricity, fire) & \x                         \\
+        1 & Red      & Reflex    & Fire damage and ignited for 2 rounds                       & Half damage, ignited           \\
+        2 & Orange   & Mental    & Frightened by you for 2 rounds                             & Shaken by you for 2 rounds     \\
+        3 & Yellow   & Reflex    & Electricity damage and partially blinded for 2 rounds      & Half damage, partially blinded \\
+        4 & Green    & \x        & Staggered for 2 rounds                                     & \x                             \\
+        5 & Blue     & Fortitude & Cold damage and slowed for 2 rounds                        & Half damage, not slowed        \\
+        6 & Indigo   & \x        & Disoriented for 2 rounds                                   & \x                             \\
+        7 & Violet   & None      & Damage of all energy types (acid, cold, electricity, fire) & \x                             \\
         8 & Octarine & \x        & Struck by two beams; roll twice more, ignoring any ``8'' results.
     \end{dtabularx}
     1 See \pcref{Conditions} for a summary of the conditions imposed.
@@ -5100,7 +5100,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spellspecial This spell has three versions. Its effects depend on which version is chosen.
-            \spelleffect[\subspell{Revelation of Destruction}] You inflict a vision of a terrible future upon the target. It is \severelyimpaired with all actions as it struggles to avoid the certainty of its own doom.
+            \spelleffect[\subspell{Revelation of Destruction}] You inflict a vision of a terrible future upon the target. It is \severelyimpaired with attacks and checks as it struggles to avoid the certainty of its own doom.
             \spelleffect[\subspell{Revelation of Prowess}] You show the target a vision of its success in the combat to come. It gains the benefits of a \spell{greater precognition} spell.
             \spelleffect[\subspell{Revelation of Truth}] You show the target the truth of the world around it. It gains the benefits of a \spell{true seeing} spell.
             \spelldur \durshort
@@ -5501,14 +5501,14 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgts{Two willing creatures}}{\spellrng{\rngmed}}
+            \spelltwocol{\spelltgts{Two willing creatures}}{\spellrng{\rngtouch}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spellspecial When you cast this spell, you choose which target will be protected.
             \spelleffect When the protected creature would take hit point damage, it instead loses half that many hit points (rounded down), and the other target loses hit points equal to the other half of the damage (rounded up).
 
             If the targets get out of range of each other, the effect is suppressed until they return within range.
-            \spelldur \durlong \dismissable
+            \spelldur \durmed \dismissable
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -6137,13 +6137,13 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Strip the Flesh}[6]
+\begin{spellsection}{Strip the Flesh}[7]
     \begin{spellheader}
         \spelldesc{You rend parts of your foe's skin off its body, inflicting grievous wounds and leaving it vulnerable.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
@@ -6658,7 +6658,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Sunbeam}[5]
+\begin{spellsection}{Sunbeam}[4]
     \begin{spellheader}
         \spelldesc{You evoke a dazzling beam of intense light, blinding your foes with the power of the sun itself.}
     \end{spellheader}
@@ -6683,7 +6683,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Sunburst}[9]
+\begin{spellsection}{Sunburst}[8]
     \begin{spellheader}
         \spelldesc{You cause a globe of searing radiance to explode silently from a point you select.}
     \end{spellheader}
@@ -6719,7 +6719,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
-                \spellsuccess The target's vision is \impaired. This affects all sight-related actions, including physical attacks and targeted spells.
+                \spellsuccess The target is \impaired with vision-related attacks and checks.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
