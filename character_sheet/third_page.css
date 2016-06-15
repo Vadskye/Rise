@@ -52,3 +52,23 @@
 .inventory-col input {
     width: 100%;
 }
+
+.equipment .underlabeled-number-input {
+    display: flex;
+    align-items: center;
+}
+.equipment .underlabeled-number-input .under-label {
+    position: static;
+}
+
+
+.inventory-col, .adventuring > div {
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+}
+.inventory-col:first-child, .adventuring > div:first-child {
+    margin-left: 0;
+}
+.inventory-col:last-child, .adventuring > div:last-child {
+    margin-right: 0;
+}
