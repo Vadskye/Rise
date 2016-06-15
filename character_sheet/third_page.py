@@ -15,7 +15,7 @@ def subsection_header(attributes = None, contents = None):
     return flex_col(attributes, contents)
 
 def equipment():
-    return flex_col({'id': 'equipment'}, [
+    return flex_col({'class': 'equipment'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Equipment')),
         flex_row({'class': 'armor'}, [
             subsection_header('Armor'),

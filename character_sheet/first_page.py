@@ -3,7 +3,7 @@ from cgi_simple import *
 from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS, ROLL20_CALC, roll20_max_text
 
 def create_page():
-    return flex_row([
+    return flex_row({'class': 'first-page'}, [
         flex_col({'class': 'sidebar'}, [
             rise_title(),
             attributes_and_skills(),
@@ -19,12 +19,12 @@ def create_page():
 
 def boring_stuff():
     return div({'class': 'boring-stuff'}, [
-        flex_row([
+        flex_row({'class': 'boring-row'}, [
             labeled_text_input('Character name', 'character-name'),
             labeled_text_input('Player name', 'player-name'),
             labeled_text_input('Concept', 'concept'),
         ]),
-        flex_row([
+        flex_row({'class': 'boring-row'}, [
             labeled_text_input('Class and level', 'class-and-level'),
             labeled_text_input('Race and background', 'race-and-background'),
             labeled_text_input('Alignment and deity', 'alignment-and-deity'),
@@ -90,7 +90,7 @@ def core_statistics():
         flex_row({'class': 'core-statistics'}, [
             defenses(),
             movement(),
-            # resources(),
+            resources(),
             hit_points(),
             #labeled_number_input('Hit Points', 'hit-points')
         ])
@@ -146,7 +146,6 @@ def passive_abilities():
 def passive_ability(prefix, ability_number):
     return div(
         text_input({
-            'class': 'passive-ability',
             'name': 'passive{0}-{1}-name'.format(ability_number, prefix)
         })
     )
@@ -156,16 +155,10 @@ def passive_ability(prefix, ability_number):
         labeled_text_input('Effect', 'passive{0}-{1}-effect'.format(ability_number, prefix), {'class': 'passive-effect'}),
     ])
 
-def conditional_effects():
-    return ''
-
-def abilities():
-    return ''
-
 def active_abilities():
     return flex_col({'class': 'active-abilities'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Abilities')),
-        "".join([active_ability(i) for i in range(5)]),
+        "".join([active_ability(i) for i in range(4)]),
     ])
 
 def active_ability(ability_number = None):
@@ -190,7 +183,7 @@ def active_ability(ability_number = None):
 def attacks():
     return flex_col({'class': 'attacks'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Attacks')),
-        "".join([attack(i) for i in range(5)]),
+        "".join([attack(i) for i in range(4)]),
     ])
 
 def attack(attack_number = None):
