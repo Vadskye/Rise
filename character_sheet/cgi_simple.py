@@ -20,7 +20,7 @@ def ensure_valid_attributes_and_contents(attributes = None, contents = None):
             raise Exception("Both attributes ({0}) and contents ({1}) are defined".format(attributes, contents))
     if contents is None:
         contents = list()
-    if isinstance(contents, basestring):
+    if isinstance(contents, str):
         contents = [contents]
     return attributes, contents
 
@@ -45,11 +45,11 @@ def html_tag(tag_name, attributes = None, contents = None):
                 html_separator(),
             )
         except TypeError as e:
-            print '{0}\n\tAttributes: {1}\n\tContents: {2}'.format(
+            print('{0}\n\tAttributes: {1}\n\tContents: {2}'.format(
                 e,
                 attributes,
                 contents,
-            )
+            ))
 
 def convert_html_attributes(attributes = None):
     if attributes is None:
@@ -253,8 +253,11 @@ def equals():
 def plus():
     return flex_col({'class': 'equation-glue'}, div({'class': 'equation-math'}, '+'))
 
+def times():
+    return flex_col({'class': 'equation-glue'}, div({'class': 'equation-math'}, 'x'))
+
 def half(text):
-    return span({'class': 'half'}, '1/2 ') + text
+    return span({'class': 'half'}, '&frac12 ') + text
 
 def rise_title():
     return div(

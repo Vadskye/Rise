@@ -90,7 +90,7 @@ def core_statistics():
         flex_row({'class': 'core-statistics'}, [
             defenses(),
             movement(),
-            resources(),
+            # resources(),
             hit_points(),
             #labeled_number_input('Hit Points', 'hit-points')
         ])
