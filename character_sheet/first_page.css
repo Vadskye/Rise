@@ -15,50 +15,34 @@
 
 /* section-specific formatting */
 
-#boring-stuff {
-    margin-top: 0.25em;
-}
-
-#boring-stuff .labeled-text-input {
-    flex-grow: 1;
-    flex-basis: 20%;
-}
-
-#attacks, #resources {
+.main-body {
     flex-grow: 1;
 }
 
-#sheet-main-body {
+.resources {
     flex-grow: 1;
 }
 
-#resources {
-    flex-grow: 1;
+.first-page > div, .passive-ability-row > div, .core-statistics > div, .boring-row div, .active-ability > div, .attack > div {
+    margin-left: 0.25em;
+    margin-right: 0.25em;
 }
-
-#main-sheet-body > div {
-    margin-bottom: 0.52em;
-}
-
-input[type=text].passive-ability {
-    width: 100%;
-    /*margin-bottom: 0.5em;*/
-}
-
-.passive-ability-row > div {
-    flex-grow: 1;
-}
-
-.defenses {
+.first-page > div:first-child, .passive-ability-row > div:first-child, .core-statistics > div:first-child, .boring-row div:first-child, .active-ability > div:first-child, .attack > div:first-child {
     margin-left: 0;
 }
-
-.hit-points {
+.first-page > div:last-child, .passive-ability-row > div:last-child, .core-statistics > div:last-child, .boring-row div:last-child, .active-ability > div:last-child, .attack > div:first-child {
     margin-right: 0;
+}
+
+.passive-ability-row > div, .boring-row > div {
+    flex-grow: 1;
 }
 
 .active-ability-effect, .attack-effect {
     flex-grow: 1;
+}
+.active-ability-name, .attack-name {
+    width: 25%;
 }
 
 .attribute {
@@ -66,34 +50,25 @@ input[type=text].passive-ability {
     font-weight: bold;
     text-align: center;
 }
-
-#other-skills .attribute {
-    font-weight: bold;
+.attribute .number-label {
     font-size: 1.25em;
-    text-align: center;
 }
 
-#constitution {
+.active-ability, .attack, .defenses > div, .movement > div, .resources > div, .hit-points > div {
+    margin-bottom: 0.1em;
+}
+
+.passive-abilities, .core-statistics, .attribute {
     margin-bottom: 0.25em;
 }
 
-#willpower {
-    margin-bottom: 0;
+.attribute-section {
+    margin-bottom: 0.5em;
 }
-
-#sidebar {
-    margin-left: 1px;
+.attribute-section:nth-child(4) {
+    margin-bottom: 0.25em;
 }
-
-#main-sheet-body {
-    margin-right: 1px;
-}
-
-.active-ability, .attack {
-    margin-bottom: 0.1em !important;
-}
-
-#other-skills .attribute {
+.attribute-section:nth-child(7) {
     margin-bottom: 0;
 }
 

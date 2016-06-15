@@ -3,13 +3,13 @@ from cgi_simple import *
 from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS, ROLL20_CALC, roll20_max_text
 
 def create_page():
-    return flex_col([
-        flex_row([
-            flex_col({'class': 'sidebar'}, [
+    return flex_col({'class': 'second-page'}, [
+        flex_row({'class': 'core-calculations'}, [
+            flex_col({'class': 'attributes'}, [
                 rise_title(),
                 calc_attributes(),
             ]),
-            flex_col({'class': 'calcs'}, [
+            flex_col({'class': 'statistics'}, [
                 flex_wrapper(div({'class': 'section-header'}, 'Accuracy')),
                 calc_combat_prowess(),
                 calc_attacks(),
@@ -19,17 +19,7 @@ def create_page():
                 calc_defenses(),
             ]),
         ]),
-        flex_row({'class': 'level-chart'}, [
-            #bab(),
-            #fort(),
-            #ref(),
-            #ment(),
-            #attribute_bonuses(),
-            level_numbers('l'),
-            abilities('l'),
-            level_numbers('r'),
-            abilities('r'),
-        ]),
+        level_chart(),
     ])
 
 def calc_attributes():
@@ -82,6 +72,41 @@ def level_numbers(name_prefix):
             text_input({'name': 'ability-level-' + name_prefix + '-' + str(level)})
             #flex_row({'class': 'level-number-wrapper level'+str(level)}, div({'class': 'level-number'}, str(level)))
             for level in range(1,14)
+        ]),
+    ])
+
+def level_chart():
+    return flex_col({'class': 'level-chart'}, [
+        flex_row({'class': 'level-chart-headers'}, [
+            flex_wrapper({'class': 'level-wrapper'}, [
+                div({'class': 'chart-header'}, 'Lvl'),
+            ]),
+            flex_wrapper({'class': 'name-wrapper'}, [
+                div({'class': 'chart-header'}, 'Feats and Abilities'),
+            ]),
+            flex_wrapper({'class': 'level-wrapper'}, [
+                div({'class': 'chart-header'}, 'Lvl'),
+            ]),
+            flex_wrapper({'class': 'name-wrapper'}, [
+                div({'class': 'chart-header'}, 'Feats and Abilities'),
+            ]),
+        ]),
+        "".join([level_row(level) for level in range(1,14)]),
+    ])
+
+def level_row(level):
+    return flex_row({'class': 'level-chart-row'}, [
+        flex_wrapper({'class': 'ability-level-row'}, [
+            text_input({'name': 'ability-level-l-' + str(level)})
+        ]),
+        flex_wrapper({'class': 'ability-name-row'}, [
+            text_input({'name': 'ability-name-l-' + str(level)})
+        ]),
+        flex_wrapper({'class': 'ability-level-row'}, [
+            text_input({'name': 'ability-level-r-' + str(level)})
+        ]),
+        flex_wrapper({'class': 'ability-name-row'}, [
+            text_input({'name': 'ability-name-r-' + str(level)})
         ]),
     ])
 
@@ -328,9 +353,7 @@ def calc_armor():
                 underlabeled_number_input('Armor', 'armor-body'),
                 plus(),
                 underlabeled_number_input('Shield', 'shield'),
-                misc_spacer(),
                 plus(),
-                #misc_spacer(),
                 underlabeled_number_input('Misc', 'armor-misc', {'class': 'eq-misc'}),
             ],
             result_attributes = {

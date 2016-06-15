@@ -1,21 +1,5 @@
-#level-chart, #abilities, #calcs {
+.level-chart, .abilities, .statistics {
     flex-grow: 1;
-}
-
-input[type=text] {
-    width: 100%;
-}
-
-.flex-row.level-number-wrapper {
-    align-items: center;
-    justify-content: center;
-}
-
-.flex-row.level-number-wrapper, #level-chart input {
-    height: 2em;
-    /* overlap the number borders */
-    margin-top: -1px;
-    margin-bottom: -1px;
 }
 
 .level-number {
@@ -23,11 +7,7 @@ input[type=text] {
 }
 
 #level-chart input[type=number], .eq-misc input[type=number] {
-    box-shadow: 0 0 2px 0px #999 inset;
-}
-
-#bab, #fort, #ref, #ment {
-    align-items: center;
+    box-shadow: 0 0 2px 0 #999 inset;
 }
 
 .chart-header {
@@ -35,57 +15,67 @@ input[type=text] {
     font-weight: bold;
     text-align: center;
     background-color: #FFF0C8;
-    padding-left: 0.25em;
-    padding-right: 0.25em;
-    position: relative;
-    left: -0.25em;
+    margin-left: 0;
+    margin-right: 0;
     width: 100%;
     /*
     border-radius: 0.5em;
     */
 }
 
-#level-numbers .chart-header {
-    border-radius: 0.5em 0 0 0.5em;
-}
 
-#level-numbers input {
+.level-wrapper, .ability-level-row {
     width: 2em;
 }
 
-#abilities .chart-header {
+.level-wrapper > .chart-header {
+    border-radius: 0.5em 0 0 0.5em;
+}
+.name-wrapper > .chart-header {
     border-radius: 0 0.5em 0.5em 0;
 }
+.name-wrapper:nth-child(2) {
+    margin-right: 0.25em;
+}
+.level-wrapper:nth-child(3) {
+    margin-left: 0.25em;
+}
 
-.equation {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+.name-wrapper, .ability-name-row {
     flex-grow: 1;
 }
 
-.equation input, .equation div {
-    /* use the equation-glue for margins */
+.core-calculations > div, .level-chart-row > div {
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+}
+.core-calculations > div:first-child, .level-chart-row > div:first-child {
+    margin-left: 0;
+}
+.core-calculations > div:last-child, .level-chart-row > div:last-child {
+    margin-right: 0;
+}
+
+.equation {
     margin: 0;
+    flex-grow: 1;
 }
 
 .two-choices input[type=number] {
     background-color: #EEE;
 }
 
+.equation-glue {
+    display: flex;
+    justify-content: center;
+    height: 2em;
+    width: 1.1em;
+    text-align: center;
+    align-items: center;
+}
+
 .equation-math {
     font-size: 1.25em;
-}
-
-#calcs {
-    margin-right: 0;
-}
-
-#calcs > .flex-row {
-    flex-wrap: nowrap;
-}
-
-#calc-attributes {
-    margin-bottom: 0 !important;
 }
 
 .calc-attribute-header {
@@ -93,29 +83,29 @@ input[type=text] {
     font-weight: bold;
     text-align: center;
     font-size: 1.25em;
-    margin-bottom: 0em !important;
-    margin-top: 0.2em !important;
+    margin-bottom: 0;
+    margin-top: 0.2em;
 
-}
-
-.calc-attribute-header .number-label {
-    font-weight: bold;
 }
 
 .calc-header {
     font-weight: bold;
     text-align: center;
-    /*
-    background-color: #FFF0C8;
-    padding-left: 0.25em;
-    padding-right: 0.25em;
-    border-radius: 0.5em;
-    */
     width: 4.25em;
     display: flex;
     align-content: center;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    height: 1.6em; /* 2em / 1.25em */
+    font-size: 1.25em;
+    height: 1.5em;
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+}
+
+.statistics {
+    margin-top: 3px;
+}
+
+.statistics > .flex-row {
+    margin-bottom: 0.1em;
 }
