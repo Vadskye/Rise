@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import cgi_simple
 from cgi_simple import *
 import first_page

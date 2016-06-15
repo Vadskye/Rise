@@ -7,11 +7,10 @@ button {
 }
 
 body {
-    height: 1800px;
-    width: 1315px;
-    padding: 0.5in;
-    font-size: 20pt;
-    /*box-shadow: 0 0 2px 1px inset;*/
+    height: 10.5in;
+    width: 8in;
+    padding: 0;
+    box-shadow: 0 0 2px 1px inset;
 }
 
 .ui-dialog {

@@ -72,15 +72,6 @@ input[type=text] {
     background-color: #EEE;
 }
 
-.equation-glue {
-    margin-left: 0.25em !important;
-    margin-right: 0.25em !important;
-    width: 0.6em;
-    height: 2em;
-    align-items: center;
-    justify-content: center;
-}
-
 .equation-math {
     font-size: 1.25em;
 }
@@ -112,7 +103,6 @@ input[type=text] {
 }
 
 .calc-header {
-    font-size: 1.25em;
     font-weight: bold;
     text-align: center;
     /*
@@ -128,17 +118,4 @@ input[type=text] {
     justify-content: center;
     height: 100%;
     height: 1.6em; /* 2em / 1.25em */
-}
-
-.half {
-    font-size: 0.9em;
-}
-
-.misc-spacer {
-    display: inline-block;
-    flex-grow: 1;
-}
-
-#sidebar {
-    margin-left: 0;
 }

@@ -49,36 +49,22 @@ input[type=text].passive-ability {
     flex-grow: 1;
 }
 
-#defenses {
+.defenses {
     margin-left: 0;
 }
 
-#hit-points {
+.hit-points {
     margin-right: 0;
-}
-
-.active-ability-name, .attack-name {
-    width: 25%;
 }
 
 .active-ability-effect, .attack-effect {
     flex-grow: 1;
 }
 
-.flex-col.attribute-section {
-    margin-bottom: 0.625em;
-}
-
-.flex-row.skill-box {
-    margin-bottom: -1px;
-}
-
 .attribute {
     align-items: center;
-}
-
-.attribute .number-label {
     font-weight: bold;
+    text-align: center;
 }
 
 #other-skills .attribute {
