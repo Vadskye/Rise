@@ -10,8 +10,8 @@ def create_page():
                 calc_attributes(),
             ]),
             flex_col({'class': 'calcs'}, [
-                flex_wrapper(div({'class': 'section-header'}, 'Attacks')),
-                calc_bab(),
+                flex_wrapper(div({'class': 'section-header'}, 'Accuracy')),
+                calc_combat_prowess(),
                 calc_attacks(),
                 flex_wrapper(div({'class': 'section-header'}, 'Core Statistics')),
                 calc_hit_points(),
@@ -103,9 +103,9 @@ def abilities(name_prefix):
         ''.join([text_input({'class': 'level'+str(level), 'name': 'ability-name-'+name_prefix+'-'+str(level)}) for level in range(1, 14)]),
     ])
 
-def calc_bab():
+def calc_combat_prowess():
     return flex_row([
-        div({'class': 'calc-header'}, 'BAB'),
+        div({'class': 'calc-header'}, 'Prowess'),
         equation(
             [
                 underlabeled_number_input('Good', 'bab-good'),
@@ -129,7 +129,7 @@ def calc_hit_points():
             [
                 this_or_that([
                     underlabeled_number_input(
-                        'Fort',
+                        half('Fort'),
                         input_attributes = {
                             'disabled': 'true',
                             'name': 'hp-fort',
@@ -137,7 +137,7 @@ def calc_hit_points():
                         },
                     ),
                     underlabeled_number_input(
-                        'Ment',
+                        half('Ment'),
                         input_attributes = {
                             'disabled': 'true',
                             'name': 'hp-ment',
@@ -145,21 +145,11 @@ def calc_hit_points():
                         },
                     ),
                 ]),
-                plus(),
-                underlabeled_number_input(
-                    'Con',
-                    input_attributes = {
-                        'disabled': 'true',
-                        'name': 'hp-con',
-                        'value': (
-                            'floor((' +
-                            ROLL20_CALC['attribute']('constitution')+')/2)'
-                        ),
-                    },
-                ),
+                times(),
+                underlabeled_number_input('Level', 'hp-level', {'class': 'eq-level'}),
                 misc_spacer(),
                 plus(),
-                underlabeled_number_input('Misc', 'attacks-misc', {'class': 'eq-misc'}),
+                underlabeled_number_input('Misc', 'hp-misc', {'class': 'eq-misc'}),
             ],
             result_attributes = {
                 'disabled': 'true',
@@ -181,7 +171,7 @@ def calc_defenses():
         calc_maneuver(),
         calc_fort(),
         calc_ref(),
-        calc_will(),
+        calc_mental(),
     ])
 
 def calc_melee():
@@ -191,7 +181,7 @@ def calc_melee():
             [
                 this_or_that([
                     underlabeled_number_input(
-                        'BAB',
+                        'Prow',
                         input_attributes = {
                             'disabled': 'true',
                             'name': 'melee-calc-bab',
@@ -252,7 +242,7 @@ def calc_ranged():
             [
                 this_or_that([
                     underlabeled_number_input(
-                        'BAB',
+                        'Prow',
                         input_attributes = {
                             'disabled': 'true',
                             'name': 'melee-calc-bab',
@@ -310,7 +300,7 @@ def calc_armor():
                 plus(),
                 this_or_that([
                     underlabeled_number_input(
-                        'BAB',
+                        'Prow',
                         input_attributes = {
                             'disabled': 'true',
                             'name': 'armor-calc-bab',
@@ -363,7 +353,7 @@ def calc_maneuver():
                 plus(),
                 this_or_that([
                     underlabeled_number_input(
-                        'BAB',
+                        'Prow',
                         input_attributes = {
                             'disabled': 'true',
                             'name': 'maneuver-calc-bab',
@@ -410,32 +400,28 @@ def calc_fort():
                 base_10(),
                 plus(),
                 this_or_that([
-                    flex_row([
-                        underlabeled_number_input(
-                            'Con',
-                            input_attributes = {
-                                'disabled': 'true',
-                                'name': 'fort-calc-constitution',
-                                'value': ROLL20_CALC['attribute']('constitution')
-                            },
-                        ),
-                        plus(),
-                        underlabeled_number_input(
-                            label_name = half('Str'),
-                            input_attributes = {
-                                'disabled': 'true',
-                                'name': 'fort-calc-strength',
-                                'value': 'floor({0}/2)'.format(
-                                    ROLL20_CALC['attribute']('strength')
-                                ),
-                            },
-                        ),
-                    ]),
                     underlabeled_number_input('Base', 'fort-base'),
+                    underlabeled_number_input(
+                        label_name = 'Str',
+                        input_attributes = {
+                            'disabled': 'true',
+                            'name': 'fort-calc-strength',
+                            'value': ROLL20_CALC['attribute']('strength'),
+                        },
+                    ),
+                    underlabeled_number_input(
+                        label_name = 'Con',
+                        input_attributes = {
+                            'disabled': 'true',
+                            'name': 'fort-calc-constitution',
+                            'value': ROLL20_CALC['attribute']('constitution'),
+                        },
+                    ),
                 ]),
+                plus(),
+                underlabeled_number_input('Class'),
                 misc_spacer(),
                 plus(),
-                #misc_spacer(),
                 underlabeled_number_input('Misc', 'fort-misc', {'class': 'eq-misc'}),
             ],
             result_attributes = {
@@ -454,34 +440,33 @@ def calc_ref():
                 base_10(),
                 plus(),
                 this_or_that([
+                    underlabeled_number_input('Base', 'ref-base'),
                     flex_row([
                         underlabeled_number_input(
                             'Dex',
                             input_attributes = {
                                 'disabled': 'true',
                                 'name': 'ref-calc-dexterity',
-                                'value': ROLL20_CALC['attribute']('dexterity')
+                                'value': ROLL20_CALC['attribute']('dexterity'),
                             },
                         ),
                         plus(),
                         underlabeled_number_input(
-                            label_name = half('Per'),
+                            'Per',
                             input_attributes = {
                                 'disabled': 'true',
                                 'name': 'ref-calc-perception',
-                                'value': 'floor({0}/2)'.format(
-                                    ROLL20_CALC['attribute']('perception')
-                                ),
+                                'value': ROLL20_CALC['attribute']('perception'),
                             },
                         ),
                     ]),
-                    underlabeled_number_input('Base', 'ref-base'),
                 ]),
+                plus(),
+                underlabeled_number_input('Class'),
                 plus(),
                 underlabeled_number_input('Shield', 'shield'),
                 misc_spacer(),
                 plus(),
-                #misc_spacer(),
                 underlabeled_number_input('Misc', 'ref-misc', {'class': 'eq-misc'}),
             ],
             result_attributes = {
@@ -492,7 +477,7 @@ def calc_ref():
         ),
     ])
 
-def calc_will():
+def calc_mental():
     return flex_row([
         div({'class': 'calc-header'}, 'Ment'),
         equation(
@@ -500,6 +485,7 @@ def calc_will():
                 base_10(),
                 plus(),
                 this_or_that([
+                    underlabeled_number_input('Base', 'ment-base'),
                     flex_row([
                         underlabeled_number_input(
                             'Wil',
@@ -511,21 +497,19 @@ def calc_will():
                         ),
                         plus(),
                         underlabeled_number_input(
-                            label_name = half('Int'),
+                            'Int',
                             input_attributes = {
                                 'disabled': 'true',
                                 'name': 'ment-calc-intelligence',
-                                'value': 'floor({0}/2)'.format(
-                                    ROLL20_CALC['attribute']('intelligence')
-                                ),
+                                'value': ROLL20_CALC['attribute']('intelligence'),
                             },
                         ),
                     ]),
-                    underlabeled_number_input('Base', 'ment-base'),
                 ]),
+                plus(),
+                underlabeled_number_input('Class'),
                 misc_spacer(),
                 plus(),
-                #misc_spacer(),
                 underlabeled_number_input('Misc', 'ment-misc', {'class': 'eq-misc'}),
             ],
             result_attributes = {
