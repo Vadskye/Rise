@@ -10,7 +10,7 @@ body {
     height: 10.5in;
     width: 8in;
     padding: 0;
-    box-shadow: 0 0 2px 1px inset;
+    /* box-shadow: 0 0 2px 1px inset; */
 }
 
 .ui-dialog {
@@ -37,4 +37,12 @@ input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     display: none;
     margin: 0;
+}
+
+body {
+    -webkit-print-color-adjust: exact;
+}
+
+input:disabled {
+    background-color: white;
 }

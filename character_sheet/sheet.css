@@ -6,6 +6,10 @@ body {
     font-family: Calibri;
 }
 
+button {
+    font-family: Calibri;
+}
+
 div, span {
     box-sizing: border-box;
 }

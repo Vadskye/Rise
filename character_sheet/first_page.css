@@ -58,8 +58,12 @@
     margin-bottom: 0.1em;
 }
 
-.passive-abilities, .core-statistics, .attribute {
+.attribute {
     margin-bottom: 0.25em;
+}
+
+.passive-abilities, .core-statistics {
+    margin-bottom: 0.5em;
 }
 
 .attribute-section {
@@ -74,4 +78,13 @@
 
 .resource-row div {
     flex-grow: 1;
+}
+
+.core-statistics .number-label {
+    font-size: 1.25em;
+}
+
+.core-statistics .flex-row {
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
 }
