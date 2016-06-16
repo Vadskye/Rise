@@ -31,6 +31,7 @@ def equipment():
             underlabeled_number_input('Check penalty', 'shield-check'),
             labeled_text_input('Special', 'shield-special', {'class': 'equipment-special'}),
         ]),
+        misc_equipment('Weapon'),
         misc_equipment('Arms'),
         misc_equipment('Head'),
         misc_equipment('Legs'),
@@ -41,9 +42,9 @@ def equipment():
     ])
 
 def inventory():
-    return div({'id': 'inventory'}, [
+    return div({'class': 'inventory'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Other Items')),
-        flex_row({'id': 'inventory-items'}, [
+        flex_row({'class': 'inventory-items'}, [
             inventory_col(),
             inventory_col(),
         ]),
@@ -64,22 +65,22 @@ def misc_equipment(body_slot, body_slot_html = None):
     ])
 
 def adventuring():
-    return flex_row({'id': 'adventuring'}, [
-        flex_col({'id': 'proficiencies'}, [
+    return flex_row({'class': 'adventuring'}, [
+        flex_col({'class': 'proficiencies'}, [
             flex_wrapper(div({'class': 'section-header'}, 'Proficiencies')),
             labeled_text_input('Armor', 'prof-armor'),
             labeled_text_input('Weapons', 'prof-weapons'),
             labeled_text_input('Languages', 'prof-languages'),
         ]),
-        flex_col({'id': 'misc'}, [
+        flex_col({'class': 'misc'}, [
             flex_wrapper(div({'class': 'section-header'}, 'Weight Limits')),
-            flex_row({'id': 'weight-limits'}, [
+            flex_row({'class': 'weight-limits'}, [
                 labeled_text_input('Normal', 'weight-normal'),
                 labeled_text_input('Overloaded', 'weight-overloaded'),
                 labeled_text_input('Max', 'weight-max'),
                 labeled_text_input('Push/Drag', 'weight-push-drag'),
             ]),
-            flex_row({'id': 'wealth-and-xp'}, [
+            flex_row({'class': 'wealth-and-xp'}, [
                 flex_col([
                     flex_wrapper(div({'class': 'section-header'}, 'Wealth')),
                     div(text_input()),
