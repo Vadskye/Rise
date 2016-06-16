@@ -63,13 +63,13 @@
 }
 
 .attribute-section {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.75em;
 }
 .attribute-section:nth-child(4) {
     margin-bottom: 0.25em;
 }
 .attribute-section:nth-child(7) {
-    margin-bottom: 0;
+    margin-bottom: 0.25em;
 }
 
 .resource-row div {

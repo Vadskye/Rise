@@ -34,7 +34,7 @@ def boring_stuff():
 
 def attributes_and_skills():
     return flex_col({'class': 'attributes-and-skills'}, [
-        flex_wrapper(div({'class': 'section-header'}, 'Attributes<br>and Skills')),
+        flex_wrapper(div({'class': 'section-header'}, 'Attributes and Skills')),
         ''.join([attribute_section(attribute) for attribute in ATTRIBUTES]),
         flex_col({'class': 'other-skills', 'class': 'attribute-section'}, [
             div({'class': 'attribute'}, 'Other Skills'),
@@ -139,7 +139,7 @@ def passive_abilities():
                 passive_ability(prefix='l', ability_number = i),
                 passive_ability(prefix='r', ability_number = i),
             ])
-            for i in range(4)
+            for i in range(5)
         ]),
     ])
 
