@@ -302,7 +302,7 @@ Critical success means the same, except that the target is also \severelyimpaire
 \norepeatnotes
 
 \subcf{18th -- Endless Rage}
-If the barbarian takes damage and does not receive healing during a given round, that round does not count against the duration of his rage.
+If the barbarian takes damage and does not receive healing or gain temporary hit points during a given round, that round does not count against the duration of his rage.
 
 \subcf{18th -- Mindless Rage}
 The barbarian becomes immune to \glossterm{Mind} spells and effects.
@@ -901,7 +901,7 @@ He cannot thereafter gain levels as a cleric of that god until he atones (see th
         \druidprogressionrow{10} & Wild aspect (x3)                 \\
         \druidprogressionrow{11} & Wild speech (elements)           \\
         \druidprogressionrow{12} & Natural aspect                   \\
-        \druidprogressionrow{13} & A thousand faces                 \\
+        \druidprogressionrow{13} & \x                               \\
         \druidprogressionrow{14} & Natural aspect (x4)              \\
         \druidprogressionrow{15} & Timeless body                    \\
         \druidprogressionrow{16} & Natural aspect                   \\
@@ -1095,6 +1095,10 @@ This cannot increase the chosen attribute to be higher than her highest physical
 The druid gains a \plus2 bonus to her choice of Strength, Dexterity, or Constitution.
 This cannot increase the chosen attribute to be higher than her highest mental attribute.
 
+\subcf{6th -- A Thousand Faces}
+The druid's appearance changes, as if using the \spell{disguise self} spell.
+This affects the druid's body, but not her possessions.
+It is not an illusory effect, but a minor physical alteration of the druid's appearance, within the limits described for the spell.
 \subcf{6th -- Constrict}
 The druid's body transforms, improving her grappling abilities.
 She gains a \plus5 bonus to accuracy with grapple attacks when grappling with her bare hands.
@@ -1255,11 +1259,6 @@ If not even an ounce of water exists contiguously, her body reforms from the lar
 This usually causes the druid to die.
 
 \end{comment}
-
-\cf{Drd}[13th]{A Thousand Faces}[Su] The druid gains the ability to change her appearance at will, as if using the \spell{disguise self}
-spell.
-This affects the druid's body, but not her possessions.
-It is not an illusory effect, but a minor physical alteration of the druid's appearance, within the limits described for the spell.
 
 \cf{Drd}[15th]{Timeless Body}[Ex]
 The druid no longer takes attribute penalties for aging and cannot be magically aged.
@@ -1573,7 +1572,7 @@ As a swift action, he can exchange a single adaptive combat feat from his adapat
         \hline
         \monkprogressionrow{1}  & \Ki strike \plus1, \ki ward, unarmed warrior  \\
         \monkprogressionrow{2}  & Channel \ki                                   \\
-        \monkprogressionrow{3}  & Uncanny dodge                                 \\
+        \monkprogressionrow{3}  & Evasion, uncanny dodge                        \\
         \monkprogressionrow{4}  & Flurry of blows, \ki strike \plus2            \\
         \monkprogressionrow{5}  & Channel \ki                                   \\
         \monkprogressionrow{6}  & \Ki augmentation                              \\
@@ -1719,10 +1718,6 @@ In addition, she is not \unaware when attacked by surprise.
 When attacking unarmed, the monk can attack with multiple parts of her body simultaneously.
 This allows her gain the benefits of dual wielding with her unarmed strike (see \pcref{Dual Wielding}).
 
-%\cf{Mnk}[5th]{Still Mind}{Ex} The monk may add half her Perception to he]
-%cf defense in place of half her Intelligence]
-%If she has an Intelligence penalty, that penalty still applies.
-
 \cf{Mnk}[6th]{Ki Augmentation}[Su]
 The monk's control over her \ki improves, allowing her to permanently improve her abilities.
 She chooses one \ki augmentation from the list below.
@@ -1804,8 +1799,8 @@ If she stops being chaotic, she regains her \ki powers and ability to take monk 
         \paladinprogressionrow{1}  & Divine invocation (smite), divine protection \\
         \paladinprogressionrow{2}  & Divine invocation                            \\
         \paladinprogressionrow{3}  & Divine gift                                  \\
-        \paladinprogressionrow{4}  & Divine invocation               \\
-        \paladinprogressionrow{5}  & Divine presence           \\
+        \paladinprogressionrow{4}  & Divine invocation                            \\
+        \paladinprogressionrow{5}  & Divine presence                              \\
         \paladinprogressionrow{6}  & Divine invocation                            \\
         \paladinprogressionrow{7}  & Divine gift                                  \\
         \paladinprogressionrow{8}  & Divine invocation                            \\
@@ -1813,7 +1808,7 @@ If she stops being chaotic, she regains her \ki powers and ability to take monk 
         \paladinprogressionrow{10} & Divine invocation, divine presence           \\
         \paladinprogressionrow{11} & Divine gift                                  \\
         \paladinprogressionrow{12} & Divine invocation                            \\
-        \paladinprogressionrow{13} &                                              \\
+        \paladinprogressionrow{13} & \x                                           \\
         \paladinprogressionrow{14} & Divine invocation                            \\
         \paladinprogressionrow{15} & Divine gift, divine presence                 \\
         \paladinprogressionrow{16} & Divine invocation                            \\
