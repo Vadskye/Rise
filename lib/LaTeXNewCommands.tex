@@ -943,6 +943,12 @@
     \parhead*{#1~Ability}[#2]
 }
 
+\DeclareDocumentCommand{\spellaugment}{m m m o}
+{
+    \par\textbf{#1}~--~\textit{#2}:~#3
+    \IfValueT{#4}{~This~is~a~#4~effect.}
+}
+
 \ExplSyntaxOff
 
 \newcommand{\miscastexplode}{\spellmiscast{Explosive} The spell does not have its normal effect. Instead, the magical energy explodes, dealing 1d6 damage per two spellpower to you and all creatures adjacent to you.}

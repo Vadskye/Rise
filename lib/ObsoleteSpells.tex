@@ -1367,3 +1367,134 @@
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
+
+
+\begin{spellsection}{Divine Favor}[1]
+    \begin{spellheader}
+        \spelldesc{You imbue yourself with skill in combat by calling upon the divine power of your patron.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltgt{You}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect You gain a legend point.
+            \spelldur \durshort or until expended
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Transmutation [Augment]}{Divine, Strength, War}
+        \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Energy Conversion}[6]
+    \begin{spellheader}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelleffects}
+            \spelleffect You gain damage reduction against all energy types (acid, cold, electricity, fire) equal to twice your spellpower.
+
+            If you absorb damage with this spell from a single energy type that exceeds your spellpower, you gain a charge for that energy type. You can store up to 3 charges of any combination of energy types. Additional charges replace existing charges of your choice.
+
+            As a standard action, you can expend a charge to fire a bolt of energy at a creature or object within \rngclose range of you. If you do, make a Spellpower vs. Reflex attack against the target. Success means it takes \spelldamage{energy}[d10]. The damage type is the same as the type of the charge expended.
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Abjuration/Evocation [Shielding]}{Arcane, Protection}
+        \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}[Greater]{Enervation}[8]
+    \begin{spellheader}
+        \spelldesc{Your foe's body loses its color momentarily as you drain its life force away.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect If the target is undead, it gains an offensive legend point and damage reduction against physical damage equal to your spellpower. Positive damage ignores this damage reduction and negates it for 1 round.
+            \begin{spellattacktriggered}{If the target is living, make a Spellpower vs. Fortitude attack.}
+                \spellsuccess The target gains eight \conditionlink{negative levels}. This imposes a \minus8 penalty to the target's accuracy, defenses, and checks, and a penalty to its current and maximum hit points equal to eight times the creature's level.
+                \spellfailure The target gains four \conditionlink{negative levels}. This imposes a \minus4 penalty to the target's accuracy, defenses, and checks, and a penalty to its current and maximum hit points equal to four times the creature's level.
+                \spellcritical The target gains enough negative levels to reduce its effective level to 1, regardless of its level.
+            \end{spellattacktriggered}
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Vivimancy [Negative]}{Arcane, Death, Divine, Evil}
+        \spellnotes These negative levels do not stack with other negative levels the target has, if any.
+        \miscastrandom
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Heat Metal}[1]
+    \begin{spellheader}
+        \spelldesc{You heat your foe's armor, blistering its skin.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltwocol{\spelltgt{One metal object (Medium or smaller)}}{\spellrng{\rngclose}}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \begin{spellattack}{Spellpower vs. Mental}
+                \spellsuccess The target and everything touching it takes \spelldamage{fire}[d8] immediately, and again at the end of the next round.
+
+                A creature wearing or holding the target object is \dazed each round it takes damage from the object.
+                \spellcritical As above, except that the damage lasts for 5 rounds.
+                \spellfailure Half damage, and no additional effects.
+            \end{spellattack}
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Evocation [Fire]}{Nature}
+        \spellnotes This spell's attack automatically succeeds against unattended objects.
+
+        If the target is underwater, this spell deals half damage, and boils the surrounding water. Any cold intense enough to damage the creature negates fire damage from the spell (and vice versa) on a point-for-point basis.
+        \miscastrandom
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Iron Body}[7]
+    \begin{spellheader}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltgt{You}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect This spell transforms your body into living iron, which grants you several powerful resistances and abilities.
+            \par You gain damage reduction against physical damage equal to your spellpower. Adamantine weapons ignore this damage reduction and negate it for 1 round.
+            \par You are immune to blindness, critical hits, attribute damage, deafness, disease, drowning, electricity, poison, stunning, and all spells or attacks that affect your physiology or respiration, because you have no physiology or respiration while this spell is in effect.
+            \par Your move at half speed, and take a \minus8 armor check penalty. You cannot drink (and thus can't use potions) or play wind instruments.
+            \par Your unarmed attacks deal damage equal to a warhammer sized for you (1d6 for Small characters or 1d8 for Medium characters), and you are considered armed when making unarmed attacks.
+            \par Your weight increases by a factor of ten, causing you to sink in water like a stone. However, you could survive the crushing pressure and lack of air at the bottom of the ocean -- at least until the spell duration expires.
+            \spelldur \durshort \dismissable
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Transmutation [Alteration, Augment]}{Arcane, Earth, Strength}
+        \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Summon Nature's Army}[8]
+    \begin{spellheader}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spellspecial This spell functions like \spellindirect{summon nature's ally i}{summon nature's ally I}, except that you can summon up to one creature per spellpower from the 4th-level list or lower.
+            \par When you learn this spell, you choose a creature from the 4th-level list or lower on the Summon Nature's Ally table. That is the only creature you can summon with this spell.
+            \spelldur \durshort \dismissable
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Conjuration [Summoning]}{Nature, Wild}
+        \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
