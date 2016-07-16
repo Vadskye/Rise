@@ -166,6 +166,9 @@
         \spellnotes Barrier spells may be used only defensively, not aggressively. Creatures in the area at the time that the spell is cast are unaffected by the spell.
         \miscastexplode
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{2}{Widened}{The spell's area becomes a \areamed radius.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Antimagic Field}[7]
@@ -191,6 +194,9 @@
         \par Artifacts and deities are unaffected by mortal magic such as this.
         \miscastexplode
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{2}{Widened}{The spell's area becomes a \areamed radius.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Animate Corpse}[1]
@@ -362,6 +368,9 @@
         \spellnotes The tentacles are immune to all forms of attack.
         \miscastyou
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{3}{Widened}{The spell's area becomes a \arealarge radius.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Blade Barrier}[4]
@@ -669,7 +678,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Call Lightning}[3]
+\begin{spellsection}{Call Lightning}[4]
     \begin{spellheader}
         \spelldesc{You repeatedly call bolts of lightning that flash down from thin air to smite your foes.}
     \end{spellheader}
@@ -685,11 +694,11 @@
                 \spellfailure Half damage.
             \end{spellattack}
             \spelleffect You can concentrate as a standard action to call down another bolt of lightning. You may call a total number of bolts equal to your spellpower before the spell is discharged.
-            \spelldur \durmed or until discharged \dismissable
+            \spelldur \durmed or until discharged
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Destructive, Electricity]}{Air, Nature}
+        \spellinfo{Evocation [Destructive, Electricity]}{Nature}
         \spellnotes This spell functions indoors or underground, but not underwater. \destructivespellnotes
         \miscastexplode
     \end{spellfooter}
@@ -743,7 +752,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Destructive, Electricity]}{Arcane, Nature}
+        \spellinfo{Evocation [Destructive, Electricity]}{Air, Arcane, Nature}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -2451,7 +2460,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Alteration]}{Air, Transmutation, Travel}
+        \spellinfo{Transmutation [Alteration]}{Transmutation, Travel}
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
@@ -3048,7 +3057,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Destructive, Electricity]}{Arcane, Nature}
+        \spellinfo{Evocation [Destructive, Electricity]}{Air, Arcane, Nature}
         \spellnotes \destructivespellnotes
         \miscastexplode
     \end{spellfooter}
@@ -4041,7 +4050,7 @@
         \begin{spelleffects}
             \spellspecial This spell has three versions. Its effects depend on which version is chosen.
             \spelleffect[\subspell{Revelation of Destruction}] You inflict a vision of a terrible future upon the target. It is \severelyimpaired with attacks and checks as it struggles to avoid the certainty of its own doom.
-            \spelleffect[\subspell{Revelation of Prowess}] You show the target a vision of its success in the combat to come. It gains the benefits of a \spell{greater precognition} spell.
+            \spelleffect[\subspell{Revelation of Prowess}] You show the target a vision of its success in the combat to come. It gains the benefits of a \spell{precognition} spell, except that the target gains three legend points instead of one.
             \spelleffect[\subspell{Revelation of Truth}] You show the target the truth of the world around it. It gains the benefits of a \spell{true seeing} spell.
             \spelldur \durshort
         \end{spelleffects}
@@ -5746,7 +5755,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation/Transmutation [Air, Augment]}{Air, Nature}
+        \spellinfo{Evocation/Transmutation [Air, Augment]}{Nature}
         \spellnotes Despite the name of the spell, it can affect melee weapons of any type, even reach weapons. The weapon's extended reach is visible, and opponents can defend themselves normally against the attacks.
         \miscastexplode
     \end{spellfooter}
