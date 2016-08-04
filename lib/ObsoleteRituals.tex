@@ -31,7 +31,7 @@
             \spelleffect You don't so much cast a miracle as request one. You state what you would like to have happen and request that your deity (or the power you pray to for spells) intercede.
             \par A miracle can do any of the following things.
             \begin{itemize}
-                \item Duplicate any cleric spell of 8th level or lower (including spells to which you have access because of your domains). 
+                \item Duplicate any cleric spell of 8th level or lower (including spells to which you have access because of your domains).
                 \item Duplicate any other spell of 7th level or lower.
                 \item Undo the harmful effects of certain spells, such as feeblemind or insanity.
                 \item Have any effect whose power level is in line with the above effects.
@@ -49,5 +49,295 @@
     \begin{spellfooter}
         \spellnotes If you request a miracle, your deity (or the power you pray to) will expect something of you in return. You must cast \spell{commune}commune to learn what this is within 24 hours, or you will lose the ability to cast any cleric spells other than \spell{commune}. For more moderate miracles, you may be required to offer 25,000gp worth of incense and gems. For especially powerful miracles, or multiple moderate miracles, you may geased with a task to complete.
         \par When a miracle spell duplicates a spell with a material component that costs more than 5,000 gp, you must provide that component.
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Analyze Dweomer}[5]
+    \begin{spellheader}
+        \spelldesc{You infallibly discern the magical properties of a magic item.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spellquicktargeting{One object}{\rngtouch}
+            \spelltime{1 minute}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect You learn the target's magic properties, as \spell{identify}. This ritual reveals the exact properties of cursed items and artifacts.
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Divination (Knowledge)}{Arcane}
+        \spellsr{No}
+        \ritualcost{5}
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Consecrate}[2]
+    \begin{spellheader}
+        \spelldesc{You bless an area with holy power, disrupting undead.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltime{1 minute}
+            \spellzone{\areamed radius centered on you}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect Undead cannot be created within or summoned into the area.
+            \begin{spelltarget}*
+                \spelleffect The target is \impaired with all actions.
+            \end{spelltarget}
+            \spelldur 24 hours
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Evocation [Good]}{Divine}
+        \ritualcost{2}
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Desecrate}[2]
+    \begin{spellheader}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spellquicktargeting{All undead creatures in the area}{}
+            \spelltime{1 minute}
+            \spelltwocol{\spellzone{\areamed radius}}{\spellrng{\rngclose}}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect Undead created within or summoned into the area gain \plus1 hit point per level of the undead creature.
+            \begin{spelltarget}*
+                \spelleffect The target gains a \plus2 bonus to physical accuracy, all checks, and special defenses.
+            \end{spelltarget}
+            \spelldur 24 hours
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Evocation [Evil]}{Divine}
+        \ritualcost{2}
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Create Greater Undead}[8]
+    \begin{spellheader}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spellquicktargeting{One intact corpse}{}
+            \spelltime{1 hour}
+            \spellrng{\rngclose}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+
+            \spelleffect The target becomes an undead creature that obeys your spoken commands. The type of creature you can create depends on your spellpower, as shown on \trefnp{Create Greater Undead}.
+
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Vivimancy [Soul, Vitalism] [Evil, Negative]}{Arcane, Divine}
+        \spellnotes As \spell{animate dead}.
+        \ritualcost*{8}[in black onyx gems.]
+    \end{spellfooter}
+\end{spellsection}
+\begin{dtable}
+    \lcaption{Create Greater Undead}
+    \begin{dtabularx}{\columnwidth}{*{2}{>{\lcol}X}}
+        \tb{Spellpower} & \tb{Undead Created} \\
+        \hline
+        16th--19th     & Wraith \\
+        20th--24th     & Spectre \\
+        25th or higher & Devourer \\
+    \end{dtabularx}
+\end{dtable}
+
+\begin{spellsection}{Create Undead}[5]
+    \begin{spellheader}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spellquicktargeting{One intact corpse}{\rngclose}
+            \spelltime{1 hour}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect The target becomes an undead creature that obeys your spoken commands. The type of creature you can create depends on your spellpower, as shown on \trefnp{Create Undead}.
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Vivimancy [Soul, Vitalism] [Evil, Negative]}{Arcane, Divine}
+        \spellnotes As \spell{animate dead}.
+        \ritualcost*{5}[in black onyx gems.]
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{dtable}
+    \lcaption{Create Undead}
+    \begin{dtabularx}{\columnwidth}{*{2}{>{\lcol}X}}
+        \tb{Spellpower} & \tb{Undead Created} \\
+        \hline
+        10th--12th     & Ghoul \\
+        13th--16th     & Ghast \\
+        17th--20th     & Mummy \\
+        21st or higher & Mohrg \\
+    \end{dtabularx}
+\end{dtable}
+
+\begin{spellsection}{Forbiddance}[8]
+    \begin{spellheader}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spellquicktargeting{The entering creature}{}
+            \spelltime{1 hour}
+            \spelltwocol{\spellzone{Up to ten 50 ft. cubes}}{\spellrng{\rngext}}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spellspecial When you perform this ritual, choose an alignment (chaotic, good, evil, or lawful). You may also specify a password.
+            \spelleffect Extraplanar travel within the area is forbidden, as \spell{dimensional lock}.
+            \begin{spelltrigger}{A creature of the chosen alignment enters the area without saying the password}
+                \begin{spelltarget}*[Spellpower vs. Mental]
+                    \spellsuccess \spelldamage{divine}[d8]
+                \end{spelltarget}
+            \end{spelltrigger}
+            \spelldur One year
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Abjuration/Evocation [Power, Warding]}{Divine}
+        \spellnotes A successful dispel attempt only affects one 50-foot cube.
+        \par You can't have multiple overlapping \spell{forbiddance} rituals. In such a case, the more recent effect stops at the boundary of the older effect.
+        \ritualcost{8}
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Soulbound Repose}[4]
+    \begin{spellheader}
+        \spelldesc{You bind the soul of a creature into its remains so they do not decay.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spellquicktargeting{One corpse}{Touch}
+            \spelltime{10 minutes}
+            \spellrng{Touch}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect This spell functions like \spell{gentle repose}, except that you also bind the target's soul into its remains. While its soul is bound, the remains cannot be used for \spell{raise dead}, \spell{animate dead}, and similar effects.
+
+            A creature attempting to use such effects on the remains must make a spellpower check against a DC equal to 15 \add your spellpower. Success means that the creature's spell or ritual succeeds, and this spell is dispelled. Failure means the creature's spell or ritual fails, and any spell slots or components are wasted.
+
+            \spelldur One year \dismissable
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Transmutation/Vivimancy [Soul, Temporal]}{Arcane, Divine}
+        \ritualcost{4}
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Glyph of Warding}[3]
+    \begin{spellheader}
+        \spelldesc{You weave a tracery of faintly glowing lines in the air, forming a warding sigil. When the spell is completed, the glyph and tracery become nearly invisible.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltime{10 minutes}
+            \spellrng{Touch}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spellzoneandburst{\areasmall radius}
+            \spellspecial When you perform this ritual, you can specify a password. You must also choose an energy type (acid, cold, electricity, or fire).
+            \spelleffect An invisible, intangible glyph floats in the air at the center of the area. A creature that can see invisible objects can perceive the glyph, which is takes up approximately one square foot. If the creature can read magic, such as with the \ritual{read magic} ritual, it can identify the energy type of the glyph.
+            \begin{spelltrigger}{A creature enters the area without speaking the password}
+                \begin{spelltargets}*{Everything in the area}[Spellpower vs. Reflex]
+                    \spellsuccess \spelldamage[d8]. The damage is of the energy type chosen when the ritual was performed.
+                    \spellfailure Half damage.
+                \end{spelltargets}
+            \end{spelltrigger}
+            \spelldur Thirty days or until discharged
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Abjuration [Warding] [Trap]}{Divine}
+        \spellnotes Magic traps such as \spell{glyph of warding} can be detected with the Perception skill and disabled with the Devices skill. The DC is 25 \add spell level, or DC 28 for \spell{glyph of warding}.
+        \ritualcost*{3}
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Glyph of Warding, Greater}[7]
+    \begin{spellheader}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltime{10 minutes}
+            \spellrng{Touch}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+
+            \spellzoneandburst{\arealarge radius}
+            \spellspecial When you perform this ritual, you can specify a password. You must also choose an energy type (acid, cold, electricity, or fire).
+            \spelleffect This spell creates an invisible glyph, as \spell{glyph of warding}.
+            \begin{spelltrigger}{A creature enters the area without speaking the password}
+                \begin{spelltargets}*{Everything in the area}[Spellpower vs. Reflex]
+                    \spellsuccess \spelldamage[d8] The damage is of the energy type chosen when the ritual was performed.
+                    \spellfailure Half damage.
+                \end{spelltargets}
+            \end{spelltrigger}
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Abjuration [Barrier]}{Divine}
+        \spellnotes Magic traps such as \spell{greater glyph of warding} can be detected with the Perception skill and disabled with the Devices skill. The DC is 25 \add spell level, or DC 32 for \spell{greater glyph of warding}.
+        \ritualcost*{7}
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Hallow}[7]
+    \begin{spellheader}
+        \spelldesc{You make an area holy.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltime{24 hours}
+            \spelltwocol{\spellzone{\arealarge radius}}{\spellrng{\rngclose}}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect The area becomes holy. This has several effects.
+            \begin{itemize}
+                \item All creatures in the area are subject to a \spell{protection from alignment} spell that protects against evil.
+                \item Any dead body interred in the area cannot be turned into an undead creature.
+                \item While performing the ritual, you can cast another spell or perform another ritual you know. The spell or ritual functions in the entire area as long as this ritual lasts, regardless of its normal area or duration. You may designate whether the effect applies to all creatures, or to all creatures that have a specific faith or alignment. The spells and rituals which can be fixed to a \spell{hallow} ritual are as follows: \spell{aid}, \spell{bane}, \spell{bless}, \spell{comprehend languages}, \spell{darkness}, \spell{daylight}, \spell{death ward}, \spell{dimensional anchor}, \spell{endure elements}, \spell{freedom}, \spell{protection from energy}, \spell{resist energy}, \spell{silence}, \spell{tongues}, and \spell{zone of truth}.
+            \end{itemize}
+            \spelldur One year
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Evocation [Power] [Good]}{Divine}
+        \spellnotes An area can receive only one \spell{hallow} spell (and its associated spell effect) at a time. If an area is \spellindirect{unhallow}{unhallowed}, it cannot be hallowed.
+        \ritualcost{7}
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Unhallow}[5]
+    \begin{spellheader}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltime{24 hours}
+            \spelltwocol{\spellzone{\arealarge radius}}{\spellrng{\rngclose}}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+
+            \spelleffect The area becomes unholy. This has several effects.
+            \begin{itemize}
+                \item A \spellindirect{magic circle against alignment}{magic circle against good} effect fills the area.
+                \item Any dead body interred in the area costs half the normal material components to animate as an undead creature.
+                \item While performing the ritual, you can cast another spell or perform another ritual you know. The spell or ritual functions in the entire area as long as this ritual lasts, regardless of its normal area or duration. You may designate whether the effect applies to all creatures, or to all creatures that have a specific faith or alignment. The spells and rituals which can be fixed to a \spell{hallow} ritual are as follows: \spell{aid}, \spell{bane}, \spell{bless}, \spell{comprehend languages}, \spell{darkness}, \spell{daylight}, \spell{death ward}, \spell{dimensional anchor}, \spell{endure elements}, \spell{freedom}, \spell{protection from energy}, \spell{resist energy}, \spell{silence}, \spell{tongues}, and \spell{zone of truth}.
+            \end{itemize}
+            \spelldur Instantaneous/1 year
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Evocation [Power] [Evil]}{Divine}
+        \spellnotes An area can receive only one \spell{unhallow} spell (and its associated spell effect) at a time. If an area is \spellindirect{hallow}{hallowed}, it cannot be unhallowed.
+        \ritualcost{7}
     \end{spellfooter}
 \end{spellsection}

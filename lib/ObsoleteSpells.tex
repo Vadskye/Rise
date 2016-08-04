@@ -1498,3 +1498,41 @@
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
+
+\begin{spellsection}{Fire Seeds}[5]
+    \begin{spellheader}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltgts{Up to five acorns or berries}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect The targets are imbued with fiery energy capable of dealing up to \spelldamage{fire}[d8]. You may freely decide the distribution of dice between the target berries.
+
+            You must also specify at least one command word used to detonate the seeds. You can specify different command words to detonate different combinations of seeds.
+
+            As a standard action, any creature can say one of your defined command words to detonate the relevant seeds with \rngmed range of them. Any seed that detonates affects all creatures within an \areasmall radius around the seed.
+            \spelldur \durext or until discharged
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellsubcontent}
+        \begin{spelltargetinginfo}
+            \spellspecial As a standard action, any creature can say one of your defined command words to detonate seeds.
+            \spellrng{\rngmed}
+            \spellarea{\areasmall burst centered on a detonating seed}
+            \spelltgts{Everything in the area}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \begin{spellattack}{Spellpower vs. Reflex}
+                \spellsuccess The target takes the damage imbued into the seed.
+                \spellfailure Half damage.
+                \spellspecial This attack automatically succeeds against a creature that is holding a seed when it detonates.
+            \end{spellattack}
+        \end{spelleffects}
+    \end{spellsubcontent}
+    \begin{spellfooter}
+        \spellinfo{Evocation/Transmutation [Destructive, Fire]}{Nature, Wild}
+        \spellnotes You can only have one \spell{fire seeds} spell active at any time.
+        \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
