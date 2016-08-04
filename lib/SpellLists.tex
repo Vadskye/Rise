@@ -14,6 +14,7 @@ An \M{} or \F{} appearing at the end of a spell's name in the spell lists denote
 \subsubsection{1st-level Arcane Spells}
 \begin{swspelllist}
     \SLmagearmor[Abjur]
+    \SLprotectionfromalignment
     \SLresistenergy
     \SLsanctuary
     \SLablativeshield*
@@ -62,7 +63,6 @@ An \M{} or \F{} appearing at the end of a spell's name in the spell lists denote
 \begin{swspelllist}
     \SLdimensionalanchor[Abjur]
     \SLinertialshield
-    \SLprotectionfromalignment
     \SLsharepain
 
     \SLfogcloud[Conj]
@@ -192,9 +192,10 @@ An \M{} or \F{} appearing at the end of a spell's name in the spell lists denote
     \SLboonofprecision[Div]
     \SLtelepathy*
 
-    \SLdiscordantsong[Ench]
+    % Ench
 
-    \SLblacktentacles[Evoc]
+    \SLavatarofmissiles[Evoc]
+    \SLblacktentacles
     \SLwallofforce
     \SLtelekineticblast*
 
@@ -211,17 +212,20 @@ An \M{} or \F{} appearing at the end of a spell's name in the spell lists denote
 \subsubsection{6th-level Arcane Spells}
 \begin{swspelllist}
 
-    \SLshadowwall[Abjur]
+    \SLauraofimmunity[Abjur]
+    \SLshadowwall
     \SLprohibition*
 
     % Conj
 
     \SLprohibition[Div]
+    \SLspellsight
     \SLtrueseeing
 
     \SLdominateperson[Ench]*
 
     \SLchainlightning[Evoc]
+    \SLinferno
     \SLpolarray
 
     \SLshadowwall[Illus]
@@ -241,36 +245,45 @@ An \M{} or \F{} appearing at the end of a spell's name in the spell lists denote
 \subsubsection{7th-level Arcane Spells}
 \begin{swspelllist}
 
-    \SLantimagicfield[Abjur]*
+    \SLavatarofshielding[Abjur]
+    \SLantimagicfield*
 
     \SLicestorm[Conj]
+    \SLavataroftranslocation*
 
-    % Div
+    \SLscrybolt[Div]
 
+    \SLavataroffealty[Ench]
+    \SLdiscordantsong
     \SLfeeblemind*
 
-    \SLicestorm[Evoc]
+    \SLavatarofwind[Evoc]
+    \SLicestorm
+    \SLimmolation
     \SLshadowstorm
 
     \SLshadowstorm[Illus]
 
-    % Trans
+    \SLgolemheart[Trans]
 
-    \SLstriptheflesh[Vivi]
+    \SLscrybolt[Vivi]
+    \SLstriptheflesh
 
 \end{swspelllist}
 
 \subsubsection{8th-level Arcane Spells}
 \begin{swspelllist}
 
-    % Abjur
+    \SLlifebound[Abjur]
+    \SLsevermagic
 
-    \SLimprisonment[Conj]
-    \SLmaze
+    \SLbladestorm[Conj]
+    \SLimprisonment
 
     \SLshadowduplicate[Div]
+    \SLthirdeye
 
-    % Ench
+    \SLavatarofsuffering[Ench]
 
     \SLforcecage[Evoc]
 
@@ -279,7 +292,8 @@ An \M{} or \F{} appearing at the end of a spell's name in the spell lists denote
     \SLimprisonment[Trans]
     \SLreversegravity*
 
-    % Vivi
+    \SLavatarofdeath[Vivi]
+    \SLlifebound
 
 \end{swspelllist}
 
@@ -289,7 +303,9 @@ An \M{} or \F{} appearing at the end of a spell's name in the spell lists denote
     \SLdisjoinmagic[Abjur]
     \SLshadowshield
 
-    %Conj
+    \SLavatarofblades
+    \SLmaze
+    \SLdimensionalarmy[Conj]*
 
     \SLrevelation[Div]
 
@@ -433,11 +449,9 @@ An \M{} or \F{} appearing at the end of a spell's name in the spell lists denote
 
 \subsubsection{6th-level Arcane Rituals}
 \begin{rituallist}
-    \spellhead[Conj]{Create Object}[Greater] Create almost any type of object.
     \spellhead{Plane Shift}\F As many as eight subjects travel to another plane.
     \spellhead{Teleport} Instantly transports you as far as 100 miles/level.
-    \spellhead[Div]{Analyze Dweomer}  Reveals all magical aspects of subjects.
-    \spellhead{Find the Path} Shows most direct way to a location.
+    \spellhead[Div]{Find the Path} Shows most direct way to a location.
     \spellhead{Nightmare} Sends vision dealing 1d10 damage, fatigue.
     \spellhead[Ench]{Geas/Quest} Commands subject to perform task.
     \spellhead{Symbol of Insanity} Trap drives triggering creature insane.
@@ -501,6 +515,7 @@ An \M{} or \F{} appearing at the end of a spell's name in the spell lists denote
     \SLentropicshield
     \SLholdperson
     \SLinflictwounds
+    \SLprotectionfromalignment
     \SLregeneration
     \SLresistenergy
     \SLresistpoison
@@ -514,13 +529,11 @@ An \M{} or \F{} appearing at the end of a spell's name in the spell lists denote
     \SLaid
     \SLcommand
     \SLcurseofbloodandbone
-    \SLdeathward
     \SLdetectalignment
     \SLdimensionalanchor
     \SLfreedom
     \SLmarkoftracking
     \SLplanardisruption
-    \SLprotectionfromalignment
     \SLsearinglight
     \SLsharepain
     \SLsilence
@@ -532,13 +545,14 @@ An \M{} or \F{} appearing at the end of a spell's name in the spell lists denote
 \begin{spelllist}
     \SLdispelmagic
     \SLdivinefavor
-    \SLspiritualweapon
 \end{spelllist}
 
 \subsubsection{4th-level Divine Spells}
 \begin{spelllist}
     \SLairwalk
+    \SLavatarofhealing
     \SLbladebarrier
+    \SLdeathward
     \SLdiscernlies
     \SLenervation
     \SLmarkofscrying
@@ -554,11 +568,12 @@ An \M{} or \F{} appearing at the end of a spell's name in the spell lists denote
     \SLflamestrike
     \SLholyword
     \SLrevivify
+    \SLspiritualweapon
 \end{spelllist}
 
 \subsubsection{6th-level Divine Spells}
 \begin{spelllist}
-    \SLdestruction
+    \SLblessedblade
     \SLheal
     \SLtrueseeing
     \SLwordofrecall
@@ -568,18 +583,29 @@ An \M{} or \F{} appearing at the end of a spell's name in the spell lists denote
 \begin{spelllist}
     \SLantimagicfield
     \SLantilifeshell
+    \SLavataroffealty
+    \SLavatarofshielding
+    \SLcircleofdeath
+    \SLcircleofhealing
+    \SLdivinejudgment
 \end{spelllist}
 
 \subsubsection{8th-level Divine Spells}
 \begin{spelllist}
-    \item % TODO
+    \SLavatarofsuffering
+    \SLmartyrsgift
 \end{spelllist}
 
 \subsubsection{9th-level Divine Spells}
 \begin{spelllist}
+    \SLavatarofchaos
+    \SLavataroforder
+    \SLavataroflife
     \SLearthquake
+    \SLholyavatar
     \SLimplosion
     \SLstormofvengeance
+    \SLunholyavatar
 \end{spelllist}
 
 \subsection{Cleric Domains}\label{Cleric Domains}
@@ -618,10 +644,11 @@ An \M{} or \F{} appearing at the end of a spell's name in the spell lists denote
 \begin{spelllist}
     \SLgentledescent[1]
     \SLwindstrike[2]
-    \SLlightningbolt[3]
+    \SLcalllightning[3]
     \SLairwalk[4]
     \SLstormlord[5]
     \SLchainlightning[6]
+    \SLavatarofwind[7]
     \SLreversegravity[8]
     \SLstormofvengeance[9]
 \end{spelllist}
@@ -630,53 +657,44 @@ Summoning spells summon air elementals only.
 \subsubsection{Chaos Domain Spells}
 
 \begin{spelllist}
-    \SLentropicshield[1]
-    \SLforget[1]
-    \SLprotectionfromalignment[2]
-    \SLchaoshammer[2]
+    \SLprotectionfromalignment[1]
     \SLconfusion[2]
+    \SLchaoshammer[3]
+    \SLlivingmissile[4]
     \SLcacaphonicword[5]
-    \SLprismaticwall[5]
     \SLprismaticspray[6]
-    \SLdiscordantsong[5]
-    \SLirresistibledance[9]
+    \SLdiscordantsong[7]
+    \SLreversegravity[8]
+    \SLavatarofchaos[9]
 \end{spelllist}
 Summoning spells summon chaotic creatures only.
 
 \subsubsection{Death Domain Spells}
 
 \begin{spelllist}
-    \SLunlivingheart[1]
+    \SLinflictwounds[1]
     \SLcurseofbloodandbone[2]
-    \SLdeathward[2]
     \SLdeathknell[3]
-    \SLwavesoffatigue[3]
     \SLenervation[4]
-    \SLpoison[4]
+    \SLbleed[5]
     \SLfingerofdeath[6]
-    \SLharm[6]
+    \SLstriptheflesh[7]
+    \SLavatarofdeath[8]
     \SLwailofthebanshee[9]
 \end{spelllist}
 
 \subsubsection{Destruction Domain Spells}
 
 \begin{spelllist}
-    \SLburninghands[1]
     \SLrottinggrasp[1]
     \SLsoundburst[2]
-    \SLfireball[3]
     \SLrotburst[3]
-    \SLscorchingray[3]
-    \SLpoison[4]
     \SLshout[4]
     \SLflamestrike[5]
-    \SLdestruction[6]
     \SLdisintegrate[6]
-    \SLpolarray[6]
+    \SLicestorm[7]
     \SLfirestorm[8]
     \SLearthquake[9]
-    \SLimplosion[9]
-    \SLmeteorswarm[9]
 \end{spelllist}
 
 \begin{comment}
@@ -703,13 +721,13 @@ Summoning spells summon chaotic creatures only.
 \subsubsection{Earth Domain Spells}
 
 \begin{spelllist}
-    \SLearthspike[1]
-    \SLtremorsense[1]
-    \SLearthenblade[2]
-    \SLmeldintostone[2]
+    \SLearthenblade[1]
+    \SLearthspike[2]
+    \SLearthspull[3]
     \SLearthglide[4]
-    \SLearthspull[4]
     \SLtransmutefleshandstone[5]
+    \SLfissure[6]
+    \SLgolemheart[7]
     \SLimprisonment[8]
     \SLearthquake[9]
 \end{spelllist}
@@ -718,14 +736,15 @@ Summoning spells summon earth elementals only.
 \subsubsection{Evil Domain Spells}
 
 \begin{spelllist}
-    \SLbane[1]
-    \SLprotectionfromalignment[2]
-    \SLunholyblight[2]
-    \SLdeathknell[3]
+    \SLprotectionfromalignment[1]
+    \SLcurseofbloodandbone[2]
+    \SLunholyblight[3]
     \SLenervation[4]
     \SLblasphemy[5]
     \SLharm[6]
-    \SLassimilate[9]
+    \SLcircleofdeath[7]
+    \SLavatarofsuffering[8]
+    \SLunholyavatar[9]
 \end{spelllist}
 Summoning spells summon evil creatures only
 
@@ -733,13 +752,12 @@ Summoning spells summon evil creatures only
 
 \begin{spelllist}
     \SLburninghands[1]
-    \SLflameblade[1]
     \SLwalloffire[2]
     \SLfireball[3]
-    \SLscorchingray[3]
     \SLfireshield[4]
-    \SLfireseeds[5]
     \SLflamestrike[5]
+    \SLinferno[6]
+    \SLimmolation[7]
     \SLfirestorm[8]
     \SLmeteorswarm[9]
 \end{spelllist}
@@ -748,13 +766,15 @@ Summoning spells summon fire elementals only.
 \subsubsection{Good Domain Spells}
 
 \begin{spelllist}
-    \SLbless[1]
-    \SLdeathward[2]
-    \SLholysmite[2]
-    \SLprotectionfromalignment[2]
-    \SLdivinemight[5]
+    \SLprotectionfromalignment[1]
+    \SLaid[2]
+    \SLholysmite[3]
+    \SLavatarofhealing[4]
     \SLholyword[5]
     \SLheal[6]
+    \SLcircleofhealing[7]
+    \SLmartyrsgift[8]
+    \SLholyavatar[9]
 \end{spelllist}
 Summoning spells summon good creatures only.
 
@@ -763,124 +783,139 @@ Summoning spells summon good creatures only.
 \begin{spelllist}
     \SLboonofperception[1]
     \SLboonofknowledge[2]
-    \SLreadmind[2]
     \SLboonofmastery[3]
-    \SLmomentofprescience[3]
     \SLboonofmanyeyes[4]
     \SLboonofprecision[5]
     \SLtrueseeing[6]
+    \SLscrybolt[7]
+    \SLthirdeye[8]
     \SLrevelation[9]
 \end{spelllist}
 
 \subsubsection{Law Domain Spells}
 
 \begin{spelllist}
-    \SLholdperson[1]
+    \SLprotectionfromalignment[1]
     \SLcommand[2]
-    \SLorderswrath[2]
-    \SLprotectionfromalignment[2]
+    \SLorderswrath[3]
     \SLdiscernlies[4]
     \SLdictum[5]
     \SLprohibition[6]
+    \SLavataroffealty[7]
     \SLimprisonment[8]
-  %\spellhead[9]{I[9]mprisonment} Entombs subject beneath the earth.
+    \SLavataroforder[9]
 \end{spelllist}
 Summoning spells summon lawful creatures only.
 
 \subsubsection{Magic Domain Spells}
 
 \begin{spelllist}
-    \SLablativeshield[1]
+    \SLmagicmissile[1]
     \SLdimensionalanchor[2]
     \SLdispelmagic[3]
-    \SLresistmagic[3]
+    \SLmissilestorm[4]
+    \SLavatarofmissiles[5]
+    \SLspellsight[6]
     \SLantimagicfield[7]
+    \SLsevermagic[8]
     \SLdisjoinmagic[9]
 \end{spelllist}
 
 \subsubsection{Protection Domain Spells}
 
 \begin{spelllist}
-    \SLresistenergy[1]
     \SLsanctuary[1]
-    \SLshieldoffaith[1]
-    \SLdeathward[2]
     \SLsharepain[2]
     \SLresistmagic[3]
+    \SLdeathward[4]
     \SLrepulsion[5]
+    \SLauraofimmunity[6]
+    \SLavatarofshielding[7]
+    \SLmartyrsgift[8]
+    \SLshadowshield[9]
 \end{spelllist}
 
 \subsubsection{Strength Domain Spells}
 
 \begin{spelllist}
+    \SLhaste[1]
     \SLenlarge[2]
-    \SLtotemicpower[2]
-    \SLdivinefavor[3]
+    \SLmightythrow[3]
     \SLshout[4]
     \SLdivinemight[5]
+    \SLseismicslam[6]
+    \SLgolemheart[7]
+    \SLavatarofmight[8]
+    \SLearthquake[9]
 \end{spelllist}
 
 \subsubsection{Travel Domain Spells}
 
 \begin{spelllist}
-    \SLfeatherfall[1]
     \SLlongstrider[1]
     \SLdimensionslide[2]
-    \SLfreedom[2]
-    \SLspiderclimb[2]
     \SLgaseousform[3]
     \SLairwalk[4]
-    \SLdimensiondoor[4]
     \SLetherealjaunt[5]
-    \SLrepulsion[5]
     \SLwordofrecall[6]
+    \SLavataroftranslocation[7]
+    \SLimprisonment[8]
+    \SLdimensionalarmy[9]
 \end{spelllist}
 
 \subsubsection{Trickery Domain Spells}
 
 \begin{spelllist}
     \SLmaskofthedeceiver[1]
-    \SLventriloquism[1]
-    \SLconfusion[2]
-    \SLsilence[2]
+    \SLcreateimage[2]
     \SLinvisibility[3]
     \SLphantasmalkiller[4]
     \SLshadowstep[5]
+    \SLshadowwall[6]
+    \SLshadowstorm[7]
     \SLmaze[8]
-    \SLreversegravity[8]
+    \SLshadowshield[9]
 \end{spelllist}
 
-\subsubsection{Vitality Domain Spells}
+\subsubsection{Life Domain Spells}
 
 \begin{spelllist}
     \SLcurewounds[1]
-    \SLinflictwounds[1]
+    \SLsharepain[2]
+    \SLrestoration[3]
+    \SLavatarofhealing[4]
+    \SLrevivify[5]
     \SLheal[6]
-    \SLharm[6]
+    \SLcircleofhealing[7]
+    \SLlifebound[8]
+    \SLavataroflife[9]
 \end{spelllist}
 
 \subsubsection{War Domain Spells}
 
 \begin{spelllist}
-    \SLbane[1]
-    \SLbless[1]
-    \SLdivinefavor[3]
-    \SLspiritualweapon[3]
+    \SLearthenblade[1]
+    \SLflameblade[2]
+    \SLaqueousblade[3]
     \SLbladebarrier[4]
-    \SLflamestrike[5]
-    \SLfirestorm[8]
-    \SLstormofvengeance[9]
+    \SLspiritualweapon[5]
+    \SLblessedblade[6]
+    \SLavatarofshielding[7]
+    \SLbladestorm[8]
+    \SLavatarofblades[9]
 \end{spelllist}
 
 \subsubsection{Water Domain Spells}
 
 \begin{spelllist}
-    \SLaqueousblade[2]
+    \SLwaterwalk[1]
     \SLfogcloud[2]
-    \SLwaterwalk[3]
+    \SLaqueousblade[3]
+    \SLaquaticsphere[4]
+    \SLicespike[5]
     \SLpolarray[6]
     \SLicestorm[7]
-    \SLhorridwilting[9]
+    \SLdrown[8]
     \SLstormofvengeance[9]
 \end{spelllist}
 Summoning spells summon water elementals or aquatic creatures only.
@@ -890,11 +925,13 @@ Summoning spells summon water elementals or aquatic creatures only.
 \begin{spelllist}
     \SLentangle[1]
     \SLbarkskin[2]
-    \SLenlarge[2]
-    \SLwallofthorns[2]
-    \SLearthspull[4]
-    \SLfireseeds[5]
-    \SLantilifeshell[7]
+    \SLearthspull[3]
+    \SLsunbeam[4]
+    \SLavatarofgrowth[5]
+    \SLfissure[6]
+    \SLsunburst[7]
+    \SLlifegivingroots[8]
+    \SLearthquake[9]
 \end{spelllist}
 
 \subsection{Divine Rituals}\label{Divine Rituals}
@@ -914,17 +951,15 @@ Summoning spells summon water elementals or aquatic creatures only.
 \begin{rituallist}
     \spellhead{Augury} Learns whether an action will be good or bad.
     \spellhead{Comprehend Languages} You understand all spoken and written languages.
-    \spellhead{Consecrate} Fills area with positive energy, making undead weaker.
     \spellhead{Continual Flame} Makes a permanent, heatless torch.
     \spellhead{Create Food and Water} Conjures sustinence from thin air.
     \spellhead{Darkness} Object radiates supernatural shadow.
-    \spellhead{Desecrate} Fills area with negative energy, making undead stronger.
     \spellhead{Find Traps} Notice traps better.
     \spellhead{Enhance Armor} Increase enhancement bonus of armor.
     \spellhead{Enhance Weapon} Increase enhancement bonus of weapon.
     \spellhead{Gentle Repose} Preserves one corpse.
     \spellhead{Invisibility Purge} Dispels invisibility within large radius.
-    \spellhead{Restoration}[Lesser] Dispels magical ability penalty or repairs 1d4 ability damage.
+    \spellhead{Restore Attributes}[Lesser] Dispels magical ability penalty or repairs 1d4 ability damage.
     \spellhead{Shape Wood} Sculpts wood into any shape.
     \spellhead{Zone of Truth} Subjects within medium emanation cannot lie.
 \end{rituallist}
@@ -950,7 +985,7 @@ Summoning spells summon water elementals or aquatic creatures only.
     \spellhead{Divination} Provides useful advice for specific proposed actions.
     \spellhead{Neutralize Poison} Immunizes subject against poison, detoxifies venom in or on subject.
     \spellhead{Remove Curse} Frees object or person from curse.
-    \spellhead{Restoration} Restores level and attribute score drains.
+    \spellhead{Restore Attributes} Restores level and attribute score drains.
     \spellhead{Sending} Delivers short message anywhere, instantly.
     \spellhead{Soulbound Repose} Preserves one corpse.
     \spellhead{Shape Metal} Sculpts metal into any shape.
@@ -987,7 +1022,7 @@ Summoning spells summon water elementals or aquatic creatures only.
     \spellhead{Glyph of Warding}[Greater] As \spell{glyph of warding}, but up to 10d10 damage or 6th level spell.
     \spellhead{Hallow} Designates location as holy.
     \spellhead{Refuge} Alters item to transport its possessor to you.
-    \spellhead{Restoration}[Greater] As restoration, plus other conditions.
+    \spellhead{Restore Attributes}[Greater] As restore attributes, plus other conditions.
     \spellhead{Resurrection} Fully restore dead subject.
     \spellhead{Scrying}[Greater] As \spell{scrying}, but faster and longer.
     \spellhead{Symbol of Destruction} Trap kills triggering creature.
@@ -1014,11 +1049,10 @@ Summoning spells summon water elementals or aquatic creatures only.
 \begin{spelllist}
     \SLburninghands
     \SLcurewounds
-    \SLearthspike
+    \SLearthenblade
     \SLentangle
     \SLexcreteslime
     \SLfaeriefire
-    \SLflameblade
     \SLgentledescent
     \SLgustofwind
     \SLlongstrider
@@ -1028,15 +1062,16 @@ Summoning spells summon water elementals or aquatic creatures only.
     \SLrottinggrasp
     \SLsummonnaturesally
     \SLtremorsense
+    \SLwaterwalk
 \end{spelllist}
 
 \subsubsection{2nd-level Nature Spells}
 \begin{spelllist}
-    \SLaqueousblade
     \SLbarkskin
     \SLconeofcold
-    \SLearthenblade
+    \SLearthspike
     \SLenlarge
+    \SLflameblade
     \SLfogcloud
     \SLfreedom
     \SLlongeye
@@ -1056,19 +1091,21 @@ Summoning spells summon water elementals or aquatic creatures only.
 
 \subsubsection{3rd-level Nature Spells}
 \begin{spelllist}
+    \SLaqueousblade
+    \SLcalllightning
     \SLdispelmagic
+    \SLearthspull
     \SLfungalgrowth
     \SLlightningbolt
+    \SLmightythrow
     \SLrotburst
-    \SLwaterwalk
 \end{spelllist}
 
 \subsubsection{4th-level Nature Spells}
 \begin{spelllist}
     \SLairwalk
-    \SLcalllightning
+    \SLaquaticsphere
     \SLearthglide
-    \SLearthspull
     \SLmarkofscrying
     \SLpoison
     \SLsunbeam
@@ -1077,26 +1114,35 @@ Summoning spells summon water elementals or aquatic creatures only.
 \subsubsection{5th-level Nature Spells}
 \begin{spelllist}
   %\spellhead{Animate Plants} Plants animate and fight for you.
-    \SLfireseeds
+    \SLavatarofgrowth
+    \SLicespike
     \SLstormlord
 \end{spelllist}
 
 \subsubsection{6th-level Nature Spells}
 \begin{spelllist}
     \SLchainlightning
+    \SLfissure
     \SLheal
+    \SLinferno
+    \SLseismicslam
 \end{spelllist}
 
 \subsubsection{7th-level Nature Spells}
 \begin{spelllist}
     \SLantilifeshell
+    \SLavatarofwind
+    \SLcircleofhealing
+    \SLgolemheart
     \SLicestorm
-    \SLsunburst
+    \SLimmolation
 \end{spelllist}
 
 \subsubsection{8th-level Nature Spells}
 \begin{spelllist}
+    \SLavatarofmight
     \SLfirestorm
+    \SLlifegivingroots
 \end{spelllist}
 
 \subsubsection{9th-level Nature Spells}
@@ -1127,7 +1173,7 @@ Summoning spells summon water elementals or aquatic creatures only.
     \spellhead{Find Traps} Notice traps better.
     \spellhead{Gentle Repose} Preserves one corpse.
     \spellhead{Pass Without Trace} Creatures leave no tracks.
-    \spellhead{Restoration}[Lesser] Dispels magical ability penalty or repairs 1d4 ability damage.
+    \spellhead{Restore Attributes}[Lesser] Dispels magical ability penalty or repairs 1d4 ability damage.
     \spellhead{Shape Wood} Sculpts wood into any shape.
     \spellhead{Whispering Wind} Sends a short message up to 10 miles.
 \end{rituallist}
