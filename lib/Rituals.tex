@@ -30,7 +30,7 @@
         \spellaugment{1}{Sized}{You can increase or decrease the size category of creatures and objects detected by the alarm by 1. This augment can be used multiple times.}
         \spellaugment{1}{Password}{When performing the ritual, you may specify a password. If the password is spoken aloud, the alarm deactivates for 5 rounds.}
         \spellaugment{2}{Widened}{The ritual's area becomes a \areahuge radius.}
-        \spellaugment{4}{Permanent}{The ritual's duration becomes permanent.}
+        \spellaugment{3}{Permanent}{The ritual's duration becomes permanent.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -59,7 +59,7 @@
     \begin{spellaugments}
         \spellaugment{1}{Giant}{The ritual can affect a target one size category larger. This augment can be used multiple times.}
         \spellaugment{1}{Persistent}{The ritual's duration becomes one year.}
-        \spellaugment{3}{Permanent}{The ritual's duration becomes permanent.}
+        \spellaugment{2}{Permanent}{The ritual's duration becomes permanent.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -81,7 +81,7 @@
         \ritualcost{2}
     \end{spellfooter}
     \begin{spellaugments}
-        \spellaugment{4}{Permanent}{The ritual's duration becomes permanent.}
+        \spellaugment{3}{Permanent}{The ritual's duration becomes permanent.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -97,7 +97,7 @@
         \begin{spelleffects}
             \spellspecial The combined levels of all targets cannot exceed your spellpower.
             \spelleffect The target becomes an undead creature that obeys your spoken commands. You choose whether to create a skeleton or a zombie. Creating a zombie require a mostly intact corpse, including most of the flesh. Creating a skeleton only requires a mostly intact skeleton. If a skeleton is made from an intact corpse, the flesh quickly falls off the animated bones.
-            \spelldur One year
+            \spelldur Thirty days
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -153,8 +153,8 @@
             \spellzone{\arealarge radius centered on you}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect When you perform this ritual, choose an alignment (chaotic, good, evil, or lawful) or creature type.
-            When a creature of the chosen type enters the area, you make an attack against it, as described below.
+            \spellspecial When you perform this ritual, choose an alignment (chaotic, good, evil, or lawful) or creature type.
+            \spelleffect When a creature of the chosen type enters the area, you make an attack against it, as described below.
             \begin{spellattack}{Spellpower vs. Mental}
                 \spellsuccess The target is \frightened by the area.
                 \spellcritical The target is \panicked by the area.
@@ -171,25 +171,6 @@
     \begin{spellaugments}
         \spellaugment{4}{Widened}{The spell's area becomes a 1 mile radius.}
     \end{spellaugments}
-\end{spellsection}
-
-\begin{spellsection}{Apparition}[5]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltime{1 minute}
-            \spellrng{\rngext \rngunrestricted}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect A magic sensor appears at a location within range, as \spell{clairaudience/clairvoyance}. You can hear and see through the sensor. In addition, a figment of you appears in the same location, as \spell{create image}. You can speak through the figment.
-            \spelldur Concentration
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Divination/Illusion [Figment, Scrying]}{Arcane}
-        \spellnotes \sensorspellnotes
-    \end{spellfooter}
 \end{spellsection}
 
 \begin{spellsection}{Appraisal}[1]
@@ -246,16 +227,15 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One closable object, such as a door or box (Large or smaller)}{}
             \spelltime{1 minute}
+            \spelltgt{One closable object, such as a door or box (Large or smaller)}
             \spellrng{Touch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
             \spelleffect The target object is magically locked. It can be unlocked with a Devices check against a DC equal to 30 \add your spellpower. The DC to break it open forcibly increases by 10.
 
             You can freely pass your own \ritual{arcane lock}, as if the object were not locked.
-            \spelldur One year
+            \spelldur Thirty days
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -283,7 +263,7 @@
         \begin{spelleffects}
             \spellspecial When you learn this ritual, choose a personal rune or mark. It can consist of no more than six characters, and must fit within one square foot.
             \spelleffect Your personal rune or mark is written on the target, as if with black ink. The target is not harmed by the writing.
-            \spelldur One year
+            \spelldur Thirty days
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -302,11 +282,10 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature}{\rngtouch}
             \spelltime{1 hour}
+            \spellquicktargeting{One creature}{\rngtouch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
             \spelleffect If the target has been punished for a significant transgression against its alignment, deity, or organization, this ritual can undo that punishment. The exact effects of this atonement depend on the nature of the punishment the creature is suffering.
 
             The cost of the ritual depends on the circumstances of the act that provoked the punishment. If the creature's act was unintentional, or under magical influence, no material components are required. If the creature's act was intentional, but the creature seeks atonement intentionally, the normal cost must be paid. If the creature's act was intentional, and the creature does not seek atonement willingly, the material component cost is doubled.
@@ -358,7 +337,7 @@
             \spelltime{24 hours}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target becomes sentient. Its Intelligence becomes 1d6 \add 4. Its type changes from animal to magical beast. It gains the ability to speak and understand one language that you know.
+            \spelleffect The target becomes sentient. Its Intelligence becomes 1d6 \sub 5. Its type changes from animal to magical beast. It gains the ability to speak and understand one language that you know.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -389,7 +368,7 @@
                 \spellfailure The target can leave the area, break the circle, and otherwise act normally.
             \end{spellattack}
 
-            \spelldur 24 hours
+            \spelldur \durext
         \end{spelleffects}
     \end{spellsubcontent}
     \begin{spellfooter}
@@ -402,7 +381,7 @@
     \begin{spellaugments}
         \spellaugment{2}{Anchoring}{The target is also affected by a \spell{dimensional anchor}, preventing it from escaping the area with teleportation or similar abilities.}
         \spellaugment{2}{Carved}{The magic circle is inscribed into the ground, rather than originating from materials on the ground. Disrupting the circle is much more difficult, and requires breaking the ground.}
-        \spellaugment{4}{Permanent}{The ritual's duration becomes permanent.}
+        \spellaugment{3}{Permanent}{The ritual's duration becomes permanent.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -447,29 +426,6 @@
     \begin{spellaugments}
         \spellaugment{2}{Empowered}{The ritual can remove magical effects of any level.}
         \spellaugment{4}{Disjoining}{The ritual automatically removes all magical effects, with no roll required.}
-    \end{spellaugments}
-\end{spellsection}
-
-\begin{spellsection}{Clairaudience/Clairvoyance}[3]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltime{1 minute}
-            \spellrng{\rngext \rngunrestricted}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect This ritual creates a magic sensor. You don't need line of sight or line of effect to create the sensor, but the destination must be known -- a place familiar to you or an obvious one. As a standard action, you can concentrate to see and hear through the sensor as if you were in its location. While concentrating, you can rotate the sensor to see and hear in any direction.
-            \spelldur \durshort \dismissable
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Divination [Scrying]}{Arcane, Divine}
-        \spellnotes \sensorspellnotes
-        \ritualcost*{3}
-    \end{spellfooter}
-    \begin{spellaugments}
-        \spellaugment{3}{Persistent}{The ritual's duration becomes \durext.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -547,11 +503,11 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Divination [Communication]}{Arcane, Divine, Nature}
-        \spellnotes This ritual can be foiled by certain obscuring magic (such as the \spell{secret page} and \spell{illusory script} rituals). It does not decipher codes or reveal messages concealed in otherwise normal text. You may be unable to understand dead or extremely obscure languages.
+        \spellnotes This ritual can be foiled by certain obscuring magic (such as the \spell{secret page} ritual). It does not decipher codes or reveal messages concealed in otherwise normal text. You may be unable to understand dead or extremely obscure languages.
         \ritualcost{2}
     \end{spellfooter}
     \begin{spellaugments}
-        \spellaugment{5}{Permanent}{The ritual's duration becomes permanent.}
+        \spellaugment{4}{Permanent}{The ritual's duration becomes permanent.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -580,7 +536,8 @@
     \begin{spellcontent}
         \begin{spelltargetinginfo}
             \spelltime{10 minutes}
-            \spellquicktargeting{One creature}{10 miles \rngunrestricted}
+            \spellquicktargeting{One creature}{1 mile \rngunrestricted}
+            \spellspecial You can target any creature you are familiar with within range, regardless of intervening obstacles.
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
@@ -608,28 +565,6 @@
     1 Each time a victim takes 3 or more Strength damage from blinding sickness, he or she must make another Fortitude save or be permanently blinded.
 \end{dtable}
 
-\begin{spellsection}{Continual Flame}[2]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{One object}{\rngtouch}
-            \spelltime{1 minute}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect The target glows like a torch. The effect looks like a regular flame, but it creates no heat and doesn't use oxygen.
-            \spelldur One year
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Illusion [Figment, Light]}{Arcane, Divine}
-        \ritualcost{2}
-    \end{spellfooter}
-    \begin{spellaugments}
-        \spellaugment{2}{Permanent}{The ritual's duration becomes permanent.}
-    \end{spellaugments}
-\end{spellsection}
-
 \begin{spellsection}{Control Weather}[7]
     \begin{spellheader}
     \end{spellheader}
@@ -645,32 +580,11 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Control] [Air]}{Arcane, Divine, Nature}
+        \spellinfo{Evocation [Air]}{Arcane, Divine, Nature}
         \spellnotes \spell{Control weather} can do away with atmospheric phenomena (naturally occurring or otherwise) as well as create them.
 
         If multiple rituals are being used to control the weather in an area, both effects happen if possible. If the weather patterns are mutually exclusive, both casters make opposed spellpower checks, and the winner determines the weather.
         \ritualcost*{7}
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Create Food and Water}[2]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltime{10 minutes}
-            \spellrng{\rngclose}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect This ritual creates food and drink. The food is sufficient to sustain three Medium creatures per spellpower for 24 hours. The food that this ritual creates is simple fare of your choice -- highly nourishing, if rather bland. You can create food suitable to sustain any kind of creature, if you know what it eats.
-
-            Food created by this ritual decays and becomes inedible within 24 hours. The water created by this ritual is just like clean rain water, and does not go bad as the food does.
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Conjuration [Creation]}{Arcane, Divine, Nature}
-        \spellnotes The food can be kept fresh for another 24 hours by performing a \ritual{purify food and water} ritual on it.
-        \ritualcost*{2}
     \end{spellfooter}
 \end{spellsection}
 
@@ -684,7 +598,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target gains a magical aura (see \pcref{Spellcraft}). You can choose the school and descriptors of the aura. You can also choose the spellpower, up to a maximum of your spellpower.
-            \spelldur One year \dismissable
+            \spelldur Thirty days \dismissable
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -737,6 +651,27 @@
     1 Such as adamantine or mithral. You can't create a cold iron item magically.
 \end{dtable}
 
+\begin{spellsection}{Create Sustenance}[2]
+    \begin{spellheader}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltime{10 minutes}
+            \spellrng{\rngclose}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect This ritual creates food and drink. The food is sufficient to sustain three Medium creatures per spellpower for 24 hours. The food that this ritual creates is simple fare of your choice -- highly nourishing, if rather bland. You can create food suitable to sustain any kind of creature, if you know what it eats.
+
+            Food created by this ritual decays and becomes inedible within 24 hours. The water created by this ritual is just like clean rain water, and does not go bad as the food does.
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Conjuration [Creation]}{Arcane, Divine, Nature}
+        \spellnotes The food can be kept fresh for another 24 hours by performing a \ritual{purify sustenance} ritual on it.
+        \ritualcost*{2}
+    \end{spellfooter}
+\end{spellsection}
+
 \begin{spellsection}{Create Water}[1]
     \begin{spellheader}
         \spelldesc{You create water to ease the thirst of you and your companions.}
@@ -751,7 +686,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Conjuration [Creation, Water]}{Divine}
+        \spellinfo{Conjuration [Creation, Water]}{Arcane, Divine, Nature}
         \spellnotes Conjuration spells can't create substances or objects within a creature. Water weighs about 8 pounds per gallon.
         \ritualcost*{1}
     \end{spellfooter}
@@ -821,32 +756,7 @@
     \end{spellfooter}
     \begin{spellaugments}
         \spellaugment{2}{Tracing}{When you detect a scrying attempt, you make an opposed spellpower check against the scrying creature (d20 \add spellpower). If you win, you get a visual image of the scrier and an accurate sense of his or her direction and distance from you.}
-        \spellaugment{4}{Permanent}{The ritual's duration becomes permanent.}
-    \end{spellaugments}
-\end{spellsection}
-
-\begin{spellsection}{Disguise Self}[1]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltime{1 minute}
-            \spelltgt{You}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect When you perform this ritual, you make a Disguise check.
-            You gain a \plus10 bonus on the check, and you can freely alter the appearance of your clothes and equipment, regardless of their original form.
-            \spelldur \durlong \dismissable
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Illusion [Glamer, Unreal]}{Arcane}
-        \spellnotes Creatures can identify the illusion, as \spell{silent image}.
-        \ritualcost*{1}
-    \end{spellfooter}
-    \begin{spellaugments}
-        \spellaugment{3}{Malleable}{As a standard action, you can concentrate to alter your appearance, just as if you had performed this ritual again.}
-        \spellaugment{4}{Permanent}{The ritual's duration becomes permanent.}
+        \spellaugment{3}{Permanent}{The ritual's duration becomes permanent.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -975,7 +885,7 @@
         \ritualcost*{1}
     \end{spellfooter}
     \begin{spellaugments}
-        \spellaugment{4}{Permanent}{The ritual's duration becomes permanent.}
+        \spellaugment{3}{Permanent}{The ritual's duration becomes permanent.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -1071,7 +981,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Alteration]}{Arcane}
-        \spellnotes This ritual can remove \spell{explosive runes}, a \spell{glyph of warding}, a \spell{sepia snake sigil}, or an \spell{arcane mark}, but not \spell{illusory script} or a \spellindirect{symbol of death}{symbol} spell. It is possible to perform this ritual without reading the writing to be erased, though the ritual grants no special protection against activating such traps.
+        \spellnotes It is possible to perform this ritual without reading the writing to be erased, though the ritual grants no special protection against activating such traps.
         \ritualcost*{1}
     \end{spellfooter}
 \end{spellsection}
@@ -1114,8 +1024,8 @@
     \begin{spellaugments}
         \spellaugment{1}{Password}{When performing the ritual, you may specify a password. If the password is spoken aloud, the trap deactivates for 5 rounds.}
         \spellaugment{1}{Protective}{The target object is not damaged by the explosion.}
+        \spellaugment{2}{Permanent}{The ritual's duration becomes permanent.}
         \spellaugment{2}{Repeatable}{After detonating, the ritual is not discharged. Instead, it is suppressed for 5 minutes, after which time the object can explode again (if it remains intact).}
-        \spellaugment{3}{Permanent}{The ritual's duration becomes permanent.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -1144,7 +1054,7 @@
     \end{spellaugments}
 \end{spellsection}
 
-\begin{spellsection}{False Vision}[5]
+\begin{spellsection}{False Vision}[4]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -1163,7 +1073,7 @@
         \ritualcost*{5}
     \end{spellfooter}
     \begin{spellaugments}
-        \spellaugment{4}{Permanent}{The ritual's duration becomes permanent.}
+        \spellaugment{3}{Permanent}{The ritual's duration becomes permanent.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -1189,7 +1099,7 @@
     \end{spellfooter}
     \begin{spellaugments}
         \spellaugment{1}{Square}{The spell's area becomes a square measuring one mile on each side.}
-        \spellaugment{2}{Permanent}{The ritual's duration becomes permanent.}
+        \spellaugment{2}{Permanent}{The ritual's duration becomes permanent.}  % high cost
         \spellaugment{3}{Empowered Fertility}{Plants within the area are instead four times as productive.}
         \spellaugment{3}{Empowered Infertility}{Plants within the area do not grow at all.}
     \end{spellaugments}
@@ -1284,8 +1194,8 @@
     \begin{spellaugments}
         \spellaugment{1}{Password}{When performing the ritual, you may specify a password. If the password is spoken aloud, the trap deactivates for 5 rounds.}
         \spellaugment{1}{Protective}{The target object is not damaged by the explosion.}
+        \spellaugment{2}{Permanent}{The ritual's duration becomes permanent.}
         \spellaugment{2}{Repeatable}{After detonating, the ritual is not discharged. Instead, it is suppressed for 5 minutes, after which time the object can explode again (if it remains intact).}
-        \spellaugment{3}{Permanent}{The ritual's duration becomes permanent.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -1323,7 +1233,7 @@
             \spellrng{\rngmed}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect This ritual creates an interdimensional connection between your plane of existence and a plane you specify, allowing travel between those two planes in either direction.
+            \spelleffect This ritual creates an interdimensional connection between your plane of existence and a different plane you specify, allowing travel between those two planes in either direction.
             \par The gate itself is a circular disk between 5 and 20 feet in diameter, oriented in the direction you desire when it comes into existence (typically vertical and facing you). It is a two-dimensional window looking into the plane you specified when casting the spell, and anyone or anything that moves through is shunted instantly to the other side.
             \par The \spell{gate} has a front and a back. Creatures moving through the gate from the front are transported to the other plane; creatures moving through it from the back are not.
             \par A \spell{gate} spell functions much like a \spell{plane shift} spell, except that the gate opens precisely at the point you desire.
@@ -1332,10 +1242,11 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Creation, Planar, Teleportation]}{Arcane, Divine}
-        \spellnotes A \spell{gate} cannot be opened to another point on the same plane. This ritual works only for interplanar travel.
         \ritualcost*{9}
     \end{spellfooter}
     \begin{spellaugments}
+        \spellaugment{1}{Intraplanar}{You can open the gate to another location within your current plane.}
+        \spellaugment{2}{Directional}{The gate can only be entered from one end, which you choose when you perform the ritual. Walking through the gate from the other end has no effet and offers no resistance, as if there was nothing there.}ww
         \spellaugment{4}{Persistent}{The gate can be held open for up to 5 minutes.}
     \end{spellaugments}
 \end{spellsection}
@@ -1388,7 +1299,7 @@
         \ritualcost{2}
     \end{spellfooter}
     \begin{spellaugments}
-        \spellaugment{3}{Permanent}{The ritual's duration becomes permanent.}
+        \spellaugment{2}{Permanent}{The ritual's duration becomes permanent.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -1411,30 +1322,8 @@
         \ritualcost*{4}
     \end{spellfooter}
     \begin{spellaugments}
-        \spellaugment{4}{Permanent}{The ritual's duration becomes permanent.}
+        \spellaugment{3}{Permanent}{The ritual's duration becomes permanent.}
     \end{spellaugments}
-\end{spellsection}
-
-\begin{spellsection}{Heroes' Feast}[6]
-    \begin{spellheader}
-        \spelldesc{You bring forth a great feast, including a magnificent table, chairs, service, and food and drink, re-enacting the celebrations of ancient heroes. After your allies consume the ambrosial food and nectar-like bevarage, they are restored in body and mind.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltwocol{\spelltime{10 minutes}}{\spellrng{\rngclose}}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect This ritual creates a feast that takes 1 hour to consume. The feast feeds a number of Medium or smaller creatures equal to your spellpower. Large creatures count as two Medium creatures, Huge creatures count as two Large creatures, and so on.
-
-            All creatures that partake of the feast are immediately cured of all disease, fear, poison, sickness, and nausea. After the feast is complete, the participants become immune to poison and fear effects, and gain temporary hit points equal to twice your spellpower. These benefits last for 12 hours.
-            \spelldur 1 hour plus 12 hours; see text
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Conjuration/Enchantment [Creation, Emotion]}{Arcane, Divine, Nature}
-        \spellnotes If the feast is interrupted for any reason, the ritual is ruined and all of its effects are ended.
-        \ritualcost*{6}
-    \end{spellfooter}
 \end{spellsection}
 
 \begin{spellsection}{Identify}[1]
@@ -1460,51 +1349,30 @@
     \end{spellaugments}
 \end{spellsection}
 
-\begin{spellsection}{Illusory Script}[2]
-    \begin{spellheader}
-        \spelldesc{You conceal the true meaning of text with illusory writing.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltime{10 minutes}
-            \spellquicktargeting{One object with writing}{\rngtouch}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spellspecial When you perform this ritual, you must specify a password.
-            \spelleffect You write up to five pages of text onto the target object (limited by the size of the object, if it is small).
-            The text is invisible once written.
-            If a creature speaks the password, the text becomes visible for 5 rounds before becoming invisible again.
-            \spelldur Thirty days
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Illusion [Glamer]}{Arcane}
-        \spellnotes Effects that reveal invisible objects, such as the \spell{see invisibility} spell, can reveal the hidden message.
-        \ritualcost*{4}
-    \end{spellfooter}
-    \begin{spellaugments}
-        \spellaugment{2}{Permanent}{The ritual's duration becomes permanent.}
-    \end{spellaugments}
-\end{spellsection}
-
-\begin{spellsection}{Illusory Wall}[3]
+\begin{spellsection}{Illusory Guise}[1]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
             \spelltime{1 minute}
-            \spellrng{\rngclose}
+            \spellquicktargeting{One creature}{\rngclose}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect A figment of your design appears, as \spell{silent image}, except that the image must fit within a 10 foot square.
-            \spelldur One year
+            \spelleffect When you perform this ritual, you make a Disguise check to disguise the target.
+            You gain a \plus10 bonus on the check, and you can freely alter the appearance of the target's clothes and equipment, regardless of their original form.
+            \spelldur \durlong \dismissable
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Illusion [Figment] [Unreal]}{Arcane}
-        \spellnotes This ritual is usually used to create illusions of walls, floors, or ceilings. Creatures can identify the illusion, as \spell{silent image}.
-        \ritualcost*{3}
+        \spellinfo{Illusion [Glamer, Unreal]}{Arcane}
+        \spellnotes Creatures can identify the illusion, as \spell{create image}.
+        \ritualcost*{1}
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{3}{Malleable}{As a standard action, if the target is within range of you, you can concentrate to alter the target's appearance, just as if you had performed this ritual again.}
+        \spellaugment{3}{Mass}{The spell can affect up to five targets.}
+        \spellaugment{3}{Permanent}{The ritual's duration becomes permanent.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Instant Refuge}[7]
@@ -1512,22 +1380,23 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One object}{}
             \spelltime{10 minutes}
-            \spellrng{Touch}
+            \spellquicktargeting{One object}{\rngtouch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
             \spellspecial When you perform this ritual, you must specify a command word.
             \spelleffect As a standard action, a creature holding the target object can speak the command word. This teleports the creature and its equipment to your current location, and discharges the ritual.
             \spelldur One year or until discharged
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Conjuration/Transmutation [Translocation] [Teleportation]}{Divine}
+        \spellinfo{Conjuration/Transmutation [Translocation] [Teleportation]}{Arcane, Divine}
         \spellnotes If you are on another plane, speaking the command word has no effect and does not discharge the ritual.
         \ritualcost*{7}
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{2}{Repeatable}{After the command word is spoken, the ritual is not discharged. Instead, it is suppressed for 5 minutes, after which time the object can teleport a creature to you again.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Instant Retrieval}[7]
@@ -1540,7 +1409,6 @@
             \spellrng{Touch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
             \spellspecial When you perform this ritual, you must specify a command word.
             \spelleffect As a standard action, you can speak the command word to teleport the target object into your hand. The object returns to you regardless of its location. If the object is attended, it is not transported, but you know who has the object and roughly where that creature was located when the summons occurred.
             \spelldur One year or until discharged
@@ -1551,29 +1419,33 @@
         \spellnotes The command word has no effect if said by any other creature. If the object is on another plane, speaking the command word has no effect and does not discharge the ritual.
         \ritualcost{7}
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{2}{Repeatable}{After the command word is spoken, the ritual is not discharged. Instead, it is suppressed for 5 minutes, after which time the object can be teleported to you again.}
+    \end{spellaugments}
 \end{spellsection}
 
-\begin{spellsection}{Invisibility Purge}[2]
+\begin{spellsection}{Invisibility Purge}[3]
     \begin{spellheader}
         \spelldesc{You surround the touched object or creature with a mobile sphere of power that reveals invisible objects and creatures.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
             \spelltime{1 minute}
-            \spellrng{Touch}
+            \spellquicktargeting{One object or creature}{\rngclose}
+            \spellemanation{\arealarge radius from the target}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
-            \spellfocus{One object or creature}
-            \spellemanation{\arealarge radius from the focus}
             \spelleffect All forms of invisibility are suppressed in the area, causing everything invisible to become visible.
             \spelldur \durlong \dismissable
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Abjuration [Negation]}{Arcane, Divine}
-        \ritualcost{2}
+        \ritualcost{3}
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{3}{Permanent}{The ritual's duration becomes permanent.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Ironwood}[3]
@@ -1581,20 +1453,21 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One wooden object weighing up to 50 pounds}{}
             \spelltime{1 hour}
-            \spellrng{Touch}
+            \spellquicktargeting{One wooden object weighing up to 50 pounds}{\rngtouch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
             \spelleffect The target is transformed into ironwood. While remaining natural wood in almost every way, ironwood is as strong, heavy, and resistant to fire as steel. Spells that affect metal or iron do not function on ironwood. Spells that affect wood do affect ironwood, although ironwood does not burn.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Alteration]}{Nature}
-        \spellnotes By performing this ritual multiple times in succession, you may transform wooden objects too heavy to be affected by a single casting of the ritual. Ironwood armor and weapons created through this spell are as durable as their normal steel counterparts, and are freely usable by druids.
+        \spellnotes Ironwood armor and weapons created through this spell are as durable as their normal steel counterparts, and are freely usable by druids.
         \ritualcost*{3}
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{1}{Empowered}{The ritual can affect an object that is twice as heavy. This augment can be used multiple times.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Item Attunement}[3]
@@ -1602,9 +1475,8 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One magical object}{}
             \spelltime{1 hour}
-            \spellrng{Touch}
+            \spellquicktargeting{One magical object}{\rngtouch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect You may use your spellpower in place of your item power to determine the effects of the target's magical properties.
@@ -1616,6 +1488,9 @@
         \spellnotes You may only use this ritual to attune to one item at a time. If you perform this ritual again, your attunement to the previous item is lost.
         \ritualcost*{3}
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{2}{Permanent}{The ritual's duration becomes permanent.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Legend Lore}[5]
@@ -1623,11 +1498,10 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltime{1 hour; see text}
+            \spelltime{1 hour}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
-            \spelleffect When you perform this ritual, you specify an important person, place, or thing. You gain information about the subject. The amount of information, and the speed of the ritual, depends on how much information you have about the subject.
+            \spelleffect When you perform this ritual, you specify an important person, place, or thing. You gain information about the subject. The amount of information gained depends on how much information you have about the subject.
 
             If the person or thing is at hand, or if you are in the place in question, you learn complete and specific legends immediately after the ritual is complete.
 
@@ -1645,36 +1519,12 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}[Greater]{Legend Lore}[7]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltime{1 minute}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \spelleffect When you perform this ritual, you specify an important person, place, or thing, and make a spellpower check (1d20 \add spellpower). The difficulty of the check depends on how much information you have about the subject.
-
-            If the person or thing is at hand, or if you are in the place in question, the DC is 20. If you only know detailed information about the subject, the DC is 30. If you only know rumors about the subject, the DC is 40.
-
-            If you succeed, you learn legends that are either complete or specific, but not both. If you succeed by 10 or more, you learn complete and specific legends about the subject.  If you fail, you learn incomplete and vague legends. If you fail by 10 or more, you gain no information at all.
-
-            After completing the ritual, you are \exhausted. If you perform this ritual while fatigued or exhausted, you fall unconscious for ten minutes after completing the ritual. When you wake up, you remember the information (if any).
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Divination [Knowledge]}{Arcane}
-        \ritualcost{7}
-    \end{spellfooter}
-\end{spellsection}
-
 \begin{spellsection}{Lifebound Spell}[6]
     \begin{spellheader}
-        \spelldesc{description}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
+            \spelltime{10 minutes}
             \spellquicktargeting{One spell or ritual effect you cast}{\rngmed}
         \end{spelltargetinginfo}
         \begin{spelleffects}
@@ -1685,8 +1535,8 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Vivimancy [Life]}{Arcane}
-        \spellnotes This ritual does not increase the duration of the target effect.
-        It has no effect on spells or rituals that do not have a duration.
+        \spellnotes This effect cannot be dispelled.
+        It does not increase the duration of the target effect, and has no effect on spells or rituals that do not have a duration.
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -1696,94 +1546,53 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature or object}{}
             \spelltime{1 minute}
-            \spellrng{\rngtouch}
+            \spellquicktargeting{One creature or object (Medium or smaller)}{\rngtouch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
             \spelleffect The target glows like a torch, shedding bright light in a \areamed radius (and dim light for an additional 20 feet).
 
-            As a swift action, you can suppress or intensify the light, preventing the object from shedding light or causing it to shed light in up to a \arealarge radius (and dim light for an additional 50 feet). Either effect lasts for 1 round.
-            \spelldur \durlong \dismissable
+            As a swift action, you can suppress or intensify the light, preventing the object from shedding light or causing it to shed light in up to a \arealarge radius (and dim light for an additional 50 feet).
+            Either effect lasts until you take another swift action to cancel the effect or change the light's behavior.
+            \spelldur \durext \dismissable
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Illusion [Figment] [Light]}{Arcane, Divine, Nature}
         \ritualcost{1}
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{1}{Empowered}{The radius of the light doubles. This augment can be used multiple times.}
+        \spellaugment{1}{Giant}{The ritual can affect a target one size category larger. This augment can be used multiple times.}
+        \spellaugment{2}{Permanent}{The ritual's duration becomes permanent.}  % cheaper because light is cheap
+    \end{spellaugments}
 \end{spellsection}
 
-\begin{spellsection}{Liveoak}[6]
+\begin{spellsection}{Liveoak}[5]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
             \spelltime{10 minutes}
-            \spellrng{Touch}
+            \spellquicktargeting{One tree (Huge or smaller)}{\rngtouch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
-            \spelltgt{One tree (Huge or smaller)}
             \spellspecial When you perform this ritual, you must specify an action and a triggering condition. The condition must be something that a typical human in the target's place could detect.
-            \begin{spelltrigger}{The triggering condition occurs}
-                \spelleffect The target tree animates for 5 minutes, functioning as a treant. The treant takes whatever action was specified. The actions it can take are limited, and are usually restricted to attacking foes.
 
-                At the end of the 5 minutes, the treant tries to return to its original location and take root again. If unable to do so, it takes root where it is. After animating, 24 hours must pass before the target can animate again.
-            \end{spelltrigger}
-            \spelldur Thirty days
+            \spelleffect If the triggering condition occurs, the target tree animates for 5 minutes, functioning as a treant. The treant takes whatever action was specified. The actions it can take are limited, and are usually restricted to attacking foes.
+
+            At the end of the 5 minutes, the treant tries to return to its original location and take root again. If unable to do so, it takes root where it is. Animating the tree in this way discharges the ritual.
+            \spelldur Thirty days or until discharged
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Animation]}{Divine}
-        \ritualcost{6}
+        \ritualcost{5}
     \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Mage's Magnificent Mansion}[7]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltime{10 minutes}
-            \spelltwocol{\spellzone{Up to ten 10-foot cubes}}{\spellrng{\rngclose}}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \spellspecial When you perform this ritual, you may designate any number of creatures you can see.
-            \spelleffect This ritual creates an extradimensional dwelling that has a single entrance on the plane from which the ritual was performed. The entry point looks like a faint shimmering in the air that is 5 feet wide and 10 feet high. Only those you designate may enter the mansion, and the portal is shut and made invisible behind you when you enter. You may open it again from your own side at will. Once observers have passed beyond the entrance, they are in a magnificent foyer with numerous chambers beyond. The atmosphere is clean, fresh, and warm.
-            \par You can create any floor plan you desire to the limit of the spell's effect. The place is furnished and contains sufficient foodstuffs to serve a nine-course banquet to a dozen people per spellpower. A staff of near-transparent servants (as many as two per spellpower), liveried and obedient, wait upon all who enter. The servants function as the \spell{unseen servant} ritual, except that they are visible and can go anywhere in the mansion.
-            \spelldur One week \dismissable
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Conjuration [Creation, Translocation] [Planar]}{Sor/Wiz}
-        \spellnotes Since the place can be entered only through its special portal, outside conditions do not affect the mansion, nor do conditions inside it pass to the plane beyond.
-        \ritualcost*{7}
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Mage's Private Sanctum}[5]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltime{10 minutes}
-            \spelltwocol{\spellzone{\arealarge radius}}{\spellrng{\rngclose}}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \spelleffect Anyone looking into the area from outside sees only a dark, foggy mass. Darkvision cannot penetrate it. No sounds, no matter how loud, can escape the area, so nobody can eavesdrop from outside. Those inside can see out normally.
-
-            Divination (Awareness) and Divination (Scrying) spells cannot perceive anything within the area. The ward prevents speech between those inside and those outside (because it blocks sound), but it does not prevent magical communication.
-            \spelldur \durext \dismissable
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Abjuration [Ward]}{Arcane}
-        \spellnotes This ritual does not prevent creatures or objects from moving into and out of the area. It can be made permanent with a \spell{permanency} ritual.
-        \ritualcost*{5}
-    \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{2}{Repeatable}{After animating the tree, the ritual is not discharged. Instead, it is suppressed for 5 minutes, after which time the tree can animate again (if it remains intact).}
+        \spellaugment{3}{Permanent}{The ritual's duration becomes permanent.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Magic Mouth}[1]
@@ -1795,12 +1604,10 @@
             \spellrng{\rngclose}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
             \spelltgt{One creature or object}
             \spellspecial When you perform this ritual, you must specify a triggering condition. The condition must be something that a typical human in the target's place could detect. You must also specify a message of twenty-five words or less.
-            \begin{spelltrigger}{The triggering condition occurs}
-                \spelleffect The target appears to grow an enchanted mouth, and it speaks the chosen message aloud.
-            \end{spelltrigger}
+
+            \spelleffect When the triggering condition occurs, the target appears to grow an enchanted mouth, and it speaks the chosen message aloud.
             \spelldur Thirty days or until discharged \dismissable
         \end{spelleffects}
     \end{spellcontent}
@@ -1809,31 +1616,37 @@
         \spellnotes The mouth's pronunciation is too inexact to activate effects that require command words. This ritual can be made permanent with a \spell{permanency} ritual.
         \ritualcost*{1}
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{3}{Permanent}{The ritual's duration becomes permanent.}
+    \end{spellaugments}
 \end{spellsection}
 
-\begin{spellsection}{Mark of Justice}[5]
+\begin{spellsection}{Magnificent Mansion}[7]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
             \spelltime{10 minutes}
-            \spellrng{Touch}
+            \spelltwocol{\spellzone{Up to ten 10-foot cubes}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
-            \spelltgt{One creature}
-            \spellspecial When you perform this ritual, you specify a prohibited activity.
-            \begin{spelltrigger}{The target performs the prohibited activity}
-                \spelleffect The target is cursed, as \spell{bestow curse}.
-            \end{spelltrigger}
-            \spelldur Permanent \dismissable; see text
+            \spellspecial When you perform this ritual, you may designate any number of creatures you can see.
+            \spelleffect This ritual creates an extradimensional dwelling that has a single entrance on the plane from which the ritual was performed. The entry point looks like a faint shimmering in the air that is 5 feet wide and 10 feet high. Only those you designate may enter the mansion, and the portal is shut and made invisible behind you when you enter. You may open it again from your own side at will. Once observers have passed beyond the entrance, they are in a magnificent foyer with numerous chambers beyond. The atmosphere is clean, fresh, and warm.
+            \par You can create any floor plan you desire to the limit of the spell's effect. The place is furnished and contains sufficient foodstuffs to serve a nine-course banquet to a dozen people per spellpower. A staff of twenty o
+            near-transparent servants, liveried and obedient, wait upon all who enter. The servants function as the \spell{unseen servant} ritual, except that they obey any designated creature, are visible, and can go anywhere in the mansion.
+            \spelldur \durext \dismissable
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Vivimancy [Life] [Curse]}{Divine}
-        \spellnotes \cursespellnotes
-        \ritualcost{5}
+        \spellinfo{Conjuration [Creation, Translocation] [Planar]}{Sor/Wiz}
+        \spellnotes Since the place can be entered only through its special portal, outside conditions do not affect the mansion, nor do conditions inside it pass to the plane beyond.
+
+        This ritual can be used to extend the duration of an existing mansion you created by 12 hours, rather than creating an entirely new mansion.
+        \ritualcost*{7}
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{4}{Permanent}{The ritual's duration becomes permanent.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Mending}[1]
@@ -1841,9 +1654,8 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One object}{}
             \spelltime{1 minute}
-            \spellrng{Touch}
+            \spellquicktargeting{One object}{\rngtouch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target is healed for \spelldamage{}.
@@ -1854,47 +1666,9 @@
         \spellnotes This ritual has no effect on broken or destroyed items.
         \ritualcost*{1}
     \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}[Greater]{Mending}[3]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{One object}{}
-            \spelltime{1 minute}
-            \spellrng{Touch}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect The target is healed for \spelldamage{}. For every 5 points of healing granted by this ritual, it can instead cure 1 point of critical damage.
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Transmutation [Alteration]}{Arcane, Divine, Nature}
-        \spellnotes This ritual has no effect on destroyed items.
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Mind Blank}[9]
-    \begin{spellheader}
-        \spelldesc{The target is protected from all effects that detect or influence emotions or thoughts.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature}{}
-            \spelltime{1 standard action}
-            \spellrng{\rngclose}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \spelleffect The target is immune to all mind-affecting effects, even beneficial ones. In addition, it is immune to Divination (Awareness) and Divination (Scrying) effects. In the case of scrying that views an area the creature is in, such as \spell{arcane eye}, the spell works, but the creature simply isn't detected. Scrying attempts that are targeted specifically at the target do not work at all.
-            \spelldur \durext
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Abjuration [Shielding]}{Arcane}
-        \ritualcost{9}
-    \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{2}{Empowered}{For every 5 points of healing granted by this ritual, it can instead heal 1 point of critical damage. This can restore broken items, but has no effect on destroyed items.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Mount}[1]
@@ -1906,7 +1680,6 @@
             \spellrng{\rngclose}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
             \spelleffect You summon a light horse or a pony (your choice) to serve you as a mount. The steed serves willingly and well. The mount comes with a bit and bridle and a riding saddle.
             \spelldur \durext \dismissable
         \end{spelleffects}
@@ -1926,7 +1699,6 @@
             \spellrng{\rnglong}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
             \spellzone{Up to ten 10-foot cubes, none more than 10 feet below the ground}
             \spelleffect This ritual moves dirt, clay, loam, and sand in the area. This can collapse embankments, move hillocks, shift dunes, and so forth. However, it cannot move rock formations.
 
@@ -1934,56 +1706,8 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Alteration] [Earth]}{Nature}
+        \spellinfo{Transmutation [Alteration] [Earth]}{Arcane, Nature}
         \spellnotes This ritual cannot be used for tunneling, and is generally too slow to trap or bury creatures. Its primary use is for digging or filling moats or for adjusting terrain contours before a battle. It has no effect on earth creatures.
-        \ritualcost*{6}
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Neutralize Poison}[4]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature or object (Medium or smaller)}{}
-            \spelltime{1 minute}
-            \spellrng{Touch}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \spelleffect The target becomes immune to poison, and poison currently in the target is neutralized. Any poison-based abilities the target has, such as a creature's venom, are suppressed.
-            \spelldur \durext \dismissable
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Transmutation [Alteration] [Healing]}{Divine, Nature}
-        \spellnotes This does not reverse instantaneous effects from poison, such as hit point damage, temporary ability damage, or effects that don't go away on their own.
-        \ritualcost*{4}
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Nightmare}[6]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature}{}
-            \spelltime{10 minutes}
-            \spellrng{Unlimited \rngunrestricted}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \spellspecial You can target any creature that you can unambiguously identify, regardless of its location.
-            \begin{spellattack}{Spellpower vs. Mental}
-                \spelleffect You send the target a dream, as \spell{dream}, except that the dream is a nightmare.
-                \spellsuccess The target is unable to sleep restfully. It regains no hit points for resting, and is \fatigued when it wakes up. It can still regain the use of its spells and other abilities.
-                \spellspecial Your accuracy is modified based on how well you know the subject and what sort of physical connection (if any) you have to that creature, as shown on \tref{Scrying Modifiers}.
-            \end{spellattack}
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Divination/Illusion [Communication, Phantasm] [Mind-Affecting]}{Arcane, Divine, Nature}
-        \spellnotes As \spell{dream}.
         \ritualcost*{6}
     \end{spellfooter}
 \end{spellsection}
@@ -1999,8 +1723,9 @@
             \spellrng{Touch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
-            \spelleffect The target gains spell resistance against Divination (Awareness) and Divination (Scrying) spells equal to 10 \add your spellpower. If you are the target, the spell resistance granted is equal to 15 \add your spellpower.
+            \spelleffect The target gains spell resistance against Awareness and Scrying spells equal to 10 \add your spellpower.
+            In addition, spells that do not directly affect the target simply treat the target as if it did not exist.
+            If you are the target, the spell resistance granted is equal to 15 \add your spellpower.
             \spelldur \durext \dismissable
         \end{spelleffects}
     \end{spellcontent}
@@ -2015,12 +1740,10 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature}{}
             \spelltime{10 minutes}
-            \spellrng{Touch}
+            \spellquicktargeting{One creature}{\rngtouch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
             \spelleffect As a standard action, the target can concentrate to gain a 30 foot fly speed with good maneuverability for 1 round. When not concentrating, the target falls at only 60 feet per round, preventing it from taking any damage from landing.
 
             The target can use this spell for long-distance movement, concentrating to fly each round. However, it cannot take a forced march. This means it can typically cover 30 miles in an ten-hour period of flight.
@@ -2032,6 +1755,10 @@
         \spellnotes An \unencumbered creature with a fly speed can fly through the air. See \pcref{Flying}, for more details.
         \ritualcost*{6}
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{2}{Accelerated}{The fly speed increases to 100 feet.}
+        \spellaugment{3}{Mass}{The spell can affect up to five targets.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Pass Without Trace}[2]
@@ -2039,12 +1766,10 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One touched creature}{}
             \spelltime{1 minute}
-            \spellrng{Touch}
+            \spellquicktargeting{One touched creature}{\rngtouch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
             \spelleffect The target can move through any type of terrain and leave neither footprints nor scent. Tracking the subjects is virtually impossible by nonmagical means; the DC is increased by 20.
             \spelldur \durlong \dismissable
         \end{spelleffects}
@@ -2053,6 +1778,10 @@
         \spellinfo{Transmutation}{Nature}
         \ritualcost{2}
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{3}{Mass}{The ritual can affect up to five targets.}
+        \spellaugment{5}{Permanent}{The ritual's duration becomes permanent.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Passwall}[5]
@@ -2061,105 +1790,24 @@
     \begin{spellcontent}
         \begin{spelltargetinginfo}
             \spelltime{10 minutes}
-            \spelltwocol{\spellzone{One 5-foot cube per three spellpower}}{\spellrng{Touch}}
+            \spelltwocol{\spellzone{Up to five 5-foot cubes}}{\spellrng{Touch}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
-            \spelleffect This ritual creates a passage through wooden, plaster, or stone walls, but not through other materials. The material within the area simply ceases to exist for the duration of the spell. If the wall's thickness is more than the depth of the passage created, then a single \spell{passwall} makes a niche or short tunnel. Several \spell{passwall} spells can then form a continuing passage to breach very thick walls. When \spell{passwall} ends, creatures within the passage are ejected out the nearest exit.
+            \spelleffect This ritual creates a passage through nonmagical wooden, plaster, or stone walls, but not through other materials. The material within the area simply ceases to exist for the duration of the spell. If the wall's thickness is more than the depth of the passage created, then a single \spell{passwall} makes a niche or short tunnel. Several \spell{passwall} rituals can then form a continuing passage to breach very thick walls. When the effect ends, creatures within the passage are ejected out the nearest exit.
             \spelldur \durext \dismissable
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Alteration]}{Arcane, Divine, Nature}
-        \spellnotes If someone dispels the \spell{passwall} or you dismiss it, creatures in the passage are ejected out of the closest exit.
+        \spellnotes If someone dispels the \spell{passwall} or you dismiss it, creatures in the passage are ejected out of the closest exit. If the \spell{passwall} encounters an impassable barrier, such as a metal wall, it stops at that point and the rest of the area is ignored.
         \ritualcost*{5}
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{3}{Permanent}{The ritual's duration becomes permanent.}
+    \end{spellaugments}
 \end{spellsection}
 
-\begin{spellsection}{Permanency}[5]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltime{10 minutes}
-            \spellrng{See text}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \spelltgt{See text}
-            \spelleffect This ritual makes the duration of certain other spells and rituals permanent. You first cast the desired spell or perform the desired ritual, and then follow it with the \spell{permanency} ritual. Depending on the effect, you must be of a minimum spellpower and must expend a specific gp value of diamond dust as a material component.
-            \par You can make the following effects permanent in regard to yourself.
-
-            You cannot cast these spells on other creatures. This application of permanency can be dispelled only by a caster of higher level than you were when you performed the \spell{permanency} ritual.
-
-            In addition to personal use, permanency can be used to make the following effects permanent on yourself, another creature, or an object (as appropriate).
-            Additionally, the following effects can only be rendered permanent on objects or areas.
-            \spelldur Permanent; see text
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Universal}{Arcane}
-        \spellnotes Spells cast on other creatures, objects, or locations (not on you) are vulnerable to \spell{dispel magic} as normal.
-        \spellmat{See tables above.}
-%\ritualcost{5}
-    \end{spellfooter}
-\end{spellsection}
-\begin{dtable}
-    \begin{dtabularx}{\columnwidth}{>{\lcol}X >{\lcol}X l}
-        \tb{Spell} & \tb{Minimum Spellpower} & \tb{GP Cost} \\
-        \hline
-        Magic fang & 10th & 1,250 gp \\
-        Magic fang, greater & 14th & 3,750 gp \\
-        Reduce person & 10th & 1,250 gp \\
-        Telepathic bond* & 14th & 3,750 gp
-    \end{dtabularx}
-    *Only bonds two creatures per casting of \spell{permanency}.
-\end{dtable}
-\begin{dtable}
-    \begin{dtabularx}{\columnwidth}{>{\lcol}X >{\lcol}X l}
-        \tb{Spell} & \tb{Minimum Spellpower} & \tb{GP Cost} \\
-        \hline
-        Alarm & 10th & 1,250 gp \\
-        Animate objects & 18th & 6,250 gp \\
-        Create sound & 10th & 1,250 gp \\
-        Dancing lights & 10th & 1,250 gp \\
-        Gust of wind & 10th & 1,250 gp \\
-        Invisibility & 14th & 3,750 gp \\
-        Mage's private sanctum & 18th & 6,250 gp \\
-        Magic mouth & 10th & 1,250 gp \\
-        Phase door & 22nd & 8,750 gp \\
-            %Prismatic sphere & 17th & 11,250 gp \\
-            %Prismatic wall & 16th & 10,000 gp \\
-        Shrink item & 14th & 3,750 gp \\
-        Solid fog & 16th & 5,000 gp \\
-        Stinking cloud & 14th & 3,750 gp \\
-        Symbol of death & 22nd & 8,750 gp \\
-        Symbol of destruction & 22nd & 8,750 gp \\
-        Symbol of terror & 22th & 8,750 gp \\
-        Symbol of insanity & 20th & 7,500 gp \\
-        Symbol of pain & 18th & 6,250 gp \\
-        Symbol of persuasion & 16th & 5,000 gp \\
-        Symbol of sleep & 22nd & 8,750 gp \\
-        Wall of fire & 18th & 6,250 gp \\
-        Wall of force & 18th & 6,250 gp \\
-        Wall of ice & 16th & 5,000 gp \\
-        Web & 12th & 2,500 gp
-    \end{dtabularx}
-\end{dtable}
-\begin{dtable}
-    \begin{dtabularx}{\columnwidth}{>{\lcol}X >{\lcol}X l}
-        \tb{Spell} & \tb{Minimum Spellpower} & \tb{GP Cost} \\
-        \hline
-        \spell{Arcane sight} & 14th & 3,750 gp \\
-        \spell{Comprehend languages} & 12th & 2,500 gp \\
-        \spell{Darkvision} & 12th & 2,500 gp \\
-        \spell{Read magic} & 10th & 1,250 gp \\
-        \spell{See invisibility} & 12th & 2,500 gp \\
-        \spell{Tongues} & 14th & 3,750 gp
-    \end{dtabularx}
-\end{dtable}
-
-\begin{spellsection}{Permanent Image}[6]
+\begin{spellsection}{Persistent Image}[6]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -2167,49 +1815,18 @@
             \spelltwocol{\spellzone{\arealarge radius}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
-            \spelleffect A figment of your design appears within the area, as \spell{major image}.
-            \spelldur Permanent \dismissable
+            \spelleffect A figment of your design appears within the area, as \spell{create image}.
+            \spelldur Thirty days \dismissable
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Illusion [Figment] [Unreal]}{Arcane}
+        \spellinfo{Illusion [Figment, Unreal]}{Arcane}
+        \spellnotes Creatures can identify the illusion, as \spell{create image}.
         \ritualcost{6}
     \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Phantom Steed}[3]
-    \begin{spellheader}
-        \spelldesc{You create a quasi-real horselike creature to serve you or one of your allies. It has a black head and body, gray mane and tail, and smoke-colored, insubstantial hooves that make no sound.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltime{1 minute}
-            \spellrng{\rngclose}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \spelleffect This ritual creates a Large, horselike creature that can only be ridden by you or one person you designate. On its body, it bears what seems to be a saddle, bit, and bridle sized perfectly for its intended rider.
-            It moves at a speed of 10 feet per two spellpower. It can bear its rider's weight plus up to 10 pounds per spellpower.
-
-            The phantom steed cannot fight. Its physical defenses are all equal to 10 \add half your spellpower, and it has 10 hit points \add 1 per spellpower. If it loses all its hit points, the phantom steed disappears.
-
-            \par As your spellpower increases, the phantom steed gains additional abilities, as noted below.
-
-            \par 8th level: The mount can ride over sandy, muddy, or even swampy ground without difficulty or decrease in speed.
-
-            \par 12th level: The mount can use \spell{water walk} at will (as the spell, no action required to activate this ability).
-
-            \par 16th level: The mount can use \spell{air walk} at will (as the spell, no action required to activate this ability) for up to 1 round at a time, after which it falls to the ground.
-
-            \par 20th level: The mount can fly at its speed (good maneuverability) by concentrating, as the \spell{overland flight} spell.
-            \spelldur \durext \dismissable
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Illusion/Transmutation [Shadow]}{Arcane}
-        \ritualcost{3}
-    \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{2}{Permanent}{The ritual's duration becomes permanent.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Phase Door}[7]
@@ -2218,11 +1835,10 @@
     \begin{spellcontent}
         \begin{spelltargetinginfo}
             \spelltime{10 minutes}
-            \spelltwocol{\spellzone{One 5-foot cube per three spellpower}}{\spellrng{Touch}}
+            \spelltwocol{\spellzone{Up to five 5-foot cubes}}{\spellrng{\rngtouch}}
+            \spellspecial When you perform this ritual, you may specify a triggering condition. The condition must be something that a typical human could detect.
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
-            \spellspecial When you perform this ritual, you may specify a triggering condition. The condition must be something that a typical human could detect.
             \spelleffect This ritual creates an ethereal passage through wooden, plaster, or stone walls, but not other materials. One phase door offering entrance to the passage appears at each end of the area. The entrances are invisible and inaccessible to all creatures except you, and any creatures who meet the triggering condition.
 
             The passage can be used a number of times equal to half your spellpower before the ritual is expended. A creature using the phase door enters the Ethereal Plane when it enters the passage, and reappears on the Matereal Plane when it leaves the passage. Creatures inside the passage cannot leave the boundaries of the passage on the Ethereal Plane. The door does not allow light, sound, or spell effects through it, nor can you see through it without using it.
@@ -2239,81 +1855,15 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Planar Binding}[7]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \spellspecial This ritual functions like \spell{lesser planar binding}, except that it can call up to three extraplanar creatures whose combined level does not exceed 12.
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Abjuration/Conjuration [Translocation] [Planar, Teleportation]}{Arcane}
-        \ritualcost{7}
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}[Greater]{Planar Binding}[9]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \spellspecial This ritual functions like \spell{lesser planar binding}, except that it can call up to three extraplanar creatures whose combined level does not exceed 18.
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Abjuration/Conjuration [Translocation] [Planar, Teleportation] [see text for lesser planar binding]}{Arcane}
-        \ritualcost{9}
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}[Lesser]{Planar Binding}[5]
-    \begin{spellheader}
-        \spelldesc{You attempt to lure a creature from another plane into a trap so you can compel it to perform a service for you.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{One extraplanar creature}{}
-            \spelltime{2 hours}
-            \spellrng{See text}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \spellspecial When you perform this ritual, you must specify a type of extraplanar creature, or the proper name of a specific extraplanar creature. You may also cast \spell{dimensional anchor}.
-            \spelleffect This ritual creates a trap to hold a creature, as \spell{binding}. In addition, it calls a specified extraplanar creature into the binding.
-            \begin{spellattack}{Spellpower vs. Mental}
-                \spellspecial If you specified a type of extraplanar creature, the target is a random creature of that type. If you named a specific extraplanar creature, the target is that creature.
-                \spellsuccess The target is teleported from its original location into the \spell{binding}. You must then make a separate attack to determine whether the creature is bound. If the creature is not bound, it typically attacks you.
-
-                If the creature is bound, you can attempt to negotiate with it (see \pcref{Persuasion}), or to magically compel it into servitude with rituals like \spellindirect{geas/quest}{geas}
-                \spellfailure The target learns your identity and that you attempted to bind it, but is otherwise unaffected.
-            \end{spellattack}
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Abjuration/Conjuration [Translocation] [Planar, Teleportation] [see text]}{Arcane}
-        \spellnotes This ritual grants no special ability to return the creature to its home plane after binding it. If you use this ritual to call an air, chaotic, earth, evil, fire, good, lawful, or water creature, it gains the appropriate descriptor.
-        \ritualcost*{5}
-    \end{spellfooter}
-\end{spellsection}
-
 \begin{spellsection}{Plane Shift}[6]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
             \spelltime{1 minute}
-            \spellrng{Touch}
+            \spellquicktargeting{Up to five willing creatures}{\rngtouch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
-            \spelltgts{Up to five willing creatures}
             \spelleffect The targets teleport to a destination on another plane adjacent to your current plane. Precise accuracy is nigh impossible, and the actual destination is usually 1d100 miles away from the intended destination.
         \end{spelleffects}
     \end{spellcontent}
@@ -2324,6 +1874,31 @@
     \end{spellfooter}
 \end{spellsection}
 
+\begin{spellsection}{Private Sanctum}[5]
+    \begin{spellheader}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltime{10 minutes}
+            \spelltwocol{\spellzone{\arealarge radius}}{\spellrng{\rngclose}}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect Anyone looking into the area from outside sees only a dark, foggy mass. Darkvision cannot penetrate it. No sounds, no matter how loud, can escape the area, so nobody can eavesdrop from outside. Those inside can see out normally.
+
+            Divination (Awareness) and Divination (Scrying) spells cannot perceive anything within the area. The ward prevents speech between those inside and those outside (because it blocks sound), but it does not prevent magical communication.
+            \spelldur \durext \dismissable
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Abjuration [Ward]}{Arcane}
+        \spellnotes This ritual does not prevent creatures or objects from moving into and out of the area.
+        \ritualcost*{5}
+    \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{4}{Permanent}{The ritual's duration becomes permanent.}
+    \end{spellaugments}
+\end{spellsection}
+
 \begin{spellsection}{Programmed Image}[7]
     \begin{spellheader}
     \end{spellheader}
@@ -2332,12 +1907,9 @@
             \spelltwocol{\spellzone{\arealarge radius}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
-            \spellspecial When you perform this ritual, you must specify a triggering condition. The condition must be something that a typical human could detect within the area.
-            \begin{spelltrigger}{The triggering condition occurs within the area}.
-                \spelleffect A figment of your design appears within the area, as \spell{major image}.
-            \end{spelltrigger}
-            \spelldur One year or until triggered, then \durmed
+            \spellspecial When you perform this ritual, you must specify a triggering condition. The condition must be something that a typical human could detect within the area. In addition, you specify a script for your figment to follow.
+            \spelleffect When the triggering condition occurs within the area, a figment of your design appears within the area, as a \spell{create image} that affects all senses. The image persists for 5 minutes, and follows your script during that time.
+            \spelldur Thirty days or until triggered, then \durmed
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -2347,25 +1919,22 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Purify Food and Drink}[1]
+\begin{spellsection}{Purify Sustenance}[1]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
             \spelltime{1 minute}
-            \spellrng{Touch}
+            \spelltwocol{5 cubic feet}{\rngtouch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
-            \spellzone{5 cubic feet}
             \spelleffect Spoiled, rotten, poisonous, or otherwise contaminated food and water in the area becomes pure and suitable for eating and drinking. This does not prevent subsequent natural decay or spoilage.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Alteration]}{Divine, Nature}
+        \spellinfo{Transmutation [Alteration]}{Arcane, Divine, Nature}
         \spellnotes This has no effect on alchemical substances, magical liquids such as holy water, or creatures of any kind.
-
-        Water weighs about 8 pounds per gallon. One cubic foot of water contains roughly 8 gallons and weighs about 60 pounds.
+        % Water weighs about 8 pounds per gallon. One cubic foot of water contains roughly 8 gallons and weighs about 60 pounds.
         \ritualcost*{1}
     \end{spellfooter}
 \end{spellsection}
@@ -2375,12 +1944,10 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{You}{}
-            \spellrng{Personal}
+            \spelltgt{You}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
-            \spelleffect You gain the ability to decipher magical inscriptions on objects -- books, scrolls, weapons, and the like -- that would otherwise be unintelligible. This deciphering does not normally invoke the magic contained in the writing, although it may do so in the case of a cursed item. Once you have read an inscription in this way, you are thereafter able to read that particular writing without the use of this ritual.
+            \spelleffect You gain the ability to decipher magical inscriptions on objects -- books, scrolls, weapons, and the like -- that would otherwise be unintelligible. This deciphering does not normally invoke the magic contained in the writing, although it may do so in the case of a cursed item. After you have read an inscription in this way, you are able to read that particular writing without the use of this ritual.
 
             This effect allows you to identify spells which create writing as part of their effect, such as \spell{glyph of warding} and \spellindirect{symbol of death}{symbol} spells, with a Spellcraft check against a DC equal to 10 \add spell level.
             \spelldur \durlong
@@ -2388,9 +1955,11 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Divination [Knowledge]}{Arcane, Divine}
-        \spellnotes This ritual can be made permanent with a \spell{permanency} ritual.
         \ritualcost*{1}
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{4}{Permanent}{The ritual's duration becomes permanent.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Reincarnate}[5]
@@ -2398,13 +1967,10 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{The remains of one dead creature}{}
             \spelltime{24 hours}
-            \spellrng{Touch}
+            \spellquicktargeting{The remains of one dead creature}{\rngtouch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
-            \spellatk{None; see text}
             \spelleffect The target returns to life in a new body. It must have been dead for no more than one year, and it must not have died due to old age.
 
             The condition of the remains is not a factor. So long as some small portion of the creature's body still exists, it can be reincarnated, but the target portion must have been part of the creature's body at the time of death.
@@ -2416,11 +1982,10 @@
             If the target is a humanoid creature, its new race should be determined with \tref{Humanoid Reincarnations}. If not, a similar table for creatures of the same type should be used.
 
             Coming back from the dead is an ordeal. All of the target's spell slots and other daily abilities are expended until it rests. In addition, the target gains a \negativelevel. If the subject was 1st level when it died, it takes 2 points of Constitution drain instead. This negative level or Constitution drain lasts as long as the creature remains in its new body. This penalty can be removed by returning to the creature's proper body, as with \spell{resurrection}, or with the Racial Acclimation feat (page \featpref{Racial Acclimation}).
-
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Conjuration/Vivimancy [Creation, Soul]}{Nature}
+        \spellinfo{Conjuration/Vivimancy [Creation, Life, Soul]}{Nature}
         \spellnotes As \spell{resurrection}.
         \spellmat{1,000 gp in ritual components}
     \end{spellfooter}
@@ -2448,24 +2013,28 @@
     \end{dtabularx}
 \end{dtable}
 
-\begin{spellsection}{Remove Blindness/Deafness}[3]
+\begin{spellsection}{Remote Senses}[3]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature}{}
             \spelltime{1 minute}
-            \spellrng{Touch}
+            \spellrng{\rngext \rngunrestricted}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
-            \spelleffect The target is cured of blindness, deafness, or both, as you choose. This ritual cannot recreate missing eyes, but it can repair damaged ones.
+            \spelleffect This ritual creates a magic sensor. You don't need line of sight or line of effect to create the sensor, but the destination must be known -- a place familiar to you or an obvious one. As a standard action, you can concentrate to see and hear through the sensor as if you were in its location. While concentrating, you can rotate the sensor to see and hear in any direction.
+            \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Vivimancy [Life] [Healing, Positive]}{Divine, Nature}
-        \ritualcost{3}
+        \spellinfo{Divination [Scrying]}{Arcane, Divine}
+        \spellnotes \sensorspellnotes
+        \ritualcost*{3}
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{2}{Apparition}{A figment of you appears with the sensor, as \spell{create image}. While concentrating on the sensor, you can speak through the figment and be heard. This is an Illusion [Figment] effect.}
+        \spellaugment{3}{Persistent}{The ritual's duration becomes \durext.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Remove Curse}[4]
@@ -2473,17 +2042,15 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature or object}{}
             \spelltime{1 minute}
-            \spellrng{Touch}
+            \spellquicktargeting{One creature or object}{\rngtouch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
             \spelleffect All curses affecting the target are removed. This ritual cannot remove a curse that is part of an item's magical effects, but it allows a creature using a cursed item to remove and discard the item.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Vivimancy}{Arcane, Divine, Nature}
+        \spellinfo{Abjuration [Antimagic]}{Arcane, Divine, Nature}
         \ritualcost{4}
     \end{spellfooter}
 \end{spellsection}
@@ -2493,17 +2060,15 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature}{}
             \spelltime{1 minute}
-            \spellrng{Touch}
+            \spellquicktargeting{One creature}{\rngtouch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
             \spelleffect All diseases affecting the target are removed. This also removes parasites, such as green slime.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Alteration] [Healing]}{Divine, Nature}
+        \spellinfo{Vivimancy [Flesh]}{Divine, Nature}
         \ritualcost{3}
     \end{spellfooter}
 \end{spellsection}
@@ -2514,6 +2079,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
+            \spelltime{10 minutes}
             \spelltgt{One spell or ritual effect affecting you.}
         \end{spelltargetinginfo}
         \begin{spelleffects}
@@ -2525,85 +2091,62 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Universal}{Arcane, Divine, Nature}
-        \spellnotes This ritual does not increase the duration of the target effect.
-        It has no effect on spells or rituals that do not have a duration.
+        \spellnotes This effect cannot be dispelled.
+        It does not increase the duration of the target effect, and has no effect on spells or rituals that do not have a duration.
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
-
-\begin{spellsection}{Restore Attributes}[4]
+\begin{spellsection}{Restore Attributes}[2]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature}{}
             \spelltime{1 minute}
-            \spellrng{Touch}
+            \spellquicktargeting{One creature}{\rngtouch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
-            \spelleffect The target is cured of all attribute damage, and up to five points of attribute drain. In addition, one negative level is removed.
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Vivimancy [Life] [Healing, Positive]}{Divine}
-        \ritualcost{4}
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}[Greater]{Restore Attributes}[7]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature}{}
-            \spelltime{1 minute}
-            \spellrng{Touch}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \spelleffect The target is cured of all attribute damage and attribute drain. In addition, up to five negative levels are removed.
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Vivimancy [Life] [Healing, Positive]}{Divine}
-        \ritualcost{7}
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}[Lesser]{Restore Attributes}[2]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature}{}
-            \spelltime{1 minute}
-            \spellrng{Touch}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
             \spelleffect The target is cured of up to five points of attribute damage.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Vivimancy [Life] [Healing, Positive]}{Divine}
+        \spellinfo{Vivimancy [Flesh]}{Divine}
         \ritualcost*{2}
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}[Lesser]{Resurrection}[5]
+\begin{spellsection}{Restore Senses}[3]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{The corpse of one dead creature}{}
-            \spelltime{1 hour}
-            \spellrng{Touch}
+            \spelltime{1 minute}
+            \spellquicktargeting{One creature}{\rngtouch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
+            \spelleffect One of the target's physical senses, such as sight or hearing, is restored to full capacity. This can heal both magical and physical conditions, but it cannot completely replace missing body parts required for a sense to function (such as missing eyes).
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Vivimancy [Flesh]}{Divine, Nature}
+        \ritualcost{3}
+    \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{1}{Complete}{The ritual heals all missing senses, rather than one.}
+        \spellaugment{3}{Regenerating}{The ritual can restore missing body parts required for a sense to function. It cannot restore additional body parts, such as a missing head.}
+    \end{spellaugments}
+\end{spellsection}
 
-            \spelleffect The target returns to life. It must have been dead for no more than thirty days, and it must not have died due to a death effect or old age.
+\begin{spellsection}{Resurrection}[5]
+    \begin{spellheader}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltime{1 hour}
+            \spellquicktargeting{The remains of one dead creature}{\rngtouch}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect The target returns to life. It must have been dead for no more than thirty days, and it must not have died due to a \glossterm{Death} effect or old age.
 
             The resurrected creature has 0 hit points. All critical damage, attribute damage, and nonmagical poisons and diseases are cured. Magical effects, including magical poisons and diseases, are not removed. If the target's body is not whole, any missing parts are still missing when it is brought back to life.
 
@@ -2617,81 +2160,11 @@
         This ritual has no effect on creatures killed by death effects, or whose bodies have been turned into undead, such as by \spell{animate dead}. Constructs, elementals, outsiders, and undead creatures can't be resurrected.
         \spellmat{1,000 gp in diamonds or diamond dust.}
     \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Resurrection}[7]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{The remains of one dead creature}{}
-            \spelltime{1 hour}
-            \spellrng{Touch}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \spelleffect The target returns to life. It must have been dead for no more than one year per spellpower, and it must not have died due to old age.
-
-            The condition of the remains is not a factor. So long as some small portion of the creature's body still exists, it can be resurrected, but the target portion must have been part of the creature's body at the time of death.
-
-            The resurrected creature has 0 hit points, and all negative effects are removed, even curses and missing body parts.
-
-            \par Coming back from the dead is an ordeal. All of the target's spell slots and other daily abilities are expended until it rests. In addition, the target gains a negative level. If the subject was 1st level when it died, it takes 2 points of Constitution drain instead. This negative level or Constitution drain lasts for thirty days, or until the target gains a level.
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Vivimancy [Life, Soul]}{Clr}
-        \spellnotes As \spell{lesser resurrection}.
-        \spellmat{5,000 gp in diamonds or diamond dust.}
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}[Greater]{Resurrection}[9]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{The one dead creature}{}
-            \spelltime{24 hours}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \spellspecial You can target any dead creature that you can unambiguously identify.
-            \spelleffect The target returns to life. It must have been dead for no more than ten years per spellpower, and it must not have died due to old age.
-
-            The resurrected creature has full hit points, and all negative effects are removed, even curses and missing body parts.
-
-            \par Coming back from the dead is an ordeal. All of the target's spell slots and other daily abilities are expended until it rests. In addition, the target gains a negative level. If the subject was 1st level when it died, it takes 2 points of Constitution drain instead. This negative level or Constitution drain lasts for thirty days, or until the target gains a level.
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Vivimancy [Life, Soul]}{Divine}
-        \spellnotes The target's soul must be free and willing to return. If not, this ritual has no effect, and the material components are no consumed.
-
-        Constructs, elementals, outsiders, and undead creatures can't be resurrected.
-        \spellmat{25,000 gp in diamonds or diamond dust.}
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Screen}[8]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltime{10 minutes}
-            \spelltwocol{\spellzone{20 ft. cube/level}}{\spellrng{\rngclose}}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \spelleffect A scripted figment appears in the area, as \spell{persistent image}. In addition, everything else within the area cannot be seen, heard, or detected in any way by creatures outside the area, or scrying sensors in any location.
-            \spelldur \durext
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Illusion [Figment, Glamer] [Unreal]}{Arcane}
-        \spellnotes Creatures can identify the illusion, as \spell{silent image}. A creature that identifies the illusion remains unable to see the true events in the area without entering.
-        \ritualcost{8}
-    \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{2}{Ancient}{The ritual can resurrect a target that has been dead for up to fifty years. This augment can be used multiple times, increasing the time limit by fifty years each time.}
+        \spellaugment{2}{Complete}{The remains do not need to be intact. The target portion must be at least Fine size, and must have been part of the creature's body at the time of death. When the creature is resurrected, its body is restored to full health, including any missing body parts. The cost for the ritual becomes 5,000 gp.}
+        % currently no way to resurrect a creature with no body parts remaining
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Scrying}[5]
@@ -2699,18 +2172,15 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature}{}
             \spelltime{1 hour}
-            \spellrng{Unlimited \rngunrestricted}
+            \spellquicktargeting{One creature}{Unlimited \rngunrestricted}
+            \spellspecial You can target any creature that you can unambiguously identify, regardless of its location.
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
-            \spellspecial You can target any creature that you can unambiguously identify, regardless of its location.
             \begin{spellattack}{Spellpower vs. Mental}
+                \spellspecial Your accuracy with this attack is modified based on how well you know the subject and what sort of physical connection (if any) you have to that creature, as shown on \tref{Scrying Modifiers}.
                 \spellsuccess A scrying sensor appears in the target's space, allowing you to see as if you were in its location. The sensor moves with the target at a speed of up to 150 feet. If the sensor is separated from the target, the sensor disappears.
                 \spellfailure No scrying sensor appears, and the target is immune to any further attempts you make for 24 hours.
-
-                \spellspecial Your accuracy is modified based on how well you know the subject and what sort of physical connection (if any) you have to that creature, as shown on \tref{Scrying Modifiers}.
             \end{spellattack}
             \spelldur \durmed \dismissable
         \end{spelleffects}
@@ -2721,6 +2191,10 @@
         \spellnotes If you use a reflective surface as you perform this ritual, such as a crystal ball or mirror, you can show other creatures the view through the sensor. Some magic items have special abilities if used in this way.
         \ritualcost{5}
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{1}{Persistent}{The ritual's duration becomes \durlong.}
+        \spellaugment{2}{Rapid}{The ritual's casting time becomes 1 minute.}
+    \end{spellaugments}
 \end{spellsection}
 \begin{dtable}
     \lcaption{Scrying Modifiers}
@@ -2745,104 +2219,30 @@
     3 Such as the Material Plane and any outer plane.
 \end{dtable}
 
-\begin{spellsection}[Greater]{Scrying}[7]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature}{}
-            \spelltime{1 minute}
-            \spellrng{Unlimited \rngunrestricted}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \spellspecial You can target any creature that you can unambiguously identify, regardless of its location.
-            \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess You see the target's surroundings, as \spell{scrying}. In addition, the following spells function through the sensor: \spell{comprehend languages}, \spell{detect alignment}, \spell{message}, \spell{read magic}, and \spell{tongues}.
-                \spellfailure As \spell{scrying}.
-                \spellspecial As \spell{scrying}.
-            \end{spellattack}
-            \spelldur \durext \dismissable
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Divination [Scrying]}{Arcane, Divine, Nature}
-        \spellnotes As \spell{scrying}.
-        \ritualcost{7}
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Secret Chest}[4]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltime{10 minutes}
-            \spellrng{Touch}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \spelltgt{One Medium, nonmagical chest}
-            \spellspecial When you perform this ritual, you must specify a command word. You may also fill the chest with up to one cubic foot of objects per spellpower. This fills the chest, regardless of its exact dimensions.
-            \spelleffect The chest is sent to the Ethereal Plane. As a standard action, you can speak the command word. If you do, the chest teleports into an open space on solid ground next to you, and the ritual is discharged.
-
-            After the ritual's duration ends, speaking the command word has no effect, but the chest does not return.
-
-            \spelldur One year or until discharged
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Conjuration [Translocation] [Planar]}{Arcane}
-        \spellnotes The chest can be fitted with locks, wards, and so on, just like any normal chest. A typical chest cost 2 gp. If the chest contains any living creatures, there is a 75\% chance that the ritual simply fails.
-
-        If you are not on the Material Plane when you perform this ritual, it has no effect.
-        \ritualcost*{4}
-    \end{spellfooter}
-\end{spellsection}
-
 \begin{spellsection}{Secret Page}[3]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One object with writing on it (Small or smaller)}{}
             \spelltime{10 minutes}
-            \spellrng{Touch}
+            \spellquicktargeting{One object with writing on it (Small or smaller)}{\rngtouch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
             \spellspecial When you perform this ritual, you must specify a command word.
             \spelleffect The writing on the target is transformed into completely different text. Even magical writing can be transformed in this way.
 
             As a standard action, any creature can speak the command word to tranform the text back into its original form. This discharges the ritual.
-            \spelldur One year or until discharged
+            \spelldur Thirty days or until discharged
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Alteration]}{Arcane}
         \ritualcost{3}
     \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Seeming}[4]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{Five creatures in the area}{}
-            \spelltime{1 minute}
-            \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngclose}}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \spelleffect The target is disguised, as \spell{disguise self}.
-            \spelldur \durlong \dismissable
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Illus [Glamer] [Unreal]}{Arcane}
-        \ritualcost{4}
-    \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{2}{Permanent}{The ritual's duration becomes permanent.}
+        \spellaugment{2}{Repeatable}{After the command word is spoken, the ritual is not discharged. Instead, it is suppressed for 5 minutes, after which time the text is hidden again.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Sending}[4]
@@ -2850,11 +2250,11 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature}{Unlimited \rngunrestricted}
             \spelltime{10 minutes}
+            \spellquicktargeting{One creature}{Unlimited \rngunrestricted}
+            \spellspecial You can target any creature with whom you are familiar, regardless of its location. You must have seen the creature at least once.
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spellspecial You can target any creature with whom you are familiar, regardless of its location. You must have seen the creature at least once.
             \spelleffect You send the target a short verbal message. The message must be twenty-five words or less, and speaking the message must not take longer than five rounds.
 
             After receiving the message, the target has five rounds to reply with a similarly restricted message. After that time, the sending is complete.
@@ -2876,14 +2276,16 @@
     \begin{spellcontent}
         \begin{spelltargetinginfo}
             \spelltime{10 minutes}
-            \spellrng{One mile}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect This ritual creates a number of magic sensors equal to your spellpower. When you perform this ritual, you specify instructions that the sensors will obey. The instructions must be no more than twenty-five words long.
+            \spelleffect This ritual creates a number of magic sensors equal to your spellpower.
+            The sensors originally appear within your square, but they can travel within one mile of you (regardless of intervening obstacles).
+            When you perform this ritual, you specify instructions that the sensors will obey.
+            The instructions must be no more than twenty-five words long.
 
             \par In order to report its findings, a sensor must return to your hand. You can command a sensor you are holding to replay in your mind all it has seen during its existence. This requires one full-round action per hour of information. This process destroys the sensor.
 
-            \par If a sensor ever gets more than 1 mile away from you, it is destroyed.
+            \par If a sensor ever gets farther from one mile from you, it is destroyed.
             \spelldur \durext or until expended \dismissable
         \end{spelleffects}
     \end{spellcontent}
@@ -2892,54 +2294,10 @@
         \spellnotes \mobilesensorspellnotes{30}
         \ritualcost*{5}
     \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}[Greater]{Sensor Swarm}[8]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltime{10 minutes}
-            \spellrng{10 miles}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \spelleffect This ritual creates magic sensors that obey your commands, as \spell{sensor swarm}. In addition, the sensors benefit from the \spell{darkvision} and \spell{see invisibility} spells.
-            \spelldur \durext or until expended \dismissable
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Conjuration/Divination [Awareness, Creation]}{Arcane}
-        \ritualcost{8}
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Sepia Snake Sigil}[4]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{The reading creature}{}
-            \spelltime{10 minutes}
-            \spellrng{Touch}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \spellfocus{One object with writing on it (Small or smaller)}
-            \begin{spelltrigger}{A creature reads the focus object while within 5 feet of it}
-                \begin{spelltarget}*[Spellpower vs. Reflex]
-                    \spellsuccess The target is \slowed. In addition, a sigil of a snake appears on its forehead, marking its condition.
-                \end{spelltarget}
-            \end{spelltrigger}
-            \spelldur Thirty days or until discharged
-            \spelldur Thirty days
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Abjuration/Transmutation [Temporal, Warding] [Trap]}{Arcane}
-        \spellnotes Magic traps such as \spell{sepia snake sigil} can be detected with the Perception skill and disabled with the Devices skill. The DC in each case is 25 \add spell level, or 28 for \spell{sepia snake sigil}.
-        \ritualcost{3}
-    \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{1}{Darksight}{The sensors benefit from the \spell{darkvision} spell.}
+        \spellaugment{2}{Invisibility Piercing}{The sensors benefit from the \spell{see invisibility} spell.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Sequester}[7]
@@ -2947,69 +2305,22 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One willing creature or object (Large or smaller)}{}
             \spelltime{10 minutes}
-            \spellrng{Touch}
+            \spellquicktargeting{One willing creature or object (Large or smaller)}{\rngtouch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
-            \spelleffect The target is placed in a state of suspended animation, as the bloodied effect of \spell{temporal stasis}. In addition, it is invisible and cannot be detected by Divination spells.
-            \spelldur Ten years
+            \spelleffect The target is placed in a state of suspended animation, as the critical effect of the \spell{temporal stasis} spell. In addition, it is invisible.
+            \spelldur One year
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Abjuration/Transmutation [Shielding, Temporal]}{Arcane}
+        \spellinfo{Illusion/Transmutation [Glamer, Temporal]}{Arcane}
         \ritualcost*{7}
     \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Shadow Walk}[6]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltime{1 standard action}
-            \spellrng{Touch}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \begin{spelltargets}{Up to five willing creatures}
-                \spelleffect The target is transported into the Plane of Shadow. It can travel and act normally there for the duration of the spell. When the spell ends, the target returns to the Material Plane. However, the Plane of Shadow and the Material Plane do not overlap perfectly, so it is shunted 1d10 \mtimes 1,000 feet in a random direction from its location on the Plane of Shadow as it returns. If this places it within a solid object, it appears in the closest open space to that point.
-            \end{spelltargets}
-            \spelldur \durext \dismissable
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Conjuration/Illusion [Shadow, Translocation] [Planar]}{Arcane}
-        \spellnotes While in the Plane of Shadow, creatures move much more rapidly relative to the Material Plane. In general, a creature moving at 30 feet per round on the Plane of Shadow moves at 30 miles per hour relative to the Material Plane. The Material Plane is dimly visible from the Plane of Shadow, but it is impossible to see anything with a Perception DC higher than 0.
-
-        If you are not on the Material Plane when you perform this ritual, it has no effect.
-        \ritualcost{6}
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Shambler}[9]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltime{1 hour}
-            \spelltwocol{\spelllimit{\areamed radius}}{\spellrng{\rngmed}}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \spelleffect This ritual creates five shambling mounds under your control within the area. If you instruct them to perform a specific mission, such as guarding you, this ritual lasts for one week.
-
-            Alternately, you can instruct the shambling mounds to guard a specific location. If you do, the ritual lasts for one year. However, the mounds are unable to move outside of a 1000 foot radius centered on the location without being destroyed.
-
-            \spelldur One week or one year \dismissable; see text
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Conjuration/Transmutation [Animation, Creation]}{Natural}
-        \spellnotes If the terrain the ritual is performed in is not rainy, marshy, or damp, the shambling mounds are not resistant to fire like normal shambling mounds.
-        \ritualcost{9}
-    \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{1}{Giant}{The ritual can affect a target one size category larger. This augment can be used multiple times.}
+        \spellaugment{2}{Permanent}{The ritual's duration becomes permanent.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Shape Metal}[4]
@@ -3019,7 +2330,6 @@
         \begin{spelltargetinginfo}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
             \spellspecial This ritual functions like \spell{shape wood}, except that you make a Craft (metal) check, and you shape metal instead of wood.
         \end{spelleffects}
     \end{spellcontent}
@@ -3056,7 +2366,6 @@
             \spellrng{Touch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
             \spelleffect The target transforms into any other weapon from the same weapon group.
         \end{spelleffects}
     \end{spellcontent}
@@ -3065,42 +2374,24 @@
         \spellnotes This spell has no effect on natural attacks or unarmed strikes.
         \ritualcost{2}
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{2}{Empowered}{The target transforms into any other manufactured weapon (but not an improvised weapon).}
+    \end{spellaugments}
 \end{spellsection}
 
-\begin{spellsection}[Greater]{Shape Weapon}[5]
+\begin{spellsection}{Shaping}[2]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One weapon}{}
             \spelltime{10 minutes}
-            \spellrng{Touch}
+            \spellquicktargeting{One nonmagical object (Small or smaller)}{\rngtouch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
-            \spelleffect The target transforms into any other manufactured weapon (but not an improvised weapon).
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Transmutation [Alteration]}{Arcane}
-        \spellnotes As \spell{shape weapon}.
-        \ritualcost{5}
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Shape Wood}[2]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{Up to 10 cubic feet of nonmagical wood}{}
-            \spelltime{10 minutes}
-            \spellrng{Touch}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \spellzone{10 cubic feet}
-            \spelleffect When you perform this ritual, you make a Craft (wood) check to change the target's shape. You gain a \plus10 bonus on the check, and you need no additional tools.
+            \spelleffect When you perform this ritual, you make a Craft check to change the target's shape.
+            The Craft check made is appropriate to the material.
+            You gain a \plus10 bonus on the check, and you need no additional tools.
+            This ritual can only affect a target object with a hardness of 5 or less.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -3108,6 +2399,10 @@
         \spellnotes Large wooden objects can be crafted by performing this ritual multiple times.
         \ritualcost*{2}
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{1}{Giant}{The ritual can affect a target one size category larger. This augment can be used multiple times.}
+        \spellaugment{1}{Hardened}{The maximum hardness of the target object is increased by 5. This augment can be used multiple times.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Soul Bind}[9]
@@ -3115,24 +2410,22 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{The corpse of one dead creature}{}
             \spelltime{1 minute}
-            \spellrng{\rngclose}
+            \spellquicktargeting{The corpse of one dead creature}{\rngclose}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
-            \spellcmp{Verbal, Somatic, Focus}
             \spelleffect The target's soul is imprisoned in a black sapphire gem. This prevents the target from being resurrected or turned into an undead as long as the gem is intact. A creature holding the gem is able to resurrect or animate the creature.
-
-            \spellfocus{A black sapphire of at least 500 gp value for every level possessed by the creature whose soul is to be bound. If the gem is not valuable enough, it shatters when the binding is attempted. (While creatures have no concept of level as such, the value of the gem needed to trap an individual can be researched. Remember that this value can change over time as creatures gain more levels.)}
-            \spellmat{A black sapphire gem worth at least 1000 gp, and ritual components worth 1,000 gp per level the target has. The gem is not consumed by the ritual. (Since creatures have no concept of ``level'' as such, the exact cost of the ritual cannot be known in advance. However, it is known that stronger souls are more difficult to bind, so it is possible to guess or research the approximate cost. If the ritual is performed with more ritual components than necessary, the extra components will not be consumed by the ritual.)}
-            \spelldur Permanent
+            \spelldur Thirty days
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Vivimancy [Soul]}{Arcane, Divine}
+        \spellnotes The black sapphire gem used to hold the target's soul must be worth at least 5,000 gp.
         \ritualcost{9}
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{2}{Permanent}{The ritual's duration becomes permanent.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Speak with Dead}[3]
@@ -3140,13 +2433,11 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{The corpse of one dead creature}{}
             \spelltime{10 minutes}
-            \spellrng{\rngclose}
+            \spellquicktargeting{The corpse of one dead creature}{\rngclose}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
-            \spelleffect The target gains the semblance of life and intellect, allowing it to answer several questions that you put to it. You may ask one question per two spellpower. Unasked questions are wasted if the duration expires.
+            \spelleffect The target gains the semblance of life and intellect, allowing it to answer several questions that you put to it. You may ask up to five questions. Unasked questions are wasted if the duration expires.
 
             The corpse's knowledge is limited to what the creature knew during life, including the languages it spoke (if any). A perfectly fresh, intact corpse knows almost as much as the creature did, though it speaks cryptically. The more damaged or decayed the corpse is, the more brief, repetitive, or vague its answers are. In general, a corpse's answers become useless after a week of decay. If the corpse's mouth is destroyed (or if it has no mouth), it cannot speak at all.
 
@@ -3162,129 +2453,6 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Symbol of Death}[7]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{The specified target}{}
-            \spelltime{10 minutes}
-            \spelltwocol{\spellzone{\arealarge radius}}{\spellrng{Touch}}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \spellspecial When you perform this ritual, you must specify a triggering condition. The condition must be something that a typical human in the area could detect. You may also specify a target. If you do not specify a target, the target will be the creature closest to the center of the area. (The target is chosen randomly if there are equally close targets.)
-            \spelleffect An invisible, intangible symbol floats in the air at the center of the area.
-            \begin{spelltrigger}{The triggering condition occurs in the area}
-                \begin{spelltarget}*[Spellpower vs. Fortitude]
-                    \spellsuccess The target is affected by \spell{finger of death}.
-                \end{spelltarget}
-            \end{spelltrigger}
-
-            \spelldur One year or until discharged
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Abjuration/Vivimancy [Life, Warding] [Death, Trap]}{Arcane}
-        \spellnotes Magic traps such as \spell{symbol of death} can be detected with the Perception skill and disabled with the Devices skill. The DC in each case is 25 \add spell level, or 32 for \spell{symbol of death}.
-        \par This ritual can be made permanent with a \spell{permanency} spell. A permanent trap that is disabled becomes inactive for 10 minutes, then can be triggered again as normal.
-        \ritualcost{7}
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Symbol of Destruction}[7]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \spellspecial This ritual functions like \spell{symbol of death}, except that the target instead suffers the effects of the \spell{destruction} spell.
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Abjuration/Vivimancy [Flesh, Warding] [Death, Trap]}{Divine}
-        \spellnotes Magic traps such as \spell{symbol of destruction} can be detected with the Perception skill and disabled with the Devices skill. The DC in each case is 25 \add spell level, or 32 for \spell{symbol of destruction}.
-        \par This ritual can be made permanent with a \spell{permanency} spell. A permanent trap that is disabled becomes inactive for 10 minutes, then can be triggered again as normal.
-        \ritualcost*{7}
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Symbol of Insanity}[6]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \spellspecial This ritual functions like \spell{symbol of death}, except that the target instead suffers the effects of the \spell{insanity} spell.
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Abjuration/Enchantment [Compulsion, Warding] [Mind-Affecting, Trap]}{Arcane}
-        \spellnotes Magic traps such as \spell{symbol of insanity} can be detected with the Perception skill and disabled with the Devices skill. The DC in each case is 25 \add spell level, or 31 for \spell{symbol of insanity}.
-        \ritualcost*{6}
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Symbol of Pain}[5]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \spellspecial This ritual functions like \spell{symbol of death}, except that the target instead suffers the effects of the \spell{agony} spell.
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Abjuration/Vivimancy [Flesh, Warding] [Trap]}{Arcane}
-        \spellnotes Magic traps such as \spell{symbol of pain} can be detected with the Perception skill and disabled with the Devices skill. The DC in each case is 25 \add spell level, or 30 for \spell{symbol of pain}.
-        \ritualcost*{5}
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Symbol of Persuasion}[4]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \spellspecial This ritual functions like \spell{symbol of death}, except that the target is instead affected by the \spell{suggestion} spell. When you perform this ritual, you choose which suggestion to issue.
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Abjuration/Enchantment [Compulsion, Warding] [Auditory, Mental, Speech, Trap]}{Arcane}
-        \spellnotes Magic traps such as \spell{symbol of persuasion} can be detected with the Perception skill and disabled with the Devices skill. The DC in each case is 25 \add spell level, or 29 for \spell{symbol of persuasion}.
-        \ritualcost*{4}
-    \end{spellfooter}
-\end{spellsection}
-
-%this doesn't take into account the medium vs. short range alteration
-\begin{spellsection}{Symbol of Sleep}[7]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \spellatk{Will negates}
-            \spelleffect This spell functions like \spell{symbol of death}, except that the target instead suffers the effects of the \spell{deep slumber} spell.
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Abjuration/Enchantment [Compulsion, Warding] [Mind-Affecting, Trap]}{Arcane}
-        \spellnotes Magic traps such as \spell{symbol of sleep} can be detected with the Perception skill and disabled with the Devices skill. The DC in each case is 25 \add spell level, or 32 for \spell{symbol of sleep}.
-        \ritualcost*{7}
-    \end{spellfooter}
-\end{spellsection}
-
 \begin{spellsection}{Sympathy}[9]
     \begin{spellheader}
         \spelldesc{You fill nearby creatures of a particular kind with an overpowering attraction, compelling them to come to an area.}
@@ -3292,24 +2460,30 @@
     \begin{spellcontent}
         \begin{spelltargetinginfo}
             \spelltime{1 hour}
+            \spellzone{1 mile radius (outer), 50 ft. radius (inner)}
             \spellrng{\rngclose}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
-            \spellzone{10 mile radius} (outer), 100 ft. radius (inner)
             \spellspecial When you perform this ritual, choose an alignment (chaotic, good, evil, or lawful) or creature type.
-            \begin{spelltargets}{All creatures in the outer area of the chosen alignment or type}l[Spellpower vs. Mental]
-                \spellsuccess The target is compelled to enter the inner area as soon as physically possible, using any means necessary. Once in the inner area, it feels elated, and will not willingly leave the area as long as the spell is in effect.
-                \spellfailure The target feels a desire to enter the inner area, though it is not compelled to act on that desire immediately.
-            \end{spelltargets}
-            \spelldur One week \dismissable
+            \spelleffect When a creature of the chosen type enters the outer area, you make an attack against it, as described below.
+            When a creature of the chosen type enters the inner area, it is \fascinated, and will not willingly leave the area until the fascination is broken.
+            \begin{spellattack}{Spellpower vs. Mental}
+                \spellsuccess The target feels a strong desire to enter the inner area.
+                It is \severelyimpaired with all actions except actions it takes to reach the inner area.
+                \spellcritical The target is compelled to enter the inner area as soon as physically possible, using any means necessary.
+                \spellfailure The target feels a desire to enter the inner area.
+                It is \impaired with all actions except actions it takes to reach the inner area.
+            \end{spellattack}
+            \spelldur One week
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Emotion] [Mind-Affecting]}{Arcane, Nature}
-        \spellinfo{Enchantment [Emotion] [Mind-Affecting]}{Arcane, Nature}
         \ritualcost{9}
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{4}{Widened}{The spell's outer becomes a 10 mile radius.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Telepathic Bond}[3]
@@ -3319,42 +2493,23 @@
     \begin{spellcontent}
         \begin{spelltargetinginfo}
             \spelltime{10 minutes}
-            \spellrng{\rngclose}
+            \spellquicktargeting{Two willing creatures}{\rngclose}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
-            \spelltgts{Two willing creatures}
             \spelleffect The targets can communicate mentally through telepathy. The communication is instantaneous across any distance within the same plane.
             \spelldur \durext \dismissable
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Divination/Transmutation [Communication]}{Arcane}
-        \spellnotes No special influence is established as a result of the bond. This ritual can be made permanent with a \spell{permanency} ritual.
+        \spellinfo{Divination/Transmutation [Augment]}{Arcane}
+        \spellnotes No special influence is established as a result of the bond.
         \ritualcost*{3}
     \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Telepathic Bond, Mass}[6]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltime{1 hour}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \spelllimit{\areamed radius centered on you}
-            \spelltgts{Up to five willing creatures in the area}
-            \spelleffect The targets can communicate mentally through telepathy. Each target can communicate with all other creatures, either privately or to the group as a whole.
-            \spelldur \durext \dismissable
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Divination/Transmutation [Communication]}{Arcane}
-        \spellnotes This ritual can be made permanent with a \spell{permanency} ritual. If you perform this ritual multiple times, you may link each casting of the ritual together such that all targets may telepathically communicate with each other.
-        \ritualcost*{6}
-    \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{3}{Mass}{The spell can affect up to five targets. Each target can communicate with any number of other targets simultaneously.}
+        \spellaugment{4}{Interplanar}{The targets can communicate across adjacent or overlapping planes. This is a Planar effect.}
+        % no permanent version - would have weird effects on the game world
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Teleport}[6]
@@ -3362,29 +2517,27 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltime{1 minute; see text}
-            \spellrng{Touch}
+            \spelltime{1 minute}
+            \spellquicktargeting{Up to five willing creatures (Medium or smaller)}{\rngtouch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
-            \spelltgts{Five willing creatures (Medium or smaller; see text)}
-            \spellspecial When you perform this ritual, you may double its casting time to affect an additional target. You can repeat this process, doubling the new casting time each time, up to a maximum of ten targets (with a casting time of thirty-two minutes).
-
-            You may target creatures larger than Medium size. A Large creature counts as two Medium creatures, a Huge creature counts as two Large creatures, and so forth.
-
             \spelleffect When you perform this ritual, you specify a destination up to 100 miles away on your current plane, and make an Intelligence check. The DC of the check depends on your familiarity with the destination, as shown on \tref{Teleport DCs}.
 
             Success means the targets teleport to the intended destination. Failure means the targets arrive a random distance away from the intended destination in a random direction. The distance off target is equal to 1d10\mult1d10\% of the distance that they would have traveled to the intended destination. Failure by 10 or more means the targets arrive in a completely different area within range that is visually or thematically similar to the intended destination. If no such area exists within the spell's range, the ritual simply fails instead.
 
-            After teleporting, the targets must skip their next actions.
-
+            After teleporting, the targets cannot act during the following round.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Conjuration [Translocation] [Teleportation]}{Arcane}
+        \spellinfo{Conjuration [Teleportation]}{Arcane}
         \spellnotes Areas of strong physical or magical energy may make teleportation more hazardous or even impossible. This ritual is incapable of interplanar travel.
         \ritualcost*{6}
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{2}{Giant}{The ritual can affect targets one size category larger. This augment can be used multiple times.}
+        \spellaugment{2}{Mass}{The ritual can affect up to five additional targets. This augment can be used multiple times.}
+        \spellaugment{3}{Safe}{The teleportation always succeeds if possible, with no check required.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{dtable}
@@ -3401,81 +2554,27 @@
     1 You are automatically treated as if you had failed by 10 or more.
 \end{dtable}
 
-\begin{spellsection}{Teleport Object}[7]
+\begin{spellsection}{Teleport Object}[6]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One touched object (Large or smaller)}{}
             \spelltime{1 minute}
-            \spellrng{Touch}
+            \spellquicktargeting{One touched object (Medium or smaller)}{\rngtouch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
-            The target is teleported, as \spell{teleport}.
+            \spelleffect The target is teleported to a distant desination you specify, as the \spell{teleport} ritual.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Translocation] [Teleportation]}{Arcane}
         \ritualcost{7}
     \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Teleport, Greater}[8]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltime{1 minute; see text}
-            \spellrng{Touch}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \spelltgts{Five willing creatures (Medium or smaller; see text)}
-            \spellspecial When you perform this ritual, you may double its casting time to affect an additional target. You can repeat this process, doubling the new casting time each time, up to a maximum of ten targets (with a casting time of thirty-two minutes).
-
-            You may target creatures larger than Medium size. A Large creature counts as two Medium creatures, a Huge creature counts as two Large creatures, and so forth.
-            \spelleffect When you perform this ritual, you specify a destination up to 1,000 miles away on your current plane. You must have seen the destination or specify it unambiguously. If the destination is invalid, or does not exist, the ritual simply fails.
-
-            The targets teleport to the destination. After teleporting, the targets must skip their next actions.
-
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Conjuration [Translocation] [Teleportation]}{Arcane}
-        \spellnotes Areas of strong physical or magical energy may make teleportation more hazardous or even impossible. This ritual is incapable of interplanar travel.
-        \ritualcost*{8}
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Teleportation Circle}[9]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{The entering creature}{}
-            \spelltime{10 minutes}
-            \spellrng{Touch}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \spellzone{\areasmall radius}
-            \spellspecial When you perform this ritual, you specify a destination up to 1,000 miles away on your current plane. You must have seen the destination or specify it unambiguously. If the destination is invalid, or does not exist, the ritual simply fails.
-            \begin{spelltrigger}{A creature enters the area}
-                \spellspecial Once this ritual has triggered a number of times equal to your spellpower, it is expended.
-                \begin{spelltarget}*[Spellpower vs. Mental]
-                    \spelleffect The target is teleported to the specified destination. If the destination is invalid, or does not exist, the target is unaffected.
-                \end{spelltarget}
-            \end{spelltrigger}
-
-            \spelldur \durext or until expended \dismissable
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Conjuration [Translocation] [Teleportation, Trap]}{Arcane}
-        \spellnotes Magic traps such as \spell{teleportation circle} can be detected with the Perception skill and disabled with the Devices skill. The DC in each case is 25 \add spell level, or 34 for \spell{teleportation circle}.
-        \ritualcost*{9}
-    \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{1}{Giant}{The ritual can affect a target one size category larger. This augment can be used multiple times.}
+        \spellaugment{3}{Mass}{The ritual can affect up to five targets.}
+        \spellaugment{3}{Safe}{The teleportation always succeeds if possible, with no check required.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Tiny Hut}[3]
@@ -3484,19 +2583,21 @@
     \begin{spellcontent}
         \begin{spelltargetinginfo}
             \spelltime{1 minute}
+            \spellzone{\areamed radius centered on you}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
-            \spellzone{\areamed radius centered on you}
-            \spelleffect The area is surrounded by an opaque sphere which blocks rain, dust, snow, and similar small objects. Wind speed within the area is reduced by 25 mph. The temperature can be raised by up to 50 degrees, or lowered by up to 25 degrees, until it reaches 70\degree F.
+            \spelleffect The area is surrounded by an opaque sphere which blocks rain, dust, snow, and similar small objects. Wind speed within the area is reduced by 25 mph. The temperature is raised by up to 50 degrees, or lowered by up to 25 degrees, until it reaches 70\degree F.
             \spelldur \durext \dismissable
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Control]}{Arcane}
+        \spellinfo{Evocation}{Arcane}
         \spellnotes Most creatures, objects, and spell effects can pass through the hut without affecting it.
         \ritualcost*{3}
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{3}{Permanent}{The ritual's duration becomes permanent.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Tongues}[4]
@@ -3504,22 +2605,20 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{Creature touched}{}
-            \spellrng{Touch}
+            \spelltime{1 minute}
+            \spellquicktargeting{Creature touched}{\rngtouch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
-            \spelleffect The target can speak and understand all langages, including dialects. It can speak only one language at a time, although it may be able to understand several languages.
+            \spelleffect The target can speak and understand all langages, including dialects. It can speak only one language at a time, although it can understand all languages.
             \spelldur \durlong
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Divination [Communication]}{Arcane, Divine, Nature}
         \spellnotes This ritual does not grant the ability to communicate with creatures that do not have a language. It may be unable to translate dead or extremely obscure languages.
-
-        This ritual can be made permanent with a \spell{permanency} ritual.
         \ritualcost*{4}
     \end{spellfooter}
+    \spellaugment{4}{Permanent}{The ritual's duration becomes permanent.}
 \end{spellsection}
 
 \begin{spellsection}{Transport via Plants}[6]
@@ -3527,14 +2626,15 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
+            \spelltime{1 minute}
+            \spellquicktargeting{Up to five willing creatures (Medium or smaller)}{\rngtouch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
             \spelleffect This ritual functions like \spell{teleport}, except that both the starting and ending points must be living, Medium or larger plants.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Conjuration [Translocation] [Teleportation]}{Nature}
+        \spellinfo{Conjuration [Teleportation]}{Nature}
         \ritualcost{6}
     \end{spellfooter}
 \end{spellsection}
@@ -3545,15 +2645,14 @@
     \begin{spellcontent}
         \begin{spelltargetinginfo}
             \spelltime{1 minute}
+            \spelltgt{You}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
-            \spelltgt{You}
             \spellspecial This ritual functions like \spell{teleport}, except that it only affects you, and both the starting and ending points must be Large or larger trees.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Conjuration [Translocation] [Teleportation]}{Nature}
+        \spellinfo{Conjuration [Teleportation]}{Nature}
         \ritualcost{5}
     \end{spellfooter}
 \end{spellsection}
@@ -3563,12 +2662,10 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature or object}{}
             \spelltime{1 minute}
-            \spellrng{\rngclose}
+            \spellquicktargeting{One creature or object}{\rngclose}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
             \spelleffect The target's alignment cannot be identified by detection spells and similar effects which reveal alignment, such as a paladin's discernment. Spells and abilities which have different effects depending on the target's alignment, such as a paladin's smite, function normally.
             \spelldur \durext \dismissable
         \end{spelleffects}
@@ -3577,6 +2674,9 @@
         \spellinfo{Abjuration [Shielding]}{Arcane}
         \ritualcost{2}
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{3}{Permanent}{The ritual's duration becomes permanent.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Unseen Servant}[1]
@@ -3588,8 +2688,7 @@
             \spellrng{\rngmed}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
-            \spelleffect This ritual creates an invisible, mindless, shapeless force that performs simple tasks at your command. It can run and fetch things, open unstuck doors, and hold chairs, as well as clean and mend. The servant can perform only one activity at a time, but it repeats the same activity over and over again if told to do so. It can open only normal doors, drawers, lids, and the like. It has an effective Strength score of \minus8 (so it can lift 20 pounds or drag 100 pounds). It can trigger traps and similar devices, but it can exert only 20 pounds of force, which is not enough to activate certain pressure plates and other devices. It can't perform any task that requires a skill check with a DC higher than 10 or that requires a check using a skill that can't be used untrained. It hovers just off the ground, and moves at a speed of 15 feet.
+            \spelleffect This ritual creates an invisible, mindless, shapeless force that performs simple tasks at your command. It can run and fetch things, open unstuck doors, and hold chairs, as well as clean and mend. The servant can perform only one activity at a time, but it repeats the same activity over and over again if told to do so. It can open only normal doors, drawers, lids, and the like. It has an effective Strength score of \minus6 (so it can lift 12 pounds or drag 60 pounds). It can trigger traps and similar devices, but it can exert only 20 pounds of force, which is not enough to activate certain pressure plates and other devices. It can't perform any task that requires a skill check with a DC higher than 10 or that requires a check using a skill that can't be used untrained. It hovers just off the ground, and moves at a speed of 15 feet.
             \par The servant cannot attack in any way. It cannot be killed, but it dissipates if it takes 6 points of damage from area attacks. It has no defenses, and all special attacks automatically succeed against it. If the servant gets out of range of you, it ceases to exist.
             \spelldur \durlong \dismissable
         \end{spelleffects}
@@ -3600,77 +2699,28 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Water Breathing}[3]
+\begin{spellsection}{Water Breathing}[2]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
             \spelltime{10 minutes}
-            \spellrng{Touch}
+            \spellquicktargeting{One willing creature}{\rngtouch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
-            \spellspecial Divide the duration evenly among all targets.
-            \begin{spelltargets}{Up to five creatures}
-                \spelleffect The target can breathe water freely.
-            \end{spelltargets}
-            \spelldur \durext \dismissable; see text
+            \spelleffect The target can breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
+            \spelldur \durext \dismissable
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation}{Arcane, Divine, Nature}
-        \spellnotes The ritual does not make creatures unable to breathe air.
+        \spellnotes The ritual does not prevent the target from being able to breathe air.
         \ritualcost*{3}
     \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Whispering Wind}[2]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltime{1 minute}
-            \spellrng{10 miles \rngunrestricted}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \spelleffect You send a message on the wind to a specified location within range. The message must be twenty-five words or less, and speaking the message must not take longer than five rounds. You must know an approximate path for the wind to travel to reach the destination. The wind travels along that path at a speed you specify, up to 50 feet per round.
-
-            Until the wind reaches its destination, it is only detectable as a breeze. As soon as it arrives, it delivers the message audibly before dissipating.
-            \spelldur \durext or until discharged
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Divination [Communication] [Air]}{Arcane, Nature}
-        \spellnotes The wind's pronunciation is too inexact to activate effects that require command words.
-        \ritualcost*{2}
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Wind Walk}[6]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltime{1 minute}
-            \spellrng{Touch}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-
-            \begin{spelltargets}{Up to five creatures}
-                \spelleffect The target becomes a cloudlike vapor, as \spell{gaseous form}. As a full-round action, it can summon a magical wind to propel it along at a speed of up to 600 feet per round (65 mph) with poor maneuverability.
-
-                By concentrating for five rounds, the target can return to its physical form. This does not end the effect, and it can return to gaseous form by concentrating for five rounds. While transitioning in this way, it is treated as being in its physical form for the purpose of its defenses and magical effects. If its concentration is interrupted, it cannot take any actions until it finishes transforming into either gaseous or physical form.
-
-                For the last minute of the ritual's duration, if the target is in its gaseous form, it automatically descends 60 feet per round (for a total of 600 feet), though it may descend faster if it wishes. This descent serves as a warning that the ritual is about to end.
-            \end{spelltargets}
-            \spelldur \durext \dismissable; see text
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Transmutation [Polymorph] [Air]}{Divine, Nature}
-        \ritualcost{6}
-    \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{3}{Mass}{The spell can affect up to five targets.}
+        \spellaugment{3}{Permanent}{The ritual's duration becomes permanent.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Zone of Truth}[2]
@@ -3680,19 +2730,20 @@
         \begin{spelltargetinginfo}
             \spelltime{1 minute}
             \spelltwocol{\spellzone{\areamed radius}}{\spellrng{\rngmed}}
+            \spelltgts{All creatures in the area}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-
-            \begin{spelltargets}{All creatures in the area}[Spellpower vs. Mental]
+            \begin{spellattack}{Spellpower vs. Mental}
                 \spellsuccess The target is unable to speak any deliberate and intentional lies in the area. It is aware of this limitation, and can choose to change its answers to avoid speaking lies.
                 \spellfailure The target is able to lie freely in the area.
-            \end{spelltargets}
-            \spelldur \durmed
+            \end{spellattack}
+            \spelldur \durlong
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Inhibition] [Mind-Affecting]}{Arcane, Divine}
-        \spellnotes Creatures are effected as soon as they enter the area. Leaving and re-entering the area does not cause a new attack to be made.
+        \spellnotes Creatures are affected as soon as they enter the area. Leaving and re-entering the area does not cause a new attack to be made; only the result of the original attack is used.
         \ritualcost{2}
     \end{spellfooter}
+    % can't add permanency augment because of the leaving/re-entering oddity
 \end{spellsection}

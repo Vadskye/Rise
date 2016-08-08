@@ -1062,7 +1062,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Divination [Awareness]}{Arcane, Knowledge}
+        \spellinfo{Transmutation [Augment]}{Arcane, Knowledge}
         \miscastrandom
     \end{spellfooter}
 \end{spellsection}
@@ -1103,7 +1103,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Divination [Awareness]}{Arcane, Knowledge}
+        \spellinfo{Divination}{Arcane, Knowledge}
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
@@ -1529,8 +1529,8 @@
     \begin{spellaugments}
         \spellaugment{1}{Sensory}{The illusion affects an additional sense: sound, smell, texture, or temperature. This augment can be used multiple times, affecting a different sense each time.}
         \spellaugment{1}{Widened}{The spell's area becomes a \arealarge radius.}
+        \spellaugment{2}{Persistent}{The spell's duration becomes \durlong.}
         \spellaugment{2}{Scripted}{When you cast the spell, you set a simple script for the figment to follow. It follows that script automatically. As a swift action, you can concentrate to change the script for the remainder of the spell.}
-        \spellaugment{3}{Persistent}{The spell's duration becomes \durlong.}
         \spellaugment{5}{False Reality}{The spell's area becomes a 1 mile radius zone, centered on you.}
     \end{spellaugments}
 \end{spellsection}
@@ -1550,7 +1550,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Illusion [Figment, Unreal]}{Illusion}
-        \spellnotes Creatures can identify the illusion, as \spell{create image}. This spell can be made permanent with a \spell{permanency} ritual.
+        \spellnotes Creatures can identify the illusion, as \spell{create image}.
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -1675,7 +1675,6 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Illusion [Figment, Light]}{Arcane}
-        \spellnotes This spell can be made permanent with a \spell{permanency} ritual.
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -1695,7 +1694,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Augment]}{Arcane}
-        \spellnotes This spell does not grant the ability to see in magical darkness. It can be made permanent with a \spell{permanency} ritual.
+        \spellnotes This spell does not grant the ability to see in magical darkness.
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
@@ -2468,8 +2467,6 @@
     \begin{spellfooter}
         \spellinfo{Transmutation [Alteration, Sizing]}{Nature, Strength, Transmutation}
         \spellnotes A typical humanoid creature whose size increases to Large has a space of 10 feet and a natural reach of 10 feet. \sizingspellnotes
-
-        This spell can be made permanent with a \spell{permanency} ritual.
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
@@ -3184,8 +3181,6 @@
     \begin{spellfooter}
         \spellinfo{Evocation [Air]}{Air, Nature}
         \spellnotes In addition to the effect noted, a \spell{gust of wind} can do anything that a sudden blast of wind would be expected to do. It can extinguish open flames, create a stinging spray of sand or dust, fan a large fire, overturn delicate awnings or hangings, heel over a small boat, and blow gases or vapors to the edge of its range.
-
-        This spell can be made permanent with a \spell{permanency} ritual.
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
@@ -3633,7 +3628,6 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Illusion [Glamer]}{Arcane, Trickery}
-        \spellnotes This spell can be made permanent (on objects only) with a \spell{permanency} ritual.
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
@@ -3847,7 +3841,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Divination [Awareness]}{Arcane, Nature}
+        \spellinfo{Transmutation [Augment]}{Arcane, Nature}
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
@@ -4178,6 +4172,28 @@
         \spellnotes The somatic components of this spell consist of throwing the target.
         \miscastexplode
     \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Mind Blank}[4]
+    \begin{spellheader}
+        \spelldesc{The target is protected from all effects that influence emotions or thoughts.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spellquicktargeting{One willing creature}{\rngclose}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect The target is immune to all Mind effects, even beneficial ones.
+            \spelldur \durshort
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Abjuration [Shielding]}{Arcane}
+        \miscastrandom
+    \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{3}{Mass}{The spell can affect up to five targets.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Mirror Image}[3]
@@ -4575,7 +4591,6 @@
     \end{spellsubcontent}
     \begin{spellfooter}
         \spellinfo{Universal [Light]}{Arcane}
-        \spellnotes This spell can be made permanent with a \spell{permanency} ritual.
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -4785,7 +4800,7 @@
             \spelltime{Swift action}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target becomes temporarily immune to the effects of poison. Poisons it is exposed to do not make attacks against it. This effect does not prevent the target from becoming poisoned, and any poisons in the target's system when the spell ends will continue their effects normally.
+            \spelleffect The target becomes temporarily unaffected by poisons. Poisons it is exposed to do not make attacks against it. This effect does not prevent the target from becoming poisoned, and any poisons in the target's system when the spell ends will continue their effects normally.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
@@ -5107,8 +5122,6 @@
     \begin{spellfooter}
         \spellinfo{Divination/Transmutation [Augment]}{Arcane}
         \spellnotes The spell does not reveal the method used to obtain invisibility. It does not reveal illusions other than invisibility. It does not reveal creatures who are simply hiding, concealed, or otherwise hard to see.
-
-        This spell can be made permanent with a \spell{permanency} ritual.
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
@@ -5433,7 +5446,7 @@
         \spellinfo{Transmutation [Alteration, Sizing]}{Nature, Transmutation}
         \spellnotes A Small humanoid creature whose size decreases to Tiny has a space of 2-1/2 feet and a natural reach of 0 feet (meaning that it must enter an opponent's square to attack).
 
-        \sizingspellnotes This spell can be made permanent with a \spell{permanency} ritual.
+        \sizingspellnotes
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
@@ -5456,18 +5469,17 @@
 
                 As a standard action, any creature can speak the command word to return the target to its original size. It must be resting on a stable surface. If the command word is spoken while the target is not stable, such as while it is in the air, it returns to its original size as soon as it finds a resting point. Restoring the target to its normal size ends the spell.
             \end{spellattack}
-            \spelldur 24 hours or until discharged
+            \spelldur \durext or until discharged
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Alteration]}{Transmutation}
         \spellnotes  If you recast this spell each day on an object, you can keep it at its small size indefinitely.
-
-        This spell can be made permanent with a \spell{permanency} ritual, in which case the affected object can be shrunk and expanded an indefinite number of times, but only by the original caster.
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
         \spellaugment{1}{Giant}{The spell can affect a target one size category larger. This augment can be used multiple times.}
+        \spellaugment{2}{Repeatable}{After the command word is spoken, the ritual is not discharged. Instead, it is suppressed for 5 minutes, after which time the object shrinks again.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -6127,7 +6139,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Divination [Awareness]}{Arcane, Knowledge}
+        \spellinfo{Divination/Transmutation [Augment, Knowledge]}*{Arcane, Knowledge}
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
@@ -6503,8 +6515,6 @@
     \begin{spellfooter}
         \spellinfo{Evocation [Destructive, Fire, Wall]}{Arcane, Fire, Nature}
         \spellnotes Any part of the wall takes cold damage in excess of your spellpower in a single round is extinguished.
-
-        This spell can be made permanent with a \spell{permanency} ritual. A permanent \spell{wall of fire} that is extinguished by cold damage becomes inactive for 10 minutes, then reforms at normal strength.
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
@@ -6530,8 +6540,6 @@
         \spellnotes The wall can be destroyed. A 5-foot square of wall has hit points equal to five times your spellpower, and hardness equal to your spellpower.
 
         \forcespellnotes
-
-        This spell can be made permanent with a \spell{permanency} ritual.
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -6647,8 +6655,6 @@
         \spellnotes The webs can be destroyed. A 5-foot cube of webs has hit points equal to twice your spellpower, is vulnerable to fire damage, and ignores piercing damage. Any fire can set the webs alight and burn away 5 square feet over the course of 2 rounds. All creatures within flaming webs are \ignited by the flames.
 
         \physicalspellnotes
-
-        This spell can be made permanent with a \spell{permanency} ritual. A permanent \spell{web} that is destroyed regrows in 10 minutes.
         \miscastyou
     \end{spellfooter}
 \end{spellsection}
