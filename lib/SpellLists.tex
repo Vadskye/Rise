@@ -151,6 +151,7 @@ An \M{} or \F{} appearing at the end of a spell's name in the spell lists denote
 
     \SLfireshield[Abjur]
     \SLlivingmissile
+    \SLmindblank
     \SLinvulnerability*
 
     \SLdimensiondoor[Conj]*
@@ -343,164 +344,118 @@ An \M{} or \F{} appearing at the end of a spell's name in the spell lists denote
 \subsection{Arcane Rituals}\label{Arcane Rituals}
 \subsubsection{1st-level Arcane Rituals}
 \begin{rituallist}
-    \spellhead[Abjur]{Alarm} Wards large emanation for 24 hours.
-    \spellhead{Endure Elements} Exist comfortably in hot or cold environments.
-    \spellhead[Conj]{Mount} Summons riding horse for 24 hours.
-    \spellhead{Unseen Servant} Invisible force obeys your commands.
-    \spellhead[Div]{Appraisal} Determine value of item.
-    \spellhead{Identify} Determines properties of magic item.
-    \spellhead{Read Magic} Read magical writing.
-    \spellhead[Evoc]{Floating Disk} Creates 3 ft. diameter horizontal disk that holds 100 lb./level.
-    \spellhead[Illus]{Disguise Self} Changes your appearance.
-    \spellhead{Light} Object shines like a torch.
-    \spellhead{Magic Aura} Alters object's magic aura.
-    \spellhead[Trans]{Erase} Mundane or magical writing vanishes.
-    \spellhead{Mending} Makes minor repairs on an object.
-    \spellhead[Univ]{Arcane Mark} Inscribes a personal rune (visible or invisible).
+    \SLalarm[Abjur]
+    \SLendureelements
+    \SLcreatewater[Conj]
+    \SLmount
+    \SLunseenservant
+    \SLappraisal[Div]
+    \SLidentify
+    \SLreadmagic
+    \SLfloatingdisk[Evoc]
+    \SLdisguiseself[Illus]
+    \SLlight
+    \SLmagicaura
+    \SLerase[Trans]
+    \SLmending
+    \SLpurifysustenance
+    \SLarcanemark[Univ]
 \end{rituallist}
 
 \subsubsection{2nd-level Arcane Rituals}
 \begin{rituallist}
-    \spellhead[Abjur]{Arcane Lock} Magically locks a portal or chest.
-    \spellhead{Invisibility Purge} Suppresses invisibility within large radius.
-    \spellhead{Undetectable Alignment} Conceals alignment for 24 hours.
-    \spellhead[Conj]{Create Food and Water} Conjures sustinence from thin air.
-    \spellhead[Div]{Comprehend Languages} You understand all spoken and written languages.
-    \spellhead{Find Traps} Notice traps better.
-    \spellhead{Whispering Wind} Sends a short message 1 mile/level.
-    \spellhead[Ench]{Zone of Truth} Subjects within medium emanation cannot lie.
-    \spellhead[Illus]{Continual Flame} Makes a permanent, heatless torch.
-    \spellhead{Darkness} Object radiates supernatural shadow.
-    \spellhead{Magic Mouth} Speaks once when triggered.
-    \spellhead[Trans]{Enhance Armor} Increase enhancement bonus of armor.
-    \spellhead{Enhance Weapon} Increase enhancement bonus of weapon.
-    \spellhead{Shape Weapon} Change weapon into similar weapon.
-    \spellhead{Shape Wood} Sculpt wood into any shape.
-    \spellhead{Gentle Repose} Preserves one corpse.
+    \SLarcanelock[Abjur]
+    \SLinvisibilitypurge
+    \SLundetectablealignment
+    \SLcreatesustenance[Conj]
+    \SLcomprehendlanguages[Div]
+    \SLfindtraps
+    \SLzoneoftruth[Ench]
+    \SLdarkness[Illus]
+    \SLmagicmouth
+    \SLenhancearmor[Trans]
+    \SLenhanceweapon
+    \SLgentlerepose
+    \SLshapeweapon
+    \SLshaping
+    \SLwaterbreathing
 \end{rituallist}
-
 \subsubsection{3rd-level Arcane Rituals}
 \begin{rituallist}
-    \spellhead[Abjur]{Binding} Create invisible cage to hold creatures.
-    \spellhead{Nondetection} Hides subject from divination, scrying.
-    \spellhead{Sepia Snake Sigil} Creates text symbol that immobilizes reader.
-    \spellhead[Conj]{Create Object} Creates one cloth or wood object.
-    \spellhead[Div]{Clairaudience/Clairvoyance} Hear or see at a distance for 5 minutes.
-    \spellhead{Telepathic Bond} Mental link lets two creatures communicate.
-    \spellhead[Evoc]{Explosive Runes} Deals 1d6/level damage in a small radius when read.
-    \spellhead{Fire Trap} Opened object deals fire damage.
-    \spellhead{Tiny Hut} Creates shelter for ten creatures.
-    \spellhead[Illus]{Disguise Self}[Greater] Change your appearance at will.
-    \spellhead{Illusory Wall} Wall, floor, or ceiling looks real, but anything can pass through.
-    \spellhead{Phantom Steed} Shadow horse appears for extended duration.
-    \spellhead{Secret Page} Changes one page to hide its real content.
-    \spellhead[Trans]{Sepia Snake Sigil} Creates text symbol that immobilizes reader.
-    \spellhead{Mending}[Greater] Repairs an object.
-    \spellhead{Phantom Steed} Shadow horse appears for extended duration.
-    \spellhead{Shape Stone} Sculpts stone into any shape.
-    \spellhead{Water Breathing} Subjects can breathe underwater.
-    \spellhead[Vivi]{Animate Dead} Creates undead skeletons and zombies.
-    \spellhead{Speak with Dead} Corpse answers one question/two levels.
-    \spellhead[Univ]{Item Attunement} Attune to item to increase its power.
+    \SLbinding[Abjur]
+    \SLnondetection
+    \SLcreateobject[Conj]
+    \SLremotesenses[Div]
+    \SLtelepathicbond
+    \SLexplosiverunes[Evoc]
+    \SLfiretrap
+    \SLtinyhut
+    \SLsecretpage[Trans]
+    \SLanimatedead[Vivi]
+    \SLspeakwithdead
+    \SLitemattunement[Univ]
 \end{rituallist}
 
 \subsubsection{4th-level Arcane Rituals}
 \begin{rituallist}
-    \spellhead[Conj]{Secret Chest}\F Hides expensive chest on Ethereal Plane; you retrieve it at will.
-    \spellhead[Div]{Arcane Eye} Invisible floating eye moves 30 ft./round.
-    \spellhead{Detect Scrying} Alerts you of magical eavesdropping.
-    \spellhead{Tongues} Speak and understand any language.
-    \spellhead[Ench]{Symbol of Persuasion} Trap compels triggering creature to follow \spell{suggestion}.
-    \spellhead[Illus]{Hallucinatory Terrain} Makes one type of terrain appear like another (field into forest, or the like).
-    \spellhead{Illusory Script} Only intended reader can decipher.
-    \spellhead{Seeming} Changes appearance of group of creatures.
-    %\spellhead{Mage's Faithful Hound} Phantom dog can guard, attack.
-    \spellhead[Trans]{Soulbound Repose} Preserves one corpse.
-    \spellhead{Shape Metal} Sculpts metal into any shape.
-    \spellhead[Vivi]{Soulbound Repose} Preserves one corpse.
-    \spellhead{Remove Curse} Frees object or person from curse.
+    \SLremovecurse[Abjur]
+    \SLarcaneeye[Div]
+    \SLdetectscrying
+    \SLsending
+    \SLtongues
+    \SLhallucinatoryterrain[Illus]
+    \SLfalsevision
 \end{rituallist}
 
 \subsubsection{5th-level Arcane Rituals}
 \begin{rituallist}
-    \spellhead[Abur]{Break Enchantment} Frees subjects from enchantments, alterations, curses, and petrification.
-    \spellhead{Dimensional Lock} Teleportation and interplanar travel blocked for 30 days.
-    \spellhead{Mage's Private Sanctum} Prevents anyone from viewing or scrying an area for 24 hours.
-    \spellhead[Conj]{Mage's Faithful Hound} Phantom dog can guard, attack.
-    \spellhead{Planar Binding}[Lesser] Traps extraplanar creature of 6 HV or less until it performs a task.
-    \spellhead[Div]{Apparition} See, hear, and speak at a distance.
-    \spellhead{Contact Other Plane} Lets you ask question of extraplanar entity.
-    \spellhead{Dream} Sends message to anyone sleeping.
-    \spellhead{Legend Lore}\F Lets you learn tales about a person, place, or thing.
-    \spellhead{Scrying}\F Spies on subject from a distance.
-    \spellhead{Sending} Delivers short message anywhere, instantly.
-    \spellhead{Sensor Swarm} Floating sensors scout for you.
-    \spellhead[Illus]{Apparition} See, hear, and speak at a distance.
-    \spellhead{Dream} Sends message to anyone sleeping.
-    \spellhead{False Vision} Fools scrying with an illusion.
-    \spellhead[Trans]{Fabricate} Transforms raw materials into finished items.
-    \spellhead{Passwall} Creates passage through wood or stone wall.
-    \spellhead{Sending} Delivers short message anywhere, instantly.
-    \spellhead{Shape Weapon}[Greater] Change weapon into any other weapon.
-    \spellhead[Vivi]{Create Undead} Creates ghouls, ghasts, mummies, or mohrgs.
-    \spellhead{Symbol of Pain} Trap fills triggering creature with pain.
-    \spellhead[Univ]{Permanency} Makes certain spells permanent.
+    \SLbreakenchantment[Abjur]
+    \SLdimensionallock
+    \SLprivatesanctum
+    \SLcontactotherplane[Div]
+    \SLdream
+    \SLlegendlore
+    \SLscrying
+    \SLsensorswarm
+    \SLdream[Illus]
+    \SLfabricate[Trans]
+    \SLpasswall
 \end{rituallist}
 
 \subsubsection{6th-level Arcane Rituals}
 \begin{rituallist}
-    \spellhead{Plane Shift}\F As many as eight subjects travel to another plane.
-    \spellhead{Teleport} Instantly transports you as far as 100 miles/level.
-    \spellhead[Div]{Find the Path} Shows most direct way to a location.
-    \spellhead{Nightmare} Sends vision dealing 1d10 damage, fatigue.
-    \spellhead[Ench]{Geas/Quest} Commands subject to perform task.
-    \spellhead{Symbol of Insanity} Trap drives triggering creature insane.
-    \spellhead[Illus]{Nightmare} Sends vision dealing 1d10 damage, fatigue.
-    \spellhead{Permanent Image} Includes sight, sound, and smell.
-    \spellhead{Shadow Walk} Step into shadow to travel rapidly.
-    \spellhead[Trans]{Overland Flight} Subject gains 30' fly speed for a long time.
+    \SLplaneshift[Conj]
+    \SLteleport
+    \SLfindthepath[Div]
+    \SLgeasquest[Ench]
+    \SLoverlandflight
+    \SLmoveearth[Trans]
 \end{rituallist}
 
 \subsubsection{7th-level Arcane Rituals}
 \begin{rituallist}
-%\spellhead[Arcana]{Binding} Utilizes an array of techniques to imprison a creature.
-    \spellhead[Abjur]{Sequester} Subject is invisible to sight and scrying; renders creature comatose.
-    \spellhead[Conj]{Clone}\M Create inert duplicate of creature.
-    \spellhead{Instant Summons} Prepared object appears in your hand.
-    \spellhead{Mordenkainen's Magnificent Mansion}\F Door leads to extradimensional mansion.
-    \spellhead{Phase Door} Creates an invisible passage through wood or stone.
-    \spellhead{Planar Binding} As lesser planar binding, but up to 12th level.
-    \spellhead{Teleport Object} As teleport, but affects a touched object.
-    \spellhead[Div]{Scrying}[Greater] As scrying, but faster and longer.
-    \spellhead{Vision} As legend lore, but quicker and strenuous.
-%    \spellhead[Ench]{Symbol of Fear} Trap frightens triggering creature.
-    \spellhead[Ench]{Symbol of Sleep} Trap compels triggering creature to fall asleep.
-    \spellhead[Evoc]{Control Weather} Change local weather.
-    \spellhead[Illus]{Programmed Image} As major image, plus triggered by event.
-    \spellhead{Symbol of Death} Trap kills triggering creature.
-    \spellhead[Trans]{Sequester} Subject is invisible to sight and scrying; renders creature comatose.
+    \SLclone[Conj]
+    \SLinstantrefuge
+    \SLmagnificentmansion
+    \SLphasedoor
+    \SLteleportobject
+    \SLcontrolweather[Evoc]
+    \SLprogrammedimage
+    \SLsequester[Illus]
+    \SLsequester[Trans]
 \end{rituallist}
 
 \subsubsection{8th-level Arcane Rituals}
 \begin{rituallist}
-    \spellhead[Conj]{Teleport}[Greater] As teleport, but no range limit and no off-target arrival.
-    \spellhead[Div]{Demand} As \spell{sending}, plus you can send \spell{suggestion}.
-    \spellhead{Discern Location} Reveals exact location of creature or object.
-    \spellhead{Sensor Swarm}[Greater] As sensor swarm, but eyes have darkvision and \spell{see invisibility}.
-    \spellhead[Ench]{Demand} As \spell{sending}, plus you can send \spell{suggestion}.
-    \spellhead[Illus]{Screen} Illusion hides area from vision, scrying.
-    \spellhead[Vivi]{Create[Greate] Undead}\M Creates shadows, wraiths, spectres, or devourers.
+    \SLdiscernlocation
 \end{rituallist}
 
 \subsubsection{9th-level Arcane Rituals}
 \begin{rituallist}
-    \spellhead[Abjur]{Emancipation} Releases creature from imprisonment, many other impediments.
-    \spellhead{Mind Blank} Subject is immune to mental/emotional magic and scrying.
-    \spellhead[Conj]{Planar Binding}[Greater] As lesser planar binding, but up to 18th level.
-    \spellhead[Ench]{Antipathy} Object or location affected by spell repels certain creatures.
-    \spellhead{Sympathy}\F Object or location attracts certain creatures.
-    \spellhead[Conj]{Teleportation Circle} Circle teleports any creature inside to designated spot.
-    \spellhead[Vivi]{Soul Bind}\F Traps newly dead soul to prevent resurrection.
+    \SLemancipation[Abjur]
+    \SLantipathy[Ench]
+    \SLsympathy
+    \SLsoulbind[Vivi]
 \end{rituallist}
 
 \section{Divine Magic}\label{Divine Magic}
@@ -937,109 +892,84 @@ Summoning spells summon water elementals or aquatic creatures only.
 \subsection{Divine Rituals}\label{Divine Rituals}
 \subsubsection{1st-level Divine Rituals}
 \begin{rituallist}
-    \spellhead{Bless Water} Makes holy water.
-    \spellhead{Create Water} Creates pure water.
-    \spellhead{Endure Elements} Exist comfortably in hot or cold environments.
-    \spellhead{Identify} Determines properties of magic item.
-    \spellhead{Mending} Makes minor repairs on an object.
-    \spellhead{Light} Object shines like a torch.
-    \spellhead{Purify Food and Drink} Purifies food or water.
-    \spellhead{Read Magic} Read magical writing.
+    \SLblesswater
+    \SLcreatewater
+    \SLendureelements
+    \SLidentify
+    \SLlight
+    \SLmending
+    \SLpurifysustenance
+    \SLreadmagic
 \end{rituallist}
 
 \subsubsection{2nd-level Divine Rituals}
 \begin{rituallist}
-    \spellhead{Augury} Learns whether an action will be good or bad.
-    \spellhead{Comprehend Languages} You understand all spoken and written languages.
-    \spellhead{Continual Flame} Makes a permanent, heatless torch.
-    \spellhead{Create Food and Water} Conjures sustinence from thin air.
-    \spellhead{Darkness} Object radiates supernatural shadow.
-    \spellhead{Find Traps} Notice traps better.
-    \spellhead{Enhance Armor} Increase enhancement bonus of armor.
-    \spellhead{Enhance Weapon} Increase enhancement bonus of weapon.
-    \spellhead{Gentle Repose} Preserves one corpse.
-    \spellhead{Invisibility Purge} Dispels invisibility within large radius.
-    \spellhead{Restore Attributes}[Lesser] Dispels magical ability penalty or repairs 1d4 ability damage.
-    \spellhead{Shape Wood} Sculpts wood into any shape.
-    \spellhead{Zone of Truth} Subjects within medium emanation cannot lie.
+    \SLaugury
+    \SLcomprehendlanguages
+    \SLcreatesustenance
+    \SLdarkness
+    \SLfindtraps
+    \SLenhancearmor
+    \SLenhanceweapon
+    \SLgentlerepose
+    \SLinvisibilitypurge
+    \SLrestoreattributes
+    \SLshaping
+    \SLzoneoftruth
 \end{rituallist}
 
 \subsubsection{3rd-level Divine Rituals}
 \begin{rituallist}
-    \spellhead{Animate Dead} Creates undead skeletons and zombies.
-    \spellhead{Binding} Create invisible cage to hold creatures.
-    \spellhead{Contagion} Infects subject with chosen disease.
-    \spellhead{Glyph of Warding}\M Inscription harms those who pass it.
-    \spellhead{Item Attunement} Attune to item to increase its power.
-    \spellhead{Mending}[Greater] Repairs an object.
-    \spellhead{Remove Blindness/Deafness} Cures normal or magical conditions.
-    \spellhead{Remove Disease} Cures all diseases affecting subject.
-    \spellhead{Speak with Dead} Corpse answers one question/two levels.
-    \spellhead{Remove Curse} Frees object or person from curse.
-    \spellhead{Shape Stone} Sculpts stone into any shape.
-    \spellhead{Water Breathing} Subjects can breathe underwater.
+    \SLanimatedead
+    \SLbinding
+    \SLcontagion
+    \SLitemattunement
+    \SLrestoresenses
+    \SLremovedisease
+    \SLspeakwithdead
+    \SLwaterbreathing
 \end{rituallist}
 
 \subsubsection{4th-level Divine Rituals}
 \begin{rituallist}
-    \spellhead{Divination} Provides useful advice for specific proposed actions.
-    \spellhead{Neutralize Poison} Immunizes subject against poison, detoxifies venom in or on subject.
-    \spellhead{Remove Curse} Frees object or person from curse.
-    \spellhead{Restore Attributes} Restores level and attribute score drains.
-    \spellhead{Sending} Delivers short message anywhere, instantly.
-    \spellhead{Soulbound Repose} Preserves one corpse.
-    \spellhead{Shape Metal} Sculpts metal into any shape.
-    \spellhead{Tongues} Speak and understand any language.
+    \SLdivination
+    \SLremovecurse
+    \SLsending
+    \SLtongues
 \end{rituallist}
 
 \subsubsection{5th-level Divine Rituals}
 \begin{rituallist}
-    \spellhead{Atonement}\F\M Removes burden of misdeeds from subject.
-    \spellhead{Break Enchantment} Frees subjects from enchantments, alterations, curses, and petrification.
-    \spellhead{Commune} Deity answers one yes-or-no question/level.
-    \spellhead{Create Undead} Create ghouls, ghasts, mummies, or mohrgs.
-    \spellhead{Dimensional Lock} Blocks teleportation and interplanar travel for a month.
-    \spellhead{Dream} Sends message to anyone sleeping.
-    \spellhead{Mark of Justice} Designates action that will trigger curse on subject.
-    \spellhead{Nightmare} Sends vision dealing 1d10 damage, fatigue.
-    \spellhead{Lesser Resurrection} Restores life to subject who died as long as thirty days ago.
-    \spellhead{Scrying}\F Spies on subject from a distance.
-    \spellhead{Unhallow} Designates location as unholy.
+    \SLatonement
+    \SLbreakenchantment
+    \SLcommune
+    \SLdimensionallock
+    \SLdream
+    \SLresurrection
+    \SLscrying
 \end{rituallist}
 
 \subsubsection{6th-level Divine Rituals}
 \begin{rituallist}
-    \spellhead{Find the Path} Shows most direct way to a location.
-    \spellhead{Geas/Quest} Commands subject to perform task.
-    \spellhead{Heroes' Feast} Feast cures and grants combat bonuses.
-    \spellhead{Plane Shift}\F As many as eight subjects travel to another plane.
-    \spellhead{Wind Walk} You and your allies turn vaporous and travel fast.
+    \SLfindthepath
+    \SLgeasquest
+    \SLplaneshift
 \end{rituallist}
 
 \subsubsection{7th-level Divine Rituals}
 \begin{rituallist}
-    \spellhead{Control Weather} Change local weather.
-    \spellhead{Glyph of Warding}[Greater] As \spell{glyph of warding}, but up to 10d10 damage or 6th level spell.
-    \spellhead{Hallow} Designates location as holy.
-    \spellhead{Refuge} Alters item to transport its possessor to you.
-    \spellhead{Restore Attributes}[Greater] As restore attributes, plus other conditions.
-    \spellhead{Resurrection} Fully restore dead subject.
-    \spellhead{Scrying}[Greater] As \spell{scrying}, but faster and longer.
-    \spellhead{Symbol of Destruction} Trap kills triggering creature.
+    \SLcontrolweather
+    \SLinstantrefuge
 \end{rituallist}
 
 \subsubsection{8th-level Divine Rituals}
 \begin{rituallist}
-    \spellhead{Create[Greate] Undead} Create shadows, wraiths, spectres, or devourers.
-    \spellhead{Discern Location} Reveals exact location of creature or object.
-    \spellhead{Forbiddance} Blocks planar travel, damages creatures of different alignment.
+    \SLdiscernlocation
 \end{rituallist}
 
 \subsubsection{9th-level Divine Rituals}
 \begin{rituallist}
-%\spellhead{Astral Projection} Projects you and companions onto Astral Plane.
-    \spellhead{Soul Bind}\F Traps newly dead soul to prevent resurrection.
-    \spellhead{True Resurrection} As resurrection, plus remains aren't needed.
+    \SLsoulbind
 \end{rituallist}
 
 \section{Nature Magic}\label{Nature Magic}
@@ -1155,86 +1085,77 @@ Summoning spells summon water elementals or aquatic creatures only.
 
 \subsubsection{1st-level Nature Rituals}
 \begin{rituallist}
-    \spellhead{Endure Elements} Exist comfortably in hot or cold environments.
-    \spellhead{Light} Object shines like a torch.
-    \spellhead{Mending} Makes minor repairs on an object.
-    \spellhead{Purify Food and Drink} Purifies food or water.
-    \spellhead{Read Magic} Read magical writing.
+    \SLcreatewater
+    \SLendureelements
+    \SLlight
+    \SLmending
+    \SLpurifysustenance
+    \SLreadmagic
 \end{rituallist}
 
 \subsubsection{2nd-level Nature Rituals}
 \begin{rituallist}
-    \spellhead{Animal Messenger} Sends a Tiny animal to a specific place.
-    \spellhead{Comprehend Languages} You understand all spoken and written languages.
-    \spellhead{Continual Flame} Makes a permanent, heatless torch.
-    \spellhead{Create Food and Water} Conjures sustinence from thin air.
-    \spellhead{Enhance Armor} Increase enhancement bonus of armor.
-    \spellhead{Enhance Weapon} Increase enhancement bonus of weapon.
-    \spellhead{Find Traps} Notice traps better.
-    \spellhead{Gentle Repose} Preserves one corpse.
-    \spellhead{Pass Without Trace} Creatures leave no tracks.
-    \spellhead{Restore Attributes}[Lesser] Dispels magical ability penalty or repairs 1d4 ability damage.
-    \spellhead{Shape Wood} Sculpts wood into any shape.
-    \spellhead{Whispering Wind} Sends a short message up to 10 miles.
+    \SLanimalmessenger
+    \SLcomprehendlanguages
+    \SLcreatesustenance
+    \SLenhancearmor
+    \SLenhanceweapon
+    \SLfindtraps
+    \SLgentlerepose
+    \SLpasswithouttrace
+    \SLrestoreattributes
+    \SLshaping
 \end{rituallist}
 
 \subsubsection{3rd-level Nature Rituals}
 \begin{rituallist}
-    \spellhead{Contagion} Infects subject with chosen disease.
-    \spellhead{Fire Trap} Opened object deals fire damage.
-    \spellhead{Ironwood} Magic wood is strong as steel.
-    \spellhead{Item Attunement} Attune to item to increase its power.
-    \spellhead{Mending}[Greater] Repairs an object.
-    \spellhead{Remove Blindness/Deafness} Cures normal or magical conditions.
-    \spellhead{Remove Disease} Cures all diseases affecting subject.
-    \spellhead{Shape Stone} Sculpts stone into any shape.
-    \spellhead{Water Breathing} Subjects can breathe underwater.
+    \SLcontagion
+    \SLfiretrap
+    \SLironwood
+    \SLitemattunement
+    \SLrestoresenses
+    \SLremovedisease
+    \SLwaterbreathing
 \end{rituallist}
 
 \subsubsection{4th-level Nature Rituals}
 \begin{rituallist}
-    \spellhead{Neutralize Poison} Immunizes subject against poison, detoxifies venom in or on subject.
-    \spellhead{Reincarnate} Brings dead subject back in a random body.
-    \spellhead{Shape Metal} Sculpts metal into any shape.
-    \spellhead{Tongues} Speak and understand any language.
+    \SLreincarnate
+    \SLtongues
 \end{rituallist}
 
 \subsubsection{5th-level Nature Rituals}
 \begin{rituallist}
-    \spellhead{Atonement}\F\M Removes burden of misdeeds from subject.
-    \spellhead{Commune with Nature} Learn about terrain for 10 miles.
-    \spellhead{Dream} Sends message to anyone sleeping.
-    \spellhead{Fabricate} Transforms raw materials into finished items.
-    \spellhead{Passwall} Creates passage through wood or stone wall.
-    \spellhead{Scrying}\F Spies on subject from a distance.
-    \spellhead{Tree Stride} Step from one tree to another far away.
+    \SLatonement
+    \SLcommunewithnature
+    \SLdream
+    \SLdream
+    \SLfabricate
+    \SLpasswall
+    \SLscrying
+    \SLtreestride
 \end{rituallist}
 
 \subsubsection{6th-level Nature Rituals}
 \begin{rituallist}
-    \spellhead{Find the Path} Shows most direct way to a location.
-    \spellhead{Heroes' Feast} Feast cures and grants combat bonuses.
-    \spellhead{Move Earth} Digs trenches and builds hills.
-    \spellhead{Nightmare} Sends vision dealing 1d10 damage, fatigue.
-    \spellhead{Transport via Plants} Move instantly from one plant to another of the same kind.
-    \spellhead{Wind Walk} You and your allies turn vaporous and travel fast.
+    \SLfindthepath
+    \SLmoveearth
+    \SLtransportviaplants
 \end{rituallist}
 
 \subsubsection{7th-level Nature Rituals}
 \begin{rituallist}
-    \spellhead{Awaken} Animal or tree gains human intellect
-    \spellhead{Control Weather} Change local weather.
-    \spellhead{Scrying}[Greater] As \spell{scrying}, but faster and longer.
+    \SLawaken
+    \SLcontrolweather
 \end{rituallist}
 
 \subsubsection{8th-level Nature Rituals}
 \begin{rituallist}
-    \spellhead{Discern Location} Reveals exact location of creature or object.
+    \SLdiscernlocation
 \end{rituallist}
 
 \subsubsection{9th-level Nature Rituals}
 \begin{rituallist}
-    \spellhead{Antipathy} Object or location affected by spell repels certain creatures.
-    \spellhead{Shambler} Summons 1d4\plus2 shambling mounds to fight for you.
-    \spellhead{Sympathy} Object or location attracts certain creatures.
+    \SLantipathy
+    \SLsympathy
 \end{rituallist}
