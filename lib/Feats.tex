@@ -139,186 +139,211 @@ Some strike feats instead require a specific action to use.
 \subsection{General Feats}
 % Feat names must follow ``have'', ``are (a)'', or ``can''.
 \begin{longtabuwrapper}
-    \begin{longtabu}{>{\lcol}p{10em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{3em}}
-        \tb{General Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Page} \\
-        \featref{Attribute Training} & \x & Gain \plus1 to an attribute & \featpref{Attribute Training} \\
-        \featref{Deathless} & Con 10 & Immune to death effects & \featpref{Deathless} \\
-        \featref{Destructive} & Str 3 & Gain \plus5 to breaking things & \featpref{Destructive} \\
-        \featref{Diehard} & Con 10 & Halve penalties from critical damage & \featpref{Diehard} \\
-        \featref{Fearless} & Wil 10 & Immune to fear effects & \featpref{Fearless} \\
-        \featref{Iron Will} & Int 3 or Wil 3 & \plus2 bonus to Mental defense & \featpref{Iron Will} \\
-        \featref{Lightning Reflexes} & Dex 3 or Per 3 &  \plus2 bonus to Reflex defense & \featpref{Lightning Reflexes} \\
-        \featref{Perfect Health} & Con 3 & Immune to disease, later poison & \featpref{Perfect Health} \\
-        \featref{Pierce Delusions} & Per 10 & Immune to delusion effects & \featpref{Pierce Delusions} \\
-        \featref{Stubborn} & Wil 10 & Immune to compulsion effects & \featpref{Stubborn} \\
-        \featref{Swift} & \x & Increase speed by 5 feet & \featpref{Swift} \\
-        \featref{Toughness} & Con 3 or Str 3 & \plus2 to Fortitude defense & \featpref{Toughness} \\
+    \begin{longtabu}{>{\lcol}p{10em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{8em} >{\lcol}p{3em}}
+        \tb{General Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
+        \featref{Attribute Training} & \x & Gain \plus1 to an attribute           & \x & \featpref{Attribute Training} \\
+        \featref{Arcane Spellgift} & 2nd level, Wil 1 & Gain arcane spell as spell-like ability & Spellgift & \featpref{Arcane Spellgift} \\
+        \featref{Deathless} & Con 10 & Immune to death effects                    & \x & \featpref{Deathless} \\
+        \featref{Destructive} & Str 3 & Gain \plus5 to breaking things            & \x & \featpref{Destructive} \\
+        \featref{Diehard} & Con 10 & Halve penalties from critical damage         & \x & \featpref{Diehard} \\
+        \featref{Divine Spellgift} & 2nd level, Wil 1 & Gain divine spell as spell-like ability & Spellgift & \featpref{Divine Spellgift} \\
+        \featref{Fearless} & Wil 10 & Immune to fear effects                      & \x & \featpref{Fearless} \\
+        \featref{Iron Will} & Int 3 or Wil 3 & \plus2 to Mental defense           & \x & \featpref{Iron Will} \\
+        \featref{Lightning Reflexes} & Dex 3 or Per 3 &  \plus2 to Reflex defense & \x & \featpref{Lightning Reflexes} \\
+        \featref{Natural Spellgift} & 2nd level, Wil 1 & Gain natural spell as spell-like ability & Spellgift & \featpref{Natural Spellgift} \\
+        \featref{Perfect Health} & Con 3 & Immune to disease, later poison        & \x & \featpref{Perfect Health} \\
+        \featref{Pierce Delusions} & Per 10 & Immune to delusion effects          & \x & \featpref{Pierce Delusions} \\
+        \featref{Stubborn} & Wil 10 & Immune to compulsion effects                & \x & \featpref{Stubborn} \\
+        \featref{Swift} & \x & Increase speed by 5 feet                           & Mobility & \featpref{Swift} \\
+        \featref{Toughness} & Con 3 or Str 3 & \plus2 to Fortitude defense        & \x & \featpref{Toughness} \\
 
         \midrule
-        \tb{Bloodline Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Page} \\
-        \featref{Celestial Heritage} & Nonevil alignment & Gain retributive aura & \featpref{Celestial Heritage} \\
-            \tind \featref{Celestial Blessing} & Celestial Heritage & Gain ability to bless allies & \featpref{Celestial Blessing} \\
-            \tind \featref{Celestial Body} & Nonevil alignment, Celestial Heritage & Gain physical damage reduction & \featpref{Celestial Body} \\
-            \tind \featref{Celestial Smiting} & Nonevil alignment, Celestial Heritage & Smite evil more often, more accurately & \featpref{Celestial Smiting} \\
-            \tind \featref{Celestial Soul} & Nonevil alignment, any three celestial feats & Gain spell resistance against evil & \featpref{Celestial Soul} \\
-            \tind \featref{Celestial Wings} & Any three celestial bloodline feats & Gain wings to slow falls, glide, eventually fly & \featpref{Celestial Wings} \\
-        \featref{Draconic Heritage} & \x & Resist damage from chosen dragon's energy type & \featpref{Draconic Heritage} \\
-            \tind \featref{Draconic Breath} & Con 3, any three dragon bloodline feats & Gain dragon's breath weapon & \featpref{Draconic Breath} \\
-            \tind \featref{Draconic Might} & Any three dragon bloodline feats & Gain \plus1 to physical attribute & \featpref{Draconic Might} \\
-            \tind \featref{Draconic Mind} & Any three dragon bloodline feats & Gain \plus1 to mental attribute & \featpref{Draconic Mind} \\
-            \tind \featref{Draconic Scales} & Draconic Heritage & Gain natural armor & \featpref{Draconic Scales} \\
-            \tind \featref{Draconic Senses} & Draconic Heritage & Gain low-light vision, possibly darkvision & \featpref{Draconic Senses} \\
-            \tind \featref{Draconic Spellpower} & Draconic Heritage & Gain bonus to spellpower & \featpref{Draconic Spellpower} \\
-            \tind \featref{Draconic Voice} & Draconic Heritage & Gain bonus to Intimidate and Persuasion checks & \featpref{Draconic Voice} \\
-            \tind \featref{Draconic Weapons} & Draconic Heritage & Gain bite attack, possibly claws & \featpref{Draconic Weapons} \\
-            \tind \featref{Draconic Wings} & Any three dragon bloodline feats & Gain wings to slow falls, glide, eventually fly & \featpref{Draconic Wings} \\
-        \featref{Fae Heritage} & \x & Gain minor spell-like abilities & \featpref{Fae Heritage} \\
+        \tb{Bloodline Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
+        \featref{Celestial Heritage} & Nonevil alignment & Gain retributive aura & Bloodline, Celestial & \featpref{Celestial Heritage} \\
+            \tind \featref{Celestial Blessing} & Celestial Heritage & Gain ability to bless allies & Bloodline, Celestial & \featpref{Celestial Blessing} \\
+            \tind \featref{Celestial Body} & Nonevil alignment, Celestial Heritage & Gain physical damage reduction & Bloodline, Celestial & \featpref{Celestial Body} \\
+            \tind \featref{Celestial Smiting} & Nonevil alignment, Celestial Heritage & Smite evil more often, more accurately & Bloodline, Celestial & \featpref{Celestial Smiting} \\
+            \tind \featref{Celestial Soul} & Nonevil alignment, any three celestial feats & Gain spell resistance against evil & Bloodline, Celestial & \featpref{Celestial Soul} \\
+            \tind \featref{Celestial Wings} & Any three celestial bloodline feats & Gain wings to slow falls, glide, eventually fly & Bloodline, Celestial & \featpref{Celestial Wings} \\
+        \featref{Draconic Heritage} & \x & Resist damage from chosen dragon's energy type & Bloodline, Draconic & \featpref{Draconic Heritage} \\
+            \tind \featref{Draconic Breath} & Con 3, any three dragon bloodline feats & Gain dragon's breath weapon & Bloodline, Draconic & \featpref{Draconic Breath} \\
+            \tind \featref{Draconic Might} & Any three dragon bloodline feats & Gain \plus1 to physical attribute & Bloodline, Draconic & \featpref{Draconic Might} \\
+            \tind \featref{Draconic Mind} & Any three dragon bloodline feats & Gain \plus1 to mental attribute & Bloodline, Draconic & \featpref{Draconic Mind} \\
+            \tind \featref{Draconic Scales} & Draconic Heritage & Gain natural armor & Bloodline, Draconic & \featpref{Draconic Scales} \\
+            \tind \featref{Draconic Senses} & Draconic Heritage & Gain low-light vision, possibly darkvision & Bloodline, Draconic & \featpref{Draconic Senses} \\
+            \tind \featref{Draconic Spellpower} & Draconic Heritage & Gain bonus to spellpower & Bloodline, Draconic & \featpref{Draconic Spellpower} \\
+            \tind \featref{Draconic Voice} & Draconic Heritage & Gain bonus to Intimidate and Persuasion checks & Bloodline, Draconic & \featpref{Draconic Voice} \\
+            \tind \featref{Draconic Weapons} & Draconic Heritage & Gain bite attack, possibly claws & Bloodline, Draconic & \featpref{Draconic Weapons} \\
+            \tind \featref{Draconic Wings} & Any three dragon bloodline feats & Gain wings to slow falls, glide, eventually fly & Bloodline, Draconic & \featpref{Draconic Wings} \\
+        \featref{Fae Heritage} & \x & Gain minor spell-like abilities & Bloodline & \featpref{Fae Heritage} \\
 
         \midrule
-        \tb{Class Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Page} \\
-        \featref{Battletrance} & Rage ability & Enter trance instead of angry rage & \featpref{Battletrance} \\
-        \featref{Extra Ability} & Class feature with limited uses & Gain additional uses of class feature & \featpref{Extra Ability} \\
-        \featref{Frenzy} & Rage ability & Enter frenzy instead of angry rage & \featpref{Frenzy} \\
-        \featref{Insightful Fighter} & Adaptive style ability & Use Perception for adaptive style (and battlemaster) & \featpref{Insightful Fighter} \\
-        \featref{Insightful Rogue} & Combat trick ability & Use Perception for combat tricks & \featpref{Insightful Rogue} \\
-        \featref{Legendary Versatility} & 5 levels in two classes & Treat multiple classes as base classes & \featpref{Legendary Versatility} \\
-        \featref{Resist Maneuver} & Fighter & \plus5 to resist chosen maneuver & \featpref{Resist Maneuver} \\
-        \featref{Shield Discipline} & Armor discipline ability & Apply armor discipline with shields \\
-        \featref{Spellwarped Ritualist} & Spellwarped & Gain ability to perform rituals using spellwarped powers \\
-        \featref{Versatility} & Levels in two different classes & Increase effective class level with abilities \\
+        \label{cap:Class Feats} \tb{Class Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
+        \featref{Athletic Rage} & Rage, barbarian 2 & Gain bonus to athletic skills while raging & Rage & \featpref{Athletic Rage} \\
+        \featref{Battlemaster} & Int 5, fighter 10 & Grant ally a combat feat & Combat & \featpref{Battlemaster} \\
+            \tind \featref{Battlemaster, Empowered} & Int 10, fighter 16 & Grant ally two combat feats & Combat & \featpref{Battlemaster, Empowered} \\
+        \featref{Battletrance} & Rage, barbarian 2 & Enter trance instead of angry rage & Rage & \featpref{Battletrance} \\
+        \featref{Charming Wild Speech} & Wild speech, druid 7 & Charm target with wild speech & \x & \featpref{Charming Wild Speech} \\
+            \tind \featref{Dominating Wild Speech} & Wild speech, druid 15 & Dominate target with wild speech & \x & \featpref{Dominating Wild Speech} \\
+        \featref{Critical Rage} & Rage, barbarian 10 & Increased critical range while raging & Rage & \featpref{Critical Rage} \\
+        \featref{Destructive Rage} & Rage, barbarian 6 & Ignore hardness while raging & Rage & \featpref{Destructive Rage} \\
+        \featref{Elemental Speech} & Wild speech, druid 9 & Speak with an element & \x & \featpref{Elemental Speech} \\
+        \featref{Endless Rage} & Rage, barbarian 18 & Rage lasts as long as you take damage & Rage & \featpref{Endless Rage} \\
+        \featref{Extra Ability} & Class feature with limited uses & Gain additional uses of class feature & \x & \featpref{Extra Ability} \\
+        \featref{Fearsome Rage} & Rage, barbarian 6 & Attacks make foes shaken while raging & Rage & \featpref{Fearsome Rage} \\
+        \featref{Frenzy} & Rage, barbarian 6 & Enter frenzy instead of angry rage & Rage & \featpref{Frenzy} \\
+        \featref{Furious Style} & Rage, barbarian 6 & Change combat styles while raging & Rage & \featpref{Furious Style} \\
+        \featref{Insightful Fighter} & Adaptive style & Use Perception for adaptive style (and battlemaster) & \x & \featpref{Insightful Fighter} \\
+        \featref{Invulnerable Rage} & Rage, barbarian 14 & Improve damage reduction while raging & Rage & \featpref{Invulnerable Rage} \\
+        \featref{Insightful Rogue} & Combat trick & Use Perception for combat tricks & \x & \featpref{Insightful Rogue} \\
+        \featref{Legendary Versatility} & 5 levels in two classes & Treat multiple classes as base classes & \x & \featpref{Legendary Versatility} \\
+        \featref{Ki Focus} & Manifest \ki, monk 8 & \Ki manifestation lasts longer & \x \featpref{Ki Focus} \\
+        \tind \featref{Ki Specialization} & Ki Focus, manifest \ki, monk 12 & \Ki manifestation lasts all day & \x \featpref{Ki Specialization} \\
+        \featref{Ki Training} & Manifest \ki & Learn additional ki manifestation & \x \featpref{Ki Training} \\
+        \featref{Mindless Rage} & Rage, barbarian 10 & Immune to Mind effects while raging & Rage & \featpref{Mindless Rage} \\
+        \featref{Overpowering Rage} & Rage, barbarian 10 & Gain combat maneuver bonus while raging & Rage & \featpref{Overpowering Rage} \\
+        \featref{Overwhelming Rage} & Rage, barbarian 6 & Increase overwhelm penalties while raging & Rage & \featpref{Overwhelming Rage} \\
+        \featref{Patient Rage} & Rage, barbarian 2 & Don't take damage for not attacking while raging & Rage & \featpref{Patient Rage} \\
+        \featref{Plant Speech} & Wild speech, druid 5 & Speak with plants & \x & \featpref{Plant Speech} \\
+        \featref{Rapid Combat Adaptation} & Adaptive combat, Int 5, fighter 8 & Change combat feats more quickly & \x & \featpref{Rapid Combat Adaptation} \\
+            \tind \featref{Instant Combat Adaptation} & Adaptive combat, Rapid Combat Adaptation, Int 10, fighter 18 & Change combat feats instantly & \x & \featpref{Instant Combat Adaptation} \\
+        \featref{Rapid Rage} & Rage, barbarian 2 & \plus10 foot speed while raging  & Rage & \featpref{Rapid Rage} \\
+        \featref{Resist Maneuver} & Fighter & \plus5 to resist chosen maneuver & \x & \featpref{Resist Maneuver} \\
+        \featref{Savage Rage} & Rage, barbarian 2 & Fight better unarmed while raging & Rage & \featpref{Savage Rage} \\
+        \featref{Shield Discipline} & Armor discipline & Apply armor discipline with shields \\
+        \featref{Spellbreaker Rage} & Rage, barbarian 10 & Gain spell resistance while raging & Rage & \featpref{Spellbreaker Rage} \\
+        \featref{Spellwarped Ritualist} & Spellwarped & Gain ability to perform rituals using spellwarped powers & \x & \featpref{Spellwarped Ritualist} \\
+        \featref{Taunting Rage} & Rage, barbarian 10 & Attacks taunt foes while raging & Rage & \featpref{Taunting Rage} \\
+        \featref{Vermin Speech} & Wild speech, druid 3 & Speak with vermin & \x & \featpref{Vermin Speech} \\
+        \featref{Wary Rage} & Rage, barbarian 2 & Reduce defense penalty while raging & Rage & \featpref{Wary Rage} \\
+        \featref{Willful Rage} & Rage, barbarian 2 & Gain Mental defense bonus while raging & Rage & \featpref{Willful Rage} \\
+        \featref{Versatility} & Levels in two different classes & Increase effective class level with abilities & \x & \featpref{Versatility} \\
 
         \midrule
-        \tb{Item Creation Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Page} \\
-        \featref{Imbue Magic} & 1st level spells or Craft (any) 5 ranks & Create magic items & \featpref{Imbue Magic} \\
-        \featref{Imbuement Admixture} & 2nd level spells, 6th & Combine multiple spells to create items & \featpref{Imbuement Admixture} \\
-        \featref{Versatile Crafter} & Craft (any) 10 ranks & Craft items from many schools of magic & \featpref{Versatile Crafter} \\
+        \tb{Item Creation Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
+        \featref{Imbue Magic} & 1st level spells or Craft (any) 5 ranks & Create magic items & Item Creation & \featpref{Imbue Magic} \\
+        \featref{Imbuement Admixture} & 2nd level spells, 6th & Combine multiple spells to create items & Item Creation & \featpref{Imbuement Admixture} \\
+        \featref{Versatile Crafter} & Craft (any) 10 ranks & Craft items from many schools of magic & Item Creation & \featpref{Versatile Crafter} \\
 
         \midrule
-        \tb{Magic Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Page} \\
-        \featref{Abjurant Shield} & 2nd level Shielding spell & \plus1 to physical defenses & \featpref{Abjurant Shield} \\
-        \featref{Augment Summoning} & 2nd level Summoning spell & \plus2 to spellpower with Summoning spells & \featpref{Augment Summoning} \\
-        \featref{Bardic Spellpower} & Arcane spellcasting ability & Fighter and rogue levels improve some spells & \featpref{Bardic Spellpower} \\
-        \featref{Battlecaster} & Proficiency with light armor & Reduce arcane spell failure by 10\% & \featpref{Battlecaster} \\
-        \featref{Combat Casting} & \x &  \plus3 bonus to Concentration checks to cast spells & \featpref{Combat Casting} \\
-        \featref{Commanding Presence} & 1st level Compulsion spell & \plus2 to Intimidate and Persuasion, later \plus4 & \featpref{Commanding Presence} \\
-        \featref{Counterspell} & Spellcraft 10 ranks, 2nd level spells & Counter spells cast by foe & \featpref{Counterspell} \\
-            \tind \featref{Improved Counterspell} & Counterspell & Counter spells more easily & \featpref{Improved Counterspell} \\
-            \tind \featref{Mass Counterspell} & Spellcraft 15 ranks, 4th level spells, Counterspell & Counter spells cast by multiple foes & \featpref{Mass Counterspell} \\
-        \featref{Craftcaster} & Craft (any) 10 ranks, 2nd level spells & Increase spellpower when creating, transforming objects & \featpref{Craftcaster} \\
-        \featref{Delusive Guise} & 1st level Delusion spell & \plus2 to Bluff and Disguise, later \plus4 & \featpref{Delusive Guise} \\
-        \featref{Dispel Mastery} & 3rd level Antimagic spell & Dispel more effectively & \featpref{Dispel Mastery} \\
-        \featref{Enhanced Senses} & 1st level Awareness spell & \plus2 to Awareness and Sense Motive, later \plus4 & \featpref{Enhanced Senses} \\
-        \featref{Fire Mastery} & 3rd level Fire spell & Fire spells can ignite foes & \featpref{Fire Mastery} \\
-        \featref{Foresight} & 3rd level Divination spell & Cannot be caught unaware & \featpref{Foresight} \\
-        \featref{Frigid Forge} & 2nd level Cold spell & Form ice into weapons and armor & \featpref{Frigid Forge} \\
-        \featref{Magical Synthesis} & Levels in two magical classes & Increase spellcasting ability in two magical classes at once & \featpref{Magical Synthesis} \\
-        \featref{Mass Transporter} & 5th level Conjuration (Translocation) spell & Transport many creatures at once & \featpref{Mass Transporter} \\
-        \featref{Personal Magic} & \x & Personalized magic grants various benefits & \featpref{Personal Magic} \\
-        \featref{Resilient Magic} & 3rd level Antimagic spell & Spells persist after being dispelled, later cannot be dispelled & \featpref{Resilient Magic} \\
-        \featref{Ritual Caster} & Int 3 & Gain ability to perform rituals & \featpref{Ritual Caster} \\
-        \featref{Spell Focus}\fn{1} & 2nd level spells &  \plus2 spellpower with specific school of magic & \featpref{Spell Focus} \\
+        \tb{Magic Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
+        \featref{Abjurant Shield} & 2nd level Shielding spell & \plus1 to physical defenses & \x & \featpref{Abjurant Shield} \\
+        \featref{Augment Summoning} & 2nd level Summoning spell & \plus2 to spellpower with Summoning spells & \x & \featpref{Augment Summoning} \\
+        \featref{Bardic Spellpower} & Arcane spellcasting ability & Fighter and rogue levels improve some spells & \x & \featpref{Bardic Spellpower} \\
+        \featref{Battlecaster} & Proficiency with light armor & Reduce arcane spell failure by 10\% & \x & \featpref{Battlecaster} \\
+        \featref{Combat Casting} & \x &  \plus3 bonus to Concentration checks to cast spells & \x & \featpref{Combat Casting} \\
+        \featref{Commanding Presence} & 1st level Compulsion spell & \plus2 to Intimidate and Persuasion, later \plus4 & \x & \featpref{Commanding Presence} \\
+        \featref{Counterspell} & Spellcraft 10 ranks, 2nd level spells & Counter spells cast by foe & \x & \featpref{Counterspell} \\
+            \tind \featref{Improved Counterspell} & Counterspell & Counter spells more easily & \x & \featpref{Improved Counterspell} \\
+            \tind \featref{Mass Counterspell} & Spellcraft 15 ranks, 4th level spells, Counterspell & Counter spells cast by multiple foes & \x & \featpref{Mass Counterspell} \\
+        \featref{Craftcaster} & Craft (any) 10 ranks, 2nd level spells & Increase spellpower when creating, transforming objects & \x & \featpref{Craftcaster} \\
+        \featref{Delusive Guise} & 1st level Delusion spell & \plus2 to Bluff and Disguise, later \plus4 & \x & \featpref{Delusive Guise} \\
+        \featref{Dispel Mastery} & 3rd level Antimagic spell & Dispel more effectively & \x & \featpref{Dispel Mastery} \\
+        \featref{Enhanced Senses} & 1st level Awareness spell & \plus2 to Awareness and Sense Motive, later \plus4 & \x & \featpref{Enhanced Senses} \\
+        \featref{Fire Mastery} & 3rd level Fire spell & Fire spells can ignite foes & \x & \featpref{Fire Mastery} \\
+        \featref{Foresight} & 3rd level Divination spell & Cannot be caught unaware & \x & \featpref{Foresight} \\
+        \featref{Frigid Forge} & 2nd level Cold spell & Form ice into weapons and armor & \x & \featpref{Frigid Forge} \\
+        \featref{Magical Synthesis} & Levels in two magical classes & Increase spellcasting ability in two magical classes at once & \x & \featpref{Magical Synthesis} \\
+        \featref{Mass Transporter} & 5th level Conjuration (Translocation) spell & Transport many creatures at once & \x & \featpref{Mass Transporter} \\
+        \featref{Personal Magic} & \x & Personalized magic grants various benefits & \x & \featpref{Personal Magic} \\
+        \featref{Resilient Magic} & 3rd level Antimagic spell & Spells persist after being dispelled, later cannot be dispelled & \x & \featpref{Resilient Magic} \\
+        \featref{Ritual Caster} & Int 3 & Gain ability to perform rituals & \x & \featpref{Ritual Caster} \\
+        \featref{Spell Focus}\fn{1} & 2nd level spells &  \plus2 spellpower with specific school of magic & \x & \featpref{Spell Focus} \\
             \tind \featref{Spell Specialization} & 4th level spells, Spell Focus &  \plus2 spellpower with specific school of magic, \minus2 with other types.
-        & \featpref{Spell Specialization} \\
-        \featref{Somatic Strike} & Combat prowess 8, 4th level spells & Make strike in place of somatic components & \featpref{Somatic Strike} \\
-        \featref{Summoning Mastery} & 4th level Summoning spell & Maintain one Summoning spell indefinitely with no effort & \featpref{Summoning Mastery} \\
-        \featref{Sympathetic Resistance} & 2nd level Abjuration spell & Casting damaging spells grants brief damage reduction & \featpref{Sympathetic Resistance} \\
-        \featref{Unfettered Knowledge} & 2nd level Knowledge spell & \plus2 to all Knowledge checks, later \plus4 & \featpref{Unfettered Knowledge} \\
-        \featref{Vital Flow} & 2nd level Positive spell & Automatically heal every round & \featpref{Vital Flow} \\
-        \featref{Wardwalker} & 3rd level Abjuration (Warding) spell & Wards you encounter trigger one round late & \featpref{Wardwalker} \\
-        \featref{Wired} & 1st level Electricity spell & Increase speed by 5 feet, later 10 feet & \featpref{Wired} \\
+        & \x & \featpref{Spell Specialization} \\
+        \featref{Somatic Strike} & Combat prowess 8, 4th level spells & Make strike in place of somatic components & \x & \featpref{Somatic Strike} \\
+        \featref{Summoning Mastery} & 4th level Summoning spell & Maintain one Summoning spell indefinitely with no effort & \x & \featpref{Summoning Mastery} \\
+        \featref{Sympathetic Resistance} & 2nd level Abjuration spell & Casting damaging spells grants brief damage reduction & \x & \featpref{Sympathetic Resistance} \\
+        \featref{Unfettered Knowledge} & 2nd level Knowledge spell & \plus2 to all Knowledge checks, later \plus4 & \x & \featpref{Unfettered Knowledge} \\
+        \featref{Vital Flow} & 2nd level Positive spell & Automatically heal every round & \x & \featpref{Vital Flow} \\
+        \featref{Wardwalker} & 3rd level Abjuration (Warding) spell & Wards you encounter trigger one round late & \x & \featpref{Wardwalker} \\
+        \featref{Wired} & 1st level Electricity spell & Increase speed by 5 feet, later 10 feet & \x & \featpref{Wired} \\
 
         \midrule
-        \tb{Magic Style Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Page} \\
-        \featref{Brutal Magic} & 4th level spells & Gain spellpower bonus after making physical strike & \featpref{Brutal Magic} \\
-        \featref{Creative Magic} & 6th level spells & Gain spellpower bonus with spells not cast recently & \featpref{Creative Magic} \\
-        \featref{Devastating Magic} & 8th level spells & Spells trigger critical successes more easily & \featpref{Devastating Magic} \\
-        \featref{Peaceful Magic} & 5th level Abjuration spell & Gain spellpower bonus after not taking damage & \featpref{Peaceful Magic} \\
-        \featref{Retributive Magic} & 4th level Abjuration spell & Gain spellpower bonus after taking damage & \featpref{Retributive Magic} \\
-        \featref{Unliving Conduit} & 4th level Vivimancy spell & Gan spellpower bonus when undead are near & \featpref{Unliving Conduit} \\
+        \tb{Magic Style Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} \tb{Page} \\
+        \featref{Brutal Magic} & 4th level spells & Gain spellpower bonus after making physical strike & \x & \featpref{Brutal Magic} \\
+        \featref{Creative Magic} & 6th level spells & Gain spellpower bonus with spells not cast recently & \x & \featpref{Creative Magic} \\
+        \featref{Devastating Magic} & 8th level spells & Spells trigger critical successes more easily & \x & \featpref{Devastating Magic} \\
+        \featref{Peaceful Magic} & 5th level Abjuration spell & Gain spellpower bonus after not taking damage & \x & \featpref{Peaceful Magic} \\
+        \featref{Retributive Magic} & 4th level Abjuration spell & Gain spellpower bonus after taking damage & \x & \featpref{Retributive Magic} \\
+        \featref{Unliving Conduit} & 4th level Vivimancy spell & Gan spellpower bonus when undead are near & \x & \featpref{Unliving Conduit} \\
 
         \midrule
-        \tb{Metamagic Feats} & \tb{Prerequisites} & \tb{Benefit (Level Adjustment)} & \tb{Page} \\
-        \featref{Energetic Substitution} & 2nd level spells & Change spell's energy type (\plus1) & \featpref{Energetic Substitution} \\
-        \featref{Extend Spell} & 2nd level spells & Double spell's range (\plus1) & \featpref{Extend Spell} \\
-        \featref{Imbued Spellstrike} & 2nd level spells & Combine spell with weapon strike (\plus1) & \featpref{Imbued Spellstrike} \\
-            \tind \featref{Improved Imbued Spellstrike} & 3rd level spells, Imbued Spellstrike & Imbue weapon with spell's power up to 5 minutes (\plus2) & \featpref{Improved Imbued Spellstrike} \\
-        \featref{Quicken Spell} & 3rd level spells & Cast spell as swift action, but lose next action (\plus2) & \featpref{Quicken Spell} \\
-        \featref{Patient Spell} & 2nd level spells & Cast spell slowly for spellpower bonus & \featpref{Patient Spell} \\
-        \featref{Reach Spell} & 3rd level spells & Cast touch spell at Close range (\plus2) & \featpref{Reach Spell} \\
-        \featref{Shape Spell} & 3rd level spells & Exclude areas within spell's area (\plus2) & \featpref{Shape Spell} \\
-        \featref{Silent Spell} & 2nd level spells & Cast spell without verbal components (\plus1) & \featpref{Silent Spell} \\
-        \featref{Still Spell} & 2nd level spells & Cast spell without somatic components (\plus1) & \featpref{Still Spell} \\
-        \featref{Sustained Spell} & 2nd level spells & Maintain concentration as swift action (\plus1) & \featpref{Sustained Spell} \\
+        \tb{Metamagic Feats} & \tb{Prerequisites} & \tb{Benefit (Level Adjustment)} & \tb{Feat Types} & \tb{Page} \\
+        \featref{Energetic Substitution} & 2nd level spells & Change spell's energy type (\plus1) & \x & \featpref{Energetic Substitution} \\
+        \featref{Extend Spell} & 2nd level spells & Double spell's range (\plus1) & \x & \featpref{Extend Spell} \\
+        \featref{Imbued Spellstrike} & 2nd level spells & Combine spell with weapon strike (\plus1) & \x & \featpref{Imbued Spellstrike} \\
+            \tind \featref{Improved Imbued Spellstrike} & 3rd level spells, Imbued Spellstrike & Imbue weapon with spell's power up to 5 minutes (\plus2) & \x & \featpref{Improved Imbued Spellstrike} \\
+        \featref{Quicken Spell} & 3rd level spells & Cast spell as swift action, but lose next action (\plus2) & \x & \featpref{Quicken Spell} \\
+        \featref{Patient Spell} & 2nd level spells & Cast spell slowly for spellpower bonus & \x & \featpref{Patient Spell} \\
+        \featref{Reach Spell} & 3rd level spells & Cast touch spell at Close range (\plus2) & \x & \featpref{Reach Spell} \\
+        \featref{Shape Spell} & 3rd level spells & Exclude areas within spell's area (\plus2) & \x & \featpref{Shape Spell} \\
+        \featref{Silent Spell} & 2nd level spells & Cast spell without verbal components (\plus1) & \x & \featpref{Silent Spell} \\
+        \featref{Still Spell} & 2nd level spells & Cast spell without somatic components (\plus1) & \x & \featpref{Still Spell} \\
+        \featref{Sustained Spell} & 2nd level spells & Maintain concentration as swift action (\plus1) & \x & \featpref{Sustained Spell} \\
 
         \midrule
-        \tb{Performance Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Page} \\
-        \featref{Fascinating Performance} & Perform 4 ranks & Fascinate group of creatures & \featpref{Fascinating Performance} \\
-            \tind \featref{Suggestive Performance} & Perform 10 ranks, Fascinating Performance & Suggest action to fascinated creatures & \featpref{Suggestive Performance} \\
-        \featref{Freeing Performance} & Perform 12 ranks  & Dispel magical effects on ally & \featpref{Freeing Performance} \\
-        \featref{Inspire Competence} & Perform 4 ranks  & Grant allies bonuses to skill checks & \featpref{Inspire Competence} \\
-        \featref{Inspire Courage} & Perform 6 ranks  & Grant allies bonuses to accuracy and defenses against fear & \featpref{Inspire Courage} \\
-        \featref{Inspire Greatness} & Perform 12 ranks  & Grant allies bonuses to defenses & \featpref{Inspire Greatness} \\
-        \featref{Inspire Heroics} & Perform 20 ranks  & Grant allies temporary hit points and extra strike & \featpref{Inspire Heroics} \\
-        \featref{Inspire Spellpower} & Perform 10 ranks  & Grant allies bonus to spellpower & \featpref{Inspire Spellpower} \\
-        \featref{Legendary Performance} & Perform 15 ranks, any three Performance feats & Sustain two performances at once & \featpref{Legendary Performance} \\
-        \featref{Rapid Performance} & Perform 14 ranks, any three Performance feats & Perform as a swift action & \featpref{Rapid Performance} \\
-        \featref{Recover Performance} & Perform 10 ranks, any other Performance feat & Reroll failed performance attempt & \featpref{Recover Performance} \\
-        \featref{Spellwoven Performance} & Perform 10 ranks, any other Performance feat & Cast some spells while performing & \featpref{Spellwoven Performance} \\
+        \tb{Performance Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
+        \featref{Fascinating Performance} & Perform 4 ranks & Fascinate group of creatures & \x & \featpref{Fascinating Performance} \\
+            \tind \featref{Suggestive Performance} & Perform 10 ranks, Fascinating Performance & Suggest action to fascinated creatures & \x & \featpref{Suggestive Performance} \\
+        \featref{Freeing Performance} & Perform 12 ranks  & Dispel magical effects on ally & \x & \featpref{Freeing Performance} \\
+        \featref{Inspire Competence} & Perform 4 ranks  & Grant allies bonuses to skill checks & \x & \featpref{Inspire Competence} \\
+        \featref{Inspire Courage} & Perform 6 ranks  & Grant allies bonuses to accuracy and defenses against fear & \x & \featpref{Inspire Courage} \\
+        \featref{Inspire Greatness} & Perform 12 ranks  & Grant allies bonuses to defenses & \x & \featpref{Inspire Greatness} \\
+        \featref{Inspire Heroics} & Perform 20 ranks  & Grant allies temporary hit points and extra strike & \x & \featpref{Inspire Heroics} \\
+        \featref{Inspire Spellpower} & Perform 10 ranks  & Grant allies bonus to spellpower & \x & \featpref{Inspire Spellpower} \\
+        \featref{Legendary Performance} & Perform 15 ranks, any three Performance feats & Sustain two performances at once & \x & \featpref{Legendary Performance} \\
+        \featref{Rapid Performance} & Perform 14 ranks, any three Performance feats & Perform as a swift action & \x & \featpref{Rapid Performance} \\
+        \featref{Recover Performance} & Perform 10 ranks, any other Performance feat & Reroll failed performance attempt & \x & \featpref{Recover Performance} \\
+        \featref{Spellwoven Performance} & Perform 10 ranks, any other Performance feat & Cast some spells while performing & \x & \featpref{Spellwoven Performance} \\
 
         \midrule
-        \tb{Racial Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Page} \\
-        \featref{Dwarven Resilience} & Dwarf & \plus2 to defenses against spells & \featpref{Dwarven Resilience} \\
-        \featref{Giantfighter} & Dwarf, gnome, or halfling & \plus2 to physical defenses against Large or larger creatures & \featpref{Giantfighter} \\
-        \featref{Racial Acclimation} & Have a race other than your original race & Lose penalties for being in new body & \featpref{Racial Acclimation} \\
-        \featref{Stonecunning} & Dwarf & Gain a sixth sense about stonework & \featpref{Stonecunning} \\
+        \tb{Racial Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
+        \featref{Dwarven Resilience} & Dwarf & \plus2 to defenses against spells & \x & \featpref{Dwarven Resilience} \\
+        \featref{Giantfighter} & Dwarf, gnome, or halfling & \plus2 to physical defenses against Large or larger creatures & Combat & \featpref{Giantfighter} \\
+        \featref{Racial Acclimation} & Have a race other than your original race & Lose penalties for being in new body & \x & \featpref{Racial Acclimation} \\
+        \featref{Stonecunning} & Dwarf & Gain a sixth sense about stonework & \x & \featpref{Stonecunning} \\
 
         \midrule
-        \tb{Skill Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Page} \\
-        \featref{Fungal Poisoner} & Survival 5 ranks & Use Survival to find and use fungal poisons & \featpref{Fungal Poisoner} \\
-        \featref{Hide in Plain Sight} & Stealth 20 ranks & Hide while being observed & \featpref{Hide in Plain Sight} \\
-        \featref{Ledgewalker} & Acrobatics 5 ranks & Balance easily on narrow surfaces & \featpref{Ledgewalker} \\
-        \featref{Legendary Awareness} & Awareness 15 ranks & Gain extrasensory perception & \featpref{Legendary Awareness} \\
-        \featref{Legendary Balance} & Acrobatics 15 ranks & Balance on impossible surfaces & \featpref{Legendary Balance} \\
-        \featref{Legendary Climber} & Climb 15 ranks & Gain climb speed, climb on impossible surfaces & \featpref{Legendary Climber} \\
-        \featref{Legendary Craftsman} & Craft 15 ranks & Craft items with fewer material components & \featpref{Legendary Craftsman} \\
-        \featref{Legendary Devicesmith} & Devices 15 ranks & Disable active spell effects & \featpref{Legendary Devicesmith} \\
-        \featref{Legendary Disguise} & Disguise 15 ranks & Alter magical auras with disguise & \featpref{Legendary Disguise} \\
-        \featref{Legendary Escapist} & Escape Artist 15 ranks & Escape from magical effects & \featpref{Legendary Escapist} \\
-        \featref{Legendary Handler} & Creature Handling 15 ranks & Train and command creatures faster & \featpref{Legendary Handler} \\
-        \featref{Legendary Healer} & Heal 15 ranks & Heal damage three times per day & \featpref{Legendary Healer} \\
-        \featref{Legendary Intimidation} & Intimidate 15 ranks & Panic intimidated foes & \featpref{Legendary Intimidation} \\
-        \featref{Legendary Knowledge} & Knowledge (any) 15 ranks & \plus2 against creatures you identify & \featpref{Legendary Knowledge} \\
-        \featref{Legendary Leaper} & Athletics 15 ranks & Always treated as having running start & \featpref{Legendary Leaper} \\
-        \featref{Legendary Legerdemain} & Sleight of Hand 15 ranks & Hide objects in pocket dimension & \featpref{Legendary Legerdemain} \\
-        \featref{Legendary Liar} & Bluff 15 ranks & Lies appear to alter reality & \featpref{Legendary Liar} \\
-        \featref{Legendary Linguist} & Linguistics 15 ranks & Speak all languages & \featpref{Legendary Linguist} \\
-        \featref{Legendary Persuasion} & Persuasion 15 ranks & Compel listener to obey & \featpref{Legendary Persuasion} \\
-        \featref{Legendary Profession} & Profession (any) 15 ranks & Become famous for mastery of your profession & \featpref{Legendary Profession} \\
-        \featref{Legendary Rider} & Ride 15 ranks & Ride unwilling creatures & \featpref{Legendary Rider} \\
-        \featref{Legendary Sense Motive} & Sense Motive 15 ranks & Read creature's mind & \featpref{Legendary Sense Motive} \\
-        \featref{Legendary Spellcraft} & Spellcraft 15 ranks & Gain \plus2 against spells you identify & \featpref{Legendary Spellcraft} \\
-        \featref{Legendary Sprinter} & Athletics 15 ranks & You can sprint for much longer & \featpref{Legendary Sprinter} \\
-        \featref{Legendary Stealth} & Stealth 15 ranks & Hide in plain sight & \featpref{Legendary Stealth} \\
-        \featref{Legendary Survival} & Survival 15 ranks & Ignore harmful terrain and unerringly find your way & \featpref{Legendary Survival} \\
-        \featref{Legendary Tumbler} & Acrobatics 15 ranks & Tumble through enemies without provoking & \featpref{Legendary Tumbler} \\
-        \featref{Open Minded} & \x & Gain two skill points & \featpref{Open Minded} \\
-        \featref{Poison Expert} & Int 3, Craft (poison) 10 ranks & Apply poisons more effectively & \featpref{Poison Expert} \\
-        \featref{Ranged Legerdemain} &  2nd level Telekinesis spell & Use Disable Device or Sleight of Hand at range & \featpref{Ranged Legerdemain} \\
-        \featref{Scale the Beast} & Climb 10 ranks & Climb on massive creatures & \featpref{Scale the Beast} \\
-        \featref{Skill Mastery}\fn{1} & Any skill 5 ranks & Roll twice for checks with selected skill & \featpref{Skill Mastery} \\
-        \tind \featref{Skill Specialization}\fn{1} & Any skill 10 ranks, Skill Mastery with skill & \plus5 to skill & \featpref{Skill Specialization} \\
-        \featref{Trapfinder} & Awareness 5 ranks & Find traps faster & \featpref{Trapfinder} \\
-        \featref{Trap Sense} & Awareness 10 ranks & Automatically detect traps & \featpref{Trap Sense} \\
-        \featref{Track} & \x &  Use Survival skill to track & \featpref{Track} \\
-        \featref{Veteran's Experience} & Combat prowess 8 & Identify monsters without Knowledge & \featpref{Veteran's Experience} \\
-        \featref{Wallpuncher} & Strength 5, Climb 10 & Punch walls to create handholds & \featpref{Wallpuncher} \\
-
-        \midrule
-        \tb{Spellgift Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Page} \\
-        \featref{Arcane Spellgift} & 2nd level, Wil 1 & Gain arcane spell as spell-like ability & \featpref{Arcane Spellgift} \\
-        \featref{Divine Spellgift} & 2nd level, Wil 1 & Gain divine spell as spell-like ability & \featpref{Divine Spellgift} \\
-        \featref{Natural Spellgift} & 2nd level, Wil 1 & Gain natural spell as spell-like ability & \featpref{Natural Spellgift} \\
-
+        \tb{Skill Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
+        \featref{Fungal Poisoner} & Survival 5 ranks & Use Survival to find and use fungal poisons & \x & \featpref{Fungal Poisoner} \\
+        \featref{Hide in Plain Sight} & Stealth 20 ranks & Hide while being observed & \x & \featpref{Hide in Plain Sight} \\
+        \featref{Ledgewalker} & Acrobatics 5 ranks & Balance easily on narrow surfaces & \x & \featpref{Ledgewalker} \\
+        \featref{Legendary Awareness} & Awareness 15 ranks & Gain extrasensory perception & \x & \featpref{Legendary Awareness} \\
+        \featref{Legendary Balance} & Acrobatics 15 ranks & Balance on impossible surfaces & \x & \featpref{Legendary Balance} \\
+        \featref{Legendary Climber} & Climb 15 ranks & Gain climb speed, climb on impossible surfaces & \x & \featpref{Legendary Climber} \\
+        \featref{Legendary Craftsman} & Craft 15 ranks & Craft items with fewer material components & \x & \featpref{Legendary Craftsman} \\
+        \featref{Legendary Devicesmith} & Devices 15 ranks & Disable active spell effects & \x & \featpref{Legendary Devicesmith} \\
+        \featref{Legendary Disguise} & Disguise 15 ranks & Alter magical auras with disguise & \x & \featpref{Legendary Disguise} \\
+        \featref{Legendary Escapist} & Escape Artist 15 ranks & Escape from magical effects & \x & \featpref{Legendary Escapist} \\
+        \featref{Legendary Handler} & Creature Handling 15 ranks & Train and command creatures faster & \x & \featpref{Legendary Handler} \\
+        \featref{Legendary Healer} & Heal 15 ranks & Heal damage three times per day & \x & \featpref{Legendary Healer} \\
+        \featref{Legendary Intimidation} & Intimidate 15 ranks & Panic intimidated foes & \x & \featpref{Legendary Intimidation} \\
+        \featref{Legendary Knowledge} & Knowledge (any) 15 ranks & \plus2 against creatures you identify & \x & \featpref{Legendary Knowledge} \\
+        \featref{Legendary Leaper} & Athletics 15 ranks & Always treated as having running start & \x & \featpref{Legendary Leaper} \\
+        \featref{Legendary Legerdemain} & Sleight of Hand 15 ranks & Hide objects in pocket dimension & \x & \featpref{Legendary Legerdemain} \\
+        \featref{Legendary Liar} & Bluff 15 ranks & Lies appear to alter reality & \x & \featpref{Legendary Liar} \\
+        \featref{Legendary Linguist} & Linguistics 15 ranks & Speak all languages & \x & \featpref{Legendary Linguist} \\
+        \featref{Legendary Persuasion} & Persuasion 15 ranks & Compel listener to obey & \x & \featpref{Legendary Persuasion} \\
+        \featref{Legendary Profession} & Profession (any) 15 ranks & Become famous for mastery of your profession & \x & \featpref{Legendary Profession} \\
+        \featref{Legendary Rider} & Ride 15 ranks & Ride unwilling creatures & \x & \featpref{Legendary Rider} \\
+        \featref{Legendary Sense Motive} & Sense Motive 15 ranks & Read creature's mind & \x & \featpref{Legendary Sense Motive} \\
+        \featref{Legendary Spellcraft} & Spellcraft 15 ranks & Gain \plus2 against spells you identify & \x & \featpref{Legendary Spellcraft} \\
+        \featref{Legendary Sprinter} & Athletics 15 ranks & You can sprint for much longer & \x & \featpref{Legendary Sprinter} \\
+        \featref{Legendary Stealth} & Stealth 15 ranks & Hide in plain sight & \x & \featpref{Legendary Stealth} \\
+        \featref{Legendary Survival} & Survival 15 ranks & Ignore harmful terrain and unerringly find your way & \x & \featpref{Legendary Survival} \\
+        \featref{Legendary Tumbler} & Acrobatics 15 ranks & Tumble through enemies without provoking & \x & \featpref{Legendary Tumbler} \\
+        \featref{Open Minded} & \x & Gain two skill points & \x & \featpref{Open Minded} \\
+        \featref{Poison Expert} & Int 3, Craft (poison) 10 ranks & Apply poisons more effectively & \x & \featpref{Poison Expert} \\
+        \featref{Ranged Legerdemain} &  2nd level Telekinesis spell & Use Disable Device or Sleight of Hand at range & \x & \featpref{Ranged Legerdemain} \\
+        \featref{Scale the Beast} & Climb 10 ranks & Climb on massive creatures & \x & \featpref{Scale the Beast} \\
+        \featref{Skill Mastery}\fn{1} & Any skill 5 ranks & Roll twice for checks with selected skill & \x & \featpref{Skill Mastery} \\
+        \tind \featref{Skill Specialization}\fn{1} & Any skill 10 ranks, Skill Mastery with skill & \plus5 to skill & \x & \featpref{Skill Specialization} \\
+        \featref{Trapfinder} & Awareness 5 ranks & Find traps faster & \x & \featpref{Trapfinder} \\
+        \featref{Trap Sense} & Awareness 10 ranks & Automatically detect traps & \x & \featpref{Trap Sense} \\
+        \featref{Track} & \x &  Use Survival skill to track & \x & \featpref{Track} \\
+        \featref{Veteran's Experience} & Combat prowess 8 & Identify monsters without Knowledge & \x & \featpref{Veteran's Experience} \\
+        \featref{Wallpuncher} & Strength 5, Climb 10 & Punch walls to create handholds & \x & \featpref{Wallpuncher} \\
     \end{longtabu}
 \end{longtabuwrapper}
 
@@ -329,7 +354,7 @@ Only physical attacks that come from having a high combat prowess count towards 
 The table of combat feats is organized according to the combat prowess each feat requires.\\
 
 \begin{longtabuwrapper}
-    \begin{longtabu}{>{\lcol}p{10em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{6em} >{\lcol}p{3em}}
+    \begin{longtabu}{>{\lcol}p{10em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{8em} >{\lcol}p{3em}}
         \tb{Combat Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
         \featref{Armor Familiarity} & Proficiency with armor & Reduce penalties from wearing armor & Equipment & \featpref{Armor Familiarity} \\
         \featref{Armor Proficiency} & Proficiency with lighter armor & Become proficient with type of armor & Equipment & \featpref{Armor Proficiency} \\
@@ -372,9 +397,10 @@ The table of combat feats is organized according to the combat prowess each feat
         \featref{Armor Piercing Strike} & Per 5 & Attack targets Reflex defense & Precision, Strike & \featpref{Armor Piercing Strike} \\
         \featref{Calculated Strike} & Int 5 & Attack can deal critical damage & Precision, Strike & \featpref{Calculated Strike} \\
         \featref{Countering Strike} & Int 5 & Bonus damage if you are attacked & Reaction, Strike & \featpref{Countering Strike} \\
-        \featref{Chargebreaker} & Dex 5 & Bonus damage if target approached you & Reaction, Style & \featpref{Chargebreaker} \\
+        \featref{Chargebreaker} & Dex 5 & Bonus damage if target approached you & Reaction, Strike & \featpref{Chargebreaker} \\
         \featref{Driving Assault} & Str 5 & Attack shoves creature  & Power, Maneuver, Strike & \featpref{Driving Assault} \\
         \featref{Focused Strike} & \x & Trade strikes for accuracy & Precision, Strike & \featpref{Focused Strike} \\
+        \featref{Infuriating Strike} & \x & Melee attack taunts foe & Strike & \featpref{Infuriating Strike} \\
         \featref{Intimidating Strike} & Intimidate 10 ranks & Melee attack intimidates foe & Strike & \featpref{Intimidating Strike} \\
         \featref{Knockdown} & Str 5 & Shove foe and knock prone & Maneuver, Power, Strike & \featpref{Knockdown} \\
         \featref{Pierce Wings} & Per 5 & Ranged attack removes foe's ability to fly & Precision, Strike & \featpref{Pierce Wings} \\
@@ -418,7 +444,7 @@ The table of combat feats is organized according to the combat prowess each feat
 \subsection{Combat Style Feat Table}
 
 \begin{longtabuwrapper}
-    \begin{longtabu}{>{\lcol}p{10em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{6em} >{\lcol}p{3em}}
+    \begin{longtabu}{>{\lcol}p{10em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{8em} >{\lcol}p{3em}}
         \tb{Style Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
         \featref{Blind-Fight} & Perception 3 & Fight better when unable to see & Awareness & \featpref{Blind-Fight} \\
         \featref{Defensive Fighting} & \x & Gain bonus to physical defenses & Defense, Style & \featpref{Defensive Fighting} \\
@@ -517,8 +543,14 @@ Choose a category of body armor: light, medium, or heavy.
 A character who is wearing armor with which she is not proficient applies its armor check penalty to physical accuracy and to all checks that involve moving, including Ride.
 The character also suffers double the normal arcane spell failure chance for wearing the armor.
 
+\feat{Athletic Rage}{Class, Rage}
+\featpre Rage ability, barbarian level 2.
+\featben When you enter a rage, you can use this feat. If you do, during the rage you add your rage bonus to your Climb, Jump, Sprint, and Swim checks.
+\parhead{Special} You can only gain the benefit of one Rage feat at a time.
+
 \feat{Attribute Training}{General}
 \featben You increase one of your attributes by 1, up to a maximum value equal to your level.
+Other bonuses, such as racial bonuses, increase the attribute beyond your level.
 \parhead{Special} This feat can be taken multiple times. Its effects stack.
 
 \feat{Augment Summoning}{Magic}
@@ -533,13 +565,23 @@ The character also suffers double the normal arcane spell failure chance for wea
 \featpre Proficiency with light armor.
 \featben You reduce your chance of arcane spell failure from wearing armor by 10\%.
 
+\feat{Battlemaster}{Class, Combat}
+\featpre Intelligence 5, fighter level 10.
+\featben As a swift action, you may grant the use of one of your combat feats to a willing creature within \rngmed range of you who can see and hear you.
+The target must meet combat prowess prerequisites for the granted feat, but it can ignore all other prerequisites.
+The effect lasts as long as you spend a swift action to maintain it, to a maximum number of rounds equal to your Intelligence.
+After using this ability, you cannot use it again for 5 minutes.
+
+\feat{Battlemaster, Empowered}{Class, Combat}
+\featpre Intelligence 10, fighter level 16.
+\featben When using your battlemaster ability, you can grant two feats instead of one.
+
 \feat{Battletrance}{Class}
-\featpre Rage ability.
-\featben When you use your rage ability, you can enter a trance instead of getting angry.
-In place of the normal benefits and drawbacks from raging, you can use your Perception to determine your damage with light weapons.
+\featpre Rage ability, barbarian level 2.
+\featben When you use your rage ability, you can use this feat. If you do, in place of the normal benefits and drawbacks from raging, you can use your Perception to determine your damage with light weapons.
 In addition, you add your rage bonus to your Fortitude and Mental defenses.
-If you do not spend a swift round to sustain the battletrance, it ends at the end of the round.
-Any other abilities, such as channeled rages, function normally.
+If you do not spend a swift round each round to sustain the rage, it ends at the end of the round.
+\parhead{Special} You can only gain the benefit of one Rage feat at a time.
 
 \feat{Blind-Fight}{Awareness, Combat, Style}
 \featpre Perception 3.
@@ -633,6 +675,16 @@ If you are 18th level, you can fly for a number of minutes equal to 3 \add half 
 If you hit, you deal damage normally.
 If the target moved towards you during the current round, this attack deals triple damage.
 
+\feat{Charming Wild Speech}{Class}
+\featpre Wild speech ability, druid level 7
+\featben  As a standard action, you can make a Nature power vs. Mental attack against one creature or object you are communicating with using your wild speech ability.
+This consumes a use of your wild speech ability.
+Success means the target is \charmed for the duration of the conversation, and for 1 hour thereafter.
+Failure has no effect.
+
+This ability is not a Mind effect, and can affect anything that the druid can use her wild speech to converse with.
+The attack automatically succeeds against non-intelligent objects.
+
 \feat{Cleave}{Combat, Power}
 \featpre Str 3.
 \featben If you make a melee strike that knocks a creature unconscious or kills it, you can immediately make an extra melee strike against another creature you threaten.
@@ -647,7 +699,7 @@ There is no limit to the number of times you can use this feat per round.
 \feat{Combat Casting}{Magic}
 \featben You gain a \plus3 bonus to Concentration checks made to cast spells or use spell-like abilities.
 
-\feat{Combat Mobility}{Combat}
+\feat{Combat Mobility}{Combat, Mobility}
 \featpre Dex 5, combat prowess 4.
 \featben At the start of each phase, you may choose a creature you can see.
 You can move through that creature's space this phase, treating it as difficult terrain.
@@ -688,6 +740,11 @@ If this bonus is not used within 1 round, it is lost.
 \featpre 4th level spell known.
 \featben You gain a \plus2 bonus to spellpower with all spells that you have not cast within the past 5 rounds.
 
+\feat{Critical Rage}{Class, Rage}
+\featpre Rage ability, barbarian level 10.
+\featben When you enter a rage, you can use this feat. If you do, during the rage you increase your critical range by 1.
+\parhead{Special} You can only gain the benefit of one Rage feat at a time.
+
 \feat{Deadly Aim}{Combat, Precision, Style}
 \featpres Perception 5, combat prowess 4.
 \featben You gain a \plus2 bonus to physical ranged damage rolls.
@@ -723,6 +780,11 @@ If you know an additional Delusion spell of 5th level or higher, this bonus incr
 \feat{Destructive}{General}
 \featpre Strength 3.
 \featben You gain a \plus5 bonus to Strength checks made to break, bend, or crush objects.
+
+\feat{Destructive Rage}{Class, Rage}
+\featpre Rage ability, barbarian level 6.
+\featben When you enter a rage, you can use this feat. If you do, during the rage your physical attacks ignore an amount of hardness equal to your Strength.
+\parhead{Special} You can only gain the benefit of one Rage feat at a time.
 
 \feat{Devastating Magic}{Magic, Style}
 \featpre 8th level spells.
@@ -764,6 +826,10 @@ You may take this feat multiple times.
 Each time, you choose a new spell to gain as a spell-like ability.
 All spellgift feats you have use the same pool of spellgift points.
 The number of spellgift feats you have cannot exceed your Willpower.
+
+\feat{Dominating Wild Speech}{Class}
+\featpre Wild speech ability, Charming Wild Speech, druid level 15
+\featben When you use your Charming Wild Speech ability, if the attack succeeds, you can choose for the target to be \dominated instead of charmed.
 
 \feat{Draconic Breath}{Bloodline, Dragon}
 \featpres Con 3, any three dragon bloodline feats.
@@ -863,6 +929,18 @@ You gain a bonus on the shove attack equal to the damage dealt.
 \featpre Dwarf.
 \featben You gain a \plus2 bonus to defenses against poisons, spells, and spell-like effects.
 
+\feat{Elemental Speech}{Class}
+\featpre Wild speech ability, druid level 9.
+\featben You can use your wild speech ability to communicate with one element of the natural world: air, earth, fire or water.
+You choose which element when you gain this feat.
+\parhead{Special} This feat can be taken multiple times.
+Each time, you choose a different element.
+
+\feat{Endless Rage}{Class, Rage}
+\featpre Rage ability, barbarian level 18.
+\featben When you enter a rage, you can use this feat. If you do, the rage becomes almost endless. At the end of each round, if you took damage and did not receive healing or gain temporary hit points, that round does not count against the duration of your rage.
+\parhead{Special} You can only gain the benefit of one Rage feat at a time.
+
 \feat{Energetic Substitution}{Metamagic}
 \featpre 2nd level spell known.
 \featben When casting a substituted spell, you can choose what kind of energy damage it deals: cold, fire, or electricity.
@@ -912,7 +990,7 @@ Choose a class feature with limited uses.
         Druid & Wild speech & \plus2 uses per day \\
         Fighter & Combat discipline & \plus2 uses per day \\
         Fighter & Battlemaster & \plus2 uses per day \\
-        Monk & Channel \ki & \plus2 uses per day \\
+        Monk & \Ki manifestation & \plus2 uses per day \\
         Paladin & Divine invocation & \plus2 uses per day \\
         Ranger & Wild speech & \plus2 uses per day \\
         Sorcerer & Spellsurge & \plus1 use per day \\
@@ -957,6 +1035,12 @@ This is an enchantment (compulsion), mind-affecting ability.
 \featpre Willpower 10.
 \featben You are immune to fear effects.
 
+\feat{Fearsome Rage}{Class, Rage}
+\featpre Rage ability, barbarian level 10.
+\featben When you enter a rage, you can use this feat. If you do, during the rage your attacks can inflict fear on your foes.
+Once per round, when you hit with a melee strike, you may cause the target to be \shaken by you for 2 rounds.
+\parhead{Special} You can only gain the benefit of one Rage feat at a time.
+
 \feat{Fire Mastery}{Magic}
 \featpre 3rd level or higher \glossterm{Fire} spell known.
 \featben Whenever you get a critical success with a Fire spell, the target of the spell is \ignited for 5 rounds.
@@ -980,10 +1064,10 @@ Some creatures immune to Divination spells may still catch you unaware.
 This creates an effect similar to the \spell{break enchantment}
 spell, with a spellpower equal to your Perform ranks.
 
-\feat{Frenzy}{Class}
-\featpre Rage ability.
-\featben When you rage, you can enter an energetic frenzy instead of getting angry. In a frenzy, you do not increase your Fortitude or Mental defense, and you take no penalty to physical defenses.
-Any other abilities, such as channeled rages, function normally.
+\feat{Frenzy}{Class, Rage}
+\featpre Rage ability, barbarian level 6.
+\featben When you enter a rage, you can use this feat. If you do, you take no penalty to physical defenses while raging, but you take double damage for not attacking during a round.
+\parhead{Special} You can only gain the benefit of one Rage feat at a time.
 
 \feat{Frigid Forge}{Magic}
 \featpre 2nd level or higher Cold spell known.
@@ -994,6 +1078,11 @@ Second, creating items in this way requires water or ice in place of the normal 
 Third, you gain a bonus on the Craft check equal to your spellpower with Cold spells.
 
 If water enhanced with the \spell{enhance component} ritual is used, the item created will have an enhancement bonus.
+
+\feat{Furious Style}{Class, Rage}
+\featpre Rage ability, barbarian level 6.
+\featben When you enter a rage, you can use this feat. If you do, during the rage you can initiate or change combat styles as part of the swift action you use to sustain your rage.
+\parhead{Special} You can only gain the benefit of one Rage feat at a time.
 
 \feat{Fungal Poisoner}
 \featpre Survival 5 ranks.
@@ -1008,7 +1097,7 @@ If you do, those feats and abilities only affect fungal poisons.
 \featben You count as one additional creature for the purpose of determining overwhelm penalties.
 This does not allow you to overwhelm a creature by yourself.
 
-\feat{Giantfighter}{Racial}
+\feat{Giantfighter}{Combat, Racial}
 \featpres Dwarf, gnome, or halfling.
 \featben You gain a \plus2 bonus to physical defenses against creatures of size Large or larger.
 
@@ -1141,6 +1230,11 @@ In addition, your unarmed attacks can deal lethal or nonlethal damage as you cho
 \stylereq Wield a melee weapon.
 You must make a melee attack each round.
 
+\feat{Infuriating Strike}{Combat, Strike}
+\featpre Combat prowess 8.
+\featben In place of two strikes, you can make a single physical attack.
+If you hit, you deal damage normally, and the target is \taunted by you for 5 rounds.
+
 \feat{Insightful Fighter}{Class}
 \featpre Adaptive style ability.
 \featben You can use Perception in place of Intelligence for your adaptive style feat pool.
@@ -1205,16 +1299,50 @@ You can sustain the performance as a swift action.
 You can use any combination of performance feats you possess a number of times per day equal to twice the number of performance feats you have.
 If you fail the Perform check, the use of the ability is wasted.
 
+\feat{Instant Combat Adaptation}{Class}
+\featpre Adaptive combat ability, Rapid Combat Adaptation, Intelligence 10, fighter level 18.
+\featben As a swift action, you can exchange a single adaptive combat feat from your adapative feat pool.
+
 \feat{Intimidating Strike}{Combat, Strike}
 \featpres Two strikes, Intimidate 10 ranks.
 \featben In place of two strikes, you can make a single physical attack.
-If you hit, you deal damage normally, and you can make an Intimidate check against the target to make it \shaken.
+If you hit, you deal damage normally, and you can make an Intimidate check against the target to make it \shaken for 5 rounds.
 You gain a bonus on the check equal to the damage dealt.
+
+\feat{Invulnerable Rage}{Class, Rage}
+\featpre Rage ability, barbarian level 14.
+\featben When you enter a rage, you can use this feat. If you do, during the rage your barbarian damage reduction is doubled and applies to all damage, not just physical damage.
+\parhead{Special} You can only gain the benefit of one Rage feat at a time.
 
 \feat{Iron Will}{General}
 \featpre Intelligence 3 or Willpower 3.
 \featben You gain a \plus2 bonus to your Mental defense.
 This bonus can increase your hit points (see \pcref{Hit Points}).
+
+\feat{Ki Focus}{Class}
+\featpre Manifest \ki ability, monk level 8.
+\featben Choose one \ki manifestation that you know.
+The manifestation must normally last until the end of the round, and the minimum monk level required to learn the manifestation cannot exceed half your monk level.
+When you activate it, you can spend two ki points instead of one.
+If you do, the ability instead lasts for 5 rounds.
+\parhead{Special} This feat can be taken multiple times.
+Each time, you choose a different \ki manifestation you know.
+
+\feat{Ki Specialization}{Class}
+\featpre Ki Focus, Manifest \ki ability, monk level 12.
+\featben Choose a \ki manifestation that you chose with the Ki Focus feat.
+When you activate it, you can spend three ki points instead of one.
+If you do, the ability instead lasts for 12 hours.
+
+While you have the manifestation active, your maximum \ki points are reduced by 1.
+You can dismiss the manifestation to restore your \ki points.
+
+\feat{Ki Training}{Class}
+\featpre Manifest \ki ability.
+\featben You can learn an additional \ki manifestation.
+You must meet all prerequisites for the ability, as normal.
+\parhead{Special} This feat can be taken multiple times.
+Each time, you choose a different \ki manifestation to learn.
 
 \feat{Killing Blow}{Combat, Precision, Strike}
 \featpres Intelligence 10, combat prowess 12.
@@ -1547,6 +1675,11 @@ You may still cast only one spell, but it is used to counter the spells cast by 
 \featben You gain a \plus1 bonus to physical damage rolls.
 \parhead{Special} This feat can be taken multiple times. Its effects stack.
 
+\feat{Mindless Rage}{Class, Rage}
+\featpre Rage ability, barbarian level 10.
+\featben When you enter a rage, you can use this feat. If you do, during the rage you are immune to \glossterm{Mind} spells and effects.
+\parhead{Special} You can only gain the benefit of one Rage feat at a time.
+
 \feat{Mounted Archery}{Combat, Mounted}
 \featpre Training in Ride.
 \featben The penalty you take when using a ranged weapon while mounted is decreased by 4: \minus0 instead of \minus4 if your mount is taking a double move, and \minus4 instead of \minus8 if your mount is sprinting.
@@ -1594,6 +1727,11 @@ You may spend these skill points immediately.
 This bonus increases by \plus1 for each strike you can make per round beyond the first.
 \stylereq You must make a melee attack each round.
 
+\feat{Overpowering Rage}{Class, Rage}
+\featpre Rage ability, barbarian level 10.
+\featben When you enter a rage, you can use this feat. If you do, during the rage you add your rage bonus to your Maneuver defense and your accuracy with combat maneuvers.
+\parhead{Special} You can only gain the benefit of one Rage feat at a time.
+
 \feat{Overwhelming Fire}{Combat, Style}
 \featpre Dex 3.
 \featben While in this style, you contribute to overwhelm penalties against all creatures within a single range increment of you.
@@ -1601,6 +1739,11 @@ You do not contribute to overwhelm penalties against creatures with cover from y
 For each strike you can make per round beyond the first, you threaten creatures an additional range increment away.
 \stylereq Wield a ranged weapon.
 You must make a physical ranged attack each round.
+
+\feat{Overwhelming Rage}{Class, Rage}
+\featpre Rage ability, barbarian level 6.
+\featben When you enter a rage, you can use this feat. If you do, during the rage overwhelmed foes you threaten increase their overwhelm penalties by 1.
+\parhead{Special} You can only gain the benefit of one Rage feat at a time.
 
 \feat{Parry}{Combat, Defense, Reaction, Style}
 \featpre Dexterity 3.
@@ -1612,6 +1755,11 @@ In exchange, you take a \minus2 penalty to accuracy with physical attacks.
 
 \stylereq Wield a melee weapon.
 You must make a melee attack or take the total defense action each round.
+
+\feat{Patient Rage}{Class, Rage}
+\featpre Rage ability, barbarian level 2.
+\featben When you enter a rage, you can use this feat. If you do, during the rage not attacking does not cause you to take damage at the end of each round.
+\parhead{Special} You can only gain the benefit of one Rage feat at a time.
 
 \feat{Patient Spell}{Metamagic}
 \featpre 2nd level spell known.
@@ -1660,6 +1808,11 @@ If your Constitution is 10, you are also immune to poison and supernatural disea
 If you hit, you deal damage normally.
 If your attack result also beats the target's Fortitude defense, it loses its ability to fly for 5 rounds.
 This only affects creatures who use wings or other physical means to fly, and has no effect on creatures with magical or supernatural flight.
+
+\feat{Plant Speech}{Class}
+\featpre Wild speech ability, druid level 5.
+\featben You can use your wild speech ability to communicate with plants, in addition to animals.
+A regular plant's sense of its surroundings is limited, so it won't be able to give (or recognize) detailed descriptions of creatures or answer questions about events outside its immediate vicinity.
 
 \feat{Predictive Strike}{Reaction, Strike}
 \featpre Intelligence 15, combat prowess 18.
@@ -1733,9 +1886,18 @@ This feat can be retrained using normal retraining rules if you return to your o
 \featpre 2nd level or higher \glossterm{Telekinesis} spell known.
 \featben By expending a Telekinesis spell of 2nd level or higher, you can use the Disable Device or Sleight of Hand skills at \rngclose range for a number of minutes equal to half the level of the spell slot.
 
+\feat{Rapid Combat Adaptation}{Class}
+\featpre Adaptive combat ability, Intelligence 5, fighter level 8.
+\featben You only need to spend 1 minute in training to change your adaptive combat feats.
+
 \feat{Rapid Performance}{Performance, Skill}
 \featpres Perform 14 ranks, any three Performance feats.
 \featben You can use performance feats as a swift action by taking a \minus5 penalty on the Perform check to activate the feat.
+
+\feat{Rapid Rage}{Class, Rage}
+\featpre Rage ability, barbarian level 2.
+\featben When you enter a rage, you can use this feat. If you do, during the rage you gain a \plus10 foot bonus to land speed.
+\parhead{Special} You can only gain the benefit of one Rage feat at a time.
 
 \feat{Reach Spell}{Metamagic}
 \featpre 3rd level spell known.
@@ -1783,6 +1945,11 @@ If it cannot be affected by \spell{spell turning}, such as if it is a spell that
 \featpre Intelligence 3.
 \featben You can learn and perform rituals as if you were an arcane caster with a spellpower equal to your level.
 The maximum level of ritual that you can learn or perform is equal to half your level or your Intelligence, whichever is lower.
+
+\feat{Savage Rage}{Class, Rage}
+\featpre Rage ability, barbarian level 2.
+\featben When you enter a rage, you can use this feat. If you do, during the rage benefit you gain the unarmed warrior monk ability (see Unarmed Warrior, \pref{Mnk:Unarmed Warrior}), increasing your power with unarmed attacks.
+\parhead{Special} You can only gain the benefit of one Rage feat at a time.
 
 \feat{Scale the Beast}{Skill}
 \featpre Climb 10 ranks.
@@ -1876,6 +2043,11 @@ Choose a school of magic.
 \featben You gain a \plus2 bonus to your spellpower when casting spells and using spell-like abilities from the chosen school of magic.
 In exchange, you take a \minus2 penalty to spellpower with all other spells and spell-like abilities.
 
+\feat{Spellbreaker Rage}{Class, Rage}
+\featpre Rage ability, barbarian level 10.
+\featben When you enter a rage, you can use this feat. If you do, during the rage you gain \glossterm{spell resistance} equal to 10 \add your Constitution or barbarian level.
+\parhead{Special} You can only gain the benefit of one Rage feat at a time.
+
 \feat{Spellwarped Ritualist}{Magic}
 \featben You can learn and perform rituals as if you were an arcane caster with a spellpower equal to your spellwarped level or your spellwarped key attribute, whichever is higher.
 The maximum level of ritual that you can learn or perform is equal to half your spellwarped level or half your spellwarped key attribute, whichever is lower.
@@ -1941,7 +2113,7 @@ The spell must target you or only affect you.
 If you cast any other spell, you lose the ability to sustain the spell.
 A sustained spell uses up a spell slot one level higher than the spell's actual level.
 
-\feat{Swift}{General}
+\feat{Swift}{General, Mobility}
 \featben You increase your land speed by 5 feet.
 
 \feat{Sympathetic Resistance}{Magic}
@@ -1963,6 +2135,12 @@ As a swift action, you can make a special check with a bonus equal to your comba
 The DC is equal to 15 \add the creature's level.
 If you succeed, you learn what the creature is planning to do during the next phase.
 Of course, it can change its plans, particularly if it hears you tell your allies what it will do.
+
+\feat{Taunting Rage}{Class, Rage}
+\featpre Rage ability, barbarian level 10.
+\featben When you enter a rage, you can use this feat. If you do, during the rage you can taunt your foes.
+Whenever you hit a creature with a melee strike, it is \taunted by you for 2 rounds.
+\parhead{Special} You can only gain the benefit of one Rage feat at a time.
 
 \feat{Threatening Fire}{Combat, Reaction, Style}
 \featpres Dexterity 5, Overwhelming Fire, combat prowess 8.
@@ -2066,6 +2244,10 @@ If you know an additional Knowledge spell of 6th level or higher, this bonus inc
 \featben As long as you are within \rngclose range of an undead creature (other than yourself), you gain a \plus2 bonus to spellpower with Vivimancy spells.
 If the undead creature is under your control, this bonus applies to all spells you cast.
 
+\feat{Vermin Speech}{Class}
+\featpre Wild speech ability, druid level 3.
+\featben You can use your wild speech ability to communicate with vermin, in addition to animals.
+
 \feat{Versatility}{Class}
 \featpre Levels in two different classes.
 \featben For the purpose of abilities based on your class level, you treat your class level as being equal to your total level.
@@ -2103,6 +2285,11 @@ If you succeed, the creature takes 1d6 bludgeoning damage per Strength.
 \feat{Wardwalker}{Magic}
 \featpre 3rd level or higher \glossterm{Warding} spell known.
 \featben When you trigger a Warding spell, it does not take effect until one round after you triggered it. This can give you time to escape the spell's effects.
+
+\feat{Wary Rage}{Class, Rage}
+\featpre Rage ability, barbarian level 2.
+\featben When you enter a rage, you can use this feat. If you do, during the rage you only suffer a \minus1 penalty to physical defenses for raging (instead of the normal \minus2).
+\parhead{Special} You can only gain the benefit of one Rage feat at a time.
 
 \feat{Weapon Focus}{Combat}
 Choose one weapon group.
@@ -2145,6 +2332,11 @@ You cannot defend yourself with melee weapons you are not proficient with, and y
 You can gain Weapon Proficiency multiple times.
 Each time you take the feat, it applies to a new weapon group.
 You cannot choose simple weapons.
+
+\feat{Willful Rage}{Class, Rage}
+\featpre Rage ability, barbarian level 2.
+\featben When you enter a rage, you can use this feat. If you do, during the rage you add your rage bonus to your Mental defense.
+\parhead{Special} You can only gain the benefit of one Rage feat at a time.
 
 \feat{Wired}{Magic}
 \featpre 1st level or higher Electricity spell known.

@@ -893,7 +893,7 @@ You cannot take 20 on Perform checks.
 \subsubsection{Entertain}
 You can make a Perform check to provide entertainment or to show off your skills.
 
-\skill{Persuasion}{Cha}
+\skill{Persuasion}{\x}
 You can use Persuasion to convince people to do or think what you want. Depending on how it is used, it represents a combination of verbal acuity, tact, argumentative ability, grace, etiquette, and personal magnetism. Using a Persuasion check usually takes at least a minute of sustained conversation. You cannot normally take 10 or take 20 on Persuasion checks.
 
 Persuasion checks are usually made against a group. For the purposes of a Persuasion check, a ``group'' consists of creatures who consider themselves to be allies. For example, in a king's court, you cannot simply influence the king alone; his trusted advisors are also part of the same group. It is possible to influence one group without influencing another. For example, the king and his advisors may be unpersuaded, but the prince may find your arguments compelling. Groups can also consist of a single creature. The DM decides what the groups are.
@@ -906,29 +906,29 @@ You can make a Persuasion check to cause creatures to believe something you say.
 Your check is modified by how believable your argument is, as well as whether the group has strong feelings about the truth of your story.
 
 \begin{dtable}
-  \lcaption{Believability Modifiers}
-  \begin{dtabularx}{\columnwidth}{X l}
-    \tb{Description} & \tb{DC Modifier}  \\
-\hline
-    Expected to be true (``Nothing interesting happened while I was on patrol'') & \minus5 \\
-    Plausible (``The mayor is too busy to see you now.'') & \plus0 \\
-    Unlikely (``The north gate is under attack!'') & \plus5 \\
-    Extremely unlikely (``The mayor is secretly a vampire.'') & \plus10 \\
-    Virtually impossible (``You are secretly a vampire.'') & \plus20 \\
-    Demonstratably untrue (``You are a frog.'') & \x\fn{1} \\
-  \end{dtabularx}
-  1 You cannot convince someone of something that is proven to be false.
+    \lcaption{Believability Modifiers}
+    \begin{dtabularx}{\columnwidth}{X l}
+        \tb{Description} & \tb{DC Modifier}  \\
+        \hline
+        Expected to be true (``Nothing interesting happened while I was on patrol'') & \minus5  \\
+        Plausible (``The mayor is too busy to see you now.'')                        & \plus0   \\
+        Unlikely (``The north gate is under attack!'')                               & \plus5   \\
+        Extremely unlikely (``The mayor is secretly a vampire.'')                    & \plus10  \\
+        Virtually impossible (``You are secretly a vampire.'')                       & \plus20  \\
+        Demonstratably untrue (``You are a frog.'')                                  & \x\fn{1} \\
+    \end{dtabularx}
+    1 You cannot convince someone of something that is proven to be false.
 \end{dtable}
 
 \begin{dtable}
-  \lcaption{Motivation Modifiers}
-  \begin{dtabularx}{\columnwidth}{X l}
-    \tb{Description} & \tb{DC Modifier} \\
-\hline
-    Target wants to believe (``That dress looks lovely on you.'') & \minus5 \\
-    Target does not have strong feelings (``I'm busy.'') & \plus0 \\
-    Target doesn't want the story to be true (``Your brother is a murderer.'') & \plus5 \\
-  \end{dtabularx}
+    \lcaption{Motivation Modifiers}
+    \begin{dtabularx}{\columnwidth}{X l}
+        \tb{Description}                                                           & \tb{DC Modifier} \\
+        \hline
+        Target wants to believe (``That dress looks lovely on you.'')              & \minus5          \\
+        Target does not have strong feelings (``I'm busy.'')                       & \plus0           \\
+        Target doesn't want the story to be true (``Your brother is a murderer.'') & \plus5           \\
+    \end{dtabularx}
 \end{dtable}
 
 \subsubsection{Form Agreement}
@@ -939,38 +939,38 @@ Success means the group will fulfill their end of the deal. Of course, if you do
 Your check is modified by your relationship with the group and how favorable the deal is.
 
 \begin{dtable}
-\begin{dtabularx}{\columnwidth}{>{\lcol}X r}
-\tb{Relationship} & \tb{Modifier} \\
-\hline
-Intimate: Someone who with whom you have an implicit trust.
-Example: A lover or spouse. & \minus15 \\
-Friend: Someone with whom you have a regularly positive personal relationship.
-Example: A long-time buddy or a sibling. & \minus10 \\
-Ally: Someone on the same team, but with whom you have no personal relationship.
-Example: A cleric of the same religion or a knight serving the same king. & \minus5 \\
-Acquaintance (Positive): Someone you have met several times with no particularly negative experiences. Example: The blacksmith that buys your looted equipment regularly. & \minus2 \\
-Just Met: No relationship whatsoever.
-Example: A guard at a castle or a traveler on a road. & \plus0 \\
-Acquaintance (Negative): Someone you have met several times with no particularly positive experiences. Example: A town guard that has arrested you for drunkenness once or twice. & \plus2 \\
-Enemy: Someone on an opposed team, with whom you have no personal relationship.
-Example: A cleric of a philosophically-opposed religion or an orc bandit who is robbing you. & \plus5 \\
-Personal Foe: Someone with whom you have a regularly antagonistic personal relationship.
-Example: An evil warlord whom you are attempting to thwart, or a bounty hunter who is tracking you down for your crimes. & \plus10 \\
-Nemesis: Someone who has sworn to do you, personally, harm. Example: The brother of a man you murdered in cold blood. & \plus15 \\
-\end{dtabularx}
+    \begin{dtabularx}{\columnwidth}{>{\lcol}X r}
+        \tb{Relationship} & \tb{Modifier} \\
+        \hline
+        Intimate: Someone who with whom you have an implicit trust.
+        Example: A lover or spouse. & \minus15 \\
+        Friend: Someone with whom you have a regularly positive personal relationship.
+        Example: A long-time buddy or a sibling. & \minus10 \\
+        Ally: Someone on the same team, but with whom you have no personal relationship.
+        Example: A cleric of the same religion or a knight serving the same king. & \minus5 \\
+        Acquaintance (Positive): Someone you have met several times with no particularly negative experiences. Example: The blacksmith that buys your looted equipment regularly. & \minus2 \\
+        Just Met: No relationship whatsoever.
+        Example: A guard at a castle or a traveler on a road. & \plus0 \\
+        Acquaintance (Negative): Someone you have met several times with no particularly positive experiences. Example: A town guard that has arrested you for drunkenness once or twice. & \plus2 \\
+        Enemy: Someone on an opposed team, with whom you have no personal relationship.
+        Example: A cleric of a philosophically-opposed religion or an orc bandit who is robbing you. & \plus5 \\
+        Personal Foe: Someone with whom you have a regularly antagonistic personal relationship.
+        Example: An evil warlord whom you are attempting to thwart, or a bounty hunter who is tracking you down for your crimes. & \plus10 \\
+        Nemesis: Someone who has sworn to do you, personally, harm. Example: The brother of a man you murdered in cold blood. & \plus15 \\
+    \end{dtabularx}
 \end{dtable}
 \begin{dtable*}
-\begin{dtabularx}{\textwidth}{>{\lcol}X r}
-\tb{Risk vs. Reward Judgement (Persuasion)} & \tb{Modifier} \\
-\hline
-Fantastic: The reward for accepting the deal is very worthwhile; the risk is either acceptable or extremely unlikely. The best-case scenario is a virtual guarantee. Example: An offer to pay a lot of gold for information that isn't important to the character. & \minus15 \\
-Good: The reward is good and the risk is minimal. The subject is very likely to profit from the deal. Example: An offer to pay someone twice their normal daily wage to spend their evening in a seedy tavern with a reputation for vicious brawls and later report on everyone they saw there. & \minus10\\
-Favorable: The reward is appealing, but there's risk involved. If all goes according to plan, though, the deal will end up benefiting the subject. Example: A request for a mercenary to aid the party in battle against a weak goblin tribe in return for a cut of the money and first pick of the magic items. & \minus5\\
-Even: The reward and risk more of less even out; or the deal involves neither reward nor risk. Example: A request for directions to a place that isn't a secret. & \plus0 \\
-Unfavorable: The reward is not enough compared to the risk involved. Even if all goes according to plan, chances are it will end badly for the subject. Example: A request to free a prisoner the target is guarding for a small amount of money. & \plus5\\
-Bad: The reward is poor and the risk is high. The subject is very likely to get the raw end of the deal. Example: A request for a mercenary to aid the party in battle against an ancient red dragon for a small cut of any non-magical treasure. & \plus10 \\
-Horrible: There is no conceivable way that the proposed plan could end up with the subject ahead or the worst-case scenario is guaranteed to occur. Example: An offer to trade a rusty kitchen knife for a shiny new longsword. & \plus15 \\
-\end{dtabularx}
+    \begin{dtabularx}{\textwidth}{>{\lcol}X r}
+        \tb{Risk vs. Reward Judgement (Persuasion)} & \tb{Modifier} \\
+        \hline
+        Fantastic: The reward for accepting the deal is very worthwhile; the risk is either acceptable or extremely unlikely. The best-case scenario is a virtual guarantee. Example: An offer to pay a lot of gold for information that isn't important to the character. & \minus15 \\
+        Good: The reward is good and the risk is minimal. The subject is very likely to profit from the deal. Example: An offer to pay someone twice their normal daily wage to spend their evening in a seedy tavern with a reputation for vicious brawls and later report on everyone they saw there. & \minus10\\
+        Favorable: The reward is appealing, but there's risk involved. If all goes according to plan, though, the deal will end up benefiting the subject. Example: A request for a mercenary to aid the party in battle against a weak goblin tribe in return for a cut of the money and first pick of the magic items. & \minus5\\
+        Even: The reward and risk more of less even out; or the deal involves neither reward nor risk. Example: A request for directions to a place that isn't a secret. & \plus0 \\
+        Unfavorable: The reward is not enough compared to the risk involved. Even if all goes according to plan, chances are it will end badly for the subject. Example: A request to free a prisoner the target is guarding for a small amount of money. & \plus5\\
+        Bad: The reward is poor and the risk is high. The subject is very likely to get the raw end of the deal. Example: A request for a mercenary to aid the party in battle against an ancient red dragon for a small cut of any non-magical treasure. & \plus10 \\
+        Horrible: There is no conceivable way that the proposed plan could end up with the subject ahead or the worst-case scenario is guaranteed to occur. Example: An offer to trade a rusty kitchen knife for a shiny new longsword. & \plus15 \\
+    \end{dtabularx}
 \end{dtable*}
 
 \subsubsection{Gather Information}
