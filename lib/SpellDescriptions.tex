@@ -1296,7 +1296,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
                 \spellspecial If the target thinks that you or your allies are threatening it, you take a \minus5 penalty to accuracy on the attack.
-                \spellsuccess The target sees your words and actions in the most favorable way, as a close friend or trusted ally. You cannot control it like an automaton, but you can persuade it to take particular actions with the Persuasion skill (see \pcref{Persuasion}). The target is treated as a friend (a \plus10 relationship modifier) for the purpose of Persuasion checks you make.
+                \spellsuccess The target is \charmed by you. 
                 \spellcritical As above, but the effect is permanent.
             \end{spellattack}
             \spelldur \durlong
@@ -2216,9 +2216,12 @@
 
                 \spellsuccess The target is \confused for 2 rounds.
 
-                \spellcritical The target is dominated for 2 rounds. It obeys your commands unquestioningly, as an automaton. If you have a shared language, you can command the target to perform any task, and it will obey you immediately. If you lack a shared language, you can still issue simple commands, such as ``attack'' or ``follow''.
+                \spellcritical The target is \dominated for 2 rounds.
 
-                When this effect's duration ends, you must make another Spellpower vs. Mental attack against the target. If you succeed, the target remains dominated for another 2 rounds. If you fail, the target breaks free of your control. If you critically succeed, the target remains dominated for an additional 24 hours. If the effect's duration is extended, this attack must be repeated each time it ends until the domination is broken.
+                When this effect's duration ends, you must make another Spellpower vs. Mental attack against the target.
+                Success means the target remains dominated for another 2 rounds, and this attack is repeated at the end of that time.
+                Failure means the target breaks free of your control.
+                Critical success means the target is dominated for an additional 24 hours, and no further attacks are made.
 
                 \spellfailure The target is \dazed for 2 rounds.
             \end{spellattack}
