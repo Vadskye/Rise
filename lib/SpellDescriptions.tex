@@ -14,18 +14,20 @@
             \spelltwocol{\spelltime{Immediate action}}{\spellcmp{Verbal only}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect You gain nonlethal damage reduction against physical damage equal to twice your spellpower. This damage reduction converts damage into nonlethal damage rather than completely negating it. Force damage ignores this damage reduction and negates it for 1 round.
+            \spelleffect You gain damage reduction against physical damage equal to your spellpower.
+            Force damage ignores this damage reduction and negates it for 1 round.
             \spelldur Until end of round
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Abjuration [Shielding]}{Abjuration}
-        \spellnotes After casting this spell, you cannot cast it again for 5 rounds. You can cast this spell in response to an opponent attacking you, before the attack is rolled.
+        \spellnotes After casting this spell, you cannot cast it again for 5 rounds.
+        You can cast this spell in response to an opponent attacking you, before the attack is rolled.
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
         \spellaugment{1}{Spellshield}{Damage from spells is also reduced. Spells that are not subject to spell resistance are not affected.}
-        \spellaugment{2}{Empowered}{Damage is negated, rather than converted into nonlethal damage.}
+        \spellaugment{4}{Empowered}{The damage reduction is equal to twice your spellpower.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -610,7 +612,7 @@
             \spelltgt{You}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect At any time during the spell's duration, you can concentrate as a standard action. If you do, an ally gains damage reduction, as described below.
+            \spelleffect At any time during the spell's duration, you can concentrate as a swift action. If you do, an ally gains damage reduction, as described below.
             \spelldur \durlong
         \end{spelleffects}
     \end{spellcontent}
@@ -626,6 +628,9 @@
         \spellinfo{Abjuration [Shielding]}{Arcane, Divine, Protection, War}
         \miscastexplode
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{1}{Persistent}{The spell's duration becomes \durext.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Avatar of Suffering}[8]
@@ -653,6 +658,9 @@
         \spellinfo{Enchantment [Compulsion, Mind]}{Arcane, Divine, Evil}
         \miscastexplode
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{1}{Persistent}{The spell's duration becomes \durext.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Avatar of Translocation}[7]
@@ -682,6 +690,9 @@
         \spellinfo{Conjuration [Teleportation]}{Conjuration, Travel}
         \miscastexplode
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{1}{Persistent}{The spell's duration becomes \durext.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Avatar of Wind}[7]
@@ -788,7 +799,7 @@
     \end{spellaugments}
 \end{spellsection}
 
-\begin{spellsection}{Barkskin}[2]
+\begin{spellsection}{Barkskin}[1]
     \begin{spellheader}
         \spelldesc{You toughen a creature's skin, giving it the appearance of tree bark.}
     \end{spellheader}
@@ -797,12 +808,13 @@
             \spelltwocol{\spelltgt{One living creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target gains damage reduction against physical damage equal to your spellpower. Fire damage ignores this damage reduction and negates it for 1 round.
-            \spelldur \durpersonallong
+            \spelleffect The target gains damage reduction against physical damage equal to your spellpower.
+            Fire damage ignores this damage reduction and negates it for 1 round.
+            \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Augment]}{Nature, Wild}
+        \spellinfo{Transmutation [Augment]}{Nature}
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
@@ -1296,7 +1308,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
                 \spellspecial If the target thinks that you or your allies are threatening it, you take a \minus5 penalty to accuracy on the attack.
-                \spellsuccess The target is \charmed by you. 
+                \spellsuccess The target is \charmed by you.
                 \spellcritical As above, but the effect is permanent.
             \end{spellattack}
             \spelldur \durlong
@@ -1318,7 +1330,7 @@
     \end{spellaugments}
 \end{spellsection}
 
-\begin{spellsection}{Circle of Death}[7]
+\begin{spellsection}{Circle of Death}[5]
     \begin{spellheader}
         \spelldesc{You channel powerful necrotic magic to damage nearby foes.}
     \end{spellheader}
@@ -1333,12 +1345,12 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Vivimancy [Death]}{Divine, Evil}
+        \spellinfo{Vivimancy [Death]}{Divine}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Circle of Healing}[7]
+\begin{spellsection}{Circle of Healing}[5]
     \begin{spellheader}
         \spelldesc{You channel powerful healing magic to heal nearby allies.}
     \end{spellheader}
@@ -1353,7 +1365,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Vivimancy [Positive]}{Divine, Good, Life, Nature}
+        \spellinfo{Vivimancy [Positive]}{Divine, Nature}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -1776,26 +1788,24 @@
     \end{spellaugments}
 \end{spellsection}
 
-\begin{spellsection}{Deflection}[3]
+\begin{spellsection}{Deflection}[5]
     \begin{spellheader}
-        \spelldesc{You shield yourself from enemy attacks, causing them to deflect away from you harmlessly.}
+        \spelldesc{You shield your ally from enemy attacks, causing harmful blows to deflect away from them.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltgt{You}
+            \spellquicktargeting{One willing creature}{\rngclose}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect You gain a defensive legend point. If you spend it, you get another legend point 5 rounds later.
-            \spelldur \durlong
+            \spelleffect Physical attacks against the target have a 50\% miss chance.
+            Spells and other targeted attacks are unaffected.
+            \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Abjuration [Shielding]}{Abjuration}
         \miscastexplode
     \end{spellfooter}
-    \begin{spellaugments}
-        \spellaugment{3}{Empowered}{You gain an additional defensive legend point. Both legend points regenerate independently after being spent.}
-    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Delay Damage}[3]
@@ -1835,7 +1845,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation}{Divine}
+        \spellinfo{Evocation}{Divine, Good}
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
@@ -1843,7 +1853,27 @@
     \end{spellaugments}
 \end{spellsection}
 
-\begin{spellsection}{Detect Alignment}[2]
+\begin{spellsection}{Divine Shield}[7]
+    \begin{spellheader}
+        \spelldesc{You shield your ally with a powerful force that protects it from danger and heals its wounds.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spellquicktargeting{One willing creature}{\rngclose}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect The target gains damage reduction against all damage equal to your spellpower.
+            In addition, at the end of each round, it heals hit points equal to your spellpower.
+            \spelldur 5 rounds
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Abjuration/Vivimancy [Life, Shielding]}{Divine, Life}
+        \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Detect Alignment}[1]
     \begin{spellheader}
         \spelldesc{You sense the presence of creatures with a particular alignment.}
     \end{spellheader}
@@ -1986,7 +2016,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Discern Lies}[4]
+\begin{spellsection}{Discern Lies}[2]
     \begin{spellheader}
         \spelldesc{You can discern subtle magical disturbances caused by lying.}
     \end{spellheader}
@@ -1996,11 +2026,11 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect You know when any creature in the area deliberately and knowingly speaks a lie. The spell does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions.
-            \spelldur Focus
+            \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Divination [Detection]}{Divine, Law}
+        \spellinfo{Divination [Detection]}{Arcane, Divine, Law}
         \spellnotes Each round, you can turn to discern lies in a new area. A detection spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.
         \miscastexplode
     \end{spellfooter}
@@ -2192,7 +2222,7 @@
             \spelltgt{You}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect You become larger, as \spell{enlarge}. In addition, you gain damage reduction against physical damage equal to your spellpower. Appropriately aligned damage ignores this damage reduction and negates it for 1 round. Evil attacks overcome your damage reduction if you are good or neutral, and good attacks overcome your damage reduction if you are evil.
+            \spelleffect You become larger, as \spell{enlarge}. In addition, you gain damage reduction against all damage equal to your spellpower. Appropriately aligned damage ignores this damage reduction and negates it for 1 round. Evil attacks overcome your damage reduction if you are good or neutral, and good attacks overcome your damage reduction if you are evil.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
@@ -2741,7 +2771,7 @@
         \end{spelleffects}
     \end{spellsubcontent}
     \begin{spellfooter}
-        \spellinfo{Abjuration/Evocation [Fire, Retributive, Shielding]}{Arcane, Fire}
+        \spellinfo{Abjuration/Evocation [Fire, Shielding]}{Arcane, Fire}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -2763,7 +2793,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Destructive, Fire]}{Destruction, Fire, Nature, War}
+        \spellinfo{Evocation [Destructive, Fire]}{Destruction, Fire, Nature, War, Wild}
         \miscastyou
     \end{spellfooter}
 \end{spellsection}
@@ -2816,7 +2846,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Earth, Physical]}{Earth, Nature, Wild}
+        \spellinfo{Evocation [Earth, Physical]}{Earth, Nature}
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
@@ -2920,7 +2950,7 @@
     \end{spellfooter}
     \begin{spellaugments}
         \spellaugment{1}{Sickening}{Creatures within the area are \sickened for as long as they remain within the cloud, and for 1 round after they leave.}
-        \spellaugment{3}{Shielding}{The spell's area becomes an emanation from you that moves with you. When you move, new fog does not form immediately. At the end of each round, the fog in your previous location disappears, and new fog forms around your current location.}[Abjuration]
+        %\spellaugment{3}{Shielding}{The spell's area becomes an emanation from you that moves with you. When you move, new fog does not form immediately. At the end of each round, the fog in your previous location disappears, and new fog forms around your current location.}[Abjuration]
         \spellaugment{3}{Solid}{All creatures in the area move at half speed and suffer penalties as if they were fighting underwater. Attacks entering or passing through the area are similarly penalized.}
         \spellaugment{4}{Acidic}{At the end of very round, make a Spellpower vs. Fortitude attack against everything in the fog. Success against a target means it takes 1d10 acid damage per four spellpower.}[Acid]
         %\spellaugment{5}{Sea of Fog}{The spell's area becomes a 50 ft. high, 500 ft. radius cylinder centered on you. A severe wind disperses the fog within 1 minute, a windstorm disperses it within 5 rounds, and a hurricane disperses it within a round.}
@@ -3552,7 +3582,8 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target gains damage reduction against physical damage equal to your spellpower. Force damage ignores this damage reduction and negates it for 1 round.
+            \spelleffect The target gains damage reduction against all damage equal to your spellpower.
+            Force damage ignores this damage reduction and negates it for 1 round.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
@@ -3641,7 +3672,7 @@
     \end{spellaugments}
 \end{spellsection}
 
-\begin{spellsection}{Invulnerability}[4]
+\begin{spellsection}{Invulnerability}[3]
     \begin{spellheader}
         \spelldesc{You become nearly invulnerable to damage.}
     \end{spellheader}
@@ -3661,7 +3692,8 @@
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
-        \spellaugment{3}{Complete}{You do not need to choose an energy type when casting the spell, and the damage reduction cannot be overcome.}
+        \spellaugment{2}{Complete}{You do not need to choose an energy type when casting the spell, and the damage reduction cannot be overcome.}
+        \spellaugment{4}{Empowered}{The damage reduction is equal to twice your spellpower.}
         \spellaugment{5}{Spellshield}{You also gain spell resistance equal to 10 \add your spellpower.}
     \end{spellaugments}
 \end{spellsection}
@@ -3760,7 +3792,7 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Lifegiving Roots}[8]
+\begin{spellsection}{Lifegiving Roots}[6]
     \begin{spellheader}
         \spelldesc{You raise roots from the ground that give their energy to a creature.}
     \end{spellheader}
@@ -3962,7 +3994,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Divination [Scrying]}{Arcane, Divine, Nature}
+        \spellinfo{Divination [Scrying]}{Arcane, Divine, Law, Nature}
         \spellnotes The mark's shape is the Draconic word for ``sight''.
         Although it is invisible, the mark can be detected with \spell{see invisibility} or a DC 30 Awareness check, if the mark is not covered by armor or other clothing.
 
@@ -4632,7 +4664,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngtouch}}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spellspecial Choose an alignment other than neutral (chaotic, good, evil, lawful).
@@ -4729,14 +4761,15 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellemanation{\arealarge radius from you}
+            \spellemanation{\areahuge radius from you}
             \spelltwocol{\spelltgr{A creature in the area moves towards you}}{\spelltgt{The moving creature}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess The target is unable to move towards you. It can stand still, or alter the direction of its movement to move parallel towards you or away from you.
+                \spellsuccess The target is unable to move towards you for the remainder of the spell. It can stand still, or alter the direction of its movement to move parallel towards you or away from you.
                 \spellcritical The target's movement is cancelled, and it is shoved backwards to the edge of the area.
-                If it encounters an obstacle, it stops moving.
+                If it encounters an obstacle, it stops moving. It cannot move towards you for the remainder of the spell.
+                \spellfailure The target's movement is unimpeded, and it is immune to the spell for the rest of its duration.
             \end{spellattack}
             \spelldur \durshort \dismissable
         \end{spelleffects}
@@ -4944,7 +4977,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Conjuration [Destructive, Earth, Physical]}{Nature}
+        \spellinfo{Conjuration [Destructive, Earth, Physical]}{Nature, Wild}
         \spellnotes \destructivespellnotes
         \miscastexplode
     \end{spellfooter}
@@ -5759,7 +5792,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Vivimancy [Flesh, Physical]}{Arcane, Death}
+        \spellinfo{Vivimancy [Flesh, Physical]}{Arcane, Death, Evil}
         \spellnotes \physicalspellnotes
         \miscastrandom
     \end{spellfooter}
