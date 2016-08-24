@@ -291,25 +291,25 @@ If he stops being lawful, he regains his ability to rage and take barbarian leve
         \tb{Level} & \tb{Combat Prowess} & \tb{Fort} & \tb{Ref} & \tb{Ment} & \tb{Special} \\
         \hline
         \clericprogressionrow{1}  & Devotion \plus2, domain gifts, spells \\
-        \clericprogressionrow{2}  & Domain invocations, rituals                         \\
+        \clericprogressionrow{2}  & Domain invocation, rituals                         \\
         \clericprogressionrow{3}  & Domain spell                                        \\
-        \clericprogressionrow{4}  & Devotion feat                                       \\
+        \clericprogressionrow{4}  & Domain invocation                                       \\
         \clericprogressionrow{5}  & Devotion \plus3, domain spell                       \\
         \clericprogressionrow{6}  & Domain aspect                                       \\
         \clericprogressionrow{7}  & Domain spell                                        \\
         \clericprogressionrow{8}  & Domain aspect                                       \\
         \clericprogressionrow{9}  & Domain spell                                        \\
-        \clericprogressionrow{10} & Devotion \plus4, greater domain invocation          \\
+        \clericprogressionrow{10} & Devotion \plus4, minor miracle          \\
         \clericprogressionrow{11} & Domain spell                                        \\
         \clericprogressionrow{12} & Greater domain invocation                           \\
         \clericprogressionrow{13} & Domain spell                                        \\
-        \clericprogressionrow{14} & Devotion feat                                       \\
+        \clericprogressionrow{14} & Greater domain invocation                                       \\
         \clericprogressionrow{15} & Devotion \plus5, domain spell                       \\
         \clericprogressionrow{16} & Domain mastery                                      \\
         \clericprogressionrow{17} & Domain spell                                        \\
         \clericprogressionrow{18} & Domain mastery                                      \\
         \clericprogressionrow{19} & Endless devotion, domain spell                      \\
-        \clericprogressionrow{20} & Devotion \plus6                                     \\
+        \clericprogressionrow{20} & Devotion \plus6, miracle                                     \\
     \end{dtabularx}
 \end{dtable}
 
@@ -357,12 +357,12 @@ The domains are listed below.
     \item{Good}
     \item{Knowledge}
     \item{Law}
+    \item{Life}
     \item{Magic}
     \item{Protection}
     \item{Strength}
     \item{Travel}
     \item{Trickery}
-    \item{Vitality}
     \item{War}
     \item{Water}
 \end{itemize}
@@ -427,14 +427,14 @@ Spells associated with particular alignments are indicated by the chaos, evil, g
         \hline
         Guftas, horse god of justice          & Lawful good     & Good, Law, Strength, Travel          \\
         Lucied, paladin god of justice        & Lawful good     & Destruction, Good, Protection, War   \\
-        Simor, fighter god of protection      & Lawful good     & Good, Protection, Strength, Vitality \\
+        Simor, fighter god of protection      & Lawful good     & Good, Protection, Strength, War \\
         Rucks, monk god of pragmatism         & Neutral good    & Good, Law, Protection, Travel        \\
         Vanya, centaur god of nature          & Neutral good    & Good, Strength, Travel, Wild         \\
         Brushtwig, pixie god of creativity    & Chaotic good    & Chaos, Good, Trickery, Wild          \\
         Chavi, god of stories                 & Chaotic good    & Chaos, Knowledge, Trickery, Travel   \\
         Ivan Ivanovitch, bear god of strength & Chaotic good    & Chaos, Strength, War, Wild           \\
         Krunch, barbarian god of destruction  & Chaotic good    & Destruction, Good, Strength, War     \\
-        Sir Cakes, dwarf god of freedom       & Chaotic good    & Chaos, Good, Strength, Vitality      \\
+        Sir Cakes, dwarf god of freedom       & Chaotic good    & Chaos, Good, Strength      \\
         Raphael, monk god of retribution      & Lawful neutral  & Death, Law, Protection, Travel       \\
         Declan, god of fire                   & True neutral    & Destruction, Fire, Knowledge, Magic  \\
         Kurai, shaman god of nature           & True neutral    & Air, Earth, Fire, Water              \\
@@ -499,8 +499,6 @@ At his 8th cleric level, the cleric gains an additional domain aspect from one o
 
 \cf{Clr}[12th]{Greater Domain Invocations}[Su]
 The cleric gains the ability to invoke the power of one of his domains even more effectively.
-This consumes two devotion points.
-A cleric's accuracy when invoking a greater domain is equal to his divine power.
 Greater domain invocations are described at \pcref{Greater Domain Invocations}.
 
 At his 14th cleric level, the cleric gains an additional greater domain invocation from one of his domains.
@@ -542,6 +540,9 @@ The cleric adds all Knowledge skills to his cleric class skill list.
 In addition, he gains two skill points which must be spent on Knowledge skills.
 \subcf{Law}
 The cleric is immune to \glossterm{Delusion} effects.
+\subcf{Life}
+The cleric gains a \plus2 bonus to Fortitude defense.
+In addition, whenever he makes a Heal check, he rolls twice and takes the higher result.
 \subcf{Magic}
 The cleric gains a \plus1 bonus to spellpower with divine spells.
 \subcf{Protection}
@@ -555,9 +556,6 @@ In addition, he gains a \plus10 foot bonus to his land speed.
 \subcf{Trickery}
 The cleric adds Bluff, Disguise, and Stealth to his cleric class skill list.
 In addition, he gains two skill points which must be spent on any combination of those skills.
-\subcf{Vitality}
-The cleric gains a \plus2 bonus to Fortitude defense.
-In addition, whenever he makes a Heal check, he rolls twice and takes the higher result.
 \subcf{War}
 The cleric gains Weapon Focus with his deity's favored weapon group as a bonus feat.
 If he does not have a deity, he gains it in a weapon group related to his alignment or ideals.
@@ -598,6 +596,9 @@ This invocation heals or inflicts 1d10 damage per two divine power instead of th
 \subcf{Law -- Mental}
 This invocation does not heal or inflict damage.
 If the attack succeeds, and the target is chaotic, it is \immobilized for 5 rounds.
+\subcf{Life -- Fortitude}
+The target is healed.
+This invocation heals 1d8 damage per divine power instead of the normal value.
 \subcf{Magic -- Mental}
 If the target can cast spells, it is healed.
 Otherwise, it takes divine damage.
@@ -616,8 +617,6 @@ In addition, it gains a \plus10 foot bonus to its movement speed for 1 round.
 This invocation heals 1d10 damage per two divine power instead of the normal value.
 \subcf{Trickery -- Mental}
 If the attack succeeds, the target is \disoriented for 1 round.
-\subcf{Vitality -- Fortitude}
-The target takes divine damage or is healed, as you choose.
 \subcf{War -- Fortitude}
 This invocation affects all enemies within a \areasmall radius of you instead of the normal target.
 The targets take divine damage.
@@ -660,6 +659,8 @@ In addition, he gains two skill points which must be spent on Knowledge skills.
 \subcf{Law -- Certain Retribution}
 Whenever an chaotic creature within 30 feet of you attacks you, make an attack against its Mental defense.
 Success means it takes 1d8 damage per two divine power.
+\subcf{Life -- Critical Healer}
+All of the cleric's healing spells and abilities cure critical damage as easily as they cure hit points.
 \subcf{Magic -- Magic Feat}
 The cleric gains a bonus magic feat or metamagic feat.
 \subcf{Protection -- Faithful Shield}
@@ -671,8 +672,6 @@ The cleric gains a \plus30 foot bonus to his speed in all movement modes, up to 
 In addition, whenever he makes a Sprint check, he rolls twice and takes the higher result.
 \subcf{Trickery -- Legendary Trickster}
 The cleric gains his choice of Legendary Disguise, Legendary Liar, or Legendary Stealth as a bonus feat, even if he does not meet the prerequisites.
-\subcf{Vitality -- Critical Healer}
-All of the cleric's healing spells and abilities cure critical damage as easily as they cure hit points.
 \subcf{War -- Combat Feat}
 The cleric gains a combat feat of his choice.
 \subcf{Water -- Water Breathing} The cleric may breathe and speak normally while underwater, as the \spell{water breathing}
@@ -684,60 +683,133 @@ He can spend a devotion point as a swift action to embody that wild aspect for 1
 
 \subsubsection{Greater Domain Invocations}\label{Greater Domain Invocations}
 
-\subcf{Air -- Mantle of Air}
-As a swift action, the cleric can surround himself in a mantle of whirling air for 5 rounds.
-Physical attacks have a 50\% chance to miss him while this effect is active.
-\subcf{Chaos -- Maw of Chaos}
-This power functions like the Chaos channeled domain power, except that it affects all number of creatures within a \arealarge radius burst of the cleric.
-He may freely exclude any creatures he sees from the effect after determining whether positive or negative energy is channeled.
-\subcf{Death -- Invoke Death}
-This power functions like the Death channeled domain power, except that if the target has no hit points remaining after taking damage from this effect, it immediately dies.
-This is a death effect.
-\subcf{Destruction -- Tide of Destruction}
-The cleric channels destructive energy as the Destruction channeled domain power, except that any creature damaged by the effect is also filled with a destructive resonance for 5 rounds.
-The first time each round that each subject takes damage, that damage is increased by half the cleric's level.
-\subcf{Earth -- Mantle of Earth}
-As a swift action, the cleric can surround himself in a mantle of earth for 5 rounds.
-He gains the effect of the \spell{stoneskin} spell, with a spellpower equal to his divine power.
-\subcf{Evil -- Invoke Evil}
-All nonevil creatures within an \arealarge radius burst of the cleric are \staggered for 2 rounds.
-\subcf{Fire -- Blazing Inferno}
-The cleric makes a divine power vs. Reflex attack against all enemies within an \arealarge radius burst of him.
-Success deals \spelldamage{fire}[d8].
-Failure deals half damage.
-\subcf{Good -- Invoke Good}
-All nonevil creatures within an \arealarge radius burst of the cleric are \dazed for 2 rounds.
-\subcf{Knowledge -- See the Truth}
-As a swift action, the cleric can gain the benefit of the \spell{true seeing} spell until the end of the round.
-\subcf{Law -- Invoke Law}
-All nonlawful creatures within an \arealarge radius burst of the cleric are \immobilized for 2 rounds.
-\subcf{Magic -- Font of Magic}
-This power functions like the Magic channeled domain power, except it affects all creatures within an \arealarge radius of the cleric.
-The cleric may freely exclude any creatures he can see from the effect.
+\subcf{Air -- Command Air}
+As a standard action, the cleric can spend a devotion point to speak with and command air for 5 minutes.
+He can ask the air simple questions and understand its responses.
+If he commands the air to perform a task, it will do so do the best of its ability until the end of the effect's duration.
+The cleric cannot compel the air to go faster than 50 mph, and cannot affect air farther than 500 feet from him.
+
+\subcf{Chaos -- Sow Chaos}
+As a standard action, the cleric can spend a devotion point to cause an improbable event to occur.
+He can visualize in general terms what he wants to happen, such as ``Make the bartender leave the bar''.
+He cannot control exact nature of the event, though it always beneficial for him in some way.
+
+\subcf{Death -- Reaper's Boon}
+As a standard action, the cleric can spend a devotion point to summon or banish Death.
+In either case, it affects a living creature within 100 feet of him for 5 rounds.
+If he summons Death, the target immediately dies if it takes critical damage.
+If he banishes Death, the target is immune to Death effects and does not make \glossterm{stabilization rolls} if it takes critical damage.
+This does not prevent the target from taking critical damage, and it begins dying after the effect ends if it has took critical damage and has not been stabilized.
+
+\subcf{Destruction -- Dust to Dust}
+As a standard action, the cleric can spend a devotion point to destroy objects within a \arealarge radius burst centered on him.
+He makes a Divine power vs. Mental attack against all objects in the area.
+Success against an object means it crumbles into dust, and is irreparably broken.
+Unattended nonmagical objects do not have a Mental defense, and are automatically broken.
+The cleric may freely exclude any objects or squares from the effect.
+
+\subcf{Earth -- Command Earth}
+As a standard action, the cleric can spend a devotion point to speak with and command earth for 5 minutes.
+He can ask the earth simple questions and understand its responses.
+If he commands the earth to perform a task, it will do so do the best of its ability until the end of the effect's duration.
+The cleric cannot compel the earth to move faster than 10 feet per round, and cannot effect earth farther than 500 feet from him.
+
+\subcf{Evil -- Temptation}
+As a standard action, the cleric can spend a devotion point to compel a creature to commit an evil act.
+He makes a Divine power vs. Mental attack against the creature.
+Success means the target takes an evil action as soon as it can.
+The cleric has no control over the act the creature takes, but circumstances can make the target more likely to take an action the cleric desires.
+Creatures who have strict codes prohibiting them from taking evil actions, such as paladins devoted to Good, are immune to this effect.
+This is a [\glossterm{Compulsion}, \glossterm{Mind}] effect.
+
+\subcf{Fire -- Command Flames}
+As a standard action, the cleric can spend a devotion point to speak with and command fire for 5 minutes.
+He can ask the fire simple questions and understand its responses.
+If he commands the fire to perform a task, it will do so do the best of its ability until the end of the effect's duration.
+The fire can move up to 30 feet in a single round between combustible materials.
+The cleric cannot effect fire farther than 500 feet from him.
+
+\subcf{Good -- Salvation}
+As a standard action, the cleric can spend a devotion point to compel a creature to do a good deed.
+He makes a Divine power vs. Mental attack against the creature.
+Success means the target takes a good action as soon as it can.
+THe cleric has no control over the act the creature takes, but circumstances can make the target more likely to take an action the cleric desires.
+Creatures who have strict codes prohibiting them from taking good actions, such as paladins devoted to Evil, are immune to this effect.
+This is a [\glossterm{Compulsion}, \glossterm{Mind}] effect.
+
+\subcf{Knowledge -- Impart Truth}
+As a standard action, the cleric can spend a devotion point to grant knowledge.
+He may make a Knowledge check of any kind as if he was trained in that skill.
+In addition, he gains a \plus20 bonus to the check.
+He may also cause any number of creatures within a \arealarge radius around him to learn the results of his check.
+Creatures granted knowledge in this way believe the information to be true as if they had seen it with their own eyes.
+Exceptionally stubborn or untrusting creatures may still not be convinced of its truth, however.
+
+\subcf{Law -- Infallible Enforcement}
+As a standard action, the cleric can spend a devotion point to enforce the law in a \arealarge radius \glossterm{zone} centered on him.
+He makes a Divine power vs. Mental attack against all creatures in the area.
+Success means the target is unable to break the law, and any attempt to do so simply fails.
+Failure means the target feels a compulsion not to break the law, but is able to overcome the compulsion if it desires.
+The laws which are applied are those which are most appropriate for the area, regardless of whether the cleric or any other creature know those laws.
+If the rightful laws are inconsistent or impossible to understand, those laws may not be enforced.
+This is a [\glossterm{Compulsion}, \glossterm{Mind}] effect.
+
+\subcf{Life -- Prayer of Resurrection}
+As a standard action, the cleric can resurrect a touched creature, as the \spell{resurrection} ritual.
+The target must have been dead for no more than 5 minutes.
+He must spend a number of devotion points equal to the target's level.
+He does not know the cost before resurrecting the target, and if the cost exceeds his remaining devotion points, the attempt fails and no devotion points are spent.
+
+\subcf{Magic -- Manipulate Spell}
+As a standard action, the cleric can spend a devotion point to manipulate a currently active spell or spell-like ability within \rngmed range.
+He must make a Divine power check against a DC equal to 10 \add the spell's spellpower.
+Success means he identifies the spell perfectly, if he had not already done so, and can take one of the following four actions on the spell.
+\begin{itemize}
+    \item Control: If the spell can be focused on to gain an effect or extend its duration, the cleric gains the ability to focus on the spell as if he was the one who originally cast it.
+        Its original caster loses the ability to focus on the spell.
+    \item Dispel: The spell is dispelled, if it can be dispelled by \spell{dispel magic}.
+    \item Persist: The spell's remaining duration increases by 5 minutes, up to a maximum of its starting duration (ignoring any duration increase from focusing on the spell).
+    \item Suppress: The spell is suppressed for 5 rounds, if it can be dispelled by \spell{dispel magic}.
+        At the end of that time, the spell's effect resumes, if it still has duration remaining.
+\end{itemize}
+
 \subcf{Protection -- Divine Shield}
-All allies within an \arealarge burst of the cleric gain damage reduction against all damage equal to the cleric's divine power for 5 rounds.
-\subcf{Strength -- Titanic Strength}
-This invocation functions like the \spell{enlarge} spell, except that it increases the target's size by two size categories.
-\subcf{Travel -- Invoke Speed}
-As a swift action, the cleric can quadruple his movement speed with all forms of movement until the end of the round.
-In addition, he can move through squares occupied by enemies without penalty, and does not treat threatened squares as difficult terrain.
-\subcf{Trickery -- Swift Invisibility} As a swift action, the cleric can gain the benefit of the \spell{invisibility}
-spell until the end of the round.
-\subcf{Vitality -- Endless Life}
-Target creature within \rngmed range heals \spelldamage{}.
-In addition, for 5 rounds, the target heals hit points equal to the cleric's divine power at the end of each round.
-\subcf{War -- Warmaster's Boon}
-The cleric can use this power as part of casting a spell that affects a single creature other than himself.
-The spell also affects the cleric.
-This lasts for the normal duration of the spell or for 5 rounds, whichever is shorter.
-\subcf{Water -- Aquatic Globe}
-The cleric creates water out of thin air in an immobile \areahuge radius zone centered on his original location for 5 rounds.
-Everything within the area is underwater.
-At the end of the duration, the water evaporates, leaving no trace that it was ever there.
-\subcf{Wild -- Nature Rises}
-All enemies within an \arealarge radius burst of the cleric, and who are within 10 feet of the ground, are attacked by animated plants that grow from nowhere.
-The plants deal \spelldamage{bludgeoning}[d6].
-In addition, the ground in the area is \difficultterrain for 5 rounds for the cleric's enemies, as the plants impede their motion.
+As a standard action, the cleric can create a powerful protective shield around a creature or object within \rngclose range for 5 rounds.
+The target takes half damage from all attacks.
+In addition, whenever the target takes damage, the cleric can spend a devotion point as an immediate action to negate that damage.
+
+\subcf{Strength -- Might of the Gods}
+As a standard action, the cleric can spend a devotion point to gain titanic strength for 5 minutes.
+For the purpose of checks and determining carrying capacity, the cleric's Strength becomes equal to 10 \add his divine power.
+If he takes damage, the effect ends.
+
+\subcf{Travel -- Transcend Movement}
+As a standard action, the cleric can spend a devotion point to teleport himself, as the \spell{teleport} ritual.
+
+\subcf{Trickery -- Enduring Falsehood}
+As a standard action, the cleric can delude a creature within \rngmed range into believing a lie, regardless of evidence.
+He chooses a falsehood and makes a Divine power vs. Mental attack against the creature.
+The falsehood may be a lie, or a simple misunderstanding (such as believing a hidden creature is not present in a room).
+If the creature does not already believe the falsehood, the attack automatically fails.
+
+Success means that the target continues to believe the falsehood for 5 minutes, regardless of any evidence to the contrary.
+It will interpret any evidence that the falsehood is incorrect to be somehow wrong -- an illusion, a conspiracy to decieve it, or any other reason it can think of to continue believing the falsehood.
+At the end of the effect, the creature can decide whether it believes the falsehood or not, as normal.
+This is a [\glossterm{Delusion}, \glossterm{Mind}] effect.
+
+\subcf{War -- Mass Combat}
+As an immediate action, the cleric can spend a devotion point to augment a spell he casts with one of the following effects.
+\begin{itemize}
+    \item Legion: If the spell would normally affect five or more specific targets, its range is doubled and it instead affects five times that many targets.
+    \item Selective: If the spell has an area, it has no effect on his allies in the area.
+    \item Widened: If the spell has an area, the size of the area is doubled.
+\end{itemize}
+
+\subcf{Water -- Command Water}
+As a standard action, the cleric can spend a devotion point to speak with and command water for 5 minutes.
+He can ask the water simple questions and understand its responses.
+If he commands the water to perform a task, it will do so do the best of its ability until the end of the effect's duration.
+The cleric cannot compel the earth to move faster than 30 feet per round, and cannot effect water farther than 500 feet from him.
 
 \subsubsection{Domain Masteries}\label{Domain Masteries}
 
@@ -770,6 +842,7 @@ The cleric gains a \plus2 bonus to accuracy, checks, and special defenses agains
 \subcf{Law -- Avatar of Order}
 Once per round, if the cleric rolls less than a 10 on a d20, he may treat the result as if it were a 10, potentially causing him to succeed where he would have failed.
 You must declare the use of this ability before any additional effects from the roll are resolved.
+\subcf{Life -- }
 \subcf{Magic -- Spellfeeder}
 The cleric gains spell resistance equal to 10 \add cleric level or Intelligence.
 To affect the cleric with a spell, a caster must make an attack with its spellpower.
@@ -788,7 +861,6 @@ He constantly acts as if he were under the effect of a \spell{freedom} spell, ex
 \subcf{Trickery -- Exemplar of Deceit} The cleric continuously gains the benefits of the \spell{nondetection}
 spell, with a spellpower equal to his cleric level, except that it also protects him from any spells or effects which would prevent him from lying or reveal his lies.
 If the effect is dispelled or suppressed, he can resume it as a swift action.
-\subcf{Vitality -- }
 \subcf{War -- Warmaster's Favor} The cleric continuously gains the benefits of the \spell{divine favor}
 spell, with a spellpower equal to his cleric level.
 If the effect is dispelled or suppressed, he can resume it as a swift action.
@@ -1453,9 +1525,9 @@ He may also mitigate up to four conditions at once.
         \monkprogressionrow{6}  & Channel \ki                                  \\
         \monkprogressionrow{7}  & \Ki strike \plus3, perfect motion            \\
         \monkprogressionrow{8}  & Channel \ki                                  \\
-        \monkprogressionrow{9}  & Improved uncanny dodge                       \\
+        \monkprogressionrow{9}  & Improved uncanny dodge, perfect soul                       \\
         \monkprogressionrow{10} & Channel \ki, \ki strike \plus4               \\
-        \monkprogressionrow{11} & Perfect soul                                 \\
+        \monkprogressionrow{11} & Flow of life                                 \\
         \monkprogressionrow{12} & Channel \ki                                  \\
         \monkprogressionrow{13} & Perfect mind, \ki strike \plus5              \\
         \monkprogressionrow{14} & Channel \ki                                  \\
@@ -1612,11 +1684,14 @@ The monk reduces her overwhelm penalties by 2.
 This does not stack with the effects of uncanny dodge.
 If her overwhelm penalty is reduced to 0, she is not considered to be overwhelmed.
 
-\cf{Mnk}[11th]{Perfect Soul}[Su]
+\cf{Mnk}[9th]{Perfect Soul}[Su]
 The monk gains spell resistance equal to 10 \add her \ki power.
 To affect the monk with a spell, a caster must make an attack with an accuracy equal to its spellpower.
 If the attack beats the monk's spell resistance, the spell works normally.
 Otherwise, the spell has no effect on the monk.
+
+\cf{Mnk}[11th]{Flow of Life}[Su]
+At the end of each round, the monk heals hit points equal to her \ki power.
 
 \cf{Mnk}[13th]{Perfect Mind}[Su]
 The monk becomes immune to hostile Mind effects.
@@ -1628,6 +1703,7 @@ The monk still dies of old age when her time is up.
 
 \cf{Mnk}[17th]{Perfect Life}[Su]
 At the end of each round, the monk heals hit points equal to twice her \ki power.
+This replaces the benefit from her flow of life ability.
 If she has taken critical damage, she instead heals critical damage equal to half her \ki power.
 In addition, she becomes immune to \glossterm{Death} effects.
 
@@ -2557,6 +2633,8 @@ On a natural 1, this roll always fails, regardless of other modifiers.
 If the wild magic roll succeeds, the spell is cast normally.
 Failure means the spell is miscast instead (see \pcref{Miscasting}).
 In addition, if the sorcerer fails a wild magic roll, he cannot cast spells of the same level as the miscast spell for 10 minutes per spell level.
+
+If a sorcerer has the ability to cast a spell without spending a spell slot, he may choose not to make a wild magic roll when casting the spell.
 
 \cf{Sor}{Cantrip}
 Cantrips are minor spells which do not require effort to use.
