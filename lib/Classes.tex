@@ -291,30 +291,29 @@ If he stops being lawful, he regains his ability to rage and take barbarian leve
         \tb{Level} & \tb{Combat Prowess} & \tb{Fort} & \tb{Ref} & \tb{Ment} & \tb{Special} \\
         \hline
         \clericprogressionrow{1}  & Devotion \plus2, domain gifts, spells \\
-        \clericprogressionrow{2}  & Domain invocation, rituals                         \\
-        \clericprogressionrow{3}  & Domain spell                                        \\
-        \clericprogressionrow{4}  & Domain invocation                                       \\
-        \clericprogressionrow{5}  & Devotion \plus3, domain spell                       \\
-        \clericprogressionrow{6}  & Domain aspect                                       \\
-        \clericprogressionrow{7}  & Domain spell                                        \\
-        \clericprogressionrow{8}  & Domain aspect                                       \\
-        \clericprogressionrow{9}  & Domain spell                                        \\
-        \clericprogressionrow{10} & Devotion \plus4, minor miracle          \\
-        \clericprogressionrow{11} & Domain spell                                        \\
-        \clericprogressionrow{12} & Greater domain invocation                           \\
-        \clericprogressionrow{13} & Domain spell                                        \\
-        \clericprogressionrow{14} & Greater domain invocation                                       \\
-        \clericprogressionrow{15} & Devotion \plus5, domain spell                       \\
-        \clericprogressionrow{16} & Domain mastery                                      \\
-        \clericprogressionrow{17} & Domain spell                                        \\
-        \clericprogressionrow{18} & Domain mastery                                      \\
-        \clericprogressionrow{19} & Endless devotion, domain spell                      \\
-        \clericprogressionrow{20} & Devotion \plus6, miracle                                     \\
+        \clericprogressionrow{2}  & Domain invocation, rituals            \\
+        \clericprogressionrow{3}  & Domain spell                          \\
+        \clericprogressionrow{4}  & Domain invocation                     \\
+        \clericprogressionrow{5}  & Devotion \plus3, domain spell         \\
+        \clericprogressionrow{6}  & Domain aspect                         \\
+        \clericprogressionrow{7}  & Domain spell                          \\
+        \clericprogressionrow{8}  & Domain aspect                         \\
+        \clericprogressionrow{9}  & Domain spell                          \\
+        \clericprogressionrow{10} & Devotion \plus4, intercession         \\
+        \clericprogressionrow{11} & Domain spell                          \\
+        \clericprogressionrow{12} & Greater domain invocation             \\
+        \clericprogressionrow{13} & Domain spell                          \\
+        \clericprogressionrow{14} & Greater domain invocation             \\
+        \clericprogressionrow{15} & Devotion \plus5, domain spell         \\
+        \clericprogressionrow{16} & Domain mastery                        \\
+        \clericprogressionrow{17} & Domain spell                          \\
+        \clericprogressionrow{18} & Domain mastery                        \\
+        \clericprogressionrow{19} & Endless devotion, domain spell        \\
+        \clericprogressionrow{20} & Devotion \plus6, miracle              \\
     \end{dtabularx}
 \end{dtable}
 
-\classbasics{Alignment} If the cleric worships a deity, his alignment must be within one step of his deity's (that is, it may be one step away on either the lawful-chaotic axis or the good-evil axis, but not both).
-He may not be neutral unless his deity's alignment is also neutral.
+\classbasics{Alignment} The cleric's alignment must be within one step of his deity's (that is, it may be one step away on either the lawful-chaotic axis or the good-evil axis, but not both).
 
 \classbasics{Class Skills}
 \subparhead{Intelligence} Heal, Knowledge (arcana, local, religion, the planes), Linguistics.
@@ -342,7 +341,7 @@ All clerics have the following abilities.
 
 \cf{Clr}{Domains}
 A cleric chooses two domains, which represent his personal spiritual inclinations.
-If he has a deity, he must choose his domains from among those his deity offers.
+He must choose his domains from among those his deity offers.
 A cleric's choice of domains has broad effects on the cleric's spellcasting and supernatural abilities.
 The domains are listed below.
 
@@ -389,7 +388,7 @@ The number of spells a cleric can cast per day is given on \trefnp{Cleric Spell 
 In order to regain his spell slots for the day, the cleric must dismiss all his active spells and spend 1 hour performing a ritual, worshipping, or quietly contemplating.
 The cleric cannot regain spell slots in this way more than once per 24 hours.
 
-A cleric can't cast spells of an alignment opposed to his own or his deity's (if he has one).
+A cleric can't cast spells of an alignment opposed to his own or his deity's.
 Spells associated with particular alignments are indicated by the chaos, evil, good, and law descriptors in their spell descriptions.
 
 \begin{dtable}
@@ -454,16 +453,16 @@ Spells associated with particular alignments are indicated by the chaos, evil, g
 \end{dtable!*}
 
 \cf{Clr}{Devotion}[Su]
-A cleric has a devotion pool with a number of devotion points in it equal to his Willpower or cleric level, whichever is higher.
+A cleric has a devotion pool with a number of devotion points in it equal to half his Willpower or half his cleric level, whichever is higher.
 Before making an attack or check, the cleric may spend a devotion point to gain a \plus2 bonus to the attack or check.
 The bonus granted by spending a devotion point increases by \plus1 at 5th level and every 5 levels thereafter.
 
 After regaining spells for the day, a cleric's devotion pool is full.
-He loses a point from his devotion pool if he acts against his deity or other spiritual inclinations.
+He loses a point from his devotion pool if he acts against his deity.
 If the cleric's devotion pool has no points remaining, he takes a \minus2 penalty to his attacks, checks, and defenses.
 
 The cleric can refill his devotion pool by spending an hour in prayer, supplication, or contemplation.
-In addition, whenever the cleric performs a significant service to his deity or other spiritual inclinations, he may regain a devotion point.
+In addition, whenever the cleric performs a significant service to his deity, he may regain a devotion point.
 Extraordinary services may allow the cleric to regain more devotion points.
 
 \cf{Clr}[2nd]{Domain Invocations}[Su]
@@ -503,6 +502,14 @@ Options for domain aspects are listed at \pcref{Domain Aspects}.
 
 At his 8th cleric level, the cleric gains an additional domain aspect from one of his domains.
 
+\cf{Clr}[10th]{Intercession}[Su]
+Once per day, the cleric can request a divine intercession as a standard action.
+He mentally specifies his request, and his deity fulfills that request in the manner it sees fit.
+This can emulate the effects of any spell of a level no greater than half the cleric's divine power, or have any other effect of a similar power level.
+Divine intercessions tend to reflect the personality of the cleric's deity, not the cleric's personal preferences.
+
+If the cleric performs a significant service for his deity, he can gain the ability to request an additional intercession that day.
+
 \cf{Clr}[12th]{Greater Domain Invocations}[Su]
 The cleric gains the ability to invoke the power of one of his domains even more effectively.
 Greater domain invocations are described at \pcref{Greater Domain Invocations}.
@@ -517,6 +524,14 @@ At his 18th cleric level, the cleric gains an additional domain mastery from one
 
 \cf{Clr}[19th]{Endless Devotion}[Su]
 Whenever the cleric casts a domain spell, if he did not spend any devotion points that round, he regains a spent devotion point.
+
+\cf{Clr}[20th]{Miracle}[Su]
+Once per week, the cleric can request a miracle as a standard action.
+He mentally specifies his request, and his deity fulfills that request in the manner it sees fit.
+This can emulate the effects of any spell or ritual, or have any other effect of a similar power level.
+If the deity has a direct interest in the cleric's situation, the miracle may be of even greater power.
+
+If the cleric performs an extraordinary service for his deity, he can gain the ability to request an additional miracle that week.
 
 \subsection{Cleric Domain Abilities}
 
@@ -564,7 +579,6 @@ The cleric adds Bluff, Disguise, and Stealth to his cleric class skill list.
 In addition, he gains two skill points which must be spent on any combination of those skills.
 \subcf{War}
 The cleric gains Weapon Focus with his deity's favored weapon group as a bonus feat.
-If he does not have a deity, he gains it in a weapon group related to his alignment or ideals.
 \subcf{Water}
 The cleric adds Swim to his cleric class skill list, gains a \plus5 bonus to Swim checks, and suffers no penalties for fighting underwater.
 \subcf{Wild}
@@ -1740,23 +1754,23 @@ If she stops being chaotic, she regains her \ki powers and ability to take monk 
         \hline
         \paladinprogressionrow{1}  & Divine invocation (smite), divine protection \\
         \paladinprogressionrow{2}  & Divine invocation                            \\
-        \paladinprogressionrow{3}  &                                              \\
+        \paladinprogressionrow{3}  & Discernment (alignment)                      \\
         \paladinprogressionrow{4}  & Divine presence                              \\
-        \paladinprogressionrow{5}  & \x                                           \\
+        \paladinprogressionrow{5}  & Pass judgment                                \\
         \paladinprogressionrow{6}  & Divine invocation                            \\
-        \paladinprogressionrow{7}  &                                              \\
+        \paladinprogressionrow{7}  & Discernment (lies)                           \\
         \paladinprogressionrow{8}  & Divine presence                              \\
-        \paladinprogressionrow{9}  & Pass judgment                                \\
+        \paladinprogressionrow{9}  & Expanded presence                            \\
         \paladinprogressionrow{10} & Divine invocation                            \\
-        \paladinprogressionrow{11} &                                              \\
+        \paladinprogressionrow{11} & Discernment (invisibility)                   \\
         \paladinprogressionrow{12} & Divine presence                              \\
-        \paladinprogressionrow{13} & \x                                           \\
+        \paladinprogressionrow{13} & Lingering presence                           \\
         \paladinprogressionrow{14} & Divine invocation                            \\
-        \paladinprogressionrow{15} &                                              \\
+        \paladinprogressionrow{15} & Discernment (truth), martyr's retribution    \\
         \paladinprogressionrow{16} & Divine presence                              \\
-        \paladinprogressionrow{17} & Martyr's glorious retribution                \\
+        \paladinprogressionrow{17} & Mighty presence                              \\
         \paladinprogressionrow{18} & Divine invocation                            \\
-        \paladinprogressionrow{19} &                                              \\
+        \paladinprogressionrow{19} & Discernment (thoughts)                       \\
         \paladinprogressionrow{20} & Divine presence                              \\
     \end{dtabularx}
 \end{dtable}
@@ -1942,24 +1956,24 @@ A paladin who has other movement modes, such as flight, can also teleport next t
 \subcf{18th -- Greater Prohibition} This invocation functions like the \spell{greater prohibition}
 spell.
 
-\cf{Pal}[2nd]{Discernment}[Su]
+\cf{Pal}[3rd]{Discernment}[Su]
 A paladin can discern truths about creatures she sees as a swift action.
 When she uses this ability, she learns which creatures within a \arealarge cone have her devoted alignment.
 
 The paladin may use her discernment ability a number of times per day equal to her Perception or half her paladin level (minimum 1), whichever is higher.
 
-\parhead{Chaotic Divine Gifts}
-\subcf{15th -- Freedom of Movement} The paladin continuously gains the benefit of the \spell{freedom}
-spell.
-
-\subcf{7th -- Discern Lies}
-The paladin may use her discernment ability to detect lies.
-As a swift action, she may use her discernment to focus on a specific creature.
-For the next 5 minutes, the paladin knows whenever that creature deliberately and knowingly lies.
+At 7th level, the paladin can discern lies.
+Whenever a creature in the area intentionally lies, the paladin knows the statement was a lie.
 This does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions.
-\subcf{15th -- Truthbearer}
-The paladin is automatically sees through figments.
-Unlike normally seeing through figments, the paladin does not receive any indication that the figment would otherwise be there - the figment simply does not exist for the paladin.
+
+At 11th level, the paladin can also see invisible creatures and objects within the area, as the \spell{see invisibility} spell.
+
+At 15th level, the paladin can discern truth.
+When a lie is spoken, in addition to learning that the statement is a lie, the paladin learns what the creature believes the truth to be.
+This does not necessarily reveal the actual truth -- merely what the creature believes.
+
+At 19th level, the paladin can discern thoughts.
+She knows the surface thoughts of all creatures in the area, as the \spell{read mind} spell.
 
 \cf{Pal}[4th]{Divine Presence}[Su]
 The paladin's presence alters the world around her.
@@ -1967,7 +1981,7 @@ She chooses a single divine presence from the list below.
 Each divine presence affects a \areamed radius emanation from the paladin, including herself.
 She may choose to suppress or resume her divine presence as a swift action.
 
-At 10th level, and every 5 levels thereafter, the paladin gains an additional divine presence.
+At her 8th paladin level, and every 4 levels thereafter, the paladin gains an additional divine presence.
 She may have multiple divine presences active simultaneously, and suppress or resume them individually.
 Most divine presences have minimum paladin levels, as indicated in the title of the ability.
 All divine presences are supernatural abilities unless otherwise noted.
@@ -1978,38 +1992,73 @@ If a divine presence emulates a spell, the paladin's effective spellpower is equ
 Allies in the area are immune to \glossterm{Fear} effects.
 \subcf{8th -- Worthy Foe}
 Enemies in the area are \taunted by the paladin.
+\subcf{16th -- Aura of Unbending Purpose}
+Allies in the area are immune to \glossterm{Mind} effects.
 
 \parhead{Chaotic Divine Presences}
-\subcf{Aura of Fortunate Blows}
-Whenever an ally within the area rolls a 1 on an attack roll, it can reroll the attack with a \minus5 penalty.
-Any individual attack can only be rerolled once in this way.
-\subcf{8th -- Aura of Freedom}
+\subcf{Mobile Aura}
+Allies in the area can move at full speed through threatened squares.
+\subcf{8th -- Accelerating Aura}
+Allies in the area gain a \plus30 foot bonus to land speed, up to maximum of double their original speed.
+\subcf{12th -- Aura of Freedom}
 Allies in the area gain the benefits of the \spell{freedom} spell.
+\subcf{20th -- Maddening Aura}
+At the start of each round, enemies in the area are \disoriented that round.
 
 \parhead{Evil Divine Presences}
+\subcf{Overwhelming Aura}
+Enemies in the area that are \glossterm{overwhelmed} increase their overwhelm penalties by 1.
+\subcf{8th -- Lifefeeding Aura}
+At the end of each round, if another creature in the area took damage, the paladin regains hit points equal to the damage taken, up to a maximum of her divine power.
+\subcf{12th -- Baleful Aura}
+Enemies in the area are \impaired with attacks and checks.
+\subcf{12th -- Painful Aura}
+Whenever an enemy in the area takes damage, the damage is doubled, up to a maximum bonus equal to the paladin's divine power.
+Each enemy can only take this bonus damage each round.
+\subcf{16th -- Sacrificial Aura}
+Whenever you take damage, any other creature in the area may choose to take that damage instead.
+This damage ignores all forms of damage reduction and similar abilities.
+Any damage in excess of the creature's hit points is not redirected.
 
 \parhead{Good Divine Presences}
+\subcf{Defensive Aura}
+Allies in the area that are \glossterm{overwhelmed} reduce their overwhelm penalties by 1.
+If an ally's overwhelm penalty is reduced to 0, they are not considered to be overwhelmed.
+\subcf{8th -- Minor Healing Aura}
+Whenever an ally in the area regains hit points, the healing is doubled, up to a maximum bonus equal to the paladin's divine power.
+Each ally can only receive this bonus once per round.
 \subcf{12th -- Healing Aura}
 At the end of each round, allies in the area heal hit points equal to the paladin's divine power.
+\subcf{16th -- Martyr's Aura}
+Whenever an ally in the area takes damage, the paladin may choose to take that damage instead.
+This damage ignores all forms of damage reduction and similar abilities.
+If the paladin takes damage in excess of her hit points in this way, the excess damage is dealt directly as critical damage.
 
 \parhead{Lawful Divine Presences}
-\subcf{Aura of Inhibition}
+\subcf{Aura of Fortification}
+Enemies in the area move at half speed through threatened squares.
+\subcf{8th -- Aura of Inhibition}
 Enemies in the area move at half speed.
 \subcf{12th -- Aura of Truth}
 All illusory figments and glamers are suppressed in the area.
+\subcf{20th -- Inescapable Aura}
+At the start of each round, enemies in the area are \immobilized that round.
 
-\cf{Pal}[9th]{Pass Judgment}[Su]
+\cf{Pal}[5th]{Pass Judgment}[Su]
 The paladin gains the ability to pass judgment on those she deems unworthy.
 Once per day as a swift action, she may pass judgment on a creature within 100 feet of her.
 For the purpose of spells and effects, the creature is treated as if it had the alignment opposed to the paladin's devoted alignment.
-This effect lasts for one day per paladin level, or until the paladin changes her mind about the subject.
+This effect lasts for one week, or until the paladin changes her mind about the subject.
 This does not change the creature's actions or behavior, but the creature is subject to the paladin's smite attack, would detect as that alignment under the inspection of a \spell{detect alignment} spell, and so on.
 
 No attack is required for this effect, and it cannot be dispelled, but a \spell{remove curse}, \spell{miracle}, or \spell{wish} spell can remove it.
-The paladin can use this ability an additional time per day at her 10th paladin level and every third level thereafter.
+The paladin can use this ability an additional time per day at her 9th paladin level and every four levels thereafter.
 A paladin should be careful when using this ability, as persecution of allies can lead overzealous paladins to fall.
 
-\cf{Pal}[17th]{Martyr's Glorious Retribution}[Su]
+\cf{Pal}[9th]{Expanded Presence}[Su]
+The paladin's divine presences affect an \arealarge radius.
+
+\cf{Pal}[15th]{Martyr's Retribution}[Su]
 If the paladin dies in the devoted service of her devoted alignment, she may choose to have her fallen body erupt in an immense burst of divine energy.
 If she does, her body is almost completely consumed, preventing her from being raised with \spell{lesser resurrection} and similar effects that require an intact body.
 This burst has two effects.
@@ -2018,6 +2067,13 @@ Second, a \spell{storm of vengeance} spell begins to take effect, centered on th
 The spell lasts for 10 rounds, and the lightning strikes target the paladin's enemies.
 Both of these effects harm only the paladin's foes, and do not harm her allies.
 However, her allies' vision is still impeded by the \spell{storm of vengeance}.
+
+\cf{Pal}[13th]{Lingering Presence}[Su]
+The effects of the paladin's divine presences continue for 1 round after targets leave the area.
+
+\cf{Pal}[17th]{Mighty Presence}[Su]
+The paladin's divine presences affect an \areahuge radius.
+In addition, their effects continue for 2 rounds after targets leave the area.
 
 \subsubsection{Ex-Paladins}
 A paladin who ceases to follow her devoted alignment loses all supernatural paladin class features.
