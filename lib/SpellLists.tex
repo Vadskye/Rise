@@ -71,6 +71,7 @@ An \M{} or \F{} appearing at the end of a spell's name in the spell lists denote
     \SLswarmofbats
     \SLdimensionslide*
 
+    \SLdiscernlies[Div]
     \SLmarkoftracking
     \SLreadmind*
 
@@ -107,7 +108,7 @@ An \M{} or \F{} appearing at the end of a spell's name in the spell lists denote
     \SLdelaydamage[Abjur]
     \SLdispelmagic
     \SLresistmagic
-    \SLdeflection*
+    \SLinvulnerability*
 
     \SLacidarrow[Conj]
     \SLcreateballista
@@ -152,7 +153,6 @@ An \M{} or \F{} appearing at the end of a spell's name in the spell lists denote
     \SLfireshield[Abjur]
     \SLlivingmissile
     \SLmindblank
-    \SLinvulnerability*
 
     \SLdimensiondoor[Conj]*
 
@@ -185,6 +185,7 @@ An \M{} or \F{} appearing at the end of a spell's name in the spell lists denote
 \begin{swspelllist}
 
     \SLrepulsion[Abjur]
+    \SLdeflection*
 
     \SLshadowstep[Conj]
     \SLweb
@@ -202,7 +203,7 @@ An \M{} or \F{} appearing at the end of a spell's name in the spell lists denote
 
     \SLshadowstep[Illus]
 
-    \SLtransmutefleshandstone
+    \SLtransmutefleshandstone[Trans]
 
     \SLbleed[Vivi]
     \SLcurseofthewaywardmind*
@@ -467,6 +468,7 @@ An \M{} or \F{} appearing at the end of a spell's name in the spell lists denote
     \SLbane
     \SLbless
     \SLcurewounds
+    \SLdetectalignment
     \SLentropicshield
     \SLholdperson
     \SLinflictwounds
@@ -484,7 +486,7 @@ An \M{} or \F{} appearing at the end of a spell's name in the spell lists denote
     \SLaid
     \SLcommand
     \SLcurseofbloodandbone
-    \SLdetectalignment
+    \SLdiscernlies
     \SLdimensionalanchor
     \SLfreedom
     \SLmarkoftracking
@@ -508,7 +510,6 @@ An \M{} or \F{} appearing at the end of a spell's name in the spell lists denote
     \SLavatarofhealing
     \SLbladebarrier
     \SLdeathward
-    \SLdiscernlies
     \SLenervation
     \SLmarkofscrying
     \SLpoison
@@ -518,6 +519,8 @@ An \M{} or \F{} appearing at the end of a spell's name in the spell lists denote
 \begin{spelllist}
     \SLblasphemy
     \SLcacaphonicword
+    \SLcircleofdeath
+    \SLcircleofhealing
     \SLdictum
     \SLdivinemight
     \SLflamestrike
@@ -540,9 +543,8 @@ An \M{} or \F{} appearing at the end of a spell's name in the spell lists denote
     \SLantilifeshell
     \SLavataroffealty
     \SLavatarofshielding
-    \SLcircleofdeath
-    \SLcircleofhealing
     \SLdivinejudgment
+    \SLdivineshield
 \end{spelllist}
 
 \subsubsection{8th-level Divine Spells}
@@ -697,7 +699,7 @@ Summoning spells summon earth elementals only.
     \SLenervation[4]
     \SLblasphemy[5]
     \SLharm[6]
-    \SLcircleofdeath[7]
+    \SLstriptheflesh[7]
     \SLavatarofsuffering[8]
     \SLunholyavatar[9]
 \end{spelllist}
@@ -727,7 +729,7 @@ Summoning spells summon fire elementals only.
     \SLavatarofhealing[4]
     \SLholyword[5]
     \SLheal[6]
-    \SLcircleofhealing[7]
+    \SLdivinejudgment[7]
     \SLmartyrsgift[8]
     \SLholyavatar[9]
 \end{spelllist}
@@ -753,7 +755,7 @@ Summoning spells summon good creatures only.
     \SLprotectionfromalignment[1]
     \SLcommand[2]
     \SLorderswrath[3]
-    \SLdiscernlies[4]
+    \SLmarkofscrying[4]
     \SLdictum[5]
     \SLprohibition[6]
     \SLavataroffealty[7]
@@ -841,7 +843,7 @@ Summoning spells summon lawful creatures only.
     \SLavatarofhealing[4]
     \SLrevivify[5]
     \SLheal[6]
-    \SLcircleofhealing[7]
+    \SLdivineshield[7]
     \SLlifebound[8]
     \SLavataroflife[9]
 \end{spelllist}
@@ -879,13 +881,13 @@ Summoning spells summon water elementals or aquatic creatures only.
 
 \begin{spelllist}
     \SLentangle[1]
-    \SLbarkskin[2]
+    \SLrockblast[2]
     \SLearthspull[3]
     \SLsunbeam[4]
     \SLavatarofgrowth[5]
-    \SLfissure[6]
+    \SLlifegivingroots[6]
     \SLsunburst[7]
-    \SLlifegivingroots[8]
+    \SLfirestorm[8]
     \SLearthquake[9]
 \end{spelllist}
 
@@ -977,6 +979,7 @@ Summoning spells summon water elementals or aquatic creatures only.
 
 \subsubsection{1st-level Nature Spells}
 \begin{spelllist}
+    \SLbarkskin
     \SLburninghands
     \SLcurewounds
     \SLearthenblade
@@ -997,7 +1000,6 @@ Summoning spells summon water elementals or aquatic creatures only.
 
 \subsubsection{2nd-level Nature Spells}
 \begin{spelllist}
-    \SLbarkskin
     \SLconeofcold
     \SLearthspike
     \SLenlarge
@@ -1045,6 +1047,7 @@ Summoning spells summon water elementals or aquatic creatures only.
 \begin{spelllist}
   %\spellhead{Animate Plants} Plants animate and fight for you.
     \SLavatarofgrowth
+    \SLcircleofhealing
     \SLicespike
     \SLstormlord
 \end{spelllist}
@@ -1055,6 +1058,7 @@ Summoning spells summon water elementals or aquatic creatures only.
     \SLfissure
     \SLheal
     \SLinferno
+    \SLlifegivingroots
     \SLseismicslam
 \end{spelllist}
 
@@ -1062,7 +1066,6 @@ Summoning spells summon water elementals or aquatic creatures only.
 \begin{spelllist}
     \SLantilifeshell
     \SLavatarofwind
-    \SLcircleofhealing
     \SLgolemheart
     \SLicestorm
     \SLimmolation
@@ -1072,7 +1075,6 @@ Summoning spells summon water elementals or aquatic creatures only.
 \begin{spelllist}
     \SLavatarofmight
     \SLfirestorm
-    \SLlifegivingroots
 \end{spelllist}
 
 \subsubsection{9th-level Nature Spells}
