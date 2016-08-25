@@ -383,7 +383,7 @@
     \end{spellcontent}
     \begin{spellsubcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One living creature}{\rngclose}
+            \spellquicktargeting{One living creature}{\rngmed}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
@@ -820,7 +820,7 @@
     \begin{spellaugments}
         \spellaugment{1}{Stoneskin}{Adamantine weapons ignore the damage reduction, rather than fire damage.}[Earth]
         \spellaugment{2}{Critical Resistance}{The target is immune to critical hits unless the damage reduction is negated.}
-        \spellaugment{2}{Personal}{The spell targets you, and its duration becomes \durlong.}
+        %\spellaugment{2}{Personal}{The spell targets you, and its duration becomes \durlong.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -1456,13 +1456,13 @@
     \end{spellaugments}
 \end{spellsection}
 
-\begin{spellsection}{Confusion}[2]
+\begin{spellsection}{Confusion}[4]
     \begin{spellheader}
         \spelldesc{You compel a group of creatures to act randomly, sowing confusion in your foes' ranks.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgts{Up to five creatures}}{\spellrng{\rngmed}}
+            \spelltwocol{\spelltgts{Up to five creatures}}{\spellrng{\rnglong}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
@@ -1761,13 +1761,13 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Deep Slumber}[4]
+\begin{spellsection}{Deep Slumber}[5]
     \begin{spellheader}
         \spelldesc{You fill your foes with an overpowering urge to sleep, rendering them comatose.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature}{\rngclose}
+            \spellquicktargeting{One creature}{\rngmed}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
@@ -1775,12 +1775,11 @@
                 \spellcritical The target falls asleep. It cannot be awakened by any means for 2 rounds. After that time, it can be awoken by other creatures, but if left undisturbed, it will sleep until it dies.
                 \spellfailure The target is \dazed for 2 rounds.
             \end{spellattack}
-            \spelldur See text
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Compulsion, Mind]}{Arcane}
-        \spellnotes Creatures unable to sleep, such as elves, are immune to all effects of this spell.
+        \spellnotes Creatures that are unable to sleep, such as elves, are immune to all effects of this spell.
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
@@ -2097,7 +2096,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngclose}}
+            \spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
@@ -2885,13 +2884,13 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spellburst{\areamed radius cylinder, 40 ft. high}}{\spellrng{\rngclose}}
-            \spelltgts{Everything in the area, except allied creatures}
+            \spelltwocol{\spellburst{\areamed radius cylinder, 40 ft. high}}{\spellrng{\rngmed}}
+            \spelltgts{Everything in the area}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess \spelldamage{fire and divine}[d8]
-                \spellfailure Half damage.
+                \spellsuccess \spelldamage{fire and divine}[d8]. Allied creatures take half damage, and all of that damage is fire damage.
+                \spellfailure As above, but half damage.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -3234,8 +3233,8 @@
         \begin{spelleffects}
             \spelleffect If the target is undead, it is healed for \spelldamage{}.
             \begin{spellattacktriggered}{If the target is living, make a Spellpower vs. Fortitude attack.}
-                \spellsuccess \spelldamage{negative}. All damage dealt in excess of the target's hit points is dealt as critical damage.
-                \spellfailure Half damage.
+                \spellsuccess The target takes \spelldamage{negative}, and is \impaired with attacks and checks for 2 rounds. All damage dealt in excess of the target's hit points is dealt as critical damage.
+                \spellfailure As above, but half damage.
             \end{spellattacktriggered}
         \end{spelleffects}
     \end{spellcontent}
@@ -3244,7 +3243,7 @@
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
-        \spellaugment{3}{Mass}{The spell can affect up to five targets. Its damage becomes \spelldamage{negative}[d8].}
+        \spellaugment{3}{Mass}{The spell can affect up to five targets. Its damage and healing become \spelldamage{negative}[d8].}
     \end{spellaugments}
 \end{spellsection}
 
@@ -3503,7 +3502,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature or object}{\rnglong}
+            \spellquicktargeting{One creature or object}{\rngext}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
@@ -3639,9 +3638,7 @@
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
-        \spellaugment{1}{Moderate Wounds}{For every 10 points of damage dealt in excess of the target's hit points, it takes 1 point of critical damage.}
-        \spellaugment{2}{Serious Wounds}{For every 5 points of damage dealt in excess of the target's hit points, it takes 1 point of critical damage.}
-        \spellaugment{3}{Critical Wounds}{For every 2 points of damage dealt in excess of the target's hit points, it takes 1 point of critical damage.}
+        \spellaugment{2}{Critical Wounds}{All damage dealt in excess of the target's hit points is dealt as critical damage.}
         \spellaugment{3}{Mass}{The spell can affect up to five targets. Its damage and healing become \spelldamage{}[d8].}
     \end{spellaugments}
 \end{spellsection}
@@ -3854,7 +3851,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Abjuration/Evocation}{Arcane, Chaos}
+        \spellinfo{Abjuration/Evocation}{Arcane}
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
@@ -6046,7 +6043,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Conjuration [Summoning]}{Arcane, Nature}
+        \spellinfo{Conjuration [Summoning]}{Arcane, Chaos, Nature}
         \spellnotes The bats disappear after 2 rounds.
         \miscastyou
     \end{spellfooter}
@@ -6514,13 +6511,14 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellburst{\areamed radius centered on you}
+            \spellburst{\arealarge radius centered on you}
             \spelltgts{Everything in the area}
             \spellcmp{Verbal only}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
                 \spellsuccess \spelldamage{sonic}[d8]. If the target is living and has no hit points remaining, it dies.
+                \spellfailure As above, but half damage.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
