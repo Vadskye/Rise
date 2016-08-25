@@ -183,10 +183,12 @@ Some strike feats instead require a specific action to use.
         \featref{Battlemaster} & Int 5, fighter 10 & Grant ally a combat feat & Combat & \featpref{Battlemaster} \\
             \tind \featref{Battlemaster, Empowered} & Int 10, fighter 16 & Grant ally two combat feats & Combat & \featpref{Battlemaster, Empowered} \\
         \featref{Battletrance} & Rage, barbarian 2 & Enter trance instead of angry rage & Rage & \featpref{Battletrance} \\
+        \featref{Chaotic Mind} & Paladin of chaos 4 & Alignment and lies cannot be detected & \x \featpref{Chaotic Mind} \\
         \featref{Charming Wild Speech} & Wild speech, druid 7 & Charm target with wild speech & \x & \featpref{Charming Wild Speech} \\
             \tind \featref{Dominating Wild Speech} & Wild speech, druid 15 & Dominate target with wild speech & \x & \featpref{Dominating Wild Speech} \\
         \featref{Critical Rage} & Rage, barbarian 10 & Increased critical range while raging & Rage & \featpref{Critical Rage} \\
         \featref{Destructive Rage} & Rage, barbarian 6 & Ignore hardness while raging & Rage & \featpref{Destructive Rage} \\
+        \featref{Divine Health} & Paladin 4 & Immune to poison and disease & \x \featpref{Divine Health} \\
         \featref{Elemental Speech} & Wild speech, druid 9 & Speak with an element & \x & \featpref{Elemental Speech} \\
         \featref{Endless Rage} & Rage, barbarian 18 & Rage lasts as long as you take damage & Rage & \featpref{Endless Rage} \\
         \featref{Extra Ability} & Class feature with limited uses & Gain additional uses of class feature & \x & \featpref{Extra Ability} \\
@@ -213,6 +215,7 @@ Some strike feats instead require a specific action to use.
         \featref{Shield Discipline} & Armor discipline & Apply armor discipline with shields \\
         \featref{Spellbreaker Rage} & Rage, barbarian 10 & Gain spell resistance while raging & Rage & \featpref{Spellbreaker Rage} \\
         \featref{Spellwarped Ritualist} & Spellwarped & Gain ability to perform rituals using spellwarped powers & \x & \featpref{Spellwarped Ritualist} \\
+        \featref{Unbending Resolve} & Paladin 6 & Immune to compulsion and delusion effects & \x \featpref{Unbending Resolve} \\
         \featref{Taunting Rage} & Rage, barbarian 10 & Attacks taunt foes while raging & Rage & \featpref{Taunting Rage} \\
         \featref{Vermin Speech} & Wild speech, druid 3 & Speak with vermin & \x & \featpref{Vermin Speech} \\
         \featref{Wary Rage} & Rage, barbarian 2 & Reduce defense penalty while raging & Rage & \featpref{Wary Rage} \\
@@ -669,6 +672,11 @@ After that limit is reached, you must rest for 5 minutes before flying again.
 
 If you are 18th level, you can fly for a number of minutes equal to 3 \add half your Willpower before resting.
 
+\feat{Chaotic Mind}{Class}
+\featpre Paladin level 4, Chaos devoted alignment.
+\featben You are unaffected by effects which detect truth, lies, or alignment.
+Such effects never detect you, just as if you were not there at all.
+
 \feat{Chargebreaker}{Combat, Reaction, Strike}
 \featpre Dex 5, combat prowess 8.
 \featben In place of two strikes, you can make a physical attack.
@@ -810,6 +818,10 @@ If your attack result also beats the foe's Mental defense, it is \disoriented fo
 This penalty increases by 2 for each strike you can make per round beyond the first.
 \stylereq Wield a melee weapon. You must make a melee attack each round.
 
+\feat{Divine Health}{Class}
+\featpre Paladin level 4.
+\featben You are immune to poison and disease.
+
 \feat{Divine Spellgift}{Spellgift}
 \featpres 2nd level, Wil 1.
 \featben You have inherent magic in your body, granting you divine power.
@@ -933,6 +945,7 @@ You gain a bonus on the shove attack equal to the damage dealt.
 \featpre Wild speech ability, druid level 9.
 \featben You can use your wild speech ability to communicate with one element of the natural world: air, earth, fire or water.
 You choose which element when you gain this feat.
+A element's sense of its surroundings is limited, so it won't be able to give (or recognize) detailed descriptions of creatures or answer questions about events outside its immediate vicinity.
 \parhead{Special} This feat can be taken multiple times.
 Each time, you choose a different element.
 
@@ -2233,6 +2246,10 @@ You can fight with a weapon in each hand more effectively.
 \featpres Str 5, Mighty Blows, Two-Weapon Fighting, combat prowess 8.
 \featben When fighting with two weapons at once, you gain a \plus1 bonus to physical damage.
 This bonus increases to \plus2 at Strength 10, and to \plus3 at Strength 20.
+
+\feat{Unbending Resolve}{Class}
+\featpre Paladin level 6.
+\featben You are immune to \glossterm{Compulsion} and \glossterm{Delusion} effects.
 
 \feat{Unfettered Knowledge}{Magic}
 \featpre 2nd level or higher \glossterm{Knowledge} spell known.
