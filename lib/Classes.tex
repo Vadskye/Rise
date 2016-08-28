@@ -3242,26 +3242,26 @@ This functions like the temporal prison invocation, except that no attack is req
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolpoor} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
         \tb{Level} & \tb{Combat Prowess} & \tb{Fort} & \tb{Ref} & \tb{Ment} & \tb{Special} \\
         \hline
-        \wizardprogressionrow{1}  & Cantrip, rituals, spells \\
-        \wizardprogressionrow{2}  & Arcane insight, cantrip      \\
-        \wizardprogressionrow{3}  & Attuned spell           \\
-        \wizardprogressionrow{4}  & Arcane insight            \\
-        \wizardprogressionrow{5}  & Ritual master           \\
-        \wizardprogressionrow{6}  & Arcane insight               \\
-        \wizardprogressionrow{7}  & Attuned spell           \\
-        \wizardprogressionrow{8}  & Arcane insight    \\
-        \wizardprogressionrow{9}  & Persistent attunement           \\
-        \wizardprogressionrow{10} & Arcane insight               \\
-        \wizardprogressionrow{11} & Attuned spell           \\
-        \wizardprogressionrow{12} & Arcane insight              \\
-        \wizardprogressionrow{13} & Contingency           \\
-        \wizardprogressionrow{14} & Arcane insight               \\
-        \wizardprogressionrow{15} & Attuned spell           \\
-        \wizardprogressionrow{16} & Arcane insight     \\
-        \wizardprogressionrow{17} & Augmented attunement           \\
-        \wizardprogressionrow{18} & Arcane insight               \\
-        \wizardprogressionrow{19} & Attuned spell           \\
-        \wizardprogressionrow{20} & Arcane insight, chain contingency        \\
+        \wizardprogressionrow{1}  & Cantrip, rituals, spells          \\
+        \wizardprogressionrow{2}  & Arcane insight, cantrip           \\
+        \wizardprogressionrow{3}  & Attuned spell                     \\
+        \wizardprogressionrow{4}  & Arcane insight                    \\
+        \wizardprogressionrow{5}  & Ritual master                     \\
+        \wizardprogressionrow{6}  & Arcane insight                    \\
+        \wizardprogressionrow{7}  & Attuned spell                     \\
+        \wizardprogressionrow{8}  & Arcane insight                    \\
+        \wizardprogressionrow{9}  & Persistent attunement             \\
+        \wizardprogressionrow{10} & Arcane insight                    \\
+        \wizardprogressionrow{11} & Attuned spell                     \\
+        \wizardprogressionrow{12} & Arcane insight                    \\
+        \wizardprogressionrow{13} & Contingency                       \\
+        \wizardprogressionrow{14} & Arcane insight                    \\
+        \wizardprogressionrow{15} & Attuned spell                     \\
+        \wizardprogressionrow{16} & Arcane insight                    \\
+        \wizardprogressionrow{17} & Augmented attunement              \\
+        \wizardprogressionrow{18} & Arcane insight                    \\
+        \wizardprogressionrow{19} & Attuned spell                     \\
+        \wizardprogressionrow{20} & Arcane insight, chain contingency \\
     \end{dtabularx}
 \end{dtable}
 
@@ -3347,17 +3347,18 @@ For all other purposes, cantrips are treated as 0th level spells.
 
 At her 2nd wizard level, the wizard gains a second cantrip, which can be chosen from any non-prohibited school.
 
-\cf{Wiz}[2nd]{Magic Feat}
-The wizard gains a bonus magic feat or metamagic feat of her choice.
-She must meet the prerequisites for the feat as normal.
-At her 6th wizard level, and every 4 wizard levels thereafter, she gains an additional magic feat or metamagic feat.
-
 \cf{Wiz}[2nd]{Arcane Insight}[Ex]\label{Arcane Insight}
 The wizard gains a greater understanding of magic.
 She chooses one of the following benefits.
 \begin{itemize}
+    \item Bonus Spell: The wizard gains an additional spell slot at her highest level of spells known.
+        As she gains new spell levels known, the spell slot increases in level accordingly.
     \item Ritual Knowledge: The wizard learns two additional rituals with a maximum level equal to half her wizard level.
         She pays no cost to scribe them into her ritual book.
+    \item Ritual Spell: The wizard scribes an arcane spell with a maximum level equal to half her wizard level into her ritual book.
+        She does not need to know the spell, and pays no cost to scribe it.
+        The spell is treated as a ritual, and she can perform a one minute ritual to gain the spell's effect.
+        Performing the ritual costs the normal amount of material components for a ritual of its level (see \pcref{Ritual Costs}).
     \item Specialization: The wizard gains an additional spell known.
         In exchange, she must ban a school of magic.
         She can never learn or cast spells or rituals from her banned schools.
@@ -3368,11 +3369,11 @@ She chooses one of the following benefits.
 At her 4th wizard level, and every even wizard level thereafter, the wizard gains a new arcane insight.
 
 \cf{Wiz}[3rd]{Attuned Spell}[Ex]
-Whenever the wizard casts a spell on herself, she may attune to it to increase its duration.
-She can attune to any spell she knows with a maximum level equal to half her wizard level.
-The spell must target a single creature, and have a duration of \durshort or longer.
-As long as she is attuned to a spell, its duration becomes permanent.
-If the spell has secondary effects, such as the \spell{avatar of suffering} spell, the duration of the secondary effects is not changed.
+Whenever the wizard casts a spell or performs a ritual on herself, she may attune to it to increase its duration.
+The level of the spell or ritual, including any augments, must not exceed half her wizard level.
+It must target a single creature, and have a duration of \durshort or longer.
+As long as she is attuned to the spell, its duration becomes permanent.
+If it has secondary effects, such as the \spell{avatar of suffering} spell, the duration of the secondary effects is not changed.
 
 The wizard can only attune to one spell at a time.
 If she attunes to another spell, the other spell returns to its normal duration, and expires if appropriate.
@@ -3381,7 +3382,7 @@ At her 7th wizard level, and every 4 wizard levels thereafter, the wizard gains 
 Whenever she attunes to a new spell, she may choose which of her other attuned spells she stops being attuned to.
 
 \cf{Wiz}[5th]{Ritual Master}[Ex]
-When performing an arcane ritual, the wizard may spend a spell slot of the ritual's level.
+When performing an arcane ritual, the wizard may spend a spell slot of the ritual's level or higher.
 If she does, she need only pay half the normal material component costs to perform the ritual.
 
 \cf{Wiz}[9th]{Persistent Attunement}[Ex]
