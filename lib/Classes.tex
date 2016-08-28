@@ -428,11 +428,11 @@ Spells associated with particular alignments are indicated by the chaos, evil, g
         Guftas, horse god of justice          & Lawful good     & Good, Law, Strength, Travel          \\
         Lucied, paladin god of justice        & Lawful good     & Destruction, Good, Protection, War   \\
         Simor, fighter god of protection      & Lawful good     & Good, Protection, Strength, War \\
-        %Pabst, dwarf god of drink             & Neutral good & Good, Life, Strength \\
+        %Pabst, dwarf god of drink             & Neutral good & Good, Life, Strength, Wild \\
         Rucks, monk god of pragmatism         & Neutral good    & Good, Law, Protection, Travel        \\
         Vanya, centaur god of nature          & Neutral good    & Good, Strength, Travel, Wild         \\
         Brushtwig, pixie god of creativity    & Chaotic good    & Chaos, Good, Trickery, Wild          \\
-        Chavi, god of stories                 & Chaotic good    & Chaos, Knowledge, Trickery, Travel   \\
+        Chavi, god of stories                 & Chaotic good    & Chaos, Knowledge, Trickery   \\
         Ivan Ivanovitch, bear god of strength & Chaotic good    & Chaos, Strength, War, Wild           \\
         Krunch, barbarian god of destruction  & Chaotic good    & Destruction, Good, Strength, War     \\
         Sir Cakes, dwarf god of freedom       & Chaotic good    & Chaos, Good, Strength      \\
@@ -440,10 +440,10 @@ Spells associated with particular alignments are indicated by the chaos, evil, g
         Declan, god of fire                   & True neutral    & Destruction, Fire, Knowledge, Magic  \\
         Kurai, shaman god of nature           & True neutral    & Air, Earth, Fire, Water              \\
         %Amanita, druid god of decay           & Chaotic neutral & Chaos, Destruction, Life, Wild \\
-        %Antimony, elf god of necromancy       & Chaotic neutral & Death, Knowledge, Magic \\
+        %Antimony, elf god of necromancy       & Chaotic neutral & Death, Knowledge, Life, Magic \\
         Clockwork, elf god of time            & Chaotic neutral & Chaos, Magic, Trickery, Travel       \\
         %Lord Khallus, fighter god of pride    & Chaotic neutral & Chaos, Strength, War \\
-        %Lorelei, sorcerer god of deception    & Chaotic neutral & Magic, Travel, Trickery \\
+        %Celeano, sorcerer god of deception    & Chaotic neutral & Chaos, Magic, Protection, Trickery \\
         Murdoc, god of mercenaries            & Chaotic neutral & Destruction, Knowledge, Travel, War  \\
         Tak, orc god of war                   & Lawful evil     & Law, Strength, Trickery, War         \\
         Theodolus, sorcerer god of ambition   & Neutral evil    & Evil, Knowledge, Magic, Trickery     \\
@@ -2049,26 +2049,26 @@ She regains her abilities and advancement potential if she atones for her violat
     \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
         \tb{Level} & \tb{Combat Prowess} & \tb{Fort} & \tb{Ref} & \tb{Ment} & \tb{Special} \\
         \hline
-        \rangerprogressionrow{1}  & Quarry \plus2, tenacious hunter, Track   \\
-        \rangerprogressionrow{2}  & Fast movement, ranger lore               \\
-        \rangerprogressionrow{3}  & Favored terrain, wild speech             \\
-        \rangerprogressionrow{4}  & Low-light vision, tracking expert        \\
-        \rangerprogressionrow{5}  & Quarry \plus3, ranger lore               \\
-        \rangerprogressionrow{6}  & Free stride                              \\
-        \rangerprogressionrow{7}  & Favored terrain, Guide                   \\
-        \rangerprogressionrow{8}  & Darkvision, ranger lore                  \\
-        \rangerprogressionrow{9}  & Hidden hunter                            \\
-        \rangerprogressionrow{10} & Quarry \plus4                            \\
-        \rangerprogressionrow{11} & Favored terrain (planar), ranger lore    \\
-        \rangerprogressionrow{12} & Blindsense                               \\
-        \rangerprogressionrow{13} & Terrain mastery                          \\
-        \rangerprogressionrow{14} & Ranger lore, unerring hunter             \\
-        \rangerprogressionrow{15} & Favored terrain (planar), quarry \plus5  \\
-        \rangerprogressionrow{16} & Blindsight                               \\
-        \rangerprogressionrow{17} & Ranger lore, terrain mastery             \\
-        \rangerprogressionrow{18} & Hide in plain sight, ranger lore         \\
-        \rangerprogressionrow{19} & Favored terrain (planar), perfect stride \\
-        \rangerprogressionrow{20} & Quarry \plus6, truesight
+        \rangerprogressionrow{1}  & Quarry \plus2, tenacious hunter, wild speech \\
+        \rangerprogressionrow{2}  & Hunting lore, tracker                        \\
+        \rangerprogressionrow{3}  & Free stride, keen vision                     \\
+        \rangerprogressionrow{4}  & Terrain lore                                 \\
+        \rangerprogressionrow{5}  & Quarry \plus3, rapid tracker                 \\
+        \rangerprogressionrow{6}  & Hunting lore                                 \\
+        \rangerprogressionrow{7}  & Blindsense                                   \\
+        \rangerprogressionrow{8}  & Terrain lore                                 \\
+        \rangerprogressionrow{9}  & Perfect stride                               \\
+        \rangerprogressionrow{10} & Hunting lore, quarry \plus4                  \\
+        \rangerprogressionrow{11} & Blindsight                                   \\
+        \rangerprogressionrow{12} & Terrain lore                                 \\
+        \rangerprogressionrow{13} & Unerring hunter                              \\
+        \rangerprogressionrow{14} & Hunting lore                                 \\
+        \rangerprogressionrow{15} & Farsight, quarry \plus5                      \\
+        \rangerprogressionrow{16} & Terrain lore                                 \\
+        \rangerprogressionrow{17} & Eternal quarry                               \\
+        \rangerprogressionrow{18} & Hunting lore                                 \\
+        \rangerprogressionrow{19} & Truesight                                    \\
+        \rangerprogressionrow{20} & Quarry \plus6, terrain lore
     \end{dtabularx}
 \end{dtable}
 
@@ -2096,6 +2096,11 @@ He is also proficient with his choice of bows, crossbows, or thrown weapons.
 The ranger adds his quarry bonus to his defenses against attacks that his quarry makes.
 See the Quarry ability, below, for details.
 
+\cf{Rgr}{Wild Speech}[Su]
+The ranger learns how to communicate with animals.
+This ability functions like the druid ability of the same name (see Wild Speech, \pref{Drd:Wild Speech}).
+A ranger can use this ability a number of times per day equal to his Perception or half his ranger level, whichever is higher.
+
 \subsection{Class Features}
 All rangers have the following abilities.
 
@@ -2118,242 +2123,206 @@ If the ranger does not see his quarry for more than a week, it is no longer cons
 The ranger's quarry bonus improves by \plus1 at 5th level and every 5 levels thereafter.
 His penalties against targets other than his quarry remains the same.
 
-\cf{Rgr}{Track}
-A ranger gains Track as a bonus feat (see \featref{Track}).
-
 \cf{Rgr}[2nd]{Fast Movement}[Ex]
 The ranger increases his movement speed by 10 feet when \unencumbered.
 
-\cf{Rgr}[2nd]{Ranger Lore}
-The ranger gains an ability drawn from ancient ranger lore.
-He chooses a single ranger lore from the list below.
-Some ranger lores have minimum ranger levels, as indicated in the title of the ability.
-At his 5th ranger level, and every three ranger levels thereafter, the ranger gains an additional ranger lore.
+\cf{Rgr}[2nd]{Hunting Power}[Ex]
+The strength of some ranger abilities are determined by his hunting power.
+Normally, his hunting power is equal to his Perception or his ranger level, whichever is higher.
 
-Some ranger lores depend on the ranger's lore power.
-A ranger's lore power is equal to his Perception or his ranger level, whichever is higher.
+\cf{Rgr}[2nd]{Tracker}
+A ranger gains Track as a bonus feat, even if he does not meet its prerequisites (see \featref{Track}).
+In addition, he may his hunting power in place of his Survival skill to follow tracks.
 
-All ranger lore abilities are extraordinary abilities unless otherwise noted.
+\cf{Rgr}[2nd]{Hunting Lore}
+The ranger gains an ability drawn from ancient hunting lore.
+He chooses a single hunting lore from the list below.
+Some hunting lores have minimum ranger levels, as indicated in the title of the ability.
+At his 6th ranger level, and every four ranger levels thereafter, the ranger gains an additional hunting lore.
+
+All hunting lore abilities are extraordinary abilities unless otherwise noted.
 
 \subcf{Combat Feat}
 The ranger gains a combat feat for which he qualifies (see Feats).
 This lore can be selected multiple times.
 
-\subcf{Favored Enemy}
-The ranger increases his quarry bonus by \plus2 against creatures of a particular kind.
-The possible creature options are listed on \trefnp{Favored Enemy Options}.
-The ranger may select this lore multiple times, choosing a different favored enemy each time.
-
-\begin{dtable}
-    \lcaption{Favored Enemy Options}
-    \begin{dtabularx}{\columnwidth}{X X}
-        \hline
-        Animals and vermin             & Humanoids (uncivilized)  \\
-        Dragons                        & Oozes and plants         \\
-        Fey                            & Outsiders (inner planes) \\
-        Giants and monstrous humanoids & Outsiders (outer planes) \\
-        Humanoids (civilized)          & Undead and constructs    \\
-    \end{dtabularx}
-\end{dtable}
-
-\subcf{Rapid Healing}
-The ranger naturally heals four times faster than normal.
-He requires only two hours of rest to heal half his hit points.
-This stacks with the benefits of accelerating recoveryy with the Heal skill (see \pcref{Accelerate Recovery}).
+\subcf{Energy Adaptation}
+The ranger continuously gains the benefits of the \spell{resist energy} spell, with a spellpower equal to his hunting power.
 
 \subcf{Survivalist}
-The ranger gains a Survival-based feat for which he qualifies as a bonus feat.
+The ranger gains a feat with Survival skill prerequisites for which he qualifies as a bonus feat.
+This lore can be selected multiple times.
 
 \subcf{Undead Destroyer}
-The ranger may designate undead as a quarry.
-If he does, he gains his quarry bonus against all undead for 5 minutes.
-In addition, non-intelligent undead treat him as if he were undead.
-
-\subcf{6th -- Barkskin}
-The ranger gains a \plus1 bonus to Armor defense.
+Non-intelligent undead treat the ranger as if he were undead.
+In addition, he increases his quarry bonus by \plus2 against undead.
 
 \subcf{6th -- Aberrant Hunter}
-The ranger may designate aberrations as a quarry.
-If he does, he gains his quarry bonus against all aberrations for 5 minutes.
-In addition, he becomes immune to Mind effects from aberrations.
-
-\subcf{6th -- Energy Adaptation}
-The ranger continuously gains the benefits of the \spell{resist energy} spell, with a spellpower equal to his lore power.
-
-\subcf{6th -- Fey Stalker}
-The ranger may designate fey as a quarry.
-If he does, he gains his quarry bonus against all fey.
-In addition, he becomes immune to Mind effects from fey.
+The ranger gains a \plus2 bonus to Mental defense.
+In addition, he increases his quarry bonus by \plus2 against aberrations.
 
 \subcf{6th -- Giantslayer}
-The ranger may designate monstrous humanoids as a quarry.
-If he does, he gains his quarry bonus against all monstrous humanoids for 5 minutes.
-In addition, he gains a \plus8 bonus to Maneuver defense against attacks that would move him.
+The ranger gains a \plus8 bonus to Maneuver defense against attacks that would move him.  % weird bonus
+In addition, he increases his quarry bonus by \plus2 against monstrous humanoids.
+
+\subcf{6th -- Golem Breaker}
+The ranger's attacks ignore an amount of hardness equal to half his hunting power.
+In addition, he increases his quarry bonus by \plus2 against constructs.
+
+\subcf{6th -- Hidden Hunter}
+The ranger becomes even more difficult for his quarry to detect.
+He adds his quarry bonus to his Stealth checks against his quarry.
+In addition, he continuously benefits from the effect of the \spell{nondetection} spell against all attempts that his quarry makes to detect him magically.
+The effect uses a spellpower equal to his hunting power.
 
 \subcf{6th -- Ooze Hunter}
-The ranger may designate oozes as a quarry.
-If he does, he gains his quarry bonus against all oozes for 5 minutes.
-In addition, he becomes immune to the slime and engulf effects of oozes.
+The ranger becomes immune to slime and engulf attacks.
+In addition, he increases his quarry bonus by \plus2 against oozes.
 
-\subcf{9th -- Dragonslayer}
-The ranger may designate dragons as a quarry.
-If he does, he gains his quarry bonus against all dragons for 5 minutes.
-In addition, he becomes immune to the breath attacks of dragons.
+\subcf{6th -- Scent}
+The ranger gains the scent ability (see \pcref{Scent}).
 
-\subcf{9th -- Golem Breaker}
-The ranger may designate constructs as a quarry.
-If he does, he gains his quarry bonus against all constructs for 5 minutes.
-In addition, his attacks ignore the hardness and damage reduction of constructs, and negate it for 1 round.
+\subcf{6th -- Slowed Quarry}
+If the ranger hits his quarry with a physical attack, that creature moves at half speed.
+This effect lasts as wrong as it remains the ranger's quarry.
 
-\subcf{9th -- Mageslayer}
-The ranger may designate arcane spellcasters as a quarry.
-If he does, he gains his quarry bonus against all arcane spellcasters for 5 minutes.
-In addition, he gains spell resistance against arcane spells equal to 10 \add his lore power.
+\subcf{10th -- Divine Avenger}
+The ranger gains \glossterm{spell resistance} against divine spells equal to 10 \add his hunting power.
+In addition, he increases his quarry bonus by \plus2 against divine spellcasters.
 
-To affect the ranger with a spell, a caster must make an attack with an accuracy equal to its spellpower.
-If the attack beats the ranger's spell resistance, the spell works normally.
-Otherwise, the spell has no effect on the ranger.
+\subcf{10th -- Dragonslayer}
+The ranger becomes immune to breath weapons, and his attacks ignore the damage reduction of dragons.
+In addition, he increases his quarry bonus by \plus2 against dragons.
 
-\subcf{9th -- Master of the Hunt}
-The ranger may use a standard action to share the benefits of his quarry ability with all allies who can see and hear him for 5 rounds.
+\subcf{10th -- Fey Stalker}
+The ranger becomes immune to hostile \glossterm{Mind} effects.
+In addition, he increases his quarry bonus by \plus2 against fey.
+
+\subcf{10th -- Mageslayer}
+The ranger gains \glossterm{spell resistance} against arcane spells equal to 10 \add his hunting power.
+In addition, he increases his quarry bonus by \plus2 against arcane spellcasters.
+
+\subcf{14th -- Master of the Hunt}
+As a standard action, the ranger may share the benefits of his quarry ability with all allies who can see and hear him for 5 rounds.
 This does not share the defensive benefits granted by the Tenacious Hunter ability.
 However, his allies do not suffer penalties against targets other than the quarry.
 
-\subcf{9th -- Scent}
-The ranger gains the scent ability (see \pcref{Scent}).
+\subcf{14th -- Flexible Quarry}
+The ranger does not need to wait to designate a new quarry after giving up on his previous quarry.
 
-\subcf{12th -- Camouflage}\label{Camouflage}
-The ranger can use the Stealth skill to hide in any of his favored terrains, even if the terrain does not grant cover or concealment.
+\subcf{14th -- Impaired Quarry}
+If the ranger hits his quarry with a physical attack, that creature is \impaired with all attacks and checks.
+This effect lasts as long as it remains the ranger's quarry.
 
-\subcf{12th -- Wild Aspect}
-The ranger chooses any wild aspect from the list of wild aspects available to druids (see \pcref[Drd:Wild Aspect]{Wild Aspect}).
-He continuously gains the benefits of that aspect.
-His effective nature power for this ability is equal to his lore power.
+\subcf{14th -- Multiquarry}
+The ranger may designate up to two targets whenever he chooses a quarry.
+He gains his quarry benefits against both targets.
+Whenever he designates new quarries, he may choose which previous quarry to give up (if any).
 
-\cf{Rgr}[3rd]{Favored Terrain}[Ex]
-The ranger becomes particularly attuned to certain kinds of terrain.
-He chooses one kind of terrain to select as a favored terrain from the list below.
-Usually, rangers favor their home terrain, but a ranger may choose any kind of terrain that he has personally experienced at least once.
-At his 7th ranger level, and every four ranger levels thereafter, the ranger gains an additional favored terrain.
+\subcf{18th -- Anchored Quarry}
+If the ranger hits his quarry with a physical attack, that creature is dimensionally anchored, as the \spell{dimensional anchor} spell.
+This effect lasts as long as it remains the ranger's quarry.
 
-\par While in a favored terrain, a ranger gains a \plus2 bonus to Awareness, Stealth, and Survival checks.
-If he desires, he may leave no trace of his passage, causing attempts to track him to take a \minus20 penalty.
-In addition, his experience with his favored terrain grants the ranger a single ability, regardless of whether he is currently in that terrain or not.
-The options for favored terrains are listed below.
-\subcf{Aquatic}
-The ranger gains Skill Focus (Swim) as a bonus feat, and halves the penalties he takes for fighting underwater.
-\subcf{Cold}
-The ranger gains cold damage reduction equal to his Constitution or his ranger level, whichever is higher.
-This allows him to ignore the first points of cold damage he would take each round.
-\subcf{Desert}
-The ranger gains fire damage reduction equal to his Constitution or his ranger level, whichever is higher.
-This allows him to ignore the first points of fire damage he would take each round.
-\subcf{Forest}
-The ranger gains Skill Focus (Stealth) as a bonus feat.
-\subcf{Mountains}
-The ranger gains Skill Focus (Climb) as a bonus feat, and takes half damage from falling damage.
-\subcf{Plains}
-The ranger gains Skill Focus (Awareness) as a bonus feat.
-\subcf{Swamp}
-The ranger gains Perfect Health as a bonus feat.
-\subcf{Underground}
-The ranger gains Blind-Fight as a bonus feat.
-\subcf{Urban}
-The ranger gains Skill Focus (Persuasion) as a bonus feat.
-
-\cf{Rgr}[3rd]{Wild Speech}[Su]
-The ranger learns how to communicate with animals.
-This ability functions like the druid ability of the same name (see Wild Speech, \pref{Drd:Wild Speech}).
-A ranger can use this ability a number of times per day equal to his Perception or half his ranger level, whichever is higher.
-
-\cf{Rgr}[4th]{Low-light Vision}[Ex]
-The ranger's sight improves, allowing him to see in conditions of dim light more easily.
-He gains low-light vision, allowing him to treat sources of light as if they had double their normal illumination range.
-If he already has low-light vision, he doubles its benefit, allowing him to treat sources of light as if they had four times their normal illumination range.
-
-\cf{Rgr}[4th]{Tracking Expert}[Ex]
-The ranger's ability to track his foes improves.
-He may always take 10 on Survival checks made to track, even if conditions would otherwise prevent this.
-Additionally, he can move at his normal speed while following tracks without taking the normal \minus5 penalty.
-He takes only a \minus10 penalty (instead of the normal \minus20) when moving at up to twice normal speed while tracking.
-
-\cf{Rgr}[6th]{Free Stride}[Ex]
+\cf{Rgr}[3rd]{Free Stride}[Ex]
 The ranger can move through any sort of natural terrain that slows or impedes movement at his normal speed without suffering any sort of impairment.
 If a skill check, such as Climb or Swim, would normally be required to move through the terrain, this ability does not help.
 
-\cf{Rgr}[7th]{Guide}[Ex]
-Whenever the ranger is in his favored terrain, all allies that can see and hear the ranger gain his favored terrain bonuses in that terrain as well.
-
-\cf{Rgr}[8th]{Darkvision}[Ex]
-The ranger's sight improves again, and he gains the ability to see even when there is no light at all.
-He gains darkvision out to 50 feet, allowing him to see in complete darkness.
+\cf{Rgr}[3rd]{Keen Vision}[Ex]
+The ranger's sight improves, allowing him to see more easily.
+He gains \glossterm{low-light vision}, allowing him to treat sources of light as if they had double their normal illumination range.
+If he already has low-light vision, he doubles its benefit, allowing him to treat sources of light as if they had four times their normal illumination range.
+In addition, he gains \glossterm{darkvision} out to 50 feet, allowing him to see in complete darkness.
 If he already has darkvision, he increases its range by 50 feet.
 
-\cf{Rgr}[11th]{Favored Terrain (Planar)}[Ex]
-The ranger may choose any plane as a favored terrain in addition to his normal options whenever he gains a new favored terrain.
-He is immune to any hostile planar effects from any plane he has chosen as favored terrain.
-In addition, he gains a \plus2 bonus to Knowledge checks relating to the plane and is always treated as trained in Knowledge (planar) for the purpose of such checks.
+\cf{Rgr}[4th]{Terrain Lore}[Ex]
+The ranger becomes particularly attuned to certain kinds of terrain.
+He chooses two terrain-based lores from the list below.
+Usually, rangers favor lores relating to their home terrain, but a ranger may a lore from any kind of terrain that he has personally experienced at least once.
+At his 8th ranger level, and every four ranger levels thereafter, the ranger gains an additional terrain lore.
 
-\cf{Rgr}[9th]{Hidden Hunter}[Su]
-The ranger becomes even more difficult for his quarry to detect.
-He adds his quarry bonus to his Stealth checks against his quarry.
-In addition, he continuously benefits from the effect of the \spell{nondectection} spell against all attempts that his quarry makes to detect him magically.
-The effect uses a spellpower equal to his ranger level or Perception, whichever is higher.
+Many terrain lores grant the ranger a particular terrain as a favored terrain.
+While in a favored terrain, a ranger gains a \plus2 bonus to Awareness, Stealth, and Survival checks.
+If he desires, he may leave no trace of his passage, causing attempts to track him to take a \minus20 penalty.
+The options for terrain lores are listed below.
 
-\cf{Rgr}[12th]{Blindsense}[Ex]
+All terrain lore abilities are extraordinary abilities unless otherwise stated.
+
+\subcf{Aquatic}
+The ranger treats aquatic terrain as a favored terrain.
+In addition, he gains a swim speed equal to his base land speed.
+If he already has a swim speed, he increases his swim speed by 10 feet.
+\subcf{Cold}
+The ranger treats cold terrain as a favored terrain.
+In addition, he gains cold damage reduction equal to his Constitution or his ranger level, whichever is higher.
+This allows him to ignore the first points of cold damage he would take each round.
+\subcf{Desert}
+The ranger treats deserts as a favored terrain.
+In addition, he becomes immune to fatigue.
+\subcf{Forest}
+The ranger treats forests as a favored terrain.
+In addition, he gains Skill Focus (Stealth) as a bonus feat.
+\subcf{Mountains}
+The ranger treats mountains as a favored terrain.
+In addition, he gains a climb speed equal to his land speed.
+If he already has a climb speed, he increases his climb speed by 10 feet.
+\subcf{Plains}
+The ranger treats plains as a favored terrain.
+In addition, he increases his land speed by 10 feet.
+\subcf{Swamp}
+The ranger treats swamps as a favored terrain.
+In addition, he gains Perfect Health as a bonus feat.
+\subcf{Underground}
+The ranger treats underground terrain as a favored terrain.
+In addition, he gains Blind-Fight as a bonus feat.
+\subcf{Urban}
+The ranger treats urban terrain as a favored terrain.
+In addition, he gains Skill Focus (Persuasion) as a bonus feat.
+\subcf{8th -- Guide}
+Whenever the ranger is in a favored terrain, all allies that can see and hear the ranger gain his favored terrain bonuses in that terrain as well.
+\subcf{12th -- Camouflage}
+The ranger can use the Stealth skill to hide in any of his favored terrains, even if the terrain does not grant cover or concealment.
+\subcf{12th -- Planar Terrain}
+The ranger chooses a plane.
+He treats that plane as favored terrain.
+In addition, he is immune to any hostile planar effects from any plane he has chosen as favored terrain.
+\subcf{18th -- Hide in Plain Sight}
+While in any of his favored terrains, the ranger can use the Stealth skill to hide even while being observed, taking a \minus5 penalty to the Stealth check.
+He still needs cover or concealment to hide.
+
+\cf{Rgr}[5th]{Rapid Tracker}[Ex]
+The ranger's ability to track his foes improves.
+He can move at his normal speed while following tracks without taking the normal \minus5 penalty.
+He takes only a \minus10 penalty (instead of the normal \minus20) when moving at up to twice normal speed while tracking.
+
+\cf{Rgr}[7th]{Blindsense}[Ex]
 The ranger's perceptions are so finely honed that he can sense his enemies without seeing them.
 He gains the blindsense ability out to 50 feet.
 This ability allows him to sense the presence and location of objects and foes within 50 feet without seeing them.
 If he already has the blindsense ability, he increases its range by 50 feet.
 
-\cf{Rgr}[13th]{Terrain Mastery}[Ex]
-The ranger gains a greater degree of mastery over some of his favored terrains.
-He chooses a single kind of terrain that he has already chosen as a favored terrain.
-At his 17th ranger level, he chooses an additional kind of terrain to master.
-\par While in that terrain, his bonuses on Awareness, Stealth, and Survival checks increase to \plus4.
-In addition, he gains another ability based on that terrain that is constantly active, whether or not he is currently in the terrain.
-The options for terrain masteries are given below.
-\subcf{Aquatic}
-The ranger gains a swim speed equal to his base land speed.
-If he already has a swim speed, he increases his swim speed by 10 feet.
-\subcf{Cold}
-The ranger becomes immune to fatigue.
-\subcf{Desert}
-The ranger becomes immune to fatigue.
-\subcf{Forest}
-The ranger may use his wild speech ability to communicate with plants, as the druid ability.
-\subcf{Mountains}
-The ranger gains a climb speed equal to his land speed.
-If he already has a climb speed, he increases his climb speed by 10 feet.
-\subcf{Plains}
-The ranger increases his land speed by 10 feet.
-\subcf{Swamp}
-The ranger becomes immune to nausea.
-\subcf{Underground}
-The ranger increases the range of his darkvision and blindsense by 50 feet.
-\subcf{Urban}
-The ranger can use the Stealth skill to hide behind creatures granting him active cover, just like he can hide behind passive cover.
+\cf{Rgr}[9th]{Perfect Stride}[Su]
+The ranger's ability to surpass obstacles becomes unparalleled.
+He constantly acts as if he were under the effect of a \spell{freedom} spell, except that it does not allow him to act normally underwater.
 
-\cf{Rgr}[14th]{Unerring Hunter}[Su]
-The ranger's ability to hunt down his quarry improves to supernatural levels.
-Once per day, the ranger may concentrate for a full round to duplicate the effects of the \spell{discern location} ritual targeted at his quarry.
-
-\cf{Rgr}[16th]{Blindsight}[Ex]
+\cf{Rgr}[11th]{Blindsight}[Ex]
 The ranger gains the ability to ``see'' perfectly without his eyes in a 50 foot radius around him.
 With this ability, he can fight just as well with his eyes closed as with them open.
 If he already has the blindsight ability, he increases its range by 50 feet.
 
-\cf{Rgr}[18th]{Hide in Plain Sight}[Ex]
-While in any of his favored terrains, the ranger can use the Stealth skill to hide even while being observed, taking a \minus5 penalty to the Stealth check.
-He still needs cover or concealment to hide.
+\cf{Rgr}[13th]{Unerring Hunter}[Su]
+The ranger's ability to hunt down his quarry improves to supernatural levels.
+Once per day, the ranger may concentrate for a full round to duplicate the effects of the \spell{discern location} ritual targeted at his quarry.
 
-If the ranger has the Camouflage ranger lore (see \pcref{Camouflage}), this allows the ranger to attempt to hide in almost any situation, as long as he is in one of his favored terrains.
+\cf{Rgr}[15th]{Farsight}[Ex]
+The ranger increases the range of his darkvision and blindsight abilities by 100 feet.
+In addition, he halves his \glossterm{range increment penalties} for attacking at long range.
 
-\cf{Rgr}[19th]{Perfect Stride}[Su]
-The ranger's ability to surpass obstacles becomes unparalleled.
-He constantly acts as if he were under the effect of a \spell{freedom} spell, except that it does not allow him to act normally underwater.
+\cf{Rgr}[17th]{Eternal Quarry}[Ex]
+The ranger's quarry never stops being his quarry until he chooses a different creature.
+In addition, once he has designated a creature as a quarry, he can always designate it as a quarry again, even if it is not in his sight.
+This only applies to creatures that he designates as a quarry after acquiring this ability.
 
-\cf{Rgr}[20th]{Truesight}[Su]
+\cf{Rgr}[19th]{Truesight}[Su]
 The ranger's perceptions are accurate enough to defeat even powerful magic.
 He gains the ability to see all things as they actually are, as the \spell{true seeing} spell, out to a range of 50 feet.
 
@@ -2457,7 +2426,7 @@ However, the rogue also falls \prone.
 The rogue must be aware of the attack to use this ability.
 
 \subcf{7th -- Slippery Mind}
-Whenever an attack for a Mind spell or effect beats the rogue's Mental defense by less than 5, she is affected normally at first.
+Whenever an attack for a \glossterm{Mind} spell or effect beats the rogue's Mental defense by less than 5, she is affected normally at first.
 One round later, the rogue is instead affected as if the attack had failed.
 This does not help against instantaneous effects.
 
@@ -2584,25 +2553,25 @@ This does not allow her to deliver ambush attacks to the same creature multiple 
         \tb{Level} & \tb{Combat Prowess} & \tb{Fort} & \tb{Ref} & \tb{Ment} & \tb{Special} \\
         \hline
         \sorcererprogressionrow{1}  & Cantrip, spells, wild magic, wild tolerance \\
-        \sorcererprogressionrow{2}  & Arcane adaptation, cantrip                  \\
-        \sorcererprogressionrow{3}  & Focused casting                             \\
-        \sorcererprogressionrow{4}  & Defensive spellblend                        \\
-        \sorcererprogressionrow{5}  & \x                                          \\
-        \sorcererprogressionrow{6}  & Arcane adaptation                           \\
-        \sorcererprogressionrow{7}  & \x                                          \\
-        \sorcererprogressionrow{8}  & Offensive spellblend                        \\
-        \sorcererprogressionrow{9}  & \x                                          \\
-        \sorcererprogressionrow{10} & Arcane adaptation                           \\
-        \sorcererprogressionrow{11} & \x                                          \\
-        \sorcererprogressionrow{12} & Improved defensive spellblend               \\
-        \sorcererprogressionrow{13} & \x                                          \\
-        \sorcererprogressionrow{14} & Arcane adaptation                           \\
-        \sorcererprogressionrow{15} & \x                                          \\
-        \sorcererprogressionrow{16} & Improved offensive spellblend               \\
-        \sorcererprogressionrow{17} & \x                                          \\
-        \sorcererprogressionrow{18} & Arcane adaptation                           \\
-        \sorcererprogressionrow{19} & \x                                          \\
-        \sorcererprogressionrow{20} & Spellblend mastery                          \\
+        \sorcererprogressionrow{2}  & Cantrip, personal spell     \\
+        \sorcererprogressionrow{3}  & Innate magic                \\
+        \sorcererprogressionrow{4}  & Personal spell              \\
+        \sorcererprogressionrow{5}  & Focused casting             \\
+        \sorcererprogressionrow{6}  & Personal spell              \\
+        \sorcererprogressionrow{7}  & Innate magic                \\
+        \sorcererprogressionrow{8}  & Personal spell              \\
+        \sorcererprogressionrow{9}  & Spell resistance            \\
+        \sorcererprogressionrow{10} & Personal spell              \\
+        \sorcererprogressionrow{11} & Innate magic                \\
+        \sorcererprogressionrow{12} & Personal spell              \\
+        \sorcererprogressionrow{13} & Spontaneous personalization \\
+        \sorcererprogressionrow{14} & Personal spell              \\
+        \sorcererprogressionrow{15} & Innate magic                \\
+        \sorcererprogressionrow{16} & Personal spell              \\
+        \sorcererprogressionrow{17} & Spell absorption            \\
+        \sorcererprogressionrow{18} & Personal spell              \\
+        \sorcererprogressionrow{19} & Innate magic                \\
+        \sorcererprogressionrow{20} & Personal spell              \\
     \end{dtabularx}
 \end{dtable}
 
@@ -2669,82 +2638,61 @@ For all other purposes, cantrips are treated as 0th level spells.
 
 At his 2nd sorcerer level, the sorcerer learns a second cantrip of his choice.
 
-\cf{Sor}[2nd]{Arcane Adaptation}
-The sorcerer gains a new ability as he adapts to the magic that flows through him.
-He chooses a single arcane adaptation from the list below.
-Some arcane adaptations have minimum sorcerer levels, as indicated in the title of the ability.
-At his 6th sorcerer level, and every four sorcerer levels thereafter, the sorcerer gains an additional arcane adaptation.
+\cf{Sor}[2nd]{Personal Spell}
+The sorcerer's spells are unique to him.
+He chooses a single spell he knows with a maximum level equal to half his sorcerer level.
+It gains one of the following benefits, as he chooses.
+\begin{itemize}
+    \item Augment: The sorcerer chooses one of the spell's augments.
+        The cost to use that augment is reduced by one level (to a minimum of zero).
+        This personalization can be chosen multiple times.
+        Each time, it can apply to the same or a different augment.
+    \item Flawless: The sorcerer cannot miscast the spell.
+        If he would miscast it, the spell simply fails without effect.
+    \item Instinctive: The sorcerer automatically succeeds at all Concentration checks he makes to cast the spell.
+    \item Mastered: The sorcerer no longer needs verbal or somatic components to cast the spell.
+\end{itemize}
 
-All arcane adaptations are extraordinary abilities unless otherwise noted.
+If he trades the knowledge of his chosen spell for a different spell, he may choose a new personal spell (including the new spell he just gained).
+At his 4th sorcerer level, and every even sorcerer level thereafter, the sorcerer gains a new personal spell.
+He may choose a new spell, or a spell he has already chosen as a personal spell.
+However, the spell's level \add the number of personalizations on the spell cannot exceed half his sorcerer level \add 1.
 
-\subcf{Arcane Bloodline}
-The sorcerer gains a bloodline feat of his choice.
-This arcane adaptation can be taken multiple times.
-Each time, the sorcerer chooses a different feat.
-\subcf{Cautious Magic}
-When the sorcerer fails a wild magic roll, he may choose to suppress the magical energy released.
-If he does, neither the spell nor its miscast effect occurs.
-In addition, he loses the ability to cast spells of the same level for half as long as he normally would.
-\subcf{Rapid Recovery}
-When the sorcerer fails a wild magic roll to cast a spell, the time required to regain the ability to cast spells of the spell's level is reduced by 5 minutes.
-\subcf{Ritual Caster}
-The sorcerer gains the Ritual Caster feat, even if he does not meet the prerequisites.
-\subcf{6th -- Arcane Resilience}
-The sorcerer gains damage reduction against arcane spells equal to his sorcerer level or Constitution, whichever is higher.
-This allows him to ignore the first points of damage he takes each round.
-This ability applies against the sorcerer's own miscast effects.
-\subcf{6th -- Wild Retargeting}
-When the sorcerer targets a random creature with a spell's miscast effect, he may roll twice to determine which creature is affected.
-He chooses which result is used.
-\subcf{10th -- Spell Resistance}
-The sorcerer gains spell resistance equal to 10 \add his sorcerer level or Constitution, whichever is higher.
+\cf{Sor}[3rd]{Innate Magic}[Su]
+The sorcerer becomes inherently magical.
+He may choose an arcane spell with a maximum level equal to half his sorcerer level.
+The spell must target a single creature, and have a duration of \durshort or longer.
+He does not need to know the spell.
+The sorcerer constantly gains the benefits of that spell.
+If the spell has secondary effects, such as the \spell{avatar of suffering} spell, the duration of the secondary effects is not changed.
+
+At his 7th sorcerer level, and every 4 sorcerer levels thereafter, the sorcerer gains the benefit of an additional spell.
+
+\cf{Sor}[5th]{Focused Casting}[Ex]
+If the sorcerer spends one minute focusing on casting a spell, he does not need to make a wild magic roll.
+This prevents him from miscasting the spell due to wild magic.
+If his concentration is broken while casting a spell in this way, the sorcerer automatically miscasts the spell and suffers consequences as if he had failed a wild magic roll.
+
+\cf{Sor}[9th]{Spell Resistance}[Ex]
+The sorcerer gains \glossterm{spell resistance} equal to 10 \add his sorcerer level or Constitution, whichever is higher.
 To affect the sorcerer with a spell, a caster must make an attack with an accuracy equal to its spellpower.
 If the attack beats the sorcerer's spell resistance, the spell works normally.
 Otherwise, the spell has no effect on the sorcerer.
 
 This ability does not protect the sorcerer from his own miscast effects.
-\subcf{10th -- Wild Explosion}
-When the sorcerer miscasts a spell that explodes when miscast, the damage affects the sorcerer and enemies within a \areasmall radius of the sorcerer.
-It does not affect the sorcerer's allies within that area (other than himself).
-\subcf{14th -- Certain Magic}
-The sorcerer becomes unable to miscast for any reason except failing a wild magic roll.
-If he would miscast a spell, such as if his concentration is broken while casting, the spell simply fails to take effect.
-\subcf{18th -- Miscast Immunity}
-The sorcerer becomes immune to explosive and retargeting miscast effects from spells he casts and spells cast by other creatures.
-He no longer takes any damage from explosive miscasts.
-He may choose to be unaffected by retargeting miscast effects that target him.
-This does not protect him from localized miscasts.
 
-\cf{Sor}[3rd]{Focused Casting}[Ex]
-If the sorcerer spends one minute focusing on casting a spell, he does not need to make a wild magic roll.
-This prevents him from miscasting the spell due to wild magic.
-If his concentration is broken while casting a spell in this way, the sorcerer automatically miscasts the spell and suffers consequences as if he had failed a wild magic roll.
+\cf{Sor}[13th]{Spontaneous Personalization}[Ex]
+Whenever he casts a spell, the sorcerer may reduce the level cost of one of the spell's augments by one level (to a minimum of zero).
+Alternately, he may reduce the level cost to apply one of his metamagic feats to the spell by one level (to a minimum of zero).
 
-\cf{Sor}[4th]{Defensive Spellblend}[Ex]
-The sorcerer may combine his cantrips with his spells.
-As a full-round action, the sorcerer may cast a spell that affects only himself.
-The spell must have a casting time of 1 standard action or less.
-If he does, he may also use a cantrip as part of the same action.
-The cantrip need not target the sorcerer.
-In exchange, he gains a \plus5 bonus to his wild magic roll.
-The spell's level is used to determine the bonus to the sorcerer's wild magic roll.
+\cf{Sor}[17th]{Spell Absorption}[Ex]
+Whenever the sorcerer resists a spell with his spell resistance, he gains the ability to cast that spell once during the next 5 rounds.
+The spell retains all augments, metamagic feats, and similar modifications from the original caster, and the sorcerer cannot choose any other augments or apply his own metamagic feats.
+However, he makes all other decisions required to cast the spell, and uses his spellpower to determine the spell's effects.
+Once he casts the spell, he expends the absorbed energy, can cannot cast it again.
 
-\cf{Sor}[8th]{Offensive Spellblend}[Ex]
-This ability functions like defensive spellblend, except that the spell need not only affect the sorcerer.
-
-\cf{Sor}[12th]{Improved Defensive Spellblend}[Ex]
-The sorcerer may combine two spells together.
-As a full-round action, the sorcerer may cast two spells at once, resolving each spell's effects separately.
-The spells cast in this way must have a casting time of 1 standard action or less, and must be at least three spell levels apart, such as a 1st-level spell and a 4th-level spell.
-In addition, one of the two spells must affect only the sorcerer.
-In exchange, he gains a \plus5 bonus to his wild magic roll.
-The level of the higher level spell is used to determine the bonus to the sorcerer's wild magic roll.
-
-\cf{Sor}[16th]{Improved Offensive Spellblend}[Ex]
-This ability functions like improved defensive spellblend, except that neither spell need only affect the sorcerer.
-
-\cf{Sor}[20th]{Spellblend Mastery}[Ex]
-The sorcerer may use spellblends to combine spells that are only two spell levels apart, rather than three.
+\cf{Sor}[20th]{Spontaneous Mastery}[Ex]
+The sorcerer may use his spontaneous personalization ability twice every time he casts a spell, reducing the total level costs by two levels.
 
 \subsection{Variant Sorcerer}
 
@@ -3288,25 +3236,25 @@ This functions like the temporal prison invocation, except that no attack is req
         \tb{Level} & \tb{Combat Prowess} & \tb{Fort} & \tb{Ref} & \tb{Ment} & \tb{Special} \\
         \hline
         \wizardprogressionrow{1}  & Cantrip, rituals, spells \\
-        \wizardprogressionrow{2}  & Cantrip, magic feat      \\
-        \wizardprogressionrow{3}  & Arcane insight           \\
-        \wizardprogressionrow{4}  & Attuned spell            \\
-        \wizardprogressionrow{5}  & Arcane insight           \\
-        \wizardprogressionrow{6}  & Magic feat               \\
-        \wizardprogressionrow{7}  & Arcane insight           \\
-        \wizardprogressionrow{8}  & Persistent attunement    \\
-        \wizardprogressionrow{9}  & Arcane insight           \\
-        \wizardprogressionrow{10} & Magic feat               \\
-        \wizardprogressionrow{11} & Arcane insight           \\
-        \wizardprogressionrow{12} & Contingency              \\
-        \wizardprogressionrow{13} & Arcane insight           \\
-        \wizardprogressionrow{14} & Magic feat               \\
-        \wizardprogressionrow{15} & Arcane insight           \\
-        \wizardprogressionrow{16} & Augmented attunement     \\
-        \wizardprogressionrow{17} & Arcane insight           \\
-        \wizardprogressionrow{18} & Magic feat               \\
-        \wizardprogressionrow{19} & Arcane insight           \\
-        \wizardprogressionrow{20} & Chain contingency        \\
+        \wizardprogressionrow{2}  & Arcane insight, cantrip      \\
+        \wizardprogressionrow{3}  & Attuned spell           \\
+        \wizardprogressionrow{4}  & Arcane insight            \\
+        \wizardprogressionrow{5}  & Ritual master           \\
+        \wizardprogressionrow{6}  & Arcane insight               \\
+        \wizardprogressionrow{7}  & Attuned spell           \\
+        \wizardprogressionrow{8}  & Arcane insight    \\
+        \wizardprogressionrow{9}  & Persistent attunement           \\
+        \wizardprogressionrow{10} & Arcane insight               \\
+        \wizardprogressionrow{11} & Attuned spell           \\
+        \wizardprogressionrow{12} & Arcane insight              \\
+        \wizardprogressionrow{13} & Contingency           \\
+        \wizardprogressionrow{14} & Arcane insight               \\
+        \wizardprogressionrow{15} & Attuned spell           \\
+        \wizardprogressionrow{16} & Arcane insight     \\
+        \wizardprogressionrow{17} & Augmented attunement           \\
+        \wizardprogressionrow{18} & Arcane insight               \\
+        \wizardprogressionrow{19} & Attuned spell           \\
+        \wizardprogressionrow{20} & Arcane insight, chain contingency        \\
     \end{dtabularx}
 \end{dtable}
 
@@ -3397,7 +3345,7 @@ The wizard gains a bonus magic feat or metamagic feat of her choice.
 She must meet the prerequisites for the feat as normal.
 At her 6th wizard level, and every 4 wizard levels thereafter, she gains an additional magic feat or metamagic feat.
 
-\cf{Wiz}[3rd]{Arcane Insight}[Ex]\label{Arcane Insight}
+\cf{Wiz}[2nd]{Arcane Insight}[Ex]\label{Arcane Insight}
 The wizard gains a greater understanding of magic.
 She chooses one of the following benefits.
 \begin{itemize}
@@ -3408,15 +3356,11 @@ She chooses one of the following benefits.
         She can never learn or cast spells or rituals from her banned schools.
         If she knows spells from a banned school, she must immediately learn different spells from unbanned schools in their place.
         Divination cannot be chosen as a banned school.
-    \item Spell Mastery: The wizard chooses a single spell she knows with a maximum level equal to half her wizard level.
-        She no longer needs verbal or somatic components to cast the spell.
-        In addition, she cannot miscast the spell.
-        If she would miscast the spell, it simply fails without effect.
 \end{itemize}
 
-At her 5th wizard level, and every odd wizard level thereafter, the wizard gains a new arcane insight.
+At her 4th wizard level, and every even wizard level thereafter, the wizard gains a new arcane insight.
 
-\cf{Wiz}[4th]{Attuned Spell}[Ex]
+\cf{Wiz}[3rd]{Attuned Spell}[Ex]
 Whenever the wizard casts a spell on herself, she may attune to it to increase its duration.
 She can attune to any spell she knows with a maximum level equal to half her wizard level.
 The spell must target a single creature, and have a duration of \durshort or longer.
@@ -3426,13 +3370,17 @@ If the spell has secondary effects, such as the \spell{avatar of suffering} spel
 The wizard can only attune to one spell at a time.
 If she attunes to another spell, the other spell returns to its normal duration, and expires if appropriate.
 
-At 8th level, and every 4 levels thereafter, the wizard gains the ability to attune to an additional spell simultaneously.
+At her 7th wizard level, and every 4 wizard levels thereafter, the wizard gains the ability to attune to an additional spell simultaneously.
 Whenever she attunes to a new spell, she may choose which of her other attuned spells she stops being attuned to.
 
-\cf{Wiz}[8th]{Persistent Attunement}[Ex]
+\cf{Wiz}[5th]{Ritual Master}[Ex]
+When performing an arcane ritual, the wizard may spend a spell slot of the ritual's level.
+If she does, she need only pay half the normal material component costs to perform the ritual.
+
+\cf{Wiz}[9th]{Persistent Attunement}[Ex]
 A wizard's attuned spells cannot be dispelled.
 
-\cf{Wiz}[12th]{Contingency}[Ex]
+\cf{Wiz}[13th]{Contingency}[Ex]
 The wizard gains the ability to prepare a spell so it takes effect automatically if specific circumstances arise.
 To prepare a contingency, the wizard must spend 1 minute preparing the spell, which consumes the a spell slot two levels higher than the spell's level.
 During this casting time, the wizard specifies what circumstances cause the spell to take effect.
@@ -3450,7 +3398,7 @@ The wizard cannot change those decisions when the contingency takes effect.
 A wizard can have only one contingency active at a time.
 If she creates another contingency, it replaces her old contingency.
 
-\cf{Wiz}[16th]{Augmented Attunement}[Ex]
+\cf{Wiz}[17th]{Augmented Attunement}[Ex]
 When the wizard attunes to a spell, she may reduce the cost of one augment to the spell by one level.
 
 \cf{Wiz}[20th]{Chain Contingency}[Ex]
