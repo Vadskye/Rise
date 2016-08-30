@@ -198,14 +198,14 @@ Some strike feats instead require a specific action to use.
         \featref{Frenzy}                & Rage, barbarian 6                 & Enter frenzy instead of angry rage & Rage & \featpref{Frenzy} \\
         \featref{Furious Style}         & Rage, barbarian 6                 & Change combat styles while raging & Rage & \featpref{Furious Style} \\
         \featref{Insightful Fighter}    & Adaptive style                    & Use Perception for adaptive style (and battlemaster) & \x & \featpref{Insightful Fighter} \\
-        \featref{Invulnerable Rage}     & Rage, barbarian 14                & Improve damage reduction while raging & Rage & \featpref{Invulnerable Rage} \\
+        \featref{Invulnerable Rage}     & Rage, barbarian 10                & Improve damage reduction while raging & Rage & \featpref{Invulnerable Rage} \\
         \featref{Insightful Rogue}      & Combat trick                      & Use Perception for combat tricks & \x & \featpref{Insightful Rogue} \\
         \featref{Legendary Versatility} & 5 levels in two classes           & Treat multiple classes as base classes & \x & \featpref{Legendary Versatility} \\
         \featref{Ki Focus}              & Manifest \ki, monk 8              & \Ki manifestation lasts longer & \x \featpref{Ki Focus} \\
             \tind \featref{Ki Specialization}       & Ki Focus, monk 12                    & \Ki manifestation lasts all day & \x \featpref{Ki Specialization} \\
         \featref{Ki Training}           & Manifest \ki                      & Learn additional ki manifestation & \x \featpref{Ki Training} \\
         \featref{Mindless Rage}         & Rage, barbarian 10                & Immune to Mind effects while raging & Rage & \featpref{Mindless Rage} \\
-        \featref{Overpowering Rage}     & Rage, barbarian 10                & Gain combat maneuver bonus while raging & Rage & \featpref{Overpowering Rage} \\
+        \featref{Overpowering Rage}     & Rage, barbarian 6                & Gain combat maneuver bonus while raging & Rage & \featpref{Overpowering Rage} \\
         \featref{Overwhelming Rage}     & Rage, barbarian 6                 & Increase overwhelm penalties while raging & Rage & \featpref{Overwhelming Rage} \\
         \featref{Patient Rage}          & Rage, barbarian 2                 & Don't take damage for not attacking while raging & Rage & \featpref{Patient Rage} \\
         \featref{Plant Speech}          & Wild speech, druid 5              & Speak with plants & \x & \featpref{Plant Speech} \\
@@ -258,7 +258,7 @@ Some strike feats instead require a specific action to use.
         \featref{Resilient Magic} & 3rd level Antimagic spell & Spells persist after being dispelled, later cannot be dispelled & \x & \featpref{Resilient Magic} \\
         \featref{Retargeting Miscast} & 3rd level spells & Roll twice for miscast targets & \x \featpref{Retargeting Miscast} \\
         \featref{Ritual Caster} & Int 3 & Gain ability to perform rituals & \x & \featpref{Ritual Caster} \\
-        \featref{Spell Focus}\fn{1} & 2nd level spells &  \plus2 spellpower with specific school of magic & \x & \featpref{Spell Focus} \\
+        \featref{Spell Focus}\fn{1} & 2nd level spells & Cheaper augment or metamagic with one school of magic & \x & \featpref{Spell Focus} \\
             \tind \featref{Spell Specialization} & 4th level spells, Spell Focus &  \plus2 spellpower with specific school of magic, \minus2 with other types.
         & \x & \featpref{Spell Specialization} \\
         \featref{Somatic Strike} & Combat prowess 8, 4th level spells & Make strike in place of somatic components & \x & \featpref{Somatic Strike} \\
@@ -280,13 +280,12 @@ Some strike feats instead require a specific action to use.
 
         \midrule
         \tb{Metamagic Feats} & \tb{Prerequisites} & \tb{Benefit (Level Adjustment)} & \tb{Feat Types} & \tb{Page} \\
+        \featref{Distant Spell} & 2nd level spells & Double spell's range (\plus1) & \x & \featpref{Distant Spell} \\
         \featref{Energetic Substitution} & 2nd level spells & Change spell's energy type (\plus1) & \x & \featpref{Energetic Substitution} \\
-        \featref{Extend Spell} & 2nd level spells & Double spell's range (\plus1) & \x & \featpref{Extend Spell} \\
         \featref{Imbued Spellstrike} & 2nd level spells & Combine spell with weapon strike (\plus1) & \x & \featpref{Imbued Spellstrike} \\
-            \tind \featref{Improved Imbued Spellstrike} & 3rd level spells, Imbued Spellstrike & Imbue weapon with spell's power up to 5 minutes (\plus2) & \x & \featpref{Improved Imbued Spellstrike} \\
+            \tind \featref{Persistent Spellstrike} & 3rd level spells, Imbued Spellstrike & Imbue weapon with spell's power up to 5 minutes (\plus2) & \x & \featpref{Persistent Spellstrike} \\
         \featref{Quicken Spell} & 3rd level spells & Cast spell as swift action, but lose next action (\plus2) & \x & \featpref{Quicken Spell} \\
-        \featref{Patient Spell} & 2nd level spells & Cast spell slowly for spellpower bonus & \x & \featpref{Patient Spell} \\
-        \featref{Reach Spell} & 3rd level spells & Cast touch spell at Close range (\plus2) & \x & \featpref{Reach Spell} \\
+        \featref{Reach Spell} & 2nd level spells & Cast touch spell at Close range (\plus1) & \x & \featpref{Reach Spell} \\
         \featref{Shape Spell} & 3rd level spells & Exclude areas within spell's area (\plus2) & \x & \featpref{Shape Spell} \\
         \featref{Silent Spell} & 2nd level spells & Cast spell without verbal components (\plus1) & \x & \featpref{Silent Spell} \\
         \featref{Still Spell} & 2nd level spells & Cast spell without somatic components (\plus1) & \x & \featpref{Still Spell} \\
@@ -810,7 +809,7 @@ If you know an additional Delusion spell of 5th level or higher, this bonus incr
 \feat{Devastating Magic}{Magic, Style}
 \featpre 8th level spells.
 \featben Your spells inflict their critical success effects if your attack beats the target's defense by 5, rather than by 10.
-This has no effect on creatures with a level that exceeds your spellpower.
+This has no effect on creatures whose level exceeds your spellpower.
 
 \feat{Diehard}{General}
 \featpre Con 10.
@@ -917,7 +916,7 @@ If you have three or more dragon bloodline feats, you gain darkvision with a 50 
 \featpre Draconic Heritage.
 \featben You gain a \plus1 bonus to spellpower with all spells and spell-like abilities.
 If you have five or more dragon bloodline feats, this bonus increases to \plus2.
-This bonus does not stack with the bonus from the Spell Focus or Spell Specialization feats.
+This bonus does not stack with the bonus from the Spell Specialization feat.
 
 \feat{Draconic Voice}{Bloodline, Dragon}
 \featpre Draconic Heritage.
@@ -969,8 +968,8 @@ Each time, you choose a different element.
 
 \feat{Energetic Substitution}{Metamagic}
 \featpre 2nd level spell known.
-\featben When casting a substituted spell, you can choose what kind of energy damage it deals: cold, fire, or electricity.
-This can only be applied to spells that originally dealt cold, fire, or electricity damage.
+\featben When casting a substituted spell, you can choose what kind of energy damage it deals: acid, cold, fire, or electricity.
+This can only be applied to spells that originally dealt acid, cold, fire, or electricity damage.
 A substituted spell uses up a spell slot one level higher than the spell's actual level.
 
 \feat{Enhanced Senses}{Magic}
@@ -982,11 +981,11 @@ If you know an additional Divination spell of 5th level or higher, this bonus in
 \featpres Four strikes, any three Reaction feats.
 \featben At the end of every round, you can make a free melee \glossterm{strike} against all creatures you threaten that have no hit points remaining.
 
-\feat{Extend Spell}{Metamagic}
+\feat{Distant Spell}{Metamagic}
 \featpre 2nd level spell known.
-\featben An extended spell has its range doubled.
-This metamagic can only be applied to spells with a range of \rngclose, \rngmed, or \rnglong.
-An extended spell uses up a spell slot one level higher than the spell's actual level.
+\featben A distant spell has its range doubled.
+This metamagic can only be applied to spells with a range of \rngclose, \rngmed, \rnglong, or \rngext.
+A distant spell uses up a spell slot one level higher than the spell's actual level.
 
 \feat{Eye of the Storm}{Awareness, Combat, Defense, Style}
 \featpre Perception 5, combat prowess 4.
@@ -1223,13 +1222,6 @@ This does not prevent you from being defenseless if you have no hands free to de
 \parhead{Normal}
 While grappling, you are defenseless against all creatures except the ones you are grappling.
 
-\feat{Improved Imbued Spellstrike}{Metamagic}
-\featpres 3rd level spell known, Imbued Spellstrike.
-\featben This metamagic functions like Imbued Spellstrike, except that the imbuement lasts for 5 minutes if you have not struck a foe.
-If the weapon leaves your hands or if you cast another spell, the imbuement fades away without effect.
-
-An improved imbued spellstrike spell uses up a spell slot two levels higher than the spell's actual level.
-
 \feat{Improved Overrun}{Combat, Maneuver}
 \featpre Combat prowess 4.
 \featben When you attempt to overrun a foe, the creature may not choose to avoid you unless you let it.
@@ -1341,7 +1333,7 @@ If you hit, you deal damage normally, and you can make an Intimidate check again
 You gain a bonus on the check equal to the damage dealt.
 
 \feat{Invulnerable Rage}{Class, Rage}
-\featpre Rage ability, barbarian level 14.
+\featpre Rage ability, barbarian level 10.
 \featben When you enter a rage, you can use this feat. If you do, during the rage your barbarian damage reduction is doubled and applies to all damage, not just physical damage.
 \parhead{Special} You can only gain the benefit of one Rage feat at a time.
 
@@ -1661,9 +1653,8 @@ This grants several benefits.
     \item A successful Swim check allows you to move a distance equal to your swim speed.
 \end{itemize}
 
-When swimming, if your check result is 30 or higher, you do not suffer any penalties to physical melee attacks, checks, or physical defenses for being underwater.
+When swimming, if your check result is 30 or higher, you do not suffer any penalties to physical melee attacks, checks, or physical defenses for being underwater for that round.
 You still suffer the normal penalty with underwater ranged attacks.
-You can make a Swim check as a swift action to gain this benefit in a round when you do not make a Swim check to move.
 
 \feat{Legendary Tumbler}{Skill}
 \featpre Acrobatics 15 ranks.
@@ -1766,7 +1757,7 @@ This bonus increases by \plus1 for each strike you can make per round beyond the
 \stylereq You must make a melee attack each round.
 
 \feat{Overpowering Rage}{Class, Rage}
-\featpre Rage ability, barbarian level 10.
+\featpre Rage ability, barbarian level 6.
 \featben When you enter a rage, you can use this feat. If you do, during the rage you add your rage bonus to your Maneuver defense and your accuracy with combat maneuvers.
 \parhead{Special} You can only gain the benefit of one Rage feat at a time.
 
@@ -1799,12 +1790,6 @@ You must make a melee attack or take the total defense action each round.
 \featben When you enter a rage, you can use this feat. If you do, during the rage not attacking does not cause you to take damage at the end of each round.
 \parhead{Special} You can only gain the benefit of one Rage feat at a time.
 
-\feat{Patient Spell}{Metamagic}
-\featpre 2nd level spell known.
-\featben A patient spell requires a full-round action to cast.
-In exchange, you gain a \plus2 bonus to spellpower with the spell.
-A patient spell uses up a spell slot one level higher than the spell's actual level.
-
 \feat{Patient Strike}{Reaction, Strike}
 \featpre Intelligence 10, combat prowess 12.
 \featben In place of three strikes, you can make a physical attack.
@@ -1835,6 +1820,13 @@ This has several benefits, which are described below.
 \featpre Constitution 3.
 \featben You become immune to disease, except supernatural diseases such as mummy rot.
 If your Constitution is 10, you are also immune to poison and supernatural diseases.
+
+\feat{Persistent Spellstrike}{Metamagic}
+\featpres 3rd level spell known, Imbued Spellstrike.
+\featben This metamagic functions like Imbued Spellstrike, except that the imbuement lasts for 5 minutes if you have not struck a foe.
+If the weapon leaves your hands or if you cast another spell, the imbuement fades away without effect.
+
+A persistent spellstrike spell uses up a spell slot two levels higher than the spell's actual level.
 
 \feat{Pierce Delusions}
 \featpre Perception 10.
@@ -1907,7 +1899,7 @@ Without this feat, you may draw light weapons as a swift action, medium and heav
 \featben Casting a quickened spell is a swift action.
 You can perform another action, even casting another spell, in the same round as you cast a quickened spell.
 However, casting a quickened spell is mentally exhausting.
-In the turn after you cast it, you cannot act during the action phase.
+In the round after you cast it, you cannot act during the action phase.
 
 You may cast only one quickened spell per round.
 A spell whose casting time is more than 1 standard action cannot be quickened.
@@ -1944,10 +1936,10 @@ This stacks with the benefits of accelerating recovery with the Heal skill (see 
 \parhead{Special} You can only gain the benefit of one Rage feat at a time.
 
 \feat{Reach Spell}{Metamagic}
-\featpre 3rd level spell known.
+\featpre 2nd level spell known.
 \featben When casting a reach spell, you can use a spell with a range of touch on a target within \rngclose range.
-You must succeed on a ranged touch attack.
-A reach spell uses up a spell slot two levels higher than the spell's actual level.
+You must succeed on a Spellpower vs. Reflex attack to touch the target.
+A reach spell uses up a spell slot one level higher than the spell's actual level.
 
 \feat{Reckless Attack}{Combat, Power, Style}
 \featpre Combat prowess 4.
@@ -2080,7 +2072,7 @@ This cannot be used in combination with other abilities that let you attack as p
 \feat{Spell Focus}{Magic}
 Choose a school of magic.
 \featpre 2nd level spells.
-\featben You get a \plus2 bonus to your spellpower when casting spells and using spell-like abilities from the chosen school of magic.
+\featben Whenever you cast a from the chosen school of magic, you can reduce the cost to apply one augment or metamagic feat to the spell by one spell level.
 \parhead{Special}
 You can gain this feat multiple times.
 Its effects do not stack.
@@ -2098,7 +2090,7 @@ In exchange, you take a \minus2 penalty to spellpower with all other spells and 
 \parhead{Special} You can only gain the benefit of one Rage feat at a time.
 
 \feat{Spellwarped Ritualist}{Magic}
-\featben You can learn and perform rituals as if you were an arcane caster with a spellpower equal to your spellwarped level or your spellwarped key attribute, whichever is higher.
+\featben You can learn and perform rituals as if you were an arcane caster with a spellpower equal to your spellwarped spellpower.
 The maximum level of ritual that you can learn or perform is equal to half your spellwarped level or half your spellwarped key attribute, whichever is lower.
 
 In addition, you gain a special ability based on which type of spellwarped you are.
@@ -2106,7 +2098,8 @@ In addition, you gain a special ability based on which type of spellwarped you a
 \subcf{Alteration} \x
 \subcf{Pyromancy}
 You can use any combustable item as a ritual component.
-It can replace an amount of ritual components equal to the value of the item.
+It can replace an amount of normal ritual components equal to the value of the item.
+It cannot replace special ritual components.
 \subcf{Telekinesis}
 You can perform rituals from up to 30 feet away from the ritual components.
 \subcf{Temporal}
@@ -2158,7 +2151,6 @@ If this distance is exceeded, or if you become unconscious, you lose your attune
 \feat{Sustained Spell}{Metamagic}
 \featpre 2nd level spell known.
 \featben You can maintain focus on a sustained spell as a swift action instead of as a standard action.
-The spell must target you or only affect you.
 If you cast any other spell, you lose the ability to sustain the spell.
 A sustained spell uses up a spell slot one level higher than the spell's actual level.
 
