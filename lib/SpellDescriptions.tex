@@ -2755,20 +2755,12 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target gains damage reduction against cold damage equal to twice your spellpower. In addition, it radiates light as a torch.
+
+            When a creature within \rngclose range of the target attacks it, the attacking creature takes \spelldamage{fire}[d6].
+            A creature can only be dealt damage by this spell once per round.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
-    \begin{spellsubcontent}
-        \begin{spelltargetinginfo}
-            \spelltgr{A creature within \rngclose of the shielded creature attacks it}
-            \spelltgt{The attacking creature}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess \spelldamage{fire}[d8]
-            \end{spellattack}
-        \end{spelleffects}
-    \end{spellsubcontent}
     \begin{spellfooter}
         \spellinfo{Abjuration/Evocation [Fire, Shielding]}{Arcane, Fire}
         \miscastexplode
