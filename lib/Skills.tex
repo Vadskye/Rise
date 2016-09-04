@@ -10,7 +10,7 @@ At 1st level, you gain a certain number of skill points. Skill points can be spe
 
 \subsubsection{Class Skill Points}
 
-You get a base allotment of 5, 10, or 15 skill points, depending on your character's class. These skill points can only be spent on skills associated with your class, called \term{class skills}.
+You get a base allotment of 5, 10, or 15 skill points, depending on your character's class. These skill points can only be spent on skills associated with your class, called \glossterm{class skills}.
 
 \parhead{Taking Multiple Classes} If you take a level in a class that grants more skill points than your previous class, you immediately gain skill points equal to the difference between the skill points provided by the two classes. You may combine the class skill lists from both classes to determine the list of skills which are class skills for you.
 
@@ -39,8 +39,6 @@ You can spend one skill point to become trained in a skill, or two skill points 
     \end{dtabularx}
 \end{dtable}
 
-
-
 \subsection{Class Skills}
 
 The class skills for each class are summarized on \trefnp{Class Skills}.
@@ -52,7 +50,7 @@ The class skills for each class are summarized on \trefnp{Class Skills}.
     Climb             & C  & \x & C  & C  & C  & \x & C  & C  & \x & \x & \x & Yes & Str\fn{1}    \\
     Jump              & C  & \x & C  & C  & C  & \x & C  & C  & \x & \x & \x & Yes & Str\fn{1}    \\
     Sprint            & C  & \x & C  & C  & C  & \x & C  & C  & \x & \x & \x & Yes & Str\fn{1}    \\
-    Swim              & C  & \x & C  & C  & C  & \x & C  & C  & \x & C  & \x & Yes & Str\fn{2}    \\
+    Swim              & C  & \x & C  & C  & C  & \x & C  & C  & \x & C  & \x & Yes & Str\fn{1}    \\
     Balance           & C  & \x & C  & C  & C  & \x & C  & C  & \x & \x & \x & Yes & Dex\fn{1}    \\
     Escape Artist     & \x & \x & \x & C  & C  & \x & \x & C  & \x & \x & \x & Yes & Dex\fn{1}    \\
     Ride              & \x & \x & \x & C  & \x & C  & \x & \x & \x & C  & \x & Yes & Dex          \\
@@ -80,7 +78,6 @@ The class skills for each class are summarized on \trefnp{Class Skills}.
 \end{dtabularx}
 C: class skill \\
 1. Armor check penalty applies \\
-2. Double armor check penalty applies \\
 3. Always treated as a class skill \\
 4. Attribute varies depending on skill usage \\
 5. No attribute applies \\
@@ -413,16 +410,16 @@ You can make a Climb check as a move action to move up, down, or across a slope,
 You need both hands free to climb, but you may cling to a wall with one hand while you cast a spell or take some other action that requires only one hand. If you take damage while climbing, you must make another Climb check against the same DC to avoid falling. If you take a \minus5 penalty, you are not vulnerable while climbing. Accepting a \minus5 penalty can also allow you to move at double speed while climbing.
 
 \begin{dtable}
-\lcaption{Climb Speeds}
-\begin{dtabularx}{\columnwidth}{l X l X}
-  \tb{Size} & \tb{Speed} & \tb{Size} & \tb{Speed} \\
-\hline
-  Medium & 5 ft. && \\
-  Small & 5 ft. & Large & 10 ft. \\
-  Tiny & 2-1/2 ft. & Huge & 15 ft. \\
-  Diminuitive & 1 ft. & Gargantuan & 20 ft. \\
-  Fine & 1/2 ft. & Colossal & 40 ft. \\
-\end{dtabularx}
+    \lcaption{Climb Speeds}
+    \begin{dtabularx}{\columnwidth}{l X l X}
+        \tb{Size} & \tb{Speed} & \tb{Size} & \tb{Speed} \\
+        \hline
+        Medium & 5 ft. && \\
+        Small & 5 ft. & Large & 10 ft. \\
+        Tiny & 2-1/2 ft. & Huge & 15 ft. \\
+        Diminuitive & 1 ft. & Gargantuan & 20 ft. \\
+        Fine & 1/2 ft. & Colossal & 40 ft. \\
+    \end{dtabularx}
 \end{dtable}
 
 The DC of the check depends on the difficulty of the task and the conditions of the climbing surface, as shown on \trefnp{Climb DCs} and \trefnp{Climb Modifiers}.
@@ -464,7 +461,7 @@ While climbing, you can attempt to catch another character who is falling near y
 \subsubsection{Stop Fall}
 It is possible, but very difficult, to make a Climb check to stop yourself from falling when near a wall. To catch yourself while falling, make a Climb check against a DC equal to the wall's DC \add 20.
 
-\subsubsection{Climbing with a Climb Speed}
+\subsubsection{Climb Speed}\label{Climb Speed}
 A creature with a climb speed moves by a distance equal to its climb speed when climbing. It has a \plus5 bonus on all Climb checks. It can always take 10 on Climb checks, even if rushed or threatened, and is not vulnerable while climbing. It cannot make an accelerated climb.
 
 \subsubsection{Wallrun}
@@ -476,18 +473,18 @@ Wallrunning on a ceiling is impossible.
 Like Knowledge, Perform, and Profession, Craft is actually a number of separate skills. You could have several Craft skills, each with its own ranks, each purchased as a separate skill. Common Craft skills are listed below, with additional description for some skills.
 
 \begin{itemize}
-  \item Alchemy (Alchemist's fire, tanglefoot bags, potions)
-  \item Bone
-  \item Ceramics (Glass, pottery)
-  \item Jewelry (gemcutting, amulets, rings)
-  \item Leather
-  \item Manuscripts (Books, official documents, scrolls)
-  \item Metal
-  \item Poison
-  \item Stone
-  \item Textiles (Cloth, fabric)
-  \item Traps
-  \item Wood
+    \item Alchemy (Alchemist's fire, tanglefoot bags, potions)
+    \item Bone
+    \item Ceramics (Glass, pottery)
+    \item Jewelry (gemcutting, amulets, rings)
+    \item Leather
+    \item Manuscripts (Books, official documents, scrolls)
+    \item Metal
+    \item Poison
+    \item Stone
+    \item Textiles (Cloth, fabric)
+    \item Traps
+    \item Wood
 \end{itemize}
 
 A Craft skill is specifically focused on physical objects. If nothing can be created by an endeavor, it probably falls under the heading of a Profession skill. Complex structures, such as buildings or siege engines, may require Knowledge (engineering) in addition to an appropriate Craft skill.
@@ -503,40 +500,40 @@ All crafts require artisan's tools to give the best chance of success. If improv
 
 To determine the time required to craft an item, consult the table below.
 \begin{dtable}
-  \lcaption{Crafting Time}
-  \begin{dtabularx}{\columnwidth}{l X}
-    \tb{Item Price} & \tb{Crafting Time} \\
-\hline
-    1gp or less & One hour \\
-    10gp or less & Eight hours \\
-    100gp or less & One week\fn{1} \\
-    500gp or less & One month\fn{1} \\
-    1000gp or less & Two months\fn{1} \\
-  \end{dtabularx}
-  1 Assuming 8 hours of work each day.
+    \lcaption{Crafting Time}
+    \begin{dtabularx}{\columnwidth}{l X}
+        \tb{Item Price} & \tb{Crafting Time} \\
+        \hline
+        1gp or less & One hour \\
+        10gp or less & Eight hours \\
+        100gp or less & One week\fn{1} \\
+        500gp or less & One month\fn{1} \\
+        1000gp or less & Two months\fn{1} \\
+    \end{dtabularx}
+    1 Assuming 8 hours of work each day.
 \end{dtable}
 
 \begin{dtable}
     \lcaption{Craft DCs}
-\begin{dtabularx}{\columnwidth}{>{\lcol}X l >{\lcol}p{4em}}
-\tb{Item} & \tb{Craft Skill} & \tb{Craft DC} \\
-\hline
-Acid & Alchemy\fn{1} & 15 \\
-Alchemist's fire, smokestick, or tindertwig & Alchemy & 20 \\
-Antitoxin, sunrod, tanglefoot bag, or thunderstone & Alchemy & 25 \\
-Armor or shield & Metal or wood & 10 \add AC bonus \\
-Longbow or shortbow & Wood & 15 \\
-Crossbow & Wood & 15 \\
-Simple melee or thrown weapon & Metal or wood & 12 \\
-Martial melee or thrown weapon & Metal or wood & 15 \\
-Exotic melee or thrown weapon & Metal or wood & 18 \\
-Mechanical trap & Traps & Varies\fn{1} \\
-Very simple item (wooden spoon) & Varies & 5 \\
-Typical item (iron pot) & Varies & 10 \\
-High-quality item (bell, average lock) & Varies & 15 \\
-Complex or superior item (fine china, document with official seal)  & Varies & 20\plus \\
-\end{dtabularx}
-1 Traps have their own rules for construction.
+    \begin{dtabularx}{\columnwidth}{>{\lcol}X l >{\lcol}p{4em}}
+        \tb{Item} & \tb{Craft Skill} & \tb{Craft DC} \\
+        \hline
+        Acid & Alchemy\fn{1} & 15 \\
+        Alchemist's fire, smokestick, or tindertwig & Alchemy & 20 \\
+        Antitoxin, sunrod, tanglefoot bag, or thunderstone & Alchemy & 25 \\
+        Armor or shield & Metal or wood & 10 \add AC bonus \\
+        Longbow or shortbow & Wood & 15 \\
+        Crossbow & Wood & 15 \\
+        Simple melee or thrown weapon & Metal or wood & 12 \\
+        Martial melee or thrown weapon & Metal or wood & 15 \\
+        Exotic melee or thrown weapon & Metal or wood & 18 \\
+        Mechanical trap & Traps & Varies\fn{1} \\
+        Very simple item (wooden spoon) & Varies & 5 \\
+        Typical item (iron pot) & Varies & 10 \\
+        High-quality item (bell, average lock) & Varies & 15 \\
+        Complex or superior item (fine china, document with official seal)  & Varies & 20\plus \\
+    \end{dtabularx}
+    1 Traps have their own rules for construction.
 \end{dtable}
 
 \subsubsection{Appraise Item}
@@ -1204,7 +1201,7 @@ You can make a Survival check as a standard action to tie knots. Success means y
 You can also make a Survival check in place of a ranged attack to set a grappling hook. You take a \minus2 penalty per 10 feet.
 
 \skill{Swim}{Str; Armor Check Penalty}
-Swim represents your ability to swim. Swim checks are subject to double the normal armor check penalty and encumbrance penalty.
+Swim represents your ability to swim.
 
 \subsubsection{Swimming}
 You can make a Swim check to move through water. The DC depends on the turbulence of the water, as shown on \trefnp{Swim DCs}. Success means you move forward by up to one-half your speed (as a full-round action) or at one-quarter your speed (as a move action). Success by 10 or more means you move twice as fast. Failure means you make no progress through the water. Failure by 10 or more means you make no progress and sink five feet underwater.
@@ -1224,7 +1221,7 @@ Stormy water & 20\fn{1}
 \subsubsection{Swimming Underwater}
 You can swim underwater just like you can above water. If you are underwater, either because you failed a Swim check or because you are swimming underwater intentionally, you must hold your breath. You can hold your breath for a number of rounds equal to 5 \add your Constitution. After that period of time, you must make a DC 10 Constitution check every round to continue holding your breath. Each round, the DC for the check increases by 5. If you fail, you begin to drown.
 
-\subsubsection{Swimming with a Swim Speed}
+\subsubsection{Swim Speed}\label{Swim Speed}
 A creature with a swim speed can move through water at its indicated speed without making Swim checks. It gains a \plus5 bonus on any Swim check to perform a special action or avoid a hazard. The creature can always take 10 on a Swim check, even if distracted or endangered when swimming.
 
 \skill{Tumble}{Dex}
