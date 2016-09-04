@@ -46,8 +46,8 @@ You can spend one skill point to become trained in a skill, or two skill points 
 The class skills for each class are summarized on \trefnp{Class Skills}.
 \begin{dtable!*}
 \lcaption{Class Skills}
-\begin{dtabularx}{\textwidth}{>{\lcol}p{12em} *{11}{>{\ccol}X} >{\ccol}p{4em} >{\ccol}p{4em}}
-    \tb{Skill}   & \tb{Bbn} & \tb{Clr} & \tb{Drd} & \tb{Ftr} & \tb{Mnk} & \tb{Pal} & \tb{Rgr} & \tb{Rog} & \tb{Sor} & \tb{Spl} & \tb{Wiz} & \tb{Untrained} & \tb{Key Ability} \\
+\begin{dtabularx}{\textwidth}{>{\lcol}p{12em} *{11}{>{\ccol}X} >{\ccol}p{4em}}
+    \tb{Skill}   & \tb{Bbn} & \tb{Clr} & \tb{Drd} & \tb{Ftr} & \tb{Mnk} & \tb{Pal} & \tb{Rgr} & \tb{Rog} & \tb{Sor} & \tb{Spl} & \tb{Wiz} & \tb{Key Ability} \\
 \hline
     Climb             & C  & \x & C  & C  & C  & \x & C  & C  & \x & \x & \x & Yes & Str\fn{1}    \\
     Jump              & C  & \x & C  & C  & C  & \x & C  & C  & \x & \x & \x & Yes & Str\fn{1}    \\
@@ -59,7 +59,7 @@ The class skills for each class are summarized on \trefnp{Class Skills}.
     Sleight of Hand   & \x & \x & \x & \x & \x & \x & \x & C  & \x & \x & \x & No  & Dex\fn{1}    \\
     Stealth           & \x & \x & \x & \x & C  & \x & C  & C  & \x & \x & \x & Yes & Dex\fn{1}    \\
     Tumble            & C  & \x & \x & C  & C  & \x & C  & C  & \x & \x & \x & Yes & Dex\fn{1}    \\
-    \tb{Skill}   & \tb{Bbn} & \tb{Clr} & \tb{Drd} & \tb{Ftr} & \tb{Mnk} & \tb{Pal} & \tb{Rgr} & \tb{Rog} & \tb{Sor} & \tb{Spl} & \tb{Wiz} & \tb{Untrained} & \tb{Key Ability} \\
+    \tb{Skill}   & \tb{Bbn} & \tb{Clr} & \tb{Drd} & \tb{Ftr} & \tb{Mnk} & \tb{Pal} & \tb{Rgr} & \tb{Rog} & \tb{Sor} & \tb{Spl} & \tb{Wiz} & \tb{Key Ability} \\
     \hline
     Craft\fn{3}       & C  & C  & C  & C  & C  & C  & C  & C  & C  & C  & C  & Yes & Int          \\
     Devices           & \x & \x & \x & \x & \x & \x & \x & C  & \x & \x & \x & No  & Int          \\
@@ -153,8 +153,6 @@ In general, you can try a skill check again if you fail, and you can keep trying
 \subsection{Untrained Skill Checks}
 Generally, if your character attempts to use a skill he or she does not possess, you make a skill check as normal. The skill modifier doesn't have a skill rank added in because the character has no ranks in the skill. Any other applicable modifiers, such as the modifier for the skill's key attribute, are applied to the check.
 
-Many skills can be used only by someone who is trained in them.
-
 \subsection{Time and Skill Checks}
 Using a skill might take a round, take no time, or take several rounds or even longer. Most skill uses are standard actions, move actions, or full-round actions. Types of actions define how long activities take to perform within the framework of a combat round (6 seconds) and how movement is treated with respect to the activity. Some skill checks are instant and represent reactions to an event, or are included as part of an action. These skill checks are not actions. Other skill checks represent part of movement.
 
@@ -203,7 +201,6 @@ Here is the format for skill descriptions.
 \ssecfake{Skill Name}
 The skill name line includes (in addition to the name of the skill) the following information.
 \parhead{Key Ability} The abbreviation of the ability whose modifier applies to the skill check.
-\parhead{Trained Only} If this notation is included in the skill name line, you must have at least 1 rank in the skill to use it. If it is omitted, the skill can be used untrained (with a rank of 0). If any special notes apply to trained or untrained use, they are covered in the Untrained section (see below).
 \parhead{Armor Check Penalty} If this notation is included in the skill name line, an armor check penalty applies (when appropriate) to checks using this skill. If this entry is absent, an armor check penalty does not apply.
 
 \par The skill name line is followed by a general description of what using the skill represents. After the description are a few other types of information:
@@ -217,8 +214,6 @@ The skill name line includes (in addition to the name of the skill) the followin
 \parhead{Special} Any extra facts that apply to the skill, such as special effects deriving from its use or bonuses that certain characters receive because of class, feat choices, or race.
 
 \parhead{Restriction} The full utility of certain skills is restricted to characters of certain classes or characters who possess certain feats. This entry indicates whether any such restrictions exist for the skill.
-
-\parhead{Untrained} This entry indicates what a character without at least 1 skill point in the skill can do with it. If this entry doesn't appear, it means that the skill functions normally for untrained characters (if it can be used untrained) or that an untrained character can't attempt checks with this skill (for skills that are designated as ``Trained Only'').
 
 \skill{Awareness}{Wis}
 Awareness represents your ability to observe things which you might otherwise fail to notice. It can be used to spot concealed things, to correctly identify sounds, or to smell the distinctive rotting flesh smell that accompanies undead.
@@ -567,7 +562,7 @@ You can make a Craft check to repair a broken item. This functions like crafting
 \subsubsection{Other Tasks}
 You can use the Craft skill for various tasks related to the object of your craft. For example, you could use Craft (wood) to sabotage a wagon so it will break at a later time, or Craft (alchemy) to purify spoiled food or ingredients. The DCs of such tasks, and what can be accomplished, can vary widely. In general, the more difficult the task, and the more loosely it is related to the skill, the higher the DC.
 
-\skill{Creature Handling}{Cha; Trained Only}
+\skill{Creature Handling}{\x}
 You can handle creatures without being able to speak with them, convincing them to do what you want or training them to follow commands. This skill can only be used with creatures with an Intelligence of \minus5 or lower.
 
 Animals are easier to handle than other kinds of creatures. The DCs listed are for animals; the DCs to handle other kinds of creatures are 5 higher.
@@ -579,7 +574,7 @@ You can use Creature Handling to control a creature's actions. Success indicates
 \parhead{Push} As a standard action, you can make a DC 25 check to convince a willing creature to perform an action it is not trained to perform, but which it is physically capable of performing. This also covers making a creature perform a forced march and similar activities. You can attempt to push a creature as a swift action by taking a \minus10 penalty on the check.
 
 \subsubsection{Training Creatures}
-If you are trained in Creature Handling, you can use it to train a creature. Success indicates that the creature learns a trick or becomes domesticated. Failure means your time is wasted, and you must try again. Exceptional failure may indicate that the animal becomes unable to learn the trick, becomes hostile, or other consequences depending on the situation. Training a creature takes a week or more; this requires spending at least four hours each day with the creature. It is not generally possible to accelerate the process by spending more time each day; the creature must take time to learn the new behavior. If the training is interrupted for a week or more, the attempt automatically fails.
+You can use Creature Handling to train a creature. Success indicates that the creature learns a trick or becomes domesticated. Failure means your time is wasted, and you must try again. Exceptional failure may indicate that the animal becomes unable to learn the trick, becomes hostile, or other consequences depending on the situation. Training a creature takes a week or more; this requires spending at least four hours each day with the creature. It is not generally possible to accelerate the process by spending more time each day; the creature must take time to learn the new behavior. If the training is interrupted for a week or more, the attempt automatically fails.
 
 \parhead{Teach a Trick} You can teach a creature a specific trick with one week of work and a successful Creature Handling check against the indicated DC. A creature can learn a number of tricks equal to its Intelligence \add 10. Thus, a creature with an Intelligence of \minus9 can learn a single trick, while a creature with an Intelligence of \minus5 can learn five tricks. Possible tricks (and their associated DCs) include, but are not necessarily limited to, the following.
 
@@ -598,7 +593,7 @@ If you are trained in Creature Handling, you can use it to train a creature. Suc
 
 \parhead{Rear a Wild Creature} To rear a creature means to raise a wild creature from infancy so that it becomes domesticated. The time required depends on the creature in question. The DC for this check is equal to 15 \add the number of levels the creature has. You can rear as many as three creatures of the same kind at once without penalty. You can rear additional creatures, but you take a cumulative \minus2 penalty to checks you make to rear all of the animals. A successfully domesticated creature can be taught tricks at the same time it's being raised, or it can be taught as a domesticated creature later.
 
-\skill{Devices}{Int; Trained Only}
+\skill{Devices}{Int}
 You can use this skill to manipulate mechanical devices such as locks, traps, and other contraptions. With enough skill, you can even manipulate magical devices.
 
 The DC of a Devices check depends on the device being manipulated. In addition, some actions are easier than others, and modify the DC accordingly. DCs are listed on \trefnp{Devices DCs}.
@@ -785,7 +780,7 @@ You can make a DC 10 Jump check while moving to jump up onto an object as tall a
 \subsubsection{Jump Down}
 You can make a DC 15 Athletics check while moving to intentionally jump down from a height to reduce your falling damage. Success means you take damage as if you had dropped 10 fewer feet than you actually did. Failure means you take the normal falling damage.
 
-\skill{Knowledge}{Int; Trained Only}
+\skill{Knowledge}{Int}
 Like the Craft, Profession, and Perform skills, Knowledge actually encompasses a number of unrelated skills. Knowledge represents a study of some body of lore, possibly an academic or even scientific discipline. Below are listed typical fields of study.
 \begin{itemize}
 \item Arcana (ancient mysteries, magic traditions, arcane symbols,
@@ -802,8 +797,6 @@ the Ethereal Plane, outsiders, elementals, magic related to the planes, extrapla
 
 You cannot take 10 or take 20 on Knowledge checks. You cannot retry Knowledge checks unless you are presented with significant new information about the subject that could jog your memory.
 
-You can attempt Knowledge checks untrained, but your result cannot exceed 10, limiting you to only the most well-known facts. Particularly common or famous monsters, such as goblins or dragons, can be recognized with an untrained knowledge check of this sort.
-
 \subsubsection{Identify Monster}
 You can make a Knowledge check reactively to identify a monster and recall its special powers or vulnerabilities. In general, the DC is equal to 10 \add the monster's level. Success allows you to remember the monster's name and its most well-known features. For every 5 points by which you beat the DC, you remember an additional piece of useful information. Failure indicates you don't remember anything important about the monster. Failure by more than 10 indicates that you remember incorrect information.
 
@@ -819,7 +812,7 @@ Success means you know the value of the item. Failure means you think the item i
 
 After you appraise an item, you can't appraise it again with any skill until you gain a level.
 
-\skill{Linguistics}{Int; Trained Only}
+\skill{Linguistics}{Int}
 Linguistics represents your mastery of other languages.
 
 \subsubsection{Decipher Script}
@@ -977,7 +970,7 @@ An evening's time, a few gold pieces for buying drinks and making friends, and a
 
 If you want to find out about a specific rumor, or a specific item, or obtain a map, or do something else along those lines, the DC for the check is 15 to 25, or even higher.
 
-\skill{Profession}{Wis; Trained Only}
+\skill{Profession}{Wis}
 Like Craft, Knowledge, and Perform, Profession is actually a number of separate skills. You could have several Profession skills, each with its own ranks, each purchased as a separate skill. While a Craft skill represents ability in creating or making an item, a Profession skill represents an aptitude in a vocation requiring a broader range of less specific knowledge. Most commoners have some training in a Profession skill.
 
 Profession is always treated as a class skill, regardless of your classes.
@@ -1052,7 +1045,7 @@ You can make a social assessment after only a single round of observation, but y
 
 Sleight of Hand represents your ability to pick pockets, palm objects, and perform other feats of legerdemain.
 
-You can attempt Sleight of Hand checks untrained, but your check result can't exceed 10. All Sleight of Hand checks apply a special modifier based on the size of the action taken or object affected, as shown on \trefnp{Sleight of Hand Modifiers}.
+All Sleight of Hand checks apply a special modifier based on the size of the action taken or object affected, as shown on \trefnp{Sleight of Hand Modifiers}.
 
 \begin{dtable}
     \lcaption{Sleight of Hand Modifiers}
@@ -1088,7 +1081,7 @@ You can make a Sleight of Hand check as a standard action to conceal an item on 
 \subsubsection{Pickpocket}
 You can make a Sleight of Hand check as a standard action to steal an object from another creature. The object must be loose and accessible, such as in a pocket. The DC depends on whether the creature notices your attempt using Awareness. If the creature's Awareness check exceeds your Sleight of Hand check, the creature notices your attempt and the DC is equal to the creature's Combat Maneuver Defense. Otherwise, the creature does not notice your attempt, and the DC is 20. Success means you successfully steal the object. Failure means you do not steal the object.
 
-\skill{Spellcraft}{Wis; Trained Only}
+\skill{Spellcraft}{Wis}
 Spellcraft represents your ability to notice and understand spells and magical effects.
 
 While sleeping, you take a \minus10 penalty to Spellcraft.
@@ -1239,12 +1232,12 @@ Tumble represents your ability to roll and tumble. All Tumble checks are made as
 
 \subsubsection{Tumbling}
 
-If you are trained in Tumble, you can tumble past opponents in combat to reduce your odds of being hit. You can tumble as part of normal movement. If you do, you move at half speed and make a Tumble check. You may use your check result in place of your Armor defense and Reflex defense against physical melee attacks by creatures that did not threaten you at the start of the round. If your Tumble check is at least 25, you can also move through spaces occupied by enemies.
+You can tumble past opponents in combat to reduce your odds of being hit. You can tumble as part of normal movement. If you do, you move at half speed and make a Tumble check. You may use your check result in place of your Armor defense and Reflex defense against physical melee attacks by creatures that did not threaten you at the start of the round. If your Tumble check is at least 25, you can also move through spaces occupied by enemies.
 
 If you accept a \minus10 penalty, you can move at full speed while tumbling. If you accept a \minus20 penalty, you can tumble while sprinting or charging.
 
 \subsubsection{Agile Movement}
-You can make a DC 20 Balance check while charging to make a single turn of up to 90 degrees in the middle of the moveent. Failure indicates that you can't change direction, though you can continue your movement or stop. Failure by 10 or more indicates that you stop where you tried to change direction and fall prone.
+You can make a DC 20 Tumble check while \glossterm{charging} to make a single turn of up to 90 degrees in the middle of the movement. Failure indicates that you can't change direction, though you can continue your movement or stop. Failure by 10 or more indicates that you stop where you tried to change direction and fall prone.
 
 \subsubsection{Mitigate Fall}
 As you hit the ground after a fall, you can make an Tumble check to reduce falling damage. A DC 15 check allows you to treat a fall as if it were 10 feet shorter. For every 10 by which you beat that DC, you can reduce the falling damage by 10 additional feet.
