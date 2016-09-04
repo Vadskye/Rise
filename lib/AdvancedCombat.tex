@@ -132,11 +132,11 @@ Creatures that take up multiple squares take up half their normal number of squa
 \subsection{Special Movement Modes}\label{Special Movement Modes}
 Some spells and abilities grant creatures the ability to move in unusual ways. These forms of movement are described here.
 
-\subsubsection{Burrowing}\label{Burrowing}
+\subsubsection{Burrowing}
 A creature with a burrow speed can move through the ground at the indicated speed in any direction, even vertically. Unless otherwise noted, the creature can only burrow through dirt and loose earth, not rock or harder substances. It does not leave behind a usable tunnel for other creatures.
 
-\subsubsection{Climbing}\label{Climbing}
-A creature with a climb speed can move at the indicated speed while climbing. In addition, it has a \plus5 bonus to Climb checks (see \pcref{Climb}). It can always choose to take 10 on Climb checks, even if rushed or threatened. It cannot make an accelerated climb.
+\subsubsection{Climbing}
+A creature with a \glossterm{climb speed} can move at the indicated speed while climbing. In addition, it has a \plus5 bonus to Climb checks (see \pcref{Climb}). It can always choose to take 10 on Climb checks, even if rushed or threatened. It cannot make an accelerated climb.
 
 \subsubsection{Flying}\label{Flying}
 A creature with a fly speed can fly through the air at the indicated speed. It must be unencumbered (see \pcref{Encumbrance}). If a creature with a fly speed is encumbered, it is treated as having a glide speed instead (see \pcref{Gliding}), which it can use to glide even though it is encumbered.
@@ -164,10 +164,10 @@ While in the air, a creature with a glide speed can control its fall as a move a
         \tb{Attacker's Condition} & \tb{Accuracy Modifier} \\
         \hline
         %Entangled & \minus2 \\
-        Invisible & \x\fn{1} \\
-        Prone & \minus4\fn{2} \\
-        Squeezing through a space & \minus4 \\
-        Vulnerable & \minus2 \\
+        Invisible                 & \x\fn{1}               \\
+        Prone                     & \minus4\fn{2}          \\
+        Squeezing through a space & \minus4                \\
+        Vulnerable                & \minus2                \\
     \end{dtabularx}
     1 The defender is \defenseless. \\
     2 Most ranged weapons can't be used while the attacker is prone, but you can use a crossbow or shuriken while prone at no penalty.
@@ -177,22 +177,22 @@ While in the air, a creature with a glide speed can control its fall as a move a
     \lcaption{Physical Defense Modifiers}
     \begin{dtabularx}{\columnwidth}{>{\lcol}X >{\ccol}X}
         \tb{Defender's Condition} & \tb{Defense Modifier} \\
-\hline
-        Behind active cover & 20\% miss \\
-        Behind passive cover & \plus4 \\
-        Blinded & \x\fn{1} \\
-        Concealed & \plus4 \\
-        Crouching or kneeling & \minus2\fn{2} \\
-        Grappling (but attacker is not) & \minus2 \\
-        Helpless (such as paralyzed, sleeping, or bound) & \x\fn{3} \\
-        Invisible & see Invisibility \\
-        Overwhelmed & special\fn{4} \\
-        Pinned & \x\fn{3} \\
-        Prone & \minus4\fn{2} \\
-        Squeezing through a space & \minus4 \\
-        Stunned & \minus2\fn{1} \\
-        Unaware of attacker & \fn{5} \\
-        Total defense & \plus4 \\
+        \hline
+        Behind active cover             & 20\% miss        \\
+        Behind passive cover            & \plus4           \\
+        Blinded                         & \x\fn{1}         \\
+        Concealed                       & \plus4           \\
+        Crouching or kneeling           & \minus2\fn{2}    \\
+        Grappling (but attacker is not) & \minus2          \\
+        Helpless                        & \x\fn{3}         \\
+        Invisible                       & see \pcref{Invisibility} \\
+        Overwhelmed                     & special\fn{4}    \\
+        Pinned                          & \x\fn{3}         \\
+        Prone                           & \minus4\fn{2}    \\
+        Squeezing through a space       & \minus4          \\
+        Stunned                         & \minus2\fn{1}    \\
+        Unaware of attacker             & \fn{5}           \\
+        Total defense                   & \plus4           \\
     \end{dtabularx}
     1 The defender is \defenseless. \\
     2 Treat as a bonus against ranged attacks, instead of a penalty \\
@@ -291,7 +291,7 @@ A coup de grace attempt requires physical contact, which alerts your target to y
 
 You can't deliver a coup de grace against a creature that is immune to critical hits. You can deliver a coup de grace against a creature with total concealment, but doing this requires two consecutive full-round actions (one to ``find'' the creature once you've determined what square it's in, and one to deliver the coup de grace).
 
-\subsection{Invisibility}
+\subsection{Invisibility}\label{Invisibility}
 If it is impossible to see your target, you can't attack him normally. However, you can attack a square that you think he occupies. An attack into a square occupied by an invisible enemy has a 50\% miss chance. If an adjacent invisible creature strikes you, you can automatically identify the square he occupied when he struck you.
 
 \subsection{Surprise Attacks}\label{Surprise Attacks}
