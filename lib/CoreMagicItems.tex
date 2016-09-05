@@ -71,7 +71,7 @@ Typically, the accuracy is equal to the item's power.
 Each general type of magic item gets an overall description, followed by descriptions of specific items.
 
 General descriptions include notes on activation, random generation, and other material.
-The AD, hardness, hit points, and break DC are given for typical examples of some magic items.
+The AD, hardness, hit points, and break DR are given for typical examples of some magic items.
 The AD assumes that the item is unattended and includes a \minus10 penalty for the item's effective Dexterity of \minus10.
 If a creature holds the item, use the creature's Dexterity in place of the \minus10 penalty.
 
@@ -560,7 +560,7 @@ Special abilities on body armor are usually activated if the character is struck
 
 \parhead{Physical Description} Rings have no appreciable weight.
 Although exceptions exist that are crafted from glass or bone, the vast majority of rings are forged from metal - usually precious metals such as gold, silver, and platinum.
-A typical ring has AD 13, 10 hit points, hardness 10, and a break DC of 25.
+A typical ring has AD 13, 10 hit points, hardness 10, and a break DR of 25.
 
 \begin{comment}
 \begin{dtable}
@@ -680,15 +680,15 @@ A typical ring has AD 13, 10 hit points, hardness 10, and a break DC of 25.
 
 \begin{magicitemdef}{Amulet of the Planes}[Active]{6}[Torso]{Conjuration [Teleportation, Planar]}{bone, jewelry}
     By holding this amulet in one hand and concentrating on a specific plane for 1 minute, you can create the effects of a \ritual{plane shift} ritual.
-    Activating the item successfully requires a DC 15 Knowledge (planes) check.
+    Activating the item successfully requires a DR 15 Knowledge (planes) check.
     If you fail, your activation of the amulet has no effect (but still consumes an item use).
     If you roll a 1 and fail, you and any creatures with you are transported to a random plane.
-    Each time you successfully activate this item in the same day, the DC of the check increases by 5.
+    Each time you successfully activate this item in the same day, the DR of the check increases by 5.
 \end{magicitemdef}
 
 \begin{magicitemdef}{Amulet of Nondetection}[Passive]{3}[Torso]{Abjuration [Shielding]}{bone, jewelry}
     \magicitemability{Passive} You gain the benefits of the \spell{nondetection} ritual.
-    If a divination is attempted against you, the caster must make a spellpower check against a DC equal to 15 \add the item's power.
+    If a divination is attempted against you, the caster must make a spellpower check against a DR equal to 15 \add the item's power.
 \end{magicitemdef}
 
 \begin{magicitemdef}{Belt of Constitution}[Passive]{2}[Torso]{Transmutation [Augment]}{leather or textiles}
@@ -1019,7 +1019,7 @@ Anyone can use a rod.
 They range from 2 feet to 3 feet long and are usually made of iron or some other metal.
 (Many, as noted in their descriptions, can function as light maces or clubs due to their sturdy construction.)
 
-These sturdy items have AC 9, 10 hit points, hardness 10, and a break DC of 27.
+These sturdy items have AC 9, 10 hit points, hardness 10, and a break DR of 27.
 
 \parhead{Activation} Details relating to rod use vary from item to item.
 See the individual descriptions for specifics.
@@ -1064,7 +1064,7 @@ Most staffs are wood, but a rare few are bone, metal, or even glass.
 (These are extremely exotic.) Staffs often have a gem or some device at their tip or are shod in metal at one or both ends.
 Staffs are often decorated with carvings or runes.
 A typical staff is like a walking stick, quarterstaff, or cudgel.
-It has AC 7, 10 hit points, hardness 5, and a break DC of 24.
+It has AC 7, 10 hit points, hardness 5, and a break DR of 24.
 
 \parhead{Activation} Staffs use the same activation method as wands.
 
@@ -1137,7 +1137,7 @@ A wand cannot provide an enhancement bonus to more than two schools.
 Most wands are wood, but some are bone.
 A rare few are metal, glass, or even ceramic, but these are quite exotic.
 Occasionally, a wand has a gem or some device at its tip, and most are decorated with carvings or runes.
-A typical wand has AC 7, 5 hit points, hardness 5, and a break DC of 16.
+A typical wand has AC 7, 5 hit points, hardness 5, and a break DR of 16.
 
 \begin{dtable}
     \lcaption{Wand Special Abilities}
@@ -1164,7 +1164,7 @@ This effect lasts for 5 rounds, during which time you cannot activate the item.
 
 An ignited creature is vulnerable, causing it to take a \minus2 penalty to attacks, defenses, and checks.
 In addition, at the end of each of its turns, it takes 1d6 damage from the fire.
-If the creature takes a move action, it can attempt a DC 10 Dexterity check to put out the flames.
+If the creature takes a move action, it can attempt a DR 10 Dexterity check to put out the flames.
 This action requires a free hand.
 Dropping prone as part of the action gives a \plus5 bonus on this check.
 
@@ -1207,7 +1207,7 @@ An area about 8 1/2 inches wide and 11 inches long is sufficient to hold one spe
 The sheet is reinforced at the top and bottom with strips of leather slightly longer than the sheet is wide.
 A scroll holding more than one spell has the same width (about 8 1/2 inches) but is an extra foot or so long for each extra spell.
 Scrolls that hold three or more spells are usually fitted with reinforcing rods at each end rather than simple strips of leather.
-A scroll has AC 9, 1 hit point, hardness 0, and a break DC of 8.
+A scroll has AC 9, 1 hit point, hardness 0, and a break DR of 8.
 
 To protect it from wrinkling or tearing, a scroll is rolled up from both ends to form a double cylinder.
 (This also helps the user unroll the scroll quickly.) The scroll is placed in a tube of ivory, jade, leather, metal, or wood.
@@ -1218,7 +1218,7 @@ The symbols often hide magic traps.
 Doing so involves several steps and conditions.
 
 \parhead{Decipher the Writing} The writing on a scroll must be deciphered before a character can use it or know exactly what spell it contains.
-This requires a \ritual{read magic} ritual or a successful Spellcraft check (DC 20 \add spell level).
+This requires a \ritual{read magic} ritual or a successful Spellcraft check (DR 20 \add spell level).
 
 Deciphering a scroll to determine its contents does not activate its magic unless it is a specially prepared cursed scroll.
 A character can decipher the writing on a scroll in advance so that he or she can proceed directly to the next step when the time comes to use the scroll.
@@ -1289,7 +1289,7 @@ The person applying an oil is the effective caster, but the object is the target
 
 \parhead{Physical Description} A typical potion or oil consists of 1 ounce of liquid held in a ceramic or glass vial fitted with a tight stopper.
 The stoppered container is usually no more than 1 inch wide and 2 inches high.
-The vial has AC 13, 1 hit point, hardness 1, and a break DC of 12.
+The vial has AC 13, 1 hit point, hardness 1, and a break DR of 12.
 Vials hold 1 ounce of liquid.
 
 \parhead{Identifying Potions} In addition to the standard methods of identification, PCs can sample from each container they find to attempt to determine the nature of the liquid inside.
