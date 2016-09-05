@@ -194,11 +194,8 @@ This section describes each skill, including common uses and typical modifiers. 
 Here is the format for skill descriptions.
 
 \ssecfake{Skill Name}
-The skill name line includes (in addition to the name of the skill) the following information.
-\parhead{Key Ability} The abbreviation of the ability whose modifier applies to the skill check.
-\parhead{Armor Check Penalty} If this notation is included in the skill name line, an armor check penalty applies (when appropriate) to checks using this skill. If this entry is absent, an armor check penalty does not apply.
-
-\par The skill name line is followed by a general description of what using the skill represents. After the description are a few other types of information:
+In addition to the skill's name, the line also indicates the attribute associated with the skill, if there is one.
+The skill name line is followed by a general description of what using the skill represents. After the description are a few other types of information:
 
 \parhead{Check} What a character (``you'' in the skill description) can do with a successful skill check, and the check's DR.
 
@@ -342,7 +339,7 @@ All Awareness checks share the same set of modifiers, in addition to certain mod
     1 Doubled for scent-based Awareness checks.
 \end{dtable}
 
-\skill{Balance}{Dex; Armor Check Penalty}
+\skill{Balance}{Dex}
 Balance represents your physical steadiness and poise. All Balance checks are made as part of movement, so they require no special action to perform.
 
 \subsubsection{Balancing on Difficult Surfaces}
@@ -400,7 +397,7 @@ You can make a Bluff check to attempt to convey a hidden message to another char
 
 Anyone witnessing the exchange must make a Sense Motive check against the same DR to identify the hidden message. Creatures who know how the message will be conveyed -- normally, the intended recipient -- receive a \plus10 bonus on this check. Exceptionally conplex hidden message systems may grant a bonus greater than \plus10.
 
-\skill{Climb}{Str; Armor Check Penalty}
+\skill{Climb}{Str}
 
 \subsubsection{Climb}
 You can make a Climb check as a move action to move up, down, or across a slope, a wall, or some other steep incline (or even a ceiling with handholds). Success means you move a number of feet equal to the size of your space, as described on \trefnp{Climb Speeds}. Failure means your action is wasted and you do not move. Failure by 10 or more means you fall.
@@ -669,7 +666,7 @@ You can make a Disguise check to make a creature look like another creature you 
 \subsubsection{Identify Disguise}
 You can make a Disguise check to identify a disguise on another creature. The DR is equal to the Disguise check used to create the disguise. Success means you know that the creature is disguised. If you succeed by 10 or more, Success means you know that the creature is disguised. If you succeed by 10 or more, you can also discern the creature's true appearance beneath the disguise. You can make an identify disguise check against any individual creature once per hour.
 
-\skill{Escape Artist}{Dex; Armor Check Penalty}
+\skill{Escape Artist}{Dex}
 Escape Artist represents your ability to escape bindings and move through small areas by contorting your body.
 
 \subsubsection{Escape Bindings}
@@ -725,7 +722,7 @@ You can make an Intimidate check to convince a creature to do what you want. Thi
 \subsubsection{Demoralize}\label{Demoralize}
 As a standard action, you can make an Intimidate check against a creature within \rngmed range of you. Your check is opposed by its Mental defense. If you succeed, the creature is \shaken for 5 rounds.
 
-\skill{Jump}{Str; Armor Check Penalty}
+\skill{Jump}{Str}
 Jump allows you to jump. All Jump checks are made as part of movement, so they take no special action to perform. Distance moved with Jump checks is counted against your normal maximum movement in a round.
 
 \subsubsection{Long Jump}
@@ -1036,7 +1033,7 @@ You can make a DR 15 Sense Motive check to get a general assessment of a social 
 
 You can make a social assessment after only a single round of observation, but you take a \minus10 penalty on the check. If you don't understand the language the group is using, you take a \minus10 penalty on the check. The information gained at a given DR may vary in usefulness depending on how obvious or subtle the group is.
 
-\skill{Sleight of Hand}{Dex; Armor Check Penalty}
+\skill{Sleight of Hand}{Dex}
 
 Sleight of Hand represents your ability to pick pockets, palm objects, and perform other feats of legerdemain.
 
@@ -1121,7 +1118,7 @@ You can make a Spellcraft check as a standard action to identify a scroll or sim
 \subsubsection{Teleport Trace}
 You can make a DR 20 Spellcraft check as a move action to learn information about a teleportation that happened recently. You must have noticed the magic aura left by the teleportation effect. Success means you identify the direction of the teleportation. Success by 10 or more means you also identify the distance. Failure means you learn no information about the teleportation. The DR of this check increases by 5 for every minute that has passed since the teleportation happened.
 
-\skill{Sprint}{Str; Armor Check Penalty}
+\skill{Sprint}{Str}
 You can make an Sprint check as part of movement to move faster. For every 10 points by which you beat DR 0, you double your speed during that action, as shown on \trefnp{Sprinting}. You can sprint for a number of rounds equal to 5 \add your Constitution.
 
 \begin{dtable}
@@ -1138,7 +1135,7 @@ You can make an Sprint check as part of movement to move faster. For every 10 po
 
 After you finish sprinting, you are \fatigued for a number of rounds equal to the number of rounds you spent sprinting, preventing you from sprinting again. You can sprint in any movement mode that you can use.
 
-\skill{Stealth}{Dex; Armor Check Penalty}
+\skill{Stealth}{Dex}
 Stealth represents your ability to escape detection while moving or hiding. All Stealth checks are made as part of movement or other actions, so they require no special action to perform. If you have been noticed by a creature, you automatically fail all Stealth checks against that creature until you can escape its notice, such as by disappearing out of sight.
 
 \subsubsection{Blend In}
@@ -1198,7 +1195,7 @@ You can make a Survival check as a standard action to tie knots. Success means y
 
 You can also make a Survival check in place of a ranged attack to set a grappling hook. You take a \minus2 penalty per 10 feet.
 
-\skill{Swim}{Str; Armor Check Penalty}
+\skill{Swim}{Str}
 Swim represents your ability to swim.
 
 \subsubsection{Swimming}
