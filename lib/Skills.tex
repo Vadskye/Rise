@@ -221,7 +221,8 @@ This can be used to determine the precise location of a creature or object, even
 You can make a DR 15 sight-based Awareness check to read a creature's lips. You must be able to understand the language spoken. Success means you can understand the general content of the message, but not the exact words. Success by 5 or more means you understand the exact words. Failure means you don't understand the message. Failure by 10 or more means you draw an incorrect conclusion about the message.
 
 \subsubsection{Search}\label{Search}
-You can spend a full-round action to make a Awareness check to notice things in a single 5-ft. square within 10 feet of you. While doing so, you ignore size penalties that would affect the DR to notice anything within the square.
+You can spend a full-round action to make a Awareness check to notice things in a single 5-ft. square within 10 feet of you.
+If you do, you gain a \plus10 bonus to the check.
 
 \subsubsection{Senses}
 
@@ -233,14 +234,14 @@ The DR to notice an invisible creature with sight is 20 higher than normal. Noti
     \lcaption{Sight-based DRs}
     \begin{dtabularx}{\columnwidth}{X l}
         \tb{Situation} & \tb{Base DR\fn{1}} \\
-\hline
+        \hline
         Creature or object & 0 \\
         Creature trying to hide & Stealth check result\fn{2} \\
         Hidden trap, secret door, or mechanism & Craft or Devices check result \\
-        Magic trap & 25 \add double level of spell used to create trap\fn{2} \\
+        Magic trap & 25 \add double level of spell used to create trap \\
     \end{dtabularx}
     1 Always add any appropriate modifiers from \tref{Awareness DR Modifiers} \\
-    2 Don't add size-based DR modifiers.
+    2 Don't add size-based DR modifiers to the Awareness check.
 \end{dtable}
 
 \parhead{Sound} The DR to hear a sound depends on the intensity of the sound, as shown on \trefnp{Sound-based DRs}, and other modifiers given at \trefnp{Awareness DR Modifiers}.
@@ -276,7 +277,7 @@ Smells dissipate quickly with distance. Double the normal distance modifiers for
     \lcaption{Scent-based DRs}
     \begin{dtabularx}{\columnwidth}{X l}
         \tb{Situation} & \tb{Base DR\fn{1}} \\
-\hline
+        \hline
         Strong scent (rotting flesh, pungent spices) & 0 \\
         Moderate scent (fresh food) & 5 \\
         Living creature & 10 \\
