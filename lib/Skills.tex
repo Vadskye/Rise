@@ -83,7 +83,7 @@ C: class skill \\
 \end{dtable!*}
 \section{Using Skills}
 
-When your character uses a skill, you make a skill check to see how well he or she does. A skill check means rolling 1d20 and adding your bonus with the relevant skill. Your skill check result is compared to the number you to beat. Usually, this is a Difficulty Rating (DR) representing the difficulty of the challenge. Typical DCs are described on \tref{Difficulty Rating Examples}. If your check result equals or exceeds the DR, you succeed. Otherwise, you fail. The consequences of success and failure are defined in the individual descriptions of each skill.
+When your character uses a skill, you make a skill check to see how well he or she does. A skill check means rolling 1d20 and adding your bonus with the relevant skill. Your skill check result is compared to the number you to beat. Usually, this is a Difficulty Rating (DR) representing the difficulty of the challenge. Typical DRs are described on \tref{Difficulty Rating Examples}. If your check result equals or exceeds the DR, you succeed. Otherwise, you fail. The consequences of success and failure are defined in the individual descriptions of each skill.
 
 \subsection{Skill Check Bonus}
 
@@ -243,12 +243,12 @@ You can spend a full-round action to make a Awareness check to notice things in 
 
 \subsubsection{Senses}
 
-\parhead{Sight} The DR to see something depends on the obviousness of the sight, as shown on \trefnp{Sight-based DCs}, and other modifiers given at \trefnp{Awareness DR Modifiers}.
+\parhead{Sight} The DR to see something depends on the obviousness of the sight, as shown on \trefnp{Sight-based DRs}, and other modifiers given at \trefnp{Awareness DR Modifiers}.
 
 The DR to notice an invisible creature with sight is 20 higher than normal. Noticing an invisible creature makes you aware of its presence, but doesn't let you see it perfectly.
 
 \begin{dtable}
-    \lcaption{Sight-based DCs}
+    \lcaption{Sight-based DRs}
     \begin{dtabularx}{\columnwidth}{X l}
         \tb{Situation} & \tb{Base DR\fn{1}} \\
 \hline
@@ -261,12 +261,12 @@ The DR to notice an invisible creature with sight is 20 higher than normal. Noti
     2 Don't add size-based DR modifiers.
 \end{dtable}
 
-\parhead{Sound} The DR to hear a sound depends on the intensity of the sound, as shown on \trefnp{Sound-based DCs}, and other modifiers given at \trefnp{Awareness DR Modifiers}.
+\parhead{Sound} The DR to hear a sound depends on the intensity of the sound, as shown on \trefnp{Sound-based DRs}, and other modifiers given at \trefnp{Awareness DR Modifiers}.
 
 Background noise can make it more difficult to notice sounds. If there is significant background noise of a similar intensity to the sound to be detected, the DR increases by 5. If there is significant background noise of a much greater intensity than the sound to be detected, the DR increases by 10.
 
 \begin{dtable}
-    \lcaption{Sound-based DCs}
+    \lcaption{Sound-based DRs}
     \begin{dtabularx}{\columnwidth}{X l}
         \tb{Situation} & \tb{Base DR\fn{1}} \\
 \hline
@@ -280,9 +280,9 @@ Background noise can make it more difficult to notice sounds. If there is signif
     2 Don't add size-based DR modifiers.
 \end{dtable}
 
-\parhead{Scent} The DR to smell something depends on the intensity of the scent, as shown on \trefnp{Scent-based DCs}, and other modifiers given at \trefnp{Awareness DR Modifiers}.
+\parhead{Scent} The DR to smell something depends on the intensity of the scent, as shown on \trefnp{Scent-based DRs}, and other modifiers given at \trefnp{Awareness DR Modifiers}.
 
-The DCs given are for a creature with an ordinary sense of smell, like a human.
+The DRs given are for a creature with an ordinary sense of smell, like a human.
 
 Smell intensity can vary widely depending on the circumstances. In general, an unusually strong smell, such as a creature wearing perfume, has a DR which is 5 lower. An unusually weak smell, such as a creature who has just taken an unscented bath, has a DR which is 5 higher.
 
@@ -291,7 +291,7 @@ Smells dissipate quickly with distance. Double the normal distance modifiers for
 \subparhead{Scent Ability}\label{Scent} Some creatures have an unusually good sense of smell. Creatures with the scent ability gain a \plus10 bonus to scent-based Awareness checks.
 
 \begin{dtable}
-    \lcaption{Scent-based DCs}
+    \lcaption{Scent-based DRs}
     \begin{dtabularx}{\columnwidth}{X l}
         \tb{Situation} & \tb{Base DR\fn{1}} \\
 \hline
@@ -348,10 +348,10 @@ When you are on a slippery or narrow surface, you must make a Balance check to m
 
 In addition, if you take damage while on a slippery or narrow surface, you must make a Balance check to avoid falling.
 
-The DR of Balance checks varies with the surface, as described in \trefnp{Balance DCs}.
+The DR of Balance checks varies with the surface, as described in \trefnp{Balance DRs}.
 
 \begin{dtable}
-    \lcaption{Balance DCs}
+    \lcaption{Balance DRs}
     \begin{dtabularx}{\columnwidth}{l X}
         \tb{Narrow Surface} & \tb{Balance DR} \\
 \hline
@@ -417,10 +417,10 @@ You need both hands free to climb, but you may cling to a wall with one hand whi
     \end{dtabularx}
 \end{dtable}
 
-The DR of the check depends on the difficulty of the task and the conditions of the climbing surface, as shown on \trefnp{Climb DCs} and \trefnp{Climb Modifiers}.
+The DR of the check depends on the difficulty of the task and the conditions of the climbing surface, as shown on \trefnp{Climb DRs} and \trefnp{Climb Modifiers}.
 
 \begin{dtable*}
-\lcaption{Climb DCs}
+\lcaption{Climb DRs}
 \begin{dtabularx}{\textwidth}{l X l}
     \tb{Climb DR} & \tb{Surface or Activity} & \tb{Example} \\
 \hline
@@ -489,7 +489,7 @@ Craft is always treated as a class skill, regardless of your classes.
 \subsubsection{Create Item}
 You can use the Craft skill to create an item by expending time and material components. Creating an item often requires multiple consecutive Craft checks. Success on a check means you make progress on completing the item. If you make enough progress, you complete the item. Failure means you failed to make progress, but can try again without penalty. Failure by 10 or more means you botched the item, and negating all progress and ruining half of the material components. You can start again from scratch with your remaining components.
 
-Each item takes a certain amount of working time to craft, as shown on \tref{Crafting Time}, and the expenditure of one quarter of the item's price in raw materials. In order to craft an item, you must make a Craft check against the item's Craft DR, as shown on \trefnp{Craft DCs}. If you succeed, you make progress on the item based on how long you spend crafting. For every 5 points by which you beat the Craft check, you accomplish twice as much work in the same amount of time. Once your total effective working time exceeds the time required to craft the item, you have finished the item.
+Each item takes a certain amount of working time to craft, as shown on \tref{Crafting Time}, and the expenditure of one quarter of the item's price in raw materials. In order to craft an item, you must make a Craft check against the item's Craft DR, as shown on \trefnp{Craft DRs}. If you succeed, you make progress on the item based on how long you spend crafting. For every 5 points by which you beat the Craft check, you accomplish twice as much work in the same amount of time. Once your total effective working time exceeds the time required to craft the item, you have finished the item.
 
 All crafts require artisan's tools to give the best chance of success. If improvised tools are used, the check may be made with a penalty, or may be impossible, depending on the tools available and the item to be crafted. For example, crafting a bow with improvised woodworking tools would impose a \minus2 penalty, but cutting a diamond without specialized tools is impossible. Note that raw materials for some items, particularly alchemical items, may be hard to come by in some areas. A typical day's work consists of 8 hours of work.
 
@@ -509,7 +509,7 @@ To determine the time required to craft an item, consult the table below.
 \end{dtable}
 
 \begin{dtable}
-    \lcaption{Craft DCs}
+    \lcaption{Craft DRs}
     \begin{dtabularx}{\columnwidth}{>{\lcol}X l >{\lcol}p{4em}}
         \tb{Item} & \tb{Craft Skill} & \tb{Craft DR} \\
         \hline
@@ -552,12 +552,12 @@ You can make a Craft check as a full-round action to evaluate whether an item is
 You can make a Craft check to repair a broken item. This functions like crafting the item from scratch, except that you use one-tenth of the item's price to determine the price of raw materials and the crafting time.
 
 \subsubsection{Other Tasks}
-You can use the Craft skill for various tasks related to the object of your craft. For example, you could use Craft (wood) to sabotage a wagon so it will break at a later time, or Craft (alchemy) to purify spoiled food or ingredients. The DCs of such tasks, and what can be accomplished, can vary widely. In general, the more difficult the task, and the more loosely it is related to the skill, the higher the DR.
+You can use the Craft skill for various tasks related to the object of your craft. For example, you could use Craft (wood) to sabotage a wagon so it will break at a later time, or Craft (alchemy) to purify spoiled food or ingredients. The DRs of such tasks, and what can be accomplished, can vary widely. In general, the more difficult the task, and the more loosely it is related to the skill, the higher the DR.
 
 \skill{Creature Handling}{Per}
 You can handle creatures without being able to speak with them, convincing them to do what you want or training them to follow commands. This skill can only be used with creatures with an Intelligence of \minus5 or lower.
 
-Animals are easier to handle than other kinds of creatures. The DCs listed are for animals; the DCs to handle other kinds of creatures are 5 higher.
+Animals are easier to handle than other kinds of creatures. The DRs listed are for animals; the DRs to handle other kinds of creatures are 5 higher.
 
 \subsubsection{Handling Creatures}
 You can use Creature Handling to control a creature's actions. Success means it does what you want on its next action. Failure means your action is wasted, and the creature does not listen to you. Exceptional failure may make the creature hostile, depending on the circumstances.
@@ -568,7 +568,7 @@ You can use Creature Handling to control a creature's actions. Success means it 
 \subsubsection{Training Creatures}
 You can use Creature Handling to train a creature. Success means the creature learns a trick or becomes domesticated. Failure means your time is wasted, and you must try again. Exceptional failure may indicate that the animal becomes unable to learn the trick, becomes hostile, or other consequences depending on the situation. Training a creature takes a week or more; this requires spending at least four hours each day with the creature. It is not generally possible to accelerate the process by spending more time each day; the creature must take time to learn the new behavior. If the training is interrupted for a week or more, the attempt automatically fails.
 
-\parhead{Teach a Trick} You can teach a creature a specific trick with one week of work and a successful Creature Handling check against the indicated DR. A creature can learn a number of tricks equal to its Intelligence \add 10. Thus, a creature with an Intelligence of \minus9 can learn a single trick, while a creature with an Intelligence of \minus5 can learn five tricks. Possible tricks (and their associated DCs) include, but are not necessarily limited to, the following.
+\parhead{Teach a Trick} You can teach a creature a specific trick with one week of work and a successful Creature Handling check against the indicated DR. A creature can learn a number of tricks equal to its Intelligence \add 10. Thus, a creature with an Intelligence of \minus9 can learn a single trick, while a creature with an Intelligence of \minus5 can learn five tricks. Possible tricks (and their associated DRs) include, but are not necessarily limited to, the following.
 
 \subsk{Attack (DR 20)} The creature attacks apparent enemies. You may point to a particular creature that you wish the creature to attack, and it will comply if able. Normally, a creature will attack only humanoids, monstrous humanoids, giants, or other creatures. Teaching a creature to attack all creatures (including such unnatural creatures as undead and aberrations) counts as two tricks.
 \subsk{Come (DR 15)} The creature comes to you, even if it normally would not do so.
@@ -588,10 +588,10 @@ You can use Creature Handling to train a creature. Success means the creature le
 \skill{Devices}{Int}
 You can use this skill to manipulate mechanical devices such as locks, traps, and other contraptions. With enough skill, you can even manipulate magical devices.
 
-The DR of a Devices check depends on the device being manipulated. In addition, some actions are easier than others, and modify the DR accordingly. DCs are listed on \trefnp{Devices DCs}.
+The DR of a Devices check depends on the device being manipulated. In addition, some actions are easier than others, and modify the DR accordingly. DRs are listed on \trefnp{Devices DRs}.
 
 \begin{dtable}
-\lcaption{Devices DCs}
+\lcaption{Devices DRs}
 \begin{dtabularx}{\columnwidth}{>{\lcol}X c}
 \tb{Device Type} & \tb{Base DR} \\
 \hline
@@ -670,7 +670,7 @@ You can make a Disguise check to identify a disguise on another creature. The DR
 Escape Artist represents your ability to escape bindings and move through small areas by contorting your body.
 
 \subsubsection{Escape Bindings}
-You can make an Escape Artist check as a standard action to escape bindings and restraints. The DCs of various restraints are given on the table below.
+You can make an Escape Artist check as a standard action to escape bindings and restraints. The DRs of various restraints are given on the table below.
 
 \begin{dtable}
 \begin{dtabularx}{\columnwidth}{>{\lcol}X l}
@@ -1158,19 +1158,19 @@ A creature larger or smaller than Medium gains an bonus or penalty on Stealth ch
 Survival represents your ability to take care of yourself and others in the wilderness, as well as your mastery of various survival-related tasks.
 
 \subsubsection{Navigate Wilderness}
-You can make a Survival check while moving overland to avoid natural hazards and getting lost. The DR depends on the terrain, as shown on \trefnp{Terrain DCs}. Success means that you and any group you lead can move without any trouble. Failure means you may encounter a natural hazard, depending on the terrain. Failure by 10 or more means you become lost.
+You can make a Survival check while moving overland to avoid natural hazards and getting lost. The DR depends on the terrain, as shown on \trefnp{Terrain DRs}. Success means that you and any group you lead can move without any trouble. Failure means you may encounter a natural hazard, depending on the terrain. Failure by 10 or more means you become lost.
 
 You can notice that you are lost the next time that you succeed on a check to navigate in the wilderness. Rediscovering your location requires backtracking for 1d6 hours and another Survival check against the same DR.
 
 This check is made once every 8 hours you spend travelling overland. You can't take 20 on checks to navigate a wilderness. If you move at half speed, you gain a \plus5 bonus on the check.
 
 \subsubsection{Sustinence}
-You can make a Survival check to move overland at half speed while hunting and foraging. The DR depends on the terrain, as shown on \trefnp{Terrain DCs}. Success means that you can feed yourself, and require no additional food or water. For every 2 points by which you succeed, you can provide food and water to an additional person.
+You can make a Survival check to move overland at half speed while hunting and foraging. The DR depends on the terrain, as shown on \trefnp{Terrain DRs}. Success means that you can feed yourself, and require no additional food or water. For every 2 points by which you succeed, you can provide food and water to an additional person.
 
 This check is made once every 8 hours you spend travelling overland. You can't take 20 on checks to find sustinence in the wilderness. If you move at one-quarter speed, you gain a \plus5 bonus on the check.
 
 \begin{dtable}
-    \lcaption{Terrain DCs}
+    \lcaption{Terrain DRs}
     \begin{dtabularx}{\columnwidth}{X l l}
         \tb{Terrain} & \tb{Navigation DR} & \tb{Sustinence DR} \\
 \hline
@@ -1199,10 +1199,10 @@ You can also make a Survival check in place of a ranged attack to set a grapplin
 Swim represents your ability to swim.
 
 \subsubsection{Swimming}
-You can make a Swim check to move through water. The DR depends on the turbulence of the water, as shown on \trefnp{Swim DCs}. Success means you move forward by up to one-half your speed (as a full-round action) or at one-quarter your speed (as a move action). Success by 10 or more means you move twice as fast. Failure means you make no progress through the water. Failure by 10 or more means you make no progress and sink five feet underwater.
+You can make a Swim check to move through water. The DR depends on the turbulence of the water, as shown on \trefnp{Swim DRs}. Success means you move forward by up to one-half your speed (as a full-round action) or at one-quarter your speed (as a move action). Success by 10 or more means you move twice as fast. Failure means you make no progress through the water. Failure by 10 or more means you make no progress and sink five feet underwater.
 
 \begin{dtable}
-    \lcaption{Swim DCs}
+    \lcaption{Swim DRs}
 \begin{dtabularx}{\columnwidth}{>{\lcol}X >{\lcol}X}
 \tb{Water} & \tb{Swim DR} \\
 \hline
