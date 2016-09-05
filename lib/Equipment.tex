@@ -372,13 +372,15 @@ Most characters use armor to protect themselves. There are two kinds of armor: b
 creatures. See \trefnp{Armor for Unusual Creatures}, below, for armor prices for other creatures.
 \parhead{Armor/Shield Bonus} Body armor improves your Armor defense, while shields improve all your physical defenses. Wearing multiple suits of armor or wielding multiple shields does not improve your defenses any further.
 
-\parhead{Dexterity} Heavy body armor limits mobility and agility, halving the character's Dexterity. This halving is applied in addition to the armor's armor check penalty (if any). A Dexterity penalty is not halved.
+\parhead{Dexterity} Heavy body armor limits mobility and agility, halving the character's Dexterity. This halving is applied in addition to the armor's \glossterm{encumbrance penalty} (if any). A Dexterity penalty is not halved.
 
 Your character's encumbrance (the amount of gear he or she carries) may also affect your character's Dexterity.
 \subparhead{Shields} Most shields do not affect a character's Dexterity. However, a tower shield halves a character's Dexterity. This is not cumulative with the halving from wearing medium or heavy armor.
-\parhead{Armor Check Penalty} Any armor heavier than leather hurts a character's ability to use some skills. An armor check penalty number is the penalty that applies to Balance, Climb, Escape Artist, Jump, Sleight of Hand, Sprint, Stealth, and Tumble checks by a character wearing a certain kind of armor. Double the normal armor check penalty is applied to Swim checks. A character's encumbrance (the amount of gear carried, including armor) may also apply an armor check penalty.
+\parhead{Encumbrance Penalty} All armor has an associated \glossterm{encumbrance penalty}.
+A character's encumbrance penalty applies to all Strength and Dexterity-based skill checks the character makes.
+A character's encumbrance (the amount of gear carried, including armor) may also apply an encumbrance penalty.
 \subparhead{Shields} If a character is wearing armor and using a shield, both armor check penalties apply.
-\subparhead{Nonproficient with Armor Worn} A character who wears armor and/or uses a shield with which he or she is not proficient takes the armor's (and/or shield's) armor check penalty to accuracy with physical attacks and on all Strength-based and Dexterity-based ability and skill checks. The penalty for nonproficiency with armor stacks with the penalty for nonproficiency with shields.
+\subparhead{Nonproficiency} A character who uses armor she is not proficient with also applies the armor's encumbrance penalty to her accuracy with physical attacks.
 
 \subparhead{Sleeping in Armor} A character who sleeps overnight in medium or heavy body armor is automatically \fatigued the next day. Sleeping in light armor does not cause fatigue.
 \parhead{Arcane Spell Failure} Armor interferes with the gestures that a spellcaster must make to cast an arcane spell that has a somatic component. Arcane spellcasters face the possibility of arcane spell failure if they're wearing armor.
@@ -397,7 +399,7 @@ The heavier the armor, the more it slows your movement. Light armor has no effec
 \subsection{Getting Into And Out Of Armor}
 The time required to don armor depends on its type; see \trefnp{Donning Armor}. Donning armor of any kind takes both hands.
 \parhead{Don} This column tells how long it takes a character to put the armor on. (One minute is 10 rounds.) Readying (strapping on) a shield is only a move action.
-\parhead{Don Hastily} This column tells how long it takes to put the armor on in a hurry. The armor check penalty and armor bonus for hastily donned armor are each 1 point worse than normal.
+\parhead{Don Hastily} This column tells how long it takes to put the armor on in a hurry. The encumbrance penalty and defense bonus for hastily donned armor are each 1 point worse than normal.
 \parhead{Remove} This column tells how long it takes to get the armor off. Loosing a shield (removing it from the arm and dropping it) is only a move action.
 
 \begin{dtable}
@@ -419,7 +421,7 @@ Half-plate or full plate & 4 minutes\fn{2} & 4 minutes\fn{1} & 1d4\plus1 minutes
 \begin{dtabularx}{\textwidth}{>{\lcol}X >{\ccol}p{6em} >{\ccol}p{5em} >{\ccol}p{6em} >{\ccol}p{7em} c c c c}
   &  &  &  &  &  \multicolumn{2}{c}{\x\x Speed \x\x} & & \\
 \hline
-\tb{Armor} & \tb{Armor/Shield Bonus} & \tb{Dex Modifier} & \tb{Armor Check Penalty} & \tb{Arcane Spell Failure Chance} & \tb{(30 ft.)} & \tb{(20 ft.)} & \tb{Cost} & \tb{Weight\fn{1}} \\
+\tb{Armor} & \tb{Armor/Shield Bonus} & \tb{Dex Modifier} & \tb{Encumbrance Penalty} & \tb{Arcane Spell Failure Chance} & \tb{(30 ft.)} & \tb{(20 ft.)} & \tb{Cost} & \tb{Weight\fn{1}} \\
 Light armor &  &  &  &  &  &  &  &  \\
 \tind Leather 				& \plus1 		& 1\mult 	& \minus1 & 10\% & 30 ft. & 20 ft. & 10 gp        & 15 lb.\\
 \tind Studded leather 		& \plus2 		& 1\mult 	& \minus2 & 15\% & 30 ft. & 20 ft. & 25 gp & 20 lb.\\
