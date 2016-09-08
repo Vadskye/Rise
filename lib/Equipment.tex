@@ -20,7 +20,7 @@ Weapons are organized into thematically related categories called weapon groups.
         Blades, heavy    & Falchion, greatsword, longsword, scimitar                          & Bastard sword, two-bladed sword              \\
         Blades, light    & Dagger, punching dagger, rapier, short sword                       & Kukri                                        \\
         Bows             & Longbow, shortbow                                                  &                                              \\
-        Crossbows        & Heavy crossbow, light crossbow                                     & Hand crossbow, repeating crossbows           \\
+        Crossbows        & Hand crossbow, heavy crossbow, light crossbow, & repeating crossbows           \\
         Flexible Weapons & Flail, heavy flail, nunchaku                                       & Whip                                         \\
         Headed weapons   & Heavy pick, light hammer, light pick, sickle, warhammer            &                                              \\
         Monk weapons     & Kama, nunchaku, quarterstaff, sai, shuriken, siangham              &                                              \\
@@ -37,14 +37,15 @@ Each character is proficient with different weapon groups. These indicate the we
 \subsection{Weapon Encumbrance}
 This is a measure of how much effort it takes to wield a weapon in combat. A weapon's encumbrance indicates whether a melee weapon, when wielded by a character of the weapon's size category, is considered a light weapon, a medium weapon, or a heavy weapon.
 
-\parhead{Light} A light weapon can be used with more finesse than a medium weapon. The wielder can use Dexterity to attack with the weapon (in place of Strength and combat prowess). In addition, light weapons are easier to use in the off-hand or while grappling.
+\parhead{Light} A light weapon can be used with more finesse than a medium weapon. The wielder can use Dexterity to attack with the weapon (in place of Strength and combat prowess). In addition, light weapons are easier to use while dual attacking (see \pcref{Dual Attacking}) or while grappling.
 
-\parhead{Medium} A medium weapon can be used in one hand. It is difficult, but possible, to wield a medium weapon in your off-hand. You can also hold a medium weapon in two hands. Changing grips to hold it in one hand or two hands can be done as a move action.
+\parhead{Medium} A medium weapon can be used in one hand. You can also hold a medium weapon in two hands. Changing grips to hold it in one hand or two hands can be done as a move action.
 
 \parhead{Heavy} Two hands are required to wield a heavy weapon. You can hold it in one hand, but while doing so you cannot attack or defend yourself with it. This usually causes you to be \defenseless. Changing grips to hold it in one hand or two hands is a move action.
 
 \subsection{Using Weapons in Two Hands}
-Whenever you use a weapon in two hands, you gain a \plus1 bonus to damage. This is included in the description of heavy weapons in \trefnp{Weapons}.
+Whenever you use a melee weapon in two hands, you gain a \plus1 bonus to damage.
+This is included in the description of heavy weapons in \trefnp{Weapons}.
 
 \subsection{Melee Weapons}
 Melee weapons are used for making melee attacks against foes within your reach (see \pcref{Reach}). Most weapons are melee weapons.
@@ -60,7 +61,7 @@ Ranged weapons are used to make attacks against distant foes within the range of
 
 \parhead{Throwing Other Weapons} It is possible to throw a weapon that is not designed to be thrown. The range increment is 10 feet. You are treated as being nonproficient with the weapon. If the attack hits, the weapon deals its normal damage.
 
-\parhead{Heavy Weapons} Heavy thrown weapons require a standard action to throw, rather than an attack action like normal. They are not always physically thrown with two hands, but they require the use of your entire body to propel the weapon, preventing you from using your offhand for anything else. This can cause you to be \defenseless.
+\parhead{Heavy Weapons} Heavy thrown weapons require a standard action to throw, rather than an attack action like normal. They are not always physically thrown with two hands, but they require the use of your entire body to propel the weapon, preventing you from using your hands for anything else. This can cause you to be \defenseless.
 
 \subsubsection{Ranged Weapons in Melee}
 
@@ -100,7 +101,7 @@ Sheathing any weapon is a move action. The time it takes to draw a weapon depend
 \subsection{Natural Weapons}\label{Natural Weapons}
 Every creature can attack with its body using an unarmed strike. Many monsters can attack more effectively with specific parts of their body, such as teeth and claws. These are called natural weapons. You are automatically proficient with any natural weapons you possess. Most humanoids possess no natural weapons. Natural weapons are described on \tref{Natural Weapons}.
 
-A creature with multiple natural weapons of the same type can designate one as a primary attack and one as a secondary attack, allowing it to fight with both at once (see \pcref{Dual Wielding}). You are only considered to have one unarmed strike, so you cannot dual wield with only your unarmed strike (but see the unarmed warrior monk ability, \pref{Mnk:Unarmed Warrior}).
+A creature with multiple natural weapons of the same type can designate one as a primary attack and one as a secondary attack, allowing it to fight with both at once (see \pcref{Dual Attacking}). You are only considered to have one unarmed strike, so you cannot dual wield with only your unarmed strike (but see the unarmed warrior monk ability, \pref{Mnk:Unarmed Warrior}).
 
 \subsection{Weapon Qualities}
 Here is the format for weapon entries (given as column headings on \trefnp{Weapons}, below).
@@ -173,9 +174,11 @@ descriptions for details.
         \tind Arrows (20) & \x & \x & \x & 1 gp & 3 lb. & Ammunition \\
 
         Crossbows &&&&&& \\
+        \tind Crossbow, hand\fn{3} & Light (Ranged) & 1d6 & Piercing & 100 gp & 2 lb. & Projectile (50 ft.) \\
         \tind Crossbow, heavy\fn{3} & Heavy (Ranged) & 1d10 & Piercing & 50 gp & 8 lb. & Impact, Projectile (100 ft.) \\
         \tind Crossbow, light\fn{3} & Medium (Ranged) & 1d8 & Piercing & 40 gp & 4 lb. & Impact, Projectile (50 ft.) \\
         \tind Bolts, crossbow (10) & \x & \x & \x & 1 gp & 1 lb. & Ammunition \\
+        \tind Bolts, hand (10) & \x & \x & \x & 1 gp & 1/2 lb. & Ammunition \\
 
         Flexible weapons &&&&&& \\
         \tind Flail  & Medium & 1d8 & Bludgeoning & 8 gp & 5 lb. & Disarming, Tripping \\
@@ -259,10 +262,8 @@ descriptions for details.
         \tind Kukri & Light & 1d4 & Slashing & 8 gp & 2 lb. & \x \\
         Bows &&&&&& \\
         Crossbows &&&&&& \\
-        \tind Crossbow, hand\fn{3} & Light (Ranged) & 1d4 & Piercing & 100 gp & 2 lb. & Projectile (30 ft.) \\
         \tind Crossbow, repeating heavy\fn{3} & Heavy (Ranged) & 1d10 & Piercing & 400 gp & 12 lb. & Projectile (100 ft.) \\
         \tind Crossbow, repeating light\fn{3} & Medium (Ranged) & 1d8 & Piercing & 250 gp & 6 lb. & Projectile (50 ft.) \\
-        \tind Bolts, hand (10) & \x & \x & \x & 1 gp & 1 lb. & Ammunition \\
         \tind Bolts, repeating (5) & \x & \x & \x & 1 gp & 1 lb. & Ammunition \\
         Flexible weapons &&&&&& \\
         \tind Flail, dire & Heavy & 1d8/1d8 & Bludgeoning & 90 gp & 10 lb. & Disarming, Double, Tripping \\
@@ -307,7 +308,7 @@ Some weapons found on \trefnp{Weapons} have special properties. The list of spec
 \parhead{Bracing} As a move action, you can brace this weapon against a charge for 1 round. While you are bracing your weapon, you gain a \plus5 bonus to physical melee attacks against creatures that charge you that round.
 \parhead{Charging} This weapon deals double damage when used from the back of a charging mount.
 \parhead{Disarming} You gain a \plus2 bonus to accuracy on disarm attacks using this weapon.
-\parhead{Double} This weapon has more than one striking surface. You can fight with both ends simultaneously, just like dual wielding (see \pcref{Dual Wielding}). Alternately, you can attack with one end at a time. If you have the ability to use a double weapon in one hand, you can only fight with one end at a time, not both.
+\parhead{Double} This weapon has more than one striking surface. You can fight with both ends simultaneously, just like wielding two weapons at once (see \pcref{Dual Attacking}). Alternately, you can attack with one end at a time. If you have the ability to use a double weapon in one hand, you can only fight with one end at a time, not both.
 \parhead{Exotic Grip} If you have proficiency with exotic weapons, you can use this in one hand. While wielding it in one hand, you do not gain the \plus1 bonus to damage from wielding the weapon in two hands.
 \parhead{Finesse} You apply your Dexterity instead of your Strength to physical attacks with this weapon, even if it isn't a light weapon for you.
 This property has no effect if the weapon is not sized appropriately for you.
@@ -330,7 +331,7 @@ Reach weapons can held using a different grip to strike nearby foes. This is cal
 \subsection{Weapon Special Abilities}
 Some weapons in \trefnp{Weapons} have unique special abilities, which are described below.
 \parhead{Claw Sheath} A claw sheath is not a weapon in itself, but a covering over a single claw that a creature can use to make claw attacks. Claw sheaths do not grant a creature without claws a claw attack. Normally, a sheath does not improve the claw attack, but magical claw sheaths can be made which grant bonuses to attacks made with the claw. It may be possible to find or craft unusual sheaths for natural weapons other than claws.
-\parhead{Crossbow, Hand} You can draw a hand crossbow back by hand. Loading a hand crossbow is a move action.
+\parhead{Crossbow, Hand} You can draw a hand crossbow back by hand. Loading a hand crossbow is a move action that requires one hand (but not the hand wielding the crossbow).
 \par You can fire a crossbow from a prone position without penalty.
 \parhead{Crossbow, Heavy} You draw a heavy crossbow back by turning a small winch. Loading a heavy crossbow is a full-round action that requires both hands.
 \par You can fire a crossbow from a prone position without penalty.
@@ -345,7 +346,7 @@ Some weapons in \trefnp{Weapons} have unique special abilities, which are descri
 \par An entangled creature can escape with a DR 20 Escape Artist check (a full-round action). The net has 5 hit points and can be burst with a DR 15 Strength check (also a full-round action).
 \par A net is useful only against creatures within one size category of you.
 \par A net must be folded to be thrown effectively. The first time you throw your net in a fight, you make a normal ranged touch attack roll. After the net is unfolded, you take a \minus4 penalty to accuracy with it. It takes 2 full-round actions for a proficient user to fold a net and twice that long for a nonproficient one to do so.
-\parhead{Rapier} A rapier is difficult to use in the off-hand. It is treated as a medium weapon if it is used as a secondary weapon when fighting with two weapons at once.
+\parhead{Rapier} A rapier is treated as a medium weapon if it is used as a secondary weapon when dual attacking (see \pcref{Dual Attacking}).
 \parhead{Shield, Heavy or Light} You can bash with a shield instead of using it for defense. See Armor for details.
 \parhead{Shortbow} You need both hands to fire a bow, regardless of its size. One hand is free when not firing the bow. Loading a bow is a free action that requires both hands.
 \par When attacking with a bow, you take a \minus4 penalty to accuracy against creatures that threaten you.
