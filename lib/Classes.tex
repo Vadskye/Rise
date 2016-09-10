@@ -102,6 +102,8 @@ This choice determines a great deal about your character's abilities.
 
         \classbasics{Skill Points} 10.
 
+        \classbasics{Combat Prowess} \plus2.
+
         \classbasics{Defenses} \plus4 Fortitude, \plus2 Reflex.
 
         \cf{Bbn}{Weapon and Armor Proficiency}
@@ -246,6 +248,8 @@ This choice determines a great deal about your character's abilities.
         A character with cleric as a base class gains the following abilities.
 
         \classbasics{Skill Points} 5.
+
+        \classbasics{Combat Prowess} \plus2.
 
         \classbasics{Defenses} \plus2 Fortitude, \plus4 Mental.
 
@@ -865,6 +869,8 @@ This choice determines a great deal about your character's abilities.
 
         \classbasics{Skill Points} 10.
 
+        \classbasics{Combat Prowess} \plus2.
+
         \classbasics{Defenses} \plus4 Fortitude, \plus2 Mental.
 
         \cf{Drd}{Weapon and Armor Proficiency}
@@ -1281,6 +1287,8 @@ This choice determines a great deal about your character's abilities.
 
         \classbasics{Skill Points} 10.
 
+        \classbasics{Combat Prowess} \plus2.
+
         \classbasics{Defenses} \plus4 Fortitude, \plus2 Mental.
 
         \cf{Ftr}{Weapon and Armor Proficiency}
@@ -1481,6 +1489,8 @@ This choice determines a great deal about your character's abilities.
         A character with monk as a base class gains the following abilities.
 
         \classbasics{Skill Points} 10.
+
+        \classbasics{Combat Prowess} \plus2.
 
         \classbasics{Defenses} \plus2 Fortitude, \plus4 Reflex, \plus4 Mental.
 
@@ -1697,6 +1707,8 @@ This choice determines a great deal about your character's abilities.
         A character with paladin as a base class gains the following abilities.
 
         \classbasics{Skill Points} 5.
+
+        \classbasics{Combat Prowess} \plus2.
 
         \classbasics{Defenses} \plus4 Fortitude, \plus4 Mental.
 
@@ -1994,6 +2006,8 @@ This choice determines a great deal about your character's abilities.
 
         \classbasics{Skill Points} 15.
 
+        \classbasics{Combat Prowess} \plus2.
+
         \classbasics{Defenses} \plus4 Fortitude, \plus4 Reflex, \plus2 Mental.
 
         \cf{Rgr}{Weapon and Armor Proficiency}
@@ -2278,6 +2292,8 @@ This choice determines a great deal about your character's abilities.
 
         \classbasics{Skill Points} 15.
 
+        \classbasics{Combat Prowess} \plus2.
+
         \classbasics{Defenses} \plus4 Reflex, \plus2 Mental.
 
         \cf{Rog}{Weapon and Armor Proficiency}
@@ -2480,6 +2496,8 @@ This choice determines a great deal about your character's abilities.
 
         \classbasics{Skill Points} 5.
 
+        \classbasics{Combat Prowess} \plus1.
+
         \classbasics{Defenses} \plus4 Mental.
 
         \cf{Sor}{Weapon and Armor Proficiency}
@@ -2661,6 +2679,8 @@ This choice determines a great deal about your character's abilities.
         A character with spellwarped as a base class gains the following abilities.
 
         \classbasics{Skill Points} 5.
+
+        \classbasics{Combat Prowess} \plus2.
 
         \classbasics{Defenses} \plus4 good defense, \plus2 other defenses.
 
@@ -3152,6 +3172,8 @@ This choice determines a great deal about your character's abilities.
 
         \classbasics{Skill Points} 5.
 
+        \classbasics{Combat Prowess} \plus1.
+
         \classbasics{Defenses} \plus4 Mental.
 
         \cf{Wiz}{Weapon and Armor Proficiency}
@@ -3356,27 +3378,10 @@ This choice determines a great deal about your character's abilities.
         The normal rules for determining hit points apply to multiclass characters.
 
         \parhead{Combat Prowess}
-
-        \begin{enumerate}
-            \item For each type of combat prowess progression the character has, sum the character's level in classes with that combat prowess progression.
-            \item Determine the character's fastest type of combat prowess progression. Good is faster than Average, which is faster than Poor.
-            \item Add (levels in Good progression) + (four-fifths levels in Average progression) + (two-thirds levels in Poor progression). Each part of this calculation rounded down separately.
-            \item If the character's fastest combat prowess progression is Good or Average, add 2 to the result. If it is Poor, add 1.
-            \item The result is the character's combat prowess.
-        \end{enumerate}
-
-        \parhead{Example}
-        Wissy, a 2nd-level rogue/2nd-level wizard, would have a combat prowess of 4.
-        \begin{enumerate}
-            \item Wissy has 2 levels in the Average progression, and 2 levels in the Poor progression.
-            \item Wissy's fastest progression type is Average.
-            \item Four-fifths of 2 is 1, and two-thirds of 2 is 1, so the total is 2.
-            \item Wissy's Average progression type adds 2 to the result, for a total of 4.
-            \item Wissy's combat prowess is therefore 4.
-        \end{enumerate}
+        Add the base combat prowess bonuses granted by each class together.
+        The result is the character's total combat prowess.
 
         \parhead{Defenses}
-
         For each defense, add the base defense bonuses granted by each class together.
         The result is the character's total base defense bonus for that defense.
 
@@ -3384,6 +3389,7 @@ This choice determines a great deal about your character's abilities.
         A multiclass character gains all class skills from all of his classes.
         However, only the character's base class grants skill points.
         If a character has multiple base classes, he must choose which base class grants skill points.
+        When a character gains new class skills, he may redistribute his skill points to gain training or mastery in his new class skills.
 
         \parhead{Class Abilities}
         A multiclass character gets all the class abilities of all his or her classes, but must also suffer the consequences of the special restrictions of all his or her classes.
@@ -3411,10 +3417,10 @@ This choice determines a great deal about your character's abilities.
     \subsection{Spellcasters and Multiclassing}\label{Spellcasters and Multiclassing}
         The character gains spells from all of his or her spellcasting classes separately and tracks his spells per day, spells known, and spellpower separately with each class.
 
-        Characters with magical ability gain a special benefit when multiclassing.
-        Such a character must choose a specific spellcasting class he has.
-        For every two levels that a character has in nonmagical classes, up to the number of levels he has in his chosen spellcasting class, he increases his spellcasting ability with that class.
-        This increases his spells per day (if any), spells known, and spellpower as if he had gained a level in his chosen spellcasting class.
+        A character with spellcasting abilities gains a special benefit when multiclassing.
+        She must choose a specific spellcasting class he has.
+        For every two levels that she in nonmagical classes, up to the number of levels she has in her chosen spellcasting class, she increases his spellcasting ability with that class.
+        This increases her spells per day (if any), spells known, and spellpower as if she had gained a level in her chosen spellcasting class.
         No class abilities can be gained in this way.
 
         For example, Gish, a 2nd level fighter / 2th level wizard, would have the spells per day, spells known, and spellpower of a 3rd level wizard.
