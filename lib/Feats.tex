@@ -143,18 +143,18 @@ Some strike feats instead require a specific action to use.
         \tb{General Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
         \featref{Attribute Training} & \x & Gain \plus1 to an attribute           & \x & \featpref{Attribute Training} \\
         \featref{Arcane Spellgift} & 2nd level, Wil 1 & Gain arcane spell as spell-like ability & Spellgift & \featpref{Arcane Spellgift} \\
-        \featref{Deathless} & Con 10 & Immune to death effects                    & \x & \featpref{Deathless} \\
         \featref{Destructive} & Str 3 & Gain \plus5 to breaking things            & \x & \featpref{Destructive} \\
         \featref{Diehard} & Con 10 & Halve penalties from critical damage         & \x & \featpref{Diehard} \\
         \featref{Divine Spellgift} & 2nd level, Wil 1 & Gain divine spell as spell-like ability & Spellgift & \featpref{Divine Spellgift} \\
         \featref{Fearless} & Wil 10 & Immune to fear effects                      & \x & \featpref{Fearless} \\
         \featref{Iron Will} & Int 3 or Wil 3 & \plus2 to Mental defense           & \x & \featpref{Iron Will} \\
+        \featref{Lifebound} & Con 10 & Immune to hostile Life and Death effects   & \x & \featpref{Lifebound} \\
         \featref{Lightning Reflexes} & Dex 3 or Per 3 &  \plus2 to Reflex defense & \x & \featpref{Lightning Reflexes} \\
         \featref{Natural Spellgift} & 2nd level, Wil 1 & Gain natural spell as spell-like ability & Spellgift & \featpref{Natural Spellgift} \\
         \featref{Perfect Health} & Con 3 & Immune to disease, later poison        & \x & \featpref{Perfect Health} \\
-        \featref{Pierce Delusions} & Per 10 & Immune to delusion effects          & \x & \featpref{Pierce Delusions} \\
+        \featref{Pierce Delusions} & Per 5 & Immune to Delusion effects          & \x & \featpref{Pierce Delusions} \\
         %\featref{Rapid Recovery} & Con 3 & Naturally heal quickly & \x & \featpref{Rapid Recovery} \\
-        \featref{Stubborn} & Wil 10 & Immune to compulsion effects                & \x & \featpref{Stubborn} \\
+        \featref{Stubborn} & Wil 5 & Immune to Compulsion effects                 & \x & \featpref{Stubborn} \\
         \featref{Swift} & \x & Increase speed by 5 feet                           & Mobility & \featpref{Swift} \\
         \featref{Toughness} & Con 3 or Str 3 & \plus2 to Fortitude defense        & \x & \featpref{Toughness} \\
 
@@ -179,7 +179,7 @@ Some strike feats instead require a specific action to use.
         \featref{Fae Heritage} & \x & Gain minor spell-like abilities & Bloodline & \featpref{Fae Heritage} \\
 
         \midrule
-        \label{cap:Class Feats} \tb{Class Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
+        \tb{Class Feats} \label{cap:Class Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
         \featref{Athletic Rage}         & Rage, barbarian 2                 & Gain bonus to athletic skills while raging & Rage & \featpref{Athletic Rage} \\
         \featref{Arcane Resilience}     & Sorcerer 5                        & Gain damage reduction against arcane spells & \x & \featpref{Arcane Resilience} \\
         \featref{Battlemaster}          & Int 5, fighter 10                 & Grant ally a combat feat & Combat & \featpref{Battlemaster} \\
@@ -771,10 +771,6 @@ If this bonus is not used within 1 round, it is lost.
 In exchange, you take a \minus2 penalty to physical ranged accuracy.
 This bonus increases by \plus1 for each strike you can make per round beyond the first.
 
-\feat{Deathless}{General}
-\featpre Constitution 10.
-\featben You become immune to death effects.
-
 \feat{Defensive Fighting}{Combat, Defense, Style}
 \featben While in this style, you gain a \plus2 bonus to your physical defenses.
 In exchange, you take a \minus2 penalty to your physical accuracy.
@@ -1341,6 +1337,8 @@ You gain a bonus on the check equal to the damage dealt.
 \featpre Intelligence 3 or Willpower 3.
 \featben You gain a \plus2 bonus to your Mental defense.
 This bonus can increase your hit points (see \pcref{Hit Points}).
+\parhead{Special} This feat can be taken multiple times. Its effects stack.
+You may take this feat a maximum number of times equal to half your Intelligence or half your Willpower, whichever is higher.
 
 \feat{Ki Focus}{Class}
 \featpre Manifest \ki ability, monk level 8.
@@ -1661,9 +1659,15 @@ You still suffer the normal penalty with underwater ranged attacks.
 \featben You treat all classes you have at least 5 levels in as base classes.
 This allows you to gain the base class features of multiple classes.
 
+\feat{Lifebound}{General}
+\featpre Constitution 10.
+\featben You become immune to hostile \glossterm{Life} and \glossterm{Death} effects.
+
 \feat{Lightning Reflexes}{General}
 \featpre Dexterity 3 or Perception 3.
 \featben You gain a \plus2 bonus to your Reflex defense.
+\parhead{Special} This feat can be taken multiple times. Its effects stack.
+You may take this feat a maximum number of times equal to half your Dexterity or half your Perception, whichever is higher.
 
 \feat{Magical Synthesis}{Magic}
 Choose two magical classes you possess.
@@ -1691,6 +1695,7 @@ You may still cast only one spell, but it is used to counter the spells cast by 
 \featpres Str 3.
 \featben You gain a \plus1 bonus to physical damage rolls.
 \parhead{Special} This feat can be taken multiple times. Its effects stack.
+You may take this feat a maximum number of times equal to half your Strength.
 
 \feat{Mindless Rage}{Class, Rage}
 \featpre Rage ability, barbarian level 10.
@@ -1824,7 +1829,7 @@ If the weapon leaves your hands or if you cast another spell, the imbuement fade
 A persistent spellstrike spell uses up a spell slot two levels higher than the spell's actual level.
 
 \feat{Pierce Delusions}
-\featpre Perception 10.
+\featpre Perception 5.
 \featben You are immune to hostile \glossterm{Delusion} effects.
 
 \feat{Pierce Wings}{Combat, Precision, Strike}
@@ -2124,8 +2129,8 @@ In addition, if you come within 10 feet of unusual stonework, you can make a Awa
 Finally, you can also intuit depth, sensing your approximate depth underground as naturally as a human can sense which way is up.
 
 \feat{Stubborn}{General}
-\featpre Willpower 10.
-\featben You are immune to hostile compulsion effects.
+\featpre Willpower 5.
+\featben You are immune to hostile \glossterm{Compulsion} effects.
 
 \feat{Suggestive Performance}{Performance, Skill}
 \featpres Perform 10 ranks, Fascinating Performance.
@@ -2200,6 +2205,8 @@ If you detect a trap partway through your movement, you may immediately stop mov
 \featpre Constitution 3 or Strength 3.
 \featben You gain a \plus2 bonus to your Fortitude defense.
 This bonus can increase your hit points (see \pcref{Hit Points}).
+\parhead{Special} This feat can be taken multiple times. Its effects stack.
+You may take this feat a maximum number of times equal to half your Strength or half your Constitution, whichever is higher.
 
 \feat{Track}{Skill}
 \featpre Survival 5 ranks.
@@ -2372,6 +2379,7 @@ You cannot choose simple weapons when you take this feat.
 \featpres Dexterity 3
 \featben You gain a \plus1 bonus to physical damage with light weapons.
 \parhead{Special} This feat can be taken multiple times. Its effects stack.
+You may take this feat a maximum number of times equal to half your Dexterity.
 
 \feat{Weapon Proficiency}{Combat}
 Choose one weapon group.
