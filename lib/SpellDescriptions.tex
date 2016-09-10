@@ -68,7 +68,8 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess \spelldamage{acid}
+                \spellsuccess \spelldamage{acid}.
+                \spellcritical Double damage.
                 \spellfailure Half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -296,6 +297,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
                 \spellsuccess \spelldamage{life}. If the target has no hit points remaining, it immediately dies, and you are transformed to mimic its appearance for 12 hours. This grants you a \plus10 bonus on Disguise checks made to appear as that creature.
+                \spellcritical As above, but double damage.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
             \spelldur \durext; see text
@@ -328,7 +330,7 @@
             \begin{spellattack}{Spellpower vs. Fortitude}
                 \spellsuccess \spelldamage{slashing}. In addition, all physical damage the target takes is doubled for 2 rounds.
                 This does not apply to the initial damage dealt by this spell.
-                \spellcritical As above, except that the doubling of physical damage lasts for thirty days.
+                \spellcritical As above, except that the doubling of physical damage lasts for thirty days, and it applies to the initial damage dealt by the spell.
                 Effects which accelerate natural healing, such as the Heal skill, also reduce the duration of this effect.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
@@ -388,6 +390,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
                 \spellsuccess \spelldamage{life}. If the target has no hit points remaining, it dies.
+                \spellcritical As above, but double damage.
             \end{spellattack}
         \end{spelleffects}
     \end{spellsubcontent}
@@ -715,6 +718,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude defense}
                 \spellsuccess \spelldamage{bludgeoning}. In addition, buffeting winds make the target move at half speed for 2 rounds.
+                \spellcritical As above, but double damage.
                 \spellfailure As above, but half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -886,6 +890,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
                 \spellsuccess \spelldamage{slashing}[d8].
+                \spellcritical Double damage.
                 \spellfailure Half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -908,9 +913,9 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess \spelldamage{divine}[d8].
-                \spellcritical As above, and the target is \staggered for 5 rounds.
-                \spellfailure Half damage.
+                \spellsuccess \spelldamage{divine}[d8], and the target is \staggered for 2 rounds.
+                \spellcritical Double damage, and the target is \nauseated for 1 round instead of staggered.
+                \spellfailure Half damage, and no additional effects.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -1182,9 +1187,9 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess \spelldamage{divine}[d8].
-                \spellcritical As above, and the target is \disoriented for 5 rounds.
-                \spellfailure Half damage.
+                \spellsuccess \spelldamage{divine}[d8], and the target is \disoriented for 2 rounds.
+                \spellcritical Double damage, and the target is \confused for 2 rounds instead of disoriented.
+                \spellfailure Half damage, and no additional effects.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -1284,7 +1289,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
                 \spellsuccess \spelldamage{divine}, and the target is \disoriented for 2 rounds.
-                \spellcritical As above, except that the target is \confused for 5 rounds instead of disoriented.
+                \spellcritical As above, except that the target is \confused for 2 rounds instead of disoriented.
                 \spellfailure Half damage.
             \end{spellattack}
         %\spelldur 5 rounds
@@ -1911,9 +1916,9 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess \spelldamage{divine}[d8].
-                \spellcritical As above, and the target is \slowed for 5 rounds.
-                \spellfailure Half damage.
+                \spellsuccess \spelldamage{divine}[d8], and the target is \immobilized for 2 rounds.
+                \spellcritical As above, except that the target is \stunned for 1 round instead of slowed.
+                \spellfailure Half damage, and no additional effects.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -2101,6 +2106,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
                 \spellsuccess \spelldamage{physical}. If the target has no hit points remaining, it dies. Its body is completely disintegrated, leaving behind only a pinch of fine dust. Its equipment is unaffected.
+                \spellcritical As above, but double damage.
                 \spellfailure As above, but half damage.
             \end{spellattack}
             \spellspecial When used against an object, this spell simply disintegrates as much as one 10-foot cube of nonliving matter. Thus, the spell disintegrates only part of any very large object or structure targeted.
@@ -2277,8 +2283,8 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
                 \spellsuccess \spelldamage{life}. You gain temporary hit points equal to half the damage you deal. You can't gain more hit points than the target had.
-
                 The temporary hit points disappear after 5 rounds. If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
+                \spellcritical As above, but double damage.
                 \spellfailure Half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -2434,6 +2440,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
                 \spellsuccess \spelldamage{piercing}. In addition, the target moves at half speed for 2 rounds.
+                \spellcritical As above, but double damage.
                 \spellfailure As above, but half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -2606,7 +2613,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
                 \spellsuccess \spelldamage{life}. In addition, the target is \partiallyblinded for 2 rounds.
-                \spellcritical As above, except that the target is \blinded for 2 rounds.
+                \spellcritical As above, but double damage and the target is \blinded for 2 rounds instead of partially blinded.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
         \end{spelleffects}
@@ -2779,6 +2786,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
                 \spellsuccess \spelldamage{fire}[d8].
+                \spellcritical Double damage.
                 \spellfailure Half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -2801,6 +2809,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
                 \spellsuccess \spelldamage{fire}[d8].
+                \spellcritical Double damage.
                 \spellfailure Half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -2882,6 +2891,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
                 \spellsuccess \spelldamage{fire and divine}[d8]. Allied creatures take half damage, and all of that damage is fire damage.
+                \spellcritical As above, but double damage.
                 \spellfailure As above, but half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -3226,6 +3236,7 @@
             \spelleffect If the target is undead, it is healed for \spelldamage{}.
             \begin{spellattacktriggered}{If the target is living, make a Spellpower vs. Fortitude attack.}
                 \spellsuccess The target takes \spelldamage{negative}, and is \impaired with attacks and checks for 2 rounds. All damage dealt in excess of the target's hit points is dealt as critical damage.
+                \spellcritical As above, but double damage.
                 \spellfailure As above, but half damage.
             \end{spellattacktriggered}
         \end{spelleffects}
@@ -3275,6 +3286,7 @@
             For every point of healing granted by this spell, it can instead cure 1 point of critical damage.
             \begin{spellattacktriggered}{If the target is undead, make a Spellpower vs. Fortitude attack.}
                 \spellsuccess \spelldamage{positive}.
+                \spellcritical Double damage.
                 \spellfailure Half damage.
             \end{spellattacktriggered}
         \end{spelleffects}
@@ -3346,7 +3358,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
                 \spellsuccess \spelldamage{divine}, and the target is \dazed for 2 rounds.
-                \spellcritical As above, except that the target is \stunned instead of dazed.
+                \spellcritical Double damage, and the target is \stunned instead of dazed.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
         \end{spelleffects}
@@ -3368,8 +3380,8 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess \spelldamage{divine}[d8].
-                \spellcritical As above, and the target is \dazed for 5 rounds.
+                \spellsuccess \spelldamage{divine}[d8], and the target is \dazed for 2 rounds.
+                \spellcritical Double damage, and the target is \stunned for 1 round instead of dazed.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
         \end{spelleffects}
@@ -3393,6 +3405,7 @@
             \begin{spellattack}{Spellpower vs. Fortitude}
                 \spellspecial You gain a \plus5 bonus to accuracy against plants and creatures with the water subtype.
                 \spellsuccess \spelldamage{physical}[d8]
+                \spellcritical Double damage.
                 \spellfailure Half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -3448,6 +3461,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
                 \spellsuccess \spelldamage{cold}, and the target moves at half speed for 5 rounds.
+                \spellcritical As above, but double damage.
                 \spellfailure As above, but half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -3500,6 +3514,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
                 \spellsuccess \spelldamage{fire}. If the target has no hit points remaining, it dies. Its body is completely immolated, leaving behind only a handful of ashes. Its equipment is unaffected.
+                \spellcritical As above, but double damage.
                 \spellfailure As above, but half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -3552,7 +3567,7 @@
             \begin{spellattack}{Spellpower vs. Mental}
                 \spellsuccess \spelldamage{physical}. In addition, the target is \slowed for 5 rounds.
                 \spellfailure As above, but half damage.
-                \spellcritical The target becomes permanently entombed in a state of suspended animation (as the \spell{temporal stasis} spell) in a small sphere far beneath the surface of the earth. It remains there until an \spell{emancipation} spell is cast at the location where the imprisonment took place.
+                \spellcritical Double damage, and the target becomes permanently entombed in a state of suspended animation (as the \spell{temporal stasis} spell) in a small sphere far beneath the surface of the earth. It remains there until an \spell{emancipation} spell is cast at the location where the imprisonment took place.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -3622,6 +3637,7 @@
             \spelleffect If the target is undead, it is healed for \spelldamage{}.
             \begin{spellattacktriggered}{If the target is living, make a Spellpower vs. Fortitude attack.}
                 \spellsuccess \spelldamage{negative}.
+                \spellcritical Double damage.
                 \spellfailure Half damage.
             \end{spellattacktriggered}
         \end{spelleffects}
@@ -3812,6 +3828,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
                 \spellsuccess \spelldamage{electricity}[d8]
+                \spellcritical Double damage.
                 \spellfailure Half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -3839,6 +3856,7 @@
             \spelleffect You throw a willing ally at the target. The ally gains damage reduction against physical damage equal to twice your spellpower for 1 round.
             \begin{spellattack}{Spellpower vs. Reflex}
                 \spellsuccess The target takes \spelldamage{bludgeoning}. The ally takes half this damage.
+                \spellcritical As above, but double damage. This does not increase the damage taken by the ally.
                 \spellfailure The target takes half damage. This does not reduce the damage taken by the ally.
             \end{spellattack}
         \end{spelleffects}
@@ -4161,8 +4179,8 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
                 \spellsuccess \spelldamage{fire}[d8].
-
                 If the target is on the ground, it falls prone. If the target is in the air, and is Gargantuan or smaller, it is driven to the ground. It takes falling damage as appropriate for the distance descended.
+                \spellcritical As above, but double damage.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
         \end{spelleffects}
@@ -4302,7 +4320,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
                 \spellsuccess \spelldamage{divine}, and the target is \slowed for 2 rounds.
-                \spellcritical As above, except that the target is \paralyzed instead of slowed.
+                \spellcritical Double damage, and the target is \stunned for 1 round instead of slowed.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
         \end{spelleffects}
@@ -4349,7 +4367,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
                 \spellsuccess \spelldamage{physical}.
-                \spellcritical If the creature is an outsider native to another plane, it is sent back to its home plane. Otherwise, it takes damage as normal.
+                \spellcritical Double damage, and if the creature is an outsider native to another plane, it is sent back to its home plane.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
         \end{spelleffects}
@@ -4397,6 +4415,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
                 \spellsuccess \spelldamage{cold}. In addition, the target is \slowed for 2 rounds.
+                \spellcritical As above, but double damage.
                 \spellfailure As above, but half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -4537,16 +4556,16 @@
 \end{spellsection}
 \begin{dtable*}
     \lcaption{Prismatic Effects}
-    \begin{dtabularx}{\textwidth}{l >{\lcol}p{3.6em} l >{\lcol}X l}
-        \tb{1d8} & \tb{Color of Beam} & \tb{Defense} & \tb{Success}\fn{1} & \tb{Failure} \\
+    \begin{dtabularx}{\textwidth}{l >{\lcol}p{3.6em} l >{\lcol}X >{\lcol}X l}
+        \tb{1d8} & \tb{Color of Beam} & \tb{Defense} & \tb{Success}\fn{1} & \tb{Critical Success} & \tb{Failure} \\
         \hline
-        1 & Red      & Reflex    & Fire damage and ignited for 2 rounds                       & Half damage, ignited           \\
-        2 & Orange   & Mental    & Frightened by you for 2 rounds                             & Shaken by you for 2 rounds     \\
-        3 & Yellow   & Reflex    & Electricity damage and partially blinded for 2 rounds      & Half damage, partially blinded \\
-        4 & Green    & \x        & Staggered for 2 rounds                                     & \x                             \\
-        5 & Blue     & Fortitude & Cold damage and slowed for 2 rounds                        & Half damage, not slowed        \\
-        6 & Indigo   & \x        & Disoriented for 2 rounds                                   & \x                             \\
-        7 & Violet   & None      & Damage of all energy types (acid, cold, electricity, fire) & \x                             \\
+        1 & Red      & Reflex    & Fire damage and ignited for 2 rounds                       & Double damage, ignited              & Half damage, ignited           \\
+        2 & Orange   & Mental    & Frightened by you for 2 rounds                             & Panicked by you for 2 rounds        & Shaken by you for 2 rounds     \\
+        3 & Yellow   & Reflex    & Electricity damage and partially blinded for 2 rounds      & Double damage, blinded for 2 rounds & Half damage, partially blinded \\
+        4 & Green    & \x        & Staggered for 2 rounds                                     & Staggered for 5 minutes             & \x                             \\
+        5 & Blue     & Fortitude & Cold damage and slowed for 2 rounds                        & Double damage, slowed               & Half damage, not slowed        \\
+        6 & Indigo   & \x        & Disoriented for 2 rounds                                   & Confused for 2 rounds               & \x                             \\
+        7 & Violet   & None      & Damage of all energy types (acid, cold, electricity, fire) & Double damage                       & \x                             \\
         8 & Octarine & \x        & Struck by two beams; roll twice more, ignoring any ``8'' results.
     \end{dtabularx}
     1 See \pcref{Conditions} for a summary of the conditions imposed.
@@ -4962,6 +4981,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
                 \spellsuccess \spelldamage{bludgeoning}[d8]
+                \spellcritical Double damage.
                 \spellfailure Half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -4989,6 +5009,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
                 \spellsuccess For the next 5 rounds, the target takes physical damage equal to your spellpower at the end of each round. This damage ignores the hardness of non-metallic objects.
+                \spellcritical As above, but the target takes double damage each round.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -5012,6 +5033,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
                 \spellsuccess For the next 5 rounds, the target takes physical damage equal to your spellpower at the end of each round. This damage ignores the hardness of non-metallic objects.
+                \spellcritical As above, but the target takes double damage each round.
                 \spellfailure As above, except that the effect lasts for 2 rounds.
             \end{spellattack}
         \end{spelleffects}
@@ -5068,6 +5090,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
                 \spellsuccess \spelldamage{fire}. In addition, the target is \ignited for 2 rounds.
+                \spellcritical As above, but double damage.
                 \spellfailure As above, but half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -5093,6 +5116,7 @@
             \spellspecial You can target any creature that you can unambiguously identify, regardless of its location.
             \begin{spellattack}{Spellpower vs. Mental}
                 \spellsuccess \spelldamage{life}.
+                \spellcritical Double damage.
                 \spellfailure Half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -5119,7 +5143,7 @@
             \begin{spellattack}{Spellpower vs. Reflex}
                 \spellspecial You gain a \plus5 bonus to accuracy against creatures vulnerable to sunlight.
                 \spellsuccess \spelldamage{solar}. In addition, the target is \partiallyblinded for 2 rounds.
-                \spellcritical As above, except that the target is \blinded instead of partially blinded.
+                \spellcritical Double damage, and the target is \blinded instead of partially blinded.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
         \end{spelleffects}
@@ -5167,6 +5191,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Strength or Spellpower vs. Maneuver (shove)}
                 \spellsuccess \spelldamage{bludgeoning}, and the target is \immobilized for 2 rounds.
+                \spellcritical As above, but double damage.
                 \spellfailure As above, but half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -5407,7 +5432,7 @@
             \begin{spellattack}{Spellpower vs. Reflex}
                 \spellspecial You gain a \plus5 bonus to accuracy if the target is wearing metal armor or otherwise has a significant quantity of metal.
                 \spellsuccess \spelldamage{electricity}.
-                \spellcritical The target is \staggered for 5 rounds.
+                \spellcritical Double damage, and the target is \staggered for 5 rounds.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
         \end{spelleffects}
@@ -5596,6 +5621,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
                 \spellsuccess \spelldamage{sonic}[d8].
+                \spellcritical Double damage.
                 \spellfailure Half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -5687,6 +5713,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Armor defense}
                 \spellsuccess \spelldamage{force}[d8]
+                \spellcritical Double damage.
             \end{spellattack}
         \end{spelleffects}
     \end{spellsubcontent}
@@ -5753,6 +5780,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
                 \spellsuccess \spelldamage{bludgeoning}[d8].
+                \spellcritical Double damage.
                 \spellfailure Half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -5775,7 +5803,7 @@
             \begin{spellattack}{Spellpower vs. Fortitude}
                 \spellsuccess \spelldamage{slashing}. In addition, all damage the target takes is doubled for 2 rounds.
                 This does not apply to the initial damage dealt by this spell.
-                \spellcritical As above, except that the doubling of damage lasts for thirty days.
+                \spellcritical As above, except that the doubling of damage lasts for thirty days, and applies to the initial damage dealt by this spell.
                 Effects which accelerate natural healing, such as the Heal skill, also reduce the duration of this effect.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
@@ -5983,7 +6011,7 @@
             \begin{spellattack}{Spellpower vs. Reflex}
                 \spellspecial You gain a \plus5 bonus to accuracy against creatures vulnerable to sunlight.
                 \spellsuccess \spelldamage{solar}[d8]. In addition, the target is \partiallyblinded for 2 rounds.
-                \spellcritical As above, except that the target is \blinded instead of partially blinded.
+                \spellcritical Double damage, and the target is \blinded instead of partially blinded.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
         \end{spelleffects}
@@ -6008,7 +6036,7 @@
             \begin{spellattack}{Spellpower vs. Reflex}
                 \spellspecial You gain a \plus5 bonus to accuracy against creatures vulnerable to sunlight.
                 \spellsuccess \spelldamage{solar}[d8]. In addition, the target is \partiallyblinded for 2 rounds.
-                \spellcritical As above, except that the target is \blinded instead of partially blinded.
+                \spellcritical Double damage, and the target is \blinded instead of partially blinded.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
         \end{spelleffects}
@@ -6030,9 +6058,7 @@
             \spelltgts{All enemies in the area}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Fortitude}
-                \spellsuccess The target is \impaired with vision-related attacks and checks for 2 rounds.
-            \end{spellattack}
+            \spelleffect The target is \impaired with vision-related attacks and checks for 2 rounds.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -6062,6 +6088,7 @@
                 \spellsuccess \spelldamage{bludgeoning}[d8].
                 In addition, the target is forcibly moved away from you to the edge of the area.
                 If it encounters an occupied space or other obstacle, it stops at the obstacle.
+                \spellcritical As above, but double damage.
                 \spellfailure Half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -6275,7 +6302,7 @@
             \spellspecial If the target is not made of flesh (such as a golem), it is unaffected.
             \begin{spellattack}{Spellpower vs. Fortitude}
                 \spellsuccess \spelldamage{physical}. For the next 5 rounds, if the target has no hit points remaining at the end of the round, it becomes \petrified along with its equipment.
-                \spellcritical The target is immediately \petrified along with its equipment.
+                \spellcritical Double damage, and the target is immediately \petrified along with its equipment.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
         \end{spelleffects}
@@ -6420,7 +6447,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
                 \spellsuccess \spelldamage{divine}, and the target is \staggered for 2 rounds.
-                \spellcritical As above, except that the target is \nauseated instead of staggered.
+                \spellcritical Double damage, and the target is \nauseated for 1 round instead of staggered.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
         \end{spelleffects}
@@ -6511,6 +6538,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
                 \spellsuccess \spelldamage{sonic}[d8]. If the target is living and has no hit points remaining, it dies.
+                \spellcritical As above, but double damage.
                 \spellfailure As above, but half damage.
             \end{spellattack}
         \end{spelleffects}
