@@ -163,16 +163,16 @@ A character's skills describe the myriad of talents that people have.
                 \begin{dtabularx}{\columnwidth}{*{3}{>{\lcol}X}}
                     \tb{Task} & \tb{Skill (Key Ability)} & \tb{Opposing Skill (Key Ability)} \\
                     \hline
-                    Lie & Bluff (Cha) & Social Insight (Wis) \\
-                    Create a forged artwork & Craft (Int) & Craft (Int) or Awareness (Wis) \\
+                    Lie & Bluff (\x) & Social Insight (Per) \\
+                    Create a forged artwork & Craft (Int) & Craft (Int) or Awareness (Per) \\
                     Create a false map & Craft (Int) & Craft (Int) or Knowledge (geography) \\
-                    Make a bully back down & Intimidate (Cha) & Special\fn{1} \\
-                    Make someone look like someone else & Disguise (Int) & Awareness (Wis) \\
-                    Sneak up on someone & Stealth (Dex) & Awareness (Wis) \\
-                    Steal a coin pouch & Sleight of Hand (Dex) & Awareness (Wis) \\
+                    Make a bully back down & Intimidate (varies) & Special\fn{1} \\
+                    Make someone look like someone else & Disguise (Int) & Awareness (Per) \\
+                    Sneak up on someone & Stealth (Dex) & Awareness (Per) \\
+                    Steal a coin pouch & Sleight of Hand (Dex) & Awareness (Per) \\
                     Tie a prisoner securely & Devices (Int)\fn{2} & Escape Artist (Dex) \\
                 \end{dtabularx}
-                1 An Intimidate check is opposed by the target's Mental defense, not a skill check. See the Intimidate skill description for more information. \\
+                1 An Intimidate check can be opposed by the target's Mental defense, not a skill check. See the Intimidate skill description for more information. \\
                 2 You can also tie a prisoner with a grapple attack. See \pcref{Grapple}. \\
             \end{dtable}
 
@@ -222,7 +222,7 @@ A character's skills describe the myriad of talents that people have.
     If the result is high enough to succeed at a task, you succeed without needing to take an action.
     For example, you don't need to take an action to notice the floor you're standing on.
 
-    \skill{Awareness}{Wis}
+    \skill{Awareness}{Per}
     Awareness represents your ability to observe things which you might otherwise fail to notice. It can be used to spot concealed things, to correctly identify sounds, or to smell the distinctive rotting flesh smell that accompanies undead.
 
     Each creature has a variety of senses. The Awareness skill governs the use of every sense. It is most commonly used with sight, hearing, and smell, though other uses are possible. Often, bonuses or penalties will apply only to certain senses. For example, it is extremely difficult to see when there is no light, but that has no effect on how difficult it is for you to hear sounds. In such cases, you only roll one Awareness check, and you apply the modifiers separately for each sense.
@@ -390,7 +390,7 @@ A character's skills describe the myriad of talents that people have.
     \subsection{Agile Charge}
         As a free action, you can make a DR 20 Balance check while charging to make a single turn of up to 90 degrees in the middle of the movement. Success means you make the turn. Failure means you can't change direction, though you can continue your movement or stop. Critical failure means you stop where you tried to change direction and fall prone.
 
-    \skill{Bluff}{Cha}
+    \skill{Bluff}{\x}
         Bluff represents your ability to mislead people with your words. It is usually used when you are lying. Using a Bluff check is part of conversation or other actions, so it requires no special action to perform.
 
     \subsection{Blend In}
@@ -730,7 +730,7 @@ A character's skills describe the myriad of talents that people have.
     \subsection{Treat Wound}
         As a standard action, you can make a Heal check to treat some specific wounds, such as from a caltrop. Success usually means the wound is gone, as indicated by the effect's description.
 
-    \skill{Intimidate}{Cha}
+    \skill{Intimidate}{Varies}
         You can use Intimidate to intimidate people.
 
         \parhead{Check Modifiers}
@@ -739,6 +739,11 @@ A character's skills describe the myriad of talents that people have.
         \parhead{Fear}
         All uses of the Intimidate skill are a Fear effect.
         Creatures immune to fear, such as mindless creatures, can't be intimidated.
+
+        \parhead{Choosing an Attribute}
+        Depending on how you are trying to indimidate creatures, you can use any attribute as a key attribute for Intimidate.
+        For example, if you intimidate a creature by smashing a table and threatening to smash its head in, you can use Strength to make the Intimidate check.
+        On the other hand, if you intimidate a creature by staring it down in a cold fury, you can use Willpower to make the Intimidate check.
 
     \subsection{Coercion}
         You can make an Intimidate check to convince a creature to do what you want. This functions like a Persuasion check to form an agreement with a group, except that you do not apply a relationship modifier. In addition, the DR is up to 10 lower if the group thinks your group is significantly stronger than them, or up to 10 higher if the group thinks your group is significantly weaker.
@@ -880,7 +885,7 @@ A character's skills describe the myriad of talents that people have.
             \end{dtabularx}
         \end{dtable}
 
-    \skill{Perform}{Cha}
+    \skill{Perform}{Varies}
         \par Like Craft, Knowledge, and Profession, Perform is actually a number of separate skills. You could have several Perform skills, each with its own ranks, each purchased as a separate skill.
 
         Each of the nine categories of the Perform skill includes a variety of methods, instruments, or techniques, a small list of which is provided for each category below.
@@ -895,6 +900,9 @@ A character's skills describe the myriad of talents that people have.
             \item Wind instruments (flute, pan pipes, recorder, shawm, trumpet)
             \item Sing (ballad, chant, melody)
         \end{itemize}
+
+        \parhead{Choosing an Attribute}
+        Depending on how you are trying to perform, you can use any attribute as a key attribute for Perform.
 
     \subsection{Entertain}
         You can make a Perform check to provide entertainment or to show off your skills.
@@ -984,13 +992,17 @@ A character's skills describe the myriad of talents that people have.
 
         If you want to find out about a specific rumor, or a specific item, or obtain a map, or do something else along those lines, the DR for the check is 15 to 25, or even higher.
 
-    \skill{Profession}{Wis}
+    \skill{Profession}{Varies}
         Like Craft, Knowledge, and Perform, Profession is actually a number of separate skills. You could have several Profession skills, each with its own ranks, each purchased as a separate skill. While a Craft skill represents ability in creating or making an item, a Profession skill represents an aptitude in a vocation requiring a broader range of less specific knowledge. Most commoners have some training in a Profession skill.
 
         Profession is always treated as a class skill, regardless of your classes.
 
+        \parhead{Choosing an Attribute}
+        Depending on your profession, you can use any attribute as a key attribute for Profession.
+
     \subsection{Appraise Item}
         You can make a Profession check to estimate the value of an item with 1 minute of careful study. The Profession skill used must be related to the item.
+        This check is always Intelligence-based, regardless of your profession.
 
         The DR depends on the rarity of the item. Common items, such as nonmagical equipment and utensils, are DR 10. Rare items, such as valuable gems and magic items worth less than 100,000 gp, are DR 20. Extraordinarily rare items, such as unique gems and magic items worth at least 100,000 gp, are DR 30.
 
@@ -1031,7 +1043,7 @@ A character's skills describe the myriad of talents that people have.
     \subsection{Ride Modifiers}\label{Ride Modifiers}
         If a mount lacks a saddle and other riding gear, the DR to ride it increases by 5. If a mount takes a standard action other than movement, such as attacking, the DR to ride it that round increases by 5. If a mount is not trained as a mount, the DR to ride it increases by 10.
 
-    \skill{Social Insight}{Wis}
+    \skill{Social Insight}{Per}
         Social Insight represents your ability to read body language and emotion.
 
     \subsection{Discern Enchantment [Passive]}
@@ -1095,7 +1107,7 @@ A character's skills describe the myriad of talents that people have.
     \subsection{Pickpocket}
         You can make a Sleight of Hand check as a standard action to steal an object from another creature. The object must be loose and accessible, such as in a pocket. The DR depends on whether the creature notices your attempt using Awareness. If the creature's Awareness check exceeds your Sleight of Hand check, the creature notices your attempt and the DR is equal to the creature's Combat Maneuver Defense. Otherwise, the creature does not notice your attempt, and the DR is 20. Success means you successfully steal the object. Failure means you do not steal the object.
 
-    \skill{Spellcraft}{Wis}
+    \skill{Spellcraft}{Per}
         Spellcraft represents your ability to notice and understand spells and magical effects.
 
         While sleeping, you take a \minus10 penalty to Spellcraft.
@@ -1172,7 +1184,7 @@ A character's skills describe the myriad of talents that people have.
 
         \parhead{Passive Hiding} In unusual circumstances, such as when dealing with invisible or very small creatures, it may be difficult to detect a creature that is making no effort to conceal itself. When not hiding, creatures are treated to have rolled a 0 on a Stealth check to hide. That result is then modified normally using the creature's size modifier, ranks, and so on.
 
-    \skill{Survival}{Wis}
+    \skill{Survival}{Per}
         Survival represents your ability to take care of yourself and others in the wilderness, as well as your mastery of various survival-related tasks.
 
     \subsection{Navigate Wilderness}
