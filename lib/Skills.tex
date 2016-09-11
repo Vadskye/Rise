@@ -151,6 +151,8 @@ A character's skills describe the myriad of talents that people have.
     \subsection{Trying Again}
         In general, you can try a skill check again if you fail, and you can keep trying indefinitely. Some skills, however, have consequences of failure that must be taken into account. A few skills are virtually useless once a check has failed on an attempt to accomplish a particular task. For most skills, when a character has succeeded once at a given task, additional successes are meaningless.
 
+        Skills that require a free action to use can never be used more than once for the same purpose within a round. For example, if you fail to notice a creature sneaking up on you, you can't keep making Awareness checks as a free action until you notice. You could try again in the next round, however.
+
     \subsection{Special Skill Checks}
 
         \subsubsection{Opposed Checks}
@@ -210,6 +212,16 @@ A character's skills describe the myriad of talents that people have.
     These skill uses are simply examples of what the skill can be used to do, and do not list everything that the feat can be used to do.
     You should be creative with your skills, rather than only using abilities listed here.
 
+    \subsection{Using Skills Passively}\label{Using Skills Passively}
+    Some uses for skills can be done passively, without requiring an action.
+    These skill uses are noted with a [Passive] tag in the name of the skill use.
+    Most passive skill uses are related to perception or movement.
+
+    At all times, you are considered to be ``taking 0'' for the purpose of passive skill uses.
+    Treat your check modifier as your check result.
+    If the result is high enough to succeed at a task, you succeed without needing to take an action.
+    For example, you don't need to take an action to notice the floor you're standing on.
+
     \skill{Awareness}{Wis}
     Awareness represents your ability to observe things which you might otherwise fail to notice. It can be used to spot concealed things, to correctly identify sounds, or to smell the distinctive rotting flesh smell that accompanies undead.
 
@@ -217,39 +229,38 @@ A character's skills describe the myriad of talents that people have.
 
     While sleeping, you take a \minus10 penalty to Awareness.
 
-    \subsection{Passive and Active Attention}\label{Awareness-Passive and Active Attention}
-        You automatically notice some things about your environment, even when you're distracted or focusing on other tasks (such as combat). At all times, you are considered to be ``taking 0'' on a Awareness check, allowing you to notice anything with a DR up to your Awareness modifier, including all applicable bonuses and penalties.
+    \parhead{Passive and Active Attention}\label{Awareness-Passive and Active Attention}
+    Most Awareness skill uses can be done passively (see \pcref{Using Skills Passively}).
+    You can make a conscious effort to pay attention to events around you. This allows you to make Awareness checks to notice events, rather than simply using your modifier, without spending an action. This is tiring to do over long periods of time: if the number of hours you have spent being actively attentive exceeds your Constitution (minimum 0), you become \fatigued.
 
-        You can make a conscious effort to pay attention to events around you. This allows you to make Awareness checks to notice events, rather than simply using your modifier. This is tiring to do over long periods of time: if the number of hours you have spent being actively attentive exceeds your Constitution (minimum 0), you become fatigued.
+        In most combat situations, characters are always paying active attention, and should make Awareness checks to notice events rather than using their passive modifier.
 
-    \subsection{Discern Illusion}
-        You can notice inconsistencies in illusion spells. The DR is specified in the description of the spell or effect, but is usually equal to 10 \add the effect's spellpower. Success means you recognize the effect as an illusion. Failure means you don't notice anything amiss. Critical failure may cause you to believe real objects or creatures are illusory.
+    \subsection{Discern Illusion [Passive]}
+        As a free action, you can notice inconsistencies in illusion spells. The DR is specified in the description of the spell or effect, but is usually equal to 10 \add the effect's spellpower. Success means you recognize the effect as an illusion. Failure means you don't notice anything amiss. Critical failure may cause you to believe real objects or creatures are illusory.
 
         If the illusion is completely missing a sense that should logically be present, such as a \spell{silent image} of people in armor, the DR to interact with the illusion with that sense is lowered by 10.
 
-    \subsection{Identify Disguise}
-        You can identify disguises on other creatures. The DR is equal to the Disguise check result used to create the disguise. Success means you know that the creature is disguised. Critical success means you can also discern the creature's true appearance beneath the disguise. After making a check to identify a disguise on a particular creature, you cannot make another check to identify the same disguise on that creature for one hour.
+    \subsection{Identify Disguise [Passive]}
+        As a free action, you can make an Awarness check to identify a disguise on another creature. The DR is equal to the Disguise check result used to create the disguise. Success means you know that the creature is disguised. Critical success means you can also discern the creature's true appearance beneath the disguise. After making a check to identify a disguise on a particular creature, you cannot make another check to identify the same disguise on that creature for one hour.
 
     \subsection{Identify Forgery}
-        You can identify forgeries. The DR to identify a forgery is equal to the Craft check result used to make the item. Success means you correctly identify whether the item is a forgery or not. Failure means you are unsure. Critical failure means you incorrectly identify the item, concluding that a forgery is genuine or a genuine item is a forgery. The check is made secretly, so you can't be sure how good the result is.
+        As a standard action, you can identify forgeries. The DR to identify a forgery is equal to the Craft check result used to make the item. Success means you correctly identify whether the item is a forgery or not. Failure means you are unsure. Critical failure means you incorrectly identify the item, concluding that a forgery is genuine or a genuine item is a forgery. The check is made secretly, so you can't be sure how good the result is.
 
-    \subsection{Notice Creatures and Events}
-        You can notice creatures and events around you. The DR depends on the sense used and the obviousness of the event, as described on tables below. Success means you notice something, but you don't know any details -- only its general direction. For every 5 points by which you beat the DR, you learn an additional piece of information, such as what caused the event or the location of the creature. Failure means you don't notice anything.
+    \subsection{Notice Creatures and Events [Passive]}
+        As a free action, you can notice creatures and events around you. The DR depends on the sense used and the obviousness of the event, as described on tables below. Success means you notice something, but you don't know any details -- only its general direction. For every 5 points by which you beat the DR, you learn an additional piece of information, such as what caused the event or the location of the creature. Failure means you don't notice anything.
 
         This can be used to determine the precise location of a creature or object, even if you can't see it. The DR to identify the location is equal to the DR to notice the creature or object using the appropriate sense \add 5 (since you need to learn an additional piece of information).
 
-    \subsection{Read Lips}
-        You can make a DR 15 sight-based Awareness check to read a creature's lips. You must be able to understand the language spoken. Success means you can understand the general content of the message, but not the exact words. Critical success means you understand the exact words. Failure means you don't understand the message. Critical failure means you draw an incorrect conclusion about the message.
+    \subsection{Read Lips [Passive]}
+        As a free action, you can make a DR 15 sight-based Awareness check to read a creature's lips. You must be able to understand the language spoken. Success means you can understand the general content of the message, but not the exact words. Critical success means you understand the exact words. Failure means you don't understand the message. Critical failure means you draw an incorrect conclusion about the message.
 
     \subsection{Search}\label{Search}
-        You can spend a full-round action to make a Awareness check to notice things in a single 5-ft. square within 10 feet of you.
+        As a standard action, you can make a Awareness check to notice things in a single 5-ft. square within 10 feet of you.
         If you do, you gain a \plus10 bonus to the check.
 
     \subsection{Senses}
 
         \parhead{Sight} The DR to see something depends on the obviousness of the sight, as shown on \trefnp{Sight-based DRs}, and other modifiers given at \trefnp{Awareness DR Modifiers}.
-
-        The DR to notice an invisible creature with sight is 20 higher than normal. Noticing an invisible creature makes you aware of its presence, but doesn't let you see it perfectly.
 
         \begin{dtable}
             \lcaption{Sight-based DRs}
@@ -350,9 +361,9 @@ A character's skills describe the myriad of talents that people have.
     \skill{Balance}{Dex}
         Balance represents your physical steadiness and poise. All Balance checks are made as part of movement, so they require no special action to perform.
 
-    \subsection{Balancing on Difficult Surfaces}
+    \subsection{Balance}
 
-        When you are on a slippery or narrow surface, you must make a Balance check to move. Success means you move along the surface at half speed. Failure means your action is wasted, and you do not move. Critical failure means you fall off the edge. If you take a \minus5 penalty, you can move at full speed while balancing.
+        When you are on a slippery or narrow surface, you must make a Balance check to move. Success means you move along the surface at half speed. Critical success means you move along the surface at full speed. Failure means your action is wasted, and you do not move. Critical failure means you fall off the edge.
 
         In addition, if you take damage while on a slippery or narrow surface, you must make a Balance check to avoid falling.
 
@@ -376,8 +387,8 @@ A character's skills describe the myriad of talents that people have.
             \end{dtabularx}
         \end{dtable}
 
-    \subsection{Agile Movement}
-        You can make a DR 20 Balance check while charging to make a single turn of up to 90 degrees in the middle of the movement. Failure means you can't change direction, though you can continue your movement or stop. Critical failure means you stop where you tried to change direction and fall prone.
+    \subsection{Agile Charge}
+        As a free action, you can make a DR 20 Balance check while charging to make a single turn of up to 90 degrees in the middle of the movement. Success means you make the turn. Failure means you can't change direction, though you can continue your movement or stop. Critical failure means you stop where you tried to change direction and fall prone.
 
     \skill{Bluff}{Cha}
         Bluff represents your ability to mislead people with your words. It is usually used when you are lying. Using a Bluff check is part of conversation or other actions, so it requires no special action to perform.
@@ -385,32 +396,29 @@ A character's skills describe the myriad of talents that people have.
     \subsection{Blend In}
         You can make a Bluff check to blend in with a crowd. Your Bluff check is opposed by the Awareness checks of anyone looking for you. Success means you remain unobserved. Failure means the person looking for you found you.
 
-        If you act differently from the crowd you are trying to blend in with, anyone observing you gets a \plus5 bonus to find you. You may need to make Awareness or Sense Motive checks to figure out how to act, depending on the situation. If you are extremely dissimilar from the crowd, such as a naked person in church or a human among halflings, anyone observing you may gain a \plus10 or greater bonus to find you.
+        If you act differently from the crowd you are trying to blend in with, anyone observing you gets a \plus5 bonus to find you. You may need to make Awareness or Sense Motive checks to figure out how to act, depending on the situation. If you are extremely dissimilar from the crowd, such as a naked person in a temple or a human among halflings, anyone observing you may gain a \plus10 or greater bonus to find you.
 
     \subsection{Distract}
-        You can make a Bluff check to distract a creature or group of creatures you are talking with. Your Bluff check is opposed by your target's Sense Motive check. Success means it takes a \minus10 penalty to Awareness checks for 1 round, as you distract them. Failure means they take no penalty. Critical failure means it realizes you were trying to distract it.
+        As a standard action, you can make a Bluff check to distract a creature or group of creatures you are talking with. Your Bluff check is opposed by your target's Sense Motive check. Success means they take a \minus10 penalty to Awareness and Sense Motive checks against targets other than you for 1 round. Failure means they take no penalty. Critical failure means they realize you were trying to distract them.
 
-        If you successfully distract a creature, you can attempt to hide from that creature as if you were not being observed.
-
-    \subsection{False Impression}
-        You can make a DR 15 Bluff check give others an incorrect impression of your attitude and thoughts. If you succeed, anyone who makes a DR 10 Sense Motive check receives whatever impression you wish to portray. If the creature's Sense Motive check exceeds your Bluff check, they recognize both the impression you intended to portray and your true attitude, and they can tell the difference.
+        If you successfully distract a creature, you can attempt to hide from that creature as if you were not being observed (see \pcref{Stealth}, for details).
 
     \subsection{Lie}
-        When you say something which you know is untrue, you can make a Bluff check to avoid revealing your deception. Anyone witnessing you lie can make a Sense Motive check. If a creature's Sense Motive check exceeds your Bluff check, they realize that you are lying.
+        As a free action, when you say something which you know is untrue, you can make a Bluff check to avoid revealing your deception. Anyone witnessing you lie can oppose your check with a Sense Motive check. If you succeed, they do not realize you are lying. If they succeed, they realize that you are lying.
 
-        A creature that fails its Sense Motive check may choose not to believe you for other reasons. This check only prevents a creature from recognizing the lie based on your body language and behavior.
+        A creature that fails its Sense Motive check may choose not to believe you for other reasons. This check only prevents a creature from recognizing the lie based on your body language and behavior. To convince creatures to believe lies, you need the Persuasion skill (see \pcref{Compel Belief}).
 
     \subsection{Secret Message}
-        You can make a Bluff check to attempt to convey a hidden message to another character without others understanding it. The DR is 15 for simple messages and 20 for complex messages. If the message contains completely new information, the DR increases by 5. You can freely increase the DR to make the message more difficult to intercept, but doing so also makes it more difficult for the intended recipient to interpret.
+        As part of normal speech, you can make a Bluff check to attempt to convey a hidden message to another character without others understanding it using codes, metaphors, and similar misdirection tools. The DR is 20 for simple messages and 30 for complex messages. If the message contains completely new information, the DR increases by 5. You can freely increase the DR to make the message more difficult to intercept, but doing so also makes it more difficult for the intended recipient to interpret.
 
-        Anyone witnessing the exchange must make a Sense Motive check against the same DR to identify the hidden message. Creatures who know how the message will be conveyed -- normally, the intended recipient -- receive a \plus10 bonus on this check. Exceptionally conplex hidden message systems may grant a bonus greater than \plus10.
+        Anyone witnessing the exchange may make a Sense Motive check against the same DR to identify the hidden message. Creatures who know in advance that the message will be conveyed -- normally, the intended recipient -- receive a \plus10 bonus on this check. Creatures who know your system for conveying hidden messages also receive a \plus10 bonus.
 
     \skill{Climb}{Str}
 
     \subsection{Climb}
-        You can make a Climb check as a move action to move up, down, or across a slope, a wall, or some other steep incline (or even a ceiling with handholds). Success means you move a number of feet equal to the size of your space, as described on \trefnp{Climb Speeds}. Failure means your action is wasted and you do not move. Critical failure means you fall.
+        You can make a Climb check as a move action to move up, down, or across a slope, a wall, or some other steep incline (or even a ceiling with handholds). Success means you move a number of feet equal to the size of your space, as described on \trefnp{Climb Speeds}. Critical success means you move at twice that speed. Failure means your action is wasted and you do not move. Critical failure means you fall.
 
-        You need both hands free to climb, but you may cling to a wall with one hand while you cast a spell or take some other action that requires only one hand. If you take damage while climbing, you must make another Climb check against the same DR to avoid falling. If you take a \minus5 penalty, you can move at double speed while climbing. Creatures with a climb speed cannot accelerate their movement in this way.
+        You need both hands free to climb, but you may cling to a wall with one hand while you cast a spell or take some other action that requires only one hand.
 
         \begin{dtable}
             \lcaption{Climb Speeds}
@@ -425,7 +433,7 @@ A character's skills describe the myriad of talents that people have.
             \end{dtabularx}
         \end{dtable}
 
-        The DR of the check depends on the difficulty of the task and the conditions of the climbing surface, as shown on \trefnp{Climb DRs} and \trefnp{Climb Modifiers}.
+        The DR of the check depends on the difficulty of the task and the conditions of the climbing surface, as shown on \trefnp{Climb DRs} and \trefnp{Climb DR Modifiers}.
 
         \begin{dtable*}
             \lcaption{Climb DRs}
@@ -445,31 +453,32 @@ A character's skills describe the myriad of talents that people have.
         \end{dtable*}
 
         \begin{dtable}
-            \lcaption{Climb Modifiers}
+            \lcaption{Climb DR Modifiers}
             \begin{dtabularx}{\columnwidth}{l X}
-                \tb{Climb DR Modifier\fn{1}} & \tb{Example Surface or Activity} \\
+                \tb{DR Modifier\fn{1}} & \tb{Description} \\
                 \hline
                 \minus10 & Climbing a chimney (artificial or natural) or other location where you can brace against two opposite walls \\
                 \minus5 & Inclined surface (between 45 and 60 degrees) \\
                 \minus5 & Climbing a corner where you can brace against perpendicular walls \\
                 \plus2 & Surface is slightly slippery, such as damp stone \\
-                \plus5 & Surface is very slippery, such as ice or oil-covered stone
+                \plus5 & Surface is very slippery, such as ice or oil-covered stone \\
             \end{dtabularx}
             1 These modifiers are cumulative with modifiers of different kinds. Use any that apply (but not if one modifier is just a more extreme version of another).
         \end{dtable}
 
-    \subsection{Catch Falling Character}
-        While climbing, you can attempt to catch another character who is falling near you. To do so, you must make a successful grapple attack against the falling character. Most falling characters will choose to be helpless against this attack. If you succeed, you must make a Climb check against a DR equal to the wall's DR \add 10. Success means you catch the falling character, but his or her total weight, including equipment, cannot exceed your heavy load limit or you automatically fall. Failure means you do not stop the character's fall but don't lose your grip on the wall. Critical failure you fail to stop the character's fall and begin falling as well.
+        \parhead{Climbing Distractions}
+        If you take damage while climbing, suddenly acquire significantly more weight (such as by catching a falling character), or otherwise are significantly distracted, you must make another Climb check against the wall's DR to avoid falling.
+
+        \parhead{Climb Speed}\label{Climb Speed}
+            A creature with a climb speed can move a distance equal to its climb speed with a successful Climb check.
+            However, it does not move double its speed if it gets a critical success on a Climb check.
+            In addition, it gains a \plus10 bonus to all Climb checks.
 
     \subsection{Stop Fall}
         It is possible, but very difficult, to make a Climb check to stop yourself from falling when near a wall. To catch yourself while falling, make a Climb check against a DR equal to the wall's DR \add 20.
 
-    \subsection{Climb Speed}\label{Climb Speed}
-        A creature with a climb speed can move a distance equal to its climb speed with a successful Climb check.
-        It has a \plus10 bonus on all Climb checks.
-
     \subsection{Wallrun}
-        You can attempt to run along a wall rather than climbing it normally. This does not require free hands. Success means you move up to half your land speed horizontally, or up to a quarter of your land speed vertically. Failure means you fall. Critical failure means you are prone when you land. For every round you spend running on a wall, the DR increases by 10.
+        As part of movement, you can make a Climb check to run along a wall rather than climbing it. The DR is 10 higher than normal for the wall, but this does not require free hands. Success means you move up to half your land speed horizontally, or up to a quarter of your land speed vertically. Failure means you fall. Critical failure means you are prone when you land. For every round you spend running on a wall, the DR increases by 10.
 
         Wallrunning on a ceiling is impossible.
 
@@ -555,7 +564,7 @@ A character's skills describe the myriad of talents that people have.
         Forgeries which have a function, such as a weapon, are always defective in some way which makes them unsuitable for use. A forgery can be detected with the Identify Forgery uses of the Craft and Awareness skills.
 
     \subsection{Identify Forgery}
-        You can make a Craft check as a full-round action to evaluate whether an item is a forgery. The DR to identify a forgery is equal to the Craft check used to make the item. Success means you correctly identify whether the item is a forgery or not. Failure means you are unsure. Failure by more than 10 means you identify the item as genuine. The check is made secretly, so you can't be sure how good the result is.
+        As a standard action, you can make a Craft check to evaluate whether an item is a forgery. The DR to identify a forgery is equal to the Craft check used to make the item. Success means you correctly identify whether the item is a forgery or not. Failure means you are unsure. Failure by more than 10 means you randomly identify the item as genuine or forged. The check is made secretly, so you can't be sure how good the result is.
 
     \subsection{Repair Item}
         You can make a Craft check to repair a broken item. This functions like crafting the item from scratch, except that you use one-tenth of the item's price to determine the price of raw materials and the crafting time.
@@ -571,7 +580,7 @@ A character's skills describe the myriad of talents that people have.
     \subsection{Handling Creatures}
         You can use Creature Handling to control a creature's actions. Success means it does what you want on its next action. Failure means your action is wasted, and the creature does not listen to you. Exceptional failure may make the creature hostile, depending on the circumstances.
         \parhead{Pacify} As a standard action, you can make a Creature Handling check against a creature. Your check is opposed by its Mental defense. If you succeed, the creature does nothing for 5 rounds. You take a \minus10 penalty to accuracy on this attack against actively hostile creatures. If the creature is threatened or damaged, this effect is automatically broken. If you interfere with an action the creature is trained to perform while it is pacified, such as entering a room it is trained to guard, you must make another check against it. If you fail or do not attempt the check, the effect is automatically broken. You can attempt to pacify a creature as a swift action by taking a \minus10 penalty on the check.
-        \parhead{Perform Trained Action} As a swift action, you can make a DR 10 check to convince a creature to perform an action it is trained to perform. Generally, wild animals are not trained in any actions, so this is not effective on them.
+        \parhead{Perform Trained Action} As a free action, you can make a DR 10 check to convince a creature to perform an action it is trained to perform. Generally, wild animals are not trained in any actions, so this is not effective on them.
         \parhead{Push} As a standard action, you can make a DR 25 check to convince a willing creature to perform an action it is not trained to perform, but which it is physically capable of performing. This also covers making a creature perform a forced march and similar activities. You can attempt to push a creature as a swift action by taking a \minus10 penalty on the check.
 
     \subsection{Training Creatures}
@@ -613,32 +622,32 @@ A character's skills describe the myriad of talents that people have.
             \end{dtabularx}
         \end{dtable}
 
+    \parhead{Special Circumstances}
+
+        You can attempt to leave no trace of your tampering while making a Devices check to activate or subvert a device. This increases the Devices DR by 5, but increases the Awareness DR to notice the tampering by 10.
+
     \subsection{Activate Device}
         As a standard action, you can make a Devices check to make a device perform a function it was designed to do, even if you lack the normal requirements. For example, you could tie a knot, apply a poison, lock or unlock a lock without its key, or activate a trap without using its normal triggering mechanism (hopefully without being in its line of fire).
 
     \subsection{Analyze Device}
         As a standard action, you can evaluate a device to understand how it functions. The DR is 10 lower than normal. Success grants you an insight into the device's mechanisms. For every 5 points by which you succeed, you glean additional information about the device, which can also help you estimate the device's true difficulty. Failure means you learn nothing about the device.
 
-    \subsection{Create Bindings}
-        As a standard action, you can make a Devices check to tie a knot or create a binding. You can also take a full-round action to bind a helpless foe in rope or similar material. Your check result is equal to the DR to escape the binding.
-
     \subsection{Break Device}
         As a standard action, you can make a Devices check to break a device. The DR is 5 lower than normal. This is generally not subtle, such as jamming a lock or breaking a trap while triggering it in the process. It cannot change the state of a device, but you can prevent it from being used normally; a locked door will remain locked, but you can prevent it from being unlocked with its key. Failure means the device continues to function. Critical failure may cause you to think that you successfully broke the device, while in fact it functions normally.
+
+    \subsection{Create Bindings}
+        As a standard action, you can make a Devices check to tie a knot or create a binding, including binding a helpless foe. The DR to escape the binding is equal to your check result.
 
     \subsection{Subvert Device}
         As a standard action, you can make a Devices check to subvert the normal functionality of a device. The DR is 5 higher than normal. This could allow you to sabotage a hinge or lock so it breaks once it is used, disable a trap without triggering it, or disable a lock so it is perpetually closed or open. Failure means you were unsuccessful, and your action was wasted. Critical failure means you break the device immediately, think you sabotaged the device when you did not, or activate the trap, depending on the circumstances.
 
         Once you have disabled a device, you can attempt to recover it for later use if you can carry it. This requires a separate Devices check to subvert the device. The DR is 5 higher than normal, as usual for a check to subvert a device.
 
-    \subsection{Special Circumstances}
-
-        You can attempt to leave no trace of your tampering while making a Devices check to activate or subvert a device. This increases the Devices DR by 5, but increases the Awareness DR to notice the tampering by 10.
-
     \skill{Disguise}{Int}
         Disguise represents your ability to create disguises to conceal the appearance of creatures or objects. This skill does not help you act appropriately while disguised; see Perform (acting) and Bluff.
 
     \subsection{Conceal Object}
-        You can make a Disguise check as a standard action to conceal an item on your person. The object must be at least two size categories smaller than you are. Your Disguise check is opposed by the Awareness check of anyone observing you. Success means they fail to notice the item. A creature directly interacting you to search for the object, such as by frisking you, gains a \plus5 bonus to its Awareness check.
+        As a standard action, you can make a Disguise check to conceal an item on your person. The object must be at least two size categories smaller than you are. Your Disguise check is opposed by the Awareness check of anyone observing you. Success means they fail to notice the item. A creature directly interacting you to search for the object, such as by frisking you, gains a \plus5 bonus to its Awareness check.
 
     \subsection{Disguise Creature}
         You can make a Disguise check to change the appearance of a creature using makeup, costumes, and so forth. An observer can perceive the presence of a disguise with a Disguise or Awareness check to identify a disguise that is higher than your Disguise check. The effectiveness of a disguise depends in part on how much you're attempting to change the creature's appearance, as shown on the table below. The modifiers are cumulative; use any that apply.
@@ -668,16 +677,16 @@ A character's skills describe the myriad of talents that people have.
         \end{dtable}
 
     \subsection{Emulate Creature}
-        You can make a Disguise check to make a creature look like another creature you have previously observed. This functions like a disguise creature check, but the result of your Disguise check can't exceed the result of a Awareness check you have made to observe the creature. People viewing the disguise who know what that person looks like get a \plus5 bonus on their Spot checks to identify the disguise.
+        You can make a Disguise check to make a creature look like another creature you have previously observed. This functions like a disguise creature check, but the result of your Disguise check can't exceed the result of a Awareness check you have made to observe the creature. People viewing the disguise who know what that person looks like get a \plus5 bonus on their checks to identify the disguise.
 
-    \subsection{Identify Disguise}
-        You can make a Disguise check to identify a disguise on another creature. The DR is equal to the Disguise check used to create the disguise. Success means you know that the creature is disguised. Critical success means you can also discern the creature's true appearance beneath the disguise. You can make an identify disguise check against any individual creature once per hour.
+    \subsection{Identify Disguise [Passive]}
+        As a free action, you can make a Disguise check to identify a disguise on another creature. The DR is equal to the Disguise check used to create the disguise. Success means you know that the creature is disguised. Critical success means you can also discern the creature's true appearance beneath the disguise. After making a check to identify a disguise on a particular creature, you cannot make another check to identify the same disguise on that creature for one hour.
 
     \skill{Escape Artist}{Dex}
         Escape Artist represents your ability to escape bindings and move through small areas by contorting your body.
 
     \subsection{Escape Bindings}
-        You can make an Escape Artist check as a standard action to escape bindings and restraints. The DRs of various restraints are given on the table below.
+        As a standard action, you can make an Escape Artist check to escape bindings and restraints. The DRs of various restraints are given on the table below.
 
         \begin{dtable}
             \begin{dtabularx}{\columnwidth}{>{\lcol}X l}
@@ -693,11 +702,11 @@ A character's skills describe the myriad of talents that people have.
         \end{dtable}
 
     \subsection{Squeeze}
-        You can make an Escape Artist check as a full-round action to move one foot forward in a space too small to normally fit you. A DR 20 check allows you to move in a space that can fit your head and shoulders, but which is too tight to allow normal crawling. A DR 30 check allows you to move in a space that can fit your head, but not your shoulders. Success means you make progress through the space, while failure means your action is wasted.
+        As a standard action, you can make an Escape Artist check to move one foot forward in a space too small to normally fit you. A DR 20 check allows you to move in a space that can fit your head and shoulders, but which is too tight to allow normal crawling. A DR 30 check allows you to move in a space that can fit your head, but not your shoulders. Success means you make progress through the space, while failure means your action is wasted.
 
         While using Escape Artist to squeeze into otherwise impossible spaces, you cannot take any physical actions other than squeezing until you escape. If you are squeezing in a space that can only fit your head and shoulders, the normal penalty to physical defenses for squeezing is doubled to \minus8. You are treated as \helpless while squeezing in a space that cannot fit your shoulders.
 
-        If you take a \minus10 penalty to your Escape Artist check, you can squeeze as a move action. While squeezing as a move action, if you take an additional \minus10 penalty to your Escape Artist check, you can take physical actions during the action phase in that round.
+        If you take a \minus10 penalty to your Escape Artist check, you can squeeze as a move action, rather than as a standard action.
 
     \skill{Heal}{Int}
         Heal allows you to tend the wounds of others. In order to heal a creature, you must be able to see and touch it.
@@ -716,33 +725,49 @@ A character's skills describe the myriad of talents that people have.
     \subsection{Treat Poison or Disease}
         You can make a Heal check to treat poison or disease in a character.
         To resist the next attack by the poison or disease, it can use your Heal check or its Fortitude defense, whichever is higher.
-
         Treating a poison takes a standard action. Treating a disease takes five minutes of work.
 
     \subsection{Treat Wound}
-        You can make a Heal check as a standard action to treat some specific wounds, such as from a caltrop or \spell{spike growth} spell. Success usually means the wound is gone, as indicated by the effect's description.
+        As a standard action, you can make a Heal check to treat some specific wounds, such as from a caltrop. Success usually means the wound is gone, as indicated by the effect's description.
 
     \skill{Intimidate}{Cha}
         You can use Intimidate to intimidate people.
 
-        You gain a \plus4 bonus on your Intimidate check for every size category that you are larger than your target. Conversely, you take a \minus4 penalty on your Intimidate check for every size category that you are smaller than your target. If your target doesn't know how large you are, this modifier does not apply. A character immune to fear (such as a paladin of 3rd level or higher) can't be intimidated, nor can nonintelligent creatures.
+        \parhead{Check Modifiers}
+        You gain a bonus of up to \plus10 on Intimidate checks if the target thinks you or your group is stronger than it is, or that it is otherwise in some real danger from you. Likewise, you take a penalty of up to \minus10 if the target thinks you or your group is weaker than it is, or that there is otherwise no chance that you could cause it harm.
+
+        \parhead{Fear}
+        All uses of the Intimidate skill are a Fear effect.
+        Creatures immune to fear, such as mindless creatures, can't be intimidated.
 
     \subsection{Coercion}
         You can make an Intimidate check to convince a creature to do what you want. This functions like a Persuasion check to form an agreement with a group, except that you do not apply a relationship modifier. In addition, the DR is up to 10 lower if the group thinks your group is significantly stronger than them, or up to 10 higher if the group thinks your group is significantly weaker.
 
     \subsection{Demoralize}\label{Demoralize}
-        As a standard action, you can make an Intimidate check against a creature within \rngmed range of you. Your check is opposed by its Mental defense. If you succeed, the creature is \shaken for 5 rounds.
+        As a standard action, you can make an Intimidate check against a creature within \rngmed range of you. The DR is equal to the target's Mental defense. If you succeed, the creature is \shaken by you for 2 rounds.
 
     \skill{Jump}{Str}
         Jump allows you to jump. All Jump checks are made as part of movement, so they take no special action to perform. Distance moved with Jump checks is counted against your normal maximum movement in a round.
 
+        Several modifiers apply to all Jump checks, which are described below.
+
+        \parhead{Running Start}\label{Running Start} If you move at least twenty feet before jumping, you have a running start. Jumping without a running start is difficult, and you take a \minus10 penalty to all Jump checks.
+
+        \parhead{Land Speed} For every 5 feet by which your land speed is slower than 30 feet, you take a \minus4 penalty to Athletics checks to jump. If you jump with a running start, for every 5 feet by which your land speed exceeds 30 feet, you gain a \plus2 bonus to your Athletics check to jump.
+
+    \subsection{Hop Up}
+        You can make a DR 10 Jump check while moving to jump up onto an object as tall as your waist, such as a table or small boulder. Doing so counts as 5 feet of movement. Success means you land on top of the object and can continue your movement. Failure indicates you stop your movement where you are. You do not need to get a running start to hop up.
+
+    \subsection{Jump Down}
+        You can make a DR 15 Athletics check while moving to intentionally jump down from a height to reduce your falling damage. Success means you take damage as if you had dropped 10 fewer feet than you actually did. Failure means you take the normal falling damage.
+
     \subsection{Long Jump}
-        You can make an Athletics check while moving to jump forward. When you make a long jump, choose a DR. If you have a running start, you jump forward by a number of feet equal to your check result, to a maximum of the DR you chose. At the midpoint of the jump, you achieve a height equal to a quarter of that distance. Critical failure means you fall prone after making the jump. If a failed jump would cause you to fall into a gap, you can make a DR 20 Climb check to catch the edge of the gap, provided you can reach it.
+        As part of movement, you can make a Jump check to jump forward. When you make a long jump, choose a DR. If you have a running start, you jump forward by a number of feet equal to your check result, to a maximum of the DR you chose. At the midpoint of the jump, you achieve a height equal to a quarter of that distance. Critical failure means you fall prone after making the jump. If a failed jump would cause you to fall into a gap, you can make a DR 20 Climb check to catch the edge of the gap, provided you can reach it.
 
         If you do not have a running start, jumping is more difficult (see \pcref{Running Start}).
 
     \subsection{High Jump}
-        You can make an Athletics check while moving to jump up. When you make a high jump, choose a DR. If you have a running start, you move forward by an amount to a quarter of your check result, to a maximum of a quarter of the DR. At the midpoint of the jump, you gain a height equal to that distance. Critical failure means you land prone after making the jump.
+        As part of movement, you can make an Athletics check while moving to jump up. When you make a high jump, choose a DR. If you have a running start, you move forward by an amount to a quarter of your check result, to a maximum of a quarter of the DR. At the midpoint of the jump, you gain a height equal to that distance. Critical failure means you land prone after making the jump.
 
         If you do not have a running start, jumping is more difficult (see \pcref{Running Start}).
 
@@ -770,18 +795,6 @@ A character's skills describe the myriad of talents that people have.
 
     \subsection{Rebounding Jump}\label{Rebounding Jump}
         While in midair, if you make contact with a solid object that can support your weight, you can jump off of that object. You are not considered to have a running start, so your check result is halved. In addition, you take a \minus10 penalty to the check (after the halving), because rebounding off of an object in midair is difficult. You must travel at least 10 feet between each rebounding jump.
-
-    \subsection{Jump Modifiers}\label{Jump Modifiers}
-
-        \parhead{Running Start}\label{Running Start} If you move at least twenty feet before jumping, you have a running start. Jumping without a running start is difficult, and your check result is halved.
-
-        \parhead{Land Speed} For every 5 feet by which your land speed is slower than 30 feet, you take a \minus3 penalty to Athletics checks to jump. If you jump with a running start, for every 5 feet by which your land speed exceeds 30 feet, you gain a \plus2 bonus to your Athletics check to jump.
-
-    \subsection{Hop Up}
-        You can make a DR 10 Jump check while moving to jump up onto an object as tall as your waist, such as a table or small boulder. Doing so counts as 5 feet of movement. Success means you land on top of the object and can continue your movement. Failure indicates you stop your movement where you are. You do not need to get a running start to hop up.
-
-    \subsection{Jump Down}
-        You can make a DR 15 Athletics check while moving to intentionally jump down from a height to reduce your falling damage. Success means you take damage as if you had dropped 10 fewer feet than you actually did. Failure means you take the normal falling damage.
 
     \skill{Knowledge}{Int}
         Like the Craft, Profession, and Perform skills, Knowledge actually encompasses a number of unrelated skills. Knowledge represents a study of some body of lore, possibly an academic or even scientific discipline. Below are listed typical fields of study.
@@ -893,7 +906,7 @@ A character's skills describe the myriad of talents that people have.
 
         The base DR for a Persuasion check against a group is equal to 10 \add the highest level of any character in the group.
 
-    \subsection{Compel Belief}
+    \subsection{Compel Belief}\label{Compel Belief}
         You can make a Persuasion check to cause creatures to believe something you say. If you are lying, you must also make a Bluff check to lie. Success means the group believes what you are saying is true. What they choose to do with that information is up to them, however. Failure means they do not believe you, but they do not react poorly; perhaps they simply want more verification. You may be able to try again, depending on their patience. Critical failure means the group reacts poorly, and you may have permanently damaged your credibility with them.
 
         Your check is modified by how believable your argument is, as well as whether the group has strong feelings about the truth of your story.
@@ -1021,15 +1034,15 @@ A character's skills describe the myriad of talents that people have.
     \skill{Sense Motive}{Wis}
         Sense Motive represents your ability to read body language and emotion.
 
-    \subsection{Discern Enchantment}
-        You can automatically notice when a creature is affected by mind-controlling magic -- including yourself. Treat your Sense Motive modifier as your check result. The DR to identify an Emotion effect such as \spell{charm person} is 25, while the DR to identify a Compulsion effect such as \spell{dominate person} is 15. Success means you recognize that the creature is affected by mind-affecting magic. Failure means you don't notice anything amiss.
+    \subsection{Discern Enchantment [Passive]}
+        As a swift action, you can try to tell whether a creature is affected by mind-controlling magic -- including yourself. The DR to identify an Emotion effect such as \spell{charm person} is 25, while the DR to identify a Compulsion effect such as \spell{dominate person} is 15. Success means you recognize that the creature is affected by mind-affecting magic. Failure means you don't notice anything amiss.
 
         This can only be used if the effect in question is actually affecting the creature's behavior at the time. For example, a person who has been given an unnatural aversion to cheese by the \spell{aversion} spell would generally not be affected by the enchantment unless it was presented with cheese. Therefore, you could not discern the enchantment on the creature simply by talking to it about the weather.
 
         Identifying mind-controlling magic affecting you gives you no special ability to resist the magic, but it may help you mitigate its effects.
 
-    \subsection{Discern Lies}
-        You can automatically notice when people lie to you. Treat your Sense Motive modifier as your check result. The DR is equal to the lying creature's Bluff check. Success means you notice that the creature was lying. Failure means you do not.
+    \subsection{Discern Lies [Passive]}
+        As a free action, you can make a Sense Motive check to notice when creatures lie to you. The DR is equal to the lying creature's Bluff check result. Success means you notice that the creature was lying. Failure means you do not.
 
     \subsection{Discern Secret Message}
         You can automatically identify hidden messages conveyed with the Bluff skill. Treat your Sense Motive modifier as your check result. The DR is equal to DR of the secret message. Success means you recognize that a hidden message is present, but not its contents. Critical success means you can understand the message. Failure means you don't notice the hidden message.
@@ -1128,21 +1141,17 @@ A character's skills describe the myriad of talents that people have.
         You can make a DR 20 Spellcraft check as a move action to learn information about a teleportation that happened recently. You must have noticed the magic aura left by the teleportation effect. Success means you identify the direction of the teleportation. Critical success means you also identify the distance. Failure means you learn no information about the teleportation. The DR of this check increases by 5 for every minute that has passed since the teleportation happened.
 
     \skill{Sprint}{Str}
-        You can make an Sprint check as part of movement to move faster. For every 10 points by which you beat DR 0, you double your speed during that action, as shown on \trefnp{Sprinting}. You can sprint for a number of rounds equal to 5 \add your Constitution.
+    You can use Sprint to move more quickly and take running-related actions.
 
-        \begin{dtable}
-            \lcaption{Sprinting}
-            \begin{dtabularx}{\columnwidth}{l X}
-                \tb{Athletics Result} & \tb{Speed Multiplier} \\
-                \hline
-                0 & 1x \\
-                10 & 2x \\
-                20 & 3x \\
-                30 & 4x \\
-            \end{dtabularx}
-        \end{dtable}
+    \subsection{Sprint}
+        As part of movement, you can make an Sprint check to move faster. For every 10 points by which you beat DR 0, you double your speed during that action: 2x speed at DR 10, 3x speed at DR 20, and so on.
+        
+        You can sprint for a number of rounds equal to your Constitution (minimum 1). After that time, you must rest for 5 minutes before you can sprint again. You can sprint in any movement mode that you have a speed for.
 
-        After you finish sprinting, you are \fatigued for a number of rounds equal to the number of rounds you spent sprinting, preventing you from sprinting again. You can sprint in any movement mode that you can use.
+    \subsection{Wallrun}
+        As part of movement, you can make a Sprint check to run along a wall rather than climbing. The DR is 10 higher than normal for the wall (see \pcref{Climb}, for typical wall DRs), but this does not require free hands. Success means you move up to half your land speed horizontally, or up to a quarter of your land speed vertically. Failure means you fall. Critical failure means you are prone when you land. For every round you spend running on a wall, the DR increases by 10.
+
+        Wallrunning on a ceiling is impossible.
 
     \skill{Stealth}{Dex}
         Stealth represents your ability to escape detection while moving or hiding. All Stealth checks are made as part of movement or other actions, so they require no special action to perform. If you have been noticed by a creature, you automatically fail all Stealth checks against that creature until you can escape its notice, such as by disappearing out of sight.
@@ -1237,7 +1246,7 @@ A character's skills describe the myriad of talents that people have.
 
         If you accept a \minus10 penalty, you can move at full speed while tumbling. If you accept a \minus20 penalty, you can tumble while sprinting or charging.
 
-    \subsection{Agile Movement}
+    \subsection{Agile Charge}
         You can make a DR 20 Tumble check while \glossterm{charging} to make a single turn of up to 90 degrees in the middle of the movement. Failure means you can't change direction, though you can continue your movement or stop. Critical failure means you stop where you tried to change direction and fall prone.
 
     \subsection{Mitigate Fall}
