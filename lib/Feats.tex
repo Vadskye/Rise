@@ -179,6 +179,7 @@ Some strike feats instead require a specific action to use.
 
         \midrule
         \tb{Class Feats} \label{cap:Class Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
+        \featref{Accelerated Rage}            & Rage, barbarian 6                 & \plus30 foot speed while raging  & Rage & \featpref{Accelerated Rage} \\
         \featref{Athletic Rage}         & Rage, barbarian 2                 & Gain bonus to athletic skills while raging & Rage & \featpref{Athletic Rage} \\
         \featref{Arcane Resilience}     & Sorcerer 5                        & Gain damage reduction against arcane spells & \x & \featpref{Arcane Resilience} \\
         \featref{Battlemaster}          & Int 5, fighter 10                 & Grant ally a combat feat & Combat & \featpref{Battlemaster} \\
@@ -210,7 +211,6 @@ Some strike feats instead require a specific action to use.
         \featref{Plant Speech}          & Wild speech, druid 5              & Speak with plants & \x & \featpref{Plant Speech} \\
         \featref{Rapid Adaptation}      & Adaptive combat, Int 5, fighter 8 & Change combat feats more quickly & \x & \featpref{Rapid Adaptation} \\
             \tind \featref{Instant Adaptation}      & Rapid Adaptation, Int 10, fighter 18 & Change combat feats instantly & \x & \featpref{Instant Adaptation} \\
-        \featref{Rapid Rage}            & Rage, barbarian 2                 & \plus10 foot speed while raging  & Rage & \featpref{Rapid Rage} \\
         \featref{Resist Maneuver}       & Fighter                           & \plus5 to resist chosen maneuver & \x & \featpref{Resist Maneuver} \\
         \featref{Savage Rage}           & Rage, barbarian 2                 & Fight better unarmed while raging & Rage & \featpref{Savage Rage} \\
         \featref{Shield Discipline}     & Armor discipline                  & Apply armor discipline with shields \\
@@ -514,6 +514,11 @@ Additional facts about the feat that may be helpful when you decide whether to a
 \feat{Abjurant Shield}{Magic}
 \featpre 2nd level or higher \glossterm{Shielding} spell known.
 \featben You gain a \plus1 bonus to physical defenses.
+
+\feat{Accelerated Rage}{Class, Rage}
+\featpre Rage ability, barbarian level 6.
+\featben When you enter a rage, you can use this feat. If you do, during the rage you gain a \plus30 foot bonus to speed in all your movement modes, up to a maximum of double your original speed in that mode.
+\parhead{Special} You can only gain the benefit of one Rage feat at a time.
 
 \feat{Arcane Resilience}{Class}
 \featpre Sorcerer level 5.
@@ -1014,13 +1019,9 @@ Choose a class ability with limited uses.
         Cleric & Devotion & \plus2 devotion points \\
         Druid & Wild speech & \plus2 uses per day \\
         Fighter & Combat discipline & \plus2 uses per day \\
-        Fighter & Battlemaster & \plus2 uses per day \\
-        Monk & \Ki manifestation & \plus2 uses per day \\
+        Monk & Channel \ki & \plus2 uses per day \\
         Paladin & Divine invocation & \plus2 uses per day \\
         Ranger & Wild speech & \plus2 uses per day \\
-        Sorcerer & Spellsurge & \plus1 use per day \\
-        Spellwarped & Spellwarped invocation & \plus2 uses per day \\
-        Wizard & Cantrip sequencer & \plus1 active sequencer \\
     \end{dtabularx}
 \end{dtable}
 
@@ -1928,11 +1929,6 @@ This stacks with the benefits of accelerating recovery with the Heal skill (see 
 \feat{Rapid Performance}{Performance, Skill}
 \featpres Perform 14 ranks, any three Performance feats.
 \featben You can use performance feats as a swift action by taking a \minus5 penalty on the Perform check to activate the feat.
-
-\feat{Rapid Rage}{Class, Rage}
-\featpre Rage ability, barbarian level 2.
-\featben When you enter a rage, you can use this feat. If you do, during the rage you gain a \plus10 foot bonus to land speed.
-\parhead{Special} You can only gain the benefit of one Rage feat at a time.
 
 \feat{Reach Spell}{Metamagic}
 \featpre 2nd level spell known.
