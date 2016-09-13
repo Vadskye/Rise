@@ -52,8 +52,8 @@ def inventory():
 
 def inventory_col():
     return flex_col({'class': 'inventory-col'}, [
-        text_input(),
-    ] * 8)
+        text_input() for i in range(13)
+    ])
 
 def misc_equipment(body_slot, body_slot_html = None):
     if body_slot_html is None:
