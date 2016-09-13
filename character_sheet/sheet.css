@@ -54,7 +54,7 @@ div, span {
 }
 
 input {
-    font-size: 1em; /* override browser default */
+    font-size: 0.8em; /* override browser default */
 }
 
 input[type=text] {
@@ -102,10 +102,11 @@ input[type=text] {
 /* hackery to allow underlabels to bleed into surrounding area */
 .underlabeled-number-input {
     position: relative;
-    margin-bottom: 1.1em;
+    padding-bottom: 1.1em;
 }
 .underlabeled-number-input > .under-label {
     position: absolute;
+    bottom: 0;
     white-space: nowrap;
 }
 
@@ -124,7 +125,7 @@ input[type=text] {
 .rise-title {
     font-family: "Old English Text MT";
     text-align: center;
-    font-size: 3em;
+    font-size: 3.5em;
     margin-top: 0;
     margin-bottom: -5px; /* no dropping letters makes this work */
 }

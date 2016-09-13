@@ -6,7 +6,7 @@
     font-size: 1.5em;
 }
 
-#level-chart input[type=number], .eq-misc input[type=number] {
+#level-chart input[type=number], .eq-optional input[type=number] {
     box-shadow: 0 0 2px 0 #999 inset;
 }
 
@@ -68,21 +68,20 @@
 .equation-glue {
     display: flex;
     justify-content: center;
-    height: 2em;
+    height: 1.6em;
     width: 1.1em;
     text-align: center;
     align-items: center;
 }
 
 .equation-math {
-    font-size: 1.25em;
+    font-size: 1em;
 }
 
 .calc-attribute-header {
     align-items: center;
     font-weight: bold;
     text-align: center;
-    font-size: 1.25em;
     margin-bottom: 0;
     margin-top: 0.2em;
 
@@ -96,10 +95,17 @@
     align-content: center;
     align-items: center;
     justify-content: center;
-    font-size: 1.25em;
     height: 1.5em;
     margin-left: 0.25em;
     margin-right: 0.25em;
+}
+
+.core-statistics {
+    justify-content: space-between;
+}
+
+.prowess-header {
+    font-weight: bold;
 }
 
 .statistics {

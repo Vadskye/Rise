@@ -13,6 +13,30 @@
     text-align: right;
 }
 
+.skill-box.unlabeled-number-input {
+    justify-content: flex-end;
+}
+
+.skill-box.unlabeled-number-input > input[type=text] {
+    flex-grow: 0;
+    width: 7em;
+}
+
+.legend-point-header {
+    margin-bottom: 0 !important;
+    text-align: center;
+}
+
+/* make resources the same height as other columns */
+.core-statistics div.legend-point-wrapper {
+    margin-bottom: 0.1em;
+}
+
+.legend-point-wrapper > div {
+    align-items: center;
+    flex-grow: 1;
+}
+
 /* section-specific formatting */
 
 .main-body {
@@ -23,14 +47,14 @@
     flex-grow: 1;
 }
 
-.first-page > div, .passive-ability-row > div, .core-statistics > div, .boring-row div, .active-ability > div, .attack > div {
+.first-page > div, .core-statistics > div, .boring-row div, .ability > div, .attack > div {
     margin-left: 0.25em;
     margin-right: 0.25em;
 }
 .first-page > div:first-child, .passive-ability-row > div:first-child, .core-statistics > div:first-child, .boring-row div:first-child, .active-ability > div:first-child, .attack > div:first-child {
     margin-left: 0;
 }
-.first-page > div:last-child, .passive-ability-row > div:last-child, .core-statistics > div:last-child, .boring-row div:last-child, .active-ability > div:last-child, .attack > div:first-child {
+.first-page > div:last-child, .passive-ability-row > div:last-child, .core-statistics > div:last-child, .boring-row div:last-child, .active-ability > div:last-child, .attack > div:last-child {
     margin-right: 0;
 }
 
@@ -50,12 +74,16 @@
     font-weight: bold;
     text-align: center;
 }
-.attribute .number-label {
+.attribute .number-label, .attribute-header {
     font-size: 1.25em;
 }
 
 .active-ability, .attack, .defenses > div, .movement > div, .resources > div, .hit-points > div {
     margin-bottom: 0.1em;
+}
+
+.attack-info {
+    margin-bottom: 0.25em;
 }
 
 .attribute {
@@ -70,7 +98,7 @@
     margin-bottom: 0.75em;
 }
 .attribute-section:nth-child(4) {
-    margin-bottom: 0.25em;
+    margin-bottom: 0.4em;
 }
 .attribute-section:nth-child(7) {
     margin-bottom: 0.25em;
@@ -87,4 +115,12 @@
 .core-statistics .flex-row {
     margin-top: 0.2em;
     margin-bottom: 0.2em;
+}
+
+.attack-info {
+    justify-content: space-around;
+}
+
+.attack-info .number-label {
+    font-size: 1.25em;
 }

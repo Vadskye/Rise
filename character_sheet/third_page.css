@@ -78,3 +78,7 @@
 .inventory, .equipment {
     margin-bottom: 0.5em;
 }
+
+.underlabeled-number-input {
+    padding-bottom: 0;
+}
