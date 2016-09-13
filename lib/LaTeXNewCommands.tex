@@ -609,7 +609,9 @@
         \imathparse{int(floor((#1-1)/5+1))}
     }
 
-    \ifcase\imathresult \relax \or
+    \ifcase\imathresult
+        \plus #1 % case -1
+    \or
         \plus #1 % case 0
     \or
         \plus #1~{}~(\mult2) % case 1
