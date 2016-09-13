@@ -1,6 +1,6 @@
 from cgi_simple import *
 
-from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS, ROLL20_CALC, roll20_max_text
+from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS, ROLL20_CALC
 
 def create_page():
     return flex_row({'class': 'first-page'}, [
@@ -11,9 +11,8 @@ def create_page():
         flex_col({'class': 'main-body'}, [
             boring_stuff(),
             core_statistics(),
-            passive_abilities(),
-            active_abilities(),
             attacks(),
+            abilities(),
         ]),
     ])
 
@@ -28,7 +27,6 @@ def boring_stuff():
             labeled_text_input('Class and level', 'class-and-level'),
             labeled_text_input('Race and background', 'race-and-background'),
             labeled_text_input('Alignment and deity', 'alignment-and-deity'),
-            labeled_text_input('Appearance', 'appearance'),
         ]),
     ])
 
@@ -37,8 +35,11 @@ def attributes_and_skills():
         flex_wrapper(div({'class': 'section-header'}, 'Attributes and Skills')),
         ''.join([attribute_section(attribute) for attribute in ATTRIBUTES]),
         flex_col({'class': 'other-skills', 'class': 'attribute-section'}, [
-            div({'class': 'attribute'}, 'Other Skills'),
+            div({'class': 'attribute attribute-header'}, 'Other Skills'),
             ''.join([skill_box(skill) for skill in 'Bluff Intimidate Perform Persuasion'.split()]),
+            unlabeled_number_input({'class': 'skill-box'}),
+            unlabeled_number_input({'class': 'skill-box'}),
+            unlabeled_number_input({'class': 'skill-box'}),
         ]),
     ])
 
@@ -74,24 +75,28 @@ def skill_box(name):
 
 def resources():
     return flex_col({'class': 'resources'}, [
-        flex_wrapper(div({'class': 'section-header'}, 'Resources')),
+        flex_wrapper({'class': 'section-header'}, 'Resources'),
+        flex_wrapper({'class': 'legend-point-header'}, 'Legend points'),
+        flex_row({'class': 'legend-point-wrapper'}, [
+            underlabeled_number_input('General'),
+            underlabeled_number_input('Offense'),
+            underlabeled_number_input('Defense'),
+        ]),
         ''.join([
-            #flex_row({'class': 'resource-row'}, [
             unlabeled_number_input(
                 text_input_attributes = {'name': 'resource-name-'+str(i)},
                 number_input_attributes = {'name': 'resource-number-'+str(i)},
-            )
-            #] * 3),
-        for i in range(5)]),
+            ) for i in range(3)
+        ]),
     ])
 
 def core_statistics():
     return ''.join([
         flex_row({'class': 'core-statistics'}, [
             defenses(),
-            movement(),
-            resources(),
+            offenses(),
             hit_points(),
+            resources()
             #labeled_number_input('Hit Points', 'hit-points')
         ])
     ])
@@ -112,6 +117,22 @@ def defenses():
         ]),
     ])
 
+def offenses():
+    return flex_col({'class': 'offense'}, [
+        flex_wrapper(div({'class': 'section-header'}, 'Offense')),
+        "".join([
+            labeled_number_input(
+                offense,
+                input_attributes = {
+                    'disabled': 'true',
+                    'name': offense + '-display',
+                    # TODO: roll20 value
+                },
+            )
+            for offense in ['Strikes/round', 'Melee', 'Ranged', 'Maneuver', 'Land speed']
+        ]),
+    ])
+
 def hit_points():
     return flex_col({'class': 'hit-points'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Hit Points')),
@@ -126,9 +147,29 @@ def movement():
         flex_wrapper(div({'class': 'section-header'}, 'Movement')),
         "".join([
             labeled_number_input(movement_type)
-            for movement_type in 'Speed Climb Fly Swim'.split()
+            for movement_type in 'Land Climb Fly Swim'.split()
         ]),
         unlabeled_number_input(),
+    ])
+
+def abilities():
+    return flex_col({'class': 'abilities'}, [
+        flex_wrapper(div({'class': 'section-header'}, 'Abilities')),
+        "".join([ability(i) for i in range(10)]),
+    ])
+
+def ability(ability_number = None):
+    return flex_row({'class': 'ability'}, [
+        labeled_text_input(
+            'Name',
+            'active-ability{0}-name'.format(ability_number),
+            {'class': 'active-ability-name'}
+        ),
+        labeled_text_input(
+            'Effect',
+            'active-ability{0}-effect'.format(ability_number),
+            {'class': 'active-ability-effect'}
+        ),
     ])
 
 def passive_abilities():
@@ -183,7 +224,7 @@ def active_ability(ability_number = None):
 def attacks():
     return flex_col({'class': 'attacks'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Attacks')),
-        "".join([attack(i) for i in range(4)]),
+        "".join([attack(i) for i in range(5)]),
     ])
 
 def attack(attack_number = None):

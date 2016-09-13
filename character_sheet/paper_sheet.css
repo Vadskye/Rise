@@ -10,7 +10,7 @@ body {
     height: 10.5in;
     width: 8in;
     padding: 0;
-    /* box-shadow: 0 0 2px 1px inset; */
+    box-shadow: 0 0 2px 1px inset;
 }
 
 .ui-dialog {
@@ -24,11 +24,11 @@ input[type=text] {
 }
 
 input[type=number] {
-    border: 2px solid black;
+    border: 1px solid black;
     box-shadow: none !important;
 }
 
-.skill-box input[type=number], #level-chart input[type=number], .eq-misc input[type=number] {
+.skill-box input[type=number], #level-chart input[type=number], .eq-optional input[type=number] {
     border: 1px solid #AAA;
 }
 
