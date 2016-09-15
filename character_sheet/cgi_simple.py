@@ -56,10 +56,11 @@ def convert_html_attributes(attributes = None):
         return ''
     attributes_text = ''
     for attribute_name in attributes:
-        attributes_text += ' {0}="{1}"'.format(
-            attribute_name,
-            attributes.get(attribute_name)
-        )
+        if attributes.get(attribute_name) is not None:
+            attributes_text += ' {0}="{1}"'.format(
+                attribute_name,
+                attributes.get(attribute_name)
+            )
     return attributes_text
 
 def button(attributes = None, contents = None):

@@ -11,6 +11,12 @@ ATTRIBUTE_SKILLS = {
     'willpower': [],
 }
 
+ALL_SKILLS = ['Awareness', 'Balance', 'Bluff', 'Climb', 'Craft', 'Creature Handling',
+              'Devices', 'Disguise', 'Escape Artist', 'Heal', 'Intimidate', 'Jump',
+              'Knowledge', 'Linguistics', 'Perform', 'Persuasion',
+              'Ride', 'Sense Motive', 'Sleight of Hand', 'Spellcraft', 'Sprint',
+              'Stealth', 'Survival', 'Swim', 'Tumble']
+
 def attribute_roll20_text(attribute_name):
     return value_sum([
         attribute_name+'-base',
