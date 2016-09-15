@@ -146,6 +146,7 @@ Some strike feats instead require a specific action to use.
         \featref{Diehard} & Con 10 & Halve penalties from critical damage         & \x & \featpref{Diehard} \\
         \featref{Divine Spellgift} & 2nd level, Wil 1 & Gain divine spell as spell-like ability & Spellgift & \featpref{Divine Spellgift} \\
         \featref{Fearless} & Wil 10 & Immune to fear effects                      & \x & \featpref{Fearless} \\
+        \featref{Fortune's Friend} & Legend point & Use legend points to be lucky  & \x & \featpref{Fortune's Friend} \\
         \featref{Iron Will} & Int 3 or Wil 3 & \plus2 to Mental defense           & \x & \featpref{Iron Will} \\
         \featref{Lifebound} & Con 10 & Immune to hostile Life and Death effects   & \x & \featpref{Lifebound} \\
         \featref{Lightning Reflexes} & Dex 3 or Per 3 &  \plus2 to Reflex defense & \x & \featpref{Lightning Reflexes} \\
@@ -193,7 +194,7 @@ Some strike feats instead require a specific action to use.
         \featref{Divine Health}         & Paladin 3                         & Immune to poison and disease & \x & \featpref{Divine Health} \\
         \featref{Elemental Speech}      & Wild speech, druid 9              & Speak with an element & \x & \featpref{Elemental Speech} \\
         \featref{Endless Rage}          & Rage, barbarian 18                & Rage lasts as long as you take damage & Rage & \featpref{Endless Rage} \\
-        \featref{Extra Ability}         & Class ability with limited uses   & Gain additional uses of class feature & \x & \featpref{Extra Ability} \\
+        \featref{Extra Ability}         & Class ability with limited uses   & Gain additional uses of class ability & \x & \featpref{Extra Ability} \\
         \featref{Fearsome Rage}         & Rage, barbarian 6                 & Attacks make foes shaken while raging & Rage & \featpref{Fearsome Rage} \\
         \featref{Frenzy}                & Rage, barbarian 6                 & Enter frenzy instead of angry rage & Rage & \featpref{Frenzy} \\
         \featref{Furious Style}         & Rage, barbarian 6                 & Change combat styles while raging & Rage & \featpref{Furious Style} \\
@@ -371,8 +372,6 @@ The table of combat feats is organized according to the combat prowess each feat
         \featref{Close-Quarters Fighting} & Dex 3 & No penalty for squeezing or attacking while grappling & Defense & \featpref{Close-Quarters Fighting} \\
         \featref{Exotic Weapon Proficiency} & \x & Become proficient with exotic weapons & Equipment & \featpref{Exotic Weapon Proficiency} \\
         \featref{Far Shot} & Str 3 & Increase range increment & Power & \featpref{Far Shot} \\
-        \featref{Improved Unarmed Combat} & \x &  Considered armed even when unarmed & \x & \featpref{Improved Unarmed Combat} \\
-            \tind \featref{Deflect Arrows} & Dex 3, Improved Unarmed Combat & Deflect ranged attacks with your bare hands & Finesse, Reaction & \featpref{Deflect Arrows} \\
         \featref{Mighty Blows} & Str 3 & \plus1 to physical damage & Power & \featpref{Mighty Blows} \\
         \featref{Mounted Archery} & Ride training & Reduce penalty for ranged accuracy while mounted & Mounted, Precision & \featpref{Mounted Archery} \\
         \featref{Mounted Defense} & Ride training & Negate hits on mount with Ride check & Defense, Mounted & \featpref{Mounted Defense} \\
@@ -383,6 +382,8 @@ The table of combat feats is organized according to the combat prowess each feat
         \featref{Tactical Analysis} & Int 3 & Identify foe's strengths and weaknesses & Awareness & \featpref{Tactical Analysis} \\
         \featref{Two-Weapon Fighting} & Dex 3 & Gain \plus2 bonus when fighting with two weapons & Finesse & \featpref{Two-Weapon Fighting} \\
             \tind \featref{Two-Weapon Defense} & Two-Weapon Fighting & Gain \plus1 to defenses when fighting with two weapons & Defense, Finesse & \featpref{Two-Weapon Defense} \\
+        \featref{Unarmed Proficiency} & \x & Proficient with unarmed attacks & \x & \featpref{Unarmed Proficiency} \\
+            \tind \featref{Deflect Arrows} & Dex 3, Unarmed Proficiency & Deflect ranged attacks with your bare hands & Finesse, Reaction & \featpref{Deflect Arrows} \\
         \featref{Weapon Proficiency}\fn{1} & \x & Gain proficiency with weapon group & Equipment & \featpref{Weapon Proficiency} \\
         \featref{Weapon Finesse} & Dex 3 & \plus1 damage with light weapons & Finesse & \featpref{Weapon Finesse} \\
         \featref{Weapon Focus} & Proficiency with weapon group & Special ability with weapon group & Equipment & \featpref{Weapon Focus} \\
@@ -783,11 +784,10 @@ If your Intelligence is at least 5, you take no penalty to accuracy.
 \stylereq Wield a melee weapon. You must make a melee attack or take the total defense action each round.
 
 \feat{Deflect Arrows}{Combat, Finesse, Reaction}
-\featpres Dex 3, Improved Unarmed Combat.
-\featben You must have at least one hand free (holding nothing) to use this feat.
-Once per round when you would normally be hit with a ranged weapon, you may deflect it so that you take no damage from it.
-You must be aware of the attack and not flatfooted.
-You can deflect a number of arrows equal to the number of strikes you can make.
+\featpres Dex 3, Unarmed Proficiency.
+\featben Once per round, when you would normally be hit with a ranged weapon, you may deflect it so that you take no damage from it.
+You must have a free hand and be aware of the attack.
+You can deflect a number of attacks equal to the number of strikes you can make.
 \par Attempting to deflect a ranged weapon doesn't count as an action.
 Unusually massive ranged weapons and ranged attacks generated by spell effects can't be deflected.
 \par If your Dexterity is at least 10, you can catch the weapon instead of deflecting it.
@@ -1011,7 +1011,7 @@ In addition, your explosive miscasts do not affect your allies other than you.
 \feat{Extra Ability}{Class}
 Choose a class ability with limited uses.
 \featpre The chosen class ability.
-\featben You gain additional uses of your chosen class ability. The number of uses you gain depends on the class feature chosen, as shown on \trefnp{Extra Ability Uses}.
+\featben You gain additional uses of your chosen class ability. The number of uses you gain depends on the class ability chosen, as shown on \trefnp{Extra Ability Uses}.
 \begin{dtable}
     \lcaption{Extra Ability Uses}
     \begin{dtabularx}{\columnwidth}{l l X}
@@ -1079,6 +1079,19 @@ For each strike you trade, you gain an additional \plus5 bonus to accuracy.
 \featben You receive instant, intuitive warnings of incoming attacks, even attacks you can't see or detect.
 As a result, you are normally never \unaware.
 Some creatures immune to Divination spells may still catch you unaware.
+
+\feat{Fortune's Friend}{General}
+\featpre One general \glossterm{legend point}.
+\featben You can spend a general legend point to cause a fortunate turn of events for you or your allies.
+The effects of this ability can vary, and are determined by the game master.
+The event is always beneficial for you, and you can suggest possible lucky events.
+In general, the power and scope of the event should not exceed that of a spell or ritual with a level equal to half your level.
+Some examples of events this ability could cause are given below.
+\begin{enumerate}
+    \item A cart carrying gold overturns, distracting an angry mob so your party can escape.
+    \item A guard accidentally drops the keys to the vault he is guarding.
+    \item A conversation you are overhearing happens to include exactly the juicy gossip you are looking for.
+\end{enumerate}
 
 \feat{Freeing Performance}{Performance, Skill}
 \featpre Perform 12 ranks.
@@ -1235,13 +1248,6 @@ You also gain a \plus2 bonus to accuracy on shove attacks.
 \featben When you successfully trip a foe, you get a free melee attack against it.
 This attack is made as the creature is being tripped, so it does not have penalties for being prone.
 You also gain a \plus2 bonus to accuracy on trip attacks.
-
-\feat{Improved Unarmed Combat}{Combat}
-\featben You gain proficiency with your unarmed attack.
-This grants you a \plus4 bonus to accuracy with the weapon and allows you to defend yourself with it, just as if you were using another melee weapon you are proficient with.
-
-In addition, your unarmed attacks can deal lethal or nonlethal damage as you choose.
-\parhead{Normal} You are not proficient with your unarmed attack, and it deals nonlethal damage. See \pcref{Unarmed Combat}.
 
 \feat{Inescapable}{Combat, Style}
 \featpre Combat prowess 8.
@@ -2279,6 +2285,13 @@ You can fight with a weapon in each hand more effectively.
 \featpres Str 5, Mighty Blows, Two-Weapon Fighting, combat prowess 8.
 \featben When fighting with two weapons at once, you gain a \plus1 bonus to physical damage.
 This bonus increases to \plus2 at Strength 10, and to \plus3 at Strength 20.
+
+\feat{Unarmed Proficiency}{Combat}
+\featben You gain proficiency with your unarmed attack.
+This grants you a \plus4 bonus to accuracy with the weapon and allows you to defend yourself with it, just as if you were using another melee weapon you are proficient with.
+
+In addition, your unarmed attacks can deal lethal or nonlethal damage as you choose.
+\parhead{Normal} You are not proficient with your unarmed attack, and it deals nonlethal damage. See \pcref{Unarmed Combat}.
 
 \feat{Unbending Resolve}{Class}
 \featpre Paladin level 5.
