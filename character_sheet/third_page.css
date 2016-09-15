@@ -1,3 +1,16 @@
+.sidebar {
+    width: 15em;
+    margin-right: 0.25em;
+}
+
+.main-body {
+    margin-left: 0.25em;
+}
+
+.main-body {
+    flex-grow: 1;
+}
+
 .subsection-header {
     /*align-items: center;*/
     font-weight: bold;
@@ -29,8 +42,9 @@
     margin-right: 0;
 }
 
+/* make the bottom lines line up */
 .weight-limits {
-    margin-bottom: 1.25em;
+    margin-bottom: 0.2em;
 }
 
 .weight-limits .labeled-text-input {
@@ -64,21 +78,53 @@
 }
 
 
-.inventory-col, .adventuring > div, .equipment > .flex-row > div, .wealth-and-xp > div, .weight-limits > div {
+.inventory-col, .adventuring > div, .equipment > .flex-row > div, .wealth-and-xp > div, .weight-limits > div, .summary-row > div {
     margin-left: 0.25em;
     margin-right: 0.25em;
 }
-.inventory-col:first-child, .adventuring > div:first-child, .equipment > .flex-row > div:first-child, .wealth-and-xp > div:first-child, .weight-limits > div:first-child {
+.inventory-col:first-child, .adventuring > div:first-child, .equipment > .flex-row > div:first-child, .wealth-and-xp > div:first-child, .weight-limits > div:first-child, .summary-row > div:first-child {
     margin-left: 0;
 }
-.inventory-col:last-child, .adventuring > div:last-child, .equipment > .flex-row > div:last-child, .wealth-and-xp > div:last-child, .weight-limits > div:last-child {
+.inventory-col:last-child, .adventuring > div:last-child, .equipment > .flex-row > div:last-child, .wealth-and-xp > div:last-child, .weight-limits > div:last-child, .summary-row > div:last-child {
     margin-right: 0;
 }
 
 .inventory, .equipment {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.25em;
 }
 
 .underlabeled-number-input {
     padding-bottom: 0;
+}
+
+.feats-summary .summary-header > div, .equipment > .flex-wrapper:nth-child(1) > div {
+    margin-top: 0;
+}
+
+.summary-header > div {
+    margin-bottom: 0;
+}
+
+.summary-header-level {
+    border-radius: 0.5em 0 0 0.5em;
+}
+
+.summary-header-name {
+    border-radius: 0 0.5em 0.5em 0;
+}
+
+.summary-row-name, .section-header:nth-child(2) {
+    flex-grow: 1;
+}
+
+.summary-row-level {
+    width: 2em;
+}
+
+.summary-row-level > input {
+    text-align: center;
+}
+
+.feats-summary input[type=text], .abilities-summary input[type=text] {
+    padding-top: 0.7em;
 }
