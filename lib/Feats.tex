@@ -418,6 +418,7 @@ The table of combat feats is organized according to the combat prowess each feat
         \featref{Manyshot} & Dex 5 & Shoot two projectiles simultaneously & Finesse & \featpref{Manyshot} \\
         \featref{Pierce Wings} & Per 5 & Ranged attack removes foe's ability to fly & Precision, Strike & \featpref{Pierce Wings} \\
         \featref{Two-Weapon Rend} & Str 5, Two-Weapon Fighting & Gain bonus damage when fighting with two weapons & Power & \featpref{Two-Weapon Rend} \\
+        \featref{Unarmed Dodge} & Unarmed Proficiency, Dex 5 & \plus1 physical defenses while unarmed & \x & \featpref{Unarmed Dodge} \\
         \featref{Wall Slam} & Str 5 & Slam opponent into wall to deal bonus damage & Maneuver, Power, Strike & \featpref{Wall Slam} \\
         \featref{Whirlwind Strike} & Dex 5 & One melee strike against each threatened opponent & Strike & \featpref{Whirlwind Strike} \\
 
@@ -436,6 +437,7 @@ The table of combat feats is organized according to the combat prowess each feat
         \featref{Legendary Power} & Str 10, any three Power feats & Wield weapons as if they were less encumbering & Power& \featpref{Legendary Power} \\
         \featref{Legendary Precision} & Per 10, any three Precision feats & Very accurate hits deal maximum damage & Precision & \featpref{Legendary Precision} \\
         \featref{Legendary Reaction} & Dex 10, any three Reaction feats & Extra immediate actions & Combat, Reaction & \featpref{Legendary Reaction} \\
+        \featref{Legendary Unarmed Warrior} & Unarmed Dodge, Unarmed Might, Unarmed Proficiency & Unarmed attacks are incredibly strong & \x & \featpref{Legendary Unarmed Warrior} \\
         \featref{Patient Strike} & Int 10 & Bonus damage if you are not attacked & Reaction, Strike & \featpref{Patient Strike} \\
         \featref{Penetrating Strike} & \x & Attack removes foe's damage reduction & Strike & \featpref{Penetrating Strike} \\
         \featref{Staggering Strike} & \x & Attack staggers foe & Strike & \featpref{Staggering Strike} \\
@@ -1663,6 +1665,11 @@ You still suffer the normal penalty with underwater ranged attacks.
 \featpre Acrobatics 15 ranks.
 \featben When tumbling, if your check result is 30 or higher, you can move through squares occupied by foes or threatened by blocking foes without penalty.
 
+\feat{Legendary Unarmed Warrior}{Combat}
+\featpre Combat prowess 12, Unarmed Dodge, Unarmed Might, Unarmed Proficiency
+\featben Your unarmed attacks deal damage as if you were four size categories larger than normal (1d10 for a Medium creature, or 1d8 for a small creature).
+This does not stack with the benefits of Unarmed Might.
+
 \feat{Legendary Versatility}{Class}
 \featpre At least 5 levels in two different classes, one of which must be your base class.
 \featben You treat all classes you have at least 5 levels in as base classes.
@@ -2292,9 +2299,13 @@ You can fight with a weapon in each hand more effectively.
 \featben When fighting with two weapons at once, you gain a \plus1 bonus to physical damage.
 This bonus increases to \plus2 at Strength 10, and to \plus3 at Strength 20.
 
+\feat{Unarmed Dodge}{Combat, Defense}
+\featpre Combat prowess 8, Unarmed Proficiency, Dexterity 5.
+\featben You gain a \plus1 bonus to physical defenses (Armor, Maneuver, Reflex) while both your hands are free.
+
 \feat{Unarmed Might}{Combat, Power}
 \featpres Combat prowess 4, Unarmed Proficiency, Strength 5.
-\featben Your unarmed attacks deal damage as if you were two size categories larger than your actual size (1d6 for a Medium creature, or 1d4 for a small creature).
+\featben Your unarmed attacks deal damage as if you were two size categories larger than normal (1d6 for a Medium creature, or 1d4 for a small creature).
 
 \feat{Unarmed Proficiency}{Combat}
 \featben You gain proficiency with your unarmed attack.
