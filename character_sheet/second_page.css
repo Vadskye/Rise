@@ -6,10 +6,6 @@
     font-size: 1.5em;
 }
 
-#level-chart input[type=number], .eq-optional input[type=number] {
-    box-shadow: 0 0 2px 0 #999 inset;
-}
-
 .chart-header {
     font-size: 1.25em;
     font-weight: bold;
@@ -83,14 +79,12 @@
     font-weight: bold;
     text-align: center;
     margin-bottom: 0;
-    margin-top: 0.2em;
-
+    font-size: 1.25em;
 }
 
 .calc-header {
     font-weight: bold;
-    text-align: center;
-    width: 4.25em;
+    width: 5em;
     display: flex;
     align-content: center;
     align-items: center;
@@ -101,17 +95,97 @@
 }
 
 .core-statistics {
-    justify-content: space-between;
+    justify-content: space-around;
+    margin-bottom: 0.5em !important;
 }
 
 .prowess-header {
     font-weight: bold;
 }
 
-.statistics {
-    margin-top: 3px;
-}
-
 .statistics > .flex-row {
     margin-bottom: 0.1em;
+}
+
+.skill-row {
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+}
+
+.skill-row .equation {
+    flex-grow: 0;
+}
+
+.skill-name, .skill-anonymous, .skill-name-spacer {
+    font-size: 0.8em;
+    margin-right: 0.25em;
+}
+
+.skill-anonymous {
+    width: 5em;
+}
+
+.sidebar, .calc-attributes {
+    margin-right: 0.25em;
+}
+
+.main-body, .level-chart {
+    margin-left: 0.25em;
+}
+
+.main-body {
+    flex-grow: 1;
+}
+
+.level-chart {
+    flex-grow: 1;
+}
+
+/* bring the bottom up slightly */
+.level-chart input[type=text] {
+    padding-top: 0.74em;
+}
+
+.attributes-header {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.calc-skills:nth-child(3) {
+    margin-top: 0;
+}
+
+.skill-labels {
+    align-content: space-between;
+}
+
+.skill-name-spacer {
+    width: 7.3em;
+    text-align: right;
+}
+
+.skill-labels .equation-glue {
+    height: 0.5em;
+}
+
+.skill-label {
+    font-size: 0.8em;
+    flex-basis: 2.5em;
+    text-align: center;
+}
+
+.calc-attributes .flex-row.equation {
+    margin-bottom: 0.25em;
+} 
+
+.level-chart .section-header {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* make the bottom boxes line up */
+.calc-attribute-header:nth-child(2) {
+    margin-top: 0.25em;
 }

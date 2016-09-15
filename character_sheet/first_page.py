@@ -129,7 +129,7 @@ def offenses():
                     # TODO: roll20 value
                 },
             )
-            for offense in ['Strikes/round', 'Melee', 'Ranged', 'Maneuver', 'Land speed']
+            for offense in ['Melee', 'Ranged', 'Maneuver', 'Strikes/round', 'Land speed']
         ]),
     ])
 
