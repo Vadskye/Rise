@@ -142,7 +142,7 @@ Some strike feats instead require a specific action to use.
         \tb{General Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
         \featref{Attribute Training} & \x & Gain \plus1 to an attribute           & \x & \featpref{Attribute Training} \\
         \featref{Arcane Spellgift} & 2nd level, Wil 1 & Gain arcane spell as spell-like ability & Spellgift & \featpref{Arcane Spellgift} \\
-        \featref{Destructive} & Str 3 & Gain \plus5 to breaking things            & \x & \featpref{Destructive} \\
+        %\featref{Destructive} & Str 3 & Gain \plus5 to breaking things            & \x & \featpref{Destructive} \\
         \featref{Diehard} & Con 10 & Halve penalties from critical damage         & \x & \featpref{Diehard} \\
         \featref{Divine Spellgift} & 2nd level, Wil 1 & Gain divine spell as spell-like ability & Spellgift & \featpref{Divine Spellgift} \\
         \featref{Fearless} & Wil 10 & Immune to fear effects                      & \x & \featpref{Fearless} \\
@@ -271,12 +271,13 @@ Some strike feats instead require a specific action to use.
 
         \midrule
         \tb{Magic Style Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} \tb{Page} \\
-        \featref{Blood Magic} & 4th level Vivimancy spell & Gain spellpower bonus after taking damage & \x & \featpref{Blood Magic} \\
-        \featref{Brutal Magic} & 4th level spells & Gain spellpower bonus after making physical strike & \x & \featpref{Brutal Magic} \\
-        \featref{Creative Magic} & 4th level spells & Gain spellpower bonus with spells not cast recently & \x & \featpref{Creative Magic} \\
-        \featref{Devastating Magic} & 8th level spells & Spells trigger critical successes more easily & \x & \featpref{Devastating Magic} \\
-        \featref{Peaceful Magic} & 4th level Abjuration spell & Gain spellpower bonus after not taking damage & \x & \featpref{Peaceful Magic} \\
-        \featref{Unliving Conduit} & 4th level Vivimancy spell & Gan spellpower bonus when undead are near & \x & \featpref{Unliving Conduit} \\
+        \featref{Blood Magic} & 4th level Vivimancy spell & Gain spellpower bonus after taking damage & Style & \featpref{Blood Magic} \\
+        \featref{Brutal Magic} & 4th level spells & Gain spellpower bonus after making physical strike & Style & \featpref{Brutal Magic} \\
+        \featref{Creative Magic} & 4th level spells & Gain spellpower bonus with spells not cast recently & Style & \featpref{Creative Magic} \\
+        \featref{Devastating Magic} & 8th level spells & Spells trigger critical successes more easily & Style & \featpref{Devastating Magic} \\
+        \featref{Flameborne Magic} & 4th level Fire spell & Gain spellpower bonus when fire is near & Style & \featpref{Flameborne Magic} \\
+        \featref{Peaceful Magic} & 4th level Abjuration spell & Gain spellpower bonus after not taking damage & Style & \featpref{Peaceful Magic} \\
+        \featref{Unliving Conduit} & 4th level Vivimancy spell & Gain spellpower bonus when undead are near & Style & \featpref{Unliving Conduit} \\
 
         \midrule
         \tb{Metamagic Feats} & \tb{Prerequisites} & \tb{Benefit (Level Adjustment)} & \tb{Feat Types} & \tb{Page} \\
@@ -369,7 +370,7 @@ The table of combat feats is organized according to the combat prowess each feat
         \featref{Armor Familiarity} & Proficiency with armor & Reduce penalties from wearing armor & Equipment & \featpref{Armor Familiarity} \\
         \featref{Armor Proficiency} & Proficiency with lighter armor & Become proficient with type of armor & Equipment & \featpref{Armor Proficiency} \\
         \featref{Cleave} & Str 3 & Extra melee strike after dropping target & Power & \featpref{Cleave} \\
-        \featref{Close-Quarters Fighting} & Dex 3 & No penalty for squeezing or attacking while grappling & Defense & \featpref{Close-Quarters Fighting} \\
+        \featref{Close-Quarters Fighting} & Dex 3 & No penalty for squeezing or attacking while grappling & Finesse & \featpref{Close-Quarters Fighting} \\
         \featref{Exotic Weapon Proficiency} & \x & Become proficient with exotic weapons & Equipment & \featpref{Exotic Weapon Proficiency} \\
         \featref{Far Shot} & Str 3 & Increase range increment & Power & \featpref{Far Shot} \\
         \featref{Mighty Blows} & Str 3 & \plus1 to physical damage & Power & \featpref{Mighty Blows} \\
@@ -460,7 +461,7 @@ The table of combat feats is organized according to the combat prowess each feat
 \begin{longtabuwrapper}
     \begin{longtabu}{>{\lcol}p{10em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{8em} >{\lcol}p{3em}}
         \tb{Style Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
-        \featref{Blind-Fight} & Perception 3 & Fight better when unable to see & Awareness & \featpref{Blind-Fight} \\
+        \featref{Blind-Fight} & Perception 3 & Fight better when unable to see & Awareness, Style & \featpref{Blind-Fight} \\
         \featref{Defensive Fighting} & \x & Gain bonus to physical defenses & Defense, Style & \featpref{Defensive Fighting} \\
         \featref{Distracting Foe} & \x & Threatened foes suffer Concentration penalties & Reaction, Style & \featpref{Distracting Foe} \\
         \featref{Eye of the Storm} & Per 5 & Reduce overwhelm penalties & Awareness, Defense, Style & \featpref{Eye of the Storm} \\
@@ -548,10 +549,9 @@ All spellgift feats you have use the same pool of spellgift points.
 The number of spellgift feats you have cannot exceed your Willpower.
 
 \feat{Armor Familiarity}{Combat}
-Choose one category of armor: light, medium, heavy, or shields.
-\featpre Proficiency with the chosen armor category.
-\featben You reduce your \glossterm{encumbrance penalty} by 2 and your arcane spell failure by 5\% when using your chosen armor.
-This effect cannot reduce those penalties below 0.
+\featpre Proficiency with light armor.
+\featben You reduce your \glossterm{encumbrance penalty} by 2 and your arcane spell failure by 5\% while wearing body armor.
+This only affects penalties from body armor you wear, not shields.
 
 \feat{Armor Piercing Strike}{Combat, Precision}
 \featpre Per 5, combat prowess 8.
@@ -717,14 +717,14 @@ The attack automatically succeeds against non-intelligent objects.
 
 \feat{Cleave}{Combat, Power}
 \featpre Str 3.
-\featben If you make a melee strike that knocks a creature unconscious or kills it, you can immediately make an extra melee strike against another creature you threaten.
+\featben If you make a melee \glossterm{strike} that knocks a creature unconscious or kills it, you can immediately make an extra melee strike against another creature you threaten.
 The extra strike must be made with the same weapon, and uses the same accuracy, but it is otherwise treated as being a different attack.
 You cannot move before making this extra strike.
 There is no limit to the number of times you can use this feat per round.
 
-\feat{Close-Quarters Fighting}{Combat, Defense}
+\feat{Close-Quarters Fighting}{Combat, Finesse}
 \featpre Dex 3.
-\featben You reduce your penalties for squeezing by 2. In addition, you reduce your penalty for attacking with non-light weapons in a grapple by 2.
+\featben You reduce your penalties for \glossterm{squeezing} by 2. In addition, you reduce your penalty for attacking with non-light weapons in a grapple by 2.
 
 \feat{Combat Casting}{Magic}
 \featben You gain a \plus3 bonus to Concentration checks made to cast spells or use spell-like abilities.
@@ -802,10 +802,6 @@ As an immediate action, you can throw a caught weapon back at the original attac
 \featpre 1st level or higher \glossterm{Delusion} spell known.
 \featben You gain a \plus2 bonus to Bluff and Disguise checks.
 If you know a Delusion spell of 5th level or higher, this bonus increases to \plus4.
-
-\feat{Destructive}{General}
-\featpre Strength 3.
-\featben You gain a \plus5 bonus to Strength checks made to break, bend, or crush objects.
 
 \feat{Destructive Rage}{Class, Rage}
 \featpre Rage ability, barbarian level 6.
@@ -1071,6 +1067,12 @@ Once per round, when you hit with a melee strike, you may cause the target to be
 \feat{Fire Mastery}{Magic}
 \featpre 3rd level or higher \glossterm{Fire} spell known.
 \featben Whenever you get a critical success with a Fire spell, the target of the spell is \ignited for 5 rounds.
+
+\feat{Flameborne Magic}{Magic, Style}
+\featpre 4th level or higher \glossterm{Fire} spell known.
+\featben As long as you are within \rngmed range of an active fire of at least Medium size, you gain a \plus2 bonus to spellpower with Fire spells.
+If the source is at least Large size, this bonus applies to all spells you cast.
+This bonus increases by \plus1 when you gain access to 6th and 8th level spells.
 
 \feat{Focused Strike}{Combat, Precision, Strike}
 \featpre Two strikes.
@@ -1479,12 +1481,8 @@ If a spell targets multiple creatures, you can only remove its effects on you.
 
 \feat{Legendary Finesse}{Combat, Finesse}
 \featpres Dexterity 10, combat prowess 12, any three Finesse feats.
-\featben When you roll the maximum amount of damage with a weapon, you roll the weapon's damage die (or dice) again and add the result to your damage dealt.
-There is no limit to the number of times a weapon's die can add to damage in this way.
-
-This feat does not affect weapons that roll a 1d3 or smaller die for damage.
-If the weapon's damage die would be treated as having a particular result instead of being rolled, that effect is not applied to any subsequent die rolls after the first.
-When fighting with two weapons, each weapon's damage die is rolled separately, including all additional rolls from this feat, before determining which weapon deals more damage.
+\featben Whenever you miss with a \glossterm{strike}, the target still takes half damage from your attack.
+This is not considered hitting with the attack for the purpose of effects which trigger on hitting a creature.
 
 \feat{Legendary Handler}{Skill}
 \featpre Creature Handling 15 ranks.
@@ -1905,9 +1903,9 @@ You must make a physical attack or take the total defense action each round.
 \feat{Quick Draw}{Combat}
 \featben You can draw light weapons as a free action and medium weapons as a swift action.
 You can draw heavy weapons and hidden weapons of any type (see the Sleight of Hand skill) as a move action.
-\par A character who has selected this feat may throw light weapons at his full normal rate of attacks (much like a character with a bow).
+This allows you to throw light weapons at your full normal rate of attacks (much like a character with a bow).
 
-If you have three or more Reaction feats, you can draw light and medium weapons as an immediate action, and heavy and hidden weapons as a swift action.
+If your \glossterm{combat prowess} is at least 8, you can draw light and medium weapons as an immediate action, and heavy and hidden weapons as a swift action.
 \parhead{Normal}
 Without this feat, you may draw light weapons as a swift action, medium and heavy weapons as a move action, and hidden weapons as a standard action.
 
