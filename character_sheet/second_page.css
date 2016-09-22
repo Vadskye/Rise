@@ -180,7 +180,7 @@
     margin-bottom: 0.25em;
 } 
 
-.level-chart .section-header {
+.level-chart .section-header:nth-child(1) {
     margin-top: 0;
     margin-bottom: 0;
 }

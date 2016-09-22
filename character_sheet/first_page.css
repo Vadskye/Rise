@@ -62,6 +62,7 @@
 }
 
 .passive-ability-row > div, .boring-row > div {
+    flex-basis: 25%;
     flex-grow: 1;
 }
 

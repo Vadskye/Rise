@@ -26,7 +26,7 @@ def boring_stuff():
         flex_row({'class': 'boring-row'}, [
             labeled_text_input('Class and level', 'class-and-level'),
             labeled_text_input('Race and background', 'race-and-background'),
-            labeled_text_input('Alignment and deity', 'alignment-and-deity'),
+            labeled_text_input('Description', 'description'),
         ]),
     ])
 
