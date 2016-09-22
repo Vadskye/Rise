@@ -150,8 +150,15 @@ def level_chart():
     return flex_row([
         calc_attributes(),
         flex_col({'class': 'level-chart'}, [
+            div({'class': 'section-header'}, 'Alignment and Deity'),
+            div(text_input()),
+            div({'class': 'section-header'}, 'Goals and Flaws'),
+            div(text_input()),
+            div(text_input()),
+            div({'class': 'section-header'}, 'Background'),
+            "".join([div(text_input()) for i in range(1, 7)]),
             div({'class': 'section-header'}, 'Other Calculations'),
-            "".join([div(text_input()) for i in range(1, 17)]),
+            "".join([div(text_input()) for i in range(1, 4)]),
         ])
     ])
 
