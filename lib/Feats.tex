@@ -95,19 +95,10 @@ Skill feats improve a character's skills or grant them new abilities related to 
 Spellgift feats grant limited spell-like abilities.
 They may represent the fruits of eldritch pacts, unusual heritage, the exposure to powerful magic, or a particular expression of innate magical ability.
 You can use any combination of spell-like abilities gained from spellgift feats a number of times per day equal to the number of spellgift feats you possess.
-The number of spellgift feats you have cannot exceed your Willpower.
+The number of spellgift feats you have, plus the levels you have in spellcasting classes, cannot exceed your Willpower.
 
-If your Willpower is lowered below the number of spellgift feats you have, you are treated as not possessing the feats you do not qualify for, as normal for feat prerequisites.
+If your Willpower is lowered below this value, or you gain additional levels in spellcasting classes, you are treated as not possessing the spellgift feats you do not qualify for, as normal for feat prerequisites.
 You lose access to the spellgift feats in order by when you acquired them, starting with the most recent feat.
-
-%Design guidelines: effective CL = 1/2 HD, min ability score = effective CL-1
-%Uses/day: 3/day for single use abilities, normal duration for buffs (splitting
-%duration is already good?)
-%Personal range penalizes spell level, but shouldn't make these cheaper.
-%Treat personal range spells as one higher level.
-%\subsection{Surge Feats}
-%Surge feats grant a character to temporarily increase their abilities to supernatural levels.
-%Each surge feat grants a supernatural ability which can be used a certain number of times per day.
 
 \subsection{Combat Feats}
 Combat feats affect a character's combat abilities.
@@ -128,7 +119,7 @@ If you fail to meet a style's requirements during a round, you leave the style a
 
 \subsection{Strike Feats}\label{Strike Feats}
 Strike feats grant a character the ability to make unusual physical attacks.
-Most strike feats replace a certain number of strikes you would normally make.
+Most strike feats replace a certain number of \glossterm{strikes} you would normally make.
 Usually, this means strike feats are used as part of a standard attack action.
 Some strike feats instead require a specific action to use.
 
@@ -330,7 +321,7 @@ Some strike feats instead require a specific action to use.
         \featref{Legendary Healer} & Heal 15 ranks & Heal damage three times per day & \x & \featpref{Legendary Healer} \\
         \featref{Legendary Intimidation} & Intimidate 15 ranks & Panic intimidated foes & \x & \featpref{Legendary Intimidation} \\
         \featref{Legendary Knowledge} & Knowledge (any) 15 ranks & \plus2 against creatures you identify & \x & \featpref{Legendary Knowledge} \\
-        \featref{Legendary Leaper} & Athletics 15 ranks & Always treated as having running start & \x & \featpref{Legendary Leaper} \\
+        \featref{Legendary Leaper} & Jump 15 ranks & Always treated as having running start & \x & \featpref{Legendary Leaper} \\
         \featref{Legendary Legerdemain} & Sleight of Hand 15 ranks & Hide objects in pocket dimension & \x & \featpref{Legendary Legerdemain} \\
         \featref{Legendary Liar} & Bluff 15 ranks & Lies appear to alter reality & \x & \featpref{Legendary Liar} \\
         \featref{Legendary Linguist} & Linguistics 15 ranks & Speak all languages & \x & \featpref{Legendary Linguist} \\
@@ -339,7 +330,7 @@ Some strike feats instead require a specific action to use.
         \featref{Legendary Rider} & Ride 15 ranks & Ride unwilling creatures & \x & \featpref{Legendary Rider} \\
         \featref{Legendary Sense Motive} & Sense Motive 15 ranks & Read creature's mind & \x & \featpref{Legendary Sense Motive} \\
         \featref{Legendary Spellcraft} & Spellcraft 15 ranks & Gain \plus2 against spells you identify & \x & \featpref{Legendary Spellcraft} \\
-        \featref{Legendary Sprinter} & Athletics 15 ranks & You can sprint for much longer & \x & \featpref{Legendary Sprinter} \\
+        \featref{Legendary Sprinter} & Sprint 15 ranks & You can sprint for much longer & \x & \featpref{Legendary Sprinter} \\
         \featref{Legendary Stealth} & Stealth 15 ranks & Hide in plain sight & \x & \featpref{Legendary Stealth} \\
         \featref{Legendary Survival} & Survival 15 ranks & Ignore harmful terrain and unerringly find your way & \x & \featpref{Legendary Survival} \\
         \featref{Legendary Tumbler} & Acrobatics 15 ranks & Tumble through enemies without provoking & \x & \featpref{Legendary Tumbler} \\
@@ -1516,7 +1507,7 @@ You can use this ability three times per day.
 \featben You gain a \plus2 bonus on accuracy, checks, and defenses against non-humanoid creatures you identify with a successful Knowledge check.
 
 \feat{Legendary Leaper}{Skill}
-\featpre Athletics 15 ranks.
+\featpre Jump 15 ranks.
 \featben You are always treated as having a running start when jumping.
 
 \feat{Legendary Legerdemain}{Skill}
@@ -1615,7 +1606,7 @@ You can use this ability three times per day.
 \featben You gain a \plus2 bonus on accuracy, checks, and defenses against spells and magical effects you identify with a successful Spellcraft check.
 
 \feat{Legendary Sprinter}{Skill}
-\featpre Athletics 15 ranks.
+\featpre Sprint 15 ranks.
 \featben You can sprint for a number of minutes equal to 5 \add your Constitution.
 After you finish sprinting, you are \fatigued for 1 round per minute of sprinting.
 
